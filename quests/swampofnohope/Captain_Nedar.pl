@@ -1,11 +1,11 @@
-sub EVENT_SAY {
- if($text=~/hail/i){
+sub EVENT_SAY {
+ if($text=~/hail/i){
   quest::say("Come to serve the garrison? Good. I aim to offer a reward for the return of four froglok tad tongues. Best if we handle the pesky critters before they grow too big and too numerous.");
  }
 }
 
 sub EVENT_ITEM {
- #Handin: 4x Froglok Tad Tongues (12439)
+ #Handin: 4x Froglok Tad Tongues (12439)
  if(plugin::check_handin(\%itemcount, 12439 => 4)){
   quest::say("Well done. It is good to serve the Warlord. Here is a small reward befitting such a small task.");
   quest::faction(193,5); # +Legion of Cabilis
@@ -16,10 +16,10 @@ sub EVENT_ITEM {
   quest::givecash(6,0,0,0);
   quest::exp(10);  
  }
- else {
-  quest::say("I have no need for this item $name, you can have it back.");
-  plugin::return_items(\%itemcount);
- }
+ else {
+  quest::say("I have no need for this item $name, you can have it back.");
+  plugin::return_items(\%itemcount);
+ }
 }
 
 

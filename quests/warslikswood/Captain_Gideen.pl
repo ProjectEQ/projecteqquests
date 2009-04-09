@@ -1,5 +1,5 @@
-sub EVENT_SAY {
- if($text=~/hail/i){
+sub EVENT_SAY {
+ if($text=~/hail/i){
   quest::say("I hope you have come to assist in the defense of the gate. We have had numerous assaults by the goblins. No doubt it is due to those [goblin watchers].");
  }
  elsif($text=~/goblin watchers/i){
@@ -8,7 +8,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
- #Handin: 3x Watcher Signal Torch (12441)
+ #Handin: 3x Watcher Signal Torch (12441)
  if(plugin::check_handin(\%itemcount, 12441 => 3)){
   quest::say("Good work, $name. You are on your way to becoming a respected ally of the Iksar Empire. Keep up the good work. Take this reward for a job well done.");
   quest::faction(193,5); # +Legion of Cabilis
@@ -19,10 +19,10 @@ sub EVENT_ITEM {
   quest::givecash(0,3,0,0);
   quest::exp(10);  
  }
- else {
-  quest::say("I have no need for this item $name, you can have it back.");
-  plugin::return_items(\%itemcount);
- }
+ else {
+  quest::say("I have no need for this item $name, you can have it back.");
+  plugin::return_items(\%itemcount);
+ }
 }
 
 

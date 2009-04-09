@@ -1,6 +1,6 @@
-sub EVENT_SIGNAL {
-  if ($signal == 102) {
-    quest::depop();
-  }
-}
-
+sub EVENT_SIGNAL {
+  if ($signal == 102) {
+    quest::depop();
+  }
+}
+

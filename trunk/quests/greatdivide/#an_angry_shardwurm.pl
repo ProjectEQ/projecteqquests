@@ -1,5 +1,5 @@
-sub EVENT_SPAWN {
-  # Spear Delivery (kael)
-  quest::attack($name);
-}
-
+sub EVENT_SPAWN {
+  # Spear Delivery (kael)
+  quest::attack($name);
+}
+

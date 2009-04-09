@@ -1,5 +1,5 @@
-#Arcanist_Ukigit
-
-sub EVENT_DEATH {
-  quest::say("You will die...");
+#Arcanist_Ukigit
+
+sub EVENT_DEATH {
+  quest::say("You will die...");
  } 

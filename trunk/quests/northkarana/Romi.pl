@@ -1,3 +1,3 @@
-sub EVENT_SAY { 
-	plugin::soulbinder_say($text);
+sub EVENT_SAY { 
+	plugin::soulbinder_say($text);
 }

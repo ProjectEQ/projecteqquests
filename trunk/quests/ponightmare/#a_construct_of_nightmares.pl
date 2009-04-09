@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
-
-quest::signalwith(204016,8,1);
+sub EVENT_DEATH {
+
+quest::signalwith(204016,8,1);
 }

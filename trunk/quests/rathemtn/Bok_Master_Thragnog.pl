@@ -1,3 +1,3 @@
-sub EVENT_ITEM {
-plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+sub EVENT_ITEM {
+plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
 }

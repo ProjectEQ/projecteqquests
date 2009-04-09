@@ -1,5 +1,5 @@
-sub EVENT_SAY {
- if($text=~/hail/i){
+sub EVENT_SAY {
+ if($text=~/hail/i){
   quest::say("Hail to yourself fool. Leave me be. I have [matters of importance] to ponder.");
  }
  elsif($text=~/matters of importance/i){
@@ -11,7 +11,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
- #Handin: 1x Rotting Femur (7107)
+ #Handin: 1x Rotting Femur (7107)
  if(plugin::check_handin(\%itemcount, 7107 => 1)){
   quest::say("Ah! You found him and obviously removed his presence from the yard. You have my thanks, small as it is for such a menial task. Here. Keep this worthless bit of bone for your labors.");
   quest::summonitem('7106'); #Noclin's Femur (7106)
@@ -22,10 +22,10 @@ sub EVENT_ITEM {
   quest::faction(60,-1);  # -Crimson Hands
   quest::exp(5);  
  }
- else {
-  quest::say("I have no need for this item $name, you can have it back.");
-  plugin::return_items(\%itemcount);
- }
+ else {
+  quest::say("I have no need for this item $name, you can have it back.");
+  plugin::return_items(\%itemcount);
+ }
 }
 
 

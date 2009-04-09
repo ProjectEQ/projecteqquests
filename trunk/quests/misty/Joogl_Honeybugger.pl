@@ -1,0 +1,38 @@
+sub EVENT_SAY {
+  if($text=~/hail/i){
+   quest::say("Hello. I would shake your hand, but it would [hurt]. Ooooh! Owwy!");
+  }
+  if($text=~/hurt/i){
+    #Bandages for Honeybugger (START)
+    quest::say("I was attacked by the bixies. They swarmed on me!! I think I got too near their queen. I need that honey to make a living! Get me a bandage and I will tell you where all their worker bee's buzz around.");
+  }
+}
+
+sub EVENT_ITEM {
+  my $bandage = 0;
+  #Handin: Bandage
+  if(plugin::check_handin(\%itemcount, 13009 => 4)){ $bandage=4;
+  } elsif(plugin::check_handin(\%itemcount, 13009 => 3)){ $bandage=3;
+  } elsif(plugin::check_handin(\%itemcount, 13009 => 2)){ $bandage=2;
+  } elsif(plugin::check_handin(\%itemcount, 13009 => 1)){ $bandage=1;
+  }
+  if($bandage>=1){
+    for($i=0; $i<$bandage; $i++){ 
+      #Bandages for Honeybugger (END) 
+      quest::say("Oh thank you, $name. If you are ever going to gather bixie honeycomb's pray you do not run into the queen. The only way I know of collecting the honey is by intercepting the drone's and taking the honeycomb's they sometime's carry. Good luck!!");
+      quest::ding();
+      quest::exp(10);
+      quest::faction(77,10);   # +Deeppockets
+      quest::faction(133,10);  # +Guardians of the Vale
+      quest::faction(208,10);  # +Mayor Gubbin
+      quest::faction(218,10);  # +Merchants of Rivervale
+      quest::faction(369,-10); # -Coalition of Trade Folk III
+     }
+}
+  quest::say("I have no need for this item, $name. You can have it back.");
+  plugin::return_items(\%itemcount);
+}
+
+
+#EOF
+

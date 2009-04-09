@@ -1,5 +1,5 @@
-sub EVENT_SPAWN {
-
-$mob->SetHP(52500);
-
+sub EVENT_SPAWN {
+
+$mob->SetHP(52500);
+
 }

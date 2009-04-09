@@ -1,3 +1,3 @@
-sub EVENT_DEATH {
-    quest::signal(222023);
+sub EVENT_DEATH {
+    quest::signal(222023);
 }

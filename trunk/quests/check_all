@@ -1,0 +1,9 @@
+#!/bin/sh
+
+find . -name "*.pl" \
+| while read s
+do
+	if ! perl -c "$s" 2>/dev/null; then
+		echo "$s is invalid."
+	fi
+done

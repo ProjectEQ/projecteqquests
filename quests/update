@@ -1,0 +1,5 @@
+#!/bin/sh
+
+svn update
+chmod 777 */
+chmod 777 */*.pl

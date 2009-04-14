@@ -4,7 +4,7 @@
 sub EVENT_WAYPOINT {
 	my $x = $npc->GetX();
 	my $y = $npc->GetY();
-		if(($y = 432) && ($x = -298)) {
+		if($x = 432 && $y = -298) {
 			quest::castspell(154155,6974);
 			quest::depop()
 		}

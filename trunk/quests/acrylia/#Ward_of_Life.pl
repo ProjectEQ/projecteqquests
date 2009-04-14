@@ -37,6 +37,7 @@ sub EVENT_TIMER {
 		quest::signalwith(154130,5,10);
 		quest::depop();
 }
+}
 
 sub EVENT_DEATH {
 	quest::stoptimer(9);

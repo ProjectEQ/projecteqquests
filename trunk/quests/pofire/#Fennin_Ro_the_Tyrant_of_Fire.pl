@@ -111,7 +111,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
             }
 
 #phase 3
-        if ($timer == 1 && $start_event == 2 && $named_up == 0){
+        elsif ($timer == 1 && $start_event == 2 && $named_up == 0){
                 quest::spawn2(217083,0,0,-1459.5,-1150,-197.2,127.6);
                 quest::spawn2(217084,0,0,-1545.1,-1147.5,-197.2,130.6);
                 quest::spawn2(217082,0,0,-1432.1,-902.2,-185.8,134.80);
@@ -120,7 +120,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
             }
             
 #final phase
-	if ($timer == 1 && $start_event == 3 && $named_up == 0) {
+	elsif ($timer == 1 && $start_event == 3 && $named_up == 0) {
 		quest::stoptimer(1);
 		quest::stoptimer(2);
                 quest::spawn2(217053,0,0,-1364,-1533,-190.8,1832);

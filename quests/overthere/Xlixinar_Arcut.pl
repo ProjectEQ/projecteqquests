@@ -13,6 +13,7 @@ if ($text=~/helm/i) {
 }
 if ($text=~/vambraces/i) {
   quest::say("Our arms carry more than the weapons of war and the hands that make use of them. We sacrifice the strength in our arms to carry our duties and obligations. Unless we can sacrifice our own bodies and abilities to carry these ideals, we will never be fit to protect the Chosen. Take this note to the master of the mystics in Cabilis, he will teach you a lesson in sacrifice.");
+ }
 }
 
 sub EVENT_ITEM {

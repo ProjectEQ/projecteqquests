@@ -6,7 +6,7 @@ sub EVENT_SAY {
 }
 }
 sub EVENT_ITEM {
-  if($platinum >= 1000)) {
+  if($platinum >= 1000) {
   quest::summonitem(57704);
   quest::say("When you have all the pieces you need, you must find the great shaman who seeks greater knowledge of the spirit world. You will need his guidance with this task.");
 }

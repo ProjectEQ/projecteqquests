@@ -5,7 +5,8 @@ sub EVENT_SPAWN {
   my $x = $npc->GetX();
   my $y = $npc->GetY();
   my $range = 200;
-  quest::set_proximity($x - $range, $x + $range, $y - $range, $y + $range);
+  my $range2 = 88;
+  quest::set_proximity($x - $range, $x + $range, $y - $range2, $y + $range);
 }
 
 sub EVENT_ENTER {
@@ -33,4 +34,3 @@ sub EVENT_DEATH {
 }
 
 # EOF zone: permafrost ID: 73057 NPC: Lady_Vox
-

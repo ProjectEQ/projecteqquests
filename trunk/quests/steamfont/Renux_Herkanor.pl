@@ -11,7 +11,7 @@ sub EVENT_DEATH {
 
 
 
-#END of FILE  Quest by: Solid11  Zone:steamfont  ID:5088 -- Renux_Herkanor
+#END of FILE  Quest by: Solid11  Zone:steamfont  ID:56172 -- Renux_Herkanor
 
 
 

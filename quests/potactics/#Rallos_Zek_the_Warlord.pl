@@ -1,3 +1,6 @@
+my $mob1;
+my $mobnpc1;
+
 sub EVENT_SPAWN {
 	quest::settimer(2,7200);	# 2 hours to kill him
         quest::settimer(5,2410);
@@ -57,7 +60,7 @@ sub EVENT_SPAWN {
         }
 
 sub EVENT_AGGRO {
-        quest::settimer(1,90);
+        quest::settimer(1,60);
         quest::signalwith(214112, 214113);
 }
 
@@ -67,18 +70,16 @@ sub EVENT_DEATH {
         quest::stoptimer(2);
         quest::stoptimer(1);
         quest::stoptimer(5);
-        quest::depopall(214114);
-        quest::setglobal("pop_rallos_respawn_flag", 1, 5, "D3"); # 3 day respawn flag to survive reboots
+        quest::setglobal("pop_rallos_respawn_flag", 1, 5, "D5"); # 5 day respawn flag to survive reboots
 }
 
 sub EVENT_TIMER {
-
 if($timer == 2) {
         quest::stoptimer(2);
         quest::stoptimer(1);
         quest::stoptimer(5);
-	quest::depop;
         quest::depopall(214114);
+	quest::depop;
     }
 
 if($timer == 1) {
@@ -86,6 +87,9 @@ if($timer == 1) {
         quest::spawn2(214114,0,0,815,-100,-293,255);
         quest::spawn2(214114,0,0,815,-295,-293,68);
         quest::spawn2(214114,0,0,565,185,-293,0);
+        $mob1 = $entity_list->GetMobID(214114);
+        $mobnpc1 = $mob1->CastToNPC();
+        $mobnpc1->AddToHateList($npc->GetHateTop());
      }
 
 if($timer == 5) {

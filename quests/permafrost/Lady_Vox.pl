@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel >= 53) && ($status == 0)) {
+  if (($ulevel >= 53) && ($status < 80)) {
     quest::echo("I will not fight you, but I will banish you!");
     quest::movepc(30,-7024,2020,-60.7);
   }

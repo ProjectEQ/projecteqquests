@@ -17,9 +17,14 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i)
        {
-       quest::say("She lied! She said she would release me if I found my way through the maze! Please, you must defeat her. It is the only way I will ever be free..");
+       quest::say("She lied! She said she would release me if I found my way through the maze! Please, you must defeat her. It is the only way I will ever be free. I can help you escape this maze if you would like to [return]");
        $client->Message(4,"You receive a character flag!");
        quest::setglobal("pop_pon_construct", 1, 5, "F");
+       }
+
+if($text=~/return/i)
+       {
+       quest::movepc(-1520,1104,125,4);
        }
 {
 $pop_pon_hedge_jezith=undef;

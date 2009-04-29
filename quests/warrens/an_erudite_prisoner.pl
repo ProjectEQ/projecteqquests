@@ -1,3 +1,4 @@
+###############################
 #Zone: The Warrens
 #Short Name: warrens
 #Zone ID: 101
@@ -5,7 +6,8 @@
 #NPC Name: an erudite prisoner
 #NPC ID: 101068
 #Quest Status: completed
-#
+#Modified by: Realityincarnate
+###############################
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -15,8 +17,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 6923 == 1)) {
-    quest::say("I say we round up the Furballs AND the Dog Faces and let them kill each other off! Then we can easily finish off the survivors! I thank you for freeing me from my dog face captors!!");
+  if (plugin::check_handin(\%itemcount, 6923 => 1)) {
+    quest::say("I say we round up the Furballs AND the Dog Faces and let them kill each other off! Then we can easily finish off the survivors!");
     quest::exp(300);
     quest::depop();
   }
@@ -26,4 +28,3 @@ sub EVENT_ITEM {
 }
 
 #END of FILE Zone: warrens ID:101068 -- an_erudite_prisoner
-

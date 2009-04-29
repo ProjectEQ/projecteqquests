@@ -1,3 +1,4 @@
+###############################
 #Zone: The Warrens
 #Short Name: warrens
 #Zone ID: 101
@@ -5,7 +6,8 @@
 #NPC Name: a captured erudite
 #NPC ID: 101064
 #Quest Status: completed
-#
+#Modified by: Realityincarnate
+###############################
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -15,8 +17,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 6923 == 1)) {
-    quest::say("I thank you for freeing me from my dog face captors.");
+  if (plugin::check_handin(\%itemcount, 6923 => 1)) {
+    quest::say("I thank you for freeing me from my dog faced captors.");
     quest::depop();
     quest::exp(300);
   }
@@ -24,6 +26,3 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
-#END of FILE Zone: warrens ID:101064 -- a_captured_erudite
-

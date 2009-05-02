@@ -6,8 +6,13 @@ sub EVENT_SPAWN {
 } 
 
 sub EVENT_TIMER { 
-  quest::stoptimer("TarlangDepop"); 
+  quest::stoptimer("TarlangDepop");
+  quest::stoptimer(TarlangDepop); 
   quest::depop(); 
 } 
+
+sub EVENT_DEATH {
+  quest::stoptimer(TarlangDepop);
+}
 
 #EndFile: causeway\#Tarlang.pl (00000)

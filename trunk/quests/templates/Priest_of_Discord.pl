@@ -24,5 +24,3 @@ sub EVENT_ITEM {
 	quest::pvp("on");
  }
 }
-
-

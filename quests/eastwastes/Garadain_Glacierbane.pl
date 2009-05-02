@@ -1,3 +1,11 @@
+sub EVENT_SPAWN {
+my $walk1=undef;
+my $walk2=0;
+my $walk3=0;
+my $walk4=0;
+my $walk5=0;
+}
+
 sub EVENT_SAY {
 
 ###########################
@@ -101,7 +109,7 @@ sub EVENT_ITEM {
 #  Ring 1 Reward          #
 ###########################
 
-  if ($itemcount{30135} == 1) {
+  if (plugin::check_handin(\%itemcount, 30135 => 1)) {
     quest::say("Ahh, that'll do fine. Take this, it is but a trinket for now, but continue to serve the Coldain and it will grow in power. I must get some rest now, for I have been told my [nephew] has disappeared again and I will need to track him down tomorrow.");
     quest::summonitem(30131);
 
@@ -118,7 +126,7 @@ sub EVENT_ITEM {
 #  Ring 2 Reward          #
 ###########################
 
-  if (($itemcount{30267} == 1) && ($itemcount{30131} == 1)) {
+  elsif (plugin::check_handin(\%itemcount,30267 => 1, 30131 => 1)) {
     quest::say("Well done friend! My nephew is safe at home and his thirst for adventure is quenched for now. The beast will claim no more of our people. I couldn't have handled it better myself. Now I can get back to the business of [hunting].");
     quest::summonitem(30133);
 
@@ -135,7 +143,7 @@ sub EVENT_ITEM {
 #  Ring 3 Reward          #
 ###########################
 
-  if (($itemcount{30133} == 1) && ($itemcount{30137} == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 30133 => 1, 30137 => 1)) {
     quest::say("Hrmm, not quite the work of a Coldain. Barely functional, in fact. I'll be needing to touch this up a bit. Fetch me a Coldain [smithing hammer] and I'll be sure to tell my associates in Thurgadin of your deeds.");
     quest::summonitem(30132);
 
@@ -152,7 +160,7 @@ sub EVENT_ITEM {
 #  Ring 4 Reward          #
 ###########################
 
-  if (($itemcount{30140} == 1) && ($itemcount{30132} == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 30140 => 1, 30132 => 1)) {
     quest::say("Ahh, there we go now, that's more like it. It would be time to return to the hunt were it not for the [plans] our spies have discovered.");
     quest::summonitem(30134);
 
@@ -169,7 +177,7 @@ sub EVENT_ITEM {
 #  Ring 5 Reward          #
 ###########################
 
-  if (($itemcount{30141} == 1) && ($itemcount{30134} == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 30141 => 1, 30134 => 1)) {
     quest::say("Without your assistance, we would have lost our camp and our lives. Again, I thank you. Now that you have proven your loyalty to the throne I have a special [favor] to ask of you.");
     quest::summonitem(30268);
 
@@ -186,7 +194,7 @@ sub EVENT_ITEM {
 #  Ring 6 Reward          #
 ###########################
 
-  if (($itemcount{1045} == 1) && ($itemcount{18084} == 1) && ($itemcount{30268} == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 1045 => 1, 18084 => 1, 30268 => 1)) {
     quest::emote("lowers his head and mutters, 'At least there will be some closure for their families, thanks to you. The Ry`gorr will pay for this with their lives! I will ask you to help us in the invasion of Ry`gorr keep, but first I have a delicate [mission] I was hoping you'd handle.");
     quest::summonitem(30162);
 
@@ -203,7 +211,7 @@ sub EVENT_ITEM {
 #  Ring 7 Reward          #
 ###########################
 
-  if ($itemcount{1047} == 1) {
+  elsif (plugin::check_handin(\%itemcount, 1047 => 1)) {
     quest::say("Thank you, $name, your service to our people has been most helpful. The time has come for our people to make war with the Ry`gorr. They must pay for their transgressions against our people. We are just waiting on you. Prepare yourself for glorious battle and tell me when you are [ready].");
     quest::summonitem(30163);
 
@@ -220,7 +228,7 @@ sub EVENT_ITEM {
 #  Ring 8 Quest/Reward    #
 ###########################
 
-  if ($itemcount{30163} == 1) {
+  elsif (plugin::check_handin(\%itemcount, 30163 => 1)) {
     quest::say("Give this to Gloradin and return to me immediately, it is time. May Brell be with us!");
     quest::summonitem(1093);
 
@@ -233,11 +241,9 @@ sub EVENT_ITEM {
     quest::exp(120000);
   }
 
-# Ring 8 reward moved to #Garadain_Glacierbane to emulate Live's timing of head #turn-in
+# Ring 8 reward moved to #Garadain_Glacierbane to emulate Live's timing of head turn-in
 #  if ($itemcount{1092} == 1) {
-#    quest::say("Good work friend! The Dain will hear of this right away. We #couldn't have defeated the Ry'gorr without your 
-#help. Take this ring as proof that you have served the Coldain well. You may #wish to show it to the Seneschal should you 
-#ever stop in our fine city. Farewell, $name, it has been my pleasure knowing #you.");
+#    quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your #help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you #ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
 #    quest::summonitem(30164);
 #
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
@@ -248,7 +254,53 @@ sub EVENT_ITEM {
 #
 #    quest::exp(2000000);
 #  }
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }
 
-# Quest by mystic414
+sub EVENT_WAYPOINT {
+  if ($walk1 == undef) {
+    $walk1=$walk1+1;
+    $walk2=undef;
+    quest::settimer(11,20);
+  }
+  elsif ($walk2 == undef) {
+    $walk2=$walk2+1;
+    $walk3=undef;
+  }
+  elsif ($walk3 == undef) {
+    quest::pause(200);
+    quest::settimer(12,10);
+    $walk3=$walk+1;
+    $walk4=undef;
+  }
+  elsif ($walk4 == undef) {
+    $walk4=$walk4+1;
+    $walk5 = undef
+  }
+  elsif ($walk5 == undef) {
+    quest::spawn2(116576,237,0,521.2,-3140,195.6,130.5);
+    quest::depop();
+  }
+}
 
+sub EVENT_TIMER {
+  if($timer == 11) {
+    quest::stoptimer(11);
+    quest::say("Follow me closely, friend, time is of the essence. I will describe our situation as we walk.");
+  }
+  elsif($timer == 12) {
+    quest::stoptimer(12);
+    quest::say("The Dain's own royal troops will be at our disposal for the battle. This is good news, they are hardened, experienced soldiers. The bad news is that our sources indicate that the Ry`gorr have been alerted to our presence and will be ready for an attack. This is most unfortunate... They will not go down without a fierce fight.");
+    quest::settimer(3,120);
+  }
+  elsif($timer == 3) {
+    quest::stoptimer(3);
+    quest::say("It is of utmost importance that you stay with me throughout the fight. Your focus must be on killing Chief Rygorr and keeping me alive, mind that you do not become distracted. If I fall the Dain's men will retreat and you'll definitely be cut down.");
+  }
+}
+
+
+# Quest by mystic414
+#ring 8 by JanusD

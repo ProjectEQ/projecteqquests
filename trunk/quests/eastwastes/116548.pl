@@ -6,6 +6,6 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
   if ($timer == 91) {
-    quest::depop();
+    quest::depopall(116548);
   }
 }

@@ -29,6 +29,6 @@ sub EVENT_WAYPOINT {
 
 sub EVENT_TIMER {
   if($timer == 9) {
-    quest::depop();
+    quest::depopall(116555);
   }
 }

@@ -67,9 +67,11 @@ sub EVENT_TIMER {
     quest::settimer(37,65);
   }
   elsif($timer == 37) {
+    quest::stoptimer(37);
     quest::pause(580);
   }
   elsif($timer == 27) {
+    quest::stoptimer(27);
     quest::depop();
   }
 }

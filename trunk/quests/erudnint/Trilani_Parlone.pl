@@ -33,6 +33,19 @@ quest::summonitem(1599); # Powder of Unanimation
 
 
 }
+
+  if(plugin::check_handin(\%itemcount, 1056 => 1)) { #Faded Cloak
+    quest::say("This looks like that cloak Tolkar used to wear?! Where did you get this? He gave it to you? You rescued Linara! Oh my heaven's thank you! Here I will restore the cloaks original power. There you are just like new, may it serve you as well as it did my husband!");
+    quest::summonitem(1057); #Mystic Cloak
+    quest::faction(99,10);
+    quest::faction(170,10);
+    quest::faction(178,10);
+    quest::faction(322,-30);
+  }
+  else {
+    quest::say("I have no need for this, $name.");
+    plugin::return_items(\%itemcount);
+  }
 }
 #END of FILE Zone:erudnint  ID:23020 -- Trilani_Parlone.pl 
 

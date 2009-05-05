@@ -1,10 +1,10 @@
 sub EVENT_SPAWN {
-     if ($corinav_start == 1) {
-        $corinav_start == undef; # We're started. Change variable to undef.
+     if ($coirnav_start == 1) {
+        $coirnav_start == undef; # We're started. Change variable to undef.
 
 		quest::settimer(1,840); # 14 Minute timer for the event!!
 
-		quest::spawn2(216048,0,0,$x+1,$y+1,$z,$h); # Spawn untargettable Corinav, Avatar of Water
+		quest::spawn2(216048,0,0,$x+1,$y+1,$z,$h); # Spawn untargettable Coirnav, Avatar of Water
 
 		quest::spawn2(216071,0,0,$x+15,$y,$z,$h); # Trash type 1
 
@@ -66,7 +66,7 @@ sub EVENT_SIGNAL {
 
 	if ($signal == 1 && $coirnav_done == undef) {
 
-        quest::setglobal(corinav_start, 1 ,"H2"); # Set global for event start, so when depopzone hits, the event knows to continue.
+        quest::setglobal(coirnav_start, 1 ,"H2"); # Set global for event start, so when depopzone hits, the event knows to continue.
 
         quest::depopzone(1);  # Depop everything, reset timers
 

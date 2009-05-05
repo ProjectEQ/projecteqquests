@@ -14,6 +14,7 @@ sub EVENT_ITEM {
     quest::faction(188,-30);
     quest::faction(189,-30);
     quest::exp(2000000);
+    quest::depop();
   }
 }
 

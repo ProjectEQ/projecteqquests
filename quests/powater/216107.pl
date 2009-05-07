@@ -267,7 +267,7 @@ sub EVENT_SIGNAL {
 
 		quest::delglobal(coirnav_done);
 
-		quest::setglobal(coirnav_done, 3, "D5"); # You can't attempt this again for 5 days
+		quest::setglobal(coirnav_done, 3, "m15"); # You can't attempt this again for 15 minutes test purposes only
 
 	}
 

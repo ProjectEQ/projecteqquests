@@ -5,7 +5,7 @@ sub EVENT_SAY {
   if($text=~/murdrick/i) {
     quest::emote("looks away and stammers, Ehh, ahh, Mur who?");
   }
-  if($text=~/captain berradin/i) {
+  if($text=~/berradin/i) {
     quest::emote("goes even paler than usual, Hmm, Berradin you say? Sorry, but I've never even heard the name.");
   }
 }

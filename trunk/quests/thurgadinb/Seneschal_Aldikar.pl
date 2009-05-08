@@ -1,10 +1,10 @@
 my $x = npc->GetX();
 my $y = npc->GetY();
 my $z = npc->GetZ();
-my $dainring = undefined;
 
 sub EVENT_SPAWN {
   quest::settimer("thurgdaynight",5);
+  my $dainring = undefined;
 }
 
 sub EVENT_SAY{

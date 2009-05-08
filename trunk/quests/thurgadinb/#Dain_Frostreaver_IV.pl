@@ -24,7 +24,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 #Handin for the 9th ring. Needs correct dialogue
-  if(plugin::check_handin(\%itemcount, 1500 => 1) && $faction == 1) {
+  if(plugin::check_handin(\%itemcount, 1500 => 1, 30164 => 1) && ($faction <= 5 || $faction >= 8)) {
     quest::say("%t, you have done a great service to my people. I had not imagined the treachery had run so deeply within our ranks. Here. Take this ring as your reward. From this day forth, you shall be known as the Hero of the Coldain. Take my Dirk as well, and if you wish to further aid us in our cause, then return it to me.");
     quest::summonitem(30369); #9th ring
     quest::summonitem(1465); #dirk of the Dain

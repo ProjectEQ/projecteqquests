@@ -24,7 +24,7 @@ if($text=~/Hail/i)
 
 if($text=~/return/i)
        {
-       quest::movepc(-1520,1104,125,4);
+       quest::movepc(204,-1520,1104,125);
        }
 {
 $pop_pon_hedge_jezith=undef;

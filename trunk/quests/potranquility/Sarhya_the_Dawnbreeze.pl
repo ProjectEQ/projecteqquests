@@ -2,7 +2,7 @@ sub EVENT_SAY {
  if ($text=~/Hail/i){ 
    quest::say("Well met. I am keeper of the Portal to the [Plane of Air].");
  }
-if ($text=~/plane of air /i) {
+if ($text=~/plane of air/i) {
   quest::say("The Elemental Planes are not for idle exploration. Return to me when you have a reason to enter and I will consider opening the portal for you.")
  }
  elsif ($text=~/ plane of air /i && ($pop_tactics_ralloz == 1)) {

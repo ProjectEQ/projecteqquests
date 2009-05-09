@@ -51,15 +51,6 @@ sub EVENT_SAY
 		quest::summonitem(60191);
 		quest::summonitem(60191);
 		}
-
-
-	if ($text=~/ready for this challenge/i && $phasetwo == 1)
-		{
-		quest::say("The challange is for ye, and ye alone. If you have anyone try to assist ye, ye will fail. Do not attempt to cheat yerself of yer own development. Ye must seek out Mardic Crimsonsteel and get his guidance. He will prepare ye to fight a mirage of a berserker that has been created through years of refined magic. I cannot tell ye the source of such magic, but ye must know that I used that mirage as me sparring partner, constantly improving me skills against it and advancing. Perhaps now it's yer turn to face it... alone. Take this sealed note to Mardic. It will give him instructions for yer test.");
-		quest::summonitem(60195); #A sealed note for mardic
-		$phasetwo=undef;
-		}
-
 }
 
 

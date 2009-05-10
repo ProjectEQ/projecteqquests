@@ -2,7 +2,7 @@ sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Greetings $name! I am Megosh Thistlethorn first Ranger of the Storm Reapers of Rivervale. I journeyed many years ago to the Surefall Glade far to the west of our lovely shire. It was there I trained with the human and half-elven rangers that like the Storm Reapers are faithful disciples of Karana. I have returned now to Rivervale to teach our interested young people the ways of a ranger of the Storm Lord. so that we may defend our shire and the wilds of Norrath from the [evil forces] that would see it destroyed.");
 }
-if($text=~/what evil forces/i){
+if($text=~/what evil forces/i){  
 quest::say("Currently the Death Fist Clan of Orcs. a race of bloodthirsty humanoids concerned only with expanding their territory and slaughtering all who stand in their path. threatens our homeland. The Orcs have long had a minor presence in the Misty Thicket but lately they have been amassing in greater numbers. The Death Fist has been chopping down our trees and quarrying rock from the nearby mountains. We know only that they have been shipping the materials to the commonlands and stockpiling it for what purpose we do not know. As rangers of the Storm Reapers it is our duty to [stop the desecration] of the thicket.");
 }
 if($text=~/I will stop the desecration/i){
@@ -19,8 +19,16 @@ quest::say("What forge?  Didn't you see it on the way in, young $name?  Oh, and 
 
 
 sub EVENT_ITEM {
-  #do all other handins first with plugin, then let it do disciplines
-  if (plugin::check_handin(\%itemcount, 19622 => 2, 19623 => 2)) {
+ if (plugin::check_handin(\%itemcount, 18432 => 1)) { #Handin the Halfling Ranger note
+    quest::say("Excellent! Welcome to the ranks of the Storm Reapers $name! Here is a Tunic that I give all new Storm Reapers.");
+    quest::summonitem(13509); #recieve the Mud Stainded
+    quest::faction(316,50); #Storm Reapers Faction
+    quest::faction(208,50); #Mayor Gubbin faction
+    quest::faction(218,50); #Merchants of Rivervale faction
+    quest::exp(100);
+    quest::ding();
+} 
+  elsif (plugin::check_handin(\%itemcount, 19622 => 2, 19623 => 2)) { #Handin 2 Orc LumberJack Axes and 2 Orc LumberJack Machetes
    quest::say("Excellent work young Storm Reaper $name. Now take this Dull Storm Reaper Machete to a [forge] and sharpen it with a sharpening stone. It may take several attempts to get the blade to an adequate sharpness if you are unfamiliar with the process. Once it is sharpened give it to Bodbin Gimple with a ruined thorn drakeling scales and he will put the finishing touches on what will be a fine weapon!");
     quest::faction(316,5);
     quest::faction(208,5);

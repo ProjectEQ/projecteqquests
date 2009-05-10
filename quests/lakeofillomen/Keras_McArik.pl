@@ -68,7 +68,7 @@ sub EVENT_ITEM
 	if (plugin::check_handin(\%itemcount, 60192 => 1, 60190 => 1)) #Bloodbeast Tooth
 		{
 		quest::say("Aye, ye have done well, $name. However, that was a simple task and I'm sure ye had much help with it. Now ye must go alone. Ye may want to take some bandages with ye and be sure yer skill with them is top-notch. Ye'll likely need 'em. Here, take some o'mine. Ye may find 'em to be most useful. Do ye believe ye're [ready for this challenge]");
-		quest::summonitem(60193); #McArik-Crafted Bandage
+		quest::summonitem(60193, 3); #McArik-Crafted Bandage
 		quest::summonitem(60194); #Medal of Mirages
 		}
 	elsif(plugin::check_handin(\%itemcount, 60196 => 1, 60194 => 1))

@@ -37,9 +37,9 @@ sub EVENT_HP {
    
   if ($hpevent == 80) {
     quest::setnexthpevent(50);
-    $entid1 = quest::spawn2(126265,0,0,-117.5,946,184,128); # rallos puppet
-    $entid2 = quest::spawn2(126163,0,0,-127.5,946,184,128); # tunare puppet
-    $entid3 = quest::spawn2(126153,0,0,-137,946,184,128); # innoruuk puppet
+    $entid1 = quest::spawn2(126265,0,0,$x+10,$y+10,$z,$h); # rallos puppet
+    $entid2 = quest::spawn2(126163,0,0,$x-10,$y-10,$z,$h); # tunare puppet
+    $entid3 = quest::spawn2(126153,0,0,$x+5,$y+5,$z,$h); # innoruuk puppet
     $mob1 = $entity_list->GetMobID($entid1);
     $mob2 = $entity_list->GetMobID($entid2);
     $mob3 = $entity_list->GetMobID($entid3);
@@ -52,10 +52,10 @@ sub EVENT_HP {
   }
   if ($hpevent == 50) {
     quest::setnexthpevent(20);
-    $entid1 = quest::spawn2(126249,0,0,-167.5,858,179,33.6); # solusek puppet
-    $entid2 = quest::spawn2(126163,0,0,-145,835,179,0); # tunare puppet
-    $entid3 = quest::spawn2(126153,0,0,-110,835,179,0); # innoruuk puppet
-    $entid4 = quest::spawn2(126291,0,0,-84.5,858,179,217.6); # erollisi puppet
+    $entid1 = quest::spawn2(126249,0,0,$x+10,$y+10,$z,$h); # solusek puppet
+    $entid2 = quest::spawn2(126163,0,0,$x-10,$y-10,$z,$h); # tunare puppet
+    $entid3 = quest::spawn2(126153,0,0,$x+5,$y+5,$z,$h); # innoruuk puppet
+    $entid4 = quest::spawn2(126291,0,0,$x-5,$y-5,$z,$h); # erollisi puppet
     $mob1 = $entity_list->GetMobID($entid1);
     $mob2 = $entity_list->GetMobID($entid2);
     $mob3 = $entity_list->GetMobID($entid3);

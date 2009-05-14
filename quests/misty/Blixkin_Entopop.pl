@@ -40,7 +40,7 @@ if($text=~/what beetles/i){
 
 }
 
-if($text=~/can I have a bug collection box/i){
+if($text=~/collection/i){
  
  quest::say("Here you go.  Just follow the instructions on the[list] so you know what to collect and how to prepare the collection for me.");
  

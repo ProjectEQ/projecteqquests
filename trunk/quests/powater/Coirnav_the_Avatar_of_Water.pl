@@ -1,6 +1,17 @@
-#216094 - Real #Corirnav_the_Avatar_of_Water
+#216048 - Fake (But still aggressive) Corirnav_the_Avatar_of_Water
 
 sub EVENT_SIGNAL {
+    if($signal == 8) { #Signal rc'd when trash dies. If all trash is dead, then we can depop nameds and proceed to the last phase
+
+        my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
+        my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend
+        my $check_trash3 = $entity_list->GetMobByNpcTypeID(216060); # - Regura Waterfiend
+
+        if (!defined($check_trash1) && !defined($check_trash2) && !defined($check_trash3)) { #if all trash is down, start event
+            ##quest:say("All trash - or one wave of trash - has been killed"); #DEBUG
+            quest::signalwith(216107,4,0);
+        }
+    }
     if($signal == 1){ #First wave emote
         quest::shout("Those that violate my domain will pay. I call upon the power imbued to me by Povar! Come forth my minions of vapor and destroy these intruders.");
     }
@@ -27,13 +38,5 @@ sub EVENT_SIGNAL {
     if($signal == 7){ #Event kickout emote
         quest::shout("Violaters of this plane be banished from this domain!");
     }
-
-}
-
-
-
-sub EVENT_DEATH {
-
-	quest::signalwith(216107,5,0);
 
 }

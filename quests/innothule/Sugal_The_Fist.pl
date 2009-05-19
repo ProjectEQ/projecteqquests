@@ -1,5 +1,9 @@
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
+  if ($text=~/hail/i && $race ne "FROGLOK") {
+    quest::say("The Fist Strikes!");
+    $npc->CastSpell(905,$userid);
+  }
+  elsif ($text=~/hail/i) {
     quest::say("You're late! Feast of flies, what a weakling you are! We have no time to lose. [No rest] for the strong.");
   }
   if ($text=~/no rest/i) {

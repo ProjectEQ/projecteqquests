@@ -27,7 +27,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 54234 => 1)) { #Gloomingdeep Silk
     quest::say("You have proven most resourceful $name.");
-quest::summonitem(ChooseRandom(54217,54218,54219,54220,54221,54222,54223,54224,54225,54226,54227,54228)); #Random Stitched Burlap item
+quest::summonitem(quest::ChooseRandom(54217,54218,54219,54220,54221,54222,54223,54224,54225,54226,54227,54228)); #Random Stitched Burlap item
   }
 
   else {

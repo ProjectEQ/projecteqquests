@@ -2,8 +2,9 @@
 #quest - Busted Locks, Goblin Treachery
 
 sub EVENT_SAY {
-     if (quest::istaskactivityactive(21,3)){
+     if (quest::istaskactivityactive(21,2)){
       quest::say("I'm glad you got dat over and done with. Now we can focus our attention on da kobolds demselves. Here's an invisibility potion we captured from one of Rookfynn's apprentices. May it keep you safe, fr'en'.");
+         quest::updatetaskactivity(21,2);
    }
    else{
      if ($text=~ /Hail/i){

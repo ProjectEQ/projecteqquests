@@ -1,4 +1,5 @@
-sub EVENT_ENTERZONE {	
+sub EVENT_ENTERZONE {
+
   if(!defined $qglobals{tutbind} && $ulevel == 1) {
     quest::selfcast(2049);
     quest::setglobal("tutbind",1,1,"D30");
@@ -12,6 +13,8 @@ sub EVENT_ENTERZONE {
                                         that we have already covered, feel free to click on the question mark icon on the
                                         <c \"#00A000\">Toolbar</c> located at the top of your screen.
                                       <br ><br>&nbsp;&nbsp;&nbsp;&nbsp;<c \"#F07F00\">Click 'OK' to continue .</c>");
+  quest::assigntask(22);
+  quest::assigntask(23);
   quest::setglobal("tutpop",1,1,"D30");
   }
   if($ulevel > 10 && $status < 80){

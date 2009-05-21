@@ -10,6 +10,7 @@ sub EVENT_SAY {
       if ($text=~ /Hail/i){
          quest::say("Greetings, $name. We're glad you found your way to our camp. We can use all the help we can get!");   
          quest::say("The Gloomingdeep spider tamer is able to brew anti-venom from a rare flower that grows in gloomingdeep. If we had this flower,we may be able to use it to save the lives of our comardes.");
+         quest::updatetaskactivity(23,0);
       }
    }
    quest::taskselector(16, 17, 18);

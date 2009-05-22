@@ -14,7 +14,7 @@ sub EVENT_SAY {
     quest::assigntask(22);
     quest::updatetaskactivity(22,0); 
 }
-  if ($text=~/leave/i) {
+  if ($text=~/leave/i || $text=~/escape/i) {
     quest::say("Here I'll show you how to get out. Come and help us again!");
     quest::movepc(202,-55,44,-158.81);
  }

@@ -17,7 +17,7 @@ sub EVENT_ENTERZONE {
   quest::assigntask(23);
   quest::setglobal("tutpop",1,1,"D30");
   }
-  if($ulevel > 10 && $status < 80){
+  if($ulevel > 15 && $status < 80){
    $client->Message(15,"You are too high in level to be in this zone.");
    quest::selfcast(2433);
 }  

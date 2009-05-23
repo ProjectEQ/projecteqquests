@@ -48,7 +48,7 @@ sub EVENT_ITEM {
   if ($itemcount{30046} == 1) {
     quest::emote("grins widely and slaps you on the arm.");
     quest::say("Har har! You're crazier than I am. And since I know that I must not be that crazy after all. Ahh, I haven't felt this good in ages..' He shuffles the pieces and jots down a few notes here and there. 'There, now it's really finished. Let's get us outta here. Hold this fer me.");
-    quest::echo("As he starts to try and crawl up the hill, a sleek figure darts towards him.");
+    quest::echo(0, "As he starts to try and crawl up the hill, a sleek figure darts towards him.");
     quest::exp(50000);
     quest::summonitem(30047);
     my $entid = quest::spawn2(116008,0,0,1002,6354,-32.09,65); #rabid snow cougar does not exist using regular for now

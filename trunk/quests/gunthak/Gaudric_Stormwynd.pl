@@ -46,7 +46,7 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 59040 => 1)) {#Glowing Zraxthril Amulet
     quest::emote("takes the amulet from your hands and holds it in front of his eyes. He begins to speak arcane words into the stone, holding his other hand under the amulet. The amulet begins to spasm around crazily on its cord as if some creature was trying to escape from it. Sweat begins to bead up at Gaudric's brow. Suddenly the amulet explodes with light and Gadric is thrown to the ground. You reach down and carefully pick the amulet from the ground. You notice a large crack across the face. A watery visage begins to rise from the crack and take shape before you. The tempest spriti coalesces into a vaguely humanoid form and motions toward you. He points directly to the amulet in your hands.");
-    quest:summonitem(59041);#Cracked Zraxthril Amulet
+    quest::summonitem(59041);#Cracked Zraxthril Amulet
     &SpawnTempest();
   }
   else {

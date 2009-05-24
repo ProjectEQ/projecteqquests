@@ -11,7 +11,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   if (($ulevel >= 53) && ($status < 80)) {
-    quest::echo("I will not fight you, but I will banish you!");
+    quest::echo(0, "I will not fight you, but I will banish you!");
     quest::movepc(27,-64,262,-93.96,0);
   }
 }
@@ -34,4 +34,3 @@ sub EVENT_DEATH {
 }
 
 # EOF zone: soldungb ID: 32040 NPC: Lord_Nagafen
-

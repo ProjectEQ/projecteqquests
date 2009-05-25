@@ -120,7 +120,7 @@ if($text=~/I am ready to face Lord Mithaniel Marr/i &&  defined $qglobals{pop_po
 
 
 
-   $client->Message(1,"You have impressed me Mortal.  Lord Mithrill Marr shall not be underestimated.");
+   $client->Message(1,"You have impressed me Mortal.  Lord Mithaniel Marr shall not be underestimated.");
 
    $client->Message(2,"You have earned access to the Temple of Marr!");
 

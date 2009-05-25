@@ -42,8 +42,9 @@ if (plugin::check_handin(\%itemcount, 13953 => 3) && $gold == 30) {
  quest::exp(50);
  
 }
- 
- plugin::return_items(\%itemcount);
- quest::say("This is not all!! Kizzie says, three honeycombs and thirty gold coins!!  Oooh!!  They never listen.");
+  else {
+    quest::say("This is not all!! Kizzie says, three honeycombs and thirty gold coins!! Oooh!! They never listen.");
+    plugin::return_items(\%itemcount);
+  }
 }
 #END of FILE Zone:rivervale  ID:19070 -- Kizzie_Mintopp

@@ -72,7 +72,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have spoke to Jezith within the Plane of Tranquility for the Hedge Preflag by saying tormented by nightmares.");
+			$client->Message(12,"You have spoken to Jezith within the Plane of Tranquility for the Hedge Preflag by saying tormented by nightmares.");
 
 
 
@@ -80,7 +80,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT spoke to Jezith within the Plane of Tranquility for the Hedge Preflag by saying tormented by nightmares.");
+		$client->Message(9,"You have NOT spoken to Jezith within the Plane of Tranquility for the Hedge Preflag by saying tormented by nightmares.");
 
 		}
 
@@ -90,7 +90,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have killed the Construct in Nightmare.");
+			$client->Message(12,"You have killed the Construct of Nightmares.");
 
 	
 
@@ -144,7 +144,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have killed the dragon within Plane of Innovation");
+			$client->Message(12,"You have killed the dragon within the Plane of Innovation");
 
 
 
@@ -152,7 +152,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT killed the dragon within Plane of Innovation.");
+		$client->Message(9,"You have NOT killed the dragon within the Plane of Innovation.");
 
 		}
 
@@ -216,7 +216,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Grummus");
+			$client->Message(12,"You have defeated Grummus.");
 
 
 
@@ -270,7 +270,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have showed the Tribunal the mark from the trail you have completed.");
+			$client->Message(12,"You have shown the Tribunal the mark from the trial you have completed.");
 
 
 
@@ -278,7 +278,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT showed the Tribunal the mark from the trials.");
+		$client->Message(9,"You have NOT shown the Tribunal the mark from the trial you have completed.");
 
 		}
 
@@ -414,7 +414,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated the prysmatic dragon, Aerin`Dar within the Plane of Valor.");
+			$client->Message(12,"You have defeated the prismatic dragon, Aerin`Dar, within the Plane of Valor.");
 
 
 
@@ -422,7 +422,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated the prysmatic dragon, Aerin`Dar within the Plane of Valor.");
+		$client->Message(9,"You have NOT defeated the prismatic dragon, Aerin`Dar, within the Plane of Valor.");
 
 		}
 
@@ -432,7 +432,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have completed part one of Askr's task within plane of storms.");
+			$client->Message(12,"You have completed part one of Askr's task within the Plane of Storms.");
 
 
 
@@ -452,7 +452,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have killed the giants within Plane of Storms and completed Askr's task.");
+			$client->Message(12,"You have killed the giants within the Plane of Storms and completed Askr's task.");
 
 
 
@@ -460,7 +460,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT killed the giants within plane of storms to complete Askr's task.");
+		$client->Message(9,"You have NOT killed the giants within the Plane of Storms to complete Askr's task.");
 
 		}
 
@@ -470,7 +470,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have completed the Carpryn cycle within Ruins of Lxanvom.");
+			$client->Message(12,"You have completed the Carprin cycle within Ruins of Lxanvom.");
 
 
 
@@ -724,7 +724,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have killed Ralloz Zek the Warlord.");
+			$client->Message(12,"You have killed Rallos Zek the Warlord.");
 
 
 
@@ -732,7 +732,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT killed Ralloz Zek the Warlord.");
+		$client->Message(9,"You have NOT killed Rallos Zek the Warlord.");
 
 		}
 
@@ -742,7 +742,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have spoken with the grand libraian to receive access to the Elemental Planes.");
+			$client->Message(12,"You have spoken with the grand librarian to receive access to the Elemental Planes.");
 
 
 
@@ -760,7 +760,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Arlyxir within the Tower of Solusk Ro.");
+			$client->Message(12,"You have defeated Arlyxir within the Tower of Solusek Ro.");
 
 
 
@@ -768,7 +768,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Arlyxir within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Arlyxir within the Tower of Solusek Ro.");
 
 		}
 
@@ -778,7 +778,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated The Protector of Dresolik within the Tower of Solusk Ro.");
+			$client->Message(12,"You have defeated The Protector of Dresolik within the Tower of Solusek Ro.");
 
 
 
@@ -786,7 +786,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated The Protector of Dresolik within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated The Protector of Dresolik within the Tower of Solusek Ro.");
 
 		}
 
@@ -798,7 +798,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Jiva within the Tower of Solusk Ro.");
+			$client->Message(12,"You have defeated Jiva within the Tower of Soluesk Ro.");
 
 
 
@@ -806,7 +806,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Jiva within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Jiva within the Tower of Solusek Ro.");
 
 		}
 
@@ -816,7 +816,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Rizlona within the Tower of Solusk Ro.");
+			$client->Message(12,"You have defeated Rizlona within the Tower of Solusek Ro.");
 
 
 
@@ -824,7 +824,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Rizlona within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Rizlona within the Tower of Solusek Ro.");
 
 		}
 
@@ -834,7 +834,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Xuzl within the Tower of Solusk Ro.");
+			$client->Message(12,"You have defeated Xuzl within the Tower of Solusek Ro.");
 
 
 
@@ -842,7 +842,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Xuzl within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Xuzl within the Tower of Solusek Ro.");
 
 		}
 
@@ -852,7 +852,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Soluesk Ro within his own tower.");
+			$client->Message(12,"You have defeated Solusek Ro within his own tower.");
 
 
 
@@ -860,7 +860,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Soluesk Ro within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Solusek Ro within the Tower of Solusek Ro.");
 
 		}
 
@@ -1040,7 +1040,7 @@ if($text=~/Plane of Nightmare/i && (!defined $qglobals{pop_pon_hedge_jezith} || 
 
 
 
-		$client->Message(12,"You have killed the Construct in Nightmare.");
+		$client->Message(12,"You have killed the Construct of Nightmares.");
 
 	
 
@@ -1082,7 +1082,7 @@ if($text=~/Plane of Nightmare/i && defined $qglobals{pop_pon_construct} && defin
 
 
 
-# Plane of INNOvATION ACCESS TO DRUNDER INSTRUCTIONS
+# Plane of INNOVATION ACCESS TO DRUNDER INSTRUCTIONS
 
 
 
@@ -1110,7 +1110,7 @@ if($text=~/Plane of Innovation/i && (!defined $qglobals{pop_poi_dragon} || !defi
 
 
 
-		$client->Message(12,"You have killed the dragon within Plane of Innovation");
+		$client->Message(12,"You have killed the dragon within the Plane of Innovation");
 
 
 
@@ -1118,7 +1118,7 @@ if($text=~/Plane of Innovation/i && (!defined $qglobals{pop_poi_dragon} || !defi
 
 		else {
 
-		$client->Message(9,"You have NOT killed the dragon within Plane of Innovation.");
+		$client->Message(9,"You have NOT killed the dragon within the Plane of Innovation.");
 
 		}
 
@@ -1166,7 +1166,7 @@ if($text=~/Plane of Innovation/i && defined $qglobals{pop_poi_behometh_preflag} 
 
 
 
-		$client->Message(4,"You have haulted production of these evil machines by Killing the Behemoth! Converse with the Planar projection by say [The War Drums Echo]");
+		$client->Message(4,"You have halted production of these evil machines by Killing the Behemoth! Converse with the Planar projection by saying [The War Drums Echo]");
 
 		
 
@@ -1242,7 +1242,7 @@ if($text=~/Plane of Disease/i && (!defined $qglobals{pop_pod_alder_fuirstel} || 
 
 
 
-		$client->Message(12,"You have talked to Elder Fuirstel in the plane of Tranquility.");
+		$client->Message(12,"You have talked to Elder Fuirstel in the Plane of Tranquility.");
 
 
 
@@ -1264,7 +1264,7 @@ if($text=~/Plane of Disease/i && defined $qglobals{pop_pod_alder_fuirstel} && de
 
 
 
-		$client->Message(4,"Congradulations! Converse with the Planar Projection by saying [I will destroy the plaguebringer]");
+		$client->Message(4,"Congratulations! Converse with the Planar Projection by saying [I will destroy the plaguebringer]");
 
 
 
@@ -1328,7 +1328,7 @@ if($text=~/Plane of Justice/i && (!defined $qglobals{pop_poj_mavuin} || !defined
 
 
 
-		$client->Message(12,"You have showed the Tribunal the mark from the trail you have completed.");
+		$client->Message(12,"You have shown the Tribunal the mark from the trial you have completed.");
 
 
 
@@ -1336,7 +1336,7 @@ if($text=~/Plane of Justice/i && (!defined $qglobals{pop_poj_mavuin} || !defined
 
 		else {
 
-		$client->Message(9,"You have NOT showed the Tribunal the mark from the trials.");
+		$client->Message(9,"You have NOT shown the Tribunal the mark from the trial you have completed.");
 
 		}
 
@@ -1354,7 +1354,7 @@ if($text=~/Plane of Justice/i && (!defined $qglobals{pop_poj_mavuin} || !defined
 
 		else {
 
-		$client->Message(9,"You have NOT returned to mavuin to tell him the tribunal will hear his case.");
+		$client->Message(9,"You have NOT returned to Mavuin to tell him the tribunal will hear his case.");
 
 		}
 
@@ -1366,7 +1366,7 @@ if($text=~/Plane of Justice/i && defined $qglobals{pop_poj_mavuin} && defined $q
 
 
 
-		$client->Message(4,"Congratulations! Converse with the Planar Projection by saying [I am familiar with Order] to receive access to plane of valor and storms.");
+		$client->Message(4,"Congratulations! Converse with the Planar Projection by saying [I am familiar with Order] to receive access to Planes of Valor and Storms.");
 
 
 
@@ -1410,7 +1410,7 @@ if($text=~/Plane of Valor/i && (!defined $qglobals{pop_pov_aerin_dar})) {
 
 
 
-		$client->Message(12,"You have defeated the prysmatic dragon, Aerin`Dar within the Plane of Valor.");
+		$client->Message(12,"You have defeated the prismatic dragon, Aerin`Dar, within the Plane of Valor.");
 
 
 
@@ -1418,7 +1418,7 @@ if($text=~/Plane of Valor/i && (!defined $qglobals{pop_pov_aerin_dar})) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated the prysmatic dragon, Aerin`Dar within the Plane of Valor.  Make sure you have completed [Plane of Justice] Trials.");
+		$client->Message(9,"You have NOT defeated the prismatic dragon, Aerin`Dar, within the Plane of Valor.  Make sure you have completed a [Plane of Justice] Trial.");
 
 		}
 
@@ -1430,7 +1430,7 @@ if($text=~/Plane of Valor/i && defined $qglobals{pop_poj_mavuin} && defined $qgl
 
 
 
-		$client->Message(4,"Congradulations! Converse with the Planar Projection by saying [My Valor is Unmatched] to gain access to Halls of Honor");
+		$client->Message(4,"Congratulations! Converse with the Planar Projection by saying [My Valor is Unmatched] to gain access to the Halls of Honor");
 
 
 
@@ -1478,7 +1478,7 @@ if($text=~/Plane of Storms/i && (!defined $qglobals{pop_pos_askr_the_lost} || !d
 
 
 
-		$client->Message(12,"You have completed part one of Askr's task within plane of storms.");
+		$client->Message(12,"You have completed part one of Askr's task within the Plane of Storms.");
 
 
 
@@ -1486,7 +1486,7 @@ if($text=~/Plane of Storms/i && (!defined $qglobals{pop_pos_askr_the_lost} || !d
 
 		else {
 
-		$client->Message(9,"You have NOT completed part one of Askr's task within the Plane of Storms.  Make sure you have completed the [Plane of Justice] Trials.");
+		$client->Message(9,"You have NOT completed part one of Askr's task within the Plane of Storms.  Make sure you have completed a [Plane of Justice] Trial.");
 
 		}
 
@@ -1498,7 +1498,7 @@ if($text=~/Plane of Storms/i && (!defined $qglobals{pop_pos_askr_the_lost} || !d
 
 
 
-		$client->Message(12,"You have killed the giants within Plane of Storms and completed Askr's task.");
+		$client->Message(12,"You have killed the giants within the Plane of Storms and completed Askr's task.");
 
 
 
@@ -1506,7 +1506,7 @@ if($text=~/Plane of Storms/i && (!defined $qglobals{pop_pos_askr_the_lost} || !d
 
 		else {
 
-		$client->Message(9,"You have NOT killed the giants within plane of storms to complete Askr's task. Make sure you have completed the [Plane of Justice] Trials.");
+		$client->Message(9,"You have NOT killed the giants within the Plane of Storms to complete Askr's task. Make sure you have completed a [Plane of Justice] Trial.");
 
 		}
 
@@ -1520,7 +1520,7 @@ if($text=~/Plane of Storms/i && defined $qglobals{pop_poj_mavuin} && defined $qg
 
 
 
-		$client->Message(4,"Congradulations! Converse with the Planar Projection by saying [I will defeat the Storm Lord] to gain access to Bastion of Thunder");
+		$client->Message(4,"Congratulations! Converse with the Planar Projection by saying [I will defeat the Storm Lord] to gain access to the Bastion of Thunder");
 
 
 
@@ -1570,7 +1570,7 @@ if($text=~/Lair of Terris Thule/i && (!defined $qglobals{pop_ponb_terris} || !de
 
 		else {
 
-		$client->Message(9,"You have NOT killed Terris Thule.  Make sure you have completed the events within [Plane of Nightmare].");
+		$client->Message(9,"You have NOT killed Terris Thule.  Make sure you have completed the events within the [Plane of Nightmare].");
 
 		}
 
@@ -1580,7 +1580,7 @@ if($text=~/Lair of Terris Thule/i && (!defined $qglobals{pop_ponb_terris} || !de
 
 
 
-		$client->Message(12,"You have talked to Poxbourne in Plane of Tranquility after defeating Terris Thule.");
+		$client->Message(12,"You have talked to Poxbourne in the Plane of Tranquility after defeating Terris Thule.");
 
 		
 
@@ -1588,7 +1588,7 @@ if($text=~/Lair of Terris Thule/i && (!defined $qglobals{pop_ponb_terris} || !de
 
 		else {
 
-		$client->Message(9,"You have NOT talked to Poxbourne in the Plane of Tranquility after defeateing Terris Thule.  Make sure you have completed the events within [Plane of Nightmare].");
+		$client->Message(9,"You have NOT talked to Poxbourne in the Plane of Tranquility after defeating Terris Thule.  Make sure you have completed the events within the [Plane of Nightmare].");
 
 		}
 
@@ -1602,7 +1602,7 @@ if($text=~/Lair of Terris Thule/i && defined $qglobals{pop_ponb_terris} && defin
 
 
 
-		$client->Message(4,"You have completed a partial flag for Plane of Torment!  Say [access to torment] to see what else is required.");
+		$client->Message(4,"You have completed a partial flag for the Plane of Torment! Say [access to torment] to see what else is required.");
 
 		}	
 
@@ -1648,7 +1648,7 @@ if($text=~/Ruins of Lxanvom/i && (!defined $qglobals{pop_cod_preflag} || !define
 
 
 
-		$client->Message(12,"You have completed the Carpryn cycle within Ruins of Lxanvom.");
+		$client->Message(12,"You have completed the Carprin cycle within the Ruins of Lxanvom.");
 
 
 
@@ -1704,7 +1704,7 @@ if($text=~/Ruins of Lxanvom/i && defined $qglobals{pop_cod_preflag} && defined $
 
 
 
-		$client->Message(4,"You have completed a partial flag for Plane of Torment!  Say [access to Torment] to see what else is required.");
+		$client->Message(4,"You have completed a partial flag for the Plane of Torment!  Say [access to Torment] to see what else is required.");
 
 
 
@@ -1800,7 +1800,7 @@ if($text=~/Plane of Torment/i && (!defined $qglobals{pop_pot_shadyglade} || !def
 
 
 
-		$client->Message(12,"You have killed Saryrn, hailed the planar projection, and then talked to Shadyglade once more. Please make sure you have completed events within [Plane of Nightmare] [Plane of Disease] [Halls of Honor] [Lair of Terris Thule] [Ruins of Lxanvom] [Plane of Storms] to advance to the Temple of Marr");
+		$client->Message(12,"You have killed Saryrn, hailed the planar projection, and then talked to Shadyglade once more. Please make sure you have completed events within [Plane of Nightmare] [Plane of Disease] [Halls of Honor] [Lair of Terris Thule] [Ruins of Lxanvom] [Plane of Storms] to advance to the Temple of Marr.");
 
 
 
@@ -1808,7 +1808,7 @@ if($text=~/Plane of Torment/i && (!defined $qglobals{pop_pot_shadyglade} || !def
 
 		else {
 
-		$client->Message(9,"You have NOT talked to Shadyglade after killing Saryrn. Please make sure you have completed events within [Plane of Nightmare] [Plane of Disease] [Halls of Honor] [Lair of Terris Thule] [Ruins of Lxanvom] [Plane of Storms] to advance to the Temple of Marr");
+		$client->Message(9,"You have NOT talked to Shadyglade after killing Saryrn. Please make sure you have completed events within [Plane of Nightmare] [Plane of Disease] [Halls of Honor] [Lair of Terris Thule] [Ruins of Lxanvom] [Plane of Storms] to advance to the Temple of Marr.");
 
 		}
 
@@ -1820,7 +1820,7 @@ if($text=~/Plane of Torment/i && defined $qglobals{pop_pot_shadyglade} && define
 
 
 
-		$client->Message(4,"Congradulations ! You have defeated Saryrn!");
+		$client->Message(4,"Congratulations! You have defeated Saryrn!");
 
 
 
@@ -1926,7 +1926,7 @@ if($text=~/Halls of Honor/i && defined $qglobals{pop_hoh_faye} && defined $qglob
 
 
 
-		$client->Message(4,"You have completed all trials ! Converse with the Projection by saying [I am ready to face Lord Mithaniel Marr]");
+		$client->Message(4,"You have completed all trials! Converse with the Projection by saying [I am ready to face Lord Mithaniel Marr]");
 
 
 
@@ -2006,7 +2006,7 @@ if($text=~/Fortress of Zek/i && (!defined $qglobals{pop_tactics_tallon} || !defi
 
 
 
-		$client->Message(12,"You have killed Ralloz Zek the Warlord.");
+		$client->Message(12,"You have killed Rallos Zek the Warlord.");
 
 
 
@@ -2014,7 +2014,7 @@ if($text=~/Fortress of Zek/i && (!defined $qglobals{pop_tactics_tallon} || !defi
 
 		else {
 
-		$client->Message(9,"You have NOT killed Ralloz Zek the Warlord.  Make sure you have completed [Plane of Innovation] flags");
+		$client->Message(9,"You have NOT killed Rallos Zek the Warlord.  Make sure you have completed the [Plane of Innovation] flags");
 
 		}
 
@@ -2026,7 +2026,7 @@ if($text=~/Fortress of Zek/i && defined $qglobals{pop_tactics_tallon} && defined
 
 
 
-		$client->Message(4,"Congradulations! You have proven youself in war, now let us see if you can prove yourself in fire! To gain access to the Tower of Soluesk Ro, converse with the projection and say [No gladiator shall match me]");
+		$client->Message(4,"Congratulations! You have proven yourself in war, now let us see if you can prove yourself in fire! To gain access to the Tower of Solusek Ro, converse with the projection and say [No gladiator shall match me]");
 
 
 
@@ -2070,7 +2070,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 
 
-		$client->Message(12,"You have defeated Arlyxir within the Tower of Solusk Ro.");
+		$client->Message(12,"You have defeated Arlyxir within the Tower of Solusek Ro.");
 
 
 
@@ -2078,7 +2078,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Arlyxir within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Arlyxir within the Tower of Solusek Ro.");
 
 		}
 
@@ -2088,7 +2088,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 
 
-		$client->Message(12,"You have defeated The Protector of Dresolik within the Tower of Solusk Ro.");
+		$client->Message(12,"You have defeated The Protector of Dresolik within the Tower of Solusek Ro.");
 
 
 
@@ -2096,7 +2096,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 		else {
 
-		$client->Message(9,"You have NOT defeated The Protector of Dresolik within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated The Protector of Dresolik within the Tower of Solusek Ro.");
 
 		}
 
@@ -2108,7 +2108,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 
 
-		$client->Message(12,"You have defeated Jiva within the Tower of Solusk Ro.");
+		$client->Message(12,"You have defeated Jiva within the Tower of Solusek Ro.");
 
 
 
@@ -2116,7 +2116,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Jiva within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Jiva within the Tower of Solusek Ro.");
 
 		}
 
@@ -2126,7 +2126,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 
 
-		$client->Message(12,"You have defeated Rizlona within the Tower of Solusk Ro.");
+		$client->Message(12,"You have defeated Rizlona within the Tower of Solusek Ro.");
 
 
 
@@ -2134,7 +2134,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Rizlona within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Rizlona within the Tower of Solusek Ro.");
 
 		}
 
@@ -2144,7 +2144,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 
 
-		$client->Message(12,"You have defeated Xuzl within the Tower of Solusk Ro.");
+		$client->Message(12,"You have defeated Xuzl within the Tower of Solusek Ro.");
 
 
 
@@ -2152,7 +2152,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Xuzl within the Tower of Solusk Ro.");
+		$client->Message(9,"You have NOT defeated Xuzl within the Tower of Solusek Ro.");
 
 		}
 
@@ -2162,7 +2162,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 
 
-		$client->Message(12,"You have defeated Soluesk Ro within his own tower.  Please make sure youve completed events in [Plane of Innovation] and [Drunder, Fortress of Zek].");
+		$client->Message(12,"You have defeated Solusek Ro within his own tower.  Please make sure you've completed events in the [Plane of Innovation] and [Drunder, Fortress of Zek].");
 
 
 
@@ -2170,7 +2170,7 @@ if($text=~/Tower of Solusek Ro/i && (!defined $qglobals{pop_sol_ro_arlyxir} || !
 
 		else {
 
-		$client->Message(9,"You have NOT defeated Soluesk Ro within the Tower of Solusk Ro.  Please make sure youve completed events in [Plane of Innovation] and [Drunder, Fortress of Zek].");
+		$client->Message(9,"You have NOT defeated Solusek Ro within the Tower of Solusek Ro.  Please make sure youve completed events in the [Plane of Innovation] and [Drunder, Fortress of Zek].");
 
 		}
 
@@ -2182,7 +2182,7 @@ if($text=~/Tower of Solusek Ro/i && defined $qglobals{pop_sol_ro_arlyxir} && def
 
 
 
-		$client->Message(4,"Congradulations! You are now able to enter the plane of fire!  Converse with the Projection and tell him [I am a child of fire].");
+		$client->Message(4,"Congratulations! You are now able to enter the Plane of Fire!  Converse with the Projection and tell him [I am a child of fire].");
 
 }
 
@@ -2232,7 +2232,7 @@ if($text=~/Doomfire/i && defined $qglobals{pop_fire_fennin_projection}) {
 
 
 
-		$client->Message(4,"You have defeated Fennin Ro, the Tyrant of Fire! This flag is one quarter of the Plane of Time flag.    The grand librarian gives out the plane of time flag.  However, you are able to continually check your flags through guided meditation, to see what remains.");
+		$client->Message(4,"You have defeated Fennin Ro, the Tyrant of Fire! This flag is one quarter of the Plane of Time flag. The grand librarian gives out the Plane of Time flag. However, you are able to continually check your flags through guided meditation to see what remains.");
 
 
 
@@ -2284,7 +2284,7 @@ if($text=~/Reef of/i && defined $qglobals{pop_water_coirnav_projection}) {
 
 
 
-		$client->Message(4,"You have defeated Fennin Ro, the Tyrant of Fire! This flag is one quarter of the Plane of Time flag.  The grand librarian gives out the plane of time flag.  However, you are able to continually check your flags through guided meditation, to see what remains.");
+		$client->Message(4,"You have defeated Coirnav, the Avatar of Water! This flag is one quarter of the Plane of Time flag. The grand librarian gives out the Plane of Time flag. However, you are able to continually check your flags through guided meditation to see what remains.");
 
 
 
@@ -2302,7 +2302,7 @@ if($text=~/Reef of/i && defined $qglobals{pop_water_coirnav_projection}) {
 
 
 
-#PLANE OF Air INSTRUCTIONS
+#PLANE OF AIR INSTRUCTIONS
 
 
 
@@ -2332,7 +2332,7 @@ if($text=~/Kingdom of wind/i && defined $qglobals{pop_wind_xegony_projection}) {
 
 
 
-		$client->Message(4,"You have defeated Xegony, the Queen of Air! This flag is one quarter of the Plane of Time flag.  The grand librarian gives out the plane of time flag.  However, you are able to continually check your flags through guided meditation, to see what remains.");
+		$client->Message(4,"You have defeated Xegony, the Queen of Air! This flag is one quarter of the Plane of Time flag. The grand librarian gives out the Plane of Time flag. However, you are able to continually check your flags through guided meditation to see what remains.");
 
 
 
@@ -2382,7 +2382,7 @@ if($text=~/Earthen Badlands/i && defined $qglobals{pop_eartha_arbitor_projection
 
 
 
-		$client->Message(4,"You have defeated the Arbitor of Earth ! To receive your plane of earth B flag, converse with the projection and say [I will prove myself by defeating the Rathe Council].");
+		$client->Message(4,"You have defeated the Arbitor of Earth! To receive your Plane of Earth B flag, converse with the projection and say [I will prove myself by defeating the Rathe Council].");
 
 
 
@@ -2432,7 +2432,7 @@ if($text=~/stronghold of twelve/i && defined $qglobals{pop_earthb_rathe}) {
 
 
 
-		$client->Message(4,"You have defeated the Rathe Council.");
+		$client->Message(4,"You have defeated the Rathe Council! This flag is one quarter of the Plane of Time flag. The grand librarian gives out the Plane of Time flag. However, you are able to continually check your flags through guided meditation to see what remains.");
 
 
 
@@ -2484,7 +2484,7 @@ if($text=~/of thunder/i && defined $qglobals{pop_bot_agnarr}) {
 
 
 
-		$client->Message(4,"You have defeated Agnarr, the Storm Lord! This is part of the elemental flag! Once you are finnished with the elemental flag.  Let me know by saying [elemental flag].");
+		$client->Message(4,"You have defeated Agnarr, the Storm Lord! This is part of the elemental flag! Once you are finished with the elemental flag, let me know by saying [elemental flag].");
 
 
 
@@ -2538,7 +2538,7 @@ if($text=~/temple of/i && defined $qglobals{pop_hohb_marr}) {
 
 
 
-		$client->Message(4,"You have defeated Lord Mithaniel Marr!  This is part of the elemental flag! Once you are finnished with the elemental flag.  Let me know by saying [elemental flag].");
+		$client->Message(4,"You have defeated Lord Mithaniel Marr!  This is part of the elemental flag! Once you are finnished with the elemental flag, let me know by saying [elemental flag].");
 
 
 
@@ -2576,7 +2576,7 @@ if($text=~/elemental planes/i && (!defined $qglobals{pop_hohb_marr} && !defined 
 
 
 
-		$client->Message(4,"You first must kill Agnarr and Lord Marr before you may attempt a request for an elemental flag!  The elemental flags in [Plane of Nightmare] [Plane of Disease] [Plane of Justice] [Plane of Valor] [plane of Storms] [Bastion of Thunder] [Plane of Torment] [Lair of Terris Thule] [Halls of Honor] [Ruins of Lxanvom].");
+		$client->Message(4,"You first must kill Agnarr and Lord Marr before you may attempt a request for an elemental flag!  The elemental flags in [Plane of Nightmare] [Plane of Disease] [Plane of Justice] [Plane of Valor] [Plane of Storms] [Bastion of Thunder] [Plane of Torment] [Lair of Terris Thule] [Halls of Honor] [Ruins of Lxanvom].");
 
 
 
@@ -2588,7 +2588,7 @@ if($text=~/elemental planes/i && defined $qglobals{pop_hohb_marr} && defined $qg
 
 
 
-		$client->Message(4,"You have completed the Elemental Flag ! You now will have access to Plane of Water, Plane of Air, and Plane of Earth! Plane of Fire access is given through the killing of Solusk Ro.  If you do not currently have the Plane of Fire flag, please say [unlock memories]... Otherwise, converse with the elemental and say [I am worthy of the Elemental Planes]");
+		$client->Message(4,"You have completed the Elemental Flag! You now will have access to Plane of Water, Plane of Air, and Plane of Earth! Plane of Fire access is given through the killing of Solusek Ro. If you do not currently have the Plane of Fire flag, please say [unlock memories]... Otherwise, converse with the elemental and say [I am worthy of the Elemental Planes]");
 
 			
 
@@ -2628,7 +2628,7 @@ if($text=~/Access to Temple of Marr/i) {
 
 
 
-	$client->Message(4,"To access the Temple of Marr, after you have killed Terris Thule, Saryrn, Bertox the Halls of Honor Trials, and all of the flags before this (further help, say [unlock memories]), or say [I am ready to access the temple of marr].");
+	$client->Message(4,"To access the Temple of Marr, after you have killed Terris Thule, Saryrn, Bertox the Halls of Honor Trials, and all of the flags before this (further help, say [unlock memories]), or say [I am ready to access the Temple of Marr].");
 
 
 
@@ -2640,7 +2640,7 @@ if($text=~/I am ready to access the Temple of Marr/i && defined $qglobals{pop_po
 
 
 
-	$client->Message(4,"You have completed your access to the Temple of Marr! Congradulations! Converse with the projection by saying [I am ready to face Lord Mithrill Marr].");
+	$client->Message(4,"You have completed your access to the Temple of Marr! Congratulations! Converse with the projection by saying [I am ready to face Lord Mithaniel Marr].");
 
 
 
@@ -2692,7 +2692,7 @@ if($text=~/Access to Torment/i && defined $qglobals{pop_pod_alder_fuirstel} && d
 
 
 
-	$client->Message(4,"You have fufilled the requirements for Plane of Torment! Converse with the Projection by saying [I will defeat Saryrn]");
+	$client->Message(4,"You have fufilled the requirements for the Plane of Torment! Converse with the Projection by saying [I will defeat Saryrn]");
 
 			
 

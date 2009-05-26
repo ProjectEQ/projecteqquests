@@ -112,6 +112,24 @@ if (defined $qglobals{shaman_epic} && $qglobals{shaman_epic} == 2) {
     quest::say("Very well. You will need to return to Wunshi for more information. He will be able to lead you to some of what we need if you ask him. Return to me and tell me when your business with Wunshi is finished. I am too tired to continue.");
 }
 }
+if (defined $qglobals{shaman_epic} && $qglobals{shaman_epic} == 3) {
+  if ($text=~/business with Wunshi is finished/i) {
+    quest::say("Is that so? I am both grateful and anxious. My sight into the spirit world grows darker with each hour. You have done well, but I am ever fearful that we are not moving quickly enough. You must use all of your skills for your next task. Return to Kimm McShannel and when you return to me, tell me that you have created the potion. Show her this bangle.");
+    quest::summonitem(57088);
+}
+}
+if (defined $qglobals{shaman_epic} && $qglobals{shaman_epic} == 4) {
+  if ($text=~/i will take part/i) {
+    quest::say("We are still a long way from that, but I feel it is time to [acknowledge] you as a true shaman spirit that has earned the respect of many spirits of the world.");
+}
+}
+
+if (defined $qglobals{shaman_epic} && $qglobals{shaman_epic} == 4) {
+  if ($text=~/acknowledge/i) {
+    quest::say("We, the spirits, have chosen to grant you a gift for all that you've done for us and what you still have left to do. It is just a sampling of the power you may obtain one day as you move forward as one of the heyokah. Guard it and use it well. Should you choose to continue your journey, tell me that you are [prepared to carry on] and save the spirits.");
+   quest::summonitem(57400);
+}
+}
     $qglobals{shaman_pre}=undef;
     $qglobals{shaman_epic}=undef;
     }
@@ -126,4 +144,8 @@ if (plugin::check_handin(\%itemcount, 57083 =>1, 57084 =>1 )) {
    quest::say("This is a start. There is still much to do. While we have gotten the talismans from our allies, there are those that are not our friends -- the wasichu and worse -- who carry or have [stolen] items we need. They will not part with them willingly. This is where your strength and might will be put to the test . . . and your presence of mind. Are you certain you wish to go on?");
 quest::setglobal("shaman_epic",2,5,"F");
   }
+if (plugin::check_handin(\%itemcount, 57614 =>1 )) {
+  quest::say("I will have to pass these along as soon as my messenger gets here. I'm sure you understand that as each spirit loses strength, each of our abilities to keep a form in this tangible world becomes very difficult. We must find a way to sustain a physical presence here or the Ruchu will be in jeopardy. We will ask you to [take part] in the ceremony where our strength may fail us.");
+  quest::setglobal("shaman_epic",4,5,"F");
+}
 }

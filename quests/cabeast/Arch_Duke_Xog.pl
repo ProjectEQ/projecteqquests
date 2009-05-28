@@ -42,20 +42,30 @@ sub EVENT_ITEM {
   quest::faction(62,20);
   quest::faction(193,10);
  }
- if (plugin::check_handin(\%itemcount, 14808 =>1 )) {
+ if (plugin::check_handin(\%itemcount, 14791 =>1 )) {
    quest::emote("takes the note and glances at it briefly then lets out a heavy sigh and stares out over the city for several minutes. Finally he says quietly,");
    quest::say("Several months ago we lost contact with one of our crusaders. His name is, or was, Geanik. The last we heard from him he was furthering our cause against the loathsome Goblins that reside in Warsliks Wood. Just recently we were visited by a [strange Iksar].");
  }
  if (plugin::check_handin(\%itemcount, 14807 =>1, 10034 =>2)) {
    quest::say("Thanks for resolving this issue.  Here is your reward");
-   quest::summonitem(4980);
+   quest::summonitem(14808);
    quest::exp(10000);
    quest::ding();
- }
- else{ 
+  }
+  if (plugin::check_handin(\%itemcount, 14792 =>1 )) {
+    quest::emote("takes the note without even a glance in your direction and begins reading. After a long silence, he lets his arms drop to his sides and says quietly");
+    quest::say("We kill, $name. That is our job, our duty in life. Our targets are chosen for us. We merely listen. Right now I am being told there is a traitor not far from here, near the ocean. Go to him and end his life. Bring me his head, and two star rubies. As you do this, try hard to listen to our Lord's instruction. If you hear even a whisper, you will know more righteousness than most of this city.");
+   }
+   if (plugin::check_handin(\%itemcount, 14806 =>1, 10032 =>2)) {
+     quest::say("Well done");
+     quest::summonitem(14809);
+     quest::ding();
+     quest::exp(10000);
+   }
+
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
  plugin::return_items(\%itemcount);
- }
+
 }
 
 #Submitted by Jim Mills

@@ -20,6 +20,10 @@ sub EVENT_ITEM {
 		quest::faction(257, -30);#Priests of Life
 		quest::faction(258, -30);#Priests of Marr
 	}
+    elsif(plugin::check_handin(\%itemcount, 18756 => 1)) { #Tattered Note
+      quest::say("Ah, welcome young one! Take this, and spread the word of Innoruuk."); #Text made up
+      quest::summonitem(13585); #Crimson Training Tunic*
+    }
 	else {
   	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);

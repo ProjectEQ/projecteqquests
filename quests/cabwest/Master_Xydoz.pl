@@ -36,6 +36,17 @@ sub EVENT_ITEM {
     quest::faction(24,20);
     quest::summonitem(4261);
   }
+  if (plugin::check_handin(\%itemcount, 14793 =>1 )) {
+   quest::emote("snatches the paper from your hand and hisses in anger. Without even looking at the paper he growls");
+  quest::say("WHAT?! What is this tra... He stares down at the paper, mouth hanging open wide in disbelief. He finally continues, saying, Very well, then. If you wish to know confidence I have a task for you. Our hated enemies, the sarnak, have a tome we have sought to return to our libraries for centuries. At this point, we believe it to be found in a small fortress they maintain near the Great Lake. One of their scholars will most likely have it on their person. Bring it to me along with two star rubies.");
+      }
+   if (plugin::check_handin(\%itemcount, 14811 =>1, 10032 =>2 )) {
+     quest::say("Well done");
+     quest::summonitem(14831);
+     quest::ding();
+     quest::exp(10000);
+   }
+   plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:cabwest  ID:3435 -- Master_Xydoz 

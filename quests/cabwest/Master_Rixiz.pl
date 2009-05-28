@@ -25,13 +25,13 @@ sub EVENT_ITEM {
     quest::summonitem(4262);
     quest::givecash(0,0,10,0);
   }
-  if (plugin::check_handin(\%itemcount, 14813 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 14794 =>1 )) {
     quest::emote("takes the note and after reading a few lines opens his eyes wide in astonishment. He looks up at you and stares at you a while before he says,");
     quest::say("You spoke to the Brothers? A common soldier such as yourself interested in silly stories to frighten broodlings? Fine, then. You shall know confidence, if you live. If you have the strength to stride into a lair, go before the owner, and kill that thing in its own home, you will acquire a small part of the virtue we as necromancers must master to ply our art. In the Frontier Mountains lives a unit of the troublesome burynai. Invade their home and destroy their leader. Bring me proof and two fire emeralds.");
   }
   if (plugin::check_handin(\%itemcount, 14810 =>1, 10033 =>2 )) {
-    quest::say("Well done, here are your boots.");
-    quest::summonitem(4983);
+    quest::say("Well done, here is your reference.");
+    quest::summonitem(14813);
     quest::ding();
     quest::exp(10000);
      

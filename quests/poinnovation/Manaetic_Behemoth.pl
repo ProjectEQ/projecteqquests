@@ -2,7 +2,7 @@ my $spawn = 0;
 
 sub EVENT_SPAWN {
 
-	quest::settimer(7,70);
+	quest::settimer(7,120);
 	}
 
 sub EVENT_SIGNAL {
@@ -24,6 +24,6 @@ if($timer == 7 && defined $spawn)
 	{
 	$spawn=undef;
 	quest::stoptimer(7);
-	quest::settimer(7,70);
+	quest::settimer(7,120);
 	}
 }

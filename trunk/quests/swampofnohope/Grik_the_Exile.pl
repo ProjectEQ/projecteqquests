@@ -17,12 +17,15 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 14783 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 14789 =>1 )) {
     quest::emote("snickers to himself and looks out over the swamp for a moment before saying,");
     quest::say("Perseverance is indeed our greatest virtue. Perhaps if we as warriors looked more to cultivate our virtue rather than to hoard glory our people would be rulers of this entire land. I will send you on a [mission] to learn of perseverance. If you complete it I will give you my reference.");
   }
   if (plugin::check_handin(\%itemcount, 10035 =>3, 14819 =>1 )) {
-   quest::summonitem(4977); 
+   quest::summonitem(14783);   #proper item not in db
+   quest::ding();
+   quest::say("Well done");
+   quest::exp(10000);
   }
   plugin::return_items(\%itemcount);
 }

@@ -1,105 +1,90 @@
-############################################
-# ZONE: East Freeport (freporte)
-# DATABASE: PEQ-Velious
-# LAST EDIT DATE: May 1,2005
-# VERSION: 1.0
-# BASE QUEST BY: PEQ Team
-# DEVELOPER: MWMDRAGON
-#
-# *** NPC INFORMATION ***
-#
-# NAME: Zenita_DRin
-# ID: 10113
-# TYPE: Rogue
-# RACE: Dark Elf
-# LEVEL: 10
-#
-# *** ITEMS GIVEN OR TAKEN ***
-#
-# King Card ID-22298
-# Joker Card ID-22295
-# Knight Card ID-22299
-# Innoruuk's Kiss of Death ID-13121
-# A Telescope Lens ID-13279
-#
-# *** QUESTS INVOLVED IN ***
-#
-#1 - Telescope Lenses
-#
-# *** QUESTS AVAILABLE TO ***
-#
-#1 - Wizard
-#
-# *** NPC NOTES ***
-#
-#
-#
-############################################
+#########################################################
+# Zenita DRin (ID:10153)
+# Zone:   Zenita Drin (freporte)
+# Quest:  Telescope Lenses
+# Author: a_sewer_rat
+#########################################################
 
-
-sub EVENT_SAY
-{ 
-
-if($text=~/Hail/i)
-{
-quest::say("Greetings! I would love to chat with you. but I just remembered something.. I do not waste time with whelps.");
-}
-
-if($text=~/lens/i)
-{
-quest::say("If you want the lens then either you will have to [fight] or play a [card game] of chance.");
-}
-
-if($text=~/card game/i)
-{
-quest::say("You bring me a bottle of Innoruuk's Kiss of Death and you can draw a random card from my deck. If you get a King, you can have the lens.");
-}
-
-if($text=~/fight/i)
-{
-quest::say("This should be a joke! But... DIE!!!");
-quest::attack($name);
-}
-
-}
-
-sub EVENT_ITEM
-{
-
-   # Innoruuk's Kiss of Death ID-13121
-   if($itemcount{13121} == 1)
-   {
-   quest::say("Let see what card you pulled.");
-   # King Card ID-22298 - Joker Card ID-22295 - Knight Card ID-22299
-   $random=int(rand 22298+22295+22299);
-   # King Card ID-22298 - Joker Card ID-22295 - Knight Card ID-22299
-   quest::summonitem($random);
+sub EVENT_SAY {
+   if($text=~/Hail/i) {
+      quest::say("Greetings. I would love to chat with you, but I just realized something.. I do not waste time with whelps.");
    }
-   
-   # King Card ID-22298
-   if($itemcount{22298} == 1)
-   {
-   quest::say("As much as I hate to admit it, you won! Take this and be gone before take it back the easy way!");
-   quest::ding();
-   quest::exp(100);
-   # A Telescope Lens ID-13279
-   quest::summonitem("13279");
+   if($text=~/lens/i){
+      quest::say("So you seek the Spare Lens. Yes. I have it. There are only two ways you can obtain it, [fight] the great Zenita or [play a game of chance].");
    }
-   
-   # Joker Card ID-22295
-   if($itemcount{22295} == 1)
-   {
-   quest::say("I see you have drawn the card that best represnts a $race such as yourself. You lose!");
+   if($text=~/play a game of chance/i){
+      quest::say("Great. It is rather simple. I have five cards and only one is King Naythox. Find it. In order to get one card all you need to do is buy me a bottle of Innoruuks Kiss of Death from the barkeep in Chops N Hops. One bottle for one card. Return the King Naythox card to me and you shall get the Spare Lens.");
    }
-   
-   # Knight Card ID-22299
-   if($itemcount{22299} == 1)
-   {
-   quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
+   if($test=~/fight/i){
+      quest::say("Darn!! I was hoping not to hear that word, fight. Oh well.");
+      quest::attack($name);
    }
-   
 }
 
-#END of FILE Zone:freporte  ID:10113 -- Zenita_DRin
+sub EVENT_DEATH {
+   quest::say("You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh.");
+}
 
+#############################################################
+#Handin
+#     13121 : Innoruuk's Kiss of Death (from 13th floor)
+#Reward
+#     22293 : Castle Card (from 13th floor)
+#  or
+#     22294 : Beggar Card (from 13th floor)
+#  or
+#     22295 : Joker Card (from 13th floor)
+#  or
+#     22296 : Wild Card (from 13th floor)
+#  or
+#     22297 : Queen Card (from 13th floor)
+#  or
+#     22298 : King Card (from 13th floor)
+#  or
+#     22299 : Knight Card (from 13th floor)
+#############################################################
+#Handin
+#     22298 : King Card (from 13th floor)
+#Reward
+#     22293 : Telescope Lens [phiz's lens] (from 13th floor)
+#############################################################
 
+sub EVENT_ITEM {
+
+   if(plugin::check_handin(\%itemcount,13121=>1)) {
+      quest::say("Let see what card you pulled.");
+      quest::summonitem(quest::ChooseRandom(22293,22294,22295,22296,22297,22298,22299));
+   }
+   elsif(plugin::check_handin(\%itemcount,22298>=1)) {
+      quest::say("Why I will be.. You got it!! I thought I took it out of the deck. Very well. You win the Spare Lens fair and square. Here you are. Now get out of my sight.");
+      quest::summonitem(13279); # Phiz's lens
+      quest::exp(500);
+   }
+
+#not certain if these responses below are correct, need text from live
+#she says she has 5 cards, but there are 7 cards in the database that are consecutive.. I assumed they are all hers
+
+   elsif(plugin::check_handin(\%itemcount,22299>=1)) {
+      quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
+   }
+   elsif(plugin::check_handin(\%itemcount,22297>=1)) {
+      quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
+   }
+   elsif(plugin::check_handin(\%itemcount,22296>=1)) {
+      quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
+   }
+   elsif(plugin::check_handin(\%itemcount,22295>=1)) {
+      quest::say("I see you have drawn the card that best represnts a $race such as yourself. You lose!");
+   }
+   elsif(plugin::check_handin(\%itemcount,22294>=1)) {
+      quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
+   }
+   elsif(plugin::check_handin(\%itemcount,22293>=1)) {
+      quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
+   } else {
+     plugin::return_items(\%itemcount);
+     quest::say("I don't want that!");
+   }
+}
+
+#END of FILE Zone:freporte  ID:10153 -- Zenita_DRin

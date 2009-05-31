@@ -16,12 +16,12 @@
 #
 # *** ITEMS GIVEN OR TAKEN ***
 #
-# Jar Of Liquid ID- MISSING
-# Jar of Fish ID- MISSING
+# Jar Of Liquid ID- 13861
+# Jar of Fish ID- 13862
 #
 # *** QUESTS INVOLVED IN ***
 #
-#1 - Marr Minnows for Palon (BROKEN - Items Needed)
+#1 - Marr Minnows for Palon 
 #
 # *** QUESTS AVAILABLE TO ***
 #
@@ -54,8 +54,16 @@ sub EVENT_SAY
   if($text=~/get the minnow/i)
   {
   quest::say("'Please try. Here you are. Take this jar. Offer the jar to the minnows. Maybe they will swim into it.");
+  quest::summonitem(13861);
   }
 
+}
+sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 13862 =>1 )) {
+    quest::say("Ah, a wonderful addition to our pond.");
+    quest::ChooseRandom(13002,13007);
+  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:freportw  ID:9072 -- Palon_Deskeb

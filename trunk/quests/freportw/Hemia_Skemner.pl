@@ -58,11 +58,10 @@ if($text=~/Hail/i)
 sub EVENT_ITEM
 {
    # A Locked Book ID-13863
-   if($itemcount{13863} == 1)
-   {
-   quest::say("You have done the world of magic a great justice, $name.");
+   if (plugin::check_handin(\%itemcount, 13863 =>1 )) {
+      quest::say("You have done the world of magic a great justice, $name.");
    quest::ding();
-   quest::givecash ("9","9","9","0");
+   quest::givecash ("9","9","5","0");
 
    # Arcane Scientists Faction
    quest::faction("11","1");
@@ -73,6 +72,7 @@ sub EVENT_ITEM
    # Freeport Militia Faction
    quest::faction("105","-1");
    }
+   plugin::return_items(\%itemcount);
 }
 
 

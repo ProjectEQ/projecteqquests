@@ -11,8 +11,6 @@ sub EVENT_SAY {
 }
   elsif ($text=~/hail/i){
     quest::say("We found the other slaves! Not bad, my friend, not bad. No matter what happens in the mines, you should always be able to find your way back here.");
-    quest::assigntask(22);
-    quest::updatetaskactivity(22,0); 
 }
   if ($text=~/leave/i || $text=~/escape/i) {
     quest::say("Here I'll show you how to get out. Come and help us again!");

@@ -78,14 +78,10 @@ sub EVENT_ITEM {
     quest::ding();
     quest::summonitem(17080); # Gem Encrusted Casket
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
-
  ## # Clumps of Hair ID- 12335 - Lock of Hair ID- 12338 - Tattered Toupee ID- 12337
  
- if (plugin::check_handin(\%itemcount, 12335 => 2,12338 => 1, 12337 =>1 )) {
-     quest::say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guarnteed to lower prices world wide. Guarnteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
+ elsif (plugin::check_handin(\%itemcount, 12335 => 2,12338 => 1, 12337 =>1 )) {
+     quest::say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guaranteed to lower prices world wide. Guaranteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
      quest::summonitem(12254);
      quest::exp("200");
      quest::faction("47","3");
@@ -93,6 +89,9 @@ sub EVENT_ITEM {
      quest::faction("217","3");
      quest::faction("217","3");
  }
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }
 
 #END of FILE Zone:freportw  ID:9133 -- Ping_Fuzzlecutter

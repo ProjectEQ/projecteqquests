@@ -43,7 +43,7 @@ sub EVENT_ITEM {
   if((plugin::check_handin(\%itemcount, 28164 => 1)) ||  (plugin::check_handin(\%itemcount, 28165 => 1)) || (plugin::check_handin(\%itemcount, 28162 => 1)) || (plugin::check_handin(\%itemcount, 28163 => 1))){#Mini-gyro Shields, Silicorrosive Grease, Size 12 Sprockets, Tri-platinum Foil
   	quest::emote("examines the object for a moment and then says, 'This is great! The windmill should function for weeks to come due to your hard work. Feel free to bring me any others that you find. A stockpile of parts never hurt anyone!'");
     &DoRandomGem();
-    quest::exp(100000); #Testing new amount. 25000 was too low.
+    quest::exp(3000000); #7% AA using a 1.0 zone_exp_multiplier
   }
   else {
    quest::say("I don't need this."); #text made up

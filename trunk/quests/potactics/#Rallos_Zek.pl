@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_HP {
-	quest::signalwith(214112, 214052, 0);	# tell trigger mob mini Rallos is dead
+	quest::signalwith(214123, 214052, 0);	# tell trigger mob mini Rallos is dead
 	quest::stoptimer("despawn");
 	quest::depop;
 }

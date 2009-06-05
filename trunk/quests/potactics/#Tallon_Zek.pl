@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 sub EVENT_DEATH {
 	quest::stoptimer("despawn");
 	quest::stoptimer(1);
-	quest::signalwith(214112, 214108, 0);	# Tell trigger that Tallon is dead
+	quest::signalwith(214123, 214108, 0);	# Tell trigger that Tallon is dead
 }
 
 sub EVENT_SIGNAL {

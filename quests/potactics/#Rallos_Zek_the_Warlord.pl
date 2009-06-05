@@ -57,32 +57,31 @@ sub EVENT_SPAWN {
         quest::depopall(214106);
         quest::depopall(214122);
         quest::depopall(214114);
-        }
+    }
 
 sub EVENT_AGGRO {
         quest::settimer(1,60);
-        quest::signalwith(214112, 214113);
 }
 
 
 sub EVENT_DEATH {
 	quest::spawn2(214105,0,0,699,8,-294,64);	# spawn a_planar_projection
-        quest::stoptimer(2);
-        quest::stoptimer(1);
-        quest::stoptimer(5);
-        quest::setglobal("pop_rallos_respawn_flag", 1, 5, "D5"); # 5 day respawn flag to survive reboots
+    quest::stoptimer(2);
+    quest::stoptimer(1);
+    quest::stoptimer(5);
+    quest::signalwith(214112, 214113);			# let the trigger know RZtW died
 }
 
 sub EVENT_TIMER {
-if($timer == 2) {
+	if($timer == 2) {
         quest::stoptimer(2);
         quest::stoptimer(1);
         quest::stoptimer(5);
         quest::depopall(214114);
-	quest::depop;
+		quest::depop;
     }
 
-if($timer == 1) {
+	if($timer == 1) {
         quest::spawn2(214114,0,0,565,-95,-293,66);
         quest::spawn2(214114,0,0,815,-100,-293,255);
         quest::spawn2(214114,0,0,815,-295,-293,68);
@@ -92,7 +91,7 @@ if($timer == 1) {
         $mobnpc1->AddToHateList($npc->GetHateTop());
      }
 
-if($timer == 5) {
+	if($timer == 5) {
         quest::depopall(214000);
         quest::depopall(214001);
         quest::depopall(214002);
@@ -145,7 +144,7 @@ if($timer == 5) {
         quest::depopall(214102);
         quest::depopall(214106);
         quest::depopall(214122);
-        }
+    }
  }
 
 # End of file	Zone: PoTactics	 ID: 214113 -- #Rallos_Zek_the_Warlord

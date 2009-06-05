@@ -1,6 +1,6 @@
 #Spawn Tallon Zek
 sub EVENT_DEATH {
-        quest::signalwith(214112, 214057, 0);
+        quest::signalwith(214123, 214057, 0);
 }
 
 sub EVENT_SIGNAL {
@@ -8,9 +8,11 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_SPAWN {
-        if (defined $qglobals{pop_rallos_respawn_flag}) {
-                quest::depop();
-        }
+    $trigger_up = $entity_list->GetMobByNpcTypeID(214123); 
+	
+	if (!$trigger_up) {
+		quest::depop();
+	}
 }
 
 # End of File  Zone: PoTactics  ID: 214057 -- Decorin_Grunhork

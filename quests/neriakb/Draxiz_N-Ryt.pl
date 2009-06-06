@@ -11,7 +11,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 18957 => 1)){#Leatherfoot Raider Orders
 		quest::say("I see you are more cunning than you appear, $name. These orders to Whoopal bring disturbing news indeed. It seems there is a Leatherfoot spy somewhere in Neriak who has been providing the raiders with information. Find this spy and return his head and your initiate holy symbol of Innoruuk to Ithvol and if he deems you worthy he will promote you within the ranks of the Spires.");
 		#Got this loc from in game, using the description and picture from illia's -Kilelen
-		quest::unique_spawn(41104,0,0,-158.12,-506.42,-3.6);
+		quest::unique_spawn(41104,0,0,-560,-180,-55);
 		quest::faction(322, -30);#The Dead
 		quest::faction(331, 10);#The Spurned
 	}

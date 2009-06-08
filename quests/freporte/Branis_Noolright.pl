@@ -23,7 +23,7 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {
-    quest::say("Hello traveler,Come to hear my tales.");
+    quest::say("Good day to you! Sit and have a drink. I shall be playing soon enough.");
   }
 }
 

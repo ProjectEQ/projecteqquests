@@ -69,7 +69,7 @@ sub EVENT_DEATH {
     quest::stoptimer(2);
     quest::stoptimer(1);
     quest::stoptimer(5);
-    quest::signalwith(214112, 214113);			# let the trigger know RZtW died
+    quest::signalwith(214123, 214113);			# let the trigger know RZtW died
 }
 
 sub EVENT_TIMER {

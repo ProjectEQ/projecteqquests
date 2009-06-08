@@ -244,7 +244,7 @@ $qglobals{pop_pos_askr_the_lost}=undef;
 
 $qglobals{pop_pos_askr_the_lost_final}=undef;
 
-$qglobals{pop_cod_preflag }=undef;
+$qglobals{pop_cod_preflag}=undef;
 
 $qglobals{pop_cod_bertox}=undef;
 
@@ -270,7 +270,7 @@ $qglobals{pop_bot_agnarr}=undef;
 
 $qglobals{pop_bot_karana}=undef;
 
-$qglobals{pop_tactics_tallon }=undef;
+$qglobals{pop_tactics_tallon}=undef;
 
 $qglobals{pop_tactics_vallon}=undef;
 

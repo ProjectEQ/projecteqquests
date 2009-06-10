@@ -22,7 +22,7 @@ sub EVENT_SCALE_CALC
         
         if($ruj_wins > 74)
         {
-                $guk_wins = 74;
+                $ruj_wins = 74;
         }
 
         if($tak_wins > 78)

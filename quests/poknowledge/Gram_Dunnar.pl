@@ -93,7 +93,7 @@ sub EVENT_SAY
 	}
 	elsif($text=~/stories/i && defined $qglobals{pop_story} && $qglobals{pop_story} == 6){	
 		if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} &&  defined $qglobals{pop_tactics_tallon} &&  defined $qglobals{pop_tactics_vallon} &&  defined $qglobals{pop_pot_saryrn_final} &&  defined $qglobals{pop_pot_saryrn} &&  defined $qglobals{pop_hohb_marr} && !defined $qglobals{pop_aa_solrotower}) {
-				$client->Message(4,"Gram Dunnar strokes his beard thoughtfully as you tell him of the Tower of Solusek Ro. 'The burning prince himself. A worthy opponent, I'm sure,' he says. 'Thank you for the tales, Soandso. It's good to imagine these places, even if I may never see them.'");
+				$client->Message(4,"Gram Dunnar strokes his beard thoughtfully as you tell him of the Tower of Solusek Ro. 'The burning prince himself. A worthy opponent, I'm sure,' he says. 'Thank you for the tales, $name. It's good to imagine these places, even if I may never see them.'");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_solrotower", 1, 5, "F");

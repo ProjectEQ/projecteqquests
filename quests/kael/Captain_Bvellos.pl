@@ -6,7 +6,7 @@ sub EVENT_SAY {
     quest::say("Greetings, $name. I am the captain of the Kael militia. I will be watching those of your kind who have come to Kael Drakkel as mercenaries and bounty hunters. You may have come here to serve king Tormax but Kael is my home and I intend to keep it a safe place for the Kromzek. Keep yourself out of trouble or you will end up in a world of pain.");
   }
   if ($text=~/work/i) {
-    quest::say("Are you looking for work, Feninie? I may have a use for one of your kind. I believe that several nobles in this fine city are not all they appear to be. I have suspicions about that filthy Wenglawks. He will do whatever it takes to amass his own wealth. My sources tell me that he may very well be trading with the Coldain, or worse yet, the dragons. If you could find me proof of his underhanded dealings, I would be most pleased.");
+    quest::say("Are you looking for work, $name? I may have a use for one of your kind. I believe that several nobles in this fine city are not all they appear to be. I have suspicions about that filthy Wenglawks. He will do whatever it takes to amass his own wealth. My sources tell me that he may very well be trading with the Coldain, or worse yet, the dragons. If you could find me proof of his underhanded dealings, I would be most pleased.");
   }
   if ($text=~/proof/i) {
     quest::say("The more convincing the proof is, the better. There must be a record of his actions somewhere.");

@@ -1,4 +1,7 @@
 sub EVENT_SAY {
+  if($text=~/hail/i) {
+    quest::say("A healthy young $race you appear to be. The Plague Bringer has not yet blessed you with his greatest of gifts. What can I do for you young one?");
+  }
   if ($text=~/gauntlets/i) {
     quest::say("To assemble scourge warrior gauntlets you will need to obtain two bricks of crude iron and smelt them in a [forge] with a Water Flask and this crude Gauntlet Mold. Once that is done combine the Crude Iron Gauntlets with a Ruined Wolf Pelt and two Gnoll Finger Bones in the Mail Assembly Kit.");
     quest::summonitem(19633);

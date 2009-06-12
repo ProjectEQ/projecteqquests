@@ -40,11 +40,15 @@ sub EVENT_SCALE_CALC {
   $questitem->SetScale($scale/200);
   }
   
-  if($scale > 799 && $scale < 900) {
+  if($scale > 699 && $scale < 800) {
   $questitem->SetScale($scale/180);
   }
   
-  if($scale > 899) {
+  if($scale > 799 && $scale < 900) {
   $questitem->SetScale($scale/170);
+  }
+
+  if($scale > 899) {
+  $questitem->SetScale($scale/160);
   }
 }

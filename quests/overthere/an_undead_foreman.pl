@@ -12,7 +12,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  #Handin: 1x Jade (10023)
- if($faction == 4){
+ if($faction <= 4){
  if(plugin::check_handin(\%itemcount, 10023 => 1)){
  }  else {
       quest::say("I can do nothing with these items, $name.");

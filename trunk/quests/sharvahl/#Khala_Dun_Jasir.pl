@@ -1,9 +1,11 @@
 # Quest for luclin smithing
 
-
 sub EVENT_SAY { 
-  if($text=~/Hail/i){
-    quest::say("Welcome to North Gate side of the Merchant's Corridor."); 
+  if($text=~/hail/i) {
+    quest::say("You there. Have you seen the [poachers] out in the thicket? You best not be one of them!");
+  }
+  if($text=~/poachers/i) {
+    quest::say("There has been an outbreak in the thicket of people hunting wild cats for their hides. Their hides!!! People profiting off of that which was never theirs, bringing pain to any that they may overrun with force. I can think of nothing else that turns my stomach so! A former Khala Dun named Ferin is out there heading up the initial investigation into the despicable actions. My apologies if I seemed a bit gruff, but I am not quite myself when discussing such matters as these.");
   }
 }
 
@@ -22,6 +24,4 @@ sub EVENT_ITEM {
   # return unused items
   plugin::return_items(\%itemcount);
 }
-
 #END of FILE Zone:sharvahl  ID:155294 -- Khala_Dun_Jasir
-

@@ -2,11 +2,12 @@
 #quest - Queen Gloomfang
 #site3op
 
-sub EVENT_SAY{
-  if($text=~/Hail/i){
-    quest::say("Queen Gloomfang spawns dozens of eggs every day. She must be stopped before the Kobolds can train and raise any more spiderlings. Venture into the spider tunnels and kill Queen Gloomfang. She lairs on a ledge high above the other spiders. You will recognize her perch by the thick stench of poison and decay. Once you destroy her, I can use an extract from her chitin to brew you a protective potion.");
- }
-}
+sub EVENT_SAY {
+   if($text=~/Hail/i) {
+      quest::say("Greetings, $name. We're glad you found your way to our camp. We can use all the help we can get!");
+      quest::taskselector(34, 35);
+   }
+} 
 
 sub EVENT_ITEM{
   if($itemcount{14018} == 1){

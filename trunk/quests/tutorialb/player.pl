@@ -22,3 +22,10 @@ sub EVENT_ENTERZONE {
    quest::selfcast(2433);
 }  
  }
+
+sub EVENT_TASK_STAGE_COMPLETE {
+   if ($task_id == 34)
+   {
+      quest::ze(15, "A cheer arises from the slaves as the last of the Kobold overseers fall.");
+   }
+} 

@@ -10,11 +10,9 @@ sub EVENT_SAY {
          quest::emote("smiles as you return. \'Heya, welcome back, frien'. You proving ta be a worthy scout fer our revoltin'. Arias even t'inks you be da one to lead da attack 'ginst da kobold stronghold. We see 'bout dat, tho'. We see...'");
          quest::updatetaskactivity(32,4);
       }
-    }
       else {
-    if($text=~/Hail/i) {
          quest::say("Shhhh.  We just swum up thro' da secret tunnel.  Not even koboldies know it.  Lead 'em back 'ere and we'll bash 'em good.");
-         quest::taskselector(31,32);
+        quest::taskselector(31,32);
       }
    }
 } 

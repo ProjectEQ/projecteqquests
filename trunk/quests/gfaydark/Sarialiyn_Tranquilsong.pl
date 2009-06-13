@@ -46,6 +46,7 @@ quest::say("I am going to ask that you infiltrate Clan Crushbone and find someth
 if($text=~/i will retrieve the lute/i){
 quest::say("Fantastic $name. please return to me when you have found my lute. I also ask that you bring me 2 Orc Jawbones to prove that you are united with us in our war against the vile orcs. I hope to see you soon.");
 }
+ }
 
 sub EVENT_ITEM {
 if($itemcount{22694} == 2 && $itemcount{27540} == 1){
@@ -53,8 +54,9 @@ quest::say("I never though I would see my lute again. I owe you my sincere thank
 quest::summonitem("27533");
 quest::exp(500);
 }
+  else {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
   plugin::return_items(\%itemcount);
 }
-  }
+    }

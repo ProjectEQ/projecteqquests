@@ -2,6 +2,9 @@
 #
 
 sub EVENT_SAY {
+  if($text=~/hail/i) {
+    quest::say("A ring or necklace for yer sweetheart, traveler? It'll be sure ta brighten their day and ye'll not find finer craftmanship this side o' the Gretespeign.");
+  }
   if ($text=~/casing/i) {
     quest::say("Combine two platinum bars, a small piece of velium and the casing pattern in a Jeweler's kit. Take the completed casing and the rune and combine them in the same kit. When this is done all that's left is to tailor the rune to the shawl with the pattern. Take the finished product to Borannin, I'm sure he's eager to speak with you.");
   }

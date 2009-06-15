@@ -17,6 +17,7 @@ sub EVENT_ITEM {
       if (plugin::check_handin(\%itemcount, 54604 => 1)) {
          #Gloomingdeep Violet
          quest::say("Well done, my friend. You have probably saved many lives.");
+         quest::updatetaskactivity(29,1);
          quest::exp(300);
          quest::ding();
       }

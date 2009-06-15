@@ -16,3 +16,10 @@ sub EVENT_SAY {
       }
    }
 } 
+
+sub EVENT_TASKACCEPTED {
+        if($task_id == 31) {
+      quest::summonitem(86011);
+      # Makeshift Lantern Bomb
+   }
+} 

@@ -12,7 +12,7 @@ sub EVENT_SAY {
         #quest::movepc(); #Everfrost Peaks 
       }
       if($text=~/commonlands/i) {
-        #quest::movepc(); #West Commonlands
+        #quest::movepc(); #East Commonlands
       }
       if($text=~/nedaria/i) {
         quest::say("I'm sorry, $name. The Gates of Discord zones are not yet available.");

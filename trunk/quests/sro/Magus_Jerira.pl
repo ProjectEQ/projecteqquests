@@ -1,4 +1,4 @@
-#BeginFile: butcher\Magus_Tira.pl
+#BeginFile: sro\Magus_Jerira.pl
 #
 #
 
@@ -21,8 +21,8 @@ sub EVENT_SAY {
       if($text=~/north ro/i) {
         quest::movepc(34,900,2650,-24,0); #Northern Desert of Ro
       }
-      if($text=~/south ro/i) {
-        quest::movepc(35,1030,-1440,-23,0); #Southern Desert of Ro
+      if($text=~/butcherblock/i) {
+        quest::movepc(68,-2500,-1105,1,0); #Butcherblock Mountains
       }
     }
     else { #PC does not have Adventurer's Stone
@@ -39,4 +39,4 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-#EndFile: butcher\Magus_Tira.pl
+#EndFile: sro\Magus_Jerira.pl

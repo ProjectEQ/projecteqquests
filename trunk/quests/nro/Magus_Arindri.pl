@@ -1,4 +1,4 @@
-#BeginFile: butcher\Magus_Tira.pl
+#BeginFile: nro\Magus_Arindri.pl
 #
 #
 
@@ -6,20 +6,20 @@ sub EVENT_SAY {
   if($ulevel >= 15) {
     if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
-        quest::say("And how are you today, $name?  Ready to do some traveling? Hurry up, then. I have lots of things I need to do today. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Everfrost], [Commonlands], [Nedaria's Landing], [North Ro], or [South Ro]. Hopefully I won't burn my hands this time! Long story, but my cohort, Gaelan Charhands, didn't tell me one of the words of the spell as a joke. Apparently it's funny for a beautiful gnome like myself to get her hands singed. I'll get him back some day!");
-      }
-      if($text=~/everfrost/i) {
-        quest::movepc(30,-5040,1880,-59,0); #Everfrost Peaks 
+        quest::say("You endured the burning heat of the desert to come and use our magic! I'm so excited. We have been getting a lot of customers. We've only lost a few. I sometimes wonder if Vayzl has incorrectly used the spell on purpose to see the odd traveler explode into a spray of magic. I do respect her, but I just don't understand dark elves, I guess. I am far too precise and careful to make any mistakes . . . Well, not a second time. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Butcherblock], [Commonlands], [Everfrost], [Nedaria's Landing], or [South Ro].");
       }
       if($text=~/commonlands/i) {
         quest::movepc(22,-105,-1640,5,0); #East Commonlands
+      }
+      if($text=~/butcherblock/i) {
+        quest::movepc(68,-2500,-1105,1,0); #Butcherblock Mountains
       }
       if($text=~/nedaria/i) {
         quest::say("I'm sorry, $name. The Gates of Discord zones are not yet available.");
         #quest::movepc(); #Nedaria's Landing
       }
-      if($text=~/north ro/i) {
-        quest::movepc(34,900,2650,-24,0); #Northern Desert of Ro
+      if($text=~/everfrost/i) {
+        quest::movepc(30,-5040,1880,-59,0); #Everfrost Peaks 
       }
       if($text=~/south ro/i) {
         quest::movepc(35,1030,-1440,-23,0); #Southern Desert of Ro
@@ -39,4 +39,4 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-#EndFile: butcher\Magus_Tira.pl
+#EndFile: nro\Magus_Arindri.pl

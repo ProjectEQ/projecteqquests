@@ -9,20 +9,25 @@ sub EVENT_SAY {
         quest::say("And how are you today, $name?  Ready to do some traveling? Hurry up, then. I have lots of things I need to do today. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Everfrost], [Commonlands], [Nedaria's Landing], [North Ro], or [South Ro]. Hopefully I won't burn my hands this time! Long story, but my cohort, Gaelan Charhands, didn't tell me one of the words of the spell as a joke. Apparently it's funny for a beautiful gnome like myself to get her hands singed. I'll get him back some day!");
       }
       if($text=~/everfrost/i) {
-        quest::movepc(30,-5040,1880,-59,0); #Everfrost Peaks 
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4180); #Teleport Everfrost
       }
       if($text=~/commonlands/i) {
-        quest::movepc(22,-105,-1640,5,0); #East Commonlands
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4176); #Teleport East Commons
       }
       if($text=~/nedaria/i) {
         quest::say("I'm sorry, $name. The Gates of Discord zones are not yet available.");
-        #quest::movepc(); #Nedaria's Landing
+        #quest::emote("begins to cast a spell.");
+        #quest::selfcast(4580); #Teleport Nedaria
       }
       if($text=~/north ro/i) {
-        quest::movepc(34,900,2650,-24,0); #Northern Desert of Ro
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4177); #Teleport North Ro
       }
       if($text=~/south ro/i) {
-        quest::movepc(35,1030,-1440,-23,0); #Southern Desert of Ro
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4178); #Teleport South Ro
       }
     }
     else { #PC does not have Adventurer's Stone

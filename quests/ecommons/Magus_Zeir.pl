@@ -9,20 +9,25 @@ sub EVENT_SAY {
         quest::say("Welcome, brave $name. You have to be brave to entertain the use of our magic. It's not that I don't trust the spell or my companions, it's just that the auras of the stones we found are so unstable and strange. We are still trying to learn the nature of the magic. It really is unlike any other magic we've seen on Norrath, and it's very powerful. One time, when I cast the spell on a young Vah Shir, she burst into a furry cloud of . . . Perhaps I shouldn't talk about that. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Butcherblock], [Everfrost], [Nedaria's Landing], [North Ro], or [South Ro].");
       }
       if($text=~/everfrost/i) {
-        quest::movepc(30,-5040,1880,-59,0); #Everfrost Peaks 
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4180); #Teleport Everfrost
       }
       if($text=~/butcherblock/i) {
-        quest::movepc(68,-2500,-1105,1,0); #Butcherblock Mountains
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4179); #Teleport Butcherblock
       }
       if($text=~/nedaria/i) {
         quest::say("I'm sorry, $name. The Gates of Discord zones are not yet available.");
-        #quest::movepc(); #Nedaria's Landing
+        #quest::emote("begins to cast a spell.");
+        #quest::selfcast(4580); #Teleport Nedaria
       }
       if($text=~/north ro/i) {
-        quest::movepc(34,900,2650,-24,0); #Northern Desert of Ro
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4177); #Teleport North Ro
       }
       if($text=~/south ro/i) {
-        quest::movepc(35,1030,-1440,-23,0); #Southern Desert of Ro
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4178); #Teleport South Ro
       }
     }
     else { #PC does not have Adventurer's Stone

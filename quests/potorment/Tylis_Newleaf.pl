@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	if ($pop_pot_shadyglade == 1) {
 
 		if ($text=~/Hail/i && $sphere == undef) {
-			quest::emote("Tylis Newleaf doesn't move, but struggles to whisper, '...help ...end this torment ...will you come? I can show you the pain... it moves in the shadows of my mind... will you assist me?'");
+			quest::emote("doesn't move, but struggles to whisper, '...help ...end this torment ...will you come? I can show you the pain... it moves in the shadows of my mind... will you assist me?'");
 		}
 	
 	        if ($text=~/will assist you/i) {

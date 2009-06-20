@@ -1,4 +1,4 @@
-#BeginFile: abysmal\Magus_Pellen.pl
+#BeginFile: natimbi\Magus_Releua.pl
 #
 #
 
@@ -6,15 +6,16 @@ sub EVENT_SAY {
   if($ulevel >= 15) {
     if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
-        quest::say("I can provide you with travel to [Natimbi] and [Nedaria]'s Landing with our Farstone magic. Just tell me where you'd like to go and I shall send you.");
+        quest::say("If you'd like to go to [Nedaria]'s Landing or to the Queen of Thorns in [Abysmal Sea], I can use my Farstone magic to send you. Speak up and tell me where you wish to travel.");
       }
       if($text=~/nedaria/i) {
         quest::emote("begins to cast a spell.");
         quest::selfcast(4580); #Teleport Nedaria
       }
-      if($text=~/natimbi/i) {
+      if($text=~/abysmal sea/i) {
         quest::emote("begins to cast a spell.");
-        quest::selfcast(4963); #Natimbi Gate
+        #quest::selfcast(); #Translocate Abysmal missing???
+        quest::movepc(279,0,-199,140); #Abysmal Sea
       }
     }
     else { #PC does not have Adventurer's Stone
@@ -31,4 +32,4 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-#EndFile: abysmal\Magus_Pellen.pl
+#EndFile: natimbi\Magus_Releua.pl

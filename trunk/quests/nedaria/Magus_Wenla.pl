@@ -30,12 +30,12 @@ sub EVENT_SAY {
       }
       if($text=~/natimbi/i) {
         quest::emote("begins to cast a spell.");
-        quest::selfcast(4964); #Translocate Natimbi
+        quest::selfcast(4963); #Natimbi Gate
       }
       if($text=~/abysmal sea/i) {
         quest::emote("begins to cast a spell.");
         #quest::selfcast(); #Translocate Abysmal missing???
-        quest::movepc(279,-199,0,140); #Abysmal Sea
+        quest::movepc(279,0,-199,140); #Abysmal Sea
       }
     }
     else { #PC does not have Adventurer's Stone

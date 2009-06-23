@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-          quest::settimer("stampedecheck",60);
+          quest::settimer("stampedecheck",180);
 }
 
 sub EVENT_TIMER {

@@ -7,6 +7,6 @@ sub EVENT_TIMER {
           if(defined $qglobals{potac_stampede} || $rallos){
 	}
           else {
-          quest::unique_spawn(214124,0,0,0,0,0);
+          quest::unique_spawn(214124,189,0,1191,-724,-296);
         }
 }

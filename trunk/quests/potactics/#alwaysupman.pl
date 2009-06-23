@@ -4,9 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
      my $rallos = $entity_list->GetMobByNpcTypeID(214113);
-          if(defined $qglobals{potac_stampede} || $rallos){
-	}
-          else {
+          if(!defined $qglobals{potac_stampede} && !$rallos){
           quest::unique_spawn(214124,189,0,1213,-639,-290);
         }
 }

@@ -2,6 +2,7 @@ sub EVENT_SPAWN {
         my $min = 1200;
         my $range = 7200;
         my $randomspawn = int(rand($range)) + $min;
+                quest::SetRunning(1);
 		quest::spawn_condition(potactics,1,1);
                 quest::unique_spawn(214101,189,0,1194,-774,-297);
 		quest::ze(10,"You hear the pounding of hooves.");
@@ -14,5 +15,6 @@ sub EVENT_TIMER {
 		quest::stoptimer("stamboars");
 		quest::spawn_condition(potactics,1,0);
 		quest::depopall(214097);
+                quest::depop();
 	}
 }

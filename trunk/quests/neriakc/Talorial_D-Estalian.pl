@@ -45,15 +45,9 @@ quest::say("The final test that I require one to complete before I am content wi
 }
 if($text=~/i am ready to be tested/i){
 quest::say("Very well child. There is an ancient tome of Necromancy called the Writ of the Fallen. I have kept the binding of this sacred tome for a very long time however I have never searched for the pages that form the writ. If you are able to recover the 4 pages of the writ I have faith that you posses the power to bind them to this empty tome that I carry. Seek out these pages and bind them to this tome. I assure you that you will learn much from this writ shall you construct it once again. I believe the pages were in the hands of spirits that haunt the Ultricle still to this day. Good luck and excellent work."); 
+quest::summonitem(17243);
 }
   }
 
-sub EVENT_ITEM {
- if (plugin::check_handin(\%itemcount, 22597 => 1, 22598 => 1, 22599 => 1, 22600 => 1)) {
-    quest::say("Excellent work!"); #Not actual text
-    quest::summonitem(22581);
-    quest::ding();
-}
-   }
 #END of FILE Zone:neriakc  ID:42016 -- Talorial_D`Estalian 
 

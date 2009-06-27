@@ -11,7 +11,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-	if ($x == 1202 && $y == -351){
+	if ($x == 1202 && $y == -500){
 		quest::stoptimer("stamboars");
 		quest::spawn_condition(potactics,1,0);
 		quest::depopall(214097);

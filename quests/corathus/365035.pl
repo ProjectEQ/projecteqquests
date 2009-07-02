@@ -12,7 +12,7 @@ sub EVENT_COMBAT
 	}
 	elsif($combat_state == 1)
 	{
-		quest::settimer("missle_select", 15);
+		quest::settimer("missle_select", 7);
 	}
 }
 
@@ -57,7 +57,7 @@ sub EVENT_TIMER
 			}
 		}
 		quest::stoptimer("missle_attack");
-		quest::settimer("missle_select", 15);
+		quest::settimer("missle_select", 7);
 	}
 }
 

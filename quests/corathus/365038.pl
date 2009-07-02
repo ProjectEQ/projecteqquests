@@ -10,11 +10,11 @@ sub EVENT_COMBAT
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3300");
 		quest::ModifyNPCStat("attack_speed", "33");
-		quest::signalwith(365073, 1, 0);
-		quest::signalwith(365074, 1, 0);
-		quest::signalwith(365075, 1, 0);
-		quest::signalwith(365076, 1, 0);
-		quest::signalwith(365077, 1, 0);
+		#quest::signalwith(365073, 1, 0);
+		#quest::signalwith(365074, 1, 0);
+		#quest::signalwith(365075, 1, 0);
+		#quest::signalwith(365076, 1, 0);
+		#quest::signalwith(365077, 1, 0);
 	}
 	elsif($combat_state == 1)
 	{

@@ -4,17 +4,17 @@ sub EVENT_COMBAT
 {
 	if($combat_state == 0)
 	{
-		stoptimer("rage");
-		stoptimer("mushroom");
-		stoptimer("rage_two");
+		quest::stoptimer("rage");
+		quest::stoptimer("mushroom");
+		quest::stoptimer("rage_two");
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3300");
 		quest::ModifyNPCStat("attack_speed", "33");
-		quest::signal(365073);
-		quest::signal(365074);
-		quest::signal(365075);
-		quest::signal(365076);
-		quest::signal(365077);
+		quest::signalwith(365073, 1, 0);
+		quest::signalwith(365074, 1, 0);
+		quest::signalwith(365075, 1, 0);
+		quest::signalwith(365076, 1, 0);
+		quest::signalwith(365077, 1, 0);
 	}
 	elsif($combat_state == 1)
 	{
@@ -45,7 +45,7 @@ sub EVENT_TIMER
 	
 	if($timer eq "rage")
 	{
-		stoptimer("rage");
+		quest::stoptimer("rage");
 		quest::settimer("rage_two", 60);
 		quest::emote("begins to fall apart...");
 		quest::ModifyNPCStat("min_hit", "1690");
@@ -55,7 +55,7 @@ sub EVENT_TIMER
 
 	if($timer eq "rage_two")
 	{
-		stoptimer("rage_two");
+		quest::stoptimer("rage_two");
 		quest::emote("is filled with a bloodlust.");
 		quest::ModifyNPCStat("min_hit", "9200");
 		quest::ModifyNPCStat("max_hit", "15000");
@@ -66,7 +66,7 @@ sub EVENT_TIMER
 sub EVENT_DEATH
 {
 	quest::emote("slowly stops moving and comes crashing to the ground.");
-	stoptimer("rage");
-	stoptimer("rage_two");
-	stoptimer("mushroom");
+	quest::stoptimer("rage");
+	quest::stoptimer("rage_two");
+	quest::stoptimer("mushroom");
 }

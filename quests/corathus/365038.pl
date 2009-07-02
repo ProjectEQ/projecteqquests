@@ -18,7 +18,7 @@ sub EVENT_COMBAT
 	}
 	elsif($combat_state == 1)
 	{
-		quest::settimer("rage", 60);
+		quest::settimer("rage", 840);
 		quest::settimer("mushroom", 5);
 		quest::modifynpcstat("min_hit", "1690");
 		quest::modifynpcstat("max_hit", "3300");
@@ -57,8 +57,8 @@ sub EVENT_TIMER
 	{
 		quest::stoptimer("rage_two");
 		quest::emote("is filled with a bloodlust.");
-		quest::modifynpcstat("min_hit", "9200");
-		quest::modifynpcstat("max_hit", "15000");
+		quest::modifynpcstat("min_hit", "15000");
+		quest::modifynpcstat("max_hit", "30000");
 		quest::modifynpcstat("attack_speed", "-50");		
 	}
 }

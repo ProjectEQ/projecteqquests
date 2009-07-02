@@ -9,10 +9,13 @@ sub EVENT_COMBAT
 	{
 		quest::stoptimer("missle_select");
 		quest::stoptimer("missle_attack");
+		quest::stoptimer("overload");
+		quest::stoptimer("overload_finish");
 	}
 	elsif($combat_state == 1)
 	{
 		quest::settimer("missle_select", 7);
+		quest::settimer("overload", 120);
 	}
 }
 
@@ -59,10 +62,28 @@ sub EVENT_TIMER
 		quest::stoptimer("missle_attack");
 		quest::settimer("missle_select", 7);
 	}
+
+	if($timer eq "overload")
+	{
+		quest::emote("gathers energy...");
+		quest::stoptimer("overload");
+		quest::settimer("overload_finish", 5);
+		$npc->Stun(6000);
+	}
+
+	if($timer eq "overload_finish")
+	{
+		quest::emote("releases its stored energy.");
+		quest::stoptimer("overload_finish");
+		quest::settimer("overload", 120);
+		$npc->CastSpell(1948, $npc->GetID(), 10, 0);
+	}
 }
 
 sub EVENT_DEATH
 {
 	quest::stoptimer("missle_select");
 	quest::stoptimer("missle_attack");
+	quest::stoptimer("overload");
+	quest::stoptimer("overload_finish");
 }

@@ -10,11 +10,11 @@ sub EVENT_COMBAT
 		quest::modifynpcstat("min_hit", "1690");
 		quest::modifynpcstat("max_hit", "3300");
 		quest::modifynpcstat("attack_speed", "33");
-		#quest::signalwith(365073, 1, 0);
-		#quest::signalwith(365074, 1, 0);
-		#quest::signalwith(365075, 1, 0);
-		#quest::signalwith(365076, 1, 0);
-		#quest::signalwith(365077, 1, 0);
+		quest::depopall(365073);
+		quest::depopall(365074);
+		quest::depopall(365075);
+		quest::depopall(365076);
+		quest::depopall(365077);
 	}
 	elsif($combat_state == 1)
 	{
@@ -69,4 +69,9 @@ sub EVENT_DEATH
 	quest::stoptimer("rage");
 	quest::stoptimer("rage_two");
 	quest::stoptimer("mushroom");
+	quest::depopall(365073);
+	quest::depopall(365074);
+	quest::depopall(365075);
+	quest::depopall(365076);
+	quest::depopall(365077);
 }

@@ -56,3 +56,10 @@ sub EVENT_DEATH
 	quest::stoptimer("wither");
 	quest::stoptimer("cast");
 }
+
+sub EVENT_SIGNAL
+{
+	quest::stoptimer("wither");
+	quest::stoptimer("cast");
+	quest::depop();
+}

@@ -19,7 +19,7 @@ sub EVENT_COMBAT
 	elsif($combat_state == 1)
 	{
 		quest::settimer("rage", 60);
-		quest::settimer("mushroom", 8);
+		quest::settimer("mushroom", 5);
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3300");
 		quest::ModifyNPCStat("attack_speed", "33");
@@ -42,7 +42,8 @@ sub EVENT_TIMER
 			quest::spawn($random_mushroom, 0, 0, $x_loc, $y_loc, $z_loc);
 		}
 	}
-	elsif($timer eq "rage")
+	
+	if($timer eq "rage")
 	{
 		stoptimer("rage");
 		quest::settimer("rage_two", 60);
@@ -51,7 +52,8 @@ sub EVENT_TIMER
 		quest::ModifyNPCStat("max_hit", "3900");
 		quest::ModifyNPCStat("attack_speed", "25");		
 	}
-	elsif($timer eq "rage_two")
+
+	if($timer eq "rage_two")
 	{
 		stoptimer("rage_two");
 		quest::emote("is filled with a bloodlust.");

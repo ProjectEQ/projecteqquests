@@ -15,7 +15,7 @@ sub EVENT_TIMER
 	}
 	elsif($timer eq "cast")
 	{
-		my $random_client = $entity_list->GetRandomClient($npc->GetX(), $npc->GetY(), $npc->GetZ(), 200);
+		my $random_client = $entity_list->GetRandomClient($npc->GetX(), $npc->GetY(), $npc->GetZ(), 40);
 		if($random_client) 
 		{
 			my $random_spell = quest::ChooseRandom(1,2,3,4,5);

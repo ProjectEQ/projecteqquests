@@ -1,15 +1,15 @@
 #poison mushroom green
 sub EVENT_SPAWN
 {
-	settimer("wither", 60);
-	settimer("cast", 3);
+	quest::settimer("wither", 60);
+	quest::settimer("cast", 3);
 }
 
 sub EVENT_TIMER
 {
 	if($timer eq "wither")
 	{
-		stoptimer("wither");
+		quest::stoptimer("wither");
 		quest::emote("withers and dies.");
 		quest::depop();
 	}
@@ -45,6 +45,6 @@ sub EVENT_TIMER
 
 sub EVENT_DEATH
 {
-	stoptimer("wither");
-	stoptimer("cast");
+	quest::stoptimer("wither");
+	quest::stoptimer("cast");
 }

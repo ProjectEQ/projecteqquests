@@ -95,11 +95,12 @@ sub EVENT_TIMER
 		my $dist_y = -410 - $npc->GetY();
 		my $dist_z = -8 - $npc->GetZ();
 		my $total_dist = ($dist_x * $dist_x) + ($dist_y * $dist_y) + ($dist_z * $dist_z);
-		if($total_dist > 250000)
+		if($total_dist > 90000)
 		{
 			quest::emote("loses its power link and begins to behave erratically.");
 			quest::modifynpcstat("runspeed", "2.0");
 			quest::stoptimer("distance_check");
+			quest::stoptimer("speed_up");
 		}
 	}
 }

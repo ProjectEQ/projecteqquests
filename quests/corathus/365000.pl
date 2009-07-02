@@ -16,7 +16,7 @@ sub EVENT_HP
 	if($hpevent == 31)
 	{
 		quest::settimer("explode_timer", 6);
-		quest::emote("gains an electric charge...");
+		quest::emote("begins to overload...");
 		$npc->Stun(6500);
 	}
 }

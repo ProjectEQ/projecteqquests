@@ -10,11 +10,16 @@ sub EVENT_COMBAT
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3300");
 		quest::ModifyNPCStat("attack_speed", "33");
+		quest::signal(365073);
+		quest::signal(365074);
+		quest::signal(365075);
+		quest::signal(365076);
+		quest::signal(365077);
 	}
 	elsif($combat_state == 1)
 	{
 		quest::settimer("rage", 60);
-		quest::settimer("mushroom", 10);
+		quest::settimer("mushroom", 8);
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3300");
 		quest::ModifyNPCStat("attack_speed", "33");

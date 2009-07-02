@@ -24,7 +24,7 @@ sub EVENT_TIMER
 		if($targeted_enemy)
 		{
 			quest::stoptimer("missle_select");
-			quest::starttimer("missle_attack", 5);
+			quest::settimer("missle_attack", 5);
 			my $clean_name = $targeted_enemy->GetCleanName();
 			quest::emote("attempts to lock onto $clean_name with its anti-personnel missles.");
 			$targeted_enemy_x = $targeted_enemy->GetX();

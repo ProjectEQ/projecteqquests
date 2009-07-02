@@ -13,7 +13,7 @@ sub EVENT_COMBAT
 	}
 	elsif($combat_state == 1)
 	{
-		quest::settimer("rage", 840);
+		quest::settimer("rage", 60);
 		quest::settimer("mushroom", 10);
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3300");
@@ -40,7 +40,7 @@ sub EVENT_TIMER
 	elsif($timer eq "rage")
 	{
 		stoptimer("rage");
-		quest::settimer("rage_two", 840);
+		quest::settimer("rage_two", 60);
 		quest::emote("begins to fall apart...");
 		quest::ModifyNPCStat("min_hit", "1690");
 		quest::ModifyNPCStat("max_hit", "3900");

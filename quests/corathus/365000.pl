@@ -1,24 +1,19 @@
 sub EVENT_SPAWN
 {
-	quest::setnexthpevent(30);
+	quest::setnexthpevent(31);
 }
 
 sub EVENT_COMBAT
 {
 	if($combat_state == 0)
 	{
-		quest::setnexthpevent(30);
-		quest::modifynpcstat("hp_regen", "70000");
-	}
-	else
-	{
-		quest::modifynpcstat("hp_regen", "0");
+		quest::setnexthpevent(31);
 	}
 }
 
 sub EVENT_HP
 {
-	if($hpevent == 30)
+	if($hpevent == 31)
 	{
 		quest::settimer("explode_timer", 6);
 		quest::emote("gains an electric charge...");
@@ -31,7 +26,7 @@ sub EVENT_TIMER
 	if($timer eq "explode_timer")
 	{
 		quest::stoptimer("explode_timer");
-		quest::emote("explodes.");
+		quest::emote("explodes, eradicating everything around it.");
 		$npc->CastSpell(1948, $npc->GetID(), 10, 0);
 		$npc->Kill();
 	}

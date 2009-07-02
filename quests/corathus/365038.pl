@@ -7,9 +7,9 @@ sub EVENT_COMBAT
 		quest::stoptimer("rage");
 		quest::stoptimer("mushroom");
 		quest::stoptimer("rage_two");
-		quest::ModifyNPCStat("min_hit", "1690");
-		quest::ModifyNPCStat("max_hit", "3300");
-		quest::ModifyNPCStat("attack_speed", "33");
+		quest::modifynpcstat("min_hit", "1690");
+		quest::modifynpcstat("max_hit", "3300");
+		quest::modifynpcstat("attack_speed", "33");
 		#quest::signalwith(365073, 1, 0);
 		#quest::signalwith(365074, 1, 0);
 		#quest::signalwith(365075, 1, 0);
@@ -20,9 +20,9 @@ sub EVENT_COMBAT
 	{
 		quest::settimer("rage", 60);
 		quest::settimer("mushroom", 5);
-		quest::ModifyNPCStat("min_hit", "1690");
-		quest::ModifyNPCStat("max_hit", "3300");
-		quest::ModifyNPCStat("attack_speed", "33");
+		quest::modifynpcstat("min_hit", "1690");
+		quest::modifynpcstat("max_hit", "3300");
+		quest::modifynpcstat("attack_speed", "33");
 	}
 }
 
@@ -48,18 +48,18 @@ sub EVENT_TIMER
 		quest::stoptimer("rage");
 		quest::settimer("rage_two", 60);
 		quest::emote("begins to fall apart...");
-		quest::ModifyNPCStat("min_hit", "1690");
-		quest::ModifyNPCStat("max_hit", "3900");
-		quest::ModifyNPCStat("attack_speed", "25");		
+		quest::modifynpcstat("min_hit", "1690");
+		quest::modifynpcstat("max_hit", "3900");
+		quest::modifynpcstat("attack_speed", "25");		
 	}
 
 	if($timer eq "rage_two")
 	{
 		quest::stoptimer("rage_two");
 		quest::emote("is filled with a bloodlust.");
-		quest::ModifyNPCStat("min_hit", "9200");
-		quest::ModifyNPCStat("max_hit", "15000");
-		quest::ModifyNPCStat("attack_speed", "-50");		
+		quest::modifynpcstat("min_hit", "9200");
+		quest::modifynpcstat("max_hit", "15000");
+		quest::modifynpcstat("attack_speed", "-50");		
 	}
 }
 

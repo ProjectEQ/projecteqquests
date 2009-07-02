@@ -17,10 +17,12 @@ sub EVENT_COMBAT
 	{
 		quest::stoptimer("missle_select");
 		quest::stoptimer("missle_attack");
+		quest::say("combat exit.");
 	}
 	elsif($combat_state == 1)
 	{
 		quest::starttimer("missle_select", 15);
+		quest::say("combat entered.");
 	}
 }
 
@@ -28,6 +30,7 @@ sub EVENT_TIMER
 {
 	if($timer eq "missle_select")
 	{
+		quest::say("selecting missle");
 		$targeted_enemy = $npc->GetHateRandom();
 		if($targeted_enemy)
 		{
@@ -48,6 +51,7 @@ sub EVENT_TIMER
 	
 	if($timer eq "missle_attack")
 	{
+		quest::say("sending missle");
 		if($targeted_enemy)
 		{
 			my $dist_x = $targeted_enemy->GetX() - $targeted_enemy_x;

@@ -91,9 +91,9 @@ sub EVENT_TIMER
 
 	if($timer eq "distance_check")
 	{
-		my $dist_x = $npc->GetX() - 595;
-		my $dist_y = $npc->GetX() - -410;
-		my $dist_z = $npc->GetX() - -8;
+		my $dist_x = 595 - $npc->GetX();
+		my $dist_y = -410 - $npc->GetY();
+		my $dist_z = -8 - $npc->GetZ();
 		my $total_dist = ($dist_x * $dist_x) + ($dist_y * $dist_y) + ($dist_z * $dist_z);
 		if($total_dist > 250000)
 		{

@@ -14,6 +14,7 @@ sub EVENT_COMBAT
 	{
 		quest::emote("begins to power down.");
 		quest::stoptimer("speed_up");
+		quest::stoptimer("distance_check");
 		$num_cogs_dead = 0;
 		$speed_up_count = 0;
 		quest::modifynpcstat("runspeed", "0.05");
@@ -23,6 +24,7 @@ sub EVENT_COMBAT
 	{
 		quest::emote("begins to power up but is slowed by rust.");
 		quest::settimer("speed_up", 60);
+		quest::settimer("distance_check", 5);
 		$num_cogs_dead = 0;
 		$speed_up_count = 0;
 		quest::modifynpcstat("runspeed", "0.05");
@@ -86,6 +88,20 @@ sub EVENT_TIMER
 			quest::modifynpcstat("runspeed", "1.85");
 		}
 	}
+
+	if($timer eq "distance_check")
+	{
+		my $dist_x = $npc->GetX() - 595;
+		my $dist_y = $npc->GetX() - -410;
+		my $dist_z = $npc->GetX() - -8;
+		my $total_dist = ($dist_x * $dist_x) + ($dist_y * $dist_y) + ($dist_z * $dist_z);
+		if($total_dist > 250000)
+		{
+			quest::emote("loses its power link and begins to behave erratically.");
+			quest::modifynpcstat("runspeed", "2.0");
+			quest::stoptimer("distance_check");
+		}
+	}
 }
 
 sub EVENT_DEATH
@@ -93,6 +109,8 @@ sub EVENT_DEATH
 	quest::say("Fatal error: system shut down");
 	quest::emote("shuts down.");
 	quest::stoptimer("speed_up");
+	quest::stoptimer("distance_check");
+	quest::depopall(365014);
 }
 
 sub EVENT_SIGNAL

@@ -1,3 +1,4 @@
+#Deadly mushroom
 sub EVENT_SPAWN
 {
 	quest::settimer("wither", 60);
@@ -20,33 +21,33 @@ sub EVENT_TIMER
 			my $random_spell = quest::ChooseRandom(1,2,3,4,5);
 			if($random_spell == 1)
 			{
-				$random_client->Damage($npc, 2500, 2993, 4, false); 
+				$random_client->Damage($npc, 2500, 2993, 4, false);
+				$random_client->Message(264, "You are covered with deadly spores, you have taken 2500 damage.");
 			}
 			elsif($random_spell == 2)
 			{
-				$random_client->Damage($npc, 1000, 2993, 4, false); 
+				$random_client->Damage($npc, 1000, 2993, 4, false);
+				$random_client->Message(264, "You are covered with deadly spores, you have taken 1000 damage.");
 			}
 			elsif($random_spell == 3)
 			{
 				$random_client->SetMana($random_client->GetMana() - 4000);
+				$random_client->Message(264, "Your mind clouds from deadly spores.");
 			}
 			elsif($random_spell == 4)
 			{
 				$random_client->SetMana($random_client->GetMana() - 2000);
+				$random_client->Message(264, "Your mind clouds from deadly spores.");
 			}
 			elsif($random_spell == 5)
 			{
 				$random_client->SetMana($random_client->GetMana() - 1000);
+				$random_client->Message(264, "Your mind clouds from deadly spores.");
 			}
 		}	
 	}
 }
 
-sub EVENT_DEATH
-{
-	quest::stoptimer("wither");
-	quest::stoptimer("cast");
-}
 sub EVENT_DEATH
 {
 	quest::stoptimer("wither");

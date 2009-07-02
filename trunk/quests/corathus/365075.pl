@@ -1,7 +1,7 @@
 #poison mushroom green
 sub EVENT_SPAWN
 {
-	quest::settimer("wither", 60);
+	quest::settimer("wither", 90);
 	quest::settimer("cast", 3);
 }
 
@@ -22,27 +22,27 @@ sub EVENT_TIMER
 			if($random_spell == 1)
 			{
 				$random_client->Damage($npc, 1000, 2993, 4, false);
-				$random_client->Message(264, "You are covered with deadly spores, you have taken 1000 damage.");
+				$random_client->Message(264, "You are covered with poisonous spores.");
 			}
 			elsif($random_spell == 2)
 			{
 				$random_client->Damage($npc, 500, 2993, 4, false);
-				$random_client->Message(264, "You are covered with deadly spores, you have taken 500 damage.");
+				$random_client->Message(264, "You are covered with poisonous spores.");
 			}
 			elsif($random_spell == 3)
 			{
 				$random_client->Damage($npc, 250, 2993, 4, false);
-				$random_client->Message(264, "You are covered with deadly spores, you have taken 250 damage.");
+				$random_client->Message(264, "You are covered with poisonous spores.");
 			}
 			elsif($random_spell == 4)
 			{
 				$random_client->SetMana($random_client->GetMana() - 500);
-				$random_client->Message(264, "Your mind clouds from deadly spores.");
+				$random_client->Message(264, "Your mind clouds from poisonous spores.");
 			}
 			elsif($random_spell == 5)
 			{
 				$random_client->SetMana($random_client->GetMana() - 200);
-				$random_client->Message(264, "Your mind clouds from deadly spores.");
+				$random_client->Message(264, "Your mind clouds from poisonous spores.");
 			}
 		}	
 	}
@@ -52,11 +52,4 @@ sub EVENT_DEATH
 {
 	quest::stoptimer("wither");
 	quest::stoptimer("cast");
-}
-
-sub EVENT_SIGNAL
-{
-	quest::stoptimer("wither");
-	quest::stoptimer("cast");
-	quest::depop();
 }

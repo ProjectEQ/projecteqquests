@@ -43,51 +43,7 @@ sub EVENT_TIMER
 	{
 		quest::emote("Speeds up as some rust falls away from its frame.");
 		$speed_up_count = $speed_up_count + 1;
-		if($speed_up_count == 1)
-		{
-			quest::modifynpcstat("runspeed", "0.20");
-		}
-		elsif($speed_up_count == 2)
-		{
-			quest::modifynpcstat("runspeed", "0.28");
-		}
-		elsif($speed_up_count == 3)
-		{
-			quest::modifynpcstat("runspeed", "0.35");
-		}
-		elsif($speed_up_count == 4)
-		{
-			quest::modifynpcstat("runspeed", "0.43");
-		}
-		elsif($speed_up_count == 5)
-		{
-			quest::modifynpcstat("runspeed", "0.50");
-		}
-		elsif($speed_up_count == 6)
-		{
-			quest::modifynpcstat("runspeed", "0.58");
-		}
-		elsif($speed_up_count == 7)
-		{
-			quest::modifynpcstat("runspeed", "0.65");
-		}
-		elsif($speed_up_count == 8)
-		{
-			quest::modifynpcstat("runspeed", "0.73");
-		}
-		elsif($speed_up_count == 9)
-		{
-			quest::modifynpcstat("runspeed", "0.81");
-		}
-		elsif($speed_up_count == 10)
-		{
-			quest::modifynpcstat("runspeed", "0.90");
-		}
-		else
-		{
-			quest::emote("reaches full speed as the last of the rust falls away.");
-			quest::modifynpcstat("runspeed", "1.85");
-		}
+		quest::modifynpcstat("runspeed", (0.05 + (0.1 * $speed_up_count)));
 	}
 
 	if($timer eq "distance_check")
@@ -98,7 +54,7 @@ sub EVENT_TIMER
 		my $total_dist = ($dist_x * $dist_x) + ($dist_y * $dist_y) + ($dist_z * $dist_z);
 		if($total_dist > 122500)
 		{
-			quest::emote("loses its power link and begins to behave erratically.");
+			quest::emote("loses its power link and switches on it's power reserves.");
 			quest::modifynpcstat("runspeed", "3.0");
 			quest::stoptimer("distance_check");
 			quest::stoptimer("speed_up");

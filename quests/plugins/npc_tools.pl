@@ -9,6 +9,11 @@ sub fixNPCName
 {
   $_ = shift;
   
+  if (!defined($_))
+  {
+    $_ = plugin::val('$mname');
+  }
+  
   s/\d+$//; # Strip trailing numeric digits
   s/\_/ /g; # Change underscores to spaces
   

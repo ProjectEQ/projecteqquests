@@ -60,7 +60,7 @@ if($signal == 2 && $counter == 4 && $dust_ring == undef && $dust_ring_run == 1) 
 
  if($signal == 4 && $dust_ring_run == 1) {
    $dust_ring=undef;
-   #put global back in
+    quest::setglobal(dust_ring,1,3,"D3");
 
  }
 }

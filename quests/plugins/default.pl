@@ -20,6 +20,11 @@ sub EVENT_SLAY
   plugin::defaultSlay();
 }
 
+sub EVENT_NPC_SLAY
+{
+  plugin::defaultSlay();
+}
+
 sub EVENT_DEATH
 {
   plugin::defaultDeath();

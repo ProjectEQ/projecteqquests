@@ -15,6 +15,7 @@ sub EVENT_COMBAT
 		quest::depopall(365075);
 		quest::depopall(365076);
 		quest::depopall(365077);
+		quest::say("Debug: Leaving combat!");
 	}
 	elsif($combat_state == 1)
 	{
@@ -23,6 +24,7 @@ sub EVENT_COMBAT
 		quest::modifynpcstat("min_hit", "1690");
 		quest::modifynpcstat("max_hit", "3300");
 		quest::modifynpcstat("attack_speed", "33");
+		quest::say("Debug: Entering combat!");
 	}
 }
 
@@ -40,6 +42,10 @@ sub EVENT_TIMER
 			my $z_loc = $random_target->GetZ();
 			quest::emote("Throws a mushroom at $c_name");
 			quest::spawn($random_mushroom, 0, 0, $x_loc, $y_loc, $z_loc);
+		}
+		else
+		{
+			quest::say("Debug: couldn't find a target!");
 		}
 	}
 	

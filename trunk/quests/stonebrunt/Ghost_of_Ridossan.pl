@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 20043 => 1)) {
+  if (plugin::check_handin(\%itemcount, 2297 => 1)) {
     quest::emote("takes the idol into his spectral hand and shoves the lance into your arms. After letting go of the lance, the ghost immediately begins to fade away. Before it is gone completely, it looks into your eyes and says, 'Suffer.'");
     quest::summonitem(2099);
     quest::stoptimer(1);

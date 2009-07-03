@@ -12,6 +12,7 @@ sub EVENT_COMBAT
 {
 	if($combat_state == 0)
 	{
+		$npc->SetHP(10000000);
 		quest::emote("begins to power down.");
 		quest::stoptimer("speed_up");
 		quest::stoptimer("distance_check");
@@ -44,43 +45,43 @@ sub EVENT_TIMER
 		$speed_up_count = $speed_up_count + 1;
 		if($speed_up_count == 1)
 		{
-			quest::modifynpcstat("runspeed", "0.10");
+			quest::modifynpcstat("runspeed", "0.20");
 		}
 		elsif($speed_up_count == 2)
 		{
-			quest::modifynpcstat("runspeed", "0.15");
+			quest::modifynpcstat("runspeed", "0.28");
 		}
 		elsif($speed_up_count == 3)
 		{
-			quest::modifynpcstat("runspeed", "0.20");
+			quest::modifynpcstat("runspeed", "0.35");
 		}
 		elsif($speed_up_count == 4)
 		{
-			quest::modifynpcstat("runspeed", "0.25");
+			quest::modifynpcstat("runspeed", "0.43");
 		}
 		elsif($speed_up_count == 5)
 		{
-			quest::modifynpcstat("runspeed", "0.30");
+			quest::modifynpcstat("runspeed", "0.50");
 		}
 		elsif($speed_up_count == 6)
 		{
-			quest::modifynpcstat("runspeed", "0.35");
+			quest::modifynpcstat("runspeed", "0.58");
 		}
 		elsif($speed_up_count == 7)
 		{
-			quest::modifynpcstat("runspeed", "0.40");
+			quest::modifynpcstat("runspeed", "0.65");
 		}
 		elsif($speed_up_count == 8)
 		{
-			quest::modifynpcstat("runspeed", "0.45");
+			quest::modifynpcstat("runspeed", "0.73");
 		}
 		elsif($speed_up_count == 9)
 		{
-			quest::modifynpcstat("runspeed", "0.55");
+			quest::modifynpcstat("runspeed", "0.81");
 		}
 		elsif($speed_up_count == 10)
 		{
-			quest::modifynpcstat("runspeed", "0.60");
+			quest::modifynpcstat("runspeed", "0.90");
 		}
 		else
 		{
@@ -98,7 +99,7 @@ sub EVENT_TIMER
 		if($total_dist > 122500)
 		{
 			quest::emote("loses its power link and begins to behave erratically.");
-			quest::modifynpcstat("runspeed", "2.0");
+			quest::modifynpcstat("runspeed", "3.0");
 			quest::stoptimer("distance_check");
 			quest::stoptimer("speed_up");
 		}
@@ -117,12 +118,23 @@ sub EVENT_DEATH
 sub EVENT_SIGNAL
 {
 	$num_cogs_dead = ($num_cogs_dead + 1);
-	if($npc->GetHP() > 2200000)
+	if($npc->GetHP() > 1900000)
 	{
-		$npc->SetHP($npc->GetHP() - 2200000);
+		$npc->SetHP($npc->GetHP() - 1900000);
 	}
 	else
 	{
 		$npc->Kill();
+	}
+}
+
+sub EVENT_CAST_ON
+{
+	if($npc->IsEngaged())
+	{
+		if($client)
+		{
+			$npc->AddToHateList($client, $client->GetLevel()*25);
+		}
 	}
 }

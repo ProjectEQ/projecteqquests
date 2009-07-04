@@ -35,7 +35,7 @@ sub EVENT_TIMER
 		if($npc->IsEngaged() != 1)
 		{
 			my $rand_select = rand(9);
-			quest::say($FlavorText[$rand_select]);
+			quest::say("$FlavorText[$rand_select]");
 		}
 	}
 }

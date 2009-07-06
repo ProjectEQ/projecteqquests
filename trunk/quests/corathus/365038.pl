@@ -54,7 +54,7 @@ sub EVENT_TIMER
 	if($timer eq "rage_two")
 	{
 		quest::stoptimer("rage_two");
-		quest::emote("is filled with a bloodlust.");
+		quest::emote("is filled unfettered energy as it begins to  disintegrate.");
 		quest::modifynpcstat("min_hit", "15000");
 		quest::modifynpcstat("max_hit", "30000");
 		quest::modifynpcstat("attack_speed", "-50");		

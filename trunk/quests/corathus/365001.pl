@@ -6,8 +6,8 @@ sub EVENT_COMBAT
 	}
 	elsif($combat_state == 1)
 	{
-		my $random_select = rand(1);
-		if($random_select == 0)
+		my $random_select = rand(2);
+		if($random_select == 1)
 		{
 			quest::say("Ooooh, toys for me?");
 		}

@@ -26,7 +26,7 @@ sub EVENT_TIMER
 	if($timer eq "explode_timer")
 	{
 		quest::stoptimer("explode_timer");
-		quest::emote("explodes, eradicating everything around it.");
+		quest::emote("overloads, eradicating everything around it.");
 		$npc->CastSpell(1948, $npc->GetID(), 10, 0);
 		$npc->Kill();
 	}

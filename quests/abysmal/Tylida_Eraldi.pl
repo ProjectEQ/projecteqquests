@@ -62,4 +62,5 @@ sub EVENT_ITEM {
     quest::setglobal("tylida",4,0,"F");
   }
   plugin::return_items(\%itemcount);
+  $qglobals{tylida}=undef
 }

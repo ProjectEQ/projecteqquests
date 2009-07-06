@@ -80,7 +80,7 @@ sub EVENT_SIGNAL
 	}
 	else
 	{
-		$npc->Kill();
+		$npc->SetHP(25000);
 	}
 }
 

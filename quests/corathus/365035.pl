@@ -15,7 +15,7 @@ sub EVENT_COMBAT
 	elsif($combat_state == 1)
 	{
 		quest::settimer("missle_select", 7);
-		quest::settimer("overload", 120);
+		quest::settimer("overload", 60);
 	}
 }
 
@@ -52,11 +52,13 @@ sub EVENT_TIMER
 			if($total_dist < 1200)
 			{
 				$targeted_enemy->Message(0, "You were hit by the missle.");
-				$targeted_enemy->Damage($npc, 15000, 0, 0, false); 
+				$targeted_enemy->Damage($npc, 15000, 0, 0, false);
+				quest::say("Direct hit!");
 			}
 			else
 			{
 				$targeted_enemy->Message(0, "You have evaded the missle.");
+				quest::emotes("begins to recalibrate its defense system.");
 			}
 		}
 		quest::stoptimer("missle_attack");
@@ -75,7 +77,7 @@ sub EVENT_TIMER
 	{
 		quest::emote("releases its stored energy.");
 		quest::stoptimer("overload_finish");
-		quest::settimer("overload", 120);
+		quest::settimer("overload", 60);
 		$npc->CastSpell(1948, $npc->GetID(), 10, 0);
 	}
 }

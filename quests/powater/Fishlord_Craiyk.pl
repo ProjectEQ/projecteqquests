@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 	if($platinum == 100 && !defined$qglobals{fishlord}) {
 		quest::say("Very well, I will summon forth the creatures of the deep. They do not like being disturbed so you must protect me from harm. I am very vulnerable when summoning the dwellers of the deep. If death claims me the summoning will be finished. During the course of the summoning many powerful dwellers will appear. You must watch for them.");
 		
-		quest::settimer("Trash", 860);
+		quest::settimer("Trash", 640);
 		
 		quest::settimer("MiniNamed", 2400);
 		
@@ -81,9 +81,12 @@ sub EVENT_TIMER {
 			elsif($spawnLoc == 6) {
 				quest::spawn2($spawnNpcID, 0, 0, -259.5, 48.4, -367.3, $h);
 			}
-		}
 		
 		$numberSpawned = $numberSpawned + 1;
+
+                }
+               
+                $numberSpawned = 0;
 	}
 	
 	elsif($timer eq "miniNamed") {

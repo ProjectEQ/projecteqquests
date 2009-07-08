@@ -46,10 +46,10 @@ $Tumpy_Tonic=1;
   if ($Tumpy_Tonic>=1) {
     for ($i=0; $i<$Tumpy_Tonic; $i++) {
     quest::say("Mmmm. Weee thats a good drink you made there.");
-    # quest::faction(Not_Found,10); # +Tradefolk Underground   
-    quest::faction(48,10); # +Coalition of Tradefolk Underground
-    quest::faction(184,10); # +Knights of Truth
-    quest::faction(217,10); # +Merchants of Qeynos
+    # quest::faction(47,1); # +Tradefolk Underground   
+    quest::faction(48,1); # +Coalition of Tradefolk Underground
+    quest::faction(184,1); # +Knights of Truth
+    quest::faction(217,1); # +Merchants of Qeynos
     quest::ding();
     quest::exp(10);
   } 

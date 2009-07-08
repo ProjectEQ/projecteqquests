@@ -17,35 +17,35 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 31140 == 1)) {
+  if (plugin::check_handin(\%itemcount, 31140 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(31528);
   }
-  elsif (plugin::check_handin(\%itemcount, 31119 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 31119 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(31526);
   }
-  elsif (plugin::check_handin(\%itemcount, 31133 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 31133 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(31527);
   }
-  elsif (plugin::check_handin(\%itemcount, 31098 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 31098 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(31525);
   }
-  elsif (plugin::check_handin(\%itemcount, 31182 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 31182 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(31529);
   }
-  elsif (plugin::check_handin(\%itemcount, 26025 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 26025 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(2612);
   }
-  elsif (plugin::check_handin(\%itemcount, 25194 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 25194 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(2611);
   }
-  elsif (plugin::check_handin(\%itemcount, 30507 == 1)) {
+  elsif (plugin::check_handin(\%itemcount, 30507 => 1)) {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(2610);
   }
@@ -54,6 +54,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
 #END of FILE Zone: skyshrine ID: -- Supreme_Laochsmith_Psorin
-

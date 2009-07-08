@@ -11,7 +11,7 @@ sub EVENT_SPAWN {
 	$spawnNpcID = 0;
 	$trashCount = 0;
 	$numSpawned = 0;
-	$miniNamedCount = 0;
+	$miniNamedCount = 1;
 }
 
 sub EVENT_SAY {
@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 	if($platinum == 100 && !defined$qglobals{fishlord}) {
 		quest::say("Very well, I will summon forth the creatures of the deep. They do not like being disturbed so you must protect me from harm. I am very vulnerable when summoning the dwellers of the deep. If death claims me the summoning will be finished. During the course of the summoning many powerful dwellers will appear. You must watch for them.");
 		
-		quest::settimer("Trash", 640);
+		quest::settimer("Trash", 420);
 		
 		quest::settimer("MiniNamed", 2400);
 		
@@ -45,20 +45,20 @@ sub EVENT_TIMER {
 		
 		$trashCount = int(rand(3));
 
-		while($numberSpawned <= $trashCount) {
+		while($numSpawned <= $trashCount) {
 			$spawnNpc = int(rand(4));
 			
 			if($spawnNpc == 1) {
-				$spawnNpcID = int(216085);#reef 
+				$spawnNpcID = 216085;#reef 
 			}
 			elsif($spawnNpc == 2) {
-				$spawnNpcID = int(216079);#fierce 
+				$spawnNpcID = 216079;#fierce 
 			}
 			elsif($spawnNpc == 3) {
-				$spawnNpcID = int(216078);#ferocious 
+				$spawnNpcID = 216078;#ferocious 
 			}
 			elsif($spawnNpc == 4) {
-				$spawnNpcID = int(216081);#furious 
+				$spawnNpcID = 216081;#furious 
 			}
 			
 			$spawnloc = int(rand(6));
@@ -82,43 +82,43 @@ sub EVENT_TIMER {
 				quest::spawn2($spawnNpcID, 0, 0, -259.5, 48.4, -367.3, $h);
 			}
 		
-		$numberSpawned = $numberSpawned + 1;
+		$numSpawned = $numSpawned + 1;
 
                 }
                
-                $numberSpawned = 0;
+                $numSpawned = 0;
 	}
 	
-	elsif($timer eq "miniNamed") {
+	elsif($timer eq "MiniNamed") {
 		if($miniNamedCount <= 9) {
 			quest::say("A dweller of some power comes, prepare yourself.");
 			
 			if($miniNamedCount == 1) {
-				$spawnNpcID = int(216082);#hungry
+				$spawnNpcID = 216082;#hungry
 			}
 			elsif($miniNamedCount == 2) {
-				$spawnNpcID = int(216086);#stringy
+				$spawnNpcID = 216086;#stringy
 			}
 			elsif($miniNamedCount == 3) {
-				$spawnNpcID = int(216090);#wicked
+				$spawnNpcID = 216090;#wicked
 			}
 			elsif($miniNamedCount == 4) {
-				$spawnNpcID = int(216089);#toughened
+				$spawnNpcID = 216089;#toughened
 			}
 			elsif($miniNamedCount == 5) {
-				$spawnNpcID = int(216080);#foul
+				$spawnNpcID = 216080;#foul
 			}
 			elsif($miniNamedCount == 6) {
-				$spawnNpcID = int(216077);#dark
+				$spawnNpcID = 216077;#dark
 			}
 			elsif($miniNamedCount == 7) {
-				$spawnNpcID = int(216087);#superior
+				$spawnNpcID = 216087;#superior
 			}
 			elsif($miniNamedCount == 8) {
-				$spawnNpcID = int(216083);#prime
+				$spawnNpcID = 216083;#prime
 			}
 			elsif($miniNamedCount == 9) {
-				$spawnNpcID = int(216084);#prismatic
+				$spawnNpcID = 216084;#prismatic
 			}
 			
 			$spawnloc = int(rand(6));
@@ -146,7 +146,7 @@ sub EVENT_TIMER {
 		}
 		
 		elsif($miniNamedCount >= 10) {
-			quest::stoptimer("miniNamed");
+			quest::stoptimer("MiniNamed");
 		}
 	}
 	elsif($timer eq "FinalNamed") {

@@ -19,6 +19,7 @@ sub EVENT_SAY {
   }
   if($text=~/reef shark/i){
     quest::say("Reef sharks are the smallest and most docile of the sharks.  Even a young acolyte can slay one.  I have heard there are some in the Ocean of Tears.  I need a young acolyte to [hunt] reef sharks.  I require their skins.");
+    quest::summonitem(17937);
   }
   if($text=~/hunt/i){
     quest::say("I thought I spied the shoulders of a swimmer upon you! Take this large sack. Travel to the Ocean of Tears. There are numerous reef sharks there. I shall require no fewer than two shark skins. When the full sack is combined and returned to me, I shall reward you."); }
@@ -33,6 +34,17 @@ sub EVENT_ITEM {
     quest::faction(311,10); #steel warriors
     quest::faction(86,-30); #dismal rage
     quest::faction(105,-30); #freeport militia
+  }
+  
+  if (plugin::check_handin(\%itemcount, 13873 =>1 )) {
+    quest::say("Thanks for the hard work, here is a shield to help you in your duties.");
+    quest::summonitem(13868);
+    quest::faction(184,10); #knights of truth
+    quest::faction(258,10); #priests of marr
+    quest::faction(311,10); #steel warriors
+    quest::faction(86,-30); #dismal rage
+    quest::faction(105,-30); #freeport militia
+ 
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');

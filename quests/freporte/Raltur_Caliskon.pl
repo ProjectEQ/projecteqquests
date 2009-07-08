@@ -51,6 +51,14 @@ sub EVENT_SAY
 ### Called when the NPC is handed items
 
 sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 18822 =>1 )) {
+    quest::say("So the great Antonius Bayle wishes to ally himself with the mighty Knights of Truth. How pathetic. It would appear that the alliance has spawned infiltrators of sorts. Of course, we of the Dismal Rage are already aware of this, but I am sure Sir Lucan D'Lere knows nothing as usual. I have a [mission] for any evil shadowknight of Innoruuk.");
+    quest::exp(5000);
+    quest::faction( 235,1 );
+    quest::faction( 86,1 );
+    quest::faction( 184,-3 );
+    quest::givecash(0,2,0,0);
+  }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
   plugin::return_items(\%itemcount);

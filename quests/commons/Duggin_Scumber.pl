@@ -12,6 +12,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
   if($timer == 1) {
+  quest::stoptimer(1);
   quest::start(2);
   }
   if($timer == 2) {

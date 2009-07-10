@@ -35,7 +35,7 @@ sub EVENT_ITEM {
 		
 		quest::setglobal("fishlord", 1, 3, "H4");
 		
-		quest::moveto(-269.7, 120.7, -370);
+		quest::moveto(143.8, 131.5, -377.9);
 	}
 }
 

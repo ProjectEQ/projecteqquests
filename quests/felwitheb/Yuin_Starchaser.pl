@@ -65,18 +65,21 @@ sub EVENT_ITEM {
   #Handin: Orc Thaumaturgists Spell Book
   if(plugin::check_handin(\%itemcount, 20293 => 1)){
     #Quest: Art Keepers Task
-#---Commented out quest say until text is captured from live. Handin works.
-#    quest::say("");
+    quest::say("Excellent work, $name. Now I need you to gather a Pristine Forest Drakeling Scale and an Arborean Amber. Return this staff and the items I require and then I will create your new staff."); #Text made up
     #Rough Art Keepers Initiate Staff
     quest::summonitem(20296);
   }
-  #Handin: Pristine Forest Drakeling Scales, Arborean Amber
-  elsif(plugin::check_handin(\%itemcount, 20271 => 1, 20274 =>1)){
+  #Handin: Rough Artkeepers Initiate Staff, Pristine Forest Drakeling Scales, Arborean Amber
+  elsif(plugin::check_handin(\%itemcount, 20296 => 1, 20271 => 1, 20274 =>1)){
     #Quest: Art Keepers Task
 #---Commented out quest say until text is captured from live. Handin works.
 #    quest::say("");
     #Art Keepers Initiate Staff
     quest:summonitem(20332);
+  }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
   }
 }
 

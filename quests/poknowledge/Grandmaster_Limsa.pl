@@ -22,6 +22,6 @@ sub EVENT_ITEM {
 	
 		plugin::try_tome_handins(\%itemcount, $class, 'Monk');
 		plugin::return_items(\%itemcount);
-		quest::say("I don't need this.");#Text made up
+		#quest::say("I don't need this.");#Text made up
 	}
 #END of FILE Zone:poknowledge  ID:202247 -- Grandmaster_Limsa 

@@ -19,10 +19,14 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (($itemcount{19956} == 1) && ($itemcount{19957} == 1) && ($itemcount{19958} == 1)) {
+  if (plugin::check_handin(\%itemcount, 19956 => 1, 19957 => 1, 19958 => 1)) { #Piece of a Medallion (Bottom, Middle, Top)
     quest::say("Ssssss. I thought I would never see these. I never thought the symbol of our people would be made whole again. I feel no rest for my sssoul though. My torment still flows as freely as when my peoples first suffered fiery death. I need this not. It is useless to me. Here, you take it. Maybe you can find some good to do with it.");
     quest::summonitem(19953);
     quest::exp(1000);
+  }
+  else {
+    quest::say("Not thissss!");
+    plugin::return_items(\%itemcount);
   }
 }
 

@@ -13,7 +13,7 @@ quest::stoptimer(10);
 quest::settimer(10,1);
 $check=0;
 }
-    if($timer = 10) {
+    if($timer == 10) {
     $check_boss = $entity_list->GetMobByNpcTypeID(215012); #A_Confused_Air_Elemental
     if ($check_boss) {
       $check = 1

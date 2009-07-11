@@ -15,7 +15,7 @@ quest::stoptimer(30);
 quest::settimer(30,1);
 $check=0;
 }
-    if($timer = 30) {
+    if($timer == 30) {
     $check_boss = $entity_list->GetMobByNpcTypeID(215043); #A_Crystalline_Windwalker
     if ($check_boss) {
       $check = 1

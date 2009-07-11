@@ -13,7 +13,7 @@ quest::stoptimer(1);
 quest::settimer(1,1);
 $check=0;
 }
-    if($timer = 1) {
+    if($timer == 1) {
     $check_boss = $entity_list->GetMobByNpcTypeID(215002); #A_Mischievous_Stormrider
     if ($check_boss) {
       $check = 1

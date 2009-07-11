@@ -13,7 +13,7 @@ quest::stoptimer(20);
 quest::settimer(20,1);
 $check=0;
 }
-    if($timer = 20) {
+    if($timer == 20) {
     $check_boss = $entity_list->GetMobByNpcTypeID(215058); #A_Phoenix_Breezewing
     if ($check_boss) {
       $check = 1

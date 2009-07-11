@@ -1,7 +1,7 @@
 ############################################
 # ZONE: Bazaar
 # DATABASE: PEQ PoP-LoY
-# LAST EDIT DATE: January 26, 2009
+# LAST EDIT DATE: July 10, 2009
 # VERSION: 1.0
 # DEVELOPER: Congdar
 #
@@ -141,7 +141,7 @@ sub EVENT_SAY {
       }
       else {
          if($text=~/Hail/i) {
-            quest::say("eh? Mind yer own business, go away.");
+            quest::say("eh? Come back when yer a bit older. I kin help ye then.");
             quest::settimer("face", 5);
          }
       }
@@ -150,6 +150,8 @@ sub EVENT_SAY {
       if($text=~/Hail/i) {
          quest::say("eh? Mind yer own business, go away!");
          quest::settimer("face", 5);
+         my $sbcount = quest::spawnbotcount();
+         $client->Message(6,"You have $qglobals{bot_spawn_limit} out of $sbcount possible Individuals.");
       }
    }
 }
@@ -161,7 +163,6 @@ sub EVENT_TIMER {
      quest::stoptimer("face");
   }
 }
-
 
 sub EVENT_ITEM {
    if(defined $qglobals{bot_spawn_limit} && (quest::spawnbotcount() > $qglobals{bot_spawn_limit})) {
@@ -206,7 +207,8 @@ sub EVENT_ITEM {
          quest::setglobal("bot_spawn_limit", $success, 5, "F");
          $client->Message(6,"You receive a character flag!");
          $client->Message(6,"You can now create and spawn an Individual! See: '#bot help create' and '#bot spawn' commands.");
-         $client->Message(6,"You have $qglobals{bot_spawn_limit} out of quest::spawnbotcount() possible Individuals.");
+         my $sbcount = quest::spawnbotcount();
+         $client->Message(6,"You have $success out of $sbcount possible Individuals.");
          $success = 0;
       }
       else {
@@ -247,3 +249,4 @@ sub EVENT_SIGNAL {
    }
 }
 # END of FILE Zone:bazaar -- Aediles_Thrall.pl
+

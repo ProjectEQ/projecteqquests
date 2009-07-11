@@ -127,7 +127,7 @@ $State = 0;
 }
 
 sub EVENT_TIMER {
-if($timer == "ChamberlainCheck") {
+if($timer eq "ChamberlainCheck") {
  if($ConstableADead == 1 && $ConstableBDead == 1 && $ConstableFDead == 1) {
   my $Spawn = quest::ChooseRandom(215480,215480,215480,215476,215476);
   quest::spawn2($Spawn,0,0,461,498,-85.8,2.5);

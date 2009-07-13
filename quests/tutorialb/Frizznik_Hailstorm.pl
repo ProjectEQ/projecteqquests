@@ -22,9 +22,13 @@ sub EVENT_SAY{
  }
 }
 
-sub EVENT_ITEM{
-  if($itemcount{13090} ==4) {
-    quest::say("I appreciate your assitance in getting everyone fed. Please take this as a small token of my eternal appreciation.");
+sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 13090 => 4) && !defined $qglobals{frizznikfinal}) {
+    quest::say("I appreciate your assistance in getting everyone fed. Please take this as a small token of my eternal appreciation.");
     quest::summonitem(3395);
+    quest::setglobal("frizznikfinal",1,0,"F");
   }
-}
+  else { 
+      plugin::return_items(\%itemcount); 
+ }
+   } 

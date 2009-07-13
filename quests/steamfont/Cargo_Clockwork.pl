@@ -51,6 +51,7 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH {
   quest::stoptimer("CargoTimer");
+  $delivery = 0;
   quest::signal($bandit1id,0); #Hector
   quest::signal($bandit2id,0); #Renaldo
   quest::signal($bandit3id,0); #Jerald

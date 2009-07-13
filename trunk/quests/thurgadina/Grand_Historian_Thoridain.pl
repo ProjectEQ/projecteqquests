@@ -37,20 +37,22 @@ sub EVENT_ITEM {
     quest::say("My compliments, $name, what a wonderful dish! Please accept my personal Seal as a token of my appreciation. May it give you power over your adversaries.");
     quest::summonitem(1422);
     quest::exp(200000);
+    quest::faction(49,10); #coldain
+    quest::faction(67,10); #dain
+    quest::faction(188,-30); #krif
+    quest::faction(189,-30); #kzek
   }
   elsif (plugin::check_handin(\%itemcount, 1428 => 1)) {
     quest::say("My compliments, $name, what a wonderful dish!");
     quest::exp(5000);
+    quest::faction(49,10); #coldain
+    quest::faction(67,10); #dain
+    quest::faction(188,-30); #krif
+    quest::faction(189,-30); #kzek
   }
   else {
     plugin::return_items(\%itemcount);
-    return 1;
   }
-  quest::faction(49,10); #coldain
-  quest::faction(67,10); #dain
-  quest::faction(188,-30); #krif
-  quest::faction(189,-30); #kzek
 }
 
 # EOF zone: thurgadina ID: 115135 NPC: Grand_Historian_Thoridain
-

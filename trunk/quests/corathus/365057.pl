@@ -13,32 +13,29 @@ sub EVENT_TIMER
 {
 	if($timer eq "try_spawn")
 	{
-		my $count_bosses = 0;
 		my $current_boss = $entity_list->GetMobByNpcTypeID(365019);
-		if($current_boss)
+		if(!$current_boss)
 		{
-			$count_bosses++;
-		}
-
-		$current_boss = $entity_list->GetMobByNpcTypeID(365035);
-		if($current_boss)
-		{
-			$count_bosses++;
-		}
-
-		$current_boss = $entity_list->GetMobByNpcTypeID(365038);
-		if($current_boss)
-		{
-			$count_bosses++;
-		}
-		
-		$current_boss = $entity_list->GetMobByNpcTypeID(365032);
-		if($current_boss)
-		{
-			$count_bosses++;
+			$current_boss = $entity_list->GetMobByNpcTypeID(365035);
+			if(!$current_boss)
+			{
+				$current_boss = $entity_list->GetMobByNpcTypeID(365038);
+				if(!$current_boss)
+				{
+					$current_boss = $entity_list->GetMobByNpcTypeID(365038);
+					if(!$current_boss)
+					{
+						$current_boss = $entity_list->GetMobByNpcTypeID(365038);
+						if(!$current_boss)
+						{
+							$current_boss = $entity_list->GetMobByNpcTypeID(365032);
+						}
+					}
+				}
+			}
 		}
 		
-		if($count_bosses == 0)
+		if(!$current_boss)
 		{
 			quest::stoptimer("try_spawn");
 			quest::settimer("flavor_1", 1);

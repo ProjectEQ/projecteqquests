@@ -40,6 +40,7 @@ sub EVENT_TIMER {
 sub EVENT_DEATH {
 	quest::stoptimer(1);
 	quest::stoptimer(2);
+  quest::emote("'s corpse explodes in a rain of feathers and blood!");
 }
 
 # End of File  Zone: PoTorment  ID: 207065  -- #Sorrowsong

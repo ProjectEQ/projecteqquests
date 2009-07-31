@@ -5,7 +5,7 @@ sub EVENT_SAY {
     if($text=~/hail/i) {
       quest::emote("looks at you suspiciously. 'Yeah? Whacha want?'");
     }
-    if($text=~/i need to see stanos/i && $class eq "rogue" && $ulevel >= 50) {
+    if($text=~/i need to see stanos/i && $class eq "Rogue" && $ulevel >= 50) {
       quest::say("This better be important.");
       quest::spawn2(5088,0,0,336.4,10.3,45.7,225.1);
     }
@@ -16,7 +16,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 28014 => 1) && $class eq "rogue" && $ulevel => 50) {
+  if (plugin::check_handin(\%itemcount, 28014 => 1) && $class eq "Rogue" && $ulevel >= 50) {
     quest::spawn2(5088,0,0,336.4,10.3,45.7,225.1);
     quest::say("Oh, I see.");
   }

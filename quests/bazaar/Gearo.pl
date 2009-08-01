@@ -16,10 +16,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 4766 => 1)) {#Assorted Tailoring Supplies
     quest::say("Ah you were sent from Steaon I see. So what's that tall drink of water up too? He must be busy at the store if he has you delivering his supplies for him. Well enough about all that. If he has trusted you to bring his supplies here I suppose I can give you these gems I picked up for him. Will you [take the gems] to him?");
-    quest::faction(338, 5); #Traders of the Haven
-    quest::faction(152, 5); #House of Fordel
-    quest::faction(153, 5); #House of Midst
-    quest::faction(154, 5); #House of Stout
+    quest::faction(338, 10); #Traders of the Haven
+    quest::faction(152, 10); #House of Fordel
+    quest::faction(153, 10); #House of Midst
+    quest::faction(154, 10); #House of Stout
     quest::exp(1000);#This quest is doable at level 1, I didn't feel comfortable giving out more xp than this per step    
     quest::setglobal("DeliveredToGearo",1,0,"D30");#Set a variable here.
   }

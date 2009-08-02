@@ -34,18 +34,17 @@ sub EVENT_SAY {
 }
       
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 54234 => 1) || plugin::check_handin(\%itemcount, 54234 => 3)) { #Gloomingdeep Silk x 1 or 3
+  if (plugin::check_handin(\%itemcount, 54234 => 1) || plugin::check_handin(\%itemcount, 54234 => 3)) { #Gloomingdeep Silk x 1 or 3
     quest::say("You have proven most resourceful $name.");
     quest::summonitem(quest::ChooseRandom(54217,54218,54219,54220,54221,54222,54223,54224,54225,54226,54227,54228)); #Random Stitched Burlap item
   }
-
-if (plugin::check_handin(\%itemcount, 86010 => 4)) {
-      if (quest::istaskactivityactive(28,1)) {
-         quest::emote("bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
-         # Minor rearranging to make it work with how emote() formats the message.
-      }
+  if (plugin::check_handin(\%itemcount, 86010 => 4)) {
+    if (quest::istaskactivityactive(28,1)) {
+      quest::emote("bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
+      # Minor rearranging to make it work with how emote() formats the message.
     }
-      else { 
-      plugin::return_items(\%itemcount); 
- }
-   } 
+  }
+  else { 
+    plugin::return_items(\%itemcount); 
+  }
+} 

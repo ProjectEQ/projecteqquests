@@ -1,6 +1,6 @@
 sub EVENT_CLICKDOOR { 
 my $gargoyle_check = $entity_list->GetMobByNpcTypeID(209024);
- if($doorid == 51 && plugin::check_hasitem($client, 9433) && !defined $qglobals{agnarrkey}) {
+ if($doorid == 51 && (plugin::check_hasitem($client, 9433) && !defined $qglobals{agnarrkey}) || ($status > 79)) {
    quest::movepc(209,-765,-1735,1270);
    quest::setglobal("agnarrkey",1,3,"M5");
    }

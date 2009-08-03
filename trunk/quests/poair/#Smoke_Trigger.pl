@@ -17,7 +17,7 @@ sub EVENT_SIGNAL {
         quest::spawn2(215435,0,0,1395.9,-681.3,15.1,255.1);
         quest::depop(215055);
      }
-     if ($signal == 3  && !defined($qglobals{$smoke_done}) {
+     if ($signal == 3  && !defined($qglobals{$smoke_done})) {
         quest::setglobal("smoke_done",1,3,"D2");
      }
 	if ($signal == 4 && !defined($qglobals{$smoke_event_start}) && !defined($qglobals{$smoke_done})) {

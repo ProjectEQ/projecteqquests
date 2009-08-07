@@ -19,25 +19,32 @@ sub EVENT_SAY {
     quest::say("The geomantic device which raises you into the courtroom is an ancient one and takes time to reset after it has been used. If you are having trouble entering, be patient. You will know it is ready to receive a key when you hear a grinding sound from the base of the device as it settles into place. Please be sure you are fully prepared before entering. While it once was a place of peaceful discussion, the courtroom is now a place where terrible torture is conducted by those the legion wants information from. When they see uninvited guests, they will not be very happy. The leader of this area's force is known as Tixxrt and stopping him is the only way you can save the small one, called Kreshin.");
 }
 }
-if (defined $qglobals{bic} && $qglobals{bic} == 2) {
+if (defined $qglobals{bic} && $qglobals{bic} == 3) {
 if ($text=~/ritual/i) {
   quest::say("While animating stone comes easy for us, sometimes we need an extremely powerful stone worker to help with the city. These stone servants were made through a ritual which combined the power of eight geomancers into a ninth. This geomancer would then imbue a stone worker with this power, resulting in a more powerful construct. We stopped doing the ritual when we discovered that it could take away our ability over time. If [she] has somehow figured out a way to absorb this power, then my people could be in more danger than I thought possible.");
 }
 }
-if (defined $qglobals{bic} && $qglobals{bic} == 2) {
+if (defined $qglobals{bic} && $qglobals{bic} == 3) {
 if ($text=~/she/i) {
    quest::say("We refer to her as the silent one, but the legion calls her Xictic. She is one of their kind who can use magic and she seems to be quite feared by everyone in this area. She comes here sometimes and takes three of us into the building with the glowing dome around it. Along with her are eight magic-using invaders and some of the slavers. When they are finished, only members of the legion leave. None of my people who enter are ever seen again. If what this says is true, you must stop her. If she succeeds, she will be able to control our stone servants at will and cause even more destruction. I beg you to stop her. I will help you in any way if you [promise] to stop her.");
 }
 }
-if (defined $qglobals{bic} && $qglobals{bic} == 2) {
+if (defined $qglobals{bic} && $qglobals{bic} == 3) {
 if ($text=~/promise/i) {
    quest::say("I cannot tell you how relieved this makes me. Now to the issue at hand. While Xictic and those she chooses can roam freely in and out of the magical dome surrounding the chamber, if anyone else tries to enter they are held back. As a councilman, I was granted a device that allows access into the dome and I've managed to keep it away from the prying eyes of the Mata Muram. Using it is not without its consequences, though. As soon as an outsider shows up within the dome, they will know what has occurred and will come searching for the culprit so be certain you are ready to face the challenges ahead before you embark upon this venture. Only eighteen of you will be allowed into the chamber at one time so gather your forces and tell me you are [ready] to face Xictic.");
    }
    }
- if (defined $qglobals{bic} && $qglobals{bic} == 2) {
-if ($text=~/ready/i) {  
+ if (defined $qglobals{bic} && $qglobals{bic} == 3) {
+if ($text=~/ready/i) { 
+    quest::spawn2(281127,0,0,0,0,0,94); 
     quest::emote("pulls out a small stone and closes it in his hand.");  
   quest::say("Please be careful. What you are about to see may shock you at first, but don't let yourself be distracted for too long. These beings are merciless and once they have discovered your presence, they will stop at nothing to add your corpse to the others in the area.");
+  $r = $client->GetRaid();
+if($r)
+{
+   $r->TeleportRaid($npc, 281, -521,36,-8,166);
+} 
+  quest::signalwith(281127,1,30);
 }
 }
 }
@@ -58,6 +65,8 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 67403 =>1 )) {
     quest::say("These glyphs look quite familiar. They are definitely in my language, but it seems as if the one who etched them did so against his will. Where did you get this? Wait, don't tell me. I know. Kreshin must have been successful in finding out what was going on in the Chamber of Souls. These glyphs detail how to animate stone using our geomancy abilities. There are some strange symbols toward the bottom, but for the most part, this is our language. Could he be trying to conduct the [ritual] of my people?");
+    quest::setglobal("bic",3,5,"F");
+    
   }
   plugin::return_items(\%itemcount);
 }

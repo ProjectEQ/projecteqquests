@@ -135,7 +135,9 @@ if($timer eq "ChamberlainCheck") {
   quest::depop();
  }
 }
-elsif($timer == "DepopTrigger") {
+elsif($timer eq "DepopTrigger") {
+ quest::stoptimer("DepopTrigger");
+ quest::stoptimer("ChamberlainCheck");
  quest::depop();
  }
 }

@@ -7,7 +7,7 @@ if($start_event == undef) {
 if(plugin::check_hasitem($client, 67415)) {
   if ($text=~/i wish to enter/i) {
     quest::movegrp(281,-1741, -1078, -4);
-    quest::starttimer(1,3610);
+    quest::starttimer(1,370);
     quest::starttimer(2,10);
     $start_event = 1;
     }

@@ -5,6 +5,7 @@ my $in_combat;
 sub EVENT_SPAWN
 {
 	quest::settimer("try_spawn", 5);
+	quest::settimer("flavor_text", 8);
 	$number_alive = 0;
 	$in_combat = 0;
 }
@@ -50,6 +51,15 @@ sub EVENT_TIMER
 			quest::spawn2(365020, 0, 0, -30.1, -10.1, -23.4, 24.2);
 			$number_alive = 5;
 			$in_combat = 0;
+		}
+	}
+	
+	if($timer eq "flavor_text")
+	{
+		if($in_combat == 0)
+		{
+			my $random_npc = quest::ChooseRandom(365003, 365004, 365006, 365020);
+			quest::signalwith($random_npc, 5, 0);
 		}
 	}
 }

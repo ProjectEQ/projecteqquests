@@ -34,7 +34,7 @@ sub EVENT_SIGNAL
 		}
 		elsif($random_val == 2)
 		{
-			quest::shout("Probility of death for hostile targets measured at 89.2% chance.");
+			quest::shout("Probility of death for hostile targets measured at 89.2 percent chance.");
 		}
 		elsif($random_val == 3)
 		{

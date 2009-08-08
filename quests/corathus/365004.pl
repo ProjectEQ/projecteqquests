@@ -13,6 +13,7 @@ sub EVENT_COMBAT
 		$npc->SetEntityVariable(1, 0);
 		$npc->SetEntityVariable(2, 1);
 		quest::shout("Bow down urchins!");
+		quest::stoptimer("flavor_text");
 	}
 }
 
@@ -35,10 +36,6 @@ sub EVENT_SIGNAL
 		quest::settimer("rage", 15);
 		quest::modifynpcstat("attack_speed", "-50");
 	}
-	if($signal == 5)
-	{
-		quest::shout("The progress is amusing don't you think, Duke Rumith?")
-	}
 }
 
 sub EVENT_TIMER
@@ -54,6 +51,14 @@ sub EVENT_TIMER
 		$npc->SetEntityVariable(2, 1);
 		quest::stoptimer("kill");
 	}
+
+	if($timer eq "flavor_text")
+	{
+		if(rand(100) <= 10.0)
+		{
+			#do our flavor here
+		}
+	}
 }
 
 sub EVENT_SLAY
@@ -65,4 +70,9 @@ sub EVENT_SLAY
 		$npc->SetEntityVariable(2, 0);
 		quest::shout("That is why I am king!");
 	}
+}
+
+sub EVENT_SPAWN
+{
+	quest::settimer("flavor_text", 10);
 }

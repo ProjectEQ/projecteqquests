@@ -27,7 +27,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 59029 => 1)) { #Deepwater Emblem
-    quest::emote("bows his head quietly as his eyes bring recognition to his mind. 'Alina at least has met a bitter end. Her spirit surely lingers nearby. Find her and free her from her burden, Arlessa. Her quest goes unfinished.'");
+    quest::emote("bows his head quietly as his eyes bring recognition to his mind. 'Alina at least has met a bitter end. Her spirit surely lingers nearby. Find her and free her from her burden, $name. Her quest goes unfinished.'");
     quest::summonitem(59030); #Alina's Emblem
   }
   # Loot A Black Medallion (59026)  off a Troll Plunderer and turn it in to Millius Darkwater.

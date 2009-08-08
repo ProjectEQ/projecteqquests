@@ -1,3 +1,7 @@
+sub EVENT_SPAWN {
+  quest::settimer("ArantirDepop",640);
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if($wizepicB == 1) {
@@ -59,3 +63,6 @@ sub EVENT_SIGNAL {
   }
 }
 
+sub EVENT_TIMER {
+  quest::depop();
+}

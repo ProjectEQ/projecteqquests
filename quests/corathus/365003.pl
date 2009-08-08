@@ -19,18 +19,50 @@ sub EVENT_DEATH
 	quest::signalwith(365004, 3, 0);
 }
 
-sub EVENT_SPAWN
+sub EVENT_SIGNAL
 {
-	quest::settimer("flavor_text", 10);
-}
-
-sub EVENT_TIMER
-{
-	if($timer eq "flavor_text")
+	if($signal == 5)
 	{
-		if(rand(100) <= 10.0)
+		my $random_val = int(rand(10));
+		if($random_val == 0)
 		{
-			#do our flavor here
+			quest::shout("Behold the wonderous rapidity of Ginorn!");
 		}
+		elsif($random_val == 1)
+		{
+			quest::shout("Local scan complete, hostile targets identified.");
+		}
+		elsif($random_val == 2)
+		{
+			quest::shout("Probility of death for hostile targets measured at 89.2% chance.");
+		}
+		elsif($random_val == 3)
+		{
+			quest::shout("Preparing to execute main directive.");
+		}
+		elsif($random_val == 4)
+		{
+			quest::shout("Cavedude marked for extermination.");
+		}
+		elsif($random_val == 5)
+		{
+			quest::shout("Mortals come and help me test my next invention, it will stand up better than Merineth, I promise.");
+		}
+		elsif($random_val == 6)
+		{
+			quest::shout("I'm not just a bucket of bolts.");
+		}
+		elsif($random_val == 7)
+		{
+			quest::shout("I will oil my gears with your blood.");
+		}
+		elsif($random_val == 8)
+		{
+			quest::shout("My behemoth was my master of invention; you will pay for destroying him!");
+		}
+		elsif($random_val == 9)
+		{
+			quest::shout("They should of named me iGnome.");
+		}		
 	}
 }

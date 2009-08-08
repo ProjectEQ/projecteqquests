@@ -5,7 +5,7 @@ my $in_combat;
 sub EVENT_SPAWN
 {
 	quest::settimer("try_spawn", 5);
-	quest::settimer("flavor_text", 8);
+	quest::settimer("flavor_text", 15);
 	$number_alive = 0;
 	$in_combat = 0;
 }

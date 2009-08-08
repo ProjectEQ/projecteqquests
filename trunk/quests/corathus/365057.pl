@@ -38,7 +38,6 @@ sub EVENT_TIMER
 		if(!$current_boss)
 		{
 			quest::stoptimer("try_spawn");
-			quest::settimer("flavor_1", 1);
 			quest::depopall(365002);
 			quest::depopall(365003);
 			quest::depopall(365004);
@@ -53,51 +52,10 @@ sub EVENT_TIMER
 			$in_combat = 0;
 		}
 	}
-	
-	if($timer eq "flavor_1")
-	{
-		quest::stoptimer("flavor_1");
-		quest::settimer("flavor_2", 1);
-	}
-	
-	if($timer eq "flavor_2")
-	{
-		quest::stoptimer("flavor_2");
-		quest::settimer("flavor_3", 1);
-	}
-	
-	if($timer eq "flavor_3")
-	{
-		quest::stoptimer("flavor_3");
-		quest::settimer("flavor_4", 1);
-	}
-	
-	if($timer eq "flavor_4")
-	{
-		quest::stoptimer("flavor_4");
-		quest::settimer("flavor_5", 1);
-	}
-	
-	if($timer eq "flavor_5")
-	{
-		quest::stoptimer("flavor_5");
-		quest::settimer("flavor_6", 1);
-	}
-	
-	if($timer eq "flavor_6")
-	{
-		quest::stoptimer("flavor_6");
-	}
 }
 
 sub EVENT_DEATH
 {
-	quest::stoptimer("flavor_1");
-	quest::stoptimer("flavor_2");
-	quest::stoptimer("flavor_3");
-	quest::stoptimer("flavor_4");
-	quest::stoptimer("flavor_5");
-	quest::stoptimer("flavor_6");
 	quest::stoptimer("try_spawn");
 }
 
@@ -134,12 +92,6 @@ sub EVENT_SIGNAL
 			quest::spawn2(365004, 0, 0, -35.4, 1.4, -23.4, 63.9);
 			quest::spawn2(365006, 0, 0, -22.1, -13.1, -23.4, 9.9);
 			quest::spawn2(365020, 0, 0, -30.1, -10.1, -23.4, 24.2);
-			quest::stoptimer("flavor_1");
-			quest::stoptimer("flavor_2");
-			quest::stoptimer("flavor_3");
-			quest::stoptimer("flavor_4");
-			quest::stoptimer("flavor_5");
-			quest::stoptimer("flavor_6");
 			$number_alive = 5;
 		}
 	}

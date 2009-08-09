@@ -28,7 +28,15 @@ sub EVENT_CLICKDOOR {
      $client->Message(4,"The globe does not seem to do anything");
      }
    if($doorid == 135 || $doorid == 391){
-      if(plugin::check_hasitem($client, 69311) || plugin::check_hasitem($client, 69312)) {
+      if($client->KeyRingCheck(69311) || $client->KeyRingCheck(69312)) {
+		quest::movepc(108,1682,41,25.9);
+      }
+    elsif(plugin::check_hasitem($client, 69312)) {
+	    $client->KeyRingAdd(69312);
+        quest::movepc(108,1682,41,25.9);
+      }
+    elsif(plugin::check_hasitem($client, 69311)) {
+	    $client->KeyRingAdd(69311);
         quest::movepc(108,1682,41,25.9);
       }
     elsif($doorid == 135 || $doorid == 391){

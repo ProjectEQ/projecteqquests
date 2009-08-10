@@ -1,18 +1,14 @@
 sub EVENT_SAY {
-   if ($text=~/hail/i && quest::istaskactivityactive(22,3)) {
-     quest::say("Greetings $name. I need some mushrooms to finish my healing potion for the wounded slaves. I marked the location of some mushrooms on your map. Can you bring one to me. I am rather busy here at the moment.");
-     quest::updatetaskactivity(22,3);
-   }
-   elsif ($text=~/hail/i){
+   if ($text=~/hail/i){
      quest::say("Greetings $name. I need some mushrooms to finish my healing potion for the wounded slaves. I marked the location of some mushrooms on your map. Can you bring one to me. I am rather busy here at the moment.");
    }
 } 
 
 sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 59955 => 1) && quest::istaskactivityactive(22,4)) {
+   if (plugin::check_handin(\%itemcount, 59955 => 1) && quest::istaskactivityactive(22,3)) {
     quest::say("Thanks! Very helpful!"); 
     quest::summonitem(59765);
-    quest::updatetaskactivity(22,4);
+    quest::updatetaskactivity(22,3);
   }
    elsif (plugin::check_handin(\%itemcount, 59955 => 1)) {
     quest::say("Thanks! Very helpful!"); 

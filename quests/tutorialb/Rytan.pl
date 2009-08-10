@@ -6,8 +6,8 @@ sub EVENT_SAY{
    }
   elsif ($text=~/blessed/i) {
     $npc->CastSpell(5150,$userid);
-    if (quest::istaskactivityactive(22,5)) {
-      quest::updatetaskactivity(22,5);
+    if (quest::istaskactivityactive(22,4)) {
+      quest::updatetaskactivity(22,4);
       if ($class eq 'Warror' || $class eq 'Monk' || $class eq 'Berserker' || $class eq 'Rogue') {
         quest::summonitem(59973); # Tome of Throw Stone
         # missing some text to send the player to the melee disc NPC

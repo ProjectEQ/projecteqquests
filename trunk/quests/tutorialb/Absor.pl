@@ -1,36 +1,56 @@
 #zone: tutorialb
 
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
-    quest::say("Hello $name. Before the slave revolt, I was forging picks and shovels. Now I'm making weapons so we can fight back. Mainly swords and spears. Simple stuff. If you give me your weapon, I can make you a better one.!");
-    quest::updatetaskactivity(22,1);  
-  }
+	if ($text=~/hail/i) 
+	{
+		quest::say("Hello $name. Before the slave revolt, I was forging picks and shovels. Now I'm making weapons so we can fight back. Mainly swords and spears. Simple stuff. If you give me your weapon, I can make you a better one!");
+		quest::updatetaskactivity(22,1);
+        quest::popup("Weapons", "Absor is a weapon maker. You should already have a weapon equiped from your escape with Arias, 
+		    but Absor can make it better. Open your inventory and remove your weapon from the lower left slot. This is your 
+		    primary weapon slot where you hold weapons you are currently using.<br><br><c \"#F07F00\">Give your weapon to Absor to continue.</c>"); 	
+	}
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9997 => 1)) {
     quest::summonitem(59950);
     quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
-    quest::say("There you go. That should work much better."); 
+    quest::say("There you go. That should work much better.");
+	quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
+		weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
+		This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window
+		[ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command
+		(CTRL+F) to find the next npc for your basic training.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 9998 => 1)) {
     quest::summonitem(59951);
     quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
     quest::say("There you go. That should work much better.");
+	quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
+		weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
+		This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window
+		[ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command
+		(CTRL+F) to find the next npc for your basic training.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 9999 => 1)) {
     quest::summonitem(59952);
     quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
     quest::say("There you go. That should work much better.");
+	quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
+		weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
+		This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window
+		[ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command
+		(CTRL+F) to find the next npc for your basic training.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 55623 => 1)) {
     quest::summonitem(59953);
     quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
     quest::say("There you go. That should work much better.");
-  }
-  elsif (plugin::check_handin(\%itemcount, 54229 => 1)) {
-    quest::say("Now let me see... Ah ha! Here ya go! A much better weapon to help fend off those nasties!");
-    quest::summonitem(quest::ChooseRandom(54230,54231,54232,54233));
+	quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
+		weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
+		This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window
+		[ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command
+		(CTRL+F) to find the next npc for your basic training.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 54229 => 1)) {
     #Chunk of Bronze -> Bronze Gloomingdeep weapons

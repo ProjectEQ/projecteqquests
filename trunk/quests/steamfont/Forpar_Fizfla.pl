@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::say("So you know Vedico! How is the lass? If Vedico would give you the time of day, you must be something special. What can I do for you? I hope you have not come to have me make another [mystical instrument].");
     quest::summonitem(20380); #Forpar's Note to Himself
   }
-  elsif (plugin::check_handin(\%itemcount, 20524 => 1, 20525 => 1, 5520 => 1)) { #Kedge Backbone, Petrified Werewolf Skull, Amygdalan Tendril
+  elsif (plugin::check_handin(\%itemcount, 20380 => 1, 20524 => 1, 20525 => 1, 5520 => 1)) { #Forpar's Note to Himself, Kedge Backbone, Petrified Werewolf Skull, Amygdalan Tendril
     quest::say("Wow! I didn't think a $race like you would be able to gather all of those things.");
     quest::emote("rambles around and works with small tools for a good ten minutes before handing you a very fine looking lute head.");
     quest::summonitem(20535); #Mystical Lute Head

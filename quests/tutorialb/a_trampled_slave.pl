@@ -1,4 +1,4 @@
-# Trampled Kobolds
+# Trampled Slaves
 # They lie on the ground and don't attack
 
 sub EVENT_SPAWN

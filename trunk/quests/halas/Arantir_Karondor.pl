@@ -64,5 +64,6 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_TIMER {
+  quest::stoptimer("ArantirDepop");
   quest::depop();
 }

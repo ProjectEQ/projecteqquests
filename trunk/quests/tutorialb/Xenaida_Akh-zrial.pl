@@ -1,6 +1,5 @@
 sub EVENT_SPAWN
 {
-	$npc->SetAppearance(1);
 	quest::settimer("try_sit", 5);
 }
 

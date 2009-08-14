@@ -2,7 +2,7 @@
 #Revision1 Angelox
 #note; I did this quest as per the original, "Titanium" version
 
-sub EVENT_SAY { 
+sub EVENT_SAY {
   if ($text=~/hail/i) {
     if(plugin::check_hasitem($client, 59028)) { #Glowing Black Skull Necklace
       quest::emote("looks somewhat startled as you approach him. 'Oh hello, $name. The tides of Prexus shift angrily these days.  Be careful as you explore the island, this is a most accursed place.'");
@@ -29,13 +29,19 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 59029 => 1)) { #Deepwater Emblem
     quest::emote("bows his head quietly as his eyes bring recognition to his mind. 'Alina at least has met a bitter end. Her spirit surely lingers nearby. Find her and free her from her burden, $name. Her quest goes unfinished.'");
     quest::summonitem(59030); #Alina's Emblem
+        if (!(defined $qglobals{Alina}))
+        {
+                quest::delglobal("Alina");
+                quest::setglobal("Alina", 2, 3, "F");
+                $qglobals{Alina}=undef;
+        }
   }
   # Loot A Black Medallion (59026)  off a Troll Plunderer and turn it in to Millius Darkwater.
   elsif (plugin::check_handin(\%itemcount, 59026 => 1)) { #Black Medallion
     quest::say("Taken for one of the pirates you said? Interesting. This medallion does seem to resemble what Chester described in his last letter to Eurdin. I can sense the spirit of one of our order nearby. It is in terrible torment, I suspect Chester's spirit has been bound here by the dark curse of Innoruuk. You must find him and set him free. If you find him, show him this necklace to remind him of this unfinished errand. Perhanps he can help you complete what he could not do alone.");
     quest::summonitem(59027); #Black Skull Necklace - for male erudite spirit
 }
-  # Give Millius the Glowing Black Skull Necklace and he'll tell you that you still haven't found Chester. 
+  # Give Millius the Glowing Black Skull Necklace and he'll tell you that you still haven't found Chester.
   elsif (plugin::check_handin(\%itemcount, 59028 => 1)) { #Glowing Black Skull Necklace
     quest::say("You still haven't found Chester.");
     quest::summonitem(59028); #Glowing Black Skull Necklace

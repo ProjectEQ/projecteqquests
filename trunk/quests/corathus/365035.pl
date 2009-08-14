@@ -58,7 +58,7 @@ sub EVENT_TIMER
 			else
 			{
 				$targeted_enemy->Message(0, "You have evaded the missle.");
-				quest::emotes("begins to recalibrate its defense system.");
+				quest::emote("begins to recalibrate its defense system.");
 			}
 		}
 		quest::stoptimer("missle_attack");

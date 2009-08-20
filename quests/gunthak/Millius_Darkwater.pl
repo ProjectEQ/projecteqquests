@@ -40,6 +40,13 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 59026 => 1)) { #Black Medallion
     quest::say("Taken for one of the pirates you said? Interesting. This medallion does seem to resemble what Chester described in his last letter to Eurdin. I can sense the spirit of one of our order nearby. It is in terrible torment, I suspect Chester's spirit has been bound here by the dark curse of Innoruuk. You must find him and set him free. If you find him, show him this necklace to remind him of this unfinished errand. Perhanps he can help you complete what he could not do alone.");
     quest::summonitem(59027); #Black Skull Necklace - for male erudite spirit
+        if (!(defined $qglobals{EthCleanse}))
+        {
+                quest::delglobal("EthCleanse");
+                quest::setglobal("EthCleanse", 2, 3, "F");
+                $qglobals{EthCleanse}=undef;
+        }
+
 }
   # Give Millius the Glowing Black Skull Necklace and he'll tell you that you still haven't found Chester.
   elsif (plugin::check_handin(\%itemcount, 59028 => 1)) { #Glowing Black Skull Necklace

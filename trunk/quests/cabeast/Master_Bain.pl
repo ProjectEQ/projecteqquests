@@ -13,6 +13,7 @@ sub EVENT_SAY {
  }
  if($text=~/tailor training bags/i){
   quest::say("Then take this leech husk pouch and fill it with the obvious.  Once done. combine the skins and take the full leech husk pouch to a local tailor by the name of Klok Mugruk.  He is the one who cleans and toughens the husks for us. He shall hand you a ready-made training bag husk.  He will instruct you further.");
+  quest::summonitem(17998);
  }
  if($text=~/master rinmark/i){
   quest::say("Seeking Master Rinmark? He has left the Court of Pain. Gone to focus his thoughts on the elements of wind and thunder. I believe he was headed toward the Overthere. That was the last I heard of his trek.");

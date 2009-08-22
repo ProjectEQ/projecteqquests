@@ -47,7 +47,7 @@ sub EVENT_SAY {
   }
   
   if ($text=~/breastplate/i) {
-    quest::say("To create yer breastplate material yoo will need to combine 5 Bricks of Crude Bronze, 1 Calcified Sternum, 1 Zombie Skin, 1 Halfling Ribcage, 1 Spider Legs and 1 Orc Skull in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Breastplate. Return to me for one [final task] I have to ask of yoo after yoo have completed yer breastplate.");
+    quest::say("To create yer breastplate material yoo will need to combine 1 Lightstone, 1 Pristine Giant Scarab Carapace, 1 Desert Tarantula Chitin, 1 Deathfist Slashed Belt, and 2 Small Bricks of Ore in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Breastplate. Return to me for one [final task] I have to ask of yoo after yoo have completed yer breastplate.");
     quest::summonitem(22616);
   }
   

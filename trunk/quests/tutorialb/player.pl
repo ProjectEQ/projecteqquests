@@ -33,8 +33,13 @@ sub EVENT_TASK_STAGE_COMPLETE
 	}
 } 
 
-sub EVENT_CLICKDOOR 
-{
+sub EVENT_CLICKDOOR {
+ if($doorid == 14 || $doorid == 270) {
+  quest::forcedooropen(15);
+ }
+ if($doorid == 15 || $doorid == 271) {
+  quest::forcedooropen(14);
+ }
 	my $d_id = ($doorid % 256);
 	if($d_id == 11)
 	{

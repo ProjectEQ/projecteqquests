@@ -39,10 +39,13 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::ding();
   }
+  elsif(plugin::check_handin(\%itemcount, 12685 => 1)) { #Full Pouch of Leech Husks
+    quest::say("Now you need to get three Piles of Granite Pebbles and then you can tailor a Monk Training Bag for your caste.");
+    quest::summonitem(12687); #Training Bag Husk
+  }
   else {
+    quest::say("I do not want this.");
     plugin::return_items(\%itemcount);
   }
 }
-
 #END of FILE Zone:cabeast  ID:106059 -- Klok_Mugruk
-

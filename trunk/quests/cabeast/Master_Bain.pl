@@ -37,6 +37,10 @@ sub EVENT_ITEM {
   quest::faction(317,20);
   quest::faction(193,10);
  }
+  elsif(plugin::check_handin(\%itemcount, 12688 => 1)) { #Monk Training Bag
+    quest::say("Excellent work young one. Take this armor and wear it with pride!"); #Text made up
+    quest::summonitem(quest::ChooseRandom(4350,4351,4352,4353,4354,4355,4356,4357,4358,4359)); #Random Sparring Armor Piece
+  }
   #do all other handins first with plugin, then let it do disciplines
   else {
     plugin::try_tome_handins(\%itemcount, $class, 'Monk');

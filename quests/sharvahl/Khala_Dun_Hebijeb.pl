@@ -14,7 +14,7 @@ quest::emote("looks at you with an expression of approval");
     quest::exp(1000);
     quest::faction(132,10 );
   }
-if (plugin::check_handin(\%itemcount, 3449 => )) {
+if (plugin::check_handin(\%itemcount, 3449 => 1)) {
 quest::emote("takes the acrylia dust and places it in a vial already half full of the metal");
 quest::say("You are nearly finished with the task at hand, $name. I now need you to begin your training in the art of blacksmithing, an essential aspect of the life of the Khala Dun. Combine this mold with three metal bits and a flask of water to fashion a buckler frame. When this is done bring it to me with the Crude Bone Short Sword and your initiate's cloak.");
 quest::summonitem(3450);

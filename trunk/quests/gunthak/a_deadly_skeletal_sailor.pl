@@ -19,12 +19,7 @@ sub EVENT_DEATH
 
                 $qglobals{Alina}=undef;
         }
-        else
-        {
-                quest::emote("'s corpse shatters into fragments before you.");
-        }
-
-        if(($random_result>20 && $random_result<=40) && (defined $qglobals{EthCleanse} && $qglobals{EthCleanse}==2))
+        elsif(($random_result>20 && $random_result<=40) && (defined $qglobals{EthCleanse} && $qglobals{EthCleanse}==2))
         {
                 quest::emote("'s corpse shatters into fragments before you.");
 

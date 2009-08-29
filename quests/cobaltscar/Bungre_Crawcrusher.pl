@@ -10,14 +10,20 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ((plugin::check_handin(\%itemcount, 22815=>1)) && ($gold >= 10000)) {
+  my $cash = $copper + $silver * 10 + $gold * 100 + $platinum * 1000;
+
+  if (($cash >= 1000000) && plugin::check_handin(\%itemcount, 22815=> 1)) { #Check for 10000 gold
     quest::emote("skillfully crafts the section of Lodizal's shell into the shape of a shield. He then attaches sturdy cured walrus hide leather straps to the inner side of the shield and inscribes intricate glowing runes on the shield's face. When he is finished, he hands you the shield and claps loudly.");
-    quest::summonitem("22816");
+    quest::summonitem(22816);
     quest::exp(150000);
-    quest::faction( 241, 30);
-    quest::faction( 345, -60);
+    quest::faction(241, 30);
+    quest::faction(345, -60);
   }
   else {
+    if ($cash) {
+      quest::say("Sorry stranger, but that is not enough to barter with.");
+      quest::givecash($copper, $silver, $gold, $platinum);
+    }
     plugin::return_items(\%itemcount);
   }
 }

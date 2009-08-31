@@ -113,14 +113,14 @@ sub EVENT_ITEM {
    		quest::say("You have done well."); 
     	} 
   	else { 
-  		plugin::return_items(\%itemcount); 
    		quest::say("These are not the pieces I need."); 
+  		plugin::return_items(\%itemcount); 
   	} 
   }
   else { 
-  	quest::say("I do not know you well enough to entrust you with such an item, yet."); 
+    quest::say("I do not know you well enough to entrust you with such an item, yet."); 
+    plugin::return_items(\%itemcount); 
   }    
 } 
 
-#END of FILE Zone:thurgadina  ID:115218 & 115150 -- Cobi_Frostbeard 
-
+#END of FILE Zone:thurgadina  ID:115218 & 115150 -- Cobi_Frostbeard

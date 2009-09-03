@@ -25,6 +25,7 @@
 # Tattered Sleeve Pattern ID-19557
 # Tattered Tunic Pattern ID-19556
 # Faceted Blue Gem ID-19919
+# Sharpened Coalition Dirk ID-19925
 # Coalition Trader Dirk ID-19937
 # 
 # Rattlesnake Skin ID-19850
@@ -132,31 +133,24 @@ sub EVENT_ITEM
 {
 
    # A Sealed Letter ID- 12270 (Not the Correct note but it will do)
-   if($itemcount{12270} == 1)
-   {
-   quest::say("Ah, Tovan sent you for a suit of traders clothing. I can instruct you on how to prepare your suit of clothing but you will have to acquire the required materials yourself. Use this Curing Kit to construct the clothing once you have done so. Do you wish to prepare Coalition Trader [Gloves], Coalition Trader [Boots], a Coalition Trader [Bracer], a Coalition Trader [Cap], Coalition Trader [Leggings], Coalition Trader [Sleeves], or a Coalition Trader [Tunic]?");
-   }
-   
-   if (plugin::check_handin(\%itemcount, 19919 =>1, 19937=>1, 19850=>1 )) {
-     
-         quest::say("You have proven yourself worthy of our cause. Take this and use it to bring down non followers of Innoruuk.");
-   quest::ding();
-   quest::exp("100");
-   # Coalition Trader Dirk ID-19937
-   quest::summonitem("19937");
-   
-   # Coalition of TradeFolk III Faction
-   quest::faction("369","1");
-   # Coalition of Trade Folk Faction
-   quest::faction("47","1");
-   # Carson McCabe Faction
-   quest::faction("31","1");
-   # Corrupt Qeynos Guards Faction
-   quest::faction("53","1");
-   # Freeport Militia Faction
-   quest::faction("105","1");
-   }
-
+  if(plugin::check_handin(\%itemcount, 12270 => 1)) {
+    quest::say("Ah, Tovan sent you for a suit of traders clothing. I can instruct you on how to prepare your suit of clothing but you will have to acquire the required materials yourself. Use this Curing Kit to construct the clothing once you have done so. Do you wish to prepare Coalition Trader [Gloves], Coalition Trader [Boots], a Coalition Trader [Bracer], a Coalition Trader [Cap], Coalition Trader [Leggings], Coalition Trader [Sleeves], or a Coalition Trader [Tunic]?");
+  }
+  elsif(plugin::check_handin(\%itemcount, 19919 => 1, 19925 => 1, 19850=>1)) {
+    quest::say("You have proven yourself worthy of our cause. Take this and use it to bring down non followers of Innoruuk.");
+    quest::ding();
+    quest::exp(100);
+    quest::summonitem(19937); #Coalition Trader Dirk ID-19937
+    quest::faction(369,1); #Coalition of TradeFolk III
+    quest::faction(47,1);  #Coalition of Trade Folk
+    quest::faction(31,1);  #Carson McCabe
+    quest::faction(53,1);  #Corrupt Qeynos Guards
+    quest::faction(105,1); #Freeport Militia
+  }
+  else {
+    quest::say("I do not want this, $name.");
+    plugin::return_items(\%itemcount);
+  }
 }
 
 ######## EVENT_AGGRO AREA ##################
@@ -268,13 +262,4 @@ sub EVENT_WAYPOINT
 
 
 }
-
-### EQEmu Quest Template By: MWMDRAGON
-### The End of this script must contain 2 empty lines for the EQ Quest System
 #END of FILE Zone:freporte  ID:10129 --  Verona_Rankin
-
-
-
-
-
-

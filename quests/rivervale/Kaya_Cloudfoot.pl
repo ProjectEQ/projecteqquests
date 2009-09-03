@@ -29,9 +29,14 @@ quest::faction(218,10);
 quest::faction(316,10);
 quest::faction(347,-30);
 }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-  plugin::return_items(\%itemcount);
+  elsif(plugin::check_handin(\%itemcount, 18431 => 1)) { #Halfling Paladin Note
+    quest::say("Take this and wear it with pride, $name.");
+    quest::summonitem(13541); #Jumjum Sack Tunic*
+  }
+  else {
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+    plugin::return_items(\%itemcount);
+  }
 }
-#END of FILE Zone:rivervale  ID:19049 -- Kaya_Cloudfoot 
-
+#END of FILE Zone:rivervale  ID:19049 -- Kaya_Cloudfoot

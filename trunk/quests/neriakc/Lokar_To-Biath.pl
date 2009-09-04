@@ -30,4 +30,10 @@ sub EVENT_ITEM {
   	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
 	}
-}#END of FILE Zone:neriakc  ID:42037 -- Lokar_To`Biath	
+}
+
+sub EVENT_DEATH {
+     quest::say("The death of a Dark Bargainer never goes unnoticed!");
+}
+
+#END of FILE Zone:neriakc  ID:42037 -- Lokar_To`Biath	

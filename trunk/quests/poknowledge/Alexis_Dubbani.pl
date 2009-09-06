@@ -18,11 +18,15 @@ if($text=~/Hail/i){
       quest::say("Curator Merri is the founder of the museum in the Selia district of New Tanaan. She is a true visionary and a wonderful person as well. It is her dream to turn life's love into something truly grand. She also carries with her the Collector's Boxes. If you need one, be sure to ask her for it.");
 	  }
 }
-sub EVENT_ITEM{
-   if ($itemcount{28078} == 1){
-   #I think there is a 'Collection of Books' item missing from the database at entry 28078.
-      quest::say("These will do. Please accept this as a show of my appreciation. Now if you'll excuse me I have much work left to do.");
-      quest::summonitem(28240);
+
+sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 28078 => 1)) {
+    #I think there is a 'Collection of Books' item missing from the database at entry 28078.
+    quest::say("These will do. Please accept this as a show of my appreciation. Now if you'll excuse me I have much work left to do.");
+    quest::summonitem(28240);
+  }
+  else {
+    plugin::return_items(\%itemcount);
   }
 }
-#END of FILE Zone:poknowledge Alexis_Dubbani 
+#END of FILE Zone:poknowledge Alexis_Dubbani

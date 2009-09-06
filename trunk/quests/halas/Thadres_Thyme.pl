@@ -16,16 +16,14 @@ if($text=~/what pages/i){
 quest::say("I believe the pages contain the events that drove my brother to insanity.  I have been searching for the remaining three missing pages.  There is some hope; I found a couple of pages over in Everfrost Mountains."); }
 }
 
-sub EVENT_ITEM
-{ 
- if($itemcount{18136} == 1 && $itemcount{18137} == 1 && $itemcount{18138} == 1)
-  {
-   quest::say("Thank you, thank you. Let me read them. Oh! How could I want these brewing recipes after they made my brother insane? Where are they? I think this is all of them. Take them away from me! Delius can smile upon me now.");
-   quest::summonitem(18139);
-   quest::exp(200);
- }
- plugin::return_items(\%itemcount);
+sub EVENT_ITEM {
+  if(plugin::check_handin(\%itemcount, 18136 => 1, 18137 => 1, 18138 => 1)) {
+    quest::say("Thank you, thank you. Let me read them. Oh! How could I want these brewing recipes after they made my brother insane? Where are they? I think this is all of them. Take them away from me! Delius can smile upon me now.");
+    quest::summonitem(18139);
+    quest::exp(200);
+  }
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }
-
-#END of FILE Zone:halas  ID:29015 -- Thadres_Thyme 
-
+#END of FILE Zone:halas  ID:29015 -- Thadres_Thyme

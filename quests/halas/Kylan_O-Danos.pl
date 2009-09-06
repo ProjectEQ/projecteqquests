@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   if ($ulevel == 1) { 
-    quest::emote(" turns to greet you. 'A new recruit? Well you better get ready for some hard work! I don't tolerate laziness! I am Kylan O`Danos, your new Guild Master. Read the note in your inventory and give it to me when you are ready to begin your training!");
+    quest::emote("turns to greet you. 'A new recruit? Well you better get ready for some hard work! I don't tolerate laziness! I am Kylan O`Danos, your new Guild Master. Read the note in your inventory and give it to me when you are ready to begin your training!");
   }
 }
 
@@ -22,15 +22,15 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM { 
- if($itemcount{18760} == 1){
-   quest::say("Greetin's! We are the mighty Wolves o' the North, protectors o' Halas, and we must work hard t' keep it safe fer our citizens. Here is our tunic, it identifies ye as a proud warrior o' this great city. Once you are ready to begin your training please make sure that you see Lysbith, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-   quest::summonitem("13511");
-   quest::faction("361","10");
- }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-  plugin::return_items(\%itemcount);
- }
-
-#END of FILE Zone:halas  ID:29057 -- Kylan_O`Danos 
-
+  if(plugin::check_handin(\%itemcount, 18760 => 1)) {
+    quest::say("Greetin's! We are the mighty Wolves o' the North, protectors o' Halas, and we must work hard t' keep it safe fer our citizens. Here is our tunic, it identifies ye as a proud warrior o' this great city. Once you are ready to begin your training please make sure that you see Lysbith, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+    quest::summonitem(13511);
+    quest::faction(361,10);
+  }
+  else {
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+    plugin::return_items(\%itemcount);
+  }
+}
+#END of FILE Zone:halas  ID:29057 -- Kylan_O`Danos

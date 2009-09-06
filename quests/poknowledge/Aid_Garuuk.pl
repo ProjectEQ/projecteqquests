@@ -17,19 +17,18 @@ sub EVENT_SAY {
   
   
 sub EVENT_ITEM {
-  if((plugin::check_handin(\%itemcount, 28740 => 1)) && ($race == 9)){#Troll Receipt
-    quest::say("Dank yoo $name.  Take diz.");#Text made up, I have no reference.
-    quest::summonitem(2418); #Hoop of the Traveler
+  if(plugin::check_handin(\%itemcount, 28740 => 1)) { #Troll Receipt
+    if($race == 9) {
+      quest::say("Dank yoo $name.  Take diz.");#Text made up, I have no reference.
+      quest::summonitem(2418); #Hoop of the Traveler
+    }
+    else {
+      quest::say("What's dis? A receipt frum a $race? You cud not have gottun dis from Bregna, dis must be a forgury. I'll keep dis so you can't fool anywun else whif dis again.");
+    }
   }
-
-  elsif((plugin::check_handin(\%itemcount, 28740 => 1)) && ($race != 9)){
-  	quest::say("What's dis? A receipt frum a $race? You cud not have gottun dis from Bregna, dis must be a forgury. I'll keep dis so you can't fool anywun else whif dis again.");
+  else {
+    quest::say("I don't need this."); #text made up
+    plugin::return_items(\%itemcount);
   }
-  
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-  }
-    
-
-#END of FILE Zone:poknowledge  ID:202123 -- Aid_Garuuk 
-
+}
+#END of FILE Zone:poknowledge  ID:202123 -- Aid_Garuuk

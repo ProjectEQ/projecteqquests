@@ -24,15 +24,13 @@ sub EVENT_ITEM {
     quest::say("Take this as your reward.");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20859 => 1, 20860 => 1, 20858 => 1,
-20962 => 1)) { #ranger test of the blade using bitter honey, circlet of brambles, efreeti long sword, emerald spiroc feather
+  elsif(plugin::check_handin(\%itemcount, 20859 => 1, 20860 => 1, 20858 => 1, 20962 => 1)) { #ranger test of the blade using bitter honey, circlet of brambles, efreeti long sword, emerald spiroc feather
     quest::summonitem(27732); #arydryidriyorn
     quest::exp(100000);
     quest::say("Take this as your reward.");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20861 => 1, 20969 => 1, 20862 => 1,
-20863 => 1)) { #ranger test of the art of ranged attack using efreeti war bow, thickened nectar, sphinx tallow, shimmering pearl
+  elsif(plugin::check_handin(\%itemcount, 20861 => 1, 20969 => 1, 20862 => 1, 20863 => 1)) { #ranger test of the art of ranged attack using efreeti war bow, thickened nectar, sphinx tallow, shimmering pearl
     quest::summonitem(11696); #windstriker
     quest::exp(100000);
     quest::say("Take this as your reward.");
@@ -45,6 +43,6 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  quest::depop();
   quest::stoptimer("depop");
+  quest::depop();
 } 

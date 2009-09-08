@@ -21,31 +21,19 @@ quest::say("This one hard, Ogog like it.  Ogog need efreeti battle axe, some hon
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 20983 => 1, 20963 => 1, 20981 => 1, 20982
-
-=> 1)) { #warrior test of bash using efreeti battle axe, honeyed nectar, bottled
-
-djinni, ethereal emerald
+  if(plugin::check_handin(\%itemcount, 20983 => 1, 20963 => 1, 20981 => 1, 20982 => 1)) { #warrior test of bash using efreeti battle axe, honeyed nectar, bottled djinni, ethereal emerald
     quest::summonitem(11675); #fangol
     quest::exp(100000);
     quest::say("Yuz do good! Take dis!");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20980 => 1, 20979 => 1, 20956 => 1)) {
-
-#warrior test of smash using djinni war blade, virulent poison, mottled spiroc
-
-feather
+  elsif(plugin::check_handin(\%itemcount, 20980 => 1, 20979 => 1, 20956 => 1)) { #warrior test of smash using djinni war blade, virulent poison, mottled spiroc feather
     quest::summonitem(11674); #dagas
     quest::exp(100000);
     quest::say("Yuz do good! Take dis!");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20976 => 1, 20949 => 1, 20977 => 1,
-
-20978 => 1)) { #warrior test of think using efreeti belt, pegasus statuette,
-
-spiroc wind totem, wind tablet
+  elsif(plugin::check_handin(\%itemcount, 20976 => 1, 20949 => 1, 20977 => 1, 20978 => 1)) { #warrior test of think using efreeti belt, pegasus statuette, spiroc wind totem, wind tablet
     quest::summonitem(11673); #belt of the four winds
     quest::exp(100000);
     quest::say("Yuz do good! Take dis!");
@@ -58,6 +46,6 @@ spiroc wind totem, wind tablet
 }
 
 sub EVENT_TIMER {
-  quest::depop();
   quest::stoptimer("depop");
+  quest::depop();
 } 

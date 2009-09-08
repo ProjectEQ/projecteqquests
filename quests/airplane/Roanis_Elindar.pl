@@ -20,19 +20,19 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 20952 => 1, 20760 => 1, 20761 => 1)) { #magician test of summoning using harpy statuette, finely woven cloth amice, large diamond   quest::summonitem(2708); #Drake-hide amice
     quest::exp(100000);
-    quest::say("");
+    quest::say("Take this.");
     quest::depop();
     }
   elsif(plugin::check_handin(\%itemcount, 20959 => 1, 20762 => 1, 20763 => 1)) { #magician test of interpretation using carmine spiroc feather, blood sky amethyst, golden efreeti ring
     quest::summonitem(11687); #duennan shielding ring
     quest::exp(100000);
-    quest::say("");
+    quest::say("Take this.");
     quest::depop();
     }
   elsif(plugin::check_handin(\%itemcount, 20966 => 1, 20764 => 1, 20766 => 1, 20765 => 1)) { #magician test of displacement using sweet nectar, crown of elemental mastery, large opal, djinni stave
     quest::summonitem(11568); #staff of elemental mastery
     quest::exp(100000);
-    quest::say("");
+    quest::say("Take this.");
     quest::depop();
     }
   else {
@@ -42,6 +42,6 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  quest::depop();
   quest::stoptimer("depop");
+  quest::depop();
 } 

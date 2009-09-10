@@ -35,7 +35,7 @@ sub EVENT_ITEM {
       quest::exp(1000);
    }
    elsif (plugin::check_handin(\%itemcount,10193=>1)) {
-      quest::emote("Xenyari Lisariel bounces around with glee at the sight of your gift, smiles at you, and dons the telesm. As she clasps the telesm around her neck, she begins to writhe in agony, and slowly fades from sight leaving just the telesm, which is now pulsating with vibrant energy.");
+      quest::emote("bounces around with glee at the sight of your gift, smiles at you, and dons the telesm. As she clasps the telesm around her neck, she begins to writhe in agony, and slowly fades from sight leaving just the telesm, which is now pulsating with vibrant energy.");
       quest::depop();
       quest::summonitem(10194);
       quest::exp(10000);

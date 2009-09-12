@@ -23,7 +23,7 @@ sub EVENT_SAY {
       }
       if($text=~/farstone/i) {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
-        quest::say("Congratulations! I believe now that you are trustworthy enough to take on some of the adventures the Wayfarers Brotherhood have to give. We will be able to continue with our discussions once you complete some adventures. We can also help you with travel between our camps. Be well, fair Guiscard. I'm sure, someday, you will be a great addition to the Wayfarers Brotherhood.");
+        quest::say("Congratulations! I believe now that you are trustworthy enough to take on some of the adventures the Wayfarers Brotherhood have to give. We will be able to continue with our discussions once you complete some adventures. We can also help you with travel between our camps. Be well, fair $name. I'm sure, someday, you will be a great addition to the Wayfarers Brotherhood.");
         quest::faction(356,50); #Wayfarers Brotherhood
         quest::setglobal("Wayfarer",2,5,"F");
         quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");

@@ -1,12 +1,12 @@
-# NPC: Tutorial kobolds
+# NPC: Tutorial kobolds (However, Rookfynn is a Goblin...)
 # Angelox
 
-sub EVENT_COMBAT{
-    quest::emote("brandishes razor sharp claws and circles inward.");
+sub EVENT_COMBAT {
+#  quest::emote("brandishes razor sharp claws and circles inward.");
 }
 
-sub EVENT_DEATH{
-  quest::emote("unleashes a lupine yelp as it collapses on the floor.");
- }
+sub EVENT_DEATH {
+#  quest::emote("unleashes a lupine yelp as it collapses on the floor.");
+}
 
-# EOF zone: Tutorialb
+# EOF zone: Tutorialb NPC:#Rookfynn.pl

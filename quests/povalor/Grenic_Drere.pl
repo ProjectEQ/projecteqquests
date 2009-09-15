@@ -24,7 +24,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
-	if(plugin::check_handin(\%itemcount, 29281 => 1) && plugin::check_handin(\%itemcount, 29292 => 1) && plugin::check_handin(\%itemcount, 29293 => 1) && plugin::check_handin(\%itemcount, 29294 => 1))
+	if(plugin::check_handin(\%itemcount, 29281 => 1, 29292 => 1, 29293 => 1, 29294 => 1))
 	{
 		quest::say("Hmm, this is minor vindication, but vindication nonetheless. I will never again fight with my old compatriots, but now I know the punishment of those responsible for my exile is fitting for their crime. We did have an agreement, and while stripped of my rank I still have my honor. This ring is what all Soldiers of Marr wear to enter the Halls of Honor, it serves no use for me any longer, it is yours now.");
 		quest::summonitem(29214);

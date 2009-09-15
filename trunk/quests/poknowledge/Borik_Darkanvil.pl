@@ -34,7 +34,7 @@ sub EVENT_ITEM
 {
 	if($platinum == 3000)
 	{
-		if(plugin::check_handin(\%itemcount, 29228 => 1) && plugin::check_handin(\%itemcount, 29229 => 1) && plugin::check_handin(\%itemcount, 29230 => 1))
+		if(plugin::check_handin(\%itemcount, 29228 => 1, 29229 => 1, 29230 => 1))
 		{
 			quest::say("Ah ha! Here we go one box of souls!");
 			quest::summonitem(29281);

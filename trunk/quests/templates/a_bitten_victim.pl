@@ -1,6 +1,5 @@
 sub EVENT_SPAWN {
-	my $minimum = 1;
-	my $random_race = int(rand(12)) + $minimum;
+	my $random_race = quest::ChooseRandom(1,2,3,4,5,6,7,8,9,10,11,12,128,130,330);
 	my $random_gender = int(rand(2));
 	
 	quest::npcgender($random_gender);

@@ -29,6 +29,7 @@ sub EVENT_ITEM
 		quest::say("Hmm, this is minor vindication, but vindication nonetheless. I will never again fight with my old compatriots, but now I know the punishment of those responsible for my exile is fitting for their crime. We did have an agreement, and while stripped of my rank I still have my honor. This ring is what all Soldiers of Marr wear to enter the Halls of Honor, it serves no use for me any longer, it is yours now.");
 		quest::summonitem(29214);
 		quest::set_zone_flag(211);
+		quest::setglobal("pop_alt_access_hohonora", 1, 5, "F");
 	}
 }
 #END of FILE Zone:povalor  ID:208029 -- Grenic_Drere 

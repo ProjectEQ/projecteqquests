@@ -10,7 +10,7 @@ sub EVENT_SAY {
     quest::say("To assemble a Plague Warrior Helm you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Helm Mold. Once that is done combine the Crude Bronze Helm with a Ruined Coyote Pelt and two Rebel Clockwork Eye Lenses in the Mail Assembly Kit.");
     quest::summonitem(19631); #crude helm mold
   }
-if($text=~/plague warrior bracer/i) {
+  if($text=~/plague warrior bracer/i) {
     quest::say("To assemble a Plague warrior Mail Bracer you will need to obtain a brick of crude bronze and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Bronze Bracer with a Ruined Coyote Pelt and a Rebel Clockwork Wrist Section in the Mail Assembly Kit.");
     quest::summonitem(19632); #crude bracer mold
   }
@@ -34,4 +34,9 @@ if($text=~/plague warrior bracer/i) {
     quest::say("To assemble a Plague warrior Breastplate you will need to obtain four bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Bronze Breastplate with a Coyote Pelt, a Rebel Clockwork Chest Plate, and a Rebel Clockwork Back Plate in the Mail Assembly Kit.");
     quest::summonitem(19637); #crude breastplate mold
   }
+}
+
+sub EVENT_ITEM {
+  quest::say("I do not want this.");
+  plugin::return_items(\%itemcount);
 }

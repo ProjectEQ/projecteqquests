@@ -18,6 +18,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
 # EOF Zone: akanon ID: 55121 NPC: Rilgor_Plegnog
-

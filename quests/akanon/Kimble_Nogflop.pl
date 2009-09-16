@@ -1,8 +1,8 @@
 sub EVENT_SAY { 
-  if($text=~/Hail/i){
-    quest::say("Greetings!  I am the keeper of this zoo.  I advise you to stay on the upper tiers to observe the animals.");
+  if($text=~/Hail/i) {
+    quest::say("Greetings! I am the keeper of this zoo. I advise you to stay on the upper tiers to observe the animals.");
   }
-  elsif ($text=~/regurgitonic/i) {
+  if ($text=~/regurgitonic/i) {
     quest::say("I formulate the Regurgitonic myself. My animals kept eating the occasional spectator here and there. Femurs and ribs kept getting stuck inside, not to mention a few platinum pieces. Sometimes my batch would come out wrong and the animals would go berserk!! I hope I got the formula right this time.");
   }
 }
@@ -18,6 +18,9 @@ sub EVENT_ITEM {
     quest::faction(37, -30);
     quest::exp(100);
   }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
 # Quest edited by mystic414

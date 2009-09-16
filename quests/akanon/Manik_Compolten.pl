@@ -15,7 +15,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #do all other handins first with plugin, then let it do disciplines
   if(plugin::check_handin(\%itemcount, 13208 => 1)) {
     quest::say("Ah! Excellent work! I think we may have further use for you if you like.");
     quest::exp(1000);
@@ -50,6 +49,7 @@ sub EVENT_ITEM {
     quest::givecash(1,3,0,0);
   }
   else {
+    #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
     plugin::return_items(\%itemcount);
   }

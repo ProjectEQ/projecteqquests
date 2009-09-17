@@ -25,10 +25,14 @@
 ############################################
 
 sub EVENT_SAY {
-   if($text=~/Hail/i) {
+   if($text=~/hail/i) {
       quest::signalwith(151070, 1, 1);
       my $facemob = $entity_list->GetMobByNpcTypeID(151070);
       $npc->FaceTarget($facemob);
    }
+}
+
+sub EVENT_ITEM {
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:bazaar -- Aspen.pl

@@ -19,7 +19,7 @@ sub EVENT_CLICKDOOR
 	}
 	
 	#codecay
-	if($d_id == 21)
+	if($d_id == 12)
 	{
 		if($client->GetLevel() >= $level_for_tier_two || (defined $qglobals{pop_pod_alder_fuirstel} && defined $qglobals{pop_pod_grimmus_planar_projection} && defined $qglobals{pop_pod_elder_fuirstel}) || (defined $qglobals{pop_alt_access_codecay}))
 		{

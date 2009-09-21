@@ -33,7 +33,7 @@ if($text=~/razorfiend/i && $pov_key_quest == undef) {
 
 if($text=~/assistance/i && $pov_key_quest == undef) {
 
-	quest::say("Man of us here are anxious to leave.  May wish to regroup with the rest of our company.  Others wish to go back to the Halls to complete the [Trials]");
+	quest::say("Many of us here are anxious to leave.  May wish to regroup with the rest of our company.  Others wish to go back to the Halls to complete the [Trials]");
 
 	}
 

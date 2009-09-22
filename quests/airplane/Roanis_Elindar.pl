@@ -18,7 +18,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 20952 => 1, 20760 => 1, 20761 => 1)) { #magician test of summoning using harpy statuette, finely woven cloth amice, large diamond   quest::summonitem(2708); #Drake-hide amice
+  if(plugin::check_handin(\%itemcount, 20952 => 1, 20760 => 1, 20761 => 1)) { #magician test of summoning using harpy statuette, finely woven cloth amice, large diamond
+    quest::summonitem(2708); #Drake-hide amice
     quest::exp(100000);
     quest::say("Take this.");
     quest::depop();

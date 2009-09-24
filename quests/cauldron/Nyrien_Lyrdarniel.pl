@@ -16,4 +16,6 @@ sub EVENT_SIGNAL {
 quest::say("Leave our new friend alone, Ghilanbiddle.  He is quite welcome to rest amongst us.");
 }
 
-
+sub EVENT_ATTACK {
+    quest::say("Fabulous Four, attack!");
+ }

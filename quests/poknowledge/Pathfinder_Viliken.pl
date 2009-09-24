@@ -12,12 +12,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 29112 => 1)) {#Ethereal Parchment
     quest::emote("takes the arcane item from you. Carefully, he inspects it -- nodding to himself in recognition of the item and planning of his next step. The ranger then begins a soft, melodic chant of priestly origin. You recognize the nature of the words to be a hym of the natural world, though you cannot decipher their meaning. The arcane object fades into existence, the runes etching themselves upon the surface become clear in their mat, neutral hues. Eventually, the ranger's chant ends and the object in his hand is complete. He then extends it to you in unconditional offering, 'Use this wisely and with great respect for the power that has originated it. The primordial arcane powers of the divine worlds are not to be disrespected.'");
-    quest::summonitem(quest::ChooseRandom(21628, 21627)); #Level 61 or 62 Ranger spell, PoP (Call of the Rathe, Strength of Tunare)
+    quest::summonitem(quest::ChooseRandom(26943, 21628, 21627)); #Level 61 or 62 Ranger spell, PoP (Earthen Roots, Call of the Rathe, Strength of Tunare)
   }
   
   elsif(plugin::check_handin(\%itemcount, 29131 => 1)) {#Spectral Parchment
     quest::emote("takes the arcane item from you. Carefully, he inspects it -- nodding to himself in recognition of the item and planning of his next step. The ranger then begins a soft, melodic chant of priestly origin. You recognize the nature of the words to be a hym of the natural world, though you cannot decipher their meaning. The arcane object fades into existence, the runes etching themselves upon the surface become clear in their mat, neutral hues. Eventually, the ranger's chant ends and the object in his hand is complete. He then extends it to you in unconditional offering, 'Use this wisely and with great respect for the power that has originated it. The primordial arcane powers of the divine worlds are not to be disrespected.'");
-    quest::summonitem(quest::ChooseRandom(26943, 26931, 26929, 26930, 21626)); #Level 63 or 64 Ranger spell, PoP (Earthen Roots, Frozen Wind, Nature's Rebuke, Spirit of the Predator, Brushfire)
+    quest::summonitem(quest::ChooseRandom(26931, 26929, 26930, 21626)); #Level 63 or 64 Ranger spell, PoP (Frozen Wind, Nature's Rebuke, Spirit of the Predator, Brushfire)
   }
   
   elsif(plugin::check_handin(\%itemcount, 29132 => 1)) {#Glyphed Rune Word

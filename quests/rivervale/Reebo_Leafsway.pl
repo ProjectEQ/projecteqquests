@@ -34,6 +34,9 @@ if($text=~/trail to Karana/i){
 quest::say("Good.  First you should learn that Karana's work is just that..  work.  Karana provides us with the tools but it is by the sweat of our brows that we prosper.  Common sense and hard work are two things that are highly prized by our people.  Time for you to sweat. young one.  Take this crate of carrots over to Blinza Toepopal in the Fool's Gold.  They need our finest carrots for Mayor Gubbin's stew.  When you return I will teach you a lesson of the Rainkeeper.");
 quest::summonitem(13971); 
   }
+  if (($text=~/hail/i) && (plugin::check_hasitem($client, 52355))) {
+    quest::say("You took care of our problem, $name, and for that you have my eternal thanks. With the new head you supplied, we should be able to squeeze a few more years out of Shakey. Not sure what you'd want to do with the old one. That dilapidated pumpkin is worthless. Moldy, dried out . . . doesnt hold a light. He shrugs empahtically. Go ahead and hold onto the thing if that tickles your fancy, though. May Karana watch over you in your travels!");
+  }
 }
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount,13971=> 1)){

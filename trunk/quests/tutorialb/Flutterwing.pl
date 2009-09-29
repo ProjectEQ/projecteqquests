@@ -2,24 +2,18 @@
 #quest: Flutterwing's sibling
 #site3op
 
-sub EVENT_SAY{
+sub EVENT_SAY {
   if($text=~/hail/i) {
-    quest::say("Hello there $name. Please don't hurt me, I may be the last of my lineage since the [theft]");
-  }
-  if($text=~/theft/i) {
-    quest::emote("saddens and lets out a sigh.");
-    quest::say("My unhatched sibling was stolen from our nest by a nasty kobold. I'm afraid the worst might have happened. Would you please search for the [egg] during your journeys in the mines?");
-  }
-  if($text=~/egg/i) {
-    quest::say("Well of course an egg $class. How do you think us dragons are born? If you would return this egg to me or what is left, I will reward you.");
+    quest::signal(189022,0); #Rashere
   }
 }
 
-sub EVENT_ITEM{
-  if($itemcount{54603} == 1) {
+sub EVENT_ITEM {
+  if(plugin::check_handin(\%itemcount, 54603 => 1)) { #Flutterwing's Unhatched Sibling
     quest::emote("beams with glee.");
-    quest::say("Oh $name how can I ever repay such kindness. I will not be alone in this dreadful place after all. Please accept this small token.");
-    quest::exp(25);
+    quest::say("Oh, $name, how can I ever repay such kindness. I will not be alone in this dreadful place after all. Please accept this small token.");
+    quest::exp(500);
+    quest::ding();
     if($class eq 'Warrior'){quest::summonitem(38005);}
     elsif($class eq 'Cleric'){quest::summonitem(38173);}
     elsif($class eq 'Paladin'){quest::summonitem(38089);}
@@ -36,5 +30,13 @@ sub EVENT_ITEM{
     elsif($class eq 'Enchanter'){quest::summonitem(38278);}
     elsif($class eq 'Beastlord'){quest::summonitem(38131);}
     elsif($class eq 'Berserker'){quest::summonitem(38320);}
+  }
+  elsif(plugin::check_handin(\%itemcount, 13014 => 1)) { #Muffin
+    quest::emote("snatches the muffin from you as you barely manage to keep your fingers.");
+    quest::exp(25);
+  }
+  else {
+    quest::emote("sniffs the item and turns his head in disgust.");
+    plugin::return_items(\%itemcount);
   }
 }

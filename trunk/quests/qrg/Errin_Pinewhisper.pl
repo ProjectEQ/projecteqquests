@@ -73,11 +73,10 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(20263);
   }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
-  plugin::return_items(\%itemcount);
+  else {
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
+    plugin::return_items(\%itemcount);
+  }
 }
-
 #END of FILE Zone: qrg ID:3041 -- Errin_Pinewhisper
-
-

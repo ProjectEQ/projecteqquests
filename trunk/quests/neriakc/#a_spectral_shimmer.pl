@@ -8,24 +8,27 @@
 
 sub EVENT_SPAWN {
   quest::settimer(1,300); # 5 minute timer, then just depop
-  }
+}
 
 sub EVENT_SAY {
-  if($text=~/Hail/i && ($class = Enchanter)) {
-  quest::say("Take this final piece and hurry, my power gets weaker by the moment.");
-  quest::summonitem(67014); # Tarnished Cross-Guard
-  quest::emote("fades away.");
-  quest::stoptimer(1);
-  quest::depop;
+  if($text=~/hail/i && ($class eq "Enchanter")) {
+    quest::say("Take this final piece and hurry, my power gets weaker by the moment.");
+    quest::summonitem(67014); # Tarnished Cross-Guard
+    quest::emote("fades away.");
+    quest::stoptimer(1);
+    quest::depop();
   }
   else {
-  quest::emote("stares at you as if it does not understand.");
+    quest::emote("stares at you as if it does not understand.");
   }
 }
 
-
 sub EVENT_TIMER {
-  if($timer == 1) {
-   quest::depop;
-  }
+  quest::stoptimer(1);
+  quest::depop();
+}
+
+sub EVENT_ITEM {
+  quest::emote("stares at you as if it does not understand.");
+  plugin::return_items(\%itemcount);
 }

@@ -5,11 +5,11 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
     $check = 0;
-    if($timer eq "depop1" && $qglobals{poeb_warlord} == 1) {
+    if($timer eq "depop1" && defined $qglobals{poeb_warlord}) {
     quest::stoptimer("depop1");
     quest::depop();
     }
-    if($timer eq "depop1" && $qglobals{poeb_warlord} != 1) {
+    if($timer eq "depop1" && !defined $qglobals{poeb_warlord}) {
     quest::stoptimer("depop1");
     quest::settimer("birak",1);
     }

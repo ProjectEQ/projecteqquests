@@ -1,30 +1,21 @@
-sub EVENT_SPAWN {
-   $check = 0;
-   quest::settimer("depop",3);
+sub EVENT_SPAWN 
+{
+	quest::settimer("depop",60);
 }
 
-sub EVENT_TIMER {
-    $check = 0;
-    if($timer eq "depop" && defined $qglobals{poeb_warlord}) {
-    quest::stoptimer("depop");
-    quest::depop();
-    }
-    if($timer eq "depop" && !defined $qglobals{poeb_warlord}) {
-    quest::stoptimer("depop");
-    quest::settimer("awisano",1);
-    }
-    if($timer eq "awisano") {
-    $check_boss = $entity_list->GetMobByNpcTypeID(222002);#myrmadon_of_stone
-    if ($check_boss) {
-      $check = 1
-    }
-    if($check == 0) {
-	quest::spawn2(222016,0,0,$x,$y,$z,$h); 
-        quest::stoptimer("awisano");
-        quest::depop();
+sub EVENT_TIMER 
+{
+	if($timer eq "depop" && defined $qglobals{poeb_warlord}) {
+		quest::stoptimer("depop");
+		quest::depop();
 	}
-    if ($check == 1) {
-      
-      }
-    }    
+    	else {
+    		$check_boss = $entity_list->GetMobByNpcTypeID(222002);#myrmadon_of_stone
+    		if (!$check_boss) {
+			quest::spawn2(222016,0,0,$x,$y,$z,$h); 
+        		quest::stoptimer("depop");
+        		quest::depop();
+		}
+	}
 }
+      

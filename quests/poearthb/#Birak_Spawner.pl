@@ -1,31 +1,20 @@
-sub EVENT_SPAWN {
-   $check = 0;
-   quest::settimer("depop1",3);
+sub EVENT_SPAWN 
+{
+	quest::settimer("depop1",59);
 }
 
-sub EVENT_TIMER {
-    $check = 0;
-    if($timer eq "depop1" && defined $qglobals{poeb_warlord}) {
-    quest::stoptimer("depop1");
-    quest::depop();
-    }
-    if($timer eq "depop1" && !defined $qglobals{poeb_warlord}) {
-    quest::stoptimer("depop1");
-    quest::settimer("birak",1);
-    }
-    if($timer eq "birak") {
-    $check_boss = $entity_list->GetMobByNpcTypeID(222001);#stonefist_clansman
-    if ($check_boss) {
-      $check = 1
-    }
-    if($check == 0) {
-	quest::spawn2(222017,0,0,$x,$y,$z,$h); 
-        quest::stoptimer("birak");
-        quest::depop();
+sub EVENT_TIMER 
+{
+	if($timer eq "depop" && defined $qglobals{poeb_warlord}) {
+		quest::stoptimer("depop1");
+		quest::depop();
 	}
-    if ($check == 1) {
-      
-      }
-    }
-}     
-
+    	else {
+    		$check_boss = $entity_list->GetMobByNpcTypeID(222001);#stonefist_clansman
+    		if (!$check_boss) {
+			quest::spawn2(222017,0,0,$x,$y,$z,$h);  
+        		quest::stoptimer("depop1");
+        		quest::depop();
+		}
+	}
+}

@@ -11,7 +11,7 @@ sub EVENT_SAY {
 
 sub EVENT_TIMER {
 if($timer eq "essence") {
-        quest::stoptimer(55);
+        quest::stoptimer("essence");
         quest::depop();
 
      }

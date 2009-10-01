@@ -1,31 +1,20 @@
-sub EVENT_SPAWN {
-   $check = 0;
-   quest::settimer("depop2",3);
+sub EVENT_SPAWN 
+{
+	quest::settimer("depop2",61);
 }
 
-sub EVENT_TIMER {
-    $check = 0;
-    if($timer eq "depop2" && defined $qglobals{poeb_warlord}) {
-    quest::stoptimer("depop2");
-    quest::depop();
-    }
-    if($timer eq "depop2" && !defined $qglobals{poeb_warlord}) {
-    quest::stoptimer("depop2");
-    quest::settimer("galronor",1);
-    }
-    if($timer eq "galronor") {
-    $check_boss = $entity_list->GetMobByNpcTypeID(222000);#rock_studded_champ
-    if ($check_boss) {
-      $check = 1
-    }
-    if($check == 0) {
-	quest::spawn2(222018,0,0,$x,$y,$z,$h); 
-        quest::stoptimer("galronor");
-        quest::depop();
+sub EVENT_TIMER 
+{
+	if($timer eq "depop" && defined $qglobals{poeb_warlord}) {
+		quest::stoptimer("depop2");
+		quest::depop();
 	}
-    if ($check == 1) {
-      
-      }
-    }
-}     
-
+    	else {
+    		$check_boss = $entity_list->GetMobByNpcTypeID(222000);#rock_studded_champ
+    		if (!$check_boss) {
+			quest::spawn2(222018,0,0,$x,$y,$z,$h);  
+        		quest::stoptimer("depop2");
+        		quest::depop();
+		}
+	}
+}

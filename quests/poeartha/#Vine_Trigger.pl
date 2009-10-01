@@ -17,7 +17,7 @@ sub EVENT_TIMER {
     $check=0;
     }
 
-    if ($timername == "vine") {
+    if ($timer eq "vine") {
     $check_boss = $entity_list->GetMobByNpcTypeID(218019); #A_Tainted_Rock_Beast 
         if ($check_boss) {
           $check = 1

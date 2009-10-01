@@ -1,5 +1,5 @@
 sub EVENT_SPAWN { 
-   quest::spawn_condition(poearthb,1,0); #Make sure we aren't up yet.
+   quest::spawn_condition($zonesn,1,0); #Make sure we aren't up yet.
  if (defined $qglobals{poeb_rathe}){
    quest::settimer("rathe",1); #waiting for the global to expire to pop rathe
    }

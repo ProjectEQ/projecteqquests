@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
 
-    quest::settimer("final",4);
+    quest::settimer("final",59);
 
 }
 
@@ -15,4 +15,3 @@ sub EVENT_TIMER {
         }
 
 }
-

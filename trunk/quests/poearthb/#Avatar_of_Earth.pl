@@ -1,9 +1,9 @@
 sub EVENT_SPAWN { 
-   quest::settimer(1,3400); 
+   quest::settimer("avatar",3400); 
 } 
 
 sub EVENT_TIMER { 
-   if($timer == 1) { 
+   if($timer eq "avatar") { 
       quest::depop(); 
    } 
 } 

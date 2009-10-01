@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
    $check = 0;
-   quest::settimer("depop",1);
+   quest::settimer("depop",3);
 }
 
 sub EVENT_TIMER {

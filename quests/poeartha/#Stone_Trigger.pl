@@ -20,8 +20,6 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
     {
-    quest::stoptimer(1);
-    quest::settimer(1,5);
     $check=0;
     }
 
@@ -50,7 +48,7 @@ sub EVENT_TIMER {
           $check = 1
         }
 
-    if($timer == 1 && $check == 0 && $stone_ring == undef) {
+    if($timer == 1 && $check == 0 && !defined $qglobals{stone_ring}) {
 		# Here we spawn 50 a_stone_fortification
 		# Event moves forward when all are dead
 		quest::spawn2(218072,0,0,-705,-170,86.5,125); #a_stone_fortification
@@ -187,7 +185,7 @@ sub EVENT_SIGNAL {
      }
 
      if($signal == 5) {
-       quest::setglobal(stone_ring,1,3,"D3"); #used in the Final Event
+       quest::setglobal("stone_ring",1,3,"D3"); #used in the Final Event
        }
 
 }

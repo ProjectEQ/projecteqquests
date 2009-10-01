@@ -8,7 +8,7 @@
 # Written by: Reno
 
 sub EVENT_SPAWN {
-quest::settimer("vine",2);
+quest::settimer("vine",62);
 $counter=0;
 }
 

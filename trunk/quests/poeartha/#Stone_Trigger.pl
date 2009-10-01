@@ -10,7 +10,7 @@
 # Adapted by: Jaekob
 
 sub EVENT_SPAWN {
-   quest::settimer(1,5); #times the whole thing
+   quest::settimer("stone",61); #times the whole thing
    $check=0; #checks for certain NPC's spawns
    $counter=0;
    $countertwo=0;
@@ -48,7 +48,7 @@ sub EVENT_TIMER {
           $check = 1
         }
 
-    if($timer == 1 && $check == 0 && !defined $qglobals{stone_ring}) {
+    if($timer eq "stone" && $check == 0 && !defined $qglobals{stone_ring}) {
 		# Here we spawn 50 a_stone_fortification
 		# Event moves forward when all are dead
 		quest::spawn2(218072,0,0,-705,-170,86.5,125); #a_stone_fortification
@@ -120,7 +120,7 @@ sub EVENT_SIGNAL {
 		quest::spawn2(218076,0,0,-643,-226,85,30);
 		quest::spawn2(218076,0,0,-576,-226,85,30);
 		quest::spawn2(218076,0,0,-576,-290,85,30);		
-        quest::stoptimer(1);
+        quest::stoptimer("stone");
         }
 }
 

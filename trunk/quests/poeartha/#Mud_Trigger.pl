@@ -1,7 +1,7 @@
 #Mud RING
 
 sub EVENT_SPAWN {
-     quest::settimer("mud",2);
+     quest::settimer("mud",60);
      $counter=0;
      $countertwo=0;
      }

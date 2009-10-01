@@ -1,22 +1,14 @@
 #Mud RING
 
 sub EVENT_SPAWN {
-
-     quest::settimer("mud",1);
-
+     quest::settimer("mud",2);
      $counter=0;
-
      $countertwo=0;
-
      }
 
 sub EVENT_TIMER {
 
     {
-
-    quest::stoptimer("mud");
-
-    quest::settimer("mud",1);
 
     $check=0;
 
@@ -32,11 +24,11 @@ sub EVENT_TIMER {
 
         }
 
-    if($check == 0 && $mud_ring == undef && $mud_ring_run == undef) {
+    if($check == 0 && !defined $qglobals{mud_ring} && !defined $qglobals{mud_ring_run}) {
 
       quest::spawn2(218070,0,0,340,90,70.5,127.1);
 
-      quest::setglobal(mud_ring_run,1,3,"H3");
+      quest::setglobal("mud_ring_run",1,3,"H3");
 
       $counter=0;
 
@@ -56,25 +48,25 @@ sub EVENT_SIGNAL {
 
    $counter += 1;
 
-     if($counter == 10 && $mud_ring == undef && $mud_ring_run == 1 && $wavecount == 0) {
+     if($counter == 10 && !defined $qglobals{mud_ring} && defined $qglobals{mud_ring_run} && $wavecount == 0) {
 		quest::spawn2(218070,0,0,340,90,70.5,127.1);
 		$wavecount+=1;
 		$counter=0;
        }
 
-     elsif($counter == 10 && $mud_ring == undef && $mud_ring_run == 1 && $wavecount == 1) { 
+     elsif($counter == 10 && !defined $qglobals{mud_ring} && defined $qglobals{mud_ring_run} && $wavecount == 1) { 
 		quest::spawn2(218070,0,0,340,90,70.5,127.1);
 		$wavecount+=1;
 		$counter=0;
        }
 
-     elsif($counter == 10 && $mud_ring == undef && $mud_ring_run == 1 && $wavecount == 2) { 
+     elsif($counter == 10 && !defined $qglobals{mud_ring} && defined $qglobals{mud_ring_run} && $wavecount == 2) { 
 		quest::spawn2(218070,0,0,340,90,70.5,127.1);
 		$wavecount+=1;
 		$counter=0;
        }
 
-     elsif($counter == 10 && $mud_ring == undef && $mud_ring_run == 1 && $wavecount == 3) { 
+     elsif($counter == 10 && !defined $qglobals{mud_ring} && defined $qglobals{mud_ring_run} && $wavecount == 3) { 
 
        quest::spawn2(218095,0,0,340,90,70.5,127.1);
 		$wavecount=0;
@@ -88,7 +80,7 @@ sub EVENT_SIGNAL {
 
    $countertwo += 1;
 
-     if($countertwo == 4 && $mud_ring == undef && $mud_ring_run == 1) {
+     if($countertwo == 4 && !defined $qglobals{mud_ring} && defined $qglobals{mud_ring_run}) {
 
        quest::spawn2(218050,0,0,340,90,70.5,127.1);
 
@@ -100,11 +92,11 @@ sub EVENT_SIGNAL {
 
  if($signal == 3) { #mud final
 
-   $mud_ring_run=undef;
+   quest::delglobal("mud_ring_run");
 
-   $mud_ring=undef;
+   quest::delglobal("mud_ring");
 
-   quest::setglobal(mud_ring,1,3,"D4");
+   quest::setglobal("mud_ring",1,3,"D4");
 
  }
 

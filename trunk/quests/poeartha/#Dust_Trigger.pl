@@ -4,17 +4,17 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SIGNAL {
-	if($signal == 1 && $dust_ring == undef) {
+	if($signal == 1 && !defined $qglobals{dust_ring}) {
 	quest::spawn2(218064,0,0,-221,-1339,-35.5,0);
 	quest::spawn2(218064,0,0,-275,-1339,-35.5,0);
 	quest::spawn2(218064,0,0,-248,-1290,-35.5,0);
 	quest::spawn2(218064,0,0,-250,-1360,-35.5,0);
-	quest::setglobal(dust_ring_run,1,3,"H3");
+	quest::setglobal("dust_ring_run",1,3,"H3");
 	}
 
  if($signal == 2) {
     $counter += 1;		
-if($signal == 2 && $counter == 4 && $dust_ring == undef && $dust_ring_run == 1) {
+if($signal == 2 && $counter == 4 && !defined $qglobals{dust_ring} && defined $qglobals{dust_ring_run}) {
       quest::spawn2(218064,0,0,-135,-539,30.5,0);
       quest::spawn2(218064,0,0,-132.2,-567.9,31.1,0);
 	quest::spawn2(218064,0,0,-51,-539,30.5,0);
@@ -42,7 +42,7 @@ if($signal == 2 && $counter == 4 && $dust_ring == undef && $dust_ring_run == 1) 
 	quest::spawn2(218064,0,9,78,-489,30.5,0);
 	}
 
-	if($signal == 2 && $counter == 29 && $dust_ring == undef && $dust_ring_run == 1) {
+	if($signal == 2 && $counter == 29 && !defined $qglobals{dust_ring} && defined $qglobals{dust_ring_run}) {
 	quest::spawn2(218045,0,0,0,-520,30.5,0);
 	quest::spawn2(218045,0,0,0,-555,30.5,0);
 	quest::spawn2(218045,0,0,0,-589,30.5,0);
@@ -50,17 +50,17 @@ if($signal == 2 && $counter == 4 && $dust_ring == undef && $dust_ring_run == 1) 
 }
  }
 
- if($signal == 3 && $dust_ring_run == 1) {
+ if($signal == 3 && defined $qglobals{dust_ring_run}) {
     $countertwo += 1;
-	if($signal == 3 && $countertwo == 3 && $dust_ring == undef && $dust_ring_run == 1) {
+	if($signal == 3 && $countertwo == 3 && !defined $qglobals{dust_ring} && defined $qglobals{dust_ring_run}) {
 	$countertwo=0;
 	quest::spawn2(218096,0,0,0,-520,30.5,0);
 	}
  }
 
- if($signal == 4 && $dust_ring_run == 1) {
-   $dust_ring=undef;
-    quest::setglobal(dust_ring,1,3,"D3");
+ if($signal == 4 && defined $qglobals{dust_ring_run}) {
+   quest::delglobal("dust_ring");
+    quest::setglobal("dust_ring",1,3,"D3");
 
  }
 }

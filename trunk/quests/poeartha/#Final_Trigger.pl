@@ -1,20 +1,12 @@
 sub EVENT_SPAWN {
 
-    quest::settimer("final",1);
+    quest::settimer("final",4);
 
 }
 
 sub EVENT_TIMER {
 
-{
-
-quest::stoptimer("final");
-
-quest::settimer("final",1);
-
-}
-
-    if($timer eq "final" && $vine_ring == 1 && $mud_ring == 1 && $stone_ring == 1 && $dust_ring == 1 && $arbitor_of_earth == undef) {
+    if($timer eq "final" && defined $qglobals{vine_ring} && defined $qglobals{mud_ring} && defined $qglobals{stone_ring} && defined $qglobals{dust_ring} && !defined $qglobals{arbitor_of_earth}) {
 
         quest::setglobal("arbitor_of_earth",1,3,"H4");
 

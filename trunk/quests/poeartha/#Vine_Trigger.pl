@@ -8,7 +8,7 @@
 # Written by: Reno
 
 sub EVENT_SPAWN {
-quest::settimer("vine",1);
+quest::settimer("vine",2);
 $counter=0;
 }
 
@@ -23,7 +23,7 @@ sub EVENT_TIMER {
           $check = 1
         }
 
-        if ($check == 0 && $vine_ring == undef && $vine_ring_run == undef) { #When no more A_Tainted_Rock_Beast are up, spawn the A_Bloodthirsty_Vegerog 
+        if ($check == 0 && !defined $qglobals{vine_ring} && !defined $qglobals{vine_ring_run}) { #When no more A_Tainted_Rock_Beast are up, spawn the A_Bloodthirsty_Vegerog 
 			quest::spawn2(218040,0,0,483,-781,43.5,0); #A_Bloodthirsty_Vegerog 
 			quest::spawn2(218040,0,0,434,-832,43.5,192);
 			quest::spawn2(218040,0,0,483,-883,43.5,128);
@@ -45,16 +45,15 @@ sub EVENT_SIGNAL {
 	if($signal == 1) { #signal 1 is from the A_Bloodthirsty_Vegerog 
 		$counter += 1;
 	
-		if($counter == 10 && $vine_ring == undef && $vine_ring_run == 1) {
+		if($counter == 10 && !defined $qglobals{vine_ring} && defined $qglobals{vine_ring_run}) {
 			quest::spawn2(218058,0,0,485,-835,30,0);
 			$counter=0;
 		}
 	}
 
-	if($signal == 3 && $vine_ring == undef && $vine_ring_run == 1) { #signal 3 is from Derugoak_Bloodwalker 
-		$vine_ring=undef;
-		$vine_ring_run=undef;
+	if($signal == 3 && !defined $qglobals{vine_ring} && defined $qglobals{vine_ring_run}) { #signal 3 is from Derugoak_Bloodwalker 
+		quest::delglobal("vine_ring");
+		quest::delglobal("vine_ring_run");
 		quest::setglobal("vine_ring",1,3,"D3"); #Event is over
 	}
 }
-

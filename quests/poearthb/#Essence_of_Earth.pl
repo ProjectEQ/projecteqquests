@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-quest::settimer(55,1200);
+quest::settimer("essence",1200);
 }
 
 sub EVENT_SAY {
@@ -10,7 +10,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_TIMER {
-if($timer == 55) {
+if($timer eq "essence") {
         quest::stoptimer(55);
         quest::depop();
 

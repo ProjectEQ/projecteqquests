@@ -2,7 +2,7 @@ my $phase;	# undef = pre-split, 1 = split form, 2 = final form
 
 sub EVENT_SPAWN {
 	$phase = 0;
-        quest::settimer("vallonzek",1);
+        quest::settimer("vallonzek",15);
 	quest::setnexthpevent(75);
 }
 

@@ -16,6 +16,7 @@ sub EVENT_SPAWN {
    $countertwo=0;
    $counterthree=0;
    $counterfour=0;
+   quest::spawn_condition($zonesn,2,0); #Make sure we aren't up yet.
 }
 
 sub EVENT_TIMER {
@@ -51,76 +52,28 @@ sub EVENT_TIMER {
     if($timer eq "stone" && $check == 0 && !defined $qglobals{stone_ring}) {
 		# Here we spawn 50 a_stone_fortification
 		# Event moves forward when all are dead
-		quest::spawn2(218072,0,0,-705,-170,86.5,125); #a_stone_fortification
-		quest::spawn2(218072,0,0,-705,-205,86.5,125);
-		quest::spawn2(218072,0,0,-705,-240,86.5,125);
-		quest::spawn2(218072,0,0,-705,-275,86.5,125);
-		quest::spawn2(218072,0,0,-705,-310,86.5,125);
-		quest::spawn2(218072,0,0,-705,-345,86.5,125);
-		quest::spawn2(218072,0,0,-618,-170,86.5,125);
-		quest::spawn2(218072,0,0,-618,-205,86.5,125);
-		quest::spawn2(218072,0,0,-618,-240,86.5,125);
-		quest::spawn2(218072,0,0,-618,-275,86.5,125);
-		quest::spawn2(218072,0,0,-618,-310,86.5,125);
-		quest::spawn2(218072,0,0,-618,-345,86.5,125);
-		quest::spawn2(218072,0,0,-580,-170,86.5,125);
-		quest::spawn2(218072,0,0,-580,-205,86.5,125);
-		quest::spawn2(218072,0,0,-580,-240,86.5,125);
-		quest::spawn2(218072,0,0,-580,-275,86.5,125);
-		quest::spawn2(218072,0,0,-580,-310,86.5,125);
-		quest::spawn2(218072,0,0,-580,-345,86.5,125);
-		quest::spawn2(218072,0,0,-678,-170,86.5,125);
-		quest::spawn2(218072,0,0,-678,-205,86.5,125);
-		quest::spawn2(218072,0,0,-678,-240,86.5,125);
-		quest::spawn2(218072,0,0,-678,-275,86.5,125);
-		quest::spawn2(218072,0,0,-678,-310,86.5,125);
-		quest::spawn2(218072,0,0,-678,-345,86.5,125);
-		quest::spawn2(218072,0,0,-705,-170,86.5,125);
-		quest::spawn2(218072,0,0,-705,-205,86.5,125);
-		quest::spawn2(218072,0,0,-705,-240,86.5,125);
-		quest::spawn2(218072,0,0,-705,-275,86.5,125);
-		quest::spawn2(218072,0,0,-705,-310,86.5,125);
-		quest::spawn2(218072,0,0,-705,-345,86.5,125);
-		quest::spawn2(218072,0,0,-618,-170,86.5,125);
-		quest::spawn2(218072,0,0,-618,-205,86.5,125);
-		quest::spawn2(218072,0,0,-618,-240,86.5,125);
-		quest::spawn2(218072,0,0,-618,-275,86.5,125);
-		quest::spawn2(218072,0,0,-618,-310,86.5,125);
-		quest::spawn2(218072,0,0,-618,-345,86.5,125);
-		quest::spawn2(218072,0,0,-580,-170,86.5,125);
-		quest::spawn2(218072,0,0,-580,-205,86.5,125);
-		quest::spawn2(218072,0,0,-580,-240,86.5,125);
-		quest::spawn2(218072,0,0,-580,-275,86.5,125);
-		quest::spawn2(218072,0,0,-580,-310,86.5,125);
-		quest::spawn2(218072,0,0,-580,-345,86.5,125);
-		quest::spawn2(218072,0,0,-678,-170,86.5,125);
-		quest::spawn2(218072,0,0,-678,-205,86.5,125);
-		quest::spawn2(218072,0,0,-678,-240,86.5,125);
-		quest::spawn2(218072,0,0,-678,-275,86.5,125);
-		quest::spawn2(218072,0,0,-678,-310,86.5,125);
-		quest::spawn2(218072,0,0,-678,-345,86.5,125);
+		quest::spawn_condition($zonesn,2,1); #a_stone_fortification
 		$counter=0; 
 		$countertwo=0;
 		$check=0;
 		}
+	else {
+		quest::spawn_condition($zonesn,2,0);
+	}
 }
 
 sub EVENT_SIGNAL {
     if($signal == 1 ) { #signal 1 is from stone_fortification
-      $check=0; #Make sure it is zero	  
       $check_boss = $entity_list->GetMobByNpcTypeID(218072); #a_stone_fortification
 
-        if ($check_boss) { #don't move forward if they are not all dead
-          $check=1; 
-        }  
-
-      if($check == 0 ) {	  
+      if(!$check_boss) {	  
   #when all fortificatiosn are dead, we spawn the next wave, 4 A_Mound_of_Rubble
-        quest::spawn2(218076,0,0,-645,-290,85,30); #Mound_of_Rubble
+  		quest::spawn_condition($zonesn,2,0);
+        	quest::spawn2(218076,0,0,-645,-290,85,30); #Mound_of_Rubble
 		quest::spawn2(218076,0,0,-643,-226,85,30);
 		quest::spawn2(218076,0,0,-576,-226,85,30);
-		quest::spawn2(218076,0,0,-576,-290,85,30);		
-        quest::stoptimer("stone");
+		quest::spawn2(218076,0,0,-576,-290,85,30);
+        	quest::stoptimer("stone");
         }
 }
 
@@ -189,8 +142,6 @@ sub EVENT_SIGNAL {
        }
 
 }
-
-
 
 
 

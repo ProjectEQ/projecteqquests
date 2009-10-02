@@ -13,17 +13,10 @@ $counter=0;
 }
 
 sub EVENT_TIMER {
-    {
-    $check=0;
-    }
-
     if ($timer eq "vine") {
     $check_boss = $entity_list->GetMobByNpcTypeID(218019); #A_Tainted_Rock_Beast 
-        if ($check_boss) {
-          $check = 1
-        }
 
-        if ($check == 0 && !defined $qglobals{vine_ring} && !defined $qglobals{vine_ring_run}) { #When no more A_Tainted_Rock_Beast are up, spawn the A_Bloodthirsty_Vegerog 
+        if (!$check_boss && !defined $qglobals{vine_ring} && !defined $qglobals{vine_ring_run}) { #When no more A_Tainted_Rock_Beast are up, spawn the A_Bloodthirsty_Vegerog 
 			quest::spawn2(218040,0,0,483,-781,43.5,0); #A_Bloodthirsty_Vegerog 
 			quest::spawn2(218040,0,0,434,-832,43.5,192);
 			quest::spawn2(218040,0,0,483,-883,43.5,128);
@@ -35,7 +28,6 @@ sub EVENT_TIMER {
 			quest::spawn2(218040,0,0,482,-950,37.5,0);
 			quest::spawn2(218040,0,0,485,-714,37.5,0);
             $counter=0;
-            $check=0;
             quest::setglobal("vine_ring_run",1,3,"H3"); #Event is started
 		}      
 	}

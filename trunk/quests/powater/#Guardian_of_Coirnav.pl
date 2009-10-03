@@ -2,7 +2,7 @@
 #Signals coirnav_controller with the Event start
 
 sub EVENT_SPAWN {
-    if($qglobals{coirnav_done} == 3) {
+    if(defined $qglobals{coirnav_done} && $qglobals{coirnav_done} == 3) {
         quest::settimer(1,3);
     }
 }

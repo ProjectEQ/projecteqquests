@@ -1,6 +1,6 @@
 sub EVENT_ENTERZONE {
     if($status < 80) { # If you are not a GM/Guide, then you will be kicked if the coirnav event fails.
-        quest::settimer("PoKkickout",15); # You have 15 seconds to comply.
+        quest::settimer("PoKkickout",60); # You have 60 seconds to comply.
     }
 }
 

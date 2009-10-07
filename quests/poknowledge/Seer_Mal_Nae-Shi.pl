@@ -22,7 +22,7 @@ if($text=~/guided meditation/i) {
 
 		$client->Message(9,"If one option does not give you the information you need, you may be missing experience from some zones.  To find the credit you currently have, please just [unlock memories].");
 
-		$client->Message(9,"There are special restrictions for the temple of marr, elemental planes, and plane of torment.  If you need assistance, say [special zones].");
+		$client->Message(9,"There are special restrictions for the Temple of Marr, elemental planes, and Plane of Torment.  If you need assistance, say [special zones].");
 
 		}
 
@@ -34,7 +34,7 @@ if($text=~/special zones/i) {
 
 
 
-		$client->Message(9,"The temple of Marr is a special access zone.  To access the Temple of marr you must kill Bertox, Terris Thule, Complete the three trials within Halls of Honor, and defeat Saryrn.  The other special access zones are the elemental planes.  To access the elemental planes:  These planes are Plane of Air, Plane of Water and Plane of Earth.  To inquire about access to elemental planes, say [elemental planes].  Plane of Fire is obtained by killing through the plane of innovation, to Drunder, fortress of Zek, then to The tower of Soluesk Ro, where you must kill Solusk ro himself.  To access the other Elemental Planes, you must have completed ALL zone flags in lower zones, and kill Agnarr the storm lord, and Mithaniel Marr.  To inquire about access to the Temple of Marr, say [Access to Temple of Marr].  The last speciall access zone is plane of Torment.  You must have killed Terris Thule and Bertox before you can enter to kill Saryrn.  To inquire about Plane of Torment, say [Access to Torment]."); 
+		$client->Message(9,"The Temple of Marr is a special access zone.  To access the Temple of Marr you must kill Bertox, Terris Thule, complete the three trials within Halls of Honor, and defeat Saryrn. The other special access zones are the elemental planes. These planes are Plane of Air, Plane of Water and Plane of Earth. To inquire about access to elemental planes, say [elemental planes]. To access the elemental planes: Plane of Fire is obtained by killing through the plane of innovation, to Drunder, Fortress of Zek, then to the Tower of Soluesk Ro, where you must kill Solusek Ro himself.  To access the other elemental planes, you must have completed ALL zone flags in lower zones, and kill Agnarr the storm lord, and Mithaniel Marr. To inquire about access to the Temple of Marr, say [Access to Temple of Marr]. The last special access zone is the Plane of Torment. You must have killed Terris Thule and Bertox before you can enter to kill Saryrn. To inquire about the Plane of Torment, say [Access to Torment]."); 
 
 
 
@@ -72,7 +72,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have spoken to Jezith within the Plane of Tranquility for the Hedge Preflag by saying tormented by nightmares.");
+			$client->Message(12,"You have spoken to Jezith within the Plane of Tranquility for the Hedge preflag by saying tormented by nightmares.");
 
 
 
@@ -80,7 +80,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT spoken to Jezith within the Plane of Tranquility for the Hedge Preflag by saying tormented by nightmares.");
+		$client->Message(9,"You have NOT spoken to Jezith within the Plane of Tranquility for the Hedge preflag by saying tormented by nightmares.");
 
 		}
 
@@ -126,7 +126,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have talked to Poxbourne in Plane of Tranquility after defeating Terris Thule.");
+			$client->Message(12,"You have talked to Poxbourne in the Plane of Tranquility after defeating Terris Thule.");
 
 		
 
@@ -134,7 +134,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT talked to Poxbourne in the Plane of Tranquility after defeateing Terris Thule.");
+		$client->Message(9,"You have NOT talked to Poxbourne in the Plane of Tranquility after defeating Terris Thule.");
 
 		}
 
@@ -162,7 +162,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have talked to the Gnome within the Plane of Innovation Factory.");
+			$client->Message(12,"You have talked to the Gnome within the Plane of Innovation factory.");
 
 
 
@@ -170,7 +170,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT talked to the Gnome within the plane of innovation factory.");
+		$client->Message(9,"You have NOT talked to the Gnome within the Plane of Innovation factory.");
 
 		}
 
@@ -180,7 +180,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated the Behemoth within Plane of Innovation and then QUICKLY hailed the gnome in the factory.");
+			$client->Message(12,"You have defeated the Behemoth within the Plane of Innovation and then QUICKLY hailed the Gnome in the factory.");
 
 
 
@@ -188,7 +188,7 @@ if($text=~/unlock memories/i) {
 
 		else {
 
-		$client->Message(9,"You have NOT defeated the Behemoth within Plane of Innovation and then QUICKLY hailed the gnome in the factory.");
+		$client->Message(9,"You have NOT defeated the Behemoth within the Plane of Innovation and then QUICKLY hailed the Gnome in the factory.");
 
 		}
 

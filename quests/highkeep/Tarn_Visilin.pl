@@ -9,41 +9,28 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i){
-    quest::say("Hello.  I am Tarn Visilin.");
+    quest::say("Hello. I am Tarn Visilin.");
   }
 }
 
 sub EVENT_ITEM {
-
-  # Glowing Glamour Stone
-  if(($itemcount{10086} == 1) && ($gold >= 50)) {
-    quest::say("Here is your stone, fully enchanted."); # Made this text up
-    quest::summonitem(10087);
+  if(($gold >= 50) && plugin::check_handin(\%itemcount, 10086 => 1)) { #Gold x 50, Glamour Stone
+    quest::say("Here is your stone, fully enchanted."); #Made this text up
+    quest::summonitem(10087); #Glowing Glamour Stone
   }
-
-  # Gleaming Gloves
-  elsif($gold >= 50) { #need an elsif to keep both quests from triggering on glowing glamour stone handin
+  elsif(plugin::check_handin(\%itemcount, 10019 => 1)) { #Bloodstone
     quest::say("I see that Sultin has sent you to me.  Very well, here are your gloves."); # Made this text up
-    quest::summonitem(2355);
+    quest::summonitem(2355);  # Gleaming Gloves
   }
-
-  # Tashania Quest
-  # items needed:
-  #     10790 Coin of Tash
-  # items received:
-  #     10791 Glowing Coin of Tash
-  # plus faction received:
-  #     442   Temple of Sol Ro
-  # minus faction received:
-  #     291   Shadowed Men
-  # experience received:
-  #     1000
-  elsif($itemcount{10790} == 1) {
+  elsif(plugin::check_handin(\%itemcount, 10790 => 1)) { #Coin of Tash
     quest::say("The Coin of Tash. Very good. I have laid a basic enhancement on it - to get it further enhanced you must take the coin to Mizn N'Mar in the Library of Neriak.");
-    quest::summonitem(10791);
-    quest::faction(442,  10);
-    quest::faction(291, -10);
+    quest::summonitem(10791); #Glowing Coin of Tash
+    quest::faction(442, 10);  #Temple of Sol Ro
+    quest::faction(291, -10); #Shadowed Men
     quest::exp(1000);
   }
-
-} 
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
+}

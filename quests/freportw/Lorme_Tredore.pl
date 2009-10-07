@@ -32,51 +32,38 @@
 #
 ############################################
 
-sub EVENT_SAY
-{
-  if ($text=~/Hail/i)
-    {
+sub EVENT_SAY {
+  if ($text=~/hail/i && ($class eq "Magician")) {
     quest::say("Hello $name. If you are new here you might have a note for me.");
-    quest::emote(" mumbles under his breath - Now where did I lose that Fleshy Orb.");
-    }
-  else
-    {
+    quest::emote("mumbles under his breath - Now where did I lose that Fleshy Orb.");
+  }
+  else {
     quest::say("Hello $name. Welcome to the Academy.");
+  }
+}
+
+sub EVENT_ITEM {
+  if($class eq "Magician") {
+    if(plugin::check_handin(\%itemcount, 13951 => 1)) { #Fleshy Orb
+      quest::say("Ah. Thank you for bringing this to me! I will make very good use of it. Here take this small token of my appreciation in return. Guard Jenkins will no longer require it as he was killed on the training field yesterday. Tsk. tsk. tsk.");
+      quest::ding();
+      quest::exp(100);
+      quest::summonitem(5353); #Fine Steel Scimitar
     }
+    elsif(plugin::check_handin(\%itemcount, 18740 => 1)) { #A Tattered Note
+      quest::say("Thanks. Please take this robe to help you on your journeys.");
+      quest::ding();
+      quest::exp(100);
+      quest::summonitem(13559); #Used Violet Robe
+    }
+    else {
+      quest::say("I do not need this.");
+      plugin::return_items(\%itemcount);
+    }
+  }
+  else {
+    quest::say("Only casters may earn the rewards of the Academy!");
+    plugin::return_items(\%itemcount);
+  }
 }
-
-sub EVENT_ITEM
-{ 
-     # Fleshy Orb ID-13951
-	   if ($itemcount == "13951")
-	      {
-        quest::say("Ah. Thank you for bringing this to me! I will make very good use of it. Here take this small token of my appreciation in return. Guard Jenkins will no longer require it as he was killed on the training field yesterday. Tsk. tsk. tsk.");
-        # Fine Steel Scimitar ID-5353
-	      quest::ding();
-	      quest::summonitem("5353");
-	      quest::exp(100);
-	      }
-	   else
-  	     {
-	        # A Tattered Note ID-18740
-	       if ($itemcount == "18740" && $class == 'Magician')
-    	       {
-	            quest::say("Thanks. Please take this robe to help you on your journeys.");
-              # Used Violet Robe ID-13559
-	            quest::ding();
-	            quest::summonitem("13559");
-	            quest::exp(100);
-	           }
-          else
-  	         {
-  	          quest::say("Only Casters may earn the rewards of the Academy!");
-  	          quest::summonitem($item1) if($item1);
-  	          quest::summonitem($item2) if($item2);
-  	          quest::summonitem($item3) if($item3);
-  	          quest::summonitem($item4) if($item4);
-             }
-          }
-}
-
 # END of FILE Zone:freportw  ID:9078 -- Lorme_Tredore
-

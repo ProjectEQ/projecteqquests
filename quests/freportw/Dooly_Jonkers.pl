@@ -26,20 +26,17 @@
 #
 ############################################
 
-sub EVENT_SAY
-{ 
-
-  if($text=~/Hail/i)
-  {
-  quest::say("Greetings. $name!  Welcome to the Academy of Arcane Science.  Nowhere on Norrath can you find a greater learning center.");
+sub EVENT_SAY {
+  if($text=~/hail/i) {
+    quest::say("Greetings, $name! Welcome to the Academy of Arcane Science. Nowhere on Norrath can you find a greater learning center.");
   }
-
-  if($text=~/Retlon Brenclog/i)
-  {
-  quest::say("I'm very sorry to report that Retlon was kidnapped by some vile orcs from Crushbone. And I haven't seen him since.");
+  if($text=~/retlon brenclog/i) {
+    quest::say("I'm very sorry to report that Retlon was kidnapped by some vile orcs from Crushbone. And I haven't seen him since.");
   }
-
 }
 
+sub EVENT_ITEM {
+  quest::say("I do not need this.");
+  plugin::return_items(\%itemcount);
+}
 #END of FILE Zone:freportw  ID:9076 -- Dooly_Jonkers
-

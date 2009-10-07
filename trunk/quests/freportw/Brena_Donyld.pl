@@ -27,19 +27,15 @@
 #
 ############################################
 
-sub EVENT_SAY
-{
- if($text =~ /Hail/i)
- {
-	quest::say('Hello. I am the guild master. For the great Warriors of Freeport.');
- }
+sub EVENT_SAY {
+  if($text=~/hail/i) {
+    quest::say("Hello, I am the guild master for the great Warriors of Freeport.");
+  }
 }
 
-sub EVENT_ITEM
-{
+sub EVENT_ITEM {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);
 }
-
 #END of FILE Zone:freportw  ID:9094 -- Brena_Donyld

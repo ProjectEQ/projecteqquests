@@ -9,7 +9,7 @@ sub EVENT_DEATH {
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
    
-   if ($random_result<=80){
+   if ($random_result<=2){
       #Spawns my mob at the location that just died
       quest::spawn2($a,0,0,$x,$y,$z,$h);
    }

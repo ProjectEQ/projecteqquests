@@ -40,21 +40,22 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-    if ($itemcount{29001} == 1 && $itemcount{29006} == 1) {
-        quest::emote("presses the gem of purity against the breastplate. Its dark gleam softens and then glows bright once again. 'Compassion is strong in you. Few so called heroes would sacrifice their time for such a menial task as you performed. Continue your work. Hold this ancient breastplate until you have completed your task.");
-        quest::summonitem(29004);
-    }
-    if ($itemcount{29000} && $itemcount{29009} == 1) {
-        quest::emote("washes the sword's blade in the water of purity. Its dark surface begins to shine, as true as the day it was forged. 'Such a sacrifice is rare among the poor. Truly, the woman must have loved her brother. Remember the lesson you have learned from her. Keep the sword until your work is done.'");
-        quest::summonitem(29003);
-    }
-    if ($itemcount{29003} && $itemcount{29004} && $itemcount{29005} == 1) {
-        quest::say("I never thought our order would see these artifacts again. With the return of these relics we can now put at ease a scar upon the history of our order. This cleansing will atone for his failure. Your soul must be pure to have given so freely of yourself. Go now, take this crested token of our order. If you wish to free his soul you must undertake another sacrifice.");
-        quest::summonitem(29010);
-    }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-#  plugin::return_items(\%itemcount);
+  if(plugin::check_handin(\%itemcount, 29001 => 1, 29006 => 1)) {
+    quest::emote("presses the gem of purity against the breastplate. Its dark gleam softens and then glows bright once again. 'Compassion is strong in you. Few so called heroes would sacrifice their time for such a menial task as you performed. Continue your work. Hold this ancient breastplate until you have completed your task.");
+    quest::summonitem(29004);
+  }
+  elsif (plugin::check_handin(\%itemcount, 29000 => 1, 29009 => 1)) {
+    quest::emote("washes the sword's blade in the water of purity. Its dark surface begins to shine, as true as the day it was forged. 'Such a sacrifice is rare among the poor. Truly, the woman must have loved her brother. Remember the lesson you have learned from her. Keep the sword until your work is done.'");
+    quest::summonitem(29003);
+  }
+  elsif (plugin::check_handin(\%itemcount, 29003 => 1, 29004 => 1, 29005 => 1)) {
+    quest::say("I never thought our order would see these artifacts again. With the return of these relics we can now put at ease a scar upon the history of our order. This cleansing will atone for his failure. Your soul must be pure to have given so freely of yourself. Go now, take this crested token of our order. If you wish to free his soul you must undertake another sacrifice.");
+    quest::summonitem(29010);
+  }
+  else {
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+    plugin::return_items(\%itemcount);
+  }
 }
-
 #END of FILE Zone:erudnext  ID:24044 -- Reklon_Gnallen

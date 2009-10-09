@@ -7,16 +7,16 @@ if ($text=~/Hail/i){
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,59500=> 1)){
     quest::summonitem(21820);
-}
+  }
   elsif(plugin::check_handin(\%itemcount,59501=> 1)){
     quest::summonitem(21821);
-}
+  }
   elsif(plugin::check_handin(\%itemcount,59502=> 1)){
     quest::summonitem(21822);
-}
+  }
   elsif(plugin::check_handin(\%itemcount,59503=> 1)){
     quest::summonitem(21823);
-}
+  }
   else {
     quest::say("I have no use for this, $name.");
     plugin::return_items(\%itemcount);

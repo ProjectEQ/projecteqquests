@@ -18,3 +18,8 @@ sub EVENT_ENTER
 {
 	$npc->SetAppearance(1);
 }
+
+sub EVENT_ITEM {
+  quest::say("I do not need this.");
+  plugin::return_items(\%itemcount);
+}

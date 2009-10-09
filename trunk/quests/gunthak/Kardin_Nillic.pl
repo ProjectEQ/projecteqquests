@@ -19,14 +19,18 @@ quest::emote("lifts his gaze from the whitened corpse lying on the bed in front 
 }
 #He returns to you a book, but this one isn't faded;
 sub EVENT_ITEM{
-  if ($itemcount{59022} == 1){
+  if(plugin::check_handin(\%itemcount, 59022 => 1)) {
     #not sure what the text is here - please say if you know.
     quest::say("I can't read all of it, Take the rest to Jusean Evanesque of South Qeynos, he will understand.");
     quest::summonitem(59023);
  }
-  elsif($itemcount{59024} == 1) {
+  elsif(plugin::check_handin(\%itemcount, 59024 => 1)) {
     quest::say("You have done well $name, my friend will now be saved, let me share my song with you.");
     quest::exp(1000);
     quest::summonitem(59002);
+  }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
   }
 }

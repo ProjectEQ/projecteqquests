@@ -12,11 +12,16 @@ sub EVENT_SAY{
 }
 
 sub EVENT_ITEM{
-  if($itemcount{59054} == 1) {
+  if(plugin::check_handin(\%itemcount, 59054 => 1)) {
     quest::emote("takes the spectacles from your hands and puts them up to his eyes and blinks several times.");
-    quest::say("Many thanks, $name! I don't know what I would have done without you. Probably stagger around the island half blind for the rest of my life! At any rate I can repay you with a little trick I picked up along the way. If you ever get in a jam, hopefully you won't be as forgetful as I was!' He hands you a scroll with several runes scrawled across it.");
+    quest::say("Many thanks, $name! I don't know what I would have done without you. Probably stagger around the island half blind for the rest of my life! At any rate I can repay you with a little trick I picked up along the way. If you ever get in a jam, hopefully you won't be as forgetful as I was!");
+    quest::emote("hands you a scroll with several runes scrawled across it.");
     quest::exp(1000);
     quest::summonitem(59020);
+  }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
   }
 }
 

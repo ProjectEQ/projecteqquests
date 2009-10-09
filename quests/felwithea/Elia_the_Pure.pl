@@ -15,10 +15,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($itemcount{29002} == 1) { #tainted darksteel shield
+  if(plugin::return_items(\%itemcount, 29002 => 1)) { #tainted darksteel shield
     quest::emote("squints and turns her head. 'By the gods, such a twisted aura this has! To see it hurts my eyes. I will help you if for no other reason than to remove such a twisted thing from existence.' She unrolls a scroll from her pack and softly chants over the dark metal shield. She hands it back to you with an exhausted smile on her face. 'Your heart seems pure. If I was able to help at all, I am honored. May the light shine warmly upon you.'");
     quest::summonitem(29005); #gleaming crested shield
   }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
 #END of FILE Zone:felwithea  ID:61013 -- Elia_the_Pure

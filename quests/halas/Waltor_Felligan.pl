@@ -29,7 +29,7 @@ sub EVENT_ITEM {
     quest::faction(33, -30); #faction with Circle of Unseen Hands decreased 
     quest::faction(47,-30); #faction with Coalition of Tradefolk decreased 
     quest::faction(90,-30); #faction with Ebon Mask decreased 
-    quest::givecash ("0","0","4","0"); 
+    quest::givecash (0,0,4,0); 
     quest::exp(50); 
   } 
   elsif (plugin::check_handin(\%itemcount, 13445 => 1)) { # poison cure for steak totally bogus text 
@@ -41,9 +41,8 @@ sub EVENT_ITEM {
     quest::say("Ah! Now I can cure yer malady."); 
   } 
   else { 
-    plugin::return_items(\%itemcount); 
     quest::say("Why do ye give me these items?"); 
+    plugin::return_items(\%itemcount); 
   } 
 } 
-
 #END of FILE Zone:halas  ID:29058 -- Waltor_Felligan

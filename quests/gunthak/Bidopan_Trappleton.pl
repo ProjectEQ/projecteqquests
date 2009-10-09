@@ -6,3 +6,8 @@ if ($text=~/Hail/i){
   quest::say("How do you do! If you have anything of value, I would advise leaving it with me before you venture further upon the island. There are many unsavory characters who would happily part you with your items, or even your life.");
  }
 }
+
+sub EVENT_ITEM {
+  quest::say("I do not need this.");
+  plugin::return_items(\%itemcount);
+}

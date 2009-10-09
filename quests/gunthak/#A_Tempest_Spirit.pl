@@ -7,7 +7,7 @@ sub EVENT_SPAWN{
 	quest::settimer("despawn", 1200);	
 }
 sub EVENT_TIMER{
-	if ($timer == "despawn"){
+	if ($timer eq "despawn"){
 		quest::stoptimer("despawn");
 		quest::depop();
 	}
@@ -21,6 +21,5 @@ sub EVENT_ITEM {
   else {
     quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
-    return 1;
   }
 }#Done

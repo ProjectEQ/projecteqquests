@@ -35,6 +35,10 @@ sub EVENT_ITEM {
     quest::emote("screams so loudly it echoes across the valley as the mark and flames of your holy sword touch his rotted bones. As his body twists he quiets and then speaks. 'Your selflessness has made it possible to redeem my honor. With the cleansing of my corruption your own soul has been strengthened. Your power comes from your devotion to your god and with this you have been rewarded. Remember always your purity, devotion, and why you have sacrificed. I must go now to sacrifice myself upon the spear of pain.'");
     quest::summonitem(10099); #fiery defender
   }
+  else {
+    quest::emote("ignores your offer.");
+    plugin::return_items(\%itemcount);
+  }
 }
 
 sub EVENT_SIGNAL {
@@ -42,5 +46,4 @@ sub EVENT_SIGNAL {
   quest::say("Such is the will of Cazic-Thule!");
  }
 }
-
 #END of FILE Zone:fearplane ID:72078 -- Irak_Altil

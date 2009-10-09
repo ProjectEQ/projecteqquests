@@ -21,7 +21,7 @@ sub EVENT_SAY {
  	if (($text=~/draw for me/i) && ($CraeginA == 1)){
  		quest::emote("kneels to the ground once more and begins to draw. He draws the picture of a skull in the dirt and then draws several squiggly lines beneath. You begin to realize he's describing a cave system beneath the island.");
  	}
- 	if (($text=~/cave system/i) && ($CraeginA == 1)){
+ 	if ($text=~/cave system/i && defined($qglobals{CraeginA}) && ($qglboals{CraeginA} == 1)){
  		quest::emote("nods at you. He reaches for a bag at his waist and pulls out a few grains of fine black powder. He rubs the black powder carefully across the cave sketch. He makes a sort of digging motion with his hands and points back toward the island. He must have found the black powder in the cave system on the island somewhere.");
  	}
 
@@ -33,7 +33,7 @@ sub EVENT_ITEM {
     quest::summonitem(59010);#Spell: Bond of the Wild
     quest::setglobal("CraeginA",1,0,"F");
   }	
-  elsif((plugin::check_handin(\%itemcount, 59034 => 1)) && ($CraeginA == 1)){#A strange dark powder
+  elsif(plugin::check_handin(\%itemcount, 59034 => 1) && defined($qglobals{CraeginA}) && ($qglboals{CraeginA} == 1)){#A strange dark powder
     quest::emote("looks over the dark powder carefully for a moment and then nods at you. He grabs a small bag from his waist and places the dust inside of it. He then takes a second bag and empties another odd powder into the bag. He closes and shakes the bag vehemently and then looks at you expectantly. You nod. He reaches into the bag and pulls a bit of the mixtures out. Unexpectedly he blows the mixture into your face, causing your eyes to burn and your lungs to uncontrollably cough in pain. You fall to the ground for a moment, but the burning subsides. You rise back to your feet and Craegin hands you the rest of the bag of powder.");
     quest::summonitem(59009);#Spell: Malaria
     quest::delglobal("CraeginA");
@@ -41,6 +41,5 @@ sub EVENT_ITEM {
   else {
     quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
-    return 1;
   }
 }#Done

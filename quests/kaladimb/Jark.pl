@@ -20,6 +20,10 @@ sub EVENT_ITEM {
     quest::say("Har, har! No time fer eatin' now! While you were gone I struck me a rich vein. Lookie here! Ya ever seen a gem so pure? It's tiny but clear as glass. Ya take it, $name. Ya showed me some kindness, least I can do. Besides, still a share here for me.");
     quest::summonitem(29006); #pure crystal
   }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
 
 #END of FILE Zone:kaladimb  ID:67056 -- Jark

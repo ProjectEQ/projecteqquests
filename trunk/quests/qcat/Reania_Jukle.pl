@@ -2,12 +2,14 @@
 # 
 
 sub EVENT_SAY {
-  if ($text=~/ink of the dark/i && !$text=~/where/i) {
-    quest::say("Ink of the Dark, you say? That isn't an everyday item, you know. In fact, I can't remember the last time someone requested it. I have given up keeping any here with me. You are going to need to find your own supply now. Sorry.");
-  }
-  if ($text=~/where can i find the ink/i) {
-    quest::say("The ink is the blood of a dark scribe. Tempt him and give him this vial. He should cooperate.");
-    quest::summonitem(10626);
+  if ($text=~/ink of the dark/i) {
+    if($text=~/where can i find/i) {
+      quest::say("The ink is the blood of a dark scribe. Tempt him and give him this vial. He should cooperate.");
+      quest::summonitem(10626);
+    }
+    else {
+      quest::say("Ink of the Dark, you say? That isn't an everyday item, you know. In fact, I can't remember the last time someone requested it. I have given up keeping any here with me. You are going to need to find your own supply now. Sorry.");
+    }
   }
 }
 

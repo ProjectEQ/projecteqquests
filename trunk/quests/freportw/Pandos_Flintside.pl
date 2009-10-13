@@ -34,13 +34,15 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if($text=~/hail/i) {
-    quest::say("Greetings! Please move along. I am not paid to converse with strangers... unless of course you have a muffin or two..?");
-  }
-  if($text=~/brownloe bakery/i) {
-    quest::say("Oh, yes! That is close by. I am sure Lady Shae will be fine for just a minute. I will just run there and run back. Thanks, friend!");
-    #quest::start(85); Move towards Brownloe Bakery
-    #quest::starttimer("Pandos", 5);
+  if($Bakery == 0) {
+    if($text=~/hail/i) {
+      quest::say("Greetings! Please move along. I am not paid to converse with strangers... unless of course you have a muffin or two..?");
+    }
+    if($text=~/brownloe bakery/i) {
+      quest::say("Oh, yes! That is close by. I am sure Lady Shae will be fine for just a minute. I will just run there and run back. Thanks, friend!");
+      quest::start(85); Move towards Brownloe Bakery
+      quest::settimer("Pandos", 5);
+    }
   }
 }
 
@@ -78,13 +80,26 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  if(($x == 0) && ($y == 0) && ($Bakery == 0)) { #Still need Bakery Coord.
+  if(($x == -693) && ($y == -279) && ($Bakery == 0)) {
     $Bakery = 1;
+    quest::pause(60);
+    quest::say("I sure could use some of those famous muffins you make!");
+    quest::signalwith(9088, 1, 10);
   }
   if(($x == -446) && ($y == -226) && ($Bakery == 1)) {
     quest::stop();
     quest::stoptimer("Pandos");
     $Bakery = 0;
   }
-} 
+}
+
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+    quest::say("Thank you very much! These look delicious. Well, I need to get back to duty. I'll be back tomorrow!");
+    quest::signalwith(9088, 2, 10);
+  }
+  if($signal == 2) {
+    quest::resume();
+  }
+}
 #End of File, Zone:freportw  NPC:9057 -- Pandos_Flintside

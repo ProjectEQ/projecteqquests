@@ -7,7 +7,7 @@ sub EVENT_SIGNAL {
         my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend
         my $check_trash3 = $entity_list->GetMobByNpcTypeID(216060); # - Regura Waterfiend
 
-        if (!defined($check_trash1) && !defined($check_trash2) && !defined($check_trash3)) { #if all trash is down, start event
+        if (!defined(check_trash1) && !defined(check_trash2) && !defined(check_trash3)) { #if all trash is down, start event
             ##quest:say("All trash - or one wave of trash - has been killed"); #DEBUG
             quest::signalwith(216107,4,0);
         }

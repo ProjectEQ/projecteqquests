@@ -56,7 +56,7 @@ sub EVENT_SIGNAL {
 		quest::spawn2(216070,0,0,$x+5,$y-20,$z+5,69); # Spawn #Pwelon_of_Vapor associated with this wave
 	}
 
-	if ($signal == "nameddeath" && $qglobals{coirnav_done} == undef) { # Called when the 3 nameds die.
+	if ($signal == 2 && $qglobals{coirnav_done} == undef) { # Called when the 3 nameds die.
 
         if($namedcount < 3){
             $namedcount = $namedcount +1;

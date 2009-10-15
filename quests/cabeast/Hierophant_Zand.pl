@@ -1,7 +1,7 @@
 #Heirophant Zand starts and ends The Penance quest. This allows a young iksar to replace their guild's starting item if they've lost it. She is also for the 3rd and 5th shaman skullcap quests.
 
 sub EVENT_SAY {
-  if(($text=~/chosen saviour/i) && ($faction <= 5) && ($shmskullquest >= 3)){
+  if(($text=~/chosen savior/i) && ($faction <= 5) && ($shmskullquest >= 3)){
     quest::say("I am honored to meet the one who shall pledge his life to the return of the Skulls of the Ancients. However, I must see proof of our prowess as of yet. Go to the outlands and retrieve one Froglok Hexdoll, and no, they are not found on Frogloks. They are shaman dolls made by the goblin tribe.");
   }
   elsif($text=~/hail/i){

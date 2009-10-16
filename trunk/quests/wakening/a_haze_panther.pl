@@ -9,7 +9,9 @@ sub EVENT_TIMER
 	quest::stoptimer(1);
 }
 
-sub EVENT_ATTACK
-{
-	quest::npcrace(76);
+sub EVENT_COMBAT {
+	if($combat_state = 1)
+	{
+		quest::npcrace(76);
+	}
 }

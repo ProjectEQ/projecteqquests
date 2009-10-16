@@ -2,11 +2,11 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if((plugin::check_hasitem($client, 11057)) && ($Fatestealer < 1)) { #Ragebringer
+    if((plugin::check_hasitem($client, 11057)) && (!defined $qglobals{Fatestealer})) { #Ragebringer
       quest::say("Ha, the prodigy returns. So good to see you, $name. I always consider it an honor to have your company, and we have much to talk about!");
       quest::setglobal("Fatestealer",1,0,"F");
     }
-    if($Fatestealer==1) {
+    if(defined $qglobals{Fatestealer}) {
       quest::say("But not here and not now. We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, $name. You are a member of this circle and nothing will ever break that.");
     }
     else {

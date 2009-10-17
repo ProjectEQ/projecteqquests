@@ -5,7 +5,7 @@
 # VERSION: 1.0
 # DEVELOPER: Congdar
 #
-# *** NPC IFORMATION ***
+# *** NPC INFORMATION ***
 #
 # NAME: Reggit
 # ID: 20276

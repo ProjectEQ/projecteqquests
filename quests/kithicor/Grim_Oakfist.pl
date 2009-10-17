@@ -5,7 +5,7 @@
 # VERSION: 1.0
 # DEVELOPER: Congdar
 #
-# *** NPC IFORMATION ***
+# *** NPC INFORMATION ***
 #
 # NAME: Grim_Oakfist
 # ID: 20220

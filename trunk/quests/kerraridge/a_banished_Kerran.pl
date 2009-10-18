@@ -1,7 +1,7 @@
 ##########################################
 # ZONE: Kerra Isle (kerraridge)
 # DATABASE: PEQ-PoP
-# LAST EDIT DATE: July 6, 2009
+# LAST EDIT DATE: October 17, 2009
 # VERSION: 1.1
 # DEVELOPER: Unknown, Congdar
 #
@@ -32,7 +32,7 @@ sub EVENT_SAY {
     if($text=~/Hail/i) {
         quest::say("Rrrrrr..  Away frrrom this isle of death and.. prrrr.. punishment.");
     }
-    if($text=~/What remains of Thipt/i) {
+    if($text=~/remains of Thipt/i) {
         quest::say("Clawknight Thipt wished to learn the ways of Ashen.  Prrr.. Together we go into green goblins' lair to train.  Prrr.. We find too many and he is too weak.  Separated and unable to find him, I hear his death cry.  Prr.. I cannot make it back, eyes upon me.  Now I must find one sent by Ashen to aid in the recoverrry of his remains.");
     }
 }

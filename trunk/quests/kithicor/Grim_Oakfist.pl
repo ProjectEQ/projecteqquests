@@ -1,7 +1,7 @@
 ##########################################
 # ZONE: Kithicore Forest (kithicor)
 # DATABASE: PEQ-PoP
-# LAST EDIT DATE: July 6, 2009
+# LAST EDIT DATE: October 17, 2009
 # VERSION: 1.0
 # DEVELOPER: Congdar
 #

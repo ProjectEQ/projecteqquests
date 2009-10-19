@@ -16,6 +16,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
+	quest::say("$faction");
 	if($faction <= 4)
 	{
 		if(plugin::check_handin(\%itemcount, 29302 => 1))
@@ -30,5 +31,9 @@ sub EVENT_ITEM
 			quest::say("Ok, Brugga finished now. You have your cure, give cure with the bile and that will heal. You go now, Brugga done talking.", 19);
 			$client->SummonItem(29295);
 		}
+	}
+	else
+	{
+		quest::say("Get lost.", 19);
 	}
 }

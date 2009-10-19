@@ -1,19 +1,21 @@
 sub EVENT_SAY 
 {
 	my $lang_skill = $client->GetLanguageSkill(19);
-	quest::say("$lang_skill $langid $faction");
-	#my $lang_skill = $client->GetLanguageSkill(19);
-	#if($faction <= 4 && $langid == 19 && $lang_skill >= 100)
-	#{
+	if($faction <= 4 && $langid == 19 && $lang_skill >= 100)
+	{
 		if($text=~/Hail/i)
 		{
-			quest::say("Ragh!' His eyes you with pure hatred. 'Indigo, my dark bowels. . . treachery it is, treachery against the clan. Gharol paid! Paid for it!' He shows you his hands and grins maliciously. 'Paid, he did!", 19);
+			quest::emote("'Ragh!' His eyes you with pure hatred. 'Indigo, my dark bowels. . . treachery it is, treachery against the clan. Gharol paid! Paid for it!' He shows you his hands and grins maliciously. 'Paid, he did!");
 		}
 		elsif($text=~/Rare disease/i)
 		{
 			quest::say("You have someone that needs killing, or someone that needs saving? It not matter to Brugga, but you smell of a hero, so Brugga think there someone need saving. Well Brugga have time, so you give Brugga the disease and Brugga see.", 19);
 		}
-	#}
+	}
+	else
+	{
+		quest::say("I wont deal with one such as you...", 19);
+	}
 }
 
 sub EVENT_ITEM

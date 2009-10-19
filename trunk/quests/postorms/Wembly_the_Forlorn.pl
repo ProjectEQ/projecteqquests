@@ -41,11 +41,11 @@ sub EVENT_ITEM
 			for($count = 0; $count < 6; $count++)
 			{
 				my $group_m = $current_group->GetMember();
-				if($group_m->IsClient())
-				{
-					$group_m = $group_m->CastToClient();
-					if($group_m)
+				if($group_m)
+				{				
+					if($group_m->IsClient())
 					{
+						$group_m = $group_m->CastToClient();
 						if(!$group_m->KeyRingCheck(29215))
 						{
 							my $char_id = $current_group->CharacterID();

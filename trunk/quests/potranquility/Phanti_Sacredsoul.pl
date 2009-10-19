@@ -35,3 +35,50 @@ sub EVENT_SAY
 		quest::say("Recently, the portal from the Plane of Disease has been unusually active. People have been reporting strange sounds from around the portal at night, and a few of our trackers have seen strange, almost rodent like, footprints. Our best guess is that one of the denizens of the Plane of Disease managed to make its way into our plane. If this is true, it may explain the unnaturally quick manifestation of the disease. Perhaps, the bile from one of the rodents will help us learn of the cause, and hopefully a cure.");
 	}
 }
+
+sub EVENT_ITEM
+{
+	if(plugin::check_handin(\%itemcount, 29315 => 1))
+	{
+		quest::emote("pours the bile into a small flask, there is a puff of green smoke, which turns white as it floats into the sky. 'This is good news. It appears that this is the cause for her disease, but I have neither the tools, nor the knowledge to create a cure. There is rumor of an indigo orc who may prove useful to us in this area, but he is imprisoned in the Plane of Justice. Ask him about rare diseases. He was known to have cured many, prior to his imprisonment.");
+		$client->SummonItem(29302);
+	}
+	
+	if(plugin::check_handin(\%itemcount, 29302 => 1, 29295 => 1))
+	{
+		quest::say("Hmm, it looks like I will need both the cure and the purified bile in order to heal Phanti.");
+		my $current_group = $client->GetGroup();
+		if($current_group)
+		{
+			for($count = 0; $count < 6; $count++)
+			{
+				my $group_m = $current_group->GetMember();
+				if($group_m)
+				{
+					if($group_m->IsClient())
+					{
+						$group_m = $group_m->CastToClient();
+						if(!$group_m->KeyRingCheck(29213))
+						{
+							my $char_id = $current_group->CharacterID();
+							$group_m->KeyRingAdd(29213);
+							$group_m->SummonItem(29213);
+							quest::targlobal("pop_alt_access_potorment", "1", "F", 0, $char_id, 0);
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			if(!$client->KeyRingCheck(29213))
+			{
+				my $char_id = $client->CharacterID();
+				$client->KeyRingAdd(29213);
+				$client->SummonItem(29213);
+				quest::targlobal("pop_alt_access_potorment", "1", "F", 0, $char_id, 0);
+			}		
+		}
+	
+	}
+}

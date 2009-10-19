@@ -51,7 +51,7 @@ sub EVENT_ITEM
 							my $char_id = $current_group->CharacterID();
 							$group_m->KeyRingAdd(29215);
 							$group_m->SummonItem(29215);
-							quest::targlobal("pop_alt_access_potactics", "1", 0, $char_id, 0);
+							quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
 						}
 					}
 				}
@@ -64,7 +64,7 @@ sub EVENT_ITEM
 				my $char_id = $client->CharacterID();
 				$client->KeyRingAdd(29215);
 				$client->SummonItem(29215);
-				quest::targlobal("pop_alt_access_potactics", "1", 0, $char_id, 0);
+				quest::targlobal("pop_alt_access_potactics", "1", 0, "F", $char_id, 0);
 			}		
 		}
 	}

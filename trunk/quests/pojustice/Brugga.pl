@@ -1,5 +1,7 @@
 sub EVENT_SAY 
 {
+	my $lang_skill = $client->GetLanguageSkill(19);
+	quest::say("$lang_skill $landid");
 	#my $lang_skill = $client->GetLanguageSkill(19);
 	#if($faction <= 4 && $langid == 19 && $lang_skill >= 100)
 	#{

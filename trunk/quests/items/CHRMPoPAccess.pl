@@ -31,6 +31,20 @@ sub EVENT_SCALE_CALC
    	if(defined $qglobals{pop_fire_fennin_projection} &&  defined $qglobals{pop_wind_xegony_projection} &&  defined $qglobals{pop_water_coirnav_projection} &&  defined $qglobals{pop_eartha_arbitor_projection} &&  defined $qglobals{pop_earthb_rathe} &&  defined $qglobals{pop_time_maelin}) {
 		$flags++;
    	}
+	
+	if(defined $qglobals{pop_alt_access_codecay}){
+		$flags++;
+	}
+	if(defined $qglobals{pop_alt_access_potorment}){
+		$flags++;
+	}
+	if(defined $qglobals{pop_alt_access_hohonora}){
+		$flags++;
+	}
+	if(defined $qglobals{pop_alt_access_potactics}){
+		$flags++;
+	}
+	
 	$questitem->SetScale($flags/10);
 	
 	$qglobals{pop_pon_hedge_jezith}=undef;	
@@ -83,5 +97,9 @@ sub EVENT_SCALE_CALC
 	$qglobals{pop_water_coirnav_projection}=undef;	
 	$qglobals{pop_eartha_arbitor_projection}=undef;	
 	$qglobals{pop_earthb_rathe}=undef;	
-	$qglobals{pop_time_maelin}=undef;	
+	$qglobals{pop_time_maelin}=undef;
+	$qglobals{pop_alt_access_codecay}=undef;
+	$qglobals{pop_alt_access_hohonora}=undef;
+	$qglobals{pop_alt_access_potactics}=undef;
+	$qglobals{pop_alt_access_potorment}=undef;	
 }

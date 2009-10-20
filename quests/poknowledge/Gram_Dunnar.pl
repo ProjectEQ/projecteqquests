@@ -26,96 +26,96 @@ sub EVENT_SAY
 		elsif ($class eq 'Necromancer') { quest::summonitem(35011); }
                 elsif ($class eq 'Wizard') { quest::summonitem(35012); }
 	}
-	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 1){
-		if(defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel} && !defined $qglobals{pop_aa_codecay}) {
+	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 1  && !defined $qglobals{pop_aa_codecay}){
+		if(defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel}) {
 				$client->Message(4,"Gram Dunnar shudders as you tell him of the Crypt of Decay. 'A foul place, indeed. I would have loved to slay a few of those creatures, though.' His hand clenches and his eyes look past you. 'Ah, the battles I used to have,' he mutters.");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_codecay", 1, 5, "F");
 				quest::setglobal("pop_story", 2, 5, "S20");
-		}		
-			else {
-				$client->Message(1,"Please tell me another story!");
-				quest::setglobal("pop_story", 2, 5, "S20");
-			}
+	}		
+		else {
+			$client->Message(1,"Please tell me another story!");
+			quest::setglobal("pop_story", 2, 5, "S20");
+		}
 	}	
-	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 2){
-		if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} && !defined $qglobals{pop_aa_tactics}) {
+	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 2  && !defined $qglobals{pop_aa_tactics}){
+		if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag}) {
 				$client->Message(4,"Gram Dunnar grins excitedly at your description of the Plane of Tactics. 'I'd show the minions of Rallos Zek something, I would!' he exclaims, swinging his hands around as though wielding an axe. He sits down again and looks sadly at his aged hands.");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_tactics", 1, 5, "F");
 				quest::setglobal("pop_story", 3, 5, "S20");
 		}		
-			else {
-				$client->Message(1,"Please tell me another story!");
-				quest::setglobal("pop_story", 3, 5, "S20");
-			}
+		else {
+			$client->Message(1,"Please tell me another story!");
+			quest::setglobal("pop_story", 3, 5, "S20");
+		}
 	}
-	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 3){
-		if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pov_aerin_dar} && !defined $qglobals{pop_aa_hohonor}) {
+	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 3  && !defined $qglobals{pop_aa_hohonor}){
+		if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pov_aerin_dar}) {
 				$client->Message(4,"'Animated suits of armor, eh?' Gram says as you tell him of the Halls of Honor. 'Saw something like that once, but never so many as that.' His eyes get a faraway look. 'If I only I still had my youth.'");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_hohonor", 1, 5, "F");
 				quest::setglobal("pop_story", 4, 5, "S20");
 		}		
-			else {
-				$client->Message(1,"Please tell me another story!");
-				quest::setglobal("pop_story", 4, 5, "S20");
-			}
+		else {
+			$client->Message(1,"Please tell me another story!");
+			quest::setglobal("pop_story", 4, 5, "S20");
+		}
 	}
-	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 4){	
-		if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 &&  defined $qglobals{pop_pos_askr_the_lost_final} && !defined $qglobals{pop_aa_bothunder}) {
+	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 4  && !defined $qglobals{pop_aa_bothunder}){	
+		if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 &&  defined $qglobals{pop_pos_askr_the_lost_final}) {
 				$client->Message(4,"'Giants and a huge fortress,' Gram sighs wistfully as you finish your story of the Bastion of Thunder. 'Storming through a place like that, killing everything in sight - those were good days.'");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_bothunder", 1, 5, "F");
 				quest::setglobal("pop_story", 5, 5, "S20");
 		}
-			else {
-				$client->Message(1,"Please tell me another story!");
-				quest::setglobal("pop_story", 5, 5, "S20");
-			}	
+		else {
+			$client->Message(1,"Please tell me another story!");
+			quest::setglobal("pop_story", 5, 5, "S20");
+		}	
 	}
-	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 5){
-		if(defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel} &&  defined $qglobals{pop_pon_construct} &&  defined $qglobals{pop_pon_hedge_jezith} &&  defined $qglobals{pop_ponb_terris} &&  defined $qglobals{pop_ponb_poxbourne} &&  defined $qglobals{pop_cod_preflag} &&  defined $qglobals{pop_cod_bertox} &&  defined $qglobals{pop_cod_final} && !defined $qglobals{pop_aa_potorment}) {
+	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 5 && !defined $qglobals{pop_aa_potorment}){
+		if(defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel} &&  defined $qglobals{pop_pon_construct} &&  defined $qglobals{pop_pon_hedge_jezith} &&  defined $qglobals{pop_ponb_terris} &&  defined $qglobals{pop_ponb_poxbourne} &&  defined $qglobals{pop_cod_preflag} &&  defined $qglobals{pop_cod_bertox} &&  defined $qglobals{pop_cod_final}) {
 				$client->Message(4,"Gram Dunnar listens attentively to your story of the Plane of Torment. 'Ravens with bloody eyes,' he muses, 'and creatures with four mouths?' He shakes his head. 'Never in my day did I see such things.'");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_potorment", 1, 5, "F");
 				quest::setglobal("pop_story", 6, 5, "S20");
 		}		
-			else {
-				$client->Message(1,"Please tell me another story!");
-				quest::setglobal("pop_story", 6, 5, "S20");
-			}	
+		else {
+			$client->Message(1,"Please tell me another story!");
+			quest::setglobal("pop_story", 6, 5, "S20");
+		}	
 	}
-	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 6){	
-		if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} &&  defined $qglobals{pop_tactics_tallon} &&  defined $qglobals{pop_tactics_vallon} &&  defined $qglobals{pop_pot_saryrn_final} &&  defined $qglobals{pop_pot_saryrn} &&  defined $qglobals{pop_hohb_marr} && !defined $qglobals{pop_aa_solrotower}) {
+	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 6  && !defined $qglobals{pop_aa_solrotower}){	
+		if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} &&  defined $qglobals{pop_tactics_tallon} &&  defined $qglobals{pop_tactics_vallon} &&  defined $qglobals{pop_pot_saryrn_final} &&  defined $qglobals{pop_pot_saryrn} &&  defined $qglobals{pop_hohb_marr}) {
 				$client->Message(4,"Gram Dunnar strokes his beard thoughtfully as you tell him of the Tower of Solusek Ro. 'The burning prince himself. A worthy opponent, I'm sure,' he says. 'Thank you for the tales, $name. It's good to imagine these places, even if I may never see them.'");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_solrotower", 1, 5, "F");
 				quest::delglobal("pop_story");
 		}	
-			else {
-				$client->Message(1,"I've already heard all of those stories!");
-				quest::delglobal("pop_story");
-			}	
+		else {
+			$client->Message(1,"I've already heard all of those stories!");
+			quest::delglobal("pop_story");
+		}	
 	}
-       elsif($text=~/stories/i && $ulevel > 50){
-		if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} && !defined $qglobals{pop_aa_stormvalor}) {
+       elsif($text=~/stories/i && $ulevel > 50  && !defined $qglobals{pop_aa_stormvalor}){
+		if(defined $qglobals{pop_poj_mavuin} && defined $qglobals{pop_poj_tribunal} && defined $qglobals{pop_poj_valor_storms}) {
 				$client->Message(4,"Gram Dunnar listens eagerly to your tales of the Plane of Valor and Plane of Storms. 'Everything turned to glass by the dragon! That must be a sight,' he exclaims. 'Wish I could go there,' he sighs.");
 				$client->AddAAPoints(1);
 				$client->Message(0,"You've earned an AA point!");
 				quest::setglobal("pop_aa_stormvalor", 1, 5, "F");
 				quest::setglobal("pop_story", 1, 5, "S20");
 		}		
-			else {
-				$client->Message(1,"Please tell me another story!");
-				quest::setglobal("pop_story", 1, 5, "S20");
-			}
+		else {
+			$client->Message(1,"Please tell me another story!");
+			quest::setglobal("pop_story", 1, 5, "S20");
+		}
 	}
         else {
              quest::emote("The old dwarf glances at you briefly, then returns his attention to a small wooden object he is carving. 'Got no time for kids like you,' he grunts.");

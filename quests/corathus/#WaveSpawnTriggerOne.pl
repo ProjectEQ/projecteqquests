@@ -1,6 +1,6 @@
 sub EVENT_SPAWN
 {
-	quest::settimer("wave", 15);
+	quest::settimer("wave", 45);
 }
 
 sub EVENT_TIMER

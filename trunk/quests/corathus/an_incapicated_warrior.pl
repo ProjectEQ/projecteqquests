@@ -10,4 +10,5 @@ sub EVENT_TIMER
 		$npc->SetAppearance(3);
 	}
 	quest::stoptimer("try_sleep");
+	quest::settimer("try_sleep", 10);
 }

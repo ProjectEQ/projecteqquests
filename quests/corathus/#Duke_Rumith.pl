@@ -5,14 +5,21 @@ sub EVENT_COMBAT
 	if($combat_state == 0)
 	{
 		#out of combat
-		$npc->SetHP(985000);
+		$npc->SetHP(1520000);
 	}
 	elsif($combat_state == 1)
 	{
 		#in combat
-		quest::shout("Death comes to those who linger.")
+		quest::shout("Death comes to those who linger in the line of fire.")
 		quest::settimer("dominate", 20);
 		quest::setnexthpevent(76);
+		
+		my $robot_spawner = $entity_list->GetMobByNpcTypeID(365057);
+		if($robot_spawner)
+		{
+			$robot_spawner->Kill();
+		}
+
 	}
 }
 
@@ -48,7 +55,10 @@ sub EVENT_TIMER
 	}
 	elsif($timer eq "arcane_blast")
 	{
-		quest::emote("unleashes a barrage of arcane energy.");
+		if($num_tics == 0)
+		{
+			quest::emote("begins to unleash a barrage of arcane energy.");
+		}
 		my @hatelist = $npc->GetHateList();
 		foreach $ent (@hatelist)
 		{
@@ -57,7 +67,7 @@ sub EVENT_TIMER
 				my $h_ent = $ent->GetEnt();
 				if($h_ent)
 				{
-					my $dmg = ($h_ent->GetMaxHP() * 0.21);
+					my $dmg = ($h_ent->GetMaxHP() * 0.34);
 					$h_ent->Damage($npc, $dmg, 1045, 4, false);
 				}
 			}
@@ -65,7 +75,7 @@ sub EVENT_TIMER
 		
 		$num_tics++;
 		
-		if($num_tics == 5)
+		if($num_tics == 3)
 		{
 			quest::stoptimer("arcane_blast");
 		}

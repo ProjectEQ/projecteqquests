@@ -5,7 +5,7 @@ sub EVENT_COMBAT
 	if($combat_state == 0)
 	{
 		#out of combat
-		$npc->SetHP(4860000);
+		$npc->SetHP(985000);
 	}
 	elsif($combat_state == 1)
 	{

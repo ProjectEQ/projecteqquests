@@ -28,6 +28,10 @@ sub EVENT_DEATH
 	quest::shout("This wasn't... what I was promised...");
 	quest::stoptimer("dominate");
 	quest::stoptimer("arcane_blast");
+	quest::spawn_condition("corathus", 2, 1);
+	quest::spawn_condition("corathus", 1, 0);
+	quest::depopall(365029);
+	quest::spawn2(365143, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
 }
 
 sub EVENT_TIMER

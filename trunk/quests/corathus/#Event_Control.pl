@@ -18,6 +18,7 @@ sub EVENT_SAY
 				#disable spawn cond 1
 				quest::spawn_condition("corathus", 2, 1);
 				quest::spawn_condition("corathus", 1, 0);
+				quest::depopall(365029);
 			}
 		}
 		elsif($text=~ /Disable/i)
@@ -26,6 +27,7 @@ sub EVENT_SAY
 			{
 				#disable spawn cond 1
 				quest::spawn_condition("corathus", 1, 0);
+				quest::depopall(365029);
 			}
 			elsif($text=~ /Courtyard/i)
 			{

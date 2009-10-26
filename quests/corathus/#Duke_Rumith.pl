@@ -10,7 +10,7 @@ sub EVENT_COMBAT
 	elsif($combat_state == 1)
 	{
 		#in combat
-		quest::shout("Death comes to those who linger in the line of fire.")
+		quest::shout("Death comes to those who linger in the line of fire.");
 		quest::settimer("dominate", 20);
 		quest::setnexthpevent(76);
 		
@@ -19,7 +19,6 @@ sub EVENT_COMBAT
 		{
 			$robot_spawner->Kill();
 		}
-
 	}
 }
 

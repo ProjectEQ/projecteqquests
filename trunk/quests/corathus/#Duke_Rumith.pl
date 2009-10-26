@@ -10,6 +10,7 @@ sub EVENT_COMBAT
 	elsif($combat_state == 1)
 	{
 		#in combat
+		quest::shout("Death comes to those who linger.")
 		quest::settimer("dominate", 20);
 		quest::setnexthpevent(76);
 	}
@@ -17,6 +18,7 @@ sub EVENT_COMBAT
 
 sub EVENT_DEATH
 {
+	quest::shout("This wasn't... what I was promised...");
 	quest::stoptimer("dominate");
 	quest::stoptimer("arcane_blast");
 }
@@ -35,6 +37,8 @@ sub EVENT_TIMER
 				my $h_ent = $ent->GetEnt();
 				if($h_ent)
 				{
+					my $ent_name = $h_ent->GetCleanName();
+					quest::shout("$ent_name your will is mine to control.");
 					$npc->CastSpell(7028, $h_ent->GetID(), 10, 0);
 					last;
 				}
@@ -44,6 +48,7 @@ sub EVENT_TIMER
 	}
 	elsif($timer eq "arcane_blast")
 	{
+		quest::emote("unleashes a barrage of arcane energy.");
 		my @hatelist = $npc->GetHateList();
 		foreach $ent (@hatelist)
 		{

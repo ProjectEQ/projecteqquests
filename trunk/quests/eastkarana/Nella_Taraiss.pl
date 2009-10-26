@@ -9,7 +9,7 @@ sub EVENT_SAY {
       quest::updatetaskactivity(139,2);
     }
     else {
-      quest::say("Hello, $name");
+      quest::say("Hello, $name.");
     }
   }
 }

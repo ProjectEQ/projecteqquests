@@ -8,17 +8,12 @@ sub EVENT_SAY
 			if($text=~ /Start/i)
 			{
 				#enable spawn cond 1
-				#disable spawn cond 2
 				quest::spawn_condition("corathus", 1, 1);
-				quest::spawn_condition("corathus", 2, 0);
 			}
 			elsif($text=~ /Courtyard/i)
 			{
 				#enable spawn cond 2
-				#disable spawn cond 1
 				quest::spawn_condition("corathus", 2, 1);
-				quest::spawn_condition("corathus", 1, 0);
-				quest::depopall(365029);
 			}
 		}
 		elsif($text=~ /Disable/i)

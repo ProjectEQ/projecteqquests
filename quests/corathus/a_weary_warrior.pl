@@ -12,3 +12,11 @@ sub EVENT_TIMER
 	quest::stoptimer("try_sit");
 	quest::settimer("try_sit", 10);
 }
+
+sub EVENT_SAY
+{
+	if($text=~ /Hail/i)
+	{
+		quest::emote("looks over at $name but does not say a word.");
+	}
+}

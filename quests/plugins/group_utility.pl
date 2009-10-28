@@ -51,4 +51,64 @@ sub GetGroupMembers
 	return @group_array;
 }
 
+sub CastGroupSpell
+{
+	my $cl = shift;
+	my $caster = shift;
+	my $spell_id = shift;
+	
+	my $group = $cl->GetGroup();
+	if($group)
+	{
+		$group->CastGroupSpell($caster, $spell_id);
+		return;
+	}
+	
+	my $group = $cl->GetRaid();
+	if($group)
+	{
+		$group->CastGroupSpell($caster, $spell_id);
+		return;
+	}	
+}
+
+sub MoveGroup
+{
+	my $cl = shift;
+	my $zone_id = shift;
+	my $x_dest = shift;
+	my $y_dest = shift;
+	my $z_dest = shift;
+	my $heading_dest = shift;
+	my @group_array = plugin::GetGroupMembers($cl);
+	
+	foreach $ent (@group_array)
+	{
+		if($ent)
+		{
+			$ent->MovePC($zone_id, $x_dest, $y_dest, $z_dest, $heading_dest);
+		}
+	}
+}
+
+sub MoveGroupInstance
+{
+	my $cl = shift;
+	my $zone_id = shift;
+	my $instance_id = shift;
+	my $x_dest = shift;
+	my $y_dest = shift;
+	my $z_dest = shift;
+	my $heading_dest = shift;
+	my @group_array = plugin::GetGroupMembers($cl);
+	
+	foreach $ent (@group_array)
+	{
+		if($ent)
+		{
+			$ent->MovePC($zone_id, $instance_id, $x_dest, $y_dest, $z_dest, $heading_dest);
+		}
+	}
+}
+
 1;

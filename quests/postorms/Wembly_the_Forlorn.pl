@@ -35,77 +35,19 @@ sub EVENT_ITEM
 	if(plugin::check_handin(\%itemcount, 29216 => 1, 29217 => 1, 29218 => 1, 29219 => 1))
 	{
 		quest::say("What's this? Four pieces of a Diaku Emblem? Why ever would you give these to me? Well I think I can get them to fit back together. You know, while you have this, I would be quite happy if you would avenge the loss of my dear ship and kill every Diaku you find? Yes that would be very good indeed. Here is your key, and a key for all your companions as well.");
-		my $current_group = $client->GetGroup();
-		my $current_raid = $client->GetRaid();
-		if($current_group)
+		my @grp = plugin::GetGroupMembers($client);
+		foreach $ent (@grp)
 		{
-			for($count = 0; $count < 6; $count++)
+			if($ent)
 			{
-				my $group_m = $current_group->GetMember($count);
-				if($group_m)
-				{				
-					if($group_m->IsClient())
-					{
-						$group_m = $group_m->CastToClient();
-						if(!$group_m->KeyRingCheck(29215))
-						{
-							my $char_id = $current_group->CharacterID();
-							$group_m->KeyRingAdd(29215);
-							$group_m->SummonItem(29215);
-							quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
-						}
-					}
-				}
-			}
-		}
-		elsif($current_raid)
-		{
-			my $gid = $current_raid->GetGroup($client->GetName());
-			if($gid >= 0 && $gid < 12)
-			{
-				for($count = 0; $count < 72; $count++)
+				if(!$ent->KeyRingCheck(29215))
 				{
-					my $raid_m = $current_raid->GetMember($count);
-					if($raid_m)
-					{
-						my $raid_m_gid = $current_raid->GetGroup($raid_m->GetName());
-						if($raid_m_gid == $gid)
-						{
-							if($raid_m->IsClient())
-							{
-								$raid_m = $group_m->CastToClient();
-								if(!$raid_m->KeyRingCheck(29215))
-								{
-									my $char_id = $current_raid->CharacterID();
-									$raid_m->KeyRingAdd(29215);
-									$raid_m->SummonItem(29215);
-									quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
-								}
-							}
-						}
-					}
-				}
-			}
-			else
-			{
-				if(!$client->KeyRingCheck(29215))
-				{
-					my $char_id = $client->CharacterID();
-					$client->KeyRingAdd(29215);
-					$client->SummonItem(29215);
+					my $char_id = $ent->CharacterID();
+					$ent->KeyRingAdd(29215);
+					$ent->SummonItem(29215);
 					quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
-				}	
+				}
 			}
-		}
-		else
-		{
-			if(!$client->KeyRingCheck(29215))
-			{
-				my $char_id = $client->CharacterID();
-				$client->KeyRingAdd(29215);
-				$client->SummonItem(29215);
-				quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
-			}		
 		}
 	}
 }

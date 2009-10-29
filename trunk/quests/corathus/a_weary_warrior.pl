@@ -1,6 +1,7 @@
 sub EVENT_SPAWN
 {
-	quest::settimer("try_sit", 3);
+	my $random_time = int(rand(3)) + 3;
+	quest::settimer("try_sit", $random_time);
 }
 
 sub EVENT_TIMER

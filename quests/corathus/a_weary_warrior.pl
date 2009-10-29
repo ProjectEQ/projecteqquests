@@ -1,6 +1,6 @@
 sub EVENT_SPAWN
 {
-	quest::settimer("try_sit", 5);
+	quest::settimer("try_sit", 10);
 }
 
 sub EVENT_TIMER
@@ -8,9 +8,8 @@ sub EVENT_TIMER
 	if($timer eq "try_sit")
 	{
 		$npc->SetAppearance(1);
+		quest::stoptimer("try_sit");
 	}
-	quest::stoptimer("try_sit");
-	quest::settimer("try_sit", 10);
 }
 
 sub EVENT_SAY

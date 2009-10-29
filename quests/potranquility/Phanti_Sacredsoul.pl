@@ -47,38 +47,19 @@ sub EVENT_ITEM
 	if(plugin::check_handin(\%itemcount, 29302 => 1, 29295 => 1))
 	{
 		quest::say("Hmm, it looks like I will need both the cure and the purified bile in order to heal Phanti.");
-		my $current_group = $client->GetGroup();
-		if($current_group)
+		my @grp = plugin::GetGroupMembers($client);
+		foreach $ent (@grp)
 		{
-			for($count = 0; $count < 6; $count++)
+			if($ent)
 			{
-				my $group_m = $current_group->GetMember();
-				if($group_m)
+				if(!$ent->KeyRingCheck(29215))
 				{
-					if($group_m->IsClient())
-					{
-						$group_m = $group_m->CastToClient();
-						if(!$group_m->KeyRingCheck(29213))
-						{
-							my $char_id = $current_group->CharacterID();
-							$group_m->KeyRingAdd(29213);
-							$group_m->SummonItem(29213);
-							quest::targlobal("pop_alt_access_potorment", "1", "F", 0, $char_id, 0);
-						}
-					}
+					my $char_id = $ent->CharacterID();
+					$ent->KeyRingAdd(29213);
+					$ent->SummonItem(29213);
+					quest::targlobal("pop_alt_access_potorment", "1", "F", 0, $char_id, 0);
 				}
 			}
 		}
-		else
-		{
-			if(!$client->KeyRingCheck(29213))
-			{
-				my $char_id = $client->CharacterID();
-				$client->KeyRingAdd(29213);
-				$client->SummonItem(29213);
-				quest::targlobal("pop_alt_access_potorment", "1", "F", 0, $char_id, 0);
-			}		
-		}
-	
 	}
 }

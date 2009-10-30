@@ -40,7 +40,7 @@ sub EVENT_TIMER
 			my @clientlist = $entity_list->GetClientList();
 			foreach $ent (@clientlist)
 			{
-				if($ent != $tar)
+				if($ent ne $tar)
 				{
 					my $m_dist = plugin::Dist($tar, $ent);
 					if($m_dist <= 20.0)

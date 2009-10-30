@@ -24,8 +24,8 @@ sub EVENT_TIMER
 {
 	if($timer eq "enrage")
 	{
-		$min_hit += 500;
-		$max_hit += 500;
+		$min_hit = $min_hit + 500;
+		$max_hit = $max_hit + 500;
 		quest::ModifyNPCStat("min_hit", $min_h);
 		quest::ModifyNPCStat("max_hit", $max_h);	
 		quest::emote("begins to swing faster.");

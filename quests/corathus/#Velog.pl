@@ -16,7 +16,7 @@ sub EVENT_COMBAT
 		quest::settimer("cleave", 15);
 		$min_h = 1800;
 		$max_h = 2200;
-		$npc->Shout("Rarrrrrrggh!! Velog SMASH!");
+		quest::shout("Rarrrrrrggh!! Velog SMASH!");
 	}
 }
 
@@ -28,6 +28,7 @@ sub EVENT_TIMER
 		$max_hit += 500;
 		$npc->ModifyNPCStat("min_hit", $min_h);
 		$npc->ModifyNPCStat("max_hit", $max_h);	
+		quest::emote("begins to swing faster.");
 	}
 	elsif($timer eq "cleave")
 	{

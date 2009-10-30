@@ -40,7 +40,7 @@ sub EVENT_TIMER
 			my @clientlist = $entity_list->GetClientList();
 			foreach $ent (@clientlist)
 			{
-				if($ent ne $tar)
+				if($ent->GetID() != $tar->GetID())
 				{
 					my $m_dist = plugin::Dist($tar, $ent);
 					if($m_dist <= 20.0)
@@ -51,7 +51,7 @@ sub EVENT_TIMER
 			}
 			
 			my $number_targets = @cleave_targets;
-			my $damage_per_target = (9000 / $number_targets);
+			my $damage_per_target = (1500 / $number_targets);
 			foreach $ent (@cleave_targets)
 			{
 				$ent->Damage($npc, $damage_per_target, 0xFFFF, 1, 0);

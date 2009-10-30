@@ -6,6 +6,8 @@ sub EVENT_COMBAT
 	{
 		#out of combat
 		$npc->SetHP(1520000);
+		quest::stoptimer("dominate");
+		quest::stoptimer("arcane_blast");
 	}
 	elsif($combat_state == 1)
 	{

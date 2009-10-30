@@ -7,8 +7,8 @@ sub EVENT_COMBAT
 	{
 		quest::stoptimer("enrage");
 		quest::stoptimer("cleave");
-		quest::ModifyNPCStat("min_hit", 1800);
-		quest::ModifyNPCStat("max_hit", 2200);
+		quest::modifynpcstat("min_hit", 1800);
+		quest::modifynpcstat("max_hit", 2200);
 	}
 	else
 	{
@@ -26,9 +26,9 @@ sub EVENT_TIMER
 	{
 		$min_h = $min_h + 500;
 		$max_h = $max_h + 500;
-		quest::ModifyNPCStat("min_hit", $min_h);
-		quest::ModifyNPCStat("max_hit", $max_h);	
-		quest::emote("begins to swing faster.");
+		quest::modifynpcstat("min_hit", $min_h);
+		quest::modifynpcstat("max_hit", $max_h);	
+		quest::emote("redoubles his efforts.");
 	}
 	elsif($timer eq "cleave")
 	{

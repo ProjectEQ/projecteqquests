@@ -26,12 +26,12 @@ sub EVENT_TIMER
 			{
 				my $target_name = $cur_target->GetCleanName();
 				quest::emote("breaks his bonds and charges $target_name.");
-				quest::settimer("charge_end", 3);
+				quest::settimer("charge_end", 1);
 				$npc->BuffFadeByEffect(3); #snare
 				$npc->BuffFadeByEffect(99); #root
 				quest::modifynpcstat("max_hit", 1980);
 				quest::modifynpcstat("min_hit", 840);
-				quest::modifynpcstat("runspeed", 2.5);
+				quest::modifynpcstat("runspeed", 2.25);
 			}
 		}
 	}

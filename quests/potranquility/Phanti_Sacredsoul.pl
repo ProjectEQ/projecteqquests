@@ -52,7 +52,7 @@ sub EVENT_ITEM
 		{
 			if($ent)
 			{
-				if(!$ent->KeyRingCheck(29215))
+				if(!$ent->KeyRingCheck(29213))
 				{
 					my $char_id = $ent->CharacterID();
 					$ent->KeyRingAdd(29213);

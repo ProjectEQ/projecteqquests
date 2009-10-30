@@ -12,8 +12,8 @@ sub EVENT_COMBAT
 	}
 	else
 	{
-		quest::settimer("enrage", 30);
-		quest::settimer("cleave", 15);
+		quest::settimer("enrage_up", 30);
+		quest::settimer("cleave", 12);
 		$min_h = 1800;
 		$max_h = 2200;
 		quest::shout("Rarrrrrrggh!! Velog SMASH!");
@@ -22,16 +22,17 @@ sub EVENT_COMBAT
 
 sub EVENT_TIMER
 {
-	if($timer eq "enrage")
+	if($timer eq "enrage_up")
 	{
-		$min_hit = $min_hit + 500;
-		$max_hit = $max_hit + 500;
+		$min_h = $min_h + 500;
+		$max_h = $max_h + 500;
 		quest::ModifyNPCStat("min_hit", $min_h);
 		quest::ModifyNPCStat("max_hit", $max_h);	
 		quest::emote("begins to swing faster.");
 	}
 	elsif($timer eq "cleave")
 	{
+		quest::emote("executes a cleaving attack.");
 		my @cleave_targets;
 		my $tar = $npc->GetTarget();
 		if($tar)
@@ -54,7 +55,7 @@ sub EVENT_TIMER
 			my $damage_per_target = (1500 / $number_targets);
 			foreach $ent (@cleave_targets)
 			{
-				$ent->Damage($npc, $damage_per_target, 0xFFFF, 1, 0);
+				$ent->Damage($npc, $damage_per_target, 0xFFFF, 1);
 			}
 		}
 	}

@@ -31,7 +31,6 @@ sub EVENT_DEATH
 	quest::stoptimer("arcane_blast");
 	quest::spawn_condition("corathus", 2, 1); #enable CY
 	quest::spawn_condition("corathus", 1, 0); #disable Start
-	quest::spawn_condition("corathus", 4, 1); #enable mino trash
 	quest::spawn_condition("corathus", 10, 1); #enable mino boss
 	quest::depopall(365029);
 	quest::spawn2(365143, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());

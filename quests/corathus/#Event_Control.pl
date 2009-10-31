@@ -42,10 +42,24 @@ sub EVENT_SAY
 				quest::spawn_condition("corathus", 7, 1);
 			}
 		}
+		elsif($text=~ /Reset/i)
+		{
+			quest::spawn_condition("corathus", 1, 1);
+			quest::spawn_condition("corathus", 2, 0);
+			quest::spawn_condition("corathus", 3, 1);
+			quest::spawn_condition("corathus", 4, 1);
+			quest::spawn_condition("corathus", 5, 1);
+			quest::spawn_condition("corathus", 6, 0);
+			quest::spawn_condition("corathus", 7, 0);
+			quest::spawn_condition("corathus", 8, 0);
+			quest::spawn_condition("corathus", 9, 0);
+			quest::spawn_condition("corathus", 10, 0);
+			quest::spawn_condition("corathus", 11, 0);			
+		}
 		else
 		{
 			quest::say("Options:");
-			quest::say("[Enable]/[Disable] + argument");
+			quest::say("[Reset], [Enable]/[Disable] + argument");
 			quest::say("Start");
 			quest::say("Courtyard");
 			quest::say("Minotaur");

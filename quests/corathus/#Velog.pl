@@ -69,7 +69,21 @@ sub EVENT_DEATH
 {
 	quest::emote("roars in pain and falls over dead.");
 	quest::spawn_condition("corathus", 10, 0);
-	#if all other bosses are dead then
-	#quest::spawn_condition("corathus", 4, 0);
-	#quest::spawn_condition("corathus", 7, 1);
+	my $octo = $entity_list->GetMobByNpcTypeID(365035);
+	my $spore = $entity_list->GetMobByNpcTypeID(365038);
+	
+	if(!$spore && !$octo)
+	{
+		quest::spawn_condition("corathus", 3, 0);
+		quest::spawn_condition("corathus", 4, 0);
+		quest::spawn_condition("corathus", 5, 0);
+		quest::spawn_condition("corathus", 6, 1);
+		quest::spawn_condition("corathus", 7, 1);
+		quest::spawn_condition("corathus", 8, 1);
+		my $willf = $entity_list->GetMobByNpcTypeID(365171);
+		if($willf)
+		{
+			$willf->Shout("Fools, defeat my champions and I will simply make more, behold my wonderous behemoth!");
+		}
+	}
 }

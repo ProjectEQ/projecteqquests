@@ -16,7 +16,7 @@ sub EVENT_COMBAT
 	else
 	{
 		quest::settimer("eat_mushroom", 3);
-		quest::settimer("mushroom_throw", 15);
+		quest::settimer("mushroom_throw", 9);
 		$attack_speed = 25;
 		$min_hit = 650;
 		$max_hit = 1450;
@@ -104,7 +104,7 @@ sub EVENT_TIMER
 			elsif($eat_target->GetNPCTypeID() == 365075)
 			{
 				quest::emote("digests a paralyzing mushroom and is stunned for a moment.");
-				$npc->Stun(8000);
+				$npc->Stun(11000);
 			}
 			elsif($eat_target->GetNPCTypeID() == 365076)
 			{
@@ -118,7 +118,7 @@ sub EVENT_TIMER
 			elsif($eat_target->GetNPCTypeID() == 365077)
 			{
 				quest::emote("digests a deadly mushroom and becomes sick.");
-				$npc->Damage($eat_target, 50000, 435, 24, 0);
+				$npc->Damage($eat_target, 80000, 435, 24, 0);
 			}
 			
 			$eat_target->Depop();

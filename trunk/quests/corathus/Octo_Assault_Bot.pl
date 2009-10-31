@@ -70,8 +70,18 @@ sub EVENT_TIMER
 					$jumps++;
 					my $dmg = 200 + (200 * (1.5 * $jumps));
 					$h_ent->Damage($npc, $dmg, 1075, 24, 0);
+					#add all but the target to new array and set old array to new array
+					my @new_array;
+					foreach $n_ent (@eligible_target)
+					{
+						my $n_h_ent = $n_ent->GetEnt();
+						if($n_h_ent->GetID() != $h_ent->GetID())
+						{
+							push(@new_array, $n_ent);
+						}
+					}
+					@eligible_targets = @new_array;
 					$last_target = $h_ent;
-					delete(@eligible_targets[$idx]);
 					last;
 				}
 				$idx++;

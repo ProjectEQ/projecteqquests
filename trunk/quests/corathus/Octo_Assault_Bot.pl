@@ -5,6 +5,7 @@ $missile_z = 0;
 $is_anni = 0;
 $burn_tics = 0;
 $burn_target_id = 0;
+$has_burned = 0;
 
 sub EVENT_COMBAT
 {
@@ -17,6 +18,7 @@ sub EVENT_COMBAT
 		quest::stoptimer("burn_start");	
 		quest::stoptimer("burn_tic");	
 		quest::stoptimer("anni_start");
+		quest::stoptimer("bot_spawn");
 	}
 	else
 	{
@@ -26,8 +28,10 @@ sub EVENT_COMBAT
 			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet but I suppose you will have to do!");
 		}
 		quest::settimer("short_circuit", 20);
-		quest::settimer("annih_burn_shared", 120);
+		quest::settimer("annih_burn_shared", 60);
 		quest::settimer("missile_launch", 12);
+		quest::settimer("bot_spawn", 60);
+		$has_burned = 0;
 	}
 }
 
@@ -35,7 +39,7 @@ sub EVENT_TIMER
 {
 	if($timer eq "annih_burn_shared")
 	{
-		if($npc->GetHPRatio() > 60)
+		if($has_burned == 0)
 		{
 			my $burn_target = $npc->GetTarget();
 			if($burn_target)
@@ -56,7 +60,11 @@ sub EVENT_TIMER
 			$is_anni = 1;
 		}
 	}
-	if($timer eq "anni_start")
+	elsif($timer eq "bot_spawn")
+	{
+		quest::spawn2(365025, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+	}
+	elsif($timer eq "anni_start")
 	{
 		quest::stoptimer("anni_start");
 		quest::emote("overloads, eradicating everything around it.");

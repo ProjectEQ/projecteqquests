@@ -25,6 +25,7 @@ sub EVENT_TIMER
 {
 	if($timer eq "short_circuit")
 	{
+		quest::emote("short circuits.");
 		my @eligible_targets = $npc->GetHateList();
 		my $starter_target = $npc->GetHateRandom();
 		my $jumps = 0;
@@ -56,15 +57,21 @@ sub EVENT_TIMER
 			$last_target = undef;
 			foreach $ent (@eligible_targets)
 			{
+				$ent->Say("For all!");
 				my $m_dist = plugin::Dist($dist_target, $ent);
 				if($m_dist < 15.0)
 				{
+					$ent->Say("I'm in range!");
 					$jumps++;
 					my $dmg = 200 + (200 * (1.5 * $jumps));
 					$ent->Damage($npc, $dmg, 1075, 24, 0);
 					$last_target = $ent;
 					delete $eligible_targets[$idx];
 					last;
+				}
+				else
+				{
+					$ent->Say("I'm out of range!");
 				}
 				$idx++;
 			}

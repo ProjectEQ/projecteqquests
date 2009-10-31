@@ -60,7 +60,7 @@ sub EVENT_TIMER
 			foreach $ent (@eligible_targets)
 			{
 				my $h_ent = $ent->GetEnt();
-				$h_ent->Say("For all!");
+				$h_ent->Say("For all! $dist_target, $h_ent");
 				my $m_dist = plugin::Dist($dist_target, $h_ent);
 				if($m_dist < 15.0)
 				{

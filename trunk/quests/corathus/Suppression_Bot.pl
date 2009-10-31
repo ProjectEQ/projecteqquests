@@ -1,19 +1,7 @@
-sub EVENT_COMBAT
+sub EVENT_SPAWN
 {
-	if($combat_state == 0)
-	{
-		quest::stoptimer("suppress");
-	}
-	else
-	{
-		my $octo = $entity_list->GetMobByNpcTypeID(365035);
-		if($octo)
-		{
-			my $boss_name = $octo->GetCleanName();
-			quest::emote("begins to suppress the fires on $boss_name.");
-		}
-		quest::settimer("suppress", 1);
-	}
+	quest::emote("begins to suppress the fires on Octo Assault Bot.");
+	quest::settimer("suppress", 1);
 }
 
 sub EVENT_TIMER

@@ -25,12 +25,12 @@ sub EVENT_COMBAT
 		my $willf = $entity_list->GetMobByNpcTypeID(365171);
 		if($willf)
 		{
-			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet but I suppose you will have to do!");
+			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet however. You! You will all help me test it!");
 		}
 		quest::settimer("short_circuit", 20);
 		quest::settimer("annih_burn_shared", 60);
 		quest::settimer("missile_launch", 12);
-		quest::settimer("bot_spawn", 60);
+		quest::settimer("bot_spawn", 30);
 		$has_burned = 0;
 	}
 }

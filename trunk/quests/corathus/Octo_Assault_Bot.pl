@@ -1,3 +1,11 @@
+$missile_target_id = 0;
+$missile_x = 0;
+$missile_y = 0;
+$missile_z = 0;
+$is_anni = 0;
+$burn_tics = 0;
+$burn_target_id = 0;
+
 sub EVENT_COMBAT
 {
 	if($combat_state == 0)
@@ -5,7 +13,10 @@ sub EVENT_COMBAT
 		quest::stoptimer("short_circuit");
 		quest::stoptimer("annih_burn_shared");
 		quest::stoptimer("missile_launch");
-		quest::stoptimer("repair");	
+		quest::stoptimer("missile_hit");
+		quest::stoptimer("burn_start");	
+		quest::stoptimer("burn_tic");	
+		quest::stoptimer("anni_start");
 	}
 	else
 	{
@@ -14,79 +25,160 @@ sub EVENT_COMBAT
 		{
 			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet but I suppose you will have to do!");
 		}
-		quest::settimer("short_circuit", 13);
+		quest::settimer("short_circuit", 30);
 		quest::settimer("annih_burn_shared", 120);
 		quest::settimer("missile_launch", 45);
-		quest::settimer("repair", 30);
 	}
 }
 
 sub EVENT_TIMER
 {
-	if($timer eq "short_circuit")
+	if($timer eq "annih_burn_shared")
+	{
+		if($npc->GetHPRatio() > 60)
+		{
+			my $burn_target = $npc->GetTarget();
+			if($burn_target)
+			{
+				my $target_name = $burn_target->GetCleanName();
+				quest::emote("Begins to burn $target_name.");
+				$npc->Stun(9500);
+				$burn_tics = 0;
+				$burn_target_id = $burn_target->GetID();
+				quest::settimer("burn_start", 3);
+			}
+		}
+		else
+		{
+			quest::emote("begins to overload.");
+			quest::settimer("anni_start", 6);
+			$npc->Stun(6500);
+			$is_anni = 1;
+		}
+	}
+	if($timer eq "anni_start")
+	{
+		quest::stoptimer("anni_start");
+		quest::emote("overloads, eradicating everything around it.");
+		$npc->CastSpell(1948, $npc->GetID(), 10, 0);
+	}
+	elsif($timer eq "burn_start")
+	{
+		my $burn_target = $entity_list->GetMobID($burn_target_id);
+		quest::stoptimer("burn_start");
+		if($burn_target)
+		{
+			quest::settimer("burn_tic", 1);
+			if($burn_target->FindType(40))
+			{
+				quest::emote("is burned as its laser is reflected.");
+				$burn_target_id = $npc->GetID();
+			}
+		}
+	}
+	elsif($timer eq "burn_tic")
+	{
+		$burn_tics++;
+		
+		my $burn_target = $entity_list->GetMobID($burn_target_id);
+		if($burn_target)
+		{
+			$burn_target->Damage($npc, 6000, 1660, 24, 0);
+		}
+		
+		if($burn_tics == 5)
+		{
+			quest::stoptimer("burn_tic");
+		}
+	}
+	elsif($timer eq "missile_launch")
+	{
+		my $missile_target = $npc->GetHateRandom();
+		if($missile_target)
+		{
+			my $target_name = $missile_target->GetCleanName();
+			quest::emote("locks onto $target_name with a surface to surface missile.");
+			quest::settimer("missile_hit", 8);
+			$missile_target_id = $missile_target->GetID();
+			$missile_x = $missile_target->GetX();
+			$missile_y = $missile_target->GetY();
+			$missile_z = $missile_target->GetZ();
+		}
+	}
+	elsif($timer eq "missile_hit")
+	{
+		quest::stoptimer("missile_hit");
+		my $missile_target = $entity_list->GetMobID($missile_target_id);
+		if($missile_target)
+		{
+			my $m_dist = plugin::DistToCoords($missile_target, $missile_x, $missile_y, $missile_z);
+			if($m_dist < 20)
+			{
+				$missile_target->Damage($npc, 10000, 0xFFFF, 28, 0);
+			}
+		}
+	}
+	elsif($timer eq "short_circuit")
 	{
 		quest::emote("short circuits.");
-		my @eligible_targets = $npc->GetHateList();
-		my $starter_target = $npc->GetHateRandom();
+		my @hate_list = $npc->GetHateList();
 		my $jumps = 0;
+		my $starter_target = $npc->GetHateRandom();
+		my @hit_already;
+		my $jump_from_target = $starter_target;
 		
 		if(!$starter_target)
 		{
 			return;
 		}
 		
-		#remove our main target from the list and damage them
-		my $idx = 0;
-		foreach $ent (@eligible_target)
-		{
-			my $h_ent = $ent->GetEnt();
-			if($h_ent->GetID() == $starter_target->GetID())
-			{
-				delete(@eligible_targets[$idx]);
-				last;
-			}
-			$idx++;
-		}
-		$starter_target->Damage($npc, 200, 1075, 24, 0);
+		$starter_target->Damage($npc, 250, 1075, 24, 0);
+		my $t_id = $starter_target->GetID();
+		push(@hit_already, $t_id);
 		
-		#while we still have targets in range on the eligible target list jump and do damage and remove them from the list
-		$last_target = $starter_target;
-		do
+		my $hit = 1;
+		
+		while($hit == 1)
 		{
-			my $num = @eligible_targets;
-			if($num == 0)
+			$hit = 0;
+			foreach $hate_ent (@hate_list)
 			{
-				$last_target = 0;
-			}
-
-			$idx = 0;
-			foreach $ent (@eligible_targets)
-			{
-				my $h_ent = $ent->GetEnt();
-				my $m_dist = plugin::Dist($last_target, $h_ent);
-				$last_target = 0;
-				if($m_dist < 15.0)
+				my $ent = $hate_ent->GetEnt();
+				my $h_id = $ent->GetID();
+				my $a_hit = 0;
+				foreach $prev_id (@hit_already)
 				{
-					$jumps++;
-					my $dmg = 200 + (200 * (1.5 * $jumps));
-					$h_ent->Damage($npc, $dmg, 1075, 24, 0);
-					#add all but the target to new array and set old array to new array
-					my @new_array;
-					foreach $n_ent (@eligible_target)
+					if($prev_id == $h_id)
 					{
-						my $n_h_ent = $n_ent->GetEnt();
-						if($n_h_ent->GetID() != $h_ent->GetID())
-						{
-							push(@new_array, $n_ent);
-						}
+						$a_hit = 1;
+						last;
 					}
-					@eligible_targets = @new_array;
-					$last_target = $h_ent;
-					last;
 				}
-				$idx++;
+				
+				#this target can be hit
+				if($a_hit == 0)
+				{
+					#check dist from prev target
+					my $m_dist = plugin::Dist($jump_from_target, $ent);
+					#if we have range, set our ent to our jump from target, do the damage, increment the jumps and add them to the already hit list
+					if($m_dist < 20)
+					{
+						$jump_from_target = $ent;
+						$jumps++;
+						
+						my $dmg = 250;
+						for($jcount = 0; $jcount < $jumps; $jcount++)
+						{
+							$dmg = $dmg * 2;
+						}
+						$ent->Damage($npc, $dmg, 1075, 24, 0);
+						
+						my $h_id = $ent->GetID();
+						push(@hit_already, $h_id);
+					}
+				}
 			}
-		} while($last_target);
+		}
 	}
 }
 

@@ -16,7 +16,7 @@ sub EVENT_COMBAT
 	else
 	{
 		quest::settimer("eat_mushroom", 3);
-		quest::settimer("mushroom_throw", 20);
+		quest::settimer("mushroom_throw", 15);
 		$attack_speed = 25;
 		$min_hit = 650;
 		$max_hit = 1450;

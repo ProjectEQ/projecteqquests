@@ -1,6 +1,6 @@
 sub EVENT_SPAWN
 {
-	quest::settimer("suppress_start", 5);
+	quest::settimer("suppress_start", 8);
 }
 
 sub EVENT_TIMER

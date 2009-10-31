@@ -52,6 +52,7 @@ sub EVENT_TIMER
 		my $last_target = $starter_target;
 		do
 		{
+			$npc->Say("Do while!");
 			$idx = 0;
 			my $dist_targ = $last_target;
 			$last_target = undef;

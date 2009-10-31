@@ -26,12 +26,12 @@ sub EVENT_COMBAT
 		my $willf = $entity_list->GetMobByNpcTypeID(365171);
 		if($willf)
 		{
-			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet however. You! You will all help me test it!");
+			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet however I think you all will suffice as test subjects.");
 		}
 		quest::settimer("short_circuit", 20);
 		quest::settimer("annih_burn_shared", 60);
 		quest::settimer("missile_launch", 12);
-		quest::settimer("bot_spawn", 30);
+		quest::settimer("bot_spawn", 8);
 		$has_burned = 0;
 	}
 }
@@ -77,6 +77,7 @@ sub EVENT_TIMER
 		quest::stoptimer("burn_start");
 		if($burn_target)
 		{
+			$has_burned = 1;
 			quest::settimer("burn_tic", 1);
 			if($burn_target->FindType(40))
 			{
@@ -124,7 +125,14 @@ sub EVENT_TIMER
 			my $m_dist = plugin::DistToCoords($missile_target, $missile_x, $missile_y, $missile_z);
 			if($m_dist < 20)
 			{
+				$missile_target_name = $missile_target->GetCleanName();
+				quest::emote("has hit $missile_target_name with a surface to surface missile.");
 				$missile_target->Damage($npc, 10000, 0xFFFF, 28, 0);
+			}
+			else
+			{
+				quest::emote("has missed $missile_target_name with a surface to surface missile.");
+				$missile_target_name = $missile_target->GetCleanName();
 			}
 		}
 	}
@@ -194,6 +202,7 @@ sub EVENT_TIMER
 
 sub EVENT_DEATH
 {
+	quest::depopall(365026);
 	quest::emote("sputters and starts to give off sparks before collapsing into a pile of broken machinery.");
 	quest::spawn_condition("corathus", 11, 0);
 	my $mino = $entity_list->GetMobByNpcTypeID(365004);

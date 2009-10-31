@@ -19,6 +19,7 @@ sub EVENT_COMBAT
 		quest::stoptimer("burn_tic");	
 		quest::stoptimer("anni_start");
 		quest::stoptimer("bot_spawn");
+		quest::depopall(365026);
 	}
 	else
 	{
@@ -62,7 +63,7 @@ sub EVENT_TIMER
 	}
 	elsif($timer eq "bot_spawn")
 	{
-		quest::spawn2(365025, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+		quest::spawn2(365026, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
 	}
 	elsif($timer eq "anni_start")
 	{

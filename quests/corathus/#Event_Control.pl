@@ -15,6 +15,12 @@ sub EVENT_SAY
 				#enable spawn cond 2
 				quest::spawn_condition("corathus", 2, 1);
 			}
+			elsif($text=~ /Minotaur/i)
+			{
+				quest::spawn_condition("corathus", 4, 1);
+				quest::spawn_condition("corathus", 10, 1);
+				quest::spawn_condition("corathus", 7, 0);
+			}
 		}
 		elsif($text=~ /Disable/i)
 		{
@@ -29,6 +35,12 @@ sub EVENT_SAY
 				#disable spawn cond 2
 				quest::spawn_condition("corathus", 2, 0);
 			}
+			elsif($text=~ /Minotaur/i)
+			{
+				quest::spawn_condition("corathus", 4, 0);
+				quest::spawn_condition("corathus", 10, 0);
+				quest::spawn_condition("corathus", 7, 1);
+			}
 		}
 		else
 		{
@@ -36,6 +48,7 @@ sub EVENT_SAY
 			quest::say("[Enable]/[Disable] + argument");
 			quest::say("Start");
 			quest::say("Courtyard");
+			quest::say("Minotaur");
 		}
 	}
 }

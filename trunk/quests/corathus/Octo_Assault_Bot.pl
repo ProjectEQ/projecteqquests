@@ -51,19 +51,19 @@ sub EVENT_TIMER
 		
 		#while we still have targets in range on the eligible target list jump and do damage and remove them from the list
 		$npc->Say("Starter target: $starter_target");
-		my $last_target = $starter_target;
+		$last_target = $starter_target;
 		do
 		{
-			$npc->Say("Do while!");
-			$idx = 0;
-			$npc->Say("Starter target: $starter_target");
-			
 			my $num = $eligible_targets;
 			if($num == 0)
 			{
 				$last_target = 0;
 			}
-			
+
+			$npc->Say("Do while!");
+			$idx = 0;
+			$npc->Say("Starter target: $starter_target");		
+
 			foreach $ent (@eligible_targets)
 			{
 				my $h_ent = $ent->GetEnt();

@@ -56,14 +56,20 @@ sub EVENT_TIMER
 		{
 			$npc->Say("Do while!");
 			$idx = 0;
-			my $dist_targ = $last_target;
-			$last_target = 0;
 			$npc->Say("Starter target: $starter_target");
+			
+			my $num = $eligible_targets;
+			if($num == 0)
+			{
+				$last_target = 0;
+			}
+			
 			foreach $ent (@eligible_targets)
 			{
 				my $h_ent = $ent->GetEnt();
-				$h_ent->Say("For all! $dist_target, $h_ent");
-				my $m_dist = plugin::Dist($dist_target, $h_ent);
+				$h_ent->Say("For all! $last_target, $h_ent");
+				my $m_dist = plugin::Dist($last_target, $h_ent);
+				$last_target = 0;
 				if($m_dist < 15.0)
 				{
 					$h_ent->Say("I'm in range!");

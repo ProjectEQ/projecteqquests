@@ -1,7 +1,6 @@
 sub EVENT_SPAWN
 {
-	quest::emote("begins to suppress the fires on Octo Assault Bot.");
-	quest::settimer("suppress", 1);
+	quest::settimer("suppress_start", 5);
 }
 
 sub EVENT_TIMER
@@ -13,5 +12,11 @@ sub EVENT_TIMER
 		{
 			$octo->HealDamage(2500, $npc);
 		}
+	}
+	else
+	{
+		quest::emote("begins to suppress the fires on Octo Assault Bot.");
+		quest::stoptimer("suppress_start");
+		quest::settimer("suppress", 1);
 	}
 }

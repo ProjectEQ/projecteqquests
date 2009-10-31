@@ -59,16 +59,17 @@ sub EVENT_TIMER
 			$last_target = undef;
 			foreach $ent (@eligible_targets)
 			{
-				$ent->Say("For all!");
-				my $m_dist = plugin::Dist($dist_target, $ent);
+				my $h_ent = $ent->GetEnt();
+				$h_ent->Say("For all!");
+				my $m_dist = plugin::Dist($dist_target, $h_ent);
 				if($m_dist < 15.0)
 				{
-					$ent->Say("I'm in range!");
+					$h_ent->Say("I'm in range!");
 					$jumps++;
 					my $dmg = 200 + (200 * (1.5 * $jumps));
-					$ent->Damage($npc, $dmg, 1075, 24, 0);
-					$last_target = $ent;
-					delete $eligible_targets[$idx];
+					$h_ent->Damage($npc, $dmg, 1075, 24, 0);
+					$last_target = $h_ent;
+					delete(@eligible_targets[$idx]);
 					last;
 				}
 				else

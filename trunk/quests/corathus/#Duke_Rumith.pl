@@ -34,6 +34,12 @@ sub EVENT_DEATH
 	quest::spawn_condition("corathus", 10, 1); #enable mino boss
 	quest::depopall(365029);
 	quest::spawn2(365143, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+	
+	my $willf = $entity_list->GetMobByNpcTypeID(365171);
+	if($willf)
+	{
+		$willf->Shout("Fool, I promised you riches and power but you've squandered it by falling to these insects.");
+	}
 }
 
 sub EVENT_TIMER

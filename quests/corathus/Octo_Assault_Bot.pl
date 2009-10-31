@@ -54,6 +54,7 @@ sub EVENT_TIMER
 		$last_target = $starter_target;
 		do
 		{
+			$npc->Say("Last target: $last_target");	
 			my $num = $eligible_targets;
 			if($num == 0)
 			{
@@ -62,7 +63,7 @@ sub EVENT_TIMER
 
 			$npc->Say("Do while!");
 			$idx = 0;
-			$npc->Say("Starter target: $starter_target");		
+			$npc->Say("Last target: $last_target");		
 
 			foreach $ent (@eligible_targets)
 			{

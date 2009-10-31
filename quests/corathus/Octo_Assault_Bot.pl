@@ -55,7 +55,7 @@ sub EVENT_TIMER
 		do
 		{
 			$npc->Say("Last target: $last_target");	
-			my $num = $eligible_targets;
+			my $num = @eligible_targets;
 			if($num == 0)
 			{
 				$npc->Say("Elg: targets = 0, $num");

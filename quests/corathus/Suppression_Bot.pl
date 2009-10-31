@@ -1,4 +1,14 @@
 sub EVENT_SPAWN
 {
-	quest::emote("begins to suppress the fires on Octo Assault Bot.");
+	quest::settimer("wither", 90);
+}
+
+sub EVENT_TIMER
+{
+	if($timer eq "wither")
+	{
+		quest::stoptimer("wither");
+		quest::emote("withers and dies.");
+		quest::depop();
+	}
 }

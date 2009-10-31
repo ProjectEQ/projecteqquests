@@ -39,9 +39,10 @@ sub EVENT_TIMER
 		my $idx = 0;
 		foreach $ent (@eligible_target)
 		{
-			if($ent->GetID() == $starter_target->GetID())
+			my $h_ent = $ent->GetEnt();
+			if($h_ent->GetID() == $starter_target->GetID())
 			{
-				delete $eligible_targets[$idx];
+				delete(@eligible_targets[$idx]);
 				last;
 			}
 			$idx++;

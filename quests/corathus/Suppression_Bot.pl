@@ -1,14 +1,17 @@
 sub EVENT_SPAWN
 {
-	quest::settimer("wither", 90);
+	quest::emote("begins to suppress the fires on Octo Assault Bot.");
+	quest::settimer("suppress", 1);
 }
 
 sub EVENT_TIMER
 {
-	if($timer eq "wither")
+	if($timer eq "suppress")
 	{
-		quest::stoptimer("wither");
-		quest::emote("withers and dies.");
-		quest::depop();
+		my $octo = $entity_list->GetMobByNpcTypeID(365035);
+		if($octo)
+		{
+			$octo->HealDamage(2500, $npc);
+		}
 	}
 }

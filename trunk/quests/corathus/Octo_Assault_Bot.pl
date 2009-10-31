@@ -25,9 +25,9 @@ sub EVENT_COMBAT
 		{
 			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet but I suppose you will have to do!");
 		}
-		quest::settimer("short_circuit", 30);
+		quest::settimer("short_circuit", 20);
 		quest::settimer("annih_burn_shared", 120);
-		quest::settimer("missile_launch", 25);
+		quest::settimer("missile_launch", 12);
 	}
 }
 

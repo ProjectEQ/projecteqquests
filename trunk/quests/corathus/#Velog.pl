@@ -68,7 +68,8 @@ sub EVENT_TIMER
 sub EVENT_DEATH
 {
 	quest::emote("roars in pain and falls over dead.");
-	quest::spawn_condition("corathus", 4, 0);
 	quest::spawn_condition("corathus", 10, 0);
-	quest::spawn_condition("corathus", 7, 1);
+	#if all other bosses are dead then
+	#quest::spawn_condition("corathus", 4, 0);
+	#quest::spawn_condition("corathus", 7, 1);
 }

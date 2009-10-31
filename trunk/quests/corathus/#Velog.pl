@@ -83,7 +83,7 @@ sub EVENT_DEATH
 		my $willf = $entity_list->GetMobByNpcTypeID(365171);
 		if($willf)
 		{
-			$willf->Shout("Fools, defeat my champions and I will simply make more, behold my wonderous behemoth!");
+			$willf->Shout("Fools, defeat my champions and I will simply make more, behold my wondrous behemoth!");
 		}
 	}
 }

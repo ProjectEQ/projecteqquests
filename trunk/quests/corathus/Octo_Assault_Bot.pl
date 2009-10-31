@@ -4,7 +4,7 @@ sub EVENT_COMBAT
 	{
 		quest::stoptimer("short_circuit");
 		quest::stoptimer("annih_burn_shared");
-		quest::stoptimer("missle_launch");
+		quest::stoptimer("missile_launch");
 		quest::stoptimer("repair");	
 	}
 	else
@@ -16,7 +16,7 @@ sub EVENT_COMBAT
 		}
 		quest::settimer("short_circuit", 13);
 		quest::settimer("annih_burn_shared", 120);
-		quest::settimer("missle_launch", 45);
+		quest::settimer("missile_launch", 45);
 		quest::settimer("repair", 30);
 	}
 }
@@ -50,41 +50,29 @@ sub EVENT_TIMER
 		$starter_target->Damage($npc, 200, 1075, 24, 0);
 		
 		#while we still have targets in range on the eligible target list jump and do damage and remove them from the list
-		$npc->Say("Starter target: $starter_target");
 		$last_target = $starter_target;
 		do
 		{
-			$npc->Say("Last target: $last_target");	
 			my $num = @eligible_targets;
 			if($num == 0)
 			{
-				$npc->Say("Elg: targets = 0, $num");
 				$last_target = 0;
 			}
 
-			$npc->Say("Do while!");
 			$idx = 0;
-			$npc->Say("Last target: $last_target");		
-
 			foreach $ent (@eligible_targets)
 			{
 				my $h_ent = $ent->GetEnt();
-				$h_ent->Say("For all! $last_target, $h_ent");
 				my $m_dist = plugin::Dist($last_target, $h_ent);
 				$last_target = 0;
 				if($m_dist < 15.0)
 				{
-					$h_ent->Say("I'm in range!");
 					$jumps++;
 					my $dmg = 200 + (200 * (1.5 * $jumps));
 					$h_ent->Damage($npc, $dmg, 1075, 24, 0);
 					$last_target = $h_ent;
 					delete(@eligible_targets[$idx]);
 					last;
-				}
-				else
-				{
-					$ent->Say("I'm out of range!");
 				}
 				$idx++;
 			}
@@ -94,7 +82,7 @@ sub EVENT_TIMER
 
 sub EVENT_DEATH
 {
-	quest::emote("");
+	quest::emote("sputters and starts to give off sparks before collapsing into a pile of broken machinery.");
 	quest::spawn_condition("corathus", 11, 0);
 	my $mino = $entity_list->GetMobByNpcTypeID(365004);
 	my $spore = $entity_list->GetMobByNpcTypeID(365038);

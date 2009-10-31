@@ -27,7 +27,7 @@ sub EVENT_COMBAT
 		}
 		quest::settimer("short_circuit", 30);
 		quest::settimer("annih_burn_shared", 120);
-		quest::settimer("missile_launch", 45);
+		quest::settimer("missile_launch", 25);
 	}
 }
 
@@ -42,10 +42,10 @@ sub EVENT_TIMER
 			{
 				my $target_name = $burn_target->GetCleanName();
 				quest::emote("Begins to burn $target_name.");
-				$npc->Stun(9500);
+				$npc->Stun(11500);
 				$burn_tics = 0;
 				$burn_target_id = $burn_target->GetID();
-				quest::settimer("burn_start", 3);
+				quest::settimer("burn_start", 5);
 			}
 		}
 		else
@@ -71,6 +71,7 @@ sub EVENT_TIMER
 			quest::settimer("burn_tic", 1);
 			if($burn_target->FindType(40))
 			{
+				$burn_target->BuffFadeByEffect(40);
 				quest::emote("is burned as its laser is reflected.");
 				$burn_target_id = $npc->GetID();
 			}

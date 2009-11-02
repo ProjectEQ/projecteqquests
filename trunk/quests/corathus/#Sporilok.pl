@@ -99,7 +99,7 @@ sub EVENT_TIMER
 			elsif($eat_target->GetNPCTypeID() == 365074)
 			{
 				quest::emote("digests a tasty mushroom and regenerates.");
-				$npc->HealDamage(100000);
+				$npc->HealDamage(200000);
 			}
 			elsif($eat_target->GetNPCTypeID() == 365075)
 			{
@@ -118,7 +118,7 @@ sub EVENT_TIMER
 			elsif($eat_target->GetNPCTypeID() == 365077)
 			{
 				quest::emote("digests a deadly mushroom and becomes sick.");
-				$npc->Damage($eat_target, 80000, 435, 24, 0);
+				$npc->Damage($eat_target, 160000, 435, 24, 0);
 			}
 			
 			$eat_target->Depop();

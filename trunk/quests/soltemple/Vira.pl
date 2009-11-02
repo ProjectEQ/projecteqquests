@@ -34,50 +34,43 @@ sub EVENT_SAY {
   }
 }
 
-
 sub EVENT_ITEM {
-
-  #broom
-  if (plugin::check_handin(\%itemcount, 16544 => 1, 16543 => 1, 16538 => 1, 10032 => 1)) {
+  if(plugin::check_handin(\%itemcount, 16544 => 1, 16543 => 1, 16538 => 1, 10032 => 1)) { #Broom, Cyclops Toes, Griffon Feathers, Star Ruby
     quest::say("All of the components to make the infamous broom of Trilon! Well done, adventurer. As you have proven yourself worthy, I grant you this broom.");
-    quest::summonitem(6360);
+    quest::summonitem(6360); #Broom of Trilon
     quest::exp(1000);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction(320,15);  #Temple of Solusek Ro
+    quest::faction(291,-15); #Shadowed Men
   }
-
-  #shovel
-  if (plugin::check_handin(\%itemcount, 10035 => 1, 10014 => 1, 16545 => 1, 16539 => 1)) {
+  elsif(plugin::check_handin(\%itemcount, 10035 => 1, 10014 => 1, 16545 => 1, 16539 => 1)) { #Ruby, Gargoyle Eye, Shovel, Hill Giant Toes
     quest::say("Each of the four items needed to construct the famed Shovel of Ponz! Very well. As you have displayed ingenuity, I grant you this shovel.");
-    quest::summonitem(6361);
+    quest::summonitem(6361); #Shovel of Ponz
     quest::exp(1000);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction(320,15);  #Temple of Solusek Ro
+    quest::faction(291,-15); #Shadowed Men
   }
-
-  #stein
-  if (($itemcount{16540}==1) && ($itemcount{16542}==1) && ($itemcount{10034}==1) && (($itemcount{16547}==1) || ($itemcount{12862}==1))) {
+  elsif(plugin::check_handin(\%itemcount, 16540 => 1, 16542 => 1, 10034 => 1, 16547 => 1, 12862 => 1)) { #Ice Giant Toes, Mermaid Scale, Sapphire, Stein 
     quest::say("The four components required for the stein of Ulissa?! I am impressed! As you have displayed valor, I grant you this stein.");
+    quest::summonitem(6363); #Stein of Ulissa
     quest::exp(1000);
-    quest::summonitem(6363);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction(320,15);  #Temple of Solusek Ro
+    quest::faction(291,-15); #Shadowed Men
   }
-
-  #torch
-  if (plugin::check_handin(\%itemcount, 16546 => 1, 16534 => 1, 10033 => 1, 16541 => 1)) {
+  elsif(plugin::check_handin(\%itemcount, 16546 => 1, 16534 => 1, 10033 => 1, 16541 => 1)) { #Torch, Fire Drake Scale, Fire Emerald, Fire Giant Toes
     quest::say("All of the pieces of the famous Torch of Alna! I never thought you would find them all! As you have displayed courage, I grant you this torch.");
-    quest::summonitem(6362);
+    quest::summonitem(6362); #Torch of Alna
     quest::exp(1000);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction(320,15);  #Temple of Solusek Ro
+    quest::faction(291,-15); #Shadowed Men
   }
-  
-  if(plugin::check_handin(\%itemcount, 58003 => 1)) {#Vial of liquid
+  elsif(plugin::check_handin(\%itemcount, 58003 => 1)) { #Vial of Liquid
     quest::emote("swallows the liquid in the vial. After a few minutes, you notice the fire in the small gnome subside. She looks up at you and says, 'Why thank you. My twin was correct in her assumption of the power of the elements of Broken Skull. It's curious that she remained behind. Here, take this note to her so she can be assured that I am on the road to recovery.'");
-    quest::summonitem(58004);#Note to Vera
-  }	
+    quest::summonitem(58004); #Note to Vera
+  }
+  else {
+    quest::say("I have no need for this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
 # Quest edited by mystic414
 # Quest edited by Kilelen

@@ -46,8 +46,8 @@ sub EVENT_TIMER
 			{
 				if($ent->GetID() != $tar->GetID())
 				{
-					my $m_dist = plugin::Dist($tar, $ent);
-					if($m_dist <= 20.0)
+					my $m_dist = plugin::DistNoRoot($tar, $ent);
+					if($m_dist <= 400.0)
 					{
 						push(@cleave_targets, $ent);
 					}

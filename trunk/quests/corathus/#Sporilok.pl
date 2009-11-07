@@ -34,8 +34,8 @@ sub EVENT_TIMER
 		foreach $hate_entry (@hate_list)
 		{
 			my $ent = $hate_entry->GetEnt();
-			my $m_dist = plugin::Dist($npc, $ent);
-			if($m_dist > 50)
+			my $m_dist = plugin::DistNoRoot($npc, $ent);
+			if($m_dist > 2500)
 			{
 				push(@eligible_targets, $ent);
 			}
@@ -76,8 +76,8 @@ sub EVENT_TIMER
 		{
 			if($ent->GetNPCTypeID() >= 365073 && $ent->GetNPCTypeID() <= 365077)
 			{
-				my $m_dist = plugin::Dist($npc, $ent);
-				if($m_dist < 50)
+				my $m_dist = plugin::DistNoRoot($npc, $ent);
+				if($m_dist < 2500)
 				{
 					$eat_target = $ent;
 					last;

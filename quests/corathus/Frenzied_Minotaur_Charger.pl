@@ -21,8 +21,8 @@ sub EVENT_TIMER
 		my $cur_target = $npc->GetTarget();
 		if($cur_target)
 		{
-			my $dist = plugin::Dist($npc, $cur_target);
-			if($dist > 20)
+			my $dist = plugin::DistNoRoot($npc, $cur_target);
+			if($dist > 400)
 			{
 				my $target_name = $cur_target->GetCleanName();
 				quest::emote("breaks his bonds and charges $target_name.");

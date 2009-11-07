@@ -29,7 +29,7 @@ sub EVENT_COMBAT
 			$willf->Shout("Ah the XZ-R980 is my latest and greatest creation! I haven't had time to properly test it yet however I think you all will suffice as test subjects.");
 		}
 		quest::settimer("short_circuit", 20);
-		quest::settimer("annih_burn_shared", 60);
+		quest::settimer("annih_burn_shared", 30);
 		quest::settimer("missile_launch", 12);
 		quest::settimer("bot_spawn", 8);
 		$has_burned = 0;
@@ -77,13 +77,15 @@ sub EVENT_TIMER
 		quest::stoptimer("burn_start");
 		if($burn_target)
 		{
-			$has_burned = 1;
 			quest::settimer("burn_tic", 1);
 			if($burn_target->FindType(40))
 			{
+				$has_burned = 1;
 				$burn_target->BuffFadeByEffect(40);
-				quest::emote("is burned as its laser is reflected.");
+				quest::emote("has its laser destroyed by the reflected energy.");
 				$burn_target_id = $npc->GetID();
+				quest::stoptimer("annih_burn_shared");
+				quest::settimer("annih_burn_shared", 60);
 			}
 		}
 	}
@@ -94,7 +96,14 @@ sub EVENT_TIMER
 		my $burn_target = $entity_list->GetMobID($burn_target_id);
 		if($burn_target)
 		{
-			$burn_target->Damage($npc, 6000, 1660, 24, 0);
+			if($npc->GetID() == $burn_target->GetID())
+			{
+				$burn_target->Damage($npc, 30000, 1660, 24, 0);
+			}
+			else
+			{
+				$burn_target->Damage($npc, 6000, 1660, 24, 0);
+			}
 		}
 		
 		if($burn_tics == 5)
@@ -122,8 +131,8 @@ sub EVENT_TIMER
 		my $missile_target = $entity_list->GetMobID($missile_target_id);
 		if($missile_target)
 		{
-			my $m_dist = plugin::DistToCoords($missile_target, $missile_x, $missile_y, $missile_z);
-			if($m_dist < 20)
+			my $m_dist = plugin::DistNoRootToCoords($missile_target, $missile_x, $missile_y, $missile_z);
+			if($m_dist < 400)
 			{
 				$missile_target_name = $missile_target->GetCleanName();
 				quest::emote("has hit $missile_target_name with a surface to surface missile.");
@@ -177,9 +186,9 @@ sub EVENT_TIMER
 				if($a_hit == 0)
 				{
 					#check dist from prev target
-					my $m_dist = plugin::Dist($jump_from_target, $ent);
+					my $m_dist = plugin::DistNoRoot($jump_from_target, $ent);
 					#if we have range, set our ent to our jump from target, do the damage, increment the jumps and add them to the already hit list
-					if($m_dist < 20)
+					if($m_dist < 400)
 					{
 						$jump_from_target = $ent;
 						$jumps++;

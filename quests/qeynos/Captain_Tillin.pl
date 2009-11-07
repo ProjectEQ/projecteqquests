@@ -77,7 +77,7 @@ quest::exp(500);
    quest::faction( 217,1 );
    quest::exp(500);
 
- } if(plugin::check_handin(\%itemcount,18800 => 1)){
+ } if(plugin::check_handin(\%itemcount,18811 => 1)){
         quest::say("I heard you were on your way. I have called for the state executioner. She should be on her way now. She will deal with our friend, McNeal Jocub. Thank you for your help, citizen.");
         quest::faction("9","10");
         quest::faction("33","-10");

@@ -45,9 +45,9 @@ sub EVENT_ITEM {
      quest::faction(135,10);
      quest::exp(1000);
 
-  } elsif (plugin::check_handin(\%itemcount,18800=>1)) {
+  } elsif (plugin::check_handin(\%itemcount,18811=>1)) {
      quest::say("Fine Work, $name. Hmmm. It seems this needs taking care of. Take this note to the Captain of the City Guard in Qeynos. His name is Captain Tillin. He will have to attend to this matter. Also.. Let me see the gnoll\'s head. I must know you killed him. Be safe, my friend. I am sure that whoever this McNeal is, he was simply a lackey. Whoever he works for is most likely going to be looking for you. Watch your back in Qeynos.");
-     quest::summonitem(18800);
+     quest::summonitem(18811);
      
   }    
   plugin::try_tome_handins(\%itemcount, $class, 'Ranger');

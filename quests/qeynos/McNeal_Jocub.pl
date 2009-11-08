@@ -8,7 +8,7 @@
 ##################################################
 
 sub EVENT_SPAWN {
-  #quest::setproximity();
+  quest::set_proximity(-304,-256,-300,-228);
 }
 
 sub EVENT_ENTER {

@@ -14,7 +14,7 @@ sub EVENT_TIMER
 		my @clientlist = $entity_list->GetClientList();
 		foreach $ent (@clientlist)
 		{
-			my $m_dist plugin::DistNoRoot($npc, $ent);
+			my $m_dist = plugin::DistNoRoot($npc, $ent);
 			if($m_dist <= 10000)
 			{
 				$ent->Damage($npc, 3000, 2993, 4, false);

@@ -8,6 +8,11 @@ sub EVENT_SAY {
   if ($text=~/training/i) {
     quest::say("I recommend that all starting rogues complete my training and craft a set of [armor] to help them in their perilous adventures that lie ahead.");
   }
+if($text=~/I need a Mammoth Hide Parchment/i)
+	{
+	quest::say("Here you go.");
+	quest::summonitem(12621);
+	}
   if ($text=~/armor/i) {
     quest::say("It is a set of armor worn only by the White Rose rogues of Halas. It will serve you well for a good period of time in your beginning adventures. Take this White Rose Assembly Kit. You will use it to craft the various pieces of your White Rose armor. When you combine components in your kit, make sure they are un-stacked. Simply tell me what piece you would like to craft first, and I will give you instructions. The different pieces are [cap], [bracers], [sleeves], [boots], [leggings], [gloves], and [tunic].");
     quest::summonitem(55163);

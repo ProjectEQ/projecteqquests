@@ -28,19 +28,26 @@ sub EVENT_SAY
 					if(defined($qglobals{starshatter_points}))
 					{
 						quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
+						my $pts = 10 + $qglobals{starshatter_points};
+						$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
 					}
 					else
 					{
 						quest::setglobal("starshatter_points", 10, 6, "D30");
+						$client->Message(15, "You have gained Starshatter points, you now have 10 points to spend.");
 					}
-					
-					my $sspts = $qglobals{starshatter_points};
-					$client->Message(0, "You have gained Starshatter points, you now have $sspts to spend.");
 				}
 			}
 			else
 			{
-				quest::say("My weary bones ache, we need a [reprieve] from these assaults.");
+				if(defined($qglobals{corathus_mino_daily}))
+				{
+					quest::say("You've briefly granted us some rest from the onslaught of the minotaurs, for that I thank you.");
+				}
+				else
+				{
+					quest::say("My weary bones ache, we need a [reprieve] from these assaults.");
+				}
 			}
 		}
 		elsif($text=~ /reprieve/i)

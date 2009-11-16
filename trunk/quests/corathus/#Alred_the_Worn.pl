@@ -25,7 +25,7 @@ sub EVENT_SAY
 					quest::say("You've briefly granted us some rest from the onslaught of the minotaurs, for that I thank you.");
 					quest::updatetaskactivity(145, 1, 1);
 					quest::setglobal("corathus_mino_daily", 1, 6, "H20");
-					if(defined($qglobals{starshatter_points})
+					if(defined($qglobals{starshatter_points}))
 					{
 						quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
 					}

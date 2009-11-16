@@ -49,7 +49,7 @@ sub EVENT_ITEM {
     quest::faction(320,15);  #Temple of Solusek Ro
     quest::faction(291,-15); #Shadowed Men
   }
-  elsif(plugin::check_handin(\%itemcount, 16540 => 1, 16542 => 1, 10034 => 1, 16547 => 1, 12862 => 1)) { #Ice Giant Toes, Mermaid Scale, Sapphire, Stein 
+  elsif(plugin::check_handin(\%itemcount, 16540 => 1, 16542 => 1, 10034 => 1, 16547 => 1)) { #Ice Giant Toes, Mermaid Scale, Sapphire, Stein 
     quest::say("The four components required for the stein of Ulissa?! I am impressed! As you have displayed valor, I grant you this stein.");
     quest::summonitem(6363); #Stein of Ulissa
     quest::exp(1000);

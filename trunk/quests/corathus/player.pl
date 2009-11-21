@@ -48,7 +48,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 	{
 		if($activity_id == 1)
 		{
-			quest::setglobal("corathus_mushroom_daily", 1, 6, "H20");
+			quest::setglobal("corathus_mushroom_daily", 1, 5, "H20");
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
@@ -57,13 +57,13 @@ sub EVENT_TASK_STAGE_COMPLETE
 			
 			if(defined($qglobals{starshatter_points}))
 			{
-				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
+				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 5, "D30");
 				my $pts = 10 + $qglobals{starshatter_points};
 				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
 			}
 			else
 			{
-				quest::setglobal("starshatter_points", 10, 6, "D30");
+				quest::setglobal("starshatter_points", 10, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 10 points to spend.");
 			}
 		}
@@ -72,7 +72,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 	{
 		if($activity_id == 0)
 		{
-			quest::setglobal("corathus_jumjum_daily", 1, 6, "H20");
+			quest::setglobal("corathus_jumjum_daily", 1, 5, "H20");
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
@@ -81,13 +81,13 @@ sub EVENT_TASK_STAGE_COMPLETE
 			
 			if(defined($qglobals{starshatter_points}))
 			{
-				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
+				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 5, "D30");
 				my $pts = 10 + $qglobals{starshatter_points};
 				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
 			}
 			else
 			{
-				quest::setglobal("starshatter_points", 10, 6, "D30");
+				quest::setglobal("starshatter_points", 10, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 10 points to spend.");
 			}
 		}
@@ -96,7 +96,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 	{
 		if($activity_id == 0)
 		{
-			quest::setglobal("corathus_noodles_daily", 1, 6, "H20");
+			quest::setglobal("corathus_noodles_daily", 1, 5, "H20");
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
@@ -105,13 +105,13 @@ sub EVENT_TASK_STAGE_COMPLETE
 			
 			if(defined($qglobals{starshatter_points}))
 			{
-				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 6, "D30");
+				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 5, "D30");
 				my $pts = 5 + $qglobals{starshatter_points};
 				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
 			}
 			else
 			{
-				quest::setglobal("starshatter_points", 5, 6, "D30");
+				quest::setglobal("starshatter_points", 5, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
 			}			
 		}	
@@ -120,7 +120,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 	{
 		if($activity_id == 0)
 		{
-			quest::setglobal("corathus_sandwich_daily", 1, 6, "H20");
+			quest::setglobal("corathus_sandwich_daily", 1, 5, "H20");
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
@@ -129,13 +129,13 @@ sub EVENT_TASK_STAGE_COMPLETE
 			
 			if(defined($qglobals{starshatter_points}))
 			{
-				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 6, "D30");
+				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 5, "D30");
 				my $pts = 5 + $qglobals{starshatter_points};
 				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
 			}
 			else
 			{
-				quest::setglobal("starshatter_points", 5, 6, "D30");
+				quest::setglobal("starshatter_points", 5, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
 			}			
 		}

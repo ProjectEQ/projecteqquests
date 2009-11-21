@@ -24,16 +24,16 @@ sub EVENT_SAY
 				{
 					quest::say("You've briefly granted us some rest from the onslaught of the minotaurs, for that I thank you.");
 					quest::updatetaskactivity(145, 1, 1);
-					quest::setglobal("corathus_mino_daily", 1, 6, "H20");
+					quest::setglobal("corathus_mino_daily", 1, 5, "H20");
 					if(defined($qglobals{starshatter_points}))
 					{
-						quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
+						quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 5, "D30");
 						my $pts = 10 + $qglobals{starshatter_points};
 						$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
 					}
 					else
 					{
-						quest::setglobal("starshatter_points", 10, 6, "D30");
+						quest::setglobal("starshatter_points", 10, 5, "D30");
 						$client->Message(15, "You have gained Starshatter points, you now have 10 points to spend.");
 					}
 				}

@@ -12,25 +12,25 @@ sub EVENT_SAY
 	elsif($text=~ /Trade With/i)
 	{
 		quest::disabletask(146);
-		if(!defined($qglobals{corathus_mushroom_daily})
+		if(!defined($qglobals{corathus_mushroom_daily}))
 		{
 			quest::enabletask(146);
 		}
 		
 		quest::disabletask(151);
-		if(!defined($qglobals{corathus_jumjum_daily})
+		if(!defined($qglobals{corathus_jumjum_daily}))
 		{
 			quest::enabletask(151);
 		}
 		
 		quest::disabletask(152);
-		if(!defined($qglobals{corathus_noodles_daily})
+		if(!defined($qglobals{corathus_noodles_daily}))
 		{
 			quest::enabletask(152);
 		}
 		
 		quest::disabletask(153);
-		if(!defined($qglobals{corathus_sandwich_daily})
+		if(!defined($qglobals{corathus_sandwich_daily}))
 		{
 			quest::enabletask(153);
 		}

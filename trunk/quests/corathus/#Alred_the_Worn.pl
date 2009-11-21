@@ -71,7 +71,7 @@ sub EVENT_SAY
 			{
 				if(quest::istaskactive(145) == 0)
 				{
-					quest::assigntask(145);
+					quest::taskselector(145);
 				}
 			}
 		}

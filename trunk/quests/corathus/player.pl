@@ -41,3 +41,103 @@ sub EVENT_TASKACCEPTED
 		}
 	}
 }
+
+sub EVENT_TASK_STAGE_COMPLETE
+{
+	if($task_id == 146)
+	{
+		if($activity_id == 1)
+		{
+			quest::setglobal("corathus_mushroom_daily", 1, 6, "H20");
+			my $danika = $entity_list->GetMobByNpcTypeID(365147);
+			if($danika)
+			{
+				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
+			}
+			
+			if(defined($qglobals{starshatter_points}))
+			{
+				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
+				my $pts = 10 + $qglobals{starshatter_points};
+				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
+			}
+			else
+			{
+				quest::setglobal("starshatter_points", 10, 6, "D30");
+				$client->Message(15, "You have gained Starshatter points, you now have 10 points to spend.");
+			}
+		}
+	}
+	elsif($task_id == 151)
+	{
+		if($activity_id == 0)
+		{
+			quest::setglobal("corathus_jumjum_daily", 1, 6, "H20");
+			my $danika = $entity_list->GetMobByNpcTypeID(365147);
+			if($danika)
+			{
+				$danika->Say("Great!! I've missed Rivervale so, this should last me a while.");
+			}
+			
+			if(defined($qglobals{starshatter_points}))
+			{
+				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 6, "D30");
+				my $pts = 10 + $qglobals{starshatter_points};
+				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
+			}
+			else
+			{
+				quest::setglobal("starshatter_points", 10, 6, "D30");
+				$client->Message(15, "You have gained Starshatter points, you now have 10 points to spend.");
+			}
+		}
+	}
+	elsif($task_id == 152)
+	{
+		if($activity_id == 0)
+		{
+			quest::setglobal("corathus_noodles_daily", 1, 6, "H20");
+			my $danika = $entity_list->GetMobByNpcTypeID(365147);
+			if($danika)
+			{
+				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
+			}
+			
+			if(defined($qglobals{starshatter_points}))
+			{
+				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 6, "D30");
+				my $pts = 5 + $qglobals{starshatter_points};
+				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
+			}
+			else
+			{
+				quest::setglobal("starshatter_points", 5, 6, "D30");
+				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
+			}			
+		}	
+	}
+	elsif($task_id = 153)
+	{
+		if($activity_id == 0)
+		{
+			quest::setglobal("corathus_sandwich_daily", 1, 6, "H20");
+			my $danika = $entity_list->GetMobByNpcTypeID(365147);
+			if($danika)
+			{
+				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
+			}
+			
+			if(defined($qglobals{starshatter_points}))
+			{
+				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 6, "D30");
+				my $pts = 5 + $qglobals{starshatter_points};
+				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
+			}
+			else
+			{
+				quest::setglobal("starshatter_points", 5, 6, "D30");
+				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
+			}			
+		}
+	}
+}

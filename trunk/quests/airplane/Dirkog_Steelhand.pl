@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     }
   elsif($platinum == 500)  {
     quest::say("Thank ye, laddie! He's awaitin' ya up top!");
-    quest::spawn2(71091,0,0,-589,767,162,63.5);
+    quest::spawn2(71091,0,0,-586,767,176,64);
     quest::depop();
     }
    else {

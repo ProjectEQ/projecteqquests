@@ -67,6 +67,7 @@ sub EVENT_TIMER
 
 sub EVENT_DEATH
 {
+	quest::spawn2(365175, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
 	quest::emote("roars in pain and falls over dead.");
 	quest::spawn_condition("corathus", 10, 0);
 	my $octo = $entity_list->GetMobByNpcTypeID(365035);

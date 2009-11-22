@@ -19,7 +19,7 @@ sub EVENT_SAY
 	elsif($text=~ /destroy the duke/i)
 	{
 		quest::say("That's great to hear $name, don't let us down. Destroy the Duke and we can make a forward base camp.");
-		if (quest::istaskcompleted(142) == 0 && quest::istaskactive(142) == 0)
+		if(quest::istaskcompleted(142) == 0 && quest::istaskactive(142) == 0)
 		{
 			quest::taskselector(142); #assign Duking it out with the Duke
 		}

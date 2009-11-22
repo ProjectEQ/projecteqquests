@@ -83,4 +83,7 @@ sub EVENT_SAY
 			quest::say("My weary bones ache, we need a reprieve from these assaults, but I am afraid you are far too inexperienced to help right now.");
 		}
 	}
+	
+	$qglobals{starshatter_points} = undef;
+	$qglobals{corathus_mino_daily} = undef;
 }

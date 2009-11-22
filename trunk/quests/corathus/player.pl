@@ -52,6 +52,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
+				$danika->Say("A: $task_id $activity_id");
 				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
 			}
 			
@@ -76,6 +77,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
+				$danika->Say("B: $task_id $activity_id");
 				$danika->Say("Great!! I've missed Rivervale so, this should last me a while.");
 			}
 			
@@ -100,6 +102,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
+				$danika->Say("C: $task_id $activity_id");
 				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
 			}
 			
@@ -124,6 +127,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			my $danika = $entity_list->GetMobByNpcTypeID(365147);
 			if($danika)
 			{
+				$danika->Say("D: $task_id $activity_id");
 				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
 			}
 			

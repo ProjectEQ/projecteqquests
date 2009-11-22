@@ -125,3 +125,26 @@ sub EVENT_TIMER
 		}
 	}
 }
+
+sub EVENT_DEATH
+{
+	quest::spawn2(365174, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+	quest::spawn_condition("corathus", 9, 0);
+	my $octo = $entity_list->GetMobByNpcTypeID(365035);
+	my $mino = $entity_list->GetMobByNpcTypeID(365004);
+	
+	if(!$mino && !$octo)
+	{
+		quest::spawn_condition("corathus", 3, 0);
+		quest::spawn_condition("corathus", 4, 0);
+		quest::spawn_condition("corathus", 5, 0);
+		quest::spawn_condition("corathus", 6, 1);
+		quest::spawn_condition("corathus", 7, 1);
+		quest::spawn_condition("corathus", 8, 1);
+		my $willf = $entity_list->GetMobByNpcTypeID(365171);
+		if($willf)
+		{
+			$willf->Shout("Fools, defeat my champions and I will simply make more, behold my wondrous behemoth!");
+		}
+	}
+}

@@ -11,29 +11,40 @@ sub EVENT_SAY
 	}
 	elsif($text=~ /Trade With/i)
 	{
-		quest::disabletask(146);
-		if(!defined($qglobals{corathus_mushroom_daily}))
+		my @task_array;
+		if(!defined($qglobals{corathus_mushroom_daily}) && !quest::istaskactive(146))
 		{
-			quest::enabletask(146);
+			push(@task_array, 146);
 		}
 		
-		quest::disabletask(151);
-		if(!defined($qglobals{corathus_jumjum_daily}))
+		if(!defined($qglobals{corathus_jumjum_daily}) && !quest::istaskactive(151))
 		{
-			quest::enabletask(151);
+			push(@task_array, 151);
 		}
 		
-		quest::disabletask(152);
-		if(!defined($qglobals{corathus_noodles_daily}))
+		if(!defined($qglobals{corathus_noodles_daily}) && !quest::istaskactive(152))
 		{
-			quest::enabletask(152);
+			push(@task_array, 152);
 		}
 		
-		quest::disabletask(153);
-		if(!defined($qglobals{corathus_sandwich_daily}))
+		if(!defined($qglobals{corathus_sandwich_daily}) && !quest::istaskactive(153))
 		{
-			quest::enabletask(153);
+			push(@task_array, 153);
 		}
-		quest::taskselector(146,151,152,153);
+		
+		if($task_array > 0)
+		{
+			quest::taskselector(@task_array);
+		}
+		else
+		{
+			quest::say("I don't have any work for you right now, check back later!");
+		}
 	}
+	
+	$qglobals{starshatter_points} = undef;
+	$qglobals{corathus_mushroom_daily} = undef;
+	$qglobals{corathus_jumjum_daily} = undef;
+	$qglobals{corathus_noodles_daily} = undef;
+	$qglobals{corathus_sandwich_daily} = undef;
 }

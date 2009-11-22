@@ -35,7 +35,8 @@ sub EVENT_SAY
 			push(@task_array, 149);
 		}
 		
-		if($task_array > 0)
+		my $task_array_size = @task_array;
+		if($task_array_size > 0)
 		{
 			quest::taskselector(@task_array);
 		}

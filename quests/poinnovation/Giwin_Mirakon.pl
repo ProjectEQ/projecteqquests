@@ -14,7 +14,7 @@ if($text=~/task/i && $pop_poi_behometh_preflag == undef)
 	}
 if($text=~/test the machine/i && $pop_poi_behometh_preflag == undef)
 	{
-	quest::say("Haha! I knew I sensed the warring spirit within you. Go through over there. Ignore those steam powered soldiers and their talk of perimeters. Go into the main construction area. You will know you are there when you see power carriers taking energy to power up the machine. If you can stop the energy carriers from releasing their energy the machine will activate to see what has happened. I shall come to check on you and take a full report when you have destroyed it it. Long live Rallos!");
+	quest::say("Haha! I knew I sensed the warring spirit within you. Go through over there. Ignore those steam powered soldiers and their talk of perimeters. Go into the main construction area. You will know you are there when you see power carriers taking energy to power up the machine. If you can stop the energy carriers from releasing their energy the machine will activate to see what has happened. I shall come to check on you and take a full report when you have destroyed it. Long live Rallos!");
 	quest::setglobal("pop_poi_behometh_preflag", 1, 5, "F");
         $client->Message(3,"You receive a character flag!");
 	}

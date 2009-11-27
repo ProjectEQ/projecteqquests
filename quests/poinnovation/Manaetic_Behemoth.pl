@@ -18,7 +18,7 @@ sub EVENT_TIMER {
 if($timer == 7 && !defined $spawn)
 	{
 	quest::spawn2(206074,0,0,$x,$y,$z,0);
-        quest::depop;
+        quest::depop();
 	}
 if($timer == 7 && defined $spawn)
 	{

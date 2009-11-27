@@ -366,7 +366,7 @@ sub EVENT_ITEM {
 		quest::addldonpoints(1150, 2);
 		}
 
-	elsif(plugin::check_handin(\%itemcount, 42242 => 1)){# 	Aug7 	Icy Shard of Resonance 
+	elsif(plugin::check_handin(\%itemcount, 42242 => 1)){#Icy Shard of Resonance 
 		quest::emote("takes the item and tosses it into his satchel.");
 		quest::say("Very well, $name. Go ahead and find something else you'd like.");
 		quest::addldonpoints(960, 2);
@@ -774,7 +774,7 @@ sub EVENT_ITEM {
 		quest::addldonpoints(340, 3);
 		}
 
-	elsif(plugin::check_handin(\%itemcount, 42193 => 1)){R#adiant Diamond Shard 
+	elsif(plugin::check_handin(\%itemcount, 42193 => 1)){#Radiant Diamond Shard 
 		quest::emote("takes the item and tosses it into his satchel.");
 		quest::say("Very well, $name. Go ahead and find something else you'd like.");
 		quest::addldonpoints(340, 3);
@@ -919,7 +919,7 @@ sub EVENT_ITEM {
 		quest::addldonpoints(1150, 4);
 		}
 
-	elsif(plugin::check_handin(\%itemcount, 42243 => 1)){# 	Aug7 	Refined Ore of Harmonies 
+	elsif(plugin::check_handin(\%itemcount, 42243 => 1)){#Refined Ore of Harmonies 
 		quest::emote("takes the item and tosses it into his satchel.");
 		quest::say("Very well, $name. Go ahead and find something else you'd like.");
 		quest::addldonpoints(960, 4);
@@ -1147,7 +1147,7 @@ sub EVENT_ITEM {
 		quest::addldonpoints(30, 4);
 		}
 
-	elsif(plugin::check_handin(\%itemcount, 42001 => 1)){# 	Aug2 	Gypsum Flake of Improvement 
+	elsif(plugin::check_handin(\%itemcount, 42001 => 1)){#Gypsum Flake of Improvement 
 		quest::emote("takes the item and tosses it into his satchel.");
 		quest::say("Very well, $name. Go ahead and find something else you'd like.");
 		quest::addldonpoints(20, 4);
@@ -1428,4 +1428,5 @@ sub EVENT_ITEM {
 		quest::say("I don't need this.");#text made up
 		plugin::return_items(\%itemcount);
 	}
-}#END of FILE Zone:sro  ID:35055--Dible_Hedledrap.pl
+}
+#END of FILE Zone:sro  ID:35055--Dible_Hedledrap.pl

@@ -40,6 +40,30 @@ sub EVENT_TASKACCEPTED
 			$danika->Say("I need food to feed the soldiers here, bring me some mammoth sandwiches and I will reward you.");
 		}
 	}
+	elsif($task_id == 154)
+	{
+		my $izzik = $entity_list->GetMobByNpcTypeID(365146);
+		if($izzik)
+		{
+			$izzik->Say("This scrap will do nicely! Thank you $name, I'll need more later I imagine so please return soon.");
+		}
+	}
+	elsif($task_id == 155)
+	{
+		my $izzik = $entity_list->GetMobByNpcTypeID(365146);
+		if($izzik)
+		{
+			$izzik->Say("These bolts will do nicely! Thank you $name, I'll need more later I imagine so please return soon.");
+		}
+	}
+	elsif($task_id == 156)
+	{
+		my $izzik = $entity_list->GetMobByNpcTypeID(365146);
+		if($izzik)
+		{
+			$izzik->Say("These gizmos will do nicely! Thank you $name, I'll need more later I imagine so please return soon.");
+		}
+	}
 }
 
 sub EVENT_TASK_STAGE_COMPLETE
@@ -137,6 +161,68 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				quest::setglobal("starshatter_points", 5, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
+			}			
+		}
+	}
+	elsif($task_id >= 147 && $task_id <= 149)
+	{
+		if($activity_id == 1)
+		{
+			my $captain = $entity_list->GetMobByNpcTypeID(365144);
+			if($captain)
+			{
+				$danika->Say("Excellent soldier, your bravery is to be rewarded.");
+			}
+			
+			if(defined($qglobals{starshatter_points}))
+			{
+				quest::setglobal("starshatter_points", 100 + $qglobals{starshatter_points}, 5, "D30");
+				my $pts = 100 + $qglobals{starshatter_points};
+				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
+			}
+			else
+			{
+				quest::setglobal("starshatter_points", 100, 5, "D30");
+				$client->Message(15, "You have gained Starshatter points, you now have 100 points to spend.");
+			}			
+		}
+	}
+	elsif($task_id >= 154 && $task_id <= 156)
+	{
+		my $boss_check = $entity_list->GetMobByNpcTypeID(365038);
+		if(!$boss_check)
+		{
+			$boss_check = $entity_list->GetMobByNpcTypeID(365004);
+			if(!$boss_check)
+			{
+				$boss_check = $entity_list->GetMobByNpcTypeID(365035);
+			}
+		}
+		
+		my $variable_points = 10;
+		if(!$boss_check)
+		{
+			$variable_points = 5;
+		}
+		
+		if($activity_id == 1)
+		{
+			my $izzik = $entity_list->GetMobByNpcTypeID(365146);
+			if($izzik)
+			{
+				$danika->Say("Perfect! I might need more materials later so be sure to check in.");
+			}
+			
+			if(defined($qglobals{starshatter_points}))
+			{
+				quest::setglobal("starshatter_points", $variable_points + $qglobals{starshatter_points}, 5, "D30");
+				my $pts = $variable_points + $qglobals{starshatter_points};
+				$client->Message(15, "You have gained Starshatter points, you now have $pts points to spend.");
+			}
+			else
+			{
+				quest::setglobal("starshatter_points", $variable_points, 5, "D30");
+				$client->Message(15, "You have gained Starshatter points, you now have $variable_points points to spend.");
 			}			
 		}
 	}

@@ -1,48 +1,61 @@
 sub EVENT_SAY
 {
-	if($text=~ /Hail/i)
+	my $boss_check = $entity_list->GetMobByNpcTypeID(365038);
+	if(!$boss_check)
 	{
-		quest::say("");
+		$boss_check = $entity_list->GetMobByNpcTypeID(365004);
+		if(!$boss_check)
+		{
+			$boss_check = $entity_list->GetMobByNpcTypeID(365035);
+		}
 	}
-	elsif($text=~ /Forward Base Camp/i)
+
+	if($boss_check)
 	{
-		quest::say("");
-	}
-	elsif($text=~ /Next Offensive/i)
-	{
-		quest::say("");
-	}
-	elsif($text=~ /Assignment/i)
-	{
-		quest::say("");
-		my @task_array;
-		
-		my $mino = $entity_list->GetMobByNpcTypeID(365004);
-		if($mino && !quest::istaskactive(147))
+		if($text=~ /Hail/i)
 		{
-			push(@task_array, 147);
+			quest::say("Hail $name, glad to see you've made it safely to the [forward base camp].  Not long ago I was afraid we would never get get a foothold in this place.");
 		}
-		
-		my $spore = $entity_list->GetMobByNpcTypeID(365038);
-		if($spore && !quest::istaskactive(148))
+		elsif($text=~ /Forward Base Camp/i)
 		{
-			push(@task_array, 148);
+			quest::say("After we defeated the duke his remaining minions retreated and so we moved our camp up to this area to prepare for the [next offensive].");
 		}
-		
-		my $octo = $entity_list->GetMobByNpcTypeID(365035);
-		if($octo && !quest::istaskactive(149))
+		elsif($text=~ /Next Offensive/i)
 		{
-			push(@task_array, 149);
+			quest::say("Now that we've secured this area we're looking to expand our forced into the next areas controlled by the minotaurs, sporali and clockworks. Each has a commander in the area and we believe like with Duke Rumith if we destroy the commanders their forces will be routed as well. If you're ready then I may have an [assignment] for you.");
 		}
-		
-		my $task_array_size = @task_array;
-		if($task_array_size > 0)
+		elsif($text=~ /Assignment/i)
 		{
-			quest::taskselector(@task_array);
-		}
-		else
-		{
-			quest::say("I have nothing to offer you currently.");
+			my @task_array;
+			
+			my $mino = $entity_list->GetMobByNpcTypeID(365004);
+			if($mino && !quest::istaskactive(147))
+			{
+				push(@task_array, 147);
+			}
+			
+			my $spore = $entity_list->GetMobByNpcTypeID(365038);
+			if($spore && !quest::istaskactive(148))
+			{
+				push(@task_array, 148);
+			}
+			
+			my $octo = $entity_list->GetMobByNpcTypeID(365035);
+			if($octo && !quest::istaskactive(149))
+			{
+				push(@task_array, 149);
+			}
+			
+			my $task_array_size = @task_array;
+			if($task_array_size > 0)
+			{
+				quest::say("These assignments are all military in nature, please return to me if you succeed in finishing one.");
+				quest::taskselector(@task_array);
+			}
+			else
+			{
+				quest::say("I have nothing to offer you currently.");
+			}
 		}
 	}
 }

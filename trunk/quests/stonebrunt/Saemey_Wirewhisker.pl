@@ -33,7 +33,7 @@ sub EVENT_ITEM {
     quest::say("I require a Soul Orb and Kejek Spirit Dust in order to perform the ritual that will free the imprisoned souls.");
     quest::emote("scrawls an arcane symbol on the ground with an odd powder and places the orb in its center. He then begins reciting an incantation and waving his arms over the symbol and orb. Moments later the orb shatters and an apparition appears.");
     quest::summonitem(2576); #Shattered Soul Orb
-    #quest::spawn2(quest::chooserandom(XXXX,XXXX,XXXX,XXXX),$x+5, $y+5, $z+5, $h); #Apparitions
+    #quest::spawn2(quest::chooserandom(100223,100224,100225),$x+5, $y+5, $z+5, $h); #Apparitions
     quest::faction(172,10); #Kejek Village
     quest::faction(247,10); #Peace Keepers
     quest::exp(50000);

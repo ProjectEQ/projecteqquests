@@ -3,7 +3,7 @@ sub EVENT_SAY
 	my $is_gm = $client->GetGM();
 	if($is_gm)
 	{
-		elsif($text=~ /Reset/i)
+		if($text=~ /Reset/i)
 		{
 			quest::spawn_condition("corathus", 1, 1);
 			quest::spawn_condition("corathus", 2, 0);

@@ -38,12 +38,12 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
-	if(plugin::check_handin(\%itemcount, 12621 == 1, 12619 == 1)
+	if(plugin::check_handin(\%itemcount, 12621 => 1, 12619 => 1))
 		{
 		quest::say("Good, now you must take this wanted poster i made to Guard Eracon Krengon in Southern Qeynos. Bring me back the Most Wanted List...");
 		quest::summonitem(12620); #wanted post
 		}
-	if(plugin::check_handin(\%itemcount, 12622 == 1)
+	if(plugin::check_handin(\%itemcount, 12622 => 1))
 		{
 		quest::say("Fantastic, Fantastic... Here you have more than proven your right to wear this. Use it wisely...");
 		quest::summonitem(1376);

@@ -1,5 +1,4 @@
-#Quest not completed. Next line is in until finished.
---KILL--
+#Quest not completed.
 
 sub EVENT_SAY {
   if(($class eq "Wizard") && ($race eq "Froglok") && ($ulevel >= 20)) {

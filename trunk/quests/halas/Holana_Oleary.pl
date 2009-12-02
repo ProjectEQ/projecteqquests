@@ -21,6 +21,7 @@ sub EVENT_SAY
 	if($text=~/hail/i)
 		{
 		quest::say("Hmph. Hello. how are ye an' how do ye do? Now. what are ye planning to buy?");
+                }
 	if($text=~/Jinkus sent me to assist you/i)
 		{
 		quest::say("About time he get around to it. Hmph. What i be needing you ta do is head on over to Einhorst McMannus in the plains of the western karana region. Give him this and he should have the shipment ready. Bring it back to me when ye be done."); #made up text
@@ -31,7 +32,7 @@ sub EVENT_SAY
 sub EVENT_ITEM
 {
 my $rewardr = quest::ChooseRandom(1,2,3,4,5,6,7,8,9,10);
-	if(plugin::check_handin(\%itemcount, 13962 == 1)) #Karana Clover Shipment
+	if(plugin::check_handin(\%itemcount, 13962 => 1)) #Karana Clover Shipment
     		{
 		quest::say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court. Take and remember this spell, Spirit o' the Bear. I hope ye've attained the necessary skills to scribe it. If not, I'm sure ye soon will. Go now, and serve justice.");
 		quest::exp(1600);
@@ -46,11 +47,11 @@ my $rewardr = quest::ChooseRandom(1,2,3,4,5,6,7,8,9,10);
 				{
 				quest::summonitem($rands);
 				}
-			if($rewardr < 7 && > 3)
+			if($rewardr < 7 && $rewardr > 3)
 				{
 				quest::summonitem($randa);
 				}
-			if($rewardr < 10 && > 6)
+			if($rewardr < 10 && $rewardr > 6)
 				{
 				quest::summonitem($randw);
 				}

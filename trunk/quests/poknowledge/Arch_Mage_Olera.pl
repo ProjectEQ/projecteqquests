@@ -16,7 +16,7 @@ sub EVENT_ITEM {
 		(plugin::check_handin(\%itemcount, 1245 => 1))) {#Apothic Armor
     	quest::say("Thank you, $name.");#Text made up
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
-    	quest::exp(3493875);
+    	quest::exp(698775);
   }
   else {
 		plugin::try_tome_handins(\%itemcount, $class, 'Magician');

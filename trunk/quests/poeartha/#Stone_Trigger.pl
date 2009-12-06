@@ -53,6 +53,7 @@ sub EVENT_TIMER {
 		# Here we spawn 50 a_stone_fortification
 		# Event moves forward when all are dead
 		quest::spawn_condition($zonesn,2,1); #a_stone_fortification
+                quest::stoptimer("stone");
 		$counter=0; 
 		$countertwo=0;
 		$check=0;
@@ -73,7 +74,7 @@ sub EVENT_SIGNAL {
 		quest::spawn2(218076,0,0,-643,-226,85,30);
 		quest::spawn2(218076,0,0,-576,-226,85,30);
 		quest::spawn2(218076,0,0,-576,-290,85,30);
-        	quest::stoptimer("stone");
+        	
         }
 }
 

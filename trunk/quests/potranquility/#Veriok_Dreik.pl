@@ -80,7 +80,7 @@ sub EVENT_ITEM
 		}
 		
 		else {
-			plugin::return_items(\%itemcount);# Give it back, need to have Saryrn or no flag.
+			quest::summonitem(51614);# Give it back, need to have Saryrn or no flag.
 		}
 	}
 	

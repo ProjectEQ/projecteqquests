@@ -1,5 +1,8 @@
 sub EVENT_SAY {
-
+ if(quest::istaskactivityactive(168,4) && $text=~/hail/i) {
+    quest::say("You've been just a peach helping out! I don't think I need your help any more, you've already done so much. Let me give you the secret I promised and you go out and enjoy the rest of the day.' Yitimis pulls out several ragged-looking pieces of parchment, most with wine stains that make them almost unreadable. She holds one up for you to look at. It only takes you a minute to grasp what needs to be done to prepare the Taelosian Tea Leaves and the Taelosian Mountain Tea Leaves. In fact, you are certain that if you work at it long enough, you can produce more usable tea with practice.");
+    quest::updatetaskactivity(168,4);
+    }
  if(quest::istaskactivityactive(158,4) && $text=~/hail/i) {
    quest::say("You've been just a peach helping out! I don't think I need your help any more, you've already done so much. Let me give you the secret I promised and you go out and enjoy the rest of the day. Yitimis pulls out several ragged-looking pieces of parchment, most with wine stains that make them almost unreadable. She holds one up for you to look at. It only takes you a minute to grasp what needs to be done to prepare the Taelosian Tea Leaves and the Taelosian Mountain Tea Leaves. In fact, you are certain that if you work at it long enough, you can produce more usable tea with practice.");
    quest::updatetaskactivity(158,4);    

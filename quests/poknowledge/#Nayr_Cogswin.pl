@@ -19,7 +19,7 @@ sub EVENT_SAY {
   
   
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 67022 => 1, 31993 => 1, 29798 => 1, 29359 => 1)) {#Cohesion Gem, Oxidized Steel Plate, Gallenite's Sapphire Bracelet, Spell: Summon Sapphire Bracelet
+  if(plugin::check_handin(\%itemcount, 67022 => 1, 31993 => 1, 29798 => 1)) {#Cohesion Gem, Oxidized Steel Plate, Gallenite's Sapphire Bracelet
     quest::emote("'s eyes widen with anticipation as he pulls a small jeweler's kit from his back pocket. Placing the gem and the iron inside Nayr steps back as smoke begins to spew froth from the concoction. 'Hmmm I think I may have worked but we won't know until the smoke clears. Anyways thanks for your help here is your reward as promised. Now I know it may not be an exact replica but at least you will never run out.'");
     quest::summonitem(59568); #Spell: Summon Steel Bracelet
     quest::exp(4088112);#3% of level 47 exp
@@ -27,7 +27,6 @@ sub EVENT_ITEM {
   else {
    quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
-   return 1;
   }
-    
-}#Done
+}
+#Done

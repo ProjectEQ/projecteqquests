@@ -1,6 +1,12 @@
 sub EVENT_SAY {
 
-if(quest::istaskactivityactive(157,4) && $text=~/hail/i) {    
+if(quest::istaskactivityactive(167,4) && $text=~/hail/i) { 
+   quest::say("You have been a big help around the kitchen! I wouldn't feel right continuing to abuse your kindness.' Ordin glances around. 'Take a quick peek into my recipe book. This is the way you grind the Taelosian Wheat into flour.' He quickly shows you the last page of his coveted recipe book. It only takes you a moment to see what the trick is. From now on, all you have to do is put the Taelosian Wheat or Taelosian Mountain Wheat into your mixing bowl and combine it to get the flour. In fact, you are certain that if you work at it long enough, you can produce more usable wheat with practice.");
+   quest::updatetaskactivity(156,4);
+   }
+   
+
+elsif(quest::istaskactivityactive(157,4) && $text=~/hail/i) {    
   quest::say("You've been a big help around the kitchen! I wouldn't feel right about continuing to abuse your kindness.' Ordin glances around. 'Take a quick peek at my recipe book. This is the way you grind Taelosian Wheat into flour.' He quickly shows you the last pages of his coveted recipe book. It only takes you a moment to see what the trick is. From now on, all you have to do is put the Taelosian Wheat or Taelosian Mountain Wheat into your mixing bowl and combine it to get the flour. In fact, you are certain that if you work at it long enough, you can produce more usable wheat with practice.");
   quest::updatetaskactivity(157,4);    
 }

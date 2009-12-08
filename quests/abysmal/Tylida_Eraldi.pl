@@ -11,56 +11,43 @@ sub EVENT_SAY {
   }
   if ($text=~/help out/i) {
     quest::say("I can definitely use your help. I need some Taelosian Wheat Flour for the tasks I want you to do. Ordin can make flour from the raw wheat if you have any. If you bring me some flour, we can get started. You'll have to sweat a bit before we're done, but if you're up to the task I can reward you with the secret of milling the local wheat. Because I'll be asking you to find your own supplies, I can reward you a bit sooner than Ordin will.");
+    quest::taskselector(167);
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58155 =>1 )) {
+     if(quest::istaskactivityactive(167,0))   {
     quest::say("Thanks for helping me. The first thing I need you to do is bake some Wayfarer Wheat Crackers. These are one of the staples of our scouts, and I don't like letting them leave without as many as they can carry. So take a Small Sack of Taelosian Wheat Flour and Wayfarer Spice and put them in the oven. Don't be tempted by their wonderful smell. Eating them isn't really part of the task.' Tylida smiles. 'Bring them right back to me when you're done.");
     quest::summonitem(58138,10);
     quest::summonitem(58211,10);
   }
-  if (plugin::check_handin(\%itemcount, 58219 =>30 )) {
+}
+ if (plugin::check_handin(\%itemcount, 58155 =>1 )) {
+     if(quest::istaskactivityactive(167,1))   {    
     quest::say("Hello! Great, thanks for helping. We need to stock up on Wayfarer loaves. They keep a good long time, so I hope to get ahead today and stay that way. Take a Small Sack of Taelosian Wheat Flour, a Wayfarer Spice, and Crushed Nuts and bake them in the oven. A Wayfarer Loaf won't rise much, so don't worry about that. Just bring them back here to me and I'll store them.");
     quest::summonitem(58138,10);
     quest::summonitem(58211,10);
     quest::summonitem(58034,10);
-    quest::setglobal("tylida",1,0,"F");
+}
   }
   if (plugin::check_handin(\%itemcount, 58155 =>1 )) {
-    if (defined $qglobals{tylida} && $qglobals{tylida} == 1) {
-      quest::summonitem(58138,10);
-      quest::summonitem(58211,10);
-      quest::summonitem(58034,10);
-  }
-}
-  if (plugin::check_handin(\%itemcount, 58192 =>30 )) {
-    quest::say("You've been a big help, thank you. This time I need some Wayfarer cookies. These are sort of tough, but very flavorful and tasty. They travel real well, so they're a big hit with Wayfarers, hence their name. Just take a Small Sack of Taelosian Wheat Flour, Wayfarer Spice, and two Pinches of Sugar and bake them up. Please don't try to eat them hot. They really hold onto heat and you'll probably burn yourself. Just bring them to me and I'll get them to those that need them.");
+       if(quest::istaskactivityactive(167,2))   {    
+         quest::say("You've been a big help, thank you. This time I need some Wayfarer cookies. These are sort of tough, but very flavorful and tasty. They travel real well, so they're a big hit with Wayfarers, hence their name. Just take a Small Sack of Taelosian Wheat Flour, Wayfarer Spice, and two Pinches of Sugar and bake them up. Please don't try to eat them hot. They really hold onto heat and you'll probably burn yourself. Just bring them to me and I'll get them to those that need them.");
     quest::summonitem(58138,10);
       quest::summonitem(58211,10);
       quest::summonitem(58065,20);
-      quest::setglobal("tylida",2,0,"F");
-     
-  }
+}
+ }
   if (plugin::check_handin(\%itemcount, 58155 =>1 )) {
-    if (defined $qglobals{tylida} && $qglobals{tylida} == 2) {
-      quest::summonitem(58138,10);
-      quest::summonitem(58211,10);
-      quest::summonitem(58065,20);
-}
-}
-  if (plugin::check_handin(\%itemcount, 58182 =>30 )) {
+     if(quest::istaskactivityactive(167,3))   {    
     quest::say("May Brell bless you! I could really use some Wayfarer Fruitcake right now. I know, you've heard that fruitcake is more like wood than food. Well, ours are a little better than wood, but just as durable. I'm not going to make you eat them, that's for the others to accomplish. All I need you to do is put a Small Sack of Taelosian Wheat Flour, Wayfarer Spice, and Heavy Fruit into the oven and bake up some fruitcakes. Bring them back here, use a cart if you must, and I'll see that they find homes.");
     quest::summonitem(58138,10);
       quest::summonitem(58211,10);
       quest::summonitem(58044,10);
-      quest::setglobal("tylida",3,0,"F");
-      
-  } 
-  if (plugin::check_handin(\%itemcount, 58187=>30 )) {
-    quest::say("You've been of great assistance. I owe you my thanks. I'll find others to do these tasks now. Go over and talk to Ordin and he'll give you your reward. Make sure to tell him that you were of great [assistance]");
-    quest::setglobal("tylida",4,0,"F");
+}
+     
   }
   plugin::return_items(\%itemcount);
-  $qglobals{tylida}=undef
+
 }

@@ -8,7 +8,9 @@ sub EVENT_SAY {
 if($text=~/Hail/)
 	{
 	quest::setglobal("eartha_arbitor_projection", 1, 5, "F");
+        quest::set_zone_flag(222);
 	$client->Message(4,"You receive a character flag!");
+        
 	}
 }
 

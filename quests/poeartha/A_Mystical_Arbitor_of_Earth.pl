@@ -18,9 +18,9 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH {
 
-        quest::delglobal("arbiter_of_earth");
+        quest::delglobal("arbitor_of_earth");
 
-        quest::setglobal("arbiter_of_earth", 1, 5, "D3");
+        quest::setglobal("arbitor_of_earth", 1, 5, "D3");
 
         quest::spawn2(218068,0,0,$x,$y,$z,$h);
 

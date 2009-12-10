@@ -1,6 +1,7 @@
 ##Veriok_Dreik.pl
 #Alternate PoP Flag: Bypass Hedge & Terris Thule
 #Alternate PoP Flag: Bypass Keeper of Sorrows
+#Alternate PoP Flag: Bypass Grummus
 #This is bypass, it *does* count as having completed the flagging events that are being bypassed.  It's "In lieu of".
 #I hope I got all the flags, I'm not super familiar with them all. -Kilelen
 
@@ -30,8 +31,12 @@ sub EVENT_SAY
 				quest::setglobal("pop_pon_construct",1,5,"F");
 				$client->Message(15, "You have received a character flag!");
 				
-				#Get rid of the bypass global, it's not needed anymore.
-				quest::delglobal("pop_pot_tt_hedge_bypass");
+				#Set the bypass to 3, so that  the next hail will give lead in for Grummus bypass.
+				quest::setglobal("pop_pot_tt_hedge_bypass",3,5,"F");
+			}
+			
+			if (defined $qglobals{pop_pot_tt_hedge_bypass} && $qglobals{pop_pot_tt_hedge_bypass} == 3) {
+				quest::say("Excellent work $name, but there is no time to waste. [Mylik] needs our help.");
 			}
 		}
 		else {
@@ -66,6 +71,14 @@ sub EVENT_SAY
 	if ($text=~/help you/i) {
 		quest::say("Then let's get started! This man Tylis suffers from mental torment. Look at him ______ he is in pain. His illness is no ordinary illness. Someone is controlling his mind and we need to stop the source ofthis torment. You can find the one who controls his mind inside the Plane of Torment. We want to learn more about how his brain works. Destroy the source and bring me back his brain so we can set those under his spell free.");
 	}
+	
+	if ($text=~/mylik/i) {
+		quest::say("Excellent! Let me tell you about Mylik. Much like Thelin, Mylik was a strong brave man too. Mylik stood in these lands and focused his energy and mana and opened the portal to the Plane of Disease. Bertoxxulous set a curse on those who dared open a portal to his plane and he defiled Mylik's soul with a potent toxin that has left him lying there slowly decaying away. Do you [understand] the amount of death that Bertoxxulous can spread over Norrath?");
+	}
+	
+	if ($text=~/understand/i) {
+		quest::say("Ok then pay attention $name. I have already sent in an old friend of mine to handle what needs to be done inside the Plane of Disease. What he doesn't know is that Bertoxxulous is aware that he has breached the portal and is planning on sending four guardians to eliminate him. Enter the Crypt of Decay and destroy the guardians. Bring me back proof of their death and I'll give you further instructions. Hurry $name, this task is vital to saving Milyk.");
+	}
 }
 
 sub EVENT_ITEM
@@ -81,6 +94,36 @@ sub EVENT_ITEM
 		
 		else {
 			quest::summonitem(51614);# Give it back, need to have Saryrn or no flag.
+		}
+	}
+	
+	#Grummus bypass, need to have Saryn, Keeper of Sorrows, TT and Hedge done.
+	elsif(plugin::check_handin(\%itemcount, 51618 => 1, 51619 => 1, 51620 => 1, 51621 => 1)) {#Orders from Bertoxxulous pg. 1, Orders from Bertoxxulous pg. 2, Orders from Bertoxxulous pg. 3, Orders from Bertoxxulous pg. 4
+		# Gotta have Saryrn done, Keeper, TT and Hedge
+		if (((defined $qglobals{pop_pot_saryrn_final} && $qglobals{pop_pot_saryrn_final} == 1)) &&
+		   ((defined $qglobals{pop_pot_newleaf} && $qglobals{pop_pot_newleaf} == 1)) &&
+		   ((defined $qglobals{pop_ponb_terris} && $qglobals{pop_ponb_terris} == 1)) &&
+		   ((defined $qglobals{pop_ponb_poxbourne} && $qglobals{pop_ponb_poxbourne} == 1)) &&
+		   ((defined $qglobals{pop_pon_hedge_jezith} && $qglobals{pop_pon_hedge_jezith} == 1)) &&
+		   ((defined $qglobals{pop_pon_construct} && $qglobals{pop_pon_construct} == 1))) {
+				quest::say("Go forth to the Crypt of Decay, $name.");#Text made up.
+				#Grummus flags
+				quest::setglobal("pop_pod_alder_fuirstel",1, 5, "F");
+				quest::setglobal("pop_pod_grimmus_planar_projection",1, 5, "F");
+				quest::setglobal("pop_pod_elder_fuirstel",1, 5, "F");
+				quest::set_zone_flag(200);#CoDecay access
+				$client->Message(15, "You have received a character flag!");
+				$client->Message(15, "You have received a character flag!");
+				$client->Message(15, "You have received a character flag!");
+				$client->Message(15, "You have received a character flag!");
+		}
+		
+		else {
+			#Not the right flags, give em back.
+			quest::summonitem(51618);# Orders from Bertoxxulous pg. 1
+			quest::summonitem(51619);# Orders from Bertoxxulous pg. 2
+			quest::summonitem(51620);# Orders from Bertoxxulous pg. 3
+			quest::summonitem(51621);# Orders from Bertoxxulous pg. 4
 		}
 	}
 	

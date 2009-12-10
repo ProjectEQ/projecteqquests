@@ -10,7 +10,7 @@ sub EVENT_SAY {
 } 
 
 sub EVENT_ITEM{
-  if($itemcount{14018} == 1){
+  if(plugin::check_handin(\%itemcount, 14018 => 1)) {
     quest::summonitem(77780);
     quest::summonitem(77780);
     quest::summonitem(77780);

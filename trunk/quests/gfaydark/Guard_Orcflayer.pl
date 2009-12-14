@@ -15,7 +15,7 @@ sub EVENT_SAY {
   }
   if ($text=~/task/i) {
     quest::say("I need you to assist in protecting Kelethin from the orcs. Are you ready and willing?");
-    #quest::taskselector(166);
+    quest::taskselector(166);
   }
 }
 

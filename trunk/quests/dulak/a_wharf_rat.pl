@@ -6,6 +6,6 @@ sub EVENT_COMBAT{
 }
 
 sub EVENT_DEATH{
-  quest::say("'s corpse squeaks as its bones shatter.");
+  quest::emote("'s corpse squeaks as its bones shatter.");
  }
 # EOF zone: dulak

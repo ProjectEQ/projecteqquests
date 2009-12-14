@@ -1,23 +1,23 @@
 #Tenada_Jeried.pl
 #Three Manuals/Sage's Box of Research
-#No text exists for the "Three Manuals" quest that I can tell.
-#From reading comments on Alla's, he doesn't mention it at all anymore, though
-#apparently he still takes the hand in, so I guess it's no biggie that there's no
-#text for it. -Kilelen
+#Giren found text for the Three Manuals quest, thanks. -Kilelen
 
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		quest::say("I am afraid I have little that I can talk about right now.  If you like you may speak to my [instructor] he can probably tell you about our work.");
 	}
-	if($text=~/who is your instructor?/i){
+	if($text=~/who is your instructor/i){
 		quest::say("My instructor is Sage Balic; you will be able to find him upstairs.  Ask him about his research. I'm sure he would love to tell you about his work.");
+	}
+	if($text=~/interested in learning/i){
+		quest::emote("considers for a moment and continues, 'Very well, but first you must prove that you are a student of the advanced arts. In order to do this, you will need to collect each of the advanced manuals in combat, stealth, and magic. You will also need to seek out a prized possession known as a Hope Stone. I believe it currently lies somewhere in the elemental planes. Return to me with these four tools of learning, and only then will you be truly worthy of what secrets the planes have to offer.'");
 	}
 }
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 16258 => 1, 28791 => 1, 	28797 => 1, 28794 => 1)) {#Hope Stone, Advanced Combat Manual, Advanced Magic Manual, Advanced Stealth Manual
-    quest::say("Take this $name, and may it serve you well.");#text made up
+    quest::emote("'s eyes go wide. 'This is incredible! You have proven yourself to be truly worthy of these planar secrets, $name. May its knowledge contained within guide you safely wherever you travel.'");
     quest::summonitem(28798);#Secrets of the Planes
   }
   else {

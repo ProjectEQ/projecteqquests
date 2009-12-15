@@ -16,7 +16,8 @@ sub EVENT_SAY
 		elsif($text=~/begin the trial of flame/i) {
 			if (!defined $flame) {
 				quest::say("Then begin.");
-				quest::movepc(201, 880, -805 ,55);
+				#Cast Penance of Flame
+				$npc->CastSpell(1124, $userid);
 				quest::settimer(201, 30);
 				#Tell event burning control about it, 30 second delay
 				quest::signalwith(201417, 1, 30);
@@ -26,7 +27,7 @@ sub EVENT_SAY
 			}
 			else {
 				if (($flame > 0) && ($flame < 6)) {
-					quest::movepc(201, 880, -805, 55);
+					$npc->CastSpell(1124, $userid);
 					quest::say("Then begin.");		
 					$flame++;
 				}

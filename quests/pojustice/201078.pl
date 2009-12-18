@@ -26,11 +26,11 @@ sub EVENT_SAY
 				#Cast Penance of Execution
 				$npc->CastSpell(1127, $userid);
 				quest::settimer(101, 30);
-				#Tell event execution control about it, 30 second delay
-				quest::signalwith(201425, 1, 30);
 				$execution=1;
 				#Spawn the event controller
 				quest::spawn2(201425, 0, 0, 250, -1181, 73.1, 0);
+				#Tell event execution control about it, 30 second delay
+				quest::signalwith(201425, 1, 30);
 			}
 			
 			else {
@@ -99,7 +99,7 @@ sub EVENT_TIMER
 	if($timer == 100) {
 		$execution=undef;
 		quest::stoptimer(100);
-		quest::signalwith(201078,1,5);
+		quest::signalwith(201078,0,5);
 	}
 
    	elsif($timer == 101) {
@@ -114,7 +114,8 @@ sub EVENT_SIGNAL
 	if ($signal == 0) {
 		quest::shout("The Trial of Execution is now available."); #notify once timer expires OR FAIL. (~25 minutes)
 		$execution=undef;
-		quest::signal(201433);
+		#Tell the controller the trial is over.
+		quest::signalwith(201425,2,5);
 		quest::stoptimer(100);
 	}
 }

@@ -1,26 +1,17 @@
-sub EVENT_SPAWN
-   {
-   quest::settimer(22,600);
-   }
+sub EVENT_SPAWN {
+	#Tell the agents I'm alive
+	quest::signalwith(201075,1,2);
+}
 
-sub EVENT_DEATH
-   {
-   quest::stoptimer(22);
-   quest::signalwith(201073,33,1);
-   }
-
-sub EVENT_TIMER
-   {
-   if($timer == 22)
-      {
-      quest::depop;
-      quest::stoptimer(22);
-      quest::signalwith(201073,33,1);
-      }
-} 
+sub EVENT_DEATH {
+	#Tell the agents I'm dead
+	quest::signalwith(201075,11,2);
+	#Tell the controller it's over.
+	quest::signalwith(201425,2,2);
+}
 
 sub EVENT_SIGNAL {
-
-quest::depop;
-
+	if ($signal == 0) {
+		quest::depop();
+	}
 }

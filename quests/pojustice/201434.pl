@@ -26,14 +26,59 @@ sub EVENT_SAY
 				quest::spawn2(201417, 0, 0, 880, -729, 55, 0);
 			}
 			else {
-				if (($flame > 0) && ($flame < 6)) {
-					$npc->CastSpell(1124, $userid);
-					quest::say("Then begin.");		
-					$flame++;
-				}
-				else {
-					quest::say("I'm sorry, the Trial of Flame is currently unavilable to you.");
-				}
+				quest::say("I'm sorry, the Trial of Flame is currently unavilable to you.");
+				#if (($flame > 0) && ($flame < 6)) {
+				#	$npc->CastSpell(1124, $userid);
+				#	quest::say("Then begin.");		
+				#	$flame++;
+				#}
+				#else {
+				#	quest::say("I'm sorry, the Trial of Flame is currently unavilable to you.");
+				#}
+			}
+		}
+		
+		elsif($text=~/what evidence of Mavuin/i) {
+			if(plugin::check_hasitem($client, 31842)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_execution", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31796)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_flame", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31960)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_lashing", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31845)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_stoning", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31844)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_torture", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31846)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_hanging", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
 			}
 		}
 	}
@@ -61,6 +106,8 @@ sub EVENT_SIGNAL
 		quest::shout("The Trial of Flame is now available."); #notify once timer expires OR FAIL. (~25 minutes)
 		$flame=undef;
 		quest::stoptimer(200);
+		#Actually tell the controller to fail the trial, if I can.
+		quest::signalwith(201417, 2, 5);
 	}
 }
 

@@ -20,15 +20,61 @@ sub EVENT_SAY
 				#quest::signal(201076,15000);
 				$hanging=1;
 			}
+			
 			else {
 				if (($hanging > 0) && ($hanging < 6)) {
 					quest::movepc(201,500,-1045,73.1);
 					quest::say("Then begin.");		
 					$hanging++;
 				}
+				
 				else {
 					quest::say("I'm sorry, the Trial of Hanging is currently unavilable to you.");
 				}
+			}
+		}
+		
+		elsif($text=~/what evidence of Mavuin/i) {
+			if(plugin::check_hasitem($client, 31842)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_execution", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31796)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_flame", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31960)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_lashing", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31845)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_stoning", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31844)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_torture", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
+			}
+			
+			elsif(plugin::check_hasitem($client, 31846)) {
+				$client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
+				quest::setglobal("pop_poj_tribunal", 1, 5, "F");
+				quest::setglobal("pop_poj_hanging", 1, 5, "F");
+				$client->Message(4,"You receive a character flag!");
 			}
 		}
 	}

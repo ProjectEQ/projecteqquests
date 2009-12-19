@@ -34,32 +34,29 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
-	if(plugin::check_handin(\%itemcount, 29216 => 1, 29219 => 1, 29218 => 1, 29217 => 1)) {#Quarter of a Diaku Emblem (The top right quarter),  Quarter of a Diaku Emblem (Bottom left quarter), Quarter of a Diaku Emblem (top left quarter),  Quarter of a Diaku Emblem (bottom right quarter)
+	if(plugin::check_handin(\%itemcount, 29216 => 1, 29217 => 1, 29218 => 1, 29219 => 1))
+	{
 		quest::say("What's this? Four pieces of a Diaku Emblem? Why ever would you give these to me? Well I think I can get them to fit back together. You know, while you have this, I would be quite happy if you would avenge the loss of my dear ship and kill every Diaku you find? Yes that would be very good indeed. Here is your key, and a key for all your companions as well.");
-		# Flag for PoTactics, let player in.  Don't add globals though, this alternate access quest does not count towards PoTime access.
-		# It counts for the whole group.
-		# Saw something on the eqemu forums that made me think of doing it this way.  Kinda sloppy, but it works.
-		#Flag the quest completer explicitly
-		$client->SetZoneFlag(214);
-		$client->Message(15, "You have received a character flag!");
-		#Flag the group
-		my $tmpclient = 0;
-		for ($i = 0; $i < 2000; $i++) {
-			$tmpclient = $entity_list->GetClientByID($i);
-			if (defined($tmpclient)) {
-				if ($tmpclient->GetGroup()->IsGroupMember($client)) {
-					$tmpclient->SetZoneFlag(214);
-					$tmpclient->Message(15, "You have received a character flag!");
+		my @grp = plugin::GetGroupMembers($client);
+		foreach $ent (@grp)
+		{
+			if($ent)
+			{
+				if(!$ent->KeyRingCheck(29215))
+				{
+					my $char_id = $ent->CharacterID();
+					$ent->KeyRingAdd(29215);
+					$ent->SummonItem(29215);
+					quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
 				}
 			}
-			undef($tmpclient);
 		}
-		quest::faction(13, 10);#Askr the Lost
-		quest::faction(315, 10);#Storm Guardians
-		quest::say("Everyone should be flagged now.");
+		
+		quest::faction(13, 10);
+		quest::faction(315, 10);		
 	}
-   
-	else {
+	else
+	{
 		plugin::return_items(\%itemcount); #return items if not the ones required
 	}
 }#END of FILE Zone:postorms ID:210060 --Wembly_the_Forlorn.pl

@@ -39,6 +39,10 @@ sub EVENT_ITEM
 		# Flag for PoTactics, let player in.  Don't add globals though, this alternate access quest does not count towards PoTime access.
 		# It counts for the whole group.
 		# Saw something on the eqemu forums that made me think of doing it this way.  Kinda sloppy, but it works.
+		#Flag the quest completer explicitly
+		$client->SetZoneFlag(214);
+		$client->Message(15, "You have received a character flag!");
+		#Flag the group
 		my $tmpclient = 0;
 		for ($i = 0; $i < 2000; $i++) {
 			$tmpclient = $entity_list->GetClientByID($i);
@@ -52,6 +56,7 @@ sub EVENT_ITEM
 		}
 		quest::faction(13, 10);#Askr the Lost
 		quest::faction(315, 10);#Storm Guardians
+		quest::say("Everyone should be flagged now.");
 	}
    
 	else {

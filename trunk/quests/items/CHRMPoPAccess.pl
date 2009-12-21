@@ -1,22 +1,22 @@
 sub EVENT_SCALE_CALC 
 {
 	my $flags = 0;
-	if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag}) {
+	if((defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag}) || defined $qglobals{pop_alt_access_potactics}){
 		$flags++;
    	}
-	if(defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel}) {
+	if((defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel}) || defined $qglobals{pop_alt_access_codecay}) {
 		$flags++;
 	}
 	if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms}) {
 		$flags++;
 	}
-	if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pov_aerin_dar}) {
+	if((defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pov_aerin_dar}) || defined $qglobals{pop_alt_access_hohonora}){
 		$flags++;
 	}
 	if(defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} &&  defined $qglobals{pop_poj_valor_storms} &&  defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 &&  defined $qglobals{pop_pos_askr_the_lost_final}) {
 		$flags++;
 	}
-	if(defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel} &&  defined $qglobals{pop_pon_construct} &&  defined $qglobals{pop_pon_hedge_jezith} &&  defined $qglobals{pop_ponb_terris} &&  defined $qglobals{pop_ponb_poxbourne} &&  defined $qglobals{pop_cod_preflag} &&  defined $qglobals{pop_cod_bertox} &&  defined $qglobals{pop_cod_final}) {
+	if((defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel} &&  defined $qglobals{pop_pon_construct} &&  defined $qglobals{pop_pon_hedge_jezith} &&  defined $qglobals{pop_ponb_terris} &&  defined $qglobals{pop_ponb_poxbourne} &&  defined $qglobals{pop_cod_preflag} &&  defined $qglobals{pop_cod_bertox} &&  defined $qglobals{pop_cod_final}) || defined $qglobals{pop_alt_access_potorment}) {
 		$flags++;
 	}
 	if(defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} &&  defined $qglobals{pop_tactics_tallon} &&  defined $qglobals{pop_tactics_vallon} &&  defined $qglobals{pop_pot_saryrn_final} &&  defined $qglobals{pop_pot_saryrn} &&  defined $qglobals{pop_hohb_marr}) {
@@ -31,19 +31,6 @@ sub EVENT_SCALE_CALC
    	if(defined $qglobals{pop_fire_fennin_projection} &&  defined $qglobals{pop_wind_xegony_projection} &&  defined $qglobals{pop_water_coirnav_projection} &&  defined $qglobals{pop_eartha_arbitor_projection} &&  defined $qglobals{pop_earthb_rathe} &&  defined $qglobals{pop_time_maelin}) {
 		$flags++;
    	}
-	
-	if(defined $qglobals{pop_alt_access_codecay}){
-		$flags++;
-	}
-	if(defined $qglobals{pop_alt_access_potorment}){
-		$flags++;
-	}
-	if(defined $qglobals{pop_alt_access_hohonora}){
-		$flags++;
-	}
-	if(defined $qglobals{pop_alt_access_potactics}){
-		$flags++;
-	}
 	
 	$questitem->SetScale($flags/10);
 	

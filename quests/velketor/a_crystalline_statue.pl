@@ -1,6 +1,4 @@
-sub EVENT_SAY{
-if($text=~/Hail/i){
-quest::say("I will destroy all outlanders for the master!"); }
+sub EVENT_AGGRO {
+  quest::say("I will destroy all outlanders for the master!");
 }
-#END of FILE Zone:velketor  ID:Not_Found -- a_crystalline_statue 
-
+#END of FILE Zone:velketor  ID:112043 -- a_crystalline_statue

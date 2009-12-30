@@ -33,5 +33,8 @@ if (plugin::check_handin(\%itemcount, 58074 => 1) && quest::istaskactivityactive
    quest::summonitem(58146,10);
    quest::summonitem(58074,10);
    }
+if (plugin::check_handin(\%itemcount, 58075 =>1 )) {
+  quest::summonitem(58073);
+}
    plugin::return_items(\%itemcount);
    }

@@ -4,7 +4,11 @@ sub EVENT_SAY {
      quest::say("You have been of such great assistance to us that I can no longer ask you to spend your days working for us. I thank you. Please, allow me to show you the secret to preparing Muramite etched scales. This method will work on the younger and aged scales. Tonlyei opens her sewing kit and shows you the contents. The kit is old, the tools you see there have been handed down by generations in her family. She points to a clearly marked bottle of liquid, a common substance that you might not have thought to use when working with this material. She explains that if you use it liberally when working with the Muramite scales it will reduce the brittleness that tends to develop over time, and makes it possible to work with them. You know that you can use this method, and you even suspect that you will be able to improve on it if you work with the scales for a while. Tonlyei bows slightly to you May Prexus guard the waters of your life, $name.");
      quest::updatetaskactivity(164,4);
 }
-
+elsif(quest::istaskactivityactive(176,4) && $text=~/hail/i) {
+     quest::emote("smiles and clasps your hand for a moment");
+     quest::say("You have been of such great assistance to us that I can no longer ask you to spend your days working for us. I thank you. Please, allow me to show you the secret to preparing Muramite etched scales. This method will work on the younger and aged scales. Tonlyei opens her sewing kit and shows you the contents. The kit is old, the tools you see there have been handed down by generations in her family. She points to a clearly marked bottle of liquid, a common substance that you might not have thought to use when working with this material. She explains that if you use it liberally when working with the Muramite scales it will reduce the brittleness that tends to develop over time, and makes it possible to work with them. You know that you can use this method, and you even suspect that you will be able to improve on it if you work with the scales for a while. Tonlyei bows slightly to you May Prexus guard the waters of your life, $name.");
+     quest::updatetaskactivity(176,4);
+}
   elsif ($text=~/hail/i) {
     quest::say("Greetings, $name. I hope this day finds you well. For us, as for many aboard, things are hectic. There are many people in need of new clothing or armor among the Wayfarers, and it is our pleasure to provide them. There are other tasks that we would like to attend to. I have received several samples of skin from the Muramites, and I believe that it can be used in many interesting applications. I would like to work with it if only I had [time].");
   }
@@ -40,5 +44,8 @@ sub EVENT_SAY {
   }
   }
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 58052 =>1 )) {
+  quest::summonitem(58053,2);
+}
   plugin::return_items(\%itemcount);
 }

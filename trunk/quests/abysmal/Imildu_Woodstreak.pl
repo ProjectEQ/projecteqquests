@@ -5,6 +5,13 @@ sub EVENT_SAY {
        quest::emote("The smell of the liquid leads you to understand what he has given you. You will be able to incorporate that material into all of your fletching kits and work with this new stone easily. In fact, you believe that in time you can improve on the compound and get better results.");
        quest::updatetaskactivity(159,4); 
        }
+elsif(quest::istaskactivityactive(173,4) && $text=~/hail/i) {
+       quest::emote("beams a bright smile at you, one that softens his usually dour face dramatically.");
+       quest::say("May Tunare bless you, friend. I can no longer keep you here. Certainly you too wish to get back out under the sun and see the new land. Your help has allowed me much freedon and for that I thank you. Look at this compound. using it when you work with the Chunks of Taelosian Rock and the Chunks of Discordian Rock will allow you to work them into the shapes you desire.");
+       quest::emote("The smell of the liquid leads you to understand what he has given you. You will be able to incorporate that material into all of your fletching kits and work with this new stone easily. In fact, you believe that in time you can improve on the compound and get better results.");
+       quest::updatetaskactivity(173,4); 
+       }
+
 elsif ($text=~/hail/i) {
     quest::say("Welcome $name, Tunare smiles upon us all. I don't want to inpose, I know that we are all very busy, but if you have the time and inclination, I could use your help finishing some [tasks] that have been overwhelming me.");
   }
@@ -41,5 +48,8 @@ elsif ($text=~/hail/i) {
     }
     
 sub EVENT_ITEM {
+ if (plugin::check_handin(\%itemcount, 58030 =>1 )) {
+   quest::summonitem(58151,2);
+ }
  plugin::return_items(\%itemcount); 
 }

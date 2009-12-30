@@ -1,7 +1,11 @@
 sub EVENT_SAY {
    if(quest::istaskactivityactive(161,4) && $text=~/hail/i) {
        quest::say("You've been a great help already. I'd feel very guilty asking you to help out any further. There are others that can do that work for us. For all of your efforts, I'd be honored to teach you the secret of refining chunks of broken stone worker into refined Taelosian clay and chunks of broken ancient stone worker into refined ancient Taelosian clay.' Malkidiv pulls a small text from his coat and leans forward to show you a few of the pages. What he shows you seems amazingly simple once you've seen it. You think that with practice you might be able to get better results than Malkidiv gives to those that he refines clay for. Just place a single chunk of Broken Taelosian stone worker onto a pottery wheel and you will receive clump of refined Taelosian clay.");
-       quest::updatetaskactivity(159,4);
+       quest::updatetaskactivity(161,4);
+}
+elsif(quest::istaskactivityactive(175,4) && $text=~/hail/i) {
+       quest::say("You've been a great help already. I'd feel very guilty asking you to help out any further. There are others that can do that work for us. For all of your efforts, I'd be honored to teach you the secret of refining chunks of broken stone worker into refined Taelosian clay and chunks of broken ancient stone worker into refined ancient Taelosian clay.' Malkidiv pulls a small text from his coat and leans forward to show you a few of the pages. What he shows you seems amazingly simple once you've seen it. You think that with practice you might be able to get better results than Malkidiv gives to those that he refines clay for. Just place a single chunk of Broken Taelosian stone worker onto a pottery wheel and you will receive clump of refined Taelosian clay.");
+       quest::updatetaskactivity(175,4);
 }
 elsif ($text=~/hail/i) {
     quest::say("Hello. Thanks for stopping by. Are you, by chance, interested in helping me with some of the more [menial tasks] I have to get done around here?");
@@ -38,5 +42,8 @@ elsif ($text=~/hail/i) {
       }
       }
  sub EVENT_ITEM {
+ if (plugin::check_handin(\%itemcount, 58027 =>1 )) {
+   quest::summonitem(58032);
+ }
   plugin::return_items(\%itemcount); 
  }

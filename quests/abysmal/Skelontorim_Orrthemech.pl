@@ -4,7 +4,11 @@ if(quest::istaskactivityactive(165,4) && $text=~/hail/i) {
     quest::say("I think you've done enough. You look like one of those adventuring gnomes and I hate to keep you working for me. You should be out there defeating our enemies! Only you can bring the proper tools to the fight. Before you go, let me explain to you what you need to know about the dark matter so you can treat it yourself.' Skelontorim whispers into your ear. This is distracting, but you are able to concentrate well enough to understand the process he is explaining. 'That should work well enough with the infused dark matter too. Now run off and save the world, but don't be a stranger!' As you step away from the master tinkerer, you are certain that you can treat both forms of the raw dark matter in your toolkit. In fact you're certain that if you work with the material long enough, you will be able to get better results and lose less of the material in the process. ");
     quest::updatetaskactivity(165,4);
 }
-
+elsif(quest::istaskactivityactive(177,4) && $text=~/hail/i) {
+    quest::emote("smiles and claps you on the back");
+    quest::say("I think you've done enough. You look like one of those adventuring gnomes and I hate to keep you working for me. You should be out there defeating our enemies! Only you can bring the proper tools to the fight. Before you go, let me explain to you what you need to know about the dark matter so you can treat it yourself.' Skelontorim whispers into your ear. This is distracting, but you are able to concentrate well enough to understand the process he is explaining. 'That should work well enough with the infused dark matter too. Now run off and save the world, but don't be a stranger!' As you step away from the master tinkerer, you are certain that you can treat both forms of the raw dark matter in your toolkit. In fact you're certain that if you work with the material long enough, you will be able to get better results and lose less of the material in the process. ");
+    quest::updatetaskactivity(177,4);
+}
 elsif ($text=~/hail/i) {
     quest::say("Hail, $name! I can't believe that we've come this far! I've never been much of a traveler, but I'm glad I took these Wayfarers up on their offer to join, even though that means I have to travel on this leaky wooden contraption. I've been teaching these mechanically ignorant folks something about how things should be done. I have to say, they've taken to it well. When they find something useful they use it. So now we're swamped with requests. I could sure use a good [gnome] to lend a hand here.");
   }
@@ -46,5 +50,8 @@ elsif ($text=~/gnome/i){
       }
       }
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 58241 =>1 )) {
+  quest::summonitem(58242,2);
+}
   plugin::return_items(\%itemcount);
 }

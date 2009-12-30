@@ -42,5 +42,8 @@ elsif ($text=~/hail/i) {
   }
   
   sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 58067 =>1 )) {
+    quest::summonitem(58064,2);
+  }
    plugin::return_items(\%itemcount); 
   }

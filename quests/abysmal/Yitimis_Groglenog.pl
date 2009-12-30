@@ -45,6 +45,9 @@ sub EVENT_SAY {
     }
 
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 58153 =>1 )) {
+  quest::summonitem(58152,2);
+}
   plugin::return_items(\%itemcount);
 }
 

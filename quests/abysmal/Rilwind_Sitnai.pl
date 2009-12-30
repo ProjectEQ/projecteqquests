@@ -37,5 +37,8 @@ sub EVENT_ITEM {
   quest::summonitem(58208,10);
   quest::summonitem(58118,10);
   }
+  if (plugin::check_handin(\%itemcount, 58068 =>1 )) {
+    quest::summonitem(58081,2);
+  }
   plugin::return_items(\%itemcount);
   }

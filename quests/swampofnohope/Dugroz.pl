@@ -1,7 +1,7 @@
 # Quest for Charasis (Howling Stones) Key
 
 sub EVENT_SAY {
-  if($text=~/Hail/i){
+  if($text=~/hail/i){
     quest::say("Fffrroaaak!!  Go away!  I don't want to [work for them] anymore! Go find another slave!");
   }
   if ($text=~/work/i) {
@@ -16,10 +16,14 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (($itemcount{7236} == 1) && ($itemcount{7256} == 1)) {
-    quest::say("My thanks to you, $name. Take this key--I know not what door it opens.  Now if I can just find that necklace of power that I took from my master's lair!");
+  if (plugin::check_handin(\%itemcount, 7236 => 1, 7256 => 1)) {
+    quest::say("My thanks to you, $name. Take this key--I know not what door it opens. Now if I can just find that necklace of power that I took from my master's lair!");
     quest::summonitem(20600);
     quest::set_zone_flag(105);
+  }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
   }
 }
 

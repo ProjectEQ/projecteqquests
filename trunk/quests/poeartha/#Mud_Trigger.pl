@@ -56,6 +56,7 @@ sub EVENT_SIGNAL {
    quest::delglobal("mud_ring_run");
    quest::delglobal("mud_ring");
    quest::setglobal("mud_ring",1,3,"D4");
+   quest::setglobal("mud_ring_final",1,3,"D4");
 	}
 }
 

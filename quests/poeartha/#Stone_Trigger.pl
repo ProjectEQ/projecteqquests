@@ -139,7 +139,7 @@ sub EVENT_SIGNAL {
      }
 
      if($signal == 5) {
-       quest::setglobal("stone_ring",1,3,"D3"); #used in the Final Event
+       quest::setglobal("stone_ring_final",1,3,"D3"); #used in the Final Event
        }
 
 }

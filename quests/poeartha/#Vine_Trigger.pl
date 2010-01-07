@@ -47,5 +47,6 @@ sub EVENT_SIGNAL {
 		quest::delglobal("vine_ring");
 		quest::delglobal("vine_ring_run");
 		quest::setglobal("vine_ring",1,3,"D3"); #Event is over
+                quest::setglobal("vine_ring_final",1,3,"D3");
 	}
 }

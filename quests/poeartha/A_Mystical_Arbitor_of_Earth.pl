@@ -12,6 +12,9 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-        quest::setglobal("arbitor_of_earth", 1, 5, "D3");
+        quest::delglobal("vine_ring_final");
+        quest::delglobal("mud_ring_final");
+        quest::delglobal("stone_ring_final");
+        quest::delglobal("dust_ring_final");
         quest::spawn2(218068,0,0,$x,$y,$z,$h);
 }

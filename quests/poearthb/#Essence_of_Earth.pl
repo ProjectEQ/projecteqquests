@@ -4,7 +4,7 @@ quest::settimer("essence",1200);
 
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
-	quest::setglobal("$pop_earthb_rathe", 1, 5, "F");
+	quest::setglobal("pop_earthb_rathe", 1, 5, "F");
 	quest::summonitem(29146);
         $client->Message(4,"You receive a character flag!");
      }

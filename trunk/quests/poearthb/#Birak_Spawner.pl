@@ -11,7 +11,7 @@ sub EVENT_TIMER
 	}
     	else {
     		$check_boss = $entity_list->GetMobByNpcTypeID(222001);#stonefist_clansman
-    		if (!$check_boss) {
+    		if (!$check_boss && !defined $qglobals{poeb_Birak}) {
 			quest::spawn2(222017,0,0,$x,$y,$z,$h);  
         		quest::stoptimer("depop1");
         		quest::depop();

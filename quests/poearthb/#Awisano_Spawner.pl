@@ -11,7 +11,7 @@ sub EVENT_TIMER
 	}
     	else {
     		$check_boss = $entity_list->GetMobByNpcTypeID(222002);#myrmadon_of_stone
-    		if (!$check_boss) {
+    		if (!$check_boss && !defined $qglobals{poeb_Awisano}) {
 			quest::spawn2(222016,0,0,$x,$y,$z,$h); 
         		quest::stoptimer("depop");
         		quest::depop();

@@ -16,7 +16,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(($itemcount{12492} == 1) && ($itemcount{12493} == 1) && ($itemcount{12494} == 1) && ($itemcount{6026} == 1)){ #Test of the Zealot (Greenmist Quest 4/8)
+  if(plugin::check_handin(\%itemcount, 12492 => 1, 12493 => 1, 12494 => 1, 6026 => 1)){ #Test of the Zealot (Greenmist Quest 4/8)
   quest::emote("accidently swallows a mouthful of flarefire seeds. 'ACCCKK!!  I can't believe you did it!! Here is the Chalp diagram.'");
   quest::summonitem(12496);
   quest::exp(1000);
@@ -30,5 +30,4 @@ sub EVENT_ITEM {
  quest::emote("spits flarefire seeds on your chest. 'Listen up!! I asked for the misscribed spells; Fear, Lifetap and Gate, and also, a shovel.'");
  }
 }
-
 #Submitted by: Jim Mills

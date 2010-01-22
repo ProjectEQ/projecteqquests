@@ -24,6 +24,4 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
  }
 }
-
-
 #Scripted By: Fatty Beerbelly

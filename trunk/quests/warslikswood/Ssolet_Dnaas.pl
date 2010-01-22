@@ -10,11 +10,14 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($itemcount{6353} == 1) {
+  if (plugin::check_handin(\%itemcount, 6353 => 1)) {
     quest::say("Sssss. Thisss is what I need. You have my thanksss. Please, take thiss. I know not what it iss for but maybe you will find a ussse for it.");
     quest::summonitem(19958);
     quest::exp(1000);
   }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
 # Quest by mystic414

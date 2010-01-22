@@ -5,7 +5,7 @@ my $medal = 0;
 
 sub EVENT_SAY {
   if(($text=~/hail/i) && ($class eq "Berserker") && ($ulevel > 45)) {
-    if($raving==1) {
+    if(defined($qglobals{raving}) && ($qglobals{raving} == 1)) {
       quest::say("So soon you ask too much of me!");
     }
     elsif($medal == 0) {
@@ -19,14 +19,14 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 60210 => 1) && ($ulevel > 45)) { #Medal of Mastery    
-    if($raving==1) {
+    if(defined($qglobals{raving}) && ($qglobals{raving} == 1)) {
       quest::say("You must wait to attempt this again.");
       quest::summonitem(60210); #Medal of Mastery
     }
     else {
       quest::say("Ah, me also got one of dose medal tings. Me guess you here for da same reason me is -- to finish da final berserker trial. Me been waiting for someone to come by here. Me need to figure out how to do dis challenge. Me tried once and didn't have a chance. Me ran. Dat goblin is mad. Hey, if you give me 1000 platinum, me save you some time and show you where da crazy goblin is. Me hate to ask for money, but me needs to hire help for dis.");
       quest::summonitem(60210); #Medal of Mastery
-      $medal=1;
+      $medal = 1;
     }
   }
   elsif(($platinum == 1000) && ($medal == 1)) {

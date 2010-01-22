@@ -8,9 +8,11 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 12463 =>1, 8175 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 12463 => 1, 8175 => 1)) {
     quest::say("You have returned with what I asked for. Here, take this note back to Ixthal and let him know I am safe and will be making the return trip soon.");
     quest::summonitem(48051);
   }
-  plugin::return_items(\%itemcount);
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }

@@ -16,6 +16,11 @@ sub EVENT_SAY {
     quest::say("It appears the Muramites have made this some sort of stronghold. Destroying many of the native symbols, the invaders have converted the building that once served as the court into fortified headquarters. It is here you will find a structure called the Chamber of Souls, various pens to hold ukun, and a moat of sickly black sludge. The structures that the nihil once called home are all but destroyed now. Very sad indeed. That's where the legion keeps the bulk of the [slaves]. I believe that the scout for this area was caught sneaking around the housing district, but I have no proof. If you were to search this area, maybe you would find some sort of sign or marker he may have left. That would be helpful.");
 }
 }
+if ($text=~/barindu/i) {
+  if (defined $qglobals{bic} && $qglobals{bic} == 4) {
+  quest::say("This area holds the remains of what was once a place to build stone workers. We can only guess what purpose this part of the city served and all we know now is that it is home to some of the cruelest acts of violence against the nihil. I assigned this area to Talwin, a young wood elf new to the brotherhood. He was a proven scout eager to assist. Initially things were going well, but the information he was sending was not helping much. I think this worried him and resulted in him pushing his luck a little far. Ever since I told him his reports were lacking the vital evidence we needed I have not heard from him. Before Falcin passed on, I asked him if he had found anything out about Talwin and he shook his head. I know Talwin is still alive . . . he has to be . . . and I know that there must be some clues in the area of Barindu somewhere. He was diligent about recording what he found so I would assume that if he has been captured that his writings must be lying around the area somewhere. See if you can find two of his journal entries and bring them back to me. When you return please give what you find to my assistant Opury Foop. She is trying to help me organize my reports a little better.");
+  }
+  }
 
  if ($text=~/slaves/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 1) {

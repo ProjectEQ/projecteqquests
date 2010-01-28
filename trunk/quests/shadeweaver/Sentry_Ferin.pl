@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/champion their cause/i) {
     quest::say("Fighting for the honor of our cause is no small undertaking. Go and hunt down this cowardly lot. Take back from them what they have stolen and fill this casket so that the fallen cats might be honored properly.");
-    quest:summonitem(17891);#Venerated Cask
+    quest::summonitem(17891);#Venerated Cask
   }
 }
 

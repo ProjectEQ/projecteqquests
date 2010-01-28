@@ -32,4 +32,5 @@ sub EVENT_ITEM {
     quest::say("Thanks! Very helpful!"); 
     quest::summonitem(59765);
   }
+  plugin::return_items(\%itemcount);
 }

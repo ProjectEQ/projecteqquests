@@ -1,5 +1,6 @@
 # Discord Skin Samples
 # Created by Gonner
+#
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

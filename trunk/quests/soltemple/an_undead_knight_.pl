@@ -31,7 +31,7 @@ sub EVENT_ITEM {
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem("3142");
   }
-  elsif($itemcount{12290} == 1 && $itemcount{12289} == 1 && $itemcount{13077} == 1){
+  elsif($itemcount{12290} == 1 && $itemcount{12289} == 1 && $itemcount{19075} == 1){
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem("3143");
   }

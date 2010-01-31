@@ -1,7 +1,7 @@
 ############################################
 # ZONE: West Freeport (freportw)
 # DATABASE: PEQ-Velious
-# LAST EDIT DATE: October 17, 2009
+# LAST EDIT DATE: January 30, 2010
 # VERSION: 1.1
 # BASE QUEST BY: PEQ Team
 # DEVELOPER: MWMDRAGON, Congdar
@@ -77,6 +77,8 @@ sub EVENT_ITEM
         # Torn Cloth Tunic ID-13507
         quest::summonitem("13507");
         quest::exp("100");
+        #  Ashen Order to take PC to Kindly
+        quest::faction(12,550);
     }
     # Tattered Parchment ID-28055
     elsif (plugin::check_handin(\%itemcount, 28055 => 1))

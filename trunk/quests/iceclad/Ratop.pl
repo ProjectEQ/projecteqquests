@@ -17,6 +17,11 @@ sub EVENT_SIGNAL {
   if ($signal == 2) {
     quest::say("We be out. You'll be needin to make more. Arg!");
   }
+    # shawl signal
+  if ($signal == 101) {
+    quest::say("Yar ye scruvy bearded dwarf, just over tha hill there.");
+    quest::signalwith(110053,101,5); # signal Ritap
+  } 
 }
 
 # Quest by mystic414

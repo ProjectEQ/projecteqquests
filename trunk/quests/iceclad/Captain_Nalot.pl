@@ -44,5 +44,43 @@ sub EVENT_ITEM {
   }
 }
 
+my $shawlsignal = 0;
+
+sub EVENT_SIGNAL {
+   #quest::shout("Signal recv: $signal");
+   if ($signal == 1) {
+      quest::moveto(1309.1, 4591.8, 71.9, 62.5);
+      $shawlsignal = 1;
+   }
+   elsif ($signal == 3) {
+      quest::say("Arrrrrr what is it ye want?");
+      quest::signalwith(110118, 3, 500);
+   }
+   elsif ($signal == 4) {
+      quest::say("Velium eh? Well there matey lets hear what you have got to say!");
+      quest::signalwith(110118, 4, 500);
+   }
+   elsif ($signal == 10) {
+      quest::emote("scratches his head, 'Yar ya do that ya crazy Coldain.'");
+      quest::moveto(1324.9, 4638.9, 73.3, 124.5);
+   }
+}
+
+sub EVENT_WAYPOINT_ARRIVE {
+   if ($shawlsignal == 1) {
+      $shawlsignal = 0;
+      quest::say("Hrm? Who is scuffin' around out here?");
+      quest::settimer("sigone",5);
+      #quest::signalwith(110118, 2, 5);
+   }
+}
+
+sub EVENT_TIMER {
+   if ($timer eq "sigone") {
+      quest::stoptimer("sigone");
+      quest::signalwith(110118, 2);
+   }
+}
+
 #END of FILE Zone: iceclad ID:110069 -- Captain_Nalot
 

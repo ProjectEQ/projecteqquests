@@ -20,6 +20,14 @@ sub EVENT_SAY {
       quest::emote("smiles at you with pride and says, 'Something told me you would, $name. For years upon years the plagues of King Tormax have been unleashed upon my people. And indeed it was also by Tormax's hand that me own father, Dain Frostreaver the Third was slain. My attempts at assassinating him have only met with failure, and our forces, while strong, are not yet mighty enough to assault Kael Drakkel. Therefore I have ye and yer companions as my last hope, $name. Kill that bastard who calls himself King Tormax... and bring me his head!");
     }
   }
+  if ($text=~/mission/i && plugin::check_hasitem($client, 8898)) {
+    # Approved Issue Kit (id:8898)
+    quest::say("After General Bragmur has equipped the armor you have created for him, give him these orders. He is a skilled diplomat and will need to reach the pirate Gnomes. We must enter into a pact with them. We will supply them the velium that they need to build their silly gadgets, and they will take their ship back to Antonica and call for reinforcements from out ancestors. We hope they will acceppt this pact, after all Brell has been known to align himself with Bristlebane whom the Gnomes of Iceclad follow. You may be an important [factor] in their success.");
+  }
+  if ($text=~/factor/i && plugin::check_hasitem($client, 8898)) {
+    # Approved Issue Kit (id:8898)
+    quest::say("I fear that spies lurk in every corner. You may need to help the General reach the gnomish camp if the Kromrif have gotten word of our efforts. You should call on any allies that you have to assist in case they ambush you. Brell bless you $name, good luck.");
+  } 
 }
 
 sub EVENT_ITEM {
@@ -48,6 +56,18 @@ sub EVENT_ITEM {
     quest::say("My good %t, you have served me well. You have flushed out all who sought to oppose me and my people. I am afraid I need to call upon you and your friends one final time. The dissention and treason ran deeper than I had anticipated. Our population has been cleansed, but we lost a full third of our army to the poisonous words of those rebels. In retaliation for your deeds, the Kromrif have made plans to attack us in this, our weakest hour. Can I count on your help outlander?");
     quest::summonitem(1465);
   }
+  # Runed Coldain Prayer Shawl (7th shawl)
+  elsif(plugin::check_handin(\%itemcount, 1199 => 1) || plugin::check_handin(\%itemcount, 8895 => 1)) {
+    quest::say("Ah $name. I was hoping to see you. We require your skilled hand. The Armory is overtaxed preparing armor for the war we are preparing to wage on the Kromzek. We need you to help by creating some Field Plate for a mission that is near to execution. Go see Loremaster Solstrin in the Hall of Ancestors, give him these orders. He holds the lore recorded on how to make the field plate. Return to me when you have completed a Standard Issue Kit.");
+    quest::summonitem(8895); # Runed Coldain Prayer Shawl (Dain approved)
+    quest::summonitem(8896); # Royal Coldain Orders
+  }
+# Coldain Standard Issue Kit
+  elsif(plugin::check_handin(\%itemcount, 8886 => 1)) {
+    quest::say("Excellent work $name. If I didn't know I would assume this was made by our most skilled artisans.  You must hurry, General Bragmur has formed camp in Iceclad. Take the kit to the General, he had to drudge forward without any armor. His [mission] must be a success if we hope to successfully defend Thurgadin against the Giants.");
+    quest::summonitem(8898); # Approved Issue Kit
+    quest::summonitem(8897); # Expedition Orders
+  } 
   else{
     plugin::return_items(\%itemcount);
   }

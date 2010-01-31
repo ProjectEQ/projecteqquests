@@ -49,8 +49,8 @@ sub EVENT_ITEM {
     quest::summonitem(1178);
     quest::exp(300000);
   }
-  elsif (plugin::check_handin(\%itemcount, 1199 => 1)) {
-    quest::say("Incredible! Never before has an outlander been skilled and determined enough to craft our sacred rune. You are now worthy of the Dains most perilous tasks. One is being prepared for you as we speak, please check back with me soon and I will outline the details for you. Until then, $name, allow me to commend you on a job well done!");
+    elsif (plugin::check_handin(\%itemcount, 1199 => 1)) {
+    quest::say("Incredible! Never before has an outlander been skilled and determined enough to craft our sacred rune. You are now worthy of the Dain's most perilous task. You should seek an audience with the Dain immediately. Show him your Runed Prayer Shawl; he will give you the task that has been prepared for you. If the Dain is away show your Shawl to Chamberlain Krystorf and he will call for him.");
     quest::summonitem(1199);
     return 1;
   }

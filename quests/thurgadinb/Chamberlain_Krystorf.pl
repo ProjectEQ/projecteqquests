@@ -14,6 +14,20 @@ if(plugin::check_handin(\%itemcount, 29062 => 4)){
   quest::ding();
   quest::givecash(0,0,0,20);
  }
+   elsif (plugin::check_handin(\%itemcount, 1199 => 1) || plugin::check_handin(\%itemcount, 8895 => 1)) {
+      # Runed Coldain Prayer Shawl, either version allowed to
+      # account for dynamic zone status. Should only allow summon
+      # with 1199
+      my $mob = $entity_list->GetMobByNpcTypeID(129003);
+      if ($mob) {
+         quest::say("The Dain has been waiting for you, show your shawl to him."); #text made up.
+         quest::summonitem(8895);
+      } else {
+         quest::say("One moment the Dain has been waiting for you. I will call for him.. oh here he is now, show your shawl to him.");
+         quest::summonitem(8895);
+         quest::spawn2(129003, 0, 0, 4.0, 690.0, 68.38, 128.0);
+      }
+   }
   else {
   plugin::return_items(\%itemcount);
  }

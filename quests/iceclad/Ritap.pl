@@ -12,6 +12,10 @@ sub EVENT_SIGNAL {
   if ($signal == 1) {
     quest::settimer("ritap2", 2)
   }
+    # shawl signal
+  elsif($signal == 101) {
+    quest::say("Arrrrrrrrrrr!");
+  } 
 }
 
 sub EVENT_ITEM {

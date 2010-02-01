@@ -19,32 +19,29 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if($itemcount{12283} == 1 && $itemcount{12284} == 1 && $itemcount{13921} == 2){
+  if(plugin::check_handin(\%itemcount, 12283 => 1, 12284 => 1, 13921 => 2) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3140");
+    quest::summonitem(3140);
   }
-  elsif($itemcount{12285} == 1 && $itemcount{12286} == 1 && $itemcount{16507} == 2){
+  elsif(plugin::check_handin(\%itemcount, 12285 => 1, 12286 => 1, 16507 => 2) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3141");
+    quest::summonitem(3141);
   }
-  elsif($itemcount{12288} == 1 && $itemcount{12287} == 1 && $itemcount{9023} == 1){
+  elsif(plugin::check_handin(\%itemcount, 12288 => 1, 12287 => 1, 9023 => 1) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3142");
+    quest::summonitem(3142);
   }
-  elsif($itemcount{12290} == 1 && $itemcount{12289} == 1 && $itemcount{19075} == 1){
+  elsif(plugin::check_handin(\%itemcount, 12290 => 1, 12289 => 1, 19075 => 1) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3143");
+    quest::summonitem(3143);
   }
   else {
     quest::say("I don't need this.");
-    if($item1 > 0){quest::summonitem("$item1");} 
-    if($item2 > 0){quest::summonitem("$item2");} 
-    if($item3 > 0){quest::summonitem("$item3");} 
-    if($item4 > 0){quest::summonitem("$item4");}
-    if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {quest::givecash($copper, $silver, $gold, $platinum);}
+    plugin::return_items(\%itemcount);
+    if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+      quest::givecash($copper, $silver, $gold, $platinum);
+    }
   }
 }
-
 # Edited and updated by mystic414
-# END of FILE Zone:soltemple  ID:80001 -- an_undead_knight_ 
-
+# END of FILE Zone:soltemple  ID:80001 -- an_undead_knight_

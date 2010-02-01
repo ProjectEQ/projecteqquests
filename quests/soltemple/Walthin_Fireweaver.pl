@@ -14,9 +14,9 @@ sub EVENT_SAY {
     quest::say("Alright, I will require some items. Go and get me some Firewalker Boots, a Lambent Sapphire, and the middle piece of the Rune of the One Eye. Return to me with these items and I will craft your boots.");
   }
   if($text=~/gauntlets/i) {
-    quest::say("Alright, I need you to retrieve for me some Black Silk Gloves, a Lambent Ruby, and Shin Gauntlets. Return to me with these and I will craft your gauntlets.");
+    quest::say("Alright, I need you to retrieve for me some Black Silk Gloves, a Lambent Star Ruby, and Shin Gauntlets. Return to me with these and I will craft your gauntlets.");
   }
-  if($text=~/i want to craft greaves/i) {
+  if($text=~/greaves/i) {
     quest::say("Very well, return to me with these items and I will craft them. A set of Icy Greaves, a Lambent Fire Opal, and Shin Greaves.");
   }
 }
@@ -39,6 +39,10 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,4115 => 1, 10128 => 1, 4116 => 1)) {
     quest::say("Excellent. Here are your Lambent Greaves.");
     quest::summonitem(4158);
+  }
+  else
+  {
+	  plugin::return_items(\%itemcount);
   }
 }
 

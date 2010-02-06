@@ -26,6 +26,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
 # EOF zone: qcat ID: 45089 NPC: Xeture Demiagar
-

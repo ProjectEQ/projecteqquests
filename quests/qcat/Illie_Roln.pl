@@ -39,16 +39,17 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 20205 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 20205 => 1)) {
     quest::say("Ah, so you are in need of a suit of armor fitting a young scourge warrior of the Bloodsabers. I will assist you. You will use this Mail Assembly Kit to construct the pieces of armor. Each piece will require different materials for its proper construction. Do you seek to assemble [Gauntlets of the Scourge Warrior], [Boots of the Scourge Warrior], a [Bracer of the Scourge Warrior], a [Helm of the Scourge Warrior], [Greaves of the Scourge Warrior], [Vambraces of the Scourge Warrior], or a [Breastplate of the Scourge Warrior]?");
     quest::summonitem(17124);
   }
-  
-  if (plugin::check_handin(\%itemcount, 20177 =>1, 19946 =>1 )) {
-    quest::say("Excellent work.  Use this sword to further our mission");
+  elsif (plugin::check_handin(\%itemcount, 20177 => 1, 19946 => 1)) {
+    quest::say("Excellent work. Use this sword to further our mission.");
     quest::summonitem(20262);
     quest::exp(100);
     quest::ding();
   }
-  plugin::return_items(\%itemcount);
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }

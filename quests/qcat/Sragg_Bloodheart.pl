@@ -1,8 +1,7 @@
-
 sub EVENT_SAY {
- if($text =~ /Hail/i) {
-	quest::say('Hello. I am the guild master.');
- }
+  if($text=~/hail/i) {
+    quest::say('Hello. I am the guild master.');
+  }
 }
 
 sub EVENT_ITEM {

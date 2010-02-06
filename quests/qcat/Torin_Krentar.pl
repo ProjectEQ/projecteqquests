@@ -50,6 +50,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
 # EOF zone: qcat ID: 45074 NAME: Torin_Krentar
-

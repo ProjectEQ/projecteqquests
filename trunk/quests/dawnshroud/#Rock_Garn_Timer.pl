@@ -27,14 +27,14 @@
 #
 ############################################# 
 
-EVEN_SPAWN {
+sub EVEN_SPAWN {
     quest::settimer("RGT", 1800);
     if(!defined($qglobal{"Rockhopper_Sambata"})) {
         quest::setglobal("Rockhopper_Sambata", 1, 3, "F");
     }
 }
 
-EVENT_TIMER {
+sub EVENT_TIMER {
     if($timer eq "RGT") {
         if(defined($qglobal{"Rockhopper_Sambata"})) {
             quest::delglobal("Rockhopper_Sambata");

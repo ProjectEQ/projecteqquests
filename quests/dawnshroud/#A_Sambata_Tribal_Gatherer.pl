@@ -7,18 +7,17 @@
 #
 # *** NPC INFORMATION ***
 #
-# NAME: #Sambata_Tribal_Leader_Garn
-# ID: 174277
+# NAME: #A_Sambata_Tribal_Gather
+# ID: 174311
 # TYPE: Warrior
 # RACE: Galorian
-# LEVEL: 47
+# LEVEL: 39
 #
 # *** ITEMS GIVEN OR TAKEN ***
 # 
 # *** QUESTS INVOLVED IN ***
 #
 # Rockhopper/Sambata Cycle
-# Cycles to the Sambata when killed if #Rock_Garn_Timer is not up
 #
 # *** QUESTS AVAILABE TO ***
 #
@@ -30,13 +29,6 @@ sub EVENT_AGGRO {
     quest::emote("grunts at you and rushes in to attack!");
 }
 
-sub EVENT_DEATH {
-    if(!defined($qglobal{"Rockhopper_Sambata"})) {
-        quest::spawn_condition($zonesn, 2, 1);
-        quest::spawn_condition($zonesn, 1, 0);
-    }
-}
-
-# END of FILE Zone:dawnshroud  ID:174277 -- #Sambata_Tribal_Leader_Garn
+# END of FILE Zone:dawnshroud  ID:174311 -- #A_Sambata_Tribal_Gather
 
 

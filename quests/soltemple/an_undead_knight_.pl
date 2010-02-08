@@ -19,19 +19,19 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 12283 => 1, 12284 => 1, 13921 => 2) {
+  if(plugin::check_handin(\%itemcount, 12283 => 1, 12284 => 1, 13921 => 2)) {
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem(3140);
   }
-  elsif(plugin::check_handin(\%itemcount, 12285 => 1, 12286 => 1, 16507 => 2) {
+  elsif(plugin::check_handin(\%itemcount, 12285 => 1, 12286 => 1, 16507 => 2)) {
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem(3141);
   }
-  elsif(plugin::check_handin(\%itemcount, 12288 => 1, 12287 => 1, 9023 => 1) {
+  elsif(plugin::check_handin(\%itemcount, 12288 => 1, 12287 => 1, 9023 => 1)) {
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem(3142);
   }
-  elsif(plugin::check_handin(\%itemcount, 12290 => 1, 12289 => 1, 19075 => 1) {
+  elsif(plugin::check_handin(\%itemcount, 12290 => 1, 12289 => 1, 19075 => 1)) {
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem(3143);
   }

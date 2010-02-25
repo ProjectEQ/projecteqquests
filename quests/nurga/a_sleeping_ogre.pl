@@ -9,7 +9,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
- if((plugin::check_handin(\%itemcount, 1685 => 1)) && ($ulevel>=46) && ($class=="Monk")){
+ if((plugin::check_handin(\%itemcount, 1685 => 1)) && ($ulevel >= 46) && ($class eq "Monk")) {
   # Monk Epic 1.0
   quest::say("Your path of wanton destruction ends here, $name. Gwan and Eejag were impatient and hot-headed. You will not defeat me, for I have the patience and perseverance of stone, unlike the children you have beaten before me.");
   quest::depop();
@@ -20,5 +20,8 @@ sub EVENT_ITEM {
   my $h = $npc->GetHeading();
   quest::spawn2(107161,0,0,$x,$y,$z,$h);
  }
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }
 # End of File

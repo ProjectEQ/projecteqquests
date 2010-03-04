@@ -64,7 +64,7 @@ sub CastGroupSpell
 		return;
 	}
 	
-	my $group = $cl->GetRaid();
+	$group = $cl->GetRaid();
 	if($group)
 	{
 		$group->CastGroupSpell($caster, $spell_id);

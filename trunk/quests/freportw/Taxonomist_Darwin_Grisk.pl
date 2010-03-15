@@ -69,13 +69,6 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 63010 =>1 )) {
     quest::say("Alas, it all becomes clear! The Luggalds seek to spread their vile race. I had received word of a dark elf performing arcane rites on the shores of Toxxulia Forest. Now I know she must be attempting to summon other Luggalds. She is expecting an agent of the enemy. Talk with her. Then deal with her and any evil she creates.");
   }
-  
-  if (plugin::check_handin(\%itemcount, 63015 =>1 )) {
-    quest::say("Well done. I can only imagine the evil you averted. Here. Take this a token of my personal thanks. May we all continue to benefit from your valor.");
-    quest::summonitem(63051);
-    quest::exp(5000);
-  }
-  
  
   if (plugin::check_handin(\%itemcount, 63015 =>1 )){
 	if (($class eq "bard") || ($class eq "beastlord") || ($class eq "paladin") || ($class eq "ranger") || ($class eq "rogue") || ($class eq "shadowknight") || ($class eq "warrior")){

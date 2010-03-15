@@ -95,6 +95,12 @@ sub EVENT_ITEM {
    # Has the items but not the required faction for the White Headband
    elsif(plugin::check_handin(\%itemcount, 13789 => 4)) {
       quest::say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
+      # Silent Fist Clan faction
+      quest::faction("300","1");
+      # Guards of Qeynos faction
+      quest::faction("135","1");
+      # Ashen Order faction
+      quest::faction("12","1");
    }
    # Yellow Headband ID-10111 requires three Putrid Rib Bone ID-13722 and the White Headband ID-10110
    # We don't need to check faction again because they must have the White Headband

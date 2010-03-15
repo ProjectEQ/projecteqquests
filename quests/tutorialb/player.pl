@@ -58,6 +58,18 @@ sub EVENT_CLICKDOOR {
 		{
 			quest::movepc(29,12.2,-32.9,3.1);
 		}
+                elsif($s_zone == 40)
+		{
+			quest::movepc(40,156.9,-2.9,31.1);
+		}
+                elsif($s_zone == 41)
+		{
+			quest::movepc(41,-499,2.9,-10.9);
+		}
+                elsif($s_zone == 42)
+		{
+			quest::movepc(42,-968.9,891.9,-52.8);
+		}
 		elsif($s_zone == 45)
 		{
 			quest::movepc(45,-343,189,-38.22);

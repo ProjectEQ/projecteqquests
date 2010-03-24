@@ -36,6 +36,13 @@ darker than ours. Your work is being noticed, young Taruun. Please keep a clear 
    quest::faction(319,20);
    quest::summonitem(5558);
 }
+if (plugin::check_handin(\%itemcount, 5558 =>1, 6158 =>1 )) {
+  quest::say("Well done.  Take this new cloak and wear it with pride.  You can now be called journeyman!");
+  quest::shout("Hear me fellow Vah Shir! The Taruun have seen fit to escalate citizen $name to the rank of journeyman. He grows in strength and wisdom daily. We are proud as should you all be. May this student of our ways continue to progress and live worthy of our noble heritage.");
+  quest::exp(10000);
+  quest::summonitem(6275);
+  quest::summonitem(6158);
+}
 plugin::return_items(\%itemcount);
 }
 

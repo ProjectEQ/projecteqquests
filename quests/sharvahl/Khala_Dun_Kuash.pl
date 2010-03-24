@@ -22,7 +22,13 @@ sub EVENT_ITEM {
        quest::summonitem(6142);
        quest::summonitem(6148);
        quest::exp(1000);
-       quest::faction( 132,10 );
+       quest::faction(132,10);
+      }
+  if (plugin::check_handin(\%itemcount, 5557 =>1,6158 =>1 )) {
+    quest::say("You have done well #name.  Wear this cloak with pride and enjoy the benefits of being a Khala Dun Journeyman.");
+    quest::summonitem(6222);
+    quest::summonitem(6158);
+    quest::exp(10000);
       }
       plugin::return_items(\%itemcount);
 }

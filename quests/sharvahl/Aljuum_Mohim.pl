@@ -25,6 +25,12 @@ sub EVENT_ITEM {
   quest::faction( 132,10 );
     
   }
+  if (plugin::check_handin(\%itemcount, 6158 =>1, 5966 =>1 )) {
+    quest::say("Congratulations #name.  You have successful navigated to the status of Journeyman.  Take your dagger and this cloak, wear it with pride.");
+    quest::summonitem(6158);
+    quest::summonitem(6159);
+    quest::exp(10000);
+  }
   plugin::return_items(\%itemcount);
 }
 

@@ -52,10 +52,9 @@ sub EVENT_ITEM {
     quest::say("You have proven most resourceful $name.");
     quest::summonitem(quest::ChooseRandom(54217,54218,54219,54220,54221,54222,54223,54225,54226,54227,54228)); #Random Stitched Burlap item
   }
-  elsif (plugin::check_handin(\%itemcount, 86010 => 4)) {
+  elsif (plugin::check_handin(\%itemcount, 86010 => 4) || plugin::check_handin(\%itemcount, 86010 => 3) || plugin::check_handin(\%itemcount, 86010 => 2) || plugin::check_handin(\%itemcount, 86010 => 1)) {
     if (quest::istaskactivityactive(28,1)) {
-      quest::emote("bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
-      # Minor rearranging to make it work with how emote() formats the message.
+      quest::say("Ah, yes. Thank you.");
     }
     else { 
       plugin::return_items(\%itemcount); 

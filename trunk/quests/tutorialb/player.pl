@@ -31,6 +31,9 @@ sub EVENT_TASK_STAGE_COMPLETE
 	{
 		quest::ze(15, "A cheer arises from the slaves as the last of the Kobold overseers fall.");
 	}
+  if ($task_id == 28 && $activity_id == 1) {
+    $client->Message(0,"bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
+  }
 } 
 
 sub EVENT_CLICKDOOR {

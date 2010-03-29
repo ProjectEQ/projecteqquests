@@ -36,7 +36,189 @@ sub EVENT_SAY {
         quest::summonitem(41000); #Adventurer's Stone
       }
       else { #PC has an Adventurer's Stone already
-        quest::say("Hello, $name. How do you like the adventures?"); #Text made up
+#        quest::say("Hello, $name. How do you like the adventures?"); #Text made up
+# lore section
+   if ($text=~/hail/i) {
+      $guk_wins = $client->GetLDoNWinsTheme(1);
+      if(!defined($qglobals{GUKtalk})) {
+         quest::setglobal("GUKtalk",0,5,"F");
+      }
+      if($guk_wins < 2) {
+         quest::say("The curse in Deepest Guk is incredibly strong. It's interesting how Deepest Guk came to be ike it is today. If you manage to do some work for us, I will share the story with you!");
+      }
+      elsif($guk_wins >= 2 && $qglobals{GUKtalk} == 0) {
+         # 2 wins - GUKtalk 1
+         quest::setglobal("GUKtalk",1,5,"F");
+         quest::say("Ahem, sorry. I had a fly stuck in my throat. By the looks of you, I'd say you're an adventurous spirit. Unfortunately, many similar spirits have been lost in that slimy place we now call Deepest Guk. In fact, those who have been overcome by the curse that creeps in there have lost their very souls. I'm hoping the next time we talk I'll have more information for you. Take care, most-promising hero.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 4) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 4 && $qglobals{GUKtalk} == 1) {
+         # 4 wins - GUKtalk 2
+         quest::setglobal("GUKtalk",2,5,"F");
+         quest::emote("looks at you with one eye while the other surveys the surroundings. 'Well, I can smell the stench of that curse on you. That is the curse that was set upon the frogloks after they had driven the trolls out of their city. I hesitate to say too much more, because it sounds like a bit of fancy at the moment. Come back soon.'");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 6) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 6 && $qglobals{GUKtalk} == 2) {
+         # 6 wins - GUKtalk 3
+         quest::setglobal("GUKtalk",3,5,"F");
+         quest::say("It's good to see that you remain healthy, my friend. As time passes, I see more fair Norrathians fall to the curse down there. I do know that the curse was brought upon the frogloks through a troll, but we're hoping to learn more about the nature of it. The curse itself is like a living, breathing monstrosity that feeds on the souls of the living, twisting them into hateful pawns. The curse does have an epicenter too -- and it is most difficult to resist surrender to the curse there. Awful thing, it is. See you soon.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 8) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 8 && $qglobals{GUKtalk} == 3) {
+         # 8 wins - GUKtalk 4
+         quest::setglobal("GUKtalk",4,5,"F");
+         quest::say("It's no wonder the trolls are so put off by my people. After all, we did rob them of their cities, both Guk and Grobb. I'm thankful that Mithaniel Marr sent down a blessing to the frogloks to help us overcome those foul trolls. You know, since the beginning, frogloks and trolls have warred with one another. I can tell you more later.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 10) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 10 && $qglobals{GUKtalk} == 4) {
+         # 10 wins - GUKtalk 5, GUKpower 1
+         quest::setglobal("GUKtalk",5,5,"F");
+         quest::setglobal("GUKpower",1,5,"F");
+         quest::say("Ah, yes, I didn't quite explain how Mithaniel Marr blessed my people last time we talked. In fact, we have been blessed twice! I'm so glad you inquired. It's a very intriguing tale. I think you should go talk to a friend of mine - Bealya Tanilsuia in the West Commonlands. She is somewhat of a historian and can tell you more about how the frogloks of Gukta came to be. It's well worth knowing.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
+         if ($guk_wins >= 12) {
+            $client->Message(13, "You have additional information to uncover! You must speak to Bealya Tanilsuia to find out more."); # red message
+         }
+      }
+      elsif($guk_wins >= 12 && $qglobals{GUKtalk} == 5) {
+         $client->Message(13, "You have additional information to uncover! You must speak to Bealya Tanilsuia to find out more."); # red message
+      }
+      elsif($guk_wins >= 32 && $qglobals{GUKtalk} == 15) {
+         # 32 wins - GUKtalk 16
+         quest::setglobal("GUKtalk",16,5,"F");
+         quest::say("Welcome back $name. Bealya Tanilsuia told you some of the history behind my people and the trolls, hm? Now, getting to Mithaniel Marr, my creator. When Mithaniel Marr walked the lands of Norrath before man was created, Cazic-Thule, the god of Fear, wished to seduce Mithaniel to his side. Many of Cazic-Thule's mortal minions were sent to assault Mithaniel Marr's mind and spirit. Mithaniel was strong and the minions could not instill within him the fear of their dark lord. However, they did succeed in luring the brave Mithaniel to the swamps of Norrath. An army of trolls, lizards, and other creatures of unspeakable horror plagued Mithaniel Marr and he became a captive to the minions of Fear.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 34) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 34 && $qglobals{GUKtalk} == 16) {
+         # 34 wins - GUKtalk 17
+         quest::setglobal("GUKtalk",17,5,"F");
+         quest::say("Now, Mithaniel Marr, trapped in his prison in the swamps, prayed to his father, Tarew Marr the Water Lord, for salvation until he was so exhausted he fell into slumber. While he slept, Terris-Thule, Queen of Nightmares, attempted to steal Mithaniel Marr's Gift of Life at the behest of Cazic-Thule.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 36) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 36 && $qglobals{GUKtalk} == 17) {
+         # 36 wins - GUKtalk 18
+         quest::setglobal("GUKtalk",18,5,"F");
+         quest::say("Hm, where were we? Oh yes, Terris-Thule attempted to capture Mithaniel's Gift of Life while he slept. It wasn't long before Morell-Thule, the forsaken son of Cazic-Thule, wanted to thwart his sister's efforts and intervened. Morell-Thule managed to harness Mithaniel's Gift of Life before his sister could and he split it in two. One half he spread across the swamps of Norrath and the sacred lands of his father, Cazic-Thule. The other half he gave to Mithaniel Marr's sister, Erollisi Marr, the goddess of Love. Oh, I must stop here. I need to get something else done. I'll have more for you soon. Be well, $name.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 38) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 38 && $qglobals{GUKtalk} == 18) {
+         # 38 wins - GUKtalk 19
+         quest::setglobal("GUKtalk",19,5,"F");
+         quest::say("Right, well, when Mithaniel Marr's Gift of Life fell upon the swamps of Norrath, the first blessed froglok tads were born. Those first tads faced the greatest challenges because the swamps were overrun with the destructive minions of the gods of Fear and Hate. Fortunately, the Gift of Life empowered the frogloks with the bravery and valor of Mithaniel. They survived and flourished. And, that is how my frogloks ancestors came to be, but that's not the end of the tale.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 40) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 40 && $qglobals{GUKtalk} == 19) {
+         # 40 wins - GUKtalk 20, GUKpower 4
+         quest::setglobal("GUKtalk",20,5,"F");
+         quest::setglobal("GUKpower",4,5,"F");
+         quest::say("So, let's begin again, shall we $name? The lord of Dreams, Morell-Thule, still had a part to play. He gifted the frogloks with dreams of the imprisoned Mithaniel Marr and offered them visions that would help free him from his prison. In time, the first adult frogloks rose in arms against the minions of Cazic-Thule, fighting valiantly to the site of Mithaniel Marr's imprisonment. They failed many times, sadly.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
+         if ($guk_wins >= 42) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 42 && $qglobals{GUKtalk} == 20) {
+         # 42 wins - GUKtalk 21
+         quest::setglobal("GUKtalk",21,5,"F");
+         quest::say("One moment. Oh yes, now I remember where we left off $name. The frogloks continued to fight the hordes of Fear and Hate to reach Mithaniel Marr's prison, but were not able to overcome the strength and experience of the dark gods' minions. In time, a small army arrived on the borders of the swamp to aid them. I've run off at the mouth again! I have other things to tend to. I'll talk with you soon, friend.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 44) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 44 && $qglobals{GUKtalk} == 21) {
+         # 44 wins - GUKtalk 22
+         quest::setglobal("GUKtalk",22,5,"F");
+         quest::say("The army, right. An army of barbarians, Erollisi Marr's children, arrived in the swamp to assist the frogloks. They were drawn to the site of Mithaniel's prison through visions, much like the frogloks. Seeking justice for the imprisonment of Mithaniel, the brother of Erollisi, the barbarians joined with the froglok armies and freed Mithaniel Marr. Interesting, isn't it? Well, $name, that's all I can tell you for now.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 46) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 46 && $qglobals{GUKtalk} == 22) {
+         # 46 wins - GUKtalk 23
+         quest::setglobal("GUKtalk",23,5,"F");
+         quest::say("Now, while my people advanced and became organized, the troll clans still warred with each other and the Grozmok Stone was being tossed back and forth like a hot potato. A time came when most of the protectors of Grobb ignorantly left for Broken Skull Rock to retrieve the Grozmok Stone for Grobb. That was when we gathered our forces and prayed to Mithaniel Marr to bless us. And he did. He infused many of us with much-improved strength and purity of heart. With ferocious loyalty and purpose, we took Grobb from the trolls. That is how Gukta, Outpost of Marr, was created. I'll tell you more soon, I promise you, $name. Time is precious these days.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 48) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 48 && $qglobals{GUKtalk} == 23) {
+         # 48 wins - GUKtalk 24
+         quest::setglobal("GUKtalk",24,5,"F");
+         quest::say("Greetings once again, $name. I told you that we ran the trolls out of what was once Grobb, did I not? Well, the remaining trolls fled to make their home with the dark elves in Neriak. The dark elves wished to get more information about the Grozmok Stone and the Broken Skull clan of trolls, so they allowed them to stay. The Grozmok Stone never returned to Grobb. I believe it is in safekeeping though. I cannot say anymore about that, for now.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 50) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again."); # red message
+         }
+      }
+      elsif($guk_wins >= 50 && $qglobals{GUKtalk} == 24) {
+         # 50 wins - GUKtalk 25, GUKpower 5
+         quest::setglobal("GUKtalk",25,5,"F");
+         quest::setglobal("GUKpower",5,5,"F");
+         quest::say("So, on to where we are now. As my people gained strength and wisdom, we aimed to recapture the lands that belonged to us. Those lands included the swamp, Grobb, and now we turn our eyes to the old ruins of Guk, particularly Deepest Guk. To that end, we sent our most noble and valorous paladins to abolish the curse that tore through our froglok ancestors and anything that got close to it. It would seem you would do well to learn more about the origins of the curse. Please go to the Innothule Swamp and look for Deblik Grumblok, a troll friend of mine in the Wayfarers Brotherhood. He has a unique insight into the tale.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
+         if ($guk_wins >= 52) {
+            $client->Message(13, "You have additional information to uncover! You must speak to Deblik Grumblok to find out more.");
+         }
+      }
+      elsif($guk_wins >= 52 && $qglobals{GUKtalk} == 25) {
+         $client->Message(13, "You have additional information to uncover! You must speak to Deblik Grumblok to find out more.");
+      }
+      elsif($guk_wins >= 68 && $qglobals{GUKtalk} == 33) {
+         # 68 wins - GUKtalk 34
+         quest::setglobal("GUKtalk",34,5,"F");
+         quest::say("Ah, back again I see. I'm glad that Deblik was able to fill in some gaps about what's going on here. It is certainly true that the curse in Deepest Guk is stronger than anywhere else. Our greatest conundrum now is how to stop it. As the curse comes from a portal that touches Innoruuk's powerful Cauldron of Hate, we have a formidable task ahead.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         if ($guk_wins >= 70) {
+            $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again.");
+         }
+      }
+      elsif($guk_wins >= 70 && $qglobals{GUKtalk} == 34) {
+         # 70 wins - GUKtalk 35, GUKpower 7
+         quest::setglobal("GUKtalk",35,5,"F");
+         quest::setglobal("GUKpower",7,5,"F");
+         quest::say("Stay alert, $name. You have been a good ear and just as much an expert on Deepest Guk as any one of us. Be well in your travels friend. You are fast becoming one of us. Bless you and the Wayfarers Brotherhood.");
+         $client->Message(15, "You have received an invaluable piece of information!");
+         $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
+      }
+      elsif($qglobals{GUKtalk} == 35) {
+         # theme done
+      }
+      else {
+         # text made up
+         $client->Message(9, "You need to adventure some more in Deepest Guk.");
+      }
+# end lore
+   }
       }
     }
 #    elsif(player_has_maxed_out_stone) { #PC has maxed out stone
@@ -56,3 +238,4 @@ sub EVENT_ITEM {
   quest::say("I have no use for this, $name.");
   plugin::return_items(\%itemcount);
 }
+

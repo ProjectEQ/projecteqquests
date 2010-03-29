@@ -1,35 +1,74 @@
-sub EVENT_SCALE_CALC 
+sub EVENT_SCALE_CALC
 {
-        my $guk_wins = $client->GetLDoNWinsTheme(1);
-        my $mir_wins = $client->GetLDoNWinsTheme(2);
-        my $mmc_wins = $client->GetLDoNWinsTheme(3);
-        my $ruj_wins = $client->GetLDoNWinsTheme(4);
-        my $tak_wins = $client->GetLDoNWinsTheme(5);
-        if($guk_wins > 70)
-        {
-                $guk_wins = 70;
-        }
-        
-        if($mir_wins > 68)
-        {
-                $mir_wins = 68;
-        }
-        
-        if($mmc_wins > 76)
-        {
-                $mmc_wins = 76;
-        }
-        
-        if($ruj_wins > 74)
-        {
-                $ruj_wins = 74;
-        }
+   # max power values
+   # guk 7, mir 7, mmc 8, ruj 8, tak 8
+   # each theme accounts for 20% of the charm stats
+   # 1-5 are each 2% of the full stats of the charm
+   # All the 6-? together make up the other 50% of the stats
 
-        if($tak_wins > 78)
-        {
-                $tak_wins = 78;
-        }
-        
-        my $total = $guk_wins + $mir_wins + $mmc_wins + $ruj_wins + $tak_wins;
-        $questitem->SetScale($total/366);
+   my $charge = 5;
+   if (defined $qglobals{GUKpower}) {
+      if ($qglobals{GUKpower} <= 5) {
+         $charge += $qglobals{GUKpower} * 20;
+      }
+      elsif ($qglobals{GUKpower} >= 7) {
+         $charge += 200;
+      }
+      else {
+         $charge += 150;
+      }
+   }
+
+   if (defined $qglobals{MIRpower}) {
+      if ($qglobals{MIRpower} <= 5) {
+         $charge += $qglobals{MIRpower} * 20;
+      }
+      elsif ($qglobals{MIRpower} >= 7) {
+         $charge += 200;
+      }
+      else {
+         $charge += 150;
+      }
+   }
+
+   if (defined $qglobals{MMCpower}) {
+      if ($qglobals{MMCpower} <= 5) {
+         $charge += $qglobals{MMCpower} * 20;
+      }
+      elsif ($qglobals{MMCpower} >= 8) {
+         $charge += 200;
+      }
+      else {
+         # 6 or 7
+         $charge += 100 + (($qglobals{MMCpower} - 5) * 40)
+      }
+   }
+
+   if (defined $qglobals{RUJpower}) {
+      if ($qglobals{RUJpower} <= 5) {
+         $charge += $qglobals{RUJpower} * 20;
+      }
+      elsif ($qglobals{RUJpower} >= 8) {
+         $charge += 200;
+      }
+      else {
+         # 6 or 7
+         $charge += 100 + (($qglobals{RUJpower} - 5) * 40)
+      }
+   }
+
+   if (defined $qglobals{TAKpower}) {
+      if ($qglobals{TAKpower} <= 5) {
+         $charge += $qglobals{TAKpower} * 20;
+      }
+      elsif ($qglobals{TAKpower} >= 8) {
+         $charge += 200;
+      }
+      else {
+         # 6 or 7
+         $charge += 100 + (($qglobals{TAKpower} - 5) * 40)
+      }
+   }
+
+   $questitem->SetScale($charge/1000);
 }

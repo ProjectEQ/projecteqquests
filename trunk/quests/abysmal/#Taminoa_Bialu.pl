@@ -46,5 +46,13 @@ sub EVENT_ITEM {
      quest::summonitem(67513);
 
    }
+   if (plugin::check_handin(\%itemcount, 67516 =>1 )) {
+       if (defined $qglobals{bic} && $qglobals{bic} == 5) {
+       quest::emote("looks at the final report before bowing his head for a second.");
+       quest::say("While I had accepted Talwin's passing as reality, I still hoped you would save him in time. Either way, I thank you for your effort and for delivering this vital piece of information contained in this report. Please take this. I found it wrapped up in the report. Talwin would have wanted you to have it as it appears to be a gem fragment that could fit into the stone Fezbin gave you. Now that you have finished all that was needed for Barindu, there is still more of the city left to explore and I won't be able to complete my report until it is done.");
+     quest::setglobal("bic",6,5,"F");
+     quest::summonitem(67517);
+   }
+ }
 plugin::return_items(\%itemcount);
 }

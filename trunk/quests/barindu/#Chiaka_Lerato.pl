@@ -12,8 +12,13 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 64008 =>1 )) {
     quest::say("How did you. . . Never mind. I'd know this shawl anywhere and it can only mean one thing. Mother needs me. I haven't heard from my brother or mother since they escaped and I thought they might be dead. I should have left with them when I had the chance. Fortunately, Hamisi told me of his plans. I should be able to use the same route he did to escape. Here, take this. I won't need it any more.");
     quest::summonitem(64009);
-    quest::depop();
+    quest::start(56);
     quest::exp(10000);
   }
   plugin::return_items(\%itemcount);
 }
+sub EVENT_WAYPOINT_ARRIVE {
+   if($wp == 9) {
+    quest::depop();
+  }
+} 

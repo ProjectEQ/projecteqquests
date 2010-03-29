@@ -1,3 +1,11 @@
 sub EVENT_SPAWN {
-plugin::RandomRoam(100, 100);
+my $min = 1;
+my $range = 35;
+my $randomspawn = int(rand($range)) + $min;
+plugin::RandomRoam(250, 250);
+quest::settimer(1,$randomspawn);
+}
+
+sub EVENT_TIMER {
+plugin::RandomRoam(250, 250);
 }

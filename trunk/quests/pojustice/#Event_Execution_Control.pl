@@ -167,8 +167,23 @@ sub EVENT_TIMER {
          }
       }
       
-      my @clientlist = $entity_list->GetClientList();
       $removed = 0;
+      #Make sure anyone that left zone is removed from trial
+      foreach $player (@trial_group) {
+         $ent = $entity_list->GetClientByName($player);
+         if (!$ent) {
+            $size = @trial_group;
+            for ($i = 0; $i < $size; $i++) {
+               if ($trial_group[$i] eq $player ) {
+                  $removed++;
+                  splice(@trial_group, $i, 1);
+                  last;
+               }
+            }
+         }         
+      }
+      
+      my @clientlist = $entity_list->GetClientList();
       foreach $ent (@clientlist) {
          my $ClientName = $ent->GetName();
          @m = grep(/^$ClientName$/, @allowed);
@@ -197,8 +212,7 @@ sub EVENT_TIMER {
          }
          #See if they left trial
          else {
-            if ($in_trial) {
-               #$size = @trial_group;
+            if ($in_trial) {               
                for ($i = 0; $i < $size; $i++) {
                   if ($trial_group[$i] eq $ClientName ) {
                      $removed++;
@@ -210,6 +224,8 @@ sub EVENT_TIMER {
          }
       
       }
+      
+      
       
       #Is everyone gone?
       if ($removed) {
@@ -402,5 +418,4 @@ sub SpawnExecutionMobs {
          $spawn_ex = 0;
       }
    }
-}
-
+} 

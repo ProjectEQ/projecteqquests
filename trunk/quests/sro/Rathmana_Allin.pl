@@ -1,3 +1,6 @@
+# NPC: Rathmana Allin.  Location: South Ro
+# Qazzaz - 04/01/10 - Added minimal support for The Bayle List quest.  Couldn't find any text.
+
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Company?! Way out here in the desert of Ro? This is a pleasant surprise! Won't you stay for a while? I am sure the desert has dried your throat. I have supplies if necessary. At a price, of course. Are you [traveling] or are you here on [business]?");
@@ -15,6 +18,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+my $gotquestitem = 0;
+
   # Rathmana's Scroll Offer [END]
   if(($platinum == 3) || ($gold == 30) || ($silver == 300) || ($copper == 3000)){
     quest::say("Good luck, my friend. May Solusek Ro guide your hand.");
@@ -24,5 +29,16 @@ sub EVENT_ITEM {
     quest::ding();
     # Force Snap, Bind Affinity, Lightning Bolt, Quickness, Whirl Til You Hurl, Column of Fire, Engulfing Darkness, Banshee Aura, Lifedraw, Charm
     quest::summonitem(quest::ChooseRandom(15022,15035,15038,15039,15303,15328,15355,15364,15445,16425));
+   $gotquestitem = 1;
   }
-}
+ # The Bayle List quest
+   if (($itemcount{18808} == 1) && ($itemcount{18809} == 1) && ($itemcount{18810} == 1) && ($gold >= 20)) {
+   quest::say("hmm.  I'm not sure how you knew I could translate these, but I can always use the gold.");
+   quest::say("Here is your translation.");
+   quest::summonitem(18961);
+   $gotquestitem = 1;
+   }
+  if (!$gotquestitem) {
+   plugin::return_items(\%itemcount);
+   }
+} 

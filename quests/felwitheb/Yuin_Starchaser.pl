@@ -1,4 +1,6 @@
-#Quest: Art Keepers
+#Quest: Art Keepers  NPC: Yuin Starchaser  Zone: Felwithe B
+
+# Qazzaz 04/01/10 - Added a missing : so the Art Keepers Initiate Staff actually gets summoned.
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
@@ -52,10 +54,10 @@ sub EVENT_ITEM {
   #Handin: Rough Artkeepers Initiate Staff, Pristine Forest Drakeling Scales, Arborean Amber
   elsif(plugin::check_handin(\%itemcount, 20296 => 1, 20271 => 1, 20274 => 1)) {
     quest::say("Good work, $name. Take this staff and use it wisely."); #Text made up
-    quest:summonitem(20332); #Art Keepers Initiate Staff
+    quest::summonitem(20332); #Art Keepers Initiate Staff
   }
   else {
     quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
-}
+} 

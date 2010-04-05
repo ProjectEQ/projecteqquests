@@ -11,7 +11,7 @@ sub EVENT_TIMER
 	}
     	else {
     		$check_boss = $entity_list->GetMobByNpcTypeID(222000);#rock_studded_champ
-    		if (!$check_boss && !defined $qglobals{poeb_Galronor}) {
+    		if (!$check_boss && !defined $qglobals{poeb_Galronar}) {
 			quest::spawn2(222018,0,0,$x,$y,$z,$h);  
         		quest::stoptimer("depop2");
         		quest::depop();

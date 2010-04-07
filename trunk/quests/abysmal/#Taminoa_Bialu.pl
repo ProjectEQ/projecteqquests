@@ -27,6 +27,11 @@ if ($text=~/barindu/i) {
     quest::say("I see Fezbin saved some of the more dismal news for me. The legion has enslaved the natives of the continent. In the city area, these slaves are used mainly for menial tasks. Due to their fragile bodies, they cannot do any heavy lifting, but their knowledge of shaping stone makes them perfect for building new structures for the legion to use as well as altering current ones. They command the stone workers. I am not sure how the slaves are used in the temple areas. That information is held by L`diava.");
 }
 }
+if ($text=~/riwwi/i) {
+  if (defined $qglobals{bic} && $qglobals{bic} == 6) {
+   quest::say("Riwwi has to be the most interesting of all of the city areas. You see, this is where the coliseum is located. Now, we are not completely aware of how it was used before this invading army took up residence in the area, but now it is used for the merciless slaughter of the nihil. Early reports from our scout, Reyna, indicate that the slaves in the area would not interact with her until she proved herself. How she was able to do this I am not sure, but I would suggest trying to find something of Reyna's while I go over my Riwwi information. Come back to me when you find something.");
+}
+}
 }
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67397 => )) {
@@ -52,6 +57,11 @@ sub EVENT_ITEM {
        quest::say("While I had accepted Talwin's passing as reality, I still hoped you would save him in time. Either way, I thank you for your effort and for delivering this vital piece of information contained in this report. Please take this. I found it wrapped up in the report. Talwin would have wanted you to have it as it appears to be a gem fragment that could fit into the stone Fezbin gave you. Now that you have finished all that was needed for Barindu, there is still more of the city left to explore and I won't be able to complete my report until it is done.");
      quest::setglobal("bic",6,5,"F");
      quest::summonitem(67517);
+   }
+ }
+ if (plugin::check_handin(\%itemcount, 67510 =>1 )) {
+   if (defined $qglobals{bic} && $qglobals{bic} == 6) {
+   quest::say("'This does not bode well for Reyna's fate. If I had to guess, I would say they took her to the coliseum. Knowing what we know about these strange beings, they would have taken her to the coliseum just so they could entertain themselves by torturing her. You must find a way into the coliseum and save Reyna. I think your best plan of action would be to locate and speak to Turlini and Namosa. They are two slaves Reyna mentioned in her reports. They may not talk to you if you have not proven yourself, but once you do that they should be pretty helpful. They may even know an easy way into the coliseum. Find these two and ask them about Reyna. Return to me when you find out more information about her.");
    }
  }
 plugin::return_items(\%itemcount);

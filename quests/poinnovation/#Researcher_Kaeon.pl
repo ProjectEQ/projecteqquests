@@ -7,5 +7,9 @@ sub EVENT_SAY {
   }
   if ($text=~/ready/i) {
     quest::say("Excellent I will now send you down to the testing bay. Assistant Kelrig will be there shortly with further instructions.");
+    quest::selfcast(1091);
   }
+}
+sub EVENT_ITEM {
+  plugin::return_items(\%itemcount);
 }

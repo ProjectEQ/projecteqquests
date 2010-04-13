@@ -1,4 +1,8 @@
 sub EVENT_SAY {
+  if ($text=~/hail/i && defined $qglobals{poiend}) {
+    quest::say("Don't bother me, I'm conducting a test");
+  }
+  
   if ($text=~/hail/i) {
     quest::say("Salutations. We have been monitoring your performance in the scrap yards. Your ability seems to rival your physical capabilities. We would like to test your endurance and mental abilities further. Would you comply to endurance testing?");
   }
@@ -8,6 +12,8 @@ sub EVENT_SAY {
   if ($text=~/ready/i) {
     quest::say("Excellent I will now send you down to the testing bay. Assistant Kelrig will be there shortly with further instructions.");
     quest::selfcast(1091);
+    quest::spawn(206081,0,0,0,0,0);
+    quest::setglobal("poiend",1,3,"H3");
   }
 }
 sub EVENT_ITEM {

@@ -1,6 +1,6 @@
 # Plugin file GetSpawn2IDs.pl created 03/28/10 by Qazzaz.   Put in your servers Plugins directory.
 
-# Usage:   plugin::GetNPCsSpawn2GroupIDs(NPC ID,Min X,Max X,Min Y,Max Y,Min Z,Maz Z)
+# Usage:   plugin::GetNPCsSpawn2GroupIDs(NPC ID,Min X,Max X,Min Y,Max Y,Min Z,Max Z)
 #
 # Return an array with a list of the spawn2 IDs for a NPC.  Uses quest::say_proximity X, Y and Z like parameters
 # Examples:
@@ -83,7 +83,7 @@ return @spawn2_groups_ids;
 }
 
 
-# Usage:   plugin::GetSpawn2GroupsFromArray(Pointer to your array,Min X,Max X,Min Y,Max Y,Min Z,Maz Z)
+# Usage:   plugin::GetSpawn2GroupsFromArray(Pointer to your array,Min X,Max X,Min Y,Max Y,Min Z,Max Z)
 #
 # Has the same parameters as GetNPCsSpawn2GroupIDs except you give it a pointer to your array.
 # Example:

@@ -17,9 +17,8 @@ sub EVENT_SAY {
         quest::selfcast(4179); #Teleport Butcherblock
       }
       if($text=~/nedaria/i) {
-        quest::say("I'm sorry, $name. The Gates of Discord zones are not yet available.");
-        #quest::emote("begins to cast a spell.");
-        #quest::selfcast(4580); #Teleport Nedaria
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4580); #Teleport Nedaria
       }
       if($text=~/north ro/i) {
         quest::emote("begins to cast a spell.");

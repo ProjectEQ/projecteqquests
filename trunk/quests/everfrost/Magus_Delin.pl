@@ -9,19 +9,23 @@ sub EVENT_SAY {
         quest::say("You're going to need to have a fair amount of faith in me and my friends. I make it a policy to tell all of the travelers that come to me that this is not a perfected magic and probably never will be. The magic we are using is, in my opinion, not of Norrathian origins. Or perhaps I'm simply an eccentric who hopes there is a greater force out there that is granting us the use of new magics. Anyway, enough chatter. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Butcherblock], [Commonlands], [Nedaria's Landing], [North Ro], or [South Ro]. Please be still as I do this.");
       }
       if($text=~/commonlands/i) {
+        quest::emote("begins to cast a spell.");
         quest::movepc(22,-105,-1640,5,0); #East Commonlands
       }
       if($text=~/butcherblock/i) {
+        quest::emote("begins to cast a spell.");
         quest::movepc(68,-2500,-1105,1,0); #Butcherblock Mountains
       }
       if($text=~/nedaria/i) {
-        quest::say("I'm sorry, $name. The Gates of Discord zones are not yet available.");
-        #quest::movepc(); #Nedaria's Landing
+        quest::emote("begins to cast a spell.");
+        quest::selfcast(4580); #Teleport Nedaria
       }
       if($text=~/north ro/i) {
+        quest::emote("begins to cast a spell.");
         quest::movepc(34,900,2650,-24,0); #Northern Desert of Ro
       }
       if($text=~/south ro/i) {
+        quest::emote("begins to cast a spell.");
         quest::movepc(35,1030,-1440,-23,0); #Southern Desert of Ro
       }
     }

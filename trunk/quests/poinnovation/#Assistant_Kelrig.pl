@@ -5,6 +5,10 @@ sub EVENT_SAY {
   if ($text=~/quit/i) {
     quest::say("We shall process the data that you have afforded us. Good bye.");
     quest::selfcast(1090);
+    quest::depop(206081);
+    quest::spawn_condition($zonesn,1,0);
+    quest::depop();
+  
   }
   if ($text=~/continue/i) {
     quest::say("Very well, I'll return when you are finished");

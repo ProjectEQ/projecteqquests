@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Don't bother me, I'm conducting a test");
   }
   
-  if ($text=~/hail/i) {
+ elsif ($text=~/hail/i) {
     quest::say("Salutations. We have been monitoring your performance in the scrap yards. Your ability seems to rival your physical capabilities. We would like to test your endurance and mental abilities further. Would you comply to endurance testing?");
   }
   if ($text=~/I will comply/i) {

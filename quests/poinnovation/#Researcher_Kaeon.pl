@@ -11,6 +11,7 @@ sub EVENT_SAY {
   }
   if ($text=~/ready/i) {
     quest::say("Excellent I will now send you down to the testing bay. Assistant Kelrig will be there shortly with further instructions.");
+    quest::depop(206081);
     quest::selfcast(1091);
     quest::spawn(206081,0,0,0,0,0);
     quest::setglobal("poiend",1,3,"H3");

@@ -1,3 +1,9 @@
+sub EVENT_SPAWN {
+  quest::spawn_condition($zonesn,1,0);
+  quest::spawn_condition($zonesn,2,0);
+
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i && defined $qglobals{poiend}) {
     quest::say("Don't bother me, I'm conducting a test");

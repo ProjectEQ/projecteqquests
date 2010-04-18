@@ -20,7 +20,7 @@ sub EVENT_SAY {
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
-
+   quest::spawn_condition($zonesn,1,1);
   }
 }
 

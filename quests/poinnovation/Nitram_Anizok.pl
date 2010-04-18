@@ -1,5 +1,5 @@
-my $dragon = 0;
-my $flag = 0;
+my $dragon = undef;
+my $flag = undef;
 
 sub EVENT_SIGNAL
 {

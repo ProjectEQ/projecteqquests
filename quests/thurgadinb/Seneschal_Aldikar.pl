@@ -33,10 +33,10 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  if($timer == "thurgdaynight" && ($zonetime < 800 || $zonetime > 1999) && $x == 3.25 && $y == 773.25 && $z == 35) {
+  if($timer eq "thurgdaynight" && ($zonetime < 800 || $zonetime > 1999) && $x == 3.25 && $y == 773.25 && $z == 35) {
     quest::pause(20);
   }
-  elsif($timer == "thurgdaynight" && ($zonetime > 800 || $zonetime < 1999) && $x == -3 && $y == 693 && $z == 68.5) {
+  elsif($timer eq "thurgdaynight" && ($zonetime > 800 || $zonetime < 1999) && $x == -3 && $y == 693 && $z == 68.5) {
     quest::pause(20);
   }
 #  elsif($timer == 10 && $x == 3.25 && $y == 773.25 && $z == 35) {

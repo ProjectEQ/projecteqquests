@@ -22,7 +22,8 @@ sub EVENT_SIGNAL {
    quest::updatespawntimer(76550,0);
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
-   quest::updatespawntimer(76553,0);   
+   quest::updatespawntimer(76553,0);
+   quest::spawn_condition($zonesn,1,1);   
 }
   if($counter == 16 ) {			
    quest::updatespawntimer(76546,0);
@@ -33,6 +34,7 @@ sub EVENT_SIGNAL {
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
+   quest::spawn_condition($zonesn,1,1);
 }
  if($counter == 24 ) {			
    quest::updatespawntimer(76546,0);
@@ -43,6 +45,7 @@ sub EVENT_SIGNAL {
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
+   quest::spawn_condition($zonesn,1,1);
 }
  if($counter == 32 ) {			
  quest::updatespawntimer(76546,0);
@@ -53,6 +56,7 @@ sub EVENT_SIGNAL {
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
+   quest::spawn_condition($zonesn,1,1);
 }
  if($counter == 40 ) {			
    quest::spawn_condition($zonesn,1,0);
@@ -70,6 +74,7 @@ sub EVENT_SIGNAL {
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
+   quest::spawn_condition($zonesn,1,1);
 }
 if($counter == 64 ) {			
  quest::updatespawntimer(76546,0);
@@ -80,6 +85,7 @@ if($counter == 64 ) {
    quest::updatespawntimer(76551,0);   
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
+   quest::spawn_condition($zonesn,1,1);
 }
 if($counter == 72 ) {
    quest::spawn_condition($zonesn,1,0);			

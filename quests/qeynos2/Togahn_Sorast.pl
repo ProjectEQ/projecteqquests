@@ -90,33 +90,26 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   # Red Headband ID-10113 requires Orange Headband ID-10112, Head of Ghanex Drah ID-13165, Brother Dareb's Skull ID-13166 and Head of Shen ID-13167
-   # No need to check faction since it was required for the previous headbands
-   if(plugin::check_handin(\%itemcount, 10112 => 1) && plugin::check_handin(\%itemcount, 13165 => 1) && plugin::check_handin(\%itemcount, 13166 => 1) && plugin::check_handin(\%itemcount, 13167 => 1)) {
-      quest::say("We are deeply honored to have such great warrior as part of our Clan. With a proper burial, Shen and Dareb's souls will finally be at peace, and with the death of that vile Ghanex, the plains will be much safer for travelers. It is a great honor to present you, $name, with the red headband of the Silent Fist Clan.");
-      quest::summonitem("10113");
-      # Silent Fist Clan faction
-      quest::faction("300","4");
-      # Guards of Qeynos faction
-      quest::faction("135","4");
-      # Ashen Order faction
-      quest::faction("12","4");
-      quest::exp("400");
-   }
-   # Purple Headband ID-10114 requires Red Headband ID-10113, Skull of Jhen`Tra ID-13168, Dagger of Marnek ID-13169 and Zaharn's Coronet ID-3000
-   elsif(plugin::check_handin(\%itemcount, 10113 => 1) && plugin::check_handin(\%itemcount, 13168 => 1) && plugin::check_handin(\%itemcount, 13169 => 1) && plugin::check_handin(\%itemcount, 3000 => 1)) {
-   quest::say("In honor of your recent acts of courage and dedication, I reward you, $name, with the purple headband of the Silent Fist Clan.");
-   quest::summonitem("10114");
-        # Silent Fist Clan faction
-        quest::faction("300","5");
-        # Guards of Qeynos faction
-        quest::faction("135","5");
-        # Ashen Order faction
-        quest::faction("12","5");
-   quest::exp("500");
-   }
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-   plugin::return_items(\%itemcount);
+  if(plugin::check_handin(\%itemcount, 10112 => 1, 13165 => 1, 13166 => 1, 13167 => 1)) { #Orange Headband, Head of Ghanex Drah, Dareb's Skull, Head of Shen
+    quest::say("We are deeply honored to have such great warrior as part of our Clan. With a proper burial, Shen and Dareb's souls will finally be at peace, and with the death of that vile Ghanex, the plains will be much safer for travelers. It is a great honor to present you, $name, with the red headband of the Silent Fist Clan.");
+    quest::summonitem(10113); #Red Headband 
+    quest::faction(300,4); #Silent Fist Clan
+    quest::faction(135,4); #Guards of Qeynos
+    quest::faction(12,4);  #Ashen Order
+    quest::exp(400);
+  }
+  elsif(plugin::check_handin(\%itemcount, 10113 => 1, 13168 => 1, 13169 => 1, 3000 => 1)) { #Red Headband, Skull of Jhen`Tra, Dagger of Marnek, Zaharn's Coronet
+    quest::say("In honor of your recent acts of courage and dedication, I reward you, $name, with the purple headband of the Silent Fist Clan.");
+    quest::summonitem(10114); #Purple Headband
+    quest::faction(300,5); #Silent Fist Clan
+    quest::faction(135,5); #Guards of Qeynos
+    quest::faction(12,5);  #Ashen Order
+    quest::exp(500);
+  }
+  else {
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+    plugin::return_items(\%itemcount);
+  }
 }
-#END of FILE Zone:qeynos2  ID:2087 -- Togahn_Sorast 
+#END of FILE Zone:qeynos2  ID:2087 -- Togahn_Sorast

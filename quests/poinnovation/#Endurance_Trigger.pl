@@ -15,30 +15,74 @@ sub EVENT_SIGNAL {
          $counter += 1;
 }
   if($counter == 8 ) {			
-   quest::spawn_condition($zonesn,1,1);
+   quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);   
 }
   if($counter == 16 ) {			
-   quest::spawn_condition($zonesn,1,1);
+   quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);
 }
  if($counter == 24 ) {			
-   quest::spawn_condition($zonesn,1,1);
+   quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);
 }
  if($counter == 32 ) {			
-   quest::spawn_condition($zonesn,1,1);
+ quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);
 }
  if($counter == 40 ) {			
+   quest::spawn_condition($zonesn,1,0);
    quest::spawn_condition($zonesn,2,1);
 }
  if($counter == 48 ) {			
     quest::spawn2(206080,0,0,-289,-760,2,250);
 }
  if($counter == 56 ) {			
-   quest::spawn_condition($zonesn,1,1);
+  quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);
 }
 if($counter == 64 ) {			
-   quest::spawn_condition($zonesn,1,1);
+ quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);
 }
-if($counter == 72 ) {			
+if($counter == 72 ) {
+   quest::spawn_condition($zonesn,1,0);			
    quest::spawn_condition($zonesn,2,1);
 }
 if($counter == 80 ) {			

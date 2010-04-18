@@ -12,7 +12,14 @@ sub EVENT_SAY {
   }
   if ($text=~/continue/i) {
     quest::say("Very well, I'll return when you are finished");
-    quest::spawn_condition($zonesn,1,1);
+   quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(76547,0);
+   quest::updatespawntimer(76548,0);
+   quest::updatespawntimer(76549,0);
+   quest::updatespawntimer(76550,0);
+   quest::updatespawntimer(76551,0);   
+   quest::updatespawntimer(76552,0);   
+   quest::updatespawntimer(76553,0);
 
   }
 }

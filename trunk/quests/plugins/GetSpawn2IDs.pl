@@ -47,8 +47,8 @@ if(!$db || !$user || !$pass || !$host) {
 my $dbh = DBI->connect("DBI:mysql:database=$db;host=$host", $user, $pass) || die "Could not create db handle\n";
 
 my($spawn2_id, $spawn2, @spawn2_groups_ids, $temp, $spawn2_area, $spawn2_search);
-my $spawn2_area = plugin::val('$zonesn');
-my $spawn2_area = " AND zone='$spawn2_area'";
+$spawn2_area = plugin::val('$zonesn');
+$spawn2_area = " AND zone='$spawn2_area'";
 
 if(defined $_[1]) { # Define the Spawn2 spawn point area search if one is specified.
    $spawn2_area =  $spawn2_area . " AND x>=$_[1] AND x<=$_[2] AND y>=$_[3] AND y<=$_[4]";

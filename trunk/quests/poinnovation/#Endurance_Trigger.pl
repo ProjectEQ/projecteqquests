@@ -15,8 +15,7 @@ sub EVENT_SIGNAL {
          $counter += 1;
 }
   if($counter == 8 ) {			
-   quest::spawn2(206077,0,0,-289,-760,2,0);
-   quest::updatespawntimer(76546,0);
+   quest::updatespawntimer(54837,0);
    quest::updatespawntimer(76547,0);
    quest::updatespawntimer(76548,0);
    quest::updatespawntimer(76549,0);
@@ -25,8 +24,6 @@ sub EVENT_SIGNAL {
    quest::updatespawntimer(76552,0);   
    quest::updatespawntimer(76553,0);
    quest::spawn_condition($zonesn,1,1);
-   
-   
 }
   if($counter == 16 ) {			
    quest::updatespawntimer(76546,0);

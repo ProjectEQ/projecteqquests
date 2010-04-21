@@ -82,7 +82,7 @@ sub EVENT_ENTER {
 		
 	}
 	elsif(defined $qglobals{"ghport$uguild_id"} && $qglobals{"ghport$uguild_id"} == 88738) { #katta
-		quest::selfcast(11985);
+		quest::movepc(160,-545,645,1,0);
 		
 	}
 	elsif(defined $qglobals{"ghport$uguild_id"} && $qglobals{"ghport$uguild_id"} == 88739) { #time

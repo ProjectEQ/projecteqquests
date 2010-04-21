@@ -13,7 +13,7 @@ sub EVENT_ENTERZONE
 
 sub EVENT_CLICKDOOR {
 	my $d_id = ($doorid % 256);
-  	if($d_id == 183) {
+  	if($d_id == 138) {
         	if($uguild_id > 0) {
             		if (defined($qglobals{"glinstance$uguild_id"})) {
                 		$guildinstance = $qglobals{"glinstance$uguild_id"};

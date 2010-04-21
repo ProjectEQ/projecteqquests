@@ -16,13 +16,14 @@ sub EVENT_SPAWN {
 sub EVENT_ENTER {
 
    $npc->SignalClient($client, 1);
-
+   $client->Message(4,"Your wounds begin to heal.");
 }
 
 sub EVENT_EXIT {
 
    if($client) {   # Probably not required to check this here
       $npc->SignalClient($client, 2);
+      $client->Message(4,"Your healing slows.");
    }
    
 }

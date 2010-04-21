@@ -21,7 +21,7 @@ sub EVENT_CLICKDOOR {
                 		quest::MovePCInstance(344, $guildinstance, 18, -46, 6);
             		}
             		else {
-                		$guildinstance = quest::CreateInstance("guildlobby", 0, 86400);
+                		$guildinstance = quest::CreateInstance("guildlobby", 1, 86400);
                 		quest::AssignToInstance($guildinstance); 
                 		quest::setglobal("glinstance$uguild_id",$guildinstance,7,"H24");
                 		quest::MovePCInstance(344, $guildinstance, 18, -46, 6);

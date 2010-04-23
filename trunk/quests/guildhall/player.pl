@@ -45,6 +45,12 @@ sub EVENT_TIMER {
             my $ManaNew = (($ManaRatio + $RegenPercent) / 100) * $ManaMax;
             $client->SetMana($ManaNew);
          }
+         my $EnduranceRatio = $client->GetEnduranceRatio();
+         if ($EnduranceRatio < 100) {
+            my $EnduranceMax = $client->GetMaxEndurance();
+            my $EnduranceNew = (($EnduranceRatio + $RegenPercent) / 100) * $EnduranceMax;
+            $client->SetEndurance($EnduranceNew);
+         }
          quest::settimer("DoRegen", 6);
       }
    }

@@ -30,7 +30,7 @@ sub EVENT_SAY {
       }
     }
     else { #PC does not have Adventurer's Stone
-      quest::say("You will have to excuse me, I am quite busy studying this Farstone and the possibility of using the magic stored inside of it. Perhaps you should talk to another at this camp to see if they have any use for you.");
+      quest::say("You will have to excuse me, I am quite busy studying this Farstone and the possibility of using the magic stored inside of it.");
     }
   }   
   else { #PC is not at appropriate level yet

@@ -35,8 +35,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13182 => 1)) { #Kevlin's Debt
     quest::say("Heh heh! You got a career ahead of ya kid! Good work. Here is your cut.");
-    quest::exp(200);
-    quest::givecash(0,0,4,10);
+    quest::exp(300);
+    quest::ding();
+    quest::givecash(4,10,0,0);
   }
   else {
     quest::say("I have no use for this, $name.");

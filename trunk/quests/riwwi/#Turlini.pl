@@ -23,5 +23,10 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::setglobal("bic",8,5,"F");
   }
+  if (plugin::check_handin(\%itemcount, 52233 =>1 )) {
+    quest::emote("gives you an appraising nod");
+    quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
+    quest::summonitem(52085);
+  }
   plugin::return_items(\%itemcount);
 }

@@ -25,6 +25,7 @@ quest::spawn2(206077,0,0,-172,-785,3,193);
 
 sub EVENT_SIGNAL {
   quest::settimer(1,240);
+  quest::delglobal("poiend");
 
 }
 

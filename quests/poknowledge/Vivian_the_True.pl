@@ -7,7 +7,6 @@
 sub EVENT_SAY {
   if(quest::istaskactive(138)) { #New Beginnings
     quest::say("You fought alongside Arias in the Mines of Gloomingdeep! He's alive then! Thank the gods! Thank the gods and thank you, stranger! Please let me repay your kind news with my hospitality. I can help you establish yourself here in the Plane of Knowledge. Really, it's the least I can do.");
-    quest::updatetaskactivity(138,0);
   }
   else {
     if ($text=~/hail/i) {

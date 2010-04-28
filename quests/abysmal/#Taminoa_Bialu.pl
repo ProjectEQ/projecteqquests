@@ -61,8 +61,14 @@ sub EVENT_ITEM {
  }
  if (plugin::check_handin(\%itemcount, 67510 =>1 )) {
    if (defined $qglobals{bic} && $qglobals{bic} == 6) {
-   quest::say("'This does not bode well for Reyna's fate. If I had to guess, I would say they took her to the coliseum. Knowing what we know about these strange beings, they would have taken her to the coliseum just so they could entertain themselves by torturing her. You must find a way into the coliseum and save Reyna. I think your best plan of action would be to locate and speak to Turlini and Namosa. They are two slaves Reyna mentioned in her reports. They may not talk to you if you have not proven yourself, but once you do that they should be pretty helpful. They may even know an easy way into the coliseum. Find these two and ask them about Reyna. Return to me when you find out more information about her.");
+   quest::say("This does not bode well for Reyna's fate. If I had to guess, I would say they took her to the coliseum. Knowing what we know about these strange beings, they would have taken her to the coliseum just so they could entertain themselves by torturing her. You must find a way into the coliseum and save Reyna. I think your best plan of action would be to locate and speak to Turlini and Namosa. They are two slaves Reyna mentioned in her reports. They may not talk to you if you have not proven yourself, but once you do that they should be pretty helpful. They may even know an easy way into the coliseum. Find these two and ask them about Reyna. Return to me when you find out more information about her.");
    }
  }
+  if (plugin::check_handin(\%itemcount, 67417 =>1 )) {
+   if (defined $qglobals{bic} && $qglobals{bic} == 9) {
+   quest::say("Reyna was a skilled scout who had spent many years honing her abilities. Learning that she died so horribly upsets the stomach, but she died trying to help others. Yes . . . that's what we should focus on. This report you have returned will be a great help to us and this reward should help you as well. It was wrapped in the report and appears to be a gem fragment that may fit into the stone Fezbin gave you. Now to the rest of the city. Hopefully we can prevent our other scouts from suffering the same fate as Reyna.");
+   quest::summonitem(67518);
+   }
+   }
 plugin::return_items(\%itemcount);
 }

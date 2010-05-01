@@ -95,6 +95,7 @@ sub EVENT_ITEM {
     quest::summonitem(67417);
     quest::setglobal("bic",9,5,"F");
     quest::delglobal("riwwiarena");
+    quest::depop(282098);
     quest::depop();
  }    
   plugin::return_items(\%itemcount);

@@ -1,3 +1,8 @@
+## QuestUpdater.exe
+my $Freeport = quest::saylink("deliver to freeport", 0, "Freeport");
+my $deliver = quest::saylink("deliver to freeport", 0, "deliver");
+my $mail = quest::saylink("what mail", 0, "mail");
+my $interested = quest::saylink("I am interested", 0, "interested");
 #############
 #Quest Name: Bard Mail Quest
 #Author: RealityIncarnate
@@ -7,19 +12,19 @@
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-quest::say("Hail, $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
+plugin::Whisper("Hail, $name - Are you $interested in helping the League of Antonican Bards by delivering some $mail?");
 }
 
 if($text=~/what mail/i){
-quest::say("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you [interested]?");
+plugin::Whisper("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you $interested?");
 }
 
 if($text=~/I am interested/i){
-quest::say("I have messages that need to go to - well, right now I have one that needs to go to Freeport.  Will you [deliver] mail to [Freeport] for me?");
+plugin::Whisper("I have messages that need to go to - well, right now I have one that needs to go to Freeport.  Will you $deliver mail to $Freeport for me?");
 }
 
 if($text=~/deliver to freeport/i){
-quest::say("Take this letter to Felicity Starbright. You can find her at the bard guild hall. I'm sure she will compensate you for your trouble.");
+plugin::Whisper("Take this pouch of mail to Ton Twostring. You can find him at the bard guild hall. I'm sure he will compensate you for your trouble.");
 quest::summonitem("18164");
 }
 

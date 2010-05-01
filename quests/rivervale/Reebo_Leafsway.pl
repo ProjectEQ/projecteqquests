@@ -30,7 +30,7 @@ if ($text=~/acknowledgment/i) {
   quest::emote("Reebo Leafsway shakes his head sadly");
   quest::say("Poor old [Shakey] just isn't what he used to be.");
 }
-if($text=~/trail to Karana/i){
+if($text=~/trail to Karana's wisdom/i){
 quest::say("Good.  First you should learn that Karana's work is just that..  work.  Karana provides us with the tools but it is by the sweat of our brows that we prosper.  Common sense and hard work are two things that are highly prized by our people.  Time for you to sweat. young one.  Take this crate of carrots over to Blinza Toepopal in the Fool's Gold.  They need our finest carrots for Mayor Gubbin's stew.  When you return I will teach you a lesson of the Rainkeeper.");
 quest::summonitem(13971); 
   }

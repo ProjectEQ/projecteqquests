@@ -32,6 +32,12 @@ if ($text=~/riwwi/i) {
    quest::say("Riwwi has to be the most interesting of all of the city areas. You see, this is where the coliseum is located. Now, we are not completely aware of how it was used before this invading army took up residence in the area, but now it is used for the merciless slaughter of the nihil. Early reports from our scout, Reyna, indicate that the slaves in the area would not interact with her until she proved herself. How she was able to do this I am not sure, but I would suggest trying to find something of Reyna's while I go over my Riwwi information. Come back to me when you find something.");
 }
 }
+if ($text=~/ferubi/i) {
+  if (defined $qglobals{bic} && $qglobals{bic} == 9) {
+  quest::say("The area called Ferubi was once a Taelosian temple. Now it is a place that reeks of pain and suffering. The invading army has desecrated the temple and the slaves within endure unimaginable torture. Based on the information our scout Smith Rondo sent to me before his disappearance, the invaders use this area to craft weaponry and conduct strange experiments. Smith's ability to sneak in and out of places quickly made him the ideal choice for this job, but like most of our other scouts he eventually got caught trying to reveal a vital piece of information. We have confirmed that he is still alive and I need you to go find him and give him this. It is a special farstone attuned to his aura so only he can use it. Please make haste in your mission, but be careful. You are entering the lion's den and if you are caught, I cringe to think what will happen.");
+  quest::summonitem(67519);
+}
+}
 }
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67397 => )) {
@@ -70,5 +76,10 @@ sub EVENT_ITEM {
    quest::summonitem(67518);
    }
    }
+if (plugin::check_handin(\%itemcount, 67520 => )) {
+    if (defined $qglobals{bic} && $qglobals{bic} == 9) {
+    quest::say("Ah. Glad to see you return and report that you found Smith. Let me see, what does it say here . . . oh my, I can't believe this. These beings are truly insane. This is a detailed account of the experiments the Muramites have been conducting on the natives and on Smith. If what is listed here is true, we must find out more about this. It says that this is one of two reports he wrote, so we must assume he still has the other one on him. It also says here that the weapon master has access to the mountain area that leads to a secret way into the temples where they conduct these experiments. Oh, poor Smith. As soon as he figured out what was going on he documented it, hoping that he could somehow get it back to us without them finding out. Hm . . . here at the bottom he gives details about the weapon master. Seems he only enters the Ferubi area to fix the weapons that his four elite guards use. Knowing this, I am sure we can trick him into appearing. You must return to Ferubi and find his elite guards and collect a different weapon from each of them, but remember the weapon has to be damaged. Sounds like this is pretty durable stuff they use, so it may take some time to accomplish this. Either way, once it is done I would suggest giving the pieces to Smith and asking him to help.");
+}
+}
 plugin::return_items(\%itemcount);
 }

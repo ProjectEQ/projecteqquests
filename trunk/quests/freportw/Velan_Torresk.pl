@@ -1,7 +1,7 @@
 ############################################
 # ZONE: West Freeport (freportw)
 # DATABASE: PEQ-YKESHA-beta1
-# LAST EDIT DATE: November 9, 2007
+# LAST EDIT DATE: May 6, 2010
 # VERSION: 1.1
 # ORIGIONAL QUEST BY: PEQ Team
 # DEVELOPER: MWMDRAGON, Congdar
@@ -20,7 +20,6 @@
 # Snake Fang ID-13067
 # Bone Chips ID-13073
 # White Training Sash ID-10130
-# Orange Headband ID-10112
 # Giant Snake Rattle ID-13058
 # Deathfist Slashed Belt ID-13916
 # Desert Tarantula Chitin ID-20901
@@ -43,10 +42,10 @@ sub EVENT_SAY {
    if($text=~/Hail/i) {
       quest::say("Greetings. $name !  I am Velan Torresk of the Ashen Order.  I am in charge of training the newest members of our clan. and helping them advance their skills and rank.  When members perform certain tasks on behalf of the Order. they advance to a higher rank in our clan. and are awarded a special [sash].");
    }
-   if($text=~/sash/i) {
+   if($text=~/what sash/i) {
       quest::say("The Sashes of Order are given out by the various trainers of our clan.  I give out the [white training sash] and the [yellow Sash of Order]. and [Reyia] is in charge of the [orange and red sashes].");
    }
-   if($text=~/deathfist orcs/i || $text=~/orcs/i) {
+   if($text=~/orcs/i) {
       quest::say("The Deathfist Orcs are a large tribe of Orcs who live out in the desert. They are constantly sending small raiding parties and scouts to attack Freeport and its citizens. ");
    }
    # Requires Kindly Faction for Sash Quests
@@ -77,13 +76,13 @@ sub EVENT_ITEM {
       quest::summonitem("10130");
       quest::exp("100");
       # Faction Ashen Order ID-12
-      quest::faction("12","1");
+      quest::faction("12","2");
       # Faction Knights of Truth ID-184
-      quest::faction("184","1");
+      quest::faction("184","2");
       # Faction Silent Fist Clan ID-300
-      quest::faction("300","1");
+      quest::faction("300","2");
    }
-   # White Training Sash ID-10130 - Giant Snake Rattle ID-13058 - Desert Tarantula Chitin ID-20901
+   # White Training Sash ID-10130 - Giant Snake Rattle ID-13058 - Deathfist Slashed Belt ID-13916 - Desert Tarantula Chitin ID-20901
    # No need to check faction again since they must have the White Training Sash
    elsif(plugin::check_handin(\%itemcount, 10130=> 1, 13058 => 1, 13916 => 1, 20901 => 1)) {
       quest::say("'Ah, well done, $name. You have proven that you are a very skillful fighter and it is a honor to have you as a member of the Ashen Order. On behalf of Master Closk, and under the watchful eyes of Quellious, I present you, $name, with this, the yellow Sash of Order. Go out and make us proud.");
@@ -92,11 +91,11 @@ sub EVENT_ITEM {
       quest::summonitem("10131");
       quest::exp("200");
       # Faction Ashen Order ID-12
-      quest::faction("12","2");
+      quest::faction("12","4");
       # Faction Knights of Truth ID-184
-      quest::faction("184","2");
+      quest::faction("184","4");
       # Faction Silent Fist Clan ID-300
-      quest::faction("300","2");
+      quest::faction("300","4");
    }
    else {
       #do all other handins first with plugin, then let it do disciplines

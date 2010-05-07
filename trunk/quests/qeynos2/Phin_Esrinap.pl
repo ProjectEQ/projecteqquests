@@ -1,7 +1,7 @@
 ############################################
 # ZONE: North Qeynos (qeynos2)
 # DATABASE: PEQ-YKESHA-beta1
-# LAST EDIT DATE: September 14, 2007
+# LAST EDIT DATE: May 6, 2010
 # VERSION: 1.1
 # DEVELOPER: MWMDRAGON, Congdar
 #
@@ -85,22 +85,22 @@ sub EVENT_ITEM {
       quest::say("Good job, $name, keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
       quest::summonitem("10110");
       # Silent Fist Clan faction
-      quest::faction("300","1");
+      quest::faction("300","5");
       # Guards of Qeynos faction
-      quest::faction("135","1");
+      quest::faction("135","5");
       # Ashen Order faction
-      quest::faction("12","1");
+      quest::faction("12","5");
       quest::exp("100");
    }
    # Has the items but not the required faction for the White Headband
    elsif(plugin::check_handin(\%itemcount, 13789 => 4)) {
       quest::say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
       # Silent Fist Clan faction
-      quest::faction("300","1");
+      quest::faction("300","2");
       # Guards of Qeynos faction
-      quest::faction("135","1");
+      quest::faction("135","2");
       # Ashen Order faction
-      quest::faction("12","1");
+      quest::faction("12","2");
    }
    # Yellow Headband ID-10111 requires three Putrid Rib Bone ID-13722 and the White Headband ID-10110
    # We don't need to check faction again because they must have the White Headband

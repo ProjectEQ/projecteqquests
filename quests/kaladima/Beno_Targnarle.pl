@@ -9,10 +9,26 @@ if($text=~/i want to exterminate the rats/i){
 quest::say("Very good!  I shall reward you for every four giant rat pelts returned to me.  And be on the lookout for a [metal rat]!");
 }
 if($text=~/what metal rat/i){
-quest::say("I cannot tell you how many reports I have heard of metal rats in Kaladim.  I first thought it was a vision obtained from having too many Tumpy Tonics. but Furtog himself is said to have seen them.  If you ever catch sight of the little metal beast. give chase!!  Return its metal carcass to me and I shall reward you."); }
+quest::say("I cannot tell you how many reports I have heard of metal rats in Kaladim.  I first thought it was a vision obtained from having too many Tumpy Tonics. but Furtog himself is said to have seen them.  If you ever catch sight of the little metal beast. give chase!!  Return its metal carcass to me and I shall reward you."); 
+}
+if ($text=~/doran vargnus/i) {
+  quest::say("Doran resides on an island in the Ocean of Tears. The island is filled with beautiful maidens. I could think of worse places to live.");
+}
 }
 
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 13282 =>1 )) {
+  quest::say("I thank you, my friend. I was to destroy this metal monster months ago. I could never find him. Please accept this reward for such good service. Oh yes.. And take this card to a man named [Doran Vargnus]. He is a blacksmith. I am sure he will reward you with one of his finest suits of armor. Perhaps you may now assist me in an [important Stormguard matter].");
+  quest::exp(500);
+  quest::ding();
+  quest::faction( 314,3 );
+  quest::faction( 169,3 );
+  quest::faction( 219,3 );
+  quest::faction( 215,3 );
+  quest::faction( 57,-5 );
+  quest::givecash(6,0,0,0);
+  quest::summonitem(13995);
+}
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);

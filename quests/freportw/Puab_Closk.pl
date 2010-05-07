@@ -1,7 +1,7 @@
 ############################################
 # ZONE: West Freeport (freportw)
 # DATABASE: PEQ-Velious
-# LAST EDIT DATE: January 30, 2010
+# LAST EDIT DATE: May 6, 2010
 # VERSION: 1.1
 # BASE QUEST BY: PEQ Team
 # DEVELOPER: MWMDRAGON, Congdar
@@ -33,6 +33,18 @@
 # Monks with good Ashen Order Faction
 #
 ############################################
+
+sub EVENT_SPAWN {
+    $x = $npc->GetX();
+    $y = $npc->GetY();
+    quest::set_proximity($x - 20, $x + 20, $y - 20, $y + 20);
+}
+
+sub EVENT_ENTER {
+    if ($ulevel == 1) {
+        quest::echo(15, "As you get your bearings, a lightly armored man that appears to be in incredible shape turns to greet you. 'Welcome traveller. I am Puab Closk. If you wish to learn the ways of the Ashen Order, read the note in your inventory and hand it to me to begin your training.'");
+    }
+}
 
 sub EVENT_SAY
 {
@@ -72,13 +84,16 @@ sub EVENT_ITEM
     # A tattered note ID-18746
     if (plugin::check_handin(\%itemcount, 18746 => 1))
     {
-        quest::ding();
-        quest::say("Welcome to the Order");
+        quest::say("Welcome to the house of the Ashen Order. We are a small guild of monks who have devoted our lives to refining our minds, souls, and physical beings to their maximum potential. Please see Brother Torresk as soon as you get a chance. He is in charge of helping our newer members begin their training. Good luck, $name.");
         # Torn Cloth Tunic ID-13507
         quest::summonitem("13507");
+        # Ashen Order Faction ID-12
+        quest::faction("12","300");
+        # Knights of Truth Faction ID-184
+        quest::faction("184","2");
+        # Silent Fist Clan Faction ID-300
+        quest::faction("300","2");
         quest::exp("100");
-        #  Ashen Order to take PC to Kindly
-        quest::faction(12,550);
     }
     # Tattered Parchment ID-28055
     elsif (plugin::check_handin(\%itemcount, 28055 => 1))
@@ -89,11 +104,11 @@ sub EVENT_ITEM
         quest::summonitem("12344");
         quest::exp("100");
         # Ashen Order Faction ID-12
-        quest::faction("12","1");
+        quest::faction("12","10");
         # Knights of Truth Faction ID-184
-        quest::faction("184","1");
+        quest::faction("184","10");
         # Silent Fist Clan Faction ID-300
-        quest::faction("300","1");
+        quest::faction("300","10");
     }
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Monk');

@@ -25,7 +25,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
-   if(($platinum == 300) && ($copper == $silver == $gold == 0))
+   if(($platinum == 300) && ($copper == 0 && $silver == 0 && $gold == 0))
    {
       if(plugin::check_handin(\%itemcount, 62632 => 1))
       {

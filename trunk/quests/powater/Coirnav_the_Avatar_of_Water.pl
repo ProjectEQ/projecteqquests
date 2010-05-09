@@ -3,14 +3,14 @@
 sub EVENT_SIGNAL {
     if($signal == 8) { #Signal rc'd when trash dies. If all trash is dead, then we can depop nameds and proceed to the last phase
 
-quest:ze(0, "A trash mob has died."); 
+quest::ze(0, "A trash mob has died."); 
 
         my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
         my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend
         my $check_trash3 = $entity_list->GetMobByNpcTypeID(216060); # - Regura Waterfiend
 
         if (!defined(check_trash1) && !defined(check_trash2) && !defined(check_trash3)) { #if all trash is down, start event
-            quest:ze(0, "All trash - or one wave of trash - has been killed"); #DEBUG
+            quest::ze(0, "All trash - or one wave of trash - has been killed"); #DEBUG
             quest::signalwith(216107,4,0);
         }
     }

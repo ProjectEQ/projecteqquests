@@ -2,18 +2,27 @@
 # Cragbeast Queen: Loop of the Lizard Slayer
 # Cragbeast Queen: Visage of the Brute
 # created by Gonner
+sub EVENT_SPAWN {
+      quest::settimer(1,1);
+}
 
+sub EVENT_TIMER {
+   if ($timer == 1) {
+     $npc->SetAppearance(1);
+     quest::stoptimer(1);
+}
+}
 sub EVENT_SAY {
 # Lodestar #
 
 if($text=~/hail/i){
-
+quest::emote("spits out a mouthful of brew.");
 quest::say("Blast ye, $name! For the love of Brell what possessed ye to sneak up on a dwarf when he's drinkin'? I thought ye were the [Cragbeast Queen] come to have me for a light snack."); 
 }
 
 if($text=~/cragbeast queen/i){
-
-quest::say("Listen to me carefully, Human. Keep a wide berth if ye value yer skin. She's got a jaw as wide as an ogre's backside and as strong as a steel trap. From what I gather from the natives, she made an appearance after the great explosion rocked this island. They say she crawled right out of the ocean if ye can believe that. Rumor has it that she's been sleepin' for ages and the blast woke her up. Now she roams the beaches at midnight. She's not angry so much as plain famished. We've been lookin' for bands of adventurers like yerself strong enough to take her down. If ye have the skills and ye manage to best the blasted lizard, come back and speak to me. There are [rewards] to be had for such bravery."); 
+quest::emote("nods knowingly and leans in close.");
+quest::say("Listen to me carefully, $race. Keep a wide berth if ye value yer skin. She's got a jaw as wide as an ogre's backside and as strong as a steel trap. From what I gather from the natives, she made an appearance after the great explosion rocked this island. They say she crawled right out of the ocean if ye can believe that. Rumor has it that she's been sleepin' for ages and the blast woke her up. Now she roams the beaches at midnight. She's not angry so much as plain famished. We've been lookin' for bands of adventurers like yerself strong enough to take her down. If ye have the skills and ye manage to best the blasted lizard, come back and speak to me. There are [rewards] to be had for such bravery."); 
 }
 
  if (($text=~/what rewards/i) && plugin::check_hasitem($client, 52111)) {
@@ -34,7 +43,7 @@ quest::say("What's this, $name? A chunk of oddly shaped flesh that ye recovered 
 } 
 
  elsif ($text=~/what rewards/i){
-
+        quest::emote("sifts through your belongings for a few moments.");
 	quest::say("Nay, friend. I don't see that ye have anything from the Cragbeast. Did ye really kill her and come seeking a reward, or are ye just pulling an old dwarf's leg?");
 	
 }
@@ -45,7 +54,9 @@ quest::say("Well, ye see. There was this friend a' mine, goes by the name of Rey
 }
 
 }
-
+sub EVENT_ITEM {
+  plugin::return_items(\%itemcount);
+}
 
 #END of FILE zone:natimbi ID:280028 -- Mudarik_Aletipper.pl
 

@@ -35,7 +35,7 @@ sub EVENT_SIGNAL {
         while ($count <= 24) {
             $randX = int(rand(55));
             $randY = int(rand(75));
-            $randZ = int(rand(30));
+            $randZ = int(rand(20));
             $randH = int(rand(260));
             $randPNX = int(rand(2));
             $randPNY = int(rand(2));
@@ -72,7 +72,7 @@ sub EVENT_SIGNAL {
         while ($count <= 26) {
             $randX = int(rand(55));
             $randY = int(rand(75));
-            $randZ = int(rand(30));
+            $randZ = int(rand(20));
             $randH = int(rand(260));
             $randPNX = int(rand(2));
             $randPNY = int(rand(2));
@@ -103,14 +103,10 @@ sub EVENT_SIGNAL {
 	    }
     }
 	if($signal == 4) {
-
-		quest::ze(0, "In signal 4 of controller!");
 		
         my $nrespawnchk = $entity_list->GetMobByNpcTypeID(216065); #Variable confirming Vamuil_of_Water is up
 
         if ($nrespawnchk) { #If up and the "last" trash mob dies then it is okay to depop nameds for next phase
-			
-			quest::ze(0, "nrespawnchk has succeeded!");
 			
       		quest::depop(216070); # Depop "tough" #Pwelon_of_Vapor
       		quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
@@ -168,8 +164,8 @@ sub EVENT_TIMER {
     	quest::depop(216094);
 
     	quest::delglobal("coirnav_done"); # Reset the event variable
-		quest::setglobal("coirnav_done", 3, 7, "H2"); #DEBUG
-    	##quest::setglobal("coirnav_done", 3, 7, "H2"); # You can't attempt this again for 2 hours
+	##quest::setglobal("coirnav_done", 3, 7, "H2"); #DEBUG
+    	quest::setglobal("coirnav_done", 3, 7, "H2"); # You can't attempt this again for 2 hours
 
        	quest::delglobal("coirnav_kick"); # Delete player kickout timer check used by player.pl
        	quest::setglobal("coirnav_kick", 100, 7, "M1"); # Set player kickout timer check used by player.pl
@@ -186,7 +182,7 @@ sub EVENT_TIMER {
         while ($count <= 24) {
             $randX = int(rand(55));
             $randY = int(rand(75));
-            $randZ = int(rand(30));
+            $randZ = int(rand(20));
             $randH = int(rand(260));
             $randPNX = int(rand(2));
             $randPNY = int(rand(2));

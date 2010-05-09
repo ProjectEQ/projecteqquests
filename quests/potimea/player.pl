@@ -49,4 +49,11 @@ sub EVENT_CLICKDOOR
        	$qglobals{potb_p4_comp}=undef;
        	$qglobals{potb_p5_comp}=undef;
        	$qglobals{quarm}=undef;
-}    
+}  
+
+sub EVENT_ENTERZONE {
+	if(!defined $qglobals{time_enter} && $status < 10){
+		quest::we(15,"The earth rumbles, sky thunders, volcanoes erupt, and tidal waves crash as the Gods prepare their armies for battle. The first of the mortals have obtained the power to cross into the Plane of Time!");
+		quest::setglobal("time_enter",1,7,"F");
+	}
+}  

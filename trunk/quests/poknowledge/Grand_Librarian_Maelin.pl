@@ -18,6 +18,11 @@ sub EVENT_SAY {
 			$client->Message(4,"You receive a character flag!");
 		}
 	}
+	if (plugin::check_hasitem($client, 29165)){
+		if ($text=~/Hail/i) {
+			quest::say("The Quintessence! Oh my this is amazing! I have come into contact with Chronographer Muon in the realm of innovation. Go to him, show him you have the power to activate machine. I shall meet you there, this I must see!");
+		}
+	}
 
 
 {

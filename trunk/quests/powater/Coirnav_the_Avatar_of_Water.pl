@@ -9,6 +9,11 @@ quest::ze(0, "A trash mob has died.");
         my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend
         my $check_trash3 = $entity_list->GetMobByNpcTypeID(216060); # - Regura Waterfiend
 
+		quest::ze(0, "Values in order");
+		quest::ze(0, $check_trash1);
+		quest::ze(0, $check_trash2);
+		quest::ze(0, $check_trash3);
+
         if (!defined(check_trash1) && !defined(check_trash2) && !defined(check_trash3)) { #if all trash is down, start event
             quest::ze(0, "All trash - or one wave of trash - has been killed"); #DEBUG
             quest::signalwith(216107,4,0);

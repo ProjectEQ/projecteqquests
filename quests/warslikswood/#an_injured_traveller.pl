@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if ($text=~/welgaz sent me/i) {
+  if ($text=~/ixthal sent me/i) {
     quest::say("Oh, has he now? I can't return yet, I don't have the strength. If you were to [help] me I think I might be able to make it back though.");
   }
   if ($text=~/help/i) {

@@ -1,4 +1,7 @@
 sub EVENT_SAY {
+  if (($text=~/hail/i) && ($ulevel <= 64)) {
+     quest::say("Well, hello traveler. Are you enjoying your stay on this wonderful ship? It is truly a wonder, isn't it? While I can see you are on the path to becoming a great adventurer, I sense that you are not yet powerful enough to help me with a task I need done. Return to me when you have experienced the world a little more.");
+     }
   if (($text=~/hail/i) && ($ulevel >= 65)) {
     quest::say("Greetings adventurer, have you come to explore this new [continent] we recently discovered?");
     quest::setglobal("bic",1,5,"F");

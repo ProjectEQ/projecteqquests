@@ -1,5 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
+    quest::say("I don't mean to be rude, but I am really busy at the moment. Unless you have something important to tell me, I must ask that you leave me be.");
+}
+
+ if ($text=~/hail/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 1) {
     quest::say("Greetings. You must be one of the adventurers that Fezbin told me about. It is a pleasure to meet such a brave individual. Where are my manners? My name is Taminoa Bialu and I compile all the information from our scouts in the [city] area of Taelosia.");
 }

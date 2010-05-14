@@ -13,12 +13,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 62002 => 1)) {#Worn Trinket
     quest::say("Ah! This is most excellent. I was looking for this piece. Here, take this for your troubles.");#text made up
-    quest::exp(5117580);
+    quest::exp(517580);
     quest::givecash(0,0,0,14);#14pp
   }
   elsif(plugin::check_handin(\%itemcount, 62001 => 1)) {#Ruined Trinket
     quest::say("Ah! This is most excellent. I was looking for this piece. Here, take this for your troubles.");#text made up
-    quest::exp(2558790);
+    quest::exp(558790);
     quest::givecash(0,0,0,7);#7pp
   }
   else {

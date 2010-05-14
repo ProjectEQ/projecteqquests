@@ -4,7 +4,6 @@ sub EVENT_CLICKDOOR {
         quest::forcedooropen(8);
       }
       elsif(plugin::check_hasitem($client, 20511)) {
-        $client->KeyRingAdd(20511);
         quest::forcedooropen(8);
        }
       elsif(plugin::check_hasitem($client, 17274)) {
@@ -17,7 +16,6 @@ sub EVENT_CLICKDOOR {
            quest::forcedooropen(10);
          }
          elsif(plugin::check_hasitem($client, 20513)) {
-           $client->KeyRingAdd(20513);
            quest::forcedooropen(10);
           }
          elsif(plugin::check_hasitem($client, 17274)) {
@@ -30,7 +28,6 @@ sub EVENT_CLICKDOOR {
               quest::forcedooropen(11);
             }
             elsif(plugin::check_hasitem($client, 20512)) {
-              $client->KeyRingAdd(20512);
               quest::forcedooropen(11);
              }
             elsif(plugin::check_hasitem($client, 17274)) {
@@ -43,7 +40,6 @@ sub EVENT_CLICKDOOR {
            quest::forcedooropen(35);
          }
          elsif(plugin::check_hasitem($client, 20515)) {
-           $client->KeyRingAdd(20515);
            quest::forcedooropen(35);
           }
          elsif(plugin::check_hasitem($client, 17274)) {
@@ -56,7 +52,6 @@ sub EVENT_CLICKDOOR {
            quest::forcedooropen(40);
          }
          elsif(plugin::check_hasitem($client, 20514)) {
-           $client->KeyRingAdd(20514);
            quest::forcedooropen(40);
           }
          elsif(plugin::check_hasitem($client, 17274)) {
@@ -69,7 +64,6 @@ sub EVENT_CLICKDOOR {
            quest::forcedooropen(46);
          }
          elsif(plugin::check_hasitem($client, 20516)) {
-           $client->KeyRingAdd(20516);
            quest::forcedooropen(46);
           }
          elsif(plugin::check_hasitem($client, 17274)) {

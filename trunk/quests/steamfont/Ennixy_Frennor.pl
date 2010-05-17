@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	if ($text=~/hate be my guide/i){
 		quest::say("Very well.  I know what you seek.  Find Crusader Swiftmoon and slay him!");#text made up
 		#Taking a bit of a guess here on the spawn location.  It might need to be tweaked.
-		quest::uniquespawn(56150, 0, 0, -836, 1385, -110);
+		quest::unique_spawn(56150, 0, 0, -836, 1385, -110,0);
 }
   if($text=~/wormwood/i) {
     quest::say("Wormwood? Why do you want that? OH nevermind. Here! Take it and leave me alone! You're wasting my valuable time!");

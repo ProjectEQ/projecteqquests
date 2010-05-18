@@ -51,61 +51,7 @@ sub EVENT_ITEM {
       This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
       [ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
       (CTRL+F) to find the next npc for your basic training.</c>"); 
-  }elsif (plugin::check_handin(\%itemcount, 6011 => 1)) {      # Rusty Mace 
-    quest::summonitem(6003); 
-    quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using."); 
-    quest::say("There you go. That should work much better."); 
-   quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
-      weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
-      This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
-      $ALT+Q to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
-      (CTRL+F) to find the next npc for your basic training.</c>"); 
-   }elsif (plugin::check_handin(\%itemcount, 6016 => 1)) {      # Rusty Morning Star 
-    quest::summonitem(6008); 
-    quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using."); 
-    quest::say("There you go. That should work much better."); 
-   quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
-      weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
-      This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
-      $ALT+Q to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
-      (CTRL+F) to find the next npc for your basic training.</c>"); 
-   }elsif (plugin::check_handin(\%itemcount, 5013 => 1)) {      # Rusty Short Sword 
-    quest::summonitem(5001); 
-    quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using."); 
-    quest::say("There you go. That should work much better."); 
-   quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
-      weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
-      This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
-      $ALT+Q to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
-      (CTRL+F) to find the next npc for your basic training.</c>"); 
-   }elsif (plugin::check_handin(\%itemcount, 5021 => 1)) {      # Rusty Scimitar 
-    quest::summonitem(5009); 
-    quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using."); 
-    quest::say("There you go. That should work much better."); 
-   quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
-      weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
-      This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
-      $ALT+Q to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
-      (CTRL+F) to find the next npc for your basic training.</c>"); 
-   }elsif (plugin::check_handin(\%itemcount, 7007 => 1)) {      # Rusty Dagger 
-    quest::summonitem(7001); 
-    quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using."); 
-    quest::say("There you go. That should work much better."); 
-   quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
-      weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
-      This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
-      $ALT+Q to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
-      (CTRL+F) to find the next npc for your basic training.</c>"); 
-   }elsif (plugin::check_handin(\%itemcount, 5019 => 1)) {      # Rusty Long Sword 
-    quest::summonitem(5002); 
-    quest::emote("Absor takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using."); 
-    quest::say("There you go. That should work much better."); 
-   quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved 
-      weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. 
-      This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window 
-      $ALT+Q to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command 
-      (CTRL+F) to find the next npc for your basic training.</c>"); 
-   } 
+  }
   elsif (plugin::check_handin(\%itemcount, 54229 => 1)) { 
     #Chunk of Bronze -> Bronze Gloomingdeep weapons 
     quest::say("Now let me see... Ah ha! Here ya go! A much better weapon to help fend off those nasties!"); 

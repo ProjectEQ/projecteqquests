@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     quest::faction(258, -30); #Priests of Marr
     quest::faction(260, -30); #Primordial Malice
   }
-  elsif(plugin::check_handin(\%itemcount, 12499 => 1, 1369 => 1, 19029 => 1, 1370 => 1)) { #Voucher of Service to Naythox, Swiftmoon's Head, Receipt for Provisions Crate, Disciple Symbol of Innoruuk
+  elsif(plugin::check_handin(\%itemcount, 12499 => 1, 12498 => 1, 19029 => 1, 1370 => 1)) { #Voucher of Service to Naythox, Swiftmoon's Head, Receipt for Provisions Crate, Disciple Symbol of Innoruuk
     quest::say("Your devotion to the ideals of hatred and your service to our King Naythox Thex has proven your usefulness within these spires and within our great city. I award you the Regent Symbol of Innoruuk. Congratulations, Regent $name!");
     quest::summonitem(1371);#Regent Symbol of Innoruuk
     quest::exp(8000);

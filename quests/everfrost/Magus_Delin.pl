@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if($ulevel >= 15) {
-    if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
+    if(plugin::check_hasitem($client, 41000) || $client->KeyRingCheck(41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
         quest::say("You're going to need to have a fair amount of faith in me and my friends. I make it a policy to tell all of the travelers that come to me that this is not a perfected magic and probably never will be. The magic we are using is, in my opinion, not of Norrathian origins. Or perhaps I'm simply an eccentric who hopes there is a greater force out there that is granting us the use of new magics. Anyway, enough chatter. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Butcherblock], [Commonlands], [Nedaria's Landing], [North Ro], or [South Ro]. Please be still as I do this.");
       }

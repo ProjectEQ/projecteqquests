@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if($ulevel >= 15) {
-    if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
+    if(plugin::check_hasitem($client, 41000) || $client->KeyRingCheck(41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
         quest::say("Nice to see you, $name. Am I safe in assuming you wish to travel today? I do admire the adventurers that so willingly take the risk involved with this spell. I enjoy knowing all of my hard work is not in vain. There's only been a few unfortunate folk that haven't, uhm, been so lucky. Frightful mess. I'll be sure to be extra careful where you are concerned. Honestly. A dark elf's word is . . . Well, forget that. He he. Tell me where you would like to go and I will send you there. I can send you to any of the other camps in [Butcherblock], [Commonlands], [Everfrost], [Nedaria's Landing], or [North Ro].");
       }

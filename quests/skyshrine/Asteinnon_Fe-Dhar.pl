@@ -78,8 +78,8 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I do not know you well enough to entrust such an item to you, yet.");
+    plugin::return_items(\%itemcount);
   }
 }
 
 #END of FILE Zone: skyshrine ID:114263 -- Asteinnon_Fe`Dhar
-

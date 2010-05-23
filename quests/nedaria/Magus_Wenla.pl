@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if($ulevel >= 15) {
-    if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
+    if(plugin::check_hasitem($client, 41000) || $client->KeyRingCheck(41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
         quest::say("Greetings, $name. I can provide travel to other magi in [Butcherblock], [Commonlands], [Everfrost], [North Ro], and [South Ro]. I can also send you to [Natimbi], the shores of Taelosia, or to the Queen of Thorns in [Abysmal Sea]. Just tell me where you'd like to go.");
       }

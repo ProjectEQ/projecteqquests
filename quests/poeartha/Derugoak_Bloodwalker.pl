@@ -24,9 +24,9 @@ sub EVENT_HP {
 
 	if ($hpevent == 50) { 
 
-           quest::spawn2(218040,0,0,$x,$y,$z,$h);
+           quest::spawn2(218023,0,0,$x,$y,$z,$h);
 
-           quest::spawn2(218040,0,0,$x,$y,$z,$h);
+           quest::spawn2(218023,0,0,$x,$y,$z,$h);
 
            quest::setnexthpevent(15);
 
@@ -38,13 +38,13 @@ sub EVENT_HP {
 
 	if ($hpevent == 15) {	
 
-           quest::spawn2(218040,0,0,$x,$y,$z,$h);
+           quest::spawn2(218023,0,0,$x,$y,$z,$h);
 
-           quest::spawn2(218040,0,0,$x,$y,$z,$h);
+           quest::spawn2(218023,0,0,$x,$y,$z,$h);
 
-           quest::spawn2(218040,0,0,$x,$y,$z,$h);	
+           quest::spawn2(218023,0,0,$x,$y,$z,$h);	
 
-           quest::spawn2(218040,0,0,$x,$y,$z,$h);				
+           quest::spawn2(218023,0,0,$x,$y,$z,$h);				
 
 	}
 

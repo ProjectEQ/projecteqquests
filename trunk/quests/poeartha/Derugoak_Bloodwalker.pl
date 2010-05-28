@@ -22,7 +22,7 @@ quest::stoptimer(31);
 
 sub EVENT_HP {
 
-	if ($hpevent == 50) { 
+	if ($hpevent == 50) { # Spawn 2 A_Mangled_Vegerog
 
            quest::spawn2(218023,0,0,$x,$y,$z,$h);
 
@@ -36,7 +36,7 @@ sub EVENT_HP {
 
 	
 
-	if ($hpevent == 15) {	
+	if ($hpevent == 15) {	# Spawn 4 A_Mangled_Vegerog
 
            quest::spawn2(218023,0,0,$x,$y,$z,$h);
 
@@ -58,4 +58,5 @@ quest::signalwith(218094,1,1);
 
 quest::signalwith(218091,3,1);
 
+quest::depopall(218023); # Depop all A_Mangled_Vegerog
 }

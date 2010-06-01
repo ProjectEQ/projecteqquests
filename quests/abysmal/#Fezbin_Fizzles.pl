@@ -37,7 +37,7 @@ if ($text=~/news/i) {
     quest::say("With half of our numbers back home dealing with the investigation of the recently unearthed dungeons and the rest here on the ship handling what information we have and trying to decide the best plan of action, Morden figured it might be a good idea to ask some courageous individuals to assist us. Morden has authorized some form of valuable reward for those who can bring us any information regarding our missing scouts or the scouts themselves. Seeing as how you have been so interested in all I have said so far, do you think you would be interested in helping the Wayfarers Brotherhood?");
     }
     }
-    if ($text=~/interested in helping the brotherhood/i) {
+    if ($text=~/interested in helping the wayfarers brotherhood/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 1) {
     quest::say("Most excellent. Please take these as a token of our gratitude. It is not much to look at now, but by helping us you will find ways to make this stone more [powerful] when combining it with certain items in that sealer. Please take the time to find Taminoa Bialu, Vaifan Cogswin, and L`diava Rexxen. They are all located on this ship. Each of them is responsible for information from certain areas of the continent. Taminoa has all the information on the city area, Vaifan keeps the information on the mountain passes, and L`diava collects information on the temple areas. If you truly wish to help us, talk to some or all of them and they will help guide you to the right path. When you have finished helping them all, return to me and I shall give you the reward that has been approved by Morden.");
     quest::summonitem(67512);

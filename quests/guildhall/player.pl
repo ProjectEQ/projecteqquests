@@ -101,7 +101,7 @@ sub EVENT_POPUPRESPONSE {
 		#quest::selfcast(6180);
 	}
 	if($popupid == 5733) {
-		#quest::selfcast(5733);
+		quest::selfcast(5733);
 	}
 	if($popupid == 8237) {
 		#quest::selfcast(8237);
@@ -119,7 +119,7 @@ sub EVENT_POPUPRESPONSE {
 		quest::movepc(160,-545,645,1,0);
 	}
 	if($popupid == 20543) {
-		#quest::selfcast(20543);
+		quest::selfcast(20543);
 	}
 	if($popupid == 21986) {
 		#quest::selfcast(21986);

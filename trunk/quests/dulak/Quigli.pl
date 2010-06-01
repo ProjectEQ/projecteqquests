@@ -19,7 +19,6 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_ATTACK { #NPC is not ready. Dummy event to respawn this NPC.
-  quest::spawn2(225231,0,0,$x,$y,$z,$h);
+sub EVENT_AGGRO { #NPC event is not ready.
   quest::depop();
 }

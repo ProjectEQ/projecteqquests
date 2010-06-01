@@ -37,14 +37,13 @@ if ($text=~/riwwi/i) {
 }
 }
 if ($text=~/ferubi/i) {
-  if (defined $qglobals{bic} && $qglobals{bic} == 9) {
-  quest::say("The area called Ferubi was once a Taelosian temple. Now it is a place that reeks of pain and suffering. The invading army has desecrated the temple and the slaves within endure unimaginable torture. Based on the information our scout Smith Rondo sent to me before his disappearance, the invaders use this area to craft weaponry and conduct strange experiments. Smith's ability to sneak in and out of places quickly made him the ideal choice for this job, but like most of our other scouts he eventually got caught trying to reveal a vital piece of information. We have confirmed that he is still alive and I need you to go find him and give him this. It is a special farstone attuned to his aura so only he can use it. Please make haste in your mission, but be careful. You are entering the lion's den and if you are caught, I cringe to think what will happen.");
+    quest::say("The area called Ferubi was once a Taelosian temple. Now it is a place that reeks of pain and suffering. The invading army has desecrated the temple and the slaves within endure unimaginable torture. Based on the information our scout Smith Rondo sent to me before his disappearance, the invaders use this area to craft weaponry and conduct strange experiments. Smith's ability to sneak in and out of places quickly made him the ideal choice for this job, but like most of our other scouts he eventually got caught trying to reveal a vital piece of information. We have confirmed that he is still alive and I need you to go find him and give him this. It is a special farstone attuned to his aura so only he can use it. Please make haste in your mission, but be careful. You are entering the lion's den and if you are caught, I cringe to think what will happen.");
   quest::summonitem(67519);
-}
+
 }
 }
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 67397 => )) {
+  if (plugin::check_handin(\%itemcount, 67397 =>1 )) {
     if (defined $qglobals{bic} && $qglobals{bic} == 1) {
     quest::say("Yes. This is exactly what I needed. Excellent job. Okay, now give me one moment to decipher this . . . hm. It seems that just before he was captured he was trying to communicate with the slaves in the area. The text is very hard to make out, but it looks like he may have been trying to get into the main headquarters. He was interacting with a particular slave named Sislono Nislan. This slave promised him a way into the headquarters only if he promised to rid the area of a tyrant, named Tixxrt. The rest of the parchment is undecipherable. I would suggest finding this slave and showing him this to see if he knows what happened.");
     quest::summonitem(67700);
@@ -80,9 +79,36 @@ sub EVENT_ITEM {
    quest::summonitem(67518);
    }
    }
-if (plugin::check_handin(\%itemcount, 67520 => )) {
+if (plugin::check_handin(\%itemcount, 67520 =>1 )) {
     if (defined $qglobals{bic} && $qglobals{bic} == 9) {
     quest::say("Ah. Glad to see you return and report that you found Smith. Let me see, what does it say here . . . oh my, I can't believe this. These beings are truly insane. This is a detailed account of the experiments the Muramites have been conducting on the natives and on Smith. If what is listed here is true, we must find out more about this. It says that this is one of two reports he wrote, so we must assume he still has the other one on him. It also says here that the weapon master has access to the mountain area that leads to a secret way into the temples where they conduct these experiments. Oh, poor Smith. As soon as he figured out what was going on he documented it, hoping that he could somehow get it back to us without them finding out. Hm . . . here at the bottom he gives details about the weapon master. Seems he only enters the Ferubi area to fix the weapons that his four elite guards use. Knowing this, I am sure we can trick him into appearing. You must return to Ferubi and find his elite guards and collect a different weapon from each of them, but remember the weapon has to be damaged. Sounds like this is pretty durable stuff they use, so it may take some time to accomplish this. Either way, once it is done I would suggest giving the pieces to Smith and asking him to help.");
+quest::setglobal("bic",10,5,"F");
+}
+}
+if (plugin::check_handin(\%itemcount, 67526 =>1 )) {
+    if (defined $qglobals{bic} && $qglobals{bic} == 11) {
+    quest::say("You have now finished the scouting of the city.  Take this as a reward.  If you are unable to use the result please hand it to me and I will fix your problem");
+    quest::summonitem(67527);
+}
+}
+ if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
+	if (($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") ||  ($class eq "Shadowknight")) {
+    		quest::summonitem(67654);
+}
+}
+if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
+if (($class eq "Warrior") || ($class eq "Monk") || ($class eq "Berserker")  || ($class eq "Rogue"))  {
+           quest::summonitem(67653);
+}
+}
+if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
+if (($class eq "Cleric") || ($class eq "Shaman") || ($class eq "Druid")) {
+           quest::summonitem(67655);  
+}
+}
+if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
+if (($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Enchanter")  || ($class eq "Magician")) {
+           quest::summonitem(67656);
 }
 }
 plugin::return_items(\%itemcount);

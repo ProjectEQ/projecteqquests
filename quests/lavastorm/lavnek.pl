@@ -7,5 +7,12 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-   quest::movepc(25,472.29,2952.41,-11.39);
+    if(($client->GetClientVersionBit() & 28)!= 0 && $client->Admin() > 100)
+	{
+		quest::MovePCInstance(25, 1, 778.8, 2226.3, 22.4, 150.4);
+	}
+	else
+	{
+		quest::movepc(25,472.29,2952.41,-11.39);
+	}
 } 

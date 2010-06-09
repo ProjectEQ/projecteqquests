@@ -3,10 +3,14 @@ sub EVENT_SAY {
     if (quest::istaskactivityactive(171,4)) { #Alchemy Collect Step 5
       quest::say("You've been a great help already. I sense that you have greater tasks to attend to and there are fledglings about that can continue your work. As a reward for you assistance, please allow me to teach you the secret of filtering the Taelosian sludge.");
       $client->Message(15,"Lita leans forward and whispers directly in you ear. What she tells you makes sense and you believe that you can now filter the sludge. All you need to do is put the Sample of Taelosian Sludge into your medicine bag and combine. This will return a Sample of Filtered Taelosian Sludge. You believe that with continued work on filtering the sludge you may be able to improve your results.");
+      quest::LearnRecipe(1396); #Sample of Filtered Highland Sludge
+      quest::LearnRecipe(1397); #Sample of Filtered Taelosian Sludge
     }
     elsif (quest::istaskactivityactive(172,4)) { #Alchemy Freebie Step 5
       quest::say("You've been a great help already. I sense that you have greater tasks to attend to and there are fledglings about that can continue your work. As a reward for you assistance, please allow me to teach you the secret of filtering the Taelosian sludge.");
       $client->Message(15,"Lita leans forward and whispers directly in you ear. What she tells you makes sense and you believe that you can now filter the sludge. All you need to do is put the Sample of Taelosian Sludge into your medicine bag and combine. This will return a Sample of Filtered Taelosian Sludge. You believe that with continued work on filtering the sludge you may be able to improve your results.");
+      quest::LearnRecipe(1396); #Sample of Filtered Highland Sludge
+      quest::LearnRecipe(1397); #Sample of Filtered Taelosian Sludge
     }
     else {
       quest::say("May your ancestors watch over us all. I am glad to see you. I have need of assistance. I only ask because there is much to do and much at stake. Can you help me with some simple alchemical [chores]?");

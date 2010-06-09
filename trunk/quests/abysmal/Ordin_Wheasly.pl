@@ -5,12 +5,16 @@ sub EVENT_SAY {
       quest::emote("glances around.");
       quest::say("Take a quick peek into my recipe book. This is the way you grind the Taelosian Wheat into flour.");
       $client->Message(15, "He quickly shows you the last page of his coveted recipe book. It only takes you a moment to see what the trick is. From now on, all you have to do is put the Taelosian Wheat or Taelosian Mountain Wheat into your mixing bowl and combine it to get the flour. In fact, you are certain that if you work at it long enough, you can produce more usable wheat with practice.");
+      quest::LearnRecipe(2338); #Taelosian Wheat Flour
+      quest::LearnRecipe(2336); #Taelosian Mountain Wheat Flour
     }
     elsif (quest::istaskactivityactive(157,4)) { #Baking Freebie Step 5
       quest::say("You have been a big help around the kitchen! I wouldn't feel right continuing to abuse your kindness.");
       quest::emote("glances around.");
       quest::say("Take a quick peek at my recipe book. This is the way you grind Taelosian Wheat into flour.");
       $client->Message(15, "He quickly shows you the last pages of his coveted recipe book. It only takes you a moment to see what the trick is. From now on, all you have to do is put the Taelosian Wheat or Taelosian Mountain Wheat into your mixing bowl and combine it to get the flour. In fact, you are certain that if you work at it long enough, you can produce more usable wheat with practice.");
+      quest::LearnRecipe(2338); #Taelosian Wheat Flour
+      quest::LearnRecipe(2336); #Taelosian Mountain Wheat Flour
     }
     else {
       quest::say("Hello! Boy, I'm glad to see you! I really need your help. Can you help me with some simply [baking tasks]? A ship floats on its belly, you know.");
@@ -51,9 +55,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 58154 => 1)) { #
+  if (plugin::check_handin(\%itemcount, 58154 => 1)) { #Taelosian Wheat
     quest::say("Ah, yes. Here is your flour.");
-    quest::summonitem(58155,2); #
+    quest::summonitem(58155,2); #Taelosian Wheat Flour
   }
   elsif (plugin::check_handin(\%itemcount, 58059 => 4) || plugin::check_handin(\%itemcount, 58059 => 3) || plugin::check_handin(\%itemcount, 58059 => 2) || plugin::check_handin(\%itemcount, 58059 => 1)) { #Ordin's Oatmeal
     quest::say("Ah, yes. Thank you.");

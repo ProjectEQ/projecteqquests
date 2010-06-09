@@ -1,11 +1,14 @@
 sub EVENT_SPAWN {
   $start_event = undef;
+  quest::set_proximity(10, 100, 10, 100, 0, 0);
+
 }
 
 sub EVENT_PROXIMITY_SAY {
 if($start_event == undef) {
 if(plugin::check_hasitem($client, 67415)) {
   if ($text=~/i wish to enter/i) {
+  quest::say("Enter");
     quest::movegrp(281,-1741, -1078, -4);
     quest::starttimer(1,370);
     quest::starttimer(2,10);

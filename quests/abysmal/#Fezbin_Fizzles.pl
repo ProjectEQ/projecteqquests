@@ -34,7 +34,7 @@ if ($text=~/news/i) {
     }
     if ($text=~/task/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 1) {
-    quest::say("With half of our numbers back home dealing with the investigation of the recently unearthed dungeons and the rest here on the ship handling what information we have and trying to decide the best plan of action, Morden figured it might be a good idea to ask some courageous individuals to assist us. Morden has authorized some form of valuable reward for those who can bring us any information regarding our missing scouts or the scouts themselves. Seeing as how you have been so interested in all I have said so far, do you think you would be interested in helping the Wayfarers Brotherhood?");
+    quest::say("With half of our numbers back home dealing with the investigation of the recently unearthed dungeons and the rest here on the ship handling what information we have and trying to decide the best plan of action, Morden figured it might be a good idea to ask some courageous individuals to assist us. Morden has authorized some form of valuable reward for those who can bring us any information regarding our missing scouts or the scouts themselves. Seeing as how you have been so interested in all I have said so far, do you think you would be [interested in helping the Wayfarers Brotherhood]?");
     }
     }
     if ($text=~/interested in helping the wayfarers brotherhood/i) {

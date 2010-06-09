@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {
-    quest::say("Greetings Doremi! I wish I had time to chatter but my duties to the list and the Grand Librarian keep me extremely busy.");
+    quest::say("Greetings $name! I wish I had time to chatter but my duties to the list and the Grand Librarian keep me extremely busy.");
   }
   
   if ($text=~/duties/i) {

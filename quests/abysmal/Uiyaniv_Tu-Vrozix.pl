@@ -3,12 +3,16 @@ sub EVENT_SAY {
     if (quest::istaskactivityactive(162,4)) { #Poisonmaking Freebie Step 5
       quest::say("You have proven your worth. You need do no more tasks for us. You have done enough and your skills will be more useful elsewhere. Here is the secret we promised you.");
       quest::emote("retrieves a thin piece of paper from his pocket. He tells you that it is a bit of the filter that he uses for distilling Muramite blood. He waves it suddenly under your nose. You can't help but flinch at the stench, which causes him to chuckle. You recognize the smell and are able to figure out exactly what he uses to distill the poison from the blood. Figuring out the process is easy now. You also know that you can teach yourself a more effective process with enough practice.");
-      quest::emote("then continues, 'The same method will work for the material we have been calling Muramite bile, though that probably has less in common with what we know as bile.'");   
+      quest::emote("then continues, 'The same method will work for the material we have been calling Muramite bile, though that probably has less in common with what we know as bile.'");
+      quest::LearnRecipe(276); #Muramite Blood Distillate
+      quest::LearnRecipe(275); #Muramite Bile
     }
     elsif (quest::istaskactivityactive(174,4)) { #Poisonmaking Collect Step 5
       quest::say("You have proven your worth. You need do no more tasks for us. You have done enough and your skills will be more useful elsewhere. Here is the secret we promised you.");
       quest::emote("retrieves a thin piece of paper from his pocket. He tells you that it is a bit of the filter that he uses for distilling Muramite blood. He waves it suddenly under your nose. You can't help but flinch at the stench, which causes him to chuckle. You recognize the smell and are able to figure out exactly what he uses to distill the poison from the blood. Figuring out the process is easy now. You also know that you can teach yourself a more effective process with enough practice.");
       quest::emote("then continues, 'The same method will work for the material we have been calling Muramite bile, though that probably has less in common with what we know as bile.'");   
+      quest::LearnRecipe(276); #Muramite Blood Distillate
+      quest::LearnRecipe(275); #Muramite Bile
     }
     else {
       quest::say("Hello, Uiyaniv drawls as he appraises you. You may be of use to me. If you are wise enough to handle a few simple tasks, you will free me up to do more important things. Are you [willing] in making yourself useful?");

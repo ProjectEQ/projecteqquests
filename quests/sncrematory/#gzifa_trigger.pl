@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-quest::set_proximity(10, 100, 10, 100, 0, 0);
+quest::set_proximity(0, 100, 0, 100, 0, 20);
 $counter = undef;
 }
 

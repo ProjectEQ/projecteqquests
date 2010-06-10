@@ -42,22 +42,23 @@ sub EVENT_TIMER
 			quest::ze("A deafening blast rips throughout the cavern as the kobold supplies explode into a ball of fire.");
 			quest::stoptimer("explode");
 			$npc->CameraEffect(3, 6);
-			$npc->CastSpell(7477, $npc->GetID());
-			$npc->Kill();
+			#$npc->CastSpell(7477, $npc->GetID());
+			#$npc->Kill();
 		}
 	}
 }
 
 sub EVENT_ITEM 
 {
+		quest::settimer("explode", 2);
+		$npc->SetEntityVariable(1, 1);
+		$npc->SetEntityVariable(2, $client->GetID());
+
 	if(quest::istaskactivityactive(31,0) && plugin::check_handin(\%itemcount, 86011 => 1)) 
 	{
 		quest::updatetaskactivity(31,0);
 		quest::exp(200);
 		quest::ding();
-		quest::settimer("explode", 1);
-		$npc->SetEntityVariable(1, 1);
-		$npc->SetEntityVariable(2, $client->GetID());
 	}
 	else
 	{

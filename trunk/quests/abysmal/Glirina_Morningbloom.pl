@@ -49,7 +49,7 @@ sub EVENT_SAY {
     }
     if(quest::istaskactivityactive(160,3)) { #Jewelcraft Freebie Step 4
       quest::say("I am appreciative of your assistance. This task is a bit more complicated. We use a lot of silver chain in our work here, and it is always better and cheaper to make our own. If you could take the Thin Silver Wire and a Blob of Metal Polish and combine them in your Jeweler's Kit, I am certain you can create beautiful silver chain. Please return the chains to me when you are done, we have need of them.");
-      quest::summonitem(58158,20); #Thin Steel Wire
+      quest::summonitem(58157,20); #Thin Silver Wire
       quest::summonitem(58023,20); #Blob of Metal Polish
     }
   }

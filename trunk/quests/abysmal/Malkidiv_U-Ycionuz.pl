@@ -2,9 +2,13 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(161,4)) { #Pottery Freebie Step 5
       quest::say("You've been a great help already. I'd feel very guilty asking you to help out any further. There are others that can do that work for us. For all of your efforts, I'd be honored to teach you the secret of refining chunks of broken stone worker into refined Taelosian clay and chunks of broken ancient stone worker into refined ancient Taelosian clay.' Malkidiv pulls a small text from his coat and leans forward to show you a few of the pages. What he shows you seems amazingly simple once you've seen it. You think that with practice you might be able to get better results than Malkidiv gives to those that he refines clay for. Just place a single chunk of Broken Taelosian stone worker onto a pottery wheel and you will receive clump of refined Taelosian clay.");
+      quest::LearnRecipe(8647); #Clump of Refined Taelosian Clay
+      quest::LearnRecipe(8646); #Clump of Refined Ancient Taelosian Clay
     }
     elsif (quest::istaskactivityactive(175,4)) { #Pottery Collect Step 5
       quest::say("You've been a great help already. I'd feel very guilty asking you to help out any further. There are others that can do that work for us. For all of your efforts, I'd be honored to teach you the secret of refining chunks of broken stone worker into refined Taelosian clay and chunks of broken ancient stone worker into refined ancient Taelosian clay.' Malkidiv pulls a small text from his coat and leans forward to show you a few of the pages. What he shows you seems amazingly simple once you've seen it. You think that with practice you might be able to get better results than Malkidiv gives to those that he refines clay for. Just place a single chunk of Broken Taelosian stone worker onto a pottery wheel and you will receive clump of refined Taelosian clay.");
+      quest::LearnRecipe(8647); #Clump of Refined Taelosian Clay
+      quest::LearnRecipe(8646); #Clump of Refined Ancient Taelosian Clay
     }
     else {
       quest::say("Hello. Thanks for stopping by. Are you, by chance, interested in helping me with some of the more [menial tasks] I have to get done around here?");

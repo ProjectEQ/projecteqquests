@@ -41,7 +41,7 @@ sub EVENT_TIMER
 		{		
 			quest::ze(0, "A deafening blast rips throughout the cavern as the kobold supplies explode into a ball of fire.");
 			quest::stoptimer("explode");
-			$npc->CameraEffect(3, 6);
+			$npc->CameraEffect(3000, 6);
 			$npc->CastSpell(7477, $npc->GetID());
 		}
 	}

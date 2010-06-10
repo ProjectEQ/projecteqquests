@@ -15,7 +15,7 @@ sub EVENT_TIMER
 			my $c = $entity_list->GetMobID($npc->GetEntityVariable(2));
 			if($c)
 			{
-				$c->Message(0, "The fuse has been set.  -----------x");
+				$c->Message(0, "---------------------x");
 			}
 			$npc->SetEntityVariable(1, 2);
 		}
@@ -24,7 +24,7 @@ sub EVENT_TIMER
 			my $c = $entity_list->GetMobID($npc->GetEntityVariable(2));
 			if($c)
 			{
-				$c->Message(0, "The fuse burns shorter.  ------x");
+				$c->Message(0, "-----------x");
 			}
 			$npc->SetEntityVariable(1, 3);
 		}
@@ -33,15 +33,20 @@ sub EVENT_TIMER
 			my $c = $entity_list->GetMobID($npc->GetEntityVariable(2));
 			if($c)
 			{
-				$c->Message(0, "The fuse burns shorter.  --x");
+				$c->Message(0, "--x");
 			}
 			$npc->SetEntityVariable(1, 4);
 		}
 		else
 		{
-			quest::ze("A deafening blast rips throughout the cavern as the kobold supplies explode into a ball of fire.");
-			quest::stoptimer("explode");
-			$npc->CameraEffect(3, 6);
+			my $c = $entity_list->GetMobID($npc->GetEntityVariable(2));
+			if($c)
+			{
+				$c->Message(0, "boom");
+			}		
+			#quest::ze("A deafening blast rips throughout the cavern as the kobold supplies explode into a ball of fire.");
+			#quest::stoptimer("explode");
+			#$npc->CameraEffect(3, 6);
 			#$npc->CastSpell(7477, $npc->GetID());
 			#$npc->Kill();
 		}

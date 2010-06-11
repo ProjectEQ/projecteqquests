@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Greetings. We are busy here, and I have little time for pleasantries. I can sell you supplies, if you have need. I can even help you fix up that old Jeweler's [Kit] of yours. Or perhaps you are here to [assist] me with my work?");
   }
   if ($text=~/kit/i) {
-    quest::say("Ah, well, we've been working on improving our ability to work with liquid precious metals. To do that, we've had to improve our kits. We've made them a bit larger, and added some reinforcements to help them resist the heat. Neysia can make one for you, just find a turepta shell and two shimmering steel threads and hand them to me along with your Jeweler's Kit and she'll make you a new one.");
+    quest::say("Ah, well, we've been working on improving our ability to work with liquid precious metals. To do that, we've had to improve our kits. We've made them a bit larger, and added some reinforcements to help them resist the heat. I can make one for you, just find a turepta shell and two shimmering steel threads and hand them to me along with your Jeweler's Kit and I'll make you a new one."); #Changed back to original quest until Neysia is added
   }
   if ($text=~/assist/i) {
     quest::say("I haven't the time to keep up with the needs of the Wayfarers, I have more urgent matters to attend to. We have discovered a rare form of a relatively worthless mineral. Some trauma seems to have affected the local ulexite, striating it, which has given it the unusual property of image transference, as well as imbuing it with some sort of magical properties. I can only imagine the sort of magical and geologic upheaval that would be required to make these changes in ulexite! I certainly would have been a dramatic experience. Study of this material is my primary concern. I also have a duty to the Wayfarers Brotherhood. If you could attend to some of my tasks, I would be grateful. If you can relieve me of enough of these [tasks], I can continue my study of the [Shimmering Nihilite].");
@@ -59,6 +59,10 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 58209 => 4) || plugin::check_handin(\%itemcount, 58209 => 3) || plugin::check_handin(\%itemcount, 58209 => 2) || plugin::check_handin(\%itemcount, 58209 => 1)) { #Wayfarer Signet Ring
     quest::say("Ah, yes. Thank you.");
+  }
+  elsif (plugin::check_handin(\%itemcount, 63838 => 2, 62481 => 1, 17912 => 1)) { #Shimmering Steel Thread x 2, Turepta Shell, Jeweler's Kit
+    quest::say("Good work! Here is your new kit.");
+    quest::summonitem(62480); #Reinforced Jeweler's Kit
   }
   else {
     quest::say("I do not need this.");

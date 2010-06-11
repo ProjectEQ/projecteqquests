@@ -8,9 +8,12 @@ sub EVENT_SAY {
  }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 63838 =>1, 62481 =>2, 17912 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 63838 => 2, 62481 => 1, 17912 => 1)) { #Shimmering Steel Thread x 2, Turepta Shell, Jeweler's Kit
     quest::say("Good work! Here is your new kit.");
-    quest::summonitem(62480);
-   }
-   plugin::return_items(\%itemcount);
+    quest::summonitem(62480); #Reinforced Jeweler's Kit
+  }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }

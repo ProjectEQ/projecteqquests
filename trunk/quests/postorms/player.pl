@@ -1,5 +1,6 @@
 sub EVENT_CLICKDOOR
 {
+	$level_for_tier_three = 255;
 	my $d_id = ($doorid % 256);
 	if($d_id == 4)
 	{

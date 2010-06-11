@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-quest::settimer(36,2700);
+quest::settimer(36,4500);
 quest::shout("How dare you!");
 }
 
@@ -8,11 +8,6 @@ if($timer == 36) {
 	quest::stoptimer(36);
 	quest::depop;
 	}
-}
-
-sub EVENT_AGGRO {
-quest::stoptimer(36);
-quest::settimer(36, 1800);
 }
 
 sub EVENT_DEATH {

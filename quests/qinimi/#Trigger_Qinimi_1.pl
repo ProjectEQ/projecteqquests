@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
   $start_event = undef;
-  quest::set_proximity(0, 100, 0, 100, -5, 20);
+ quest::set_proximity($x-50,$x+50,$y-50,$y+50); 
 
 }
 

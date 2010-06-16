@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20612 => 1)) { #Piece of the Staff
     quest::say("I ask you to find a staff of great power and you bring me this??! A piece of the staff? You are an incompetent fool! Take this trash back and give it to Kazen so that he may punish you as he sees fit! Begone!");
     quest::summonitem(20612); #Piece of the Staff
-    quest::setglobal("NecroPre",2,1,"F");
+    quest::setglobal("NecroPre",2,5,"F");
   }
   else {
     quest::say("I have no use for this, $name.");

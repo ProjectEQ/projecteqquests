@@ -22,5 +22,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
-#EndFile: steamfont\#Biddliss_Sperandu.pl (00000)
+#EndFile: steamfont\#Biddliss_Sperandu.pl (56181)

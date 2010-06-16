@@ -20,5 +20,4 @@ sub EVENT_TIMER {
   quest::stoptimer("ShadyDepop");
   quest::depop();
 }
-
-#EndFile: qey2hh1\#Shady_Bandit.pl (00000)
+#EndFile: qey2hh1\#Shady_Bandit.pl (12185)

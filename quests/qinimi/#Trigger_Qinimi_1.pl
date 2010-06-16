@@ -10,8 +10,8 @@ if(plugin::check_hasitem($client, 67415)) {
   if ($text=~/i wish to enter/i) {
   quest::say("Enter");
     quest::movegrp(281,-1741, -1078, -4);
-    quest::starttimer(1,370);
-    quest::starttimer(2,10);
+    quest::settimer(1,370);
+    quest::settimer(2,10);
     $start_event = 1;
     }
   }
@@ -70,7 +70,7 @@ sub EVENT_SIGNAL {
    quest::stoptimer(1);
 }
   if($signal == 3) {
-  quest::starttimer(3,60);
+  quest::settimer(3,60);
   
     }
   }

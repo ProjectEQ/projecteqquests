@@ -4,6 +4,7 @@ $counter = undef;
 }
 
 sub EVENT_ENTER {
+  if (defined $qglobals{sewers} && $qglobals{sewers} == 2) {
   if(plugin::check_hasitem($client, 55608)) {
   if(plugin::check_hasitem($client, 55609)) {
   if(plugin::check_hasitem($client, 55610)) {
@@ -12,6 +13,7 @@ sub EVENT_ENTER {
   quest::spawn2(288083,0,0,1382,-2549,7,190);
   quest::spawn2(288084,0,0,1331,-2605,7,254);
   quest::spawn2(288085,0,0,1362,-2577,10,215);
+  }
 }
 }
 }

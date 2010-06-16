@@ -3,20 +3,21 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if((plugin::check_hasitem($client, 20544)) && ($Soulwhisper < 1)) { #Scythe of the Shadowed Soul
+    if((plugin::check_hasitem($client, 20544)) && !defined($qglobals{Soulwhisper})) { #Scythe of the Shadowed Soul
       quest::say("It has been a while since we have talked. You have done well in obtaining your Scythe. The time has come however for you to perform another task for me. I do not wish to waste time, so in short, I want you to collect a most powerful staff for me. I only have a piece of it as the rest has mysteriously disappeared.");
-      quest::setglobal("Soulwhisper",1,0,"F");
-    }
-    if($Soulwhisper==1) {
       quest::say("I wish to research this staff piece but first I need some special research tools. Take this note and travel to Steamfont. Find a gnome named Biddliss Sperandu and give him the note. When you obtain the research tools hand them to me.");
       quest::summonitem(9831); #Note to Biddliss
+      quest::setglobal("Soulwhisper",1,5,"F");
+    }
+    elsif(defined($qglobals{Soulwhisper})) {
+      quest::say("Don't you have a task to complete?");
     }
     else {
       quest::emote("'s eyes seem to glow as he turns to you and says, 'Leave me be if you have no reason to be here, mortal!'");
     }
   }
   if($text=~/dark arts/i) {
-    if($class == "necromancer" && $ulevel >= 50) {
+    if($class eq "Necromancer" && $ulevel >= 50) {
       quest::emote("looks you up and down, his eyes glowing with a soft red light. After a moment he begins to speak though his lips do not move. 'You wish to study under me? Perhaps, if you prove yourself to follow the twisted path. If you prove to be as coldhearted as I then I will let you become my servant.'");
     }
     else {
@@ -64,11 +65,11 @@ sub EVENT_ITEM {
     quest::summonitem(20544); #Scythe of the Shadowed Soul
   }
   elsif(plugin::check_handin(\%itemcount, 20612 => 1)) { #Piece of the Staff
-    if($NecroPre==2) {
+    if(defined($qglobals{NecroPre}) && ($qglobals{NecroPre} == 2)) {
       quest::say("Geboron has told me that you would be giving this piece of the staff to me. Do not fear. While I am not angry with you for failing to bring me the staff, I am not thoroughly pleased either. However, this piece could hold the key to discovering the staff's whereabouts. I wish to research this staff piece but first I need some special research tools. Take this note and travel to Steamfont. Find a gnome named Biddliss Sperandu and give him the note. When you obtain the research tools hand them to me.");
       quest::summonitem(9831); #Note to Biddliss
       quest::delglobal("NecroPre");
-      quest::setglobal("Soulwhisper",1,0,"F");
+      quest::setglobal("Soulwhisper",1,5,"F");
     }
     else {
       quest::say("What is this? Why do you waste my time giving me junk? Take it back and begone!"); #Still need real text
@@ -87,5 +88,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
-
 #EndFile lakerathe\Kazen_Fecae.pl (51048)

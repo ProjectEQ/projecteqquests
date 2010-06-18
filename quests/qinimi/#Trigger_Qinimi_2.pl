@@ -1,5 +1,6 @@
 sub EVENT_SPAWN {
   $start_event = undef;
+  $counter = 0;
 }
 
 sub EVENT_SIGNAL {
@@ -7,8 +8,8 @@ if($signal == 1) { #signal 1 is from the Councilman Sislano
     $counter += 1;
     quest::depopall(281061);
     quest::depopall(281030);
-    quest::starttimer(1,1620);
-    quest::starttimer(2,600);
+    quest::settimer(1,1620);
+    quest::settimer(2,600);
     $start_event = 1;
     spawn2(281129,0,0,-507,0,-8,193); #6 mastrqus
     spawn2(281129,0,0,-522,-35,-8,225);

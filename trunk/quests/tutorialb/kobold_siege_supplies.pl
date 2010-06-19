@@ -43,6 +43,7 @@ sub EVENT_TIMER
 			quest::stoptimer("explode");
 			$npc->CameraEffect(3000, 6);
 			$npc->CastSpell(7477, $npc->GetID());
+			$npc->Kill();
 		}
 	}
 }

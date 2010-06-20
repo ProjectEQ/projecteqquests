@@ -53,7 +53,7 @@ sub EVENT_ITEM
 	if(quest::istaskactivityactive(31,0) && plugin::check_handin(\%itemcount, 86011 => 1)) 
 	{
 		quest::updatetaskactivity(31,0);
-		quest::exp(200);
+		quest::exp(20000);
 		quest::ding();
 		quest::settimer("explode", 2);
 		$npc->SetEntityVariable(1, 1);

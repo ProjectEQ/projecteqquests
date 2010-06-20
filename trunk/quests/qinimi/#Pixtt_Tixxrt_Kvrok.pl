@@ -1,23 +1,9 @@
 sub EVENT_SPAWN {
-  $start_event = undef;
- quest::set_proximity($x-50,$x+50,$y-50,$y+50); 
- $counter = 0;
-
-}
-
-sub EVENT_PROXIMITY_SAY {
-if($start_event == undef) {
-if(plugin::check_hasitem($client, 67415)) {
-  if ($text=~/i wish to enter/i) {
-  quest::say("Enter");
-    quest::movegrp(281,-1700, -1100, -4);
-    quest::spawn2(281118,0,0,-1741,-1078,-4,197);
-    quest::settimer(1,370);
+  $counter = 0;
+  quest::settimer(1,370);
     quest::settimer(2,10);
-    $start_event = 1;
-    }
-  }
-}
+
+
 }
 sub EVENT_TIMER {
   if ($timer == 1) {
@@ -28,7 +14,7 @@ sub EVENT_TIMER {
      quest::depopall(281123);
      quest::depopall(281119);
      quest::ze("Understand that the punishment for spying is death!  Kreshin Silentcog if now executed!  All Hail Pixtt Xictic Krvne!");
-     $start_event = undef;
+     
 }
  if ($timer == 2) {
      quest::stoptimer(2);
@@ -55,15 +41,14 @@ sub EVENT_SIGNAL {
      quest::spawn2(281114,0,0,-1829,-1102,-15,51);
 }
   if($counter == 9)  {
-    quest::depopall(281118);
+    
     quest::depopall(281122);
     quest::spawn2(281123,0,0,-1741,-1078,-4.8,126.5);
     quest::spawn2(281117,0,0,-1678,-1080,-14.4,193.3);
     quest::spawn2(281117,0,0,-1788,-1079,-14.5,67);
     $counter = 0;
+    quest::stoptimer(1);
+    quest::depopall(281118);
     
 }
- if ($signal == 2) {
-   quest::stoptimer(1);
 }
-  }

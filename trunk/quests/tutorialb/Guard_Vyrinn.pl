@@ -18,7 +18,7 @@ sub EVENT_ITEM {
          #Gloomingdeep Violet
          quest::say("Well done, my friend. You have probably saved many lives.");
          quest::updatetaskactivity(29,1);
-         quest::exp(300);
+         quest::exp(12000);
          quest::ding();
       }
       else {

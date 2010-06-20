@@ -27,7 +27,7 @@ sub EVENT_SAY {
             quest::summonitem(82951);
             #Gloomsilk Robe
          }
-         quest::exp(3000);
+         quest::exp(75000);
          quest::givecash(0,0,0,5); # 5 plat
          quest::ding();
       }
@@ -35,7 +35,7 @@ sub EVENT_SAY {
          quest::say("Excellent work, my friend. Take this potion brewed from Queen Gloomfang's chitin. May it make you strong enough to avenge the many slaves the kobolds have fed her.");
          quest::updatetaskactivity(33,1);
          quest::summonitem(77780,4);
-         quest::exp(2000);
+         quest::exp(25000);
          quest::ding();
       }
       elsif (quest::istaskactivityactive(27,4)) {
@@ -57,7 +57,7 @@ sub EVENT_SAY {
             quest::summonitem(82950);
             #Gloomsilk Pantaloons
          }
-         quest::exp(2500);
+         quest::exp(25000);
          quest::ding();
       }
       else {

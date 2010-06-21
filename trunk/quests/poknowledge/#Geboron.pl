@@ -12,10 +12,16 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 20612 => 1)) { #Piece of the Staff
-    quest::say("I ask you to find a staff of great power and you bring me this??! A piece of the staff? You are an incompetent fool! Take this trash back and give it to Kazen so that he may punish you as he sees fit! Begone!");
-    quest::summonitem(20612); #Piece of the Staff
-    quest::setglobal("NecroPre",2,5,"F");
+  if(plugin::check_handin(\%itemcount, 20612 => 1)) { #Piece of the Staff
+    if(defined($qglobals{NecroPre}) && ($qglobals{NecroPre} == 1)) {
+      quest::say("I ask you to find a staff of great power and you bring me this??! A piece of the staff? You are an incompetent fool! Take this trash back and give it to Kazen so that he may punish you as he sees fit! Begone!");
+      quest::summonitem(20612); #Piece of the Staff
+      quest::setglobal("NecroPre",2,5,"F");
+    }
+    else {
+      quest::say("What is this trash you give me?"); #Text made up
+      #quest::summonitem(20612); #Piece of the Staff (Eat the staff. Somehow this player was cheating. Uncomment to allow player to have staff back.)
+    }
   }
   else {
     quest::say("I have no use for this, $name.");

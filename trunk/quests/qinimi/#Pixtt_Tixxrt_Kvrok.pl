@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if ($timer == 1) {
      quest::stoptimer(1);
-     quest::movegrp(281,-1053,438,-16);
+     quest::movegrp(281,-1053,438,-13);
      quest::depopall(281114);
      quest::depopall(281117);
      quest::depopall(281123);

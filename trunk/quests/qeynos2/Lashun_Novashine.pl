@@ -1,13 +1,19 @@
 #BeginFile: Lashun_Novashine.pl
 #Quest for North Qeynos - Lashun Novashine: Bone Chips (Qeynos)
 
+my $ItemCount; #Bone Chip counter
+
 sub EVENT_SPAWN {
-  $ItemCount=0; #Bone Chip counter
-  quest::settimer(1,60); #Emote timer (2 minutes)
+  $ItemCount = 0;
 }
 
-sub EVENT_TIMER {
-  quest::emote("shouts, 'Cease this endless conflict...'");
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 16) {
+    quest::say("Greetings, people of Qeynos! Are you lost? Has the chaotic life of an adventurer left you empty and alone? Seek redemption in the glorious light of the Prime Healer. Only through Rodcet Nife and the Temple of Life will you find true health and salvation.");
+  }
+  if($wp == 28) {
+    quest::shout("Cease this endless conflict and seek salvation in the Temple of Life! The glory of Rodcet Nife awaits you!");
+  }
 }
 
 sub EVENT_SAY {
@@ -17,111 +23,20 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($ItemCount==0) { #No item left over
-    if (plugin::check_handin(\%itemcount, 13073 => 1)) { #Bone Chips (1)
+  if(plugin::check_handin(\%itemcount, 13073 => 4)) { #Bone Chips (4)
+    quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
+    $npc->CastSpell(17,$userid); #Light Healing
+    quest::faction(257,2); #Priests of Life
+    quest::faction(183,2); #Knights of Thunder
+    quest::faction(135,2); #Guards of Qeynos
+    quest::faction(21,-2); #Bloodsabers
+    quest::faction(9,2);   #Antonius Bayle
+    if($ItemCount == 1) {
       quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
-      $ItemCount=1;
-    }
-    elsif (plugin::check_handin(\%itemcount, 13073 => 2)) { #Bone Chips (2)
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      $ItemCount=0;
-    }
-    elsif (plugin::check_handin(\%itemcount, 13073 => 3)) { #Bone Chips (3)
-      quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
-      $ItemCount=1;
-    }
-    elsif (plugin::check_handin(\%itemcount, 13073 => 4)) { #Bone Chips (4)
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      $ItemCount=0;
-    }
-    elsif ($gold == 2) { #Gold (2) / This portion of quest needs verification. Does it mean he is corrupt for accepting coin?
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,2); #Priests of Life
-      quest::faction(183,2); #Knights of Thunder
-      quest::faction(135,2); #Guards of Qeynos
-      quest::faction(21,-2); #Bloodsabers
-      quest::faction(9,2);   #Antonius Bayle
-    }
-    else {
-      quest::say("I have no need for this, $name.");
-      plugin::return_items(\%itemcount);
     }
   }
-  elsif ($ItemCount==1) { #Item left over
-    if (plugin::check_handin(\%itemcount, 13073 => 1)) { #Bone Chips (1)
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      $ItemCount=0;
-    }
-    elsif (plugin::check_handin(\%itemcount, 13073 => 2)) { #Bone Chips (2)
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
-      $ItemCount=1;
-    }
-    elsif (plugin::check_handin(\%itemcount, 13073 => 3)) { #Bone Chips (3)
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      $ItemCount=0;
-    }
-    elsif (plugin::check_handin(\%itemcount, 13073 => 4)) { #Bone Chips (4)
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      $npc->CastSpell(17,$userid); #Light Healing
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-      quest::faction(257,1); #Priests of Life
-      quest::faction(183,1); #Knights of Thunder
-      quest::faction(135,1); #Guards of Qeynos
-      quest::faction(21,-1); #Bloodsabers
-      quest::faction(9,1);   #Antonius Bayle
-      quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
-      $ItemCount=1;
-    }
-    elsif ($gold == 2) { #Gold (2) / This portion of quest needs verification. Does it mean he is corrupt for accepting coin?
+  elsif(plugin::check_handin(\%itemcount, 13073 => 3)) { #Bone Chips (3)
+    if($ItemCount == 1) {
       quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
       $npc->CastSpell(17,$userid); #Light Healing
       quest::faction(257,2); #Priests of Life
@@ -129,12 +44,56 @@ sub EVENT_ITEM {
       quest::faction(135,2); #Guards of Qeynos
       quest::faction(21,-2); #Bloodsabers
       quest::faction(9,2);   #Antonius Bayle
+      $ItemCount = 0;
     }
     else {
-      quest::say("I have no need for this, $name.");
-      plugin::return_items(\%itemcount);
+      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
+      $npc->CastSpell(17,$userid); #Light Healing
+      quest::faction(257,1); #Priests of Life
+      quest::faction(183,1); #Knights of Thunder
+      quest::faction(135,1); #Guards of Qeynos
+      quest::faction(21,-1); #Bloodsabers
+      quest::faction(9,1);   #Antonius Bayle
+      quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
+      $ItemCount = 1;
     }
-
+  }
+  elsif(plugin::check_handin(\%itemcount, 13073 => 2)) { #Bone Chips (2)
+    quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
+    $npc->CastSpell(17,$userid); #Light Healing
+    quest::faction(257,1); #Priests of Life
+    quest::faction(183,1); #Knights of Thunder
+    quest::faction(135,1); #Guards of Qeynos
+    quest::faction(21,-1); #Bloodsabers
+    quest::faction(9,1);   #Antonius Bayle
+    if($ItemCount == 1) {
+      quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
+    }
+  }
+  elsif(plugin::check_handin(\%itemcount, 13073 => 1)) { #Bone Chips (1)
+    if($ItemCount == 1) {
+      quest::say("Very well, young one. May the light of the Prime Healer wash away your scars.");
+      $npc->CastSpell(17,$userid); #Light Healing
+      quest::faction(257,1); #Priests of Life
+      quest::faction(183,1); #Knights of Thunder
+      quest::faction(135,1); #Guards of Qeynos
+      quest::faction(21,-1); #Bloodsabers
+      quest::faction(9,1);   #Antonius Bayle
+      $ItemCount = 0;
+    }
+    else {
+      quest::say("Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.");
+      $ItemCount = 1;
+    }
+  }
+  elsif ($gold == 2) { #Gold (2)
+    quest::say("Thank you for the donation to the Temple of Life. May Rodcet Nife cleanse your body of all ills.");
+    $npc->CastSpell(17,$userid); #Light Healing
+    quest::faction(257,1); #Priests of Life
+    quest::faction(183,1); #Knights of Thunder
+    quest::faction(135,1); #Guards of Qeynos
+    quest::faction(21,-1); #Bloodsabers
+    quest::faction(9,1);   #Antonius Bayle
   }
   else {
     quest::say("I have no need for this, $name.");

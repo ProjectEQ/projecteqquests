@@ -18,7 +18,7 @@ sub EVENT_ENTER {
 	elsif($InInstancePool > 0){
     		quest::MovePCInstance(285, $InInstancePool, 137, -5, -19);
 	}
-	elsif(InInstanceLair > 0){
+	elsif($InInstanceLair > 0){
 		quest::MovePCInstance(286, $InInstanceLair, 234, -70, -14);
 	}	
 	else {

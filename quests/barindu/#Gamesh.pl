@@ -13,6 +13,9 @@ sub EVENT_SAY {
     			quest::AssignGroupToInstance($Instance);
     			quest::say("Instance added.");
     		}
+    		else {
+			$client->Message(13, "You are already in an instance!");
+		}
   	}
   	if ($text=~/crematory/i) {
 	    	quest::say("Ok, listen closely...");
@@ -21,6 +24,9 @@ sub EVENT_SAY {
 	    		quest::AssignGroupToInstance($Instance);	
 	    		quest::say("Instance added.");
 	    	}	
+	    	else {
+			$client->Message(13, "You are already in an instance!");
+		}
   	}
 	if ($text=~/pools/i) {
 	    	quest::say("Ok, listen closely...");
@@ -29,6 +35,9 @@ sub EVENT_SAY {
 	    		quest::AssignGroupToInstance($Instance);	
 	    		quest::say("Instance added.");
 	    	}	
+	    	else {
+			$client->Message(13, "You are already in an instance!");
+		}
   	}
 	if ($text=~/lair/i) {
 	    	quest::say("Ok, listen closely...");
@@ -36,11 +45,12 @@ sub EVENT_SAY {
 	    		$Instance = quest::CreateInstance("snlair", 0, 10800);
 	    		quest::AssignGroupToInstance($Instance);	
 	    		quest::say("Instance added.");
-	    	}	
+	    	}
+	    	else {
+			$client->Message(13, "You are already in an instance!");
+		}
 	}
-	else {
-		$client->Message(13, "You are already in an instance!");
-	}
+	
 }
 
 sub EVENT_ITEM {

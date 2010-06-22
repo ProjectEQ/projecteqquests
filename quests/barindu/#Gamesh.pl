@@ -3,6 +3,7 @@ sub EVENT_SAY {
 	$InInstanceCrem = quest::GetInstanceID("sncrematory",0);
 	$InInstancePool = quest::GetInstanceID("snpool",0);
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
+        $cl = shift;
         $group = $cl->GetGroup();
   	if ($text=~/hail/i) {
     		quest::say("I don't know why you would want to, but if you want me to tell you the way to one of the different areas of the sewers let me know.  I know how to get to the treatment [plant], [crematory], [pools] of sludge, or the [lair] of trapped ones.");

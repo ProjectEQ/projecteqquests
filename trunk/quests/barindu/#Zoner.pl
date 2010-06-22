@@ -9,16 +9,16 @@ sub EVENT_ENTER {
 	$InInstanceCrem = quest::GetInstanceID("sncrematory",0);
 	$InInstancePool = quest::GetInstanceID("snpool",0);
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
-	if($InInstancePlant){
+	if($InInstancePlant > 0){
 	    	quest::MovePCInstance(287, $InInstancePlant, 150, 127, -7);
 	}	
-	elsif($InInstanceCrem){
+	elsif($InInstanceCrem > 0){
     		quest::MovePCInstance(288, $InInstanceCrem, 31, 175, -17);	
 	}
-	elsif($InInstancePool){
+	elsif($InInstancePool > 0){
     		quest::MovePCInstance(285, $InInstancePool, 137, -5, -19);
 	}
-	elsif(InInstanceLair){
+	elsif(InInstanceLair > 0){
 		quest::MovePCInstance(286, $InInstanceLair, 234, -70, -14);
 	}	
 	else {

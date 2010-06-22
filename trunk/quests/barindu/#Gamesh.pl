@@ -8,7 +8,7 @@ sub EVENT_SAY {
   	}
   	if ($text=~/plant/i) {
     		quest::say("Ok, listen closely...");
-    		if(!$InInstancePlant && !$InInstanceCrem && !$InInstancePool && !$InInstanceLair){
+    		if($InInstancePlant == 0 && $InInstanceCrem == 0 && $InInstancePool == 0 && $InInstanceLair == 0){
     			$Instance = quest::CreateInstance("snplant", 0, 10800);
     			quest::AssignGroupToInstance($Instance);
     			quest::say("Instance added.");
@@ -19,7 +19,7 @@ sub EVENT_SAY {
   	}
   	if ($text=~/crematory/i) {
 	    	quest::say("Ok, listen closely...");
-	    	if(!$InInstancePlant && !$InInstanceCrem && !$InInstancePool && !$InInstanceLair){
+	    	if($InInstancePlant == 0 && $InInstanceCrem == 0 && $InInstancePool == 0 && $InInstanceLair == 0){
 	    		$Instance = quest::CreateInstance("sncrematory", 0, 10800);
 	    		quest::AssignGroupToInstance($Instance);	
 	    		quest::say("Instance added.");
@@ -30,7 +30,7 @@ sub EVENT_SAY {
   	}
 	if ($text=~/pools/i) {
 	    	quest::say("Ok, listen closely...");
-	    	if(!$InInstancePlant && !$InInstanceCrem && !$InInstancePool && !$InInstanceLair){
+	    	if($InInstancePlant == 0 && $InInstanceCrem == 0 && $InInstancePool == 0 && $InInstanceLair == 0){
 	    		$Instance = quest::CreateInstance("snpool", 0, 10800);
 	    		quest::AssignGroupToInstance($Instance);	
 	    		quest::say("Instance added.");
@@ -41,7 +41,7 @@ sub EVENT_SAY {
   	}
 	if ($text=~/lair/i) {
 	    	quest::say("Ok, listen closely...");
-	    	if(!$InInstancePlant && !$InInstanceCrem && !$InInstancePool && !$InInstanceLair){
+	    	if($InInstancePlant == 0 && $InInstanceCrem == 0 && $InInstancePool == 0 && $InInstanceLair == 0){
 	    		$Instance = quest::CreateInstance("snlair", 0, 10800);
 	    		quest::AssignGroupToInstance($Instance);	
 	    		quest::say("Instance added.");

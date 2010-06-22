@@ -3,9 +3,11 @@ sub EVENT_SAY {
 	$InInstanceCrem = quest::GetInstanceID("sncrematory",0);
 	$InInstancePool = quest::GetInstanceID("snpool",0);
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
+        $group = $cl->GetGroup();
   	if ($text=~/hail/i) {
     		quest::say("I don't know why you would want to, but if you want me to tell you the way to one of the different areas of the sewers let me know.  I know how to get to the treatment [plant], [crematory], [pools] of sludge, or the [lair] of trapped ones.");
   	}
+	if($group){
   	if ($text=~/plant/i) {
     		quest::say("Ok, listen closely...");
     		if($InInstancePlant == 0 && $InInstanceCrem == 0 && $InInstancePool == 0 && $InInstanceLair == 0){
@@ -50,6 +52,10 @@ sub EVENT_SAY {
 			$client->Message(13, "You are already in an instance!");
 		}
 	}
+  }
+         else {
+           $client->Message(13, "You are not in a group!");
+        }
 	
 }
 

@@ -1,4 +1,4 @@
 sub EVENT_DEATH {
-  quest::setglobal("sewer", 1, 5, "F");
+  quest::setglobal("sewers", 1, 5, "F");
 
 }

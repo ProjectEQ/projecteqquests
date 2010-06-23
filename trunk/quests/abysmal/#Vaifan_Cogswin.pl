@@ -18,6 +18,9 @@ sub EVENT_SAY {
     quest::summonitem(67528);
     }
     }
+    if ($text=~/vxed/i) {
+    if (defined $qglobals{bic} && $qglobals{bic} == 12) {
+    quest::say("We have discovered that this continent holds many dangerous creatures, including the strange beings of the invading army. Many of these beasts can be found in the mountain area called Vxed. After being severely damaged in Tipt, the clockwork scout made its way back to Vxed to perform self maintenance, but I believe this is where it met its final demise. While the chance is slim, I believe you may be able to salvage enough of the parts from the creatures within Vxed to reassemble the frame. What you will need to find is a flickering finkenheimer, a tarnished sprocket, some uncoiled springs, a greased bolt, and some connection rods. When you have them all place, the sprocket, springs, bolt, and rods in the finkenheimer and bring me the result. I must warn you to be careful though. If these things could stop my clockwork, they must be pretty powerful creatures.");
     }
 
 sub EVENT_ITEM {
@@ -26,5 +29,13 @@ if (plugin::check_handin(\%itemcount, 67534 =>1 )) {
   quest::summonitem(67535);
   quest::setglobal("bic",12,5,"F");
 }
+ if (defined $qglobals{bic} && $qglobals{bic} == 12) {
+ if (plugin::check_handin(\%itemcount, 67554 =>1 )) {
+   quest::say("I can't believe you did it. Not a bad job if I do say so myself. You may have a future in tinkering my young friend. Now, if you will give me one second to change a few things and rip this part out, adjust this here, add a couple of these, and there you go, a nice new clockwork frame. Now we just need to collect the rest of the pieces to rebuild him. Oh, and before I forget, here is a reward for helping me out. Let me know if you wish to explore any of the other areas by asking me about them.");
+   quest::summonitem(67568);
+   quest::summonitem(67539);
+   quest::setglobal("bic",13,5,"F");
+   }
+ }
   plugin::return_items(\%itemcount);
 }

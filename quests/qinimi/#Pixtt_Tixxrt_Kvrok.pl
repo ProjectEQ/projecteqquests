@@ -8,12 +8,12 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if ($timer == 1) {
      quest::stoptimer(1);
-     quest::selfcast(2771);
+     quest::selfcast(3073);
      quest::depopall(281114);
      quest::depopall(281117);
      quest::depopall(281123);
      quest::depopall(281119);
-     quest::ze("Understand that the punishment for spying is death!  Kreshin Silentcog is now executed!  All Hail Pixtt Xictic Krvne!");
+     quest::ze(1,"Understand that the punishment for spying is death!  Kreshin Silentcog is now executed!  All Hail Pixtt Xictic Krvne!");
      
 }
  if ($timer == 2) {

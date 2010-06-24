@@ -8,11 +8,14 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (($itemcount{13340} == 1) && ($itemcount{13006} == 1)) {
+  if (plugin::check_handin(\%itemcount, 13340 => 1, 13006 => 1)) { #Kiola Nut, Water Flask
     quest::say("Here you go. One Tumpy Tonic. Don't drink that too fast now.");
-    quest::summonitem(12114);
+    quest::summonitem(12114); #Tumpy Tonic
     quest::exp(1000);
   }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
 # Quest by mystic414

@@ -3,7 +3,15 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
+if ($text=~/hail/i) {
+  if ($qglobals{sewers} == 1) {
+     quest::say("Great job!");
+     quest::setglobal("sewers", 2, 5, "F");
+	$client->Message(4,"You receive a character flag!");
+}
+}
+
+ elsif ($text=~/hail/i) {
     quest::say("Find the aged stonemites.  They are causing great trouble, come back and talk to me once you have solved the problem.");
     quest::spawn2(287021,0,0,-96,-1679,-89,207);
     quest::spawn2(287021,0,0,-41,-1685,-89,211);
@@ -15,13 +23,7 @@ sub EVENT_SAY {
     quest::spawn2(287021,0,0,-53,-1586,-87,180);
     quest::spawn2(287021,0,0,-120,-1573,-89,135);    
   }
-  if ($text=~/hail/i) {
-  if ($qglobals{sewers} == 1) {
-     quest::say("Great job!");
-     quest::setglobal("sewers", 2, 5, "F");
-	$client->Message(4,"You receive a character flag!");
-}
-}
+  
 }
 sub EVENT_SIGNAL {
 if($signal == 1) { 

@@ -13,6 +13,6 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  quest::selfcast(2771);
+  quest::selfcast(3073);
   quest::depop(281124);
 }

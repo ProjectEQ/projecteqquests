@@ -1,16 +1,9 @@
 sub EVENT_SPAWN {
-    quest::spawn_condition($zonesn,2,0);
-  quest::spawn_condition($zonesn,1,0);
-  
+    $counter=0;
+    quest::settimer(2,1800);
 }
 
 sub EVENT_SIGNAL {
-$counter=0;
-  if($signal == 1 ) {
-  quest::settimer(2,1800);
-  quest::spawn_condition($zonesn,1,1);
-  quest::spawn_condition($zonesn,2,1);
-}
 if($signal == 2) { 
          $counter += 1;
 }
@@ -32,6 +25,6 @@ sub EVENT_TIMER {
   if ($timer == 2) {
   quest::depop(286098);
   $counter=0;
-  quest::spawn_conditions($zonesn,2,0);
-}
+  quest::ze(1,"You are too late")
+ }
 }

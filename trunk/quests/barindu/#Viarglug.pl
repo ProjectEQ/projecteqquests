@@ -14,6 +14,5 @@ sub EVENT_SAY {
 sub EVENT_TIMER { 
   quest::stoptimer("ViarglugDepop"); 
   quest::depop(); 
-} 
-
-#EndFile: barindu\#Viarglug.pl (00000)
+}
+#EndFile: barindu\#Viarglug.pl (283156)

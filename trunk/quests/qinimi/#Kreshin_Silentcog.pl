@@ -7,12 +7,8 @@ sub EVENT_ITEM {
     quest::say("You have done well to get this far. Please, take this to Taminoa and tell him it is vital that he decipher it. I must stay here to investigate more. Let him know I am safe and thank you again.");
     quest::summonitem(67415);
     quest::summonitem(67401);
-    quest::settimer(360);
+    quest::signalwith(281116,3,5);
     }
     plugin::return_items(\%itemcount);
 }
 
-sub EVENT_TIMER {
-  quest::selfcast(3073);
-  quest::depop(281124);
-}

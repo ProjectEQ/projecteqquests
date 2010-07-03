@@ -14,7 +14,7 @@ sub EVENT_SAY {
       quest::say("I have come to know many spirits from other realms. They speak of a being known as Tarlang who resides in the Realm of Discord in a area known as the Nobles Causeway. He has wronged many of my kin and I wish to see him pay for what he has done. If you bring me his head. I will reward you with a weapon of great power. He believes himself to be indestructible, but he is not. In fact I think you have what it takes to destroy him.");
       quest::setglobal("Soulwhisper",4,5,"F");
     }
-    if(($text=~/locate the paladin/i) && plugin::check_hasitem($client,62581)) { #Soulwhisper
+    if($text=~/locate the paladin/i) {
       quest::say("I fear for you should you seek the staff, but I promised to help you. I can still hear the staff's dark whispers. It appears that the paladin wielding the staff has been killed and the staff returned to its master. The staff's master has broken the staff into three pieces. two of the pieces have been given to his most trusted minions, and the third piece, a globe of discordant energy, resides in a location known as Anguish, in the Realm of Discord. If you wish to somehow rebuild the staff you must find these three pieces. I can still hear the staff begging for its master. The staff tells me the only way the minions will appear is if a certain phrase is uttered at a place where the power of discord seeks to engulf all. The phrase is, 'Sanait Sanaiij Tsulum'. I don't know what it means or where this place of great discord is however. I'm sorry that's all the staff has told me. If you find all three staff pieces, return them to me along with Soulwhisper and I will see if I can reform the staff for you.");
     }
   }
@@ -22,7 +22,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if((defined($qglobals{Soulwhisper}) && ($qglobals{Soulwhisper} == 2)) && plugin::check_handin(\%itemcount, 11174 => 1)) { #Whiahdi's Earthly Possessions
-    quest::say("You found my possessions! I am most greatful. The paladin you seek did walk by here some time ago. I believe he was on his way to Qinimi. He had a curious staff with him that seemed to whisper dark tidings. That staf seemed to have a very evil presence about it. I would advise you to let the paladin destroy it. I have in my possession another staff of great [power]. I can tell you about if you give up your quest for the paladin and the dark staff. However if you wish to [locate the paladin] I will help you since you did help me.");
+    quest::say("You found my possessions! I am most greatful. The paladin you seek did walk by here some time ago. I believe he was on his way to Qinimi. He had a curious staff with him that seemed to whisper dark tidings. That staff seemed to have a very evil presence about it. I would advise you to let the paladin destroy it. I have in my possession another staff of great [power]. I can tell you about if you give up your quest for the paladin and the dark staff. However if you wish to [locate the paladin] I will help you since you did help me.");
     quest::setglobal("Soulwhisper",3,5,"F");
   }
   elsif((defined($qglobals{Soulwhisper}) && ($qglobals{Soulwhisper} == 3)) && plugin::check_handin(\%itemcount, 55855 => 1)) { #Tarlang's Head

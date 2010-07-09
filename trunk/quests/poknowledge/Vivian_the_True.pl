@@ -1,8 +1,6 @@
 ## Vivian the True
-## Edited on April 17, 2010 by mrhodes
-##
-## Note: Added the Tomes of Knowledge (Beastlord and Rogue) as well as
-## Training Day tasks.
+
+my @task_list = ();
 
 sub EVENT_SAY {
   if(quest::istaskactive(138)) { #New Beginnings
@@ -14,11 +12,16 @@ sub EVENT_SAY {
     }
     if($text=~/new to the world/i) {
       if($class eq "Beastlord") {
-        quest::taskselector(200); #Tomes of Knowledge (Beastlord)
+        push (@task_list, 200); #Tomes of Knowledge (Beastlord)
       }
       if($class eq "Rogue") {
-        quest::taskselector(201, 202); #Tomes of Knowledge (Rogue) & Training Day
+        push (@task_list, 201); #Tomes of Knowledge (Rogue)
+        push (@task_list, 202); #Training Day
       }
+      push (@task_list, 208); #Errands for Castlen
+      push (@task_list, 209); #Common Cents
+      quest::taskselector(@task_list);
+      @task_list = ();
     }
   }
 }

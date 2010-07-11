@@ -1,11 +1,11 @@
 sub EVENT_SPAWN {
-  quest::ze("My time here is short!  Come find me for your reward!");
+  quest::ze(15,"My time here is short!  Come find me for your reward!");
   quest::settimer(1,900);
 }
 
 sub EVENT_TIMER {
   if($timer == 1) {
-    quest::ze("I must leave now, farewell.");
+    quest::ze(15,"I must leave now, farewell.");
     quest::depop();
 }
 }

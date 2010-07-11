@@ -7,6 +7,6 @@ sub EVENT_TIMER {
   if($timer == 1) {
   quest::spawn_condition($zonesn,1,1);
   quest::stoptimer();
-  quest::depop();
+
   }
 }

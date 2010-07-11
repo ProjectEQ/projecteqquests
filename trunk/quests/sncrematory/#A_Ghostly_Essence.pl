@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_WAYPOINT_ARRIVE {
     if($wp == 26) { 
-    quest::spawn2(288087,0,0,577,-2352,-59,193);
+    quest::signalwith(288088,2,1);
     quest::depop();
     }
     }

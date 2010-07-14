@@ -21,10 +21,10 @@ sub EVENT_ENTER {
 }
 sub EVENT_SIGNAL {
   if($signal == 1) { #signal 1 is from each of the remains
-         $counter += 1;
-}
- if($counter == 4) {
- quest::spawn2(288086,0,0,1320,-2551,15,87);
+    $counter += 1;
+      if($counter == 4) {
+       quest::spawn2(288086,0,0,1320,-2551,15,87);
+ }
  }
  if($signal == 2) {  #from ghostly essence
    quest::spawn2(288087,0,0,577,-2352,-59,193);

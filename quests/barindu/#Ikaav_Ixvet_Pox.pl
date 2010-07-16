@@ -1,4 +1,3 @@
-
 sub EVENT_SIGNAL {
   if($signal == 1) {
     quest::say("Be gone. I've no interest in your fruits today.");
@@ -8,9 +7,7 @@ sub EVENT_SIGNAL {
   quest::say("What have you done, slave! Try to poison me? You will pay for your insolence!");
   quest::attacknpctype(283081);
   quest::signalwith(283047,3,1);
+  quest::depop();
+  quest::spawn2(283162,0,0,$x,$y,$z,$h);
 }
-}
-sub EVENT_DEATH {
-  quest::depop(283153);
-  quest::spawn2(283048,0,0,-574,568,-98,168);
 }

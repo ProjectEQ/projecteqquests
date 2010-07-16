@@ -8,6 +8,7 @@
 #
 # Written by: Reno
 # Adapted by: Jaekob
+# Fixed so ring can't be repeatedly done by: Qazzaz 07/15/10
 
 sub EVENT_SPAWN {
    quest::settimer("stone",61); #times the whole thing
@@ -139,6 +140,8 @@ sub EVENT_SIGNAL {
      }
 
      if($signal == 5) {
+       quest::delglobal("stone_ring");
+       quest::setglobal("stone_ring",1,3,"D3");
        quest::setglobal("stone_ring_final",1,3,"D3"); #used in the Final Event
        }
 

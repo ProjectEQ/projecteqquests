@@ -1,3 +1,8 @@
+my @player_list = ();
+my $event_started = 0;
+my $counter = 0;
+
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 1) {
@@ -35,19 +40,34 @@ if ($text=~/promise/i) {
    }
    }
  if (defined $qglobals{bic} && $qglobals{bic} == 3) {
-if ($text=~/ready/i) { 
-    quest::spawn2(281127,0,0,0,0,0,94); 
-    quest::emote("pulls out a small stone and closes it in his hand.");  
-  quest::say("Please be careful. What you are about to see may shock you at first, but don't let yourself be distracted for too long. These beings are merciless and once they have discovered your presence, they will stop at nothing to add your corpse to the others in the area.");
-  $r = $client->GetRaid();
-if($r)
-{
-   $r->TeleportRaid($npc, 281, -521,36,-8,166);
-} 
-  quest::signalwith(281127,1,30);
+ if ($text=~/ready/i) {
+     if (!$event_started && $entity_list->GetNPCByNPCTypeID(281077)) { #Pixtt_Xictic_Krvne (NoTarget)
+      $raid = $entity_list->GetRaidByClient($client);
+      if ($raid) {
+        for ($count = 0; $count < $raid->RaidCount(); $count++) {
+          push (@player_list, $raid->GetMember($count)->GetName());
+        }
+        foreach $player (@player_list) {
+         $pc = $entity_list->GetClientByName($player);
+          $pc->MovePC(281,-521,36,-8,166);
+         }
+           $event_started = 1;
+           quest::spawn2(281127,0,0,0,0,0,94);   #Trigger_Qinimi_2
+           quest::emote("pulls out a small stone and closes it in his hand."); 
+           quest::say("Please be careful. What you are about to see may shock you at first, but don't let yourself be distracted for too long. These beings are merciless and once they have discovered your presence, they will stop at nothing to add your corpse to the others in the area.");
+           quest::signalwith(281127,1,30);      #starts event
+
+      }
+      else {
+        $client->Message(15,"Maybe you should consider joining a raid first.");
+      }
+    }
+    else {
+      $client->Message(15,"Mystical forces prevent you from entering at this time.");
+    }
+  } 
 }
-}
-}
+
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67700 =>1 )) {
@@ -69,4 +89,21 @@ sub EVENT_ITEM {
     
   }
   plugin::return_items(\%itemcount);
+}
+
+sub EVENT_SIGNAL {
+  if ($signal == 1) { #Signal from Trigger_Qinimi_2
+    REMOVE_PLAYERS();
+    $event_started = 0;
+    $counter = 0;
+}
+}
+
+sub REMOVE_PLAYERS {
+  foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+    $pc->MovePC(281,-1053,438,-16,1);
+  }
+  @player_list = ();
+}
 }

@@ -54,10 +54,11 @@ sub EVENT_ITEM {
    }
    
    if (plugin::check_handin(\%itemcount, 67511 =>1 )) {
+     if (defined $qglobals{bic} && $qglobals{bic} == 3) {
      quest::say("You have returned bruised, but not broken I see. I am disappointed to hear that he got away, but you are not at fault. We could not foresee how crafty these beings would be. The information you have given us will be invaluable. Fezbin will be pleased. Kreshin told me to give this to you. He believes it may be one of the fragments that will fit into the stone Fezbin gave you. Who knows, if you help me find the rest of our scouts we may yet find more fragments.");
      quest::setglobal("bic",4,5,"F");
      quest::summonitem(67513);
-
+   }
    }
    if (plugin::check_handin(\%itemcount, 67516 =>1 )) {
        if (defined $qglobals{bic} && $qglobals{bic} == 5) {

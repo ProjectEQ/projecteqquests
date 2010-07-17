@@ -1,6 +1,7 @@
 sub EVENT_SPAWN {
   quest::ze(15,"My time here is short!  Come find me for your reward!");
   quest::settimer(1,900);
+  quest::depop(288086);
 }
 
 sub EVENT_TIMER {

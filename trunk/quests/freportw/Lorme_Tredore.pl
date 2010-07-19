@@ -43,7 +43,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if($class eq "Magician") {
     if(plugin::check_handin(\%itemcount, 13951 => 1)) { #Fleshy Orb
       quest::say("Ah. Thank you for bringing this to me! I will make very good use of it. Here take this small token of my appreciation in return. Guard Jenkins will no longer require it as he was killed on the training field yesterday. Tsk. tsk. tsk.");
       quest::ding();
@@ -60,10 +59,5 @@ sub EVENT_ITEM {
       quest::say("I do not need this.");
       plugin::return_items(\%itemcount);
     }
-  }
-  else {
-    quest::say("Only casters may earn the rewards of the Academy!");
-    plugin::return_items(\%itemcount);
-  }
 }
 # END of FILE Zone:freportw  ID:9078 -- Lorme_Tredore

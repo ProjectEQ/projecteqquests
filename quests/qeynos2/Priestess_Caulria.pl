@@ -57,6 +57,17 @@ sub EVENT_ITEM {
       quest::summonitem(13949); #Diseased Wolf Pelt
     }
   }
+   elsif(plugin::check_handin(\%itemcount, 13950 => 1)) { #Fleshy Orb
+      quest::say("This is odd. This could explain the increase in the number of beasts within the lands surrounding Qeynos. You must take this to Freeport. Here. You must speak with Lorme Tredore. Show him this pellet. You had best gear up for the trip. Freeport is very far away. Here is some gold. Outfit yourself at our expense."); 
+      quest::givecash(0,6,0,0);
+      quest::faction(9,5);    #Antonius Bayle
+      quest::faction(135,5);  #Guards of Qeynos
+      quest::faction(183,5);  #Knights of Thunder
+      quest::faction(257,5);  #Priests of Life
+      quest::faction(21,-10); #Bloodsabers
+      quest::summonitem(13951);
+      
+  }
   else {
     quest::say("I have no use for this, $name.");
     plugin::return_items(\%itemcount);

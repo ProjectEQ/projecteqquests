@@ -1,5 +1,5 @@
-#BeginFile: neriaka\Javen_Ta-Vos.pl
-#Quest for Neriak Foreign Quarter - Javen Ta`Vos: LoY Cultural Robes
+#BeginFile: neriaka\Javen_TaVos.pl
+#Quest for Neriak Foreign Quarter - Javen TaVos: LoY Cultural Robes
 
 sub EVENT_SAY {
   my $TrueRace = $client->GetBaseRace();
@@ -8,7 +8,7 @@ sub EVENT_SAY {
     quest::say("Hello, $name. Feel free to browse my wares. Unless you are looking to make a special Dark robe. If so, just let me know that you want a [robe pattern]."); #Still need real text
   }
   if($text=~/robe pattern/i) {
-    if ($TrueRace==6) { #Dark Elf
+    if ($TrueRace == 6) { #Dark Elf
       quest::say("Very well. Take this pattern, and good luck to you Dark Elf."); #Still need real text
       quest::summonitem(65146); #Dark Robe Pattern
     }
@@ -22,4 +22,4 @@ sub EVENT_ITEM {
   quest::say("I have no use for this, $name.");
   plugin::return_items(\%itemcount);
 }
-#END of FILE Zone:neriaka  ID:40072 -- Javen_Ta-Vos
+#END of FILE Zone:neriaka  ID:40072 -- Javen_TaVos

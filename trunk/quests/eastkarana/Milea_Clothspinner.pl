@@ -14,6 +14,7 @@ if (plugin::check_handin(\%itemcount, 18801 =>1 )) {
     quest::faction(105,-1);
     quest::faction(184,1);
     quest::exp(2000);
+    quest::spawn2(15193,0,0,-5521,-1870,3,226);
  }
 
 if ($itemcount{26644} == 1 ){#Nonexistent 'sealed letter', filename='LoveToMilea'

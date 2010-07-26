@@ -4,20 +4,23 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SIGNAL {
-if($signal == 1) { #signal 1 is from the Councilman Sislano
-    $counter += 1;
-    quest::depopall(281061);
-    quest::depopall(281030);
-    quest::settimer(1,1620);  #event timer
-    quest::settimer(2,600);   #spawn timer for mass of stone
-    quest::spawn2(281129,0,0,-507,0,-8,193); #6 mastrqus
-    quest::spawn2(281129,0,0,-522,-35,-8,225);
-    quest::spawn2(281129,0,0,-557,-51,-8,253);
-    quest::spawn2(281129,0,0,-593,-35,-8,28);
-    quest::spawn2(281129,0,0,-607,0,-8,66);
-    quest::spawn2(281129,0,0,-593,35,-8,94);
-        }
-    
+if($signal == 0) { #signal 0 is from the Councilman Sislano
+   quest::depopall(281061);
+   quest::depopall(281030);
+   quest::settimer(1,1620);  #event timer
+   quest::settimer(2,600);   #spawn timer for mass of stone
+   quest::spawn2(281129,0,0,-507,0,-8,193); #6 mastrqus
+   quest::spawn2(281129,0,0,-522,-35,-8,225);
+   quest::spawn2(281129,0,0,-557,-51,-8,253);
+   quest::spawn2(281129,0,0,-593,-35,-8,28);
+   quest::spawn2(281129,0,0,-607,0,-8,66);
+   quest::spawn2(281129,0,0,-593,35,-8,94);
+   }
+
+if($signal == 1) {
+   $counter += 1;
+}
+   
 if($counter == 6) {     
    quest::spawn2(281130,0,0,-557,50,-8,127); #3 nocs  3 ukuns
    quest::spawn2(281130,0,0,-521,36,-8,166);
@@ -48,7 +51,7 @@ if($counter == 21) {
    quest::stoptimer(2);
    quest::spawn2(281125,0,0,-556,0,-3,254);
    }
-  
+ 
 if($signal == 2) { #from death of Kabeka_Kret
    quest::spawn2(281061,0,0,-507,0,-8,193);  #4 snakes
    quest::spawn2(281061,0,0,-557,-51,-8,253);
@@ -88,5 +91,4 @@ sub EVENT_TIMER {
      quest::signalwith(281050,1,0);  #signal to remove on success
      quest::depop(281127);
      }
-     }
-     
+     }      

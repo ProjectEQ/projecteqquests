@@ -4,11 +4,11 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
   quest::stoptimer();
-  quest::start()
+  quest::start(135)
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-  if($wp == 26) { 
+  if($wp == 2) { 
     quest::say("Hello, Milea. It is unfortunate for you that your friends have led me right to you. Soon you will join Nerissa in the afterlife. Do you have any last words?");
     quest::signalwith(15055,1,4);
 

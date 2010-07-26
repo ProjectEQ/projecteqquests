@@ -47,7 +47,7 @@ sub EVENT_SAY {
     }
     if(quest::istaskactivityactive(162,3)) { #Poisonmaking Freebie Step 4
       quest::say("Good. Now, get to work making some injected poison for me. It's not hard to do. Just take a vial of simple solvent and an ounce of weak snake venom and combine them in your mortar and pestle. Bring me the poison when you are done.");
-      quest::summonitem(58169,20); #Vial of Simple Suspension
+      quest::summonitem(58168,20); #Vial of Simple Solvent
       quest::summonitem(58062,20); #Ounce of Weak Snake Venom
     }
   }

@@ -53,9 +53,9 @@ if ($text=~/promise/i) {
          }
            $event_started = 1;
            quest::spawn2(281127,0,0,0,0,0,94);   #Trigger_Qinimi_2
-           quest::emote("pulls out a small stone and closes it in his hand."); 
+           quest::emote("pulls out a small stone and closes it in his hand.");
            quest::say("Please be careful. What you are about to see may shock you at first, but don't let yourself be distracted for too long. These beings are merciless and once they have discovered your presence, they will stop at nothing to add your corpse to the others in the area.");
-           quest::signalwith(281127,1,30);      #starts event
+           quest::signalwith(281127,0,30);      #starts event
 
       }
       else {
@@ -65,7 +65,7 @@ if ($text=~/promise/i) {
     else {
       $client->Message(15,"Mystical forces prevent you from entering at this time.");
     }
-  } 
+  }
 }
 
 
@@ -86,7 +86,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67403 =>1 )) {
     quest::say("These glyphs look quite familiar. They are definitely in my language, but it seems as if the one who etched them did so against his will. Where did you get this? Wait, don't tell me. I know. Kreshin must have been successful in finding out what was going on in the Chamber of Souls. These glyphs detail how to animate stone using our geomancy abilities. There are some strange symbols toward the bottom, but for the most part, this is our language. Could he be trying to conduct the [ritual] of my people?");
     quest::setglobal("bic",3,5,"F");
-    
+   
   }
   plugin::return_items(\%itemcount);
 }
@@ -106,4 +106,4 @@ sub REMOVE_PLAYERS {
   }
   @player_list = ();
 }
-}
+} 

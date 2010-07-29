@@ -1,14 +1,12 @@
-
-
 sub EVENT_SPAWN {
 quest::set_proximity($x-50,$x+50,$y-50,$y+50); 
 $counter = undef;
-$event_started = undef;
+$event_started = 0;
 }
 
 sub EVENT_ENTER {
   if (defined $qglobals{sewers} && $qglobals{sewers} == 2) {
-  if(!$event_started) {
+  if($event_started == 0) {
   if(plugin::check_hasitem($client, 55608)) {
   if(plugin::check_hasitem($client, 55609)) {
   if(plugin::check_hasitem($client, 55610)) {
@@ -24,11 +22,12 @@ sub EVENT_ENTER {
 }
 }
 }
+}
 sub EVENT_SIGNAL {
   if($signal == 1) { #signal 1 is from each of the remains
     $counter += 1;
       if($counter == 4) {
-       quest::spawn2(288086,0,0,1320,-2551,15,87);
+       quest::spawn2(288087,0,0,536,-2353,-60,64);
  }
  }
  }

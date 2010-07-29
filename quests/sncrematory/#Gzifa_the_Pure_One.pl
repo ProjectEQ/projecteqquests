@@ -18,6 +18,5 @@ sub EVENT_ITEM {
      quest::setglobal("sewers", 3, 5, "F");
 	$client->Message(4,"You receive a character flag!");
  }
-  }
-  plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }

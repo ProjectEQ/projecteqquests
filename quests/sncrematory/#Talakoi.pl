@@ -1,3 +1,3 @@
 sub EVENT_DEATH {
-  quest::signalwith(288088,1,1);
+ quest::spawn2(288086,0,0,$x,$y,$z,$h);
 }

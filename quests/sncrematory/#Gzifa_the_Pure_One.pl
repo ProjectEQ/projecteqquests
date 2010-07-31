@@ -13,7 +13,7 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 55608 =>1, 55609 =>1, 55610 =>1, 55611 =>1 )) {
-   quest::stoptimer();
+   quest::stoptimer(1);
    quest::say("Great job!");
      quest::setglobal("sewers", 3, 5, "F");
 	$client->Message(4,"You receive a character flag!");

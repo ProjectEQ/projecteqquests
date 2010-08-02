@@ -17,6 +17,7 @@ sub EVENT_ITEM {
    quest::say("Great job!");
      quest::setglobal("sewers", 3, 5, "F");
 	$client->Message(4,"You receive a character flag!");
+          quest::depop();
  }
     plugin::return_items(\%itemcount);
 }

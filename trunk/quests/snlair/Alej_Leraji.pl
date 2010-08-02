@@ -22,7 +22,7 @@ sub EVENT_TIMER {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 68298 =>1 )) {
     quest::say("I will help you if you can help me.  I've lost my tools.  Some of the denziens of the sewers stole them after I got trapped under this rock.  Get my tools so I can escape and I'll show you to the pool.");  #not live text
-     quest::spawn2(286104,0,0,0,0,0);  #spawns lair trigger
+     quest::spawn2(286104,0,0,10,10,10,0);  #spawns lair trigger
   }
   plugin::return_items(\%itemcount);
 }

@@ -15,7 +15,8 @@ if($counter == 14) {
 }
 if($counter == 22) {
   quest::ze(1,"You have found some tools");
-  quest::setglobal("sewers", 4, 5, "F");
+  quest::signalwith(286098,1,0);
+  quest::stoptimer(2);
 
 }
 }

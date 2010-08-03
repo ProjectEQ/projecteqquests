@@ -1,11 +1,13 @@
+my $event = 0;
+
 sub EVENT_SPAWN {
   quest::settimer(1,1);
   }
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-  if (defined $qglobals{sewers} && $qglobals{sewers} == 4) {
-    quest::say("I have found your three stone shaping tools.");
+  if ($event == 1) {
+    quest::say("You have found my three stone shaping tools.");
     quest::setglobal("sewers", 5, 5, "F");
 	$client->Message(4,"You receive a character flag!");
 }
@@ -25,4 +27,10 @@ sub EVENT_ITEM {
      quest::spawn2(286104,0,0,10,10,10,0);  #spawns lair trigger
   }
   plugin::return_items(\%itemcount);
+}
+
+sub EVENT_SIGNAL {
+  if ($signal == 1) {
+    $event = 1;
+  }
 }

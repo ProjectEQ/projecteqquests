@@ -6,12 +6,20 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 if ($text=~/hail/i) {
   if ($event == 1) {
-     quest::say("Great job!");
-     quest::setglobal("sewers", 2, 5, "F");
-	$client->Message(4,"You receive a character flag!");
+   $group = $entity_list->GetGroupByClient($client);
+      if ($group) {
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          push (@player_list, $group->GetMember($count)->GetName());
+        }
 }
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 1, "F");
+   $pc->Message(4,"You receive a temporary flag!");
 }
-
+} 
+}
  elsif ($text=~/hail/i) {
     quest::say("Find the aged stonemites.  They are causing great trouble, come back and talk to me once you have solved the problem.");
     quest::spawn2(287021,0,0,-96,-1679,-89,207);
@@ -24,8 +32,7 @@ if ($text=~/hail/i) {
     quest::spawn2(287021,0,0,-53,-1586,-87,180);
     quest::spawn2(287021,0,0,-120,-1573,-89,135);    
   }
-  
-}
+ }
 sub EVENT_SIGNAL {
 if($signal == 0) {
   $event = 1;

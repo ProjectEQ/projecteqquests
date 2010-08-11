@@ -1,5 +1,4 @@
 # Gemmed Sword Hilt
-#
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -19,26 +18,24 @@ sub EVENT_SAY {
   }
   if ($text=~/gemmed sword hilt/i) {
     quest::say("That is great to hear, $name, here is the hilt. Please go see Yaeorat at once and bring me news about the magic that surrounds this sword hilt good or bad.");
-    quest::summonitem(4762);
+    quest::summonitem(4762); #Gemmed Sword Hilt
     quest::setglobal("swordhilt",1,5,"D1");
   }
 }
 
 sub EVENT_ITEM {
-  if ($swordhilt == 2) {
-    if (plugin::check_handin(\%itemcount, 4762 => 1)) {
-      quest::say("Fantastic work, $name. It would seem that this hilt is fit to be attached to a blade and distributed amongst my guards. I have many other hilts that I need delivered to Yaeorat should you choose to courier another in the future. Until then good luck to you.");
-      quest::exp(5000);
-      quest::faction(152,10); #house of fordel
-      quest::faction(140,10); #haven defenders
-      quest::faction(338,10); #traders of the haven
-      quest::delglobal("swordhilt");
-    }
+  if (plugin::check_handin(\%itemcount, 4762 => 1) && defined($qglobals{swordhilt}) && ($qglobals{swordhilt} == 2)) { #Gemmed Sword Hilt
+    quest::say("Fantastic work, $name. It would seem that this hilt is fit to be attached to a blade and distributed amongst my guards. I have many other hilts that I need delivered to Yaeorat should you choose to courier another in the future. Until then good luck to you.");
+    quest::exp(1000);
+    quest::faction(152,10); #house of fordel
+    quest::faction(140,10); #haven defenders
+    quest::faction(338,10); #traders of the haven
+    quest::delglobal("swordhilt");
   }
   else {
+    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }
 
 # EOF zone: shadowhaven ID: 150089 NPC: Daloran_Glimmerblade
-

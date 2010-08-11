@@ -6,10 +6,14 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
 	$InInstancePlant = quest::GetInstanceID("snplant",0);
+	$InInstancePlant1 = quest::GetInstanceID("snplant",1);
 	$InInstanceCrem = quest::GetInstanceID("sncrematory",0);
 	$InInstancePool = quest::GetInstanceID("snpool",0);
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
-	if($InInstancePlant > 0){
+	if($InInstancePlant1 > 0){
+		quest::MovePCInstance(287, $InInstancePlant1, 150, 127, -7);
+	}
+	elsif($InInstancePlant > 0){
 	    	quest::MovePCInstance(287, $InInstancePlant, 150, 127, -7);
 	}	
 	elsif($InInstanceCrem > 0){
@@ -25,4 +29,3 @@ sub EVENT_ENTER {
 		$client->Message(13, "You are not a part of an instance!");
 	}
 }
-

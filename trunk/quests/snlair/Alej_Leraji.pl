@@ -1,16 +1,28 @@
-my $event = 0;
-
 sub EVENT_SPAWN {
   quest::settimer(1,1);
+  $event = 0;
   }
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
   if ($event == 1) {
     quest::say("You have found my three stone shaping tools.");
-    quest::setglobal("sewers", 5, 5, "F");
-	$client->Message(4,"You receive a character flag!");
+    $group = $entity_list->GetGroupByClient($client);
+      if ($group) {
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          push (@player_list, $group->GetMember($count)->GetName());
+        }
 }
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 3, "F");
+   $pc->Message(4,"You receive a temporary flag!");
+}
+}
+}
+elsif ($text=~/hail/i) {
+  quest::say("Help me escape!  Wait, who sent you?");
 }
 }
 

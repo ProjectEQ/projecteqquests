@@ -29,8 +29,18 @@ sub EVENT_SAY {
   }
   sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 55617 =>1, 55618 =>1, 55619 =>1, 55620 =>1 )) {
-  quest::setglobal("god_vxed_access", 1, 5, "F");
-	$client->Message(4,"You receive a character flag!");
- }
-  plugin::return_items(\%itemcount);  
+$group = $entity_list->GetGroupByClient($client);
+      if ($group) {
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          push (@player_list, $group->GetMember($count)->GetName());
+        }
+}
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 4, "F");
+   $pc->Message(4,"You receive a temporary flag!");
+}
+}
+ plugin::return_items(\%itemcount);  
   }

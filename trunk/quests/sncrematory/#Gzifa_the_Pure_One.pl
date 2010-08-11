@@ -14,10 +14,19 @@ sub EVENT_TIMER {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 55608 =>1, 55609 =>1, 55610 =>1, 55611 =>1 )) {
    quest::stoptimer(1);
-   quest::say("Great job!");
-     quest::setglobal("sewers", 3, 5, "F");
-	$client->Message(4,"You receive a character flag!");
-          quest::depop();
- }
+   $group = $entity_list->GetGroupByClient($client);
+      if ($group) {
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          push (@player_list, $group->GetMember($count)->GetName());
+        }
+}
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 2, "F");
+   $pc->Message(4,"You receive a temporary flag!");
+  quest::depop();
+}
+} 
     plugin::return_items(\%itemcount);
 }

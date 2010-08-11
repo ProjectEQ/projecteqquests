@@ -5,10 +5,9 @@
 #NPC Name: Forpar Fizfla
 #NPC ID: 56130
 #Quest Status: finished
-#
 
 sub EVENT_SAY { 
-  if ($text=~/Hail/i) {
+  if ($text=~/hail/i) {
     quest::say("Get out you pesky $race! I don't need any $race germs! Out, ye filthy beast!");
   }
   if ($text=~/mystical instrument/i) {
@@ -37,16 +36,16 @@ sub EVENT_ITEM {
     quest::say("Wooooooo! You are doing a wonderful job, $name. I wish I could go out and gather these things myself.' Forpar sits back down at his desk and pulls several very strange looking tools out. Eventually he looks up at you and says, 'The body is done! Only one more piece to go!");
     quest::summonitem(20536); #Mystical Lute Body
   }
-  elsif (plugin::check_handin(\%itemcount, 20535 => 1, 20536 => 1, 20526 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 20535 => 1, 20536 => 1, 20526 => 1)) { #Mystical Lute Head, Mystical Lute Body, Undead Dragongut Strings
     quest::say("Goodness! I can hardly contain myself! This will be my greatest creation ever!");
     quest::emote("sits down, slides the lute head into place and screws it together. After a few minutes, he begins to string the lute with the gut strings of the poison dragon. A wonderful sound fills the air as he strums the lute once and hands it to you.");
     quest::say("I hope you find a good use for that! I bet you could play it from the mountaintops and the people below would hear you. Thank you, $name, for making my lifelong dream come true!");
     quest::summonitem(20538); #Mystical Lute
   }
   else {
+    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }
 
 #END of FILE Zone:steamfont  ID:56130 -- Forpar_Fizfla
-

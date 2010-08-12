@@ -17,8 +17,4 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-sub EVENT_WAYPOINT_ARRIVE {
-   if($wp == 9) {
-    quest::depop();
-  }
-} 
+

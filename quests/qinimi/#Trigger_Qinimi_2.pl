@@ -68,7 +68,7 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
   if ($timer == 1) {
      quest::stoptimer(1);
-     quest::signalwith(281050,1,0);  #signal to remove on failure
+     quest::signalwith(281051,1,0);  #signal to remove on failure
      quest::depopall(281128);
      quest::depopall(281129);
      quest::depopall(281130);
@@ -84,7 +84,7 @@ sub EVENT_TIMER {
      
    if ($timer == 3) {
      quest::stoptimer(3);
-     quest::signalwith(281050,1,0);  #signal to remove on success
+     quest::signalwith(281051,1,0);  #signal to remove on success
      quest::depop(281127);
      }
 }

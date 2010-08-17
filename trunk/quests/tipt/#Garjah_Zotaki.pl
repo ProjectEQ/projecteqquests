@@ -1,6 +1,10 @@
+sub EVENT_SPAWN {
+  $event = 0;
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if ($event == 1) {
+    if ($event == 2) {
       quest::say("Carefully continue on your journey, you will need a key.");
       quest::signalwith(289019,1,0);
   }
@@ -14,6 +18,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_ENTER {
+  if($event == 0) {
    quest::spawn2(289035,0,0,-1274,996,396,191);
    quest::spawn2(289035,0,0,-1298,1012,396,127);
    quest::spawn2(289035,0,0,-1323,996,396,64);
@@ -24,7 +29,9 @@ sub EVENT_ENTER {
    quest::spawn2(289035,0,0,-1254,799,395,246);
    quest::spawn2(289035,0,0,-1249,962,394,153);
    quest::settimer(1,60);
+   $event = 1;
    }
+ }
  
 sub EVENT_TIMER {
   {
@@ -37,7 +44,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(289035);
 		$named_up = 1;
 }
 if ($timer == 1 && $named_up == 0)  {
-   $event = 1;
+   $event = 2;
    quest::stoptimer(1);
 }
 }   

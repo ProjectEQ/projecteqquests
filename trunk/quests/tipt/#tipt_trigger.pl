@@ -1,8 +1,10 @@
 sub EVENT_SPAWN {
-  quest::set_proximity($x-50,$x+50,$y-50,$y+50); 
+  quest::set_proximity($x-50,$x+50,$y-50,$y+50);
+  $event = 0; 
 }
 
 sub EVENT_ENTER {
+  if($event == 0) {
    quest::spawn2(289034,0,0,-2106,188,250,78);
    quest::spawn2(289034,0,0,-2075,246,250,120);
    quest::spawn2(289034,0,0,-2019,247,250,103);
@@ -11,6 +13,8 @@ sub EVENT_ENTER {
    quest::spawn2(289034,0,0,-1865,140,250,213);
    quest::spawn2(289034,0,0,-1953,94,250,222);
    quest::spawn2(289034,0,0,-2047,125,250,22);
+   $event = 1;
+   }
    }
    
 sub EVENT_SIGNAL {
@@ -21,6 +25,6 @@ sub EVENT_SIGNAL {
     quest::spawn2(289036,0,0,-2040,196,250,113);
 }
   if($counter == 16) {
-    quest::spawn2(289031,0,0,-804-1583,538,121);
+    quest::spawn2(289031,0,0,-804,-1583,538,121);
     }
 } 

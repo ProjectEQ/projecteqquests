@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-  if ($faction >= 4) { # Require Kindly and greater faction
+  if ($faction >= 7) { # Require Kindly and greater faction
   if (defined $qglobals{bic} && $qglobals{bic} == 6) {
     quest::emote("coughs pitifully and looks through you with weak eyes.");
     quest::say("This gazebo was once a place of contemplation, meditation, and reflection, but now it is a place of torture. These slavers shackle us here within feet of the pool of water and refuse us food or drink for days at a time, accompanied by horrible beatings. And now, I have had enough. I am through with this world and can only hope for peace in my passing. Before I pass on I wonder if you could do a [favor] for me?");
@@ -8,7 +8,7 @@ sub EVENT_SAY {
     }
     }
   if($text=~/favor/i) {
-  if ($faction >= 4) { # Require Kindly and greater faction
+  if ($faction >= 7) { # Require Kindly and greater faction
   if (defined $qglobals{bic} && $qglobals{bic} == 6) {
      quest::emote("slips you a scuffed signet ring.");
      quest::say("Yes, yes. Here is a family heirloom that I have been keeping secret from our captors. If you deliver this ring to my kin, I can die in peace knowing it never fell into their hands. There are rumors that some of my family members have escaped the clutches of these monsters and made their way into a city that floats on water. I hope you understand, friend. Go quickly.");

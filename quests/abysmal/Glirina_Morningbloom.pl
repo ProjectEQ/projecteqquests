@@ -55,21 +55,21 @@ sub EVENT_SAY {
   }
 }
 
-  sub EVENT_ITEM {
+sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58067 => 1)) { #Raw Crimson Nihilite
     quest::say("Ah, yes. Here is your Nihilite.");
     quest::summonitem(58064,2); #Pale Nihilite
   }
-  if (plugin::check_handin(\%itemcount, 58092 => 4) || plugin::check_handin(\%itemcount, 58092 => 3) || plugin::check_handin(\%itemcount, 58092 => 2) || plugin::check_handin(\%itemcount, 58092 => 1)) { #Simple Clasp
+  elsif (plugin::check_handin(\%itemcount, 58092 => 4) || plugin::check_handin(\%itemcount, 58092 => 3) || plugin::check_handin(\%itemcount, 58092 => 2) || plugin::check_handin(\%itemcount, 58092 => 1)) { #Simple Clasp
     quest::say("Ah, yes. Thank you.");
   }
-  if (plugin::check_handin(\%itemcount, 58094 => 4) || plugin::check_handin(\%itemcount, 58094 => 3) || plugin::check_handin(\%itemcount, 58094 => 2) || plugin::check_handin(\%itemcount, 58094 => 1)) { #Simple Copper Ring
+  elsif (plugin::check_handin(\%itemcount, 58094 => 4) || plugin::check_handin(\%itemcount, 58094 => 3) || plugin::check_handin(\%itemcount, 58094 => 2) || plugin::check_handin(\%itemcount, 58094 => 1)) { #Simple Copper Ring
     quest::say("Ah, yes. Thank you.");
   }
-  if (plugin::check_handin(\%itemcount, 58089 => 4) || plugin::check_handin(\%itemcount, 58089 => 3) || plugin::check_handin(\%itemcount, 58089 => 2) || plugin::check_handin(\%itemcount, 58089 => 1)) { #Simple Brass Armband
+  elsif (plugin::check_handin(\%itemcount, 58089 => 4) || plugin::check_handin(\%itemcount, 58089 => 3) || plugin::check_handin(\%itemcount, 58089 => 2) || plugin::check_handin(\%itemcount, 58089 => 1)) { #Simple Brass Armband
     quest::say("Ah, yes. Thank you.");
   }
-  if (plugin::check_handin(\%itemcount, 58116 => 4) || plugin::check_handin(\%itemcount, 58116 => 3) || plugin::check_handin(\%itemcount, 58116 => 2) || plugin::check_handin(\%itemcount, 58116 => 1)) { #Simple Silver Chain
+  elsif (plugin::check_handin(\%itemcount, 58116 => 4) || plugin::check_handin(\%itemcount, 58116 => 3) || plugin::check_handin(\%itemcount, 58116 => 2) || plugin::check_handin(\%itemcount, 58116 => 1)) { #Simple Silver Chain
     quest::say("Ah, yes. Thank you.");
   }
   else {

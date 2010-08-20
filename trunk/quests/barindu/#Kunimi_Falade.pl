@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-  if ($faction <= 4) { # Require ally faction
+  if ($faction >= 9) { # Require ally faction
   if (defined $qglobals{bic} && $qglobals{bic} == 5) {
   quest::emote("glances around to make sure no one is within earshot then whispers,");
   quest::say("Who are you and what do you want?");
@@ -8,7 +8,7 @@ sub EVENT_SAY {
   }
   }
   if ($text=~/proteri sent me/i) {
-  if ($faction <= 4) { # Require ally faction
+  if ($faction >= 9) { # Require ally faction
   if (defined $qglobals{bic} && $qglobals{bic} == 5) {
   quest::emote("looks nervous at the mention of that name and says,");
   quest::say("I'm sorry. I don't know anyone by that name.");
@@ -16,7 +16,7 @@ sub EVENT_SAY {
 }
 }
 if ($text=~/ingredients/i) {
-  if ($faction <= 4) { # Require ally faction
+  if ($faction >= 9) { # Require ally faction
   if (defined $qglobals{bic} && $qglobals{bic} == 5) {
   quest::say("Creating poisons is distasteful business and I'm afraid the items that go into it are just as distasteful. I need the black bile of a hynid and the yellow bile of a tide feaster from the shores of Natimbi and both a vial of corrosive slime and a mass of insect larva from the sewers beneath us. Once I have these items, I should be able to create an effective poison. Now, you should leave before we're seen.");
   }

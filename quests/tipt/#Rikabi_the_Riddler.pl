@@ -73,18 +73,24 @@ sub EVENT_SAY {
   if (($text=~/ready/i) && ($riddle == 15)) {
   quest::say("It floats on water, light as can be. A thousand men can't lift it free.");
   }
+  if(($text=~/hail/i) && ($event == 2)) {
+    quest::say("The door is open, hurry through!");
+    quest::forcedooropen(4);
+}
 }
 sub EVENT_ITEM {
 if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 1) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 1)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54068=>1 )) && (!$riddle == 1)) {
+  else {
     quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -99,17 +105,20 @@ elsif ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 1)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 2) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54069=>1 )) && ($riddle == 2) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && ($riddle == 2)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && (!$riddle == 2)) {
+  else {
     quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -124,17 +133,20 @@ elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && ($riddle == 2)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 3) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54070=>1 )) && ($riddle == 3) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && ($riddle == 3)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }  
-  elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && (!$riddle == 3)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -149,17 +161,20 @@ elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && ($riddle == 3)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 4) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54071=>1 )) && ($riddle == 4) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
  elsif ((plugin::check_handin(\%itemcount,  54071=>1 )) && ($riddle == 4)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54071=>1 )) && (!$riddle == 4)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -174,17 +189,20 @@ if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 4) && (define
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 5) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54072=>1 )) && ($riddle == 5) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
  elsif ((plugin::check_handin(\%itemcount,  54072=>1 )) && ($riddle == 5)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54072=>1 )) && (!$riddle == 5)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -199,17 +217,20 @@ if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 5) && (define
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 6) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54073=>1 )) && ($riddle == 6) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && ($riddle == 6)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && (!$riddle == 6)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -224,17 +245,20 @@ elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && ($riddle == 6)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 7) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54074=>1 )) && ($riddle == 7) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && ($riddle == 7)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && (!$riddle == 7)) {
+  else {
   quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -249,17 +273,20 @@ elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && ($riddle == 7)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 8) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54075=>1 )) && ($riddle == 8) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && ($riddle == 8)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && (!$riddle == 8)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -274,17 +301,20 @@ elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && ($riddle == 8)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 9) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54076=>1 )) && ($riddle == 9) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
  elsif ((plugin::check_handin(\%itemcount,  54076=>1 )) && ($riddle == 9)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54076=>1 )) && (!$riddle == 9)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -299,17 +329,20 @@ if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 9) && (define
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 10) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54077=>1 )) && ($riddle == 10) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && ($riddle == 10)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && (!$riddle == 10)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -324,17 +357,20 @@ elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && ($riddle == 10)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 11) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54078=>1 )) && ($riddle == 11) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && ($riddle == 11)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
- elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && (!$riddle == 11)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -349,17 +385,20 @@ elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && ($riddle == 11)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 12) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54079=>1 )) && ($riddle == 12) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && ($riddle == 12)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && (!$riddle == 12)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -374,17 +413,20 @@ elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && ($riddle == 12)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   }
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 13) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54080=>1 )) && ($riddle == 13) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
  elsif ((plugin::check_handin(\%itemcount,  54080=>1 )) && ($riddle == 13)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54080=>1 )) && (!$riddle == 13)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -399,17 +441,20 @@ if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 13) && (defin
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 14) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54081=>1 )) && ($riddle == 14) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && ($riddle == 14)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && (!$riddle == 14)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -424,17 +469,20 @@ elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && ($riddle == 14)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 15) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54082=>1 )) && ($riddle == 15) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
+    $event=2;
 }
 elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && ($riddle == 15)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
+    $event=2;
   }
-  elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && (!$riddle == 15)) {
+  else {
    quest::say("That is incorrect");
     quest::forcedooropen(4);
   quest::spawn2(289035,0,0,-301,2093,634,171);
@@ -449,6 +497,7 @@ elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && ($riddle == 15)) {
   quest::spawn2(289035,0,0,-261,2106,634,166);
   quest::spawn2(289035,0,0,-239,2069,634,191);
   quest::spawn2(289035,0,0,-239,2087,634,188);
+    $event=2;
   } 
   plugin::return_items(\%itemcount);
 }

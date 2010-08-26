@@ -61,7 +61,7 @@ sub EVENT_SIGNAL {
    }
 
    if($signal == 3) { #from death of Xictic
-     quest::settimer(3,360);
+     quest::settimer(3,600);
    }
 }
    

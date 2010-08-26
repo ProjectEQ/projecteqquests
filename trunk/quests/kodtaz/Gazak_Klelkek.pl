@@ -19,3 +19,13 @@ sub EVENT_SAY {
     #insert instance zone 294 version 0
   }
 }
+if (plugin::check_handin(\%itemcount, 60152 => )) && (defined $qglobals{ikky} && $qglobals{ikky} == 1) {
+  quest::setglobal("ikky",2,5,"F");
+  $client->Message(4,"Finished!- You have completed the trial at the Temple of Singular Might!");
+}
+elsif (plugin::check_handin(\%itemcount,60152 =>1 )) {
+  quest::say("I appreciate that you must have fought hard for this, but I cannot accept it yet. Please speak with Kevren Nalavat about the trials and once I have received word that you are actually ready to do the trials, you can present it to me again.");
+  quest::summonitem(60152);
+  }
+  plugin::return_items(\%itemcount);
+}

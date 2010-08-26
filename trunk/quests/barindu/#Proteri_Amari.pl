@@ -54,8 +54,15 @@ sub EVENT_ITEM {
     quest::say("I knew Kunimi would come through! Our day of escape is almost here. Take this to Abena Taifa. She is the servant who brings Ixvet his meals and is loyal to our cause.");
     quest::summonitem(64007); # Poisoned Fruit V2	
   }
-  else {
-    plugin::return_items(\%itemcount);
+  if (plugin::check_handin(\%itemcount, 64012 =>1 )) {
+    quest::say("Vasha told me what you did for her and I extend you my thanks as well. The bracelet she gave you is special beyond its emotional value. I sensed some magic locked away within the stone ages ago.");
+    quest::emote("holds the bracelet between his hands and whispers to the stone.");
+    quest::say("It's all about knowing how to convince the stone that it wants to awaken. When he opens his hands, the bracelet seems to glow from within.");
+    quest::say("There you are. Again, thank you for your aid and take care with that bracelet. When the stone is freshly awakened, it tends to be a bit fragile.");
+    quest::summonitem(64013);
+    quest::faction(231,15);
+    quest::exp(100000);
   }
-}
+  plugin::return_items(\%itemcount);
+  }
 # END of FILE Zone:Barindu  ID:283084, 283135 -- #Proteri_Amari.pl

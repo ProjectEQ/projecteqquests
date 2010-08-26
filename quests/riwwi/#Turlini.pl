@@ -8,7 +8,7 @@ sub EVENT_SAY {
   if($text=~/set you free/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 7) {
     quest::say("Bless you, we're saved! Listen up, friend. I've already formulated a plan to stage a quick and decisive escape, but first we need to get our hands on a complete set of shackle keys. Just a few won't suffice; it must be entire set. If we were to rescue only some of my brethren, those that remain behind would be brutally tortured beyond imagination. Now, I've watched the guards carefully and counted the silvery keys they carry. There are ten in total. Combine the set in this sack and return it to me. I knew you would help!");
-    quest::summonitem(52100);
+    quest::summonitem(52150);
     }
     }
     }

@@ -51,5 +51,18 @@ if ($text=~/specific order/i) {
 }
 if ($text=~/singular might/i) {
   quest::say("Beyond the dark fog to the south lies the Temple of Singular Might. You can find it between the two other temples. In front of the temple you will find a single, smaller temple where another of the brotherhood is waiting for you. Seek out Gazak Klelkek and speak to him about the troubles within the temple.");
+  quest::setglobal("ikky",1,5,"F");
+}
+if (($text=~/twin struggles/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 2)) {
+  quest::say("Beyond the dark fog to the south lies the Temple of Twin Struggles.  It is past the first two temples. Seek out Maroley Nazuey and speak to her about the troubles within the temple.");  #need live text
+}
+elsif ($text=~/twin struggles/i) {
+  quest::say("I'm sorry $name, but you're not ready to face the second trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
+}
+if (($text=~/tri fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) {
+  quest::say("Beyond the dark fog to the south lies the Temple of Tri-Fates.  It is the first temple you will come to.  Seek out Kenra Kalekkio and sepak to her about the troubles within the temple");  #need live text
+}
+elsif ($text=~/tri fates/i) {
+  quest::say("I'm sorry $name, but you're not ready to learn about the third trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
 }

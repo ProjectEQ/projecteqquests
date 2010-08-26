@@ -10,6 +10,17 @@ quest::say("Then go to your guild. This is the hall of the dwarven warriors - no
 }
 
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 12156 =>1, 5014 =>1 )) {
+  quest::say("Well Done!");
+  quest::exp(5000);
+  quest::faction(169,5);
+  quest::faction(314,5);
+  quest::faction(219,5);  
+  quest::faction(419,5);
+  quest::faction(57,-5);
+  quest::ChooseRandom(5034,7013,6024,5027,6019);
+  quest::givecash(3,6,10,0);
+}
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);

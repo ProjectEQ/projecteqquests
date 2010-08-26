@@ -1,3 +1,7 @@
+sub EVENT_SPAWN {
+  plugin::StraightPath(500,600);
+
+}
 sub EVENT_AGGRO {
   quest::say("In the name of the Rainkeeper, I strike at thee!!");
 }

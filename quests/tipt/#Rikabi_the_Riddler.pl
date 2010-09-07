@@ -29,49 +29,64 @@ sub EVENT_SAY {
     quest::creategroundobject(54082,-335,2077,635,0,600000);
   }
   if (($text=~/ready/i) && ($riddle == 1)) {
-   quest::say("Who makes has no need of it, who buys has no use of it, who uses it can neither see nor feel it."); 
+   quest::say("Who makes has no need of it, who buys has no use of it, who uses it can neither see nor feel it.");
+   quest::setglobal("riddle",1,0,"H2");
   }
    if (($text=~/ready/i) && ($riddle == 2)) {
   quest::say("What can be held in the left hand, but not in the right hand.");
+   quest::setglobal("riddle",2,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 3)) {
   quest::say("I drive men mad for love of me, Easily beaten, Never free.");
+   quest::setglobal("riddle",3,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 4)) {
   quest::say("I'm always hungry, I must always be fed, The finger I lick will soon turn red.");
+   quest::setglobal("riddle",4,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 5)) {
   quest::say("My life is measured in hours. I serve by being devoured. Thin, I am quick, Fat I am slow. Wind is my foe.");
+   quest::setglobal("riddle",5,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 6)) {
   quest::say("My mouth bears whiskers but no teeth. I have scales but I do not weigh. You can bait me with delicious food but please, no drink today.");
+   quest::setglobal("riddle",6,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 7)) {
   quest::say("Lovely and round, I shine with pale light, grown in darkness, a lady's delight.");
+   quest::setglobal("riddle",7,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 8)) {
   quest::say("I'm offered to the loved, and also to the dead. I come in many varied hues, most notably red. My pricks are known to pierce the skin, often resulting in wounds that bled.");
+   quest::setglobal("riddle",8,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 9)) {
   quest::say("When I am filled I can point the way, When I am empty Nothing moves me, I have two skins One without and one within.");
+   quest::setglobal("riddle",9,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 10)) {
   quest::say("I help to mature your spirits. When moistened I fulfill my purpose. Should I dry out, my task will fail and my quarry may be worthless.");
+   quest::setglobal("riddle",10,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 11)) {
   quest::say("I build up castles. I tear down mountains. I make some men blind, I help others to see. What am I?");
+   quest::setglobal("riddle",11,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 12)) {
   quest::say("When young, I am sweet in the sun. When middle-aged, I make you happy. When old, I am valued more than ever.");
+   quest::setglobal("riddle",12,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 13)) {
   quest::say("I scribble forms of the finest letter, and repel elements of the harshest weather. I am an arrow-aimer and a dust-breaker.");
+   quest::setglobal("riddle",13,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 14)) {
   quest::say("Searing 'cross the pitch-black skies, I scream in celebration, yet moments later, my outburst through, I am naught but imagination.");
+   quest::setglobal("riddle",14,0,"H2");
   }
   if (($text=~/ready/i) && ($riddle == 15)) {
   quest::say("It floats on water, light as can be. A thousand men can't lift it free.");
+   quest::setglobal("riddle",15,0,"H2");
   }
   if(($text=~/hail/i) && ($event == 2)) {
     quest::say("The door is open, hurry through!");
@@ -79,180 +94,180 @@ sub EVENT_SAY {
 }
 }
 sub EVENT_ITEM {
-if ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 1) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+if ((plugin::check_handin(\%itemcount,  54068=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 1) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54068=>1 )) && ($riddle == 1)) {
+elsif ((plugin::check_handin(\%itemcount,  54068=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 1)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
   
-elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && ($riddle == 2) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 2) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && ($riddle == 2)) {
+elsif ((plugin::check_handin(\%itemcount,  54069=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 2)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && ($riddle == 3) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 3) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && ($riddle == 3)) {
+elsif ((plugin::check_handin(\%itemcount,  54070=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 3)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }  
   
-elsif ((plugin::check_handin(\%itemcount,  54071=>1 )) && ($riddle == 4) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54071=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 4) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
- elsif ((plugin::check_handin(\%itemcount,  54071=>1 )) && ($riddle == 4)) {
+ elsif ((plugin::check_handin(\%itemcount,  54071=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 4)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54072=>1 )) && ($riddle == 5) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54072=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 5) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
- elsif ((plugin::check_handin(\%itemcount,  54072=>1 )) && ($riddle == 5)) {
+ elsif ((plugin::check_handin(\%itemcount,  54072=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 5)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && ($riddle == 6) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 6) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && ($riddle == 6)) {
+elsif ((plugin::check_handin(\%itemcount,  54073=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 6)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
- elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && ($riddle == 7) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+ elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 7) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && ($riddle == 7)) {
-    quest::say("Well done!  You may pass!");
-    quest::forcedooropen(4);
-    $event=2;
-  }
- 
-elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && ($riddle == 8) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
-   quest::say("Well done!  You may pass!");
-    quest::forcedooropen(4);
-    quest::summonitem(67551);
-    $event=2;
-}
-elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && ($riddle == 8)) {
+elsif ((plugin::check_handin(\%itemcount,  54074=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 7)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54076=>1 )) && ($riddle == 9) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 8) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
- elsif ((plugin::check_handin(\%itemcount,  54076=>1 )) && ($riddle == 9)) {
+elsif ((plugin::check_handin(\%itemcount,  54075=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 8)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && ($riddle == 10) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54076=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 9) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && ($riddle == 10)) {
+ elsif ((plugin::check_handin(\%itemcount,  54076=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 9)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && ($riddle == 11) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 10) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && ($riddle == 11)) {
+elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 10)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && ($riddle == 12) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle}e == 11) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && ($riddle == 12)) {
+elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 11)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54080=>1 )) && ($riddle == 13) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 12) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
- elsif ((plugin::check_handin(\%itemcount,  54080=>1 )) && ($riddle == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54079=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 12)) {
+    quest::say("Well done!  You may pass!");
+    quest::forcedooropen(4);
+    $event=2;
+  }
+ 
+elsif ((plugin::check_handin(\%itemcount,  54080=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 13) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+   quest::say("Well done!  You may pass!");
+    quest::forcedooropen(4);
+    quest::summonitem(67551);
+    $event=2;
+}
+ elsif ((plugin::check_handin(\%itemcount,  54080=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 13)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
 
-elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && ($riddle == 14) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 14) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && ($riddle == 14)) {
+elsif ((plugin::check_handin(\%itemcount,  54081=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 14)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && ($riddle == 15) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 15) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);
     $event=2;
 }
-elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && ($riddle == 15)) {
+elsif ((plugin::check_handin(\%itemcount,  54082=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 15)) {
     quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     $event=2;

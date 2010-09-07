@@ -39,7 +39,7 @@ if ($text=~/promise/i) {
    quest::say("I cannot tell you how relieved this makes me. Now to the issue at hand. While Xictic and those she chooses can roam freely in and out of the magical dome surrounding the chamber, if anyone else tries to enter they are held back. As a councilman, I was granted a device that allows access into the dome and I've managed to keep it away from the prying eyes of the Mata Muram. Using it is not without its consequences, though. As soon as an outsider shows up within the dome, they will know what has occurred and will come searching for the culprit so be certain you are ready to face the challenges ahead before you embark upon this venture. Only eighteen of you will be allowed into the chamber at one time so gather your forces and tell me you are [ready] to face Xictic.");
    }
    }
- if (defined $qglobals{bic} && $qglobals{bic} == 3) {
+ if (defined $qglobals{bic} && $qglobals{bic} => 3) {
  if ($text=~/ready/i) {
      if (!$event_started && $entity_list->GetNPCByNPCTypeID(281077)) { #Pixtt_Xictic_Krvne (NoTarget)
       $raid = $entity_list->GetRaidByClient($client);

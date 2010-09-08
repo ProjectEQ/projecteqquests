@@ -4,13 +4,12 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-if ($text=~/hail/i) {
-  if ($event == 1) {
+if (($text=~/hail/i) && ($event == 1))  {
    $group = $entity_list->GetGroupByClient($client);
       if ($group) {
         for ($count = 0; $count < $group->GroupCount(); $count++) {
           push (@player_list, $group->GetMember($count)->GetName());
-        }
+       }
 }
 foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
@@ -18,7 +17,6 @@ foreach $player (@player_list) {
      quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 1, "F");
    $pc->Message(4,"You receive a temporary flag!");
 }
-} 
 }
  elsif ($text=~/hail/i) {
     quest::say("Find the aged stonemites.  They are causing great trouble, come back and talk to me once you have solved the problem.");

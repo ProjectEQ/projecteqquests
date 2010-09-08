@@ -213,7 +213,7 @@ elsif ((plugin::check_handin(\%itemcount,  54077=>1 )) && (defined $qglobals{rid
     $event=2;
   }
  
-elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle}e == 11) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
+elsif ((plugin::check_handin(\%itemcount,  54078=>1 )) && (defined $qglobals{riddle} && $qglobals{riddle} == 11) && (defined $qglobals{bic} && $qglobals{bic} == 13)) {
    quest::say("Well done!  You may pass!");
     quest::forcedooropen(4);
     quest::summonitem(67551);

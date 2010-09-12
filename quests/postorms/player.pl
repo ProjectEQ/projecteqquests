@@ -1,6 +1,6 @@
 sub EVENT_CLICKDOOR
 {
-	$level_for_tier_three = 255;
+	$level_for_tier_three = 62;
 	my $d_id = ($doorid % 256);
 	if($d_id == 4)
 	{
@@ -9,7 +9,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(209) != 1)
 			{
 				quest::set_zone_flag(209);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}

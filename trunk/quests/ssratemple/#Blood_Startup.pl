@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
        elsif ($qglobals{emperor} == 1) {
         quest::settimer("empcheck",1200);
  }
- $qglobals{emperor} = undef;
+ quest::delglobal("emperor");
 }
 
 sub EVENT_TIMER {
@@ -22,6 +22,6 @@ sub EVENT_TIMER {
          quest::depop();
          quest::stoptimer("empcheck");
  }
-$qglobals{emperor} = undef;
+quest::delglobal("emperor");
 }
 #zone: ssratemple ID: 162208 NPC: #Blood_Startup

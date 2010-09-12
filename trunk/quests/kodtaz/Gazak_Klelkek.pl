@@ -19,7 +19,8 @@ sub EVENT_SAY {
     #insert instance zone 294 version 0
   }
 }
-if (plugin::check_handin(\%itemcount, 60152 => )) && (defined $qglobals{ikky} && $qglobals{ikky} == 1) {
+sub EVENT_ITEM {
+ if ((plugin::check_handin(\%itemcount, 60152 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
   quest::setglobal("ikky",2,5,"F");
   $client->Message(4,"Finished!- You have completed the trial at the Temple of Singular Might!");
 }

@@ -1,5 +1,5 @@
 sub EVENT_ENTERZONE  {
- if (defined $qglobals{god_tipt_access} && $qglobals{got_tipt_access} == 1) {
+ if (defined $qglobals{god_tipt_access} && $qglobals{god_tipt_access} == 2) {
   quest::settimer(30);
 }
 } 

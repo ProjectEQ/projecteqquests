@@ -21,8 +21,8 @@ sub EVENT_HP {
      my $y = $npc->GetY();
      my $z = $npc->GetZ();
      my $h = $npc->GetHeading();
-   quest::spawn2(294137,0,0,x,y - 10,z,h);
-   quest::spawn2(294137,0,0,x,y + 10,z,h);
+   quest::spawn2(294137,0,0,$x,$y - 10,$z,$h);
+   quest::spawn2(294137,0,0,$x,$y + 10,$z,$h);
    quest::setnexthpevent(25);
    }
 if($hpevent == 25) {
@@ -30,8 +30,8 @@ if($hpevent == 25) {
      my $y = $npc->GetY();
      my $z = $npc->GetZ();
      my $h = $npc->GetHeading();
-   quest::spawn2(294137,0,0,x,y + 10,z,h);
-   quest::spawn2(294137,0,0,x,y - 10,z,h);
+   quest::spawn2(294137,0,0,$x,$y + 10,$z,$h);
+   quest::spawn2(294137,0,0,$x,$y - 10,$z,$h);
    }
  }
 sub EVENT_COMBAT {

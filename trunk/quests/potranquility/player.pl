@@ -1,5 +1,5 @@
-$level_for_tier_two = 66;
-$level_for_tier_three = 66;
+$level_for_tier_two = 55;
+$level_for_tier_three = 62;
 
 sub EVENT_CLICKDOOR
 {
@@ -13,7 +13,6 @@ sub EVENT_CLICKDOOR
 			{
 				quest::set_zone_flag(210);
 				quest::set_zone_flag(208);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -26,7 +25,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(200) != 1)
 			{
 				quest::set_zone_flag(200);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -39,7 +37,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(207) != 1)
 			{
 				quest::set_zone_flag(207);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -52,7 +49,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(209) != 1)
 			{
 				quest::set_zone_flag(209);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -65,7 +61,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(211) != 1)
 			{
 				quest::set_zone_flag(211);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -78,7 +73,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(214) != 1)
 			{
 				quest::set_zone_flag(214);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}	
@@ -91,7 +85,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(212) != 1)
 			{
 				quest::set_zone_flag(212);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -104,7 +97,6 @@ sub EVENT_CLICKDOOR
 			if(quest::has_zone_flag(217) != 1)
 			{
 				quest::set_zone_flag(217);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}
@@ -119,7 +111,6 @@ sub EVENT_CLICKDOOR
 				quest::set_zone_flag(216);
 				quest::set_zone_flag(215);
 				quest::set_zone_flag(218);
-				$client->Message(15, "You have received a character flag!");
 			}
 		}
 	}

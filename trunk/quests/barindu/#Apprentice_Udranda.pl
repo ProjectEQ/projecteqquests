@@ -3,7 +3,7 @@ sub EVENT_SAY {
   $InInstanceTipt = quest::GetInstanceID("tipt",0);
   $group = $client->GetGroup();
   if ($text=~/hail/i) {
-  	quest::say("Do you wish to enter the [mountains]?");
+  	quest::say("Do you wish to enter the [mountains], or are you ready for [tipt]?");
   }
   if ($text=~/mountains/i) {
 	if($group){
@@ -18,6 +18,13 @@ sub EVENT_SAY {
 				$client->Message(13, "You are already in an instance!");
 				}
 		    	}	
+           else {
+	           $client->Message(13, "You are not in a group!");
+        	}
+}
+}
+ if ($text=~/tipt/i) {
+	if($group){
                 if(defined $qglobals{god_tipt_access} && $qglobals{god_tipt_access} == 1){
 		    	quest::say("Proceed with caution, you must face several trials to find your way past through this pass.");
 		    	if($InInstanceVxed == 0 && $InInstanceTipt == 0){
@@ -29,9 +36,9 @@ sub EVENT_SAY {
 				$client->Message(13, "You are already in an instance!");
 				}
 	    		}
+                   }
            else {
 		           $client->Message(13, "You are not in a group!");
         	}
      }
-}
 }

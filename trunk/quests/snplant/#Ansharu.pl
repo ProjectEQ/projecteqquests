@@ -22,7 +22,7 @@ foreach $player (@player_list) {
    $pc->Message(4,"You receive a temporary flag!");
         }
      }
- elsif ($text=~/hail/i) {
+ if (($text=~/hail/i) && ($event == 0)) {
     quest::say("Find the aged stonemites.  They are causing great trouble, come back and talk to me once you have solved the problem.");
     quest::spawn2(287021,0,0,-96,-1679,-89,207);
     quest::spawn2(287021,0,0,-41,-1685,-89,211);

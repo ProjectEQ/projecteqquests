@@ -34,14 +34,12 @@ if($hpevent == 25) {
    quest::spawn2(294137,0,0,$x,$y - 10,$z,$h);
    }
  }
-sub EVENT_COMBAT {
-if ($combat_state == 1) {
+sub EVENT_AGGRO {
   quest::settimer(1);
   quest::spawn2(294137,0,0,450,-119,6,200);
   quest::spawn2(294137,0,0,457,-139,6,193);
   quest::spawn2(294137,0,0,438,-158,6,192);
   }
- } 
 
 sub EVENT_TIMER {
  my $x = $npc->GetX();

@@ -30,7 +30,8 @@ sub EVENT_SIGNAL {
     }
   if($counter == 9) {
     $npc->SetHP(1100);
-    quest::spawn2(294138,0,0,$x,$y,$z,$h);
-    quest::depop();
+    quest::spawn2(294138,0,0,-16,-137,2,124);
+    quest::spawn2(294138,0,0,-20,-276,2,0);
+    quest::depopall(294085);
     }
 }

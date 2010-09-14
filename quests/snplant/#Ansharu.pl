@@ -18,7 +18,7 @@ if (($text=~/hail/i) && ($event == 2))  {
 foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
      $charid = $pc->CharacterID();
-     quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 1, "F");
+     quest::targlobal("temp_sewers", 1, "F", 283052, $charid, 283);
    $pc->Message(4,"You receive a temporary flag!");
         }
      }
@@ -43,7 +43,7 @@ if($signal == 0) {
 if($signal == 1) { 
          $counter += 1;
 }
-  if($counter == 9) { 
+  if(($counter == 9) && ($event == 1)) { 
     quest::spawn2(287145,0,0,-45,-1616,-87,190);
 
 }

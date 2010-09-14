@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
      $charid = $pc->CharacterID();
-     quest::InsertQuestGlobal($charid, 283052,283,"temp_sewers", 2, "F");
+     quest::targlobal("temp_sewers", 2, "F", 283052, $charid, 283);
    $pc->Message(4,"You receive a temporary flag!");
   quest::depop();
 }

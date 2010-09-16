@@ -19,7 +19,7 @@ my $spawntime = 5760 + $variance;
     quest::setglobal("emperor",1,3,"M$spawntime");
     quest::depop();
   }
-quest::delglobal("emperor");
+$qglobals{emperor} = undef;
 }
 
 # EOF zone: ssratemple ID: 162065 NPC: #Emperor_Ssraeshza

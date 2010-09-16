@@ -22,6 +22,6 @@ sub EVENT_TIMER {
          quest::depop();
          quest::stoptimer("empcheck");
  }
-quest::delglobal("emperor");
+$qglobals{emperor} = undef;
 }
 #zone: ssratemple ID: 162208 NPC: #Blood_Startup

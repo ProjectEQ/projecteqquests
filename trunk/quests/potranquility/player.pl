@@ -68,7 +68,7 @@ sub EVENT_CLICKDOOR
 	#potactics
 	if($d_id == 24)
 	{
-		if((defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag}) || (defined $qglobals{pop_alt_access_potactics}))
+		if($client->GetLevel() >= $level_for_tier_two || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag}) || (defined $qglobals{pop_alt_access_potactics}))
 		{
 			if(quest::has_zone_flag(214) != 1)
 			{
@@ -80,7 +80,7 @@ sub EVENT_CLICKDOOR
 	#solrotower
 	if($d_id == 22)
 	{
-		if((defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag} && defined $qglobals{pop_tactics_tallon} && defined $qglobals{pop_tactics_vallon} && defined $qglobals{pop_pot_saryrn_final} && defined $qglobals{pop_pot_saryrn} && defined $qglobals{pop_hohb_marr}) || (defined $qglobals{pop_alt_access_solrotower}))
+		if($client->GetLevel() >= $level_for_tier_three || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag} && defined $qglobals{pop_tactics_tallon} && defined $qglobals{pop_tactics_vallon} && defined $qglobals{pop_pot_saryrn_final} && defined $qglobals{pop_pot_saryrn} && defined $qglobals{pop_hohb_marr}) || (defined $qglobals{pop_alt_access_solrotower}))
 		{
 			if(quest::has_zone_flag(212) != 1)
 			{

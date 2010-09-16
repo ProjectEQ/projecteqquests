@@ -1,8 +1,8 @@
 #
 # Steadfast Servant Veteran AA
 
-$HPThreshold = 70;      # HP Threshold at which HoT will be cast.
-$Frequency = 15;        # Frequency in seconds with which the EVENT_TIMER is executed.
+$HPThreshold = 50;      # HP Threshold at which HoT will be cast.
+$Frequency = 60;        # Frequency in seconds with which the EVENT_TIMER is executed.
 $Range = 100;           # How close a player must be for a chance to be buffed.
 
 @ManaRegenSpells = (697, 174, 1693, 6898);      # Breeze, Clarity, Clarity II, Servant's Breath

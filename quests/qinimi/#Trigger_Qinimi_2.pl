@@ -60,7 +60,7 @@ sub EVENT_SIGNAL {
       quest::spawn2(281126,0,0,-556,0,-3,254);   
    }
 
-   if($signal == 3) { #from death of Xictic
+   if($counter == 27) { #from death of Xictic
      quest::settimer(3,600);
    }
 }

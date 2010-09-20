@@ -5,7 +5,6 @@ sub EVENT_SPAWN {
     if ($qglobals{potb_p3_comp_pl} != 1) {
     quest::delglobal("potb_p1_start");
     quest::setglobal("potb_p1_comp",1,7,"H1"); #let potimea know we're on phase 2.
-    quest::settimer("phase2",3600); #60 minute time limit
     quest::signalwith(223111,1001,0); #flavor
     quest::signalwith(223177,10,1);
     quest::spawn2(223163,0,0,-140,1737,547,0); #phase 2 timer
@@ -63,45 +62,79 @@ sub EVENT_SIGNAL {
     quest::spawn2(223154,0,0,-140,1737,547,0); #phase 3 trigger
     quest::spawn_condition(potimeb,10,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-    quest::stoptimer("phase2");
-    quest::depop();
     $IIacounter = 0;
 }
+
+  if($signal == 9909) {      
+    quest::settimer("phase2",3600); #60 minute time limit
+  }
  }
 
 sub EVENT_TIMER {
-  if ($timer eq "phase2") { #event failure
-    quest::shout("Phase 2 failed! Time expired.");
-    quest::setglobal("timepokport",1,3,"M2");
-    quest::spawn_condition(potimeb,10,0); #set us to default.
-    quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-    quest::stoptimer("phase2");
-    quest::signalwith(223177,666,0);
-    quest::depopall(223132);
-    quest::depopall(223136);
-    quest::depopall(223126);
-    quest::depopall(223141);
-    quest::depopall(223148);
-    quest::depopall(223153);
-    quest::depopall(223096);
-    quest::depopall(223117);
-    quest::depopall(223143);
-    quest::depopall(223114);
-    quest::depopall(223137);
-    quest::depopall(223109);
-    quest::depopall(223124);
-    quest::depopall(223146);
-    quest::depopall(223110);
-    quest::depopall(223125);
-    quest::depopall(223102);
-    quest::depopall(223133);
-    quest::depopall(223134);
-    quest::depopall(223107);
-    quest::depopall(223138);
-    quest::depopall(223127);
-    quest::depopall(223216);
-    quest::depopall(223118);
-    quest::depopall(223163);
-    quest::depop();
-}
+	if ($timer eq "phase2") { 
+		$check = 0;
+
+		#phase3
+		$check_boss = $entity_list->GetMobByNpcTypeID(223154);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#phase4
+		$check_boss = $entity_list->GetMobByNpcTypeID(223157);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#phase5
+		$check_boss = $entity_list->GetMobByNpcTypeID(223158);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#quarm
+		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
+		if ($check_boss) {
+			$check = 1;
+		}	
+		
+		if($check == 0) {
+			#then we need to end the event
+			quest::shout("Phase 2 failed! Time expired.");
+			quest::setglobal("timepokport",1,3,"M2");
+			quest::spawn_condition(potimeb,10,0); #set us to default.
+			quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
+			quest::stoptimer("phase2");
+			quest::signalwith(223177,666,0);
+			quest::depopall(223132);
+			quest::depopall(223136);
+			quest::depopall(223126);
+			quest::depopall(223141);
+			quest::depopall(223148);
+			quest::depopall(223153);
+			quest::depopall(223096);
+			quest::depopall(223117);
+			quest::depopall(223143);
+			quest::depopall(223114);
+			quest::depopall(223137);
+			quest::depopall(223109);
+			quest::depopall(223124);
+			quest::depopall(223146);
+			quest::depopall(223110);
+			quest::depopall(223125);
+			quest::depopall(223102);
+			quest::depopall(223133);
+			quest::depopall(223134);
+			quest::depopall(223107);
+			quest::depopall(223138);
+			quest::depopall(223127);
+			quest::depopall(223216);
+			quest::depopall(223118);
+			quest::depopall(223163);
+			quest::depop();
+		} else {
+			#new phase is running
+			#we should start the timer for the next phase
+			quest::stoptimer("phase2");
+			quest::signalwith(223154,9909,0);
+			quest::depop();
+		}
+	}
  }

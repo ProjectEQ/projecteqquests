@@ -7,7 +7,6 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
    quest::signalwith(223177,18,0);
-   quest::clear_proximity();
 }   
 
 sub EVENT_SIGNAL {

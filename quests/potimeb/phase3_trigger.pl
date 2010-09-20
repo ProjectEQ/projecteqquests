@@ -20,7 +20,6 @@ sub EVENT_SPAWN {
     $namedIX = 0;
     quest::delglobal("potb_p1_comp");
     quest::setglobal("potb_p2_comp",1,7,"M75"); #general phase complete.
-    quest::settimer("phase3",4500); #75 minute time limit
     quest::signalwith(223111,1002,0); #flavor
     quest::signalwith(223177,18,1); #doors
     quest::spawn2(223209,0,0,458,709,495,64); #doors
@@ -240,17 +239,38 @@ sub EVENT_SIGNAL {
     $namedIX += 1;
 } 
   if ($namedIX == 2) { #event success
-    quest::stoptimer("phase3");
     quest::spawn_condition(potimeb,9,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::spawn2(223157,0,0,-410,-69,348,0); #spawn phase4_trigger
-    quest::depop();
     $namedIX = 0;
 } 
+
+   if($signal == 9909) {
+          quest::settimer("phase3",4500); #75 minute time limit
+   }
  }
 
 sub EVENT_TIMER {
-  if ($timer eq "phase3") { #event failure
+	if ($timer eq "phase3") { 
+		$check = 0;
+
+		#phase4
+		$check_boss = $entity_list->GetMobByNpcTypeID(223157);
+		if ($check_boss) {
+			$check = 1
+		}
+		#phase5
+		$check_boss = $entity_list->GetMobByNpcTypeID(223158);
+		if ($check_boss) {
+			$check = 1
+		}
+		#quarm
+		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
+		if ($check_boss) {
+			$check = 1
+		}	
+		
+		if($check == 0) {
     quest::shout("Phase 3 failed! Time expired.");
     quest::spawn_condition(potimeb,2,0); #set us to default.
     quest::spawn_condition(potimeb,3,0);
@@ -345,5 +365,13 @@ sub EVENT_TIMER {
     quest::depopall(223223);
     quest::depopall(223224);
     quest::depop(); 
-  }
+		} else {
+			#new phase is running
+			#we should start the timer for the next phase
+			quest::stoptimer("phase3");
+			quest::signalwith(223157,9909,0);
+			quest::depop();
+		}
+	}
+
 }

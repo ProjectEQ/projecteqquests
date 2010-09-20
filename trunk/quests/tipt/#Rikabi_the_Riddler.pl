@@ -141,19 +141,6 @@ sub EVENT_ITEM {
     $event = 3;
   }
   else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount);
-    return;
-  }
-  if ($event == 3) {
-    quest::say("Well done! You may pass!");
-    quest::forcedooropen(4);
-    if (defined($qglobals{bic}) && ($qglobals{bic} == 13)) {
-      quest::summonitem(67551); #Vaifan's Temporary Power Cell D
-    }
-    $question = 0;
-  }
-  else {
     quest::say("That is incorrect.");
     quest::spawn2(289035,0,0,-301,2093,634,171); #an_arisen_beludu
     quest::spawn2(289035,0,0,-302,2060,634,199); #an_arisen_beludu
@@ -167,6 +154,15 @@ sub EVENT_ITEM {
     quest::spawn2(289035,0,0,-261,2106,634,166); #an_arisen_beludu
     quest::spawn2(289035,0,0,-239,2069,634,191); #an_arisen_beludu
     quest::spawn2(289035,0,0,-239,2087,634,188); #an_arisen_beludu
-    quest::depop();
   }
+  if ($event == 3) {
+    quest::say("Well done! You may pass!");
+    quest::forcedooropen(4);
+    if (defined($qglobals{bic}) && ($qglobals{bic} == 13)) {
+      quest::summonitem(67551); #Vaifan's Temporary Power Cell D
+    }
+    $question = 0;
+  }
+    plugin::return_items(\%itemcount);
+    return;
 }

@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
     $godcounterII = 0;
     quest::delglobal("potb_p3_comp");
     quest::setglobal("potb_p4_comp",1,7,"H4"); #general complete
-    quest::settimer("phase5",14400); #240 minute time limit
+
     quest::signalwith(223111,1004,0); #flavor
     quest::spawn2(223098,0,0,-299,-297,23.3,31); #Fake Bertoxxulous
     quest::spawn2(223165,0,0,-257,255,6,101.5); #Fake Cazic
@@ -38,17 +38,28 @@ sub EVENT_SIGNAL {
     $godcounterII += 1;
 }
   if ($godcounterII == 4) { #event success
-    quest::stoptimer("phase5");
     quest::spawn_condition(potimeb, 1,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::spawn2(223159,0,0,166,-938,9.7,0); #spawn quarm_trigger
-    quest::depop();
     $godcounterII = 0;
 }
+  if($signal == 9909) {
+    quest::settimer("phase5",14400); #240 minute time limit
+  }
  }
 
 sub EVENT_TIMER {
-  if ($timer eq "phase5") { #event failure
+	if ($timer eq "phase5") { 
+		$check = 0;
+
+		#quarm
+		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
+		if ($check_boss) {
+			$check = 1;
+		}	
+		
+		if($check == 0) {
+			#then we need to end the event
     quest::stoptimer("phase5");
     quest::spawn_condition(potimeb, 1,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
@@ -88,5 +99,13 @@ sub EVENT_TIMER {
     quest::depopall(223130);
     quest::depopall(223145);
     quest::depop();
-}  
+		} else {
+			#new phase is running
+			#we should start the timer for the next phase
+			quest::stoptimer("phase5");
+			quest::signalwith(223159,9909,0);
+			quest::depop();
+		}
+	}
+
  }

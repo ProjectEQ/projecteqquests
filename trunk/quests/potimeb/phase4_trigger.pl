@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
     if ($qglobals{potb_p3_comp_pl} != 1) {
     quest::delglobal("potb_p2_comp");
     quest::setglobal("potb_p3_comp",1,7,"H4"); #general complete.
-    quest::settimer("phase4",14400); #240 minute time limit
+
     quest::signalwith(223111,1003,0); #flavor
     quest::spawn2(223075,0,0,-310,307,365,95); #Terris Thule
     quest::spawn2(223076,0,0,-320,-316,358,32.5); #Saryrn
@@ -13,7 +13,6 @@ sub EVENT_SPAWN {
     quest::spawn2(223078,0,0,405,75,358,192); #Vallon Zek
 }
     else {
-    quest::settimer("phase4",14400); #240 minute time limit
     quest::signalwith(223111,1003,0); #flavor
     quest::spawn2(223075,0,0,-310,307,365,95); #Terris Thule
     quest::spawn2(223076,0,0,-320,-316,358,32.5); #Saryrn
@@ -39,15 +38,32 @@ sub EVENT_SIGNAL {
     quest::settimer("terris",1800);
 }
   if ($godcounterI == 4) { #event success
-    quest::stoptimer("phase4");
     quest::spawn2(223158,0,0,-415.5,-68.8,3.3,0);
     $godcounterI = 0;
-    quest::depop();
 }
+
+  if($signal == 9909) {
+    quest::settimer("phase4",14400); #240 minute time limit    
+  }
  }
 
 sub EVENT_TIMER {
-  if ($timer eq "phase4") { #event failure
+	if ($timer eq "phase4") { 
+		$check = 0;
+
+		#phase5
+		$check_boss = $entity_list->GetMobByNpcTypeID(223158);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#quarm
+		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
+		if ($check_boss) {
+			$check = 1;
+		}	
+		
+		if($check == 0) {
+			#then we need to end the event
     quest::shout("Phase 4 failed! Time expired.");
     quest::setglobal("timepokport",1,3,"M2");
     quest::stoptimer("phase4");
@@ -65,8 +81,16 @@ sub EVENT_TIMER {
     quest::depopall(223076);
     quest::depopall(223077);
     quest::depopall(223078);
-    quest::depop;
-} 
+    quest::depop();
+		} else {
+			#new phase is running
+			#we should start the timer for the next phase
+			quest::stoptimer("phase4");
+			quest::signalwith(223158,9909,0);
+			quest::depop();
+		}
+	}
+
   if ($timer eq "vallon") { #depop Vallons crew after his death
     quest::depopall(223164);
     quest::stoptimer("vallon");

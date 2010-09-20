@@ -18,10 +18,10 @@ $check_mob = $entity_list->GetMobByNpcTypeID(223216); #Air will loop once if the
   if (!$check_mob && $anpccounter == 4 ) {
     $anpccounter = 0;
     quest::spawn2(223120,0,0,68,1355,494.8,185.5); #Neimon_of_Air
-    quest::spawn2(223216,0,0,68,1365,494.8,185.5);
-    quest::spawn2(223216,0,0,68,1375,494.8,185.5);
-    quest::spawn2(223216,0,0,68,1345,494.8,185.5);
-    quest::spawn2(223216,0,0,68,1335,494.8,185.5);
+    quest::spawn2(223995,0,0,68,1365,494.8,185.5);
+    quest::spawn2(223995,0,0,68,1375,494.8,185.5);
+    quest::spawn2(223995,0,0,68,1345,494.8,185.5);
+    quest::spawn2(223995,0,0,68,1335,494.8,185.5);
 
 }
   if ($signal == 14050) {

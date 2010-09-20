@@ -2,7 +2,6 @@ sub EVENT_SPAWN
 {
     	quest::delglobal("potb_p4_comp");
     	quest::setglobal("potb_p5_comp",1,7,"H2"); #general complete
-    	quest::settimer("quarm",7200); #120 minute time limit
     	quest::spawn2(223215,0,0,251,-1124,-2.8,0); #Quarm Pathing
     	quest::spawn2(223994,0,0,20,-1105,-2.8,64); #Quarm
     	quest::signalwith(223111,1005,0); #flavor
@@ -12,6 +11,12 @@ sub EVENT_SPAWN
     	quest::depopall(223003);
 }
  
+sub EVENT_SIGNAL {
+     if($signal == 9909) {
+        quest::settimer("quarm",7200); #120 minute time limit        
+     }
+}
+
 sub EVENT_TIMER 
 {
    	if ($timer eq "quarm") 

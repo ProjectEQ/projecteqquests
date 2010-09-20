@@ -27,7 +27,6 @@ sub EVENT_SIGNAL {
 }
   if ($Icounter == 5 ) { #phase 1 success
     quest::spawn2(223191,0,0,-140,1737,547,0); #phase 2 trigger
-    quest::stoptimer("phase1");
     $Icounter = 0;
 }
   if ($signal == 33 ) {
@@ -179,8 +178,36 @@ if ($signal == 18) { #clock doors
 }
 
 sub EVENT_TIMER {
-  if ($timer eq "phase1") { #event failure
-    quest::shout("Phase 1 failed! Time expired.");
+	if ($timer eq "phase1") { 
+		$check = 0;
+		#phase2
+		$check_boss = $entity_list->GetMobByNpcTypeID(223191);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#phase3
+		$check_boss = $entity_list->GetMobByNpcTypeID(223154);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#phase4
+		$check_boss = $entity_list->GetMobByNpcTypeID(223157);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#phase5
+		$check_boss = $entity_list->GetMobByNpcTypeID(223158);
+		if ($check_boss) {
+			$check = 1;
+		}
+		#quarm
+		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
+		if ($check_boss) {
+			$check = 1;
+		}	
+		
+		if($check == 0) {
+   quest::shout("Phase 1 failed! Time expired.");
     quest::setglobal("timepokport",1,3,"M2");
     quest::depopall(223178);
     quest::depopall(223179);
@@ -227,6 +254,12 @@ sub EVENT_TIMER {
     quest::depopall(223209);
     quest::depopall(223210);
     quest::stoptimer("phase1");
-
-}    
+		} else {
+			#new phase is running
+			#we should start the timer for the next phase
+			quest::stoptimer("phase1");
+			quest::signalwith(223191,9909,0);
+		}
+	}
+   
  }

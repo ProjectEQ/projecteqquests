@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if($ulevel >= 15) {
-    if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
+    if(plugin::check_hasitem($client, 41000) || $client->KeyRingCheck(41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
         quest::say("If you'd like to go to [Nedaria]'s Landing or to the Queen of Thorns in [Abysmal Sea], I can use my Farstone magic to send you. Speak up and tell me where you wish to travel.");
       }

@@ -25,7 +25,4 @@ sub EVENT_SIGNAL {
     quest::spawn2(289036,0,0,-2040,196,250,113);
     quest::setglobal("tipt_progress",1,5,"H6");
 }
-  if($counter == 16) {
-    quest::spawn2(289038,0,0,-804,1583,538,121);
-    }
-} 
+ } 

@@ -23,7 +23,7 @@ sub EVENT_SAY {
     if ($event == 2) { #Event in progress
       quest::say("I am waiting for the answer...");
     }
-    if ($event == 3) { #Event success
+    if (($event == 3) || ($qglobals{tipt_progress} == 3)) { #Event success
       quest::say("The door is open, hurry through!");
       quest::forcedooropen(4);
     }
@@ -158,6 +158,7 @@ sub EVENT_ITEM {
   if ($event == 3) {
     quest::say("Well done! You may pass!");
     quest::forcedooropen(4);
+    quest::setglobal("tipt_progress",3,5,"H6");
     if (defined($qglobals{bic}) && ($qglobals{bic} == 13)) {
       quest::summonitem(67551); #Vaifan's Temporary Power Cell D
     }

@@ -1,5 +1,6 @@
 sub EVENT_SPAWN {
   $event = 0;
+  quest::set_proximity($x-120,$x+120,$y-120,$y+120);
 }
 
 sub EVENT_SAY {
@@ -7,18 +8,14 @@ sub EVENT_SAY {
     if ($event == 2) {
       quest::say("Carefully continue on your journey, you will need a key.");
       quest::signalwith(289019,1,0);
+      quest::setglobal("tipt_progress",2,5,"H6");
   }
  }
 }
 
-sub EVENT_SIGNAL {
-  if ($signal == 1) {
-    quest::set_proximity($x-120,$x+120,$y-120,$y+120);
-}
-}
 
 sub EVENT_ENTER {
-  if($event == 0) {
+  if($qglobals{tipt_progress} == 1){
    quest::spawn2(289035,0,0,-1274,996,396,191);
    quest::spawn2(289035,0,0,-1298,1012,396,127);
    quest::spawn2(289035,0,0,-1323,996,396,64);
@@ -48,3 +45,12 @@ if ($timer == 1 && $named_up == 0)  {
    quest::stoptimer(1);
 }
 }   
+sub EVENT_SIGNAL {
+  if($signal == 1) {   # from 289002
+    $counter +=1;
+    }
+if($counter == 8) {
+    quest::spawn2(289038,0,0,-804,1583,538,121);
+    }
+
+}

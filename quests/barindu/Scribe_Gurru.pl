@@ -58,31 +58,31 @@ else {
   quest::say("Do you need to leave an [instance]?");
      }
 }
-if (($text=~/instance/i) && ($InInstanceVxed >= 0)) {
+if (($text=~/instance/i) && ($InInstanceVxed > 0)) {
     quest::DestroyInstance($InInstanceVxed);
     quest::say("Vxed Instance Destroyed");
     }
-if (($text=~/instance/i) && ($InInstanceTipt >= 0)) {
+if (($text=~/instance/i) && ($InInstanceTipt > 0)) {
     quest::DestroyInstance($InInstanceTipt);
     quest::say("Tipt Instance Destroyed");
     }    
-if (($text=~/instance/i) && ($InInstanceSnplant >= 0)) {
+if (($text=~/instance/i) && ($InInstanceSnplant > 0)) {
     quest::DestroyInstance($InInstanceSnplant);
     quest::say("Plant Instance Destroyed");
     }
-if (($text=~/instance/i) && ($InInstancePlant >= 0)) {
+if (($text=~/instance/i) && ($InInstancePlant > 0)) {
     quest::DestroyInstance($InInstancePlant);
     quest::say("Plant Instance Destroyed");
     }
-if (($text=~/instance/i) && ($InInstanceLair >= 0)) {
+if (($text=~/instance/i) && ($InInstanceLair > 0)) {
     quest::DestroyInstance($InInstanceLair);
     quest::say("Lair Instance Destroyed");
     }
-if (($text=~/instance/i) && ($InInstanceCrematory >= 0)) {
+if (($text=~/instance/i) && ($InInstanceCrematory > 0)) {
     quest::DestroyInstance($InInstanceCrematory);
     quest::say("Crematory Instance Destroyed");
     }
-if (($text=~/instance/i) && ($InInstancePool >= 0)) {
+if (($text=~/instance/i) && ($InInstancePool > 0)) {
     quest::DestroyInstance($InInstancePool);
     quest::say("Pool Instance Destroyed");
     }

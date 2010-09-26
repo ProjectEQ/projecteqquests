@@ -15,6 +15,6 @@ sub EVENT_TIMER {
 }
 }
 sub EVENT_DEATH {
-  quest::spawn2(289032,0,0,723,2239,734,244);
+  quest::spawn2(289032,0,0,1411,2143,730,242);
   quest::stoptimer(1);
 }

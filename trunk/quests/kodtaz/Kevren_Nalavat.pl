@@ -1,5 +1,13 @@
 sub EVENT_SAY {
- if ($text=~/hail/i) {
+ if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+    quest::say("You have done well and completed the three trials.  I have a few [task] for you to complete when you are ready.");
+   #need live text
+   }
+ elsif (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+    quest::say("Thanks for bringing those relics to me.  I have had a chance to examine them and they lead me to believe that something is going on in the Temple of the Damned.  Could you help me [discover their plans]?");
+    #need live text
+    }
+ else {
    quest::emote("looks relieved to see you.");
    quest::say("Finally the Wayfarers Brotherhood has sent adventurers this far out. I was beginning to wonder what was happening. I'm Kevren Nalavat, one of the brotherhood's traveling scholars. We can talk [more] later. The important thing is that you're here and now that you are you'll need to prove that you're up to the challenges facing us on this rugged terrain. I've been all through this area and it's no place to be caught unaware! So what do you say? Are you [ready to be tested]?");
  }
@@ -65,7 +73,34 @@ if (($text=~/tri fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) 
 elsif ($text=~/tri fates/i) {
   quest::say("I'm sorry $name, but you're not ready to learn about the third trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
+if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+  quest::say("If you continue on past the temples you will come to an area called [Martyr's Passage].  Within this area you need to find four different relic's of those who have died there, bring them to me.");
+  }
 if (($text=~/martyr's passage/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
   $client->Message(4,"Congratulations!- You have commissioned to investigate Martyr's Passage.");
+}
+if (($text=~/discover their plans/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+  quest::say("The Temple of the Damned is just south of my location.  Explore with caution.");
+  $client->Message(4,"Finished! - You've been commissioned to investigate the Temple of the Damned!");
+}
+}
+sub EVENT_ITEM {
+  if ((plugin::check_handin(\%itemcount, 60141 =>1,60142 =>1,60143 =>1,60144 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+         $client->Message(4,"Finished! - You've returned four relics from the Martyrs Passage!");
+         quest::setglobal("ikky",5,5,"F");
+  }
+  if ((plugin::check_handin(\%itemcount, 60146 =>1,60147 =>1,60148 =>1,60149 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+       quest::emote("examines the strange glyphs.");
+       quest::say("These glyphs are faded. I won't be able to decipher them until they've been cleaned up. You'll need to go back to the Martyrs Passage and recover some dust from the grounds nearby. Once you've gotten a pile of dust, you'll need to speak with Tublik Narwethar who is south of the Martyrs Passage. He has a stone tablet that can add some clarity to the glyphs with the help of that dust. Hurry along, $name, this information is important!");
+           $client->Message(4,"Finished! - You've recovered important glyphs from the Temple of the Damned!");
+           quest::setglobal("ikky",6,5,"F");
+           quest::summonitem(60146,60147,60148,60149);          
+  }
+ if ((plugin::check_handin(\%itemcount, 60150 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) { 
+      quest::emote("copies down the intricate patterns from the glyph.");
+      quest::say("Very interesting, but very dangerous. I've gone over the glyphs and they suggest there is great danger in the summoning of some kind of ferocious beast. I need to study the markings further, but since I've transcribed them already, you can keep the glyph for your own use. Nicely done, $name.");
+      quest::summonitem(60150);
+      quest::setglobal("ikky",7,5,"F");
+      $client->Message(4,"Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
 }
 }

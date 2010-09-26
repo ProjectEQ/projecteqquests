@@ -2,6 +2,11 @@ sub EVENT_SPAWN {
   plugin::SetAnim(dead);
 }
 sub EVENT_SAY {
+ $InInstanceIkky1 = quest::GetInstanceID("ikkinz",0);
+ $InInstanceIkky2 = quest::GetInstanceID("ikkinz",1);
+ $InInstanceIkky3 = quest::GetInstanceID("ikkinz",2);
+ $group = $client->GetGroup();
+
   if ($text=~/hail/i) {
     quest::say("Keep your voice down! We must not attract any [undo attention] to ourselves here. I may be the liaison for the Temple of Singular Might, but that doesn't make me any less of a target. I have kept watch of this temple since we began collecting information on the trusik and the Legion of Mata Muram. You should ask Kevren for more information on them if you haven't already.");
   }
@@ -15,8 +20,20 @@ sub EVENT_SAY {
     quest::say("Your task is to battle through the temple and enter an entrance to the inner chambers of the Temple of Singular Might. Once inside you must find the Diabolic Destroyer and kill it before it becomes more powerful. You must recover an artifact from the beast and return it to me. Once you have done this, you will be allowed to move onto the next trial. When you are [ready to proceed] and have a group with you, return to me and I shall set you on your way.");
   }
   if ($text=~/ready to proceed/i) {
-    quest::say("Very well then, $name. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...");
-    #insert instance zone 294 version 0
+     if($group){
+	if(defined $qglobals{ikky} && $qglobals{ikky} == 1) {			
+           quest::say("Very well then, $name. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...");
+           if($InInstanceIkky1 == 0 && $InInstanceIkky2 == 0 && $InInstanceIkky3 == 0){
+		 $Instance = quest::CreateInstance("ikkinz", 0, 10800);
+		 quest::AssignGroupToInstance($Instance);	
+		 quest::say("Instance added.");
+	   } else {
+		$client->Message(13, "You are already in an instance!");
+	 	  }
+           }
+      } else {
+	 $client->Message(13, "You are not in a group!");
+         }
   }
 }
 sub EVENT_ITEM {

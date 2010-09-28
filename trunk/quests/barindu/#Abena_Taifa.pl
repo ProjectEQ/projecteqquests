@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-   if($wp == 10) {
+   if($wp == 8) {
     quest::say("Ikaav Ixvet Pox, I humbly present you with your meal.");
     quest::signalwith(283050,1,10);
   }

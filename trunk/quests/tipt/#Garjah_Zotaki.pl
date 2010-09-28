@@ -16,7 +16,7 @@ sub EVENT_SAY {
 
 sub EVENT_ENTER {
   if($qglobals{tipt_progress} == 1){
-    if($event = 0) {
+    if($event == 0) {
    quest::spawn2(289035,0,0,-1274,996,396,191);
    quest::spawn2(289035,0,0,-1298,1012,396,127);
    quest::spawn2(289035,0,0,-1323,996,396,64);

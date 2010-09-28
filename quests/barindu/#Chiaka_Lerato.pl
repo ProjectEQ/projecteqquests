@@ -5,7 +5,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 64007 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 64010 =>1 )) {
     quest::say("I know of your plot and I have no interest in being a part of it. It's too dangerous and more likely to get us all killed than set us free. I don't want anyone else getting hurt, so I won't tell the guards, but I will have no part in your plans.");
     quest::summonitem(64010);
   }

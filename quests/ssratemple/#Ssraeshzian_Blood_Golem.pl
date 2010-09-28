@@ -1,12 +1,7 @@
-# Emperor Ssraeshza trigger
-#
-sub EVENT_SIGNAL {
-	quest::depop();
-}
+#BEGIN File: ssratemple\#Ssraeshzian_Blood_Golem.pl
 
 sub EVENT_DEATH {
-  quest::signalwith(162065,99,0);
+  quest::signalwith(162260,1,0); #EmpCycle
 }
 
-#EOF zone: ssratemple ID: 162064 NPC: #Ssraeshzian_Blood_Golem
-
+#END File: ssratemple\#Ssraeshzian_Blood_Golem.pl (162064)

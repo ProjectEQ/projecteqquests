@@ -7,6 +7,10 @@ sub EVENT_SAY {
     quest::say("Thanks for bringing those relics to me.  I have had a chance to examine them and they lead me to believe that something is going on in the Temple of the Damned.  Could you help me [discover their plans]?");
     #need live text
     }
+ elsif (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
+    quest::say("We have come upon another problem.  The summoners that you encountered in the Temple of the Damned are working at another location closer to the main temple to summon more vile creatures. Do you [think that you] can stop the ritual?");
+    #need live text
+    }
  else {
    quest::emote("looks relieved to see you.");
    quest::say("Finally the Wayfarers Brotherhood has sent adventurers this far out. I was beginning to wonder what was happening. I'm Kevren Nalavat, one of the brotherhood's traveling scholars. We can talk [more] later. The important thing is that you're here and now that you are you'll need to prove that you're up to the challenges facing us on this rugged terrain. I've been all through this area and it's no place to be caught unaware! So what do you say? Are you [ready to be tested]?");
@@ -83,6 +87,10 @@ if (($text=~/discover their plans/i) && (defined $qglobals{ikky} && $qglobals{ik
   quest::say("The Temple of the Damned is just south of my location.  Explore with caution.");
   $client->Message(4,"Finished! - You've been commissioned to investigate the Temple of the Damned!");
 }
+if (($text=~/think you can/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
+  quest::say("The Summoner's Ring is just past the Temple of the Damned");
+  $client->Message(4,"Finished! - You've been charged with stopping the ceremony at the Summoning Circle!");
+}
 }
 sub EVENT_ITEM {
   if ((plugin::check_handin(\%itemcount, 60141 =>1,60142 =>1,60143 =>1,60144 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
@@ -103,4 +111,11 @@ sub EVENT_ITEM {
       quest::setglobal("ikky",7,5,"F");
       $client->Message(4,"Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
 }
+ if ((plugin::check_handin(\%itemcount, 60151 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) { 
+    quest::say("You have done well, $name.  Speak with Tublik to continue helping us here in Kod'Taz."); 
+    quest::setglobal("ikky",8,5,"F");
+      $client->Message(4,"Finished! - You were able to recover a rare artifact from the Grand Summoner's goons in the Summoning Circle!");
+}
+ plugin::return_items(\%itemcount);
+
 }

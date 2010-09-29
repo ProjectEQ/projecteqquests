@@ -1,5 +1,7 @@
 $level_for_tier_two = 55;
 $level_for_tier_three = 62;
+$level_for_tier_three_five = 255;
+$level_for_elemental = 255;
 
 sub EVENT_CLICKDOOR
 {
@@ -68,7 +70,7 @@ sub EVENT_CLICKDOOR
 	#potactics
 	if($d_id == 24)
 	{
-		if($client->GetLevel() >= $level_for_tier_two || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag}) || (defined $qglobals{pop_alt_access_potactics}))
+		if($client->GetLevel() >= $level_for_tier_three_five || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag}) || (defined $qglobals{pop_alt_access_potactics}))
 		{
 			if(quest::has_zone_flag(214) != 1)
 			{
@@ -80,7 +82,7 @@ sub EVENT_CLICKDOOR
 	#solrotower
 	if($d_id == 22)
 	{
-		if($client->GetLevel() >= $level_for_tier_three || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag} && defined $qglobals{pop_tactics_tallon} && defined $qglobals{pop_tactics_vallon} && defined $qglobals{pop_pot_saryrn_final} && defined $qglobals{pop_pot_saryrn} && defined $qglobals{pop_hohb_marr}) || (defined $qglobals{pop_alt_access_solrotower}))
+		if($client->GetLevel() >= $level_for_tier_three_five || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag} && defined $qglobals{pop_tactics_tallon} && defined $qglobals{pop_tactics_vallon} && defined $qglobals{pop_pot_saryrn_final} && defined $qglobals{pop_pot_saryrn} && defined $qglobals{pop_hohb_marr}) || (defined $qglobals{pop_alt_access_solrotower}))
 		{
 			if(quest::has_zone_flag(212) != 1)
 			{
@@ -92,7 +94,7 @@ sub EVENT_CLICKDOOR
 	#pofire
 	if($d_id == 82)
 	{
-		if(defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag} && defined $qglobals{pop_tactics_tallon} && defined $qglobals{pop_tactics_vallon} && defined $qglobals{pop_tactics_ralloz} && defined $qglobals{pop_sol_ro_arlyxir} && defined $qglobals{pop_sol_ro_jiva} && defined $qglobals{pop_sol_ro_rizlona} &&  defined $qglobals{pop_sol_ro_dresolik} && defined $qglobals{pop_sol_ro_xuzl} && defined $qglobals{pop_sol_ro_solusk} && defined $qglobals{pop_hohb_marr})
+		if($client->GetLevel() >= $level_for_elemental || (defined $qglobals{pop_poi_behometh_preflag} && defined $qglobals{pop_poi_behometh_flag} && defined $qglobals{pop_tactics_tallon} && defined $qglobals{pop_tactics_vallon} && defined $qglobals{pop_tactics_ralloz} && defined $qglobals{pop_sol_ro_arlyxir} && defined $qglobals{pop_sol_ro_jiva} && defined $qglobals{pop_sol_ro_rizlona} &&  defined $qglobals{pop_sol_ro_dresolik} && defined $qglobals{pop_sol_ro_xuzl} && defined $qglobals{pop_sol_ro_solusk} && defined $qglobals{pop_hohb_marr}))
 		{
 			if(quest::has_zone_flag(217) != 1)
 			{
@@ -104,7 +106,7 @@ sub EVENT_CLICKDOOR
 	#powater/poearth/poair
 	if($d_id == 81 || $d_id == 83 || $d_id == 84)
 	{
-		if(defined $qglobals{pop_hohb_marr} && defined $qglobals{pop_bot_agnarr} && defined $qglobals{pop_pon_hedge_jezith} && defined $qglobals{pop_pon_construct} && defined $qglobals{pop_ponb_terris} && defined $qglobals{pop_ponb_poxbourne} && defined $qglobals{pop_pod_alder_fuirstel} && defined $qglobals{pop_pod_grimmus_planar_projection} && defined $qglobals{pop_pod_elder_fuirstel} && defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} && defined $qglobals{pop_poj_valor_storms} && defined $qglobals{pop_pov_aerin_dar} && defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 && defined $qglobals{pop_pos_askr_the_lost_final} && defined $qglobals{pop_cod_preflag} && defined $qglobals{pop_cod_bertox} && defined $qglobals{pop_cod_final} &&  defined $qglobals{pop_pot_shadyglade} && defined $qglobals{pop_pot_saryrn} && defined $qglobals{pop_pot_saryrn_final} && defined $qglobals{pop_hoh_faye} && defined $qglobals{pop_hoh_trell} && defined $qglobals{pop_hoh_garn} && defined $qglobals{pop_elemental_grand_librarian})
+		if($client->GetLevel() >= $level_for_elemental || (defined $qglobals{pop_hohb_marr} && defined $qglobals{pop_bot_agnarr} && defined $qglobals{pop_pon_hedge_jezith} && defined $qglobals{pop_pon_construct} && defined $qglobals{pop_ponb_terris} && defined $qglobals{pop_ponb_poxbourne} && defined $qglobals{pop_pod_alder_fuirstel} && defined $qglobals{pop_pod_grimmus_planar_projection} && defined $qglobals{pop_pod_elder_fuirstel} && defined $qglobals{pop_poj_mavuin} &&  defined $qglobals{pop_poj_tribunal} && defined $qglobals{pop_poj_valor_storms} && defined $qglobals{pop_pov_aerin_dar} && defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 && defined $qglobals{pop_pos_askr_the_lost_final} && defined $qglobals{pop_cod_preflag} && defined $qglobals{pop_cod_bertox} && defined $qglobals{pop_cod_final} &&  defined $qglobals{pop_pot_shadyglade} && defined $qglobals{pop_pot_saryrn} && defined $qglobals{pop_pot_saryrn_final} && defined $qglobals{pop_hoh_faye} && defined $qglobals{pop_hoh_trell} && defined $qglobals{pop_hoh_garn} && defined $qglobals{pop_elemental_grand_librarian}))
 		{
 			if(quest::has_zone_flag(216) != 1 || quest::has_zone_flag(215) != 1 || quest::has_zone_flag(218) != 1)
 			{

@@ -1,7 +1,7 @@
 #BEGIN File: ssratemple\#EmpCycle.pl
 
-my $BloodCoolDownTime = "M" . int(rand(60)) + 180; #Waiting time to reattempt Emp after failure (Current setting: 3-4 hours)
-my $EmpRepopTime = "M" . int(rand(2880)) + 4320; #Respawn time for Emp after success (Current setting: 3-5 days)
+my $BloodCoolDownTime = int(rand(60)) + 180; #Waiting time to reattempt Emp after failure (Current setting: 3-4 hours)
+my $EmpRepopTime = int(rand(2880)) + 4320; #Respawn time for Emp after success (Current setting: 3-5 days)
 my $EmpPrepTime = 30; #Seconds before Emp becomes targetable after killing Blood/Golem
 
 my $EmpPrep = "0";
@@ -29,7 +29,7 @@ sub EVENT_TIMER {
     quest::depop(162065); ##Emperor_Ssraeshza (No Target)
     quest::spawn2(162227,0,0,990.0,-325.0,415.0,192.0); ##Emperor_Ssraeshza_ (Real)
     quest::setglobal("Emperor",2,0,"F");
-    quest::setglobal("BloodCoolDown",0,0,$BloodCoolDownTime); #Cooldown timer
+    quest::setglobal("BloodCoolDown",0,0,"M$BloodCoolDownTime"); #Cooldown timer
     $EmpPrep = 0;
   }
 }
@@ -40,10 +40,10 @@ sub EVENT_SIGNAL {
     $EmpPrep = 1;
   }
   if ($signal == 2) { #Emperor is dead
-    quest::setglobal("Emperor",3,0,$EmpRepopTime); #Emp respawn timer
+    quest::setglobal("Emperor",3,0,"M$EmpRepopTime"); #Emp respawn timer
   }
   if ($signal == 3) { #Raid Failure
-    quest::setglobal("BloodCoolDown",0,0,$BloodCoolDownTime); #Cooldown timer
+    quest::setglobal("BloodCoolDown",0,0,"M$BloodCoolDownTime"); #Cooldown timer
   }
 }
 

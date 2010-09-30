@@ -23,16 +23,16 @@ sub EVENT_TIMER {
 
    $mobnpc1->AddToHateList($npc->GetHateTop()); 
    $mobnpc2->AddToHateList($npc->GetHateTop());
-
   }
 }
+
 sub EVENT_DEATH {
   quest::stoptimer(1);
 }
 
 sub EVENT_COMBAT {
-  if($combat_state ==0) {
-  quest::stoptimer(1);
-  quest::depopall(284098);
+  if($combat_state == 0) {
+    quest::stoptimer(1);
+    quest::depopall(284098);
   }
-  }
+}

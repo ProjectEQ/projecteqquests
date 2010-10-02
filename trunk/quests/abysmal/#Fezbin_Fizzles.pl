@@ -2,10 +2,13 @@ sub EVENT_SAY {
   if (($text=~/hail/i) && ($ulevel <= 64)) {
      quest::say("Well, hello traveler. Are you enjoying your stay on this wonderful ship? It is truly a wonder, isn't it? While I can see you are on the path to becoming a great adventurer, I sense that you are not yet powerful enough to help me with a task I need done. Return to me when you have experienced the world a little more.");
      }
-  if (($text=~/hail/i) && ($ulevel >= 65)) {
+  if (($text=~/hail/i) && ($ulevel >= 65) && ($qglobals{bic} == undef)) {
     quest::say("Greetings adventurer, have you come to explore this new [continent] we recently discovered?");
     quest::setglobal("bic",1,5,"F");
   }
+  if(($text=~/hail/i) && (defined $qglobals{bic} && $qglobals{bic} >= 1)) {
+     quest::say("If you need another [sealer], or [stone] let me know and I can provide them for you.");
+  }   
   if ($text=~/continent/i) {
   if (defined $qglobals{bic} && $qglobals{bic} == 1) {
     quest::emote("focuses his attention on $name.");
@@ -49,5 +52,13 @@ if ($text=~/news/i) {
     quest::say("The stone I have given you is very special indeed. It is a rare stone with a power that has not yet been revealed. After studying it we have come to the conclusion that its power is based off of resonance. You will see that there are fourteen sockets in the stone. Each socket requires a gem fragment of a certain resonance. As the fragments are set in the stone it will gradually increase in power. These fragments must be placed in the stone in a certain order using a set of clockwork gemcutter's tools, the stone, and the correct shard in the device I handed to you along with the stone. As you help find our scouts, you may come across the gem fragments that will fit into the stone. If you do, please try combining them in the special sealer. If at any time you lose the sealer or misplace the stone return to me and I will what I can do about a replacement.");
     }
     }
+    if(($text=~/sealer/i) && (defined $qglobals{bic} && $qglobals{bic} >= 1)) {
+      quest::say("Be careful with this one.");
+      quest::summonitem(67659);
+      }
+   if(($text=~/stone/i) && (defined $qglobals{bic} && $qglobals{bic} >= 1)) {
+      quest::say("Be careful with this one.");
+      quest::summonitem(67512);
+      }
     $qglobals{bic}=undef;
     }

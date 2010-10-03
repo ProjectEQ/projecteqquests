@@ -7,11 +7,14 @@ sub EVENT_SAY {
     quest::say("My pleasure to oblige you then. Shall I start on the left side or the right side?");
     quest::attack($name);
   }
+  if($text=~/you/i) {
+    quest::say("Vilnius, as I have told you. And yes, I am not as large as most of my kin. But that is a blessing, because my brain is bigger than that of an $race. <grin> I am a Facilitator. I.. facilitate.. jobs. You want something somebody else has, I can arrange for you to have it.. even if that something is their life. That is why I am here now, waiting on something to turn up in my hands before I pass it on to my client. Though I am a bit tired of waiting. My hired help seem to be delayed.");
+  }
   if($text=~/malka/i) {
     quest::say("Malka Rale works for me from time to time. One of the best thieves I have ever met, and damn handy with a blade. She is long overdue to meet me here. I'm afraid she may have run into trouble in Qeynos.");
   }
   if($text=~/delayed/i) {
-    quest::say("'Yes, delayed. She has always been prompt in the past, but she is several days overdue, and I know for a fact she completed the job. I am beginning to wonder if something happened to her. I would go check, but I run the risk of missing her if she shows up here.");
+    quest::say("Yes, delayed. She has always been prompt in the past, but she is several days overdue, and I know for a fact she completed the job. I am beginning to wonder if something happened to her. I would go check, but I run the risk of missing her if she shows up here.");
   }
   if($text=~/job/i && defined($qglobals{SmallJobs}) && ($qglobals{SmallJobs} == 1)) {
     quest::say("I need a few more items for a collector. They are rare and valuable, but I will pay you well for your trouble. I need the sword owned by the king of the Frogloks, the sword my distant cousin Karg is so proud of, and the matched set of Painbringer and Fleshripper, held by the kobolds. Return those to me quickly, and we will take it from there, eh?");
@@ -21,7 +24,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(!defined($qglobals{SmallJobs}) && plugin::check_handin(\%itemcount, 28014 => 1)) { #Stanos' Pouch
-    quest::say("'Ah, very nice. Very nice indeed. Good work, and I hope Malka is able to make it out, good help is hard to find. But in the meantime, I am without an acquisition expert. Do you want the job?");
+    quest::say("Ah, very nice. Very nice indeed. Good work, and I hope Malka is able to make it out, good help is hard to find. But in the meantime, I am without an acquisition expert. Do you want the job?");
     quest::setglobal("SmallJobs", 1, 0, "F");
     quest::exp(1500);
   }

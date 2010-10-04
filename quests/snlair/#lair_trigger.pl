@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
     $counter=0;
-    quest::settimer(2,1800);
+    quest::settimer(2,3600);
     quest::spawn_condition($zonesn,3,1);
 
 }

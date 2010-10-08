@@ -29,3 +29,14 @@ sub EVENT_SAY {
 		}		
 	}	
 }
+
+sub EVENT_ITEM {
+	if(plugin::check_handin(\%itemcount, 97289 => 4)){ 
+        	quest::summonitem(85062);
+    	}
+    	else { 
+         	plugin::return_items(\%itemcount);
+         	quest::say("I have no need for this item.");
+    	}
+}
+

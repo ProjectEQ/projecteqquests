@@ -94,22 +94,16 @@ if (plugin::check_handin(\%itemcount, 67526 =>1 )) {
  if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
 	if (($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") ||  ($class eq "Shadowknight")) {
     		quest::summonitem(67654);
-}
-}
-if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
-if (($class eq "Warrior") || ($class eq "Monk") || ($class eq "Berserker")  || ($class eq "Rogue"))  {
+        }
+        elsif (($class eq "Warrior") || ($class eq "Monk") || ($class eq "Berserker")  || ($class eq "Rogue"))  {
            quest::summonitem(67653);
-}
-}
-if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
-if (($class eq "Cleric") || ($class eq "Shaman") || ($class eq "Druid")) {
+        }
+        elsif (($class eq "Cleric") || ($class eq "Shaman") || ($class eq "Druid")) {
            quest::summonitem(67655);  
-}
-}
-if (plugin::check_handin(\%itemcount, 67653 =>1 )) {
-if (($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Enchanter")  || ($class eq "Magician")) {
+        }
+        elsif (($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Enchanter")  || ($class eq "Magician")) {
            quest::summonitem(67656);
-}
+        }
 }
 plugin::return_items(\%itemcount);
 }

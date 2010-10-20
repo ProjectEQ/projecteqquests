@@ -49,7 +49,6 @@ if (plugin::check_handin(\%itemcount, 67534 =>1 )) {
  if (defined $qglobals{bic} && $qglobals{bic} == 13) { 
  if (plugin::check_handin(\%itemcount, 67537 =>1 )) {
    quest::say("Now that we have all the functioning pieces, we can reassemble the scout. Take these instructions and this power pack adapter and return to either mountain area to assemble the scout. I would have you do it here, but I fear he may be unstable and . . . well, let's just say I don't want to put the ship in danger. Please return to me with the report once you have it. I am going to prepare my final report so when you return I can take it straight to Fezbin. Good luck to you.");
-   quest::summonitem(67553);
    quest::summonitem(67576);
    quest::summonitem(67538);
    quest::summonitem(67577);
@@ -58,6 +57,7 @@ if (plugin::check_handin(\%itemcount, 67534 =>1 )) {
   if (defined $qglobals{bic} && $qglobals{bic} == 13) { 
   if (plugin::check_handin(\%itemcount, 67536 =>1 )) {
     quest::say("Excellent. It is always wonderful when something you invent works out. This was all I needed to finish up my report to Fezbin. Thank you once again. You have been very helpful. Once again I must reward you with this. When you brought the clockwork frame to me this fell out of it. I think it will go with your mask quite well. Try combining the two together and see what happens. I must say goodbye now.");
+    quest::summonitem(67553);
     quest::say("If you are unable to use the result please hand it to me and I will fix your problem");
     quest::setglobal("bic",14,5,"F");
     $client->Message(4,"Your assistance has helped Vaifan and Taminoa greatly, but L'diava is still in need of assistance. ");

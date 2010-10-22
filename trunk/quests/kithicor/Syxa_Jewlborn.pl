@@ -4,7 +4,7 @@ sub EVENT_SAY {
 			if(quest::istaskactivityactive(211,1)){
 				quest::say("Oh you found her! How can I ever repay you.");
 				quest::summonitem(87311,5);
-				quest::exp(1000);
+				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_black_cat",1,0,"H3");
 			}
       			else {

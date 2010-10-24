@@ -1,10 +1,11 @@
 sub DirectionalAEList
 {
 	my $who = shift;
-	my @m_list = shift;
 	my $angle_start = shift;
 	my $angle_end = shift;
 	my $aoe_range = shift;
+	my $min_range = shift;
+	my @m_list = @_; 
 	my @ret_array;
 	
 	$angle_start = $angle_start + ($who->GetHeading() * 360.0 / 256.0);

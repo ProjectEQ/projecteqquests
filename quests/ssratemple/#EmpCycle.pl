@@ -2,7 +2,7 @@
 
 my $BloodCoolDownTime = int(rand(60)) + 180; #Waiting time to reattempt Emp after failure (Current setting: 3-4 hours)
 my $EmpRepopTime = int(rand(2880)) + 4320; #Respawn time for Emp after success (Current setting: 3-5 days)
-my $EmpPrepTime = 30; #Seconds before Emp becomes targetable after killing Blood/Golem
+my $EmpPrepTime = 150; #Seconds before Emp becomes targetable after killing Blood/Golem (Current setting: 2min 30sec)
 
 my $EmpPrep = "0";
 

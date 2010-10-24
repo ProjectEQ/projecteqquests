@@ -38,7 +38,7 @@ if (($text=~/collect the artifacts/i) && (defined $qglobals{ikky} && $qglobals{i
 }
 if (($text=~/stop it/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 11)) {
    quest::say("Hurry, the Protector is now present");
-#spawn for ageless relic protector
+   quest::spanw2(293221,0,0,2176,2184,-476,137);
 }
 if (($text=~/four temples/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
     quest::say("As you've already uncovered, the Sanctuary of Divine Destruction was used to uncover the purpose for the other three. I believe the Muramites destroyed that temple because it holds the key to the remaining three temples and the artifacts that they hold. Now that we know what's ahead, we can continue forth and unravel this [mystery].");

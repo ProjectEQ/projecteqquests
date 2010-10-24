@@ -28,7 +28,7 @@ sub EVENT_SIGNAL {
   if($counter == 8) {
     $npc->SetHP(2000);
     }
-  if($counter == 9) {
+  if($counter == 18) {
     $npc->SetHP(1100);
     quest::spawn2(294138,0,0,-16,-137,2,124);
     quest::spawn2(294138,0,0,-20,-276,2,0);

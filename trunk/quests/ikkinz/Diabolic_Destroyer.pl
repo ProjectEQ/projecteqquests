@@ -34,7 +34,7 @@ if($hpevent == 25) {
    quest::spawn2(294137,0,0,$x,$y - 10,$z,$h);
    }
  }
-sub EVENT_AGGRO {
+sub EVENT_ATTACK {
   quest::settimer(1);
   quest::spawn2(294137,0,0,450,-119,6,200);
   quest::spawn2(294137,0,0,457,-139,6,193);

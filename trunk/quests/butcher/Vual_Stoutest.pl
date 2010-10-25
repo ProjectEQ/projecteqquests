@@ -28,6 +28,7 @@ sub EVENT_SAY {
         quest::setglobal("Wayfarer",2,5,"F");
         quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
         quest::summonitem(41000); #Adventurer's Stone
+        $client->KeyRingAdd(41000);
       }
     }
     elsif(defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 2)) { #PC is ready for Adventurer's Stone

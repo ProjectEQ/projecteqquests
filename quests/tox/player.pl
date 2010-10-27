@@ -28,3 +28,13 @@ $qglobals{spire_tox} = undef;
 $qglobals{message_tox} = undef;
 }
  }
+
+sub EVENT_SIGNAL {
+	if($signal == 666){
+		quest::updatetaskactivity(218,1,1);
+        }
+	if($signal == 667){
+		quest::updatetaskactivity(218,1,10);
+		quest::updatetaskactivity(218,2);
+        }
+}

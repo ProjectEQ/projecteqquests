@@ -12,9 +12,6 @@ sub EVENT_SIGNAL {
                 quest::updatetaskactivity(212,0,1);
                 quest::faction(98,-30);
         }
-}
-
-sub EVENT_SIGNAL {
         if($signal == 667){
                 quest::updatetaskactivity(213,0,1);
         }

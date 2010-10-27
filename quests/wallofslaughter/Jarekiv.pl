@@ -26,8 +26,8 @@ sub EVENT_ITEM
 	if (plugin::check_handin(\%itemcount, 36558 == 1)) #Feran Skulls
 		{
 		quest::say("Well done, $name. I have several Muramite deserters that I'm ready to ferry southward. Thanks for clearing the way!");
-		quest::faction(410,3); #dranik loyalists Large as advised by quest information as due to feran skill rarity
-		quest::faction(432,-3); #overlord mata muram
+		quest::faction(410,1); #dranik loyalists Large as advised by quest information as due to feran skill rarity
+		quest::faction(432,-1); #overlord mata muram
 		}
 	else
 		{

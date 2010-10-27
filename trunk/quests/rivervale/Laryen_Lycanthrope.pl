@@ -9,7 +9,7 @@ sub EVENT_SAY {
 				quest::emote("seems disappointed at the instability of his cure, and shrugs a bit before fishing out your reward.");
 				quest::summonitem(87318,5);
 				$client->AddLevelBasedExp(10, 0);
-				quest::setglobal("halloween_cure",1,0,"D30");
+				quest::setglobal("halloween_cure",1,0,"H3");
 				quest::updatetaskactivity(213,1);
 			}
 			else {

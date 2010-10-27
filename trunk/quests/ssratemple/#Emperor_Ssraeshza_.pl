@@ -3,7 +3,7 @@
 my $engaged = 0;
 
 sub EVENT_SPAWN {
-  quest::settimer("EmpDepop", 600);
+  quest::settimer("EmpDepop", 1800);
 }
 
 sub EVENT_TIMER {

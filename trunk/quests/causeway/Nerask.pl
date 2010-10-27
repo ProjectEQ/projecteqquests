@@ -64,7 +64,7 @@ sub EVENT_ITEM
 {
 	if($faction == 1 && ($class eq "Enchanter" || $class eq "Magician" || $class eq "Necromancer" || $class eq "Wizard")) #must be ally to do this quest and a safeguard to stop non casters getting their items eaten
 	{
-	if (plugin::check_handin(\%itemcount, 51475 >= 1, 51503 >= 2)) #helm
+	if (plugin::check_handin(\%itemcount, 51475 => 1, 51503 => 2)) #helm
 		{
 		quest::emote("reaches out for the stick. 'Yes, this is indeed his favorite walking stick! Why here at the top is the jewel I spoke of. Even now, I can hear the spirit in the gem calling out for my master, searching for him. And the soap will allow me to clean and preserve the wood as I used to before The Darkening came upon us. Here is the cap I spoke about. It, like much of my master's clothes, was tailored by a famous dragorn that has long since disappeared since the start of the war.'");
 		quest::exp(100000);
@@ -85,7 +85,7 @@ sub EVENT_ITEM
 				quest::summonitem(70923);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51479 >= 1, 51507 >= 2)) #arms
+	if (plugin::check_handin(\%itemcount, 51479 => 1, 51507 => 2)) #arms
 		{
 		quest::say("Yes, I believe this is the pouch.' He opens it up and begins to rummage through the contents. 'Ah, this is the locket I spoke of. Truly, I am closer to giving my master the peace his spirit searches for. With the thread I will be able to perform the minor tailoring work required to fit these sleeves to you.' He hands you the sleeves after a few minutes.");
 		quest::exp(100000);
@@ -106,7 +106,7 @@ sub EVENT_ITEM
 				quest::summonitem(70924);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51480 >= 1, 51508 >= 2)) #wrist
+	if (plugin::check_handin(\%itemcount, 51480 => 1, 51508 => 2)) #wrist
 		{
 		quest::emote("opens his eyes wide as you hand him the heart and trinkets. 'If I did not see it for myself, I would have never imagined that an enemy so powerful and mysterious as these riftseekers could be defeated. My people and I thank you for this act . . . an act that will surely help to embolden us to strike back against the invaders. For your efforts, here is the cloth bracer I spoke about. I am certain it will aid you on your journey.'");
 		quest::exp(100000);
@@ -127,7 +127,7 @@ sub EVENT_ITEM
 				quest::summonitem(70925);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51481 >= 1, 51509 >= 2)) #hand
+	if (plugin::check_handin(\%itemcount, 51481 => 1, 51509 => 2)) #hand
 		{
 		quest::emote("opens his hands for the axe and the two stones. 'Thank you. For helping to fulfill my master's last wishes, I will give you the gloves I spoke about earlier. I know only that they are magical and therefore will have to let you uncover the secret to unlocking their power.'");
 		quest::exp(100000);
@@ -148,7 +148,7 @@ sub EVENT_ITEM
 				quest::summonitem(70926);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51476 >= 1, 51504 >= 3)) #chest
+	if (plugin::check_handin(\%itemcount, 51476 => 1, 51504 => 3)) #chest
 		{
 		quest::emote("takes the vest and begins to examine it thoroughly. 'Yes, I think this small seam here conceals the note my master was waiting for. Ah, this is it, I am certain.' He takes the note, unfolds it, and places it on its side. He takes the fruit and begins to mash it up into a bowl while adding a few other ingredients. Moment later a small plume of blue-gray smoke begins to rise up out of the bowl. Nerask picks up the note and reads it. 'Thank you, I will give this note to our remaining elders. It is very important, indeed. Here is the robe I spoke about. The powerful magic woven into the very fibers should enable you to overcome powerful enemies.'");
 		quest::exp(100000);
@@ -169,7 +169,7 @@ sub EVENT_ITEM
 				quest::summonitem(70928);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51477 >= 1, 51505 >= 3)) #leg
+	if (plugin::check_handin(\%itemcount, 51477 => 1, 51505 => 3)) #leg
 		{
 		quest::emote("holds the amulet up to the sky. 'Yes, this is the amulet my master was so proud of. It signified his elevation to a respected elder for all of the selfless work my master had done for our people. I will take these hides and get a tanner to create a small ornamental pouch befitting it. Take these mystical cloth leggings my master often used in performing his duties.'");
 		quest::exp(100000);
@@ -190,7 +190,7 @@ sub EVENT_ITEM
 				quest::summonitem(70929);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51478 >= 1, 51506 >= 2)) #feet
+	if (plugin::check_handin(\%itemcount, 51478 => 1, 51506 => 2)) #feet
 		{
 		quest::emote("smiles widely as you show him the medal and the wings. 'Yes, now at least a small measure of justice has been exacted for my people. Please take these footwraps that accompanied my master on so many journeys.'");
 		quest::exp(100000);

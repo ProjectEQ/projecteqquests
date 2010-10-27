@@ -64,7 +64,7 @@ sub EVENT_ITEM
 {
 	if($faction <= 2) #must be warmly to do this quest
 	{
-	if (plugin::check_handin(\%itemcount, 51446 >= 1, 51474 >= 2)) #hands
+	if (plugin::check_handin(\%itemcount, 51446 => 1, 51474 => 2)) #hands
 		{
 		quest::say("bows before you. 'Thank you, $name. You have helped prevent the Muramites from using my former home as part of their information network. You've also brought me the fingers of two discordlings, the very beasts that are responsible for the tower's construction. As promised, I offer my cloth gloves as your reward.");
 		quest::experience(10000);
@@ -85,7 +85,7 @@ sub EVENT_ITEM
 				quest::summonitem(70821);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51445 >= 1, 51473 >= 2)) #wrists
+	if (plugin::check_handin(\%itemcount, 51445 => 1, 51473 => 2)) #wrists
 		{
 		quest::say("You've recovered the banner! And to think I thought it lost for good! I'll be sure this flies over the graves of my fallen kin. May its glory rekindle the spirits of the dragorn still under the Muramite whip! As promised, my cloth wrist band shall be your reward!");
 		quest::exp(100000);
@@ -106,7 +106,7 @@ sub EVENT_ITEM
 				quest::summonitem(70820);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51444 >= 1, 51472 >= 2)) #arms
+	if (plugin::check_handin(\%itemcount, 51444 => 1, 51472 => 2)) #arms
 		{
 		quest::say("Thank you $name. Please take this as a reward for your efforts."); #made up text Correct text unavailable
 		quest::exp(100000);
@@ -127,7 +127,7 @@ sub EVENT_ITEM
 				quest::summonitem(70819);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51440 >= 1, 51468 >= 2)) #head
+	if (plugin::check_handin(\%itemcount, 51440 => 1, 51468 => 2)) #head
 		{
 		quest::say("You've recovered The Duskfall Chronicles! Perhaps with time the dragorn will learn to resist the poison of Discord to once again stand against a common enemy. May so many of my kin never die in vain again. Thank you, $name. As promised, here is my cloth battle hood as your reward.");
 		quest::exp(100000);
@@ -148,7 +148,7 @@ sub EVENT_ITEM
 				quest::summonitem(70818);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51441 >= 1, 51469 >= 3)) #chest
+	if (plugin::check_handin(\%itemcount, 51441 => 1, 51469 => 3)) #chest
 		{
 		quest::say("Yes, this is it the scepter of Yumall! I recognize the markings! Alas, the glow has left the scepter which means Yumall no longer draws breath. At least now I know to prepare a burial ritual in his honor. As promised, here is my former battle tunic. In the days when I still fought for Dranik, this tunic turned many blades that otherwise would have found my heart.");
 		quest::exp(100000);
@@ -169,7 +169,7 @@ sub EVENT_ITEM
 				quest::summonitem(70823);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51442 >= 1, 51470 >= 3)) #legs
+	if (plugin::check_handin(\%itemcount, 51442 => 1, 51470 => 3)) #legs
 		{
 		quest::say("You've recovered a map of Old Kuua! With this I may yet find the burial grounds of my ancestors. Hopefully before the Muramites get there to pillage what remains of my kins' riches! Thank you, $name. As promised, here are my former arm wraps. I have no more need of them, but I'm sure they will serve you well.");
 		quest::exp(100000);
@@ -190,7 +190,7 @@ sub EVENT_ITEM
 				quest::summonitem(70824);
 				}
 		}
-	if (plugin::check_handin(\%itemcount, 51443 >= 1, 51471 >= 2)) #feet
+	if (plugin::check_handin(\%itemcount, 51443 => 1, 51471 => 2)) #feet
 		{
 		quest::say("Excellent work, $name. I shudder to think what names could be etched on this stone, but I thank you for your efforts nonetheless. As promised, here are my slippers as your reward. May they keep you fleet of foot and out of harm's way.");
 		quest::exp(100000);

@@ -68,7 +68,7 @@ sub EVENT_ITEM
 {
 	if($faction <= 1) #must be ally to do this quest
 	{
-	if (plugin::check_handin(\%itemcount, 51475 >= 1, 51482 >= 2)) #helm
+	if (plugin::check_handin(\%itemcount, 51475 => 1, 51482 => 2)) #helm
 		{
 		quest::emote("reaches out hungrily for the food sacks and the walking stick. 'Yes, this is Patorav's. I would recognize it anywhere. You can see just by looking at the metal that it hides some source of power. Why its appearance alone... how the metal looks as if it is reflecting moving storm clouds... fascinating. I most graciously thank you for this and the sacks of food. I had nearly finished this plate helm for a customer of mine, but I have heard he met a valiant end at the wall. Wear it honorably as he would have.");
 		quest::exp(100000);
@@ -93,7 +93,7 @@ sub EVENT_ITEM
 				quest::summonitem(70860);
 				}
 				}
-	if (plugin::check_handin(\%itemcount, 51479 >= 1, 51486 >= 2)) #sleeves
+	if (plugin::check_handin(\%itemcount, 51479 => 1, 51486 => 2)) #sleeves
 		{
 		quest::emote("takes the items from you before handing you your reward."); #made up
 		quest::exp(100000);
@@ -118,7 +118,7 @@ sub EVENT_ITEM
 				quest::summonitem(70861);
 				}
 				}
-	if (plugin::check_handin(\%itemcount, 51480 >= 1, 51487 >= 2)) #bracers
+	if (plugin::check_handin(\%itemcount, 51480 => 1, 51487 => 2)) #bracers
 		{
 		quest::emote("widens his eyes as you hand him the riftseeker heart. As you hand it to him, his eyes fix on the small pulsing light within the center of the gem. 'Yes, I am sure I can make good use of this. You have done well. And these pieces of ore will help replenish my supply. For your hard work, here is the plate bracer I spoke of earlier.");
 		quest::exp(100000);
@@ -143,7 +143,7 @@ sub EVENT_ITEM
 				quest::summonitem(70862);
 				}
 				}
-	if (plugin::check_handin(\%itemcount, 51481 >= 1, 51488 >= 2)) #gloves
+	if (plugin::check_handin(\%itemcount, 51481 => 1, 51488 => 2)) #gloves
 		{
 		quest::emote("holds the axe up and begins to take a few mighty swings through the air in front of him. 'Yes, the axe of the fierce one himself. It will be a shame to remove some of these enchantments, but I am sure I can put them to better use for my people. I will use the two crystals you have just given me to safely remove some of the charms within the axe and put them in some of my newer designs. Here are the plate gloves I spoke of earlier.");
 		quest::exp(100000);
@@ -168,7 +168,7 @@ sub EVENT_ITEM
 				quest::summonitem(70863);
 				}
 				}
-	if (plugin::check_handin(\%itemcount, 51476 >= 1, 51483 >= 3)) #breastplate
+	if (plugin::check_handin(\%itemcount, 51476 => 1, 51483 => 3)) #breastplate
 		{
 		quest::emote("takes the items from you before handing you your reward."); #made up
 		quest::exp(100000);
@@ -193,7 +193,7 @@ sub EVENT_ITEM
 				quest::summonitem(70865);
 				}
 				}
-	if (plugin::check_handin(\%itemcount, 51477 >= 1, 51484 >= 3)) #leggings
+	if (plugin::check_handin(\%itemcount, 51477 => 1, 51484 => 3)) #leggings
 		{
 		quest::emote("takes the items from you before handing you your reward."); #made up
 		quest::exp(100000);
@@ -218,7 +218,7 @@ sub EVENT_ITEM
 				quest::summonitem(70866);
 				}
 				}
-	if (plugin::check_handin(\%itemcount, 51478 >= 1, 51485 >= 2)) #boots
+	if (plugin::check_handin(\%itemcount, 51478 => 1, 51485 => 2)) #boots
 		{
 		quest::emote("takes the items from you before handing you your reward."); #made up
 		quest::exp(100000);

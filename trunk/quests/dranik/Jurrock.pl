@@ -48,7 +48,7 @@ sub EVENT_ITEM
 {
 	if($faction <= 2)
 		{
-		if (plugin::check_handin(\%itemcount, 36520 >= 1, 36518 >= 1, 36517 >= 1, 36519 >= 1)) #turn in from jurrocks books
+		if (plugin::check_handin(\%itemcount, 36520 => 1, 36518 => 1, 36517 => 1, 36519 => 1)) #turn in from jurrocks books
 			{
 			quest::say("The glory of Dranik upon you! I cannot tell you what this means to me. Here you must take this earring as payment for your help. It has been in my family for generations, but I believe my ancestors would like you to have it."); #Text borrowed from ring turn in as this text not available
 			quest::faction(410,1); #dranik loyalists
@@ -65,7 +65,7 @@ sub EVENT_ITEM
 
 					}
 			}
-		if(plugin::check_handin(\%itemcount, 36516 >= 1, 36515 >= 1, 36514 >= 1)) #turn in for jurrocks tapestries
+		if(plugin::check_handin(\%itemcount, 36516 => 1, 36515 => 1, 36514 => 1)) #turn in for jurrocks tapestries
 			{
 			quest::say("The glory of Dranik upon you! I cannot tell you what this means to me. Here you must take this ring as payment for your help. It has been in my family for generations, but I believe my ancestors would like you to have it.");
 			quest::faction(410,1); #dranik loyalists

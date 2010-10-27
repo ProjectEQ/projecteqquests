@@ -19,6 +19,7 @@ sub EVENT_SAY {
       			}
       			if($text=~/help/i) {
       				quest::say("Please bring her back safely!");
+                                quest::assigntask(219);
       				quest::assigntask(211);
       			}	
 		}

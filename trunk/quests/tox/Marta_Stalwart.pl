@@ -39,6 +39,7 @@ sub EVENT_SAY {
 			}
 			if($text=~/Take part/i) {
       				quest::emote("hands you a stack of warm squash pies, 'You will also need to put on a [costume] when you are ready to start flinging pies.'");
+                                quest::assigntask(219);
 				quest::assigntask(218);
 				quest::summonitem(80038);
 			}	

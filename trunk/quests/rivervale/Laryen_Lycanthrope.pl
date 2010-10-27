@@ -33,6 +33,7 @@ sub EVENT_SAY {
  			}
   			if($text=~/up for it/i) {
 				quest::say("That's the spirit! Take these cures and help out as many of those poor souls as you can.");
+                                quest::assigntask(219);
 				quest::assigntask(213);
 				quest::summonitem(87310);
 			}

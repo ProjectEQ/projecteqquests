@@ -20,6 +20,7 @@ sub EVENT_SAY {
       			}
       			if($text=~/fight/i) {
 				quest::say("Good on ya! Get on out there then and kill some zombies! Bring me some hearts while you're at it. I want to have a look at what's going on in there.");
+                                quest::assigntask(219);
 				quest::assigntask(212);
 				quest::summonitem(87309);
       			}

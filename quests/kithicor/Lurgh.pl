@@ -29,6 +29,7 @@ sub EVENT_SAY {
       			}
 			if($text=~/Help/i) {
    				quest::say("Gud. Find skeleton make Lurgh laugh and Lurgh help you, too.");
+                                quest::assigntask(219);
       				quest::assigntask(215);
       			}	
 		}

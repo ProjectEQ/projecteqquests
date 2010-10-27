@@ -25,6 +25,7 @@ sub EVENT_SAY {
 			}
 			if($text=~/Toadstools/i) {
       				quest::say("It's a neat trick actually. Since it seems there won't be any peace for me today regardless, I suppose I could show it to you. Bring me back some toadstools from Toxxulia, if you dare!");
+                                quest::assigntask(219);
 				quest::assigntask(217);
 			}
 		}

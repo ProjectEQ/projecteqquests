@@ -12,6 +12,7 @@ sub EVENT_SAY {
 			}
   			if($text=~/track it down/i) {
 				quest::say("Well, last time I ran across it through a gnome named Finkel. It's possible that he still has some. I believe he is doing business in Steamfont this time of year.");
+                                quest::assigntask(219);
 				quest::assigntask(214);
 			}
 		}

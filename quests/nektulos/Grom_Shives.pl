@@ -11,7 +11,7 @@ sub EVENT_SAY {
 			}
 			else {
 				quest::say("You managed to find your way through Nektulos to Neriak, but you did not as quickly as you could have... Let me know if you would like to [try] again.");
-				quest::updatetaskactivity(216,10);
+				quest::failtask(216);
 			}
 		}
 				

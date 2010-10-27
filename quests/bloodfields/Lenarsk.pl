@@ -78,43 +78,43 @@ sub EVENT_ITEM {
  	
 	if($faction <= 1) #must be ally to do this quest
 	{
-	if (plugin::check_handin(\%itemcount, 51481 >= 1, 51502 >= 2))
+	if (plugin::check_handin(\%itemcount, 51481 => 1, 51502 => 2))
 		{
 		quest::say("Makyah's Axe! Now that this is returned to us, I hold hope that it may be wielded in our stuggle, to bolster our people's hope once more. Thankyou $name."); #made up
 		quest::exp(100000);
 		quest::summonitem($ihands);
 		}
-	if (plugin::check_handin(\%itemcount, 51480 >= 1, 51501 >= 2))
+	if (plugin::check_handin(\%itemcount, 51480 => 1, 51501 => 2))
 		{
 		quest::emote("looks in wonder at the heart you present him, 'Would you have a look at that. Simply Amazing! I must study this immediately lest it's power dim. Here take these."); #made up
 		quest::exp(100000);
 		quest::summonitem($iwrists);
 		}
-	if (plugin::check_handin(\%itemcount, 51479 >= 1, 51500 >= 2))
+	if (plugin::check_handin(\%itemcount, 51479 => 1, 51500 => 2))
 		{
 		quest::emote("seems lost in a moment of sorrow as you hand him the pouch. 'Thankyou $name. You do not know how much this gladdens me, and saddens me, to have this returned..."); #made up
 		quest::exp(100000);
 		quest::summonitem($iarms);
 		}
-	if (plugin::check_handin(\%itemcount, 51475 >= 1, 51496 >= 2))
+	if (plugin::check_handin(\%itemcount, 51475 => 1, 51496 => 2))
 		{
 		quest::say("Excellent effort $race. This was exactly the walking stick i sought. Here take these as offered."); #made up
 		quest::exp(100000);
 		quest::summonitem($ihead);
 		}
-	if (plugin::check_handin(\%itemcount, 51476 >= 1, 51497 >= 3))
+	if (plugin::check_handin(\%itemcount, 51476 => 1, 51497 => 3))
 		{
 		quest::emote("unfolds the vest and begins to run his eyes over it, paying attention to details that only a master crafter would see. 'Yes, this is indeed the vest my master created for Jayruk. I would recognize it anywhere. Now, perhaps I may learn some of the secrets my mentor did not have time enough to pass along to me. And the nails you have brought me pay tribute to the great hunter that Jayruk was. Though this vest I am about to give you is not the equal of the one Jayruk wore, it is certainly close.");
 		quest::exp(100000);
 		quest::summonitem($ichest);
 		}
-	if (plugin::check_handin(\%itemcount, 51477 >= 1, 51498 >= 3))
+	if (plugin::check_handin(\%itemcount, 51477 => 1, 51498 => 3))
 		{
 		quest::emote("laughs softly under his breath, 'Though normally I would not celebrate the death of something so needlessly, I am not saddened at all that these 4 are no longer amound the world of the living. Take these as a token of my gratitude."); #made up
 		quest::exp(100000);
 		quest::summonitem($ilegs);
 		}
-	if (plugin::check_handin(\%itemcount, 51478 >= 1, 51499 >= 2))
+	if (plugin::check_handin(\%itemcount, 51478 => 1, 51499 => 2))
 		{
 		quest::say("I hope this brings poor Vrago some measure of peace. Take these and use them to aid in you in the destruction of the Muramite armies. I am sure this too would bring Vargo peace."); #made up
 		quest::exp(100000);

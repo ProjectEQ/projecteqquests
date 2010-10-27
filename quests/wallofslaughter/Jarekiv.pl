@@ -23,7 +23,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
-	if (plugin::check_handin(\%itemcount, 36558 == 1)) #Feran Skulls
+	if (plugin::check_handin(\%itemcount, 36558 => 1)) #Feran Skulls
 		{
 		quest::say("Well done, $name. I have several Muramite deserters that I'm ready to ferry southward. Thanks for clearing the way!");
 		quest::faction(410,1); #dranik loyalists Large as advised by quest information as due to feran skill rarity

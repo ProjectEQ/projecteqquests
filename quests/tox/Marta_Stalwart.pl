@@ -5,21 +5,23 @@ sub EVENT_SAY {
       			quest::playerrace(82);
 			quest::updatetaskactivity(218,0);
       		}
-		if($text=~/Hail/i) {
+		if($text=~/Hail/i) {	
 			if(quest::istaskactivityactive(218,2)){
-				quest::emote("claps in amusement, 'Bravo $name, you've done very well and managed to dodge every pie thrown at you, quite remarkable. Why don't you relax and enjoy some of these fresh baked pies I've just made.'");
-				quest::summonitem(80044,10);
-				$client->AddLevelBasedExp(10, 0);
-				quest::setglobal("halloween_pies",1,0,"H3");
-				quest::updatetaskactivity(218,2);
+				if(!defined $qglobals{halloween_pies}){
+					quest::emote("claps in amusement, 'Bravo $name, you've done very well and managed to dodge every pie thrown at you, quite remarkable. Why don't you relax and enjoy some of these fresh baked pies I've just made.'");
+					quest::summonitem(80044,10);
+					$client->AddLevelBasedExp(10, 0);
+					quest::setglobal("halloween_pies",1,0,"D30");
+					quest::updatetaskactivity(218,2);
+				}
+				else {
+					quest::emote("claps in amusement, 'Bravo $name, you've done very well and managed to dodge every pie thrown at you, quite remarkable. Why don't you relax and enjoy some of these fresh baked pies I've just made.'");
+					quest::updatetaskactivity(218,2);
+				}
 			}
-      			else {
-      				quest::say("Good luck!");
-      			}
       		}
       	}
 	if(!quest::istaskactive(218)){
-		if(!defined $qglobals{halloween_pies}){
 			if($text=~/Hail/i) {
    				quest::emote("smiles graciously at you, 'Have you come to participate in our pie flinging [tradition]?'");
       			}
@@ -43,7 +45,7 @@ sub EVENT_SAY {
 			if($text=~/Try/i) {
 				quest::say("Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.");
 				quest::assigntask(218);
-				quest::summonitem(80038);
+				quest::summonitem(80038,999);
 				quest::playerrace(82);
 				quest::updatetaskactivity(218,0);
 			}

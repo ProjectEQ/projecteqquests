@@ -32,9 +32,9 @@ $qglobals{message_tox} = undef;
 sub EVENT_SIGNAL {
 	if($signal == 666){
 		quest::updatetaskactivity(218,1,1);
-        }
+       }
 	if($signal == 667){
-		quest::updatetaskactivity(218,1,10);
-		quest::updatetaskactivity(218,2);
-        }
+		quest::failtask(218);
+		$client->NukeItem(80038);
+       }
 }

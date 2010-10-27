@@ -70,43 +70,43 @@ sub EVENT_ITEM {
  	
 	if($faction <= 2) #must be warmly to do this quest
 	{
-	if (plugin::check_handin(\%itemcount, 51446 >= 1, 51467 >= 2))
+	if (plugin::check_handin(\%itemcount, 51446 => 1, 51467 => 2))
 		{
 		quest::say("Fantastic work $race . The loss of the shard should prevent the opportunity we were waiting for. Please take these and wear them with pride."); #made up
 		quest::exp(100000);
 		quest::summonitem($ihands);
 		}
-	if (plugin::check_handin(\%itemcount, 51445 >= 1, 51466 >= 2))
+	if (plugin::check_handin(\%itemcount, 51445 => 1, 51466 => 2))
 		{
 		quest::say("The Blood Standard of Dranik! I did not believe it still existed! This will bring hope to the few dragorn who still resist Mata Muram. I only wish I was ready to join them. Thank you. As promised, here is a leather wristguard as a reward.");
 		quest::exp(100000);
 		quest::summonitem($iwrists);
 		}
-	if (plugin::check_handin(\%itemcount, 51444 >= 1, 51465 >= 2))
+	if (plugin::check_handin(\%itemcount, 51444 => 1, 51465 => 2))
 		{
 		quest::emote("looks at the map with yearning, 'Thankyou young $race, just seeing this brings some hope to my heart that one day what was may be again. Take these sleeves and use them to bring down the muramite."); #made up
 		quest::exp(100000);
 		quest::summonitem($iarms);
 		}
-	if (plugin::check_handin(\%itemcount, 51440 >= 1, 51461 >= 2))
+	if (plugin::check_handin(\%itemcount, 51440 => 1, 51461 => 2))
 		{
 		quest::emote("takes the book and scrolls from you gratefully, 'Excellent, with these writings I should be able to begin to understand discord, hopefully giving me information we can use to our advantage. Here $name, take this as promised."); #made up
 		quest::exp(100000);
 		quest::summonitem($ihead);
 		}
-	if (plugin::check_handin(\%itemcount, 51441 >= 1, 51462 >= 3))
+	if (plugin::check_handin(\%itemcount, 51441 => 1, 51462 => 3))
 		{
 		quest::say("He lives yet! You see it glows still, if only faintly.' Barowsar pauses for a moment in quite contemplation before continuing. 'Here $name, this was my finest work, and you deserve no loss for the favor you have done me this day."); #made up
 		quest::exp(100000);
 		quest::summonitem($ichest);
 		}
-	if (plugin::check_handin(\%itemcount, 51442 >= 1, 51463 >= 3))
+	if (plugin::check_handin(\%itemcount, 51442 => 1, 51463 => 3))
 		{
 		quest::emote("quickly conceals the ember within the bowls. 'Good work. I will lay this ember to rest, so that the spirits of this forsaken place may rest at last. As promises here is your reward."); #made up
 		quest::exp(100000);
 		quest::summonitem($ilegs);
 		}
-	if (plugin::check_handin(\%itemcount, 51443 >= 1, 51464 >= 2))
+	if (plugin::check_handin(\%itemcount, 51443 => 1, 51464 => 2))
 		{
 		quest::say("Well done $name. I understand the Muramites guard these well. I'll bury this stone so the dragorn of Kuua can move on from the horrors of the past and instead look to the future. As promised, here is a pair of finely crafted leather boots as your reward.");
 		quest::exp(100000);

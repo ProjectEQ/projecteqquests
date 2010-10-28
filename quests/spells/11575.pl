@@ -7,7 +7,7 @@ $NPCTypeID = $npc->GetNPCTypeID();
 $PRace = $Client_->GetRace();
 	if($PRace == 82){
 		if($NPCTypeID == 38175 || $NPCTypeID == 38176 || $NPCTypeID == 38177){
-	 		if($random_result > 10) {
+	 		if($random_result > 3) {
 				$Client_->Message(0,"SPLAT! Your victim is covered in a warm gooey squash pie.");
               		$Client_->SignalClient($Client_, 666);
 				$npc->Kill();
@@ -18,9 +18,19 @@ $PRace = $Client_->GetRace();
 				$npc->FaceTarget($Client_);
 			}
         	}
+		elsif($NPCTypeID == 202387){
+			$Client_->Message(0,"SPLAT! Your victim is covered in a warm gooey squash pie.");
+			$npc->CastSpell(11575,$caster_id);
+			$npc->FaceTarget($Client_);
+			quest::signal(202387);
+		}
+		else {
+			$npc->BuffFadeBySpellID(11575);
+		}
 	}
 	else {
-		$Client->Message(0,"You must be in costume before you can throw pies!");
+		$Client_->Message(0,"You must be in costume before you can throw pies!");
+		$npc->BuffFadeBySpellID(11575);
 	}
 }
 

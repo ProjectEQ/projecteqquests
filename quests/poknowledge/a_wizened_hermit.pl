@@ -4,8 +4,11 @@ sub EVENT_SAY {
 			if(quest::istaskactivityactive(217,1)){
 				quest::emote("hermit pulls out a strange earring as she tucks the toadstools into a fold of her robe.");
 				quest::summonitem(53513);
+				quest::summonitem(85062);
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_mushroom",1,0,"D30");
+				quest::updatetaskactivity(217,1);
+                                $client->NukeItem(54725);
 			}
       			else {
       				quest::say("Bring me back some toadstools from Toxxulia, if you dare!");

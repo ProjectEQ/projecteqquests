@@ -1,3 +1,7 @@
+sub EVENT_SPAWN {
+	quest::settimer(2,180);	  # 3 min between shouts
+}
+
 sub EVENT_SAY {
 	if(quest::istaskactivityactive(216,10)){
 		if($text=~/Hail/i) {
@@ -62,3 +66,12 @@ sub EVENT_SAY {
 		}
 	}	
 }
+
+sub EVENT_TIMER {
+
+	if ($timer == 2) {
+		quest::stoptimer(2);
+		quest::settimer(2,180);
+		quest::shout("Trick or treat! Smell my feet! Give me something good to eat!");
+	}
+}    

@@ -25,7 +25,8 @@ sub EVENT_SAY {
   			if($text=~/willing/i) {
         			quest::say("Thank you so much. Here is the book, now see what sort of things you can come up with.");
         			quest::summonitem(84097);
-        			quest::taskselector(19); #Task: The Hungry Halfling
+        			quest::assigntask(219);
+      			        quest::assigntask(19); #Task: The Hungry Halfling
       			}
     		}
   	}

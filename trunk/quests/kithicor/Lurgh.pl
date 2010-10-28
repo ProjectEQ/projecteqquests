@@ -13,7 +13,7 @@ sub EVENT_SAY {
       			quest::say("Find skeleton make Lurgh laugh and Lurgh help you, too.");
       		}
       	}
-	if(!quest::istaskactive(215)){
+	elsif(!quest::istaskactive(215)){
 		if(!defined $qglobals{halloween_monster_mash}){
 			if($text=~/Hail/i) {
    				quest::say("Lurgh miss [friend].");

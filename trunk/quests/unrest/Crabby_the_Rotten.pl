@@ -6,6 +6,7 @@ sub EVENT_SAY {
 	if ($text=~/trick or treat/i) {
 		quest::say("Gimme gimme gimme. . .You people make me sick! Here's your nasty little treat, now leave me be.");
 		quest::summonitem(quest::ChooseRandom(84091,84092,84093,84085,84085,84085,84085,84085,84085));
+                quest::updatetaskactivity(220,0);
 	}
 }
 

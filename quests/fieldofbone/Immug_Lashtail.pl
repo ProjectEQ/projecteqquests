@@ -6,6 +6,7 @@ sub EVENT_SAY {
 	if ($text=~/trick or treat/i) {
 		quest::say("Why is it that you people keep pestering me for these? Here's your treat, now tell everyone else they can find me off under the ocean or some nonsense.");
 		quest::summonitem(quest::ChooseRandom(84091,84092,84093,84084,84084,84084,84084,84084,84084,84084));
+                quest::updatetaskactivity(220,3);
 	}
 }
 

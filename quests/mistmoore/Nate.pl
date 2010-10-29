@@ -6,6 +6,7 @@ sub EVENT_SAY {
 	if ($text=~/trick or treat/i) {
 		quest::say("Well, it's not ale but you'll just have to deal with that. . .By the by did you happen to bring any ale with you?");
 		quest::summonitem(quest::ChooseRandom(84091,84092,84093,84083,84083,84083,84083,84083,84083));
+                quest::updatetaskactivity(220,6);
 	}
 }
 

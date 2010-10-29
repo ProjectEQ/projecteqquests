@@ -6,6 +6,7 @@ sub EVENT_SAY {
 	if ($text=~/trick or treat/i) {
 		quest::say("Careful with these, or they'll get stuck in your teeth!");
 		quest::summonitem(quest::ChooseRandom(84091,84092,84093,84086,84086,84086,84086,84086,84086));
+                quest::updatetaskactivity(220,5);
 	}
 }
 

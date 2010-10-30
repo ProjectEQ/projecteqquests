@@ -3,6 +3,8 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
+$clientver = $client->GetClientVersion();
+if($clientver > 2){
 	if(quest::istaskactive(213)){
 		if($text=~/Hail/i) {
 			if(quest::istaskactivityactive(213,1)){
@@ -41,7 +43,11 @@ sub EVENT_SAY {
 		else {
 			quest::emote("seems disappointed at the instability of his cure.");
 		}		
-	}	
+	}
+}
+else {
+	$client->Message(15,"This task does not support the Titanium client or lower. Please upgrade to SoF or newer.");
+}
 }
 
 sub EVENT_TIMER {
@@ -51,4 +57,4 @@ sub EVENT_TIMER {
 		quest::settimer(2,180);
 		quest::shout("Trick or treat! Smell my feet! Give me something good to eat!");
 	}
-}    
+}     

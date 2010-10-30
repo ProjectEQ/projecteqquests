@@ -7,10 +7,11 @@ $clientver = $client->GetClientVersion();
       	}
 	if(!quest::istaskactive(212)){
 		if(!defined $qglobals{halloween_zombie}){
-			if($clientver < 3){
-				$client->Message(15,"This task does not fully work with the Titanium client or lower. Please upgrade to SoF or newer for the best possible experience.");
 				if($text=~/Hail/i) {
    					quest::say("Dagnabbit! Don't creep up on folks like that, especially around here! What are ya trying to do, give somebody a heart attack! Noise attracts [their] attention, don't ya know.");
+                                        if($clientver < 3){
+				$client->Message(15,"This task does not fully work with the Titanium client or lower. Please upgrade to SoF or newer for the best possible experience.");
+                                        }
       				}
       				if($text=~/their/i) {
       					quest::say("Who? Look around! The zombies, of course! They aren't too bright, but seem attracted to noises. I just know the [epidemic] is going to spread.");
@@ -27,7 +28,6 @@ $clientver = $client->GetClientVersion();
 					quest::assigntask(212);
 					quest::summonitem(87309);
 				}
-      			}	
 		}
 		else {
 			quest::say("Thank you for the mass carnage!");

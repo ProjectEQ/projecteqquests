@@ -15,7 +15,7 @@ sub EVENT_SAY {
       			}
       		}
       	}
-	if(!quest::istaskactive(217)){
+	elsif(!quest::istaskactive(217)){
 		if(!defined $qglobals{halloween_mushroom}){
 			if($text=~/Hail/i) {
    				quest::say("I don't understand what all the fuss is about. This should be a day of [fear], not celebration!");

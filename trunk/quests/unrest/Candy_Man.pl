@@ -16,14 +16,14 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_SAY {
-	if ($text=~/Hail/i && $qglobals{candyman} != 1) {
+	if ($text=~/Hail/i && !defined $qglobals{halloween_candyman}) {
 		quest::say("Here you go $name. Enjoy!");
-                quest::setglobal("candyman",1,0,"D30");
+                quest::setglobal("halloween_candyman",1,0,"D30");
 		quest::summonitem(87312,10);
-		quest::summonitem(quest::ChooseRandom(87315,87315,87315,87315,85062));
+		quest::summonitem(85062);
 		quest::summonitem(85067,15);
 	}
-        if ($text=~/Hail/i && $qglobals{candyman} == 1) {
+        if ($text=~/Hail/i && defined $qglobals{halloween_candyman}) {
                 quest::say("Changing your costume isn't going to work! I already gave you your candy!");
 }
  }

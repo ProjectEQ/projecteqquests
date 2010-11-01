@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 	if(quest::istaskactivityactive(216,10)){
 		if($text=~/Hail/i) {
-			if(defined $qglobals{"halloween_race_victory"} && !defined $qglobals{halloween_race_complete}) {
+			if(defined $qglobals{halloween_race_victory} && !defined $qglobals{halloween_race_complete}) {
 				quest::summonitem(80056);
 				quest::summonitem(85062);
 				$client->AddLevelBasedExp(10, 0);
@@ -29,7 +29,7 @@ sub EVENT_SAY {
 		if($text=~/Hail/i) {
       			quest::say("What are you waiting for? Get going!");
       		}
-		if(!defined $qglobals{"halloween_race_start"}) {
+		if(!defined $qglobals{halloween_race_start}) {
 			if($text=~/Ready/i) {
 				quest::setglobal("halloween_race_start",1,1,"M4");
    				quest::say("Ride quickly and do not hesitate... Remember, you have only four minutes to reach the gates of Neriak.");

@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
 	if(quest::istaskactivityactive(216,9)){
-		if(defined $qglobals{"halloween_race_start"}) {
+		if(defined $qglobals{halloween_race_start}) {
 			quest::setglobal("halloween_race_victory",1,1,"D30");
 			quest::updatetaskactivity(216,9);
 		}

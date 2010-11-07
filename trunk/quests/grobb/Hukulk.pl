@@ -16,10 +16,10 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 13073 =>4)) { #Bone Chips
     quest::say("You good. Take dis. Make much pain and hurt. Make tings bleeds. Kill, hurt all. Innoruuk and me say do, now go. You do much, come bak. Teach you how more hurt and pain make. Go.");
     quest::summonitem(5023); #Rusty Two Handed Sword
-    quest::faction(292,2); #Shadowknights of Night Keep
-    quest::faction(128,2); #Green Blood Knights
-    quest::faction(22,-2); #Broken Skull Clan
-    quest::faction(66,2);  #Da Bashers
+    quest::faction(292,10); #Shadowknights of Night Keep
+    quest::faction(128,10); #Green Blood Knights
+    quest::faction(22,-25); #Broken Skull Clan
+    quest::faction(66,10);  #Da Bashers
   }
   else {
     quest::say("Me no need dis, $name.");

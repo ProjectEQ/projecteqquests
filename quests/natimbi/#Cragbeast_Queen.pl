@@ -8,6 +8,7 @@ sub EVENT_SPAWN {
   }
   else {
     quest::settimer("CBQ", 10);
+    quest::ze(15,"A muffled roar echoes in the distance.");
   }
 }
 

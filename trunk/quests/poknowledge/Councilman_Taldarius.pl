@@ -14,7 +14,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (!plugin::check_hasitem(16255) && !plugin::check_hasitem(16257) && plugin::check_handin(\%itemcount, 16256 => 1, 16258 => 1)) { #Marked Runed Signet, Hope Stone
+  if (!plugin::check_hasitem($client, 16255) && !plugin::check_hasitem($client, 16257) && plugin::check_handin(\%itemcount, 16256 => 1, 16258 => 1)) { #Marked Runed Signet, Hope Stone
     quest::say("Wonderful! You have proven yourself as both a Master of the Trade as well as a valiant spirit. Take this and may it server you well! If this signet does not suffice, bring it back to me and i will exchange it for one more attuned to your needs.");
     quest::summonitem(16255); #Signet of Might
   }

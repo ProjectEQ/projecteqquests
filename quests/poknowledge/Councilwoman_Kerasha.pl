@@ -2,7 +2,7 @@
 #Essences of Power
 
 sub EVENT_SAY {
-  if(defined($qglobals{AidEinoDone}) && ($qgloblas{AidEinoDone} == 1)) { #Can't do the turn in without getting the bowl, so I'm not worried about restricting the turn ins on the flag, just this text and getting the bowl.
+  if(defined($qglobals{AidEinoDone}) && ($qglobals{AidEinoDone} == 1)) { #Can't do the turn in without getting the bowl, so I'm not worried about restricting the turn ins on the flag, just this text and getting the bowl.
     if($text=~/hail/i) {
       quest::say("Greetings $name! It pleases me very much that you were able to help Eino out in his time of need.' Councilwoman Kerasha glances at Eino, 'Tunare only knows what I would do without him at my side. There is another matter at hand that has come to the attention of the council that is beyond even our combined power and requires the aid of a powerful alliance. Would you be willing to aid Tanaan?");
     }

@@ -1,4 +1,6 @@
 #needs live text
+#accepts beer braised tuna
+#accepts garlic buttered tuna
 sub EVENT_SPAWN {
   $counter=0;
 }
@@ -60,7 +62,52 @@ sub EVENT_ITEM {
     quest::exp(100000);
     $counter += 1;
   }
-  if($counter == 8) {
+  if (plugin::check_handin(\%itemcount, 58427 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58428 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58429 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58430 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58431 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58432 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58433 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58434 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if (plugin::check_handin(\%itemcount, 58435 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }
+  if($counter == 11) {
      quest::depop();
      }
 plugin::return_items(\%itemcount);

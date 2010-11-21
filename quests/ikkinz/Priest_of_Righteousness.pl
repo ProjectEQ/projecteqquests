@@ -4,11 +4,11 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 50) {
-     #ae rampage
+     quest::modifynpcstat("special_attacks",r);
      quest::setnexthpevent(10);
      }
   if($hpevent == 10) {
-    #ae rampage
+     quest::modifynpcstat("special_attacks",r);
      }
 }
 

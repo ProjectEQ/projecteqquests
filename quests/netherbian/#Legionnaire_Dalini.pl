@@ -13,7 +13,7 @@ sub EVENT_ITEM{
   if (plugin::check_handin(\%itemcount,29851=>1)) { # dawnshroud cider
     quest::say("Dorey usually roams in the troglodyte caves, you might find him there.");
     # spawns bregun dorey, near a trog hunter
-    quest::unique_spawn(161077,0,0,-400,240,-3);
+    quest::unique_spawn(161077,0,0,-372,-95,10,88);
   }
   
   plugin::return_items(\%itemcount);

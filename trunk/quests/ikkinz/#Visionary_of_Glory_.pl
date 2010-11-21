@@ -21,4 +21,3 @@ sub EVENT_TIMER {
     $npc->GMMove(442,-141,11,192);
   }
 }
-

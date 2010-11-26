@@ -4,11 +4,16 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 50) {
-     quest::modifynpcstat("special_attacks",r);
+     quest::modifynpcstat("special_attacks",EFQUCDr);
+     quest::setnexthpevent(40);
+     }
+  if($hpevent == 40) {
+     quest::modifynpcstat("special_attacks",EFQUCD);
      quest::setnexthpevent(10);
      }
+
   if($hpevent == 10) {
-     quest::modifynpcstat("special_attacks",r);
+     quest::modifynpcstat("special_attacks",EFQUCDr);
      }
 }
 
@@ -17,7 +22,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_TIMER {
-  if(($x > 500) || ($x < 200) || ($y > -30) || ($y < -250)) {
+  if($x > 120) {
     $npc->GMMove(-21,-210,-3,60);
   }
 }

@@ -1,26 +1,26 @@
 sub EVENT_SPAWN {
-   my $random_result = int(rand(7)) +1;
+   my $doppelganger = int(rand(7)) + 1;
    quest::setnexthpevent(75);
 }
 
 sub EVENT_HP {
   if($hpevent == 75) {
-     if($random_result == 1) {
+     if($doppelganger == 1) {
      quest::npcrace(402);
      }
-     if($random_result == 2) {
+     if($doppelganger == 2) {
      quest::npcrace(392);
      }
-     if($random_result == 3) {
+     if($doppelganger == 3) {
      quest::npcrace(394);
      }
-     if($random_result == 4) {
+     if($doppelganger == 4) {
      quest::npcrace(386);
      }
-     if($random_result == 5) {
+     if($doppelganger == 5) {
      quest::npcrace(393);
      }
-     if($random_result == 6) {
+     if($doppelganger == 6) {
      quest::npcrace(396);
      }
   }

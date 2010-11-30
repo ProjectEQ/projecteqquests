@@ -1,7 +1,12 @@
+my $killshot;
+
 sub EVENT_SPAWN {
   if(!defined($qglobals{vrexkill1})) {
-    my $killshot = int(rand(16)) + 1;
+    $killshot = int(rand(16)) + 1;
     quest::setglobal("vrexkill1",$killshot,0,"H6");
+  }
+  else {
+    $killshot = $qglobals{vrexkill1};
   }
 }
 
@@ -65,7 +70,7 @@ sub EVENT_DEATH {
     quest::signalwith(294597,1,0);
   }
   else {
-    quest::spawn2(531,-157,-49,126); #Needs fixing
+    quest::spawn2(294593,0,0,531,-157,-49,126); 
     if($killshot == 1) {
       quest::emote("fears a foreboding melody");
     }

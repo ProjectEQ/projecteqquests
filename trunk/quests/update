@@ -1,3 +1,2 @@
 #!/bin/sh
 svn commit --username ringdahl.dan@gmail.com --password fw3Ax6kU5gt9 -m "Submitting quests from HTTP submission area; verified by gaeorn" "$@" || exit 1
-chmod 777 "$@"

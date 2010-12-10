@@ -1,12 +1,12 @@
 my $killshot;
 
 sub EVENT_SPAWN {
-  if(!defined($qglobals{vrexkill1})) {
+  if(!defined($qglobals{vrexkill3})) {
     $killshot = int(rand(16)) + 1;
-    quest::setglobal("vrexkill1",$killshot,3,"H6");
+    quest::setglobal("vrexkill3",$killshot,3,"H6");
   }
   else {
-    $killshot = $qglobals{vrexkill1};
+    $killshot = $qglobals{vrexkill3};
   }
 }
 
@@ -21,52 +21,52 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-  if(($class eq "Bard") && ($qglobals{vrexkill1} == 1)) {
+  if(($class eq "Bard") && ($qglobals{vrexkill3} == 1)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Beastlord") && ($qglobals{vrexkill1} == 2)) {
+  elsif(($class eq "Beastlord") && ($qglobals{vrexkill3} == 2)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Berserker") && ($qglobals{vrexkill1} == 3)) {
+  elsif(($class eq "Berserker") && ($qglobals{vrexkill3} == 3)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Cleric") && ($qglobals{vrexkill1} == 4)) {
+  elsif(($class eq "Cleric") && ($qglobals{vrexkill3} == 4)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Druid") && ($qglobals{vrexkill1} == 5)) {
+  elsif(($class eq "Druid") && ($qglobals{vrexkill3} == 5)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Enchanter") && ($qglobals{vrexkill1} == 6)) {
+  elsif(($class eq "Enchanter") && ($qglobals{vrexkill3} == 6)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Magician") && ($qglobals{vrexkill1} == 7)) {
+  elsif(($class eq "Magician") && ($qglobals{vrexkill3} == 7)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Monk") && ($qglobals{vrexkill1} == 8)) {
+  elsif(($class eq "Monk") && ($qglobals{vrexkill3} == 8)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Necromancer") && ($qglobals{vrexkill1} == 9)) {
+  elsif(($class eq "Necromancer") && ($qglobals{vrexkill3} == 9)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Paladin") && ($qglobals{vrexkill1} == 10)) {
+  elsif(($class eq "Paladin") && ($qglobals{vrexkill3} == 10)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Ranger") && ($qglobals{vrexkill1} == 11)) {
+  elsif(($class eq "Ranger") && ($qglobals{vrexkill3} == 11)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Rogue") && ($qglobals{vrexkill1} == 12)) {
+  elsif(($class eq "Rogue") && ($qglobals{vrexkill3} == 12)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Shadowknight") && ($qglobals{vrexkill1} == 13)) {
+  elsif(($class eq "Shadowknight") && ($qglobals{vrexkill3} == 13)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Shaman") && ($qglobals{vrexkill1} == 14)) {
+  elsif(($class eq "Shaman") && ($qglobals{vrexkill3} == 14)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Warrior") && ($qglobals{vrexkill1} == 15)) {
+  elsif(($class eq "Warrior") && ($qglobals{vrexkill3} == 15)) {
     quest::signalwith(294597,1,0);
   }
-  elsif(($class eq "Wizard") && ($qglobals{vrexkill1} == 16)) {
+  elsif(($class eq "Wizard") && ($qglobals{vrexkill3} == 16)) {
     quest::signalwith(294597,1,0);
   }
   else {

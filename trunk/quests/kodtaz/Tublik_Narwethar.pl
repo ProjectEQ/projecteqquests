@@ -46,7 +46,26 @@ if (($text=~/four temples/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 1
 if (($text=~/mystery/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
     quest::say("It's clear to me that you must proceed into each of the three remaining temples and recover the three artifacts that are in them. It's up to you how you want to proceed, but you will have to enter the [Sanctuary of the Righteous], the [Sanctuary of the Glorified], or the [Sanctuary of the Transcendent]. Each one of these holds an artifact that I believe will be used to gain entrance to whatever lies beyond the Altar of Destruction. Which will you choose?");
 }
-}    
+if (($text=~/sanctuary of the righteous/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+   quest::say("The glyphs you recovered show an Artifact of Righteousness that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Righteous to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Righteous and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it."); 
+   }
+if (($text=~/sanctuary of the glorified/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+   quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+   }
+if (($text=~/sanctuary of the transcendent/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+   quest::say("The glyphs you recovered show an Artifact of Transcendence that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Transcendent to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Transcendent and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+   }
+if (($text=~/vial of smelted molten ore/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 13)) {  
+   quest::say("To make the ore you must use a [Inferno Scepter] with [Inanimate Ore] in a forge.");
+}
+if (($text=~/inferno scepter/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 13)) {  
+   quest::say("To create an Inferno Scepter visit Chasmos Thromsk in Abysmal Sea and purchase Flaring Coals, an Inferno Scepter mold, a Blazing torch and a Flarestone.  A highly skilled smith will be needed to successfully complete the scepter.");
+   }
+if (($text=~/inanimate ore/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 13)) {
+   quest::say("Inanimate ore can be found on various creatures that roam these lands.");
+   }
+}
+   
 sub EVENT_ITEM {
 if (defined $qglobals{ikky} && $qglobals{ikky} == 6) {
   if (plugin::check_handin(\%itemcount, 60146 =>1 )) {
@@ -102,6 +121,22 @@ if (defined $qglobals{ikky} && $qglobals{ikky} == 11) {
   quest::setglobal("ikky",12,5,"F");
 }
 }
+if (defined $qglobals{ikky} && $qglobals{ikky} == 12) {
+  if (plugin::check_handin(\%itemcount, 60170 =>1, 60171 =>1, 60172 =>1 )) {
+  quest::say("Well done!  You can have these back.  It looks like you are ready for the final temple.  These artifacts must be combined with three [Vial of Smelted Molten Ore]. Once they are combined you will have your key to the final temple.  Bring it to me and I will allow you access to its secrets.");
+  quest::setglobal("ikky",13,5,"F");
+  quest::summonitem(60170);
+  quest::summonitem(60171);
+  quest::summonitem(60172);
+  }
+  }
+if (defined $qglobals{ikky} && $qglobals{ikky} == 13) {
+  if (plugin::check_handin(\%itemcount, 60173 =>1 )) {
+  quest::say("Well done!  You can have this back.  Take it to the Temple and you will now be allowed entry.");
+  quest::setglobal("ikky",14,5,"F");
+  quest::summonitem(60173);
+  }
+  }
 plugin::return_items(\%itemcount);
 }
 

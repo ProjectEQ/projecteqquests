@@ -12,7 +12,7 @@ sub EVENT_TIMER {
        quest::depopall(158006);
        quest::spawn2(158096,0,0,1412,0,248.63,192);
        quest::depop();
-      } else {
+      } elsif (!$entity_list->GetMobByNpcTypeID(158006)) {
        quest::spawn2(158006,0,0,1412,0,248.63,192);
       }
     }

@@ -40,3 +40,7 @@ sub EVENT_TIMER {
     $npc->GMMove(531,-157,-49,126);
   }
 }
+sub EVENT_DEATH {
+  quest::spawn2(294620,0,0,815,139,-72,128);
+}
+

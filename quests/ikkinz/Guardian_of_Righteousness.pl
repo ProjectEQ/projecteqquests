@@ -6,16 +6,16 @@ sub EVENT_HP {
   if($hpevent == 75) {
   quest::signalwith(294344,1,0);
   quest::setnexthpevent(47);
-  quest::emote("Guardian of Righteousness motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   }
   if($hpevent == 47) {
   quest::signalwith(294345,1,0);
   quest::setnexthpevent(26);
-  quest::emote("Guardian of Righteousness motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   }
   if($hpevent == 26) {
   quest::signalwith(294346,1,0);
-  quest::emote("Guardian of Righteousness motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   }
 }
 sub EVENT_DEATH {

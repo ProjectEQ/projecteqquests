@@ -44,7 +44,7 @@ if($text=~/Hail/i)
 
 sub EVENT_ITEM
 {
-  if($class != 'Paladin')
+  if($class ne 'Paladin')
  {
  quest::say("You have no business handing me this junk.");
  quest::summonitem($item1) if($item1);

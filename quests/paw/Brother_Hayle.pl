@@ -52,7 +52,7 @@ sub EVENT_ITEM {
     #Give a note ID:18937
     quest::summonitem(18937);
   }
-  if(plugin::check_handin(\%itemcount, 18937 => 1, 13947 => 1, 18828 => 1, 12197 => 1 ))
+  elsif(plugin::check_handin(\%itemcount, 18937 => 1, 13947 => 1, 18828 => 1, 12197 => 1 ))
   {
     if($faction <= 2)
     {
@@ -65,6 +65,8 @@ sub EVENT_ITEM {
       quest::say("You have not yet proven yourself");
       plugin::return_items(\%itemcount);
     }
+  } else {
+      plugin::return_items(\%itemcount);
   }
 }
 #END of File Zone:paw ID:18071 -- Brother_Hayle

@@ -1,10 +1,8 @@
 #BeginFile: abysmal\Magus_Pellen.pl
-#
-#
 
 sub EVENT_SAY {
   if($ulevel >= 15) {
-    if(plugin::check_hasitem($client, 41000)) { #Adventurer's Stone
+    if(plugin::check_hasitem($client, 41000) || $client->KeyRingCheck(41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
         quest::say("I can provide you with travel to [Natimbi] and [Nedaria]'s Landing with our Farstone magic. Just tell me where you'd like to go and I shall send you.");
       }

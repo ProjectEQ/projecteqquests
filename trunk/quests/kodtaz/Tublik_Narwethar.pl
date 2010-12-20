@@ -1,5 +1,10 @@
 sub EVENT_SAY {
-if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) {  #update global at proper point
+ $InInstanceIkky4 = quest::GetInstanceID("ikkinz",3);
+ $InInstanceIkky5 = quest::GetInstanceID("ikkinz",4);
+ $InInstanceIkky6 = quest::GetInstanceID("ikkinz",5);
+ $raid = $client->GetRaid();
+
+if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {  
    quest::say("Welcome back, $name. Have you found any clues from the [Crumbled Sanctuary] yet? Please find anything you can and return to me as soon as possible!");
   }
   else{
@@ -8,15 +13,122 @@ if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) {  #u
     quest::say("If you want to see what you've completed at any time, just ask me for a [progress update]!");
   }
   if ($text=~/progress update/i) {
-  #add kodtaz update via globals
-  }
+    if((defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
+      $client->Message(13, "Pending – You have requested the trial at the Temple of Singular Might!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 2)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 3)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");  
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 6)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 9)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 10)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 11)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
+      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 13)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
+      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have completed the three raid trials!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 14)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
+      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have completed the three raid trials!");
+      $client->Message(13, "Finished! - You have crafted the Icon of the Altar!");
+      }
+} 
 if (($text=~/stone tablet/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) {
   quest::say("You need a stone tablet? What for? What have you got that's so special it requires the use of a stone tablet?");
  }
-if (($text=~/crumbled sanctuary/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 8)) { 
+if (($text=~/crumbled sanctuary/i) && (defined $qglobals{ikky} && $qglobals{ikky} >= 7)) { 
   quest::say("Oh yeah, I know all about that thing. It was a temple that was decimated by the Muramites during their initial invasion. We're unsure what caused them to destroy that temple, but not the other three. I need you to go to the temple and [look for clues] as to what the reason may have been for destroying the temple.");
  }
-if (($text=~/look for clues/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 8)) {  
+if (($text=~/look for clues/i) && (defined $qglobals{ikky} && $qglobals{ikky} >= 7)) {  
   quest::say("I have no idea what the clues may look like, but I'm hoping they'll bring about some insight as to the reason behind the Muramites destroying the temple. Once you've recovered all the clues you can find, please come back to me so I can go over them. If we're lucky, I'll be able to decipher what the real cause was and we can relay that important news to the brotherhood. Off you go, $name, and good luck!");
  }
 if (($text=~/ritual/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 9)) {   
@@ -47,13 +159,52 @@ if (($text=~/mystery/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
     quest::say("It's clear to me that you must proceed into each of the three remaining temples and recover the three artifacts that are in them. It's up to you how you want to proceed, but you will have to enter the [Sanctuary of the Righteous], the [Sanctuary of the Glorified], or the [Sanctuary of the Transcendent]. Each one of these holds an artifact that I believe will be used to gain entrance to whatever lies beyond the Altar of Destruction. Which will you choose?");
 }
 if (($text=~/sanctuary of the righteous/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
-   quest::say("The glyphs you recovered show an Artifact of Righteousness that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Righteous to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Righteous and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it."); 
+  if($raid){
+	if(defined $qglobals{ikky} && $qglobals{ikky} == 12) { 
+           if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
+		 $Instance = quest::CreateInstance("ikkinz", 3, 21600);
+		 quest::AssignRaidToInstance($Instance);	
+		 quest::say("Instance added.");
+                 quest::say("The glyphs you recovered show an Artifact of Righteousness that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Righteous to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Righteous and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+	   } else {
+		$client->Message(13, "You are already in an instance!");
+	 	  }
+           }
+      } else {
+	 $client->Message(13, "You are not in a raid!");
+         }
    }
 if (($text=~/sanctuary of the glorified/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
-   quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+    if($raid){
+	if(defined $qglobals{ikky} && $qglobals{ikky} == 12) { 
+           if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
+		 $Instance = quest::CreateInstance("ikkinz", 4, 21600);
+		 quest::AssignRaidToInstance($Instance);	
+		 quest::say("Instance added.");
+                 quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+           } else {
+		$client->Message(13, "You are already in an instance!");
+	 	  }
+           }
+      } else {
+	 $client->Message(13, "You are not in a raid!");
+         }
    }
 if (($text=~/sanctuary of the transcendent/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+     if($raid){
+	if(defined $qglobals{ikky} && $qglobals{ikky} == 12) { 
+           if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
+		 $Instance = quest::CreateInstance("ikkinz", 5, 21600);
+		 quest::AssignRaidToInstance($Instance);	
+		 quest::say("Instance added.");
    quest::say("The glyphs you recovered show an Artifact of Transcendence that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Transcendent to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Transcendent and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+           } else {
+		$client->Message(13, "You are already in an instance!");
+	 	  }
+           }
+      } else {
+	 $client->Message(13, "You are not in a raid!");
+         }
    }
 if (($text=~/vial of smelted molten ore/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 13)) {  
    quest::say("To make the ore you must use a [Inferno Scepter] with [Inanimate Ore] in a forge.");
@@ -133,6 +284,7 @@ if (defined $qglobals{ikky} && $qglobals{ikky} == 12) {
 if (defined $qglobals{ikky} && $qglobals{ikky} == 13) {
   if (plugin::check_handin(\%itemcount, 60173 =>1 )) {
   quest::say("Well done!  You can have this back.  Take it to the Temple and you will now be allowed entry.");
+  $client->Message(4,"Finished! - You've constructed your Icon of the Altar!"); 
   quest::setglobal("ikky",14,5,"F");
   quest::summonitem(60173);
   }

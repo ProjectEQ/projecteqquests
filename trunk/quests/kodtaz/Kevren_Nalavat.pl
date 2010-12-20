@@ -91,6 +91,116 @@ if (($text=~/think you can/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 
   quest::say("The Summoner's Ring is just past the Temple of the Damned");
   $client->Message(4,"Finished! - You've been charged with stopping the ceremony at the Summoning Circle!");
 }
+if ($text=~/progress/i) {
+    if((defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
+      $client->Message(13, "Pending – You have requested the trial at the Temple of Singular Might!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 2)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 3)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");  
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 6)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 9)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 10)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 11)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
+      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 13)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
+      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have completed the three raid trials!");
+      }
+    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 14)) {
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of Twin Struggles!");
+      $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");              
+      $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
+      $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");
+      $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
+      $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
+      $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
+      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have completed the three raid trials!");
+      $client->Message(13, "Finished! - You have crafted the Icon of the Altar!");
+      }
+   } 
 }
 sub EVENT_ITEM {
   if ((plugin::check_handin(\%itemcount, 60141 =>1,60142 =>1,60143 =>1,60144 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
@@ -113,7 +223,7 @@ sub EVENT_ITEM {
 }
  if ((plugin::check_handin(\%itemcount, 60151 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) { 
     quest::say("You have done well, $name.  Speak with Tublik to continue helping us here in Kod'Taz."); 
-    quest::setglobal("ikky",8,5,"F");
+    quest::setglobal("ikkyalt",8,5,"F");
       $client->Message(4,"Finished! - You were able to recover a rare artifact from the Grand Summoner's goons in the Summoning Circle!");
 }
  plugin::return_items(\%itemcount);

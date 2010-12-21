@@ -1,5 +1,4 @@
 # Fusibility Research
-#
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -38,4 +37,3 @@ sub EVENT_ITEM {
 }
 
 # EOF zone: westwastes ID: 120079 NPC: Makil_Rargon
-

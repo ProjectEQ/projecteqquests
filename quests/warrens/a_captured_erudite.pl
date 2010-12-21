@@ -19,8 +19,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6923 => 1)) {
     quest::say("I thank you for freeing me from my dog faced captors.");
-    quest::depop();
     quest::exp(300);
+    quest::depop();
   }
   else {
     plugin::return_items(\%itemcount);

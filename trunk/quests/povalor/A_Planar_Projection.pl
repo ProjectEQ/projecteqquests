@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if($text=~/hail/) {
+  if($text=~/hail/i) {
     quest::setglobal("pop_pov_aerin_dar", 1, 5, "F");
     $client->Message(4,"You receive a character flag!");
   }

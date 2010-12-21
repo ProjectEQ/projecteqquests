@@ -1,18 +1,17 @@
 # Essence items
-#
 
 sub EVENT_SAY {
   if ($faction <= 5) {
     if ($text=~/hail/i) {
       quest::say("We are aware of your presence, fleshling.");
     }
-    if ($text=~/who are you/i) {
+    if ($text=~/who/i) {
       quest::say("We are those who have been in hiding. We are those who have been in waiting. We are those who await the return of our Master.");
     }
-    if ($text=~/your master/i) {
+    if ($text=~/master/i) {
       quest::say("Our Master? Surely all know of our Master now. It was he who was sleeping. It is he who is now freed. We give him honor, loyalty, and our lives. Jaled'Dar, first of our order, set in motion the events that freed our Master. But the Master has departed quickly, perhaps to challenge the Mother herself, such is his power. We wish to aid our Master, but we fear he is not aware that we exist, for his last memory of Wyrmkind was one of treachery and defeat. We believe we know where he has gone, but we do not know how to reach him.");
     }
-    if ($text=~/where has he gone/i) {
+    if ($text=~/where/i) {
       quest::say("We believe that he is in a far distant plane, beyond the powers of even the mightiest dragon to reach. He goes places only Veeshan herself was able to visit. We believe he searches for our long departed Mother, to challenge her for rule of the very heavens. If only we had some means of reaching him, we would give him all our aid! We doubt your pitiful mammal brain is capable of devising a plan where we have failed, but we will listen to your chatter, such is our desperation.");
     }
     if ($text=~/prismatic dragon scale/i) {
@@ -26,9 +25,9 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 27329 => 1, 27265 => 1)) {
       quest::say("Thank you for returning this to us. Here is your reward, imbued with the essence of a fool who held one of the keys to our Masters prison. If you are unhappy with your reward, return it to us and perhaps we can give you something more appropriate.");
       quest::exp(5000000);
-      quest::faction(84,10); #Disciples of Kerafyrm
-      quest::faction(42,10); #CoV
-      quest::faction(273,10); #Ring of Scale
+      quest::faction(84,10);   #Disciples of Kerafyrm
+      quest::faction(42,10);   #Claws of Veeshan
+      quest::faction(273,10);  #Ring of Scale
       quest::faction(189,-30); #Kromzek
       quest::summonitem(2698);
     }
@@ -54,5 +53,3 @@ sub EVENT_ITEM {
 }
 
 # EOF zone: westwastes ID: 120126 NPC: Melalafen
-
-

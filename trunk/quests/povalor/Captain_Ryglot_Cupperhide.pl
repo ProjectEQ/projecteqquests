@@ -25,7 +25,7 @@ sub EVENT_SAY {
     }
   }
   else {
-    quest::emote("Not now soldier!");
+    quest::say("Not now soldier!");
   }
 }
 

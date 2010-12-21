@@ -6,7 +6,7 @@
 ###############################
 
 sub EVENT_SAY { 
-  if($text=~/Hail/i) {
+  if($text=~/hail/i) {
     quest::say("My spirrrit witherrrrs herrre in this dank, stinking, flea infested hole! I must be set frrree frrrom these shackles!!"); 
   }
 }
@@ -14,8 +14,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6923 => 1)) {
     quest::say("I thank you for frrreeing me frrrom my dog face captorrrs.");
-    quest::depop();
     quest::exp(300);
+    quest::depop();
   }
   else {
     plugin::return_items(\%itemcount);

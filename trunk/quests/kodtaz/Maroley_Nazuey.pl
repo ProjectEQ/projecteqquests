@@ -4,24 +4,41 @@ sub EVENT_SAY {
  $InInstanceIkky3 = quest::GetInstanceID("ikkinz",2);
  $group = $client->GetGroup();
 
-  if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 2)) {			
-    if($group){
+  if($text=~/hail/i) {
+    if(defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1) {
+       quest::say("Feel free to venture in this trial again");
+    }
+    elsif(defined $qglobals{ikky} && $qglobals{ikky} >= 3) {
+      quest::say("You have finished this trial, speak with Kevren and proceed to the next one.");
+    }
+    elsif(defined $qglobals{ikky} && $qgloblas{ikky} == 2) {
+      quest::say("You are doing well are you [ready] to face the challenge of the twin struggles?");
+    }
+    else {
+      quest::say("Gah, what do you think you're doing causing all that ruckus? I'm trying to keep a low profile so no wandering Muramites come to investigate noise. I may be the liaison for this temple, but that doesn't mean you can blow my cover! In any case, you still need to find Gazak and attempt the first trial before you can go any farther! Now make haste!");
+      }
+   }   
+  if ($text=~/ready/i) {
+     if($group){
 	if(defined $qglobals{ikky} && $qglobals{ikky} == 2) {			
            quest::say("Very well then, $name. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...");
-           if($InInstanceIkky1 == 0 && $InInstanceIkky2 == 0 && $InInstanceIkky3 == 0){
+           if($InInstanceIkky2 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 1, 10800);
 		 quest::AssignGroupToInstance($Instance);	
 		 quest::say("Instance added.");
-	   } else {
+	   } 
+           else {
 		$client->Message(13, "You are already in an instance!");
-	 	  }
+	        }
            }
-      } else {
+        else {
+             quest::say("You need to speak with Kevren.");
+             }
+        }
+        else {     
 	 $client->Message(13, "You are not in a group!");
          }
-  } else {
-  quest::say("Gah, what do you think you're doing causing all that ruckus? I'm trying to keep a low profile so no wandering Muramites come to investigate noise. I may be the liaison for this temple, but that doesn't mean you can blow my cover! In any case, you still need to find Gazak and attempt the first trial before you can go any farther! Now make haste!");
-  }
+   }
 }
 
 sub EVENT_ITEM {

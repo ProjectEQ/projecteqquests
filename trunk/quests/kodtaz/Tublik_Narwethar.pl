@@ -4,7 +4,8 @@ sub EVENT_SAY {
  $InInstanceIkky6 = quest::GetInstanceID("ikkinz",5);
  $raid = $client->GetRaid();
 
-if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {  
+if ($text=~/hail/i) {
+ if ((defined $qglobals{ikky} && $qglobals{ikky} == 7)) {  
    quest::say("Welcome back, $name. Have you found any clues from the [Crumbled Sanctuary] yet? Please find anything you can and return to me as soon as possible!");
   }
   else{
@@ -12,6 +13,7 @@ if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
     quest::say("Can I help you with something? Has someone sent you? Speak up!");
     quest::say("If you want to see what you've completed at any time, just ask me for a [progress update]!");
   }
+}
   if ($text=~/progress update/i) {
     if((defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
       $client->Message(13, "Pending – You have requested the trial at the Temple of Singular Might!");
@@ -236,7 +238,7 @@ if (defined $qglobals{ikky} && $qglobals{ikky} == 6) {
      GIVE_TABLET();
      }
 }
-if (defined $qglobals{ikky} && $qglobals{ikky} == 8) {
+if (defined $qglobals{ikky} && $qglobals{ikky} == 7) {
   if (plugin::check_handin(\%itemcount, 60162 =>1, 60163 =>1, 60164 =>1, 60165 =>1 )) {
     quest::emote("grunts unhappily at the four pieces");
     quest::say("I had hoped more work wouldn't be needed to uncover the clues, but it looks like there's a bit more you're going to need to do for me. Take a look at these edges. Do you see how they look really sinewy? That's because they're [made of flesh], probably that of the trusik. No doubt the Muramites have been quite cruel to them now that they are mostly used for slavery.");

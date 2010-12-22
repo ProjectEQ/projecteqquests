@@ -1,20 +1,22 @@
 sub EVENT_SAY {
- if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+ if($text=~/hail/i) {
+   if((defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
     quest::say("You have done well and completed the three trials.  I have a few [task] for you to complete when you are ready.");
    #need live text
    }
- elsif (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+   elsif((defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
     quest::say("Thanks for bringing those relics to me.  I have had a chance to examine them and they lead me to believe that something is going on in the Temple of the Damned.  Could you help me [discover their plans]?");
     #need live text
     }
- elsif (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
+   elsif((defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
     quest::say("We have come upon another problem.  The summoners that you encountered in the Temple of the Damned are working at another location closer to the main temple to summon more vile creatures. Do you [think that you] can stop the ritual?");
     #need live text
     }
- else {
+   else {
    quest::emote("looks relieved to see you.");
    quest::say("Finally the Wayfarers Brotherhood has sent adventurers this far out. I was beginning to wonder what was happening. I'm Kevren Nalavat, one of the brotherhood's traveling scholars. We can talk [more] later. The important thing is that you're here and now that you are you'll need to prove that you're up to the challenges facing us on this rugged terrain. I've been all through this area and it's no place to be caught unaware! So what do you say? Are you [ready to be tested]?");
- }
+    }
+}
 if ($text=~/more/i) {
   quest::say("Well I haven't always been the bold adventurer you see before you. I know I may not look too daring, but that's because I'm trying to keep a low profile. Before I joined the Wayfarers Brotherhood I was a learned scholar and knowledge-seeker. I sought to uncover the mysteries of ancient ruins and civilizations lost long ago. I was so focused on my studies that most of my colleagues thought I bordered on [crazy].");
 }

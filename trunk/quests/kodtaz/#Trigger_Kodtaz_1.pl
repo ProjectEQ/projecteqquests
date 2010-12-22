@@ -18,6 +18,7 @@ sub EVENT_SIGNAL {
   quest::spawn2(293217,0,0,673,821,-460,133);
   quest::spawn2(293217,0,0,750,754,-460,180);
   quest::spawn2(293217,0,0,705,668,-453,234);
+  quest::depop(293218);
   }
   }
 sub EVENT_TIMER {

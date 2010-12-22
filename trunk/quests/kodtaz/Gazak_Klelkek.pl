@@ -8,8 +8,16 @@ sub EVENT_SAY {
  $group = $client->GetGroup();
 
   if ($text=~/hail/i) {
+    if(defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1) {
+       quest::say("Feel free to venture in this trial again");
+    }
+    elsif(defined $qglobals{ikky} && $qglobals{ikky} >= 2) {
+      quest::say("You have finished this trial, speak with Kevren and proceed to the next one.");
+    }
+    else {  	
     quest::say("Keep your voice down! We must not attract any [undo attention] to ourselves here. I may be the liaison for the Temple of Singular Might, but that doesn't make me any less of a target. I have kept watch of this temple since we began collecting information on the trusik and the Legion of Mata Muram. You should ask Kevren for more information on them if you haven't already.");
-  }
+    }
+  }  
   if ($text=~/undo attention/i) {
     quest::say("Certainly you do not believe that we are alone here, do you? The Muramites have assigned one of their magic users to gather spiritual artifacts from this area and use their power to gain strength. This creature, which we have dubbed the [Diabolic Destroyer], controls the temple and its inner abominations.");
   }
@@ -21,20 +29,25 @@ sub EVENT_SAY {
   }
   if ($text=~/ready to proceed/i) {
      if($group){
-	if(defined $qglobals{ikky} && $qglobals{ikky} == 1) {			
+	if((defined $qglobals{ikky} && $qglobals{ikky} == 1) || (defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1)) {  
            quest::say("Very well then, $name. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...");
-           if($InInstanceIkky1 == 0 && $InInstanceIkky2 == 0 && $InInstanceIkky3 == 0){
+           if($InInstanceIkky1 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 0, 10800);
 		 quest::AssignGroupToInstance($Instance);	
 		 quest::say("Instance added.");
-	   } else {
+	   } 
+           else {
 		$client->Message(13, "You are already in an instance!");
-	 	  }
-           }
-      } else {
-	 $client->Message(13, "You are not in a group!");
+	   }
+        }
+        else {
+             quest::say("You need to speak with Kevren!"); 
+        }
+      }  
+         else {
+	   $client->Message(13, "You are not in a group!");
          }
-  }
+     }
 }
 sub EVENT_ITEM {
  if ((plugin::check_handin(\%itemcount, 60152 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 1)) {

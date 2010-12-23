@@ -1,12 +1,12 @@
-my $killshot;
+my $killshot2;
 
 sub EVENT_SPAWN {
   if(!defined($qglobals{vrexkill2})) {
-    $killshot = int(rand(16)) + 1;
+    $killshot2 = int(rand(16)) + 1;
     quest::setglobal("vrexkill2",$killshot,3,"H6");
   }
   else {
-    $killshot = $qglobals{vrexkill2};
+    $killshot2 = $qglobals{vrexkill2};
   }
 }
 
@@ -71,52 +71,52 @@ sub EVENT_DEATH {
   }
   else {
     quest::spawn2(294593,0,0,$x,$y,$z,$h); 
-    if($killshot == 1) {
+    if($killshot2 == 1) {
       quest::emote("fears a foreboding melody");
     }
-    if($killshot == 2) {
+    if($killshot2 == 2) {
       quest::emote("fears deep gashes of feral savagery");
     }
-    if($killshot == 3) {
+    if($killshot2 == 3) {
        quest::emote("shies from heavy blades");
     }
-    if($killshot == 4) {
+    if($killshot2 == 4) {
        quest::emote("has a dread of celestial spirit");
     }
-    if($killshot == 5) {
+    if($killshot2 == 5) {
        quest::emote("the creature seems weak in the face of the power of nature");
     }
-    if($killshot == 6) {
+    if($killshot2 == 6) {
        quest::emote("mind and body vulnerable");
     }
-    if($killshot == 7) {
+    if($killshot2 == 7) {
        quest::emote("fears summoned elements");
     }
-    if($killshot == 8) {
+    if($killshot2 == 8) {
        quest::emote("fears focused tranquility");
     }
-    if($killshot == 9) {
+    if($killshot2 == 9) {
        quest::emote("fears doom of death");
     }
-    if($killshot == 10) {
+    if($killshot2 == 10) {
        quest::emote("fears a holy blade");
     }
-    if($killshot == 11) {
+    if($killshot2 == 11) {
        quest::emote("fears true shots and fast blades");
     }
-    if($killshot == 12) {
+    if($killshot2 == 12) {
        quest::emote("ignores anything behind it");
     }
-    if($killshot == 13) {
+    if($killshot2 == 13) {
        quest::emote("dreads the strike of dead");
     }
-    if($killshot == 14) {
+    if($killshot2 == 14) {
        quest::emote("cringes at the appearance of talismans");
     }
-    if($killshot == 15) {
+    if($killshot2 == 15) {
        quest::emote("fears brute force and brawn");
     }
-    if($killshot == 16) {
+    if($killshot2 == 16) {
        quest::emote("falters when struck with the power of the elements");
     }
   }

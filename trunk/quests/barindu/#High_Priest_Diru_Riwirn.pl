@@ -28,7 +28,7 @@ sub EVENT_SAY {
 	    			} else {
 					$client->Message(13, "You are already in an instance!");
 				}
-	    		} elsif(defined $qglobals{sewers} && $qglobals{sewers} == 4) {
+	    		} elsif(defined $qglobals{sewers} && $qglobals{sewers} >= 4) {
 		    		quest::say("Utandi, the map maker, should be in the sewers. I must apologize for him in advance. He is wonderful with his maps, but very timid. Good luck and I hope that we can stand together, defiant against the invaders.");
 		    		if($InInstancePlant == 0 && $InInstanceCrem == 0 && $InInstancePool == 0 && $InInstanceLair == 0){
 		    			$Instance = quest::CreateInstance("snpool", 0, 10800);

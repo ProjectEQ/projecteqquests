@@ -8,11 +8,11 @@ sub EVENT_SAY {
     if(defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1) {
        quest::say("Feel free to venture in this trial again");
     }
-    elsif(defined $qglobals{ikky} && $qglobals{ikky} >= 3) {
-      quest::say("You have finished this trial, speak with Kevren and proceed to the next one.");
-    }
     elsif(defined $qglobals{ikky} && $qgloblas{ikky} == 2) {
       quest::say("You are doing well are you [ready] to face the challenge of the twin struggles?");
+    }
+    elsif(defined $qglobals{ikky} && $qglobals{ikky} >= 3) {
+      quest::say("You have finished this trial, speak with Kevren and proceed to the next one.");
     }
     else {
       quest::say("Gah, what do you think you're doing causing all that ruckus? I'm trying to keep a low profile so no wandering Muramites come to investigate noise. I may be the liaison for this temple, but that doesn't mean you can blow my cover! In any case, you still need to find Gazak and attempt the first trial before you can go any farther! Now make haste!");

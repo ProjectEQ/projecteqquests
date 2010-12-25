@@ -70,7 +70,7 @@ sub EVENT_DEATH {
     quest::signalwith(294597,1,0);
   }
   else {
-    quest::spawn2(294593,0,0,$x,$y,$z,$h); 
+    quest::spawn2(294600,0,0,$x,$y,$z,$h); 
     if($killshot3 == 1) {
       quest::emote("fears a foreboding melody");
     }

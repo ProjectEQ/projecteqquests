@@ -213,8 +213,10 @@ sub EVENT_ITEM {
        quest::emote("examines the strange glyphs.");
        quest::say("These glyphs are faded. I won't be able to decipher them until they've been cleaned up. You'll need to go back to the Martyrs Passage and recover some dust from the grounds nearby. Once you've gotten a pile of dust, you'll need to speak with Tublik Narwethar who is south of the Martyrs Passage. He has a stone tablet that can add some clarity to the glyphs with the help of that dust. Hurry along, $name, this information is important!");
            $client->Message(4,"Finished! - You've recovered important glyphs from the Temple of the Damned!");
+           quest::summonitem(60146,60147,60148);
+           quest::summonitem(60149);
            quest::setglobal("ikky",6,5,"F");
-           quest::summonitem(60146,60147,60148,60149);          
+                     
   }
  if ((plugin::check_handin(\%itemcount, 60150 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) { 
       quest::emote("copies down the intricate patterns from the glyph.");

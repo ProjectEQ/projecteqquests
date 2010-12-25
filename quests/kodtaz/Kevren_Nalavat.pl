@@ -63,9 +63,12 @@ if ($text=~/trials/i) {
 if ($text=~/specific order/i) {
   quest::say("There exist three temples nearby that you must enter. I have defined these three as the Temple of [Singular Might], Temple of [Twin Struggles], and Temple of the [Tri-Fates]. In each lay the forces of the Legion of Mata Muram who must be destroyed. You must not be fooled, we do not control these temples. The areas are controlled by the [Muramites], but we believe that these places hold the most predictable of the invaders and can be used easily as our testing grounds.");
 }
-if ($text=~/singular might/i) {
+if (($text=~/singular might/i) && (!defined $qglobals{ikky})) {
   quest::say("Beyond the dark fog to the south lies the Temple of Singular Might. You can find it between the two other temples. In front of the temple you will find a single, smaller temple where another of the brotherhood is waiting for you. Seek out Gazak Klelkek and speak to him about the troubles within the temple.");
   quest::setglobal("ikky",1,5,"F");
+}
+elsif ($text=~/singular might/i) {
+    quest::say("Beyond the dark fog to the south lies the Temple of Singular Might. You can find it between the two other temples. In front of the temple you will find a single, smaller temple where another of the brotherhood is waiting for you. Seek out Gazak Klelkek and speak to him about the troubles within the temple.");
 }
 if (($text=~/twin struggles/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 2)) {
   quest::say("Beyond the dark fog to the south lies the Temple of Twin Struggles.  It is past the first two temples. Seek out Maroley Nazuey and speak to her about the troubles within the temple.");  #need live text

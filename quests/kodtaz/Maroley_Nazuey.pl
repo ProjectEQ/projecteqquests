@@ -8,7 +8,7 @@ sub EVENT_SAY {
     if(defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1) {
        quest::say("Feel free to venture in this trial again");
     }
-    elsif(defined $qglobals{ikky} && $qgloblas{ikky} == 2) {
+    elsif(defined $qglobals{ikky} && $qglobals{ikky} == 2) {
       quest::say("You are doing well are you [ready] to face the challenge of the twin struggles?");
     }
     elsif(defined $qglobals{ikky} && $qglobals{ikky} >= 3) {

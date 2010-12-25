@@ -17,7 +17,7 @@ if($text=~/hail/i) {
    }   
   if ($text=~/ready/i) {
       if($group){
-	if((defined $qglobals{ikky} && $qglobals{ikky} == 1) || (defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1)) {
+	if((defined $qglobals{ikky} && $qglobals{ikky} == 3) || (defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1)) {
            quest::say("Very well then, $name. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...");
            if($InInstanceIkky3 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 2, 10800);

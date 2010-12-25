@@ -8,7 +8,7 @@ if($text=~/hail/i) {
     if(defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1) {
        quest::say("Feel free to venture in this trial again");
     }
-    elsif(defined $qglobals{ikky} && $qgloblas{ikky} == 3) {
+    elsif(defined $qglobals{ikky} && $qglobals{ikky} == 3) {
       quest::say("You are doing well are you [ready] to face the challenge of the tri fates?");
     }
     else {

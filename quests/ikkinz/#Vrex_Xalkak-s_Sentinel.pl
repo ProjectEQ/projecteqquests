@@ -3,7 +3,7 @@ my $killshot2;
 sub EVENT_SPAWN {
   if(!defined($qglobals{vrexkill2})) {
     $killshot2 = int(rand(16)) + 1;
-    quest::setglobal("vrexkill2",$killshot,3,"H6");
+    quest::setglobal("vrexkill2",$killshot2,3,"H6");
   }
   else {
     $killshot2 = $qglobals{vrexkill2};

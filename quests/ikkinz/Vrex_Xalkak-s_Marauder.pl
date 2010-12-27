@@ -17,7 +17,7 @@ sub EVENT_TIMER {
     $npc->GMMove(531,-157,-49,126);
   }
   if($timer == 2) {
-    quest::emote("Vrex Xalkak's Marauder shudders as if somehow changing.");
+    quest::emote("shudders as if somehow changing.");
     if($qglobals{marakill} == 1) {
     quest::setglobal("marakill",2,3,"H6");
     }
@@ -82,7 +82,19 @@ sub EVENT_DEATH {
     quest::spawn2(294595,0,0,480,-592,-50,64);
   }
   else {
-    quest::spawn2(294594,0,0,$x,$y,$z,$h); 
+    quest::spawn2(294594,0,0,$x,$y,$z,$h);
+     if($archkill == 1) {
+      quest::emote("The creature will perish under the strength of intelligent magic");
+    }
+    if($archkill == 2) {
+      quest::emote("The creature appears weak to the combined effort of might and magic!");
+    }
+    if($archkill == 3) {
+      quest::emote("The creature appears weak to the combined effort of strength and cunning!");
+    }
+    if($archkill == 4) {
+      quest::emote("The creature cannot stand up to the power of healers");
+    }  
   }
 }
 

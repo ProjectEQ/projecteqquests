@@ -20,7 +20,7 @@ sub EVENT_SAY {
    }   
   if ($text=~/ready/i) {
      if($group){
-	if(defined $qglobals{ikky} && $qglobals{ikky} == 2) {			
+	if((defined $qglobals{ikky} && $qglobals{ikky} == 2) || (defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1)) {			
            quest::say("Very well then, $name. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...");
            if($InInstanceIkky2 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 1, 10800);

@@ -7,6 +7,7 @@ if ((plugin::check_handin(\%itemcount, 60173 =>1 )) && (defined $qglobals{ikky} 
 		 $Instance = quest::CreateInstance("ikkinz", 6, 21600);
 		 quest::AssignRaidToInstance($Instance);	
 		 quest::say("Instance added.");
+                 quest::summonitem(60173);
              } else {
 		$client->Message(13, "You are already in an instance!");
 	 	  }
@@ -15,4 +16,5 @@ if ((plugin::check_handin(\%itemcount, 60173 =>1 )) && (defined $qglobals{ikky} 
 	 $client->Message(13, "You are not in a raid!");
          }
    }
+   plugin::return_items(\%itemcount);
 }   

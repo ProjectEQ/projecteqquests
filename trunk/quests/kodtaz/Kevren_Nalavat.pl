@@ -1,9 +1,9 @@
 sub EVENT_SAY {
  if($text=~/hail/i) {
    if((defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
-    quest::say("You have done well and completed the three trials.  I have a few [task] for you to complete when you are ready.");
-   #need live text
-   }
+    quest::say("Welcome back, $name. I must congratulate you on your recent completion of all three trials. I must admit that I was unsure of your ability to do as well as you did. Now that you have finished, you have the choice of taking on some [other tasks]. If you'd like, we have a chance now to talk more. You're also more than welcome to attempt the trials again. If so, just let me know you're [ready to test] again and we'll proceed down that path. What'll it be, $name?");
+  #missing text for the keyword more
+      }
    elsif((defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
     quest::say("Thanks for bringing those relics to me.  I have had a chance to examine them and they lead me to believe that something is going on in the Temple of the Damned.  Could you help me [discover their plans]?");
     #need live text
@@ -34,7 +34,11 @@ if ($text=~/what was needed/i) {
   quest::emote("suddenly looks up at you with renewed earnest.");
   quest::say("Oh you wouldn't believe the things I've already found out about the people who built the temples around here! Well firstly, it's been a bit more difficult than usual to find anything out about them because they have no written history -- they tell stories complemented with glyphs to recount their history. I've learned how to interpret most of the glyphs I've encountered so far and believe me when I say that it's been some of the most interesting work I've done thus far. That reminds me, do you want to hear some more about the [background information] of this area or are you ready to learn about the [trials]?");
 }
-if ($text=~/ready to be tested/i) {
+if (($text=~/ready to be tested/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+   quest::setglobal("ikkyredo",1,5,"F");
+   $client->Message(4,"Finished! - You can now retry any of the trials at any time!");
+   }
+elsif ($text=~/ready to be tested/i) {
   quest::say("Good to hear! If you're interested I can give you a little [background information] about the mountaintop here before we get started, otherwise I'll explain the [trials] to you.");
 }
 if ($text=~/background information/i) {
@@ -82,7 +86,7 @@ if (($text=~/tri fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) 
 elsif ($text=~/tri fates/i) {
   quest::say("I'm sorry $name, but you're not ready to learn about the third trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
-if (($text=~/hail/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+if (($text=~/other tasks/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
   quest::say("If you continue on past the temples you will come to an area called [Martyr's Passage].  Within this area you need to find four different relic's of those who have died there, bring them to me.");
   }
 if (($text=~/martyr's passage/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
@@ -216,8 +220,10 @@ sub EVENT_ITEM {
        quest::emote("examines the strange glyphs.");
        quest::say("These glyphs are faded. I won't be able to decipher them until they've been cleaned up. You'll need to go back to the Martyrs Passage and recover some dust from the grounds nearby. Once you've gotten a pile of dust, you'll need to speak with Tublik Narwethar who is south of the Martyrs Passage. He has a stone tablet that can add some clarity to the glyphs with the help of that dust. Hurry along, $name, this information is important!");
            $client->Message(4,"Finished! - You've recovered important glyphs from the Temple of the Damned!");
-           quest::summonitem(60146,60147,60148);
+           quest::summonitem(60147);
            quest::summonitem(60149);
+           quest::summonitem(60146);
+           quest::summonitem(60148);
            quest::setglobal("ikky",6,5,"F");
                      
   }

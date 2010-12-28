@@ -1,4 +1,5 @@
 sub EVENT_SPAWN {
+  quest::depopall(294137);
   quest::setnexthpevent(75);
 }
 

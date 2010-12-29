@@ -1,3 +1,5 @@
+#Hate list script by Trevius
+
 sub EVENT_SPAWN {
   quest::setnexthpevent(75);
 }
@@ -7,6 +9,23 @@ sub EVENT_HP {
   quest::signalwith(294344,1,0);
   quest::setnexthpevent(47);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+      my $NPCToRespond = 294578; # NPCID to call in to assist
+	my @hatelist = $npc->GetHateList();	# Get the NPC's current Hate List
+	my $HateCount = @hatelist;	# Total mobs on the NPC's hate list
+	my @npclist = $entity_list->GetNPCList();	# Get the full NPC list for the zone
+	foreach $ent (@npclist)
+	{
+		if($ent->GetNPCTypeID() == $NPCToRespond)	# Verify that the current NPC being checked is the NPCID we want
+		{
+			my $RandomHateNum = plugin::RandomRange(0, $HateCount);	# Choose a random mob in the Hate List array
+			my $RandomHateEnt = $hatelist[$RandomHateNum];	# Get the Hate list entry for the selected number of the array
+			if ($RandomHateEnt && $RandomHateEnt->GetEnt())	# Verify that the hate entry exists and that we can get the entity
+			{
+				my $HateEnt = $RandomHateEnt->GetEnt();	# Get the hated entity
+				$ent->AddToHateList($HateEnt, 1);	# Tell the current NPC to attack the random mob on the boss' hate list.
+			}
+		}
+	}
   }
   if($hpevent == 47) {
   quest::signalwith(294345,1,0);

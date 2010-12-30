@@ -9,7 +9,21 @@ sub EVENT_HP {
   quest::signalwith(294344,1,0);
   quest::setnexthpevent(47);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
-      my $NPCToRespond = 294578; # NPCID to call in to assist
+  quest::settimer(1,3);    
+  }
+  if($hpevent == 47) {
+  quest::signalwith(294345,1,0);
+  quest::setnexthpevent(26);
+  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  }
+  if($hpevent == 26) {
+  quest::signalwith(294346,1,0);
+  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  }
+}
+sub EVENT_TIMER {
+  quest::stoptimer(1);
+  my $NPCToRespond = 294578; # NPCID to call in to assist
 	my @hatelist = $npc->GetHateList();	# Get the NPC's current Hate List
 	my $HateCount = @hatelist;	# Total mobs on the NPC's hate list
 	my @npclist = $entity_list->GetNPCList();	# Get the full NPC list for the zone
@@ -26,16 +40,6 @@ sub EVENT_HP {
 			}
 		}
 	}
-  }
-  if($hpevent == 47) {
-  quest::signalwith(294345,1,0);
-  quest::setnexthpevent(26);
-  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
-  }
-  if($hpevent == 26) {
-  quest::signalwith(294346,1,0);
-  quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
-  }
 }
 sub EVENT_DEATH {
   quest::depopall(294578);

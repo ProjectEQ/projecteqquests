@@ -80,10 +80,10 @@ if (($text=~/twin struggles/i) && (defined $qglobals{ikky} && $qglobals{ikky} ==
 elsif ($text=~/twin struggles/i) {
   quest::say("I'm sorry $name, but you're not ready to face the second trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
-if (($text=~/tri fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) {
+if (($text=~/tri-fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) {
   quest::say("Beyond the dark fog to the south lies the Temple of Tri-Fates.  It is the first temple you will come to.  Seek out Kenra Kalekkio and sepak to her about the troubles within the temple");  #need live text
 }
-elsif ($text=~/tri fates/i) {
+elsif ($text=~/tri-fates/i) {
   quest::say("I'm sorry $name, but you're not ready to learn about the third trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
 if (($text=~/other tasks/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {

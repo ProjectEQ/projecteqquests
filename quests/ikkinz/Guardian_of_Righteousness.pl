@@ -1,4 +1,4 @@
-#Hate list script by Trevius
+#Hate list script from Trevius
 
 sub EVENT_SPAWN {
   quest::setnexthpevent(75);
@@ -15,10 +15,12 @@ sub EVENT_HP {
   quest::signalwith(294345,1,0);
   quest::setnexthpevent(26);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  quest::settimer(1,3);
   }
   if($hpevent == 26) {
   quest::signalwith(294346,1,0);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
+  quest::settimer(1,3);
   }
 }
 sub EVENT_TIMER {

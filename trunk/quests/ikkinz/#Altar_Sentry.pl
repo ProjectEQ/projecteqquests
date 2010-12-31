@@ -11,36 +11,52 @@ if(!defined($qglobals{asentkill})) {
 
 sub EVENT_DEATH {
   if(($class eq "Bard") && ($qglobals{asentkill} == 2)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
     }
   elsif(($class eq "Beastlord") && ($qglobals{asentkill} == 2)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Berserker") && ($qglobals{asentkill} == 3)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Cleric") && ($qglobals{asentkill} == 4)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Druid") && ($qglobals{asentkill} == 4)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Enchanter") && ($qglobals{asentkill} == 1)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Magician") && ($qglobals{asentkill} == 1)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Monk") && ($qglobals{asentkill} == 3)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Necromancer") && ($qglobals{asentkill} == 1)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Paladin") && ($qglobals{asentkill} == 2)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Ranger") && ($qglobals{asentkill} == 2)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Rogue") && ($qglobals{asentkill} == 3)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Shadowknight") && ($qglobals{asentkilll} == 2)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Shaman") && ($qglobals{asentkill} == 4)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Warrior") && ($qglobals{asentkill} == 3)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Wizard") && ($qglobals{asentkill} == 1)) {
+    quest::spawn2(294627,0,0,$x,$y,$z,$h);
   }
   else {
     quest::spawn2(294602,0,0,$x,$y,$z,$h);
@@ -78,5 +94,3 @@ sub EVENT_HP {
    $npc->WipeHateList();
     }
 }
-
-

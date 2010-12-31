@@ -11,36 +11,52 @@ if(!defined($qglobals{asentkill2})) {
 
 sub EVENT_DEATH {
   if(($class eq "Bard") && ($qglobals{asentkill2} == 2)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
     }
   elsif(($class eq "Beastlord") && ($qglobals{asentkill2} == 2)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Berserker") && ($qglobals{asentkill2} == 3)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Cleric") && ($qglobals{asentkill2} == 4)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Druid") && ($qglobals{asentkill2} == 4)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Enchanter") && ($qglobals{asentkill2} == 1)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Magician") && ($qglobals{asentkill2} == 1)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Monk") && ($qglobals{asentkill2} == 3)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Necromancer") && ($qglobals{asentkill2} == 1)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Paladin") && ($qglobals{asentkill2} == 2)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Ranger") && ($qglobals{asentkill2} == 2)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Rogue") && ($qglobals{asentkill2} == 3)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Shadowknight") && ($qglobals{asentkilll2} == 2)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Shaman") && ($qglobals{asentkill2} == 4)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Warrior") && ($qglobals{asentkill2} == 3)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   elsif(($class eq "Wizard") && ($qglobals{asentkill2} == 1)) {
+    quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   else {
     quest::spawn2(294602,0,0,$x,$y,$z,$h);

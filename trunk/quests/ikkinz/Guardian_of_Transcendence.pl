@@ -6,47 +6,16 @@ sub EVENT_HP {
   if($hpevent == 90) {
      $npc->GMMove(445,-489,-45,209);
      quest::setnexthpevent(75);
-$group = $entity_list->GetGroupByClient($client);
-      if ($group) {
-        for ($count = 0; $count < $group->GroupCount(); $count++) {
-          push (@player_list, $group->GetMember($count)->GetName());
-       }
-      }
-foreach $player (@player_list) {
-    $pc = $entity_list->GetClientByName($player);
-     $charid = $pc->CharacterID();
-     quest::targlobal("ikkydoor", 1, "H6", 294500, $charid, 294);
-        }
-     
+     quest::setglobal("ikkydoor",1,3,"H6");     
   }
   if($hpevent == 75) {
      $npc->GMMove(671,-714,-50,191);
      quest::setnexthpevent(50);
-$group = $entity_list->GetGroupByClient($client);
-      if ($group) {
-        for ($count = 0; $count < $group->GroupCount(); $count++) {
-          push (@player_list, $group->GetMember($count)->GetName());
-       }
-      }
-foreach $player (@player_list) {
-    $pc = $entity_list->GetClientByName($player);
-     $charid = $pc->CharacterID();
-     quest::targlobal("ikkydoor", 2, "H6", 294500, $charid, 294);
-        }
+     quest::setglobal("ikkydoor",2,3,"H6");     
    }
    if($hpevent == 50) {
       $npc->GMMove(534,-210,-50,72);
-$group = $entity_list->GetGroupByClient($client);
-      if ($group) {
-        for ($count = 0; $count < $group->GroupCount(); $count++) {
-          push (@player_list, $group->GetMember($count)->GetName());
-       }
-      }
-foreach $player (@player_list) {
-    $pc = $entity_list->GetClientByName($player);
-     $charid = $pc->CharacterID();
-     quest::targlobal("ikkydoor", 3, "H6", 294500, $charid, 294);
-        }
+      quest::setglobal("ikkydoor",3,3,"H6");     
    }
 }  
 

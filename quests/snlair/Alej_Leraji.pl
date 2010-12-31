@@ -44,6 +44,10 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
   if ($signal == 1) {
+  $counter += 1;
+}
+ if($counter == 3) {
     $event = 1;
+    quest::depop(286104);
   }
 }

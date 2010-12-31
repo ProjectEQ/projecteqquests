@@ -10,32 +10,26 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
 if($signal == 2) { 
          $counterone += 1;
-	 $counterall += 1;
 }
 if($signal == 3) { 
          $countertwo += 1;
-	 $counterall += 1;
 }
 if($signal == 4) { 
          $counterthree += 1;
-	 $counterall += 1;
 }
 if($counterone == 8) {
   quest::ze(1,"You have found some tools");
+  quest::signalwith(286098,1,0);
 }
 if($countertwo == 6) {
   quest::ze(1,"You have found some tools");
+  quest::signalwith(286098,1,0);
 }
 if($counterthree == 8) {
   quest::ze(1,"You have found some tools");
+  quest::signalwith(286098,1,0);  
 }
-if($counterall == 22) {
-  quest::signalwith(286098,1,0);
-  quest::stoptimer(2);
-  quest::stoptimer(3);
-  }
 }
-
 sub EVENT_TIMER {
   if ($timer == 2) {
     quest::stoptimer(2);

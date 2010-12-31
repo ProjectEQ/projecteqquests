@@ -23,7 +23,7 @@ sub EVENT_HP {
 }
 sub EVENT_TIMER {
   quest::stoptimer(1);
-  my $NPCToRespond = 294578; # NPCID to call in to assist
+  my $NPCToRespond = 294608; # NPCID to call in to assist
 	my @hatelist = $npc->GetHateList();	# Get the NPC's current Hate List
 	my $HateCount = @hatelist;	# Total mobs on the NPC's hate list
 	my @npclist = $entity_list->GetNPCList();	# Get the full NPC list for the zone

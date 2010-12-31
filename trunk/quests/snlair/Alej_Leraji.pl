@@ -1,7 +1,7 @@
 sub EVENT_SPAWN {
   quest::settimer(1,1);
   $event = 0;
-  quest::spawn_condition($zonesn,3,0);
+  quest::spawn_condition($zonesn,0,1);
   }
 
 sub EVENT_SAY {

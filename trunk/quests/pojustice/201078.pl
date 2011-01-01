@@ -116,9 +116,9 @@ sub EVENT_SIGNAL
          $in_progress=undef;
       }
       elsif ($hold_event) {
-         #Boss killed & trial area clear - start timer for reset (20 min)
+         #Boss killed & trial area clear - start timer for reset (20 min normally, reduced to 1 min since only one trial is working)
          quest::stoptimer("reset_execution");
-         quest::settimer("reset_execution", 1200);
+         quest::settimer("reset_execution", 60);
       }
    }
    

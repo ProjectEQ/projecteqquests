@@ -13,6 +13,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_PROXIMITY_SAY {
   if ($text=~/return/i) {
-    quest::gmmove(500,-615,-50,186);
+   $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
+    quest::MovePCInstance(294,$InInstanceIkky7,500,-615,-50,186);
     }
   }

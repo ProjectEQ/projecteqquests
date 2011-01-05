@@ -5,8 +5,7 @@ sub EVENT_SPAWN {
   }
 
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
-  if ($event == 1) {
+  if (($text=~/hail/i) && ($event == 1)) {
     quest::say("You have found my three stone shaping tools.");
     $group = $entity_list->GetGroupByClient($client);
       if ($group) {
@@ -21,8 +20,7 @@ foreach $player (@player_list) {
    $pc->Message(4,"You receive a temporary flag!");
 }
 }
-}
-elsif ($text=~/hail/i) {
+if (($text=~/hail/i) && ($event == 0)) {
   quest::say("Help me escape!  Wait, who sent you?");
 }
 }

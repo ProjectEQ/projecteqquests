@@ -1,5 +1,30 @@
 my $counter = 0;
-
+my $named_up = 1;
+sub EVENT_SPAWN {
+$check_named = $entity_list->GetMobByNpcTypeID(294086);
+		if ($check_named) {
+			$named_up = 0;
+                  }
+$check_named = $entity_list->GetMobByNpcTypeID(294087);
+		if ($check_named) {
+			$named_up = 0;
+                  }
+$check_named = $entity_list->GetMobByNpcTypeID(294088);
+		if ($check_named) {
+			$named_up = 0;
+                  }
+$check_named = $entity_list->GetMobByNpcTypeID(294089);
+		if ($check_named) {
+			$named_up = 0;
+                  }
+$check_named = $entity_list->GetMobByNpcTypeID(294090);
+		if ($check_named) {
+			$named_up = 0;
+                  }
+     if($named_up == 1) {
+        quest::depop();             
+           }
+}
 sub EVENT_SIGNAL {
   if ($signal == 1) { #Signal from death of Constrained_Servitor
     $counter += 1;

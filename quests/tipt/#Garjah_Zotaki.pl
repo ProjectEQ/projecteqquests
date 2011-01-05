@@ -51,7 +51,7 @@ sub EVENT_SIGNAL {
   if($signal == 1) {   # from 289002
     $counter +=1;
     }
-if($counter == 8) {
+if($counter == 9) {
     quest::spawn2(289038,0,0,-804,1583,538,121);
     }
 

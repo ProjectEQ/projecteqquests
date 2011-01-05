@@ -14,7 +14,8 @@ sub EVENT_SAY {
   }
  if ($text=~/north/i) {
   if ($qglobals{ikkymove} == 1) {
-    quest::movepc(294,206,-154,20,0);
+     $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
+     quest::MovePCInstance(294,$InInstanceIkky7,206,-154,20,0);
   }
   else {
        quest::say("Fool, I can not help you if you do not help me.");
@@ -22,7 +23,8 @@ sub EVENT_SAY {
  }  
  if ($text=~/south/i) {
   if ($qglobals{ikkymove} == 1) {
-    quest::movepc(294,195,-86,21,0);
+    $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
+    quest::MovePCInstance(294,$InInstanceIkky7,195,-86,21,0);
   }
   else {
        quest::say("Fool, I can not help you if you do not help me.");
@@ -34,7 +36,7 @@ sub EVENT_ITEM {
     quest::say("Ah this is what I need.");
     quest::emote("takes the piece of parchment and whispers softly.  The piece flares with magic and he turns to look at you.");
     quest::say("What you need is both [north] and [south], speak return and it shall be so.");
-    quest::setglobal("ikkymove",1,5,"H3");
+    quest::setglobal("ikkymove",1,5,"H6");
     quest::spawn2(294614,0,0,213,-155,20);
   }
   else {

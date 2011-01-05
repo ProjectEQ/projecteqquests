@@ -27,7 +27,7 @@ sub EVENT_SAY {
   if ($text=~/tipt/i) {
     if ($group) {
       if (defined($qglobals{god_tipt_access}) && ($qglobals{god_tipt_access} == 1)) {
-        quest::say("Proceed with caution, you must face several trials to find your way past through this pass.");
+        quest::say("Proceed with caution, you must face several trials to find your way through this pass.");
         if($InInstanceVxed == 0 && $InInstanceTipt == 0) {
           $Instance = quest::CreateInstance("tipt", 0, 21600);
           quest::AssignGroupToInstance($Instance);

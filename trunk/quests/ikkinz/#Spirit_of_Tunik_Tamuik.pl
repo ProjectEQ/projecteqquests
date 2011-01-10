@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-   my $doppelganger = int(rand(7)) + 1;
+   $doppelganger = int(rand(7)) + 1;
    quest::setnexthpevent(75);
 }
 

@@ -162,6 +162,7 @@ if (($text=~/mystery/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
 }
 if (($text=~/sanctuary of the righteous/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
   if($raid){
+   if(!defined $qglobals{ikkylockout3}) {
 	if(defined $qglobals{ikky} && $qglobals{ikky} == 12) { 
            if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 3, 21600);
@@ -172,12 +173,16 @@ if (($text=~/sanctuary of the righteous/i) && (defined $qglobals{ikky} && $qglob
 		$client->Message(13, "You are already in an instance!");
 	 	  }
            }
+         } else {
+           $client->Message(13,"You have recently completed this raid.");
+           }
       } else {
 	 $client->Message(13, "You are not in a raid!");
          }
    }
 if (($text=~/sanctuary of the glorified/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
     if($raid){
+      if(!defined $qglobals{ikkylockout4}) {
 	if(defined $qglobals{ikky} && $qglobals{ikky} == 12) { 
            if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 4, 21600);
@@ -188,12 +193,16 @@ if (($text=~/sanctuary of the glorified/i) && (defined $qglobals{ikky} && $qglob
 		$client->Message(13, "You are already in an instance!");
 	 	  }
            }
+          } else {
+         $client->Message(13,"You have recently completed a raid.");
+         }
       } else {
 	 $client->Message(13, "You are not in a raid!");
          }
    }
 if (($text=~/sanctuary of the transcendent/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
      if($raid){
+       if(!defined $qglobals{ikkylockout5}) {
 	if(defined $qglobals{ikky} && $qglobals{ikky} == 12) { 
            if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
 		 $Instance = quest::CreateInstance("ikkinz", 5, 21600);
@@ -204,6 +213,9 @@ if (($text=~/sanctuary of the transcendent/i) && (defined $qglobals{ikky} && $qg
 		$client->Message(13, "You are already in an instance!");
 	 	  }
            }
+        } else {
+           $client->Message(13,"You have recently completed a raid.");
+         }
       } else {
 	 $client->Message(13, "You are not in a raid!");
          }

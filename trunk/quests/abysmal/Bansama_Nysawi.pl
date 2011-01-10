@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     elsif (quest::istaskactivityactive(173,3)) { #Fletching Collect Step 4
       quest::say("Hello! Thank you for helping out. I need some veined arrowheads. They are very effective against certain targets. Take the Small Taelosian Stone, Simple Iron Chisel and Basic Etching Compound and put them into your fletching kit. It's a complicated task, but you can manage. Bring the finished arrowheads to me.");
       quest::summonitem(58142,10); #Small Taelosian Stone
-      quest::summonitem(58129,10); #Simple Tiny Chisel
+      quest::summonitem(58102,10); #Simple Iron Chisel
       quest::summonitem(58021,10); #Basic Etching Compound
     }
     else {

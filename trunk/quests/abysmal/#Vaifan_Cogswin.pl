@@ -63,19 +63,5 @@ if (plugin::check_handin(\%itemcount, 67534 =>1 )) {
     $client->Message(4,"Your assistance has helped Vaifan and Taminoa greatly, but L'diava is still in need of assistance. ");
   }
  } 
- if (plugin::check_handin(\%itemcount, 67660 =>1 )) {
-	if (($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") ||  ($class eq "Shadowknight")) {
-    	   quest::summonitem(67661);
-        }
-        elsif (($class eq "Warrior") || ($class eq "Monk") || ($class eq "Berserker")  || ($class eq "Rogue"))  {
-           quest::summonitem(67660);
-        }
-        elsif (($class eq "Cleric") || ($class eq "Shaman") || ($class eq "Druid")) {
-           quest::summonitem(67662);  
-        }
-        elsif (($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Enchanter")  || ($class eq "Magician")) {
-           quest::summonitem(67663);
-        }
-}
  plugin::return_items(\%itemcount);
 }

@@ -6,10 +6,15 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
 $InInstanceIkky5 = quest::GetInstanceID("ikkinz",4);
+  if(!defined $qglobals{ikkylockout4}) {
     if($InInstanceIkky5 > 0){
 		quest::MovePCInstance(294,$InInstanceIkky5,-157,27,-2);
 	}
         else {
 		$client->Message(13, "You are not a part of an instance!");
 	}
+      }
+      else {
+         $client->Message(13,"You have recently completed this raid.");
+         }
 }

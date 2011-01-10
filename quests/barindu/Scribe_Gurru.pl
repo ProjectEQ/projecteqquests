@@ -58,14 +58,14 @@ else {
   quest::say("Do you need to leave an [instance]?");
      }
 }
+if (($text=~/instance/i) && ($InInstanceTipt > 0)) {
+    quest::DestroyInstance($InInstanceTipt);
+    quest::say("Tipt Instance Destroyed");
+    }
 if (($text=~/instance/i) && ($InInstanceVxed > 0)) {
     quest::DestroyInstance($InInstanceVxed);
     quest::say("Vxed Instance Destroyed");
     }
-if (($text=~/instance/i) && ($InInstanceTipt > 0)) {
-    quest::DestroyInstance($InInstanceTipt);
-    quest::say("Tipt Instance Destroyed");
-    }    
 if (($text=~/instance/i) && ($InInstanceSnplant > 0)) {
     quest::DestroyInstance($InInstanceSnplant);
     quest::say("Plant Instance Destroyed");

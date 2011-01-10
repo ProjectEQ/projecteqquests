@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::emote("takes the piece of parchment and whispers softly.  The piece flares with magic and he turns to look at you.");
     quest::say("What you need is both [north] and [south], speak return and it shall be so.");
     quest::setglobal("ikkymove",1,5,"H6");
-    quest::spawn2(294614,0,0,213,-155,20);
+    quest::spawn2(294614,0,0,213,-100,20,0);
   }
   else {
   plugin::return_items(\%itemcount);

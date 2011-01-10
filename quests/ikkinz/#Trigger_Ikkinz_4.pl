@@ -7,7 +7,7 @@ sub EVENT_SIGNAL {
       $counter += 1;
 }
   if($counter == 2) {
-    quest::signalwith(294611,1,0);
+    quest::signalwith(294611,1,4);
     }
 }
 

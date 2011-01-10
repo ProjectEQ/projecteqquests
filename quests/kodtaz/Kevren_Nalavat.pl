@@ -100,6 +100,10 @@ if (($text=~/think you can/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 
   quest::say("The Summoner's Ring is just past the Temple of the Damned");
   $client->Message(4,"Finished! - You've been charged with stopping the ceremony at the Summoning Circle!");
 }
+if (($text=~/have done all you asked/i) && (defined $qglobals{ikkyalt} && $qglobals{ikkyalt} == 8)) {
+  quest::say("Indeed you have and your help is greatly appreciated. Take this back to L`diava I believe it has the answers she seeks.");
+  quest::summonitem(67562);
+ }
 if ($text=~/progress/i) {
     if((defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
       $client->Message(13, "Pending – You have requested the trial at the Temple of Singular Might!");
@@ -238,6 +242,9 @@ sub EVENT_ITEM {
     quest::say("You have done well, $name.  Speak with Tublik to continue helping us here in Kod'Taz."); 
     quest::setglobal("ikkyalt",8,5,"F");
       $client->Message(4,"Finished! - You were able to recover a rare artifact from the Grand Summoner's goons in the Summoning Circle!");
+}
+if (plugin::check_handin(\%itemcount, 67702 =>1 )) { 
+    quest::say("Seems you have made quite an impression if you are trusted by L`diava. But don't think that this means you do not have to gain my trust. While you survived the three trials I am still in need of assistance, I some [other tasks] completed, when you have finished them please return to me and tell me you have done all I asked and I will give you what you came here for. If you do not wish to start these tasks right now we do have some time to talk a little [more].");
 }
  plugin::return_items(\%itemcount);
 

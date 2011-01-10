@@ -10,7 +10,7 @@ sub EVENT_HP {
     quest::setnexthpevent(55);
   }
   if($hpevent == 55) {
-  $check_named = $entity_list->GetMobByNpcTypeID(294338);
+  $check_named = $entity_list->GetMobByNpcTypeID(294476);
 	if ($check_named) {
         $npc->SetHP(500000);
         quest::emote("The Guardian has been bolstered by his companions.");

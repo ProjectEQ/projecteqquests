@@ -52,6 +52,15 @@ if ($text=~/news/i) {
     quest::say("The stone I have given you is very special indeed. It is a rare stone with a power that has not yet been revealed. After studying it we have come to the conclusion that its power is based off of resonance. You will see that there are fourteen sockets in the stone. Each socket requires a gem fragment of a certain resonance. As the fragments are set in the stone it will gradually increase in power. These fragments must be placed in the stone in a certain order using a set of clockwork gemcutter's tools, the stone, and the correct shard in the device I handed to you along with the stone. As you help find our scouts, you may come across the gem fragments that will fit into the stone. If you do, please try combining them in the special sealer. If at any time you lose the sealer or misplace the stone return to me and I will what I can do about a replacement.");
     }
     }
+   if(($text=~/have completed my task/i) && (defined $qglobals{bic} && $qglobals{bic} == 17)) {
+      quest::say("So I have been told, $name. Your help will long be remembered by the brotherhood. Since you first came to me, the stone should have grown in power and now I will give you the item that will unlock the stone's full potential. Please combine this with your stone after you have combined all of the other items given to you by the lead scouts and you will possess an item of immense power and a symbol of your fighting spirit. Once again, the brotherhood thanks you. I must bid you good day as I recently received some [interesting information].");
+      $client->Message(15,"You have done quite well and your exploits will forever be talked about by the members of the Wayfarers Brotherhood, but don't you dare relax as there's still many more adventures and hidden treasures out there waiting for a hero like you.");
+      quest::summonitem(67571);
+      quest::setglobal("bic",18,5,"F"); 
+      }
+ if(($text=~/interesting information/i) && (defined $qglobals{bic} && $qglobals{bic} == 18)) {
+     quest::say("Where are my manners? I should have known someone as adventurous as you would be interested in this. One of our researching experts by the name of Beanalle has recently discovered some very intriguing information about the temples beyond Yxtta and Kod'Taz.");
+   }     
     if(($text=~/sealer/i) && (defined $qglobals{bic} && $qglobals{bic} >= 1)) {
       quest::say("Be careful with this one.");
       quest::summonitem(67659);

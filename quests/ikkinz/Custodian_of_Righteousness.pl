@@ -7,3 +7,6 @@ sub EVENT_TIMER {
     $npc->GMMove(243,-501,3,242);
   }
 }
+sub EVENT_DEATH {
+  quest::setglobal("ikkylockout3",1,3,"D3");
+}

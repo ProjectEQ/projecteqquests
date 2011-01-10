@@ -23,7 +23,13 @@ sub EVENT_HP {
   quest::settimer(1,3);
   }
 }
+sub EVENT_COMBAT {
+  if($combat_state == 0) {
+    quest::settimer(2,120);
+    }
+}    
 sub EVENT_TIMER {
+if($timer == 1) {
   quest::stoptimer(1);
   my $NPCToRespond = 294578; # NPCID to call in to assist
 	my @hatelist = $npc->GetHateList();	# Get the NPC's current Hate List
@@ -42,6 +48,12 @@ sub EVENT_TIMER {
 			}
 		}
 	}
+   }
+if ($timer == 2) {
+  quest::stoptimer(2);
+  quest::depopall(294578);
+  quest::setnexthpevent(75);
+  }
 }
 sub EVENT_DEATH {
   quest::depopall(294578);

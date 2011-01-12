@@ -9,7 +9,5 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-        quest::stoptimer(81);
-  quest::depop(293212);
-  quest::spawn2(293113,0,0,591,746,-460,75);
+	qest::stoptimer(81);
 }

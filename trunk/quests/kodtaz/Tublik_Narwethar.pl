@@ -246,7 +246,7 @@ if (defined $qglobals{ikky} && $qglobals{ikky} == 6) {
      GIVE_TABLET();
      }
   if (plugin::check_handin(\%itemcount, 60149 =>1 )) {
-     quest::summonitem(60146);
+     quest::summonitem(60149);
      GIVE_TABLET();
      }
 }

@@ -150,7 +150,7 @@ if (($text=~/collect the artifacts/i) && (defined $qglobals{ikky} && $qglobals{i
    quest::say("Place four artifacts you find from the pit in this bag and seal it off. Return the sealed bag to me when you're done so I can further examine what you find. Make haste to the Pit of the Lost and be careful -- there's no telling what kind of evils are waiting for you there. If you have someone else with you that [needs a bag], have them tell me so.");
    quest::summonitem(60155);
 }
-if (($text=~/stop it/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 11)) {
+if (($text=~/stop it/i) && (defined $qglobals{ikky} && $qglobals{ikky} > 10)) {
    quest::say("Hurry, the Protector is now present");
    quest::spawn2(293221,0,0,2176,2184,-476,137);
 }

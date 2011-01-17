@@ -20,7 +20,7 @@ quest::stoptimer("druzzil3");
 }
 if($timer eq "druzzil4"){
 quest::emote("begins to chant an incantation; mana flows out from her body in all directions. Things begin moving slowly in reverse. You become dizzy from the experience and fall to your knees. As you look up the last thing you can see is Druzzil Ro smiling in your direction. She then waves her arms gracefully and points at you. There is a brilliant flash and you find yourself displaced through time and space. For a moment you lose touch with yourself. As you wake, you find yourself back in the Plane of Knowledge, moments after talking to Maelin with the information of retrieving the Quintessence of Elements. Druzzil has preserved the timeline, an restored existence back to its normalcy.");
-quest::setglobal("timepokport",1,3,"M2");
+quest::setglobal("potimeb_finished", 1, 7, "M2");
 quest::settimer("druzzil5",10);
 quest::stoptimer("druzzil4");
 }

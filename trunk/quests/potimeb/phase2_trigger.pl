@@ -2,9 +2,7 @@ my $IIacounter;
 
 sub EVENT_SPAWN {
     $IIacounter = 0;
-    if ($qglobals{potb_p3_comp_pl} != 1) {
-    quest::delglobal("potb_p1_start");
-    quest::setglobal("potb_p1_comp",1,7,"H1"); #let potimea know we're on phase 2.
+
     quest::signalwith(223111,1001,0); #flavor
     quest::signalwith(223177,10,1);
     quest::spawn2(223163,0,0,-140,1737,547,0); #phase 2 timer
@@ -18,30 +16,14 @@ sub EVENT_SPAWN {
     quest::spawn2(223207,0,0,98,868,495,195);
     quest::spawn2(223201,0,0,80,574,495,64); #fire door
     quest::spawn2(223206,0,0,98,574,495,195);
- 
+
     quest::spawn_condition(potimeb,10,1);
     
     quest::depopall(223089); #clean up non-required leftovers from phase 1.
     quest::depopall(223094);
     quest::depopall(223095);
     quest::depopall(223147);
-}
-  else {
-    quest::spawn2(223157,0,0,-410,-69,348,0);; #activated save point spawn phase 4
-    quest::spawn2(223160,0,0,80,1645,495,64); #earth door
-    quest::spawn2(223203,0,0,98,1645,495,195);
-    quest::spawn2(223161,0,0,80,1355,495,64); #air door
-    quest::spawn2(223204,0,0,98,1355,495,195);
-    quest::spawn2(223162,0,0,80,1109,495,64); #undead door
-    quest::spawn2(223205,0,0,98,1109,495,195);
-    quest::spawn2(223202,0,0,80,868,495,64); #water door
-    quest::spawn2(223207,0,0,98,868,495,195);
-    quest::spawn2(223201,0,0,80,574,495,64); #fire door
-    quest::spawn2(223206,0,0,98,574,495,195);
-    quest::spawn2(223209,0,0,458,709,495,64); #doors
-    quest::spawn2(223208,0,0,458,1101,495,64);
-    quest::spawn2(223210,0,0,458,1502,495,64);
-    }
+
 }    
     
 sub EVENT_SIGNAL {
@@ -98,7 +80,6 @@ sub EVENT_TIMER {
 		if($check == 0) {
 			#then we need to end the event
 			quest::shout("Phase 2 failed! Time expired.");
-			quest::setglobal("timepokport",1,3,"M2");
 			quest::spawn_condition(potimeb,10,0); #set us to default.
 			quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
 			quest::stoptimer("phase2");

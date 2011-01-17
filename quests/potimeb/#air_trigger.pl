@@ -10,10 +10,10 @@ sub EVENT_ENTER { #looks like we need a timer here or else zone crashes.
 }
 
 sub EVENT_TIMER {
- if ($timer eq "air") {
-   quest::spawn2(223187,0,0,-129.6,1720,547,0); #spawn event script
-   quest::signalwith(223211,23,0); #send signal to main trigger to start hour time limit
-   quest::stoptimer("air");
-   quest::depop();
+	if ($timer eq "air") {
+		quest::spawn2(223187,0,0,-129.6,1720,547,0); #spawn event script
+		quest::signalwith(223211,23,0); #send signal to main trigger to start hour time limit
+		quest::stoptimer("air");
+		quest::depop();
+	}
 }
- }

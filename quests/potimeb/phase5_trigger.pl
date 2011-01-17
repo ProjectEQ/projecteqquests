@@ -2,8 +2,6 @@ my $godcounterII;
 
 sub EVENT_SPAWN {
     $godcounterII = 0;
-    quest::delglobal("potb_p3_comp");
-    quest::setglobal("potb_p4_comp",1,7,"H4"); #general complete
 
     quest::signalwith(223111,1004,0); #flavor
     quest::spawn2(223098,0,0,-299,-297,23.3,31); #Fake Bertoxxulous
@@ -20,6 +18,9 @@ sub EVENT_SPAWN {
     quest::depopall(223080);
     quest::depopall(223081);
     quest::depopall(223082);
+	
+	quest::depop(223997); #depop phase3_flag
+	quest::spawn2(223998, 0, 0, 214, 1, 348, 192);#phase4_flag
 
 }
 
@@ -64,7 +65,6 @@ sub EVENT_TIMER {
     quest::spawn_condition(potimeb, 1,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::shout("Phase 5 failed! Time expired.");
-    quest::setglobal("timepokport",1,3,"M2");
     quest::signalwith(223177,666,0);
     quest::depopall(223083);
     quest::depopall(223084);

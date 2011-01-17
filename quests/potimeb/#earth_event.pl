@@ -8,15 +8,15 @@ sub EVENT_SPAWN {
 }  
 
 sub EVENT_SIGNAL {
-  if ($signal == 14018) {
-    $enpccounter += 1;
-}
-  if ($enpccounter == 8 ) {
-    quest::spawn2(223119,0,0,70.3,1644.5,493.7,185.5); #Terlok_of_Earth
-    $enpccounter = 0;
-}
-  if ($signal == 14010) {
-    quest::signalwith(223177,14060,0); #tell main about event success
-    quest::depop();
-}
+	if ($signal == 14018) {
+		$enpccounter += 1;
+	}
+	if ($enpccounter == 8 ) {
+		quest::spawn2(223119,0,0,70.3,1644.5,493.7,185.5); #Terlok_of_Earth
+		$enpccounter = 0;
+	}
+	if ($signal == 14010) {
+		quest::signalwith(223177,14060,0); #tell main about event success
+		quest::depop();
+	}
  }

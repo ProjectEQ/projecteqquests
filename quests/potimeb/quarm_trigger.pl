@@ -1,7 +1,5 @@
 sub EVENT_SPAWN 
 {
-    	quest::delglobal("potb_p4_comp");
-    	quest::setglobal("potb_p5_comp",1,7,"H2"); #general complete
     	quest::spawn2(223215,0,0,251,-1124,-2.8,0); #Quarm Pathing
     	quest::spawn2(223994,0,0,20,-1105,-2.8,64); #Quarm
     	quest::signalwith(223111,1005,0); #flavor
@@ -9,6 +7,8 @@ sub EVENT_SPAWN
     	quest::depopall(223145);
     	quest::depopall(223002);
     	quest::depopall(223003);
+		quest::depop(223998);#phase4_flag
+		quest::spawn2(223999, 0, 0, 374.5, -1.3, 3.1, 192);#phase5_flag
 }
  
 sub EVENT_SIGNAL {
@@ -29,7 +29,6 @@ sub EVENT_TIMER
     		quest::depopall(223992);
     		quest::depopall(223991);
     		quest::depopall(223112);
-    		quest::setglobal("timepokport",1,3,"M2");
     		quest::depop();
 	}	
 }

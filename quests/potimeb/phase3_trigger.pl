@@ -18,8 +18,6 @@ sub EVENT_SPAWN {
     $namedVII = 0;
     $namedVIII = 0;
     $namedIX = 0;
-    quest::delglobal("potb_p1_comp");
-    quest::setglobal("potb_p2_comp",1,7,"M75"); #general phase complete.
     quest::signalwith(223111,1002,0); #flavor
     quest::signalwith(223177,18,1); #doors
     quest::spawn2(223209,0,0,458,709,495,64); #doors
@@ -67,6 +65,8 @@ sub EVENT_SPAWN {
     quest::depopall(223137);
     quest::depopall(223109);
     quest::depopall(223124);
+	
+	quest::spawn2(223996, 0, 0, 891, 1111, 493, 192); #phase2_flag
 }
 
 sub EVENT_SIGNAL {
@@ -281,7 +281,6 @@ sub EVENT_TIMER {
     quest::spawn_condition(potimeb,8,0);
     quest::spawn_condition(potimeb,9,0);
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-    quest::setglobal("timepokport",1,3,"M2");
     quest::stoptimer("phase3");
     quest::signalwith(223177,666,0);
     quest::depopall(223005); #depop any mobs up
@@ -369,7 +368,7 @@ sub EVENT_TIMER {
 			#new phase is running
 			#we should start the timer for the next phase
 			quest::stoptimer("phase3");
-			quest::signalwith(223157,9909,0);
+			quest::signalwith(223157, 9909, 0);
 			quest::depop();
 		}
 	}

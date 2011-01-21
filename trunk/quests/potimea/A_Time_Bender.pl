@@ -19,7 +19,7 @@ sub CREATEINSTANCE {
 		if (defined($qglobals{potimeLockout}) || defined($qglobals{potime_canzone})) {
 			$client->Message(13, "You are not ready yet to start a new raid");
 		} elsif ($running == 0 && !(defined($qglobals{potimeLockout}) || defined($qglobals{potime_canzone}))) {
-			$instance = quest::CreateInstance("potimeb", 0, 932000);
+			$instance = quest::CreateInstance("potimeb", 0, 232000);
 			quest::AssignRaidToInstance($instance);
 			quest::say("Instance created");
 			quest::say("You will find several sun dials spread throughout this zone. These shall lead you in to the lair of the gods. Please hurry, Zebuxoruk needs you.");

@@ -113,7 +113,8 @@ sub EVENT_DEATH {
 	quest::depop(223999);#phase5_flag
 	quest::spawn2(223991, 0, 0, -186, -1114, -2, 192);#phase6_flag
 	quest::signalwith(223177,667,0);
-        quest::we(15, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown. After a short moment of peace and joy, you are swallowed by the horror of what has happened. You say, out loud for no one to hear, 'What have we done?'");
+        quest::we(15, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown.");
+        quest::we(15, "After a short moment of peace and joy, you are swallowed by the horror of what has happened. You say, out loud for no one to hear, 'What have we done?'");
 }
 
 sub EVENT_SIGNAL {

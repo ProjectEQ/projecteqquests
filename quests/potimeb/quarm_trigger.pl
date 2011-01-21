@@ -7,7 +7,6 @@ sub EVENT_SPAWN
     	quest::depopall(223145);
     	quest::depopall(223002);
     	quest::depopall(223003);
-		quest::depop(223998);#phase4_flag
 		quest::spawn2(223999, 0, 0, 374.5, -1.3, 3.1, 192);#phase5_flag
 }
  

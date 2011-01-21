@@ -8,7 +8,6 @@ sub EVENT_SPAWN {
     quest::spawn2(223076,0,0,-320,-316,358,32.5); #Saryrn
     quest::spawn2(223077,0,0,405,-84,358,192); #Tallon Zek
     quest::spawn2(223078,0,0,405,75,358,192); #Vallon Zek
-	quest::depop(223996); #depop phase2_flag
 	quest::spawn2(223997, 0, 0, 1633, 1108, 371, 192);#phase3_flag
 }    
     

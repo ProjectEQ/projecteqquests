@@ -17,12 +17,19 @@ sub EVENT_TIMER {
 sub EVENT_CLICKDOOR {
 	my $d_id = ($doorid % 256);
 	my $instance = quest::GetInstanceID("potimeb", 0);
-	
-	if ($d_id == 62 && (defined($qglobals{potimeLockout}) && $qglobals{potimeLockout} > 2)) {
+
+	my $three = $entity_list->GetMobByNpcTypeID(223997);
+        my $four = $entity_list->GetMobByNpcTypeID(223998);
+        my $five = $entity_list->GetMobByNpcTypeID(223999);
+
+	if ($d_id == 62 && $three) {
+                quest::setglobal("potimeLockout", 3, 5, "H24");
 		quest::MovePCInstance(223, $instance, -401, 0, 348);
-	} elsif($d_id == 24 && (defined($qglobals{potimeLockout}) && $qglobals{potimeLockout} > 3)) {
+	} elsif($d_id == 24 && $four) {
+                quest::setglobal("potimeLockout", 4, 5, "H24");
 		quest::MovePCInstance(223, $instance, -419, 0, 3);
-	} elsif($d_id == 51 && (defined($qglobals{potimeLockout}) && $qglobals{potimeLockout} > 4)) {
+	} elsif($d_id == 51 && $five) {
+                quest::setglobal("potimeLockout", 5, 5, "H24");
 		quest::MovePCInstance(223, $instance, 251, -1124, -1);
 	} 
 }

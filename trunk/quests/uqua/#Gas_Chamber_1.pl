@@ -1,5 +1,7 @@
 sub EVENT_SPAWN {
-    quest::set_proximity($x-20,$x+20,$y-20,$y+20);
+if(!defined $qglobals{gaschmb1complete}) {
+    quest::set_proximity($x-20,$x+20,$y-30,$y+20);
+   }
 }
 sub EVENT_ENTER {
     quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");

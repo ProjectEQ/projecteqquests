@@ -16,7 +16,7 @@ sub EVENT_SAY {
       quest::summonitem(13087,20);
       quest::summonitem(13193,20);
       quest::summonitem(13088,20);
-      quest::setglobal("frizznik",1,0,"D60");
+      quest::setglobal("frizznik",1,0,"D30");
     }
     else {
      quest::say("I'm sorry, but the boss has instructed me to hand out the items only once per player!");
@@ -28,7 +28,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13090 => 4) && defined($qglobals{frizznik}) && ($qglobals{frizznik} == 1)) {
     quest::say("I appreciate your assistance in getting everyone fed. Please take this as a small token of my eternal appreciation.");
     quest::summonitem(3395);
-    quest::setglobal("frizznik",2,0,"D60");
+    quest::setglobal("frizznik",2,0,"D30");
   }
   else { 
       plugin::return_items(\%itemcount); 

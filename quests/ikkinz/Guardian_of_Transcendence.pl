@@ -27,4 +27,5 @@ sub EVENT_DEATH {
   quest::spawn2(294598,0,0,531,-157,-50,126); 
   quest::spawn2(294599,0,0,522,-233,-50,68);
   quest::spawn2(294600,0,0,516,-182,-50,68);
+  quest::setglobal("ikkylockout5",1,3,"D3");
 }

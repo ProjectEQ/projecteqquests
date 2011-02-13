@@ -3,20 +3,23 @@
 
 #Rewrite Coming Soon!
 
-my $attacker = '';
-my $target = '';
+my $attacker = "";
+my $target = "";
 my $event = 0;
 my $RandomWar = 0;
-my %HollowshadeRace = (1 => 'Owlbear', 2 => 'Sonic Wolves', 3 => 'Grimlings');
-my %Camp = (1 => 'North', 2 => 'East', 3 => 'South');
+my %HollowshadeRace = (1 => "Owlbear", 2 => "Sonic Wolves", 3 => "Grimlings");
+my %Camp = (1 => "North", 2 => "East", 3 => "South");
 my %AttackText = (
-  'Owlbear' => "Somewhere in the distance, the Owlbear sharpen their claws on boulders. The unsettling scraping noise spreads to every corner of the moor.",
-  'Sonic Wolves' => "NEED SONIC WOLVES ATTACK TEXT",
-  'Grimlings' => "Hollowshade is abuzz with activity as the Grimlings make preparations to invade their enemy."
+  "Owlbear" => "Somewhere in the distance, the Owlbear sharpen their claws on boulders. The unsettling scraping noise spreads to every corner of the moor.",
+  "Sonic Wolves" => "NEED SONIC WOLVES ATTACK TEXT",
+  "Grimlings" => "Hollowshade is abuzz with activity as the Grimlings make preparations to invade their enemy."
 );
 
 sub EVENT_SPAWN {
-  INITIALIZE_ZONE();
+  if (!defined($qglobals{HollowshadeNorth}) || !defined($qglobals{HollowshadeEast}) || !defined($qglobals{HollowshadeSouth})) {
+    RESET_GLOBALS();
+  }
+  RESET_ZONE();
 }
 
 sub EVENT_TIMER {
@@ -45,9 +48,7 @@ sub EVENT_SIGNAL {
     if ($qglobals{HollowshadeEast} == $qglobals{HollowshadeSouth}) {
       #Spawn Boss
       $event = 1;
-      quest::setglobal("HollowshadeNorth", 1, 0, "F");
-      quest::setglobal("HollowshadeEast",  2, 0, "F");
-      quest::setglobal("HollowshadeSouth", 3, 0, "F");
+      RESET_GLOBALS();
     }
   }
   if ($signal == 2) { #East Camp Overrun
@@ -57,9 +58,7 @@ sub EVENT_SIGNAL {
     if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth}) {
       #Spawn Boss
       $event = 1;
-      quest::setglobal("HollowshadeNorth", 1, 0, "F");
-      quest::setglobal("HollowshadeEast",  2, 0, "F");
-      quest::setglobal("HollowshadeSouth", 3, 0, "F");
+      RESET_GLOBALS();
     }
   }
   if ($signal == 3) { #South Camp Overrun
@@ -69,25 +68,26 @@ sub EVENT_SIGNAL {
     if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) {
       #Spawn Boss
       $event = 1;
-      quest::setglobal("HollowshadeNorth", 1, 0, "F");
-      quest::setglobal("HollowshadeEast",  2, 0, "F");
-      quest::setglobal("HollowshadeSouth", 3, 0, "F");
+      RESET_GLOBALS();
     }
   }
   if ($signal == 4) { #Boss Dead
-    INITIALIZE_ZONE();
+    RESET_ZONE();
   }
 }
 
-sub INITIALIZE_ZONE {
-  quest::ze(15, "Zone resetting now.");
-  $attacker = '';
-  $target = '';
-  $event = 0;
-  $RandomWar = plugin::RandomRange(720, 3600);
+sub RESET_GLOBALS {
   quest::setglobal("HollowshadeNorth", 1, 0, "F");
   quest::setglobal("HollowshadeEast",  2, 0, "F");
   quest::setglobal("HollowshadeSouth", 3, 0, "F");
+}
+
+sub RESET_ZONE {
+  quest::ze(15, "Zone resetting now.");
+  $attacker = "";
+  $target = "";
+  $event = 0;
+  $RandomWar = plugin::RandomRange(720, 3600);
   quest::spawn_condition($zonesn, 1, 0);
   quest::spawn_condition($zonesn, 2, 0);
   quest::spawn_condition($zonesn, 3, 0);
@@ -108,46 +108,47 @@ sub LOAD_SPAWNS {
 }
 
 sub SEND_ATTACKER {
-  $attacker = quest::ChooseRandom('HollowshadeNorth', 'HollowshadeEast', 'HollowshadeSouth');
+  $attacker = quest::ChooseRandom("HollowshadeNorth", "HollowshadeEast", "HollowshadeSouth");
   $event = 1;
 
   if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) {
-    if (($attacker eq 'HollowshadeNorth') || ($attacker eq 'HollowshadeEast')) {
-      $target = 'HollowshadeSouth';
+    if (($attacker eq "HollowshadeNorth") || ($attacker eq "HollowshadeEast")) {
+      $target = "HollowshadeSouth";
     }
     else {
-      $target = quest::ChooseRandom('HollowshadeNorth', 'HollowshadeEast');
+      $target = quest::ChooseRandom("HollowshadeNorth", "HollowshadeEast");
     }
   }
   elsif ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth}) {
-    if (($attacker eq 'HollowshadeNorth') || ($attacker eq 'HollowshadeSouth')) {
-      $target = 'HollowshadeEast';
+    if (($attacker eq "HollowshadeNorth") || ($attacker eq "HollowshadeSouth")) {
+      $target = "HollowshadeEast";
     }
     else {
-      $target = quest::ChooseRandom('HollowshadeNorth', 'HollowshadeSouth');
+      $target = quest::ChooseRandom("HollowshadeNorth", "HollowshadeSouth");
     }
   }
   elsif ($qglobals{HollowshadeSouth} == $qglobals{HollowshadeEast}) {
-    if (($attacker eq 'HollowshadeEast') || ($attacker eq 'HollowshadeSouth')) {
-      $target = 'HollowshadeNorth';
+    if (($attacker eq "HollowshadeEast") || ($attacker eq "HollowshadeSouth")) {
+      $target = "HollowshadeNorth";
     }
     else {
-      $target = quest::ChooseRandom('HollowshadeEast', 'HollowshadeSouth');
+      $target = quest::ChooseRandom("HollowshadeEast", "HollowshadeSouth");
     }
   }
   else {
-    if ($attacker eq 'HollowshadeNorth') {
-      $target = quest::ChooseRandom('HollowshadeEast', 'HollowshadeSouth');
+    if ($attacker eq "HollowshadeNorth") {
+      $target = quest::ChooseRandom("HollowshadeEast", "HollowshadeSouth");
     }
-    elsif ($attacker eq 'HollowshadeEast') {
-      $target = quest::ChooseRandom('HollowshadeNorth', 'HollowshadeSouth');
+    elsif ($attacker eq "HollowshadeEast") {
+      $target = quest::ChooseRandom("HollowshadeNorth", "HollowshadeSouth");
     }
     else {
-      $target = quest::ChooseRandom('HollowshadeNorth', 'HollowshadeEast');
+      $target = quest::ChooseRandom("HollowshadeNorth", "HollowshadeEast");
     }
   }
   quest::ze(4, "$AttackText{$HollowshadeRace{$qglobals{$attacker}}}"); #Attacker Text
   quest::ze(4, "The $HollowshadeRace{$qglobals{$target}} in the $Camp{$qglobals{$target}} look nervous."); #Defender Text
   quest::settimer("Attack", 480); #Time Allotment
 }
+
 #END File: hollowshade/War_Trigger (166257)

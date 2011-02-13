@@ -59,7 +59,7 @@ sub EVENT_DEATH {
     quest::spawn2(294628,0,0,$x,$y,$z,$h);
   }
   else {
-    quest::spawn2(294602,0,0,$x,$y,$z,$h);
+    quest::spawn2(294603,0,0,$x,$y,$z,$h);
     if($altarkill == 1) {
       quest::emote("The creature will perish under the strength of intelligent magic");
     }

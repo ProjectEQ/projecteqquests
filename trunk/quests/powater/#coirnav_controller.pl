@@ -54,15 +54,16 @@ sub EVENT_SIGNAL {
 		}
 
 		quest::spawn2(216070,0,0,$x+5,$y-20,$z+5,69); # Spawn #Pwelon_of_Vapor associated with this wave
+       	    quest::setglobal("coirnav_wave", 1, 7, "M15");
 	}
 
 	if ($signal == 2 && $qglobals{coirnav_done} == undef) { # Called when the 3 nameds die.
 
-        if($namedcount < 3){
-            $namedcount = $namedcount +1;
-        }
+        my $pweloncheck = $entity_list->GetMobByNpcTypeID(216070);
+        my $nrindacheck = $entity_list->GetMobByNpcTypeID(216065);
+        my $vamuilcheck = $entity_list->GetMobByNpcTypeID(216061);
 
-        if($namedcount == 3){ # You sank my battleship.
+        if(!$pweloncheck && !$nrindacheck && !$vamuilcheck){ # You sank my battleship.
 
     		quest::depop(216048); # Depop fake coirnav
 
@@ -104,9 +105,7 @@ sub EVENT_SIGNAL {
     }
 	if($signal == 4) {
 		
-        my $nrespawnchk = $entity_list->GetMobByNpcTypeID(216065); #Variable confirming Vamuil_of_Water is up
-
-        if ($nrespawnchk) { #If up and the "last" trash mob dies then it is okay to depop nameds for next phase
+        if ($qlobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
 			
       		quest::depop(216070); # Depop "tough" #Pwelon_of_Vapor
       		quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
@@ -115,6 +114,7 @@ sub EVENT_SIGNAL {
     		quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,69); # Repop weak Pwelon_of_Vapor
     		quest::spawn2(216108,0,0,$x-10,$y,$z+5,69); # Repop weak Nrinda_of_Ice
     		quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,69); # Repop weak Vamuil_of_Water
+       	        quest::setglobal("coirnav_wave", 4, 7, "M15");
 
         }
     }
@@ -202,6 +202,7 @@ sub EVENT_TIMER {
 
 		quest::spawn2(216061,0,0,$x-10,$y,$z+5,69); # Spawn #Nrinda_of_Ice associated with this wave
 
+       	quest::setglobal("coirnav_wave", 2, 7, "M12");
     	quest::stoptimer(2); # Stop timer
 
     }
@@ -234,6 +235,7 @@ sub EVENT_TIMER {
 
 		quest::spawn2(216065,0,0,$x+5,$y+20,$z+5,69); # Spawn #Vamuil_of_Water associated with this wave
 
+       	quest::setglobal("coirnav_wave", 3, 7, "M10");
     	quest::stoptimer(3); # Stop timer
 
     }

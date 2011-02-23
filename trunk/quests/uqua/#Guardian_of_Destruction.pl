@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 }
 sub EVENT_AGGRO {
   quest::settimer(240);
-  quest::ze("strides forward to deal with its enemies.");
+  quest::ze(15,"strides forward to deal with its enemies.");
   }
 sub EVENT_HP {
   if($hpevent == 70) {

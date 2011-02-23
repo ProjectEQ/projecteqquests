@@ -63,7 +63,7 @@ sub EVENT_SIGNAL {
         my $nrindacheck = $entity_list->GetMobByNpcTypeID(216065);
         my $vamuilcheck = $entity_list->GetMobByNpcTypeID(216061);
 
-        if(!$pweloncheck && !$nrindacheck && !$vamuilcheck){ # You sank my battleship.
+        if(($qglobals{coirnav_wave} == 4) && !$pweloncheck && !$nrindacheck && !$vamuilcheck){ # You sank my battleship.
 
     		quest::depop(216048); # Depop fake coirnav
 

@@ -59,12 +59,13 @@ sub EVENT_SIGNAL {
 	}
 
 	if ($signal == 2 && $qglobals{coirnav_done} == undef) { # Called when the 3 nameds die.
+        if($qglobals{coirnav_wave} == 4) { # must be on wave 4
 
-        my $pweloncheck = $entity_list->GetMobByNpcTypeID(216070);
-        my $nrindacheck = $entity_list->GetMobByNpcTypeID(216065);
-        my $vamuilcheck = $entity_list->GetMobByNpcTypeID(216061);
+        my $pweloncheck = $entity_list->GetMobByNpcTypeID(216109);
+        my $nrindacheck = $entity_list->GetMobByNpcTypeID(216108);
+        my $vamuilcheck = $entity_list->GetMobByNpcTypeID(216110);
 
-        if(($qglobals{coirnav_wave} == 4) && !$pweloncheck && !$nrindacheck && !$vamuilcheck){ # You sank my battleship.
+        if(!$pweloncheck && !$nrindacheck && !$vamuilcheck) { # You sank my battleship.
 
     		quest::depop(216048); # Depop fake coirnav
 
@@ -102,11 +103,13 @@ sub EVENT_SIGNAL {
 		}
 
     		quest::spawn2(216094,0,0,$x,$y,$z-10,69); # The Real Corinav
+		quest::setglobal("coirnav_wave", 5, 7, "M10");
+	    }
 	    }
     }
 	if($signal == 4) {
 		
-        if ($qlobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
+        if ($qglobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
 			
         	my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
         	my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend
@@ -120,7 +123,7 @@ sub EVENT_SIGNAL {
     			quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,69); # Repop weak Pwelon_of_Vapor
     			quest::spawn2(216108,0,0,$x-10,$y,$z+5,69); # Repop weak Nrinda_of_Ice
     			quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,69); # Repop weak Vamuil_of_Water
-			quest::setglobal("coirnav_wave", 4, 7, "M15");
+			quest::setglobal("coirnav_wave", 4, 7, "M10");
         	}
         }
     }
@@ -270,7 +273,7 @@ sub EVENT_TIMER {
        	quest::delglobal("coirnav_kick"); # Delete player kickout timer check used by player.pl
     }
     if($timer == 8){ # Wave 4 check
-        if ($qlobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
+        if ($qglobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
 			
         	my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
         	my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend

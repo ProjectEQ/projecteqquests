@@ -28,6 +28,7 @@ sub EVENT_SIGNAL {
        	quest::settimer(4,600); # 10 Minute timer for the emote
        	quest::settimer(5,720); # 12 Minute timer for the emote
        	quest::settimer(6,840); # 14 Minute timer for the emote
+       	quest::settimer(8,1); # 1 second timer to trigger 4th wave
 
         quest::signalwith(216048,1,0); #Signal fake coirnav for first emote
 
@@ -119,9 +120,8 @@ sub EVENT_SIGNAL {
     			quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,69); # Repop weak Pwelon_of_Vapor
     			quest::spawn2(216108,0,0,$x-10,$y,$z+5,69); # Repop weak Nrinda_of_Ice
     			quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,69); # Repop weak Vamuil_of_Water
-       	        	quest::setglobal("coirnav_wave", 4, 7, "M15");
+			quest::setglobal("coirnav_wave", 4, 7, "M15");
         	}
-
         }
     }
 
@@ -268,6 +268,25 @@ sub EVENT_TIMER {
     if($timer == 7){ # Last emote. You're outtatime.
         quest::stoptimer(7);
        	quest::delglobal("coirnav_kick"); # Delete player kickout timer check used by player.pl
+    }
+    if($timer == 8){ # Wave 4 check
+        if ($qlobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
+			
+        	my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
+        	my $check_trash2 = $entity_list->GetMobByNpcTypeID(216076); # - Hraquis Icefiend
+        	my $check_trash3 = $entity_list->GetMobByNpcTypeID(216060); # - Regura Waterfiend
+
+        	if (!$check_trash1 && !$check_trash2 && !$check_trash3) { #if all trash is down, start wave 4
+      			quest::depop(216070); # Depop "tough" #Pwelon_of_Vapor
+      			quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
+      			quest::depop(216061); # Depop "tough" #Vamuil_of_Water
+
+    			quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,69); # Repop weak Pwelon_of_Vapor
+    			quest::spawn2(216108,0,0,$x-10,$y,$z+5,69); # Repop weak Nrinda_of_Ice
+    			quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,69); # Repop weak Vamuil_of_Water
+			quest::setglobal("coirnav_wave", 4, 7, "M15");
+        	}
+        }
     }
 
 

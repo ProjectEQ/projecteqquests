@@ -5,6 +5,7 @@ sub EVENT_SPAWN {
     $counterall=0;
     quest::settimer(2,3000);
     quest::spawn_condition($zonesn,3,1);
+    quest::spawn_condition($zonesn,2,0);
 }
 
 sub EVENT_SIGNAL {

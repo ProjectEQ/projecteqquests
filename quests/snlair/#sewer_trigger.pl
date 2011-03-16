@@ -1,6 +1,7 @@
 sub EVENT_SPAWN {
   quest::settimer(1,900);  #set timer to spawn named placeholders
   quest::spawn_condition($zonesn,1,0);
+  quest::spawn_condition($zonesn,2,1);
 }
 
 sub EVENT_TIMER {

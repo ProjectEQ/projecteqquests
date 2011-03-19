@@ -40,19 +40,22 @@ if($doorid == 9) {
     if(($oncursor{67707}) && ($qglobals{gaschmb1} == 1)) {
 	quest::forcedooropen(9);
 	quest::setglobal("gaschmb1complete",1,3,"H6"); 
-#depop trigger NPC
+        quest::depop(292051);
     }
     elsif(($oncursor{67708}) && ($qglobals{gaschmb1} == 2)) {
 	quest::forcedooropen(9);
 	quest::setglobal("gaschmb1complete",1,3,"H6"); 
+        quest::depop(292051);
     }
     elsif(($oncursor{67709}) && ($qglobals{gaschmb1} == 3)) {
 	quest::forcedooropen(9);
 	quest::setglobal("gaschmb1complete",1,3,"H6"); 
+        quest::depop(292051);
     }
     elsif(($oncursor{67710}) && ($qglobals{gaschmb1} == 4)) {
 	quest::forcedooropen(9);
 	quest::setglobal("gaschmb1complete",1,3,"H6"); 
+        quest::depop(292051);
     }
     else {
     quest::selfcast(5054);
@@ -64,20 +67,23 @@ if(($doorid == 8) && (defined $qglobals{gaschmb1})) {
 if($doorid == 12) {
     if(($oncursor{67707}) && ($qglobals{gaschmb2} == 1)) {
 	quest::forcedooropen(12);
-	quest::setglobal("gaschmb2complete",1,3,"H6"); 
-#depop trigger NPC
+	quest::setglobal("gaschmb2complete",1,3,"H6");
+        quest::depop(292052); 
     }
     elsif(($oncursor{67708}) && ($qglobals{gaschmb2} == 2)) {
 	quest::forcedooropen(12);
 	quest::setglobal("gaschmb2complete",1,3,"H6"); 
+        quest::depop(292052); 
     }
     elsif(($oncursor{67709}) && ($qglobals{gaschmb2} == 3)) {
 	quest::forcedooropen(12);
 	quest::setglobal("gaschmb2complete",1,3,"H6"); 
+        quest::depop(292052); 
     }
     elsif(($oncursor{67710}) && ($qglobals{gaschmb2} == 4)) {
 	quest::forcedooropen(12);
 	quest::setglobal("gaschmb2complete",1,3,"H6"); 
+        quest::depop(292052); 
     }
     else {
     quest::selfcast(5054);

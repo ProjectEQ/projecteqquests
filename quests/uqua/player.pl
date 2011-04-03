@@ -95,6 +95,16 @@ if(($doorid == 11) && (defined $qglobals{gaschmb2})) {
 if($doorid == 4) {
     quest::setglobal("uqualockout", 1,3,"D3");
 }
+if($d_id == 3) {
+    if((defined $qglobals{uquaragedoor}) && ($qglobals{uquaragedoor} >= 1)) {
+       quest::forcedooropen(3);
+	}
+     }
+if($d_id == 2) {
+    if((defined $qglobals{uquafurydoor}) && ($qglobals{uquafurydoor} >= 1)) {
+       quest::forcedooropen(2);
+	}
+    }
 }
 sub EVENT_SIGNAL {
     if($signal == 1) { 

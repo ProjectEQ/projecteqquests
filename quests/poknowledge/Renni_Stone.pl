@@ -15,7 +15,7 @@ sub EVENT_SAY {
 }
     
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 28077 => 1)) {#Collection of Gems
+  if(plugin::check_handin(\%itemcount, 28077 => 1)) {#Collection of Gems correct item does not exist in db
     quest::emote("opens the box carefully and inspects the contents.  'These will do.  Thank ye.  Take this as a reward.'");#Text made up, no reference
     quest::summonitem(28235);#Fine Antique Pelisse
   }

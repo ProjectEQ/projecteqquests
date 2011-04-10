@@ -8,6 +8,9 @@ quest::say("Ha!!  We hear of great adventurer.  You?!!  Me no think so.  You pro
 if($text=~/i want to help self/i) {
  quest::say("You help self to leave Oggok before me bash you.  We no need cowards.");
 }
+if ($text=~/Where is Uglan/i) {
+  quest::say("Uglan brave warrior of Oggok. He now in Neriak. Work for dark elves. He NO LIKE dark elves!! He work because we make him. He spy for Crakneks.");
+}
 }
 
 sub EVENT_ITEM {
@@ -19,11 +22,18 @@ sub EVENT_ITEM {
   } elsif($itemcount{13227} == 1) {
    quest::say("Ahahaha! Da basterds! Here be a reward for ye!");
    quest::summonitem(13355);
-  } else {
+  } elsif($itemcount{13356} == 1) {
+    quest::say("Ahhh!! Boohoohoo. Nork!! That you arm. Me will take care of you now. Thank you for killing gator. You must be strong. Now you help Crakneks. We hear.. ohh, poor Nork, we hear trouble begins. Find ogre warrior [Uglan]. Give him this. It broken. He know where you from. Go. Nork.. Poor Nork.");
+    quest::faction(57 ,10); 
+    quest::faction(46 ,10 ); 
+    quest::faction( 128, -10);
+    quest::summonitem(13357);
+    quest::exp(50);      
+  }
+  else {
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
     plugin::return_items(\%itemcount);
  }
-}
+ }
 #END of FILE Zone:oggok  ID:49040 -- Lork 
-

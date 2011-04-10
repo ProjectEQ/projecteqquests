@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-  quest::settimer(5);
+  quest::settimer(1,5);
 }
 sub EVENT_TIMER {
   $check_named = $entity_list->GetMobByNpcTypeID(292018);

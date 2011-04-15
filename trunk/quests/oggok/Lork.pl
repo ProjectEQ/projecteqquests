@@ -29,7 +29,21 @@ sub EVENT_ITEM {
     quest::faction( 128, -10);
     quest::summonitem(13357);
     quest::exp(50);      
-  }
+  } elsif($itemcount{18840} == 1) {
+    quest::say("'What this!! So, dark elves think they can bash ogres. Replace with blue orcs. Dumb Zulort friend with dark elf ambassador in Oggok. We kill him. We kill Crushbone dark elf ambassador also. This slow down plan. We need a hero. Me guess you do. You go. Go bring Lork both Crushbone and Oggok dark elf hearts. Then you be hero.");
+    quest::faction( 57, 10);
+    quest::faction( 46, 10);
+    quest::faction( 128, -10);
+    quest::exp(100);
+    quest::summonitem(5030); 
+  } elsif (plugin::check_handin(\%itemcount, 13358 => 1, 13227 => 1)) {
+    quest::say("'That show dark elves who strongest. Me hope you kill many blue orcs. You Craknek Hero now. You take this. It mine. Hero reward. You great ogre now. Smash best.");
+    quest::faction( 57, 10);
+    quest::faction( 46, 10);
+    quest::faction( 128, -10);
+    quest::exp(100);
+    quest::ChooseRandom(13359,13355,2136,2130,2135,2132,2128);       
+         }
   else {
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

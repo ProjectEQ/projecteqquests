@@ -5,8 +5,8 @@ sub EVENT_SAY {
    }
    if ($text=~/consequences/i) {
      quest::say("Very well, $name. You brought this upon yourself.");
-     quest::spawn2(296024,0,0,$x,$y,$z,$h);
-     quest::spawn2(296025,0,0,334,-662,-2,253);
-     quest::spawn2(296026,0,0,369,-660,-2,1);
+     quest::spawn2(296024,0,0,524,-494,5,189);
+     quest::spawn2(296025,0,0,357,-549,-3,254);
+     quest::spawn2(296026,0,0,357,-451,-2,129);
    }
 }

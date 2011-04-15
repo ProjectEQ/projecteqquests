@@ -26,6 +26,10 @@ sub EVENT_ITEM {
       quest::faction(169, -15); #Kazon Stormhammer
       quest::givecash(0,3,6,9);
    }
+   if (plugin::check_handin(\%itemcount, 13452 => 3)) {
+     quest::say("Eww icky frogs.  Me promise to give you reward, here yous go."); #Not actual text
+     quest::summonitem(12217);
+   }
    else {
    quest::say("I don't need this.");
     plugin::return_items(\%itemcount);

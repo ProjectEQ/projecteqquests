@@ -23,13 +23,17 @@ sub EVENT_ITEM
  if(plugin::check_handin(\%itemcount, 13740 => 1))
   {
    quest::say("Ahahaha! Dat witch sur did get wat was commin ta her!");
-   quest::givecash(0,0,0,5);
+   quest::givecash(0,0,1,5);
   }
 if(plugin::check_handin(\%itemcount, 13379 => 1)){
    quest::summonitem(13380);
    quest::faction(46, 10);
    quest::faction(39, -30);
    quest::faction(169, -30);
+ }
+ if (plugin::check_handin(\%itemcount, 13378 => 1)) {
+   quest::say("Ahahaha! Dat witch sur did get wat was commin ta her!");
+   quest::givecash(0,0,1,5);
  }
 plugin::return_items(\%itemcount);
 }

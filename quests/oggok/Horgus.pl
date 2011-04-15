@@ -10,6 +10,10 @@ quest::say("Bah!! You go join Greenbloods. You weak."); }
 }
 
 sub EVENT_ITEM {
+if ($itemcount{13354} == 4) {
+  quest::say("You smash lizards good.  Here is armur me promise.");
+  quest::summonitem(quest::ChooseRandom(2136,2135,2132,2128,2130));
+}
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);

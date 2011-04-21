@@ -6,8 +6,12 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13375 => 1)) {
-    quest::say("grrrikk.. This is Groak's vial!! He must be in danger. Here. Return this liquid to him. Be quick!");
-    quest::faction( 106, 20);
+    quest::say("Grrrikk.. This is Groak's vial!! He must be in danger. Here. Return this liquid to him. Be quick!");
+    quest::faction(106,20);
     quest::summonitem(13376);
+  }
+  else {
+    quest::say("Grikk.. I do not want this.");
+    plugin::return_items(\%itemcount);
   }
 }

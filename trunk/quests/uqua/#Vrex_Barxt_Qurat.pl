@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-  quest::settimer(240);
+  quest::settimer(1,240);
   quest::setnexthpevent(45);
 }
 sub EVENT_TIMER {

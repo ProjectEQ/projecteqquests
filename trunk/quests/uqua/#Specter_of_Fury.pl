@@ -6,6 +6,7 @@ sub EVENT_ITEM {
   }
 }
 sub EVENT_TIMER {
+  quest::stoptimer(1);
   quest::spawn2(292062,0,0,-869,-691,25,254);
   quest::spawn2(292063,0,0,-836,-692,25,255);
   quest::spawn2(292062,0,0,-906,-692,25,13);

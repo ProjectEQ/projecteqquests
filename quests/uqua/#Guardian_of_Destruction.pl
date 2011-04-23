@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
   quest::setnexthpevent(70);
 }
 sub EVENT_AGGRO {
-  quest::settimer(240);
+  quest::settimer(1,240);
   quest::ze(15,"strides forward to deal with its enemies.");
   }
 sub EVENT_HP {

@@ -13,7 +13,7 @@ sub EVENT_TIMER {
 
 sub EVENT_CLICKDOOR {
   if ($doorid == 9) {
-    if (($oncursor{67707} && ($qglobals{gaschmb1} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb1} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb1} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb1} == 4))) {
+    if (($oncursor{67707} && ($qglobals{gaschmb1} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb1} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb1} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb1} == 4)) || ($qglobals{gaschmb1complete} == 1)) {
       quest::forcedooropen(9);
       quest::setglobal("gaschmb1complete",1,3,"H6");
       quest::depop(292051);
@@ -26,7 +26,7 @@ sub EVENT_CLICKDOOR {
     quest::selfcast(5054);
   }
   if ($doorid == 12) {
-    if (($oncursor{67707} && ($qglobals{gaschmb2} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb2} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb2} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb2} == 4))) {
+    if (($oncursor{67707} && ($qglobals{gaschmb2} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb2} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb2} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb2} == 4)) || ($qglobals{gaschmb1complete} == 1)) {
       quest::forcedooropen(12);
       quest::setglobal("gaschmb2complete",1,3,"H6");
       quest::depop(292052);

@@ -7,6 +7,7 @@ sub EVENT_SAY {
   }
   if ($text=~/secret mission/i) {
     quest::say("I have heard of your advancements. You are a fine addition to Oggok. I require your skill in handling a delicate matter. I want you to run out to the Bouncer's keep near the entrance to Oggok. There, you shall find a froglok named Glib. He will pose no threat to you. He has come on business and I have promised him protection. Tell him the Greenblood shaman sent you. He shall fill you in. Go at once.");
+   quest::spawn2(49127,0,0,383,-205.3,66.1,0);
   }
 }
 

@@ -163,24 +163,36 @@ sub SEND_ATTACKER {
   }
 
   #Spawn attackers
+  if (($qglobals{$attacker} == 1) || ($qglobals{$attacker} == 4) || ($qglobals{$attacker} == 7)) {
+    $attacker_id = 166139; #a_furious_owlbear
+  }
+  elsif (($qglobals{$attacker} == 2) || ($qglobals{$attacker} == 5) || ($qglobals{$attacker} == 8)) {
+    $attacker_id = 166091; #a_sonic_wolf_fiend (Not sure who this is really supposed to be)
+  }
+  else {
+    $attacker_id = 166266; #a_grimling_invader
+  }
   if ($attacker eq "HollowshadeNorth") { #spawn northern attackers
     if ($qglobals{$attacker} == 1) { #Owlbear attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
     elsif ($qglobals{$attacker} == 2) { #Sonic Wolf attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
     else { #Grimling attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
   }
   elsif ($attacker eq "HollowshadeEast") { #spawn eastern attackers
@@ -189,18 +201,21 @@ sub SEND_ATTACKER {
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
     elsif ($qglobals{$attacker} == 5) { #Sonic Wolf attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
     else { #Grimling attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
   }
   else { #spawn southern attackers
@@ -209,18 +224,21 @@ sub SEND_ATTACKER {
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
     elsif ($qglobals{$attacker} == 8) { #Sonic Wolf attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
     else { #Grimling attackers
       #quest::spawn2(00000,1,0,x,y,z,h);
       #quest::spawn2(00000,2,0,x,y,z,h);
       #quest::spawn2(00000,3,0,x,y,z,h);
       #quest::spawn2(00000,4,0,x,y,z,h);
+      #quest::spawn2(00000,5,0,x,y,z,h);
     }
   }
 

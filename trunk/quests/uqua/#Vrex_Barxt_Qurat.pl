@@ -1,8 +1,9 @@
 sub EVENT_SPAWN {
-  quest::settimer(1,240);
-  quest::setnexthpevent(45);
+  quest::settimer(1,180);
+  quest::setnexthpevent(40);
 }
 sub EVENT_TIMER {
+  quest::stoptimer(1);
   quest::spawn2(292072,0,0,-830,-83,59,239);
   quest::spawn2(292072,0,0,-822,-77,59,237);
   quest::spawn2(292072,0,0,-813,-74,59,236);  
@@ -35,7 +36,7 @@ sub EVENT_SIGNAL {
   $entity_list->GetMobByNpcTypeID(292070);
     quest::spawn2(292073,0,0,-866,-43,61,130);
     quest::depop(292070);
-    quest::settimer(240);
+    quest::settimer(1,180);
   }
   if($counter == 24){
     quest::modifynpcstat("special_attacks",RFQUMCNIDF);

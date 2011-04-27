@@ -5,7 +5,7 @@ sub EVENT_SAY {
   if ($text=~/ready/i) {
     quest::say("The seal has been removed. Good luck to you.");
     quest::forcedooropen(5);
-    quest::ze("Within the large chamber lies a massive stone guardian and many trusik. As they wave their arms and chant, you hear a raspy voice near the large altar in the center of the room. You have disrupted the ritual of destruction. Your interference is an annoyance to the great Trushar and it is his will that you be dealt with. Defilers, witness what happens when the destructive forces of Trushar are combined with my geomantic knowledge. Rise, Guardian of Destruction! Come to life and destroy those who would defile this temple!");
-    quest::ze("I can feel the energy from the guardian course through my soul! More! Give me more, I say! Trushar, give me the power to destroy these creatures and send them and the others back from where they came!");
+    quest::ze(15,"Within the large chamber lies a massive stone guardian and many trusik. As they wave their arms and chant, you hear a raspy voice near the large altar in the center of the room. You have disrupted the ritual of destruction. Your interference is an annoyance to the great Trushar and it is his will that you be dealt with. Defilers, witness what happens when the destructive forces of Trushar are combined with my geomantic knowledge. Rise, Guardian of Destruction! Come to life and destroy those who would defile this temple!");
+    quest::ze(15,"I can feel the energy from the guardian course through my soul! More! Give me more, I say! Trushar, give me the power to destroy these creatures and send them and the others back from where they came!");
   }
 }

@@ -68,7 +68,10 @@ sub EVENT_SIGNAL {
 }
 
 sub AURA {
-  if ($hasitem{67736} || $hasitem{67737} || $hasitem{67738} || $hasitem{67739}) {
+  if (defined($qglobals{destper})) {
+    quest::selfcast(5051);
+    }
+  elsif ($hasitem{67736} || $hasitem{67737} || $hasitem{67738} || $hasitem{67739}) {
     $client->Message(15,"You feel protected from the Aura of Destruction.");
   }
   else {

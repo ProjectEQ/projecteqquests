@@ -10,5 +10,5 @@ quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0
 quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0,-876,-1098,3,129);
 quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0,-858,-1098,3,129);
 quest::ze(15,"Someone in the distance barks the order, The trespassing infidels have entered the halls of ascension. Assault them, give no quarter and expect none in return!");
-quest::depop();
+$npc->Damage($npc,1000,732,24,0);
 }

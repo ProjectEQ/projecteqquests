@@ -7,5 +7,5 @@ quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0
 quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0,-764,-1261,3,191);
 quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0,-764,-1240,3,191);
 quest::ze(15,"A trusik in the distance shouts, This cannot be possible. They located the Temple of Rage! Attack them, now!");
-quest::depop();
+$npc->Damage($npc,1000,732,24,0);
 }

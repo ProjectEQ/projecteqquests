@@ -6,4 +6,10 @@ sub EVENT_CLICKDOOR {
        quest::forcedooropen(41);
 	}
      }
+  if($d_id == 20) {
+    if((defined $qglobals{inktdoor2}) && ($qglobals{inktdoor2} == 1)) {
+       quest::forcedooropen(20);
+	}
+     }
+     
 }

@@ -22,7 +22,7 @@ sub EVENT_CLICKDOOR {
       quest::selfcast(5054);
     }
   }
-  if (($doorid == 8) && (defined($qglobals{gaschmb1}))) {
+  if (($doorid == 8) && (defined($qglobals{gaschmb1})) && !(defined($qglobals{gaschmb1complete}))) {
     quest::selfcast(5054);
   }
   if ($doorid == 12) {
@@ -35,7 +35,7 @@ sub EVENT_CLICKDOOR {
       quest::selfcast(5054);
     }
   }
-  if (($doorid == 11) && (defined($qglobals{gaschmb2}))) {
+  if (($doorid == 11) && (defined($qglobals{gaschmb2})) && !(defined($qglobals{gaschmb2complete}))) {
     quest::selfcast(5054);
   }
   if ($doorid == 4) {

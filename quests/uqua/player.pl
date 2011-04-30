@@ -3,12 +3,14 @@ my $counter = 0;
 sub EVENT_ENTERZONE {
   if (!defined($qglobals{destoff})) {
     quest::settimer(1,60);
+    AURA();
   }
-  AURA();
 }
 
 sub EVENT_TIMER {
-  AURA();
+  if (!defined($qglobals{destoff})) {
+    AURA();
+  }
 }
 
 sub EVENT_CLICKDOOR {

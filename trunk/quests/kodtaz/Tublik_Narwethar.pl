@@ -16,7 +16,7 @@ if ($text=~/hail/i) {
 }
   if ($text=~/progress update/i) {
     if((defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
-      $client->Message(13, "Pending – You have requested the trial at the Temple of Singular Might!");
+      $client->Message(13, "Pending - You have requested the trial at the Temple of Singular Might!");
       }
     elsif((defined $qglobals{ikky} && $qglobals{ikky} == 2)) {
       $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
@@ -105,7 +105,7 @@ if ($text=~/hail/i) {
       $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
       $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
       $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
-      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have been approved for the three trial temples!");         
       }
     elsif((defined $qglobals{ikky} && $qglobals{ikky} == 13)) {
       $client->Message(13, "Finished! - You have completed the trial at the Temple of Singular Might!");
@@ -119,7 +119,7 @@ if ($text=~/hail/i) {
       $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
       $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
       $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
-      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have been approved for the three trial temples!");         
       $client->Message(13, "Finished! - You have completed the three raid trials!");
       }
     elsif((defined $qglobals{ikky} && $qglobals{ikky} == 14)) {
@@ -134,7 +134,7 @@ if ($text=~/hail/i) {
       $client->Message(13, "Finished! - You've found the three clues from the three trial temples!");
       $client->Message(13, "Finished! - You've collected the Minor Relics of Power from the Pit of the Lost!");
       $client->Message(13, "Finished! - You've rescued the artifact from the Ageless Relic Protector in the Pit of the Lost!");
-      $client->Message(13, "Finished! – You have been approved for the three trial temples!");         
+      $client->Message(13, "Finished! - You have been approved for the three trial temples!");         
       $client->Message(13, "Finished! - You have completed the three raid trials!");
       $client->Message(13, "Finished! - You have crafted the Icon of the Altar!");
       }
@@ -175,10 +175,10 @@ if (($text=~/four temples/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 1
 if (($text=~/mystery/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
     quest::say("It's clear to me that you must proceed into each of the three remaining temples and recover the three artifacts that are in them. It's up to you how you want to proceed, but you will have to enter the [Sanctuary of the Righteous], the [Sanctuary of the Glorified], or the [Sanctuary of the Transcendent]. Each one of these holds an artifact that I believe will be used to gain entrance to whatever lies beyond the Altar of Destruction. Which will you choose?");
 }
-if (($text=~/sanctuary of the righteous/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+if ($text=~/sanctuary of the righteous/i) {
   if($raid){
    if(!defined $qglobals{ikkylockout3}) {
-   if(defined $qglobals{ikky} && $qglobals{ikky} == 12) {
+   if(defined $qglobals{ikky} && $qglobals{ikky} >= 12) {
            if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
        $Instance = quest::CreateInstance("ikkinz", 3, 21600);
        quest::AssignRaidToInstance($Instance);   
@@ -195,10 +195,10 @@ if (($text=~/sanctuary of the righteous/i) && (defined $qglobals{ikky} && $qglob
     $client->Message(13, "You are not in a raid!");
          }
    }
-if (($text=~/sanctuary of the glorified/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+if ($text=~/sanctuary of the glorified/i) {
     if($raid){
       if(!defined $qglobals{ikkylockout4}) {
-   if(defined $qglobals{ikky} && $qglobals{ikky} == 12) {
+   if(defined $qglobals{ikky} && $qglobals{ikky} >= 12) {
            if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
        $Instance = quest::CreateInstance("ikkinz", 4, 21600);
        quest::AssignRaidToInstance($Instance);   
@@ -215,10 +215,10 @@ if (($text=~/sanctuary of the glorified/i) && (defined $qglobals{ikky} && $qglob
     $client->Message(13, "You are not in a raid!");
          }
    }
-if (($text=~/sanctuary of the transcendent/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+if ($text=~/sanctuary of the transcendent/i) {
      if($raid){
        if(!defined $qglobals{ikkylockout5}) {
-   if(defined $qglobals{ikky} && $qglobals{ikky} == 12) {
+   if(defined $qglobals{ikky} && $qglobals{ikky} >= 12) {
            if($InInstanceIkky4 == 0 && $InInstanceIkky5 == 0 && $InInstanceIkky6 == 0){
        $Instance = quest::CreateInstance("ikkinz", 5, 21600);
        quest::AssignRaidToInstance($Instance);   

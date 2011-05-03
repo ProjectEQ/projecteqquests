@@ -41,7 +41,7 @@ sub EVENT_CLICKDOOR {
     quest::selfcast(5054);
   }
   if ($doorid == 4) {
-    quest::setglobal("uqualockout", 1,3,"D3");
+    quest::setglobal("uqualockout", 1,3,"H84");
   }
   if ($doorid == 3) {
     if (defined($qglobals{uquaragedoor}) && ($qglobals{uquaragedoor} == 1)) {

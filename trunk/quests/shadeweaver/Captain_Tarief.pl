@@ -1,5 +1,4 @@
 # Saurek Scales
-#
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -17,25 +16,28 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 30861 => 3)) {
-    quest::summonitem(30870);
+  if (plugin::check_handin(\%itemcount, 30861 => 4)) { #Saurek Hopper Scales
+    quest::say("Excellent work, $name. Please take this as a reward."); #generic text
+    quest::summonitem(30870); #Hunting Leather Boots
+    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::exp(2500);
   }
-  elsif (plugin::check_handin(\%itemcount, 30862 => 3)) {
-    quest::summonitem(30867);
+  elsif (plugin::check_handin(\%itemcount, 30862 => 4)) { #Saurek Darkclaw Scales
+    quest::say("Excellent work, $name. Please take this as a reward."); #generic text
+    quest::summonitem(30867); #Hunting Leather Bracer
+    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::exp(2500);
   }
-  elsif (plugin::check_handin(\%itemcount, 30863 => 3)) {
-    quest::summonitem(30866);
+  elsif (plugin::check_handin(\%itemcount, 30863 => 4)) { #Saurek Shredder Scales
+    quest::say("Excellent work, $name. Please take this as a reward."); #generic text
+    quest::summonitem(30866); #Hunting Leather Sleeves
+    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::exp(2500);
   }
   else {
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
     plugin::return_items(\%itemcount);
-    return 1;
   }
-  quest::say("Excellent work, $name. Please take this as a reward."); #generic text
-  quest::exp(2500);
-  quest::faction(132,10); #guardians of shar vhal
 }
-
 #EOF zone: shadeweaver ID: 165153 NPC: Captain_Tarief
-

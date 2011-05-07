@@ -25,7 +25,7 @@ sub EVENT_COMBAT {
 
 sub EVENT_DEATH {
   my $variance = 240; #Minute variance for respawn (Currently: 4 hours)
-  my $new_time = int(rand(1) * 241) + 6240;
+  my $new_time = int(rand($variance)) + 6240;
   quest::setglobal("CBQ",1,3,"M$new_time");
 }
 

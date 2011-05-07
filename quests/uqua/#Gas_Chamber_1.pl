@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  $player->Message(15,"From somewhere behind the walls there is a deep rumbling.");
+  quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");
   quest::settimer(1,20);
 }
 

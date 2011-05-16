@@ -1,78 +1,222 @@
-# agnarr port should work old way even if new way does not work. also
-# uncommented the tower door code since it was working for unraided
-# groups. for the tower doors to work in a raid, there are server code
-# changes needed (which I am working on).
-#
-# - gaeorn
-
-my @player_list = ();
-my $raid;
-my $count;
-
 sub EVENT_CLICKDOOR {
-  if($doorid == 51) { # agnarr entrance
-    if($client->KeyRingCheck(9433) || ($status > 79)) {
-      quest::setglobal("agnarrkey",1,3,"M5"); # old method in case new method doesn't work
-      $raid = $entity_list->GetRaidByClient($client);
-      if ($raid) {
+  my $x = $client->GetX();
+  my $y = $client->GetY();
+  my $z = $client->GetZ();
+  my $raid = $entity_list->GetRaidByClient($client);
+  my $group = $entity_list->GetGroupByClient($client);
+
+  if($doorid == 51) { #Agnarr Tower
+    if($status > 79) { #GM status
+      $client->MovePC(209, -765, -1735, 1270, 0);
+    }
+    elsif(plugin::check_hasitem($client, 9433)) { #Symbol of Torden
+      if($raid) { #Move raid
         for ($count = 0; $count < $raid->RaidCount(); $count++) {
-          push (@player_list, $raid->GetMember($count)->GetName());
-        }
-        foreach $player (@player_list) {
-          my $pc = $entity_list->GetClientByName($player);
-          $pc->MovePC(209,-765,-1735,1270);
-        }
-      }
-    } elsif(plugin::check_hasitem($client, 9433)) {
-      quest::setglobal("agnarrkey",1,3,"M5"); # old method in case new method doesn't work
-      $client->KeyRingAdd(9433);
-      $raid = $entity_list->GetRaidByClient($client);
-      if ($raid) {
-        for ($count = 0; $count < $raid->RaidCount(); $count++) {
-          push (@player_list, $raid->GetMember($count)->GetName());
-        }
-        foreach $player (@player_list) {
-          my $pc = $entity_list->GetClientByName($player);
-          $pc->MovePC(209,-765,-1735,1270);
+          my $pc = $raid->GetMember($count);
+          if($pc->CalculateDistance($x, $y, $z) <= 100) {
+            $pc->MovePC(209, -765, -1735, 1270, 0);
+          }
         }
       }
-    } elsif(defined $qglobals{agnarrkey}) { # old method in case new method doesn't work
-      quest::movepc(209,-765,-1735,1270);   # old method in case new method doesn't work
-    } else {
-      my $gargoyle_check = $entity_list->GetMobByNpcTypeID(209024);
-      if ($gargoyle_check) {
-        my $gargoyle = $gargoyle_check->CastToNPC();
-        $gargoyle->AddToHateList($client, 1);
+      elsif($group) { #Move group
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          my $pc = $group->GetMember($count);
+          if($pc->CalculateDistance($x, $y, $z) <= 100) {
+            $pc->MovePC(209, -765, -1735, 1270, 0);
+          }
+        }
+      }
+      else { #Move player
+        $client->MovePC(209, -765, -1735, 1270, 0);
       }
     }
-  } elsif($doorid == 61) { # tower
-    if($client->KeyRingCheck(9425) || ($status > 79)) {
-      quest::movegrp(209, 85, 145, 635);
-    } elsif(plugin::check_hasitem($client, 9425)) {
-      $client->KeyRingAdd(9425);
-      quest::movegrp(209, 85, 145, 635);
-    }
-  } elsif($doorid == 63) { # tower
-    if($client->KeyRingCheck(9425) || ($status > 79)) {
-      quest::movegrp(209, -830, -865, 1375);
-    } elsif(plugin::check_hasitem($client, 9425)) {
-      $client->KeyRingAdd(9425);
-      quest::movegrp(209, -830, -865, 1375);
-    }
-  } elsif($doorid == 65) { # tower
-    if($client->KeyRingCheck(9425) || ($status > 79)) {
-      quest::movegrp(209, -350, -2200, 1955);
-    } elsif(plugin::check_hasitem($client, 9425)) {
-      $client->KeyRingAdd(9425);
-      quest::movegrp(209, -350, -2200, 1955);
-    }
-  } elsif($doorid == 67) { # tower
-    if($client->KeyRingCheck(9425) || ($status > 79)) {
-      quest::movegrp(209, 150, -1220, 1120);
-    } elsif(plugin::check_hasitem($client, 9425)) {
-      $client->KeyRingAdd(9425);
-      quest::movegrp(209, 150, -1220, 1120);
+    else { #Send gargoyles to attack
+      my @npc_list = $entity_list->GetNPCList();
+      foreach $npc (@npc_list) {
+        if($npc->GetNPCTypeID() == 209024) {
+          $npc->AddToHateList($client, 1);
+        }
+      }
     }
   }
-  $qglobals{agnarrkey}=undef;
+  if($doorid == 61) { #SE tower
+    if($status > 79) { #GM status
+      $client->MovePC(209, 85, 145, 635, 128);
+    }
+    elsif($client->KeyRingCheck(9425) || plugin::check_hasitem($client, 9425)) { #Ring of Torden
+      if(!$client->KeyRingCheck(9425)) {
+        $client->KeyRingAdd(9425);
+      }
+      if($raid) {
+        my $raid_group = $raid->GetGroup($name);
+        if($raid_group >= 0) {
+          for ($count = 0; $count < $raid->RaidCount(); $count++) {
+            my $pc = $raid->GetMember($count);
+            if($raid->GetGroup($pc->GetName()) == $raid_group) {
+              if($pc->CalculateDistance($x, $y, $z) <= 50) {
+                $pc->MovePC(209, 85, 145, 635, 128);
+              }
+            }
+          }
+        }
+        else { #Move player
+          $client->MovePC(209, 85, 145, 635, 128);
+        }
+      }
+      elsif($group) { #Move group
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          my $pc = $group->GetMember($count);
+          if($pc->CalculateDistance($x, $y, $z) <= 50) {
+            $pc->MovePC(209, 85, 145, 635, 128);
+          }
+        }
+      }
+      else { #Move player
+        $client->MovePC(209, 85, 145, 635, 128);
+      }
+    }
+    else { #Send gargoyles to attack
+      my @npc_list = $entity_list->GetNPCList();
+      foreach $npc (@npc_list) {
+        if($npc->GetNPCTypeID() == 209110) {
+          $npc->AddToHateList($client, 1);
+        }
+      }
+    }
+  }
+  if($doorid == 63) { #SW tower
+    if($status > 79) { #GM status
+      $client->MovePC(209, -830, -865, 1375, 128);
+    }
+    elsif($client->KeyRingCheck(9425) || plugin::check_hasitem($client, 9425)) { #Ring of Torden
+      if(!$client->KeyRingCheck(9425)) {
+        $client->KeyRingAdd(9425);
+      }
+      if($raid) {
+        my $raid_group = $raid->GetGroup($name);
+        if($raid_group >= 0) {
+          for ($count = 0; $count < $raid->RaidCount(); $count++) {
+            my $pc = $raid->GetMember($count);
+            if($raid->GetGroup($pc->GetName()) == $raid_group) {
+              if($pc->CalculateDistance($x, $y, $z) <= 50) {
+                $pc->MovePC(209, -830, -865, 1375, 128);
+              }
+            }
+          }
+        }
+        else { #Move player
+          $client->MovePC(209, -830, -865, 1375, 128);
+        }
+      }
+      if($group) { #Move group
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          my $pc = $group->GetMember($count);
+          if($pc->CalculateDistance($x, $y, $z) <= 50) {
+            $pc->MovePC(209, -830, -865, 1375, 128);
+          }
+        }
+      }
+      else { #Move player
+        $client->MovePC(209, -830, -865, 1375, 128);
+      }
+    }
+    else { #Send gargoyles to attack
+      my @npc_list = $entity_list->GetNPCList();
+      foreach $npc (@npc_list) {
+        if($npc->GetNPCTypeID() == 209111) {
+          $npc->AddToHateList($client, 1);
+        }
+      }
+    }
+  }
+  if($doorid == 65) { #NW tower
+    if($status > 79) { #GM status
+      $client->MovePC(209, -350, -2200, 1955, 255);
+    }
+    elsif($client->KeyRingCheck(9425) || plugin::check_hasitem($client, 9425)) { #Ring of Torden
+      if(!$client->KeyRingCheck(9425)) {
+        $client->KeyRingAdd(9425);
+      }
+      if($raid) {
+        my $raid_group = $raid->GetGroup($name);
+        if($raid_group >= 0) {
+          for ($count = 0; $count < $raid->RaidCount(); $count++) {
+            my $pc = $raid->GetMember($count);
+            if($raid->GetGroup($pc->GetName()) == $raid_group) {
+              if($pc->CalculateDistance($x, $y, $z) <= 50) {
+                $pc->MovePC(209, -350, -2200, 1955, 255);
+              }
+            }
+          }
+        }
+        else { #Move player
+          $client->MovePC(209, -350, -2200, 1955, 255);
+        }
+      }
+      if($group) { #Move group
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          my $pc = $group->GetMember($count);
+          if($pc->CalculateDistance($x, $y, $z) <= 50) {
+            $pc->MovePC(209, -350, -2200, 1955, 255);
+          }
+        }
+      }
+      else { #Move player
+        $client->MovePC(209, -350, -2200, 1955, 255);
+      }
+    }
+    else { #Send gargoyles to attack
+      my @npc_list = $entity_list->GetNPCList();
+      foreach $npc (@npc_list) {
+        if($npc->GetNPCTypeID() == 209112) {
+          $npc->AddToHateList($client, 1);
+        }
+      }
+    }
+  }
+  if($doorid == 67) { #NE tower
+    if($status > 79) { #GM status
+      $client->MovePC(209, 150, -1220, 1120, 128);
+    }
+    elsif($client->KeyRingCheck(9425) || plugin::check_hasitem($client, 9425)) { #Ring of Torden
+      if(!$client->KeyRingCheck(9425)) {
+        $client->KeyRingAdd(9425);
+      }
+      if($raid) {
+        my $raid_group = $raid->GetGroup($name);
+        if($raid_group >= 0) {
+          for ($count = 0; $count < $raid->RaidCount(); $count++) {
+            my $pc = $raid->GetMember($count);
+            if($raid->GetGroup($pc->GetName()) == $raid_group) {
+              if($pc->CalculateDistance($x, $y, $z) <= 50) {
+                $pc->MovePC(209, 150, -1220, 1120, 128);
+              }
+            }
+          }
+        }
+        else { #Move player
+          $client->MovePC(209, 150, -1220, 1120, 128);
+        }
+      }
+      if($group) { #Move group
+        for ($count = 0; $count < $group->GroupCount(); $count++) {
+          my $pc = $group->GetMember($count);
+          if($pc->CalculateDistance($x, $y, $z) <= 50) {
+            $pc->MovePC(209, 150, -1220, 1120, 128);
+          }
+        }
+      }
+      else { #Move player
+        $client->MovePC(209, 150, -1220, 1120, 128);
+      }
+    }
+    else { #Send gargoyles to attack
+      my @npc_list = $entity_list->GetNPCList();
+      foreach $npc (@npc_list) {
+        if($npc->GetNPCTypeID() == 209113) {
+          $npc->AddToHateList($client, 1);
+        }
+      }
+    }
+  }
 }

@@ -17,6 +17,7 @@ sub EVENT_ITEM {
   if ($ear>=1) {
     for ($i=0; $i<$ear; $i++) {
 	quest::say("Well done! We could really use the extra help around here.");
+        quest::exp(100);
 	quest::givecash("3","3","4","0");
 	quest::faction(31,4); # Carson McCabe
 	quest::faction(53,4); # Corrupt Qeynos Guards

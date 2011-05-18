@@ -16,11 +16,14 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (($itemcount{19962} == 1) && ($itemcount{19963} == 1) && ($itemcount{19964} == 1)) {
+  if (plugin::check_handin(\%itemcount, 19962 => 1, 19963 => 1, 19964 => 1)) {
     quest::say("For ages this medallion has been scattered across these inhospitable lands, I had just about given up hope of locating the pieces and rebuilding this piece of Iksar history. You may keep it. It is enough to know that I have done my part to restore such an artifact to the people of Norrath.");
     quest::summonitem(19955);
     quest::exp(1000);
   }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
 # Quest by mystic414

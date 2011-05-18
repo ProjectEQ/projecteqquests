@@ -15,7 +15,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 58153 => 1)) { #Taelosian Tea Leaves
+  if (plugin::check_handin(\%itemcount, 58152 => 1)) { #Taelosian Tea
     if (quest::istaskactivityactive(168,0)) { #Brewing Collect Step 1
       quest::say("Let's get you started. Brew us up some Traveler's Tea. Just drop a Small Bundle of Taelosian Tea and a Pinch of Sugar into a brew barrel and combine. The tea it makes is very tasty and very popular with the Wayfarers. Bring the Traveler's Tea to me as soon as you have it.");
       quest::summonitem(58065,10); #Pinch of Sugar
@@ -39,7 +39,7 @@ sub EVENT_ITEM {
     }
     else {
       quest::say("I do not need this.");
-      quest::summonitem(58153); #Taelosian Tea Leaves
+      quest::summonitem(58152); #Taelosian Tea
     }
   }
   elsif (plugin::check_handin(\%itemcount, 58148 => 1)) { #Taelosian Mountain Tea Leaves

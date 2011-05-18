@@ -6,10 +6,9 @@
 #so that quest must be completed 3 times in order to do all the Beginner's Manual 
 #Quests.  This is intended behaviour.
 
-
 sub EVENT_SAY {
-  if($text=~/Hail/i) {
-    quest::say("Hello. $name.  If you are looking for something in particular. I might be able to help you.  I spent many years teaching combat techniques to the finest warriors in Grobb.  I came to New Tanaan to further develop my teaching skills; it seems we all have our own lessons to learn.  I can teach you a few things if you are looking to be taught.  I will teach you the basics of planar combat if you are [willing to learn].");
+  if($text=~/hail/i) {
+    quest::say("Hello, $name. If you are looking for something in particular, I might be able to help you. I spent many years teaching combat techniques to the finest warriors in Grobb. I came to New Tanaan to further develop my teaching skills; it seems we all have our own lessons to learn. I can teach you a few things if you are looking to be taught. I will teach you the basics of planar combat if you are [willing to learn].");
   }
   if($text=~/willing to learn/i) {
     quest::say("This is good. One of the most important aspects to your battle readiness is your strong willpower and bravery. Years ago I discovered a particular concoction that will very readily put your willpower to the test. Unfortunately I ran out not too long ago and I am in need of some more [Planar Blood Brew]. If you can make some more for my students, it would certainly look favorably upon you in your future teachings. Bring me some along with your Planar Traveler's Manual.");
@@ -19,15 +18,14 @@ sub EVENT_SAY {
   }
 }
   
-  
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 28787 => 1, 28745 => 1)) {#Planar Blood Brew, Planar Traveler's Manual
-    quest::say("How tasty!! You have done well here, I can't remember how long it's been since I've tasted a brew so fine. Take this book, it will certainly help you in combat. When you are ready, Gwiraba Gelrid will give you your next lesson, so be sure to speak to him. Do not lose your book or else he may not appreciate you coming to class unprepared.");#Adapting text from beginner magic manual, can't find this guys turn in text
+  if(plugin::check_handin(\%itemcount, 28787 => 1, 28745 => 1)) { #Planar Blood Brew, Planar Traveler's Manual
+    quest::say("Wow, this is great! Wow! This is may be the best Planar Blood Brew I have ever tasted! You have passed the first test with flying colors. Here, you take this book and learn well from it. When you are ready for your next lesson, speak to Xasri Virek.");
     quest::summonitem(28788); #Beginner Combat Manual
   }
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
+  else {
+    quest::say("I don't need this."); #text made up
+     plugin::return_items(\%itemcount);
   }
-    
-#END of FILE Zone:poknowledge  ID:202044 -- Zauvudd_Gigoth 
-
+}
+#END of FILE Zone:poknowledge  ID:202044 -- Zauvudd_Gigoth

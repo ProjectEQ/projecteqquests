@@ -1,7 +1,3 @@
-sub EVENT_SPAWN {
-	$mob->SetHP(52500);
-}
-
 sub EVENT_DEATH {
 	#spawn Tylis
 	quest::spawn2(207014,0,0,-1,-7,468,128);

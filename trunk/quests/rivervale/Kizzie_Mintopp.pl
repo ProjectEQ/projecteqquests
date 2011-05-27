@@ -12,7 +12,13 @@ if($text=~/Hail/i){
  quest::say("Enough talk there. chatterbox.  You buy lots of herbs.  I gotta make a living. not more friends.");
 
 }
-if($text=~/what is honey jum recipe/i){
+if ($text=~/I am from the Temple of Life/i) {
+  quest::say("Oh, yes.. They always come for Kizzie's [honey jum]. They should have sent you next week. There is a [problem].");
+}
+if ($text=~/what problem/i) {
+  quest::say("You see.. Joogl Honeybugger is hurt. He usually collects the [Honeycombs]. Only he knows where to get them. I need the Honeycombs to make the Honey Jum. Go and speak with Joogl. He is at his burrow outside of Rivervale. He says he cannot work. Tell him you need the Honeycombs.");
+}
+if($text=~/honey jum/i){
  
  quest::say("It's a secret!!  I get the honeycombs and combine them with the secret sauce and..presto.. honey jum!!  It is used by only the wisest as a component.  And you can only get it from Kizzie.  It is also good on batwing crunchies.  If you like.. Kizzie can [make honey jum] for you?");
 

@@ -54,7 +54,7 @@ sub EVENT_ITEM {
     }
     else {
       quest::say("The Temple of Life smiles upon you, friend.. but such a delicate matter can only be entrusted to our most loyal members.");
-      quest::summonitem(13949); #Diseased Wolf Pelt
+      quest::summonitem(13298); #Putrid Bear Hide
     }
   }
    elsif(plugin::check_handin(\%itemcount, 13950 => 1)) { #Fleshy Orb

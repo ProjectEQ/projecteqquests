@@ -9,6 +9,11 @@ sub EVENT_SAY {
 	if($text=~/Guard Weleth/i)   {
 		quest::say("Guard Weleth is like a son to me. He is responsible for purchasing supplies for the Qeynos Guard. He buys arrows from me. He is usually stationed near the North Gate.");
 	}
+if ($text=~/tax collection/i) {
+  quest::say("Tax time again already?? It seems like I just paid yesterday.. High taxes and low sales mean I won't be able to stay in business much longer. Good thing ol' Weleth is taking care of me. Here are my taxes.");
+  quest::faction( 217, -10);
+  quest::summonitem(13173);
+}
 }
 
 sub EVENT_ITEM {

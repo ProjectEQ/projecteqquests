@@ -17,7 +17,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_TIMER {
-  if($x < 480) {
+  if($x < 460 || $x > 690 || $y < -760 || $y > -440) {
     $npc->GMMove(681,-634,-50,192);
   }
 }

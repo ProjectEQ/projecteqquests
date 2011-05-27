@@ -10,11 +10,20 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($platinum==1000) { 
+  my $cash = 0;
+  $cash = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper;
+  if ($cash == 1000000) { #1000 Platinum
     quest::say("Okay, enjoy me drink!");
-    quest::summonitem(14365);
+    quest::faction(69,5); #Dark Bargainers
+    quest::faction(88,5); #Dreadguard Outer
+    quest::faction(87,5); #Dreadguard Inner
+    quest::summonitem(14365); #Cough Elixir
+  }
+  else {
+    quest::say("This not how much me ask for..."); #Test made up
+    plugin::return_items(\%itemcount);
+    quest::givecash($copper, $silver, $gold, $platinum);
   }
 }
 
 # Quest by mystic414
-

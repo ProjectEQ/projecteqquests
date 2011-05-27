@@ -51,7 +51,7 @@ sub EVENT_ITEM {
     my $garuc_reward = quest::ChooseRandom(2104, 2106, 2108, 2111, 2112, 13301);#Updated to issue random patchwork armor, or a rat-shaped ring
     my $garuc_randomSP = int(rand(20));
     my $garuc_randomCP = int(rand(20));
-    quest::say("Excellent work. You have done us a favour as well; meddlesome Ironprides. Take this reward."); #Text improvised
+    quest::say("Hahaha.. I see you actually killed a respected, well-known citizen of Qeynos. No loss for them, but you are certainly a gain for our shrine. Maybe this shall do you some good. If not now, then surely later. You may need it when the Qeynos Guards hunt you down."); 
     quest::summonitem($garuc_reward);
     quest::givecash($garuc_randomCP,$garuc_randomSP,0,0);# Random from 20cp20sp
     quest::faction(135,-5); #Guards of Qeynos

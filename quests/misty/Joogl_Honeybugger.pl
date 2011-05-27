@@ -6,6 +6,12 @@ sub EVENT_SAY {
     #Bandages for Honeybugger (START)
     quest::say("I was attacked by the bixies. They swarmed on me!! I think I got too near their queen. I need that honey to make a living! Get me a bandage and I will tell you where all their worker bee's buzz around.");
   }
+  if ($text=~/I need the honeycomb/i) {
+    quest::say("If you're looking for the honeycombs, I don't have any right now. I have been unable to get any since I was attacked by the little [buggers]. I will tell you where to get some if you will only get me a bandage for my bites.");
+  }
+  if ($text=~/what buggers/i) {
+    quest::say("I was attacked by the bixies. They swarmed on me!! I think I got too near their queen. I need that honey to make a living! Get me a bandage and I will tell you where all their worker bees buzz around.");
+  }
 }
 
 sub EVENT_ITEM {

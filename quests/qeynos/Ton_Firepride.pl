@@ -22,6 +22,11 @@ sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("Greetings, adventurer!  A mighty warrior such as yourself deserves only the finest in armor and we here at Firepride's were trained by the finest dwarven smiths.  We shall be branching out and crafting [other items] soon, also.");
   }
+  if ($text=~/tax collection/i) {
+    quest::say("Oh I see, Vicus has got some other sap to do his work. Fine. Here are your stinking taxes. If Kane were in charge, things would be different around here.");
+    quest::faction( 53, -10);
+    quest::summonitem(13170);
+  }
   if($text=~/other items/i){
     quest::say("Ah, such interest! We have yet to finalise our inventory before we branch out - check back with us later."); #Improvised text
   }

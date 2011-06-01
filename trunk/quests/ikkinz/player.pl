@@ -31,6 +31,17 @@ sub EVENT_CLICKDOOR {
        quest::forcedooropen(509);
 	}
      }
+  if($d_id == 19) {
+    if((defined $qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
+       quest::forcedooropen(531);
+	}
+     }
+  if($d_id == 20) {
+    if((defined $qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
+       quest::forcedooropen(532);
+	}
+     }
+     
    }
 sub EVENT_COMBINE_SUCCESS {
  if (($recipe_id == 10904) || ($recipe_id == 10905) || ($recipe_id == 10906) || ($recipe_id == 10907)) {

@@ -20,7 +20,7 @@ sub EVENT_TIMER {
     quest::spawn2(292072,0,0,-827,110,59,135);
     quest::depopall(292071);
     quest::modifynpcstat("special_attacks",ABfHG);
-    $npc->WipeHateList() 
+    $npc->WipeHateList(); 
   }
 }
 

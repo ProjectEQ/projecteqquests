@@ -14,6 +14,9 @@ sub EVENT_DEATH {
   if($check_cyno == 0) {
       }
   elsif($check_named == 0) {
-    quest::spawn2(295146,0,0,$x,$y,$z,$h);
+    quest::spanw2(295145,0,0,-216,-191,-467,192);
+    quest::spanw2(295146,0,0,-316,-181,-464,64);
+    quest::spanw2(295147,0,0,-243,-250,-439,248);
+    quest::spanw2(295148,0,0,-357,-275,-435,25);
   }
 }

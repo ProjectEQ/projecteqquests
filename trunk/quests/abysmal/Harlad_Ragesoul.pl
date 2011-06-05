@@ -33,28 +33,33 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54128); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
-    quest::summonitem(54126); # reworked cap
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54129); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
-    quest::summonitem(54131); # reworked leggings
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
-    quest::summonitem(54132); # reworked tunic
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
-    quest::summonitem(54130); # reworked sandals
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
-    quest::summonitem(54127); # reworked vambraces
-  }
-  else {     
+  if ($class eq "Berserker") {
+    if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+      quest::summonitem(54128); # reworked Bracer
+    }
+    elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
+      quest::summonitem(54126); # reworked cap
+    }
+    elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+      quest::summonitem(54129); # reworked gloves
+    }
+    elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
+      quest::summonitem(54131); # reworked leggings
+    }
+    elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
+      quest::summonitem(54132); # reworked tunic
+    }
+    elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
+      quest::summonitem(54130); # reworked sandals
+    }
+    elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
+      quest::summonitem(54127); # reworked vambraces
+    }
+    else {     
+      quest::say("I have no use for this.");   
+      plugin::return_items(\%itemcount);
+    }
+  } else {
     quest::say("I have no use for this.");   
     plugin::return_items(\%itemcount);
   }

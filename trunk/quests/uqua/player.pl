@@ -2,7 +2,7 @@ my $counter = 0;
 
 sub EVENT_ENTERZONE {
   if (!defined($qglobals{destoff})) {
-    quest::settimer(1,60);
+    quest::settimer(1,90);
     AURA();
   }
 }

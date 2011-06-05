@@ -32,28 +32,33 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54170); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
-    quest::summonitem(54168); # reworked cap
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54171); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
-    quest::summonitem(54173); # reworked leggings
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
-    quest::summonitem(54174); # reworked tunic
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
-    quest::summonitem(54172); # reworked sandals
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
-    quest::summonitem(54169); # reworked vambraces
-  }
-  else{     
+  if ($class eq "Ranger") {
+    if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+      quest::summonitem(54170); # reworked Bracer
+    }
+    elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
+      quest::summonitem(54168); # reworked cap
+    }
+    elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+      quest::summonitem(54171); # reworked gloves
+    }
+    elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
+      quest::summonitem(54173); # reworked leggings
+    }
+    elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
+      quest::summonitem(54174); # reworked tunic
+    }
+    elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
+      quest::summonitem(54172); # reworked sandals
+    }
+    elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
+      quest::summonitem(54169); # reworked vambraces
+    }
+    else{     
+      quest::say("I have no use for this.");   
+      plugin::return_items(\%itemcount);
+    }
+  } else {
     quest::say("I have no use for this.");   
     plugin::return_items(\%itemcount);
   }

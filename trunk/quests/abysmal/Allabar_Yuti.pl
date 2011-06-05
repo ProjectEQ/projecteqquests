@@ -6,7 +6,7 @@ sub EVENT_SAY {
     quest::say("Oh, I am sorry. I do not mean to be rude. It is just that I miss the mainland. Being so far away from home is making me homesick. I hate to ask this, but think you could [help] me with something?");
   }
   if ($text=~/help/i) {
-    quest::say("When I used to adventure, I acquired quit a habit of eating storm giant steaks. I dearly miss them. Think you could return four storm giant meats to me? I will happily give you some sort of reward if you can do so.");
+    quest::say("When I used to adventure, I acquired quite a habit of eating storm giant steaks. I dearly miss them. Think you could return four storm giant meats to me? I will happily give you some sort of reward if you can do so.");
   }
 }
 sub EVENT_ITEM {

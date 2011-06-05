@@ -3,10 +3,10 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Hail there! Welcome aboard! There is never enough time to care for all the ill in such a place. You wouldn't happen to be a cleric as well would you?");
+    quest::say("Hail there! Welcome aboard! There is never enough time to care for all the ill in such a place. You wouldn't happen to be a [cleric] as well would you?");
   }
   if ($text=~/cleric/i) {
-    quest::say("Mayhaps we can help each other out. You keep going about being a good helpful cleric, so I have fewer sick folk to tend to, and I will help you out in the equipment department. If you are in need of new equipment such as helm, legplates, chestplate, bracer, vambraces, gloves, or pair of boots let me know.");
+    quest::say("Mayhaps we can help each other out. You keep going about being a good helpful cleric, so I have fewer sick folk to tend to, and I will help you out in the equipment department. If you are in need of new equipment such as [helm], [legplates], [chestplate], [bracer], [vambraces], [gloves], or pair of [boots] let me know.");
   }
   if ($text=~/bracer/i) {
     quest::say("A bracer is rather simple to reshape. If you speak to Nalasrine about her findings, she may be able to help you infuse some Muramite metal to strengthen it. One sheet of infused Muramite metal along with a Muramite Bracer Armor should be sufficient for me to rework it for you.");
@@ -32,28 +32,33 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54114); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
-    quest::summonitem(54112); # reworked cap
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54115); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
-    quest::summonitem(54117); # reworked leggings
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
-    quest::summonitem(54118); # reworked tunic
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
-    quest::summonitem(54116); # reworked sandals
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
-    quest::summonitem(54113); # reworked vambraces
-  }
-  else {     
+  if ($class eq "Cleric") {
+    if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+      quest::summonitem(54114); # reworked Bracer
+    }
+    elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
+      quest::summonitem(54112); # reworked cap
+    }
+    elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+      quest::summonitem(54115); # reworked gloves
+    }
+    elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
+      quest::summonitem(54117); # reworked leggings
+    }
+    elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
+      quest::summonitem(54118); # reworked tunic
+    }
+    elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
+      quest::summonitem(54116); # reworked sandals
+    }
+    elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
+      quest::summonitem(54113); # reworked vambraces
+    }
+    else {     
+      quest::say("I have no use for this.");   
+      plugin::return_items(\%itemcount);
+    }
+  } else {
     quest::say("I have no use for this.");   
     plugin::return_items(\%itemcount);
   }

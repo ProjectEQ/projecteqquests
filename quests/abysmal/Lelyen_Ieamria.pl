@@ -32,28 +32,33 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54156); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # Circlet
-    quest::summonitem(54154); # reworked circlet
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54157); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # Plataloons
-    quest::summonitem(54159); # reworked plataloons
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # Robe
-    quest::summonitem(54160); # reworked robe
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
-    quest::summonitem(54158); # reworked sandals
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
-    quest::summonitem(54155); # reworked sleeves
-  }
-  else{     
+  if ($class eq "Enchanter") {
+    if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+      quest::summonitem(54156); # reworked Bracer
+    }
+    elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # Circlet
+      quest::summonitem(54154); # reworked circlet
+    }
+    elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+      quest::summonitem(54157); # reworked gloves
+    }
+    elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # Plataloons
+      quest::summonitem(54159); # reworked plataloons
+    }
+    elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # Robe
+      quest::summonitem(54160); # reworked robe
+    }
+    elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
+      quest::summonitem(54158); # reworked sandals
+    }
+    elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
+      quest::summonitem(54155); # reworked sleeves
+    }
+    else{     
+      quest::say("I have no use for this.");   
+      plugin::return_items(\%itemcount);
+    }
+  } else {
     quest::say("I have no use for this.");   
     plugin::return_items(\%itemcount);
   }

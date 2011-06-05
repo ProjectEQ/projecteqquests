@@ -32,29 +32,34 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54205); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
-    quest::summonitem(54203); # reworked cap
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54206); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
-    quest::summonitem(54208); # reworked leggings
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
-    quest::summonitem(54209); # reworked tunic
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
-    quest::summonitem(54207); # reworked sandals
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
-    quest::summonitem(54204); # reworked sleeves
-  }
-  else {
-    quest::say("I have no use for this.");
+  if ($class eq "Monk") {
+    if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+      quest::summonitem(54205); # reworked Bracer
+    }
+    elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # cap
+      quest::summonitem(54203); # reworked cap
+    }
+    elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+      quest::summonitem(54206); # reworked gloves
+    }
+    elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # leggings
+      quest::summonitem(54208); # reworked leggings
+    }
+    elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # tunic
+      quest::summonitem(54209); # reworked tunic
+    }
+    elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
+      quest::summonitem(54207); # reworked sandals
+    }
+    elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
+      quest::summonitem(54204); # reworked sleeves
+    }
+    else {
+      quest::say("I have no use for this.");
+      plugin::return_items(\%itemcount);
+    }
+  } else {
+    quest::say("I have no use for this.");   
     plugin::return_items(\%itemcount);
   }
 }

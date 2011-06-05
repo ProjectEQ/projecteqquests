@@ -32,29 +32,34 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54191); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # Circlet
-    quest::summonitem(54189); # reworked circlet
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54192); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # Pantaloons
-    quest::summonitem(54194); # reworked pantaloons
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # Robe
-    quest::summonitem(54195); # reworked robe
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
-    quest::summonitem(54193); # reworked sandals
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
-    quest::summonitem(54190); # reworked sleeves
-  }
-  else {
-    quest::say("I have no use for this.");
+  if ($class eq "Wizard") {
+    if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+      quest::summonitem(54191); # reworked Bracer
+    }
+    elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # Circlet
+      quest::summonitem(54189); # reworked circlet
+    }
+    elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+      quest::summonitem(54192); # reworked gloves
+    }
+    elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # Pantaloons
+      quest::summonitem(54194); # reworked pantaloons
+    }
+    elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # Robe
+      quest::summonitem(54195); # reworked robe
+    }
+    elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # Sandals
+      quest::summonitem(54193); # reworked sandals
+    }
+    elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
+      quest::summonitem(54190); # reworked sleeves
+    }
+    else {
+      quest::say("I have no use for this.");
+      plugin::return_items(\%itemcount);
+    }
+  } else {
+    quest::say("I have no use for this.");   
     plugin::return_items(\%itemcount);
   }
 }

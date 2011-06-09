@@ -1,10 +1,14 @@
-sub EVENT_ENTERZONE 
-{
+sub EVENT_ENTERZONE {
 	quest::settimer("spires",30);
+if (defined $qglobals{whimsy}) {
+quest::delglobal("whimsy");
+}
+if($hasitem{69059}) { 
+  quest::settimer(1,72);
+  }
 }
 
-sub EVENT_TIMER 
-{
+sub EVENT_TIMER {
 	if ($timer eq "spires" && defined $qglobals{antonica_port} && defined $qglobals{nexus_ant}) {
 		quest::selfcast("2708"); #antonica
 		quest::setglobal("nexus_ant",0,1,"S60");
@@ -43,6 +47,40 @@ sub EVENT_TIMER
 		$qglobals{velious_port} = undef;
 		$qglobals{odus_port} = undef;
 	}
+if ($timer == 1) {
+$whimsy_count++;
+}
+if($whimsy_count == 1) {
+ quest::setglobal("whimsy",1,5,"F");
+ }
+if($whimsy_count == 2) {
+ quest::setglobal("whimsy",2,5,"F");
+ }
+if($whimsy_count == 3) {
+ quest::setglobal("whimsy",3,5,"F");
+ }
+if($whimsy_count == 4) {
+ quest::setglobal("whimsy",4,5,"F");
+ }
+if($whimsy_count == 5) {
+ quest::setglobal("whimsy",5,5,"F");
+ }
+if($whimsy_count == 6) {
+ quest::setglobal("whimsy",6,5,"F");
+ }
+if($whimsy_count == 7) {
+ quest::setglobal("whimsy",7,5,"F");
+ }
+if($whimsy_count == 8) {
+ quest::setglobal("whimsy",8,5,"F");
+ }
+if($whimsy_count == 9) {
+ quest::setglobal("whimsy",9,5,"F");
+ }
+if($whimsy_count == 10) {
+ quest::setglobal("whimsy",10,5,"F");
+ quest::stoptimer(1);
+ }
 $qglobals{nexus_ant} = undef;
 $qglobals{antonica_port} = undef;
 $qglobals{nexus_fay} = undef;

@@ -1,37 +1,35 @@
 # Guild Hall Regen Pool Script - Player Portion
+sub EVENT_ENTERZONE {
+if (defined $qglobals{whimsy}) {
+quest::delglobal("whimsy");
+}
+if($hasitem{69059}) { 
+  quest::settimer(1,72);
+  }
+}
 
 sub EVENT_SIGNAL {
-
    if ($signal == 1)
    {
       quest::settimer("DoRegen", 6);
    }
-   
    if ($signal == 2)
    {
       quest::stoptimer("DoRegen");
    }
-   
 }
 
 sub EVENT_ZONE {
-
    #Stop the timer if they zone
    quest::stoptimer("DoRegen");
-
 }
 
-
-
 sub EVENT_TIMER {
-
    if ($timer eq "DoRegen")
    {
-      quest::stoptimer("DoRegen");
-      
+     quest::stoptimer("DoRegen");
       # Set Regen Percent per tic here
       my $RegenPercent = 10;
-      
       if ($client) {
          my $HPRatio = $client->GetHPRatio();
          if ($HPRatio < 100) {
@@ -54,7 +52,40 @@ sub EVENT_TIMER {
          quest::settimer("DoRegen", 6);
       }
    }
-
+if ($timer == 1) {
+  $whimsy_count++;
+  }
+if($whimsy_count == 1) {
+ quest::setglobal("whimsy",1,5,"F");
+ }
+if($whimsy_count == 2) {
+ quest::setglobal("whimsy",2,5,"F");
+ }
+if($whimsy_count == 3) {
+ quest::setglobal("whimsy",3,5,"F");
+ }
+if($whimsy_count == 4) {
+ quest::setglobal("whimsy",4,5,"F");
+ }
+if($whimsy_count == 5) {
+ quest::setglobal("whimsy",5,5,"F");
+ }
+if($whimsy_count == 6) {
+ quest::setglobal("whimsy",6,5,"F");
+ }
+if($whimsy_count == 7) {
+ quest::setglobal("whimsy",7,5,"F");
+ }
+if($whimsy_count == 8) {
+ quest::setglobal("whimsy",8,5,"F");
+ }
+if($whimsy_count == 9) {
+ quest::setglobal("whimsy",9,5,"F");
+ }
+if($whimsy_count == 10) {
+ quest::setglobal("whimsy",10,5,"F");
+ quest::stoptimer(1);
+ }
 }
 
 sub EVENT_POPUPRESPONSE {

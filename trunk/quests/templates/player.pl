@@ -2,7 +2,48 @@ sub EVENT_ENTERZONE {
   if(!defined($qglobals{Wayfarer}) && $ulevel >= 15) {
     $client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
   }
+  if (defined $qglobals{whimsy}) {
+quest::delglobal("whimsy");
+  }
+if (plugin::check_hasitem($client, 69059)) {
+  quest::settimer(1,72);
+  }
 }
+sub EVENT_TIMER  {
+$whimsy_count++;
+if($whimsy_count == 1) {
+ quest::setglobal("whimsy",1,5,"F");
+ }
+if($whimsy_count == 2) {
+ quest::setglobal("whimsy",2,5,"F");
+ }
+if($whimsy_count == 3) {
+ quest::setglobal("whimsy",3,5,"F");
+ }
+if($whimsy_count == 4) {
+ quest::setglobal("whimsy",4,5,"F");
+ }
+if($whimsy_count == 5) {
+ quest::setglobal("whimsy",5,5,"F");
+ }
+if($whimsy_count == 6) {
+ quest::setglobal("whimsy",6,5,"F");
+ }
+if($whimsy_count == 7) {
+ quest::setglobal("whimsy",7,5,"F");
+ }
+if($whimsy_count == 8) {
+ quest::setglobal("whimsy",8,5,"F");
+ }
+if($whimsy_count == 9) {
+ quest::setglobal("whimsy",9,5,"F");
+ }
+if($whimsy_count == 10) {
+ quest::setglobal("whimsy",10,5,"F");
+ quest::stoptimer(1);
+ }
+}
+
 sub EVENT_COMBINE_SUCCESS {
  if (($recipe_id == 10904) || ($recipe_id == 10905) || ($recipe_id == 10906) || ($recipe_id == 10907)) {
    $client->Message("The gem resonates with power as the shards placed within glow unlocking some of the stone's power. You were successful in assembling most of the stone but there are four slots left to fill, where could those four pieces be?");
@@ -64,6 +105,4 @@ sub EVENT_COMBINE_SUCCESS {
         }
     $client->Message(1,"Success");
     }
-    
-    
 }

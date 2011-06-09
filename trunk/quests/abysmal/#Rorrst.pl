@@ -9,9 +9,12 @@ sub EVENT_SAY {
     quest::say("Money talks? Aye, it does. Keep in mind I still can't give you the original, it means far too much to me. If you're dying to have the key you can make a copy. Say twenty-five thousand gold. It's a nice round number. That should be relatively trivial for someone of your background to obtain.");
   }
 }
+
 sub EVENT_ITEM {
   if($gold >= 25000) {
-  quest::summonitem(52181);
-}
-plugin::return_items(\%itemcount);
+    quest::summonitem(52181);
+  }
+  else {
+    plugin::return_items(\%itemcount);
+  }
 }

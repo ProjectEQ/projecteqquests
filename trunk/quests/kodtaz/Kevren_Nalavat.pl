@@ -86,7 +86,7 @@ if (($text=~/tri-fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) 
 elsif ($text=~/tri-fates/i) {
   quest::say("I'm sorry $name, but you're not ready to learn about the third trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
-if (($text=~/other tasks/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
+if (($text=~/other tasks/i) && (defined $qglobals{ikky} && $qglobals{ikky} => 4)) {
   quest::say("If you continue on past the temples you will come to an area called [Martyr's Passage].  Within this area you need to find four different relic's of those who have died there, bring them to me.");
   }
 if (($text=~/martyr's passage/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
@@ -230,12 +230,13 @@ if ($text=~/progress/i) {
       }
    }
 }
+
 sub EVENT_ITEM {
   if ((plugin::check_handin(\%itemcount, 60141 =>1,60142 =>1,60143 =>1,60144 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
          $client->Message(4,"Finished! - You've returned four relics from the Martyrs Passage!");
          quest::setglobal("ikky",5,5,"F");
   }
-  if ((plugin::check_handin(\%itemcount, 60146 =>1,60147 =>1,60148 =>1,60149 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
+  elsif ((plugin::check_handin(\%itemcount, 60146 =>1,60147 =>1,60148 =>1,60149 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 5)) {
        quest::emote("examines the strange glyphs.");
        quest::say("These glyphs are faded. I won't be able to decipher them until they've been cleaned up. You'll need to go back to the Martyrs Passage and recover some dust from the grounds nearby. Once you've gotten a pile of dust, you'll need to speak with Tublik Narwethar who is south of the Martyrs Passage. He has a stone tablet that can add some clarity to the glyphs with the help of that dust. Hurry along, $name, this information is important!");
            $client->Message(4,"Finished! - You've recovered important glyphs from the Temple of the Damned!");
@@ -246,21 +247,23 @@ sub EVENT_ITEM {
            quest::setglobal("ikky",6,5,"F");
                      
   }
- if ((plugin::check_handin(\%itemcount, 60150 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) {
+  elsif ((plugin::check_handin(\%itemcount, 60150 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 6)) {
       quest::emote("copies down the intricate patterns from the glyph.");
       quest::say("Very interesting, but very dangerous. I've gone over the glyphs and they suggest there is great danger in the summoning of some kind of ferocious beast. I need to study the markings further, but since I've transcribed them already, you can keep the glyph for your own use. Nicely done, $name.");
       quest::summonitem(60150);
       quest::setglobal("ikky",7,5,"F");
       $client->Message(4,"Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
-}
- if ((plugin::check_handin(\%itemcount, 60151 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 7)) {
+  }
+  elsif ((plugin::check_handin(\%itemcount, 60151 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} => 7)) {
     quest::say("You have done well, $name.  Speak with Tublik to continue helping us here in Kod'Taz.");
     quest::setglobal("ikkyalt",8,5,"F");
       $client->Message(4,"Finished! - You were able to recover a rare artifact from the Grand Summoner's goons in the Summoning Circle!");
-}
-if (plugin::check_handin(\%itemcount, 67702 =>1 )) {
+  }
+  elsif (plugin::check_handin(\%itemcount, 67702 =>1 )) {
     quest::say("Seems you have made quite an impression if you are trusted by L`diava. But don't think that this means you do not have to gain my trust. While you survived the three trials I am still in need of assistance, I some [other tasks] completed, when you have finished them please return to me and tell me you have done all I asked and I will give you what you came here for. If you do not wish to start these tasks right now we do have some time to talk a little [more].");
-}
- plugin::return_items(\%itemcount);
-
+  }
+  else {
+    quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }

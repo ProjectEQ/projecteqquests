@@ -3,6 +3,7 @@
 #accepts garlic buttered tuna
 sub EVENT_SPAWN {
   $counter=0;
+  quest::settimer(1,1800);
 }
 
 sub EVENT_SAY {
@@ -10,6 +11,10 @@ sub EVENT_SAY {
     quest::say("I'm famished, I require tuna.");
   }
 }
+sub EVENT_TIMER {
+  quest::emote("collapses from hunger.");
+  quest::depop();
+  } 
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58459 =>1 )) {
@@ -103,6 +108,11 @@ sub EVENT_ITEM {
     $counter += 1;
   }
   if (plugin::check_handin(\%itemcount, 58435 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+  }  
+  if (plugin::check_handin(\%itemcount, 58451 =>1 )) {
     quest::faction( 363,5 );
     quest::exp(100000);
     $counter += 1;

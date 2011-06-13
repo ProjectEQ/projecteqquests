@@ -14,7 +14,7 @@ sub EVENT_SAY {
   }
   if ($text=~/wish to travel/i) {
      if(defined($qglobals{god_kodtaz_access}) && defined($qglobals{god_vxed_access}) && defined($qglobals{god_tipt_access}) && defined($qglobals{god_qvic_access})) {
-         if(quest::has_zone_flag(295) == 1)   {
+         if(quest::has_zone_flag(295) == 1 && $qglobals{god_qvic_access} >= 2)   {
             quest::movepc(295,-124,-651,-422,0); #Madrona port in from live as of 05/31/2011
          }
       }

@@ -6,7 +6,7 @@ sub EVENT_ENTERZONE {
 quest::delglobal("whimsy");
   }
 if (plugin::check_hasitem($client, 69059)) {
-  quest::settimer(1,72);
+  quest::settimer(1,720);
   }
 }
 sub EVENT_TIMER  {

@@ -82,9 +82,19 @@ sub EVENT_CLICKDOOR {
   if (($doorid == 11) && (defined($qglobals{gaschmb2})) && !(defined($qglobals{gaschmb2complete}))) {
     quest::selfcast(5054);
   }
-  if ($doorid == 4) {
-    quest::setglobal("uqualockout", 1,3,"H84");
+  if ($doorid == 4) {  #need expedition lockout at this door click until possible 24 hour timer until instance request 
+  $raid = $entity_list->GetRaidByClient($client);
+      if ($raid) {
+        for ($count = 0; $count < $raid->RaidCount(); $count++) {
+          push (@player_list, $raid->GetMember($count)->GetName());
+        }
+}
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::targlobal("uqualockout", 1, "H24", 291113, $charid, 291);
   }
+}
   if ($doorid == 3) {
     if (defined($qglobals{uquaragedoor}) && ($qglobals{uquaragedoor} == 1)) {
       quest::forcedooropen(3);

@@ -1,7 +1,5 @@
 sub EVENT_SPAWN {
-  if (!defined($qglobals{gaschmb1complete})) {
-    quest::set_proximity($x-20,$x+20,$y-30,$y+20);
-  }
+  quest::set_proximity($x-20,$x+20,$y-30,$y+20);
 }
 
 sub EVENT_ENTER {
@@ -11,7 +9,10 @@ sub EVENT_ENTER {
 
 sub EVENT_TIMER {
   if(defined($qglobals{gaschmb1complete})) {
-  quest::depop();
+  $npc->Damage($npc,1000,732,24,0);  #death via damage instead of depop causes respawn timer to function
+  quest::delglobal("gaschmb1complete");
+  quest::spawn2(292010,0,0,-288,-940,-24,65);
+  quest::spawn2(292007,0,0,-264,-940,-24,193);
   }
   else {
   quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");

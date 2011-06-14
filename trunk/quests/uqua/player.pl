@@ -14,30 +14,36 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_CLICKDOOR {
+  $check_gasnpc1 = $entity_list->GetMobByNpcTypeID(292051);
+  $check_gasnpc2 = $entity_list->GetMobByNpcTypeID(292052);
   if ($doorid == 9) {
-    if (($oncursor{67707} && ($qglobals{gaschmb1} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb1} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb1} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb1} == 4)) || ($qglobals{gaschmb1complete} == 1)) {
-      quest::forcedooropen(9);
-      quest::setglobal("gaschmb1complete",1,3,"H6");
-      quest::depop(292051);
-    }
+      if($check_gasnpc1 == 0) {
+        quest::forcedooropen(9);
+        }
+      elsif (($oncursor{67707} && ($qglobals{gaschmb1} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb1} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb1} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb1} == 4)) || ($qglobals{gaschmb1complete} == 1)) {
+         quest::forcedooropen(9);
+         quest::setglobal("gaschmb1complete",1,3,"H6");
+         }
     else {
       quest::selfcast(5054);
     }
   }
-  if (($doorid == 8) && (defined($qglobals{gaschmb1})) && !(defined($qglobals{gaschmb1complete}))) {
+  if (($doorid == 8) && (defined($qglobals{gaschmb1})) && !($check_gasnpc1 == 0)) {
     quest::selfcast(5054);
   }
   if ($doorid == 12) {
-    if (($oncursor{67707} && ($qglobals{gaschmb2} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb2} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb2} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb2} == 4)) || ($qglobals{gaschmb1complete} == 1)) {
+      if($check_gasnpc2 == 0) {
+        quest::forcedooropen(12);
+        }
+    elsif (($oncursor{67707} && ($qglobals{gaschmb2} == 1)) || ($oncursor{67708} && ($qglobals{gaschmb2} == 2)) || ($oncursor{67709} && ($qglobals{gaschmb2} == 3)) || ($oncursor{67710} && ($qglobals{gaschmb2} == 4)) || ($qglobals{gaschmb1complete} == 1)) {
       quest::forcedooropen(12);
       quest::setglobal("gaschmb2complete",1,3,"H6");
-      quest::depop(292052);
     }
     else {
       quest::selfcast(5054);
     }
   }
-  if (($doorid == 11) && (defined($qglobals{gaschmb2})) && !(defined($qglobals{gaschmb2complete}))) {
+  if (($doorid == 11) && (defined($qglobals{gaschmb2})) && !($check_gasnpc1 == 0)) {
     quest::selfcast(5054);
   }
   if ($doorid == 4) {  #need expedition lockout at this door click until possible 24 hour timer until instance request 

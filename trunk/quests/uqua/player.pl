@@ -5,54 +5,12 @@ sub EVENT_ENTERZONE {
     quest::settimer(1,90);
     AURA();
   }
-if (defined $qglobals{whimsy}) {
-quest::delglobal("whimsy");
-}
-if($hasitem{69059}) { 
-  quest::settimer(2,72);
-  }
 }
 
 sub EVENT_TIMER {
-if ($timer == 1) {
   if (!defined($qglobals{destoff})) {
     AURA();
   }
-}
-if ($timer == 2) {
-$whimsy_count++;
-}
-if($whimsy_count == 1) {
- quest::setglobal("whimsy",1,5,"F");
- }
-if($whimsy_count == 2) {
- quest::setglobal("whimsy",2,5,"F");
- }
-if($whimsy_count == 3) {
- quest::setglobal("whimsy",3,5,"F");
- }
-if($whimsy_count == 4) {
- quest::setglobal("whimsy",4,5,"F");
- }
-if($whimsy_count == 5) {
- quest::setglobal("whimsy",5,5,"F");
- }
-if($whimsy_count == 6) {
- quest::setglobal("whimsy",6,5,"F");
- }
-if($whimsy_count == 7) {
- quest::setglobal("whimsy",7,5,"F");
- }
-if($whimsy_count == 8) {
- quest::setglobal("whimsy",8,5,"F");
- }
-if($whimsy_count == 9) {
- quest::setglobal("whimsy",9,5,"F");
- }
-if($whimsy_count == 10) {
- quest::setglobal("whimsy",10,5,"F");
- quest::stoptimer(1);
- }
 }
 
 sub EVENT_CLICKDOOR {
@@ -83,18 +41,18 @@ sub EVENT_CLICKDOOR {
     quest::selfcast(5054);
   }
   if ($doorid == 4) {  #need expedition lockout at this door click until possible 24 hour timer until instance request 
-  $raid = $entity_list->GetRaidByClient($client);
-      if ($raid) {
-        for ($count = 0; $count < $raid->RaidCount(); $count++) {
-          push (@player_list, $raid->GetMember($count)->GetName());
-        }
-}
-foreach $player (@player_list) {
-    $pc = $entity_list->GetClientByName($player);
-     $charid = $pc->CharacterID();
-     quest::targlobal("uqualockout", 1, "H24", 291113, $charid, 291);
+    $raid = $entity_list->GetRaidByClient($client);
+    if ($raid) {
+      for ($count = 0; $count < $raid->RaidCount(); $count++) {
+        push (@player_list, $raid->GetMember($count)->GetName());
+      }
+    }
+    foreach $player (@player_list) {
+      $pc = $entity_list->GetClientByName($player);
+      $charid = $pc->CharacterID();
+      quest::targlobal("uqualockout", 1, "H24", 291113, $charid, 291);
+    }
   }
-}
   if ($doorid == 3) {
     if (defined($qglobals{uquaragedoor}) && ($qglobals{uquaragedoor} == 1)) {
       quest::forcedooropen(3);

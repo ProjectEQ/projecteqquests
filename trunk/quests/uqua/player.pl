@@ -1,4 +1,6 @@
 my $counter = 0;
+my $RangedItemID = 0;
+my $SecondaryItemID = 0;
 
 sub EVENT_ENTERZONE {
   if (!defined($qglobals{destoff})) {
@@ -86,10 +88,12 @@ sub EVENT_SIGNAL {
 }
 
 sub AURA {
+  $RangedItemID = $client->GetItemIDAt(14);
+  $SecondaryItemID = $client->GetItemIDAt(11);
   if (defined($qglobals{destper})) {
     quest::selfcast(5051);
-    }
-  elsif ($hasitem{67736} || $hasitem{67737} || $hasitem{67738} || $hasitem{67739}) {
+  }
+  elsif ($RangedItemID == 67736 || $RangedItemID == 67737 || $RangedItemID == 67738 || $RangedItemID == 67739 || $SecondaryItemID == 67736 || $SecondaryItemID == 67737 || $SecondaryItemID == 67738 || $SecondaryItemID == 67739) {
     $client->Message(15,"You feel protected from the Aura of Destruction.");
   }
   else {

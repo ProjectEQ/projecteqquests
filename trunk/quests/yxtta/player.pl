@@ -5,79 +5,49 @@
 #each temple is left to right numbers starting on left
 #except temple two which is r to l
 
-
 my $question = 0;
 my $theme_question = 0;
 
-sub EVENT_ENTERZONE {
-if (defined $qglobals{whimsy}) {
-quest::delglobal("whimsy");
-}
-if($hasitem{69059}) { 
-  quest::settimer(1,72);
+sub EVENT_CLICKDOOR {
+if ($doorid == 35 || $doorid == 36) { #uqua zone in
+  my $InInstanceUqua = quest::GetInstanceID("uqua",0);
+  if(!defined $qglobals{uqualockout}) {
+    if($InInstanceUqua > 0){
+      quest::MovePCInstance(292,$InInstanceUqua,-17,-7,-24);
+    }
+    else {
+      $client->Message(13, "You are not a part of an instance!");
+    }
+  }
+  else {
+    $client->Message(13, "You have recently completed this raid, please come back at a later point");
   }
 }
-sub EVENT_TIMER  {
-$whimsy_count++;
-if($whimsy_count == 1) {
- quest::setglobal("whimsy",1,5,"F");
- }
-if($whimsy_count == 2) {
- quest::setglobal("whimsy",2,5,"F");
- }
-if($whimsy_count == 3) {
- quest::setglobal("whimsy",3,5,"F");
- }
-if($whimsy_count == 4) {
- quest::setglobal("whimsy",4,5,"F");
- }
-if($whimsy_count == 5) {
- quest::setglobal("whimsy",5,5,"F");
- }
-if($whimsy_count == 6) {
- quest::setglobal("whimsy",6,5,"F");
- }
-if($whimsy_count == 7) {
- quest::setglobal("whimsy",7,5,"F");
- }
-if($whimsy_count == 8) {
- quest::setglobal("whimsy",8,5,"F");
- }
-if($whimsy_count == 9) {
- quest::setglobal("whimsy",9,5,"F");
- }
-if($whimsy_count == 10) {
- quest::setglobal("whimsy",10,5,"F");
- quest::stoptimer(1);
- }
-}
-
-sub EVENT_CLICKDOOR {
-if(($doorid == 17) && ($yxtta_door == 0)) {
+elsif(($doorid == 17) && ($yxtta_door == 0)) {
   $yxtta_door = 1;
   ASK_QUESTION();
 }
-if(($doorid == 18) && ($yxtta_door == 0)) {
+elsif(($doorid == 18) && ($yxtta_door == 0)) {
   $yxtta_door = 1;
    ASK_QUESTION();
 }
-if(($doorid == 19) && ($yxtta_door == 0)) {
+elsif(($doorid == 19) && ($yxtta_door == 0)) {
   $yxtta_door = 1;
    ASK_QUESTION();
 }
-if(($doorid == 20) && ($yxtta_door == 0)) {
+elsif(($doorid == 20) && ($yxtta_door == 0)) {
   $yxtta_door = 1;
    ASK_QUESTION();
 }
-if(($doorid == 21) && ($yxtta_door == 0)) {
+elsif(($doorid == 21) && ($yxtta_door == 0)) {
   $yxtta_door = 1;
    ASK_QUESTION();
 }
-if(($doorid == 22) && ($yxtta_door == 0)) {
+elsif(($doorid == 22) && ($yxtta_door == 0)) {
   $yxtta_door = 1;
    ASK_QUESTION();
 }
-if(($doorid == 24) && ($yxtta_door == 1)) {
+elsif(($doorid == 24) && ($yxtta_door == 1)) {
     if($question == 1) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -89,7 +59,7 @@ if(($doorid == 24) && ($yxtta_door == 1)) {
         }
     }
 }
-if(($doorid == 23) && ($yxtta_door == 1)) {
+elsif(($doorid == 23) && ($yxtta_door == 1)) {
     if($question == 2) {
       $door += 1;  #door trigger
        ASK_QUESTION();
@@ -101,7 +71,7 @@ if(($doorid == 23) && ($yxtta_door == 1)) {
         }
     }
 }
-if(($doorid == 25) && ($yxtta_door == 1)) {
+elsif(($doorid == 25) && ($yxtta_door == 1)) {
     if($question == 3) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -113,7 +83,7 @@ if(($doorid == 25) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 26) && ($yxtta_door == 1)) {
+elsif(($doorid == 26) && ($yxtta_door == 1)) {
     if($question == 4) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -125,7 +95,7 @@ if(($doorid == 26) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 28) && ($yxtta_door == 1)) {
+elsif(($doorid == 28) && ($yxtta_door == 1)) {
     if($question == 5) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -137,7 +107,7 @@ if(($doorid == 28) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 27) && ($yxtta_door == 1)) {
+elsif(($doorid == 27) && ($yxtta_door == 1)) {
     if($question == 6) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -149,7 +119,7 @@ if(($doorid == 27) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 30) && ($yxtta_door == 1)) {
+elsif(($doorid == 30) && ($yxtta_door == 1)) {
     if($question == 7) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -161,7 +131,7 @@ if(($doorid == 30) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 29) && ($yxtta_door == 1)) {
+elsif(($doorid == 29) && ($yxtta_door == 1)) {
     if($question == 8) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -173,7 +143,7 @@ if(($doorid == 29) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 32) && ($yxtta_door == 1)) {
+elsif(($doorid == 32) && ($yxtta_door == 1)) {
     if($question == 9) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -185,7 +155,7 @@ if(($doorid == 32) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 31) && ($yxtta_door == 1)) {
+elsif(($doorid == 31) && ($yxtta_door == 1)) {
     if($question == 10) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -197,7 +167,7 @@ if(($doorid == 31) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 34) && ($yxtta_door == 1)) {
+elsif(($doorid == 34) && ($yxtta_door == 1)) {
     if($question == 11) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -209,7 +179,7 @@ if(($doorid == 34) && ($yxtta_door == 1)) {
 	}
     }
 }
-if(($doorid == 33) && ($yxtta_door == 1)) {
+elsif(($doorid == 33) && ($yxtta_door == 1)) {
     if($question == 12) {
       $door += 1;   #door trigger
        ASK_QUESTION();
@@ -221,7 +191,7 @@ if(($doorid == 33) && ($yxtta_door == 1)) {
 	}
     }
 }
-if($doorid == 16) {
+elsif($doorid == 16) {
     if((defined $qglobals{primaldoor}) && ($qglobals{primaldoor} == 1)) {
        quest::forcedooropen(16);
 	}

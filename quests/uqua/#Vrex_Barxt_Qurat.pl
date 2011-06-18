@@ -1,3 +1,5 @@
+my $hpatinvul = 0;
+
 sub EVENT_SPAWN {
   quest::settimer(1,180);
   quest::setnexthpevent(40);
@@ -6,6 +8,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if($timer == 1) {
     quest::stoptimer(1);
+	quest::settimer(2,30);
     quest::spawn2(292072,0,0,-830,-83,59,239);
     quest::spawn2(292072,0,0,-822,-77,59,237);
     quest::spawn2(292072,0,0,-813,-74,59,236);  
@@ -20,7 +23,13 @@ sub EVENT_TIMER {
     quest::spawn2(292072,0,0,-827,110,59,135);
     quest::depopall(292071);
     quest::modifynpcstat("special_attacks",ABfHG);
+	#remember HP when mob went invulnerable
+	$hpatinvul = $npc->GetHP();
     $npc->WipeHateList(); 
+  } elsif ($timer == 2) {
+	#safety check for signal getting lost
+	$signal = 1;
+	EVENT_SIGNAL();
   }
 }
 
@@ -33,7 +42,7 @@ sub EVENT_HP {
 
 sub EVENT_SIGNAL {
   if($signal == 1) {
-    $npc->SetHP($npc->GetHP() - ($npc->GetMaxHP() / 100));
+    $npc->SetHP($hpatinvul);
     if(!$entity_list->GetMobByNpcTypeID(292072)) {
       quest::modifynpcstat("special_attacks",RFQUMCNIDF);
       if($entity_list->GetMobByNpcTypeID(292070)) {
@@ -41,6 +50,7 @@ sub EVENT_SIGNAL {
         quest::depop(292070);
       }
       quest::settimer(1,180);
+      quest::stoptimer(2);
     }
   }
 }

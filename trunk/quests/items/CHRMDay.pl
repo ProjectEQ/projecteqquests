@@ -1,10 +1,10 @@
-sub EVENT_SCALE_CALC 
-{
-     if ($zonetime > 799 && $zonetime < 2000) {
-          $questitem->SetScale(1);
-     }
+#Only works during the day.
 
-     else {
-          $questitem->SetScale(0);
-     }
-} 
+sub EVENT_SCALE_CALC {
+  if ($zonetime > 599 && $zonetime < 1900) {
+    $questitem->SetScale(1);
+  }
+  else {
+    $questitem->SetScale(0);
+  }
+}

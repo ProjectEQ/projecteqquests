@@ -17,8 +17,9 @@ sub EVENT_SIGNAL {
   if($signal == 2 && !defined $qglobals{keeper}) { #KoS
     quest::settimer(13,300);
     quest::setglobal("keeper",1,3,"H2");
-    quest::settimer(87,4800);
-    }
+    #supposed to be 60-85 minute timer
+    quest::settimer(87,int(rand(1500))+3600);
+  }
 }
 
 sub EVENT_SAY { 

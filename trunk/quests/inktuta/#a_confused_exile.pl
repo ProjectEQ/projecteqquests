@@ -12,13 +12,15 @@ sub EVENT_SAY {
   }
 }
 sub EVENT_TIMER {
-  quest::stoptimer();
+  quest::stoptimer(1);
  if (($qglobals{exile_ir} == 1) && ($qglobals{exile_co} == 1) && ($qglobals{exile_ra} == 1) && ($qglobals{exile_in} == 1)) {  
     quest::emote("blinks and a spark of sanity returns.");
     quest::say("Ah, wha . . . what? How strange. I can see clearly now.");
     quest::say("Thank you for restoring our clarity. Something in this cursed place had stolen away my sanity, and I will not allow it to happen again. Death would be preferable to that endless madness. Be warned, the gateway to the lower reaches of this temple will be unsealed soon. Leave this place before you become mad yourselves!");
     quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
-    quest::setglobal("inktdoor2",1,3,"H6");
+#need doorid line
+    $entity_list->SetLockpick(0);
+#   quest::setglobal("inktdoor2",1,3,"H6");
 
     }
   else {

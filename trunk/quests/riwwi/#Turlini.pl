@@ -1,17 +1,17 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-  if (defined $qglobals{bic} && $qglobals{bic} == 7) {
-    quest::emote("beams with excitement");
-    quest::say("I recognize you! One of the adventurers we've heard tales about! There are rumors of you destroying the Legion of Mata Muram. Have you come to set us free?");
-}
-}
+    if (defined $qglobals{bic_riw} && $qglobals{bic_riw} == 7) {
+      quest::emote("beams with excitement");
+      quest::say("I recognize you! One of the adventurers we've heard tales about! There are rumors of you destroying the Legion of Mata Muram. Have you come to set us free?");
+    }
+  }
   if($text=~/set you free/i) {
-  if (defined $qglobals{bic} && $qglobals{bic} == 7) {
-    quest::say("Bless you, we're saved! Listen up, friend. I've already formulated a plan to stage a quick and decisive escape, but first we need to get our hands on a complete set of shackle keys. Just a few won't suffice; it must be entire set. If we were to rescue only some of my brethren, those that remain behind would be brutally tortured beyond imagination. Now, I've watched the guards carefully and counted the silvery keys they carry. There are ten in total. Combine the set in this sack and return it to me. I knew you would help!");
-    quest::summonitem(52150);
+    if (defined $qglobals{bic_riw} && $qglobals{bic_riw} == 7) {
+      quest::say("Bless you, we're saved! Listen up, friend. I've already formulated a plan to stage a quick and decisive escape, but first we need to get our hands on a complete set of shackle keys. Just a few won't suffice; it must be entire set. If we were to rescue only some of my brethren, those that remain behind would be brutally tortured beyond imagination. Now, I've watched the guards carefully and counted the silvery keys they carry. There are ten in total. Combine the set in this sack and return it to me. I knew you would help!");
+      quest::summonitem(52150);
     }
-    }
-    }
+  }
+}
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 52161 =>1 )) {
     quest::emote("fishes a jagged key from the sack and tries it on his manacles. They unlock with a loud snap and slide off his wrists. His expression melts into simultaneous shock and elation. ");
@@ -21,7 +21,8 @@ sub EVENT_ITEM {
     quest::faction(363,10);
     quest::faction(416,-10);
     quest::exp(10000);
-    quest::setglobal("bic",8,5,"F");
+    quest::setglobal("bic_riw",8,5,"F");
+    $client->Message(12,"You have received a character flag!");
   }
   if (plugin::check_handin(\%itemcount, 52233 =>1 )) {
     quest::emote("gives you an appraising nod");
@@ -93,7 +94,8 @@ sub EVENT_ITEM {
     quest::summonitem(52094);
     quest::say("I can't wait to be reunited with my family! Let's get out of this place.");
     quest::summonitem(67417);
-    quest::setglobal("bic",9,5,"F");
+    quest::setglobal("bic_riw",9,5,"F");
+    $client->Message(12,"You have received a character flag!");
     quest::delglobal("riwwiarena");
     quest::depop(282098);
     quest::depop();

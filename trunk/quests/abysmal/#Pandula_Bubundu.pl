@@ -1,7 +1,7 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
     if ($faction <= 3) { # Require Kindly and greater faction
-      if (defined $qglobals{bic} && $qglobals{bic} == 6) {
+      if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
         quest::say("What can I do for you? I'm waiting to hear word from the Wayfarer scouts. My niece has been captured by the Muramites and I only wish to discover if she is still alive. I can't take this, not knowing. I would much rather endure a thousand of those beast's whips than be kept in the dark. Please find her for me.");
       }
     }

@@ -28,7 +28,7 @@ sub EVENT_SAY {
     quest::say("The wandering knight, Sir Edwin Motte, recently slew one of my lesser servants. This foolish knave travels from town to town pretending to be good. Separate his head from his body and return it to me so I may work my magics upon it. This fool will become another plaything for me, even in death.");
   }
   if($text=~/advance/i) {
-    quest::say("I share great secrets with my more powerful servants who show me they are willing to server without question. Tell my servant the name of any symbol he gives you and he will instruct you. If I give you a symbol, speak its name to me so I may instruct you.");
+    quest::say("I share great secrets with my more powerful servants who show me they are willing to serve without question. Tell my servant the name of any symbol he gives you and he will instruct you. If I give you a symbol, speak its name to me so I may instruct you.");
   }
   if($text=~/symbol of apprentice/i) {
     quest::say("You have a long way to go before I teach you the true secrets of life and death. Visit Venenzi Oberendi in the Nektulos Forest and show her the symbol. She is collecting reagents for one of my experiments and is taking far too long. I do not wish her dead, yet, I simply need the reagents soon. Retrieve the reagents and give them to my assistant Emkel Kabae. I do not wish to handle them myself.");

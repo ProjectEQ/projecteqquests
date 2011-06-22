@@ -4,12 +4,12 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 #check to see if any of the six cursecallers are up
-    $check_fhq = $entity_list->GetMobByNpcTypeID(292053);
-    $check_kia = $entity_list->GetMobByNpcTypeID(292054);
-    $check_qib = $entity_list->GetMobByNpcTypeID(292055);
-    $check_req = $entity_list->GetMobByNpcTypeID(292056);
-    $check_tow = $entity_list->GetMobByNpcTypeID(292057);
-    $check_xav = $entity_list->GetMobByNpcTypeID(292058);
+    $check_fhq = $entity_list->GetMobByNpcTypeID(296053);
+    $check_kia = $entity_list->GetMobByNpcTypeID(296054);
+    $check_qib = $entity_list->GetMobByNpcTypeID(296055);
+    $check_req = $entity_list->GetMobByNpcTypeID(296056);
+    $check_tow = $entity_list->GetMobByNpcTypeID(296057);
+    $check_xav = $entity_list->GetMobByNpcTypeID(296058);
 #no cursecallers up then spawn true and mirror images of noq in next room
   if (($check_fhq == 0) && ($check_kia == 0) && ($check_qib == 0) && ($check_req == 0) && ($check_tow == 0) && ($check_xav == 0)) {
     quest::depop();

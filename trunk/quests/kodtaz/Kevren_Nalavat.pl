@@ -86,7 +86,7 @@ if (($text=~/tri-fates/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 3)) 
 elsif ($text=~/tri-fates/i) {
   quest::say("I'm sorry $name, but you're not ready to learn about the third trial. You must first find Gazak Klelkek near the Temple of [Singular Might] and finish the first trial before you may proceed. Return to me when you have accomplished that feat.");
 }
-if (($text=~/other tasks/i) && (defined $qglobals{ikky} && $qglobals{ikky} => 4)) {
+if (($text=~/other tasks/i) && (defined $qglobals{ikky} && $qglobals{ikky} >= 4)) {
   quest::say("If you continue on past the temples you will come to an area called [Martyr's Passage].  Within this area you need to find four different relic's of those who have died there, bring them to me.");
   }
 if (($text=~/martyr's passage/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 4)) {
@@ -254,7 +254,7 @@ sub EVENT_ITEM {
       quest::setglobal("ikky",7,5,"F");
       $client->Message(4,"Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
   }
-  elsif ((plugin::check_handin(\%itemcount, 60151 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} => 7)) {
+  elsif ((plugin::check_handin(\%itemcount, 60151 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} >= 7)) {
     quest::say("You have done well, $name.  Speak with Tublik to continue helping us here in Kod'Taz.");
     quest::setglobal("ikkyalt",8,5,"F");
       $client->Message(4,"Finished! - You were able to recover a rare artifact from the Grand Summoner's goons in the Summoning Circle!");

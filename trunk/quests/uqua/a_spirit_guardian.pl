@@ -21,12 +21,32 @@ sub EVENT_SIGNAL {
 	}
 }
 sub EVENT_TIMER {
-  quest::setglobal("destper",1,3,"H6");
+  $raid = $entity_list->GetRaidByClient($client);
+      if ($raid) {
+        for ($count = 0; $count < $raid->RaidCount(); $count++) {
+          push (@player_list, $raid->GetMember($count)->GetName());
+        }
+     }
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::targlobal("destper", 1, "H6", 292008, $charid, 292);
+  }
   $client->Message(15,"Your time has elapsed, you must suffer the punishment of failure, there is nothing I can do to help now.");
   quest::depop();
 }
 
 sub EVENT_DEATH {
-  quest::setglobal("destper",1,3,"H6");
+  $raid = $entity_list->GetRaidByClient($client);
+      if ($raid) {
+        for ($count = 0; $count < $raid->RaidCount(); $count++) {
+          push (@player_list, $raid->GetMember($count)->GetName());
+        }
+     }
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::targlobal("destper", 1, "H6", 292008, $charid, 292);
+  }
   $client->Message(15,"There is nothing I can do to help now.");
 }

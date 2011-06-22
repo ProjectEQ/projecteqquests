@@ -18,7 +18,7 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/barindu/i) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 4) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
       quest::say("This area holds the remains of what was once a place to build stone workers. We can only guess what purpose this part of the city served and all we know now is that it is home to some of the cruelest acts of violence against the nihil. I assigned this area to Talwin, a young wood elf new to the brotherhood. He was a proven scout eager to assist. Initially things were going well, but the information he was sending was not helping much. I think this worried him and resulted in him pushing his luck a little far. Ever since I told him his reports were lacking the vital evidence we needed I have not heard from him. Before Falcin passed on, I asked him if he had found anything out about Talwin and he shook his head. I know Talwin is still alive . . . he has to be . . . and I know that there must be some clues in the area of Barindu somewhere. He was diligent about recording what he found so I would assume that if he has been captured that his writings must be lying around the area somewhere. See if you can find two of his journal entries and bring them back to me. When you return please give what you find to my assistant Opury Foop. She is trying to help me organize my reports a little better.");
     }
   }
@@ -28,19 +28,21 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/riwwi/i) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 6) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
      quest::say("Riwwi has to be the most interesting of all of the city areas. You see, this is where the coliseum is located. Now, we are not completely aware of how it was used before this invading army took up residence in the area, but now it is used for the merciless slaughter of the nihil. Early reports from our scout, Reyna, indicate that the slaves in the area would not interact with her until she proved herself. How she was able to do this I am not sure, but I would suggest trying to find something of Reyna's while I go over my Riwwi information. Come back to me when you find something.");
     }
   }
   if ($text=~/ferubi/i) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
     quest::say("The area called Ferubi was once a Taelosian temple. Now it is a place that reeks of pain and suffering. The invading army has desecrated the temple and the slaves within endure unimaginable torture. Based on the information our scout Smith Rondo sent to me before his disappearance, the invaders use this area to craft weaponry and conduct strange experiments. Smith's ability to sneak in and out of places quickly made him the ideal choice for this job, but like most of our other scouts he eventually got caught trying to reveal a vital piece of information. We have confirmed that he is still alive and I need you to go find him and give him this. It is a special farstone attuned to his aura so only he can use it. Please make haste in your mission, but be careful. You are entering the lion's den and if you are caught, I cringe to think what will happen.");
     quest::summonitem(67519);
   }
+ }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67397 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 1) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
       quest::say("Yes. This is exactly what I needed. Excellent job. Okay, now give me one moment to decipher this . . . hm. It seems that just before he was captured he was trying to communicate with the slaves in the area. The text is very hard to make out, but it looks like he may have been trying to get into the main headquarters. He was interacting with a particular slave named Sislono Nislan. This slave promised him a way into the headquarters only if he promised to rid the area of a tyrant, named Tixxrt. The rest of the parchment is undecipherable. I would suggest finding this slave and showing him this to see if he knows what happened.");
       quest::summonitem(67700);
     }
@@ -53,28 +55,30 @@ sub EVENT_ITEM {
     quest::summonitem(67403);
   }
   elsif (plugin::check_handin(\%itemcount, 67511 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 3) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
       quest::say("You have returned bruised, but not broken I see. I am disappointed to hear that he got away, but you are not at fault. We could not foresee how crafty these beings would be. The information you have given us will be invaluable. Fezbin will be pleased. Kreshin told me to give this to you. He believes it may be one of the fragments that will fit into the stone Fezbin gave you. Who knows, if you help me find the rest of our scouts we may yet find more fragments.");
-      quest::setglobal("bic",4,5,"F");
+      quest::setglobal("bic_qin",4,5,"F");
       quest::summonitem(67513);
+      $client->Message(12,"You have completed a section of the Taelosian City!");
     }
     else {
       quest::summonitem(67511);
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67516 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 5) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
       quest::emote("looks at the final report before bowing his head for a second.");
       quest::say("While I had accepted Talwin's passing as reality, I still hoped you would save him in time. Either way, I thank you for your effort and for delivering this vital piece of information contained in this report. Please take this. I found it wrapped up in the report. Talwin would have wanted you to have it as it appears to be a gem fragment that could fit into the stone Fezbin gave you. Now that you have finished all that was needed for Barindu, there is still more of the city left to explore and I won't be able to complete my report until it is done.");
-      quest::setglobal("bic",6,5,"F");
+      quest::setglobal("bic_bar",6,5,"F");
       quest::summonitem(67517);
+      $client->Message(12,"You have completed a section of the Taelosian City!");
     }
     else {
       quest::summonitem(67516);
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67510 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 6) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
       quest::say("This does not bode well for Reyna's fate. If I had to guess, I would say they took her to the coliseum. Knowing what we know about these strange beings, they would have taken her to the coliseum just so they could entertain themselves by torturing her. You must find a way into the coliseum and save Reyna. I think your best plan of action would be to locate and speak to Turlini and Namosa. They are two slaves Reyna mentioned in her reports. They may not talk to you if you have not proven yourself, but once you do that they should be pretty helpful. They may even know an easy way into the coliseum. Find these two and ask them about Reyna. Return to me when you find out more information about her.");
     }
     else {
@@ -82,8 +86,10 @@ sub EVENT_ITEM {
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67417 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 9) {
+    if (defined $qglobals{bic_riw} && $qglobals{bic_riw} == 9) {
       quest::say("Reyna was a skilled scout who had spent many years honing her abilities. Learning that she died so horribly upsets the stomach, but she died trying to help others. Yes . . . that's what we should focus on. This report you have returned will be a great help to us and this reward should help you as well. It was wrapped in the report and appears to be a gem fragment that may fit into the stone Fezbin gave you. Now to the rest of the city. Hopefully we can prevent our other scouts from suffering the same fate as Reyna.");
+      quest::setglobal("bic_riw",10,5,"F");
+      $client->Message(12,"You have completed a section of the Taelosian City!");
       quest::summonitem(67518);
     }
     else {
@@ -91,20 +97,22 @@ sub EVENT_ITEM {
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67520 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 9) {
+    if (defined $qglobals{bic} && $qglobals{bic} >= 1) {
       quest::say("Ah. Glad to see you return and report that you found Smith. Let me see, what does it say here . . . oh my, I can't believe this. These beings are truly insane. This is a detailed account of the experiments the Muramites have been conducting on the natives and on Smith. If what is listed here is true, we must find out more about this. It says that this is one of two reports he wrote, so we must assume he still has the other one on him. It also says here that the weapon master has access to the mountain area that leads to a secret way into the temples where they conduct these experiments. Oh, poor Smith. As soon as he figured out what was going on he documented it, hoping that he could somehow get it back to us without them finding out. Hm . . . here at the bottom he gives details about the weapon master. Seems he only enters the Ferubi area to fix the weapons that his four elite guards use. Knowing this, I am sure we can trick him into appearing. You must return to Ferubi and find his elite guards and collect a different weapon from each of them, but remember the weapon has to be damaged. Sounds like this is pretty durable stuff they use, so it may take some time to accomplish this. Either way, once it is done I would suggest giving the pieces to Smith and asking him to help.");
-      quest::setglobal("bic",10,5,"F");
+      quest::setglobal("bic_fer",10,5,"F");
     }
     else {
       quest::summonitem(67520);
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67526 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic} == 11) {
+    if (defined $qglobals{bic} && $qglobals{bic_fer} == 11 && $qglobals{bic_riw} == 9 && $qglobals{bic_bar} == 6 && $qglobals{bic_qin} == 4) {
       quest::say("You have now finished the scouting of the city.  Take this as a reward.  If you are unable to use the result please hand it to me and I will fix your problem");
       quest::summonitem(67527);
+      quest::setglobal("bic",11,5,"F");
     }
     else {
+      quest::say("You still have other portions of the city to explore.  Please return when you have finished all areas of the city.");
       quest::summonitem(67526);
     }
   }

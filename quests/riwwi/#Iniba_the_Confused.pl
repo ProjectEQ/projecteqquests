@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-   if($client->GetSkill(67) >= 152) {
+   if($client->GetSkill(67) >= 151) {
      if ($text=~/please/i) {
        quest::summonitem(52156);
      }

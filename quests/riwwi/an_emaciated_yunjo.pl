@@ -16,6 +16,11 @@ sub EVENT_TIMER {
   }
 
 sub EVENT_ITEM {
+ if (plugin::check_handin(\%itemcount, 58361 =>1 )) {
+    quest::faction( 363,5 );
+    quest::exp(100000);
+    $counter += 1;
+    }
   if (plugin::check_handin(\%itemcount, 58288 =>1 )) {
     quest::faction( 363,5 );
     quest::exp(100000);

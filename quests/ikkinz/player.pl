@@ -1,42 +1,42 @@
 sub EVENT_CLICKDOOR {
-  if($doorid == 0) {
+  if($doorid == 12 && $version == 5) {
     if(defined($qglobals{ikkydoor}) && ($qglobals{ikkydoor} >= 1)) {
-      quest::forcedooropen(512);
+      quest::forcedooropen(12);
 	}
   }
-  if($doorid == 3) {
+  if($doorid == 15 && $version == 5) {
     if(defined($qglobals{ikkydoor}) && ($qglobals{ikkydoor} >= 1)) {
-      quest::forcedooropen(515);
+      quest::forcedooropen(15);
 	}
   }
-  if($doorid == 4) {
+  if($doorid == 16 && $version == 5) {
     if(defined($qglobals{ikkydoor}) && ($qglobals{ikkydoor} >= 1)) {
-      quest::forcedooropen(516);
+      quest::forcedooropen(16);
 	}
   }
-  if($doorid == 19) {
-    if(defined($qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
-      quest::forcedooropen(531);
-	}
-  }
-  if($doorid == 20) {
-    if(defined($qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
-      quest::forcedooropen(532);
-	}
-  }
-  if($doorid == 252) {
+  if($doorid == 8 && $version == 5) {
     if(defined($qglobals{ikkydoor}) && ($qglobals{ikkydoor} == 3)) {
-      quest::forcedooropen(508);
+      quest::forcedooropen(8);
 	}
   }
-  if($doorid == 253) {
+  if($doorid == 9 && $version == 5) {
     if(defined($qglobals{ikkydoor}) && ($qglobals{ikkydoor} == 3)) {
-      quest::forcedooropen(509);
+      quest::forcedooropen(9);
 	}
   }
-  if($doorid == 254) {
+  if($doorid == 10 && $version == 5) {
     if(defined($qglobals{ikkydoor}) && ($qglobals{ikkydoor} >= 1)) {
-      quest::forcedooropen(510);
+      quest::forcedooropen(10);
+	}
+  }
+  if($doorid == 15 && $version == 6) {
+    if(defined($qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
+      quest::forcedooropen(15);
+	}
+  }
+  if($doorid == 16 && $version == 6) {
+    if(defined($qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
+      quest::forcedooropen(16);
 	}
   }
 }

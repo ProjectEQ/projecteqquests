@@ -29,63 +29,63 @@ sub EVENT_ITEM {
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52085);
     quest::setglobal("riwwiarena",2,5,"H8");
-    quest::depop();
+    $npc->Depop(1);
   }
   if (plugin::check_handin(\%itemcount, 52234 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52086);
     quest::setglobal("riwwiarena",3,5,"H8");
-    quest::depop();
+    $npc->Depop(1);
   }
   if (plugin::check_handin(\%itemcount, 52235 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52087);
     quest::setglobal("riwwiarena",4,5,"H8");
-    quest::depop();
+    $npc->Depop(1);
     }
       if (plugin::check_handin(\%itemcount, 52236 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52088);
     quest::setglobal("riwwiarena",5,5,"H8");
-    quest::depop();
+    $npc->Depop(1);
     }
         if (plugin::check_handin(\%itemcount, 52237 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52089);
     quest::setglobal("riwwiarena",6,5,"H8");
-    quest::depop(); 
+    $npc->Depop(1); 
     }
    if (plugin::check_handin(\%itemcount, 52238 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52090);
     quest::setglobal("riwwiarena",7,5,"H8");    
-    quest::depop(); 
+    $npc->Depop(1); 
      }
    if (plugin::check_handin(\%itemcount, 52239 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52091);
     quest::setglobal("riwwiarena",8,5,"H8");    
-    quest::depop(); 
+    $npc->Depop(1); 
      }
    if (plugin::check_handin(\%itemcount, 52240 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52092);
     quest::setglobal("riwwiarena",9,5,"H8");    
-    quest::depop(); 
+    $npc->Depop(1); 
      }   
    if (plugin::check_handin(\%itemcount, 52241 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52093);
     quest::setglobal("riwwiarena",10,5,"H8");    
-    quest::depop(); 
+    $npc->Depop(1); 
      }  
    if (plugin::check_handin(\%itemcount, 52242 =>1 )) {
     quest::emote("shouts with joy");
@@ -98,7 +98,7 @@ sub EVENT_ITEM {
     $client->Message(12,"You have received a character flag!");
     quest::delglobal("riwwiarena");
     quest::depop(282098);
-    quest::depop();
+    $npc->Depop(1);
  }    
   plugin::return_items(\%itemcount);
 }

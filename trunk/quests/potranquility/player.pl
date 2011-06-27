@@ -207,3 +207,9 @@ sub EVENT_COMBINE_SUCCESS {
     $client->Message(1,"Success");
   }
 }
+
+sub EVENT_ENTERZONE {
+  if (plugin::check_hasitem($client, 16255) && plugin::check_hasitem($client, 16257)) { #temp function
+    $client->NukeItem(16257);
+  }
+}

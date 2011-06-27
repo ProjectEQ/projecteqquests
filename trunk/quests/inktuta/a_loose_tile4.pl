@@ -8,7 +8,7 @@ sub EVENT_ENTER {
    quest::spawn2(296048,0,0,-296,-953,-122,0);
    quest::spawn2(296048,0,0,-296,-869,-122,128);
    quest::spawn2(296048,0,0,-371,-869,-122,128);
-   $npc->Damage($npc,1000,732,24,0);
+   $npc->Depop(1);
    if(!$entity_list->GetMobByNpcTypeID(296052)){
     quest::spawn2(296052,0,0,-166,-911,-127,194);
    }

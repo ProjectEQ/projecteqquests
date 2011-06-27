@@ -2,7 +2,7 @@ my $engaged =  0;
 
 sub EVENT_SPAWN {
   if (($zonehour < 9) || ($zonehour > 21)) { #9AM to 9PM
-    quest::depop();
+    $npc->Depop(1);
   }
   else {
     quest::settimer("seeker_depop", 30);
@@ -21,7 +21,7 @@ sub EVENT_COMBAT {
 sub EVENT_TIMER {
   if (!$engaged && (($zonehour < 9) || ($zonehour > 21))) {
     quest::stoptimer("seeker_depop");
-    quest::depop();
+    $npc->Depop(1);
   }
 }
 
@@ -46,7 +46,7 @@ sub EVENT_ITEM {
     $attack = $entity_list->GetMobID($priest);
     $priestattack = $attack->CastToNPC();
     $priestattack->AddToHateList($client, 1);
-    quest::depop();
+    $npc->Depop(1);
   }
   else {
     plugin::return_items(\%itemcount);

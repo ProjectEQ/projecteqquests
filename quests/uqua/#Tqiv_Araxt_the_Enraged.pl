@@ -1,14 +1,26 @@
 sub EVENT_SPAWN {
-  quest::settimer(1800);
+  quest::settimer(2,1800);
 }
+
+sub EVENT_AGGRO {
+  quest::settimer(1,1);
+}
+
 sub EVENT_TIMER {
-  quest::spawn2(292022,0,0,$x,$y,$z,$h);
-  quest::spawn2(292015,0,0,-572,-911,8,64);
-  quest::spawn2(292015,0,0,-567,-875,8,66);
-  quest::spawn2(292015,0,0,-514,-875,8,192);
-  quest::spawn2(292015,0,0,-514,-911,8,195);
-  quest::depop();
+  if ($timer == 1) {
+    if(($x > -470) || ($x < -600) || ($y > -480) || ($y < -810)) {
+      $npc->GMMove(442,-141,11,192);
+    }
+  } elsif ($timer == 2) {
+    quest::spawn2(292021,0,0,$x,$y,$z,$h);
+    quest::spawn2(292018,0,0,-1252,-911,8,67);
+    quest::spawn2(292018,0,0,-1250,-878,8,64);
+    quest::spawn2(292018,0,0,-1193,-911,8,189);
+    quest::spawn2(292018,0,0,-1190,-878,8,193);
+    quest::depop();
+  }
 }
+
 sub EVENT_SIGNAL {
   $npc->AddAISpell(5117);
   $npc->AddAISpell(5118);

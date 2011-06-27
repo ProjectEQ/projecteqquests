@@ -6,7 +6,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
   if (defined $qglobals{bic_riw} && $qglobals{bic_riw} == 8 && !defined $qglobals{riwwiarena}) {
      quest::say("It's you! The champion everyone has spoken of! Have you come to defy the Muramites?");
-     quest::setglobal("riwwiarena",1,5,"H8");
+     quest::setglobal("riwwiarena",1,5,"F");
     }
      }
   if ($text=~/hail/i) {

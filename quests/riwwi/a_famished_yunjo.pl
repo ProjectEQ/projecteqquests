@@ -13,7 +13,7 @@ sub EVENT_SAY {
 }
 sub EVENT_TIMER {
   quest::emote("collapses from hunger.");
-  quest::depop();
+  $npc->Depop(1);
   } 
 
 sub EVENT_ITEM {
@@ -118,7 +118,7 @@ sub EVENT_ITEM {
     $counter += 1;
   }
   if($counter == 11) {
-     quest::depop();
+     $npc->Depop(1);
      }
 plugin::return_items(\%itemcount);
 }

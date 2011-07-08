@@ -8,7 +8,7 @@ $raid = $entity_list->GetRaidByClient($client);
 foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
      $charid = $pc->CharacterID();
-     quest::targlobal("uqualockout", 1, "H84", 291113, $charid, 291);
+     quest::targlobal("uqualockout", 1, "H108", 291113, $charid, 291);
   }
 }
 sub EVENT_SAY {

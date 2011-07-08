@@ -1,3 +1,7 @@
+sub EVENT_ENTERZONE {
+    quest::settimer(1,30);
+}
+
 sub EVENT_TIMER {
   if (defined($qglobals{antonica_port}) && defined($qglobals{nexus_ant})) {
     quest::selfcast(2708); #antonica

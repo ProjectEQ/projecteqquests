@@ -2,17 +2,13 @@
 #
 #Angelox
 
-srand;
-
 sub EVENT_DEATH {
-  $gnoll = int(rand(100) + 1);
-  if ($gnoll <= 5) {
-    $spawngnoll = quest::spawn2(111158,0,0,$x,$y,$z,0);
-    $attack = $entity_list->GetMobID($spawngnoll);
-    $gnollattack = $attack->CastToNPC();
-    $gnollattack->AddToHateList($client, 1);
+  my $gnoll = int(rand(100) + 1);
+  if ($gnoll <= 10) {
+    quest::spawn2(111158,0,0,$x,$y,$z,0);
+    my $keyspawn = $entity_list->GetMobByNpcTypeID(111158);
+    $keyspawn->AddToHateList($client, 1);
   }
 }
 
 # EOF zone: frozenshadow
-

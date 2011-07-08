@@ -159,7 +159,7 @@ sub EVENT_ITEM {
     quest::say("Well done! You may pass!");
     quest::forcedooropen(4);
     quest::setglobal("tipt_progress",3,5,"H6");
-    if (defined($qglobals{bic}) && ($qglobals{bic} == 13)) {
+    if (defined($qglobals{bic}) && ($qglobals{bic} == 11)) {
       quest::summonitem(67551); #Vaifan's Temporary Power Cell D
     }
     $question = 0;

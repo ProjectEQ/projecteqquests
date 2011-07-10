@@ -165,9 +165,10 @@ if (($text=~/collect the artifacts/i) && (defined $qglobals{ikky} && $qglobals{i
    quest::say("Place four artifacts you find from the pit in this bag and seal it off. Return the sealed bag to me when you're done so I can further examine what you find. Make haste to the Pit of the Lost and be careful -- there's no telling what kind of evils are waiting for you there. If you have someone else with you that [needs a bag], have them tell me so.");
    quest::summonitem(60155);
 }
-if (($text=~/stop it/i) && (defined $qglobals{ikky} && $qglobals{ikky} > 10)) {
+if (($text=~/stop it/i) && (defined $qglobals{ikky} && $qglobals{ikky} > 10 && !defined $qglobals{ageless})) {
    quest::say("Hurry, the Protector is now present");
    quest::spawn2(293221,0,0,2176,2184,-476,137);
+   quest::setglobal("ageless",1,0,"H8");
 }
 if (($text=~/four temples/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
     quest::say("As you've already uncovered, the Sanctuary of Divine Destruction was used to uncover the purpose for the other three. I believe the Muramites destroyed that temple because it holds the key to the remaining three temples and the artifacts that they hold. Now that we know what's ahead, we can continue forth and unravel this [mystery].");

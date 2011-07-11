@@ -59,7 +59,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-  if(!$entity_list->GetMobByNpcTypeID(294629)) { INSTANCE_WIN(); }
+  if(!$entity_list->GetMobByNpcTypeID(294138)) { INSTANCE_WIN(); }
 }
 
 sub INSTANCE_WIN {

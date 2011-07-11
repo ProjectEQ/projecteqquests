@@ -4,4 +4,6 @@ sub EVENT_DEATH {
   quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
   $entity_list->FindDoor(41)->SetLockPick(0);
   quest::spawn2(296027,0,0,165,-496,-27,64);
+  my $instid = quest::GetInstanceID("inktuta",0);
+  quest::setglobal($instid.'_inktuta_status',2,3,"H6");
 }

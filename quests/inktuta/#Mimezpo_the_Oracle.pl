@@ -15,4 +15,6 @@ sub EVENT_DEATH {
   quest::spawn2(296033,0,0,-557,-237,-2,63);
   quest::spawn2(296035,0,0,-406,-552,-77,62);
   quest::spawn2(296036,0,0,-355,-554,-77,190);
+  my $instid = quest::GetInstanceID("inktuta",0);
+  quest::setglobal($instid.'_inktuta_status',3,3,"H6");
 }

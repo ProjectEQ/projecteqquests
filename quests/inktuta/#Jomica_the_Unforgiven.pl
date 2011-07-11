@@ -1,14 +1,14 @@
 sub EVENT_SPAWN {
   $raid = $entity_list->GetRaidByClient($client);
-      if ($raid) {
-        for ($count = 0; $count < $raid->RaidCount(); $count++) {
-          push (@player_list, $raid->GetMember($count)->GetName());
-        }
-     }
-foreach $player (@player_list) {
+  if ($raid) {
+    for ($count = 0; $count < $raid->RaidCount(); $count++) {
+      push (@player_list, $raid->GetMember($count)->GetName());
+    }
+  }
+  foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
-     $charid = $pc->CharacterID();
-     quest::targlobal("inktutalockout", 1, "H108", 295065, $charid, 295);
+    $charid = $pc->CharacterID();
+    quest::targlobal("inktutalockout", 1, "H108", 295065, $charid, 295);
   }
 }
 
@@ -21,9 +21,11 @@ sub EVENT_SAY {
     $check_named = $entity_list->GetMobByNpcTypeID(296067);
     $check_named = $entity_list->GetMobByNpcTypeID(296072);
       if($check_named == 0) {
-         quest::say("I'm afraid I have nothing else to offer. See to the sentinel if you have not already.");
-         quest::spawn2(296067,0,0,-63,-600,-127,128);  #an ancient sentinel
-         quest::spawn2(296072,0,0,5,-654,-127,175);  #pile of bones
+        quest::say("I'm afraid I have nothing else to offer. See to the sentinel if you have not already.");
+        quest::spawn2(296067,0,0,-63,-600,-127,128);  #an ancient sentinel
+        quest::spawn2(296072,0,0,5,-654,-127,175);  #pile of bones
+        my $instid = quest::GetInstanceID("inktuta",0);
+        quest::setglobal($instid.'_inktuta_status',11,3,"H6");
       }
    }
 }

@@ -8,5 +8,7 @@ sub EVENT_SAY {
      quest::spawn2(296024,0,0,524,-494,5,189);
      quest::spawn2(296025,0,0,357,-549,-3,254);
      quest::spawn2(296026,0,0,357,-451,-2,129);
+     my $instid = quest::GetInstanceID("inktuta",0);
+     quest::setglobal($instid.'_inktuta_status',1,3,"H6");
    }
 }

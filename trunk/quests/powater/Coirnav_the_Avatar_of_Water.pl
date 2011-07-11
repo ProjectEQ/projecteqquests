@@ -1,4 +1,10 @@
 #216048 - Fake (But still aggressive) Corirnav_the_Avatar_of_Water
+sub EVENT_SPAWN {
+  if(defined $qglobals{coirnav_done}) {
+    #deleted global when i respawn because my respawn can be shorter than 5 days
+    quest::delglobal("coirnav_done");
+  }
+}
 
 sub EVENT_SIGNAL {
     if($signal == 8) { #Signal rc'd when trash dies. If all trash is dead, then we can depop nameds and proceed to the last phase

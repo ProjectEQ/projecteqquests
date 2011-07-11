@@ -1,5 +1,5 @@
 sub EVENT_AGGRO {
-  quest::settimer(1,20);
+  quest::settimer(1,40);
 }
   
 sub EVENT_TIMER {

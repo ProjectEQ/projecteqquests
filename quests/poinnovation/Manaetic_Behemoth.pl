@@ -1,32 +1,29 @@
-my $spawn = 0;
-
-sub EVENT_SPAWN {
-
-	quest::settimer(7,120);
-	}
+my $goactive = 0;
+my $first_signal = 0;
 
 sub EVENT_SIGNAL {
-
-if($signal == 1)
-	{
-	$spawn=$spawn += 1;
-	}
+  #signal 1 is from the spiders.
+  if($signal == 1 && $first_signal == 0) {
+    #timer to increment $goactive
+    quest::settimer(1,5);
+    $first_signal = 1;
+  } elsif($signal == 1 && $first_signal == 1 && $goactive > 0) {
+    #if we received a signal and it was not the first signal and $goactive is > 0 reset go active back to 0
+    $goactive = 0;
+  }
 }
 
 sub EVENT_TIMER {
-
-if($timer == 7 && !defined $spawn)
-	{
-		quest::spawn2(206074,0,0,$x,$y,$z,0);
-		quest::depop();
-		#update spawn timer after depop or mob will repop when zone resets
-		#quest::updatespawntimer(spawn2.id,(int(rand(DB_Variance))+DB_Respawn-(DB_Variance/2))*1000); #variance setting
-		quest::updatespawntimer(42135,(int(rand(25920))+129600-(25920/2))*1000); #respawn with variance
-	}
-if($timer == 7 && defined $spawn)
-	{
-	$spawn=undef;
-	quest::stoptimer(7);
-	quest::settimer(7,120);
-	}
+  if($timer == 1) {
+    #increment $goactive
+    $goactive++;
+    #now check if we have been incrementing for 3 minutes.
+    #increments at +1 per 5 seconds means $goactive == 60 is 3 minutes.
+    if($goactive >= 60) {
+      #spawn the targetable version and depop untargetable version.
+      quest::spawn2(206074,0,0,$x,$y,$z,0);
+      #depop with respawn timer active.
+      $npc->Depop(1);
+    }
+  }
 }

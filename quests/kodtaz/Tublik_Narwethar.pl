@@ -170,10 +170,10 @@ if (($text=~/stop it/i) && (defined $qglobals{ikky} && $qglobals{ikky} > 10 && !
    quest::spawn2(293221,0,0,2176,2184,-476,137);
    quest::setglobal("ageless",1,0,"H8");
 }
-if (($text=~/four temples/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+if (($text=~/four temples/i) && (defined $qglobals{ikky} && $qglobals{ikky} >= 12)) {
     quest::say("As you've already uncovered, the Sanctuary of Divine Destruction was used to uncover the purpose for the other three. I believe the Muramites destroyed that temple because it holds the key to the remaining three temples and the artifacts that they hold. Now that we know what's ahead, we can continue forth and unravel this [mystery].");
 }
-if (($text=~/mystery/i) && (defined $qglobals{ikky} && $qglobals{ikky} == 12)) {
+if (($text=~/mystery/i) && (defined $qglobals{ikky} && $qglobals{ikky} >= 12)) {
     quest::say("It's clear to me that you must proceed into each of the three remaining temples and recover the three artifacts that are in them. It's up to you how you want to proceed, but you will have to enter the [Sanctuary of the Righteous], the [Sanctuary of the Glorified], or the [Sanctuary of the Transcendent]. Each one of these holds an artifact that I believe will be used to gain entrance to whatever lies beyond the Altar of Destruction. Which will you choose?");
 }
 if ($text=~/sanctuary of the righteous/i) {

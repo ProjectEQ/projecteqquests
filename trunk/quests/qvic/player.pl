@@ -6,6 +6,18 @@ sub EVENT_ENTERZONE {
   }
 }
 
+sub EVENT_CLICKDOOR {
+  if ($doorid == 3) { #Inktu`Ta zone in
+    my $InstanceID = quest::GetInstanceID("inktuta",0);
+    if($InstanceID > 0){
+      quest::MovePCInstance(296,$InstanceID,15,190,-2.8);
+    } else {
+        $client->Message(13, "You are not a part of an instance!");
+    }
+  } else {
+    $client->Message(13, "You have recently completed this raid, please come back at a later point");
+  }
+}
 
 sub EVENT_COMBINE_SUCCESS {
  if (($recipe_id == 10904) || ($recipe_id == 10905) || ($recipe_id == 10906) || ($recipe_id == 10907)) {

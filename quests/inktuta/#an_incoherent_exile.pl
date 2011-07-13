@@ -14,7 +14,9 @@ sub EVENT_SAY {
   if ($text=~/awaken me from this nightmare/i) {
     quest::settimer(1,3);
     quest::targlobal($instid.'_exile_in',1,"M2",0,0,296);
-  }
+  } else {
+    exile_fail();
+    }
 }
 
 sub EVENT_TIMER {
@@ -24,6 +26,11 @@ sub EVENT_TIMER {
     quest::say("Ah, wha . . . what? How strange. I can see clearly now.");
     quest::say("Thank you for restoring our clarity. Something in this cursed place had stolen away my sanity, and I will not allow it to happen again. Death would be preferable to that endless madness. Be warned, the gateway to the lower reaches of this temple will be unsealed soon. Leave this place before you become mad yourselves!");
   } else {
+    exile_fail();
+    }
+}
+
+sub exile_fail {
     quest::spawn2(296044,0,0,$x+5,$y,$z,$h);
     quest::spawn2(296044,0,0,$x+5,$y+10,$z,$h);
     quest::spawn2(296044,0,0,$x+5,$y-10,$z,$h);
@@ -35,4 +42,3 @@ sub EVENT_TIMER {
     quest::spawn2(296044,0,0,$x+25,$y-25,$z,$h);
     quest::spawn2(296044,0,0,$x+25,$y,$z,$h);
   }
-}

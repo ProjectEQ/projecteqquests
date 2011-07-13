@@ -1,7 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
+    if($qglobals{$instid.'_inktuta_status'} == 0) {
   quest::emote("screams");
   quest::say("No, don't kill me!' He relaxes slightly and gives you a strange look. 'Have you been afflicted by the curse? Are you mad!? Have you any idea [who Kelekdrix] is? She will be here any moment to destroy you all. Leave now, or there will be dire [consequences]!");
+     }
    }
    if ($text=~/consequences/i) {
      quest::say("Very well, $name. You brought this upon yourself.");
@@ -10,5 +12,6 @@ sub EVENT_SAY {
      quest::spawn2(296026,0,0,357,-451,-2,129);
      my $instid = quest::GetInstanceID("inktuta",0);
      quest::setglobal($instid.'_inktuta_status',1,3,"H6");
+     quest::attack($client->GetName());
    }
 }

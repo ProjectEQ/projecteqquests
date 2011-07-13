@@ -33,6 +33,6 @@ sub EVENT_DEATH {
   quest::say("This is but a temporary setback. I will return.");
   quest::depop(296066);
   quest::spawn2(296071,0,0,-55, -653, -127, $h); #Jomica_the_Unforgiven
-  quest::spawn2(296068,0,0,-652,-127,125, 121); #bones (loot)
+  quest::spawn2(296068,0,0,-127,-652,-127, 121); #bones (loot)
   quest::setglobal($instid.'_inktuta_status',10,3,"H6");
 }

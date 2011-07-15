@@ -95,7 +95,7 @@ sub EVENT_TIMER {
         #true image of noqufiel defeated but jomica not talked to.
         OPEN_DOORS(3);
         REMOVE_LOOSE_TILES(4);
-        quest::spawn2(296071,0,0,$x, $y, $z, $h); #Jomica_the_Unforgiven
+        quest::spawn2(296071,0,0,-55, -653, -127, 121); #Jomica_the_Unforgiven
       } elsif($qglobals{$instid.'_inktuta_status'} >= 11) {
         #event completed nothing to restart, but unlock/depop everything that should be down.
         OPEN_DOORS(3);

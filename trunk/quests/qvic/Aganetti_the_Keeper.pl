@@ -7,8 +7,8 @@ sub EVENT_SAY {
     if(!$entity_list->GetMobByNpcTypeID(295140) && !$entity_list->GetMobByNpcTypeID(295149)) {
       quest::say("Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu'ta.");
       #allow a GM to request the instance and if in a raid bring the entire raid with him
-      #$raid = $client->GetRaid();
-      #if($raid) {
+      $raid = $client->GetRaid();
+      #if($raid || $status > 79) {
       if($status > 79) { 
         if(!defined($qglobals{inktutalockout})) {
           $InInstance = quest::GetInstanceID("inktuta",0);

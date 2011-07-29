@@ -35,6 +35,17 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
     }
   }
+  if (defined($qglobals{bic}) && ($qglobals{bic} == 19)) {
+    if (plugin::check_handin(\%itemcount, 67565 => 1)) {
+      quest::say("Ah, perfect. I am glad you were successful in finding it. Now, if you will give me one second I will condense the shard into concentrated energy which you can add to your stone. There we are. Please take the time to attach this, but make sure you do it in the order I mentioned when we first spoke.");
+      quest::summonitem(67573);
+      quest::setglobal("bic",20,5,"F");
+    }
+    else {
+      quest::say("I do not need this.");
+      plugin::return_items(\%itemcount);
+    }
+  }
   else {
     quest::emote("seems to ignore you.");
     plugin::return_items(\%itemcount);

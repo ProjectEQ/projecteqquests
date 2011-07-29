@@ -9,7 +9,7 @@ sub EVENT_AGGRO {
 sub EVENT_TIMER {
   if ($timer == 1) {
     if(($x > -1160) || ($x < -1290) || ($y > -480) || ($y < -810)) {
-      $npc->GMMove(442,-141,11,192);
+      $npc->GMMove(-1227,-628,-5,0);
     }
   } elsif ($timer == 2) {
     quest::spawn2(292021,0,0,$x,$y,$z,$h);

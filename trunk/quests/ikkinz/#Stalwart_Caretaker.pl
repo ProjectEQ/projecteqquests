@@ -1,5 +1,6 @@
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60234 =>1 )) {
-   quest::setglobal("ikkinzfirstdoor", 1,3,"H6");
+   $entity_list->FindDoor(15)->SetLockPick(0);
+   $entity_list->FindDoor(16)->SetLockPick(0);
   }
 }

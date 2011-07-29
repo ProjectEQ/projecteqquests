@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if (defined $qglobals{bic} && $qglobals{bic} == 13) {
+  if (defined $qglobals{bic} && $qglobals{bic_sew} == 12 && $qglobals{bic_vxe} == 13 && $qglobals{bic_tip} == 14) {
     if ($text=~/hail/i) {
       quest::say("Access code?");
       quest::setglobal("clockwork",1,4,"H2");

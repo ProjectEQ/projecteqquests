@@ -29,16 +29,6 @@ sub EVENT_CLICKDOOR {
       quest::forcedooropen(10);
 	}
   }
-  if($doorid == 15 && $version == 6) {
-    if(defined($qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
-      quest::forcedooropen(15);
-	}
-  }
-  if($doorid == 16 && $version == 6) {
-    if(defined($qglobals{ikkinzfirstdoor}) && ($qglobals{ikkinzfirstdoor} == 1)) {
-      quest::forcedooropen(16);
-	}
-  }
 }
 
 sub EVENT_COMBINE_SUCCESS {

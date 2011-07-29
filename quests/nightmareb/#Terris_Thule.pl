@@ -4,12 +4,12 @@
 #Terris Thule will spawn 15 x a dream defiler at 75% health, cast Direption of Dreams at 50% health, and spawn 3 x a grotesque statue at 35% health. Upon death a Planar Projection will spawn to give flags. The timer is used to continuously check to make sure that she is not pulled from her lair. If so, she will shout a curse and despawn.
 
 sub EVENT_SPAWN {
-  quest::setnexthpevent(75);
+  quest::setnexthpevent(76);
   quest::settimer(1,5);
 }
 
 sub EVENT_HP {
-  if($hpevent == 75) {
+  if($hpevent == 76) {
     quest::spawn2(221006,0,0,-1858,-25,134,5); #a dream defiler
     quest::spawn2(221006,0,0,-1780,-59,134,193); #a dream defiler
     quest::spawn2(221006,0,0,-1833,102,134,165); #a dream defiler
@@ -25,13 +25,13 @@ sub EVENT_HP {
     quest::spawn2(221006,0,0,-2031,-3,134,142); #a dream defiler
     quest::spawn2(221006,0,0,-1954,-29,134,71); #a dream defiler
     quest::spawn2(221006,0,0,-1887,33,134,113); #a dream defiler
-    quest::setnexthpevent(50);
+    quest::setnexthpevent(51);
   }
-  elsif($hpevent == 50) {
-    $npc->CastSpell(3150,221008); #Direption of Dreams
-    quest::setnexthpevent(35);
+  elsif($hpevent == 51) {
+    $npc->CastSpell(3150,$client->GetID()); #Direption of Dreams
+    quest::setnexthpevent(36);
   }
-  elsif($hpevent == 35) {
+  elsif($hpevent == 36) {
     quest::spawn2(221007,0,0,-1808,-120,134,239); #a grotesque statue
     quest::spawn2(221007,0,0,-1774,-7,134,191); #a grotesque statue
     quest::spawn2(221007,0,0,-1837,91,134,159); #a grotesque statue

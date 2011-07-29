@@ -106,7 +106,7 @@ sub EVENT_ITEM {
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67526 => 1)) {
-    if (defined $qglobals{bic} && $qglobals{bic_fer} == 11 && $qglobals{bic_riw} == 9 && $qglobals{bic_bar} == 6 && $qglobals{bic_qin} == 4) {
+    if (defined $qglobals{bic} && $qglobals{bic_fer} == 11 && $qglobals{bic_riw} == 10 && $qglobals{bic_bar} == 6 && $qglobals{bic_qin} == 4) {
       quest::say("You have now finished the scouting of the city.  Take this as a reward.  If you are unable to use the result please hand it to me and I will fix your problem");
       quest::summonitem(67527);
       quest::setglobal("bic",11,5,"F");

@@ -14,12 +14,23 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(2000);
     quest::summonitem(18074);
-    quest::faction( 193,1 );
-    quest::faction( 30,1 );
-    quest::faction( 282,1 );
-    quest::faction( 62,1 );
-    quest::faction( 317,1 );
-    
+    quest::faction(193,1);
+    quest::faction(30,1);
+    quest::faction(282,1);
+    quest::faction(62,1);
+    quest::faction(317,1);
+  }
+  if (plugin::check_handin(\%itemcount, 12408 =>4 )) { 
+    quest::say("Bravo!! You have done well. Here is a small reward. The greater reward is service to the empire.");
+    quest::ding();
+    quest::exp(3000);
+    quest::faction(193,1);
+    quest::faction(30,1);
+    quest::faction(282,1);
+    quest::faction(62,1);
+    quest::faction(317,1);
+    quest::givecash(0,0,1,0);
+    quest::summonitem(12614);
   }
   plugin::return_items(\%itemcount);
 }

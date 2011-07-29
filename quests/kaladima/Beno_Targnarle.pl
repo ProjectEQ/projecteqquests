@@ -17,6 +17,17 @@ if ($text=~/doran vargnus/i) {
 }
 
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 13054 =>4 )) {
+   quest::say("Great work, young one! We shall soon rid our mines of these pests. Keep a lookout for that [metal rat]. Here is a small reward for such fine work. Soon, you shall be know as Kaladim's resident exterminator.");
+  quest::exp(500);
+  quest::ding();
+  quest::faction( 314,3 );
+  quest::faction( 169,3 );
+  quest::faction( 219,3 );
+  quest::faction( 215,3 );
+  quest::faction( 57,-5 );
+  quest::givecash(0,3,0,0);
+}
 if (plugin::check_handin(\%itemcount, 13282 =>1 )) {
   quest::say("I thank you, my friend. I was to destroy this metal monster months ago. I could never find him. Please accept this reward for such good service. Oh yes.. And take this card to a man named [Doran Vargnus]. He is a blacksmith. I am sure he will reward you with one of his finest suits of armor. Perhaps you may now assist me in an [important Stormguard matter].");
   quest::exp(500);

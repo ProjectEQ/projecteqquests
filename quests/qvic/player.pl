@@ -8,22 +8,12 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_CLICKDOOR {
   if ($doorid == 3) { #Inktu`Ta zone in
-#
-# The commented if statement below was missing. I do not know what the check
-# is to determine if the player should be locked out of getting the instance.
-# Whoever is editing this file needs to put in the proper check below and
-# uncomment the if/else blocks.
-#
-#    if (<somelockoutcheck>) {
-      my $InstanceID = quest::GetInstanceID("inktuta",0);
-      if($InstanceID > 0){
-        quest::MovePCInstance(296,$InstanceID,15,190,-2.8);
-      } else {
-          $client->Message(13, "You are not a part of an instance!");
-      }
-#    } else {
-#      $client->Message(13, "You have recently completed this raid, please come back at a later point");
-#    } 
+    my $InstanceID = quest::GetInstanceID("inktuta",0);
+    if($InstanceID > 0){
+      quest::MovePCInstance(296,$InstanceID,15,190,-2.8);
+    } else {
+      $client->Message(13, "You are not a part of an instance!");
+    }
   }
 }
 

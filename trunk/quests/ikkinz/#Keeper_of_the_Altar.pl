@@ -68,5 +68,16 @@ sub EVENT_DEATH {
   quest::spawn2(294621,0,0,680,59,-73,78);
   quest::spawn2(294621,0,0,937,14,-72,200);
   quest::spawn2(294621,0,0,908,111,-73,150); 
-  quest::spawn2(294621,0,0,685,1,-73,57);   
+  quest::spawn2(294621,0,0,685,1,-73,57);
+  $raid = $entity_list->GetRaidByClient($client);
+      if ($raid) {
+        for ($count = 0; $count < $raid->RaidCount(); $count++) {
+          push (@player_list, $raid->GetMember($count)->GetName());
+        }
+}
+foreach $player (@player_list) {
+    $pc = $entity_list->GetClientByName($player);
+     $charid = $pc->CharacterID();
+     quest::targlobal("ikkylockout6", 1, "D3", 293114, $charid, 293);
+  }
 }

@@ -8,7 +8,7 @@ sub EVENT_DEATH {
 foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
      $charid = $pc->CharacterID();
-     quest::targlobal("ikkylockout4", 1, "D3", 293115, $charid, 293);
+     quest::targlobal("ikkylockout4", 1, "H6", 293115, $charid, 293);
   }
 }
  

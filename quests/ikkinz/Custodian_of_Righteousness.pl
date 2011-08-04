@@ -17,6 +17,6 @@ $raid = $entity_list->GetRaidByClient($client);
 foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
      $charid = $pc->CharacterID();
-     quest::targlobal("ikkylockout3", 1, "D3", 293115, $charid, 293);
+     quest::targlobal("ikkylockout3", 1, "H6", 293115, $charid, 293);
   }
 }

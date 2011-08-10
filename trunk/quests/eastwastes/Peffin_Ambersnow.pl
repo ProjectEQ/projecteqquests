@@ -24,6 +24,6 @@ sub EVENT_TIMER {
   if($timer == 1) {
     quest::stoptimer(1);
     quest::spawn2(116574,0,0,3419.4,-1739.7,143.9,191.5);
-    quest::depop();
+    $npc->Depop(1);
   }
 }

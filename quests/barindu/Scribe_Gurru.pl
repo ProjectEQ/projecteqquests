@@ -64,6 +64,7 @@ if (($text=~/instance/i) && ($InInstanceTipt > 0)) {
     }
 if (($text=~/instance/i) && ($InInstanceVxed > 0)) {
     quest::DestroyInstance($InInstanceVxed);
+    quest::delglobal($InInstanceVxed.'_vxed_status');
     quest::say("Vxed Instance Destroyed");
     }
 if (($text=~/instance/i) && ($InInstanceSnplant > 0)) {

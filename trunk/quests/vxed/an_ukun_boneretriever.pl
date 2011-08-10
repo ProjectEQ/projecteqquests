@@ -2,7 +2,7 @@ sub EVENT_DEATH {
   my $instid = quest::GetInstanceID("vxed",0);
   my $newvalue = $qglobals{$instid.'_vxed_status'};
   $newvalue++;
-  quest::setglobal($instid.'_vxed_status',$newvalue,3,"H6");
+  quest::setglobal($instid.'_vxed_status',$newvalue,0,"H6");
   if($newvalue >= 50) {
     SPAWN_EKIKOA();
   }

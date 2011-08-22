@@ -17,12 +17,12 @@ sub EVENT_SAY {
             if($raid) {
               quest::AssignRaidToInstance($NewInstance);
               #create status global
-              quest::targlobal($NewInstance.'_inktuta',0,"H6",296070,0,296);
+              quest::targlobal($NewInstance.'_inktuta',0,"H6",0,0,296);
               quest::say("Instance added.");
             } elsif($status >79) {
               quest::AssignToInstance($NewInstance);
               #create status global
-              quest::targlobal($NewInstance.'_inktuta',0,"H6",296070,0,296);
+              quest::targlobal($NewInstance.'_inktuta',0,"H6",0,0,296);
               quest::say("Instance added.");
             }
           } else {

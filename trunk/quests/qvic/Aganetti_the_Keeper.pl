@@ -8,8 +8,8 @@ sub EVENT_SAY {
       quest::say("Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu'ta.");
       #allow a GM to request the instance and if in a raid bring the entire raid with him
       $raid = $client->GetRaid();
-      #if($raid || $status > 79) {
-      if($status > 79) { 
+      #if($raid || $status > 79) { #change to this when when zone goes live.
+      if($status > 79) { #temporary to allow GM to bring in a raid for testing.
         if(!defined($qglobals{inktutalockout})) {
           $InInstance = quest::GetInstanceID("inktuta",0);
           if($InInstance == 0){

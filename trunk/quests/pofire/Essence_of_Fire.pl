@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if($text=~/hail/) {
+  if($text=~/hail/i) {
     quest::setglobal("pop_fire_fennin_projection", 1, 5, "F");
     $client->Message(4, "You receive a character flag!");
     quest::summonitem(29147); #Globe of Dancing Flame

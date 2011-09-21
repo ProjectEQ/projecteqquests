@@ -18,7 +18,7 @@ sub MoveInFormation {
 	my $NoSpeedBuffs = $_[5];
 	if (!$Mob) { $Mob = $npc; }
 	
-	if (!$MoveToX && !$MoveToY && !$MoveToZ) {
+	if (!$MoveToX && !$MoveToY) {
 		if (!$OnGrid) {
 			$MoveToX = $Mob->GetGuardPointX();
 			$MoveToY = $Mob->GetGuardPointY();
@@ -355,7 +355,7 @@ sub SpawnInFormationXY {
 		for ($ColNum = 0; $ColNum < $Columns; $ColNum++)
 		{
 			#plugin::Debug("Column $ColNum");
-			for ($RowNum; $RowNum < $Rows; $RowNum++)
+			for ($RowNum = 1; $RowNum < $Rows; $RowNum++)
 			{
 				#plugin::Debug("Row $RowNum");
 				my $NewZ = $MainNPC->FindGroundZ($NewX, $NewY, $MaxZDiff);

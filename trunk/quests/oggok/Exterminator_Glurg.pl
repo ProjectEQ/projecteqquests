@@ -11,7 +11,10 @@ sub EVENT_ITEM {
     quest::faction(232,10); # +Oggok Guards
     quest::faction(233,10); # +Oggok Residents
     quest::faction(46,10); # +Clurg
-    quest::exp(5);
+    quest::exp(500);
     quest::givecash(1,1,1,0);
   }
+  plugin::return_items(\%itemcount);
 }
+
+  

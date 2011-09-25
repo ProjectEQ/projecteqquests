@@ -1,6 +1,5 @@
 #gfaydark\Dill_Fireshine.pl
 #Quests: Orc Hatchets and Orc Runner (Kelethin)
-#Note: Orc runner quest incomplete. Still requires 'A Sealed Letter' which identifies as 'A letter to King Naythox Thex'.
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

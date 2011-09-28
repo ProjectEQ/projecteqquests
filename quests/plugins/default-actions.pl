@@ -154,7 +154,15 @@ sub defaultCombat()
       {
       }
     }
+   }
   }
-}
   
-return 1;
+  return;
+
+  # Sample code to work from
+  my $random_result = int(rand(100));
+    if(($combat_state == 1) &&($random_result<=50)){
+    quest::say("Death!!  Death to all who oppose the Crushbone orcs!!");
+   }else{
+   quest::say("You've ruined your lands. You'll not ruin mine!");
+ }

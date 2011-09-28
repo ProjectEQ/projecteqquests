@@ -6,10 +6,7 @@ sub check_hasitem {
     my $slot1;
     my $itemid1;
     my $augid1;
-    my $i;
-    my $body_count = $client->GetCorpseCount();
-    my $body_id;
-
+   my $i;
 #Check main inventory and cursor
     for($slot1=0; $slot1<=30; $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
@@ -88,25 +85,7 @@ sub check_hasitem {
             return 1;
         }
     }
-#Check corpses
-  if ($body_count > 0) {
-    for ($i=1; $i<=$body_count; $i++) {
-      $body_id = $client->GetCorpseID($i);
-      for ($slot1=0; $slot1<=30; $slot1++) {
-        $itemid1 = $client->GetCorpseItemAt($body_id, $slot1);
-        if ($itemid1 == $itmchk) {
-          return 1;
-        }
-      }
-      for ($slot1=251; $slot1<=340; $slot1++) {
-        $itemid1 = $client->GetCorpseItemAt($body_id, $slot1);
-        if ($itemid1 == $itmchk) {
-          return 1;
-        }
-      }
-    }
-  }
-  return 0;
+    return 0;
 }
 
 1;

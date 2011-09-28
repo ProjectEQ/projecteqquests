@@ -207,4 +207,47 @@ sub RandomSwim {
 	}
 }
 
+#Usage: my @DestArray = plugin::CalcDestFromHeading(Heading, Distance, [Mob, MaxZDiff]);
+# This plugin calculates the destination X and Y loc based on heading and distance
+# Heading is the heading you want to calculate destination X Y Z from
+# Distance is the distance you want for the destination X and Y from the source
+# Mob is an optional field to allow any mob to be set, but $npc is default
+# MaxZDiff is the max height difference from the source mob's Z you want to calculate the destination from.
+#
+# The output array can be used as follows:
+# my $DestX = $DestArray[0];
+# my $DestY = $DestArray[1];
+# my $DestZ = $DestArray[2];
+
+sub CalcDestFromHeading {
+
+	my $npc = plugin::val('$npc');
+	my $Heading = $_[0];
+	my $Distance = $_[1];
+	my $Mob = $_[2];
+	my $MaxZDiff = $_[3];
+	
+	if (!$Distance) { return; }
+	if (!$Mob) { $Mob = $npc; }
+	if (!$MaxZDiff) { $MaxZDiff = 50; }
+	
+		my $ReverseHeading = 256 - $Heading;
+		my $ConvertAngle = $ReverseHeading * 1.40625;
+		if ($ConvertAngle <= 270) {
+			$ConvertAngle = $ConvertAngle + 90;
+		}
+		else {
+			$ConvertAngle = $ConvertAngle - 270;
+		}
+		my $Radian = $ConvertAngle * (3.1415927 / 180);
+
+		my $CircleX = $Distance * cos($Radian);
+		my $CircleY = $Distance * sin($Radian);
+		my $DestX = $CircleX + $Mob->GetX();
+		my $DestY = $CircleY + $Mob->GetY();
+		my $DestZ = $Mob->FindGroundZ($DestX, $DestY, $MaxZDiff);
+		my @DestArray = ($DestX, $DestY, $DestZ);
+		return @DestArray;
+}
+
 return 1;	#This line is required at the end of every plugin file in order to use it

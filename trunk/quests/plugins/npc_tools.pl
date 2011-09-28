@@ -62,37 +62,3 @@ sub assocName
          ($faction < 5) ? 'friend' :
          ($faction < 7) ? 'stranger' : plugin::val('$race');
 }
-
-###Kayen
-###Usage: plugin::CountNPCTYPE($NPC_TYPE_ID);
-###Will output the number of NPC's in the zone based on NPC ID
-sub CountNPCTYPE {
-
-	my $npc = plugin::val('npc');
-	my $entity_list = plugin::val('$entity_list');
-	my $NPC_TYPE_ID = $_[0];
-
-	@npclist = $entity_list->GetNPCList();
-
-		$Count_NPC_TYPE = 0;
-     		foreach $cur (@npclist) {
-		my $NPC_TYPEid = $cur->GetNPCTypeID(); 
-				
-			if ($NPC_TYPEid == $NPC_TYPE_ID) { 
-			$Count_NPC_TYPE++;
-			}
-		}
-	return $Count_NPC_TYPE;
-}
-
-#Akkadius
-#Usage plugin::SetProx(X/Y Axis Range, Z Axis Range);
-sub SetProx{	
-	my $Range = $_[0];
-	my $Z = $_[1];
-	my $x = plugin::val('$x');
-	my $y = plugin::val('$y');
-	my $npc = plugin::val('$npc');
-	my $z = $npc->GetZ();
-	quest::set_proximity($x - $Range, $x + $Range, $y - $Range, $y + $Range, $z - $Z, $z + $Z);
-	}

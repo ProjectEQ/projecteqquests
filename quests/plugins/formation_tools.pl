@@ -1,3 +1,98 @@
+#Usage: plugin::FollowFormLeader([LeaderMob, OnGrid = 0, MoveToX = 0, MoveToY = 0, NoSpeedBuffs = false]);
+# This script will move all of 1 NPC Type ID to the relative Guard position that they were the first time this plugin was run
+# LeaderMob is an optional field where a specific leader NPC can be specified (default is the NPC running the script)
+# OnGrid is am optional field where 1 will use NPC waypoints if they are on a grid, and 0 (default) will use guard or set XYZ
+# MoveToX/MoveToY/MoveToZ are optional fields for setting a destination X Y and Z instead of using guard points or way points to determine the destination.
+# At this time, the MoveToZ field is basically ignored, as the ground Z is calculated based on the leader NPC's Z.
+# NoSpeedBuffs is an optional field for all speedbuffs to be removed during pathing if enabled
+
+sub FollowFormLeader {
+	my $npc = plugin::val('$npc');
+	my $entity_list = plugin::val('$entity_list');
+	my $Mob = $_[0];
+	my $OnGrid = $_[1];
+	my $MoveToX = $_[2];
+	my $MoveToY = $_[3];
+	my $NoSpeedBuffs = $_[4];
+	if (!$Mob) { $Mob = $npc; }
+	
+	if (!$MoveToX && !$MoveToY && !$MoveToZ)
+	{
+		if (!$OnGrid)
+		{
+			$MoveToX = $Mob->GetGuardPointX();
+			$MoveToY = $Mob->GetGuardPointY();
+		}
+		else
+		{
+			$MoveToX = $Mob->GetWaypointX();
+			$MoveToY = $Mob->GetWaypointY();
+		}
+	}
+	my $NewHeading = $Mob->CalculateHeadingToTarget($MoveToX, $MoveToY);
+	if ($NoSpeedBuffs)
+	{
+		$Mob->BuffFadeByEffect(3);	# Prevent Speed buffs from messing up the group of NPCs
+	}
+	my $LeaderID = $Mob->GetID();
+	my @npclist = $entity_list->GetNPCList();
+	foreach $ent (@npclist)
+	{
+		if($ent->EntityVariableExists(52) && $ent->GetEntityVariable(52) == $LeaderID)
+		{
+			#plugin::Debug("Got NPC");
+			if ($NoSpeedBuffs)
+			{
+				$ent->BuffFadeByEffect(3);	# Prevent Speed buffs from messing up the group of NPCs
+			}
+			
+			# Set the Initial Relative Position and Heading variables
+			if(!$ent->EntityVariableExists(50))
+			{
+				# If this doesn't exist, then neither of them do
+				my $SquadX = $ent->GetX();
+				my $SquadY = $ent->GetY();
+				my $SquadHeading = $Mob->CalculateHeadingToTarget($SquadX, $SquadY);
+				my $CurHeading = $Mob->GetHeading();
+				my $CurDist = plugin::DistNoZ($Mob, $ent);
+				my $HeadingDiff = 0;
+				if ($CurHeading > $SquadHeading)
+				{
+					$HeadingDiff = $CurHeading - $SquadHeading;
+				}
+				else
+				{
+					$HeadingDiff = $CurHeading + 256 - $SquadHeading;
+				}
+				$ent->SetEntityVariable(50, $CurDist);	# Original Distance from Leader
+				$ent->SetEntityVariable(51, $HeadingDiff);	# Original Heading Difference from Leader
+			}
+			my $SquadDist = $ent->GetEntityVariable(50);
+			my $HDiff = $ent->GetEntityVariable(51);
+			#plugin::Debug("Got Variables");
+			
+			my $NewSquadHeading = 0;
+			if ($NewHeading - $HDiff > 0)
+			{
+				$NewSquadHeading = $NewHeading - $HDiff;
+			}
+			else
+			{
+				$NewSquadHeading = 256 + $NewHeading - $HDiff;
+			}
+			#plugin::Debug("Before Calc");
+			my @DestArray = plugin::CalcDestFromHeadingXY($NewSquadHeading, $SquadDist, $MoveToX, $MoveToY, 10, $Mob);
+			my $NewX = $DestArray[0];
+			my $NewY = $DestArray[1];
+			my $NewZ = $DestArray[2];
+			#plugin::Debug("After Calc");
+			$ent->MoveTo($NewX, $NewY, $NewZ, $NewHeading, 1);
+			#plugin::Debug("Moving NPC");
+		}
+	}
+}
+
+
 #Usage: plugin::MoveInFormation(NPCID, [$npc = 0, OnGrid = 0, MoveToX = 0, MoveToY = 0, NoSpeedBuffs = false]);
 # This script will move all of 1 NPC Type ID to the relative Guard position that they were the first time this plugin was run
 # NPCID is the NPC ID of the NPCs you want to move in the formation (moves all of this NPC ID in the whole zone)
@@ -18,43 +113,62 @@ sub MoveInFormation {
 	my $NoSpeedBuffs = $_[5];
 	if (!$Mob) { $Mob = $npc; }
 	
-	if (!$MoveToX && !$MoveToY) {
-		if (!$OnGrid) {
+	if (!$MoveToX && !$MoveToY && !$MoveToZ)
+	{
+		if (!$OnGrid)
+		{
 			$MoveToX = $Mob->GetGuardPointX();
 			$MoveToY = $Mob->GetGuardPointY();
+			#$MoveToZ = $Mob->GetGuardPointZ();
 			#plugin::Debug("Using Guard Locs");
 		}
-		else {
+		else
+		{
+			#GetWaypointX(), GetWaypointY(), GetWaypointZ(), GetWaypointH(), GetWaypointPause(), and GetWaypointID().
+			#$Mob->CalculateNewWaypoint();
+			#my $WPID = int($Mob->GetWaypointID());
+			#my $WPPause = int($Mob->GetWaypointPause());
+			#my $CurX = int($Mob->GetX());
+			#my $CurY = int($Mob->GetY());
 			$MoveToX = $Mob->GetWaypointX();
 			$MoveToY = $Mob->GetWaypointY();
+			#$MoveToZ = $Mob->GetWaypointZ();
+			#plugin::Debug("Using WP:$WPID Pause:$WPPause WPX:$MoveToX WPY:$MoveToY CurX:$CurX CurY:$CurY");
 		}
 	}
 	my $NewHeading = $Mob->CalculateHeadingToTarget($MoveToX, $MoveToY);
-	if ($NoSpeedBuffs) {
+	if ($NoSpeedBuffs)
+	{
 		$Mob->BuffFadeByEffect(3);	# Prevent Speed buffs from messing up the group of NPCs
 	}
 	
 	my @npclist = $entity_list->GetNPCList();
 	foreach $ent (@npclist)
 	{
-		if($ent->GetNPCTypeID() == $SquadNPCID) {
+		if($ent->GetNPCTypeID() == $SquadNPCID)
+		{
 			#plugin::Debug("Got NPC");
-			if ($NoSpeedBuffs) {
+			if ($NoSpeedBuffs)
+			{
 				$ent->BuffFadeByEffect(3);	# Prevent Speed buffs from messing up the group of NPCs
 			}
 			
 			# Set the Initial Relative Position and Heading variables
-			if(!$ent->EntityVariableExists(50)) {	# If this doesn't exist, then neither of them do
+			if(!$ent->EntityVariableExists(50))
+			{
+				# If this doesn't exist, then neither of them do
 				my $SquadX = $ent->GetX();
 				my $SquadY = $ent->GetY();
 				my $SquadHeading = $Mob->CalculateHeadingToTarget($SquadX, $SquadY);
 				my $CurHeading = $Mob->GetHeading();
 				my $CurDist = plugin::DistNoZ($Mob, $ent);
 				my $HeadingDiff = 0;
-				if ($CurHeading > $SquadHeading) {
+				if ($CurHeading > $SquadHeading)
+				{
 					$HeadingDiff = $CurHeading - $SquadHeading;
 				}
-				else {
+				else
+				{
 					$HeadingDiff = $CurHeading + 256 - $SquadHeading;
 				}
 				$ent->SetEntityVariable(50, $CurDist);	# Original Distance from Leader
@@ -65,10 +179,12 @@ sub MoveInFormation {
 			#plugin::Debug("Got Variables");
 			
 			my $NewSquadHeading = 0;
-			if ($NewHeading - $HDiff > 0) {
+			if ($NewHeading - $HDiff > 0)
+			{
 				$NewSquadHeading = $NewHeading - $HDiff;
 			}
-			else {
+			else
+			{
 				$NewSquadHeading = 256 + $NewHeading - $HDiff;
 			}
 			#plugin::Debug("Before Calc");
@@ -201,6 +317,89 @@ sub MoveToFormation {
 }
 
 
+#Usage: plugin::RandomFormRoam(MaxVariance, MaxZVariance, LoSMobSize);
+# NPCID is the NPC Type ID of the NPCs you want to form the squad formation with
+# MaxVariance - Sets the max X/Y variance to travel 
+# MaxZVariance - Sets the max Z variance to travel.  This field is optional and default is 15.
+# LoSMobSize - Sets the size of the mob LoS check.  This field is optional and default is 5.
+# The LoS check basically looks from your NPC to an imaginary NPC of the LoSMobSize size to see if LoS exists
+
+sub RandomFormRoam {
+
+	my $npc = plugin::val('$npc');
+	my $entity_list = plugin::val('$entity_list');
+	#my $NPCID = $_[0];
+	my $MaxVariance = $_[0];
+	my $MaxZVariance = $_[1];
+	my $LoSMobSize = $_[2];
+
+	#Set the Max Z Variance to 15 if no 3rd argument is set
+	if(!$MaxZVariance)
+	{
+		$MaxZVariance = 15;
+	}
+	
+	#Set the LoS Check Mob Size to 5 if no 4th argument is set
+	if(!$LoSMobSize)
+	{
+		$LoSMobSize = 5;
+	}
+	
+	# Don't try to roam if already engaged in combat!
+	if ($npc->IsEngaged() != 1)
+	{
+		#Get needed Locs
+		my $CurX = $npc->GetX();
+		my $CurY = $npc->GetY();
+		#my $CurZ = $npc->GetZ();	#Not currently required by this plugin
+		my $OrigX = $npc->GetSpawnPointX();
+		my $OrigY = $npc->GetSpawnPointY();
+		my $OrigZ = $npc->GetSpawnPointZ();
+		my $GuardX = $npc->GetGuardPointX();
+		my $GuardY = $npc->GetGuardPointY();
+
+		if ($CurX == $GuardX && $CurY == $GuardY)
+		{
+			#If the NPC has finished walking to the previous given Loc
+			#plugin::Debug("My Guard X is $GuardX and Y is $GuardY");
+			#Get a random X and Y within the set range
+			my $RandomX = int(rand($MaxVariance - 1)) + 1;
+			my $RandomY = int(rand($MaxVariance - 1)) + 1;
+			my $PosX = $OrigX + $RandomX;
+			my $PosY = $OrigY + $RandomY;
+			my $NegX = $OrigX - $RandomX;
+			my $NegY = $OrigY - $RandomY;
+			my $NewX = quest::ChooseRandom($PosX, $NegX);
+			my $NewY = quest::ChooseRandom($PosY, $NegY);
+			
+			#Check for LoS and Z issues before moving to the new Loc
+			my $NewZ = $npc->FindGroundZ($NewX,$NewY, 5) + 1;	#Add 1 to the new Z to prevent hopping issue when they arrive
+			if ($NewZ > -999999 && $OrigZ > ($NewZ - $MaxZVariance + 1) && $OrigZ < ($NewZ + $MaxZVariance - 1))
+			{
+				my $NewH = $npc->CalculateHeadingToTarget($NewX, $NewY);
+				my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY, $NewZ, $LoSMobSize);
+				#Check LoS to the new random Loc
+				if ($LoS_Check)
+				{
+					quest::moveto($NewX, $NewY, $NewZ, $NewH, 1);
+					#plugin::MoveInFormation($NPCID, $npc, 0, $NewX, $NewY);
+					plugin::FollowFormLeader($npc, 0, $NewX, $NewY);
+				}
+				else
+				{
+					# If the NPC is not at its spawn point, return to it to prevent getting stuck
+					if ($OrigX != $CurX || $OrigY != $CurY)
+					{
+						quest::moveto($OrigX, $OrigY, $OrigZ, $NewH, 1);
+						plugin::FollowFormLeader($npc, 0, $NewX, $NewY);
+					}
+				}
+			}
+		}
+	}
+}
+
+
 #Usage: plugin::SpawnInFormation(NPCID, LeaderMob, Distance, Columns, Rows, [LeadDist, MaxZDiff]);
 # NPCID is the NPC Type ID of the NPCs you want to form the squad formation with
 # LeaderMob is the Client or NPC you want to spawn the formation behind (use invisible and/or temp NPC to show no leader)
@@ -287,14 +486,18 @@ sub SpawnInFormation {
 			my $CurNPC = $entity_list->GetNPCByID($EntityID);
 			my $NewSquadHeading = $Mob->CalculateHeadingToTarget($DestX, $DestY);
 			my $HeadingDiff = 0;
-			if ($LeaderHeading > $NewSquadHeading) {
+			if ($LeaderHeading > $NewSquadHeading)
+			{
 				$HeadingDiff = $LeaderHeading - $NewSquadHeading;
 			}
-			else {
+			else
+			{
 				$HeadingDiff = $LeaderHeading + 256 - $NewSquadHeading;
 			}
+			my $LeaderID = $Mob->GetID();
 			$CurNPC->SetEntityVariable(50, $CurDist);	# Original Distance from Leader
 			$CurNPC->SetEntityVariable(51, $HeadingDiff);	# Original Heading Difference from Leader
+			$CurNPC->SetEntityVariable(52, $LeaderID);	# Save the entity ID of the leader NPC
 			$NewX = $NewX + $Distance;
 		}
 		$NewY = $NewY + $Distance;
@@ -337,17 +540,15 @@ sub SpawnInFormationXY {
 	
 	$SpawnX = $SpawnX + $Distance;
 	$SpawnY = $SpawnY - (($Columns - 1) * $Distance / 2);
-	
 	# Spawn the first NPC
 	quest::spawn2($NPCID, 0, 0, $SpawnX, $SpawnY, $SpawnZ, $Heading);
 	#plugin::Debug("Spawned First NPC");
-	
 	# Get the first NPC
 	my $MainNPC = $entity_list->GetNPCByNPCTypeID($NPCID);
 	#plugin::Debug("Got First NPC");
 	my $NewX = $SpawnX;
 	my $NewY = $SpawnY;
-	my $RowNum = 1;	# Prevent Respawn over the first NPC
+	#my $RowNum = 1;	# Prevent Respawn over the first NPC
 	$NewX = $NewX + $Distance;
 	
 	if ($MainNPC)
@@ -355,18 +556,142 @@ sub SpawnInFormationXY {
 		for ($ColNum = 0; $ColNum < $Columns; $ColNum++)
 		{
 			#plugin::Debug("Column $ColNum");
-			for ($RowNum = 1; $RowNum < $Rows; $RowNum++)
+			for ($RowNum = 0; $RowNum < $Rows; $RowNum++)
 			{
-				#plugin::Debug("Row $RowNum");
-				my $NewZ = $MainNPC->FindGroundZ($NewX, $NewY, $MaxZDiff);
-				quest::spawn2($NPCID, 0, 0, $NewX, $NewY, $NewZ, $Heading);
-				$NewX = $NewX + $Distance;
+				# Prevent Respawn over the first NPC
+				if ($RowNum > 0 || $ColNum > 0)
+				{
+					#plugin::Debug("Row $RowNum");
+					my $NewZ = $MainNPC->FindGroundZ($NewX, $NewY, $MaxZDiff);
+					quest::spawn2($NPCID, 0, 0, $NewX, $NewY, $NewZ, $Heading);
+					$NewX = $NewX + $Distance;
+				}
 			}
 			$NewY = $NewY + $Distance;
 			$NewX = $SpawnX;
-			$RowNum = 0;
 		}
 	}
+}
+
+
+#Usage: plugin::SpawnMixedFormation(LeaderMob, Distance, Columns, Rows, LeadDist=Distance, MaxZDiff=15, NPCID, NPCID...);
+# Works just like SpawnInFormation, accept this allows mixing multiple NPCs into the formation
+# Can add as many NPCIDs as wanted by appending to the end of the arguments
+# NPCID is the NPC Type ID of the NPCs you want to form the squad formation with
+# LeaderMob is the Client or NPC you want to spawn the formation behind (use invisible and/or temp NPC to show no leader)
+# Distance is the distance each member of the formation will be from each other on both axis
+# Columns is the number of columns you want in the formation
+# Rows is the number of rows you want in the formation
+# LeadDist is the distance you want the formation to be created behind the leader
+# MaxZDiff is the maximum height above the leader that the best Z will be searched for
+
+sub SpawnMixedFormation {
+
+	my $Mob = $_[0];
+	my $Distance = $_[1];
+	my $Columns = $_[2];
+	my $Rows = $_[3];
+	my $LeadDist = $_[4];
+	my $MaxZDiff = $_[5];
+	
+	if (!$MaxZDiff)
+	{
+		$MaxZDiff = 15;
+	}
+	
+	if (!$LeadDist)
+	{
+		$LeadDist = $Distance;
+	}
+	
+	if(!$_[6])
+	{
+		plugin::Debug("At least 1 NPCID is required for SpawnMixedFormation plugin!");
+	}
+	my $LastArg = 6;
+	while($_[$LastArg])
+	{
+		$LastArg++;
+	}
+	
+	$LastArg--;
+	
+	my $npc = plugin::val('$npc');
+	my $client = plugin::val('$client');
+	my $entity_list = plugin::val('$entity_list');
+	
+	if (!$Mob) { 
+		if ($npc->IsNPC())
+		{
+			$Mob = $npc;
+		}
+		elsif ($client->IsClient())
+		{
+			$Mob = $client;
+		}
+		else
+		{
+			return; # No Client or NPC found
+		}
+	}
+	
+	my $SpawnX = $Mob->GetX();
+	my $SpawnY = $Mob->GetY();
+	my $SpawnZ = $Mob->GetZ();
+
+	my $LeaderHeading = $Mob->GetHeading();
+	$SpawnX = $SpawnX + $LeadDist;
+	$SpawnY = $SpawnY - (($Columns - 1) * $Distance / 2);
+
+	my $NewX = $SpawnX;
+	my $NewY = $SpawnY;
+
+	for ($ColNum = 0; $ColNum < $Columns; $ColNum++)
+	{
+		#plugin::Debug("Column $ColNum");
+		for ($RowNum = 0; $RowNum < $Rows; $RowNum++)
+		{
+			#plugin::Debug("Row $RowNum");
+			my $SquadHeading = $Mob->CalculateHeadingToTarget($NewX, $NewY);
+			my $CurDist = plugin::DistNoZToCoords($Mob, $NewX, $NewY);
+			my $DestH = 0;
+			
+			if ($LeaderHeading > ($SquadHeading - 64))
+			{
+				$DestH = $LeaderHeading - $SquadHeading - 64;
+			}
+			else
+			{
+				$DestH = 256 + $LeaderHeading - $SquadHeading - 64;
+			}
+			
+			my @DestArray = plugin::CalcDestFromHeading($DestH, $CurDist, $Mob, $MaxZDiff);
+			my $DestX = $DestArray[0];
+			my $DestY = $DestArray[1];
+			my $DestZ = $DestArray[2];
+
+			my $RandomNPCIDArg = plugin::RandomRange(6, $LastArg);
+			my $NPCID = $_[$RandomNPCIDArg];
+			my $EntityID = quest::spawn2($NPCID, 0, 0, $DestX, $DestY, $DestZ, $LeaderHeading);
+			my $CurNPC = $entity_list->GetNPCByID($EntityID);
+			my $NewSquadHeading = $Mob->CalculateHeadingToTarget($DestX, $DestY);
+			my $HeadingDiff = 0;
+			if ($LeaderHeading > $NewSquadHeading) {
+				$HeadingDiff = $LeaderHeading - $NewSquadHeading;
+			}
+			else {
+				$HeadingDiff = $LeaderHeading + 256 - $NewSquadHeading;
+			}
+			my $LeaderID = $Mob->GetID();
+			$CurNPC->SetEntityVariable(50, $CurDist);	# Original Distance from Leader
+			$CurNPC->SetEntityVariable(51, $HeadingDiff);	# Original Heading Difference from Leader
+			$CurNPC->SetEntityVariable(52, $LeaderID);	# Save the entity ID of the leader NPC
+			$NewX = $NewX + $Distance;
+		}
+		$NewY = $NewY + $Distance;
+		$NewX = $SpawnX;
+	}
+
 }
 
 
@@ -387,6 +712,7 @@ sub FollowInFormation {
 	
 	if(!$MaxZDiff) { $MaxZDiff = 15; }
 
+	#my $NewHeading = $Mob->CalculateHeadingToTarget($MoveToX, $MoveToY);
 	my $NewHeading = $Mob->GetHeading();
 	my $RunSpeed = 0;
 	
@@ -454,7 +780,6 @@ sub FollowInFormation {
 		}
 	}
 }
-
 
 #Usage: plugin::SquadAttackTarget(SquadNPCID, TargetID);
 # Squad1NPCID is the NPC ID of the Squad attacking the other
@@ -538,6 +863,8 @@ sub SquadAttackSquad {
 	}
 
 }
+
+return 1;	#This line is required at the end of every plugin file in order to use it
 
 
 #Usage: my @DestArray = plugin::CalcDestFromHeading(Heading, Distance, [Mob, MaxZDiff]);

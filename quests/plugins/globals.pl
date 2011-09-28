@@ -59,7 +59,7 @@ sub var
     
     $fullname .= $varName;
     
-    if ($varName eq 'itemcount')
+    if ($varName eq 'itemcount' || $varName eq 'qglobals')
     {
       # Hash reference
       return \%$fullname;

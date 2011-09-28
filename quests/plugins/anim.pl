@@ -2,7 +2,7 @@ sub DoAnim {
 	###Usage: plugin::DoAnim(salute);
 	my $client = plugin::val('$client');
 	my $text = $_[0];
-	%Animlist = (
+		%Animlist = (
 		"kick" => 1,
 		"pierce" => 2,
 		"2hslash" => 3,
@@ -66,8 +66,8 @@ sub DoAnim {
 		"shiver" => 68,
 		"tapfoot" => 69,
 		"bowto" => 70,
-	);
-		quest::doanim($Animlist{$text});
+		);
+			quest::doanim($Animlist{$text});
 }
 
 	sub SetAnim {
@@ -81,6 +81,6 @@ sub DoAnim {
 			"dead" => 3,
 			"kneel" => 4,
 			);
-		$npc->SetAppearance($SetAnimList{$SetAnimVal}); 
+				$npc->SetAppearance($SetAnimList{$SetAnimVal}); 
 	}
 return 1;

@@ -1,6 +1,6 @@
 ###AKKADIUS FROM [Blood of the Akkadian]###
 #Usage: plugin::MobHealPercentage(Numberofpercent);
-# This script will heal a mob whatever percent amount at the time of trigger
+# This script will heal a mob whatever percent amount at the time of trigger/
 sub MobHealPercentage{
 	my $npc = plugin::val('$npc');
 	my $HealPercent = $_[0];
@@ -25,8 +25,8 @@ sub SetLeashMob{
 	my $MobX = $npc->GetX();
 	my $MobY = $npc->GetY();
 	my $MobZ = $npc->GetZ();
-	my $MobH = $npc->GetHeading();
-	$npc->SetEntityVariable(60, $MobX); # Set X Base Integer
+	my $MoBH = $npc->GetHeading();
+	$npc->SetEntityVariable(60, $MobX);	# Set X Base Integer
 	$npc->SetEntityVariable(61, $MobY); # Set Y Base Integer
 	$npc->SetEntityVariable(62, $MobZ); # Set Z Base Integer
 	$npc->SetEntityVariable(63, $MobH); # Set H Base Integer - Store for return

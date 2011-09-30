@@ -1,3 +1,53 @@
+my $count = 0;
+
+sub EVENT_SPAWN {
+  quest::settimer("karina",90);
+}
+
+sub EVENT_TIMER {
+  $count++;
+  if ($count == 1) {
+    quest::say("When our companions are wounded, we must call to the spirits and ask for their aid. Kindred spirits are able to protect us and heal our wounds.");
+  }
+  if ($count == 2) {
+    quest::say("Never force a spirit to your aid. You will find that there are many that will come to your side. You need only ask.");
+  }
+  if ($count == 3) {
+    quest::say("Only use your connection to the spiritual realm when you need it. Do not drain yourself unnecessarily, for you will find yourself unable to call for aid when you need it the most. Ration out your spiritual strength carefully, it will be vital to your own survival.");
+  }
+  if ($count == 4) {
+    quest::say("Try not to become the focus of attention in a battle. You will find it much more efficient to strike when the opponent is distracted. Do not hestitate to ask others to join you. You will find that many welcome your ability to cure battle wounds and call forth protection from the spirits around you.");
+  }
+  if ($count == 5) {
+    quest::say("Be sure to maintian your material components. You will need these to perform the necessary rituals to call on the power of many spirits.");
+  }
+  if ($count == 6) {
+    quest::say("Never lead an enemy to your allies. It is considered the greatest dishonor to do so. Remember that you will carry the name you make for yourself in youth all the way to your elder years. Your actions now will determine the outcome of your future.");
+  }
+  if ($count == 7) {
+    quest::say("Try not to waste the hides of the beasts you hunt. It is wise to craft these hides into armor for yourself.");
+  }
+  if ($count == 8) {
+    quest::say("Always pay attention to your surroundings. There are many opponents that will ambush you while you are out in the field. It is wise to take companions with you when venturing far.");
+  }
+  if ($count == 9) {
+    quest::say("Visit your trainer to master new skills as soon as you are able. The longer you tarry about, the harder it will be for you to learn your skill later on. The more you use the skills you learn, the better you will become at using them.");
+     $count = 0;
+    quest::settimer("karina",90);
+  }
+}
+
+sub EVENT_COMBAT {
+ if($combat_state == 1){
+ quest::say("Prepare to greet your ancestors filth!");
+ }
+ if($combat_state == 0) {
+ quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
+ }
+}
+
+
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome, friend. Come dance by our warm fire or have a seat and [learn] a little bit about the ways of the spiritist.");

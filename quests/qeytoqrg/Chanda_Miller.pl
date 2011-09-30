@@ -13,6 +13,26 @@
 # Bear-hide Boots ID-2903
 # Bear-hide Cape ID-2902
 
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp == 1) {
+	$npc->SetAppearance(1);
+	}
+	if ($wp == 5) {
+	quest::SetRunning(1);
+	}
+	if ($wp == 9) {
+	quest::SetRunning(0);
+	}
+	if ($wp == 12) {
+	$npc->SetAppearance(1);
+	}
+}
+
+sub EVENT_SIGNAL {
+	quest::say("I am f.. fff.. fff.. fine, brother. You um.. don't need to worry about me so much. I am a big girl now.");
+	quest::signal(4055,5);
+}
+
 sub EVENT_AGGRO {
    quest::say("Leave this land now!");
 }

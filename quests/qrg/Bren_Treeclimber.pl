@@ -3,6 +3,30 @@
 #  Zone:  Qrg
 #  Author: Andrew80k
 #####################################################
+
+#########
+#  NPC:  Bren Treeclimber
+#  Zone:  Qrg
+#   Waypoint Event Author:  Robregen
+##########
+
+sub EVENT_WAYPOINT_ARRIVE {
+if($wp eq 130) {
+	quest::SetRunning(1)
+	}
+if($wp eq 216) {
+	quest::SetRunning(0)
+	}
+if($wp eq 258) {
+	quest::say("Hey there, big bear! Good bear! Keep clear of those mean ol' poachers.");
+	$npc->SetAppearance(1);
+	}
+if($wp eq 259) {
+	$npc->SetAppearance(0);
+	}
+}
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
      quest::say("Hello, $name.  My name is Bren Treeclimber and I am a Protector of the Pine.  We have sworn our lives to protecting all the animals of Surefall Glade.  [Poachers], beware!");

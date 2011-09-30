@@ -13,7 +13,7 @@ sub EVENT_TIMER
 {
    if($timer eq "try_kneel")
    {
-      $npc->SetAppearance(4);
+      $npc->SetAppearance(1);
    }
 }
 

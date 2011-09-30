@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+ quest::settimer(1,10);
+}
+
+ sub EVENT_TIMER {
+ if($timer eq "1") {
+  $npc->SetAppearance(1);
+  quest::stoptimer(1);
+ }
+}
+
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello. Would you care to dabble in the art of ceramics? My prices are quite fair. Feel free to make use of my pottery wheel if you would like to try your hand in the art.");

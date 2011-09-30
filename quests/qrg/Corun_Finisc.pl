@@ -3,6 +3,7 @@
 #  Zone:  qrg
 #  Author:  Andrew80k
 #
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello. My name is Corun Finisc and I am one of the Jaggedpine Treefolk. It is our divine responsibility to watch over and protect Surefall Glade and its [inhabitants] from those who seek to [destroy] them.");
@@ -56,11 +57,23 @@ sub EVENT_ITEM {
   }
 }
 
-sub EVENT_SPAWN {
-  quest::settimer("repeat", 120); #Repeated shout every 120 seconds
+sub EVENT_WAYPOINT_ARRIVE {
+if($wp eq 3) {
+	quest::shout("Heed the wishes of Tunare and leave the bears of Surefall Glade undisturbed!");
+	}
+
+if($wp eq 11) {
+	quest::say("By the will of Tunare, I serve this glade until I become one with it.");
+	}
+
+if($wp eq 18) {
+	quest::shout("Heed the wishes of Tunare and leave the bears of Surefall Glade undisturbed!");
+	}
+if($wp eq 29) {
+	quest::shout("Heed the wishes of Tunare and leave the bears of Surefall Glade undisturbed!");
+	}
 }
 
-sub EVENT_TIMER {
-  quest::shout("Heed the wishes of Tunare and leave the bears of Surefall Glade undisturbed!");
-}
+
+
 #END of FILE Zone:qrg  ID:739 -- Corun_Finisc

@@ -1,6 +1,12 @@
 # Crush the Undead
 # Created by Gonner
 
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 4) {
+    quest::say("Your Excellency, we need to recruit a newcomer to find and infiltrate the Shrine of Bertoxxulous. The Shrine's eyes are watching all our moves.");
+	quest::signal(1128,1)
+	}
+}
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

@@ -1,3 +1,7 @@
+sub EVENT_SIGNAL {
+    quest::say("Ha ha ha ha!");
+}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Oh, hello, $name.  Don't mind my associate Klieb over there.  He gets quite grumpy when he drinks.  We are relatively new here ourselves but have made some fast friends in Qeynos.  This is a city of opportunity.");

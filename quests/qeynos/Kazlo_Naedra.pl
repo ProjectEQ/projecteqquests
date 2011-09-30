@@ -1,3 +1,10 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 10) {
+    quest::say("Hey guys, you got any blank scroll sheets for sale? Or know where I could get some around here?");
+	quest::signalwith(1115,3,1);
+	}
+}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hail, $name.  I'm Kazlo Naedra of the Order of Three.  We always seem to be running out of [supplies] around here, which is, of course, very distracting to our studies.");

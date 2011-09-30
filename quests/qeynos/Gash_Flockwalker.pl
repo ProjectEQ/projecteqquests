@@ -4,6 +4,16 @@
 # Quest: Nitrates and the Assassin
 # Author:  Andrew80k
 ####################################
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp == 17) {
+    quest::say("Even the beauty of the ocean pales in comparison to the towering pines of Surefall Glade.");
+	}
+	if($wp == 27) {
+    quest::say("I have had a tree sap from Surefall Glade which tastes better than this ale.");
+	}
+}
+
+
 sub EVENT_SPAWN {
    quest::signal(1138);
 }

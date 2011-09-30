@@ -1,3 +1,26 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 2) {
+    quest::say("Hey Pelshia, how's business?");
+	quest::signalwith(2073,1,1);
+	}
+  if($wp == 7) {
+    quest::say("And what about you, gorgeous? Looking as delightful as ever, I must say.");
+	}
+  if($wp == 18) {
+    quest::say("So, yeah, that Pelshia, she's all over me. And Renux, too. She was giving me the look, man. I'm telling ya. Zan, all the ladies want a piece of the Knargman.");
+	quest::signalwith(2085,1,1);
+	}
+}
+
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+    quest::say("How about you and I go take a stroll under the docks tonight?");
+    quest::signalwith(2073,2,1);
+     }
+}
+
+
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hey..  What's up? My name's Knargon Lanenda. I just came over here from [Freeport] a couple of months ago. I used to run a big business importing goods from [Faydwer]. If you've been to [Freeport]. I'm sure you've heard of me.");

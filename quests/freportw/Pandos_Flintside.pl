@@ -86,7 +86,7 @@ sub EVENT_TIMER {
     quest::say("I sure could use some of those famous muffins you make!");
     quest::signalwith(9088, 1, 10);
   }
-  if(($x == -446) && ($y == -226) && ($Bakery == 1)) {
+  if(($x == -497) && ($y == -204) && ($Bakery == 1)) {
     quest::stop();
     quest::stoptimer("Pandos");
     $Bakery = 0;
@@ -101,5 +101,10 @@ sub EVENT_SIGNAL {
   if($signal == 2) {
     quest::resume();
   }
+  if($signal == 3) {
+    quest::say("Yes, Lady Shae.");
+    quest::signalwith(9058, 3, 3);
+  }
 }
+
 #End of File, Zone:freportw  NPC:9057 -- Pandos_Flintside

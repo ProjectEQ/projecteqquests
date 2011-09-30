@@ -1,3 +1,7 @@
+sub EVENT_SIGNAL {
+    quest::say("Yes, sir!");
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Haawwwl. Whasnsuud grurffnunnnsuuuss.");

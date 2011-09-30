@@ -1,3 +1,9 @@
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp == 3) {
+    quest::emote("growls, revealing his fangs.");
+	}
+}
+
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
     quest::say("Why, hello there, $name! I am Jusean, loyal member of the League of Antonican Bards. You look like the reliable sort, maybe you could help me out for a bit, huh? It's about time for our field agents to turn in their [watch reports], and I need someone to go pick them up for me."); 

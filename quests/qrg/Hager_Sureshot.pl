@@ -44,4 +44,12 @@ sub EVENT_ITEM {
   plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
   plugin::return_items(\%itemcount);
 }
+
+sub EVENT_SPAWN {
+  quest::settimer("repeat", 90); #Repeated shoot every 90 seconds
+}
+
+sub EVENT_TIMER {
+  plugin::DoAnim(bow);
+}
 # EOF zone: qrg ID: 3032 NPC: Hagar_Sureshot

@@ -1,3 +1,24 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 12) {
+    quest::emote("whistles a happy hafling tune.");
+	}
+  if($wp == 33) {
+    quest::emote("whistles a happy hafling tune.");
+	}
+  if($wp == 51) {
+    quest::emote("whistles a happy hafling tune.");
+  }
+  if($wp == 73) {
+    quest::emote("whistles a happy hafling tune.");
+	}
+  if($wp == 96) {
+    quest::emote("whistles a happy hafling tune.");
+	}
+  if($wp == 120) {
+    quest::emote("whistles a happy hafling tune.");
+  }
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings and salutations, $name! My name is Reebo Leafsway, loyal Druid of [Karana]. I am in charge of helping young druids who wish to get started down the [trail to Karana's wisdom]. I also do my share of tending the [crops].");

@@ -45,13 +45,24 @@ sub EVENT_WAYPOINT_DEPART {
 
   if ($wp == 13) {
     quest::clear_proximity();
+	quest::stoptimer("repeat");
   }
+    if ($wp == 36) {
+	quest::emote("picks up a discarded item from the ground and says 'Don't people have enough respect for our grand city to not throw things onto the streets?!'");
+	quest::settimer("repeat", 320);
+  }
+  
 }
 
 sub EVENT_ENTER {
   $client->Message(15,"A note on the ground catches your eye.");
   quest::summonitem(18835);
   quest::clear_proximity();
+}
+
+
+sub EVENT_TIMER {
+  quest::emote("picks up a discarded item from the ground and says 'Don't people have enough respect for our grand city to not throw things onto the streets?!'");
 }
 
 #END of FILE Zone:qeynos  ID:1096 -- Hansl_Bigroon

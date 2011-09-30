@@ -1,9 +1,7 @@
 sub EVENT_SPAWN {
-   my $random = int(rand(720));
-   quest::settimer("mangler",$random);
+	quest::settimer("mangler",720);
 }
-
 sub EVENT_TIMER {
-  quest::say("<Bark, bark, bark! Hoooooowwwwwwl!>");
-  quest::signal(19049,1); #Kevlin_Diggs
+	quest::say("<Bark, bark, bark! Hoooooowwwwwwl!>");
+	quest::signal(19049,1);
 }

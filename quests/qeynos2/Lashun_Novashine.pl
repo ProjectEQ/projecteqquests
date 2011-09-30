@@ -8,11 +8,17 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-  if($wp == 16) {
-    quest::say("Greetings, people of Qeynos! Are you lost? Has the chaotic life of an adventurer left you empty and alone? Seek redemption in the glorious light of the Prime Healer. Only through Rodcet Nife and the Temple of Life will you find true health and salvation.");
-  }
-  if($wp == 28) {
+  if($wp == 13) {
     quest::shout("Cease this endless conflict and seek salvation in the Temple of Life! The glory of Rodcet Nife awaits you!");
+  }
+  if($wp == 14) {
+    quest::shout("Cease this endless conflict and seek salvation in the Temple of Life! The glory of Rodcet Nife awaits you!");
+  }
+  if($wp == 15) {
+    quest::shout("Cease this endless conflict and seek salvation in the Temple of Life! The glory of Rodcet Nife awaits you!");
+  }
+  if($wp == 57) {
+    quest::say("Greetings, people of Qeynos! Are you lost? Has the chaotic life of an adventurer left you empty and alone? Seek redemption in the glorious light of the Prime Healer. Only through Rodcet Nife and the Temple of Life will you find true health and salvation.");
   }
 }
 

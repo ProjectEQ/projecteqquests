@@ -71,4 +71,7 @@ sub EVENT_ITEM
 
 }
 
+sub EVENT_SIGNAL {
+	quest::say("Hmmph !! If you're here to get the mail for room two, you'll need to show me the room key.");
+ }
 #END of FILE Zone:freportw  ID:9103 -- Swin_Blackeye

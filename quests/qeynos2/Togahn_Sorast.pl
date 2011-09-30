@@ -38,6 +38,12 @@
 #
 ############################################
 
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 16) {
+    $npc->SetAppearance(1);
+  }
+ }
+
 sub EVENT_SAY {
    if($text=~/Hail/i) {
       quest::say("Greetings.. I am Second Master Togahn Sorast. I am here to teach the ways of our guild. For our more advanced members, I will give out [headbands] as a reward for their contribution to the clan.");

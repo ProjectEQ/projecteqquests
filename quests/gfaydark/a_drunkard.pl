@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-quest::say("Can you spare some copper or silver? I just.. <Hic> .. need some change to buy something to drin.. er.. eat. <Hic>.."); 
+quest::say("Can you -hic- . . . spare some copper or -hic- . . . silver? I just . . . -Hic- . . . need some change to buy something to drin . . Er . . Eat . -Hic-"); 
   }
   if ($text=~/Tandan Nybright/i) {
     quest::say("How did you know my name? You must be from Felwithe. Hic.. Excuse my condition. I am not the man I was. I have had a [shocking experience]. ");
@@ -28,5 +28,27 @@ sub EVENT_ITEM {
     quest::exp(300);
   }
 }
+
+sub EVENT_WAYPOINT_ARRIVE {
+if($wp eq 3) {
+	quest::say("Please.. Can anyone spare some coppers? <Hic>.. Anyone?");
+	}
+if($wp eq 9) {
+	quest::say("Please.. Can anyone spare some coppers? <Hic>.. Anyone?");
+	}
+if($wp eq 15) {
+	quest::say("Please.. Can anyone spare some coppers? <Hic>.. Anyone?");
+	}
+if($wp eq 24) {
+	quest::say("Please.. Can anyone spare some coppers? <Hic>.. Anyone?");
+	}
+if($wp eq 26) {
+	quest::say("Please.. Can anyone spare some coppers? <Hic>.. Anyone?");
+	}
+if($wp eq 33) {
+	quest::say("Please.. Can anyone spare some coppers? <Hic>.. Anyone?");
+	}
+}
+
 #END of FILE Zone:gfaydark  ID:54059 -- a_drunkard 
 

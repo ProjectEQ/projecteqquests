@@ -39,4 +39,10 @@ if (plugin::check_handin(\%itemcount, 13218 =>1 )) {
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
   plugin::return_items(\%itemcount);
 }
+
+
+sub EVENT_SIGNAL {
+  quest::say("I am working on it, Mater!!");
+ }
+
 #END of FILE Zone:kaladimb  ID:67018 -- Jeet 

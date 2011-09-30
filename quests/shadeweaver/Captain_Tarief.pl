@@ -1,4 +1,50 @@
 # Saurek Scales
+my $count = 0;
+
+sub EVENT_SPAWN {
+  quest::settimer("tarief",180);
+}
+
+sub EVENT_TIMER {
+  $count++;
+  if ($count == 1) {
+    quest::say("It is important for us to hunt well and provide food to our brethren. Use stealth to surprise your opponent and attack them from behind. This is a vital tactic for the Taruun.");
+  }
+  if ($count == 2) {
+    quest::say("Taking a spit with you into battle allows you to cook the meat you find in the field. This will help sustain your companions as well as yourself.");
+  }
+  if ($count == 3) {
+    quest::say("Remember to try to maneuver behind your opponent, attack with wisdom and cunning.");
+  }
+  if ($count == 4) {
+    quest::say("We must clear out the hoppers that attack us. These beasts can become very dangerous if they are left to breed. We have already lost many of our brethren to the larger ones.");
+  }
+  if ($count == 5) {
+    quest::say("It is important for us to stay light and nimble on our feet. Do not overburden yourself with equipment you have no need for.");
+  }
+  if ($count == 6) {
+    quest::say("Avoid heavier armor, let the Khala Dun take the brunt of the blows while you maneuver behind the enemy. If they focus their attacks on you, it is wise to retreat until your companions are able to distract them from you.");
+  }
+  if ($count == 7) {
+    quest::say("Remember your honor. Do not lay claim to a kill that does not belong to you. Both victory and spoils belong to the one who has initiated the battle.");
+  }
+  if ($count == 8) {
+    quest::say("Pay close attention to your surroundings. When you are in danger, it is best to know the quickest way back to safety.");
+     $count = 0;
+    quest::settimer("tarief",180);
+  }
+}
+
+sub EVENT_COMBAT {
+ if($combat_state == 1){
+ quest::say("Prepare to greet your ancestors filth!");
+ }
+ if($combat_state == 0) {
+ quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
+ }
+}
+
+
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

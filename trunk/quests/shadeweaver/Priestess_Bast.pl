@@ -1,6 +1,19 @@
 #Priestess_Bast.pl
 #Champion of the Vah Shir
 
+sub EVENT_SPAWN {
+ quest::settimer(1,10);
+}
+
+ sub EVENT_TIMER {
+ if($timer eq "1") {
+  $npc->SetAppearance(1);
+  quest::stoptimer(1);
+ }
+}
+
+
+
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		quest::emote("speaks to you without opening her eyes or disturbing her meditations, 'Greetings to you. I, like others before me, have dedicated my life to protecting the animals that roam these lands. The blight of poachers and others that would profit from their destruction has overrun their peaceful way of life. You may also serve this noble cause, speak with Sentry Ferin in the field. No doubt there is plenty to be done.'");

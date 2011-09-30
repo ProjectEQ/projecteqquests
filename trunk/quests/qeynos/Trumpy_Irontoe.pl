@@ -1,3 +1,45 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 2) {
+    quest::say("Time to drain the [dragon].. if ya know what I mean.. Bwah ha ha ha.");
+	quest::signalwith(1074,1,1)
+  }
+  if($wp == 4) {
+    quest::say("Outta my way, ya big lummox!");
+	quest::signal(1075, 1);
+	}
+    if($wp == 7) {
+    quest::say("<BURP!> Heh heh.. Enjoy that one, boys!");
+	quest::signalwith(1090,3,1);
+  }
+  if($wp == 11) {
+    plugin::DoAnim(kick);
+  }
+     if($wp == 12) {
+    quest::say("Hey, Fishboy! You dropped something! Bwah ha ha ha!");
+	quest::signalwith(1159,2,1);
+  }
+  if($wp == 17) {
+    quest::say("Heh. What a loser!");
+	quest::signalwith(1090, 4, 1);
+  }
+}
+
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+    quest::say("You know you love me.");
+    }
+  if($signal == 2) {
+	quest::say("Better start learning, [Skippy].");
+    quest::signalwith(1159,3, 1);
+	
+	}
+  if($signal == 3) {
+	quest::say("Peh! What have you been eating? Your brother's bait? You are lucky I don't have time to give you the beating you so richly deserve.");
+	}
+}
+
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 	my $random = int(rand(5));
@@ -23,17 +65,8 @@ quest::say("Ah.. burp.. that piece of cr.. eh? Oh its you.. Kane runs this burg.
 if($text=~/Sragg/i){
 quest::say("Where did you hear that name?!? Not from me! I didn't say nothing about Sragg or those Bloodsabers or their dang temple in the sewers! Get away from me ya hobgoblins! I don't wants no trouble!"); }
 }
-sub EVENT_TIMER { 
-my $random = int(rand(4));	
-	if($random == 0){
-	quest::say("Outta my way, ya big lummox!"); }
-	if($random == 1){
-	quest::say("Time to drain the [dragon]..  If ya know what I mean..  Bwah ha ha ha."); }
-	if($random == 2){
-	quest::say("You know you love me."); }
-	if($random == 3){
-	quest::say("Hey Fishboy! You dropped something! Bwah ha ha ha!"); }	
-}
+
+
 sub EVENT_ITEM { 
 if (plugin::check_handin(\%itemcount, 13033 =>4 )) {
  
@@ -45,8 +78,12 @@ quest::faction(135,-1);
 quest::faction(164,1); }
 plugin::return_items(\%itemcount);
 }
-sub EVENT_SPAWN { 
-quest::settimer(1,60);
+
+sub EVENT_COMBAT {
+	if($combat_state == 1) {
+	quest::say("Prepare to meet my iron toe!");
+	}
 }
+
 #END of FILE Zone:qeynos  ID:1014 -- Trumpy_Irontoe 
 

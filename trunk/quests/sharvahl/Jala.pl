@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+ quest::settimer(1,10);
+}
+
+ sub EVENT_TIMER {
+ if($timer eq "1") {
+  $npc->SetAppearance(1);
+  quest::stoptimer(1);
+ }
+}
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings noble one. I am Jala, Master weaver of Shar Vahl. I have been perfecting the art of [Xakra] weaving lately. Please have a look at what I have crafted, maybe you will find something to suit your fashion needs.");

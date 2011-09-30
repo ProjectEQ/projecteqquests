@@ -1,3 +1,15 @@
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+	quest::start(59);
+	quest::SetRunning(1);
+	}
+  
+  if($signal == 2) {
+    quest::start(31);
+	quest::SetRunning(0);
+	}
+}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("If you are a fellow merchant. I must warn you of the inevitable tax increase.  Antonius Bayle is soon to make a [deal] with the people of Surefall Glade.");

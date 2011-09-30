@@ -1,3 +1,22 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 5) {
+    quest::say("I would like an Erudian tart, please.");
+	quest::signal(1110,1)
+	}
+  if($wp == 8) {
+    quest::say("Time in the pub shall keep them from advancing to the next level of the mind. When will they learn?");
+	}
+	if($wp == 26) {
+    quest::say("A magnificent piece of workmanshp! The clock, too.");
+	}
+}
+
+sub EVENT_SIGNAL {
+    quest::say("Just get me the tart and put your eyes back in your sockets or I'll pry them out for good!");
+}
+
+
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings! Nice to meet someone with manners. I do not see how you people stand to live in this madhouse of ruffians. I would have left weeks ago if I were not waiting for a delivery. Oh, well. Nice to have met you.");

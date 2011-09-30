@@ -35,5 +35,18 @@ if (plugin::check_handin(\%itemcount, 13071 => 1, 13069 => 1, 10307 =>1)) { # Ra
 
 }
 
+sub EVENT_SPAWN {
+  quest::settimer("repeat", 350);
+}
+
+sub EVENT_TIMER {
+    quest::say("Drawna.. Are we all out of bat fur again?");
+	quest::signal(1051,1);
+}
+
+sub EVENT_SIGNAL {
+    quest::say("Hmmm.. Let's see if we can find someone to help relenish our stock of [rat whiskers] and [bat fur]. I need these items for a new little experiment I'm working on.");
+}
+
 # END of FILE Zone:qeynos ID:1118 -- Caleah_Herblender.pl
 

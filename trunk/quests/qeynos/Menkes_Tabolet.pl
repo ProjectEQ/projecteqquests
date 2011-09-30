@@ -4,6 +4,30 @@
 # Snake Fang Necklace
 # Created by Gonner
 
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp == 6) {
+    quest::say("Get your rat fur caps here! Get your snakes fang necklaces here! Special discount prices.. this week only.");
+	}
+	if($wp == 9) {
+    quest::say("Custom made rat pelt capes.. cheap, cheap, cheap!");
+	}
+	if($wp == 12) {
+    quest::say("Feeling a bit unlucky lately? Gnoll pups always picking on you? Fire beetles attacking you whenyou aren't looking? what you need is a lucky rat's foot necklace! Satisfaction guaranteed!");
+	}
+	if($wp == 17) {
+    quest::say("Get your rat fur caps here! Get your snake fang necklaces here! Special discount prices.. This week only.");
+	}
+	if($wp == 23) {
+    quest::say("Feeling a bit unlucky lately? Gnoll pups always picking on you? Fire beetles attacking you whenyou aren't looking? what you need is a lucky rat's foot necklace! Satisfaction guaranteed!");
+	}
+	if($wp == 27) {
+    quest::say("Menkes' discount fashions and jewelry, now open for business.. custom made hats, to fit any size head.");
+	}	
+}
+
+
+
+
 sub EVENT_SAY { 
 
 if($text=~/Hail/i){

@@ -1,4 +1,44 @@
 #Dharr's Lure Quests	#Zone:sharvahl  ID:155097 -- Dharr_Nadim
+sub EVENT_SPAWN {
+	quest::settimer(1,95);
+}
+
+
+
+sub EVENT_TIMER { 
+	if ($timer == 1){
+		my $random = int(rand(8));	
+		if($random == 0){
+			quest::say("Get your new sturdy fishing pole here, take it on your next adventure!"); 
+			}
+		if($random == 1){
+			quest::say("My special fishing bait will attract the best tasting fish, while keeping the Wetfangs away!");
+			}
+		if($random == 2){
+			quest::say("Come this way, get a great deal on fishing supplies. Everything needed for your next outing!"); 
+			}
+		if($random == 3){
+			quest::say("Come check out my wares for all of your fishing needs! Poles, Bait, and Stout, all in one stop!"); 
+			}
+		if($random == 4){
+			quest::say("Tired of getting the ones that you have to throw back? Buy my special bait, you will real in the big ones!"); 
+			}
+		if($random == 5){
+			quest::say("Hey you look like a mighty fisherman! Come buy a pole from me and catch the big ones!");
+			}
+		if($random == 6){
+			quest::say("Come up, buy my gear for your next fishing trip!"); 
+			}
+		if($random == 7){
+			quest::say("Why not take an extra fishing pole with you on your travels, light and easy to carry."); 
+			}	
+	}	
+}
+
+
+
+
+
 sub EVENT_SAY {
 if($text=~/Hail/i){   
 quest::say("Step up. step up! Please take a moment to purchase some supplies from me. Times are hard and my [luck] has been bad."); }

@@ -1,3 +1,17 @@
+
+sub EVENT_SPAWN {
+ quest::settimer(1,10);
+}
+
+ sub EVENT_TIMER {
+ if($timer eq "1") {
+  $npc->SetAppearance(1);
+  quest::stoptimer(1);
+ }
+}
+
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("gives a gentle nod in recognition and mutual respect. Her voice then spills forth in an almost whispered hiss. 'Greetings. $name. I would invite you to keep me company while I finish my meal. but I am afraid that I am almost through.  There really is not much here that suits my palate. but Zurmsa is at least kind enough to keep the place sstocked with bloodwater for me.  Enjoy your meal.'"); }

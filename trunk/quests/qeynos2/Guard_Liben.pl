@@ -1,3 +1,14 @@
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+	my $cur_target = $npc->GetHateTop();
+		if($cur_target) {
+		my $target_name = $cur_target->GetCleanName();
+		quest::say("Time to die $target_name!");
+		}
+	}
+}
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hello there. $name.  Guard Liben at your service.  You can walk the streets of Qeynos and feel safe knowing that we guards are here to protect you.  Just be careful not to fall in with the [wrong crowd].");

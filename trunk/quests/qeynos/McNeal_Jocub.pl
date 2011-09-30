@@ -7,12 +7,10 @@
 # modified by Mitzrugi
 ##################################################
 
-sub EVENT_SPAWN {
-  quest::set_proximity(-304,-256,-300,-228);
-}
-
-sub EVENT_ENTER {
-  quest::say("Blast!! We are running [low]!!");
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp == 5) {
+    quest::say("Blast!! We are running[low]!!");
+	}
 }
 
 sub EVENT_SAY { 
@@ -24,7 +22,7 @@ sub EVENT_SAY {
   }
   if($text=~/shipment/i) {
     quest::say("Take this note to the Qeynos Hills. Somewhere there, you shall find a gnoll at night called Gnasher. Give him the note. Now, get moving!");
-    quest::summonitem(18800); #Tattered Note
+    quest::summonitem(18800);
   }
   if($text=~/blackburrow stout/i) {
     quest::say("Keep it down!! So you've heard of Blackburrow Stout? We sell it here in Fish's Backroom. If the Qeynos Guards knew, well.. it wouldn't be such a good thing. The stout is illegal, It's made by the gnolls. It is one of the finest brews you will ever taste. If you want any.. slide me a [moonstone].");
@@ -35,22 +33,22 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM { 
-  if(plugin::check_handin(\%itemcount, 10070 => 1)) { #Moonstone
+  if(plugin::check_handin(\%itemcount, 10070 => 1)) {
     quest::say("Here you go then. Don't go tellin' no Guards where that came from, I would hate to rid myself of a good paying customer.");
-    quest::summonitem(13107,5); #Black Burrow Stout x 5
-    quest::faction(167,5); #Karana Residents
-    quest::faction(135,5); #Guards of Qeynos
-    quest::faction(257,5); #Priests of Life
-    quest::faction(183,5); #Knights of Thunder
+    quest::summonitem(13107,5);
+    quest::faction(167,5);
+    quest::faction(135,5);
+    quest::faction(257,5);
+    quest::faction(183,5);
     quest::exp(500);
   }
-  elsif(plugin::check_handin(\%itemcount, 13131 => 1)) { #Case of Blackburrow Stout
+  elsif(plugin::check_handin(\%itemcount, 13131 => 1)) {
     quest::say("Good work, pal. Here's a little dough to spend, just don't spend it at any other bar.");
-    quest::givecash(0,0,3,9); #Platinum x 9, Gold x 3
-    quest::faction(167,5); #Karana Residents
-    quest::faction(135,5); #Guards of Qeynos
-    quest::faction(257,5); #Priests of Life
-    quest::faction(183,5); #Knights of Thunder
+    quest::givecash(0,0,3,9);
+    quest::faction(167,5);
+    quest::faction(135,5);
+    quest::faction(257,5);
+    quest::faction(183,5);
   }
   else {
     quest::say("I do not need this.");

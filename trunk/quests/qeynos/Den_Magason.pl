@@ -1,3 +1,16 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 16) {
+    quest::say("Psst.. Hey, you there.. Yeah, you.. You need some [blank scroll sheets].. I just got a special shipment of things in.. Come on, it's just what you're looking for.. I know you.");
+	}
+  if($wp == 43) {
+    quest::say("Psst.. Hey, you there.. Yeah, you.. You need some [blank scroll sheets].. I just got a special shipment of things in.. Come on, it's just what you're looking for.. I know you.");
+	}
+  if($wp == 70) {
+    quest::say("Psst.. Hey, you there.. Yeah, you.. You need some [blank scroll sheets].. I just got a special shipment of things in.. Come on, it's just what you're looking for.. I know you.");
+	}
+}
+
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Oh, hey there.. How ya doing? My name's Den. I work for ol' [Rohand] here, unloading the [shipments] that come in from overseas.");

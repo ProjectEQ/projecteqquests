@@ -1,6 +1,12 @@
 #Guard_Weleth.pl
 #The Crate (evil) and The Crate (good)
 
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 8) {
+    quest::say("Argh. Not again. This whole crate needs to be returned!");
+  }
+}
+
 sub EVENT_SAY {
 	if($text=~/Hail/i)   {
 		quest::say("Hail, $name. My name is Weleth Nagoh. In addition to my patrol, I am in charge of keeping the guardhouse stocked with supplies. I must get back to my duties. Farewell.");

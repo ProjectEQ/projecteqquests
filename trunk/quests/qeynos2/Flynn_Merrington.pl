@@ -1,3 +1,11 @@
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+    quest::say("HA! You Erudites never could handle your liquor. Go feed the fish.");
+	quest::signalwith(2040,1,1);
+  }
+}
+
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Oh look.. another gnoll pup. This bar is too rough for the likes of you. Why don't you try Fish's. We don't need any more regulars here, chump!");

@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+ quest::settimer(1,10);
+}
+
+ sub EVENT_TIMER {
+ if($timer eq "1") {
+  $npc->SetAppearance(1);
+  quest::stoptimer(1);
+ }
+}
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings and salutations $name. I am Miltiades Tal`Azroth Crusader of Karana. I have spent all of my years here in Qeynos and gathered infinite knowledge from my teachers on my path to enlightenment. I have also started training new recruits to help them find their calling as a Holy Warrior of Karana. If you are a [Paladin of Karana] I might have some tasks for you to complete.");

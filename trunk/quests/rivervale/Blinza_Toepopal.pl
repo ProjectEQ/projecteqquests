@@ -1,3 +1,13 @@
+sub EVENT_SPAWN {
+  quest::settimer("jillin",550);
+}
+
+sub EVENT_TIMER {
+ if ($timer eq "jillin") {
+  quest::say("[Jillin]? Jillin? Where did he go? Hrumph!");
+ }
+}
+
 sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Hello. $name.  Welcome to the Fool's Gold!  Cards are upstairs. drinks are down here.  Have fun!"); 

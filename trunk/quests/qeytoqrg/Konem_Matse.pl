@@ -28,6 +28,19 @@
 #
 ############################################
 
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 2) {
+	$npc->SetAppearance(1);
+	}
+  if($wp == 3) {
+    $npc->SetAppearance(0);
+	}
+  if($wp == 5) {
+    $npc->SetAppearance(1);
+  }
+}
+
+
 sub EVENT_ITEM {
    # Note from Phin_Esrinap, Message to Konem ID-18921
    if(plugin::check_handin(\%itemcount, 18921 => 1)) {

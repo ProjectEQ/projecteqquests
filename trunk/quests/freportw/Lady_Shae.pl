@@ -119,4 +119,12 @@ sub EVENT_ITEM {
     $wine = 0;
   }
 }
+
+sub EVENT_WAYPOINT_ARRIVE {
+if($wp eq 12) {
+	quest::say("I will be back soon, Pandos. Please keep an eye on my room for me.");
+	quest::signalwith(9057, 3, 3);
+	}
+}
+
 #END of FILE Zone:freportw  ID:9058 -- Lady_Shae.pl

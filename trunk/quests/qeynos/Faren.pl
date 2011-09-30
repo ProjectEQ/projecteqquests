@@ -17,6 +17,23 @@
 #ID: 13702
 #Ground Spawn
 ###
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+    quest::say("Oh, hI, Baren. Not too good so far. That [dwarf] keeps bothering me, too.");
+    quest::signalwith(1090,2,1);
+  }
+  
+  if($signal == 2) {
+quest::say("Huh? What? My [tacklebox]? You know I can't swim, you rotten [dwarf]!");
+    quest::signalwith(1042,2, 10);
+	
+	}
+  if($signal == 3) {
+	quest::say("My name is not Skippy.");
+	}
+}
+
+
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

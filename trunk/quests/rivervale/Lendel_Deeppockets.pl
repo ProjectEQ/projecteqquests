@@ -1,3 +1,7 @@
+sub EVENT_SIGNAL {
+	quest::say("Find somebody to go see what he wants. I don't like the idea of making Hanns mad at us, but I also don't like the idea of looking over my shoulder for Stanos. He is not somebody I would care to dance with, and I DO owe him.");
+	}
+
 sub EVENT_SAY {
   if($fatestealer >= 1) {
     if($text=~/hail/i) {

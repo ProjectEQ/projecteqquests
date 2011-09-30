@@ -16,16 +16,23 @@
 #
 #
 
-sub EVENT_SPAWN {
-   quest::settimer(1,10);
-}
-
-sub EVENT_TIMER {
-   if($timer eq "1") {
-   $npc->SetAppearance(1);
-   quest::stoptimer(1);
-   }
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp == 3) {
+	quest::say("Greetings, sister! I just wanted to make sure no harm had befallen you.");
+	quest::signal(4052,5);
+	quest::SetRunning(1);
+	}
+	if ($wp == 4) {
+	quest::SetRunning(0);
+	}
+	if ($wp == 7) {
+	$npc->SetAppearance(1);
+	}
 } 
+
+sub EVENT_SIGNAL {
+	quest::say("But, you will always be my little sister. Fare well, Chanda! See you soon!");
+}
 
 sub EVENT_AGGRO {
    quest::say("I can take on a whole pack of wolves. You will not be as much trouble.");

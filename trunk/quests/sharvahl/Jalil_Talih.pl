@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+ quest::settimer(1,10);
+}
+
+ sub EVENT_TIMER {
+ if($timer eq "1") {
+  $npc->SetAppearance(1);
+  quest::stoptimer(1);
+ }
+}
+
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Oh. hello there $name.  Thank you for stopping by. but this is just not a very good time for visitors.  My daughter is very upset over what has happened."); }

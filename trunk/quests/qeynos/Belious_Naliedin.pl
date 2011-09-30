@@ -1,3 +1,7 @@
+sub EVENT_SIGNAL {
+    quest::say("Sure. Go Ahead and play it now, while the stage is clear.");
+}
+
 sub EVENT_SAY {
   if ($text=~/Hail/i){
     quest::say("Welcome, my name is Belious Naliedin of the League of Antonican Bards. A few years ago, I had finally saved up the money, and I bought this place. I settled in, and have been [working] here ever since.");

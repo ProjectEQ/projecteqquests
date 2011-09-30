@@ -1,3 +1,10 @@
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp == 1) {
+	quest::emote("hums while he sorts through the books that rest on the various shelves.");
+	}
+}
+
+
 sub EVENT_SAY {
 if($text=~/hail/i) {
     quest::say("Hail citizen, may I help you find a book or are you looking for assistance with something else? ");

@@ -19,4 +19,23 @@ if(plugin::check_handin(\%itemcount, 17600 => 1)){
       }
 plugin::return_items(\%itemcount);
 }
+
+sub EVENT_SIGNAL {
+  if($signal == 1) {
+    quest::say("You ok Sabs?");
+    quest::signalwith(2083, 2, 1);
+  }
+  if($signal == 2) {
+	quest::say("Testing one two three four");
+	quest::signalwith(2083, 5, 1);
+    }
+  if($signal == 3) {
+    quest::say("Excellent. To think that he thought he could stroll in here from Highpass and take over my action. He will learn the hard way what happens to merchants who think they can operate here without our support and protection.");
+     }
+if($signal == 4) {
+    quest::say("Anything you say, my love.");
+     }
+}
+
+
 #END of FILE Zone:qeynos2  ID:2054 -- Crow.pl

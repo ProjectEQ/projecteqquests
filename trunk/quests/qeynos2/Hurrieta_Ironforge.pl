@@ -1,3 +1,9 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 22) {
+    quest::say("My roses are growing quite well.");
+  }
+}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("What are you doing back here?! I cannot stand it when the children allow their friends to run rampant on our estate. Please leave!"); }

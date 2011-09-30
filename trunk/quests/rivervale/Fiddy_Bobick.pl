@@ -4,6 +4,12 @@
   #NPCs Involved:Fiddy Bobick, Marshall Lanena
   #Items Involved:Bag of Piranha Teeth, Piranha Bag, Piranha Tooth
   #################
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp == 6) {
+    quest::say("When will Wickystick send help?!");
+	}
+}
+
   
   sub EVENT_SAY { 
   

@@ -1,3 +1,11 @@
+sub EVENT_SPAWN {
+	quest::settimer("cough",350);
+	}
+
+sub EVENT_TIMER {
+	quest::emote("coughs and wheezes.");
+	}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings, $name.  My name is Vicus Nonad. <cough>  I am the official tax collector for the fine city of Qeynos. <cough>  I serve the will of Antonius Bayle, our glorious leader.  <cough>  <cough>  Please excuse my [cough].  <cough>");

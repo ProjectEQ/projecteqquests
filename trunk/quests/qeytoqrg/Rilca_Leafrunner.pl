@@ -5,6 +5,18 @@
 #  By: site3op
 #  Revised:  Andrew80k
 #######################################
+sub EVENT_SPAWN {
+   quest::settimer(1,10);
+}
+
+sub EVENT_TIMER {
+   if($timer eq "1") {
+   $npc->SetAppearance(1);
+   quest::stoptimer(1);
+   }
+} 
+
+
 sub EVENT_SAY {
    if ($text =~ /hail/i) {
        quest::say("Well, it seems that you have something of importance that you wish to speak to me about? No? Then perhaps you can do something [for me].");

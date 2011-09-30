@@ -1,3 +1,25 @@
+sub EVENT_WAYPOINT_ARRIVE {
+  if($wp == 10) {
+    quest::say("Hey Hanns.. Have you gotten word from Prak about the spy in Carson's guards?");
+	quest::signalwith(2074,1,1)
+  }
+}
+
+sub EVENT_SIGNAL {
+  if(($x == 163) && ($y == 144) && ($signal == 1)) {
+    quest::say("Yeah, whatever, Knarg. If I were you, I wouldn't mess around with [Renux]. She's in tight with [Hanns], and you know how he is.");
+    }
+  if($signal == 2) {
+quest::say("[Rujahn] Tahslek, huh? I've never heard of him, but those bandits seem to have a new leader every month or so.");
+    quest::signalwith(2074,2, 10);
+	
+	}
+  if($signal == 3) {
+	quest::say("I'll send one of our best men to Highpass and eliminate [Rujahn]'s spy.");
+   }
+}
+
+
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hey..  My name's Zannsin. but you can call me [Zan].");

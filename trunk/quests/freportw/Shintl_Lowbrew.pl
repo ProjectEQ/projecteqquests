@@ -61,4 +61,11 @@ sub EVENT_DEATH
 quest::say("You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh");
 }
 
+sub EVENT_WAYPOINT_ARRIVE {
+if($wp eq 7 ) {
+	quest::say("Any mail for room number two?");
+	quest::signal(9103, 1);
+	}
+}
+
 #END of FILE Zone:freportw  ID:9056 -- Shintl_Lowbrew

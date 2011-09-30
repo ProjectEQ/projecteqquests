@@ -3,6 +3,19 @@
 #Scrap found with the query: select * from items where lore like '%Lion\'s Mane%'
 #Item lore is "Lion's Mane Drink Voucher", seems to me to be correct. -Kilelen
 
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+	my $cur_target = $npc->GetHateTop();
+		if($cur_target) {
+		my $target_name = $cur_target->GetCleanName();
+		quest::say("Time to die $target_name!");
+		}
+	}
+}
+
+
+
+
 sub EVENT_SAY {
 	if($text=~/Hail/i)   {
 		quest::say("Hail, $name! Are you new to Qeynos? If you are, I highly recommend stopping by the Lion's Mane Tavern for the best ale in Antonica. Oh, did I mention that my brother Earron is the master brewer there? Tell him [Kwint sent] you.");

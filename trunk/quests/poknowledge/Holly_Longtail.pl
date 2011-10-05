@@ -27,11 +27,5 @@ sub EVENT_ITEM {
   }
     
 }
-sub EVENT_SPAWN {
-        my $x = $npc->GetX();
-        my $y = $npc->GetY();
-        my $z = $npc->GetZ();
-        my $h = $npc->GetHeading();
-        quest::spawn2(202020,0,0,$x - 10,$y,$z,$h);
-}
+
 #END of FILE Zone:poknowledge Holly_Longtail 

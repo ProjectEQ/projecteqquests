@@ -131,12 +131,12 @@ sub EVENT_WAYPOINT_ARRIVE{
 		quest::creategroundobject($chrono, $x, $y, $z, 0, 7200);
     }
    
-   if($wp eq 10)      ## If done and on his way back to tower no need to say this.
+   if($wp eq 10)  
    {
        quest::say("'I lost some of my [illusion] playing cards. And they were the rare ones too! Darn it! If
          anyone finds them, please return them to me.");
    }
-} # EVENT_WAYPOINT_ARRIVE 
+} 
 
 
 sub EVENT_COMBAT {

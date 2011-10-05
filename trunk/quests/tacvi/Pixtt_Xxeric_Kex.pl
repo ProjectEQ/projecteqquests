@@ -11,6 +11,8 @@ sub EVENT_TIMER {
   quest::stoptimer(1);
   quest::emote("begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
   $entity_list->FindDoor(2)->SetLockPick(-1);  #locks door to room
+  $entity_list->FindDoor(3)->SetLockPick(-1);  #locks door to room
+  $entity_list->FindDoor(4)->SetLockPick(-1);  #locks door to room
 }
 
 sub EVENT_HP {
@@ -36,11 +38,14 @@ sub EVENT_HP {
   if($hpevent == 11) {
     quest::say("You may yet have the strength to defeat me but I am not through with you yet.");
     quest::emote("eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
-    $npc->SetHp(920000);
+    $npc->SetHP(920000);
     $npc->BuffFadeAll();
   }
 }
 
 sub EVENT_DEATH {
   quest::ze(15,"Swinging her weapon one last time, the massive entity falls to her side with a thud. While she was a creature consumed with destruction, her death is still graceful. As her bloodstained braids come to a rest on the floor and her muscles relax, you can't help but wonder what could make such a magnificent creature so deadly.");
+  $entity_list->FindDoor(2)->SetLockPick(0);  #unlocks door to room
+  $entity_list->FindDoor(3)->SetLockPick(0);  #unlocks door to room
+  $entity_list->FindDoor(4)->SetLockPick(0);  #unlocks door to room
 }

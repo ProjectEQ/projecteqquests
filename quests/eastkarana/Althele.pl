@@ -107,18 +107,15 @@ sub EVENT_TIMER {
     quest::stoptimer("attack");
     quest::emote("snaps her head towards you. 'Innoruuk's brood is upon us. Go, find the spawn of hatred before they reach this point and destroy them!");
 
-    $entid1 = quest::spawn2(15153,0,0,-1353,-760,89.3,130); #corruptor
-    $entid2 = quest::spawn2(15150,0,0,-1376,-758,84.4,130); #reaver
-    $entid3 = quest::spawn2(15150,0,0,-1399,-756,85.5,130); #reaver
-    
+    $entid1 = quest::spawn2(15153,0,0,-996,-1529,354,130); #corruptor
+    $entid2 = quest::spawn2(15150,0,0,-1090,-1529,355.4,130); #reaver
+    $entid3 = quest::spawn2(15150,0,0,-1063,-1490,367.5,130); #reaver
     $mob1 = $entity_list->GetMobID($entid1);
     $mob2 = $entity_list->GetMobID($entid2);
     $mob3 = $entity_list->GetMobID($entid3);
-    
     my $mob1attack = $mob1->CastToNPC();
     my $mob2attack = $mob2->CastToNPC();
     my $mob3attack = $mob3->CastToNPC();
-    
     $mob1attack->AddToHateList($npc, 1);
     $mob2attack->AddToHateList($npc, 1);
     $mob3attack->AddToHateList($npc, 1);

@@ -1,12 +1,6 @@
 #Trep_Thilcan.pl
 #Trep's Shopping List
 
-sub EVENT_TIMER {
- if($timer eq "1") {
-  $npc->SetAppearance(1);
-  quest::stoptimer(1);
- }
-}
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

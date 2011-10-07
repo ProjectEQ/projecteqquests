@@ -1,20 +1,5 @@
 sub EVENT_WAYPOINT_ARRIVE {
-  if($wp == 12) {
-    quest::emote("whistles a happy hafling tune.");
-	}
-  if($wp == 33) {
-    quest::emote("whistles a happy hafling tune.");
-	}
-  if($wp == 51) {
-    quest::emote("whistles a happy hafling tune.");
-  }
-  if($wp == 73) {
-    quest::emote("whistles a happy hafling tune.");
-	}
-  if($wp == 96) {
-    quest::emote("whistles a happy hafling tune.");
-	}
-  if($wp == 120) {
+  if(($wp == 12) || ($wp == 33) ||  ($wp == 51) || ($wp == 73) || ($wp == 96) || ($wp == 120)) {
     quest::emote("whistles a happy hafling tune.");
   }
 }

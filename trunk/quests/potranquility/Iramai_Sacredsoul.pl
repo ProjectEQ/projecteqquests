@@ -2,25 +2,6 @@
 #Alternate Access: Plane of Torment
 #Edited by: a_sewer_rat
 
-#I changed this, she should be kneeling, not dead.  Screenshot on Alla's is the source.  -Kilelen
-sub EVENT_SPAWN
-{
-   quest::settimer("try_kneel", 5);
-}
-
-
-sub EVENT_TIMER
-{
-   if($timer eq "try_kneel")
-   {
-      $npc->SetAppearance(1);
-   }
-}
-
-sub EVENT_DEATH
-{
-   quest::stoptimer("try_kneel");
-}
 
 #AA:PoTorment quest begins.
 sub EVENT_SAY

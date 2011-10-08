@@ -1,17 +1,4 @@
 
-sub EVENT_SPAWN {
- quest::settimer(1,10);
-}
-
- sub EVENT_TIMER {
- if($timer eq "1") {
-  $npc->SetAppearance(1);
-  quest::stoptimer(1);
- }
-}
-
-
-
 sub EVENT_SAY {
 	if ($pop_cod_bertox == 1 && $pop_ponb_terris == 1) {
 		if ($pop_pot_saryrn == 1 && $pop_pot_newleaf == 1 && $pop_pot_shadyglade == 1) {

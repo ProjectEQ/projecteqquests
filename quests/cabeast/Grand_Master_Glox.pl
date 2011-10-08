@@ -1,6 +1,3 @@
-sub EVENT_SPAWN {
- $npc -> SetAppearance(1);
-}
 
 sub EVENT_SAY {
  if($text=~/hail/i){

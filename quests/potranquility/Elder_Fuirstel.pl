@@ -1,17 +1,4 @@
 
-sub EVENT_SPAWN {
- quest::settimer(1,10);
-}
-
- sub EVENT_TIMER {
- if($timer eq "1") {
-  $npc->SetAppearance(3);
-  quest::stoptimer(1);
- }
-}
-
-
-
 sub EVENT_SAY {
 if($text=~/hail/i && $pop_pod_alder_fuirstel == 1 && $pop_pod_grimmus_planar_projection == 1 && $pop_pod_elder_fuirstel == undef) {
 $client->Message(4,"Elder Fuirstel slowly turns towards you. You can feel the heat radiating from his face. The warding that envelopes your body reaches out and begins to surround him. You immediately see improvement in his condition. The pus filled sores covering his face and his burning fever start to vanish.");

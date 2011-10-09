@@ -13,10 +13,6 @@ sub EVENT_WAYPOINT_ARRIVE {
 	}
 }
 
-
-sub EVENT_SPAWN {
-   quest::signal(1138);
-}
 sub EVENT_SAY { 
 
    if($text=~/Hail/i){
@@ -29,8 +25,7 @@ sub EVENT_SAY {
    }
    if ($text=~/black wood chip/i){
        quest::say("That is the mark of an Unkempt Druid.  Long ago there was a tree in Norrath we called the Great Tunarbos.  Legend says it spawned all the woodlands of Norrath.  Many centuries ago, long before the Combine Era, the Great Tunarbos was burned to the ground by unknown means.  The ancient rangers kept what little of the great tree they could find.  To make it short, all Unkempt Druids now carry burned wood chips to represent the great tree.  They are not real.  Take any black wood chips to Gerael Woodone in Surefall Glade.");
-       quest::spawn2(1138,39,0,-86.88,368.88,3.4,75.5);
-       quest::depop();
+
    }
 }
 

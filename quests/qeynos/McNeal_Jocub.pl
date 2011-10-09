@@ -13,6 +13,15 @@ sub EVENT_WAYPOINT_ARRIVE {
 	}
 }
 
+sub EVENT_SIGNAL {
+	quest::say("You shall never take me alive!!");
+	my $random = int(rand(2));
+	if($random == 1) {
+		quest::attacknpctype(1202);
+	}
+}
+
+
 sub EVENT_SAY { 
   if($text=~/hail/i) {
     quest::say("Good ta see ya! Now start showin' these poodlewalkers how a real fish drinks!");

@@ -15,9 +15,11 @@ sub EVENT_ITEM {
     quest::givecash(1,1,1,0);
   }
 }
-sub EVENT_AGGRO {
+sub EVENT_COMBAT {
+	if($combat_state == 1) {
 	quest::say("Say yer prayers!!");
 	}
+}
 sub EVENT_NPC_SLAY {
    	quest::say("Another unworthy opponent. Never cross Mining Guild 628!!");
  	}

@@ -10,6 +10,11 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_SIGNAL {
+	quest::say("Ah.  Good.  You have arrived.  Executioner, could you please visit McNeal Jocub at Fish's Tavern.  He has violated our laws and the sentence is death.");
+	quest::signal(1202);
+}
+
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13915 => 1)) { #Gnoll Fang
     quest::say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
@@ -30,6 +35,7 @@ sub EVENT_ITEM {
     quest::faction(135,10); #Guards of Qeynos
     quest::faction(217,10); #Merchants of Qeynos
     quest::givecash(int(rand(10)),int(rand(10)),int(rand(10)),int(rand(10)));
+    quest::spawn2(1202,62,0,-412,75,-24,0);
   }
   elsif(plugin::check_handin(\%itemcount, 18912 => 1)) {
     quest::say("So, an assassin has been sent to Qeynos! I shall have my guards keep an eye out for any suspicious looking visitors. As for you... you should speak with the Surefall Glade ambassador. Ambassador Gash is staying at the Lion's Mane Inn here in South Qeynos. Inform him that [an assassin has been sent to kill] him. Do not let the assassin near him!");
@@ -39,7 +45,6 @@ sub EVENT_ITEM {
     quest::faction(135,10); #Guards of Qeynos
     quest::faction(217,10); #Merchants of Qeynos
     quest::givecash(int(rand(10)),int(rand(10)),int(rand(10)),int(rand(10)));
-    quest::spawn2(1138,0,0,-86.88,368.88,3.38,75.5);
   }
   else {
     #do all other handins first with plugin, then let it do disciplines

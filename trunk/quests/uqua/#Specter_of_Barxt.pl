@@ -1,16 +1,14 @@
 sub EVENT_SPAWN {
-$raid = $entity_list->GetRaidByClient($client);
-      if ($raid) {
-        for ($count = 0; $count < $raid->RaidCount(); $count++) {
-          push (@player_list, $raid->GetMember($count)->GetName());
-        }
-     }
-foreach $player (@player_list) {
-    $pc = $entity_list->GetClientByName($player);
-     $charid = $pc->CharacterID();
-     quest::targlobal("uqualockout", 1, "H108", 291113, $charid, 291);
+  SET_ZONE_LOCKOUT();
+}
+
+sub SET_ZONE_LOCKOUT {
+  #lockout all players for 108 hours
+  foreach $pc ($entity_list->GetClientList()) {
+    $pc->SetGlobal('uqualockout',0,3,"H108");
   }
 }
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (!defined $qglobals{uquakey}) {

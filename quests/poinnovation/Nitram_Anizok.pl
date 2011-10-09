@@ -64,6 +64,6 @@ sub EVENT_DEATH {
 
 sub EVENT_WIN {
   $won = 1;
-  quest::stoptimer(2)
+  quest::stoptimer(2);
   quest::settimer(3,600);
 }

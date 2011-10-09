@@ -1,8 +1,8 @@
 sub EVENT_SPAWN {
-  #fial timer
+  #fail timer
   quest::settimer(9,1200);
   #leash timer
-  quest::settimer(4,10);
+  quest::settimer(4,1);
 }
 
 sub EVENT_DEATH    {

@@ -4,7 +4,9 @@
 
 sub EVENT_COMBAT {
     if($combat_state == 1) {
-    quest::say("For the glory of Kaladim!!");
-    quest::say("You are no more");
- }
+    quest::say("For the glory of Kaladim, have at thee!!");
+	}
+	if($combat_state == 0) {
+    quest::say("For the glory of Kaladim!! You are no more.");
+	}
 }

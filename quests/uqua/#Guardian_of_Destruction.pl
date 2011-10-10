@@ -4,6 +4,7 @@ sub EVENT_SPAWN {
 }
 sub EVENT_AGGRO {
   quest::settimer(1,180);
+  quest::settimer(2,1);
   quest::ze(15,"strides forward to deal with its enemies.");
   }
 sub EVENT_HP {
@@ -13,6 +14,13 @@ sub EVENT_HP {
    }
 }
 sub EVENT_TIMER {
+  if($timer == 1) {
   quest::spawn2(292070,0,0,$x,$y,$z,$h);
   quest::depop();
   }
+  if($timer == 2) {
+   if($y < -250) {
+    $npc->GMMove(-866,-43,61,130);
+   }
+  }
+}

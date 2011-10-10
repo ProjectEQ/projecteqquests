@@ -2,6 +2,7 @@ my $hpatinvul = 0;
 
 sub EVENT_SPAWN {
   quest::settimer(1,180);
+  quest::settimer(3,1);
   quest::setnexthpevent(40);
 }
 
@@ -31,6 +32,11 @@ sub EVENT_TIMER {
 	$signal = 1;
 	EVENT_SIGNAL();
   }
+  if($timer == 3){
+   if($y < -250) {
+    $npc->GMMove(-869,-16,65,125);
+   }
+  } 
 }
 
 sub EVENT_HP {

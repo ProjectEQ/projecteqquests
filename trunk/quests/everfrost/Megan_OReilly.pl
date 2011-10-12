@@ -1,3 +1,12 @@
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp eq 3) {
+		quest::SetRunning(1);
+	}
+	if ($wp eq 6) {
+		quest::SetRunning(0);
+	}
+}
+
 sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("Brrrr.. It.. Is sooo.. c-cold!! I never.. sh-should've j-joined.. the.. the W-wolves of the N-north!!");

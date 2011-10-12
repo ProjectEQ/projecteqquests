@@ -41,12 +41,22 @@
 ######## EVENT_SAY AREA ####################
 ### Called when the NPC is spoken to by a PC
 
-sub EVENT_SAY
-{
-   if($text=~/Hail/i)
-   {
-   quest::say("If I catch the little thief who took my pouch, may the Wolves of the North have no mercy on em!!");
+sub EVENT_SAY {
+   if($text=~/hail/i) {
+   quest::say("Hi, kid! You seem to be a stranger in these parts. Heed my words, this city is dangerous to new blood!");
    }
+   if($text=~/toala sent me/i) {
+   quest::say("She does not even have the courtesy to come herself. Some old friend!! Listen, some rogue in this city broke into the [Beast] and stole a pouch containing a voucher ticket for a part I need to repair the Beast. I can't get the part back without the ticket. I did not see the rogue. I did not sleep on the Beast that night. Bronto was there. Ask him if he saw the rogue.");
+   }
+   if($text=~/what beast/i) {
+   quest::say("You're joking, right? You have never heard of the Blue Beast?!! She is the fastest ship in Norrath. She made the [Kunark run] in under three weeks. She was designed by [Bronto].");
+   }
+   if($text=~/kunark run/i) {
+   quest::say("The Kunark run is the most dangerous run between Freeport and [Firiona Vie], in Kunark. If the seas don't rip your hull to splinters and the pirates and sea wyrms don't kill you, you can make a quick run back and forth, avoiding any unwanted inspections.");
+   }
+   if($text=~/Firiona Vie/i) {
+   quest::say("Firiona Vie is an elven outpost on the continent of Kunark. Every so often I run supplies to and from there. Do not even think about asking me to take you there. It will be months before I can make improvements on the Blue Beast to make it impervious to aerial attacks.");
+   }   
 }
 
 ######## EVENT_ITEM AREA ###################

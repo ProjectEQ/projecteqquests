@@ -131,7 +131,7 @@ sub EVENT_WAYPOINT_ARRIVE{
 		quest::creategroundobject($chrono, $x, $y, $z, 0, 7200);
     }
    
-   if($wp eq 10)  
+   if($wp eq 11)  
    {
        quest::say("'I lost some of my [illusion] playing cards. And they were the rare ones too! Darn it! If
          anyone finds them, please return them to me.");

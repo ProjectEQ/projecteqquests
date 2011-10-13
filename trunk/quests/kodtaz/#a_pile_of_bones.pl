@@ -1,5 +1,5 @@
 sub EVENT_DEATH {
-if (defined $qglobals{ikky} && $qglobals{ikky} == 5) {
+if (defined $qglobals{ikky} && $qglobals{ikky} >= 5) {
    quest::spawn2(293177,0,0,-1392,704,-453,154);
    quest::spawn2(293220,0,0,-1414,656,-453,191);
    quest::spawn2(293179,0,0,-1391,608,-449,0);

@@ -32,7 +32,8 @@ sub EVENT_SAY {
 		if(!defined $qglobals{halloween_race_start}) {
 			if($text=~/Ready/i) {
 				quest::setglobal("halloween_race_start",1,1,"M4");
-   				quest::say("Ride quickly and do not hesitate... Remember, you have only four minutes to reach the gates of Neriak.");
+   				quest::emote("places a twisted rotted mask into your hands, 'This will be your only guide, ride quickly and do not hesitate... Remember, you have only four minutes to reach the gates of Neriak.'");
+				quest::summonitem(80043);
 			}
 		}
       	}

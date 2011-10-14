@@ -17,7 +17,7 @@ sub EVENT_ITEM {
   
   elsif(plugin::check_handin(\%itemcount, 29131 => 1)) {#Spectral Parchment
     quest::emote("carefully takes the planar arcane item from you. With a careful eye, he inspects every portion of the incorporeal item before nodding to himself in satisfaction. The shaman then closes his eyes and chants lowly in an unfamiliar language. You feel the coalescing of spirits around you in the area as the shaman calls them forth to bless the arcane item in his grip. Dark runes of a rusted color begin to carve themselves onto a parchment that grows more real and tangible with each syllable uttered by the shaman. Eventually, his chant comes to a close and the completed item is handed to you without expectation of further aid on your behalf, 'Do not use this power without caution, $name. It is quite powerful indeed for it is power forged upon the planar worlds but may affect both astral and prime alike.");
-    quest::summonitem(quest::ChooseRandom(28495, 28496, 28497, 28498, 28499, 28531, 26910, 26912, 26913, 26914, 26911, 26946)); #Level 63 or 64 Shaman spell, PoP (Tears of Saryrn, Malicious Decay, Malosinia, Strength of the Diaku, Talisman of the Boar, Blessing of Replenishment, Velium Strike, Talisman of the Diaku, Tiny Terror, Breath of Ultor, Talisman of Alacrity, Petrifying Earth)
+    quest::summonitem(quest::ChooseRandom(28495, 28496, 28497, 28498, 28499, 28531, 26910, 26912, 26913, 26914, 26911)); #Level 63 or 64 Shaman spell, PoP (Tears of Saryrn, Malicious Decay, Malosinia, Strength of the Diaku, Talisman of the Boar, Blessing of Replenishment, Velium Strike, Talisman of the Diaku, Tiny Terror, Breath of Ultor, Talisman of Alacrity)
   }
   
   elsif(plugin::check_handin(\%itemcount, 29132 => 1)) {#Glyphed Rune Word

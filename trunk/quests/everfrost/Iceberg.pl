@@ -12,6 +12,13 @@ sub EVENT_TIMER{
   }
 }
 
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("Grrroarrr !!");
+		quest::signal(30061);
+	}
+}
+
 sub EVENT_ITEM { 
 if($itemcount{12221} == 1){
 quest::say("Growlll");

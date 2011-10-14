@@ -12,4 +12,5 @@ sub EVENT_AGGRO {
 
 sub EVENT_DEATH {
 	quest::emote("falls to the ground with a thump..and a couple twitches for good measure");
+	quest::signal(20260,4);
 }

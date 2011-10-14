@@ -8,4 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
 	quest::say("We'll be right back! Then you can see more of my booooooobs!");
+	quest::signal(20260,3);
 }

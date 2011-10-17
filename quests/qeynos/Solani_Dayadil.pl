@@ -1,12 +1,21 @@
-sub EVENT_SIGNAL {
-  if($signal == 1) {
-	quest::start(59);
+my $count = 0;
+sub EVENT_SPAWN {
 	quest::SetRunning(1);
+	quest::settimer("daynight",1);
+}
+
+sub EVENT_TIMER {
+	$count++;
+	if (($count == 1) && ($zonetime > 599 || $zonetime < 1800)) {
+		quest::start(59);
 	}
-  
-  if($signal == 2) {
-    quest::start(31);
-	quest::SetRunning(0);
+	if (($count == 1) && ($zonetime < 600 || $zonetime > 1799)) {
+		quest::stop();
+		quest::moveto(-260,-26,3.75,176);
+	}	
+	if ($count ==2 ) {
+	$count = 0;
+	quest::settimer("daynight",34);
 	}
 }
 

@@ -1,15 +1,23 @@
-sub EVENT_SIGNAL {
-  if($signal == 1) {
-	quest::start(60);
+my $count = 0;
+sub EVENT_SPAWN {
 	quest::SetRunning(1);
-	}
-  
-  if($signal == 2) {
-    quest::start(28);
-	quest::SetRunning(0);
-	}
+	quest::settimer("daynight",1);
 }
 
+sub EVENT_TIMER {
+	$count++;
+	if (($count == 1) && ($zonetime > 599 || $zonetime < 1800)) {
+		quest::start(60);
+	}
+	if (($count == 1) && ($zonetime < 600 || $zonetime > 1799)) {
+		quest::stop();
+		quest::moveto(-268,-38,3.75,243);
+	}	
+	if ($count ==2 ) {
+	$count = 0;
+	quest::settimer("daynight",36);
+	}
+}
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

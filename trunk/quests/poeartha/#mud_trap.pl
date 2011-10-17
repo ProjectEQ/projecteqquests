@@ -52,7 +52,7 @@ sub EVENT_ENTER {
         $TripCounter = 0;
 
         # Depop ourselves so we can respawn on our normal timer and start the cycle again
-        quest::depop();
+        $npc->Depop(1);
 
         # If our random number was not above 70, spawn a PH
       } else {
@@ -65,7 +65,7 @@ sub EVENT_ENTER {
         $TripCounter = 0;
 
         # Depop so we can respawn and start the cycle again
-        quest::depop();
+        $npc->Depop(1);
       }
 
   # If we have been tripped less than 5 times, spawn a trash mob
@@ -79,6 +79,6 @@ sub EVENT_ENTER {
     $TripCounter += 1;
 
     # Depop Trap. Other traps of this type will still be able to continue the counters.
-    quest::depop();
+    $npc->Depop(1);
   }
 }

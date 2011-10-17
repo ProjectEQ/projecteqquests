@@ -34,7 +34,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
-	if(plugin::check_handin(\%itemcount, 13729 == 1)) #Barbarian Head
+	if(plugin::check_handin(\%itemcount, 13729 => 1)) #Barbarian Head
     		{
 		quest::say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court. Take and remember this spell, Spirit o' the Bear. I hope ye've attained the necessary skills to scribe it. If not, I'm sure ye soon will. Go now, and serve justice.");
 		quest::exp(1600);

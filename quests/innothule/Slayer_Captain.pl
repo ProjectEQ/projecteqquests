@@ -20,5 +20,3 @@ sub EVENT_DEATH{
 	quest::say("Curse you!! Da bashers will have yer head.");
 }
 
-#END of FILE Zone:innothule  ID:5089 -- a_troll_slayer 
-

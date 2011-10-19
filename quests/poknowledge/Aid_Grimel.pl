@@ -76,7 +76,7 @@ sub EVENT_SAY {
       }
     }
     else {
-      quest::say("You do no seemed experienced enough in the planes.");
+      quest::say("You do not seem experienced enough in the Planes.");
     }
   }
 }

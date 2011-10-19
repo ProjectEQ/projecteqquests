@@ -26,5 +26,15 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("Pargh!  Lynuga not like you!  Lynuga squish you!");
+	}
+}
+
+sub EVENT_DEATH {
+	quest:say("My clan brothers of Broken Skull Rock will make you pay for this!!");
+}
+
 
 #EOF

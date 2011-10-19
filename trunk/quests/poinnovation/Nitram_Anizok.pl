@@ -11,7 +11,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if($walking) {
+  if($walking == 0) {
     if($text=~/Hail/i) {
       quest::say("Oh my hello! It has been such a long time since I have had visitors. Have you come to learn of [advanced tinkering] as well?");
     } elsif($text=~/advanced tinkering/i) {
@@ -26,7 +26,7 @@ sub EVENT_SAY {
     } elsif($text=~/collecting materials/i) {
       quest::say("Let us see here. I have some of the base parts for the power source. If you could collect a copper node, a bundle of super conductive wires, and an intact power cell I could power up the machine. Good luck to you $name, I hope that we can work together on this.");
     }
-  } elsif($won) {
+  } elsif($won == 1) {
     if($text=~/Hail/i) {
       quest::setglobal("pop_poi_dragon", 1, 5, "F");
       $client->Message(4,"You receive a character flag!");
@@ -37,8 +37,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 9426 => 1, 9295 => 1, 9434 => 1)) {
     $walking = 1; #variable to not respond while pathing
-    quest::depop(); 
-    quest::spawn2(206033,23,0,$x,$y,$z,135); #repop with a pathing grid
+    quest::start(23);
     quest::settimer(1,1); #set timer to check for my loc change to EVENT_WAYPOINT_ARRIVE??
   }
 }
@@ -64,6 +63,7 @@ sub EVENT_DEATH {
 
 sub EVENT_WIN {
   $won = 1;
+  quest::stop();
   quest::stoptimer(2);
   quest::settimer(3,600);
 }

@@ -1,3 +1,3 @@
-sub EVENT_AGGRO {
+sub EVENT_COMBAT {
  quest::say("zzzzzzztone hivvvvvvvvv");
 }

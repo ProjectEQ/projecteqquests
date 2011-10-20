@@ -1,3 +1,13 @@
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+	my $cur_target = $npc->GetHateTop();
+		if($cur_target) {
+		my $target_name = $cur_target->GetCleanName();
+		quest::say("Time to die $target_name!");
+		}
+	}
+}
+
 sub EVENT_SAY{
  if ($text=~/hail/i){
 quest::say("Hail, $name. I am Deputy Budo Bullnose, the squad leader of the Great Wall Patrol. Be very careful in the lands beyond the wall. They are filled with dangerous beasts, as well as [Clan Runnyeye].");

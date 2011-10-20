@@ -1,6 +1,18 @@
 # #18959 -> ella foodcrafter -> two tasks; shiny tin bowl and a clue
 # hardened mixture and runecrested bowl -> softly glowing stone
 
+sub EVENT_WAYPOINT_ARRIVE{
+	if(($wp eq 13) || ($wp eq 19)) {
+		my $random = int(rand(4));
+		if($random == 0) {
+			quest::emote("hums a little as she drops off supplies for the deputies.");
+		}
+		if($random == 1) {
+			quest::say("Hope things are going well here.");
+		}
+	}
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hi, hi. I've got a lot to do, many mouths to feed, some filthy goblins to smack. If you don't need me for something, please let me go back to my work. Karana watch over you.");

@@ -11,3 +11,8 @@ sub EVENT_TIMER{
     quest::stoptimer("follow");
   }
 }
+
+sub EVENT_SIGNAL{
+	quest::emote("clicks at Blixkin happily.");
+	quest::signal(33066);
+}

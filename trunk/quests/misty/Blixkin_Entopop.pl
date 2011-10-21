@@ -7,6 +7,21 @@
 #Spiderling Eye, Spiderling Silk
 #################
 
+sub EVENT_WAYPOINT_ARRIVE{
+	if(($wp eq 2) || ($wp eq 9) || ($wp eq 14) || ($wp eq 21) || ($wp eq 24)){
+		quest::say("Ember?!  Ember?!  Where are you, girl?!");
+		quest::signal(33065);
+	}
+}
+
+sub EVENT_SIGNAL{
+	quest::say("There you are!  Stay close to me, girl.");
+}
+
+sub EVENT_COMBAT{
+	quest::say("What do you think you are doing?!?");
+}
+
 sub EVENT_SAY { 
   if($text=~/hail/i) {
     quest::say("Hail, $name! My name is Blixkin Entopop. Have you seen the wonderful assortment of [spiders] and [beetles] that inhabit the thicket? I have quite an extensive [bug collection]. Be careful, though. I have seen many brave halflings fall beneath a [swarm] of clicking and hissing bugs.");

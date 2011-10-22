@@ -1,3 +1,19 @@
+sub EVENT_SAY {
+  if($text=~/hail/i) {
+    quest::say("Hellooo!!  My name is Jogl, master engineer with the Eldrithch Collective.  And this here is Charlotte.  Pay no mind to her, She won't bite unless you attack me.");
+	quest::signalwith(56108,1,1);
+  }
+}
+
+sub EVENT_WAYPOINT_ARRIVE{
+	if($wp==12){
+		quest::signalwith(56108,2,1);
+	}
+	if($wp==18){
+		quest::signalwith(56108,3,1);
+	}
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13209 =>1 )) {
     quest::say("Hmmm. Here you go. Take this log to Drekon Vebnebber. He is the in-house merchant at Gemchoppers Hall. It is his duty to file away all these logs.");
@@ -11,14 +27,6 @@ sub EVENT_ITEM {
     quest::ding();
     
   }
-}
-
-sub EVENT_SPAWN {
-        my $x = $npc->GetX();
-        my $y = $npc->GetY();
-        my $z = $npc->GetZ();
-        my $h = $npc->GetHeading();
-        quest::spawn2(56108,0,0,$x - 5,$y,$z,$h);
 }
 
 #random 18837 and 18838 for two sepearte quests beginnings Red V and duster

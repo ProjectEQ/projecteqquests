@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("Rrr!  Kejaan guide my claws!  You disturrrb our peace no more!");
+	}
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Rrraaarrr! Hello furless. You come to study from [mighty warrior] yes?");

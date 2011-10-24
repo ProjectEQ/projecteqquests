@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("Rrr!  Kejaan guide my claws!  You disturrrb our peace no more!");
+	}
+}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Why you bother Wislen?  Wislen trying to get fishies.  Leave Wislen alone to get [fish]. please.");

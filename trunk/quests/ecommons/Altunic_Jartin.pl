@@ -1,3 +1,12 @@
+sub EVENT_WAYPOINT_ARRIVE{
+	if($wp==2){
+		quest::SetRunning(1);
+	}
+	if($wp==3){
+		quest::SetRunning(0);
+	}
+}
+
 sub EVENT_SAY
 {
 	if($text=~/Hail/i)

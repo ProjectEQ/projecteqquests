@@ -119,11 +119,10 @@ plugin::return_items(\%itemcount);
 ######## EVENT_AGGRO AREA ##################
 ### Called when the NPC is aggroed
 
-sub EVENT_AGGRO
-{
-
-
-
+sub EVENT_COMBAT{
+	if($combat_state==1){
+		quest::say("Prepare to bleed!!");
+	}
 }
 
 ######## EVENT_ATTACK AREA #################

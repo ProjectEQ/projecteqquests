@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
-		quest::say("Greetings, $name. Are you here to help us? We recieved word that an undead army is planning an attack on Freeport, and we are here to hold them off (at approx 9pm EST). If you need any [defensive magics] cast on you, do not hesitate to ask.");
+		quest::say("Greetings, $name. Are you here to help us? We received word that an undead army is planning an attack on Freeport, and we are here to hold them off (at approx 9pm EST). If you need any [defensive magics] cast on you, do not hesitate to ask.");
 	}
 	
 	if ($text=~/defensive/i) {
@@ -28,7 +28,7 @@ sub EVENT_TIMER {
 	if ($timer == 1 && !defined $qglobals{halloween_great_pumpkin}) {
 		quest::stoptimer(1);
 		quest::settimer(2, $randomspawn); # 1-1:30 hours until event starts
-		quest::setglobal('halloween_great_pumpkin',1,2,'H24'); # Global gets deleted after event is completed or after 24 hours.
+		quest::setglobal('halloween_great_pumpkin',1,5,'H10');
 	} 
 	
 	if ($timer == 2) { 
@@ -159,6 +159,5 @@ sub EVENT_SIGNAL {
 	
 	if($signal == 6){
 		quest::shout("We did it! Freeport is safe! Happy Halloween!");
-		quest::delglobal('halloween_great_pumpkin');
 	}
 }

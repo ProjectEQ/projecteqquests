@@ -1,6 +1,16 @@
 # orc pawn picks & cutthroat rings quest
 #
 
+sub EVENT_COMBAT{
+	if($combat_state==1){
+		quest::say("Stand where you are, scum!!");
+	}
+}
+
+sub EVENT_DEATH{
+	quest::say("Your name shall be added to the most wanted list of the Freeport Militia!!");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings, traveler! If you wish to walk upon the road to Freeport, you will pay the toll of two silver pieces. And you should. It is not safe to stray from the pathway. There are many [dangers in the Commonlands].");

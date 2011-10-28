@@ -25,6 +25,9 @@ if ($text=~/dangerous mission/i) {
   quest::say("You must go into the catacombs and find a man named Drosco Finlayer. Pass him this note. He has been deep undercover in the Shrine of Bertoxxulous and will have directions to that vile place. To do this will surely show your allegiance to this temple.");
   quest::summonitem(18804);
 }
+if ($text=~/hunt the rat king/i) {
+  quest::say("You may try, but no one has truly seen him.  I would look in the sewers.");
+}
 
 }
 
@@ -49,6 +52,17 @@ if (plugin::check_handin(\%itemcount, 18805 =>1 )) {
   quest::exp(500);
   quest::givecash(0,0,8,0);
   quest::summonitem(6537);
+}
+if (plugin::check_handin(\%itemcount, 13396 => 1)) {#Rat Kings Head
+quest::say("So it is true, he does... or did, exist.  Well done $name, take this for your trouble.");
+quest::faction( 135, 5);
+quest::faction( 183, 5);
+quest::faction( 257, 5);
+quest::faction( 21, -10);
+quest::givecash(0,0,5,7);
+quest::ChooseRandom(2112, 2106, 2111, 2104, 2108);
+quest::exp(500);
+  
 }
 
 # Do all other handins first with plugin, then let it do disciplines

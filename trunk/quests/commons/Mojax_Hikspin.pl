@@ -1,3 +1,7 @@
+sub EVENT_AGGRO {
+	quest::say("How dare you!");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hi. How are you? The fish are biting pretty good. That is what Skipynn tells me. I sure wish I had a different [job]. If I did, I could fish all day long.");

@@ -9,10 +9,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 	$pcgm = $client->GetGM();
 	if($text=~/reset/i && $pcgm == 1){
-		quest::stoptimer(1);
-		quest::settimer(2, 5);
 		quest::delglobal('halloween_great_pumpkin');
-		quest::setglobal('halloween_great_pumpkin',1,7,'H2');
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);
@@ -48,11 +45,12 @@ sub EVENT_TIMER {
 	my $min = 3600;
      	my $range = 1800;
       	my $randomspawn = int(rand($range)) + $min;
+      	my $globalspawn = $randomspawn+7200;
 
 	if ($timer == 1 && !defined $qglobals{halloween_great_pumpkin}) {
 		quest::stoptimer(1);
 		quest::settimer(2, $randomspawn); # 1-1:30 hours until event starts
-		quest::setglobal('halloween_great_pumpkin',1,7,'H2');
+		quest::setglobal('halloween_great_pumpkin',1,7,'M$globalspawn');
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);

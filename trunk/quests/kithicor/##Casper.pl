@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
 	quest::say("You don't want to be my friend?");
-	quest::signal(20260,1);
+	quest::signalwith(20260,1);
 }

@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
 	quest::say("Haha! Silly mortals! You cannot kill me! I'm immor...");
-	quest::signal(20260,5);
+	quest::signalwith(20260,5);
 }

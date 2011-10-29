@@ -1,3 +1,13 @@
+sub EVENT_COMBAT {
+	if($combat_state==1){
+		quest::say("The Rainkeeper shall guide me to victory.");
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("Karana shall guide the Knights of Thunder to avenge the death of one of his flock.");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello. Nice to make your acquaintance. Be careful in the plains. There are many creatures. Just stay close to the guard towers.");

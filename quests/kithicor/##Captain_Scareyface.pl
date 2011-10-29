@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
 	quest::say("Church..the AI..its gone");
-	quest::signal(20260,2);
+	quest::signalwith(20260,2);
 }

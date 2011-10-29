@@ -3,6 +3,25 @@
 #zone - West Karana
 #reward - Spell: Inspire Fear
 
+sub EVENT_COMBAT {
+	if($combat_state==1){
+		quest::say("Prime Healer!!  Guide me to victory!!");
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("Your name has been stricken from the book of the Prime Healer!!  I shall be avenged!");
+}
+
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp == 1) {
+	quest::say("I believe here is where I am to wait for the [blessed oil].");
+	}
+	if (($wp == 2) || ($wp == 5)) {
+	quest::say("Cleanse your souls, sinners! The way of life is found through the [Prime Healer]. Repent and join us!");
+	}
+}
+
 sub EVENT_SAY
 {
  if($text=~/Hail, $mname/i)

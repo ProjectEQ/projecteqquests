@@ -28,7 +28,7 @@ sub EVENT_TIMER {
 	if ($timer == 1 && !defined $qglobals{halloween_great_pumpkin}) {
 		quest::stoptimer(1);
 		quest::settimer(2, $randomspawn); # 1-1:30 hours until event starts
-		quest::setglobal('halloween_great_pumpkin',1,7,'H10');
+		quest::setglobal('halloween_great_pumpkin',1,7,'H5');
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);

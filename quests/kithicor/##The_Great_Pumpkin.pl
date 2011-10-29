@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
 	quest::say("DAMN YOU CHARLIE BROWN! YOU RATTED ME OUT!");
-	quest::signal(20260,6);
+	quest::signalwith(20260,6);
 }

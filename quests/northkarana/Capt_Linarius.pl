@@ -4,6 +4,21 @@
 #NPCs Involved: 2
 #Items Involved: 1
 #################
+
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+	my $cur_target = $npc->GetHateTop();
+		if($cur_target) {
+		my $target_name = $cur_target->GetCleanName();
+		quest::say("Time to die $target_name!");
+		}
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("My comrades will avenge my death.");
+}
+
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
   quest::say("Hail, traveler! You are free to rest within this keep or within any of my towers along the roads to Qeynos. My guards shall keep watch over you. While you tread upon the roads, be warned that there are [local dangers] as well as rumors of [corrupt guards].");

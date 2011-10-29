@@ -1,12 +1,3 @@
-sub EVENT_SPAWN {
-     quest::settimer(1,1200);
-}
-
-sub EVENT_TIMER {
-     quest::stoptimer(1);
-     quest::depop();
-}
-
 sub EVENT_COMBAT {
 	if($combat_state == 1){
 		quest::say("I shall pluck you limb from limb!!");

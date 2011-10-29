@@ -9,7 +9,9 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 	$pcgm = $client->GetGM();
 	if($text=~/reset/i && $pcgm == 1){
-		quest::delglobal('halloween_great_pumpkin');
+		quest::delglobal("halloween_great_pumpkin");
+		quest::stoptimer(1);
+		quest::settimer(1,5);
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);
@@ -50,7 +52,7 @@ sub EVENT_TIMER {
 	if ($timer == 1 && !defined $qglobals{halloween_great_pumpkin}) {
 		quest::stoptimer(1);
 		quest::settimer(2, $randomspawn); # 1-1:30 hours until event starts
-		quest::setglobal('halloween_great_pumpkin',1,7,'M$globalspawn');
+		quest::setglobal("halloween_great_pumpkin",1,7,"S$globalspawn");
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);
@@ -199,4 +201,5 @@ sub EVENT_SIGNAL {
 	if($signal == 6){
 		quest::shout("We did it! Freeport is safe! Happy Halloween!");
 	}
+
 }

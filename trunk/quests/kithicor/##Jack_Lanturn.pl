@@ -7,6 +7,30 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
+	$pcgm = $client->GetGM();
+	if($text=~/reset/i && $pcgm == 1){
+		quest::stoptimer(1);
+		quest::settimer(2, 5);
+		quest::delglobal('halloween_great_pumpkin');
+		quest::setglobal('halloween_great_pumpkin',1,7,'H2');
+		quest::depopall(20266);
+		quest::depopall(20267);
+		quest::depopall(20257);
+		quest::depopall(20269);
+		quest::depopall(20268);
+		quest::depopall(20256);
+		quest::depopall(20265);
+		quest::depopall(20264);
+		quest::depopall(20255);
+		quest::depopall(20272);
+		quest::depopall(20273);
+		quest::depopall(20261);
+		quest::depopall(20270);
+		quest::depopall(20271);
+		quest::depopall(20258);
+		quest::depopall(20274);
+		quest::depopall(20262);
+	} 
 	if ($text=~/hail/i) {
 		quest::say("Greetings, $name. Are you here to help us? We received word that an undead army is planning an attack on Freeport, and we are here to hold them off (at approx 9pm EST). If you need any [defensive magics] cast on you, do not hesitate to ask.");
 	}
@@ -28,7 +52,7 @@ sub EVENT_TIMER {
 	if ($timer == 1 && !defined $qglobals{halloween_great_pumpkin}) {
 		quest::stoptimer(1);
 		quest::settimer(2, $randomspawn); # 1-1:30 hours until event starts
-		quest::setglobal('halloween_great_pumpkin',1,7,'H5');
+		quest::setglobal('halloween_great_pumpkin',1,7,'H2');
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);

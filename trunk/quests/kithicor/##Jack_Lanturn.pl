@@ -199,6 +199,7 @@ sub EVENT_SIGNAL {
 	}
 	
 	if($signal == 6){
+                quest::settimer(1, 5);
 		quest::shout("We did it! Freeport is safe! Happy Halloween!");
 	}
 

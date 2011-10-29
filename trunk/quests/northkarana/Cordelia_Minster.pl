@@ -1,6 +1,19 @@
 # Winds of Karana
 # Broken Lute
 
+sub EVENT_AGGRO {
+	quest::say("I will sing of your demise");
+}
+
+sub EVENT_WAYPOINT_ARRIVE {
+	if (($wp eq 1) || ($wp eq 3) || ($wp eq 8)) {
+		quest::SetRunning(1);
+	}
+	if (($wp eq 2) || ($wp eq 6) || ($wp eq 10)) {
+		quest::SetRunning(0);
+	}
+}
+
 sub EVENT_SAY {
 
 if($text=~/hail/i){

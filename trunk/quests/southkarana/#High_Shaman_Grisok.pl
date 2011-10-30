@@ -1,6 +1,6 @@
 sub EVENT_COMBAT {
 	if($combat_state==1) {
-		quest::emote("<BBAAaaaaarrrkkk!!>  Your head will make an RRRex-rrex-excellent addition to my collection!");
+		quest::say("<BBAAaaaaarrrkkk!!>  Your head will make an RRRex-rrex-excellent addition to my collection!");
 	}
 }
 

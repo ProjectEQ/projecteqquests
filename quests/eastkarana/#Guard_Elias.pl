@@ -1,11 +1,3 @@
-sub EVENT_SPAWN {
-  quest::settimer(30)
-}
-
-sub EVENT_TIMER {
-  quest::stoptimer();
-  quest::start(135)
-}
 
 sub EVENT_WAYPOINT_ARRIVE {
   if($wp == 2) { 

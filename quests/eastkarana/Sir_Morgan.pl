@@ -4,6 +4,33 @@
 #NPCs Involved: 1
 #Items Involved: 5 Gold for a random reward
 #################
+
+sub EVENT_COMBAT {
+	if ($combat_state==1) {
+		quest::say("Squire Wimbley!!  Quickly to my side!!");
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("The people of the Plains of Karana will avenge my death!");
+}
+
+sub EVENT_WAYPOINT_ARRIVE {
+	if ($wp == 1) {
+		quest::say("Hello, Wimbley, old chap!");
+	}
+	if ($wp == 8) {
+		quest::say("Almost there...");
+	}
+	if ($wp == 9) {
+		quest::say("Well, here we are! It is just a short jaunt through the pass ahead. Just remember to take the high road. I'm off, then. Good luck!");
+		quest::SetRunning(1);
+	}
+	if ($wp == 10) {
+		quest::SetRunning(0);
+	}
+}
+
 sub EVENT_SAY { 
   if($text=~/hail/i) {
     quest::say("Hail, traveler! Might I escort you through to Highpass? The path ahead is filled with giants and many other hungry beasts. I assure you, you will be safe with me. I must admit, I am quite experienced in the ways of the warrior. Do you [wish an escort] or will you [travel alone]?");

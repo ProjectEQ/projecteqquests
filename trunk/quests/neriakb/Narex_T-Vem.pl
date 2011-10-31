@@ -34,10 +34,10 @@ sub EVENT_ITEM {
   	quest::faction(260,-5); #Primordial Malice
   	quest::exp(17150);#5% of level 8 experience, quest is for levels 8+  
   }
-  elsif(plugin::check_handin(\%itemcount, 13113 => 4)) { #Leatherfoot Raider Skullcap
+  if(plugin::check_handin(\%itemcount, 13113 => 4)) { #Leatherfoot Raider Skullcap
   	quest::say("Yes, you have done well. Take this, and slay more!"); #text made up
   	quest::summonitem(12257);#Footman's Voulge
-  	quest::givemoney(0,0,4,0);#4gp
+  	quest::givecash(0,0,4,0);#4gp
 	quest::faction(155, 2); #Indigo Brotherhood
   	quest::faction(92,-5); #Emerald Warriors
   	quest::faction(311,-5); #Steel Warriors

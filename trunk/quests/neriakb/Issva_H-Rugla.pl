@@ -5,6 +5,9 @@ sub EVENT_SAY {
 	if($text=~/Hail/i){
 		quest::say("If you're looking for chit chat you can bugger off. I'm here to sell supplies not company.");
 	}
+	if($text=~/materials/i){
+		quest::say("Many species of dangerous creatures, the walking dead, and invading Deathfist Orcs inhabit the Nektulos Forest. You must defeat these creatures and undead in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft [gauntlets], [boots], a [bracer], a [helm], [greaves], [vambraces], or a [breastplate]?");
+	}
   if($text=~/gauntlets/i) {
 		quest::say("To craft Orc Slayer Gauntlets you require two [silk thread], a cracked pyre beetle carapace, and two orc finger bones. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Glove Pattern.");
 		quest::summonitem(19559);#Tattered Glove Pattern

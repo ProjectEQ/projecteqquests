@@ -4,6 +4,16 @@
 # more details in valeron's .pl file in freportn.
 #
 
+sub EVENT_COMBAT {
+     if($combat_state == 1) {
+    quest::say("Time to mine fer yer brains!!");
+ }
+}
+
+sub EVENT_DEATH {
+	quest::say("Aaargh!!  The picks of Mining Guild 628 shall avenge my death.");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("ail, dere! Ain'tcha a sight fer me sore eyes! I knows dat we're strangers an' all, but might I ask a [boon] of ye?");

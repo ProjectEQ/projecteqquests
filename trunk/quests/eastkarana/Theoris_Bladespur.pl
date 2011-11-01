@@ -1,6 +1,6 @@
 sub EVENT_COMBAT {
 	if($combat_state==1) {
-		quest::emote("curls his lip and draws his blades in a professional, intimidating quickness, 'You will soon know to regret teh arrogance of your ways, little one -- and how unfortunate that your regret will be so short lived in the last seconds of your life.'");
+		quest::emote("curls his lip and draws his blades in a professional, intimidating quickness, 'You will soon know to regret the arrogance of your ways, little one -- and how unfortunate that your regret will be so short lived in the last seconds of your life.'");
 	}
 }
 

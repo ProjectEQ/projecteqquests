@@ -5,6 +5,14 @@
 #Items Involved: Testament of Vanear, Page 30 of a book, Page 34 of a book, Jester, 2 gold, 4 gold
 #################
 
+sub EVENT_AGGRO {
+	quest::say("How dare you attack a member of the Qeynos Guard!!");
+}
+
+sub EVENT_DEATH {
+	quest::say("Fool!!  I was sent by the Commander of the Qeynos Guard.  You will surely be punished..unggh!!");
+}
+
 sub EVENT_SAY { 
 
   if($text=~/Hail/i){

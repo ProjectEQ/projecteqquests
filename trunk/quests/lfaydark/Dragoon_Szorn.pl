@@ -3,6 +3,10 @@
 #Some of this was done already (all the important bits, really).  
 #Cleaned up what was there and added a response to quest text -Kilelen
 
+sub EVENT_AGGRO {
+	quest::say("Your blood shall stain the flora of this sylvan wood!!  For King Naythox and the glory of the Neriak Empire!!!");
+}
+
 sub EVENT_SAY{
 	if($text=~/missing shipment/i) {
 		quest::say("Seek out Ennixy and tell her [hate be my guide]. She typically works from her homeland in the steamfont mountains.");

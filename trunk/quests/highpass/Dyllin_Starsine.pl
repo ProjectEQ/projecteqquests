@@ -38,11 +38,4 @@ sub EVENT_ITEM {
 
 }
 
-
- sub EVENT_DEATH
-{
- quest::say("How dare you attack a member of the Qeynos Guard!!");
- quest::summonitem(13832);
-}
-
 #END of FILE Zone:highpass  ID:5045 -- Dyllin_Starsine

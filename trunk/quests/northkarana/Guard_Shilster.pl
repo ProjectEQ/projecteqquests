@@ -4,6 +4,16 @@
 #NPCs Involved: 1
 #Items Involved: 5 Gold
 #################
+
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp==2) {
+		quest::emote("stumbles and says, 'Hey fools.  Blackburrow stout for sale five gold.  Load up now 'cause it's going fast!  Just make sure you enjoy it in privacy or you might get arrested, ha haaaa!'");
+	}
+	if($wp==3) {
+		quest::emote("burps loudly and says, 'Your loss.  Back to the bridge I go to keep us safe from the enemy or whatever it is I'm supposed to be doing out there.'");
+	}
+}
+
 sub EVENT_SAY { 
 
 if($text=~/Hail/i){

@@ -17,3 +17,13 @@ sub EVENT_SIGNAL {
 quest::say("Ha!!  One like that one stands no chance within this realm. The goblins shall skin him alive!!");
 quest::signal(70005,5);
 }
+
+sub EVENT_COMBAT {
+	if($combat_state==1) {
+		quest::say("All shall die before the might of the Fabulous Four!!");
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("The entire Eldritch Collective shall feel the vibrations of my passing.  They will know of your foul deed.");
+}

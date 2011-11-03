@@ -16,3 +16,13 @@ $npc->CastSpell(200,$userid);
 sub EVENT_SIGNAL {
 quest::say("Pipe down, Ghil!!  We have no quarrel with this adventurer.");
 }
+
+sub EVENT_COMBAT {
+	if($combat_state==1) {
+		quest::say("You have met your match!!");
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("You have earned the vengeance of Faydark's Champions");
+}

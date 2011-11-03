@@ -12,6 +12,12 @@ if($text=~/Hail/i) {
    }
 }
 
-sub EVENT_ATTACK {
-    quest::say("It's bashing time!!");
- }
+sub EVENT_COMBAT {
+	if($combat_state==1) {
+		quest::say("It's bashing time!!");
+	}
+}
+
+sub EVENT_DEATH {
+	quest::say("My brothers of the Stormguard shall avenge me!!  Your days are numbered!");
+}

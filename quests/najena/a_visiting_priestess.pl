@@ -7,6 +7,9 @@
 # Faction value using function.  The $faction DOES NOT WORK for Priests of Innoruuk (ID 256) in the release on 08/28/2009
 my $facval;
 
+sub EVENT_AGGRO {
+	quest::say("Innoruuk!  I call forth your power to help me vanquish these false prophets!");
+}
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -26,7 +26,7 @@ sub EVENT_SAY{
   }
 }
 sub EVENT_ITEM{
-	if(plugin::check_handin(\%itemcount, 13791 => 1, 19565 => 1, 19564 => 1)) {#Orc Scalp, Orc Clavicle, Orc Fibula
+	if(plugin::check_handin(\%itemcount, 16173 => 1, 19565 => 1, 19564 => 1)) {#Deathfist Orc Scalp, Orc Clavicle, Orc Fibula
 		if (($class eq "Warrior") && ($race eq "Dark Elf")){
 			quest::say("Excellent.  Here is your weapon, $name.  Use it to slay more!");#text made up
 			quest::summonitem(19606);#Jagged Orc Slayer Sword

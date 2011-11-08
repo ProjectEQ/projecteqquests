@@ -1,4 +1,9 @@
+sub EVENT_AGGRO {
+	quest::emote("babbles incoherently as it attacks!");
+}
+
 sub EVENT_DEATH {
+   quest::emote("sprays black slime from its wounds and mouth!");
    my $random_result = int(rand(100));
    
    

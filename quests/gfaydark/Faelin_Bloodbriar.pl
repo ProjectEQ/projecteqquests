@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if ($timer eq "depop") {
     quest::stoptimer("depop");
-    quest::depop();
+    $npc->Depop(1);
   }
 }
 

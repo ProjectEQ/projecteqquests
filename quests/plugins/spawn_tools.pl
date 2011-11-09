@@ -387,48 +387,66 @@ sub SpawnZone {
 	}
 }
 
-
-#Usage: my $ReverseHeading = plugin::GetReverseHeading([$mob]);
-# Returns the heading of the opposite direction the mob is facing
-
-sub GetReverseHeading {
-
-	my $npc = plugin::val('$npc');
-	my $Mob = $_[0];
-	if (!$Mob)
-	{ 
-		$Mob = $npc;
+#moelib_spawn_block(npctypeid, fromx, tox, fromy, toy, space, zposition=20, heading=0, grid=0)
+sub moelib_spawn_block {
+	my $npctypeid = $_[0];
+	my $fromx = $_[1];
+	my $tox = $_[2];
+	my $fromy = $_[3];
+	my $toy = $_[4];
+	my $space = $_[5];
+	my $z = $_[6] || 20;
+	my $heading = $_[7] || 0;
+	my $grid = $_[8] || 0;
+	my $count = 0;
+	for ($x = $fromx; $x <= $tox; $x += $space) {
+		for ($y = $fromy; $y <= $toy; $y += $space) {
+			$count++;
+			quest::spawn2($npctypeid,$grid,0,($x), ($y), $z,$heading);
+		}
 	}
-	my $CurHeading = $Mob->GetHeading();
-	my $ReverseHeading = 128 + $CurHeading;
-	if ($ReverseHeading >= 256)
-	{
-		$ReverseHeading = $ReverseHeading - 256;
-	}
-	return $ReverseHeading;
+	return $count;
+}
+
+#moelib_spawn_block_center(npctypeid, centerx, centery, range, amount, zposition=20, heading=0, grid=0)
+sub moelib_spawn_block_center {
+	my $npctypeid = $_[0];
+	my $centerx = $_[1];
+	my $centery = $_[2];
+	my $range = $_[3];
+	my $amount = $_[4];
+	my $z = $_[5] || 20;
+	my $heading = $_[6] || 0;
+	my $grid = $_[7] || 0;
+	my $fromx = $centerx-$range;
+	my $fromy = $centery-$range;
+	my $tox = $centerx+$range;
+	my $toy = $centery+$range;
+	my $size = $range*2;
+	my $space = $size / sqrt($amount);
+	$fromx += ($space / 2);
+	$fromy += ($space / 2);
+	return spawn_block($npctypeid, $fromx, $tox, $fromy, $toy, $space, $z, $heading, $grid);
 }
 
 
-#Usage: my $Degrees = plugin::ConvertHeadingToDegrees(Heading);
-# Converts 0-256 headings into 0 to 360 degrees
-
-sub ConvertHeadingToDegrees {
-
-	my $Heading = $_[0];
+#moelib_spawn_circle(npctypeid, centerx, centery, radius, amount, zposition=20, heading=0, grid=0)
+sub moelib_spawn_circle {
+	my $npctypeid = $_[0];
+	my $centerx = $_[1];
+	my $centery = $_[2];
+	my $radius = $_[3];
+	my $amount = $_[4];
+	my $z = $_[5] || 20;
+	my $heading = $_[6] || 0;
+	my $grid = $_[7] || 0;
 	
-	my $ReverseHeading = 256 - $Heading;
-	my $ConvertAngle = $ReverseHeading * 1.40625;
-	if ($ConvertAngle <= 270)
-	{
-		$ConvertAngle = $ConvertAngle + 90;
+	my $a = (2*3.14159)/$amount;
+	for ($i = 0; $i < $amount; $i++) {
+		$x = int(cos($a*$i)*$radius) + ($centerx - ($radius / 2));
+		$y = int(sin($a*$i)*$radius) + ($centery - ($radius / 2));
+		quest::spawn2($npctypeid, $grid, 0, ($x), ($y), $z, $heading);
 	}
-	else
-	{
-		$ConvertAngle = $ConvertAngle - 270;
-	}
-
-	return $ConvertAngle;
 }
-
 
 return 1;	#This line is required at the end of every plugin file in order to use it

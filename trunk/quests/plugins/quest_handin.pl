@@ -8,10 +8,6 @@ sub QuestHandIn{
 		my $itemcount = plugin::var('itemcount');
 		my $ulevel = plugin::val('$ulevel');
 		my $npc_name = $npc->GetCleanName();
-		my $Item1 = 0;
-		my $Item2 = 0;
-		my $Item3 = 0;
-		my $Item4 = 0;
 		my $RewardID = $_[0];
 		my $NPCMESSAGE = $_[1];
 		my $NPCANIMATION = $_[2];

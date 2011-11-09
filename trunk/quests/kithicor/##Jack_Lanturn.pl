@@ -53,6 +53,14 @@ sub EVENT_TIMER {
 		quest::stoptimer(1);
 		quest::settimer(2, $randomspawn); # 1-1:30 hours until event starts
 		quest::setglobal("halloween_great_pumpkin",1,7,"S$globalspawn");
+                quest::shout("The forces will be coming in about an hour's time!");
+	} 
+	
+	if ($timer == 2) { 
+		quest::stoptimer(2);
+
+		quest::shout("Here they come!");
+
 		quest::depopall(20266);
 		quest::depopall(20267);
 		quest::depopall(20257);
@@ -70,13 +78,7 @@ sub EVENT_TIMER {
 		quest::depopall(20258);
 		quest::depopall(20274);
 		quest::depopall(20262);
-	} 
-	
-	if ($timer == 2) { 
-		quest::stoptimer(2);
-
-		quest::shout("Here they come!");
-
+		
 		quest::spawn2(20266,0,0,-151,976,7.5,215);
 		quest::spawn2(20266,0,0,-161,976,7.5,215);
 		quest::spawn2(20266,0,0,-131,976,7.5,215);

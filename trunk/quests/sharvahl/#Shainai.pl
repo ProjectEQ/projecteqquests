@@ -27,3 +27,37 @@ sub EVENT_WAYPOINT_ARRIVE {
     quest::emote("Yawns tiredly and says, 'That was fun. Time for me to go to sleep though.' She crawls under the blanket and falls sound asleep.");
 	}
 }
+
+sub EVENT_SPAWN {
+	quest::signalwith(155041,2,10);
+}
+
+sub EVENT_SAY {
+	my $a = 155339;
+	if((($wp < 17) || ($wp > 60)) && ($text=~/Hail/i)){
+		quest::say("Hello, my name is Shainai and I am on a very important mission for my Daddy. He ran out of buttons for the officers' clothes so I have to get him more. I am an excellent helper.");
+	}
+	if((($wp > 16) && ($wp < 61)) && ($text=~/Hail/i)){
+		quest::say("Hi. I was getting some buttons for Daddy and I got a little lost. I know the way, I mean it...but if you wanted to [follow] me home to make sure I got there safe and all, you could.");
+	}
+	if((($wp > 16) && ($wp < 61)) && ($text=~/follow/i)){
+		quest::say("You will?!? Oh good, now I won't be so lonesome. Here hold my bag of buttons if you please, my arms are tired. Ready? Follow me now, I know the way.");
+		quest::summonitem(4460);
+	}
+	if((($wp > 16) && ($wp < 27)) && ($text=~/follow/i)) {
+		quest::spawn2($a,29,0,401,135,-188,0);
+		$npc->Depop(1);
+	}
+	if((($wp > 26) && ($wp < 32)) && ($text=~/follow/i)) {
+		quest::spawn2($a,27,0,129,169,-248,0);
+		$npc->Depop(1);
+	}
+	if((($wp > 31) && ($wp < 38)) && ($text=~/follow/i)) {
+		quest::spawn2($a,28,0,95,188,-248,0);
+		$npc->Depop(1);
+	}
+	if((($wp > 37) && ($wp < 61)) && ($text=~/follow/i)) {
+		quest::spawn2($a,30,0,-373,190,-236,0);
+		$npc->Depop(1);
+	}
+}

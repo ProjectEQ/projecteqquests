@@ -33,14 +33,7 @@ sub EVENT_ITEM {
   }
     
 }
-#I think these are for his pet.  I copied them from what was previously in this file.
-sub EVENT_SPAWN
-{
- quest::settimer(1,10);
-	$x = $npc->GetX();
-	$y = $npc->GetY();
-	quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
-}
+
 
 sub EVENT_ENTER
 {

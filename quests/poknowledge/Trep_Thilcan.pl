@@ -29,14 +29,6 @@ sub EVENT_ITEM {
     
 }
 
-#Pre-existing code, to spawn a pet is my guess
-sub EVENT_SPAWN
-{
- quest::settimer(1,10);
-	$x = $npc->GetX();
-	$y = $npc->GetY();
-	quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
-}
 
 sub EVENT_ENTER
 {

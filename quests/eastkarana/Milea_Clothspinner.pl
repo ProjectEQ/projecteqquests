@@ -16,7 +16,7 @@ sub EVENT_ITEM {
 		quest::exp(2000);
 		quest::spawn2(15193,135,0,-5521,-1870,3,226);
 	}
-	if ($itemcount{18934} == 1 ){# 18934 'sealed letter', filename='LoveToMilea'
+	if (plugin::check_handin(\%itemcount, 18934 =>1 )){# 18934 'sealed letter', filename='LoveToMilea'
 		quest::say("Oh great!! I thought I'd saw that last of Plagus, or as all the women in the Steel Warriors called him, the Plague. Please do not tell him where I am. It must have been a long journey for you. Here. A little something for your wasted trip. I found it on the ground. Have fun going back to Freeport.");
 		quest::summonitem(quest::ChooseRandom(3040,5231,1037,17005,13003,10008,1005,8791,1336,2910));
 		quest::faction(10103,1);

@@ -16,7 +16,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-	if if(plugin::check_handin(\%itemcount, 12147 => 1)) { # Hog Key # 2 ID-12147
+	if(plugin::check_handin(\%itemcount, 12147 => 1)) { # Hog Key # 2 ID-12147
 		quest::say("Here you go then.");
 		quest::ding();
 		quest::summonitem(18814);# A Sealed Letter ID-18814 filename "NERtoShintl"

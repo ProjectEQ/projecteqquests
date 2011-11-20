@@ -3,12 +3,15 @@
 
 sub EVENT_WAYPOINT_ARRIVE{
 	if(($wp eq 13) || ($wp eq 19)) {
-		my $random = int(rand(4));
+		my $random = int(rand(5));
 		if($random == 0) {
 			quest::emote("hums a little as she drops off supplies for the deputies.");
 		}
 		if($random == 1) {
 			quest::say("Hope things are going well here.");
+		}
+		if($random == 2) {
+			quest::say("Air's nice as always out here.");
 		}
 	}
 }

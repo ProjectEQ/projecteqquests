@@ -16,6 +16,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	# 13243 :  One Half Bottle of Elixir
 	if (plugin::check_handin(\%itemcount, 13243 => 1)) {
+                quest::ding();
 		quest::say("Mmmm.. Thank you stranger. I feel a lot warmer now. You should now go and find [Megan] O'Reilly.");
 		quest::exp(125);
 		quest::faction(213,1); # 213 : Faction Merchant's of Halas

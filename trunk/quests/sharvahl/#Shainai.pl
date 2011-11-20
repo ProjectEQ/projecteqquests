@@ -34,14 +34,17 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
 	my $a = 155339;
-	if((($wp < 17) || ($wp > 60)) && ($text=~/Hail/i)){
+	if(($wp < 17) && ($text=~/Hail/i)){
 		quest::say("Hello, my name is Shainai and I am on a very important mission for my Daddy. He ran out of buttons for the officers' clothes so I have to get him more. I am an excellent helper.");
 	}
+	if(($wp > 60) && ($text=~/Hail/i)){
+		quest::say("Hi there, I am headed home before I get in trouble.  I got a little lost, but I am ok now.  I hope Daddy isn't too mad.  Bye bye!");
+	}	
 	if((($wp > 16) && ($wp < 61)) && ($text=~/Hail/i)){
 		quest::say("Hi. I was getting some buttons for Daddy and I got a little lost. I know the way, I mean it...but if you wanted to [follow] me home to make sure I got there safe and all, you could.");
 	}
 	if((($wp > 16) && ($wp < 61)) && ($text=~/follow/i)){
-		quest::say("You will?!? Oh good, now I won't be so lonesome. Here hold my bag of buttons if you please, my arms are tired. Ready? Follow me now, I know the way.");
+		quest::say("You will?!? Oh good, now I won't be so lonesome. Here hold my bag of buttons if you please, my arms are tired. Ready? Follow me now, I know the way.  'Shainai pauses and looks around, ' Hmmmm...");
 		quest::summonitem(4460);
 	}
 	if((($wp > 16) && ($wp < 27)) && ($text=~/follow/i)) {

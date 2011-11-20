@@ -24,6 +24,7 @@ sub EVENT_ITEM {
 	# 13244 :  One Quarter Bottle of Elixir
 	if (plugin::check_handin(\%itemcount, 13244 => 1)) {
 		quest::say("Oh thank you. Sorry, but the bottle is empty now. I hope you did't need any. Take the empty bottle back to Dargon. He may refill it for you.");
+                quest::ding();
 		quest::exp(125);
 		quest::faction(213,10); # 213 : Faction Merchant's of Halas
 		quest::faction(294,10); # 294 : Faction Shaman of Justice

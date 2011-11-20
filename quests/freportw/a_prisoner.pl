@@ -1,3 +1,11 @@
+sub EVENT_SPAWN {
+	quest::settimer("goog",150);
+}
+
+sub EVENT_TIMER {
+	quest::say(quest::ChooseRandom("unngh!!.. Biggle and boo.. Goggle froo..","ahhhh!!.. Tiggle bumble coo.. Bog n' Goo.."));
+}
+
 sub EVENT_SAY {
   if($text=~/Hail/i)
   {

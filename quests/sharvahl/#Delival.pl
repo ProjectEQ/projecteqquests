@@ -41,3 +41,13 @@ sub EVENT_SAY {
 		quest::emote("averts his eyes, 'I was on a raid in the forest that went bad.  That was when we lost Shainai's mother.  Truth be told, as much as I am eager to get back out in the field, the opportunity to spend this little bit of extra time with Shainai is priceless.'");
 	}
 }
+
+sub EVENT_ITEM {
+	if(plugin::check_handin(\%itemcount, 4460 => 1)) {
+		quest::emote("looks at what you handed him as his face turns to rage, 'What is... this... this is the box I sent Shainai out with!  Where is she?  What have you done?  You stole from my little girl!!  Maybe worst!!!!!'");
+	}
+	else {
+		quest::say("I have no need for this, $name.");
+		plugin::return_items(\%itemcount);
+	}
+}

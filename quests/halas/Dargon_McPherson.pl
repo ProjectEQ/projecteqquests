@@ -28,6 +28,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 13245 => 1)) {
 		quest::say("Ye've proven yerself to be a cut above the rest and aided yer fellow warriors, no matter how worthless they were. Ye may take this. It was found in the snow by one of our foraging parties. I hope it can be of use to a warrior like yerself.");
+                quest::ding();
 		quest::exp(125);
 		quest::givecash(3,0,0,0);
 		quest::summonitem(quest::ChooseRandom(2012,17001,10004,10017,1038,10016,13877,2135,7007,8008,10009,13007,5014,13003)); # random low level items

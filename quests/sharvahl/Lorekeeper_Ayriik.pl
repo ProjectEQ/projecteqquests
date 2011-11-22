@@ -35,6 +35,11 @@ sub EVENT_TIMER {
   }
   if ($count == 10) {
     quest::say("That is the story of Taruun, the child that taught a tribe to survive. He is the namesake of our scout sect. It was an honor to be able to recite this story for you.");
+    quest::signal(155105,10);
+    quest::signal(155140,10);
+    quest::signal(155139,10);
+    quest::signal(155108,10);
+    quest::signal(155107,10);
     quest::settimer("story",300);
   }
   if ($count == 11) {
@@ -64,6 +69,11 @@ sub EVENT_TIMER {
   }
   if ($count == 19) {
     quest::say("Our people have named the Shamanic sect of our tribe after that visionary spiritual leader. May the eyes of Vah watch over his spirit as they do ours.");
+    quest::signal(155105,10);
+    quest::signal(155140,10);
+    quest::signal(155139,10);
+    quest::signal(155108,10);
+    quest::signal(155107,10);
     quest::settimer("story",290);
   }
   if ($count == 20) {

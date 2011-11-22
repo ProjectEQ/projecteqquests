@@ -7,7 +7,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 	quest::SetRunning(1);
 	}
 	if($wp eq 6) {
-	plugin::DoAnim(wave);
+	plugin::DoAnim("wave");
 	}
 	if($wp eq 7) {
 	quest::say("Guard! Come quick! The undead gather near the ruins of Geupal!");
@@ -18,7 +18,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 	$npc->SetAppearance(0);
 	}
 	if($wp eq 9) {
-	plugin::DoAnim(bash);
+	plugin::DoAnim("bash");
 	}
 	if($wp eq 10) {
 	quest::say("Shh.. The fiends seems to dwell amongst the ruins. They wander off but eventually congregate back here. Shh.. OK NOW! RODCET PROTECT US!");

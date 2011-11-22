@@ -1,5 +1,3 @@
 sub EVENT_SIGNAL {
-	plugin::DoAnim(clap);
+	plugin::DoAnim("clap");
 }
-
-

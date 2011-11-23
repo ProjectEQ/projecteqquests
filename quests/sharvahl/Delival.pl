@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::emote("sighs and says, 'My hands are full right now hon.'  Delival looks your way curiously and asks, 'I don't suppose you would want to tuck her in for me if I give you a [blanket]?'");
+		quest::emote("sighs and says, 'My hands are full right now hon.'  Delival looks your way curiously and asks, 'I don't suppose you would want to [tuck] her in for me if I give you a blanket?'");
 	}
 	if($signal==2) {
 		quest::say("Yes, yes, goodnight now sweetheart.");
@@ -14,7 +14,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_SAY {
-	if($text=~/blanket/i) {
+	if($text=~/tuck/i) {
 		quest::say("Thank you again, have been a great help.  Here is her favorite blanket, just give it to her and she should be fine.  G'night Shainai.");
                 quest::ding();
 		quest::summonitem(4478);

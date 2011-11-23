@@ -45,6 +45,7 @@ sub EVENT_SAY {
 	}
 	if((($wp > 16) && ($wp < 61)) && ($text=~/follow/i)){
 		quest::say("You will?!? Oh good, now I won't be so lonesome. Here hold my bag of buttons if you please, my arms are tired. Ready? Follow me now, I know the way.  'Shainai pauses and looks around, ' Hmmmm...");
+                quest::ding();
 		quest::summonitem(4460);
 	}
 	if((($wp > 16) && ($wp < 27)) && ($text=~/follow/i)) {

@@ -1,11 +1,6 @@
 my $goactive = 0;
 my $first_signal = 0;
 
-sub EVENT_SPAWN {
-  #5 minute safety check that will kick begin event.
-  quest::settimer(2,300);
-}
-
 sub EVENT_SIGNAL {
   #signal 1 is from the spiders.
   if($signal == 1 && $first_signal == 0) {
@@ -15,8 +10,6 @@ sub EVENT_SIGNAL {
   } elsif($signal == 1 && $first_signal == 1 && $goactive > 0) {
     #if we received a signal and it was not the first signal and $goactive is > 0 reset go active back to 0
     $goactive = 0;
-	#restart safety check timer
-	quest::settimer(2,300);
   }
 }
 
@@ -29,8 +22,6 @@ sub EVENT_TIMER {
     if($goactive >= 60) {
       BEGIN_MB_EVENT();
     }
-  } elsif($timer == 2) {
-    BEGIN_MB_EVENT();
   }
 }
 

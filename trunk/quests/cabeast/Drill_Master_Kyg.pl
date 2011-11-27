@@ -35,7 +35,7 @@ sub EVENT_ITEM {
    }
 
  #do all other handins first, then let it do disciplines
- plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+ plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:1113 -- Drill_Master_Kyg 

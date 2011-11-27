@@ -23,7 +23,7 @@ if (plugin::check_handin(\%itemcount, 12673 => 1)) {
   quest::summonitem(12674);
 }
  #do all other handins first, then let it do disciplines
- plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+ plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
  plugin::return_items(\%itemcount);
 }
 

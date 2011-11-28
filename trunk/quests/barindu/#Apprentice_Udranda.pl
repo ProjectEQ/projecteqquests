@@ -19,14 +19,12 @@ sub EVENT_SAY {
             quest::AssignToInstance($Instance);
             quest::say("Instance added.");
           }
-        }
-        else {
+        } else {
           $client->Message(13, "You are already in an instance!");
         }
       }
-      else {
-        $client->Message(13, "You are not in a group!");
-      }
+    } else {
+      $client->Message(13, "You are not in a group!");
     }
   }
   if ($text=~/tipt/i) {
@@ -42,14 +40,12 @@ sub EVENT_SAY {
             quest::AssignToInstance($Instance);
             quest::say("Instance added.");
           }
-        }
-        else {
+        } else {
           $client->Message(13, "You are already in an instance!");
         }
       }
-      else {
-        $client->Message(13, "You are not in a group!");
-      }
+    } else {
+      $client->Message(13, "You are not in a group!");
     }
   }
 }

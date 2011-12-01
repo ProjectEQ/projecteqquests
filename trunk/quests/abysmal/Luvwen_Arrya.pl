@@ -32,30 +32,36 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
-    quest::summonitem(54163); # reworked Bracer
-  }
-  elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # helm
-    quest::summonitem(54161); # reworked helm
-  }
-  elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
-    quest::summonitem(54164); # reworked gloves
-  }
-  elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # legplates
-    quest::summonitem(54166); # reworked legplates
-  }
-  elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # chestplate
-    quest::summonitem(54167); # reworked chestplate
-  }
-  elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # boots
-    quest::summonitem(54165); # reworked boots
-  }
-  elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
-    quest::summonitem(54162); # reworked vambraces
-  }
-  else{     
-    quest::say("I have no use for this.");    
-    plugin::return_items(\%itemcount);
-  }
+	if ($class eq "Bard") {
+		if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
+			quest::summonitem(54163); # reworked Bracer
+		}
+		elsif (plugin::check_handin(\%itemcount, 68220 => 1)) { # helm
+			quest::summonitem(54161); # reworked helm
+		}
+		elsif (plugin::check_handin(\%itemcount, 68223 => 1)) { # Gloves
+			quest::summonitem(54164); # reworked gloves
+		}
+		elsif (plugin::check_handin(\%itemcount, 68225 => 1)) { # legplates
+			quest::summonitem(54166); # reworked legplates
+		}
+		elsif (plugin::check_handin(\%itemcount, 68226 => 1)) { # chestplate
+			quest::summonitem(54167); # reworked chestplate
+		}
+		elsif (plugin::check_handin(\%itemcount, 68224 => 1)) { # boots
+			quest::summonitem(54165); # reworked boots
+		}
+		elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
+			quest::summonitem(54162); # reworked vambraces
+		}
+		else{     
+			quest::say("I have no use for this.");    
+			plugin::return_items(\%itemcount);
+		}
+	}
+	else {
+		quest::say("I have no use for this.");  
+		plugin::return_items(\%itemcount);
+	}
 }
 #END of FILE zone:abysmal ID:279016 -- Luvwen_Arrya.pl

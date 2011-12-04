@@ -7,7 +7,6 @@ sub EVENT_SAY {
   }
   if ($text=~/leave/i) {
     quest::say("I think I took somethin' o' his and he wants it back. Ya got ta [help] me get rid of this ghost, lad! I taint slept in over a fortnight.");
-    quest::signal(279220);
   }
   if ($text=~/help/i) {
     quest::say("I went explorin' one day in some sewers in the new land. I came across a rottin' satchel on the ground. Inside were some strange gems. I couldn't resist. I took the satchel back here to me room. A day or two later, this ghost appeared. Scared me out o' me chainmail it did. It kept moanin' about wantin' its satchel back. I didn't know what ta do so I went back to the sewers and chucked it into the water. Thought it might appease it or somethin'. That didn't work though and the darn ghost still comes back. Please find the satchel and bring it back ere. Maybe if I can give the satchel to the ghost, it will make him go away for good!"); 

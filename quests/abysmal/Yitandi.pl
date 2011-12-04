@@ -7,8 +7,12 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_SIGNAL {
-  quest::emote("moans pitifully, Satchel. Sewers.");
+sub EVENT_SPAWN {
+  quest::settimer("moan",150);
+}
+
+sub EVENT_TIMER {
+  quest::emote("moans pitifully, Satchel. . . Sewers. . .");
 }
 
 sub EVENT_ITEM {

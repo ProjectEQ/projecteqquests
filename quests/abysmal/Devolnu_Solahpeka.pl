@@ -26,6 +26,12 @@ sub EVENT_SIGNAL {
 		quest::say("That's nothin'.  Why, just last week I had the misfortune of being bumped into the water by Rensik on his rounds.  The fellow didn't even notice and just kept on walkin'.  I went under pretty deep, considerin' the fall.  When I got my bearings I started up.  What was odd was the fact that the sun seemed to be directly overhead, but I knew it was nearly dusk.  When I got a few feet closer to the surface I realized that it wasn't the sun I was seeing, it was a jellyfish!  Before I had noticed I was surrounded by its poisonous tentacles!  I knew of only one way out.  I released all the air I had in my lungs, blew it right up under the thing.  As the bubbles went up, I went down.  I just barely managed to dive out from between the stingers and get up to the surface before I drowned.");
 		quest::signalwith(279046,3,15000);
 	}
+	if($signal == 4) {
+		quest::emote("leers at the waitress 'Anything you bring me will taste like heaven!  If I have to choose, I'll have a light beer.'");
+	}
+	if($signal == 5) {
+		$npc->Depop(1);
+	}
 }
 
 sub EVENT_TIMER {

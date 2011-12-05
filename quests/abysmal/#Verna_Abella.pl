@@ -19,4 +19,9 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
+
+sub EVENT_SIGNAL {
+	quest::say("Well, don't ye look lovely today! Why, I can 'ardly think of what I want ta drink with ye distractin' me. 'ow about a light beer for now. I'll surely be orderin' more as long as yer on duty!");
+}
+
 # END of FILE Zone:abysmal  ID:279036 -- #Verna_Abella.pl

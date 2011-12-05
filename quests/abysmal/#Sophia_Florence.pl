@@ -19,4 +19,9 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
+
+sub EVENT_SIGNAL {
+	quest::emote("smiles and happily exclaims, 'I want to taste my drink!  I want something with flavor.  I'll 'ave a nice dark ale, my dear!'");
+}
+
 # END of FILE Zone:abysmal  ID:279037 -- #Sophia_Florence.pl

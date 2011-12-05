@@ -19,4 +19,9 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
+
+sub EVENT_SIGNAL {
+	quest::say("Malt for me!  Thanks!");
+}
+
 # END of FILE Zone:abysmal  ID:279034 -- #Aprilia_Marrow.pl

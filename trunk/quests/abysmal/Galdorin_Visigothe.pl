@@ -4,6 +4,10 @@ sub EVENT_SPAWN {
 	quest::settimer("song",5);
 }
 
+sub EVENT_SIGNAL {
+	quest::say("Ack, I need somethin' light to clear the taste of salt from my mouth.");
+}
+
 sub EVENT_TIMER {
 	$count++;
 	if ($count == 1) {

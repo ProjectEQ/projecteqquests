@@ -26,7 +26,7 @@ sub EVENT_SIGNAL {
 		quest::emote("looks up from his drink and gives a sharp laugh.  'You aught to take lessons from me, those things don't happen if you know what you're doin'.  Take last Tuesday, for instance.  I caught me a fish without usin' bait or a hook!  That's right, I was out of bait and there was a gigantic tuna swimmin' near the surface.  I just stuck my hand in the water and wiggled my pointin' finger just like it was a worm.  Sure enough, that tuna practically swallowed my whole hand.  It took a few minutes to get the thing off me and into the basket, but it was worth the pain!'");
 		quest::signalwith(279045,3,15000);
 	}
-	if($signal == 3) {
+	if(($signal == 3) && ($x == 243) && ($y == -213)) {
 		quest::emote("shakes his head. 'I've tasted yer light beer, can't stand it.  Bring me a dark. At least that stuff won't make me ill.'");
 	}
 	if($signal == 5) {

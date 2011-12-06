@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    quest::emote("moans in a sad, wispy voice, Death. coming for all.");
+    quest::emote("moans in a sad, wispy voice, 'Death. coming for all.'");
   }
 }
 
@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::emote("moans pitifully, Satchel. . . Sewers. . .");
+  quest::emote("moans pitifully, 'Satchel. . . Sewers. . .'");
 }
 
 sub EVENT_ITEM {

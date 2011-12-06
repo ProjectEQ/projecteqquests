@@ -5,13 +5,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-	if($wp == 33) {
+	if($wp == 23) {
 		quest::settimer(1,140);
 	}
-	if($wp == 34) {
+	if($wp == 24) {
 		quest::stoptimer(1);
 	}
-	if($wp == 64) {
+	if($wp == 48) {
 		quest::signalwith(279043,5,1);
 		quest::signalwith(279044,5,1);
 		quest::signalwith(279045,5,1);
@@ -25,7 +25,7 @@ sub EVENT_SIGNAL {
 		quest::say("Hmmm.  I'm sure you left out the interesting part of that story.  Maybe next time you'll remember it.  You'd never forget what you saw if you were with me a few months ago.  I was in Lake Rathe on vacation, just tryin' to relax.  I had been having a reasonable day and had caught more than I needed for lunch and dinner.  I was making my last cast for the day.  I pulled the line back and tossed it far.  Just before it hit the water, a huge dark form swept down and grabbed it!  It was a bird!  The thing must have been twenty feet from wingtip to wingtip.  I stood and watched, absently clutching my pole.  Suddenly I'm yanked up into the air!  In a few seconds I was so far from the ground that the lake was the size of a mug of ale!  It was a lucky thing that I was usin' my special heavy-duty line that day.  I had to get down and there was only one way to do it.  I started lettin' out my line.  It took all my strength, but I finally got low enough to drop into the lake.  It was a long swim back, but I survived.");
 		quest::signalwith(279044,1,15000);
 	}
-	if($signal == 2) {
+	if(($signal == 2) && ($x == 259) && ($y == -215)) {
 		quest::say("Ah, well, I think I'll have a pint of yer darkest.  It's been a long day and I think that will help end it on a better flavor.'");
 	}
 }

@@ -22,7 +22,7 @@ sub EVENT_SIGNAL {
 		quest::say("That's unfortunate, lad.  My day wasn't so great either.  I got a bite an' gave it a pull.  Hooked it good.  I wasn't expecting whatever I caught to pull so hard!  Had the strength of twenty men!  Pulled me right over the rail, it did!  I had ta swim for my life!  Whatever it was, it didn't catch me before I got to the dock and back aboard.");
 		quest::signalwith(279045,2,15000);
 	}
-	if($signal == 2) {
+	if(($signal == 2) && ($x == 249) && ($y == -202)) {
 		quest::say("I'll have a malt and hurry it up!  I haven't got all day.");
 	}
 	if($signal == 5) {

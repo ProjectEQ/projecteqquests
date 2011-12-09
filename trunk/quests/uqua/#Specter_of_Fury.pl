@@ -1,10 +1,11 @@
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 67706 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 67706 => 1)) {
     $entity_list->SignalAllClients(1);
     quest::settimer(1,30);
     quest::signal(292008);
   }
 }
+
 sub EVENT_TIMER {
   quest::stoptimer(1);
   quest::spawn2(292062,0,0,-869,-691,25,254);

@@ -11,7 +11,8 @@ sub EVENT_TIMER {
     if(($x > -470) || ($x < -600) || ($y > -480) || ($y < -810)) {
       $npc->GMMove(-537,-620,-5,2);
     }
-  } elsif ($timer == 2) {
+  }
+  elsif ($timer == 2) {
     quest::spawn2(292021,0,0,$x,$y,$z,$h);
     quest::spawn2(292018,0,0,-1252,-911,8,67);
     quest::spawn2(292018,0,0,-1250,-878,8,64);
@@ -26,10 +27,9 @@ sub EVENT_SIGNAL {
   $npc->AddAISpell(5118);
   $npc->AddAISpell(5120);
   quest::modifynpcstat("max_hit",4800);
-  quest::modifynpcstat(SrEQUMCNIDf);
+  quest::modifynpcstat("npcspecialattks","SrEQUMCNIDf");
 }
 
 sub EVENT_DEATH {
   quest::signal(292021);
-  
 }

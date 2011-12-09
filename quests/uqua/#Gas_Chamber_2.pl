@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-   quest::set_proximity($x-20,$x+20,$y-30,$y+20);
+  quest::set_proximity($x-20,$x+20,$y-30,$y+20);
 }
 
 sub EVENT_ENTER {
@@ -8,19 +8,18 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_TIMER {
-if (defined($qglobals{gaschmb2complete})) {
-  $npc->Damage($npc,1000,732,24,0);  #death via damage instead of depop causes respawn timer to function
-  quest::delglobal("gaschmb2complete");
-
+  if (defined($qglobals{gaschmb2complete})) {
+    quest::delglobal("gaschmb2complete");
+    $npc->Depop(1);
   }
   else {
-  quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");
-  quest::ze(15,"Out of the corner of your eye you perceive movement. Within the recession on the door a mechanical lock rotated counter-clockwise. It was visible for only a fraction of a second, but that was long enough to make an educated guess to which key it now accepts.");
-  @list = $entity_list->GetClientList();
-  $size = @list;
-  $index = int(rand($size)) - 1;
-  $player = @list[$index];
-  $ranmessage = int(rand(4)) + 1;
+    quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");
+    quest::ze(15,"Out of the corner of your eye you perceive movement. Within the recession on the door a mechanical lock rotated counter-clockwise. It was visible for only a fraction of a second, but that was long enough to make an educated guess to which key it now accepts.");
+    @list = $entity_list->GetClientList();
+    $size = @list;
+    $index = int(rand($size)) - 1;
+    $player = @list[$index];
+    $ranmessage = int(rand(4)) + 1;
   }
   if ($ranmessage == 1) {
     $player->Message(15,"The Cracked Key must unlock the door to the next room.");

@@ -1,6 +1,14 @@
 #Tymoz.pl
 #Custodus Helms
 
+sub EVENT_AGGRO { 
+ quest::emote("hisses revealing menacing fangs and lunges ferociously at its prey!");
+}
+
+sub EVENT_DEATH {
+	quest::emote("collapses to the ground and begins to decompose at an alarming rate.");
+}
+
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		quest::say("So $race, you dare to stand before the mighty Tymoz?  I am the Governor of this village of the Coterie of the Eternal Night.  Do you wish to assist the Coterie, or will you better serve us as sustenance for our eternal lives?");

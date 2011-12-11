@@ -29,9 +29,9 @@ sub EVENT_ITEM{
 		quest::faction(96,-30);
 		quest::faction(138,-30);
 		quest::summonitem(7779); #Second Shade Summoning Figurine
-		quest::spawn2(160473,0,0,-75,-807,8,164); # #Praecantor_Sels_Dawneyes
-		quest::spawn2(160472,0,0,-120,-808,8,88); # #Incantator_Jak_Masric
-		quest::spawn2(160471,0,0,-97,-858,8,0); # #Theurgus_Ajeea_Polaja
+		quest::spawn2(160471,0,0,-75,-807,8,164); # #Theurgus_Ajeea_Polaja
+		quest::spawn2(160473,0,0,-120,-808,8,88); # #Praecantor_Sels_Dawneyes
+		quest::spawn2(160472,0,0,-97,-858,8,0); # #Incantator_Jak_Masric
 		quest::signal(160249,1); # signal Theugus to depop
 		quest::signal(160410,1);
 		quest::signal(160252,1); #signal Incanter to depop

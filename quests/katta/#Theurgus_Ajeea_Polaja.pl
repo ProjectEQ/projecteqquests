@@ -17,7 +17,7 @@ sub EVENT_ITEM{
 		quest::faction(96,-30);
 		quest::faction(138,-30);
 		quest::summonitem(7361); #Enchanted Record of Events
-		quest::spawn2(160458,0,0,-98,-824,8,128); #Autarkic Lord Sfarosh
+		quest::spawn2(160458,0,0,-97,-822,11,0); #Autarkic Lord Sfarosh
 		quest::signalwith(160458,1,1000); #Start conversation
 	}
 }

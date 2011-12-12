@@ -1,17 +1,7 @@
-sub EVENT_SPAWN {
-	quest::settimer(1,800);
-}
-
-sub EVENT_TIMER {
-	quest::depop();
-}
-
-
 sub EVENT_SIGNAL{
 	if($signal == 1){
 		quest::say("Meddling fleshlings! Why have you pulled back to this forsaken castellum? Do you fear that I will seek vengeance on Nathyn Illuminious and the city that shelters him for my years of captivity here? Or do you seek something more dangerous, knowledge of the dark path of shadows?");
 		quest::signalwith(160472,1,5000); #Incantator_Jak_Masric
-		quest::modifynpcstat("npcspecialattks","ABfHG");
 	}
 	if($signal == 2){
 		quest::say("A simple question indeed. I simply supplied him with Akhevan blood for his experimentation, that is all. The Order of Autarkic Umbrage is no friend of the Akheva and it was possible that his research could uncover some useful information for my order. Valdanovs own motivation for his experimentation was none of my concern, but the outcome is quite fascinating I must admit.");
@@ -32,10 +22,11 @@ sub EVENT_SIGNAL{
 	}
 	if($signal == 6){
 		quest::say("Attempt to slay me if you so desire, and if you succeed it matters not. I will return as I am a creature of shadows and shadows never die, merely slumber!");
-		quest::spawn2(160437,0,0,-31,-764,4,160); #an autarkic umbrage shade
-		quest::spawn2(160437,0,0,-160,-762,4,101); #an autarkic umbrage shade
-		quest::spawn2(160437,0,0,-162,-892,4,35); #an autarkic umbrage shade
-		quest::modifynpcstat("npcspecialattks","f");
+                quest::spawn2(160474,0,0,$x,$y,$z,$h);  # ---  #Autarkic_Lord_Sfarosh
+		quest::spawn2(160437,0,0,-25,-762,4,160); #an autarkic umbrage shade
+		quest::spawn2(160437,0,0,-164,-760,4,96); #an autarkic umbrage shade
+		quest::spawn2(160437,0,0,-30,-901,4,224); #an autarkic umbrage shade
+		quest::depop();
 	}
 }
 

@@ -27,7 +27,7 @@ sub EVENT_SIGNAL {
   $npc->AddAISpell(5116);
   $npc->AddAISpell(5119);
   quest::modifynpcstat("max_hit",4800);
-  quest::modifynpcstat("npcspecialattks","SrEQUMCNIDf");
+  quest::modifynpcstat("special_attacks","SrEQUMCNIDf");
 }
 
 sub EVENT_DEATH {

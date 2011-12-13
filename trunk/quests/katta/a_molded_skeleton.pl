@@ -1,0 +1,15 @@
+sub EVENT_SPAWN {
+	quest::settimer(1,120);
+}
+
+sub EVENT_TIMER {
+	$npc->Depop(1);
+}
+
+sub EVENT_COMBAT {
+	quest::emote("yearns to taste your living flesh!");
+}
+
+sub EVENT_DEATH {
+	quest::emote("claws at the ground for a few moments and then falls still.");
+}

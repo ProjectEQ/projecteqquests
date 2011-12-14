@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-	$npc->Depop(1);
+	quest::depop();
 }
 
 sub EVENT_COMBAT {

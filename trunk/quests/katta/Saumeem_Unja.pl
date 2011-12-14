@@ -49,6 +49,21 @@ sub EVENT_ITEM {
     quest::faction(138,-10); # -Hand Legionnaries
     quest::exp(1000);
   }
+  elsif(plugin::check_handin(\%itemcount, 3873 => 1)){ #Colain head turn-in for Saureem's Assistance
+    quest::say("It is very unfortunate that you had to be exposed to such corruption.  Please, do not consider what you have seen during this situation to be the standard for our community.  This was a rare occurrence.  This situation did however allow you to prove yourself to us.  We thank you for your bravery and selfless action in this matter.  May you be followed by favor and may this small gift from my fellow governors and me assist you in your journeys.");
+	quest::ding();
+    quest::summonitem('3875'); #Elaborately Gilded Wooden Spear
+    quest::faction(206,10);  # +Magus Conlegium
+    quest::faction(168,10);  # +Katta Castellum Citizens
+    quest::faction(350,10);  # +Validus Custodus
+    quest::faction(228,-10); # -Nathyn Illuminious
+    quest::faction(55,-10);  # -Coterie of the Eternal Night
+    quest::faction(284,-10); # -Seru
+    quest::faction(139,-10); # -Hand of Seru
+    quest::faction(96,-10);  # -Eye of Seru
+    quest::faction(138,-10); # -Hand Legionnaries
+    quest::exp(1000);
+  }
   else {
     plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
     plugin::return_items(\%itemcount);

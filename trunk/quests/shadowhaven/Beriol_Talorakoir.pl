@@ -15,6 +15,9 @@ sub EVENT_SAY {
     quest::say("You are exactly the one I am looking for. After presenting this seal to Dersino, inform him that you wish to take the research and I am sure that he will know i have sent you. I loook forward to seeing you soon.");
     quest::summonitem(4769);
   }
+  if ($text=~/exodus/i) {
+    quest::say("Ahh, the event that started it all it was the strife between Seru and Tsaph Katta that ultimately brought us here to Luclin. Those must have been interesting times but, being over twenty generations Luclin born, I could only guess. One of these days I would like to read up on the subject, but what little we do have about it is always checked out. If that's what you came looking for, good luck - check with Rianna, she is usually up on those things.");
+  }
 }
 
 sub EVENT_ITEM {

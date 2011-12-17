@@ -35,5 +35,10 @@ sub EVENT_TIMER {
 	quest::settimer(1,1800);
 }
 
+sub EVENT_SIGNAL {
+	quest::say("It translates to 'Gift of the Dark' you fool!");
+	quest::signalwith(160112,3,2500);
+}
+
 #END of FILE Zone:katta  ID:160226 -- Yavik_Teralin 
 

@@ -18,6 +18,6 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 19931 =>1, 19929=>1 )) {
     quest::say("Thanks $name.  Now hand this crate to the fellow behind you.");
     quest::summonitem(19930);
-    quest::spawn(10000,0,0,-456,-144,-52);
+    quest::spawn(10000,0,0,-144,-456,-52);
   }
 }

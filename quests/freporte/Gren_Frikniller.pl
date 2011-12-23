@@ -69,7 +69,7 @@ sub EVENT_ITEM
    quest::say("What's this? Oh, ol' Grandpa Frikniller's lucky necklace, huh? I'll bet this broken piece of junk won't even get me a sip of ale up at the bar. And lucky? How lucky could this thing be? Poor gramps was lonely and copperless his whole life. Bah!! Oh, well. Here's some coin for your efforts, thanks, $name");
    quest::exp("100");
    quest::ding();
-
+   quest::givecash(6,1,0,0); 
    # Coalition of TradeFolk Underground
    quest::faction("48","1");
    # Coalition of Trade Folk Faction

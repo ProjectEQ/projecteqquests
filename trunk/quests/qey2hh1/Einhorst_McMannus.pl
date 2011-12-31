@@ -18,6 +18,9 @@ sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings, $name. Welcome to the fishing village of Clan McMannus. We sell what we can here. Have a look around but, please do not buy too much. We must save most of our stock for delivery to our home.");
   }
+  if($text=~/searching for the fugitive/i) {
+    quest::say("I see they have sent someone to hunt the scoundrel down.  I am afraid I haven't seen the barbarian thief in quite some time.  You can search and search for him here in the western plains, but I doubt you shall find him.  Good luck.");
+  }  
   if($text=~/lion meat shipment/i) {
     quest::say("Oh, yes, the lion meat shipment. Aye, it's here somewhere. Just a moment. Ah! Here you go. Apologize for the delay in this.");
     quest::summonitem(13961); #Lion Meat Shipment
@@ -25,7 +28,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 18831 => 1)) { #Barbarian Head
+  if(plugin::check_handin(\%itemcount, 18831 => 1)) { 
     quest::say("What? Ok well, hmm let me see...... Oh there it is. Here is the shipment as ordered!");
     quest::exp(1600);
     quest::ding();
@@ -42,3 +45,4 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 }
+

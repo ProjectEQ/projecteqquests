@@ -6,3 +6,8 @@ sub EVENT_COMBAT {
  quest::say("Another victory for the Legion of Cabilis.");
  }
 }
+
+sub EVENT_DEATH {
+	quest::say("You have not won.  Consider yourself wanted by the Legion of Cabilis.");
+}
+

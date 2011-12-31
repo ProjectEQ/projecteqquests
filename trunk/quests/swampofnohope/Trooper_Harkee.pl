@@ -7,6 +7,10 @@ sub EVENT_COMBAT {
 	}
 }
 
+sub EVENT_DEATH {
+	quest::say("You have not won.  Consider yourself wanted by the Legion of Cabilis.");
+}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("If you find yourself deep in the swamp and starving. try foraging.  I am sure you'll find something to eat.  If not. there are always froglok tongues."); }

@@ -7,6 +7,9 @@ sub EVENT_COMBAT {
 	}
 }
 
+sub EVENT_DEATH {
+	quest::say("You have not won.  Consider yourself wanted by the Legion of Cabilis.");
+}
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

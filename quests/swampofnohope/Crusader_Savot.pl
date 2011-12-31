@@ -3,3 +3,8 @@ sub EVENT_COMBAT {
 		quest::say("You cannot hope defeat a Crusader of Greenmist!!");
 	}
 }
+
+sub EVENT_DEATH {
+	quest::say("Ha ha!!  Fool..  The Crusaders of Greenmist shall torture you to death! Ha ha!!");
+}
+

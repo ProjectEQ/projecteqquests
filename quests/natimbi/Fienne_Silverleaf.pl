@@ -5,10 +5,10 @@ sub EVENT_SAY {
     quest::emote("nods briskly at you.");
     quest::say("You are welcome here. Have you had a chance to observe the [wildlife] yet?"); 
   }
-  if ($text=~/wildfire/i) {
+  if ($text=~/wildlife/i) {
     quest::say("There is a myriad of strange new creatures in this land, and all are quite interesting. There is one in particular that I cannot seem to decipher. I cannot ascertain what sort of creature they are precisely, we have been calling them stonemites. It is most disconcerting to a scientist such as myself. If you could catch me a few [specimens] it would be most appreciated."); 
   }
-  if ($text=~/specimins/i) {
+  if ($text=~/specimens/i) {
     quest::say("That is actually the majority of my problem. They have the most peculiar makeup. I have been unable to capture any alive, and their structure is very delicate. If you could continue attempting to get the pieces intact, it would be VERY helpful. I believe with the legs, shell, meat, and eye I should have enough material to make an astute analysis. I have a lovely string of pearls for your trouble."); 
   }
 }

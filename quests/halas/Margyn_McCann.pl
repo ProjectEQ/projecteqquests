@@ -32,24 +32,35 @@ sub EVENT_SAY
 		}
 }
 
-sub EVENT_ITEM
-{
-	if(plugin::check_handin(\%itemcount, 13729 => 1)) #Barbarian Head
-    		{
-		quest::say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court. Take and remember this spell, Spirit o' the Bear. I hope ye've attained the necessary skills to scribe it. If not, I'm sure ye soon will. Go now, and serve justice.");
+sub EVENT_ITEM{
+	if(plugin::check_handin(\%itemcount, 13729 => 1)) { #Barbarian Head
+    	quest::say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court. Take and remember this spell, Spirit o' the Bear. I hope ye've attained the necessary skills to scribe it. If not, I'm sure ye soon will. Go now, and serve justice.");
 		quest::exp(1600);
 		quest::ding();
-                  quest::givecash($rC,$rS,$rG,0);
+        quest::givecash($rC,$rS,$rG,0);
 		quest::faction(213,2); #Merchants of Halas
 		quest::faction(294,2); #Shamen of Justice
 		quest::faction(33,-3); #Circle of Unseen Hands
 		quest::faction(48,-3); #Coalition of Tradefolk Underground
 		quest::faction(137,-3); #Hall of the Ebon Mask
-			if($class eq "Shaman" || $class eq "Beastlord")
-				{
-				quest::summonitem($randomspell,1); #A Random Spell Listed Above
-				}
+		if($class eq "Shaman" || $class eq "Beastlord")	{
+			quest::summonitem($randomspell,1); #A Random Spell Listed Above
 		}
+	}
+	elsif(plugin::check_handin(\%itemcount, 18761 => 1)) {
+    	quest::say("I was hoping ye would see the wisdom of joining our fine guild. Now before ye take off on some fool quest and get yerself killed, take this tunic -- it's not much, but it will keep yer bones from freezing and give you a wee bit o' protection. There's much to be done in and around our fine city. I suggest that ye talk to Haladorf over there. Ye best get to work! Come back and see me as you gain experience and I'll train ye in our way. Oh, and one more thing. You might be wonderin' what that Tome of Corroded Axe be for. Hand it to me and I will grant you your first skill with throwin axes!");
+    	quest::faction(294, 2);   # Shamen of Justice
+		quest::faction(213, 2);   # Merchants of Halas
+		quest::faction(33, -2);   # Circle of Unseen Hands
+		quest::faction(48, -2);   # Coalition of Tradefolk Underground
+		quest::faction(90, -2);   # Ebon Mask
+    	quest::summonitem(13512); # Faded Blue Tunic
+       	quest::exp(300);        # Give exp for turning in quest
+    }
+	else {
+		plugin::return_items(\%itemcount);
+	}
 }
+
 
 #EoF

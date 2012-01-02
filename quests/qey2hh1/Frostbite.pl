@@ -15,7 +15,6 @@ sub EVENT_ITEM {
 sub EVENT_TIMER {
 	if($timer == 1) {
 		quest::stoptimer(1);
-		my $random = int(rand(6));
 		my $mobid = quest::ChooseRandom(12190,12190,12190,12190,12190,12191);
 		my $x = quest::ChooseRandom(-3461,-3902,-4011);
 		my $y = quest::ChooseRandom(-1457,-3240,-1362);

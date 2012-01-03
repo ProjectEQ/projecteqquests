@@ -30,6 +30,16 @@ sub EVENT_SAY
 		{
 		quest::say("We seek a former member who dared to curse the righteousness of the Tribunal. We'll have his head for that remark. His name is Granin O'Gill and he has run to the wastelands of Everfrost seeking safe haven. Find him. Return his head to me. Do so, and earn the ninth circle spell, Spirit o' the Bear. Go at once!");
 		}
+	if($text=~/trades/i)
+		{
+		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+                quest::summonitem(51121);
+		}
+	if($text=~/second book/i)
+		{
+		quest::say("Here is the second volume of the book you requested, may it serve you well!");
+                quest::summonitem(51122);
+		}
 }
 
 sub EVENT_ITEM{
@@ -48,7 +58,7 @@ sub EVENT_ITEM{
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 18761 => 1)) {
-    	quest::say("I was hoping ye would see the wisdom of joining our fine guild. Now before ye take off on some fool quest and get yerself killed, take this tunic -- it's not much, but it will keep yer bones from freezing and give you a wee bit o' protection. There's much to be done in and around our fine city. I suggest that ye talk to Haladorf over there. Ye best get to work! Come back and see me as you gain experience and I'll train ye in our way. Oh, and one more thing. You might be wonderin' what that Tome of Corroded Axe be for. Hand it to me and I will grant you your first skill with throwin axes!");
+    	quest::say("Welcome t' the Church o' the Tribunal. Here, we practice the will o' the Six Hammers. This is our guild tunic - wear it with pride and represent us well. Once you are ready to begin adventuring please see Jinkus Felligan, he can help you with tasks geared towards your development as a great Shaman. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
     	quest::faction(294, 2);   # Shamen of Justice
 		quest::faction(213, 2);   # Merchants of Halas
 		quest::faction(33, -2);   # Circle of Unseen Hands

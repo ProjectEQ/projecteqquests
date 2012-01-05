@@ -1,10 +1,9 @@
 sub EVENT_SAY {
   if($text=~/hail/i){
-    quest::me("Captain Rottgrime has numerous cracks and holes in his skull from many battles.");
-    quest::say("Attention marine!! You will go into battle and fear nothing. You shall prevail and then you shall be sent back into battle. We [shall not allow those sarnak to overtake the Danak Shipyards]. Is that clear marine?!!");
+    quest::emote("has numerous cracks and holes in his skull from many battles. 'Attention, marine!! You will go into battle and fear nothing! You shall prevail over one enemy and then you shall be sent back into battle! We [shall not allow those sarnak to overtake the Danak shipyards]! Is that clear marine?!!'");
   }
-  elsif($text=~/shall not allow those sarnak to overtake the danak shipyards/i){
-    quest::say("Stand up straight!! That is correct marine!! You shall not allow the sarnak to overtake the shipyards!! Head out to the frontlines marine. Kill the berzerkers and return their war braids to me. For every four, you shall earn your wages. Now get to the front marine!! Move it!! Move it!!");
+  if($text=~/shall not allow those sarnak to overtake the danak shipyards/i){
+    quest::say("Stand up straight!! That is correct marine!! YOU shall not allow the sarnak to overtake the shipyards!! Head out to the frontlines, marine!! Kill the berzerkers and return their war braids to me!! For every four, you shall earn your wages!! Now get to the front, marine!! Move it!! Move it!!");
   }
 }
 
@@ -20,6 +19,12 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp==2) {
+		quest::say("Atteeennntion !!");
+		quest::signal(93126);
+	}
+}
 
 #Quest: Protect the Shipyard (Submitted By: Senzo)
 

@@ -1,9 +1,23 @@
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
+   # Prevent pets or charmed NPCs from using the default.pl
+   if (!$npc || $npc->GetOwnerID() || $npc->GetSwarmOwner())
+   {
+      return;
+   }
+   if ($text=~/hail/i) {
     quest::say("Shh , I think I hear the kobolds.");
-  }
+   }
 }
 
 sub EVENT_ITEM {
-  plugin::return_items(\%itemcount);
+
+   # Prevent pets or charmed NPCs from using the default.pl
+   if (!$npc || $npc->GetOwnerID() || $npc->GetSwarmOwner())
+   {
+      plugin::GivePetItems();
+      return;
+   }
+
+   plugin::return_items(\%itemcount);
+
 }

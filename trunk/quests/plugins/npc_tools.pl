@@ -96,3 +96,46 @@ sub SetProx{
 	my $z = $npc->GetZ();
 	quest::set_proximity($x - $Range, $x + $Range, $y - $Range, $y + $Range, $z - $Z, $z + $Z);
 	}
+
+# Trevius
+# Usage: plugin::GivePetItems();
+# Used in default.pl EVENT_ITEM to allow non-scripted pets that use default.pl to still take and equip pet items, does not allow pets to accept full bags.
+
+sub GivePetItems {   
+
+   my $npc = plugin::val('$npc');
+
+   $item1 = plugin::val('$item1');
+   $item2 = plugin::val('$item2');
+   $item3 = plugin::val('$item3');
+   $item4 = plugin::val('$item4');
+   $item1_charges = plugin::val('$item1_charges');
+   $item2_charges = plugin::val('$item2_charges');
+   $item3_charges = plugin::val('$item3_charges');
+   $item4_charges = plugin::val('$item4_charges');
+   $item1_attuned = plugin::val('$item1_attuned');
+   $item2_attuned = plugin::val('$item2_attuned');
+   $item3_attuned = plugin::val('$item3_attuned');
+   $item4_attuned = plugin::val('$item4_attuned');
+
+   if ($npc)
+   {
+      if ($item1 && $npc->GetItemStat($item1, "nodrop") != 0 && $npc->GetItemStat($item1, "nopet") == 0 && !$item1_attuned)
+      {
+         $npc->AddItem($item1, $item1_charges, 1);
+      }
+      if ($item2 && $npc->GetItemStat($item2, "nodrop") != 0 && $npc->GetItemStat($item2, "nopet") == 0 && !$item2_attuned)
+      {
+         $npc->AddItem($item2, $item2_charges, 1);
+      }
+      if ($item3 && $npc->GetItemStat($item3, "nodrop") != 0 && $npc->GetItemStat($item3, "nopet") == 0 && !$item3_attuned)
+      {
+         $npc->AddItem($item3, $item3_charges, 1);
+      }
+      if ($item4 && $npc->GetItemStat($item4, "nodrop") != 0 && $npc->GetItemStat($item4, "nopet") == 0 && !$item4_attuned)
+      {
+         $npc->AddItem($item4, $item4_charges, 1);
+      }
+   }
+
+}

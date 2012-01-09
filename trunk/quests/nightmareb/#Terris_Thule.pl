@@ -1,7 +1,7 @@
 #BeginFile nightmareb\#Terris_Thule.pl
 #Quest file for Lair of Terris Thule - Terris Thule: Planar Progression
 
-#Terris Thule will spawn 15 x a dream defiler at 75% health, cast Direption of Dreams at 50% health, and spawn 3 x a grotesque statue at 35% health. Upon death a Planar Projection will spawn to give flags. The timer is used to continuously check to make sure that she is not pulled from her lair. If so, she will shout a curse and despawn.
+#Terris Thule will spawn 15 x a dream defiler at 75% health, cast Direption of Dreams at 50% health, and spawn 4 x a grotesque statue at 35% health. Upon death a Planar Projection will spawn to give flags. The timer is used to continuously check to make sure that she is not pulled from her lair. If so, she will shout a curse and despawn.
 
 sub EVENT_SPAWN {
   quest::setnexthpevent(76);
@@ -32,9 +32,10 @@ sub EVENT_HP {
     quest::setnexthpevent(36);
   }
   elsif($hpevent == 36) {
-    quest::spawn2(221007,0,0,-1808,-120,134,239); #a grotesque statue
-    quest::spawn2(221007,0,0,-1774,-7,134,191); #a grotesque statue
-    quest::spawn2(221007,0,0,-1837,91,134,159); #a grotesque statue
+    quest::spawn2(221007,0,0,-1993,-102,134,239); #a grotesque statue
+    quest::spawn2(221007,0,0,-1798,-102,134,201); #a grotesque statue
+    quest::spawn2(221007,0,0,-1993,78,134,159); #a grotesque statue
+    quest::spawn2(221007,0,0,-1798,78,134,191); #a grotesque statue
   }
 }
 

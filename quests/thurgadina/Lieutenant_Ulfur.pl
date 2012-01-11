@@ -12,4 +12,23 @@ sub EVENT_SAY {
     quest::say("Heh, figures. Almost no one kin fully appreciate the warm feelin' ye get when a bolt ye fired splits the skull of yer adversary. They don't even see it comin'; kinda absolvers yer guilt fer killin' another bein'. Anonymous killin', heheheh.");
   }
 }
+
+sub EVENT_WAYPOINT_ARRIVE {
+	if($wp==15) {
+		quest::emote("yawns and says, 'Well, time fer me ta walk the floor again lads.'");
+		quest::signal(115104);
+		quest::signal(115206);
+		quest::signal(115105);
+		quest::signal(115207);
+		quest::signal(115107);
+		quest::signal(115208);
+		quest::signal(115109);
+		quest::signal(115110);
+		quest::signal(115209);
+		quest::signal(115112);
+		quest::signal(115113);
+		quest::signal(115211);
+	}
+}
+
 #END of FILE Zone:thurgadina  ID:115103 -- Lieutenant_Ulfur

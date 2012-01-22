@@ -1,8 +1,8 @@
 ##########################################
 # ZONE: Dawnshroud Peaks (dawnshroud)
 # DATABASE: PEQ-PoP
-# LAST EDIT DATE: February 6, 2010
-# VERSION: 1.0
+# LAST EDIT DATE: January 22, 2012
+# VERSION: 1.1
 # DEVELOPER: Congdar
 #
 # *** NPC INFORMATION ***
@@ -27,22 +27,21 @@
 #
 ############################################# 
 
-sub EVEN_SPAWN {
-    quest::settimer("RGT", 1800);
-    if(!defined($qglobal{"Rockhopper_Sambata"})) {
-        quest::setglobal("Rockhopper_Sambata", 1, 3, "F");
-    }
+sub EVENT_SPAWN {
+   quest::settimer("RGT", 1800);
+   quest::settimer("setqg", 20);
 }
 
 sub EVENT_TIMER {
-    if($timer eq "RGT") {
-        if(defined($qglobal{"Rockhopper_Sambata"})) {
-            quest::delglobal("Rockhopper_Sambata");
-        }
-        quest::depop();
-    }
+   if($timer eq "RGT") {
+      quest::stoptimer("RGT");
+      quest::delglobal("Rockhopper_Sambata");
+      $npc->Depop(true);
+   }
+   if($timer eq "setqg") {
+      quest::stoptimer("setqg");
+      quest::setglobal("Rockhopper_Sambata", 1, 3, "M40");
+   }
 }
 
 # END of FILE Zone:dawnshroud  ID:174240 -- #Rock_Garn_Timer
-
-

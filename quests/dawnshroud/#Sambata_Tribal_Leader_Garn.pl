@@ -1,8 +1,8 @@
 ##########################################
 # ZONE: Dawnshroud Peaks (dawnshroud)
 # DATABASE: PEQ-PoP
-# LAST EDIT DATE: February 6, 2010
-# VERSION: 1.0
+# LAST EDIT DATE: January 22, 2012
+# VERSION: 1.1
 # DEVELOPER: Congdar
 #
 # *** NPC INFORMATION ***
@@ -31,7 +31,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-    if(!defined($qglobal{"Rockhopper_Sambata"})) {
+    if(!defined $qglobals{"Rockhopper_Sambata"}) {
         quest::spawn_condition($zonesn, 2, 1);
         quest::spawn_condition($zonesn, 1, 0);
     }

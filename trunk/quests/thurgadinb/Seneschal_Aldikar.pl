@@ -2,10 +2,19 @@
 #my $y = npc->GetY();
 #my $z = npc->GetZ();
 
-sub EVENT_SPAWN {
-  quest::settimer("thurgdaynight",5);
-#  my $dainring = undefined;
+sub EVENT_SIGNAL {
+	if($signal==1) {
+		quest::moveto(5,780,38,130,1);
+	}
+	if($signal==2) {
+		quest::moveto(-3,693,69,126,1);
+	}
 }
+
+#sub EVENT_SPAWN {
+#  quest::settimer("thurgdaynight",5);
+#  my $dainring = undefined;
+#}
 
 sub EVENT_SAY{
   if($text=~/I will accept this task/i){
@@ -32,13 +41,7 @@ sub EVENT_ITEM {
 #  }
 }
 
-sub EVENT_TIMER {
-  if($timer eq "thurgdaynight" && ($zonetime < 800 || $zonetime > 1999) && $x == 3.25 && $y == 773.25 && $z == 35) {
-    quest::pause(20);
-  }
-  elsif($timer eq "thurgdaynight" && ($zonetime > 800 || $zonetime < 1999) && $x == -3 && $y == 693 && $z == 68.5) {
-    quest::pause(20);
-  }
+#sub EVENT_TIMER {
 #  elsif($timer == 10 && $x == 3.25 && $y == 773.25 && $z == 35) {
 #    quest::stoptimer(10);
 #    quest::pause(100);
@@ -65,6 +68,6 @@ sub EVENT_TIMER {
 #    quest::say("Will you accept this task outlander?");
 #    $dainring = 1;
 #  }
-}
+#}
 
 #END of FILE Zone:thurgadinb  ID:Not_Found -- Seneschal_Aldikar 

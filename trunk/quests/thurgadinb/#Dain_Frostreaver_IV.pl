@@ -1,3 +1,14 @@
+sub EVENT_SIGNAL {
+	if($signal==1) {
+		quest::moveto(6,777,66,128,1);
+		
+	}
+	if($signal==2) {
+		quest::moveto(4,690,69,128,1);
+		
+	}
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     # Signal Chamberlain

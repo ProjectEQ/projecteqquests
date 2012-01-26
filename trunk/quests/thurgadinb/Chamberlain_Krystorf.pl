@@ -32,5 +32,15 @@ if(plugin::check_handin(\%itemcount, 29062 => 4)){
   plugin::return_items(\%itemcount);
  }
 }
+
+sub EVENT_SIGNAL {
+	if($signal==1) {
+		quest::shout("The Royal Court of Dain Frostreaver the IV is now closed for the night. Those with official business for the crown may return in the morning.");
+	}
+	if($signal==2) {
+		quest::shout("The Royal Court of Dain Frostreaver IV and his council of advisors is now in session. Those citizens with official business for the crown please report to the throne room at this time.");
+	}
+}
+
 #END of FILE Zone:thurgadinb  ID:129027 -- Chamberlain_Krystorf 
 

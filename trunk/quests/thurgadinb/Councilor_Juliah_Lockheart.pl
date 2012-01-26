@@ -21,5 +21,15 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount); 
   } 
 } 
+
+sub EVENT_SIGNAL {
+	if($signal==1) {
+		quest::moveto(14,883,-2,232,1);
+	}
+	if($signal==2) {
+		quest::moveto(-25,542,65,0,1);
+	}
+}
+
 #END of FILE Zone:thurgadinb  ID:129045 -- Councilor_Juliah_Lockheart 
 

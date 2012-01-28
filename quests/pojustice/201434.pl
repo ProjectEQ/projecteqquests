@@ -17,7 +17,7 @@ sub EVENT_SAY
 			if (!defined $flame) {
 				quest::say("Then begin.");
 				#Cast Penance of Flame
-				$npc->CastSpell(1124, $userid);
+				quest::selfcast(1124);
 				quest::settimer(201, 30);
 				#Tell event burning control about it, 30 second delay
 				quest::signalwith(201417, 1, 30);

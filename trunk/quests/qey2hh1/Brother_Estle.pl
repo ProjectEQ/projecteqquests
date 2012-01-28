@@ -24,7 +24,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 sub EVENT_SAY
 {
- if($text=~/Hail, $mname/i)
+ if($text=~/hail/i)
   {
    quest::say("Greetings, child of life. The way of the [Prime Healer] shall set you free and cleanse your soul. I hope to see you at [mass].");
   }
@@ -48,7 +48,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM
 {
- if($itemcount{13910} == 1)
+ if(plugin::check_handin(\%itemcount, 13910 =>1 ))
   {
    quest::say("Thank you. Now I may cleanse the bodies of the new converts and help them enter into a new life. I also have this. It was given to me by a dying gnoll of all things. They belong to Brother Hayle. The gnoll's last words were 'Free him.' Make sure High Priestess Jahnda gets this. Be swift!");
    quest::summonitem(13911);
@@ -60,4 +60,5 @@ sub EVENT_ITEM
    quest::exp(50);
    quest::givecash(0,1,0,0);
   }
+  plugin::return_items(\%itemcount);
 }

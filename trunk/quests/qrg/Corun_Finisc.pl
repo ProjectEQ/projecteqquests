@@ -74,6 +74,14 @@ if($wp eq 29) {
 	}
 }
 
+sub EVENT_COMBAT {
+	if($combat_state==1) {
+		quest::say("I will have to teach you to respect Tunare.");
+	}
+}
 
+sub EVENT_DEATH {
+	quest::say("My comrades will avenge my death.");
+}
 
 #END of FILE Zone:qrg  ID:739 -- Corun_Finisc

@@ -28,4 +28,9 @@ sub EVENT_ITEM {
    }
    plugin::return_items(\%itemcount);
 }
+
+sub EVENT_DEATH {
+     quest::say("The Priests of Marr will not overlook my death.  I pity you.");
+}
+
 #END of FILE Zone:rathemtn  ID:50111 -- Sentry_Joanna

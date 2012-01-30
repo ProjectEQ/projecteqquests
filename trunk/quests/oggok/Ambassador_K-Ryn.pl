@@ -1,10 +1,13 @@
 sub EVENT_SPAWN {
-	quest::settimer(1,1500);
+	quest::settimer("1",1500);
 }
 
 sub EVENT_TIMER {
-	quest::depop();
+	if($timer == "1") {
+		quest::depop();
+	}
 }
+
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {

@@ -1,10 +1,10 @@
 sub EVENT_SPAWN {
-	quest::settimer(1,5);
+	quest::settimer("1",5);
 }
 
 sub EVENT_TIMER {
-	if ($zonetime > 799 && $zonetime < 1201) {
-		quest::spawn2(49092,0,0,$x,$y,$z,$h);
+	if ($timer == "1" && $zonetime > 799 && $zonetime < 1201) {
+		quest::unique_spawn(49092,0,0,$x,$y,$z,$h);
 		$npc->Depop(1);
 	}
 }

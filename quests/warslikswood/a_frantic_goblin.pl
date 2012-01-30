@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
   quest::stoptimer(1);
-  quest::signalwith(79127,8,0);
+  quest::signalwith(79127,1,0);
 }
 
 sub EVENT_DEATH {

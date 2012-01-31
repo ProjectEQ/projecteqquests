@@ -8,7 +8,7 @@ if($text=~/hail/i){
 quest::say("Ahoy dere, $name! Me been making special goo for hull. Me goo protect boat from bad tings in da waters. Me needs help getting parts. You [help] Iggill?"); 
 }
 
-if($text=~/i will help/i){
+if($text=~/help/i){
 
 quest::say("Good newz! Gets me four panther claws from doze animals in da hills. Bring dem and me give you sumting and maybe story too!"); 
 }

@@ -8,7 +8,7 @@ if($text=~/hail/i){
 quest::say("Salutations, $name. I'm working on some magic that will protect the ship on the seas. I've never done anything like this before, but I have certainly fashioned new spells and magic over my years on Norrath. I suppose that is why I was asked to help. I met Nedaria many years ago and I believe she trusts me to handle this task. I could use some assistance in collecting some components I need, if you're [interested]."); 
 }
 
-if($text=~/i am interested/i){
+if($text=~/interested/i){
 
 quest::say("I appreciate your offer to help. I need three griffawn beaks from this area. If you could bring them to me, I will be able to compensate you for your time and effort."); 
 }

@@ -8,7 +8,7 @@ if($text=~/hail/i){
 quest::say("Well, hello there $name. I've been piecing this dock together for the last several days. It was somewhat of a simple task. I'm pretty good with work underwater. I find I can easily hold posts in place with my tail while I work with my hands and feet. An advantage I suppose. I would guess that's why I was asked to help Morden. Now, I'm working on creating some very strong glue we will use to seal parts of the hull of the ship we're building. Thing is, I need a lot of cove frog eyes for this job. If you want to [aid] me, I could reward you and give you some information."); 
 }
 
-if($text=~/i will aid you/i){
+if($text=~/aid/i){
 
 quest::say("Wonderful! If you could bring me four cove frog eyes, it would be a big help."); 
 }

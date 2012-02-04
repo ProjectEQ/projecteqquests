@@ -9,7 +9,7 @@ sub EVENT_SAY {
       #allow a GM to request the instance and if in a raid bring the entire raid with him
       $raid = $client->GetRaid();
       #if($raid || $status > 79) { #change to this when when zone goes live.
-      if($status > 79) { #temporary to allow GM to bring in a raid for testing.
+      if($status > 99) { #temporary to allow GM to bring in a raid for testing.
         if(!defined($qglobals{inktutalockout})) {
           $InInstance = quest::GetInstanceID("inktuta",0);
           if($InInstance == 0){

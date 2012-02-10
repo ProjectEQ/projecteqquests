@@ -19,7 +19,7 @@ sub EVENT_SAY {
           quest::say("You do not seem to be skilled enough.");
         }
       }
-      if(($text=~/have brewing skill/i) && plugin::check_hasitem($client, 16249)) { #Hardened Leather Signet
+      if(($text=~/skill in brewing/i) && plugin::check_hasitem($client, 16249)) { #Hardened Leather Signet
         if($client->GetRawSkill(65) >= 220) { #Brewing
           quest::say("I bet you could make a wicked brew! However I am forced to drink a refreshing drink while out adventuring. I do have this powder that will give the best drinks quite a bite though. Mix the powder in with two Kaladim Constitutionals and a flask of pure water. If you need more dust just ask for it! Put three twice brewed constitutionals and the signet in this drink barrel. As hard as drink barrels are to get these days, you need to return it to me along with the drink you create with it.");
           quest::summonitem(17179); #Portable Drink Barrel

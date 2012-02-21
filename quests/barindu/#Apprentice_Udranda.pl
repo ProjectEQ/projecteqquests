@@ -35,9 +35,13 @@ sub EVENT_SAY {
           $Instance = quest::CreateInstance("tipt", 0, 21600);
           if($group) {
             quest::AssignGroupToInstance($Instance);
+			#create zone global
+            quest::targlobal($Instance.'_tipt',0,"H6",0,0,0);
             quest::say("Instance added.");
-          } elsif ($status >79){
+          } elsif($status >79) {
             quest::AssignToInstance($Instance);
+			#create zone global
+            quest::targlobal($Instance.'_tipt',0,"H6",0,0,0);
             quest::say("Instance added.");
           }
         } else {

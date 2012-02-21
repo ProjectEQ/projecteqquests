@@ -1,3 +1,5 @@
+# an_aneuk_ebonspirit spawned for ghost trial
 sub EVENT_DEATH {
-  quest::signalwith(289033,1,0);
+  my $instid = quest::GetInstanceID("tipt",0);
+  quest::signalwith(289047,$instid,0);
 }

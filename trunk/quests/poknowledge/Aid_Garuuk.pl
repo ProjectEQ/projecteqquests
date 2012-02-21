@@ -6,7 +6,7 @@ sub EVENT_SAY {
     quest::say("Hullo traveler, an' welcum ta New Tanaan. Have ya been sittin' in da library very long? Da pages contained whif'in dese walls hold many inturestin' bits uv knowledge. As aides ta da council, our job is ta help assist our represenuhtives wif da task uv cullectin' more an' more knowledge fer da library. Right now I'm busy researchin' artifacts uv power fer Srethix but I'm missin' sum books I need. An' worse den dat, all dis werk has made me late in deliverin' sum supplies ta Grobb. Do ya think you could [give me a hand] whif dat?");
   }
   if ($text=~/i will give you a hand/i) {
-    if ($race == 9) {
+    if ($race eq "Ogre") {
       quest::say("Dat wud be great! My cuzin has been lookin' fer sum new ingredients ta experuhment whif his alchemy. I wuz suppos'd ta bring him sum but I didn't have da time. If you could get a Swirling Banshee Essense, Arachnae Fangs, a Wrulon Claw, an' a Blood Raven Tailfeather, take dem ta my cuzin Bregna in Grobb. He'll be most happy ta see dem delivured.");  	
     }
     else {
@@ -17,8 +17,8 @@ sub EVENT_SAY {
   
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28740 => 1)) { #Troll Receipt
-    if ($race == 9) {
-      quest::say("Dank yoo $name.  Take diz.");#Text made up, I have no reference.
+    if ($race eq "Ogre") {
+      quest::say("Dank yoo $name. Take diz.");#Text made up, I have no reference.
       quest::summonitem(2418); #Hoop of the Traveler
     }
     else {

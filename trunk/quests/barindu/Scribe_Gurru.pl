@@ -60,6 +60,9 @@ else {
 }
 if (($text=~/instance/i) && ($InInstanceTipt > 0)) {
     quest::DestroyInstance($InInstanceTipt);
+	#destroy instance globals
+    quest::delglobal($InInstanceTipt.'_tipt');
+    quest::delglobal($InInstanceTipt.'_tipt_status');
     quest::say("Tipt Instance Destroyed");
     }
 if (($text=~/instance/i) && ($InInstanceVxed > 0)) {

@@ -78,7 +78,7 @@ sub EVENT_TIMER {
         quest::spawn2(289033,0,0,-1290,891,398,0); #spawn Garkah Zotaki
       } elsif($qglobals{$instid.'_tipt_status'} == 6) { #aneuk trigger spawned
         if(!$entity_list->GetMobByNpcTypeID(289047)){ #aneuk_trigger
-          quest::spawn2(289047,0,0,-1311,884,394,0); #aneuk_trigger
+          quest::spawn2(289047,0,0,-793,1592,539,0); #aneuk_trigger
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 7) { #aneuk key mob spawned
         if(!$entity_list->GetMobByNpcTypeID(289038)) { #an_aneuk_fleshweaver
@@ -88,7 +88,10 @@ sub EVENT_TIMER {
         #nothing to do on zone startup for this state.
       } elsif($qglobals{$instid.'_tipt_status'} == 9) { #riddle answered
         $entity_list->FindDoor(4)->SetLockPick(0);
-      } elsif($qglobals{$instid.'_tipt_status'} == 9) { #Jhiru dead.
+      } elsif($qglobals{$instid.'_tipt_status'} == 10) { #final gate opened once with key.
+        $entity_list->FindDoor(3)->SetLockPick(0);
+        $entity_list->FindDoor(4)->SetLockPick(0);
+      } elsif($qglobals{$instid.'_tipt_status'} == 11) { #Jhiru dead.
         if(!$entity_list->GetMobByNpcTypeID(289032)){ #Master_Stonespiritist_Okkanu
           quest::spawn2(289032,0,0,1411,2143,730,242); #Master_Stonespiritist_Okkanu
         }

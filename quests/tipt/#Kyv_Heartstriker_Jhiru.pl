@@ -21,5 +21,5 @@ sub EVENT_DEATH {
   quest::stoptimer(1);
   #update zone status
   my $instid = quest::GetInstanceID("tipt",0);
-  quest::setglobal($instid.'_tipt_status',10,7,"H6");
+  quest::setglobal($instid.'_tipt_status',11,7,"H6");
 }

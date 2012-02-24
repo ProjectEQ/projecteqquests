@@ -1,3 +1,17 @@
+
+sub EVENT_CLICKDOOR {
+  #update zone status
+  my $instid = quest::GetInstanceID("tipt",0);
+  if($doorid == 3) {
+    if($qglobals{$instid.'_tipt_status'} == 9) {
+	  if(plugin::check_hasitem($client, 54083)) {
+	    #if the zone has to boot from empty, this will let us now to unlock this door (in case the corpse is on the other side).
+        quest::setglobal($instid.'_tipt_status',10,7,"H6");
+	  }
+	}
+  }
+}
+
 sub EVENT_COMBINE_SUCCESS {
   my $x = $client->GetX();
   my $y = $client->GetY();

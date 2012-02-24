@@ -60,9 +60,10 @@ sub EVENT_SAY {
     quest::summonitem(18700); #Tome of Order and Discord
   }
   if($text=~/wish/i) {
-    quest::say("Prepare yourself to cross into the depths of Discord!");
-    quest::setglobal("OOW_PoD_Origin", $zoneid, 5, "F");
-    quest::movepc(302, -1485.52, -1263.29, 222.0);
+    quest::say("I am sorry but Discord is closed to me right now.");
+    #quest::say("Prepare yourself to cross into the depths of Discord!");
+    #quest::setglobal("OOW_PoD_Origin", $zoneid, 5, "F");
+    #quest::movepc(302, -1485.52, -1263.29, 222.0);
   }
 }
 

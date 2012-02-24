@@ -1,7 +1,7 @@
 sub EVENT_SAY {
-  $InInstanceIkky4 = quest::GetInstanceID("ikkinz",3);
-  $InInstanceIkky5 = quest::GetInstanceID("ikkinz",4);
-  $InInstanceIkky6 = quest::GetInstanceID("ikkinz",5);
+  $InIkkyV3 = quest::GetInstanceID("ikkinz",3);
+  $InIkkyV4 = quest::GetInstanceID("ikkinz",4);
+  $InIkkyV5 = quest::GetInstanceID("ikkinz",5);
   $raid = $client->GetRaid();
 
   if ($text=~/hail/i) {
@@ -100,7 +100,7 @@ sub EVENT_SAY {
     if ($raid) {
       if (!defined $qglobals{ikkylockout3}) {
         if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 12)) {
-          if (($InInstanceIkky4 == 0) && ($InInstanceIkky5 == 0) && ($InInstanceIkky6 == 0)) {
+          if ($InIkkyV3 == 0) {
             $Instance = quest::CreateInstance("ikkinz",3,21600);
             quest::AssignRaidToInstance($Instance);   
             quest::say("Instance added.");
@@ -123,7 +123,7 @@ sub EVENT_SAY {
     if ($raid) {
       if (!defined($qglobals{ikkylockout4})) {
         if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 12)) {
-          if (($InInstanceIkky4 == 0) && ($InInstanceIkky5 == 0) && ($InInstanceIkky6 == 0)) {
+          if ($InIkkyV4 == 0) {
             $Instance = quest::CreateInstance("ikkinz",4,21600);
             quest::AssignRaidToInstance($Instance);   
             quest::say("Instance added.");
@@ -146,7 +146,7 @@ sub EVENT_SAY {
     if ($raid) {
       if (!defined($qglobals{ikkylockout5})) {
         if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 12)) {
-          if (($InInstanceIkky4 == 0) && ($InInstanceIkky5 == 0) && ($InInstanceIkky6 == 0)) {
+          if ($InIkkyV5 == 0) {
             $Instance = quest::CreateInstance("ikkinz", 5, 21600);
             quest::AssignRaidToInstance($Instance);   
             quest::say("Instance added.");

@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
 
 sub SPAWN_GARJAH {
   #if there are no more ghosts and Garjah is not up
-  if(!$entity_list->GetMobByNpcTypeID(289035) && !$entity_list->GetMobByNpcTypeID(289037) && !$entity_list->GetMobByNpcTypeID(289038)) {
+  if(!$entity_list->GetMobByNpcTypeID(289035) && !$entity_list->GetMobByNpcTypeID(289048) && !$entity_list->GetMobByNpcTypeID(289038)) {
     quest::spawn2(289033,0,0,$x,$y,$z,$h); #spawn Garkah Zotaki
     quest::setglobal($instid.'_tipt_status',5,7,"H6");
     quest::stoptimer(1);
@@ -30,10 +30,8 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_ENTER {
-  quest::ze(15,'Proximity entered');
   if($instid == 0) {
     $instid = quest::GetInstanceID("tipt",0);
-    quest::ze(15,'Retrieved InstanceID: '.$instid);
   }
   if($qglobals{$instid.'_tipt_status'} == 3) {
     my $close_clount = 0;
@@ -42,7 +40,6 @@ sub EVENT_ENTER {
         $close_count++;
       }
     }
-    quest::ze(15,'Status is 3 so i counted and found '.$close_count.' players near me.');
     if($close_count >= 3) {
       quest::ze(13,'shivers run up and down your spine, something is not quite right here, the area feels quite chill and desolate'); 
       quest::spawn2(289035,0,0,-1274,996,396,191);

@@ -50,7 +50,7 @@ sub EVENT_SIGNAL {
   if($signal == 1) {
     $npc->SetHP($hpatinvul);
     if(!$entity_list->GetMobByNpcTypeID(292072)) {
-      quest::modifynpcstat("special_attacks","RFQUMCNIDF");
+      quest::modifynpcstat("special_attacks","RFQUMCNIDFf");
       if($entity_list->GetMobByNpcTypeID(292070)) {
         quest::spawn2(292073,0,0,-866,-43,61,130);
         quest::depop(292070);

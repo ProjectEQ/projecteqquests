@@ -5,7 +5,8 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-        quest::depop();
+        #event time expired, depop with respawn timer.
+        $npc->Depop(1);
 }
 
 

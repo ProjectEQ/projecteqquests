@@ -98,4 +98,8 @@ sub EVENT_WAYPOINT_ARRIVE {
     quest::depop();
   }
 }
+
+sub EVENT_DEATH {
+  quest::stoptimer(1);
+}
 #EndFile: warslikswood\79127.pl (Raving Goblinmaster - Quest)

@@ -10,4 +10,8 @@ sub EVENT_TIMER {
   quest::shout("I knew that you could not defeat me!!"); #Text made up
   quest::depop();
 }
+
+sub EVENT_DEATH {
+  quest::stoptimer(1);
+}
 #EndFile: warslikswood\79126.pl (Raving Goblinmaster - KOS)

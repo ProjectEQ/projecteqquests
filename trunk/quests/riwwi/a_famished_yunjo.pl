@@ -1,3 +1,4 @@
+my $counter = 0;
 #needs live text
 #accepts beer braised tuna
 #accepts garlic buttered tuna
@@ -14,111 +15,24 @@ sub EVENT_SAY {
 sub EVENT_TIMER {
   quest::emote("collapses from hunger.");
   $npc->Depop(1);
-  } 
+} 
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 58459 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
+  #accepts items in the range: 58380 - 58637
+  my $i = 0;
+
+  for ($i = 58380; $i<=58637 ; $i++) {
+    if($itemcount{$i}) {
+	  my $c = $itemcount{$i};
+      if (plugin::check_handin(\%itemcount, $i => $c )) {
+        quest::faction( 363,5 * $c );
+        quest::exp(100000 * $c );
+        $counter += $c;
+      }
+    }
   }
-  if (plugin::check_handin(\%itemcount, 58389 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
+  if($counter >= 11) {
+    $npc->Depop(1);
   }
-  if (plugin::check_handin(\%itemcount, 58461 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58455 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58454 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58462 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58458 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58457 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58460 =>1 )) {
-    quest::faction( 363,5 );
-        quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58456 =>1 )) {
-    quest::faction( 363,5 );    
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58427 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58428 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58429 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58430 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58431 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58432 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58433 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58434 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if (plugin::check_handin(\%itemcount, 58435 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }  
-  if (plugin::check_handin(\%itemcount, 58451 =>1 )) {
-    quest::faction( 363,5 );
-    quest::exp(100000);
-    $counter += 1;
-  }
-  if($counter == 11) {
-     $npc->Depop(1);
-     }
-plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

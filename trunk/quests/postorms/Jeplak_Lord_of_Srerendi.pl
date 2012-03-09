@@ -24,7 +24,7 @@ sub EVENT_SIGNAL { # Signal from the death of any appropriate named or trash
   $trash3check = $entity_list->GetMobByNpcTypeID(210058); # a_hleyta_menn
   $name1check = $entity_list->GetMobByNpcTypeID(210028);  # Paruek_the_Strong
   $name2check = $entity_list->GetMobByNpcTypeID(210029);  # Faruek_the_Bold
-  if(!trash1check && !$trash2check && !trash3check && !$name1check && !$name2check) {
+  if(!$trash1check && !$trash2check && !$trash3check && !$name1check && !$name2check) {
     quest::spawn2(210231,0,0,$x,$y,$z,$h); #Jeplak_Lord_of_Srerendi
     $npc->Depop(1);
   }

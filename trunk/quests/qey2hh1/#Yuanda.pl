@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::spawn2(12183, 0, 0, $x-35, $y+10, $z+5, 128); #a snarling werewolf (normal)
     quest::spawn2(12183, 0, 0, $x+35, $y+10, $z,   128); #a snarling werewolf (normal)
     quest::spawn2(12184, 0, 0, $x,    $y+35, $z,   128); #a snarling werewolf (high)
-    quest::depop();
+    $npc->Depop(1);
   }
   else {
     quest::say("I have no use for this, $name.");

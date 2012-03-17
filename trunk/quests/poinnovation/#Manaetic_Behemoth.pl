@@ -13,13 +13,14 @@ sub EVENT_DEATH    {
 
 sub EVENT_TIMER {
   if($timer == 9) {
-    #if targetable version has beenup 20 minutes depop him.
+    #if targetable version has been up 20 minutes depop him.
+    #resest spawn timer on untargetable to respawn it in 5 seconds
+    quest::updatespawntimer(42135,5000);
     quest::depop();
-    #resest spawn timer on untargetable to respawn it
-    quest::updatespawntimer(42135,900000); #respawn in 15 minutes
   }
   if($timer == 8) {
-    #failed. do not shorten respawn timer, just depop
+    #failed. shorten respawn timer to 24 hours. 
+    quest::updatespawntimer(42135,86400000);
     quest::depop();
   }
   if($timer == 4 && ($x < 1010 || $x > 1240)) {

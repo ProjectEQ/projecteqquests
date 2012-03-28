@@ -1,4 +1,4 @@
-# This workarounds the problem when a zone is booted in a zone already in-sync with spawn_events.
+# This workarounds the problem when booted zone is already in-sync with spawn_events, and since no time updates occur the spawn_condition is defaulted to 0.
 
 sub EVENT_SPAWN 
 {
@@ -9,13 +9,11 @@ sub EVENT_SPAWN
 		{
 			quest::spawn_condition($zonesn, 2,0);
 			quest::spawn_condition($zonesn, 1,1);
-			quest::shout("$zonesn: Night!");
 		}
 		else 
 		{
 			quest::spawn_condition($zonesn, 2,1);
 			quest::spawn_condition($zonesn, 1,0);
-			quest::shout("$zonesn: Day!");
 		}
 	}
 	

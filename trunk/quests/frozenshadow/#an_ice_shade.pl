@@ -3,3 +3,9 @@ sub EVENT_DEATH {
     quest::spawn2(111144,0,0,-398,400,22,125);
     }
 }
+
+sub EVENT_COMBAT {
+	if($combat_state=1) {
+		quest::say("Areeeeewwwww");
+	}
+}

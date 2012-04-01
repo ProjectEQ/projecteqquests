@@ -9,5 +9,8 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_SIGNAL {
+	quest::emote("sighs and stares at the ground solemnly");
+}
 
 #EOF

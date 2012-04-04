@@ -1,5 +1,3 @@
-
-
 sub EVENT_SAY { 
     if($text=~/Hail/i){
 	quest::say("Greetings. $name!  Respect the woods and all its inhabitants or face the wrath of the rangers.  Do not end up like [Maldyn Greenburn].");
@@ -16,28 +14,38 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-    if(plugin::check_handin(\%itemcount, 12321 => 1, 12320 => 1)) {
-	quest::summonitem(3190);
-    } 
-    if (plugin::check_handin(\%itemcount, 12305 => 1, 12306 => 1, $gold >= 2000)) {
-    quest::say("Here are your boots.");
-      quest::summonitem(3192);
+	if(plugin::takeItems(12321 => 1, 12320 => 1)) {
+		quest::summonitem(3190);
+		quest::say("Very good, you have brought justice to these lands.");
+		quest::faction(182,+30); # kithicor residence
+		quest::faction(265,+30); # protectors of the pine
+		quest::faction(159,+30); # jaggedpine treefolk
+		quest::faction(347,-60); # unkempt druids
+		quest::exp(10000);		
     }
-    if (plugin::check_handin(\%itemcount, 10059 => 1, 12328 => 1)) {
-      quest::say("Here are your leggings.");
-      quest::summonitem(3191);
+	elsif(plugin::takeItemsCoin(0,0,2000,0, 12305 => 1, 12306 => 1)) {
+		quest::say("Here are your boots.");
+		quest::summonitem(3192);
+		quest::say("Very good, you have brought justice to these lands.");
+		quest::faction(182,+30); # kithicor residence
+		quest::faction(265,+30); # protectors of the pine
+		quest::faction(159,+30); # jaggedpine treefolk
+		quest::faction(347,-60); # unkempt druids
+		quest::exp(10000);		
     }
-    else {
-	plugin::return_items(\%itemcount);
-	return 1;
+    elsif(plugin::takeItems(10059 => 1, 12328 => 1)) {
+		quest::say("Here are your leggings.");
+		quest::summonitem(3191);
+		quest::say("Very good, you have brought justice to these lands.");
+		quest::faction(182,+30); # kithicor residence
+		quest::faction(265,+30); # protectors of the pine
+		quest::faction(159,+30); # jaggedpine treefolk
+		quest::faction(347,-60); # unkempt druids
+		quest::exp(10000);		
     }
-    quest::say("Very good, you have brought justice to these lands.");
-    quest::faction(182,+30); # kithicor residence
-    quest::faction(265,+30); # protectors of the pine
-    quest::faction(159,+30); # jaggedpine treefolk
-    quest::faction(347,-60); # unkempt druids
-    quest::exp(10000);
+    plugin::returnUnusedItems();
 }
+
 
 # END of FILE Zone:kithicor  ID:20077 -- Leaf_Falldim 
 

@@ -2,9 +2,9 @@ sub EVENT_SAY {
 $charid = 0;
 $corpse = 0;
 $charid = $client->CharacterID();
-$x = $npc->GetX();
-$y = $npc->GetY();
-$z = $npc->GetZ();
+$x = $client->GetX();
+$y = $client->GetY();
+$z = $client->GetZ();
 $corpse = quest::getplayerburriedcorpsecount($charid);
 if($text=~/Hail/i) {
    $client->Message(4, "The spectral figure stares into your soul with 

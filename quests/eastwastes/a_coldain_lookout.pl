@@ -1,5 +1,11 @@
 # Part of Coldain Ring 5 Quest
 
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("I'll hack at your knees 'till you fall down!  Out of love for the Dain, for the glory of the crown!");
+	}
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30136 => 1)) {
     quest::shout("Aahhh.. You're too late! They're upon us! To arms, men! Death to Scarbrow!");

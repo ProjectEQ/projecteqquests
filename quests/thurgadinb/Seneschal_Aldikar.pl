@@ -1,3 +1,7 @@
+sub EVENT_AGGRO {
+	quest::say("Invaders!!  To arms, my fellow guardsmen!  Defend the Keep!  Protect the Dain!");
+}
+
 #my $x = npc->GetX();
 #my $y = npc->GetY();
 #my $z = npc->GetZ();

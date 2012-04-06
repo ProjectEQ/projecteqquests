@@ -1,3 +1,7 @@
+sub EVENT_AGGRO {
+	quest::say("I'll have to admit you've got guts!  I'll be decoratin' my throneroom with them!");
+}
+
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::moveto(6,777,66,128,1);

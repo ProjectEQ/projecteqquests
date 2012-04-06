@@ -1,3 +1,7 @@
+sub EVENT_AGGRO {
+	quest::say("You dare to wage war in this holy place!?  By the powers of Brell I shall not let you.  Watchers, to my aid!");
+}
+
 sub EVENT_SAY { 
   if($text=~/Hail/i) {
     quest::emote("bows before you and says, 'Greetings to you as well, $name. I have recently heard many tales of your people and their glory. I am honored to welcome you to the Hall of Ancestors. Here our people come to pay tribute to the bravest and wisest of our kin who have passed from this life into Brell's holy domain. If you are interested I'd be happy to tell you a little bit about the heroes buried here.");

@@ -81,6 +81,13 @@ sub EVENT_ITEM {
     # Summon: ?
     quest::summonitem(29626);
   }
+  elsif(plugin::check_handin(\%itemcount, 1722 => 1)){ #Helssen's Voucher
+	quest::say("So you are the mercenary I have been hearing about! Not what I expected. Anyway, here is your reward. Carry it well. Also, this noble's seal will prove your loyalty to anyone who is skeptical.");
+	quest::ding();
+	quest::summonitem(1719); # Girdle of Reflection
+	quest::summonitem(1723); # Noble's Seal
+	quest::exp(2000);
+  }
   else {
     quest::say("I have no need for this item $name, you can have it back.");
     plugin::return_items(\%itemcount);

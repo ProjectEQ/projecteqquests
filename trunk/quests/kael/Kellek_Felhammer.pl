@@ -21,6 +21,17 @@ sub EVENT_ITEM {
     # Summon: Mechanical Net
     quest::summonitem(25107);
   }
+  elsif(plugin::check_handin(\%itemcount, 1722 => 1)){ #Helssen's Voucher
+	quest::say("I still cannot believe we are giving such a prized possesion as the Collar of the Storm to a mere mercenary. You better pray you don't bring shame upon the smith who created and enchanted this item. Oh and here is your seal as Helssen has ordered me to give you. It is proof of your service to us.");
+	quest::ding();
+	quest::summonitem(1721); # Collar of the Storm
+	quest::summonitem(1723); # Noble's Seal
+	quest::exp(2000);
+  }
+  else {
+    quest::say("I have no need for this item $name, you can have it back.");
+    plugin::return_items(\%itemcount);
+  }	
 }
 
 

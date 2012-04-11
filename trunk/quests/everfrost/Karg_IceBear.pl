@@ -19,7 +19,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
      quest::stoptimer(1);
-     quest::depop();
+     $npc->depop(1);
 }
 
 sub EVENT_SAY {

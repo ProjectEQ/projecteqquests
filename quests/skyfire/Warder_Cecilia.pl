@@ -22,7 +22,7 @@ sub EVENT_ITEM {
        	}
       }
     }
-    quest::depop();
+    $npc->Depop(1);
   }
    if (plugin::check_handin(\%itemcount,20859=>1)) {
     quest::summonitem(20859); # 20859  Swirling Pearl

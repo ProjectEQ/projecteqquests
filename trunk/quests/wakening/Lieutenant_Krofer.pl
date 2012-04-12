@@ -1,4 +1,3 @@
-
 sub EVENT_SAY { 
 	if((($text=~/hail/i) || ($text=~/next assignment/i) || ($text=~/prepared/i)) && ($faction > 5)) {
 		my $random = int(rand(3));
@@ -13,16 +12,16 @@ sub EVENT_SAY {
 		}
 	}
 	if(($text=~/hail/i) && ($faction <= 5)){
-		quest::emote("Unless you're the new mercenary reinforcements I suggest you remove yourself from my presence before I decorate the bottom of my boot with your intestines.");
+		quest::say("Unless you're the new mercenary reinforcements I suggest you remove yourself from my presence before I decorate the bottom of my boot with your intestines.");
 	}
 	if((($text=~/next assignment/i) || ($text=~/prepared/i)) && ($faction == 5)){
 		quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
 	}
 	if(($text=~/next assignment/i) && (defined $qglobals{tunarean_regiment})) {
-		quest::emote("Well, ready or not, this must be done now. Out there in the forest are our enemies. For us to be successful, we must know what they are doing and how they are going about it. Our probing attacks have revealed little so we've decided to send you out to gather any info you can. There must be some sort of messenger out there, bring any info you might find.");
+		quest::say("Well, ready or not, this must be done now. Out there in the forest are our enemies. For us to be successful, we must know what they are doing and how they are going about it. Our probing attacks have revealed little so we've decided to send you out to gather any info you can. There must be some sort of messenger out there, bring any info you might find.");
 	}
 	if(($text=~/prepared/i) && (defined $qglobals{tunarean_regiment})) {
-		quest::emote("Very well. We've decided to attack the small Sifaye village northeast of here and I want you to coordinate the attack. I will send you into Kael Drakkel with a request for troop assistance. After the squad is assembled you will lead them to the staging point where you will oversee the battle. Here is the request. Take it to Drioc in the city and return here with the troops.");
+		quest::say("Very well. We've decided to attack the small Sifaye village northeast of here and I want you to coordinate the attack. I will send you into Kael Drakkel with a request for troop assistance. After the squad is assembled you will lead them to the staging point where you will oversee the battle. Here is the request. Take it to Drioc in the city and return here with the troops.");
 		quest::summonitem(1706); # Krofer's Requisition
 	}
 }

@@ -26,9 +26,13 @@ sub EVENT_SAY {
     }
     if ($qglobals{ikky} >= 4) {
       $client->Message(13, "Finished! - You have completed the trial at the Temple of the Tri-Fates!");
+      if (defined($qglobals{ikky_flesh})) {
+        $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");
+      }
     }
     if ($qglobals{ikky} >= 5) {
-      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");     
+      $client->Message(13, "Finished! - You've returned four relics from the Martyrs Passage!");
+      $client->Message(13, "Finished! - You've returned valuable information as to why the Muramites are in the Martyrs Passage!");
     }
     if ($qglobals{ikky} >= 6) {
       $client->Message(13, "Finished! - You've recovered important glyphs from the Temple of the Damned!");             
@@ -37,7 +41,7 @@ sub EVENT_SAY {
       $client->Message(13, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
     }
     if ($qglobals{ikky} >= 8) {
-      $client->Message(13, "Finished! - You've recovered the four flesh scraps from the small temple south of the summoners!");
+      $client->Message(13, "Finished! - You have collected the four Frayed Flesh Scraps from the Crumbled Sanctuary of Divine Destruction!");
     }
     if ($qglobals{ikky} >= 9) {
       $client->Message(13, "Finished! - You've sewn the flesh scraps together to make the Sewn Flesh Parchment!");

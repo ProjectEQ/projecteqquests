@@ -32,7 +32,7 @@ sub EVENT_SAY {
     quest::say("Oh you wouldn't believe the things I've already found out about the people who built the temples around here! Well firstly, it's been a bit more difficult than usual to find anything out about them because they have no written history -- they tell stories complemented with glyphs to recount their history. I've learned how to interpret most of the glyphs I've encountered so far and believe me when I say that it's been some of the most interesting work I've done thus far. That reminds me, do you want to hear some more about the [background information] of this area or are you ready to learn about the [trials]?");
   }
   if ($text=~/ready to be tested/i) {
-    if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 4)) {
+    if (!defined($qglobals{ikkyredo}) && defined($qglobals{ikky}) && ($qglobals{ikky} >= 4)) {
       quest::setglobal("ikkyredo",1,5,"F");
       $client->Message(4, "Finished! - You can now retry any of the trials at any time!");
     }
@@ -119,7 +119,7 @@ sub EVENT_ITEM {
       $client->Message(4, "Finished! - You've returned four relics from the Martyrs Passage!");
       quest::setglobal("ikky_flesh",1,5,"F");
     }
-    elsif (defined($qglobals{ikky_flesh}) && ($qglobals{ikky_flesh} == 1) && plugin::check_handin(\%itemcount, 60242 => 1)) {
+    elsif (defined($qglobals{ikky_flesh}) && ($qglobals{ikky_flesh} == 1) && plugin::check_handin(\%itemcount, 60145=> 1)) {
       quest::emote("studies the parchment."); #Text made up
       quest::say("Ah, yes. Now that makes more sense. We need to investigate the [Temple of the Damned]."); #Text made up
       $client->Message(4, "Finished! - You've returned valuable information as to why the Muramites are in the Martyrs Passage!");

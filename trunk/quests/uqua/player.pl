@@ -85,7 +85,7 @@ sub AURA {
   if (defined($qglobals{destper})) {
     quest::selfcast(5051);
   }
-  elsif ($RangedItemID == 67736 || $RangedItemID == 67737 || $RangedItemID == 67738 || $RangedItemID == 67739 || $SecondaryItemID == 67736 || $SecondaryItemID == 67737 || $SecondaryItemID == 67738 || $SecondaryItemID == 67739) {
+  elsif ($RangedItemID == 67736 || $RangedItemID == 67737 || $RangedItemID == 67738 || $RangedItemID == 67739 || $SecondaryItemID == 67736 || $SecondaryItemID == 67737 || $SecondaryItemID == 67738 || $SecondaryItemID == 67739 || $client->FindBuff(756)) {
     $client->Message(15,"You feel protected from the Aura of Destruction.");
   }
   else {

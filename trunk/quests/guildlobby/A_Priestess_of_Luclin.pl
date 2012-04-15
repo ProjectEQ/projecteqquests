@@ -148,22 +148,15 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 sub EVENT_SUMMON {
 $charid = $client->CharacterID();
 $count = $client->GetCorpseCount();
-$corpse = quest::getplayerburriedcorpsecount($charid);
+# $corpse = quest::getplayerburriedcorpsecount($charid);
 $x = $client->GetX();
 $y = $client->GetY();
 $z = $client->GetZ();
 	
 	if($count > 0)
 	{
-		if($corpse == 0)
-		{
-			quest::buryplayercorpse($charid);
-    			quest::summonburriedplayercorpse($charid,$x,$y,$z,0);
-		}
-		else
-		{
-			quest::summonburriedplayercorpse($charid,$x,$y,$z,0);
-		}
+    		quest::summonallplayercorpses($charid,$x,$y,$z,0);
+
 	}	
 	quest::emote("takes your stone and places it on the altar. Shadows begin to drift across the floor and over the altar and finally onto the soulstone.  The priest's voice chants with intensity and is soon joined with several others as the shadows slowly coalesce into a wispy mass that feels familiar.  The two candles near the altar explode with light and there, before you, appears all that remains of your former life.");
 }

@@ -14,6 +14,10 @@ sub EVENT_CLICKDOOR {
       }
     }
   }
+  if(($doorid >= 5) && ($doorid <= 38))
+  {
+	$client->OpenLFGuildWindow();
+  }
 }
 
 sub EVENT_COMBINE_SUCCESS {

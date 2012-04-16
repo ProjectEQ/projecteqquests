@@ -302,30 +302,25 @@ sub EVENT_SAY {
          quest::say("Have you had your fill of story yet $name? You have spent a lot of time learning about the Rujarkian Hills. And, I can tell by the look in your eye that you know just as much as anyone about the orcs and goblins in those hills. I consider you a master of the story here as much as anyone. I have nothing to tell you, but you can stand by as I sing if you like. Be well, $name. I consider you a great adventurer and good friend. I'd fight with you by my side any day.");
          $client->Message(15, "You have received an invaluable piece of information!");
          $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
+         if($qglobals{MMCtalk} == 38 && $qglobals{RUJtalk} == 37 && $qglobals{MIRtalk} == 34 && $qglobals{TAKtalk} == 39 && $qglobals{GUKtalk} == 35) { #player has just maxed their stone
+           $client->Message(13, "It's time to acknowledge you as a Wayfarer. Give Chaenz Abella in East Commonlands your Adventurer Stone and he'll replace it with your very own Wayfarers Emblem. Or, if it's being used in a charm, you must remove it to get your new one. And, if you simply destroy the stone, he will replace it with your much-deserved emblem. Just tell him you want your [emblem].");
+           quest::setglobal("Wayfarer",3,5,"F");
+		 }
       }
       elsif($qglobals{RUJtalk} == 37) {
          # theme done
+         quest::say("Have you had your fill of story yet $name? You have spent a lot of time learning about the Rujarkian Hills. And, I can tell by the look in your eye that you know just as much as anyone about the orcs and goblins in those hills. I consider you a master of the story here as much as anyone. I have nothing to tell you, but you can stand by as I sing if you like. Be well, $name. I consider you a great adventurer and good friend. I'd fight with you by my side any day.");
       }
       else {
          # text made up
          $client->Message(9, "You need to adventure some more in the Rujarkian Hills.");
       }
 # end lore section
-
-#
-# Begin RUJ wins check
-#
-#      if($ruj_wins < 2) {
-#      }
-#      elsif($ruj_wins >= 74) {
-#        quest::say("Have you had your fill of story yet $name? You have spent a lot of time learning about the Rujarkian Hills. And, I can tell by the look in your eye that you know just as much as anyone about the orcs and goblins in those hills. I consider you a master of the story here as much as anyone. I have nothing to tell you, but you can stand by as I sing if you like. Be well, $name. I consider you a great adventurer and good friend. I'd fight with you by my side any day.");
-#      }
-#      elsif(player_has_maxed_out_stone) { #PC has maxed out stone
-#        $client->Message(9, "It's time to acknowledge you as a Wayfarer. Give Chaenz Abella in East Commonlands your Adventurer Stone and he'll replace it with your very own Wayfarers Emblem. Or, if it's being used in a charm, you must remove it to get your new one. And, if you simply destroy the stone, he will replace it with your much-deserved emblem. Just tell him you want your [emblem].");
-#        quest::setglobal("Wayfarer",3,5,"F");
-#      }
       }
     }
+    elsif(defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 3)) {
+	  quest::say("Well, I must say I'm impressed! You know as much as the Wayfarers Brotherhood about these dungeons that have been uncovered. Nicely done, $name!"); #text copied from Vual's completed MMC line until we know what it should be
+	}
     else { #PC has not talked to hometown Wayfarer recruiter yet
       quest::say("You will have to excuse me, I am quite busy. Maybe you can talk to a Wayfarer in your home town?"); #Text made up
     }
@@ -334,6 +329,7 @@ sub EVENT_SAY {
     quest::say("You will have to excuse me, I am quite busy."); #Text made up
   }
 }
+
 
 sub EVENT_ITEM {
   quest::say("I have no use for this, $name.");

@@ -255,18 +255,18 @@ sub EVENT_SAY {
 # end lore section
       }
     }
-#    elsif(player_has_maxed_out_stone) { #PC has maxed out stone
-#      $client->Message(9, "It's time to acknowledge you as a Wayfarer. Give Chaenz Abella in East Commonlands your Adventurer Stone and he'll replace it with your very own Wayfarers Emblem. Or, if it's being used in a charm, you must remove it to get your new one. And, if you simply destroy the stone, he will replace it with your much-deserved emblem. Just tell him you want your [emblem].");
-#      quest::setglobal("Wayfarer",3,5,"F");
-#    }
+    elsif(defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 3)) {
+	  quest::say("Well, I must say I'm impressed! You know as much as the Wayfarers Brotherhood about these dungeons that have been uncovered. Nicely done, $name!"); #text made up
+	}
     else { #PC has not talked to hometown Wayfarer recruiter yet
-      quest::say("You will have to excuse me, I am quite busy. Maybe you can talk to a Wayfarer in your home town?"); #Text made up
+      quest::say("You will have to excuse me, I am quite busy. Maybe you can talk to a Wayfarer in your home town?"); #text copied from Vual's completed MMC line until we know what it should be
     }
   }
   else {
     quest::say("You will have to excuse me, I am quite busy."); #Text made up
   }
 }
+
 
 sub EVENT_ITEM {
   quest::say("I have no use for this, $name.");

@@ -210,7 +210,7 @@ sub EVENT_SAY {
          quest::say("Stay alert, $name. You have been a good ear and just as much an expert on Deepest Guk as any one of us. Be well in your travels friend. You are fast becoming one of us. Bless you and the Wayfarers Brotherhood.");
          $client->Message(15, "You have received an invaluable piece of information!");
          $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
-		 if($qglobals{MMCtalk} == 38 && $qglobals{RUJtalk} == 37 && $qglobals{MIRtalk} == 34 && $qglobals{TAKtalk} == 39 && $qglobals{GUKtalk} == 35) { #player has just maxed their stone
+		 if($qglobals{MMCtalk} == 38 && $qglobals{RUJtalk} == 37 && $qglobals{MIRtalk} == 34 && $qglobals{TAKtalk} == 39) { #player has just maxed their stone
            $client->Message(13, "It's time to acknowledge you as a Wayfarer. Give Chaenz Abella in East Commonlands your Adventurer Stone and he'll replace it with your very own Wayfarers Emblem. Or, if it's being used in a charm, you must remove it to get your new one. And, if you simply destroy the stone, he will replace it with your much-deserved emblem. Just tell him you want your [emblem].");
            quest::setglobal("Wayfarer",3,5,"F");
 		 }

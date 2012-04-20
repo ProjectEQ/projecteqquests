@@ -243,6 +243,10 @@ sub EVENT_SAY {
          quest::emote("bows to you. 'Alas, $name. It seems we're both on the same footing with our knowledge about the madness in Miragul's Menagerie. It has been most satisfying taking this journey with you. I hope as you learn more you will share it with all of us in the Wayfarers Brotherhood. I salute you!'");
          $client->Message(15, "You have received an invaluable piece of information!");
          $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
+         if($qglobals{MMCtalk} == 38 && $qglobals{RUJtalk} == 37 && $qglobals{TAKtalk} == 39 && $qglobals{GUKtalk} == 35) { #player has just maxed their stone
+           $client->Message(13, "It's time to acknowledge you as a Wayfarer. Give Chaenz Abella in East Commonlands your Adventurer Stone and he'll replace it with your very own Wayfarers Emblem. Or, if it's being used in a charm, you must remove it to get your new one. And, if you simply destroy the stone, he will replace it with your much-deserved emblem. Just tell him you want your [emblem].");
+           quest::setglobal("Wayfarer",3,5,"F");
+         }
       }
       elsif($mir_wins >= 68 && $qglobals{MIRtalk} == 34) {
          # theme done

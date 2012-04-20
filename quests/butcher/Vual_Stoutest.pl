@@ -295,7 +295,7 @@ sub EVENT_SAY {
          quest::say("My good friend, $name! I've been contemplating the constant replenishment of the vampires in Mistmoore's Catacombs. It has occurred to me that many fallen comrades and curious Norrathians have succumbed to the vampires' tainted blood. Who can say if the vampires lust for more than only power. Or, has Mayong been visiting his catacombs? I'm not sure, but I'm suspicious. Still, the vampires seek to steal the best and brightest from the mortal realm. For so long as they have depended on secrecy to hide their existence and actions, and now they must not just fight themselves, but us as well. Who is to say what will happen in the future?");
          $client->Message(15, "You have received an invaluable piece of information!");
          $client->Message(15, "Your Adventurer Stone glows with more power as you gain stature with the Wayfarers Brotherhood.");
-		 if($qglobals{MMCtalk} == 38 && $qglobals{RUJtalk} == 37 && $qglobals{MIRtalk} == 34 && $qglobals{TAKtalk} == 39 && $qglobals{GUKtalk} == 35) { #player has just maxed their stone
+		 if($qglobals{RUJtalk} == 37 && $qglobals{MIRtalk} == 34 && $qglobals{TAKtalk} == 39 && $qglobals{GUKtalk} == 35) { #player has just maxed their stone
            $client->Message(13, "It's time to acknowledge you as a Wayfarer. Give Chaenz Abella in East Commonlands your Adventurer Stone and he'll replace it with your very own Wayfarers Emblem. Or, if it's being used in a charm, you must remove it to get your new one. And, if you simply destroy the stone, he will replace it with your much-deserved emblem. Just tell him you want your [emblem].");
            quest::setglobal("Wayfarer",3,5,"F");
 		 }

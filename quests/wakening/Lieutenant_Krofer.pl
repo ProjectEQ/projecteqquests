@@ -74,3 +74,9 @@ sub EVENT_SIGNAL {
 	$npc->Depop(1);
 }
 
+sub EVENT_COMBAT {
+	if($combat_state==1) {
+		quest::say("Puny creature, feel the might of the Kromrif as I crush you into mortar for our walls!");
+	}
+}
+

@@ -1,6 +1,3 @@
-sub EVENT_AGGRO {
-	quest::say("Run!!  Leave this place at once!!");
-}
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18891 =>1 )) {

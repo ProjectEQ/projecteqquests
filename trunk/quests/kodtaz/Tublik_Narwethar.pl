@@ -181,6 +181,20 @@ sub EVENT_SAY {
 }
    
 sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 60174 => 1)){
+    if (plugin::check_hasitem($client, 60252)) {
+      quest::say("You have done great things for us, but your journey is not yet over.");  #need live text
+      $client->Message(4, "Finished! - You've recovered the Sliver of the High Temple! Congratulations!");
+      $client->Message(4, "You feel the magic protecting Qvic has softened.");
+      quest::summonitem(60176);
+      quest::setglobal("god_qvic_access",1,5,"F");
+      quest::set_zone_flag(295);
+    }
+    else {
+      quest::say("You have done well in the Temple, please return when you have recovered the fragment also.");
+      quest::summonitem(60174);
+    }
+  }
   if (defined($qglobals{ikky}) && ($qglobals{ikky} == 6)) {
     if (plugin::check_handin(\%itemcount, 60146 => 1)) {
       quest::summonitem(60146);
@@ -198,9 +212,6 @@ sub EVENT_ITEM {
       quest::summonitem(60149);
       GIVE_TABLET();
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 7)) {
     if (plugin::check_handin(\%itemcount, 60162 => 1, 60163 => 1, 60164 => 1, 60165 => 1)) {
@@ -213,17 +224,11 @@ sub EVENT_ITEM {
       quest::summonitem(60165);
       quest::setglobal("ikky",8,5,"F");
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 8)) {
     if (plugin::check_handin(\%itemcount, 60166 => 1)) {
       quest::say("Nicely sewn, $name. I would have tried doing it myself, but I have the most unsteady fingers when it comes to things like that. In any case, let me have a look at what this says.' Tublik looks over the clue for a time before continuing. 'Unbelievable. Simply astounding. These notes weren't made by the Muramites at all. In fact, they were created by trusik priests from their own flesh in some kind of [ritual].");
       quest::setglobal("ikky",9,5,"F");
-    }
-    else {
-      plugin::return_items(\%itemcount);
     }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 9)) {
@@ -233,17 +238,11 @@ sub EVENT_ITEM {
       quest::exp(100000);
       quest::setglobal("ikky",10,5,"F");
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 10)) {
     if (plugin::check_handin(\%itemcount, 60160 => 1)) {
       quest::say("You have done well. It is now time to find the final relic which is guarded by the protector. Are you ready to [stop it]?");
       quest::setglobal("ikky",11,5,"F");
-    }
-    else {
-      plugin::return_items(\%itemcount);
     }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 11)) {
@@ -251,9 +250,6 @@ sub EVENT_ITEM {
       quest::say("Well done! You are now ready to venture into the [four temples]. Let me know when you are ready.");
       quest::exp(100000);
       quest::setglobal("ikky",12,5,"F");
-    }
-    else {
-      plugin::return_items(\%itemcount);
     }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 12)) {
@@ -264,9 +260,6 @@ sub EVENT_ITEM {
       quest::summonitem(60171);
       quest::summonitem(60172);
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} >= 12)) {
     if (plugin::check_handin(\%itemcount, 60173 => 1)) {
@@ -275,27 +268,8 @@ sub EVENT_ITEM {
       quest::setglobal("ikky",14,5,"F");
       quest::summonitem(60173);
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  elsif (plugin::check_handin(\%itemcount, 60174 => 1)){
-    if (plugin::check_hasitem($client, 60252)) {
-      quest::say("You have done great things for us, but your journey is not yet over.");  #need live text
-      $client->Message(4, "Finished! - You've recovered the Sliver of the High Temple! Congratulations!");
-      $client->Message(4, "You feel the magic protecting Qvic has softened.");
-      quest::summonitem(60176);
-      quest::setglobal("god_qvic_access",1,5,"F");
-      quest::set_zone_flag(295);
-    }
-    else {
-      quest::say("You have done well in the Temple, please return when you have recovered the fragment also.");
-      quest::summonitem(60174);
-    }
-  }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub GIVE_TABLET {

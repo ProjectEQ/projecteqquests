@@ -8,9 +8,4 @@ sub EVENT_DEATH{
    }
 }
 
-sub EVENT_COMBAT {
-	if($combat_state=1) {
-		quest::say("Heretic!  Dare you enter our sacred halls?  Your crimes shall not go unpunished.  You shall die for your deeds.");
-	}
-}
 

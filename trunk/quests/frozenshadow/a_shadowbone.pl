@@ -1,7 +1,3 @@
-sub EVENT_AGGRO { 
- quest::say("Areeeeewwwww");
-}
-
 # give 1st floorshadow beast, shadowbone a chance to spawn an undead gnoll on death
 #
 #Angelox

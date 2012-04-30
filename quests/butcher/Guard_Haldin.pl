@@ -2,16 +2,6 @@
 #zone - Butcher
 #by Angelox
 
-sub EVENT_COMBAT {
-    if($combat_state == 1) {
-    quest::say("For the glory of Kaladim, have at thee!!");
-	}
-	if($combat_state == 0) {
-    quest::say("For the glory of Kaladim!! You are no more.");
-	}
-}
-
-
 sub EVENT_ITEM{
   if($item1 == 18905){
     quest::say("The slaves...thank you! Here, this will help you slaughter those foul orcs!");

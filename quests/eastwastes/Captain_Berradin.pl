@@ -1,8 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state=1) {
-		quest::shout("Yer messin with the wrong Coldain, prepare ta meet yer ancestors!");
-	}
-}
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1459 => 1)) { #tainted avalanche ale

@@ -4,13 +4,13 @@ sub EVENT_CLICKDOOR {
       if (defined($qglobals{"ginstance$uguild_id"})) {
         $guildinstance = $qglobals{"ginstance$uguild_id"};
         quest::AssignToInstance($guildinstance);
-        quest::MovePCInstance(345, $guildinstance, -1.2, -126, 2.2);
+        quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34);
       }
       else {
         $guildinstance = quest::CreateInstance("guildhall", 1, 86400);
         quest::AssignToInstance($guildinstance); 
         quest::setglobal("ginstance$uguild_id",$guildinstance,7,"H25");
-        quest::MovePCInstance(345, $guildinstance, -1.2, -126, 2.2);
+        quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34)
       }
     }
   }

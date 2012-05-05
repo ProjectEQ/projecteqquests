@@ -1,15 +1,6 @@
 # orc pawn picks & cutthroat rings quest
 #
 
-sub EVENT_COMBAT{
-	if($combat_state==1){
-		quest::say("Stand where you are, scum!!");
-	}
-}
-
-sub EVENT_DEATH{
-	quest::say("Your name shall be added to the most wanted list of the Freeport Militia!!");
-}
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

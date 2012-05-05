@@ -9,9 +9,3 @@ sub EVENT_COMBAT {
 		}
 	}
 }
-
-sub EVENT_DEATH {
-		if($NPCRace!=54){
-			quest::say("My comrades will avenge my death.");
-		}
-}

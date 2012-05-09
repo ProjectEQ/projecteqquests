@@ -10,6 +10,11 @@ sub EVENT_CLICKDOOR {
   if (defined($qglobals{potimeLockout}) && $qglobals{potimeLockout} > 0 && !defined($qglobals{potime_canzone})) {
     quest::shout("I AM HERE");
   }
+  if ($doorid == 13) { #graveyard
+      $client->Message(10, "The portal, dim at first, begins to glow brighter.");
+      $client->Message(10, "The portal flashes briefly, then glows steadily.");
+      quest::movepc(223, 865, -150, 395);
+   }
   elsif ($instance > 0) {
     if ($doorid == 8) {
       $client->Message(10, "The portal, dim at first, begins to glow brighter.");
@@ -35,11 +40,6 @@ sub EVENT_CLICKDOOR {
       $client->Message(10, "The portal, dim at first, begins to glow brighter.");
       $client->Message(10, "The portal flashes briefly, then glows steadily.");
       quest::MovePCInstance(223, $instance, -27, 1103, 496);
-    }
-    elsif ($doorid == 13) { #graveyard
-      $client->Message(10, "The portal, dim at first, begins to glow brighter.");
-      $client->Message(10, "The portal flashes briefly, then glows steadily.");
-      quest::MovePCInstance(223, $instance, 865, -150, 395);
     }
   }
 }

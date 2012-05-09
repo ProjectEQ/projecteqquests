@@ -2,7 +2,6 @@
 #
 
 sub EVENT_SPAWN {
-  quest::shout("We come for you, fools. Your reign of weakness over the powers of the land comes to an end now!");
   quest::settimer("despawn",300);
 }
 

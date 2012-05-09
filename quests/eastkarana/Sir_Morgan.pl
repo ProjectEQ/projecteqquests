@@ -5,16 +5,6 @@
 #Items Involved: 5 Gold for a random reward
 #################
 
-sub EVENT_COMBAT {
-	if ($combat_state==1) {
-		quest::say("Squire Wimbley!!  Quickly to my side!!");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("The people of the Plains of Karana will avenge my death!");
-}
-
 sub EVENT_WAYPOINT_ARRIVE {
 	if ($wp == 1) {
 		quest::say("Hello, Wimbley, old chap!");
@@ -32,9 +22,6 @@ sub EVENT_WAYPOINT_ARRIVE {
 }
 
 sub EVENT_SAY { 
-  if($text=~/hail/i) {
-    quest::say("Hail, traveler! Might I escort you through to Highpass? The path ahead is filled with giants and many other hungry beasts. I assure you, you will be safe with me. I must admit, I am quite experienced in the ways of the warrior. Do you [wish an escort] or will you [travel alone]?");
-  }
   if($text=~/wish an escort/i) {
     quest::say("I shall be honored to escort you to Highpass, but you shall have to wait for a spell. I make trips every few hours. I also would be grateful to any who wish to donate gold coins to the upkeep of my armor. The rains in the plains cause much rusting.");
   }

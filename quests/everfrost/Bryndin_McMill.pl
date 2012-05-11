@@ -1,8 +1,3 @@
-sub EVENT_SAY {
-  if($text=~/Hail/i){
-    quest::say("H-ha.. H-hai.. Hail!! It is v-v-very.. C-cold out here. You sh-sh-should light a c-c-campfire.");
-  }
-}
 
 sub EVENT_ITEM {
 	# 13242 :  Three Quarters of Elixir

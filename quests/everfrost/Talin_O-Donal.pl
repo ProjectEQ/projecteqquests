@@ -1,9 +1,3 @@
-sub EVENT_SAY {
-  if($text=~/hail/i) {
-    quest::say("Brrrrrr!! Grr.. Grreetings. It is freezing out here!!");
-  }
-}
-
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13241 => 1)) { #Full Bottle of Elixir
     quest::say("Mmmm.. I feel much warmer. Thank you. You should now find Bryndin McMill. He could use a swig also. I saw him hanging around two other guards.");

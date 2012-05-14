@@ -9,10 +9,6 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-sub EVENT_ATTACK {
-  quest::say("Prepare to die!");
-}
-
 sub EVENT_SIGNAL {
   quest::depop();
 }

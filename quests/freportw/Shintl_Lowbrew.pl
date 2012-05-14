@@ -18,13 +18,6 @@ sub EVENT_SAY {
 	}
 }
 
-sub EVENT_ATTACK {
-	quest::say("I have friends in very high places!!");
-}
-
-sub EVENT_DEATH { 
-	quest::say("You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh");
-}
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp eq 1 ) {

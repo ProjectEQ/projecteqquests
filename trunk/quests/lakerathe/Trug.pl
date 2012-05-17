@@ -1,13 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state==1) {
-		quest::say("Guards!  Come smash!");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("My comrades will avenge my death.");
-}
-
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Gimme duffynitey rocks! Me powdrem GUUD!!!");

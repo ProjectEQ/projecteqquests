@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("Grrrreeeoww!!!  I shall gut you like a fish for your vile ways!!");
-	}
-}
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Rrrr.. catching and prrreparing fish is my specialty. Perrrhaps you could fetch for me some [rrrare fish] so that I may demonstrate my skill? Rrrr.");

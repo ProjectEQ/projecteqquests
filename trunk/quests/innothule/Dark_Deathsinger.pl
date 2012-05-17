@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("Die, like a motherless gnoll!");
-	}
-}
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hail, $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");

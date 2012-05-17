@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("Rrrrrowwrrrr!!  For the great spirit of our ancestor, Kejaan, I shall rid our lands of your vile presence!");
-	}
-}
-
 sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Rrrr..I am  Asad. Shazda of the Kerran [Sejah]. It is my duty to ensure the safety of what lands have not been taken from us by the Erudites. and to train my soldiers in the fighting styles of our heritage.");

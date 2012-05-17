@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("Rrr!  Kejaan guide my claws!  You disturrrb our peace no more!");
-	}
-}
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Errr?  What you say to Urrrkath?  Ah.  Hello to you as well. furrrless type person. Would you do Urrrkath a [favor]?"); }

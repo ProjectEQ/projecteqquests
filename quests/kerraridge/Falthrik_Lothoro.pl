@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("Furless fool.  I will show you what I have learned in my years!  Kejaan guide my hand!");
-	}
-}
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Grrrreetings. traveler.  Falthrik tells his [stories] now.  Seat yourself near the fire if you wish to [listen].");

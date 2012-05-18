@@ -16,12 +16,3 @@ sub EVENT_SIGNAL {
 quest::say("Leave our new friend alone, Ghilanbiddle.  He is quite welcome to rest amongst us.");
 }
 
-sub EVENT_COMBAT {
-	if($combat_state==1) {
-		quest::say("Fabulous Four, attack!!");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("My comrades will avenge my death.");
-}

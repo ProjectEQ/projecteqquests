@@ -9,7 +9,6 @@ sub EVENT_DEATH
  my $z = $npc->GetZ(); 
  my $h = $npc->GetHeading();
   {
-  quest::say("Foolish children.  My magic surpasses the boundaries of life and death.");
   quest::spawn2($a,0,0,$x,$y,$z,$h);
   }
 }

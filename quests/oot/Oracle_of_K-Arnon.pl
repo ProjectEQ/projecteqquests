@@ -1,14 +1,6 @@
 #Scripted By: Fatty Beerbelly, modified by Kilelen to finish Book of Turmoil
 # Gonner added Phylactery Will Get You Nowhere quest
 
-sub EVENT_AGGRO{
-	quest::say("Come and feel the blade of the Dark Bargainers.");
-}
-
-sub EVENT_DEATH{
-	quest::say("The death of a Dark Bargainer never goes unnoticed!");
-}
-
 sub EVENT_SAY {
 
 if($text=~/hail/i){

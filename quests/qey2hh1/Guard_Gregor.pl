@@ -8,10 +8,6 @@ sub EVENT_COMBAT {
 	}
 }
 
-sub EVENT_DEATH {
-	quest::say("My comrades will avenge my death.");
-}
-
 sub EVENT_SAY {
   if(($ulevel >= 20) && ($ulevel <= 30)) {
     if($text=~/hail/i) {

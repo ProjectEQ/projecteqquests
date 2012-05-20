@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("You have trespassed long enough on Sabertooth land!");
-	}
-}
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("<BARK!>  Hiya!  <Bark!>  <Bark!>  My name is Furball Miller.  I work here on my father's farm.  Of course. he is not my real [father] but he is the one who raisd me from a pup.  I hope to go back to [Blackburrow] some day and try to get them to stop all the senseless fighting with the humans of Qeynos.");

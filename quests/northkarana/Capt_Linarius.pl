@@ -15,10 +15,6 @@ sub EVENT_COMBAT {
 	}
 }
 
-sub EVENT_DEATH {
-	quest::say("My comrades will avenge my death.");
-}
-
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
   quest::say("Hail, traveler! You are free to rest within this keep or within any of my towers along the roads to Qeynos. My guards shall keep watch over you. While you tread upon the roads, be warned that there are [local dangers] as well as rumors of [corrupt guards].");

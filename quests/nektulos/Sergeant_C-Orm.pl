@@ -6,9 +6,6 @@ sub EVENT_COMBAT {
 		quest::say("Time to die $target_name!");
 		}
 	}
-	if($combat_state == 0){
-		quest::say("Hardly a worthy adversary.  A member of the Indigo Brotherhood deserves a much better opponent.");
-	}
 }
 
 sub EVENT_AGGRO {

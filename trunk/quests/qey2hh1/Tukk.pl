@@ -1,13 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state==1){
-		quest::say("You shall not win this battle!!  Guards!!");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("Karana shall guide the Knights of Thunder to avenge the death of one of his flock.");
-}
-
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Great!! I have fifty acres to seed and now I have visitors stopping by to waste my time!!");

@@ -2,16 +2,6 @@ sub EVENT_SPAWN {
 	quest::SetRunning(1);
 }
 
-sub EVENT_COMBAT {
-	if($combat_state==1){
-		quest::say("Rodcet Nife!!  Give me strength to smite your foe!!");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("Your name has been stricken from the book of the Prime Healer!!  I shall be avenged!");
-}
-
 sub EVENT_SAY
 {
  if($text=~/Hail/i)

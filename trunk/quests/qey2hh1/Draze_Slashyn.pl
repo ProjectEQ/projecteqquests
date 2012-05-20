@@ -10,8 +10,4 @@
 ####################################
 sub EVENT_SPAWN {
    quest::moveto(-7756,-3726,1);
-   quest::shout("Come out of that house, Linaya Sowlin!! I am waiting! It is time for you to die!");
-}
-sub EVENT_DEATH {
-   quest::say("Your act of murder will not go unnoticed by the Unkempt Druids or nature itself!!");
 }

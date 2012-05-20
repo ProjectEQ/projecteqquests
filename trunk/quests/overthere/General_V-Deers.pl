@@ -1,9 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-		quest::say("Say your prayers.  Death approaches!!");
-	}
-}
-
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		$npc->Depop(1);

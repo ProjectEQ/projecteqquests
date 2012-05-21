@@ -10,11 +10,3 @@ sub EVENT_WAYPOINT_ARRIVE {
 	}
 }
 
-sub event_death {
-quest::faction(33, -20);#Circle Of Unseen Hands
-quest::faction(217, 10);#Merchants of Qeynos
-quest::faction(53, -20);#Corrupt Qeynos Guards
-quest::faction(135, 10);#Guards of Qeynos
-quest::faction(164, -20);#Kane Bayle
-quest:say("You'll pay for your actions.. my brothers are many, and their daggers swift.. you will welcome death, once they catch up to you.");
-}

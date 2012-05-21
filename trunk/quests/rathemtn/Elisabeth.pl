@@ -27,8 +27,5 @@ sub EVENT_ITEM {
    plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
-     quest::say("May death bring me closer to Mithaniel Marr and may he plague you with vengeance.");
-}
 
 #END of FILE Zone:rathemtn  ID:50109 -- Elisabeth

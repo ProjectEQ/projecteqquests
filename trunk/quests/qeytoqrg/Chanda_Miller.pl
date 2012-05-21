@@ -33,10 +33,6 @@ sub EVENT_SIGNAL {
 	quest::signal(4055,5);
 }
 
-sub EVENT_AGGRO {
-   quest::say("Leave this land now!");
-}
-
 sub EVENT_SAY { 
 
    if ($faction <= 8) { # Need dubious or better (not sure this is correct).

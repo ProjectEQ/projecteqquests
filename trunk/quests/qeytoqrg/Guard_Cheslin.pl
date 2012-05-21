@@ -139,15 +139,3 @@ sub EVENT_WAYPOINT_ARRIVE{
 } 
 
 
-sub EVENT_COMBAT {
-	if($combat_state == 1) {
-	quest::say("Never fear!! Guard Cheslin is here!! Die, foul beast!");
-	}
-	if($combat_state == 0) {
-	quest::say("Another victory for the Qeynos Guards and the mighty Cheslin, master swordsman!!");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("The Qeynos Guards shall avenge me. You just wait and see!");
-}

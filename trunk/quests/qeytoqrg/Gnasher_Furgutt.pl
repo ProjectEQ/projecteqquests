@@ -30,10 +30,3 @@ sub EVENT_ITEM {
   }
 }
 
-sub EVENT_AGGRO {
-  quest::say("Grrrrr!! You'd best run! If Gnasher dies, more than Sabertooths will be after you.");
-}
-
-sub EVENT_DEATH {
-  quest::say("Uuungghh!! You fool. Gnasher have human friends. They not be happy.. Bash you!!");
-}

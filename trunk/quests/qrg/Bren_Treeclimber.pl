@@ -37,16 +37,6 @@ if($text=~/poachers/i){
 if($text=~/millers/i){
    quest::say("The Millers?!  Those butchers!  We have caught that Baobob and his sister trying to poach more than once.  And to think we took them in and gave them shelter when they were in need.  All the while, they were just trying to get to our bears.");
 }
- }
- 
-sub EVENT_COMBAT {
-	if($combat_state==1) {
-		quest::say("You will regret your actions.");
-	}
-}
-
-sub EVENT_DEATH {
-	quest::say("My comrades will avenge my death.");
 }
 
  

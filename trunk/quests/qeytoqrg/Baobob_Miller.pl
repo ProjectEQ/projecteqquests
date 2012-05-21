@@ -34,10 +34,6 @@ sub EVENT_SIGNAL {
 	quest::say("But, you will always be my little sister. Fare well, Chanda! See you soon!");
 }
 
-sub EVENT_AGGRO {
-   quest::say("I can take on a whole pack of wolves. You will not be as much trouble.");
-}
-
 sub EVENT_SAY {
 
    if ($faction <= 8) { # Need dubious or better (not sure this is correct).

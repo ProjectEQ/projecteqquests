@@ -8,8 +8,3 @@ sub EVENT_COMBAT {
 	}
 }
 
-#sub EVENT_COMBAT {
-#	if($combat_state == 1) {
-#	quest::say("Time to die $targetname !");
-#	}
-#}

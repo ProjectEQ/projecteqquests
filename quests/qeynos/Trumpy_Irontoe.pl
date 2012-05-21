@@ -87,10 +87,4 @@ sub EVENT_ITEM {
   }
 }
 
-sub EVENT_COMBAT {
-  if($combat_state == 1) {
-    quest::say("Prepare to meet my iron toe!");
-  }
-}
-
 #END of FILE Zone:qeynos  ID:1014 -- Trumpy_Irontoe

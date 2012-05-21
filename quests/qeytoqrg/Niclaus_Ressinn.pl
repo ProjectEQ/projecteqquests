@@ -29,18 +29,6 @@ sub EVENT_WAYPOINT_ARRIVE {
 	}
 }
 
-sub EVENT_COMBAT {
-	if($combat_state == 1){
-	quest::say("Guards!! Guards!!");
-	}
-}
-
-sub EVENT_AGGRO {
-   quest::say("Guards!! Guards!!");
-}
-
-
-
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

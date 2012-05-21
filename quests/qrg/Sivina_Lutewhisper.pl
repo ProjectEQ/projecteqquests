@@ -21,10 +21,5 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_COMBAT {
-	if($combat_state==1) {
-		quest::say("Die, like a motherless gnoll!");
-	}
-}
 
 # End of File Zone:qrg

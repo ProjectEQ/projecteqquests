@@ -4,12 +4,6 @@
 #
 #by Qadar
 
-sub EVENT_COMBAT{
-  if($combat_state == 1){
-    quest::say("<Snort!!>..  Death to you! Meldrath commands!!");
-  }
-}
-
 sub EVENT_DEATH{
   my $random_result = int(rand(100));
   if($random_result >= 94){

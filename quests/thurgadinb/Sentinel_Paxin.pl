@@ -1,7 +1,3 @@
-sub EVENT_AGGRO {
-	quest::say("Royal guards of Icewell Keep to my aid!!  Someone is trying to breach the forbidden door!");
-}
-
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings offlander. I see you are exploring our beloved Keep. By order of the Dain all offlanders that have been friendly to our people are permitted to explore all parts of Icewell Keep save this door I guard. Enjoy your stay.");

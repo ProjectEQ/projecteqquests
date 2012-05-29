@@ -7,7 +7,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29112 => 1)) {#Ethereal Parchment
     quest::emote(" examines the item. 'Excellent! I can continue my research into planar magic. Take this as a reward.'");
-    quest::summonitem(quest::ChooseRandom(26944, 28413, 28643, 28644, 28452, 28453, 26947, 21665, 21667, 28455, 28457, 28469, 77836, 21639)); #Level 61 or 62 Enchanter spell, PoP (Greater Fetter, Shield of the Arcane, Arcane Rune, Boggle, Howl of Tashan, Rune of Zebuxoruk, Pacification, Speed of Vallon, Guard of Druzzil, Strangle, Beckon, Word of Morell, Jitterskin, Aeldorb's Animation)
+    quest::summonitem(quest::ChooseRandom(26944, 28413, 28643, 28644, 28452, 28453, 26947, 21665, 21667, 28455, 28457, 28469, 21639)); #Level 61 or 62 Enchanter spell, PoP (Greater Fetter, Shield of the Arcane, Arcane Rune, Boggle, Howl of Tashan, Rune of Zebuxoruk, Pacification, Speed of Vallon, Guard of Druzzil, Strangle, Beckon, Word of Morell, Aeldorb's Animation)
   }
   elsif (plugin::check_handin(\%itemcount, 29131 => 1)) {#Spectral Parchment
     quest::emote(" examines the item. 'Excellent! I can continue my research into planar magic. Take this as a reward.'");

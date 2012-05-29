@@ -64,7 +64,7 @@ sub EVENT_HP {
 		quest::setnexthpevent(50);
 	}
 	if ($hpevent == 50) { 
-		quest::depopall(215052);
+		quest::depopall(215051);
   		$entid1 = quest::spawn2(215479,0,0,-296,323,1440.25,130.5); #Servant_of_Air
   		$entid2 = quest::spawn2(215479,0,0,-351,326,1443.25,130.5); #Servant_of_Air
   		$entid3 = quest::spawn2(215479,0,0,-407,329,1447.13,130.5); #Servant_of_Air

@@ -5,10 +5,10 @@
 #   at 1 : you gave the Signet of Service to the goblin traitor
 
 sub EVENT_SPAWN {
-  quest::say("I've gotta stop Gragbar before he turns in that report!");
+  quest::settimer(1,600);
 }
 
-sub EVENT_DEATH {
-  quest::say("Damn you! This was going so well until you showed up!");
+sub EVENT_TIMER {
+  quest::depop();
 }
 

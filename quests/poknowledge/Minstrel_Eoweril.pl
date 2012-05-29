@@ -11,7 +11,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29112 => 1)) {#Ethereal Parchment
     quest::emote("takes the curious parchment and examines it."); #Real text still needed
     quest::say("Very interesting, I will share this with the other academics. Take this as a reward for your discovery."); #Real text still needed
-    quest::summonitem(quest::ChooseRandom(28471, 28473, 28476, 21636, 28474, 28475, 28484, 16391, 77853)); #Level 61 or 62 Bard spell, PoP (Silent Song of Quellious, Tuyen's Chant of the Plague, Saryrn's Scream of Pain, Dreams of Thule, Druzzil's Disillusionment, Melody of Mischief, Warsong of Zek, Wind of Marr, Angstlich's Echo of Terror)
+    quest::summonitem(quest::ChooseRandom(28471, 28473, 28476, 21636, 28474, 28475, 28484, 16391)); #Level 61 or 62 Bard spell, PoP (Silent Song of Quellious, Tuyen's Chant of the Plague, Saryrn's Scream of Pain, Dreams of Thule, Druzzil's Disillusionment, Melody of Mischief, Warsong of Zek, Wind of Marr)
   }
   elsif (plugin::check_handin(\%itemcount, 29131 => 1)) {#Spectral Parchment
     quest::emote("takes the curious parchment and examines it."); #Real text still needed

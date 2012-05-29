@@ -1,11 +1,3 @@
 sub EVENT_SPAWN {
-quest::settimer("droon", 10800);
-}
-
-sub EVENT_DEATH {
-quest::spawn2(15160,128,0,829,1982,95,252);
-}
-
-sub EVENT_TIMER {
-quest::depop();
+     quest::SetRunning(1);
 }

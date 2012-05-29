@@ -1,3 +1,7 @@
+sub EVENT_SPAWN {
+	quest::disable_spawn2(151562);
+}
+
 sub EVENT_DEATH {
-     quest::spawn2(15138,128,0,885,1132,-69.87,0);
+     quest::enable_spawn2(151562);
 }

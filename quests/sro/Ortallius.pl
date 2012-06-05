@@ -32,6 +32,9 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 1903 => 3)) {
 	quest::say("You will make a fine addition to the crusade. Continue the cleansing of the desert. Let it be known that the Defenders of Ro are here to challenge the evils of the desert. I call upon the righteousness of all paladins to assist me.");
+	quest::ding();
+	quest::exp(250);
+	quest::summonitem(quest::ChooseRandom(5013,5014,5015,5016,5019,5020,5020,5021,5022,5023,5024,5025,5013,5014,5015,5016,5019,5020,5020,5021,5022,5023,5024,5025,5013,5014,5015,5016,5019,5020,5020,5021,5022,5023,5024,5025,3040,3042,3043,3044,3046,3047,3048,3049,3050,3051));
 	quest::faction(442,1);		#faction better: 'Temple Of Sol Ro'
 	quest::faction(291,-3);		#faction worse: 'Shadowed Men'
 	quest::givecash(8,4,0,0);

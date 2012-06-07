@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-	if(plugin::check_handin(\%itemcount, 13818 => 1) { # Boat Beakon ID- 13818
+	if(plugin::check_handin(\%itemcount, 13818 => 1)) { # Boat Beakon ID- 13818
 		quest::ding();
 		quest::say("Oh!! You must work for that Erudite named Palatos. I guess he won't have to spend anymore money drinking in Freeport. Here. Here is the portrait I kept until he could get me a new boat beacon.");
 		quest::exp("100");
@@ -46,7 +46,7 @@ sub EVENT_ITEM {
 		quest::faction("143","1"); # Heretics Faction ID - 143
 		quest::faction("147","1"); #High Guard of Erudin Faction ID - 147
 	}
-    if(plugin::check_handin(\%itemcount, 13814 => 1) { # L.S. Pouch ID-13814
+    if(plugin::check_handin(\%itemcount, 13814 => 1)) { # L.S. Pouch ID-13814
 		quest::ding();
 		quest::say("You found my pouch! Thanks kid. Let me buy you A drink and this is for the good work. Hmmmm. It looks as though they took my voucher. Darn it! Hey... It looks like they were using my bag to hold items they were stealing. Here you go. You can have it. It looks like junk. ");
 		quest::exp("200");

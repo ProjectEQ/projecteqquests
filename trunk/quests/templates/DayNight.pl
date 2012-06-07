@@ -2,6 +2,19 @@
 
 sub EVENT_SPAWN 
 {
+	EVENT_CYCLE();
+	quest::settimer(1,20);
+}
+
+sub EVENT_TIMER
+{
+	
+	EVENT_CYCLE();
+	quest::stoptimer(1);
+}
+
+sub EVENT_CYCLE
+{
 # We assume 1 is night/Zephyl, and 2 is day/Hasten
 	if($zonesn eq 'commons' || $zonesn eq 'everfrost' || $zonesn eq 'kithicor' || $zonesn eq 'lakerathe' || $zonesn eq 'lfaydark' || $zonesn eq 'northkarana' || $zonesn eq 'qey2hh1' || $zonesn eq 'rathemtn' || $zonesn eq 'riwwi' || $zonesn eq 'southkarana' || $zonesn eq 'eastwastes')
 	{

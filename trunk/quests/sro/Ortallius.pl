@@ -10,13 +10,13 @@
 ############################################
 
 sub EVENT_SAY {
- if($text =~ /Hail, Ortallius/i) {
+ if($text =~ /hail/i) {
 	quest::say("Welcome to the lands of Ro. Stand and fight with me. We shall fight to reclaim the desert in the name of Solusek Ro. Death to all [dervish cutthroats]!!");
  }
- if($text =~ /What dervish cutthroats/i) {
+ if($text =~ /dervish cutthroats/i) {
 	quest::say("The dervish cutthroats are the vile scum who inhabit the desert. They are rogues who assault wayward travelers. Solusek Ro has commanded their extermination!! Do you wish to [join the crusade]?");
  }
- if($text =~ /I wish to join the crusade./i) {
+ if($text =~ /join the crusade/i) {
 	quest::emote("grins enthusiastically. 'The scum rarely wander far from their camps. Hunt them down and I will reward you for every three insignia rings you bring as proof of their deaths.'");
  }
 }

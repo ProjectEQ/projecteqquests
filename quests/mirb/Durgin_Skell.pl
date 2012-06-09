@@ -130,8 +130,7 @@ sub EVENT_SIGNAL {
 	#$raid = $entity_list->GetRaidByClient($client);
 	#best we can do here is to hit everyone in the zone.
     foreach $pc ($entity_list->GetClientList()) {
-      $pc->MovePC(30, -5460, -630, 190, 128);
-	  quest::targlobal("mirb_50_lockout", 1, "D3", 0, $pc->CharacterID(), 0);
+      quest::targlobal("mirb_50_lockout", 1, "D3", 0, $pc->CharacterID(), 0);
     }
   } #end of signal 5
 }

@@ -213,7 +213,7 @@ sub EVENT_TIMER {
 	#don't really care is Sharalla's corpse is up or not at this point.
 	if ($qglobals{$instid.'_mirb_status'} == 5) { #Laskuth the Colossus dead, but chest(s) not opened
 	  quest::spawn2(237790, 0, 0, 242, 360, -34, 0);
-	  if ($qglobals{$instid.'_mirb_status'} == 2) { #spawn bonus chest
+	  if ($qglobals{$instid.'_mirb_event'} == 2) { #spawn bonus chest
 	    quest::spawn2(237763, 0, 0, 173, 402, -36, 0);
 	  }
 	} elsif ($qglobals{$instid.'_mirb_status'} == 6) { #win chest opened spawn bonus chest

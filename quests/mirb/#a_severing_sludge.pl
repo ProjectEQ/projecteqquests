@@ -1,0 +1,8 @@
+# When one of these npc's dies, 4x #a_slipper_sludge spawns at its death point
+
+sub EVENT_DEATH {
+  quest::spawn2(237787,0,0,$x,$y,$z,$h); #a_slippery_sludge
+  quest::spawn2(237787,0,0,$x,$y,$z,$h); #a_slippery_sludge
+  quest::spawn2(237787,0,0,$x,$y,$z,$h); #a_slippery_sludge
+  quest::spawn2(237787,0,0,$x,$y,$z,$h); #a_slippery_sludge
+}

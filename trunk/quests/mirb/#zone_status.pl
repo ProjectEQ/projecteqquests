@@ -63,6 +63,11 @@ sub EVENT_TIMER {
     } elsif ($qglobals{$instid.'_mirb_status'} == 1) { #goblin event started
       #send signal to trigger so it knows the event should be started.
       quest::signalwith(237798,237774,0);
+      #pop all the future events.
+      POP_EVENT1();
+      POP_EVENT2();
+      POP_EVENT3();
+      POP_EVENT4();
       if ($qglobals{$instid.'_mirb_event'} == 0) { #event triggered, nothing dead.
         #spawn both bosses.
         quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 42.00); # Raid Leader Sig Chol
@@ -200,11 +205,15 @@ sub EVENT_TIMER {
         DEPOP_EVENT4(1);
       }
     } elsif ($qglobals{$instid.'_mirb_status'} == 3) { #all 4 of Durgin's events are done, no bonus
+      #despawn trigger_goblin
+      quest::depop(237798); 
       DEPOP_EVENT1();
       DEPOP_EVENT2();
       DEPOP_EVENT3();
       DEPOP_EVENT4();
     } elsif ($qglobals{$instid.'_mirb_status'} >= 4) { #all 4 of Durgin's events are done, with bonus
+      #despawn trigger_goblin
+      quest::depop(237798); 
       DEPOP_EVENT1();
       DEPOP_EVENT2();
       DEPOP_EVENT3();

@@ -64,6 +64,6 @@ sub DEPOP_ALL {
   if($Goblin_Boss_Dead >= 2) {
     quest::stoptimer("SpawnTrash");
     quest::depopall(237784); #a_Frostfoot_henchman
-	$npc->Depop(1);
+	$npc->Depop(0);
   }
 }

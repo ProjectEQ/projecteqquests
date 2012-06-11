@@ -88,16 +88,16 @@ sub EVENT_SIGNAL {
   if ($signal == 2 && $task2 == 0) {
     #signal 2 is sent when an icy bone walker spawns (after the red chromatic bonewalker dies)
     $icy_bonewalker_spawn++;
-	# after the first icy bonewalker spawns, you have a short time to spawn all 4 icy bonewalkers before the timer resets.
+    # after the first icy bonewalker spawns, you have a short time to spawn all 4 icy bonewalkers before the timer resets.
     if ($icy_bonewalker_spawn==1) {
       quest::settimer("SpawnIcyBoneWalker",30);
     } elsif ($icy_bonewalker_spawn==4) {
       quest::stoptimer("SpawnIcyBoneWalker");
-	  quest::depopall(237756); # a_chromatic_bonewalker
-	  quest::depopall(237757); # a_chromatic_bonewalker
-	  quest::depopall(237791); # a_chromatic_bonewalker
+      quest::depopall(237756); # a_chromatic_bonewalker
+      quest::depopall(237757); # a_chromatic_bonewalker
+      quest::depopall(237791); # a_chromatic_bonewalker
       quest::depopall(237789); # an_icy_bonewalker
-	  UPDATE_EVENT(2);
+      UPDATE_EVENT(2);
     }
   }
   #Signal 3 is from Marrow the Broken
@@ -113,22 +113,22 @@ sub EVENT_SIGNAL {
   #Signal 5 is from Laskuth the Colossus to spawn chests
   if ($signal == 5) {
     quest::ze(15, "Your victory has shattered the shroud of magic surrounding the dungeon's treasure.");
-	quest::setglobal($instid.'_mirb_status', 5, 7, "H3");
-	# spawn loot chest
+    quest::setglobal($instid.'_mirb_status', 5, 7, "H3");
+    # spawn loot chest
     quest::spawn2(237763, 0, 0, 173, 402, -36, 0);
-	# Sharalla's event successful, spawn bonus chest
+    # Sharalla's event successful, spawn bonus chest
     if ($task4 > 1) {
       quest::spawn2(237790, 0, 0, 242, 360, -34, 0);
-	  #will be used by zone_status to know if it needs to respawn a chest or not.
-	  quest::setglobal($instid.'_mirb_event', 2, 7, "H3");
+      #will be used by zone_status to know if it needs to respawn a chest or not.
+      quest::setglobal($instid.'_mirb_event', 2, 7, "H3");
     } else {
-	  #will be used by zone_status to know if it needs to respawn a chest or not.
-	  quest::setglobal($instid.'_mirb_event', 1, 7, "H3");
-	}
-	#Establish the lockout for the raid
-	#there is no $client available here since this is a signal event from an NPC.
-	#$raid = $entity_list->GetRaidByClient($client);
-	#best we can do here is to hit everyone in the zone.
+      #will be used by zone_status to know if it needs to respawn a chest or not.
+      quest::setglobal($instid.'_mirb_event', 1, 7, "H3");
+    }
+    #Establish the lockout for the raid
+    #there is no $client available here since this is a signal event from an NPC.
+    #$raid = $entity_list->GetRaidByClient($client);
+    #best we can do here is to hit everyone in the zone.
     foreach $pc ($entity_list->GetClientList()) {
       quest::targlobal("mirb_50_lockout", 1, "D3", 0, $pc->CharacterID(), 0);
     }
@@ -139,31 +139,32 @@ sub EVENT_TIMER {
   # if the 4 icy bonewalkers are not spawned within the timer, the kill count must reset, effectively resetting the event.
   if ($timer eq "SpawnIcyBoneWalker") {
     quest::ze(15, "As time draws on, the bonewalkers have regained their strength. Remember, heat is the enemy, but you must act quickly.");
+    quest::stoptimer("SpawnIcyBoneWalker");
     $icy_bonewalker_spawn = 0;
   }
 }
 
 sub UPDATE_EVENT {
-		#  0 - nothing done
-#1		#  1 - blob done
-#2		#  2 - icy bonewalkers done
-#3		#  4 - marrow the broken done
-#4		#  8 - Sharalla`s warder hailed (event 4 triggered)
-#5		# 16 - Sharalla's corpse protected (event 4 done)
+        #  0 - nothing done
+#1        #  1 - blob done
+#2        #  2 - icy bonewalkers done
+#3        #  4 - marrow the broken done
+#4        #  8 - Sharalla`s warder hailed (event 4 triggered)
+#5        # 16 - Sharalla's corpse protected (event 4 done)
   my $event_status = $qglobals{$instid.'_mirb_event'};
   my $event_to_update = $_[0];
   if ($event_to_update==1) {
     $task1 = 1;
-	$event_status+=1;
+    $event_status+=1;
   } elsif ($event_to_update==2) {
     $task2 = 1;
-	$event_status+=2;
+    $event_status+=2;
   } elsif ($event_to_update==3) {
     $task3 = 1;
-	$event_status+=4;
+    $event_status+=4;
   } elsif ($event_to_update==4) {
     $task4++;
-	$event_status+=8; #event 4 can get signaled twice. In that case, adding 8 will effectively turn off the 8 bit and turn on the 16 bit.
+    $event_status+=8; #event 4 can get signaled twice. In that case, adding 8 will effectively turn off the 8 bit and turn on the 16 bit.
   }
   quest::setglobal($instid.'_mirb_event', $event_status, 7, "H3");
   if ($event_status==15) { # events 1, 2, 3 successful, 4 failure

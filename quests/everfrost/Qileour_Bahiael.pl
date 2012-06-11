@@ -1,10 +1,11 @@
 my $NewInstance;
+my $ClientNotAdded = 0;
 my $raid;
 
 sub EVENT_SAY {
   #need to wrap some of this in a keychain check for the adventure stone i think.
   my $InInstanceMirB = quest::GetInstanceID("mirb",50);
-  my $ClientNotAdded = 0;
+  $ClientNotAdded = 0;
   if ($text=~/hail/i && $client->KeyRingCheck(41000)) {
     quest::say("I am busy building a strategy to take on those oddities deep under the ice here. If you need something, speak up now. I have little time for pleasantries. However, if you can rally the call of your friends perhaps you can help us with a serious [problem].");
     quest::say("Do you need to leave an [instance]?");
@@ -27,21 +28,21 @@ sub EVENT_SAY {
   if ($text=~/interested/i && $client->KeyRingCheck(41000)) {
     $raid = $entity_list->GetRaidByClient($client);
     if ($status < 80) {
-#      if (!$raid) {
-#        $client->Message(13, "You are not in a raid!");
-#      } elsif ($raid->RaidCount() < 2) {
-#        $client->Message(13, "You need at least 6 members in your raid!");
-#      } elsif ($raid->RaidCount() > 54) {
-#        $client->Message(13, "You cannot have more than 54 members in your raid!");
-#      } elsif ($raid->GetLowestLevel() < 61) {
-#        $client->Message(13, "You have a player below level 61 in your raid!");
-#      } elsif ($InInstanceMirB!=0) {
-#        $client->Message(13, "You are already in an instance!");
+      if (!$raid) {
+        $client->Message(13, "You are not in a raid!");
+      } elsif ($raid->RaidCount() < 2) {
+        $client->Message(13, "You need at least 6 members in your raid!");
+      } elsif ($raid->RaidCount() > 54) {
+        $client->Message(13, "You cannot have more than 54 members in your raid!");
+      } elsif ($raid->GetLowestLevel() < 61) {
+        $client->Message(13, "You have a player below level 61 in your raid!");
+      } elsif ($InInstanceMirB!=0) {
+        $client->Message(13, "You are already in an instance!");
 #      } elsif (defined $qglobals{mirb_50_lockout}) {
 #        $client->Message(13, "You have recently completed this raid!");
-#      } else {
-#        ASSIGN_RAID_TO_INSTANCE();
-#      }
+      } else {
+        ASSIGN_RAID_TO_INSTANCE();
+      }
     } elsif ($status >= 80) { #this is to let a GM open it and bypass all the checks.
       if (!$raid) {
         $NewInstance = quest::CreateInstance("mirb", 50, 10800);
@@ -66,17 +67,17 @@ sub ASSIGN_RAID_TO_INSTANCE {
   $NewInstance = quest::CreateInstance("mirb", 50, 10800);
   for ($count = 0; $count < $raid->RaidCount(); $count++) {
     $temp_client = $raid->GetClientByIndex($count);
-    if ($temp_client->KeyRingCheck(41000) && !defined $qglobals{mirb_50_lockout}) {
+    if ($temp_client->KeyRingCheck(41000)) {
       $temp_client->AssignToInstance($NewInstance);
       $temp_client->Message(13, "Added to event: Miragul's Menagerie - The Frozen Nightmare.");
       $temp_client->MarkCompassLoc(-5460, -630, 190);
     } else {
       $ClientNotAdded++;
-      if (defined $qglobals{mirb_50_lockout}) {
-        $temp_client->Message(13,"You have recently completed this expedition, you may not try it again so soon.");
-      } else {
+#      if (defined($qglobals{mirb_50_lockout})) {
+#        $temp_client->Message(13,"You have recently completed this expedition, you may not try it again so soon.");
+#      } else {
         $temp_client->Message(13,"You cannot enter the expedition without being a member of the Brotherhood.");
-      }
+#      }
     }
   }
 }

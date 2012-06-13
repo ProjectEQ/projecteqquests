@@ -5,7 +5,3 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
 	quest::depop();
 }
-
-sub EVENT_DEATH{
-   quest::emote("'s corpse screams inhumanly as he falls and bursts into a cloud of ashes blacker than the darkest night.");
-}

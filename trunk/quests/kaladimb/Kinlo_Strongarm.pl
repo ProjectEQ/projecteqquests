@@ -1,6 +1,14 @@
 # enchanted clay quest/refined mithril blade -- ranger epic
 #
 
+sub EVENT_SPAWN {
+	quest::settimer(1,2700);
+}
+
+sub EVENT_TIMER {
+	quest::say("Mud, rock, crystals, gems, metal. Arrrrrr!");
+}
+
 sub EVENT_SAY {
   if ($faction <= 5) { #indifferent or better
     if ($text=~/mud/i) {
@@ -20,6 +28,12 @@ sub EVENT_SAY {
     }
     if ($text=~/necromancer and enchanter/i) {
       quest::say("I'm not knowin' more about the story, lad. Everythin' I know is already in what I said. Aye, Erudites. I suppose if yer wantin' ta run after shortbeard tales ya can look over on that plague island they call Odus.");
+    }
+    if (($text=~/rock/i) || ($text=~/gem/i) || ($text=~/metal/i)) {
+      quest::say("Aye, good stuff ta be workin' with.");
+    }
+    if ($text=~/arrrr/i) {
+      quest::say("Har, har!  Ooooo!  Arrrrrr!");
     }
   }
   else {

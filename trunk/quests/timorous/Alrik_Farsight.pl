@@ -17,22 +17,50 @@ sub EVENT_SAY {
       quest::summonitem(20457);
     }
   }
-  else {
-    quest::emote("will not speak to you, yet.");
+  if ($faction > 4) {
+	my $random = int(rand(3));
+	if ($random == 0) {
+		quest::say("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.");
+	}
+	if ($random == 1) {
+		quest::say("Is that your BREATH, or did something die in here?  Now go away!");
+	}
+	if ($random == 2) {
+		quest::say("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
+	}
   }
 }
 
 sub EVENT_ITEM {
-  if ($faction < 5) { #amiable or better Keepers of the Art
-    if (plugin::check_handin(\%itemcount, 20474 => 1)) {
-      quest::emote("grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'");
-      quest::summonitem(18960);
-    }
-  }
-  else {
-    quest::say("I do not know you well enough to help you.");
-    plugin::return_items(\%itemcount);
-  }
+	if ($faction < 5) { #amiable or better Keepers of the Art
+		if (plugin::check_handin(\%itemcount, 20474 => 1)) {
+			quest::emote("grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'");
+			quest::summonitem(18960);
+			if($wp >= 3 && $wp <= 10) {
+				quest::signalwith(96035,2,30);
+			}
+		}
+	}
+	else {
+		quest::say("I do not know you well enough to help you.");
+		plugin::return_items(\%itemcount);
+	}
+}
+
+sub EVENT_WAYPOINT_ARRIVE {
+
+	if ($wp == 8) {
+		quest::say("Hey there again, Xib!  Still a great day, isn't it?");
+		quest::signalwith(96035,1,30);
+	}
+	if ($wp == 14) {
+		quest::emote("grins a little and mumbles. 'This place is great.  Feels like I'm at the end of the universe.'");
+	}
+}
+
+sub EVENT_SIGNAL {
+	quest::say("What was that, Xib?");
+	quest::signalwith(96035,3,30);
 }
 
 # EOF zone: timorous ID: 96032 NPC: Alrik_Farsight

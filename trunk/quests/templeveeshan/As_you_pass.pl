@@ -11,5 +11,6 @@ sub EVENT_SPAWN {
 
 
 sub EVENT_ENTER {
-	quest::emote("invades your thoughts: 'Beware mortal!  This land is marked by Veeshan, and is sacred to her brood.  None but Dragonkin are welcome here.  Your life is forteit if you proceed.  Ignore this message at your peril!'");
+	quest::emote("the archway a faint glow surrounds your body.");
 }
+

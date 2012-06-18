@@ -1,5 +1,15 @@
 # Part of quest for Veeshan's Peak key
 
+sub EVENT_SPAWN {
+	quest::settimer("sit",10);
+}
+
+sub EVENT_TIMER {
+	if($timer eq "sit") {
+		$npc->SetAppearance(1);
+	} 
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello, $name! I am Xiblin Fizzlebik, renowned archeologist and historian of Ak'Anon. I'm currently in search of artifacts and relics on the Iksar [Jarsath tribe]. If you stumble upon anything, please bring it to me.");
@@ -21,6 +31,19 @@ sub EVENT_ITEM {
     quest::summonitem(19954);
     quest::exp(100);
   }
+}
+
+sub EVENT_SIGNAL {
+	if($signal == 1) {
+		quest::emote("sighs to himself in resignation and continues to dig with obvious annoyance.");
+	}
+	if($signal == 2) {
+		quest::emote("mutters to himself. 'Yeah, not because you're a goblin headed moron or anything.'");
+		quest::signal(96032,30);
+	}
+	if($signal == 3) {
+		quest::say("I didn't say anything! Now get back on your side of the island, you're getting dirt and junk all over mine!");
+	}
 }
 
 # Quest by mystic414

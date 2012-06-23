@@ -36,7 +36,7 @@ sub EVENT_ITEM {
   }
  
   if(plugin::check_handin(\%itemcount, 61237 => 1, 61235 => 1, 61234 => 1, 61236 => 1)) {#Gwaddry's Trinket, Burning Totem Base, Burning Totem Hilt, Sweltering Totem Runes
-    quest::text("Take this, $name.  I go to do the unspeakable now.");#Nobody ever bothers to record the final dialog anymore.  They're always so stoked they found and completed a new quest, they get all excited and don't bother with the last thing the mobs says.  Frustrating.  This is completely made up, I'm sorry. =\
+    quest::say("Take this, $name.  I go to do the unspeakable now.");#Nobody ever bothers to record the final dialog anymore.  They're always so stoked they found and completed a new quest, they get all excited and don't bother with the last thing the mobs says.  Frustrating.  This is completely made up, I'm sorry. =\
     quest::summonitem(61238); #Flame Etched Cloak
   }
   else {

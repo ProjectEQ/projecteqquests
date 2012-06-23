@@ -43,7 +43,7 @@ sub EVENT_ITEM {
 		quest::emote("empties the bottle's smoke into a very large glass urn filled with similar swirling smoke. You think you hear the cries of a thousand tortured souls. He then closes the urn and hands you a scroll.");
 		quest::say("Here is your reward. It will blast a foe's brain and hopefully, they may forget their hatred.");
 		quest::summonitem(12968);#Scroll of Brain Bite
-		quest:faction(353, 30);#Add some Venril Sathir faction
+		quest::faction(353, 30);#Add some Venril Sathir faction
 		quest::giveexp(3322176);#3% level 45 xp,
 	}
 	

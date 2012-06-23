@@ -26,9 +26,9 @@ sub EVENT_ITEM {
 		quest::emote("looks a bit better now, having cleaned most of the sand from his body and drying off a bit.");
 		quest::say("I hope you made those pirate scum pay with their lives! When I get back to Neriak, I assure you that my first priority will be planning my revenge. You're lucky, this item washed up on shore from the wreckage of my ship. You can have it. Farewell.");
 		quest::summonitem(55025);# Glowing Fluorite Stone Necklace
-		quest:faction(69, 30);#Add some Dark Bargainers faciton
-		quest:faction(87, 30);#Add some Dreadguard Inner faction
-		quest:faction(88, 30);#Add some Dreadguard Outer faction
+		quest::faction(69, 30);#Add some Dark Bargainers faciton
+		quest::faction(87, 30);#Add some Dreadguard Inner faction
+		quest::faction(88, 30);#Add some Dreadguard Outer faction
 		quest::giveexp(243890);#1% level 30 experience
 
 	}

@@ -36,27 +36,17 @@
 ############################################
 
 
-sub EVENT_SAY
-{
-  if ($text=~/Hail/i)
-  {
-  quest::say("Hello.");
+sub EVENT_SAY {
+  if ($text=~/Hail/i) {
+    quest::say("Hello.");
   }
-
 }
 
-
-sub EVENT_ITEM
-{
-  # A tattered note ID-18739
-  if ($item1=="18739")
-  {
-  quest::say("Thanks.");
-  # Patched Violet Robe ID-13558
-  summonitem("13558");
-  exp("100");
+sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 18739 => 1)) { #A tattered note
+    quest::say("Thanks.");
+    quest::summonitem(13558); #Patched Violet Robe
+    quest::exp(100);
   }
-
 }
 #END of FILE Zone:freporte  ID:9073 -- Opal_Darkbriar
-

@@ -8,8 +8,8 @@ $spawn_mob1 = undef;
 $flag = undef;
 $dagger = undef;
 $spawn_CYCLE = undef;
-quest::signalwidth(204037, 5, 0);
-quest::signalwidth(204058, 6, 0);
+quest::signalwith(204037, 5, 0);
+quest::signalwith(204058, 6, 0);
 quest::stoptimer(1);         
 quest::stoptimer(2);
 }

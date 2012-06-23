@@ -13,7 +13,7 @@ sub EVENT_ITEM {
     quest::summonitem(31495);
     quest::exp(300);
     quest::givecash(0,5,0,0); 
-    quest::facton(8,3);
+    quest::faction(8,3);
     quest::faction(43,3);
     quest::faction(178,3);
   }

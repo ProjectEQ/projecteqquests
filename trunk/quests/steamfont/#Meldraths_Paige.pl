@@ -1,6 +1,6 @@
 #Meldrath's_Paige script for GM event, actually written by nork! OMG!
 
-sub Event_Say {
+sub EVENT_SAY {
 	if ($status >= 80 && $text=~/Hail/i) {
 	quest::say ("All subvertents will be converted! Meldrath is your new lord and master! All who resist shall be punished!"); 
 	}

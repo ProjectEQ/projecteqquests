@@ -39,17 +39,17 @@
 sub EVENT_SAY {
   if($class eq "Warrior") {
     if($text=~/Hail/i)   {
-      quest::emote("looks up from his forge and says, 'Hello there, Can I help you?' Your eyes are drawn to an extremely large [red sword Scabbard] strapped to his back with no sword in it.");
+      quest::emote("looks up from his forge and says, 'Hello there, can I help you?' Your eyes are drawn to an extremely large [red sword Scabbard] strapped to his back with no sword in it.");
       quest::say("I said, can I help you or do you need help from [Wenden]?");
     }
     if($text=~/Wenden/i) {
       quest::emote("points to the other side of the forge and says, 'Wenden is my partner. He is standing right over there. If it is a question about a weapon, he will probably have the answers.'");
     }
     if($text=~/red sword Scabbard/i) {
-      quest::emote("turns to look at you and says, 'It is a family Heirloom. I might tell you the story behind it if you do me a little [favor].'");
+      quest::emote("turns to look at you and says, 'It is a family heirloom. I might tell you the story behind it if you do me a little [favor].'");
     }
     if($text=~/favor/i) {
-      quest::say("An associate of mine is wandering somewhere in the Feerrott. His name is Oknoggin Stonesmacker. If you will Deliver this note to him, I would appreciate it.");
+      quest::say("An associate of mine is wandering somewhere in the Feerrott. His name is Oknoggin Stonesmacker. If you will deliver this note to him, I would appreciate it.");
       quest::summonitem("20673"); # Wax Sealed Note ID-20673
     }
   }
@@ -60,7 +60,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20674 => 1)) { # Tiny Lute
-    quest::say("Thank you for delivering the note to my Associate. Take this book - It will tell you A little of the history of the old scabbard. If you would like to own the scabbard, seek out my younger brother Tenal and give him the book.");
+    quest::say("Thank you for delivering the note to my associate. Take this book - It will tell you A little of the history of the old scabbard. If you would like to own the scabbard, seek out my younger brother Tenal and give him the book.");
     quest::ding();
     quest::exp(1000);
     quest::summonitem("18083"); # Redblade's Legacy

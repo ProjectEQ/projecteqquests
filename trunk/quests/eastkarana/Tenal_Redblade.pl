@@ -38,7 +38,7 @@ sub EVENT_SAY{
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18083 => 1)) { #Redblade's Legacy
-    quest::say("So, Kargek sent you.  How is my dear brother?  If you come to me with this book then you must be interested in the scabbard. Take this totem and return to me with it and the heart of frost from the goblins of permafrost. Do not return until this task is accomplished."); 
+    quest::say("So, you know my brother Kargek. He is weak and does not believe the legend that our family was chosen by Rallos Zek to bear the great scabbard. Yet he still holds it. Very well, I shall give you the first test since my 'dear' brother seems to have forgotten it. Travel to the fortress where the children of Rallos were first cursed by the Rathe and bring me the heart of one of the goblins who have made it their new home. Do not return without the heart of your foe and this war totem."); 
     quest::ding();
     quest::exp(100000);
     quest::summonitem(20680); # Totem of the Freezing War

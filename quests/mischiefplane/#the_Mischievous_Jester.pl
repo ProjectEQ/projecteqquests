@@ -2,7 +2,7 @@
 #
 
 sub EVENT_DEATH {
-  quest::spawn2(126160,0,0,-127.5,949,183.1,128);
+  quest::spawn2(126373,0,0,-127,938,186.125,132);
 }
 
 # EOF zone: mischiefplane ID: 126012 NPC: the_Mischievous_Jester

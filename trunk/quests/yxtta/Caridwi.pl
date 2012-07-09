@@ -3,6 +3,10 @@
 # created by Gonner
 # beat the taskmistress added by Jaekob
 
+sub EVENT_SPAWN {
+	quest::ze(15,"A haunting song echoes in the dank caverns.");
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::emote("is whistling an unusual tune. As she speaks, her song continues. The overlapping effect of the music and her melodious voice is haunting.");

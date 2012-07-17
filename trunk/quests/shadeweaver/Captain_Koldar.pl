@@ -40,16 +40,6 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_COMBAT {
- if($combat_state == 1){
- quest::say("Prepare to greet your ancestors filth!");
- }
- if($combat_state == 0) {
- quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
- }
-}
-
-
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Stand back hunter! Not all of my men are properly trained in the use of their spears. You may find yourself losing an eye if you get too close. Now then, I assume you have [come to help.] Is that correct?");

@@ -1,13 +1,3 @@
-sub EVENT_COMBAT {
- if($combat_state == 1){
- quest::say("Prepare to greet your ancestors filth!");
- }
- if($combat_state == 0) {
- quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
- }
-}
-
-
 sub EVENT_SAY { 
   if($text=~/hail/i){
     quest::say("Greetings young one, have a seat by the fire.  You will notice the dance being preformed.  This is much more than just a dance though.  It is a ritual that we preform to [purge] the evil spirits that are plaguing the thicket.");

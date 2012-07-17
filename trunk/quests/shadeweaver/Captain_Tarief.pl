@@ -35,17 +35,6 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_COMBAT {
- if($combat_state == 1){
- quest::say("Prepare to greet your ancestors filth!");
- }
- if($combat_state == 0) {
- quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
- }
-}
-
-
-
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Well met, have you [come to aid] us in hunting the hoppers of the thicket?");

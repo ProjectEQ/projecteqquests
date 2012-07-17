@@ -1,15 +1,5 @@
 #Sentry_Ferin.pl
 #Champion of the Vah Shir
-sub EVENT_COMBAT {
- if($combat_state == 1){
- quest::say("You choose your enemies poorly!");
- }
- if($combat_state == 0) {
- quest::say("You chose to attack the VahShir and so you chose to die.");
- }
-}
-
-
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

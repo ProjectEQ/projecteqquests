@@ -1,13 +1,3 @@
-sub EVENT_COMBAT {
- if($combat_state == 1){
- quest::say("Prepare to greet your ancestors filth!");
- }
- if($combat_state == 0) {
- quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
- }
-}
-
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Tread cautiously here. The road to the [paludal] caverns is a dangerous journey these days.");

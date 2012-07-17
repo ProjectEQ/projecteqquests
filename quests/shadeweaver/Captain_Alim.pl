@@ -1,14 +1,3 @@
-sub EVENT_COMBAT {
- if($combat_state == 1){
- quest::say("Prepare to greet your ancestors filth!");
- }
- if($combat_state == 0) {
- quest::say("Leave this corpse to scavengers. This scum deserves no burial.");
- }
-}
-
-
-
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Have you come for training young one?  The way of the Beastlord teaches many things about the forces of nature.  The [forces] in the thicket are very interesting.");

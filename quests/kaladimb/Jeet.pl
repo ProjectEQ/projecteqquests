@@ -19,7 +19,7 @@ quest::say("Don't take this personally,  but I can't quite trust you with such m
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 13054 =>4 )) {
   quest::say("Well done.");
-  quest::ChooseRandom(2108,2124,2118,2116,2120,2123);
+  quest::summonitem(quest::ChooseRandom(2108,2124,2118,2116,2120,2123));
   quest::exp(5000);
   quest::faction(77,10);
   quest::faction(220,10);

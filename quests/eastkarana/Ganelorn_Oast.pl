@@ -23,6 +23,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 20881 => 1, 20880 => 1, 10151 => 1, 5408 => 1)) {
     quest::say("You have done well. I sense the one I have been hunting in the distance. As your final test, you must track him down and destroy him.");
+    quest::spawn2(15183,0,0,-800,-2712,15.6,138);
     quest::faction( 99, 50);
     quest::faction( 178, 50);
     quest::faction( 43, 50);

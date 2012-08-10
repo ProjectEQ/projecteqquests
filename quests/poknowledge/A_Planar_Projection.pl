@@ -164,7 +164,7 @@ if($text=~/No gladiator shall match me/i &&  defined $qglobals{pop_poi_behometh_
 
 
 
-if($text=~/I am a child of fire/i &&  defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} &&  defined $qglobals{pop_tactics_tallon} &&  defined $qglobals{pop_tactics_vallon} &&  defined $qglobals{pop_tactics_ralloz} &&  defined $qglobals{pop_sol_ro_arlyxir} &&  defined $qglobals{pop_sol_ro_jiva} &&  defined $qglobals{pop_sol_ro_rizlona} &&  defined $qglobals{pop_sol_ro_dresolik} &&  defined $qglobals{pop_sol_ro_xuzl} &&  defined $qglobals{pop_sol_ro_solusk}) {
+if($text=~/I am a child of fire/i &&  defined $qglobals{pop_poi_behometh_preflag} &&  defined $qglobals{pop_poi_behometh_flag} &&  defined $qglobals{pop_tactics_tallon} &&  defined $qglobals{pop_tactics_vallon} &&  defined $qglobals{pop_tactics_ralloz} &&  defined $qglobals{pop_sol_ro_arlyxir} &&  defined $qglobals{pop_sol_ro_jiva} &&  defined $qglobals{pop_sol_ro_rizlona} &&  defined $qglobals{pop_sol_ro_dresolik} &&  defined $qglobals{pop_sol_ro_xuzl} &&  defined $qglobals{pop_sol_ro_solusk} &&  defined $qglobals{pop_pot_saryrn_final} &&  defined $qglobals{pop_pot_saryrn} &&  defined $qglobals{pop_hohb_marr}) {
 
 
 

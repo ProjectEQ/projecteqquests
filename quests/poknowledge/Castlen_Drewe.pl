@@ -17,7 +17,7 @@ sub EVENT_SAY
 		my @task_array;
 		push(@task_array, 130);
 		
-		if(($client->GetClientVersionBit() & 2147483660)!= 0)
+		if(($client->GetClientVersionBit() & 4294967292)!= 0)
 		{
 			push(@task_array, 205);
 		}
@@ -27,7 +27,7 @@ sub EVENT_SAY
 		}
 		push(@task_array, 132);
 		
-		if(($client->GetClientVersionBit() & 2147483660)!= 0)
+		if(($client->GetClientVersionBit() & 4294967292)!= 0)
 		{
 			push(@task_array, 206);
 		}

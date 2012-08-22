@@ -260,8 +260,11 @@ sub EVENT_ITEM {
       quest::summonitem(60171);
       quest::summonitem(60172);
     }
+    if (plugin::check_handin(\%itemcount, 60173 => 1)) {
+      quest::say("You can't have this? What kind of trickery is this? I'm alerting the proper autorities you thief.");
+    }
   }
-  elsif (defined($qglobals{ikky}) && ($qglobals{ikky} >= 12)) {
+  elsif (defined($qglobals{ikky}) && ($qglobals{ikky} >= 13)) {
     if (plugin::check_handin(\%itemcount, 60173 => 1)) {
       quest::say("Well done! You can have this back. Take it to the Temple and you will now be allowed entry.");
       $client->Message(4, "Finished! - You've constructed your Icon of the Altar!");

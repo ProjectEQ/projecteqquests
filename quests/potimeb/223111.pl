@@ -21,7 +21,7 @@ quest::ze(15,"Rallos Zek says, 'You must see what he refers to; we must turn to 
 quest::pause(2000);
 quest::ze(15,"Fennin Ro says, 'My son, please understand we must stop this advancement of mortals without halting their existence. The balance of power must be maintained. Without the mortals the balance would fade.'");
 quest::pause(2000);
-quest::ze(15,"Solusek Ro syas, 'So they have made your decision for you too father. You are all wrong, this will only bring them further into our realms seeking answers! We must take action now. Have at your foolish games, I will not allow them to obtain my power.'");
+quest::ze(15,"Solusek Ro says, 'So they have made your decision for you too father. You are all wrong, this will only bring them further into our realms seeking answers! We must take action now. Have at your foolish games, I will not allow them to obtain my power.'");
 quest::pause(2000);
 quest::ze(15,"You look up and see a meteor burning through the sky; Solusek returning to his tower to brood over the matters at hand.");
 quest::pause(2000);
@@ -40,11 +40,11 @@ quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the
  quest::pause(2000);
  quest::ze(15,"A bright aura streaks through the sky. The power of it sends a surge through your body that makes your hair stand on end.");
  quest::pause(2000);
- quest::ze(15,"The Triumvirate of Water speaks as one voice. It says, 'Now step up tot he chambers. Give a part of yourselves to the bind on Zebuxoruk. Through our power, the bonds on him will never be broken. He will be eternally placed in stasis.'");
+ quest::ze(15,"The Triumvirate of Water speaks as one voice. It says, 'Now step up to the chambers. Give a part of yourselves to the bind on Zebuxoruk. Through our power, the bonds on him will never be broken. He will be eternally placed in stasis.'");
  quest::pause(2000);
  quest::ze(15,"Saryrn says, 'What of our weakened state. I refuse to return to my realm without the power to rule over my minions.'");
  quest::pause(2000);
- quest::ze(15,"Xegony says, 'Terris Thule says, 'Yes, how can I spread my touch over my lands if I lack so much of myself?'");
+ quest::ze(15,"Terris Thule says, 'Yes, how can I spread my touch over my lands if I lack so much of myself?'");
  quest::pause(2000);
  quest::ze(15,"Cazic Thule says, 'Do not worry daughter, we shall stay here until we are able to recover our strength.'");
  quest::pause(2000);

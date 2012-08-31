@@ -4,14 +4,18 @@ sub EVENT_SAY {
   quest::emote("screams");
   quest::say("No, don't kill me!' He relaxes slightly and gives you a strange look. 'Have you been afflicted by the curse? Are you mad!? Have you any idea [who Kelekdrix] is? She will be here any moment to destroy you all. Leave now, or there will be dire [consequences]!");
      }
-   }
-   if ($text=~/consequences/i) {
-     quest::say("Very well, $name. You brought this upon yourself.");
-     quest::spawn2(296024,0,0,524,-494,5,189);
-     quest::spawn2(296025,0,0,357,-549,-3,254);
-     quest::spawn2(296026,0,0,357,-451,-2,129);
-     my $instid = quest::GetInstanceID("inktuta",0);
-     quest::setglobal($instid.'_inktuta_status',1,3,"H6");
-     quest::attack($client->GetName());
-   }
+  }
+  if ($text=~/consequences/i || $text=~/Kelekdrix/i) {
+    quest::say("Very well, $name. You brought this upon yourself.");
+    quest::spawn2(296024,537949,0,480,-416,4,56); #Kelekdrix,_Herald_of_Trushar
+    my $instid = quest::GetInstanceID("inktuta",0);
+    quest::setglobal($instid.'_inktuta_status',1,3,"H6");
+    #quest::attack($client->GetName());
+	if ($text=~/consequences/i) {
+	  quest::setglobal($instid.'_inktuta_bonus',1,3,"H6");
+	} else {
+	  quest::setglobal($instid.'_inktuta_bonus',2,3,"H6");
+	}
+    $npc->Depop(1);
+  }
 }

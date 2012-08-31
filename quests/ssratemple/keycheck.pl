@@ -3,7 +3,9 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if(!plugin::check_hasitem($client, 19719) && !$client->KeyRingCheck(19719)) {
-    quest::movepc(162,0,0,2.2,65);
+  if($status<80){
+    if(!plugin::check_hasitem($client, 19719) && !$client->KeyRingCheck(19719)) {
+      quest::movepc(162,0,0,2.2,65);
+    }
   }
 }

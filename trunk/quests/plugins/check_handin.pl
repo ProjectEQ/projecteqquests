@@ -15,6 +15,7 @@ sub check_handin {
              delete $hashref->{$req};
          }
      }
+     quest::clearhandin();
      return 1;
 }
 
@@ -29,7 +30,7 @@ sub check_mq_handin {
 		return(0);
 	}
     }
-	quest::completehandin();
+     quest::completehandin();
      return 1;
 }
 
@@ -70,7 +71,7 @@ sub return_items {
 		}
 		delete $hashref->{$k};
 	}
-	
+	quest::clearhandin();
 	# Return true if items were returned
 	return $items_returned;
 

@@ -1,12 +1,18 @@
-# #Kelekdrix,_Herald_of_Trushar
 
 sub EVENT_SPAWN {
+  quest::modifynpcstat("special_attacks","ABfHG");
   quest::setnexthpevent(99);
 }
 
 sub EVENT_SIGNAL {
   if($signal==1) {
-    quest::settimer("SpawnAdds");
+    quest::settimer("SpawnAdds",30);
+  }
+}
+
+sub EVENT_WAYPOINT {
+  if($x==510 && $y==-495) {
+    quest::modifynpcstat("special_attacks","SQUMCNIDf");
   }
 }
 
@@ -17,6 +23,10 @@ sub EVENT_TIMER {
 	  SPAWN_MY_ADDS();
 	  quest::stoptimer("SpawnAdds");
     }
+  } elsif($timer eq "BanishTop") {
+    my $TopHate = $npc->GetHateTop()->GetName();
+	quest::say("Begone $TopHate");
+    $entity_list->GetClientByName($TopHate)->GMMove(0, 65, -2, 131);
   }
 }
 
@@ -25,6 +35,14 @@ sub EVENT_HP {
     SPAWN_MY_ADDS();
     #go inactive
     quest::modifynpcstat("special_attacks","ABfHG");
+  }
+}
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::settimer("BanishTop", 25);
+  } else {
+    quest::stoptimer("BanishTop");
   }
 }
 
@@ -41,7 +59,7 @@ sub EVENT_DEATH {
 }
 
 sub SPAWN_MY_ADDS {
-  quest::spawn2(quest::chooserandom(296025,296026),0,0,357,-549,-3,63); 
-  quest::spawn2(quest::chooserandom(296025,296026),0,0,357,-451,-2,63);
-  quest::spawn2(quest::chooserandom(296025,296026),0,0,285,-493,-2,63);
+  quest::spawn2(quest::ChooseRandom(296025,296026),0,0,357,-549,-3,63); 
+  quest::spawn2(quest::ChooseRandom(296025,296026),0,0,357,-451,-2,63);
+  quest::spawn2(quest::ChooseRandom(296025,296026),0,0,285,-493,-2,63);
 }

@@ -39,10 +39,11 @@ sub EVENT_TIMER {
       if(!defined $qglobals{$instid.'_inktuta_status'}) { #check for their instance global to exist
         quest::targlobal($instid.'_inktuta_status',0,"H6",0,0,296); #create it if it does not.
       #if the global exists begin to check it's values
-      } elsif($qglobals{$instid.'_inktuta_status'} == 0) { #0 means nothing done, nothing to do here.
-        #if(!$entity_list->GetMobByNpcTypeID(296023)){ 
-          #quest::spawn2(296023,0,0,353,-656,--2,194); #Servant_of_Keleldrix
-        #}
+      } elsif($qglobals{$instid.'_inktuta_status'} == 0) { #0 means nothing done.
+        #safety check to make sure the servant is up to trigger kelekdrix, should never actually happen.
+        if(!$entity_list->GetMobByNpcTypeID(296023)){ 
+          quest::spawn2(296023,0,0,353,-656,--2,194); #Servant_of_Keleldrix
+        }
       } elsif($qglobals{$instid.'_inktuta_status'} == 1) { #Kelekdrix spawned
         quest::spawn2(296024,537949,0,480,-416,4,56); #Kelekdrix,_Herald_of_Trushar
       } elsif($qglobals{$instid.'_inktuta_status'} == 2) {

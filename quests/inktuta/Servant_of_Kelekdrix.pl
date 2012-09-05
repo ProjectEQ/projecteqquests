@@ -10,12 +10,11 @@ sub EVENT_SAY {
     quest::spawn2(296024,537949,0,480,-416,4,56); #Kelekdrix,_Herald_of_Trushar
     my $instid = quest::GetInstanceID("inktuta",0);
     quest::setglobal($instid.'_inktuta_status',1,3,"H6");
-    #quest::attack($client->GetName());
-	if ($text=~/consequences/i) {
-	  quest::setglobal($instid.'_inktuta_bonus',1,3,"H6");
-	} else {
-	  quest::setglobal($instid.'_inktuta_bonus',2,3,"H6");
-	}
+    if ($text=~/consequences/i) {
+      quest::setglobal($instid.'_inktuta_bonus',1,3,"H6");
+    } else {
+      quest::setglobal($instid.'_inktuta_bonus',2,3,"H6");
+    }
     $npc->Depop(1);
   }
 }

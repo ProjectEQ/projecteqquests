@@ -13,8 +13,8 @@ quest::say("Then you are wise indeed.  Would you like to [assist the defenders] 
 if($text=~/seek my enlightenment/i){
 quest::say("Then seek it within these walls.  We welcome all fine upstanding Koada'Dal.");
 }
-if($text=~/what assist the defenders/i){
-quest::say("Seek out the Crushbone orcs of the Faydarks.  We must have their oracle scrolls.  They are illegible to you. but we will study them here in Felwithe.  Only the orc oracles will carry them. so be very careful.  There is also the problem with the [Crushbone runners]."); 
+if($text=~/assist the defenders/i){
+quest::say("Seek out the Crushbone orcs of the Faydarks.  We must have their oracle scrolls.  They are illegible to you, but we will study them here in Felwithe.  Only the orc oracles will carry them, so be very careful.  There is also the problem with the [Crushbone runners]."); 
 }
 if($text=~/what crushbone runners/i){
 quest::say("The Crushbone orcs are sending messages across the Ocean of Tears to Antonica.  Why. we do not know.  The runner is usually spotted on the open pathways of Butcherblock. running toward the docks.  Find him. kill him. and return his note pouch.");

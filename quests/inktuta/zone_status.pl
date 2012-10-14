@@ -42,7 +42,7 @@ sub EVENT_TIMER {
       } elsif($qglobals{$instid.'_inktuta_status'} == 0) { #0 means nothing done.
         #safety check to make sure the servant is up to trigger kelekdrix, should never actually happen.
         if(!$entity_list->GetMobByNpcTypeID(296023)){ 
-          quest::spawn2(296023,0,0,353,-656,--2,194); #Servant_of_Keleldrix
+          quest::spawn2(296023,0,0,353,-656,-2,194); #Servant_of_Keleldrix
         }
       } elsif($qglobals{$instid.'_inktuta_status'} == 1) { #Kelekdrix spawned
         quest::spawn2(296024,537949,0,480,-416,4,56); #Kelekdrix,_Herald_of_Trushar

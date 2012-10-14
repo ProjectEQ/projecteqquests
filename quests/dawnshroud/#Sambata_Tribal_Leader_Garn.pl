@@ -26,10 +26,6 @@
 #
 ############################################# 
 
-sub EVENT_AGGRO {
-    quest::emote("grunts at you and rushes in to attack!");
-}
-
 sub EVENT_DEATH {
     if(!defined $qglobals{"Rockhopper_Sambata"}) {
         quest::spawn_condition($zonesn, 2, 1);

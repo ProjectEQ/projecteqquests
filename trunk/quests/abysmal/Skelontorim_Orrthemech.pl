@@ -68,16 +68,16 @@ sub EVENT_ITEM {
     quest::say("Ah, yes. Here is your dark matter.");
     quest::summonitem(58242,2); #Dark Matter
   }
-  elsif (plugin::check_handin(\%itemcount, 58245 => 4) || plugin::check_handin(\%itemcount, 58245 => 4) || plugin::check_handin(\%itemcount, 58245 => 4) || plugin::check_handin(\%itemcount, 58245 => 4)) { #Simple Spring
+  elsif (plugin::check_handin(\%itemcount, 58245 => 4) || plugin::check_handin(\%itemcount, 58245 => 3) || plugin::check_handin(\%itemcount, 58245 => 2) || plugin::check_handin(\%itemcount, 58245 => 1)) { #Simple Spring
     quest::say("Ah, yes. Good work.");
   }
-  elsif (plugin::check_handin(\%itemcount, 58246 => 4) || plugin::check_handin(\%itemcount, 58246 => 4) || plugin::check_handin(\%itemcount, 58246 => 4) || plugin::check_handin(\%itemcount, 58246 => 4)) { #Simple Pulley
+  elsif (plugin::check_handin(\%itemcount, 58246 => 4) || plugin::check_handin(\%itemcount, 58246 => 3) || plugin::check_handin(\%itemcount, 58246 => 2) || plugin::check_handin(\%itemcount, 58246 => 1)) { #Simple Pulley
     quest::say("Ah, yes. Good work.");
   }
-  elsif (plugin::check_handin(\%itemcount, 58247 => 4) || plugin::check_handin(\%itemcount, 58247 => 4) || plugin::check_handin(\%itemcount, 58247 => 4) || plugin::check_handin(\%itemcount, 58247 => 4)) { #Simple Animated Lure
+  elsif (plugin::check_handin(\%itemcount, 58247 => 4) || plugin::check_handin(\%itemcount, 58247 => 3) || plugin::check_handin(\%itemcount, 58247 => 2) || plugin::check_handin(\%itemcount, 58247 => 1)) { #Simple Animated Lure
     quest::say("Ah, yes. Good work.");
   }
-  elsif (plugin::check_handin(\%itemcount, 58248 => 4) || plugin::check_handin(\%itemcount, 58248 => 4) || plugin::check_handin(\%itemcount, 58248 => 4) || plugin::check_handin(\%itemcount, 58248 => 4)) { #Simple Bow Cam
+  elsif (plugin::check_handin(\%itemcount, 58248 => 4) || plugin::check_handin(\%itemcount, 58248 => 3) || plugin::check_handin(\%itemcount, 58248 => 2) || plugin::check_handin(\%itemcount, 58248 => 1)) { #Simple Bow Cam
     quest::say("Ah, yes. Good work.");
   }
   else {

@@ -4,21 +4,21 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 90) {
+     $npc->WipeHateList();
      $npc->GMMove(445,-489,-45,209);
      quest::setnexthpevent(75);
      quest::setglobal("ikkydoor",1,3,"H6");     
-     $npc->WipeHateList();
   }
   if($hpevent == 75) {
+     $npc->WipeHateList();
      $npc->GMMove(671,-714,-50,191);
      quest::setnexthpevent(50);
      quest::setglobal("ikkydoor",2,3,"H6");     
-     $npc->WipeHateList();
    }
    if($hpevent == 50) {
+      $npc->WipeHateList();
       $npc->GMMove(534,-210,-50,72);
       quest::setglobal("ikkydoor",3,3,"H6");     
-      $npc->WipeHateList();
    }
 }  
 
@@ -39,4 +39,3 @@ foreach $player (@player_list) {
      quest::targlobal("ikkylockout5", 1, "H6", 293115, $charid, 293);
   }
 }
-  

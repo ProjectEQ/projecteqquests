@@ -5,7 +5,3 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
 	quest::depop();
 }
-
-sub EVENT_DEATH {
-	quest::emote("collapses to the ground and begins to decompose at an alarming rate.");
-}

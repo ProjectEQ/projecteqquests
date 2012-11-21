@@ -10,7 +10,9 @@ sub EVENT_SAY {
 	}
 	if(($text=~/prepared to slay/i) && ($faction < 6)) {
 		quest::say("Excellent, I commend you in advance for your courage. Let us make haste lest something awful happen to my loved ones!");
-		quest::start(1);
+		if($x == 1749 && $y == 8) {
+			quest::start(1);
+		}
 	}
 }
 

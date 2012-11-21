@@ -1,5 +1,10 @@
 sub EVENT_SPAWN {
 	$npc->SetAppearance(1);
+	quest::settimer(1,1800);
+}
+
+sub EVENT_TIMER {
+	quest::depop();
 }
 
 sub EVENT_SIGNAL {

@@ -44,8 +44,8 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:steamfont  ID:56130 -- Forpar_Fizfla

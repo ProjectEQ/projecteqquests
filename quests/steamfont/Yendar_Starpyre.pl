@@ -25,43 +25,28 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-
-  if($itemcount{28053} == 1) {
-
+  if(plugin::check_handin(\%itemcount, 28053 => 1)) {
     quest::say("I say, this is indeed a challenge. This is written in what I'm sure is the language of the High Priesthood of Innoruuk. I've often wished I could read this, but I have never had the key to unlock the language. Take this for now.");
-
     quest::ding();
-
     quest::exp(500);
-
     quest::summonitem(28055);
-
- }
-  elsif($itemcount{28055} == 1 && $itemcount{28016} == 1) {
-
+ } elsif(plugin::check_handin(\%itemcount, 28055 => 1, 28016=> 1)) {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
     quest::say("My, this is quite a large list! Yes, I can use the names and dates recorded here to help me understand the script. It should be a simple matter now. A moment, please. Aha, yes, there we go. Translated as best I can! I do hope you're not involved in what is described here, as it is quite fiendish. Oi! You, woman! Give that back! $name, that woman there took your letter! I think I should leave you to discuss it with her. Best of luck!.");
-
     quest::spawn2(56172,0,0,$x - 10,$y + 10,$z,$h);
     quest::depop();
- }
-
+  }
   else {
-
     quest::emote("will not accept this item.");
-
-    plugin::return_items(\%itemcount);
-
- }
-
+  }
+  plugin::return_items(\%itemcount);
 }
 
 
 
 #END of FILE  Quest by: Solid11  Zone:steamfont  ID:56012 -- Yendar_Starpyre
-
 
 

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::say("Hmm. It LOOKS like the samples survived. I will, however, have to test them. But you've done well I suppose. Here. Take this as payment.");
     quest::summonitem(63049);
   }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: steamfont ID: 56129 NPC: Metallurgist_Mirakzin
-

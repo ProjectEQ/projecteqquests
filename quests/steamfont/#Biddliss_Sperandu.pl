@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: steamfont\#Biddliss_Sperandu.pl (56181)

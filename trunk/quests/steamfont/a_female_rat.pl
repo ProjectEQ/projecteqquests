@@ -12,4 +12,5 @@ sub EVENT_ITEM {
     quest::spawn2(56148,0,0,$x,$y,$z,$h);
     quest::depop();
   }
+  plugin::return_items(\%itemcount);
 }

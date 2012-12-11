@@ -23,11 +23,11 @@ sub EVENT_SPAWN {
   # quest::settimer(1,2700);
 }
 
-sub EVENT_COMBAT {
- if ($combat_state == 0){
-   quest::depop();
- }
-} 
+# sub EVENT_COMBAT {
+#  if ($combat_state == 0){
+#   quest::depop();
+#  }
+# } 
 
 sub EVENT_HP {
   $x = $npc->GetX();

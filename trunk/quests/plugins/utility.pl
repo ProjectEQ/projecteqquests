@@ -128,4 +128,19 @@ sub DistNoRootNoZToCoords
 	return $total_dist;
 }
 
+use List::Util qw(first);
+
+# usage plugin::ClassType($class)
+sub ClassType
+{
+    my $class = lc(shift);
+    my %type  = (
+        hybrid => qr/^b(a)?rd|b(eastlord|st)|pal(adin)?|r(anger|ng)|sh(adowknight|d)$/,
+        melee  => qr/^war(rior)?|m(o)?nk|ber(serker)?|rog(ue)?$/,
+        caster => qr/^nec(romancer)?|wiz(ard)?|enc(hanter)?|mag(ician)?$/,
+        priest => qr/^cl(eric|r)|sh(aman|m)|dru(id)?$/
+    );
+    (first { $class =~ $type{$_} } keys %type) // 'other';
+}
+
 1;

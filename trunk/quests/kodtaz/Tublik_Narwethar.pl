@@ -253,23 +253,42 @@ sub EVENT_ITEM {
     }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 12)) {
-    if (plugin::check_handin(\%itemcount, 60170 => 1, 60171 => 1, 60172 => 1)) {
-      quest::say("Well done! You can have these back. It looks like you are ready for the final temple. These artifacts must be combined with three [Vial of Smelted Molten Ore]. Once they are combined you will have your key to the final temple. Bring it to me and I will allow you access to its secrets.");
-      quest::setglobal("ikky",13,5,"F");
+    if (plugin::check_handin(\%itemcount, 60170 == 1)) {
+      if (!defined($qglobals{ikkyraid})) {
+        quest::setglobal("ikkyraid",1,5,"F");
+        $client->Message(4, "Finished! - You've recovered the Artifact of Righteousness!");
+      }
       quest::summonitem(60170);
+    }
+    elsif (plugin::check_handin(\%itemcount, 60171 == 1)) {
+      if (defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 1)) {
+        quest::setglobal("ikkyraid",2,5,"F");
+        $client->Message(4, "Finished! - You've recovered the Artifact of Glorification!");
+      }
       quest::summonitem(60171);
+    }
+    elsif (plugin::check_handin(\%itemcount, 60172 == 1)) {
+      if (defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 2)) {
+        quest::setglobal("ikkyraid",3,5,"F");
+        $client->Message(4, "Finished! - You've recovered the Artifact of Transcendence!");
+        quest::say("Well done! You can have these back. It looks like you are ready for the final temple. These artifacts must be combined with three [Vial of Smelted Molten Ore]. Once they are combined you will have your key to the final temple. Bring it to me and I will allow you access to its secrets.");
+        quest::setglobal("ikky",13,5,"F");
+        $client->Message(4, "Finished! - You've been instructed what needs to be done to make the Icon of the Altar!");
+      }
       quest::summonitem(60172);
     }
-    if (plugin::check_handin(\%itemcount, 60173 => 1)) {
-      quest::say("You can't have this? What kind of trickery is this? I'm alerting the proper autorities you thief.");
-    }
   }
-  elsif (defined($qglobals{ikky}) && ($qglobals{ikky} >= 13)) {
+  elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 13) && defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 3)) {
     if (plugin::check_handin(\%itemcount, 60173 => 1)) {
       quest::say("Well done! You can have this back. Take it to the Temple and you will now be allowed entry.");
       $client->Message(4, "Finished! - You've constructed your Icon of the Altar!");
       quest::setglobal("ikky",14,5,"F");
       quest::summonitem(60173);
+    }
+  }
+  elsif (defined($qglobals{ikky}) && ($qglobals{ikky} < 14)) {
+    if (plugin::check_handin(\%itemcount, 60173 => 1)) {
+      quest::say("You can't have this? What kind of trickery is this? I'm alerting the proper autorities you thief.");
     }
   }
   plugin::return_items(\%itemcount);

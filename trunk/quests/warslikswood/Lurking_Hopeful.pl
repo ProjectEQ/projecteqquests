@@ -34,6 +34,7 @@ sub EVENT_ITEM {
     quest::say("Good timing. Me can hear him giggling. Go down to da stream's end where it opens into a big river between da cliffs. Crazy goblin is usually in dat area stirring up troubles. Go tell him dat you are a berserker and be ready. He go nuts. Good lucks. Me go find help.");
     quest::spawn2(79127,0,0,395.2,888.8,-212,185); #Raving Goblinmaster - Quest
     quest::setglobal("raving",1,0,"M59");
+    $medal = 0;
     $npc->Depop(1);
   }
   else {

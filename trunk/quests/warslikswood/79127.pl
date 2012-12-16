@@ -101,5 +101,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 sub EVENT_DEATH {
   quest::stoptimer(1);
+  $goblin = 0;
+  $stage = 0;
 }
 #EndFile: warslikswood\79127.pl (Raving Goblinmaster - Quest)

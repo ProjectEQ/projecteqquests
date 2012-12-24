@@ -253,21 +253,21 @@ sub EVENT_ITEM {
     }
   }
   elsif (defined($qglobals{ikky}) && ($qglobals{ikky} == 12)) {
-    if (plugin::check_handin(\%itemcount, 60170 == 1)) {
+    if (plugin::check_handin(\%itemcount, 60170 => 1)) {
       if (!defined($qglobals{ikkyraid})) {
         quest::setglobal("ikkyraid",1,5,"F");
         $client->Message(4, "Finished! - You've recovered the Artifact of Righteousness!");
       }
       quest::summonitem(60170);
     }
-    elsif (plugin::check_handin(\%itemcount, 60171 == 1)) {
+    elsif (plugin::check_handin(\%itemcount, 60171 => 1)) {
       if (defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 1)) {
         quest::setglobal("ikkyraid",2,5,"F");
         $client->Message(4, "Finished! - You've recovered the Artifact of Glorification!");
       }
       quest::summonitem(60171);
     }
-    elsif (plugin::check_handin(\%itemcount, 60172 == 1)) {
+    elsif (plugin::check_handin(\%itemcount, 60172 => 1)) {
       if (defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 2)) {
         quest::setglobal("ikkyraid",3,5,"F");
         $client->Message(4, "Finished! - You've recovered the Artifact of Transcendence!");

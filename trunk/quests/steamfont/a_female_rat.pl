@@ -1,7 +1,7 @@
 #Bertoxxulous Initiate quest npc
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 10262 == 1)) {
+  if(plugin::check_handin(\%itemcount, 10262 => 1)) {
     quest::emote("sniffs the vial of liquid, then licks up the contents.");
     quest::summonitem(10263); #Empty infectious vial
     quest::exp(100);

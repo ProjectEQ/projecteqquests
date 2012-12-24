@@ -46,7 +46,8 @@ sub EVENT_ITEM {
   my $c = $itemcount{$i}; #count of moonstones
   if($c > 0) {
     if (plugin::check_handin(\%itemcount, $i => $c )) {
-      for ($i = 1; $i<=$c ; $i++) { 
+      for ($i = 1; $i<=$c ; $i++) {
+        quest::say("Here you go then. Don't go tellin' no Guards where that came from, I would hate to rid myself of a good paying customer.");
         quest::summonitem(13107,5); #Blackburrow Stout
         quest::faction(167,5);
         quest::faction(135,5);
@@ -56,7 +57,7 @@ sub EVENT_ITEM {
       }
     }
   } else {
-    if(plugin::check_handin(\%itemcount, 13131 == 1)) { #Case of Blackburrow Stout
+    if(plugin::check_handin(\%itemcount, 13131 => 1)) { #Case of Blackburrow Stout
       quest::say("Good work, pal. Here's a little dough to spend, just don't spend it at any other bar.");
       quest::givecash(0,0,3,9);
       quest::faction(167,5);

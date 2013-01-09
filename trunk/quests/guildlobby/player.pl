@@ -1,5 +1,5 @@
 sub EVENT_CLICKDOOR {
-  if($doorid == 2 || $doorid == 4) {
+  if($doorid == 2 || $doorid == 4 || $doorid == 40 || $doorid == 42) {
     if($uguild_id > 0) {
       if (defined($qglobals{"ginstance$uguild_id"})) {
         $guildinstance = $qglobals{"ginstance$uguild_id"};

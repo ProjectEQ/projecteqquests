@@ -1,1432 +1,269 @@
-#Dible_Hedledrap.pl
-#Augmentation Refund
-#Yes, this was a beast.  -Kilelen
-
-sub EVENT_SAY { 
-	if($text=~/Hail/i){
-		quest::emote("puffs up his chest and lifts his chin with hearty arrogance.");
-		quest::say("Greetings, $name. It seems some of the strange minerals the Wayfarers Brotherhood sold have broken or stopped working as they should. Luckily, I alone have been tasked by Morden Rasp to exchange a Broken Chunk of Coal, a Cracked Ruby, a Charred Pebble, or any other pieces that don't work properly. I need to examine it first, though. Let me see what you've got!");
-	}
+sub EVENT_SAY {
+    if ( $text =~ /Hail/i ) {
+        quest::emote(
+            "puffs up his chest and lifts his chin with hearty arrogance."
+        );
+        quest::say(
+            "Greetings, $name. It seems some of the strange minerals the "    .
+            "Wayfarers Brotherhood sold have broken or stopped working as "   .
+            "they should. Luckily, I alone have been tasked by Morden Rasp "  .
+            "to exchange a Broken Chunk of Coal, a Cracked Ruby, a Charred "  .
+            "Pebble, or any other pieces that don't work properly. I need to ".
+            "examine it first, though. Let me see what you've got!"
+        );
+    }
 }
 
 sub EVENT_ITEM {
-
-	if(plugin::check_handin(\%itemcount, 42259 => 1)){# Radiant Slimestone of Retribution 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42238 => 1)){# Pristine Prism of Lucidity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42244 => 1)){# Marble Sphere of Conservation 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42233 => 1)){# Cold Slimestone of Fury 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42204 => 1)){# Radiant Marble Sphere of Ire 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42186 => 1)){# Smokey Quartz of Peculiarity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42178 => 1)){# Mangled Slimestone 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42161 => 1)){# Magnetite Prism of Stoutness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42207 => 1)){# Ooze-Covered Pebble of Perfection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42170 => 1)){# Pristine Limestone of Hatred 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42182 => 1)){# Glowing Prism of Brawling 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42209 => 1)){# Radiant Ruby of Understanding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42153 => 1)){# Slimestone Fragment of Dread 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42145 => 1)){# Limestone Shard of Battle Cries 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42199 => 1)){# Radiant Fragment of Dread 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42136 => 1)){# Greenish Magnetite of Immunity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42132 => 1)){# Yellowish Magnetite of Vitality 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42234 => 1)){# Cracked Slimestone of Combat 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42157 => 1)){# Magnetite Shard of Stalwartness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42223 => 1)){# Polished Ore of Power 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(663, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42120 => 1)){# Alluring Limestone of Thrift 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42107 => 1)){# Magnetite Fragment of Fortitude 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42128 => 1)){# Slimestone Fragment of Shock 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42196 => 1)){# Radiant Slimestone of Shock 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42111 => 1)){# Gray Magnetite of Ingenuity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42250 => 1)){# Slippery Slimestone of Endurance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42256 => 1)){# Radiant Slate of Health 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42103 => 1)){# Slimestone Fragment of Ruin 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42217 => 1)){# Peerless Crystal of Enticement 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42218 => 1)){# Peerless Pearl of Magical Warding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42211 => 1)){# Peerless Shard of Might 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42095 => 1)){# Limestone of Suffocation 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42082 => 1)){# Quartz Shard of Force 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42086 => 1)){# Cold Quartz of Resilience 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42078 => 1)){# Venom-Coated Slimestone 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 1);
-		}
-		
-	elsif(plugin::check_handin(\%itemcount, 42057 => 1)){#Robust Blue-Flecked Quartz Shard
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42061 => 1)){# Uneven Quartz of Sturdiness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42070 => 1)){# Scarred Limestone of Vengeance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42049 => 1)){# Spore-Covered Pebble of Warding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42053 => 1)){# Cracked Slimestone of Guarding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42036 => 1)){# Green Microcline Shard of Health 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42045 => 1)){# Cracked Limestone of Aggression 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42028 => 1)){# Poison-Covered Slimestone 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42032 => 1)){# Yellow Microcline Shard of Vigor 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42020 => 1)){# Broken Limestone of Focus 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(60, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42011 => 1)){# Microcline Shard of Quickness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(40, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42007 => 1)){# Microcline Shard of Knowledge 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(30, 1);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42003 => 1)){# Cold Slimestone Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(20, 1);
-		}
-
-
-	elsif(plugin::check_handin(\%itemcount, 42208 => 1)){# Radiant Coal of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42183 => 1)){# Permafrost Chunk of Marring 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42179 => 1)){# Marble Sphere of Ire 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42252 => 1)){# Radiant Diamond of Assault 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42229 => 1)){# Gleaming Prism of Destruction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42235 => 1)){# Icy Diamond of Assault 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42201 => 1)){# Radiant Emerald of Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42187 => 1)){# Tundra Ice of Improvement 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42175 => 1)){# Eternal Ice Prism of Sense 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42166 => 1)){# Polar Ice of Virtue 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42162 => 1)){# Glacial Ice of Toughness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42242 => 1)){#Icy Shard of Resonance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(960, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42133 => 1)){# Flattened Permafrost 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42237 => 1)){# Transparent Shard of Thought 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42137 => 1)){# Distilled Ice of Insight 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42141 => 1)){# Arctic Ice Shard of Keenness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42158 => 1)){# Radiant Permafrost 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42150 => 1)){#Icy Prism of Avoidance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42254 => 1)){# Radiant Shard of Thought 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42224 => 1)){# Obsidian Fragment of Durability 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(663, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42129 => 1)){# Marble Sphere of Disgust 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42195 => 1)){# Radiant Black Diamond 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42125 => 1)){# Brilliant Enchanted Prism 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42104 => 1)){# Smooth Marble Sphere of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42108 => 1)){# Grainy Permafrost of Maiming 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42112 => 1)){# Icy Shard of Illness Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42116 => 1)){# Frigid Shard of Acuteness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42219 => 1)){# Peerless Ruby of Fiery Warding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42212 => 1)){# Peerless Jewel of Nimbleness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42100 => 1)){# Eternal Ice of Replenishment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42091 => 1)){# Heated Shard of Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42087 => 1)){# Frigid Shard of Cleverness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42083 => 1)){# Jagged Permafrost Chunk 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42191 => 1)){# Radiant Permafrost Chunk 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42066 => 1)){# Cracked Icy Shard of Research 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42058 => 1)){# Lethal Permafrost Chunk 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42062 => 1)){# Crushed Frozen Shard of Brilliance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42075 => 1)){# Eternal Ice of Reconstruction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42037 => 1)){# Black Diamond of Advantage 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42054 => 1)){# Jagged Marble Sphere of Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42050 => 1)){# Eternal Ice of Avoidance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42041 => 1)){# Black Diamond of Knowledge 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42033 => 1)){# Glowing Permafrost 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42025 => 1)){# Crushed Ice Fragment of Visions 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42016 => 1)){# Icy Bone Chip of the Elements 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(60, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42012 => 1)){# Black Diamond of Deception 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(40, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42008 => 1)){# Permafrost Chunk of Resilience 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(30, 2);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42236 => 1)){# Onyx Orb of Aggression 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42245 => 1)){# Jagged Gravestone of Affliction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42255 => 1)){# Radiant Prism of Lucidity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42190 => 1)){# Gravestone Fragment of Battle Mastery 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42181 => 1)){# Crypt Stone of Resilience 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42173 => 1)){# Black Diamond of Regeneration 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42241 => 1)){# Gleaming Ore of Dark Healing 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42165 => 1)){# Gravestone Fragment of Flailing Dead 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42206 => 1)){# Blood Ruby of Understanding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42203 => 1)){# Radiant Diamond of Regeneration 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42177 => 1)){# Bloodied Soil of Wit 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42131 => 1)){# Fetid Soil of Hardiness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42156 => 1)){# Gory Crypt Stone of Strength 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42251 => 1)){# Radiant Ore of Combat 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42148 => 1)){# Black Diamond of Absorption 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42152 => 1)){# Noxious Soil of Stability 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42140 => 1)){# Bloodied Gravestone of Cunning 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42225 => 1)){# Ruby Sphere of Intellect 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(663, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42228 => 1)){# Hardened Slate of Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(663, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42248 => 1)){# Chilling Orb of Dark Sight 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42115 => 1)){# Dusty Gravestone of Destruction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42106 => 1)){# Tainted Soil of Battle Stance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42231 => 1)){# Gravestone of Aggression 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42123 => 1)){# Blessed Black Diamond 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42119 => 1)){# Brilliant Blood Ruby of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42127 => 1)){# Eroded Soil of Tenacity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42102 => 1)){# Rotted Soil of Avoidance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42262 => 1)){# Radiant Gravestone of Endurance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42197 => 1)){# Radiant Sphere of Disgust 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42220 => 1)){# Peerless Diamond of Chilling Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42213 => 1)){# Peerless Gem of Deftness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42098 => 1)){# Rejuvenating Bone Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42193 => 1)){#Radiant Diamond Shard 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42077 => 1)){# Thick Soil of Vitality 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42090 => 1)){# Night Agent Gravestone Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42081 => 1)){# Putrid Soil of Essence 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42056 => 1)){# Crypt Stone of Mind Enhancement 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42065 => 1)){# Gravestone of Dire Melodies 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42073 => 1)){# Black Diamond of Crippling 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42044 => 1)){#Plain Blood Ruby of Defense 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42040 => 1)){#Worn Gravestone of Awareness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42052 => 1)){#Corroded Crypt Stone of Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42048 => 1)){# Glowing Black Diamond 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42031 => 1)){# Burning Crypt Stone Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42023 => 1)){# Black Diamond of Preservation 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42027 => 1)){# Broken Crypt Stone of Fortitude 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42015 => 1)){#Crumbled Gravestone of Renewal 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(40, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42006 => 1)){#Crumbling Crypt Stone of Power 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(30, 3);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42002 => 1)){# Crushed Crypt Stone of Genius 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(20, 3);
-		}
-
-
-	elsif(plugin::check_handin(\%itemcount, 42247 => 1)){# Blackened Ore of Retribution 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42172 => 1)){# Glowing Crystal of Endowments 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42205 => 1)){# Solid Coal of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42168 => 1)){# Gold-Flecked Crystal of Negation 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42176 => 1)){# Crystal Prism of Perception 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42230 => 1)){# Bloodied Ore of Vengeance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42185 => 1)){# Glowing Ore of Rapid Thought 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42243 => 1)){#Refined Ore of Harmonies 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(960, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42257 => 1)){# Radiant Chunk of Warmth 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42200 => 1)){# Radiant Mass of Affliction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42143 => 1)){# Preserved Pyrite Crystal 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42232 => 1)){# Polished Sandstone of Ire 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42135 => 1)){# Translucent Ore of Courage 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42160 => 1)){# Refined Ore of Wellness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42151 => 1)){# Adamantine Orb of Intensity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42147 => 1)){# Bastnasite Fragment of Might 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42226 => 1)){# Tainted Shard of Ingenuity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(663, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42239 => 1)){# Crushed Slate of Health 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42110 => 1)){# Slippery Ore of Velocity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42122 => 1)){# Obsidian Orb of Endurance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42126 => 1)){# Feldspar Fragment of Tolerance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42114 => 1)){# Brittle Coal of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42118 => 1)){# Silver-Flecked Crystal of Agony 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42261 => 1)){# Radiant Prism of Perception 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42101 => 1)){# Sparkling Sphere of Resistance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42221 => 1)){# Peerless Opal of Illness Warding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42214 => 1)){# Peerless Sphere of Fortitude 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42093 => 1)){# Freezing Nickel Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42085 => 1)){# Jagged Ore of Foresight 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42192 => 1)){# Radiant Crystal of Affliction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42076 => 1)){# Cylindrical Shard of Acuity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42097 => 1)){# Raw Quartz Crystal of Peculiarity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42068 => 1)){# Cobalt Crystal of Affliction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42072 => 1)){# Sharp Crystal of Learning 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42060 => 1)){# Diffused Ore of Rapidity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42047 => 1)){# Opaque Crystal of Deftness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42039 => 1)){# Loose Coal of Guarding 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42051 => 1)){# Notched Shard of Lost Spirits 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42043 => 1)){# Blazing Flecked Crystal 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42026 => 1)){# Limonite Orb of Attack 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42022 => 1)){# Prismatic Crystal of Intellect 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42035 => 1)){# Refined Ore of Regeneration 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42022 => 1)){# Prismatic Crystal of Intellect 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(84, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42018 => 1)){# Burning Flake of Pyrite 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(60, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42010 => 1)){# Refined Ore of Nimbleness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(30, 4);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42001 => 1)){#Gypsum Flake of Improvement 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(20, 4);
-		}
-
-
-	elsif(plugin::check_handin(\%itemcount, 42246 => 1)){# Sparkling Ruby of Fortune 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42253 => 1)){# Radiant Orb of Aggression 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1450, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42202 => 1)){# Radiant Crystal of Negation 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42163 => 1)){# Sparkling Emerald of Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42188 => 1)){# Pristine Emerald of Harm 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42210 => 1)){# Radiant Pebble of Perfection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42258 => 1)){# Radiant Ore of Dark Healing 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42180 => 1)){# Glowing Sandstone of Focus 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42167 => 1)){# Glowing Sapphire of Courage 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42171 => 1)){# Pristine White Sapphire of Sense 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(1150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42146 => 1)){# Sapphire Sphere of Havoc 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42240 => 1)){# Etched Sandstone of Warmth 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42155 => 1)){# Gleaming Sandstone of Deflection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42138 => 1)){# Heated Desert Emerald Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42142 => 1)){# Sapphire Sphere of Comprehension 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42134 => 1)){# Diamond Prism of Companionship 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(760, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42227 => 1)){# Sparkling Quartz of Resistance 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(663, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42105 => 1)){# Dull Sandstone of Ire 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42113 => 1)){# Sparkling Emerald of Ravaging 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42121 => 1)){# Flawed Sapphire Sphere of War 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42260 => 1)){# Radiant Orb of Dark Sight 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42109 => 1)){# Fractured Diamond Prism of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42130 => 1)){# Shiny Sandstone of Reconstruction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42249 => 1)){# Intricate Prism of Perception 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42117 => 1)){# Raw Sapphire of Proficiency 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42194 => 1)){# Radiant Crystal of Flame 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(510, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42216 => 1)){# Peerless Gemstone of Knowledge 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42215 => 1)){# Peerless Fragment of Intellect 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42222 => 1)){# Peerless Emerald of Poison Protection 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(357, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42092 => 1)){# Finely Cut Ruby of Capability 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42096 => 1)){# Warm Ruby of Wellness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42080 => 1)){# Grainy Sandstone of Clarity 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42088 => 1)){# Searing Flawed Emerald Fragment 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(340, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42071 => 1)){# Dusty Ruby Shard of Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42063 => 1)){# Raw Emerald Shard of Malevolence 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42067 => 1)){# Fractured Ruby Shard of Wellness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(220, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42042 => 1)){# Raw Ruby Shard of the Arcane 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42038 => 1)){# Enhanced Emerald of Destruction 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42046 => 1)){# Flawed Ruby Shard of Victory 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42055 => 1)){# Cracked Sandstone of Health 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(150, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42021 => 1)){# Brittle Ruby Fragment of Brawn 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42030 => 1)){# Jagged Slate of Battle Prowess 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(100, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42017 => 1)){# Colorless Crystal of Prevention 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(60, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42013 => 1)){# Warm Emerald Shard 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(40, 5);
-		}
-
-	elsif(plugin::check_handin(\%itemcount, 42005 => 1)){# Brittle Slate of Keenness 
-		quest::emote("takes the item and tosses it into his satchel.");
-		quest::say("Very well, $name. Go ahead and find something else you'd like.");
-		quest::addldonpoints(20, 5);
-		}
-		
-	else {
-		quest::say("I don't need this.");#text made up
-		plugin::return_items(\%itemcount);
-	}
+    my $handin = {
+        42003 => [ 1, 20,   1 ],    # Cold Slimestone Fragment
+        42002 => [ 1, 20,   3 ],    # Crushed Crypt Stone of Genius
+        42001 => [ 1, 20,   4 ],    # Gypsum Flake of Improvement
+        42005 => [ 1, 20,   5 ],    # Brittle Slate of Keenness
+        42007 => [ 1, 30,   1 ],    # Microcline Shard of Knowledge
+        42008 => [ 1, 30,   2 ],    # Permafrost Chunk of Resilience
+        42006 => [ 1, 30,   3 ],    # Crumbling Crypt Stone of Power
+        42010 => [ 1, 30,   4 ],    # Refined Ore of Nimbleness
+        42011 => [ 1, 40,   1 ],    # Microcline Shard of Quickness
+        42012 => [ 1, 40,   2 ],    # Black Diamond of Deception
+        42015 => [ 1, 40,   3 ],    # Crumbled Gravestone of Renewal
+        42013 => [ 1, 40,   5 ],    # Warm Emerald Shard
+        42020 => [ 1, 60,   1 ],    # Broken Limestone of Focus
+        42016 => [ 1, 60,   2 ],    # Icy Bone Chip of the Elements
+        42018 => [ 1, 60,   4 ],    # Burning Flake of Pyrite
+        42017 => [ 1, 60,   5 ],    # Colorless Crystal of Prevention
+        42022 => [ 1, 84,   4 ],    # Prismatic Crystal of Intellect
+        42028 => [ 1, 100,  1 ],    # Poison-Covered Slimestone
+        42032 => [ 1, 100,  1 ],    # Yellow Microcline Shard of Vigor
+        42033 => [ 1, 100,  2 ],    # Glowing Permafrost
+        42025 => [ 1, 100,  2 ],    # Crushed Ice Fragment of Visions
+        42031 => [ 1, 100,  3 ],    # Burning Crypt Stone Fragment
+        42023 => [ 1, 100,  3 ],    # Black Diamond of Preservation
+        42027 => [ 1, 100,  3 ],    # Broken Crypt Stone of Fortitude
+        42026 => [ 1, 100,  4 ],    # Limonite Orb of Attack
+        42022 => [ 1, 100,  4 ],    # Prismatic Crystal of Intellect
+        42035 => [ 1, 100,  4 ],    # Refined Ore of Regeneration
+        42021 => [ 1, 100,  5 ],    # Brittle Ruby Fragment of Brawn
+        42030 => [ 1, 100,  5 ],    # Jagged Slate of Battle Prowess
+        42049 => [ 1, 150,  1 ],    # Spore-Covered Pebble of Warding
+        42053 => [ 1, 150,  1 ],    # Cracked Slimestone of Guarding
+        42036 => [ 1, 150,  1 ],    # Green Microcline Shard of Health
+        42045 => [ 1, 150,  1 ],    # Cracked Limestone of Aggression
+        42037 => [ 1, 150,  2 ],    # Black Diamond of Advantage
+        42054 => [ 1, 150,  2 ],    # Jagged Marble Sphere of Protection
+        42050 => [ 1, 150,  2 ],    # Eternal Ice of Avoidance
+        42041 => [ 1, 150,  2 ],    # Black Diamond of Knowledge
+        42044 => [ 1, 150,  3 ],    # Plain Blood Ruby of Defense
+        42040 => [ 1, 150,  3 ],    # Worn Gravestone of Awareness
+        42052 => [ 1, 150,  3 ],    # Corroded Crypt Stone of Protection
+        42048 => [ 1, 150,  3 ],    # Glowing Black Diamond
+        42047 => [ 1, 150,  4 ],    # Opaque Crystal of Deftness
+        42039 => [ 1, 150,  4 ],    # Loose Coal of Guarding
+        42051 => [ 1, 150,  4 ],    # Notched Shard of Lost Spirits
+        42043 => [ 1, 150,  4 ],    # Blazing Flecked Crystal
+        42042 => [ 1, 150,  5 ],    # Raw Ruby Shard of the Arcane
+        42038 => [ 1, 150,  5 ],    # Enhanced Emerald of Destruction
+        42046 => [ 1, 150,  5 ],    # Flawed Ruby Shard of Victory
+        42055 => [ 1, 150,  5 ],    # Cracked Sandstone of Health
+        42057 => [ 1, 220,  1 ],    # Robust Blue-Flecked Quartz Shard
+        42061 => [ 1, 220,  1 ],    # Uneven Quartz of Sturdiness
+        42070 => [ 1, 220,  1 ],    # Scarred Limestone of Vengeance
+        42191 => [ 1, 220,  2 ],    # Radiant Permafrost Chunk
+        42066 => [ 1, 220,  2 ],    # Cracked Icy Shard of Research
+        42058 => [ 1, 220,  2 ],    # Lethal Permafrost Chunk
+        42062 => [ 1, 220,  2 ],    # Crushed Frozen Shard of Brilliance
+        42075 => [ 1, 220,  2 ],    # Eternal Ice of Reconstruction
+        42056 => [ 1, 220,  3 ],    # Crypt Stone of Mind Enhancement
+        42065 => [ 1, 220,  3 ],    # Gravestone of Dire Melodies
+        42073 => [ 1, 220,  3 ],    # Black Diamond of Crippling
+        42068 => [ 1, 220,  4 ],    # Cobalt Crystal of Affliction
+        42072 => [ 1, 220,  4 ],    # Sharp Crystal of Learning
+        42060 => [ 1, 220,  4 ],    # Diffused Ore of Rapidity
+        42071 => [ 1, 220,  5 ],    # Dusty Ruby Shard of Prowess
+        42063 => [ 1, 220,  5 ],    # Raw Emerald Shard of Malevolence
+        42067 => [ 1, 220,  5 ],    # Fractured Ruby Shard of Wellness
+        42095 => [ 1, 340,  1 ],    # Limestone of Suffocation
+        42082 => [ 1, 340,  1 ],    # Quartz Shard of Force
+        42086 => [ 1, 340,  1 ],    # Cold Quartz of Resilience
+        42078 => [ 1, 340,  1 ],    # Venom-Coated Slimestone
+        42100 => [ 1, 340,  2 ],    # Eternal Ice of Replenishment
+        42091 => [ 1, 340,  2 ],    # Heated Shard of Protection
+        42087 => [ 1, 340,  2 ],    # Frigid Shard of Cleverness
+        42083 => [ 1, 340,  2 ],    # Jagged Permafrost Chunk
+        42098 => [ 1, 340,  3 ],    # Rejuvenating Bone Fragment
+        42193 => [ 1, 340,  3 ],    # Radiant Diamond Shard
+        42077 => [ 1, 340,  3 ],    # Thick Soil of Vitality
+        42090 => [ 1, 340,  3 ],    # Night Agent Gravestone Fragment
+        42081 => [ 1, 340,  3 ],    # Putrid Soil of Essence
+        42093 => [ 1, 340,  4 ],    # Freezing Nickel Fragment
+        42085 => [ 1, 340,  4 ],    # Jagged Ore of Foresight
+        42192 => [ 1, 340,  4 ],    # Radiant Crystal of Affliction
+        42076 => [ 1, 340,  4 ],    # Cylindrical Shard of Acuity
+        42097 => [ 1, 340,  4 ],    # Raw Quartz Crystal of Peculiarity
+        42092 => [ 1, 340,  5 ],    # Finely Cut Ruby of Capability
+        42096 => [ 1, 340,  5 ],    # Warm Ruby of Wellness
+        42080 => [ 1, 340,  5 ],    # Grainy Sandstone of Clarity
+        42088 => [ 1, 340,  5 ],    # Searing Flawed Emerald Fragment
+        42217 => [ 1, 357,  1 ],    # Peerless Crystal of Enticement
+        42218 => [ 1, 357,  1 ],    # Peerless Pearl of Magical Warding
+        42211 => [ 1, 357,  1 ],    # Peerless Shard of Might
+        42219 => [ 1, 357,  2 ],    # Peerless Ruby of Fiery Warding
+        42212 => [ 1, 357,  2 ],    # Peerless Jewel of Nimbleness
+        42220 => [ 1, 357,  3 ],    # Peerless Diamond of Chilling Protection
+        42213 => [ 1, 357,  3 ],    # Peerless Gem of Deftness
+        42221 => [ 1, 357,  4 ],    # Peerless Opal of Illness Warding
+        42214 => [ 1, 357,  4 ],    # Peerless Sphere of Fortitude
+        42216 => [ 1, 357,  5 ],    # Peerless Gemstone of Knowledge
+        42215 => [ 1, 357,  5 ],    # Peerless Fragment of Intellect
+        42222 => [ 1, 357,  5 ],    # Peerless Emerald of Poison Protection
+        42120 => [ 1, 510,  1 ],    # Alluring Limestone of Thrift
+        42107 => [ 1, 510,  1 ],    # Magnetite Fragment of Fortitude
+        42128 => [ 1, 510,  1 ],    # Slimestone Fragment of Shock
+        42196 => [ 1, 510,  1 ],    # Radiant Slimestone of Shock
+        42111 => [ 1, 510,  1 ],    # Gray Magnetite of Ingenuity
+        42250 => [ 1, 510,  1 ],    # Slippery Slimestone of Endurance
+        42256 => [ 1, 510,  1 ],    # Radiant Slate of Health
+        42103 => [ 1, 510,  1 ],    # Slimestone Fragment of Ruin
+        42129 => [ 1, 510,  2 ],    # Marble Sphere of Disgust
+        42195 => [ 1, 510,  2 ],    # Radiant Black Diamond
+        42125 => [ 1, 510,  2 ],    # Brilliant Enchanted Prism
+        42104 => [ 1, 510,  2 ],    # Smooth Marble Sphere of Prowess
+        42108 => [ 1, 510,  2 ],    # Grainy Permafrost of Maiming
+        42112 => [ 1, 510,  2 ],    # Icy Shard of Illness Protection
+        42116 => [ 1, 510,  2 ],    # Frigid Shard of Acuteness
+        42248 => [ 1, 510,  3 ],    # Chilling Orb of Dark Sight
+        42115 => [ 1, 510,  3 ],    # Dusty Gravestone of Destruction
+        42106 => [ 1, 510,  3 ],    # Tainted Soil of Battle Stance
+        42231 => [ 1, 510,  3 ],    # Gravestone of Aggression
+        42123 => [ 1, 510,  3 ],    # Blessed Black Diamond
+        42119 => [ 1, 510,  3 ],    # Brilliant Blood Ruby of Prowess
+        42127 => [ 1, 510,  3 ],    # Eroded Soil of Tenacity
+        42102 => [ 1, 510,  3 ],    # Rotted Soil of Avoidance
+        42262 => [ 1, 510,  3 ],    # Radiant Gravestone of Endurance
+        42197 => [ 1, 510,  3 ],    # Radiant Sphere of Disgust
+        42239 => [ 1, 510,  4 ],    # Crushed Slate of Health
+        42110 => [ 1, 510,  4 ],    # Slippery Ore of Velocity
+        42122 => [ 1, 510,  4 ],    # Obsidian Orb of Endurance
+        42126 => [ 1, 510,  4 ],    # Feldspar Fragment of Tolerance
+        42114 => [ 1, 510,  4 ],    # Brittle Coal of Prowess
+        42118 => [ 1, 510,  4 ],    # Silver-Flecked Crystal of Agony
+        42261 => [ 1, 510,  4 ],    # Radiant Prism of Perception
+        42101 => [ 1, 510,  4 ],    # Sparkling Sphere of Resistance
+        42105 => [ 1, 510,  5 ],    # Dull Sandstone of Ire
+        42113 => [ 1, 510,  5 ],    # Sparkling Emerald of Ravaging
+        42121 => [ 1, 510,  5 ],    # Flawed Sapphire Sphere of War
+        42260 => [ 1, 510,  5 ],    # Radiant Orb of Dark Sight
+        42109 => [ 1, 510,  5 ],    # Fractured Diamond Prism of Prowess
+        42130 => [ 1, 510,  5 ],    # Shiny Sandstone of Reconstruction
+        42249 => [ 1, 510,  5 ],    # Intricate Prism of Perception
+        42117 => [ 1, 510,  5 ],    # Raw Sapphire of Proficiency
+        42194 => [ 1, 510,  5 ],    # Radiant Crystal of Flame
+        42223 => [ 1, 663,  1 ],    # Polished Ore of Power
+        42224 => [ 1, 663,  2 ],    # Obsidian Fragment of Durability
+        42225 => [ 1, 663,  3 ],    # Ruby Sphere of Intellect
+        42228 => [ 1, 663,  3 ],    # Hardened Slate of Protection
+        42226 => [ 1, 663,  4 ],    # Tainted Shard of Ingenuity
+        42227 => [ 1, 663,  5 ],    # Sparkling Quartz of Resistance
+        42153 => [ 1, 760,  1 ],    # Slimestone Fragment of Dread
+        42145 => [ 1, 760,  1 ],    # Limestone Shard of Battle Cries
+        42199 => [ 1, 760,  1 ],    # Radiant Fragment of Dread
+        42136 => [ 1, 760,  1 ],    # Greenish Magnetite of Immunity
+        42132 => [ 1, 760,  1 ],    # Yellowish Magnetite of Vitality
+        42234 => [ 1, 760,  1 ],    # Cracked Slimestone of Combat
+        42157 => [ 1, 760,  1 ],    # Magnetite Shard of Stalwartness
+        42133 => [ 1, 760,  2 ],    # Flattened Permafrost
+        42237 => [ 1, 760,  2 ],    # Transparent Shard of Thought
+        42137 => [ 1, 760,  2 ],    # Distilled Ice of Insight
+        42141 => [ 1, 760,  2 ],    # Arctic Ice Shard of Keenness
+        42158 => [ 1, 760,  2 ],    # Radiant Permafrost
+        42150 => [ 1, 760,  2 ],    # Icy Prism of Avoidance
+        42254 => [ 1, 760,  2 ],    # Radiant Shard of Thought
+        42131 => [ 1, 760,  3 ],    # Fetid Soil of Hardiness
+        42156 => [ 1, 760,  3 ],    # Gory Crypt Stone of Strength
+        42251 => [ 1, 760,  3 ],    # Radiant Ore of Combat
+        42148 => [ 1, 760,  3 ],    # Black Diamond of Absorption
+        42152 => [ 1, 760,  3 ],    # Noxious Soil of Stability
+        42140 => [ 1, 760,  3 ],    # Bloodied Gravestone of Cunning
+        42257 => [ 1, 760,  4 ],    # Radiant Chunk of Warmth
+        42200 => [ 1, 760,  4 ],    # Radiant Mass of Affliction
+        42143 => [ 1, 760,  4 ],    # Preserved Pyrite Crystal
+        42232 => [ 1, 760,  4 ],    # Polished Sandstone of Ire
+        42135 => [ 1, 760,  4 ],    # Translucent Ore of Courage
+        42160 => [ 1, 760,  4 ],    # Refined Ore of Wellness
+        42151 => [ 1, 760,  4 ],    # Adamantine Orb of Intensity
+        42147 => [ 1, 760,  4 ],    # Bastnasite Fragment of Might
+        42146 => [ 1, 760,  5 ],    # Sapphire Sphere of Havoc
+        42240 => [ 1, 760,  5 ],    # Etched Sandstone of Warmth
+        42155 => [ 1, 760,  5 ],    # Gleaming Sandstone of Deflection
+        42138 => [ 1, 760,  5 ],    # Heated Desert Emerald Fragment
+        42142 => [ 1, 760,  5 ],    # Sapphire Sphere of Comprehension
+        42134 => [ 1, 760,  5 ],    # Diamond Prism of Companionship
+        42242 => [ 1, 960,  2 ],    # Icy Shard of Resonance
+        42243 => [ 1, 960,  4 ],    # Refined Ore of Harmonies
+        42204 => [ 1, 1150, 1 ],    # Radiant Marble Sphere of Ire
+        42186 => [ 1, 1150, 1 ],    # Smokey Quartz of Peculiarity
+        42178 => [ 1, 1150, 1 ],    # Mangled Slimestone
+        42161 => [ 1, 1150, 1 ],    # Magnetite Prism of Stoutness
+        42207 => [ 1, 1150, 1 ],    # Ooze-Covered Pebble of Perfection
+        42170 => [ 1, 1150, 1 ],    # Pristine Limestone of Hatred
+        42182 => [ 1, 1150, 1 ],    # Glowing Prism of Brawling
+        42209 => [ 1, 1150, 1 ],    # Radiant Ruby of Understanding
+        42208 => [ 1, 1150, 2 ],    # Radiant Coal of Prowess
+        42183 => [ 1, 1150, 2 ],    # Permafrost Chunk of Marring
+        42179 => [ 1, 1150, 2 ],    # Marble Sphere of Ire
+        42252 => [ 1, 1150, 2 ],    # Radiant Diamond of Assault
+        42229 => [ 1, 1150, 2 ],    # Gleaming Prism of Destruction
+        42235 => [ 1, 1150, 2 ],    # Icy Diamond of Assault
+        42201 => [ 1, 1150, 2 ],    # Radiant Emerald of Protection
+        42187 => [ 1, 1150, 2 ],    # Tundra Ice of Improvement
+        42175 => [ 1, 1150, 2 ],    # Eternal Ice Prism of Sense
+        42166 => [ 1, 1150, 2 ],    # Polar Ice of Virtue
+        42162 => [ 1, 1150, 2 ],    # Glacial Ice of Toughness
+        42190 => [ 1, 1150, 3 ],    # Gravestone Fragment of Battle Mastery
+        42181 => [ 1, 1150, 3 ],    # Crypt Stone of Resilience
+        42173 => [ 1, 1150, 3 ],    # Black Diamond of Regeneration
+        42241 => [ 1, 1150, 3 ],    # Gleaming Ore of Dark Healing
+        42165 => [ 1, 1150, 3 ],    # Gravestone Fragment of Flailing Dead
+        42206 => [ 1, 1150, 3 ],    # Blood Ruby of Understanding
+        42203 => [ 1, 1150, 3 ],    # Radiant Diamond of Regeneration
+        42177 => [ 1, 1150, 3 ],    # Bloodied Soil of Wit
+        42172 => [ 1, 1150, 4 ],    # Glowing Crystal of Endowments
+        42205 => [ 1, 1150, 4 ],    # Solid Coal of Prowess
+        42168 => [ 1, 1150, 4 ],    # Gold-Flecked Crystal of Negation
+        42176 => [ 1, 1150, 4 ],    # Crystal Prism of Perception
+        42230 => [ 1, 1150, 4 ],    # Bloodied Ore of Vengeance
+        42185 => [ 1, 1150, 4 ],    # Glowing Ore of Rapid Thought
+        42202 => [ 1, 1150, 5 ],    # Radiant Crystal of Negation
+        42163 => [ 1, 1150, 5 ],    # Sparkling Emerald of Protection
+        42188 => [ 1, 1150, 5 ],    # Pristine Emerald of Harm
+        42210 => [ 1, 1150, 5 ],    # Radiant Pebble of Perfection
+        42258 => [ 1, 1150, 5 ],    # Radiant Ore of Dark Healing
+        42180 => [ 1, 1150, 5 ],    # Glowing Sandstone of Focus
+        42167 => [ 1, 1150, 5 ],    # Glowing Sapphire of Courage
+        42171 => [ 1, 1150, 5 ],    # Pristine White Sapphire of Sense
+        42259 => [ 1, 1450, 1 ],    # Radiant Slimestone of Retribution
+        42238 => [ 1, 1450, 1 ],    # Pristine Prism of Lucidity
+        42244 => [ 1, 1450, 1 ],    # Marble Sphere of Conservation
+        42233 => [ 1, 1450, 1 ],    # Cold Slimestone of Fury
+        42236 => [ 1, 1450, 3 ],    # Onyx Orb of Aggression
+        42245 => [ 1, 1450, 3 ],    # Jagged Gravestone of Affliction
+        42255 => [ 1, 1450, 3 ],    # Radiant Prism of Lucidity
+        42247 => [ 1, 1450, 4 ],    # Blackened Ore of Retribution
+        42246 => [ 1, 1450, 5 ],    # Sparkling Ruby of Fortune
+        42253 => [ 1, 1450, 5 ],    # Radiant Orb of Aggression
+    };
+    foreach my $itemID ( keys %itemcount ) {
+        next unless defined $handin->{$itemID};
+        my ( $count, $theme, $points ) = @{ $handin->{$itemID} };
+        if ( plugin::check_handin( \%itemcount, $itemID => $count ) ) {
+            quest::emote("takes the item and tosses it into his satchel.");
+            quest::say(
+                "Very well, $name. Go ahead and find something else you'd like."
+            );
+            quest::addldonpoints( $theme, $points );
+            last;
+        }
+    }
+    quest::say("I don't need this.");
+    plugin::return_items( \%itemcount );
 }
-#END of FILE Zone:sro  ID:35055--Dible_Hedledrap.pl

@@ -64,7 +64,7 @@ sub EVENT_ITEM {
 		quest::summonitem(9107); #Walking Staff of the Shortnoble
 	}
 	elsif(plugin::check_handin(\%itemcount, 18775 =>)) {
-		quest::say("Welcome to the Abbey of Deep Musing.  Here you can train an draise your abilities to the peak of perfection.  Take this tunic and wear it with pride.");
+		quest::say("Welcome to the Abbey of Deep Musing.  Here you can train and raise your abilities to the peak of perfection.  Take this tunic and wear it with pride.");
 		quest::summonitem(13517);  #worn felt tunic
 		quest::ding();
 		quest::faction(76, 5); #Deep Muses

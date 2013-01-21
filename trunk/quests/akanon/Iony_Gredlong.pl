@@ -63,8 +63,12 @@ sub EVENT_ITEM {
     quest::say("Thank you! Here, take this staff and good luck on your journey."); #Text made up
     quest::summonitem(9107); #Walking Staff of the Shortnoble
   }
+  elsif(plugin::check_handin(\%itemcount, 18775 => 1)) {
+    quest::say("Welcome young cleric. Take this and bring great pride to your name!"); #Text made up
+    quest::summonitem(13517); #Worn Felt Tunic*
+  }
   else {
     quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }

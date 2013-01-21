@@ -59,16 +59,23 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 9105 => 3, 9106 => 1)) {
-    quest::say("Thank you! Here, take this staff and good luck on your journey."); #Text made up
-    quest::summonitem(9107); #Walking Staff of the Shortnoble
-  }
-  elsif(plugin::check_handin(\%itemcount, 18775 => 1)) {
-    quest::say("Welcome young cleric. Take this and bring great pride to your name!"); #Text made up
-    quest::summonitem(13517); #Worn Felt Tunic*
-  }
-  else {
-    quest::say("I do not need this.");
-  }
-  plugin::return_items(\%itemcount);
+	if(plugin::check_handin(\%itemcount, 9105 => 3, 9106 => 1)) {
+		quest::say("Thank you! Here, take this staff and good luck on your journey."); #Text made up
+		quest::summonitem(9107); #Walking Staff of the Shortnoble
+	}
+	elsif(plugin::check_handin(\%itemcount, 18775 =>)) {
+		quest::say("Welcome to the Abbey of Deep Musing.  Here you can train an draise your abilities to the peak of perfection.  Take this tunic and wear it with pride.");
+		quest::summonitem(13517);  #worn felt tunic
+		quest::ding();
+		quest::faction(76, 5); #Deep Muses
+		quest::faction(210,5); #Merchants of Ak'Anon
+		quest::faction(115,5); #Gem Choppers
+		quest::faction(71,-10); #Dark Reflection
+		quest::exp(250);
+	}
+	else {
+		quest::say("I do not need this.");
+    }
+	plugin::return_items(\%itemcount);
 }
+

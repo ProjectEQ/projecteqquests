@@ -63,7 +63,7 @@ sub EVENT_ITEM {
 		quest::say("Thank you! Here, take this staff and good luck on your journey."); #Text made up
 		quest::summonitem(9107); #Walking Staff of the Shortnoble
 	}
-	elsif(plugin::check_handin(\%itemcount, 18775 =>)) {
+	elsif(plugin::check_handin(\%itemcount, 18775 => 1)) {
 		quest::say("Welcome to the Abbey of Deep Musing.  Here you can train and raise your abilities to the peak of perfection.  Take this tunic and wear it with pride.");
 		quest::summonitem(13517);  #worn felt tunic
 		quest::ding();

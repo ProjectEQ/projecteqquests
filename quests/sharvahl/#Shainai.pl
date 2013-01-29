@@ -50,18 +50,18 @@ sub EVENT_SAY {
 	}
 	if((($wp > 16) && ($wp < 27)) && ($text=~/follow/i)) {
 		quest::spawn2($a,29,0,401,135,-188,0);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 	if((($wp > 26) && ($wp < 32)) && ($text=~/follow/i)) {
 		quest::spawn2($a,27,0,129,169,-248,0);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 	if((($wp > 31) && ($wp < 38)) && ($text=~/follow/i)) {
 		quest::spawn2($a,28,0,95,188,-248,0);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 	if((($wp > 37) && ($wp < 61)) && ($text=~/follow/i)) {
 		quest::spawn2($a,30,0,-373,190,-236,0);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }

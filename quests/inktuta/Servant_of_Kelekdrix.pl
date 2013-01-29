@@ -15,6 +15,6 @@ sub EVENT_SAY {
     } else {
       quest::setglobal($instid.'_inktuta_bonus',2,3,"H6");
     }
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
 }

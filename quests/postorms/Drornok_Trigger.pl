@@ -9,7 +9,7 @@ sub EVENT_SIGNAL {  # Signal from the a_tempest_toad death
   $drornokcheck = $entity_list->GetMobByNpcTypeID(210239); # Just incase
   if(!$temptoadcheck && !$drornokcheck) {
     quest::spawn2(210239,0,0,-80,-190,-425,140); # Drornok_Tok_Vo`Lok
-    $npc->Depop(1); #This is the trigger and does need  to repop
+    quest::depop_withtimer(); #This is the trigger and does need  to repop
   }
 }
 

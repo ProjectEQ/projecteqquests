@@ -5,7 +5,7 @@ sub EVENT_SAY{
 }
 
 sub EVENT_SIGNAL{
-	$npc->Depop(1);
+	quest::depop_withtimer();
 }
 
 sub EVENT_ITEM{

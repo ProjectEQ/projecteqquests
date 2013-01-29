@@ -30,7 +30,7 @@ sub EVENT_SIGNAL {
 		quest::emote("leers at the waitress 'Anything you bring me will taste like heaven!  If I have to choose, I'll have a light beer.'");
 	}
 	if($signal == 5) {
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }
 

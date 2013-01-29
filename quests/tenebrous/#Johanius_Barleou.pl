@@ -27,9 +27,9 @@ sub EVENT_WAYPOINT_ARRIVE {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::spawn2(172111,2,0,$x,$y,$z,$h);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 	if($signal == 2) {
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }

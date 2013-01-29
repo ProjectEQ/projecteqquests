@@ -14,7 +14,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 20690 => 1, 20689 => 1, 20688 => 1)){
   quest::say("My heart cleansed of Corruption can interrupt the Flow of the corruption between the priest and his dark god, force it upon him quickly, I can sense him, he is in the Karana's somewhere.");
   quest::summonitem(20695);
-  $npc->Depop(1);
+  quest::depop_withtimer();
 }
 
   else {

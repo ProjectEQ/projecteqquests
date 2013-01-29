@@ -26,7 +26,7 @@ sub EVENT_SIGNAL { # Signal from the death of any appropriate named or trash
   $name2check = $entity_list->GetMobByNpcTypeID(210027);  # Zertuken_the_Unyielding
   if(!$trash1check && !$trash2check && !$trash3check && !$name1check && !$name2check) {
     quest::spawn2(210229,0,0,$x,$y,$z,$h); #Neffiken_Lord_Kelek-Vor
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
 }
 

@@ -18,5 +18,5 @@ sub EVENT_DEATH {
 
 sub EVENT_TIMER {
   quest::stoptimer(1);
-  $npc->Depop(1);
+  quest::depop_withtimer();
 }

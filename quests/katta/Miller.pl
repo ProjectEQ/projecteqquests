@@ -36,6 +36,6 @@ sub EVENT_SIGNAL {
 	if($signal == 9) {
 		quest::say("Wait for me!");
 		quest::spawn2(160376,26,0,$x,$y,$z,$h);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }

@@ -39,5 +39,5 @@ sub BEGIN_MB_EVENT {
   #spawn the targetable version and depop untargetable version.
   quest::spawn2(206074,0,0,$x,$y,$z,0);
   #depop with respawn timer active.
-  $npc->Depop(1);
+  quest::depop_withtimer();
 }

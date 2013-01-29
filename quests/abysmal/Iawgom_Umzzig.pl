@@ -16,7 +16,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 		quest::signalwith(279044,5,1);
 		quest::signalwith(279045,5,1);
 		quest::signalwith(279046,5,1);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }
 

@@ -31,7 +31,7 @@ else{
 sub EVENT_TIMER {
  if ($timer eq "Depop") {
    quest::stoptimer("Depop");
-   $npc->Depop(1);
+   quest::depop_withtimer();
  }
  if ($timer eq "sit") {
    $npc->SetAppearance(1);

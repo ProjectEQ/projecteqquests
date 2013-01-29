@@ -12,7 +12,7 @@ sub EVENT_TIMER {
     quest::delglobal("gaschmb1complete");
     quest::spawn2(292010,0,0,-288,-940,-24,65);
     quest::spawn2(292007,0,0,-264,-940,-24,193);
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   else {
     quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");

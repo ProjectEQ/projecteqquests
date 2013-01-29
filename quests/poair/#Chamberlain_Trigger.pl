@@ -132,13 +132,13 @@ if($timer eq "ChamberlainCheck") {
   my $Spawn = quest::ChooseRandom(215480,215480,215480,215476,215476);
   quest::spawn2($Spawn,0,0,461,498,-85.8,2.5);
   quest::stoptimer("ChamberlainCheck");
-  $npc->Depop(1);
+  quest::depop_withtimer();
  }
 }
 elsif($timer eq "DepopTrigger") {
  quest::stoptimer("DepopTrigger");
  quest::stoptimer("ChamberlainCheck");
- $npc->Depop(1);
+ quest::depop_withtimer();
  }
 }
 

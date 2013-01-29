@@ -46,7 +46,7 @@ sub EVENT_SIGNAL {
 	if($signal == 5) {
 		quest::signalwith(160111,9,1);
 		quest::spawn2(160377,25,0,$x,$y,$z,$h);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }
 

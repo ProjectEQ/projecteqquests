@@ -8,7 +8,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 14331 => 1)) { #Ro's Breath
     quest::say("So, I've been discovered! You must know Camin - he is one of the only people who could have recognized my work. I have worked very hard to mask my presence here.");
     quest::unique_spawn(29089,0,0,$x,$y,$z,$h);
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   #Return Love Note handin
   if (plugin::check_handin(\%itemcount, 14335 => 1)) {
@@ -28,12 +28,12 @@ sub EVENT_TIMER {
   if ($timer eq "sendsignala") {
     quest::signalwith(29089,101,0); #signal arantir to set wizepicA = 1
     quest::stoptimer("sendsignala");
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   if ($timer eq "sendsignalb") {
     quest::signalwith(29089,102,0); #signal arantir to set wizepicB = 1
     quest::stoptimer("sendsignalb");
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
 }
 

@@ -25,7 +25,7 @@ sub EVENT_TIMER {
 		quest::follow($follow_target);
 	}
 	if($timer == 2) {
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }
 

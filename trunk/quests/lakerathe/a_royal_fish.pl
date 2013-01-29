@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 		quest::faction( 8, 10);
 		quest::faction( 43, 10);
 		quest::faction( 178, 10);
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 	else {
 		plugin::return_items(\%itemcount);

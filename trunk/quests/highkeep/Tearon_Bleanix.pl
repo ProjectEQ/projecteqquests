@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 		quest::faction( 43, 10);
 		quest::faction( 178, 10);
 		quest::exp(500); 
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 	else {
 		quest::say("Royal am..amulet and the key to this room..  Then I will be in peace.");

@@ -84,7 +84,7 @@ sub EVENT_SIGNAL {
 		
 		if ($signal == 214113) {	#RZtW dead, depop
                         quest::updatespawntimer(214123,432000);
-			$npc->Depop(1);
+			quest::depop_withtimer();
 		}
 }
 

@@ -10,7 +10,7 @@ sub EVENT_ENTER {
 sub EVENT_TIMER {
   if (defined($qglobals{gaschmb2complete})) {
     quest::delglobal("gaschmb2complete");
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   else {
     quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");

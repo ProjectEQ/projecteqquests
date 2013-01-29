@@ -36,7 +36,7 @@ sub EVENT_TIMER {
    if($timer eq "RGT") {
       quest::stoptimer("RGT");
       quest::delglobal("Rockhopper_Sambata");
-      $npc->Depop(1);
+      quest::depop_withtimer();
    }
    if($timer eq "setqg") {
       quest::stoptimer("setqg");

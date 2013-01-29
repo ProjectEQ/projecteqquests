@@ -50,7 +50,7 @@ sub EVENT_TIMER {
   } elsif($timer == 2 && !$entity_list->GetMobByNpcTypeID(206067)){
     EVENT_WIN();
   } elsif($timer == 3) {
-    $npc->Depop(1);
+    quest::depop_withtimer();
     $walking = 0;
     $won = 0;
   }

@@ -15,6 +15,6 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
   if($signal == 1) { 
     quest::spawn2(284097,0,0,1447,-586,106,0);
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
 }

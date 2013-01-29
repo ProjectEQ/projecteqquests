@@ -2,7 +2,7 @@
 
 sub EVENT_SIGNAL {
  if($signal == 0) {
-   $npc->Depop(1);
+   quest::depop_withtimer();
  }
 }
 

@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     quest::spawn2(79127,0,0,395.2,888.8,-212,185); #Raving Goblinmaster - Quest
     quest::setglobal("raving",1,0,"M59");
     $medal = 0;
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   else {
     quest::say("I have no use for this, $name.");

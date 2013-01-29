@@ -30,7 +30,7 @@ sub EVENT_SIGNAL {
 		quest::emote("shakes his head. 'I've tasted yer light beer, can't stand it.  Bring me a dark. At least that stuff won't make me ill.'");
 	}
 	if($signal == 5) {
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }
 

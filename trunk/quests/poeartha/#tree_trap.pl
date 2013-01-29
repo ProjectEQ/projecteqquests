@@ -33,5 +33,5 @@ sub EVENT_ENTER {
  quest::spawn2(218086,0,0,$x,$y,$z,$h); # A Tenacious Arborean
 
  # Depop Trap.
- $npc->Depop(1);
+ quest::depop_withtimer();
 }

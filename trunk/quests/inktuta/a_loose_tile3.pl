@@ -8,7 +8,7 @@ sub EVENT_ENTER {
   quest::spawn2(296048,0,0,-533,-798,-122,64);
   quest::spawn2(296048,0,0,-454,-798,-122,192);
   quest::spawn2(296048,0,0,-454,-737,-122,192);
-  $npc->Depop(1);
+  quest::depop_withtimer();
   my $instid = quest::GetInstanceID("inktuta",0);
   quest::setglobal($instid.'_inktuta_status',7,3,"H6");
 }

@@ -1,4 +1,4 @@
 sub EVENT_AGGRO {
 	quest::spawn2(quest::ChooseRandom(173077,173093),0,0,$x,$y,$z,$h);
-	$npc->Depop(1);
+	quest::depop_withtimer();
 }

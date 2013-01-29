@@ -6,6 +6,6 @@ sub EVENT_TIMER {
   if($timer == 4 && $x == 1125 && $y == 0) {
     quest::signalwith(206046,1,1);
     $npc->CastSpell(2321,206072);
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
 }

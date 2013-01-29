@@ -9,5 +9,5 @@ sub EVENT_ENTER {
   quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0,-680,-1213,3,131);
   quest::spawn2(quest::ChooseRandom(292029,292005,292030,292001,292006,292002),4,0,-701,-1212,3,131);
   quest::ze(15,"A low-pitched voice rumbles, Here the trespassers come. They've almost reached the threshold of the Chamber of Rage. Ambush them, now!");
-  $npc->Depop(1);
+  quest::depop_withtimer();
 }

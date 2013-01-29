@@ -4,7 +4,7 @@ sub EVENT_ITEM {
     quest::ding();
 	quest::spawn2(172159,516093,0,820,743,-61,201);  
     quest::exp(1000);
-	$npc->Depop(1);
+	quest::depop_withtimer();
   }
    else {
     plugin::return_items(\%itemcount);

@@ -8,7 +8,7 @@ sub EVENT_WAYPOINT_DEPART {
 
 sub EVENT_TIMER {
   quest::stoptimer(1);
-  $npc->depop(1);
+  quest::depop_withtimer();
 }
 
 # Quest by mystic414

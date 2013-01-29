@@ -10,6 +10,6 @@ sub EVENT_SPAWN {
 sub EVENT_ENTER {
   quest::emote("of living stone leaps out at you from amongst the rocks!");
   quest::spawn2(quest::ChooseRandom(171063,171060,171055,171054,171053,171051,171064,171069),0,0,$x,$y,$z,$h);
-  $npc->Depop(1);
+  quest::depop_withtimer();
 }
 

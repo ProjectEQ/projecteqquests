@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::say("What's this? Egads! It's perfect.  Now all we gotta do is hope he bites.' Dolgin takes a little of the essence and smears it on a piece of bread. He places the bait into the water and watches intently.");
     quest::summonitem("20696");
     quest::spawn2(96073,0,0,-2178,-11745,-0.63,63);
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount); # return unused items
 }

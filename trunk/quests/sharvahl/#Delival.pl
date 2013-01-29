@@ -20,7 +20,7 @@ sub EVENT_SIGNAL {
 	my $h = $npc->GetHeading();
 	if($signal==1){
 		quest::spawn2($a,0,0,$x,$y,$z,$h);
-		$npc->Depop(1);	
+		quest::depop_withtimer();	
 	}
 	if($signal==2){
 		quest::settimer("safe",700);

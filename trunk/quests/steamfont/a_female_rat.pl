@@ -10,7 +10,7 @@ sub EVENT_ITEM {
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
     quest::spawn2(56148,0,0,$x,$y,$z,$h);
-    $npc->Depop(1);
+    quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount);
 }

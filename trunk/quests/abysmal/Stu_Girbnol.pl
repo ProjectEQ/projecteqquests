@@ -26,7 +26,7 @@ sub EVENT_SIGNAL {
 		quest::say("I'll have a malt and hurry it up!  I haven't got all day.");
 	}
 	if($signal == 5) {
-		$npc->Depop(1);
+		quest::depop_withtimer();
 	}
 }
 

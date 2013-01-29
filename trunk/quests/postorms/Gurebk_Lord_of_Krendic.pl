@@ -28,7 +28,7 @@ sub EVENT_SIGNAL { # Signal from the death of any appropriate named or trash
 
   if(!$trash1check && !$trash2check && !$trash3check && !$name1check && !$name2check) {
     quest::spawn2(210230,0,0,$x,$y,$z,$h); #Gurebk_Lord_of_Krendic
-    $npc->Depop(1); # Will need to repop
+    quest::depop_withtimer(); # Will need to repop
   }
 }
 

@@ -14,8 +14,32 @@ sub EVENT_CLICKDOOR {
       }
     }
   }
-  if(($doorid >= 5) && ($doorid <= 38))
+  if((($doorid >= 5) && ($doorid <= 38)) ||  (($doorid >= 43) && ($doorid <= 76)))
   {
 	$client->OpenLFGuildWindow();
   }
+}
+
+sub EVENT_ENTERZONE {
+	if(($client->GetClientVersionBit() & 4294967264)!= 0) {
+		if($client->GetInstanceID() != 5) {
+			quest::settimer(1,30);
+			$client->Message(0,"Invalid Zone(344:0): You will be redirected to the proper instance in 30 seconds.");
+		}
+	}
+	else {
+		if($client->GetInstanceID() == 5) {
+			quest::settimer(2,30);
+			$client->Message(0,"Invalid Zone(344:5): You will be redirected to the proper zone in 30 seconds.");
+		}
+	}
+}
+	
+sub EVENT_TIMER {
+	if($timer == 1){
+		quest::MovePCInstance(344,5,$x,$y,$z,225);
+	}
+	if($timer == 2){
+		quest::movepc(344,$x,$y,$z,225);
+	}
 }

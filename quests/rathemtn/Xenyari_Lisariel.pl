@@ -36,7 +36,7 @@ sub EVENT_ITEM {
    }
    elsif (plugin::check_handin(\%itemcount,10193=>1)) {
       quest::emote("bounces around with glee at the sight of your gift, smiles at you, and dons the telesm. As she clasps the telesm around her neck, she begins to writhe in agony, and slowly fades from sight leaving just the telesm, which is now pulsating with vibrant energy.");
-      quest::depop();
+      quest::depop_withtimer();
       quest::summonitem(10194);
       quest::exp(10000);
    } else {

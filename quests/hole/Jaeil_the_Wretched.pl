@@ -41,7 +41,7 @@ sub EVENT_ITEM {
     $mob1 = $entity_list->GetMobID($entid1);
     $mob1attack = $mob1->CastToNPC();
     $mob1attack->AddToHateList($client, 1);
-    quest::depop();
+    quest::depop_withtimer();
     quest::stoptimer("chatter");
     quest::clear_proximity();
   }

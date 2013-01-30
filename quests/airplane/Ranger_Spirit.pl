@@ -9,12 +9,12 @@ sub EVENT_SAY {
       if($text=~/Relinin Skyrunner/i && $class eq "Ranger"){
         quest::say("I shall summon him for you then");
         quest::spawn2(71095,0,0,617.1,1399.5,-766.9,129.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if($text=~/Gordon Treecaller/i && $class eq "Ranger"){
         quest::say("I shall summon him for you then");
         quest::spawn2(71090,0,0,592.8,1400.1,-766.9,129.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
 }
 

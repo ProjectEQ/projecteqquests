@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 # Hand in Ryla's Bottle
   if (plugin::check_handin(\%itemcount, 12964 => 1)) {
     quest::summonitem(12967); # Bottle of swirling smoke (Ryla's soul)
-    quest::depop();
+    quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount); 
 }

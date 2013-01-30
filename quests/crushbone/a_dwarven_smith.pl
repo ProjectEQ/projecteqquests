@@ -16,7 +16,7 @@ sub EVENT_ITEM{
     quest::summonitem(6315);
     quest::exp(30000);
     quest::ding();
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 sub EVENT_SAY{

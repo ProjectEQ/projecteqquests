@@ -14,7 +14,7 @@ sub EVENT_SPAWN {
     $trigger_up = $entity_list->GetMobByNpcTypeID(214123); 
 	
 	if (!$trigger_up) {
-		quest::depop();
+		quest::depop_withtimer();
 	}
 }
 

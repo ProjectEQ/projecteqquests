@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::emote("begins to fade away.");
     quest::say("Bye bye!");
     quest::summonitem(20371);
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);

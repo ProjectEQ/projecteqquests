@@ -11,7 +11,7 @@ if ($signal == 1) {
   if($gcounter == 10){
   quest::depop(167662);
   quest::spawn(167661,0,0,-1247,535,40);
-  quest::depop();
+  quest::depop_withtimer();
      $gcounter = 0;
  } 
 }

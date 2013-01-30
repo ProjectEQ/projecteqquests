@@ -8,12 +8,12 @@ sub EVENT_SAY {
       if(($text=~/wu/i) && ($class eq "Monk")){
         quest::say("I shall summon them for you");
         quest::spawn2(71097,0,0,660.0,1332.3,-766.9,189.9);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if(($text=~/ton po/i) && ($class eq "Monk")){
         quest::say("I shall summon them for you");
         quest::spawn2(71096,0,0,660.0,1315.0,-766.9,189.9);
-        quest::depop();
+        quest::depop_withtimer();
         }
 }
 

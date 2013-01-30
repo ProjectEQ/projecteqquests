@@ -11,7 +11,7 @@ $protectorfire = $entity_list->GetMobByNpcTypeID(278109);
 if ($timer eq "vindicator") {
 if ($elemrest || $furiousmagma || $inflamedchamp || $protectorfire) {
   quest::stoptimer("vindicator");
-  quest::depop();
+  quest::depop_withtimer();
   } 
    }
     }

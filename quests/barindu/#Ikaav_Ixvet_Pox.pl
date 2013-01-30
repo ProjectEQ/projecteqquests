@@ -7,7 +7,7 @@ sub EVENT_SIGNAL {
   quest::say("What have you done, slave! Try to poison me? You will pay for your insolence!");
   quest::attacknpctype(283081);
   quest::signalwith(283047,3,1);
-  quest::depop();
+  quest::depop_withtimer();
   quest::spawn2(283162,0,0,$x,$y,$z,$h);
 }
 }

@@ -9,7 +9,7 @@ sub EVENT_SAY {
     $bossobj = $entity_list->GetMobID($boss);
     $bossnpc = $bossobj->CastToNPC();
     $bossnpc->AddToHateList($client,1);
-    quest::depop();
+    quest::depop_withtimer();
   }
 } 
 

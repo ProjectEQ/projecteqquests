@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   quest::ding();
   quest::faction(317,20);
   quest::faction(193,10);
-  quest::depop();
+  quest::depop_withtimer();
  }
  else{ 
  plugin::return_items(\%itemcount);

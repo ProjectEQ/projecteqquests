@@ -33,7 +33,7 @@ foreach $player (@player_list) {
      quest::targlobal("destper", 1, "H6", 292008, $charid, 292);
   }
   $client->Message(15,"Your time has elapsed, you must suffer the punishment of failure, there is nothing I can do to help now.");
-  quest::depop();
+  quest::depop_withtimer();
 }
 
 sub EVENT_DEATH {

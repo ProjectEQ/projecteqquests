@@ -33,7 +33,7 @@ sub EVENT_SIGNAL {
   if ($ocounter == 4 ) {
     quest::signalwith(226066,66,0);
     quest::spawn2(226095,0,0,479,197,3,191);
-    quest::depop();
+    quest::depop_withtimer();
     $ocounter = 0;
 }
  }

@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("From the information I have gathered the last time she came above ground was somewhere in the middle of the. . . Suddenly as if staring in the face of death Saeko's blue skin turns deathly grey. She looks at you for a moment and begins to cast a spell. That's when you hear a loud chittering behind you.");
     quest::emote("begins to cast the gate spell");
     quest::spawn2(35146,0,0,544,233,-21,163);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

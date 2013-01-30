@@ -10,7 +10,7 @@ sub EVENT_ITEM {
     quest::say("Very well, $name, if you wish death so greatly, we will be happy to oblige. My master projects part of himself in the wilder lands known as the Overthere. He has granted you an audience. Find him and show him the head of our earth brother. At that point, we will discuss how we will end your life.");
     quest::summonitem(1686); #Trunt's Head
     quest::setglobal("Trunt",1,5,"F");
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I have no use for this, $name.");

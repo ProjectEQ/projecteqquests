@@ -33,7 +33,7 @@ sub EVENT_TIMER {
   quest::stoptimer("SrafenSpawn");
  }
  if ($timer eq "OoglynDepop") {
-  quest::depop();
+  quest::depop_withtimer();
   quest::stoptimer("OoglynDepop");
  }
 }

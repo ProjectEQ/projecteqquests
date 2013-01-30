@@ -11,7 +11,7 @@ sub EVENT_ITEM {
     quest::emote("is engulfed by a shimmering blue light! An inhuman expression of rage crosses his face and flames leap in his eyes as he begins to vanish in the shimmering light! 'The Triumvirate may have succeeded in sending me back to my cursed homeland for the time being! I swear to you I shall return from Skyfire and destroy all of the Triumvirate Missionaries in flames!'");
     quest::summonitem(17175); # 17175  Zordak's Box of Bindings
     quest::summonitem(28059); # 28059  Swirling Pearl
-    quest::depop();
+    quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount); # return unused items
 }

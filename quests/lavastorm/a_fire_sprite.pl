@@ -24,7 +24,7 @@ sub EVENT_SAY {
   }
   elsif($text=~/i challenge eejag/i) {
     quest::spawn(27119,0,0,126,1789,-42);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 # End of File

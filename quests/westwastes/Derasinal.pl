@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     if(!plugin::check_hasitem($client,1893) || !plugin::check_hasitem($client,1894) || !plugin::check_hasitem($client,1896)) {
       quest::summonitem(1908); #Jualicn's Token
     }
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I have no need for this item $name, you can have it back.");

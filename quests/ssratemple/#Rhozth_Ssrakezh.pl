@@ -2,7 +2,7 @@
 sub EVENT_SPAWN {
 	#check for our event global and see if we should even be up
 	if(defined $qglobals{cursed_dead}) {
-		quest::depop();
+		quest::depop_withtimer();
 	}
 }
 

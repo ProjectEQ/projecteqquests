@@ -8,12 +8,12 @@ sub EVENT_SAY {
   if(($text=~/Neasin/i) && ($class eq "Wizard")) {
     quest::say("I will summon him for you then");
     quest::spawn2(71092,0,0,585,1304.3,-766.9,0.1);
-    quest::depop();
+    quest::depop_withtimer();
   }
   if(($text=~/Abec/i) && ($class eq "Wizard")) {
     quest::say("I will summon him for you then");
     quest::spawn2(71079,0,0,585,1304.3,-766.9,0.1);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 #END of FILE Zone:airplane  ID:5408 -- Wizard_Schrock

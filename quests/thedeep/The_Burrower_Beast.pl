@@ -22,7 +22,7 @@ sub EVENT_SIGNAL {
     quest::signalwith(164085,102,0);
   }
   elsif ($signal == 201) { #success
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

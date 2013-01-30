@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::spawn2(33159, 0, 0, -1152, -362, 1.19, 0); #a_faithful_farmer
     quest::say("I think I understand a little better about faith. Maybe my faith brought you here, maybe yours did, I don't know. I don't think it matters. You've shown me something about kindness as well. Thank you so much!");
     quest::summonitem(62633); #Tear-stained Poem of the Storms
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I have no use for this.");

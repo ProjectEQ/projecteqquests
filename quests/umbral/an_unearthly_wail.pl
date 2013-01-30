@@ -10,7 +10,7 @@ sub EVENT_SIGNAL {
     $chantcount += 1;
     quest::shout("fills the air as the Dark Masters begin chanting for the coming of doom.");
     if ($chantcount == 10) {
-      quest::depop();
+      quest::depop_withtimer();
     }
   }
   if ($signal == 399) {

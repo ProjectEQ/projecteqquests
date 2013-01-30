@@ -144,7 +144,7 @@ sub EVENT_TIMER {
     quest::stoptimer("icefang");
     # made text up
     quest::emote("blends into the snowy landscape and disappears from sight.");
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

@@ -49,7 +49,7 @@ sub EVENT_SAY {
         }
         if($text=~/treant fists/i) {
             quest::say("The treant fists were created by great craftsmen.  They are for the fists of a monk and offer greater dexterity and increase the durability of one's soul.  My last pair were given to Master Puab of the Ashen House training grounds.");
-            quest::depop();
+            quest::depop_withtimer();
         }
     }
 }

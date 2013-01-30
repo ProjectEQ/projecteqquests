@@ -27,7 +27,7 @@ sub EVENT_ITEM {
   quest::summonitem(12714);
   quest::exp(2000);
   quest::ding();
-  quest::depop();
+  quest::depop_withtimer();
  }
  else{ 
  plugin::return_items(\%itemcount);

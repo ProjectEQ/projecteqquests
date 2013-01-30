@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 	quest::spawn2(63098,0,0,-1,75,3.1,0);
-	quest::depop();
+	quest::depop_withtimer();
 }

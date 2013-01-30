@@ -33,7 +33,7 @@ sub EVENT_ATTACK {
   my $fsuni_mob = $entity_list->GetMobByNpcTypeID(127093);
   my $prince_mob = $entity_list->GetMobByNpcTypeID(127096);
      quest::spawn2(127098,0,0,-247,1609,-40,424);
-     quest::depop();
+     quest::depop_withtimer();
 
   if ($tsprite_mob) {
     my $tsprite_mobnpc = $tsprite_mob->CastToNPC();

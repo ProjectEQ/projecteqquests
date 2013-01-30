@@ -15,12 +15,12 @@ quest::say("I will not take your word for it!  You must prove your greatness to 
       if(($text=~/Rayne/i) && ($class eq "Rogue")){
         quest::say("I will summon him for you then");
         quest::spawn2(71061,0,0,563.3,1372.6,-766.9,63.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if(($text=~/Kendrick/i) && ($class eq "Rogue")){
         quest::say("I will summon him for you then");
         quest::spawn2(71068,0,0,563.3,1372.6,-766.9,63.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
 
 }

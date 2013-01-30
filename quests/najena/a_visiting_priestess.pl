@@ -39,7 +39,7 @@ sub EVENT_ITEM {
       quest::faction(257, -60); #Priests of Life
       quest::faction(260, -60); #Primordial Malice
       quest::exp(132775);   # 2.5% @ level 30
-      quest::depop();
+      quest::depop_withtimer();
     }
     else {
       quest::say("I don't need this.");

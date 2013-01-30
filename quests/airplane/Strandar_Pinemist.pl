@@ -13,12 +13,12 @@ quest::say("Then you are welcome in my presence. I shall call forth some loyal c
       if(($text=~/Will/i) && ($class eq "Druid")) { 
         quest::say("I will summon him for you then");
         quest::spawn2(71099,0,0,563,1311.4,-766.9,65.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if(($text=~/Fenalla/i) && ($class eq "Druid")){
         quest::say("I will summon him for you then");
         quest::spawn2(71086,0,0,562.5,1329.3,-766.9,65.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
 
 }

@@ -5,7 +5,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24860 => 1, 24861 => 1)) {
     quest::summonitem(22855);
     quest::selfcast(1644); #pillar of fire
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);

@@ -16,7 +16,7 @@ sub EVENT_ITEM{
     quest::faction(91,10);
     quest::faction(115,10);
     quest::faction(322,-20);
-    quest::depop();
+    quest::depop_withtimer();
   }
 if($item1==1717) {
     quest::say("Ah! A letter from my brother! Mmm... no... no I don't have Tergon's spellbook. The orc's prophet took it and then they locked me in chains! Now why don't you go do something useful and get me key number 15!!");

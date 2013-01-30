@@ -15,12 +15,12 @@ quest::say("You will be tested by either Gragrot or Tynicon.  Choose one!");
       if(($text=~/Gragrot/i) && ($class eq "Shadowknight")){
         quest::say("I will summon him for you then");
         quest::spawn2(71063,0,0,563.3,1351.9,-766.9,63.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if(($text=~/Tynicon/i) && ($class eq "Shadowknight")){
         quest::say("I will summon him for you then");
         quest::spawn2(71098,0,0,563.3,1351.9,-766.9,63.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
 
 }

@@ -36,7 +36,7 @@ sub EVENT_SIGNAL {
       quest::shout("'Master Innoruuk, the invaders have intruded into your sacred place of worship! We are in need of your wisdom and power!");
       quest::stoptimer("ceremony");
       quest::spawn2(227331,0,0,1714,669,-87,180); #Innoruk (Nadox)
-      quest::depop();
+      quest::depop_withtimer();
     }
   }
 }

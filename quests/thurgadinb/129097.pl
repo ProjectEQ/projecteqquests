@@ -36,7 +36,7 @@ sub EVENT_TIMER {
 	$count++;
 	if (($count == 1) && ($zonetime > 799 && $zonetime < 1700)) {
 		quest::spawn2(129098,0,0,$x,$y,$z,0);
-		quest::depop();
+		quest::depop_withtimer();
 	}
 	if ($count ==2 ) {
 		$count = 0;

@@ -29,7 +29,7 @@ sub EVENT_TIMER {
 	&set_data;
 	if($balance < $wage_rate) {
 		quest::say("Goodbye.");
-		quest::depop();
+		quest::depop_withtimer();
 		quest::stoptimer("pay$mname");
 	} else {
 		$balance -= $wage_rate;
@@ -47,7 +47,7 @@ sub EVENT_SAY {
 	
 	if($text =~ /bye/i) {
 		quest::say("Goodbye.");
-		quest::depop();
+		quest::depop_withtimer();
 		quest::stoptimer("pay$mname");
 	} elsif($text =~ /follow/i) {
 		$npc->SetFollowID($client->GetID());

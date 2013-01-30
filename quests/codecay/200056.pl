@@ -11,7 +11,7 @@ if($signal == 1) {
 
 if($signal == 8) {
 
-	quest::depop();
+	quest::depop_withtimer();
 	
 	}
 }

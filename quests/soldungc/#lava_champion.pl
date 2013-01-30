@@ -12,7 +12,7 @@ $protectorfire = $entity_list->GetMobByNpcTypeID(278109);
 if ($timer eq "champion") {
 if ($elemrest || $furiousmagma || $inflamedchamp || $protectorfire) {
   quest::stoptimer("champion");
-  quest::depop();
+  quest::depop_withtimer();
   } 
    }
     }

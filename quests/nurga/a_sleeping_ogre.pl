@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     $npcobj = $entity_list->GetMobID($trunt);
     $truntnpc = $npcobj->CastToNPC();
     $truntnpc->AddToHateList($client,1);
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);

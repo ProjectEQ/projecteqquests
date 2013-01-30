@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::say("");
     quest::summonitem(0);
     quest::givecash(8,4,3,12); #Copper x 8, Silver x 4, Gold x 3, Platinum x 12
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I do not want this.");

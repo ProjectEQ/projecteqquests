@@ -23,9 +23,9 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
   quest::stoptimer("depop");
-  quest::depop();
+  quest::depop_withtimer();
 }
 
 sub EVENT_SIGNAL {
-  quest::depop();
+  quest::depop_withtimer();
 }

@@ -32,7 +32,7 @@ sub EVENT_SAY {
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::spawn2(96318,0,0,$x,$y,$z,$h);
-  quest::depop();
+  quest::depop_withtimer();
  }
  elsif($text=~/whistling fists/i){
   quest::say("The Whistling Fists are rumored to be magical instruments of destruction which can only be wielded by monks. The founder, Supreme Master Tynn, was the only lizard to ever gaze upon the weapon. He only spoke of it to his student Marthor. Marthor rarely spoke of it and when he did it was usually after a few flagons of Trog Brew. That is why many consider it to be babble.");

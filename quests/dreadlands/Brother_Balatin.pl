@@ -31,7 +31,7 @@ sub EVENT_ITEM {
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::spawn2(86155,0,0,$x,$y,$z,$h);
-  quest::depop();
+  quest::depop_withtimer();
  }
  else {
    quest::say("I have no need for this item $name, you can have it back.");

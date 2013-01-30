@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::stoptimer("northsumtwo");
     quest::stoptimer("northsumthree");
     $murkin = 0;
-    quest::depop();
+    quest::depop_withtimer();
     return 1;
   }
   else {

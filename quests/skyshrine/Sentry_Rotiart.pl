@@ -11,7 +11,7 @@ sub EVENT_ITEM {
     my $attack = $entity_list->GetMobID($traitor);
     my $traitorattack = $attack->CastToNPC();
     $traitorattack->AddToHateList($client, 1);
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);

@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6923 => 1)) {
     quest::say("I thank you for frrreeing me frrrom my dog face captorrrs.");
     quest::exp(300);
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);

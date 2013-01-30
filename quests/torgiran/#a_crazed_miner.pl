@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::summonitem(59042); #A stained parchment
     quest::say("'Tell Jusean. . .' Suddenly you hear a bowstring snap as an arrow sails through the air and strikes Heltin in the chest. He lies twitching before you for a moment before he stops and lies completely still.");
     quest::spawn2(226021,0,0,$x,$y,$z,$h); #a crazed miner (KOS)
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I have no need for this, $name.");

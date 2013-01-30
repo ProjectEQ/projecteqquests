@@ -9,7 +9,7 @@ sub EVENT_ITEM {
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
     quest::spawn2(30094, 0, 0, $x, $y, $z, $h); # Spawn Miragul
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

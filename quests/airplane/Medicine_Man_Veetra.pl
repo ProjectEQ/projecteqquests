@@ -8,12 +8,12 @@ sub EVENT_SAY {
      if(($text=~/Gina MacStargan/i) && ($class eq "Shaman")){
        quest::say("I shall summon them for you");
        quest::spawn2(71087,0,0,631.9,1401.9,-766.9,129.8);
-       quest::depop();
+       quest::depop_withtimer();
        }
      if(($text=~/Ooga/i) && ($class eq "Shaman")){
        quest::say("I shall summon them for you");
        quest::spawn2(71093,0,0,653.4,1399.0,-766.9,129.8);
-       quest::depop();
+       quest::depop_withtimer();
        }
 }
 #END of FILE Zone:airplane  ID:3448 -- Medicine_Man_Veetra 

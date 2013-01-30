@@ -50,7 +50,7 @@ $check = 0;
     }
     elsif ($check == 0 && !defined $qglobals{vulak}) {
       quest::spawn2(124155,0,0,-739.4,517.2,121,255);
-      quest::depop();
+      quest::depop_withtimer();
       quest::setglobal("vulak",1,2,"M$spawntime");
     }
   }

@@ -41,7 +41,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_TIMER {
-  quest::depop();
+  quest::depop_withtimer();
 }
 
 #END of FILE Zone:paineel  ID:75006 -- Duriek_Bloodpool

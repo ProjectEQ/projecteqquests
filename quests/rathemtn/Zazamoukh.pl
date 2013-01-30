@@ -8,7 +8,7 @@ sub EVENT_SAY {
   if ($text=~/happening/i) {
      quest::say("Something . . . is wrong. My companion . . . it weakens me . . .");
      quest::spawn2(50326,0,0,-3241,3550,39,1224);
-     quest::depop();
+     quest::depop_withtimer();
      }
      }
 if (plugin::check_hasitem($client, 52902)){

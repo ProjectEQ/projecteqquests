@@ -18,7 +18,7 @@ sub EVENT_ENTER {
   quest::emote("been ambushed!");
   quest::spawn2(116540,0,0,$x+5,$y-5,$z,0);
   quest::spawn2(116540,0,0,$x-5,$y+5,$z,0);
-  quest::depop();
+  quest::depop_withtimer();
 }
 
 # EOF zone: eastwastes ID: 116565 NPC: You_have

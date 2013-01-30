@@ -3,7 +3,7 @@ sub EVENT_ITEM {
 		quest::say("Error! Malfunction! Destroy!");
 		quest::say("A $class like you always bring out the worst in me.");
 		quest::spawn2(72106,0,0,$x,$y,$z,$h);
-		quest::depop();
+		quest::depop_withtimer();
 	}
 }
 

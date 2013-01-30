@@ -41,6 +41,6 @@ if($signal == 2 && $counter == 4 && !defined $qglobals{dust_ring} && defined $qg
    	quest::delglobal("dust_ring");
    	quest::setglobal("dust_ring",1,3,"D3");
         quest::setglobal("dust_ring_final",1,3,"D3");
-        quest::depop();
+        quest::depop_withtimer();
  }
 }

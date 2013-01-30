@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::faction(338, 10);
     quest::givecash(0, 0, 0, 44);
     quest::spawn2(151057, 0, 0, $x, $y, $z, $h);
-    quest::depop();
+    quest::depop_withtimer();
   }
   elsif(plugin::check_handin(\%itemcount, 10952 => 1)) {
     quest::say("Thank you $name! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
@@ -39,7 +39,7 @@ sub EVENT_ITEM {
     quest::faction(338, 10);
     quest::givecash(0, 0, 0, 14);
     quest::spawn2(151057, 0, 0, $x, $y, $z, $h);
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I do not need this.");

@@ -27,7 +27,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 20410 => 1)) {	# Bladesoul's Spiritual Pouch
 		# Handin text will need to go here, not sure what it is
-		quest::depop();
+		quest::depop_withtimer();
 		quest::spawn2(128094,0,0,$x,$y,$z,$h); # May need to change the ID since Paldar the Insane isn't in the DB yet
 	}
 

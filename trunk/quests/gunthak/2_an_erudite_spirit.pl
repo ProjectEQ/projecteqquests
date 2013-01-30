@@ -8,7 +8,7 @@ sub EVENT_ITEM {
     quest::emote("looks at you with piercing eyes that tear through your heart. His ethereal fingers close around the necklace. A blinding light surrounds both the necklace and the transparent figure as you shield your eyes away. When the light dies down you look to see the necklace, now softly glowing, sitting on the sand. As you pick it up you notice a wet scroll half buried in the sand beneath it. A voice echoes in your mind. 'Find him.'");
     quest::summonitem(59003); #Spell: Ethereal Cleansing
     quest::summonitem(59028); #Glowing Black Skull Necklace
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::emote("seems to ignore you."); #Text made up

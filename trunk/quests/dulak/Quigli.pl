@@ -20,5 +20,5 @@ sub EVENT_SAY {
 }
 
 sub EVENT_AGGRO { #NPC event is not ready.
-  quest::depop();
+  quest::depop_withtimer();
 }

@@ -72,7 +72,7 @@ sub EVENT_TIMER {
     quest::depop(162214);
     quest::depop(162261);
     quest::depop(162253);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 
@@ -89,6 +89,6 @@ sub EVENT_SIGNAL {
   if ($signal == 3) {	
     quest::setglobal("cursed_dead",1,3,"M$spawntime");
     quest::stoptimer("one");
-    quest::depop();
+    quest::depop_withtimer();
   }
 }

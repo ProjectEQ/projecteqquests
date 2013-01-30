@@ -153,6 +153,6 @@ sub EVENT_TIMER {
 		quest::say("I sense a creature of immense power has been summoned forth. My job here is finished. You all have done very well for mortals.");
 		
 		quest::spawn2(216088, 0, 0, $x, $y, $z, $h);#supreme
-		quest::depop();
+		quest::depop_withtimer();
 	}
 }

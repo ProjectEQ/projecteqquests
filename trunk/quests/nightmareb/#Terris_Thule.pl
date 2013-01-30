@@ -47,7 +47,7 @@ sub EVENT_DEATH {
 sub EVENT_TIMER {
   if(($x <= -2100) || ($y >= 230) || ($y <= -265) || ($x >= -1600)) {
     quest::shout("Never shall I be removed from nightmares!");
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

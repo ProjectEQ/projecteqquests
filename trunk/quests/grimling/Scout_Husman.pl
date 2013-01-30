@@ -32,7 +32,7 @@ if($timer eq "husman") {
  }
 if($timer eq "return") {
     quest::stoptimer("return");
-    quest::depop(); #depop so he can reset the script more reliably
+    quest::depop_withtimer(); #depop so he can reset the script more reliably
  }
 } 
 #END of FILE Zone:grimling  ID:167134 -- Scout_Husman 

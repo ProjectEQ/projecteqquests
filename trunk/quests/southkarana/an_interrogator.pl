@@ -57,7 +57,7 @@ sub EVENT_ITEM {
     quest::say("Excellent work, you did just fine today. You'll make a fine interrogator. Talk to Vegalys about advancing further.");
     quest::summonitem(2387);
     quest::signalwith(14146,9,3000);
-    quest::depop();
+    quest::depop_withtimer();
     #faction raised Guards of Qeynos
     #faction raised Priests of Life
     #faction lowered Bloodsabers

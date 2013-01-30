@@ -8,12 +8,12 @@ sub EVENT_SAY {
     if(($text=~/Alan/i) && ($class eq "Cleric")){
       quest::say("I shall summon them for you");
       quest::spawn2(71080,0,0,660.7,1361.6,-766.9,193.2);
-      quest::depop();
+      quest::depop_withtimer();
       }
     if(($text=~/Deric/i) && ($class eq "Cleric")){
       quest::say("I shall summon them for you");
       quest::spawn2(71083,0,0,660.7,1338.0,-766.9,193.2);
-      quest::depop();
+      quest::depop_withtimer();
       }
 }
 #END of FILE Zone:airplane  ID:2851 -- Josin_Faithbringer 

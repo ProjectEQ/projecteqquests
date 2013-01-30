@@ -22,7 +22,7 @@ sub EVENT_SIGNAL {
   }
   if ($signal == 93) {
    quest::spawn2(278124,0,0,0,0,0,0);
-   quest::depop();
+   quest::depop_withtimer();
   }
   if ($elemwave == 8) { 
    quest::emote("The room grows warmer as the lava pool begins to steam heavily.");

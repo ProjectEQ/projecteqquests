@@ -14,7 +14,7 @@ sub EVENT_ITEM {
     my $y = $npc->GetY(); 
     my $z = $npc->GetZ(); 
     quest::spawn2(129063,0,0,$x,$y,$z,$h); 
-    quest::depop(); 
+    quest::depop_withtimer(); 
   } 
   else { 
     quest::say("I don't need this."); #text made up 

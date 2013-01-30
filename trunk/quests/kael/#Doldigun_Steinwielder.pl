@@ -8,7 +8,7 @@ sub EVENT_WAYPOINT_DEPART {
   $z=$npc->GetZ();
   if($x == 1370 && $y == -710.2 && $z == -115.6) {
     #quest::signal(113553,0);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 
@@ -18,7 +18,7 @@ sub EVENT_TIMER {
   $z=$npc->GetZ();
   if($x == 1370 && $y == -710.2 && $z == -115.6) {
     #quest::signal(113553,0);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 #sub EVENT_DEATH {

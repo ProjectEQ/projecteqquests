@@ -26,7 +26,7 @@ sub EVENT_ITEM {
       quest::faction(342, 10); #True Spirit
       quest::summonitem(14384); #Lhranc's Token
       quest::spawn2(90187, 0, 0, 85.1, 0.9, 7.8, 192); ##Lhranc
-      quest::depop();
+      quest::depop_withtimer();
     }
     else {
       quest::say("This is not what I seek."); #Text made up

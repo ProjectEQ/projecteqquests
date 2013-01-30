@@ -79,6 +79,6 @@ sub EVENT_TIMER {
     quest::spawn2(116012,0,0,416.2,-3592.8,146.3,255);
 #ringeightcoord
     quest::spawn2(116575,0,0,0,0,0,0);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }#END of FILE Zone:eastwastes  ID:116138 -- Gloradin_Coldheart 

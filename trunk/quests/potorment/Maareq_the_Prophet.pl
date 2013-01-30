@@ -23,7 +23,7 @@ sub EVENT_TIMER {
 
 sub EVENT_HP {
 	if($hpevent == 15) {
-		quest::depop();
+		quest::depop_withtimer();
 		#set maareq's respawn, without this line he will repop on zone reset
 		#commented this out and put it in death event of the #a_twisted_crawler
 		#only to allow a failed raid to redo the event without putting in smarter

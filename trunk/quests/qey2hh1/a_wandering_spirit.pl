@@ -28,15 +28,15 @@ sub EVENT_ITEM {
   }
  elsif(($itemcount{1669} == 1) && ($itemcount{1670} == 1)) { #Part of Shaman Epic 1.0
   quest::say("This is a sad day. You have failed and strayed from the path set before you. Please try to live as close to the spirits as you are able, though this is the closest you will ever get.");
-  quest::depop();
+  quest::depop_withtimer();
   }
  elsif(plugin::check_handin(\%itemcount, 1669 => 1)){ #Part of Shaman Epic 1.0
   quest::say("This is a sad day. You have failed and strayed from the path set before you. Please try to live as close to the spirits as you are able, though this is the closest you will ever get.");
-  quest::depop();
+  quest::depop_withtimer();
   }
  elsif(plugin::check_handin(\%itemcount, 1670 => 1)){ #Part of Shaman Epic 1.0
   quest::say("This is a sad day. You have failed and strayed from the path set before you. Please try to live as close to the spirits as you are able, though this is the closest you will ever get.");
-  quest::depop();
+  quest::depop_withtimer();
  }  
 }
 

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::exp(120000);
     quest::ding();
     quest::spawn(208177,0,0,$x,$y,$z); #A Wandering Spirit
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I don't need this.");

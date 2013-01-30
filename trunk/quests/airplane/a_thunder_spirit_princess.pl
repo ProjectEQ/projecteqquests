@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 
     quest::spawn2(71073,0,0,287.9,662.5,-54.1,109.3);
 
-    quest::depop();
+    quest::depop_withtimer();
 
  }
 

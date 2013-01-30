@@ -75,7 +75,7 @@ sub EVENT_TIMER {
     quest::say("Ohhhh, someone... help, please...");
   }
   elsif ($timer == 2) {
-    quest::depop();
+    quest::depop_withtimer();
   }
   elsif ($timer == 3) {
     $flag = 0;

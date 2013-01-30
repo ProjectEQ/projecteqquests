@@ -39,13 +39,13 @@ sub EVENT_SAY {
   quest::say("That is good. You will need to walk three paths before you can reach that of the Heyokah. The paths of patience, wisdom, and might. First, you must learn patience. Take this gem and go on a pilgrimage to an island in the great water the wasichu call Erud's Crossing. The Kerrans there are our allies and can show you to our next contact, Ooglyn. Give Ooglyn the gem and do what she asks. As you walk the path, remember what you've learned about trust.");
   quest::signal(8118,0);
   quest::exp(1000);
-  quest::depop();
+  quest::depop_withtimer();
  }
 }
 
 sub EVENT_SIGNAL {
  if($signal == 0) {
-   quest::depop();
+   quest::depop_withtimer();
  }
 }
 

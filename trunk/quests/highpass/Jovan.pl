@@ -10,7 +10,7 @@ sub EVENT_ITEM {
   if ($itemcount{12114} == 1) {
     quest::say("<SLURP!!>  Ahh thhhhat'thh betterr. Take thithhh. <BURP!>");
     quest::summonitem(19006);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

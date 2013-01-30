@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     $mob = $entity_list->GetMobID($mobid);
     $mobnpc = $mob->CastToNPC();
     $mobnpc->SignalNPC(1);
-    quest::depop();
+    quest::depop_withtimer();
   }
   elsif (plugin::check_handin(\%itemcount, 30266 => 1) && ($boridain == 18)) {
     quest::say("Yes! I've done it! The vile beast is finally dead. I will at last be revered as the mighty hunter I am. Here is your axe back, I broke it on the killing blow. Take it as proof that you are a friend of the greatest hunter in the history of the Coldain!");
@@ -138,7 +138,7 @@ sub EVENT_TIMER {
   }
 
   if ($timer == 2) {
-    quest::depop();
+    quest::depop_withtimer();
   }
 
   if ($boridain == 0) {

@@ -25,6 +25,6 @@ sub EVENT_SIGNAL {
 if($counter == 7) {
    quest::creategroundobject(52151,174,-910,-20,200,300000);
    quest::spawn_condition($zonesn,1,0);
-   quest::depop();
+   quest::depop_withtimer();
    }		
 }

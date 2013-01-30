@@ -11,7 +11,7 @@ sub EVENT_SIGNAL {
     if ($doomshade == 4) {
       quest::shout("echoes throughout the plains as a tormented spirit is released upon the land.");
       quest::spawn2(176088,0,0,120,-297.5,5,63.5);
-      quest::depop();
+      quest::depop_withtimer();
     }
   }
   if ($signal == 199) {
@@ -23,7 +23,7 @@ sub EVENT_TIMER {
   if ($timer eq "nospawndoom") {
     quest::stoptimer("nospawndoom");
     quest::signalwith(176105,399,0);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

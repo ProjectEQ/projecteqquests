@@ -8,12 +8,12 @@ sub EVENT_SAY {
   if(($text=~/Clarisa/i) && ($class eq "Bard")){
     quest::say("I shall summon them for you");
     quest::spawn2(71081,0,0,660.7,1388.9,-766.9,192.6);
-    quest::depop();
+    quest::depop_withtimer();
     }
   if(($text=~/Denise/i) && ($class eq "Bard")){
     quest::say("I shall summon them for you");
     quest::spawn2(71082,0,0,660.7,1368.4,-766.9,192.6);
-    quest::depop();
+    quest::depop_withtimer();
     }
 
 }

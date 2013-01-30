@@ -23,7 +23,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
  if(plugin::check_handin(\%itemcount,12886=> 1, 4266=> 1)){
         quest::emote("takes the flail and vanishes with a brilliant flash!! Within your hands appears a skullcap. You hear a voice echo through the cave. Well done. You are a formidable necromancer. We thank you.");
-        quest::depop();
+        quest::depop_withtimer();
 	quest::summonitem(4267);
         quest::faction(193,20);
         quest::faction(24,20);

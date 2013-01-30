@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 27982 => 1)) { #Sealed Ore Satchel
     quest::say("So you're not totally useless after all. Maybe there is a reason Kazen hasn't destroyed you yet. Take these tools and give my warmest regards to Master Kazen.");
     quest::summonitem(21799); #Biddliss's Research Tools
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::say("I have no use for this, $name.");

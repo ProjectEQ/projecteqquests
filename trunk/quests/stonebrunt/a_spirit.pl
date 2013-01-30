@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(2297); #Idol of Fear
     quest::unique_spawn(100221,323,0,-70,474,509,33.5); #Ridossan_the_Unliving
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::emote("ignores you.");

@@ -7,7 +7,7 @@ $kerafyrm = $entity_list->GetMobByNpcTypeID(128089);
 if ($timer eq "vyskudra") {
 if ($kerafyrm) {
   quest::stoptimer("vyskudra");
-  quest::depop();
+  quest::depop_withtimer();
   } 
    }
     }

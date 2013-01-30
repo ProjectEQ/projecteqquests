@@ -11,6 +11,6 @@ quest::spawn2(174320,0,0,$x - 5,$y,$z,$h);
  if (plugin::check_handin(\%itemcount, 31783 => 1, 31784 => 1, 31785 => 1, 31786 => 1)) {
 quest::say("I'm still in shock. I can't believe those pesky wolves are finally gone. Bring this note to Wils, he should have something for you.");
 quest::summonitem(31782);
-quest::depop();
+quest::depop_withtimer();
  }
 }

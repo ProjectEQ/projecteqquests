@@ -8,7 +8,7 @@ sub EVENT_SAY {
 			$dragon=1;
 			quest::settimer(1,7200);
 			quest::spawn2(211075,0,0,$x,$y,$z,$h);
-			quest::depop();
+			quest::depop_withtimer();
 		}
 }
 

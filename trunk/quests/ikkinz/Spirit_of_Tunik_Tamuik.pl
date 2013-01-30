@@ -18,7 +18,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60220 => 1)) {
     quest::say("Ah, my shawl.");   #Need live text
     quest::spawn2(294577,0,0,$x,$y,$z,$h);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 sub EVENT_SIGNAL {

@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     quest::spawn2(202068, 0, 0, $x, $y, $z, $h);
     
     #Depop myself
-    quest::depop();
+    quest::depop_withtimer();
   }
  elsif(plugin::check_handin(\%itemcount, 10952 => 1)) {#Small Shipment of High Quality Ore
     quest::say("Thank you $name! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
     quest::spawn2(202068, 0, 0, $x, $y, $z, $h);
     
     #Depop myself
-    quest::depop();
+    quest::depop_withtimer();
   }
    quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);

@@ -14,7 +14,7 @@ sub EVENT_ITEM
    {
       quest::summonitem(12750);#give the player on of the Iksar skulls of the sisters...
       quest::shout("Go to where the pines have been smashed. Must reach great heights!");
-      quest::depop();
+      quest::depop_withtimer();
       # an npc named, Friend Vagnar the Channeler, is supposed to spawn and shout that text while running away, figure this would b easier on the server...
    }
 

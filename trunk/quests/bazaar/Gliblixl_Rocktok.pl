@@ -14,7 +14,7 @@ if ($timer == "warning") {
     quest::stoptimer("warning");
     }
 if ($timer == "despawn") {
-    quest::depop();
+    quest::depop_withtimer();
     quest::stoptimer("despawn");
     }
 }
@@ -44,7 +44,7 @@ quest::say("Thank you $name! I will prepare the ore for sale and be open for bus
         $z = $npc->GetZ();		
         $h = $npc->GetHeading();
     quest::spawn2(151057, 0, 0, $x, $y, $z, $h);
-    quest::depop();
+    quest::depop_withtimer();
   }
 if(plugin::check_handin(\%itemcount, 10952 => 1)) {
 quest::say("Thank you $name! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
@@ -59,6 +59,6 @@ quest::say("Thank you $name! I will prepare the ore for sale and be open for bus
         $z = $npc->GetZ();		
         $h = $npc->GetHeading();
     quest::spawn2(151057, 0, 0, $x, $y, $z, $h);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }

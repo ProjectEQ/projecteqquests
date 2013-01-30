@@ -25,7 +25,7 @@ sub EVENT_SPAWN {
 
 # sub EVENT_COMBAT {
 #  if ($combat_state == 0){
-#   quest::depop();
+#   quest::depop_withtimer();
 #  }
 # } 
 
@@ -98,7 +98,7 @@ sub EVENT_HP {
 # }
 
 # sub EVENT_TIMER {
-#  quest::depop();
+#  quest::depop_withtimer();
 #  quest::stoptimer("engaged");
 #  quest::stoptimer(1);
 # }

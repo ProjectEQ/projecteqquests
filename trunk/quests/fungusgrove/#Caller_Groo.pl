@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::stoptimer("southsumtwo");
     quest::stoptimer("southsumthree");
     $groo = 0;
-    quest::depop();
+    quest::depop_withtimer();
     return 1;
   }
   else {

@@ -34,7 +34,7 @@ sub EVENT_ITEM {
       quest::faction(53,20); # Corrupt Qeynos Guards
       quest::faction(36,-20); # Guards of Qeynos
       quest::faction(164,20); # Kane Bayle
-      quest::depop();
+      quest::depop_withtimer();
     }
     else {
       quest::say("I do not see everything that I asked for...");

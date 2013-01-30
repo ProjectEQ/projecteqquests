@@ -10,12 +10,12 @@ if($text=~/Heart and Soul/i) {
       if($text=~/Gregori/i){
         quest::say("I will summon him for you then");
         quest::spawn2(71089,0,0,563,1331.1,-766.9,63.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if($text=~/Dirkog/i){
         quest::say("I will summon him for you then");
         quest::spawn2(71077,0,0,563,1331.1,-766.9,63.4);
-        quest::depop();
+        quest::depop_withtimer();
         }
 
 }

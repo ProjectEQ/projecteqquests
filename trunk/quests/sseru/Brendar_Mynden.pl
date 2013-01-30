@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::emote("open the bottle and takes a large drink right from it. Immediately his eyes roll back into their sockets and he falls to the ground. You look around to make sure no one has seen and then take the ring from his finger.");
     quest::doanim(15);
     $npc->SetAppearance(3);
-    quest::depop();
+    quest::depop_withtimer();
     quest::summonitem(29863);
   }
   else {

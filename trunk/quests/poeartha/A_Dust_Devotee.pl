@@ -20,7 +20,7 @@ sub EVENT_TIMER {
 
 if($timer == 88) {
 
-quest::depop();
+quest::depop_withtimer();
 
 quest::stoptimer(88);
 

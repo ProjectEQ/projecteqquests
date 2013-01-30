@@ -8,7 +8,7 @@ sub EVENT_SAY {
     if($text=~/i am the one/i) {
       quest::emote("chuckles.");
       quest::say("Thats quite a boast, $name. All beings strive for nothingness at the most basic level of sentience. However, almost none ever achieve this. Not even I have discarded my ego yet and you stand here and tell me you have? Perhaps you will be a worthy opponent. I shall be waiting in the great lake near here. Take that token as proof of things to come for you. If you still wish to throw your life away so needlessly, return it to my image there. I await your decision.");
-      quest::depop();
+      quest::depop_withtimer();
     }
   }
   else {

@@ -6,7 +6,7 @@ sub EVENT_TIMER {
 if ($timer eq "atenha") {
 if(defined $qglobals{aten}) { 
   quest::stoptimer("atenha");
-  quest::depop();
+  quest::depop_withtimer();
   $qglobals{aten} = undef;
   } 
    }

@@ -28,7 +28,7 @@ sub EVENT_TIMER {
     quest::say("Uh oh, looks like they were tipped off somehow... I hope you can handle them.");
     quest::spawn2(116119, 0,0, $x, $y, $z, $h);
     quest::spawn2(116569, 0,0, -2139, 168, 150, 57);
-    quest::depop();
+    quest::depop_withtimer();
   }
   if($timer == 1 && $x == -3183 && $y == -586 && defined($final_path) && $final_path == 1) {
     quest::stoptimer(1);
@@ -39,13 +39,13 @@ sub EVENT_TIMER {
     quest::spawn2(116119, 0, 0, $x, $y, $z, 9);
     quest::say("I have escaped! With the help of our friends here I was saved from certain death. We are in their debt.");
     quest::signalwith(116118, 1, 1000);
-    quest::depop();
+    quest::depop_withtimer();
   }
   if($timer == 2) { #Not sure why this is here. Timer 2 is not defined/declared
     $event_spawn=undef;
     quest::stoptimer(1);
     $ring_seven_start=undef;
-    quest::depop();
+    quest::depop_withtimer();
   }
   if($timer == 3) {
     $event_spawn=undef;
@@ -53,7 +53,7 @@ sub EVENT_TIMER {
     $final_path=undef;
     $turnin=undef;
     quest::signalwith(116118, 2, 0);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 
@@ -64,7 +64,7 @@ sub EVENT_ITEM {
     $ring_seven_start=1;
     $event_spawn=undef;
     quest::spawn2(116119,234, 0, $x, $y, $z, $h);
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);
@@ -75,7 +75,7 @@ sub EVENT_SIGNAL {
   $event_spawn=undef;
   $final_path=1;
   quest::spawn2(116119, 235, 0, $x, $y, $z, $h);
-  quest::depop();
+  quest::depop_withtimer();
 }
 
 sub EVENT_DEATH {

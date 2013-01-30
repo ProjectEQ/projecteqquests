@@ -10,12 +10,12 @@ if($text=~/magician/i) {
       if(($text=~/Frederic/i) && ($class eq "Magician")){
         quest::say("I will summon him for you then");
         quest::spawn2(71088,0,0,614.5,1304.1,-766.9,255);
-        quest::depop();
+        quest::depop_withtimer();
         }
       if(($text=~/Roanis/i) && ($class eq "Magician")){
         quest::say("I will summon him for you then");
         quest::spawn2(71094,0,0,614.5,1304.1,-766.9,255);
-        quest::depop();
+        quest::depop_withtimer();
         }
 
 }

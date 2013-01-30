@@ -33,12 +33,12 @@ sub EVENT_TIMER {
 
  if($timer eq "kerafyrmc" && defined $qglobals{kerafyrm} && $qglobals{kerafyrm} == 3) {
   quest::stoptimer("kerafyrmc");
-  quest::depop();
+  quest::depop_withtimer();
   $qglobals{kerafyrm} = undef;
 }
  if($timer eq "depop") {
   quest::stoptimer("depop");
-  quest::depop();
+  quest::depop_withtimer();
  }
 }
 

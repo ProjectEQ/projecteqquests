@@ -82,7 +82,7 @@ sub EVENT_TIMER {
   if($timer eq 100) {
     #danceover
     quest::stoptimer(100);
-    quest::depop();
+    quest::depop_withtimer();
   }
 }
 

@@ -82,6 +82,6 @@ sub EVENT_AGGRO {
 sub EVENT_TIMER {
   if($timer eq "bye") {
     quest::stoptimer("bye");
-    quest::depop();
+    quest::depop_withtimer();
   }
 }

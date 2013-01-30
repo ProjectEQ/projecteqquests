@@ -24,7 +24,7 @@ sub EVENT_ITEM{
     quest::faction(314,10);
     quest::faction(220,10);
     quest::faction(215,10);
-    quest::depop();
+    quest::depop_withtimer();
   }
   
   #Taskmaster earring
@@ -33,6 +33,6 @@ sub EVENT_ITEM{
     quest::summonitem(18905);
     quest::exp(15000);
     quest::ding();
-    quest::depop();
+    quest::depop_withtimer();
   }
 }

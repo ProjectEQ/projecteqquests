@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   quest::spawn2(quest::ChooseRandom(207072,207073,207075),0,0,$x,$y,$z,0);
-  quest::depop();
+  quest::depop_withtimer();
 }
 
 #END of FiLE zone:potorment ID: 207080 NPC: its_a_trap.pl

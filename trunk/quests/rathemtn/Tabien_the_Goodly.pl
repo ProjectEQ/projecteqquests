@@ -11,7 +11,7 @@ sub EVENT_ITEM {
  if (($itemcount{1676} == 1) && ($itemcount{1677} == 1)) { #Part of Shaman Epic 1.0
   quest::say("Ahh, thank Mithaniel you have put Glaron and his terrible reign to an end! You have done the world a great service by carrying out my instructions. Take this gem and give it to the one who sent you. He will reward you as befits such an accomplished mercenary such as yourself. Oh, and Marr be with you!");
   quest::summonitem(1670);
-  quest::depop();
+  quest::depop_withtimer();
  } 
 }
 

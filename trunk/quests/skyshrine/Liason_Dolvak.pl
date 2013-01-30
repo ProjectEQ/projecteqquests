@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::faction(42,10); #CoV
     quest::faction(362,10); #Yelinak
     quest::faction(189,-30); #Kromzek
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     plugin::return_items(\%itemcount);

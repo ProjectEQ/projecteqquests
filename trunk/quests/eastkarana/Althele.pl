@@ -65,7 +65,7 @@ sub EVENT_ITEM {
       $depopnpc5 = $depop5->CastToNPC();
       $depopnpc5->Depop();
     }
-    quest::depop();
+    quest::depop_withtimer();
   }
   else {
     quest::emote("will not take this item.");

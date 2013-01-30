@@ -3,6 +3,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-	quest::depop();
+	quest::depop_withtimer();
 }
 

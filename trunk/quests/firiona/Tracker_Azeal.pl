@@ -19,7 +19,7 @@ sub EVENT_TIMER {
    my $h = $npc->GetHeading();
    quest::spawn2(84028,0,0,$x,$y,$z,$h);
    quest::stoptimer("ZoneTime");
-   quest::depop();
+   quest::depop_withtimer();
   }
  }
 }

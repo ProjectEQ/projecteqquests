@@ -8,7 +8,7 @@ sub EVENT_TIMER
 {
    if($timername == 1)
    {
-      quest::depop();
+      quest::depop_withtimer();
    }
 
 }

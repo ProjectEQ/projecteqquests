@@ -8,5 +8,5 @@ sub EVENT_SPAWN
 sub EVENT_ENTER
 {
    quest::spawn2(228107,0,0,0,0,0,0);
-   quest::depop();
+   quest::depop_withtimer();
 } 

@@ -10,7 +10,7 @@ sub EVENT_TIMER {
 if ($timer eq "vallonzek") {
 if(defined $qglobals{vallonzek}) { 
   quest::stoptimer("vallonzek");
-  quest::depop();
+  quest::depop_withtimer();
   $qglobals{vallonzek} = undef;
   } 
    }
@@ -28,18 +28,18 @@ sub EVENT_SIGNAL {
 	}
 
 	if ($signal == 6) { 
-                quest::depop();	# times up, despawn
+                quest::depop_withtimer();	# times up, despawn
 }
  }
 sub EVENT_HP {
 	if ($hpevent == 75 && $phase == undef) { # Time to split for the first time
 			quest::signalwith(214112, 3, 0);	# tell trigger to spawn real in phase 1 along with 4 clones 
-			quest::depop();
+			quest::depop_withtimer();
 	}
 	
 	if ($hpevent == 50) {				# split again
 		quest::signalwith(214112, 4, 0);	# tell the trigger this version is dead, respawn in either phase 1 with clones or phase 2 without
-		quest::depop();
+		quest::depop_withtimer();
 	}
 }
 

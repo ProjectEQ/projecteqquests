@@ -7,14 +7,14 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	quest::say("Goodbye.");
-	quest::depop();
+	quest::depop_withtimer();
 	quest::stoptimer("kill$mname");
 }
 
 sub EVENT_SAY {
 	if($text =~ /bye/i) {
 		quest::say("Goodbye.");
-		quest::depop();
+		quest::depop_withtimer();
 		quest::stoptimer("kill$mname");
 	} elsif($text =~ /attack/i) {
 		quest::attack($name);

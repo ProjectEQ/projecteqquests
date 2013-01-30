@@ -14,7 +14,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(293213);
 }
 if ($timer == 1 && $named_up == 0)  {
    quest::spawn2(293212,0,0,$x,$y,$z,$h);
-   quest::depop();
+   quest::depop_withtimer();
    quest::signalwith(293218,0);
    quest::stoptimer(1);
 }

@@ -104,7 +104,7 @@ sub EVENT_CLICKDOOR
 		$zonename = "Steamfont Mountains";
 		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
 		{
-		  	quest::movepc(56,933.79,-1358,109);
+		  	quest::movepc(56,933.79,-1358,-109);
 		}
 		elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
 		{
@@ -156,7 +156,7 @@ sub EVENT_POPUPRESPONSE
 	}
 	if($popupid == 5)
 	{
-                quest::movepc(56,933.79,-1358,109);
+                quest::movepc(56,933.79,-1358,-109);
 	}
 	if($popupid == 6)
 	{

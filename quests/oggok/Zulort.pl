@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if($text=~/Hail/i) {
+  if($text=~/hail/i) {
     quest::say("Um, you. Hi.. You Shaman of War now, right? You gotta learns war and war spells. We fights all and makes the Warlord likes us. You [gonna help] or me gonna feed you fat stoopid boddie to doggies.");
   }
   if($text=~/help/i) {
@@ -24,8 +24,11 @@ sub EVENT_ITEM {
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 18788 => 1)) { #Tattered Note
-    quest::say("Oh, yoo new here! Take dis and wear proudly.");
+    quest::say("Take, take.. You now Shaman of War.. Zulort make you majik, too.  When you [gonna help] you tell Zulort.");
     quest::summonitem(13526); #Dirty Patched Fur Tunic*
+	quest::ding();
+	quest::faction(295, 5); # Shaman of War
+	quest::exp(100);
   }
   else {
     quest::say("Me not need dis."); #text made up

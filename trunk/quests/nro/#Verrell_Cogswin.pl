@@ -47,31 +47,22 @@ sub EVENT_ITEM {
       quest::say("Hmmm . . well I have some [good news] and a lot of [bad news] which do you want to hear first?");
       quest::setglobal("Green_Scale_Quest",2,0,"F");
     }
-    else {
-      quest::say("I don't need this."); #text made up
-      plugin::return_items(\%itemcount);
-    }
   }
-  elsif(plugin::check_handin(\%itemcount, 25791 => 1)) { #Grey Scales
-    if(defined($qglobals{Green_Scale_Quest}) && ($qglobals{Green_Scale_Quest} == 2)) {
-      quest::emote("pulls a vial out of his pocket and places the red scale on the ground before pouring some of the vials contents on the scale. The scale begins to bubble and fizz as the liquid covers it entirely. Verrell looks at you and smiles before looking back at the scale.");#copied/made up.
-      quest::say("Worked that time, yer bugger!"); #text made up
-      quest::summonitem(11582); #Green Dragon Scales
-      quest::delglobal("Green_Scale_Quest");
-    }
-    elsif(plugin::check_handin(\%itemcount, 67386 => 1)) { #Thick Adhesive
-      quest::say("That should do. Here, combine these in the Box of Potions I gave you."); #text made up
-      quest::summonitem(67385); #Grey Scale Pieces
-      quest::summonitem(67396); #Thick adhesive v2, for recipe
-    }
-    else {
-      quest::say("I don't need this."); #text made up
-      plugin::return_items(\%itemcount);
-    }
+  elsif(plugin::check_handin(\%itemcount, 67386 => 1)) { #Thick Adhesive
+    quest::say("That should do. Here, combine these in the Box of Potions I gave you."); #text made up
+    quest::summonitem(67385); #Grey Scale Pieces
+    quest::summonitem(67396); #Thick adhesive v2, for recipe
+  }
+  elsif(plugin::check_handin(\%itemcount, 67384 => 1)) { #Grey Colored Scales
+	quest::emote("pulls a vial out of his pocket and places the red scale on the ground before pouring some of the vials contents on the scale. The scale begins to bubble and fizz as the liquid covers it entirely. Verrell looks at you and smiles before looking back at the scale.");#copied/made up.
+    quest::say("Worked that time, yer bugger!"); #text made up
+    quest::summonitem(11582); #Green Dragon Scales
+    quest::delglobal("Green_Scale_Quest");
   }
   else {
     quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
   }
 }
+
 #END of FILE Zone:nro  ID:34049 --#Verrell_Cogswin.pl

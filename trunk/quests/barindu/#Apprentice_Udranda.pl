@@ -4,9 +4,9 @@ sub EVENT_SAY {
   $group = $client->GetGroup();
 
   if ($text=~/hail/i) {
-      quest::say("Do you wish to enter the [mountains], or are you ready for [tipt]?");
+      quest::say("Do you wish to enter [vxed] or are you ready for [tipt]?");
   }
-  if ($text=~/mountains/i) {
+  if ($text=~/vxed/i) {
     if ($group || $status > 79) {
       if (defined($qglobals{god_vxed_access}) && ($qglobals{god_vxed_access} == 1)) {
         quest::say("Your work in the sewers has been vital to our progression, please proceed with caution in the mountain pass. Find the Stonespiritist for further advancement.");

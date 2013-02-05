@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 		quest::setglobal("wizepicK",1,0,"F");
 	}
 	#oil Handin
-	if(defined $qglobals{wizepicK} && plugin::check_handin(\%itemcount,14349 => 1)) {
+	elsif(defined $qglobals{wizepicK} && plugin::check_handin(\%itemcount,14349 => 1)) {
 		quest::say("Oh wow! You found the oil! Where is the golem? You didn't hurt him did you? I am very fond of him. Anyways, here is your reward a note and staff to give to that guy you were asking me about.");
 		quest::summonitem(14339); #Staff of Gabstik 
 		quest::summonitem(18168); #note
@@ -27,17 +27,23 @@ sub EVENT_ITEM {
 		quest::delglobal("wizepicK");
 	}
 	#Cazic's Skin + Mistletoe Powder
-	if(defined $qglobals{wizepicK} && plugin::check_handin(\%itemcount,14333 => 1, 14332 => 1)) {
+	elsif(defined $qglobals{wizepicK} && plugin::check_handin(\%itemcount,14333 => 1, 14332 => 1)) {
 		quest::summonitem(14339); #Staff of Gabstik 
 		quest::summonitem(14336); #note
 		quest::say("Great! Give this to Arantir so he knows you've helped me! Hey! Have you seen my lantern anywhere?");
 		quest::delglobal("wizepicK");
 		quest::faction(342, 30); #Truespirit
 	#just Cazic's Skin
-	} elsif(defined $qglobals{wizepicK} && plugin::check_handin(\%itemcount,14332 => 1)) {
+	} 
+	elsif(defined $qglobals{wizepicK} && plugin::check_handin(\%itemcount,14332 => 1)) {
 		quest::say("Great! This is? What is this for again? Oh yeah, the casing for my firework. Here, you can have this then, oh no, wait. You can't yet. I forgot I needed another part to my firework, and you are exactly the person to get it for me! I need some mistletoe powder. Now, go find some for me! Go, go, go, go! Shoo! Oh, wait! Hold on to my bag for me, please. You can give it back after you've given me what I want.");
 		#hack because we do not have this bag in the DB
 		quest::say("**hack** Hand this skin back in when you turn in the mistletoe powder");
 		quest::summonitem(14332);
 	}
+	else {
+		quest::say("I have no need for this, $name, you can have it back.");
+		plugin::return_items(\%itemcount);
+	}
 }
+

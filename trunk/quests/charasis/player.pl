@@ -1,74 +1,83 @@
 sub EVENT_CLICKDOOR {
-   if($doorid == 8 || $doorid == 264){
-      if($client->KeyRingCheck(20511) || $client->KeyRingCheck(17274)){
-        quest::forcedooropen(8);
-      }
-      elsif(plugin::check_hasitem($client, 20511)) {
-        quest::forcedooropen(8);
-       }
-      elsif(plugin::check_hasitem($client, 17274)) {
-        $client->KeyRingAdd(17274);
-        quest::forcedooropen(8);
-       }
-   }    
-   if($doorid == 10 || $doorid == 266){
-         if($client->KeyRingCheck(20513) || $client->KeyRingCheck(17274)){
-           quest::forcedooropen(10);
-         }
-         elsif(plugin::check_hasitem($client, 20513)) {
-           quest::forcedooropen(10);
-          }
-         elsif(plugin::check_hasitem($client, 17274)) {
-           $client->KeyRingAdd(17274);
-           quest::forcedooropen(10);
-          }
-   }    
-   if($doorid == 11 || $doorid == 267){
-            if($client->KeyRingCheck(20511) || $client->KeyRingCheck(17274)){
-              quest::forcedooropen(11);
-            }
-            elsif(plugin::check_hasitem($client, 20512)) {
-              quest::forcedooropen(11);
-             }
-            elsif(plugin::check_hasitem($client, 17274)) {
-              $client->KeyRingAdd(17274);
-              quest::forcedooropen(11);
-             }
-   }  
-   if($doorid == 35 || $doorid == 291){
-         if($client->KeyRingCheck(20515) || $client->KeyRingCheck(17274)){
-           quest::forcedooropen(35);
-         }
-         elsif(plugin::check_hasitem($client, 20515)) {
-           quest::forcedooropen(35);
-          }
-         elsif(plugin::check_hasitem($client, 17274)) {
-           $client->KeyRingAdd(17274);
-           quest::forcedooropen(35);
-          }
-   }
-   if($doorid == 40 || $doorid == 296){
-         if($client->KeyRingCheck(20514) || $client->KeyRingCheck(17274)){
-           quest::forcedooropen(40);
-         }
-         elsif(plugin::check_hasitem($client, 20514)) {
-           quest::forcedooropen(40);
-          }
-         elsif(plugin::check_hasitem($client, 17274)) {
-           $client->KeyRingAdd(17274);
-           quest::forcedooropen(40);
-          }
-   } 
-   if($doorid == 46 || $doorid == 302){
-         if($client->KeyRingCheck(20516) || $client->KeyRingCheck(17274)){
-           quest::forcedooropen(46);
-         }
-         elsif(plugin::check_hasitem($client, 20516)) {
-           quest::forcedooropen(46);
-          }
-         elsif(plugin::check_hasitem($client, 17274)) {
-           $client->KeyRingAdd(17274);
-           quest::forcedooropen(46);
-          }
-         }
-        }
+  if($doorid == 8){
+    if($client->KeyRingCheck(17274)){
+      OPEN_DOORS(8,0);
+    } elsif(plugin::check_hasitem($client, 17274)) {
+      OPEN_DOORS(8,1);
+    }
+  } elsif($doorid == 10){
+    if($client->KeyRingCheck(17274)){
+      OPEN_DOORS(10,0);
+    } elsif(plugin::check_hasitem($client, 17274)) {
+      OPEN_DOORS(10,1);
+    }
+  } elsif($doorid == 11){
+    if($client->KeyRingCheck(17274)){
+      OPEN_DOORS(11,0);
+    } elsif(plugin::check_hasitem($client, 17274)) {
+      OPEN_DOORS(11,1);
+    }
+  } elsif($doorid == 35){
+    if($client->KeyRingCheck(17274)){
+      OPEN_DOORS(35,0);
+    } elsif(plugin::check_hasitem($client, 17274)) {
+      OPEN_DOORS(35,1);
+    }
+  } elsif($doorid == 40){
+    if($client->KeyRingCheck(17274)){
+      OPEN_DOORS(40,0);
+    } elsif(plugin::check_hasitem($client, 17274)) {
+      OPEN_DOORS(40,1);
+    }
+  } elsif($doorid == 46){
+    if($client->KeyRingCheck(17274)){
+      OPEN_DOORS(46,0);
+    } elsif(plugin::check_hasitem($client, 17274)) {
+      OPEN_DOORS(46,1);
+    }
+  }
+}
+
+sub OPEN_DOORS {
+  #EVENT_CLICKDOOR executes before the rest of the door processing
+  #so by unlocking and removing the lockpick value we can simulate live behavior
+  #and not incorrectly show that the door is locked and we are not holding the key.
+  
+  #remove lockpiock and key item.
+  $entity_list->FindDoor($_[0])->SetLockPick(0);
+  $entity_list->FindDoor($_[0])->SetKeyItem(0);
+  #send locked message
+  $client->Message(4,"This is locked...");
+  #add to keyring if specified
+  if($_[1] == 1) {
+    $client->KeyRingAdd(17274);
+  }
+  #send open message
+  $client->Message(4,"You got it open!");
+  #set 2 second timer to relock door. use door as timer.
+  #doors stay open longer than 2 seconds.
+  quest::settimer($_[0],2);
+}
+
+sub EVENT_TIMER {
+  if($timer == 8 || $timer == 11) {
+    LOCK_DOORS($timer,20511);
+  } elsif($timer == 10) {
+    LOCK_DOORS($timer,20513);
+  } elsif($timer == 35) {
+    LOCK_DOORS($timer,20515);
+  } elsif($timer == 40) {
+    LOCK_DOORS($timer,20514);
+  } elsif($timer == 46) {
+    LOCK_DOORS($timer,20516);
+  } else {
+    #should never happen
+    quest::stopalltimers();
+  }
+}
+
+sub LOCK_DOORS {
+  $entity_list->FindDoor($_[0])->SetKeyItem($_[1]);
+  $entity_list->FindDoor($_[0])->SetLockPick(201);
+  quest::stoptimer($_[0]);
+}

@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 
   if(($cash >= 300000) && plugin::check_handin(\%itemcount, 62632 => 1)) { #Poem of the Storms
     $client->Message(0,"The farmer looks at you with a stunned expression on his face. He carefully sets the coins down in a neat stack on the ground and slowly unfolds the paper. As he reads the poem, heavy tears form in the corners of his eyes and drop onto the page. When he is done reading he carefully folds it back up and hands the page back to you. He then wipes his nose with his sleeve.");
-    quest::spawn2(33159, 0, 0, -1152, -362, 1.19, 0); #a_faithful_farmer
+    quest::spawn2(415123, 0, 0, -120, -380, 2.5, 219); #a_faithful_farmer
     quest::say("I think I understand a little better about faith. Maybe my faith brought you here, maybe yours did, I don't know. I don't think it matters. You've shown me something about kindness as well. Thank you so much!");
     quest::summonitem(62633); #Tear-stained Poem of the Storms
     quest::depop_withtimer();
@@ -37,5 +37,5 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_SPAWN {
-   quest::depop(33159); #a_faithful_farmer
+   quest::depop(415123); #a_faithful_farmer
 }

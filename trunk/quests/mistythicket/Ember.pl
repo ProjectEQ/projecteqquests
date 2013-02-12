@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER{
   if ($timer eq "follow"){
-    my $OpponentID = 33066;
+    my $OpponentID = 415049;
     my $getmobbynpctype = $entity_list->GetMobByNpcTypeID($OpponentID);
     my $follow_target = $getmobbynpctype->GetID();
     quest::follow($follow_target,10);
@@ -14,5 +14,5 @@ sub EVENT_TIMER{
 
 sub EVENT_SIGNAL{
 	quest::emote("clicks at Blixkin happily.");
-	quest::signal(33066);
+	quest::signal(415049);
 }

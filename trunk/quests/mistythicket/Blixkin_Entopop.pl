@@ -10,7 +10,7 @@
 sub EVENT_WAYPOINT_ARRIVE{
 	if(($wp eq 2) || ($wp eq 9) || ($wp eq 14) || ($wp eq 21) || ($wp eq 24)){
 		quest::say("Ember?!  Ember?!  Where are you, girl?!");
-		quest::signal(33065);
+		quest::signal(415048);
 	}
 }
 

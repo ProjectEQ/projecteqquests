@@ -37,14 +37,14 @@ sub EVENT_ITEM {
     quest::faction(66,10);  #Da Bashers
   }
   elsif (plugin::check_handin(\%itemcount, 12201 =>1, 12202 => 1)) { #Happy Love Bracers and Troll Head(Lumpin)
-    quest::say("Haaah!  Yooz den it.  Me gots revenge!!  Yooz git reward.");  # Text made up
-	quest::summonitem(3316); # Helm of Hukulk
-	quest::ding();
+    quest::say("Ha!! Ha!! Who have last laugh now!! You do good werk.  Now me give you extra helm of Hukulk. Now go away!!");
+		quest::summonitem(3316); # Helm of Hukulk
+		quest::ding();
     quest::faction(292,10); #Shadowknights of Night Keep
     quest::faction(128,10); #Green Blood Knights
     quest::faction(22,-15); #Broken Skull Clan
     quest::faction(66,10);  #Da Bashers
-	quest::exp(250);
+		quest::exp(250);
 	}
   else {
     quest::say("Me no need dis, $name.");

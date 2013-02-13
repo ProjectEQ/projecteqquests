@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if (($ulevel == 1) && ($class == "Shadowknight")) { 
+		$client->Message(15,"As your eyes adjust to the darkness, a large troll decked out in grimy metal armor turns towards you. 'I be Hukulk. You read note in inventory and hand to me to start training!'");
+  }
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("What you want!! You make fun of [helm of Hukulk]?!! Me smash you!! Maybe you come learn ways of Hate and Fear! You be dark power. You be Pain. You [want join Nightkeep]?");

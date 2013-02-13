@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if (($ulevel == 1) && ($class == "Berserker")) { 
+		$client->Message(15,"Before you stands an imposing, yet ruggedly beautiful woman. She looks your way. 'I was told ye would arrive soon. I be Shanis MacDarren, the leader o' the Bloodrage Brawlers, or berserkers as others would call us. If ye be ready for some trainin', hand me yer note and we will begin! Oh and make sure to ask me about [tomes] if you wish to learn about throwin' axes!'");
+  }
+}
+
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
 		quest::say("Why, as I live and breathe this frigid air, have ye come to join our fine guild of berserkers?  The Bloodrage Brawlers are a fearsome collection of berserkers, indeed, me friend.  If ye be interested in joinin' up with us, read the note in yer inventory and then hand it to me!  Oh, and don't ye be forgetin' to ask me about that [tome] in yer inventory if ye want ta learn to use it!");

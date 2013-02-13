@@ -2,6 +2,7 @@ sub EVENT_SPAWN {
   $x = $npc->GetX();
   $y = $npc->GetY();
   quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+	quest::settimer("repeat", 90); #Repeated shoot every 90 seconds
 }
 
 sub EVENT_ENTER {
@@ -57,10 +58,6 @@ sub EVENT_ITEM {
 		plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
 		plugin::return_items(\%itemcount);
 	}
-}
-
-sub EVENT_SPAWN {
-  quest::settimer("repeat", 90); #Repeated shoot every 90 seconds
 }
 
 sub EVENT_TIMER {

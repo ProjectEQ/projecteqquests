@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if (($ulevel == 1) && ($class == "Berserker")) { 
+		$client->Message(15,"A crazed ogre stands before you. He seems to be foaming at the mouth. 'Hey wot you doing? Oh you wants join da powerful berserkers? Me think you look weak. But me train you and make you strong. You no fail or me will bash you to deth! Give me your note! Oh, and make sure to ask me about dat [tome] you gots dere in your inventory.'");
+  }
+}
+
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
 		quest::say("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");

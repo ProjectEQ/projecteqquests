@@ -5,6 +5,18 @@ my $rS = int(rand(99));
 my $rC = int(rand(99));
 #Above 3 variables are used to generate random gold silver and copper coin returns
 
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if (($ulevel == 1) && ($class == "Shaman")) { 
+		$client->Message(15,"Margyn McCann greets you. 'Welcome to the Church of the Tribunal. Read the note in your inventory and when you are ready to begin your training, hand it to me.'");
+  }
+}
+
 sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::say("Hail, young adventurer! I'm the chief overseer o' the Shamans o' Justice. We serve the will o' the Tribunal. Justice is our way. Within Halas, there are none who are above the scales o' justice. There are still some who have defied our laws. We wish to [apprehend the fugitives].");

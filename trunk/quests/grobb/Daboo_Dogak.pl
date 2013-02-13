@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if (($ulevel == 1) && ($class == "Berserker")) { 
+		$client->Message(15,"As your eyes adjust to the darkness, a large troll in front of you. As he speaks, flecks of spittle fly from his mouth. 'Anuder one that tinks he be strong? Me Daboo, you new master! Me teach you to fight like animal! Give note to me and we start! Oh, and don't ferget to ask me about dat [tome] in yer inventory!'";
+  }
+}
+
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
 		quest::say("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");

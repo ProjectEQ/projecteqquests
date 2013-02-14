@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 		quest::faction(99,10);  #Faydark's Champions
 		quest::exp(100);
 	}
-	elsif(plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1) {
+	elsif(plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
 		quest::say("You have done well, child! Take this as a blessing from Tunare for doing her will.");
 		quest::summonitem(5047);
 		quest::givecash("0,0,6,0");

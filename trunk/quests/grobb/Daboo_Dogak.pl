@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Berserker")) { 
+  if (($ulevel == 1) && ($class eq "Berserker")) { 
 		$client->Message(15,"As your eyes adjust to the darkness, a large troll in front of you. As he speaks, flecks of spittle fly from his mouth. 'Anuder one that tinks he be strong? Me Daboo, you new master! Me teach you to fight like animal! Give note to me and we start! Oh, and don't ferget to ask me about dat [tome] in yer inventory!'";
   }
 }

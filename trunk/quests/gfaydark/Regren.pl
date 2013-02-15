@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Warrior")) { 
+  if (($ulevel == 1) && ($class eq "Warrior")) { 
 		$client->Message(15,"A stern looking man turns to greet you as you get your bearings. 'Come, young recruit. I am Regren, Guild Master of the Emerald Warriors. Read the note in your inventory and then hand it to me to begin your training as a proud Warrior. Unless you would rather prance about with the pixies and such. The choice is yours.'");
   }
 }

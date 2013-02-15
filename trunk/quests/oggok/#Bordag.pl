@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Beastlord")) { 
+  if (($ulevel == 1) && ($class eq "Beastlord")) { 
 		$client->Message(15,"You stand in a large alcove. Next to you is a huge Ogre, scarred from many a battle. 'You come for training? You will be strong and fight like animal! I am Bordag. I train you! Read note in inventory and hand to me when ready to start!");
   }
 }

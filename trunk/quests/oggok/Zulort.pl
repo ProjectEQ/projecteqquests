@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Shaman")) { 
+  if (($ulevel == 1) && ($class eq "Shaman")) { 
 		$client->Message(15,"You stand in a large alcove. Next to you is a huge Ogre, with an evil grin. 'You come for training? You join us or me will smash you! I am Zulort. I train you! Read note in inventory and hand to me when ready to start!'");
   }
 }

@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if (($ulevel == 1) && ($class == "Warrior")) { 
+		$client->Message(15,"The cold voice of a female fills your mind with dread, 'I am Seloxia Punox. Seek me out in the Cauldron of Hate and hand me our note so that you may begin on the path of the Warrior. True power can be yours should you have the will to train hard enough!'");
+  }
+}
+
 sub EVENT_SAY { 
 	if ($text=~/hail/i) {
 		quest::emote("'s eyes flare with fury as her beautiful features twist into a snarl of hatred that echoes her hissing voice, 'How dare you address me in such a fashion?!  I am the leader of the Indigo Brotherhood!!  You are lucky I do not strike you down where you stand!  You shall address me as 'Mistress.'  Many warriors have died so that I might gain this title.'"); 
@@ -25,19 +37,20 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
 	if (plugin::check_handin(\%itemcount, 18751 => 1)) {
 		quest::say("I shall reserve any official welcoming until you have proven yourself a suitable member for the Indigo Brotherhood. That proof shall be obtained by your progression in your training. See Jarrex N`Ryt, one of my most trusted trainers in the Brotherhood and obey his command carefully if you wish to succeed as a member of the Brotherhood. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-		quest::summonitem("13580");
-        quest::faction(155, 10); #Indigo Brotherhood
-        quest::faction(92,-5); #Emerald Warriors
-        quest::faction(311,-5); #Steel Warriors
-		quest::faction(260,-5); #Primordial Malice		
-		quest::exp("100");
+		quest::summonitem(13580); #Old Training Tunic*
+		quest::ding();
+		quest::faction(155, 10); #Indigo Brotherhood
+		quest::faction(92,-15); #Emerald Warriors
+		quest::faction(311,-15); #Steel Warriors
+		quest::faction(260,-15); #Primordial Malice		
+		quest::exp(100);
 	} 
 	elsif (plugin::check_handin(\%itemcount, 18843 => 1)) {   # Sealed Letter (Letter To Seloxia)
 		quest::say("Very fine work my young warrior. You may soon be ready to become a Teir'Dal courier. For now we shall reward you. This will assist you in further service to the Indigo Brotherhood and King Naythox Thex.");   
 		quest::summonitem(quest::ChooseRandom(5026,1001,1002,1003,1004,1005,5014,5015,5021,5027)); # Random minor items
-        quest::faction(155, 10); #Indigo Brotherhood
-        quest::faction(92,-5); #Emerald Warriors
-        quest::faction(311,-5); #Steel Warriors
+		quest::faction(155, 10); #Indigo Brotherhood
+		quest::faction(92,-5); #Emerald Warriors
+		quest::faction(311,-5); #Steel Warriors
 		quest::faction(260,-5); #Primordial Malice
 		quest::ding();
 		quest::exp("250");
@@ -49,6 +62,4 @@ sub EVENT_ITEM {
 	}
 }
 
-
-#END of FILE Zone:neriakb  ID:41066 -- Seloxia_Punox 
-
+#END of FILE Zone:neriakb  ID:41066 -- Seloxia_Punox

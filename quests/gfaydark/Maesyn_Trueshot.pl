@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Ranger")) { 
+  if (($ulevel == 1) && ($class eq "Ranger")) { 
 		$client->Message(15,"Maesyn Trueshot strings his bow as you orient yourself amongst the treetop city of Kelethin. 'Greetings, young recruit. Should you wish to learn the ways of the Ranger, read the note in your inventory and hand it to me when you are ready to begin your training.'");
   }
 }

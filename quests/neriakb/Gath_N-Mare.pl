@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Wizard")) { 
+  if (($ulevel == 1) && ($class eq "Wizard")) { 
 		$client->Message(15,"A sly looking Dark Elf turns to address you. 'Come to me, young Wizard. I am Gath N'Mare. Read the note in your inventory and hand it to me so that you may begin on the path of the Wizard. True Power can be yours should you have the will to train hard enough!'");
   }
 }

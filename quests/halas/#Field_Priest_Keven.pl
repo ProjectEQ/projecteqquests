@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Beastlord")) { 
+  if (($ulevel == 1) && ($class eq "Beastlord")) { 
 		$client->Message(15,"Field Priest Keven turns towards you. 'There you are. I have been waiting for you. Are you ready to begin your training? With my help you will be able to command a great beast to become your most trusted companion. Read the note in your inventory and hand it to me when you are ready to begin your training.'");
   }
 }

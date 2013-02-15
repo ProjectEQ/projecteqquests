@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Rogue")) { 
+  if (($ulevel == 1) && ($class eq "Rogue")) { 
 		$client->Message(15,"Before you can fully get your bearings, a sly looking Wood Elf named Tylfon whispers in your direction. 'Welcome. I knew you would come. If you are still interested in joining the rogues, read the note in your inventory and hand it to me when you wish to begin your training.'");
   }
 }

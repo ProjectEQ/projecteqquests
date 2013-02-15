@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Shaman")) { 
+  if (($ulevel == 1) && ($class eq "Shaman")) { 
 		$client->Message(15,"Margyn McCann greets you. 'Welcome to the Church of the Tribunal. Read the note in your inventory and when you are ready to begin your training, hand it to me.'");
   }
 }

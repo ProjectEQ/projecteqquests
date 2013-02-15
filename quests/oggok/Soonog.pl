@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Shadowknight")) { 
+  if (($ulevel == 1) && ($class eq "Shadowknight")) { 
 		$client->Message(15,"You have entered what appears to be the guild hall of the Greenbloods. A large, brutish Ogre seems to be annoyed by your appearance. 'Wut? Where you come from? Oh, you here to train? Read note in inventory and then hand to me to start. Me make you strong Greenblood sum day!'");
   }
 }

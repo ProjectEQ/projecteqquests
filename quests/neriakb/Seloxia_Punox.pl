@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Warrior")) { 
+  if (($ulevel == 1) && ($class eq "Warrior")) { 
 		$client->Message(15,"The cold voice of a female fills your mind with dread, 'I am Seloxia Punox. Seek me out in the Cauldron of Hate and hand me our note so that you may begin on the path of the Warrior. True power can be yours should you have the will to train hard enough!'");
   }
 }

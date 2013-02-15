@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class == "Ranger")) { 
+  if (($ulevel == 1) && ($class eq "Ranger")) { 
 		$client->Message(15,"As you orient yourself amongst the peacefulness of the Surefall Glade, Hager Sureshot addresses you stemly, 'You're not here to poach are you? Of course you're not. Excuse my manners. I can see that you are a young ranger in training. Read the note in your inventory and hand it to me to begin your training.'");
   }
 }

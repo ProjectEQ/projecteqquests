@@ -31,23 +31,6 @@ sub EVENT_CLICKDOOR
       			quest::movepc(151,-425,0,-25,65);
     		}
   	}
-  	if($doorid == 37)
-  	{
-  		$zonename = "Misty Thicket";
-  		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
-  		{
-  			quest::movepc(33,-1262.71,-546,8,2);
-  		}
-  		elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
-  		{
-  			quest::movepc(415,-209,-324,8,126.5);
-  		}
-  		else  #SoF/SoD/UF
-  		{
-  			quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",1,1);
-			quest::settimer(1,5);
-  		}
-  	}
   	if($doorid == 19)
 	{
 		$zonename = "Innothule Swamp";
@@ -138,10 +121,6 @@ sub EVENT_CLICKDOOR
 
 sub EVENT_POPUPRESPONSE
 {
-	if($popupid == 1)
-	{
-		quest::movepc(33,-1262.71,-546,8,2);
-	}
 	if($popupid == 2)
 	{
 		quest::movepc(46,-34,-721,-27,221.21);
@@ -166,10 +145,6 @@ sub EVENT_POPUPRESPONSE
 
 sub EVENT_TIMER
 {
-	if($timer == 1)
-	{
-		quest::movepc(415,-209,-324,8,126.5);
-	}
 	if($timer == 2)
 	{
 		quest::movepc(413,-361,-462,5);

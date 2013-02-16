@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Berserker")) { 
+  if(plugin::check_hasitem($client, 36000)) { 
 		$client->Message(15,"A stern, commanding looking dwarf looks your way. He has an unsettling gleam in his eye. 'Oy there! been waitin' for ya! Welcome to Kaladim! Tha name's Dravel. If you be wishin' ta join us, hand me your note and we will begin your trainin' Oh, remember to ask me about that [tome] there in yer inventory. Wouldn't want ta ferget about that!'");
   }
 }

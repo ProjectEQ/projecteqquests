@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Warrior")) { 
+  if(plugin::check_hasitem($client, 18766)) { 
 		$client->Message(15,"Furtog Ogrebane glances your way. 'Ah a new recruit! Oh, how I enjoy meeting new recruits! With my training one day you could be a powerful member of the Stormguard! Read the note in your inventory and then hand it to me when you wish to begin your training!");
   }
 }
@@ -34,7 +34,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM { 
-	if($itemcount{18766} == 1){ # Recruitment Letter
+	if(plugin::check_handin(\%itemcount, 18766 => 1)){ # Recruitment Letter
 		quest::say("Greetings, friend, and welcome to Stormguard Hall! I am Furtog Ogrebane, Captain of the Guard. We shall train you to be a fearless warrior, who will serve and protect King Kazon well. Here is your tunic. Once you are ready to begin your training please make sure that you see Dirjadak Barbrawler, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13515); # Dirt Stained Tunic*
 		quest::ding();

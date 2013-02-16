@@ -13,8 +13,8 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-  if($text=~/Hail/i){
-    quest::say("I do not have time to speak with thee. I have a problem on my hands. Feel free to speak with any of my trainers.");
+  if($text=~/hail/i){
+    quest::emote("looks up irritably. 'I do not have time to speak with thee. I have a problem on my hands. Feel free to speak with any of my trainers.'");
   }
   if($text=~/problem/i){
     quest::say("My problems are of no concern of yours. but if you must know it deals with Nolusia's brother. I can tell you no more. Leave me be.");
@@ -27,10 +27,10 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(100);
     quest::summonitem(13549);
-    quest::faction(56,1);   #Craftkeepers
-    quest::faction(145,1);  #High Council of Erudin
-    quest::faction(143,-1); #Heretics
-    quest::faction(147,1);  #High Guard of Erudin
+    quest::faction(56,10);   #Craftkeepers
+    quest::faction(145,10);  #High Council of Erudin
+    quest::faction(143,-15); #Heretics
+    quest::faction(147,10);  #High Guard of Erudin
   }
   else {
     quest::say("I do not need this.");

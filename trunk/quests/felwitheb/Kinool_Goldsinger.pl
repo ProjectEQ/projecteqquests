@@ -65,7 +65,7 @@ sub EVENT_ITEM
 		quest::faction(322,-15); # The Dead
 		quest::exp(100);
 	}
-	if (plugin::check_handin(\%itemcount, 12333 => 1, 12334 => 1, 8401 => 1) && $gold >= 3000) 
+	elsif (plugin::check_handin(\%itemcount, 12333 => 1, 12334 => 1, 8401 => 1) && $gold >= 3000) 
 	{
   		quest::say("Fine work!! I now reward you with The Rain Caller.");
   		quest::exp(5000);

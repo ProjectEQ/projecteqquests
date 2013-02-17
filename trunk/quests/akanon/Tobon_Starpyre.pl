@@ -1,11 +1,14 @@
-#########################################################
-# Tobon_Starpyre (ID:55130)
-# Zone:   Ak'Anon (akanon)
-# Quest:  Gnome Wizard Newbie Note hand-in
-# Quest:  Tradeskill books
-# Quest:  Telescope Lenses
-# Author: a_sewer_rat
-#########################################################
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if(plugin::check_hasitem($client, 18774)) { 
+		$client->Message(15,"A wise looking gnome stands before you. 'Welcome to the Library Mechanimagica young apprentice. I am Tobon Starpyre. Read the note in your inventory and give it to me so that we may begin your training'");
+  }
+}
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
@@ -34,46 +37,28 @@ sub EVENT_SAY {
   }
 }
 
-#############################################################
-#Handin
-#     18774 : Registration Letter (from 13th floor)
-#Reward
-#     13523 : Soot Stained Gold Robe* (from 13th floor)
-#############################################################
-#Handin
-#     13275 : Telescope Lens [Trudo's Lens] (from 13th floor)
-#     13276 : Telescope Lens [Bidl's Lens] (from 13th floor)
-#     13277 : Telescope Lens [Fodin's Lens] (from 13th floor)
-#     13279 : Telescope Lens [Phiz's Lens] (from 13th floor)
-#Reward
-#     15380 : Spell: Column of Frost (from 13th floor)
-#  or
-#     15477 : Spell: Fire Bolt (from 13th floor)
-#  or
-#     15656 : Spell: Shock of Ice (from 13th floor)
-#############################################################
-
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 18774 => 1)) {
-    quest::say("Ah.. Welcome, friend! I am Tobon Starpyre, Master Wizard of Library Mechanimagica. This is our tunic - wear it with pride. Study hard, master your skills, and make us proud. Once you are ready to begin your training please make sure that you see Xalirilan, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-    quest::summonitem(13523);
-    quest::exp(100);
-    quest::faction(91,1);  # +Eldritch Collective
-    quest::faction(115,1); # +Gem Choppers
-    quest::faction(176,1); # +King AkAnon
-    quest::faction(210,1); # +Merchants of AkAnon
-    quest::faction(71,-1); # -Dark Reflection
-    quest::faction(322,-1);# -The Dead
-  }
-  elsif(plugin::check_handin(\%itemcount, 13275 => 1, 13276 => 1, 13277 => 1, 13279 => 1)) {
-    quest::say("Thank you for your work. I heard news of the troubles you encountered. Besides these troubles you still completed your mission. We are grateful. And as I once stated, your reward awaits.");
-    quest::summonitem(quest::ChooseRandom(15380,15477,15656));
-    quest::exp(500);
-    quest::givecash(0,0,0,1);
-  }
-  else {
-    quest::say("I don't need that, friend.");
-    plugin::return_items(\%itemcount);
-  }
+	if(plugin::check_handin(\%itemcount, 18774 => 1)) { # Registration Letter
+		quest::say("Ah.. Welcome, friend! I am Tobon Starpyre, Master Wizard of Library Mechanimagica. This is our tunic - wear it with pride. Study hard, master your skills, and make us proud. Once you are ready to begin your training please make sure that you see Xalirilan, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+		quest::summonitem(13523); # Soot Stained Gold Robe*
+		quest::ding();
+		quest::faction(91,10); #Eldritch Collective
+		quest::faction(71,-15); #Dark reflection
+		quest::faction(322,-15); #The Dead	
+		quest::faction(115,10); #Gem Choppers
+		quest::faction(176,10); #King Ak'Anon
+		quest::exp(100);
+	}
+	elsif(plugin::check_handin(\%itemcount, 13275 => 1, 13276 => 1, 13277 => 1, 13279 => 1)) {
+		quest::say("Thank you for your work. I heard news of the troubles you encountered. Besides these troubles you still completed your mission. We are grateful. And as I once stated, your reward awaits.");
+		quest::summonitem(quest::ChooseRandom(15380,15477,15656));
+		quest::exp(500);
+		quest::givecash(0,0,0,1);
+	}
+	else {
+		quest::say("I have no need for this $name, you can have it back.");
+		plugin::return_items(\%itemcount);
+	}
 }
+
 #END of FILE Zone:akanon  ID:55130 -- Tobon_Starpyre

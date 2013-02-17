@@ -5,8 +5,8 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if(plugin::check_hasitem($client, 18433)) { 
-		$client->Message(15,"An older, male gnome addresses you as you attempt to get your bearings. 'Welcome young apprentice to the Abbey of Deep Musings. I am Lewis Reldnok. Read the note in your inventory and hand it to me when you wish to begin your training.'");
+  if(plugin::check_hasitem($client, 18776)) { 
+		$client->Message(15,"A voice echoes throughout the room as you take in your surroundings. 'Hey you! This is Welno Tanlonikan. Remember me? Read the not in your inventory and then hand it to me. Hurry up! We don't have all day! You owe me a lot of money!'");
   }
 }
 
@@ -22,9 +22,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-	if(plugin::check_handin(\%itemcount, 18433 => 1)) { # Gnome Paladin Note
-		quest::say("Welcome to the Abbey of Deep Musing, $name! Here is a tunic that you may wear to announce the beginning of your training as a Paladin of Brell Serilis! Be warned that the only dangers do not lie without Ak'Anon. There is an evil society that lurks in the deepest recesses and shadows of our magnificent city. When you are ready to begin your training, let me know. I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-		quest::summonitem(13517);  #worn felt tunic
+	if(plugin::check_handin(\%itemcount, 18776  => 1)) { # Note
+		quest::say("Yes, I just knew you'd see it my way, $name. Anyway, welcome to our little part of Ak'Anon's underworld. We have to pay a high price to keep our small orgainzation hidden, which keeps us all busy around here. Once you are ready to begin your training please make sure that you come back to see me after collecting your initial supplies! I have many things to teach you that you would benefit from, from furthering your knowledge of our arts, to the various [trades] you will have available to you.");
+		quest::summonitem(13519);  #Scuffed Tunic*
 		quest::ding();
 		quest::faction(76,10); #Deep Muses
 		quest::faction(210,10); #Merchants of Ak'Anon
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 	}
   else {
     #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
     plugin::return_items(\%itemcount);
   }
 }

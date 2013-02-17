@@ -1,12 +1,14 @@
-###################################
-#Zone: Ak`Anon                    #
-#Short Name: akanon               #
-#Zone ID: 55                      #
-###################################
-#NPC Name: Iony_Gredlong          #
-#NPC ID: 55139                    #
-#Quest Status: Complete           #
-###################################
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if(plugin::check_hasitem($client, 18775)) { 
+		$client->Message(15,"Iony Gredlong's tiny voice echoes throughout the room. 'Welcome to the Abbey of Deep Musing $name. I am Iony Gredlong, your new Guild Master should you accept the ways of the Clerics of the Deep Muses. Read the note in your inventory and then hand it to me when you are ready to begin your training.'");
+  }
+}
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
@@ -64,18 +66,18 @@ sub EVENT_ITEM {
 		quest::summonitem(9107); #Walking Staff of the Shortnoble
 	}
 	elsif(plugin::check_handin(\%itemcount, 18775 => 1)) {
-		quest::say("Welcome to the Abbey of Deep Musing.  Here you can train and raise your abilities to the peak of perfection.  Take this tunic and wear it with pride.");
+		quest::say("Welcome to the Abbey of Deep Musing.  Here you can train and raise your abilities to the peak of perfection. Take this tunic and wear it with pride. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various trades you will have available to you. In addition, if you'd like to make your own set of equipment, please talk to Maldeny Gredlong. You can find her by the shops down by the water.");
 		quest::summonitem(13517);  #worn felt tunic
 		quest::ding();
-		quest::faction(76, 5); #Deep Muses
-		quest::faction(210,5); #Merchants of Ak'Anon
-		quest::faction(115,5); #Gem Choppers
-		quest::faction(71,-10); #Dark Reflection
-		quest::exp(250);
+		quest::faction(76,10); #Deep Muses
+		quest::faction(210,10); #Merchants of Ak'Anon
+		quest::faction(115,10); #Gem Choppers
+		quest::faction(71,-15); #Dark Reflection
+		quest::exp(100);
 	}
-	else {
-		quest::say("I do not need this.");
-    }
-	plugin::return_items(\%itemcount);
+  else {
+    quest::say("I have no need for this $name, you can have it back.");
+    plugin::return_items(\%itemcount);
+  }
 }
 

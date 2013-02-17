@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   if(plugin::check_hasitem($client, 18733)) { 
-		$client->Message(15,"As your eyes adjust to the interior of your surroundings, you see Mayor Gubbin and Sheriff Roglio standing nearby. The Mayor turns towards Sheriff Roglio. 'Looks like we ahve another fine young recruit to join your ranks, Roglio!' Sheriff Roglio loks your way. 'Greetings, recruit. Read the note in your inventory and hand it to me when you wish to start your training.'");
+		$client->Message(15,"As your eyes adjust to the interior of your surroundings, you see Mayor Gubbin and Sheriff Roglio standing nearby. The Mayor turns towards Sheriff Roglio. 'Looks like we have another fine young recruit to join your ranks, Roglio!' Sheriff Roglio looks your way. 'Greetings, recruit. Read the note in your inventory and hand it to me when you wish to start your training.'");
   }
 }
 

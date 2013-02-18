@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   if(plugin::check_hasitem($client, 18772)) { 
-		$client->Message(15,"An older, male gnome stands before you. 'Welcome young apprentice to the Library Mechanimagica young apprentice. I am Wuggan Azusphere. Read the note in your inventory and then hand it to me so that we can begin your training.'");
+		$client->Message(15,"An older, male gnome stands before you. 'Welcome young apprentice to the Library Mechanimagica. I am Wuggan Azusphere. Read the note in your inventory and then hand it to me so that we can begin your training.'");
   }
 }
 
@@ -23,7 +23,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM { 
   if(plugin::check_handin(\%itemcount, 18772 => 1)) { # Registration Letter
-    quest::say("Welcome to Library Mechanimagica. I am Master Magician Wuggan Azusphere. and I will help to teach you the ways of summoning. Here is our guild tunic, make us proud. Once you are ready to begin your training please make sure that you see Xalirilan, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of teh various [trades] you will have available to you.");
+    quest::say("Welcome to Library Mechanimagica. I am Master Magician Wuggan Azusphere. and I will help to teach you the ways of summoning. Here is our guild tunic, make us proud. Once you are ready to begin your training please make sure that you see Xalirilan, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
     quest::summonitem(13521); # Dusty Gold Robe*
 		quest::ding();
 		quest::faction(91,10); #Eldritch Collective

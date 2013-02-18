@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   if(plugin::check_hasitem($client, 18770)) { 
-		$client->Message(15,"Baxok Curhunter, a jittery older looking gnome appears to be startled. 'Well hello there. You scared me! You young ones always popping up here and there. You would think there is a hidden tunnel somewhere around here the way you just popped up near me. Well no matter. If you are here to train with the warriors of Gemchopper Hall, read teh note in your inventory and hand it to me to begin your training.'");
+		$client->Message(15,"Baxok Curhunter, a jittery older looking gnome appears to be startled. 'Well hello there. You scared me! You young ones always popping up here and there. You would think there is a hidden tunnel somewhere around here the way you just popped up near me. Well no matter. If you are here to train with the warriors of Gemchopper Hall, read the note in your inventory and hand it to me to begin your training.'");
   }
 }
 

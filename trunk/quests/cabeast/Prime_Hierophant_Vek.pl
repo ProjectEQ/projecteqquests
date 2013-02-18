@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   if(plugin::check_hasitem($client, 18206)) { 
-		$client->Message(15,"As your reptilian eyes adjust to the darkness of the room, an imposing Iksar turns towards you, addressing you with a sharp hiss. 'I am Prime Hierophant Vek. The time has come young one. You have chosen the path of the Shadowknight. Open your inventory and read the note within. Once you are ready to begin your training, hand the note to me and we will continue.'");
+		$client->Message(15,"As your reptilian eyes adjust to the darkness of the room, an imposing Iksar turns towards you, addressing you with a sharp hiss. 'I am Prime Hierophant Vek. The time has come young one. You have chosen the path of the Shaman. Open your inventory and read the note within. Once you are ready to begin your training, hand the note to me and we will continue.'");
   }
 }
 

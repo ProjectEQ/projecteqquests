@@ -29,7 +29,7 @@ sub EVENT_ITEM
   if(plugin::check_handin(\%itemcount, 2873 => 1))
   {
     quest::say("Young $name, I will be happy to process your registration for you. While I etch your name on our people's book of records I will require you to run a couple of errands. Take this certificate to the tax collector and obtain his seal. While you're out doing that, have Mignah create your personal Acrylia slate for you. Bring both the seal and the slate to me as soon as you can.");
-
+		quest::ding();
     quest::exp(100);
     # Certificate of Taxability
     quest::summonitem("2874");
@@ -40,7 +40,8 @@ sub EVENT_ITEM
   elsif(plugin::check_handin(\%itemcount, 2875 => 1, 2876 => 1))
   {
     quest::say("Ahh, there you are. I was about to send someone looking for you. Everything seems to be in order here, only one task remains. You must gain audience with the king and swear fealty to his highness by handing him this document. Return to me when this is done.");
-
+		quest::ding();
+		quest::exp(100);
     # Note to King Raja
     quest::setglobal("Shar_Vahl_Cit",4,5,"F");
     quest::summonitem("18299");
@@ -58,11 +59,12 @@ sub EVENT_ITEM
     quest::setglobal("Shar_Vahl_Cit",6,5,"F");
 
     quest::say("Oh, by the way, be careful with this as it will be important for recording your service to our society. If you should somehow lose it, ask me about your slate and I will issue you a new one.");
-
-    quest::exp(100);
+		quest::ding();
     # Citizens of Sharvahl
     quest::faction(483,10);
+		quest::exp(100);
   }
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE ZONE:sharvahl ID:155078 -- Registrar_Bindarah

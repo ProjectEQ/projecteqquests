@@ -19,7 +19,9 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 18299 => 1)){
 quest::say("Your humility and willingness to serve shall not be wasted. There is much to be done. $name. and our people thank you in advance for your selfless service.");
 quest::setglobal("Shar_Vahl_Cit",5,5,"F");
-quest::summonitem("18304"); }
+quest::summonitem("18304");
+quest::ding();
+quest::exp(100); }
 plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155154 -- King_Raja_Kerrath 

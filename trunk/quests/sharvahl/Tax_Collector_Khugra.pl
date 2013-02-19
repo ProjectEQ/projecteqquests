@@ -21,7 +21,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 2874 => 1)) {
     quest::emote("places his seal on the certificate before returning it to you.");
     quest::say("Ahh, a new taxpayer, wonderful! You must always remember that it is a distinct privilege to contribute to the upkeep of our noble society and not merely a duty or a burden. I look forward to collecting your honorable taxes in the future. May the spirits prosper you, $name.'");
-
+		quest::ding();
+		quest::exp(100);
     # Stamped Certificate of Taxability
     quest::setglobal("Shar_Vahl_Cit",3,5,"F");
     quest::summonitem("2875");

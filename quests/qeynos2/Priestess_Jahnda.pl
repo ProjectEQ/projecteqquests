@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 		quest::faction(9,10); #Antonius Bayle
 		quest::exp(100);
 	}
-	 if(plugin::check_handin(\%itemcount, 13911 => 1)) {
+	elsif(plugin::check_handin(\%itemcount, 13911 => 1)) {
    quest::say("Oh my word!! This is terrible news. This belongs to Hayle Mool. He has been captured by the Splitpaw Clan while in Karana. You must go to his aid. We cannot do so at this time. Here. Be sure to hand him this summons. I will need to speak with him.");
    quest::summonitem(18927);
   }

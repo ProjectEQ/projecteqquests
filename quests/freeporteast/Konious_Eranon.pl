@@ -1,188 +1,42 @@
-############################################
-# ZONE: East Freeport (freporte)
-# DATABASE: PEQ-Velious
-# LAST EDIT DATE: June 24,2005
-# VERSION: 1.0
-# BASE QUEST BY: PEQ Team
-# DEVELOPER: MWMDRAGON
-#
-# *** NPC INFORMATION ***
-#
-# NAME: Konious_Eranon
-# ID: 10120
-# TYPE: Enchanter Guild Master
-# RACE: Human
-# LEVEL: 61
-#
-# *** ITEMS GIVEN OR TAKEN ***
-#
-# A tattered Note ID-18856
-# Old Stained Robe ID-13565 
-#
-# *** QUESTS INVOLVED IN ***
-#
-#1 - Enchanter Newbie Note
-#
-# *** QUESTS AVAILABLE TO ***
-#
-#1 - Enchanters
-#
-# *** NPC NOTES ***
-#
-#
-#
-############################################
-
-######## EVENT_SAY AREA ####################
-### Called when the NPC is spoken to by a PC
-
-sub EVENT_SAY
-{
-   if($text=~/Hail/i)
-   {
-   quest::say("Greetings!  I am the mighty Konious Eranon, Master Enchanter, devoted follower of Innoruuk, and loyal assistant to the all-powerful Nexvok.");
-   }
+sub EVENT_SPAWN {
+    $x = $npc->GetX();
+    $y = $npc->GetY();
+    quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
 }
 
-######## EVENT_ITEM AREA ###################
-### Called when the NPC is handed items
-
-sub EVENT_ITEM
-{
-
-   # A tattered Note ID-18856
-   if($itemcount{18856} == 1)
-   {
-   quest::ding();
-   quest::say("Take this $name, to help you in your journeys.");
-   quest::exp("100");
-   #quest::givecash("0","0","0","0");
-
-   ### Random Item choosing if needed
-   # $random=int(rand itemid+itemid+itemid);
-   # quest::summonitem($randon);
-
-   # Old Stained Robe ID-13565
-   quest::summonitem("13565");
-
-   # factionname Faction ID - factionid
-   #quest::faction("0","1");
-   }
+sub EVENT_ENTER {
+    if(plugin::check_hasitem($client, 18856)) {
+        $client->Message(15, "You find yourself in a small, dimly lit room. A dark figure steps from the shadows and greets you. 'Welcome young apprentice. I am Konious Eranon your new Guild Master. I am glad you found us. Read the note in your inventory and hand it to me when you wish to begin your training.'");
+    }
 }
 
-######## EVENT_AGGRO AREA ##################
-### Called when the NPC is aggroed
-
-sub EVENT_AGGRO
-{
-
-
-
+sub EVENT_SAY {
+	if($text=~/hail/i) {
+		quest::say("Greetings!  I am the mighty Konious Eranon, Master Enchanter, devoted follower of Innoruuk, and loyal assistant to the all-powerful Nexvok.");
+	}
+	if($text=~/trades/i) {
+		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+		quest::summonitem(51121);
+	}
+	if($text=~/second book/i)	{
+		quest::say("Here is the second volume of the book you requested, may it serve you well!");
+		quest::summonitem(51122);
+	}
 }
 
-######## EVENT_ATTACK AREA #################
-### Called when the NPC is Attacked
-
-sub EVENT_ATTACK
-{
-
-
-
+sub EVENT_ITEM {
+	if(plugin::check_handin(\%itemcount, 18856 => 1)) { # A tattered Note
+		quest::say("Hey, Nex, we got another sucker.. Er.. Volunteer, that is, to help us out around here. Here ya go friend, put this on and let's whip you into shape. Once you are ready to begin your training please make sure that you see Marv Orilis, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+		quest::summonitem(13566);  # Blood Spotted Robe*
+		quest::ding();
+		quest::faction(86,10); #Dismal Rage
+		quest::faction(184,-15); #Knights of Truth
+		quest::faction(235,10); #Opal Dark Briar
+		quest::exp(100);
+	}
+	else {
+		quest::say("I have no need for this $name, you can have it back.");
+	}
+	plugin::return_items(\%itemcount);
 }
-
-######## EVENT_DEATH AREA ##################
-### Called when the NPC is killed
-
-sub EVENT_DEATH
-{
-
-
-
-}
-
-######## EVENT_ENTER AREA ##################
-### Called when a PC enters the NPCs Proximity
-
-sub EVENT_ENTER
-{
-
-
-
-}
-
-######## EVENT_EXIT AREA ###################
-### Called when a PC exits the NPCs Proximity
-
-sub EVENT_EXIT
-{
-
-
-
-}
-
-######## EVENT_HP AREA #####################
-### Called when the HP of the NPC drop below a set level
-
-sub EVENT_HP
-{
-
-
-
-}
-
-######## EVENT_SIGNAL AREA #################
-### Called when a signal is sent to the NPC
-
-sub EVENT_SIGNAL
-{
-
-
-
-}
-
-######## EVENT_SLAY AREA ###################
-### Called when the NPC kills someone
-
-sub EVENT_SLAY
-{
-
-
-
-}
-
-######## EVENT_SPAWN AREA ##################
-### Called when the NPC spawns
-
-sub EVENT_SPAWN
-{
-
-
-
-}
-
-######## EVENT_TIMER AREA ##################
-### Called when a timer has completed its cycle
-
-sub EVENT_TIMER
-{
-
-
-
-}
-
-######## EVENT_WAYPOINT_DEPART AREA ###############
-### Called when the NPC reaches a waypoint
-
-sub EVENT_WAYPOINT_DEPART
-{
-
-
-
-}
-
-### EQEmu Quest Template By: MWMDRAGON
-### The End of this script must contain 2 empty lines for the EQ Quest System
-#END of FILE Zone:freporte  ID:10120 -- Konious_Eranon
-
-
 

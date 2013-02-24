@@ -64,8 +64,8 @@ sub EVENT_ITEM
  quest::ding();
  quest::say("Well, well, well.. It's about time. Whatta ya got, boots fulla stones? Or maybe yer just part turtle? Bah, anyways, thanks for the ale. Maybe I'll buy you one sometime, eh? Bwahaha!");
  quest::exp(25);
- # Signal to Harkin Duskfoot NPCID-10107
- quest::signal(10107,1);
+ # Signal to Harkin Duskfoot NPCID-382194
+ quest::signal(382194,1);
  }
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
   plugin::return_items(\%itemcount);

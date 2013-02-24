@@ -43,8 +43,8 @@ sub EVENT_SAY
 if($text=~/Hail/i)
 {
 quest::say("HA! Greetings there. $name!  How are ya this fine day?  Me?  I'm doing all right.  Guard duty down here always reminds me of home.");
-# Signal to Beur_Tenlah NPCID-10106
- quest::signal(10106,1);
+# Signal to Beur_Tenlah NPCID-382197
+ quest::signal(382197,1);
 }
 
 if($text=~/message/i)

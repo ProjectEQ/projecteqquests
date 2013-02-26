@@ -1,4 +1,7 @@
 sub EVENT_CLICKDOOR {
+  my $x = $client->GetX();
+  my $y = $client->GetY();
+  my $z = $client->GetZ();
   my $destx = 0;
   my $desty = 0;
   my $destz = 0;

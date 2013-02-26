@@ -43,7 +43,7 @@ sub EVENT_SAY {
 
 
 sub EVENT_DEATH  {
-	quest::spawn(9147, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ());
+	quest::spawn(382244, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ());
 }
 
 sub EVENT_ITEM {

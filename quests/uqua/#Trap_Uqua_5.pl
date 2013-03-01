@@ -1,7 +1,7 @@
 #rage trap 2
 
 sub EVENT_SPAWN {
-  quest::set_proximity($x-20,$x+20,$y-20,$y+20);
+  quest::set_proximity($x-25,$x+25,$y-25,$y+25,$z-25,$z+25);
 }
 
 sub EVENT_ENTER {

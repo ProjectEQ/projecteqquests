@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Magician")) { 
+  if(plugin::check_hasitem($client, 18754)) { 
 		$client->Message(15,"Jayna D'Bious scowls at you. 'Yes, what is it? If you are here for training, read the note in your inventory and hand it to me. Otherwise I don't have time to waste with you!'");
   }
 }

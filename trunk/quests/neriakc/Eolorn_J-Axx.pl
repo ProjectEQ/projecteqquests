@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Rogue")) { 
+  if(plugin::check_hasitem($client, 18752)) { 
 		$client->Message(15,"Eolorn J'Axx turns towards you. 'Are you a new recruit? All new recruits must read the note in their inventory and hand it to me to begin their training.'");
   }
 }

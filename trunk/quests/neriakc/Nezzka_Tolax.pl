@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Shadowknight")) { 
+  if(plugin::check_hasitem($client, 18757)) { 
 		$client->Message(15,"Nezzka Tolax turns towards you. 'Welcome to the Lodge of the Dead. I am Nezzka Tolax and with my training you will learn to master teh ways of the Shadowknight. Read the note in your inventory and hand it to me when you are ready to begin your training.'");
   }
 }

@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Berserker")) { 
+  if(plugin::check_hasitem($client, 36003)) { 
 		$client->Message(15,"Before you stands an imposing, yet ruggedly beautiful woman. She looks your way. 'I was told ye would arrive soon. I be Shanis MacDarren, the leader o' the Bloodrage Brawlers, or berserkers as others would call us. If ye be ready for some trainin', hand me yer note and we will begin! Oh and make sure to ask me about [tomes] if you wish to learn about throwin' axes!'");
   }
 }

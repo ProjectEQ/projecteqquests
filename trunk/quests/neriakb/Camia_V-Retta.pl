@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Enchanter")) { 
+  if(plugin::check_hasitem($client, 18753)) { 
 		$client->Message(15,"Camia V'Retta turns her hateful scowl towards you as you get your bearings. 'You best be here for training or I will have your tongue! If you are here to learn the ways of the Enchanter, read the note in your inventory and then hand it to me so we can begin.'");
   }
 }

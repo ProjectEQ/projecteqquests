@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Berserker")) { 
+  if(plugin::check_hasitem($client, 36001)) { 
 		$client->Message(15,"A crazed ogre stands before you. He seems to be foaming at the mouth. 'Hey wot you doing? Oh you wants join da powerful berserkers? Me think you look weak. But me train you and make you strong. You no fail or me will bash you to deth! Give me your note! Oh, and make sure to ask me about dat [tome] you gots dere in your inventory.'");
   }
 }

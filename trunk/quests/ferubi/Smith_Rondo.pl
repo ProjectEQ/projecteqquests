@@ -1,5 +1,10 @@
 sub EVENT_SPAWN {
-  quest::setnexthpevent(51);
+	quest::settimer(1,3200);
+	quest::setnexthpevent(51);
+}
+
+sub EVENT_TIMER {
+	quest::depop();
 }
 
 sub EVENT_DEATH {

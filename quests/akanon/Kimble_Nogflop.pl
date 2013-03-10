@@ -1,5 +1,5 @@
 sub EVENT_SAY { 
-  if($text=~/Hail/i) {
+  if($text=~/hail/i) {
     quest::say("Greetings! I am the keeper of this zoo. I advise you to stay on the upper tiers to observe the animals.");
   }
   if ($text=~/regurgitonic/i) {
@@ -8,19 +8,18 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 13945 => 1)) {
+  if (plugin::check_handin(\%itemcount, 13945 => 1)) { #Flask of Nitrates
     quest::say("The flask of nitrates I sent for!! As was the deal, here is my [Regurgitonic]. Give it to whoever may need it and they will surely cough up whatever may be inside them with no harm to them whatsoever.");  
-    quest::summonitem(12140);
-    quest::faction(115, 10);
-    quest::faction(210, 10);
-    quest::faction(176, 10);
-    quest::faction(71, -30);
-    quest::faction(37, -30);
+    quest::summonitem(12140); #Regurgitonic
+    quest::faction(115, 10); #Gem Choppers
+    quest::faction(210, 10); #Merchants of Ak'Anon
+    quest::faction(176, 10); #King Ak'Anon
+    quest::faction(71, -30); #Dark Reflection
+    quest::faction(39, -30); #Clan Grikbar
     quest::exp(100);
   }
   else {
     quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
-# Quest edited by mystic414

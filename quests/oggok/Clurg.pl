@@ -24,9 +24,11 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 13379 => 1)) {
     quest::summonitem(13380);
-    quest::faction(46,10);
-    quest::faction(39,-30);
-    quest::faction(169,-30);
+    quest::faction(46,10);   #Clurg
+    quest::faction(169,-30); #Kazon Stormhammer
+    quest::faction(128,10);  #Green Blood Knights
+    quest::faction(57,10);   #Craknek Warriors
+    quest::faction(232,10);  #Oggok Guards
   }
   elsif (plugin::check_handin(\%itemcount, 13378 => 1)) {
    quest::say("Ahahaha! Dat witch sur did get wat was commin ta her!");
@@ -34,8 +36,8 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("Me not need dis.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:oggok  ID:49046 -- Clurg

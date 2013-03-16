@@ -27,7 +27,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202123 -- Aid_Garuuk

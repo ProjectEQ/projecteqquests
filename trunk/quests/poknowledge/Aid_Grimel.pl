@@ -112,6 +112,6 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }

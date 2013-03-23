@@ -14,17 +14,24 @@ sub EVENT_SAY {
   if ($text=~/pick up froglok legs/i) {
     quest::say("That good news. Oggok far away. Me got no time to go. If you go speak to Chef Dooga, say you pick up froglok legs. You bring back and me give you coin, maybe even something good.");
   }
+  if ($text=~/nerbilik/i) {
+    quest::say("Big and fat troll Nerbilik is. He leave to fish in tearsy ocean. Me promised to deliver him food or he come bak. The Gobbler needs some dumb person to [deliver grub locker] to Nerbilik.");
+  }
+  if ($text=~/deliver grub locker/i) {
+    quest::say("Good. Me wrap order of dwarf pickles in.. HEY!! Me out of special wrapping paper!! Hmm.. Here. Me use dis. Now, <..click.. Locks grub locker> Here. You take to Nerbilik in tearsy ocean and he pay you. No think of opening locker. Only Nerbilik has key.");
+    quest::summonitem(12203); #Grub Locker
+  }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13384 => 1)) {
     quest::say("Uggh!! Froglok legs!! Me hate smelly legs, but me need it for fat trolls.");
-    quest::faction(378,25);
+    quest::faction(378,10);
     quest::exp(150);
     quest::summonitem(13386);
   }
   else {
     quest::say("Uggh. Me not want this.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }

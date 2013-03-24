@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::summonitem(17604);  
     quest::summonitem(3452);  
   }
-  elsif (plugin::check_handin(\%itemcount, 5553 => 1, 3445 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 5553 => 1, 3454 => 1)) {
     quest::say("You're scruffy and you smell, but you're a fast enough learner.' He says as he pulls a leather strap out of his waistband and carefully wraps it around the hilt of your sword. He hands the sword back to you hilt first and says, 'Wrapping the hilt in that manners allows you to grip the sword better and hit harder. Take the sword and show it to Noril Galoon. He will instruct you further.");
     quest::summonitem(5545);
     quest::ding();
@@ -30,7 +30,6 @@ sub EVENT_ITEM {
     quest::summonitem(5545);
   }
   else {
-    quest::say("I do not want this.");
     plugin::return_items(\%itemcount);
   }
 }

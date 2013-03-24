@@ -10,8 +10,5 @@ sub EVENT_ITEM {
     quest::summonitem(59028); #Glowing Black Skull Necklace
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("seems to ignore you."); #Text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

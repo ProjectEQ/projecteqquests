@@ -158,12 +158,8 @@ sub EVENT_ITEM
 			quest::summonitem(31846);
 		}
 		
-		else {
-			plugin::return_items(\%itemcount);
-  		}  
 	}
-	else 
-	{
-		plugin::return_items(\%itemcount);
-  	}
+		
+	plugin::return_items(\%itemcount);
+  	
 }

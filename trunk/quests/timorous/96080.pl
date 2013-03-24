@@ -15,10 +15,7 @@ sub EVENT_ITEM {
     quest::emote("lowers her head in mourning and whispers a prayer. 'It is a shame that fate has decided one so young and from such a background should perish, but we must not attempt to change what was destined to be. Priestess Naxot sacrificed herself selflessly so that others may be spared the horrors Ixiblat would have brought to Norrath. May the waters of Norrath forever remember her reflection. I thank you for delivering Naxot's message to me and give you this pearl imbued with the power of the Triumvirate. Should you find Zordak Ragefire, speak with him before all else and hand him this pearl. No mortal enemy of the Triumvirate can resist its enchantments.'");
     quest::summonitem(28054); # shimmering pearl
   }
-  else {
-    quest::say("I have no need of this, $name.");
     plugin::return_items(\%itemcount);
-  }
 }
 
 sub EVENT_TIMER {

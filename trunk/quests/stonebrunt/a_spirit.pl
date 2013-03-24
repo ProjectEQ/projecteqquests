@@ -22,8 +22,5 @@ sub EVENT_ITEM {
     quest::unique_spawn(100221,323,0,-70,474,509,33.5); #Ridossan_the_Unliving
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

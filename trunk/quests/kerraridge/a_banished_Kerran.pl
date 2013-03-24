@@ -42,15 +42,13 @@ sub EVENT_ITEM {
         quest::say("Ashen Order!!  Prrr.. My order.  I have been expecting one of us.  Prrr.. Help me rejoin my native land.  Take this box.  Combine all the [remains of Thipt] within the box and return it to me.  This shall aid me in my redemption.");
         quest::summonitem("17985");
     }
-    elsif(plugin::check_handin(\%itemcount, 12371 => 1)) {
+    if(plugin::check_handin(\%itemcount, 12371 => 1)) {
         quest::say("Prrr.. Thank you brother of Ashen. I can now spend my time upon this island in peace, until my penance is serrrved. He dabs his paw into the mud and places it upon a tattered parchment. Take this message to Puab. Farrrwell.");
         quest::summonitem("28055");
         quest::exp("100");
         quest::ding();
     }
-    else {
-        plugin::return_items(\%itemcount);
-    }
+    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kerraridge  ID:74029 -- a_banished_Kerran
 

@@ -9,6 +9,7 @@ sub EVENT_SAY {
   quest::summonitem(69347);
   quest::summonitem(69323);    
   }
+}
   
 sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 69324 => 1)) {
@@ -40,10 +41,5 @@ sub EVENT_ITEM {
     quest::say("How utterly obtuse and arrogant. How about this one then?");
     quest::summonitem(69381);      
     }
-    
- else {
     plugin::return_items(\%itemcount);
-    quest::say("I have no need for these items, you can have them back");
-  }
-  }
 }

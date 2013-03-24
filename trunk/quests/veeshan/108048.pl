@@ -65,9 +65,6 @@ sub EVENT_ITEM {
     quest::say("How utterly obtuse and arrogant. How about this one then?");
     quest::summonitem(69390); #Earring of Phara Dar
   }
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("What? Foolish mortal! I do not need these trinkets!");
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:veeshan ID:108048 -- Phara_Dar.pl

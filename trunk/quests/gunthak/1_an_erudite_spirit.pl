@@ -9,8 +9,5 @@ sub EVENT_ITEM {
     quest::summonitem(59011); #Spell: Temperance
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("seems to ignore you."); #Text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

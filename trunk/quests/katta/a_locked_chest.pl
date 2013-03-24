@@ -8,7 +8,5 @@ sub EVENT_ITEM{
 		quest::signalwith(160130,1); #Signal Private_Sentinel_Tozza
 		$sentinel2->AddToHateList($client, 1);
 	}
-	else{
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }

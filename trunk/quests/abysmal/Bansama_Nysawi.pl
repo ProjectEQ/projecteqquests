@@ -60,7 +60,6 @@ sub EVENT_ITEM {
     quest::say("Ah, yes. Thank you.");
   }
   else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }

@@ -41,14 +41,8 @@ sub EVENT_ITEM {
       quest::exp(132775);   # 2.5% @ level 30
       quest::depop_withtimer();
     }
-    else {
-      quest::say("I don't need this.");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("I don't need this."); # not real text
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
+
 #END of FILE Zone:najena ID:44107 -- a_visiting_priestess 

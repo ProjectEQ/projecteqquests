@@ -37,18 +37,12 @@ sub EVENT_ITEM
 		quest::setglobal("pop_pot_tt_hedge_bypass",1,5,"F");#First stage complete.
 	}
 	
-	elsif(plugin::check_handin(\%itemcount, 51616 => 1, 51617 => 2)) {#Secured Wooden Case, 2x Silky Cloth
+	if(plugin::check_handin(\%itemcount, 51616 => 1, 51617 => 2)) {#Secured Wooden Case, 2x Silky Cloth
 		if (defined{pop_pot_tt_hedge_bypass} && $qglobals{pop_pot_tt_hedge_bypass} == 1) {
 			quest::say("Perfect I can clean this dagger up and return it to Veriok. You were a great help to me. I'll be sure to report that to Veriok when I get back.");
 			quest::setglobal("pop_pot_tt_hedge_bypass",2,5,"F");#Second, final stage complete.  TT and Hedge will be bypassed when you hail Veriok Dreik in potranquility again.
 			quest::exp(10000);
 		}
-		else {
-			plugin::return_items(\%itemcount); #return items, person hasn't completed the prerequites to perform this turnin.
-		}
 	}
-   
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+	plugin::return_items(\%itemcount); #return items if not the ones required
 }#END of FILE Zone:ponightmare ID:204055 --#Kelletia.pl

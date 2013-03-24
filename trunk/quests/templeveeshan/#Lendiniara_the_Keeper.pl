@@ -79,15 +79,8 @@ sub EVENT_ITEM {
       quest::say("What is this? A letter from Xygoz, my student? I am impressed you have been able to take this dangerous journey from Veeshan's Peak to here without any conflict. Oh, and he scribed it with our magic. Thank you for this letter. Now, take this trinket. It's a gift I would like you to bestow upon Xygoz for me. He was my favorite student, yet I never told him that directly. This trinket will surely deliver that message to him. However, there is one problem. The trinket has been damaged slightly because of an attack in Western Wastes. The magic from this trinket was torn from it and I fear that one of those horrid Kromzek has stolen it and taken it back to Kael. Before you give it to Xygoz, please retrieve the power source and reunite it with the trinket. I wish Xygoz my best and hope he will be most pleased with this token of my fondness for him.");
       quest::summonitem(69334);
     }
-    else {
-      quest::say("I do not need this, little one.");
-      plugin::return_items(\%itemcount);
-      return 1;
-    }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }  
+  plugin::return_items(\%itemcount);
 }
 
 # Quest edited and updated by mystic414

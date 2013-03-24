@@ -14,8 +14,5 @@ sub EVENT_ITEM {
 		quest::faction( 178, 10);
 		quest::depop_withtimer();
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
-

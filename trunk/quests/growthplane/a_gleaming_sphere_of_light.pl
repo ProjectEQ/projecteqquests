@@ -28,10 +28,7 @@ sub EVENT_ITEM {
     quest::summonitem(1325);
     quest::exp(1000);
   }
-  else {
-    quest::say("I have no need of this, friend."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

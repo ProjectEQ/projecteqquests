@@ -18,13 +18,8 @@ sub EVENT_ITEM {
       quest::summonitem(14383); #Innoruuk's Curse
       quest::depop();
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

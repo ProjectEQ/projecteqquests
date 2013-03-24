@@ -60,7 +60,6 @@ sub EVENT_ITEM {
     quest::delglobal("Green_Scale_Quest");
   }
   else {
-    quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
   }
 }

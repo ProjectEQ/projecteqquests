@@ -54,7 +54,6 @@ quest::summonitem(8400);
 #return items
 
   else {
-    quest::say("The forest supplies all I need."); #text made up
     plugin::return_items(\%itemcount);
     return 1;
   }

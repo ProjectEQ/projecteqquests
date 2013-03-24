@@ -172,7 +172,6 @@ sub EVENT_ITEM {
     quest::setglobal("writingsc", 1, 5, "F");
   }
   else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }

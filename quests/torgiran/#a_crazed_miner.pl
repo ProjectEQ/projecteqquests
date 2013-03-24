@@ -29,9 +29,7 @@ sub EVENT_ITEM {
     quest::spawn2(226021,0,0,$x,$y,$z,$h); #a crazed miner (KOS)
     quest::depop_withtimer();
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
-}
+   plugin::return_items(\%itemcount);
+ }
+ 
 #EndFile: torgiran\#a_crazed_miner.pl (226169)

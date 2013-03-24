@@ -14,10 +14,7 @@ sub EVENT_ITEM {
     quest::say("I thought I would never have to face this reality, but here it is -- the proof I asked for. While these pages detail the adventures of my love, it is you who are the great one. While I shall forever be pained by this, I am in your debt for helping me. Please leave me now and find those others who suffer the continued disappearance of their loved ones. If you have already helped everyone, please tell De'van that your task is complete and he will reward you.");
     quest::setglobal("writingsf", 1, 5, "F");
   }
-  else {
-    quest::say("I don't need this.");
-    plugin::return_items(\%itemcount);
-  }
+   plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

@@ -20,7 +20,6 @@ sub EVENT_ITEM {
     quest::unique_spawn(51155,0,0,1010,2690,-23,0); #Ronaiar Skullmoore
   }
   else {
-    quest::say("I have no use for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

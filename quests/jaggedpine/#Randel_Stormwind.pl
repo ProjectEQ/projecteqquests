@@ -64,7 +64,6 @@ gratitude.");
     quest::faction(135,10); #Guards of Qeynos
   }
   else {
-    quest::say("I have no need of this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

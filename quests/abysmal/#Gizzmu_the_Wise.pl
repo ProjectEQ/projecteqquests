@@ -15,7 +15,6 @@ sub EVENT_ITEM {
     quest::setglobal("writingse", 1, 5, "F");
   }
   else {
-    quest::say("I don't need this.");
     plugin::return_items(\%itemcount);
   }
 }

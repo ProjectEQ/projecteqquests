@@ -19,12 +19,10 @@ sub EVENT_ITEM {
       quest::depop();
     }
     else {
-      quest::say("This is not what I seek.");
       plugin::return_items(\%itemcount);
     }
   }
   else {
-    quest::emote("seems to ignore you.");
     plugin::return_items(\%itemcount);
   }
 }

@@ -13,7 +13,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
   }
   else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }

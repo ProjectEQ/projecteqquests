@@ -14,7 +14,6 @@ sub EVENT_ITEM {
     quest::depop_withtimer();
   }
   else {
-    quest::say("This will not help me.");
     plugin::return_items(\%itemcount);
   }
 }

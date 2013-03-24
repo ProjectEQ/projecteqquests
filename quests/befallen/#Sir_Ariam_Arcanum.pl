@@ -30,6 +30,5 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not what this.");
   plugin::return_items(\%itemcount);
 }

@@ -44,7 +44,6 @@ sub EVENT_ITEM {
       quest::summonitem(31471);
     }
     else {
-      quest::say("I do not need this, little one");
       plugin::return_items(\%itemcount);
       return 1;
     }

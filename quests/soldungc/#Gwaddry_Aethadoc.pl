@@ -40,7 +40,6 @@ sub EVENT_ITEM {
     quest::summonitem(61238); #Flame Etched Cloak
   }
   else {
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
    return 1;
   }

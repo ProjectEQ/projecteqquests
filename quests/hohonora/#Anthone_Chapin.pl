@@ -12,7 +12,6 @@ sub EVENT_ITEM {
     quest::depop();
   }
   else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }

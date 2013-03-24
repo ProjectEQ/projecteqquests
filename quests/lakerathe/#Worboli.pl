@@ -17,7 +17,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("That is not my fish... They tooks my fish!");
   plugin::return_items(\%itemcount);
 }
 

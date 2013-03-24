@@ -32,7 +32,6 @@ sub EVENT_ITEM {
 		quest::summonitem(87313,20);
   	}
   	else {
-    		quest::say("I don't want that.");
     		plugin::return_items(\%itemcount);
   	}
 }

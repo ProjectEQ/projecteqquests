@@ -28,7 +28,6 @@ sub EVENT_ITEM {
     quest::summonitem(55261); #Ghaib's Flame-Forged Longsword
   }
   else {
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
    return 1;
   }

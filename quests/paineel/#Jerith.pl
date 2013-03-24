@@ -12,7 +12,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
 
 }#END of FILE Zone:paineel  ID:75013--#Jerith.pl

@@ -50,7 +50,6 @@ sub EVENT_ITEM {
     quest::summonitem(2610);
   }
   else {
-    quest::say("This item is not worthy of my talents.");
     plugin::return_items(\%itemcount);
   }
 }

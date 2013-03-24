@@ -24,7 +24,6 @@ sub EVENT_ITEM {
     quest::faction(120, -30);#Goblins of Fire Peak
   }
   else {
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
    return 1;
   }

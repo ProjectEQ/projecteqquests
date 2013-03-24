@@ -44,7 +44,6 @@ sub EVENT_ITEM {
   }
   else {
   plugin::return_items(\%itemcount);
-    quest::say("I do not need this, try my Guardians.");
     }
 }
 sub EVENT_SIGNAL {

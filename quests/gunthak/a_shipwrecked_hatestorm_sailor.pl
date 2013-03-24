@@ -24,9 +24,5 @@ sub EVENT_ITEM {
     quest::say("Dis be gud. Better not trick me, becuz I get angry and it not good when me get angry. Me saw a lot of da loots come up to da beach. Da troll zombee mens come to da loots and take all. I not fights dem. Date be truble dere.");
     quest::givecash(6,0,0,0);#Everyone agrees that the reward is rather pathetic, only a few coppers.
   }	
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#Done

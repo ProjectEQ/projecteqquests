@@ -18,10 +18,7 @@ sub EVENT_ITEM {
   quest::summonitem($Tome);
   quest::ding();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("I have no use for that."); #Made this up
- }
 }
 
 #Submitted by: Jim Mills

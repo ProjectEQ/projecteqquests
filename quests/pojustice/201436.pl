@@ -155,13 +155,8 @@ sub EVENT_ITEM
 			$client->Message(4,"You receive a character flag!");
 			quest::summonitem(31846);
 		}
-		
-		else {
-			plugin::return_items(\%itemcount);
-  		}  
 	}
-	else 
-	{
+		
 		plugin::return_items(\%itemcount);
-  	}
+
 }

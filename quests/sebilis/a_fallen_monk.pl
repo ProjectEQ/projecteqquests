@@ -16,10 +16,7 @@ sub EVENT_ITEM {
   quest::spawn2(89183,0,0,$x,$y,$z,$h);
   quest::depop_withtimer();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("That is not what I sent you for."); #Made this up
- }
 }
 
 #Submitted by: Jim Mills

@@ -12,10 +12,7 @@ sub EVENT_ITEM {
    #Summon: The Skull of Torture
    quest::summonitem(59526);
   }
-  else {
-   quest::say("I have no need for this item, $name. You can have it back.");
    plugin::return_items(\%itemcount);
-  }
 }
 
 

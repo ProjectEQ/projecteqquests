@@ -22,10 +22,7 @@ sub EVENT_ITEM {
   quest::spawn2(104075,0,0,$x,$y,$z,$h);
   quest::depop_withtimer();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::emote("looks at the items you gave him, puzzles over them for a second, and lets them drop from his grasp. He appears to not want them."); #Made this up
- }
 }
 
 #Submitted by Jim Mills

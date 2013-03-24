@@ -26,10 +26,7 @@ sub EVENT_ITEM {
     quest::faction(178, 20);
     quest::exp(300);
   }
-  else {
-    quest::say("No thanks.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

@@ -18,7 +18,7 @@ sub EVENT_ITEM {
       quest::faction(363,10);
       quest::faction(416,-10);
     }
-    elsif (plugin::check_handin(\%itemcount, 52177 => 1)) {
+    if (plugin::check_handin(\%itemcount, 52177 => 1)) {
       quest::emote("looks quizzically at the symbol and rubs it in her hands. She smiles as if realizing something");
       quest::say("Ah, Tentric, you are always right. I can't give up on this world or my family. I'm not sure why I was behaving so selfishly. Take this flower to my niece, she will know what it means.");
       quest::summonitem(52175);
@@ -26,11 +26,6 @@ sub EVENT_ITEM {
       quest::faction(363,10);
       quest::faction(416,-10);
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

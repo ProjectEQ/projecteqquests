@@ -6,9 +6,7 @@ sub EVENT_ITEM {
     quest::summonitem(10601);
     quest::exp(10000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: gukbottom ID: 66170 NPC: a_ghoul_scribe

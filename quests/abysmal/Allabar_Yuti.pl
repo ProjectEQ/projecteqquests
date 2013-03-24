@@ -14,9 +14,6 @@ sub EVENT_ITEM {
     quest::say("Thank you very much. This will make me feel much better.");
     quest::givecash(0,3,5,5); #Platinum x 5, Gold x 5, Silver x 3
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
-}
+  plugin::return_items(\%itemcount);
+ }
 #END of FILE zone:abysmal ID:279259 -- Allabar_Yuti.pl

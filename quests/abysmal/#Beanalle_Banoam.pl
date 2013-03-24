@@ -30,9 +30,6 @@ sub EVENT_ITEM {
       quest::summonitem(67572);
       quest::setglobal("bic",19,5,"F");
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
   if (defined($qglobals{bic}) && ($qglobals{bic} == 19)) {
     if (plugin::check_handin(\%itemcount, 67565 => 1)) {
@@ -40,11 +37,6 @@ sub EVENT_ITEM {
       quest::summonitem(67573);
       quest::setglobal("bic",20,5,"F");
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

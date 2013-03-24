@@ -7,10 +7,7 @@ sub EVENT_ITEM {
     quest::summonitem(20476);
     quest::depop();
   }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: frontiermtns ID: 92084 NPC: a_human_skeleton

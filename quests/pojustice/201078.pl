@@ -139,7 +139,7 @@ sub EVENT_ITEM
          quest::summonitem(31842);
       }
       
-      elsif(plugin::check_handin(\%itemcount, 31796 => 1)) {
+      if(plugin::check_handin(\%itemcount, 31796 => 1)) {
          $client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_flame", 1, 5, "F");
@@ -147,7 +147,7 @@ sub EVENT_ITEM
          quest::summonitem(31796);
       }
       
-      elsif(plugin::check_handin(\%itemcount, 31960 => 1)) {
+      if(plugin::check_handin(\%itemcount, 31960 => 1)) {
          $client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_lashing", 1, 5, "F");
@@ -155,7 +155,7 @@ sub EVENT_ITEM
          quest::summonitem(31960);
       }
       
-      elsif(plugin::check_handin(\%itemcount, 31845 => 1)) {
+      if(plugin::check_handin(\%itemcount, 31845 => 1)) {
          $client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_stoning", 1, 5, "F");
@@ -163,7 +163,7 @@ sub EVENT_ITEM
          quest::summonitem(31845);
       }
       
-      elsif(plugin::check_handin(\%itemcount, 31844 => 1)) {
+      if(plugin::check_handin(\%itemcount, 31844 => 1)) {
          $client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_torture", 1, 5, "F");
@@ -171,21 +171,14 @@ sub EVENT_ITEM
          quest::summonitem(31844);
       }
       
-      elsif(plugin::check_handin(\%itemcount, 31846 => 1)) {
+      if(plugin::check_handin(\%itemcount, 31846 => 1)) {
          $client->Message(4,"You have completed a trial - impressive for mortals. You can tell Mavuin that we will hear his plea. We will seek him out as time befits us.");
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_hanging", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
          quest::summonitem(31846);
       }
-      
-      else {
-         plugin::return_items(\%itemcount);
-        } 
    }
-   else
-   {
-      plugin::return_items(\%itemcount);
-     }
+   plugin::return_items(\%itemcount);
 }
 

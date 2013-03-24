@@ -34,13 +34,8 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 29687 => 1)) { #Talisman of Benevolence
       quest::summonitem(29685); #Robe of Benevolence
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
-  }
-  else {
+	}
     plugin::return_items(\%itemcount);
-  }
 }
 
 #End of File, Zone:westwastes  NPC:120000 -- #Scout_Charisa

@@ -40,9 +40,7 @@ sub EVENT_ITEM {
     quest::exp(1500000);
     quest::summonitem(10650);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: bruningwood ID: 87065 NPC: a_sarnak_imitator

@@ -13,12 +13,9 @@ sub EVENT_ITEM {
     quest::summonitem(13375);
     quest::exp(500);
   }
-  elsif (plugin::check_handin(\%itemcount, 13376 => 1)) {
+  if (plugin::check_handin(\%itemcount, 13376 => 1)) {
     quest::say("Grooak.. You have done much to help me. This will come in handy soon. Thank you. Here is Marda's information. Take it to her. They must know. Farewell.");
     quest::summonitem(18884);
   }
-  else {
-    quest::say("Groak.. I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -39,9 +39,5 @@ sub EVENT_SAY {
     quest::say("How utterly obtuse and arrogant. How about this one then?");
     quest::summonitem(69388);      
     }
-    
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("I have no need for these items, you can have them back");
-  }
+  plugin::return_items(\%itemcount);
 }

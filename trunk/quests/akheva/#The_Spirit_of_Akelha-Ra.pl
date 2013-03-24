@@ -28,7 +28,6 @@ sub EVENT_ITEM {
     quest::depop();
   }
   else {
-    quest::emote(" does not seem to want that.");
     plugin::return_items(\%itemcount); # return unused items
   }
 }

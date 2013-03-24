@@ -13,7 +13,6 @@ sub EVENT_ITEM {
     quest::summonitem(10138); #Ruandia's Instructions
   }
   else {
-    quest::say("I have no use for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

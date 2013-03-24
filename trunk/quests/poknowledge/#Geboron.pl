@@ -24,7 +24,6 @@ sub EVENT_ITEM {
     }
   }
   else {
-    quest::say("I have no use for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

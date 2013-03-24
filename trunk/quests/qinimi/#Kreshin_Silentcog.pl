@@ -27,7 +27,6 @@ sub EVENT_ITEM {
     quest::summonitem(67401); #Writ of the Magi
   }
   else {
-    quest::say("This is not what I seek.");
     plugin::return_items(\%itemcount);
   }
 }

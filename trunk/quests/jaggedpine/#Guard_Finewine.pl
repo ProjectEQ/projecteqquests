@@ -28,7 +28,6 @@ sub EVENT_ITEM {
     quest::summonitem(8279); #Stack of Shift Reports
   }
   else {
-    quest::say("I have no need for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

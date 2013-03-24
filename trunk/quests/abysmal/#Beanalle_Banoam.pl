@@ -31,7 +31,6 @@ sub EVENT_ITEM {
       quest::setglobal("bic",19,5,"F");
     }
     else {
-      quest::say("I do not need this.");
       plugin::return_items(\%itemcount);
     }
   }
@@ -42,12 +41,10 @@ sub EVENT_ITEM {
       quest::setglobal("bic",20,5,"F");
     }
     else {
-      quest::say("I do not need this.");
       plugin::return_items(\%itemcount);
     }
   }
   else {
-    quest::emote("seems to ignore you.");
     plugin::return_items(\%itemcount);
   }
 }

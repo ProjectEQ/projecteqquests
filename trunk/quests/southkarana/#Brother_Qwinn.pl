@@ -35,12 +35,10 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 12314 => 1)) { #Needle of the Void
     quest::summonitem(10114); #Purple Headband
   }
-  elsif (plugin::check_handin(\%itemcount, 12256 => 1)) { #Robe of the Lost Circle
+  else (plugin::check_handin(\%itemcount, 12256 => 1)) { #Robe of the Lost Circle
     quest::summonitem(10114); #Purple Headband
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
+
 }
 #END of FILE Zone:southkarana  ID:436 -- Brother_Qwinn

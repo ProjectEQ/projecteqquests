@@ -32,7 +32,6 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_ITEM {
- quest::say("I have no use for that, keep it."); #Made this up
  plugin::return_items(\%itemcount);
 }
 

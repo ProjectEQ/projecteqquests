@@ -25,7 +25,6 @@ sub EVENT_ITEM {
     quest::exp(4088112);#3% of level 47 exp
   }  
   else {
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
   }
 }

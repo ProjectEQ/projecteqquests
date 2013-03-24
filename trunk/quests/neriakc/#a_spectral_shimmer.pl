@@ -29,6 +29,5 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_ITEM {
-  quest::emote("stares at you as if it does not understand.");
   plugin::return_items(\%itemcount);
 }

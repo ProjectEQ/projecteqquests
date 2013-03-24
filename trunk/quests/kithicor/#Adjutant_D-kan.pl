@@ -19,8 +19,6 @@ sub EVENT_ITEM {
 
   else {
 
-    quest::emote("will not accept this item.");
-
     plugin::return_items(\%itemcount);
 
  }

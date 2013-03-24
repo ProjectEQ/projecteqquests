@@ -38,7 +38,6 @@ sub EVENT_ITEM {
     quest::summonitem(15784); #Orb of Deathspeaking
   }
   else {
-    quest::say("I have no use for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

@@ -30,7 +30,6 @@ sub EVENT_ITEM {
     quest::depop_withtimer();
   }
   else {
-    quest::say("I have no use for this.");
     quest::givecash($copper, $silver, $gold, $platinum);
     plugin::return_items(\%itemcount);
   }

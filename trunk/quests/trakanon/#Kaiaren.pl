@@ -34,7 +34,6 @@ sub EVENT_ITEM {
     quest::targlobal("MnkEpic1",1,"Y1",0000,$charid,000); #Flag for Monk Epic 1.0 completed
   }
   else {
-    quest::say("I have no need for this item $name, you can have it back.");
     plugin::return_items(\%itemcount);
   }
 }

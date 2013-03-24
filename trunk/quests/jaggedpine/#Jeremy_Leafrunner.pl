@@ -26,7 +26,6 @@ sub EVENT_ITEM {
     quest::faction(135,20);  #Guards of Qeynos
   }
   else {
-    quest::say("I have no need for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

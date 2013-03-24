@@ -40,7 +40,6 @@ sub EVENT_ITEM {
 #    quest::giveAA(10);
   }
   else {
-    quest::emote("ignores you.");
     plugin::return_items(\%itemcount);
   }
 }

@@ -55,7 +55,6 @@ sub EVENT_ITEM {
     #Depop myself
     quest::depop_withtimer();
   }
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
   }
     

@@ -85,7 +85,6 @@ sub EVENT_ITEM {
     quest::summonitem(68860); # Trimdet's Helm of Chivalry
   }
   else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }

@@ -60,7 +60,6 @@ sub EVENT_ITEM {
     quest::summonitem(8283); #Official Warning
   }
   else {
-    quest::say("I have no need for this, $name.");
     plugin::return_items(\%itemcount);
   }
 }

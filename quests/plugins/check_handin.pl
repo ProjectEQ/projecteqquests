@@ -37,6 +37,7 @@ sub check_mq_handin {
 sub return_items {    
 	my $hashref = plugin::var('$itemcount');
 	my $client = plugin::val('$client');
+	my $name = plugin::val('$name');
 	my $items_returned = 0;
 
 	my %ItemHash = (
@@ -58,6 +59,7 @@ sub return_items {
 				if ($client)
 				{
 					$client->SummonItem($k, $ItemHash{$r}[1], $ItemHash{$r}[2]);
+					quest::say("I have no need for this $name, you can have it back");
 					$items_returned = 1;
 				}
 				else

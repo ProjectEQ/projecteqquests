@@ -50,10 +50,8 @@ sub EVENT_ITEM {
     quest::faction(311,-1); #Steel Warriors
     quest::faction(184,-1); #Knights of Truth
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
+     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
     plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE Zone:freportw  ID:9109 -- Captain_Hazran

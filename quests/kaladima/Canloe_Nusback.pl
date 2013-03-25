@@ -71,11 +71,10 @@ quest::faction(169,10);
 quest::faction(219,10);
 quest::faction(215,10);
 quest::faction(57,-30);
- } else {
-  #do all other handins first with plugin, then let it do disciplines
+ }  #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);
- }
+
 }
 #END of FILE Zone:kaladima  ID:60005 -- Canloe_Nusback 
 

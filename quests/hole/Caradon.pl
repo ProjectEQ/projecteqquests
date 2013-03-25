@@ -23,9 +23,7 @@ sub EVENT_ITEM {
     quest::faction(342, 7);
     quest::attack($name);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

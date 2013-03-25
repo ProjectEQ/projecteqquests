@@ -69,10 +69,8 @@ sub EVENT_ITEM {
     quest::faction(132,10); #Guardians of Shar Vahl
     quest::exp(2500);
   }
-  else {
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
     plugin::return_items(\%itemcount);
-  }
 }
 #EOF zone: shadeweaver ID: 165153 NPC: Captain_Tarief

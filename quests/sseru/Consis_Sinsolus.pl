@@ -12,9 +12,7 @@ sub EVENT_ITEM
     quest::exp(100);
     quest::summonitem(3879);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #End of File zone: sseru ID: 159310 159535 159670 -- Consis Sinsolus
 #By Kovou

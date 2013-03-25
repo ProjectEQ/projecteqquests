@@ -39,9 +39,7 @@ sub EVENT_ITEM {
     quest::exp(50000);
     quest::summonitem(30008);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 my $shawlsignal = 0;

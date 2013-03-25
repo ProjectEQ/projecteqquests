@@ -36,8 +36,6 @@ sub EVENT_ITEM
       quest::setglobal("shmskullquest", 6,5,"F"); #set a global flag so that user can do shm skull quest part 4
    }
 
-   else {
       plugin::return_items(\%itemcount); #return items if not the ones required
-   }
 }
 

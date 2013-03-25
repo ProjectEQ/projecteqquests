@@ -19,9 +19,7 @@ sub EVENT_ITEM {
     quest::summonitem(12100);
     quest::spawn2(12172,0,0,-11570,878,14,135);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: qey2hh1 ID: 12074 NPC: Chrislin_Baker

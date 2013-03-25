@@ -34,9 +34,6 @@ sub EVENT_ITEM {
    quest::say("Ahahaha! Dat witch sur did get wat was commin ta her!");
    quest::givecash(0,0,1,5);
   }
-  else {
-    quest::say("Me not need dis.");
-  }
   plugin::return_items(\%itemcount);
 }
 

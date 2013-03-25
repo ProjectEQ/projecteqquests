@@ -34,9 +34,7 @@ sub EVENT_ITEM {
     quest::exp(100000);
     quest::summonitem(10611);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: akanon ID: 55017 NPC: Clockwork_VIIX

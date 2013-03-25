@@ -28,9 +28,7 @@ if(plugin::check_handin(\%itemcount, 29062 => 4)){
          quest::spawn2(129003, 0, 0, 4.0, 690.0, 68.38, 128.0);
       }
    }
-  else {
   plugin::return_items(\%itemcount);
- }
 }
 
 sub EVENT_SIGNAL {

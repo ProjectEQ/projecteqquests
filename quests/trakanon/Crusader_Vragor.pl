@@ -23,10 +23,7 @@ sub EVENT_ITEM {
   quest::faction(193,10);
   quest::depop_withtimer();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("That is not what I sent you for."); #Made this up
- }
 }
 
 #Submitted by: Jim Mills

@@ -29,8 +29,6 @@ sub EVENT_ITEM {
       quest::exp(100);
     }
     else {
-      # Made text up
-      quest::say("I have no use for this, $name.");
       plugin::return_items(\%itemcount);
     }
   }

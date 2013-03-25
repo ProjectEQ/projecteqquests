@@ -34,9 +34,6 @@ sub EVENT_ITEM {
     quest::summonitem(55581); # Cristov's Corker
     quest::exp(5000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279256 -- Cristov_Clementstein.pl

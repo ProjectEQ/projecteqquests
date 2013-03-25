@@ -24,8 +24,5 @@ sub EVENT_ITEM {
     quest::emote("carefully takes the planar arcane item from you. With a careful eye, he inspects every portion of the incorporeal item before nodding to himself in satisfaction. The Paladin then closes his eyes and chants lowly in an unfamiliar language. You feel the coalescing of spirits around you in the area as the Paladin calls them forth to bless the arcane item in his grip. Dark runes of a rusted color begin to carve themselves onto a parchment that grows more real and tangible with each syllable uttered by the Paladin. Eventually, his chant comes to a close and the completed item is handed to you without expectation of further aid on your behalf, 'Do not use this power without caution, $name. It is quite powerful indeed for it is power forged upon the planar worlds but may affect both astral and prime alike.'");
     quest::summonitem(quest::ChooseRandom(21653, 26936, 26938)); #Level 65 Paladin spell, PoP (Shackles of Tunare, Wave of Marr, Brell's Stalwart Shield)
   }
-  else {
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
-  }
 }#Done

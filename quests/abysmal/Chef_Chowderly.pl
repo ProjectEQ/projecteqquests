@@ -68,9 +68,6 @@ sub EVENT_ITEM {
     quest::summonitem(55535); # Chowderly's Grand Bowl
     quest::summonitem(55546); # Chef Chowderly's Tuna Recipe Compilation
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279072 -- Chef_Chowderly.pl

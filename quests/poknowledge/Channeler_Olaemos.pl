@@ -25,10 +25,6 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(26942, 21663, 28443, 28450)); #Level 65 Wizard spell, PoP (Shock of Magic, Greater Decession, Tears of Marr, or Strike of Solusek)
   }
   
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+  plugin::return_items(\%itemcount);
     
 }#Done, quest by Kilelen

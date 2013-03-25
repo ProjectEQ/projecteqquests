@@ -28,8 +28,5 @@ sub EVENT_ITEM {
       quest::summonitem(41000); #Adventurer's Stone
     }
   }
-  else {
-    quest::say("I do not need this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

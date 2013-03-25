@@ -50,8 +50,5 @@ sub EVENT_ITEM {
     quest::summonitem(4155);
   }
 
-  else
-  {
 	  plugin::return_items(\%itemcount);
-  }
 }

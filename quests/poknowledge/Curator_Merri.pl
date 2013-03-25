@@ -24,11 +24,6 @@ sub EVENT_ITEM {
     quest::say("Thank you very much $name!  Here, please accept this as a reward for the fine work you've done.");#Text made up, can't find a reference
     quest::summonitem(28241);#Fine Antique Velvet Rose
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202016 -- Curator_Merri 
 

@@ -30,10 +30,7 @@ sub EVENT_ITEM {
     quest::say("Eww icky frogs. Me promise to give you reward, here yous go."); #Not actual text
     quest::summonitem(12217);
   }
-  else {
-    quest::say("I don't need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:oggok  ID:49061 -- Chef_Dooga

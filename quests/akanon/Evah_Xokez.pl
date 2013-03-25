@@ -37,12 +37,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 18769 => 1)) {  # Stained Note
    	quest::say("Join us in fulfilling teh will of Bertoxxulous. You can train with us here, in the shadows of the Abbey. Wear this tunic to help conceal your true identity. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. Once you are ready to begin your training please make sure that you see Derthix Gibblix, he can assist you in developing your hunting and gathering skills.");
-		quest::ding();
+    quest::ding();
     quest::summonitem(13518); # Tin Patched Tunic*
-		quest::faction(71,10); #Dark reflection
-		quest::faction(91,-15); #eldritch collective
-		quest::faction(115,-15); #gem choppers
-		quest::faction(76,-15); #Deepmuses
+    quest::faction(71,10); #Dark reflection
+    quest::faction(91,-15); #eldritch collective
+    quest::faction(115,-15); #gem choppers
+    quest::faction(76,-15); #Deepmuses
     quest::exp(100);
   }
   elsif(plugin::check_handin(\%itemcount, 10263 => 1)) { #empty infectious vial
@@ -65,8 +65,5 @@ sub EVENT_ITEM {
     quest::faction(71,3); #Dark reflection
     quest::faction(322,3); #the dead
   }
-  else {
-    quest::say("I have no need for this $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

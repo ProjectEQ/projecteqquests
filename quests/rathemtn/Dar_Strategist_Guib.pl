@@ -16,9 +16,7 @@ sub EVENT_ITEM {
     quest::settimer("depop",5);
     #quest::signal(); #To be used later when quest working as intended
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

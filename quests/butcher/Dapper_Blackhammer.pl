@@ -16,9 +16,7 @@ sub EVENT_ITEM {
     quest::summonitem(6551);
     quest::exp(25000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: butcher ID: 68089 NPC: Dapper_Blackhammer

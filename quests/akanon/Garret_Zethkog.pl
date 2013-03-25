@@ -49,11 +49,9 @@ sub EVENT_ITEM {
 		quest::faction(76,-15); #Deepmuses
     quest::exp(100);
 	}
-  else {
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
     plugin::return_items(\%itemcount);
-  }
 }
 
 #END of FILE Zone:akanon  ID:55186 -- Garret_Zethkog

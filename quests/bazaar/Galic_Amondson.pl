@@ -16,10 +16,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount,21808=> 1)){
     quest::summonitem(21823);
 }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:bazaar  ID:151007 -- Galic_Amondson 
 

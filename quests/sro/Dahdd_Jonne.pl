@@ -8,8 +8,5 @@ sub EVENT_ITEM {
     quest::emote("takes the items and puts them into his tailoring kit. He begins to furiously sew them together. 'Ah bugger. Seems this one is a failure. Ha! Got ya! Just kidding there, friend. Here you go! One Reinforced Satchel of Abu-Kar! Kizpi's directions were pretty good, even if he did forget to include a few items! My best work yet If I don't say so myself!'");
     quest::summonitem(40901); #Reinforced Satchel of Abu-Kar
   }
-  else {
-    quest::say("I do not want this.");
     plugin::return_items(\%itemcount);
-  }
 }

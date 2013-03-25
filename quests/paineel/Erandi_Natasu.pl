@@ -25,9 +25,6 @@ sub EVENT_ITEM {
     quest::say("How marvelous! The Coalition will be delighted by this win. We have all worked together to obtain this as a prize for whomever would be successful in this mission, please accept it and our gratitude.");
     quest::summonitem(54017); #Symbol of Loyalty to the People
   }
-  else {
-    quest::say("I have no need of this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: Erandi_Natasu.pl

@@ -16,8 +16,5 @@ sub EVENT_ITEM {
     quest::faction(99,20);   #Faydarks Champions
     quest::faction(322,-20); #The Dead
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 } 

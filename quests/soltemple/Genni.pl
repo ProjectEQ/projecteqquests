@@ -44,8 +44,5 @@ sub EVENT_ITEM {
     quest::say("I see that Gavel has sent you to me. Very well, I have galvanized your platinum bar - take it.");
     quest::summonitem(19047); #Galvanized Platinum
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

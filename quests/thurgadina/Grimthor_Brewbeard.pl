@@ -16,9 +16,7 @@ sub EVENT_ITEM {
     quest::say("That looks about right. You're moving along well outlander. Next you'll be needin to brew up a sacred ink to fill the grooves in your rune. Take Iceclad Cutlass fish oil, liquid velium, and some Royal Kromrif blood, brew them in the barrel here then take the product and the rune and combine them in a fletching kit. Show Talem Tucker the resulting item if yer successful.");
     quest::summonitem(1856);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone thurgadina ID: 115049 NPC: Grimthor_Brewbeard

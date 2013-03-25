@@ -1,6 +1,6 @@
 
 sub EVENT_SAY {
- if($text =~ /Hail/i) {
+ if($text =~ /hail/i) {
 	quest::say('Hello. I am the guild master.');
  }
 }

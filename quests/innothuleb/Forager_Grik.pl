@@ -10,8 +10,5 @@ sub EVENT_ITEM {
     quest::faction(106,20);
     quest::summonitem(13376);
   }
-  else {
-    quest::say("Grikk.. I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

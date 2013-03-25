@@ -50,15 +50,8 @@ sub EVENT_ITEM {
       quest::say("Here you are $race just as I promised. May it guard you well.");
       quest::summonitem(2612); #Custom Cowl of Mortality
     }
-    else {
-      quest::say("These are not the item I asked for $race do not waste my time!");
-      plugin::return_items(\%itemcount);
-    }
   }   
-  else {
-    quest::say("I do not know you well enough to entrust you with such an item yet, now leave my sight $race.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END OF FILE

@@ -15,9 +15,8 @@ sub EVENT_ITEM {
 		quest::exp(16000);
 	}
 	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
+
 }
 
 #End of File zone:butcher ID: 68113 -- Durkis Battlemore.pl

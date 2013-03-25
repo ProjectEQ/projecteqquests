@@ -23,8 +23,5 @@ sub EVENT_ITEM {
     quest::exp(5000);
     quest::movepc(87,-4039,6280,-53); #Atheling Plague's Tower 
   }
-  else {
-    quest::say("You shall see my master when I have Jarldyn's scribblings and an emerald plume.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

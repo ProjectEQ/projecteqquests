@@ -49,15 +49,8 @@ sub EVENT_ITEM {
       quest::faction(184,1); #Knights of Truth
       quest::faction(135,1); #Guards of Qeynos
     }
-    else {
-      quest::say("I do not need this.");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("You have no business handing me this junk.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # After this Krazen_Loosh is supposed to spawn but he does not exsist in the DB.
 

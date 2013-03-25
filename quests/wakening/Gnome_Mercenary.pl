@@ -9,9 +9,7 @@ sub EVENT_ITEM {
     quest::faction(189,10); #k-zek
     quest::givecash(5,5,2,1);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: wakening ID: various mercenaries NPC: various mercenaries

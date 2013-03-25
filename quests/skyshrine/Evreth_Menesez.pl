@@ -24,12 +24,9 @@ sub EVENT_ITEM {
       quest::faction(362,30);
       quest::faction(189,-30);
       quest::exp(1250);
-    }
-    else {
-      quest::say("I have no need of this, $name.");
-      plugin::return_items(\%itemcount);
-    }
+     }
   }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest edited and updated by mystic414

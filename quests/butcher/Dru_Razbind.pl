@@ -14,14 +14,5 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 00000 => 1)) { #
-    quest::say("");
-  }
-  elsif (plugin::check_handin(\%itemcount, 00000 => 1)) { #
-    quest::say("");
-  }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

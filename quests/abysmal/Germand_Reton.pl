@@ -20,9 +20,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(55538); # Wood Friend Bauble
   }
-  else {     
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279265 -- Germand_Reton.pl

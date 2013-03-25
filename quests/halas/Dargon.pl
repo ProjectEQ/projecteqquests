@@ -25,10 +25,7 @@ sub EVENT_ITEM {
 		quest::setglobal("wizepicB",1,1,"F");
 		quest::depop_withtimer();
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 

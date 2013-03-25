@@ -12,8 +12,5 @@ sub EVENT_ITEM {
     quest::summonitem(21987); #Elven Medicine Bag
     quest::delglobal("Gandak");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

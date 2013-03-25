@@ -86,8 +86,6 @@ sub EVENT_ITEM {
 		quest::say("I see you have returned in one piece. That is good. You have shown that you are a true warrior of the Legion indeed! Take this, and show that you are more than a legionnaire. I fear we may need just that [before this issue is over].");
 		quest::summonitem(48009);
 	}
-	else {
-		plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-		plugin::return_items(\%itemcount);
-	}
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);
 }

@@ -21,10 +21,7 @@ sub EVENT_ITEM {
     quest::summonitem(20600);
     quest::set_zone_flag(105);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

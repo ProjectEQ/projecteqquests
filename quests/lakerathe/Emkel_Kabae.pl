@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 
  }
 
-  elsif($itemcount {20650} == 1) {
+  if($itemcount {20650} == 1) {
     quest::say("'You are truly worthy of studying with our master. Bear this new symbol and contemplate what you wish from life before you let go of it. Ask the master about the symbol of testing and he will explain all. I too was tested by him.' Emkel pulls up his sleeve to show a grievous scar from his wrist to his shoulder.");
 
     quest::ding();
@@ -30,13 +30,7 @@ sub EVENT_ITEM {
     quest::summonitem(20647);
     quest::say("You must ask the master about the symbol of testing. Do not hand the symbol to him for he may interpret that as a breach of conduct.");
  }
-  else {
-
-    quest::emote("will not accept this item.");
-
     plugin::return_items(\%itemcount);
-
- }
 }
 
 

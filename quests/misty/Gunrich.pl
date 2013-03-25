@@ -14,7 +14,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I have no need for this item $name, you can have it back.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:misty  ID:33135 -- Gunrich

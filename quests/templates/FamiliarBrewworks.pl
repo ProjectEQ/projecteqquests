@@ -9,8 +9,5 @@ sub EVENT_ITEM{
       quest::say("Ale brewed, Master.");
       quest::summonitem(13039);
    }
-   else{
-      plugin::return_items(\%itemcount);
-      quest::say("I cannot brew anything from this.");
-   }
+    plugin::return_items(\%itemcount);
 }

@@ -18,10 +18,7 @@ sub EVENT_ITEM {
     quest::emote("blinks and carefully takes the stones from you, cautiously scratching the jagged green stone against the other. Its skin seems to shiver and flake at the contact and eventually begins to shine brightly. 'With the gem nature's balance is complete. Take the stone and walk your path. Blade or lightning caller, burning sword or the mother's walk.'");
     quest::summonitem(20468);
   }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: firiona ID: 84207 NPC: Foloal_Stormforest

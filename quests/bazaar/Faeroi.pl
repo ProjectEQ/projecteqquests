@@ -26,9 +26,6 @@ sub EVENT_ITEM {
     quest::exp(50);
     quest::ding();
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:bazaar  ID:151002 -- Faeroi

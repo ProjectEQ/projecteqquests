@@ -11,9 +11,7 @@ sub EVENT_ITEM {
     quest::faction(8,5);
     quest::givecash(1,1,1,0);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Senzo : PEQ Quest Team

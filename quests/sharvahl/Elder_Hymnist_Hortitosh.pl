@@ -55,10 +55,8 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::summonitem(3921);
 	} 
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
 	plugin::return_items(\%itemcount);
 }
 

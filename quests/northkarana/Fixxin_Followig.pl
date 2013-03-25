@@ -29,9 +29,7 @@ sub EVENT_ITEM {
     quest::faction(183,10); #knights of thunder
     quest::exp(500);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: northkarana ID: 13063 NPC: Fixxin_Followig 

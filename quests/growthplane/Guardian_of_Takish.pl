@@ -24,7 +24,6 @@ sub EVENT_ITEM {
     quest::summonitem(1223);
   }
   else {
-    quest::say("I have no need for this, friend."); #text made up
     plugin::return_items(\%itemcount);
     return 1;
   }

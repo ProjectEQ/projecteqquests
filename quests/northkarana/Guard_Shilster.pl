@@ -52,12 +52,9 @@ sub EVENT_ITEM
    quest::faction("21","10");
 
  }
-else{
   #do all other handins first with plugin
   plugin::return_items(\%itemcount);
   quest::say("Thanks, but I do not need this...");
-}
-
 }
 
 

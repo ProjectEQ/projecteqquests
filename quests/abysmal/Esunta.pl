@@ -58,8 +58,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58083 => 4) || plugin::check_handin(\%itemcount, 58083 => 3) || plugin::check_handin(\%itemcount, 58083 => 2) || plugin::check_handin(\%itemcount, 58083 => 1)) { #Simple Aligned Steel Needle
     quest::say("Good.");
   }
-  else {
-    quest::say("Wat dis?");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

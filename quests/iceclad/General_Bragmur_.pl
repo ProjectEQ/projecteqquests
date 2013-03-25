@@ -17,10 +17,7 @@ sub EVENT_ITEM {
     quest::spawn2(110118,55,0,$x,$y,$z,$h);
     quest::depop();
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

@@ -14,7 +14,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not need this.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:neriakc  ID:42086 -- Draan_N`Ryt

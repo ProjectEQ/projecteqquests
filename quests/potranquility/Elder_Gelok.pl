@@ -45,11 +45,6 @@ sub EVENT_ITEM {
     &DoRandomGem();
     quest::exp(3000000); #7% AA using a 1.0 zone_exp_multiplier
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:potranquility  ID:203035 -- Elder_Gelok 
 

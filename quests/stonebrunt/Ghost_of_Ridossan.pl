@@ -14,10 +14,7 @@ sub EVENT_ITEM {
     quest::stoptimer(1);
     quest::depop();
   }
-  else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

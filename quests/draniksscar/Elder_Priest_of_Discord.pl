@@ -129,10 +129,7 @@ sub EVENT_ITEM {
         }
         quest::ding();
     }
-    else {
-      quest::say("I have no use for this, $name.");
-      plugin::return_items(\%itemcount);
-    }
+    plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:Dranik's Scar  ID:302043 -- Elder_Priest_of_Discord

@@ -13,10 +13,7 @@ if ($faction < 5) { #amiable or better Keepers of the Art
     quest::givecash(3,0,0,0);
   }
  }
-  else {
-    quest::emote("will not take this item.");
     plugin::return_items(\%itemcount);
-  }
 }
 
 # EOF zone: felwitheb ID: 62018 NPC: Farios_Elianos

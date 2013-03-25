@@ -30,9 +30,6 @@ sub EVENT_ITEM {
 		quest::exp(100);
 		quest::givecash(6,1,0,0); 
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back");
-	}
   plugin::return_items(\%itemcount);
 }
 

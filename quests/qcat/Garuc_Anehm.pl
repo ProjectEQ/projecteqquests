@@ -60,10 +60,8 @@ sub EVENT_ITEM {
     quest::faction(21,3);   #Bloodsabers
     quest::exp(500);
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qcat  ID:45070 -- Garuc_Anehm

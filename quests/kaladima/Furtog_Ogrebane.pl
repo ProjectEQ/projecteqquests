@@ -45,11 +45,9 @@ sub EVENT_ITEM {
 		quest::faction(57,-15); # Craknek Warriors
 		quest::exp(100);
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:kaladima  ID:60008 -- Furtog_Ogrebane

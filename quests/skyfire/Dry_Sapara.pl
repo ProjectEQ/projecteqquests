@@ -19,8 +19,5 @@ sub EVENT_ITEM {
     quest::emote("intensely stares at the book and says 'This tome will teach me much of this ancient place. Now, I am in your debt. What is it that you want from me?' Dry Sapara then invades your mind and says, 'Ah yes, you want a portion of my blood. Fine Outlander, take it and leave me to read this ancient book.");
     quest::summonitem(69309);
   }
-  else {
-    quest::say("This is not what I seek.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -18,10 +18,7 @@ sub EVENT_ITEM {
     quest::say("Thank you so much. Here are the grapes I promised you. They may not look like much, but master brewers tell me they are required for many magical wines, including some sought by the most powerful magic-workers.");
     quest::summonitem(55276); #Moon-Harvested Grapes
   }
-  else {
-    quest::say("I do not need this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # END of FILE Zone:misty  ID:33094 -- epicurean_halfling.pl

@@ -19,10 +19,7 @@ sub EVENT_ITEM {
     quest::stoptimer("depop");
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("does not accept the item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: gfaydark ID: 54237 NPC: Faelin_Bloodbriar

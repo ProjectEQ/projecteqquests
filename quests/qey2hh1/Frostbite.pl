@@ -2,14 +2,12 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 12140 => 1)) {
 		quest::summonitem(13383);
 	}
-	elsif(plugin::check_handin(\%itemcount, 12226 => 1)) {
+	if(plugin::check_handin(\%itemcount, 12226 => 1)) {
 		quest::emote("takes a whiff of the sweaty shirt and barks.");
 		quest::settimer(1,15);
 		quest::settimer(2,1200);
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

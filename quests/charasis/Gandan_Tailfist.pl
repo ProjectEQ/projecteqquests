@@ -20,10 +20,7 @@ sub EVENT_ITEM {
   quest::ding();
   quest::depop_withtimer();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("That is not what I sent you for."); #Made this up
- }
 }
 
 sub EVENT_TIMER {

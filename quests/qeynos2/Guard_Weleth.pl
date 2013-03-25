@@ -38,10 +38,7 @@ sub EVENT_ITEM {
 		my $cp = int(rand(8));
 		quest::givecash($cp, 0, 0, 0);
 	}
-	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #End of File zone:qeynos2 ID: 2079 -- Guard_Weleth.pl

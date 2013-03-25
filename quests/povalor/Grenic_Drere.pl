@@ -32,9 +32,6 @@ sub EVENT_ITEM {
       }
     }
   }
-  else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:povalor  ID:208029 -- Grenic_Drere

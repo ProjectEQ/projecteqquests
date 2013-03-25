@@ -58,8 +58,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58071 => 4) || plugin::check_handin(\%itemcount, 58071 => 3) || plugin::check_handin(\%itemcount, 58071 => 2) || plugin::check_handin(\%itemcount, 58071 => 1)) { #Rum Tea
     quest::say("Ah, yes. Thank you.");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

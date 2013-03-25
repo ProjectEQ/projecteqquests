@@ -60,10 +60,8 @@ sub EVENT_ITEM {
     quest::faction(304,3); #Soldiers of Tunare
     quest::faction(63,-6); #Crushbone Orcs
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:gfaydark  ID:54105 -- Dill_Fireshine

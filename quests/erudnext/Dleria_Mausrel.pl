@@ -43,11 +43,7 @@ sub EVENT_ITEM {
     quest::exp(100);
     quest::givecash(0,12,4,0);
   }
-  else {
-    #Text made up
-    quest::say("You have my thanks, but I have no need for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:erudnext  ID:24050 -- Dleria_Mausrel

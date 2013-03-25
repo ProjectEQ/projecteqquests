@@ -34,9 +34,7 @@ sub EVENT_ITEM{
 		quest::faction( 361,3);
 		quest::faction( 294,3);
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:halas  ID:29030 -- Dok 

@@ -45,8 +45,5 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(100);
   }
-  else {
-    quest::say("Me not want diz.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

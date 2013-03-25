@@ -26,9 +26,6 @@ sub EVENT_SAY {
     quest::say("Thank you very much, this will help our research. Take this as a reward."); #Text made up
     quest::summonitem(quest::ChooseRandom(28435, 28436, 16342)); #Level 65 Magician spell, PoP (Rathe's Son, Sun Vortex, Call of the Arch Mage)
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }   
 #Done, quest by Kilelen

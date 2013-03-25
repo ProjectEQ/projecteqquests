@@ -15,9 +15,6 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 12073 => 1)) {
     quest::say("Gee, thanks, but I can't do a whole lot without the rest! Get your act straight or we're both dead!");
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:neriaka  ID:40061 -- Dran_`Slug`_Rembor

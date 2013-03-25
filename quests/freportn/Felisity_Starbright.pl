@@ -43,10 +43,7 @@ elsif(plugin::check_handin(\%itemcount, 18155 => 1)) {
     quest::faction(207,-30); #mayong mistmoore
   }
 
-else {
-    quest::say("I have no need for that.");
     plugin::return_items(\%itemcount);
-  }
 }
 
 #END of FILE Zone:freportn

@@ -35,9 +35,7 @@ sub EVENT_ITEM {
 		quest::givecash(0, 1, 0, 0);#1sp
 	}
 	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #End of File zone:qeynos ID: 1081 -- Gharin.pl

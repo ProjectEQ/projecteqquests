@@ -38,8 +38,5 @@ sub EVENT_ITEM {
     quest::exp(2000);
     quest::ding();
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

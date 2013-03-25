@@ -22,9 +22,7 @@ sub EVENT_ITEM {
     quest::summonitem(30270);
     quest::exp(25000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115120 NPC: Erdarf_Restil

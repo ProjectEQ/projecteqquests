@@ -32,10 +32,7 @@ sub EVENT_ITEM {
     quest::faction(338,10); #traders of the haven
     quest::delglobal("swordhilt");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadowhaven ID: 150089 NPC: Daloran_Glimmerblade

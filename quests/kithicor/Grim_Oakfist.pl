@@ -69,11 +69,7 @@ sub EVENT_ITEM {
         # Silent Fist Clan Faction ID-300
         quest::faction("300","10");
     }
-    else
-    {
-        quest::say("I asked you to hunt down all three of the tigers.");
-        plugin::return_items(\%itemcount);
-    }
+    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kithicor ID:20220 -- Grim_Oakfist
 

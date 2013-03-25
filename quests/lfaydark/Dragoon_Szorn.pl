@@ -15,15 +15,11 @@ sub EVENT_ITEM {
 		quest::summonitem(19029);#Receipt for Provisions Crate
 		quest::givecash(0,0,0,1);
 	}
-	elsif(plugin::check_handin(\%itemcount, 19028 => 1)){
+	if(plugin::check_handin(\%itemcount, 19028 => 1)){
 		quest::say("What is this!! The items of importance have been removed from the crate!! This is most unfortunate. However, you have done well in your service to the Teir'Dal Empire. Take this voucher of services rendered under the command of Naythox Thex back to Ithvol along with the head of that slain Fier'Dal, the receipt for the provisions, and your disciple symbol of Innoruuk.");
 		quest::summonitem(12499);#Voucher of Service to Naythox
 		quest::givecash(0,0,0,1);
 	}
-  else {
-    quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
-    return 1;
-  }
 }#END of FILE Zone:lfaydark  ID:57063 -- Dragoon_Szorn 
 

@@ -33,10 +33,8 @@ sub EVENT_ITEM {
       quest::say("I have not seen a gem such as this in quite some time! It was not since I dabbled in a bit of necro? Wait? What are you going to use this for? Never mind. I do not wish to know. Here, take your gem and leave!");
       quest::summonitem(10192);
       quest::exp(1000);
-   } else {
-     plugin::return_items(\%itemcount);
-     quest::say("I don't need that, friend.");
    }
+   plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50270 -- Darfumpel_Zirubbel 

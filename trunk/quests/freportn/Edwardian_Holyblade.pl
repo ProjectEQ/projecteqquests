@@ -51,15 +51,13 @@ sub EVENT_ITEM {
     quest::summonitem("9936"); #Longsword of Marr
     quest::ding();
   }
-  elsif (plugin::check_handin(\%itemcount, 18737 => 1)) { #A tattered note
+  if (plugin::check_handin(\%itemcount, 18737 => 1)) { #A tattered note
     quest::say("Thanks."); #Real text still needed
     quest::summonitem("13554"); #Faded Purple Tunic
     quest::exp("100");
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportn  ID:8004 -- Edwardian_Holyblade

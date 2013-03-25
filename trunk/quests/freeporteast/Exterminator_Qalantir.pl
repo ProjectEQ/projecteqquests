@@ -15,9 +15,6 @@ sub EVENT_ITEM {
     quest::exp(5);
     quest::givecash(1,1,1,0);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #End of Exterminate the Vermin (Scripted By: Fatty Beerbelly)

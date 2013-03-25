@@ -31,10 +31,7 @@ sub EVENT_ITEM {
 		quest::faction(132,5); #Guardian of Shar Vahl
 		quest::signalwith(155339,1,10);
 	}
-	else {
-		quest::say("I have no need for this, $name.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

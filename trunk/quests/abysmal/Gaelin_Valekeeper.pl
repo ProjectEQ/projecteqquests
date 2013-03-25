@@ -54,13 +54,7 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # Sleeves
       quest::summonitem(54120); # reworked sleeves
     }
-    else {         
-      quest::say("I have no use for this.");     
-      plugin::return_items(\%itemcount);
-    }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279015 -- Gaelin_Valekeeper.pl

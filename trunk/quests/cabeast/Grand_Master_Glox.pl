@@ -42,10 +42,8 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::exp(10000);
 	}
-	else {
-		plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-		plugin::return_items(\%itemcount);
-	}
+	plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+	plugin::return_items(\%itemcount);
 }
 
  #END of FILE : Zone : cabeast : NPC_ID : 2023 : Grand_Master_Glox

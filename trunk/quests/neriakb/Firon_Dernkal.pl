@@ -23,13 +23,9 @@ sub EVENT_ITEM{
 		quest::say("It is good to see you back $name. I am glad that you could turn up some information on Gerod. Now let me have a look at these. There seems to be some kind of an encrypted message in these documents and it appears to be written by Gerod. I cannot make it out completely but I believe it says something about a Rok. Please take this to whomever you can to try and make some sense of Gerods scribbling. As always, if you find anything that might belong to Gerod please return it to me. I do know of one specific [keepsake] he carries.");
 		quest::summonitem(21974);#Sealed War Documents...he hands them right back, to no purpose currently known.
 	}
-	elsif(plugin::check_handin(\%itemcount, 21975 => 1, 21976 => 1, 21977 => 1, 21978 => 1)) {#Bronze Medallion of Service, Silver Medallion of Service, Golden Medallion of Service, Platinum Medallion of Service
+	if(plugin::check_handin(\%itemcount, 21975 => 1, 21976 => 1, 21977 => 1, 21978 => 1)) {#Bronze Medallion of Service, Silver Medallion of Service, Golden Medallion of Service, Platinum Medallion of Service
 		quest::say("This is terrible news most definitely. I do not know how this could have happened. Gerod was one of the most skilled weapon masters that the Brotherhood has ever seen. I do certainly appreciate your work and dedication to this matter, please take this charm as a token of my appreciation.");
 		quest::summonitem(61002);#Charm of the Brotherhood
 	}	
-  else {
-    quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
-    return 1;
-  }
 }#Done

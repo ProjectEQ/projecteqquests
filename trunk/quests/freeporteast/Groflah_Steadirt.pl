@@ -53,11 +53,8 @@ $Tumpy_Tonic=1;
     quest::ding();
     quest::exp(10);
   } 
-
-        quest::say("I have no use for this.");
-
-        # Return items to the user
-        plugin::return_items(\%itemcount);
+  
   }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportn  ID:8118 -- Groflah_Steadirt

@@ -5,8 +5,5 @@ sub EVENT_ITEM {
     quest::faction(391,51);
     quest::exp(100);
   }
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("I have no interest in this."); #fake text
-  }
+  plugin::return_items(\%itemcount);
 } 

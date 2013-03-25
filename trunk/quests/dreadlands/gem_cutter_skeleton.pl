@@ -45,10 +45,7 @@ sub EVENT_ITEM {
     quest::exp("3000");
     quest::settimer("cutting",4);
   }
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("Ha! Worthless to me, this is! I return it!");
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

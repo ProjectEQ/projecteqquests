@@ -32,8 +32,5 @@ sub EVENT_ITEM {
     quest::summonitem(71271); #Elemental Stone
     quest::exp(5000);
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

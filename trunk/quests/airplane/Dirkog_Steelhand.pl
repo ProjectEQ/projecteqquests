@@ -37,10 +37,7 @@ sub EVENT_ITEM {
     quest::spawn2(71091,0,0,-586,767,176,64);
     quest::depop();
     }
-   else {
-    quest::say("What am I supposed to do with these?");
     plugin::return_items(\%itemcount);
-    }
 }
 
 sub EVENT_TIMER {

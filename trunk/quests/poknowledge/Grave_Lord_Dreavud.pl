@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 	
 		plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
 		plugin::return_items(\%itemcount);
-		quest::say("I don't need this.");#Text made up
-	}
+
+}
 
 #END of FILE Zone:poknowledge  ID:202259 -- Grave_Lord_Dreavud 

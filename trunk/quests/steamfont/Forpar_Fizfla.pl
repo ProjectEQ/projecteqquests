@@ -45,9 +45,6 @@ sub EVENT_ITEM {
     quest::say("I hope you find a good use for that! I bet you could play it from the mountaintops and the people below would hear you. Thank you, $name, for making my lifelong dream come true!");
     quest::summonitem(20538); #Mystical Lute
   }
-  else {
-    quest::say("I do not need this.");
-  }
   plugin::return_items(\%itemcount);
 }
 

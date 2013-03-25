@@ -19,10 +19,7 @@ sub EVENT_ITEM {
     quest::exp(12000);
     quest::summonitem(54092); # Strand of Sea Pearls
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE zone:natimbi ID:280043 -- Fienne_Silverleaf.pl

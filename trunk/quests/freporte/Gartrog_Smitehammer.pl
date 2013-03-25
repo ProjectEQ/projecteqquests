@@ -15,7 +15,5 @@ sub EVENT_ITEM {
     quest::summonitem(66175); #Jagged Blade of War (New)
     quest::summonitem(17869); #Red Scabbard (New)
   }
-  else {
-     plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

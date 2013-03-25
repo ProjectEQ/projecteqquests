@@ -25,10 +25,7 @@ sub EVENT_ITEM {
     quest::faction(98,20);
     quest::depop();
   }
-  else {
-    quest::say("The only object in this wretched world that I even desire is the bruised and bloodied head of that scoundrel, Stanos! Take this back!"); #Made this up, in case someone screws up and tries to hand him other rogue epic items
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #Originally submitted by ShadowBlade, corrected turn-in text by Jim Mills

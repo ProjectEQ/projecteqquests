@@ -14,10 +14,5 @@ sub EVENT_ITEM {
     quest::say("I must say, this is a surprise. I was beginning to wonder if you would ever return with these. I'm glad you see you have though. Take this new book and use it well in your future journeys. You may also be interested to know that Tenada Jeried also has a few lesson plans for very advanced students. If you should see him, be sure to tell him you are interested in learning from him. Good luck to you, $name!");
     quest::summonitem(28791); #Advanced Combat Manual
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202042 -- Gwiraba_Gelrid 

@@ -32,11 +32,9 @@ sub EVENT_ITEM {
     quest::faction(153,-40); #house of midst
     quest::faction(154,-40); #house of stout
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: echo ID: 153101 NPC: Duke_Norfin

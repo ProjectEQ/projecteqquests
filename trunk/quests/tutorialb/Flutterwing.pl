@@ -31,12 +31,9 @@ sub EVENT_ITEM {
     elsif($class eq 'Beastlord'){quest::summonitem(38131);}
     elsif($class eq 'Berserker'){quest::summonitem(38320);}
   }
-  elsif(plugin::check_handin(\%itemcount, 13014 => 1)) { #Muffin
+  if(plugin::check_handin(\%itemcount, 13014 => 1)) { #Muffin
     quest::emote("snatches the muffin from you as you barely manage to keep your fingers.");
     quest::exp(25);
   }
-  else {
-    quest::emote("sniffs the item and turns his head in disgust.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

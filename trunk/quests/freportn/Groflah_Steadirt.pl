@@ -20,12 +20,6 @@ sub EVENT_ITEM
     # Return A Tattered Flier ID: 18818 to player
     quest::summonitem(18818);
   }
-  else
-  {
-        quest::say("I have no use for this.");
-
-        # Return items to the user
-        plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportn  ID:8001 -- Groflah_Steadirt

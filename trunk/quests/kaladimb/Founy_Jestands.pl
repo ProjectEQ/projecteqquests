@@ -9,12 +9,11 @@ sub EVENT_SAY {
     quest::say("I don't know what you're talking about, if you know what I mean. You should leave now, if you know what's good for you. Don't make me sic the crew on you.");
 
  }
+}
 
 sub EVENT_ITEM {
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
   plugin::return_items(\%itemcount);
-
- }
 }
 
 

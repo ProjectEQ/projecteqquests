@@ -32,10 +32,7 @@ sub EVENT_ITEM {
     #Opal Dark Briar
     quest::faction(235,10);
  }
-  else {
-    quest::emote("will not accept this item.");
     plugin::return_items(\%itemcount);
- }
 }
 
 #END of FILE  Quest by: Solid11  Zone: lakerathe ID:51025 -- Eldreth

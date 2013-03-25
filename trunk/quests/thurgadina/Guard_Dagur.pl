@@ -8,7 +8,6 @@ sub EVENT_SAY {
 } 
 
 sub EVENT_ITEM { 
-  quest::say("I have no need for this $name, you can have it back."); 
   plugin::return_items(\%itemcount); 
 } 
 #END of FILE Zone:thurgadina  ID:115133 -- Guard_Dagur

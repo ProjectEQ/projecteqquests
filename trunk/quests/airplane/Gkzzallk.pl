@@ -14,8 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(20652);
     quest::depop();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE  Quest by: Solid11  Zone:airplane  ID:71073 -- Gkzzallk

@@ -61,10 +61,7 @@ sub EVENT_ITEM {
   }
  }
  
- else {
-  quest::say("Hmm... There is something about $race's I don't exactly trust...");
   plugin::return_items(\%itemcount);
- }
 }
 
 #END OF FILE zone:rathemtn

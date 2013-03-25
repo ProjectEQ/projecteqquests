@@ -21,7 +21,5 @@ sub EVENT_ITEM {
     quest::spawn2(110118,0,0,$x,$y,$z,$h);
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

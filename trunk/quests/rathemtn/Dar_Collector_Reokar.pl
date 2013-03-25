@@ -71,8 +71,6 @@ sub EVENT_ITEM {
   quest::exp(100);
   quest::ding();
   }
-  else{
   plugin::return_items(\%itemcount);
-  }
   $qglobals{darcollect} = undef;
 }

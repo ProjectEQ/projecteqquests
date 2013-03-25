@@ -15,9 +15,7 @@ sub EVENT_ITEM {
 		#Supposed to be different faction hits here, but it's not mentioned what, so not giving any.
 	}
 	
-	else {
 		plugin::return_items(\%itemcount);
-	}
 }
 
 #End of File zone:qeynos ID: 1106 -- Earron_Huntlan.pl

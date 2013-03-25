@@ -41,14 +41,11 @@ sub EVENT_ITEM {
 		quest::faction(143,-15); # Heretics.
 		quest::exp(100); 
 	}
-	elsif (plugin::check_handin(\%itemcount, 1771 => 1)) {
+	if (plugin::check_handin(\%itemcount, 1771 => 1)) {
 		quest::say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way");
 		quest::summonitem(1763);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:erudnext  ID:98061 -- Gans_Paust

@@ -25,9 +25,6 @@ sub EVENT_ITEM {
     quest::summonitem(55564); # Worker's badge - number five
     quest::summonitem(55556); # Vial of Anti-Rusting Agent
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:Ak'Anon ID:55159 -- Gilipus.pl

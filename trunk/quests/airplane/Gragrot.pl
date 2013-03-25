@@ -39,10 +39,7 @@ sub EVENT_ITEM {
     quest::say("You is powerful! Take this!");
     quest::depop();
   }
-  else {
-    quest::say("What is these for?");
     plugin::return_items(\%itemcount);
-  }
 }
 
 sub EVENT_TIMER {

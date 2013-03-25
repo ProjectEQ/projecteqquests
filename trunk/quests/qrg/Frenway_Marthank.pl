@@ -27,10 +27,8 @@ sub EVENT_ITEM {
 	{
 		quest::say("Oh, this is such a relief to know that Mammoth will no longer hurt anyone. Here, please take this for your troubles. I do not need to keep this list.  Thank you $name");
 		quest::summonitem(18809);			
-	} else {
-		quest::say("I have no use for this.");
-		plugin::return_items(\%itemcount);
 	}
+	plugin::return_items(\%itemcount);
 }
 
 

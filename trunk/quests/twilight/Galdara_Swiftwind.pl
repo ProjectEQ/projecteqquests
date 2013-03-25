@@ -105,11 +105,7 @@ sub EVENT_ITEM {
 
   }
 
-  else{ 
-
     plugin::return_items(\%itemcount);
-
-    }
 
 }
 

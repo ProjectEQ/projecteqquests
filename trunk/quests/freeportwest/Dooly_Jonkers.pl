@@ -36,7 +36,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not need this.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportw  ID:9076 -- Dooly_Jonkers

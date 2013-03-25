@@ -55,9 +55,6 @@ sub EVENT_ITEM {
 		quest::givecash(0,0,7,1);
 		quest::ChooseRandom(6016,13296);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-	}
   plugin::return_items(\%itemcount);
 }
 

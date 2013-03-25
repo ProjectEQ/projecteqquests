@@ -20,11 +20,9 @@ sub EVENT_ITEM {
 		quest::faction(106,-10); # Frogloks of Guk
 		quest::exp(100);
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:grobb  ID:6084 -- Gardunk 

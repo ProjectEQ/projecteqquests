@@ -47,11 +47,9 @@ sub EVENT_ITEM {
 		quest::say("One less trouble. Hunhuh!! You do good work. Keep up. Remember to bring any special things to Guntrik. Here junk for good work. Go away now.");
 		quest::summonitem(quest::ChooseRandom(5032,5029, 5033, 5031, 13355));
 	} 
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:oggok  ID:49043 -- Guntrik 

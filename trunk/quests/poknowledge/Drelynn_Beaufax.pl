@@ -20,11 +20,6 @@ sub EVENT_ITEM {
     quest::emote("inspects each gem carefully. 'These are in much better condition then I thought I would get them in. Adding these to my exhibit pleases me greatly. As promised, here is something for you.'");
     quest::summonitem(28242);#Fine Antique Veil
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202017 -- Drelynn_Beaufax 
 

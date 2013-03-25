@@ -13,7 +13,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I have no use for this, $name.");
   plugin::return_items(\%itemcount);
 }
 #EndFile: butcher\Feriella_Vorana.pl (68248)

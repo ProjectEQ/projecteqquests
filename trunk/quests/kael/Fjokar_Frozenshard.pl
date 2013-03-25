@@ -30,9 +30,5 @@ sub EVENT_ITEM {
   	quest::exp(1107392);#1% of level 45 exp
   	quest::summonitem(25030);#Frozen Shard
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#Done

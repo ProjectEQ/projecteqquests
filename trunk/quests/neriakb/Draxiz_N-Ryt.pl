@@ -15,8 +15,5 @@ sub EVENT_ITEM {
 		quest::faction(322, -30);#The Dead
 		quest::faction(331, 10);#The Spurned
 	}
-	else {
-  	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
-	}
 }#Done

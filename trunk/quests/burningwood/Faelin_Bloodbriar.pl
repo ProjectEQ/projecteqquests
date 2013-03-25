@@ -25,9 +25,7 @@ sub EVENT_ITEM {
     quest::exp(1000000);
     quest::depop();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: burningwood ID: XXXXXX NPC: Faelin_Bloodbriar

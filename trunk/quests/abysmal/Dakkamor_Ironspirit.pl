@@ -54,13 +54,7 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 68221 => 1)) { # vambraces
       quest::summonitem(54113); # reworked vambraces
     }
-    else {     
-      quest::say("I have no use for this.");   
-      plugin::return_items(\%itemcount);
-    }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279017 -- Dakkamor_Ironspirit.pl

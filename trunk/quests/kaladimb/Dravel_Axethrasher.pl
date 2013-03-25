@@ -35,12 +35,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 36000 => 1)) {  # Blood-Smeared Note
    	quest::say("Tis a good thing ye're doing by joining up with us, $name. As a member, ye get a wee gift. Take this tunic. Now, take that rage that rushes through yer veins and go kill some of the vermin around the city! Take a good look around ye as well. Grab some ale or talk to some of the miners. Lots to do around 'ere, me friend. Oh, and Goriba over there wanted to talk to ya. Now, off with ye! Come back when ye've cut a few creatures down and gotten some experience with yer blade. I'll be able to educate ye a bit about the ways of the berserker.");
-		quest::ding();
+    quest::ding();
     quest::summonitem(36006); # Tattered Miner's Tunic*
     quest::exp(100);
   }
-	else {
-		plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
-		plugin::return_items(\%itemcount);
-	}
+  plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
+  plugin::return_items(\%itemcount);
 }

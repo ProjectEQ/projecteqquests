@@ -120,9 +120,8 @@ sub EVENT_ITEM {
       quest::say("I do not know you well enough to entrust you with such an item, yet.");
 }
       plugin::return_items(\%itemcount); 
-      quest::say("These are not the pieces I need.");
     
-  }
+}
 
 #END of FILE Zone: kael ID:113190 -- Gragek_Mjlorkigar
 

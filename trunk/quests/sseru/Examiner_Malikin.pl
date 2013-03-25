@@ -67,9 +67,7 @@ sub EVENT_ITEM
     quest::exp(100);
     quest::summonitem(3884);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone: sseru ID: 159311 159574 -- Examiner Malikin

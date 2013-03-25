@@ -42,13 +42,6 @@ sub EVENT_ITEM {
             quest::updatetaskactivity(18,1);
          }   
       }
-      else {
-         quest::say("I don't need this."); #text made up
-             plugin::return_items(\%itemcount);
-      }
    }
-   else {
-          quest::say("I don't need this."); #text made up
-          plugin::return_items(\%itemcount);
-     }
+   plugin::return_items(\%itemcount);
 }

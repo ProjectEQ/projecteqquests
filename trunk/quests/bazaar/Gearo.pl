@@ -22,8 +22,5 @@ sub EVENT_ITEM {
     quest::exp(1000);#This quest is doable at level 1, I didn't feel comfortable giving out more xp than this per step    
     quest::setglobal("DeliveredToGearo",1,0,"D30");#Set a variable here.
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

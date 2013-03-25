@@ -40,9 +40,6 @@ sub EVENT_ITEM {
     quest::faction(275,-3); #Rogues of the White Rose
     quest::summonitem(13962); #Karana Clover Shipment
   }
-  else {
-    quest::say("I do not need this, $name.");
     plugin::return_items(\%itemcount);
-  }
 }
 

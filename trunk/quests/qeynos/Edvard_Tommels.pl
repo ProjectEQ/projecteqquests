@@ -37,9 +37,7 @@ sub EVENT_ITEM {
 		quest::givecash($cp, $sp, $gp, $pp);
 	}
 	
-	else {
 		plugin::return_items(\%itemcount);
-	}
 }
 
 #End of File zone:qeynos ID: 1134 -- Edvard_Tommels

@@ -43,10 +43,7 @@ elsif (plugin::check_handin(\%itemcount, 20468 => 1)) {
 	quest::emote("hands you a scimitar she usually wears at her side. 'Thank you, $name. With this we can hold back the corruption. We have learned something new though. Not only is this work the responsibility of the lord of hatred alone. For some reason we cannot know the lord of disease has decided it worthy of his time to work in conjunction with Innoruuk. The spirits of the three main continents, Faydwer Antonica and Kunark, have been corrupted. Look for the corrupted forces of the land and heal them. When you have found them all then take my scimitar and the spirits to Xanuusus.'");
     quest::summonitem(20440);
 }
-  else {
-    quest::emote("will not take this item.");
     plugin::return_items(\%itemcount);
-  }
 }
 
 # EOF zone: misty ID: 33077 NPC: Ella_Foodcrafter

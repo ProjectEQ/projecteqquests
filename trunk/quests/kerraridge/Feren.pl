@@ -24,9 +24,7 @@ sub EVENT_ITEM {
 		quest::givecash(0,0,0,2);
 
    }
-   else {
-      plugin::return_items(\%itemcount); #return items if not the ones required
-   }
+   plugin::return_items(\%itemcount); #return items if not the ones required
 }
 
 

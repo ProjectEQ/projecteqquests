@@ -24,10 +24,7 @@ sub EVENT_ITEM {
     quest::setglobal("FennKaedrick",1,5,"M30");
     quest::exp(2000);
   }
-  else {
-    quest::say("I do not want that.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

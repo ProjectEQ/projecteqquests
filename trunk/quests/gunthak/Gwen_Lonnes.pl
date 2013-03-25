@@ -35,8 +35,5 @@ sub EVENT_ITEM {
     quest::exp(1750000);#1% of level 51 xp
     quest::delglobal("GwenLonnesA");
   }	
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

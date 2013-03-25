@@ -16,8 +16,5 @@ sub EVENT_ITEM
 		quest::say("hmm yes i see have added him to the List, Here take this back to Jinkus.");
 		quest::summonitem(12622); #list of qeynos most wanted
 		}
-  else { 
-    quest::say("Why do ye give me these items?"); 
     plugin::return_items(\%itemcount); 
-  } 
 }

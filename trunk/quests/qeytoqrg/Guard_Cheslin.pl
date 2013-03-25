@@ -92,11 +92,8 @@ sub EVENT_ITEM{
          quest::exp(1500);
          quest::ding();      
       }
-   }else
-   {
-      quest::say("I have no need for this, please have it back and let me finish my patrol...");
-      plugin::return_items(\%itemcount);
    }
+    plugin::return_items(\%itemcount);
 } # EVENT_ITEM
 
 sub EVENT_WAYPOINT_ARRIVE{

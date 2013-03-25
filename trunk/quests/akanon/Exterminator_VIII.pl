@@ -17,10 +17,7 @@ sub EVENT_ITEM {
     quest::exp(5);
     quest::givecash(1,1,1,0);
   }
-  else {
-    quest::say("*bzzzt*");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #ItemID: 10967 - ItemName: Clockwork Rat Leg Section
 #NpcID: 00000 - NpcName: Exterminator VII - Zone: akanon

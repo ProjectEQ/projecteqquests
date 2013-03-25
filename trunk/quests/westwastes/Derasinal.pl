@@ -17,10 +17,7 @@ sub EVENT_ITEM {
     }
     quest::depop_withtimer();
   }
-  else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #NpcID: 120014 - NpcName: Derasinal - Zone: westwastes

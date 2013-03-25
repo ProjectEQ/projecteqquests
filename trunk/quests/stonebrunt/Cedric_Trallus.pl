@@ -51,8 +51,5 @@ sub EVENT_ITEM {
     quest::summonitem(59037); #Glowing dark blue potion
     quest::delglobal("luggald");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -20,10 +20,7 @@ sub EVENT_ITEM {
   quest::summonitem(5130);
   quest::ding();
  }
- else{ 
   plugin::return_items(\%itemcount);
-  quest::say("This isn't what I asked for.");
- }
 }
 
 #Submitted by Jim Mills

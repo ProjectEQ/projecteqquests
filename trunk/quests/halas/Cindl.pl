@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::faction(294, 5); 
     quest::faction(275, -5); 
   }
-  elsif (plugin::check_handin(\%itemcount, 12223 => 2)) {
+  if (plugin::check_handin(\%itemcount, 12223 => 2)) {
     quest::say("Fine work hunter!  As your reward please accept this item which I have fashioned for you."); 
     quest::summonitem(quest::ChooseRandom(2034, 2171, 2164)); 
     quest::exp(150); 
@@ -37,9 +37,6 @@ sub EVENT_ITEM {
     quest::faction(294, 5); 
     quest::faction(275, -5); 
   }
-  else { 
-    plugin::return_items(\%itemcount); 
-    quest::say("This is not what I asked for!"); # not the right dialogue 
-  } 
+  quest::say("This is not what I asked for!"); # not the right dialogue 
 }
 #END of FILE Zone:halas  ID:29052 -- Cindl

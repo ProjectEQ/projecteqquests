@@ -59,9 +59,7 @@ sub EVENT_ITEM {
     quest::summonitem(55148);
     quest::faction(275,30);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: halas ID: 29080 NPC: Conladan_Kevellian

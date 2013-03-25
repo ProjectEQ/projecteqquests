@@ -874,10 +874,7 @@ sub EVENT_ITEM
     quest::say("Here you go. Here is your bag back.");
     quest::summonitem(17104);
   }
-else {
-    plugin::return_items(\%itemcount);
-    quest::say("I'm afraid I don't have a token for this item, $name.");
- }
+  plugin::return_items(\%itemcount);
 }
 #End of File zone: bazaar ID: 151004 -- Caerlyna
 #By Kovou

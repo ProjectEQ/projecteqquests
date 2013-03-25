@@ -34,9 +34,6 @@ sub EVENT_ITEM {
     quest::exp(50000);
     quest::summonitem(52137);
   }
-  else {
-    quest::say("I have no use for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:Yxtta ID: -- Caridwi.pl

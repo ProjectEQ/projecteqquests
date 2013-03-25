@@ -32,7 +32,5 @@ sub EVENT_ITEM {
     quest::settimer(1,6);
     quest::summonitem(67018);
     }
-    else {
-      plugin::return_items(\%itemcount); # return unused items
-    }
+    plugin::return_items(\%itemcount); # return unused items
 }

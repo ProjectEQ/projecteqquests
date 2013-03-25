@@ -22,27 +22,35 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30081 => 1)) {
   	quest::say("Excellent, $name. Here is the bounty as promised.");
-    quest::exp(10000);
+    quest::ding();
     quest::givecash(0,0,5,10);
+    quest::faction(188,30); #kromrif
+    quest::faction(189,30); #kromzek
+    quest::faction(179,30); #tormax
+    quest::faction(42,-90); #CoV
+    quest::exp(10000);
   }
   elsif (plugin::check_handin(\%itemcount, 25301 => 4)) {
   	quest::say("Excellent, $name. Here is the bounty as promised.");
-    quest::exp(20000);
+    quest::ding();
     quest::summonitem(quest::ChooseRandom(25077,25084));
+    quest::faction(188,30); #kromrif
+    quest::faction(189,30); #kromzek
+    quest::faction(179,30); #tormax
+    quest::faction(42,-90); #CoV	
+	quest::exp(20000);
   }
   elsif (plugin::check_handin(\%itemcount, 1718 => 1)) {#Wurmscale Scroll 
   	quest::say("This indeed points to Wenglawks being a traitor. If only there were more proof I could take this to the king. Thank you, $name, you have done a great service for Kael. Take this mask as a reward for your service to this city.");
-    quest::exp(20000);
+    quest::ding();
     quest::summonitem(25024);#Mask of War
+    quest::faction(188,30); #kromrif
+    quest::faction(189,30); #kromzek
+    quest::faction(179,30); #tormax
+    quest::faction(42,-90); #CoV
+	quest::exp(20000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  quest::faction(188,30); #kromrif
-  quest::faction(189,30); #kromzek
-  quest::faction(179,30); #tormax
-  quest::faction(42,-90); #CoV
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kael ID: 113044 NPC: Captain_Bvellos

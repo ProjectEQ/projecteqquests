@@ -21,9 +21,7 @@ sub EVENT_ITEM
     quest::summonitem($combine);
     quest::faction(284,2); #Seru
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

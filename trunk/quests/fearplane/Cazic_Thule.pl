@@ -21,10 +21,7 @@ sub EVENT_ITEM {
   quest::exp(100000);
   quest::ding();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::emote("That is not what I sent you for, my child."); #Made this up
- }
 }
 
 sub EVENT_AGGRO {

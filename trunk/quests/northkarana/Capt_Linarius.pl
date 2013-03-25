@@ -60,11 +60,9 @@ sub EVENT_ITEM {
    quest::say("You fool!!! You have slain a loyal defender of the guard!  Prepare to DIE!!!");
    quest::attack($name);
   }
-else
-{
+
   #do all other handins first with plugin
   plugin::return_items(\%itemcount);
   quest::say("I do not need this...");
-}
 
 }

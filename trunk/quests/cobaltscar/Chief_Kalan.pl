@@ -35,10 +35,7 @@ sub EVENT_ITEM {
     my $itemid = quest::ChooseRandom(10036, 22503, 16976, 10037, 10033, 10049, 10031, 10053, 10035, 10051, 10034, 10050, 10032, 10048);
     quest::summonitem($itemid);
   }
-  else {
-    quest::say("I have no need of these, strange one."); # made up text
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

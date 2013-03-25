@@ -26,8 +26,6 @@ sub EVENT_ITEM {
     quest::say("I hope this is more attuned to your needs.");
     quest::summonitem(16255); #Signet of Might
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202126 -- Councilman_Taldarius

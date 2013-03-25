@@ -16,12 +16,9 @@ sub EVENT_ITEM {
     quest::summonitem(28243);
     quest::faction(131, 15);
   }
-  elsif (plugin::check_handin(\%itemcount, 13368 => 3, 18940 => 1)) {
+  if (plugin::check_handin(\%itemcount, 13368 => 3, 18940 => 1)) {
     quest::say("Finally!! What takes yous so long? Now carver Cagrek try and makes meat and feeds to trolls. Yous getting to be deputy carver. Mes give you Grobb cleaver!! Make strong and smarts on you it will. Just like carver Cagrek.");
     quest::summonitem(5413);
-  }
-  else {
-    quest::say("Me no need dis."); #Text made up
   }
   plugin::return_items(\%itemcount);
 }

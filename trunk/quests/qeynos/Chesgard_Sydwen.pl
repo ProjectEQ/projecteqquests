@@ -73,12 +73,10 @@ quest::summonitem(quest::ChooseRandom(7012,7013,7014,7016,4204,4201,4202,4203,42
       quest::faction(135, 5);      # Guards of Qeynos
       quest::exp(1500);
       quest::ding();
-   }else
-   {
-      #do all other handins first with plugin, then let it do disciplines
-      plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-      plugin::return_items(\%itemcount);
    }
+   #do all other handins first with plugin, then let it do disciplines
+   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+   plugin::return_items(\%itemcount);
 }
 #updated by TheBlaz
 #Added Item handin for A Sealed Letter from Guard Cheslin - mrhodes

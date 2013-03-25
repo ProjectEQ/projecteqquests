@@ -41,7 +41,7 @@ sub EVENT_ITEM {
     quest::faction(135,10);
     quest::exp(1500);
   }
-  elsif (plugin::check_handin(\%itemcount, 13231 => 1, 13232 => 1)) {
+  if (plugin::check_handin(\%itemcount, 13231 => 1, 13232 => 1)) {
     quest::say("Excellent! Here is a Jaggedpine Crook of your own. Please use it only to defend yourself and never to attack one of Tunare's creatures. You will find that while wielding the crook, Tunare grants you a boon of strength and the power to smite enemies who would otherwise be impervious to physical attacks.");
     quest::givecash(int(rand(10)),int(rand(10)),int(rand(10)),int(rand(10)));
     quest::summonitem(13230);
@@ -51,10 +51,7 @@ sub EVENT_ITEM {
     quest::faction(135,10);
     quest::exp(1500);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

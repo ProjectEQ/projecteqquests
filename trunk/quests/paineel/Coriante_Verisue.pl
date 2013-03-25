@@ -48,10 +48,7 @@ sub EVENT_ITEM {
 		quest::faction(79,-1);  # Deepwater Knights
 		quest::faction(112,-1); # Gate Callers
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:paineel  ID:75091 -- Coriante_Verisue

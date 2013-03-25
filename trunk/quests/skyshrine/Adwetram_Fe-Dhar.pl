@@ -64,7 +64,6 @@ sub EVENT_ITEM {
       quest::summonitem(31125);
     }
     else {
-      quest::say("I can do nothing with these items, $name.");
       plugin::return_items(\%itemcount);
       return 1;
     }
@@ -76,7 +75,6 @@ sub EVENT_ITEM {
     quest::faction(189,-60); # Kromzek
   }
   else {
-    quest::say("I do not know you well enough to entrust such an item to you, yet.");
     plugin::return_items(\%itemcount);
   }
 }

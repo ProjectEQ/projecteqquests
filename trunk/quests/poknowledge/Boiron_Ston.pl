@@ -19,7 +19,6 @@ sub EVENT_ITEM {
     quest::exp(250);
   }
 
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
  
     

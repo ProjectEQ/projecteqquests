@@ -46,10 +46,7 @@ sub EVENT_ITEM {
       quest::summonitem(14340);
       quest::delglobal("wizepicB");
   }
-  else {
-	quest::say("I have no need for this $name, you can have it back");
-	plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

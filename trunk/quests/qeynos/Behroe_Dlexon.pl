@@ -17,21 +17,24 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18027 => 1)) {
     quest::say("Ah, thank you, kind $name.  You've made two foolish lovebirds very happy.  Please, take this..  Though it is not much, it will help keep you warm on those chilly Karana nights.  It is very good to have a friend such as yourself, and I will one day repay you for your kindness and generosity.");
+    quest::faction(192,2); #league of antonican bards
+    quest::faction(184,2); #knights of truth
+    quest::faction(135,2); #guards of qeynos
+    quest::faction(273,-2); #ring of scale
+    quest::faction(207,-2); #mayong mistmoore
+	quest::exp(250);
   }
   elsif (plugin::check_handin(\%itemcount, 18021 => 1)) {
     quest::emote("yawns and says, 'Oh, report time already again?  Yeah, here ya go, $name.  Be careful around here at night, I've been seeing some rough looking characters lurking about.");
     quest::summonitem(18023);
+    quest::faction(192,2); #league of antonican bards
+    quest::faction(184,2); #knights of truth
+    quest::faction(135,2); #guards of qeynos
+    quest::faction(273,-2); #ring of scale
+    quest::faction(207,-2); #mayong mistmoore
+	quest::exp(250);	
   }
-  else {
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  quest::exp(250);
-  quest::faction(192,2); #league of antonican bards
-  quest::faction(184,2); #knights of truth
-  quest::faction(135,2); #guards of qeynos
-  quest::faction(273,-2); #ring of scale
-  quest::faction(207,-2); #mayong mistmoore
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qeynos ID: 1000 NPC: Behroe_Dlexon

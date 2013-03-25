@@ -50,9 +50,9 @@ sub EVENT_ITEM {
 		quest::givecash(23,13,0,0);
 	} else {
 		quest::say("Whoooops! I'll need the two ruined wolf pelts along with the berries and black wolf skin before I can reward you, $name. Don't dawdle.");
-		plugin::return_items(\%itemcount);
 		plugin::try_tome_handins(\%itemcount, $class, 'Cleric');
 	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rivervale  ID:19111 -- Beek_Guinders

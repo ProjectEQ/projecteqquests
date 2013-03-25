@@ -114,9 +114,6 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
     }
   }
-  else {
-    quest::say("Only members of the guild may do these quests.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # Quest edited by mystic414

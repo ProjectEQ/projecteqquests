@@ -24,9 +24,7 @@ sub EVENT_ITEM {
     quest::summonitem(1198);
     quest::summonitem(1849);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115168 Name: Betti_Frostweaver

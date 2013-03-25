@@ -21,7 +21,7 @@ sub EVENT_ITEM {
     quest::faction(56,-30);  #Craftkeepers
     quest::faction(60,-30);  #Crimson Hands
   }
-  elsif(plugin::check_handin(\%itemcount, 9967 => 1)) { #Karran's Head
+  if(plugin::check_handin(\%itemcount, 9967 => 1)) { #Karran's Head
     quest::say("I take it he got the message... Excellent work!");
     quest::faction(143,10);  #Heretics
     quest::faction(112,-30); #Gate Callers
@@ -31,9 +31,6 @@ sub EVENT_ITEM {
     quest::givecash(5,4,6,1);
     quest::exp(1000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75089 -- Antus_Shelbra

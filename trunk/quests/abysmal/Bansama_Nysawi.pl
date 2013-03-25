@@ -59,7 +59,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58131 => 4) || plugin::check_handin(\%itemcount, 58131 => 3) || plugin::check_handin(\%itemcount, 58131 => 2) || plugin::check_handin(\%itemcount, 58131 => 1)) { #Simple Veined Taelosian Arrowhead
     quest::say("Ah, yes. Thank you.");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

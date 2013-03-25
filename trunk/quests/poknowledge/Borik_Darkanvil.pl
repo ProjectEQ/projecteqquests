@@ -39,12 +39,8 @@ sub EVENT_ITEM
 			quest::say("Ah ha! Here we go one box of souls!");
 			quest::summonitem(29281);
 		}
-		plugin::return_items(\%itemcount);
-		
 	}
-	else
-	{
+
 		plugin::return_items(\%itemcount);
-	}
 }
 #END of FILE Zone:poknowledge  ID:202172 -- Borik_Darkanvil 

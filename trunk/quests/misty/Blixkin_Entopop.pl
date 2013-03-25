@@ -60,10 +60,7 @@ sub EVENT_ITEM {
     quest::exp(65);
     quest::givecash(0,8,3,0);
   }
-  else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:misty  ID:33066 -- Blixkin_Entropop

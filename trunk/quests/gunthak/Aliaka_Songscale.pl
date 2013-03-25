@@ -20,8 +20,5 @@ sub EVENT_ITEM {
     quest::say("Yes!  For this I will gladly give you a fragment of the dark ice!");#text made up
     quest::summonitem(58008);#Fragment of Dark Ice
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

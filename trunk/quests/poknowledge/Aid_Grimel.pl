@@ -110,8 +110,5 @@ sub EVENT_ITEM {
     quest::say("Truly amazing! Now the Councilman and I can be off on our expedition to the Elemental Planes!' He takes out a tool and marks his signet before handing it to you, 'Before we depart you may want to ask the Councilman about the signet.");
     quest::summonitem(16256); #Marked Runed Signet
   }
-  else {
-    quest::say("I don't need this."); #text made up
-  }
   plugin::return_items(\%itemcount);
 }

@@ -33,10 +33,7 @@ sub EVENT_ITEM {
   quest::spawn2(86155,0,0,$x,$y,$z,$h);
   quest::depop_withtimer();
  }
- else {
-   quest::say("I have no need for this item $name, you can have it back.");
-   plugin::return_items(\%itemcount); 
- } 
+ plugin::return_items(\%itemcount); 
 }
 
 #Quest: The Robe of the Whistling Fist (Submitted By: Senzo)

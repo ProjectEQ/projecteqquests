@@ -20,9 +20,6 @@ sub EVENT_ITEM {
     quest::faction(56,-5);  #Craftkeepers
     quest::faction(60,-5);  #Crimson Hands
   }
-  else {
-    quest::say("I have no need of this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: Auhrik_Siet`ka.pl

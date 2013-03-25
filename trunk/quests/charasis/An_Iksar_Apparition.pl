@@ -10,8 +10,5 @@ sub EVENT_ITEM {
     quest::unique_spawn(105185,0,0,$x-5,$y-5,$z); #an Arisen Acolyte
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

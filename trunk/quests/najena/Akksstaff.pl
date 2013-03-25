@@ -24,10 +24,7 @@ sub EVENT_ITEM {
     quest::say("Very well. Take these words back to that shriveled old gnome, Rykas, if you wish to complete this quest. Now leave me, $name, it sickens me to be this cordial for so long. And my pet needs exercise. Go!");
     quest::summonitem(28004);
   }
-  else {
-    quest::say("I do not need these.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: najena  ID:44063 -- Akksstaff

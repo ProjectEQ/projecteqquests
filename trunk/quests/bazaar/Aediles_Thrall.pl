@@ -212,20 +212,17 @@ sub EVENT_ITEM {
          $success = 0;
       }
       else {
-         quest::say("I don't need this.");
-         plugin::return_items(\%itemcount);
          if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
             quest::givecash($copper, $silver, $gold, $platinum);
          }
       }
    }
    else {
-      quest::say("I don't need this.");
-      plugin::return_items(\%itemcount);
       if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
          quest::givecash($copper, $silver, $gold, $platinum);
       }
    }
+   plugin::return_items(\%itemcount);
    quest::settimer("face", 45);
 }
 

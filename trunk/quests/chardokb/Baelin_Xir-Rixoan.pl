@@ -56,7 +56,6 @@ sub EVENT_ITEM
 
 	}
    
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+	plugin::return_items(\%itemcount); #return items if not the ones required
+	
 }#END of FILE Zone:chardokb ID:277082 --Baelin_Xir-Rixoan.pl

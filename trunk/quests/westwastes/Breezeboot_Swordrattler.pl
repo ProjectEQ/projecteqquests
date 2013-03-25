@@ -15,8 +15,6 @@ sub EVENT_ITEM {
     quest::summonitem(27310);
     quest::exp(60000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:westwastes  ID:120051 -- Breezeboot_Swordrattler

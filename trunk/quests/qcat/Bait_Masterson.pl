@@ -23,8 +23,6 @@ sub EVENT_ITEM {
     quest::faction(143, -5);
     quest::exp(100);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qcat  ID:10139 -- Bait_Masterson

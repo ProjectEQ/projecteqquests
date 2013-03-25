@@ -21,9 +21,6 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(19267,19271,19274,19266));
     quest::exp(1000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:firiona  ID:84173 -- Alex McDarnin

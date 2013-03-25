@@ -92,8 +92,5 @@ sub EVENT_ITEM {
     elsif($class eq 'Beastlord'){quest::summonitem(quest::ChooseRandom(54235,54237));} 
     elsif($class eq 'Berserker'){quest::summonitem(54238);} 
     } 
-  else { 
-    quest::say("I have no need for this, $name."); 
     plugin::return_items(\%itemcount); 
-  } 
 }

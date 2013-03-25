@@ -64,8 +64,5 @@ sub EVENT_ITEM {
     #faction lowered Corrupt Qeynos Guards
     #faction lowered Opal Dark Briar
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

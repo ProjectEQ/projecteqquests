@@ -17,9 +17,7 @@ sub EVENT_ITEM {
     quest::faction(258,-30); #priests of marr
     quest::exp(10000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: freportw ID: 9007 NPC: Armorer_Dellin

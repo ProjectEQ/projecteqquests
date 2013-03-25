@@ -67,10 +67,7 @@ sub EVENT_ITEM {
     }
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

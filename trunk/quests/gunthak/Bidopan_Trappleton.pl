@@ -8,6 +8,5 @@ if ($text=~/Hail/i){
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not need this.");
   plugin::return_items(\%itemcount);
 }

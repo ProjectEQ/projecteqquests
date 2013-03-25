@@ -43,8 +43,6 @@ sub EVENT_ITEM {
       quest::summonitem(12197);
     }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of File Zone:paw ID:18071 -- Brother_Hayle

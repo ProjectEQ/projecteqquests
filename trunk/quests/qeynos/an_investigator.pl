@@ -39,7 +39,7 @@ sub EVENT_ITEM {
     quest::say("Very well, let's get to work. I assume you have read the briefing and committed it to memory. This is how you will be tested. I shall play the part of student and you shall play the master who directs me. I promise I won't make it easy on you either, we want only the best. We'll see how you do and then I'll decide if you are worthy to wear the badge or not."); 
     quest::follow($userid);
   }
-  elsif(plugin::check_handin(\%itemcount, 2369 => 1, 2394 => 1, 2279 => 1)) { #Riley's Confession, Willie's Confession, Head of Donally Stultz
+  if(plugin::check_handin(\%itemcount, 2369 => 1, 2394 => 1, 2279 => 1)) { #Riley's Confession, Willie's Confession, Head of Donally Stultz
     quest::say("You have done our city a great service and helped to bring several criminals to justice this day! Wear this Investigator's Badge with pride! Speak again with Vegalys Keldrane, he may have information about [advancing further] in rank.");
     quest::sfollow();
     quest::summonitem(2386); #Investigator's Badge
@@ -49,8 +49,5 @@ sub EVENT_ITEM {
     quest::faction(164,-10); #Kane Bayle
     quest::faction(217,10);  #Merchants of Qeynos
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

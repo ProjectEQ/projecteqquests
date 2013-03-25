@@ -15,23 +15,27 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12366 => 1)) { #Never Stop Chopping
     quest::say("On second thought.. You can do a little favor for me first. An associate of mine has asked me to acquire a case of spirits for him. Take this box and seek out what is needed to fill it. Inside you will combine the spirits of Lendel's Grand Lager, Gator Gulp Ale, Blackburrow Swig, Tunare's Finest, Underfoot Triple Bock, Frozen Toe Rum, Blood Spirit, Vasty Deep Ale, Clockwork Oil Stout and the legendary..[Oblong Bottle].");
     quest::summonitem(17984); #Bottle Crate
+    quest::ding();
+    quest::faction(48,10); #'Coalition of Tradefolk Underground'
+    quest::faction(47,10); #'Coalition of Tradefolk'
+    quest::faction(31,10); #'Carson McCabe'
+    quest::faction(53,10); #'Corrupt Qeynos Guards'
+    quest::faction(105,10); #'The Freeport Militia'
+    quest::exp(15000);	
   }
-  elsif (plugin::check_handin(\%itemcount, 12365 => 1)) {
+  if (plugin::check_handin(\%itemcount, 12365 => 1)) {
     quest::say("I cannot believe you actually acquired all those drinks!! You do good work, kid. Here is the gem as I promised. And a few plat for good measure. Don't let it be said that the Axe doesn't treat his friends right.");
     quest::givecash(0,0,0,7);
     quest::summonitem(12348);
+    quest::ding();
+    quest::faction(48,10); #'Coalition of Tradefolk Underground'
+    quest::faction(47,10); #'Coalition of Tradefolk'
+    quest::faction(31,10); #'Carson McCabe'
+    quest::faction(53,10); #'Corrupt Qeynos Guards'
+    quest::faction(105,10); #'The Freeport Militia'
+    quest::exp(15000);	
   }
-  else {
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  quest::ding();
-  quest::exp(15000);
-  quest::faction(48,10); #'Coalition of Tradefolk Underground'
-  quest::faction(47,10); #'Coalition of Tradefolk'
-  quest::faction(31,10); #'Carson McCabe'
-  quest::faction(53,10); #'Corrupt Qeynos Guards'
-  quest::faction(105,10); #'The Freeport Militia'
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:highpass  ID:5055 -- Bryan_McGee 

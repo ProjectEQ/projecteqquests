@@ -25,8 +25,6 @@ sub EVENT_ITEM {
     quest::say("These will do. Please accept this as a show of my appreciation. Now if you'll excuse me I have much work left to do.");
     quest::summonitem(28240);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge Alexis_Dubbani

@@ -16,9 +16,6 @@ sub EVENT_ITEM {
     quest::summonitem(28084);#Note to Caden
     quest::exp(250);
   }
-  else {
-    quest::say("I don't need this."); #text made up
-  }
   plugin::return_items(\%itemcount);
 }
 

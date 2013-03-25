@@ -27,9 +27,7 @@ sub EVENT_ITEM {
     quest::exp(100);
     quest::summonitem(10609);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: oggok ID: 49023 NPC: Bozlum_Blossom

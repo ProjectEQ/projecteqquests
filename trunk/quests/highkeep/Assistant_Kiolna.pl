@@ -15,12 +15,6 @@ sub EVENT_ITEM
     # Summon Item A Sealed Note (Zimel's letter from Hayle) ID: 18936
     quest::summonitem(18936);
   }
-  else
-  {
-  	quest::say("I have not use for this.");
-  	
-  	# Return players items
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:highkeep ID:6057 -- Assistant_Kiolna

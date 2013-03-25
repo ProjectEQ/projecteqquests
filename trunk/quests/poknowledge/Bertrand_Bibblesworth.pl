@@ -29,7 +29,6 @@ sub EVENT_ITEM {
     quest::emote("Here you go, $name!");#text made up
     quest::summonitem(59997); #Burning Crystal Shard
   }
-   quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
   }
     

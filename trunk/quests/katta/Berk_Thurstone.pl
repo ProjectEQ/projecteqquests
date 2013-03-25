@@ -27,10 +27,8 @@ sub EVENT_ITEM {
   quest::faction(228,-30); # -Nathyn Illuminious
   quest::faction(284,-30); # -Seru
   quest::exp(500);
- } else {
-   quest::say("I can do nothing with these items, $name.");
-   plugin::return_items(\%itemcount);
  }
+ plugin::return_items(\%itemcount);
 }
 
 

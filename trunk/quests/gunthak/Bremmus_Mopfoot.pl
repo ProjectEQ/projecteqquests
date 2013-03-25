@@ -21,8 +21,5 @@ sub EVENT_ITEM {
     quest::exp(558790);
     quest::givecash(0,0,0,7);#7pp
   }
-  else {
-    quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
-  }
 }#Done

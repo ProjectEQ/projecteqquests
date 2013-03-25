@@ -15,7 +15,6 @@ if (plugin::check_handin(\%itemcount, 5544 =>1, 6268 =>1 )) {
   quest::summonitem(6267);
   quest::exp(10000);
 }
-  quest::say("I have no need for this, $name.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:Not_Found -- Amat_Iuziq

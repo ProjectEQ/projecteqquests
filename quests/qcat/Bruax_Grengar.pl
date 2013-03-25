@@ -57,8 +57,6 @@ sub EVENT_ITEM {
     quest::faction(235,1);
     quest::faction(257,-1);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qcat  ID:45065 -- Bruax_Grengar

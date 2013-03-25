@@ -18,9 +18,6 @@ sub EVENT_ITEM {
     quest::say("The essence of the trusik has been imbued into this stone. With one touch of this totem, the guardian of Txevu will recognize the spirit of its masters and let you pass.");
     #quest::summonitem(); # Cipher of Txevu
   }
-  else {
-    quest::say("I don't need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279009 -- Brevik_Kalaner.pl

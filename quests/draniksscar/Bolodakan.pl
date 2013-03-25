@@ -89,15 +89,6 @@ sub EVENT_ITEM
 				quest::summonitem(71139);#Dragorn Crested Amulet
 			}
 		}
-		
-		#Not quest items
-		else {
-			plugin::return_items(\%itemcount); #return items if not the ones required
-		}
 	}
-
-	# Not enough faction item return.
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+	plugin::return_items(\%itemcount);
 }#END of FILE Zone:draniksscar ID:302045 --Bolodakan.pl

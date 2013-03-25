@@ -31,10 +31,7 @@ sub EVENT_ITEM {
     quest::faction(33, -10); #Circle of Unseen Hands
     quest::exp(1000);
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:qeynos2  ID:2057 -- Brohan_Ironforge

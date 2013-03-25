@@ -38,10 +38,7 @@ sub EVENT_ITEM {
     quest::attack($name);
     $spawn = 1;
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_DEATH {

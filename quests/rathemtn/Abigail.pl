@@ -26,7 +26,6 @@ sub EVENT_ITEM {
       quest::faction("8","1"); # Anti-Mage
    } elsif (plugin::check_handin(\%itemcount,12309=>1) && $faction <=4 ) {
       quest::say("I instructed you to return with no less than two dark pots.");
-      plugin::return_items(\%itemcount); # return items unless proper count, seems easier than trying to keep track
    }
    plugin::return_items(\%itemcount); 
 }

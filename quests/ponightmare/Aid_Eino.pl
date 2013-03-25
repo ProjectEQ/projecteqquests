@@ -120,8 +120,5 @@ sub EVENT_ITEM {
     quest::setglobal("AidEinoDone",1,5,"F");
     quest::depop();
   }
-  else {
-    quest::say("I am busy. Maybe later.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

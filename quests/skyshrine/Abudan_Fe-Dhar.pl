@@ -67,11 +67,6 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24980 => 1)) { #boots
       quest::summonitem(31167);
     }
-    else {
-      quest::say("I can do nothing with these items, $name.");
-      plugin::return_items(\%itemcount);
-      return 1;
-    }
     quest::emote("smiles warmly as he hands you your reward.");
     quest::say("Well done, $name.");
     quest::exp(175000);
@@ -81,8 +76,8 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I do not know you well enough to entrust such an item to you, yet.");
-    plugin::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: skyshrine ID:114268 -- Abudan_Fe`Dhar

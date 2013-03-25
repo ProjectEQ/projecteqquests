@@ -22,9 +22,7 @@ sub EVENT_ITEM {
 		quest::faction(361,1); # 361 : Faction Wolves of the North
 		quest::summonitem(13244); # 13244 :  One Quarter of Elixir
 	}
-    else {
-        plugin::return_items(\%itemcount);
-	}   
+    plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SPAWN {

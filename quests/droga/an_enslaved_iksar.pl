@@ -29,10 +29,7 @@ sub EVENT_ITEM {
   quest::ding();
   quest::depop();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("These are not the items I sent you for."); #Made this text up.
- }
 }
 
 #Submitted by: Jim Mills

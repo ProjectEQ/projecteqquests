@@ -20,10 +20,7 @@ sub EVENT_ITEM {
     quest::spawn2(5088,0,0,336.4,10.3,45.7,225.1);
     quest::say("Oh, I see.");
   }
-  else {
-    quest::emote("will not accept this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE  Quest by: Solid11  Zone:highpass  ID:5037 -- Anson_McBale

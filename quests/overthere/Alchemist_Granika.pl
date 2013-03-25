@@ -21,11 +21,8 @@ sub EVENT_ITEM {
   quest::spawn2(93303,0,0,1954,2855,-49,190);
   quest::spawn2(93303,0,0,1915,2825,-49,190);
   quest::signalwith(93077,0,0);
-}
-else{
-  quest::say("I have no use for that. Take it back!"); #Made up text
+  }
   plugin::return_items(\%itemcount);
- }
 }
 
 sub EVENT_TIMER {

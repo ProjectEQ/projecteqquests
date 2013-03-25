@@ -22,10 +22,7 @@ sub EVENT_ITEM {
 		quest::summonitem("18843"); # Sealed Letter (Letter To Seloxia)   
 		quest::ding();
 	}
-	else {
-		quest::say("I do not need this.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:oggok  ID:49092 -- Ambassador_K`Ryn

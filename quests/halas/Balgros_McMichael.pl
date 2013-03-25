@@ -56,9 +56,7 @@ sub EVENT_ITEM {
     quest::faction(48,-30); #coalition of tradefolk underground
     quest::faction(90,-30); #ebon mask
   }
-  else {
-     plugin::return_items(\%itemcount);
-   }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: halas ID: 29079 NPC: Balgros_McMichael

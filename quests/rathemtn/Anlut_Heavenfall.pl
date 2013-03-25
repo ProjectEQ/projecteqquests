@@ -52,8 +52,5 @@ sub EVENT_ITEM {
     quest::say(". .amazing. . . I knew there was some gift within you, some desire to do more. Well, now you've proven it. It is good to see you succeed after so much failure. I cannot deny it. Nor can I deny that you deserve recognition for your efforts. Here, take this. Perhaps it will keep you safe. Good luck, $name.");
     quest::summonitem(); #Heavenfall Girding
   }
-  else {
-    quest::say("Go away! You are not the one finishing the trial!");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

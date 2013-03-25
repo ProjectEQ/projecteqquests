@@ -97,14 +97,7 @@ sub EVENT_ITEM {
 			quest::emote("continues to ramble on for many minutes. Finally, he gets to the end of his journal and looks up. He blinks as though	surprised that you are still here.");
 			quest::say("Oh, yeah, the armor pattern book. Sorry, I forgot about that. Here you go!");
 			quest::summonitem(38447); #Ancestral Halfling Armor
-		} else 
-		{
-			quest::say("I have no use for this, $name.");
-			plugin::return_items(\%itemcount);
 		}
 	} # if($race eq "Halfling")
-	else {
-			quest::say("I have no use for this, $name.");
-			plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 } # sub EVENT_ITEM

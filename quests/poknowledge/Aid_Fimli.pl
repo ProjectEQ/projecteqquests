@@ -18,9 +18,6 @@ sub EVENT_ITEM {
     quest::say("Great! I see you got the items to uncle; perhaps he will stop badgering me now and let me be in my work. Hmmmmm, Uncle mentions in his letter that he worked out a way for a gnome to make a giant set of crab crackers. He states it is useless in Norrath but I may be able to make some use of it out here. I guess it wouldn't hurt to share it with you and file it away in the library. To create the cracker combine two metal rods, firewater and a knuckle joint in a toolbox. Interesting indeed, anyways here if your reward; I hope you can put it to good use.");
     quest::summonitem(15807); #Cloak of Lesser Pernicity
   }
-  else {
-    quest::say("I don't need this."); #text made up
-  }
   plugin::return_items(\%itemcount);
 }
 

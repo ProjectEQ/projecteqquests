@@ -26,8 +26,5 @@ sub EVENT_ITEM {
     quest::say("Me been waitin for doze. Dank yoo, $name.  Take dis.");
     quest::summonitem(28740);
   }
-  else {
-    quest::say("Me not want dis.");
     plugin::return_items(\%itemcount);
-  }
 } 

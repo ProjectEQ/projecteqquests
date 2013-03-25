@@ -23,9 +23,6 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(19267,19271,19274,19266));
     quest::exp(1000);
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:overthere  ID:93100 -- Bukuku_Wolffeetz

@@ -9,8 +9,5 @@ sub EVENT_ITEM {
     quest::summonitem(19611);
     quest::say("Here's your bow. Use it well, young rogue.");
   }
-  else {
-    quest::say("I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

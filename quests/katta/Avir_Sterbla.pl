@@ -9,18 +9,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #Handin: 4x Vampyre Ashes (2692)
-  if(plugin::check_handin(\%itemcount, 2692 => 4)){
-  }
-  #Handin: 4x Vampyre Blood (2693)
-  elsif(plugin::check_handin(\%itemcount, 2693 => 4)){
-  }
-  else {
-    quest::say("I can do nothing with these items, $name.");
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  #End of Vampyre Ash and Blood
+  #Handin: 4x Vampyre Ashes (2692) or 4x Vampyre Blood (2693)
+  if((plugin::check_handin(\%itemcount, 2692 => 4)) || (plugin::check_handin(\%itemcount, 2693 => 4))){
   quest::say("Thank you $name! These samples will be put to good use I assure you. The Coterie will not stand much longer against the forces of Katta Castellum.");
   quest::summonitem(10015, 8); # Malachite
   quest::faction(206,10);  # +Magus Conlegium
@@ -30,6 +20,8 @@ sub EVENT_ITEM {
   quest::faction(139,-10); # -Hand of Seru
   quest::faction(96,-10);  # -Eye of Seru
   quest::faction(138,-10); # -Hand Legionnaries
+  }
+  plugin::return_items(\%itemcount);
 }
 
 #Quest: Vampyre Ash & Blood (Submitted By: Senzo)

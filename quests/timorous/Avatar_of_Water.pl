@@ -8,9 +8,6 @@ sub EVENT_ITEM {
     quest::ding();
     quest::depop();
   }
-  else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount); # return unused items
-  }
+  plugin::return_items(\%itemcount); # return unused items
 }
 #End of File, Zone:timorous  NPC:96086 -- Avatar of Water

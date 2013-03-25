@@ -65,9 +65,5 @@ this as a token of my gratitude.");
   quest::exp(25000);
   quest::summonitem(54002);
   }
-else
-  {
-  quest::say("I do not need this, friend.");
   plugin::return_items(\%itemcount);
-  }
 }

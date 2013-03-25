@@ -30,8 +30,5 @@ sub EVENT_ITEM {
     quest::say(""); #Missing final text
     quest::summonitem(63170); #Fused Mnemonic of Khati Sha
   }
-  else {
-    quest::say("I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

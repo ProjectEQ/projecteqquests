@@ -51,12 +51,8 @@ quest::exp(500);
 quest::faction(132,2); # Guardians of Shar Vahl
 
 }
-  else{ 
-
-    quest::say("I have no use for this.");
 
     plugin::return_items(\%itemcount);
-}
 
 }
 

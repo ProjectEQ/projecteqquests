@@ -16,10 +16,7 @@ sub EVENT_ITEM {
   quest::exp(60000);
   quest::ding();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("That is not what I sent you for."); #Made this up
- }
 }
 
 #Submitted by: Jim Mills

@@ -39,10 +39,7 @@ sub EVENT_ITEM {
     quest::ding();
     quest::givecash(4,10,0,0);
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TASKACCEPTED {

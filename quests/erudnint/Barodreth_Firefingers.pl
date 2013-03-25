@@ -55,10 +55,7 @@ sub EVENT_ITEM {
       quest::summonitem(61099); 
       quest::say("Very good, $name, and here is your reward as promised."); 
     } 
-    else { 
-      plugin::return_items(\%itemcount); 
-      quest::say("What am I supposed to do with these?"); 
-    } 
+    plugin::return_items(\%itemcount); 
 } 
 
 #END of FILE Zone:erudnint  ID:23076 -- Barodreth Firefingers 

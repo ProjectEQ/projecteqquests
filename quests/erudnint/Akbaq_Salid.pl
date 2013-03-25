@@ -25,34 +25,36 @@ if ($text=~/hail/i) {
 sub EVENT_ITEM { 
   if ($faction <= 5) { # Require indifferent or greater faction 
     if (plugin::check_handin(\%itemcount, 6960 => 1, 6946 => 1)) { # astral cloak of the titans 
+      quest::faction(60,10); #faction with Crimson hands increased 
+      quest::faction(145,10); #faction with High Council of Erudin increased 
+      quest::faction(143,-30); #faction with Heretics decreased 
+      quest::faction(147,10); #faction with High Guards of Erudin increased 
+      quest::exp(150); 
       quest::summonitem(2573); 
       quest::say("These are the pelts of the most powerful of the known Titan spirits. You have done well, $name, and you will be rewarded for your services."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 6958 => 1, 6964 => 1)) { # astral leggings of the titans 
+      quest::faction(60,10); #faction with Crimson hands increased 
+      quest::faction(145,10); #faction with High Council of Erudin increased 
+      quest::faction(143,-30); #faction with Heretics decreased 
+      quest::faction(147,10); #faction with High Guards of Erudin increased 
+      quest::exp(150); 
       quest::summonitem(2575); 
       quest::say("Excellent! These pelts are in fine condition. I was 
 unsure what would happen to the physical forms of the titans when slain 
 in this realm.");      
     } 
     elsif (plugin::check_handin(\%itemcount, 6947 => 1, 12097 => 1)) { # scaled robe of the elder serpent 
+      quest::faction(60,10); #faction with Crimson hands increased 
+      quest::faction(145,10); #faction with High Council of Erudin increased 
+      quest::faction(143,-30); #faction with Heretics decreased 
+      quest::faction(147,10); #faction with High Guards of Erudin increased 
+      quest::exp(150); 
       quest::summonitem(2574); 
       quest::say("Ah! I have been anxiously awaiting the oppurtunity to craft some powerful robes from these mystical scales."); 
-    } 
-    else { 
-      plugin::return_items(\%itemcount); 
-      quest::say("These are not the samples I need.");
-      return 1;
-    } 
-  } 
-  else { 
-    quest::say("I do not know you well enough to entrust you with such an item, yet."); # Text here is made up 
-    return 1;
-  }    
-  quest::faction(60,10); #faction with Crimson hands increased 
-  quest::faction(145,10); #faction with High Council of Erudin increased 
-  quest::faction(143,-30); #faction with Heretics decreased 
-  quest::faction(147,10); #faction with High Guards of Erudin increased 
-  quest::exp(150); 
-  } 
-
+    }
+  }
+  plugin::return_items(\%itemcount);
+}    
+ 
 #END of FILE Zone:erudnint  ID:23077 -- Akbaq_Salid 

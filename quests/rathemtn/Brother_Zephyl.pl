@@ -35,9 +35,6 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 12256 => 1)) { #Robe of the Lost Circle
     quest::summonitem(10133); #Red Sash of Order
   }
-  else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE Zone:rathemtn  ID:50021 -- Brother_Zephyl

@@ -29,8 +29,6 @@ sub EVENT_ITEM {
     quest::summonitem(5550);
     quest::summonitem(5545);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #endoffile  Armsman_Khaigesh  ID 155058

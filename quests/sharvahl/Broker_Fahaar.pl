@@ -68,9 +68,6 @@ sub EVENT_ITEM {
     quest::summonitem(3927); #Sleek Sonic Wolf Hide Jerkin
     quest::ding();
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155074 -- Broker_Fahaar

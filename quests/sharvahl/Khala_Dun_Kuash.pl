@@ -7,6 +7,7 @@ quest::say("Welcome to Shar Vahl's North Gate District.  If you're looking to re
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5550 =>1 )) {
   quest::say("You must think you're pretty tough wearin a buckler like that, eh? Well well... Perhaps you're looking to hunt some bigger game, eh? Earn a little scruff on your ears like Kuash? I thought so. I know a good place for you to start... and it's part of your civil duty. Our scouts have always had trouble with the wolves in the moor. I'm thinkin that you can start there. Maybe break in a few of the younger wolves' paws, eh? I thought so. Put your buckler back on and take this bag. Fill it with wolf paws and bring it back to me. Maybe then I'll give you a real challenge.");
+    quest::summonitem(5550);
     quest::summonitem(17114);
   }
   if (plugin::check_handin(\%itemcount, 6217 =>1 )) {

@@ -13,10 +13,7 @@ sub EVENT_ITEM {
   quest::ding();
   quest::depop();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::emote("looks at the items you gave him, puzzles over them for a second, and hands them back to you. 'This is not what I requested of you.'"); #Made this up
- }
 }
 
 #Submitted by Jim Mills

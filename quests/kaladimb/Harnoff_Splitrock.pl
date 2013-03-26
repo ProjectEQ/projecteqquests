@@ -35,9 +35,6 @@ sub EVENT_ITEM {
     quest::faction(219,5); #Miners Guild 249
     quest::faction(314,5); #Storm Guard
   }
-  else {
-    quest::say("I don't need this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladimb  ID: -- Harnoff_Splitrock

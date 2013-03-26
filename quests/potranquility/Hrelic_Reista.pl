@@ -17,10 +17,5 @@ sub EVENT_ITEM {
     quest::say("Thank you $name!  May this spell serve you well.");#Text made up, no text listed on alla's
     quest::summonitem(59528);#Spell: Draught of Lightning
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#Done

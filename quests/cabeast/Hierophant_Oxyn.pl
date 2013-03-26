@@ -84,9 +84,6 @@ sub EVENT_ITEM {
     quest::summonitem(5142); #Iron Cudgel of the Seer
     quest::setglobal("shmskullquest",3,5,"F"); #set a global flag so that user can do shm skull quest part 3
   }
-  else {
-    quest::say("I don't need that.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #Submitted by: Jim Mills

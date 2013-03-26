@@ -38,10 +38,7 @@ sub EVENT_ITEM {
     quest::shout("Everyone, please welcome my student and friend, $name, to the rank of Jharin Apprentice!");
     quest::say("Now, please meet with Aljuum Mohim. He will be responsible for your training during my holiday. Please show him the lute that I just gave you. He'll most likely be in a tavern somewhere. I just hope that he is sober. Take care, friend!");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155060 -- Hymnist_Gawfed

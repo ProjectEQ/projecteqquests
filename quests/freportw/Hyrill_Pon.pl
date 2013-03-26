@@ -44,14 +44,7 @@ sub EVENT_ITEM {
       quest::faction(184,3); #Knights of Truth
       quest::faction(258,3); #Priests of Marr
     }
-    else {
-      quest::say("I do not need this.");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("I am sorry. But you have no business giving me this junk.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportw  ID:9060 -- Hyrill_Pon.pl

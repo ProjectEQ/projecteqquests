@@ -21,13 +21,8 @@ sub EVENT_ITEM {
       quest::faction(362,10);  #Yelinak
       quest::faction(189,-30); #Kromzek
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: westwastes ID: 120057 NPC: Harla_Dar

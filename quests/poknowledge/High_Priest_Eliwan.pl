@@ -19,10 +19,6 @@ sub EVENT_ITEM {
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     	quest::exp(698775);
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202236 -- High_Priest_Eliwan 
 

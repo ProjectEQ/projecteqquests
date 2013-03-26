@@ -66,10 +66,7 @@ sub EVENT_ITEM {
 		quest::emote("watches you carefully as you leave.");
 		quest::summonitem(14793);
 	}
-	else {
-		quest::say("I do not want this.");
-		plugin::return_items(\%itemcount); # return unused items
-	}
+	plugin::return_items(\%itemcount); # return unused items
 }
 
 #END of FILE Zone:cabwest  ID:2517 -- Harbinger_Glosk

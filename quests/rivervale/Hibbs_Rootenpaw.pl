@@ -54,10 +54,7 @@ sub EVENT_ITEM {
 		quest::faction(347,-15); # -Unkempt Druids
 		quest::exp(100);
   }
-	else {
-		quest::say("I have no need for this item $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #EOF

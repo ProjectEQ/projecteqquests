@@ -87,10 +87,7 @@ sub EVENT_ITEM {
 		quest::faction( 145, 20);
 		quest::faction( 143, -20);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:erudnext  ID:98079 -- Leraena_Shelyrak

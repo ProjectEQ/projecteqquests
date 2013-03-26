@@ -59,8 +59,5 @@ sub EVENT_ITEM
 		$npc->SetEntityVariable(1, 1);
 		$npc->SetEntityVariable(2, $client->GetID());		
 	}
-	else
-	{
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 } 

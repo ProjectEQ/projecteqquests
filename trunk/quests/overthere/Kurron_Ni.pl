@@ -32,9 +32,6 @@ sub EVENT_ITEM {
     quest::faction(342,7);
     $npc->AddItem(18099, 1);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

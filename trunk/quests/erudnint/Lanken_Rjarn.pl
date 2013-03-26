@@ -32,10 +32,7 @@ sub EVENT_ITEM {
 		quest::faction(147,10);  #High Guard of Erudin
 		quest::exp(100);
 	}
-	else {
-		quest::say("I do not need this.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:erudnint  ID:24032 -- Lanken_Rjarn

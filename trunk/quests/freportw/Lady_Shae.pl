@@ -58,9 +58,7 @@ sub EVENT_ITEM {
 			quest::say("Thank you... Oh my! A few more of these and I will be spilling my secrets");
 		}
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 	$wine =0;
 }
 

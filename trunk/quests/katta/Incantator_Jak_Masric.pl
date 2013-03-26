@@ -21,9 +21,6 @@ sub EVENT_ITEM{
       quest::faction(138,-30);
       quest::summonitem(7394); #Magus Conlegium Token
    }
-   else {
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 

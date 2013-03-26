@@ -48,10 +48,7 @@ sub EVENT_ITEM {
 		quest::faction(106,-10); # -Frogloks of Guk		
 		quest::exp(100); 
 	}
-	else {
-		quest::say("Mez not wat dis, yooz takes dis.");  #text made up
-		plugin::return_items(\%itemcount); # return unused items
-	}
+	plugin::return_items(\%itemcount); # return unused items
 }
 
 

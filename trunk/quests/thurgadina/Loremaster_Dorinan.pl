@@ -71,7 +71,6 @@ sub EVENT_ITEM {
     }
     else {
       plugin::return_items(\%itemcount);
-      quest::say("These are not the pieces I need.");
       return 1;
     }
     quest::exp(100000);

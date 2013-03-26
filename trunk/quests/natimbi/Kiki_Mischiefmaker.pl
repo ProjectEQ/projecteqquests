@@ -16,9 +16,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(54067); #Kiki's Recipe Book
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:natimbi ID: 280044 -- Kiki_Mischiefmaker.pl

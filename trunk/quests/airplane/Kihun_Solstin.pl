@@ -27,10 +27,7 @@ sub EVENT_ITEM {
     quest::exp(5000);
     quest::spawn2(71040,0,0,604.5,1346.3,-766,0); #spawn the master of elements
   }
-  else {
-    quest::say("I have no need for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: airplane ID:70115 -- Kihun_Solstin

@@ -26,10 +26,7 @@ sub EVENT_ITEM {
     quest::summonitem(10652); #Celestial Fists (Epic)
     quest::targlobal("MnkEpic1",1,"Y1",0000,$charid,000); #Flag for Monk Epic 1.0 completed
   }
-  else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_DEATH {

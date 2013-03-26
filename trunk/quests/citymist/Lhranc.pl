@@ -28,15 +28,8 @@ sub EVENT_ITEM {
       quest::spawn2(90187, 0, 0, 85.1, 0.9, 7.8, 192); ##Lhranc
       quest::depop_withtimer();
     }
-    else {
-      quest::say("This is not what I seek."); #Text made up
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::emote("seems to ignore you."); #Emote made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

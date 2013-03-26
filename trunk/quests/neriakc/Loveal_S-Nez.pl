@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 		quest::faction(91,-10); #Eldritch Collective
 		quest::faction(260,-10); #Primordial Malice		
 	}
-	elsif(plugin::check_handin(\%itemcount, 13390 => 1)){#Thex Mallet
+	if(plugin::check_handin(\%itemcount, 13390 => 1)){#Thex Mallet
 		quest::say("Oh how grand it is!! Look at it!! I feel the power trembling within. Who would have thought such an item would be abandoned? You have performed supremely. Queen Cristanos shall reward me greatly and I shall reward you greatly. Here is my weapon from years past.. the Reaper of the Dead. I believe it has one soul still trapped within.");
 		quest::summonitem(5374);#Reaper of the Dead
 		quest::givecash(0,14,0,0);#14 silver
@@ -49,10 +49,7 @@ sub EVENT_ITEM {
 		quest::faction(91,-10); #Eldritch Collective
 		quest::faction(260,-10); #Primordial Malice		
 	}
-  else{
   	#do all other handins first with plugin, then let it do disciplines
   	plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-  	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
-  }
 }#END of FILE Zone:neriakc  ID:42043 -- Loveal_S`Nez 

@@ -2,7 +2,7 @@
 #The Crate (evil)
 
 sub EVENT_SAY {
-	if($text=~/Hail/i)   {
+	if($text=~/hail/i)   {
 		quest::say("How dare you disturb me! You people need to just mind your pathetic lives and leave the rest to us. Leave me now!");
 	}
 }
@@ -20,10 +20,7 @@ sub EVENT_ITEM {
 		my $sp = int(rand(8));
 		quest::givecash($cp, $sp, 0, 0);
 	}
-	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #End of File zone:qeynos2 ID: 2020 -- Lieutenant_Dagarok.pl

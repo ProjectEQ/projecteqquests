@@ -36,8 +36,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::faction(423,1);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #End of FILE Zone:sharvahl  ID:155061 -- Kery_Miann

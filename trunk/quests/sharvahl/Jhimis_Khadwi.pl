@@ -14,7 +14,6 @@ sub EVENT_ITEM {
       quest::summonitem(6138);
       
     }
-  quest::say("I have no need for this, $name.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:Not_Found -- Jhimis_Khadwi

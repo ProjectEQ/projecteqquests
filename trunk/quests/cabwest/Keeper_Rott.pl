@@ -27,10 +27,5 @@ sub EVENT_ITEM {
     quest::faction(193, 3); 
     quest::exp(1000);
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  
+  plugin::return_items(\%itemcount);
 }

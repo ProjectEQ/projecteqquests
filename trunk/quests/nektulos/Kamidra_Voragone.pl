@@ -12,8 +12,5 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13088 => 4) || plugin::check_handin(\%itemcount, 13088 => 3) || plugin::check_handin(\%itemcount, 13088 => 2) || plugin::check_handin(\%itemcount, 13088 => 1)) { #Snake Eggs
     quest::say("Thank you. I am impressed!");
   }
-  else {
-    quest::say("I don't want that.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

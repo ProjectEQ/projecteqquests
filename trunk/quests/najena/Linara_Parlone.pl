@@ -17,8 +17,5 @@ sub EVENT_ITEM {
     quest::say("Oh thank you $name! I must make my escape now. Give this note to my father in Felwithe, he will reward you handsomely for your service.");
     quest::summonitem(5573); #Folded note
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

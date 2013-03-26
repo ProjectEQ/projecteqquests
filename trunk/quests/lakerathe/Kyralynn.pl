@@ -43,9 +43,6 @@ sub EVENT_ITEM {
     quest::summonitem(4946);
     quest::say("I have crafted your breastplate, use it well.");
   }
-  else {
-    quest::say("You have given me incomplete or the wrong reagents.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakerathe  ID:51058 -- Kyralynn

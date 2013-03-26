@@ -28,10 +28,7 @@ sub EVENT_ITEM {
    #Summon: Vision of Sebilite
    quest::summonitem(12949);
   }
-  else {
-   quest::say("I have no need for this item, $name. You can have it back.");
    plugin::return_items(\%itemcount);
-  }
 }
 
 

@@ -49,7 +49,7 @@ sub EVENT_ITEM {
 		quest::faction(316,10);
 		quest::faction(347,-30);
 	}
-	elsif(plugin::check_handin(\%itemcount, 18431 => 1)) { #Halfling Paladin Note
+	if(plugin::check_handin(\%itemcount, 18431 => 1)) { #Halfling Paladin Note
 		quest::say("Karana smiles upon you young $name! Take this tunic to keep you warm through the storms you must face. There is evil encroaching upon the lands of Karana's faithful. The wicked minions of Bertoxxulous and the Teir'Dal children of Hate corrupt the lands to the west and east, and the Deathfist Clan of Orcs are waging war on this region while destoying the wilderness for lumber and stone. It is Karana's will that we defend our lands and way of life from these evil threats. When you are ready to begin adventuring, I will be happy to advise you on how to help us deal with the [evil forces]. I also posses knowledge of various [trades], seek me out when you wish to learn about them.");
 		quest::summonitem(13541); #Jumjum Sack Tunic*
 		quest::ding();
@@ -59,11 +59,9 @@ sub EVENT_ITEM {
 		quest::faction(347,-15); # -Unkempt Druids
 		quest::exp(100);
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rivervale  ID:19049 -- Kaya_Cloudfoot

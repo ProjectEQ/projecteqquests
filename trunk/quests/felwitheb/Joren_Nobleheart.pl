@@ -20,9 +20,7 @@ sub EVENT_ITEM {
     quest::exp(100000);
     quest::summonitem(10608);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: felwitheb ID: 62000 NPC: Joren_Nobleheart

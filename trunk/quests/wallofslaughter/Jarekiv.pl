@@ -29,10 +29,6 @@ sub EVENT_ITEM
 		quest::faction(410,1); #dranik loyalists Large as advised by quest information as due to feran skill rarity
 		quest::faction(432,-1); #overlord mata muram
 		}
-	else
-		{
 		plugin::return_items(\%itemcount);
-		quest::say("I am sorry $name, but these are not the items i was looking for."); #made up text
-    		}
 }
 #END of FILE

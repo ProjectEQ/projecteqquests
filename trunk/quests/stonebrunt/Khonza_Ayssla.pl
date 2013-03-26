@@ -38,9 +38,6 @@ sub EVENT_ITEM {
   quest::summonitem(6976);
  }
 
- else {
-    quest::say("I have no need for that.");
-    plugin::return_items(\%itemcount);
- }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:stonebrunt

@@ -22,10 +22,7 @@ sub EVENT_ITEM {
     quest::summonitem(12952);
     quest::exp(50000);
   }
-  else{
-    quest::say("This is of no use to me.");
-    plugin::return_items(\%itemcount);    
-  }
+  plugin::return_items(\%itemcount);    
 }
 
 # 10028 = Peridot

@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   quest::faction(62,20);
   quest::faction(193,10);
  }
- elsif(($itemcount{3893} == 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)
+ if(($itemcount{3893} == 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)
   quest::say("I am very glad you have returned. Your discovery of the tynnonium is extraordinary! This Sarnak tome has been an incredible source of information. It appears that they have been studying the Greenmist for some time. I'm sure they sought it as nothing more than a trinket to be collected. Their shortsightedness will be their eventual undoing. I have compiled a book of notes that will aid you in your quest for the Greenmist. Please take care to keep this information out of the grasp of our enemies.");
   quest::summonitem(18320);
   quest::exp(5000);
@@ -23,10 +23,7 @@ sub EVENT_ITEM {
   quest::faction(62,20);
   quest::faction(193,10);
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("I don't need that.");
- }
 }
 
 #Submitted by: Jim Mills

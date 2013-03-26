@@ -19,10 +19,6 @@ sub EVENT_ITEM {
     quest::say("Very impressive, $name. This proves you have clearly graduated to the next phase of training we have to offer. Keep this book by your side and speak to Ethoach Trokith when you are ready for your next lesson.");#Text borrowed from intermediate combat manual, instructor's name changed to match advanced magic manual.
     quest::summonitem(28793);#Intermediate Stealth Manual
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202048 -- Leramas_Feston 
 

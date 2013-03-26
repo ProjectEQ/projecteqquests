@@ -28,8 +28,5 @@ sub EVENT_ITEM {
     quest::faction(273,-10); #Ring of Scale
     $proof = 0;
   }
-  else {
-    quest::say("I have no need for this, please take it back before I change my mind.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

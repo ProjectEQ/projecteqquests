@@ -171,7 +171,6 @@ sub EVENT_ITEM {
     quest::say("Seems you have made quite an impression if you are trusted by L`diava. But don't think that this means you do not have to gain my trust. While you survived the three trials I am still in need of assistance, I some [other tasks] completed, when you have finished them please return to me and tell me you have done all I asked and I will give you what you came here for. If you do not wish to start these tasks right now we do have some time to talk a little [more].");
   }
   else {
-    quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
 }

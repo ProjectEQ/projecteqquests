@@ -7,9 +7,7 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(10621);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: overthere ID: 93149 NPC: Impaler_Tzilug

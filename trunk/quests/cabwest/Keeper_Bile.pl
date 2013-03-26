@@ -14,9 +14,7 @@ sub EVENT_ITEM {
     quest::summonitem($spellnum);
     quest::exp(10);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #Dialogue is made up since I was not able to find the correct dialogue on Alla's

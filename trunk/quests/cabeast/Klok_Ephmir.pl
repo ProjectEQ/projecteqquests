@@ -22,9 +22,7 @@ sub EVENT_ITEM {
     quest::emote("takes the disk and attaches it to an odd device powered by a foot pedal. He takes a froglok leg and begins to slice it as chunks of gristle flies into your face. When he is done he hands you some thin sliced froglok. 'There you are. Run along.'");
     quest::summonitem(12445,4);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #SQL: sharp cutting disk & catfish croak sandwich recipes have been submitted to db.

@@ -42,9 +42,5 @@ sub EVENT_ITEM{
 		quest::say("So you are one of Jarrex's new recruits. You are to assist in the construction of the armor you will don as a new Warrior of the Indigo Brotherhood. I have assembled a kit that is used in the crafting of Orc Slayer Mail. You must travel beyond Neriak into the Nektulos Forest for the [materials] that compose the armor.");
 		quest::summonitem(17124);#Mail Assembly Kit
 	}
-	else{	
-		quest::say("I don't need this."); #text made up
-		plugin::return_items(\%itemcount);
-		return 1;
-	}
+	plugin::return_items(\%itemcount);
 }#END of FILE Zone:neriakb  ID:41064 -- Issva_H`Rugla 

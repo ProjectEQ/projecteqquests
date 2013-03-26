@@ -34,18 +34,15 @@ if(plugin::check_handin(\%itemcount, 13882 => 1)){#A Box of Bones
             quest::givecash(0,12,3,0);#12 silver 3 gold per Allakhazam
             quest::summonitem(quest::ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,15203,15207,15201,15208,15209,15014,15205,15210,6012));
                }
-elsif(plugin::check_handin(\%itemcount, 13816 => 1)){#The completed Peacekeeper Staff
+if(plugin::check_handin(\%itemcount, 13816 => 1)){#The completed Peacekeeper Staff
    quest::say("You have done well, neophyte.Let me add the touch of harmony to finish the job.. Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].");
       quest::faction(247, 10); #Peace Keepers (Quellious temple)      
       quest::faction(145, 5); #High Council of Erudin      
       quest::faction(143,-10); #Heretics      
       quest::exp(600);      
       quest::givecash(12,11,0,0);
-quest::summonitem(quest::ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012));
+	quest::summonitem(quest::ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012));
 }
-   else {     
-quest::say("You're contribution is interesting in your choice of it, but you may have it back.");#text made up     
    plugin::return_items(\%itemcount);   
- }
 }
 #END of FILE Zone:erudnext  ID:98045 -- Lumi_Stergnon 

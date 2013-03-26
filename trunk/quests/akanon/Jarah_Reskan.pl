@@ -28,10 +28,8 @@ sub EVENT_ITEM {
     quest::exp(6000);
     quest::givecash(3,2,3,0); #Copper x 3, Silver x 2, Gold x 3
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:akanon  ID:55172 -- Jarah_Reskan

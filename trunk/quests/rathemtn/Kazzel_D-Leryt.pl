@@ -65,10 +65,8 @@ sub EVENT_ITEM {
      quest::say("Oh! Umm... Well, I was just playing with you. Certainly you know I was joking! We had a deal and I will abide by the terms of our agreement. Here is my payment for your services. Bye..");
      quest::summonitem(15692);
      quest::exp(25000);
-   } else {
-     plugin::return_items(\%itemcount);
-     quest::say("I don't need that, friend.");
    }
+   plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50272 -- Kazzel_D-Leryt 

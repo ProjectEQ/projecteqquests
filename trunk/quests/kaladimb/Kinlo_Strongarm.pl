@@ -60,15 +60,8 @@ sub EVENT_ITEM {
       quest::say("Erm. Well, I ain't never worked with this stuff but here's what I got for ya. It ain't bad, pretty much like the one ye got there. I suppose ye should take the one the ancient made and show it ta yer friend.");
       quest::summonitem(20483);
     }
-    else {
-      quest::emote("will not take this item.");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::emote("will not accept any items from you, yet.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kaladimb ID: 67030 NPC: Kinlo_Strongarm

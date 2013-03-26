@@ -35,7 +35,6 @@ sub EVENT_ITEM {
       quest::faction(369,-10); # -Coalition of Trade Folk III
      }
 }
-  quest::say("I have no need for this item, $name. You can have it back.");
   plugin::return_items(\%itemcount);
 }
 

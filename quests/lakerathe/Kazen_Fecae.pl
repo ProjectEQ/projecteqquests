@@ -83,9 +83,6 @@ sub EVENT_ITEM {
     quest::say("I am not familiar with this rune. Take this drawing of the rune to Ruandia in the Plane of Knowledge. She is an expert on runes and should know what it means. From here on out I will want you to handle the research of this staff through my assistant Tebarin in the Plane of Knowledge. I am busy and do not wish to be disturbed further. Tebarin will communicate to me any progress you have made with helping to recover the staff.'");
     quest::summonitem(22691); #Drawing of Rune
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile lakerathe\Kazen_Fecae.pl (51048)

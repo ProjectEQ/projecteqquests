@@ -17,9 +17,6 @@ sub EVENT_ITEM {
     quest::emote(" examines the item. 'Excellent! I can continue my research into planar magic. Take this as a reward.'");
     quest::summonitem(quest::ChooseRandom(21648, 21664, 28470)); #Level 65 Enchanter spell, PoP (Illusion Froglok, Vallon's Quickening, Voice of Quellious)
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #Done, quest by Kilelen

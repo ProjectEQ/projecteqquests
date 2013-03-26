@@ -14,10 +14,7 @@ sub EVENT_ITEM {
   quest::say("I do believe this was a success. The power of summoning and elements has been infused into a new orb. Take this new Orb of Mastery. You may now safely use the power of the augmentation stones with your new orb.");
   quest::summonitem(55273); #Ornate Orb of Mastery
  }
- else {
-  quest::say("I have no need for this item $name. You can have it back.");
   plugin::return_items(\%itemcount);
- }
 }
 
 #Scripted By: Fatty Beerbelly

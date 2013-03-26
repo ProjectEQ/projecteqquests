@@ -76,15 +76,6 @@ sub EVENT_ITEM
 				quest::summonitem(71149);#Forged Hoop of Gratitude
 			}
 		}
-		
-		#Not quest items
-		else {
-			plugin::return_items(\%itemcount); #return items if not the ones required
-		}
 	}
-
-	# Not enough faction item return.
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+	plugin::return_items(\%itemcount); #return items if not the ones required
 }#END of FILE Zone:draniksscar ID:302046 --Kirostall.pl

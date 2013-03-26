@@ -41,9 +41,6 @@ sub EVENT_ITEM {
 		quest::say("**hack** Hand this skin back in when you turn in the mistletoe powder");
 		quest::summonitem(14332);
 	}
-	else {
-		quest::say("I have no need for this, $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 

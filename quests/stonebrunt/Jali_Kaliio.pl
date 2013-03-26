@@ -34,11 +34,7 @@ sub EVENT_ITEM {
    quest::say("She needs much rest. I cannot begin to thank you enough for helping us. Please accept this as a reward. It is not much but it should be of some use. You are indeed a friend of ours and if you ever need shelter from the wilds, please visit us again.");
    quest::summonitem(6952);
  }
-
- else {
-    quest::say("I have no need for that.");
-    plugin::return_items(\%itemcount);
- }
+ plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:stonebrunt

@@ -52,15 +52,8 @@ sub EVENT_ITEM {
       quest::say("Long have I awaited this moment. You have done what even I thought impossible. Take this sword, the Fiery Avenger. You have earned both it and my deepest respect.");
       quest::depop();
     }
-    else {
-      quest::say("What am I supposed to do with these?");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("I don't think I can trust you just yet...");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

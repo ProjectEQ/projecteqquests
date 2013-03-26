@@ -26,8 +26,6 @@ sub EVENT_ITEM {
     quest::faction(53,1);
     quest::givecash(0,3,0,0);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qcat  ID:45067 -- Kurne_Rextula

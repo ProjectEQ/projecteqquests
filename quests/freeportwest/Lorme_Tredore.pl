@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 		quest::exp(100);
 		quest::summonitem(5353); #Fine Steel Scimitar
 	}
-	elsif(plugin::check_handin(\%itemcount, 18740 => 1)) { #A Tattered Note
+	if(plugin::check_handin(\%itemcount, 18740 => 1)) { #A Tattered Note
 		quest::say("Welcome to the Academy of Arcane Sciences. I am Lorme Tredore, Master Magician. Here is our guild robe, wear it with pride and represent us well, young $name. Once you are ready to begin your training please make sure that you see Shana Liskia, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13559); #Used Violet Robe
 		quest::ding();
@@ -37,9 +37,6 @@ sub EVENT_ITEM {
 		quest::faction(235,-15); #Opal Dark Briar
 		quest::faction(105,-15); #The Freeport Militia			
 		quest::exp(100);
-	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
 	}
 	plugin::return_items(\%itemcount);
 }

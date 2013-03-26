@@ -10,7 +10,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("What am I supposed to do with these?");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:erudnint  ID:38150 --  Ilanics_skeleton

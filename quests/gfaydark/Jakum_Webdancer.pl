@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::faction(207,-30); #mayong mistmoore
   }
   
-  elsif(plugin::check_handin(\%itemcount, 18160 => 1) || plugin::check_handin(\%itemcount, 18162 => 1) || plugin::check_handin(\%itemcount, 18163 => 1)) {
+  if(plugin::check_handin(\%itemcount, 18160 => 1) || plugin::check_handin(\%itemcount, 18162 => 1) || plugin::check_handin(\%itemcount, 18163 => 1)) {
     quest::say("Incoming mail - very good!  Please take this gold for your troubles.");
     quest::givecash(0,0,quest::ChooseRandom(6,7,8,9),0);
     quest::exp(80);
@@ -32,10 +32,6 @@ sub EVENT_ITEM {
     quest::faction(273,-30); #ring of scale
     quest::faction(207,-30); #mayong mistmoore
   }
-
-  else {
-    quest::say("I have no need for that.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:gfaydark

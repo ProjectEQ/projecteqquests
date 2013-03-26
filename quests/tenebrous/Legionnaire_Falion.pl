@@ -20,8 +20,5 @@ sub EVENT_ITEM{
 		quest::unique_spawn(172186,0,0,-1414,-1265,-38,0);
 		quest::exp(1000000);
 	}
-	else{
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }

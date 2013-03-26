@@ -49,15 +49,12 @@ sub EVENT_ITEM {
       quest::exp(100);
       quest::summonitem(5353); #Fine Steel Scimitar
     }
-    elsif(plugin::check_handin(\%itemcount, 18740 => 1)) { #A Tattered Note
+    if(plugin::check_handin(\%itemcount, 18740 => 1)) { #A Tattered Note
       quest::say("Thanks. Please take this robe to help you on your journeys.");
       quest::ding();
       quest::exp(100);
       quest::summonitem(13559); #Used Violet Robe
     }
-    else {
-      quest::say("I do not need this.");
-      plugin::return_items(\%itemcount);
-    }
+    plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:freportw  ID:9078 -- Lorme_Tredore

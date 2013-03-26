@@ -67,8 +67,5 @@ sub EVENT_ITEM {
     quest::givecash(6,1,5,1);
     quest::exp(100);
   }
-  else {
-    quest::say("I didn't ask you to bring me these.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

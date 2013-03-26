@@ -20,17 +20,14 @@ sub EVENT_ITEM {
     quest::faction(69, 10);#Dark Bargainers
     quest::exp(2000);
   }
-	elsif(($copper == 7000) || ($silver == 700) || ($gold == 70) || ($platinum == 7)){#7pp worth of coins
+	if(($copper == 7000) || ($silver == 700) || ($gold == 70) || ($platinum == 7)){#7pp worth of coins
 		quest::say("Take this note to the Scribe of Dal, and perhaps she will break her vow.");
 		quest::summonitem(18200);#a note (renounce the D'al, Text: TomeOfAges1)
 		quest::faction(87, 10);#Dreadguard Inner
 		quest::faction(88, 10);#Dreadguard Outer
 		quest::faction(69, 10);#Dark Bargainers
 	}
-	else {
-  	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
-	}
 }
 
 sub EVENT_DEATH {

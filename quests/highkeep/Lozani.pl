@@ -30,7 +30,7 @@ if (plugin::check_handin(\%itemcount, 13225 => 1)) { # Illegible Scroll
 
 }
 
-elsif (plugin::check_handin(\%itemcount, 13845 => 2)) { # Illegible Cantrip
+if (plugin::check_handin(\%itemcount, 13845 => 2)) { # Illegible Cantrip
 
 	quest::say("I managed to decipher these.");
 	quest::summonitem(quest::ChooseRandom(15200, 15042, 15226, 13360, 15246, 15276));  #low level spell or Rotted Illegible Scroll 
@@ -41,14 +41,7 @@ elsif (plugin::check_handin(\%itemcount, 13845 => 2)) { # Illegible Cantrip
 	quest::faction(322,-5); #The Dead
 
 }
-	else {
-
-    quest::say("I have no need for that.");
-
     plugin::return_items(\%itemcount);
-
-}
-
 }
 
 #END of FILE Zone:highkeep  ID:6029 -- Lozani 

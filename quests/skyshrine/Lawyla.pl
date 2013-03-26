@@ -36,10 +36,7 @@ sub EVENT_ITEM {
    #Summon: Hsagra's Wrath (19470)
    quest::summonitem(19470);
   } 
-  else {
-   quest::say("I have no need for this item $name, you can have it back.");
    plugin::return_items(\%itemcount);
-  }
 }
 
 

@@ -76,14 +76,7 @@ if($itemcount{8884} && $itemcount{8885}) {
 quest::say("Excellent, my friend! Well done indeed. These are exactly what I needed to make the circlet. Go now, my friend. Cheyloh awaits and I am sure that he will be most impressed with your success thus far.");
 quest::summonitem(8883);
 }
-
-#return items
-
-  else {
-    quest::say("The forest supplies all I need."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+plugin::return_items(\%itemcount);
 }
 
 #end of file

@@ -30,8 +30,5 @@ sub EVENT_ITEM {
     #End of made up text -Kilelen
     quest::summonitem(59021);#Spell: Frozen Harpoon
   }	
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

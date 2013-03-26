@@ -31,27 +31,13 @@ sub EVENT_ITEM{
 			quest::say("Excellent.  Here is your weapon, $name.  Use it to slay more!");#text made up
 			quest::summonitem(19606);#Jagged Orc Slayer Sword
 		}
-		else {
-			quest::say("I don't need this."); #text made up
-			plugin::return_items(\%itemcount);
-			return 1;
-		}
 	}
-	elsif(plugin::check_handin(\%itemcount, 19562 => 4)) {#Young Kodiak Femurs
+	if(plugin::check_handin(\%itemcount, 19562 => 4)) {#Young Kodiak Femurs
 		if (($class eq "Warrior") && ($race eq "Dark Elf")){
 			quest::say("So you have more strength than you seem to.  Hmm...here is your shield, $name.");#text made up
 			quest::summonitem(19609);#Black Femur Shield
 		}
-		else{
-			quest::say("I don't need this."); #text made up
-			plugin::return_items(\%itemcount);
-			return 1;
-		}	
 	}
-  else {
   	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    quest::say("I don't need this."); #text made up
     plugin::return_items(\%itemcount);
-    return 1;
-  }
 }

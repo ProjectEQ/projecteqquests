@@ -18,10 +18,7 @@ sub EVENT_ITEM {
 		quest::faction(135, 10);#Guards of Qeynos
 		quest::exp(27440);#1% level 15 xp
 	}
-		
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #End of File zone:qeynos ID: 1082 -- Indaria.pl

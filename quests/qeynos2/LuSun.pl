@@ -29,10 +29,8 @@ sub EVENT_ITEM {
 		quest::faction(12,10); # Ashen Order faction
 		quest::exp(100);
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Monk');
 	plugin::return_items(\%itemcount);
 }
 

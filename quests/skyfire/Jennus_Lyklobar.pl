@@ -21,10 +21,7 @@ sub EVENT_ITEM {
     quest::summonitem(28009);
     quest::exp(3000);
   }
-  else {
-    quest::say("I do not need these.");  
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: skyfire ID:91046 -- Jennus_Lyklobar

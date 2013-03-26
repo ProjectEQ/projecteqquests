@@ -37,10 +37,7 @@ sub EVENT_ITEM {
     quest::say("Very good. Now take this and leave me.");
     quest::depop();
     }
-  else {
-    quest::say("Fool! I do not need these!");
     plugin::return_items(\%itemcount);
-    }
 }
 
 sub EVENT_TIMER {

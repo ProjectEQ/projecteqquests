@@ -19,9 +19,6 @@ sub EVENT_ITEM {
     quest::say("You found my key! Where was it? Now how did it get there? No matter, you have returned it.");
     quest::summonitem(59794); # Potion of Transformation (Troll)
   }
-  else {
-    quest::say("I have no use for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279234 -- Kutin_Pyskar.pl

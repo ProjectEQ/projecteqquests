@@ -17,10 +17,7 @@ sub EVENT_ITEM {
 		quest::summonitem(18510);#Pawbook
 		quest::exp(8000);
 	}
-	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #End of File zone:freporte ID: 10130 -- Jheron_Felkis.pl

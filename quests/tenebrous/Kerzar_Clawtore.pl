@@ -13,10 +13,7 @@ sub EVENT_ITEM{
 		quest::emote(" roars flashing glistening fangs that are sharper and longer than the average Vah Shirs!");
 		quest::setnexthpevent(15);
 	}
-	else{
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_HP {

@@ -23,9 +23,7 @@ sub EVENT_ITEM {
     #quest::faction(xxx,30); #haven smuggler associates faction does not exist at this time
     $shipment = 1;
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 160262 NPC: Jarin_Lorean

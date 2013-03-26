@@ -41,8 +41,6 @@ sub EVENT_ITEM {
     quest::faction(423,5);
     quest::exp(50000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155056 -- Kaam_Rahiir

@@ -18,8 +18,5 @@ sub EVENT_ITEM {
     quest::faction(39, -30); #Clan Grikbar
     quest::exp(100);
   }
-  else {
-    quest::say("I do not need this.");
-  }
   plugin::return_items(\%itemcount);
 }

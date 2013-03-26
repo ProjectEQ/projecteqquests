@@ -19,9 +19,7 @@ sub EVENT_ITEM
     quest::faction(138,-2); #Hand Legionnaires
     quest::exp(100);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #By Kovou

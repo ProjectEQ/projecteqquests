@@ -97,16 +97,7 @@ sub EVENT_ITEM {
     quest::summonitem(3800); # Dirk
 }
 
-  else{ 
-
-    quest::say("I have no use for this.");
-
     plugin::return_items(\%itemcount);
-
-    return 1;
-
-}
-
 
 }
 

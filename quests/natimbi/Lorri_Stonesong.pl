@@ -22,9 +22,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(54091) # Shield of Coastal Purity
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:natimbi ID:280046 -- Lorri_Stonesong.pl

@@ -20,10 +20,5 @@ sub EVENT_ITEM {
     quest::emote("takes the scales and the scroll from you. He takes the scales and grinds them with a mortar and pestle into a fine powder. He begins to speak holy words out over the water and allows the powder to fall into the water. The water begins to glow and bubble. Illian takes the scroll and dips one edge into the water. The water then races up across he parchment and forms into holy runes of Prexus. As the seas calm, Illian turns to you and hands you the scroll. 'May the power of the Prexus guard your journeys $name.'");
     quest::summonitem(59527);#Spell: Force of Akera
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#Done

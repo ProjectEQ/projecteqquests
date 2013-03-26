@@ -25,13 +25,11 @@ sub EVENT_ITEM {
     quest::say("Excellent!  You are quite a runner.  Here is half of the sheet music.  I decided to keep the other half because it has this wonderful signature.  I think it might be quite valuable.  It is probably worth as much as an instrument the great Mahlin used.");
     quest::summonitem(20376);
   }
-  elsif (plugin::check_handin(\%itemcount, 20366 => 1)) {
+  if (plugin::check_handin(\%itemcount, 20366 => 1)) {
     quest::say("Mahlin's bongos!  Here, take the other half of the sheet music.  I can't really make out what the signature was, anyway.");
     quest::summonitem(20383);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:qey2hh1  ID:12117 -- Konia Swiftfoot

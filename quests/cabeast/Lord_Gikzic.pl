@@ -30,7 +30,7 @@ sub EVENT_ITEM {
   quest::faction(62,20);
   quest::faction(193,10);
  }
- elsif(($itemcount{12382} == 1) && ($itemcount{5121} == 1)){ #Test of Pain (Greenmist Quest 2/8)
+ if(($itemcount{12382} == 1) && ($itemcount{5121} == 1)){ #Test of Pain (Greenmist Quest 2/8)
   quest::say("You have done as instructed. You are wise to hand this tome to me. It could bring you nothing more than insanity. As your reward, you shall have the squire's khukri. Soon you shall wield the knight's khukri, but that is for another Lord of Pain to decide.");
   quest::summonitem(5122);
   quest::givecash("0","0","3","0"); 
@@ -39,10 +39,8 @@ sub EVENT_ITEM {
   quest::faction(62,20);
   quest::faction(193,10);
  }
- else{ 
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
  plugin::return_items(\%itemcount);
- }
 }
 
 #Submitted by: Jim Mills

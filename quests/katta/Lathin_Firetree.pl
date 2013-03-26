@@ -19,7 +19,7 @@ sub EVENT_ITEM{
 		quest::summonitem(7271); #Shade Figurine Sketch
 		quest::summonitem(7272); #Conlegium Enchanted Glaze
 	}
-	elsif(plugin::check_handin(\%itemcount, 7273 => 1)){
+	if(plugin::check_handin(\%itemcount, 7273 => 1)){
 		quest::say("Excellent, this figurine will work wonderfully. A group of my best summoners is gathering on the first floor at the largest of the summoning circles to call forth the shade. Please take the figurine to Theurgus Ajeea Polaja immediately.");
 		quest::faction(206,10);
 		quest::faction(168,10);
@@ -37,8 +37,5 @@ sub EVENT_ITEM{
 		quest::signal(160252,1); #signal Incanter to depop
 		quest::signal(160253,1); #signal Preecantor to depop
 	}
-	else {
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }

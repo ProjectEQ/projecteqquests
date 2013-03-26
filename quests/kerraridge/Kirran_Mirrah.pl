@@ -4,7 +4,5 @@ sub EVENT_ITEM {
     quest::attack($name);
     quest::summonitem(9967); #Karran's Head
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

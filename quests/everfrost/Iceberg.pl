@@ -31,9 +31,7 @@ sub EVENT_ITEM {
 		quest::exp(1000);
 		quest::summonitem(12226);  # sweaty shirt
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:everfrost  ID:30046 -- Iceberg 

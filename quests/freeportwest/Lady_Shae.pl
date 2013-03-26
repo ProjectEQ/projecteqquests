@@ -48,7 +48,7 @@ sub EVENT_ITEM {
 	}
 	if (plugin::check_handin(\%itemcount, 13030 => 4)) { #red wine
 		quest::say("Oh my.. You are so kind. I can not tell you the last time I had so much fine wine. Well, there was the time Antonius Bayle told me he no longer had the time for a committed relationship. Mister big ruler of the world. Make it to the top and find someone younger. I know his plan. I hate him. I will never trust another human again. After all that, he goes and asks me to hold on to this list for him. Well I am glad it was taken from me by that [Dyllin]. Antonius Bayle has no ties to me any more!! Good riddance! Oooooh! I love him.");
-                quest::ding();
+        quest::ding();
 		quest::faction(100,2);
 		quest::exp(150);
 		$wine = 3;
@@ -58,9 +58,7 @@ sub EVENT_ITEM {
 			quest::say("Thank you... Oh my! A few more of these and I will be spilling my secrets");
 		}
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 	$wine =0;
 }
 

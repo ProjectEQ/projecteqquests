@@ -39,8 +39,5 @@ sub EVENT_ITEM {
     quest::faction(48,-3);  #Coalition of Tradefolk Underground
     quest::faction(137,-3); #Hall of the Ebon Mask
   }
-  else {
-    quest::say("Why do ye give me these items?");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -12,8 +12,5 @@ sub EVENT_ITEM {
     quest::emote("looks delighted and tucks the petal into a lock of her hair. 'How lovely! Here then, a scale you shall have. Do not be surprised if nothing comes of it, but I do thank you for the gift. Best of luck to you, dear mortal.'");
     quest::summonitem(54004);#Shiny Mermaid Scale
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

@@ -17,13 +17,10 @@ sub EVENT_ITEM {
     quest::say("Let us go then. Please be alert throughout the cavern. Once we get to the other side safely give me the signed agreement and you will have your payment.");
     quest::summonitem(5983);
   }
-  elsif(plugin::check_handin(\%itemcount, 5983 => 1)) {
+  if(plugin::check_handin(\%itemcount, 5983 => 1)) {
     quest::say("Thank you so much for your help! As I promised here is a small token of my appreciation.");
     quest::summonitem(5984);
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:netherbian  ID:Not_Found -- Lerin_Sardor

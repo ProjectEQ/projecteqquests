@@ -88,9 +88,7 @@ sub EVENT_ITEM {
     quest::say("I am so impressed and proud of ye, $name. This had been a long journey, hasn't it? That said, this will be the most important adventure of yer life, for now you are a true berserker and a master of all of yer skills. As I promised, the completion of these trials would not only bring ye the honor of being recognized as a true berserker, but also a weapon only a true berserker can wield -- one that I fashioned myself. Use this weapon in yer travels and may it serve ye well in battle. Be well,$name, the Berserker.");
     quest::summonitem(68299);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }  
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

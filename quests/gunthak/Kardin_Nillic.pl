@@ -24,13 +24,10 @@ sub EVENT_ITEM{
     quest::say("I can't read all of it, Take the rest to Jusean Evanesque of South Qeynos, he will understand.");
     quest::summonitem(59023);
  }
-  elsif(plugin::check_handin(\%itemcount, 59024 => 1)) {
+  if(plugin::check_handin(\%itemcount, 59024 => 1)) {
     quest::say("You have done well $name, my friend will now be saved, let me share my song with you.");
     quest::exp(1000);
     quest::summonitem(59002);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

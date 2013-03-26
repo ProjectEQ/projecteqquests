@@ -24,9 +24,7 @@ sub EVENT_ITEM {
     quest::faction(189,-30); #Kromzek
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: skyshrine ID: 114340 NPC: Liason_Dolvak

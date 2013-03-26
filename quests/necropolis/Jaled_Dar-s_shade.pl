@@ -26,7 +26,5 @@ sub EVENT_ITEM {
     quest::exp(500000);
     quest::set_zone_flag(128);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

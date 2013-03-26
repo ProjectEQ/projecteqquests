@@ -64,8 +64,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58203 => 4) || plugin::check_handin(\%itemcount, 58203 => 3) || plugin::check_handin(\%itemcount, 58203 => 2) || plugin::check_handin(\%itemcount, 58203 => 1)) { #Wayfarer Red Dye
     quest::say("Ah, yes. Thank you.");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

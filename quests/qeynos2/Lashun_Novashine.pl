@@ -101,9 +101,6 @@ sub EVENT_ITEM {
     quest::faction(21,-1); #Bloodsabers
     quest::faction(9,1);   #Antonius Bayle
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qeynos2 ID:2032 -- Lashun_Novashine.pl

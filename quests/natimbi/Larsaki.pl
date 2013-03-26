@@ -27,9 +27,6 @@ sub EVENT_ITEM {
     quest::summonitem(52123); # Lizardscale Plated Girdle
     quest::exp(200000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:natimbi ID:280042 -- Larsaki.pl

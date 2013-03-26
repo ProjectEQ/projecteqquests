@@ -14,11 +14,5 @@ sub EVENT_ITEM {
     quest::emote("Oh! Thank you, I assume this means that Thiran sent you. I ran off with the incorrect book without thinking to check. Would you be kind enough to return this to him?");
     quest::summonitem(15960); #The Reflecting Pools of Tanaan
   }
- 
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-   
+  plugin::return_items(\%itemcount);
 } 

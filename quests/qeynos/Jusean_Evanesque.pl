@@ -38,7 +38,7 @@ sub EVENT_ITEM {
     quest::faction(273,-30); #ring of scale
     quest::faction(207,-30); #mayong mistmoore
   }
-  elsif (plugin::check_handin(\%itemcount, 59042 => 1)) {
+  if (plugin::check_handin(\%itemcount, 59042 => 1)) {
     #aria of innocence
     quest::say("My father gave you this just before he died?! So he's been alive all these years in the mines of Brokenskull Rock. What a bitter end for such a talented minstrel. I will transcribe this song for you $name, but you must promise to use it to help those like my father, trapped in an unnatural insanity. I pray that you will not fall to the same fate.");
     quest::summonitem("59001");
@@ -89,11 +89,8 @@ sub EVENT_ITEM {
     quest::faction(207,-3); #mayong mistmoore
     quest::givecash(10,2,0,0);
   }
-  
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Bard');
+  plugin::return_items(\%itemcount);
 }
 

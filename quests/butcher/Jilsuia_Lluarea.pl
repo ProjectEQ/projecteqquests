@@ -7,8 +7,5 @@ sub EVENT_ITEM {
     quest::summonitem(55272); #Jilsua's Note (Sony's spelling, not mine)
     quest::summonitem(55267); #Bloodguard Mummy Wrappings
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

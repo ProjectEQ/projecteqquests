@@ -28,7 +28,6 @@ sub EVENT_ITEM {
       quest::faction(67,-100); # -dain
     }
     else {
-      quest::say("I do not need this little one");
       plugin::return_items(\%itemcount);
       return 1;
     }
@@ -39,7 +38,6 @@ sub EVENT_ITEM {
     quest::exp(200000);
   }
   else {
-    quest::say("I do not know you well enough to entrust you with such an item, yet.");
     plugin::return_items(\%itemcount);
   }
 }

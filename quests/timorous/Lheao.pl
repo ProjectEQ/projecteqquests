@@ -25,10 +25,8 @@ sub EVENT_ITEM {
   quest::say("Astonishing! To think that you are a master of an order thought to be lost in our world. Forgive my earlier doubts. I believe you are indeed worthy to be given the responsibility of watching over this book. Take great care that it does not fall into the wrong hands as it would be truly disatrous.");
   # Summon: Celestial Fists (Book)
   quest::summonitem(1683);
-} else {
-  quest::say("I have no need for this item $name, you can have it back.");
+}
   plugin::return_items(\%itemcount);
- }
 }
 
 

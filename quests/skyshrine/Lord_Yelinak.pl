@@ -34,15 +34,11 @@ sub EVENT_ITEM {
       quest::say("This sword is a symbol of our evolution and ancient heritage. Back when our feathered relatives were not so distant, a sword was forged and enchanted with the spirit of an elder griffin. This noble griffin bound his soul to the sword, the essence of his being honing the blade to an edge imperceptible to mortal eyes. Although our races have evolved away from each other, we still hold them in high regard. But if you think you are not worthy to wield this honor, return the sword to me and I have other tokens you may find of more use.");
       quest::summonitem(29647);
     } 
-    else {
-      quest::say("I do not need this little one.");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("I do not know you well enough to trust you with such an item, yet.");
-    plugin::return_items(\%itemcount);
+  else { 
+   quest::say("I do not know you well enough to entrust you with such an item, yet."); 
   }
+  plugin::return_items(\%itemcount); 
 }
 
 

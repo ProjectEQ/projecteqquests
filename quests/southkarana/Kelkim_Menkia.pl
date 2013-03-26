@@ -22,10 +22,7 @@ sub EVENT_ITEM {
     quest::say("This is wonderful, I will be able to play my lute again soon! Take this old sheet of music I found - I don't think I will have much use for it. My new desire is to bash gnoll heads in with my lute. Safe travels to you, $name.");
     quest::summonitem(20377); #Maestro's Symphony Page 25
   }
-  else {
-    quest::say("I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:southkarana  ID:14082 -- Kelkim_Menika

@@ -64,10 +64,8 @@ sub EVENT_ITEM {
     quest::faction(235,-30); # Opal Dark Briar
     quest::summonitem(27495);
   }
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Magician');
-    plugin::return_items(\%itemcount);
-  }
+  plugin::try_tome_handins(\%itemcount, $class, 'Magician');
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qeynos ID: 3037 name: Juegile_Sohgohm 

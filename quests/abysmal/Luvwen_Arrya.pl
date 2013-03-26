@@ -59,9 +59,6 @@ sub EVENT_ITEM {
 			plugin::return_items(\%itemcount);
 		}
 	}
-	else {
-		quest::say("I have no use for this.");  
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279016 -- Luvwen_Arrya.pl

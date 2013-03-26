@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 		quest::summonitem(11079);
 		quest::exp(100);
 	}
-	elsif (plugin::check_handin(\%itemcount, 18705 => 1)) { # Old Folded Letter
+	if (plugin::check_handin(\%itemcount, 18705 => 1)) { # Old Folded Letter
 		quest::say("A new rogue eh? Well put this tunic on and get to it! Once you are ready to begin your training please make sure that you see Morlan. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13518); # Tin Patched Tunic*
 		quest::ding();
@@ -45,13 +45,11 @@ sub EVENT_ITEM {
 		quest::faction(91,-15); #Eldritch Collective
 		quest::faction(115,-15); #Gem Choppers
 		quest::faction(76,-15); #Deepmuses
-    quest::exp(100);
+		quest::exp(100);
 	}
-	else {
-		#Do all other handins first With plugin, then let it Do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-		plugin::return_items(\%itemcount);
-	}
+	#Do all other handins first With plugin, then let it Do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+	plugin::return_items(\%itemcount);
 }
 
 #End of file

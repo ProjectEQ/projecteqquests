@@ -81,16 +81,7 @@ sub EVENT_ITEM
  #Dragorn Runed Platinum Ring
 					}
 			}
- 		else
-			{
-     			plugin::return_items(\%itemcount);
-			quest::say("I am sorry $name, but these are not the items i was looking for."); #made up text
-    			}
 		}
-	else
-		{
 		plugin::return_items(\%itemcount);
-		quest::emote("returns your items without response."); #made up text
-		}
 }
 #END of FILE

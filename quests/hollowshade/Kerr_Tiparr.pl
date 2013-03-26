@@ -11,9 +11,6 @@ sub EVENT_ITEM {
     quest::say("Thanks $name! That was delicious. Here is the empty bowl.");
     quest::summonitem(5567);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:hollowshade  ID:166011 -- Kerr_Tiparr

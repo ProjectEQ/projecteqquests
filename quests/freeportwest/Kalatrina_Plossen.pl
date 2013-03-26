@@ -38,12 +38,6 @@ sub EVENT_ITEM
     # Knights of Truth Faction
     quest::faction(184,1);
   }
-  else
-  {
-    quest::say("I have no use for this.");
-  }
-
-  # Return items to the player
   plugin::return_items(\%itemcount);
 }
 

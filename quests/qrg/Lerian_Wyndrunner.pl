@@ -85,14 +85,7 @@ elsif($itemcount{8872} && $itemcount{8792} && $itemcount{8878}) {
 quest::emote("examines the gloves, checking the item's stability and quality of make. Satisfied, Lerian then pulls the gloves onto his hands and proceeds to carefully cover the gloves with the dark emerald moss. He then closes his eyes and begins to whisper a soft chant in an ancient druidic language as he opens the small pouch and sprinkles the fern seeds across the palms and back of his hands. As he chants, his hands hold a soft emerald radiance and the seeds begin to sprout before your eyes. The tiny ferns weave in an out of the Mithril netting, binding the moss to the gloves and creating a beautiful design upon the back of each gloves. Lerian removes the gloves as his chant ends and extends them to $name, a delicate, warm smile upon his face in silent approval.");
 quest::summonitem(8871);
 }
-
-#return items
-
-  else {
-    quest::say("The forest supplies all I need."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+plugin::return_items(\%itemcount);
 }
 
 #end of file

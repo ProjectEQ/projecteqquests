@@ -34,16 +34,13 @@ sub EVENT_ITEM {
 		quest::faction(99,10);  #Faydark's Champions
 		quest::exp(100);
 	}
-	elsif(plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
+	if(plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
 		quest::say("You have done well, child! Take this as a blessing from Tunare for doing her will.");
 		quest::summonitem(5047);
 		quest::givecash("0,0,6,0");
 		quest::exp(250);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:gfaydark  ID:54083 -- Heartwood_Master 

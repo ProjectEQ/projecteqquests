@@ -8,6 +8,5 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::emote("ignores you.");
   plugin::return_items(\%itemcount);
 }

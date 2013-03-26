@@ -58,8 +58,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58216 => 4) || plugin::check_handin(\%itemcount, 58216 => 3) || plugin::check_handin(\%itemcount, 58216 => 2) || plugin::check_handin(\%itemcount, 58216 => 1)) { #Wayfarer Vial
     quest::say("Ah, yes. Thank you.");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

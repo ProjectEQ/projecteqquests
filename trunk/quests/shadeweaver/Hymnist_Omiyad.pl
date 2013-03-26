@@ -18,16 +18,13 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 31289 => 4)){
     #Talisman of the Flame (End)
     quest::emote("takes the remains and throws them into the fire, flames blaze immediatey with a sicky hue.");
-quest::say("You have preformed a great service by helping destroy some of the wretched Lodi Kai. Take this small talisman, it is worn by the dancers here. Take it with you and feel free to do a dance whenever you like, haha!");
+	quest::say("You have preformed a great service by helping destroy some of the wretched Lodi Kai. Take this small talisman, it is worn by the dancers here. Take it with you and feel free to do a dance whenever you like, haha!");
     #Talisman of the Flame
     quest::summonitem(7498);
     quest::faction(132,10); # +Guardians of Shar Vahl
     quest::exp(250);
     quest::ding();
-    } else {
-      quest::say("I don't need these items, $name. You can have them back.");
-      plugin::return_items(\%itemcount);
-     }
+    }
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Bard');
     plugin::return_items(\%itemcount);

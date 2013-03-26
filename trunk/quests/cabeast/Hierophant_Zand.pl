@@ -43,10 +43,7 @@ sub EVENT_ITEM {
     quest::givecash (0,0,0,10);
     quest::setglobal("shmskullquest",8,5,"F"); #set a global flag so that user can do shm skull quest part 6
   }
-  else { 
-    quest::say("This isn't what I asked for.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills

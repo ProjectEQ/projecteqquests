@@ -17,8 +17,5 @@ sub EVENT_ITEM{
 		quest::exp(10000);
 		quest::depop();
 	}
-	else{
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }

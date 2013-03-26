@@ -88,9 +88,6 @@ sub EVENT_ITEM {
     quest::faction(90, -3);     # Ebon Mask
     quest::exp(300);
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 

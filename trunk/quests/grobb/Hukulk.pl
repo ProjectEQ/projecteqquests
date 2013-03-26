@@ -58,10 +58,7 @@ sub EVENT_ITEM {
     quest::faction(66,10);  #Da Bashers
 		quest::exp(250);
 	}
-  else {
-    quest::say("Me no need dis, $name.");
     plugin::return_items(\%itemcount);
-  }
 }
 
 #END of FILE Zone:grobb  ID:40023 -- Hukulk

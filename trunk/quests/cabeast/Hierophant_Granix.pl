@@ -42,9 +42,7 @@ sub EVENT_ITEM
       quest::setglobal("shmskullquest", 13,5,"F"); #set a global flag so that user can do shm skull quest part 8
       quest::summonitem(5148); #SkyIron Cudgel of the Arisen
    }
-   else {
-      plugin::return_items(\%itemcount); #return items if not the ones required
-   }
+   plugin::return_items(\%itemcount); #return items if not the ones required
 }
 #END of FILE Zone:cabeast  ID:5761 -- Hierophant_Granix 
 

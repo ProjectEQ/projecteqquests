@@ -43,7 +43,7 @@ sub EVENT_ITEM {
     quest::faction(135,10); # Guards of Qeynos
 		quest::exp(100);
   }
-  elsif (plugin::check_handin(\%itemcount,13913=>1)) {
+  if (plugin::check_handin(\%itemcount,13913=>1)) {
     quest::say("His days of hunting are over. In the name of the Protectors of the Pine, I offer you this reward. If you are unable to make use of it, you may sell it. I suggest you hold onto it. If you are a ranger it will come in handy.");
     quest::summonitem(17804);
     quest::givecash(0,11,8,4);
@@ -53,11 +53,9 @@ sub EVENT_ITEM {
     quest::faction(279,-30); # Sabertooths of Blackurrow
     quest::faction(135,10); # Guards of Qeynos
   }
-	else {
-		#do all other handins first with plugin, then let it do discipline
-		plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do discipline
+	plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

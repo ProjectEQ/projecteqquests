@@ -71,8 +71,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58196 => 4) || plugin::check_handin(\%itemcount, 58196 => 3) || plugin::check_handin(\%itemcount, 58196 => 2) || plugin::check_handin(\%itemcount, 58196 => 1)) { #Wayfarer Pastry
     quest::say("Ah, yes. Thank you.");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

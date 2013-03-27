@@ -25,9 +25,6 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(21655, 26932)); #Level 65 Ranger spell, PoP (Protection of the Wild, Cry of Thunder)
   }
   
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
     
 }#Done

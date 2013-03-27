@@ -37,15 +37,11 @@ sub EVENT_ITEM {
 		quest::faction(9,10); #Antonius Bayle
 		quest::exp(100);
 	}
-	elsif(plugin::check_handin(\%itemcount, 13911 => 1)) {
-   quest::say("Oh my word!! This is terrible news. This belongs to Hayle Mool. He has been captured by the Splitpaw Clan while in Karana. You must go to his aid. We cannot do so at this time. Here. Be sure to hand him this summons. I will need to speak with him.");
-   quest::summonitem(18927);
-  }
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
+	if(plugin::check_handin(\%itemcount, 13911 => 1)) {
+		quest::say("Oh my word!! This is terrible news. This belongs to Hayle Mool. He has been captured by the Splitpaw Clan while in Karana. You must go to his aid. We cannot do so at this time. Here. Be sure to hand him this summons. I will need to speak with him.");
+		quest::summonitem(18927);
 	}
-	plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:qeynos2  ID:2069 -- Priestess_Jahnda

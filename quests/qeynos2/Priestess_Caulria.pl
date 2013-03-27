@@ -68,9 +68,6 @@ sub EVENT_ITEM {
       quest::summonitem(13951);
       
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qeynos2  ID:2082 -- Priestess_Caulria

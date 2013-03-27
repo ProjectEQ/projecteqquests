@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::say("Be healed!");
     $npc->CastSpell(17,$userid); #Light Healing
   }
-  elsif(plugin::check_handin(\%itemcount, 14030 => 4)) { #Skunk Scent Gland
+  if(plugin::check_handin(\%itemcount, 14030 => 4)) { #Skunk Scent Gland
     quest::say("I thank you for your good deed. I trust it was not a problem. Take this scroll. A cleric of this cathedral will find it useful. May the power of Underfoot be with you.");
     quest::summonitem(quest::ChooseRandom(15203,15229,15560,15036,15216)); #Random Spell: Cure Poison, Fear, Furor, Gate, Stun
     quest::faction(44,5); #Clerics of Underfoot
@@ -24,9 +24,6 @@ sub EVENT_ITEM {
     quest::exp(2000);
     quest::givecash(0,5,0,0); #Silver x 5
   }
-  else {
-    quest::say("There shall be no scroll until I see four skunk scent glands.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladimb  ID:67023 -- Nultal_Malfoot

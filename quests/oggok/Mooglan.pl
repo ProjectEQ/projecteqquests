@@ -48,10 +48,7 @@ sub EVENT_ITEM {
     quest::summonitem(55211);
     quest::exp(100);
   }
-  else {
-    quest::say("I not needz dis."); # text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quests by mystic414

@@ -20,16 +20,14 @@ sub EVENT_ITEM {
     quest::exp(1000);
     quest::givecash(8,1,0,0); #Copper x 8, Silver x 1
   }
-  elsif(plugin::check_handin(\%itemcount, 13941 => 1, 13942 => 1)) { #Leatherfoot Skullcap, Dragoon Dirk
+  if(plugin::check_handin(\%itemcount, 13941 => 1, 13942 => 1)) { #Leatherfoot Skullcap, Dragoon Dirk
     quest::say("Wonderful, $name. You have proven yourself to the Leatherfoot Squad. Take this and wear it with honor.");
     quest::summonitem(12259); #Leatherfoot Raider Skullcap
     quest::exp(5000);
     quest::givecash(7,3,2,1); #Copper x 7, Silver x 3, Gold x 2, Platinum x 1
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rivervale  ID:19059 -- Marshal_Anrey

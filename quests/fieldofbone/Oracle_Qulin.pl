@@ -23,7 +23,5 @@ sub EVENT_ITEM
       quest::summonitem(30986); #note to Hierophant Granix
    }
 
-   else {
-       plugin::return_items(\%itemcount); #return items if not the ones required
-   }
+  plugin::return_items(\%itemcount);
 }

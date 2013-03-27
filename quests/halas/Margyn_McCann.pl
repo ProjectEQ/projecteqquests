@@ -52,21 +52,18 @@ sub EVENT_ITEM{
 			quest::summonitem($randomspell,1); #A Random Spell Listed Above
 		}
 	}
-	elsif(plugin::check_handin(\%itemcount, 18761 => 1)) {
+	if(plugin::check_handin(\%itemcount, 18761 => 1)) {
 		quest::say("Welcome t' the Church o' the Tribunal. Here, we practice the will o' the Six Hammers. This is our guild tunic - wear it with pride and represent us well. Once you are ready to begin adventuring please see Jinkus Felligan, he can help you with tasks geared towards your development as a great Shaman. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::ding();
-    quest::faction(294, 5);   # Shamen of Justice
+		quest::faction(294, 5);   # Shamen of Justice
 		quest::faction(213, 5);   # Merchants of Halas
 		quest::faction(33, -5);   # Circle of Unseen Hands
 		quest::faction(48, -5);   # Coalition of Tradefolk Underground
 		quest::faction(90, -5);   # Ebon Mask
-    quest::summonitem(13512); # Faded Blue Tunic
+		quest::summonitem(13512); # Faded Blue Tunic
 		quest::exp(100);        # Give exp for turning in quest
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 #EoF

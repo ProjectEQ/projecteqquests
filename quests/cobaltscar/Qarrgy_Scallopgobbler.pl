@@ -42,10 +42,7 @@ sub EVENT_ITEM {
     quest::faction(345, -60);
     quest::exp(10000);
   }
-  else {
-    quest::say("I have no need of these, strange one."); # Made text up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

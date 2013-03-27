@@ -11,8 +11,5 @@ sub EVENT_ITEM {
     quest::emote("reaches into her satchel and pulls out a small box.");
     quest::say("Here ya go! Enjoy it. Come back soon. Just a warning though, I cant give you a box that you already have. There isn't enough for everyone you know!");
   }
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("I have no interest in this."); #fake text
-  }
+  plugin::return_items(\%itemcount);
 } 

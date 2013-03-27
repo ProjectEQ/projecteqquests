@@ -29,15 +29,13 @@ sub EVENT_ITEM {
     quest::summonitem(10604);
     quest::summonitem(17861);
   }
-  elsif (plugin::check_handin(\%itemcount, 10635 => 1)) {
+  if (plugin::check_handin(\%itemcount, 10635 => 1)) {
     quest::say("Excellent, you have done well. Here is the first piece of the staff. Now you must go seek out the second master; he will clear the path for you.");
     quest::faction(342,30);
     quest::exp(100000);
     quest::summonitem(10610);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: overthere ID: 93150 NPC: Modani_Qu'Loni

@@ -54,10 +54,7 @@ sub EVENT_ITEM {
     quest::exp(30000);
     quest::ding();
   }
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:felwitheb  ID:62021 -- Niola_Impholder 

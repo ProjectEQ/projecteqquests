@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::summonitem(28090);#Black Lava Powder
     quest::exp(250);
   }
-	elsif((plugin::check_handin(\%itemcount, 4871 => 1)) ||
+	if((plugin::check_handin(\%itemcount, 4871 => 1)) ||
 		(plugin::check_handin(\%itemcount, 4872 => 1)) ||
 		(plugin::check_handin(\%itemcount, 4873 => 1)) ||
 		(plugin::check_handin(\%itemcount, 4884 => 1)) ||
@@ -30,10 +30,5 @@ sub EVENT_ITEM {
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     	quest::exp(698775);
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202238 -- Oracle_Cador 

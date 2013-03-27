@@ -96,7 +96,7 @@ sub EVENT_ITEM
         quest::exp("100");
     }
     # Tattered Parchment ID-28055
-    elsif (plugin::check_handin(\%itemcount, 28055 => 1))
+    if (plugin::check_handin(\%itemcount, 28055 => 1))
     {
         quest::ding();
         quest::say("You have performed a great service to one who is your brother. Your loyalty shines brightly, as does your skill. Take the treant fists. They are yours now.");

@@ -18,9 +18,6 @@ sub EVENT_ITEM {
     quest::say("Oh, you have returned. And you brought all the items I asked for! As promised I will make you a necklace.' Naea begins to carefully thread the shells and adds the secretion from the gland. 'This should do nicely. Here you go! It was a pleasure making it for you. Take care!"); 
     quest::summonitem(55587); # broken shore necklace
   }
-  else {     
-    quest::say("I have no use for this.");    
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279176 -- Naea_Fobbins.pl

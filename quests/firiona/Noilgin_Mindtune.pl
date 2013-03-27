@@ -12,9 +12,7 @@ sub EVENT_ITEM {
     quest::say("Oh no! I have been tracked down. Can't I have a moment's peace? I'm sorry you went through all the trouble to get this to me, but I'm not delivering mail right now. I'm trying to take a vacation. You'll have to deliver it to Lanivon Baxer in the Toxxulia Forest yourself. Here, take it back. I have packaged it up nicely for the journey.");
     quest::summonitem(6069);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: firiona ID: 84162 NPC: Noilgin_Mindtune

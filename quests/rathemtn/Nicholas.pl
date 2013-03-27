@@ -26,14 +26,9 @@ sub EVENT_ITEM {
           quest::faction(169,2); #Kazon Stormhammer
           quest::faction(219,2); #Miner's guild 249
           quest::exp(100000);
-       } else {
-          quest::say("I do not need this, friend.");
-          plugin::return_items(\%itemcount);
        }
-    } else {
-       quest::say("I do not need this, friend.");
-       plugin::return_items(\%itemcount);
     }
+	plugin::return_items(\%itemcount);
 } 
 
 #END of FILE Zone:rathemtn  ID:50110 -- Nicholas

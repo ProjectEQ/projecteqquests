@@ -27,10 +27,6 @@ sub EVENT_ITEM {
       quest::faction("135","1"); # Guards of Qeynos
       quest::faction("9","1"); # Antonius Bayle
    } 
-elsif (plugin::check_handin(\%itemcount,12310=>1) && $faction <=4) {
-      quest::say("I said two portions of rotten shark meat.");
-      plugin::return_items(\%itemcount);
-   }
    plugin::return_items(\%itemcount);
 }
 

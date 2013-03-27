@@ -40,9 +40,6 @@ sub EVENT_ITEM {
     quest::exp(200000);
     quest::summonitem(55559); # Worker's Earring of Efficiency
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279052 -- Nioti.pl

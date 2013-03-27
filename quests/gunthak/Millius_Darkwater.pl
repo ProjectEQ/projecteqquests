@@ -42,10 +42,7 @@ sub EVENT_ITEM {
     quest::say("You still haven't found Chester.");
     quest::summonitem(59028); #Glowing Black Skull Necklace
   }
-  else {
-    quest::say("I don't need this."); #Text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # What he says now   quest::emote("looks somewhat startled as you approach him. 'Oh hello, $name. The tides of Prexus shift angrily these days.  Be careful as you explore the island, this is a most accursed place.'");

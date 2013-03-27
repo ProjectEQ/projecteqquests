@@ -40,8 +40,7 @@ sub EVENT_ITEM {
 			quest::givecash("2","10","0","0");
 		}
 	}
-	plugin::return_items(\%itemcount);
-	quest::say("I have no need for this $name, you can have it back.");
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:freportw  ID:9063 -- Nusk_Treton

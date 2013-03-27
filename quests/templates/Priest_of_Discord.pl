@@ -87,10 +87,7 @@ sub EVENT_ITEM {
     }
     quest::ding();
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:Multiple  ID:Multiple -- Priest_of_Discord

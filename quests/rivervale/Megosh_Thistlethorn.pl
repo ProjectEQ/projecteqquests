@@ -48,7 +48,7 @@ sub EVENT_ITEM {
 		quest::faction(347,-15); #Unkempt Druids
 		quest::exp(100);
 	} 
-	elsif (plugin::check_handin(\%itemcount, 19622 => 2, 19623 => 2)) { #Handin 2 Orc LumberJack Axes and 2 Orc LumberJack Machetes
+	if (plugin::check_handin(\%itemcount, 19622 => 2, 19623 => 2)) { #Handin 2 Orc LumberJack Axes and 2 Orc LumberJack Machetes
 		quest::say("Excellent work young Storm Reaper $name. Now take this Dull Storm Reaper Machete to a [forge] and sharpen it with a sharpening stone. It may take several attempts to get the blade to an adequate sharpness if you are unfamiliar with the process. Once it is sharpened give it to Bodbin Gimple with a ruined thorn drakeling scales and he will put the finishing touches on what will be a fine weapon!");
 		quest::faction(316,5);
 		quest::faction(208,5);
@@ -57,10 +57,8 @@ sub EVENT_ITEM {
 		quest::exp(10);
 		quest::summonitem("19624");
 	}
-	else {
-		plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
-		plugin::return_items(\%itemcount);
-	}
+	plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rivervale  ID:19050 -- Megosh_Thistlethorn

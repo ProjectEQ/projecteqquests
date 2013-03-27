@@ -60,10 +60,7 @@ sub EVENT_ITEM {
 		quest::summonitem(14786);
 		quest::exp(10000);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back");
-    plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills, with thanks to BWStripes

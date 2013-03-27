@@ -46,10 +46,7 @@ sub EVENT_ITEM {
      quest::ding();
      quest::exp(10000);
   }
-  else {
-    quest::say("I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:cabwest  ID:3435 -- Master_Xydoz

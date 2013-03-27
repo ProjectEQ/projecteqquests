@@ -45,20 +45,18 @@ sub EVENT_ITEM {
     quest::faction(176,-10); #King ak'anon
     quest::faction(209,3); #meldrath
   }
-	elsif (plugin::check_handin(\%itemcount, 18759 => 1)) { # Stained Parchment
-		quest::say("This is fabulous news!! You have done well, young one. Once you are ready for [further instruction] please let me know, I will guide you through your early and most dangerous days. When you have become more experienced in our art, I will be able to further train you, both in our art as well as in some of the various [trades] you will have available to you. ");
-		quest::summonitem(13518); # Tin Patched Tunic*
-		quest::ding();
-		quest::faction(71,10); #Dark Reflection
-		quest::faction(91,-15); #Eldritch Collective
-		quest::faction(115,-15); #Gem Choppers
-		quest::faction(76,-15); #Deepmuses
+  if (plugin::check_handin(\%itemcount, 18759 => 1)) { # Stained Parchment
+    quest::say("This is fabulous news!! You have done well, young one. Once you are ready for [further instruction] please let me know, I will guide you through your early and most dangerous days. When you have become more experienced in our art, I will be able to further train you, both in our art as well as in some of the various [trades] you will have available to you. ");
+    quest::summonitem(13518); # Tin Patched Tunic*
+    quest::ding();
+    quest::faction(71,10); #Dark Reflection
+    quest::faction(91,-15); #Eldritch Collective
+    quest::faction(115,-15); #Gem Choppers
+    quest::faction(76,-15); #Deepmuses
     quest::exp(100);
 	}
-  else {
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
     plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE Zone:akanon  ID:55157 -- Naygog_Mitope

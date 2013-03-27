@@ -88,8 +88,5 @@ sub EVENT_ITEM{
 		quest::emote("looks at you and smiles despite the fact that you have splashed water all over him- he does not appear to be burning at all.  'Oh, excuse me.  You seem to have spilled your water, here have some of mine my friend.  Good day to you, $name,' he says.");
 		quest::summonitem(29898);
 	}
-	else {
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
-}	
+  plugin::return_items(\%itemcount);
+}

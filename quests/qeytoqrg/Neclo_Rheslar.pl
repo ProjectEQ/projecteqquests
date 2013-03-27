@@ -15,10 +15,7 @@ sub EVENT_ITEM {
     quest::exp(1000);
     quest::summonitem(15288); #Spell: Minor Shielding
   }
-  else {
-    quest::say("I have no need of this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

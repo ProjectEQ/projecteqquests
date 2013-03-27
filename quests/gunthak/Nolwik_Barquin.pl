@@ -32,8 +32,5 @@ sub EVENT_ITEM {
     quest::emote("gasps as you hand him the two symbols. 'I am in your debt, $name. There is nothing I can ever do to repay you, but I can at least teach you of the healing water that Tunare has shown me how to control. Take this scroll, I pray to Tunare that it will serve you well.' ");
     quest::summonitem(59014);#Spell: Healing Water
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

@@ -39,10 +39,7 @@ sub EVENT_ITEM {
     quest::say("Yuz do good! Take dis!");
     quest::depop();
     }
-  else {
-    quest::say("Whut Ogog do wit deze?");
-    plugin::return_items(\%itemcount);
-    }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

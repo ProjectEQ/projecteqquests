@@ -39,7 +39,7 @@ sub EVENT_ITEM {
 		quest::givecash(0,16,0,0);#16 silver
 		quest::summonitem(quest::ChooseRandom(13021, 13022));#Neriak Necter or Rotgrub Rye
 	}
-	elsif(plugin::check_handin(\%itemcount, 10124 => 2)){#Mammoth Tusks
+	if(plugin::check_handin(\%itemcount, 10124 => 2)){#Mammoth Tusks
 		quest::say("These will do.  Thank you, child.");#text made up
 		quest::faction(322, 5); #The Dead
 		quest::faction(268, 5); #Queen Cristanos Thex
@@ -53,8 +53,5 @@ sub EVENT_ITEM {
 		#list of rewards on live, so I'm adding it for completeness. -Kilelen
 		quest::summonitem(quest::ChooseRandom(15035, 15362, 15445, 28216));#Random level 12 Necromancer spell (Bind Affinity, Convoke Shadow, Lifedraw, Lesser Summon Corpse
 	}
-	else {
-  	quest::say("I don't need this.");#text made up
-  	plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:neriakc  ID:42042 -- Noxhil_V`Sek 

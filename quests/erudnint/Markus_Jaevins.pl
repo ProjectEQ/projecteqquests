@@ -42,7 +42,7 @@ sub EVENT_ITEM {
 		quest::faction(143,-15); #heretics
 		quest::exp(100);
 	} 
-	elsif (plugin::check_handin(\%itemcount, 13128=> 1)) {
+	if (plugin::check_handin(\%itemcount, 13128=> 1)) {
 		quest::say("This is fine work, young one. You keep this up and you shall be knighted before long.");
 		quest::exp(2500);
 		quest::faction(112,10); #gate callers
@@ -50,10 +50,7 @@ sub EVENT_ITEM {
 		quest::faction(145,10); #high council of erudin
 		quest::faction(143,-30); #heretics
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 # EOF zone: erudnint ID: 23037 npc: Markus_Jaevins

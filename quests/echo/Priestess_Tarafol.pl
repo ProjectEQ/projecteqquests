@@ -21,9 +21,7 @@ sub EVENT_ITEM {
     quest::say("Thank you so much!! These will help so much in trying to find a cure for these people. Here, take this as a token of my gratitude.");
     quest::summonitem(19842);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: echo ID: 153039 NPC: Priestess_Tarafol

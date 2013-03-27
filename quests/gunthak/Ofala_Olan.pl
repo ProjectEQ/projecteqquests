@@ -42,8 +42,5 @@ sub EVENT_ITEM {
     quest::summonitem(54008);#A Dimly Glowing Ring
     quest::summonitem(54007);#Note to Stofo
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

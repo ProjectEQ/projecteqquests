@@ -38,7 +38,7 @@ sub EVENT_ITEM {
 		quest::faction(257, -30);#Priests of Life
 		quest::faction(258, -30);#Priests of Marr
 	}
-	elsif(plugin::check_handin(\%itemcount, 18756 => 1)) { #Tattered Note
+	if(plugin::check_handin(\%itemcount, 18756 => 1)) { #Tattered Note
 		quest::say("Welcome, child of Hate. I am Perrir Zexus, High Priest. We all draw power from the very source that created us, the will of Innoruuk. Here, put on this tunic. It is the tunic of our guild. Once you are ready to begin your training please make sure that you see High Priest Alexandrian, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::ding();
 		quest::summonitem(13585); #Crimson Training Tunic*
@@ -50,10 +50,7 @@ sub EVENT_ITEM {
 		quest::faction(260, -15); #Primordial Malice
 		quest::exp(100); 
 	}
-	else {
-  	quest::say("I don't need this.");#text made up
-  	plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:neriakc  ID:42084 -- Perrir_Zexus 

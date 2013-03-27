@@ -26,8 +26,5 @@ sub EVENT_ITEM {
     quest::say("Here, I hope this will prove of some use to you.");
     quest::summonitem(quest::ChooseRandom(28553, 28554)); #Level 65 Beastlord spell, PoP (Sha's Revenge, Ferocity)
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

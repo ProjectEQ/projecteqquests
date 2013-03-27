@@ -39,7 +39,7 @@ sub EVENT_ITEM {
 	}
 	else {
 		quest::say("I will require both the shackle key for the [dark shackles] and some [proof of allegiance].");
-		plugin::return_items(\%itemcount);
 	}
+	plugin::return_items(\%itemcount);
 }
 

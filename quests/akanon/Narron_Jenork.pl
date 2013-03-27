@@ -52,7 +52,7 @@ sub EVENT_ITEM {
     quest::say("Well done, young $name! Since you have brought me the necessary items, I now present you with this Initiate Watchman's Long Sword. Use it worthily."); # text made up
     quest::summonitem(9115);
   }
-  elsif(plugin::check_handin(\%itemcount, 12378 => 1)) { # Box of Undead Brownies
+  if(plugin::check_handin(\%itemcount, 12378 => 1)) { # Box of Undead Brownies
     quest::say("Wonderful!! Watchman Dexlin sent word that you would be returning these specimens. I shall see that the Eldritch Collective gets them.  For you there is a reward. Manik has donated a pair of Watchman Boots!!");
     quest::faction(115,15); # Gem Choppers better
     quest::faction(210,15); # Merchants of Ak'Anon better
@@ -63,11 +63,9 @@ sub EVENT_ITEM {
     quest::summonitem(12379); # Watchman Boots
     quest::givecash(0,0,0,4);
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+  plugin::return_items(\%itemcount);
 }
 # Quest edited by mrsmystic
 # Quest further edited by Qadar for compatibility with Watchman Boots quest (Watchman_Dexlin in northkarana)

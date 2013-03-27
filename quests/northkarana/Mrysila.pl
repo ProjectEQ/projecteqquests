@@ -29,16 +29,12 @@ sub EVENT_ITEM {
     quest::summonitem($random); #Runes and Research Volume I or Runes and Research Volume II
   }
 #Greater lightstone turn in, reward is Concordance of Research
-  elsif (plugin::check_handin(\%itemcount, 10400 => 1)) {
+  if (plugin::check_handin(\%itemcount, 10400 => 1)) {
     quest::say("A greater lightstone? Thank you very much. Here is a 'Concordance of Research' for you.");
     quest::exp(16000);
     quest::summonitem(17504); #Concordance of Research
   }
-  else {
-    quest::say("$name, I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
-
+  plugin::return_items(\%itemcount);
 }
 
 

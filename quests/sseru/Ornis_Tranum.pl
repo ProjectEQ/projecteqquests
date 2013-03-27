@@ -10,9 +10,7 @@ sub EVENT_ITEM
     quest::faction(168,-2); #Katta Castellum Citizens
     quest::faction(228,-2); #Nathyn Illuminious
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

@@ -10,9 +10,6 @@ sub EVENT_ITEM {
     quest::say("Here ya go!");
     quest::summonitem(19051); #Ground Dufrenite
   }
-  else {
-    quest::say("What dis?");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakerathe  ID:51072 -- Punga

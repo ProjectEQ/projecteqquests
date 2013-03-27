@@ -18,9 +18,6 @@ sub EVENT_ITEM {
 		quest::faction(149, 10); #Highpass Guard
 		quest::faction(31, 10); #Carson McCabe
 	}
-	else {
-		quest::say("I have no need for this, $name.  You can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 

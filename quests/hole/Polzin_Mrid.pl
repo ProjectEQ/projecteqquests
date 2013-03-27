@@ -34,9 +34,7 @@ sub EVENT_ITEM {
     quest::exp(100000);
     quest::summonitem(10613);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: hole ID: 39063 NPC: Polzin_Mrid

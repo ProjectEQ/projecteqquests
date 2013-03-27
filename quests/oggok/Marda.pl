@@ -17,14 +17,11 @@ sub EVENT_ITEM {
     quest::faction(295,20);
     quest::summonitem(quest::ChooseRandom(15270,15226,15279,15211));
   }
-  elsif (plugin::check_handin(\%itemcount, 17929 => 1)) {
+  if (plugin::check_handin(\%itemcount, 17929 => 1)) {
     quest::say("Ahhh!! Good work. You are a bright one. Now let us see if you can master this spell. Learn it well and may it bring you much glory.");
     quest::faction(295,20);
     quest::summonitem(quest::ChooseRandom(15270,15226,15279,15211));
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:oggok  ID:49038 -- Marda

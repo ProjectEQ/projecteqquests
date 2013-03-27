@@ -50,10 +50,7 @@ sub EVENT_ITEM {
     quest::exp(25);
     quest::summonitem(55399); #Axe of the Strongbear
   }
-  else {
-    quest::say("Me not want dis.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF

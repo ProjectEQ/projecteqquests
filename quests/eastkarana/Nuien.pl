@@ -10,10 +10,7 @@ sub EVENT_ITEM {
     quest::spawn2(15170,0,0,-2854,-3840,126.5,61.8); #spawn teola
     quest::signalwith(15044,15167,0);
   }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

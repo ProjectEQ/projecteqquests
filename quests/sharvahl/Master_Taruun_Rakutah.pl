@@ -64,10 +64,7 @@ sub EVENT_ITEM {
     quest::say("Mmm, that is a delicious aroma. The King will most definitely be pleased, $name. And now it seems I owe you a favor.' He pauses momentarily as if gathering his thoughts then speaks. 'Let me ask you, what is the greatest advantage of a Vah Shir's claws?' He retracts a single dark claw and holds it forward, studying it with his amber eyes. 'The design is simple but beautifully effective. Elegant, sharp, and dangerous. Most importantly, I want you to notice this: our enemies feel the claw's pierce twice, both when penetrated and when the implement of pain is ripped out. That is key to creating the perfect blade. I can describe the topic more fully in writing. There you are, I've scribbled some notes in your journal.");
     quest::emote("You have coerced Rakutah into revealing his secret."); #need to add 1.5 global here
   }
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, "Rogue");
-  }
-	plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155169 -- Master_Taruun_Rakutah

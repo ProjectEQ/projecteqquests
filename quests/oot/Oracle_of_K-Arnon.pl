@@ -78,10 +78,7 @@ if (plugin::check_handin(\%itemcount, 55274 => 1)) { # Letter for the Oracle
 	quest::setglobal("phylactory", 1, 5, "F");
 	}
 
-else {
-  quest::say("I have no need for this item, $name. You can have it back.");
   plugin::return_items(\%itemcount);
-	}
 
 }
 

@@ -18,11 +18,8 @@ sub EVENT_ITEM {
 		quest::emote("laughs. 'Here, take this then!'");#text made up
 		quest::summonitem(24095);#Vein Rot Sketch
 	}
-	else {
-  	#do all other handins first with plugin, then let it do disciplines
+ 	#do all other handins first with plugin, then let it do disciplines
   	#Preserved from original file
   	plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-  	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
-	}
 }#END of FILE Zone:neriakc  ID:42075 -- Pazin_Punox 

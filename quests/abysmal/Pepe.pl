@@ -13,8 +13,6 @@ sub EVENT_ITEM {
     quest::exp(300000);
     quest::summonitem(55573); # Scraping Tool
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal ID:279261 -- Pepe.pl

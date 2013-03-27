@@ -66,8 +66,5 @@ sub EVENT_ITEM
 		quest::faction(282, 10); #Scaled Mystics
 		quest::faction(193, 10); #Legion of Cabilis
 	}
-   
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+	plugin::return_items(\%itemcount); #return items if not the ones required
 } 

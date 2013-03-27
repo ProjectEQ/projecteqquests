@@ -34,7 +34,5 @@ sub EVENT_ITEM
 		$client->Message(15, "You have received a character flag!");
 	}
    
-	else {
 		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
 }#END of FILE Zone:draniksscar ID:302047 --Vorskahn.pl

@@ -23,10 +23,7 @@ sub EVENT_ITEM {
     quest::summonitem(22944); 
     quest::ding(); 
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #ShadowKnight Pre-Quest requires 3? Boss fights 2 being raid caliber. 
 #I am not sure if I need to set a variable for the 1.5 quest read this was a pre quest.

@@ -12,11 +12,9 @@ sub EVENT_ITEM {
 		quest::say("Enjoy the exquisite anger, $name, and give my regards to Innoruuk!");
 		quest::movepc(186,-393,656,3);
 	}
-	elsif(plugin::check_handin(\%itemcount, 10094 => 1)) {
+	if(plugin::check_handin(\%itemcount, 10094 => 1)) {
 		quest::say("Bah. Off you go.");
 		quest::movepc(71,539,1384,-664);
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }

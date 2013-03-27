@@ -28,15 +28,13 @@ sub EVENT_ITEM {
 		quest::faction(22,-10);  #Broken Skull Clan
 		quest::exp(100); 
 	}
-	elsif (plugin::check_handin(\%itemcount, 5014 => 2, $gold >= 2)) {#correct text needed
+	if (plugin::check_handin(\%itemcount, 5014 => 2, $gold >= 2)) {#correct text needed
 		quest::say("Raar.. Ranjor give yous a good weapon...");
 		quest::summonitem(quest::ChooseRandom(94201, 6022, 6025, 7014, 5026));
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:grobb  ID:40024 -- Ranjor 

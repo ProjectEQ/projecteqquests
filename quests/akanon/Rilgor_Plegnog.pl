@@ -28,15 +28,12 @@ sub EVENT_ITEM {
 		quest::faction(76,-15); #Deepmuses
     quest::exp(100);
   }
-  elsif (plugin::check_handin(\%itemcount, 1360 => 1)) {
+  if (plugin::check_handin(\%itemcount, 1360 => 1)) {
     quest::say("Very nice!! It is perfect! Here take this pen. Have fun with it.");
     quest::exp(50000);
     quest::summonitem(10600);
   }
-  else {
-    quest::say("I have no need for this $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: akanon ID: 55121 NPC: Rilgor_Plegnog

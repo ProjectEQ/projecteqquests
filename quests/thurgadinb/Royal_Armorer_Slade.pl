@@ -45,7 +45,6 @@ sub EVENT_ITEM {
     }
     else {
       plugin::return_items(\%itemcount);
-      quest::say("I can do nothing with this item.");
       return 1;
     }
     quest::say("Here you are $name. Ah, a perfect fit! May it serve you well.");

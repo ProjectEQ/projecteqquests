@@ -50,7 +50,6 @@ quest::say("Yeah dat iz where meez from. Well. . . First meez wuz from here den 
 }
 
 sub EVENT_ITEM {
-  quest::say("Me not want diz.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:grobb  ID:6085 -- Rasrok_the_Blotched

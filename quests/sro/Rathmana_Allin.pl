@@ -34,10 +34,9 @@ sub EVENT_ITEM {
     quest::summonitem(18961); #Translated Parchment
   }
   else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
 	if($cash > 0) {
 	  quest::givecash($copper, $silver, $gold, $platinum);
 	}
   }
+  plugin::return_items(\%itemcount);
 }

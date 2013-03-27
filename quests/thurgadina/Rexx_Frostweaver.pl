@@ -19,9 +19,7 @@ sub EVENT_ITEM {
     quest::say("Splendid, $name, this is beautiful workmanship! As the Grand Historian may have mentioned, our esteemed Dain Frostreaver the fourth is making some important plans with his council. These plans will doubtlessly include you if the Dain deems you worthy.");
     quest::summonitem(1179);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115167 Name: Rexx_Frostweaver

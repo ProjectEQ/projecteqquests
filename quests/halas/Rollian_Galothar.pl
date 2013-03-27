@@ -55,9 +55,7 @@ sub EVENT_ITEM {
     quest::faction(213,30);
     quest::faction(311,30);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: halas ID: 29078 NPC: Rollian_Galothar

@@ -34,15 +34,12 @@ sub EVENT_ITEM {
     quest::summonitem(8364); #Talisman of Vah Kerrath
     quest::exp(1670);
   }
-  elsif(plugin::check_handin(\%itemcount, 28102 => 4)) { #Elysian Skull
+  if(plugin::check_handin(\%itemcount, 28102 => 4)) { #Elysian Skull
     quest::say("You have done well. Clear your mind of all distractions and ask the whisperlings if you are worthy of my knowledge.");
     quest::faction(358,5); #Whisperling
     quest::faction(3,-5);  #Akheva
     quest::exp(1000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:umbral ID:176013 -- remains_of_Vah_Kerrath

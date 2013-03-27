@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 		quest::exp(1500);
 		quest::ding();
 	}
-	elsif (plugin::check_handin(\%itemcount, 31839 => 1)) {  # Resealed Runed Iron Bound Chest
+	if (plugin::check_handin(\%itemcount, 31839 => 1)) {  # Resealed Runed Iron Bound Chest
 		quest::say("It appears this situation is much more dire than we had first presumed. It would be unsafe to send this crate within the walls of Shar Vahl should another innocent be possessed and the tormented Vah Shir be resurrected once more. I shall scribe a note explaining the occurrences for you to deliver along with the crate to Spiritualist Roleko at the Vah Shir outpost in Grimling Forest");
 		quest::summonitem(31841);  # Roshawna's Report of Occurrences
 		quest::summonitem(31839);  # Resealed runed iron bound chest
@@ -42,10 +42,7 @@ sub EVENT_ITEM {
 		quest::exp(2000);
 		quest::ding();
 	}
-	else {
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

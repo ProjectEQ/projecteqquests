@@ -12,9 +12,7 @@ sub EVENT_ITEM {
     quest::say("Aye, this is it, did you kill her? Well anyway, here, I really didn't want this anymore- I was hoping some fool would give me something of value for it. Thanks.");
     quest::summonitem(29850); #Rifkin's Diary - sealed
   }
-  else { 
-    plugin::return_items(\%itemcount); 
-  }
+  plugin::return_items(\%itemcount); 
 }
 
 #END of FILE Zone:shadowhaven ID:150070 -- Rifkin

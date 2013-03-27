@@ -25,10 +25,7 @@ sub EVENT_ITEM {
   quest::exp(2432);
   quest::summonitem("13824"); #Wooden Shards
   }
-  else {     
-  quest::say("You know the deal!! Four Odus Pearls and you get the Treant Wood.");
   plugin::return_items(\%itemcount);
-  }
   }
    
 #END of FILE Zone:qeynos2  ID:2055 -- Rodgar_the_Tall

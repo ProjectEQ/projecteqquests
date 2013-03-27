@@ -52,10 +52,8 @@ sub EVENT_ITEM {
     quest::say("I never thought our order would see these artifacts again. With the return of these relics we can now put at ease a scar upon the history of our order. This cleansing will atone for his failure. Your soul must be pure to have given so freely of yourself. Go now, take this crested token of our order. If you wish to free his soul you must undertake another sacrifice.");
     quest::summonitem(29010);
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:erudnext  ID:24044 -- Reklon_Gnallen

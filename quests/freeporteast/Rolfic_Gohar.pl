@@ -41,9 +41,6 @@ sub EVENT_ITEM {
 		quest::say("I see now we have similar interests. I will help you get outfitted in an affordable suit of armor to help you in your endeavors. You will need this Mail Assembly Kit to aid you in the construction of the armor. The materials required depend on the armor section you desire to craft. Do you plan to construct a [dismal warrior helm], a [dismal warrior bracer], [dismal warrior gauntlets], [dismal warrior boots], [dismal warrior vambraces], [dismal warrior greaves], or a [dismal warrior breastplate].");
 		quest::summonitem("17124"); # Mail Assembly Kit
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-	}
 	plugin::return_items(\%itemcount);
 }
 

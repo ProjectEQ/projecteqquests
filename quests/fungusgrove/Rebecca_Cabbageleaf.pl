@@ -29,9 +29,7 @@ sub EVENT_ITEM {
     quest::say("Here you are friend, an earring of the Solstice. I'll see that your old earring goes to a druid who can make better use of it. Safe travels, friend!");
     quest::summonitem(9721);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: fungus ID: 157046 NPC: Rebecca_Cabbageleaf

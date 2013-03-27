@@ -15,7 +15,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not want that.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:highkeep  ID:6056 -- Rodrick_Marslett

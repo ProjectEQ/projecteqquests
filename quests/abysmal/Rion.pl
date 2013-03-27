@@ -16,15 +16,13 @@ sub EVENT_ITEM {
     quest::setglobal("brandnewbag", 1, 5, "F");
     quest::givecash(3,0,0,3);
   }
-  elsif (plugin::check_handin(\%itemcount, 55573 => 1, 55570 => 1)) { # Scraping Tool and Venomous Stonemite Poison Sac
+  if (plugin::check_handin(\%itemcount, 55573 => 1, 55570 => 1)) { # Scraping Tool and Venomous Stonemite Poison Sac
   quest::say("Very good. I will do my best. Rion begins to carefully remove the poison from the venom sac. 'Here you go. This should do.");  
   quest::exp(400000);
   quest::summonitem(55574); # Prepared Stonemite Sac
   quest::summonitem(55573); # Scraping Tool
   
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279262 -- Rion.pl

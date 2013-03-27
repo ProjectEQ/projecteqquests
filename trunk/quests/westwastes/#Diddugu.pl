@@ -13,11 +13,6 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 57008 => 1)) {
       quest::say("Tanks. You can have back. Me spit 'n' smear dat so Muada know me see it. Me smudged it me thinks. Me trust no one! Me on big job now and no time. Me studying da [mastodon].  Dey hurt me lots, but me tuff with my warder. No match for me! Dey do survive da cold good and manage not to die wit all da wurms and da beasts here. Me try to learn to harness da power of dem.");
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

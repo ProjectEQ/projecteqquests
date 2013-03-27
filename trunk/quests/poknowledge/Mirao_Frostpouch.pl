@@ -18,8 +18,6 @@ sub EVENT_ITEM {
     quest::summonitem(28091);#Curative Potion
     quest::exp(250);
   }
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
- 
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202153 -- Mirao_Frostpouch 
 

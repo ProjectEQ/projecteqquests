@@ -56,9 +56,7 @@ sub EVENT_ITEM {
     quest::faction(188,-30); #krif
     quest::faction(189,-30); #kzek
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115159 Name: Mordin_Frostcleaver

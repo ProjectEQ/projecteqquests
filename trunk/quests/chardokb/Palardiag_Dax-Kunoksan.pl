@@ -29,12 +29,10 @@ sub EVENT_ITEM
 
 	}
 	
-	elsif(plugin::check_handin(\%itemcount, 61193 => 1)) {#Blood of the Royals 
+	if(plugin::check_handin(\%itemcount, 61193 => 1)) {#Blood of the Royals 
 		quest::say("I do not believe your service to my clan $name, please take this as a token of my appreciation. You have done well.");
 		quest::summonitem(61195);#Flowing Cloak of the Shai`Din 
 	}
    
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:chardokb ID:277081 --Palardiag_Dax-Kunoksan.pl

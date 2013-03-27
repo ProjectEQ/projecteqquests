@@ -36,9 +36,6 @@ sub EVENT_ITEM {
     quest::exp(100000); 
     quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount); # return unused items
-  }
+  plugin::return_items(\%itemcount);
 }
 #End of File, Zone:timorous  NPC:96033 -- Omat_Vastsea

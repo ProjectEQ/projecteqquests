@@ -6,9 +6,7 @@ sub EVENT_ITEM {
     quest::faction(159, 10);
     quest::faction(166, -30);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

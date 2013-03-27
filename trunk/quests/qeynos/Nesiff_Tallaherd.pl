@@ -39,8 +39,6 @@ sub EVENT_ITEM {
 		quest::faction(135,10); #guards of qeynos
 	}
 	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 #End of File zone:qeynos ID: 1098 -- Nesiff_Tallaherd.pl

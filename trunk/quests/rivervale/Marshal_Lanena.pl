@@ -47,7 +47,7 @@ if(plugin::check_handin(\%itemcount, 13870 => 1)){
  quest::givecash(0,1,0,0);
  quest::exp(20);
  } 
- elsif(plugin::check_handin(\%itemcount, 12155 => 1)){
+ if(plugin::check_handin(\%itemcount, 12155 => 1)){
  quest::say("Fine work. We shall continue to study these and shall determine if we need to seek the source.");
  
  quest::summonitem(5423);
@@ -59,12 +59,10 @@ if(plugin::check_handin(\%itemcount, 13870 => 1)){
  quest::givecash(0,0,2,0);
  quest::exp(20);
  
- } else { 
+ }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);
-  quest::say("I have no need for this item $name, you can have it back.");
- }
 }
   
   #END of FILE Zone:rivervale  ID:19061 -- Marshal_Lanena

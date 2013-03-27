@@ -36,10 +36,7 @@ sub EVENT_ITEM {
     quest::say("Take dis.");
     quest::depop();
     }
-  else {
-    quest::say("Whut I do wit dese?");
-    plugin::return_items(\%itemcount);
-    }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

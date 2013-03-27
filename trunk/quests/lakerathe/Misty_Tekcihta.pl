@@ -18,9 +18,7 @@ sub EVENT_ITEM {
     quest::emote("hands you a small ring.");
     quest::summonitem(20379);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:lakerathe  ID:51052 -- Misty Tekcihta

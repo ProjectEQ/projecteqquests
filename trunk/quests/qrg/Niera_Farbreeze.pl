@@ -33,9 +33,7 @@ sub EVENT_ITEM {
     quest::say("This, this is my mother's amulet. I cannot believe it. Please, take this powder you say you need. Perhaps it does have powers, I don't know, I don't care. Thank you, my eternal thanks for this.");
     quest::summonitem(20456);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qrg ID: 3018 NPC: Niera_Farbreeze

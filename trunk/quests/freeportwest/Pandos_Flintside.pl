@@ -61,10 +61,6 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount,13014=>1)) {
     $muffins = 1;
   }
-  else {
-    quest::say("I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
   if ($muffins >= 1) {
     for ($i=0; $i<$muffins; $i++) {
       quest::say("Mmmm. This smells delicious. Oh great!! No milk!! Don't you have any sense?! Just tell me the name of the bakery and I will run and get it myself. I am sure Lady Shae will be safe.");
@@ -77,6 +73,7 @@ sub EVENT_ITEM {
       quest::faction(63,-10); #Crushbone Orcs
     }
   }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

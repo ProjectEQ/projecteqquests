@@ -37,8 +37,6 @@ sub EVENT_ITEM {
     quest::summonitem(18401); # Scroll of Flayed Goblin Skin - Gives it back
     quest::exp(53110);   # 1% @ level 30
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:neriakc  ID:42061 -- Nallar_Q`Tentu

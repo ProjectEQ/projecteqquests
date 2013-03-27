@@ -31,9 +31,7 @@ sub EVENT_ITEM {
     quest::exp(500000);
     quest::summonitem(24070);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: westwastes ID: 120079 NPC: Makil_Rargon

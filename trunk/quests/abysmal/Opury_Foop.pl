@@ -11,7 +11,5 @@ sub EVENT_ITEM {
       quest::setglobal("bic_bar",5,5,"F");
     }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

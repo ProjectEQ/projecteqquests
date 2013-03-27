@@ -22,10 +22,7 @@ sub EVENT_ITEM {
   quest::faction(60,-1);  # -Crimson Hands
   quest::exp(5);  
  }
- else {
-  quest::say("I have no need for this item $name, you can have it back.");
   plugin::return_items(\%itemcount);
- }
 }
 
 

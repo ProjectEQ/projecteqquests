@@ -8,8 +8,5 @@ sub EVENT_ITEM {
     quest::faction(247,10); #Peace Keepers
     quest::exp(50000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

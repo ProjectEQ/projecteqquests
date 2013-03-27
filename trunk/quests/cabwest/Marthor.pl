@@ -23,15 +23,12 @@ sub EVENT_ITEM {
   quest::settimer("Brew",300);
   $Brew = 1;
  }
- elsif (plugin::check_handin(\%itemcount, 4199 => 1)){
+ if (plugin::check_handin(\%itemcount, 4199 => 1)){
   quest::say("Ah, a monk of the final rung. You should seek Gandan Tailfist in Charasis. He, too, was seeking for a way to advance even further."); #Made this up, unable to find actual text
   quest::summonitem(4199);
   quest::ding();
  }
- else{ 
  plugin::return_items(\%itemcount);
- quest::say("I don't want that."); #Made this up
- }
 }
 
 sub EVENT_TIMER {

@@ -42,9 +42,7 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(10612); #3rd Piece of Staff
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: firiona ID: 84116 NPC: Nadia_Starfeast

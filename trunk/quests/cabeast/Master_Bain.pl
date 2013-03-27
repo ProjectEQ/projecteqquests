@@ -42,10 +42,8 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(4350,4351,4352,4353,4354,4355,4356,4357,4358,4359)); #Random Sparring Armor Piece
   }
   #do all other handins first with plugin, then let it do disciplines
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-    plugin::return_items(\%itemcount);
-  }
+  plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:cabeast  ID:3429 -- Master_Bain 

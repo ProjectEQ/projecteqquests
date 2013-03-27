@@ -18,9 +18,6 @@ sub EVENT_ITEM {
     quest::say("Excellent. Hopefully I can make the same boots I did earlier.' Noita takes out her sewing kit and begins to skillfully sew the hides together. It doesn't take her long before you start to see the hides taking the familiar shape of a pair of boots. 'Here you go. These boots might be even better than the ones I made earlier. I hope they serve you well."); 
     quest::summonitem(55569); # Hynid boots
   }
-  else {     
-    quest::say("I have no use for this.");    
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279264 -- Noita_Ergarman.pl

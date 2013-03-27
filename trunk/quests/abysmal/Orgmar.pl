@@ -19,9 +19,6 @@ sub EVENT_ITEM {
     quest::summonitem(55622); 
     quest::exp(50000);
   }
-  else {    
-    quest::say("I don't need this.");   
-    plugin::return_items(\%itemcount);
-  }   
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279221 -- Orgmar.pl

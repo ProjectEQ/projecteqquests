@@ -40,16 +40,15 @@ sub EVENT_ITEM {
       quest::faction(169,10); # Kazon Stormhammer
       quest::faction(219,10); # Miners Guild 249
 			quest::exp(100);
-   } elsif (plugin::check_handin(\%itemcount,12106=>4) && ($faction < 5)) {  # Fairy Dust -- NOT Fairy Princess Dust
+   } 
+   if (plugin::check_handin(\%itemcount,12106=>4) && ($faction < 5)) {  # Fairy Dust -- NOT Fairy Princess Dust
       quest::say("May the mighty power of Brell saturate this soil with his divinity.  Here you are, my noble friend.  You may have a pouch of the soil of Underfoot.");
       quest::summonitem(12282);  # Soil of Underfoot
       quest::faction(44,2); # Clerics of Underfoot
       quest::faction(169,2); #Kazon Stormhammer
       quest::faction(219,2); #Miner's guild 249
-   } else {
-       quest::say("I do not need this, friend.");
-       plugin::return_items(\%itemcount);
-   }   
+   }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:kaladimb  ID:67024 -- Priestess_Ghalea

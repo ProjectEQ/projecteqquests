@@ -69,13 +69,8 @@ sub EVENT_ITEM {
       quest::summonitem(61100); # Staff of The Spiritcharmer
       quest::exp(100);
 
-   } else {
-
-      quest::say("I have no need for this $name, you can have it back.");
-      plugin::return_items(\%itemcount);
-
    }
-
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:grobb  ID: 40074

@@ -37,7 +37,5 @@ sub EVENT_ITEM
       quest::say("You have done well $name. Now it is time for the true test of your clairvoyance. Only a true Scaled mystic will be able to put these spirits to rest. Be warned, these souls will not go quietly into the next world. They have strong ties to this land, and it is these ties we must break. Take them to the City of the Kunzar, the birthplace of the emperor. Only there will you be able to tear asunder the dark rituals that have twisted the souls of our ancient heroes. I will await you in that place $name.");
       quest::summonitem(30994); #give the player Iksar Relics
    }
-    else {
-       plugin::return_items(\%itemcount); #return items if not the ones required
-    }
+  plugin::return_items(\%itemcount);
 }

@@ -25,10 +25,7 @@ sub EVENT_ITEM
 		quest::movepc(78,1065,525,176);
 		quest::settimer(1,15);
 		}
-
-else {
-    plugin::return_items(\%itemcount);
-  }  
+   plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER

@@ -42,9 +42,5 @@ sub EVENT_ITEM {
   	quest::emote("beams 'Thank you, take this.'");#text made up
   	quest::summonitem(27265);#Sleeper's Key
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:eastwastes  ID:116086 -- Nelef_the_Trader 

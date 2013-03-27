@@ -84,9 +84,6 @@ sub EVENT_ITEM {
     quest::ding;
     }
 
-  else{
     quest::say("I do not need this $name. Here, have it back.");
     plugin::return_items(\%itemcount); # return unused items
-    }
-
 }

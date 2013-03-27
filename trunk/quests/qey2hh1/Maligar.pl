@@ -14,9 +14,7 @@ sub EVENT_ITEM {
     $mob1attack->AddToHateList($client, 1);
     quest::attack($name);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qey2hh1 ID: 12076 NPC: Maligar

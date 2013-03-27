@@ -39,9 +39,7 @@ sub EVENT_ITEM {
 	quest::faction(291,-3);		#faction worse: 'Shadowed Men'
 	quest::givecash(8,4,0,0);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END OF FILE

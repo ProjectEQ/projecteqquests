@@ -23,9 +23,6 @@ sub EVENT_ITEM {
     quest::say("Very interesting, I will share this with the other academics. Take this as a reward for your discovery."); #Real text still needed
     quest::summonitem(quest::ChooseRandom(28477, 28485, 28486)); #Level 65 Bard spell, PoP (Tuyen's Chant of Fire, Harmony of Sound, Lullaby of Morell)
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #Done, quest by Kilelen

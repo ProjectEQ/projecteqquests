@@ -15,9 +15,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(54065) # Mace of Focused Flame
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:natimbi ID:280045 -- Misan_Rostenan.pl

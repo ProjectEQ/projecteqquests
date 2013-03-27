@@ -57,10 +57,7 @@ sub EVENT_ITEM {
     quest::exp(45000);
     quest::summonitem(12941);
   }
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("Whats this? I don't want this, have it back.");
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:firiona - Marylyn_McMarin

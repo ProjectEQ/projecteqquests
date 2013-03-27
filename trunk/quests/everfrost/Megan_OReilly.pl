@@ -32,9 +32,7 @@ sub EVENT_ITEM {
 		quest::faction(361,10); # 361 : Faction Wolves of the North
 		quest::summonitem(13245); # 13245 :  Empty Bottle of Elixir
 	}
-	else {
-        plugin::return_items(\%itemcount);
-	}
+    plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:everfrost  ID:30029, 30096, 30119 -- Megan_OReilly

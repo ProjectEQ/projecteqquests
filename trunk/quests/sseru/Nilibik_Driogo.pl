@@ -21,9 +21,7 @@ sub EVENT_ITEM {
     quest::emote("speaks a small incantation as he pulls a branch from a nearby tree and ties it around the amulet 'I shall mourn him dearly, he was a good friend. This was the amulet that I had given him before he left to explore Grieg's End. I want you to have this for helping to find his lost soul. Go in peace my friend.");
     quest::summonitem(6516);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: sseru ID: 159414 NPC: Nilibik_Driogo

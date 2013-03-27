@@ -44,9 +44,7 @@ sub EVENT_ITEM {
   	quest::faction(260,-5); #Primordial Malice
   	quest::exp(250);#5% of level 2 experience, quest is for levels 2+
   }
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    plugin::return_items(\%itemcount);
-  }
+  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:neriakb  ID:41032 -- Narex_T-Vem 

@@ -44,15 +44,8 @@ sub EVENT_ITEM {
 			quest::setglobal("halloween_draykey",1,0,"D30");
 			quest::updatetaskactivity(220,11);
 		}
-		else {
-			quest::say("I have no need for this item $name, you can have it back.");
-    			plugin::return_items(\%itemcount);
-  		}
 	}
-	else {
-		quest::say("I have no need for this item $name, you can have it back.");
-    		plugin::return_items(\%itemcount);
-  	}
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

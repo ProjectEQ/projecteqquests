@@ -49,8 +49,6 @@ sub EVENT_ITEM {
     quest::faction(135,1);
     quest::exp(3000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qeynos2  ID:2052 -- Nerissa_Clothspinner

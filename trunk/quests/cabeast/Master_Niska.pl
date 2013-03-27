@@ -68,10 +68,8 @@ sub EVENT_ITEM {
     quest::summonitem(4190);
   }
   #do all other handins first with plugin, then let it do disciplines
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-    plugin::return_items(\%itemcount);
-  }
+  plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Senzo aka Fatty Beerbelly

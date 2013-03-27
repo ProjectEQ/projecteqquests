@@ -12,8 +12,5 @@ sub EVENT_ITEM {
     quest::say("Good work! Here is your new kit.");
     quest::summonitem(62480); #Reinforced Jeweler's Kit
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

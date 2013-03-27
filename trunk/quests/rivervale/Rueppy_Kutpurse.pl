@@ -22,15 +22,13 @@ sub EVENT_ITEM {
     quest::exp(100);
     quest::givecash(5,0,0,0); #Copper x 5
   }
-  elsif(plugin::check_handin(\%itemcount, 13131 => 1)) { #Case of Blackburrow Stout
+  if(plugin::check_handin(\%itemcount, 13131 => 1)) { #Case of Blackburrow Stout
     quest::say("Ahhh, that hit the spot! Nice work, $name. Take this as a reward.");
     quest::exp(5000);
     quest::givecash(5,1,1,2); #Copper x 5, Silver x 1, Gold x 1, Platinum x 2
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rivervale  ID:19064 -- Rueppy_Kutpurse

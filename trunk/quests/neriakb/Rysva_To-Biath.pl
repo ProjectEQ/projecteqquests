@@ -2,7 +2,7 @@
 #Book of Turmoil
 
 sub EVENT_SAY { 
-	if($text=~/Hail/i){
+	if($text=~/hail/i){
 		quest::say("Hello.  Let me know if I can get you a drink.");
 	}
 }
@@ -24,11 +24,8 @@ sub EVENT_ITEM {
 		#The mob you kill for this quest is trivial at even level 10, or should be.  Giving a percentage of level 40
 		#xp seems too much.
 	}
-        elsif(plugin::check_handin(\%itemcount, 19071 => 1, 19070 => 1) && $platinum >= 1000) {
-                quest::summonitem(18302);
-        }
-	else {
-  	quest::say("I don't need this.");#text made up
+    elsif(plugin::check_handin(\%itemcount, 19071 => 1, 19070 => 1) && $platinum >= 1000) {
+        quest::summonitem(18302);
+    }
   	plugin::return_items(\%itemcount);
-	}
 }#END of FILE Zone:neriakb  ID:41042 -- Rysva_To`Biath 

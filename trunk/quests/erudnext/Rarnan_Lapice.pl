@@ -36,13 +36,7 @@ sub EVENT_ITEM {
         quest::faction(247, 25);
         quest::faction(143, 25);
     }
-  else {
-
-    quest::emote("will not accept this item.");
-
     plugin::return_items(\%itemcount);
-
-  }
 }
 
 #End of FILE Zone:erudnext  ID:98046 -- Rarnan_Lapice

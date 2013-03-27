@@ -19,10 +19,7 @@ sub EVENT_ITEM {
       quest::exp(150); 
       quest::say("You have passed your first task. Nice work. Take this spell as your payment."); 
     } 
-    else { 
-      plugin::return_items(\%itemcount); 
-      quest::say("What am I supposed to do with these, $name?"); 
-    } 
+    plugin::return_items(\%itemcount); 
 } 
 
 #END of FILE Zone:erudnint  ID:23041 -- Raskena_Djor 

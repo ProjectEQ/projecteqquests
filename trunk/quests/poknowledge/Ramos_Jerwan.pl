@@ -20,11 +20,6 @@ sub EVENT_ITEM {
     quest::say("Ah, you've done quite well. Take this, it's a special gift I recovered from a recent adventure, and I can think of no greater person to keep it than you. Remember if you're in need of fishing supplies, come see us any time.");
     quest::summonitem(29175); #Fisherman's Companion
   }  
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202064 -- Ramos_Jerwan 
 

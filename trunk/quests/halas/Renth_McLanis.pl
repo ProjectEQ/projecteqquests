@@ -1,5 +1,5 @@
 sub EVENT_SAY { 
-	if($text=~/Hail/i){
+	if($text=~/hail/i){
 		quest::say("Hail, $name! Have ye come to train?  I train all warriors. All Wolves o' the North must be strong warriors and swift as well. Are ye a young wolf, then? If so, maybe ye can [assist Renth] with his wee problem, eh?");
 	}
 	if($faction < 5) {
@@ -34,6 +34,24 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+	if ($faction <= 5){
+		if (plugin::check_handin(\%itemcount, 13246 => 1)) {
+			quest::say("Good work!! Kylan will never know o' me negligence. I owe ye one, young warrior. Let's call it even with this. Twas found by one of our foraging parties. It is still useful. And... I believe ye can assist with a more [dangerous matter] as well");
+			quest::ding();
+			quest::summonitem(quest::ChooseRandom(17009, 17001));
+			quest::faction( 361, 5);
+			quest::faction( 294, 5);
+			quest::faction( 213, 5);
+			quest::faction( 311, 5);
+			quest::exp(2000);
+		}
+		elsif(plugin::check_handin(\%itemcount, 13249 => 1, 13248 => 1, 13247 => 1, 13233 => 1)) {
+			quest::say("Thank ye, $name! I knew ye could do it. It is a sad thing, but at least now he can rest in peace. Here is something for your efforts. If ye are interested, there is a [dangerous matter] that needs to be looked into.");
+			quest::ding();
+			quest::exp(3000);
+			quest::givecash(5,0,0,0);
+		}
+	}
 	if ($faction < 5){
 		if(plugin::check_handin(\%itemcount, 12227 => 1)) {
 			quest::say("Nice work $name! Basil has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax for your efforts.");
@@ -55,34 +73,9 @@ sub EVENT_ITEM {
 			quest::exp(12000);
 			quest::summonitem(5368);
 		} 
-		else {
-			#do all other handins first with plugin, then let it do disciplines
-			plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-			plugin::return_items(\%itemcount);
-		}
 	}
-	if ($faction <= 5){
-		if (plugin::check_handin(\%itemcount, 13246 => 1)) {
-			quest::say("Good work!! Kylan will never know o' me negligence. I owe ye one, young warrior. Let's call it even with this. Twas found by one of our foraging parties. It is still useful. And... I believe ye can assist with a more [dangerous matter] as well");
-			quest::ding();
-			quest::summonitem(quest::ChooseRandom(17009, 17001));
-			quest::faction( 361, 5);
-			quest::faction( 294, 5);
-			quest::faction( 213, 5);
-			quest::faction( 311, 5);
-			quest::exp(2000);
-		}
-		elsif(plugin::check_handin(\%itemcount, 13249 => 1, 13248 => 1, 13247 => 1, 13233 => 1)) {
-			quest::say("Thank ye, $name! I knew ye could do it. It is a sad thing, but at least now he can rest in peace. Here is something for your efforts. If ye are interested, there is a [dangerous matter] that needs to be looked into.");
-			quest::ding();
-			quest::exp(3000);
-			quest::givecash(5,0,0,0);
-		}
-		else {
-			#do all other handins first with plugin, then let it do disciplines
-			plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-			plugin::return_items(\%itemcount);			
-		}
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);			
 }
 

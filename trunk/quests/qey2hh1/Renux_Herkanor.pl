@@ -37,7 +37,6 @@ sub EVENT_ITEM {
       quest::depop_withtimer();
     }
     else {
-      quest::say("I do not see everything that I asked for...");
       plugin::return_items(\%itemcount);
     }
   }

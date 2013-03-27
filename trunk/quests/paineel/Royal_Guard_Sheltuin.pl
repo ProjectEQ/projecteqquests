@@ -38,10 +38,6 @@ if(plugin::check_handin(\%itemcount, 1776 => 1,1777 => 1, 18174 => 1, 1778 =>1))
     quest::exp(137180);
     quest::summonitem(1764);#Leggings of Ridossan       
                            }
-else {
-    quest::say("I don't need this.");
     plugin::return_items(\%itemcount);
-    return 1;   
-     }
 }
 #END of FILE Zone:paineel  ID:75073 -- Royal_Guard_Sheltuin 

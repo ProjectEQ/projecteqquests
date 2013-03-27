@@ -12,9 +12,7 @@ sub EVENT_ITEM {
     quest::emote("grins. 'These should go nicely in my stew.'");
     quest::exp(12500);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: dawnshroud ID: 174055 NPC: Reiker_Rikes

@@ -30,9 +30,6 @@ sub EVENT_ITEM {
     quest::say("Do not use this power without caution, $name. It is quite powerful indeed for it is power forged upon the planar worlds but may affect both astral and prime alike.");
     quest::summonitem(quest::ChooseRandom(26926, 26927, 26928, 21635)); #Level 65 Class spell, PoP (Voice of Thule, Aura of Hate, Touch of Innoruuk, Cloak of Luclin)
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #Done

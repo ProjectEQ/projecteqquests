@@ -80,9 +80,6 @@ sub EVENT_ITEM {
     elsif ($class eq "Wizard"){quest::summonitem(59843);} # Black Ice
     quest::exp(10000);
   }
-  else {
-    quest::say("I have no use for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279029 -- Reyfin_Malakwa.pl

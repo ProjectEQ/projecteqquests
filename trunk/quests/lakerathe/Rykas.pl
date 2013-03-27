@@ -26,10 +26,7 @@ sub EVENT_ITEM {
     quest::summonitem(18958);
     quest::exp(2000);
   }
-  else {
-    quest::say("I do not need these.");  
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: lakerathe  ID:51045 -- Rykas

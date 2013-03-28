@@ -5,8 +5,5 @@ sub EVENT_ITEM {
     quest::summonitem(55270); #Shelie's Note
     quest::summonitem(55266); #Stone Frog Skin
   }
-  else {
-    quest::say("Me no want dis.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

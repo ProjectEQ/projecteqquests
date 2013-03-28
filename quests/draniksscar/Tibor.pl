@@ -156,13 +156,6 @@ sub EVENT_ITEM {
         quest::summonitem(70880);
       }
     }
-    else {
-      quest::say("These are not the pieces I need."); #Made up text
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("I do not know you well enough to entrust you with such an item, yet."); #Made up text
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

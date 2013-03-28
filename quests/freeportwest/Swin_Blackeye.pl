@@ -26,9 +26,7 @@ sub EVENT_ITEM {
 		quest::faction(217,1);# Faction Merchants of Qeynos ID-217
 		quest::faction(369,1);# Faction Coalition of TradeFolk III ID-369
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

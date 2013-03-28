@@ -13,9 +13,7 @@ sub EVENT_ITEM {
     $traitorattack->AddToHateList($client, 1);
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: skyshrine ID: 114129 NPC: Sentry_Rotiart

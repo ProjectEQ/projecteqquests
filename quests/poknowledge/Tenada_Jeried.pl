@@ -20,11 +20,7 @@ sub EVENT_ITEM {
     quest::emote("'s eyes go wide. 'This is incredible! You have proven yourself to be truly worthy of these planar secrets, $name. May its knowledge contained within guide you safely wherever you travel.'");
     quest::summonitem(28798);#Secrets of the Planes
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202046 -- Tenada_Jeried 
 

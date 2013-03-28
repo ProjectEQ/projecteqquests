@@ -61,10 +61,7 @@ sub EVENT_ITEM {
 		quest::exp(16000);
 		quest::givecash(0, 8, 2, 0);#8sp, 2gp
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

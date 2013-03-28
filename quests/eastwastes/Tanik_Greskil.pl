@@ -25,9 +25,7 @@ sub EVENT_ITEM {
     quest::stoptimer("moveloc");
     quest::depop();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

@@ -27,10 +27,8 @@ sub EVENT_ITEM {
      quest::say("You have done well. Here is the reward for your deeds.");
      quest::summonitem(6364);
      quest::exp(25000);
-   } else {
-     plugin::return_items(\%itemcount);
-     quest::say("I have no need for these, have them back.");
    }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50197 -- Tibrinn Ember 

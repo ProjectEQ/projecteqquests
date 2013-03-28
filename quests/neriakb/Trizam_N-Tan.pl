@@ -24,9 +24,6 @@ sub EVENT_ITEM {
     quest::ding();
     # Summon: Neriak Nectar 
     quest::summonitem(13021, 2);
-  } else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
   }
    #do all other handins first with plugin, then let it do disciplines
    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

@@ -29,8 +29,5 @@ sub EVENT_ITEM {
     quest::faction(291, -10); #Shadowed Men
     quest::exp(1000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

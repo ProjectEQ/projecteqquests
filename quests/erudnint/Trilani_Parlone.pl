@@ -25,7 +25,7 @@ quest::say("I sense a great evil power in this candlestick. I will need you to c
 quest::summonitem(1596); # Magical Suspension Fluid
 }
 
-elsif (plugin::check_handin(\%itemcount, 1597 => 1)){ # Divinatory Concoction 
+if (plugin::check_handin(\%itemcount, 1597 => 1)){ # Divinatory Concoction 
 
 quest::say("This is a powerful evil indeed. The smoke from special candles crafted by the Teir'Dal and burned in this candlestick allows the creation of undead of unordinary might. The Ghasts are only one of its many possible creations. I will concoct a powder for you to take back to Yeolarn that will assist in defeating the monstrosities the candle has produced. The candlestick itself will remain here within the High Tower of Erudin for the time being.");
 
@@ -42,10 +42,7 @@ quest::summonitem(1599); # Powder of Unanimation
     quest::faction(178,10);
     quest::faction(322,-30);
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:erudnint  ID:23020 -- Trilani_Parlone.pl 
 

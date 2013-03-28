@@ -11,5 +11,4 @@ quest::emote("fades out of existence. The air smells of death. Something has app
 	quest::summonitem(12889);
  }
 plugin::return_items(\%itemcount); # return unused items
-quest::say("All must be returned!");
 }

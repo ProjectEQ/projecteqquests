@@ -13,9 +13,6 @@ sub EVENT_ITEM {
     quest::summonitem(12114); #Tumpy Tonic
     quest::exp(1000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

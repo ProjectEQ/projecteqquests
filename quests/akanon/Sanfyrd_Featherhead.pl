@@ -63,10 +63,7 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(1000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #Note: The given rare contraption is used for another quest in which you get gems as a reward
 #Link for said quest: http://everquest.allakhazam.com/db/quest.html?quest=605

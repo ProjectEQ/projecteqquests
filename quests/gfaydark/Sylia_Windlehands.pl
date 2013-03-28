@@ -35,16 +35,14 @@ sub EVENT_ITEM {
 		quest::faction(306,10); #Song Weavers
 		quest::exp(100);
 	}
-	elsif(plugin::check_handin(\%itemcount, 13099  => 4)) {
+	if(plugin::check_handin(\%itemcount, 13099  => 4)) {
 		quest::say("Splendid job! Now if you can just keep a tune, you'll be a fine bard.");
 		quest::summonitem(13000);
 		quest::givecash("0","0","1","0");
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Bard');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:gfaydark  ID:54088 -- Sylia_Windlehands 

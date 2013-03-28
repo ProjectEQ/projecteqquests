@@ -1,5 +1,5 @@
 sub EVENT_SAY {
- if($text =~ /Hail/i) {
+ if($text =~ /hail/i) {
 	quest::say("Hello there traveler. I have many wares for sale so please take a look at what I have. If you think all my goods are junk and wish to buy from someone else though I'll understand.");
  }
 }
@@ -16,11 +16,6 @@ sub EVENT_ITEM {
     quest::faction(154, 5); #House of Stout
     quest::exp(1000);#This quest is doable at level 1, I didn't feel comfortable giving out more xp than this per step
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  
+  plugin::return_items(\%itemcount);
 }
 

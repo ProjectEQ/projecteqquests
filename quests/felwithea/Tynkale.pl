@@ -11,7 +11,7 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY { 
-	if($text=~/Hail/i) {
+	if($text=~/hail/i) {
 		quest::say("Hail noble, $name!  Can you be of [service to the Clerics of Tunare] or are you not from our order?");
 	}
 	if((($text=~/service to the clerics of tunare/i) || ($text=~/new to felwithe/i) || ($text=~/i am a veteran of the good fight/i)) && ($faction > 4)) {
@@ -41,9 +41,9 @@ sub EVENT_ITEM {
 		quest::say("Greetings. young paladin!  I am Master Tynkale of the Clerics of Tunare.  Here. we shall teach and train you in the skills needed to defeat our evil and diseased enemies.  Take this, our guild tunic - it will help protect you.  Once you are ready to begin your training please make sure that you see Seria Woodwind, she can assist you in experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13591); # Used Gold Training Tunic*
 		quest::ding();
-    quest::faction(43,10);  #Clerics of Tunare
-    quest::faction(178,10); #King Tearis Thex
-    quest::faction(8,10);   #Anti-mage
+		quest::faction(43,10);  #Clerics of Tunare
+		quest::faction(178,10); #King Tearis Thex
+		quest::faction(8,10);   #Anti-mage
 		quest::exp(100); 
 	}
 	elsif ($faction < 5){
@@ -55,17 +55,10 @@ sub EVENT_ITEM {
 			quest::faction(8,10);   #Anti-mage
 			quest::exp(150); 
 		}
-		else {
-			#do all other handins first with plugin, then let it do disciplines
-			plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-			plugin::return_items(\%itemcount);
-		}
 	}	
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:felwithea  ID:61018 -- Tynkale 

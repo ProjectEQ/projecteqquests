@@ -35,9 +35,6 @@ sub EVENT_ITEM {
 		quest::exp(500); 
 		quest::depop_withtimer();
 	}
-	else {
-		quest::say("Royal am..amulet and the key to this room..  Then I will be in peace.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 

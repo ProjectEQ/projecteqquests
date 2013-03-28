@@ -82,9 +82,7 @@ sub EVENT_ITEM {
     quest::faction(135,-1);
     quest::faction(164,1);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:qeynos  ID:1014 -- Trumpy_Irontoe

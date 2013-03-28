@@ -59,9 +59,8 @@ sub EVENT_ITEM {
 		quest::say("Please tell me when you are ready. I do not know if I have enough energy to channel all of you, but I can try. When you are ready, I will channel you into my pain.");
 		quest::settimer(1,300);
 		$sphere = 1;
-	} else {
-		plugin::return_items(\%itemcount);
-  	}
+	}
+  plugin::return_items(\%itemcount);
 }
 
 

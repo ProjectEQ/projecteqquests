@@ -11,10 +11,7 @@ sub EVENT_ITEM {
     quest::say("What's this? Oh my goodness! I was so worried I had lost my little girl. Thank you so much $name. Here please take this, it was once a magical cloak but its powers have diminished over time. If you take it to my wife in erudin I'm sure she can restore it.");
     quest::summonitem(1056); #Faded cloak
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
-} 
+  plugin::return_items(\%itemcount);
+}
 #END of FILE Zone:felwithea  ID:61017 -- Tolkar_Parlone 
 

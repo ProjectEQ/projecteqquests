@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::emote("places the coffin in the water and begins to pray. 'Lord of Valor high above, take this knight, your loyal child, into thy kingdom and all that is holy! What is that thing!'");
     quest::spawn2(21031,0,0,2901,259.7,-51,25); #a tortured revenant
   }
-  elsif (plugin::check_handin(\%itemcount, 6709 => 1)) {
+  if (plugin::check_handin(\%itemcount, 6709 => 1)) {
     quest::say("Thank you, Knight. With this task accomplished, I shall reward you with this scroll. It is an ancient spell that only the holiest of knights may cast. Remember your duty!");
     quest::summonitem(15693);
     quest::faction(258,100); #priests of marr
@@ -23,9 +23,7 @@ sub EVENT_ITEM {
     quest::faction(184,100); #knights of truth
     quest::exp(200000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

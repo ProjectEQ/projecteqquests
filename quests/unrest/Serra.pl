@@ -32,9 +32,7 @@ sub EVENT_ITEM {
     quest::summonitem(20371);
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:unrest  ID:63029 -- Serra

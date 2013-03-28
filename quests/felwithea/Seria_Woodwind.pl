@@ -56,7 +56,7 @@ sub EVENT_ITEM {
 		quest::say("Good work $name.  King Tearis Thex and the Royal Order of the Koada'Vie shall be pleased.  Take the Dull Felwithe Defenders Sword to a forge and sharpen it with a sharpening stone.  It may take you several attempts if you are unfamiliar with the process.  Once that is accomplished bring me the Sharp Felwithe Defenders Sword, a Pristine Forest Drakeling Scale, and an Arborean Amber and I will put the finishing touches on the weapon.");
 		quest::summonitem("20295");
 	}
-	elsif(plugin::check_handin(\%itemcount, 20299 => 1, 20271 => 1, 20274 => 1)){
+	if(plugin::check_handin(\%itemcount, 20299 => 1, 20271 => 1, 20274 => 1)){
 		quest::emote("fashions a grip from the pristine forest drakeling scales, fastens the arborean amber to the pommel of the hilt and polishes the blade of the sword with a luminescent substance.");
 		quest::say("Here is your new weapon young defender. May it serve you well in your service to the Koada'Vie.");
 		quest::summonitem("20329");

@@ -19,16 +19,13 @@ sub EVENT_ITEM {
     quest::faction(362,5);  #Yelinak
     quest::faction(189,-5); #Kromzek
   }
-  elsif(plugin::check_handin(\%itemcount, 29624 => 1)) { #Mercenary Assignments
+  if(plugin::check_handin(\%itemcount, 29624 => 1)) { #Mercenary Assignments
     quest::say("Ahhh yes! Well done $class. Here is your reward. Your status with our people grows with each interloper you eradicate.");
     quest::givecash(13,6,6,0); #Copper x 13, Silver x 6, Gold x 6
     quest::faction(42,5);   #CoV
     quest::faction(362,5);  #Yelinak
     quest::faction(189,-5); #Kromzek
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:skyshrine  ID:Not_Found -- Sentry_Kcor

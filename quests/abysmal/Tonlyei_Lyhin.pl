@@ -70,8 +70,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58114 => 4) || plugin::check_handin(\%itemcount, 58114 => 3) || plugin::check_handin(\%itemcount, 58114 => 2) || plugin::check_handin(\%itemcount, 58114 => 1)) { #Simple Shirt
     quest::say("Ah, yes. Good work.");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

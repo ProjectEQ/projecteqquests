@@ -29,7 +29,7 @@ sub EVENT_ITEM {
       quest::summonitem(6980); #Kejek Spirit Powder x 1 to 3 (Random)
     }
   }
-  elsif(plugin::check_handin(\%itemcount, 6980 => 1, 6977 => 1)) { #Kejek Spirit Powder, Soul Orb
+  if(plugin::check_handin(\%itemcount, 6980 => 1, 6977 => 1)) { #Kejek Spirit Powder, Soul Orb
     quest::say("I require a Soul Orb and Kejek Spirit Dust in order to perform the ritual that will free the imprisoned souls.");
     quest::emote("scrawls an arcane symbol on the ground with an odd powder and places the orb in its center. He then begins reciting an incantation and waving his arms over the symbol and orb. Moments later the orb shatters and an apparition appears.");
     quest::summonitem(2576); #Shattered Soul Orb
@@ -38,8 +38,5 @@ sub EVENT_ITEM {
     quest::faction(247,10); #Peace Keepers
     quest::exp(50000);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

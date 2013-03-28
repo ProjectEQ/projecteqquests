@@ -34,11 +34,7 @@ sub EVENT_ITEM {
     quest::ding;
     quest::summonitem(5057);
   }
-  else {
-    quest::say("Thank you very much, however, this will not help me.  Please return when you have all I have asked for. ");
-    plugin::return_items(\%itemcount);
-  }
-
+  plugin::return_items(\%itemcount);
 }
  
 

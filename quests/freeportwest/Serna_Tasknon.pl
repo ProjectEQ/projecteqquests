@@ -19,13 +19,11 @@ sub EVENT_ITEM
 		quest::exp(10000);
 	}
 	
-	elsif (plugin::check_handin(\%itemcount, 13983 => 1)) {#Inert Potion
+	if (plugin::check_handin(\%itemcount, 13983 => 1)) {#Inert Potion
 		quest::say("I see Tonmerk has remembered me.  Excellent.  Go bring me shark bones, and I will make his powder directly.");#Text made up
 		quest::faction(184, 10);#Knights of Truth
 		quest::faction(105, -20);#Freeport Militia
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportn  ID:8038 -- Serna_Tasknon.pl

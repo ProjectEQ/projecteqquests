@@ -52,14 +52,8 @@ sub EVENT_ITEM {
       quest::summonitem(20481);
       quest::spawn2(54237,0,0,2852,3239,-155,109.5);
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::emote("will not accept this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # EOF zone: burningwood ID: 87082 NPC: Telin_Darkforest
 

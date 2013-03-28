@@ -62,10 +62,7 @@ sub EVENT_ITEM {
     quest::faction(60, -3);
     quest::ding();
 }
-  else {
-    quest::emote("will not accept this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75015 -- Shwara_Volerno 
 

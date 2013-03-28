@@ -9,9 +9,6 @@ sub EVENT_ITEM {
     quest::faction(361,10); #Wolves of the North
     quest::summonitem(13242); #3/4 Full Bottle of Elixir
   }
-  else {
-    quest::say("No thanks.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:everfrost  ID:30072 -- Talin_O`Donal

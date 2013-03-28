@@ -11,10 +11,7 @@ sub EVENT_ITEM {
     quest::spawn2(15167,0,0,300,-3657,3,183); #spawn nuien
     quest::signalwith(15044,15178,0);
   }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

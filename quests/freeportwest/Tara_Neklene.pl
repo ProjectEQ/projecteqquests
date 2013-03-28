@@ -53,9 +53,6 @@ sub EVENT_ITEM {
     quest::faction(235,-1); #Opal Dark Briar
     quest::faction(105,-1); #Freeport Militia
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 } 
 #END of FILE Zone:freportw  ID:9077 -- Tara_Neklene

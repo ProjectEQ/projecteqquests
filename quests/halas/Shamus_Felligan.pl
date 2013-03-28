@@ -60,10 +60,7 @@ sub EVENT_ITEM
 				quest::summonitem(6028); #Gavel of Justice
 				}
 		}
-  else { 
-    quest::say("Why do ye give me these items?"); 
-    plugin::return_items(\%itemcount); 
-  } 
+  plugin::return_items(\%itemcount);
 }
 
 #EoF

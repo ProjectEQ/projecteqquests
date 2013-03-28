@@ -49,11 +49,9 @@ sub EVENT_ITEM {
 		quest::say("Excellent job, $name, we will turn you into a rogue of Tunare yet.  Here this is for your trouble.");
 		quest::summonitem(3315);
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:gfaydark  ID:54087 -- Tylfon

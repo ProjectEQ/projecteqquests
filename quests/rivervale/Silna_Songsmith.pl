@@ -25,7 +25,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not need this, $name.");
   plugin::return_items(\%itemcount);
 }
 

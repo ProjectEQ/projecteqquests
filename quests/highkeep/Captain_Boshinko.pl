@@ -24,7 +24,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 13111 => 1 )) {
+  if ($faction < 5) {
+    if (plugin::check_handin(\%itemcount, 13111 => 1 )) {
       quest::say("Good work, bounty hunter! You have served your legend well. I hope a few plat is good enough and, please, take this item we confiscated from one of our guests now serving time in our dungeon.");
 	  quest::ding();
       quest::faction(149, 25);
@@ -35,8 +36,9 @@ sub EVENT_ITEM {
       quest::exp(250);
       quest::givecash(0, 0, 0, 4);
       quest::summonitem(quest::ChooseRandom(2314,2314,2314,7321));
-   }
-   plugin::return_items(\%itemcount);
+    }
+  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:highkeep  ID:6042 -- Captain_Boshinko 

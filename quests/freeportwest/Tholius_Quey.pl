@@ -40,9 +40,6 @@ sub EVENT_ITEM {
 		quest::faction(184,10); #Knight of Truth
 		quest::exp(100); 
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-	}
 	plugin::return_items(\%itemcount);
 }
 

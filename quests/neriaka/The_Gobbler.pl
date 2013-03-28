@@ -30,8 +30,5 @@ sub EVENT_ITEM {
     quest::exp(150);
     quest::summonitem(13386);
   }
-  else {
-    quest::say("Uggh. Me not want this.");
-  }
   plugin::return_items(\%itemcount);
 }

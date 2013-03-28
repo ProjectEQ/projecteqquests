@@ -82,9 +82,7 @@ sub EVENT_ITEM {
     quest::summonitem(ChooseRandom(6014, 5023, 6013, 7009, 5013, 5021));#Random rusty weapon
     quest::exp(1000);
   }
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-    plugin::return_items(\%itemcount);
-  }
+  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+  plugin::return_items(\%itemcount);
 }
 #End - SK GM Treskar, Grobb

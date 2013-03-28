@@ -22,6 +22,5 @@ sub EVENT_ITEM {
 
 		plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
 		plugin::return_items(\%itemcount);
-		quest::say("I don't need this.");#Text made up
 	}
 #END of FILE Zone:poknowledge  ID:202234 -- Savage_Lord_Etherat

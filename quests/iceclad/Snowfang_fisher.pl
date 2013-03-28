@@ -33,10 +33,7 @@ sub EVENT_ITEM {
     my $mobnpc = $mob->CastToNPC();
     $mobnpc->AddToHateList($npc, 1);
   }
-  else {
-    quest::say("These items are not a worthy offering and would insult the spirits.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: iceclad  ID:110047 -- Snowfang_fisher

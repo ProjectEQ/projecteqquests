@@ -76,10 +76,7 @@ sub EVENT_ITEM {
     quest::faction(105,10);
     quest::depop();
  }
-  else {
-    quest::emote("will not accept this item.");
-    plugin::return_items(\%itemcount);
- }
+  plugin::return_items(\%itemcount);
 }
 
 

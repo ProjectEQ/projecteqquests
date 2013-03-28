@@ -57,10 +57,8 @@ sub EVENT_ITEM {
     quest::say("Ahh, you've gathered all the ritual components. Very good, as promised, a cop...I mean, priceless scroll of McMerin's Feast for you!");
     quest::summonitem(12941);
     quest::exp(45000);
-  } else {
-    plugin::return_items(\%itemcount);
-    quest::say("Whats this? I don't want this, have it back.");
   }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

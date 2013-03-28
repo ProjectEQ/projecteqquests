@@ -63,8 +63,6 @@ sub EVENT_ITEM
 		quest::selfcast(17);#Light Healing on self.
 	}
 	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qeynos2  ID:2081 -- Tonmerk_Plorsin

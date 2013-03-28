@@ -11,8 +11,5 @@ sub EVENT_ITEM {
     quest::summonitem(20697);
     quest::depop_withtimer();
   }
-  else {
-    quest::say("I do not want this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

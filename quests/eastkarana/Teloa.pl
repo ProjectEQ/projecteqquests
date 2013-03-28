@@ -12,10 +12,7 @@ sub EVENT_ITEM {
     $timer = $start->CastToNPC();
     $timer->SignalNPC(1); # start the timers on althele
   }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

@@ -31,13 +31,7 @@ sub EVENT_ITEM {
     quest::summonitem(20650);
  }
 
-  else {
-
-    quest::emote("will not accept this item.");
-
-    plugin::return_items(\%itemcount);
-
- }
+  plugin::return_items(\%itemcount);
 }
 
 

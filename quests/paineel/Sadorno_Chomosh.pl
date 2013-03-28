@@ -50,9 +50,5 @@ sub EVENT_ITEM {
    quest::faction(143,10);
    quest::exp(500);
    }
-    else {
-   quest::say("What am I supposed to do with these?");
-      plugin::return_items(\%itemcount);
-
-    }
-  }
+   plugin::return_items(\%itemcount);
+}

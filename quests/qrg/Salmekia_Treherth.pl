@@ -59,7 +59,7 @@ sub EVENT_ITEM {
     quest::faction(347,-30); # Unkempt Druids
     quest::summonitem(20258);
   }
-  elsif (plugin::check_handin(\%itemcount, 20259 => 1, 13915 => 1, 19945 => 1)) {
+  if (plugin::check_handin(\%itemcount, 20259 => 1, 13915 => 1, 19945 => 1)) {
     quest::exp(10000);
     quest::faction(159,30); # Jaggedpine Treefolk
     quest::faction(265,30); # Protectors of Pine
@@ -68,9 +68,7 @@ sub EVENT_ITEM {
     quest::faction(347,-30); # Unkempt Druids
     quest::summonitem(20265);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qrg ID: 3037 name: Salmekia_Treherth

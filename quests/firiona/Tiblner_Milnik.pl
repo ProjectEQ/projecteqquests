@@ -22,10 +22,7 @@ sub EVENT_ITEM {
     quest::summonitem(28032);
     quest::exp(5000);
   }
-  else {
-    quest::say("I do not need these.");  
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: firiona ID:84160 -- Tiblner_Milnik

@@ -19,9 +19,7 @@ sub EVENT_ITEM {
     quest::faction(284,-30); #seru
     quest::faction(142,-30); #heart of seru
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 160174 NPC: Toktonn_Geerlok

@@ -49,9 +49,6 @@ sub EVENT_ITEM {
     quest::exp(100000);
   }
 
-  else {
-    quest::say("I have no interest in these items.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 
 }

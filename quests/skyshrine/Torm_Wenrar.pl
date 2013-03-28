@@ -50,10 +50,7 @@ sub EVENT_ITEM {
     # Summon: Draconic Pauldrons
     quest::summonitem(12557);
   } 
-  else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

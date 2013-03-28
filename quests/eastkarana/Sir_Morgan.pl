@@ -42,9 +42,8 @@ sub EVENT_ITEM {
     quest::faction(183,1); #Knights of Thunder
   }
   else {
-    quest::say("Thank you $name, but I do not need this. You can have it back.");
-    plugin::return_items(\%itemcount);
     quest::givecash($copper, $silver, $gold, $platinum);
   }
+  plugin::return_items(\%itemcount);  
 }
 #END of FILE Zone:eastkarana  ID:15048 -- Sir_Morgan

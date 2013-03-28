@@ -51,9 +51,6 @@ sub EVENT_ITEM {
     quest::emote("mumbles a few words you do not understand and the pages magically are inserted back into the book and become legible again.");
     quest::say("Well I suppose I do owe you the information you had come here seeking. Unfortunately, I do not know much more than what is in this book already. The other references I have found do speak of another [disciple] of Kaiaren.");
   }
-  else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # End of File

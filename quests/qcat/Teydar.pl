@@ -17,8 +17,6 @@ sub EVENT_ITEM {
     quest::faction(342, 7);
     quest::summonitem(14366);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

@@ -24,9 +24,6 @@ sub EVENT_ITEM {
     quest::exp(1000);
     quest::ding();
   }
-  else {
-    quest::say("I have no use for that $name. You may take it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:halas  ID:29035 -- Teria_O`Danos

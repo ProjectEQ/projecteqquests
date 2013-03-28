@@ -18,10 +18,7 @@ sub EVENT_ITEM {
   quest::faction(317,10); # +Swifttails
   quest::exp(25);  
  }
- else {
-  quest::say("I have no need for this item $name, you can have it back.");
   plugin::return_items(\%itemcount);
- }
 }
 
 #Scripted By: Fatty Beerbelly

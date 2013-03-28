@@ -14,8 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(13984);
     quest::exp(100);
   }
-  else {
-    plugin::return_items(\%itemcount); # return unused item
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:grobb  ID:52023 -- Bregna

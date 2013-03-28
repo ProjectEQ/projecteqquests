@@ -56,8 +56,5 @@ sub EVENT_ITEM {
     quest::say("Good work, $name. Take this staff and use it wisely."); #Text made up
     quest::summonitem(20332); #Art Keepers Initiate Staff
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 } 

@@ -79,7 +79,5 @@ sub EVENT_ITEM {
     quest::summonitem(8898); # Approved Issue Kit
     quest::summonitem(8897); # Expedition Orders
   } 
-  else{
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

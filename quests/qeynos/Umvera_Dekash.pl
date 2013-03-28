@@ -32,9 +32,7 @@ sub EVENT_ITEM {
 		quest::exp(16000);
 	}
 	
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone:qeynos ID: 1143 -- Umvera_Dekash.pl

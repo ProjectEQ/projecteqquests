@@ -68,9 +68,7 @@ sub EVENT_ITEM {
     quest::exp(25000);
     quest::summonitem(4174);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: southkarana ID: 14073 NPC: Ulan_Meadowgreen

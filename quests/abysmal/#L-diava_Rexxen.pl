@@ -41,7 +41,5 @@ sub EVENT_ITEM {
     quest::summonitem(67569);
     $client->Message(15,"You were successful in helping L`diava complete her report of Kod'Taz. Fezbin will be pleased, but there are others who need your help.");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

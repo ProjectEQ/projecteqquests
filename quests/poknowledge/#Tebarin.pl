@@ -37,8 +37,6 @@ sub EVENT_ITEM {
     quest::say("Your donation will please my masters greatly. I have a special reanimation spell reserved just for these do-gooders. Now you are to travel to Natimbi and find the paladin who has the staff. You might want to talk to the dead you come across as they often have valuable information. Take this orb to help enhance your natural abilities to communicate with the dead.");
     quest::summonitem(15784); #Orb of Deathspeaking
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: poknowledge\#Tebarin.pl (202333)

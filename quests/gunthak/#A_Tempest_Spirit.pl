@@ -18,7 +18,5 @@ sub EVENT_ITEM {
     quest::summonitem(59008);#Spell: Icewind
     quest::depop();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

@@ -55,8 +55,5 @@ sub EVENT_ITEM
 		quest::faction(13, 10);
 		quest::faction(315, 10);		
 	}
-	else
-	{
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:postorms ID:210060 --Wembly_the_Forlorn.pl

@@ -19,9 +19,7 @@ sub EVENT_SAY {
   
   
 sub EVENT_ITEM { #Doesn't take any turn ins
-	quest::say("I don't need this."); #text made up
-	plugin::return_items(\%itemcount);
-	return 1;  
+  plugin::return_items(\%itemcount);
 }
 
 #Done

@@ -22,9 +22,7 @@ sub EVENT_ITEM {
     quest::faction(347,-30); #unkempt druids
     quest::faction(135,10); #guards of qeynos
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qrg ID: 3038 NPC: Vesteri_Nomanoi

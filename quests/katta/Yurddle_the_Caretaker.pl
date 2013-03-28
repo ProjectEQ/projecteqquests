@@ -66,10 +66,7 @@ sub EVENT_ITEM{
 		quest::faction(298,-10); #Shoulders of Seru
 		quest::exp(1000);
 	}
-	else{
-		quest::say("I have no need for this item, $name. You can have it back");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:katta  ID:160132 -- Yurddle_the_Caretaker 

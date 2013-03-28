@@ -85,9 +85,7 @@ sub EVENT_ITEM {
     quest::say("These glyphs look quite familiar. They are definitely in my language, but it seems as if the one who etched them did so against his will. Where did you get this? Wait, don't tell me. I know. Kreshin must have been successful in finding out what was going on in the Chamber of Souls. These glyphs detail how to animate stone using our geomancy abilities. There are some strange symbols toward the bottom, but for the most part, this is our language. Could he be trying to conduct the [ritual] of my people?");
     quest::setglobal("bic_qin",3,5,"F");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

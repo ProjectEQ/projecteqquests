@@ -25,8 +25,6 @@ elsif (plugin::check_handin(\%itemcount, 1890 => 1)) {
   quest::emote("accepts the vial and looks you over, eyebrow raised. He says, 'Well, a sacrifice to feed my forge. You have done Neriak a great service, Citizen $name. I shall burn it now.' He then holds the vial up the the flames, the blood seems to glow brightly as he stares into it. Then suddenly, with the shout of an arcane phrase, he throws the vial violently into the flame. The force shatters the vial, spilling the blood about the flames. Almost immediately the flames flare up to the ceiling. When they die down a presence is felt within the flames.");
   quest::spawn(41106, 0, 0, -867, 70, -35);   # 41106 -- vengeful_spirit
   }
-else {
   plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE Zone:neriakb  ID:41044 -- Zanotix_Ixtaz 

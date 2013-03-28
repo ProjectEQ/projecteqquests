@@ -14,9 +14,7 @@ sub EVENT_ITEM {
     quest::emote("takes the book from your hands instantly recognizing it. 'Does this mean he is . . .' She stops for a second choking back tears as the reality of Silius' passing hits her. 'I thank you for bringing this to me I shall cherish it always. Please help the others who have been suffering like me, bring them the closure you have given to me so that they can get on with their lives. Forgive me but I must be going there is much I must do. If you have already helped everyone please tell De'van that your task is complete and he will reward you.");
     quest::setglobal("writingsi", 1, 5, "F");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

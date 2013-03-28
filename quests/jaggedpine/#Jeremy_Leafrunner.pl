@@ -25,8 +25,6 @@ sub EVENT_ITEM {
     quest::faction(265,20);  #Protectors of Pine
     quest::faction(135,20);  #Guards of Qeynos
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: #Jeremy_Leafrunner.pl

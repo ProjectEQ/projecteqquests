@@ -14,8 +14,6 @@ sub EVENT_ITEM {
     quest::emote("takes the bound volume from your hands and weeps. As she flips from page to page the crying becomes more intense until finally she closes the book unable to continue. 'Something told me you would bring an end to my worry. While this is not the happy return I had wished for it will help me move on. May your adventures be plentiful and your spirit forever blessed. If you have already helped everyone, please tell De'van that your task is complete and he will reward you.");
     quest::setglobal("writingse", 1, 5, "F");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279033 -- #Gizzmu_the_Wise.pl

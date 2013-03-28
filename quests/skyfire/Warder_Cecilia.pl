@@ -28,9 +28,7 @@ sub EVENT_ITEM {
     quest::summonitem(20859); # 20859  Swirling Pearl
     quest::summonitem(17175); # 17175  Zordak's Box of Bindings
   }
-	else {
-		plugin::return_items(\%itemcount); # return unused items
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:skyfire  NPC:91037 -- Warder_Cecilia

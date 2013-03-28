@@ -40,9 +40,6 @@ sub EVENT_ITEM {
     quest::selfcast(213); 
     quest::say("Ah! Now I can cure yer malady."); 
   } 
-  else { 
-    quest::say("Why do ye give me these items?"); 
-    plugin::return_items(\%itemcount); 
-  } 
+  plugin::return_items(\%itemcount);
 } 
 #END of FILE Zone:halas  ID:29058 -- Waltor_Felligan

@@ -16,10 +16,7 @@ sub EVENT_ITEM {
     quest::say("Very impressive, $name. This proves you have clearly graduated to the next phase of training we have to offer. Keep this book by your side and speak to Gwiraba Gelrid when you are ready for your next lesson.");
     quest::summonitem(28790);#Intermediate Combat Manual
   }
-  
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
- 
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202043 -- Xasri_Virek 
 

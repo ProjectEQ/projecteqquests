@@ -23,17 +23,14 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM { 
   if(plugin::check_handin(\%itemcount, 18702 => 1)) {
-		quest::say("A new initiate I see. Take this robe you will surely need it in the winter months. Once you are ready to begin your training please make sure that you see Tilkzog Mournunder, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-		quest::ding();
+    quest::say("A new initiate I see. Take this robe you will surely need it in the winter months. Once you are ready to begin your training please make sure that you see Tilkzog Mournunder, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+    quest::ding();
     quest::summonitem(13524); # Dark Gold Felt Robe*
-		quest::faction(71,10); #Dark reflection
-		quest::faction(91,-15); #eldritch collective
-		quest::faction(115,-15); #gem choppers
-		quest::faction(76,-15); #Deepmuses
+    quest::faction(71,10); #Dark reflection
+    quest::faction(91,-15); #eldritch collective
+    quest::faction(115,-15); #gem choppers
+    quest::faction(76,-15); #Deepmuses
     quest::exp(100);
   }
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }

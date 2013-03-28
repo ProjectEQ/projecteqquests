@@ -31,13 +31,6 @@ sub EVENT_ITEM {
 			quest::setglobal("halloween_winnie",1,0,"H3");
 			quest::updatetaskactivity(214,0);
 		}
-		else {
-		quest::say("I have no need for this item $name, you can have it back.");
-    		plugin::return_items(\%itemcount);
-  		}
 	}
-	else {
-		quest::say("I have no need for this item $name, you can have it back.");
-    		plugin::return_items(\%itemcount);
-  	}
+  plugin::return_items(\%itemcount);
 }

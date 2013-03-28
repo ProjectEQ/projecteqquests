@@ -46,7 +46,5 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 4460 => 1)) {
 		quest::emote("looks at what you handed him as his face turns to rage, 'What is... this... this is the box I sent Shainai out with!  Where is she?  What have you done?  You stole from my little girl!!  Maybe worst!!!!!'");
 	}
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }

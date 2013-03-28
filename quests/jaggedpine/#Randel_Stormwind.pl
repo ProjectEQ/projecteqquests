@@ -63,8 +63,6 @@ gratitude.");
     quest::faction(265,10); #Protectors of Pine
     quest::faction(135,10); #Guards of Qeynos
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: #Randel_Stormwind.pl

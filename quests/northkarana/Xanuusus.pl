@@ -27,10 +27,7 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(13977,84004,13083)); #carrot, fishing pole, pine needles
     quest::givecash(0,1,0,0);
   }
-  else {
-    quest::emote("will not accept this item.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: northkarana ID: 13061 NPC: Xanuusus 

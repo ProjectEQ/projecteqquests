@@ -26,9 +26,7 @@ sub EVENT_ITEM {
     quest::emote("reaches into her pack and pulls out a note. 'Do you think you could deliver this to my gnome friend Forpar? I have not spoken to him in a while and unfortunatly I will be unable to make the trip to visit him. If you are looking to have an instrument made he is the man to ask.'");
     quest::summonitem(20378);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:butcher  ID:68115 -- Vedico_Windwhisper

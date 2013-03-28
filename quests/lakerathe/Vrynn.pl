@@ -40,9 +40,6 @@ sub EVENT_ITEM {
     quest::summonitem(4944);
     quest::say("I have crafted your leggings, use them well.");
   }
-  else {
-    quest::say("You have given me incomplete or the wrong reagents.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakerathe  ID:51059 -- Vrynn

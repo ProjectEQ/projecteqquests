@@ -39,10 +39,8 @@ sub EVENT_ITEM {
       quest::depop_withtimer();
       quest::summonitem(10194);
       quest::exp(10000);
-   } else {
-     plugin::return_items(\%itemcount);
-     quest::say("I don't need that, friend.");
    }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50271 -- Xenyari_Lisariel 

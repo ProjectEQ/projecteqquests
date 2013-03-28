@@ -39,9 +39,5 @@ sub EVENT_ITEM {
     quest::say("Take this, $name.  I go to do the unspeakable now.");#Nobody ever bothers to record the final dialog anymore.  They're always so stoked they found and completed a new quest, they get all excited and don't bother with the last thing the mobs says.  Frustrating.  This is completely made up, I'm sorry. =\
     quest::summonitem(61238); #Flame Etched Cloak
   }
-  else {
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-   
+  plugin::return_items(\%itemcount);  
 }#Done

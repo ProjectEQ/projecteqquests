@@ -84,8 +84,6 @@ sub EVENT_ITEM {
     quest::setglobal("qvichelmchange", 1, 5, "F");
     quest::summonitem(68860); # Trimdet's Helm of Chivalry
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279039 -- #Marius_Alyonn.pl

@@ -32,10 +32,5 @@ sub EVENT_ITEM {
 		quest::giveexp(243890);#1% level 30 experience
 
 	}
-	
-	else {
-  	plugin::return_items(\%itemcount);
-	}
-
-
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:overthere  ID:93153--#Yiln_Darksly.pl

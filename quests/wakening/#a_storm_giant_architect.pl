@@ -20,9 +20,7 @@ sub EVENT_ITEM {
     quest::faction(179,10); #king tormax
     quest::faction(42,10); #CoV
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #EOF zone: wakening ID: 119138 NPC: #a_storm_giant_architect

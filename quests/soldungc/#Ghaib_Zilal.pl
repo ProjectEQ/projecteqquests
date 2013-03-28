@@ -27,9 +27,5 @@ sub EVENT_ITEM {
     quest::say("Amazing.  This should serve you well, take it and slaughter our mutual enemies, $name!");#text made up
     quest::summonitem(55261); #Ghaib's Flame-Forged Longsword
   }
-  else {
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#Done

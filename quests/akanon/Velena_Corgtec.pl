@@ -30,10 +30,7 @@ sub EVENT_ITEM {
 		quest::faction(91,-15); #Eldritch Collective
 		quest::faction(115,-15); #Gem Choppers
 		quest::faction(76,-15); #Deepmuses
-    quest::exp(100);
+		quest::exp(100);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }

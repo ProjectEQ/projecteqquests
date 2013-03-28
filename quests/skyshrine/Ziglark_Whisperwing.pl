@@ -31,10 +31,7 @@ sub EVENT_ITEM {
     # Summon: Shrine Key
     quest::summonitem(28602);
    } 
-   else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

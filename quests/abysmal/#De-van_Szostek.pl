@@ -171,8 +171,6 @@ sub EVENT_ITEM {
     quest::say("This tome will serve as a remnant of a great warrior who died protecting our realm from the menace of the Muramites. I thank you, $name, and ask that you bring more if you find them.");
     quest::setglobal("writingsc", 1, 5, "F");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279031 -- #De-van_Szostek.pl

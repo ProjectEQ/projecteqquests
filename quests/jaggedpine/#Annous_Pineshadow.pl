@@ -67,7 +67,5 @@ sub EVENT_ITEM {
     quest::faction(135,10); #Guards of Qeynos
     quest::summonitem(8967);
   }
-  else {
-     plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

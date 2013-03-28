@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   quest::faction(317,20);
   quest::faction(193,10);
  }
- elsif(plugin::check_handin(\%itemcount, 18463 => 1, 22918 => 1)){
+ if(plugin::check_handin(\%itemcount, 18463 => 1, 22918 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
@@ -55,8 +55,6 @@ if (plugin::check_handin(\%itemcount, 18073 => 1, 18072 => 1, 18074 => 1, 5134 =
    quest::exp(4000);
 }
 #do all other handins first with plugin, then let it do disciplines
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    plugin::return_items(\%itemcount);
-    }
-    }
+  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+  plugin::return_items(\%itemcount);
+}

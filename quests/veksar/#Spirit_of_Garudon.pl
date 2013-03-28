@@ -13,9 +13,7 @@ sub EVENT_ITEM {
     quest::shout("As you place the remains of the dragon on the ground, a cold draft fills the air. Suddenly in a great vortex, the bones begin to rise up and move carried by the wind. They jut through the air and come down inside of the nearby theater. You hear the faint sound of bones clanking together, which is then followed by a massive moan. A sharp bolt of fear trickles up your spine as you feel anticipation fill the air.");
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SPAWN {

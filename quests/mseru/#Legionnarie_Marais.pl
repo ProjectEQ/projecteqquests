@@ -17,9 +17,7 @@ sub EVENT_ITEM {
     $npc->SetAppearance(3);
     quest::settimer("depop",10);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

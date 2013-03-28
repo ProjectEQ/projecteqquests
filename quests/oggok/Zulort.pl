@@ -50,10 +50,7 @@ sub EVENT_ITEM {
 		quest::faction(295, 5); # Shaman of War
 		quest::exp(100);
   }
-  else {
-    quest::say("Me not need dis."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # Quests by mystic414

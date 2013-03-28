@@ -15,8 +15,5 @@ sub EVENT_ITEM
 		quest::faction(410, 10);#Dranik Loyalists
 		quest::faction(432, -20);#Overlord Mata Muram
 	}
-   
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:draniksscar ID:302047 --Vorskahn.pl

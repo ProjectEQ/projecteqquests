@@ -29,10 +29,8 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(100);
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qcat  ID:45068 -- Unmuz_Tukore

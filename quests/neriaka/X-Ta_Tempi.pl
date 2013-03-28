@@ -156,12 +156,7 @@ sub EVENT_ITEM
    #Approx half a blue at level 31
    quest::exp(62000);
  }
-else{
-  #do all other handins first with plugin
   plugin::return_items(\%itemcount);
-  quest::say("Thanks, but I do not need this...");
-}
-
 }
 
 #END of FILE Zone:neriaka -- X`Ta_Tempi

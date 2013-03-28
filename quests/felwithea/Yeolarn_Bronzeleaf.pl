@@ -79,10 +79,7 @@ sub EVENT_ITEM {
     quest::faction(8,10);   #Anti-mage
     quest::exp(100);
   }
-  else {
-    quest::say("I have no need for this $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:felwithea  ID:61025 -- Yeolarn_Bronzeleaf.pl

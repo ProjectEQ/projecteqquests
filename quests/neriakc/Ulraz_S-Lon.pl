@@ -49,11 +49,10 @@ if (plugin::check_handin(\%itemcount, 19570 => 4)) {
  if ($item1=="18757"){quest::say("Thanks.");
 	quest::summonitem("13586");
 	quest::exp("100");
- } else {
+ }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
   plugin::return_items(\%itemcount);
- }
 }
 #END of FILE Zone:neriakc  ID:42067 -- Ulraz_S`Lon 
 

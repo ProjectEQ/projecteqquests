@@ -36,10 +36,7 @@ sub EVENT_ITEM {
     quest::say("You have moved closer to enlightenment.");
     quest::depop();
     }
-  else {
-    quest::say("These will not bring you enlightenment.");
-    plugin::return_items(\%itemcount);
-    }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

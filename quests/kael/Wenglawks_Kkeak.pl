@@ -88,10 +88,7 @@ sub EVENT_ITEM {
 	quest::summonitem(1723); # Noble's Seal
 	quest::exp(2000);
   }
-  else {
-    quest::say("I have no need for this item $name, you can have it back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

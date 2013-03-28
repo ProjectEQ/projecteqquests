@@ -26,9 +26,7 @@ sub EVENT_ITEM {
     quest::summonitem(67415); #Stone of Entry
     quest::summonitem(67401); #Writ of the Magi
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

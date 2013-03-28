@@ -46,8 +46,5 @@ sub EVENT_ITEM {
     quest::emote("makes a copy of your parchment, adding some extra symbols at the end. 'See, I told you it would be useless to you until I translated it. I shall journey home, now, and place this new scroll within the libraries of Solusek. I thank you for your help and wish you hearty adventures.'");
     quest::summonitem(59018);#Spell: Elemental Empathy
   }	
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }#Done

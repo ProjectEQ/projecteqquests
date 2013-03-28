@@ -12,7 +12,5 @@ sub EVENT_ITEM {
     quest::say("You have returned with what I asked for. Here, take this note back to Ixthal and let him know I am safe and will be making the return trip soon.");
     quest::summonitem(48051);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

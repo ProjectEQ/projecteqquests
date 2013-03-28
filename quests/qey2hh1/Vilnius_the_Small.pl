@@ -49,9 +49,6 @@ sub EVENT_ITEM {
     quest::givecash(0, 0, 300, 10);
     quest::exp(3000);
   }
-  else {
-    quest::emote("looks at you impatiently, expecting more.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE  Zone:qey2hh1  ID:12019 -- Vilnius_the_Small

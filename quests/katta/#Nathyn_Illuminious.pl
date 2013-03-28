@@ -18,7 +18,5 @@ sub EVENT_ITEM{
 		quest::setglobal("first_badge_nathyn", 1, 0, "F");
 		quest::summonitem(31754); #Second Badge of Service
 	}
-	else{
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }

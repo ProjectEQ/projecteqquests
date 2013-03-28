@@ -23,9 +23,6 @@ sub EVENT_ITEM {
     quest::say("Wow, this is great! Wow! This is may be the best Planar Blood Brew I have ever tasted! You have passed the first test with flying colors. Here, you take this book and learn well from it. When you are ready for your next lesson, speak to Xasri Virek.");
     quest::summonitem(28788); #Beginner Combat Manual
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202044 -- Zauvudd_Gigoth

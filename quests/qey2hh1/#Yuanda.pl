@@ -17,8 +17,6 @@ sub EVENT_ITEM {
     quest::spawn2(12184, 0, 0, $x,    $y+35, $z,   128); #a snarling werewolf (high)
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: qey2hh1\#Yuanda.pl (12188)

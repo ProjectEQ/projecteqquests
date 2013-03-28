@@ -199,9 +199,8 @@ sub EVENT_ITEM {
     }
 
     # return unused items
-    quest::say("I do not need this.") if keys %itemcount > 1;
-    plugin::return_items( \%itemcount );
-
+    if keys %itemcount > 1;
+    plugin::return_items(\%itemcount );
 }
 
 sub AcceptSample {
@@ -209,7 +208,7 @@ sub AcceptSample {
     my ( $sample, $qgKey ) = @_;
 
     return 0
-      unless plugin::check_handin( \%itemcount, $sample->{item} => 1 );
+      unless plugin::check_handin(\%itemcount, $sample->{item} => 1 );
 
     quest::say( $sample->{spam} );
     quest::setglobal( $qgKey, 1, 5, 'F' );

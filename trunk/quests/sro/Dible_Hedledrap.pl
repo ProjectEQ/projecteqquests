@@ -255,7 +255,7 @@ sub EVENT_ITEM {
     foreach my $itemID ( keys %itemcount ) {
         next unless defined $handin->{$itemID};
         my ( $count, $theme, $points ) = @{ $handin->{$itemID} };
-        if ( plugin::check_handin( \%itemcount, $itemID => $count ) ) {
+        if ( plugin::check_handin(\%itemcount, $itemID => $count ) ) {
             quest::emote("takes the item and tosses it into his satchel.");
             quest::say(
                 "Very well, $name. Go ahead and find something else you'd like."
@@ -264,6 +264,5 @@ sub EVENT_ITEM {
             last;
         }
     }
-    quest::say("I don't need this.");
-    plugin::return_items( \%itemcount );
+    plugin::return_items(\%itemcount );
 }

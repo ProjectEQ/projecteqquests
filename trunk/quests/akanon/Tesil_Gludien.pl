@@ -19,7 +19,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I have no use for this, $name.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:akanon  ID:55154 -- Tesil_Gludien

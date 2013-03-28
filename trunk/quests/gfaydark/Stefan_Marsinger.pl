@@ -70,8 +70,5 @@ sub EVENT_ITEM {
     quest::summonitem(54039); #glimmering gem
     quest::exp(60000);
   } 
-    quest::say("I have no use for this.");
-    plugin::return_items(\%itemcount);
-    
-    
+  plugin::return_items(\%itemcount);    
 }

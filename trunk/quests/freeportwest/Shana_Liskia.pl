@@ -111,14 +111,7 @@ sub EVENT_ITEM {
       quest::ding();
       quest::summonitem(9938); #Dagger of the Academy
     }
-    else {
-      quest::say("I do not need this.");
-      plugin::return_items(\%itemcount);
-    }
   }
-  else {
-    quest::say("Only casters may earn the rewards of the Academy!");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportw  ID:9068 -- Shana_Liskia

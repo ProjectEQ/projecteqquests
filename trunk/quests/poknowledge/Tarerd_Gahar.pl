@@ -26,10 +26,7 @@ sub EVENT_ITEM {
     quest::say("Ahh this is exactly what I was looking for. All the information I've gathered from these pools has come from Myrist. Thiran will give you the book I used as a reference. Give him this note so he knows I sent you.");
     quest::summonitem(15958); #Note From Tarerd
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:poknowledge  ID:202060 -- Tarerd_Gahar

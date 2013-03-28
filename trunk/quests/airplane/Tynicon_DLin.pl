@@ -45,10 +45,7 @@ sub EVENT_ITEM {
     quest::say("You have truly earned this.");
     quest::depop();
     }
-  else {
-    quest::say("What am I supposed to do with these?");
-    plugin::return_items(\%itemcount);
-    }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

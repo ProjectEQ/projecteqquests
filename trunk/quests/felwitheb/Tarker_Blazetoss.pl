@@ -48,10 +48,7 @@ sub EVENT_ITEM {
 		quest::faction(322,-15); # The Dead	
 		quest::exp(100);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:felwitheb  ID:62019 -- Tarker_Blazetoss

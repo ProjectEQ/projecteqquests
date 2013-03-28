@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   	quest::exp(1750000);#1% of level 51 exp
   	quest::summonitem(quest::ChooseRandom(25036, 25040, 25034, 25035));#Steel Wristband of Strategy, Shield of Battle, Circlet of Vallon, Book of Strategy
   }
-  elsif(plugin::check_handin(\%itemcount, 24985 => 1)) {#Scroll of Scaled Tactics
+  if(plugin::check_handin(\%itemcount, 24985 => 1)) {#Scroll of Scaled Tactics
   	quest::say("These scrolls are ancient beyond belief. They describe the maneuvers dragons use to avoid being injured by mighty warriors. This will aid the cause of King Tormax greatly. Take this gift from the temple of Vallon and know that you are wise indeed.");
   	quest::faction(188, 20);#Kromrif
   	quest::faction(189, 20);#Kromzek
@@ -32,9 +32,5 @@ sub EVENT_ITEM {
   	quest::exp(1750000);#1% of level 51 exp
   	quest::summonitem(quest::ChooseRandom(25036, 25040, 25034, 25035));#Steel Wristband of Strategy, Shield of Battle, Circlet of Vallon, Book of Strategy
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#Done

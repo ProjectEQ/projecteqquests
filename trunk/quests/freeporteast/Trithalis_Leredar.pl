@@ -19,7 +19,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I have no use for this, $name.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportw  ID:9114 -- Trithalis_Leredar

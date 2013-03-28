@@ -30,9 +30,5 @@ sub EVENT_ITEM{
     quest::faction(69, 10);#Dark Bargainers
     quest::exp(274400);#10% level 15 experience.
   }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+  plugin::return_items(\%itemcount);
 }#Done

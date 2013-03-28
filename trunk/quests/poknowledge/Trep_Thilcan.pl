@@ -22,11 +22,7 @@ sub EVENT_ITEM {
     quest::exp(1029000);#2% of level 36 exp...yeah, xp was nerfed on live.
     quest::givecash(0, 0, 0, 60);#60pp is specified exactly as part of the reward.
   }
- 
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-
-    
+  plugin::return_items(\%itemcount);    
 }
 
 

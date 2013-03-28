@@ -13,10 +13,7 @@ sub EVENT_ITEM {
     quest::emote("pries out his other eye and places the second carnelian gem in its place. His eyes burn brightly with scarlet fire. He then hands you a fragment of tektite. ");
     quest::summonitem(12831);
   }
-  else{
-    quest::say("I don't want this!");
-    plugin::return_items(\%itemcount);    
-  }
+  plugin::return_items(\%itemcount);
 }
 
 

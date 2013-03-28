@@ -45,15 +45,8 @@ sub EVENT_ITEM {
    quest::faction(342,100);
    quest::exp(350000);
   }
- else {
-   plugin::return_items(\%itemcount);
-   quest::say("Good $class, what am I to do with that?");
-  }
  }
- else {
-   plugin::return_items(\%itemcount);
-   quest::say("You must become better in tune with the spirits before I allow you to progress further.");
- }
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

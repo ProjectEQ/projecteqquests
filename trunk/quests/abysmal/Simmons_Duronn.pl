@@ -19,13 +19,11 @@ sub EVENT_ITEM {
     quest::summonitem(55570); # Venomous Stonemite Poison Sac
     quest::summonitem(55576); # Note to Rion
   }
-  elsif (plugin::check_handin(\%itemcount, 55574 => 1)) { # Prepared Stonemite Sac
+  if (plugin::check_handin(\%itemcount, 55574 => 1)) { # Prepared Stonemite Sac
     quest::say("Okay, let's see. Simmons begins to craft the sac into the shape of a small bag. He then dips it into some sort of liquid. 'This will preserve your new bag and keep its shape. Here you go, I hope it assists you on your adventures.");  
     quest::exp(500000);
     quest::summonitem(55575); # Treated Stonemite Bag
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279263 -- Simmons_Duronn.pl

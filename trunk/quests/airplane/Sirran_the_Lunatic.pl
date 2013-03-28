@@ -69,10 +69,7 @@ sub EVENT_ITEM {
     quest::say("Not too much farther. I spit on thee knave! Ehem. Take these. Go on! Make your fortunes. No one cares about Narris. I mean Sirran. Hah! See if I care what you think! Oh, when did you say you were [leaving]?");
     quest::summonitem(20918); #Veeshan's Key (not the one purchased on island #1 which is 20919)
   }
-  else {
-    quest::say("No, I don't need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_AGGRO {

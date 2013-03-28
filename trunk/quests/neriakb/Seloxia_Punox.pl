@@ -45,7 +45,7 @@ sub EVENT_ITEM {
 		quest::faction(260,-15); #Primordial Malice		
 		quest::exp(100);
 	} 
-	elsif (plugin::check_handin(\%itemcount, 18843 => 1)) {   # Sealed Letter (Letter To Seloxia)
+	if (plugin::check_handin(\%itemcount, 18843 => 1)) {   # Sealed Letter (Letter To Seloxia)
 		quest::say("Very fine work my young warrior. You may soon be ready to become a Teir'Dal courier. For now we shall reward you. This will assist you in further service to the Indigo Brotherhood and King Naythox Thex.");   
 		quest::summonitem(quest::ChooseRandom(5026,1001,1002,1003,1004,1005,5014,5015,5021,5027)); # Random minor items
 		quest::faction(155, 10); #Indigo Brotherhood
@@ -55,11 +55,9 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::exp("250");
 	}
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:neriakb  ID:41066 -- Seloxia_Punox

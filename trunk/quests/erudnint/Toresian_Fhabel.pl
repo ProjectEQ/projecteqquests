@@ -21,6 +21,8 @@ sub EVENT_SAY {
       quest::summonitem(13983);
  }
 }
-plugin::return_items(\%itemcount); # return unused items 
 
+sub EVENT_ITEM {
+  plugin::return_items(\%itemcount); # return unused items 
+}
 #END of FILE Zone:erudnint  ID:23073 -- Toresian_Fhabel

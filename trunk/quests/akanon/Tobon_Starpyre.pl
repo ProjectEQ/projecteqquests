@@ -55,10 +55,7 @@ sub EVENT_ITEM {
 		quest::exp(500);
 		quest::givecash(0,0,0,1);
 	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:akanon  ID:55130 -- Tobon_Starpyre

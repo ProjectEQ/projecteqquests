@@ -70,8 +70,5 @@ sub EVENT_ITEM {
     quest::faction(115,3);
     quest::faction(176,3);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -71,8 +71,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58095 => 4) || plugin::check_handin(\%itemcount, 58095 => 3) || plugin::check_handin(\%itemcount, 58095 => 2) || plugin::check_handin(\%itemcount, 58095 => 1)) { #Simple File
     quest::say("Ok. Tanks.");
   }
-  else {
-    quest::say("Wat dis?");
-    plugin::return_items(\%itemcount); 
-  }
+  plugin::return_items(\%itemcount);
 }

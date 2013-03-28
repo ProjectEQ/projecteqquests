@@ -54,9 +54,7 @@ quest::say("I never though I would see my lute again. I owe you my sincere thank
 quest::summonitem("27533");
 quest::exp(500);
 }
-  else {
-  #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
   plugin::return_items(\%itemcount);
+
 }
-    }

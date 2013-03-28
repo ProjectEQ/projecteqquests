@@ -62,9 +62,7 @@ sub EVENT_ITEM {
     quest::exp(25000);
     quest::summonitem(4176);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: southkarana ID: 14075 NPC: Shakrn_Meadowgreen

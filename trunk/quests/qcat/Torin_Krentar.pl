@@ -46,8 +46,6 @@ sub EVENT_ITEM {
     quest::exp(15000);
     quest::summonitem(20261);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # EOF zone: qcat ID: 45074 NAME: Torin_Krentar

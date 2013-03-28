@@ -20,9 +20,5 @@ sub EVENT_ITEM {
 		quest::exp(150);
 		quest::say("Excellent!! These shall provide valuable information to my research on the spirit realm."); 
     }
-	else { 
-		plugin::return_items(\%itemcount); 
-		quest::say("'I require all four titan samples in order to pursue the research I desire.");
-		return 1;
-    } 
+	plugin::return_items(\%itemcount); 
 }

@@ -20,9 +20,6 @@ sub EVENT_ITEM {
     quest::faction(291,-15); #Shadowed Men
     quest::exp(1000);
   }
-  else {
-    quest::say("This is not the token I seek.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

@@ -25,9 +25,7 @@ sub EVENT_ITEM {
     $mobattack = $mobid->CastToNPC();
     $mobattack->AddToHateList($client, 1);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: kaesora ID: 88061 NPC: spectral_librarian

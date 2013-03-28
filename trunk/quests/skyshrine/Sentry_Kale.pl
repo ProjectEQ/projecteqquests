@@ -56,7 +56,7 @@ sub EVENT_ITEM {
     quest::faction(189,-30); #Kromzek
     quest::setglobal("friendofthekin",1,0,"D30");
   }
-  elsif (plugin::check_handin(\%itemcount, 29065 => 1) && ($friendofthekin == 1)) {
+  if (plugin::check_handin(\%itemcount, 29065 => 1) && ($friendofthekin == 1)) {
     quest::say("You have shown us yet again your loyalty to our people. Please accept this token of our gratitude.");
     quest::summonitem(29050);
     quest::exp(32500);
@@ -66,9 +66,7 @@ sub EVENT_ITEM {
     quest::faction(189,-30); #Kromzek
     quest::delglobal("friendofthekin");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: skyshrine ID: 114061 NPC: Sentry_Kale

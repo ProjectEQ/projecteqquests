@@ -21,10 +21,8 @@ sub EVENT_ITEM {
     quest::faction(132,5); # +Guardians of Shar Vahl
     quest::exp(250);
     quest::ding();
-    } else {
-      quest::say("I don't need these items, $name. You can have them back.");
-      plugin::return_items(\%itemcount);
-     }
+    }
+  plugin::return_items(\%itemcount);
 }
 
 

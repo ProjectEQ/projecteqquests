@@ -17,9 +17,6 @@ sub EVENT_ITEM {
     quest::setglobal("chrisredwinea",1,5,"F");
     quest::givecash(0,0,1,0);
   }
-  else {
-    quest::say("I have no use for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE zone:abysmal ID:279260 --  Tillgar.pl

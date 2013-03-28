@@ -11,7 +11,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I do not what this.");
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:thurgadinb  ID:129055 -- Sentinel_Paxin

@@ -19,9 +19,6 @@ sub EVENT_ITEM {
     quest::say("You are truly a friend to the Felidae. Take this shroud as a small token of the honor you have done to our people - it is just a small step towards becoming a champion among our people.");
     quest::summonitem(30854); #Hero's Shroud
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:shadeweaver  ID:165134--Sentry_Ferin.pl

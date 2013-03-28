@@ -40,10 +40,7 @@ sub EVENT_ITEM {
   	quest::summonitem(59016);#Spell: Scryer's Trespass
   	quest::exp(1750000);#1% of level 51 xp
   }
-  else {
-    plugin::return_items(\%itemcount);
-    quest::say("This is not what I wanted.");
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: erudnext ID: 24013 NPC: Stofo_Olan

@@ -22,9 +22,7 @@ sub EVENT_ITEM {
     quest::faction(176,10); #king akanon
     quest::faction(71,-30); #dark reflection
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #EOF zone: erudnint ID: 23021 NPC: Shondo_Billin

@@ -20,10 +20,9 @@ sub EVENT_ITEM {
     quest::summonitem(14365); #Cough Elixir
   }
   else {
-    quest::say("This not how much me ask for..."); #Test made up
-    plugin::return_items(\%itemcount);
     quest::givecash($copper, $silver, $gold, $platinum);
   }
+    plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

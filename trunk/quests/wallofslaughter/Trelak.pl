@@ -243,16 +243,7 @@ sub EVENT_ITEM
 				quest::summonitem(70864);
 				}
 		}
-	else
-		{
-		plugin::return_items(\%itemcount);
-		quest::say("I am sorry $name, but these are not the items i was looking for."); #made up text
-    		}
-    		}
-	else
-		{
-		plugin::return_items(\%itemcount);
-		quest::emote("returns the items to you without responding."); #made up text
-		}
+    }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE

@@ -36,9 +36,7 @@ sub EVENT_ITEM {
     quest::faction(344,50);
     quest::exp(10000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: wakening ID: 119080 NPC: Shamus_Aghllsews

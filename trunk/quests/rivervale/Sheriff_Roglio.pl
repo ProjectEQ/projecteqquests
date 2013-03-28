@@ -39,7 +39,7 @@ sub EVENT_ITEM {
 		quest::faction(88,-15); #Dreadguard Outer
 		quest::exp(100);
 	}
-	elsif(plugin::check_handin(\%itemcount, 13931 => 4)){ #Hand in Runnyeye Warbeads
+	if(plugin::check_handin(\%itemcount, 13931 => 4)){ #Hand in Runnyeye Warbeads
 		quest::say("Good work, Deputy $name! We shall soon rid our countryside of the goblin threat. Here are your wages. Eat well tonight!");
 		quest::summonitem(13023); #Bixie Berry Buns
 		quest::summonitem(13024); #Tanglefoot Tingle Drink
@@ -52,11 +52,9 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::givecash(0,8,0,0);
 	} 
-	else {
-		#do all other handins first with plugin, then let it do disciplines
-		plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-		plugin::return_items(\%itemcount);
-	}
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+	plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:rivervale  NPC:19058 -- Sheriff_Roglio

@@ -61,10 +61,9 @@ sub EVENT_ITEM {
  quest::faction(31,10); 
  quest::exp(10);
  quest::givecash(12,1,0,0);
-} else { quest::say("I have no need for this item $name, you can have it back.");
-plugin::return_items(\%itemcount);
-   }
+}
 plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rivervale  ID:19063 -- Toelia_Snuckery 

@@ -25,9 +25,7 @@ sub EVENT_ITEM {
     quest::exp(750);
     quest::summonitem(30617);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadeweaver ID: 165159 NPC: Tiamon_Aroo

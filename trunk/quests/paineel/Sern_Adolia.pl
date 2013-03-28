@@ -70,10 +70,7 @@ sub EVENT_ITEM {
 		quest::faction("79","-30");
 		quest::faction("112","-30");
 	} 
-	else {
-		quest::say("I have no use for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:paineel  ID:75072 -- Sern_Adolia

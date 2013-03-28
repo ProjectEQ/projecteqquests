@@ -97,10 +97,7 @@ deeply.");
     quest::exp(1000);
     quest::ding();
    }
-    else {
-    quest::say("I don't want these items, $name. You can have them back.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadeweaver ID: 165130 NPC: Spiritist_Karina

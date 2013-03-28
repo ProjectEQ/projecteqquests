@@ -42,9 +42,6 @@ sub EVENT_ITEM {
     quest::faction(207,-30); #mayong mistmoore
   }
 
-else {
-    quest::say("I have no need for that.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportn

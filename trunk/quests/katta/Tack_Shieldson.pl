@@ -37,9 +37,7 @@ sub EVENT_ITEM {
     quest::faction(96,-30); #eye of seru
     quest::faction(138,-30); #hand legionnaires
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 160208 NPC: Tack_Shieldson

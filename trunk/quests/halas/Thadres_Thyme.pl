@@ -22,8 +22,6 @@ sub EVENT_ITEM {
     quest::summonitem(18139);
     quest::exp(200);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:halas  ID:29015 -- Thadres_Thyme

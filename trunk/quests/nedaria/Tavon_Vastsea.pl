@@ -38,8 +38,5 @@ sub EVENT_ITEM {
     quest::say("Interesting, I heard about your fight with the leader of the Disciples. I've never seen anything like this. Take it to Borik Darkanvil in the Plane of Knowledge. Return to me when you are done with him, in the meantime I will try to find information on where he went after your fight.");
     quest::summonitem(9954); #9954 Aegis of Chaotic Worship
   }
-  else {
-    quest::say("I have no need for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

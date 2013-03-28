@@ -16,9 +16,7 @@ sub EVENT_ITEM {
     quest::summonitem(2040);
     quest::summonitem(1859);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone thurgadina ID: 115162 NPC: Talem_Tucter

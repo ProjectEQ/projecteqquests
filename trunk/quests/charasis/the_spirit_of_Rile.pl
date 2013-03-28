@@ -9,8 +9,5 @@ sub EVENT_ITEM {
     quest::setglobal("shmskullquest",1,5,"F"); #lose it and you start all over!
     quest::depop();
   }
-  else {
-    quest::emote("ignores you.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

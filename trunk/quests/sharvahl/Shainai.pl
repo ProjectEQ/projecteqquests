@@ -23,12 +23,9 @@ sub EVENT_SIGNAL {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 4478 => 1)) {
 		quest::emote("settles comfortably in for restful afternoon nap, 'Thank you for walking me home, it was ever so nice of you.  Goodnight.'");
-                quest::ding();
+		quest::ding();
 		quest::signalwith(155340,2,10);
 		quest::depop();
 	}
-	else {
-		quest::say("I have no need for this, $name.");
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }

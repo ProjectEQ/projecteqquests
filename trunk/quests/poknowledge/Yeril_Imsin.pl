@@ -59,9 +59,5 @@ sub EVENT_ITEM {
     quest::faction(157, 5);#Inhabitants of Tanaan
     quest::givecash(0, 0, 0, 14);#14pp is specified exactly as part of the reward.
   }
-  
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-
-    
+  plugin::return_items(\%itemcount);
 }#Done

@@ -14,7 +14,5 @@ sub EVENT_ITEM {
   if($gold >= 25000) {
     quest::summonitem(52181);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

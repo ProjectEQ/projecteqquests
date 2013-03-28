@@ -59,9 +59,6 @@ sub EVENT_ITEM {
     quest::faction(176, 10);
     quest::exp(25);
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:akanon  ID:Not_Found -- Xalirilan_Zarinokosalio

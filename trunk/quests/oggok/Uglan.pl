@@ -7,8 +7,5 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16547 => 1)) {
     quest::say("Ay, I be needin ya to intercept an Orc Runner carryin a sealed letter. Get da letter and give it ta Lork.");
   }
-  else {
-    quest::say("Me not need dis.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -59,8 +59,6 @@ sub EVENT_ITEM {
     quest::say("Take this note to Guard Finewine. He is officially on notice...");
     quest::summonitem(8283); #Official Warning
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:jaggedpine  ID:Not_Found -- #Sergeant_Caelin

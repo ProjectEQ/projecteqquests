@@ -31,7 +31,5 @@ sub EVENT_ITEM {
 		quest::updatetaskactivity(221,3);
 		quest::summonitem(87313,20);
   	}
-  	else {
-    		plugin::return_items(\%itemcount);
-  	}
+  plugin::return_items(\%itemcount);
 }

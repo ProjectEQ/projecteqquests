@@ -39,8 +39,5 @@ sub EVENT_ITEM {
     quest::faction(317,2);
     quest::faction(62,2);    
   }
-  else {
-    quest::say("No, thanks.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

@@ -37,10 +37,7 @@ sub EVENT_ITEM{
     quest::summonitem(12378);    # Give Undead Brownie Bones for turnin to Narron Jenork (Ak'Anon) 
     quest::depop_withtimer();              # Despawn upon turnin
   }
-  else {
-    quest::say("I have no use for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER{

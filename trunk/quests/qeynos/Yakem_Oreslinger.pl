@@ -40,9 +40,7 @@ sub EVENT_ITEM {
 		quest::depop();
 	}
 		
-	else {
-		plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone:qeynos ID: 1030-- #Yakem_Oreslinger.pl

@@ -303,9 +303,7 @@ sub EVENT_ITEM
 		}
 	}
    
-	else {
-		plugin::return_items(\%itemcount); #return items if not the ones required
-	}
+  plugin::return_items(\%itemcount);
 }
 
 sub LoadSSet {

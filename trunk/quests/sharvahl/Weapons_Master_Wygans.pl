@@ -70,13 +70,7 @@ quest::faction(132,2); # Guardians of Shar Vahl
 
 	
 }
-  else{ 
-
-    quest::say("I have no use for this.");
-
-    plugin::return_items(\%itemcount);
-}
-
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155274 -- Weapons_Master_Wygans 

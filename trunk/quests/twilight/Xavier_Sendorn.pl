@@ -122,15 +122,7 @@ sub EVENT_ITEM {
 
   }
 
-  else{ 
-
-    quest::say("I have no use for this.");
-
-    plugin::return_items(\%itemcount);
-
-    return 1;
-
-    }
+  plugin::return_items(\%itemcount);
 
 }
 #END of FILE zone:twilight  ID:170145 -- Xavier_Sendorn.pl

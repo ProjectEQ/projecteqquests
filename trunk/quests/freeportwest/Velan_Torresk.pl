@@ -84,7 +84,7 @@ sub EVENT_ITEM {
    }
    # White Training Sash ID-10130 - Giant Snake Rattle ID-13058 - Deathfist Slashed Belt ID-13916 - Desert Tarantula Chitin ID-20901
    # No need to check faction again since they must have the White Training Sash
-   elsif(plugin::check_handin(\%itemcount, 10130=> 1, 13058 => 1, 13916 => 1, 20901 => 1)) {
+   if(plugin::check_handin(\%itemcount, 10130=> 1, 13058 => 1, 13916 => 1, 20901 => 1)) {
       quest::say("'Ah, well done, $name. You have proven that you are a very skillful fighter and it is a honor to have you as a member of the Ashen Order. On behalf of Master Closk, and under the watchful eyes of Quellious, I present you, $name, with this, the yellow Sash of Order. Go out and make us proud.");
       quest::ding();
       # Yellow Sash of Order ID-10131
@@ -97,11 +97,9 @@ sub EVENT_ITEM {
       # Faction Silent Fist Clan ID-300
       quest::faction("300","4");
    }
-   else {
-      #do all other handins first with plugin, then let it do disciplines
-      plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-      plugin::return_items(\%itemcount);
-   }
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportw  ID:9065 -- Velan_Torresk
 

@@ -28,10 +28,7 @@ sub EVENT_ITEM {
     quest::summonitem(28031);
     quest::exp(500);
   }
-  else {
-    quest::say("I do not need these.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: butcher ID:68087 -- Walnan

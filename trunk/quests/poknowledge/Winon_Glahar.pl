@@ -25,9 +25,6 @@ sub EVENT_ITEM {
     quest::say("How wonderful! You have done well here, I can't remember how long it's been since I've seen a work so fine. Take this book, it will certainly help you in your use of the arts of stealth. When you are ready, Ethoach Trokith will give you your next lesson, so be sure to speak to him. Do not lose your book or else he may not appreciate you coming to class unprepared.");#Adapted text from Beginner Magic Manual quest, I have no other reference
     quest::summonitem(28792); #Beginner Stealth Manual
   }
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
- 
-    
+  plugin::return_items(\%itemcount);    
 }#END of FILE Zone:poknowledge  ID:202049 -- Winon_Glahar 
 

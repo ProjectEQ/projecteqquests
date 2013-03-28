@@ -14,12 +14,6 @@ sub EVENT_ITEM {
     quest::emote("quickly reads the note, and says 'Tarerd wants me to give you that book? I thought he wanted me to keep it secret. Well no matter.' Thiran rummages through the books in front of him. 'Well this is unfortunate. It looks like I loaned my friend the incorrect book. I'm not sure where he's gone off to, here is the book he was looking for. If you happen to run into Jeren Manri anywhere, he'll probably exchange this book for the book on the scrying pools.'");
     quest::summonitem(15959); #Goblins and Their Religions
   }
-  
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
-    
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202222 -- Vicar_Thiran 
 

@@ -30,10 +30,7 @@ elsif ($class eq "Beastlord"){quest::summonitem ("69383");}
 elsif ($class eq "Berserker"){quest::summonitem ("69383");}
     quest::ding();
   }
-
- else {
- plugin::return_items(\%itemcount); # return unused items
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:veeshan  NPC:108012 -- Druushk

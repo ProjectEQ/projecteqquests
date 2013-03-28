@@ -65,8 +65,5 @@ sub EVENT_ITEM {
 		quest::faction(260,-15); #Primodial Malice
 		quest::exp(100);
 	}
-	else {
-  	quest::say("I have no need for this $name, you can have it back.");
-  	plugin::return_items(\%itemcount);
-	}
+  plugin::return_items(\%itemcount);
 }

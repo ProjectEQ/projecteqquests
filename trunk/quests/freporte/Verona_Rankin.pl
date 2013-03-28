@@ -147,10 +147,7 @@ sub EVENT_ITEM
     quest::faction(53,1);  #Corrupt Qeynos Guards
     quest::faction(105,1); #Freeport Militia
   }
-  else {
-    quest::say("I do not want this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 ######## EVENT_AGGRO AREA ##################

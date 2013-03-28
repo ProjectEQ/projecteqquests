@@ -75,7 +75,5 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 54652 => 4) || plugin::check_handin(\%itemcount, 54652 => 3) || plugin::check_handin(\%itemcount, 54652 => 2) || plugin::check_handin(\%itemcount, 54652 => 1)) { #Hollows Mushroom
     quest::say("Thank you.");
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

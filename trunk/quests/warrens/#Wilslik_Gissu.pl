@@ -17,7 +17,5 @@ sub EVENT_ITEM {
     quest::say("Take these and return to the spirit!");
     quest::summonitem(52921);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

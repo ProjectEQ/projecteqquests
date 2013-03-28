@@ -40,9 +40,6 @@ sub EVENT_ITEM {
     quest::say("Excellent. Here are your Lambent Greaves.");
     quest::summonitem(4158);
   }
-  else
-  {
-	  plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 

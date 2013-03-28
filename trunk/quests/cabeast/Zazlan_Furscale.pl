@@ -60,8 +60,5 @@ sub EVENT_ITEM {
     quest::faction(30,5);
     quest::ding();
   }
-  else {
-    quest::say("I have no use for these.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

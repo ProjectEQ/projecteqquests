@@ -22,9 +22,7 @@ if (plugin::check_handin(\%itemcount,18401 => 1)) {
   quest::exp(132775);      # 2.5% @ level 30
   quest::depop();
   }
-else {
   plugin::return_items(\%itemcount);
-  }
 }
 
 # EOF zone: neriakb ID: 41106 NPC: vengeful_spirit 

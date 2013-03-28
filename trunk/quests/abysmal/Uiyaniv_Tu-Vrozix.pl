@@ -70,8 +70,5 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 58097 => 4) || plugin::check_handin(\%itemcount, 58097 => 3) || plugin::check_handin(\%itemcount, 58097 => 2) || plugin::check_handin(\%itemcount, 58097 => 1)) { #Simple Injected Poison
     quest::say("Ah, yes. Thank you.");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }

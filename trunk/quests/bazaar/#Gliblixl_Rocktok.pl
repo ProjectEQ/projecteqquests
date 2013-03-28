@@ -41,8 +41,6 @@ sub EVENT_ITEM {
     quest::spawn2(151057, 0, 0, $x, $y, $z, $h);
     quest::depop_withtimer();
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:bazaar  ID:151004 -- Gliblixl_Rocktok

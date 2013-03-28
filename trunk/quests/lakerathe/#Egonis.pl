@@ -19,8 +19,6 @@ sub EVENT_ITEM {
     quest::setglobal("NecroPre",1,5,"F");
     quest::unique_spawn(51155,0,0,1010,2690,-23,0); #Ronaiar Skullmoore
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: lakerathe\#Egonis.pl (51175)

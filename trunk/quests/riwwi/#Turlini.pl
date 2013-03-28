@@ -89,8 +89,7 @@ sub EVENT_ITEM {
      }  
    if (plugin::check_handin(\%itemcount, 52242 =>1 )) {
     quest::emote("shouts with joy");
-    quest::say("Aha, you've done it! Thanks to your distractions in the coliseum, the Muramite legion is engulfed in utter chaos. We will take this opportunity to escape. You have saved us all. Oh, I almost forgot! Before I go, take this as a final gift from the Yunjo. It holds much strength, just as you do. Unfortunately I have bad news. Something I could not tell you until now. Reyna passed on a few days ago. Her last request was that I give this to someone who had proven his or her worth. You have more than done that. I wish there were more I could do, but we are masters of shaping stone not life.
-");
+    quest::say("Aha, you've done it! Thanks to your distractions in the coliseum, the Muramite legion is engulfed in utter chaos. We will take this opportunity to escape. You have saved us all. Oh, I almost forgot! Before I go, take this as a final gift from the Yunjo. It holds much strength, just as you do. Unfortunately I have bad news. Something I could not tell you until now. Reyna passed on a few days ago. Her last request was that I give this to someone who had proven his or her worth. You have more than done that. I wish there were more I could do, but we are masters of shaping stone not life.");
     quest::summonitem(52094);
     quest::say("I can't wait to be reunited with my family! Let's get out of this place.");
     quest::summonitem(67417);

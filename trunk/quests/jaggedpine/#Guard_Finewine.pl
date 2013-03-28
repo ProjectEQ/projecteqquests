@@ -27,8 +27,6 @@ sub EVENT_ITEM {
     quest::say("You have done well. I guess you would like the report now.");
     quest::summonitem(8279); #Stack of Shift Reports
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:jaggedpine  ID:181173 -- #Guard_Finewine

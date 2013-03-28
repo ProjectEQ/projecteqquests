@@ -47,11 +47,6 @@ sub EVENT_ITEM {
     if (quest::istaskactivityactive(28,1)) {
       quest::say("Ah, yes. Thank you.");
     }
-    else { 
-      plugin::return_items(\%itemcount); 
-    }
   }
-  else { 
-    plugin::return_items(\%itemcount); 
-  }
-} 
+  plugin::return_items(\%itemcount);
+}

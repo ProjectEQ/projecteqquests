@@ -16,7 +16,6 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_ITEM {
-  quest::say("I don't need this.");
   plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:abysmal  ID:279220 -- Yitandi.pl

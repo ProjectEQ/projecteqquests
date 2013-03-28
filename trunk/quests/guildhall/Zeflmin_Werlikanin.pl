@@ -93,8 +93,6 @@ sub EVENT_ITEM {
     quest::setglobal("ghport$uguild_id",88740,3,"H24");
     quest::emote("takes the crystal from you and mutters some arcane words over it. 'The crystal geode is now active, just go step on the crystal platform and you'll be whisked away to your destination! I hope you don't get motion sickness!'");
     quest::ze(15,'The Guildhall Portal has been aligned to Brell\'s Rest');
-  } else {
-    quest::say("I have no use for this, $name.");
   }
   plugin::return_items(\%itemcount);
 }

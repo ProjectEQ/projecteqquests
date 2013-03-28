@@ -49,8 +49,6 @@ sub EVENT_ITEM {
     quest::say("Thank you, $name. Please accept this Helm as a token of our gratitude for your service to the Shrine.");
     quest::summonitem(2610);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone: skyshrine ID: -- Supreme_Laochsmith_Psorin

@@ -27,30 +27,22 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	#I changed this statement to use the plugin now.  Maybe I shouldn't have, but I wanted things to be uniform. -Kilelen
-  if(plugin::check_handin(\%itemcount, 1330 => 1)) 
-    { # Patched Gnoll Fur Bundle
-    if($faction < 6)
-    {
-    quest::say("You have done well. Here is a small reward for your effort.");
-    quest::exp("125");
-    quest::ding();
-    quest::givecash(0,2,2,1);
-    quest::faction("275","10"); # 275 : Faction Rogue's of the White Rose
-    quest::summonitem(1349); #Fang of the Wolf
+  if($faction < 6) {
+    if(plugin::check_handin(\%itemcount, 1330 => 1)) { # Patched Gnoll Fur Bundle
+      quest::say("You have done well. Here is a small reward for your effort.");
+      quest::exp("125");
+      quest::ding();
+      quest::givecash(0,2,2,1);
+      quest::faction("275","10"); # 275 : Faction Rogue's of the White Rose
+      quest::summonitem(1349); #Fang of the Wolf
     }
-    else
-    {
-    plugin::return_items(\%itemcount);
-    } 
-    }
+  }
   elsif(plugin::check_handin(\%itemcount, 7507 => 1)) { #Shrieking Ahlspiess
     quest::emote("beams 'Thank you, take this.'"); #text made up
     quest::summonitem(24097); #Sluggish Sketch
   }
-  else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-    plugin::return_items(\%itemcount);
-  }
+  #do all other handins first with plugin, then let it do disciplines
+  plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:halas  ID:29070 -- Ysanna_MacGibbon

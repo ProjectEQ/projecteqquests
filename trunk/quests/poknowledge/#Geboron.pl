@@ -23,8 +23,6 @@ sub EVENT_ITEM {
       #quest::summonitem(20612); #Piece of the Staff (Eat the staff. Somehow this player was cheating. Uncomment to allow player to have staff back.)
     }
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile poknowledge\#Geboron.pl (202273)

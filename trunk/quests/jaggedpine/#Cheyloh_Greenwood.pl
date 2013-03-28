@@ -110,10 +110,7 @@ quest::summonitem(8759);
 
 #return items
 
-  else {
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #end of file

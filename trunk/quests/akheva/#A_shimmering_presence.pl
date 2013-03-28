@@ -21,8 +21,6 @@ sub EVENT_ITEM {
     quest::ding();
     quest::depop();
   }
-  else {
-    plugin::return_items(\%itemcount); # return unused items
-  }
+  plugin::return_items(\%itemcount);
 }
 #End of File, Zone:akheva  NPC:179165 -- #A_shimmering_presence

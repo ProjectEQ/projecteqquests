@@ -65,9 +65,6 @@ sub EVENT_ITEM {
     quest::say("Very well, here is the briefing document. Please read it very carefully. I wish you luck friend, this mission could prove to be dangerous.");
     quest::summonitem(18292); #Interrogator's Briefing
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile qeynos2\Vegalys_Keldrane.pl (2051)

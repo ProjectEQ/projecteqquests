@@ -16,6 +16,5 @@ sub EVENT_ITEM {
     	quest::exp(698775);
   }
    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-   #quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
 }#Done

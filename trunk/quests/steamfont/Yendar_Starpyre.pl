@@ -39,9 +39,6 @@ sub EVENT_ITEM {
     quest::spawn2(56172,0,0,$x - 10,$y + 10,$z,$h);
     quest::depop_withtimer();
   }
-  else {
-    quest::emote("will not accept this item.");
-  }
   plugin::return_items(\%itemcount);
 }
 

@@ -18,10 +18,7 @@ sub EVENT_ITEM {
     quest::summonitem(48064); #Lativ's Plans
     quest::exp(15000);
   }
-  else {
-    quest::say("I have no use for these.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #END File: cabeast\Zreezas.pl (106119)

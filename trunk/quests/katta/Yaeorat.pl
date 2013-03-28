@@ -12,10 +12,7 @@ sub EVENT_ITEM {
     quest::summonitem(4762); #Gemmed Sword Hilt
     quest::setglobal("swordhilt",2,5,"D1");
   }
-  else {
-    quest::say("I do not need this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 160212 NPC: Yaeorat

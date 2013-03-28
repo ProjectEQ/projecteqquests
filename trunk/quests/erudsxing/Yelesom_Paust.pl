@@ -18,9 +18,6 @@ sub EVENT_ITEM {
     quest::say("Thank you for recovering my tools, please take this to my brother for your reward.");
     quest::summonitem(1771);
   }
-  else {
-    quest::say("I have no use for this, $name.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: erudsxing\Yelesom_Paust.pl

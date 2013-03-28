@@ -39,8 +39,6 @@ sub EVENT_ITEM {
 #    quest::settitle("Grand Occultist");
 #    quest::giveAA(10);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 #EndFile: natimbi\#Whiahdi.pl (280073)

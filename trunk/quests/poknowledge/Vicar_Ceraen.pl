@@ -29,10 +29,7 @@ quest::emote("As he grows quiet and calm once more, the priest hands the corpore
     quest::summonitem(quest::ChooseRandom(21689, 28555, 28565, 28568, 28570)); #Level 65 Cleric spell, PoP (Yaulp VI, The Silent Command, Armor of the Zealot, Mark of the Righteous, Hand of Virtue)
   }
   
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
     
 }
 #END of FILE Zone:poknowledge  ID:202218 -- Vicar_Ceraen 

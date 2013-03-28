@@ -56,8 +56,6 @@ sub EVENT_ITEM {
     quest::faction(202,5);
     quest::faction(136,5);
   }
-  else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-    plugin::return_items(\%itemcount);
-  }
+  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+  plugin::return_items(\%itemcount);
 }

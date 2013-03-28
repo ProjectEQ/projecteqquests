@@ -188,12 +188,6 @@ sub EVENT_ITEM
 			}
 			quest::exp(10000);
 		}
-   
-		else {
-			plugin::return_items(\%itemcount); #return items if not the ones required
-		}
 	}
-	else {
-		plugin::return_items(\%itemcount);#Not enough faction for a turn in, give it back.
-	}
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:causeway ID:303068 --Vorkiev.pl

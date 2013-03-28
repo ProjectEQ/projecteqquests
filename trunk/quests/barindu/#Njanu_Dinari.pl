@@ -21,8 +21,6 @@ sub EVENT_ITEM {
     quest::faction(231,5); # Nihil
     quest::exp(25000);
   }
-  else {
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:Barindu  ID:283087, 283126, 283141 -- #Njanu_Dinari.pl

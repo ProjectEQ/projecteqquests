@@ -82,9 +82,7 @@ sub EVENT_ITEM {
 		quest::faction(193,10); #Legion of Cabilis
 		quest::exp(100);
 	}
-	else {
-		plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
-		plugin::return_items(\%itemcount);
-	}
+	plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
+	plugin::return_items(\%itemcount);
 }
  

@@ -67,10 +67,7 @@ sub EVENT_ITEM {
     quest::emote("swallows the liquid in the vial. After a few minutes, you notice the fire in the small gnome subside. She looks up at you and says, 'Why thank you. My twin was correct in her assumption of the power of the elements of Broken Skull. It's curious that she remained behind. Here, take this note to her so she can be assured that I am on the road to recovery.'");
     quest::summonitem(58004); #Note to Vera
   }
-  else {
-    quest::say("I have no need for this.");
-    plugin::return_items(\%itemcount);
-  }
+  plugin::return_items(\%itemcount);
 }
 # Quest edited by mystic414
 # Quest edited by Kilelen

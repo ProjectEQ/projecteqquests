@@ -42,9 +42,7 @@ sub EVENT_ITEM {
    quest::setglobal("ikkymove",1,5,"H6");
    }
   }
-  else {
   plugin::return_items(\%itemcount);
-    }
 }
 sub EVENT_SIGNAL {
   if($signal == 1 && ($entity_list->GetMobByNpcTypeID(294610) == 0)) {

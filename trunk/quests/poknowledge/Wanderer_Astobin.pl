@@ -24,10 +24,5 @@ sub EVENT_ITEM {
     quest::emote("Wanderer Astobin respectfully accepts the item, holding it in his hands like one would a delicate and priceless relic. His eyes scan its every surface in a detailed study before he closes his eyes and begins to weave a chant of unknown dialect and origin. As the druid's voice filters softly through the area, the object in his hand begins to fade into this existence, its intangible state destroyed beneath the druid's magic. Runes begin to appear upon the fully manifested scroll -- runes of a druidic decent. The druid ceases his chanting and then slowly hands the item to you, 'This is a spell of great power. Use it wisely and with caution, for to abuse the gifts of nature is to corrupt our sole purpose.'");
     quest::summonitem(quest::ChooseRandom(28645, 28541, 28542, 28543)); #Level 65 Druid spell, PoP (Legacy of Bracken, Blessing of the Nine, Winter's Frost, Mask of the Forest)
   }
-  else {
-  
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-  }
-    
+  plugin::return_items(\%itemcount);
 }#Done

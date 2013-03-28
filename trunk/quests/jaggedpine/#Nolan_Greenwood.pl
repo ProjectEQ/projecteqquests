@@ -50,13 +50,7 @@ if($itemcount{8761} && $itemcount{8760}) {
 quest::say("You have done well, $name. I am impressed and most pleased to know that you are adapting and accepting our ways so easily. Take this and may it protect you in these troubling times.");
 quest::summonitem(8400);
 }
-
-#return items
-
-  else {
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+  plugin::return_items(\%itemcount);
 }
 
 #end of file

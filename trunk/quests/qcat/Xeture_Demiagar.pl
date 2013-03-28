@@ -38,13 +38,9 @@ sub EVENT_ITEM {
 		quest::faction(53,10); #Corrupt Qeynos Guards
 		quest::exp(100);
 	}
-	elsif(plugin::check_handin(\%itemcount, 20197 => 1)) {
+	if(plugin::check_handin(\%itemcount, 20197 => 1)) {
 		quest::say("You have done well, $name. Take this Rusty Bloodsaber Mace to a forge and clean it up with a Sharpening Stone. It may take you several attempts to get all the rust off if you are not familiar with the process. Once that is done take the Refined Bloodsaber Mace to Torin Krentar with a Giant King Snake Skin and he will put the finishing touches on the weapon.");
 		quest::summonitem(20198);
-	}
-	else {
-		quest::say("I have no need for this $name, you can have it back.");
-		plugin::return_items(\%itemcount);
 	}
 	plugin::return_items(\%itemcount);
 }

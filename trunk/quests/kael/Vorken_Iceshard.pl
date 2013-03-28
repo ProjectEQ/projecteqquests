@@ -53,7 +53,6 @@ sub EVENT_ITEM {
     }
 
     else {
-      quest::say("I have no need of this, little one."); #text made up
       plugin::return_items(\%itemcount);
       return 1;
     }

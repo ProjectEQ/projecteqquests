@@ -9,8 +9,8 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 7808 => 3, 30579 => 1)) {
-    quest::say("Well done $name.  Use your new weapon well.");
-	quest::ding();
+    quest::emote("takes the flail and starts placing the claws into it forming a formidable looking weapon. 'This seems a good weapon indeed. Here, you can take it for helping to test my theory of weapon crafting. Safe travels to you friend.'");
+    quest::ding();
     quest::summonitem(7815);
   }
   plugin::return_items(\%itemcount);

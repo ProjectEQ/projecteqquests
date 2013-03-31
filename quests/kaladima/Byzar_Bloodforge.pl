@@ -25,7 +25,8 @@ sub EVENT_ITEM {
     quest::faction(215,15);   # MerchantsOfKaladim better
     quest::faction(57,-15);   # CraknekWarriors worse
     quest::exp(10000);
-    quest::ding;
+    quest::ding();
+	quest::givecash(7,1,2,0);
     quest::summonitem(quest::ChooseRandom(2113,2114,2115,2117,2119,2121,2122));
   }
   elsif(plugin::check_handin(\%itemcount, 13741 => 1, 13740 => 1)){

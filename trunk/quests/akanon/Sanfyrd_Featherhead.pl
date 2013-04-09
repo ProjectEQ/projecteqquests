@@ -54,7 +54,7 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 13216 => 1, 13217 => 1)) { 
     quest::say("Wow! You took care of those rogue models pretty easily. I bet Drekon told you I'd have a reward, huh? Well it's enough I don't have to worry about those models running around anymore. Here ya go!"); #text not live-like. Need original
-    quest::summonitem(quest::chooserandom(17981, 17981, 6027));
+    quest::summonitem(quest::ChooseRandom(17981, 17981, 6027));
     quest::faction(115,3);
     quest::faction(176,3);
     quest::faction(210,3);

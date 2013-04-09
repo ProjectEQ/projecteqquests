@@ -25,7 +25,7 @@ if (plugin::check_handin(\%itemcount, 13931 => 4)) {
   quest::faction(220,10);
   quest::faction(90,-10);
   quest::exp(5000);
-  quest::summonitem(quest::chooserandom(7007,7008,7009,7010));
+  quest::summonitem(quest::ChooseRandom(7007,7008,7009,7010));
 }  
 if (plugin::check_handin(\%itemcount, 9813 => 1)) { #rogue 1.5 handin
   quest::say("Fine job, $name. I knew ye had the burning fire of a smith ragin' inside ye. These little relics are going on my mantle, or I may sell em. Not sure yet.' He sets the items aside, 'Now, sit fer a spell and allow me to tell ye what you need to know. It should go without sayin', $name, that a fine blade is crafted with the best metals possible. Any fool knows that. What ye don't know is that the lightest and sturdiest stuff to be found is an alloy called Velixite. With a few pounds of raw Velixite you could truly forge a blade to be feared. Give me jes' a moment while I take down some notes in your journal, $name. There ye are, all done!");

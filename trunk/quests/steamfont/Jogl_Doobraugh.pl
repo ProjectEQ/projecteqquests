@@ -17,7 +17,7 @@ sub EVENT_WAYPOINT_ARRIVE{
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13209 =>1 )) {
     quest::say("Hmmm. Here you go. Take this log to Drekon Vebnebber. He is the in-house merchant at Gemchoppers Hall. It is his duty to file away all these logs.");
-    quest::summonitem(quest::chooserandom(18837,18838));  #see not below
+    quest::summonitem(quest::ChooseRandom(18837,18838));  #see not below
     quest::faction( 91,1 );
     quest::faction( 176,1 );
     quest::faction(115 ,1 );

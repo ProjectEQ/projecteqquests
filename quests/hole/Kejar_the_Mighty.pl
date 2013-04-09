@@ -10,7 +10,8 @@ sub EVENT_SAY {#need correct text for all parts
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,  1360=> 1)) {
     quest::say("You found it, I am so pleased! Here is your reward");
-    quest::summonitem(quest::chooserandom(8960, 8961));
+    quest::summonitem(quest::ChooseRandom(8960, 8961));
     quest::exp(5000);
   }
+  plugin::return_items(\%itemcount);
 }

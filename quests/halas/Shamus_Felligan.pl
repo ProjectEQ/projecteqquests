@@ -9,7 +9,7 @@
 ##
 ############################################
 
-my $randomspell = quest::chooserandom(15270,15275,15075,15271,15279,15212,15079);
+my $randomspell = quest::ChooseRandom(15270,15275,15075,15271,15279,15212,15079);
 # : Drowsy : Frost Rift : Sicken : Fleting Fury : Spirit of Bear : Cure Blindness : Spirit Sight : In that order
 
 sub EVENT_SAY 

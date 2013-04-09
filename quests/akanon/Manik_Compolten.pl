@@ -38,7 +38,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 13215 => 1)) { #text is not per live. Need original
     quest::say("What's this? You've found and smashed Red V?! Amazing! Wonderful! Take this as a sign of my thanks!");
-    quest::summonitem(quest::chooserandom(13219, 13219, 13220, 13220, 1013, 1018, 1015, 1019, 1022, 1023, 1024, 1017, 1016, 1020, 1014, 1021));
+    quest::summonitem(quest::ChooseRandom(13219, 13219, 13220, 13220, 1013, 1018, 1015, 1019, 1022, 1023, 1024, 1017, 1016, 1020, 1014, 1021));
     quest::faction(115,1); #gem choppers
     quest::faction(176,1); #King ak'anon
     quest::faction(210,1); #Merchants of Ak'Anon

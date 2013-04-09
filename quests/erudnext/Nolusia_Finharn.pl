@@ -38,7 +38,7 @@ if (plugin::check_handin(\%itemcount, 13123 => 1)) {
   quest::faction( 146, 20);
   quest::faction( 143, -20);
   quest::faction( 147, 20);
-  quest::summonitem(quest::chooserandom(13122, 5019, 6017));
+  quest::summonitem(quest::ChooseRandom(13122, 5019, 6017));
 }
 }
 #END of FILE Zone:erudnext  ID:98002 -- Nolusia_Finharn 

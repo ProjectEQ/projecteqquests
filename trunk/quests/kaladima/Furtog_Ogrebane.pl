@@ -45,6 +45,17 @@ sub EVENT_ITEM {
 		quest::faction(57,-15); # Craknek Warriors
 		quest::exp(100);
 	}
+   elsif (plugin::check_handin(\%itemcount, 13316 => 1, 13317 => 1)) { # Ogre Heads
+      quest::say("Finally my great father's work has been completed. All the Mudtoe ogres have been exterminated. Thank you. Take this weapon which my father pried from the cold, dead hands of the Mudtoe ogre captain. It is called an ogre war maul. May you wield it with honor in the name of Kaladim.");
+      quest::faction(314, 25); # Storm Guard
+      quest::faction(169, 25); # Kazon Stormhammer
+      quest::faction(219, 25); # Miners Guild 249
+      quest::faction(215, 25); # Merchants of Kaladim
+      quest::faction(57, -25); # Craknek Warriors
+      quest::exp(250);
+      quest::givecash(0, 3, 7, 1);
+      quest::summonitem(6302); # Ogre War Maul
+   }
 	#do all other handins first with plugin, then let it do disciplines
 	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
 	plugin::return_items(\%itemcount);

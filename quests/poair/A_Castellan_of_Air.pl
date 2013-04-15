@@ -1,12 +1,7 @@
 #This script causes the Castellans of Air to spawn 1-4 Vengeful Air Spirits on their death 95% of the time and to spawn Inlokher the Warlord 5% of the time.
 
-sub EVENT_AGGRO {
- quest::emote("takes form with weapons drawn and begins to pursue you.");
-}
-
 sub EVENT_DEATH {
- quest::emote("'s corpse keels over and falls into numerous pieces of dented armor.");
- quest::signalwith(215483,0,0);
+  quest::signalwith(215483,0,0);
   my $Chance = quest::ChooseRandom(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
   my $x = $npc->GetX();
   my $y = $npc->GetY();

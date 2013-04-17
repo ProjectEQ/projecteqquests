@@ -1,3 +1,3 @@
 sub EVENT_SPAWN {
-	quest::delglobal("smoke_done");
+	quest::signalwith(215453,5,1);
 }

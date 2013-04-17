@@ -1,3 +1,3 @@
 sub EVENT_SPAWN {
-	quest::delglobal("dust_done");
+	quest::signalwith(215461,6,1)
 }

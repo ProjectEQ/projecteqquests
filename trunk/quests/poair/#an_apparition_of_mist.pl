@@ -1,3 +1,3 @@
 sub EVENT_SPAWN {
-	quest::delglobal("mist_done");
+	quest::signalwith(215455,5,1);
 }

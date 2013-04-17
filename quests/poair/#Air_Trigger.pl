@@ -28,12 +28,12 @@ sub EVENT_SIGNAL
      	}
      	elsif ($signal == 3 && defined($qglobals{event_start}) && !defined($qglobals{wind_done})) 
      	{
-           	quest::depop(215057);
+           	quest::depop_withtimer(215057);
      	   	quest::spawn2(215451,0,0,-1589.9,484.5,15.1,190.6);
      	}
      	elsif ($signal == 4 && !defined($qglobals{wind_done})) 
 	{
-        	quest::setglobal("wind_done",1,3,"D2");
+        	quest::setglobal("wind_done",1,3,"F");
      	}
 	elsif ($signal == 5 && !defined($qglobals{event_start}) && !defined($qglobals{wind_done})) 
 	{	

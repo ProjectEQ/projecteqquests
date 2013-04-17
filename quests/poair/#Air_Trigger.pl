@@ -44,4 +44,8 @@ sub EVENT_SIGNAL
 			quest::setglobal("event_start",1,3,"H2");
 		}
 	}
+	elsif ($signal == 6)
+	{
+		quest::delglobal("wind_done");
+	}
 }

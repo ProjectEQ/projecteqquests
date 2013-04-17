@@ -99,5 +99,9 @@ sub EVENT_SIGNAL
 			quest::setglobal("dust_event_start",1,3,"H2");
 			$counter=0;
 		}
+		elsif ($signal == 6)
+		{
+		    quest::delglobal("dust_done");
+		}
 	}
 }

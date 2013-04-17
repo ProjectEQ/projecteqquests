@@ -36,4 +36,8 @@ sub EVENT_SIGNAL
 			$counter=0;
 		}
 	}
+	elsif ($signal == 5)
+	{
+		quest::delglobal("mist_done");
+	}
 }

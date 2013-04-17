@@ -1,3 +1,3 @@
 sub EVENT_SPAWN {
-	quest::delglobal("wind_done");
+	quest::signalwith(215450,6,1);
 }

@@ -17,11 +17,11 @@ sub EVENT_SIGNAL
      	elsif ($signal == 2 && defined($qglobals{smoke_event_start}) && !defined($qglobals{smoke_done})) 
      	{
      		quest::spawn2(215435,0,0,1395.9,-681.3,15.1,255.1);
-        	quest::depop(215055);
+        	quest::depop_withtimer(215055);
      	}
      	elsif ($signal == 3  && !defined($qglobals{smoke_done})) 
      	{
-        	quest::setglobal("smoke_done",1,3,"D2");
+        	quest::setglobal("smoke_done",1,3,"F");
      	}
 	elsif ($signal == 4 && !defined($qglobals{smoke_event_start}) && !defined($qglobals{smoke_done})) 
 	{

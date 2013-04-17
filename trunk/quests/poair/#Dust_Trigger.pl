@@ -69,11 +69,11 @@ sub EVENT_SIGNAL
      	elsif ($signal == 3 && defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done})) 
      	{
 		quest::spawn2(215475,0,0,1671,527,356,192);
-		quest::depop(215046);
+		quest::depop_withtimer(215046);
 	}
      	elsif ($signal == 4  && !defined($qglobals{dust_done})) 
      	{
-     		quest::setglobal("dust_done",1,3,"D2");
+     		quest::setglobal("dust_done",1,3,"F");
      	}
      	elsif ($signal == 5 && !defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done})) 
      	{

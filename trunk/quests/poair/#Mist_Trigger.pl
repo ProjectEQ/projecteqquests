@@ -17,7 +17,7 @@ sub EVENT_SIGNAL
      	elsif ($signal == 2 && defined($qglobals{mist_event_start}) && !defined($qglobals{mist_done})) 
      	{
         	quest::spawn2(215071,0,0,-1571.6,-570.0,343.6,190.9);
-		quest::depop(215023);
+		quest::depop_withtimer(215023);
      	}
      	elsif ($signal == 3  && !defined($qglobals{mist_done})) 
      	{

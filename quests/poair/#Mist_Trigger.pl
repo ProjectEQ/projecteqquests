@@ -21,7 +21,7 @@ sub EVENT_SIGNAL
      	}
      	elsif ($signal == 3  && !defined($qglobals{mist_done})) 
      	{
-        	quest::setglobal("mist_done",1,3,"D2");
+        	quest::setglobal("mist_done",1,3,"F");
      	}
 	elsif ($signal == 4 && !defined($qglobals{mist_event_start}) && !defined($qglobals{mist_done})) 
 	{

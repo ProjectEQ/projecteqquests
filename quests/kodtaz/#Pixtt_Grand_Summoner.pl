@@ -30,8 +30,3 @@ sub EVENT_SIGNAL {
     $npc->SetHP(100000);
     }
 }
-
-# disabled this for now until it gets look at.  this script belongs to npcid 293212.
-#sub EVENT_DEATH {
-#  quest::spawn2(293212,0,0,$x,$y,$z,$h);
-#}

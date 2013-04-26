@@ -11,12 +11,18 @@ sub EVENT_SAY {
   }
   if ($text=~/hail/i) {
     if ($event == 0) { #Event ready, not started
-      quest::say("Have you come to hear my riddle? Tell me when you are [ready]. When you know the answer give me the correct item.");
+      quest::say("So, another band of treasure-seekers desire to plunder the abomination that our fair temple has become. There was a time when those that wandered sought to do good in the fields they trampled, repair the trails they followed, and to help those in need they met along their way. Alas, these times are distant, dusty memories, and so now here I sit and judge. This [mountain] pass was once fertile and virtuous, can the same be said of you? Bah, true nobility is hidden in the heart. Today, your cunning and valor of mind shall be tested! Step forth, and hear my riddles. Plan to go no further than the grave if your mind and heart are weak!");
     } elsif ($event == 1) { #Event in progress
       quest::say("I am waiting for the answer...");
     } else { #event already completed
       quest::emote("ignores you.");
     }
+  }
+  if ($text=~/mountain/i) {
+    quest::say("This mountain pass was once a holy place. It was a passage to a higher place as well as frame of mind. Everything here inspired the utmost respect of our people. Unfortunately, those days are gone and all that remains is broken or corrupted. I [test] all of those who wish to pass now.");
+  }
+  if ($text=~/test/i) {
+    quest::say("'The test is . . . riddles! I have many of those. Take time to gather your wits about you and let me know when you are ready. Bear in mind that a wrong answer could lead to dire consequences. Tell me when you are [ready], and you shall have your riddle. The answer to any of my riddles can be found in the road behind you. Bring me an example of what you believe the answer to be, and you may pass freely.");
   }
   if (($text=~/ready/i) && ($event == 0)) {
     $event = 1;
@@ -146,9 +152,10 @@ sub EVENT_ITEM {
     quest::spawn2(289040,0,0,-239,2087,634,188); #a_feeble_beludu_shade
   }
   if ($event == 2) {
-    quest::say("Well done! You may pass!");
+    quest::me("You hear the grinding of stone as the door unlocks before you.");
     $entity_list->FindDoor(4)->SetLockPick(0);
     if (defined($qglobals{bic}) && ($qglobals{bic} == 11)) {
+	  quest::say("'I sense you have come here seeking something besides passage. Please take this it was left here by one of your people's constructs.");
       quest::summonitem(67551); #Vaifan's Temporary Power Cell D
     }
     #update zone status

@@ -43,6 +43,7 @@ sub EVENT_ITEM {
 		quest::faction(219,10);  # +Miners Guild 249
 		quest::exp(25);
 	}
+	plugin::return_items(\%itemcount);
 }
 
 

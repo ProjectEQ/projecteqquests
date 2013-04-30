@@ -28,7 +28,8 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 13132 => 1, 13848 => 2) && ($gold >= 17)) { # boots 
       quest::summonitem(2177); 
       quest::say("Here is your Scarab boots!"); 
-    } 
+    }
+	plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladima  ID:60004 -- Vacto_Molunel 
 

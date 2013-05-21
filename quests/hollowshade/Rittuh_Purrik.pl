@@ -1,3 +1,20 @@
+sub EVENT_SIGNAL
+    {
+	# Run from zone takeover
+	quest::SetRunning(1);
+	quest::start(2);
+	}
+
+sub	EVENT_WAYPOINT_ARRIVE
+	{
+	if ($x == 2714)
+		{
+		# He reached his goal. Spead out
+		quest::stop();
+		quest::moveto(2622, 1111, 143.12,180,1);
+		}
+	}
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Good day $name. or is it evening already? I can never tell. Stock up on goods while you're here and if you see any grimlings. please. make them suffer. My husband was tortured by the grunts in the forest."); }

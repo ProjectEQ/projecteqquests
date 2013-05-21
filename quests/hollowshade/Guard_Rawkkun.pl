@@ -1,4 +1,5 @@
-#Guard_Kliknaw  Hollowshade  ID  166078
+#Guard_Rawkkun  Hollowshade  ID  166079
+
 
 sub EVENT_SIGNAL
     {
@@ -10,9 +11,9 @@ sub	EVENT_WAYPOINT_ARRIVE
 	{
 	if ($x == 2714)
 		{
-		# He reached his goal.
+		# He reached his goal. Spread out.
 		quest::stop();
-		quest::moveto(2637, 1226, 143.12,180,1);
+		quest::moveto(2619, 1333, 147.12,180,1);
 		}
 	}
 

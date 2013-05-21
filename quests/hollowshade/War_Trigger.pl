@@ -1,15 +1,33 @@
 #BEGIN File: hollowshade/War_Trigger.pl (166257)
 #Quest file for Hollowshade Moor - Hollowshade War
 
-#Rewrite in progress!
+#This is an implementation of the Hollowshade War.
+#
+# key aspects:
+#
+# Random attacks occur based on a timer "RandomWar"
+#
+# PC's can initiate an attack by killing one of the camp named.
+# PHs and smaller named do not trigger an attack
+# 
+# All invaders are indiff to PCs
+#
+# Attacker pathing isn't pretty.
+#
+# ATM, to win, all defenders must die and the invaders must reach a set point
+# and do this in 450 seconds.
 
 my $attacker = "";
 my $attacker_id = 0;
 my $defender = "";
 my $defender_id = 0;
 my $event = 0;
-my $RandomWar = 0;
-my %HollowshadeRace = (1 => "Owlbear", 2 => "Sonic Wolves", 3 => "Grimlings");
+my $winner = 0;
+my $defenders_down = 0;
+my $attackers_arrived = 0;
+my $takeover_in_progress = 0;
+my $RandomWar = plugin::RandomRange(720, 3600);
+my %HollowshadeRace = (1 => "Owlbears", 2 => "Sonic Wolves", 3 => "Grimlings");
 my %Camp = (1 => "North", 2 => "East", 3 => "South");
 my %DirectionalCamp = (1 => "northern caves", 2 => "eastern swamp", 3 => "southern shores");
 my %AttackerText = (
@@ -28,67 +46,233 @@ my %VictoryText = (
   "Grimlings" => "NEED GRIMLING VICTORY TEXT"
 );
 
-sub EVENT_SPAWN {
-  if (!defined($qglobals{HollowshadeNorth}) || !defined($qglobals{HollowshadeEast}) || !defined($qglobals{HollowshadeSouth})) {
-    RESET_GLOBALS();
-  }
-  RESET_ZONE();
-}
+sub EVENT_SPAWN
+	{
+	quest::setglobal("DeadDefenderCount", 0, 7, "F"); # how many 
+	quest::setglobal("WarDefender", "NOWAR", 7, "F"); # Who is defending.
+	if (!defined($qglobals{HollowshadeNorth}) || 
+		!defined($qglobals{HollowshadeEast}) || 
+		!defined($qglobals{HollowshadeSouth}))
+		{
+		RESET_GLOBALS();
+		}
+	RESET_ZONE();
+	}
 
 sub EVENT_TIMER {
-  if (($timer eq "RandomWar") && ($event == 0)) {
-    SEND_ATTACKER();
-  }
-  if ($timer eq "ResetPause") {
-    quest::stoptimer("ResetPause");
-    LOAD_SPAWNS();
-  }
-  if ($timer eq "Attack") {
-    quest::stoptimer("Attack");
-    quest::depopall($attacker_id);
-    quest::depopall($defender_id);
-    $event = 0;
-  }
+	if (($timer eq "RandomWar") && ($event == 0)) 
+		{
+		#Set WarDefender to keep a PC war from starting
+		quest::setglobal("WarDefender","RANDOM", 7, "F"); # Who is defending.
+		quest::stoptimer("RandomWar");
+		START_WAR("","");
+		}
+	elsif ($timer eq "StartPCWar")
+		{
+		quest::stoptimer("StartPCWar");
+		# Event set the $attacker
+		START_WAR($attacker, $defender);
+		}
+	elsif ($timer eq "ResetPause") 
+		{
+		quest::stoptimer("ResetPause");
+		LOAD_SPAWNS();
+		}
+	elsif ($timer eq "SpawnNewOwners")
+		{
+		quest::setglobal("WarDefender", "NOWAR", 7, "F"); # Who is defending.
+		quest::stoptimer("SpawnNewOwners");
+		quest::depopall($attacker_id);
+		quest::spawn_condition($zonesn, $winner, 1);
+
+		if ($event == 0)
+			{
+			# If event not zero - we already emoted zone takeover.
+			quest::ze(15, "$HollowshadeRace{$qglobals{$attacker}} make themselves comfortable in $defender.");
+
+			# Can spawn another random war if there are still multiple factions
+			quest::settimer("RandomWar", $RandomWar);
+			}
+		$takeover_in_progress=0;
+		}
+	elsif ($timer eq "Attack") 
+		{
+		quest::ze(15, "The $HollowshadeRace{$qglobals{$defender}} have successfully defended $defender!");
+		quest::stoptimer("Attack");
+		quest::depopall($attacker_id);
+		quest::depopall($defender_id);
+		quest::settimer("RandomWar", $RandomWar);
+		quest::setglobal("DeadDefenderCount", 0, 7, "F"); #Reset killed defender
+		quest::setglobal("WarDefender", "NOWAR", 7, "F"); # Who is defending.
+		}
 }
 
-sub EVENT_SIGNAL {
-  $event = 0;
-  quest::stoptimer("Attack");
+sub EVENT_SIGNAL 
+	{
+	if ($signal == 1)
+		{
+		$defenders_down = 1;
+		quest::ze(15, "The $HollowshadeRace{$qglobals{$defender}} line of defense is down!  The time is now to seize $defender!");
+		}
 
-  if ($signal == 1) { #North Camp Overrun
-    quest::spawn_condition($zonesn, $qglobals{HollowshadeNorth}, 0); #Despawn Loser
-    quest::setglobal("HollowshadeNorth", $qglobals{$attacker}, 0, "F"); #Set Winner
-    quest::spawn_condition($zonesn, $qglobals{$attacker}, 1); #Spawn Winner
-    if ($qglobals{HollowshadeEast} == $qglobals{HollowshadeSouth}) {
-      #Spawn Boss
-      $event = 1;
-      RESET_GLOBALS();
-    }
-  }
-  if ($signal == 2) { #East Camp Overrun
-    quest::spawn_condition($zonesn, $qglobals{HollowshadeEast} + 3, 0); #Despawn Loser
-    quest::setglobal("HollowshadeEast", $qglobals{$attacker}, 0, "F"); #Set Winner
-    quest::spawn_condition($zonesn, $qglobals{$attacker} + 3, 1); #Spawn Winner
-    if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth}) {
-      #Spawn Boss
-      $event = 1;
-      RESET_GLOBALS();
-    }
-  }
-  if ($signal == 3) { #South Camp Overrun
-    quest::spawn_condition($zonesn, $qglobals{HollowshadeSouth} + 6, 0); #Despawn Loser
-    quest::setglobal("HollowshadeSouth", $qglobals{$attacker}, 0, "F"); #Set Winner
-    quest::spawn_condition($zonesn, $qglobals{$attacker} + 6, 1); #Spawn Winner
-    if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) {
-      #Spawn Boss
-      $event = 1;
-      RESET_GLOBALS();
-    }
-  }
-  if ($signal == 4) { #Boss Dead
-    RESET_ZONE();
-  }
-}
+	if ($attackers_arrived==0 && $signal == 6)
+		{
+		$attackers_arrived = 1;
+		quest::ze(15, "The $HollowshadeRace{$qglobals{$attacker}} have penetrated deep into $defender defenses.  Victory is near!");
+		}
+
+	if (($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) &&
+	   ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth}))
+		{
+		# Zone in conquered state, only listen to signal 5.
+		if ($signal == 5) 
+			{ #Boss Dead
+			$event=0;
+			RESET_GLOBALS();
+			quest::repopzone();
+			}
+		}
+	elsif ($takeover_in_progress == 0 &&
+			(($signal == 1 && $attackers_arrived==1) ||
+			($signal == 6 && $defenders_down==1)))
+		{
+		$takeover_in_progress=1;
+		quest::stoptimer("Attack");
+		quest::setglobal("DeadDefenderCount", 0, 7, "F"); # Reset to 0
+
+		if ($defender eq "HollowshadeNorth") 
+			{ # North Camp Overrun
+			#Despawn Loser
+			quest::spawn_condition($zonesn,$qglobals{HollowshadeNorth},0);
+
+			# Set Winner
+			quest::setglobal("HollowshadeNorth",$qglobals{$attacker},0,"F");
+			$winner = $qglobals{$attacker};
+
+			if ($qglobals{HollowshadeEast} == $qglobals{HollowshadeSouth}) 
+				{
+				TAKE_OVER($qglobals{$attacker});
+				}
+			}
+
+		if ($defender eq "HollowshadeEast") 
+			{ # East Camp Overrun
+
+			#Despawn Loser
+			quest::spawn_condition($zonesn, $qglobals{HollowshadeEast} + 3, 0);
+
+			# Set Winner
+			quest::setglobal("HollowshadeEast", $qglobals{$attacker}, 0, "F");
+			$winner = $qglobals{$attacker}+3;
+
+			if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth}) 
+				{
+				TAKE_OVER($qglobals{$attacker});
+				}
+			}
+
+		if ($defender eq "HollowshadeSouth") 
+			{ # South Camp Overrun
+
+			#Despawn Loser
+			quest::spawn_condition($zonesn,$qglobals{HollowshadeSouth} + 6, 0);
+
+			# Set Winner
+			quest::setglobal("HollowshadeSouth", $qglobals{$attacker}, 0, "F");
+			$winner = $qglobals{$attacker} + 6;
+
+			if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) 
+				{
+				TAKE_OVER($qglobals{$attacker});
+				}
+			}
+
+		# Set a timer to spawn new owners.  Gives PCs a chance to react.
+		quest::settimer("SpawnNewOwners", 12);
+		}
+	elsif ($event==0 && $qglobals{WarDefender} eq "NOWAR" && $signal >= 2 && $signal <=4)
+		{
+		# No random war, PCs starting one.
+		quest::stoptimer("RandomWar");
+		
+
+		if ($signal == 2)
+			{
+			# North is weak.
+			$defender="HollowshadeNorth";
+
+			if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast})
+				{
+				# East has same race, send South to attack.
+				$attacker="HollowshadeSouth";
+				}
+			elsif ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth})
+				{
+				# South has same race, send East to attack.
+				$attacker="HollowshadeEast";
+				}
+			else
+				{
+				# Pick a random attacker from E/S
+				$attacker = 
+					quest::ChooseRandom("HollowshadeEast", "HollowshadeSouth");
+				}
+			}
+		elsif ($signal == 3)
+			{
+			# East is weak.
+			$defender="HollowshadeEast";
+
+			if ($qglobals{HollowshadeEast} == $qglobals{HollowshadeNorth})
+				{
+				# North has same race, send South to attack.
+				$attacker="HollowshadeSouth";
+				}
+			elsif ($qglobals{HollowshadeEast} == $qglobals{HollowshadeSouth})
+				{
+				# South has same race, send North to attack.
+				$attacker="HollowshadeNorth";
+				}
+			else
+				{
+				# Pick a random attacker from N/S
+				$attacker = 
+					quest::ChooseRandom("HollowshadeNorth","HollowshadeSouth");
+				}
+			# Add line to cause War.
+			}
+		elsif ($signal == 4)
+			{
+			#South is weak.
+			$defender="HollowshadeSouth";
+
+			if ($qglobals{HollowshadeSouth} == $qglobals{HollowshadeEast})
+				{
+				# East has same race, send North to attack.
+				$attacker="HollowshadeNorth";
+				}
+			elsif ($qglobals{HollowshadeSouth} == $qglobals{HollowshadeNorth})
+				{
+				# North has same race, send East to attack.
+				$attacker="HollowshadeEast";
+				}
+			else
+				{
+				# Pick a random attacker from E/N
+				$attacker = 
+					quest::ChooseRandom("HollowshadeEast", "HollowshadeNorth");
+				}
+			}
+		
+		#Trigger PC induced war. $attacker used by subroutine.
+		quest::setglobal("WarDefender", $defender, 7, "F"); # Who is defending.
+		quest::settimer("StartPCWar", 12);
+		}
+	elsif ($signal >= 2 && $signal <= 4 && $qglobals{WarDefender} ne "NOWAR")
+		{
+		quest::ze(15,"The current invaders are undeterred in their course of action!");
+		}	
+	}
 
 sub RESET_GLOBALS {
   quest::setglobal("HollowshadeNorth", 1, 0, "F"); #Owlbear in the North
@@ -98,10 +282,10 @@ sub RESET_GLOBALS {
 
 sub RESET_ZONE {
   quest::ze(15, "Zone resetting now.");
+  quest::setglobal("DeadDefenderCount", 0, 7, "F"); # how many dead
   $attacker = "";
   $defender = "";
-  $event = 0;
-  $RandomWar = plugin::RandomRange(720, 3600);
+  $takeover_in_progress=0;
   quest::spawn_condition($zonesn, 1, 0);
   quest::spawn_condition($zonesn, 2, 0);
   quest::spawn_condition($zonesn, 3, 0);
@@ -111,6 +295,9 @@ sub RESET_ZONE {
   quest::spawn_condition($zonesn, 7, 0);
   quest::spawn_condition($zonesn, 8, 0);
   quest::spawn_condition($zonesn, 9, 0);
+  quest::spawn_condition($zonesn, 11, 0);
+  quest::spawn_condition($zonesn, 12, 0);
+  quest::spawn_condition($zonesn, 13, 0);
   quest::settimer("ResetPause", 5);
 }
 
@@ -121,162 +308,197 @@ sub LOAD_SPAWNS {
   quest::settimer("RandomWar", $RandomWar);
 }
 
-sub SEND_ATTACKER {
-  $attacker = quest::ChooseRandom("HollowshadeNorth", "HollowshadeEast", "HollowshadeSouth");
-  $event = 1;
+sub TAKE_OVER {
+	local($champion);		#  Make local variables
+	($champion) = ($_[0]);	# Assign values
 
-  #Select attacker and defender
-  if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) {
-    if (($attacker eq "HollowshadeNorth") || ($attacker eq "HollowshadeEast")) {
-      $defender = "HollowshadeSouth";
-    }
-    else {
-      $defender = quest::ChooseRandom("HollowshadeNorth", "HollowshadeEast");
-    }
-  }
-  elsif ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth}) {
-    if (($attacker eq "HollowshadeNorth") || ($attacker eq "HollowshadeSouth")) {
-      $defender = "HollowshadeEast";
-    }
-    else {
-      $defender = quest::ChooseRandom("HollowshadeNorth", "HollowshadeSouth");
-    }
-  }
-  elsif ($qglobals{HollowshadeSouth} == $qglobals{HollowshadeEast}) {
-    if (($attacker eq "HollowshadeEast") || ($attacker eq "HollowshadeSouth")) {
-      $defender = "HollowshadeNorth";
-    }
-    else {
-      $defender = quest::ChooseRandom("HollowshadeEast", "HollowshadeSouth");
-    }
-  }
-  else {
-    if ($attacker eq "HollowshadeNorth") {
-      $defender = quest::ChooseRandom("HollowshadeEast", "HollowshadeSouth");
-    }
-    elsif ($attacker eq "HollowshadeEast") {
-      $defender = quest::ChooseRandom("HollowshadeNorth", "HollowshadeSouth");
-    }
-    else {
-      $defender = quest::ChooseRandom("HollowshadeNorth", "HollowshadeEast");
-    }
-  }
+	$event=1;
+	quest::ze(15, "The $HollowshadeRace{$champion} have taken over Hollowshade and march toward the Vah Shir camp.");
 
-  #Spawn attackers
-  if (($qglobals{$attacker} == 1) || ($qglobals{$attacker} == 4) || ($qglobals{$attacker} == 7)) {
-    $attacker_id = 166139; #a_furious_owlbear
-  }
-  elsif (($qglobals{$attacker} == 2) || ($qglobals{$attacker} == 5) || ($qglobals{$attacker} == 8)) {
-    $attacker_id = 166091; #a_sonic_wolf_fiend (Not sure who this is really supposed to be)
-  }
-  else {
-    $attacker_id = 166266; #a_grimling_invader
-  }
-  if ($attacker eq "HollowshadeNorth") { #spawn northern attackers
-    if ($qglobals{$attacker} == 1) { #Owlbear attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-    elsif ($qglobals{$attacker} == 2) { #Sonic Wolf attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-    else { #Grimling attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-  }
-  elsif ($attacker eq "HollowshadeEast") { #spawn eastern attackers
-    if ($qglobals{$attacker} == 4) { #Owlbear attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-    elsif ($qglobals{$attacker} == 5) { #Sonic Wolf attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-    else { #Grimling attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-  }
-  else { #spawn southern attackers
-    if ($qglobals{$attacker} == 7) { #Owlbear attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-    elsif ($qglobals{$attacker} == 8) { #Sonic Wolf attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-    else { #Grimling attackers
-      #quest::spawn2(00000,1,0,x,y,z,h);
-      #quest::spawn2(00000,2,0,x,y,z,h);
-      #quest::spawn2(00000,3,0,x,y,z,h);
-      #quest::spawn2(00000,4,0,x,y,z,h);
-      #quest::spawn2(00000,5,0,x,y,z,h);
-    }
-  }
+	#Notify the Vah Shir!!
 
-  #Spawn defenders
-  if (($qglobals{$defender} == 1) || ($qglobals{$defender} == 4) || ($qglobals{$defender} == 7)) {
-    $defender_id = 166242; #an_owlbear_defender
-  }
-  elsif (($qglobals{$defender} == 2) || ($qglobals{$defender} == 5) || ($qglobals{$defender} == 8)) {
-    $defender_id = 166264; #a_sonic_defender
-  }
-  else {
-    $defender_id = 166238; #a_grimling_defender
-  }
-  if ($defender eq "HollowshadeNorth") { #spawn northern defenders
-    quest::spawn2($defender_id,0,0,1103,2134,137,182);
-    quest::spawn2($defender_id,0,0,1137,2109,143,178);
-    quest::spawn2($defender_id,0,0,1129,2166,143,187);
-    quest::spawn2($defender_id,0,0,1162,2191,170,172);
-    quest::spawn2($defender_id,0,0,1188,2098,165,180);
-  }
-  elsif ($defender eq "HollowshadeEast") { #spawn eastern defenders
-    quest::spawn2($defender_id,0,0,-2704,541,46,39);
-    quest::spawn2($defender_id,0,0,-2730,592,48,60);
-    quest::spawn2($defender_id,0,0,-2714,571,47,57);
-    quest::spawn2($defender_id,0,0,-2747,498,51,43);
-    quest::spawn2($defender_id,0,0,-2719,514,46,65);
-  }
-  else { #spawn southern defenders
-    quest::spawn2($defender_id,0,0,-621,-2753,55,252);
-    quest::spawn2($defender_id,0,0,-602,-2764,60,242);
-    quest::spawn2($defender_id,0,0,-633,-2773,60,239);
-    quest::spawn2($defender_id,0,0,-644,-2794,68,254);
-    quest::spawn2($defender_id,0,0,-591,-2794,69,252);
-  }
+    quest::signalwith(166078, 5, 1);
+    quest::signalwith(166079, 5, 1);
+    quest::signalwith(166080, 5, 1);
+    quest::signalwith(166081, 5, 1);
+    quest::signalwith(166082, 5, 1);
+    quest::signalwith(166083, 5, 1);
+    quest::signalwith(166084, 5, 1);
 
-  quest::ze(4, "$AttackerText{$HollowshadeRace{$qglobals{$attacker}}}"); #Attacker Text
-  quest::ze(4, "$HollowshadeRace{$qglobals{$defender}} in the $Camp{$qglobals{$defender}} $DefenderText{$qglobals{$defender}}."); #Defender Text
-  quest::settimer("Attack", 480); #Time Allotment
+	# Spawn Appropriate named & his Crew
+
+  	quest::spawn_condition($zonesn, $champion+10 , 1);
 }
+
+sub START_WAR 
+	{
+	local($aa, $dd);				#  Make local variables
+	($aa, $dd) = ($_[0], $_[1]);	# Assign values
+
+	quest::setglobal("DeadDefenderCount", 0, 7, "F"); # how many 
+	$defenders_down=0;
+	$attackers_arrived=0;
+
+	quest::ze(15, "Calling for a WAR: A: $attacker D: $defender");
+
+	if ($aa eq "")
+		{
+		#Select attacker
+		$attacker = quest::ChooseRandom("HollowshadeNorth", 
+									"HollowshadeEast", "HollowshadeSouth");
+		quest::ze(15, "Random Attacker Selected for WAR: A: $attacker");
+		}
+
+	if ($dd eq "")
+		{
+		#Select defender
+
+		# First if N & E are allies
+		if ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast})
+			{
+			if (($attacker eq "HollowshadeNorth") || 
+					($attacker eq "HollowshadeEast")) 
+				{
+				$defender = "HollowshadeSouth";
+				}
+			else
+				{
+				$defender=quest::ChooseRandom("HollowshadeNorth","HollowshadeEast");
+				}
+			}
+		# Or if N & S are allies
+		elsif ($qglobals{HollowshadeNorth} == $qglobals{HollowshadeSouth})
+			{
+			if (($attacker eq "HollowshadeNorth") || 
+					($attacker eq "HollowshadeSouth")) 
+				{
+				$defender = "HollowshadeEast";
+				}
+			else 
+				{
+				$defender=quest::ChooseRandom("HollowshadeNorth",
+														"HollowshadeSouth");
+				}
+			}
+		# Or if S & E are allies
+		elsif ($qglobals{HollowshadeSouth} == $qglobals{HollowshadeEast}) 
+			{
+			if (($attacker eq "HollowshadeEast") || 
+					($attacker eq "HollowshadeSouth"))
+				{
+				$defender = "HollowshadeNorth";
+				}
+			else 
+				{
+				$defender=quest::ChooseRandom("HollowshadeEast","HollowshadeSouth");
+				}
+			}
+		# Or all are at war.
+		else 
+			{
+			if ($attacker eq "HollowshadeNorth")
+				{
+				$defender=quest::ChooseRandom("HollowshadeEast","HollowshadeSouth");
+				}
+			elsif ($attacker eq "HollowshadeEast") 
+				{
+				$defender=quest::ChooseRandom("HollowshadeNorth",
+															"HollowshadeSouth");
+				}
+			else
+				{
+				$defender=quest::ChooseRandom("HollowshadeNorth","HollowshadeEast");
+				}
+			}
+		quest::ze(15, "Random Defender Selected for WAR: D: $attacker");
+		}
+
+	quest::setglobal("WarDefender", $defender, 7, "F"); # Who is defending.
+
+	#Spawn attackers
+	if (($qglobals{$attacker} % 3) == 1)	# North is 1,4,7
+		{ 
+		$attacker_id = 166139; #a_furious_owlbear
+		}
+	elsif (($qglobals{$attacker} % 3) == 2)	# North East 2,5,8
+		{
+		$attacker_id = 166091; #a_sonic_fiend
+		}
+	else 									# South
+		{
+		$attacker_id = 166266; #a_grimling_invader
+		}
+
+	SPAWN_ARMY($attacker_id, $attacker,"A");
+
+	#Spawn defenders
+	if (($qglobals{$defender} % 3) == 1)	# North is 1,4,7
+		{
+		$defender_id = 166242; #an_owlbear_defender
+		}
+	elsif (($qglobals{$defender} % 3) == 2)	# South is 2,5,8
+		{
+		$defender_id = 166264; #a_sonic_defender
+		}
+	else
+		{
+		$defender_id = 166279; #a_grimling_defender
+		}
+
+	SPAWN_ARMY($defender_id, $defender,"D");
+
+
+	quest::ze(4, "$AttackerText{$HollowshadeRace{$qglobals{$attacker}}}");
+	quest::ze(4, "$HollowshadeRace{$qglobals{$defender}} in $defender $DefenderText{$qglobals{$defender}}.");
+	quest::settimer("Attack", 500); #Time Allotment
+	}
+
+#Spawn a set of invaders or defenders.
+sub	SPAWN_ARMY
+	{
+
+	local($npc, $location, $atype);				#  Make local variables
+	($npc, $location, $atype) = ($_[0], $_[1], $_[2]);	# Assign values
+
+	if ($location eq "HollowshadeNorth")	#spawn northern army
+		{
+		quest::spawn2($npc,0,0,1103,2134,137,182);
+		quest::spawn2($npc,0,0,1137,2109,143,178);
+		quest::spawn2($npc,0,0,1129,2166,143,187);
+		quest::spawn2($npc,0,0,1175,2175,170,172);
+		quest::spawn2($npc,0,0,1185,2121,167,180);
+		if ($atype eq "A")
+			{
+			quest::spawn2($npc,0,0,1140,2191,170,172);
+			quest::spawn2($npc,0,0,1150,2098,165,180);
+			}
+		}
+	elsif ($location eq "HollowshadeEast")	#spawn eastern army
+		{
+		quest::spawn2($npc,0,0,-2704,541,46,39);
+		quest::spawn2($npc,0,0,-2730,592,48,60);
+		quest::spawn2($npc,0,0,-2714,571,47,57);
+		quest::spawn2($npc,0,0,-2747,498,51,43);
+		quest::spawn2($npc,0,0,-2719,514,46,65);
+		if ($atype eq "A")
+			{
+			quest::spawn2($npc,0,0,-2738,590,50,50);
+			quest::spawn2($npc,0,0,-2709,555,50,46);
+			}
+		}
+	else									#spawn southern army
+		{
+		quest::spawn2($npc,0,0,-621,-2753,55,252);
+		quest::spawn2($npc,0,0,-602,-2764,60,242);
+		quest::spawn2($npc,0,0,-633,-2773,60,239);
+		quest::spawn2($npc,0,0,-644,-2794,68,254);
+		quest::spawn2($npc,0,0,-591,-2794,69,252);
+		if ($atype eq "A")
+			{
+			quest::spawn2($npc,0,0,-611,-2760,61,240);
+			quest::spawn2($npc,0,0,-600,-2780,61,251);
+			}
+		}
+	}
 
 #END File: hollowshade/War_Trigger (166257)

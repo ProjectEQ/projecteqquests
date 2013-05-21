@@ -1,4 +1,4 @@
-#Zone:hollowshade  ID:166139 -- a_furious_owlbear
+#Zone:hollowshade  ID:166266 -- a grimling invader
 
 my $takeover_x=0;
 
@@ -37,12 +37,12 @@ sub EVENT_SAY
 	{
 	if ($text=~/hail/i) 
 		{
-		quest::say("Get out of my way two legs, my den is taking over the zone and I have no time to eat you!");
+		quest::say("ey hthje jewjin hothjsn, ehjrio hjriosn sioowejn!!");
 		}
 	}
 
 sub EVENT_DEATH
 		{
 		quest::stoptimer("ArrivalCheck");
-		quest::say("GRRR!  My Den will avenge me.");
+		quest::say("Ayeeeeeee!!");
 		}

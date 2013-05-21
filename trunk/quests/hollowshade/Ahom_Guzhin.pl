@@ -10,6 +10,9 @@ sub EVENT_ITEM {
     quest::say("Well, let us get back to pebbles and tax, shall we? You displayed a great deal of bravery in coming out here and looking for me. I fear my age is beginning to show. I can't evade danger as I did in my youth. With that in mind, I would like you to take this journal back to town for me. Historian Sharar will tend to my notes for me. She is a trusted friend and a valuable scholar. Please give it to her with my thanks.");
     quest::summonitem(8466);
   }
-  plugin::return_items(\%itemcount);
+  else {
+    quest::say("That is not what I seek.");
+    plugin::return_items(\%itemcount);
+  }
 }
 #END of FILE Zone:hollowshade  ID:166000 -- Ahom_Guzhin

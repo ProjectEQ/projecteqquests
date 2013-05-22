@@ -88,7 +88,7 @@ sub EVENT_TIMER {
 		if ($event == 0)
 			{
 			# If event not zero - we already emoted zone takeover.
-			quest::ze(15, "$HollowshadeRace{$qglobals{$attacker}} make themselves comfortable in $defender.");
+			//quest::ze(15, "$HollowshadeRace{$qglobals{$attacker}} make themselves comfortable in $defender.");
 
 			# Can spawn another random war if there are still multiple factions
 			quest::settimer("RandomWar", $RandomWar);
@@ -97,7 +97,7 @@ sub EVENT_TIMER {
 		}
 	elsif ($timer eq "Attack") 
 		{
-		quest::ze(15, "The $HollowshadeRace{$qglobals{$defender}} have successfully defended $defender!");
+		//quest::ze(15, "The $HollowshadeRace{$qglobals{$defender}} have successfully defended $defender!");
 		quest::stoptimer("Attack");
 		quest::depopall($attacker_id);
 		quest::depopall($defender_id);
@@ -112,13 +112,13 @@ sub EVENT_SIGNAL
 	if ($signal == 1)
 		{
 		$defenders_down = 1;
-		quest::ze(15, "The $HollowshadeRace{$qglobals{$defender}} line of defense is down!  The time is now to seize $defender!");
+		//quest::ze(15, "The $HollowshadeRace{$qglobals{$defender}} line of defense is down!  The time is now to seize $defender!");
 		}
 
 	if ($attackers_arrived==0 && $signal == 6)
 		{
 		$attackers_arrived = 1;
-		quest::ze(15, "The $HollowshadeRace{$qglobals{$attacker}} have penetrated deep into $defender defenses.  Victory is near!");
+		//quest::ze(15, "The $HollowshadeRace{$qglobals{$attacker}} have penetrated deep into $defender defenses.  Victory is near!");
 		}
 
 	if (($qglobals{HollowshadeNorth} == $qglobals{HollowshadeEast}) &&
@@ -270,7 +270,7 @@ sub EVENT_SIGNAL
 		}
 	elsif ($signal >= 2 && $signal <= 4 && $qglobals{WarDefender} ne "NOWAR")
 		{
-		quest::ze(15,"The current invaders are undeterred in their course of action!");
+		//quest::ze(15,"The current invaders are undeterred in their course of action!");
 		}	
 	}
 
@@ -281,7 +281,7 @@ sub RESET_GLOBALS {
 }
 
 sub RESET_ZONE {
-  quest::ze(15, "Zone resetting now.");
+  //quest::ze(15, "Zone resetting now.");
   quest::setglobal("DeadDefenderCount", 0, 7, "F"); # how many dead
   $attacker = "";
   $defender = "";
@@ -313,7 +313,7 @@ sub TAKE_OVER {
 	($champion) = ($_[0]);	# Assign values
 
 	$event=1;
-	quest::ze(15, "The $HollowshadeRace{$champion} have taken over Hollowshade and march toward the Vah Shir camp.");
+	//quest::ze(15, "The $HollowshadeRace{$champion} have taken over Hollowshade and march toward the Vah Shir camp.");
 
 	#Notify the Vah Shir!!
 
@@ -339,14 +339,14 @@ sub START_WAR
 	$defenders_down=0;
 	$attackers_arrived=0;
 
-	quest::ze(15, "Calling for a WAR: A: $attacker D: $defender");
+	//quest::ze(15, "Calling for a WAR: A: $attacker D: $defender");
 
 	if ($aa eq "")
 		{
 		#Select attacker
 		$attacker = quest::ChooseRandom("HollowshadeNorth", 
 									"HollowshadeEast", "HollowshadeSouth");
-		quest::ze(15, "Random Attacker Selected for WAR: A: $attacker");
+		//quest::ze(15, "Random Attacker Selected for WAR: A: $attacker");
 		}
 
 	if ($dd eq "")
@@ -410,7 +410,7 @@ sub START_WAR
 				$defender=quest::ChooseRandom("HollowshadeNorth","HollowshadeEast");
 				}
 			}
-		quest::ze(15, "Random Defender Selected for WAR: D: $attacker");
+		//quest::ze(15, "Random Defender Selected for WAR: D: $attacker");
 		}
 
 	quest::setglobal("WarDefender", $defender, 7, "F"); # Who is defending.
@@ -448,8 +448,8 @@ sub START_WAR
 	SPAWN_ARMY($defender_id, $defender,"D");
 
 
-	quest::ze(4, "$AttackerText{$HollowshadeRace{$qglobals{$attacker}}}");
-	quest::ze(4, "$HollowshadeRace{$qglobals{$defender}} in $defender $DefenderText{$qglobals{$defender}}.");
+	//quest::ze(4, "$AttackerText{$HollowshadeRace{$qglobals{$attacker}}}");
+	//quest::ze(4, "$HollowshadeRace{$qglobals{$defender}} in $defender $DefenderText{$qglobals{$defender}}.");
 	quest::settimer("Attack", 500); #Time Allotment
 	}
 

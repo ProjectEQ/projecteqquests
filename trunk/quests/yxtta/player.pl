@@ -176,11 +176,13 @@ sub EVENT_CLICKDOOR {
 }
 
 sub STONE_ATTACK {
-  my $silent_monolith = $entity_list->GetMobByNpcTypeID(291005);
-  if ($silent_monolith) {
-    my $hate_silent_monolith = $silent_monolith->CastToNPC();
-    $hate_silent_monolith->AddToHateList($client, 1, 0, true);
-  }
+  quest::spawn2(291138,0,0,-1118,816,-426,128);  #an unbound guardian
+  quest::spawn2(291133,0,0,-1125,451,-426,0);   #a liberated stoneworker
+  quest::spawn2(291131,0,0,-1190,532,-426,0);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-1203,685,-426,128);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-1150,793,-426,128);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-984,740,-426,128);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-964,564,-426,0);   #a freed rockbearer
 }
 
 sub ASK_QUESTION {

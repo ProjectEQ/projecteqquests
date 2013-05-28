@@ -28,9 +28,3 @@ sub EVENT_DEATH {
   $mobnpc2->AddToHateList($npc->GetHateTop());
 }
 
-
-
-# EOF zone: airplane ID: 71018 NPC: an_essence_harvester
-
-
-

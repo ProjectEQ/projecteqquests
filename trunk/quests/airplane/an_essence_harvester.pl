@@ -1,4 +1,4 @@
-# on death of essence harvester two essence carriers spawn
+# on death of essence harvester two a soul harvester spawn
 #
 
 my $x;
@@ -17,8 +17,8 @@ sub EVENT_DEATH {
   $y = $npc->GetY();
   $z = $npc->GetZ();
   $h = $npc->GetHeading();
-  $entid1 = quest::spawn2(71070,0,0,$x+10,$y,$z,$h);
-  $entid2 = quest::spawn2(71070,0,0,$x-10,$y,$z,$h);
+  $entid1 = quest::spawn2(71110,0,0,$x+10,$y,$z,$h);
+  $entid2 = quest::spawn2(71110,0,0,$x-10,$y,$z,$h);
   $mob1 = $entity_list->GetMobID($entid1);
   $mob2 = $entity_list->GetMobID($entid2);
   $mobnpc1 = $mob1->CastToNPC();

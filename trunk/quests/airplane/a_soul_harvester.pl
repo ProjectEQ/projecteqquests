@@ -1,4 +1,4 @@
-# on death of essence carrier one essence tamer spawn
+# on death of essence carrier one a_soul tamer spawn
 #
 
 my $x;
@@ -17,7 +17,7 @@ sub EVENT_DEATH {
   $y = $npc->GetY();
   $z = $npc->GetZ();
   $h = $npc->GetHeading();
-  $entid1 = quest::spawn2(71071,0,0,$x+10,$y,$z,$h);
+  $entid1 = quest::spawn2(71100,0,0,$x+10,$y,$z,$h);
   $mob1 = $entity_list->GetMobID($entid1);
   $mobnpc1 = $mob1->CastToNPC();
   $mobnpc1->AddToHateList($npc->GetHateTop());

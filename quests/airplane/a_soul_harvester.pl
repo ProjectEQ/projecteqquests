@@ -22,6 +22,3 @@ sub EVENT_DEATH {
   $mobnpc1 = $mob1->CastToNPC();
   $mobnpc1->AddToHateList($npc->GetHateTop());
 }
-
-# EOF zone: airplane ID: 71070 NPC: an_essence_carrier
-

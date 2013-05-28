@@ -1,4 +1,4 @@
-# on death of essence carrier one a_soul tamer spawn
+# on death of soul harvester one a_soul tamer spawn
 #
 
 my $x;

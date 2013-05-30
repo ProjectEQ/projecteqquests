@@ -1,5 +1,5 @@
 sub EVENT_DEATH {
   if($entity_list->GetMobByNpcTypeID(71009)) {
-    quest::updatespawntimer(2631,1000); #The_Spiroc_Guardian
+    quest::updatespawntimer(2631,1000); #update to respawn in 1 sec if vanquisher are still up
   }
 }

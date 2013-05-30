@@ -29,7 +29,9 @@ sub EVENT_SAY {
   }
   if($text=~/llaw eht htiw eno I ma/i && $sirran == 6) { #island6
     quest::say("Kcul doog! Ouy rof ydaer si erips eht fo retsis eht won, sdik boj doog.");
-    quest::spawn(71076,0,0,-927.4,-1033.2,1092.5,66.1); #x,y,z of her spawn needs to be tuned to match live more closely
+	if(!$entity_list->GetMobByNpcTypeID(71076)) {
+      quest::spawn2(71076,0,0,-929,-1035,1093,64); #used Magelo to get the closest loc as possible.
+	}
   }
   if($text=~/traverse this plane/i && $sirran == 1) {
     quest::say("Ahah! Wise you are and tell you I will. Hrm? Don't have wings, do you? Fairies have swords! Fairies stole my lucky feet! Hand me them, one by one, and be in for a treat! Haha!");

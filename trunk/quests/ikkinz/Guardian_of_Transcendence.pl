@@ -1,25 +1,36 @@
 sub EVENT_SPAWN {
-  quest::setnexthpevent(90);
+  if($x == -15 && $y == 0) {
+    quest::setnexthpevent(90);
+  }
+  if($x == 445 && $y == -489) {
+	$npc->SetHP(473300);
+	quest::setnexthpevent(75);
+  }
+  if($x == 671 && $y == -714) {
+	$npc->SetHP(394420);
+	quest::setnexthpevent(50);
+  }
+  if($x == 534 & $y == -210) {
+    $npc->SetHP(262947);
+  }
 }
 
 sub EVENT_HP {
   if($hpevent == 90) {
-     $npc->WipeHateList();
-     $npc->GMMove(445,-489,-45,209);
-     quest::setnexthpevent(75);
+     quest::depop();
+     quest::spawn2(294500,0,0,445,-489,-45,209);
      quest::setglobal("ikkydoor",1,3,"H6");     
   }
   if($hpevent == 75) {
-     $npc->WipeHateList();
-     $npc->GMMove(671,-714,-50,191);
-     quest::setnexthpevent(50);
-     quest::setglobal("ikkydoor",2,3,"H6");     
-   }
-   if($hpevent == 50) {
-      $npc->WipeHateList();
-      $npc->GMMove(534,-210,-50,72);
-      quest::setglobal("ikkydoor",3,3,"H6");     
-   }
+    quest::depop();
+    quest::spawn2(294500,0,0,671,-714,-50,191);
+    quest::setglobal("ikkydoor",2,3,"H6");     
+  }
+  if($hpevent == 50) {
+    quest::depop();
+    quest::spawn2(294500,0,0,534,-210,-50,72);
+    quest::setglobal("ikkydoor",3,3,"H6");     
+  }
 }  
 
 sub EVENT_DEATH {

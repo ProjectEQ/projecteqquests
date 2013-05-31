@@ -1,5 +1,7 @@
+my $archkill;
+
 sub EVENT_SPAWN {
-if(!defined($qglobals{marakill})) {
+  if(!defined($qglobals{marakill})) {
     $archkill = int(rand(4)) + 1;
     quest::setglobal("marakill",$archkill,3,"H6");
   }
@@ -7,6 +9,7 @@ if(!defined($qglobals{marakill})) {
     $archkill = $qglobals{marakill};
   }
 }
+
 sub EVENT_AGGRO {
   quest::settimer(1,1);
   quest::settimer(2,45);
@@ -20,15 +23,19 @@ sub EVENT_TIMER {
     quest::emote("shudders as if somehow changing.");
     if($qglobals{marakill} == 1) {
     quest::setglobal("marakill",2,3,"H6");
+	$archkill = $qglobals{marakill};
     }
     elsif($qglobals{marakill} == 2) {
     quest::setglobal("marakill",3,3,"H6");
+	$archkill = $qglobals{marakill};
     }
     elsif($qglobals{marakill} == 3) {
     quest::setglobal("marakill",4,3,"H6");
+	$archkill = $qglobals{marakill};
     }
     elsif($qglobals{marakill} == 4) {
     quest::setglobal("marakill",1,3,"H6");
+	$archkill = $qglobals{marakill};
     }
   }
 }

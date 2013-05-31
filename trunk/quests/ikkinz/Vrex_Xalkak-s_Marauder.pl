@@ -31,54 +31,19 @@ sub EVENT_TIMER {
     quest::setglobal("marakill",1,3,"H6");
     }
   }
-}  
+}
+
 sub EVENT_DEATH {
-  if(($class eq "Bard") && ($qglobals{marakill} == 2)) {
+  if((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{marakill} == 1)) {
+    quest::spawn2(294595,0,0,480,-592,-50,64);
+  }  
+  elsif((($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") || ($class eq "Shadowknight")) && ($qglobals{marakill} == 2)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
   }
-  elsif(($class eq "Beastlord") && ($qglobals{marakill} == 2)) {
+  elsif((($class eq "Berserker") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior")) && ($qglobals{marakill} == 3)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
   }
-  elsif(($class eq "Berserker") && ($qglobals{marakill} == 3)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Cleric") && ($qglobals{marakill} == 4)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Druid") && ($qglobals{marakill} == 4)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Enchanter") && ($qglobals{marakill} == 1)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Magician") && ($qglobals{marakill} == 1)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Monk") && ($qglobals{marakill} == 3)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Necromancer") && ($qglobals{marakill} == 1)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Paladin") && ($qglobals{marakill} == 2)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Ranger") && ($qglobals{marakill} == 2)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Rogue") && ($qglobals{marakill} == 3)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Shadowknight") && ($qglobals{marakill} == 2)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Shaman") && ($qglobals{marakill} == 4)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Warrior") && ($qglobals{marakill} == 3)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
-  }
-  elsif(($class eq "Wizard") && ($qglobals{marakill} == 1)) {
+  elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman") || ($class eq "Warrior")) && ($qglobals{marakill} == 4)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
   }
   else {

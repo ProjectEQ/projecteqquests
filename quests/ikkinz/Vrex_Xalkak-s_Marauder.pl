@@ -43,7 +43,7 @@ sub EVENT_DEATH {
   elsif((($class eq "Berserker") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior")) && ($qglobals{marakill} == 3)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
   }
-  elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman") || ($class eq "Warrior")) && ($qglobals{marakill} == 4)) {
+  elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) && ($qglobals{marakill} == 4)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
   }
   else {

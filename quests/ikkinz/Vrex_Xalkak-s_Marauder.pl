@@ -36,15 +36,19 @@ sub EVENT_TIMER {
 sub EVENT_DEATH {
   if((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{marakill} == 1)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
+	quest::delglobal("marakill");
   }  
   elsif((($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") || ($class eq "Shadowknight")) && ($qglobals{marakill} == 2)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
+	quest::delglobal("marakill");
   }
   elsif((($class eq "Berserker") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior")) && ($qglobals{marakill} == 3)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
+	quest::delglobal("marakill");
   }
   elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) && ($qglobals{marakill} == 4)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
+	quest::delglobal("marakill");
   }
   else {
     quest::spawn2(294594,0,0,$x,$y,$z,$h);

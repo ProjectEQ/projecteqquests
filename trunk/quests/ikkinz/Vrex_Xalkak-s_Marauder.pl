@@ -21,21 +21,21 @@ sub EVENT_TIMER {
   }
   if($timer == 2) {
     quest::emote("shudders as if somehow changing.");
-    if($qglobals{marakill} == 1) {
-    quest::setglobal("marakill",2,3,"H6");
-	$archkill = $qglobals{marakill};
+    if(defined($qglobals{marakill}) && $qglobals{marakill} == 1) {
+      quest::setglobal("marakill",2,3,"H6");
+	  $archkill = $qglobals{marakill};
     }
-    elsif($qglobals{marakill} == 2) {
-    quest::setglobal("marakill",3,3,"H6");
-	$archkill = $qglobals{marakill};
+    if(defined($qglobals{marakill}) && $qglobals{marakill} == 2) {
+      quest::setglobal("marakill",3,3,"H6");
+	  $archkill = $qglobals{marakill};
     }
-    elsif($qglobals{marakill} == 3) {
-    quest::setglobal("marakill",4,3,"H6");
-	$archkill = $qglobals{marakill};
+    if(defined($qglobals{marakill}) && $qglobals{marakill} == 3) {
+      quest::setglobal("marakill",4,3,"H6");
+	  $archkill = $qglobals{marakill};
     }
-    elsif($qglobals{marakill} == 4) {
-    quest::setglobal("marakill",1,3,"H6");
-	$archkill = $qglobals{marakill};
+    if(defined($qglobals{marakill}) && $qglobals{marakill} == 4) {
+      quest::setglobal("marakill",1,3,"H6");
+	  $archkill = $qglobals{marakill};
     }
   }
 }

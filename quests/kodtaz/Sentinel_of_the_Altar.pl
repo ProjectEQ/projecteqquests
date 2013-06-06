@@ -1,5 +1,6 @@
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60173 =>1)) {
+    quest::emote("motions for you to enter the altar through the entrance behind him.");
     if(defined($qglobals{ikky}) && ($qglobals{ikky} == 14)) {
       $raid = $client->GetRaid();
       if($raid){

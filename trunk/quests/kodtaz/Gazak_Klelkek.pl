@@ -56,6 +56,7 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM {
  if ((plugin::check_handin(\%itemcount, 60152 =>1 )) && (defined $qglobals{ikky} && $qglobals{ikky} == 1)) {
+  quest::say("Though you were pitted against a most heinous aggressor, you have proven that you are a capable adventurer thus far. Nicely done, $name. I urge you to continue honing your skills. Now that you are ready to move onto the next trial, you should return to Kevren for more information. Good luck!");
   quest::setglobal("ikky",2,5,"F");
   $client->Message(4,"Finished!- You have completed the trial at the Temple of Singular Might!");
 }

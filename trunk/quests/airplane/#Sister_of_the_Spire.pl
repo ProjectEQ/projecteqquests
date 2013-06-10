@@ -1,17 +1,5 @@
-sub EVENT_DEATH
-
-{
-
-   $x = $npc->GetX();
-
-   $y = $npc->GetY();
-
-   $z = $npc->GetZ();
-
-   $sirran= undef;
-
-
-   quest::setglobal(sirran,7,3,"M10");
-
-   quest::spawn(71058,0,0,$x,$y,$z);
-} 
+sub EVENT_DEATH {
+  $sirran= undef;
+  quest::setglobal(sirran,7,3,"M20");
+  quest::spawn2(71058,0,0,-960,-1037,1093,64);
+}

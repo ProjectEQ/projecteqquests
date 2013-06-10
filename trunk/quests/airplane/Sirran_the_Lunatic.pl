@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-   quest::settimer("bye",300);
+   quest::settimer("bye",1200);
 }
 
 sub EVENT_SAY {
@@ -81,6 +81,10 @@ sub EVENT_AGGRO {
 sub EVENT_TIMER {
   if($timer eq "bye") {
     quest::stoptimer("bye");
-    quest::depop_withtimer();
+    quest::depop();
   }
+}
+
+sub EVENT_DEATH {
+  quest::delglobal("sirran");
 }

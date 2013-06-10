@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if($text=~/Hail/i) {
+  if($text=~/hail/i) {
     quest::say("So you have awakened me!! It seems my brother was not much of a challenge. Before we get on to business, there are some matters that must be addressed. But enough talk, let's address these matters first.");
     }
   if($text=~/matters/i) {
@@ -11,5 +11,5 @@ sub EVENT_SAY {
 }
 
 sub EVENT_DEATH {
-   quest::spawn2(71060,0,0,-1462.2,-270.1,1250.9,62.9);
+   quest::spawn2(71060,48,0,-1462.2,-270.1,1250.9,62.9);
 }

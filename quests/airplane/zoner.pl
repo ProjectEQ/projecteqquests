@@ -3,5 +3,10 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  quest::movepc(10,-1570,-25,20,231);
+  if(($client->GetClientVersionBit() & 3)!= 0) { #062/Titanium
+    quest::movepc(10,-1570,-25,20,231);
+  }
+  else {
+    quest::movepc(382,-1442,-1012,35,0); #SoF+
+  }
 }

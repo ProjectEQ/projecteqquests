@@ -38,14 +38,15 @@ sub EVENT_ITEM {
     quest::emote("takes the piece of parchment and whispers softly.  The piece flares with magic and he turns to look at you.");
     quest::say("What you need is both [north] and [south], speak return and it shall be so.");
     if(!defined($qglobals{ikkymove})) {
-   quest::spawn2(294614,0,0,213,-100,20,0);
-   quest::setglobal("ikkymove",1,5,"H6");
-   }
+      quest::spawn2(294614,0,0,213,-100,20,0);
+      quest::setglobal("ikkymove",1,5,"H6");
+    }
   }
   plugin::return_items(\%itemcount);
 }
 sub EVENT_SIGNAL {
   if($signal == 1 && ($entity_list->GetMobByNpcTypeID(294610) == 0)) {
-         quest::setglobal("ikkyfourdoor",1,3,"H6");
-   }
+    $entity_list->FindDoor(10)->SetLockPick(0);
+    $entity_list->FindDoor(12)->SetLockPick(0);
+  }
 }

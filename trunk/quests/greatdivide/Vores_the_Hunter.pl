@@ -17,7 +17,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30270=> 1, 30249=> 1)) { #Gem of Persuasion and Blood Wolf Harness
     quest::say("Hey! What ya got there? Well now, ain't that pretty! Ya know, this just might do it. You done what I never was able. I gotta give ya that much. I ain't much o' one for travelin' any more. My legs be old and my bones are weak. You take this harness and find a good big mother of a wurm ta test it on. Just focus in yer mind what yer wantin the wurm ta do. Heh, maybe have it clear out some pests, eh?");
     quest::summonitem(30272); #Harness of Control
-	quest::ding();
+    quest::ding();
   }
   plugin::return_items(\%itemcount);
 }

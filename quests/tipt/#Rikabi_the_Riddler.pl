@@ -152,7 +152,7 @@ sub EVENT_ITEM {
     quest::spawn2(289040,0,0,-239,2087,634,188); #a_feeble_beludu_shade
   }
   if ($event == 2) {
-    quest::me("You hear the grinding of stone as the door unlocks before you.");
+    quest::say("You hear the grinding of stone as the door unlocks before you.");
     $entity_list->FindDoor(4)->SetLockPick(0);
     if (defined($qglobals{bic}) && ($qglobals{bic} == 11)) {
 	  quest::say("'I sense you have come here seeking something besides passage. Please take this it was left here by one of your people's constructs.");

@@ -17,19 +17,22 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 90) {
-     quest::depop();
-     quest::spawn2(294500,0,0,445,-489,-45,209);
-     quest::setglobal("ikkydoor",1,3,"H6");     
+    quest::depop();
+    quest::spawn2(294500,0,0,445,-489,-45,209);
+    $entity_list->FindDoor(15)->SetLockPick(0);
+    $entity_list->FindDoor(16)->SetLockPick(0);
   }
   if($hpevent == 75) {
     quest::depop();
     quest::spawn2(294500,0,0,671,-714,-50,191);
-    quest::setglobal("ikkydoor",2,3,"H6");     
+    $entity_list->FindDoor(8)->SetLockPick(0);
+    $entity_list->FindDoor(9)->SetLockPick(0);
   }
   if($hpevent == 50) {
     quest::depop();
     quest::spawn2(294500,0,0,534,-210,-50,72);
-    quest::setglobal("ikkydoor",3,3,"H6");     
+    $entity_list->FindDoor(10)->SetLockPick(0);
+    $entity_list->FindDoor(12)->SetLockPick(0);
   }
 }  
 
@@ -44,7 +47,7 @@ sub EVENT_DEATH {
           push (@player_list, $raid->GetMember($count)->GetName());
         }
       }
-foreach $player (@player_list) {
+  foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
      $charid = $pc->CharacterID();
      quest::targlobal("ikkylockout5", 1, "H6", 293115, $charid, 293);

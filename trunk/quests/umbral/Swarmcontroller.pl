@@ -1,11 +1,12 @@
+my $count = 0;
+
 sub EVENT_SIGNAL {
   quest::settimer(1,300);
 }
 
 sub EVENT_TIMER {
-  my $count = 0;
   $count++;
-  if($count==1) {
+  if($count==1) { #4x a netherbian ravager
     if(!$entity_list->GetMobByNpcTypeID(176007)) {
 	  quest::spawn2(176113,0,0,487,2281,302,135);
 	  quest::spawn2(176113,0,0,455,2253,305,64);
@@ -17,31 +18,31 @@ sub EVENT_TIMER {
 	  $count=0;
 	}
   }
-  if($count==2) {
+  if($count==2) {  #4x a netherbian ravager
     quest::spawn2(176113,0,0,487,2281,302,135);
     quest::spawn2(176113,0,0,455,2253,305,64);
     quest::spawn2(176113,0,0,475,2229,305,14);
     quest::spawn2(176113,0,0,504,2258,304,184);
   }
-  if($count==3) {
+  if($count==3) {  #4x a netherbian ravager
     quest::spawn2(176113,0,0,487,2281,302,135);
     quest::spawn2(176113,0,0,455,2253,305,64);
     quest::spawn2(176113,0,0,475,2229,305,14);
     quest::spawn2(176113,0,0,504,2258,304,184);
   }
-  if($count==4) {
+  if($count==4) {  #3x a netherbian ravager and 1x a netherbian flesheater
     quest::spawn2(176114,0,0,487,2281,302,135);
     quest::spawn2(176113,0,0,455,2253,305,64);
     quest::spawn2(176113,0,0,475,2229,305,14);
     quest::spawn2(176113,0,0,504,2258,304,184);
   }
-  if($count==5) {
+  if($count==5) {  #4x a netherbian ravager
     quest::spawn2(176113,0,0,487,2281,302,135);
     quest::spawn2(176113,0,0,455,2253,305,64);
     quest::spawn2(176113,0,0,475,2229,305,14);
     quest::spawn2(176113,0,0,504,2258,304,184);
   }	  
-  if($count==6) {
+  if($count==6) {  #3x a netherbian ravager and 1x Netherbian Swarmlord
     quest::spawn2(176093,0,0,487,2281,302,135);
     quest::spawn2(176113,0,0,455,2253,305,64);
     quest::spawn2(176113,0,0,475,2229,305,14);

@@ -7,3 +7,7 @@ sub EVENT_TIMER {
     $npc->GMMove(446,-348,3,192);
   }
 }
+
+sub EVENT_DEATH {
+  quest::signalwith(294141,2,0);
+}

@@ -27,3 +27,6 @@ sub EVENT_TIMER {
   }
 }
 
+sub EVENT_DEATH {
+  quest::signalwith(294141,1,0);
+}

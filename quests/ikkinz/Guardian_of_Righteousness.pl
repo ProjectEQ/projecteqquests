@@ -55,6 +55,7 @@ if ($timer == 2) {
   quest::setnexthpevent(75);
   }
 }
+
 sub EVENT_DEATH {
   quest::depopall(294578);
   quest::spawn2(294344,0,0,309,-595,2,154);
@@ -66,4 +67,5 @@ sub EVENT_DEATH {
   quest::spawn2(294346,0,0,201,-776,2,29);
   quest::spawn2(294346,0,0,161,-717,2,52);
   quest::signalwith(294342,1,0);
+  $entity_list->FindDoor(11)->SetLockPick(0);
 }

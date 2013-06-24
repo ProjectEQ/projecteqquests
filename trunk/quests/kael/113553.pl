@@ -6,6 +6,7 @@ sub EVENT_SPAWN {
   quest::set_proximity($x - 30, $x + 30, $y - 30, $y +30);
 }
 
+quest::enable_proximity_say();
 sub EVENT_PROXIMITY_SAY {
   if($text=~/dain/i) {
     quest::spawn2(113440,0,0,1126.4,-840.6,-118.3,62.6); #Doldigun, non-loot version

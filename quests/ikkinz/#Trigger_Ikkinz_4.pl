@@ -12,6 +12,7 @@ sub EVENT_SIGNAL {
     }
 }
 
+quest::enable_proximity_say();
 sub EVENT_PROXIMITY_SAY {
   if ($text=~/return/i) {
    $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);

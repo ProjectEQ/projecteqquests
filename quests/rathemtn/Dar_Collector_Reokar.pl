@@ -1,6 +1,6 @@
 sub EVENT_SAY{
   if ($text=~/hail/i){
-  quest::say("Greetings! Have you anything for me? Don't look at me like that, you know what I mean. Odds and ends from out there in the swamp. Rat parts are fine, and I could always use some freshly caught fish. If you've not done work for me before, perhaps we can start with bone chips?  Always bring me 4 of everything.  I hate not being able to use them immediately!");
+  quest::say("Greetings! Have you anything for me? Don't look at me like that, you know what I mean. Odds and ends from out there in the swamp. Rat parts are fine, and I could always use some freshly caught fish.");
   }
 }
 

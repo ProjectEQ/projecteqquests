@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	if ($timer == 1) {
-		quest::depop;
+		quest::depop();
 	}
 }
 

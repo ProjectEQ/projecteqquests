@@ -6,7 +6,7 @@ quest::shout("How dare you!");
 sub EVENT_TIMER {
 if($timer == 37) {
 	quest::stoptimer(37);
-	quest::depop;
+	quest::depop();
 	}
 }
 

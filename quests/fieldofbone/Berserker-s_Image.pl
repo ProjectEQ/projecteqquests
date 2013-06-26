@@ -14,7 +14,7 @@ if($text=~/return/i)
 
 	{
 	quest::movepc(78,3603,2088,-155);
-	quest::depop;
+	quest::depop();
 	}
 
 }

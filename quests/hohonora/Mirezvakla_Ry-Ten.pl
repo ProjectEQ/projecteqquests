@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL {
 
-quest::depop;
+quest::depop();
 
 }
 

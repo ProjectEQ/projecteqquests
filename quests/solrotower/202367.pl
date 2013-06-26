@@ -6,7 +6,7 @@ quest::settimer(1,600);
 
 sub EVENT_SAY {
 
-if($text=~/Hail/)
+if($text=~/hail/i)
 	{
 	quest::setglobal("pop_sol_ro_arlyxir", 1, 5, "F");
 	$client->Message(4,"You receive a character flag!");

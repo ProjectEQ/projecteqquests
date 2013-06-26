@@ -6,7 +6,7 @@ quest::settimer(1,600);
 
 sub EVENT_SAY {
 
-if($text=~/Hail/)
+if($text=~/hail/i)
 	{
 	quest::setglobal("pop_tactics_ralloz", 1, 5, "F");
         quest::emote("Maelin Starpyre's thoughts enter into your own. 'The singed parchment of Rallos lies in his dead hand. Bring it back to me I will translate them using the Cipher of Druzzil.'");

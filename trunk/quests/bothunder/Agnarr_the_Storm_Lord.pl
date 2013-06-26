@@ -11,7 +11,7 @@ if($timer == 1) {
 quest::stoptimer(1);
 quest::spawn2(209026,0,0,$x,$y,$z,$h);
 quest::signalwith(209033,2,1);
-quest::depop;
+quest::depop();
 }
 
 if($timer == 2) {

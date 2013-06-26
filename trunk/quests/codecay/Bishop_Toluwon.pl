@@ -7,7 +7,7 @@ sub EVENT_TIMER
 {
 if($timer == 3)
 {
-quest::depop;
+quest::depop();
 }
 }
 

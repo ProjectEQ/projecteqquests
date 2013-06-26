@@ -27,7 +27,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,67012 => 1)) {
     quest::spawn2(50329,0,0,$x,$y,$z,$h+90); # Spawn Warrior Spirit Chalex
     quest::summonitem(67020); # He gives you back Marr's retribution.
-    quest::depop;
+    quest::depop();
     }
   plugin::return_items(\%itemcount);
 }

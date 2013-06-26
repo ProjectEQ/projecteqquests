@@ -19,7 +19,7 @@ sub EVENT_ITEM{
 sub EVENT_HP {
 	if($hpevent == 15) {
 		quest::spawn2(172187,0,0,$x,$y,$z,$h);
-		quest::depop;
+		quest::depop();
 	}
 }
 

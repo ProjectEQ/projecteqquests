@@ -23,7 +23,7 @@ quest::settimer(2,600);
 else
 {
 quest::spawn2(159691,0,0,$x,$y,$z,$h);
-quest::depop;
+quest::depop();
 quest::stoptimer(1);
 }
 
@@ -38,7 +38,7 @@ quest::settimer(2,600);
 else
 {
 quest::spawn2(159691,0,0,$x,$y,$z,$h);
-quest::depop;
+quest::depop();
 quest::stoptimer(1);
       }
    }

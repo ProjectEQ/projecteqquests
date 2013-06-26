@@ -13,11 +13,11 @@ my $hold_stoning = 0;
 my $hold_torture = 0;
 
 sub EVENT_SAY {
-   if ($text =~ /Hail/i) {
+   if ($text =~ /hail/i) {
       quest::say("Do you wish to [return]?");
    }
    
-   elsif($text =~ /return/) {
+   elsif($text =~ /return/i) {
       my $x = int($npc->GetX());
       my $y = int($npc->GetY());
       

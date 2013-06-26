@@ -13,7 +13,7 @@ sub EVENT_SAY {
   if($text=~/wind/i){ #Bard Test of Wind
     quest::say("Bring me an imp statuette, a dull stone, and an amulet of woven hair. Then I will give you the fae amulet.");
   }
-  if($text=~/harmony/){ #Bard Test of Harmony
+  if($text=~/harmony/i){ #Bard Test of Harmony
     quest::say("Working with the environment to enthrall those that listen to you is of the utmost importance to us. Go out and retrieve an efreeti war spear, some manna nectar, a nebulous emerald, and a nebulous diamond. Return these items to me and receive the harmonic spear as your reward.");
   }
 }

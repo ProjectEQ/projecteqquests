@@ -20,7 +20,7 @@ sub EVENT_SAY {
   if($text=~/gnolls/i) {
     quest::say("The Sabertooths are a vicious band of gnolls who live in Blackburrow, to the east of Surefall Glade. They constantly attack us when we only seek to share this land with them. They also send many patrols out into the Qeynos Hills to the south. We have even seen a Sabertooth skulking about in the caves behind Grizzly Falls. There is a [reward] for his hide.");
   }
-  if($text=~/reward/) {
+  if($text=~/reward/i) {
     quest::say("Yes. We are offering a small reward for slaying the skulking gnoll in the bear caves. Bring me his paw to claim your bounty. The Jaggedpine Treefolk remember well those who aid their cause.");
   }
   if($text=~/crook/i) {

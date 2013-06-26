@@ -15,11 +15,11 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 sub EVENT_SAY { 
 
-   if($text=~/Hail/i){
+   if($text=~/hail/i){
 
        quest::say("Good day to you. Your city of stone walls is quite magnificent. Still, the glory of Surefall Glade puts this city to shame."); 
    }
-   if ($text=~/an assassin has been sent to kill you/) {
+   if ($text=~/an assassin has been sent to kill you/i) {
        quest::say("What!!?  Must be an Unkempt Druid Assassin nearby!!  Find him and slay him.  I am sure he stands to make a FORTUNE!  I believe the assassin may be carrying some sort of [black wood chip].");
        quest::spawn2(1179,0,0,-100,222,2.3,127.1);
    }

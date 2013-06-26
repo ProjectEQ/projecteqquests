@@ -6,8 +6,8 @@
 #################
 
 sub EVENT_SAY {
- if($race=~/Froglok/) {
-  if($text=~/Hail/i) {
+ if($race=~/froglok/i) {
+  if($text=~/hail/i) {
    quest::say("Nice to meet you, $name! Please have a look at my wares, I have taken great pains to brings only the best that the mountains have to offer. Or perhaps you are here to make an [exchange]?");
   }
   
@@ -18,7 +18,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
- if($race=~/Froglok/) {
+ if($race eq "Froglok") {
   if(plugin::check_handin(\%itemcount, 12084 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);

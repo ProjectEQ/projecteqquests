@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if ($race eq "FROGLOK") {
+    if ($race eq "Froglok") {
       if ($client->HasSkill(0) && $client->HasSkill(1) && $client->HasSkill(2) && $client->HasSkill(3) && $client->HasSkill(36)) {
         if (defined $qglobals{token} && $qglobals{token} == 1) {
           quest::say("And hail to you. Well, let me have a look at you. You sure that you have [really trained]?");
@@ -19,7 +19,7 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/no rest/i) {
-    if ($race eq "FROGLOK") {
+    if ($race eq "Froglok") {
       if ($client->HasSkill(0) && $client->HasSkill(1) && $client->HasSkill(2) && $client->HasSkill(3) && $client->HasSkill(36)) {
         quest::say("You've slept your last easy night, recruit. If you want to stay a common footman, then keep hopping. But if you think you can be elite, if you think you can hack being a commando, then you've come to the [right place]. Welcome to the Guja.");
       }
@@ -33,7 +33,7 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/right place/i) {
-    if ($race eq "FROGLOK") {
+    if ($race eq "Froglok") {
       if ($client->HasSkill(0) && $client->HasSkill(1) && $client->HasSkill(2) && $client->HasSkill(3) && $client->HasSkill(36)) {
         quest::say("First things first. You need weapon practice. The army will take anyone who knows how to hold a pointy stick. A Guja, however, must know every means of combat. Go. Find some fights. Return to me when all your skills with blunt, slashing and piercing weapons have been honed to at least 75. Tell me then that you are [truly ready].");
       }
@@ -92,7 +92,7 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/another option/i) {
-    if ($race eq "FROGLOK" && defined $qglobals{token} && $qglobals{token} == 3) {
+    if ($race eq "Froglok" && defined $qglobals{token} && $qglobals{token} == 3) {
       quest::say("The lizardmen have challenged us, demanding that you represent Gukta. Should you win, war will be averted and many lives spared. Of course, it may mean your [own life].");
     }
   }
@@ -112,7 +112,7 @@ sub EVENT_ITEM {
     quest::setglobal("token", 1, 5, "F");
   }
   if (plugin::check_handin(\%itemcount, 63098 => 1)) { # Notched Gukta Token
-    if ($race eq "FROGLOK" && defined $qglobals{token} && $qglobals{token} == 1) {
+    if ($race eq "Froglok" && defined $qglobals{token} && $qglobals{token} == 1) {
       if ($client->GetSkill(0) >= 165 && $client->GetSkill(1) >= 165 && $client->GetSkill(2) >= 165 && $client->GetSkill(3) >= 165 && $client->GetSkill(36) >= 165) {
         quest::say("Hmm, You've learned much. You know how to survive in a wide variety of environments. You've learned the ways of watery warfare. Yes, I will notch your token. But the [third notch] is something you must earn on your own.");
         quest::exp(10000);
@@ -126,7 +126,7 @@ sub EVENT_ITEM {
     }
   }
   if (plugin::check_handin(\%itemcount, 63103 => 1, 63104 => 1)) { # Twice Notched Guja Token, Lizardman Samples
-    if ($race eq "FROGLOK" && defined $qglobals{token} && $qglobals{token} == 2) {
+    if ($race eq "Froglok" && defined $qglobals{token} && $qglobals{token} == 2) {
       quest::say("I wish I could say I welcome your return. But news has reached us. Apparently you did your job too well. The Lizardmen are even now readying for war. We cannot afford that fight. The council has decided we must . . .accept [another option].");
       quest::exp(10000);
       quest::summonitem(63105); # Thrice Notched Guja Token
@@ -134,7 +134,7 @@ sub EVENT_ITEM {
     }
   }
   if (plugin::check_handin(\%itemcount, 63106 => 1)) { # Tongue of Thugat
-    if ($race eq "FROGLOK" && defined $qglobals{token} && $qglobals{token} == 3) {
+    if ($race eq "Froglok" && defined $qglobals{token} && $qglobals{token} == 3) {
       quest::say("Well done! The Lizardmen have been spurned. They will lick their wounded pride for months. This is a great victory for Gukta, $name. Here, take my own sigil of the Guja. And my shield. They are the best gifts I can think to give. Wear them proudly. You are truly a Guja now.");
       quest::exp(10000);
       quest::summonitem(63107); # Sugal's Sigil

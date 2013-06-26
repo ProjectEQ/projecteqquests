@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 	#Signal from KoS on death event
-	quest::depop();
+	quest::depop_withtimer();
 }
 
 sub EVENT_SAY {

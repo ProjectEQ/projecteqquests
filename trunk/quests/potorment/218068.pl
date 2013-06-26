@@ -5,7 +5,7 @@ quest::settimer(1,600);
 
 sub EVENT_SAY {
 
-if($text=~/Hail/)
+if($text=~/hail/i)
 	{
 	quest::setglobal("pop_pot_saryrn", 1, 5, "F");
 	$client->Message(12,"The Planar Projection seems to flicker in and out of existence. It seems to be impressed and grateful for the death of Saryrn.");

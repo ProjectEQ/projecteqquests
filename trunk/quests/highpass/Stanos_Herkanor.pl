@@ -25,7 +25,7 @@ sub EVENT_SAY {
  }
 }
 sub EVENT_ITEM {
-  if($itemcount {28010} && $itemcount {28011} == 1) {
+  if(plugin::check_handin(\%itemcount, 28010 => 1, 28011 => 1)) {
     quest::say("Excellent! With this document I can. Damnation! Curse my tired old mind, I forgot that I could not read the document. It is written in some obscure code or language. I can't decipher it, but I know someone who can. Seek out one called Eldreth, an Erudite who used to do work for me. I know not where he may be found these days, only that he will not be found in Erudin, as they want his head for some misdeed in the past. Give him the complete parchment, and tell him I sent you. He owes me.");
     quest::ding();
     quest::exp(500);
@@ -42,7 +42,7 @@ sub EVENT_ITEM {
     quest::faction(105,10);
     quest::depop();
  }
-  elsif($itemcount {28013} && $itemcount {7506} && $itemcount {7505} == 1) {
+  if(plugin::check_handin(\%itemcount, 28013 => 1, 7506 => 1, 7505 => 1)) {
     quest::say("Very well done. I leave now to confront Hanns with this evidence. Even so, it will not be easy to regain his trust. That is why I need those daggers, in case all else fails. Bristlebane grant me luck - I can no longer live like a hunted dog. In any case, I am grateful for your aid. Take this wretched blade, I can bear it no longer. I must warn you, I feel it carries Innoruuk's curse; all who are near it learn the meaning of hate. Ironic, isn't it? You went to all that work to redeem yourself for a rapier, yet the true reward came when you redeemed another..Good luck, $name, for much as I, you will need it.");
     quest::ding();
     quest::exp(10000);
@@ -59,7 +59,7 @@ sub EVENT_ITEM {
     quest::faction(105,10);
     quest::depop();
  }
-  elsif($itemcount {18961} == 1) {
+  if(plugin::check_handin(\%itemcount, 18961 => 1)) {
     quest::say("Let me see what you have here. Aha, so that's who.. yes, yes! There is one more thing I need you to do. This document tells me who the originator of the plot really was. His name is General V'ghera, which is interesting, as Anson's men have spotted him in Kithicor recently. He will not be easy to get to, but if you give this box to one of his many aides, the General will HAVE to come to investigate. You see, this box used to contain the tools crafted for the assassination. When he arrives, kill him! I need any documents you find on him - with luck it will be enough evidence to convince Hanns that what I say is true. Bring any documents or dispatch cases you find, along with those blades Vilnius made you work so hard for, and we will make a trade.");
     quest::ding();
     quest::exp(500);

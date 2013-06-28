@@ -1,7 +1,7 @@
 # on death this npc spawns Bristlebane the King of Thieves in the throne room
 #
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(126373,0,0,-127,938,186.125,132);
 }
 

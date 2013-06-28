@@ -12,6 +12,6 @@ sub EVENT_TIMER {
 
 #send signal to Sharalla's Warder(237772) that a famished leopard has died
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(237772,2,1);
 }

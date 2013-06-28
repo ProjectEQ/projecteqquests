@@ -17,7 +17,7 @@ sub EVENT_ITEM {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    quest::setglobal("sirran",1,3,"M20");
    quest::spawn2(71058,0,0,688,1381,-645,192);
 } 

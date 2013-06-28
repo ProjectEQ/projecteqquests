@@ -4,7 +4,7 @@ sub EVENT_HAIL
 	{
   	//quest::ze(15,"The Southern Owlbear leader is dead, putting the Owlbears in the South in a panic!");
 	}
-sub EVENT_DEATH 
+sub EVENT_DEATH_COMPLETE 
 	{
 	# leader is down - send signal after timer.
   	//quest::ze(15,"The Owlbear leader is dead, putting the Owlbears in the South in a panic!");

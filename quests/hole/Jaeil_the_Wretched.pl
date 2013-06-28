@@ -47,7 +47,7 @@ sub EVENT_ITEM {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("chatter");
   quest::clear_proximity();
 }

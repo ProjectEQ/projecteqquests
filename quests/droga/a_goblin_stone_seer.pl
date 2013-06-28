@@ -15,7 +15,7 @@ sub EVENT_COMBAT{
     quest::say("I shall bathe in the blood of you and your fellows!");}
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  quest::emote("'s corpse tries to mumble one last spell before falling over dead.");
  }
 

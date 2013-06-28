@@ -39,7 +39,7 @@ sub EVENT_AGGRO {
   $npc->SetAppearance(0);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("moveloc");
 }
 

@@ -3,7 +3,7 @@ quest::settimer(1,1);
 quest::settimer(2,7200);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 $spawn_mob1 = undef;
 $flag = undef;
 $dagger = undef;

@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn(96322,0,0,1988,-9203,10);
   quest::spawn(96322,0,0,1995,-9219,10);
   quest::spawn(96322,0,0,2013,-9198,10);

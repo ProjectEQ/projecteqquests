@@ -4,7 +4,7 @@
 
 srand;
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $enrag2 = int(rand(100) + 1);
   if ($enrag2 <= 5) {
     $spawnenrag2 = quest::spawn2(111141,0,0,$x,$y,$z,0);

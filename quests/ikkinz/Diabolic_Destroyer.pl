@@ -33,7 +33,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::depopall(294137);
   quest::spawn2(294136,0,0,442,-141,11,192);
 }

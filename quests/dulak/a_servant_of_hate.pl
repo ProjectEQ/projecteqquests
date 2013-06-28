@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::emote("lunges at you with reckless abandon.");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::emote("'s corpse utters one final curse before expiring.");
  }
 

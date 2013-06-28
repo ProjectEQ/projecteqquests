@@ -26,7 +26,7 @@
 #
 ############################################# 
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     if(!defined $qglobals{"Rockhopper_Sambata"}) {
         quest::spawn_condition($zonesn, 2, 1);
         quest::spawn_condition($zonesn, 1, 0);

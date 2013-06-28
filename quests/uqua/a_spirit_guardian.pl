@@ -36,7 +36,7 @@ foreach $player (@player_list) {
   quest::depop_withtimer();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $raid = $entity_list->GetRaidByClient($client);
       if ($raid) {
         for ($count = 0; $count < $raid->RaidCount(); $count++) {

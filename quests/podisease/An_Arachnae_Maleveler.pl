@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
      quest::settimer("depop",600);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
      quest::stoptimer("depop");
 }
 

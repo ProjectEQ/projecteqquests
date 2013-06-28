@@ -11,7 +11,7 @@ sub EVENT_TIMER {
 
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
         quest::delglobal("vine_ring_final");
         quest::delglobal("mud_ring_final");
         quest::delglobal("stone_ring_final");

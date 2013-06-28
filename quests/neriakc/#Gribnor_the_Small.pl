@@ -9,6 +9,6 @@
 # Uncharmable, Unmezzable, mitigates slow (mostly successful), enrages, summons.
 # KoS to all except Trolls and Ogres, it seems
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::spawn2(42115,0,0,$x,$y,$z,$h);
 }

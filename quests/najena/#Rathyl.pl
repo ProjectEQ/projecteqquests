@@ -1,7 +1,7 @@
 # Spawns Rathyl's_Incarnate on Rathyl's death
 # Angelox
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
  my $a = 44104;
  my $x = $npc->GetX();

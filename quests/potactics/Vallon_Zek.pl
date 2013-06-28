@@ -44,7 +44,7 @@ sub EVENT_HP {
 }
 
 # tell trigger to stop timer and reset counter
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
         my $variance = int(rand(720));
         my $spawntime = 6480 + $variance;
         quest::setglobal("vallonzek",1,3,"M$spawntime");

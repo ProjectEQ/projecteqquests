@@ -8,6 +8,6 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(294141,2,0);
 }

@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::say("You come any nearer to my boat and you'll be in need of some scrubbin' yerself");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::emote("clutches his chest and collapses to the ground.");
  }
 

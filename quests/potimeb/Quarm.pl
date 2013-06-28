@@ -108,7 +108,7 @@ sub EVENT_HP {
 	} 
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::spawn2(223214,0,0,-656.2,-1096.5,-2.7,60);
 	quest::depop(223999);#phase5_flag
 	quest::spawn2(223991, 0, 0, -186, -1114, -2, 192);#phase6_flag

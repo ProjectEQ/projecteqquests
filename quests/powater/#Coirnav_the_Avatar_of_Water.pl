@@ -6,6 +6,6 @@ sub EVENT_SIGNAL {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(216107,5,0);
 }

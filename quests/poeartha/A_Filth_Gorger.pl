@@ -16,7 +16,7 @@ quest::depop();
 
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 quest::signalwith(218090,2,1);
 

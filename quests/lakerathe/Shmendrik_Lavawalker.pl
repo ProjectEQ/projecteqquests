@@ -1,6 +1,6 @@
 # EPIC CLERIC
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   # he will be killed probably by Natasha Whitewater.
   # eqcastersrealm say that the player can also kill him, not important as long as he dies
   quest::signalwith(51138,599,2000);

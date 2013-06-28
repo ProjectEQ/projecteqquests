@@ -81,7 +81,7 @@ sub EVENT_TIMER {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("engaged");
 	quest::signal(126375,10);
 	quest::signal(126376,10);

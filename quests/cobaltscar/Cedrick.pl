@@ -10,7 +10,7 @@ sub EVENT_SAY {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("You have proven to be successful. Go now and continue your journey.");
  }
 

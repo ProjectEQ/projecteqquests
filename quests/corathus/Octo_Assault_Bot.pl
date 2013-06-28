@@ -209,7 +209,7 @@ sub EVENT_TIMER
 	}
 }
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
 	quest::spawn2(365173, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
 	quest::depopall(365026);

@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $r_n = int(rand(100));
 
   if($r_n < 75) {

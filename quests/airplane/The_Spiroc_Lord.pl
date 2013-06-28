@@ -1,4 +1,4 @@
-sub EVENT_DEATH_COMPLETE {
+sub EVENT_DEATH_COMPLETE_COMPLETE {
   $sirran= undef;
   if(!defined($qglobals{sirran}) && !$entity_list->GetMobByNpcTypeID(71009)) {
     quest::setglobal("sirran",5,3,"M20");

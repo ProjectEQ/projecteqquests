@@ -8,7 +8,7 @@ sub EVENT_AGGRO {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	my $ran = int(rand(2));
 	if($ran == 0) {
 		quest::emote("explodes into a fine mist of blood and plasma");

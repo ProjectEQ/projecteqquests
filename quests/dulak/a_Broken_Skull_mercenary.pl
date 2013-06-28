@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::say("The likes of you offer no threat to the might of Broken Skull!");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::say("'s corpse coughs and sputters as he collapses.");
  }
 

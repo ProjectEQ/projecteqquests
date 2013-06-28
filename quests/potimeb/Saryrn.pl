@@ -49,7 +49,7 @@ sub EVENT_HP {
 }
  }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
         quest::signalwith(223157,12012,0);
         quest::say("My minions. . . my power. . . lost. Impossible. . .");
         quest::stoptimer("saryrn");

@@ -1,4 +1,4 @@
-sub EVENT_DEATH { 
+sub EVENT_DEATH_COMPLETE { 
      quest::depopall(228122);
      quest::signalwith(228114,333,0);
      quest::signalwith(228115,333,1);

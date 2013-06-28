@@ -2,7 +2,7 @@
 #Quests covered in this file:
 #Shaman Skull Quest 6
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
    quest::shout("the river of Xinth...");
 }

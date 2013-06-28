@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     #depop the untargetable Tylis
     quest::depop_withtimer(207081);
 	#spawn a targetable Tylis

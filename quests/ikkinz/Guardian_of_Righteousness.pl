@@ -56,7 +56,7 @@ if ($timer == 2) {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::depopall(294578);
   quest::spawn2(294344,0,0,309,-595,2,154);
   quest::spawn2(294344,0,0,355,-644,2,181);

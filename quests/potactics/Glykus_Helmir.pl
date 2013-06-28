@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
      quest::spawn2(214122,0,0,$x+10,$y+10,$z,$h);  #Enraged War Boar
      quest::spawn2(214122,0,0,$x+10,$y-10,$z,$h);
      quest::spawn2(214122,0,0,$x-10,$y+10,$z,$h);

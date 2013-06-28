@@ -1,7 +1,7 @@
 # respawn named mob on #a_lava_etched_doombringer (227104) death
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227104;#a_lava_etched_doombringer
  my $x = $npc->GetX();

@@ -26,7 +26,7 @@ sub EVENT_HP {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294579,0,0,-126,-919,-3,254);
   quest::spawn2(294579,0,0,-124,-855,-3,130);
   quest::spawn2(294579,0,0,-187,-853,-3,127);

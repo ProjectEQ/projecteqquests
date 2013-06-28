@@ -2,7 +2,7 @@
 #written:wizardanim
 #9/13/07
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
 quest::signalwith(78100,15,10);
 }

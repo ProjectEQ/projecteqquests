@@ -47,6 +47,6 @@ sub EVENT_SIGNAL {
 }
  }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    quest::stoptimer("heal");
 }

@@ -9,7 +9,7 @@ sub EVENT_SIGNAL {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $a = quest::ChooseRandom(72105,72105,72105,0);
   my $x = $npc->GetX();
   my $y = $npc->GetY();

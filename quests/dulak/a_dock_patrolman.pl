@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::say("The Broken Skull Clan is not to be underestimated!");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::say("Your victory is meaningless");
  }
 

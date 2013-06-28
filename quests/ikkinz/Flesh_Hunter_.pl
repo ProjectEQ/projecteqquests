@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(294142,1,0);
   $group = $entity_list->GetGroupByClient($client);
       if ($group) {

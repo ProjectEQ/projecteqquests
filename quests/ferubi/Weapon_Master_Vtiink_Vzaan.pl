@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
   quest::spawn2(284096,0,0,1400,-565,106,227);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(284074,1,1);
 }
 

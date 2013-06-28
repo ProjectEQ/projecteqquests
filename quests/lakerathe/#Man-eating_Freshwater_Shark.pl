@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
   quest::setnexthpevent(75);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("SharkDepop");
 }
 

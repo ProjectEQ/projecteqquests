@@ -11,7 +11,7 @@ sub EVENT_AGGRO {
   quest::say("We are the protectors and guardians of this domain, death is all you will find here.");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("Even now Coirnav awaits to deal swift death to you. Flee, weaklings.");
   quest::signalwith(216107,1,0);
 }

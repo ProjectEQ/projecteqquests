@@ -47,7 +47,7 @@ quest::signalwith(209033,1,1);
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 quest::spawn2(202367,0,0,$x,$y,$z,$h);
 quest::spawn2(209108,0,0,-469,-1754,2351.2,197.6); 
 quest::stoptimer(1);

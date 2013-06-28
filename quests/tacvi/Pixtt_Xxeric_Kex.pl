@@ -43,7 +43,7 @@ sub EVENT_HP {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::ze(15,"Swinging her weapon one last time, the massive entity falls to her side with a thud. While she was a creature consumed with destruction, her death is still graceful. As her bloodstained braids come to a rest on the floor and her muscles relax, you can't help but wonder what could make such a magnificent creature so deadly.");
   $entity_list->FindDoor(2)->SetLockPick(0);  #unlocks door to room
   $entity_list->FindDoor(3)->SetLockPick(0);  #unlocks door to room

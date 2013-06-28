@@ -41,7 +41,7 @@ sub EVENT_TIMER {
 		}
 	}
 }
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::depopall(294608);
   quest::spawn2(294607,0,0,309,-595,2,154);
   quest::spawn2(294607,0,0,355,-644,2,181);

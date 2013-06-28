@@ -43,7 +43,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("I yield Chalex, you are truly a worthy opponent.");
   quest::emote("falls to the ground. Images of the dead whip around the air as Krignok returns to the spectral world taking any of his remaining minions with him."); #Text modified as quest::echo not working
   quest::signal(50332,3);   ##signal troll marauders to depop

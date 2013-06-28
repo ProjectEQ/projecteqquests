@@ -4,7 +4,7 @@
 # Created by Gonner
 
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(154152,8,10); #sends signal to arcanist V1
 	}
 	

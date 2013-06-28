@@ -3,7 +3,7 @@
 #zone - Frozenshadow
 #Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  quest::delglobal("Tserr");
  quest::setglobal("Tserr",2,3,"F");
  $Tserr=undef;

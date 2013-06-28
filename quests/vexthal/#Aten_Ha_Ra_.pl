@@ -11,7 +11,7 @@ sub EVENT_TIMER {
 
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 my $variance = int(rand(720));
 my $spawntime = 6480 + $variance;
 quest::setglobal("aten",1,3,"M$spawntime");

@@ -2,7 +2,7 @@ sub EVENT_SPAWN {
 quest::say("Fools!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 #VILLAGER ROOM 1
 

@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
     quest::setnexthpevent(76);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::signalwith(223190,14020,0);
     quest::say("You can extinguish the flame of my existence, but you are nothing compared to the might of Fennin Ro!");
 }

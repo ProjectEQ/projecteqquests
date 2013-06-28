@@ -2,7 +2,7 @@
 #npc - an_aqua_goblin_mariner (trigger for #Bilge_Farfathom 70059)
 #zone - Dagnors Cauldron
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  #these are not PEQ IDs
  my $a=70059; #Bilge

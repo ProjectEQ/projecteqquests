@@ -6,7 +6,7 @@ sub EVENT_ATTACK{
     quest::say("I will gladly choose death as my release");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::emote("'s corpse falls back, its legs jerking spastically.");
  }
 

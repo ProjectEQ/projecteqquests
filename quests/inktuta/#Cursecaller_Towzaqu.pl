@@ -17,6 +17,6 @@ sub SUMMON_CURSEBEARER {
   quest::spawn2($cursebearer,0,0,$x+15,$y+15,$z,$h);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::depopall($cursebearer);
 }

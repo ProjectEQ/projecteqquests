@@ -3,7 +3,7 @@ quest::signalwith(209038,1,1);
 quest::settimer(1,31);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 quest::spawn2(209101,0,0,$x,$y,$z,$h);
 quest::signalwith(209038,2,1);
 quest::stoptimer(1);

@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(215455, 4);#Signal to #Mist_Trigger
 
 	quest::spawn2(215478, 0, 0, $x-5, $y, $z);

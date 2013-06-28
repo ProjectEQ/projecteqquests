@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 $nanzata = $entity_list->GetMobByNpcTypeID(128090);
 $ventani = $entity_list->GetMobByNpcTypeID(128091);
 $hraashna = $entity_list->GetMobByNpcTypeID(128093);

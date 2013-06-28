@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
   $werewolf = 0;
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $werewolf++;
   my $bigwolf = $entity_list->GetMobByNpcTypeID(12184);
   if (($werewolf == 4) && !$bigwolf) { #All werewolves dead

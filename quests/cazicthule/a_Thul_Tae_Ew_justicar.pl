@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    my $a = 48215;
     
     my $x = $npc->GetX();

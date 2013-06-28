@@ -12,7 +12,7 @@ sub EVENT_SIGNAL {
 } 
  }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
         quest::signalwith(223157,12010,0);
         quest::say("Foolish mortals, you know not what you do. Continue on this path and you shall lead us all to destruction!");
         quest::stoptimer("tzek");

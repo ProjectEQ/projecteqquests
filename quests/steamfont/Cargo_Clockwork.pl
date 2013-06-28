@@ -52,7 +52,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("CargoTimer");
   $delivery = 0;
   quest::signal($bandit1id,0); #Hector

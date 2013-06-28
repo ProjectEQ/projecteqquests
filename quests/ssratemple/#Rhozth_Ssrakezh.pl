@@ -6,6 +6,6 @@ sub EVENT_SPAWN {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(162279,1,0); #cursed_ten
 }

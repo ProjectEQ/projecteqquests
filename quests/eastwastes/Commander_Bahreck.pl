@@ -10,7 +10,7 @@ quest::spawn2(116553, 0,0, ($x - 10), $y, $z, $h);
 
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 quest::signal(116119, 0);
 

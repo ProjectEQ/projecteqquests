@@ -41,7 +41,7 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   if($spawn == 1) {
     quest::spawn2(89181,0,0,-693,-2103,-140.62,0);
     $spawn = 0;

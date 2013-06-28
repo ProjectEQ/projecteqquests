@@ -12,7 +12,7 @@ my $mob2;
 my $mobnpc1;
 my $mobnpc2;
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $x = $npc->GetX();
   $y = $npc->GetY();
   $z = $npc->GetZ();

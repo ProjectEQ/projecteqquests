@@ -99,7 +99,7 @@ sub EVENT_WAYPOINT_ARRIVE {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer(1);
   $goblin = 0;
   $stage = 0;

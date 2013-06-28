@@ -24,7 +24,7 @@ sub EVENT_COMBAT
 	}
 }
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
 	quest::shout("This wasn't... what I was promised...");
 	quest::stoptimer("dominate");

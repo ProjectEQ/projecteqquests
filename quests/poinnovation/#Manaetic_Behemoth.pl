@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
   quest::settimer(4,1);
 }
 
-sub EVENT_DEATH    {
+sub EVENT_DEATH_COMPLETE    {
   #signal to Giwin to give flags.
   quest::signalwith(206038,1,1);
 }

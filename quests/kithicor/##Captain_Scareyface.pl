@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 	quest::pathto(-782,-1319,-43);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::say("Church..the AI..its gone");
 	quest::signalwith(20260,2);
 }

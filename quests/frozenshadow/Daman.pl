@@ -3,7 +3,7 @@
 
 srand;
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $relative = int(rand(100) + 1);
   if ($relative <= 5) {
     $spawnenraged = quest::spawn2(111143,0,0,$x,$y,$z,0);

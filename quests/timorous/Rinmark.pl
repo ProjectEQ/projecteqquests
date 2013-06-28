@@ -15,7 +15,7 @@ sub EVENT_TIMER {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("Your ability is strong, may you serve Cazic Thule with all your might.");
 }
 

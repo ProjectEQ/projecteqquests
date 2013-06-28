@@ -2,7 +2,7 @@ sub EVENT_SPAWN {
 	quest::spawn_condition($zonesn,3,0);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
        	quest::spawn2(217076,0,0,-1499,-935,-182.8,126.0);
        	quest::spawn2(217087,0,0,-855.2,-1652.9,-211.5,61.6);
 	quest::spawn2(217087,0,0,-695.3,-1432.5,-150.5,37);

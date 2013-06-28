@@ -8,6 +8,6 @@ sub EVENT_SPAWN {
   quest::signalwith(237743,2,1);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(237756, 0, 0, $x, $y, $z, $h); #spawn a gray chromatic bonewalker
 }

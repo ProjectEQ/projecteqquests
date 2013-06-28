@@ -7,7 +7,7 @@ sub EVENT_TIMER {
 	quest::depop();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(284084,0,0,1447,-586,106,0);
 }
 

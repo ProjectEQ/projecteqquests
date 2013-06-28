@@ -2,7 +2,7 @@
 # 90% of the time
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  #quest::say("I'm dead");
  quest::delglobal("krak");
  quest::setglobal("krak",2,3,"F");

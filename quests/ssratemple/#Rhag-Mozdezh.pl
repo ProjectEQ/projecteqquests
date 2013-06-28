@@ -1,7 +1,7 @@
 # second part of the arch lich rhag`zadune cycle
 #
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(162177,0,0,420,-144,270.1,0); # spawn rhag`mozdezh
 }
 

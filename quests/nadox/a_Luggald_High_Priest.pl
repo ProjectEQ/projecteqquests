@@ -50,7 +50,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("ceremony");
 }
 #EndFile nadox\a_Luggald_High_Priest.pl (227073)

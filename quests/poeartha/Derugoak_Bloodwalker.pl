@@ -52,7 +52,7 @@ sub EVENT_HP {
 
 
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 quest::signalwith(218094,1,1);
 

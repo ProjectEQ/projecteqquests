@@ -1,7 +1,7 @@
 # Khati Sha Event
 # Created by Gonner
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(154130,1,10);
 }
 

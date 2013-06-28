@@ -21,7 +21,7 @@ sub EVENT_SAY {
    }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    quest::say("You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh.");
 }
 

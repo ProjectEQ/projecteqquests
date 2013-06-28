@@ -2,7 +2,7 @@
 #
 #Angelox
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $gnoll = int(rand(100) + 1);
   if ($gnoll <= 10) {
     quest::spawn2(111158,0,0,$x,$y,$z,0);

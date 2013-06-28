@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 	$counter = 0;
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(154130,4,10); #Spawn raid Version of Spiritual Arcanist Ends Event
 }
 

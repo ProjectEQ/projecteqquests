@@ -1,7 +1,7 @@
 # respawn named mob on a #High_Priest_Grumsalot (227114) death
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227114;#High_Priest_Grumsalot
  my $x = $npc->GetX();

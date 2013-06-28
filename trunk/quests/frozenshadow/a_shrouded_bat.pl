@@ -1,7 +1,7 @@
 # Spawns an_enraged_vampire (111173)
 # Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $a = 111173;
  my $x = $npc->GetX();
  my $y = $npc->GetY();

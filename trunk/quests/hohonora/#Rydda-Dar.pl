@@ -8,7 +8,7 @@ quest::depop();
 }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 quest::spawn2(218068,0,0,$x,$y,$z,$h);
 quest::emote("'s corpse groans in agony...");
 }

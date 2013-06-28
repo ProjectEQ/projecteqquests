@@ -1,6 +1,6 @@
 #This script is intended to pop 8 Arachnae Malevelers upon Aramin's death.
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $x = $npc->GetX();
   my $y = $npc->GetY();
   my $z = $npc->GetZ();

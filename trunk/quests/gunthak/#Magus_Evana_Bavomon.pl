@@ -5,7 +5,7 @@
  #   quest::say(" ");
 #}
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::say("Your naivete is astounding, you will never escape with your lives.");
  }
 

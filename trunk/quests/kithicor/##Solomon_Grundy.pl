@@ -10,7 +10,7 @@ sub EVENT_AGGRO {
 	quest::shout("Solomon Grundy, born on a Monday!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::emote("falls to the ground with a thump..and a couple twitches for good measure");
 	quest::signalwith(20260,4);
 }

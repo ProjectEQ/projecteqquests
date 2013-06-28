@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   #send signal to #goblin_trigger(237798) that a boss has died
   quest::signalwith(237798,1,0);
   my $instid = quest::GetInstanceID("mirb",50);

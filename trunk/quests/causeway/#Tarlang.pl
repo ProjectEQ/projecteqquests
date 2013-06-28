@@ -14,7 +14,7 @@ sub EVENT_TIMER {
   quest::depop();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::emote("continues to try to fight, not realizing that it is dead.");
   quest::stoptimer("TarlangDepop");
 }

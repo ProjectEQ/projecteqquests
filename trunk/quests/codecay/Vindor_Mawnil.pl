@@ -11,7 +11,7 @@ if($timer == 4)
 quest::depop();
 }
 }
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 quest::signal(200041,1);
 }

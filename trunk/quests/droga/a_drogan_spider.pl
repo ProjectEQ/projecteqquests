@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::emote("quickly skitters towards its prey.");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::emote("'s corpse explodes in a large spray of ichor as it is squashed for good..");
  }
 

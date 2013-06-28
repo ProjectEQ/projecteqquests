@@ -23,7 +23,7 @@ sub EVENT_HP {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    if(defined $qglobals{vampyre_vahshir_combat}){
 		quest::unique_spawn(172187,0,0,$x,$y,$z,$h);
    }

@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 	quest::pathto(-782,-1319,-43);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::say("Haha! Silly mortals! You cannot kill me! I'm immor...");
 	quest::signalwith(20260,5);
 }

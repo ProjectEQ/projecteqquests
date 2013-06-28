@@ -101,10 +101,10 @@ sub EVENT_ATTACK
 
 }
 
-######## EVENT_DEATH AREA ##################
+######## EVENT_DEATH_COMPLETE AREA ##################
 ### Called when the NPC is killed
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
 
 

@@ -10,6 +10,6 @@ if($timer == 37) {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::signalwith(215455,3,1);
 }

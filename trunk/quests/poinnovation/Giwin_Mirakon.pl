@@ -98,7 +98,7 @@ if($timer == 8)
 	}
 }
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 	{
 	$tactics_flag=undef;
 	}

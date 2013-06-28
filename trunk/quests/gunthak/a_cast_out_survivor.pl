@@ -5,7 +5,7 @@
  #   quest::say("I always enjoy getting a good kill in before breakfast.");
 #}
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::emote("'s corpse appears amazed at this turn of events.");
  }
 

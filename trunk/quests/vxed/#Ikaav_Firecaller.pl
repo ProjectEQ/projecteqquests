@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $instid = quest::GetInstanceID("vxed",0);
   my $newvalue = $qglobals{$instid.'_vxed_status'};
   $newvalue++;

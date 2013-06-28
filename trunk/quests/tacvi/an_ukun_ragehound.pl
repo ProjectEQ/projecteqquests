@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   if($qglobals{$instid.'_ragehound'} == 0) {
      quest::spawn2(298041,0,0,$x,$y,$z,$h);
      quest::targlobal($instid.'_ragehound',1,"H6",0,0,298);

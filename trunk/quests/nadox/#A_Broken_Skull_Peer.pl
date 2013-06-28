@@ -1,7 +1,7 @@
 # #A_Broken_Skull_Peer
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  quest::delglobal("peer");
  quest::setglobal("peer",2,3,"F");
  $peer=undef;

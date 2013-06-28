@@ -39,7 +39,7 @@ sub EVENT_TIMER {
 }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer(9);
 	quest::stoptimer(10);
 	quest::signalwith(154130,1,10);

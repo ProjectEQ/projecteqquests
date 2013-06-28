@@ -1,7 +1,7 @@
 # respawn named mob on a #First_Mate_Bresanev (227111) death
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227111;#First_Mate_Bresanev
  my $x = $npc->GetX();

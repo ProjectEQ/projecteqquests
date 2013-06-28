@@ -15,7 +15,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $check_wail = $entity_list->GetMobByNpcTypeID(176105);
   if ($check_wail) {
     quest::signalwith(176087,99,0);

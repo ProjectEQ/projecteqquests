@@ -2,6 +2,6 @@
 #zone - Gunthak
 #by Angelox
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::say("For killing me, you can only pray they kill you quickly.");
  }

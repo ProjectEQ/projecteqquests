@@ -31,7 +31,7 @@ sub EVENT_TIMER {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::emote("An eerie silence settles onto the forest as Deyid the Twisted slumps over, defeated");
     quest::signalwith(204047, 5, 1);    # Send signal # 5 to Seilaen 1 second after death
     quest::stoptimer(1);     # Prevent treants from respawning as targetable if killed quickly

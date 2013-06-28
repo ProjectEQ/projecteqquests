@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::say("Your attack on me is an attack on Lady Dirulia! You will not make it far.");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::say("My death should have come at sea!");
  }
 

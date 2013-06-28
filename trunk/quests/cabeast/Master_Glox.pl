@@ -6,7 +6,7 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
  quest::say("You have come into your own. Spread the pain you have shown me to all of your foes.");
 }
 

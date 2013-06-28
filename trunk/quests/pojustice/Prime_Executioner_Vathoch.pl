@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
    quest::signalwith(201075,1,2);   
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    #Tell the agents I'm dead (unlock return)
    quest::signalwith(201075,11,2);
    

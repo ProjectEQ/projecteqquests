@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::unique_spawn(51156,0,0,1005,3000,-72,0); #Worboli
 }
 #EndFile: lakerathe\#Ronaiar_Skullmoore.pl (51155)

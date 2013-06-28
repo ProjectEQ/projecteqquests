@@ -42,7 +42,7 @@ sub EVENT_TIMER {
     quest::spawn2(298045,0,0,217,-589,-7,194);  
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::ze(15,"Impossible!");  #need live text
   $entity_list->FindDoor(17)->SetLockPick(0);  #unlocks door to room
   $entity_list->FindDoor(22)->SetLockPick(0);  #unlocks door to room

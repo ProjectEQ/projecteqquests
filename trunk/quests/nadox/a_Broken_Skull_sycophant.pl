@@ -2,7 +2,7 @@
 # 95% of the time
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227102;#a_Broken_Skull_Peer
  my $x = $npc->GetX();

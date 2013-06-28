@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(223154,11040,0);
   quest::emote("loses its semi-rigid consistency and deflates. The burbling noise and fetid scent are nauseating.");
 }

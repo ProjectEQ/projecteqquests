@@ -6,7 +6,7 @@ sub EVENT_SIGNAL
 	}
 }
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 
 {
 	my $spawn = int(rand(100));
@@ -18,4 +18,4 @@ sub EVENT_DEATH
 
 
 #Submitted by: Jim Mills
-#add on sub EVENT_DEATH for berserker epic spawn, 33% chance on death.
+#add on sub EVENT_DEATH_COMPLETE for berserker epic spawn, 33% chance on death.

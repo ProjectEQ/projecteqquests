@@ -43,7 +43,7 @@ sub EVENT_SIGNAL {
   $new_guard->AddToHateList($hate_target->CastToClient(), 1);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(162260,1,0); #EmpCycle
 }
 

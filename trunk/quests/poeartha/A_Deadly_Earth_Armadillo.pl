@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $guess = quest::ChooseRandom(1,2,3);
   if ($guess == 1) {
     quest::spawn2(218054,0,0,$x,$y,$z,$h);

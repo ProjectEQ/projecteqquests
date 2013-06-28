@@ -7,7 +7,7 @@ sub EVENT_TIMER {
         quest::shout("Ah, finally some people interested in the Haunted Hunt! I'm your first target, and probably your last too! Hahaha!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::shout("GAH! I've been bested! No matter, you will not defeat the next!");
 	quest::spawn2(63100,0,0,206,850,3.1,140.5);
         quest::stoptimer(1);

@@ -3,7 +3,7 @@ $bossman=1;
 quest::signalwith(211081,9,1);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 {
 quest::signalwith(211081,8,0);

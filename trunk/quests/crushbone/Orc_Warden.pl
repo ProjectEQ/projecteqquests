@@ -25,7 +25,7 @@ sub EVENT_ATTACK
 }
 
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
   quest::say("You shall have all the Crushbone orc legions on your tail for my death!");
 }

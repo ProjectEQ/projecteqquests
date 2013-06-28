@@ -9,7 +9,7 @@ if(!defined($qglobals{asentkill})) {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   if(($class eq "Bard") && ($qglobals{asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
     }

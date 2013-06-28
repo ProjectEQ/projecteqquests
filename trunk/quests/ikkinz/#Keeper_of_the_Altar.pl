@@ -64,7 +64,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294621,0,0,680,59,-73,78);
   quest::spawn2(294621,0,0,937,14,-72,200);
   quest::spawn2(294621,0,0,908,111,-73,150); 

@@ -4,7 +4,7 @@
 #Angelox
 # Updated by Kilelen
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
 	my $random_result = int(rand(100));
 	my $a=14139; #npc - Quillmane
 	# If Quillmane is spawnable, and we get the roll right, spawn him and make more copies unspawnable.

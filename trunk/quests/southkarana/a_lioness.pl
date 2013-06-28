@@ -3,7 +3,7 @@
 #zone - SouthKarana
 #Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a=14139; #npc - Quillmane
  if(($random_result<5) && ($quill==2)){

@@ -10,6 +10,6 @@ sub EVENT_COMBAT {
 	quest::emote("grins through missing lips and attack!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::say("Destroy my master and end my suffering");
 }

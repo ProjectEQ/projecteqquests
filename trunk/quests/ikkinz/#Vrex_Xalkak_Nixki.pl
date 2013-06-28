@@ -23,7 +23,7 @@ sub EVENT_TIMER {
   quest::settimer(1,6);
   }
 }
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294596,0,0,519,-247,-50,35);
   quest::spawn2(294596,0,0,521,-156,-50,85);
   quest::spawn2(294596,0,0,556,-266,-50,243);

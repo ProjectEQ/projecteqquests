@@ -1,5 +1,5 @@
 #Spawn Tallon Zek
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
         quest::signalwith(214123, 214057, 0);
 }
 

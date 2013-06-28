@@ -1,7 +1,7 @@
 # respawn named mob on Karsonizzak_Bloodblade (227115) death
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227115; #Karsonizzak_Bloodblade
  my $x = $npc->GetX();

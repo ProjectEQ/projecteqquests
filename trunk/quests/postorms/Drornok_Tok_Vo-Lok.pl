@@ -63,7 +63,7 @@ sub STOPFIGHT {
   quest::depop(); #Triggered doesn't need a repop timer
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer(1);
   quest::stoptimer(2);
   quest::depopall($frogid);

@@ -15,7 +15,7 @@ sub EVENT_AGGRO {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	my $mgender = $npc->GetBaseGender();
 	my $mclass = $npc->GetClass();
 	if(($mclass==1) && ($mgender==0)){

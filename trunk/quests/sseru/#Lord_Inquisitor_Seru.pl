@@ -6,7 +6,7 @@ quest::settimer(1,3000);
 
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 quest::stoptimer(1);
 

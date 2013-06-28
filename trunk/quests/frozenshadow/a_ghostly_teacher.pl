@@ -1,4 +1,4 @@
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
    my $librarian = int(rand(100) + 1);
    if ($librarian <= 10){
       $angrylibr = quest::spawn2(111161,0,0,$x,$y,$z,0);

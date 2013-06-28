@@ -6,7 +6,7 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signal(6186,0);
   quest::signal(6187,0);
   quest::stoptimer("depop");

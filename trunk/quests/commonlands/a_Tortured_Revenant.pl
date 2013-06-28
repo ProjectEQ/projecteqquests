@@ -1,7 +1,7 @@
 # misc. quest dialogue for spell: divine might
 #
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(21011,66,0);
 }
 

@@ -31,6 +31,6 @@ sub EVENT_TIMER {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("kill_me_or_lose");
 }

@@ -12,6 +12,6 @@ sub EVENT_AGGRO {
 	quest::say("$race have no place in our realm!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::say("My comrades will avenge my death.");
 }

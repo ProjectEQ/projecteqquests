@@ -29,7 +29,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("This is but a temporary setback. I will return.");
   quest::depop(296066);
   quest::spawn2(296071,0,0,-55, -653, -127, $h); #Jomica_the_Unforgiven

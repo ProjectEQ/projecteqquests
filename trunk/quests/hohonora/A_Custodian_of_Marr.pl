@@ -3,7 +3,7 @@ quest::say("Fool!");
 quest::settimer(1,7200);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 quest::spawn2(211074,0,0,$x,$y,$z,$h);
 }
 

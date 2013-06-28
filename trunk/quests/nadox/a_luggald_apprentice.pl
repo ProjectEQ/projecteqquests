@@ -9,7 +9,7 @@ sub EVENT_ATTACK {
   quest::signalwith(227073,1,0); #Signal priest about attack
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(227073,2,0); #Signal priest about death
 }
 #EndFile nadox\a_luggald_apprentice.pl (227082)

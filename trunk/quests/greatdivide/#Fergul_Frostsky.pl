@@ -10,7 +10,7 @@ sub EVENT_WAYPOINT_ARRIVE {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signal(118208);
   quest::signal(118040);
 }	

@@ -10,7 +10,7 @@ sub EVENT_TIMER {
   quest::depop();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(164098,201,0);
   quest::stoptimer("countdown");
 }

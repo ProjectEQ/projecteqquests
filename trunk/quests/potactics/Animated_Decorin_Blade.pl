@@ -12,7 +12,7 @@ sub EVENT_AGGRO {
   quest::stoptimer("depop");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("depop");
   if($entity_list->GetMobByNpcTypeID(214054)) {
     quest::spawn2(214119,0,0,$x,$y,$z,$h);

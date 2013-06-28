@@ -1,6 +1,6 @@
 #Nrinda_of_Ice
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(216107,2,0); #Signal coirnav_controller we died
 }
 

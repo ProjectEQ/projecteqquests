@@ -11,7 +11,7 @@ sub EVENT_TIMER {
   quest::depop();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer(1);
 }
 #EndFile: warslikswood\79126.pl (Raving Goblinmaster - KOS)

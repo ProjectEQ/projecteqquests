@@ -10,7 +10,7 @@ sub EVENT_AGGRO {
   quest::shout("What?! How in the name of Trushar did you get to this cursed place? From the smug look on your face I can only imagine you think you can destroy us . . . We are already doomed, knaves!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(296030,0,0,-274,-531,-52,125);
   quest::spawn2(296033,0,0,-557,-237,-2,63);
   quest::spawn2(296035,0,0,-406,-552,-77,62);

@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::emote("scowls. 'I don't recall your kind being welcome here. Now get out!'");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::say("'s corpse coughs and sputters as he collapses.");
  }
 

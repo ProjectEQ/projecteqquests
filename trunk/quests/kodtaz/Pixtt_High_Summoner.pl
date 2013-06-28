@@ -19,6 +19,6 @@ if ($timer == 1 && $named_up == 0)  {
    quest::stoptimer(1);
 }
 }
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::spawn2(293211,0,0,$x,$y,$z,$h);
 }

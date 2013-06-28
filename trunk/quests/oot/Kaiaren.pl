@@ -55,7 +55,7 @@ sub EVENT_ITEM {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   # Monk Epic 2.0
   quest::say("You have done very well.. You must now travel to the heart of the discord-filled lands and obtain a Globe of Discordant Energy. It is only after the menace has been stopped can we begin to live anew. If you succeed, return to Vortix and hand him the globe. He will know what to do. Hurry for time is of the essence!");
 }

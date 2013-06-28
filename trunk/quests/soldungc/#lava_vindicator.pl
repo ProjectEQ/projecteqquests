@@ -16,6 +16,6 @@ if ($elemrest || $furiousmagma || $inflamedchamp || $protectorfire) {
    }
     }
    
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(278125,90,0);
   }

@@ -25,7 +25,7 @@ sub EVENT_NPC_SLAY
   plugin::defaultSlay();
 }
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
   plugin::defaultDeath();
 }

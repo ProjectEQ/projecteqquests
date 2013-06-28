@@ -7,7 +7,7 @@ sub EVENT_TIMER {
     $npc->GMMove(243,-501,3,242);
   }
 }
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 $raid = $entity_list->GetRaidByClient($client);
       if ($raid) {
         for ($count = 0; $count < $raid->RaidCount(); $count++) {

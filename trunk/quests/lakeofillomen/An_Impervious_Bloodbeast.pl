@@ -13,6 +13,6 @@
 ## From what i am reading, no less than 10-12k hp.
 ## Max melee hit 150 -- damage shield buff -- DOES NOT MOVE AT ALL.
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signal(85091,0);
 }

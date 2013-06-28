@@ -21,6 +21,6 @@ sub EVENT_TIMER {
     quest::depop_withtimer();
   }
 }
-#sub EVENT_DEATH {
+#sub EVENT_DEATH_COMPLETE {
 #  quest::signal(113553,0);
 #}

@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 	quest::spawn2(200043,0,0,$x,($y+10),$z,$h);
 }
 
-sub EVENT_DEATH { 
+sub EVENT_DEATH_COMPLETE { 
 	quest::spawn2(200052,0,0,-200,0,-274,0);
 }
 

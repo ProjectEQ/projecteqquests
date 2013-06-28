@@ -17,7 +17,7 @@ sub EVENT_AGGRO {
   quest::emote("$AggroText{$RandomNumber}");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $RandomNumber = int(rand(3)) + 1;
   quest::emote("$DeathText{$RandomNumber}");
 }

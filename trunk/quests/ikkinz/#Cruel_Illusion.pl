@@ -7,7 +7,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 $group = $entity_list->GetGroupByClient($client);
       if ($group) {
         for ($count = 0; $count < $group->GroupCount(); $count++) {

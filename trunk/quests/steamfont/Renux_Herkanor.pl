@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("Tell Hanns I tried, and will love him always. Tell Father I will save a seat in hell for him!");
 }
 

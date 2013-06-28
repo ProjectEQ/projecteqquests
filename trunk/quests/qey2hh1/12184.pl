@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
   quest::setnexthpevent(75);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $werewolf = $entity_list->GetMobByNpcTypeID(12183);
   if (!$werewolf) { #All werewolves dead
     quest::say("Your attack was in vain, fool. The staff was stolen from us by a bandit only hours ago.");

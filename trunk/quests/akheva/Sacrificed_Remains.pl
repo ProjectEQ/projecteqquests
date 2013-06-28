@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   @spawnChance = (1,2,3,4,5);
   my $a = $spawnChance[int(rand(scalar @spawnChance))];
   if ($a == 1) {

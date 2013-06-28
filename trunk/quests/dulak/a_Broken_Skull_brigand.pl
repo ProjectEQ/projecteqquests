@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::say("Such fine white teeth, I believe they will make a nice necklace.");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::emote("'s corpse groans and lies still.");
  }
 

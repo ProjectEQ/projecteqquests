@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::emote("brandishes razor sharp claws and circles inward.");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
   quest::emote("unleashes a lupine yelp as it collapses on the floor.");
  }
 

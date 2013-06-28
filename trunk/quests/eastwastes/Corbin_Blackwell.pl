@@ -76,7 +76,7 @@ sub EVENT_SIGNAL {
   quest::depop_withtimer();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $event_spawn=undef;
   $ring_seven_start=undef;
   $final_path=undef;

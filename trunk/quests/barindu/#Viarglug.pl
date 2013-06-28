@@ -14,7 +14,7 @@ sub EVENT_TIMER {
   quest::depop();
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::emote("'s eyes glisten as it loses itself in the pleasure of pain and death.");
   quest::stoptimer("ViarglugDepop");
 }

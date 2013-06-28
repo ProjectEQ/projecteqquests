@@ -10,7 +10,7 @@ sub EVENT_AGGRO {
   quest::say("Die by the power of Greenmist!!");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("You shall now be a wanted man.. The Union of Vie shall punish you.");
 }
 

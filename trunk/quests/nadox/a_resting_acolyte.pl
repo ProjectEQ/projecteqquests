@@ -5,7 +5,7 @@ sub EVENT_COMBAT{
     quest::say("How dare you disturb my rest!");
 }
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227114;#High_Priest_Grumsalot
  my $x = $npc->GetX();

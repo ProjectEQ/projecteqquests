@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
    quest::settimer(2,3600);
    }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    quest::setglobal(dragon_not_ready,1,3,"H72");
    }
 

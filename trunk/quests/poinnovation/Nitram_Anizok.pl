@@ -56,7 +56,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $walking = 0;
   $won = 0;
 }

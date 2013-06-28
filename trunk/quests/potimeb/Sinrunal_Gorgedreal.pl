@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(223154,11040,0);
   quest::emote("topples, his shelled cranium splitting with a sickening crunch as it strikes the ground.");
 }

@@ -58,7 +58,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   if(!$entity_list->GetMobByNpcTypeID(294629)) { INSTANCE_WIN(); }
 }
 

@@ -20,7 +20,7 @@ sub EVENT_AGGRO
 	quest::emote("$AggroText{$RandomNumber}");
 	}
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	$local_total =  $qglobals{DeadDefenderCount}+1;
   	quest::setglobal("DeadDefenderCount", $qglobals{DeadDefenderCount}+1, 7, "F"); # how many dead
 

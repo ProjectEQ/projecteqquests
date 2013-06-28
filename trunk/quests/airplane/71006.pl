@@ -1,5 +1,5 @@
 #Bzzazzt - #2
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   my $x = $npc->GetX();
   my $y = $npc->GetY();
   my $z = $npc->GetZ();

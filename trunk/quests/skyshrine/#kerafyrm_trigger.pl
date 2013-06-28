@@ -42,7 +42,7 @@ sub EVENT_TIMER {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("kerafyrma");
   quest::stoptimer("kerafyrmb");
   quest::stoptimer("kerafyrmc");

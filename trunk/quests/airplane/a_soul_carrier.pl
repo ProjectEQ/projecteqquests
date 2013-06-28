@@ -12,7 +12,7 @@ my $mob2;
 my $mobnpc1;
 my $mobnpc2;
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(71056,2,200000);
   $x = $npc->GetX();
   $y = $npc->GetY();

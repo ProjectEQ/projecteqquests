@@ -30,7 +30,7 @@ sub EVENT_SIGNAL {
   quest::modifynpcstat("special_attacks","SrEQUMCNIDf");
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::creategroundobject(67705,-537,-620,-5,2,3600000);
   quest::signal(292021);
 }

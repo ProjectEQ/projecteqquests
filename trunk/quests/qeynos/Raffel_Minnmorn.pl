@@ -9,7 +9,7 @@
 sub EVENT_AGGRO {
     quest::say("I shall chop you down as your people chopped down the beauty of the forests!!");
 }
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::say("Long live the green ..");
 }
 sub EVENT_SPAWN {

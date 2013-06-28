@@ -64,7 +64,7 @@ sub EVENT_HP {
 }
  }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
         quest::signalwith(223158,13010,0);
         quest::say("My mantle shall never be passed on. . .");
         quest::stoptimer("rallos");

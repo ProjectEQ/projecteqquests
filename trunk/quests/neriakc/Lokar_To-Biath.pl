@@ -30,7 +30,7 @@ sub EVENT_ITEM {
   	plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
      quest::say("The death of a Dark Bargainer never goes unnoticed!");
 }
 

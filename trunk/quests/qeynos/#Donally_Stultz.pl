@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 	}
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 	quest::say("You...can not...defeat us all...");
 	quest::summonitem(2279);
         #loglos added summonitem (head of donally stultz)

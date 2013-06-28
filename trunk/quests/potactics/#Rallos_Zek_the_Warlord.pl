@@ -27,7 +27,7 @@ sub EVENT_AGGRO {
         quest::settimer(1,60);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    quest::spawn2(214105,0,0,699,8,-294,64);   # spawn a_planar_projection
    quest::stoptimer(2);
    quest::stoptimer(1);

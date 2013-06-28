@@ -1,5 +1,5 @@
 #bonus chest was opened.
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $instid = quest::GetInstanceID('mirb',50); #get the instance id
   if ($qglobals{$instid.'_mirb_status'} == 5) { #if status is 5 win chest not open yet.
     #set status to 7

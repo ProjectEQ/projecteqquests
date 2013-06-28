@@ -12,7 +12,7 @@ sub EVENT_ENTER {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::shout("Grraaaagghhhh!! Not..Possible!");
 }
 # End of File

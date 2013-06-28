@@ -18,7 +18,7 @@ sub EVENT_ENTER {
  }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   # MonkEpic 1.0
   quest::say("Foolish mortal! you think you have defeated me? Now, witness the true power of Rallos Zek!");
   # Spawn: Xenevorash

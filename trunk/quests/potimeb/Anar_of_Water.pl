@@ -2,7 +2,7 @@ sub EVENT_SPAWN {
     quest::setnexthpevent(91);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::signalwith(223189,14038,0);
     quest::say("Your efforts are commendable, but you will not get far. By Coirnav, you are doomed to failure.");
 }

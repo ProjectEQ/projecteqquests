@@ -15,7 +15,7 @@ my $mobattack1;
 my $mobattack2;
 my $mobattack3;
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $x = $npc->GetX();
   $y = $npc->GetY();
   $z = $npc->GetZ();

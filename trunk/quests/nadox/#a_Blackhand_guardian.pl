@@ -1,6 +1,6 @@
 # Enestox, Angelox
 
-sub EVENT_DEATH{
+sub EVENT_DEATH_COMPLETE{
  my $random_result = int(rand(100));
  my $a = 227097;
  my $x = $npc->GetX();

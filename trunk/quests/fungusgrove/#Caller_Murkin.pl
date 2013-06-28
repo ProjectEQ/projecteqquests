@@ -179,7 +179,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   $murkin = 0;
   quest::stoptimer("northsumone");
   quest::stoptimer("northsumtwo");

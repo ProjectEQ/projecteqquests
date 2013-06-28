@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 	quest::spawn2(158091,0,0,740.0,-45.0,126.1,63.0);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::depopall(158091);
 }
 

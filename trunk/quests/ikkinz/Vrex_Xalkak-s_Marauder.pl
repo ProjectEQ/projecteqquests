@@ -40,7 +40,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   if((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{marakill} == 1)) {
     quest::spawn2(294595,0,0,480,-592,-50,64);
 	quest::delglobal("marakill");

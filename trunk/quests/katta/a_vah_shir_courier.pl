@@ -37,7 +37,7 @@ sub EVENT_WAYPOINT_DEPART {
 
 
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
 
 	quest::me("The Vah Shir courier slams the crate of skulls against the ground with unnatural force as he falls jarring it open.");
 	quest::me("With his dying breath the possessed courier mutters a dark incantation and the skulls burst from the chest sprouting new skeletal forms.");

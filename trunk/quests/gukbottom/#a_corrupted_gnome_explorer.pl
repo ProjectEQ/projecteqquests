@@ -9,6 +9,6 @@
 # Mob Data: http://eqbeastiary.allakhazam.com/search.shtml?id=12822
 # 1 hour pop, PH'd  by undead frogloks, L45 SK.
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::spawn2(66174,0,0,$x,$y,$z,$h);
 }

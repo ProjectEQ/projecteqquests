@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("Not bad.. Now lets see if you can find my trueform if you do we discuss this further.");
 }
 #EndFile trakanon\Kaiaren.pl (95105)

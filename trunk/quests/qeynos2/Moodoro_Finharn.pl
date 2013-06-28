@@ -62,7 +62,7 @@ sub EVENT_ITEM {
 	plugin::return_items(\%itemcount);
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
     quest::say("I'll get you back $name!");
 	quest::summonitem(13836);
 }

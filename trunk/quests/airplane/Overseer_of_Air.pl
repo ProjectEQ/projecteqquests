@@ -10,6 +10,6 @@ sub EVENT_SAY {
     }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
    quest::spawn2(71060,48,0,-1462.2,-270.1,1250.9,62.9);
 }

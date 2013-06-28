@@ -1,4 +1,4 @@
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::signalwith(223154,11030,0);
   quest::emote("coughs, 'Not bad, for mere amateurs. A commendable exertion on your part.'");
 }

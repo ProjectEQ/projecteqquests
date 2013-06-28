@@ -20,7 +20,7 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   if(($class eq "Bard") && ($qglobals{vrexkill2} == 1)) {
     quest::signalwith(294597,1,0);
   }

@@ -1,11 +1,3 @@
-sub EVENT_COMBAT {
-	if($combat_state == 1) {
-	quest::say("Halt in the name of Antonius Bayle! Fleeing will only make me angry and your beating more severe!");
-	}
-	if($combat_state == 0) {
-	quest::say("How I loath to soil my blade with such filth.");
-	}
-}
 
 sub EVENT_WAYPOINT_ARRIVE {
   if($wp == 12) {

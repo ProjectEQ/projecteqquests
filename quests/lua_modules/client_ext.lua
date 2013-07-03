@@ -57,4 +57,10 @@ function Client:GiveCash(copper, silver, gold, platinum)
 	self:Message(260, tmp);
 end
 
-return Client;
+function Client:Ding()
+	self:SendSound();
+end
+
+function Client:GetFaction(faction, npc)
+	return self:GetFactionLevel(self:CharacterID(), npc:GetID(), self:GetRace(), self:GetClass(), self:GetDeity(), npc:GetPrimaryFaction(), npc);
+end

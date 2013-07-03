@@ -1,2 +1,3 @@
-string = require("string_ext");
-Client = require("client_ext");
+require("string_ext");
+require("client_ext");
+require("mob_ext");

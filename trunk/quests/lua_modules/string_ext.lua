@@ -37,4 +37,3 @@ function string:matchi(pattern, init)
 	end
 end
 
-return string;

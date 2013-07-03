@@ -86,6 +86,7 @@ function item_turnin.return_items(npc, client, trade)
 		local inst = trade["item" .. i];
 		if(inst.valid) then
 			client:PushItemOnCursor(inst);
+			npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));
 			returned = true;
 		end
 	end

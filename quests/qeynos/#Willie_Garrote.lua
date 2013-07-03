@@ -10,9 +10,7 @@ function event_trade(e)
     e.other:SummonItem(2394);
     eq.set_timer("depop",60000);
   end
-  if(item_lib.return_items(e.self, e.other, e.trade)) then
-    e.self:Say(string.format("I have no need for this %s, you can have it back.",e.other:GetName()));
-  end
+  item_lib.return_items(e.self, e.other, e.trade)
 end
 
 function event_timer(e)

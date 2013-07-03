@@ -24,7 +24,5 @@ function event_trade(e)
     e.other:Faction(217,10,0);
 	e.other:AddEXP(8000);
   end
-  if(item_lib.return_items(e.self, e.other, e.trade)) then
-   	e.self:Say(string.format("I have no need for this %s, you can have it back.",e.other:GetName()));
-  end
+  item_lib.return_items(e.self, e.other, e.trade)
 end

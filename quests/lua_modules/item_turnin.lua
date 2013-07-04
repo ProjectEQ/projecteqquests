@@ -80,13 +80,16 @@ function item_turnin.check_turn_in(trade, trade_check)
 	return true;
 end
 
-function item_turnin.return_items(npc, client, trade)
+function item_turnin.return_items(npc, client, trade, text)
+	text = text or 1;
 	local returned = false;
 	for i = 1, 4 do
 		local inst = trade["item" .. i];
 		if(inst.valid) then
 			client:PushItemOnCursor(inst);
-			npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));
+			if(text == 1) then
+				npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));
+			end
 			returned = true;
 		end
 	end

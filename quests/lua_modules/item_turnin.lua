@@ -122,4 +122,8 @@ function item_turnin.return_items(npc, client, trade, text)
 	return returned;
 end
 
+function SummonItem(inst)
+	client:PushItemOnCursor(inst);
+end
+
 return item_turnin;

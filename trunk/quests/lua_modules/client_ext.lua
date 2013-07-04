@@ -61,7 +61,7 @@ function Client:Ding()
 	self:SendSound();
 end
 
-function Client:GetFaction(faction)
+function Client:GetFaction(npc)
 	return self:GetFactionLevel(self:CharacterID(), npc:GetID(), self:GetRace(), self:GetClass(), self:GetDeity(), npc:GetPrimaryFaction(), npc);
 end
 

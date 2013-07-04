@@ -61,6 +61,46 @@ function Client:Ding()
 	self:SendSound();
 end
 
-function Client:GetFaction(npc)
+function Client:GetFaction(faction, npc)
 	return self:GetFactionLevel(self:CharacterID(), npc:GetID(), self:GetRace(), self:GetClass(), self:GetDeity(), npc:GetPrimaryFaction(), npc);
+end
+
+function Client:Faction(faction_id, faction_value, temp)
+	temp = temp or 0;
+	self:SetFactionLevel2(self:CharacterID(), faction_id, self:GetClass(), self:GetBaseRace(), self:GetDeity(), faction_value, temp);
+end
+
+function Client:Race()
+	local race = self:GetRace();
+	
+	do
+		local r = {
+		 [1] = "Human",
+		 [2] = "Barbarian",
+		 [3] = "Erudite",
+		 [4] = "Wood Elf",
+		 [5] = "High Elf",
+		 [6] = "Dark Elf",
+		 [7] = "Half Elf",
+		 [8] = "Dwarf",
+		 [9] = "Troll",
+		 [10] = "Ogre",
+		 [11] = "Halfling",
+		 [12] = "Gnome",
+		 [14] = "Werewolf",
+		 [74] = "Froglok",
+		 [75] = "Elemental",
+		 [108] = "Eye of Zomm",
+		 [120] = "Wolf Elemental",
+		 [128] = "Iksar",
+		 [130] = "Vah Shir",
+		 [161] = "Iksar Skeleton",
+		 [330] = "Froglok",
+		 [367] = "Skeleton",
+		 [522] = "Drakkin",
+		 ['?'] = "Unknown"
+		 }
+
+	return r[race];
+	end
 end

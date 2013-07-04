@@ -61,13 +61,8 @@ function Client:Ding()
 	self:SendSound();
 end
 
-function Client:GetFaction(faction, npc)
+function Client:GetFaction(faction)
 	return self:GetFactionLevel(self:CharacterID(), npc:GetID(), self:GetRace(), self:GetClass(), self:GetDeity(), npc:GetPrimaryFaction(), npc);
-end
-
-function Client:Faction(faction_id, faction_value, temp)
-	temp = temp or 0;
-	self:SetFactionLevel2(self:CharacterID(), faction_id, self:GetClass(), self:GetBaseRace(), self:GetDeity(), faction_value, temp);
 end
 
 function Client:Race()

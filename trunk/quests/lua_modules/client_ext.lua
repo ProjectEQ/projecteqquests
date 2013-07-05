@@ -99,3 +99,98 @@ function Client:Race()
 	return r[race];
 	end
 end
+
+function Client:HasItem(itemid)
+
+	--main inventory and cursor
+	for i = 0, 30, 1 do
+		local thisitem = self:GetItemIDAt(i);
+		for a = 0, 5, 1 do
+			local thisaugitem = self:GetAugmentIDAt(i,a);
+			if(thisaugitem == itemid) then
+				return true;
+			end
+		end
+		if(thisitem == itemid) then
+			return true;
+		end
+	end
+
+	--main/cursor containers
+	for i = 251, 340, 1 do
+		local thisitem = self:GetItemIDAt(i);
+		for a = 0, 5, 1 do
+			local thisaugitem = self:GetAugmentIDAt(i,a);
+			if(thisaugitem == itemid) then
+				return true;
+			end
+		end
+		if(thisitem == itemid) then
+			return true;
+		end
+	end
+
+	--bank
+	for i = 2000, 2015, 1 do
+		local thisitem = self:GetItemIDAt(i);
+		for a = 0, 5, 1 do
+			local thisaugitem = self:GetAugmentIDAt(i,a);
+			if(thisaugitem == itemid) then
+				return true;
+			end
+		end
+		if(thisitem == itemid) then
+			return true;
+		end
+	end
+
+	--bank containers
+	for i = 2030, 2190, 1 do
+		local thisitem = self:GetItemIDAt(i);
+		for a = 0, 5, 1 do
+			local thisaugitem = self:GetAugmentIDAt(i,a);
+			if(thisaugitem == itemid) then
+				return true;
+			end
+		end
+		if(thisitem == itemid) then
+			return true;
+		end
+	end
+	
+	--shared bank
+	for i = 2531, 2550, 1 do
+		local thisitem = self:GetItemIDAt(i);
+		for a = 0, 5, 1 do
+			local thisaugitem = self:GetAugmentIDAt(i,a);
+			if(thisaugitem == itemid) then
+				return true;
+			end
+		end
+		if(thisitem == itemid) then
+			return true;
+		end
+	end
+
+	--corpse
+	local bodycount = self:GetCorpseCount();
+	
+	if(bodycount > 0) then
+		for b = 0, body_count, 1 do
+			local bodyid = self:GetCorpseID(b); 
+			for i = 0, 30, 1 do
+				local thisitem = self:GetCorpseItemAt(bodyid, i);
+				if(thisitem == itemid) then
+					return true;
+				end
+			end
+			for i = 251, 340, 1 do
+				local thisitem = self:GetCorpseItemAt(bodyid, i);
+				if(thisitem == itemid) then
+					return true;
+				end
+			end
+		end
+	end
+	return false;
+end

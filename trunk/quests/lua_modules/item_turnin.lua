@@ -122,8 +122,15 @@ function item_turnin.return_items(npc, client, trade, text)
 	return returned;
 end
 
-function SummonItem(inst)
-	client:PushItemOnCursor(inst);
+function SummonItem(itemid, charges)
+	charges = charges or 1;
+
+	if(charges > 1) then
+		local item = ItemInst(itemid, charges);
+	else
+		local item = ItemInst(itemid);
+	end
+	client:PushItemOnCursor(item);
 end
 
 return item_turnin;

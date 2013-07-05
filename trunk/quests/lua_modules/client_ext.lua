@@ -176,7 +176,7 @@ function Client:HasItem(itemid)
 	local bodycount = self:GetCorpseCount();
 	
 	if(bodycount > 0) then
-		for b = 0, body_count, 1 do
+		for b = 0, bodycount, 1 do
 			local bodyid = self:GetCorpseID(b); 
 			for i = 0, 30, 1 do
 				local thisitem = self:GetCorpseItemAt(bodyid, i);

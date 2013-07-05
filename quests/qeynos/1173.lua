@@ -9,5 +9,5 @@ function event_waypoint_arrive(e)
  end
  
  function event_enter(e)
-   e.other:SelfCast(2289);
+   eq.SelfCast(2289);
  end

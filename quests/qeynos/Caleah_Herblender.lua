@@ -12,7 +12,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib = require("item_turnin");
+  local item_lib = require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 13071, item2 = 13069, item3 = 10307})) then
     e.self:Say(string.format("Hmm. Good job, %s, let's give this a try. Flame and fire. Heat and spark. Touch of Ro, light this dark! Ahh. It stills needs a little work, I guess. Thanks for your help, here's a little something for your effort.",e.other:GetName()));
 	e.other:SendSound();

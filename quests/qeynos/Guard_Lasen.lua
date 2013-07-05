@@ -11,7 +11,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib =require("item_turnin");
+  local item_lib =require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 13006})) then
     e.self:Say("Thank you, that was very kind.  Here take this for your trouble.");
 	e.other:SendSound();

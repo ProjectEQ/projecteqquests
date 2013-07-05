@@ -19,7 +19,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib = require("item_turnin");
+  local item_lib = require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 18289})) then
     e.self:Say("Very well, let's get to work. I assume you have read the briefing and committed it to memory. This is how you will be tested. I shall play the part of student and you shall play the master who directs me. I promise I won't make it easy on you either, we want only the best. We'll see how you do and then I'll decide if you are worthy to wear the badge or not.");
     eq.follow(e.other:GetID());

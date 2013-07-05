@@ -29,7 +29,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-local item_lib = require("item_turnin");
+local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13182})) then --Kevlin's Debt
 		e.self:Say("Heh heh! You got a career ahead of ya kid! Good work. Here is your cut.");

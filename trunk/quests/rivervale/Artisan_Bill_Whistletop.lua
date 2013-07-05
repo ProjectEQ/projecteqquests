@@ -78,8 +78,7 @@ local race = e.other:Race();
 			e.self:Say("Ahem, so I was writing my history book when Dryssa comes up to me and says 'Hail.' And so I reply...");
 			e.self:Emote("continues to ramble on for many minutes. Finally, he gets to the end of his journal and looks up. He blinks as though	surprised that you are still here.");
 			e.self:Say("Oh, yeah, the armor pattern book. Sorry, I forgot about that. Here you go!");
-			local item = ItemInst(38447); --Ancestral Halfling Armor
-			e.other:PushItemOnCursor(item);
+			e.other:SummonItem(38447); --Ancestral Halfling Armor
 		else
 			item_lib.return_items(e.self, e.other, e.trade);
 		end

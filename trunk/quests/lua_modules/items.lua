@@ -122,7 +122,7 @@ function items.return_items(npc, client, trade, text)
 	return returned;
 end
 
-function items.summon(itemid, charges)
+function items.summon(client, itemid, charges)
 	charges = charges or 1;
 
 	if(charges > 1) then

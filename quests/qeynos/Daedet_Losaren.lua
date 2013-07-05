@@ -1,6 +1,5 @@
-local fac = e.other:GetFaction(e.self);
-
 function event_say(e)
+	local fac = e.other:GetFaction(e.self);
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Welcome, %s. I am Deadet Losaren, faithful priest of Karana. You appear to be in search of [guidance] or perhaps you are merely a [visitor to the temple of thunder] wishing the blessing of [holy armor]?", e.other:GetName()));
 	elseif(e.message:findi("guidance")) then
@@ -31,6 +30,7 @@ function event_say(e)
 end  
 
 function event_trade(e)
+	local fac = e.other:GetFaction(e.self);
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.trade, {gold = 20}) and (fac < 5)) then
 		e.self:Say("This should help you remain safe.");

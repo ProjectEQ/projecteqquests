@@ -10,7 +10,7 @@ function event_trade(e)
     e.other:SummonItem(2394);
     eq.set_timer("depop",60000);
   end
-  item_lib.return_items(e.self, e.other, e.trade)
+  item_lib.return_items(e.self, e.other, e.trade, e.text)
 end
 
 function event_timer(e)

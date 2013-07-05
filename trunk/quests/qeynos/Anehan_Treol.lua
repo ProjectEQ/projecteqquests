@@ -5,7 +5,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib =require("item_turnin");
+  local item_lib =require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 18021})) then
     e.self:QuestSay(e.other, "Oh, report time already again? Yeah, here ya go, $name. Be careful around here at night, I've been seeing some rough looking characters lurking about.");
     e.other:SendSound();

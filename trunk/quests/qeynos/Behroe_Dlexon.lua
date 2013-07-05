@@ -10,7 +10,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib =require("item_turnin");
+  local item_lib =require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 18027})) then
     e.self:Say(string.format("Ah, thank you, kind %s.  You've made two foolish lovebirds very happy.  Please, take this..  Though it is not much, it will help keep you warm on those chilly Karana nights.  It is very good to have a friend such as yourself, and I will one day repay you for your kindness and generosity.",e.other:GetName()));
     e.other:SendSound();

@@ -68,7 +68,7 @@ end
 	
 
 function event_trade(e)
-local item_lib = require("item_turnin");
+local item_lib = require("items");
 local race = e.other:Race();
 
 	if(race == "Halfling") then

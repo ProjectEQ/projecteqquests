@@ -5,7 +5,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib = require("item_turnin");
+  local item_lib = require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 2344})) then
     e.other:SummonItem(2369);
     eq.set_timer("depop",60000);

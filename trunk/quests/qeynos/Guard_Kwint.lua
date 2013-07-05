@@ -5,7 +5,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-  local item_lib =require("item_turnin");
+  local item_lib =require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 18821})) then
     e.self:QuestSay(e.other, "Hey. Thanks! Sorry about that 'he's my brother' bit but I am sure you had a good time at the Lion's Mane anyway. I sure didn't lie to you about the quality of the ale there.");
     e.other:Faction(135,10,0);

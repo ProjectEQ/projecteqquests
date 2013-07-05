@@ -16,7 +16,7 @@ function event_trade(e)
     e.other:AddEXP(8000);
 	e.other:GiveCash(8,0,0,0);
   end
-  item_lib.return_items(e.self, e.other, e.trade)
+  item_lib.return_items(e.self, e.other, e.trade, e.text)
 end
 
 function event_combat(e)

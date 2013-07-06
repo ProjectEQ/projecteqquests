@@ -35,7 +35,7 @@ end
 function event_trade(e)
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13702})) then
-		local randomcopper = int(rand(20));
+		local randomcopper = math.random(20);
 		e.self:Say("Thank you so much!  If you want some free advice, steer clear of those [Irontoes]! They are nothing but trouble. Here, It's not much but I must thank you somehow.");
 		e.other:Ding();
 		e.other:SummonItem(13129); -- Hurrieta's Tunic

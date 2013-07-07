@@ -16,7 +16,5 @@ function event_trade(e)
     e.other:Faction(217,5,0);
     e.other:GiveCash(5,0,0,0);
   end
-  if(item_lib.return_items(e.self, e.other, e.trade)) then
-   	e.self:Say(string.format("I have no need for this %s, you can have it back.",e.other:GetName()));
-  end
+  item_lib.return_items(e.self, e.other, e.trade)
 end

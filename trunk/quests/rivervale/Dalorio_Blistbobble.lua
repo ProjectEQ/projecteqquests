@@ -1,5 +1,5 @@
 function event_say(e) 
-	if(e.message:findi("hail"){
+	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Zonkers! You scared me! Well it is good to meet you nonetheless young %s. Many young Guardians of the Vale often come to me for guidance. If there is something I can help you with in your training you make sure you let Dalorio know! In the meanwhile I will be working on my [trade].", e.other:GetCleanName()));
 	elseif(e.message:findi("trade")) then
 		e.self:Say(string.format("Well you see %s, I have been an aspiring blacksmith for quite sometime now. I have spent mostly all of my spare time since I was just a wee whipper snapper like yourself collecting different materials and trying to craft anything and everything of value in our town forge. Blacksmithing has always interested me and that interest is exactly what led to the creation of my [special recipes].", e.other:GetCleanName()));

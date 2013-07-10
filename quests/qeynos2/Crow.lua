@@ -34,7 +34,7 @@ function event_signal(e)
 		eq.signal(2083, 2);
 	elseif(e.signal == 2) then
 		e.self:Say("Testing one two three four");
-		eq.signal(2083, 2);
+		eq.signal(2083,5);
 	elseif(e.signal == 3) then
 		e.self:Say("Excellent. To think that he thought he could stroll in here from Highpass and take over my action. He will learn the hard way what happens to merchants who think they can operate here without our support and protection.");
 	elseif(e.signal == 4) then

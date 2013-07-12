@@ -9,6 +9,7 @@ function event_waypoint_arrive(e)
 		e.self:Say("Whew. I am parched. I will be back in a few minutes.");
 	elseif(e.wp == 15) then
 		e.self:Say("Hey sweetheart, I'll have my usual. Could you bring it upstairs for me?");
+		eq.signal(2083,1);
 	elseif(e.wp == 38) then
 		e.self:Say("Hey, hey, hey! Tubal Weaver open for business!");
 	end

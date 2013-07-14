@@ -7,7 +7,7 @@ function event_say(e)
 			e.self:Say("The catacombs contain safe haven for you and me. It is our place. To you, I tell no lie.");
 		elseif(e.message:findi("brell")) then
 			e.self:Say("The place of true power is usually beneath your feet. Stay in this city and a rare enemy you just may meet.");
-		elseif(e.message:findi("cazic" or "thule")) then
+		elseif(e.message:findi("cazic") or e.message:findi("thule")) then
 			e.self:Say("You will find an acquaintance who is elvish and dark. Be forewarned that in this city it is best not to bark.");
 		elseif(e.message:findi("innoruuk")) then
 			if(fac < 5) then

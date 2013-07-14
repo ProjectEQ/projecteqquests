@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("To cast the poison from your body I require one snake fang.  The fang will contain a hint of poison which will help me focus my casting.");
 	elseif(e.message:findi("healing")) then
 		e.self:Say("You must pay a tribute of five gold coins before I perform the binding of your wounds.");
-	elseif(e.message:findi("prime healer" or "rodcet nife")) then
+	elseif(e.message:findi("prime healer") or e.message:findi("rodcet nife")) then
 		e.self:Say("He is the sustaining force of all life.  It is in honor of Him that the Temple of Life was built.  Engineered with the help of the [Academy of Arcane Science].");
 	elseif(e.message:findi("academy of arcane science")) then
 		e.self:Say("The Academy of Arcane Science is the greatest school of magic in Antonica.  It houses a wealth of resources and knowledge pertaining to any of the circles of magic.  It is also a marvel of magical engineering.  If you should ever visit Freeport. be sure to let me know.  I seek a faithful cleric to [pickup a reagent].");

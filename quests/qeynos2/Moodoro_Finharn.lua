@@ -44,7 +44,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:SummonItem(13836);
 	elseif(item_lib.check_turn_in(e.trade, {gold = 4})) then
-		local random_card = eq.ChooseRandom({13994,13993,13992,13995});
+		local random_card = eq.ChooseRandom(13994,13993,13992,13995);
 		e.other:Ding();
 		e.self:Say("Well, what do you have?!!");
 		e.other:SummonItem(random_card);

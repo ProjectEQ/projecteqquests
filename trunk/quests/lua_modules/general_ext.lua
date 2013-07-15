@@ -1,4 +1,5 @@
-function eq.ChooseRandom(tbl)
+function eq.ChooseRandom(...)
+	local tbl = {...};
 	return tbl[math.random(#tbl)];
 end
 

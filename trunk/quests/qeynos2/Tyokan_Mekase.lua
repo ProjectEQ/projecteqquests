@@ -11,7 +11,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13306})) then
 		e.self:Say("Oh, turning in your key, are you? Very well, defender of life. Here you are.");
-		e.other:SummonItem(eq.ChooseRandom({15126,15126,15248}));
+		e.other:SummonItem(eq.ChooseRandom(15126,15126,15248));
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

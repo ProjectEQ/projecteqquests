@@ -42,15 +42,15 @@ sub EVENT_SAY {
     quest::say("I will give ye no more hints. Ye must seek this creature out alone. Look far and use your mind and brawn to beat it. Yer noggin will give ye an advantage o'er this un.");
     $imp=undef;
   }
- if($text=~/do/i && ($hunting == 1 || quest::hasitem{60204})) { #Hunting stage complete 
+ if($text=~/do/i && ($hunting == 1 || plugin::check_hasitem($client,60204))) { #Hunting stage complete 
     quest::say("For my mirage to remain part of my trials, I need some very specific reagents. There is a sickly gorilla that carries a rotting organ which I am in need of. Also, I need a paw of a very special and dangerous kobold. Lastly, bring me the poison sac of a dangerous spider. A potion that allows us to create a gate from one place to another is also required. If ye believe ye can do this for me, tell me so, and I will give ye a bag to hold them in. When ye have all of the ingredients, combine them in the bag I've given ye, and bring it back to me. Good luck in your hunt!"); 
     quest::summonitem(60205); 
     $hunting=undef; 
   } 
-  if($text=~/next challenge/i && ($mastery == 1 || quest::hasitem{60210})) { 
+  if($text=~/next challenge/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
     quest::say("For this encounter, ye must be prepared for the unexpected and, in the face of chaos, be able to focus on the task at hand. Yer stamina will also be tested. When I first encountered this wicked trap in me travels, even I had to attempt it a couple of times. However, I do have faith in ye. With my advance warning, ye shouldn't be caught off guard. This challenge will also prove how loyal and skilled yer own friends are. One thing is for certain, ye can't complete this [next test] alone."); 
   } 
-  if($text=~/next test/i && ($mastery == 1 || quest::hasitem{60210})) { 
+  if($text=~/next test/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
     quest::say("Make your way to the woods in Kunark. Use the hunting skills ye have gained to find a most unusual and war-hungry creature. It has a very unique magic in its battle repertoire that will definitely test yer mettle. Off with ye, then. I do hope I see ye again...I've become quite fond of ye. I recently sent another like ye to do this trial and I haven't heard from him..."); 
     $mastery=undef; 
   } 

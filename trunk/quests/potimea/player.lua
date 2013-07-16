@@ -17,7 +17,7 @@ function event_click_door(e)
 		-- should never be nil, but just in case.
 		if (instance_id == nil or instance_id == 0) then
 			-- check for lockout qglobal. (potimeLockout is the old one and can be removed when potimeb rewrite is completed.)
-			if (qglobals.potimeb_lockout ~= nil or qglobals.potimeLockout ~= nil) then
+			if (e.self:Admin() <= 80 and (qglobals.potimeb_lockout ~= nil or qglobals.potimeLockout ~= nil)) then
 				e.self:Message(13, "You are not ready yet to start a new instance");
 				return;
 			end

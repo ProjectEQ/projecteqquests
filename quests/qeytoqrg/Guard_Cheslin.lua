@@ -73,7 +73,7 @@ function event_waypoint_arrive(e)
 	if(e.wp == 1) then
 		e.self:Say("Hail, fellow guards! I am off to protect the travelers of the hills from evil. I shall return!");
 		eq.signal(4142,1);
-		eq.signal(4169,1);
+		eq.signal(4069,1);
 	elseif(e.wp == 3) then
 		e.self:Say("Fear not, simple travelers. Cheslin the masterful is here to protect you.");
 		eq.create_ground_object(library,xloc,yloc,zloc,0,300000);

@@ -1,12 +1,12 @@
 function event_say(e)
-	local qglobals = eq.get_qglobals(e.other);
+	local rogue_epic = eq.get_qglobals(e.other);
 	
 	if(e.message:findi("hail")) then
-		if(e.other:HasItem(11057) == true and qglobals.Fatestealer == nil) then
-			e.self:Say(string.format("Ha, the prodigy returns. So good to see you, $name. I always consider it an honor to have your company, and we have much to talk about!",e.other:GetName()));
+		if(e.other:HasItem(11057) == true and rogue_epic.Fatestealer == nil) then
+			e.self:Say(string.format("Ha, the prodigy returns. So good to see you, %s. I always consider it an honor to have your company, and we have much to talk about!",e.other:GetName()));
 			eq.set_global("Fatestealer","0",5,"F");
-		elseif(qglobals.Fatestealer ~= nil) then
-			e.self:Say("But not here and not now. We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, $name. You are a member of this circle and nothing will ever break that.");
+		elseif(rogue_epic.Fatestealer ~= nil) then
+			e.self:Say(string.format("But not here and not now. We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, %s. You are a member of this circle and nothing will ever break that.",e.other:GetName()));
 		else
 			e.self:Say("Ah, the pouch. This is the first step. The Circle has to be upset having this taken right out from under them. That speaks well of the person who did the taking. Hanns must be even more furious now. I think I might be able to trust you. We could make a deal. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my story, then you decide.");
 		end

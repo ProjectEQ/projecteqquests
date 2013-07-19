@@ -1,10 +1,12 @@
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
+	local class = e.other:Class();
+	local level = e.other:GetLevel();
 	
 	if(fac <= 5) then
 		if(e.message:findi("hail")) then
 			e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
-		elseif(e.message:findi("see stanos") and e.other:GetClass() == "Rogue" and e.other:GetLevel() >= 50) then
+		elseif(e.message:findi("see stanos") and class == "Rogue" and level >= 50) then
 			e.self:Say("This better be important.");
 			eq.spawn2(5088,0,0,336,10,45,225);
 		end

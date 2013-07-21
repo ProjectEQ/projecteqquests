@@ -19,10 +19,6 @@ end
 function event_trade(e)
 	local fac = e.other:GetFaction(e.self);
 	local scalp = 0;
-	local random_copper = eq.ChooseRandom(0,1,2,3,4,5,6,7,8);
-	local random_silver = eq.ChooseRandom(0,1,2,3,4,5,6);
-	local random_gold = eq.ChooseRandom(0,1,2,3);
-	local random_plat = eq.ChooseRandom(0,1);
 	local item_lib =require("items");
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 13791,item2 = 13791,item3 = 13791,item4 = 13791})) then

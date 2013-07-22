@@ -1,6 +1,10 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I'm Captain Bosec. and I am the officer in charge down here. It's my job to patrol the prison and try to keep any [goblins] from getting into Highpass.");
+	elseif(e.message:findi("goblin")) then
+		e.self:Say("Help us exterminate these vile creatures. They call themselves the [Pickclaw] Clan.. I call them annoying. I will gladly pay big money for the left ear of every goblin slain.");
+	elseif(e.message:findi("pickclaw")) then
+		e.self:Say("A couple of months ago, Carson decided to add some more floors beneath the keep. During the construction, we came across these tunnels.. and these goblins. Work has been temporarily halted until we can completely clear out this Pickclaw infestation.");
 	end
 end
 

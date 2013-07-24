@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("May the words of Marr be passed on to you.  Please seek knowledge from the masters of this temple.");
-	elseif(e.message:findi("hail")) then
+	elseif(e.message:findi("sisterhood of erollisi")) then
 		e.self:Say("The Sisterhood of Erollisi is a band of female warriors. Their founders hail from Kelethin. They now train and live upon an island in the Ocean of Tears. We often check up on them. We share the same deity.");
 	end
 end

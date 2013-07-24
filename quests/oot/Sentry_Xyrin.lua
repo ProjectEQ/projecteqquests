@@ -1,6 +1,6 @@
 function event_spawn(e)
 	eq.set_timer("depop",3600000);
-	eq.set_anim(69132,1);
+	-- eq.set_anim(69132,1);
 end
 
 function event_say(e)

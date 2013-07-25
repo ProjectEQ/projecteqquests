@@ -1,9 +1,9 @@
 function event_enter_zone(e)
 	-- load the current qglobals
 	local qglobals = eq.get_qglobals(e.self);
-	if ( qglobals.time_enter == nil and e.self:Admin() < 10 ) then
+	if ( qglobals.time_emote == nil and e.self:Admin() < 10 ) then
 		eq.world_emote(15, "The earth rumbles, sky thunders, volcanoes erupt, and tidal waves crash as the Gods prepare their armies for battle. The first of the mortals have obtained the power to cross into the Plane of Time!");
-		eq.set_global("time_enter","1",7,"F");
+		eq.set_global("time_emote","TimeEntered",7,"F");
 	end
 end
 
@@ -21,8 +21,8 @@ function event_click_door(e)
 				e.self:Message(13, "You are not ready yet to start a new instance");
 				return;
 			end
-			-- the instance is only good for 12 hours (43200 seconds).
-			instance_id = eq.create_instance("potimeb",0,43200);
+			-- the instance is only good for 13 hours (46800 seconds).
+			instance_id = eq.create_instance("potimeb",0,46800);
 			-- create a qglobal for status tracking
 			eq.set_global(instance_id.."_potimeb_status","Phase1",7,"H13");
 			-- check if the player is in a raid

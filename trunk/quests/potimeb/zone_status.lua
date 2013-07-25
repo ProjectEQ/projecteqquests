@@ -231,10 +231,12 @@ function event_signal(e)
 		-- destroy the instance. this will ensure everyone is removed from the instance
 		eq.destroy_instance(instance_id);
 		-- port everyone in the zone back to the PoK library top floor
-		-- local client_list = entity_list:GetClientList();
-		-- for k,v in pairs(client_list) do
-		--	eq.target_global(global_name, global_value, global_duration, 0,v, 0);
-		-- end
+		local client_list = entity_list:GetClientList();
+		for c in client_list.entries do
+			if (c.valid) then
+				c:MovePC(202,1015,20,392,132);
+			end
+		end
 		-- depop the zone nothing else to do here
 		eq.depop_zone(false);
 	end

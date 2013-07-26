@@ -5,8 +5,7 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please, let me go. I shall leave the [Freeport Militia]. I did not know they were such a vile group.");
-		eq.stop_timer("depop");
-		eq.set_timer("cry",60000);
+		eq.set_timer("cry",30000);
 	elseif(e.message:findi("freeport militia")) then
 		e.self:Say("I thought they were nothing more than the local militia. Little did I know they were so vile. Now I am stuck [here] and I ask for your forgiveness.");
 	elseif(e.message:findi("why are you here")) then

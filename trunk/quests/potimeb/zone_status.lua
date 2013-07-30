@@ -140,8 +140,12 @@ function event_spawn(e)
 		current_phase = "Phase6";
 		-- send signal to flavor text NPC
 		eq.signal(223227,6);
-		-- spawn quarm
-		eq.spawn2(223201,0,0,20,-1105,-2.8,64);
+		-- spawn Quarm
+		eq.spawn2(223201,0,0,-401,-1106,32.5,92.8125);
+		-- spawn #A_Servitor_of_Peace
+		eq.spawn2(223101,0,0,244,-1106,-1.125,97.03125);
+		-- spawn untargetable Zebuxoruk's Cage
+		eq.spawn2(223228,0,0,-579,-1119,60.625,0);
 	end
 end
 
@@ -214,8 +218,12 @@ function event_signal(e)
 			eq.signal(223227,6);
 			-- reset counter for later use
 			event_counter = 0;
-			-- spawn quarm
-			eq.spawn2(223201,0,0,20,-1105,-2.8,64);
+			-- spawn Quarm
+			eq.spawn2(223201,0,0,-401,-1106,32.5,92.8125);
+			-- spawn #A_Servitor_of_Peace
+			eq.spawn2(223101,0,0,244,-1106,-1.125,97.03125);
+			-- spawn untargetable Zebuxoruk's Cage
+			eq.spawn2(223228,0,0,-579,-1119,60.625,0);
 			-- unlock the stone from phase 5 to phase 6
 			door = entity_list:FindDoor(51);
 			if(door ~= nil) then

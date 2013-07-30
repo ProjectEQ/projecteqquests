@@ -8,13 +8,9 @@ function event_spawn(e)
 end
 
 function event_hp(e)
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	local zloc = e.self:GetZ();
-	local heading = e.self:GetHeading();
 	if (e.hp_event == 51) then
 		-- spawn copies
-		eq.spawn2(223164,0,0,xloc,yloc - 25,zloc,heading);
-		eq.spawn2(223164,0,0,xloc,yloc + 25,zloc,heading);
+		eq.spawn2(223164,0,0,286,-182,358,23);
+		eq.spawn2(223164,0,0,305,-201,358,23);
 	end
 end

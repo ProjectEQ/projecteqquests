@@ -47,11 +47,6 @@ function event_signal(e)
 		if (event_counter == 5) then
 			-- tell zone_status
 			eq.signal(223097,2);
-			local entity_list = eq.get_entity_list();
-			-- unlock the phase 1 air clock door (4 pieces)
-			for i = 1, 4, 1 do
-				entity_list:FindDoor(i):SetLockPick(0);
-			end
 			-- depop as my job is done.
 			eq.depop();
 		end

@@ -167,6 +167,14 @@ function event_signal(e)
 			-- update the qglobal in the zone gets reset.
 			eq.set_global(instance_id.."_potimeb_status","Phase2",7,"H13");
 			current_phase = "Phase2";
+			-- unlock all the phase 1 doors.
+			local door = nil;
+			for i = 1, 32, 1 do
+				door = entity_list:FindDoor(i);
+				if(door ~= nil) then
+					door:SetLockPick(0);
+				end
+			end
 			-- add 1 hour (3600 seconds) to the fail timer
 			UpdateFailTimer(3600,3600);
 			-- send signal to flavor text NPC

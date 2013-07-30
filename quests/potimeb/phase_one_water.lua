@@ -36,10 +36,6 @@ function event_signal(e)
 		if (event_counter == 7) then
 			-- tell zone_status
 			eq.signal(223097,2);
-			local entity_list = eq.get_entity_list();
-			for i = 25, 28, 1 do
-				entity_list:FindDoor(i):SetLockPick(0);
-			end
 			-- depop as my job is done.
 			eq.depop();
 		end

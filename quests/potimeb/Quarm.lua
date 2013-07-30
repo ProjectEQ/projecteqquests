@@ -1,15 +1,13 @@
 function event_spawn(e)
-	-- create a proximty to set the spawn timer
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	eq.set_proximity(xloc - 300, xloc + 300, yloc - 300, yloc + 300);
 	eq.set_next_hp_event(76);
+
 end
 
-function event_enter(e)
-	eq.clear_proximity();
-	-- start pathing away from spawn point
-	eq.start(2);
+function event_signal(e)
+	if (e.signal == 1) then
+		-- start pathing away from spawn point
+		eq.start(1);
+	end
 end
 
 function event_combat(e)
@@ -27,9 +25,12 @@ function event_timer(e)
 		local yloc = e.self:GetY();
 		local zloc = e.self:GetZ();
 		local heading = e.self:GetHeading();
-		local yoffset = eq.ChooseRandom(0,15,(0-15));
-		local xoffset = eq.ChooseRandom(0,15,(0-15));
-		eq.spawn2(223112,0,0,xloc + xoffset,yloc + yoffset,zloc,heading);
+		-- depop all existing time vortex mobs
+		eq.depopall(223112);
+		-- spawn 3 new ones randomly around Quarm.
+		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
+		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
+		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
 	end
 end
 
@@ -61,8 +62,11 @@ function event_death_complete(e)
 	eq.set_global(instance_id.."_potimeb_status","QuarmDead",7,"H13");
 	-- signal the zone_status that we died
 	eq.signal(223097,7);
-	-- spawn Zebuxoruk's egg
-	eq.spawn2(223214,0,0,-656.2,-1096.5,-2.7,60);
+	-- depop all existing time vortex mobs
+	eq.depopall(223112);
+	-- depop untargetable and pop targetable spawn Zebuxoruk's Cage
+	eq.deopop(223228);
+	eq.spawn2(223214,0,0,-579,-1119,60.625,0);
 	-- load the current quest globals
 	local qglobals = eq.get_qglobals(e.self);
 	if ( qglobals.time_emote == "TimeEntered" and e.self:Admin() < 10 ) then

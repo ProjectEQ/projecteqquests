@@ -28,13 +28,7 @@ function event_spawn(e)
 		eq.spawn2(223173,0,0,13.2,574.2,492.3,0); -- fire trigger
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase2") then
 		-- unlock all the phase 1 doors.
-		local door = nil;
-		for i = 1, 32, 1 do
-			door = entity_list:FindDoor(i);
-			if(door ~= nil) then
-				door:SetLockPick(0);
-			end
-		end
+		UnlockPhaseOneDoors(entity_list);
 		-- offset event_started by the prior phase(s) since we are not starting at 1
 		event_started = event_started - 3600;
 		UpdateFailTimer(3600,3600);
@@ -45,13 +39,8 @@ function event_spawn(e)
 		SpawnPhaseTwo(false);
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase3") then
 		-- unlock all the phase 1 and 2 doors.
-		local door = nil;
-		for i = 1, 45, 1 do
-			door = entity_list:FindDoor(i);
-			if(door ~= nil) then
-				door:SetLockPick(0);
-			end
-		end
+		UnlockPhaseOneDoors(entity_list);
+		UnlockPhaseTwoDoors(entity_list);
 		-- offset event_started by the prior phase(s) since we are not starting at 1
 		event_started = event_started - 7200;
 		UpdateFailTimer(7200,4500);
@@ -61,15 +50,9 @@ function event_spawn(e)
 		-- begin Phase 3
 		ControlPhaseThree();
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase4") then
-	-- unlock all the phase 1 and 2 doors
 		-- unlock all the phase 1 and 2 doors.
-		local door = nil;
-		for i = 1, 45, 1 do
-			door = entity_list:FindDoor(i);
-			if(door ~= nil) then
-				door:SetLockPick(0);
-			end
-		end
+		UnlockPhaseOneDoors(entity_list);
+		UnlockPhaseTwoDoors(entity_list);
 		-- unlock the portal from phase 3 to phase 4
 		door = entity_list:FindDoor(62);
 		if(door ~= nil) then
@@ -83,15 +66,9 @@ function event_spawn(e)
 		eq.signal(223227,4);
 		SpawnPhaseFour();
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase5") then
-	-- unlock all the phase 1 and 2 doors
 		-- unlock all the phase 1 and 2 doors.
-		local door = nil;
-		for i = 1, 45, 1 do
-			door = entity_list:FindDoor(i);
-			if(door ~= nil) then
-				door:SetLockPick(0);
-			end
-		end
+		UnlockPhaseOneDoors(entity_list);
+		UnlockPhaseTwoDoors(entity_list);
 		-- unlock the portal from phase 3 to phase 4
 		door = entity_list:FindDoor(62);
 		if(door ~= nil) then
@@ -110,15 +87,9 @@ function event_spawn(e)
 		eq.signal(223227,5);
 		SpawnPhaseFive();
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase6") then
-	-- unlock all the phase 1 and 2 doors
 		-- unlock all the phase 1 and 2 doors.
-		local door = nil;
-		for i = 1, 45, 1 do
-			door = entity_list:FindDoor(i);
-			if(door ~= nil) then
-				door:SetLockPick(0);
-			end
-		end
+		UnlockPhaseOneDoors(entity_list);
+		UnlockPhaseTwoDoors(entity_list);
 		-- unlock the portal from phase 3 to phase 4
 		door = entity_list:FindDoor(62);
 		if(door ~= nil) then
@@ -168,13 +139,7 @@ function event_signal(e)
 			eq.set_global(instance_id.."_potimeb_status","Phase2",7,"H13");
 			current_phase = "Phase2";
 			-- unlock all the phase 1 doors.
-			local door = nil;
-			for i = 1, 32, 1 do
-				door = entity_list:FindDoor(i);
-				if(door ~= nil) then
-					door:SetLockPick(0);
-				end
-			end
+			UnlockPhaseOneDoors(entity_list);
 			-- add 1 hour (3600 seconds) to the fail timer
 			UpdateFailTimer(3600,3600);
 			-- send signal to flavor text NPC
@@ -285,13 +250,7 @@ function ControlPhaseTwo()
 			-- grab the entity list so we can unlock doors.
 			local entity_list = eq.get_entity_list();
 			-- unlock all of the Phase 2 doors
-			local door = nil;
-			for i = 33, 45, 1 do
-				door = entity_list:FindDoor(i);
-				if(door ~= nil) then
-					door:SetLockPick(0);
-				end
-			end
+			UnlockPhaseTwoDoors(entity_list);
 			-- update the status global
 			eq.set_global(instance_id.."_potimeb_status","Phase3",7,"H13");
 			-- add 1 hour and 15 minutes (4500 seconds) to the fail timer
@@ -547,5 +506,34 @@ function event_timer(e)
 		eq.destroy_instance(instance_id);
 		-- depop the zone on event fail.
 		eq.depop_zone(false);
+	end
+end
+
+-- on Live the doors do not show as locked when clicked. instead the player receives the collowing emote in white text:
+-- [Thu Jul 25 19:43:29 2013] The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.
+-- to make this work on PEQ, we can set the doors to have an open type in the DB that does not move the door
+-- and then change the open type on the fly with a quest interaction.
+function UnlockPhaseOneDoors(entity_list)
+	-- all the clock doors are numbered 1-4, 5-8, etc. from top left (hours 9-12) going clockwise.
+	-- the open type needs change as follows to allow them to open properly.
+	-- opentype 81: bottom left (hours 6-9)
+	-- opentype 79: top left (hours 9-12)
+	-- opentype 78: top right (hours 12-3)
+	-- opentype 80: bottom right (hours 3-6)
+	for i = 1, 20, 4 do
+		entity_list:FindDoor(i+0):SetOpenType(78); -- top left
+		entity_list:FindDoor(i+1):SetOpenType(79); -- top right
+		entity_list:FindDoor(i+2):SetOpenType(80); -- bottom right
+		entity_list:FindDoor(i+3):SetOpenType(81); -- bottom left
+	end
+end
+
+function UnlockPhaseTwoDoors(entity_list)
+	-- same thing here
+	for i = 21, 32, 4 do
+		entity_list:FindDoor(i+0):SetOpenType(78); -- top left
+		entity_list:FindDoor(i+1):SetOpenType(79); -- top right
+		entity_list:FindDoor(i+2):SetOpenType(80); -- bottom right
+		entity_list:FindDoor(i+3):SetOpenType(81); -- bottom left
 	end
 end

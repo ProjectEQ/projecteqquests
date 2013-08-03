@@ -1,11 +1,13 @@
 function event_say(e)
+	local fac = e.other:GetFaction(e.self);
+	
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. Might I ask what you are looking for?");
 	elseif(e.message:findi("treant wood")) then
-		if(e.other:Class() == "Ranger") then
+		if(fac < 6) then
 			e.self:Say("You are a new courier from the Faydarks. I am sorry I did not stay closer to the docks. I hear that part of Freeport is dangerous and is filled with many rogues. I shall require a new Small Lantern in trade for the Treant Wood.");
 		else
-			e.self:Say("Your ways are considered vile to Faydark's Champions. Leave before my rage overcomes my restraint."
+			e.self:Say("Your ways are considered vile to Faydark's Champions. Leave before my rage overcomes my restraint.");
 		end
 	end
 end

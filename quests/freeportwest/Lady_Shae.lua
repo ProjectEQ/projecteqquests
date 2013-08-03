@@ -49,7 +49,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(100,2,0);
 		e.other:AddEXP(150);
-		redwine = 0;
+		morewine = 0;
 	end	
 	item_lib.return_items(e.self, e.other, e.trade)
 end

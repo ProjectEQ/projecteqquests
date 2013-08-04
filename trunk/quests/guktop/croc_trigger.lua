@@ -1,4 +1,4 @@
-local CrodUp = 0;
+local CrocUp = 0;
 
 function event_spawn(e)
 	croc_spawns();

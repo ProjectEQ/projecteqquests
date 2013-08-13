@@ -26,7 +26,7 @@ function event_timer(e)
 		local zloc = e.self:GetZ();
 		local heading = e.self:GetHeading();
 		-- depop all existing time vortex mobs
-		eq.depopall(223112);
+		eq.depop_all(223112);
 		-- spawn 3 new ones randomly around Quarm.
 		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
 		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
@@ -63,7 +63,7 @@ function event_death_complete(e)
 	-- signal the zone_status that we died
 	eq.signal(223097,7);
 	-- depop all existing time vortex mobs
-	eq.depopall(223112);
+	eq.depop_all(223112);
 	-- depop untargetable and pop targetable spawn Zebuxoruk's Cage
 	eq.depop(223228);
 	eq.spawn2(223214,0,0,-579,-1119,60.625,0);

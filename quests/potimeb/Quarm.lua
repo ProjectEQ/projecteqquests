@@ -65,7 +65,7 @@ function event_death_complete(e)
 	-- depop all existing time vortex mobs
 	eq.depopall(223112);
 	-- depop untargetable and pop targetable spawn Zebuxoruk's Cage
-	eq.deopop(223228);
+	eq.depop(223228);
 	eq.spawn2(223214,0,0,-579,-1119,60.625,0);
 	-- load the current quest globals
 	local qglobals = eq.get_qglobals(e.self);

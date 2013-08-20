@@ -3,7 +3,7 @@ function event_say(e)
 
 	if(e.message:findi("hail") and (fac <= 5)) then
 		e.self:Say("Hi, kid! You seem to be a stranger in these parts. Heed my words, this city is dangerous to new blood!");
-		eq.signal(10135,10);
+		eq.signal(382254,1);
 	elseif(e.message:findi("hail") and (fac > 5)) then
 		e.self:Say("Run while ye still can!!  The Wolves o' the North will not tolerate yer presence!");
 	elseif(e.message:findi("toala sent me")) then

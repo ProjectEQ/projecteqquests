@@ -16,7 +16,7 @@ function event_timer(e)
 end
 
 function event_say(e)
-	if(e.message:findi("tune")) then
+	if(e.message:findi("tune") or e.message:findi("humming")) then
 		e.self:Say("Ohh. Just a little song my mother taught me when I was young. It speaks of the earth, the sky, and the sparkling stars above, always there.");
 	elseif(e.message:findi("always there")) then
 		e.self:Say("Aye, always there. Like this small bag I wear around my neck. The last gift of my dying mother. It holds a fine dust, a dust she collected during her short life, that she believed brought her luck. It's speckled, flecked as the night sky is with stars.");

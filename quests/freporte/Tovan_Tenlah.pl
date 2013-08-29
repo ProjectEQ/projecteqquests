@@ -52,8 +52,8 @@ sub EVENT_SAY
    if($text=~/gear/i)
    {
    quest::say("The first thing you need is a suit of sturdy traders clothing. Take this note to Verona Rankin and she'll help you with a suit tailored to your needs. Once you have been outfitted in your traders clothing return to me and I will inform you of your [next task].");
-   # A Sealed Letter ID- 12270 (Not the Correct note but it will do)
-   quest::summonitem("12270");
+   # Note to Verona Rankin
+   quest::summonitem("19846");
    }
 
     if($text=~/next task/i)

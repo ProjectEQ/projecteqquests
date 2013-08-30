@@ -10,6 +10,13 @@ function event_signal(e)
 	end
 end
 
+function event_waypoint_arrive(e)
+	if (e.wp ==  1) then
+		-- stop the pause timer at the end of path.
+		eq.stop();
+	end
+end
+
 function event_combat(e)
 	if (e.joined) then
 		-- begin 30 second timer to spawn adds

@@ -17,4 +17,8 @@ function event_waypoint_arrive(e)
 	end
 end
 
+function event_death_complete(e)
+	eq.spawn2(383271,0,0,-592,118,-87,49); -- spawn hollish tnoops
+end
+
 -- Shintl_Lowbrew Freeportwest version

@@ -39,4 +39,8 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_signal(e)
+	e.self:Say("Thank you, Brunar. You are some kind of fisherman! I better take this down to the storeroom with your earlier catches before it spoils.. hmm.. a little later.");
+end
+
 -- END of FILE Zone:freporte -- Gregor_Nasin

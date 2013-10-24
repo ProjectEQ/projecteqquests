@@ -1,6 +1,6 @@
 function event_spawn(e)
 	eq.set_timer("shout",45000);
-}
+end
 
 function event_say(e)
 	if(e.message:findi("trick or treat")) then

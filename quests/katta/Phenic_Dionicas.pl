@@ -74,19 +74,21 @@ sub EVENT_ITEM{
 		quest::faction(142,-30);
 		quest::setglobal("ready_for_ashes", 1, 0, "F");
 	}
-	elsif((plugin::check_handin(\%itemcount, 7397 => 1, 31757 => 1, 7394 => 1)) && (defined $qglobals{ready_for_ashes})){
-		quest::say("You have done a great service for Katta Castellum and the Loyalist Empire. I award you for your honorable Services. Know that you will be remembered for your deeds.");
-		quest::ding();
-		quest::faction(52,10);
-		quest::faction(284,-30);
-		quest::faction(142,-30);
-		quest::exp(1000000);
-		quest::summonitem(7398); #Loyalist Shield of Honor
-		quest::delglobal("ready_for_ashes");
-	}
 	elsif(plugin::check_handin(\%itemcount, 29899 => 1)){
 		quest::emote("looks at you and smiles despite the fact that you have splashed water all over him- he does not appear to be burning at all.  'Oh, excuse me.  You seem to have spilled your water, here have some of mine my friend.  Good day to you, $name,' he says.");
 		quest::summonitem(29898);
+	}
+	elsif(defined $qglobals{ready_for_ashes}) {
+		if(plugin::check_handin(\%itemcount, 7397 => 1, 31757 => 1, 7394 => 1)) {
+			quest::say("You have done a great service for Katta Castellum and the Loyalist Empire. I award you for your honorable Services. Know that you will be remembered for your deeds.");
+			quest::ding();
+			quest::faction(52,10);
+			quest::faction(284,-30);
+			quest::faction(142,-30);
+			quest::exp(1000000);
+			quest::summonitem(7398); #Loyalist Shield of Honor
+			quest::delglobal("ready_for_ashes");		
+		}
 	}
   plugin::return_items(\%itemcount);
 }

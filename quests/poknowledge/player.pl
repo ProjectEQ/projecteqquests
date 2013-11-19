@@ -50,37 +50,39 @@ sub EVENT_CLICKDOOR
   	}
   	if($doorid == 22)    #erud
 	{
-		$zonename = "Toxxulia Forest";
-		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
-		{
-		  	quest::movepc(38,296,-2330,-45.4,127);
-		}
-		elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
-		{
-		  	quest::movepc(414,248,-1684,33,88);
-		}
-		else  #SoF/SoD/UF
-		{
-		       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",3,1);
-		       quest::settimer(3,5);
-		}
+		#$zonename = "Toxxulia Forest";
+		#if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
+		#{
+		#  	quest::movepc(38,296,-2330,-45.4,127);
+		#}
+		#elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
+		#{
+		#  	quest::movepc(414,248,-1684,33,88);
+		#}
+		#else  #SoF/SoD/UF
+		#{
+		#       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",3,1);
+		#       quest::settimer(3,5);
+		#}
+		quest::movepc(38,296,-2330,-45.4,127);
   	}
   	if($doorid == 32)    #paineel
 	{
-		$zonename = "Toxxulia Forest";
-		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
-		{
-		  	quest::movepc(38,-569,2325,-43.4,39);
-		}
-		elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
-		{
-		  	quest::movepc(414,-1801,1907,119,195.5);
-		}
-		else  #SoF/SoD/UF
-		{
-		       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",4,1);
-		       quest::settimer(4,5);
-		}
+		#$zonename = "Toxxulia Forest";
+		#if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
+		#{
+		#  	quest::movepc(38,-569,2325,-43.4,39);
+		#}
+		#elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
+		#{
+		#  	quest::movepc(414,-1801,1907,119,195.5);
+		#}
+		#else  #SoF/SoD/UF
+		#{
+		#       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",4,1);
+		#       quest::settimer(4,5);
+		#}
+		quest::movepc(38,-569,2325,-43.4,39);
   	}
   	if($doorid == 24)
 	{

@@ -199,7 +199,7 @@ sub EVENT_ITEM {
     }
 
     # return unused items
-    if keys %itemcount > 1;
+    if (keys %itemcount > 1);
     plugin::return_items(\%itemcount );
 }
 

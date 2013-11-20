@@ -35,7 +35,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 12314 => 1)) { #Needle of the Void
     quest::summonitem(10114); #Purple Headband
   }
-  else (plugin::check_handin(\%itemcount, 12256 => 1)) { #Robe of the Lost Circle
+  elsif (plugin::check_handin(\%itemcount, 12256 => 1)) { #Robe of the Lost Circle
     quest::summonitem(10114); #Purple Headband
   }
   plugin::return_items(\%itemcount);

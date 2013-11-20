@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::say("Kazen wants some research tools? That is fine. I want something from you first, however. Bring me four gleaming zraxthil ores and combine them in this satchel. Why do I want them? Why do you care? Bring them to me or you don't get your tools. Now scram!");
     quest::summonitem(9579); #Gleaming Ore Satchel
   }
-  else(plugin::check_handin(\%itemcount, 27982 => 1)) { #Sealed Ore Satchel
+  elsif(plugin::check_handin(\%itemcount, 27982 => 1)) { #Sealed Ore Satchel
     quest::say("So you're not totally useless after all. Maybe there is a reason Kazen hasn't destroyed you yet. Take these tools and give my warmest regards to Master Kazen.");
     quest::summonitem(21799); #Biddliss's Research Tools
     quest::depop_withtimer();

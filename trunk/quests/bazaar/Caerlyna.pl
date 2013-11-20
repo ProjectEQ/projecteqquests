@@ -266,6 +266,14 @@ sub EVENT_ITEM
     quest::say("Here you go. Here is your bag back.");
     quest::summonitem(92873);
   }
+  elsif (plugin::check_handin(\%itemcount, 70162 => 1)) { #Ethereal Satchel of Gathering
+    quest::say("Here you go. Bring this token back to me when you would like your bag back.");
+    quest::summonitem(70193);
+  }
+  elsif (plugin::check_handin(\%itemcount, 70193 => 1)) {
+    quest::say("Here you go. Here is your bag back.");
+    quest::summonitem(70162);
+  }
   elsif (plugin::check_handin(\%itemcount, 17241 => 1)) { #Feather Lined Bag
     quest::say("Here you go. Bring this token back to me when you would like your bag back.");
     quest::summonitem(56834);

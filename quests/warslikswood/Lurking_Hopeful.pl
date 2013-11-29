@@ -1,7 +1,11 @@
 #BeginFile: warslikswood\Lurking_Hopeful.pl
 #Quest for Warsliks Wood - Lurking Hopeful: Berserker Epic 1.0 (Trial of Mastery)
 
-my $medal = 0;
+my $medal;
+
+sub EVENT_SPAWN {
+  $medal = 0;
+}
 
 sub EVENT_SAY {
   if(($text=~/hail/i) && ($class eq "Berserker") && ($ulevel > 45)) {

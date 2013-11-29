@@ -1,10 +1,12 @@
 #BeginFile: warslikswood\79127.pl (Raving Goblinmaster - Quest)
 #Quest for Warsliks Wood - Raving Goblinmaster: Berserker Epic 1.0 (Trial of Mastery)
 
-my $goblin = 0;
-my $stage = 0;
+my $goblin;
+my $stage;
 
 sub EVENT_SPAWN {
+  $goblin = 0;
+  $stage = 0;
   quest::settimer(1,600); #Timer to depop after 10 minutes
   quest::shout("Yes, I see you, you wander in the trees. If you cross me, I will bring you to your knees.");
 }

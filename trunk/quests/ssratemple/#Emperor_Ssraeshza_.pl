@@ -1,8 +1,9 @@
 #BEGIN File: ssratemple\#Emperor_Ssraeshza_.pl (Real)
 
-my $engaged = 0;
+my $engaged;
 
 sub EVENT_SPAWN {
+  $engaged = 0;
   quest::settimer("EmpDepop", 1800);
 }
 

@@ -21,4 +21,5 @@ function event_timer(e)
 	elseif (e.timer == "zeb4") then
 		eq.stop_timer("zeb4");
 		eq.depop();
+	end
 end

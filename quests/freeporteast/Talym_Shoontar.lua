@@ -8,11 +8,8 @@ function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Antonius Bayle is a blithering fool.");
 	elseif(e.signal == 2) then
-		e.self:Say)"All right, Tlin! I am going to smash your face in!");
+		e.self:Say("All right, Tlin! I am going to smash your face in!");
 	end
 end
 
 -- END of FILE Zone:freporte  ID:10182 -- Talym_Shoontar
-
-
-

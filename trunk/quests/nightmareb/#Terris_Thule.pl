@@ -28,7 +28,7 @@ sub EVENT_HP {
     quest::setnexthpevent(51);
   }
   elsif($hpevent == 51) {
-    $npc->CastSpell(3150,0); #Direption of Dreams
+    $npc->SpellFinished(3150); #Direption of Dreams
     quest::setnexthpevent(36);
   }
   elsif($hpevent == 36) {

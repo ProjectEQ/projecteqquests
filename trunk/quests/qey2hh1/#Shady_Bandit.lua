@@ -5,7 +5,7 @@ function event_spawn(e)
 	eq.set_timer("ShadyDepop", 1800000); -- Depop after 30 minutes
 end
 
-function event_say{e}
+function event_say(e)
 	if(e.message:findi("hail")) then
 		eq.attack(e.other:GetName());
 	end

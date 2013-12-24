@@ -10,5 +10,7 @@ sub EVENT_SPAWN {
 		#re-enable the spawn2 entry for all the pit mobs.
 		quest::enable_spawn2($spawn2);
 	}
+	#re-enable the piglet
+	quest::enable_spawn2(157400);
 	quest::depop();
 }

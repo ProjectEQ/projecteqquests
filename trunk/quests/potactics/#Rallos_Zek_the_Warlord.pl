@@ -13,6 +13,8 @@ sub EVENT_SPAWN {
 		#used for testing, you can uncomment this to make them all respawn in 10 seconds after spawning rallos
 		#quest::updatespawntimer($spawn2,10000); #set it all to 10 second respawn
 	}
+	# disable piglet from spawning and starting the stampede
+	quest::disable_spawn2(157400);
 }
 
 sub EVENT_AGGRO {
@@ -31,6 +33,10 @@ sub EVENT_DEATH_COMPLETE {
 		#re-enable the spawn2 entry for all the pit mobs.
 		quest::enable_spawn2($spawn2);
 	}
+	#set the piglet's respawn to 30 minutes.
+	quest::updatespawntimer(157400,1800000);
+	#re-enable the spawn2 entry for piglet
+	quest::enable_spawn2(157400);
 }
 
 sub EVENT_TIMER {

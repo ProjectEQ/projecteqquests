@@ -1,23 +1,18 @@
+# NPCID: Bastion of Thunder >> A_firestorm_portal (209038)
 sub EVENT_SIGNAL {
-if($signal == 1) {
-quest::settimer(5,30);
-quest::settimer(6,1600);
-}
-if($signal == 2) {
-quest::stoptimer(5);
-quest::stoptimer(6);
-}
+	#signals from Evynd_Firestorm (209054)
+	if($signal == 1) {
+		#timer to spawn adds every 30 seconds
+		quest::settimer("firestorm_portal_adds",30);
+	} elsif($signal == 2) {
+		#stop making adds
+		quest::stoptimer("firestorm_portal_adds"); #stop spawning
+	}
 }
 
 sub EVENT_TIMER {
-if($timer == 5) {
-quest::stoptimer(5);
-quest::settimer(5,30);
-quest::spawn2(209037,0,0,$x,$y,$z,$h);
- }
-
-if($timer == 6) {
-quest::stoptimer(5);
-quest::stoptimer(6);
-}
+	if($timer == "firestorm_portal_adds") {
+		#spawn A_storm_guardian_
+		quest::spawn2(209037,0,0,$x,$y,$z,$h);
+	}
 }

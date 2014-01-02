@@ -1,24 +1,19 @@
 
 sub EVENT_SPAWN {
-  quest::modifynpcstat("special_attacks","ABfHG");
   quest::setnexthpevent(99);
 }
 
 sub EVENT_SIGNAL {
   if($signal==1) {
-    quest::settimer("SpawnAdds",30);
+    quest::settimer("SpawnAdds",180);
+	quest::modifynpcstat("special_attacks","SQUMCNIDf");
   }
 }
 
-sub EVENT_WAYPOINT {
-  if($x==510 && $y==-495) {
-    quest::modifynpcstat("special_attacks","SQUMCNIDf");
-  }
-}
 
 sub EVENT_TIMER {
   if($timer eq "SpawnAdds") {
-    if(!$entity_list->GetMobByNpcTypeID(296025) && !$entity_list->GetMobByNpcTypeID(296025)) {
+    if(!$entity_list->GetMobByNpcTypeID(296025) && !$entity_list->GetMobByNpcTypeID(296026)) {
 	  quest::modifynpcstat("special_attacks","SQUMCNIDf");
 	  SPAWN_MY_ADDS();
 	  quest::stoptimer("SpawnAdds");
@@ -40,7 +35,7 @@ sub EVENT_HP {
 
 sub EVENT_COMBAT {
   if ($combat_state == 1) {
-    quest::settimer("BanishTop", 25);
+    quest::settimer("BanishTop", 45);
   } else {
     quest::stoptimer("BanishTop");
   }

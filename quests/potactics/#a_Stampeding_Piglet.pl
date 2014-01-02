@@ -27,6 +27,7 @@ sub EVENT_SPAWN {
 	quest::spawn2(214097,189,0,1204,-646,-297,11);
 	quest::spawn2(214097,189,0,1213,-654,-297,11);
 	quest::spawn2(214097,189,0,1213,-639,-297,11);
+	quest::ze(0, "You hear the pounding of hooves.");
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

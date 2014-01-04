@@ -7,6 +7,12 @@ sub EVENT_ENTERZONE {
   $qglobals{nexus} = undef;
   $qglobals{spire_nk} = undef;
   $qglobals{message_nk} = undef;
+  if ($class eq "Bard" || $class eq "Rogue") {
+    if (plugin::check_hasitem($client, 52355) && !plugin::check_hasitem($client, 52359)) { #Shakey's Dilapidated Noggin, Radiant Azure Lightstone
+      quest::unique_spawn(13123, 109, 0, 0, 0, -8); #Flighty_Azure_Wisp
+      $client->Message(15, "Out of the corner of your eye, you catch a glimpse of a brightly colored wisp as it darts by. It's moving at an incredible speed.");
+    }
+  }
 }
 
 sub EVENT_TIMER {

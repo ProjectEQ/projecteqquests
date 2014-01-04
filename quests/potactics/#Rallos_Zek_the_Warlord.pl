@@ -53,9 +53,11 @@ sub EVENT_TIMER {
 			quest::spawn2(214114,0,0,815,-100,-293,255);
 			quest::spawn2(214114,0,0,815,-295,-293,68);
 			quest::spawn2(214114,0,0,565,185,-293,0);
-			my $mob1 = $entity_list->GetMobID(214114);
-			my $mobnpc1 = $mob1->CastToNPC();
-			$mobnpc1->AddToHateList($npc->GetHateTop());
+			my @npc_list = $entity_list->GetNPCList();
+			foreach $npc (@npc_list) {
+				if($npc->GetNPCTypeID() == 214114) {
+				$npc->AddToHateList($npc->GetHateTop(), 1);
+			}
 		} else {
 			quest::depopall(214114);   # Depop the adds since RZ is not currently agroed.
 			quest::stoptimer(1);

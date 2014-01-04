@@ -117,12 +117,6 @@ function PortIntoTower(cur_x, cur_y, cur_z, distance, dest_x, dest_y, dest_z, de
 				if (client_v:CalculateDistance(cur_x, cur_y, cur_z) <= distance) then
 					-- port the player up
 					client_v:MovePC(209, dest_x, dest_y, dest_z, dest_h);
-					-- wipe any aggro the player had when they ported up
-					if (client_v:GetAggroCount() > 0) then
-						entity_list:RemoveFromTargets(client_v);
-						-- this will be switched to this once the server is updated. this change will clear xtarget.
-						-- entity_list:RemoveFromTargets(client_v, true);
-					end
 				end
 			end
 		end

@@ -123,9 +123,5 @@ function PortIntoTower(cur_x, cur_y, cur_z, distance, dest_x, dest_y, dest_z, de
 	else
 		-- port the player up
 		client_e.self:MovePC(209, dest_x, dest_y, dest_z, dest_h);
-		-- wipe any aggro the player had when they ported up
-		if (client_e.self:GetAggroCount() > 0) then
-			entity_list:RemoveFromTargets(client_e.self, true);
-		end
 	end
 end

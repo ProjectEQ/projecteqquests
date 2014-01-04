@@ -68,8 +68,6 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_SIGNAL {
- if($signal == 0) {
   quest::say("Old [Shakey] hasn't been feeling like himself lately, I'm afraid.");
- }
 }
 #END of FILE Zone:rivervale  ID:19056 -- Reebo_Leafsway

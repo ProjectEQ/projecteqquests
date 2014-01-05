@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  if ($z > -437 && $timer == 81) {
+  if ($z > -437) {
     $npc->SetHP($npc->GetMaxHP());
   }
 }

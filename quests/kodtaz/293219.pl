@@ -1,7 +1,8 @@
 sub EVENT_SPAWN {
-  quest::settimer(8800)
+  quest::settimer("depop", 8800)
 }
 
 sub EVENT_TIMER {
+  quest::stoptimer("depop");
   quest::depop();
 }

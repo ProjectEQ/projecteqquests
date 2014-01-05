@@ -46,10 +46,8 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 2842 => 1)) {
       quest::summonitem(2698);
     }
-    else {
-      plugin::return_items(\%itemcount);
-    }
   }
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: westwastes ID: 120126 NPC: Melalafen

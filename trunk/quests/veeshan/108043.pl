@@ -24,8 +24,8 @@ sub EVENT_ITEM {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69380);
 		}
-		plugin::return_items(\%itemcount);
 	}
+	plugin::return_items(\%itemcount);
 
 }
 

@@ -41,9 +41,9 @@ sub EVENT_ITEM {
 	if ($faction == 1) {
 		if (plugin::check_handin(\%itemcount, 69316 => 1)) { #Box of Phara Dar (Full)
 			quest::say("Poor Fraka, he was only a whelp. The betrayers have paid for their crime. While this has avenged the loss of my brother, it still does not take the pain away. Here is your reward for your trouble. Should you find this reward is not fitting, I can replace it with a different one. Now, please leave my sanctum. I need time alone.");
-			if ($class=="Cleric" || $class=="Druid" || $class=="Shaman" || $class=="Necromancer" || $class=="Wizard" || $class=="Magician" || $class=="Enchanter") { #Caster
+			if ($class eq "Cleric" || $class eq "Druid" || $class eq "Shaman" || $class eq "Necromancer" || $class eq "Wizard" || $class eq "Magician" || $class eq "Enchanter") { #Caster
 			quest::summonitem(69390); #Earring of Phara Dar
-			} elsif ($class=="Warrior" || $class=="Paladin" || $class=="Ranger" || $class=="Shadow Knight" || $class=="Monk" || $class=="Bard" || $class=="Rogue" || $class=="Beastlord" || $class=="Berserker") { #Melee/Hybrid
+			} elsif ($class eq "Warrior" || $class eq "Paladin" || $class eq "Ranger" || $class eq "Shadowknight" || $class eq "Monk" || $class eq "Bard" || $class eq "Rogue" || $class eq "Beastlord" || $class eq "Berserker") { #Melee/Hybrid
 				quest::summonitem(69389); #Ring of the Azure Sky
 			}
 			quest::exp(50000);

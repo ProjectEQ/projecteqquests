@@ -56,7 +56,8 @@ sub EVENT_TIMER {
 			my @npc_list = $entity_list->GetNPCList();
 			foreach $npc (@npc_list) {
 				if($npc->GetNPCTypeID() == 214114) {
-				$npc->AddToHateList($npc->GetHateTop(), 1);
+					$npc->AddToHateList($npc->GetHateTop(), 1);
+				}
 			}
 		} else {
 			quest::depopall(214114);   # Depop the adds since RZ is not currently agroed.

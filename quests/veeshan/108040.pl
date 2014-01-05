@@ -13,15 +13,15 @@ sub EVENT_ITEM {
 	if ($faction == 1) {
 		if (plugin::check_handin(\%itemcount, 69339 => 1, 69338 => 1, 69337 => 1)) {
 			quest::say("My worst fears are true. My assistant has been slain. I will have my servants investigate this heinous crime. Here is your reward for this deed mortal. If you do not like it, I can provide you with a different reward.");
-			if ($class eq Warrior) { quest::summonitem(69383);
-			} elsif ($class eq Paladin) { quest::summonitem(69383);
-			} elsif ($class eq Ranger) { quest::summonitem(69383);
-			} elsif ($class eq Shadowknight) { quest::summonitem(69383);
-			} elsif ($class eq Monk) { quest::summonitem(69383);
-			} elsif ($class eq Bard) { quest::summonitem(69383);
-			} elsif ($class eq Rogue) { quest::summonitem(69383);
-			} elsif ($class eq Beastlord) { quest::summonitem(69383);
-			} elsif ($class eq Berserker) { quest::summonitem(69383);
+			if ($class eq "Warrior") { quest::summonitem(69383);
+			} elsif ($class eq "Paladin") { quest::summonitem(69383);
+			} elsif ($class eq "Ranger") { quest::summonitem(69383);
+			} elsif ($class eq "Shadowknight") { quest::summonitem(69383);
+			} elsif ($class eq "Monk") { quest::summonitem(69383);
+			} elsif ($class eq "Bard") { quest::summonitem(69383);
+			} elsif ($class eq "Rogue") { quest::summonitem(69383);
+			} elsif ($class eq "Beastlord") { quest::summonitem(69383);
+			} elsif ($class eq "Berserker") { quest::summonitem(69383);
 			} else { quest::summonitem(69384);
 			}
 			quest::ding();

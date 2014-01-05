@@ -34,7 +34,9 @@ function event_click_door(e)
 		-- check if the person clicking has the Symbol of Torden item id:9433 or has GM status of 80+ with the GM flag on.
 		-- the point of checking both status and GM flag is so a dev with status > 80 can still pretend to be a non-GM.
 		-- by using the status, we ensure someone cannot bypass the check by another GM using "#gm on" on a player.
-		if (e.self:HasItem(9433) == 1 or (e.self:Admin() >= 80 and e.self:GetGM())) then
+		if (e.self:Admin() >= 80 and e.self:GetGM()) then
+			PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 100, -765, -1735, 1270, 0);
+		elseif (e.self:HasItem(9433)) then
 			PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 100, -765, -1735, 1270, 0);
 		else
 			SendGargoyles(209024);

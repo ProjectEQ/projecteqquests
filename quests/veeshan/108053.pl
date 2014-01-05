@@ -11,14 +11,14 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if ($faction == 1) {
-		if (plugin::check_handin(\%itemcount, 69335 => 1) {
+		if (plugin::check_handin(\%itemcount, 69335 => 1)) {
 			quest::say("Is this trinket truly meant for me? Lendiniara was not one for giving gifts. Oh, how I miss her. I must thank you again. Once again I'm brimming with pride because of my mentor. Here is your reward. If it doesn't suit you, please give it back and I will find something that does. Farewell.");
 			quest::summonitem(69385);
 			quest::exp(1000);
-		} elsif (plugin::check_handin(\%itemcount, 69385 => 1) {
+		} elsif (plugin::check_handin(\%itemcount, 69385 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69386);
-		} elsif (plugin::check_handin(\%itemcount, 69386 => 1) {
+		} elsif (plugin::check_handin(\%itemcount, 69386 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69385);
 		}

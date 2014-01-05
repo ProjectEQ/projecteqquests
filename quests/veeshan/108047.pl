@@ -26,10 +26,10 @@ sub EVENT_ITEM {
 			} else { quest::summonitem(69388);
 			}
 			quest::exp(10000);
-		}  elsif (plugin::check_handin(\%itemcount, 69388 => 1) {
+		}  elsif (plugin::check_handin(\%itemcount, 69388 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69387);
-		} elsif (plugin::check_handin(\%itemcount, 69387 => 1) {
+		} elsif (plugin::check_handin(\%itemcount, 69387 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69388);      
 		}

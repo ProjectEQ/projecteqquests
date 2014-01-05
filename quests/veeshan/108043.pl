@@ -14,13 +14,13 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if ($faction == 1) {
-		if (plugin::check_handin(\%itemcount, 27249 => 1, 27208 => 1, 27209 => 1, 27204 => 1) {
+		if (plugin::check_handin(\%itemcount, 27249 => 1, 27208 => 1, 27209 => 1, 27204 => 1)) {
 			quest::say("Splendid, $name. This Wyvern has been a thorn in my side as long as those Sky dragons have been. You have gained my trust, outlander, and here is your reward. If the reward does not impress you, I have a different one that might. Return that to me if you wish to see it.");
 			quest::summonitem(69380);
-		} elsif (plugin::check_handin(\%itemcount, 69380 => 1) {
+		} elsif (plugin::check_handin(\%itemcount, 69380 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69379);
-		} elsif (plugin::check_handin(\%itemcount, 69379 => 1) {
+		} elsif (plugin::check_handin(\%itemcount, 69379 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
 			quest::summonitem(69380);
 		}

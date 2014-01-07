@@ -27,7 +27,7 @@ sub EVENT_SAY {
   if($text=~/strategize in battle/i && plugin::check_hasitem($client, 60198)) { #Check for Medal of Strategy
     quest::say("One of the best strategists I've ever met is ready and willing to help any who attempt to prove their skills in battle. Seek out Treanik Ireblade. She won't give ye any advantage, however. This is yer fight to win, not hers, though she'll be itchin' to get her blade bloodied. Take this note and give it to her.");
     quest::summonitem(60199); # Note for Treanik
-	$dragon=undef
+	$dragon=undef;
   }
   if($text=~/ready/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
     quest::say("Eager one, aren't ye? Good to see, but do not underestimate how volatile our rage is. In me youth, it snuck up on me and in a blind rage, I had slain me sparring partner. It was then that I knew I was different and shouldn't keep close friends until I'ad my rage under control. There are some, though, that will [never control the rage].");

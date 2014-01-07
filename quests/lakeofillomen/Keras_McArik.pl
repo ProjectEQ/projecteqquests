@@ -24,10 +24,10 @@ sub EVENT_SAY {
     quest::say("The challange is for ye, and ye alone. If you have anyone try to assist ye, ye will fail. Do not attempt to cheat yerself of yer own development. Ye must seek out Mardic Crimsonsteel and get his guidance. He will prepare ye to fight a mirage of a berserker that has been created through years of refined magic. I cannot tell ye the source of such magic, but ye must know that I used that mirage as me sparring partner, constantly improving me skills against it and advancing. Perhaps now it's yer turn to face it... alone. Take this sealed note to Mardic. It will give him instructions for yer test.");
     quest::summonitem(60195); #Sealed Note for Mardic
   }
-  if($text=~/strategize in battle/i && $ulevel > 45 && $class eq "Berserker" && $dragon == 1) {
+  if($text=~/strategize in battle/i && plugin::check_hasitem($client, 60198)) { #Check for Medal of Strategy
     quest::say("One of the best strategists I've ever met is ready and willing to help any who attempt to prove their skills in battle. Seek out Treanik Ireblade. She won't give ye any advantage, however. This is yer fight to win, not hers, though she'll be itchin' to get her blade bloodied. Take this note and give it to her.");
-    quest::summonitem(60199);
-    $dragon=undef;
+    quest::summonitem(60199); # Note for Treanik
+	$dragon == undef
   }
   if($text=~/ready/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
     quest::say("Eager one, aren't ye? Good to see, but do not underestimate how volatile our rage is. In me youth, it snuck up on me and in a blind rage, I had slain me sparring partner. It was then that I knew I was different and shouldn't keep close friends until I'ad my rage under control. There are some, though, that will [never control the rage].");
@@ -64,15 +64,14 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 60196 => 1, 60194 => 1)) {
     quest::say("Well, I am indeed hopeful and pleased about yer progress, $name. Ye should be proud that you have now attained the Medal of Strategy. Well done, indeed! It seems that ye can best yer equal now. The next test of yer masters of yer abilities is much more difficult, however, and may require ye to ask yer friends for some 'elp... but it must be the right kind of 'elp. This test will determine how well ye [strategize in battle]. Ye must gather trustworthy friends and they must be willing to work under yer command.");
-    $dragon=1;
-    quest::settimer(1,1000);
     quest::summonitem(60198);
+	$dragon == 1;
   }
   elsif(plugin::check_handin(\%itemcount, 60201 => 1, 60198 => 1)) {
     quest::say("Ye are well on the way, me friend. I knew the moment I saw ye that ye were going to get through this. I'm just not convinced that yer as powerful as even ye may think. So, are ye [ready] for the next trial ye must face?");
     quest::summonitem(60202);
     $imp=1;
-    quest::settimer(2,1000);
+    quest::settimer(1,1000);
   }
   elsif(plugin::check_handin(\%itemcount, 60202 => 1, 60203 => 1)) {
     quest::say("I am indeed impressed by yer control and ability to best such a horrific beast, my friend. Ye are certainly well on yer way to mastering yer rage and taking advantage of the abilities ye were born with. Here is your Medal of Hunting. Ye are nearly there -- nearly complete with yer trials, but there are a few more things ye [must do] for me. ");
@@ -94,10 +93,6 @@ sub EVENT_ITEM {
 sub EVENT_TIMER {
   if($timer == 1) { ##incase quest buggs... timer is set for (1000/60) minuites
     quest::stoptimer(1);
-    $dragon=undef;
-  }
-  if($timer == 2) { #same as above
-    quest::stoptimer(2);
     $imp=undef;
   }
 }

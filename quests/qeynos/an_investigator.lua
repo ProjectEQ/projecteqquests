@@ -11,13 +11,13 @@ function event_say(e)
 	elseif(e.message:findi("confession")) then
 		e.self:Say("Here you are.");
 		e.other:SummonItem(2344);
-	elseif(e.message:findi("summon a guard") and e.other:HasItem(2344) == true) then
+	elseif(e.message:findi("summon a guard") and e.other:HasItem(2394) == true) then
 		e.self:Say("Guards!  Take this man away.");
 		eq.unique_spawn(1314,66,0,-413,50,-24,0);
 	elseif(e.message:findi("summon a guard") and e.other:HasItem(2369) == true) then
 		e.self:Say("Guards!  Take this man away.");
 		eq.unique_spawn(1182,64,0,-246,145,3,0);
-	elseif(e.message:findi("summon a guard") and (e.other:HasItem(2369) == false or e.other:HasItem(2344) == false)) then
+	elseif(e.message:findi("summon a guard") and (e.other:HasItem(2369) == false or e.other:HasItem(2394) == false)) then
 		e.self:Say("Let us interrogate the suspects before summoning any guards.");
 	elseif(e.message:findi("second suspect") and qglobals.invest_badge == "second_suspect") then
 		e.self:Say("The second suspect was sighted below the Grounds of Fate.");

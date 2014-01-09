@@ -15,6 +15,7 @@ function event_hp(e)
 		yloc = e.self:GetY();
 		zloc = e.self:GetZ();
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
+		e.self:ChangeSize(25);
 		eq.set_next_hp_event(60);
 	elseif (e.hp_event == 60) then
 		xloc = e.self:GetX();
@@ -22,12 +23,14 @@ function event_hp(e)
 		zloc = e.self:GetZ();
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
+		e.self:ChangeSize(20);
 		eq.set_next_hp_event(35);
 	elseif (e.hp_event == 35) then
 		xloc = e.self:GetX();
 		yloc = e.self:GetY();
 		zloc = e.self:GetZ();
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
+		e.self:ChangeSize(15);
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
 		xloc = e.self:GetX();
@@ -37,6 +40,7 @@ function event_hp(e)
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
+		e.self:ChangeSize(10);
 		eq.set_next_hp_event(5);
 	elseif (e.hp_event == 5) then
 		xloc = e.self:GetX();
@@ -48,5 +52,6 @@ function event_hp(e)
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
 		eq.spawn2(212064,0,0,xloc,yloc,zloc,0); -- a_magmite
+		e.self:ChangeSize(5);
 	end
 end

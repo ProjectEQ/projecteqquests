@@ -13,7 +13,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 2344})) then
 		e.other:SummonItem(2369);
 		eq.set_global("invest_badge","second_suspect",3,"F");
-		eq.spawn2(1201,0,0,-414,-11,-25,0);
+		eq.unique_spawn(1201,0,0,-414,-11,-25,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade, e.text)
 end

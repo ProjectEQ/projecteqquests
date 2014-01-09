@@ -15,7 +15,7 @@ function event_trade(e)
 		e.self:Say("Here's your confession.  I hope you choke on it!");
 		e.other:SummonItem(2394);
 		eq.set_global("invest_badge","third_suspect",3,"F");
-		eq.spawn2(1197,0,0,55,-341,-16,0);
+		eq.unique_spawn(1197,0,0,55,-341,-16,0);
 		eq.set_timer("depop",300000);  -- reset time for guard to escort him before depopping
 	end
 	item_lib.return_items(e.self, e.other, e.trade, e.text)
@@ -38,7 +38,7 @@ function event_signal(e)
 		eq.signal(1031,3,5000);
 	elseif(e.signal == 3) then
 		e.self:Say("All right! Fine! I admit I've raised a few servants in my time. I hold no love for Antonius Bayle and frankly, I tire of keeping to the shadows and crawling through the blasted sewers as a second class citizen in my home town! I'll sign your blasted document but know that this is only the tip of the shark's fin you see sticking out of the water. The next and last thing you'll see are its teeth before you are consumed!");
-		eq.set_timer("depop",60000); -- reset timer to 1 minutes to trade for document
+		eq.set_timer("depop",90000); -- reset timer to 1 minutes to trade for document
 	elseif(e.signal == 4) then
 		eq.start(67);
 	end

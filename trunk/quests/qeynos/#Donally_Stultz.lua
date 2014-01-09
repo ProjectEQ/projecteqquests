@@ -5,7 +5,7 @@ end
 function event_say(e)
 	if(e.message:findi("bloodsaber")) then
 		e.self:Say("Of course I'm a Bloodsaber, you fool! I've just returned from the Plains of Karana where I was reveling in the glory of the Plaguebringer. Now then, since I see that this foolish investigator is with you, I suppose you want me to sign a confession document or something like that? Well, let's have it then!");
-		eq.set_timer("depop",60000);
+		eq.set_timer("depop",90000);
 	end
 end
 

@@ -2,11 +2,11 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i && !defined $qglobals{pop_poj_mavuin})
 	{
-	quest::say("I have been locked away, shamed for a reason that is not my own! Take [this information] to the Tribunal, I beg of you! It may be the only chance to prove that I am truly innocent!");
+	quest::say("I have been locked away, shamed for a reason that is not my own! Take [" . quest::saylink("what information", 0, "this information") . "] to the Tribunal, I beg of you! It may be the only chance to prove that I am truly innocent!");
 	}
 if($text=~/What information/i && !defined $qglobals{pop_poj_mavuin})
 	{
-	quest::say("Oh, excuse me... The Tribunal is not a being who deals with parchment and quills, he will test you to allow me to [plea my case].  When you tell him of my request, be prepared, $name.");
+	quest::say("Oh, excuse me... The Tribunal is not a being who deals with parchment and quills, he will test you to allow me to [" . quest::saylink("plea your case", 0, "plea my case") . "].  When you tell him of my request, be prepared, $name.");
 	}
 
 if($text=~/plea your case/i && !defined $qglobals{pop_poj_mavuin})

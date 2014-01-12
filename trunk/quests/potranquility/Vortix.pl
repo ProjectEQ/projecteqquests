@@ -9,19 +9,19 @@ sub EVENT_SAY {
  #}
  if($text=~/searching/i){ 
   # Monk Epic 1.5
-  quest::say("Long ago, Kaiaren wrote down all of his teachings in this book. It was in case anything ever happened to him the teachings would not be lost forever. These are those teachings. There are several [techniques] missing though that I had hoped to find in this book. Kaiaren had once told me that there was a way to retrieve someones memories using a similar technique that originally caused his memory loss.");
+  quest::say("Long ago, Kaiaren wrote down all of his teachings in this book. It was in case anything ever happened to him the teachings would not be lost forever. These are those teachings. There are several [" . quest::saylink("techniques") . "] missing though that I had hoped to find in this book. Kaiaren had once told me that there was a way to retrieve someones memories using a similar technique that originally caused his memory loss.");
  }
  if($text=~/techniques/i){ 
   # Monk Epic 1.5
-  quest::say("The only other place the techniques that we seek could be retained would be within the Celestial Order itself. Yes... the [Celestial Guardians] should be safekeeping the sacred techniques.");
+  quest::say("The only other place the techniques that we seek could be retained would be within the Celestial Order itself. Yes... the [" . quest::saylink("Celestial Guardians") . "] should be safekeeping the sacred techniques.");
  }
  if($text=~/celestial guardians/i){ 
   # Monk Epic 1.5
-  quest::say("They are the keepers of the disciplines. They are the ones that guard all that is right and balanced in this world. They are the enlightened and their faith is unwavering. Do you wish to [find] them?");
+  quest::say("They are the keepers of the disciplines. They are the ones that guard all that is right and balanced in this world. They are the enlightened and their faith is unwavering. Do you wish to [" . quest::saylink("find") . "] them?");
  }
  if($text=~/find/i){ 
   # Monk Epic 1.5
-  quest::say("You can find them within their essences. The names you will most likely find them by are the Disciples of [Sun], [Moon], and [Order]. Hopefully you will be able to locate them and help retrieve the techniques we need.");
+  quest::say("You can find them within their essences. The names you will most likely find them by are the Disciples of [" . quest::saylink("Sun") . "], [" . quest::saylink("Moon") . "], and [" . quest::saylink("Order") . "]. Hopefully you will be able to locate them and help retrieve the techniques we need.");
  }
  if($text=~/sun/i){ 
   # Monk Epic 1.5
@@ -37,11 +37,11 @@ sub EVENT_SAY {
  }
  if($text=~/journey/i){ 
   # Monk Epic 1.5
-  quest::say("The steps that you have taken thus far have been to prepare you for the next step. I must apologize for not telling you sooner but I had to make sure I knew you were worthy. Kaiarens diary did contain the way to unlock his mind again. To do so, you must travel back to the land that you brought the sand from. There you will have to battle the two halves of Kaiarens [being]; his mind and body.");
+  quest::say("The steps that you have taken thus far have been to prepare you for the next step. I must apologize for not telling you sooner but I had to make sure I knew you were worthy. Kaiarens diary did contain the way to unlock his mind again. To do so, you must travel back to the land that you brought the sand from. There you will have to battle the two halves of Kaiarens [" . quest::saylink("being") . "]; his mind and body.");
  }
  if($text=~/being/i){ 
   # Monk Epic 1.5
-  quest::say("He has entered a [place] where chaos rules and his mind has separated from his body. His consciousness has taken the form of beings of another plane. Only after you have retrieved both essences of his mind and body, will we be able to free him again.");
+  quest::say("He has entered a [" . quest::saylink("place") . "] where chaos rules and his mind has separated from his body. His consciousness has taken the form of beings of another plane. Only after you have retrieved both essences of his mind and body, will we be able to free him again.");
  }
  if($text=~/place/i){ 
   # Monk Epic 1.5
@@ -53,12 +53,12 @@ sub EVENT_ITEM {
  # Handin: 1/2 of Kaiaren's Diary (Right), 1/2 of Kaiaren's Diary (Left)
  if(plugin::check_handin(\%itemcount, 48109 => 1, 48110 => 1)){
   # Monk Epic 1.5
-  quest::say("You have found it. Let me look at it for a minute. Ah yes, it has been a while but it is all coming back to me. Whats this though? It seems like what I was [searching] for is located elsewhere.");
+  quest::say("You have found it. Let me look at it for a minute. Ah yes, it has been a while but it is all coming back to me. Whats this though? It seems like what I was [" . quest::saylink("searching") . "] for is located elsewhere.");
  }
  # Handin: Initiate's Sash of the Celestial Order
  elsif(plugin::check_handin(\%itemcount, 48127 => 1)){
   # Monk Epic 1.5
-  quest::say("I see you have gained great strength during your journey as you now wear the Sash of the Celestial Order. I am glad you have made it this far. You will need that for the next steps of your [journey].");
+  quest::say("I see you have gained great strength during your journey as you now wear the Sash of the Celestial Order. I am glad you have made it this far. You will need that for the next steps of your [" . quest::saylink("journey") . "].");
   quest::summonitem(48127);
  }
  # Handin: Kaiaren's Mind & Kaiaren's Body

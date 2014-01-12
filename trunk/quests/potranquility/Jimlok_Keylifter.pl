@@ -1,12 +1,12 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-quest::say("Well met. traveler.  Can I be of assistance to you?  Can't say as I got much to do at the moment.  I'm just attending to a little fishing while I wait on my friend to get back to me.  Hopefully he doesn't keep me waiting for too much longer.  I can only stand so much of this place.");
+quest::say("Well met. traveler.  Can I be of assistance to you?  Can't say as I got much to do at the moment.  I'm just attending to a little fishing while I wait on my [" . quest::saylink("friend") . "] to get back to me.  Hopefully he doesn't keep me waiting for too much longer.  I can only stand so much of this place.");
 }
-if($text=~/what friend?/i){
-quest::say("This is the situation.  My friend Gilor Swiftfoot and I were going to try our hand at breaking into the Plane of Justice. Yeah. yeah. I'm sure you're thinking that's silly and all. but how many people do you know of that can say they've broken out of the Eternal Prison. let alone in? 'None', right? So, we were all ready to go in when I got word that something else needed re-appropriating all quick like. I told Gilor to wait until I got back, but no. He had to run off, eager as always and as patient as a gust of wind. Now, I think he's in [trouble].");
+if($text=~/friend/i){
+quest::say("This is the situation.  My friend Gilor Swiftfoot and I were going to try our hand at breaking into the Plane of Justice. Yeah. yeah. I'm sure you're thinking that's silly and all. but how many people do you know of that can say they've broken out of the Eternal Prison. let alone in? 'None', right? So, we were all ready to go in when I got word that something else needed re-appropriating all quick like. I told Gilor to wait until I got back, but no. He had to run off, eager as always and as patient as a gust of wind. Now, I think he's in [" . quest::saylink("trouble") . "].");
 }
 if ($text=~/trouble/i) {
-quest::say("People here seem to think that he tried to make the prison break by himself. They've found another way in, so maybe he took that route. I'd like to check on him, but if he isn't in there, I'm liable to get myself in trouble. I think I'd be much better off staying here and waiting for him. If you want to go look for him, I'd be quite grateful. I doubt you have the skills to get far in there. You don't look like the burglarizing type, but I'd even be willing to give you the document that I picked up on my last job if you look for him.");
+quest::say("People here seem to think that he tried to make the prison break by himself. They've found another way in, so maybe he took that route. I'd like to check on him, but if he isn't in there, I'm liable to get myself in trouble. I think I'd be much better off staying here and waiting for him. If you want to go look for him, I'd be quite grateful. I doubt you have the skills to get far in there. You don't look like the burglarizing type, but I'd even be willing to give you the [" . quest::saylink("document") . "] that I picked up on my last job if you look for him.");
 }
 if ($text=~/document/i) {
 quest::say("Don't you worry about that unless you bring me some word of Gilor's condition. Trust me, it's a strange and mysterious document. Just the sort of thing you adventuring types love. Find Gilor and it's all yours, I give you my word.");  

@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/stone of entry/i) {
     if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 2)) {
-      quest::say("Gaining access to such a private place has always been reserved for the elders of my people. While the legion may have destroyed our home, they have yet to figure out a way around many of our wards that bar access to our sacred areas. Unfortunately, their frustration at gaining entry resulted in the painful torture of many of my people until they were given the keys to enter. The courtroom requires one of these keys and while the invaders hold all of the existing keys, I can create one if you can retrieve the proper [items].");
+      quest::say("Gaining access to such a private place has always been reserved for the elders of my people. While the legion may have destroyed our home, they have yet to figure out a way around many of our wards that bar access to our sacred areas. Unfortunately, their frustration at gaining entry resulted in the painful torture of many of my people until they were given the keys to enter. The courtroom requires one of these keys and while the invaders hold all of the existing keys, I can create one if you can retrieve the proper [" . quest::saylink("items") . "].");
     }
   }
   if ($text=~/items/i) {
@@ -25,17 +25,17 @@ sub EVENT_SAY {
   }
   if ($text=~/ritual/i) {
     if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
-      quest::say("While animating stone comes easy for us, sometimes we need an extremely powerful stone worker to help with the city. These stone servants were made through a ritual which combined the power of eight geomancers into a ninth. This geomancer would then imbue a stone worker with this power, resulting in a more powerful construct. We stopped doing the ritual when we discovered that it could take away our ability over time. If [she] has somehow figured out a way to absorb this power, then my people could be in more danger than I thought possible.");
+      quest::say("While animating stone comes easy for us, sometimes we need an extremely powerful stone worker to help with the city. These stone servants were made through a ritual which combined the power of eight geomancers into a ninth. This geomancer would then imbue a stone worker with this power, resulting in a more powerful construct. We stopped doing the ritual when we discovered that it could take away our ability over time. If [" . quest::saylink("she") . "] has somehow figured out a way to absorb this power, then my people could be in more danger than I thought possible.");
     }
   }
   if ($text=~/she/i) {
     if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
-      quest::say("We refer to her as the silent one, but the legion calls her Xictic. She is one of their kind who can use magic and she seems to be quite feared by everyone in this area. She comes here sometimes and takes three of us into the building with the glowing dome around it. Along with her are eight magic-using invaders and some of the slavers. When they are finished, only members of the legion leave. None of my people who enter are ever seen again. If what this says is true, you must stop her. If she succeeds, she will be able to control our stone servants at will and cause even more destruction. I beg you to stop her. I will help you in any way if you [promise] to stop her.");
+      quest::say("We refer to her as the silent one, but the legion calls her Xictic. She is one of their kind who can use magic and she seems to be quite feared by everyone in this area. She comes here sometimes and takes three of us into the building with the glowing dome around it. Along with her are eight magic-using invaders and some of the slavers. When they are finished, only members of the legion leave. None of my people who enter are ever seen again. If what this says is true, you must stop her. If she succeeds, she will be able to control our stone servants at will and cause even more destruction. I beg you to stop her. I will help you in any way if you [" . quest::saylink("promise") . "] to stop her.");
     }
   }
   if ($text=~/promise/i) {
     if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
-      quest::say("I cannot tell you how relieved this makes me. Now to the issue at hand. While Xictic and those she chooses can roam freely in and out of the magical dome surrounding the chamber, if anyone else tries to enter they are held back. As a councilman, I was granted a device that allows access into the dome and I've managed to keep it away from the prying eyes of the Mata Muram. Using it is not without its consequences, though. As soon as an outsider shows up within the dome, they will know what has occurred and will come searching for the culprit so be certain you are ready to face the challenges ahead before you embark upon this venture. Only eighteen of you will be allowed into the chamber at one time so gather your forces and tell me you are [ready] to face Xictic.");
+      quest::say("I cannot tell you how relieved this makes me. Now to the issue at hand. While Xictic and those she chooses can roam freely in and out of the magical dome surrounding the chamber, if anyone else tries to enter they are held back. As a councilman, I was granted a device that allows access into the dome and I've managed to keep it away from the prying eyes of the Mata Muram. Using it is not without its consequences, though. As soon as an outsider shows up within the dome, they will know what has occurred and will come searching for the culprit so be certain you are ready to face the challenges ahead before you embark upon this venture. Only eighteen of you will be allowed into the chamber at one time so gather your forces and tell me you are [" . quest::saylink("ready") . "] to face Xictic.");
     }
   }
   if ($text=~/ready/i) {

@@ -7,15 +7,15 @@
 sub EVENT_SAY
 {
    if ($text=~/Hail/i) {
-      quest::say("Oh, hello. I am sorry, I did not see you approach. I have been giving all of my attention to poor [Phanti] here.");
+      quest::say("Oh, hello. I am sorry, I did not see you approach. I have been giving all of my attention to poor [" . quest::saylink("Phanti") . "] here.");
    }
    
    if ($text=~/Phanti/i) {
-      quest::say("A few days ago Phanti started to get very ill, while she was preparing herself for another trip into [Saryrn's domain]. We are not sure exactly was caused her to fall into this malaise, although we do have our [suspicions].");
+      quest::say("A few days ago Phanti started to get very ill, while she was preparing herself for another trip into [Saryrn's domain]. We are not sure exactly was caused her to fall into this malaise, although we do have our [" . quest::saylink("suspicions") . "].");
    }
    
    if ($text=~/suspicions/i) {
-      quest::say("Torment, the Plane of Pain. She was doing some research on the denizens there, should you [help] us, I could grant you and your companions entry. The key will not do Phanti any good for quite some time.");
+      quest::say("Torment, the Plane of Pain. She was doing some research on the denizens there, should you [" . quest::saylink("help") . "] us, I could grant you and your companions entry. The key will not do Phanti any good for quite some time.");
    }
    
    if ($text=~/help/i) {

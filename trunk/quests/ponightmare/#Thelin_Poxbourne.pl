@@ -27,12 +27,12 @@ sub EVENT_TIMER
 
 sub EVENT_SAY{
       if($text=~/Hail/i && $entry == undef && $pop_pon_hedge_jezith == 1){
-      quest::say("You there! You have talked to Adroha Jezith? Then I assume you are here to help me! ... Tell me when you are [ready] to begin, I will lead you through the maze and we, together, will end this endless torment!");
+      quest::say("You there! You have talked to Adroha Jezith? Then I assume you are here to help me! ... Tell me when you are [" . quest::saylink("ready") . "] to begin, I will lead you through the maze and we, together, will end this endless torment!");
       }
 
 
       if($text=~/Hail/i && ($entry == 1 || $entry == 2 || $entry == 3 || $entry == 4 || $entry == 5 || $entry == 6 || $entry == 7 || $entry == 8 || $entry == 9 || $entry == 10 || $entry == 11|| $entry == 12 || $entry == 13 || $entry == 14 || $entry == 15 || $entry == 16 || $entry == 17 || $entry == 18) && $pop_pon_hedge_jezith == 1){
-      quest::say("You there! You have talked to Adroha Jezith? Then I assume you are here to help me! ... Tell me when you are [ready] to begin, I will lead you through the maze and we, together, will end this endless torment!");
+      quest::say("You there! You have talked to Adroha Jezith? Then I assume you are here to help me! ... Tell me when you are [" . quest::saylink("ready") . "] to begin, I will lead you through the maze and we, together, will end this endless torment!");
       }
       
   

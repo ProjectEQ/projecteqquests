@@ -55,7 +55,7 @@ sub EVENT_SAY {
       }
 else {
   quest::say("Please speak with the High Priest if you desire to assist");
-  quest::say("Do you need to leave an [instance]?");
+  quest::say("Do you need to leave an [" . quest::saylink("instance") . "]?");
      }
 }
 if (($text=~/instance/i) && ($InInstanceTipt > 0)) {

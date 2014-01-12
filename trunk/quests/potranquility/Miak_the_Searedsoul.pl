@@ -9,11 +9,11 @@ sub EVENT_SAY {
 	} else {
 
 		if ($text=~/hail/i) {
-			quest::say("Greetings mortal. Are you here about this [portal's destination]? I have been getting a lot of questions about it lately.");
+			quest::say("Greetings mortal. Are you here about this [" . quest::saylink("portal's destination") . "]? I have been getting a lot of questions about it lately.");
 		}
 
 		if ($text=~/portal's destination/i) {
-			quest::say("As I suspected. This portal leads to Doomfire, the Burning Lands, home to Fennin Ro, the Tyrant of Fire. Or rather, it used to. His son, [Solusek Ro], disapproved of the number of you mortals entering his father's plane, and so he sealed it. It's a shame really, I was starting to enjoy the sounds you mortals make when you fall into the lava.");
+			quest::say("As I suspected. This portal leads to Doomfire, the Burning Lands, home to Fennin Ro, the Tyrant of Fire. Or rather, it used to. His son, [" . quest::saylink("Solusek Ro") . "], disapproved of the number of you mortals entering his father's plane, and so he sealed it. It's a shame really, I was starting to enjoy the sounds you mortals make when you fall into the lava.");
 		}
 
 		if ($text=~/solusek ro/i) {

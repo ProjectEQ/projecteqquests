@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
         $group = $client->GetGroup();
   	if ($text=~/hail/i) {
-    		quest::say("Do you wish to enter the [sewers]?");
+    		quest::say("Do you wish to enter the [" . quest::saylink("sewers") . "]?");
   	}
   	if ($text=~/sewers/i) {
 		if($group){

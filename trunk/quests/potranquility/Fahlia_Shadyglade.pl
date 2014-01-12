@@ -12,19 +12,19 @@ sub EVENT_SAY {
 		} else {
 
 			if ($text=~/Hail/i) {
-				quest::say("Greetings travelers. Please excuse me but I must attend to Tylis for his condition does not improve.'");
+				quest::say("Greetings travelers. Please excuse me but I must attend to Tylis for his [" . quest::saylink("condition") . "] does not improve.'");
 			}
 		
 			if ($text=~/condition/i) {
-				quest::say("It all goes back to when I found him. I had just purchased a new fishing pole in the hopes of finding some time to relax on the shores of the island. As I was walking out of the shop, I heard a distant moan. I walked toward the source and found Tylis lying by the reflecting pool. The pool was different, though. It now had a small [black cube] floating over it. I tried to wake Tylis but was not successful. I then brought him here and have been caring for him since.'");
+				quest::say("It all goes back to when I found him. I had just purchased a new fishing pole in the hopes of finding some time to relax on the shores of the island. As I was walking out of the shop, I heard a distant moan. I walked toward the source and found Tylis lying by the reflecting pool. The pool was different, though. It now had a small [" . quest::saylink("black cube") . "] floating over it. I tried to wake Tylis but was not successful. I then brought him here and have been caring for him since.'");
 			}
 		
 			if ($text=~/black cube/i) {
-				quest::say("I do not like that cube at all. Just thinking of it brings pain to my mind. Gazing upon it gives the sensation of being slowly rent apart at each limb. I believe that whatever has fallen over Tylis is related to this cursed cube. Other elders claim that it is a portal that will lead into the [Plane of Torment].'");
+				quest::say("I do not like that cube at all. Just thinking of it brings pain to my mind. Gazing upon it gives the sensation of being slowly rent apart at each limb. I believe that whatever has fallen over Tylis is related to this cursed cube. Other elders claim that it is a portal that will lead into the [" . quest::saylink("Plane of Torment") . "].'");
 			}
 	
 			if ($text=~/Plane of Torment/i) {
-				quest::say("It is not a plane that was originally sought to be reached by our elders. It is their belief though that Saryrn, the Mistress of Torment, intends to breed her suffering even into this protected plane of Quellious. I wish I had the strength to go into the Plane of Torment and find out exactly the nature of the current circumstances to have afflicted Tylis, but I cannot leave his side in good conscience.'");
+				quest::say("It is not a plane that was originally sought to be reached by our elders. It is their belief though that Saryrn, the Mistress of Torment, intends to breed her suffering even into this protected plane of Quellious. I wish I had the strength to [" . quest::saylink("I will go",0,"go") . "] into the Plane of Torment and find out exactly the nature of the current circumstances to have afflicted Tylis, but I cannot leave his side in good conscience.'");
 			}
 
 			if ($text=~/I will go/i) {

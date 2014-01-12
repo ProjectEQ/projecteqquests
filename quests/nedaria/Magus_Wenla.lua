@@ -10,7 +10,7 @@ function event_say(e)
 	elseif(e.message:findi("everfrost")) then
 		e.self:CastSpell(4180,e.other:GetID(),0,1);
 	elseif(e.message:findi("natimbi")) then
-		e.other:MovePC(280, -1557, -853, 241);
+		e.other:MovePC(280, -1557, -853, 241,90);
 	elseif(e.message:findi("north ro")) then
 		e.self:CastSpell(4177,e.other:GetID(),0,1);
 	elseif(e.message:findi("south ro")) then

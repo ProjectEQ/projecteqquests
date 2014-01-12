@@ -5,7 +5,7 @@ sub EVENT_SAY {
   my $group = $entity_list->GetGroupByClient($client);
 
   if ($text=~/hail/i) {
-    quest::say("I don't know why you would want to, but if you want me to tell you the way to one of the different areas of the sewers let me know. I know how to get to the treatment [" . quest::saylink("plant") . "], [" . quest::saylink("crematory") . "], [" . quest::saylink("pools" . "] of sludge, or the [" . quest::saylink("lair") . "] of trapped ones.");
+    quest::say("I don't know why you would want to, but if you want me to tell you the way to one of the different areas of the sewers let me know. I know how to get to the treatment [" . quest::saylink("plant") . "], [" . quest::saylink("crematory") . "], [" . quest::saylink("pools") . "] of sludge, or the [" . quest::saylink("lair") . "] of trapped ones.");
   }
   elsif ($text=~/plant/i) {
     quest::emote("leans in closely to whisper, 'Ok, listen closely...'");

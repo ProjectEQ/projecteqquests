@@ -2,7 +2,7 @@ sub EVENT_SAY {
   if($text=~/hail/i) {
     if (defined $qglobals{bic_riw} && $qglobals{bic_riw} == 7) {
       quest::emote("beams with excitement");
-      quest::say("I recognize you! One of the adventurers we've heard tales about! There are rumors of you destroying the Legion of Mata Muram. Have you come to [" . quest::saylink("set you free",0,"set us free?") . "]);
+      quest::say("I recognize you! One of the adventurers we've heard tales about! There are rumors of you destroying the Legion of Mata Muram. Have you come to [" . quest::saylink("set you free",0,"set us free?") . "]");
     }
   }
   if($text=~/set you free/i) {

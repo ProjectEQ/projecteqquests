@@ -31,7 +31,7 @@ sub EVENT_HP {
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
-		quest::say("I am surprised to see such short-lived mortals here. One such as yourself would never dare to enter my sanctum before. Time's have changed. What is it that you want here amongst such greatness? I shall humor you if you aim to [help] me. There is something that I've been wanting to retrieve for a while now, ever since my father's death. What say you?");
+		quest::say("I am surprised to see such short-lived mortals here. One such as yourself would never dare to enter my sanctum before. Time's have changed. What is it that you want here amongst such greatness? I shall humor you if you aim to [" . quest::saylink("help") . "] me. There is something that I've been wanting to retrieve for a while now, ever since my father's death. What say you?");
 	} elsif ($text=~/help/i) {
 		quest::say("Fine. Listen well. A shroud was given by my father to my mother months before his death. That shroud is very dear to me and I wish to have it back. My mother is still in possession of this item and I fear she will not easily hand it over. To help me, you must also help her. Go speak to her and assist her to acquire the shroud for me.");
 	}

@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/Hail/i && $qglobals{pop_cod_preflag} == 1) {
-    quest::say("You believe you can [challenge Bertoxxulous], mortal?");
+    quest::say("You believe you can [" . quest::saylink("challenge Bertoxxulous") . "], mortal?");
   }
   if($text=~/Challenge Bertoxxulous/i && $qglobals{pop_cod_preflag} == 1) {
     quest::say("Give the Crypt Lord my regards");

@@ -2,7 +2,7 @@ sub EVENT_SAY {
   my $CorpseCount = 0;
   my $charid = $client->CharacterID();
   if($text=~/hail/i) {
-    $client->Message(15,"I can [bury a corpse] or [destroy a corpse] that you have unburied.");
+    $client->Message(15,"I can [" . quest::saylink("bury a corpse") . "] or [" . quest::saylink("destroy a corpse") . "] that you have unburied.");
   } else {
     $CorpseCount = COUNT_CORPSES();
     if($text eq "destroy a corpse") {

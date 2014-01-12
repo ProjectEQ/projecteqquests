@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 	if ($pop_bot_agnarr == 1) {
 		if ($text=~/Hail/i) {
-			quest::emote("looks down at $name's face. He seems so insignificant next to the massive stature of the Rainkeeper. 'Don't worry mortal, Askr is unharmed, I have set him on a journey that will take him to all corners of this reality. He will either find the balance of the Fallen or he will die trying. And what of you champions? Do you wish to follow the path of the Fallen? A more dangerous path has never existed. Defy the will of the Pantheon at your peril.");
+			quest::emote("looks down at $name's face. He seems so insignificant next to the massive stature of the Rainkeeper. 'Don't worry mortal, Askr is unharmed, I have set him on a journey that will take him to all corners of this reality. He will either find the balance of the Fallen or he will die trying. And what of you champions? Do you wish to [" . quest::saylink("follow the path of the Fallen") . "]? A more dangerous path has never existed. Defy the will of the Pantheon at your peril.");
 		}
 
 		if ($text=~/follow the path of the fallen/i) {

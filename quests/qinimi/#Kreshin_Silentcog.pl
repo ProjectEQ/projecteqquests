@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (plugin::check_hasitem($client, 67415) && plugin::check_hasitem($client, 67401)) { #Stone of Entry, Writ of the Magi
-      quest::say("Thank you for rescuing me. You should [leave] this place and take the writ to Taminoa.");
+      quest::say("Thank you for rescuing me. You should [" . quest::saylink("leave") . "] this place and take the writ to Taminoa.");
     }
     elsif (plugin::check_hasitem($client, 67415)) { #Stone of Entry
       quest::say("Thank you for rescuing me. I sense that you hold a stone key which allowed you entrance into the courts. Please show it to me.");

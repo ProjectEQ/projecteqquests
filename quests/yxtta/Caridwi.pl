@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::emote("is whistling an unusual tune. As she speaks, her song continues. The overlapping effect of the music and her melodious voice is haunting.");
-    quest::say("Greetings $race, it is not often that someone visits me here. In fact, I can't remember the last time I saw another person. Ever since that day in the Coliseum my life has been so strange. Time has all but lost its meaning, and I see the most unusual things. Have you come to hear my [story], or would you like me to explain what the world looks like [through my eyes]?");
+    quest::say("Greetings $race, it is not often that someone visits me here. In fact, I can't remember the last time I saw another person. Ever since that day in the Coliseum my life has been so strange. Time has all but lost its meaning, and I see the most unusual things. Have you come to hear my [" . quest::saylink("story") . "], or would you like me to explain what the world looks like [" . quest::saylink("through your eyes",0,"through my eyes") . "]?");
   }
   if($text=~/through your eyes/i) {
     quest::say("It is difficult to describe. Things that used to be clear to me are now non-distinct, and . . . I see visions . . . that are inexplicably real but defy all common logic. For instance, I see you carry a trophy from an epic battle; a misshapen lump of flesh that you aquired from a tremendous foe. You do not understand. Please allow me to borrow it for a moment so I can show you.");

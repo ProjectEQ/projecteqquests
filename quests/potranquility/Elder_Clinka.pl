@@ -1,6 +1,6 @@
 
 sub EVENT_SAY {
- if($text =~ /Hail, Elder Clinka/i) {
+ if($text =~ /Hail/i) {
 	quest::emote("does not seem to notice you.");
  }
 }

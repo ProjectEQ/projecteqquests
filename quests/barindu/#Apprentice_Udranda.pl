@@ -4,7 +4,7 @@ sub EVENT_SAY {
   $group = $client->GetGroup();
 
   if ($text=~/hail/i) {
-      quest::say("Greetings. I have a duty here to stand guard at the mountain pass and allow the Muramites to pass through by moving the rocks with my magic. 'Udranda looks around for anyone listening and whispers to you' If you want to go into [Tipt] or [Vxed] I will have my stone worker open the passage for you. If you want to progress past the mountains, I would ask that you first prove your worth with High Priest Diru.");
+      quest::say("Greetings. I have a duty here to stand guard at the mountain pass and allow the Muramites to pass through by moving the rocks with my magic. 'Udranda looks around for anyone listening and whispers to you' If you want to go into [" . quest::saylink("Tipt") . "] or [" . quest::saylink("Vxed") . "] I will have my stone worker open the passage for you. If you want to progress past the mountains, I would ask that you first prove your worth with High Priest Diru.");
   }
   if ($text=~/vxed/i) {
     if ($group || $status > 79) {

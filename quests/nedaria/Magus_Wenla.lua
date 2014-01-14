@@ -2,7 +2,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Greetings, %s. I can provide travel to other magi in [" .. eq.say_link("Butcherblock",false,"Butcherblock") .. "], [" .. eq.say_link("Commonlands",false,"Commonlands") .. "], [" .. eq.say_link("Everfrost",false,"Everfrost") .. "], [" .. eq.say_link("North Ro",false,"North Ro") .. "], and [" .. eq.say_link("South Ro",false,"South Ro") .. "]. I can also send you to [" .. eq.say_link("Natimbi",false,"Natimbi") .. "], the shores of Taelosia, or to the Queen of Thorns in [" .. eq.say_link("Abysmal Sea",false,"Abysmal Sea") .. "]. Just tell me where you'd like to go.",e.other:GetName()));
+		e.self:Say("Greetings, " .. e.other:GetName() .. ". I can provide travel to other magi in [" .. eq.say_link("Butcherblock",false,"Butcherblock") .. "], [" .. eq.say_link("Commonlands",false,"Commonlands") .. "], [" .. eq.say_link("Everfrost",false,"Everfrost") .. "], [" .. eq.say_link("North Ro",false,"North Ro") .. "], and [" .. eq.say_link("South Ro",false,"South Ro") .. "]. I can also send you to [" .. eq.say_link("Natimbi",false,"Natimbi") .. "], the shores of Taelosia, or to the Queen of Thorns in [" .. eq.say_link("Abysmal Sea",false,"Abysmal Sea") .. "]. Just tell me where you'd like to go.");
 	elseif(e.message:findi("butcherblock")) then
 		e.self:CastSpell(4179,e.other:GetID(),0,1);
 	elseif(e.message:findi("commonlands")) then

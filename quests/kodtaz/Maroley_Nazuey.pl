@@ -9,7 +9,7 @@ sub EVENT_SAY {
       quest::say("Feel free to venture in this trial again");
     }
     elsif(defined $qglobals{ikky} && $qglobals{ikky} == 2) {
-      quest::say("At last you have arrived. I have heard that you passed the trial at the Temple of Singular Might without any problems and I congratulate you on your achievement. Do not believe for a moment that you are done! Your next trial will be more difficult that the last. Are you ready to hear [what's in store] for you beyond the temple exterior?");
+      quest::say("At last you have arrived. I have heard that you passed the trial at the Temple of Singular Might without any problems and I congratulate you on your achievement. Do not believe for a moment that you are done! Your next trial will be more difficult that the last. Are you ready to hear [" . quest::saylink("what's in store") . "] for you beyond the temple exterior?");
     }
     elsif(defined $qglobals{ikky} && $qglobals{ikky} >= 3) {
       quest::say("You have finished this trial, speak with Kevren and proceed to the next one.");
@@ -20,22 +20,22 @@ sub EVENT_SAY {
   }
   if($text=~/in store/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 2) {
-      quest::emote("glaces toward the temple. 'The Muramites have sent priests to this temple. These priests are not ordinary, in fact they are terrible, horrific beings sent to collect artifacts for a singular purpose. What this purpose is we are not clear on, but we believe it has something to do with a summoning of some sort. If you're willing to [test your mettle] in this trial, now is the time for action.'");
+      quest::emote("glaces toward the temple. 'The Muramites have sent priests to this temple. These priests are not ordinary, in fact they are terrible, horrific beings sent to collect artifacts for a singular purpose. What this purpose is we are not clear on, but we believe it has something to do with a summoning of some sort. If you're willing to [" . quest::saylink("test my mettle",0,"test your mettle") . "] in this trial, now is the time for action.'");
     }   
   }
-  if($text=~/test your mettle/i) {
+  if($text=~/test my mettle/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 2) {
-      quest::say("The rumor we have been investigating suggests that the summoning will be a beast of war that is far more destructive than anything we may have seen so far. The Muramite [priests] working inside this temple are gathering artifacts of corporeal power that will grant the beast an unusual physical strength when it is conjured. We must make sure that they do not finish this summoning.");
+      quest::say("The rumor we have been investigating suggests that the summoning will be a beast of war that is far more destructive than anything we may have seen so far. The Muramite [" . quest::saylink("priests") . "] working inside this temple are gathering artifacts of corporeal power that will grant the beast an unusual physical strength when it is conjured. We must make sure that they do not finish this summoning.");
     }   
   }
   if($text=~/priest/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 2) {
-      quest::say("I nearly forgot. You must venture inside to an entrance to the inner chambers of the Temple of Twin Struggles and enter there. Once inside you must find the Malevolent Priests. We have begun referring to them thusty because of their torturous looks and ways. They are very unpleasant and work cooperatively. You must get to them and [recover the artifacts] they have been gathering before they are allowed to move them to another temple nearby.");
+      quest::say("I nearly forgot. You must venture inside to an entrance to the inner chambers of the Temple of Twin Struggles and enter there. Once inside you must find the Malevolent Priests. We have begun referring to them thusty because of their torturous looks and ways. They are very unpleasant and work cooperatively. You must get to them and [" . quest::saylink("recover the artifacts") . "] they have been gathering before they are allowed to move them to another temple nearby.");
     }   
   }
   if($text=~/recover the artifacts/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 2) {
-      quest::say("This is your moment, $name. Now is the time to prove your worth to the brotherhood. I bid you good luck and hope that the strength you showed in the first trial will aid you again in your second one. When you are [ready to enter the temple] and have a group with you, return to me and I shall set you on your way.");
+      quest::say("This is your moment, $name. Now is the time to prove your worth to the brotherhood. I bid you good luck and hope that the strength you showed in the first trial will aid you again in your second one. When you are [" . quest::saylink("ready to enter the temple") . "] and have a group with you, return to me and I shall set you on your way.");
     }   
   }
   if ($text=~/ready/i) {

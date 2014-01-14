@@ -4,27 +4,27 @@
 sub EVENT_SAY
 {
 	if ($text=~/Hail/i) {
-		quest::emote("grumbles under his breath, 'Yes, yes, I see you there. No need for you to shout I can see you just fine! Now, what was I saying? Yes that's right... let me know when you are [done].");
+		quest::emote("grumbles under his breath, 'Yes, yes, I see you there. No need for you to shout I can see you just fine! Now, what was I saying? Yes that's right... let me know when you are [" . quest::saylink("done") . "].");
 	}
 	
 	if ($text=~/done/i) {
-		quest::say("Yes done! Weren't you paying attention? Once you've gathered all the pieces of the [key] bring it to me and I'll put them back together for you.");
+		quest::say("Yes done! Weren't you paying attention? Once you've gathered all the pieces of the [" . quest::saylink("key") . "] bring it to me and I'll put them back together for you.");
 	}
 	
 	if ($text=~/key/i) {
-		quest::say("THE Key, you really are as thick skulled as you look. You [agree to help] me and you aren't even paying attention.");
+		quest::say("THE Key, you really are as thick skulled as you look. You [" . quest::saylink("agree to help") . "] me and you aren't even paying attention.");
 	}
 	
 	if ($text=~/agree to help/i) {
-		quest::say("You agree to help? Great! I haven't even told you what I needed yet, or why. It is very noble of you to offer me your assistance. I've been trapped here for a little too long, I washed up on the shore still [tied to the mast] of my ship. Wonder that I even survived the storm.");
+		quest::say("You agree to help? Great! I haven't even told you what I needed yet, or why. It is very noble of you to offer me your assistance. I've been trapped here for a little too long, I washed up on the shore still [" . quest::saylink("tied to the mast") . "] of my ship. Wonder that I even survived the storm.");
 	}
 	
 	if ($text=~/tied to the mast/i) {
-		quest::say("The Diaku Raiders, filthy sort if you ask me. I was out on a shipping run, when Diaku attacked, they pillaged all of my goods, then tied me to the mast and left me floating a sea. Then the storm came and ate my ship, and I woke up here, I swear that I saw some [Diaku] washed up on the shore with me.");
+		quest::say("The Diaku Raiders, filthy sort if you ask me. I was out on a shipping run, when Diaku attacked, they pillaged all of my goods, then tied me to the mast and left me floating a sea. Then the storm came and ate my ship, and I woke up here, I swear that I saw some [" . quest::saylink("Diaku") . "] washed up on the shore with me.");
 	}
 	
 	if ($text=~/Diaku/i) {
-		quest::say("The Diaku that attacked me! Pay attention for Karana's sake! You appear to be the fighting sort. You can help me kill the Diaku at their source in [Drunder].");
+		quest::say("The Diaku that attacked me! Pay attention for Karana's sake! You appear to be the fighting sort. You can help me kill the Diaku at their source in [" . quest::saylink("Drunder") . "].");
 	}
 	
 	if ($text=~/Drunder/i) {

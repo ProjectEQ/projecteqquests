@@ -9,7 +9,7 @@ sub EVENT_SAY {
       quest::say("Feel free to venture in this trial again");
     }
     elsif(defined $qglobals{ikky} && $qglobals{ikky} == 3) {
-      quest::say("I have been expecting you, $name. You proven your worth thus far by completing the first two trials and for that I applaud you. You are not through with your testing though. You have a [final test] to complete here at the Temple of the Tri-Fates before you will be considered ready for further work.");
+      quest::say("I have been expecting you, $name. You proven your worth thus far by completing the first two trials and for that I applaud you. You are not through with your testing though. You have a [" . quest::saylink("final test") . "] to complete here at the Temple of the Tri-Fates before you will be considered ready for further work.");
     }
     else {
       quest::say("Oh dear, you startled me! I hate to be rude, but you must understand that I'm on very important business here and I don't have time to chat with you now. You still need to find Gazak Klelkek and complete the first trial anyway, so why don't you get on your way? Good luck!");
@@ -17,22 +17,22 @@ sub EVENT_SAY {
   }
   if($text=~/final test/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 3) {
-      quest::say("Very well. Time is critical, $name. Your final test takes you within the Temple of the Tri-Fates. We call it this because of the three creatures you will encounter once inside. The [three beasts] are hunters that have deadly accuracy with a bow and attack together to make a dangerous combination.");
+      quest::say("Very well. Time is critical, $name. Your final test takes you within the Temple of the Tri-Fates. We call it this because of the three creatures you will encounter once inside. The [" . quest::saylink("three beasts") . "] are hunters that have deadly accuracy with a bow and attack together to make a dangerous combination.");
     }
   }
   if($text=~/three beasts/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 3) {
-      quest::say("The three hunters inside the temple are called the Tri-Fates. They are named thusty because of their ability to control your fate on a whim. Their victims' usual fate is that of death, though I believe the Wayfarers Brotherhood has recruits that can stand up to them. Perhaps you are that person? Perhaps you have the desire to [prove yourself] worthy, venture into the temple, and slay the beasts?");
+      quest::say("The three hunters inside the temple are called the Tri-Fates. They are named thusty because of their ability to control your fate on a whim. Their victims' usual fate is that of death, though I believe the Wayfarers Brotherhood has recruits that can stand up to them. Perhaps you are that person? Perhaps you have the desire to [" . quest::saylink("prove myself",0,"prove yourself"). "] worthy, venture into the temple, and slay the beasts?");
     }
   }
   if($text=~/prove/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 3) {
-      quest::say("Good to hear, but before you go there is more you must know. These hunters are guarding some relics that are giving them extremely high accuracy with their weapons. If they are allowed to possess these relics any longer, they may become an unstoppable force. You must [recover the relics] so the Wayfarers Brotherhood can examine them.");
+      quest::say("Good to hear, but before you go there is more you must know. These hunters are guarding some relics that are giving them extremely high accuracy with their weapons. If they are allowed to possess these relics any longer, they may become an unstoppable force. You must [" . quest::saylink("recover the relics") . "] so the Wayfarers Brotherhood can examine them.");
     }
   }
   if($text=~/recover the relic/i) {
     if(defined $qglobals{ikky} && $qglobals{ikky} == 3) {
-      quest::say("This is your final trial and will prove, once and for all, if you are capable of taking on the more serious issues concerning the Muramites. You must fight through the temple and enter an entrance to the inner chambers of the Temple of the Tri-Fates. Once inside, kill the Tri-Fates and return the relics. When you are [ready to begin] and have a group with you, return to me, and I shall send you on your way.");
+      quest::say("This is your final trial and will prove, once and for all, if you are capable of taking on the more serious issues concerning the Muramites. You must fight through the temple and enter an entrance to the inner chambers of the Temple of the Tri-Fates. Once inside, kill the Tri-Fates and return the relics. When you are [" . quest::saylink("ready to begin") . "] and have a group with you, return to me, and I shall send you on your way.");
     }
   } 
   if ($text=~/ready/i) {

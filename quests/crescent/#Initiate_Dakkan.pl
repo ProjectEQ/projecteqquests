@@ -17,17 +17,17 @@ sub EVENT_SAY {
       ding();
     }
     else {
-      quest::say("Vasha, newcomer. Ah, yes, 'vasha' is what we drakkin say when we greet each other. It is a word taken from the dragon language. There is so much to learn! One of the first things I learned when I awoke from my human-sleep was the ways of nature. Would you like to [learn]?");
+      quest::say("Vasha, newcomer. Ah, yes, 'vasha' is what we drakkin say when we greet each other. It is a word taken from the dragon language. There is so much to learn! One of the first things I learned when I awoke from my human-sleep was the ways of nature. Would you like to [". quest::saylink("learn") . "]?");
     }
   }
   if($text=~/learn/i) {
-    quest::say("My dragon father, Venesh the Greenblood, passed wisdom onto me so that I may instruct you. You must venture into the world and learn more about this place and your own strengths. There are a few [tasks] for you to complete if you are willing.");
+    quest::say("My dragon father, Venesh the Greenblood, passed wisdom onto me so that I may instruct you. You must venture into the world and learn more about this place and your own strengths. There are a few [". quest::saylink("tasks") . "] for you to complete if you are willing.");
   }
   if($text=~/tasks/i) {
-    quest::say("The ways of nature are often confounding, as Venesh, my great dragon father, says. There are some curious [mushrooms], dangerous types of [venom sacs] and [diseased spiders] we must study!");
+    quest::say("The ways of nature are often confounding, as Venesh, my great dragon father, says. There are some curious [". quest::saylink("mushrooms") . "], dangerous types of [". quest::saylink("venom sacs") . "] and [". quest::saylink("diseased spiders") . "] we must study!");
   }
   if($text=~/mushrooms/i) {
-    quest::say("You must gather some mushrooms from the Mushroom Grove in the Hollow outside the city. If you could gather mushrooms for me, I can give them to Venesh to study. He will be so pleased! Are you [interested]");
+    quest::say("You must gather some mushrooms from the Mushroom Grove in the Hollow outside the city. If you could gather mushrooms for me, I can give them to Venesh to study. He will be so pleased! Are you [". quest::saylink("interested") . "]");
   }
   if($text=~/interested/i) {
     if(!quest::istaskactive(182)) { #Ways of Nature
@@ -39,7 +39,7 @@ sub EVENT_SAY {
     }
   }
   if($text=~/venom sacs/i) {
-    quest::say("Renn, $name. Oh, I should explain. Renn means 'welcome!' I often forget many don't know our words yet. Venesh has passed down another teaching. Now he wishes you to collect poison sacs from the snakes in the Hollow. Of course, to get the sacs you have to kill the snakes. It's not an easy task for a youth, but did you want to [try]?");
+    quest::say("Renn, $name. Oh, I should explain. Renn means 'welcome!' I often forget many don't know our words yet. Venesh has passed down another teaching. Now he wishes you to collect poison sacs from the snakes in the Hollow. Of course, to get the sacs you have to kill the snakes. It's not an easy task for a youth, but did you want to [". quest::saylink("try") . "]?");
   }
   if($text=~/try/i) {
     if(!quest::istaskactive(183)) { #Snake Sacs
@@ -51,7 +51,7 @@ sub EVENT_SAY {
     }
   }
   if($text=~/diseased spiders/i) { 
-    quest::say("My father has given us a great challenge as our final task in learning the ways of nature here. In the Hollow there are some spiders that have gotten a grim illness. They hide, but Venesh told me if I kill some healthy spiders in the area, it might draw the ill ones out of hiding. Are you up for [it]?");
+    quest::say("My father has given us a great challenge as our final task in learning the ways of nature here. In the Hollow there are some spiders that have gotten a grim illness. They hide, but Venesh told me if I kill some healthy spiders in the area, it might draw the ill ones out of hiding. Are you up for [". quest::saylink("it") . "]?");
   }
   if($text=~/it/i) {
     if(!quest::istaskactive(184)) { #Diseased Spiders

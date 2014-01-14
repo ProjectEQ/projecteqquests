@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:CastSpell(4580,e.other:GetID());
 	elseif(e.message:findi("abysmal sea")) then
 		--Translocate Abysmal is unknown
-		e.other:MovePC(279,-150,39,139.05,90);
+		e.other:MovePC(279,39,-150,139.05,90);
 	end
 end
 

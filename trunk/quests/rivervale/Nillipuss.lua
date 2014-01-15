@@ -1,5 +1,4 @@
 function event_spawn(e)
-	random_timer = math.random(750000);
 	eq.set_timer("nilly",math.random(750000));
 end
 

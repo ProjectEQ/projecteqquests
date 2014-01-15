@@ -4,6 +4,7 @@ local current_phase = "Phase0";
 local event_started = 0;
 local event_counter = 0;
 local instance_id = 0;
+local qglobals = nil;
 
 function event_spawn(e)
 	-- get the zone instance id
@@ -11,16 +12,23 @@ function event_spawn(e)
 	-- turn off all the spawn conditions
 	ResetSpawnConditions();
 	-- load the current quest globals
-	local qglobals = eq.get_qglobals();
+	qglobals = eq.get_qglobals();
 	-- grab the entity list so we can unlock doors if needed.
 	local entity_list = eq.get_entity_list();
 	-- set the start time so we know what to compare with for the fail timer.
 	event_started = os.time();
+	-- if there is no phase_bit qglobal for this instance, create one
+	if (qglobals[instance_id.."_potimeb_phase_bit"] == nil) then
+		eq.set_global(instance_id.."_potimeb_phase_bit","0",7,"H13");
+	end
 	-- then check the value to decide what to pop
 	if (qglobals[instance_id.."_potimeb_status"] == nil) then
 		-- if there is no global at all boot all toons and destroy the instance
 		-- TODO!!!
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase1") then
+		-- just in case the instance ID gets reused before this one expires, make sure to set phase_bit to 0
+		eq.set_global(instance_id.."_potimeb_phase_bit","0",7,"H13");
+		-- Spawn phase 1
 		eq.spawn2(223169,0,0,13.5,1632.4,492.3,0); -- earth trigger
 		eq.spawn2(223170,0,0,10.1,1350,492.6,0); -- air trigger
 		eq.spawn2(223171,0,0,18.0,1107,492.2,0); -- undead trigger
@@ -161,6 +169,7 @@ function event_signal(e)
 		if (event_counter == 4) then
 			-- update the qglobal in the zone gets reset.
 			eq.set_global(instance_id.."_potimeb_status","Phase5",7,"H13");
+			eq.set_global(instance_id.."_potimeb_phase_bit","0",7,"H13");
 			current_phase = "Phase5";
 			-- add 4 hours (14400 seconds) to the fail timer
 			UpdateFailTimer(26100,14400);
@@ -451,18 +460,37 @@ function ControlPhaseThree()
 end
 
 function SpawnPhaseFour()
-	eq.spawn2(223075,0,0,-310,307,365,95); -- Terris Thule
-	eq.spawn2(223076,0,0,-320,-316,358,32.5); -- Saryrn
-	eq.spawn2(223077,0,0,405,-84,358,192); -- Tallon Zek
-	eq.spawn2(223078,0,0,405,75,358,192); -- Vallon Zek
+	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
+	if (bit.band(phase_bit, 1) == 0) then
+		eq.spawn2(223075,0,0,-310,307,365,95); -- Terris Thule
+	end
+	if (bit.band(phase_bit, 2) == 0) then
+		eq.spawn2(223076,0,0,-320,-316,358,32.5); -- Saryrn
+	end
+	if (bit.band(phase_bit, 4) == 0) then
+		eq.spawn2(223077,0,0,405,-84,358,192); -- Tallon Zek
+	end
+	if (bit.band(phase_bit, 8) == 0) then
+		eq.spawn2(223078,0,0,405,75,358,192); -- Vallon Zek
+	end
 end
 
 function SpawnPhaseFive()
-	eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
-	eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
-	eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
-	eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
+	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
+	if (bit.band(phase_bit, 1) == 0) then
+		eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
+	end
+	if (bit.band(phase_bit, 2) == 0) then
+		eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
+	end
+	if (bit.band(phase_bit, 4) == 0) then
+		eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
+	end
+	if (bit.band(phase_bit, 8) == 0) then
+		eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
+	end
 	-- spawn the armies
+	-- TO DO: need to split armies into spawn groups for each god.
 	eq.spawn_condition("potimeb",instance_id,1,1);
 end
 

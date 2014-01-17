@@ -66,6 +66,9 @@ function event_hp(e)
 end
 
 function event_death_complete(e)
+	-- get the zone instance id
+	local instance_id = eq.get_zone_instance_id();
+	-- update the zone status
 	eq.set_global(instance_id.."_potimeb_status","QuarmDead",7,"H13");
 	-- signal the zone_status that we died
 	eq.signal(223097,7);

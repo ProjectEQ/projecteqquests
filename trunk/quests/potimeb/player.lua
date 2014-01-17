@@ -14,6 +14,7 @@ function event_click_door(e)
 	local door_id = e.door:GetDoorID();
 	local entity_list = eq.get_entity_list();
 	local open_type = entity_list:FindDoor(door_id):GetOpenType();
+	local lock_pick = entity_list:FindDoor(door_id):GetLockPick();
 	if (door_id <= 32) then
 		if (open_type >= 78 and open_type <= 81) then
 			-- Phase 1 fire doors
@@ -64,7 +65,7 @@ function event_click_door(e)
 	elseif (lock_pick == 0 and door_id == 51) then
 		-- update player lockout to phase 5
 		eq.set_global("potimeb_lockout","Phase5",5,"H132");
-	end--]]
+	end
 end
 
 function OpenDoors(e, entity_list, door_id, first_id, last_id)

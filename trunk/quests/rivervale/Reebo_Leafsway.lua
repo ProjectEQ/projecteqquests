@@ -4,7 +4,7 @@ function event_say(e)
 	elseif(e.message:findi("hail")) then
 		e.self:Say("Greetings and salutations, " .. e.other:GetName() .. "! My name is Reebo Leafsway, loyal Druid of [" .. eq.say_link("Karana",false,"Karana") .. "]. I am in charge of helping young druids who wish to get started down the [" .. eq.say_link("trail to Karana's wisdom",false,"trail to Karana's wisdom") .. "]. I also do my share of tending the [" .. eq.say_link("crops",false,"crops") .. "].");
 	elseif(e.message:findi("shakey")) then
-		e.self:Say("Shakey is our protector and friend. He is just getting old. Losing his [" .. eq.say_link("stuffing",false,"stuffing") .. "]. His [head] is getting very cracked and dry as well.");
+		e.self:Say("Shakey is our protector and friend. He is just getting old. Losing his [" .. eq.say_link("stuffing",false,"stuffing") .. "]. His [" .. eq.say_link("head",false,"head") .. "] is getting very cracked and dry as well.");
 	elseif(e.message:findi("stuffing")) then
 		e.self:Say("The hay he requires is difficult to obtain. It must have been harvested from the Plains of Karana, then cursed by a high priest of the Faceless, [" .. eq.say_link("Cazic-Thule",false,"Cazic-Thule") .. "]. Finally, you must cast the hay and a flask of blessed Oil of Life into an armorer's forge. Only then will the hay be ready. We Stormreapers will reward you greatly if you could accomplish this task. Remember, you must give the scarecrow stuffing to Shakey only after it has been properly prepared.");
 	elseif(e.message:findi("trail to karana's wisdom")) then
@@ -22,8 +22,6 @@ function event_say(e)
 		e.self:Say("Nillipuss is a brownie that lives in the area who often steals and destroys our JumJum Stalk. Will you teach him a [" .. eq.say_link("lesson",false,"lesson") .. "]?");
 	elseif(e.message:findi("lesson")) then
 		e.self:Say("Good. Bring me back some of the JumJum he has stolen and I will reward you for your trouble.");
-	elseif(e.message:findi("acknowledgment")) then
-		e.self:Emote("shakes his head sadly, 'Poor old [" .. eq.say_link("Shakey",false,"Shakey") .. "] just isn't what he used to be.'");
 	end
 end
 
@@ -57,7 +55,7 @@ function event_waypoint_arrive(e)
 end
 
 function event_signal(e)
-	e.self:Say("Old [" .. eq.say_link("Shakey",false,"Shakey") .. "] hasn't been feeling like himself lately, I'm afraid.");
+	e.self:Emote("shakes his head sadly, 'Poor old [" .. eq.say_link("Shakey",false,"Shakey") .. "] just isn't what he used to be.'");
 end
 
 -- END of FILE Zone:rivervale  ID:19056 -- Reebo_Leafsway

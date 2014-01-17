@@ -4,7 +4,7 @@ local current_phase = "Phase0";
 local event_started = 0;
 local event_counter = 0;
 local instance_id = 0;
-local qglobals = nil;
+local qglobals = {};
 
 function event_spawn(e)
 	-- get the zone instance id
@@ -460,38 +460,72 @@ function ControlPhaseThree()
 end
 
 function SpawnPhaseFour()
+	-- update qglobals
+	qglobals = eq.get_qglobals();
 	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
-	if (bit.band(phase_bit, 1) == 0) then
-		eq.spawn2(223075,0,0,-310,307,365,95); -- Terris Thule
-	end
-	if (bit.band(phase_bit, 2) == 0) then
-		eq.spawn2(223076,0,0,-320,-316,358,32.5); -- Saryrn
-	end
-	if (bit.band(phase_bit, 4) == 0) then
-		eq.spawn2(223077,0,0,405,-84,358,192); -- Tallon Zek
-	end
-	if (bit.band(phase_bit, 8) == 0) then
-		eq.spawn2(223078,0,0,405,75,358,192); -- Vallon Zek
+	if (phase_bit == 15) then
+		-- this a rare crash handling instance. extremely hard to make happen
+		eq.set_global(instance_id.."_potimeb_status","Phase5",7,"H13");
+		eq.set_global(instance_id.."_potimeb_phase_bit","0",7,"H13");
+		eq.repop_zone();
+	else
+		if (bit.band(phase_bit, 1) == 0) then
+			eq.spawn2(223075,0,0,-310,307,365,95); -- Terris Thule
+		else
+			event_counter = event_counter + 1;
+		end
+		if (bit.band(phase_bit, 2) == 0) then
+			eq.spawn2(223076,0,0,-320,-316,358,32.5); -- Saryrn
+		else
+			event_counter = event_counter + 1;
+		end
+		if (bit.band(phase_bit, 4) == 0) then
+			eq.spawn2(223077,0,0,405,-84,358,192); -- Tallon Zek
+		else
+			event_counter = event_counter + 1;
+		end
+		if (bit.band(phase_bit, 8) == 0) then
+			eq.spawn2(223078,0,0,405,75,358,192); -- Vallon Zek
+		else
+			event_counter = event_counter + 1;
+		end
 	end
 end
 
 function SpawnPhaseFive()
+	-- update qglobals
+	qglobals = eq.get_qglobals();
 	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
-	if (bit.band(phase_bit, 1) == 0) then
-		eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
+	if (phase_bit == 15) then
+		-- this a rare crash handling instance. extremely hard to make happen
+		eq.set_global(instance_id.."_potimeb_status","Phase6",7,"H13");
+		eq.set_global(instance_id.."_potimeb_phase_bit","0",7,"H13");
+		eq.repop_zone();
+	else
+		if (bit.band(phase_bit, 1) == 0) then
+			eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
+		else
+			event_counter = event_counter + 1;
+		end
+		if (bit.band(phase_bit, 2) == 0) then
+			eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
+		else
+			event_counter = event_counter + 1;
+		end
+		if (bit.band(phase_bit, 4) == 0) then
+			eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
+		else
+			event_counter = event_counter + 1;
+		end
+		if (bit.band(phase_bit, 8) == 0) then
+			eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
+		else
+			event_counter = event_counter + 1;
+		end
+		-- spawn the armies
+		-- TO DO: need to split armies into spawn groups for each god.
+		eq.spawn_condition("potimeb",instance_id,1,1);
 	end
-	if (bit.band(phase_bit, 2) == 0) then
-		eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
-	end
-	if (bit.band(phase_bit, 4) == 0) then
-		eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
-	end
-	if (bit.band(phase_bit, 8) == 0) then
-		eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
-	end
-	-- spawn the armies
-	-- TO DO: need to split armies into spawn groups for each god.
-	eq.spawn_condition("potimeb",instance_id,1,1);
 end
 
 function UpdateLockoutGlobal(global_name,global_value,global_duration)

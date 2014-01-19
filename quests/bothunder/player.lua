@@ -48,7 +48,7 @@ function event_click_door(e)
 		if (e.self:KeyRingCheck(9425)) then
 			key_found = true;
 		-- if it is not on the keyring check for them to have the item.
-		elseif (e.self:HasItem(9425) == 1) then
+		elseif (e.self:HasItem(9425)) then
 			key_found = true;
 			-- add it tot he keyring
 			e.self:KeyRingAdd(9425);

@@ -2,9 +2,9 @@
 -- Gazak_Klelkek NPCID: 293117
 function event_say(e)
 	-- load the current qglobals
-	local qglobals = eq.get_qglobals();
+	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then
-		-- check for lockout qglobal. (potimeLockout is the old one and can be removed when potimeb rewrite is completed.)
+		-- check for lockout qglobal.
 		if (qglobals.ikkyredo ~= nil) then
 			e.self:Say("Feel free to venture in this trial again");
 		elseif (qglobals.ikky ~= nil and qglobals.ikky >= "2") then

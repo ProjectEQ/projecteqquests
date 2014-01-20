@@ -12,18 +12,18 @@ function event_say(e)
 		-- check for lockout qglobal.
 		if (qglobals.ikkyredo ~= nil) then
 			e.self:Say("Feel free to venture in this trial again");
-		elseif (qglobals.ikky ~= nil and qglobals.ikky == "2") then
+		elseif (gm_bypass or (qglobals.ikky ~= nil and tonumber(qglobals.ikky) == 2)) then
 			e.self:Say("At last you have arrived. I have heard that you passed the trial at the Temple of Singular Might without any problems and I congratulate you on your achievement. Do not believe for a moment that you are done! Your next trial will be more difficult that the last. Are you ready to hear [" .. eq.say_link("what's in store") .. "] for you beyond the temple exterior?");
-		elseif (qglobals.ikky ~= nil and qglobals.ikky >= "3") then
+		elseif (qglobals.ikky ~= nil and tonumber(qglobals.ikky) >= 3) then
 			e.self:Say("You have finished this trial, speak with Kevren and proceed to the next one.");
 		else
 			e.self:Say("Gah, what do you think you're doing causing all that ruckus? I'm trying to keep a low profile so no wandering Muramites come to investigate noise. I may be the liaison for this temple, but that doesn't mean you can blow my cover! In any case, you still need to find Gazak and attempt the first trial before you can go any farther! Now make haste!");
 		end
 	else
 		-- check if the player is on the right step to request this event
-		if (gm_bypass or qglobals.ikkyredo ~= nil or (qglobals.ikky ~= nil and qglobals.ikky == "2")) then
+		if (gm_bypass or qglobals.ikkyredo ~= nil or (qglobals.ikky ~= nil and tonumber(qglobals.ikky) == 2)) then
 			if (e.message:findi("in store")) then
-				e.self:Emote("glaces toward the temple. 'The Muramites have sent priests to this temple. These priests are not ordinary, in fact they are terrible, horrific beings sent to collect artifacts for a singular purpose. What this purpose is we are not clear on, but we believe it has something to do with a summoning of some sort. If you're willing to [" .. eq.say_link("test my mettle",0,"test your mettle") .. "] in this trial, now is the time for action.");
+				e.self:Emote("glaces toward the temple. 'The Muramites have sent priests to this temple. These priests are not ordinary, in fact they are terrible, horrific beings sent to collect artifacts for a singular purpose. What this purpose is we are not clear on, but we believe it has something to do with a summoning of some sort. If you're willing to [" .. eq.say_link("test my mettle",false,"test your mettle") .. "] in this trial, now is the time for action.");
 			elseif (e.message:findi("test my mettle")) then
 				e.self:Say("The rumor we have been investigating suggests that the summoning will be a beast of war that is far more destructive than anything we may have seen so far. The Muramite [" .. eq.say_link("priests") .. "] working inside this temple are gathering artifacts of corporeal power that will grant the beast an unusual physical strength when it is conjured. We must make sure that they do not finish this summoning.");
 			elseif (e.message:findi("priest")) then
@@ -35,7 +35,7 @@ function event_say(e)
 				if (eq.get_instance_id("ikkinz",1) > 0) then
 					e.other:Message(13, "You are already in an instance!");
 				-- check for the lockout global
-				elseif (qglobals["lockout_ikky_g2"]  ~= nil or gm_bypass) then
+				elseif (qglobals["lockout_ikky_g2"]  ~= nil and not gm_bypass) then
 					e.other:Message(13, "You have recently completed this trial, please come back at a later point");
 				else
 					--	create the instance (6 hours for ikkinz group trials)
@@ -59,11 +59,13 @@ function event_say(e)
 end
 
 function event_trade(e)
+	-- load the current qglobals
+	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 60153})) then
-		if (qglobals.ikky ~= nil and qglobals.ikky == "2") then
+		if (qglobals.ikky ~= nil and tonumber(qglobals.ikky) == 2) then
 			e.self:Say("You've done well, " .. e.other:GetName() .. ". I believed this temple was more than you could handle despite your success with the first temple. You faced two enemies at once and came back  in one piece. You only have one more trial left to complete before you can proceed onto more difficult tasks. Please return to Kevren for information on the final trial. Good luck!");
-			eq.set_global("ikky",3,5,"F");
+			eq.set_global("ikky","3",5,"F");
 			e.self:Message(4,"Finished!- You have completed the trial at the Temple of Singular Might!");
 		else
 			e.self:Say("I appreciate that you must have fought hard for this, but I cannot accept it yet. Please speak with Kevren Nalavat about the trials and once I have received word that you are actually ready to do the trials, you can present it to me again.");

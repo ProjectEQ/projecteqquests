@@ -7,7 +7,7 @@ function event_say(e)
 		-- check for lockout qglobal.
 		if (qglobals.ikkyredo ~= nil) then
 			e.self:Say("Feel free to venture in this trial again");
-		elseif (qglobals.ikky ~= nil and qglobals.ikky >= "2") then
+		elseif (qglobals.ikky ~= nil and tonumber(qglobals.ikky) >= 2) then
 			e.self:Say("You have finished this trial, speak with Kevren and proceed to the next one.");
 		else
 			e.self:Say("Keep your voice down! We must not attract any [" .. eq.say_link("undo attention") .. "] to ourselves here. I may be the liaison for the Temple of Singular Might, but that doesn't make me any less of a target. I have kept watch of this temple since we began collecting information on the trusik and the Legion of Mata Muram. You should ask Kevren for more information on them if you haven't already.");
@@ -23,11 +23,11 @@ function event_say(e)
 		if (eq.get_instance_id("ikkinz",0) > 0) then
 			e.other:Message(13, "You are already in an instance!");
 		-- check for the lockout global
-		elseif (qglobals["lockout_ikky_g1"]  ~= nil or (e.other:Admin() > 80 and not e.other:GetGM())) then
+		elseif (qglobals["lockout_ikky_g1"] ~= nil and (e.other:Admin() > 80 and not e.other:GetGM())) then
 			e.other:Message(13, "You are not ready yet to start a new instance");
 		else
 			-- check if the player is on the right step to request this event
-			if ((e.other:Admin() > 80 and e.other:GetGM()) or (qglobals.ikkyredo ~= nil or qglobals.ikky == "1")) then
+			if ((e.other:Admin() > 80 and e.other:GetGM()) or (qglobals.ikkyredo ~= nil or tonumber(qglobals.ikky) == 1)) then
 				--	create the instance (6 hours for ikkinz group trials)
 				local instance_id = eq.create_instance("ikkinz",0,10800);
 				-- check if in a group
@@ -48,11 +48,13 @@ function event_say(e)
 end
 
 function event_trade(e)
+	-- load the current qglobals
+	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 60152})) then
 		if (qglobals.ikky == "1") then
 			e.self:Say("Though you were pitted against a most heinous aggressor, you have proven that you are a capable adventurer thus far. Nicely done, " .. e.other:GetName() .. ". I urge you to continue honing your skills. Now that you are ready to move onto the next trial, you should return to Kevren for more information. Good luck!");
-			eq.set_global("ikky",2,5,"F");
+			eq.set_global("ikky","2",5,"F");
 			e.self:Message(4,"Finished!- You have completed the trial at the Temple of Singular Might!");
 		else
 			e.self:Say("I appreciate that you must have fought hard for this, but I cannot accept it yet. Please speak with Kevren Nalavat about the trials and once I have received word that you are actually ready to do the trials, you can present it to me again.");

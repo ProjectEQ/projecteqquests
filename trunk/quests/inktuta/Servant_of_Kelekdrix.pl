@@ -7,7 +7,7 @@ sub EVENT_SAY {
 	}
 	if ($text=~/consequences/i || $text=~/who Kelekdrix/i) {
 		quest::say("Very well, $name. You brought this upon yourself.");
-		quest::spawn2(296024,537949,0,480,-416,4,56); #Kelekdrix,_Herald_of_Trushar
+		quest::spawn2(296024,0,0,565,-495,6,0); #Kelekdrix,_Herald_of_Trushar
 		my $instid = quest::GetInstanceID("inktuta",0);
 		quest::setglobal($instid.'_inktuta_status',1,3,"H6");
 		

@@ -11,10 +11,10 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(296030,0,0,-274,-531,-52,125);
+  quest::spawn2(296030,0,0,-274,-531,-52,125); #Stonemite event Exiles
   quest::spawn2(296033,0,0,-557,-237,-2,63);
-  quest::spawn2(296035,0,0,-406,-552,-77,62);
-  quest::spawn2(296036,0,0,-355,-554,-77,190);
+  quest::spawn2(296035,0,0,-385,-562,-76,270);
+  quest::spawn2(296036,0,0,-305,-310,-51,270);
   my $instid = quest::GetInstanceID("inktuta",0);
   quest::setglobal($instid.'_inktuta_status',3,3,"H6");
 }

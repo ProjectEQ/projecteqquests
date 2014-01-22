@@ -1,7 +1,7 @@
 
 sub EVENT_COMBAT {
 	if($combat_state == 1) {
-		quest::settimer(1,quest::ChooseRandom(30, 45, 60));
+		quest::settimer(1,quest::ChooseRandom(20, 40, 60));
 	}		
 }
 

@@ -5,7 +5,7 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("I will give you the Foot if you get the stein from that Halfling rogue, all in black, from Firiona Vie.");  
+    quest::emote("gulps down the rest of his ale. 'Looks like I'll need another.'");
   }
   if ($text=~/blue talon/i) {
     quest::emote("takes a swipe at you. 'We used to be the bruisers of the west side. We didn't take nothin' from no one!! Fist and mind was our motto. Now get lost before I introduce my fist to your face. Hmpf. Too late, I see.'");

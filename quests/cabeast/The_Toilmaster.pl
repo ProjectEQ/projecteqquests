@@ -18,7 +18,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM { 
- if(($itemcount{12660} == 2)){
+ if(plugin::check_handin(\%itemcount, 12660 => 2)){
   quest::say("A deal is a deal. Here is one pile of granite pebbles. I hope you need more because I know there are more escaped froglok slaves.");
   quest::summonitem(12689);
   quest::faction(193,2);
@@ -30,7 +30,7 @@ sub EVENT_ITEM {
   quest::exp(350);
   quest::givecash(12,0,0,0);
  }
- elsif(($itemcount{18271} == 1)){ #The Penance quest
+ elsif(plugin::check_handin(\%itemcount, 18271 => 1)){ #The Penance quest
   quest::emote("looks at the tome and speaks to you, scowling, 'Very well Broodling, I have a task for you. I should make you work at the feet of my Froglok Slaves, crushing granite, but the lore of the Brood has a specific rite for this situation. Take this book and learn the will of Cazic-Thule. Read it and ask me any questions that you may have before you start your penance. It would be a shame for you to fail at this task as well... though I wouldn't mind destroying you.");
   quest::summonitem(18272);
  }

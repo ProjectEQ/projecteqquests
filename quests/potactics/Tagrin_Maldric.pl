@@ -9,7 +9,7 @@ sub EVENT_COMBAT {
     quest::spawn2(214119,0,0,$x,$y-15,$z,$h);
   } elsif ($combat_state ==0 && $entity_list->GetMobByNpcTypeID(214119)) {
     #adjust to suit for depop
-    quest::settimer(1,30);
+    quest::settimer(1,900);
   }
 }
 

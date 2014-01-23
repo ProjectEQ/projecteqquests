@@ -18,11 +18,11 @@ sub EVENT_ITEM {
     quest::faction(317,5); #Swift Tails
     quest::exp(500);
   }
-  elsif (plugin::check_handin(\%itemcount, 18242 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 18242 => 1)) {
     quest::say("What?! I need the Legion Lager and the legion order.");
     quest::summonitem(18242);
   }
-  elsif (plugin::check_handin(\%itemcount, 12463 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 12463 => 1)) {
     quest::say("What?! I need the Legion Lager and the legion order.");
     quest::summonitem(12463);
   }

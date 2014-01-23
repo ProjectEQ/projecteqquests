@@ -18,15 +18,15 @@ sub EVENT_ITEM {
     quest::faction(317,5); #Swift Tails
     quest::exp(800);
   }
-  elsif (plugin::check_handin(\%itemcount, 18244 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 18244 => 1)) {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(18244);
   }
-  elsif (plugin::check_handin(\%itemcount, 12465 => 2) {
+  elsif (plugin::check_handin(\%itemcount, 12465 => 2)) {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(12465,2);
   }
-  elsif (plugin::check_handin(\%itemcount, 12465 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 12465 => 1)) {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(12465);
   }

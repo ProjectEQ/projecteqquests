@@ -18,16 +18,16 @@ sub EVENT_ITEM {
     quest::faction(317,5); #Swift Tails
     quest::exp(800);
   }
-  elsif (plugin::check_handin(\%itemcount, 18246 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 18246 => 1)) {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
     quest::summonitem(18246);
   }
-  elsif (plugin::check_handin(\%itemcount, 12670 => 2) {
+  elsif (plugin::check_handin(\%itemcount, 12670 => 2)) {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
     quest::summonitem(12670);
     quest::summonitem(12670);
   }
-  elsif (plugin::check_handin(\%itemcount, 12670 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 12670 => 1)) {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
     quest::summonitem(12670);
   }

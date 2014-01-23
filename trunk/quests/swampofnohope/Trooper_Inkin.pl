@@ -14,11 +14,11 @@ sub EVENT_ITEM {
     quest::exp(500);
     quest::givecash(7,0,0,0);
   }
-  elsif (plugin::check_handin(\%itemcount, 18243 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 18243 => 1)) {
     quest::say("No deal! You bring me the legion order and the froglok skipping stone.");
     quest::summonitem(18243);
   }
-  elsif (plugin::check_handin(\%itemcount, 12425 => 1) {
+  elsif (plugin::check_handin(\%itemcount, 12425 => 1)) {
     quest::say("No deal! You bring me the legion order and the froglok skipping stone.");
     quest::summonitem(12425);
   }

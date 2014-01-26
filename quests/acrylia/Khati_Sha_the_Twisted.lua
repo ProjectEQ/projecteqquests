@@ -27,7 +27,7 @@ function event_timer(e)
 			eq.spawn2(154054,0,0,905.00,-556.00,-41.00,60); -- Defiled Minion
 		end
 
-		if(e.timer == "1" && yloc > -545) then
+		if(e.timer == "1" and yloc > -545) then
 			e.self:Shout("You will never remove me from my chamber!");
 			eq.depop();
 			eq.spawn2(154145,0,0,940.00,-610.00,-41.00,0); -- Respawn Kahti Sha

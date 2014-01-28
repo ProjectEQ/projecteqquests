@@ -23,14 +23,15 @@ function event_hp(e)
 end
 
 function event_aggro(e)
-	eq.spawn2(294137,0,0,450,-119,6,200);
-	eq.spawn2(294137,0,0,457,-139,6,193);
-	eq.spawn2(294137,0,0,438,-158,6,192);
+	-- /loc updated from MySEQ capture 2014/01/26
+	eq.spawn2(294137,0,0,418.5914,-179.3205,10.502,192);
+	eq.spawn2(294137,0,0,418.5914,-94.3507,10.502,192);
+	eq.spawn2(294137,0,0,379.2154,-186.3592,1.502002,256);
  end
  
 function event_death_complete(e)
-	-- depop the #Dire_Illusions
+	-- depop the Dire_Illusions
 	eq.depop_all(294137);
-	-- spawn the #Cruel_Illusion
+	-- spawn the Cruel_Illusion
 	eq.spawn2(294136,0,0,442,-141,11,192);
 end

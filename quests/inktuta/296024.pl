@@ -28,9 +28,10 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
 	if($timer eq "BanishTop") { #Banish top on hate list
-		my $TopHate = $npc->GetHateTop()->GetName();
-		quest::say("Begone $TopHate");
-		$entity_list->GetClientByName("$TopHate")->GMMove(210, -500, -26, 245);
+		my $TopHate = $npc->GetHateTop();
+		quest::say("Begone " . $TopHate->GetName());
+		$entity_list->HalveAggro($TopHate);
+		$TopHate->GMMove(210, -500, -26, 245);
 	}
 }
 

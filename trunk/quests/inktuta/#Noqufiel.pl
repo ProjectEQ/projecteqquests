@@ -11,7 +11,7 @@ sub EVENT_SAY {
     quest::spawn2(296056,0,0,-146,-994,-127,1);  
     quest::spawn2(296057,0,0,-145,-828,-127,124);  
     quest::spawn2(296058,0,0,-218,-853,-127,129);
-    quest::spawn2(296017,0,0,$x,$y,$z,$h);
+    quest::spawn2(296017,0,0,$x,$y,$z,$h); #curse trigger
     quest::depop();
   }  
 }

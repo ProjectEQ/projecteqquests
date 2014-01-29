@@ -23,19 +23,37 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_SIGNAL {
-	if($confused_say == 0 && $rambling_say == 0 && $incoherent_say == 0 && $irrational_say == 0) {
-		#3 seconds to get all 4 signals
-		quest::settimer("stonemite",3);
-	}
-	
-	if ($signal == 296033) { #confused
-		$confused_say = 1;
-	} elsif ($signal == 296030) { #rambling
-		$rambling_say = 1;
-	} elsif ($signal == 296035) { #incoherent
-		$incoherent_say = 1;
-	} elsif ($signal == 296036) { #irrational
-		$irrational_say = 1;
+	#stonemite event
+	if ($signal == 296033 || $signal == 296030 || $signal == 296035 || $signal == 296036) { #stonemite event
+		if($confused_say == 0 && $rambling_say == 0 && $incoherent_say == 0 && $irrational_say == 0) {
+			#3 seconds to get all 4 signals
+			quest::settimer("stonemite",3);
+		}
+		if ($signal == 296033) { #confused
+			$confused_say = 1;
+		} elsif ($signal == 296030) { #rambling
+			$rambling_say = 1;
+		} elsif ($signal == 296035) { #incoherent
+			$incoherent_say = 1;
+		} elsif ($signal == 296036) { #irrational
+			$irrational_say = 1;
+		}
+	#Cursecaller win
+	} elsif ($signal == 296017) { 
+		quest::setglobal($instid.'_inktuta_status',9,3,"H6");
+		quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
+		$entity_list->FindDoor(42)->SetLockPick(0);
+		$entity_list->FindDoor(43)->SetLockPick(0);
+		quest::spawn2(296073,0,0,-908,-198,-126,0); #a_pile_of_bones_
+		quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
+	#True_Image win
+	} elsif ($signal == 296065) { 
+		quest::depopall(296066); #Mirror_Image
+		quest::depopall(296074); ##Noqufiel
+		quest::depopall(296075); #noqufiel_trigger
+		quest::spawn2(296071,0,0,-55, -653, -127, $h); #Jomica_the_Unforgiven
+		quest::spawn2(296068,0,0,-127,-652,-127, 121); #bones (loot)
+		quest::setglobal($instid.'_inktuta_status',10,3,"H6");
 	}
 }
 	
@@ -113,8 +131,7 @@ sub EVENT_TIMER {
 			} elsif($qglobals{$instid.'_inktuta_status'} == 9) {
 				OPEN_DOORS(3);
 				REMOVE_LOOSE_TILES(4);
-				quest::spawn2(296065,0,0,-55,-653,-127,121); #True_Image_of_Noqufiel
-				quest::spawn2(296066,0,0,-103,-652,-127,125); #Mirror_Image_of_Noqufiel
+				quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger
 			} elsif($qglobals{$instid.'_inktuta_status'} == 10) {
 				#true image of noqufiel defeated but jomica not talked to.
 				OPEN_DOORS(3);
@@ -137,6 +154,7 @@ sub EVENT_TIMER {
 			quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 			$entity_list->FindDoor(20)->SetLockPick(0);
 			quest::setglobal($instid.'_inktuta_status',4,3,"H6");
+			quest::spawn2(296073,0,0,-383,-536,-76); #a_pile_of_bones_
 			quest::stoptimer("stonemite");
 		} else {
 			#Stonemite Fail - tell exiles to spawn stonemites

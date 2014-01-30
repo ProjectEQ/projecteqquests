@@ -44,7 +44,7 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 		$entity_list->FindDoor(42)->SetLockPick(0);
 		$entity_list->FindDoor(43)->SetLockPick(0);
-		quest::spawn2(296073,0,0,-908,-198,-126,0); #a_pile_of_bones_
+		quest::spawn2(296073,0,0,-198,-908,-126,0); #a_pile_of_bones_
 		quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
 	#True_Image win
 	} elsif ($signal == 296065) { 

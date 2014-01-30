@@ -14,6 +14,6 @@ sub EVENT_TIMER {
 			quest::depop();
 		}
 	} elsif ($timer eq "spawn_cursebearer") {
-		quest::spawn2(quest::ChooseRandom(296059,296060,296061,296062,296063,296064),0,0,-912,7,-126,0);
+		quest::spawn2(quest::ChooseRandom(296059,296060,296061,296062,296063,296064),0,0,7,-912,-126,0);
 	}
 }

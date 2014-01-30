@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		if($qglobals{$instid.'_inktuta_status'} == 0) {
 			quest::emote("screams");
-			quest::say("No, don't kill me!' He relaxes slightly and gives you a strange look. 'Have you been afflicted by the curse? Are you mad!? Have you any idea [who Kelekdrix] is? She will be here any moment to destroy you all. Leave now, or there will be dire [consequences]!");
+			quest::say("No, don't kill me!' He relaxes slightly and gives you a strange look. 'Have you been afflicted by the curse? Are you mad!? Have you any idea [" . quest::saylink("who Kelekdrix") . "] is? She will be here any moment to destroy you all. Leave now, or there will be dire [" . quest::saylink("consequences") . "]!");
 		}
 	}
 	if ($text=~/consequences/i || $text=~/who Kelekdrix/i) {
@@ -19,4 +19,4 @@ sub EVENT_SAY {
 		quest::depop_withtimer();
 	}
     
-  }
+}

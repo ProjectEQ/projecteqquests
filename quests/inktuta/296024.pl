@@ -1,5 +1,5 @@
 ##Kelekdrix,_Herald_of_Trushar (296024)
-
+my $instid;
 
 sub EVENT_SPAWN {
 	quest::moveto(510,-495,6, -1, 1);
@@ -31,13 +31,15 @@ sub EVENT_TIMER {
 		my $TopHate = $npc->GetHateTop();
 		quest::say("Begone " . $TopHate->GetName());
 		$entity_list->HalveAggro($TopHate);
-		$TopHate->GMMove(210, -500, -26, 245);
+		my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
+		$MoveName->MovePCInstance(296, $instid, 210, -500, -26, 245);
 	}
 }
 
 
 
 sub EVENT_COMBAT {
+	$instid = quest::GetInstanceID("inktuta",0);
 	if ($combat_state == 1) {
 		quest::settimer("BanishTop", 45);
 	} else {
@@ -51,7 +53,7 @@ sub EVENT_DEATH_COMPLETE {
 	quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 	$entity_list->FindDoor(41)->SetLockPick(0);
 	quest::spawn2(296027,0,0,90,-515,-27,64); #Mimezpo_the_Oracle
-	my $instid = quest::GetInstanceID("inktuta",0);
+	
 	quest::setglobal($instid.'_inktuta_status',2,3,"H6");
 	quest::spawn_condition("inktuta", 1, 0); #Stop Usher/Watcher spawns
 	quest::depopall(296025);

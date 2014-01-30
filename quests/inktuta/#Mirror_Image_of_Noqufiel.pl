@@ -7,7 +7,6 @@ sub EVENT_SPAWN {
 
 sub EVENT_AGGRO {
 	quest::signalwith(296075,1); #tell trigger I'm aggro'd
-	quest::say("sent aggro");
 }
 
 sub EVENT_SIGNAL {

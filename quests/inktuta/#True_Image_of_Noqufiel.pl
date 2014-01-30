@@ -2,16 +2,16 @@
 # Need to add banish to entry door
 
 my $current_hp;
+my $instid;
 
 sub EVENT_SPAWN {
 	quest::signalwith(296075,2); #ask trigger what my hp should be
-	quest::say("asked for HP");
 }
 
 
 sub EVENT_AGGRO {
+	$instid = quest::GetInstanceID("inktuta",0);
 	quest::signalwith(296075,1); #tell trigger I'm aggro'd
-	quest::say("sent aggro signal");
 }
 
 sub EVENT_SIGNAL {
@@ -24,11 +24,15 @@ sub EVENT_SIGNAL {
 	} elsif ($signal == 3) { #from trigger saying swap
 		quest::say("got swap signal");
 		$current_hp = ($npc->GetHP() + 10); #remember HP at depop
-		quest::say("set HP");
 		quest::signalwith(296075, $current_hp); #tell trigger my HP
-		quest::say("sent signal");
 		quest::spawn2(296066,0,0,$x,$y,$z,$h);
 		quest::depop();
+	} elsif ($signal == 4) { #from trigger saying banish
+		my $TopHate = $npc->GetHateTop();
+		quest::say("Begone " . $TopHate->GetName());
+		$entity_list->HalveAggro($TopHate);
+		my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
+		$MoveName->MovePCInstance(296, $instid, -62, -826, -126, 0);
 	} else { #no defined signal means I'm receiving my HP from trigger
 		$npc->SetHP($signal);
 	}

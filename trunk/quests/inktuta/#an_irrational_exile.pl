@@ -1,5 +1,6 @@
 #Inktuta #an_irrational_exile 296036
 
+my $say_ready = 1;
 
 sub EVENT_SPAWN {
 	quest::set_proximity($x-30,$x+30,$y-30,$y+30);
@@ -11,10 +12,23 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-	if ($text=~/awaken me from this nightmare/i) {
-		quest::signalwith(296070,296036); #signal zone_status
-	} else {
-		exile_fail();
+	if ($say_ready) { 
+		if ($text=~/awaken me from this nightmare/i) {
+			$say_ready = 0;
+			quest::settimer("set_ready",30);
+			quest::signalwith(296070,296036); #signal zone_status
+		} else {
+			$say_ready = 0;
+			quest::settimer("set_ready",30);
+			exile_fail();
+		}
+	}
+}
+
+sub EVENT_TIMER {
+	if ($timer eq "set_ready") {
+		quest::stoptimer("set_ready");
+		$say_ready = 1;
 	}
 }
 

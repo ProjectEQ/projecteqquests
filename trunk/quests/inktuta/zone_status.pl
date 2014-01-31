@@ -46,7 +46,7 @@ sub EVENT_SIGNAL {
 		$entity_list->FindDoor(43)->SetLockPick(0);
 		quest::spawn2(296073,0,0,-198,-908,-126,0); #a_pile_of_bones_
 		quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
-	#True_Image win
+	#Noqufiel win
 	} elsif ($signal == 296065) { 
 		quest::depopall(296066); #Mirror_Image
 		quest::depopall(296074); ##Noqufiel
@@ -103,30 +103,30 @@ sub EVENT_TIMER {
 			} elsif($qglobals{$instid.'_inktuta_status'} == 5) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(1);
-				quest::spawn2(296048,0,0,-454,-500,-72,192); #a_clay_monolith
-				quest::spawn2(296048,0,0,-494,-401,-72,128); #a_clay_monolith
-				quest::spawn2(296048,0,0,-533,-500,-72,54); #a_clay_monolith
+				quest::spawn2(296002,0,0,-454,-500,-72,192); #a_clay_monolith
+				quest::spawn2(296002,0,0,-494,-401,-72,128); #a_clay_monolith
+				quest::spawn2(296002,0,0,-533,-500,-72,54); #a_clay_monolith
 			} elsif($qglobals{$instid.'_inktuta_status'} == 6) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(2);
-				quest::spawn2(296048,0,0,-533,-580,-97,64); #a_clay_monolith
-				quest::spawn2(296048,0,0,-454,-649,-97,192); #a_clay_monolith
-				quest::spawn2(296048,0,0,-533,-649,-97,64); #a_clay_monolith
-				quest::spawn2(296048,0,0,-454,-580,-97,192); #a_clay_monolith
+				quest::spawn2(296049,0,0,-533,-580,-97,64); #a_clay_monolith
+				quest::spawn2(296049,0,0,-454,-649,-97,192); #a_clay_monolith
+				quest::spawn2(296049,0,0,-533,-649,-97,64); #a_clay_monolith
+				quest::spawn2(296049,0,0,-454,-580,-97,192); #a_clay_monolith
 			} elsif($qglobals{$instid.'_inktuta_status'} == 7) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(3);
-				quest::spawn2(296048,0,0,-533,-737,-122,64); #a_clay_monolith
-				quest::spawn2(296048,0,0,-533,-798,-122,64); #a_clay_monolith
-				quest::spawn2(296048,0,0,-454,-798,-122,192); #a_clay_monolith
-				quest::spawn2(296048,0,0,-454,-737,-122,192); #a_clay_monolith
+				quest::spawn2(296050,0,0,-533,-737,-122,64); #a_clay_monolith
+				quest::spawn2(296050,0,0,-533,-798,-122,64); #a_clay_monolith
+				quest::spawn2(296050,0,0,-454,-798,-122,192); #a_clay_monolith
+				quest::spawn2(296050,0,0,-454,-737,-122,192); #a_clay_monolith
 			} elsif($qglobals{$instid.'_inktuta_status'} == 8) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(4);
-				quest::spawn2(296048,0,0,-371,-953,-122,0); #a_clay_monolith
-				quest::spawn2(296048,0,0,-296,-953,-122,0); #a_clay_monolith
-				quest::spawn2(296048,0,0,-296,-869,-122,128); #a_clay_monolith
-				quest::spawn2(296048,0,0,-371,-869,-122,128); #a_clay_monolith
+				quest::spawn2(296051,0,0,-371,-953,-122,0); #a_clay_monolith
+				quest::spawn2(296051,0,0,-296,-953,-122,0); #a_clay_monolith
+				quest::spawn2(296051,0,0,-296,-869,-122,128); #a_clay_monolith
+				quest::spawn2(296051,0,0,-371,-869,-122,128); #a_clay_monolith
 				quest::spawn2(296052,0,0,-166,-911,-127,194); #Noqufiel
 			} elsif($qglobals{$instid.'_inktuta_status'} == 9) {
 				OPEN_DOORS(3);
@@ -147,6 +147,7 @@ sub EVENT_TIMER {
 	} elsif ($timer eq "stonemite") {
 		if ($confused_say == 1 && $rambling_say == 1 && $incoherent_say == 1 && $irrational_say == 1) {
 			#Success
+			quest::stoptimer("stonemite");
 			quest::signalwith(296035,1);  #an_incoherent_exile
 			quest::signalwith(296036,1);  #an_irrational_exile
 			quest::signalwith(296033,1);  #a_confused_exile
@@ -154,15 +155,14 @@ sub EVENT_TIMER {
 			quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 			$entity_list->FindDoor(20)->SetLockPick(0);
 			quest::setglobal($instid.'_inktuta_status',4,3,"H6");
-			quest::spawn2(296073,0,0,-383,-536,-76); #a_pile_of_bones_
-			quest::stoptimer("stonemite");
+			quest::spawn2(296073,0,0,-383,-536,-76,0); #a_pile_of_bones_
 		} else {
 			#Stonemite Fail - tell exiles to spawn stonemites
+			quest::stoptimer("stonemite");
 			quest::signalwith(296035,2);  #an_incoherent_exile
 			quest::signalwith(296036,2);  #an_irrational_exile
 			quest::signalwith(296033,2);  #a_confused_exile
 			quest::signalwith(296030,2);  #a_rambling_exile
-			quest::stoptimer("stonemite");
 			$confused_say = 0;
 			$rambling_say = 0;
 			$incoherent_say = 0;

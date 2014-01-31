@@ -10,7 +10,7 @@ sub EVENT_CLICKDOOR {
   if ($doorid == 3) { #Inktu`Ta zone in
     my $InstanceID = quest::GetInstanceID("inktuta",0);
     if($InstanceID > 0){
-      quest::MovePCInstance(296,$InstanceID,15,190,-2.8);
+      quest::MovePCInstance(296,$InstanceID,0,65,-1);
     } else {
       $client->Message(13, "You are not a part of an instance!");
     }

@@ -8,7 +8,7 @@ sub EVENT_SAY {
       quest::say("Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu'ta.");
       #allow a GM to request the instance and if in a raid bring the entire raid with him
       $raid = $client->GetRaid();
-      #if($raid || $status > 79) { #change to this when when zone goes live.
+      #if($raid || $status > 99) { #change to this when when zone goes live.
       if($status > 99) { #temporary to allow GM to bring in a raid for testing.
         if(!defined($qglobals{inktutalockout})) {
           $InInstance = quest::GetInstanceID("inktuta",0);
@@ -19,7 +19,7 @@ sub EVENT_SAY {
               #create status global
               quest::targlobal($NewInstance.'_inktuta',0,"H6",0,0,296);
               quest::say("Instance added.");
-            } elsif($status >79) {
+            } elsif($status >99) {
               quest::AssignToInstance($NewInstance);
               #create status global
               quest::targlobal($NewInstance.'_inktuta',0,"H6",0,0,296);

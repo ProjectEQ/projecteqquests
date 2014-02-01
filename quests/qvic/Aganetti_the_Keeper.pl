@@ -10,7 +10,7 @@ sub EVENT_SAY {
       $raid = $client->GetRaid();
       #if($raid || $status > 99) { #change to this when when zone goes live.
       if($status > 99) { #temporary to allow GM to bring in a raid for testing.
-        if(!defined($qglobals{inktutalockout})) {
+        if(!defined($qglobals{lockout_inktuta})) {
           $InInstance = quest::GetInstanceID("inktuta",0);
           if($InInstance == 0){
             $NewInstance = quest::CreateInstance("inktuta", 0, 21600);

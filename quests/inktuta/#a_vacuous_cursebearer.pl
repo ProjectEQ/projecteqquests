@@ -18,4 +18,8 @@ sub EVENT_TIMER {
 
 sub EVENT_SLAY {
   quest::depop();
+
+
+sub EVENT_NPC_SLAY {
+	quest::depop();
 }

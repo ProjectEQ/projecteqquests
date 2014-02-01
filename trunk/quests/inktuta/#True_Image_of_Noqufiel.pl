@@ -1,5 +1,5 @@
 # #True_Image_of_Noqufiel (296065)
-# Need to add banish to entry door
+
 
 my $current_hp;
 my $instid;
@@ -22,7 +22,6 @@ sub EVENT_SIGNAL {
 		quest::signalwith(296075, $current_hp); #tell trigger my HP
 		quest::depop();
 	} elsif ($signal == 3) { #from trigger saying swap
-		quest::say("got swap signal");
 		$current_hp = ($npc->GetHP() + 10); #remember HP at depop
 		quest::signalwith(296075, $current_hp); #tell trigger my HP
 		quest::spawn2(296066,0,0,$x,$y,$z,$h);
@@ -41,6 +40,7 @@ sub EVENT_SIGNAL {
 sub EVENT_DEATH_COMPLETE {
 	quest::say("This is but a temporary setback. I will return.");
 	quest::signalwith(296070,296065); #tell zone_status I died
+	quest::spawn2(296076,0,0,$x,$y,$z,$h); #temp lockout set lockout_inktuta
 }
 
 

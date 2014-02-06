@@ -1,9 +1,9 @@
 sub EVENT_SPAWN {
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,205,-508,-27,253);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,203,-479,-27,126);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,220,-493,-27,195);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,147,-517,-27,38);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,153,-466,-27,81);
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,82,-468,-27,253);
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,-21,-454,-27,126);
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,38,-452,-27,195);
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,118,-530,-27,38);
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,38,-515,-27,81);
 }
 
 sub EVENT_AGGRO {

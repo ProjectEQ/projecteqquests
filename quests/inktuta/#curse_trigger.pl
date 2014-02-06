@@ -16,10 +16,12 @@ sub EVENT_SIGNAL {
 	#fail/wipe check - signal 2 means one of the callers lost aggro, for loop to make sure none have aggro, depop all callers and bearers, spawn noqufiel to reset event
 	if ($signal == 2) {
 		for ($count = 0; $count <= 5; $count++) {
-			@hate_list = $entity_list->GetNPCByNPCTypeID($curse_callers[$count])->GetHateList();
-			$hate_list = @hate_list;
-			if ($hate_list) {
-				$hate_count++;
+			if ($entity_list->GetMobByNpcTypeID($curse_callers[$count])) {
+				@hate_list = $entity_list->GetNPCByNPCTypeID($curse_callers[$count])->GetHateList();
+				$hate_list = @hate_list;
+					if ($hate_list) {
+						$hate_count++;
+					}
 			}
 		}
 		if (!$hate_count) { #no callers have aggro

@@ -1,6 +1,31 @@
 # #True_Image_of_Noqufiel (296065)
 
+my $instid;
 
+sub EVENT_AGGRO {
+	$instid = quest::GetInstanceID("inktuta",0);
+	quest::signalwith(296075,1); #tell trigger I'm aggro'd
+}
+
+sub EVENT_SIGNAL {
+	if ($signal == 4) { #from trigger saying banish
+		my $TopHate = $npc->GetHateTop();
+		quest::say("Begone " . $TopHate->GetName());
+		$entity_list->HalveAggro($TopHate);
+		my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
+		$MoveName->MovePCInstance(296, $instid, -62, -826, -126, 0);
+	}
+}
+
+sub EVENT_DEATH_COMPLETE {
+	quest::say("This is but a temporary setback. I will return.");
+	quest::signalwith(296070,296065); #tell zone_status I died
+	quest::spawn2(296076,0,0,$x,$y,$z,$h); #temp lockout set lockout_inktuta
+}
+
+
+
+=cut
 my $current_hp;
 my $instid;
 
@@ -47,7 +72,7 @@ sub EVENT_DEATH_COMPLETE {
 
 
 ##########
-=cut old code
+
 my $instid = 0;
 
 sub EVENT_SPAWN {
@@ -87,4 +112,3 @@ sub EVENT_DEATH_COMPLETE {
   quest::setglobal($instid.'_inktuta_status',10,3,"H6");
 }
 =cut old code
-##############

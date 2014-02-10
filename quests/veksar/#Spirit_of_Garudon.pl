@@ -17,6 +17,8 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_SPAWN {
-  quest::setglobal("rage",2,3,"F");
+  if (!defined($qglobals{rage})) {
+    quest::setglobal("rage",2,3,"F");
+  }
 }
 # EOF zone: Veksar NPCs:#Garudon (109107)

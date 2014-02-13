@@ -13,6 +13,8 @@ sub EVENT_SPAWN {
 
 sub EVENT_AGGRO {
 	$instid = quest::GetInstanceID('inktuta',0); #get the instance id
+	my $TopHate = $npc->GetHateTop();
+	quest::crosszonemessageplayerbyname(5, "GMBobaski", "Inktuta Bootup: " . $TopHate->GetName() . " InstID: $instid");
 	#start timer 2 to check the globals now that we have the instance ID
 	if($instid > 0) {
 		$npc->WipeHateList();

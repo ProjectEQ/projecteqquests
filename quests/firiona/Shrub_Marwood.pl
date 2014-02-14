@@ -17,22 +17,23 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12960 => 1, 12955 => 1, 12958 => 1)) {
     quest::emote("tosses the mantrap root out the window.. SPLASH!! 'I made a mistake. I didn't need that one. Here is the shillelagh I told you about. I found it in some burned out woods far from here. I cleaned it up and found it had a spark of mana so I had it enchanted with a few charges of my spell, [Fertile Crop]. Hope you like it.'");
     quest::summonitem(12953);
+    quest::exp(25000);
+    quest::faction(418,10); #inhabitants of firiona
+    quest::faction(92,10); #emerald warriors
+    quest::faction(314,10); #storm guard
+    quest::faction(193,-30); #legion of cabilis
+    quest::faction(250,-30); #pirates of gunthak
   }
   elsif (plugin::check_handin(\%itemcount, 11579 => 1, 12753 => 1, 12957 => 1, 12959 => 1)) {
     quest::say("Great work! I wish I had the coin to hire you on permanently. Maybe I will, when I find the lost trade city of Torsis. Here is the spell I copied for you. Careful, the ink is still drying.");
     quest::summonitem(12954);
+    quest::exp(25000);
+    quest::faction(418,10); #inhabitants of firiona
+    quest::faction(92,10); #emerald warriors
+    quest::faction(314,10); #storm guard
+    quest::faction(193,-30); #legion of cabilis
+    quest::faction(250,-30); #pirates of gunthak
   }
-  else {
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  quest::exp(25000);
-  quest::faction(418,10); #inhabitants of firiona
-  quest::faction(92,10); #emerald warriors
-  quest::faction(314,10); #storm guard
-  quest::faction(193,-30); #legion of cabilis
-  quest::faction(250,-30); #pirates of gunthak
+  plugin::return_items(\%itemcount);
 }
-
 # EOF zone: firiona ID: 84193 NPC: Shrub_Marwood
-

@@ -32,7 +32,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12622 => 1)) { #List of Qeynos Most Wanted
     quest::say("Fantastic, Fantastic... Here you have more than proven your right to wear this. Use it wisely...");
     quest::summonitem(1376); #Initiate Symbol of the Tribunal
-    quest::facetion(15,2);  #Banker
+    quest::faction(15,2);  #Banker
     quest::faction(213,2);  #Merchants of Halas
     quest::faction(294,2);  #Shamen of Justice
     quest::faction(33,-3);  #Circle of Unseen Hands

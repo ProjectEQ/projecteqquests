@@ -99,7 +99,7 @@ sub EVENT_TIMER {
 				quest::spawn2(296030,0,0,-274,-531,-52,125); #exiles
 				quest::spawn2(296033,0,0,-557,-237,-2,63);
 				quest::spawn2(296035,0,0,-385,-562,-76,305);
-				quest::spawn2(296036,0,0,-305,-310,-77,190);
+				quest::spawn2(296036,0,0,-305,-310,-51,190);
 			} elsif($qglobals{$instid.'_inktuta_status'} == 4) {
 				OPEN_DOORS(2);
 			} elsif($qglobals{$instid.'_inktuta_status'} == 5) {

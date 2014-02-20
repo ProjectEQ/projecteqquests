@@ -108,6 +108,7 @@ sub EVENT_TIMER {
 				quest::spawn2(296002,0,0,-454,-500,-72,192); #a_clay_monolith
 				quest::spawn2(296002,0,0,-494,-401,-72,128); #a_clay_monolith
 				quest::spawn2(296002,0,0,-533,-500,-72,54); #a_clay_monolith
+				quest::signalwith(296002,1); #activate golems
 			} elsif($qglobals{$instid.'_inktuta_status'} == 6) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(2);
@@ -115,6 +116,7 @@ sub EVENT_TIMER {
 				quest::spawn2(296049,0,0,-454,-649,-97,192); #a_clay_monolith
 				quest::spawn2(296049,0,0,-533,-649,-97,64); #a_clay_monolith
 				quest::spawn2(296049,0,0,-454,-580,-97,192); #a_clay_monolith
+				quest::signalwith(296049,1); #activate golems
 			} elsif($qglobals{$instid.'_inktuta_status'} == 7) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(3);
@@ -122,6 +124,7 @@ sub EVENT_TIMER {
 				quest::spawn2(296050,0,0,-533,-798,-122,64); #a_clay_monolith
 				quest::spawn2(296050,0,0,-454,-798,-122,192); #a_clay_monolith
 				quest::spawn2(296050,0,0,-454,-737,-122,192); #a_clay_monolith
+				quest::signalwith(296050,1); #activate golems
 			} elsif($qglobals{$instid.'_inktuta_status'} == 8) {
 				OPEN_DOORS(2);
 				REMOVE_LOOSE_TILES(4);
@@ -130,6 +133,7 @@ sub EVENT_TIMER {
 				quest::spawn2(296051,0,0,-296,-869,-122,128); #a_clay_monolith
 				quest::spawn2(296051,0,0,-371,-869,-122,128); #a_clay_monolith
 				quest::spawn2(296052,0,0,-166,-911,-127,194); #Noqufiel
+				quest::signalwith(296051,1); #activate golems
 			} elsif($qglobals{$instid.'_inktuta_status'} == 9) {
 				OPEN_DOORS(3);
 				REMOVE_LOOSE_TILES(4);

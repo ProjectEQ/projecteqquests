@@ -4,11 +4,15 @@ sub EVENT_SPAWN {
 	quest::setnexthpevent(76); #spawn first giant at 75%
 }
 
-sub EVENT_AGGRO {
-	quest::settimer(1,7200); #fail timer
-	quest::settimer(2,60); #check for aggro
-	quest::signalwith(209033,1,1); #portals start spawning
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::settimer("fail_timer",7200);
+		quest::signalwith(209033,1,1); #portals start spawning
+	} else {
+		quest::signalwith(209033,2,1); #if lost aggro, stop portals from spawning
+	}
 }
+
 
 sub EVENT_HP {
 	if ($hpevent == 76) {
@@ -23,14 +27,10 @@ sub EVENT_HP {
 }
 
 sub EVENT_TIMER {
-	if($timer == 1) { #took too long. fail
-		quest::stoptimer(1);
+	if($timer eq "fail_timer") { #took too long. fail
+		quest::stoptimer("fail_timer");
 		quest::signalwith(209033,2,1); #portals stop spawning
 		quest::depop_withtimer();
-	} elsif ($timer == 2) {
-		if(!$npc->IsEngaged()) {
-			quest::signalwith(209033,2,1); #if not aggro'd, stop portals from spawning
-		}
 	}
 	
 }
@@ -38,6 +38,6 @@ sub EVENT_TIMER {
 sub EVENT_DEATH_COMPLETE {
 	quest::spawn2(209114,0,0,$x,$y,$z,$h); #Planar Projection
 	quest::spawn2(209108,0,0,-469,-1754,2351.2,197.6); #Karana upstairs
-	quest::stoptimer(1);
+	quest::stoptimer("fail_timer");
 	quest::signalwith(209033,2,1); #stop portals from spawning
 }

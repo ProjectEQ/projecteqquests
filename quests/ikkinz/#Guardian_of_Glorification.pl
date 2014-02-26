@@ -18,8 +18,8 @@ sub EVENT_HP {
         quest::setnexthpevent(50);
   }
   if($hpevent == 50) {
-  quest::spawn2(294583,0,0,$x,$y,$z,$h);
-  quest::spawn2(294583,0,0,$x -10,$y,$z,$h);
+  quest::spawn2(294583,0,0,1038,-484,-68,192);
+  quest::spawn2(294583,0,0,1039,-431,-68,192);
   quest::depop();
   }
 }

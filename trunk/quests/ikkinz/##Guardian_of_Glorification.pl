@@ -9,13 +9,3 @@ sub EVENT_HP {
   quest::depop();
   }
 }
-
-sub EVENT_AGGRO {
-  quest::settimer(1,1);
-}
-
-sub EVENT_TIMER {
-  if(($x < 850) || ($y < -583) || ($y > -334)) {
-    $npc->GMMove(1039,-460,-65,192);
-  }
-}

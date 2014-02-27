@@ -37,7 +37,7 @@ sub EVENT_TIMER {
         quest::spawn2(237784, 10, 0, 721.54, 1469.58, 8.10, 0); # location 4, grid 10
       }
     }
-    if(!$entity_list->GetMobByNpcTypeID(237785) && !$entity_list->GetMobByNpcTypeID(237786)) {
+    if(!$entity_list->IsMobSpawnedByNpcTypeID(237785) && !$entity_list->IsMobSpawnedByNpcTypeID(237786)) {
 	  #safety check
 	  $Goblin_Boss_Dead = 2;
 	  DEPOP_ALL();

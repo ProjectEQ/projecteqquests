@@ -16,7 +16,7 @@ sub EVENT_WAYPOINT_ARRIVE {
   }
   if ($wp == 19) {
     quest::clear_proximity();
-    if($entity_list->GetMobByNpcTypeID(118208)){
+    if($entity_list->IsMobSpawnedByNpcTypeID(118208)){
       quest::attacknpctype(118208);
       quest::signal(118207);
     }

@@ -3,7 +3,7 @@ sub EVENT_DEATH_COMPLETE {
   $instid = quest::GetInstanceID('mirb',50); #get the instance id
   if ($qglobals{$instid.'_mirb_status'} == 5) { #if status is 5 bonus chest not open or not available.
     #check if bonus chest is not up
-	if (!$entity_list->GetMobByNpcTypeID(237763)) {
+	if (!$entity_list->IsMobSpawnedByNpcTypeID(237763)) {
 	  #set status to 8 
 	  quest::setglobal($instid.'_mirb_status', 8, 7, "H3");
 	} else {

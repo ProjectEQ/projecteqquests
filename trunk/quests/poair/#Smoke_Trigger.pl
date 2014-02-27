@@ -26,7 +26,7 @@ sub EVENT_SIGNAL
 	elsif ($signal == 4 && !defined($qglobals{smoke_event_start}) && !defined($qglobals{smoke_done})) 
 	{
 		#A_Confused_Air_Elemental
-		if(!$entity_list->GetMobByNpcTypeID(215012)) 
+		if(!$entity_list->IsMobSpawnedByNpcTypeID(215012)) 
 		{
 			quest::spawn2(215066,0,0,-403.1,-1375.5,320.8,234.9); 
 			quest::spawn2(215066,0,0,-501.9,-1205.9,318.6,99.0);

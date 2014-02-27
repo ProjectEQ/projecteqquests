@@ -1,5 +1,5 @@
 sub EVENT_SPAWN { 
-if ($entity_list->GetMobByNpcTypeID(96073)){
+if ($entity_list->IsMobSpawnedByNpcTypeID(96073)){
 quest::depop();
   }
 }

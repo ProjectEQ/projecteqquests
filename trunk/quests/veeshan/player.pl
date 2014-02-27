@@ -1,18 +1,18 @@
 sub EVENT_CLICKDOOR {
   my $dragonsup = 0;
-  if ($entity_list->GetMobByNpcTypeID(108053)) { #Xygoz
+  if ($entity_list->IsMobSpawnedByNpcTypeID(108053)) { #Xygoz
     $dragonsup++;
   }
-  if ($entity_list->GetMobByNpcTypeID(108040)) { #Druushk
+  if ($entity_list->IsMobSpawnedByNpcTypeID(108040)) { #Druushk
     $dragonsup++;
   }
-  if ($entity_list->GetMobByNpcTypeID(108047)) { #Nexona
+  if ($entity_list->IsMobSpawnedByNpcTypeID(108047)) { #Nexona
     $dragonsup++;
   }
-  if ($entity_list->GetMobByNpcTypeID(108043)) { #Hoshkar
+  if ($entity_list->IsMobSpawnedByNpcTypeID(108043)) { #Hoshkar
     $dragonsup++;
   }
-  if ($entity_list->GetMobByNpcTypeID(108050)) { #Silverwing
+  if ($entity_list->IsMobSpawnedByNpcTypeID(108050)) { #Silverwing
     $dragonsup++;
   }
   if ($doorid == 56 || $doorid == 57) {

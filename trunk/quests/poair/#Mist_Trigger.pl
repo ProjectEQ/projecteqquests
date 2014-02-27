@@ -26,7 +26,7 @@ sub EVENT_SIGNAL
 	elsif ($signal == 4 && !defined($qglobals{mist_event_start}) && !defined($qglobals{mist_done})) 
 	{
 		#A_Phoenix_Breezewing, A_Wind_Pheonix X2, Servitor_of_Xegony, Spiritfrenzied_Phoenix, Ardent_Phoenix_of_Xegony, A_Phoenix_Searedwing, Calebgrothiel
-		if(!$entity_list->GetMobByNpcTypeID(215058) && !$entity_list->GetMobByNpcTypeID(215026) && !$entity_list->GetMobByNpcTypeID(215025) && !$entity_list->GetMobByNpcTypeID(215027) && !$entity_list->GetMobByNpcTypeID(215062) && !$entity_list->GetMobByNpcTypeID(215059) && !$entity_list->GetMobByNpcTypeID(215028) && !$entity_list->GetMobByNpcTypeID(215061)) 
+		if(!$entity_list->IsMobSpawnedByNpcTypeID(215058) && !$entity_list->IsMobSpawnedByNpcTypeID(215026) && !$entity_list->IsMobSpawnedByNpcTypeID(215025) && !$entity_list->IsMobSpawnedByNpcTypeID(215027) && !$entity_list->IsMobSpawnedByNpcTypeID(215062) && !$entity_list->IsMobSpawnedByNpcTypeID(215059) && !$entity_list->IsMobSpawnedByNpcTypeID(215028) && !$entity_list->IsMobSpawnedByNpcTypeID(215061)) 
 		{
 			quest::spawn2(215069,0,0,304.2,-792.2,441.6,15.2); 
 			quest::spawn2(215069,0,0,348.4,-632.2,442.3,140.1);

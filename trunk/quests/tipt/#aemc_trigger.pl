@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
 
 sub SPAWN_MOTHER {
   #if there are no more hatchlings and the mother has not been spawned, spawn her.
-  if(!$entity_list->GetMobByNpcTypeID(289034) && !$entity_list->GetMobByNpcTypeID(289036)) {
+  if(!$entity_list->IsMobSpawnedByNpcTypeID(289034) && !$entity_list->IsMobSpawnedByNpcTypeID(289036)) {
     quest::spawn2(289036,0,0,-2040,196,250,113); #spawn #an_enraged_maternal_cragbeast
     quest::setglobal($instid.'_tipt_status',2,7,"H6");
     quest::stoptimer(1);

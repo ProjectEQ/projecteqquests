@@ -15,12 +15,13 @@ sub EVENT_HP {
 
 sub EVENT_SIGNAL {
 	if($signal == 1) { #an Usher or Watcher died
-		quest::settimer("check_usher",5);
+		if(!$entity_list->IsMobSpawnedByNpcTypeID(296025) && !$entity_list->IsMobSpawnedByNpcTypeID(296026)) { # No Usher or Watcher left
+			quest::modifynpcstat("special_attacks","SQUMCNIDf"); #go active
+		}
 	} elsif ($signal == 2) { #Usher/Watcher spawned, go inactive
 		quest::modifynpcstat("special_attacks","ABfHG");
 		$npc->WipeHateList();
 		quest::stoptimer("BanishTop");
-		quest::stoptimer("check_usher");
 	}
 }
 
@@ -32,11 +33,6 @@ sub EVENT_TIMER {
 		$entity_list->HalveAggro($TopHate);
 		my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
 		$MoveName->MovePCInstance(296, $instid, 210, -500, -26, 245);
-	} elsif($timer eq "check_usher") {
-		if(!$entity_list->GetMobByNpcTypeID(296025) && !$entity_list->GetMobByNpcTypeID(296026)) { # No Usher or Watcher left
-			quest::stoptimer("check_usher");
-			quest::modifynpcstat("special_attacks","SQUMCNIDf"); #go active
-		}
 	}
 }
 

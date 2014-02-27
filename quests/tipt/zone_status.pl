@@ -32,16 +32,16 @@ sub EVENT_TIMER {
       if(!defined $qglobals{$instid.'_tipt_status'}) { #check for their instance global to exist
         quest::targlobal($instid.'_tipt_status',0,"H6",0,0,0); #create it if it does not.
         #make sure the cragbeast trigger is up.
-        if(!$entity_list->GetMobByNpcTypeID(289045)){ #aemc_trigger
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
           quest::spawn2(289045,0,0,-2005,163,250,0); #aemc_trigger
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 0) { #0 means nothing done
         #make sure the cragbeast trigger is up.
-        if(!$entity_list->GetMobByNpcTypeID(289045)){ #aemc_trigger
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
           quest::spawn2(289045,0,0,-2005,163,250,0); #aemc_trigger
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 1) { #baby crags spawned
-        if(!$entity_list->GetMobByNpcTypeID(289045)){ #aemc_trigger
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
           quest::spawn2(289045,0,0,-2005,163,250,0); #aemc_trigger
         }
         quest::spawn2(289034,0,0,-2106,188,250,78);
@@ -54,15 +54,15 @@ sub EVENT_TIMER {
         quest::spawn2(289034,0,0,-2047,125,250,22);      
       } elsif($qglobals{$instid.'_tipt_status'} == 2) { #mother spawned
         quest::spawn2(289036,0,0,-2040,196,250,113); #spawn #an_enraged_maternal_cragbeast
-        if($entity_list->GetMobByNpcTypeID(289045)){ #aemc_trigger
+        if($entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
           quest::depop(289045); #aemc_trigger
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 3) { #ghost room ready
-        if(!$entity_list->GetMobByNpcTypeID(289046)){ #ghost_trigger
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289046)){ #ghost_trigger
           quest::spawn2(289046,0,0,-1290,891,398,0); #ghost_trigger
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 4) { #ghost room spawned
-        if(!$entity_list->GetMobByNpcTypeID(289046)){ #ghost_trigger
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289046)){ #ghost_trigger
           quest::spawn2(289046,0,0,-1290,891,398,194); #ghost_trigger
         }
         quest::ze(13,'shivers run up and down your spine, something is not quite right here, the area feels quite chill and desolate'); 
@@ -77,11 +77,11 @@ sub EVENT_TIMER {
       } elsif($qglobals{$instid.'_tipt_status'} == 5) { #Garjah spawned
         quest::spawn2(289033,0,0,-1290,891,398,0); #spawn Garkah Zotaki
       } elsif($qglobals{$instid.'_tipt_status'} == 6) { #aneuk trigger spawned
-        if(!$entity_list->GetMobByNpcTypeID(289047)){ #aneuk_trigger
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289047)){ #aneuk_trigger
           quest::spawn2(289047,0,0,-793,1592,539,0); #aneuk_trigger
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 7) { #aneuk key mob spawned
-        if(!$entity_list->GetMobByNpcTypeID(289038)) { #an_aneuk_fleshweaver
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289038)) { #an_aneuk_fleshweaver
           quest::spawn2(289038,0,0,-804,1583,538,121); #an_aneuk_fleshweaver
         }
       } elsif($qglobals{$instid.'_tipt_status'} == 8) { #an_aneuk_fleshweaver killed
@@ -92,7 +92,7 @@ sub EVENT_TIMER {
         $entity_list->FindDoor(3)->SetLockPick(0);
         $entity_list->FindDoor(4)->SetLockPick(0);
       } elsif($qglobals{$instid.'_tipt_status'} == 11) { #Jhiru dead.
-        if(!$entity_list->GetMobByNpcTypeID(289032)){ #Master_Stonespiritist_Okkanu
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(289032)){ #Master_Stonespiritist_Okkanu
           quest::spawn2(289032,0,0,1411,2143,730,242); #Master_Stonespiritist_Okkanu
         }
       }

@@ -30,7 +30,7 @@ sub EVENT_TIMER {
 	if ($timer eq "change_names") {
 		$random_name = quest::ChooseRandom(1,2); #random chance to swap True/Mirror
 		if ($random_name == 1) { #tell True/Mirror to switch
-			if ($entity_list->GetMobByNpcTypeID(296074)) { ##Noqufiel			
+			if ($entity_list->IsMobSpawnedByNpcTypeID(296074)) { ##Noqufiel			
 				quest::depopall(296074); #depop ##Noqufiels
 				quest::spawn2(296066,0,0,20,-706, -126,121); #Mirror Image
 				quest::spawn2(296065,0,0,20,-633, -126,125); #True Image
@@ -38,13 +38,13 @@ sub EVENT_TIMER {
 				$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
 				$true_noq->SetHP($true_hp);
 			} else {
-				if ($entity_list->GetMobByNpcTypeID(296066)) { #mirror
+				if ($entity_list->IsMobSpawnedByNpcTypeID(296066)) { #mirror
 					$true_newX = $mir_noq->GetX();
 					$true_newY = $mir_noq->GetY();
 					$true_newZ = $mir_noq->GetZ();
 					quest::depopall(296066);
 				}
-				if ($entity_list->GetMobByNpcTypeID(296065)) { #true
+				if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) { #true
 					$Mir_newX = $true_noq->GetX();
 					$Mir_newY = $true_noq->GetY();
 					$Mir_newZ = $true_noq->GetZ();
@@ -62,11 +62,11 @@ sub EVENT_TIMER {
 	} elsif ($timer eq "spawn_noqufiel") {
 		SPAWN_NOQUFIELS();
 	} elsif ($timer eq "spawn_cursebearer") {
-		if (!$entity_list->GetMobByNpcTypeID(296074)) {
+		if (!$entity_list->IsMobSpawnedByNpcTypeID(296074)) {
 			quest::spawn2(quest::ChooseRandom(296059,296060,296061,296062,296063,296064),0,0,-238,-657,-126,121);
 		}
 	} elsif ($timer eq "banish_top") {
-		if ($entity_list->GetMobByNpcTypeID(296065)) {
+		if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) {
 			quest::signalwith(296065,4); #tell True_Image to banish
 		}
 	}
@@ -76,7 +76,7 @@ sub EVENT_TIMER {
 		
 		
 sub SPAWN_NOQUFIELS {
-	if ($entity_list->GetMobByNpcTypeID(296065)) { #true
+	if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) { #true
 		$true_hp = $true_noq->GetHP();
 	}
 	quest::depopall(296074); #depop ##Noqufiel

@@ -3,10 +3,10 @@
 
 
 sub EVENT_SPAWN {
-	if($entity_list->GetMobByNpcTypeID(206067)) {
+	if($entity_list->IsMobSpawnedByNpcTypeID(206067)) {
 		quest::depop(206067); #real Xanamech
 	}
-	if(!$entity_list->GetMobByNpcTypeID(206068)) {
+	if(!$entity_list->IsMobSpawnedByNpcTypeID(206068)) {
 		quest::spawn2(206068,0,0,-735,1580,-50,125.8); #fake Xanamech
 	}
 }
@@ -44,13 +44,13 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-	if($timer == 1 && $x == -720 && $y == 1500 && !$entity_list->GetMobByNpcTypeID(206067)) {
+	if($timer == 1 && $x == -720 && $y == 1500 && !$entity_list->IsMobSpawnedByNpcTypeID(206067)) {
 		quest::spawn2(206067,0,0,-735,1580,-50,125.8); # real Xanamech
 		quest::depop(206068); #fake Xanamech
 		quest::stoptimer(1);
 		quest::settimer(2,1);
 		quest::settimer(4,7200); #fail timer
-	} elsif($timer == 2 && !$entity_list->GetMobByNpcTypeID(206067)) {
+	} elsif($timer == 2 && !$entity_list->IsMobSpawnedByNpcTypeID(206067)) {
 		EVENT_WIN();
 	} elsif($timer == 3) {
 		quest::depop_withtimer();

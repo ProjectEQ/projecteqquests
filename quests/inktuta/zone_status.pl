@@ -86,7 +86,7 @@ sub EVENT_TIMER {
 			#if the global exists begin to check it's values
 			} elsif($qglobals{$instid.'_inktuta_status'} == 0) { #0 means nothing done.
 				#safety check to make sure the servant is up to trigger kelekdrix, should never actually happen.
-				if(!$entity_list->GetMobByNpcTypeID(296023)){ 
+				if(!$entity_list->IsMobSpawnedByNpcTypeID(296023)){ 
 				quest::spawn2(296023,0,0,353,-656,-2,194); #Servant_of_Keleldrix
 				}
 			} elsif($qglobals{$instid.'_inktuta_status'} == 1) { #Kelekdrix spawned

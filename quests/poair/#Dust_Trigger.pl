@@ -9,7 +9,7 @@ sub EVENT_TIMER
 {
 	if($timer == 30) {
     		#A_Crystalline_Windwalker
-    		if (!defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done}) && !$entity_list->GetMobByNpcTypeID(215043) && !$entity_list->GetMobByNpcTypeID(215044) && !$entity_list->GetMobByNpcTypeID(215045) && !$entity_list->GetMobByNpcTypeID(215060)) 
+    		if (!defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done}) && !$entity_list->IsMobSpawnedByNpcTypeID(215043) && !$entity_list->IsMobSpawnedByNpcTypeID(215044) && !$entity_list->IsMobSpawnedByNpcTypeID(215045) && !$entity_list->IsMobSpawnedByNpcTypeID(215060)) 
     		{
 			quest::spawn2(215460,0,0,-356.8,591.3,436.3,209.4); 
 			quest::spawn2(215460,0,0,-282.1,663.4,442.4,229.8); 
@@ -78,7 +78,7 @@ sub EVENT_SIGNAL
      	elsif ($signal == 5 && !defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done})) 
      	{
      		#A_Crystalline_Windwalker, A_Pristine_Recluse, A_Vorladien_Webspinner, Lossenmachar
-     		if(!$entity_list->GetMobByNpcTypeID(215043) && !$entity_list->GetMobByNpcTypeID(215044) && !$entity_list->GetMobByNpcTypeID(215045) && !$entity_list->GetMobByNpcTypeID(215060))
+     		if(!$entity_list->IsMobSpawnedByNpcTypeID(215043) && !$entity_list->IsMobSpawnedByNpcTypeID(215044) && !$entity_list->IsMobSpawnedByNpcTypeID(215045) && !$entity_list->IsMobSpawnedByNpcTypeID(215060))
      		{
 			quest::spawn2(215460,0,0,-356.8,591.3,436.3,209.4); 
 			quest::spawn2(215460,0,0,-282.1,663.4,442.4,229.8); 

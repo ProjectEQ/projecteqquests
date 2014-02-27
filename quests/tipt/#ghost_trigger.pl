@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
 
 sub SPAWN_GARJAH {
   #if there are no more ghosts and Garjah is not up
-  if(!$entity_list->GetMobByNpcTypeID(289035) && !$entity_list->GetMobByNpcTypeID(289048) && !$entity_list->GetMobByNpcTypeID(289038)) {
+  if(!$entity_list->IsMobSpawnedByNpcTypeID(289035) && !$entity_list->IsMobSpawnedByNpcTypeID(289048) && !$entity_list->IsMobSpawnedByNpcTypeID(289038)) {
     quest::spawn2(289033,0,0,$x,$y,$z,$h); #spawn Garkah Zotaki
     quest::setglobal($instid.'_tipt_status',5,7,"H6");
     quest::stoptimer(1);

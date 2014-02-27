@@ -11,7 +11,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_TIMER {
   if ($timer == 1) {
-    if(!$entity_list->GetMobByNpcTypeID(295145) && !$entity_list->GetMobByNpcTypeID(295146) && !$entity_list->GetMobByNpcTypeID(295147) && !$entity_list->GetMobByNpcTypeID(295148)) {
+    if(!$entity_list->IsMobSpawnedByNpcTypeID(295145) && !$entity_list->IsMobSpawnedByNpcTypeID(295146) && !$entity_list->IsMobSpawnedByNpcTypeID(295147) && !$entity_list->IsMobSpawnedByNpcTypeID(295148)) {
       quest::spawn2(295145,0,0,-216,-191,-467,192);
       quest::spawn2(295146,0,0,-316,-181,-464,64);
       quest::spawn2(295147,0,0,-243,-250,-439,248);
@@ -19,16 +19,16 @@ sub EVENT_TIMER {
     }
   } elsif ($timer == 2) {
     #for each arbitor that is up, heal Cyno for 10%
-    if($entity_list->GetMobByNpcTypeID(295145)) {
+    if($entity_list->IsMobSpawnedByNpcTypeID(295145)) {
       HEAL_CYNO();
     }
-    if($entity_list->GetMobByNpcTypeID(295146)) {
+    if($entity_list->IsMobSpawnedByNpcTypeID(295146)) {
       HEAL_CYNO();
     }
-    if($entity_list->GetMobByNpcTypeID(295147)) {
+    if($entity_list->IsMobSpawnedByNpcTypeID(295147)) {
       HEAL_CYNO();
     }
-    if($entity_list->GetMobByNpcTypeID(295148)) {
+    if($entity_list->IsMobSpawnedByNpcTypeID(295148)) {
       HEAL_CYNO();
     }
   }

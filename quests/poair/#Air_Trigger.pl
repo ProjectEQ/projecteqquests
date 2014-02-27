@@ -38,7 +38,7 @@ sub EVENT_SIGNAL
 	elsif ($signal == 5 && !defined($qglobals{event_start}) && !defined($qglobals{wind_done})) 
 	{	
 		#A_Mischievous_Stormrider, A_Fearsome_Stormrider, A_Stormrider_Lightningclaw, A_Marauding_Stormrider
-		if(!$entity_list->GetMobByNpcTypeID(215002) && !$entity_list->GetMobByNpcTypeID(215014) && !$entity_list->GetMobByNpcTypeID(215013) && !$entity_list->GetMobByNpcTypeID(215065)) 
+		if(!$entity_list->IsMobSpawnedByNpcTypeID(215002) && !$entity_list->IsMobSpawnedByNpcTypeID(215014) && !$entity_list->IsMobSpawnedByNpcTypeID(215013) && !$entity_list->IsMobSpawnedByNpcTypeID(215065)) 
 		{ 
 			quest::spawn2(215447,0,0,-376,-628,105,0); 
 			quest::setglobal("event_start",1,3,"H2");

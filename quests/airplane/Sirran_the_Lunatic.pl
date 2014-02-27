@@ -29,7 +29,7 @@ sub EVENT_SAY {
   }
   if($text=~/llaw eht htiw eno I ma/i && $sirran == 6) { #island6
     quest::say("Kcul doog! Ouy rof ydaer si erips eht fo retsis eht won, sdik boj doog.");
-	if(!$entity_list->GetMobByNpcTypeID(71076)) {
+	if(!$entity_list->IsMobSpawnedByNpcTypeID(71076)) {
       quest::spawn2(71076,0,0,-929,-1035,1093,64); #used Magelo to get the closest loc as possible.
 	}
   }

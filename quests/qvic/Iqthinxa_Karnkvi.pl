@@ -25,7 +25,7 @@ sub EVENT_TIMER {
 }
 
 sub CheckForRavs {
-  if((!$entity_list->GetMobByNpcTypeID(295131)) && (!$entity_list->GetMobByNpcTypeID(295132)) && (!$entity_list->GetMobByNpcTypeID(295133))) {
+  if((!$entity_list->IsMobSpawnedByNpcTypeID(295131)) && (!$entity_list->IsMobSpawnedByNpcTypeID(295132)) && (!$entity_list->IsMobSpawnedByNpcTypeID(295133))) {
      quest::modifynpcstat("special_attacks",SRTMCNIDf);
 	 quest::stoptimer(1);
   }

@@ -38,7 +38,7 @@ sub EVENT_TIMER {
       }
     } else {
       if($zonehour == 4 || $zonehour == 5) {
-        if(!$entity_list->GetMobByNpcTypeID(291119)) {  
+        if(!$entity_list->IsMobSpawnedByNpcTypeID(291119)) {  
           quest::spawn2(291119,0,0,-2115,-240,-567,96);
           quest::settimer(1,600);
         }

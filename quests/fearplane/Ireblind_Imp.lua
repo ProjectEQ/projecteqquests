@@ -1,6 +1,3 @@
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd and Sorvani
----------------------------------------------------------------------------------------
 -- Ireblind_Imp.pl
 
 function event_spawn(e)
@@ -37,3 +34,7 @@ function event_hp(e)
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 	end
 end
+-------------------------------------------------------------------------------------------------
+-- Converted to .lua using MATLAB converter written by Stryd
+-- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
+-------------------------------------------------------------------------------------------------

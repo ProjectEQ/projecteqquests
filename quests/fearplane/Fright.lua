@@ -1,6 +1,3 @@
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd and Sorvani
----------------------------------------------------------------------------------------
 --Spawns an iksar broodling on the death of the golems 75% of the time.
 
 function event_signal(e)
@@ -22,3 +19,7 @@ function event_death_complete(e)
 end
 
 --Submitted by: Jim Mills (Gilmore Girls`Is`Awesome`XOXO)
+-------------------------------------------------------------------------------------------------
+-- Converted to .lua using MATLAB converter written by Stryd
+-- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
+-------------------------------------------------------------------------------------------------

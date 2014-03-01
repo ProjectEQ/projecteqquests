@@ -1,6 +1,3 @@
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd and Sorvani
----------------------------------------------------------------------------------------
 function event_signal(e)
 	
 	if(e.signal == 0) then
@@ -22,3 +19,7 @@ end
 
 --Submitted by: Jim Mills
 --add on function event_death_complete(e) for berserker epic spawn, 33% chance on death.
+-------------------------------------------------------------------------------------------------
+-- Converted to .lua using MATLAB converter written by Stryd
+-- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
+-------------------------------------------------------------------------------------------------

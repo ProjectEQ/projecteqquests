@@ -1,6 +1,3 @@
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd and Sorvani
----------------------------------------------------------------------------------------
 -- Call Dread, Fright & Terror to aid Cazic Thule if they're still alive
 -- code by mystic414
 --
@@ -156,3 +153,7 @@ function event_timer(e)
 end
 
 --(Aggro) Created by Mystic414, (Say, Item, Spawn and Timer) Additions by Jim Mills
+-------------------------------------------------------------------------------------------------
+-- Converted to .lua using MATLAB converter written by Stryd
+-- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
+-------------------------------------------------------------------------------------------------

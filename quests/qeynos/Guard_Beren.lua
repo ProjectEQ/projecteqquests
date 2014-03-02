@@ -22,12 +22,6 @@ function event_signal(e)
 		e.self:Say("Yes, sir!");
 	elseif(e.signal == 2) then
 		e.self:Say("Don't you worry about him! I will take care of [Trumpy] Irontoe once and for all!");
-	elseif(e.signal == 3 and xloc == -145 and yloc == -247) then
-		e.self:Say("Curse you, [Trumpy]!!!");
-		eq.signal(1091,2);
-	elseif(e.signal == 4 and xloc == -145 and yloc == -247) then
-		e.self:Say("If you ever talk that way about my [brother] again, I will throw your butt into the dungeon. I don't care who you know!");
-		eq.signal(1042,3);
 	elseif(e.signal == 5 and xloc == -145 and yloc == -247) then
 		e.self:Say("Heh, Speak for yourself, Corshin. That one looks like a troublemaker to me.");
 	end

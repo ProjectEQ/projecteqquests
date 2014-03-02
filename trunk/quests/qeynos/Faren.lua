@@ -24,11 +24,6 @@ function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Oh, hi, Beren. Not too good so far. That [dwarf] keeps bothering me, too.");
 		eq.signal(1090,2);
-	elseif(e.signal == 2) then
-		e.self:Say("Huh? What? My [tacklebox]? You know I can't swim, you rotten [dwarf]!");
-		eq.signal(1042,2,10000);
-	elseif(e.signal == 3) then
-		e.self:Say("My name is not Skippy.");
 	end
 end
 

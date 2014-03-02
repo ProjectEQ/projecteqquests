@@ -54,36 +54,4 @@ function event_trade(e)
 	drinks = 0;
 	moredrinks = 0;
 	item_lib.return_items(e.self, e.other, e.trade)
-end	
-
-function event_waypoint_arrive(e)
-	if(e.wp == 2) then
-		e.self:Say("Time to drain the [dragon].. if ya know what I mean.. Bwah ha ha ha.");
-		eq.signal(1074,1);
-	elseif(e.wp == 4) then
-		e.self:Say("Outta my way, ya big lummox!");
-		eq.signal(1075,1);
-	elseif(e.wp == 7) then
-		e.self:Say("<BURP!> Heh heh.. Enjoy that one, boys!");
-		eq.signal(1090,3)
-	elseif(e.wp == 11) then
-		e.self:DoAnim(1);
-	elseif(e.wp == 12) then
-		e.self:Say("Hey, Fishboy! You dropped something! Bwah ha ha ha!");
-		eq.signal(1159,2);
-	elseif(e.wp == 17) then
-		e.self:Say("Heh. What a loser!");
-		eq.signal(1090,4);
-	end
-end
-
-function event_signal(e)
-	if(e.signal == 1) then
-		e.self:Say("You know you love me.");
-	elseif(e.signal == 2) then
-		e.self:Say("Better start learning, [Skippy].");
-		eq.signal(1159,3);
-	elseif(e.signal == 3) then
-		e.self:Say("Peh! What have you been eating? Your brother's bait? You are lucky I don't have time to give you the beating you so richly deserve.");
-	end
 end

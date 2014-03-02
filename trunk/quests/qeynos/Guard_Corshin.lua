@@ -10,7 +10,5 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Yes, sir!");
-	elseif(e.signal == 2) then
-		e.self:Say("Shhhhh. What are you, crazy?! I saw Kane talking to him yesterday. I sure don't want to find you washed up under the docks because of that little gnoll dropping.");
 	end
 end

@@ -12,7 +12,7 @@ function ThreadManager:Resume(name)
 				self.threads[i]._state = self.StateRunning;
 				coroutine.resume(self.threads[i]._co);
 			elseif(self.threads[i]._state == self.StateWaiting) then
-				if(os.clock() >= self.threads[i]._wait_until) then
+				if(eq.clock() >= self.threads[i]._wait_until) then
 					self.threads[i]._state = self.StateRunning;
 					coroutine.resume(self.threads[i]._co);
 				end
@@ -57,7 +57,7 @@ function ThreadManager:Wait(t, ...)
 	for i = 1, #self.threads do
 		if(self.threads[i]._co == running) then
 			self.threads[i]._state = self.StateWaiting;
-			self.threads[i]._wait_until = os.clock() + t;
+			self.threads[i]._wait_until = eq.clock() + t;
 			coroutine.yield(...);
 			return;
 		end

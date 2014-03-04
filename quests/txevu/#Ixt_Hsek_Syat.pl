@@ -3,8 +3,8 @@
 
 sub EVENT_SIGNAL {
 	#Champion is at 15%, need to assist
-	my $rClient = $entity_list->GetRandomClient($x,$y,$z, 250);
-	if ($rClient) {
-		quest::attack($rClient->GetName());
-	}
+	my $champion = $entity_list->GetNPCByNPCTypeID(297034);
+	my $TopHate = $champion->GetHateTop();
+	my $attack_name = $entity_list->GetClientByName($TopHate->GetName());
+	quest::attack($attack_name->GetName());
 }

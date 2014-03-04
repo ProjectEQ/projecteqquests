@@ -91,4 +91,16 @@ function ThreadManager:Clear()
 	end
 end
 
+function ThreadManager:GarbageCollect()
+	if(#self.threads == 0) then
+		return;
+	end
+
+	for i = #self.threads, 1, -1 do
+		if(coroutine.status(self.threads[i]._co) == "dead") then
+			table.remove(self.threads, i);
+		end
+	end
+end
+
 return ThreadManager;

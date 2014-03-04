@@ -10,14 +10,12 @@ function SunsaConversation()
 	if(sunsa.valid) then
 		sunsa:Say("Trumpy, you are one sick little man!");
 	end
-	ThreadManager:Stop();
 end
 
 -- Second conversation with Bruno the bouncer
 function BrunoConversation()
 	local bruno = eq.get_entity_list():GetMobByNpcTypeID(1075);
 	if(bruno.null) then
-		ThreadManager:Stop();
 		return;
 	end
 	
@@ -26,12 +24,10 @@ function BrunoConversation()
 	
 	bruno = eq.get_entity_list():GetMobByNpcTypeID(1075);
 	if(bruno.null) then
-		ThreadManager:Stop();
 		return;
 	end
 	
 	bruno:Say("Yeah, Yeah. I hope you fall in, you little creep.");
-	ThreadManager:Stop();
 end
 
 -- Third conversation with Guard Beren and Corshin
@@ -50,7 +46,6 @@ function GuardBerenConversationOne()
 			corshin:Say("Shhhhh. What are you, crazy?! I saw Kane talking to him yesterday. I sure don't want to find you washed up under the docks because of that little gnoll dropping.");
 		end		
 	end
-	ThreadManager:Stop();
 end
 
 -- Fourth conversation with Faren on the docks
@@ -59,7 +54,6 @@ function FarenConversation()
 	--As uncommon as that might be in reality we will check for him every step of the way.
 	local faren = eq.get_entity_list():GetMobByNpcTypeID(1159);
 	if(faren.null) then
-		ThreadManager:Stop();
 		return;
 	end
 	
@@ -68,30 +62,26 @@ function FarenConversation()
 	
 	faren = eq.get_entity_list():GetMobByNpcTypeID(1159);
 	if(faren.null) then
-		ThreadManager:Stop();
 		return;
 	end
 
 	faren:Say("Huh? What? My [tacklebox]? You know I can't swim, you rotten [dwarf]!");
-	ThreadManager:Wait(10.0);
-	
-	faren = eq.get_entity_list():GetMobByNpcTypeID(1159);
-	if(faren.null) then
-		ThreadManager:Stop();
-		return;
-	end
-	
-	trumpy:Say("Better start learning, [Skippy].");
 	ThreadManager:Wait(0.65);
 	
 	faren = eq.get_entity_list():GetMobByNpcTypeID(1159);
 	if(faren.null) then
-		ThreadManager:Stop();
+		return;
+	end
+	
+	trumpy:Say("Better start learning, [Skippy].");
+	ThreadManager:Wait(10.0);
+	
+	faren = eq.get_entity_list():GetMobByNpcTypeID(1159);
+	if(faren.null) then
 		return;
 	end
 	
 	faren:Say("My name is not Skippy.");
-	ThreadManager:Stop();
 end
 
 -- Final return conversation with Guard Beren
@@ -105,7 +95,6 @@ function GuardBerenConversationTwo()
 		
 		trumpy:Say("Peh! What have you been eating? Your brother's bait? You are lucky I don't have time to give you the beating you so richly deserve.");
 	end
-	ThreadManager:Stop();
 end
 
 function TrumpyWaypoint(e)
@@ -128,6 +117,7 @@ end
 function TrumpyHeartbeat(e)
 	--trumpy isn't guaranteed to still "be there" every time heartbeat happens, so we reacquire each heartbeat
 	trumpy = e.self;
+	ThreadManager:GarbageCollect();
 	ThreadManager:Resume("SunsaConversation");
 	ThreadManager:Resume("BrunoConversation");
 	ThreadManager:Resume("GuardBerenConversationOne");

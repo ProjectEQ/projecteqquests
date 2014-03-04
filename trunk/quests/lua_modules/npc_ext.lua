@@ -4,7 +4,7 @@ function NPC:ForeachHateList(func, cond)
 	for ent in lst.entries do
 		local cv = cond(ent.ent, ent.hate, ent.damage, ent.frenzy);
 		if(cv) then
-			func(self, ent.ent, ent.hate, ent.damage, ent.frenzy);
+			func(ent.ent, ent.hate, ent.damage, ent.frenzy);
 		end
 	end
 end

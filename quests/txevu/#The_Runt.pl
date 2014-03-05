@@ -22,8 +22,8 @@ sub EVENT_TIMER {
 		$hate_list = @hate_list;
 		if ($hate_list > 1) {
 			#make all arena mobs go active
-			for ($count = 0; $count <= 14; $count++) {
-				quest::signalwith($arena_mobs[$count], 297209)
+			for ($count = 0; $count <= 15; $count++) {
+				quest::signalwith($arena_mobs[$count], 297209);
 			}
 		}
 	}

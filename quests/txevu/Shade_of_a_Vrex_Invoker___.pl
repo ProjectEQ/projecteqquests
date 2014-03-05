@@ -1,7 +1,7 @@
 # Shade_of_a_Vrex_Invoker___ (297216) on grid 75
 
 sub EVENT_WAYPOINT_ARRIVE {
-	if($wp == 11) {
+	if($wp == 10) {
 		quest::signalwith(297212,1); #tell trigger I'm here
 		quest::modifynpcstat("special_attacks","SMCID"); #go active
 	}

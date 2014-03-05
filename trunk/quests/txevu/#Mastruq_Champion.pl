@@ -1,7 +1,9 @@
 # #Mastruq_Champion (297034)
 
+my $count;
 my $spawn_runt;
 my $emote = 0;
+my @arena_mobs = qw(297033 297035 297036 297037 297038 297039 297040 297041 297042 297043 297044 297131 297132 297133 297177);
 
 sub EVENT_SPAWN {
 	$spawn_runt = 1;
@@ -12,9 +14,12 @@ sub EVENT_SPAWN {
 sub EVENT_ENTER {
 	if ($spawn_runt == 1) {
 		$spawn_runt = 0;
-		quest::settimer("reset",1800);
+		quest::settimer("reset",3600);
 		quest::settimer(1,3); #start emotes
 		quest::ze(15,"As you step into the room, all combat stops and every eye turns to you. The champion in the center finishes his opponent and yells 'HOLD!' stopping the Muramites before they can charge.");
+		for ($count = 0; $count <= 14; $count++) {
+			quest::signalwith($arena_mobs[$count], 297034);
+		}
 	}
 }
 

@@ -22,9 +22,9 @@ quest::settimer("Adds",60);
 if (($combat_state == 0) &&  (!defined($qglobals{TunatOne_Dead})) ) {
 quest::emote("calms down");
 $npc->WipeHateList();
-quest::depopall(888618);
-quest::depopall(297012);
-quest::spawn2(297014,0,0, 463.8, -170.8, 26.6, 54.9);
+quest::depopall(298218);
+quest::depopall(298112);
+quest::spawn2(298114,0,0, 463.8, -170.8, 26.6, 54.9);
 quest::depop();
 }
 
@@ -32,9 +32,9 @@ if (($combat_state == 0) &&  (defined($qglobals{TunatOne_Dead})) ){
 $npc->SetHP($npc->GetMaxHP() * 1);
 quest::emote("calms down");
 $npc->WipeHateList();
-quest::depopall(888618);
-quest::depopall(297012);
-quest::spawn2(297055,0,0, 309, -170.8, 21.3, 59.4);
+quest::depopall(298218);
+quest::depopall(298112);
+quest::spawn2(298155,0,0, 309, -170.8, 21.3, 59.4);
 quest::depop();
 }
 
@@ -44,8 +44,8 @@ quest::depop();
 sub EVENT_HP  { 
 
 if ($hpevent == 61) {
-quest::spawn2(888613,0,0, $x, $y, $z, $h);
-quest::depopall(888618);
+quest::spawn2(298213,0,0, $x, $y, $z, $h);
+quest::depopall(298218);
 quest::depop();
 }
 }
@@ -70,10 +70,10 @@ sub EVENT_TIMER {
 if ($timer eq "Adds") {
 quest::stoptimer("Adds");
 quest::settimer("Adds",60);
-quest::spawn2(888618,0,0, 349.297302246094, -213.105529785156, 21.4144954681396 , 225.125);
-quest::spawn2(888618,0,0, 360.507293701172, -159.274215698242, 21.4144954681396 , 190); 
-quest::spawn2(888618,0,0, 331.863159179688, -110.501838684082, 21.4144954681396 , 140.375); 
-quest::spawn2(888618,0,0, 303.64501953125, -236.793533325195, 21.4144973754883 , 252.5);
+quest::spawn2(298218,0,0, 349.297302246094, -213.105529785156, 21.4144954681396 , 225.125);
+quest::spawn2(298218,0,0, 360.507293701172, -159.274215698242, 21.4144954681396 , 190); 
+quest::spawn2(298218,0,0, 331.863159179688, -110.501838684082, 21.4144954681396 , 140.375); 
+quest::spawn2(298218,0,0, 303.64501953125, -236.793533325195, 21.4144973754883 , 252.5);
 quest::settimer("Venom", 10);
   }
 

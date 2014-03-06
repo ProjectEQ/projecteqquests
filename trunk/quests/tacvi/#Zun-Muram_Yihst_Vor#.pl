@@ -49,7 +49,7 @@ sub EVENT_TIMER {
 			}
 			
 			#quest::shout("CHeck. $GetPlClass $qglobals{NightmareSize} , $qglobals{NightmareGender}, $qglobals{NightmareRace}, $qglobals{NightmareTxt}");
-			quest::spawn2(888606,0,0, $c_x, $c_y, $c_z , 1);
+			quest::spawn2(298206,0,0, $c_x, $c_y, $c_z , 1);
 			$QQ->Message(6, "Zun'Muram Yihst Vor swipes his blade in your direction. You feel your soul begin to tear from your body." );
 			$entity_list->MessageClose($npc, 1, 200, 15, "$PName 's soul is torn from his body");
 			quest::depop();

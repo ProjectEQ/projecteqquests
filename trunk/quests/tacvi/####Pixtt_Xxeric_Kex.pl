@@ -10,10 +10,10 @@
 sub EVENT_SPAWN {
 $npc->SetHP($npc->GetMaxHP() * .9);
 quest::setnexthpevent(81);
-quest::spawn2(297041,0,0, 349.297302246094, -213.105529785156, 21.4144954681396 , 225.125);
-quest::spawn2(297042,0,0, 360.507293701172, -159.274215698242, 21.4144954681396 , 190); 
-quest::spawn2(297043,0,0, 331.863159179688, -110.501838684082, 21.4144954681396 , 140.375); 
-quest::spawn2(297044,0,0, 303.64501953125, -236.793533325195, 21.4144973754883 , 252.5);
+quest::spawn2(298141,0,0, 349.297302246094, -213.105529785156, 21.4144954681396 , 225.125);
+quest::spawn2(298142,0,0, 360.507293701172, -159.274215698242, 21.4144954681396 , 190); 
+quest::spawn2(298143,0,0, 331.863159179688, -110.501838684082, 21.4144954681396 , 140.375); 
+quest::spawn2(298144,0,0, 303.64501953125, -236.793533325195, 21.4144973754883 , 252.5);
 }
 
 sub EVENT_COMBAT {
@@ -25,12 +25,12 @@ quest::settimer("Hoof",15);
 if (($combat_state == 0) &&  (!defined($qglobals{TunatOne_Dead})) ) {
 quest::emote("calms down");
 $npc->WipeHateList();
-quest::depopall(297041);
-quest::depopall(297042); 
-quest::depopall(297043);
-quest::depopall(297044);
-quest::depopall(297012);
-quest::spawn2(297014,0,0, 463.8, -170.8, 26.6, 54.9);
+quest::depopall(298141);
+quest::depopall(298142); 
+quest::depopall(298143);
+quest::depopall(298144);
+quest::depopall(298112);
+quest::spawn2(298114,0,0, 463.8, -170.8, 26.6, 54.9);
 quest::depop();
 }
 
@@ -39,12 +39,12 @@ if (($combat_state == 0) &&  (defined($qglobals{TunatOne_Dead})) ){
 $npc->SetHP($npc->GetMaxHP() * 1);
 quest::emote("calms down");
 $npc->WipeHateList();
-quest::depopall(297041);
-quest::depopall(297042); 
-quest::depopall(297043);
-quest::depopall(297044);
-quest::depopall(297012);
-quest::spawn2(297055,0,0, 309, -170.8, 21.3, 59.4);
+quest::depopall(298141);
+quest::depopall(298142); 
+quest::depopall(298143);
+quest::depopall(298144);
+quest::depopall(298112);
+quest::spawn2(298155,0,0, 309, -170.8, 21.3, 59.4);
 quest::depop();
 }
 
@@ -55,15 +55,15 @@ quest::depop();
 sub EVENT_HP  { 
 
 if ($hpevent == 81) {
-quest::spawn2(888611,0,0, $x, $y, $z, $h);
-quest::signalwith(297041,1,0);
-quest::signalwith(297042,1,0);
-quest::signalwith(297043,1,0); 
-quest::signalwith(297044,1,0);
-quest::depopall(297041);
-quest::depopall(297042); 
-quest::depopall(297043);
-quest::depopall(297044);
+quest::spawn2(298211,0,0, $x, $y, $z, $h);
+quest::signalwith(298141,1,0);
+quest::signalwith(298142,1,0);
+quest::signalwith(298143,1,0); 
+quest::signalwith(298144,1,0);
+quest::depopall(298141);
+quest::depopall(298142); 
+quest::depopall(298143);
+quest::depopall(298144);
 quest::depop();
 }
 }

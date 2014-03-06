@@ -1,8 +1,8 @@
 ##ZMD Loot Chest
 sub EVENT_SPAWN {
 #quest::say("glow black");
-quest::depop(297020);
-quest::spawn2(297020,0,0, 367, 145, -7, 190 );
+quest::depop(298120);
+quest::spawn2(298120,0,0, 367, 145, -7, 190 );
 }
 
 

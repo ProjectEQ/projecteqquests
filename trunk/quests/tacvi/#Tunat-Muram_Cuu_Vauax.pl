@@ -6,7 +6,7 @@
 ##Wave of Rage get ID from 4728
 
 sub EVENT_SPAWN {
-	quest::depopall(297012);
+	quest::depopall(298112);
 	quest::settimer("Pop", 5);
 }
 
@@ -25,8 +25,8 @@ sub EVENT_COMBAT {
 		quest::stoptimer("Haste");
 		quest::stoptimer("Dot");
 		$npc->WipeHateList();
-		quest::depopall(297012);
-		#quest::spawn2(297014,0,0, 463.8, -170.8, 26.6, 54.9);
+		quest::depopall(298112);
+		#quest::spawn2(298114,0,0, 463.8, -170.8, 26.6, 54.9);
 		quest::settimer("RePop", 5);
 		#quest::depop();
 	}
@@ -47,7 +47,7 @@ sub EVENT_HP  {
 
 	if ($hpevent == 31) {
 		quest::setnexthpevent(0);
-		quest::signalwith(297012,1,0);
+		quest::signalwith(298112,1,0);
 		quest::say("Feast on their flesh my pets!");
 	}
 
@@ -60,13 +60,13 @@ sub EVENT_TIMER {
 
 	if ($timer eq "Pop") {
 		quest::stoptimer("Pop");
-		quest::spawn2(297012,0,0, 476, -145, 30, 620);
-		quest::spawn2(297012,0,0, 475, -196, 30, 528);
+		quest::spawn2(298112,0,0, 476, -145, 30, 620);
+		quest::spawn2(298112,0,0, 475, -196, 30, 528);
 	}
 
 	if ($timer eq "RePop") {
 		quest::stoptimer("RePop");
-		quest::spawn2(297014,0,0, 463.8, -170.8, 26.6, 54.9);
+		quest::spawn2(298114,0,0, 463.8, -170.8, 26.6, 54.9);
 		quest::depop();
 	}
 
@@ -110,10 +110,10 @@ sub EVENT_TIMER {
 	if ($timer eq "Heal") {
 		my $TimeF = quest::ChooseRandom(120,125,130,140,150,160,170);
 		quest::emote("Tunat`Muram Cuu Vauax pauses for a moment as a portion of his spirit is transferred into one of the phylacteries."); 
-		quest::signalwith(297013,1,0);
+		quest::signalwith(298113,1,0);
 		quest::stoptimer("Heal");
 		quest::settimer("Heal", $TimeF);
-		quest::signalwith(297013,1,0);
+		quest::signalwith(298113,1,0);
 		#Unused#$npc->CastSpell(7045, $mobid);
 	}
 
@@ -125,7 +125,7 @@ sub EVENT_DEATH {
 	quest::say ("You have done well to defeat my doppelganger and have shown great strength by making it this far, but I'm afraid I must end your struggle here. Your days have been numbered since you first set foot upon this continent and your time is up. Kneel before me and I will grant you a quick death, but resist and you will suffer in ways that will be spoken about in hushed tones for eons to come");
 	$timestamp = localtime(time);
 	quest::write("text_files/Tacvi.txt","[$timestamp]:$mname FIRST was killed by $name the $class.");
-	quest::spawn2(297055,0,0, 309, -170.8, 21.3, 59.4);
+	quest::spawn2(298155,0,0, 309, -170.8, 21.3, 59.4);
 	quest::setglobal("TunatOne_Dead", 1, 7, "H1");
 }
 

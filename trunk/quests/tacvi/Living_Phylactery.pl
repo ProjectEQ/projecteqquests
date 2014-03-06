@@ -31,7 +31,7 @@ sub EVENT_TIMER {
 
 if ($timer eq "Heal") {
 quest::stoptimer("Heal");
-$DragonCheck = $entity_list->GetMobByNpcTypeID(297014);
+$DragonCheck = $entity_list->GetMobByNpcTypeID(298114);
 $DragonID = $DragonCheck->GetID();
 quest::doanim(44);
 $npc->CastSpell(13, $DragonID);

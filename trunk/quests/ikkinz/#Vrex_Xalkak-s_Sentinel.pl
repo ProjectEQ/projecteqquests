@@ -10,16 +10,6 @@ sub EVENT_SPAWN {
   }
 }
 
-sub EVENT_AGGRO {
-  quest::settimer(1,1);
-}
-
-sub EVENT_TIMER {
-  if ($x > 720 || $x < 500 || $y < -300 || $y > -120) {
-    $npc->GMMove(531,-157,-49,126);
-  }
-}
-
 sub EVENT_DEATH_COMPLETE {
   if(($class eq "Bard") && ($qglobals{vrexkill2} == 1)) {
     quest::signalwith(294597,1,0);

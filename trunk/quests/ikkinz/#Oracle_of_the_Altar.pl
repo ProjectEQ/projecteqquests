@@ -12,15 +12,7 @@ if($hpevent == 50) {
         quest::setnexthpevent(50);
   }
 }
-sub EVENT_AGGRO {
-  quest::settimer(1,1);
-}
 
-sub EVENT_TIMER {
-  if($x < 875 || $y < -583 || $y > -334) {
-    $npc->GMMove(1031,-459,-73,192);
-  }
-}
 sub EVENT_DEATH_COMPLETE {
 $raid = $entity_list->GetRaidByClient($client);
       if ($raid) {

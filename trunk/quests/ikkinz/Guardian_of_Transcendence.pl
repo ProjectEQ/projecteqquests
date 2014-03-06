@@ -33,6 +33,8 @@ sub EVENT_HP {
     quest::spawn2(294500,0,0,534,-210,-50,72);
     $entity_list->FindDoor(10)->SetLockPick(0);
     $entity_list->FindDoor(12)->SetLockPick(0);
+	$entity_list->FindDoor(13)->SetLockPick(0);
+	$entity_list->FindDoor(14)->SetLockPick(0);
   }
 }  
 

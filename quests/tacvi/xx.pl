@@ -21,11 +21,11 @@ quest::emote("calms down");
 quest::stoptimer("Hoof"); 
 quest::stoptimer("Wave");
 $npc->WipeHateList();
-quest::depopall(297041);
-quest::depopall(297042); 
-quest::depopall(297043);
-quest::depopall(297044); 
-quest::spawn2(297039,0,0, 125.2, -165.3, -6.5, 189.1);
+quest::depopall(298141);
+quest::depopall(298142); 
+quest::depopall(298143);
+quest::depopall(298144); 
+quest::spawn2(298139,0,0, 125.2, -165.3, -6.5, 189.1);
 quest::depop();
 }
 }
@@ -41,10 +41,10 @@ quest::emote("stomps her hoofs wildly");
 
 if ($hpevent == 50) {
 quest::setnexthpevent(30);
-quest::spawn2(297041,0,0, 125.2+15, -165.3+15, $z, $h);
-quest::spawn2(297042,0,0, 125.2-15, -165.3+15, $z, $h);
-quest::spawn2(297043,0,0, 125.2+15, -165.3-15, $z, $h);
-quest::spawn2(297044,0,0, 125.2-15, -165.3-15, $z, $h);
+quest::spawn2(298141,0,0, 125.2+15, -165.3+15, $z, $h);
+quest::spawn2(298142,0,0, 125.2-15, -165.3+15, $z, $h);
+quest::spawn2(298143,0,0, 125.2+15, -165.3-15, $z, $h);
+quest::spawn2(298144,0,0, 125.2-15, -165.3-15, $z, $h);
 }
 
 if ($hpevent == 30) {
@@ -116,10 +116,10 @@ sub EVENT_DEATH {
 #quest::emote ("text");
 $timestamp = localtime(time);
 quest::write("text_files/Tacvi.txt","[$timestamp]:$mname was killed by $name the $class.");
-quest::signalwith(297041,1,0);
-quest::signalwith(297042,1,0);
-quest::signalwith(297043,1,0); 
-quest::signalwith(297044,1,0);
+quest::signalwith(298141,1,0);
+quest::signalwith(298142,1,0);
+quest::signalwith(298143,1,0); 
+quest::signalwith(298144,1,0);
 }
 
 

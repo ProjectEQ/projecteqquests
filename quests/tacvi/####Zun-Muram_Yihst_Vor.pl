@@ -21,9 +21,9 @@ quest::settimer("Rampage", 20);
 if (($combat_state == 0) &&  (!defined($qglobals{TunatOne_Dead})) ) {
 quest::emote("calms down");
 $npc->WipeHateList();
-quest::depopall(888618);
-quest::depopall(297012);
-quest::spawn2(297014,0,0, 463.8, -170.8, 26.6, 54.9);
+quest::depopall(298218);
+quest::depopall(298112);
+quest::spawn2(298114,0,0, 463.8, -170.8, 26.6, 54.9);
 quest::depop();
 }
 
@@ -36,8 +36,8 @@ quest::stoptimer("Gaze");
 quest::stoptimer("Haste");
 quest::stoptimer("Dot");
 $npc->WipeHateList();
-quest::depopall(297012);
-quest::spawn2(297055,0,0, 309, -170.8, 21.3, 59.4);
+quest::depopall(298112);
+quest::spawn2(298155,0,0, 309, -170.8, 21.3, 59.4);
 quest::depop();
 }
 
@@ -46,7 +46,7 @@ quest::depop();
 sub EVENT_HP  { 
 
 if ($hpevent == 41) {
-quest::spawn2(888615,0,0, $x, $y, $z, $h);
+quest::spawn2(298215,0,0, $x, $y, $z, $h);
 quest::depop();
 }
 }

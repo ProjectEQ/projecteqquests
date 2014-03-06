@@ -1,8 +1,8 @@
 ##Tunat's Loot Chest
 sub EVENT_SPAWN {
 #quest::say("glow black");
-quest::depop(888601);
-quest::spawn2(888601,0,0, 175, 242, -7, 9 );
+quest::depop(298201);
+quest::spawn2(298201,0,0, 175, 242, -7, 9 );
 }
 
 

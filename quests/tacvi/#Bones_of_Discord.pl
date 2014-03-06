@@ -21,12 +21,12 @@ sub EVENT_TIMER {
 	quest::stoptimer("Check_Tunat");
 	
 		if (!defined($qglobals{TunatOne_Dead})) {
-		quest::depop(297014);
-		quest::spawn2(297014,0,0, 467.4, -172, 26.1, 59 );
+		quest::depop(298114);
+		quest::spawn2(298114,0,0, 467.4, -172, 26.1, 59 );
 		}
 
 		if (defined($qglobals{TunatOne_Dead})) {
-		quest::spawn2(297055,0,0, 309, -170.8, 21.3, 59.4);
+		quest::spawn2(298155,0,0, 309, -170.8, 21.3, 59.4);
 		}
 
 	}

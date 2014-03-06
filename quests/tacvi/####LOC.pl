@@ -15,7 +15,7 @@ my $LocY = $npc->GetY();
 my $LocZ = $npc->GetZ();
 my $LocH = $npc->GetHeading();
 quest::say( "quest::spawn2(ReplaceID,0,0, $LocX, $LocY, $LocZ , $LocH);") ;
-quest::write("text_files/LocGen.txt","quest::spawn2(888603,0,0, $LocX, $LocY, $LocZ , $LocH);");
+quest::write("text_files/LocGen.txt","quest::spawn2(298203,0,0, $LocX, $LocY, $LocZ , $LocH);");
 quest::depop();
 }
 
@@ -37,8 +37,8 @@ my $LocZ = $npc->GetZ();
 my $LocH = $npc->GetHeading();
 $rndadd = $rndadd + 1;
 #quest::say( "quest::spawn2(ReplaceID,0,0, $LocX, $LocY, $LocZ , $LocH);") ;
-quest::say( "if (rand == $rndadd){quest::spawn2(888600,0,0, $LocX, $LocY, $LocZ , $LocH); }") ;
-quest::write("text_files/LocGen.txt","if (rand == $rndadd){quest::spawn2(888608,0,0, $LocX, $LocY, $LocZ , $LocH); }");
+quest::say( "if (rand == $rndadd){quest::spawn2(298200,0,0, $LocX, $LocY, $LocZ , $LocH); }") ;
+quest::write("text_files/LocGen.txt","if (rand == $rndadd){quest::spawn2(298208,0,0, $LocX, $LocY, $LocZ , $LocH); }");
 #quest::settimer("depop",1);
 }
 

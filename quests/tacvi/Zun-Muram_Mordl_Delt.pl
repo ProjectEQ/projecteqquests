@@ -68,11 +68,11 @@ quest::delglobal("ZunMMD");
 $npc->SetHP($npc->GetMaxHP() * 1);
 quest::emote("calms down");
 $npc->WipeHateList();
-quest::depopall(297051);
-quest::depopall(297052);
-quest::depopall(297053);
+quest::depopall(298151);
+quest::depopall(298152);
+quest::depopall(298153);
 quest::depopall(886005);
-quest::spawn2(297020,0,0, $x, $y, $z, $h);
+quest::spawn2(298120,0,0, $x, $y, $z, $h);
 $AggroState = 0;
 #quest::shout("Com Zero.");
 quest::depop();
@@ -88,33 +88,33 @@ quest::setglobal("ZMD_Door", 1, 7, "F");
 
 if ($hpevent == 91) {
 quest::setglobal("ZunMMD", 1, 7, "M30");
-quest::spawn2(297050,0,0, 367, 130, -6.7, 185);
-quest::spawn2(297050,0,0, 367, 151, -6.7, 197);
-quest::spawn2(888605,0,0, $x, $y, $z, $h);
+quest::spawn2(298150,0,0, 367, 130, -6.7, 185);
+quest::spawn2(298150,0,0, 367, 151, -6.7, 197);
+quest::spawn2(298205,0,0, $x, $y, $z, $h);
 quest::depop();
 }
 
 if ($hpevent == 71) {
 quest::setglobal("ZunMMD", 2, 7, "M30");
-quest::spawn2(297051,0,0, 367, 175, -6.7, 185);
-quest::spawn2(297051,0,0, 367, 111, -6.7, 197);
-quest::spawn2(297051,0,0, $x, $y, $z, $h);
-quest::spawn2(888605,0,0, $x, $y, $z, $h);
+quest::spawn2(298151,0,0, 367, 175, -6.7, 185);
+quest::spawn2(298151,0,0, 367, 111, -6.7, 197);
+quest::spawn2(298151,0,0, $x, $y, $z, $h);
+quest::spawn2(298205,0,0, $x, $y, $z, $h);
 quest::depop();
 }
 if ($hpevent == 51) {
 quest::setglobal("ZunMMD", 3, 7, "M30");
-quest::spawn2(297052,0,0, 367, 175, -6.7, 185);
-quest::spawn2(297052,0,0, 367, 111, -6.7, 197);
-quest::spawn2(297052,0,0, 367, 130, -6.7, 185);
-quest::spawn2(297052,0,0, 367, 151, -6.7, 197);
-quest::spawn2(888605,0,0, $x, $y, $z, $h);
+quest::spawn2(298152,0,0, 367, 175, -6.7, 185);
+quest::spawn2(298152,0,0, 367, 111, -6.7, 197);
+quest::spawn2(298152,0,0, 367, 130, -6.7, 185);
+quest::spawn2(298152,0,0, 367, 151, -6.7, 197);
+quest::spawn2(298205,0,0, $x, $y, $z, $h);
 quest::depop();
 }
 if ($hpevent == 31) {
 #quest::setglobal("ZunMMD", 4, 7, "M30");
-quest::spawn2(297053,0,0, 367, 130, -6.7, 185);
-quest::spawn2(297053,0,0, 367, 151, -6.7, 197);
+quest::spawn2(298153,0,0, 367, 130, -6.7, 185);
+quest::spawn2(298153,0,0, 367, 151, -6.7, 197);
 }
 
 }
@@ -129,7 +129,7 @@ quest::delglobal("ZunMMD");
 $npc->SetHP($npc->GetMaxHP() * 1);
 quest::emote("calms down.");
 $npc->WipeHateList();
-#quest::spawn2(297020,0,0, $x, $y, $z, $h);
+#quest::spawn2(298120,0,0, $x, $y, $z, $h);
 #quest::depop();
 #quest::shout("b.");
 $AggroState = 0;
@@ -143,13 +143,13 @@ $AggroState = 0;
 sub EVENT_DEATH {
 #quest::emote ("text");
 #quest::say ("text");
-quest::depopall(297053);
+quest::depopall(298153);
 quest::delglobal("ZunMMD");
 $timestamp = localtime(time);
 quest::write("text_files/Tacvi.txt","[$timestamp]:$mname was killed by $name the $class.");
 quest::delglobal("ZMD_Door");
 quest::delglobal("ZMD_DoorExit");
-quest::signalwith(888621,1,0);;
+quest::signalwith(298221,1,0);;
 }
 
 

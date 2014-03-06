@@ -52,7 +52,7 @@ sub EVENT_SIGNAL {
 if ($signal == 1) {
 #quest::say("DEBUG: Recieved ");
 quest::setglobal("Balance_of_Fury", $nexthp, 7, "M30");
-quest::signalwith(297029,1,0);
+quest::signalwith(298129,1,0);
 }
 
 if ($signal == 2) {

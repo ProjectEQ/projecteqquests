@@ -36,10 +36,10 @@ sub EVENT_SPAWN {
 quest::delglobal("ZKP_Door");
 quest::setglobal("ZKP_DoorExit", 1, 7, "F");
 quest::delglobal("ZunMKP");
-quest::spawn2(297025,0,0, 313.9, -728.7, -6.5, 61.9);
-quest::spawn2(297028,0,0, 314, -642, -6.5, 59.9);
-quest::spawn2(297027,0,0, 412, -646, -2.3, 1236);
-quest::spawn2(297026,0,0, 427, -728, -6.5, 188);
+quest::spawn2(298125,0,0, 313.9, -728.7, -6.5, 61.9);
+quest::spawn2(298128,0,0, 314, -642, -6.5, 59.9);
+quest::spawn2(298127,0,0, 412, -646, -2.3, 1236);
+quest::spawn2(298126,0,0, 427, -728, -6.5, 188);
 #quest::settimer("Check", 1);
 $NewAC = 1800;
 quest::modifynpcstat("ac", 1800);
@@ -70,11 +70,11 @@ quest::stoptimer("CheckBalance");
 quest::stoptimer("CheckBalanceB"); 
 quest::stoptimer("CheckBalanceC"); 
 $npc->WipeHateList();
-quest::depop(297026);
-quest::depop(297027);
-quest::depop(297028); 
-quest::depop(297025);
-#quest::spawn2(297029,0,0, $x, $y, $z, $h);
+quest::depop(298126);
+quest::depop(298127);
+quest::depop(298128); 
+quest::depop(298125);
+#quest::spawn2(298129,0,0, $x, $y, $z, $h);
 #quest::depop();
 quest::settimer("RepopAdds", 5);
 }
@@ -89,12 +89,12 @@ quest::stoptimer("CheckBalance");
 quest::stoptimer("CheckBalanceB"); 
 quest::stoptimer("CheckBalanceC"); 
 $npc->WipeHateList();
-quest::depop(297026);
-quest::depop(297027);
-quest::depop(297028); 
-quest::depop(297025);
+quest::depop(298126);
+quest::depop(298127);
+quest::depop(298128); 
+quest::depop(298125);
 quest::settimer("RepopAdds", 5);
-#quest::spawn2(297029,0,0, $x, $y, $z, $h);
+#quest::spawn2(298129,0,0, $x, $y, $z, $h);
 #quest::depop();
 }
 
@@ -119,10 +119,10 @@ quest::modifynpcstat("attack_speed", -33);
 if ($hpevent == 91) {
 quest::setnexthpevent(81);
 quest::setglobal("ZunMKP", 1, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 $npc->NPCSpecialAttacks("ABH", 0);
 $npc->WipeHateList();
@@ -138,10 +138,10 @@ $MedState = 1;
 if ($hpevent == 81) {
 quest::setnexthpevent(71);
 quest::setglobal("ZunMKP", 2, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 $npc->NPCSpecialAttacks("ABH", 0);
 $npc->WipeHateList();
@@ -157,10 +157,10 @@ $MedState = 1;
 if ($hpevent == 71) {
 quest::setnexthpevent(61);
 quest::setglobal("ZunMKP", 3, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 $npc->NPCSpecialAttacks("ABH", 0);
 $npc->WipeHateList();
@@ -176,10 +176,10 @@ $MedState = 1;
 if ($hpevent == 61) {
 quest::setnexthpevent(51);
 quest::setglobal("ZunMKP", 4, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 $npc->NPCSpecialAttacks("ABH", 0);
 $npc->WipeHateList();
@@ -195,10 +195,10 @@ $MedState = 1;
 if ($hpevent == 51) {
 quest::setnexthpevent(41);
 quest::setglobal("ZunMKP", 5, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 $npc->NPCSpecialAttacks("ABH", 0);
 $npc->WipeHateList();
@@ -214,10 +214,10 @@ $MedState = 1;
 if ($hpevent == 41) {
 quest::setnexthpevent(31);
 quest::setglobal("ZunMKP", 6, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 $npc->NPCSpecialAttacks("ABH", 0);
 $npc->WipeHateList();
@@ -233,10 +233,10 @@ $MedState = 1;
 if ($hpevent == 31) {
 quest::setnexthpevent(21);
 quest::setglobal("ZunMKP", 7, 7, "M60");
-quest::signalwith(297026,2,0);
-quest::signalwith(297027,2,0);
-quest::signalwith(297028,2,0);
-quest::signalwith(297025,2,0);
+quest::signalwith(298126,2,0);
+quest::signalwith(298127,2,0);
+quest::signalwith(298128,2,0);
+quest::signalwith(298125,2,0);
 quest::emote("enters a state of battle meditation.");
 quest::settimer("CheckBalance", 40);
 $npc->NPCSpecialAttacks("ABH", 0);
@@ -273,22 +273,22 @@ quest::stoptimer("CheckBalance");
 quest::stoptimer("CheckBalanceB"); 
 quest::stoptimer("CheckBalanceC"); 
 $npc->WipeHateList();
-quest::depop(297026);
-quest::depop(297027);
-quest::depop(297028); 
-quest::depop(297025);
+quest::depop(298126);
+quest::depop(298127);
+quest::depop(298128); 
+quest::depop(298125);
 quest::settimer("RepopAdds", 5);
-#quest::spawn2(297029,0,0, $x, $y, $z, $h);
+#quest::spawn2(298129,0,0, $x, $y, $z, $h);
 #quest::depop();
   }
 }
 
 if ($timer eq "RepopAdds") {
 quest::stoptimer("RepopAdds");
-quest::spawn2(297025,0,0, 313.9, -728.7, -6.5, 61.9);
-quest::spawn2(297028,0,0, 314, -642, -6.5, 59.9);
-quest::spawn2(297027,0,0, 412, -646, -2.3, 1236);
-quest::spawn2(297026,0,0, 427, -728, -6.5, 188);
+quest::spawn2(298125,0,0, 313.9, -728.7, -6.5, 61.9);
+quest::spawn2(298128,0,0, 314, -642, -6.5, 59.9);
+quest::spawn2(298127,0,0, 412, -646, -2.3, 1236);
+quest::spawn2(298126,0,0, 427, -728, -6.5, 188);
 $NewAC = 1800;
 quest::modifynpcstat("ac", 1800);
 $MaxHit = 8800;
@@ -304,28 +304,28 @@ quest::emote("gazes inward");
 if ($timer eq "CheckBalance") {
 quest::stoptimer("CheckBalance");
 quest::settimer("CheckBalanceB", 15);
-quest::signalwith(297026,1,0);
-quest::signalwith(297027,1,0);
-quest::signalwith(297028,1,0);
-quest::signalwith(297025,1,0);
+quest::signalwith(298126,1,0);
+quest::signalwith(298127,1,0);
+quest::signalwith(298128,1,0);
+quest::signalwith(298125,1,0);
   }
 
 if ($timer eq "CheckBalanceB") {
 quest::stoptimer("CheckBalanceB");
 quest::settimer("CheckBalanceC", 15);
-quest::signalwith(297026,1,0);
-quest::signalwith(297027,1,0);
-quest::signalwith(297028,1,0);
-quest::signalwith(297025,1,0);
+quest::signalwith(298126,1,0);
+quest::signalwith(298127,1,0);
+quest::signalwith(298128,1,0);
+quest::signalwith(298125,1,0);
   }
 
 if ($timer eq "CheckBalanceC") {
 quest::stoptimer("CheckBalanceC");
 quest::settimer("FinalCheck", 5);
-quest::signalwith(297026,1,0);
-quest::signalwith(297027,1,0);
-quest::signalwith(297028,1,0);
-quest::signalwith(297025,1,0);
+quest::signalwith(298126,1,0);
+quest::signalwith(298127,1,0);
+quest::signalwith(298128,1,0);
+quest::signalwith(298125,1,0);
   }
 
 if ($timer eq "FinalCheck") {
@@ -354,10 +354,10 @@ quest::settimer("Revert", 2);
 }
 if ($timer eq "Revert") {
 quest::stoptimer("Revert");
-quest::signalwith(297026,3,0);
-quest::signalwith(297027,3,0);
-quest::signalwith(297028,3,0);
-quest::signalwith(297025,3,0);
+quest::signalwith(298126,3,0);
+quest::signalwith(298127,3,0);
+quest::signalwith(298128,3,0);
+quest::signalwith(298125,3,0);
 $npc->NPCSpecialAttacks("SERFQMCNIfD", 0);
 quest::emote("state of battle meditation comes to an end.");
 $MedState = 0;
@@ -430,10 +430,10 @@ quest::say ("Your spirit has been judged and its existence deemed unfit to conti
 quest::delglobal("ZunMKP");
 $timestamp = localtime(time);
 quest::write("text_files/Tacvi.txt","[$timestamp]:$mname was killed by $name the $class.");
-quest::depop(297026);
-quest::depop(297027);
-quest::depop(297028); 
-quest::depop(297025);
+quest::depop(298126);
+quest::depop(298127);
+quest::depop(298128); 
+quest::depop(298125);
 }
 
 

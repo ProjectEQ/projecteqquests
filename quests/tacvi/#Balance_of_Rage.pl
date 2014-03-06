@@ -49,7 +49,7 @@ sub EVENT_SIGNAL {
 
 if ($signal == 1) {
 quest::setglobal("Balance_of_Rage", $nexthp, 7, "M30");
-quest::signalwith(297029,1,0);
+quest::signalwith(298129,1,0);
 
 }
 

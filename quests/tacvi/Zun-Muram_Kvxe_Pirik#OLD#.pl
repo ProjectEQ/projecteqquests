@@ -21,10 +21,10 @@ $npc->SetHP($npc->GetMaxHP() * 1);
 quest::emote("calms down");
 quest::stoptimer("Soul"); 
 $npc->WipeHateList();
-quest::depopall(297049);
-quest::depopall(297046);
+quest::depopall(298149);
+quest::depopall(298146);
 quest::depopall(88602);
-quest::spawn2(888601,0,0, $x, $y, $z, $h);
+quest::spawn2(298201,0,0, $x, $y, $z, $h);
 quest::depop();
 }
 }
@@ -35,13 +35,13 @@ if ($hpevent == 91) {
 quest::say("Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones.");
 quest::emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 quest::setglobal("Pixtt_Kretv_Krakxt", 1, 7, "M30");
-quest::spawn2(297046,93,0, 227, 284, -5.8, 189.1);
+quest::spawn2(298146,93,0, 227, 284, -5.8, 189.1);
 #
-quest::spawn2(297049,0,0,$x+15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y+15, $z, 189.1);
-quest::spawn2(888602,0,0, $x, $y, $z, $h);
+quest::spawn2(298149,0,0,$x+15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y+15, $z, 189.1);
+quest::spawn2(298202,0,0, $x, $y, $z, $h);
 quest::depop();
 }
 
@@ -49,56 +49,56 @@ if ($hpevent == 71) {
 quest::say("Your efforts shall fail no matter how great. This is a reality you shall soon see as your vile existence ceases and my brood consumes your remains. ");
 quest::emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 quest::setglobal("Pixtt_Kretv_Krakxt", 2, 7, "M30");
-quest::spawn2(297046,94,0, 111, 206, -6.7, 189.1);
-quest::spawn2(297046,93,0, 227, 284, -5.8, 189.1);
+quest::spawn2(298146,94,0, 111, 206, -6.7, 189.1);
+quest::spawn2(298146,93,0, 227, 284, -5.8, 189.1);
 #
-quest::spawn2(297049,0,0,$x+15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+7, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+7, $y+15, $z, 189.1);
 }
 if ($hpevent == 51) {
 quest::say("You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
 quest::emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 quest::setglobal("Pixtt_Kretv_Krakxt", 3, 7, "M30");
-quest::spawn2(297046,95,0, 110.5, 209, -6.1, 189.1);
-quest::spawn2(297046,94,0, 111, 206, -6.7, 189.1);
-quest::spawn2(297046,93,0, 227, 284, -5.8, 189.1);
+quest::spawn2(298146,95,0, 110.5, 209, -6.1, 189.1);
+quest::spawn2(298146,94,0, 111, 206, -6.7, 189.1);
+quest::spawn2(298146,93,0, 227, 284, -5.8, 189.1);
 #
-quest::spawn2(297049,0,0,$x+15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+7, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+7, $y+7, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+7, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+7, $y+7, $z, 189.1);
 }
 if ($hpevent == 31) {
 quest::say("My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
 quest::emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 quest::setglobal("Pixtt_Kretv_Krakxt", 4, 7, "M30");
-quest::spawn2(297046,96,0, 231.5, 209, -6.7, 189.1);
-quest::spawn2(297046,95,0, 110.5, 209, -6.1, 189.1);
-quest::spawn2(297046,94,0, 111, 206, -6.7, 189.1);
-quest::spawn2(297046,93,0, 227, 284, -5.8, 189.1);
+quest::spawn2(298146,96,0, 231.5, 209, -6.7, 189.1);
+quest::spawn2(298146,95,0, 110.5, 209, -6.1, 189.1);
+quest::spawn2(298146,94,0, 111, 206, -6.7, 189.1);
+quest::spawn2(298146,93,0, 227, 284, -5.8, 189.1);
 #
-quest::spawn2(297049,0,0,$x+15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+7, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+7, $y+7, $z, 189.1);
-quest::spawn2(297049,0,0,$x, $y, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+7, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+7, $y+7, $z, 189.1);
+quest::spawn2(298149,0,0,$x, $y, $z, 189.1);
 }
 if ($hpevent == 10) {
 quest::say("The end is inevitable, but if I must be defeated, some of you will join me in the afterlife.");
 $Reset = 1;
 quest::setnexthpevent(0);
-quest::spawn2(297049,0,0,$x+15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y-15, $z, 189.1);
-quest::spawn2(297049,0,0,$x-15, $y+15, $z, 189.1);
-quest::spawn2(297049,0,0,$x+7, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y-15, $z, 189.1);
+quest::spawn2(298149,0,0,$x-15, $y+15, $z, 189.1);
+quest::spawn2(298149,0,0,$x+7, $y+15, $z, 189.1);
 }
 }
 
@@ -114,10 +114,10 @@ $npc->SetHP($npc->GetMaxHP() * 1);
 quest::emote("calms down");
 quest::stoptimer("Soul"); 
 $npc->WipeHateList();
-quest::depopall(297049);
-quest::depopall(297046);
+quest::depopall(298149);
+quest::depopall(298146);
 quest::depopall(88602);
-quest::spawn2(888601,0,0, $x, $y, $z, $h);
+quest::spawn2(298201,0,0, $x, $y, $z, $h);
 quest::depop();
   }
 }
@@ -133,10 +133,10 @@ plugin::CastOnTarget(852);
 if ($timer eq "CheckBalance") {
 quest::stoptimer("CheckBalance");
 quest::settimer("CheckBalance", 10);
-quest::signalwith(297026,1,0);
-quest::signalwith(297027,1,0);
-quest::signalwith(297028,1,0);
-quest::signalwith(297025,1,0);
+quest::signalwith(298126,1,0);
+quest::signalwith(298127,1,0);
+quest::signalwith(298128,1,0);
+quest::signalwith(298125,1,0);
 quest::shout("Test ");
   }
 
@@ -164,10 +164,10 @@ quest::say ("This is not over. My commander will destroy you for this and when h
 quest::delglobal("Pixtt_Kretv_Krakxt");
 $timestamp = localtime(time);
 quest::write("text_files/Tacvi.txt","[$timestamp]:$mname was killed by $name the $class.");
-quest::signalwith(297041,1,0);
-quest::signalwith(297042,1,0);
-quest::signalwith(297043,1,0); 
-quest::signalwith(297044,1,0);
+quest::signalwith(298141,1,0);
+quest::signalwith(298142,1,0);
+quest::signalwith(298143,1,0); 
+quest::signalwith(298144,1,0);
 }
 
 

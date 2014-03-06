@@ -1,13 +1,12 @@
 sub EVENT_DEATH {
-$Check_EntID = $entity_list->GetMobByNpcTypeID(297039);
-if ($Check_EntID) {
+if ($Death !=1) {
 quest::emote("flesh and bones are reformed by dark magic");
-quest::spawn2(297042,0,0, $x, $y, $z, 0.5);
+quest::spawn2(297041,0,0, $x, $y, $z, 0.5);
 }
 }
-
+
 sub EVENT_SIGNAL {
-
+
 if ($signal == 1) {
 $Death = 1;
 }

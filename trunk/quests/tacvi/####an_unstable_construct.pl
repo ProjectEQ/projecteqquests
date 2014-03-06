@@ -3,7 +3,6 @@ sub EVENT_WAYPOINT_DEPART {
 }
 
 sub EVENT_SPAWN {
-
 quest::settimer("Go", 1);
 quest::settimer("Depop", 30);
 }
@@ -12,8 +11,7 @@ sub EVENT_TIMER {
 
 if ($timer eq "Go") {
 quest::stoptimer("Go");
-my $KK = quest::ChooseRandom(-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10);
-$npc->MoveTo(198 + $KK, -587 + $KK, -6.5);
+$npc->MoveTo(463.8, -170.8, 26.6);
 }
 
 if ($timer eq "Depop") {

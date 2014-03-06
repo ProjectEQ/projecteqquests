@@ -1,19 +1,8 @@
-sub EVENT_SPAWN {
-  if(!defined $qglobals{$instid.'_juxtapincer'}) {
-     quest::targlobal($instid.'_juxtapincer',0,"H6",0,0,298); 
-  }
+sub EVENT_DEATH {
+$Check_EntID = $entity_list->GetMobByNpcTypeID(297039);
+if ($Check_EntID) {
+quest::emote("flesh and bones are reformed by dark magic");
+quest::spawn2(297044,0,0, $x, $y, $z, 0.5);
+}
 }
 
-sub EVENT_DEATH_COMPLETE {
-  if($qglobals{$instid.'_juxtapincer'} == 0) {
-     quest::spawn2(298044,0,0,$x,$y,$z,$h);
-     quest::targlobal($instid.'_juxtapincer',1,"H6",0,0,298);
-  }
-  if($qglobals{$instid.'_juxtapincer'} == 1) {
-     quest::spawn2(298044,0,0,$x,$y,$z,$h);
-     quest::targlobal($instid.'_juxtapincer',2,"H6",0,0,298);
-  }
-  if($qglobals{$instid.'_juxtapincer'} == 2) {   
-     quest::delglobal($instid.'_juxtapincer');
-  }
-}  

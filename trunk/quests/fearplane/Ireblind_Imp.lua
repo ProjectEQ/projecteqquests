@@ -11,7 +11,7 @@ function event_hp(e)
 	local y_loc = e.self:GetY();
 	local z_loc = e.self:GetZ();
 	
-	if(hpevent == 76) then
+	if(e.hp_event == 76) then
 		
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
@@ -19,7 +19,7 @@ function event_hp(e)
 		eq.set_next_hp_event("51");
 	end
 	
-	if(hpevent == 51) then
+	if(e.hp_event == 51) then
 		
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
@@ -27,7 +27,7 @@ function event_hp(e)
 		eq.set_next_hp_event("26");
 	end
 	
-	if(hpevent == 26) then
+	if(e.hp_event == 26) then
 		
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);

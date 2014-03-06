@@ -54,15 +54,6 @@ sub EVENT_HP {
     quest::spawn2(294622,0,0,852,73,-73,146);
 } 
 }
-sub EVENT_AGGRO {
-  quest::settimer(1,1);
-}
-
-sub EVENT_TIMER {
-  if($y < 1 || $y > 190 || $x < 640 || $x > 980) {
-    $npc->GMMove(815,139,-72,128);
-  }
-}
 
 sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294621,0,0,680,59,-73,78);

@@ -1,8 +1,14 @@
 # Arena Mob
 
+my $setX;
+my $setY;
+my $setZ;
 my $setH;
 
 sub EVENT_SPAWN { 
+	$setX = $x;
+	$setY = $y;
+	$setZ = $z;
 	$setH = $h;
 	quest::settimer("melee",9);
 }
@@ -43,6 +49,6 @@ sub EVENT_COMBAT {
 
 sub DO_ANIM {
 	quest::modifynpcstat("special_attacks","ABfHG"); #go inactive
-	$npc->GMMove($x,$y,$z,$setH);
+	$npc->GMMove($setX,$setY,$setZ,$setH);
 	quest::settimer("melee",9);
 }

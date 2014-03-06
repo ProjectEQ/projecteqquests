@@ -53,7 +53,7 @@ sub EVENT_DEATH_COMPLETE {
 	quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 	$entity_list->FindDoor(41)->SetLockPick(0);
 	quest::spawn2(296027,0,0,90,-515,-27,64); #Mimezpo_the_Oracle
-	
+	quest::spawn2(296077,0,0,526,-495,7,193);
 	quest::setglobal($instid.'_inktuta_status',2,3,"H6");
 	quest::spawn_condition("inktuta", 1, 0); #Stop Usher/Watcher spawns
 	quest::depopall(296025);

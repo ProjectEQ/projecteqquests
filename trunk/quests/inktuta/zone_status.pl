@@ -158,6 +158,10 @@ sub EVENT_TIMER {
 			quest::signalwith(296036,1);  #an_irrational_exile
 			quest::signalwith(296033,1);  #a_confused_exile
 			quest::signalwith(296030,1);  #a_rambling_exile
+			quest::depopall(296035);
+			quest::depopall(296036);
+			quest::depopall(296033);
+			quest::depopall(296030);
 			quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 			$entity_list->FindDoor(20)->SetLockPick(0);
 			quest::setglobal($instid.'_inktuta_status',4,3,"H6");

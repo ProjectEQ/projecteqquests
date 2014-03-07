@@ -51,6 +51,8 @@ end
 
 function event_timer(e)
 	if(e.timer == "Shout") then
+		eq.spawn_condition("fearplane",0,1,0);
+		eq.spawn_condition("fearplane",0,1,1);
 		e.self:Shout("Beware all infidels who dare to taint my plane, for I shall rend your minds with fright, dread, and terror!");
 		eq.signal(72000,0,0);
 		eq.signal(72001,0,0);

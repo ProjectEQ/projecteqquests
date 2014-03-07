@@ -6,33 +6,33 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		if (qglobals["temp_sewers"] ~= nil) then
 			-- if the player is working on sewer instance, update appropriately.
-			if (qglobals["temp_sewers"] == "1") then
+			if (tonumber(qglobals["temp_sewers"]) == 1 and tonumber(qglobals["sewers"]) < 2) then
 				e.self:Say("Nice work, speak to the High Priest to continue.");
 				eq.set_global("sewers","2",5,"F");
 				e.other:Message(4,"You receive a character flag!");
-			elseif (qglobals["temp_sewers"] == "2" and qglobals["sewers"] == "2") then
+			elseif (tonumber(qglobals["temp_sewers"]) == 2 and tonumber(qglobals["sewers"]) == 2) then
 				e.self:Say("Nice work, speak to the High Priest to continue.");
 				eq.set_global("sewers","3",5,"F");
 				e.other:Message(4,"You receive a character flag!");
-			elseif (qglobals["temp_sewers"] == "3" and qglobals["sewers"] == "3") then
+			elseif (tonumber(qglobals["temp_sewers"]) == 3 and tonumber(qglobals["sewers"]) == 3) then
 				e.self:Say("Nice work, speak to the High Priest to continue.");
 				eq.set_global("sewers","4",5,"F");
 				e.other:Message(4,"You receive a character flag!");
-			elseif (qglobals["temp_sewers"] == "4" and (qglobals["sewers"] == "4" or qglobals["sewers"] == "5")) then
+			elseif (tonumber(qglobals["temp_sewers"]) == 4 and (tonumber(qglobals["sewers"]) == 4 or tonumber(qglobals["sewers"]) == 5)) then
 				e.self:Say("Nice work, the path to Vxed is open, speak with Apprentice Udranda.");
 				eq.set_global("god_vxed_access","1",5,"F");
 				e.other:Message(4,"You receive a character flag!");
-			elseif (qglobals["temp_sewers"] == "3" and qglobals["sewers"] == "2") then
+			elseif (tonumber(qglobals["temp_sewers"]) == 3 and tonumber(qglobals["sewers"]) == 2) then
 				e.self:Say("Thank you for assisting in the Lair, please visit the Crematory to advance.");
-			elseif (qglobals["temp_sewers"] == "4") then
+			elseif (tonumber(qglobals["temp_sewers"]) == 4) then
 				e.self:Say("Thank you for assisting in the Pool, please visit the Plant to advance.");
-			elseif (qglobals["temp_sewers"] == "4" and qglobals["sewers"] == "2") then
+			elseif (tonumber(qglobals["temp_sewers"]) == 4 and tonumber(qglobals["sewers"]) == 2) then
 				e.self:Say("Thank you for assisting in the Pool, please visit the Crematory to advance.");
-			elseif (qglobals["temp_sewers"] == "4" and qglobals["sewers"] == "3") then
+			elseif (tonumber(qglobals["temp_sewers"]) == 4 and tonumber(qglobals["sewers"]) == 3) then
 				e.self:Say("Thank you for assisting in the Pool, please visit the Crematory to advance.");
-			elseif (qglobals["sewers"] == "2") then
+			elseif (tonumber(qglobals["sewers"]) == 2) then
 				e.self:Say("Thank you for assisting in the Crematory, please visit the Plant to advance.");
-			elseif (qglobals["sewers"] == "3") then
+			elseif (tonumber(qglobals["sewers"]) == 3) then
 				e.self:Say("Thank you for assisting in the Lair, please visit the Plant to advance.");
 			end
 		else

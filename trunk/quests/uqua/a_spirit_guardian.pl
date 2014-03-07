@@ -34,7 +34,7 @@ sub EVENT_TIMER {
 		quest::stoptimer("fail_timer");
 		quest::setglobal($instid."_destper", 1, 3, "H6");
 		quest::ze(15,"Your time has elapsed, you must suffer the punishment of failure, there is nothing I can do to help now.");
-	} elsif {$timer eq "orb_turnin") {
+	} elsif ($timer eq "orb_turnin") {
 		quest::stoptimer("orb_turnin");
 		quest::spawn2(292062,0,0,-869,-691,25,254);
 		quest::spawn2(292063,0,0,-836,-692,25,255);

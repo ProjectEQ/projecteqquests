@@ -30,7 +30,7 @@ sub EVENT_TIMER {
 	if($timer eq "BanishTop") { #Banish top on hate list
 		my $TopHate = $npc->GetHateTop();
 		quest::say("Begone " . $TopHate->GetName());
-		$entity_list->HalveAggro($TopHate);
+		$npc->SetHate($TopHate,1,1);
 		my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
 		$MoveName->MovePCInstance(296, $instid, 210, -500, -26, 245);
 	}

@@ -11,7 +11,7 @@ sub EVENT_SIGNAL {
 	if ($signal == 4) { #from trigger saying banish
 		my $TopHate = $npc->GetHateTop();
 		quest::say("Begone " . $TopHate->GetName());
-		$entity_list->HalveAggro($TopHate);
+		$npc->SetHate($TopHate,1,1);
 		my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
 		$MoveName->MovePCInstance(296, $instid, -62, -826, -126, 0);
 	}

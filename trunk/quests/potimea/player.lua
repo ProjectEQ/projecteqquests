@@ -1,7 +1,7 @@
 function event_enter_zone(e)
 	-- load the current qglobals
 	local qglobals = eq.get_qglobals(e.self);
-	if ( qglobals.time_emote == nil and e.self:Admin() < 10 ) then
+	if ( qglobals["time_emote"] == nil and e.self:Admin() < 10 ) then
 		eq.world_emote(15, "The earth rumbles, sky thunders, volcanoes erupt, and tidal waves crash as the Gods prepare their armies for battle. The first of the mortals have obtained the power to cross into the Plane of Time!");
 		eq.set_global("time_emote","TimeEntered",7,"F");
 	end

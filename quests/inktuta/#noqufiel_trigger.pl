@@ -2,7 +2,7 @@
 
 my $true_noq;
 my $mir_noq;
-my $true_hp = 2054874;
+my $true_hp;
 my $random_name;
 my $true_newX = 20;
 my $true_newY = -706;
@@ -36,7 +36,9 @@ sub EVENT_TIMER {
 				quest::spawn2(296065,0,0,20,-633, -126,125); #True Image
 				$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 				$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
-				$true_noq->SetHP($true_hp);
+				if($true_hp) {
+					$true_noq->SetHP($true_hp);
+				}
 			} else {
 				if ($entity_list->IsMobSpawnedByNpcTypeID(296066)) { #mirror
 					$true_newX = $mir_noq->GetX();
@@ -45,18 +47,18 @@ sub EVENT_TIMER {
 					quest::depopall(296066);
 				}
 				if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) { #true
+					$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
+					$true_hp = $true_noq->GetHP();
 					$Mir_newX = $true_noq->GetX();
 					$Mir_newY = $true_noq->GetY();
 					$Mir_newZ = $true_noq->GetZ();
-					$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
-					$true_hp = $true_noq->GetHP();
 					quest::depopall(296065);
 				}
 				quest::spawn2(296065,0,0,$true_newX,$true_newY,$true_newZ,0);
 				$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
-				$true_noq->SetHP($true_hp);
 				quest::spawn2(296066,0,0,$Mir_newX,$Mir_newY,$Mir_newZ,0);
 				$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
+				$true_noq->SetHP($true_hp);
 			}
 		}
 	} elsif ($timer eq "spawn_noqufiel") {
@@ -77,6 +79,7 @@ sub EVENT_TIMER {
 		
 sub SPAWN_NOQUFIELS {
 	if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) { #true
+		$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 		$true_hp = $true_noq->GetHP();
 	}
 	quest::depopall(296074); #depop ##Noqufiel

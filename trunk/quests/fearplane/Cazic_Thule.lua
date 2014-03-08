@@ -1,7 +1,7 @@
 -- Call All mobs to aid Cazic Thule if they're still alive
 
 function event_spawn(e)
-	eq.set_timer("Shout",60000);
+	eq.set_timer("Shout",600000);
 	eq.spawn_condition("fearplane",0,1,0);
 	eq.spawn_condition("fearplane",0,1,1);
 end

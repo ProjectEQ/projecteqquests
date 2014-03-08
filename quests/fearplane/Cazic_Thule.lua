@@ -29,8 +29,10 @@ function event_combat(e)
 		-- call all mobs to assist
 		e.self:Shout("Denizens of Fear, your master commands you to come forth to his aid!!");
 		call_zone_to_assist(e.other);
+		eq.stop_timer("Shout");
 	else
 		call_off_assist(e.other);
+		eq.set_timer("Shout",600000);
 	end
 end
 

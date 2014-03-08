@@ -5,7 +5,7 @@ function event_spawn(e)
 end
 
 function event_signal(e)
-	local qglobals = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals();
 
 	if(e.signal == 1) then -- azarack
 		counter = counter + 1;
@@ -14,7 +14,7 @@ function event_signal(e)
 			counter = 0;
 		end
 	elseif(e.signal == 2 and qglobals["keeper"] == nil) then
-		eq.set_timer("13",300000);
+		-- eq.set_timer("13",300000); what is this referred to?
 		eq.set_global("keeper","1",3,"H2");
 		-- supposed to be 60-85 minute timer
 		eq.set_timer("87",math.random(1500000) + 3600000);

@@ -2,8 +2,8 @@
 
 function event_spawn(e)
 	eq.set_timer("Shout",600000);
-	eq.spawn_condition("fearplane",0,1,0);
-	eq.spawn_condition("fearplane",0,1,1);
+	-- use a timer for the zone repop so that the entire zone is not popping twice immediately on zone bootup.
+	eq.set_timer("RepopZone",5000);
 end
 
 function event_say(e)
@@ -28,71 +28,56 @@ function event_combat(e)
 	if (e.joined) then
 		-- call all mobs to assist
 		e.self:Shout("Denizens of Fear, your master commands you to come forth to his aid!!");
-		call_zone_to_assist(e.other);
+		-- leave out broken golem, The Tempest Reaver, and Irak_Altil
+		send_signal_to_all_npc_in_zone(2, {72078,72074,72012});
 		eq.stop_timer("Shout");
 	else
-		call_off_assist(e.other);
+		-- leave out broken golem, The Tempest Reaver, and Irak_Altil
+		send_signal_to_all_npc_in_zone(3, {72078,72074,72012});
 		eq.set_timer("Shout",600000);
 	end
 end
 
-function call_zone_to_assist(e)
-	-- grab the entity list
-	local entity_list = eq.get_entity_list();
-	-- call the zone to me.
-	local exclude_npc_list = Set {72078,72074,72012}; 
-	-- leave out broken golem, The Tempest Reaver, and Irak_Altil
-	local npc_list = entity_list:GetNPCList();
-
-	if(npc_list ~= nil) then
-		for npc in npc_list.entries do
-			
-			if (exclude_npc_list[npc:GetNPCTypeID()] == nil) then
-				if (npc.valid) then
-					eq.signal(npc:GetNPCTypeID(),2);
-				end
-			end
-		end
-	end
-end
-
-function call_off_assist(e)
-	-- grab the entity list
-	local entity_list = eq.get_entity_list();
-	-- call the zone to me.
-	local exclude_npc_list = Set {72078,72074,72012}; 
-	-- leave out broken golem, The Tempest Reaver, and Irak_Altil
-	local npc_list = entity_list:GetNPCList();
-
-	if(npc_list ~= nil) then
-		for npc in npc_list.entries do
-			
-			if (exclude_npc_list[npc:GetNPCTypeID()] == nil) then
-				if (npc.valid) then
-					eq.signal(npc:GetNPCTypeID(),3);
-				end
-			end
-		end
-	end
-end
-
 function event_timer(e)
-	-- grab the entity list
-	local entity_list = eq.get_entity_list();
-	-- call the zone to me.
-	local exclude_npc_list = Set {72078,72074,72012}; 
-	-- leave out broken golem, The Tempest Reaver, and Irak_Altil
-	local npc_list = entity_list:GetNPCList();	
-		
 	if(e.timer == "Shout") then
 		e.self:Shout("Beware all infidels who dare to taint my plane, for I shall rend your minds with fright, dread, and terror!");
-		if(npc_list ~= nil) then
-			for npc in npc_list.entries do
-				if (exclude_npc_list[npc:GetNPCTypeID()] == nil) then
-					if (npc.valid) then
-						eq.signal(npc:GetNPCTypeID(),1);
-					end
+		-- most mobs have an answer to my shout
+		-- leave out broken golem, The Tempest Reaver, and Irak_Altil
+		send_signal_to_all_npc_in_zone(1, {72078,72074,72012});
+	elseif(e.timer == "RepopZone") then
+		eq.spawn_condition("fearplane",0,1,0);
+		eq.spawn_condition("fearplane",0,1,1);
+		eq.stop_timer("RepopZone");
+	end
+end
+
+function send_signal_to_all_npc_in_zone(signal_to_send,exclude_table)
+	-- set to true for debugging messages
+	local show_debug = false;
+	-- create list of NPCID that will not be signalled.
+	local exclude_npc_list = Set(exclude_table);
+	-- create empty table to track the NPCID that have had signals sent already
+	local signal_sent_to = {};
+	-- grab the entity list
+	local entity_list = eq.get_entity_list();
+	-- get the list of npcs currently spawned in the zone
+	local npc_list = entity_list:GetNPCList();
+	-- do not do anything if there are no NPC's spawned. should be an impossible check because this is in an NPC script
+	if(npc_list ~= nil) then
+		for npc in npc_list.entries do
+			if (exclude_npc_list[npc:GetNPCTypeID()] == nil and signal_sent_to[npc:GetNPCTypeID()] == nil) then
+				-- make sure the npc is valid (again, should never fail, but better to be certain.
+				if (npc.valid) then
+					if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " is being sent signal " .. tostring(signal_to_send) .. "."); end
+					-- send signal to this NPCID
+					eq.signal(npc:GetNPCTypeID(),signal_to_send);
+					-- add this NPCID to the list of NPCID that we have already signalled
+					signal_sent_to[npc:GetNPCTypeID()] = true;
 				end
+			elseif(signal_sent_to[npc:GetNPCTypeID()] == true) then
+				if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " has already been sent signal " .. tostring(signal_to_send) .. "."); end
+			elseif(exclude_npc_list[npc:GetNPCTypeID()] == true) then
+				if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " is excluded and will not be sent signal " .. tostring(signal_to_send) .. "."); end
 			end
 		end
 	end

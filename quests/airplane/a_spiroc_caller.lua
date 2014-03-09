@@ -1,6 +1,7 @@
 function event_death_complete(e)
-	eq.spawn2(71110,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
-	eq.spawn2(71110,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71009)) then
+		eq.update_spawn_timer(2632,1000); --update to respawn in 1 sec if vanquisher are still up
+	end
 end
 
 -------------------------------------------------------------------------------------------------

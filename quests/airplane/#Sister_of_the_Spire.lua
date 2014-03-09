@@ -1,6 +1,6 @@
 function event_death_complete(e)
-	eq.spawn2(71110,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
-	eq.spawn2(71110,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	eq.set_global("sirran","7",3,"M20");
+	eq.spawn2(71058,0,0,-960,-1037,1093,64);
 end
 
 -------------------------------------------------------------------------------------------------

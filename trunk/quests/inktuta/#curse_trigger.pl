@@ -1,6 +1,7 @@
 #Inktuta #curse_trigger NPCID 296017
 
 my $count;
+my $initial;
 my @curse_callers = qw(296053 296054 296055 296056 296057 296058);
 my @curse_bearers = qw(296059 296060 296061 296062 296063 296064);
 my @hate_list;
@@ -8,8 +9,9 @@ my $hate_list;
 my $hate_count = 0;
 
 sub EVENT_SPAWN {
-	quest::settimer(1,15);  #timer for event completion check
-	quest::settimer("spawn_cursebearer",20);
+	$initial = 0;
+	quest::settimer("win_check",5); 
+	quest::settimer("initial_bearers",5);
 }
 
 sub EVENT_SIGNAL {
@@ -25,7 +27,7 @@ sub EVENT_SIGNAL {
 			}
 		}
 		if (!$hate_count) { #no callers have aggro
-			quest::stoptimer("spawn_cursebearer");
+			quest::stopalltimers();
 			for ($count = 0; $count <= 5; $count++) {
 				quest::depopall($curse_callers[$count]);
 				quest::depopall($curse_bearers[$count]);
@@ -38,7 +40,15 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_TIMER {
-	if($timer == 1) {
+	if($timer eq "initial_bearers") {
+		quest::ze(5,"Spawning $initial");
+		quest::spawn2($curse_bearers[$initial],0,0,7,-912,-126,0);
+		$initial += 1;
+		if($initial == 5) {
+			quest::stoptimer("initial_bearers");
+			quest::settimer("spawn_cursebearer");
+		}
+	} elsif($timer eq "win_check") {
 		#check to see if any of the six cursecallers are up
 		if (!$entity_list->IsMobSpawnedByNpcTypeID(296053) && !$entity_list->IsMobSpawnedByNpcTypeID(296054) && !$entity_list->IsMobSpawnedByNpcTypeID(296055) && !$entity_list->IsMobSpawnedByNpcTypeID(296056) && !$entity_list->IsMobSpawnedByNpcTypeID(296057) && !$entity_list->IsMobSpawnedByNpcTypeID(296058)) {
 			quest::stoptimer(1);
@@ -49,6 +59,13 @@ sub EVENT_TIMER {
 			quest::depop();
 		}
 	} elsif ($timer eq "spawn_cursebearer") {
-		quest::spawn2(quest::ChooseRandom(296059,296060,296061,296062,296063,296064),0,0,7,-912,-126,0);
+		#if the cursecaller is still up, and his cursebearer isn't, he needs to summon another one
+		for ($count = 0; $count <= 5; $count++) {
+			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
+				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count])) {
+					quest::spawn2($curse_bearers[$count],0,0,7,-912,-126,0);
+				}
+			}
+		}
 	}
 }

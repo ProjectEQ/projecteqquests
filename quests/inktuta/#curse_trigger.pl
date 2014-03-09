@@ -11,7 +11,7 @@ my $hate_count = 0;
 sub EVENT_SPAWN {
 	$initial = 0;
 	quest::settimer("win_check",5); 
-	quest::settimer("initial_bearers",5);
+	quest::settimer("initial_bearers",15);
 }
 
 sub EVENT_SIGNAL {
@@ -41,13 +41,12 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
 	if($timer eq "initial_bearers") {
-		quest::ze(5,"Spawning $initial");
-		quest::spawn2($curse_bearers[$initial],0,0,7,-912,-126,0);
-		$initial += 1;
+		quest::spawn2($curse_bearers[$initial],0,0,42,-912,-126,195);
 		if($initial == 5) {
 			quest::stoptimer("initial_bearers");
-			quest::settimer("spawn_cursebearer");
+			quest::settimer("spawn_cursebearer",15);
 		}
+		$initial += 1;
 	} elsif($timer eq "win_check") {
 		#check to see if any of the six cursecallers are up
 		if (!$entity_list->IsMobSpawnedByNpcTypeID(296053) && !$entity_list->IsMobSpawnedByNpcTypeID(296054) && !$entity_list->IsMobSpawnedByNpcTypeID(296055) && !$entity_list->IsMobSpawnedByNpcTypeID(296056) && !$entity_list->IsMobSpawnedByNpcTypeID(296057) && !$entity_list->IsMobSpawnedByNpcTypeID(296058)) {
@@ -63,8 +62,10 @@ sub EVENT_TIMER {
 		for ($count = 0; $count <= 5; $count++) {
 			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
 				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count])) {
-					quest::spawn2($curse_bearers[$count],0,0,7,-912,-126,0);
+					quest::spawn2($curse_bearers[$count],0,0,42,-912,-126,195);
 				}
+			} else {
+				quest::depopall($curse_bearers[$count]);
 			}
 		}
 	}

@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("I am afraid that I can not just give them away. The lunatic had them cursed. They make me do [strange things]");
 	elseif(e.message:findi("strange things")) then
 		e.self:Say("Like ATTACK you!");
-		eq.attack(" .. e.other:GetName() .. ");
+		eq.attack(e.other:GetName());
 	end
 end
 

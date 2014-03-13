@@ -10,7 +10,7 @@ function event_say(e)
 		e.self:Say("Then study and spread the words of Karana the Rainkeeper.  May all the storms in your heart be controlled by the Rainkeeper.  You are young to the world just as [Cheslin] is.");
 	elseif(e.message:findi("member of thunder") and fac <= 4) then
 		e.self:Say("I welcome you. Karana cares for all of His flock. He bestows a touch of His power upon the souls of the Clerics and Paladins of our temple. We look after His flock. Speaking of which, I require the assistance of a young paladin to [deliver provisions to needy members].");
-	elseif(e.message:findi("ready") && fac > 4) then
+	elseif(e.message:findi("ready") and fac > 4) then
 		e.self:Say("Well, friend, the Temple of Thunder has recognized and appreciates your past deeds for us.  But this matter is of vital importance to us and we need more proof of your devotion to our cause.");
 	elseif(e.message:findi("karana bandit")) then
 		e.self:Say("In the Plains of Karana can be found the [Karana Bandits].  They plague our followers and dare to use the name of the Rainkeeper as title.  For this, Karana commands their deaths.  I have a bounty for every returned Bandit Sash, collectible by members only.  For clerics, Gehna has a bounty on Binder Spectacles.");

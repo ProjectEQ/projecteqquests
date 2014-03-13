@@ -15,7 +15,7 @@ function event_signal(e)
 end
 
 function event_say(e)
-	elseif(e.message:findi("hail")) then
+	if(e.message:findi("hail")) then
 		e.self:Say("Welcome to the Temple of Thunder. We are home to paladins and clerics who follow the ways of Karana. Do you [need guidance] or are you [already a follower of Karana]?"); 
 	elseif(e.message:findi("need guidance")) then
 		e.self:Say("Then go forth into the church and speak with Gehna Solbenya. She will assist you."); 

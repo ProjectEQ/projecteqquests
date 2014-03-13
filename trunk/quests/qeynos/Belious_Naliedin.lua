@@ -15,7 +15,7 @@ function event_signal(e)
 end
 
 function event_say(e)
-	elseif(e.message:findi("hail")) then
+	if(e.message:findi("hail")) then
 		e.self:Say("Welcome, my name is Belious Naliedin of the League of Antonican Bards. A few years ago, I had finally saved up the money, and I bought this place. I settled in, and have been [working] here ever since.");
 	elseif(e.message:findi("working")) then
 		e.self:Say("Ah, this is my shop. I am a musician, well known for my ability both in tuning, and [building instruments.]");

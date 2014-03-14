@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("You have proven your abilities.");
 		eq.depop();
-	elseif(plugin::check_handin(%itemcount, 20711 => 1, 20964 => 1, 20713 => 1, 20712 => 1)) then 				--shadowknight test of necropotence using efreeti war axe, dulcet nectar, bloodstained hilt, blood sky ruby
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20711, item2 = 20964, item3 = 20713, item4 = 20712})) then 				--shadowknight test of necropotence using efreeti war axe, dulcet nectar, bloodstained hilt, blood sky ruby
 		e.other:SummonItem(11679); 	--rheumguls
 		e.other:AddEXP(100000);
 		e.self:Say("You have truly earned this.");

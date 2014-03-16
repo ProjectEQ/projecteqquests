@@ -20,5 +20,4 @@ sub EVENT_SIGNAL {
 sub EVENT_DEATH_COMPLETE {
 	quest::say("This is but a temporary setback. I will return.");
 	quest::signalwith(296070,296065); #tell zone_status I died
-	quest::spawn2(296076,0,0,$x,$y,$z,$h); #temp lockout set lockout_inktuta
 }

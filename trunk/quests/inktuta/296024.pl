@@ -58,4 +58,5 @@ sub EVENT_DEATH_COMPLETE {
 	quest::spawn_condition("inktuta", 1, 0); #Stop Usher/Watcher spawns
 	quest::depopall(296025);
 	quest::depopall(296026);
+	quest::signalwith(296076,1); #setting lockout
 }

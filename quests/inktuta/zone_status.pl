@@ -127,7 +127,6 @@ sub EVENT_TIMER {
 					REMOVE_LOOSE_TILES(4);
 					quest::spawn2(296067,0,0,-63,-600,-127,128);  #an ancient sentinel
 				}
-			}
 		}	
 	} elsif ($timer eq "stonemite") {
 		if ($confused_say == 1 && $rambling_say == 1 && $incoherent_say == 1 && $irrational_say == 1) {

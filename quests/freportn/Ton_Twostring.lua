@@ -1,6 +1,6 @@
 function event_say(e) 
 	if(e.message:findi("Hail")) then
-		e.self:Say("Hail. $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
+		e.self:Say("Hail. " .. e.other:GetName() .. " - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
 	elseif(e.message:findi("what mail")) then
 		e.self:Say("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices.  Are you [interested]?");
 	elseif(e.message:findi("i am interested")) then

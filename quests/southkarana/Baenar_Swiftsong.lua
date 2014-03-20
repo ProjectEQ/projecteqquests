@@ -47,14 +47,4 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
-function event_spawn(e)
-	local qglobals = eq.get_qglobals(e.self);
-	-- #When I spawn, I make Quillmane spawnable.
-	if(qglobals.quill == nil) then
-		eq.set_global("quill","2",3,"F");
-	elseif(qglobals.quill ~= "2") then
-		eq.set_global("quill","2",3,"F");
-	end
-end
-
 -- END of FILE Zone:southkarana  ID:14046 -- Baenar_Swiftsong

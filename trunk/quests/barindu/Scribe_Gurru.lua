@@ -6,7 +6,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		if (qglobals["temp_sewers"] ~= nil) then
 			-- if the player is working on sewer instance, update appropriately.
-			if (tonumber(qglobals["temp_sewers"]) == 1 and tonumber(qglobals["sewers"]) < 2) then
+			if (tonumber(qglobals["temp_sewers"]) == 1 and (qglobals["sewers"] == nil or tonumber(qglobals["sewers"]) < 2)) then
 				e.self:Say("Nice work, speak to the High Priest to continue.");
 				eq.set_global("sewers","2",5,"F");
 				e.other:Message(4,"You receive a character flag!");

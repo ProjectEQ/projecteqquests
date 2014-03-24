@@ -67,5 +67,6 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294346,0,0,201,-776,2,29);
   quest::spawn2(294346,0,0,161,-717,2,52);
   quest::signalwith(294342,1,0);
+  quest::signalwith(294631,1); #set lockout
   $entity_list->FindDoor(11)->SetLockPick(0);
 }

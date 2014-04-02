@@ -2,7 +2,7 @@
 -- Scribe_Gurru NPCID:283052
 function event_say(e)
 	-- load the current qglobals
-	local qglobals = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.self,e.other);
 	if(e.message:findi("hail")) then
 		if (qglobals["temp_sewers"] ~= nil) then
 			-- if the player is working on sewer instance, update appropriately.

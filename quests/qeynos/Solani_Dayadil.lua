@@ -5,8 +5,10 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		eq.stop();
+		e.self:MerchantCloseShop();
 	elseif(e.signal == 2) then
-		eq.start(59);		
+		eq.start(59);	
+		e.self:MerchantOpenShop();
 	end
 end
 

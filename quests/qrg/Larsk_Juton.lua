@@ -40,7 +40,7 @@ function event_trade(e)
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(10),math.random(10),math.random(10),math.random(10));
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18811})) then
-		e.self:Say("Fine Work, $name. Hmmm. It seems this needs taking care of. Take this note to the Captain of the City Guard in Qeynos. His name is Captain Tillin. He will have to attend to this matter. Also.. Let me see the gnoll\'s head. I must know you killed him. Be safe, my friend. I am sure that whoever this McNeal is, he was simply a lackey. Whoever he works for is most likely going to be looking for you. Watch your back in Qeynos.");
+		e.self:Say("Fine Work, "..e.other:GetName()..". Hmmm. It seems this needs taking care of. Take this note to the Captain of the City Guard in Qeynos. His name is Captain Tillin. He will have to attend to this matter. Also.. Let me see the gnoll\'s head. I must know you killed him. Be safe, my friend. I am sure that whoever this McNeal is, he was simply a lackey. Whoever he works for is most likely going to be looking for you. Watch your back in Qeynos.");
 		e.other:SummonItem(18811);
 		e.other:Ding();
 		e.other:AddEXP(200);

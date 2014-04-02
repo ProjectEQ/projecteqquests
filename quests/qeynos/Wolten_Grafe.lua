@@ -45,7 +45,7 @@ function event_trade(e)
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,0,8,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13396})) then -- Rat Kings Head
-		e.self:Say("So it is true, he does... or did, exist.  Well done $name, take this for your trouble.");
+		e.self:Say("So it is true, he does... or did, exist.  Well done "..e.other:GetName()..", take this for your trouble.");
 		e.other:SummonItem(eq.ChooseRandom(2112, 2106, 2111, 2104, 2108));
 		e.other:Ding();
 		e.other:Faction(183,5,0); -- Knights of Thunder

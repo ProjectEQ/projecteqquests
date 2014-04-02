@@ -6,7 +6,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hello, $name. What brings you to Qeynos? Must be the mighty fine muffins over at [Voleen's Bakery]. I just love those muffins!",e.other:GetName()));
+		e.self:Say(string.format("Hello, "..e.other:GetName()..". What brings you to Qeynos? Must be the mighty fine muffins over at [Voleen's Bakery]. I just love those muffins!",e.other:GetName()));
 	elseif(e.message:findi("voleen's bakery")) then
 		e.self:Say("Oh, it will be easier for us both if I just show you where it is. Follow me. But be quick about it, because I have to get back to my patrol.");
 	end

@@ -21,7 +21,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 		e.other:GiveCash(5,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13131})) then -- Case of Blackburrow Stout
-		e.self:Say("Ahhh, that hit the spot! Nice work, $name. Take this as a reward.");
+		e.self:Say("Ahhh, that hit the spot! Nice work, "..e.other:GetName()..". Take this as a reward.");
 		e.other:Ding();
 		e.other:AddEXP(5000);
 		e.other:GiveCash(5,1,1,2);

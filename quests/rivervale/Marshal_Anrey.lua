@@ -18,13 +18,13 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13761,item2 = 13756,item3 = 13075,item4 = 13749})) then -- Polar Bear Skin, Thick Grizzly Bear Skin, Shark Skin, Alligator Skin
-		e.self:Say("Good work, $name. You passed the first test. If you think you are one of us, return this cap to me along with a dagger from a Dark Elf for your true reward.");
+		e.self:Say("Good work, "..e.other:GetName()..". You passed the first test. If you think you are one of us, return this cap to me along with a dagger from a Dark Elf for your true reward.");
 		e.other:SummonItem(13941); -- Leatherfoot Skullcap
 		e.other:Ding();
 		e.other:AddEXP(1000);
 		e.other:GiveCash(8,1,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13941,item2 = 13942})) then -- Leatherfoot Skullcap, Dragoon Dirk
-		e.self:Say("Wonderful, $name. You have proven yourself to the Leatherfoot Squad. Take this and wear it with honor.");
+		e.self:Say("Wonderful, "..e.other:GetName()..". You have proven yourself to the Leatherfoot Squad. Take this and wear it with honor.");
 		e.other:SummonItem(12259); -- Leatherfoot Raider Skullcap
 		e.other:Ding();
 		e.other:AddEXP(5000);

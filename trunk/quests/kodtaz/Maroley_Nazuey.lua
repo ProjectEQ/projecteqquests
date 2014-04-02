@@ -29,7 +29,7 @@ function event_say(e)
 			elseif (e.message:findi("priest")) then
 				e.self:Say("I nearly forgot. You must venture inside to an entrance to the inner chambers of the Temple of Twin Struggles and enter there. Once inside you must find the Malevolent Priests. We have begun referring to them thusty because of their torturous looks and ways. They are very unpleasant and work cooperatively. You must get to them and [" .. eq.say_link("recover the artifacts") .. "] they have been gathering before they are allowed to move them to another temple nearby.");
 			elseif (e.message:findi("recover the artifacts")) then
-				e.self:Say("This is your moment, $name. Now is the time to prove your worth to the brotherhood. I bid you good luck and hope that the strength you showed in the first trial will aid you again in your second one. When you are [" .. eq.say_link("ready to enter the temple") .. "] and have a group with you, return to me and I shall set you on your way.");
+				e.self:Say("This is your moment, "..e.other:GetName()..". Now is the time to prove your worth to the brotherhood. I bid you good luck and hope that the strength you showed in the first trial will aid you again in your second one. When you are [" .. eq.say_link("ready to enter the temple") .. "] and have a group with you, return to me and I shall set you on your way.");
 			elseif (e.message:findi("ready")) then
 				-- determine if the player is in an instance already
 				if (eq.get_instance_id("ikkinz",1) > 0) then

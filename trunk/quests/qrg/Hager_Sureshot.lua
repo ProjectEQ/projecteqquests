@@ -13,7 +13,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, $name.  Feel free to rest here in Surefall Glade.  Just be sure you do no hunting whilst here.  If so, then you shall pay the punishment of death.  I trust you [will abide by the laws]?");
+		e.self:Say("Greetings, "..e.other:GetName()..".  Feel free to rest here in Surefall Glade.  Just be sure you do no hunting whilst here.  If so, then you shall pay the punishment of death.  I trust you [will abide by the laws]?");
 	elseif(e.message:findi("abide by the laws")) then
 		e.self:Say("That is wise.  Your health, for now, is assured.  A plague of hunters has infested our land heavily in recent weeks.  The word is out that [Mammoth] still lives.  Hunters have flocked here in search of a trophy or profit and glory.  Instead, they find the deadly accuracy of my arrows.");
 	elseif(e.message:findi("mammoth")) then

@@ -4,7 +4,7 @@ function event_say(e)
   elseif(e.message:findi("aenia")) then
     e.self:QuestSay(e.other,"Aenia lives in North Qeynos in a little blue house near the Temple of Life with her overprotective father.  Last time he caught me there, he nearly killed me!");
   elseif(e.message:findi("ballad")) then
-    e.self:QuestSay(e.other,"I wrote this little song for my dearest Aenia, but I can't sing it to her because I'm stuck here on watch duty.  You have a nice voice, $name, maybe you could go and sing my song to her for me, huh?  Just make sure you don't sing to Aenia when her father's around, 'cause like I said, he's already tried to kill me for seeing her.");
+    e.self:QuestSay(e.other,"I wrote this little song for my dearest Aenia, but I can't sing it to her because I'm stuck here on watch duty.  You have a nice voice, "..e.other:GetName()..", maybe you could go and sing my song to her for me, huh?  Just make sure you don't sing to Aenia when her father's around, 'cause like I said, he's already tried to kill me for seeing her.");
     e.other:SummonItem(18026);
   end
 end

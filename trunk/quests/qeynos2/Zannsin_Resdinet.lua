@@ -19,7 +19,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hey..  My name's Zannsin. but you can call me [Zan].");
 	elseif(e.message:findi("men to prak in highpass")) then
-		e.self:Say("Hmm, I see. Maybe you can help us out with this, $name, huh? I think it'd be a perfect opportunity for you to prove just how valuable you are to our little organization. Take this letter to Prak at Golden Rooster in Highpass, and see what you can do to help him out.");
+		e.self:Say("Hmm, I see. Maybe you can help us out with this, "..e.other:GetName()..", huh? I think it'd be a perfect opportunity for you to prove just how valuable you are to our little organization. Take this letter to Prak at Golden Rooster in Highpass, and see what you can do to help him out.");
 		e.other:SummonItem(18795);
 	end
 end
@@ -28,7 +28,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18028})) then
-		e.self:Say("You have proven yourself to be very valuable $name. For helping us out please accept this Cloak of the Unseen Hands!");
+		e.self:Say("You have proven yourself to be very valuable "..e.other:GetName()..". For helping us out please accept this Cloak of the Unseen Hands!");
 		e.other:SummonItem(1048);
 		e.other:Ding();
 		e.other:AddEXP(500);

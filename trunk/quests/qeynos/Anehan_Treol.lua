@@ -7,7 +7,7 @@ end
 function event_trade(e)
   local item_lib =require("items");
   if(item_lib.check_turn_in(e.trade, {item1 = 18021})) then
-    e.self:QuestSay(e.other, "Oh, report time already again? Yeah, here ya go, $name. Be careful around here at night, I've been seeing some rough looking characters lurking about.");
+    e.self:QuestSay(e.other, "Oh, report time already again? Yeah, here ya go, "..e.other:GetName()..". Be careful around here at night, I've been seeing some rough looking characters lurking about.");
     e.other:SendSound();
     e.other:SummonItem(18022);
     e.other:Faction(192,2,0);

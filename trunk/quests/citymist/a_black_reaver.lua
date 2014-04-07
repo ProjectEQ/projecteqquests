@@ -5,13 +5,13 @@ function event_death_complete(e)
 
 	if(chance_spawn <= 20) then
 		eq.spawn2(90004,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-	else if (chance_spawn <= 40) then
+	elseif (chance_spawn <= 40) then
 		eq.spawn2(90005,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-	else if (chance_spawn <= 59) then
+	elseif (chance_spawn <= 59) then
 		eq.spawn2(90006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-	else if (chance_spawn <= 67) then
+	elseif (chance_spawn <= 67) then
 		eq.spawn2(90174,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-	else if (chance_spawn <= 75) then
+	elseif (chance_spawn <= 75) then
 		eq.spawn2(90184,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	end
 end

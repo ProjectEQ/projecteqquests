@@ -20,6 +20,10 @@ sub EVENT_ITEM {
     quest::say("My thanks to you, $name. Take this key--I know not what door it opens. Now if I can just find that necklace of power that I took from my master's lair!");
     quest::summonitem(20600);
     quest::set_zone_flag(105);
+  } elsif (plugin::check_handin(\%itemcount, 7236 => 1, 7254 => 1)) { #prenerf chokidai prod
+    quest::say("My thanks to you, $name. Take this key--I know not what door it opens. Now if I can just find that necklace of power that I took from my master's lair!");
+    quest::summonitem(20600);
+    quest::set_zone_flag(105);
   }
   plugin::return_items(\%itemcount);
 }

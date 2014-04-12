@@ -15,7 +15,7 @@ function event_waypoint_arrive(e)
 	-- waypoint number from gridid 57
 	if(e.wp == 16) then
 		-- set proximity to make sure the player is following close by.
-		eq.set_proximity(e.self:GetX()-25,e.self:GetX()+25,e.self:GetY()-25,e.self:GetY()+25);
+		eq.set_proximity(e.self:GetX()-45,e.self:GetX()+45,e.self:GetY()-45,e.self:GetY()+45,e.self:GetZ()-25,e.self:GetZ()+25);
 	elseif(e.wp == 19) then
 		-- clear proximity and if the giants spawned then attack Gralk Dwarfkiller and send signal for Fergul Frostsky to run away.
 		eq.clear_proximity();
@@ -26,8 +26,8 @@ function event_waypoint_arrive(e)
 	end
 end
 
+-- if Player enter the proximity then spawns the 2 giants and clear proximity.
 function event_enter(e)
-	-- if Player enter the proximity then spawns the 2 giants and clear proximity.
 	eq.spawn2(118207,0,0,-2397,-2615,294,0);
 	eq.spawn2(118208,0,0,-2391,-2569,299,0);
 	eq.clear_proximity();

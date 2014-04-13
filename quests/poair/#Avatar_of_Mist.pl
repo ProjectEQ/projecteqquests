@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-quest::settimer(37,4500);
+quest::settimer(37,2700);
 quest::shout("How dare you!");
 }
 

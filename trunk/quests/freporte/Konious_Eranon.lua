@@ -11,9 +11,9 @@ function event_trade(e)
 		e.self:Say("Hey, Nex, we got another sucker.. er.. volunteer, that is, to help us out around here. Here ya go friend, put this on and let's whip you into shape.");
 		e.other:SummonItem(13566); -- Blood Spotted Robe*
 		e.other:Ding();
-		e.other:Faction(86,10,0); -- Dismal Rage
+		e.other:Faction(86,100,0); -- Dismal Rage
 		e.other:Faction(184,-15,0); -- Knights of Truth
-		e.other:Faction(235,10,0); -- Opal Dark Briar
+		e.other:Faction(235,20,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

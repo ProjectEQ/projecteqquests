@@ -5,10 +5,10 @@ function event_trade(e)
 		e.self:Say("Welcome to the Academy of Arcane Sciences. Here's one of our guild robes for you to wear. Now, let's get to work.");
 		e.other:SummonItem(13558); -- Patched Violet Robe
 		e.other:Ding();
-		e.other:Faction(11,1,0); -- Arcane Scientists
-		e.other:Faction(184,1,0); -- Knights of Truth
-		e.other:Faction(235,-5,0); -- Opal Dark Briar
-		e.other:Faction(105,-5,0); -- The Freeport Militia
+		e.other:Faction(11,100,0); -- Arcane Scientists
+		e.other:Faction(184,25,0); -- Knights of Truth
+		e.other:Faction(235,-15,0); -- Opal Dark Briar
+		e.other:Faction(105,-15,0); -- The Freeport Militia
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

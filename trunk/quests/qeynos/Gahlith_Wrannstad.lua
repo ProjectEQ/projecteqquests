@@ -35,9 +35,9 @@ function event_trade(e)
 		e.self:Say("Greetings, I am Gahlith, Master of the Wizard's Order of the Hall of Sorcery. Here, we have devoted our lives and souls to the study of the arcane. My apprentice Kazlo Naedra shall tutor you and teach you the fundamentals of sorcery. Once you are ready to begin your hunting training please see Juegile Sohgohm, he will assist you in some tasks for your early adventures. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13508); -- Blue Training Robe*
 		e.other:Ding();
-		e.other:Faction(240,10,0); -- Order of Three
-		e.other:Faction(21,-15,0); -- Bloodsabers
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(240,100,0); -- Order of Three
+		e.other:Faction(21,-25,0); -- Bloodsabers
+		e.other:Faction(135,15,0); -- Guards of Qeynos
 		e.other:Faction(235,-15,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	end

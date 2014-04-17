@@ -28,11 +28,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the Temple of Life. I am Jahnda. the High Priestess of the Clerics of Nife. Wear this tunic with pride and carry out the will of Nife. Please. see Tonmerk Plorsin or Nomsoe Jusagta. They will help get you started spreading the will of The Prime Healer.");
 		e.other:SummonItem(13506); -- Faded Tunic*
 		e.other:Ding();
-		e.other:Faction(257,10,0); --Priest of Life
-		e.other:Faction(183,10,0); --Knight of Thunder
-		e.other:Faction(135,10,0); --Guards of Qeynos
-		e.other:Faction(21,-15,0); --Bloodsabers
-		e.other:Faction(9,10,0);   --Antonius Bayle
+		e.other:Faction(257,100,0); -- Priest of Life
+		e.other:Faction(183,30,0); -- Knight of Thunder
+		e.other:Faction(135,50,0); -- Guards of Qeynos
+		e.other:Faction(21,-25,0); -- Bloodsabers
+		e.other:Faction(9,15,0); -- Antonius Bayle
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

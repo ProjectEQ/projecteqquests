@@ -27,10 +27,10 @@ function event_trade(e)
 		e.self:Say(string.format("Welcome to the Academy of Arcane Sciences. I am Lorme Tredore, Master Magician. Here is our guild robe, wear it with pride and represent us well, young %s. Once you are ready to begin your training please make sure that you see Shana Liskia, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.",e.other:GetName()));
 		e.other:SummonItem(13559);
 		e.other:Ding();
-		e.other:Faction(11,1,0); -- Arcane Scientists
-		e.other:Faction(184,1,0); -- Knights of Truth
-		e.other:Faction(235,-5,0); -- Opal Dark Briar
-		e.other:Faction(105,-5,0); -- The Freeport Militia
+		e.other:Faction(11,100,0); -- Arcane Scientists
+		e.other:Faction(184,25,0); -- Knights of Truth
+		e.other:Faction(235,-15,0); -- Opal Dark Briar
+		e.other:Faction(105,-15,0); -- The Freeport Militia
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13951})) then -- Fleshy Orb
 		e.self:Say("Ah. Thank you for bringing this to me! I will make very good use of it. Here take this small token of my appreciation in return. Guard Jenkins will no longer require it as he was killed on the training field yesterday. Tsk. tsk. tsk.");

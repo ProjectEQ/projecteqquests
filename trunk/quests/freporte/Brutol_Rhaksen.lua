@@ -17,9 +17,9 @@ function event_trade(e)
 		e.self:Say("Hahaha.. I sure hope you prove more valuable than you look, little one.");
 		e.other:Ding();
 		e.other:SummonItem(13561); -- Faded Crimson Tunic
-		e.other:Faction(86,10); -- Dismal Rage
-		e.other:Faction(184,-15); -- Knights of Truth
-		e.other:Faction(235,10); -- Opal Dark Briar  
+		e.other:Faction(86,100,0); -- Dismal Rage
+		e.other:Faction(184,-15,0); -- Knights of Truth
+		e.other:Faction(235,20,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19932})) then -- Tarsa Yovar's Head
 		e.self:Say("Take this and get it sharpened. Bring it back to me with a Giant Rattlesnake Skin and you will have proven yourself able to wield a Dismal Rage Battle Axe, to help teach the way of Innoruuk!");

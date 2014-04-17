@@ -31,11 +31,11 @@ sub EVENT_ITEM {
 		quest::say("Hmmm. Another rat has found its way to my doorstep, huh? Well, we may have use for you. Go find Rihtur, maybe he has an errand for you.");
 		quest::summonitem(13598); #Ruined Training Tunic*
 		quest::ding();
-		quest::faction(21,10); #Bloodsabers
+		quest::faction(21,100); #Bloodsabers
 		quest::faction(135,-15); #Guards of Qeynos
 		quest::faction(235,10); #Opal Dark Briar
-		quest::faction(257,-15); #Priest of Life
-		quest::faction(53,10); #Corrupt Qeynos Guards
+		quest::faction(257,-25); #Priest of Life
+		quest::faction(53,5); #Corrupt Qeynos Guards
 		quest::exp(100);
 	}
 	if(plugin::check_handin(\%itemcount, 20197 => 1)) {

@@ -11,9 +11,9 @@ function event_trade(e)
 		e.self:Say("Welcome to the Sentries of Passion. We are the protectors of the Temple of Marr. Wear our tunic with pride, young knight! Find your wisdom within these walls and in the words of our priests. And remember to aid all who follow the twin deities, Mithaniel and Erollisi Marr.");
 		e.other:SummonItem(13556); -- White and Blue Tunic
 		e.other:Ding();
-		e.other:Faction(258,10,0); -- Priests of Marr
-		e.other:Faction(105,-15,0); -- The Freeport Militia
-		e.other:Faction(184,10,0); -- Knight of Truth
+		e.other:Faction(258,100,0); -- Priests of Marr
+		e.other:Faction(105,-10,0); -- The Freeport Militia
+		e.other:Faction(184,15,0); -- Knight of Truth
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

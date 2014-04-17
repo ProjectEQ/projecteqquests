@@ -29,10 +29,10 @@ function event_trade(e)
 		e.self:Say("Welcome, friend, to the Temple of Thunder. Here, you can practice your skills and learn the ways of Karana. Take this tunic and wear it with pride, for you are now a Priest of Thunder. Guild Trainer Daedet Losaren will begin your tutoring, see him when you are ready. Once you are ready to begin your hunting training please see Vansted Rohenga, he will assist you in some tasks for your early adventures. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available for you.");
 		e.other:SummonItem(13505); -- Old Gray Tunic*
 		e.other:Ding();
-		e.other:Faction(183,10,0); -- Knight of Thunder
-		e.other:Faction(21,-15,0); -- Bloodsabers
-		e.other:Faction(257,10,0); -- Priest of Life
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(183,100,0); -- Knight of Thunder
+		e.other:Faction(21,-100,0); -- Bloodsabers
+		e.other:Faction(257,75,0); -- Priest of Life
+		e.other:Faction(135,75,0); -- Guards of Qeynos
 		e.other:AddEXP(100);
 	end
 	

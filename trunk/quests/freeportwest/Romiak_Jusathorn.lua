@@ -33,8 +33,8 @@ function event_trade(e)
 		e.self:Say("Greetings, I am Romiak Jusathorn, Master Enchanter of the Academy. Take this.. it's our guild robe; it will help protect you in this harsh environment. Once you are ready to begin your training please make sure that you see Shana Liskia, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13560); -- Old Violet Robe
 		e.other:Ding();
-		e.other:Faction(11,10,0); -- Arcane Scientists
-		e.other:Faction(184,10,0); -- Knights of Truth
+		e.other:Faction(11,100,0); -- Arcane Scientists
+		e.other:Faction(184,25,0); -- Knights of Truth
 		e.other:Faction(235,-15,0); -- Opal Dark Briar
 		e.other:Faction(105,-15,0); -- The Freeport Militia
 		e.other:AddEXP(100);

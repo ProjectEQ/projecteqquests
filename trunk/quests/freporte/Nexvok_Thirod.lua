@@ -11,9 +11,9 @@ function event_trade(e)
 		e.self:Say("Ah ha.. Fresh meat. here, put this on.. you're one of us now. Do your best to do your worst.");
 		e.other:SummonItem(13564); -- Dirty Torn Robe*
 		e.other:Ding();
-		e.other:Faction(86,10,0);
-		e.other:Faction(184,-15,0);
-		e.other:Faction(235,10,0);
+		e.other:Faction(86,100,0); -- Dismal Rage
+		e.other:Faction(184,-15,0); -- Knights of Truth
+		e.other:Faction(235,20,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

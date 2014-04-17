@@ -41,9 +41,9 @@ function event_trade(e)
 		e.self:Say("Lucky thing you weren't followed. or you'd be breathing through holes in your back right now. Go find Knargon, maybe you can help run the next [shipment]. Remember, we keep our business quiet, so watch yourself, sewer crawler.");
 		e.other:SummonItem(13501); -- Second Hand Tunic*
 		e.other:Ding();
-		e.other:Faction(33,10,0); -- Circle of Unseen Hands
+		e.other:Faction(33,100,0); -- Circle of Unseen Hands
 		e.other:Faction(217,-15,0); -- Merchants of Qeynos
-		e.other:Faction(53,10,0); -- Corrupt Qeynos Guards
+		e.other:Faction(53,15,0); -- Corrupt Qeynos Guards
 		e.other:Faction(135,-15,0); -- Guards of Qeynos
 		e.other:Faction(164,10,0); -- Kane Bayle
 		e.other:AddEXP(100);

@@ -11,9 +11,9 @@ function event_trade(e)
 		e.self:Say("A new member to carry the rage of Innoruuk into the city and beyond. How wonderful. I must admit that you do not appear to carry the rage within. Hopefully you shall color the battlefields with the blood of many knights from the Hall of Truth. Here. Wear this tunic with pride. Once you are ready to begin your training please make sure that yo see Gunex Eklar, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13561); -- Faded Crimson Tunic
 		e.other:Ding();
-		e.other:Faction(86,10,0); -- Dismal Rage
+		e.other:Faction(86,100,0); -- Dismal Rage
 		e.other:Faction(184,-15,0); -- Knights of Truth
-		e.other:Faction(235,10,0); -- Opal Dark Briar
+		e.other:Faction(235,20,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18961})) then -- Translated Parchment
 		e.self:Say("I will deal with this " .. e.other:GetName() .. ". Take this and know that you are welcomed by the Dismal Rage.");

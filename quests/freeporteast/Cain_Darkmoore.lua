@@ -45,11 +45,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the Steel Warriors, young warrior. It is time to prove your mettle. Look to the outskirts of Freeport and join the fray. Show Clan Deathfist what a warrior of the bunker can do. Once you are ready to begin your training please make sure that you see Arinna Trueblade, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13572); -- Dirty Training Tunic
 		e.other:Ding();
-		e.other:Faction(311,10,0); -- Steel Warriors
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(311,100,0); -- Steel Warriors
+		e.other:Faction(135,20,0); -- Guards of Qeynos
 		e.other:Faction(53,-15,0); -- Corrupt Qeynos Guards
 		e.other:Faction(105,-15,0); -- Freeport Militia
-		e.other:Faction(184,10,0); -- Knights of Truth
+		e.other:Faction(184,20,0); -- Knights of Truth
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

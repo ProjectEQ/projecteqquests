@@ -40,11 +40,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the Temple of Life. You have much to learn and we have much work to do. Pain, hurt, disease and death lurk everywhere, our job is seemingly endless, but none is more gratifying. Here is our guild tunic, represent us well. Davloran Girionlis will help you to get started. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available for you.");
 		e.other:SummonItem(13506); -- Faded Tunic*
 		e.other:Ding();
-		e.other:Faction(257,10,0); -- Priest of Life
-		e.other:Faction(183,10,0); -- Knight of Thunder
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(21,-15,0); -- Bloodsabers
-		e.other:Faction(9,10,0); -- Antonius Bayle
+		e.other:Faction(257,100,0); -- Priest of Life
+		e.other:Faction(183,30,0); -- Knight of Thunder
+		e.other:Faction(135,50,0); -- Guards of Qeynos
+		e.other:Faction(21,-25,0); -- Bloodsabers
+		e.other:Faction(9,15,0); -- Antonius Bayle
 		e.other:AddEXP(100);
 	elseif(fac <= 3) then -- Require kindly or greater faction 
 		if(item_lib.check_turn_in(e.trade, {item1 = 13324,item2 = 13325})) then -- Pestilence Scythe ID: 13324 # Decaying Heart ID: 13325

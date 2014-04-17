@@ -33,9 +33,9 @@ function event_trade(e)
 		e.self:Say("Welcome to the Priests of Marr. Here, you will be taught how powerful passion truly is. The passion of Erollisi Marr, the Queen of Love, shall flow through you and into all those you meet. Wear this tunic in the name of Love. Once you are ready to begin your training please make sure that yo see Salinsa Delfdosan, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13556);
 		e.other:Ding();
-		e.other:Faction(258,10,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,10,0);
+		e.other:Faction(258,100,0); -- priest of marr
+		e.other:Faction(105,-10,0); -- freeport militia
+		e.other:Faction(184,15,0); -- knight of truth
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -31,9 +31,9 @@ function event_trade(e)
 		e.self:Say("Here we find a new follower.. Here we find a tunic of the Dismal Rage. Put the two together and let the hate grow. Let it be known from now on that your soul belongs to the Prince of Hate, Innoruuk. It is his power which flows within you. Destroy all those who oppose us. Please introduce your hate to the others in this shrine. Once you are ready to begin your training please make sure that you see Zhem Xecia, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13561); -- Faded Crimson Tunic
 		e.other:Ding();
-		e.other:Faction(86,10,0); -- Dismal Rage
+		e.other:Faction(86,100,0); -- Dismal Rage
 		e.other:Faction(184,-15,0); -- Knights of Truth
-		e.other:Faction(235,10,0); -- Opal Dark Briar
+		e.other:Faction(235,20,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

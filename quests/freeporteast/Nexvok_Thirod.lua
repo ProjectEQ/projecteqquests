@@ -29,9 +29,9 @@ function event_trade(e)
 		e.self:Say("Ah ha.. Fresh meat. here, put this on.. you're one of us now. Do your best to do your worst.  Once you are ready to begin your training please make sure that you see Marv Orilis, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13564); -- Dirty Torn Robe*
 		e.other:Ding();
-		e.other:Faction(86,10,0);
-		e.other:Faction(184,-15,0);
-		e.other:Faction(235,10,0);
+		e.other:Faction(86,100,0); -- Dismal Rage
+		e.other:Faction(184,-15,0); -- Knights of Truth
+		e.other:Faction(235,20,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -34,10 +34,10 @@ function event_trade(e)
 		e.self:Say("Welcome, we are the Protectors of the Pine. Wear this tunic of our guild, and help us defend our great and beautiful woods. Go to Larsk Juton, he will help train you and teach you the power of the woods.");
 		e.other:SummonItem(13509);
 		e.other:Ding();
-		e.other:Faction(265,10,0); -- Protectors of Pine
-		e.other:Faction(159,10,0); -- Jaggedpine Treefolk
+		e.other:Faction(265,100,0); -- Protectors of Pine
+		e.other:Faction(159,25,0); -- Jaggedpine Treefolk
 		e.other:Faction(279,-15,0); -- Sabertooths of Blackburrow
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(135,25,0); -- Guards of Qeynos
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13913})) then
 		e.self:Say("His days of hunting are over. In the name of the Protectors of the Pine, I offer you this reward. If you are unable to make use of it, you may sell it. I suggest you hold onto it. If you are a ranger it will come in handy.");

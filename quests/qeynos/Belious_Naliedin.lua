@@ -45,11 +45,11 @@ function event_trade(e)
 		e.self:Say("Good day friend, and welcome to the Wind Spirit's Song. Thank you for joining our cause. Go speak with Jusean Evanesque. I'm sure you'll fit in well. And once you are ready to test your hunting and gathering abilities please see Sollari Bekines, she will have some work for you. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13502); -- #Brown Tunic*
 		e.other:Ding();
-		e.other:Faction(192,10,0); -- League of Antonican Bards
-		e.other:Faction(184,10,0); -- Knights of Truth
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(273,-15,0); -- Ring of Scale
-		e.other:Faction(207,-15,0); -- Mayong Mistmoore
+		e.other:Faction(192,100,0); -- League of Antonican Bards
+		e.other:Faction(184,15,0); -- Knights of Truth
+		e.other:Faction(135,15,0); -- Guards of Qeynos
+		e.other:Faction(273,-5,0); -- Ring of Scale
+		e.other:Faction(207,-5,0); -- Mayong Mistmoore
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20374})) then
 		e.self:Say("A famous bard, you say? Why you must be seeking none other than the great Baenar Swiftsong! He is not here as you can see. Mayhap you seek an audience with him? He is a busy man and has not the time to speak with everyone who wishes to preoccupy his time with useless prattle! You are many and he is but one! Leave him be, I beg of you, to continue his songwriting in peace.");

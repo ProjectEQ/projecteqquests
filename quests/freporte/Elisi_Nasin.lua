@@ -14,11 +14,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the Coalition of Tradesfolk underground. We like to keep a low profile around here and not draw any unneeded attention to our operations. you following me? I hope so. for your sake. Anyways. Nestral T'Gaza is in charge with helping out our newest members. Go see her as soon as you get a chance.");
 		e.other:SummonItem(13568); -- Brown Faded Tunic
 		e.other:Ding();
-		e.other:Faction(48,10,0); --Coalition of TradeFolk Underground
-		e.other:Faction(47,10,0); --Coalition of Trade Folk
+		e.other:Faction(48,100,0); --Coalition of TradeFolk Underground
+		e.other:Faction(47,100,0); --Coalition of Trade Folk
 		e.other:Faction(31,10,0); --Carson McCabe
-		e.other:Faction(53,10,0); --Corrupt Qeynos Guards
-		e.other:Faction(105,10,0); --The Freeport Militia
+		e.other:Faction(53,5,0); --Corrupt Qeynos Guards
+		e.other:Faction(105,15,0); --The Freeport Militia
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

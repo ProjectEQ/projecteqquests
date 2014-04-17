@@ -43,10 +43,10 @@ function event_trade(e)
 		e.self:Say("Welcome to the Guild, here's your guild tunic. Once you are ready to begin your training please make sure that yo see Edwardian Holyblade, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13554); --Faded Purple Tunic*
 		e.other:Ding();
-		e.other:Faction(184,10,0); --Knight of Truth
+		e.other:Faction(184,100,0); --Knight of Truth
 		e.other:Faction(86,-15,0); --Dimal Rage
 		e.other:Faction(105,-15,0); --The Freeport Militia
-		e.other:Faction(258,10,0); --Priests of Marr
+		e.other:Faction(258,20,0); --Priests of Marr
 		e.other:Faction(311,10,0); --Steel Warriors
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 6701})) then --a dusty old leg bone

@@ -24,13 +24,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if(plugin::check_handin(\%itemcount, 18760 => 1)) {
     quest::say("Greetin's! We are the mighty Wolves o' the North, protectors o' Halas, and we must work hard t' keep it safe fer our citizens. Here is our tunic, it identifies ye as a proud warrior o' this great city. Once you are ready to begin your training please make sure that you see Lysbith, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-		quest::ding();
+	quest::ding();
     quest::summonitem(13511);
-    quest::faction(361,10); # Wolves of the North
-		quest::faction(294,10); # Shamen of Justice
-		quest::faction(213,10); # Merchants of Halas
-		quest::faction(311,10); # Steel Warriors
-		quest::exp(100);
+	quest::faction(361,100); # Wolves of the North
+	quest::faction(294,20); # Shamen of Justice
+	quest::faction(213,25); # Merchants of Halas
+	quest::faction(311,5); # Steel Warriors
+	quest::exp(100);
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

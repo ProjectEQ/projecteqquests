@@ -35,11 +35,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the Hall of Steel, our swords are strong, and our warriors stronger. Here is our guild tunic. Brin Stolunger is in charge of our new recruits. Go see him, and he'll teach the basics. You look like you'll make a fine addition to our guild. Once you are ready to pave your path to glory return to me for some initial armor quests. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13572); -- Dirty Training Tunic*
 		e.other:Ding();
-		e.other:Faction(311,10,0); -- Steel Warriors
-		e.other:Faction(135,10,0); -- Guard of Qeynos
+		e.other:Faction(311,100,0); -- Steel Warriors
+		e.other:Faction(135,20,0); -- Guard of Qeynos
 		e.other:Faction(53,-15,0); -- Corrupted Qeynos Guard
 		e.other:Faction(105,-15,0); -- The Freeport Militia
-		e.other:Faction(184,10,0); -- Knight of Truth
+		e.other:Faction(184,20,0); -- Knight of Truth
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13423})) then
 		e.self:Say("The map!! It is all blurred. The ink has run. I shall never be able to decipher it now. Still, I owe you for completion of your mission. May these be of assistance. It is always good for a warrior to be well supplied.");

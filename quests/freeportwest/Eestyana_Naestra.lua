@@ -54,11 +54,11 @@ function event_trade(e)
 		e.self:Say("The Truthbringer welcomes you into his life. Here is the tunic of Marr. Wear it with pride and be sure to conduct yourself with valor. Once you are ready to begin your training please make sure that yo see Salinsa Delfdosan, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13554); -- Faded Purple Tunic*
 		e.other:Ding();
-		e.other:Faction(184,10,0); -- Knight of Truth
-		e.other:Faction(86,-15,0); -- Dismal Rage
-		e.other:Faction(105,-15,0); -- Freeport Militia
-		e.other:Faction(258,10,0); -- Priest of Marr
-		e.other:Faction(311,10,0); -- Steel Warriors
+		e.other:Faction(184,100,0); -- knight of truth
+		e.other:Faction(86,-15,0); -- dismal rage
+		e.other:Faction(105,-15,0); -- freeport militia
+		e.other:Faction(258,20,0); -- priest of marr
+		e.other:Faction(311,10,0); -- steel warrior
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

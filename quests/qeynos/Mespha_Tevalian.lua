@@ -28,9 +28,9 @@ function event_trade(e)
 		e.self:Say(string.format("Greetings %s. Welcome to the Hall of Sorcery. You have much to learn. Wear this tunic and represent us well. See my apprentice, Unsar Koldhagon, he will get you started and help you with your studies. Once you are ready to begin your hunting training please see Juegile Sohgohm, he will assist you in some tasks for your early adventures. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.",e.other:GetName()));
 		e.other:SummonItem(13542); -- Faded Blue Robe*
 		e.other:Ding();
-		e.other:Faction(240,10,0); -- Order of Three
-		e.other:Faction(21,-15,0); -- Bloodsabers
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(240,100,0); -- Order of Three
+		e.other:Faction(21,-25,0); -- Bloodsabers
+		e.other:Faction(135,15,0); -- Guards of Qeynos
 		e.other:Faction(235,-15,0); -- Opal Dark Briar
 		e.other:AddEXP(100);
 	end

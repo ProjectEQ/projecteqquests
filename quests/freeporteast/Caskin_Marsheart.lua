@@ -27,10 +27,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the guild. here's your guild tunic. Once you are ready to begin your training please make sure that you see Sten Harnak, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13571);
 		e.other:Ding();
-		e.other:Faction(322,1,0);
-		e.other:Faction(165,-1,0);
-		e.other:Faction(149,-1,0);
-		e.other:Faction(316,1,0);
+		e.other:Faction(192,100,0);
+		e.other:Faction(184,15,0);
+		e.other:Faction(135,15,0);
+		e.other:Faction(273,-5,0);
+		e.other:Faction(207,-5,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -43,7 +43,7 @@ sub EVENT_TIMER {
 		quest::signal(211104);
 	}
 	if($timer == 1 && $badguys == 9) {
-		quest::spawn2(211105,0,0,456,1374,-133,65.5); #hail version of Rhaliq
+		quest::spawn2(211105,0,0,456,1374,-113,65.5); #hail version of Rhaliq
 		quest::updatespawntimer(211050,259200000); #Rhaliq Trell 3 days on win
 		$villager=undef;
 		$badguys=undef;

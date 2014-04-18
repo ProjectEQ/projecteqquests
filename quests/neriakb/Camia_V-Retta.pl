@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     quest::say("Greetings, and welcome to the Tower of the Spurned! I am Camia V'Retta, master enchantress. Here is your guild tunic, wear it with pride. Once you are ready to begin your training please make sure that you see Morgalanth Tal'Raeloen, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::ding();
     quest::summonitem(13582); #Ruined Red Robe*
-		quest::faction(331,10); #The Spurned
+		quest::faction(331,100); #The Spurned
 		quest::faction(322,-15); #The Dead
     quest::exp(100);
   }

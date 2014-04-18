@@ -38,10 +38,10 @@ function event_trade(e)
 		e.self:Say("Welcome to the Storm Reapers " .. e.other:GetName() .. "! Here is a tunic to keep you warm in your travels. Rivervale, our lovely home is facing dangerous times. From both the east and west forces devoted to the evil Gods Bertoxxulous adn Innoruuk are corrupting and destroying the wilds of Norrath. Also, the Orcs of Clan Deathfist are waging war on this entire region and gathering lumber and stone for some unknown purpose. We must do our best to preserve the lands and way of life of all Karanas people. Once you are ready to begin defending the vale against the [evil forces], please return to me. I also posses knowledge of various [trades], seek me out when you wish to learn about them.");
 		e.other:SummonItem(13541); -- Jumjum Sack Tunic*
 		e.other:Ding();
-		e.other:Faction(316,10,0);
-		e.other:Faction(208,10,0);
-		e.other:Faction(218,10,0);
-		e.other:Faction(347,-15,0);
+		e.other:Faction(316,100,0); -- +Storm Reapers
+		e.other:Faction(208,10,0); -- +Mayor Gubbin
+		e.other:Faction(218,15,0); -- +Merchants of Rivervale
+		e.other:Faction(347,-15,0); -- -Unkempt Druids
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19622,item2 = 19622,item3 = 19623,item4 = 19623})) then -- Handin 2 Orc LumberJack Axes and 2 Orc LumberJack Machetes
 		e.self:Say("Excellent work young Storm Reaper " .. e.other:GetName() .. ". Now take this Dull Storm Reaper Machete to a [forge] and sharpen it with a sharpening stone. It may take several attempts to get the blade to an adequate sharpness if you are unfamiliar with the process. Once it is sharpened give it to Bodbin Gimple with a ruined thorn drakeling scales and he will put the finishing touches on what will be a fine weapon!");

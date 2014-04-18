@@ -40,9 +40,9 @@ function event_trade(e)
 		e.self:Say("Karana smiles upon you young " .. e.other:GetName() .. "! Take this tunic to keep you warm through the storms you must face. There is evil encroaching upon the lands of Karana's faithful. The wicked minions of Bertoxxulous and the Teir'Dal children of Hate corrupt the lands to the west and east, and the Deathfist Clan of Orcs are waging war on this region while destoying the wilderness for lumber and stone. It is Karana's will that we defend our lands and way of life from these evil threats. When you are ready to begin adventuring, I will be happy to advise you on how to help us deal with the [evil forces]. I also posses knowledge of various [trades], seek me out when you wish to learn about them.");
 		e.other:SummonItem(13541); -- Jumjum Sack Tunic*
 		e.other:Ding();
-		e.other:Faction(316,10,0); -- +Storm Reapers
+		e.other:Faction(316,100,0); -- +Storm Reapers
 		e.other:Faction(208,10,0); -- +Mayor Gubbin
-		e.other:Faction(218,10,0); -- +Merchants of Rivervale
+		e.other:Faction(218,15,0); -- +Merchants of Rivervale
 		e.other:Faction(347,-15,0); -- -Unkempt Druids
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19688})) then

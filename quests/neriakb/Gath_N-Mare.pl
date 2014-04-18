@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 		quest::say("I am Gath N'Mare, master wizard of the Tower of the Spurned. Welcome to our guild. Let's get started, shall we?  Here is your tunic, represent us well with it. Morgalanth Tal'Raeloen is our beginning guild trainer. He will teach you the basics and give you a solid learning foundation of magic. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::ding();
 		quest::summonitem(13584); #Stained Red Robe*
-		quest::faction(331,10); #The Spurned
+		quest::faction(331,100); #The Spurned
 		quest::faction(322,-15); #The Dead
 		quest::exp(100);
   }

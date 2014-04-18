@@ -33,9 +33,9 @@ function event_trade(e)
 		e.self:Say("Aye. Welcome. my fur-footed friend. My name is Beek Guinders. and I am guildmaster here at the Chapel of Mischief. Here is our guild tunic. Wear it with pride, as it will set you apart from the crowd. Once you are ready to begin your training please make sure that you see Thekela Meepup, she can assist you in experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [" .. eq.say_link("trades",false,"trades") .. "] you will have available to you.");
 		e.other:SummonItem(13538); -- Faded Gold Felt Tunic*
 		e.other:Ding();
-		e.other:Faction(259,10,0); -- Priest of Mischief
-		e.other:Faction(208,10,0); -- Mayor Gubbin
-		e.other:Faction(133,10,0); -- Guardian of the Vale
+		e.other:Faction(259,100,0); -- Priest of Mischief
+		e.other:Faction(208,15,0); -- Mayor Gubbin
+		e.other:Faction(133,15,0); -- Guardian of the Vale
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13045,item2 = 13782,item3 = 13782,item4 = 13758})) then -- Tattered Note
 		e.self:Say("Hey, great! You found the materials! We'll get to work right away. If you find any more, please come by again. Here's a little something for your troubles, friend.");

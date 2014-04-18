@@ -36,11 +36,11 @@ sub EVENT_ITEM {
 		quest::say("You wanna be part of the Ebon Mask, huh? Well, you'll need to impress me. Here's your guild tunic. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. Go find Hekzin, he'll have some work for you, I'm sure. Don't screw up, kid. That pretty face of yours would make a fine trophy, got it? Now, quit breathin' my air, and go get some work done.");
 		quest::ding();
 		quest::summonitem(13581); #Old Black Tunic*
-		quest::faction(90,10); #Ebon Mask
-		quest::faction(135,-15); #Guard of Qeynos
-		quest::faction(361,-15); #Wolves of the North
-		quest::faction(133,-15); #Guardians of the Vale
-		quest::faction(31,-15); #Carson McCabe
+		quest::faction(90,100); #Ebon Mask
+		quest::faction(135,-5); #Guard of Qeynos
+		quest::faction(361,-25); #Wolves of the North
+		quest::faction(133,-10); #Guardians of the Vale
+		quest::faction(31,-25); #Carson McCabe
 		quest::exp(100);
 	}
 	#do all other handins first with plugin, then let it do disciplines

@@ -67,11 +67,11 @@ function event_trade(e)
 		e.self:Say("HA! I asked that fool Denry to send me a professional, and this is what I get?!? Oh diddlepicks! That crotchety old coot never liked me anyway. And after all I've done for him! Hrrmf! Ah well, let's get you started and see what ya got, huh, kid? Here, wear this. Maybe I'll have Toelia break you in, huh? Yeah, that'll work! Go find her, and she'll put you to work. Just remember, we all earn our keep around here, or else it's back to hay farm for you! Oh yeah, tell her you're the [new dishwasher] so she knows you are on the level. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13539); -- Old Brown Vest*
 		e.other:Ding();
-		e.other:Faction(77,10,0); -- Deeppockets
-		e.other:Faction(33,10,0); -- Circle of Unseen Hands
-		e.other:Faction(218,-15,0); -- Merchants of Rivervale
-		e.other:Faction(48,10,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(31,10,0); -- Carson McCabe
+		e.other:Faction(77,100,0); -- Deeppockets
+		e.other:Faction(33,5,0); -- Circle of Unseen Hands
+		e.other:Faction(218,-5,0); -- Merchants of Rivervale
+		e.other:Faction(48,5,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(31,5,0); -- Carson McCabe
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 22693,item2 = 22694})) then
 		e.other:SummonItem(22695); -- Dirk of the Slickfinger

@@ -41,6 +41,7 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 18756 => 1)) { #Tattered Note
 		quest::say("Welcome, child of Hate. I am Perrir Zexus, High Priest. We all draw power from the very source that created us, the will of Innoruuk. Here, put on this tunic. It is the tunic of our guild. Once you are ready to begin your training please make sure that you see High Priest Alexandrian, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::ding();
+		quest::summonitem(13585); #Crimson Training Tunic*
 		quest::faction(256, 100); #Priests of Innoruuk
 		quest::faction(177, 15); #King Naythox Thex
 		quest::faction(258, -35); #Priests of Marr

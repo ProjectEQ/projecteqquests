@@ -16,7 +16,6 @@ end
 function event_death_complete(e)
 	-- leave out broken golem, The Tempest Reaver, and Irak_Altil
 	send_signal_to_all_npc_in_zone(3, {72078,72074,72012});
-	eq.set_timer("Shout",600000);	
 end
 
 function event_trade(e)

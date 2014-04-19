@@ -71,8 +71,8 @@ function event_trade(e)
 		e.self:Say("Greetings and welcome to the Deepwater Knights. Here is your guild tunic. Wear it with pride, and Prexus will keep a watchful eye on you. Go find sister Laoni, she will help you get started with your studies.");
 		e.other:Ding();
 		e.other:SummonItem(13544); --  Old Blue Tunic*
-		e.other:Faction(79,10,0); --  Deepwater Knights
-		e.other:Faction(145,10,0); 	--  High Council of Erudin
+		e.other:Faction(79,100,0); --  Deepwater Knights
+		e.other:Faction(145,15,0); 	--  High Council of Erudin
 		e.other:Faction(143,-15,0); --  Heretics
 		e.other:AddEXP(100);
 	end

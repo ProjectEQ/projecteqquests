@@ -29,11 +29,11 @@ sub EVENT_ITEM {
 		quest::say("You are welcomed into the fold.  Now go out, and prove yourself, young one.  You have much to learn about the Dark Truth. Once you are ready to begin your training please make sure that you see Faratain, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13573); # Blood Splattered Tunic
 		quest::ding();
-		quest::faction(143,10);  # Heretics
-		quest::faction(79,-15);  # Deepwater Knights
-		quest::faction(112,-15); # Gate Callers
-		quest::faction(56,-15);  # Craftkeepers
-		quest::faction(60,-15);  # Crimson Hands
+		quest::faction(143,100); # Heretics
+		quest::faction(79,-100); # Deepwater Knights
+		quest::faction(112,-100); # Gate Callers
+		quest::faction(56,-100); # Craftkeepers
+		quest::faction(60,-100); # Crimson Hands
 		quest::exp(100);
 	} 
 	#do all other handins first with plugin, then let it do disciplines

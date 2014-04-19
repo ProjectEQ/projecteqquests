@@ -38,9 +38,9 @@ function event_trade(e)
 		e.self:Say("Greetings. and welcome to the Temple of Divine Light! Here is your guild tunic. Serve Quellious well. Please see Lumi Stergnon - he has a task for you.");
 		e.other:SummonItem(13546); --  Faded Silver Tunic*
 		e.other:Ding();
-		e.other:Faction(247,10,0); --  Peace Keepers.
-		e.other:Faction(145,10,0); --  High Council of Erudin.
-		e.other:Faction(143,-15,0); --  Heretics.
+		e.other:Faction(247,100,0); --  Peace Keepers.
+		e.other:Faction(145,25,0); --  High Council of Erudin.
+		e.other:Faction(143,-25,0); --  Heretics.
 		e.other:AddEXP(100); 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 2049})) then --  rolled up strip of cloth
 		e.self:Say("This is important news indeed. It seems there is a tribe of cat men in the Stonebrunt Mountains that wishes to form an alliance with Erudin. I must alert the High Council of this immediately, thank you for your services."); 

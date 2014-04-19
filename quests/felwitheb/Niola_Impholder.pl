@@ -41,11 +41,11 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount,18777=> 1)) { # Enrollment Letter
     quest::say("Welcome. I am Niola Impholder. Master Magician of the Keepers of the Art. Here is our guild tunic. Once you are ready to begin your training please make sure that you see Yuin Starchaser, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
     quest::summonitem(13592); # Faded Training Robe*
-		quest::ding();
-		quest::faction(170,10); # Keepers of the Art
-		quest::faction(178,10); # King Tearis Thex
-		quest::faction(99,10); # Faydark's Champions
-		quest::faction(322,-15); # The Dead		
+	quest::ding();
+	quest::faction(170,100); # Keepers of the Art
+	quest::faction(178,25); # King Tearis Thex
+	quest::faction(99,15); # Faydark's Champions
+	quest::faction(322,-25); # The Dead
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount,18902=> 1)) {

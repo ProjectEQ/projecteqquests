@@ -25,9 +25,9 @@ function event_trade(e)
 		e.self:Say("Welcome to the Temple of Divine Light. I am Master Bulrious. Here. we study and spread the will of Quellious. Here is your guild tunic. Go find Jras Solsier. he will get you started with your first lesson.");
 		e.other:SummonItem(13546); -- Faded Silver Tunic*
 		e.other:Ding();
-		e.other:Faction(247,10,0); -- Peace Keepers
-		e.other:Faction(145,10,0); -- High Council of Erudin
-		e.other:Faction(143,-15,0); -- Heretics
+		e.other:Faction(247,100,0); -- Peace Keepers
+		e.other:Faction(145,25,0); -- High Council of Erudin
+		e.other:Faction(143,-25,0); -- Heretics
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

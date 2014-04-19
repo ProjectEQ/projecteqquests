@@ -24,22 +24,22 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/ritual/i) {
-    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
+    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} > 2)) {
       quest::say("While animating stone comes easy for us, sometimes we need an extremely powerful stone worker to help with the city. These stone servants were made through a ritual which combined the power of eight geomancers into a ninth. This geomancer would then imbue a stone worker with this power, resulting in a more powerful construct. We stopped doing the ritual when we discovered that it could take away our ability over time. If [" . quest::saylink("she") . "] has somehow figured out a way to absorb this power, then my people could be in more danger than I thought possible.");
     }
   }
   if ($text=~/she/i) {
-    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
+    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} > 2)) {
       quest::say("We refer to her as the silent one, but the legion calls her Xictic. She is one of their kind who can use magic and she seems to be quite feared by everyone in this area. She comes here sometimes and takes three of us into the building with the glowing dome around it. Along with her are eight magic-using invaders and some of the slavers. When they are finished, only members of the legion leave. None of my people who enter are ever seen again. If what this says is true, you must stop her. If she succeeds, she will be able to control our stone servants at will and cause even more destruction. I beg you to stop her. I will help you in any way if you [" . quest::saylink("promise") . "] to stop her.");
     }
   }
   if ($text=~/promise/i) {
-    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
+    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} > 2)) {
       quest::say("I cannot tell you how relieved this makes me. Now to the issue at hand. While Xictic and those she chooses can roam freely in and out of the magical dome surrounding the chamber, if anyone else tries to enter they are held back. As a councilman, I was granted a device that allows access into the dome and I've managed to keep it away from the prying eyes of the Mata Muram. Using it is not without its consequences, though. As soon as an outsider shows up within the dome, they will know what has occurred and will come searching for the culprit so be certain you are ready to face the challenges ahead before you embark upon this venture. Only eighteen of you will be allowed into the chamber at one time so gather your forces and tell me you are [" . quest::saylink("ready") . "] to face Xictic.");
     }
   }
   if ($text=~/ready/i) {
-    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 3)) {
+    if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} > 2)) {
       if (!$event_started && $entity_list->GetNPCByNPCTypeID(281077)) { #Pixtt_Xictic_Krvne (NoTarget)
         $raid = $entity_list->GetRaidByClient($client);
         if ($raid) {
@@ -83,7 +83,9 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 67403 => 1)) {
     quest::say("These glyphs look quite familiar. They are definitely in my language, but it seems as if the one who etched them did so against his will. Where did you get this? Wait, don't tell me. I know. Kreshin must have been successful in finding out what was going on in the Chamber of Souls. These glyphs detail how to animate stone using our geomancy abilities. There are some strange symbols toward the bottom, but for the most part, this is our language. Could he be trying to conduct the [ritual] of my people?");
-    quest::setglobal("bic_qin",3,5,"F");
+    if ($qglobals{bic_qin} < 3) {
+		quest::setglobal("bic_qin",3,5,"F");
+	}
   }
   plugin::return_items(\%itemcount);
 }

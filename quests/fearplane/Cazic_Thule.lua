@@ -13,6 +13,12 @@ function event_say(e)
 	end
 end
 
+function event_death_complete(e)
+	-- leave out broken golem, The Tempest Reaver, and Irak_Altil
+	send_signal_to_all_npc_in_zone(3, {72078,72074,72012});
+	eq.set_timer("Shout",600000);	
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 8226, item2 = 18898, item3 = 18899})) then

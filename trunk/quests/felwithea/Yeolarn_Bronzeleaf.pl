@@ -73,10 +73,10 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 18780 => 1)) { #Tattered Note
     quest::say("Welcome, friend, to the Clerics of Tunare. I am Yeolarn Bronzeleaf, head of the guild and devout follower of Tunare. Here is your guild tunic - it will help to protect you against this world's evils. Once you are ready to begin your training please make sure that you see Terren Starwatcher, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
     quest::summonitem(13590); #Faded Gold Training Tunic*
-		quest::ding();
-    quest::faction(43,10);  #Clerics of Tunare
-    quest::faction(178,10); #King Tearis Thex
-    quest::faction(8,10);   #Anti-mage
+	quest::ding();
+    quest::faction(43,100);  #Clerics of Tunare
+    quest::faction(178,100); #King Tearis Thex
+    quest::faction(8,75);   #Anti-mage
     quest::exp(100);
   }
   plugin::return_items(\%itemcount);

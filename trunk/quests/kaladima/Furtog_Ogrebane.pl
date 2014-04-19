@@ -38,11 +38,11 @@ sub EVENT_ITEM {
 		quest::say("Greetings, friend, and welcome to Stormguard Hall! I am Furtog Ogrebane, Captain of the Guard. We shall train you to be a fearless warrior, who will serve and protect King Kazon well. Here is your tunic. Once you are ready to begin your training please make sure that you see Dirjadak Barbrawler, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13515); # Dirt Stained Tunic*
 		quest::ding();
-		quest::faction(314,10); # Storm Guard
-		quest::faction(169,10); # Kazon Stormhammer
-		quest::faction(219,10); # Miners Guild 249
-		quest::faction(215,10); # Merchants of Kaladim
-		quest::faction(57,-15); # Craknek Warriors
+		quest::faction(314,100); # Storm Guard
+		quest::faction(169,15); # Kazon Stormhammer
+		quest::faction(219,15); # Miners Guild 249
+		quest::faction(215,25); # Merchants of Kaladim
+		quest::faction(57,-25); # Craknek Warriors
 		quest::exp(100);
 	}
    elsif (plugin::check_handin(\%itemcount, 13316 => 1, 13317 => 1)) { # Ogre Heads

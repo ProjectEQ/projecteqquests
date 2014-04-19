@@ -25,10 +25,10 @@ function event_trade(e)
 		e.self:Say("Welcome to the Craft Keepers! You have much to learn. and I'm sure you are anxious to get started. Here's your training robe. Go see Nolusia. she'll give you your first lesson.");
 		e.other:SummonItem(13549);
 		e.other:Ding();
-		e.other:Faction(56,10,0); -- Craftkeepers
+		e.other:Faction(56,100,0); -- Craftkeepers
 		e.other:Faction(145,10,0); -- High Council of Erudin
 		e.other:Faction(143,-15,0); -- Heretics
-		e.other:Faction(147,10,0); -- High Guard of Erudin
+		e.other:Faction(147,15,0); -- High Guard of Erudin
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

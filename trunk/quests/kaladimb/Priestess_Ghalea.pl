@@ -40,10 +40,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
    if (plugin::check_handin(\%itemcount,18765=> 1)) {
       quest::say("Welcome to the Underfoot Cathedral. I am High Priestess Ghalea. Here is your guild tunic. Now. let's get you started helping us spread the will of Brell. Once you are ready to begin your training plese make sure that you see Haldorak, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-      quest::summonitem("13514");
-      quest::faction(44,2); # Clerics of Underfoot
-      quest::faction(169,2);
-      quest::faction(219,2); 
+      quest::summonitem(13514);
+      quest::faction(44,100); # Clerics of Underfoot
+      quest::faction(169,100); # Kazon Stormhammer
+      quest::faction(219,75); # Miners Guild 249
+	  quest::exp(100);
    } elsif (plugin::check_handin(\%itemcount,12106=>4) && ($faction < 5)) {  # Fairy Dust -- NOT Fairy Princess Dust
       quest::say("May the mighty power of Brell saturate this soil with his divinity.  Here you are, my noble friend.  You may have a pouch of the soil of Underfoot.");
       quest::summonitem(12282);  # Soil of Underfoot

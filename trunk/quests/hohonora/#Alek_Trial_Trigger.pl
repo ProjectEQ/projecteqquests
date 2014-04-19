@@ -38,7 +38,7 @@ sub EVENT_TIMER {
 	}
 
 	if($timer == 2) {
-		quest::updatespawntimer(211060,86400000); #Alekson Garn 24 hours on fail
+		quest::updatespawntimer(44032,86400000); #Alekson Garn 24 hours on fail
 		quest::signal(211085,1);
 		quest::signal(211084,1);
 		quest::signal(211086,1);

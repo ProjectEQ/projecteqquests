@@ -47,11 +47,11 @@ sub EVENT_ITEM {
 		quest::say("I see they have begun to draft younger broodlings? Hmmph!! No matter. We Drill Masters shall make a warrior of you. Here is your partisan's pike and some coin as your wages. Be sure that you begin your training in blacksmithing and report to the other Drill Masters for any tasks they may have for you. Let them know you are [a partisan of Cabilis]. Perhaps soon you shall be rewarded the [militia pike].");
 		quest::summonitem(5130); #Partisan's Pike
 		quest::ding();
-		quest::faction(193,10); #Legion of Cabilis
-		quest::faction(30,10); #Cabilis Residents
-		quest::faction(282,10); #Scaled Mystics
-		quest::faction(62,10);	#Crusader of Greenmist
-		quest::faction(317,10); #Swift Tails
+		quest::faction(193,100); #Legion of Cabilis
+		quest::faction(30,25); #Cabilis Residents
+		quest::faction(282,25); #Scaled Mystics
+		quest::faction(62,25);	#Crusader of Greenmist
+		quest::faction(317,25); #Swift Tails
 		quest::exp(100);
 	}
 	elsif (plugin::check_handin(\%itemcount, 12675 =>1, 12677=>1, 5130=>1 )) {

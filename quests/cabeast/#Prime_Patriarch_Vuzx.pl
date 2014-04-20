@@ -78,8 +78,8 @@ sub EVENT_ITEM {
 		quest::say("The Hierophants have sensed that your spirit is strong with obedience inspiring fear! You must learn to harness your [powers] over the scaled wolves! Wear this tunic so that the Legion of Cabilis will recognize you as a Scaled Spiritist."); #Proper text still needed
 		quest::summonitem(13577); #Dusty Green Tunic
 		quest::ding();
-		quest::faction(282,10); #Scaled Mystics
-		quest::faction(193,10); #Legion of Cabilis
+		quest::faction(282,15); #Scaled Mystics
+		quest::faction(193,3); #Legion of Cabilis
 		quest::exp(100);
 	}
 	plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');

@@ -29,10 +29,10 @@ function event_trade(e)
 	   	e.self:Say("It's always good to see new blood eager to learn teh dark art of mind control. Please take this robe as a symbolization of loyalty to this house. Once you are ready to begin your training please make sure that you see Tilkzog Mournunder, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:Ding();
 		e.other:SummonItem(13524);	-- Dark Gold Felt Robe*
-		e.other:Faction(71,10,0); 	-- Dark reflection
-		e.other:Faction(91,-15,0); 	-- eldritch collective
-		e.other:Faction(115,-15,0); 	-- gem choppers
-		e.other:Faction(76,-15,0); 	-- Deepmuses
+		e.other:Faction(71,100,0); 	-- Dark reflection
+		e.other:Faction(91,-10,0); 	-- eldritch collective
+		e.other:Faction(115,-10,0); -- gem choppers
+		e.other:Faction(76,-10,0); 	-- Deepmuses
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 1360})) then
 		e.self:Say("Very nice!! It is perfect! Here take this pen. Have fun with it.");

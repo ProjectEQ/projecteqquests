@@ -39,8 +39,8 @@ sub EVENT_ITEM {
 		quest::say("Welcome into our brotherhood. Know you that our way is the way of pain. Do as we say and you shall climb the rungs of knighthood. Listen well to the Lords of Pain within this temple and follow the words of the hierophants, for Cazic-Thule speaks to us through them. Take this khukri. It is the chosen weapon of the Crusaders and can deliver great pain unto our foes. Go now and learn our ways. Seek out Lord Gikzic.");
 		quest::summonitem(5120); #Pawn's Khukri
 		quest::ding();
-		quest::faction(62,20); #Crusader of Greenmist
-		quest::faction(193,10); #Legion of Cabilis	
+		quest::faction(62,100); #Crusader of Greenmist
+		quest::faction(193,25); #Legion of Cabilis	
 		quest::exp(100);
 	}
 	elsif(plugin::check_handin(\%itemcount, 18051 => 1, 5126 => 1)) { #Test of the Lord (Greenmist Quest 7/8)

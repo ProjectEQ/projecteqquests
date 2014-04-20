@@ -13,7 +13,7 @@ end
 
 function event_waypoint_arrive(e)
 	-- waypoint number from gridid 57
-	if(e.wp == 16) then
+	if(e.wp == 15) then
 		-- set proximity to make sure the player is following close by.
 		eq.set_proximity(e.self:GetX()-45,e.self:GetX()+45,e.self:GetY()-45,e.self:GetY()+45,e.self:GetZ()-25,e.self:GetZ()+25);
 	elseif(e.wp == 19) then

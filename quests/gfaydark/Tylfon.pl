@@ -60,7 +60,7 @@ sub EVENT_ITEM {
       quest::say("Hmm.. I hope you can prove yourself a lot more valuable than you look. Here, throw this on.. it'll help protect you a little. Once you have become a bit more experienced, return to me, I have many things to teach you about advanced combat and some of the various [trades] you will have available to you.");
       quest::summonitem(13535); #Old Worn Gray Tunic*
       quest::ding();
-      quest::faction(283,10); #Tunare's Scouts
+      quest::faction(283,100); #Tunare's Scouts
       quest::exp(100);
    }
    elsif (plugin::check_handin(\%itemcount, 54019 => 1)) {

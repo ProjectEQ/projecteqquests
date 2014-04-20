@@ -38,10 +38,10 @@ function event_trade(e)
 		e.self:Say("A new rogue eh? Well put this tunic on and get to it! Once you are ready to begin your training please make sure that you see Morlan. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13518); 	-- Tin Patched Tunic*
 		e.other:Ding();
-		e.other:Faction(71,10,0); 	-- Dark Reflection
-		e.other:Faction(91,-15,0); 	-- Eldritch Collective
-		e.other:Faction(115,-15,0); -- Gem Choppers
-		e.other:Faction(76,-15,0); 	-- Deepmuses
+		e.other:Faction(71,100,0); 	-- Dark reflection
+		e.other:Faction(91,-10,0); 	-- eldritch collective
+		e.other:Faction(115,-10,0); -- gem choppers
+		e.other:Faction(76,-10,0); 	-- Deepmuses
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

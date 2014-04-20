@@ -32,7 +32,7 @@ sub EVENT_ITEM {
 		quest::say("Greetings. friend. I am Sylia.  I see that you wish to join our humble guild.  Good.  Here is a gift for you - your guild tunic.  Once you are ready to begin your training please make sure that you see Sarialiyn Tranquilsong, She can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instructd you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13534); #Faded Brown Tunic
 		quest::ding();
-		quest::faction(306,10); #Song Weavers
+		quest::faction(306,100); #Song Weavers
 		quest::exp(100);
 	}
 	if(plugin::check_handin(\%itemcount, 13099  => 4)) {

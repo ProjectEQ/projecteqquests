@@ -36,8 +36,8 @@ sub EVENT_ITEM {
 		quest::say("Another apprentice has reached rebirth. You now have become one with the Brood of Kotiz. We study the ancient writing of Kotiz. Through his writing we have found the power of the dark circles. Listen well to the scholars within this tower and seek the [Keepers Grotto] for knowledge of our spells. This drape shall be the sign to all Iksar that you walk with the Brood. Now go speak with Xydoz.");
 		quest::summonitem(12407); #Drape of the Brood
 		quest::ding();
-		quest::faction(24,10); #Brood of Kotiz
-		quest::faction(193,10); #Legion of Cabilis		
+		quest::faction(24,100); #Brood of Kotiz
+		quest::faction(193,25); #Legion of Cabilis		
 		quest::exp(100);
 	}
 	elsif(plugin::check_handin(\%itemcount, 12874 => 1, 4265 => 1)){

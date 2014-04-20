@@ -26,9 +26,9 @@ function event_trade(e)
 		e.self:Say("Yes, I just knew you'd see it my way, " .. e.other:GetName() .. ". Anyway, welcome to our little part of Ak'Anon's underworld. We have to pay a high price to keep our small orgainzation hidden, which keeps us all busy around here. Now throw this on, and let's put you to work. Once you are ready to begin your training please make sure that you come back to see me after collecting your initial supplies! I have many things to teach you that you would benefit from, from furthering your knowledge of our arts, to the various [trades] you will have available to you.");
 		e.other:SummonItem(13519);	-- Scuffed Tunic*
 		e.other:Ding();
-		e.other:Faction(76,10); 	-- Deep Muses
-		e.other:Faction(210,10); 	-- Merchants of Ak'Anon
-		e.other:Faction(115,10); 	-- Gem Choppers
+		e.other:Faction(76,100); 	-- Deep Muses
+		e.other:Faction(210,15); 	-- Merchants of Ak'Anon
+		e.other:Faction(115,15); 	-- Gem Choppers
 		e.other:Faction(71,-15); 	-- Dark Reflection
 		e.other:AddEXP(100);
 	end

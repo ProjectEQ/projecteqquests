@@ -26,11 +26,11 @@ function event_trade(e)
 		e.self:Say("Welcome! I am Juline Urncaller, I will help to guide you on your path to becoming a powerful enchanter. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of teh various [trades] you will have available to you. Once you are ready to begin your training please make sure that you see Xalirilan, he can assist you in developing your hunting and gathering skills.");
 		e.other:SummonItem(13522); 	-- Dirty Gold Felt Robe*
 		e.other:Ding();
-		e.other:Faction(91,10,0); 	-- eldritch collective
+		e.other:Faction(91,100,0); 	-- eldritch collective
 		e.other:Faction(71,-15,0); 	-- Dark reflection
-		e.other:Faction(322,-15,0);	-- the dead
-		e.other:Faction(115,10,0); 	-- gem choppers
-		e.other:Faction(176,10,0); 	-- king ak'anon
+		e.other:Faction(322,-5,0);	-- the dead
+		e.other:Faction(115,15,0); 	-- gem choppers
+		e.other:Faction(176,15,0); 	-- king ak'anon
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

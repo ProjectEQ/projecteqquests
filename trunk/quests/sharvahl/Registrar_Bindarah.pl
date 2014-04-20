@@ -61,7 +61,7 @@ sub EVENT_ITEM
     quest::say("Oh, by the way, be careful with this as it will be important for recording your service to our society. If you should somehow lose it, ask me about your slate and I will issue you a new one.");
     quest::ding();
     # Citizens of Sharvahl
-    quest::faction(483,10);
+    quest::faction(483,400);
     quest::exp(100);
   }
   plugin::return_items(\%itemcount);

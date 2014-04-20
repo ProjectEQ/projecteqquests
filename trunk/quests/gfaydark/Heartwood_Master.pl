@@ -29,9 +29,9 @@ sub EVENT_ITEM {
 		quest::say("Welcome! We are the Soldiers of Tunare, the sworn protectors of Faydark. I thank you for joining our cause, we can always use the help. Once you are ready to begin your training please make sure that you see Aliafya Mistrunner, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13537); #Green and Tan Tunic
 		quest::ding();
-		quest::faction(304,10); #soldier of Tunare
-		quest::faction(178,10); #King Tearis Thex
-		quest::faction(99,10);  #Faydark's Champions
+		quest::faction(304,100); #soldier of Tunare
+		quest::faction(178,15); #King Tearis Thex
+		quest::faction(99,15);  #Faydark's Champions
 		quest::exp(100);
 	}
 	if(plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {

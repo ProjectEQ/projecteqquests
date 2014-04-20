@@ -26,10 +26,10 @@ function event_trade(e)
 		e.self:Say("Hmmm.. As you wish, we will train you in our dark ways, but, now this, our art carries a high price, and there is no turning back for you now. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. Once you are ready to begin your training please make sure that you see Tilkzog Mournunder, he can assist you in developing your hunting and gathering skills.");
 		e.other:SummonItem(13524); 	-- Dark Gold Felt Robe*
 		e.other:Ding();
-		e.other:Faction(71,10,0); 	-- Dark Reflection
-		e.other:Faction(91,-15,0); 	-- Eldritch Collective
-		e.other:Faction(115,-15,0);	-- Gem Choppers
-		e.other:Faction(76,-15,0); 	-- Deepmuses
+		e.other:Faction(71,100,0); 	-- Dark reflection
+		e.other:Faction(91,-10,0); 	-- eldritch collective
+		e.other:Faction(115,-10,0); -- gem choppers
+		e.other:Faction(76,-10,0); 	-- Deepmuses
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

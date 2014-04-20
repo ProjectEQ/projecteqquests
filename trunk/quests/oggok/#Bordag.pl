@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::say("You strong and mean like bear!  You wear bear fur so all know you beastlord o' da Feerrott!  Talk to Grapok and get to work!"); 
     quest::summonitem(13575); #Bear Fur Tunic
 		quest::ding();
-		quest::faction(295,5); # Shaman of War
+		quest::faction(295,15); # Shaman of War
 		quest::exp(100);
   }
   #do all other handins first with plugin, then let it do disciplines

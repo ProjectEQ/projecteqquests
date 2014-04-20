@@ -31,11 +31,11 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18789 => 1)) {
     quest::say("Soonog own you now.. fight for Soonog.. Soonog make you strong.. When you ready for task you tell Soonog.  Soonog army rule all!! You return to me when you stronger, I teach you many things I know, including how to start working in the various [trades].");
     quest::summonitem(13527);
-		quest::faction(128,5);  # Green Blood Knight
-		quest::faction(46,5);   # Clurg
-		quest::faction(314,-10); # Storm Guard
-		quest::faction(292,-10); # Shadowknight of Night Keep
-		quest::ding();
+	quest::faction(128,100);  # Green Blood Knight
+	quest::faction(46,50);   # Clurg
+	quest::faction(314,-15); # Storm Guard
+	quest::faction(292,-15); # Shadowknight of Night Keep
+	quest::ding();
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 13410 => 4)) {

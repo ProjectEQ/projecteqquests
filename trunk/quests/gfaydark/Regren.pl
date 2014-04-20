@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 		quest::say("Welcome to the Emerald Warriors. Hmmm, you have a lot of training to do, so let's get started right away. Here's our guild tunic, represent us well, young $name. Once you are ready to begin your training please make sure that you see Josylyn Greenblade, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13533); #Old Green Tunic
 		quest::ding();
-		quest::faction(92,10); #Emerald Warriors
+		quest::faction(92,100); #Emerald Warriors
 		quest::faction(155,-15); #Indigo Brotherhood
 		quest::faction(212,10); #Merchants of Felwithe
 		quest::faction(174,10);  #Kelethin Merchants

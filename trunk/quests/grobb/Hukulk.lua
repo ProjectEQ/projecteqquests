@@ -33,9 +33,9 @@ function event_trade(e)
 		e.self:Say("Haaah!! Bow to Hukulk!! Hukulk make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood!");
 		e.other:SummonItem(13530);	-- Black and Green Tunic*
 		e.other:Ding();
-		e.other:Faction(292,5,0);	-- Shadowknights of Night Keep
-		e.other:Faction(128,5,0);	-- Green Blood Knights
-		e.other:Faction(22,-10,0);	-- Broken Skull Clan
+		e.other:Faction(292,100,0);	-- Shadowknights of Night Keep
+		e.other:Faction(128,-15,0);	-- Green Blood Knights
+		e.other:Faction(22,-25,0);	-- Broken Skull Clan
 		e.other:Faction(66,5,0);	-- Da Bashers
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13073, item2 = 13073, item3 = 13073, item4 = 13073})) then -- Bone Chips
@@ -43,7 +43,7 @@ function event_trade(e)
 		e.other:SummonItem(5023);	-- Rusty Two Handed Sword
 		e.other:Ding();
 		e.other:Faction(292,10,0);	-- Shadowknights of Night Keep
-		e.other:Faction(128,10,0);	-- Green Blood Knights
+		e.other:Faction(128,-10,0);	-- Green Blood Knights
 		e.other:Faction(22,-25,0);	-- Broken Skull Clan
 		e.other:Faction(66,10,0);	-- Da Bashers
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 12201, item2 = 12202})) then -- Happy Love Bracers and Troll Head(Lumpin)
@@ -51,7 +51,7 @@ function event_trade(e)
 		e.other:SummonItem(3316);	-- Helm of Hukulk
 		e.other:Ding();
 		e.other:Faction(292,10,0);	-- Shadowknights of Night Keep
-		e.other:Faction(128,10,0);	-- Green Blood Knights
+		e.other:Faction(128,-10,0);	-- Green Blood Knights
 		e.other:Faction(22,-15,0);	-- Broken Skull Clan
 		e.other:Faction(66,10,0);	-- Da Bashers
 		e.other:AddEXP(250);

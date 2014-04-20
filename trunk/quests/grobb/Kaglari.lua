@@ -45,9 +45,9 @@ function event_trade(e)
 		e.self:Say("Good.. Kaglari need you help.. Kaglari teach you majik now.  When you ready for task you tell Kaglari!!  Yooz reeturn to mez when yooz ar strongur, mez teech yooz bout da mor advanced tings.");
 		e.other:SummonItem(13529); -- Muck Stained Tunic
 		e.other:Ding();
-		e.other:Faction(70,5,0);  -- +Dark Ones
-		e.other:Faction(292,5,0);  -- +Shadowknights of Night Keep
-		e.other:Faction(106,-10,0); -- -Frogloks of Guk
+		e.other:Faction(70,100,0);  -- +Dark Ones
+		e.other:Faction(292,25,0);  -- +Shadowknights of Night Keep
+		e.other:Faction(106,-15,0); -- -Frogloks of Guk
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -78,7 +78,7 @@ sub EVENT_ITEM {
       quest::faction(220, 100); # Miners Guild 628
       quest::faction(33, -5); # Circle of Unseen Hands
       quest::faction(29, -5); # Butcherblock Bandits
-      quest::faction(77, 5; # Deeppoockets
+      quest::faction(77, 5); # Deeppoockets
       quest::faction(90, -15); # Ebon Mask
       quest::exp(100);
    }

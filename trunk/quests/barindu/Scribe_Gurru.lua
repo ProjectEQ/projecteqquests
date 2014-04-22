@@ -70,4 +70,6 @@ function event_say(e)
 			end
 		end
 	end
+	eq.spawn2(283052, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+	eq.depop();
 end

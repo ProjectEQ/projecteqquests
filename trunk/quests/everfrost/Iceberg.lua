@@ -6,8 +6,7 @@ function event_timer(e)
 	entity_list = eq.get_entity_list();
 
 	if(e.timer == "follow") then
-		local opponentID = 30061;
-		local mobtypeID =  entity_list:GetMobByNpcTypeID(opponentID);
+		local mobtypeID =  entity_list:GetMobByNpcTypeID(30061);
 		local follow_mob = mobtypeID:GetID();
 		eq.follow(follow_mob);
 		eq.stop_timer("follow");
@@ -18,6 +17,8 @@ function event_combat(e)
 	if(e.joined == true) then
 		e.self:Say("Grrroarrr !!");
 		eq.signal(30061,1);
+	else
+		eq.signal(30061,3);
 	end
 end
 

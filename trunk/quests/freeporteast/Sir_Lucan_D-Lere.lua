@@ -7,7 +7,7 @@ function event_say(e)
 end
 
 function event_death_complete(e)
-	eq.spawn(382244, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ());
+	eq.spawn2(382244, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ());
 end
 
 function event_trade(e)

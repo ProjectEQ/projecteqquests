@@ -1,4 +1,5 @@
 sub EVENT_SPAWN {
+	quest::spawn2(211081,0,0,-2418,1751,-150,0); #Alek_Trial_Trigger
 	quest::settimer(1,7200);
 	quest::say("Fools!");
 	}

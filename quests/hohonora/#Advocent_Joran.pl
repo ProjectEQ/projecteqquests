@@ -11,5 +11,6 @@ sub EVENT_DEATH_COMPLETE {
 		quest::spawn2(202368,0,0,$x,$y,$z,$h);
 		quest::updatespawntimer(44032,259200000); #Alekson Garn 3 days on win
 		$bossman=undef;
+		quest::depopall(211081); #Alek_Trial_Trigger
 	}
 }

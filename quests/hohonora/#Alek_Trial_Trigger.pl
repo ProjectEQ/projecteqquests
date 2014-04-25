@@ -1,3 +1,5 @@
+# #Alek_Trial_Trigger (211081)
+
 my $varone = 0;
 my $vartwo = 0;
 my $varthree = 0;
@@ -54,6 +56,7 @@ sub EVENT_TIMER {
 		$varone=undef;
 		$vartwo=undef;
 		$varthree=undef;
+		quest::depop();
 	}
 }
 

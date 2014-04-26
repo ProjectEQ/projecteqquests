@@ -25,9 +25,9 @@ function event_trade(e)
 		e.self:Say("Greetings, and welcome to the Silent Fist Clan. Don our guild tunic, purge your mind and soul, and begin your lifelong devotion to the Clan. Brother Esrinap will introduce you to our lifestyle and begin your training. Be sound, allow your spirit to open up and guide you.");
 		e.other:SummonItem(13507); -- Torn Cloth Tunic*
 		e.other:Ding();
-		e.other:Faction(300,10,0); -- Silent Fist Clan
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(12,10,0); -- Ashen Order
+		e.other:Faction(300,100,0); -- Silent Fist Clan
+		e.other:Faction(135,15,0); -- Guards of Qeynos
+		e.other:Faction(12,15,0); -- Ashen Order
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

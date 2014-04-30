@@ -94,10 +94,11 @@ $qglobals{pop_time_maelin}=undef;
 
 sub EVENT_ITEM {
 
-	if(defined $qglobals{pop_poj_valor_storms} && $qglobals{pop_poj_valor_storms} == 1 && !defined $qglobals{pop_pos_askr_the_lost}) {
+	if(defined $qglobals{pop_poj_valor_storms} && $qglobals{pop_poj_valor_storms} == 1) {
 
-		if(plugin::check_handin(\%itemcount, 11486 => 1) || plugin::check_handin(\%itemcount,28749 => 1) || plugin::check_handin(\%itemcount,28781 => 1) || plugin::check_handin(\%itemcount,28782 => 1)){	#check for any of the 4 storm giant heads in the database
+		if(!defined $qglobals{pop_pos_askr_the_lost} && (plugin::check_handin(\%itemcount, 11486 => 1) || plugin::check_handin(\%itemcount,28749 => 1) || plugin::check_handin(\%itemcount,28781 => 1) || plugin::check_handin(\%itemcount,28782 => 1))){	#check for any of the 4 storm giant heads in the database
 			quest::say("The drunken stupor that Askr had been in earlier appears to vanish in an instant; a glimmer of hope now flashes in the depths of his eyes. 'This is the head of a giant. . . a storm giant from outside the caves.' Askr ponders what this revelation could mean. He mutters to himself, 'If it is possible that someone has indeed bested a giant here in the planes, then perhaps it is possible. . .' He looks back at you very sternly and asks, 'Tell me now and be truthful, was it you who severed the head of this giant from his body?'");
+			
 			quest::setglobal("pop_pos_askr_the_lost", 1, 5, "F");
 #handed in giant head
 		} 

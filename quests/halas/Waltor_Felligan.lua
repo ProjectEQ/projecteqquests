@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hello, me friend! I'm the resident healer o' Halas. Please inform me when ye've a need fer me talents to [bind wounds], [cure disease] or [cure poison]. Might I add, if ye're a young shaman o' Halas, ye can also [assist in gathering fungus].");
-	if(e.other:GetFaction(e.self) < 6) then
+	elseif(e.other:GetFaction(e.self) < 6) then
 		if(e.message:findi("cure disease")) then
 			e.self:Say("Two small quantities o' wooly fungus are needed before we can cure yer malady.");
 		elseif(e.message:findi("bind wounds")) then 

@@ -1,9 +1,9 @@
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 6) then
 		if(e.message:findi("assist")) then
-				e.self:Say("I was ordered by Kylan O'Danos to personally escort a young warrior sent to fetch the remains of his cousin, Ivan McMannus. I forgot and spent me greater time testing out the fine spirits. Now I must find the courier and the remains. Will ye [search fer the courier]?");
+			e.self:Say("I was ordered by Kylan O'Danos to personally escort a young warrior sent to fetch the remains of his cousin, Ivan McMannus. I forgot and spent me greater time testing out the fine spirits. Now I must find the courier and the remains. Will ye [search fer the courier]?");
 		elseif(e.message:findi("search fer the courier")) then
-				e.self:Say("Thank ye, " .. e.other:GetName() .. "! Go to Everfrost Peaks and seek out Arnis McLish. Ask him where Megan, the courier, is. Once ye find Megan, would ye ask her where Ivan's remains are? Please go, at once!");
+			e.self:Say("Thank ye, " .. e.other:GetName() .. "! Go to Everfrost Peaks and seek out Arnis McLish. Ask him where Megan, the courier, is. Once ye find Megan, would ye ask her where Ivan's remains are? Please go, at once!");
 		end
 	end
 	if(e.other:GetFaction(e.self) < 5) then
@@ -30,7 +30,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(e.other:GetFaction(e.self) < 6) then
-		if(item_lib.check_turn_in(e.trade, {item1 = 13246}) then
+		if(item_lib.check_turn_in(e.trade, {item1 = 13246})) then
 			e.self:Say("Good work!! Kylan will never know o' me negligence. I owe ye one, young warrior. Let's call it even with this. Twas found by one of our foraging parties. It is still useful. And... I believe ye can assist with a more [dangerous matter] as well");
 			e.other:Ding();
 			e.other:SummonItem(eq.ChooseRandom(17009, 17001));

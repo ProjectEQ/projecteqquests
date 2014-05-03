@@ -2,7 +2,7 @@ function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail, mighty " .. e.other:GetName() .. "! I assume ye must be a [warrior o' the Wolves]. Why else would ye approach a trainer such as meself, then?");
 	end
-	if(e.message:findi("the wolves") then
+	if(e.message:findi("the wolves")) then
 		if(e.other:GetFaction(e.self) < 5) then
 			e.self:Say("Aye, 'tis as I thought. I'm glad t' see we've warriors such as yerself amongst the Wolves o' the North. Lately, Kylan's been allowing too many scrawny warriors in, methinks. Nor have they fared well in Everfrrost. Many frreeze to death, ye know... Will ye assist me and [deliver an elixir to young warriors] in Everfrost?");
 		elseif(e.other:GetFaction(e.self) == 5) then

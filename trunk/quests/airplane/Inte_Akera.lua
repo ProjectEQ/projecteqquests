@@ -28,7 +28,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(faction == 1) then
+	if(e.other:GetFaction(e.self) == 1) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 5504})) then		--soulfire
 			e.other:SummonItem(18033); 									--inte's first blessing
 			e.other:AddEXP(100000);

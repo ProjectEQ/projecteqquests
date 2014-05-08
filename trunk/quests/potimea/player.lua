@@ -1,3 +1,6 @@
+local player_list = nil;
+local player_list_count = nil;
+
 function event_enter_zone(e)
 	-- load the current qglobals
 	local qglobals = eq.get_qglobals(e.self);
@@ -9,35 +12,45 @@ end
 
 function event_click_door(e)
 	local door_id = e.door:GetDoorID();
-	if (door_id >= 8 and door_id <=12) then
+	local raid = e.self:GetRaid();
+	local HasLockout = 0;
+	-- make sure the player_list is clear
+	player_list = nil;
+	player_list_count = nil;
+	if ((door_id >= 8 and door_id <=12) and (raid.valid or e.self:Admin() > 80)) then
 		-- determine if the player is in an instance already
 		local instance_id = eq.get_instance_id("potimeb",0);
-		-- load the current qglobals
-		local qglobals = eq.get_qglobals(e.self);
 		-- should never be nil, but just in case.
 		if (instance_id == nil or instance_id == 0) then
-			-- check for lockout qglobal.
-			if (e.self:Admin() <= 80 and qglobals["potimeb_lockout"] ~= nil) then
-				e.self:Message(13, "You are not ready yet to start a new instance");
+			-- check for lockout qglobal on whole raid.
+			player_list = raid;
+			player_list_count = raid:RaidCount();
+			if (player_list ~= nil) then
+				-- cycle through raid and check lockouts
+				for i = 0, player_list_count - 1, 1 do
+					local client_v = player_list:GetMember(i):CastToClient();
+					if (client_v.valid) then
+						qglobals = eq.get_qglobals(client_v);
+						if (e.self:Admin() <= 80 and qglobals["potimeb_lockout"] ~= nil) then
+							HasLockout = HasLockout + 1;
+						end
+					end
+				end
+			end
+			--Anyone in raid had a lockout
+			if (HasLockout > 0) then
+				e.self:Message(13, "There are "..HasLockout.." players in your raid with a lockout");
+				--keeping notes for a while
+				eq.set_global("TimeHack",""..HasLockout,5,"D5");
 				return;
 			end
+			--No lockouts, create instance
 			-- the instance is only good for 13 hours (46800 seconds).
 			instance_id = eq.create_instance("potimeb",0,46800);
 			-- create a qglobal for status tracking
 			eq.set_global(instance_id.."_potimeb_status","Phase1",7,"H13");
-			-- check if the player is in a raid
-			local raid = e.self:GetRaid();
 			if (raid.valid) then
 				eq.assign_raid_to_instance(instance_id);
-			else
-				-- not in a raid so check if in a group
-				local group = e.self:GetGroup();
-				if (group.valid) then
-					eq.assign_group_to_instance(instance_id);
-				else
-					-- not in a group, just assign to the player
-					eq.assign_to_instance(instance_id);
-				end
 			end
 		end
 		
@@ -62,5 +75,7 @@ function event_click_door(e)
 				e.self:MovePCInstance(223, instance_id, -27, 1103, 496, 62);
 			end
 		end
+	else
+		e.self:Message(13, "You are not in a raid.");
 	end
 end

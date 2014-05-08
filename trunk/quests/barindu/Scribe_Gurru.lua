@@ -4,6 +4,10 @@ function event_say(e)
 	-- load the current qglobals
 	local qglobals = eq.get_qglobals(e.other,e.self);
 	
+	-- determine which instances the player is in already
+	-- Lua table contains zone short name and instance version as the key/pair values initially
+	local instance_id_list = {["snpool"] = 0, ["snlair"] = 0, ["snplant"] = 1, ["sncrematory"] = 0, ["vxed"] = 0, ["tipt"] = 0};
+
 	if(e.message:findi("hail")) then
 		if (qglobals["temp_sewers"] ~= nil) then
 			-- if the player is working on sewer instance, update appropriately.
@@ -42,9 +46,6 @@ function event_say(e)
 		-- this is a hack/work around until the expedition system is implemented.
 		e.self:Say("Do you need to leave an [" .. eq.say_link("expedition",false,"expedition") .. "]?");
 	elseif(e.message:findi("expedition")) then
-		-- determine which instances the player is in already
-		-- Lua table contains zone short name and instance version as the key/pair values initially
-		local instance_id_list = {["snpool"] = 0, ["snlair"] = 0, ["snplant"] = 1, ["sncrematory"] = 0, ["vxed"] = 0, ["tipt"] = 0};
 		-- go through the table and update the values to the instance ID returned
 		for k,v in pairs(instance_id_list) do
 			instance_id_list[k] = eq.get_instance_id(k,v);
@@ -64,12 +65,23 @@ function event_say(e)
 			e.self:Say("You are not a member of an expedition!");
 		end
 	elseif(e.message:findi("leave")) then
-		for i in string.gmatch(e.message, "%S+") do
-			if (tonumber(i)) then
-				eq.remove_all_from_instance(tonumber(i));
+		-- get the instance_id the player requested to leave
+		local instance_id;
+ 		for i in string.gmatch(e.message, "%S+") do
+ 			if (tonumber(i)) then
+ 				instance_id = tonumber(i);
+ 			end
+ 		end
+		--
+		-- go through the table and update the values to the instance ID returned
+		for k,v in pairs(instance_id_list) do
+			instance_id_list[k] = eq.get_instance_id(k,v);
+		end
+		-- go through the table and verify the instance id they requested to leave is a valid vxed,tipt or sewers instance
+		for k,v in pairs(instance_id_list) do
+			if (v == instance_id) then
+					eq.remove_all_from_instance(tonumber(v));
 			end
 		end
 	end
-	eq.spawn2(283052, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-	eq.depop();
 end

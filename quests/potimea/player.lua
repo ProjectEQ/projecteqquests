@@ -41,7 +41,9 @@ function event_click_door(e)
 			if (HasLockout > 0) then
 				e.self:Message(13, "There are "..HasLockout.." players in your raid with a lockout");
 				--keeping notes for a while
-				eq.set_global("TimeHack",""..HasLockout,5,"D5");
+				eq.set_global("TimeHack_Lock",""..HasLockout,5,"D5");
+				NotLocked = player_list_count - HasLockout;
+				eq.set_global("TimeHack_NotLock",""..NotLocked,5,"D5");
 				return;
 			end
 			--No lockouts, create instance

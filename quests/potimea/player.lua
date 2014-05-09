@@ -1,5 +1,4 @@
-local player_list = nil;
-local player_list_count = nil;
+
 
 function event_enter_zone(e)
 	-- load the current qglobals
@@ -12,8 +11,11 @@ end
 
 function event_click_door(e)
 	local door_id = e.door:GetDoorID();
+	local player_list = nil;
+	local player_list_count = nil;
 	local raid = e.self:GetRaid();
 	local HasLockout = 0;
+	local NotLocked = 0;
 	-- make sure the player_list is clear
 	player_list = nil;
 	player_list_count = nil;

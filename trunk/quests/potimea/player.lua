@@ -34,6 +34,7 @@ function event_click_door(e)
 					if (client_v.valid) then
 						qglobals = eq.get_qglobals(client_v);
 						if (e.self:Admin() <= 80 and qglobals["potimeb_lockout"] ~= nil) then
+							e.self:Message(13, client_v:GetCleanName().." has a lockout");
 							HasLockout = HasLockout + 1;
 						end
 					end

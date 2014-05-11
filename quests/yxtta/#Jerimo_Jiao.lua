@@ -61,7 +61,7 @@ function event_timer(e)
 				eq.set_timer("1",600000);
 			end
 		else
-			if (zone_time["zone_hour"] == 4 or (zone_time["zone_hour"] == 5)
+			if (zone_time["zone_hour"] == 4 or zone_time["zone_hour"] == 5) then
 				if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(29119) == false) then
 					eq.spawn2(291119,0,0,-2115,-240,-567,96);
 					eq.set_timer("1",600000);

@@ -45,6 +45,7 @@ function event_say(e)
 			else
 				e.other:Message(13, "You are already in an instance.");
 			end
+		else
 			e.other:Message(13, "You are not in a raid.");
 		end
 	end

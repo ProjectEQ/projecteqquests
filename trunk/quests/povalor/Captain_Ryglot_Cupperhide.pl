@@ -30,7 +30,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 25796 => 1, 25797 => 1, 25798 => 1)) {
+  if(plugin::check_handin(\%itemcount, 25796 => 1, 25797 => 1, 25798 => 1) && ($qglobals{pov_key_quest} == 4)) {
     quest::say("Confident you are. We all have agreed that since you are so willing to help, we will give you this Crystaline Globe. It is said to open the lair of Aerin`Dar. Good luck, $name.");
     quest::setglobal("pov_key_quest", 5, 5, "F");
     quest::summonitem(25596);

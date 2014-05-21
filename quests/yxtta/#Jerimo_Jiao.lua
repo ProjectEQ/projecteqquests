@@ -1,9 +1,7 @@
-function event_spawn(e)
-	--checking Caridwi spawn
-	eq.set_timer("1",60000);
-end
+-- #Jerimo_Jiao (291113)
 
 function event_say(e)
+	--Uqua request
 	local player_list = nil;
 	local player_list_count = nil;
 	local raid = e.other:GetRaid();
@@ -47,27 +45,6 @@ function event_say(e)
 			end
 		else
 			e.other:Message(13, "You are not in a raid.");
-		end
-	end
-end
-
-function event_timer(e)
-	if(e.timer == "1") then
-		--check if we need to spawn Caridwi
-		if (zone_time["zone_hour"] < 4 or zone_time["zone_hour"] > 5) then
-			eq.depopall(291119);
-			if (zone_time["zone_hour"] == 3) then
-				eq.set_timer("1",60000);
-			else
-				eq.set_timer("1",600000);
-			end
-		else
-			if (zone_time["zone_hour"] == 4 or zone_time["zone_hour"] == 5) then
-				if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(29119) == false) then
-					eq.spawn2(291119,0,0,-2115,-240,-567,96);
-					eq.set_timer("1",600000);
-				end
-			end
 		end
 	end
 end

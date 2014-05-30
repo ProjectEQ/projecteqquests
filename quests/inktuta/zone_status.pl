@@ -34,7 +34,8 @@ sub EVENT_SIGNAL {
 		$entity_list->FindDoor(42)->SetLockPick(0);
 		$entity_list->FindDoor(43)->SetLockPick(0);
 		quest::spawn2(296072,0,0,-198,-908,-126,0); #a_pile_of_bones
-		quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
+		#remove comment when Noquifiel is working properly
+		#quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
 		quest::signalwith(296076,3); #setting lockout
 	#Noqufiel win
 	} elsif ($signal == 296065) { 

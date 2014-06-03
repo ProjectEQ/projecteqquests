@@ -11,9 +11,9 @@ end
 function event_enter(e)
 	-- tell zone_status phase 1 was started
 	eq.signal(223097,1);
-	-- wait 60 seconds before spawning the mobs.
+	-- wait 45 seconds before spawning the mobs.
 	eq.clear_proximity();
-	eq.set_timer("Phase1Air",6000);
+	eq.set_timer("Phase1Air",45000);
 end
 
 function event_timer(e)

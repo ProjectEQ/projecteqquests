@@ -1,5 +1,5 @@
 function event_say(e)
-	local qglobals = eq.get_qglobals(e.other,e.self);
+	local qglobals = eq.get_qglobals(e.self, e.other);
 	
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello, there! Don't have time to talk. I'm workin', workin', workin'! Careful! Don't slip in the oil!");
@@ -12,7 +12,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-	local qglobals = eq.get_qglobals(e.other,e.self);
+	local qglobals = eq.get_qglobals(e.self, e.other);
 	local item_lib = require("items");
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 18169})) then

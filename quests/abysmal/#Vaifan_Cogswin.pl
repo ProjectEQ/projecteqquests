@@ -36,6 +36,7 @@ sub EVENT_SAY {
       quest::summonitem(67538);
       quest::summonitem(67577);
       quest::summonitem(67539);
+      quest::summonitem(67533);
     }
   }
 }

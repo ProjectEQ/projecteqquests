@@ -1,13 +1,13 @@
-sub EVENT_DEATH_COMPLETE { 
-    my $x = $npc->GetX();
-    my $y = $npc->GetY();
-    my $z = $npc->GetZ();
-    my $h = $npc->GetHeading();
-    quest::spawn2(228122,0,0,$x,$y,$z,$h); #spawn a new fist
+sub EVENT_DEATH_COMPLETE {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  $z = $npc->GetZ();
+  $h = $npc->GetHeading();
+  quest::spawn2(228122,0,0,$x,$y,$z,$h); #Fist_of_Krasnok
 }
 
 sub EVENT_SIGNAL {
   if ($signal == 66) {
     quest::depop();
+  }
 }
- }

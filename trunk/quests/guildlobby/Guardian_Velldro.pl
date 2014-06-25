@@ -1,8 +1,3 @@
-#generic soulbinder quest
-sub EVENT_SAY { 
-	plugin::soulbinder_say($text);
-}
-
 sub EVENT_SPAWN {
 	#afk check to not draw a model
   	$x = $npc->GetX();

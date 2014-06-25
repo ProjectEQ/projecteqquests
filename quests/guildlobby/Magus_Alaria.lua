@@ -1,5 +1,20 @@
 -- guildlobby\Magus_Alaria.lua NPCID 344013
 
+function event_spawn(e)
+	--auto-afk check to not draw a model
+	local xloc = e.self:GetX();
+	local yloc = e.self:GetY();
+	eq.set_proximity(xloc - 75, xloc + 75, yloc - 75, yloc + 75);
+end
+
+function event_enter(e)
+	e.other:Signal(1);
+end
+
+function event_exit(e)
+	e.other:Signal(1);
+end
+
 function event_say(e)
 	--Adventurers Stone
 	if(e.other:KeyRingCheck(41000) or e.other:HasItem(41000)) then

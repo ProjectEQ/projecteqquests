@@ -17,12 +17,20 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 13383})) then
-		e.other:Ding();
-		e.self:Say("Thank you!"); -- text made up
-		e.other:SummonItem(eq.ChooseRandom(13297,13296));
-		e.other:GiveCash(0,0,2,0);
-		e.other:AddEXP(400);
-	end
+	
+	if(e.other:GetFaction(e.self) < 5) then -- requires amiably
+		if(item_lib.check_turn_in(e.trade, {item1 = 13383})) then
+			e.other:Ding();
+			e.self:Say("Thank you my friend! Every Koalindl must be accounted for, even the dead. Rodcet Nife shall be pleased and I shall reward you. Nothing much. Just a token of gratitude.");
+			e.other:Faction(257,100); -- Priest of Life
+			e.other:Faction(183,30); -- Knight of Thunder
+			e.other:Faction(135,50); -- Guards of Qeynos
+			e.other:Faction(21,-25); -- Bloodsabers
+			e.other:Faction(9,15); -- Antonius Bayle
+			e.other:SummonItem(eq.ChooseRandom(13297,13296));
+			e.other:GiveCash(0,0,2,0);
+			e.other:AddEXP(400);
+		end
+	end	
 	item_lib.return_items(e.self, e.other, e.trade)
 end

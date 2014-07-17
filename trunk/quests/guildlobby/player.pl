@@ -43,6 +43,7 @@ sub EVENT_SIGNAL {
 	} else {
 		#I was already set invisible from auto-afk, but now I am moving, set back to base race - not afk
 		$client->SetRace($client->GetBaseRace());
+		$client->SetGender($client->GetBaseGender());
 		$client->Message(4, "You are no longer idle.");
 		quest::settimer("afk_check", 1200);
 	}	
@@ -57,6 +58,7 @@ sub EVENT_TIMER {
 		#I have been idle, go auto-afk and don't draw model
 		$client->Message(4, "You are idle, Auto-AFK");
 		quest::playerrace(127); #invisible-man
+		quest::playergender(0);
 		quest::stoptimer("afk_check");
 	}
 }

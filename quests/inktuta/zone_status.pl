@@ -27,6 +27,7 @@ sub EVENT_SIGNAL {
 		} elsif ($signal == 296036) { #irrational
 			$irrational_say = 1;
 		}
+		
 	#Cursecaller win
 	} elsif ($signal == 296017) { 
 		quest::setglobal($instid.'_inktuta_status',9,3,"H6");
@@ -34,9 +35,9 @@ sub EVENT_SIGNAL {
 		$entity_list->FindDoor(42)->SetLockPick(0);
 		$entity_list->FindDoor(43)->SetLockPick(0);
 		quest::spawn2(296072,0,0,-198,-908,-126,0); #a_pile_of_bones
-		#remove comment when Noquifiel is working properly
-		#quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
+		quest::spawn2(296075,0,0,-79,-635,-126,0); #noqufiel_trigger	
 		quest::signalwith(296076,3); #setting lockout
+		
 	#Noqufiel win
 	} elsif ($signal == 296065) { 
 		quest::depopall(296066); #Mirror_Image

@@ -2,7 +2,7 @@
 
 my $true_noq;
 my $mir_noq;
-my $true_hp;
+my $true_hp = 0;
 my $random_name;
 my $true_newX = 20;
 my $true_newY = -706;
@@ -37,7 +37,7 @@ sub EVENT_TIMER {
 				$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 				$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
 				if($true_hp) {
-					$true_noq->SetHP($true_hp);
+					quest::settimer("set_hp", 1);
 				}
 			} else {
 				if ($entity_list->IsMobSpawnedByNpcTypeID(296066)) { #mirror
@@ -58,7 +58,7 @@ sub EVENT_TIMER {
 				$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 				quest::spawn2(296066,0,0,$Mir_newX,$Mir_newY,$Mir_newZ,0);
 				$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
-				$true_noq->SetHP($true_hp);
+				quest::settimer("set_hp", 1);
 			}
 		}
 	} elsif ($timer eq "spawn_noqufiel") {
@@ -71,6 +71,12 @@ sub EVENT_TIMER {
 		if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) {
 			quest::signalwith(296065,4); #tell True_Image to banish
 		}
+	} elsif ($timer eq "set_hp") {
+		if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) {
+			$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
+			$true_noq->SetHP($true_hp);
+		}
+			quest::stoptimer("set_hp");
 	}
 		
 }

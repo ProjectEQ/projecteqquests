@@ -1,3 +1,4 @@
+my $Pet_ENT;
 
 sub EVENT_CLICKDOOR {
 	if($doorid == 2 || $doorid == 4 || $doorid == 40 || $doorid == 42) {
@@ -44,6 +45,10 @@ sub EVENT_SIGNAL {
 		#I was already set invisible from auto-afk, but now I am moving, set back to base race - not afk
 		$client->SetRace($client->GetBaseRace());
 		$client->SetGender($client->GetBaseGender());
+		if ($client->GetPetID()) {
+			$Pet_ENT = $entity_list->GetMobByID($client->GetPetID());
+			$Pet_ENT->SetRace($Pet_ENT->GetBaseRace());
+		}
 		$client->Message(4, "You are no longer idle.");
 		quest::settimer("afk_check", 1200);
 	}	
@@ -57,8 +62,12 @@ sub EVENT_TIMER {
 	} elsif($timer eq "afk_check") {
 		#I have been idle, go auto-afk and don't draw model
 		$client->Message(4, "You are idle, Auto-AFK");
-		quest::playerrace(127); #invisible-man
-		quest::playergender(0);
+		if ($client->GetPetID()) {
+			$Pet_ENT = $entity_list->GetMobByID($client->GetPetID());
+			$Pet_ENT->SetRace(127);
+		}
+		$client->SetRace(127);
+		$client->SetGender(0);
 		quest::stoptimer("afk_check");
 	}
 }

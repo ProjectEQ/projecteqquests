@@ -1,20 +1,29 @@
 # timer 1 checks for different bearers being up
 
-sub EVENT_AGGRO {
-  quest::settimer(1,15);
+sub EVENT_SPAWN {
+	quest::spawn_condition("txevu", 3, 1); #bearers
 }
+
+sub EVENT_COMBAT {
+	if ($combat == 1) {
+		quest::settimer("bearer_check",15);
+	} elsif ($combat == 0) {
+		quest::stoptimer("bearer_check");
+	}
+}
+
 sub EVENT_TIMER {
-  if($timer == 1) {
+  if($timer eq "bearer_check") {
     if (!$entity_list->IsMobSpawnedByNpcTypeID(297050)) { #Bearer of Nascency
       } else {
-      quest::spawn2(281096,0,0,$x+5,$y,$z,$h);  #mini cragbeast 297210
+      quest::spawn2(297210,0,0,$x+5,$y,$z,$h);  #mini cragbeast add
     }
-    if (!$entity_list->IsMobSpawnedByNpcTypeID(297051) || !$entity_list->IsMobSpawnedByNpcTypeID(297143)) { #Bearer of Intensity
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(297051)) { #Bearer of Intensity
       quest::modifynpcstat("max_hit",2025);
     } else {
       quest::modifynpcstat("max_hit",4500);
       }
-    if (!$entity_list->IsMobSpawnedByNpcTypeID(297054) || !$entity_list->IsMobSpawnedByNpcTypeID(297172)) { #Bearer of Mending
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(297054)) { #Bearer of Mending
       quest::modifynpcstat("hp_regen",100);
     } else {
       quest::modifynpcstat("hp_regen",4500);
@@ -23,17 +32,17 @@ sub EVENT_TIMER {
       quest::selfcast(1249);  #bristling armament
     }
     if ($entity_list->IsMobSpawnedByNpcTypeID(297208)) { #Bearer of Projection
-      quest::selfcast(1239);  #devouring conflaguration
+      quest::selfcast(1239);  #Devouring Conflagration
     }
-    if ($entity_list->IsMobSpawnedByNpcTypeID(297052) || !$entity_list->IsMobSpawnedByNpcTypeID(297144)) { #Bearer of Reflection
+    if ($entity_list->IsMobSpawnedByNpcTypeID(297052)) { #Bearer of Reflection
       quest::selfcast(4741);  #discord reflection
     }
-    if (!$entity_list->IsMobSpawnedByNpcTypeID(297142) || !$entity_list->IsMobSpawnedByNpcTypeID(297192)) { #Bearer of Quickening
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(297142)) { #Bearer of Quickening
       quest::modifynpcstat("attack_speed",-22);
     } else {
       quest::modifynpcstat("attack_speed",-40);
     }
-    if (!$entity_list->IsMobSpawnedByNpcTypeID(297141) || !$entity_list->IsMobSpawnedByNpcTypeID(297189)) { #Bearer of Resistance
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(297141)) { #Bearer of Resistance
       quest::modifynpcstat("mr",136);
       quest::modifynpcstat("fr",136);
       quest::modifynpcstat("cr",136);
@@ -49,28 +58,32 @@ sub EVENT_TIMER {
     if ($entity_list->IsMobSpawnedByNpcTypeID(297143)) { #Bearer of Absorption
       quest::selfcast(8868);  #needs to mitigate 75% of dmg, best choice is spell based, not ideal
     }
-    if (!$entity_list->IsMobSpawnedByNpcTypeID(297055) || !$entity_list->IsMobSpawnedByNpcTypeID(297145) && !$entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) { #Bearer of Anger, Rage, Haste
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(297055) && !$entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) { #Bearer of Anger, Rage, Haste
       quest::modifynpcstat("special_attacks",SQUMCNIDf); #sets to normal
       }
-      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297055) || $entity_list->IsMobSpawnedByNpcTypeID(297145) && $entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) {  #bearer of Anger & Rage up
+      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297055) && $entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) {  #bearer of Anger & Rage up
         quest::modifynpcstat("special_attacks",SQRrUMCNIDf);
       }
-      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297055) || $entity_list->IsMobSpawnedByNpcTypeID(297145) && $entity_list->IsMobSpawnedByNpcTypeID(297190) && !$entity_list->IsMobSpawnedByNpcTypeID(297053)) {  #bearer of Anger and Haste up
+      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297055) && $entity_list->IsMobSpawnedByNpcTypeID(297190) && !$entity_list->IsMobSpawnedByNpcTypeID(297053)) {  #bearer of Anger and Haste up
         quest::modifynpcstat("special_attacks",SQRFUMCNIDf);
       }
-      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297053) && $entity_list->IsMobSpawnedByNpcTypeID(297190) && !$entity_list->IsMobSpawnedByNpcTypeID(297055) || !$entity_list->IsMobSpawnedByNpcTypeID(297145)) {  #bearer of Rage and Haste up
+      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297053) && $entity_list->IsMobSpawnedByNpcTypeID(297190) && !$entity_list->IsMobSpawnedByNpcTypeID(297055)) {  #bearer of Rage and Haste up
         quest::modifynpcstat("special_attacks",SQFrUMCNIDf);
       }
-      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297055) || $entity_list->IsMobSpawnedByNpcTypeID(297145) && !$entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) { #bearer of Anger only
+      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297055) && !$entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) { #bearer of Anger only
         quest::modifynpcstat("special_attacks",SQRUMCNIDf);
       }
-      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297055) || !$entity_list->IsMobSpawnedByNpcTypeID(297145) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) { #bearer of Rage only
+      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297053) && !$entity_list->IsMobSpawnedByNpcTypeID(297055) && !$entity_list->IsMobSpawnedByNpcTypeID(297190)) { #bearer of Rage only
         quest::modifynpcstat("special_attacks",SQrUMCNIDf);
       }
-      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297190) && !$entity_list->IsMobSpawnedByNpcTypeID(297055) || !$entity_list->IsMobSpawnedByNpcTypeID(297145) && !$entity_list->IsMobSpawnedByNpcTypeID(297053)) { #bearer of Haste only
+      elsif ($entity_list->IsMobSpawnedByNpcTypeID(297190) && !$entity_list->IsMobSpawnedByNpcTypeID(297055) && !$entity_list->IsMobSpawnedByNpcTypeID(297053)) { #bearer of Haste only
         quest::modifynpcstat("special_attacks",SQFUMCNIDf);
       } else {
       quest::modifynpcstat("special_attacks",SQRrFUMNIDf);  #all three up adds rampage, flurry, ae rampage
     }
   }
+}
+
+sub EVENT_DEATH_COMPLETE {
+	quest::spawn_condition("txevu", 3, 0);
 }

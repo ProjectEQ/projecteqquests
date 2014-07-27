@@ -6,9 +6,10 @@ sub EVENT_COMBAT {
 	if ($combat == 1) {
 		quest::settimer("stonemites", 30);
 		quest::signalwith(297073, 1); #tell all a_decaying_corpse to each spawn 2 stonemites
+		quest::stoptimer("reset");
 	} elsif ($combat == 0) {
 		quest::stoptimer("stonemites");
-		quest::settimer("reset");
+		quest::settimer("reset", 1200);
 	}
 }
 

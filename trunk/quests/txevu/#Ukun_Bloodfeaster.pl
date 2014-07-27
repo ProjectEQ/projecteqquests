@@ -1,26 +1,27 @@
 sub EVENT_SPAWN {
-  quest::depopall(297207);
+	quest::spawn_condition("txevu", 2, 1); # a_decaying_corpse
 }
 
-sub EVENT_AGGRO {
-  quest::settimer(1,2);
-  quest::spawn2(297207,0,0,$x-5,$y-5,$z,$h);
-  quest::spawn2(297207,0,0,$x-10,$y-10,$z,$h);
-  quest::spawn2(297207,0,0,$x-15,$y-5,$z,$h);
-  quest::spawn2(297207,0,0,$x-15,$y-15,$z,$h);
-  quest::spawn2(297207,0,0,$x-5,$y-15,$z,$h);        
+sub EVENT_COMBAT {
+	if ($combat == 1) {
+		quest::settimer("stonemites", 30);
+		quest::signalwith(297073, 1); #tell all a_decaying_corpse to each spawn 2 stonemites
+	} elsif ($combat == 0) {
+		quest::stoptimer("stonemites");
+		quest::settimer("reset");
+	}
 }
+
 
 sub EVENT_TIMER {
-  quest::stoptimer(1);
-  quest::spawn2(297207,0,0,$x-5,$y-5,$z,$h);
-  quest::spawn2(297207,0,0,$x-10,$y-10,$z,$h);
-  quest::spawn2(297207,0,0,$x-15,$y-5,$z,$h);
-  quest::spawn2(297207,0,0,$x-15,$y-15,$z,$h);
-  quest::spawn2(297207,0,0,$x-5,$y-15,$z,$h);
-  quest::spawn2(297207,0,0,$x,$y-5,$z,$h);
-  quest::spawn2(297207,0,0,$x,$y-10,$z,$h);
-  quest::spawn2(297207,0,0,$x-15,$y,$z,$h);
-  quest::spawn2(297207,0,0,$x-15,$y-20,$z,$h);
-  quest::spawn2(297207,0,0,$x-5,$y-10,$z,$h);
+	if ($timer eq "stonemites") {
+		quest::signalwith(297073, 1); #tell all a_decaying_corpse to each spawn 2 stonemites
+	} elsif ($timer eq "reset") {
+		quest::depopall(297207); #stonemites
+		quest::stoptimer("reset");
+	}
+}
+
+sub EVENT_DEATH_COMPLETE {
+	quest::spawn_condition("txevu", 2, 0); # a_decaying_corpse
 }

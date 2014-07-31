@@ -1,7 +1,7 @@
 sub EVENT_SPAWN {
 	quest::spawn_condition("txevu", 4, 1); 
 	quest::setnexthpevent(20);
-{
+}
 
 sub EVENT_COMBAT {
 	if ($combat == 1) {

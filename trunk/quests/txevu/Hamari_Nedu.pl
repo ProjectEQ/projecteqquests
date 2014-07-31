@@ -7,7 +7,7 @@ sub EVENT_SAY {
 		#if don't have signet of command		
 			quest::say("Aaaaahh! You frightened me! I've spent days hiding in the rubble here waiting for someone to come. Thank Trushar it's you and not one of those monsters! I didn't know how much longer I could hold out, but I have information that may [" . quest::saylink("help") . "] you rid our island of those vile Muramites and help me get out of this cursed place.");
 	} elsif ($text=~/help/i) {
-		quest::say("I know the monster that guards this place. He calls himself [" . quest::saylink"Tkarish") . "]. I was held captive by the two-headed beast. I don't know exactly what fate awaited me, but the cries of my fellow prisoners were enough to know that it wouldn't have been pleasant.");
+		quest::say("I know the monster that guards this place. He calls himself [" . quest::saylink("Tkarish") . "]. I was held captive by the two-headed beast. I don't know exactly what fate awaited me, but the cries of my fellow prisoners were enough to know that it wouldn't have been pleasant.");
 	} elsif ($text=~/Tkarish/i) {
 		quest::say("I believe the full title he demanded his servants use is Zun'Muram Tkarish Zyk. Fortunately, he's as arrogant as he is strong and I was able to slip away when he thought me secure. Unfortunately, he has gained control over the sacred [" . quest::saylink("constructs") . "] in the temple so I haven't been able to leave.");
 	} elsif ($text=~/constructs/i) {

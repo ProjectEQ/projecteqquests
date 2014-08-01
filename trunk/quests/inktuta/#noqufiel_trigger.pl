@@ -10,6 +10,7 @@ my $true_newZ = -126;
 my $Mir_newX = 20;
 my $Mir_newY = -633;
 my $Mir_newZ = -126;
+my $maxhp = 2054874;
 
 
 sub EVENT_SPAWN {
@@ -22,6 +23,7 @@ sub EVENT_SIGNAL {
 		quest::settimer("change_names",20);
 		quest::settimer("spawn_cursebearer",30);
 		quest::settimer("spawn_noqufiel",120);
+		quest::stoptimer("hp_regen");
 	}
 }
 		
@@ -77,6 +79,10 @@ sub EVENT_TIMER {
 			$true_noq->SetHP($true_hp);
 		}
 			quest::stoptimer("set_hp");
+	} elsif ($timer eq "hp_regen") {
+		if ($true_hp && ($true_hp < $maxhp)) {
+			$true_hp = $true_hp + 6000;
+		}
 	}
 		
 }
@@ -84,6 +90,8 @@ sub EVENT_TIMER {
 		
 		
 sub SPAWN_NOQUFIELS {
+	quest::stoptimer("change_names");
+	quest::settimer("hp_regen", 6);
 	if ($entity_list->IsMobSpawnedByNpcTypeID(296065)) { #true
 		$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 		$true_hp = $true_noq->GetHP();

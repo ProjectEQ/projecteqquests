@@ -1,13 +1,20 @@
+
 sub EVENT_SPAWN {
-    quest::settimer(31,3600);
-    quest::stoptimer(31);
+    quest::settimer("despawn",3600);
+}
+
+sub EVENT_COMBAT {
+	if ($combat == 1) {
+		quest::stoptimer("despawn");
+	} else {
+		quest::settimer("despawn",3600);
+	}
 }
 
 sub EVENT_TIMER {
-    if($timer == 31) {
+	if($timer eq "despawn") {
         quest::depop();
-
-        }
+    }
 
 }
 

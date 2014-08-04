@@ -8,7 +8,7 @@ function event_say(e)
 	local HasLockout = 0;
 	if(e.message:findi("hail")) then
 		e.other:Emote("gestures to the end of the cavernous hallway.");
-		e.other:Say("Beyond that corner lies the entrance to the forgotten chapel of Inktu'ta. The force of the blast from the portal's implosion tore a hole in the mountain, revealing the way to this place. Some things should remain unknown. Inktu'ta should have stayed buried forever. Believe me $name only a fool would disturb the halls of this cursed chapel. Will you [heed my warning] or do you wish to [".. eq.say_link("continue",false,"continue") .. "]?");
+		e.other:Say("Beyond that corner lies the entrance to the forgotten chapel of Inktu'ta. The force of the blast from the portal's implosion tore a hole in the mountain, revealing the way to this place. Some things should remain unknown. Inktu'ta should have stayed buried forever. Believe me " .. e.other:GetName() .. " only a fool would disturb the halls of this cursed chapel. Will you [heed my warning] or do you wish to [" .. eq.say_link("continue",false,"continue") .. "]?");
 	elseif(e.message:findi("continue")) then
 		--if Cynosure is up do not proceed
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(295140) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(295149) == false) then

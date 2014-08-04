@@ -1,7 +1,7 @@
 # Part of SK Epic 1.0
 
 sub EVENT_SAY {
-  if ($text=~/Hail/i) {
+  if ($text=~/hail/i) {
     quest::say("Ah, you do not possess the heart of an innocent. Be gone with you!");
   }
   if ($text=~/heart of an innocent/i) {
@@ -9,6 +9,4 @@ sub EVENT_SAY {
     quest::summonitem(17051);
   }
 }
-
 # Quest by mystic414
-

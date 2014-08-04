@@ -15,6 +15,4 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-
-# EOF zone: tox ID: 38064 NPC: Lanivon_Baxer
-
+# EOF zone: toxxulia ID: 414091 NPC: Lanivon_Baxer

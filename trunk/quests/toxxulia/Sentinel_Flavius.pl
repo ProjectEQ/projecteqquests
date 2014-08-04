@@ -1,6 +1,6 @@
-sub EVENT_SAY { 
-if($text=~/Hail/i){
-quest::say("Hail. good citizen! You are safe when you are near a sentinel of the High Guard. Feel free to rest and recuperate."); }
+sub EVENT_SAY {
+  if($text=~/hail/i) {
+    quest::say("Hail, good citizen! You are safe when you are near a sentinel of the High Guard. Feel free to rest and recuperate.");
+  }
 }
-#END of FILE Zone:tox  ID:38123 -- Sentinel_Flavius 
-
+#END of FILE Zone:toxxulia  ID:414045 -- Sentinel_Flavius

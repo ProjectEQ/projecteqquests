@@ -4,7 +4,7 @@ sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello, $name. I fear I do not have time to speak with you as I am working my shift. Please contact me at a later time.");
   }
-  if($text=~/Phaeril/i) {
+  if($text=~/phaeril/i) {
     quest::say("Phaeril Nightshire is the man with whom I have found comfort during these years of hardship. He has also taken the [position] that belonged to Davorre many years ago.");
   }
   if($text=~/position/i) {

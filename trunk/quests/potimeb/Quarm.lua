@@ -34,6 +34,8 @@ function event_timer(e)
 		local heading = e.self:GetHeading();
 		-- depop all existing time vortex mobs
 		eq.depop_all(223112);
+		-- random AE
+		e.self:CastSpell(eq.ChooseRandom(3770, 3771, 3769, 3768, 3780, 3767, 3773, 3777),e.self:GetID());
 		-- spawn 3 new ones randomly around Quarm.
 		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
 		eq.spawn2(223112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading);
@@ -46,22 +48,19 @@ function event_hp(e)
 		e.self:Emote(" roars in pain as his red head explodes in a shower of flaming ethereal energy!");
 		-- remove red head
 		e.self:SendIllusionPacket({race=304,gender=2,texture=1,helmtexture=1});
-		-- remove fire based PBAE from spellset
-		e.self:RemoveAISpell(3768);
+		e.self:CastSpell(3230,e.self:GetID());
 		eq.set_next_hp_event(51);
 	elseif (e.hp_event == 51) then
 		e.self:Emote(" roars in pain as his blue head explodes into pure ethereal energy!");
 		-- remove blue head
 		e.self:SendIllusionPacket({race=304,gender=2,texture=2,helmtexture=2});
-		-- remove poison based PBAE from spellset
-		e.self:RemoveAISpell(3777);
+		e.self:CastSpell(3230,e.self:GetID());
 		eq.set_next_hp_event(26);
 	elseif (e.hp_event == 26) then
 		e.self:Emote(" shakes the cavern with a bellow of pain as the white head explodes into a swirling vortex of ethereal energy!");
 		-- remove white head
 		e.self:SendIllusionPacket({race=304,gender=2,texture=3,helmtexture=3});
-		-- remove ice based PBAE from spellset
-		e.self:RemoveAISpell(3773);
+		e.self:CastSpell(3230,e.self:GetID());
 	end
 end
 

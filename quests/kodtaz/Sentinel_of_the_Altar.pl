@@ -4,18 +4,22 @@ sub EVENT_ITEM {
     if(defined($qglobals{ikky}) && ($qglobals{ikky} == 14)) {
       $raid = $client->GetRaid();
       if($raid){
-        if(!defined($qglobals{ikkylockout6})) {
-          $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
-          if($InInstanceIkky7 == 0){
-            $Instance = quest::CreateInstance("ikkinz", 6, 21600);
-            quest::AssignRaidToInstance($Instance);	
-            quest::say("Instance added.");
-          } else {
-            $client->Message(13, "You are already in an instance!");
-          }
-        } else {
-          $client->Message(13,"You have recently completed a raid.");
-        }
+		  if ($raid->RaidCount() <= 54) {
+			if(!defined($qglobals{ikkylockout6})) {
+			  $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
+			  if($InInstanceIkky7 == 0){
+				$Instance = quest::CreateInstance("ikkinz", 6, 21600);
+				quest::AssignRaidToInstance($Instance);	
+				quest::say("Instance added.");
+			  } else {
+				$client->Message(13, "You are already in an instance!");
+			  }
+			} else {
+			  $client->Message(13,"You have recently completed a raid.");
+			}
+		  } else {
+			$client->Message(13, "You have ".$raid->RaidCount()." players in raid.  Only 54 allowed");
+		  } 
       } else {
         $client->Message(13, "You are not in a raid!");
       }

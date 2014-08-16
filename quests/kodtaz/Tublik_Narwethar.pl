@@ -74,23 +74,27 @@ sub EVENT_SAY {
 	quest::delglobal("ikkypit");
   }
   if ($text=~/sanctuary of the righteous/i) {
-    if ($raid) {
-      if (!defined $qglobals{ikkylockout3}) {
-        if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
-          if ($InIkkyV3 == 0) {
-            $Instance = quest::CreateInstance("ikkinz",3,21600);
-            quest::AssignRaidToInstance($Instance);   
-            quest::say("Instance added.");
-            quest::say("The glyphs you recovered show an Artifact of Righteousness that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Righteous to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Righteous and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
-          }
-          else {
-            $client->Message(13, "You are already in an instance!");
-          }
-        }
-      }
-      else {
-        $client->Message(13, "You have recently completed this raid.");
-      }
+	if ($raid) {
+	    if ($raid->RaidCount() <= 54) {
+		  if (!defined $qglobals{ikkylockout3}) {
+			if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
+			  if ($InIkkyV3 == 0) {
+				$Instance = quest::CreateInstance("ikkinz",3,21600);
+				quest::AssignRaidToInstance($Instance);   
+				quest::say("Instance added.");
+				quest::say("The glyphs you recovered show an Artifact of Righteousness that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Righteous to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Righteous and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+			  }
+			  else {
+				$client->Message(13, "You are already in an instance!");
+			  }
+			}
+		  }
+		  else {
+			$client->Message(13, "You have recently completed this raid.");
+		  }
+		} else {
+			$client->Message(13, "You have ".$raid->RaidCount()." players in raid.  Only 54 allowed");
+		}
     }
     else {
       $client->Message(13, "You are not in a raid!");
@@ -98,22 +102,26 @@ sub EVENT_SAY {
   }
   if ($text=~/sanctuary of the glorified/i) {
     if ($raid) {
-      if (!defined($qglobals{ikkylockout4})) {
-        if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
-          if ($InIkkyV4 == 0) {
-            $Instance = quest::CreateInstance("ikkinz",4,21600);
-            quest::AssignRaidToInstance($Instance);   
-            quest::say("Instance added.");
-            quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
-          }
-          else {
-            $client->Message(13, "You are already in an instance!");
-          }
-        }
-      }
-      else {
-        $client->Message(13, "You have recently completed a raid.");
-      }
+		if ($raid->RaidCount() <= 54) {
+		  if (!defined($qglobals{ikkylockout4})) {
+			if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
+			  if ($InIkkyV4 == 0) {
+				$Instance = quest::CreateInstance("ikkinz",4,21600);
+				quest::AssignRaidToInstance($Instance);   
+				quest::say("Instance added.");
+				quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+			  }
+			  else {
+				$client->Message(13, "You are already in an instance!");
+			  }
+			}
+		  }
+		  else {
+			$client->Message(13, "You have recently completed a raid.");
+		  }
+		} else {
+			$client->Message(13, "You have ".$raid->RaidCount()." players in raid.  Only 54 allowed");
+		} 
     }
     else {
       $client->Message(13, "You are not in a raid!");
@@ -121,22 +129,26 @@ sub EVENT_SAY {
   }
   if ($text=~/sanctuary of the transcendent/i) {
     if ($raid) {
-      if (!defined($qglobals{ikkylockout5})) {
-        if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
-          if ($InIkkyV5 == 0) {
-            $Instance = quest::CreateInstance("ikkinz", 5, 21600);
-            quest::AssignRaidToInstance($Instance);   
-            quest::say("Instance added.");
-            quest::say("The glyphs you recovered show an Artifact of Transcendence that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Transcendent to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Transcendent and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
-          }
-          else {
-            $client->Message(13, "You are already in an instance!");
-          }
-        }
-      }
-      else {
-        $client->Message(13, "You have recently completed a raid.");
-      }
+		if ($raid->RaidCount() <= 54) {
+		  if (!defined($qglobals{ikkylockout5})) {
+			if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
+			  if ($InIkkyV5 == 0) {
+				$Instance = quest::CreateInstance("ikkinz", 5, 21600);
+				quest::AssignRaidToInstance($Instance);   
+				quest::say("Instance added.");
+				quest::say("The glyphs you recovered show an Artifact of Transcendence that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Transcendent to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Transcendent and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
+			  }
+			  else {
+				$client->Message(13, "You are already in an instance!");
+			  }
+			}
+		  }
+		  else {
+			$client->Message(13, "You have recently completed a raid.");
+		  }
+		} else {
+			$client->Message(13, "You have ".$raid->RaidCount()." players in raid.  Only 54 allowed");
+		} 
     }
     else {
       $client->Message(13, "You are not in a raid!");

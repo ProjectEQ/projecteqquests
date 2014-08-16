@@ -87,6 +87,7 @@ sub EVENT_TIMER {
 		SPAWN_EVENT();
 		$add_timer = 30;
 		$banished_pc = 0;
+		$init_engage = 0;
 		quest::stopalltimers();
 		$npc->SetHP($npc->GetMaxHP());
 	}

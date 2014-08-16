@@ -13,7 +13,7 @@ sub EVENT_COMBAT {
 
 sub EVENT_TIMER {
 	if ($timer eq "spawn_golem") {
-		quest::spawn2(297112,0,0,943,0,-368,192);
+		quest::spawn2(297219,0,0,943,0,-368,192); # Onyx_Rockchanter
 	}
 }
 

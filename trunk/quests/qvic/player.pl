@@ -9,7 +9,7 @@ sub EVENT_ENTERZONE {
 sub EVENT_CLICKDOOR {
 	if ($doorid == 2) { #Txevu
 		if (plugin::check_hasitem($client, 60253)) {
-			if(!quest::has_zone_flag(297) {
+			if(!quest::has_zone_flag(297)) {
 				quest::set_zone_flag(297);
 			}
 		}

@@ -4,9 +4,9 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_COMBAT {
-	if ($combat == 1) {
+	if ($combat_state == 1) {
 		quest::settimer("spawn_golem", 30);
-	} elsif ($combat == 0) {
+	} elsif ($combat_state == 0) {
 		quest::stoptimer("spawn_golem");
 	}
 }

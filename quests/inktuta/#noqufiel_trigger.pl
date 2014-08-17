@@ -43,6 +43,7 @@ sub EVENT_TIMER {
 				}
 			} else {
 				if ($entity_list->IsMobSpawnedByNpcTypeID(296066)) { #mirror
+					$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
 					$true_newX = $mir_noq->GetX();
 					$true_newY = $mir_noq->GetY();
 					$true_newZ = $mir_noq->GetZ();

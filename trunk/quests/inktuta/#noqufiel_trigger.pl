@@ -57,6 +57,10 @@ sub EVENT_TIMER {
 					$Mir_newZ = $true_noq->GetZ();
 					quest::depopall(296065);
 				}
+				if (!$true_newX || !$true_newY || !$true_newZ || !$Mir_newX || !$Mir_newY || !$Mir_newZ) {
+					#should never end up in here
+					RESET_LOCS();
+				}
 				quest::spawn2(296065,0,0,$true_newX,$true_newY,$true_newZ,0);
 				$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 				quest::spawn2(296066,0,0,$Mir_newX,$Mir_newY,$Mir_newZ,0);
@@ -103,4 +107,13 @@ sub SPAWN_NOQUFIELS {
 	quest::spawn2(296074,0,0, 20, -706,  -126, 200); ##Noqufiel
 	quest::spawn2(296074,0,0, 20, -633, -126, 200); ##Noqufiel
 	quest::stoptimer("spawn_cursebearer");
+}
+
+sub RESET_LOCS {
+	$true_newX = 20;
+	$true_newY = -706;
+	$true_newZ = -126;
+	$Mir_newX = 20;
+	$Mir_newY = -633;
+	$Mir_newZ = -126;
 }

@@ -1,5 +1,6 @@
-function event_clickdoor(e)
+function event_click_door(e)
 	local door_id = e.door:GetDoorID();
+	local entity_list = eq.get_entity_list();
 	-- if the door to the stonemites is clicked aggro the monoliths guarding it. 
 	if (door_id == 41) then
 		-- get all the npcs 
@@ -15,10 +16,10 @@ function event_clickdoor(e)
 				end
 			end
 		end
-	elseif (door_id == 42) then
+	elseif (door_id == 42 and entity_list:FindDoor(42):GetLockPick() == 0) then
 		-- open door 43 also
 		entity_list:FindDoor(43):ForceOpen(e.self);
-	elseif (door_id == 43) then
+	elseif (door_id == 43 and entity_list:FindDoor(43):GetLockPick() == 0) then
 		-- open door 42 also
 		entity_list:FindDoor(42):ForceOpen(e.self);
 	end

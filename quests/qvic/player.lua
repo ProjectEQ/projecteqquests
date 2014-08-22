@@ -12,7 +12,7 @@ function event_click_door(e)
 	--Txevu
 	if (door_id == 2) then
 		if(e.self:HasItem(60254)) then
-			if(e.self:HasZoneFlag(297) == 0) then
+			if(e.self:HasZoneFlag(297) == false) then
 				e.self:SetZoneFlag(297);
 			end
 		end

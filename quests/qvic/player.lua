@@ -32,7 +32,7 @@ function event_click_door(e)
 	elseif (door_id == 3) then
 		local instance_id = eq.get_instance_id("inktuta",0);
 		if (instance_id > 0) then
-			e.self:MovePCInstance(296, instance_id, 0, 65, -1);
+			e.self:MovePCInstance(296, instance_id, 0, 65, -1, 0);
 		else
 			e.self:Message(13, "You are not a part of an instance!");
 		end

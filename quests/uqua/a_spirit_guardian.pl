@@ -36,6 +36,7 @@ sub EVENT_TIMER {
 		quest::ze(15,"Your time has elapsed, you must suffer the punishment of failure, there is nothing I can do to help now.");
 	} elsif ($timer eq "orb_turnin") {
 		quest::stoptimer("orb_turnin");
+		quest::setglobal($instid."_spectre_door", 1, 3, "H6");
 		quest::spawn2(292062,0,0,-869,-691,25,254);
 		quest::spawn2(292063,0,0,-836,-692,25,255);
 		quest::spawn2(292062,0,0,-906,-692,25,13);
@@ -45,5 +46,6 @@ sub EVENT_TIMER {
 		quest::spawn2(292066,0,0,-871,-209,59,125);
 		quest::spawn2(292067,0,0,-866,-43,61,130);
 		quest::spawn2(292068,0,0,-869,-16,65,125);
+		$entity_list->FindDoor(4)->SetLockPick(0);
 	}
 }

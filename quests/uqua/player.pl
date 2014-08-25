@@ -5,6 +5,9 @@ my $instid = 0;
 
 sub EVENT_ENTERZONE {
 	$instid = quest::GetInstanceID('uqua',0);
+	if (defined($qglobals{$instid."_spectre_door"})) {
+		$entity_list->FindDoor(4)->SetLockPick(0);
+	}
 	if (!defined($qglobals{$instid."_destoff"})) {
 		quest::settimer(1,90);
 		AURA();

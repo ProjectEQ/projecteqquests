@@ -4,9 +4,9 @@ my $counter = 0;
 
 sub EVENT_SPAWN {
   quest::set_proximity($x-20,$x+20,$y-20,$y+20); 
+  quest::enable_proximity_say();
 }
 
-quest::enable_proximity_say();
 sub EVENT_PROXIMITY_SAY {
   if (($text=~/i wish to enter/i) && $oncursor{67415}) { #Stone of Entry
     if (!$event_started && $entity_list->GetNPCByNPCTypeID(281118)) { #Pixtt_Tixxrt_Kvrok (NoTarget)

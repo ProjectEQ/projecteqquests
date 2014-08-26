@@ -33,4 +33,5 @@ sub EVENT_SIGNAL {
 sub EVENT_DEATH_COMPLETE {
 	quest::creategroundobject(67705,-537,-620,-5,2,3600000);
   quest::signal(292021);
+	quest::signalwith(292079, 1);
 }

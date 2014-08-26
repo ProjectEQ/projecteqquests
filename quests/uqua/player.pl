@@ -51,11 +51,6 @@ sub EVENT_CLICKDOOR {
 	if (($doorid == 11) && (defined($qglobals{$instid."_gaschmb2"})) && !($check_gasnpc1 == 0)) {
 		quest::selfcast(5054);
 	}
-	if ($doorid == 4) {  #need expedition lockout at this door click until possible 24 hour timer until instance request 
-		if(!defined $qglobals{uqualockout}) {
-			SET_ZONE_LOCKOUT();
-		}
-	}
 	if ($doorid == 3) {
 		if (defined($qglobals{$instid."_uquaragedoor"}) && ($qglobals{$instid."_uquaragedoor"} == 1)) {
 			quest::forcedooropen(3);
@@ -78,12 +73,5 @@ sub AURA {
 		$client->Message(15,"You feel protected from the Aura of Destruction.");
 	} else {
 		quest::selfcast(5051);
-	}
-}
-
-sub SET_ZONE_LOCKOUT {
-	#lockout all players for 24 hours
-	foreach $pc ($entity_list->GetClientList()) {
-		$pc->SetGlobal('uqualockout',0,3,"H24");
 	}
 }

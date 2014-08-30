@@ -25,14 +25,11 @@ sub EVENT_ENTERZONE {
 sub EVENT_CLICKDOOR {
   if ($doorid == 35 || $doorid == 36) { #uqua zone in
     my $InInstanceUqua = quest::GetInstanceID("uqua",0);
-    if(!defined $qglobals{uqualockout}) {
       if($InInstanceUqua > 0){
         quest::MovePCInstance(292,$InInstanceUqua,-17,-7,-24);
       } else {
         $client->Message(13, "You are not a part of an instance!");
       }
-    } else {
-      $client->Message(13, "You have recently completed this raid, please come back at a later point");
     }
   } elsif(($doorid == 17) && ($yxtta_door == 0)) {
     $yxtta_door = 1;

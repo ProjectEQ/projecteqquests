@@ -30,7 +30,6 @@ sub EVENT_CLICKDOOR {
       } else {
         $client->Message(13, "You are not a part of an instance!");
       }
-    }
   } elsif(($doorid == 17) && ($yxtta_door == 0)) {
     $yxtta_door = 1;
     ASK_QUESTION();

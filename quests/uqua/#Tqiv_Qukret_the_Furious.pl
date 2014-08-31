@@ -19,15 +19,19 @@ sub EVENT_TIMER {
     quest::spawn2(292018,0,0,-1193,-911,8,189);
     quest::spawn2(292018,0,0,-1190,-878,8,193);
     quest::depop();
+  } elsif ($timer eq "absorb_twin") {
+	  $npc->AddAISpell(0, 5115, Nuke, -1, -1, -350);
+	  $npc->AddAISpell(0, 5116, Nuke, -1, -1, -250);
+	  $npc->AddAISpell(0, 5119, Nuke, -1, -1, -350);
+	  quest::modifynpcstat("max_hit",4800);
+	  quest::modifynpcstat("special_attacks","SrEQUMCNIDf");
+	  quest::stoptimer("absorb_twin");
   }
 }
 
 sub EVENT_SIGNAL {
-  $npc->AddAISpell(0, 5115, Nuke, -1, -1, -350);
-  $npc->AddAISpell(0, 5116, Nuke, -1, -1, -250);
-  $npc->AddAISpell(0, 5119, Nuke, -1, -1, -350);
-  quest::modifynpcstat("max_hit",4800);
-  quest::modifynpcstat("special_attacks","SrEQUMCNIDf");
+	#other twin died
+	quest::settimer("absorb_twin",30);
 }
 
 sub EVENT_DEATH_COMPLETE {

@@ -23,9 +23,9 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_SIGNAL {
-  $npc->AddAISpell(5117);
-  $npc->AddAISpell(5118);
-  $npc->AddAISpell(5120);
+  $npc->AddAISpell(0, 5117, nuke, -1, -1, -300);
+  $npc->AddAISpell(0, 5118, nuke, -1, -1, -1000);
+  $npc->AddAISpell(0, 5120, nuke, -1, -1, -400);
   quest::modifynpcstat("max_hit",4800);
   quest::modifynpcstat("special_attacks","SrEQUMCNIDf");
 }

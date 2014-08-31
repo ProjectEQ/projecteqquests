@@ -15,8 +15,7 @@ function event_say(e)
 		e.other:SummonItem(18921);
 	elseif(e.message:findi("gnoll")) then
 		e.self:Say("Those vile creatures are constantly attacking our city.. and often killing innocent citizens. It is our duty to help defend Qeynos from their vicious raids.");
-	-- Requires Kindly Faction for Headband Quests
-	elseif(fac <= 3) then
+	elseif(fac <= 5) then
 		if(e.message:findi("white headband")) then
 			e.self:Say("That is our training headband.. Beginning students can earn this by slaying four [gnoll] pups, and bringing their scalps back to me.");
 		elseif(e.message:findi("yellow headband")) then
@@ -33,8 +32,8 @@ function event_trade(e)
 	local item_lib = require("items");
 	local fac = e.other:GetFaction(e.self);
 	
-	-- White Headband ID-10110 requires four Gnoll Pup Scalp ID-13789 and Kindly or better faction
-	if(item_lib.check_turn_in(e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789}) and fac <= 3) then
+	-- White Headband ID-10110 requires four Gnoll Pup Scalp ID-13789
+	if(item_lib.check_turn_in(e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789}) and fac <= 5) then
 		e.self:Say("Good job, " .. e.other:GetName() .. ", keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
 		e.other:SummonItem(10110);
 		e.other:Ding();
@@ -42,16 +41,7 @@ function event_trade(e)
 		e.other:Faction(135,5,0);
 		e.other:Faction(12,5,0);
 		e.other:AddEXP(100);
-	-- Has the items but not the required faction for the White Headband
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789})) then
-		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
-		e.other:Ding();
-		e.other:Faction(300,2,0);
-		e.other:Faction(135,2,0);
-		e.other:Faction(12,2,0);
-		e.other:AddEXP(100);
 	-- Yellow Headband ID-10111 requires three Putrid Rib Bone ID-13722 and the White Headband ID-10110
-	-- We don't need to check faction again because they must have the White Headband
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13722,item2 = 13722, item3 = 13722,item4 = 10110})) then
 		e.self:Say("Good work.. and, as promised, here is your reward. It is an honor to present this yellow headband to " .. e.other:GetName() .. ", for recent acts of courage and heroism, on behalf of the Silent Fist Clan.");
 		e.other:SummonItem(10111);

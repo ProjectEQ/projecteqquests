@@ -21,7 +21,7 @@ sub EVENT_TIMER {
 	$npc->WipeHateList();
     quest::spawn2(292015,0,0,-567,-875,9,67);
     quest::spawn2(292015,0,0,-572,-911,9,64);
-    quest::spawn2(292015,0,0,-514,--911,9,195);
+    quest::spawn2(292015,0,0,-514,-911,9,195);
     quest::spawn2(292015,0,0,-514,-875,9,192);
 	quest::stoptimer(1);
 	quest::stoptimer(2);

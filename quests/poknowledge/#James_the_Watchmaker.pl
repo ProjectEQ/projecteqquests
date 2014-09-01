@@ -33,7 +33,7 @@ sub EVENT_SAY   {
             push (@task_list, 267);#level 55 caster
             push (@task_list, 268);#level 60 caster
       }
-         if(($class eq "Warrior") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Berzerker")) {
+         if(($class eq "Warrior") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Berserker")) {
             push (@task_list, 269);#level 20 melee
             push (@task_list, 270);#level 25 melee
             push (@task_list, 234);#level 30 melee

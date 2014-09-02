@@ -5,16 +5,11 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-$InInstanceIkky1 = quest::GetInstanceID("ikkinz",0);
-  if(!defined $qglobals{ikkylockout0}) {
+	$InInstanceIkky1 = quest::GetInstanceID("ikkinz",0);
+
     if($InInstanceIkky1 > 0){
 		quest::MovePCInstance(294,$InInstanceIkky1,-157,27,-2);
-	}
-        else {
+	} else {
 		$client->Message(13, "You are not a part of an instance!");
-	}
-    }
-        else {
-	    quest::say("You have recently completed this trial, please come back at a later point");
 	}
 }

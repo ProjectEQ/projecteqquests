@@ -50,11 +50,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 
-   if ($signal == 0) {
-      quest::depop();
-   }
-
-   elsif ($signal == 1) {
+   if ($signal == 1) {
       quest::stoptimer("clear_corpses");
       quest::stoptimer("trial_eject");
       $proximity_check_delay = 1; #speed up during trial

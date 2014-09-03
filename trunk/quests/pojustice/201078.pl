@@ -14,7 +14,7 @@ my $hold_event = 0;
 
 sub EVENT_SPAWN {
    #Depop any existing controllers
-   quest::signalwith(201425, 0, 0);
+	quest::depopall(201425);
    #Spawn the controller
    quest::spawn2(201425, 0, 0, 194, -1120, 72, 0);
 }

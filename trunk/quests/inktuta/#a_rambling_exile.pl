@@ -44,14 +44,15 @@ sub EVENT_SIGNAL {
 }
 
 sub exile_fail {
-    quest::spawn2(296044,0,0,$x+5,$y,$z,$h);
-    quest::spawn2(296044,0,0,$x+5,$y+10,$z,$h);
-    quest::spawn2(296044,0,0,$x+5,$y-10,$z,$h);
-    quest::spawn2(296044,0,0,$x+10,$y-10,$z,$h);
-    quest::spawn2(296044,0,0,$x+10,$y+10,$z,$h);
-    quest::spawn2(296044,0,0,$x,$y-15,$z,$h);
-    quest::spawn2(296044,0,0,$x,$y+15,$z,$h);
-    quest::spawn2(296044,0,0,$x+25,$y+25,$z,$h);
-    quest::spawn2(296044,0,0,$x+25,$y-25,$z,$h);
-    quest::spawn2(296044,0,0,$x+25,$y,$z,$h);
-  }
+	# X: -274, Y: -531, Z: -51
+	quest::spawn2(296044,0,0,-275,-550,$z,$h);
+	quest::spawn2(296044,0,0,-282,-550,$z,$h);
+	quest::spawn2(296044,0,0,-264,-550,$z,$h);
+	quest::spawn2(296044,0,0,-275,-532,$z,$h);
+	quest::spawn2(296044,0,0,-282,-532,$z,$h);
+	quest::spawn2(296044,0,0,-264,-532,$z,$h);
+	quest::spawn2(296044,0,0,-275,-522,$z,$h);
+	quest::spawn2(296044,0,0,-282,-522,$z,$h);
+	quest::spawn2(296044,0,0,-264,-522,$z,$h);
+	quest::spawn2(296044,0,0,-275,-582,$z,$h);
+}

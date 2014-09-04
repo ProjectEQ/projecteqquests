@@ -2,7 +2,7 @@
 
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
-	if (qglobals["god_qvic_access"] ~= nil and qglobals["god_qvic_access"] == 1 and e.self:HasZoneFlag(295)) then
+	if (qglobals.god_qvic_access ~= nil and qglobals.god_qvic_access == "1" and e.self:HasZoneFlag(295)) then
 		eq.set_global("god_qvic_access","2",5,"F");
 	end
 end

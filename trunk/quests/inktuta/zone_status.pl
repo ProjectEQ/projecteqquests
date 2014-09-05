@@ -7,7 +7,6 @@ my $incoherent_say = 0;
 my $irrational_say = 0; 
 
 sub EVENT_SPAWN {
-	quest::crosszonemessageplayerbyname(5, "GMBobaski", "Inktuta pop. InstID: $instid");
 	#set timer to make sure I get instance id
 	quest::settimer(1,5);
 }
@@ -51,6 +50,7 @@ sub EVENT_SIGNAL {
 	} elsif ($signal < 296000) {
 		#signal from lockout_inktuta with instid
 		$instid = $signal;
+		quest::crosszonemessageplayerbyname(5, "GMBobaski", "Inktuta pop. InstID: $instid");
 	}
 }
 	

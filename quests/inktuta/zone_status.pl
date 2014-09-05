@@ -7,6 +7,7 @@ my $incoherent_say = 0;
 my $irrational_say = 0; 
 
 sub EVENT_SPAWN {
+	quest::crosszonemessageplayerbyname(5, "GMBobaski", "Inktuta pop. InstID: $instid");
 	#set timer to make sure I get instance id
 	quest::settimer(1,5);
 }

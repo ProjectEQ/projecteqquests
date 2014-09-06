@@ -59,25 +59,40 @@ function event_click_door(e)
 			end
 		end
 		
+		--Player is part of an instance
 		if (instance_id > 0) then
+			local phase = eq.get_qglobals()[instance_id .. '_potimeb_status'];
+
 			e.self:Message(10, "The portal, dim at first, begins to glow brighter.");
 			e.self:Message(10, "The portal flashes briefly, then glows steadily.");
-			-- send them into their instance
-			if (door_id == 8) then
-				-- GetDoorID =  8 : Air Trial
-				e.self:MovePCInstance(223, instance_id, -36, 1352, 496, 62);
-			elseif (door_id == 9) then
-				-- GetDoorID =  9 : Water Trial
-				e.self:MovePCInstance(223, instance_id, -51, 857, 496, 62);
-			elseif (door_id == 10) then
-				-- GetDoorID = 10 : Earth Trial
-				e.self:MovePCInstance(223, instance_id, -35, 1636, 496, 62);
-			elseif (door_id == 11) then
-				-- GetDoorID = 11 : Fire Trial
-				e.self:MovePCInstance(223, instance_id, -55, 569, 496, 62);
-			elseif (door_id == 12) then
-				-- GetDoorID = 12 : Undead Trial
-				e.self:MovePCInstance(223, instance_id, -27, 1103, 496, 62);
+			-- Send them to their instance
+			-- If past Phase 3, move them to their current phase
+			if ( phase == "Phase6" ) then
+				e.self:MovePCInstance(223, instance_id, 337, 1, 8, 64);
+			elseif ( phase == "Phase5" ) then
+				e.self:MovePCInstance(223, instance_id, -358, 0, 4, 64);
+			elseif ( phase == "Phase4" ) then
+				e.self:MovePCInstance(223, instance_id, -382, -11, 349, 62);
+			elseif ( phase == "Phase3" ) then
+				e.self:MovePCInstance(223, instance_id, 681, 1113, 496, 56);
+			-- Not past phase 3, spawn in individual trials
+			else
+				if (door_id == 8) then
+					-- GetDoorID =  8 : Air Trial
+					e.self:MovePCInstance(223, instance_id, -36, 1352, 496, 62);
+				elseif (door_id == 9) then
+					-- GetDoorID =  9 : Water Trial
+					e.self:MovePCInstance(223, instance_id, -51, 857, 496, 62);
+				elseif (door_id == 10) then
+					-- GetDoorID = 10 : Earth Trial
+					e.self:MovePCInstance(223, instance_id, -35, 1636, 496, 62);
+				elseif (door_id == 11) then
+					-- GetDoorID = 11 : Fire Trial
+					e.self:MovePCInstance(223, instance_id, -55, 569, 496, 62);
+				elseif (door_id == 12) then
+					-- GetDoorID = 12 : Undead Trial
+					e.self:MovePCInstance(223, instance_id, -27, 1103, 496, 62);
+				end
 			end
 		end
 	else

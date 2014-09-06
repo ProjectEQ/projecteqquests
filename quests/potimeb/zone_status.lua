@@ -502,30 +502,59 @@ function SpawnPhaseFive()
 		eq.set_global(instance_id.."_potimeb_phase_bit","0",7,"H13");
 		eq.repop_zone();
 	else
-		if (bit.band(phase_bit, 1) == 0) then
-			eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
-		else
-			event_counter = event_counter + 1;
+		-- Armies haven't been killed.  Spawn Armies and fake version of each
+		-- god that hasn't yet been killed.
+		if (bit.band(phase_bit, 16) == 0) then 
+			if (bit.band(phase_bit, 1) == 0) then
+				eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
+			else
+				event_counter = event_counter + 1;
+			end
+			if (bit.band(phase_bit, 2) == 0) then
+				eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
+			else
+				event_counter = event_counter + 1;
+			end
+			if (bit.band(phase_bit, 4) == 0) then
+				eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
+			else
+				event_counter = event_counter + 1;
+			end
+			if (bit.band(phase_bit, 8) == 0) then
+				eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
+			else
+				event_counter = event_counter + 1;
+			end
+			-- spawn the armies
+			-- TO DO: need to split armies into spawn groups for each god.
+			eq.spawn_condition("potimeb",instance_id,1,1);
+			-- timer is waiting for the armies to be killed so we can set that bit.
+			eq.set_timer(instance_id .. "_potimeb_p5army", 3000);
+		-- Armies are dead, which gods should we pop
+		else 
+			if (bit.band(phase_bit, 1) == 0) then
+				eq.spawn2(223142,0,0,-299,-297,23.3,31); -- Real Bertoxxulous
+			else 
+				event_counter = event_counter + 1;
+			end
+			if (bit.band(phase_bit, 2) == 0) then
+				eq.spawn2(223166,0,0,-257,255,6,101.5); -- Real Cazic
+			else 
+				event_counter = event_counter + 1;
+			end
+			if (bit.band(phase_bit, 4) == 0) then
+				eq.spawn2(223167,0,0,303.3,306,13.3,161.5); -- Real Innoruuk
+			else 
+				event_counter = event_counter + 1;
+			end
+			if (bit.band(phase_bit, 8) == 0) then
+				eq.spawn2(223168,0,0,264,-279,18.75,217.5); -- Real Rallos
+			else 
+				event_counter = event_counter + 1;
+			end
 		end
-		if (bit.band(phase_bit, 2) == 0) then
-			eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
-		else
-			event_counter = event_counter + 1;
-		end
-		if (bit.band(phase_bit, 4) == 0) then
-			eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
-		else
-			event_counter = event_counter + 1;
-		end
-		if (bit.band(phase_bit, 8) == 0) then
-			eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
-		else
-			event_counter = event_counter + 1;
-		end
-		-- spawn the armies
-		-- TO DO: need to split armies into spawn groups for each god.
-		eq.spawn_condition("potimeb",instance_id,1,1);
 	end
+
 end
 
 function UpdateLockoutGlobal(global_name,global_value,global_duration)
@@ -568,6 +597,20 @@ function event_timer(e)
 		eq.destroy_instance(instance_id);
 		-- depop the zone on event fail.
 		eq.depop_zone(false);
+	elseif (e.timer == instance_id .. "_potimeb_p5army") then
+		-- List of NPCIDs of the army npcs
+		local myTable = { 223194, 223195, 223196, 223197, 223198, 223199, 223200, 223002, 223003 };
+		local armiesdead = 1;
+		for i=1,#myTable do
+			if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(myTable[i]) == true ) then
+				armiesdead = 0;
+			end
+		end
+		if ( armiesdead == 1 ) then
+			local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
+			eq.set_global(instance_id.."_potimeb_phase_bit",tostring(bit.bor(phase_bit,16)),7,"H13");
+			eq.stop_timer(instance_id .. "_potimeb_p5army");
+		end
 	end
 end
 

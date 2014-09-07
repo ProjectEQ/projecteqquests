@@ -93,7 +93,6 @@ end
 
 function event_timer(e)
 	if (e.timer == "stonemite") then
-		eq.zone_emote(13, "3 second timer is done");
 		if (confused_say == 1 and rambling_say == 1 and incoherent_say == 1 and irrational_say == 1) then
 			--Success
 			eq.stop_timer("stonemite");
@@ -109,10 +108,6 @@ function event_timer(e)
 			eq.spawn2(296073,0,0,-383,-536,-76,0); --a_pile_of_bones_
 			AddLockout(2);
 		else
-			eq.zone_emote(4, ""..tostring(confused_say));
-			eq.zone_emote(4, ""..tostring(rambling_say));
-			eq.zone_emote(4, ""..tostring(incoherent_say));
-			eq.zone_emote(4, ""..tostring(irrational_say));
 			--Stonemite Fail - tell exiles to spawn stonemites
 			eq.stop_timer("stonemite");
 			eq.signal(296035,2);  --an_incoherent_exile
@@ -207,6 +202,7 @@ function OPEN_DOOR(which_door)
 end
 
 function AddLockout(which_lockout)
+	local instance_requests = require("instance_requests");
 	if (which_lockout == 1) then
 		--Kelekdrix dead
 		for k,v in pairs(charid_list) do

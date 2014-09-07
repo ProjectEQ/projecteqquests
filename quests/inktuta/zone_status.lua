@@ -213,7 +213,7 @@ function AddLockout(which_lockout)
 	elseif (which_lockout == 2) then
 		--Stonemites done
 		for k,v in pairs(charid_list) do
-			eq.target_global("Ink_Mites", tostring(instance_requests.GetLockoutEndTimeForHours(16)), "H24", 0,v, 0);
+			eq.target_global("Ink_Mites", tostring(instance_requests.GetLockoutEndTimeForHours(24)), "H24", 0,v, 0);
 		end
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
@@ -221,7 +221,7 @@ function AddLockout(which_lockout)
 	elseif (which_lockout == 3) then
 		--Golems Cleared
 		for k,v in pairs(charid_list) do
-			eq.target_global("Ink_Golems", tostring(instance_requests.GetLockoutEndTimeForHours(16)), "H24", 0,v, 0);
+			eq.target_global("Ink_Golems", tostring(instance_requests.GetLockoutEndTimeForHours(24)), "H24", 0,v, 0);
 		end
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
@@ -229,7 +229,7 @@ function AddLockout(which_lockout)
 	elseif (which_lockout == 4) then
 		--Cursecallers done
 		for k,v in pairs(charid_list) do
-			eq.target_global("Ink_Callers", tostring(instance_requests.GetLockoutEndTimeForHours(16)), "H36", 0,v, 0);
+			eq.target_global("Ink_Callers", tostring(instance_requests.GetLockoutEndTimeForHours(36)), "H36", 0,v, 0);
 		end
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
@@ -237,7 +237,7 @@ function AddLockout(which_lockout)
 	elseif (which_lockout == 5) then
 		--Noqufiel dead
 		for k,v in pairs(charid_list) do
-			eq.target_global("Ink_Noqufiel", tostring(instance_requests.GetLockoutEndTimeForHours(16)), "H108", 0,v, 0);
+			eq.target_global("Ink_Noqufiel", tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
 		end
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);

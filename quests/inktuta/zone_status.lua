@@ -53,13 +53,13 @@ function event_signal(e)
 		if(confused_say == 0 and rambling_say == 0 and incoherent_say == 0 and irrational_say == 0) then
 			eq.set_timer("stonemite",3000);
 		end
-		if (eq.signal == 296033) then --confused
+		if (e.signal == 296033) then --confused
 			confused_say = 1;
-		elseif (eq.signal == 296030) then --rambling
+		elseif (e.signal == 296030) then --rambling
 			rambling_say = 1;
-		elseif (eq.signal == 296035) then --incoherent
+		elseif (e.signal == 296035) then --incoherent
 			incoherent_say = 1;
-		elseif (eq.signal == 296036) then --irrational
+		elseif (e.signal == 296036) then --irrational
 			irrational_say = 1;
 		end
 		
@@ -93,13 +93,14 @@ end
 
 function event_timer(e)
 	if (e.timer == "stonemite") then
+		eq.zone_emote(13, "3 second timer is done");
 		if (confused_say == 1 and rambling_say == 1 and incoherent_say == 1 and irrational_say == 1) then
 			--Success
 			eq.stop_timer("stonemite");
 			eq.signal(296035,1);  --an_incoherent_exile
 			eq.signal(296036,1);  --an_irrational_exile
 			eq.signal(296033,1);  --a_confused_exile
-			eqsignal(296030,1);  --a_rambling_exile
+			eq.signal(296030,1);  --a_rambling_exile
 			eq.depop_all(296035);
 			eq.depop_all(296036);
 			eq.depop_all(296033);
@@ -108,6 +109,10 @@ function event_timer(e)
 			eq.spawn2(296073,0,0,-383,-536,-76,0); --a_pile_of_bones_
 			AddLockout(2);
 		else
+			eq.zone_emote(4, ""..tostring(confused_say));
+			eq.zone_emote(4, ""..tostring(rambling_say));
+			eq.zone_emote(4, ""..tostring(incoherent_say));
+			eq.zone_emote(4, ""..tostring(irrational_say));
 			--Stonemite Fail - tell exiles to spawn stonemites
 			eq.stop_timer("stonemite");
 			eq.signal(296035,2);  --an_incoherent_exile

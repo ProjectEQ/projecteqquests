@@ -50,7 +50,6 @@ sub EVENT_COMBAT {
 sub EVENT_DEATH_COMPLETE {
 	quest::emote("cries out, her booming alto echoing with contempt,");
 	quest::say("Your victory here is hollow. With my death, the way to the lower reaches is unsealed. The denizens below destroy everything they touch. You will suffer their wrath!");
-	quest::ze(15,"The sound of moving gears and grinding stone reverberates throughout the temple. A door has been unlocked.");
 	$entity_list->FindDoor(41)->SetLockPick(0);
 	quest::spawn2(296027,0,0,90,-515,-27,64); #Mimezpo_the_Oracle
 	quest::spawn2(296077,0,0,526,-495,7,193);
@@ -58,5 +57,5 @@ sub EVENT_DEATH_COMPLETE {
 	quest::spawn_condition("inktuta", 1, 0); #Stop Usher/Watcher spawns
 	quest::depopall(296025);
 	quest::depopall(296026);
-	quest::signalwith(296076,1); #setting lockout
+	quest::signalwith(296070,296024); #setting lockout
 }

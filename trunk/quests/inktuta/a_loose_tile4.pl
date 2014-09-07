@@ -4,10 +4,8 @@ sub EVENT_SPAWN {
 sub EVENT_ENTER {
 	quest::ze(15,"The stone tile beneath your feet shifts, setting a complex trap into motion. Amidst the muffled sounds of grinding gears and grating stone you notice the clay golems nearby are stirring. A chill runs down your spine as you realize what you've done. They stumble forth to attack, dried flakes of clay raining from their ancient bodies.");
 	quest::signalwith(296051,1); #activate golems
-	quest::depop_withtimer();
+	quest::signalwith(296070,296070); #tell zone_status golems done
+	quest::depop();
 	my $instid = quest::GetInstanceID("inktuta",0);
 	quest::setglobal($instid.'_inktuta_status',8,3,"H6");
-	if(!$entity_list->IsMobSpawnedByNpcTypeID(296052)){
-		quest::spawn2(296052,0,0,-166,-911,-127,194);
-	}
 }

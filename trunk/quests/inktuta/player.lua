@@ -10,7 +10,7 @@ function event_click_door(e)
 			-- loop through the list entries
 			for npc in npc_list.entries do
 				-- check for the npcid of a_clay_monolith (296069)
-				if (npc:GetNPCTypeID() == 296069) then
+				if (npc:GetNPCTypeID() == 296069 and not e.self:GetGM()) then
 					-- set aggro on person who clicked
 					npc:AddToHateList(e.self,1);
 				end

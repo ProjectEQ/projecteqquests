@@ -19,7 +19,7 @@ function InstanceRequests.ValidateInstanceRequest(instance, max_players, request
             if (client.valid) then
               local client_bits = InstanceRequests.GetClientLockoutBits(client, event_globals);
               local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, client_bits));
-              if (requestor:Admin() <= 80 and compared_bits > 0) then
+              if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
                 local client_lockouts = InstanceRequests.GetLockedOutEvents(compared_bits, event_globals);
                 requestor:Message(13, client:GetCleanName().." has the following lockouts:");
                 InstanceRequests.DisplayLockouts(requestor, client, event_globals);

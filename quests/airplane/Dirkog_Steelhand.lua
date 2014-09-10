@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("There ya go laddie!");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {platinum == 500})) then
+	elseif(item_lib.check_turn_in(e.trade, {platinum = 500})) then
 		e.self:Say("Thank ye, laddie! He's awaitin' ya up top!");
 		eq.spawn2(71091,0,0,-586,767,176,64);
 		eq.depop();

@@ -1,7 +1,12 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings, you have made excellent time. We received word that Zordak was gathering his power here, and we still have little knowledge of his true intentions. Scattered throughout these mountains there are small Pearlescent Shards, binding four of these shards together within a Box of Binding should allow me to create a Seal. This seal, when fused with a Swirling Pearl inside Zordak's heart should allow our seers to divine his true intentions, even after he has been slain. Once you have the seal I will release Zordak, make haste I will not be able to hold him for long.");
-    #quest::summonitem(17175); 
+	 # If the Player has the Swirling Perl 28059 from Zordak in Sol B.  Then they should be able to 
+	 # get a box from Warder Cecilia
+	 if (plugin::check_hasitem($client,28059) && !plugin::check_hasitem($client,17175)){
+      quest::summonitem(17175); 
+    }
+
   }
 }
 
@@ -23,10 +28,6 @@ sub EVENT_ITEM {
       }
     }
     quest::depop_withtimer();
-  }
-   elsif (plugin::check_handin(\%itemcount,20859=>1)) {
-    quest::summonitem(20859); # 20859  Swirling Pearl
-    quest::summonitem(17175); # 17175  Zordak's Box of Bindings
   }
   plugin::return_items(\%itemcount);
 }

@@ -41,7 +41,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(192,1,0);
 		e.other:Faction(217,1,0);
-		e.other:Faction(36,1,0);
+		e.other:Faction(135,1,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

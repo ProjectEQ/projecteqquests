@@ -32,7 +32,7 @@ sub EVENT_ITEM {
       quest::faction(33,20); # Circle Of Unseen Hands
       quest::faction(217,-20); # Merchants of Qeynos
       quest::faction(53,20); # Corrupt Qeynos Guards
-      quest::faction(36,-20); # Guards of Qeynos
+      quest::faction(135,-20); # Guards of Qeynos
       quest::faction(164,20); # Kane Bayle
       quest::depop_withtimer();
     }

@@ -39,6 +39,7 @@ function event_say(e)
 				instance_id = eq.create_instance("uqua",0,21600);
 				if (raid.valid) then
 					eq.assign_raid_to_instance(instance_id);
+					e.self:Say("Place your hands on one of the altars behind me and the way will be revealed. Be wary for you are about to encounter some of the most vicious trusik known. If for any reason you wish to return, place your hands on the golem within the temple.");
 				end
 			else
 				e.other:Message(13, "You are already in an instance.");

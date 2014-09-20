@@ -1,6 +1,8 @@
 -- Aganetti_the_Keeper (295065)
 -- Request NPC for Inktu`Ta
 
+---
+-- @param NPC#event_say e
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("gestures to the end of the cavernous hallway.");
@@ -13,7 +15,7 @@ function event_say(e)
 				{ "Ink_Mites", "Stonemite Event" },
 				{ "Ink_Golems", "Golems" },
 				{ "Ink_Callers", "Cursecaller Event" },
-				{ "Ink_Noq", "Noqufiel" }
+				{ "Ink_Noqufiel", "Noqufiel Event" }
 			} 
 			local instance_requests = require("instance_requests");
 			local request = instance_requests.ValidateInstanceRequest("inktuta", 54, e.other, inktuta_globals);

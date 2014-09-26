@@ -21,12 +21,12 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("Very good. Here's your reward.");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20949, item2 = 20990, item3 = 20991, item4 = 20996})) then 	--rogue test of stealth using pegasus statuette, prismatic sphere, fine wool cloak
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20949, item2 = 20990, item3 = 20991})) then 	--rogue test of stealth using pegasus statuette, prismatic sphere, fine wool cloak
 		e.other:SummonItem(2701); 	--scintillating bracer of protection
 		e.other:AddEXP(100000);
 		e.self:Say("Very good. Here's your reward.");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20935, item2 = 20987, item3 = 20986, item4 = 20996})) then 	--rogue test of cunning using bronze disc, jester's mask, red face paint
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20935, item2 = 20987, item3 = 20986})) then 	--rogue test of cunning using bronze disc, jester's mask, red face paint
 		e.other:SummonItem(2702); 	--transparent mask
 		e.other:AddEXP(100000);
 		e.self:Say("Very good. Here's your reward.");

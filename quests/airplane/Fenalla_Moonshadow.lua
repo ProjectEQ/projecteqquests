@@ -21,7 +21,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("You have done well, young one.");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20735, item2 = 20951, item3 = 20734, item4 = 20740})) then 	--druid test of the bee using divine honeycomb, efreeti statuette, wilder's girdle
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20735, item2 = 20951, item3 = 20734})) then 	--druid test of the bee using divine honeycomb, efreeti statuette, wilder's girdle
 		e.other:SummonItem(11684); 	--honeycomb belt
 		e.other:AddEXP(100000);
 		e.self:Say("You have done well, young one.");

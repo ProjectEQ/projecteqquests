@@ -21,12 +21,12 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20950, item2 = 20721, item3 = 20722, item4 = 20727})) then 	--paladin test of sacrifice using griffon statuette, spiroc peace totem, bixie sword blade
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20950, item2 = 20721, item3 = 20722})) then 	--paladin test of sacrifice using griffon statuette, spiroc peace totem, bixie sword blade
 		e.other:SummonItem(27708); --Aldryn, blade of the ocean
 		e.other:AddEXP(100000);
 		e.self:Say("");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20957, item2 = 20723, item3 = 20724, item4 = 20727})) then 	--paladin test of love using dark spiroc feather, ethereal topaz, sphinx claw
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20957, item2 = 20723, item3 = 20724})) then 	--paladin test of love using dark spiroc feather, ethereal topaz, sphinx claw
 		e.other:SummonItem(11681); --Zephyrwind
 		e.other:AddEXP(100000);
 		e.self:Say("");

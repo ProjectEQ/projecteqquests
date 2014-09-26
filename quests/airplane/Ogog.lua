@@ -4,34 +4,34 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Great, let us waste no more time! Do you wish to begin your test of concentration, focus, or meditation?");
-	elseif(e.message:findi("concentration")) then 	--wizard test of concentration
-		e.self:Say("Concentration it is. Proceed upward through the sky and return to me an Azure Tessera, an Augmentor’s Gem, and a Grey Damask Cloak. This will prove your ability to concentrate and I will reward you with an Augmentors Mask.");
-	elseif(e.message:findi("focus")) then 			--wizard test of focus
-		e.self:Say("Focus is a must. Travel among the residents of the sky and bring to me an Iron Disc, an Ethereal Opal, and a Woven Skull Cap. This will prove your ability to focus and I will reward you with Al`Kabors Cap.");
-	elseif(e.message:findi("meditation")) then 		--wizard test of meditation
-		e.self:Say("Meditation, the fix for all. Fly to those above and return to me a Hyaline Globe, a Sky Topaz, and a High Quality Raiment. If you are successful, I will reward you with the Raiment of Thunder.");
+		e.self:Say("Ogog not smart, but Ogog smarter than you.  You ready for Ogog or no?");
+	elseif(e.message:findi("ready")) then
+		e.self:Say("Ok, " .. e.other:GetName() .. ".  Ogog got some hard things for you.  You do bash, smash, or think test?");
+	elseif(e.message:findi("think")) then 
+		e.self:Say("think");
+	elseif(e.message:findi("smash")) then
+		e.self:Say("Ogog smash good. . . Ogog no think you can smash good.  But Ogog let you try.  You get Ogog Djinni War Blade, some virulent wasp poison, and a mottled spiroc feather.  Ogog say you good warrior if you do this!");
+	elseif(e.message:findi("bash")) then
+		e.self:Say("This one hard, Ogog like it.  Ogog need efreeti battle axe, some honey nectar, bottled djinni, and ethereal emerald. Then Ogog make you best basher.");
 	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 20930, item2 = 20741, item3 = 20742})) then 	--wizard test of concentration using azure tessera, augmentor's gem, grey damask cloak
-		e.other:SummonItem(1272); --augmentor's mask
+	if(item_lib.check_turn_in(e.trade, {item1 = 20983, item2 = 20963, item3 = 20981,item4 = 20982})) then -- warrior test of bash using efreeti battle axe, honeyed nectar, bottled djinni, ethereal emerald
+		e.other:SummonItem(11675); --fangol
 		e.other:AddEXP(100000);
-		e.self:Say("Ah good. Take this as your reward.");
+		e.self:Say("Yuz do good! Take dis!");
 		eq.depop();
-
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20937, item2 = 20743, item3 = 20744})) then --wizard test of focus using iron disc, ethereal opal, woven skull cap
-		e.other:SummonItem(1271); --Al`kabor's cap of binding
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20980,item2 = 20979, item3 = 20956})) then -- warrior test of smash using djinni war blade, virulent poison, mottled spiroc feather
+		e.other:SummonItem(11674); -- dagas
 		e.other:AddEXP(100000);
-		e.self:Say("Ah good. Take this as your reward.");
+		e.self:Say("Yuz do good! Take dis!");
 		eq.depop();
-
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20944, item2 = 20745, item3 = 20746})) then --wizard test of meditation using hyaline globe, sky topaz, high quality raiment
-		e.other:SummonItem(1273); --raiment of thunder
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20976, item2 = 20977, item3 = 20978})) then -- warrior test of think using efreeti belt, pegasus statuette, spiroc wind totem, wind tablet
+		e.other:SummonItem(11673); -- belt of the four winds
 		e.other:AddEXP(100000);
-		e.self:Say("Ah good. Take this as your reward.");
+		e.self:Say("Yuz do good! Take dis!");
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

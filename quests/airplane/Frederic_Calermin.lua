@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("Take this as your reward.");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20944, item2 = 20758, item3 = 20759, item4 = 20872})) then	--magician test of shielding using hyaline globe, ivory pendant, golden coffer
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20944, item2 = 20758, item3 = 20759})) then	--magician test of shielding using hyaline globe, ivory pendant, golden coffer
 		e.other:SummonItem(14557); 	--gold white pendant
 		e.other:AddEXP(100000);
 		e.self:Say("Take this as your reward.");

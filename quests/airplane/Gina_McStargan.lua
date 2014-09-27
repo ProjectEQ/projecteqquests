@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("Excellent! Take this as your reward.");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20947, item2 = 20839, item3 = 20840, item4 = 20838})) then	--shaman test of sight using phosphoric globe, sphinx hide, light damask mantle
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20947, item2 = 20839, item3 = 20840})) then	--shaman test of sight using phosphoric globe, sphinx hide, light damask mantle
 		e.other:SummonItem(27728); --fairy-hide mantle
 		e.other:AddEXP(100000);
 		e.self:Say("Excellent! Take this as your reward.");

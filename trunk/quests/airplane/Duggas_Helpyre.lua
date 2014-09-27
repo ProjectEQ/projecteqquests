@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("Haha! So you lived! Take this and be gone!");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20960, item2 = 20788, item3 = 20789, item4 = 20792})) then 	--necromancer test of the finger using white spiroc feather, nebulous ruby, ring of veeshan
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20960, item2 = 20788, item3 = 20789})) then 	--necromancer test of the finger using white spiroc feather, nebulous ruby, ring of veeshan
 		e.other:SummonItem(27713); --band of wailing winds
 		e.other:AddEXP(100000);
 		e.self:Say("Haha! So you lived! Take this and be gone!");

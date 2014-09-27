@@ -22,7 +22,7 @@ function event_trade(e)
 		e.self:Say("Take dis.");
 		eq.depop();
 
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20962, item2 = 20843, item3 = 20844, item4 = 20841})) then 	--shaman test of the snake using emerald spiroc feather, bixie essence, spiritualist's ring
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20962, item2 = 20843, item3 = 20844})) then 	--shaman test of the snake using emerald spiroc feather, bixie essence, spiritualist's ring
 		e.other:SummonItem(27730); --vermilion sky ring
 		e.other:AddEXP(100000);
 		e.self:Say("Take dis.");

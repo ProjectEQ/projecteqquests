@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:AddEXP(100000);
 		e.self:Say("You have moved closer to enlightenment.");
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20967, item2 = 20804, item3 = 20805, item4 = 20960})) then 	--monk test of tranquility using aged nectar, degree of quellious, tear of quellious
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20967, item2 = 20804, item3 = 20805})) then 	--monk test of tranquility using aged nectar, degree of quellious, tear of quellious
 		e.other:SummonItem(11698); 	--golden sash of tranquility
 		e.other:AddEXP(100000);
 		e.self:Say("You have moved closer to enlightenment.");

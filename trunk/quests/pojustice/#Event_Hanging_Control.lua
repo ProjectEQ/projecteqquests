@@ -53,8 +53,7 @@ function event_spawn(e)
 end
 
 function event_signal(e)
-	--e.self:Shout("Signal: " .. e.signal);
-
+	
 	if (e.signal == 7) then
 		depop_prisoners();
 		eq.zone_emote(3, "Success!");
@@ -95,8 +94,7 @@ function event_signal(e)
 end
 
 function event_timer(e)
-	--e.self:Shout("event_timer: " .. e.timer);
-
+	
 	if (e.timer == "next_wave") then
 		eq.stop_timer(e.timer);
 		spawn_mobs();
@@ -118,8 +116,7 @@ function event_timer(e)
 		-- FD the prisoner who's timer went off
 		eq.get_entity_list():GetMobByNpcTypeID(tonumber(npc_to_feign)):SetAppearance(3);
 
-		--eq.zone_emote(3, "The Prisoner clutches at [her/her] throat, trying to desperately to breathe.");
-		eq.zone_emote(3, "The Prisoner clutches at their throat, trying to desperately to breathe.");
+				eq.zone_emote(3, "The Prisoner clutches at their throat, trying desperately to breathe.");
 
 	elseif (e.timer == "failtimer_201471" or e.timer == "failtimer_201472" or e.timer == "failtimer_201473") then
 		-- If the Event has failed; then Kill all the Potential Fail Timers.
@@ -166,9 +163,7 @@ function spawn_spirit(spirit_id)
 
 	-- Spawn the Mob
 	eq.spawn2( spirit_id, 0, 0, (490 + spirit_x[steps]), -1139, 73, 125);
-	--eq.zone_emote( 5, spirit_id .. " is chocking " .. prisoners_list[ steps ] );
 
-	--eq.signal( spirit_id, prisoners_list[steps] );
 	spirits_to_prisoners[ spirit_id ] = prisoners_list[ steps ];
 
 	eq.zone_emote(3, "The prisoner begins to choke as an invisible noose tightens around his neck.");

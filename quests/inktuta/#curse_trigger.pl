@@ -4,9 +4,7 @@ my $count;
 my $initial;
 my @curse_callers = qw(296053 296054 296055 296056 296057 296058);
 my @curse_bearers = qw(296059 296060 296061 296062 296063 296064);
-my @hate_list;
-my $hate_list;
-my $hate_count = 0;
+
 
 sub EVENT_SPAWN {
 	$initial = 0;
@@ -17,6 +15,9 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
 	#fail/wipe check - signal 2 means one of the callers lost aggro, for loop to make sure none have aggro, depop all callers and bearers, spawn noqufiel to reset event
 	if ($signal == 2) {
+		my @hate_list;
+		my $hate_list;
+		my $hate_count = 0;
 		for ($count = 0; $count <= 5; $count++) {
 			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
 				@hate_list = $entity_list->GetNPCByNPCTypeID($curse_callers[$count])->GetHateList();
@@ -59,14 +60,18 @@ sub EVENT_TIMER {
 		}
 	} elsif ($timer eq "spawn_cursebearer") {
 		#if the cursecaller is still up, and his cursebearer isn't, he needs to summon another one
+		#only spawn one per timer hit
+		my $spawned_one = 0
 		for ($count = 0; $count <= 5; $count++) {
 			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
-				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count])) {
+				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count]) && $spawned_one = 0) {
 					quest::spawn2($curse_bearers[$count],0,0,42,-912,-126,195);
-				}
+					$spawned_one = 1
+				}		
 			} else {
 				quest::depopall($curse_bearers[$count]);
 			}
 		}
+		$spawned_one = 0
 	}
 }

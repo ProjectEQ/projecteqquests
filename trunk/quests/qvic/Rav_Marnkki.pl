@@ -1,3 +1,5 @@
+my $rage = 0;
+
 sub EVENT_DEATH_COMPLETE {
   quest::signalwith(295130,1);
 }
@@ -22,4 +24,23 @@ sub AGGRO_ALL {
   $entity_list->GetMobByNpcTypeID(295131)->AddToHateList($pc,1,0);
   $entity_list->GetMobByNpcTypeID(295132)->AddToHateList($pc,1,0);
   $entity_list->GetMobByNpcTypeID(295133)->AddToHateList($pc,1,0);
+}
+
+sub EVENT_SIGNAL {
+	# signals from Iqthinxa Karnkvi
+	# 2 - The ravs are not all within 10% of each other, get harder and add AE Ramp
+	# 3 - You aren't the lowest HP so you need to emote as well
+	# 1 - Back within threshold, get easier again
+	if ($signal >= 2) {
+		quest::modifynpcstat("max_hit",2250);
+		quest::modifynpcstat("special_attacks","rFQf");
+		if ($signal == 3 && $rage == 0) {
+			quest::emote("goes into a frenzy to protect its wounded pack mate");
+			$rage = 1;
+		}
+	} elsif ($signal == 1) {
+		quest::modifynpcstat("max_hit",2000);
+		quest::modifynpcstat("special_attacks","RFQf");
+		$rage = 0
+	}
 }

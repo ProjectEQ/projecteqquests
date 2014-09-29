@@ -33,7 +33,7 @@ sub EVENT_SIGNAL {
 	# 1 - Back within threshold, get easier again
 	if ($signal >= 2) {
 		quest::modifynpcstat("max_hit",2250);
-		quest::modifynpcstat("special_attacks","rFQf");
+		quest::modifynpcstat("special_attacks","rFQfi");
 		if ($signal == 3 && $rage == 0) {
 			quest::emote("goes into a frenzy to protect its wounded pack mate");
 			$rage = 1;

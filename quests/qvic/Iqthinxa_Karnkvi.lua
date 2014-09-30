@@ -19,24 +19,40 @@ end
 ---
 --@param NPC#event_hp e
 function event_hp(e)
-	--at 75% I go inactive and spawn my 3 Ravs
+	--at 75% I go inactive and spawn my 3 Ravs and they automatically aggro
+	e.self:Say("You fight well.  We shall see how you handle my new pets in battle.")
 	eq.spawn2(295131,0,0,84,423,-410,84)
 	eq.spawn2(295132,0,0,126,310,-422,232)
 	eq.spawn2(295133,0,0,267,283,-410,124)
 	eq.modify_npc_stat("special_attacks","ABfHG")
-	--safety check for lost/missed signals from ravs & keep them within 10% of each other, otherwise have them all aggro lowest HP rav's top hate
-	eq.set_timer("rav_check",10000)
+	InitAggroRavs(e)
 	e.self:WipeHateList()
+	--Rav maintenance; keep them within 10% of each other, adjust accordingly, stay in leash range
+	eq.set_timer("rav_check",10000)
 end
 
 function event_signal(e)
 	 --from Rav's when they die
- 	 CheckRavs()
+	 if (e.signal == 1) then
+	 	CheckRavs()
+	 end
 end
 
 function event_timer(e)
-	CheckRavs()
+	if (e.timer == "rav_check") then
+		CheckRavs()
+	end
 end
+
+function InitAggroRavs(e)
+	local irav1 = eq.get_entity_list():GetMobByNpcTypeID(295131)
+ 	local irav2 = eq.get_entity_list():GetMobByNpcTypeID(295132)
+ 	local irav3 = eq.get_entity_list():GetMobByNpcTypeID(295133)
+ 	irav1:AddToHateList(e.self:GetHateTop(),1)
+ 	irav2:AddToHateList(e.self:GetHateTop(),1)
+ 	irav3:AddToHateList(e.self:GetHateTop(),1)
+ end
+	
 
 ---
 --@param NPC#CheckForRavs e
@@ -82,6 +98,38 @@ function CheckRavs()
 	      	 RavCount = RavCount + 1
 	      end
      end
+
+
+     --check to see if any ravs out of leash range. If so move them back in 
+     --the arena, and bring their tank with them
+     if (rav1 ~= nil) then
+     	if (rav1:CalculateDistance(171,342,-418) > 250) then
+     		rav1:GMMove(171,342,-418,168)
+     		local r1ht = rav1:GetHateTop():CastToClient()
+     		if (r1ht.valid) then
+     			r1ht:MovePC(295,171,342,-418,168)
+     		end
+     	end
+     end
+     if (rav2 ~= nil) then
+     	if (rav2:CalculateDistance(171,342,-418) > 250) then
+     		rav2:GMMove(171,342,-418,168)
+     		local r2ht = rav2:GetHateTop():CastToClient()
+     		if (r2ht.valid) then
+     			r2ht:MovePC(295,171,342,-418,168)
+     		end
+     	end
+     end
+     if (rav3 ~= nil) then
+     	if (rav3:CalculateDistance(171,342,-418) > 250) then
+     		rav3:GMMove(171,342,-418,168)
+     		local r3ht = rav3:GetHateTop():CastToClient()
+     		if (r3ht.valid) then
+     			r3ht:MovePC(295,171,342,-418,168)
+     		end
+     	end
+     end
+     
     
     --check to see if the difference in HP is greater than 10%
     local WhichRav = 0

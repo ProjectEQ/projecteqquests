@@ -61,17 +61,17 @@ sub EVENT_TIMER {
 	} elsif ($timer eq "spawn_cursebearer") {
 		#if the cursecaller is still up, and his cursebearer isn't, he needs to summon another one
 		#only spawn one per timer hit
-		my $spawned_one = 0
+		my $spawned_one = 0;
 		for ($count = 0; $count <= 5; $count++) {
 			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
 				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count]) && $spawned_one == 0) {
 					quest::spawn2($curse_bearers[$count],0,0,42,-912,-126,195);
-					$spawned_one = 1
+					$spawned_one = 1;
 				}		
 			} else {
 				quest::depopall($curse_bearers[$count]);
 			}
 		}
-		$spawned_one = 0
+		$spawned_one = 0;
 	}
 }

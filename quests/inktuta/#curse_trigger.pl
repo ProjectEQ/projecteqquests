@@ -64,7 +64,7 @@ sub EVENT_TIMER {
 		my $spawned_one = 0
 		for ($count = 0; $count <= 5; $count++) {
 			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
-				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count]) && $spawned_one = 0) {
+				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count]) && $spawned_one == 0) {
 					quest::spawn2($curse_bearers[$count],0,0,42,-912,-126,195);
 					$spawned_one = 1
 				}		

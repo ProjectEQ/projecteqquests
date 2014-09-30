@@ -179,7 +179,7 @@ function CheckRavs()
 	      if (rav1 ~= nil) then
 	      		rav1:WipeHateList()
 	      		rav1:AddToHateList(TopHate,100000)
-		        rav1:SetHate(TopHate,100000,1)
+		        rav1:SetHate(TopHate,100000,100000)
 		        if (WhichRav == 1) then
 		        	eq.signal(rav1:GetNPCTypeID(), 2)
 		        else
@@ -189,7 +189,7 @@ function CheckRavs()
 	      if (rav2 ~= nil) then
 	      		rav2:WipeHateList()
 	      		rav2:AddToHateList(TopHate,100000)
-		        rav2:SetHate(TopHate,100000,1)
+		        rav2:SetHate(TopHate,100000,100000)
 		        if (WhichRav == 2) then
 		        	eq.signal(rav2:GetNPCTypeID(), 2)
 		        else
@@ -199,7 +199,7 @@ function CheckRavs()
 	      if (rav3 ~= nil) then
 	      		rav3:WipeHateList()
 	      		rav3:AddToHateList(TopHate,100000)
-		        rav3:SetHate(TopHate,100000,1)
+		        rav3:SetHate(TopHate,100000,100000)
 		        if (WhichRav == 3) then
 		        	eq.signal(rav3:GetNPCTypeID(), 2)
 		        else

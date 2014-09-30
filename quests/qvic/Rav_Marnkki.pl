@@ -4,7 +4,7 @@ sub EVENT_DEATH_COMPLETE {
   quest::signalwith(295130,1);
 }
 
-==Begin Test Chop - This doesn't error on my server, but going to try on PEQ
+=Begin Test Chop - This doesn't error on my server, but going to try on PEQ
 sub EVENT_ATTACK {
   #a pet does not trigger EVENT_AGGRO but does trigger EVENT_ATTACK
   AGGRO_ALL($userid);

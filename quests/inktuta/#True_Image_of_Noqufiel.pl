@@ -2,6 +2,14 @@
 
 my $instid;
 
+sub EVENT_SPAWN {
+	#Lets try not to get stuck in a wall
+	my $rlos = $entity_list->GetRandomClient(-72,-663,-128,160);
+	if($rlos && !$npc->CheckLoS($rlos)) {
+		$npc->GMMove(20,-633, -126,125);
+	}
+}
+
 sub EVENT_AGGRO {
 	$instid = quest::GetInstanceID("inktuta",0);
 	quest::signalwith(296075,1); #tell trigger I'm aggro'd

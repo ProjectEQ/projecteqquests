@@ -2,7 +2,7 @@
 
 my $true_noq;
 my $mir_noq;
-my $true_hp = 0;
+my $true_hp = 2054874;
 my $random_name;
 my $true_newX = 20;
 my $true_newY = -706;
@@ -38,9 +38,7 @@ sub EVENT_TIMER {
 				quest::spawn2(296065,0,0,20,-633, -126,125); #True Image
 				$true_noq = $entity_list->GetNPCByNPCTypeID(296065);
 				$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
-				if($true_hp) {
-					quest::settimer("set_hp", 1);
-				}
+				quest::settimer("set_hp", 1);
 			} else {
 				if ($entity_list->IsMobSpawnedByNpcTypeID(296066)) { #mirror
 					$mir_noq = $entity_list->GetNPCByNPCTypeID(296066);
@@ -88,8 +86,7 @@ sub EVENT_TIMER {
 		if ($true_hp && ($true_hp < $maxhp)) {
 			$true_hp = $true_hp + 6000;
 		}
-	}
-		
+	}	
 }
 		
 		

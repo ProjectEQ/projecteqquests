@@ -6,8 +6,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 52906 =>1 )) {
-  #Hand in text is not live
-    quest::say("Seek out the beast to the north.  Beware of his companions!");
+    quest::say("I have seen the creature nearby, but I have not been able to defeat it.  I am not strong enough.  Perhaps you may have better luck.  You must hurry.  It has used the warder spirit to create twisted and dark companions of its own. If you should overcome this creature, return to me.");
     quest::unique_spawn(302085,0,0,157.1,262.6,-100.6,121.3);
     quest::spawn2(302084,0,0,160.7,192.9,-91.3,253.4);
     quest::spawn2(302084,0,0,117.8,210.7,-84.9,23.6);    

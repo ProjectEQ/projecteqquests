@@ -28,7 +28,7 @@ function event_say(e)
 				-- Move the Player and their Group tot he trial room.
 				trial_group = e.other:GetGroup();
 				if ( trial_group.valid ) then
-					MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 729, 1119, 88, 64); 
+					MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 729, -1119, 88, 64); 
 				else
 					client_e = e;
 					e.other:MovePC(201, 729, -1119, 88, 64);

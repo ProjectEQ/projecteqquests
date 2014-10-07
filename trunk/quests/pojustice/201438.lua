@@ -112,6 +112,7 @@ function event_signal(e)
 		-- 15min Eject Timer to kick any PC out of the Trial Room
 		eq.set_timer("ejecttimer", eject_timer);
 		eq.set_timer("cooldown"  , cooldown_timer);
+		eq.stop_timer("proximitycheck");
 
 	elseif (e.signal == 2) then
 		-- Trial Failed

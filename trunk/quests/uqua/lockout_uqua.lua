@@ -11,7 +11,7 @@ function event_signal(e)
 	if (e.signal == 1) then
 		--Twins dead
 		for k,v in pairs(charid_list) do
-			eq.target_global("uqualockout", "1", "H24", 0,v, 0);
+			eq.target_global("uqualockout", tostring(instance_requests.GetLockoutEndTimeForHours(24)), "H24", 0,v, 0);
 		end
 	end
 end

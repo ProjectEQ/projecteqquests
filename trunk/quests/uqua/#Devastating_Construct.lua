@@ -12,6 +12,6 @@ end
 function event_death_complete(e)
 	--set lockout
 	for k,v in pairs(charid_list) do
-		eq.target_global("uqualockout", "1", "H36", 0,v, 0);
+		eq.target_global("uqualockout", tostring(instance_requests.GetLockoutEndTimeForHours(36)), "H36", 0,v, 0);
 	end
 end

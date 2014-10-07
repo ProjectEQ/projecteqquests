@@ -59,7 +59,9 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  if(!$entity_list->GetMobByNpcTypeID(294138)) { INSTANCE_WIN(); }
+  if(!$entity_list->GetMobByNpcTypeID(294138)) { 
+    INSTANCE_WIN(); 
+  }
 }
 
 sub INSTANCE_WIN {
@@ -67,8 +69,5 @@ sub INSTANCE_WIN {
   quest::spawn2(294140,0,0,-7,-126,-2,129);
   quest::spawn2(294139,0,0,-9,-285,-2,251);
   #set lockout
-  @pc_list = $entity_list->GetClientList();
-  foreach $pc (@pc_list) {
-    quest::targlobal("ikkylockout1", 1, "H17", 293116, $pc->CharacterID(), 293);
-  }
+  quest::signalwith(294631,9);
 }

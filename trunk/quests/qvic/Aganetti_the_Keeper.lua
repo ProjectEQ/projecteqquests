@@ -21,7 +21,6 @@ function event_say(e)
 		e.self:Say("Or would you like to know your [" .. eq.say_link("Lockouts",false,"Lockouts") .. "]?");
 	elseif(e.message:findi("lockouts")) then
 		instance_requests.DisplayLockouts(e.other, e.other, inktuta_globals);
-		e.other:Message(13,"End of available lockouts.")
 	elseif(e.message:findi("continue")) then
 		--if Cynosure is up do not proceed
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(295140) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(295149) == false) then

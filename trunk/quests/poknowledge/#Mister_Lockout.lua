@@ -26,6 +26,5 @@ function event_say(e)
 		e.other:Message(257, "Would you like to know your [" .. eq.say_link("Lockouts",false,"Lockouts") .. "]?")
 	elseif(e.message:findi("lockouts")) then
 		instance_requests.DisplayLockouts(e.other, e.other, lockout_globals)
-		e.other:Message(13,"--End of available lockouts.")
 	end
 end

@@ -1,23 +1,30 @@
 -- Aganetti_the_Keeper (295065)
 -- Request NPC for Inktu`Ta
 
+
+
 ---
 -- @param NPC#event_say e
 function event_say(e)
+	local instance_requests = require("instance_requests");
+	local inktuta_globals = {
+				{ "Ink_Kelekdrix", "Kelekdrix, Herald of Trushar" },
+				{ "Ink_Mites", "Stonemite Event" },
+				{ "Ink_Golems", "Inktu`Ta Golems" },
+				{ "Ink_Callers", "Cursecaller Event" },
+				{ "Ink_Noqufiel", "Noqufiel Event" }
+			}
+
 	if(e.message:findi("hail")) then
 		e.self:Emote("gestures to the end of the cavernous hallway.");
 		e.self:Say("Beyond that corner lies the entrance to the forgotten chapel of Inktu`Ta. The force of the blast from the portal's implosion tore a hole in the mountain, revealing the way to this place. Some things should remain unknown. Inktu'ta should have stayed buried forever. Believe me " .. e.other:GetName() .. " only a fool would disturb the halls of this cursed chapel. Will you [heed my warning] or do you wish to [" .. eq.say_link("continue",false,"continue") .. "]?");
+		e.self:Say("Or would you like to know your [" .. eq.say_link("Lockouts",false,"Lockouts") .. "]?");
+	elseif(e.message:findi("lockouts")) then
+		instance_requests.DisplayLockouts(e.other, e.other, inktuta_globals);
+		e.other:Message(13,"End of available lockouts.")
 	elseif(e.message:findi("continue")) then
 		--if Cynosure is up do not proceed
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(295140) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(295149) == false) then
-			local inktuta_globals = {
-				{ "Ink_Kelekdrix", "Kelekdrix, Herald of Trushar" },
-				{ "Ink_Mites", "Stonemite Event" },
-				{ "Ink_Golems", "Golems" },
-				{ "Ink_Callers", "Cursecaller Event" },
-				{ "Ink_Noqufiel", "Noqufiel Event" }
-			} 
-			local instance_requests = require("instance_requests");
 			local request = instance_requests.ValidateInstanceRequest("inktuta", 54, e.other, inktuta_globals);
 			if (request.valid) then
 				local instance_id = eq.create_instance("inktuta", 0, 21600);

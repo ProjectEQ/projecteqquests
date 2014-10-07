@@ -6,7 +6,7 @@ function event_spawn(e)
 	charid_list = eq.get_characters_in_instance(instance_id);
 	--set lockout
 	for k,v in pairs(charid_list) do
-		eq.target_global("uqualockout", "1", "H108", 0,v, 0);
+		eq.target_global("uqualockout", tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
 	end
 end
 

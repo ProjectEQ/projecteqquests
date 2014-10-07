@@ -32,7 +32,7 @@ function InstanceRequests.ValidateInstanceRequest(instance, max_players, request
           requestor:Message(13, "You have "..player_list_count.." players in raid.  A maximum of "..max_players.." is allowed.");
         end
       end
-    else 
+    else
       requestor:Message(13, "You are already in an instance.");
     end
   else
@@ -41,7 +41,7 @@ function InstanceRequests.ValidateInstanceRequest(instance, max_players, request
   return request;
 end
 
-function InstanceRequests.GetLockedOutEvents(locked_bits, event_globals) 
+function InstanceRequests.GetLockedOutEvents(locked_bits, event_globals)
   local locked = {}
   for i, v in ipairs(event_globals) do
     if (bit.band(locked_bits, 2^(i-1)) == 1) then
@@ -70,7 +70,7 @@ function InstanceRequests.DisplayLockouts(requestor, client, event_globals)
   local qglobals = eq.get_qglobals(client);
   local hasLockouts = false;
   for i, v in ipairs(event_globals) do
-    if (qglobals[v[1]] ~= nil) then
+    if (tonumber(qglobals[v[1]]) ~= nil) then
       local diff =  tonumber(qglobals[v[1]]) - os.time();
       local timeString = "";
       if (diff > 0) then
@@ -92,6 +92,9 @@ function InstanceRequests.DisplayLockouts(requestor, client, event_globals)
         hasLockouts = true;
       end
     end
+  end
+  if (requestor == client and hasLockouts == false) then
+    requestor:Message(13, "You currently have no instance lockouts.");
   end
 end
 

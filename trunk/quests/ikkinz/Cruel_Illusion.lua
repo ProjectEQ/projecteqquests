@@ -4,6 +4,7 @@ function event_death_complete(e)
 	-- get the zone instance id
 	local instance_id = eq.get_zone_instance_id();
 	local charid_list = eq.get_characters_in_instance(instance_id);
+	local instance_requests = require("instance_requests")
 	-- Lua loop basics:
 	-- k = key which is generally the current index of the array, not used in this example
 	-- v = value for the current key, in this example it would be the character ID

@@ -1,5 +1,6 @@
 function event_death_complete(e)
 	eq.signal(294142,1)
+	local instance_requests = require("instance_requests")
 	local instance_id = eq.get_zone_instance_id();
 	local charid_list = eq.get_characters_in_instance(instance_id);
 	

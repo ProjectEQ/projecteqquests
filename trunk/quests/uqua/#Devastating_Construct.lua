@@ -11,6 +11,7 @@ end
 
 function event_death_complete(e)
 	--set lockout
+	local instance_requests = require("instance_requests")
 	for k,v in pairs(charid_list) do
 		eq.target_global("uqualockout", tostring(instance_requests.GetLockoutEndTimeForHours(36)), "H36", 0,v, 0);
 	end

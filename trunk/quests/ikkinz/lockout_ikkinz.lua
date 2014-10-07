@@ -11,6 +11,7 @@ function event_spawn(e)
 end
 
 function event_signal(e)
+	local instance_requests = require("instance_requests")
 	if (e.signal == 1) then
 		--Guardian of Righteousness dead
 		for k,v in pairs(charid_list) do

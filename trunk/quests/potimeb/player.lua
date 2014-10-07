@@ -1,3 +1,5 @@
+local instance_requests = require("instance_requests")
+
 function event_enter_zone(e)
   -- load the current qglobals
   local qglobals = eq.get_qglobals(e.self);

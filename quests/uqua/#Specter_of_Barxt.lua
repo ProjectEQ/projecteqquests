@@ -4,6 +4,7 @@ local charid_list;
 function event_spawn(e)
 	instance_id = eq.get_zone_instance_id();
 	charid_list = eq.get_characters_in_instance(instance_id);
+	local instance_requests = require("instance_requests")
 	--set lockout
 	for k,v in pairs(charid_list) do
 		eq.target_global("uqualockout", tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);

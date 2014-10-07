@@ -1,5 +1,6 @@
 local instance_id;
 local charid_list;
+local instance_requests = require("instance_requests")
 
 function event_spawn(e)
 	-- get the zone instance id

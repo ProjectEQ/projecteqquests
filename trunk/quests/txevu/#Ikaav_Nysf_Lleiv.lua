@@ -1,14 +1,16 @@
 --Ikaav_Nysf_Lleiv (297090)
 
+local add_timer = 30000;
+
 function event_spawn(e)
 	eq.spawn_condition("txevu",0,4,1)
-	eq.set_next_hp_event(20)
+	eq.set_next_hp_event(75)
 end
 
 function event_combat(e)
 	if (e.joined == true) then
-		--spawn golem adds in middle of room every 30 seconds
-		eq.set_timer("spawn_golem",30000)
+		--spawn golem adds in middle of room, starting every 30 seconds
+		eq.set_timer("spawn_golem", add_timer)
 		--scripted AEs
 		eq.set_timer("malicious_intent",20000)
 		eq.set_timer("curse_of_flames",10000)
@@ -16,14 +18,32 @@ function event_combat(e)
 		--wipe
 		eq.stop_all_timers()
 		eq.depop_all(297219) -- golem adds
-		e.self:RemoveAISpell(0, 1236, Charm, -1, -1, -350) -- Charm Spell
-		eq.set_next_hp_event(20)
+		e.self:RemoveAISpell(1236) -- Charm Spell
+		e.self:SetHP(e.self:GetMaxHP())
+		eq.set_next_hp_event(75)
+		--reset stonemasters
+		eq.signal(297089,2)
+		eq.signal(297088,2)
+		eq.signal(297087,2)
 	end
 end
 
 function event_timer(e)
 	if (e.timer == "spawn_golem") then
-		eq.spawn2(297219,0,0,943,0,-368,192) -- Onyx_Rockchanter
+		--slow down add spawns as stonemasters are killed
+		local stonemasters = 0
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297089)) then stonemasters = stonemasters + 1 end
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297088)) then stonemasters = stonemasters + 1 end
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297087)) then stonemasters = stonemasters + 1 end
+		if (stonemasters > 0) then
+			eq.spawn2(297219,0,0,943,0,-368,192) -- Onyx_Rockchanter
+			if (stonemasters == 1) then add_timer = 90000 end
+			if (stonemasters == 2) then add_timer = 45000 end
+			if (stonemasters == 3) then add_timer = 30000 end
+			eq.set_timer("spawn_golem",add_timer)
+		else
+			eq.stop_timer("spawn_golem")
+		end
 
 	elseif (e.timer == "malicious_intent") then
 		e.self:CastSpell(1237,e.self:GetID())
@@ -36,8 +56,25 @@ function event_timer(e)
 end
 
 function event_hp(e)
+	if (e.hp_event == 75) then
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297089)) then
+			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
+			eq.signal(297089,1)
+		end
+	elseif (e.hp_event == 50) then
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297088)) then
+			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
+			eq.signal(297088,1)
+		end
+	elseif (e.hp_event == 25) then
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297087)) then
+			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on the final stonemaster falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
+			eq.signal(297087,1)
+		end
+	elseif (e.hp_event == 20) then
 	--add Charm spell at 20%
-	e.self:AddAISpell(0, 1236, Charm, -1, -1, -350)
+	e.self:AddAISpell(0, 1236, 1, -1, 45, -350)
+	end
 end
 
 function event_death_complete(e)

@@ -226,7 +226,7 @@ function AddLockout(which_lockout)
 		end
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
-		eq.set_global(instance_id.."_inktuta_bit",tostring(bit.bor(current_bit,8)),7,"H6");
+		eq.set_global(instance_id.."_inktuta_bit",tostring(bit.bor(current_bit,4)),7,"H6");
 	elseif (which_lockout == 4) then
 		--Cursecallers done
 		for k,v in pairs(charid_list) do
@@ -234,7 +234,7 @@ function AddLockout(which_lockout)
 		end
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
-		eq.set_global(instance_id.."_inktuta_bit",tostring(bit.bor(current_bit,4)),7,"H6");
+		eq.set_global(instance_id.."_inktuta_bit",tostring(bit.bor(current_bit,8)),7,"H6");
 	elseif (which_lockout == 5) then
 		--Noqufiel dead
 		for k,v in pairs(charid_list) do

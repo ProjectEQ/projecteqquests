@@ -36,7 +36,12 @@ function event_timer(e)
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297088)) then stonemasters = stonemasters + 1 end
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297087)) then stonemasters = stonemasters + 1 end
 		if (stonemasters > 0) then
-			eq.spawn2(297219,0,0,943,0,-368,192) -- Onyx_Rockchanter
+			--random between lvl 68 and lvl 70 versions
+			if (math.random(4) < 4) then
+				eq.spawn2(297221,0,0,943,0,-368,192) -- Onyx_Rockchanter 68
+			else
+				eq.spawn2(297219,0,0,943,0,-368,192) -- Onyx_Rockchanter 70
+			end
 			if (stonemasters == 1) then add_timer = 90000 end
 			if (stonemasters == 2) then add_timer = 45000 end
 			if (stonemasters == 3) then add_timer = 30000 end

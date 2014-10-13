@@ -2,7 +2,7 @@ function event_click_door(e)
 	local seventh_hammer_doors = { 1, 2, 3, 4, 5, 6 };
 	local door_id = e.door:GetDoorID();
 
-	if ( door_id >= 9 and door_id <= 13 ) then 
+	if ( door_id >= 8 and door_id <= 13 ) then 
 		e.self:MovePC(201, 456, 825, 9, 180);
 	elseif ( door_id >= 1 and door_id <= 6 ) then
 		if ( e.self:GetItemIDAt(30) == 31599 ) then 

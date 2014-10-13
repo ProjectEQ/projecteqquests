@@ -81,6 +81,15 @@ sub EVENT_SAY
 				$client->Message(4,"You receive a character flag!");
 			}
 		}
+		elsif($text=~/i seek knowledge/i) {
+			if (plugin::check_hasitem($client, 31842) && plugin::check_hasitem($client, 31796) && plugin::check_hasitem($client, 31960) && plugin::check_hasitem($client, 31845) && plugin::check_hasitem($client, 31844) && plugin::check_hasitem($client, 31846) ) { 
+				if (!plugin::check_hasitem($client, 31599)) {
+					quest::summonitem(31599);
+				} 
+			}elsif (plugin::check_hasitem($client, 31842) || plugin::check_hasitem($client, 31796) || plugin::check_hasitem($client, 31960) || plugin::check_hasitem($client, 31845) || plugin::check_hasitem($client, 31844) || plugin::check_hasitem($client, 31846) ) { 
+				quest::say("You have done well, mortal, but there are more trials yet for you to complete.");
+			}
+		}
 	}
 }
           

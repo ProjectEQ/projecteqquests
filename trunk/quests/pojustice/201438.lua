@@ -2,13 +2,13 @@
 -- Trial of Torture
 --
 
-local torture_flag		= 0;
+local torture_flag	= 0;
 local trail_group		= nil;
 local trial_count		= nil;
 local client_e			= nil;
 local	mob_list			= { };
 
-local cooldown_timer 	= 1800000;
+local cooldown_timer = 1800000;
 local eject_timer		= 900000;
 
 function event_say(e)
@@ -51,6 +51,23 @@ function event_say(e)
 				eq.set_global("pop_poj_torture", "1", 5, "F");
 				e.other:Message(4, "You receive a character flag!");
 			end
+		elseif (e.message:findi("i seek knowledge") ) then
+			local marks = { 31796, 31842, 31844, 31845, 31846 , 31960 }
+			local has_six = 1;
+			for k,v in pairs(marks) do
+				if (not e.other:HasItem(v)) then
+					has_six = 0;
+				end
+			end
+
+			if (has_six == 1) then 
+				if (not e.other:HasItem(31599)) then 
+					-- give 31599 to e.other
+					e.other:SummonItem(31599);
+				end
+			elseif (has_six == 0) then
+				e.self:Say("You have done well, mortal, but there are more trials yet for you to complete.");
+			end
 		end
 	end
 end
@@ -76,7 +93,7 @@ function event_timer(e)
 		eq.stop_timer(e.timer);
 
 		torture_flag	= 0;
-		client_e		= nil;
+		client_e			= nil;
 		trial_group		= nil;
 		trial_count		= nil;
 
@@ -112,12 +129,14 @@ function event_signal(e)
 		-- 15min Eject Timer to kick any PC out of the Trial Room
 		eq.set_timer("ejecttimer", eject_timer);
 		eq.set_timer("cooldown"  , cooldown_timer);
+
 		eq.stop_timer("proximitycheck");
 
 	elseif (e.signal == 2) then
 		-- Trial Failed
 		eq.set_timer("ejecttimer", eject_timer);
 		eq.set_timer("cooldown"  , eject_timer);
+
 		eq.set_timer("proximitycheck", 10000);
 
 	end

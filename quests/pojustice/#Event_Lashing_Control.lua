@@ -25,7 +25,7 @@ end
 
 function event_signal(e)
    if (e.signal == 1) then
-      eq.zone_emote(3, "Success!");
+      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 
       eq.signal(201435, 1);
 
@@ -34,7 +34,7 @@ function event_signal(e)
 
    elseif (e.signal == 2) then
       -- Failed
-      eq.zone_emote(3, "An unnatural silence falls around you.  The justice of the Tribunal has been pronounced once again.  The defendants have been found... lacking.");
+      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "An unnatural silence falls around you.  The justice of the Tribunal has been pronounced once again.  The defendants have been found... lacking.");
 
       despawn_prisoners();
       eq.signal(201435, 2);

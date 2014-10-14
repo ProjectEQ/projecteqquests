@@ -50,7 +50,7 @@ function event_signal(e)
 	elseif (e.signal == 8) then
 		--Keeper of the Altar dead
 		for k,v in pairs(charid_list) do
-			eq.target_global("ikkylockout6", tostring(instance_requests.GetLockoutEndTimeForHours(67)), "H67", 0,v, 0);
+			eq.target_global("ikkylockout6", tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
 		end
 	elseif (e.signal == 9) then
 		--Group 2 Lockout

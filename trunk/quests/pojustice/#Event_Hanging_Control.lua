@@ -102,6 +102,7 @@ function event_timer(e)
 		eq.stop_timer(e.timer);
 		spawn_mobs();
 		spawn_spirit(201460);	
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The prisoner begins to choke as an invisible noose tightens around his neck.");
 		
 		-- Spawn the 2nd Spirit 40 seconds after the Wave begins
 		eq.set_timer("next_spirit", 40000);
@@ -109,6 +110,7 @@ function event_timer(e)
 	elseif (e.timer == "next_spirit" ) then
 		eq.stop_timer(e.timer);
 		spawn_spirit(201474);
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The prisoner begins to choke as an invisible noose tightens around his neck.");
 
 	elseif (e.timer == "fdtimer_201471" or e.timer == "fdtimer_201472" or e.timer == "fdtimer_201473") then
 		eq.stop_timer(e.timer);
@@ -170,7 +172,6 @@ function spawn_spirit(spirit_id)
 
 	spirits_to_prisoners[ spirit_id ] = prisoners_list[ steps ];
 
-	eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The prisoner begins to choke as an invisible noose tightens around his neck.");
 end
 
 function spawn_mobs()

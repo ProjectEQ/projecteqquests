@@ -79,7 +79,7 @@ end
 
 function event_signal(e)
 	if (e.signal == 1) then
-		eq.zone_emote(3, "Success!");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 
 		despawn_mobs();
 		eq.depop();
@@ -202,7 +202,7 @@ function event_timer(e)
 	elseif (e.timer == "wraith_timer" or e.timer == "has_trial_started") then 
 		-- Event Failed
 		eq.stop_timer(e.timer);
-		eq.zone_emote(3, "You have been found unworthy and have failed, you should be shamed and publicly flogged.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "You have been found unworthy and have failed, you should be shamed and publicly flogged.");
 
 		-- Tell the Tribunal we failed
 		eq.signal(201438, 2);

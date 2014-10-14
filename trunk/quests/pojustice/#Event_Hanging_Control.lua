@@ -50,13 +50,16 @@ function event_spawn(e)
 
 	-- Mobs should spawn ~20 seoncds after Event Starts
 	eq.set_timer("next_wave", 20000);
+
+	spirits_killed				= 0;
+	spirits_to_prisoners		= { };
 end
 
 function event_signal(e)
 	
 	if (e.signal == 7) then
 		depop_prisoners();
-		eq.zone_emote(3, "Success!");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 		
 		-- Signal the Tribunal that the Group was Successful
 		eq.signal(201436, 1);
@@ -70,7 +73,7 @@ function event_signal(e)
 		local prisoner = spirits_to_prisoners[ e.signal ];
 		table.remove( spirits_to_prisoners, e.signal );
 
-		eq.zone_emote(3, "The Prisoner grasps, taking in large breaths and coughing as the invisible noose disappears.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The Prisoner grasps, taking in large breaths and coughing as the invisible noose disappears.");
 
 		-- Can kill off the fail and feign death timers assocated with the 
 		-- prisoner.
@@ -116,7 +119,8 @@ function event_timer(e)
 		-- FD the prisoner who's timer went off
 		eq.get_entity_list():GetMobByNpcTypeID(tonumber(npc_to_feign)):SetAppearance(3);
 
-				eq.zone_emote(3, "The Prisoner clutches at their throat, trying desperately to breathe.");
+		--eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The Prisoner clutches at [her/her] throat, trying to desperately to breathe.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The Prisoner clutches at their throat, trying to desperately to breathe.");
 
 	elseif (e.timer == "failtimer_201471" or e.timer == "failtimer_201472" or e.timer == "failtimer_201473") then
 		-- If the Event has failed; then Kill all the Potential Fail Timers.
@@ -124,7 +128,7 @@ function event_timer(e)
 		eq.stop_timer("failtimer_201472");
 		eq.stop_timer("failtimer_201473");
 
-		eq.zone_emote(3, "The prisoner gives one final twitch and suddenly becomes still, its limbs no longer flailing.  You have failed.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The prisoner gives one final twitch and suddenly becomes still, its limbs no longer flailing.  You have failed.");
 
 		-- Signal the Tribunal that the Group has failed
 		eq.signal(201436, 2);
@@ -166,7 +170,7 @@ function spawn_spirit(spirit_id)
 
 	spirits_to_prisoners[ spirit_id ] = prisoners_list[ steps ];
 
-	eq.zone_emote(3, "The prisoner begins to choke as an invisible noose tightens around his neck.");
+	eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The prisoner begins to choke as an invisible noose tightens around his neck.");
 end
 
 function spawn_mobs()

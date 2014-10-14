@@ -28,7 +28,7 @@ end
 
 function event_signal(e)
    if (e.signal == 1) then
-      eq.zone_emote(3, "Success!");
+		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 
       eq.signal(201437, 1);
 
@@ -37,7 +37,7 @@ function event_signal(e)
 
    elseif (e.signal == 2) then
       -- Failed
-      eq.zone_emote(3, "An unnatural silence falls around you.  The justice of the Tribunal has been pronounced once again.  The defendants have been found... lacking.");
+      eq.get_entity_list():MessageClose(e.self, false, 120,3, "An unnatural silence falls around you.  The justice of the Tribunal has been pronounced once again.  The defendants have been found... lacking.");
 
       despawn_prisoners();
       eq.signal(201437, 2);
@@ -54,7 +54,6 @@ function event_signal(e)
 			npc = eq.get_entity_list():GetNPCByID(v);
 			if (npc.valid) then
 				despawn_archers = 0;
---eq.zone_emote(5, "wave_ids[" .. k .. "]: " .. v .. " still alive." );
 			end
 		end
 
@@ -109,7 +108,6 @@ function spawn_mobs(wave)
 			end
 			if (npc.valid) then 
 				wave_ids[index + i] = npc:GetID();
---eq.zone_emote(5, "spawn: " .. npc:GetID() .. " " .. npc:GetNPCTypeID() );
 			end
 		end
    end

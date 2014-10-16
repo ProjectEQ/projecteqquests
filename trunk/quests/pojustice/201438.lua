@@ -29,6 +29,7 @@ function event_say(e)
 				trial_group = e.other:GetGroup();
 				if ( trial_group.valid ) then
 					MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 729, -1119, 88, 64); 
+					client_e = e;
 				else
 					client_e = e;
 					e.other:MovePC(201, 729, -1119, 88, 64);
@@ -80,9 +81,10 @@ function event_timer(e)
 		despawn_trial_mobs()
 
 		if (trial_group ~= nil and trial_group.valid) then
-			MoveGroup( trial_group, 772, -1148, 76, 175, 456, 825, 9, 180); 
+			MoveGroup( trial_group, 772, -1148, 76, 175, 456, 825, 9, 180, "A mysterious force translocates you."); 
 		else
 			client_e.other:MovePC( 201, 456, 825, 9, 180 );
+			client_e.other:Message(3, "A mysterious force translocates you.");
 		end
 		HandleCorpses(772, -1148, 76, 175);
 
@@ -143,7 +145,7 @@ function event_signal(e)
 
 end
 
-function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h)
+function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h, msg)
 	if ( trial_group ~= nil) then
 		local trial_count = trial_group:GroupCount();
 
@@ -155,6 +157,10 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 				if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
 					-- port the player up
 					client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h);
+
+					if (msg) then
+						client_v:Message(3, msg);
+					end
 				end
 			end
 		end

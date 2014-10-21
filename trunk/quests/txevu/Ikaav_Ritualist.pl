@@ -2,7 +2,7 @@
 
 sub EVENT_SIGNAL {
 	#ZMTZ lost aggro
-	quest::settimer("wipe_agro", 60);
+	quest::settimer("wipe_agro", 5);
 }
 
 sub EVENT_TIMER {

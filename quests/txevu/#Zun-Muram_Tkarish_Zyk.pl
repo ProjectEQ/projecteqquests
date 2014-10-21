@@ -5,6 +5,9 @@ my $init_engage = 0;
 my $add_timer = 30;
 
 sub EVENT_SPAWN {
+	$banished_pc = 0;
+	$init_engage = 0;
+	$add_timer = 30;
 	SPAWN_EVENT();
 }
 
@@ -13,6 +16,7 @@ sub EVENT_COMBAT {
 		quest::settimer("banishHateTop", 45);
 		quest::settimer("spawn_add", $add_timer);
 		if (!$init_engage) {
+			#30 minutes to finish or the entire event resets
 			quest::settimer("fail_check", 1800);
 			$init_engage = 1;
 		}
@@ -28,7 +32,8 @@ sub EVENT_TIMER {
 	if ($timer eq "ghost_check") {
 		if ($banished_pc) {
 			if ($banished_pc->GetX() >= 1410 && $banished_pc->GetX() <= 1501 && $banished_pc->GetY() >= 178 && $banished_pc->GetY() <= 237) {
-				#Spawn north jail ghosts
+				#Spawn north jail ghosts. 
+				# a_vengeful_apparition
 				$banished_pc->Message(7,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.");
 				quest::spawn2(297152,0,0,1500, 180, -328, 198);
 				quest::spawn2(297152,0,0,1500, 234, -328, 154);
@@ -38,6 +43,7 @@ sub EVENT_TIMER {
 				quest::spawn2(297152,0,0,1412, 207, -328, 69);
 			} elsif ($banished_pc->GetX() >= 1410 && $banished_pc->GetX() <= 1501 && $banished_pc->GetY() >= -237 && $banished_pc->GetY() <= -178) {
 				#spawn south jail ghosts
+				# a_vengeful_apparition
 				$banished_pc->Message(7,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.");
 				quest::spawn2(297152,0,0,1500, -180, -328, 198);
 				quest::spawn2(297152,0,0,1500, -234, -328, 230);
@@ -56,6 +62,7 @@ sub EVENT_TIMER {
 			my $MoveName = $entity_list->GetClientByName($banished_pc->GetName());
 			#randomly north or south jail
 			$MoveName->MovePC(297, 1475, quest::ChooseRandom(205, -205), -327, 192);
+			#if they don't open the door and get out within 20 seconds, the ghosts spawn
 			quest::settimer("ghost_check", 20);
 			#live emotes for jail
 			# An unearthly moan echoes through the small room.
@@ -84,12 +91,12 @@ sub EVENT_TIMER {
 		quest::depopall(297161);
 		quest::depopall(297029);
 		quest::depopall(297128);
-		SPAWN_EVENT();
 		$add_timer = 30;
 		$banished_pc = 0;
 		$init_engage = 0;
 		quest::stopalltimers();
-		$npc->SetHP($npc->GetMaxHP());
+		quest::spawn2(297150,0,0,1506,2,-285,187); #myself, which also will trigger Spawn_Event()
+		quest::depop();
 	}
 }
 
@@ -99,6 +106,7 @@ sub EVENT_SIGNAL {
 }
 
 sub SPAWN_EVENT {
+	# 4 Ikaav Ritualist and the two Inquisitor goats.
 	quest::spawn2(297147,0,0,1353, 0, -305, 192);
 	quest::spawn2(297147,0,0,1305, 45, -305, 128);
 	quest::spawn2(297147,0,0,1305, -45, -305, 0);

@@ -19,12 +19,19 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (($itemcount{12268} == 1) && ($itemcount{7100} == 1) && ($gold + (10*$platinum) >= 3250)) {
-    quest::say("The time to trade has come!! I am now rich and you are now fast. Take the Journeyman Boots and run like the wind.");
-    quest::exp(1250);
-    quest::summonitem(2300);
-  }  
+  my $cash = (($platinum * 10) + $gold); #Only accept platinum and gold 
+ 
+  if ($cash >= 3250) { #Gold/platinum equivalent of 325pp
+    if (plugin::check_handin(\%itemcount, 12268 => 1, 7100 => 1)) {
+      quest::say("The time to trade has come!! I am now rich and you are now fast. Take the Journeyman Boots and run like the wind.");
+      quest::exp(1250);
+      quest::summonitem(2300);
+    }
+  }
+  else {
+    quest::givecash(0, 0, $gold, $platinum); #Return gold/plat
+  }
+  plugin::return_items(\%itemcount);
 } 
 
 # EOF zone: rathemtn ID: 50188 NPC: Hasten_Bootstrutter
-

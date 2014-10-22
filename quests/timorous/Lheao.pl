@@ -22,10 +22,10 @@ sub EVENT_ITEM {
  # Handin: Robe of the Whistling Fists & Danl's Reference
  if(plugin::check_handin(\%itemcount, 12970 => 1, 1682 => 1)){
   # Monk Epic 1.0
-  quest::say("Astonishing! To think that you are a master of an order thought to be lost in our world. Forgive my earlier doubts. I believe you are indeed worthy to be given the responsibility of watching over this book. Take great care that it does not fall into the wrong hands as it would be truly disatrous.");
+  quest::say("Astonishing! To think that you are a master of an order thought to be lost in our world. Forgive my earlier doubts. I believe you are indeed worthy to be given the responsibility of watching over this book. Take great care that it does not fall into the wrong hands as it would be truly disastrous.");
   # Summon: Celestial Fists (Book)
   quest::summonitem(1683);
-}
+ }
   plugin::return_items(\%itemcount);
 }
 

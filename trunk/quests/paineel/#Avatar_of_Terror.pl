@@ -13,7 +13,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 00000 => 1)) { #Mundane Mask
+  if(plugin::check_handin(\%itemcount, 14106 => 1)) { #Mundane Mask
     quest::say("A desciple of Cazic-Thule! Take this forged item as a gift."); #Text made up
     quest::summonitem(14108); #Terror Forged Mask
 #    quest::faction(???,??); #
@@ -22,17 +22,14 @@ sub EVENT_ITEM {
     quest::stoptimer("TerrorDepop");
     quest::depop();
   }
-  else {
-    quest::say("I have no need for this, $name.");
-    plugin::returnitems(\%itemcount);
-  }
+  plugin::returnitems(\%itemcount);
 }
 
 sub EVENT_TIMER {
-  if($timer="TerrorShouting") {
+  if($timer eq "TerrorShouting") {
     quest::shout("My time is short, make haste! I will forge one item for the faithful of our lord, Cazic-Thule."); #Need real text
   }
-  if($timer="TerrorDepop") {
+  if($timer eq "TerrorDepop") {
     quest::stoptimer("Shouting");
     quest::stoptimer("TerrorDepop");
     quest::depop();

@@ -61,20 +61,24 @@ function event_timer(e)
 end
 
 function event_hp(e)
+	-- 75/50/25 each of the stonemasters becomes killable
 	if (e.hp_event == 75) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297089)) then
 			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
 			eq.signal(297089,1)
+			eq.set_next_hp_event(50)
 		end
 	elseif (e.hp_event == 50) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297088)) then
 			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
 			eq.signal(297088,1)
+			eq.set_next_hp_event(25)
 		end
 	elseif (e.hp_event == 25) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297087)) then
 			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on the final stonemaster falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
 			eq.signal(297087,1)
+			eq.set_next_hp_event(20)
 		end
 	elseif (e.hp_event == 20) then
 	--add Charm spell at 20%

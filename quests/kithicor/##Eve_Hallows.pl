@@ -10,9 +10,21 @@ sub EVENT_SAY {
 		quest::say("For those of you new to Norrath, Jack will be able to improve your [valor]. For those who have lasted more than 30 seasons, Tricksy can protect you with an [aegolism]. For the rest of you, I can bestow upon you a greater [virtue]");
 	}
 	
+	if ($text=~/valor/i) {
+		$npc->CastSpell(312,$userid);
+	}
+
+	if ($text=~/aegolism/i) {
+		if ($ulevel>29) {
+			$npc->CastSpell(1447,$userid);
+		} else {
+			quest::say("You are not ready for what I have to offer");
+		}
+	}
+
 	if ($text=~/virtue/i) {
 		if ($ulevel>50) {
-			$npc->CastSpell($userid,3467);
+			$npc->CastSpell(3467,$userid);
 		} else {
 			quest::say("You are not ready for what I have to offer");
 		}

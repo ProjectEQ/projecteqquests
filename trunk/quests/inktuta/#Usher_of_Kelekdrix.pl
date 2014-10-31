@@ -11,7 +11,6 @@ sub EVENT_SPAWN {
   $x_spawn = $x;
   $y_spawn = $y;
   $npc->SetDisableMelee(1);
-  quest::signalwith(296024,2,0); #tell kelekdrix I spawned
 }
 
 sub EVENT_COMBAT {
@@ -40,7 +39,3 @@ sub EVENT_TIMER {
   }
 }
 
-sub EVENT_DEATH_COMPLETE {
-  #signal Kelekdrix that i died
-  quest::signalwith(296024,1,0);
-}

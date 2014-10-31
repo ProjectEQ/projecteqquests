@@ -14,7 +14,6 @@ function event_death_complete(e)
 	e.self:Emote("cries out, her booming alto echoing with contempt,")
 	e.self:Say("Your victory here is hollow. With my death, the way to the lower reaches is unsealed. The denizens below destroy everything they touch. You will suffer their wrath!")
 	eq.unload_encounter("kelekdrix")
-	eq.set_global(eq.get_zone_instance_id() .. "_inktuta_status", "2", 3, "H6") -- ideally this would be done in the unload ...
 	eq.spawn2(296077, 0, 0, 526, -495, 7, 193) -- loot skull
 end
 

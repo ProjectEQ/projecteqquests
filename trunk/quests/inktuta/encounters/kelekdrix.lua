@@ -52,13 +52,13 @@ function event_encounter_load(e)
 	inst_id = eq.get_zone_instance_id()
 	counter = 0
 	-- register our NPC event hooks
-	eq.register_npc_event("usher_spawn", Event.spawn, 296026, AddSpawn)
-	eq.register_npc_event("usher_death", Event.death_complete, 296026, AddDeath)
-	eq.register_npc_event("watcher_spawn", Event.spawn, 296025, AddSpawn)
-	eq.register_npc_event("watcher_death", Event.death_complete, 296025, AddDeath)
-	eq.register_npc_event("kele_timer", Event.timer, 296024, KeleTimer)
-	eq.register_npc_event("kele_combat", Event.combat, 296024, KeleCombat)
-	eq.register_npc_event("kele_spawn", Event.spawn, 296024, KeleSpawn)
+	eq.register_npc_event("kelekdrix", Event.spawn, 296026, AddSpawn)
+	eq.register_npc_event("kelekdrix", Event.death_complete, 296026, AddDeath)
+	eq.register_npc_event("kelekdrix", Event.spawn, 296025, AddSpawn)
+	eq.register_npc_event("kelekdrix", Event.death_complete, 296025, AddDeath)
+	eq.register_npc_event("kelekdrix", Event.timer, 296024, KeleTimer)
+	eq.register_npc_event("kelekdrix", Event.combat, 296024, KeleCombat)
+	eq.register_npc_event("kelekdrix", Event.spawn, 296024, KeleSpawn)
 end
 
 function event_encounter_unload(e)

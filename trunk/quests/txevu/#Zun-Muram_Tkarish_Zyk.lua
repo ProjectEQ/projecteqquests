@@ -61,7 +61,7 @@ function event_timer(e)
 		if (banished_pc ~= nil) then
 			banished_pc:Message(7,"Zun`Muram Tkarish Zyk tells you, 'I grow tired of your insolence.  Rot in your new home!'")
 			e.self:SetHate(banished_pc,1,1)
-			local MoveName = eq.get_entity_list():GetClientByName(banished_p:GetName())
+			local MoveName = eq.get_entity_list():GetClientByName(banished_pc:GetName())
 			-- Randomly north or south jail
 			MoveName:MovePC(297, 1475, eq.ChooseRandom(205, -205), -327, 192)
 			-- If they don't open the door and get out within 20 seconds, the ghosts spawn2

@@ -19,6 +19,9 @@ function event_spawn(e)
 	charid_list = eq.get_characters_in_instance(instance_id);
 	-- Check the bit that was set on request, this tells us which events to spawn
 	LockoutBit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
+	--bandaid to fix issue where LockoutBit was sometimes nil?
+	--May potentially give people more (all) mobs than should be up, but better than nothing spawning.
+	if (LockoutBit == nil) then LockoutBit = 0 end
 
 	if (bit.band(LockoutBit, 1) == 0) then
 		SpawnKelekdrix();

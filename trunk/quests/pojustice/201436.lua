@@ -21,10 +21,9 @@ function event_say(e)
 
    if (qglobals["pop_poj_mavuin"] ~= nil) then 
       if (e.message:findi("hail")) then 
-			e.self:Emote(" fixes you with a dark, peircing gaze. 'What do you want, mortal? Are you [" .. eq.say_link( "prepared", false, "prepared") .. "]?");
-         e.self:Emote(" fixes you with a dark, peircing gaze. 'What do you want, mortal? Are you [" .. eq.say_link( "prepared", false, "prepared") .. "]?");
+        e.self:Emote(" fixes you with a dark, peircing gaze. 'What do you want, mortal? Are you [" .. eq.say_link( "prepared", false, "prepared") .. "]?");
       elseif (e.message:findi("prepared")) then
-         e.self:Say("Very well. When you are ready, you may [" .. eq.say_link( "begin the trial of hanging", false, "begin the trial of hanging" ) .. "]. Act quickly to destroy the spirits of suffocation before their victims perish. We shall judge the mark of your success.");
+        e.self:Say("Very well. When you are ready, you may [" .. eq.say_link( "begin the trial of hanging", false, "begin the trial of hanging" ) .. "]. Act quickly to destroy the spirits of suffocation before their victims perish. We shall judge the mark of your success.");
          
       elseif (e.message:findi("begin the trial of hanging")) then
          if ( hanging_flag == 0 ) then 

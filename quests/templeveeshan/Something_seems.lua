@@ -1,4 +1,4 @@
--- A_feeling NPCID: 124140
+-- Something_seems NPCID: 124150
 function event_spawn(e)
   local ex = e.self:GetX();
   local ey = e.self:GetY();
@@ -7,6 +7,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-  e.self:Emote("of danger washes over you.");
+  e.self:Emote("to be moving in the water.");
   eq.depop_with_timer();
 end

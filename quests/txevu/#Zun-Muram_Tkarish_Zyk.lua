@@ -72,7 +72,7 @@ function event_timer(e)
 		end
 	elseif (e.timer == "spawn_add") then
 		-- Ritualist adds - slow down as there are less Ritualists
-		local which_add = eq.ChooseRandom(297159, 297161, 297161, 297029, 297029, 297128, 297128)
+		local which_add = eq.ChooseRandom(297159, 297161, 297161, 297222, 297222, 297223, 297223)
 		local which_loc = eq.ChooseRandom(1,2,3,4)
 		if (which_loc == 1) then
 			eq.spawn2(which_add,0,0,1330, 0, -304, 64)

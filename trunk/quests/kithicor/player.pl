@@ -8,10 +8,6 @@ sub EVENT_TASK_STAGE_COMPLETE {
 }
 
 sub EVENT_SIGNAL {
-  if($signal == 666) {
-    quest::updatetaskactivity(212,0,1);
-    quest::faction(98,-30);
-  }
   if($signal == 667) {
     quest::updatetaskactivity(213,0,1);
   }

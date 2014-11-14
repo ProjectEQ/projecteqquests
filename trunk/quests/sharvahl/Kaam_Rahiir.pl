@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
 
  sub EVENT_TIMER {
- if($timer eq "1") {
+ if($timer == 1) {
   $npc->SetAppearance(1);
   quest::stoptimer(1);
  }

@@ -17,14 +17,9 @@ function event_combat(e)
 	else
 		--wipe
 		eq.stop_all_timers()
-		eq.depop_all(297219) -- golem adds
 		e.self:RemoveAISpell(1236) -- Charm Spell
 		e.self:SetHP(e.self:GetMaxHP())
 		eq.set_next_hp_event(75)
-		--reset stonemasters
-		eq.signal(297089,2)
-		eq.signal(297088,2)
-		eq.signal(297087,2)
 	end
 end
 

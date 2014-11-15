@@ -18,6 +18,7 @@ function event_signal(e)
 		--Active and able to kill, but won't fight back
 		e.self:ModifyNPCStat("special_attacks","12,13,14,15,16,17,24")
 		e.self:SetDisableMelee(true)
+	end
 end
 
 function event_death_complete(e)

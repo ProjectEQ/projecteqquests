@@ -30,3 +30,10 @@ sub EVENT_SIGNAL {
 sub EVENT_DEATH_COMPLETE {
 	quest::spawn2(297215,0,0,$x,$y,$z,$h);
 }
+
+sub EVENT_SPAWN {
+	# this is if I repopped myself during HP fight
+	if ($y > 0) {
+		quest::modifynpcstat("special_attacks","SMCID"); #go active
+	}
+}

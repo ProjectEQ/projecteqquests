@@ -25,7 +25,7 @@ function event_trade(e)
 		e.other:Faction(135,4,0); -- Guards of Qeynos
 		e.other:Faction(217,4,0); -- Merchants of Qeynos
 		e.other:AddEXP(2000);
-	if(item_lib.check_turn_in(e.trade, {item1 = 13915, item2 = 13915, item3 = 13915})) then -- Gnoll Fang x 3
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13915, item2 = 13915, item3 = 13915})) then -- Gnoll Fang x 3
 		e.self:Say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
 		e.other:SummonItem(10070); -- Moonstone
 		e.other:SummonItem(10070); -- Moonstone
@@ -37,7 +37,7 @@ function event_trade(e)
 		e.other:Faction(135,3,0); -- Guards of Qeynos
 		e.other:Faction(217,3,0); -- Merchants of Qeynos
 		e.other:AddEXP(1500);
-	if(item_lib.check_turn_in(e.trade, {item1 = 13915, item2 = 13915})) then -- Gnoll Fang x 2
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13915, item2 = 13915})) then -- Gnoll Fang x 2
 		e.self:Say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
 		e.other:SummonItem(10070); -- Moonstone
 		e.other:SummonItem(10070); -- Moonstone
@@ -48,7 +48,7 @@ function event_trade(e)
 		e.other:Faction(135,2,0); -- Guards of Qeynos
 		e.other:Faction(217,2,0); -- Merchants of Qeynos
 		e.other:AddEXP(1000);
-	if(item_lib.check_turn_in(e.trade, {item1 = 13915})) then -- Gnoll Fang
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13915})) then -- Gnoll Fang
 		e.self:Say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
 		e.other:SummonItem(10070); -- Moonstone
 		e.other:Ding();

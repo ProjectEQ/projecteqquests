@@ -2,7 +2,7 @@
 #
 
 sub EVENT_SPAWN {
-  quest::settimer("despawn",300);
+  quest::settimer("despawn", 300);
 }
 
 sub EVENT_TIMER {
@@ -10,9 +10,17 @@ sub EVENT_TIMER {
   quest::depop();
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::stoptimer("despawn");
+  }
+  else {
+    quest::settimer("despawn", 300);
+  }
+}
+
 sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("despawn");
 }
 
 # EOF zone: eastkarana ID: 15153 NPC: Dark_Elf_Corruptor
-

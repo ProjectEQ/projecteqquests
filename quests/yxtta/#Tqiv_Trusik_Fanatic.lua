@@ -31,6 +31,6 @@ function event_hp(e)
 		eq.set_next_hp_event(15)
 	elseif (e.hp_event == 15) then
 		e.self:SetRace(5)
-		e.self:TempName("Xounii Shifter")
+		e.self:TempName("Xounii_Shifter")
 	end
 end

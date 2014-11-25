@@ -33,7 +33,7 @@ sub EVENT_SAY {
 					$pc = $raid->GetMember($count);
 					#using z-15 to calculate from the spot on the floor under Tylis not from Tylis
 					#and only move players within 15 units of the spot directly under Tylis
-					if ($pc->CalculateDistance($x,$y,$z-15) <= 15) { 
+					if ($pc->CalculateDistance($x,$y,$z-15) <= 50) { 
 						$pc->MovePC(207,-175,815,-955,0);
 					}
 				}
@@ -43,7 +43,7 @@ sub EVENT_SAY {
 					$pc = $group->GetMember($count);
 					#using z-15 to calculate from the spot on the floor under Tylis not from Tylis
 					#and only move players within 15 units of the spot directly under Tylis
-					if ($pc->CalculateDistance($x,$y,$z-15) <= 15) { 
+					if ($pc->CalculateDistance($x,$y,$z-15) <= 50) { 
 						$pc->MovePC(207,-175,815,-955,0);
 					}
 				}

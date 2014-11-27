@@ -17,6 +17,7 @@ function event_combat(e)
 		eq.set_timer("spawn_add", add_timer)
 		-- Wanton Destruction, scripted AE
 		eq.set_timer("wanton",15000)
+		eq.set_timer("NS_Leash", 2000)
 		if (init_engage == false) then
 			--30 minutes to finish or the entire event resets
 			eq.set_timer("fail_check", 1800000)
@@ -29,6 +30,7 @@ function event_combat(e)
 		eq.stop_timer("wanton")
 		eq.signal(297147, 297150) -- Tell Ritualists I lost agro
 		banished_pc = 0
+		eq.stop_timer("NS_Leash")
 	end
 end
 
@@ -99,9 +101,13 @@ function event_timer(e)
 		eq.stop_all_timers()
 		eq.spawn2(297150,0,0,1506,2,-285,187) -- myself, which also will trigger Spawn_Event()
 		eq.depop()
-	elseif (e.timer == "wanton")then
+	elseif (e.timer == "wanton") then
 		e.self:CastSpell(1250,e.self:GetID())
 		eq.set_timer("wanton", 90000)
+	elseif (e.timer == "NS_Leash") then
+		if (e.self:GetY() < -105 or e.self:GetY() > 105) then
+			e.self:GMMove(1506, 0, -285, 187)
+		end
 	end
 end
 

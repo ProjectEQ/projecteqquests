@@ -20,6 +20,12 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_ENTERZONE {
+
+	#off the map
+	if ($client->GetX() > 315 || $client->GetX() < -315 || $client->GetY() > 685 || $client->GetY() < -60 || $client->GetZ() < 1 || $client->GetZ() > 10) {
+		$client->MovePC(344, 0, 312, 2, 0);
+	}
+
 	#if I am idle for more than xx seconds, auto-afk and go invisible/don't draw model
 	quest::settimer("afk_check", 1200); #20 minutes
 	

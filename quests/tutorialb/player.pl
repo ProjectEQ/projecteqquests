@@ -1,5 +1,8 @@
 sub EVENT_ENTERZONE 
 {
+
+	quest::movepc(189,18, -147, 19.6, 0);
+
 	if(!defined $qglobals{tutbind} && $ulevel == 1) 
 	{
 		quest::selfcast(2049);

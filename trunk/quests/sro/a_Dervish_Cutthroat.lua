@@ -11,7 +11,7 @@ function event_combat(e)
 end
 
 function event_death_complete(e)
-	if(e.self:GetRace() ~= 54) then
+	if(e.self:GetRace() == 54) then
 		e.self:Say("My comrades will avenge my death.");
 	end
 end

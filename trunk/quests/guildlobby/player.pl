@@ -22,7 +22,7 @@ sub EVENT_CLICKDOOR {
 sub EVENT_ENTERZONE {
 
 	#off the map
-	if ($client->GetX() > 315 || $client->GetX() < -315 || $client->GetY() > 685 || $client->GetY() < -60 || $client->GetZ() < 1 || $client->GetZ() > 10) {
+	if ($client->GetX() > 315 || $client->GetX() < -315 || $client->GetY() > 685 || $client->GetY() < -60 || $client->GetZ() < -5 || $client->GetZ() > 15) {
 		$client->MovePC(344, 0, 312, 2, 0);
 	}
 

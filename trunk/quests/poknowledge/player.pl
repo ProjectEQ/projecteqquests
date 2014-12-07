@@ -44,8 +44,9 @@ sub EVENT_CLICKDOOR
 	  	}
 	  	else  #SoF/SoD/UF
 	  	{
-	  		quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",2,1);
-			quest::settimer(2,5);
+	  		#quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",2,1);
+			#quest::settimer(2,5);
+			quest::movepc(46,-34,-721,-27,221.21);
 	  	}
   	}
   	if($doorid == 22)    #erud
@@ -97,8 +98,9 @@ sub EVENT_CLICKDOOR
 		}
 		else  #SoF/SoD/UF
 		{
-		       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",5,1);
-		       quest::settimer(5,5);
+		       #quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",5,1);
+		       #quest::settimer(5,5);
+		       quest::movepc(56,933.79,-1358,-109);
 		}
   	}
   	if($doorid == 25)
@@ -114,8 +116,9 @@ sub EVENT_CLICKDOOR
 		}
 		else  #SoF/SoD/UF
 		{
-		       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",6,1);
-		       quest::settimer(6,5);
+		      # quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",6,1);
+		      # quest::settimer(6,5);
+		      quest::movepc(9,77.31,-660.57,-30.24);
 		}
   	}
 }

@@ -35,8 +35,11 @@ function event_click_door(e)
       		-- Unlock
       		e.door:SetLockPick(0)
       		-- Open both at the same time
-			entity_list:FindDoor(2):ForceOpen(e.self)
-			entity_list:FindDoor(3):ForceOpen(e.self)
+      		if (door_id == 3) then
+				entity_list:FindDoor(2):ForceOpen(e.self)
+			else
+				entity_list:FindDoor(3):ForceOpen(e.self)
+			end
 		else
 			-- Mobs are still up, door is locked
 			e.self:Message(0, "As you attempt to move the wall of stone it is clear that it is being held in place by a powerful force")
@@ -61,8 +64,11 @@ function event_click_door(e)
 	 		-- Unlock
 	 		e.door:SetLockPick(0)
       		-- Open both at the same time
-	 		entity_list:FindDoor(4):ForceOpen(e.self)
-	 		entity_list:FindDoor(5):ForceOpen(e.self)
+      		if (door_id == 5) then
+	 			entity_list:FindDoor(4):ForceOpen(e.self)
+	 		else
+	 			entity_list:FindDoor(5):ForceOpen(e.self)
+	 		end
 	 	else
 	 		-- Mobs are still up, door is locked
 	 		e.self:Message(0, "The massive wall of rock, dirt and stone seems to be impenetrable. It is obviously held in place by a magical force")

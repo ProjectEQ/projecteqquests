@@ -93,8 +93,8 @@ function event_timer(e)
 		eq.depop_all(297149)
 		eq.depop_all(297159)
 		eq.depop_all(297161)
-		eq.depop_all(297029)
-		eq.depop_all(297128)
+		eq.depop_all(297222)
+		eq.depop_all(297223)
 		add_timer = 30000
 		banished_pc = nil
 		init_engage = false

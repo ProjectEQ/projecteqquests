@@ -22,8 +22,9 @@ function event_click_door(e)
 		if (npc_list ~= nil) then
 			-- Step through the entity list and see if any mobs that come from
 			-- the east section are spawned.
+			-- npc:GetOwnerID() == nil to make sure its not a PC pet.
 			for npc in npc_list.entries do
-				if (npc:GetSpawnPointX() < -130) then
+				if (npc:GetOwnerID() == nil and npc:GetSpawnPointX() < -130) then
 					mob_spawned_in_east = true
 					-- break out of for loop on first npc found
 					break
@@ -52,7 +53,8 @@ function event_click_door(e)
 			-- the middle section are spawned.
 			for npc in npc_list.entries do
 				-- Race 240 is Teleport Man, used for some of the event controllers that are always up.
-	      		if (npc:GetSpawnPointX() > -130 and npc:GetSpawnPointX() < 450 and npc:GetRace() ~= 240) then
+				-- npc:GetOwnerID() == nil to make sure its not a PC pet.
+	      		if (npc:GetSpawnPointX() > -130 and npc:GetSpawnPointX() < 450 and npc:GetRace() ~= 240 and npc:GetOwnerID() == nil) then
 	      			mob_spawned_in_middle = true
 	      			-- break out of for loop on first npc found
 	      			break

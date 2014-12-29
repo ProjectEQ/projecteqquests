@@ -37,7 +37,7 @@ sub EVENT_SAY {
   } 
   if ($text=~/ready/i) {
     if($group){
-      if(!defined $qglobals{ikkylockout2}) {
+      if(!defined $qglobals{lockout_ikky_g3}) {
 	    if((defined $qglobals{ikky} && $qglobals{ikky} == 3) || (defined $qglobals{ikkyredo} && $qglobals{ikkyredo} == 1)) {
           quest::say("Then I bid you good luck on your journeys, $name. Make haste into the temple and, hopefully, by the time we meet again you'll have recovered the relics and passed the final test.");
           if($InInstanceIkky3 == 0){

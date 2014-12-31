@@ -40,6 +40,16 @@ function event_death_complete(e)
   eq.depop_all(294137);
   -- spawn the Cruel_Illusion
   eq.spawn2(294136,0,0,442,-141,11,192);
+
+  --set lockout
+  local instance_id = eq.get_zone_instance_id();
+  local charid_list = eq.get_characters_in_instance(instance_id);
+  local instance_requests = require("instance_requests")
+  
+  for k,v in pairs(charid_list) do
+    eq.target_global("lockout_ikky_g1", tostring(instance_requests.GetLockoutEndTimeForHours(17)), "H17", 0,v, 0);
+  end
+
 end
 
 function set_event_start()

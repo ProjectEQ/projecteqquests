@@ -73,19 +73,25 @@ function event_timer(e)
 			-- Faint whispers can be heard all around you
 		end
 	elseif (e.timer == "spawn_add") then
-		-- Ritualist adds - slow down as there are less Ritualists
-		local which_add = eq.ChooseRandom(297159, 297161, 297161, 297222, 297222, 297223, 297223)
-		local which_loc = eq.ChooseRandom(1,2,3,4)
-		if (which_loc == 1) then
-			eq.spawn2(which_add,0,0,1330, 0, -304, 64)
-		elseif (which_loc == 2) then
-			eq.spawn2(which_add,0,0,1305, 27, -304, 0)
-		elseif (which_loc == 3) then
-			eq.spawn2(which_add,0,0,1305, -27, -304, 128)
-		elseif (which_loc == 4) then
-			eq.spawn2(which_add,0,0,1276, 0, -304, 192)
+		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(297147)) then
+			-- Ritualist adds - slow down as there are less Ritualists
+			local which_add = eq.ChooseRandom(297159, 297161, 297161, 297222, 297222, 297223, 297223)
+			local which_loc = eq.ChooseRandom(1,2,3,4)
+			if (which_loc == 1) then
+				eq.spawn2(which_add,0,0,1330, 0, -304, 64):AddToHateList(e.self:GetHateTop(),1)
+			elseif (which_loc == 2) then
+				eq.spawn2(which_add,0,0,1305, 27, -304, 0):AddToHateList(e.self:GetHateTop(),1)
+			elseif (which_loc == 3) then
+				eq.spawn2(which_add,0,0,1305, -27, -304, 128):AddToHateList(e.self:GetHateTop(),1)
+			elseif (which_loc == 4) then
+				eq.spawn2(which_add,0,0,1276, 0, -304, 192):AddToHateList(e.self:GetHateTop(),1)
+			end
+			eq.set_timer("spawn_add", add_timer)
+		else
+			--all Ikaav Ritualists are dead
+			eq.stop_timer("spawn_add")
 		end
-		eq.set_timer("spawn_add", add_timer)
+
 	elseif (e.timer == "fail_check") then
 		-- respawn the whole event
 		eq.depop_all(297147)

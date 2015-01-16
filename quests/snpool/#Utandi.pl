@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
   if (defined($qglobals{sewers}) && ($qglobals{sewers} == 5) && ($event == 0)) {
     if ($text=~/hail/i) {
-      quest::say("I have a problem");
+      quest::say("I have a problem.");
     }
     if ($text=~/problem/i) {
       quest::say("I have lost my map. It shows me how to get home. Can you help me find it?");

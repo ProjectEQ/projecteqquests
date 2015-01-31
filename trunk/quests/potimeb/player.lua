@@ -3,7 +3,7 @@ local instance_requests = require("instance_requests")
 function event_enter_zone(e)
   -- load the current qglobals
   local qglobals = eq.get_qglobals(e.self);
-  if (qglobals.potimeb_lockout == nil or qglobals.potimeb_lockout == "0") then
+  if ((qglobals.potimeb_lockout == nil or qglobals.potimeb_lockout == "0") and eq.get_zone_instance_id() ~= 0) then
     -- set global for phase 1 player lockout to 12 hours on zone in.
     eq.set_global("potimeb_lockout",tostring(instance_requests.GetLockoutEndTimeForHours(12)),5,"H12");
   end

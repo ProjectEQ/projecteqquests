@@ -135,7 +135,7 @@ function BossDeath(e)
 end
 
 function FailEvent()
-	eq.update_spawn_timer(44032,86400000000); --Alekson Garn 24 hours on fail
+	eq.update_spawn_timer(44032,8640000000); --Alekson Garn 24 hours on fail
 	DespawnEventMobs();
 end
 

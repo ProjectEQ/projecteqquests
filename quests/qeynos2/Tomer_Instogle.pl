@@ -70,10 +70,11 @@ sub EVENT_ITEM {
       quest::ding();
       quest::say("Oh, you have the makings of a true hero.. The Silent Fist Clan is proud to have you as ally. May your soul guide and protect you through these chaotic times.");
       quest::exp("100");
-      # Silent Fist Clan faction
-      quest::faction("300","1");
-      # Ashen Order faction
-      quest::faction("12","1");
+      
+      quest::faction(300,35); # Silent Fist Clan faction
+      quest::faction(135,5); # Guards of Qeynos
+      quest::faction(12,1); # Ashen Order faction
+      
       # We are finished with this flag set by Seta_Bakindo
       quest::delglobal("FindTomer");
       $FindTomer=undef;

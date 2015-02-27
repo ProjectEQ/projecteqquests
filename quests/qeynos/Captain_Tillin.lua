@@ -58,7 +58,7 @@ function event_trade(e)
 		e.other:Faction(135,1,0); -- Guards of Qeynos
 		e.other:Faction(217,1,0); -- Merchants of Qeynos
 		e.other:AddEXP(500);
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 18811})) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 18815})) then
 		e.self:Say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
 		e.other:SummonItem(13305);
 		e.other:Ding();

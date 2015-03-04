@@ -2,9 +2,7 @@ function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings. " .. e.other:GetName() .. "!  I am Velan Torresk of the Ashen Order.  I am in charge of training the newest members of our clan. and helping them advance their skills and rank.  When members perform certain tasks on behalf of the Order. they advance to a higher rank in our clan. and are awarded a special [sash].");
-	elseif(e.message:findi("sash")) then
-		e.self:Say("The Sashes of Order are given out by the various trainers of our clan.  I give out the [white training sash] and the [yellow Sash of Order]. and [Reyia] is in charge of the [orange and red sashes].");
+		e.self:Say("Greetings, " .. e.other:GetName() .. "! I am Velan Torresk of the Ashen Order. I am in charge of training the newest members of our clan, and helping them advance their skills and rank. When members perform certain tasks on behalf of the Order, they advance to a higher rank in our clan, and are awarded a special [sash].");
 	elseif(e.message:findi("orcs")) then
 		e.self:Say("The Deathfist Orcs are a large tribe of Orcs who live out in the desert. They are constantly sending small raiding parties and scouts to attack Freeport and its citizens.");
 	elseif(fac < 4) then
@@ -17,6 +15,8 @@ function event_say(e)
 		if(e.message:findi("white training sash") or e.message:findi("yellow sash of order")) then
 			e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
 		end
+	elseif(e.message:findi("sash")) then
+		e.self:Say("The Sashes of Order are given out by the various trainers of our clan. I give out the [white training sash] and the [yellow Sash of Order], and [Reyia] is in charge of the [orange and red sashes].");
 	end
 end
 
@@ -49,4 +49,3 @@ function event_trade(e)
 end
 
 -- END of FILE Zone:freportw  ID:9065 -- Velan_Torresk
-

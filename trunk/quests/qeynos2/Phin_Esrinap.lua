@@ -2,8 +2,8 @@ function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello, my name is Phin. Practice, practice, practice.. That's my motto. It is my responsibility to train our members, and help them to advance their skills and abilities. I also reward our members with colored [Headbands] for completing certain tasks.");
-	elseif(e.message:findi("Headband")) then
+		e.self:Say("Hello, my name is Phin. Practice, practice, practice.. That's my motto. It is my responsibility to train our members, and help them to advance their skills and abilities. I also reward our members with colored [headbands] for completing certain tasks.");
+	elseif(e.message:findi("headbands")) then
 		e.self:Say("Yes, I give the [White, Yellow, and Orange Headbands] to our newer members, and Togahn gives out [Red, Purple, and Blue Headbands] to our elder members.");
 	elseif(e.message:findi("Tomer Instogle")) then
 		e.self:Say("Tomer? I think Seta needs someone to go find him... Go ask her.");

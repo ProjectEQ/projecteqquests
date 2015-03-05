@@ -5,14 +5,16 @@ function event_say(e)
 		e.self:Say("Greetings, " .. e.other:GetName() .. "! I am Velan Torresk of the Ashen Order. I am in charge of training the newest members of our clan, and helping them advance their skills and rank. When members perform certain tasks on behalf of the Order, they advance to a higher rank in our clan, and are awarded a special [sash].");
 	elseif(e.message:findi("orcs")) then
 		e.self:Say("The Deathfist Orcs are a large tribe of Orcs who live out in the desert. They are constantly sending small raiding parties and scouts to attack Freeport and its citizens.");
-	elseif(fac < 4) then
-		if(e.message:findi("white training sash")) then
+	elseif(e.message:findi("white training sash")) then
+		if(fac < 4) then
 			e.self:Say("The white training sash of the Ashen Order is awarded to our new members for completing a few simple tasks to prove their devotion to our clan. As you know, Freeport is a very hostile place, under constant attack from [orcs], wild beasts, and even the undead. To help keep this city and its citizens relatively safe, we must help the Militia protect the main gates. Bring me two Deathfist pawn scalps from those vile [Deathfist orcs], a snake fang, and some bone chips from a skeleton. Good luck, " .. e.other:GetName() .. ", represent us well!");
-		elseif(e.message:findi("yellow sash of order")) then
-			e.self:Say("To earn the yellow sash, you must prove yourself to be very skilled in the art of fighting. The lands to the west and south of Freeport are filled with dangerous beasts that often prey upon innocent travelers. Help protect our merchant caravans and traveling citizens, while at the same time practicing your defensive skills, and eliminating these deadly creatures from the surrounding landscape. Bring me a giant snake rattle, a Deathfist slashed belt, the chitin of a desert tarantula, and turn in your white training sash, and I shall reward your noble work with our yellow Sash of Order. Good luck, " .. e.other:GetName() .. "!");
+		else
+			e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
 		end
-	elseif(fac > 3) then
-		if(e.message:findi("white training sash") or e.message:findi("yellow sash of order")) then
+	elseif(e.message:findi("yellow sash of order")) then
+		if(fac < 4) then
+			e.self:Say("To earn the yellow sash, you must prove yourself to be very skilled in the art of fighting. The lands to the west and south of Freeport are filled with dangerous beasts that often prey upon innocent travelers. Help protect our merchant caravans and traveling citizens, while at the same time practicing your defensive skills, and eliminating these deadly creatures from the surrounding landscape. Bring me a giant snake rattle, a Deathfist slashed belt, the chitin of a desert tarantula, and turn in your white training sash, and I shall reward your noble work with our yellow Sash of Order. Good luck, " .. e.other:GetName() .. "!");
+		else
 			e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
 		end
 	elseif(e.message:findi("sash")) then

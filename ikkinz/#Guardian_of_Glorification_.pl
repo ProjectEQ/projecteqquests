@@ -1,0 +1,4 @@
+sub EVENT_DEATH_COMPLETE {
+  quest::spawn2(294585,0,0,$x,$y,$z,$h);
+  quest::signalwith(294631,4);
+}

@@ -124,19 +124,19 @@ function Spawn_PRT()
 end
 
 function Spawn_ZMKP()
-
+  eq.spawn2(298029, 0, 0, 379.87, -681.00, -6.87, 185.8);
 end
 
 function Spawn_ZMSB()
-
+  eq.spawn2(298018, 0, 0, 366.00, 342.00, 2.60, 240.00);
 end
 
 function Spawn_ZMMD()
-
+  eq.spawn2(298020, 0, 0, 377.60, 145.66, -6.87, 186.0);
 end
 
 function Spawn_ZMYV()
-
+  eq.spawn2(298023, 0, 0, 366.00, -488.00, 2.6, 236);
 end
 
 function Spawn_YMCV()

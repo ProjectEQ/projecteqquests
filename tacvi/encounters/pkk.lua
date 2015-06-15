@@ -65,7 +65,6 @@
 --]]
 local PKK_active = "SERQMCNIDf"
 local PKK_inactive = "ABfHG"
-local PKK_started = false;
 
 local hatchlings_spawned = 0;
 local hatchlings_killed = 0;
@@ -73,10 +72,20 @@ local hatchlings_killed = 0;
 local PKK_hitpoints = 100;
 
 function PKK_Spawn(e)
-    eq.set_next_hp_event(90);
+  eq.set_next_hp_event(90);
+
+  PKK_active = "SERQMCNIDf"
+  PKK_inactive = "ABfHG"
+
+  hatchlings_spawned = 0;
+  hatchlings_killed = 0;
+
+  PKK_hitpoints = 100;
+
 end
 
 function PKK_Death(e)
+  eq.signal(298223, 298201);
 end
 
 function PKK_Combat(e)

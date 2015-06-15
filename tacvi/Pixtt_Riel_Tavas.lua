@@ -121,4 +121,5 @@ function event_death_complete(e)
 	eq.get_entity_list():FindDoor(22):SetLockPick(0)
 	eq.get_entity_list():FindDoor(17):SetLockPick(0)
 
+  eq.signal(298223, 298032);
 end

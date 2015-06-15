@@ -60,6 +60,21 @@ function PXK_Spawn(e)
   eq.set_next_hp_event(98);
 end
 
+function PXK_Death(e)
+  local door = 0;
+  door = entity_list:FindDoor(3);
+  if (door ~= nil) then
+    door:SetLockPick(0);
+  end
+
+  door = entity_list:FindDoor(4);
+  if (door ~= nil) then
+    door:SetLockPick(0);
+  end
+
+  eq.signal(298223, 298039);
+end
+
 function PXK_Combat(e)
   if (e.joined == false) then
     -- Wipe mechanics
@@ -164,10 +179,6 @@ function PXK_Ragehound_Death(e)
     ragehound = ragehound + 1;
     eq.spawn2(298041,0,0,  81, -218, -6.87,  20);
   end
-end
-
-function PXK_Death(e)
-
 end
 
 function event_encounter_load(e)

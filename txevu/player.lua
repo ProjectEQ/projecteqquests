@@ -14,5 +14,12 @@ function event_click_door(e)
       npcBF = eq.get_entity_list():GetNPCByNPCTypeID(297082)
       npcBF:AddToHateList(e.self,1);
     end
+  elseif (door_id == 25) then 
+    local instance_id = eq.get_instance_id("tacvi",0);       
+    if (instance_id > 0) then                                  
+      e.self:MovePCInstance(298, instance_id, 4.00, 9.00, -6.87, 188.0);   
+    else                                                       
+      e.self:Message(13, "You are not a part of an instance!");
+    end                                                        
   end
 end

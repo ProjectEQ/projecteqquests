@@ -32,13 +32,13 @@ function event_say(e)
   elseif (e.message:findi("open the way")) then
     if (e.other:HasItem(64034)) then 
       --#if have signet of command
-			e.self:Say("So be it. There is a construct nearby that will bring you to the seat of the slayer himself. May Trushar's blessing infuse your swords with the strength to cleanse this place of the Muramite invaders!");
-		--#create tacvi instance
+      --#create tacvi instance
       local request = instance_requests.ValidateInstanceRequest("tacvi", 54, e.other, lockout_globals); 
       if (request.valid) then                                                     
         local instance_id = eq.create_instance("tacvi", 0, 21600);              
         eq.set_global(instance_id.."_tacvi_bit",tostring(request.flags),7,"H6");
         eq.assign_raid_to_instance(instance_id);                                  
+        e.self:Say("So be it. There is a construct nearby that will bring you to the seat of the slayer himself. May Trushar's blessing infuse your swords with the strength to cleanse this place of the Muramite invaders!");
       else
       --#if have signet but not in raid/not have enough
         e.self:Say("I cannot in good conscience allow you into the upper temple as you are.  If you wish to have any chance against the forces of the Tunat'Muram, you will need the help of many friends.  Without them, I would just be sending you to be slaughtered.");

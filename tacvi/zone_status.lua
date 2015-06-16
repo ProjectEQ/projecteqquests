@@ -72,50 +72,6 @@ function event_spawn(e)
     end
   end
 
-  -- PXK
-  if (bit.band(lockout_bit, 1) == 0) then 
-    --Spawn_PXK();
-    --Door_Lock(3);
-    --Door_Lock(4);
-  else 
-    --Door_Unlock(3);
-    --Door_Unlock(4);
-  end
-
-  -- PKK
-  if (bit.band(lockout_bit, 2) == 0) then
-    --Spawn_PKK();
-  end
-
-  -- PRT
-  if (bit.band(lockout_bit, 4) == 0) then
-    --Spawn_PRT();
-  end
-
-  -- ZMKP
-  if (bit.band(lockout_bit, 8) == 0) then
-    --Spawn_ZMKP();
-  end
-
-  -- ZMSB
-  if (bit.band(lockout_bit, 16) == 0) then
-    --Spawn_ZMSB();
-  end
-
-  -- ZMMD
-  if (bit.band(lockout_bit, 32) == 0) then
-    --Spawn_ZMMD();
-  end
-
-  -- ZMYV
-  if (bit.band(lockout_bit, 64) == 0) then
-    --Spawn_ZMYV();
-  end
-
-  -- TMCV
-  if (bit.band(lockout_bit, 128) == 0) then
-    --Spawn_YMCV();
-  end
 end
 
 function Spawn_PXK()

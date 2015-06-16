@@ -57,7 +57,14 @@ function event_spawn(e)
   if (lockout_bit == nil) then lockout_bit = 0 end
   setup_lockouts();
 
+  -- Door at zone in; Talking to Sensnil will unlock
   Door_Lock(18);
+
+  -- Doors to TMCV
+  Door_Lock(10);
+  Door_Lock(11);
+  Door_Lock(14);
+  Door_Lock(19);
 
   for k,v in pairs(Tacvi_Lockouts) do
     if (bit.band(lockout_bit, v[2]) == 0 and v[3] ~= nil ) then
@@ -68,11 +75,11 @@ function event_spawn(e)
   -- PXK
   if (bit.band(lockout_bit, 1) == 0) then 
     --Spawn_PXK();
-    Door_Lock(3);
-    Door_Lock(4);
+    --Door_Lock(3);
+    --Door_Lock(4);
   else 
-    Door_Unlock(3);
-    Door_Unlock(4);
+    --Door_Unlock(3);
+    --Door_Unlock(4);
   end
 
   -- PKK

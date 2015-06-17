@@ -57,7 +57,14 @@ function event_spawn(e)
   if (lockout_bit == nil) then lockout_bit = 0 end
   setup_lockouts();
 
+  -- Door at zone in; Talking to Sensnil will unlock
   Door_Lock(18);
+
+  -- Doors to TMCV
+  Door_Lock(10);
+  Door_Lock(11);
+  Door_Lock(14);
+  Door_Lock(19);
 
   for k,v in pairs(Tacvi_Lockouts) do
     if (bit.band(lockout_bit, v[2]) == 0 and v[3] ~= nil ) then
@@ -65,50 +72,6 @@ function event_spawn(e)
     end
   end
 
-  -- PXK
-  if (bit.band(lockout_bit, 1) == 0) then 
-    --Spawn_PXK();
-    Door_Lock(3);
-    Door_Lock(4);
-  else 
-    Door_Unlock(3);
-    Door_Unlock(4);
-  end
-
-  -- PKK
-  if (bit.band(lockout_bit, 2) == 0) then
-    --Spawn_PKK();
-  end
-
-  -- PRT
-  if (bit.band(lockout_bit, 4) == 0) then
-    --Spawn_PRT();
-  end
-
-  -- ZMKP
-  if (bit.band(lockout_bit, 8) == 0) then
-    --Spawn_ZMKP();
-  end
-
-  -- ZMSB
-  if (bit.band(lockout_bit, 16) == 0) then
-    --Spawn_ZMSB();
-  end
-
-  -- ZMMD
-  if (bit.band(lockout_bit, 32) == 0) then
-    --Spawn_ZMMD();
-  end
-
-  -- ZMYV
-  if (bit.band(lockout_bit, 64) == 0) then
-    --Spawn_ZMYV();
-  end
-
-  -- TMCV
-  if (bit.band(lockout_bit, 128) == 0) then
-    --Spawn_YMCV();
-  end
 end
 
 function Spawn_PXK()
@@ -124,19 +87,19 @@ function Spawn_PRT()
 end
 
 function Spawn_ZMKP()
-
+  eq.spawn2(298029, 0, 0, 379.87, -681.00, -6.87, 185.8);
 end
 
 function Spawn_ZMSB()
-
+  eq.spawn2(298018, 0, 0, 366.00, 342.00, 2.60, 240.00);
 end
 
 function Spawn_ZMMD()
-
+  eq.spawn2(298020, 0, 0, 377.60, 145.66, -6.87, 186.0);
 end
 
 function Spawn_ZMYV()
-
+  eq.spawn2(298023, 0, 0, 366.00, -488.00, 2.6, 236);
 end
 
 function Spawn_YMCV()

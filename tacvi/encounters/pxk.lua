@@ -91,6 +91,9 @@ function PXK_Combat(e)
     lifebleeder = 0;
     manasipper  = 0;
     ragehound   = 0;
+
+    eq.get_entity_list():FindDoor(2):SetLockPick(0);
+
   end
 end
 

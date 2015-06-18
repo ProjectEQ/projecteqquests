@@ -1,6 +1,6 @@
 --[[
 --
---  Tacvi Zun`Muram Pvxe Pirik Encounter
+--  Tacvi Zun`Muram Kvxe Pirik Encounter
 --  298029
 --  http://everquest.allakhazam.com/db/quest.html?quest=4263
 --
@@ -67,7 +67,7 @@ local ZMKP_AtkHit = 2000; -- Rage
 local ZMKP_Haste  = -27;  -- Speed
 
 -- Time out on Balancing seemed to be about 70 seconds
-local ZMKP_Balance_Timer = 70 * 1000;
+local ZMKP_Balance_Timer = 7 * 1000;
 
 local ZMKP_Fury = 100;
 local ZMKP_Rage = 100;
@@ -93,24 +93,14 @@ function ZMKP_Combat(e)
 
     e.self:Emote("Come you fools! Show me your strongest warrior and I will show you my first victim."); 
   else
-    --[[
-    -- Clean up after a wipe
-    eq.depop_all(298125);
-    eq.depop_all(298126);
-    eq.depop_all(298127);
-    eq.depop_all(298128);
-
-    eq.spawn2(298029, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-    eq.depop();
-
-    eq.get_entity_list():FindDoor(16):SetLockPick(0);
-    ]]--
+    eq.set_timer("wipecheck", 1 * 1000);
   end
 end
 
 function ZMKP_Timer(e)
   if (e.timer == 'balance') then
     eq.stop_timer(e.timer);
+    eq.stop_timer("wipecheck");
     local speed = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298125):GetHPRatio());
     local defen = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298126):GetHPRatio());
     local fury  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298127):GetHPRatio());
@@ -148,17 +138,31 @@ function ZMKP_Timer(e)
     else
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Rage seems to be tipping in your favor. ");
     end
-eq.zone_emote(14, 'low => ' .. low .. ' hi => ' .. hi .. ' Fury => ' .. fury .. " Rage => " .. rage .. " Speed => " .. speed .. " Defense => " .. defen );
+--eq.zone_emote(14, 'low => ' .. low .. ' hi => ' .. hi .. ' Fury => ' .. fury .. " Rage => " .. rage .. " Speed => " .. speed .. " Defense => " .. defen );
     eq.signal(298125, 1);
     eq.signal(298126, 1);
     eq.signal(298127, 1);
     eq.signal(298128, 1);
     eq.modify_npc_stat("special_attacks", ZMKP_Active);
+  elseif (e.timer == "wipecheck") then
+    -- Check to see if there are any Clients in the room with ZMKP
+    local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 9000);
+    if (client:IsClient() == false) then
+      -- Clean up after a wipe
+      eq.depop_all(298125);
+      eq.depop_all(298126);
+      eq.depop_all(298127);
+      eq.depop_all(298128);
+
+      eq.spawn2(298029, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+      eq.depop();
+
+      eq.get_entity_list():FindDoor(16):SetLockPick(0);
+    end
   end
 end
 
 function ZMKP_Hp(e)
-  eq.zone_emote(14, "hp event =>" .. e.hp_event);
   if (e.hp_event == 90) then
     eq.set_next_hp_event( e.hp_event -10);
     eq.set_timer("balance", ZMKP_Balance_Timer);
@@ -177,7 +181,10 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:SetOOCRegen(0);
+    e.self:WipeHateList();
 
     eq.signal(298125, 2);
     eq.signal(298126, 2);
@@ -188,7 +195,10 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:SetOOCRegen(0);
+    e.self:WipeHateList();
 
     eq.signal(298125, 2);
     eq.signal(298126, 2);
@@ -199,7 +209,10 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:SetOOCRegen(0);
+    e.self:WipeHateList();
 
     eq.signal(298125, 2);
     eq.signal(298126, 2);
@@ -210,7 +223,10 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:SetOOCRegen(0);
+    e.self:WipeHateList();
 
     eq.signal(298125, 2);
     eq.signal(298126, 2);
@@ -221,7 +237,10 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:SetOOCRegen(0);
+    e.self:WipeHateList();
     
     eq.signal(298125, 2);
     eq.signal(298126, 2);
@@ -232,7 +251,10 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
+    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:SetOOCRegen(0);
+    e.self:WipeHateList();
 
     eq.signal(298125, 2);
     eq.signal(298126, 2);
@@ -291,6 +313,7 @@ function event_encounter_load(e)
   eq.register_npc_event('zmkp', Event.timer,          298029, ZMKP_Timer);
   eq.register_npc_event('zmkp', Event.hp,             298029, ZMKP_Hp);
   eq.register_npc_event('zmkp', Event.signal,         298029, ZMKP_Signal);
+  eq.register_npc_event('zmkp', Event.say,            298029, ZMKP_Say);
   eq.register_npc_event('zmkp', Event.death_complete, 298029, ZMKP_Death);
 
   eq.register_npc_event('zmkp', Event.spawn,          298125, ZMKP_Spawn_Speed);

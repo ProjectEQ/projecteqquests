@@ -58,6 +58,7 @@ local inst_id = 0;
 function PXK_Spawn(e)
   e.self:SetPseudoRoot(true);
   eq.set_next_hp_event(98);
+  eq.get_entity_list():FindDoor(2):SetLockPick(0);
 end
 
 function PXK_Death(e)
@@ -94,7 +95,6 @@ function PXK_Combat(e)
     ragehound   = 0;
 
     eq.get_entity_list():FindDoor(2):SetLockPick(0);
-
   end
 end
 

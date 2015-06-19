@@ -72,7 +72,7 @@ local hatchlings_killed = 0;
 local PKK_hitpoints = 100;
 
 function PKK_Spawn(e)
-  eq.set_next_hp_event(90);
+  eq.set_next_hp_event(98);
 
   PKK_active = "SERQMCNIDf"
   PKK_inactive = "ABfHG"
@@ -82,6 +82,8 @@ function PKK_Spawn(e)
 
   PKK_hitpoints = 100;
 
+  eq.get_entity_list():FindDoor(5):SetLockPick(0);
+  eq.set_timer("wipecheck", 1 * 1000);
 end
 
 function PKK_Death(e)
@@ -94,14 +96,23 @@ function PKK_Combat(e)
     e.self:Say("You shall regret trespassing into my chambers. The might of our kind shall smother the flames of life in this world, starting with you.");
 
     e.self:Say("Do you really think your paltry skills will be enough to best a being as powerful as I? ");
-    eq.get_entity_list():FindDoor(5):SetLockPick(-1);
   elseif (e.joined == false) then
-    eq.depop_all(298203);
-    eq.depop_all(298204);
-    eq.depop_all(298048);
-    eq.spawn2(298201, 0, 0, 162.79, 241.47, -6.87, 188.8);
-    eq.depop();
-    eq.get_entity_list():FindDoor(5):SetLockPick(0);
+    eq.set_timer("wipecheck", 1 * 1000);
+  end
+end
+
+function PKK_Timer(e)
+  if (e.timer == "wipecheck") then
+    -- Check to see if there are any Clients in the room with ZMKP
+    local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 5000);
+    if (client:IsClient() == false) then
+      eq.depop_all(298203);
+      eq.depop_all(298204);
+      eq.depop_all(298048);
+      eq.spawn2(298201, 0, 0, 162.79, 241.47, -6.87, 188.8);
+      eq.depop();
+      eq.get_entity_list():FindDoor(5):SetLockPick(0);
+    end
   end
 end
 
@@ -138,6 +149,7 @@ function PKK_Hp(e)
   PKK_hitpoints = e.hp_event;
   if (e.hp_event == 98) then
 
+    eq.get_entity_list():FindDoor(5):SetLockPick(-1);
     eq.set_next_hp_event(90);
 
   elseif (e.hp_event == 90) then
@@ -225,7 +237,7 @@ end
 
 function PKK_Roaming_Caster_One_Timer(e)
   eq.stop_timer(e.timer);
-  local client = eq.get_entity_list():GetRandomClient(162, 241, -7, 180*180);
+  local client = eq.get_entity_list():GetRandomClient(162, 241, -7, 5000);
   e.self:DoAnim(44);
   
   local spell;

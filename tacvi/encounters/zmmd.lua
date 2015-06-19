@@ -55,12 +55,7 @@ function ZMMD_Combat(e)
 
     e.self:Say("Come you fools! Show me your strongest warrior and I will show you my first victim."); 
   else
-    -- Wipe Mechanics
-    eq.get_entity_list():FindDoor(13):SetLockPick(0);
-    eq.depop_all(298150); -- Clones
-    eq.depop_all(298050); -- Weaker Clones
-    eq.spawn2(298020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-    eq.depop();
+    eq.set_timer("wipecheck", 1 * 1000);
   end
 end
 
@@ -68,18 +63,31 @@ function ZMMD_Activate(e)
   e.self:Emote("'s body begins to glow as the images before you merge back into one. The wounds upon Mordl's body quickly heal as he's infused by the energy, but new wounds appear where his other forms were injured. ");
   eq.modify_npc_stat("special_attacks", ZMMD_Active);
   e.self:SetAppearance(0);
+  eq.stop_timer("wipecheck");
 end
 
 function ZMMD_Inactivate(e)
   eq.modify_npc_stat("special_attacks", ZMMD_Inactive);
   e.self:SetAppearance(3);
+  e.self:WipeHateList();
 end
 
 function ZMMD_Timer(e)
-  eq.stop_timer(e.timer);
   if (e.timer == "zmmd_kite") then 
+    eq.stop_timer(e.timer);
     eq.depop_all(298150);
     ZMMD_Activate(e);
+  elseif ("wipecheck") then
+    -- Check to see if there are any Clients in the room with ZMKP
+    local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 8000);
+    if (client:IsClient() == false) then
+      -- Wipe Mechanics
+      eq.get_entity_list():FindDoor(13):SetLockPick(0);
+      eq.depop_all(298150); -- Clones
+      eq.depop_all(298050); -- Weaker Clones
+      eq.spawn2(298020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+      eq.depop();
+    end
   end
 end
 
@@ -131,7 +139,7 @@ function ZMMD_Signal(e)
 end
 
 function ZMMD_Death(e)
-  eq.spawn(298223, 298020);
+  eq.signal(298223, 298020);
 
   eq.get_entity_list():FindDoor(13):SetLockPick(0);
 end

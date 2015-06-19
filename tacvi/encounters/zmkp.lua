@@ -270,7 +270,7 @@ function ZMKP_Signal(e)
 end
 
 function ZMKP_Death(e)
-  --eq.signal(298223, 298029);
+  eq.signal(298223, 298029);
 
   eq.depop_all(298125);
   eq.depop_all(298126);

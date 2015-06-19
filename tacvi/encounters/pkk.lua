@@ -208,6 +208,7 @@ function PKK_Hatchling_Death(e)
     eq.signal(298203, 1);
     eq.signal(298204, 1);
   end
+  e.self:Emote("black blood spills on the floor");
 end
 
 function PKK_Signal(e)

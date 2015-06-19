@@ -58,6 +58,7 @@ local inst_id = 0;
 function PXK_Spawn(e)
   e.self:SetPseudoRoot(true);
   eq.set_next_hp_event(98);
+  eq.get_entity_list():FindDoor(2):SetLockPick(0);
 end
 
 function PXK_Death(e)
@@ -73,6 +74,7 @@ function PXK_Death(e)
   end
 
   eq.signal(298223, 298039);
+  eq.get_entity_list():FindDoor(2):SetLockPick(0);
 end
 
 function PXK_Combat(e)
@@ -93,7 +95,6 @@ function PXK_Combat(e)
     ragehound   = 0;
 
     eq.get_entity_list():FindDoor(2):SetLockPick(0);
-
   end
 end
 
@@ -160,6 +161,7 @@ function PXK_Juxtapincer_Death(e)
   if ( juxtapincer < 3 ) then
     juxtapincer = juxtapincer + 1;
     eq.spawn2(298044,0,0, 151, -113, -6.87, 157);
+    e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
 
@@ -167,6 +169,7 @@ function PXK_Lifebleeder_Death(e)
   if (lifebleeder < 3) then 
     lifebleeder = lifebleeder + 1;
     eq.spawn2(298043,0,0, 151, -218, -6.87, 225);
+    e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
 
@@ -174,6 +177,7 @@ function PXK_Manasipper_Death(e)
   if (manasipper < 3) then
     manasipper = manasipper + 1;
     eq.spawn2(298042,0,0,  81, -113, -6.87,  97);
+    e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
 
@@ -181,6 +185,7 @@ function PXK_Ragehound_Death(e)
   if (ragehound < 3) then
     ragehound = ragehound + 1;
     eq.spawn2(298041,0,0,  81, -218, -6.87,  20);
+    e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
 

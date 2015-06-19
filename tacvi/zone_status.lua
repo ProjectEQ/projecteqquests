@@ -123,7 +123,6 @@ function Door_Unlock(door_id)
 end
 
 function AddLockout(lockout)
-  eq.zone_emote(14, "Add Lockout => ");
   local lockout_name = lockout[1]; 
   local lockout_bit = lockout[2];
 

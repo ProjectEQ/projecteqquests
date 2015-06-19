@@ -57,6 +57,7 @@ function ZMYV_Timer(e)
       eq.get_entity_list():FindDoor(21):SetLockPick(0);
       eq.spawn2(298023, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
       eq.depop();
+    end
   end
 end
 

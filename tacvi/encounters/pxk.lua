@@ -73,6 +73,7 @@ function PXK_Death(e)
   end
 
   eq.signal(298223, 298039);
+  eq.get_entity_list():FindDoor(2):SetLockPick(0);
 end
 
 function PXK_Combat(e)

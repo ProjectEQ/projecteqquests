@@ -66,6 +66,7 @@ sub EVENT_TIMER {
 		quest::modifynpcstat("special_attacks","ABfHG"); #go inactive
 		quest::moveto(-39,-8,-433,90,1);
 		quest::depopall(297209); #runt
+    quest::depopall(297211); #Ixt_Hsek_Syat
 		quest::stoptimer("reset");
 		$spawn_runt = 1;
 	}

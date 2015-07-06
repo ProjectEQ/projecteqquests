@@ -1,6 +1,6 @@
 function event_say(e)
 	local corpse = 0;
-	local corpse = eq.get_player_burried_corpse_count(e.other:CharacterID());
+	local corpse = eq.get_player_buried_corpse_count(e.other:CharacterID());
 	
 	if(e.message:findi("hail")) then
 		e.self:Emote("smiles at you broadly. It is my pleasure to bid you greeting from the Council of New Tanaan. I have been granted the task of working as this region's gatekeeper to Shadowrest. Until recently, the Keeper held tightly onto all things that we lost. Thanks to the council, this is no longer true. The Keeper may grant you access to your lost corpses if you ask him. When you are [ready], I will transport you.");

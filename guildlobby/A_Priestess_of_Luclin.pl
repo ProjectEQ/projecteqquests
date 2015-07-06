@@ -148,7 +148,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 sub EVENT_SUMMON {
 $charid = $client->CharacterID();
 $count = $client->GetCorpseCount();
-# $corpse = quest::getplayerburriedcorpsecount($charid);
+# $corpse = quest::getplayerburiedcorpsecount($charid);
 $x = $client->GetX();
 $y = $client->GetY();
 $z = $client->GetZ();

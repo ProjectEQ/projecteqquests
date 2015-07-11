@@ -62,7 +62,8 @@ local ZMKP_Active = "SERFQMCNIDf"
 local ZMKP_Inactive = "ABfHG";
 
 local ZMKP_AC     = 1800; -- Defense
-local ZMKP_MaxHit = 4950; -- Fury
+local ZMKP_MaxHit = 3900; -- Fury
+local ZMKP_MinHit = 1430;
 local ZMKP_AtkHit = 2000; -- Rage
 local ZMKP_Haste  = -27;  -- Speed
 
@@ -126,8 +127,10 @@ function ZMKP_Timer(e)
     end
     if ( fury  < low or fury  > hi) then
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Fury is falling out of balance. ");
-      ZMKP_MaxHit = ZMKP_MaxHit + 400;
+      ZMKP_MaxHit = ZMKP_MaxHit + 585;
+      ZMKP_MinHit = ZMKP_MinHit + 215;
       e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
+      e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
     else
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Fury seems to be tipping in your favor. ");
     end

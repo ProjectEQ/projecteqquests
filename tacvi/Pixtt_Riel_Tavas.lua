@@ -71,8 +71,9 @@ function event_hp(e)
 		eq.get_entity_list():FindDoor(23):SetLockPick(-1)
 		eq.set_next_hp_event(50)
 	elseif (e.hp_event == 50) then
-		-- Hits a little harder
+		-- Hits a little harder and Flurry
 		--quest::modifynpcstat("max_hit",4500);
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 1)
 		e.self:ModifyNPCStat("max_hit",tostring(e.self:GetMaxDMG()*1.1))
 		e.self:Say("So it seems you are not so easily defeated after all. I am through toying with you fools. Prepare for the reality of death.' Riel's body begins to speed up as her attacks become increasingly vicious")
 		e.self:Emote("'s body begins to speed up as her attacks become increasingly vicious")
@@ -88,8 +89,8 @@ function event_hp(e)
 		eq.set_timer("VenomAE", 30000)
 		eq.set_next_hp_event(10)
 	elseif (e.hp_event == 10) then
-		-- At approximately 10% health, she increases her attack speed and begins flurrying much more
-    e.self:SetSpecialAbility(SpecialAbility.flurry, 1)
+		-- At approximately 10% health, she increases her attack speed and begins flurrying much more (every round)
+    e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100)
 		e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
 		e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
 	end

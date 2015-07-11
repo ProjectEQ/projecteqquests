@@ -76,33 +76,47 @@ end
 
 function Spawn_PXK()
   eq.spawn2(298039, 0, 0, 151.00, -162.00, -6.87, 192.5);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 26, -164, -6.9, 191);
 end
 
 function Spawn_PKK()
   eq.spawn2(298201, 0, 0, 162.79, 241.47, -6.87, 188.8);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 76, 246, -6.77, 197);
 end
 
 function Spawn_PRT()
   eq.spawn2(298032, 0, 0, 194.95, -587.61, -6.77, 192.4);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 83, -586, -6.77, 195.8);
 end
 
 function Spawn_ZMKP()
   eq.spawn2(298029, 0, 0, 379.87, -681.00, -6.87, 185.8);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 272, -684, -6.9, 193);
 end
 
 function Spawn_ZMSB()
   eq.spawn2(298018, 0, 0, 366.00, 342.00, 2.60, 240.00);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 274, 345, -6.77, 194);
 end
 
 function Spawn_ZMMD()
   eq.spawn2(298020, 0, 0, 377.60, 145.66, -6.87, 186.0);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 270, 146, -6.87, 195.4);
 end
 
 function Spawn_ZMYV()
   eq.spawn2(298023, 0, 0, 366.00, -488.00, 2.6, 236);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 272, -487, -6.87, 192.9);
 end
 
-function Spawn_YMCV()
+function Spawn_TMCV()
+  -- TMCV 462, -171, 32, 8
+  -- Living Phylactery
+  --  454, -242, 25.5, 32
+  --  431, -100, 25.5, 56
+  --  487, -100, 25.5, 76
+  --  476, -242, 25.5, 92
+  --  498, -193, 25.5, 228
 
 end
 
@@ -135,8 +149,6 @@ function AddLockout(lockout)
 end
 
 function event_signal(e)
-  eq.zone_emote(14, "zone_status event_signal => " .. e.signal);
-
   if ( Tacvi_Lockouts[e.signal] ~= nil ) then
     AddLockout( Tacvi_Lockouts[e.signal] );
   end

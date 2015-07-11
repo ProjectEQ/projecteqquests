@@ -89,6 +89,7 @@ function event_hp(e)
 		eq.set_next_hp_event(10)
 	elseif (e.hp_event == 10) then
 		-- At approximately 10% health, she increases her attack speed and begins flurrying much more
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 1)
 		e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
 		e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
 	end

@@ -116,16 +116,21 @@ function PXK_Hp(e)
    
    -- At 50% you see
    if (e.hp_event == 50) then
-      eq.zone_emote(15,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'");
-      
+      e.self:Emote("The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
       -- she begins casting Spirit Cleaver & Wave of Rage
       -- void AddAISpell(int priority, int spell_id, int type, int mana_cost, int recast_delay, int resist_adjust);
       e.self:AddAISpell(0, 4729, 1, -1, -1, -350);
       e.self:AddAISpell(0, 4728, 1, -1, -1, -350);
       -- Begins to AE Ramp (r or 4)
-      --eq.modify_npc_stat("special_attacks", "1,2,4,5,12,13,14,15,16,17,21");
-      eq.modify_npc_stat("special_attacks", "SErFUMCNIDf");
+      -- Ends Flurry (F or 5)
+      eq.modify_npc_stat("special_attacks", "SErUMCNIDf");
     
+      eq.set_next_hp_event(45);
+   end
+         
+   if (e.hp_event == 45) then
+      eq.zone_emote(15,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'");
+
       -- Spawn the Pets
       eq.spawn2(298044,0,0, 151, -113, -6.87, 157);
       eq.spawn2(298043,0,0, 151, -218, -6.87, 225);
@@ -134,12 +139,12 @@ function PXK_Hp(e)
 
       eq.set_next_hp_event(30);
    end
-         
    --Below 30%
    if (e.hp_event == 30) then
       --At 30%, she gains some strength:
       --Emotes at 30% and DPS picks up.
-      eq.modify_npc_stat("min_hit", "2500");
+      eq.modify_npc_stat("min_hit", "1355");
+      eq.modify_npc_stat("max_hit", "6200");
       e.self:Say("I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.");
       eq.set_next_hp_event(10);
    end
@@ -150,8 +155,8 @@ function PXK_Hp(e)
       -- Balance of the nameless, strip self debuffs
       e.self:CastSpell(3230,e.self:GetID());
       e.self:SetHP(e.self:GetMaxHP()*0.40);
-      eq.modify_npc_stat("min_hit", "1500");
-      eq.modify_npc_stat("special_attacks", "1,2,5,12,13,14,15,16,17,21");
+      eq.modify_npc_stat("min_hit", "1333");
+      eq.modify_npc_stat("max_hit", "4773");
       e.self:Say("You may yet have the strength to defeat me but I am not through with you yet.");
       e.self:Emote("'s eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
    end

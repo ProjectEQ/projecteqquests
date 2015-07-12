@@ -24,6 +24,11 @@
 -- ZMYV 298023
 -- TMCV 298054
 --
+-- Zone Trash:
+-- 298015 an_elite_mastruq_berserker
+-- 298016 an_elite_mastruq_crusher
+-- 298021 an_elite_mastruq_destroyer
+--
 --]]
 --
 local lockout_bit;
@@ -117,6 +122,15 @@ function Spawn_TMCV()
   --  487, -100, 25.5, 76
   --  476, -242, 25.5, 92
   --  498, -193, 25.5, 228
+  -- Door Guards
+  --  602 16 21.23 249.9
+  --  535 72 23.48 236
+  --  601 -362 21.23 134.5
+  --  538 -416 15.23 129.1
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 602, 16, 21.23, 249.9);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 535, 72, 23.48, 236);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 601, -362, 21.23, 134.5);
+  eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 538, -416, 15.23, 129.1);
 
 end
 

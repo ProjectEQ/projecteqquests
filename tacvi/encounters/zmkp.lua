@@ -83,6 +83,7 @@ function ZMKP_Spawn(e)
 
   e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
   e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
+  e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
   e.self:ModifyNPCStat("atk",           tostring(ZMKP_AtkHit));
   e.self:ModifyNPCStat("attack_speed",  tostring(ZMKP_Haste));
   eq.set_next_hp_event(90);

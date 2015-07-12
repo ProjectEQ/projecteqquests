@@ -26,8 +26,8 @@ function event_say(e)
       { "Tacvi_ZMKP", "Tacvi: Zun`Muram Kvxe Pirik" },
       { "Tacvi_ZMSB", "Tacvi: Zun`Muram Shaldn Boc" },
       { "Tacvi_ZMMD", "Tacvi: Zun`Muram Mordl Delt" },
-      { "Tacvi_ZMYV", "Zun`Muram Yihst Vor" },   
-      { "Tacvi_TMCV", "Tunat`Muram Cuu Vauax" }
+      { "Tacvi_ZMYV", "Tacvi: Zun`Muram Yihst Vor" },   
+      { "Tacvi_TMCV", "Tacvi: Tunat`Muram Cuu Vauax" }
 		}
 
 	if(e.message:findi("hail")) then

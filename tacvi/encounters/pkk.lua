@@ -83,7 +83,6 @@ function PKK_Spawn(e)
   PKK_hitpoints = 100;
 
   eq.get_entity_list():FindDoor(5):SetLockPick(0);
-  eq.set_timer("wipecheck", 1 * 1000);
 end
 
 function PKK_Death(e)
@@ -109,8 +108,8 @@ function PKK_Timer(e)
       eq.depop_all(298203);
       eq.depop_all(298204);
       eq.depop_all(298048);
-      eq.spawn2(298201, 0, 0, 162.79, 241.47, -6.87, 188.8);
       eq.depop();
+      eq.spawn2(298201, 0, 0, 162.79, 241.47, -6.87, 188.8);
       eq.get_entity_list():FindDoor(5):SetLockPick(0);
     end
   end

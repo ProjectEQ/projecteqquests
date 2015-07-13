@@ -73,7 +73,7 @@ function ZMYV_Hp(e)
     e.self:Say("Ahh, sweet pain. It is such an intoxicating feeling. I thank you for the pleasure. Now let me return the favor.");
   elseif (e.hp_event == 20) then
     e.self:Emote("'s body bulges with strength as he enters a blind rage. ");
-    e.self:NPCSpecialAttacks("SERFQMCNIDfr", 0);
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
   end
 end
 

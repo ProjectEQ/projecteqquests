@@ -65,15 +65,23 @@ function ZMYV_Hp(e)
   if (e.hp_event == 90) then
     eq.set_next_hp_event(75);
     e.self:Say("Is this is the best you can do? Come now, show me your true strength and I will show you mine.' ");
+    e.self:ModifyNPCStat("min_hit", tostring(1899));
+    e.self:ModifyNPCStat("max_hit", tostring(5176));
   elseif (e.hp_event == 75) then
     eq.set_next_hp_event(50);
     e.self:Say("To think I was actually worried you might be worthy foes.");
+    e.self:ModifyNPCStat("min_hit", tostring(2124));
+    e.self:ModifyNPCStat("max_hit", tostring(5401));
   elseif (e.hp_event == 50) then
     eq.set_next_hp_event(20);
     e.self:Say("Ahh, sweet pain. It is such an intoxicating feeling. I thank you for the pleasure. Now let me return the favor.");
+    e.self:ModifyNPCStat("min_hit", tostring(2254));
+    e.self:ModifyNPCStat("max_hit", tostring(5591));
   elseif (e.hp_event == 20) then
     e.self:Emote("'s body bulges with strength as he enters a blind rage. ");
-    e.self:NPCSpecialAttacks("SERFQMCNIDfr", 0);
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
+    e.self:ModifyNPCStat("min_hit", tostring(2573));
+    e.self:ModifyNPCStat("max_hit", tostring(5850));
   end
 end
 

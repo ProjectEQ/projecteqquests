@@ -4,44 +4,44 @@
 -- First event in Tacvi
 -- http://everquest.allakhazam.com/db/quest.html?quest=4260
 --
--- Pixtt Xxeric Kex: 100% to 50% 
--- Pixtt Xxeric Kex hits for a max ~5,700; flurries; procs "Trample"; sees invisibility; but does not see Shroud of Stealth: 
+-- Pixtt Xxeric Kex: 100% to 50%
+-- Pixtt Xxeric Kex hits for a max ~5,700; flurries; procs "Trample"; sees invisibility; but does not see Shroud of Stealth:
 --
--- Pixtt Xxeric Kex at 50% 
+-- Pixtt Xxeric Kex at 50%
 --
--- At 50% health, you see: 
+-- At 50% health, you see:
 --
--- Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.' 
+-- Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'
 --
--- She begins casting her AEs: 
--- Spirit Cleaver: Single Target, Prismatic (-350) 
--- Wave of Rage: PB AE 100', Prismatic (-350) 
--- She also begins AE rampaging (mitigated to ~1,000 per hit). 
+-- She begins casting her AEs:
+-- Spirit Cleaver: Single Target, Prismatic (-350)
+-- Wave of Rage: PB AE 100', Prismatic (-350)
+-- She also begins AE rampaging (mitigated to ~1,000 per hit).
 --
--- At this time, she also spawns four adds: 
+-- At this time, she also spawns four adds:
 --
--- - 1x "an ukun juxtapincer" 
--- - 1x "an ukun lifebleeder" 
--- - 1x "an ukun manasipper" 
--- - 1x "an ukun ragehound" 
+-- - 1x "an ukun juxtapincer"
+-- - 1x "an ukun lifebleeder"
+-- - 1x "an ukun manasipper"
+-- - 1x "an ukun ragehound"
 -- Spawn 298044 an ukun juxtapincer
 -- Spawn 298043 an ukun lifebleeder
 -- Spawn 298042 an ukun manasipper
 -- Spanw 298041 an ukun ragehound
 --
--- Each of these adds hits for a max ~3,000 and respawn twice as they are killed (for a total of 12 adds total, four at a time can be up at once). 
+-- Each of these adds hits for a max ~3,000 and respawn twice as they are killed (for a total of 12 adds total, four at a time can be up at once).
 --
--- Pixtt Xxeric Kex at 30% and Below 
+-- Pixtt Xxeric Kex at 30% and Below
 --
--- At 30%, she gains some strength: 
--- Xxeric says, 'I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.' 
+-- At 30%, she gains some strength:
+-- Xxeric says, 'I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.'
 --
 --
--- When she hits 10%, she will regenerate to 40% health: 
+-- When she hits 10%, she will regenerate to 40% health:
 --
--- Xxeric says 'You may yet have the strength to defeat me but I am not through with you yet.' Xxeric's eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health. 
+-- Xxeric says 'You may yet have the strength to defeat me but I am not through with you yet.' Xxeric's eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.
 --
--- ...After which she can be killed. 
+-- ...After which she can be killed.
 --
 --]]
 
@@ -99,7 +99,7 @@ function PXK_Combat(e)
 end
 
 function PXK_Hp(e)
-   --98pct 
+   --98pct
    if (e.hp_event == 98) then
       --locks door leading into her chamber
       door = entity_list:FindDoor(2);
@@ -107,13 +107,13 @@ function PXK_Hp(e)
       e.self:Emote("begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
       eq.set_next_hp_event(90);
    end
-   
+
    --90pct unroot
    if (e.hp_event == 90) then
       e.self:SetPseudoRoot(false);
       eq.set_next_hp_event(50);
    end
-   
+
    -- At 50% you see
    if (e.hp_event == 50) then
       e.self:Emote("The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
@@ -124,10 +124,10 @@ function PXK_Hp(e)
       -- Begins to AE Ramp (r or 4)
       -- Ends Flurry (F or 5)
       eq.modify_npc_stat("special_attacks", "SErUMCNIDf");
-    
+
       eq.set_next_hp_event(45);
    end
-         
+
    if (e.hp_event == 45) then
       eq.zone_emote(15,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'");
 
@@ -148,15 +148,15 @@ function PXK_Hp(e)
       e.self:Say("I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.");
       eq.set_next_hp_event(10);
    end
-   
+
    --10%
    if (e.hp_event == 10) then
    --When she hits 10%, she will regenerate to 40% health and strip her debuffs
       -- Balance of the nameless, strip self debuffs
       e.self:CastSpell(3230,e.self:GetID());
-      e.self:SetHP(e.self:GetMaxHP()*0.40);
-      eq.modify_npc_stat("min_hit", "1333");
-      eq.modify_npc_stat("max_hit", "4773");
+      e.self:SetHP(e.self:GetMaxHP()*0.40)
+      eq.modify_npc_stat("min_hit", "1315");
+      eq.modify_npc_stat("max_hit", "5400");
       e.self:Say("You may yet have the strength to defeat me but I am not through with you yet.");
       e.self:Emote("'s eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
    end
@@ -171,7 +171,7 @@ function PXK_Juxtapincer_Death(e)
 end
 
 function PXK_Lifebleeder_Death(e)
-  if (lifebleeder < 3) then 
+  if (lifebleeder < 3) then
     lifebleeder = lifebleeder + 1;
     eq.spawn2(298043,0,0, 151, -218, -6.87, 225);
     e.self:Emote("flesh and bones are reformed by dark magic");

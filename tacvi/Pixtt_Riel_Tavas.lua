@@ -48,8 +48,8 @@ The secondary spell should be PBAE stun, single mezz, AE mezz(wake of felicty fo
 function event_spawn(e)
 	--spawn the two starting golems 
 	--a_corrupted_construct (298002)
-	eq.spawn2(298002,0,0,212,-572, -7, 193)
-	eq.spawn2(298002,0,0,212,-600, -7, 193)
+  eq.spawn2(298002,0,0,212,-572, -7, 193):SetAppearance(3);
+	eq.spawn2(298002,0,0,212,-600, -7, 193):SetAppearance(3);
 
 	eq.set_next_hp_event(90)
 end

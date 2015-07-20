@@ -102,7 +102,7 @@ end
 
 function PKK_Timer(e)
   if (e.timer == "wipecheck") then
-    -- Check to see if there are any Clients in the room with ZMKP
+    -- Check to see if there are any Clients in the room with PKK
     local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 5000);
     if (client:IsClient() == false) then
       eq.depop_all(298203);
@@ -231,7 +231,7 @@ end
 
 function PKK_Roaming_Caster_One_Spawn(e)
   eq.start(93);
-  eq.set_timer('snake1', eq.ChooseRandom(1,5,10,15,20,25) * 1000);
+  eq.set_timer('snake1', 1 * 1000);
 end
 
 function PKK_Roaming_Caster_One_Timer(e)
@@ -249,7 +249,7 @@ function PKK_Roaming_Caster_One_Timer(e)
 
   e.self:CastSpell(spell, client:GetID());
 
-  eq.set_timer(e.timer, eq.ChooseRandom(5,10,15,20,25) * 1000);
+  eq.set_timer(e.timer, 30 * 1000);
 end
 
 function PKK_Roaming_Caster_One_Signal(e)

@@ -42,7 +42,6 @@ end
 
 function ZMYV_Combat(e)
   if (e.joined == true) then
-    eq.get_entity_list():FindDoor(21):SetLockPick(-1);
     e.self:Say("The weak willed and the idle will serve my cause.");
   else
     eq.set_timer("wipecheck", 1 * 1000);
@@ -63,6 +62,7 @@ end
 
 function ZMYV_Hp(e)
   if (e.hp_event == 90) then
+    eq.get_entity_list():FindDoor(21):SetLockPick(-1);
     eq.set_next_hp_event(75);
     e.self:Say("Is this is the best you can do? Come now, show me your true strength and I will show you mine.' ");
     e.self:ModifyNPCStat("min_hit", tostring(1899));

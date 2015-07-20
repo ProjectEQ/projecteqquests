@@ -51,7 +51,6 @@ end
 
 function ZMMD_Combat(e)
   if (e.joined == true) then
-    eq.get_entity_list():FindDoor(13):SetLockPick(-1);
 
     e.self:Say("Come you fools! Show me your strongest warrior and I will show you my first victim."); 
   else
@@ -93,6 +92,7 @@ end
 
 function ZMMD_Hp(e)
   if (e.hp_event == 90) then 
+    eq.get_entity_list():FindDoor(13):SetLockPick(-1);
 
     e.self:Emote("skin begins to bulge and split open, releasing a wave of energy. As his body falls to the floor, two smaller images of the massive creature appear before you. ");
 

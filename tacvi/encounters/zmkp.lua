@@ -91,7 +91,6 @@ end
 
 function ZMKP_Combat(e)
   if (e.joined == true) then
-    eq.get_entity_list():FindDoor(16):SetLockPick(-1);
 
     e.self:Emote("Come you fools! Show me your strongest warrior and I will show you my first victim."); 
   else
@@ -168,10 +167,11 @@ end
 
 function ZMKP_Hp(e)
   if (e.hp_event == 90) then
+    eq.get_entity_list():FindDoor(16):SetLockPick(-1);
+
     eq.set_next_hp_event( e.hp_event -10);
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:Emote(" enters a state of battle meditation. ");
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -185,7 +185,6 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -199,7 +198,6 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -213,7 +211,6 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -227,7 +224,6 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -241,7 +237,6 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -255,7 +250,6 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    --eq.modify_npc_stat("special_attacks", ZMKP_Inactive);
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();

@@ -24,12 +24,11 @@
 -- The creature's two heads face each other just before it falls to the floor, shaking the very foundation of the temple. Now there is nothing that stands between you and the being in charge of this invading army. 
 --]]
 function ZMSB_Spawn(e)
-  eq.set_next_hp_event(30);
+  eq.set_next_hp_event(90);
 end
 
 function ZMSB_Combat(e)
   if (e.joined == true) then
-    eq.get_entity_list():FindDoor(8):SetLockPick(-1);
     local time = eq.ChooseRandom(30, 45, 60) * 1000;
     eq.set_timer("rage_start", time);
     
@@ -60,11 +59,17 @@ function ZMSB_Timer(e)
 end
 
 function ZMSB_Hp(e)
-  -- Later into the fight, he may enter his blind rage and not leave it. 
-  -- 30% seems right to me
-  eq.stop_all_timers();
-  e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
-  e.self:ModifyNPCStat("max_hit", "5400");
+
+  if (e.hp_event == 90) then
+    eq.get_entity_list():FindDoor(8):SetLockPick(-1);
+    eq.set_next_hp_event(30);
+  elseif (hp_event == 30) then
+    -- Later into the fight, he may enter his blind rage and not leave it. 
+    -- 30% seems right to me
+    eq.stop_all_timers();
+    e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
+    e.self:ModifyNPCStat("max_hit", "5400");
+  end
 end
 
 function ZMSB_Death(e)

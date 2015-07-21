@@ -74,7 +74,9 @@ end
 function ZMMD_Timer(e)
   if (e.timer == "zmmd_kite") then 
     eq.stop_timer(e.timer);
-    eq.depop_all(298150);
+      eq.depop_all(298050); 
+      eq.depop_all(298051); 
+      eq.depop_all(298052); 
     ZMMD_Activate(e);
   elseif ("wipecheck") then
     -- Check to see if there are any Clients in the room with ZMKP
@@ -82,8 +84,10 @@ function ZMMD_Timer(e)
     if (client:IsClient() == false) then
       -- Wipe Mechanics
       eq.get_entity_list():FindDoor(13):SetLockPick(0);
-      eq.depop_all(298150); -- Clones
-      eq.depop_all(298050); -- Weaker Clones
+      eq.depop_all(298050); 
+      eq.depop_all(298051); 
+      eq.depop_all(298052); 
+      eq.depop_all(298053); 
       eq.spawn2(298020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
       eq.depop();
     end
@@ -99,8 +103,8 @@ function ZMMD_Hp(e)
     eq.set_next_hp_event(70);
 
     ZMMD_Inactivate(e);
-    eq.spawn2(298150,0,0, 367, 130, -6.7, 185);
-    eq.spawn2(298150,0,0, 367, 151, -6.7, 197);
+    eq.spawn2(298050,0,0, 367, 130, -6.7, 185);
+    eq.spawn2(298050,0,0, 367, 151, -6.7, 197);
 
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
@@ -108,25 +112,25 @@ function ZMMD_Hp(e)
     eq.set_next_hp_event(50);
 
     ZMMD_Inactivate(e);
-    eq.spawn2(298150,0,0, 367, 130, -6.7, 185);
-    eq.spawn2(298150,0,0, 367, 151, -6.7, 197);
-    eq.spawn2(298150,0,0, 367, 171, -6.7, 197);
+    eq.spawn2(298051,0,0, 367, 130, -6.7, 185);
+    eq.spawn2(298051,0,0, 367, 151, -6.7, 197);
+    eq.spawn2(298051,0,0, 367, 171, -6.7, 197);
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
   elseif (e.hp_event == 50) then
     eq.set_next_hp_event(30);
     
     ZMMD_Inactivate(e);
-    eq.spawn2(298150,0,0, 367, 130, -6.7, 185);
-    eq.spawn2(298150,0,0, 367, 151, -6.7, 197);
-    eq.spawn2(298150,0,0, 367, 170, -6.7, 197);
-    eq.spawn2(298150,0,0, 367, 110, -6.7, 197);
+    eq.spawn2(298052,0,0, 367, 130, -6.7, 185);
+    eq.spawn2(298052,0,0, 367, 151, -6.7, 197);
+    eq.spawn2(298052,0,0, 367, 170, -6.7, 197);
+    eq.spawn2(298052,0,0, 367, 110, -6.7, 197);
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
   elseif (e.hp_event == 30) then
 
-    eq.spawn2(298050,0,0, 367, 151, -6.7, 197);
-    eq.spawn2(298050,0,0, 367, 171, -6.7, 197);
+    eq.spawn2(298053,0,0, 367, 151, -6.7, 197);
+    eq.spawn2(298053,0,0, 367, 171, -6.7, 197);
 
   end
     
@@ -145,7 +149,10 @@ function ZMMD_Death(e)
 end
 
 function ZMMD_Add_Death(e)
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID( 298150 ) == false) then
+  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID( 298050 ) == false 
+    and eq.get_entity_list():IsMobSpawnedByNpcTypeID( 298051 ) == false 
+    and eq.get_entity_list():IsMobSpawnedByNpcTypeID( 298052 ) == false) then
+
     -- Wake ZMMD Main Mob back up.
     eq.signal(298020,1);
   end
@@ -159,5 +166,7 @@ function event_encounter_load(e)
   eq.register_npc_event('zmmd', Event.signal,         298020, ZMMD_Signal);
   eq.register_npc_event('zmmd', Event.death_complete, 298020, ZMMD_Death);
 
-  eq.register_npc_event('zmmd', Event.death_complete, 298150, ZMMD_Add_Death);
+  eq.register_npc_event('zmmd', Event.death_complete, 298050, ZMMD_Add_Death);
+  eq.register_npc_event('zmmd', Event.death_complete, 298051, ZMMD_Add_Death);
+  eq.register_npc_event('zmmd', Event.death_complete, 298052, ZMMD_Add_Death);
 end

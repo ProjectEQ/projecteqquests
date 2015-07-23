@@ -16,11 +16,7 @@ local lockout_globals = {
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
   local entity_list = eq.get_entity_list();
-  if (door_id == 10 and e.self:HasItem(17288)) then
-    entity_list:FindDoor(21):ForceOpen(e.self);
-  elseif (door_id == 21 and e.self:HasItem(17288)) then
-    entity_list:FindDoor(10):ForceOpen(e.self);
-  elseif (door_id == 55) then --Bloodfeaster
+  if (door_id == 55) then --Bloodfeaster
     if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297082)) then
       npcBF = eq.get_entity_list():GetNPCByNPCTypeID(297082)
       npcBF:AddToHateList(e.self,1);
@@ -32,14 +28,21 @@ function event_click_door(e)
     else                                                       
       e.self:Message(13, "You are not a part of an instance!");
     end                                                        
-  elseif (door_id == 10 and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) == false) then
-    if ( e.self:GetInventory():HasItem(17287, 1, 32) == 30 ) then 
-      local request = instance_requests.ValidateInstanceRequest("tacvi", 54, e.self, lockout_globals); 
-      if (request.valid) then                                                     
-        local instance_id = eq.create_instance("tacvi", 0, 21600);              
-        eq.set_global(instance_id.."_tacvi_bit",tostring(request.flags),7,"H6");
-        eq.assign_raid_to_instance(instance_id);                                  
-        e.self:Message(13, "Added to instance.");
+  elseif (( door_id == 10 or door_id == 21 ) ) then
+    if (door_id == 10 and e.self:HasItem(17288)) then
+      entity_list:FindDoor(21):ForceOpen(e.self);
+    elseif (door_id == 21 and e.self:HasItem(17288)) then
+      entity_list:FindDoor(10):ForceOpen(e.self);
+    end
+    if ( e.self:GetInventory():HasItem(17288, 1, 32) == 30 ) then 
+      if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) == false) then 
+        local request = instance_requests.ValidateInstanceRequest("tacvi", 54, e.self, lockout_globals); 
+        if (request.valid) then                                                     
+          local instance_id = eq.create_instance("tacvi", 0, 21600);              
+          eq.set_global(instance_id.."_tacvi_bit",tostring(request.flags),7,"H6");
+          eq.assign_raid_to_instance(instance_id);                                  
+          e.self:Message(13, "Added to instance.");
+        end
       end
     end
   end

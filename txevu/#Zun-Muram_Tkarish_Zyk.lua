@@ -79,9 +79,7 @@ function event_timer(e)
 			local which_loc = eq.ChooseRandom(1,2,3,4)
 			if (which_loc == 1) then
 				eq.spawn2(which_add,0,0,1330, 0, -304, 64):AddToHateList(e.self:GetHateTop(),1)
-			elseif (which_loc == 2) then
-				eq.spawn2(which_add,0,0,1305, 27, -304, 0):AddToHateList(e.self:GetHateTop(),1)
-			elseif (which_loc == 3) then
+			elseif (which_loc == 2) then eq.spawn2(which_add,0,0,1305, 27, -304, 0):AddToHateList(e.self:GetHateTop(),1) elseif (which_loc == 3) then
 				eq.spawn2(which_add,0,0,1305, -27, -304, 128):AddToHateList(e.self:GetHateTop(),1)
 			elseif (which_loc == 4) then
 				eq.spawn2(which_add,0,0,1276, 0, -304, 192):AddToHateList(e.self:GetHateTop(),1)
@@ -109,7 +107,7 @@ function event_timer(e)
 		eq.depop()
 	elseif (e.timer == "wanton") then
 		e.self:CastSpell(1250,e.self:GetID())
-		eq.set_timer("wanton", 90000)
+		eq.set_timer("wanton", eq.ChooseRandom(100,120) * 1000)
 	elseif (e.timer == "NS_Leash") then
 		if (e.self:GetY() < -105 or e.self:GetY() > 105) then
 			e.self:GMMove(1506, 0, -285, 187)

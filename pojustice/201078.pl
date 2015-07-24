@@ -11,6 +11,9 @@
 ###################################
 
 my $hold_event = 0;
+my $group = undef;
+my $count = undef;
+my $pc = undef;
 
 sub EVENT_SPAWN {
    #Depop any existing controllers
@@ -37,8 +40,21 @@ sub EVENT_SAY
             quest::settimer("delay_start", 30);
             #Tell Event_Execution_Control about it
             quest::signalwith(201425, 1, 0);            
+
             #Cast Penance of Execution
-            quest::selfcast(1127); #required db edit targettype = 41
+            #quest::selfcast(1127); #required db edit targettype = 41
+            $group = $entity_list->GetGroupByClient($client);
+            if ($group) { 
+              for ($count = 0; $count < $group->GroupCount(); $count++) {
+                $pc = $group->GetMember($count);
+                if ($pc->CalculateDistance($x,$y,$z) <= 50) {
+                  $pc->MovePC(201,254,-1053, 73, 150);
+                }
+              }
+            }
+            $group = undef;
+            $pc = undef;
+            $count = undef;
          }
          
          else {

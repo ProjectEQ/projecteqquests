@@ -1,20 +1,17 @@
 local box = require("aa_box")
 -- this is slightly out of the room's geometry
-local tether_box = box(160.5, 15.5, 751.5, 832.5)
+local tether_box = box(118.5, 19.5, 138.5, 288.5)
+
 function event_spawn(e)
-    if math.random(0, 1) == 1 then
-        e.self:SetSpecialAbility(SpecialAbility.flurry, 1)
-    else
-        e.self:SetSpecialAbility(SpecialAbility.rampage, 1)
-    end
     eq.set_timer("tether", 6000) -- live has a fairly long timer
 end
 
 function event_timer(e)
     if not tether_box:contains(e.self:GetX(), e.self:GetY()) then
-        e.self:GMMove(797.0, 88.0, -362.871, 196.0)
+        e.self:GMMove(158.0, 85.0, -410.871948, 67.875)
         e.self:SetHP(e.self:GetMaxHP())
         e.self:CastSpell(3791, e.self:GetID())
         e.self:WipeHateList()
     end
 end
+

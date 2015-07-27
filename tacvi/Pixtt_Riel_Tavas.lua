@@ -17,21 +17,21 @@ Ikaav's Venom
 notes
 This final 30% is the danger moment.
 
-At 30% the 'An Instable Construct' are spawned and must be contained. To do this, 
-have your Enchanters set up a Circle of Dreams (Word of Morell works too but more resists...) chain, 
-with each CoD landing at just after another Enchanters has landed. 
+At 30% the 'An Instable Construct' are spawned and must be contained. To do this,
+have your Enchanters set up a Circle of Dreams (Word of Morell works too but more resists...) chain,
+with each CoD landing at just after another Enchanters has landed.
 The secondary spell should be PBAE stun, single mezz, AE mezz(wake of felicty for example)
 
  26% have Clerics switch to spam heals. Thiis is due to the AE that starts at 25% which has a knockback effect to it
- 
- Once the Pixxt is dead, you still have the small matter of the 3k exploding Golems to deal with. Once Pixxt dies, 
- have your raid force sprint back to zone in, leaving in Pixxt room, the Enchanter chain and a wizard or two. 
+
+ Once the Pixxt is dead, you still have the small matter of the 3k exploding Golems to deal with. Once Pixxt dies,
+ have your raid force sprint back to zone in, leaving in Pixxt room, the Enchanter chain and a wizard or two.
  Once all celar of the room, have the wizard AE nuke and wipe the Enchanters and himself out.
 
  "You dare enter my chambers and then try to leave? Your punishment will be quite severe"
 
  he says, So it seems you are not so easily defeated after all.  I am through toying with you fools. Prepare for the reality of death.
- 
+
  Riel's body begins to speed up as her attacks become increasingly vicious
 
  he says, You and your friends are starting to annoy me.  Come forth my little experiments.  Choose one of these fools and show them the surprise you have waiting.
@@ -46,7 +46,7 @@ The secondary spell should be PBAE stun, single mezz, AE mezz(wake of felicty fo
 ---
 -- @param NPC#event_spawn e
 function event_spawn(e)
-	--spawn the two starting golems 
+	--spawn the two starting golems
 	--a_corrupted_construct (298002)
   eq.spawn2(298002,0,0,212,-572, -7, 193):SetAppearance(3);
 	eq.spawn2(298002,0,0,212,-600, -7, 193):SetAppearance(3);
@@ -83,6 +83,11 @@ function event_hp(e)
 		--spawn 3 mini exploding golems every 30 seconds
 		eq.set_timer("SpawnGolem", 30000)
 		e.self:Say("You and your friends are starting to annoy me.  Come forth my little experiments.  Choose one of these fools and show them the surprise you have waiting.")
+		--spawn 3 mini golems
+		--an_unstable_construct (298045)
+		eq.spawn2(298045,0,0,150, -565, -7,0)
+		eq.spawn2(298045,0,0,157, -622, -7,0)
+		eq.spawn2(298045,0,0,216, -585, -7,0)
 		eq.set_next_hp_event(25)
 	elseif (e.hp_event == 25) then
 		--add Ikaav's Venom AE

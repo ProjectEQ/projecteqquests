@@ -5,7 +5,7 @@ local init_engage = false
 local add_timer = 30000
 
 function event_spawn(e)
-	banished_pc = 0
+	banished_pc = nil
 	init_engage = false
 	add_timer = 30000
 	spawn_event()

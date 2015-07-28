@@ -63,26 +63,32 @@
 -- The remaining hatchlings do not despawn upon her death. They must be killed.
 --
 --]]
-local PKK_active = "SERQMCNIDf"
-local PKK_inactive = "ABfHG"
-
 local hatchlings_spawned = 0;
 local hatchlings_killed = 0;
 
-local PKK_hitpoints = 100;
+local PKK_hitpoints = 100; -- Also reset to 100 on wipe
 
 function PKK_Spawn(e)
-  eq.set_next_hp_event(98);
+  if (PKK_hitpoints == 100) then -- First spawn/wipe!
+    eq.set_next_hp_event(98);
 
-  PKK_active = "SERQMCNIDf"
-  PKK_inactive = "ABfHG"
+    hatchlings_spawned = 0;
+    hatchlings_killed = 0;
 
-  hatchlings_spawned = 0;
-  hatchlings_killed = 0;
-
-  PKK_hitpoints = 100;
-
-  eq.get_entity_list():FindDoor(5):SetLockPick(0);
+    eq.get_entity_list():FindDoor(5):SetLockPick(0);
+  else -- Respawning because all hatchlings are dead
+    eq.depop_all(298047); -- husk
+    e.self:SetHP(e.self:GetMaxHP() * (PKK_hitpoints / 100.0));
+    if (PKK_hitpoints == 90) then
+       eq.set_next_hp_event(70);
+    elseif (PKK_hitpoints == 70) then
+       eq.set_next_hp_event(50);
+    elseif (PKK_hitpoints == 50) then
+       eq.set_next_hp_event(30);
+    elseif (PKK_hitpoints == 30) then
+       eq.set_next_hp_event(10);
+    end
+  end
 end
 
 function PKK_Death(e)
@@ -96,8 +102,12 @@ function PKK_Combat(e)
 
     e.self:Say("Do you really think your paltry skills will be enough to best a being as powerful as I? ");
   elseif (e.joined == false) then
-    eq.set_timer("wipecheck", 1 * 1000);
+    eq.set_timer("wipecheck", 1000);
   end
+end
+
+function PKK_Husk_Spawn(e)
+  eq.set_timer("wipecheck", 1500);
 end
 
 function PKK_Timer(e)
@@ -105,11 +115,12 @@ function PKK_Timer(e)
     -- Check to see if there are any Clients in the room with PKK
     local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 5000);
     if (client:IsClient() == false) then
+      PKK_hitpoints = 100;
       eq.depop_all(298203);
       eq.depop_all(298204);
       eq.depop_all(298048);
-      eq.depop();
-      eq.spawn2(298201, 0, 0, 162.79, 241.47, -6.87, 188.8);
+      eq.depop(); -- will depop either husk or PKK
+      eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
       eq.get_entity_list():FindDoor(5):SetLockPick(0);
     end
   end
@@ -141,81 +152,60 @@ end
 function PKK_Hp(e)
   PKK_hitpoints = e.hp_event;
   if (e.hp_event == 98) then
-
     eq.get_entity_list():FindDoor(5):SetLockPick(-1);
     eq.set_next_hp_event(90);
-
   elseif (e.hp_event == 90) then
     e.self:Say("Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones.");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
+    eq.depop();
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
 
-    eq.modify_npc_stat("special_attacks", PKK_inactive);
     Spawn_Hatchlings(4, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    e.self:SetAppearance(0);
-    e.self:SetAppearance(3);
-
-    eq.set_next_hp_event(70);
-
   elseif (e.hp_event == 70) then
     e.self:Say("Your efforts shall fail no matter how great. This is a reality you shall soon see as your vile existence ceases and my brood consumes your remains. ");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
-    eq.modify_npc_stat("special_attacks", PKK_inactive);
+    eq.depop();
     Spawn_Hatchlings(5, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    e.self:SetAppearance(0);
-    e.self:SetAppearance(3);
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
 
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
-
-    eq.set_next_hp_event(50);
-
   elseif (e.hp_event == 50) then
     e.self:Say("You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
-    eq.modify_npc_stat("special_attacks", PKK_inactive);
+    eq.depop();
     Spawn_Hatchlings(6, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    e.self:SetAppearance(0);
-    e.self:SetAppearance(3);
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
 
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
     eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 81.0);
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
-
-    eq.set_next_hp_event(30);
-
   elseif (e.hp_event == 30) then
-
     e.self:Say("My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
-    eq.modify_npc_stat("special_attacks", PKK_inactive);
+    eq.depop();
     Spawn_Hatchlings(7, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    e.self:SetAppearance(0);
-    e.self:SetAppearance(3);
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
 
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
     eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 81.0);
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
     eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0);
-
-    eq.set_next_hp_event(10);
-
   elseif (e.hp_event == 10) then
-
     Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    eq.modify_npc_stat("special_attacks", PKK_active .. "r" );
-
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
   end
 end
 
 function PKK_Hatchling_Death(e)
   hatchlings_killed = hatchlings_killed + 1;
   if ( hatchlings_killed >= hatchlings_spawned ) then
-    eq.signal(298201, 1);
+    eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
     eq.signal(298203, 1);
     eq.signal(298204, 1);
     eq.signal(298203, 1);
@@ -223,13 +213,6 @@ function PKK_Hatchling_Death(e)
     eq.signal(298146, 1);
   end
   e.self:Emote("black blood spills on the floor");
-end
-
-function PKK_Signal(e)
-  if (e.signal == 1) then
-    e.self:SetAppearance(0);
-    eq.modify_npc_stat("special_attacks", PKK_active);
-  end
 end
 
 function PKK_Roaming_Caster_One_Spawn(e)
@@ -289,9 +272,11 @@ function event_encounter_load(e)
   eq.register_npc_event('pkk', Event.hp,             298201, PKK_Hp);
   eq.register_npc_event('pkk', Event.timer,          298201, PKK_Timer);
   eq.register_npc_event('pkk', Event.death_complete, 298201, PKK_Death);
-  eq.register_npc_event('pkk', Event.signal,         298201, PKK_Signal);
 
   eq.register_npc_event('pkk', Event.death_complete, 298048, PKK_Hatchling_Death);
+
+  eq.register_npc_event('pkk', Event.spawn,          298047, PKK_Husk_Spawn);
+  eq.register_npc_event('pkk', Event.timer,          298047, PKK_Timer); -- Reusing PKK Timer function, should be safe
 
   eq.register_npc_event('pkk', Event.spawn,          298204, PKK_Roaming_Caster_One_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298204, PKK_Roaming_Caster_One_Timer);

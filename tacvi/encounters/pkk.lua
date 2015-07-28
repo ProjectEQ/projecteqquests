@@ -138,21 +138,6 @@ function Spawn_Hatchlings(number, x, y, z, h)
   end
 end
 
-function Spawn_Reflection(number, x, y, z, h)
-  if number >= 1 then
-    eq.spawn2(298204, 93, 0, x, y, z, h);
-  end
-  if number >= 2 then
-    eq.spawn2(298203, 93, 0, x-20, y-20, z, h);
-  end
-  if number >= 3 then
-    eq.spawn2(298046, 93, 0, x-40, y-40, z, h);
-  end
-  if number >= 4 then
-    eq.spawn2(298146, 93, 0, x-60, y-60, z, h);
-  end
-end
-
 function PKK_Hp(e)
   PKK_hitpoints = e.hp_event;
   if (e.hp_event == 98) then
@@ -164,7 +149,7 @@ function PKK_Hp(e)
     e.self:Say("Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones.");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
-    Spawn_Reflection(1, 123, 276, -6, 189.1);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
 
     eq.modify_npc_stat("special_attacks", PKK_inactive);
     Spawn_Hatchlings(4, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
@@ -182,7 +167,8 @@ function PKK_Hp(e)
     e.self:SetAppearance(0);
     e.self:SetAppearance(3);
 
-    Spawn_Reflection(2, 123, 276, -6, 189.1);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
+    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
 
     eq.set_next_hp_event(50);
 
@@ -195,7 +181,9 @@ function PKK_Hp(e)
     e.self:SetAppearance(0);
     e.self:SetAppearance(3);
 
-    Spawn_Reflection(3, 123, 276, -6, 189.1);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
+    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 81.0);
+    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
 
     eq.set_next_hp_event(30);
 
@@ -209,7 +197,10 @@ function PKK_Hp(e)
     e.self:SetAppearance(0);
     e.self:SetAppearance(3);
 
-    Spawn_Reflection(4, 123, 276, -6, 189.1);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
+    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 81.0);
+    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
+    eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0);
 
     eq.set_next_hp_event(10);
 
@@ -241,9 +232,28 @@ function PKK_Signal(e)
   end
 end
 
-function PKK_Roaming_Caster_Spawn(e)
+function PKK_Roaming_Caster_One_Spawn(e)
   eq.start(93);
-  eq.set_timer('snake1', 1 * 1000);
+  CastOnRandom(e.self, 889); -- Delusional Visions
+  eq.set_timer('snake1', 30000);
+end
+
+function PKK_Roaming_Caster_Two_Spawn(e)
+  eq.start(94);
+  CastOnRandom(e.self, 887); -- Aura of Fatigue
+  eq.set_timer('snake1', 30000);
+end
+
+function PKK_Roaming_Caster_Three_Spawn(e)
+  eq.start(95);
+  CastOnRandom(e.self, 751); -- Ikaav's Venom
+  eq.set_timer('snake1', 30000);
+end
+
+function PKK_Roaming_Caster_Spawn(e)
+  eq.start(96);
+  CastOnRandom(e.self, 888); -- Wrath of the Ikaav
+  eq.set_timer('snake1', 30000);
 end
 
 function CastOnRandom(caster, spell)
@@ -254,27 +264,19 @@ function CastOnRandom(caster, spell)
 end
 
 function PKK_Roaming_Caster_One_Timer(e)
-  eq.stop_timer(e.timer);
   CastOnRandom(e.self, 889); -- Delusional Visions
-  eq.set_timer(e.timer, 30 * 1000);
 end
 
 function PKK_Roaming_Caster_Two_Timer(e)
-  eq.stop_timer(e.timer);
   CastOnRandom(e.self, 887); -- Aura of Fatigue
-  eq.set_timer(e.timer, 30 * 1000);
 end
 
 function PKK_Roaming_Caster_Three_Timer(e)
-  eq.stop_timer(e.timer);
   CastOnRandom(e.self, 751); -- Ikaav's Venom
-  eq.set_timer(e.timer, 30 * 1000);
 end
 
 function PKK_Roaming_Caster_Four_Timer(e)
-  eq.stop_timer(e.timer);
   CastOnRandom(e.self, 888); -- Wrath of the Ikaav
-  eq.set_timer(e.timer, 30 * 1000);
 end
 
 function PKK_Roaming_Caster_Signal(e)
@@ -291,19 +293,19 @@ function event_encounter_load(e)
 
   eq.register_npc_event('pkk', Event.death_complete, 298048, PKK_Hatchling_Death);
 
-  eq.register_npc_event('pkk', Event.spawn,          298204, PKK_Roaming_Caster_Spawn);
+  eq.register_npc_event('pkk', Event.spawn,          298204, PKK_Roaming_Caster_One_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298204, PKK_Roaming_Caster_One_Timer);
   eq.register_npc_event('pkk', Event.signal,         298204, PKK_Roaming_Caster_Signal);
 
-  eq.register_npc_event('pkk', Event.spawn,          298203, PKK_Roaming_Caster_Spawn);
+  eq.register_npc_event('pkk', Event.spawn,          298203, PKK_Roaming_Caster_Two_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298203, PKK_Roaming_Caster_Two_Timer);
   eq.register_npc_event('pkk', Event.signal,         298203, PKK_Roaming_Caster_Signal);
 
-  eq.register_npc_event('pkk', Event.spawn,          298046, PKK_Roaming_Caster_Spawn);
+  eq.register_npc_event('pkk', Event.spawn,          298046, PKK_Roaming_Caster_Three_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298046, PKK_Roaming_Caster_Three_Timer);
   eq.register_npc_event('pkk', Event.signal,         298046, PKK_Roaming_Caster_Signal);
 
-  eq.register_npc_event('pkk', Event.spawn,          298146, PKK_Roaming_Caster_Spawn);
+  eq.register_npc_event('pkk', Event.spawn,          298146, PKK_Roaming_Caster_Four_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298146, PKK_Roaming_Caster_Four_Timer);
   eq.register_npc_event('pkk', Event.signal,         298146, PKK_Roaming_Caster_Signal);
 end

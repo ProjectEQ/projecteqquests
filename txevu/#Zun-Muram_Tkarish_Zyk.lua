@@ -129,3 +129,8 @@ function spawn_event()
 	eq.spawn2(297148,0,0,1528, 30, -285, 192)
 	eq.spawn2(297149,0,0,1528, -30, -285, 192)
 end
+
+function event_death_complete(e)
+	local random = math.random(43200000);
+	eq.update_spawn_timer(51804, 453600000 + random);
+end

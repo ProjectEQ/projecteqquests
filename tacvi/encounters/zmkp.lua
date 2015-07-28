@@ -4,59 +4,59 @@
 --  298029
 --  http://everquest.allakhazam.com/db/quest.html?quest=4263
 --
--- Zun`Muram Kvxe Pirik says 'Come you fools! Show me your strongest warrior and I will show you my first victim.' 
+-- Zun`Muram Kvxe Pirik says 'Come you fools! Show me your strongest warrior and I will show you my first victim.'
 --
 --
--- Room Setup & Fight Details 
+-- Room Setup & Fight Details
 --
--- In the room, you'll see Zun`Muram Kvxe Pirik surrounded by four aneuks: 
+-- In the room, you'll see Zun`Muram Kvxe Pirik surrounded by four aneuks:
 --
--- - Balance of Defense 
--- - Balance of Fury 
--- - Balance of Rage 
--- - Balance of Speed 
+-- - Balance of Defense
+-- - Balance of Fury
+-- - Balance of Rage
+-- - Balance of Speed
 --
--- Zun`Muram Kvxe Pirik hits for a max ~4,800 (can increase if you mess up the aneuks - more on this in a moment); single-target rampages; flurries; sees invisibility; does not see Shroud of Stealth. Upon engaging the encounter, the doors to the chamber seal shut. 
---
---
--- Meditative States 
---
--- At 90% (and again at 80%, 70%, 60%, 50%, 40% and 30%), Zun`Muram Kvxe Pirik goes non-aggro and enters a meditative state: 
---
--- Kvxe enters a state of battle meditation. 
---
--- At this point, you must DPS each Balance down so that their health matches Kvxe Pirik's health. If you succeed, the aneuk balances will 'tip in your favor': 
---
--- Balance of _____ seems to be tipping in your favor. 
---
--- Kvxe's body trembles as he fails to gather power from the balanced scales. 
---
--- If you fail on one more balances, you will see: 
---
--- Balance of _____ is falling out of balance. 
---
--- Your failure to balance the scales has added to Kvxe's already impressive skills. 
---
--- ...And Kvxe's skills will increase depending on which aneuk was out of balance. Don't fail too many times, otherwise the encounter becomes quite rough. 
---
--- Balance of Speed - influences attack speed 
--- Balance of Defense - influences mitigation and avoidance 
--- Balance of Fury - influences chance to flurry 
--- Balance of Rage - influences chance to rampage and its cooldown time 
+-- Zun`Muram Kvxe Pirik hits for a max ~4,800 (can increase if you mess up the aneuks - more on this in a moment); single-target rampages; flurries; sees invisibility; does not see Shroud of Stealth. Upon engaging the encounter, the doors to the chamber seal shut.
 --
 --
--- Zun`Muram Kvxe Pirik at 20% 
+-- Meditative States
 --
--- At about 20% health, he increases his attack speed somewhat: 
+-- At 90% (and again at 80%, 70%, 60%, 50%, 40% and 30%), Zun`Muram Kvxe Pirik goes non-aggro and enters a meditative state:
 --
--- Kvxe enters a state of seething rage as he accelerates his combat speed. 
+-- Kvxe enters a state of battle meditation.
+--
+-- At this point, you must DPS each Balance down so that their health matches Kvxe Pirik's health. If you succeed, the aneuk balances will 'tip in your favor':
+--
+-- Balance of _____ seems to be tipping in your favor.
+--
+-- Kvxe's body trembles as he fails to gather power from the balanced scales.
+--
+-- If you fail on one more balances, you will see:
+--
+-- Balance of _____ is falling out of balance.
+--
+-- Your failure to balance the scales has added to Kvxe's already impressive skills.
+--
+-- ...And Kvxe's skills will increase depending on which aneuk was out of balance. Don't fail too many times, otherwise the encounter becomes quite rough.
+--
+-- Balance of Speed - influences attack speed
+-- Balance of Defense - influences mitigation and avoidance
+-- Balance of Fury - influences chance to flurry
+-- Balance of Rage - influences chance to rampage and its cooldown time
 --
 --
--- Completion & Loot 
+-- Zun`Muram Kvxe Pirik at 20%
 --
--- Zun`Muram Kvxe Pirik has been slain by _____! 
+-- At about 20% health, he increases his attack speed somewhat:
 --
--- The creature's two heads face each other just before it falls to the floor, shaking the very foundation of the temple. Now there is nothing that stands between you and the being in charge of this invading army. 
+-- Kvxe enters a state of seething rage as he accelerates his combat speed.
+--
+--
+-- Completion & Loot
+--
+-- Zun`Muram Kvxe Pirik has been slain by _____!
+--
+-- The creature's two heads face each other just before it falls to the floor, shaking the very foundation of the temple. Now there is nothing that stands between you and the being in charge of this invading army.
 --]]
 local ZMKP_Active = "SERFQMCNIDf"
 local ZMKP_Inactive = "ABfHG";
@@ -76,10 +76,10 @@ local ZMKP_Speed = 100;
 local ZMKP_Defense = 100;
 
 function ZMKP_Spawn(e)
-  eq.spawn2(298125,0,0, 313.9, -728.7, -6.5, 61.9);     
-  eq.spawn2(298126,0,0, 427, -728, -6.5, 188);          
-  eq.spawn2(298127,0,0, 412, -646, -2.3, 1236);         
-  eq.spawn2(298128,0,0, 314, -642, -6.5, 59.9);         
+  eq.spawn2(298125, 0, 0, 412.0, -714.0, -4.125, 227.0);
+  eq.spawn2(298126, 0, 0, 339.0, -714.0, -4.125, 44.0);
+  eq.spawn2(298127, 0, 0, 412.0, -646.0, -4.125, 159.0);
+  eq.spawn2(298128, 0, 0, 339.0, -646.0, -4.125, 95.0);
 
   e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
   e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
@@ -92,7 +92,7 @@ end
 function ZMKP_Combat(e)
   if (e.joined == true) then
 
-    e.self:Emote("Come you fools! Show me your strongest warrior and I will show you my first victim."); 
+    e.self:Emote("Come you fools! Show me your strongest warrior and I will show you my first victim.");
   else
     eq.set_timer("wipecheck", 1 * 1000);
   end
@@ -106,12 +106,12 @@ function ZMKP_Timer(e)
     local defen = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298126):GetHPRatio());
     local fury  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298127):GetHPRatio());
     local rage  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298128):GetHPRatio());
-    local zmkp  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298029):GetHPRatio()); 
-    
+    local zmkp  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298029):GetHPRatio());
+
     local low = math.floor(zmkp - 3);
     local hi  = math.floor(zmkp + 3);
 
-    if ( speed < low or speed > hi) then 
+    if ( speed < low or speed > hi) then
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Speed is falling out of balance. ");
       ZMKP_Haste = ZMKP_Haste -3;
       e.self:ModifyNPCStat("attack_speed",  tostring(ZMKP_Haste));
@@ -181,7 +181,7 @@ function ZMKP_Hp(e)
     eq.signal(298127, 2);
     eq.signal(298128, 2);
 
-  elseif (e.hp_event == 80) then 
+  elseif (e.hp_event == 80) then
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
@@ -193,7 +193,7 @@ function ZMKP_Hp(e)
     eq.signal(298126, 2);
     eq.signal(298127, 2);
     eq.signal(298128, 2);
-    
+
   elseif (e.hp_event == 70) then
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
@@ -206,7 +206,7 @@ function ZMKP_Hp(e)
     eq.signal(298126, 2);
     eq.signal(298127, 2);
     eq.signal(298128, 2);
-    
+
   elseif (e.hp_event == 60) then
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
@@ -219,7 +219,7 @@ function ZMKP_Hp(e)
     eq.signal(298126, 2);
     eq.signal(298127, 2);
     eq.signal(298128, 2);
-    
+
   elseif (e.hp_event == 50) then
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
@@ -232,7 +232,7 @@ function ZMKP_Hp(e)
     eq.signal(298126, 2);
     eq.signal(298127, 2);
     eq.signal(298128, 2);
-    
+
   elseif (e.hp_event == 40) then
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
@@ -240,12 +240,12 @@ function ZMKP_Hp(e)
     e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
-    
+
     eq.signal(298125, 2);
     eq.signal(298126, 2);
     eq.signal(298127, 2);
     eq.signal(298128, 2);
-    
+
   elseif (e.hp_event == 30) then
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
@@ -258,7 +258,7 @@ function ZMKP_Hp(e)
     eq.signal(298126, 2);
     eq.signal(298127, 2);
     eq.signal(298128, 2);
-    
+
   elseif (e.hp_event == 20) then
     e.self:Emote("enters a state of seething rage as he accelerates his combat speed. ");
   end

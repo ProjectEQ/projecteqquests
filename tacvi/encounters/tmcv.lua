@@ -127,16 +127,18 @@
 --
 -- Loot from this event includes 2 "Cracked Shard of Power" (Breakdown in Communication item) + 1 "Tongue of the Tunat'muram" + 2 augmentations (first list) + 2 other items (second list): 
 --
--- Mobs:
+-- Mobs Used:
 --  298014 Tunat (1st)
 --  298055 Tunat (2nd)
 --  298209 an ukun biledrinker (spawns at 40% of Tunat (1st)'s health)
 --  298113 Living Phylactery (Tunat 1st) Guards
---  An ukun juxta pincer: 60k hp, doubles,flurries, 635-2820 min/max
---  an ukun manasipper:double, 600-2120min/max, 116k hp
---  an ukun lifebleeder: doubles, flurries, 80k hp, 600-2120min/max
---  an ukun ragehound: double, flurries, 114k hp, 650-2990
---  
+--  298044 An ukun juxta pincer: 60k hp, doubles,flurries, 635-2820 min/max
+--  298042 an ukun manasipper:double, 600-2120min/max, 116k hp
+--  298043 an ukun lifebleeder: doubles, flurries, 80k hp, 600-2120min/max
+--  298041 an ukun ragehound: double, flurries, 114k hp, 650-2990
+--  298048 an_ikaav_hatchling
+--  298045 an_unstable_construct 
+--  298053 Zun`Muram_Mordl_Delt
 --
 --]]
 function Tunat_Second_Spawn()

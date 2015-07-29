@@ -151,7 +151,7 @@ function Tunat_Second_HP(e)
   eq.zone_emote(14, "Tunat HP Event: " .. e.hp_event);
   if (e.hp_event == 90) then
     -- 90%: Pixtt Xxeric Kex (flurries; immediately spawns four ukun adds - stunnable, but not mezzable) 
-    e.self:ModifyNPCStat("flurry", "1");
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
     eq.modify_npc_stat("min_hit", "1270");
     eq.modify_npc_stat("max_hit", "4500");
 
@@ -167,8 +167,8 @@ function Tunat_Second_HP(e)
     eq.set_next_hp_event(80);
   elseif (e.hp_event == 80) then 
     -- 80%: Pixtt Kretv Krakxt (mitigated AE rampage; spawns 4x "an ikaav hatchling" adds if you take too long) 
-    e.self:ModifyNPCStat("flurry", "0");
-    e.self:ModifyNPCStat("area_rampage", "1");
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     eq.modify_npc_stat("min_hit", "1272");
     eq.modify_npc_stat("max_hit", "4432");
 
@@ -181,7 +181,7 @@ function Tunat_Second_HP(e)
     
   elseif (e.hp_event == 70) then
     -- 70%: Pixtt Riel Tavas (unstable construct adds if you take too long) 
-    e.self:ModifyNPCStat("area_rampage", "0");
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
     eq.modify_npc_stat("min_hit", "1560");
     eq.modify_npc_stat("max_hit", "4600");
 
@@ -206,8 +206,8 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 50) then
     -- 50%: Zun`Muram Yihst Vor (single-target rampage; straight melee) 
-    e.self:ModifyNPCStat("flurry", "1");
-    e.self:ModifyNPCStat("area_rampage", "1");
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     eq.modify_npc_stat("min_hit", "1650");
     eq.modify_npc_stat("max_hit", "4500");
     
@@ -218,9 +218,9 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 40) then
     -- 40%: Zun`Muram Mordl Delt (single-target rampage; flurries; spawns 2x "Zun`Muram Mordl Delt" adds) 
-    e.self:ModifyNPCStat("area_rampage", "0");
-    e.self:ModifyNPCStat("rampage", "1");
-    e.self:ModifyNPCStat("flurry", "1");
+    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
+    e.self:SetSpecialAbility(SpecialAbility.rampage, 1);
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
     eq.modify_npc_stat("min_hit", "1350");
     eq.modify_npc_stat("max_hit", "4200");
 
@@ -232,7 +232,7 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 30) then
     -- 30%: Zun`Muram Shaldn Boc (single-target rampage; straight melee) 
-    e.self:ModifyNPCStat("flurry", "0");
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
     eq.modify_npc_stat("min_hit", "1470");
     eq.modify_npc_stat("max_hit", "4700");
 
@@ -242,7 +242,7 @@ function Tunat_Second_HP(e)
     eq.set_next_hp_event(20);
   elseif (e.hp_event == 20) then 
     -- 20%: he reforms as Tunat`Muram Cuu Vauax once again...
-    e.self:ModifyNPCStat("flurry", "1");
+    e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
     eq.modify_npc_stat("min_hit", "1450");
     eq.modify_npc_stat("max_hit", "4300");
 

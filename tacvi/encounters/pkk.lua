@@ -116,9 +116,11 @@ function PKK_Timer(e)
     local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 5000);
     if (client:IsClient() == false) then
       PKK_hitpoints = 100;
-      eq.depop_all(298203);
-      eq.depop_all(298204);
-      eq.depop_all(298048);
+      eq.depop_all(298203); -- Reflection 1
+      eq.depop_all(298204); -- Reflection 2
+      eq.depop_all(298046); -- Reflection 3
+      eq.depop_all(298146); -- Reflection 4
+      eq.depop_all(298048); -- Hatchling
       eq.depop(); -- will depop either husk or PKK
       eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
       eq.get_entity_list():FindDoor(5):SetLockPick(0);

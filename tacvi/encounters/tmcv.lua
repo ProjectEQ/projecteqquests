@@ -138,9 +138,14 @@
 --  298041 an ukun ragehound: double, flurries, 114k hp, 650-2990
 --  298048 an_ikaav_hatchling
 --  298045 an_unstable_construct
---  298053 Zun`Muram_Mordl_Delt
+--  298050 Zun`Muram_Mordl_Delt
 --
 --]]
+local lp_mob = nil;
+local tunat_id = nil;
+local tunat_heal = nil;
+local tunat_hp = nil;
+
 function Tunat_Second_Spawn()
   eq.set_next_hp_event(90);
 end
@@ -301,8 +306,49 @@ function Tunat_Second_Timer(e)
     eq.spawn2(298045, 0, 0, 322, -225, 21, 248);
 
   elseif (e.timer == "zmmd_adds") then
-    eq.spawn2(298053, 0, 0, 334, -117, 21, 140);
-    eq.spawn2(298053, 0, 0, 356, -154, 21, 178);
+    eq.spawn2(298050, 0, 0, 334, -117, 21, 140);
+    eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
+
+  end
+end
+
+function Tunat_First_Combat(e)
+  if (e.joined == true) then
+    e.self:Say("You have defiled my chambers and destroyed my officers. I will crush your soul and suck the marrow from your bones.");
+    --eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
+    eq.set_timer('lp_store', 3 * 1000);
+  else
+    eq.set_timer('wipe_check', 30 * 1000);
+  end
+end
+
+function Tunat_First_Timer(e)
+  if (e.timer == 'lp_store') then
+    eq.stop_timer(e.timer);
+    e.self:Emote("pauses for a moment as a portion of his spirit is transferred into one of the phylacteries. ");
+
+    lp_mob = eq.get_entity_list():GetMobByNpcTypeID(298113);
+    tunat_heal = e.self:GetMaxHP() * 0.10;
+
+    e.self:FaceTarget(lp_mob);
+    e.self:DoAnim(44);
+
+    eq.set_timer('lp_heal', 3 * 1000 );
+  elseif (e.timer == 'lp_heal') then
+    eq.stop_timer(e.timer);
+    --eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
+    eq.set_timer('lp_store', 3 * 1000);
+    
+    tunat_id = e.self:GetID();
+
+    tunat_hp = e.self:GetHP();
+
+    lp_mob:DoAnim(44);
+    lp_mob:FaceTarget(e.self);
+    e.self:SetHP( tunat_hp + tunat_heal );
+    e.self:Emote("staggers as the portion of his spirit that was stored in the phylactery flows back into him.");
+
+  elseif (e.timer == "wipe_check") then
 
   end
 end
@@ -311,6 +357,8 @@ function event_encounter_load(e)
   eq.register_npc_event('tmcv', Event.spawn,          298014, Tunat_First_Spawn);
   eq.register_npc_event('tmcv', Event.death_complete, 298014, Tunat_First_Death);
   eq.register_npc_event('tmcv', Event.hp,             298014, Tunat_First_HP);
+  eq.register_npc_event('tmcv', Event.timer,          298014, Tunat_First_Timer);
+  eq.register_npc_event('tmcv', Event.combat,         298014, Tunat_First_Combat);
 
   eq.register_npc_event('tmcv', Event.spawn,          298055, Tunat_Second_Spawn);
   eq.register_npc_event('tmcv', Event.death_complete, 298055, Tunat_Second_Death);

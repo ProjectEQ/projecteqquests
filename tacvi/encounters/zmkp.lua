@@ -68,7 +68,7 @@ local ZMKP_AtkHit = 2000; -- Rage
 local ZMKP_Delay  = 20;
 
 -- Time out on Balancing seemed to be about 70 seconds
-local ZMKP_Balance_Timer = 7 * 1000;
+local ZMKP_Balance_Timer = 70 * 1000;
 
 local ZMKP_Fury = 100;
 local ZMKP_Rage = 100;

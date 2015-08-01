@@ -65,10 +65,10 @@ local ZMKP_AC     = 1800; -- Defense
 local ZMKP_MaxHit = 3900; -- Fury
 local ZMKP_MinHit = 1430;
 local ZMKP_AtkHit = 2000; -- Rage
-local ZMKP_Haste  = -27;  -- Speed
+local ZMKP_Delay  = 20;
 
 -- Time out on Balancing seemed to be about 70 seconds
-local ZMKP_Balance_Timer = 70 * 1000;
+local ZMKP_Balance_Timer = 7 * 1000;
 
 local ZMKP_Fury = 100;
 local ZMKP_Rage = 100;
@@ -85,7 +85,7 @@ function ZMKP_Spawn(e)
   e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
   e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
   e.self:ModifyNPCStat("atk",           tostring(ZMKP_AtkHit));
-  e.self:ModifyNPCStat("attack_speed",  tostring(ZMKP_Haste));
+  e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
   eq.set_next_hp_event(90);
 end
 
@@ -113,8 +113,9 @@ function ZMKP_Timer(e)
 
     if ( speed < low or speed > hi) then
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Speed is falling out of balance. ");
-      ZMKP_Haste = ZMKP_Haste -3;
-      e.self:ModifyNPCStat("attack_speed",  tostring(ZMKP_Haste));
+      -- Reduce ZMKP's Attack Delay by 10% each time the Speed mob is out of Balance.
+      ZMKP_Delay = ZMKP_Delay * 0.90;
+      e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
     else
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Speed seems to be tipping in your favor. ");
     end
@@ -141,12 +142,13 @@ function ZMKP_Timer(e)
     else
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Rage seems to be tipping in your favor. ");
     end
---eq.zone_emote(14, 'low => ' .. low .. ' hi => ' .. hi .. ' Fury => ' .. fury .. " Rage => " .. rage .. " Speed => " .. speed .. " Defense => " .. defen );
+    --eq.zone_emote(14, 'low => ' .. low .. ' hi => ' .. hi .. ' Fury => ' .. fury .. " Rage => " .. rage .. " Speed => " .. speed .. " Defense => " .. defen );
     eq.signal(298125, 1);
     eq.signal(298126, 1);
     eq.signal(298127, 1);
     eq.signal(298128, 1);
     eq.modify_npc_stat("special_attacks", ZMKP_Active);
+    e.self:SetSpecialAbility(SpecialAbility.ignore_root_aggro_rules, 1);
   elseif (e.timer == "wipecheck") then
     -- Check to see if there are any Clients in the room with ZMKP
     local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 9000);
@@ -261,6 +263,8 @@ function ZMKP_Hp(e)
 
   elseif (e.hp_event == 20) then
     e.self:Emote("enters a state of seething rage as he accelerates his combat speed. ");
+    ZMKP_Delay = ZMKP_Delay * 0.90;
+    e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
   end
 end
 

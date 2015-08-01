@@ -207,7 +207,7 @@ end
 function PKK_Hatchling_Death(e)
   hatchlings_killed = hatchlings_killed + 1;
   -- the events at 10 don't want to do extra hatchling stuff
-  if ( hatchlings_killed >= hatchlings_spawned and PKK_hitpoints != 10 ) then
+  if ( hatchlings_killed >= hatchlings_spawned and PKK_hitpoints ~= 10 ) then
     eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
     eq.signal(298203, 1);
     eq.signal(298204, 1);

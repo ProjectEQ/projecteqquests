@@ -326,8 +326,9 @@ function Tunat_First_Combat(e)
     e.self:Say("You have defiled my chambers and destroyed my officers. I will crush your soul and suck the marrow from your bones.");
     eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
     --eq.set_timer('lp_store', 3 * 1000);
+    eq.stop_timer('wipe_check');
   else
-    eq.set_timer('wipe_check', 30 * 1000);
+    eq.set_timer('wipe_check', 300 * 1000);
   end
 end
 
@@ -357,7 +358,11 @@ function Tunat_First_Timer(e)
     e.self:SetHP( tunat_hp + tunat_heal );
     e.self:Emote("staggers as the portion of his spirit that was stored in the phylactery flows back into him.");
 
-  elseif (e.timer == "wipe_check") then
+  elseif (e.timer == "wipe_check1") then
+    -- Reset to the 1st Tunat 
+    eq.depop();
+    eq.depop_all(298113);
+    eq.spawn2(298014, 0, 0, 462, -171, 32, 8);
 
   end
 end

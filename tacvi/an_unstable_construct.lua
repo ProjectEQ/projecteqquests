@@ -11,6 +11,6 @@ function event_timer(e)
 	e.self:AddAISpell(0, 4661, 1, -1, -1, -350)
 end
 
-function event_death_complete(e)
-	e.self:CastSpell(4661)
+function event_death(e)
+	e.self:CastSpell(4661, e.self:GetID());
 end

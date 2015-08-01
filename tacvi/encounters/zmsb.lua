@@ -29,8 +29,7 @@ end
 
 function ZMSB_Combat(e)
   if (e.joined == true) then
-    local time = eq.ChooseRandom(30, 45, 60) * 1000;
-    eq.set_timer("rage_start", time);
+    e.self:Say("Come you fools! Show me your strongest warrior and I will show you my first victim.");
     
   else
     -- Wipe Mechanics
@@ -42,17 +41,9 @@ end
 
 function ZMSB_Timer(e)
   eq.stop_timer(e.timer);
-  if (e.timer == "rage_start") then
-    -- Raise the Mobs MAX Hit to 5400
-    eq.set_timer("rage_stop", 20 * 1000);
-    e.self:ModifyNPCStat("max_hit", "5400");
-
-    e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
-
-  elseif (e.timer == "rage_stop") then
-    -- Restore the Mobs Normal hit to 4800
-    eq.set_timer("rage_start", eq.ChooseRandom(30, 45, 60) * 1000);
-    e.self:ModifyNPCStat("max_hit", "4800");
+  if (e.timer == "rage_stop") then
+    e.self:ModifyNPCStat("min_hit", "1470");
+    e.self:ModifyNPCStat("max_hit", "4700");
 
     e.self:Emote(" looks weakened as the rage ends. ");
   end
@@ -62,13 +53,45 @@ function ZMSB_Hp(e)
 
   if (e.hp_event == 90) then
     eq.get_entity_list():FindDoor(8):SetLockPick(-1);
-    eq.set_next_hp_event(30);
-  elseif (hp_event == 30) then
+    eq.set_next_hp_event(75);
+    
+  elseif (e.hp_event == 75) then
+    eq.set_next_hp_event(50);
+
+    e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
+    e.self:ModifyNPCStat("min_hit", "1525");
+    e.self:ModifyNPCStat("max_hit", "4850");
+
+    eq.stop_timer('rage_stop');
+    eq.set_timer('rage_stop', 20 * 1000);
+
+  elseif (e.hp_event == 50) then
+    eq.set_next_hp_event(35);
+
+    e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
+    e.self:ModifyNPCStat("min_hit", "1635");
+    e.self:ModifyNPCStat("max_hit", "5150");
+
+    eq.stop_timer('rage_stop');
+    eq.set_timer('rage_stop', 20 * 1000);
+
+  elseif (e.hp_event == 35) then
+    eq.set_next_hp_event(15);
+
+    e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
+    e.self:ModifyNPCStat("min_hit", "1800");
+    e.self:ModifyNPCStat("max_hit", "6500");
+
+    eq.stop_timer('rage_stop');
+    eq.set_timer('rage_stop', 20 * 1000);
+
+  elseif (e.hp_event == 15) then
     -- Later into the fight, he may enter his blind rage and not leave it. 
-    -- 30% seems right to me
     eq.stop_all_timers();
     e.self:Emote("starts to foam at the mouth as he enters a blind rage. ");
-    e.self:ModifyNPCStat("max_hit", "5400");
+    e.self:ModifyNPCStat("min_hit", "1965");
+    e.self:ModifyNPCStat("max_hit", "6050");
+
   end
 end
 

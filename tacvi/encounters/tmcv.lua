@@ -59,20 +59,20 @@
 --
 -- Below 15% health, he starts hitting for a max ~6,500 and frequently single-target rampages and flurries. He also increases his attack speed and uses an arsenal of spells that are cast with some frequency:
 --
--- Haste of the Tunat'Muram: Self 0', Unresistable (0)
+-- Haste of the Tunat'Muram: Self 0', Unresistable (0) 4740
 -- 1: Increase Attack Speed by 50%
 -- 2: Increase Damage Shield by 60
 --
--- Bellow of Tunat'Muram: NPC Hatelist 1000', Chromatic (-200)
+-- Bellow of Tunat'Muram: NPC Hatelist 1000', Chromatic (-200) 5555
 -- 1: Silence
 -- 2: Decrease Hitpoints by 800
 -- 3: Increase Curse Counter by 16
 -- 4: Decrease Accuracy by 20%
 --
--- Discord's Rebuke: PB AE 100', Chromatic (-250)
+-- Discord's Rebuke: PB AE 100', Chromatic (-250) 4739
 -- 1: Decrease Hitpoints by 3000
 --
--- Gaze of the Tunat'Muram: Targeted AE 30', Prismatic (-300)
+-- Gaze of the Tunat'Muram: Targeted AE 30', Prismatic (-300) 5546
 -- 1: Decrease Spell Haste by 50%
 -- 2: Decrease HP when cast by 1500
 -- 3: Decrease Hitpoints by 1000 per tick
@@ -81,12 +81,12 @@
 -- 6: Decrease Mana by 150 per tick
 -- 7: Limit: Combat Skills Not Allowed
 --
--- Ikaav's Venom: PB AE 300', Magic (-300)
+-- Ikaav's Venom: PB AE 300', Magic (-300) 751
 -- 1: Decrease Attack Speed by 50%
 -- 2: Decrease HP when cast by 4050
 -- 3: Increase Poison Counter by 36
 --
--- Spirit Cleaver: Single Target, Prismatic (-350)
+-- Spirit Cleaver: Single Target, Prismatic (-350) 4729
 -- 1: Decrease ATK by 500
 -- 2: Decrease Hitpoints by 1225 per tick
 -- 3: Decrease Mana by 400 per tick
@@ -96,7 +96,7 @@
 -- 7: Increase Poison Counter by 99
 -- 8: Increase Poison Counter by 99
 --
--- Touch of the Tunat'Muram: Targeted AE 30', Prismatic (-300)
+-- Touch of the Tunat'Muram: Targeted AE 30', Prismatic (-300) 5545
 -- 1: Decrease HP when cast by 2000
 -- 2: Decrease Hitpoints by 1500 per tick
 -- 3: Decrease Mana by 100 per tick
@@ -104,7 +104,7 @@
 -- 5: Decrease STR by 50
 -- 6: Decrease ATK by 300
 --
--- Wave of Rage: PB AE 100', Prismatic (-350)
+-- Wave of Rage: PB AE 100', Prismatic (-350) 4728
 -- 1: Decrease Spell Mana Cost by 0%
 -- 2: Decrease HP when cast by 4050
 -- 3: Decrease Hitpoints by 500 per tick
@@ -141,6 +141,7 @@
 --  298050 Zun`Muram_Mordl_Delt
 --
 --]]
+
 local lp_mob = nil;
 local tunat_id = nil;
 local tunat_heal = nil;
@@ -158,6 +159,7 @@ function Tunat_Second_HP(e)
   eq.zone_emote(14, "Tunat HP Event: " .. e.hp_event);
   if (e.hp_event == 90) then
     -- 90%: Pixtt Xxeric Kex (flurries; immediately spawns four ukun adds - stunnable, but not mezzable)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
     eq.modify_npc_stat("min_hit", "1270");
     eq.modify_npc_stat("max_hit", "4500");
@@ -174,6 +176,7 @@ function Tunat_Second_HP(e)
     eq.set_next_hp_event(80);
   elseif (e.hp_event == 80) then
     -- 80%: Pixtt Kretv Krakxt (mitigated AE rampage; spawns 4x "an ikaav hatchling" adds if you take too long)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     eq.modify_npc_stat("min_hit", "1272");
@@ -188,6 +191,7 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 70) then
     -- 70%: Pixtt Riel Tavas (unstable construct adds if you take too long)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
     eq.modify_npc_stat("min_hit", "1560");
     eq.modify_npc_stat("max_hit", "4600");
@@ -202,6 +206,7 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 60) then
     -- 60%: Zun`Muram Kvxe Pirik (single-target rampage; straight melee)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SendIllusionPacket({race=400,gender=2,texture=11});
     e.self:TempName("Zun`Muram Kvxe Pirik");
     eq.modify_npc_stat("min_hit", "1430");
@@ -213,6 +218,7 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 50) then
     -- 50%: Zun`Muram Yihst Vor (single-target rampage; straight melee)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     eq.modify_npc_stat("min_hit", "1650");
@@ -225,6 +231,7 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 40) then
     -- 40%: Zun`Muram Mordl Delt (single-target rampage; flurries; spawns 2x "Zun`Muram Mordl Delt" adds)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
     e.self:SetSpecialAbility(SpecialAbility.rampage, 1);
     e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
@@ -239,6 +246,7 @@ function Tunat_Second_HP(e)
 
   elseif (e.hp_event == 30) then
     -- 30%: Zun`Muram Shaldn Boc (single-target rampage; straight melee)
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
     eq.modify_npc_stat("min_hit", "1470");
     eq.modify_npc_stat("max_hit", "4700");
@@ -249,6 +257,7 @@ function Tunat_Second_HP(e)
     eq.set_next_hp_event(20);
   elseif (e.hp_event == 20) then
     -- 20%: he reforms as Tunat`Muram Cuu Vauax once again...
+    e.self:Emote("shimmers and changes before your eyes.");
     e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
     eq.modify_npc_stat("min_hit", "1450");
     eq.modify_npc_stat("max_hit", "4300");
@@ -315,8 +324,8 @@ end
 function Tunat_First_Combat(e)
   if (e.joined == true) then
     e.self:Say("You have defiled my chambers and destroyed my officers. I will crush your soul and suck the marrow from your bones.");
-    --eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
-    eq.set_timer('lp_store', 3 * 1000);
+    eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
+    --eq.set_timer('lp_store', 3 * 1000);
   else
     eq.set_timer('wipe_check', 30 * 1000);
   end
@@ -333,11 +342,11 @@ function Tunat_First_Timer(e)
     e.self:FaceTarget(lp_mob);
     e.self:DoAnim(44);
 
-    eq.set_timer('lp_heal', 3 * 1000 );
+    eq.set_timer('lp_heal', 30 * 1000 );
   elseif (e.timer == 'lp_heal') then
     eq.stop_timer(e.timer);
-    --eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
-    eq.set_timer('lp_store', 3 * 1000);
+    eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
+    --eq.set_timer('lp_store', 3 * 1000);
     
     tunat_id = e.self:GetID();
 
@@ -353,6 +362,22 @@ function Tunat_First_Timer(e)
   end
 end
 
+function LP_Combat(e)
+  if (e.joined == true) then
+    eq.set_timer('lp_ae', 30 * 1000);
+  end
+end
+
+function LP_Death(e)
+  e.self:CastSpell(6495, e.self:GetID());
+end
+
+function LP_Timer(e)
+  if (e.timer == 'lp_ae') then
+    e.self:CastSpell(5546, e.self:GetTarget():GetID());
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('tmcv', Event.spawn,          298014, Tunat_First_Spawn);
   eq.register_npc_event('tmcv', Event.death_complete, 298014, Tunat_First_Death);
@@ -364,4 +389,8 @@ function event_encounter_load(e)
   eq.register_npc_event('tmcv', Event.death_complete, 298055, Tunat_Second_Death);
   eq.register_npc_event('tmcv', Event.hp,             298055, Tunat_Second_HP);
   eq.register_npc_event('tmcv', Event.timer,          298055, Tunat_Second_Timer);
+
+  eq.register_npc_event('tmcv', Event.combat,         298113, LP_Combat);
+  eq.register_npc_event('tmcv', Event.death,          298113, LP_Death);
+  eq.register_npc_event('tmcv', Event.timer,          298113, LP_Timer);
 end

@@ -19,7 +19,7 @@ end
 function event_click_door(e)
   setup();
   local door_id = e.door:GetDoorID();
-  
+
   if ( Tacvi_Doors[ door_id ] ) then
     -- If the Door Clicked is tied to a mob.
     if (eq.get_entity_list():IsMobSpawnedByNpcTypeID( Tacvi_Doors[ door_id ] ) ) then 
@@ -27,5 +27,21 @@ function event_click_door(e)
     else
       eq.get_entity_list():FindDoor(door_id):SetLockPick(0);
     end
+  end
+
+  -- 
+  -- To Open Door 19 or 14; both ZMYV and ZMKP need to be dead
+  if ( (door_id == 19 or door_id == 14) and (eq.get_entity_list():IsMobSpawnedByNpcTypeID(298023) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(298029)) ) then 
+    eq.get_entity_list():FindDoor(door_id):SetLockPick(-1);
+  elseif (door_id == 19 or door_id == 14) then
+    eq.get_entity_list():FindDoor(door_id):SetLockPick(0);
+  end
+
+  --
+  -- To Open door 10 or 11; both ZMSB and ZMMD need to be dead
+  if ( (door_id == 10 or door_id == 11) and (eq.get_entity_list():IsMobSpawnedByNpcTypeID(298020) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(29818)) ) then 
+    eq.get_entity_list():FindDoor(door_id):SetLockPick(-1);
+  elseif (door_id == 10 or door_id == 11) then
+    eq.get_entity_list():FindDoor(door_id):SetLockPick(0);
   end
 end

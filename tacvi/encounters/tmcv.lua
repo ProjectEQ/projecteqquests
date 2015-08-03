@@ -146,6 +146,7 @@ local lp_mob = nil;
 local tunat_id = nil;
 local tunat_heal = nil;
 local tunat_hp = nil;
+local lp_list = {};
 
 function Tunat_Second_Spawn()
   eq.set_next_hp_event(90);
@@ -156,7 +157,6 @@ function Tunat_Second_Death(e)
 end
 
 function Tunat_Second_HP(e)
-  eq.zone_emote(14, "Tunat HP Event: " .. e.hp_event);
   if (e.hp_event == 90) then
     -- 90%: Pixtt Xxeric Kex (flurries; immediately spawns four ukun adds - stunnable, but not mezzable)
     e.self:Emote("shimmers and changes before your eyes.");
@@ -280,15 +280,15 @@ function Tunat_First_Spawn(e)
   eq.set_next_hp_event(40);
 
   -- Spawn the Living
-  eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 56.00);
-  eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 56.00);
-  eq.spawn2(298113, 0, 0,498.00, -193.00, 23.75, 56.00);
-  eq.spawn2(298113, 0, 0,476.00, -242.00, 23.75, 123.00);
-  eq.spawn2(298113, 0, 0,428.00, -242.00, 23.75, 123.00);
-  eq.spawn2(298113, 0, 0,454.00, -242.00, 23.75, 123.00);
-  eq.spawn2(298113, 0, 0,478.00, -100.00, 23.75, 14.00);
-  eq.spawn2(298113, 0, 0,454.00, -100.00, 23.75, 14.00);
-  eq.spawn2(298113, 0, 0,431.00, -100.00, 23.75, 14.00);
+  lp_list[1] = eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 56.00);
+  lp_list[2] = eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 56.00);
+  lp_list[3] = eq.spawn2(298113, 0, 0,498.00, -193.00, 23.75, 56.00);
+  lp_list[4] = eq.spawn2(298113, 0, 0,476.00, -242.00, 23.75, 123.00);
+  lp_list[5] = eq.spawn2(298113, 0, 0,428.00, -242.00, 23.75, 123.00);
+  lp_list[6] = eq.spawn2(298113, 0, 0,454.00, -242.00, 23.75, 123.00);
+  lp_list[7] = eq.spawn2(298113, 0, 0,478.00, -100.00, 23.75, 14.00);
+  lp_list[8] = eq.spawn2(298113, 0, 0,454.00, -100.00, 23.75, 14.00);
+  lp_list[9] = eq.spawn2(298113, 0, 0,431.00, -100.00, 23.75, 14.00);
 
 end
 
@@ -318,17 +318,43 @@ function Tunat_Second_Timer(e)
     eq.spawn2(298050, 0, 0, 334, -117, 21, 140);
     eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
 
+  elseif (e.timer == "wipe_check2") then
+    eq.stop_all_timers();
+
+    eq.depop_all(298044);
+    eq.depop_all(298043);
+    eq.depop_all(298042);
+    eq.depop_all(298041);
+
+    eq.depop_all(298048);
+    eq.depop_all(298045);
+
+    eq.depop_all(298209);
+
+    eq.depop_all(298050);
+
+    eq.spawn2(298055,0,0, 309, -170.8, 21.3, 59.4);
+    eq.depop();
+
   end
+end
+
+function Tunat_Second_Combat(e)
+  if (e.joined == true) then
+    eq.stop_timer('wipe_check2');
+  else
+    eq.set_timer('wipe_check2', 300 * 1000);
+  end
+
 end
 
 function Tunat_First_Combat(e)
   if (e.joined == true) then
     e.self:Say("You have defiled my chambers and destroyed my officers. I will crush your soul and suck the marrow from your bones.");
     eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
-    --eq.set_timer('lp_store', 3 * 1000);
-    eq.stop_timer('wipe_check');
+    eq.stop_timer('wipe_check1');
   else
-    eq.set_timer('wipe_check', 300 * 1000);
+    eq.set_timer('wipe_check1', 300 * 1000);
   end
 end
 
@@ -337,24 +363,22 @@ function Tunat_First_Timer(e)
     eq.stop_timer(e.timer);
     e.self:Emote("pauses for a moment as a portion of his spirit is transferred into one of the phylacteries. ");
 
-    lp_mob = eq.get_entity_list():GetMobByNpcTypeID(298113);
+    lp_mob = lp_list[ eq.ChooseRandom(1,2,3,4,5,6,7,8,9)]; 
     tunat_heal = e.self:GetMaxHP() * 0.10;
 
     e.self:FaceTarget(lp_mob);
-    e.self:DoAnim(44);
+    e.self:CastSpell(4448, lp_mob:GetID(), 1, 2);
 
     eq.set_timer('lp_heal', 30 * 1000 );
   elseif (e.timer == 'lp_heal') then
     eq.stop_timer(e.timer);
     eq.set_timer('lp_store', eq.ChooseRandom(40, 49, 50, 65, 111) * 1000);
-    --eq.set_timer('lp_store', 3 * 1000);
     
     tunat_id = e.self:GetID();
-
     tunat_hp = e.self:GetHP();
 
-    lp_mob:DoAnim(44);
     lp_mob:FaceTarget(e.self);
+    lp_mob:CastSpell(4448, e.self:GetID(), 1, 3 );
     e.self:SetHP( tunat_hp + tunat_heal );
     e.self:Emote("staggers as the portion of his spirit that was stored in the phylactery flows back into him.");
 
@@ -391,6 +415,7 @@ function event_encounter_load(e)
   eq.register_npc_event('tmcv', Event.combat,         298014, Tunat_First_Combat);
 
   eq.register_npc_event('tmcv', Event.spawn,          298055, Tunat_Second_Spawn);
+  eq.register_npc_event('tmcv', Event.combat,         298055, Tunat_Second_Combat);
   eq.register_npc_event('tmcv', Event.death_complete, 298055, Tunat_Second_Death);
   eq.register_npc_event('tmcv', Event.hp,             298055, Tunat_Second_HP);
   eq.register_npc_event('tmcv', Event.timer,          298055, Tunat_Second_Timer);

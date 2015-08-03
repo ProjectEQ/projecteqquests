@@ -153,7 +153,7 @@ function Tunat_Second_Spawn()
 end
 
 function Tunat_Second_Death(e)
-
+  eq.signal(298223, 298055);
 end
 
 function Tunat_Second_HP(e)

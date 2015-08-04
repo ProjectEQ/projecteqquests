@@ -49,7 +49,7 @@ function setup_lockouts()
     [298018] = {'Tacvi_ZMSB', 16, Spawn_ZMSB},
     [298020] = {'Tacvi_ZMMD', 32, Spawn_ZMMD},
     [298023] = {'Tacvi_ZMYV', 64, Spawn_ZMYV},
-    [298054] = {'Tacvi_TMCV', 128, Spawn_TMCV}
+    [298055] = {'Tacvi_TMCV', 128, Spawn_TMCV}
   }
 end
 

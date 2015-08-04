@@ -266,6 +266,9 @@ function Tunat_Second_HP(e)
     e.self:TempName("Tunat`Muram Cuu Vauax");
 
     eq.stop_timer("zmmd_adds");
+
+    eq.set_timer("ae_timer", 10 * 1000);
+
   end
 end
 
@@ -318,6 +321,19 @@ function Tunat_Second_Timer(e)
     eq.spawn2(298050, 0, 0, 334, -117, 21, 140);
     eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
 
+  elseif (e.timer == "ae_timer") then
+    local cast_ae = eq.ChooseRandom(1,2);
+
+    if (cast_ae == 1) then
+      -- 5546 -- Gaze of the Tunat'Muram
+      -- 4729 -- Spirit Cleaver
+      -- 4728 -- Wave of Rage
+      -- 4727 -- Spear of Discord
+      -- 751  -- Ikaav's Venom
+      ae_spell = eq.ChooseRandom(5546, 4729, 4728, 4727, 751);
+      e.self:CastSpell(ae_spell, e.self:GetTarget():GetID(), 1, 1);
+    end
+    
   elseif (e.timer == "wipe_check2") then
     eq.stop_all_timers();
 

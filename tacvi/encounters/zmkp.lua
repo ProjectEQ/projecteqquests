@@ -302,7 +302,7 @@ function ZMKP_Signal_Balance(e)
     e.self:SetHP(e.self:GetMaxHP());
     e.self:WipeHateList();
   elseif (e.signal == 2) then
-    e.self:ClearSpecialAbilities();
+    e.self:ProcessSpecialAbilities("42,1")
     e.self:SetHP(e.self:GetMaxHP());
     e.self:WipeHateList();
   end

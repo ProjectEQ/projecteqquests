@@ -58,8 +58,8 @@
 --
 -- The creature's two heads face each other just before it falls to the floor, shaking the very foundation of the temple. Now there is nothing that stands between you and the being in charge of this invading army.
 --]]
-local ZMKP_Active = "SERFQMCNIDf"
-local ZMKP_Inactive = "ABfHG";
+local ZMKP_Active = "1,1^2,1^3,1^5,1^7,1^13,1^14,1^15,1^16,1^17,1^21,1^42,1";
+local ZMKP_Inactive = "19,1^20,1^21,1^24,1^25,1";
 
 local ZMKP_AC     = 1800; -- Defense
 local ZMKP_MaxHit = 3900; -- Fury
@@ -147,8 +147,7 @@ function ZMKP_Timer(e)
     eq.signal(298126, 1);
     eq.signal(298127, 1);
     eq.signal(298128, 1);
-    eq.modify_npc_stat("special_attacks", ZMKP_Active);
-    e.self:SetSpecialAbility(SpecialAbility.ignore_root_aggro_rules, 1);
+    e.self:ProcessSpecialAbilities(ZMKP_Active);
   elseif (e.timer == "wipecheck") then
     -- Check to see if there are any Clients in the room with ZMKP
     local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 9000);
@@ -174,7 +173,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:Emote(" enters a state of battle meditation. ");
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -187,7 +186,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -200,7 +199,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -213,7 +212,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -226,7 +225,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -239,7 +238,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -252,7 +251,7 @@ function ZMKP_Hp(e)
     eq.set_next_hp_event( e.hp_event -10);
     e.self:Emote(" enters a state of battle meditation. ");
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:NPCSpecialAttacks(ZMKP_Inactive, 0);
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
@@ -299,11 +298,11 @@ end
 
 function ZMKP_Signal_Balance(e)
   if (e.signal == 1) then
-    eq.modify_npc_stat("special_attacks", "ABHfG");
+    e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetHP(e.self:GetMaxHP());
     e.self:WipeHateList();
   elseif (e.signal == 2) then
-    eq.modify_npc_stat("special_attacks", "");
+    e.self:ClearSpecialAbilities();
     e.self:SetHP(e.self:GetMaxHP());
     e.self:WipeHateList();
   end

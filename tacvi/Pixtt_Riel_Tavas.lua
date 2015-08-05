@@ -80,24 +80,31 @@ function event_hp(e)
 		eq.set_next_hp_event(30)
 
 	elseif (e.hp_event == 30) then
-		--spawn 3 mini exploding golems every 30 seconds
-		eq.set_timer("SpawnGolem", 30000)
+		--spawn 4 mini exploding golems every 15 seconds
+		eq.set_timer("SpawnGolem", 15 * 1000)
 		e.self:Say("You and your friends are starting to annoy me.  Come forth my little experiments.  Choose one of these fools and show them the surprise you have waiting.")
-		--spawn 3 mini golems
+		--spawn 4 mini golems
 		--an_unstable_construct (298045)
 		eq.spawn2(298045,0,0,150, -565, -7,0)
 		eq.spawn2(298045,0,0,157, -622, -7,0)
 		eq.spawn2(298045,0,0,216, -585, -7,0)
+		eq.spawn2(298045,0,0,216, -585, -7,0)
 		eq.set_next_hp_event(25)
+
 	elseif (e.hp_event == 25) then
 		--add Ikaav's Venom AE
 		eq.set_timer("VenomAE", 30000)
 		eq.set_next_hp_event(10)
+
 	elseif (e.hp_event == 10) then
 		-- At approximately 10% health, she increases her attack speed and begins flurrying much more (every round)
     e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100)
 		e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
 		e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
+
+    -- At 10% adds spawn faster.
+    eq.stop_timer("SpawnGolem");
+    eq.set_timer("SpawnGolem", 7 * 1000);
 	end
 end
 
@@ -109,10 +116,11 @@ function event_timer(e)
 	elseif (e.timer == "VenomAE") then
 		e.self:CastSpell(751,e.self:GetID())
 	elseif (e.timer == "SpawnGolem") then
-		--spawn 3 mini golems
+		--spawn 4 mini golems
 		--an_unstable_construct (298045)
 		eq.spawn2(298045,0,0,150, -565, -7,0)
 		eq.spawn2(298045,0,0,157, -622, -7,0)
+		eq.spawn2(298045,0,0,216, -585, -7,0)
 		eq.spawn2(298045,0,0,216, -585, -7,0)
 	end
 end

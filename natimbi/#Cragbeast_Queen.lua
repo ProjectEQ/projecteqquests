@@ -9,7 +9,7 @@ function event_spawn(e)
 	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
 	e.self:ModSkillDmgTaken(7, -85); -- archery
 	e.self:ModSkillDmgTaken(51, -85); -- throwing
-	-- Monkly Business says H2H isn't mitigated, but still need to be tested
+	e.self:ModSkillDmgTaken(28, 15); -- hand to hand
 end
 
 function event_combat(e)

@@ -33,7 +33,7 @@
 --
 -- When ready, engage him again. Here, he hits for a max ~4,800 and buffs himself with "Haste of the Tunat'Muram":
 --
--- Haste of the Tunat'Muram: Self 0', Unresistable (0)
+-- Haste of the Tunat'Muram: Self 0', Unresistable (0) 4740
 -- 1: Increase Attack Speed by 50%
 -- 2: Increase Damage Shield by 60
 --
@@ -173,6 +173,9 @@ function Tunat_Second_HP(e)
     eq.spawn2(298042, 0, 0, 353, -201, 21, 217);
     eq.spawn2(298041, 0, 0, 322, -215, 21, 248);
 
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+
     eq.set_next_hp_event(80);
   elseif (e.hp_event == 80) then
     -- 80%: Pixtt Kretv Krakxt (mitigated AE rampage; spawns 4x "an ikaav hatchling" adds if you take too long)
@@ -187,6 +190,9 @@ function Tunat_Second_HP(e)
 
     eq.set_timer("pkk_adds", 30 * 1000);
 
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+    
     eq.set_next_hp_event(70);
 
   elseif (e.hp_event == 70) then
@@ -202,6 +208,9 @@ function Tunat_Second_HP(e)
     eq.stop_timer("pkk_adds");
     eq.set_timer("prt_adds", 30 * 1000);
 
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+    
     eq.set_next_hp_event(60);
 
   elseif (e.hp_event == 60) then
@@ -227,6 +236,9 @@ function Tunat_Second_HP(e)
     e.self:SendIllusionPacket({race=400,gender=2,texture=11});
     e.self:TempName("Zun`Muram Yihst Vor");
 
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+    
     eq.set_next_hp_event(40);
 
   elseif (e.hp_event == 40) then
@@ -242,6 +254,10 @@ function Tunat_Second_HP(e)
     e.self:TempName("Zun`Muram Mordl Delt");
 
     eq.set_timer("zmmd_adds", 12 * 1000);
+    
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+    
     eq.set_next_hp_event(30);
 
   elseif (e.hp_event == 30) then
@@ -254,6 +270,9 @@ function Tunat_Second_HP(e)
     e.self:SendIllusionPacket({race=400,gender=2,texture=11});
     e.self:TempName("Zun`Muram Shaldn Boc");
 
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+    
     eq.set_next_hp_event(20);
   elseif (e.hp_event == 20) then
     -- 20%: he reforms as Tunat`Muram Cuu Vauax once again...
@@ -267,7 +286,10 @@ function Tunat_Second_HP(e)
 
     eq.stop_timer("zmmd_adds");
 
-    eq.set_timer("ae_timer", 10 * 1000);
+    -- Rehaste 4740
+    e.self:CastSpell(4740, e.self:GetID());
+    
+    eq.set_timer("ae_timer", 2 * 1000);
 
   end
 end

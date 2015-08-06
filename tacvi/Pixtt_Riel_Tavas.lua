@@ -102,9 +102,9 @@ function event_hp(e)
 		e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
 		e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
 
-    -- At 10% adds spawn faster.
+    -- At 10% spawn 12 golems instead of 4
     eq.stop_timer("SpawnGolem");
-    eq.set_timer("SpawnGolem", 7 * 1000);
+    eq.set_timer("SpawnGolem12", 15 * 1000);
 	end
 end
 
@@ -120,8 +120,24 @@ function event_timer(e)
 		--an_unstable_construct (298045)
 		eq.spawn2(298045,0,0,150, -565, -7,0)
 		eq.spawn2(298045,0,0,157, -622, -7,0)
-		eq.spawn2(298045,0,0,216, -585, -7,0)
-		eq.spawn2(298045,0,0,216, -585, -7,0)
+		eq.spawn2(298045,0,0,205, -559, -7,0)
+		eq.spawn2(298045,0,0,214, -616, -7,0)
+
+  elseif (e.timer == "SpawnGolem12") then
+		eq.spawn2(298045,0,0,150, -565, -7,0)
+		eq.spawn2(298045,0,0,157, -622, -7,0)
+		eq.spawn2(298045,0,0,205, -559, -7,0)
+		eq.spawn2(298045,0,0,214, -616, -7,0)
+
+		eq.spawn2(298045,0,0,183, -622, -7,0)
+		eq.spawn2(298045,0,0,178, -563, -7,0)
+		eq.spawn2(298045,0,0,172, -627, -7,0)
+		eq.spawn2(298045,0,0,149, -597, -7,0)
+
+		eq.spawn2(298045,0,0,149, -611, -7,0)
+		eq.spawn2(298045,0,0,165, -563, -7,0)
+		eq.spawn2(298045,0,0,196, -570, -7,0)
+		eq.spawn2(298045,0,0,204, -613, -7,0)
 	end
 end
 

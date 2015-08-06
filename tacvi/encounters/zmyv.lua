@@ -37,6 +37,7 @@
 -- Kill him to complete. 
 --]]
 function ZMYV_Spawn(e)
+  eq.get_entity_list():FindDoor(21):SetLockPick(0);
   eq.set_next_hp_event(90);
 end
 

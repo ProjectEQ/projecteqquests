@@ -141,6 +141,8 @@
 --  298050 Zun`Muram_Mordl_Delt
 --
 --]]
+local Ukun_Inactive = "19,1^20,1^21,1^24,1^25,1"; 
+local Ukun_Active = "7,1^13,1^14,1^15,1^17,1^21,1";
 
 local lp_mob = nil;
 local tunat_id = nil;
@@ -177,6 +179,7 @@ function Tunat_Second_HP(e)
     e.self:CastSpell(4740, e.self:GetID());
 
     eq.set_next_hp_event(80);
+
   elseif (e.hp_event == 80) then
     -- 80%: Pixtt Kretv Krakxt (mitigated AE rampage; spawns 4x "an ikaav hatchling" adds if you take too long)
     e.self:Emote("shimmers and changes before your eyes.");
@@ -274,6 +277,7 @@ function Tunat_Second_HP(e)
     e.self:CastSpell(4740, e.self:GetID());
     
     eq.set_next_hp_event(20);
+
   elseif (e.hp_event == 20) then
     -- 20%: he reforms as Tunat`Muram Cuu Vauax once again...
     e.self:Emote("shimmers and changes before your eyes.");
@@ -304,6 +308,10 @@ end
 function Tunat_First_Spawn(e)
   eq.set_next_hp_event(40);
 
+  -- Spawn the Dogs
+  eq.spawn2(298209, 0, 0, 445, -203, 25, 17);
+  eq.spawn2(298209, 0, 0, 447, -139, 25, 99);
+
   -- Spawn the Living
   lp_list[1] = eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 56.00);
   lp_list[2] = eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 56.00);
@@ -319,8 +327,8 @@ end
 
 function Tunat_First_HP(e)
   if (e.hp_event == 40) then
-    eq.spawn2(298209, 0, 0, 445, -203, 25, 17);
-    eq.spawn2(298209, 0, 0, 447, -139, 25, 99);
+    -- Wake up the dogs.
+    eq.signal(298209, 1);
   end
 end
 
@@ -424,6 +432,7 @@ function Tunat_First_Timer(e)
     -- Reset to the 1st Tunat 
     eq.depop();
     eq.depop_all(298113);
+    eq.depop_all(298209);
     eq.spawn2(298014, 0, 0, 462, -171, 32, 8);
 
   end
@@ -445,6 +454,16 @@ function LP_Timer(e)
   end
 end
 
+function Ukun_Spawn(e)
+  -- When the Dogs spawn set the inactive
+  e.self:ProcessSpecialAbilities(Ukun_Inactive);
+end
+
+function Ukun_Signal(e)
+  -- When we get a signal fromt he controller wake the dogs up.
+  e.self:ProcessSpecialAbilities(Ukun_Active);
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('tmcv', Event.spawn,          298014, Tunat_First_Spawn);
   eq.register_npc_event('tmcv', Event.death_complete, 298014, Tunat_First_Death);
@@ -461,4 +480,7 @@ function event_encounter_load(e)
   eq.register_npc_event('tmcv', Event.combat,         298113, LP_Combat);
   eq.register_npc_event('tmcv', Event.death,          298113, LP_Death);
   eq.register_npc_event('tmcv', Event.timer,          298113, LP_Timer);
+
+  eq.register_npc_event('tmcv', Event.spawn,          298209, Ukun_Spawn);
+  eq.register_npc_event('tmcv', Event.signal,         298209, Ukun_Signal);
 end

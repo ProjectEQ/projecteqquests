@@ -6,7 +6,6 @@ local doorman_4 = nil;
 local doorman_5 = nil;
 local doorman_6 = nil;
 local doorman_7 = nil;
-local doorman_8 = nil;
 
 function event_spawn(e)
   doorman_1 = eq.spawn2(294632, 0, 0, 218, -336, -2.77, 0.00);
@@ -17,10 +16,8 @@ function event_spawn(e)
   doorman_4 = eq.spawn2(294634, 0, 0, 496, -501, -50, 0.00);
   doorman_5 = eq.spawn2(294634, 0, 0, 499, -478, -50, 0.00);
 
-  --doorman_6 = eq.spawn2(294637, 0, 0, 722, -716, -50, 0.00);
-
-  doorman_7 = eq.spawn2(294635, 0, 0, 656, -237, -50, 0.00);
-  doorman_8 = eq.spawn2(294635, 0, 0, 656, -187, -50, 0.00);
+  doorman_6 = eq.spawn2(294635, 0, 0, 656, -237, -50, 0.00);
+  doorman_7 = eq.spawn2(294635, 0, 0, 656, -187, -50, 0.00);
 
   -- Set a timer to check the zone; this is needed
   -- in case the zone crashes to reset the doormen 

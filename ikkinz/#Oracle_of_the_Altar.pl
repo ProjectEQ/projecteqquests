@@ -15,4 +15,5 @@ if($hpevent == 50) {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(294631,7); #set lockout
+  quest::signalwith(294614, 1, 0);
 }

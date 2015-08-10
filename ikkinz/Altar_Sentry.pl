@@ -73,6 +73,7 @@ sub EVENT_DEATH_COMPLETE {
       quest::emote("The creature cannot stand up to the power of healers");
     }
   }
+  quest::signalwith(294614, 1, 0);
 }
 
 sub EVENT_HP {

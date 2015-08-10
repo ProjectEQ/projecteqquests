@@ -51,4 +51,6 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294606,0,0,316,-778,2,224);
   quest::spawn2(294606,0,0,201,-776,2,29);
   quest::spawn2(294606,0,0,161,-717,2,52);
+
+  quest::signalwith(294614, 1, 0);
 }

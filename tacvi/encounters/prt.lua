@@ -49,20 +49,20 @@ local golems12_spawn = false;
 ---
 -- @param NPC#event_spawn e
 function PRT_Spawn(e)
-	--spawn the two starting golems
-	--a_corrupted_construct (298002)
-	eq.spawn2(298002, 0, 0, 229.0, -572.0, -3.25, 192.0):SetAppearance(3);
-	eq.spawn2(298002, 0, 0, 225.0, -600.0, -3.25, 205.0):SetAppearance(3);
+  --spawn the two starting golems
+  --a_corrupted_construct (298002)
+  eq.spawn2(298002, 0, 0, 229.0, -572.0, -3.25, 192.0):SetAppearance(3);
+  eq.spawn2(298002, 0, 0, 225.0, -600.0, -3.25, 205.0):SetAppearance(3);
 
-	eq.set_next_hp_event(90)
+  eq.set_next_hp_event(90)
   golems_spawn = false;
   golems12_spawn = false;
 end
 
 function PRT_Combat(e)
-	if (e.joined == true) then
-		e.self:Say("You shall regret trespassing into my chambers. Rise my minions and show them how well I have learned to use the power of this land's creatures. Destroy them all. Leave only enough to feed the hounds")
-		eq.set_timer("Delusional", 30 * 1000)
+  if (e.joined == true) then
+    e.self:Say("You shall regret trespassing into my chambers. Rise my minions and show them how well I have learned to use the power of this land's creatures. Destroy them all. Leave only enough to feed the hounds")
+    eq.set_timer("Delusional", 30 * 1000)
     eq.stop_timer('wipecheck');
     
     if (spawn_golem == true) then
@@ -70,57 +70,57 @@ function PRT_Combat(e)
     elseif (spawn12_golem == true) then
       eq.set_timer("SpawnGolem12", 15 * 1000);
     end
-	else
-		-- Wipe stuff
-		eq.get_entity_list():FindDoor(23):SetLockPick(0)
+  else
+    -- Wipe stuff
+    eq.get_entity_list():FindDoor(23):SetLockPick(0)
     eq.set_timer('wipecheck', 300 * 1000);
 
     eq.stop_timer('SpawnGolem12');
     eq.stop_timer('SpawnGolem');
     eq.stop_timer('VenomAE');
     eq.stop_timer('Delusional');
-	end
+  end
 end
 
 function PRT_HP(e)
-	if (e.hp_event == 90) then
-		--lock door behind her
-		eq.get_entity_list():FindDoor(23):SetLockPick(-1)
-		eq.set_next_hp_event(50)
+  if (e.hp_event == 90) then
+    --lock door behind her
+    eq.get_entity_list():FindDoor(23):SetLockPick(-1)
+    eq.set_next_hp_event(50)
 
-	elseif (e.hp_event == 50) then
-		-- Hits a little harder and Flurry
-		--quest::modifynpcstat("max_hit",4500);
+  elseif (e.hp_event == 50) then
+    -- Hits a little harder and Flurry
+    --quest::modifynpcstat("max_hit",4500);
     e.self:SetSpecialAbility(SpecialAbility.flurry, 1)
-		e.self:ModifyNPCStat("max_hit",tostring(e.self:GetMaxDMG()*1.1))
-		e.self:Say("So it seems you are not so easily defeated after all. I am through toying with you fools. Prepare for the reality of death.' Riel's body begins to speed up as her attacks become increasingly vicious")
-		e.self:Emote("'s body begins to speed up as her attacks become increasingly vicious")
-		eq.set_next_hp_event(30)
+    e.self:ModifyNPCStat("max_hit",tostring(e.self:GetMaxDMG()*1.1))
+    e.self:Say("So it seems you are not so easily defeated after all. I am through toying with you fools. Prepare for the reality of death.' Riel's body begins to speed up as her attacks become increasingly vicious")
+    e.self:Emote("'s body begins to speed up as her attacks become increasingly vicious")
+    eq.set_next_hp_event(30)
 
-	elseif (e.hp_event == 30) then
-		--spawn 4 mini exploding golems every 15 seconds
-		eq.set_timer("SpawnGolem", 15 * 1000)
-		e.self:Say("You and your friends are starting to annoy me.  Come forth my little experiments.  Choose one of these fools and show them the surprise you have waiting.");
-		--spawn 4 mini golems
-		--an_unstable_construct (298045)
-		eq.spawn2(298045,0,0,150, -565, -7,0)
-		eq.spawn2(298045,0,0,157, -622, -7,0)
-		eq.spawn2(298045,0,0,216, -585, -7,0)
-		eq.spawn2(298045,0,0,216, -585, -7,0)
-		eq.set_next_hp_event(25)
+  elseif (e.hp_event == 30) then
+    --spawn 4 mini exploding golems every 15 seconds
+    eq.set_timer("SpawnGolem", 15 * 1000)
+    e.self:Say("You and your friends are starting to annoy me.  Come forth my little experiments.  Choose one of these fools and show them the surprise you have waiting.");
+    --spawn 4 mini golems
+    --an_unstable_construct (298045)
+    eq.spawn2(298045,0,0,150, -565, -7,0)
+    eq.spawn2(298045,0,0,157, -622, -7,0)
+    eq.spawn2(298045,0,0,216, -585, -7,0)
+    eq.spawn2(298045,0,0,216, -585, -7,0)
+    eq.set_next_hp_event(25)
 
     spawn_golems = true;
 
-	elseif (e.hp_event == 25) then
-		--add Ikaav's Venom AE
-		eq.set_timer("VenomAE", 30000)
-		eq.set_next_hp_event(10)
+  elseif (e.hp_event == 25) then
+    --add Ikaav's Venom AE
+    eq.set_timer("VenomAE", 30000)
+    eq.set_next_hp_event(10)
 
-	elseif (e.hp_event == 10) then
-		-- At approximately 10% health, she increases her attack speed and begins flurrying much more (every round)
+  elseif (e.hp_event == 10) then
+    -- At approximately 10% health, she increases her attack speed and begins flurrying much more (every round)
     e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100)
-		e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
-		e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
+    e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
+    e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
 
     -- At 10% spawn 12 golems instead of 4
     eq.stop_timer("SpawnGolem");
@@ -128,41 +128,41 @@ function PRT_HP(e)
     spawn_golems = false;
     spawn12_golems = true;
 
-	end
+  end
 end
 
 function PRT_Timer(e)
-	if (e.timer == "Delusional") then
+  if (e.timer == "Delusional") then
     --Delusional Vision single target DD/Drunk whole fight
-		e.self:SpellFinished(889, e.self:GetHateTop()) --CastToClient?
+    e.self:SpellFinished(889, e.self:GetHateTop()) --CastToClient?
 
-	elseif (e.timer == "VenomAE") then
+  elseif (e.timer == "VenomAE") then
     --Ikaav's Venom 751
-		e.self:CastSpell(751,e.self:GetID())
+    e.self:CastSpell(751,e.self:GetID())
 
-	elseif (e.timer == "SpawnGolem") then
-		--spawn 4 mini golems
-		--an_unstable_construct (298045)
-		eq.spawn2(298045,0,0,150, -565, -7,0)
-		eq.spawn2(298045,0,0,157, -622, -7,0)
-		eq.spawn2(298045,0,0,205, -559, -7,0)
-		eq.spawn2(298045,0,0,214, -616, -7,0)
+  elseif (e.timer == "SpawnGolem") then
+    --spawn 4 mini golems
+    --an_unstable_construct (298045)
+    eq.spawn2(298045,0,0,150, -565, -7,0)
+    eq.spawn2(298045,0,0,157, -622, -7,0)
+    eq.spawn2(298045,0,0,205, -559, -7,0)
+    eq.spawn2(298045,0,0,214, -616, -7,0)
 
   elseif (e.timer == "SpawnGolem12") then
-		eq.spawn2(298045,0,0,150, -565, -7,0)
-		eq.spawn2(298045,0,0,157, -622, -7,0)
-		eq.spawn2(298045,0,0,205, -559, -7,0)
-		eq.spawn2(298045,0,0,214, -616, -7,0)
+    eq.spawn2(298045,0,0,150, -565, -7,0)
+    eq.spawn2(298045,0,0,157, -622, -7,0)
+    eq.spawn2(298045,0,0,205, -559, -7,0)
+    eq.spawn2(298045,0,0,214, -616, -7,0)
 
-		eq.spawn2(298045,0,0,183, -622, -7,0)
-		eq.spawn2(298045,0,0,178, -563, -7,0)
-		eq.spawn2(298045,0,0,172, -627, -7,0)
-		eq.spawn2(298045,0,0,149, -597, -7,0)
+    eq.spawn2(298045,0,0,183, -622, -7,0)
+    eq.spawn2(298045,0,0,178, -563, -7,0)
+    eq.spawn2(298045,0,0,172, -627, -7,0)
+    eq.spawn2(298045,0,0,149, -597, -7,0)
 
-		eq.spawn2(298045,0,0,149, -611, -7,0)
-		eq.spawn2(298045,0,0,165, -563, -7,0)
-		eq.spawn2(298045,0,0,196, -570, -7,0)
-		eq.spawn2(298045,0,0,204, -613, -7,0)
+    eq.spawn2(298045,0,0,149, -611, -7,0)
+    eq.spawn2(298045,0,0,165, -563, -7,0)
+    eq.spawn2(298045,0,0,196, -570, -7,0)
+    eq.spawn2(298045,0,0,204, -613, -7,0)
 
   elseif (e.timer == 'wipecheck') then
     eq.depop_all(298045);
@@ -171,19 +171,19 @@ function PRT_Timer(e)
 
     eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 190.0);
 
-	end
+  end
 end
 
 function PRT_Death(e)
-	e.self:Emote("'s body falls to the stone floor in a puddle of blackened blood. You step back as she slashes one last time, connecting with nothing but the stale air of the room. 'This is not over. My commander will destroy you for this and when he does I hope it is my power he is weilding'")
-	eq.zone_emote(15, "With the death of the great beast, the seals on the doors fade away. Your path is now clear.")
+  e.self:Emote("'s body falls to the stone floor in a puddle of blackened blood. You step back as she slashes one last time, connecting with nothing but the stale air of the room. 'This is not over. My commander will destroy you for this and when he does I hope it is my power he is weilding'")
+  eq.zone_emote(15, "With the death of the great beast, the seals on the doors fade away. Your path is now clear.")
 
-	-- Open doors
-	-- Door before her
-	eq.get_entity_list():FindDoor(23):SetLockPick(0)
-	-- Doors after her
-	eq.get_entity_list():FindDoor(22):SetLockPick(0)
-	eq.get_entity_list():FindDoor(17):SetLockPick(0)
+  -- Open doors
+  -- Door before her
+  eq.get_entity_list():FindDoor(23):SetLockPick(0)
+  -- Doors after her
+  eq.get_entity_list():FindDoor(22):SetLockPick(0)
+  eq.get_entity_list():FindDoor(17):SetLockPick(0)
 
   eq.signal(298223, 298032);
 end
@@ -192,12 +192,12 @@ end
 -- Big golem at beginning of Pixtt_Riel_Tavas fight
 
 function Corrupt_Spawn(e)
-	-- Lay down. DoAnim(16)?
-	e.self:SetAppearance(3)
+  -- Lay down. DoAnim(16)?
+  e.self:SetAppearance(3)
 end
 
 function Corrupt_Death(e)
-	e.self:Emote("The ground trembles as the massive construct falls. ")
+  e.self:Emote("The ground trembles as the massive construct falls. ")
 end
 
 -- an_unstable_construct (298045)
@@ -205,7 +205,7 @@ end
 -- mini golems that cast a AE DD when they die
 
 function Unstable_Death(e)
-	e.self:CastSpell(4661, e.self:GetID());
+  e.self:CastSpell(4661, e.self:GetID());
 end
 
 function event_encounter_load(e)

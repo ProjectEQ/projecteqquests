@@ -78,7 +78,9 @@ function PXK_Death(e)
 end
 
 function PXK_Combat(e)
-  if (e.joined == false) then
+  if (e.joined == true) then
+    e.self:Say("Have at you intruder. This is the domain of the commander and only those strong enough to beat me shall pass.");
+  else 
     -- Wipe mechanics
     -- Depop adds, repop myself
     eq.depop_all(298044);

@@ -293,7 +293,7 @@ function Tunat_Second_HP(e)
     -- Rehaste 4740
     e.self:CastSpell(4740, e.self:GetID());
     
-    eq.set_timer("ae_timer", 2 * 1000);
+    eq.set_timer("ae_timer", 3 * 1000);
 
   end
 end
@@ -352,7 +352,7 @@ function Tunat_Second_Timer(e)
     eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
 
   elseif (e.timer == "ae_timer") then
-    local cast_ae = eq.ChooseRandom(1,2);
+    local cast_ae = eq.ChooseRandom(1,2,3);
 
     if (cast_ae == 1) then
       -- 5546 -- Gaze of the Tunat'Muram

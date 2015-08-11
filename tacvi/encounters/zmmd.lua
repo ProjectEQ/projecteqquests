@@ -39,8 +39,8 @@
 -- The chamber is filled with the sound of a grinding stone. The path leading into the final chamber has been opened and it awaits your arrival. You hear a voice that sounds oddly familiar. 'Come now, fools, enter my chamber and learn the meaning of suffering from one bred to destroy and conquer. You have beaten the best of my army, but you have yet to see true power. Step into the abyss and cower at what stares back at you.'
 --
 --]]
-local ZMMD_Active = "SERFQMCNIDf"
-local ZMMD_Inactive = "ABfHG";
+local ZMMD_Active = "1,1^2,1^3,1^5,1^7,1^13,1^14,1^15,1^16,1^17,1^21,1^42,1"; 
+local ZMMD_Inactive = "18,1^19,1^20,1^21,1^24,1^25,1";
 
 -- Youtube Video indicated a ~3min kite
 local kite_time = 180;
@@ -60,15 +60,16 @@ end
 
 function ZMMD_Activate(e)
   e.self:Emote("'s body begins to glow as the images before you merge back into one. The wounds upon Mordl's body quickly heal as he's infused by the energy, but new wounds appear where his other forms were injured. ");
-  eq.modify_npc_stat("special_attacks", ZMMD_Active);
+  eq.ProcessSpecialAbilities(ZMMD_Active);
   e.self:SetAppearance(0);
   eq.stop_timer("wipecheck");
 end
 
 function ZMMD_Inactivate(e)
-  eq.modify_npc_stat("special_attacks", ZMMD_Inactive);
+  eq.ProcessSpecialAbilities(ZMMD_Inactive);
   e.self:SetAppearance(3);
   e.self:WipeHateList();
+  e.self:SetOOCRegen(0);
 end
 
 function ZMMD_Timer(e)

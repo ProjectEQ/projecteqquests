@@ -13,7 +13,7 @@ end
 
 function event_timer(e)
     if not tether_box:contains(e.self:GetX(), e.self:GetY()) then
-        e.self:GMMove(796.875, -87.875, -362.871948, 191.125)
+        e.self:GotoBind()
         e.self:SetHP(e.self:GetMaxHP())
         e.self:CastSpell(3791, e.self:GetID())
         e.self:WipeHateList()

@@ -218,5 +218,5 @@ function event_encounter_load(e)
   eq.register_npc_event('prt', Event.spawn,           298002, Corrupt_Spawn);
   eq.register_npc_event('prt', Event.death_complete,  298002, Corrupt_Death);
   
-  eq.register_npc_event('prt', Event.death_complete,  298045, Unstable_Death);
+  eq.register_npc_event('prt', Event.death,           298045, Unstable_Death);
 end

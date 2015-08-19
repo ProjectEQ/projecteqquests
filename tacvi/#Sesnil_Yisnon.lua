@@ -7,6 +7,7 @@ function event_say(e)
     e.self:Say("I am bound to help avenge the deaths of my people by the invading masses of the Muramite army. Until this is done I must help any who enter here. If you destroy the commander then you will free my spirit and the others who are stuck here. I will remove the seal on this door when you say you are [" .. eq.say_link("ready") .. "].");
 
   elseif (e.message:findi("ready")) then
+    e.self:MoveTo(11.57, -38.06, -6.87, 155.6, true);
     e.self:Emote("Sesnil begins to recite an incantation in his native tongue. Waving his arms in the air, you see the door light up and go dim just as his arms come to rest at his side. 'There you are. The seal has been removed. Now once again you must destroy the guardian in the doorway and do not venture back until you have destroyed the being within, or you will be destroyed by the wards.'"); 
 
     e.self:Say("An ancient hallway lies before you. The remains of fallen warriors litter the floor along with discarded slave corpses. ");

@@ -125,7 +125,9 @@ function PXK_Hp(e)
       e.self:AddAISpell(0, 4728, 1, -1, -1, -350);
       -- Begins to AE Ramp (r or 4)
       -- Ends Flurry (F or 5)
-      eq.modify_npc_stat("special_attacks", "SErUMCNIDf");
+      e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
+      e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
+      e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 15); 
 
       eq.set_next_hp_event(45);
    end

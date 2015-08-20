@@ -27,7 +27,6 @@ function event_timer(e)
 end
 
 function event_signal(e)
-  eq.zone_emote(14, 'signal: ' .. e.signal);
   if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294574) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294338) == false ) then 
     -- Check Priest of Righteousness
     eq.get_entity_list():FindDoor(2):SetLockPick(0);
@@ -40,8 +39,8 @@ function event_signal(e)
 
   if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294339) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294575) == false ) then 
     -- Check Defender of Righteousness
-    eq.get_entity_list():FindDoor(4):SetLockPick(0);
-    eq.get_entity_list():FindDoor(5):SetLockPick(0);
+    eq.get_entity_list():FindDoor(6):SetLockPick(0);
+    eq.get_entity_list():FindDoor(7):SetLockPick(0);
 
     eq.depop_all(294633);
   end

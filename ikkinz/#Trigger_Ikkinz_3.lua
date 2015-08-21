@@ -28,7 +28,7 @@ function event_signal(e)
   end
 
   if (counter == 4) then
-    eq.spawn2(294594,0,0,480,-592,-50,64);
+    eq.spawn2(294594,0,0,534,-210,-50, 72);
   end
 end
 

@@ -48,5 +48,6 @@ sub EVENT_SIGNAL {
   if($signal == 1 && (!$entity_list->IsMobSpawnedByNpcTypeID(294610))) {
     $entity_list->FindDoor(10)->SetLockPick(0);
     $entity_list->FindDoor(12)->SetLockPick(0);
+    quest::depopall(294636);
   }
 }

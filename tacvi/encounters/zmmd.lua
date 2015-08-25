@@ -60,13 +60,13 @@ end
 
 function ZMMD_Activate(e)
   e.self:Emote("'s body begins to glow as the images before you merge back into one. The wounds upon Mordl's body quickly heal as he's infused by the energy, but new wounds appear where his other forms were injured. ");
-  eq.ProcessSpecialAbilities(ZMMD_Active);
+  e.self:ProcessSpecialAbilities(ZMMD_Active);
   e.self:SetAppearance(0);
   eq.stop_timer("wipecheck");
 end
 
 function ZMMD_Inactivate(e)
-  eq.ProcessSpecialAbilities(ZMMD_Inactive);
+  e.self:ProcessSpecialAbilities(ZMMD_Inactive);
   e.self:SetAppearance(3);
   e.self:WipeHateList();
   e.self:SetOOCRegen(0);

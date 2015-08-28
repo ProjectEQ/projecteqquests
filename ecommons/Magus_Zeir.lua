@@ -11,12 +11,10 @@ function event_say(e)
 		elseif(e.message:findi("nedaria")) then
 			e.self:CastSpell(4580,e.other:GetID(),0,1);
 		elseif(e.message:findi("north ro")) then
-		--e.self:CastSpell(4177,e.other:GetID(),0,1);		 
-		e.other:MovePC(34, -914, 2679, -25, 10);		 
+		  e.self:CastSpell(4177,e.other:GetID(),0,1);		 
 
 		elseif(e.message:findi("south ro")) then
-		--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-		e.other:MovePC(35, 1033, -1447, -23, 83);
+		  e.self:CastSpell(4178,e.other:GetID(),0,1);		
 
 		end
 	else -- No Adventurers Stone

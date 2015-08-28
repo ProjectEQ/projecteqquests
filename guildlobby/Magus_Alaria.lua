@@ -23,15 +23,18 @@ function event_say(e)
 		elseif(e.message:findi("butcherblock")) then
 			e.self:CastSpell(4179,e.other:GetID(),0,1);
 		elseif(e.message:findi("commonlands")) then
-			e.self:CastSpell(4176,e.other:GetID(),0,1);
+			--e.self:CastSpell(4176,e.other:GetID(),0,1);
+      e.other:MovePC(22, -144, -1543, 2, 122);
 		elseif(e.message:findi("everfrost")) then
 			e.self:CastSpell(4180,e.other:GetID(),0,1);
 		elseif(e.message:findi("nedaria")) then
 			e.self:CastSpell(4580,e.other:GetID(),0,1);
 		elseif(e.message:findi("north ro")) then
-			e.self:CastSpell(4177,e.other:GetID(),0,1);
+			--e.self:CastSpell(4177,e.other:GetID(),0,1);
+      e.other:MovePC(34, 923, 2649, -24, 242);
 		elseif(e.message:findi("south ro")) then
-			e.self:CastSpell(4178,e.other:GetID(),0,1);
+			--e.self:CastSpell(4178,e.other:GetID(),0,1);
+      e.other:MovePC(35, 1033, -1447, -25, 76);
 		end
 	else --no Adventurers Stone
 		if(e.message:findi("hail")) then

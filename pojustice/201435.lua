@@ -51,7 +51,7 @@ function event_say(e)
             e.self:Say("I'm sorry, the Trial of Lashing is currently unavilable to you.");
          end
       elseif (e.message:findi("what evidence of mavuin") ) then
-         if ( e.other:HasItem(31844) ) then
+         if ( e.other:HasItem(31960) ) then
             eq.set_global("pop_poj_tribunal", "1", 5, "F");
             eq.set_global("pop_poj_lashing", "1", 5, "F");
             e.other:Message(4, "You receive a character flag!");

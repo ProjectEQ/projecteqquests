@@ -17,7 +17,16 @@ sub EVENT_SAY
 			if (!defined $flame) {
 				quest::say("Then begin.");
 				#Cast Penance of Flame
-				quest::selfcast(1124);
+        #quest::selfcast(1124);
+        $group = $entity_list->GetGroupByClient($client);
+        if ($group) { 
+          for ($count = 0; $count < $group->GroupCount(); $count++) {
+            $pc = $group->GetMember($count);
+            if ($pc->CalculateDistance($x,$y,$z) <= 50) {
+              $pc->MovePC(201,937,-703, 53, 150);
+            }
+          }
+        }
 				quest::settimer(201, 30);
 				#Tell event burning control about it, 30 second delay
 				quest::signalwith(201417, 1, 30);

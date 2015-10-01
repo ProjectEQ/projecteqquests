@@ -27,7 +27,8 @@ function event_say(e)
       { "Tacvi_ZMSB", "Tacvi: Zun`Muram Shaldn Boc" },
       { "Tacvi_ZMMD", "Tacvi: Zun`Muram Mordl Delt" },
       { "Tacvi_ZMYV", "Tacvi: Zun`Muram Yihst Vor" },   
-      { "Tacvi_TMCV", "Tacvi: Tunat`Muram Cuu Vauax" }
+      { "Tacvi_TMCV", "Tacvi: Tunat`Muram Cuu Vauax" },
+      { "takc", "LDoN Raid: Takish-Hiz: Within the Compact" }
 		}
 
 	if(e.message:findi("hail")) then

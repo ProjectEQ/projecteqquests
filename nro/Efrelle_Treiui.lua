@@ -9,7 +9,7 @@ function event_say(e)
     elseif (e.message:findi("interested")) then
       local instance_requests = require("instance_requests");
       local lockout_globals = {
-        {'LDON_Takc', 'LDoN Raid: Takish-Hiz: Within the Compact'}
+        {'LDON_takc', 'LDoN Raid: Takish-Hiz: Within the Compact'}
       }
        
       local request = instance_requests.ValidateInstanceRequest("takc", 54, e.other, lockout_globals);

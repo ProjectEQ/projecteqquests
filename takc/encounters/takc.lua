@@ -42,7 +42,7 @@ function Mini_Death(e)
 end
 
 function UpdateLockout()
-  local lockout_name = 'takc';
+  local lockout_name = 'LDON_takc';
   for k,v in pairs(raid_list) do                                                                             
     eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
   end                                                                                                          

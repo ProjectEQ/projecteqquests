@@ -1,6 +1,6 @@
 local extra_loot;
 local QOS_Inactive = "18,1^19,1^20,1^21,1^24,1^25,1";
-local QOS_Active = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1"
+local QOS_Active = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
 local instance_id;
 local raid_list;
 local QOS;
@@ -36,6 +36,7 @@ end
 function Mini_Death(e)
   local entity_list = eq.get_entity_list();
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == false and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
+    --QOS = entity_list:GetNPCByNPCTypeID(241052);
     QOS:ProcessSpecialAbilities(QOS_Active); 
   end
 end
@@ -63,7 +64,7 @@ function QOS_Death(e)
 end
 
 function event_encounter_load(e)
-  eq.register_npc_event('takc', Event.death_complete, 241058, RTC_Death);
+  eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241053, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241046, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);

@@ -5,7 +5,7 @@ function event_say(e)
   elseif (e.message:findi('problem')) then
     e.self:Say("Our scout, Nevlen, just got back from the Rujarkian Hills after looking into a rumor of a huge stockpile of ill-gotten orcish treasure. He and his companion Crispen discovered that the rumor was true! We want to go back in and search for more of the treasure, but we have been told the orcs may be waiting for our arrival. We need to you get down there quickly to gather more samples from their stores before they move them!  Are you [" .. eq.say_link('interested', false, 'interested') .. "]?");
 
-  elseif (e.message:findi('interested') and e.other:GetGM() == true) then
+  elseif (e.message:findi('interested') ) then
       local instance_requests = require("instance_requests");
       local lockout_globals = {
         {'LDON_rujg', 'LDoN Raid: Rujarkian Hills: Hidden Vale of Deceit'}

@@ -50,6 +50,20 @@ end
 
 -- Flawless Experimental Battlelord
 function Battlelord_Combat(e)
+  if (e.joined == true) then
+    eq.set_timer("swarm", 120 * 1000);
+  else
+    eq.stop_timer("swarm");
+    eq.depop_all(260071);
+  end
+end
+
+function Battlelord_Timer(e)
+  if (e.timer == "swarm") then
+    eq.zone_emote(15, "Flawless Experimental Battlelord roars as his muscles bulge to gargantuan proportions!");
+    eq.spawn2(260071, 0, 0, 1389, -7, 143, 131);
+    eq.spawn2(260071, 0, 0, 1375, -99, 144, 228);
+  end
 end
 
 -- Flawless Experimental Battlelord
@@ -65,14 +79,15 @@ function Battlelord_Death(e)
 
   -- Flawed Mutations
   eq.depop_all(260062);
+  eq.depop_all(260071);
 
   -- Event Loot
   -- #Researcher`s Box of Supplies
-  --eq.spawn2(260066, 0, 0, 1499, -168, 140, 0);
+  eq.spawn2(260066, 0, 0, 1499, -168, 140, 0);
   -- #The Bloody Barrel
-  --eq.spawn2(260064, 0, 0, 1497, -185, 145, 0);
+  eq.spawn2(260064, 0, 0, 1497, -185, 145, 0);
   -- #The Splintering Barrel
-  --eq.spawn2(260065, 0, 0, 1496, -179, 145, 0);
+  eq.spawn2(260065, 0, 0, 1496, -179, 145, 0);
 end
 
 function event_encounter_load(e)
@@ -85,5 +100,6 @@ function event_encounter_load(e)
 
   eq.register_npc_event('rujg', Event.death_complete, 260069, Battlelord_Death);
   eq.register_npc_event('rujg', Event.combat,         260069, Battlelord_Combat);
+  eq.register_npc_event('rujg', Event.timer,          260069, Battlelord_Timer);
 
 end

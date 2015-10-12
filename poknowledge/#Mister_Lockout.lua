@@ -28,6 +28,7 @@ function event_say(e)
       { "Tacvi_ZMMD", "Tacvi: Zun`Muram Mordl Delt" },
       { "Tacvi_ZMYV", "Tacvi: Zun`Muram Yihst Vor" },   
       { "Tacvi_TMCV", "Tacvi: Tunat`Muram Cuu Vauax" },
+      { "LDON_rujg", "LDoN Raid: Rujarkian Hills: Hidden Vale of Deceit"},
       { "LDON_takc", "LDoN Raid: Takish-Hiz: Within the Compact" }
 		}
 

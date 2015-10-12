@@ -50,6 +50,11 @@ function event_say(e)
             if (e.other:GetGM() == true) then 
               local instance_id = eq.create_instance("rujg", 50, 21600);
               eq.assign_raid_to_instance(instance_id);
+
+              local raid_list = eq.get_characters_in_instance(instance_id);
+              for k,v in pairs(raid_list) do
+                eq.target_global('LDON_rujg_compass', tostring(instance_requests.GetLockoutEndTimeForHours(1)), "H1", 0, v, 0);
+              end
             end
           elseif (request.valid and request.flags == 0) then
             local instance_id = eq.create_instance("rujg", 50, 21600);

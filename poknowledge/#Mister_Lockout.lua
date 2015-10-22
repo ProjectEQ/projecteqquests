@@ -30,7 +30,8 @@ function event_say(e)
       { "Tacvi_TMCV", "Tacvi: Tunat`Muram Cuu Vauax" },
       { "LDON_rujg", "LDoN Raid: Rujarkian Hills: Hidden Vale of Deceit"},
       { "LDON_mmcc", "LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny"},
-      { "LDON_takc", "LDoN Raid: Takish-Hiz: Within the Compact" }
+      { "LDON_takc", "LDoN Raid: Takish-Hiz: Within the Compact" },
+      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"}
 		}
 
 	if(e.message:findi("hail")) then

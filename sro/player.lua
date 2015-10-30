@@ -1,6 +1,6 @@
 function event_enter_zone(e)
-  local qglobals = eq.get_qglobals(e.self);
-  if ( qglobals['LDON_rujg_compass'] ) then
+  local instance_id = eq.get_instance_id("rujg", 50);
+  if (instance_id > 0) then
     e.self:MarkSingleCompassLoc(1346.18, -2099.33, -88.0377);
   end
 end

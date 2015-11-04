@@ -1,21 +1,8 @@
 -- Evacuate: Ro
 function event_spell_effect(e)
-  --local mob = eq.get_entity_list():GetClientByID(e.caster_id):CastToMob();
-  --local client = eq.get_entity_list():GetClientByID(e.caster_id):CastToClient();
-  local group = eq.get_entity_list():GetClientByID(e.caster_id):GetGroup();
-  local client;
-  local count
+  local client = e.target:CastToClient();
 
-  if ( group.valid ) then
-    count = group:GroupCount();
-    for i = 0, count - 1, 1 do
-      client = group:GetMember(i):CastToClient();
-      client:MovePC(35, 120, -1046, 8, 185);
-    end
-  else
-    client = eq.get_entity_list():GetClientByID(e.caster_id):CastToClient();
-    client:MovePC(35, 120, -1046, 8, 185);
-  end
-
+  client:MovePC(35, 120, -1046, 8, 185);
   return 1;
+
 end

@@ -53,10 +53,10 @@ function event_say(e)
          e.self:Say("Very well. Here you go. Simply return it to me to be released from the chains of Order.");
          e.other:SummonItem(18700); --Tome of Order and Discord
       elseif(e.message:findi("wish")) then
-         e.self:Say("I am sorry but Discord is closed to me right now.");
-         --e.self:Say("Prepare yourself to cross into the depths of Discord!");
-         --eq.set_global("OOW_PoD_Origin",tostring(eq.get_zone_id()),5,"F");
-         --e.other:MovePC(302, -1485.52, -1263.29, 222.0,36);
+         --e.self:Say("I am sorry but Discord is closed to me right now.");
+         e.self:Say("Prepare yourself to cross into the depths of Discord!");
+         eq.set_global("OOW_PoD_Origin",tostring(eq.get_zone_id()),5,"F");
+         e.other:MovePC(302, -1485.52, -1263.29, 222.0,36);
       end
 end
 

@@ -42,7 +42,7 @@ end
 
 function Real_Death(e)
   eq.stop_timer('valdoon');
-  eq.spawn2(243681, 0, 0, 1129, 560, 10.13, 186);
+  eq.spawn2(243680, 0, 0, 1129, 560, 10.13, 186);
   eq.spawn2(243681, 0, 0, 1129, 477, 10.13, 186);
   if (extra_loot == true) then
     eq.spawn2(243679, 0, 0, 1241, 510, -3.90, 190);

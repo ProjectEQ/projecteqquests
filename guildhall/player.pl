@@ -89,7 +89,7 @@ sub EVENT_POPUPRESPONSE {
     quest::movepc(100,673,-4531,0);
   }
   if ($popupid == 6180) { #wallofslaughter
-    #quest::movepc(300,-943,13,130);
+    quest::movepc(300,-943,13,130);
   }
   if ($popupid == 5733) { #barindu
     quest::movepc(283,209,-515,-119);

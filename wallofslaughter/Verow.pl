@@ -34,7 +34,7 @@ sub EVENT_ITEM
 	if (plugin::check_handin(\%itemcount, 36560 => 1)) #Stolen Dragorn Clan Insignia
 		{
 		quest::say("I recognize this crest! Thank you, $name. The dragorn noble clans may be lost and scattered, but with your help they may at least be remembered. Please return to me if you find any more.");
-		quest::faction(410,1); #dranik loyalists
+		quest::faction(410,5); #dranik loyalists
 		quest::faction(432,-3); #overlord mata muram
 		}
   plugin::return_items(\%itemcount);

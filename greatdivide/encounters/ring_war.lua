@@ -38,7 +38,7 @@ function Zrelik_Say(e)
     Stop_Event();
   elseif (e.message:findi('start')) then
     eq.zone_emote(15, "Start it...");
-    --eq.spawn_condition("greatdivide", 0, 1, 0);
+    eq.spawn_condition("greatdivide", 0, 1, 0);
     eq.spawn_condition("greatdivide", 0, 2, 1);
   elseif (e.message:findi('wave 1')) then
     eq.zone_emote(15, "Wave 1");
@@ -70,6 +70,18 @@ function Zrelik_Say(e)
   elseif (e.message:findi('wave 10')) then
     eq.zone_emote(15, "Wave 10");
     eq.spawn_condition("greatdivide", 0, 12, 1);
+  elseif (e.message:findi('wave 11')) then
+    eq.zone_emote(15, "Wave 11");
+    eq.spawn_condition("greatdivide", 0, 13, 1);
+  elseif (e.message:findi('wave 12')) then
+    eq.zone_emote(15, "Wave 12");
+    eq.spawn_condition("greatdivide", 0, 14, 1);
+  elseif (e.message:findi('wave 13')) then
+    eq.zone_emote(15, "Wave 13");
+    eq.spawn_condition("greatdivide", 0, 15, 1);
+  elseif (e.message:findi('wave 14')) then
+    eq.zone_emote(15, "Wave 14");
+    eq.spawn_condition("greatdivide", 0, 16, 1);
   end
 end
 

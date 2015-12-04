@@ -56,12 +56,19 @@ function Ten_Start(e)
 
   -- Reset all the spawn conditions to a clean state.
   Stop_Event();
+
 end
 
 function Zrelik_Say(e)
   if (e.other:Admin() >= 80 and e.other:GetGM()) then
     if (e.message:findi('end')) then
       Stop_Event();
+
+      eq.depop_all(118169);
+      eq.depop_all(118171);
+      eq.depop_all(118172);
+      eq.depop_all(118170);
+      eq.depop_all(118168);
 
     elseif (e.message:findi('start')) then
       eq.zone_emote(13, "and so it begins...");
@@ -70,6 +77,15 @@ function Zrelik_Say(e)
 
       -- Signal the ringtemmaster to spawn the first wave...
       eq.signal(118173, 1);
+
+      -- Spawn the Dwarf Generals with spawn commands 
+      -- so they aren't depopped when Narandi is killed
+      -- and the zone is reset to normal mode.
+      eq.spawn2(118169, 0, 0, -44, -792, 51, 115);
+      eq.spawn2(118172, 0, 0, -37, -788, 51, 115);
+      eq.spawn2(118171, 0, 0, -27, -788, 51, 115);
+      eq.spawn2(118170, 0, 0, -17, -788, 51, 115);
+      eq.spawn2(118168, 0, 0, -7,  -788, 51, 115);
 
     elseif (e.message:findi('wave 14')) then
       eq.zone_emote(15, "Wave 14");
@@ -144,6 +160,13 @@ function Seneschal_Death(e)
   -- Depop all the mobs in Thurgadin for 2hours.
   Stop_Event();
   eq.zone_emote(13, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
+
+  -- Depop the Dwarf Generals if they are still alive.
+  eq.depop_all(118169);
+  eq.depop_all(118171);
+  eq.depop_all(118172);
+  eq.depop_all(118170);
+  eq.depop_all(118168);
 end
 
 function WaveMaster_Death(e)
@@ -160,6 +183,91 @@ function Narandi_Death(e)
   eq.zone_emote(13, 'No surprise the Age of the Dwarf continues with a Glorious victory of the Kromrif.');
 
   Stop_Event();
+end
+
+-- Hand in.: Shorn Head of Narandi (1741)
+-- Get back: Crown of Narandi (1746)
+-- Get back: Shorn Head of Narandi (1741)
+function Churn_Trade(e)
+  local item_lib = require("items");
+  if (item_lib.check_turn_in(e.trade, {item1 = 1741})) then 
+    e.other:SummonItem(1741);
+    e.other:SummonItem(1746);
+
+    e.self:Emote("pries a crown from the head of Narandi, 'The halls of Thurgadin will echo with praises to you for as long as we grace the face of this land. May this crown serve you well. Honor through battle!' ");
+
+    e.self:Depop();
+  end
+
+  item_lib.return_items(e.self, e.other, e.trade);
+end
+
+-- Hand in.: Shorn Head of Narandi (1741)
+-- Get back: Eye of Narandi (1745)
+-- Get back: Shorn Head of Narandi (1741)
+function Kargin_Trade(e)
+  local item_lib = require("items");
+  if (item_lib.check_turn_in(e.trade, {item1 = 1741})) then 
+    e.other:SummonItem(1741);
+    e.other:SummonItem(1745);
+
+    e.self:Emote("picks up a stick and hits the back of the dismembered head with all his might, knocking one of its eyes out of the socket, 'Bastard killed my brother! Hope his ghost felt that one!' ");
+
+    e.self:Depop();
+  end
+
+  item_lib.return_items(e.self, e.other, e.trade);
+end
+
+-- Hand in.: Shorn Head of Narandi (1741)
+-- Get back: Earring of the Frozen Skull (1744)
+-- Get back: Shorn Head of Narandi (1741)
+function Corbin_Trade(e)
+  local item_lib = require("items");
+  if (item_lib.check_turn_in(e.trade, {item1 = 1741})) then 
+    e.other:SummonItem(1741);
+    e.other:SummonItem(1744);
+
+    e.self:Emote("unhooks a glowing earring from Narandi's shorn head, 'Hmm, this looks like something special. Take it, " .. e.other:GetName() .. ", you've earned it! Be well.' ");
+
+    e.self:Depop();
+  end
+
+  item_lib.return_items(e.self, e.other, e.trade);
+end
+
+-- Hand in.: Shorn Head of Narandi (1741)
+-- Get back: Faceguard of Bentos the Hero (1743)
+-- Get back: Shorn Head of Narandi (1741)
+function Dobbin_Trade(e)
+  local item_lib = require("items");
+  if (item_lib.check_turn_in(e.trade, {item1 = 1741})) then 
+    e.other:SummonItem(1741);
+    e.other:SummonItem(1743);
+
+    e.self:Emote("gives a gentle, warm smile and slight nod of his head in warm welcoming, 'Good day to you, " .. e.other:GetName() .. ", and welcome to the district of Selia. We are children of the light -- beings who valiantly uphold the ways of honor, valor, and merits of goodly faith and virtue. Rather, we are crusaders of these things, collectively comprising the beacon of these traits within the universe in our position in New Tanaan. We are quite pleased to have you approach us with such confidence -- perhaps the inner light has brought you to us, seeking a way to unlock the purity of these merits that you faintly mirror now. If you are seeking council in the ways of enchantments, then I would be more than pleased and honored to aid you where I can, my friend.'");
+
+    e.self:Depop();
+  end
+
+  item_lib.return_items(e.self, e.other, e.trade);
+end
+
+-- Hand in.: Shorn Head of Narandi (1741)
+-- Get back: Choker of the Wretched (1742)
+-- Get back: Shorn Head of Narandi (1741)
+function Garadain_Trade(e)
+  local item_lib = require("items");
+  if (item_lib.check_turn_in(e.trade, {item1 = 1741})) then 
+    e.other:SummonItem(1741);
+    e.other:SummonItem(1742);
+
+    e.self:Emote("removes a choker from the severed head and returns both items to you, 'Congratulations on your victory, " .. e.other:GetName() .. ". I couldn't have done a better job myself. May Brell protect and watch over you and your friends. Farewell.'");
+
+    e.self:Depop();
+  end
+
+  item_lib.return_items(e.self, e.other, e.trade);
 end
 
 function event_encounter_load(e)
@@ -181,6 +289,12 @@ function event_encounter_load(e)
   eq.register_npc_event('ring_war', Event.death_complete, 118145, Narandi_Death);
   eq.register_npc_event('ring_war', Event.spawn,          118145, Narandi_Spawn);
 
+  -- Loot Mobs
+  eq.register_npc_event('ring_war', Event.trade,          118169, Churn_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118172, Kargin_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118171, Corbin_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118170, Dobbin_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118168, Garadain_Trade);
 end
 
 function event_encounter_unload(e)

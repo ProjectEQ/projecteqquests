@@ -139,6 +139,8 @@ function Master_Signal(e)
     eq.spawn_condition("greatdivide", 0, 3, 1);
 
   elseif (e.signal == 2) then 
+    -- Stop wave timer (if its running)
+    eq.stop_timer('wave_cooldown');
     eq.set_timer('wave_cooldown', wave_cooldown_time);
 
   end
@@ -148,6 +150,7 @@ end
 function Master_Timer(e)
   if (e.timer == 'wave_cooldown') then
     eq.stop_timer(e.timer);
+
     current_spawn_condition = current_spawn_condition + 1;
 
     eq.spawn_condition("greatdivide", 0, current_spawn_condition, 1);
@@ -176,7 +179,7 @@ function WaveMaster_Death(e)
 end
 
 function Narandi_Spawn(e)
-  eq.zone_emote(13, "So you have defeated my foot soldiers, now come and face me you vile, filthy dwarven rabble...");
+  e.self:Shout("So you have defeated my foot soldiers, now come and face me you vile, filthy dwarven rabble...");
 end
 
 function Narandi_Death(e)

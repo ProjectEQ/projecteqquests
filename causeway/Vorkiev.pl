@@ -49,7 +49,7 @@ sub EVENT_ITEM
 	#Must be warmly+ and a plate class.
 	if (($faction <= 2) && (($class eq "Warrior") || ($class eq "Paladin") || ($class eq "Shadowknight") || ($class eq "Bard") || ($class eq "Cleric"))) {
 		#Hands
-		if(plugin::check_handin(\%itemcount, 51146 => 1, 51453 => 2)) {#Spire Control Shard, 2x Discordling Message Satchel
+		if(plugin::check_handin(\%itemcount, 51446 => 1, 51453 => 2)) {#Spire Control Shard, 2x Discordling Message Satchel
 			quest::say("Well met, $name. You may have well disrupted the Muramite chain of command long enough to afford me a chance to go looking for my surviving brothers. The Muramites are on the watch for me, but now they will be scrambling for word from their master. To thank you for your efforts, here are the plate gloves I have promised you.");
 			if ($class eq "Warrior") {
 				quest::summonitem(70744);#Armsmaster's Gloves

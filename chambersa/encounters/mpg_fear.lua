@@ -11,7 +11,7 @@ function Fear_Spawn(e)
   instance_id = eq.get_instance_id('chambersa', 1);
   mobs_died = 0;
   mobs_must_die = 15;
-  minutes_remaining = 1;
+  minutes_remaining = 15;
   player_list = eq.get_characters_in_instance(instance_id);
 
   eq.spawn_condition('chambersa', instance_id, 1, 0 );

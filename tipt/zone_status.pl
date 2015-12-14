@@ -23,7 +23,10 @@ sub EVENT_TIMER {
       #if the zone global is not defined boot everyone and destroy the instance.
       KICK_ALL_PLAYERS();
       #destroy the instance 
-      quest::DestroyInstance($instid);
+      
+      # Destrying Instances can probably cause problems
+      #quest::DestroyInstance($instid);
+
       #destroy the instance status variable if it exists.
       if(defined $qglobals{$instid.'_tipt_status'}) {
         quest::delglobal($instid.'_tipt_status');

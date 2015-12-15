@@ -31,7 +31,14 @@ function event_say(e)
       { "LDON_rujg", "LDoN Raid: Rujarkian Hills: Hidden Vale of Deceit"},
       { "LDON_mmcc", "LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny"},
       { "LDON_takc", "LDoN Raid: Takish-Hiz: Within the Compact" },
-      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"}
+      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"},
+      { "MPG_fear", "MPG: The Mastery of Fear"},
+      { "MPG_weaponry", "MPG: The Mastery of Weaponry"},
+      { "MPG_subvion", "MPG: The Mastery of Subversion"},
+      { "MPG_efficiency", "MPG: The Mastery of Efficiency"},
+      { "MPG_ingenuity", "MPG: The Mastery of Ingenuity"},
+      { "MPG_destruction", "MPG: The Mastery of Destruction"}
+
 		}
 
 	if(e.message:findi("hail")) then

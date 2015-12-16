@@ -15,7 +15,7 @@ function Fear_Spawn(e)
   minutes_remaining = 15;
   player_list = eq.get_characters_in_instance(instance_id);
 
-  eq.spawn_condition('chambersa', instance_id, 1, 0 );
+  eq.spawn_condition('chambersa', instance_id, 1, 1 );
   eq.spawn_condition('chambersa', instance_id, 2, 0 );
 end
 
@@ -132,4 +132,7 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_fear', Event.timer,          304004, Fear_Timer);
 
   eq.register_npc_event('mpg_fear', Event.tick, 304021, Deathtouch_Tick);
+end
+
+function event_encounter_unload(e)
 end

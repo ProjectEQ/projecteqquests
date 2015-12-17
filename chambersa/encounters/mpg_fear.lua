@@ -6,6 +6,7 @@ local lockout_name = 'MPG_fear';
 local lockout_win = 72;
 local lockout_loss = 2;
 local warnings = 0;
+local aa_grant_list;
 
 function Fear_Spawn(e)
   --instance_id = eq.get_instance_id('chambersa', 1);
@@ -17,6 +18,11 @@ function Fear_Spawn(e)
 
   eq.spawn_condition('chambersa', instance_id, 1, 1 );
   eq.spawn_condition('chambersa', instance_id, 2, 0 );
+
+end
+
+function grant_aa()
+  -- global: mpg_aas_granted
 end
 
 function Fear_Say(e)
@@ -31,9 +37,27 @@ function Fear_Say(e)
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
 
-  elseif ( e.message:findi("end") ) then
-    eq.spawn_condition('chambersa', instance_id, 2, 0 );
-    eq.stop_all_timers();
+  elseif ( e.other:Admin() > 80 ) then
+    if ( e.message:findi("end") ) then
+      eq.spawn_condition('chambersa', instance_id, 2, 0 );
+      eq.stop_all_timers();
+    elseif ( e.message:findi("aa0") ) then 
+      e.other:GrantAlternateAdvancementAbility(466, 0);
+    elseif ( e.message:findi("aa1") ) then 
+      e.other:GrantAlternateAdvancementAbility(466, 1);
+    elseif ( e.message:findi("aa2") ) then 
+      e.other:GrantAlternateAdvancementAbility(466, 2);
+    elseif ( e.message:findi("aa3") ) then 
+      e.other:GrantAlternateAdvancementAbility(466, 3);
+    elseif ( e.message:findi("aa4") ) then 
+      e.other:GrantAlternateAdvancementAbility(466, 4);
+    elseif ( e.message:findi("aa5") ) then 
+      e.other:GrantAlternateAdvancementAbility(566, 4);
+    elseif ( e.message:findi("aas") ) then
+      local player_list = eq.get_characters_in_instance(instance_id);
+        for k,v in pairs(player_list) do
+        end
+    end
   end
 end
 
@@ -60,7 +84,37 @@ function Fear_Timer(e)
         eq.depop();
 
         for k,v in pairs(player_list) do
+          -- Set a 72 hour lockout on a Win.
           eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
+
+          local this_bit = 1;
+          local client = eq.get_entity_list():GetClientByCharID(v);
+          local client_globals = eq.get_qglobals(client);
+
+          -- Get the number of MPG Trials complete; There are a max of 4 AAs to award.
+          local mpg_group_aas_granted = tonumber(client_globals["mpg_group_aas_granted"]);
+          if ( mpg_group_aas_granted == nil ) then mpg_group_aas_granted = 0; end
+          
+          -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
+          -- a Character complets a trial.
+          local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
+          if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
+          
+          local has_done_this_trial; 
+          if (bit.band(mpg_group_trials, this_bit) == 0) then
+            has_done_this_trial = false;
+          else
+            has_done_this_trial = true;
+          end
+
+          -- Has character maxed out the Trials of Mata Muram (4) 
+          -- Has character done this trial before?
+          if ( mpg_group_aas_granted >= 0 and mpg_group_aas_granted < 4 and has_done_this_trial == false ) then
+            mpg_group_aas_granted = mpg_group_aas_granted + 1;
+            eq.target_global("mpg_group_aas_granted", tostring(mpg_group_aas_granted), "F", 0, v, 0);
+            eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
+            e.other:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
+          end
         end
         
       else

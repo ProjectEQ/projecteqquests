@@ -33,27 +33,6 @@ function Fear_Say(e)
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
 
-  elseif ( e.other:Admin() > 80 ) then
-    if ( e.message:findi("end") ) then
-      eq.spawn_condition('chambersa', instance_id, 2, 0 );
-      eq.stop_all_timers();
-    elseif ( e.message:findi("aa0") ) then 
-      e.other:GrantAlternateAdvancementAbility(466, 0);
-    elseif ( e.message:findi("aa1") ) then 
-      e.other:GrantAlternateAdvancementAbility(466, 1);
-    elseif ( e.message:findi("aa2") ) then 
-      e.other:GrantAlternateAdvancementAbility(466, 2);
-    elseif ( e.message:findi("aa3") ) then 
-      e.other:GrantAlternateAdvancementAbility(466, 3);
-    elseif ( e.message:findi("aa4") ) then 
-      e.other:GrantAlternateAdvancementAbility(466, 4);
-    elseif ( e.message:findi("aa5") ) then 
-      e.other:GrantAlternateAdvancementAbility(566, 4);
-    elseif ( e.message:findi("aas") ) then
-      local player_list = eq.get_characters_in_instance(instance_id);
-        for k,v in pairs(player_list) do
-        end
-    end
   end
 end
 

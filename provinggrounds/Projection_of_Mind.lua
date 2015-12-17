@@ -21,7 +21,7 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then
-      local instance_id = eq.create_instance('chambersa', 1, 21600);
+      local instance_id = eq.create_instance('chambersa', 1, 3600);
       eq.assign_group_to_instance(instance_id);
 
       e.self:Say("Fear is power.  An opponent whose resolve has been broken has already been defeated.  You must learn to invoke terror in the hearts of your enemies and destroy them as they cower in weakness.  If you have this ability, now is the opportunity to prove your worth!");

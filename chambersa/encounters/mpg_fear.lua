@@ -21,10 +21,6 @@ function Fear_Spawn(e)
 
 end
 
-function grant_aa()
-  -- global: mpg_aas_granted
-end
-
 function Fear_Say(e)
   instance_id = eq.get_instance_id('chambersa', 1);
   if ( e.message:findi("hail") ) then

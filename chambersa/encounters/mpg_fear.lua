@@ -9,7 +9,6 @@ local warnings = 0;
 local aa_grant_list;
 
 function Fear_Spawn(e)
-  --instance_id = eq.get_instance_id('chambersa', 1);
   instance_id = eq.get_zone_instance_id();
   mobs_died = 0;
   mobs_must_die = 15;
@@ -24,7 +23,7 @@ end
 function Fear_Say(e)
   instance_id = eq.get_instance_id('chambersa', 1);
   if ( e.message:findi("hail") ) then
-    e.self:Say("This is the Mastery of Fear trial.  You must demonstrate your ability to inflict terror in the hearts of your enemies, and defend yourself when this tactic fails.  Are you ready to [begin]?");
+    e.self:Say("This is the Mastery of Fear trial.  You must demonstrate your ability to inflict terror in the hearts of your enemies, and defend yourself when this tactic fails.  Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
   elseif ( e.message:findi("begin") ) then
     eq.spawn_condition('chambersa', instance_id, 2, 1 );
 
@@ -53,7 +52,6 @@ function Fear_Timer(e)
       eq.spawn_condition('chambersa', instance_id, 2, 0 );
 
       if (mobs_died >= mobs_must_die) then
-        eq.zone_emote(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
 
         eq.spawn2(304013, 0, 0, -212, 273, 71, 20);
         eq.depop();
@@ -88,7 +86,10 @@ function Fear_Timer(e)
             mpg_group_aas_granted = mpg_group_aas_granted + 1;
             eq.target_global("mpg_group_aas_granted", tostring(mpg_group_aas_granted), "F", 0, v, 0);
             eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
-            e.other:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
+            client:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
+            client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
+          else
+            client:Message(15, "You have again defeated the Master of Fear.  Congratulations.");
           end
         end
         

@@ -5,7 +5,7 @@ function event_click_door(e)
   if (door_id == 2) then
     instance_id = eq.get_instance_id('chambersa', 1);
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(304, instance_id, 0, 0, 0, 254);
+      e.self:MovePCInstance(304, instance_id, 5, 5, 0, 254);
     else
       instance_id = eq.get_instance_id('chambersa', 2);
       if (instance_id ~= nil and instance_id ~= 0) then
@@ -15,6 +15,11 @@ function event_click_door(e)
       end
     end
 
+  elseif (door_id == 6) then
+    instance_id = eq.get_instance_id('chamberse', 1);
+    if (instance_id ~= nil and instance_id ~= 0) then
+      e.self:MovePCInstance(308, instance_id, 5, 5, 0, 254);
+    end
 
   end
 

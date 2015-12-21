@@ -63,3 +63,21 @@ function event_say(e)
     end
   end
 end
+
+function event_trade(e)
+  local item_lib = require('items');
+  local client_globals = eq.get_qglobals(e.other);
+
+  if (client_globals["Wayfarer"] ~= nil and client_globals["Wayfarer"] == "3") then 
+    if (item_lib.check_turn_in(e.trade, {item1 = 41000})) then
+      e.self:Say("I heard you had become knowledgeable about all aspects of the dungeons we've found. I must confess that I never had you pegged for such a great adventurer! I suppose I should welcome you -- as a member of the Wayfarers Brotherhood. The honor is well deserved. Congratulations!");
+      e.self:Say("Here is a token of my appreciation. Should you lose your Wayfarers Brotherhood Emblem or misplace it, I or Barstre, Selephra, Ruanya, Teria, or Vual will replace it.");
+
+      e.other:Ding();
+      e.other:SummonItem(40999);
+      
+      eq.target_global("Wayfarer", "4", "F", 0, e.other:CharacterID(), 0);
+    end
+  end
+	item_lib.return_items(e.self, e.other, e.trade);
+end

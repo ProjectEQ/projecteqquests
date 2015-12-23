@@ -21,6 +21,13 @@ function event_click_door(e)
       e.self:MovePCInstance(308, instance_id, 5, 5, 0, 254);
     end
 
+  elseif (door_id == 5) then
+    instance_id = eq.get_instance_id('chambersb', 1);
+    if (instance_id ~= nil and instance_id ~= 0) then
+      e.self:MovePCInstance(305, instance_id, 0, 0, 0, 254);
+    else
+      e.self:Message(13, "You are not part of an instance.");
+    end
   end
 
 end

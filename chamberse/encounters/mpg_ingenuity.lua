@@ -45,6 +45,7 @@ function Ingenuity_Say(e)
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);
+    eq.set_timer("reflective", 45 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   end
 end
@@ -56,10 +57,10 @@ function Ingenuity_Timer(e)
     -- If the minutes reach 0; then the Master of Ingenuity has not died; 
     -- otherwise we would have stopped the timer.
     if (minutes_remaining == 0) then
-      eq.stop_timer('minutes');
+      eq.stop_all_timers();
       eq.spawn_condition('chamberse', instance_id, 1, 0);
 
-      eq.zone_emote(13, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
+      eq.zone_emote(13, "You have been found unworthy.");
       eq.depop();
 
       for k,v in pairs(player_list) do
@@ -68,6 +69,10 @@ function Ingenuity_Timer(e)
     else 
       eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
+  elseif (e.timer == "reflective") then
+    -- Spell: Reflective Sheen - 5822 
+    e.self:Emote("begins to cast a spell.  <Reflective Sheen>");
+    e.self:CastSpell(5822, e.self:GetID());
   end
 end
 
@@ -113,7 +118,7 @@ function Ingenuity_Death(e)
 
       client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
     else 
-      client:Message(15, "You have again defeated the Master of Igenuity.  Congratulations.");
+      client:Message(15, "You have again defeated the Master of Igenuity. Congratulations.");
     end
   end
 end

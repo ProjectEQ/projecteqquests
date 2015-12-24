@@ -43,7 +43,6 @@ function Weaponry_Say(e)
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);
-    eq.set_timer("reflective", 45 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   end
 end
@@ -52,7 +51,7 @@ function Weaponry_Timer(e)
   if (e.timer == "minutes") then 
     minutes_remaining = minutes_remaining - 1;
 
-    -- If the minutes reach 0; then the Master of Weaponry has not died; 
+    -- If the minutes reach 0; then the trial mobs are not died; 
     -- otherwise we would have stopped the timer.
     if (minutes_remaining == 0) then
       eq.stop_all_timers();
@@ -145,54 +144,23 @@ end
 
 -- The Bazu, Hulking Bazu, is weak to slashing. 
 function Bazu_Spawn(e)
-	e.self:ModSkillDmgTaken(36, -85); -- piercing
-	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
-	--e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
-	e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
-	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
-	e.self:ModSkillDmgTaken(7, -85); -- archery
-	e.self:ModSkillDmgTaken(51, -85); -- throwing
-	e.self:ModSkillDmgTaken(28, -85); -- hand to hand
-	e.self:ModSkillDmgTaken(24, -85); -- Evocation
+	e.self:ModSkillDmgTaken(1, 200); -- 1h slashing
 end
 
 -- The Dragorn, Hemkai the Ascendant, is weak to piercing. 
 function Ascendant_Spawn(e)
-	--e.self:ModSkillDmgTaken(36, -85); -- piercing
-	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
-	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
-	e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
-	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
-	e.self:ModSkillDmgTaken(7, -85); -- archery
-	e.self:ModSkillDmgTaken(51, -85); -- throwing
-	e.self:ModSkillDmgTaken(28, -85); -- hand to hand
-	e.self:ModSkillDmgTaken(24, -85); -- Evocation
+	e.self:ModSkillDmgTaken(36, 200); -- piercing
 end
 
 -- The Golem, Granite Stoneguardian, is weak to blunt weapons. 
-function Ascendant_Spawn(e)
-	e.self:ModSkillDmgTaken(36, -85); -- piercing
-	--e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
-	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
-	--e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
-	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
-	e.self:ModSkillDmgTaken(7, -85); -- archery
-	e.self:ModSkillDmgTaken(51, -85); -- throwing
-	e.self:ModSkillDmgTaken(28, -85); -- hand to hand
-	e.self:ModSkillDmgTaken(24, -85); -- Evocation
+function Stoneguardian_Spawn(e)
+	e.self:ModSkillDmgTaken(0, 200); -- 1h blunt
+	e.self:ModSkillDmgTaken(2, 200); -- 2h blunt
 end
 
 -- The Lightning mob, Steelshock, is weak to nukes. 
-function Ascendant_Spawn(e)
-	e.self:ModSkillDmgTaken(36, -85); -- piercing
-	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
-	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
-	e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
-	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
-	e.self:ModSkillDmgTaken(7, -85); -- archery
-	e.self:ModSkillDmgTaken(51, -85); -- throwing
-	e.self:ModSkillDmgTaken(28, -85); -- hand to hand
-	--e.self:ModSkillDmgTaken(24, -85); -- Evocation
+function Steelshock_Spawn(e)
+	e.self:ModSkillDmgTaken(2, 200); -- 2h blunt
 end
 
 function Mini_Death(e)
@@ -213,10 +181,10 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_weaponry', Event.timer,          305004, Weaponry_Timer);
   eq.register_npc_event('mpg_weaponry', Event.signal,         305004, Weaponry_Signal);
 
-  --eq.register_npc_event('mpg_weaponry', Event.spawn,          305001, Ascendant_Spawn);
-  --eq.register_npc_event('mpg_weaponry', Event.spawn,          305002, Stoneguardian_Spawn);
-  --eq.register_npc_event('mpg_weaponry', Event.spawn,          305003, Bazu_Spawn);
-  --eq.register_npc_event('mpg_weaponry', Event.spawn,          305000, Steelshock_Spawn);
+  eq.register_npc_event('mpg_weaponry', Event.spawn,          305001, Ascendant_Spawn);
+  eq.register_npc_event('mpg_weaponry', Event.spawn,          305002, Stoneguardian_Spawn);
+  eq.register_npc_event('mpg_weaponry', Event.spawn,          305003, Bazu_Spawn);
+  eq.register_npc_event('mpg_weaponry', Event.spawn,          305000, Steelshock_Spawn);
 
   eq.register_npc_event('mpg_weaponry', Event.death_complete, 305001, Mini_Death);
   eq.register_npc_event('mpg_weaponry', Event.death_complete, 305002, Mini_Death);

@@ -50,7 +50,7 @@ function Subversion_Say(e)
     
     -- Until EVENT_LOOT gets exported to lua for stuffs; just set a 5min timer; it might 
     -- take about 5minutes to collect 300 points; in my mind.
-    eq.set_timer("fake", 1 * 60 * 1000);
+    eq.set_timer("fake", 5 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   end
 end

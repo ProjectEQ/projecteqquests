@@ -126,10 +126,6 @@ function Efficiency_Signal(e)
       client = entity_list:GetClientByCharID(v) 
       client_globals = eq.get_qglobals(client);
     
-      -- Get the number of MPG Trials complete; There are a max of 4 AAs to award.
-      local mpg_group_aas_granted = tonumber(client_globals["mpg_group_aas_granted"]);
-      if ( mpg_group_aas_granted == nil ) then mpg_group_aas_granted = 0; end
-      
       -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
       -- a Character complets a trial.
       local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
@@ -142,11 +138,8 @@ function Efficiency_Signal(e)
         has_done_this_trial = true;
       end
 
-      -- Has character maxed out the Trials of Mata Muram (4) 
       -- Has character done this trial before?
-      if ( mpg_group_aas_granted >= 0 and mpg_group_aas_granted < 4 and has_done_this_trial == false ) then
-        mpg_group_aas_granted = mpg_group_aas_granted + 1;
-        eq.target_global("mpg_group_aas_granted", tostring(mpg_group_aas_granted), "F", 0, v, 0);
+      if ( has_done_this_trial == false ) then
         eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
         client:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
 

@@ -109,10 +109,6 @@ function Subversion_Death(e)
     client = entity_list:GetClientByCharID(v) 
     client_globals = eq.get_qglobals(client);
   
-    -- Get the number of MPG Trials complete; There are a max of 4 AAs to award.
-    local mpg_group_aas_granted = tonumber(client_globals["mpg_group_aas_granted"]);
-    if ( mpg_group_aas_granted == nil ) then mpg_group_aas_granted = 0; end
-    
     -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
     -- a Character complets a trial.
     local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
@@ -125,9 +121,8 @@ function Subversion_Death(e)
       has_done_this_trial = true;
     end
 
-    -- Has character maxed out the Trials of Mata Muram (4) 
     -- Has character done this trial before?
-    if ( mpg_group_aas_granted >= 0 and mpg_group_aas_granted < 4 and has_done_this_trial == false ) then
+    if ( has_done_this_trial == false ) then
       mpg_group_aas_granted = mpg_group_aas_granted + 1;
       eq.target_global("mpg_group_aas_granted", tostring(mpg_group_aas_granted), "F", 0, v, 0);
       eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
@@ -163,21 +158,15 @@ function Deathtouch_Tick(e)
   end
 end
 
-function Subversion_Tick(e)
-  local el = eq.get_entity_list();
-
-end
-
 function event_encounter_load(e)
   eq.register_npc_event('mpg_subversion', Event.spawn,          306001, Subversion_Spawn);
   eq.register_npc_event('mpg_subversion', Event.say,            306001, Subversion_Say);
   eq.register_npc_event('mpg_subversion', Event.death_complete, 306001, Subversion_Death);
   eq.register_npc_event('mpg_subversion', Event.timer,          306001, Subversion_Timer);
 
-  eq.register_npc_event('mpg_subversion', Event.tick,           308012, Deathtouch_Tick);
+  eq.register_npc_event('mpg_subversion', Event.tick,           306020, Deathtouch_Tick);
 
   eq.register_npc_event('mpg_subversion', Event.signal,         306000, Guardian_Signal);
-
 end
 
 function event_encounter_unload(e)

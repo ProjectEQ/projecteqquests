@@ -88,10 +88,6 @@ function Ingenuity_Death(e)
     client = entity_list:GetClientByCharID(v) 
     client_globals = eq.get_qglobals(client);
   
-    -- Get the number of MPG Trials complete; There are a max of 4 AAs to award.
-    local mpg_group_aas_granted = tonumber(client_globals["mpg_group_aas_granted"]);
-    if ( mpg_group_aas_granted == nil ) then mpg_group_aas_granted = 0; end
-    
     -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
     -- a Character complets a trial.
     local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
@@ -104,11 +100,8 @@ function Ingenuity_Death(e)
       has_done_this_trial = true;
     end
 
-    -- Has character maxed out the Trials of Mata Muram (4) 
     -- Has character done this trial before?
-    if ( mpg_group_aas_granted >= 0 and mpg_group_aas_granted < 4 and has_done_this_trial == false ) then
-      mpg_group_aas_granted = mpg_group_aas_granted + 1;
-      eq.target_global("mpg_group_aas_granted", tostring(mpg_group_aas_granted), "F", 0, v, 0);
+    if ( has_done_this_trial == false ) then
       eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
       client:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
 
@@ -126,7 +119,7 @@ function Deathtouch_Tick(e)
   for k,v in pairs(my_list) do
     local client = eq.get_entity_list():GetClientByCharID(v);
     if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
+      if and (client:GetX() > -64 or client:GetY() < 122 ) then
         client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
         if ( warnings >= 10 ) then
           client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");

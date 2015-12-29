@@ -47,8 +47,32 @@ function Ingenuity_Say(e)
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.set_timer("reflective", 45 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+  elseif (e.message:findi('test') ) then
+    
+  local entity_list = eq.get_entity_list();
+    for k,v in pairs(player_list) do
+
+      local client = entity_list:GetClientByCharID(v) 
+      local client_globals = eq.get_qglobals(client);
+      local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
+      if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
+
+
+      local i=1;
+      local c=0;
+      local v = mpg_group_trials;
+
+      while(i>0)do if(v-i)>=0 then c=c+1;v=v-i;end i=i/2 end
+
+      eq.zone_emote(15, "i: " .. i);
+      eq.zone_emote(15, "c: " .. c);
+      eq.zone_emote(15, "v: " .. v);
+
+    end
+  
   end
 end
+
 
 function Ingenuity_Timer(e)
   if (e.timer == "minutes") then 

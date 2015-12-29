@@ -58,11 +58,17 @@ function Ingenuity_Say(e)
       if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
 
 
-      local i=1;
-      local c=0;
+      local i = 32;
+      local c = 0;
       local v = mpg_group_trials;
 
-      while(i>0)do if(v-i)>=0 then c=c+1;v=v-i;end i=i/2 end
+      while (i>0) do 
+        if (v-i) >= 0 then 
+          c = c+1;
+          v = v-i;
+        end 
+        i = i/2;
+      end
 
       eq.zone_emote(15, "i: " .. i);
       eq.zone_emote(15, "c: " .. c);
@@ -130,8 +136,26 @@ function Ingenuity_Death(e)
 
     -- Has character done this trial before?
     if ( has_done_this_trial == false ) then
+
+      local i = 32;
+      local c = 0;
+      local v = mpg_group_trials;
+
+      while (i>0) do 
+        if (v-i) >= 0 then 
+          c = c+1;
+          v = v-i;
+        end 
+        i = i/2;
+      end
+
+      local aas_to_grant = c + 1
+
+      eq.zone_emote(15, "i: " .. i);
+      eq.zone_emote(15, "c: " .. c);
+      eq.zone_emote(15, "v: " .. v);
       eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
-      client:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
+      client:GrantAlternateAdvancementAbility(466, aas_to_grant);
 
       client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
     else 

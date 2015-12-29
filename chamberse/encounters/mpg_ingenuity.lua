@@ -49,33 +49,8 @@ function Ingenuity_Say(e)
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   elseif (e.message:findi('test') ) then
     
-  local entity_list = eq.get_entity_list();
-    for k,v in pairs(player_list) do
-
-      local client = entity_list:GetClientByCharID(v) 
-      local client_globals = eq.get_qglobals(client);
-      local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
-      if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
-
-
-      local i = 32;
-      local c = 0;
-      local v = mpg_group_trials;
-
-      while (i>0) do 
-        if (v-i) >= 0 then 
-          c = c+1;
-          v = v-i;
-        end 
-        i = i/2;
-      end
-
-      eq.zone_emote(15, "i: " .. i);
-      eq.zone_emote(15, "c: " .. c);
-      eq.zone_emote(15, "v: " .. v);
-
-    end
-  
+    local mpg_helper = require("mpg_helper");
+    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
   end
 end
 
@@ -111,57 +86,9 @@ function Ingenuity_Death(e)
   eq.stop_all_timers();
   eq.spawn2(308004, 0, 0, -212, 273, 71, 20);
 
-  local instance_requests = require("instance_requests");
-  local entity_list = eq.get_entity_list();
-  local client;
-
-  for k,v in pairs(player_list) do
-    client = nil;
-    -- Set a 72 hour lockout on a Win
-    eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
-    client = entity_list:GetClientByCharID(v) 
-    client_globals = eq.get_qglobals(client);
+  local mpg_helper = require("mpg_helper");
+  mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
   
-    -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
-    -- a Character complets a trial.
-    local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
-    if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
-    
-    local has_done_this_trial; 
-    if (bit.band(mpg_group_trials, this_bit) == 0) then
-      has_done_this_trial = false;
-    else
-      has_done_this_trial = true;
-    end
-
-    -- Has character done this trial before?
-    if ( has_done_this_trial == false ) then
-
-      local i = 32;
-      local c = 0;
-      local v = mpg_group_trials;
-
-      while (i>0) do 
-        if (v-i) >= 0 then 
-          c = c+1;
-          v = v-i;
-        end 
-        i = i/2;
-      end
-
-      local aas_to_grant = c + 1
-
-      eq.zone_emote(15, "i: " .. i);
-      eq.zone_emote(15, "c: " .. c);
-      eq.zone_emote(15, "v: " .. v);
-      eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
-      client:GrantAlternateAdvancementAbility(466, aas_to_grant);
-
-      client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
-    else 
-      client:Message(15, "You have again defeated the Master of Igenuity. Congratulations.");
-    end
-  end
 end
 
 function Deathtouch_Tick(e)

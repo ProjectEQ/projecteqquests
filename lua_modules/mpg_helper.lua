@@ -1,5 +1,15 @@
 local mpg_helper = {};
 
+-- Function: UpdateGroupTrialLockout
+--
+-- Description: 
+--  Extracted code such that it can be reused in all 6 of the group MPG trials.
+--
+-- Example Usage:
+--  local this_bit = 1;
+--  local lockout_name = "MPG_weaponry";
+--  local mpg_helper = require("mpg_helper");
+--  mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
 function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout_name_in)
   local instance_requests = require("instance_requests");
   local entity_list = eq.get_entity_list();
@@ -27,29 +37,22 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
     -- Has character done this trial before?
     if ( has_done_this_trial == false ) then
 
-      local i = 32;
+      local trial_bit_list = {1,2,4,8,16,32};
       local aas_to_grant = 0;
-      local v = mpg_group_trials;
-
-      while (i>0) do 
-        if (v-i) >= 0 then 
-          aas_to_grant = aas_to_grant+1;
-          v = v-i;
-        end 
-        i = i/2;
+      for bitkey,bitval in pairs(trial_bit_list) do
+        if (bit.band(mpg_group_trials,bitval) == 0 ) then
+        else
+          aas_to_grant = aas_to_grant + 1;
+        end
       end
+      aas_to_grant = aas_to_grant + 1;
 
-      aas_to_grant = aas_to_grant + 1
-
-      eq.zone_emote(15, "i: " .. i);
-      eq.zone_emote(15, "aas_to_grant: " .. aas_to_grant);
-      eq.zone_emote(15, "v: " .. v);
       eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit_in)), "F", 0, v, 0);
       client:GrantAlternateAdvancementAbility(466, aas_to_grant);
 
       client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
     else 
-      client:Message(15, "You have again defeated the Master of Igenuity. Congratulations.");
+      client:Message(15, "You have again mastered this trial.  Congratulations.");
     end
   end
 end

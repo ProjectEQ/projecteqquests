@@ -1,7 +1,23 @@
+-- MPG Trial General Notes
+--
+-- MPG Group Trial Bits:
+-- 1  MPG_fear
+-- 2  MPG_ingenuity
+-- 4  MPG_weaponry
+-- 8  MPG_subversion
+-- 16 MPG_efficiency
+-- 32 MPG_destruciton
+--
+-- Lockout on Win: 72 hours
+-- Lockout on Loss: 2 hours
+--
+-- Group Trial Version 1 of zone
+-- Raid Trial Version 2 of zone
 local instance_id;
 local mobs_died;
 local mobs_must_die;
 local minutes_remaining;
+local this_bit = 1;
 local lockout_name = 'MPG_fear';
 local lockout_win = 72;
 local lockout_loss = 2;
@@ -14,6 +30,7 @@ function Fear_Spawn(e)
   mobs_must_die = 15;
   minutes_remaining = 15;
   player_list = eq.get_characters_in_instance(instance_id);
+  this_bit = 1;
 
   eq.spawn_condition('chambersa', instance_id, 1, 1 );
   eq.spawn_condition('chambersa', instance_id, 2, 0 );
@@ -32,6 +49,9 @@ function Fear_Say(e)
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
 
+  elseif ( e.message:findi('test') and e.other:Admin() > 80 ) then
+    local mpg_helper = require("mpg_helper");
+    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
   end
 end
 
@@ -56,36 +76,9 @@ function Fear_Timer(e)
         eq.spawn2(304013, 0, 0, -212, 273, 71, 20);
         eq.depop();
 
-        for k,v in pairs(player_list) do
-          -- Set a 72 hour lockout on a Win.
-          eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
+        local mpg_helper = require("mpg_helper");
+        mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
 
-          local this_bit = 1;
-          local client = eq.get_entity_list():GetClientByCharID(v);
-          local client_globals = eq.get_qglobals(client);
-
-          -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
-          -- a Character complets a trial.
-          local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
-          if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
-          
-          local has_done_this_trial; 
-          if (bit.band(mpg_group_trials, this_bit) == 0) then
-            has_done_this_trial = false;
-          else
-            has_done_this_trial = true;
-          end
-
-          -- Has character done this trial before?
-          if ( has_done_this_trial == false ) then
-            eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
-            client:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
-            client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
-          else
-            client:Message(15, "You have again defeated the Master of Fear.  Congratulations.");
-          end
-        end
-        
       else
         eq.zone_emote(13, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
         eq.depop();

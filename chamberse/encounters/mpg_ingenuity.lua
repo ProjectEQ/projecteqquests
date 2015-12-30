@@ -47,10 +47,6 @@ function Ingenuity_Say(e)
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.set_timer("reflective", 45 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
-  elseif (e.message:findi('test') ) then
-    
-    local mpg_helper = require("mpg_helper");
-    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
   end
 end
 
@@ -88,7 +84,6 @@ function Ingenuity_Death(e)
 
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
-  
 end
 
 function Deathtouch_Tick(e)

@@ -53,8 +53,8 @@ function Efficiency_Say(e)
     eq.set_timer("test_of_efficiency", 5 * 60 * 1000);
     eq.set_timer("waves", 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
-  elseif (e.message:findi("end") and e.other:Admin() >= 80)then
-    eq.spawn_condition(this_zone, instance_id, 1, 0);
+  elseif ( e.message:findi("test") and e.other:Admin() > 80) then
+    eq.signal( 307000, 1);
   end
 end
 
@@ -114,40 +114,10 @@ function Efficiency_Signal(e)
     
     eq.stop_all_timers();
     eq.spawn2(307005, 0, 0, -212, 273, 71, 20);
+    eq.depop();
 
-    local instance_requests = require("instance_requests");
-    local entity_list = eq.get_entity_list();
-    local client;
-
-    for k,v in pairs(player_list) do
-      client = nil;
-      -- Set a 72 hour lockout on a Win
-      eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
-      client = entity_list:GetClientByCharID(v) 
-      client_globals = eq.get_qglobals(client);
-    
-      -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
-      -- a Character complets a trial.
-      local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
-      if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
-      
-      local has_done_this_trial; 
-      if (bit.band(mpg_group_trials, this_bit) == 0) then
-        has_done_this_trial = false;
-      else
-        has_done_this_trial = true;
-      end
-
-      -- Has character done this trial before?
-      if ( has_done_this_trial == false ) then
-        eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit)), "F", 0, v, 0);
-        client:GrantAlternateAdvancementAbility(466, mpg_group_aas_granted);
-
-        client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
-      else 
-        client:Message(15, "You have again defeated the Master of Igenuity. Congratulations.");
-      end
-    end
+    local mpg_helper = require("mpg_helper");
+    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
   end
 end
 
@@ -181,8 +151,8 @@ end
 function event_encounter_load(e)
   eq.register_npc_event('mpg_efficiency', Event.spawn,          307000, Efficiency_Spawn);
   eq.register_npc_event('mpg_efficiency', Event.say,            307000, Efficiency_Say);
-  eq.register_npc_event('mpg_efficiency', Event.death_complete, 307000, Efficiency_Death);
   eq.register_npc_event('mpg_efficiency', Event.timer,          307000, Efficiency_Timer);
+  eq.register_npc_event('mpg_efficiency', Event.signal,         307000, Efficiency_Signal);
 
   eq.register_npc_event('mpg_efficiency', Event.tick,           308012, Deathtouch_Tick);
 

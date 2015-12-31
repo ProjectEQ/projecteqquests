@@ -67,7 +67,7 @@ sub EVENT_ITEM
 	if (plugin::check_handin(\%itemcount, 51446 => 1, 51474 => 2)) #hands
 		{
 		quest::say("bows before you. 'Thank you, $name. You have helped prevent the Muramites from using my former home as part of their information network. You've also brought me the fingers of two discordlings, the very beasts that are responsible for the tower's construction. As promised, I offer my cloth gloves as your reward.");
-		quest::experience(10000);
+      quest::exp(10000);
 			if($class eq "Enchanter")
 				{
 				quest::summonitem(70835);

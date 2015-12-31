@@ -42,8 +42,9 @@ function Subversion_Say(e)
   elseif (e.message:findi("begin")) then
     eq.spawn_condition(this_zone, instance_id, 1, 1);
 
-    --e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
-    --e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+    e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);

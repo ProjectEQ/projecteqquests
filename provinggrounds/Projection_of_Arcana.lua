@@ -17,7 +17,7 @@ function event_say(e)
   elseif (e.message:findi('small-scale') ) then
     e.self:Say("'Every test has its rules and these trials are no exception. The following guidelines must be followed to the letter, or else you stand to forfeit or perish. You are allowed no more than six participants in the battle. Once the trial has begun, you must remain in the combat area. Violators of this rule will be warned and then destroyed. Your progress will be carefully monitored. If you take too long, you will fail. These are the rules and they are not negotiable.'");
 
-  elseif (e.message:findi("efficency")) then
+  elseif (e.message:findi("efficiency")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_efficency', 'MPG: The Mastery of Weaponry' } } 
     local requests = instance_requests.ValidateGroupRequest('chambersd', 1, 2, 6, 65, e.other, lockouts);

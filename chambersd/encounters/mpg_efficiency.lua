@@ -67,7 +67,6 @@ end
 
 function Efficiency_Timer(e)
   if (e.timer == "test_of_efficiency") then
-eq.zone_emote(14, "Test of Efficiency");
     e.self:CastSpell(5701, e.self:GetID());
 
   elseif (e.timer == "waves") then

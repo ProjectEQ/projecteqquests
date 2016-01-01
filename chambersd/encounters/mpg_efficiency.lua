@@ -43,7 +43,7 @@ function Efficiency_Say(e)
     e.self:Say("'This is the Mastery of Efficiency trial. You must demonstrate your ability to function under less than perfect conditions, battling with limited resources. Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
 
   elseif (e.message:findi("begin")) then
-    eq.spawn_condition(this_zone, instance_id, 1, 1);
+    this_wave = 0;
 
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
@@ -53,6 +53,13 @@ function Efficiency_Say(e)
     eq.set_timer("test_of_efficiency", 5 * 60 * 1000);
     eq.set_timer("waves", 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+    
+  elseif ( e.message:findi('end') and e.other:Admin() > 80) then
+
+    eq.spawn_condition(this_zone, instance_id, 1, 0);
+    eq.spawn_condition(this_zone, instance_id, 2, 0);
+    eq.zone_emote(14, 'Resetting spawn conditions');
+
   elseif ( e.message:findi("test") and e.other:Admin() > 80) then
     eq.signal( 307000, 1);
   end
@@ -60,7 +67,8 @@ end
 
 function Efficiency_Timer(e)
   if (e.timer == "test_of_efficiency") then
-    e.self:CastSpell(5701, e.self:GetID())
+eq.zone_emote(14, "Test of Efficiency");
+    e.self:CastSpell(5701, e.self:GetID());
 
   elseif (e.timer == "waves") then
     eq.stop_timer('waves');
@@ -75,7 +83,6 @@ function Efficiency_Timer(e)
       and el:IsMobSpawnedByNpcTypeID(307003) == false) then 
 
       this_wave = this_wave + 1;
-
       eq.spawn_condition(this_zone, instance_id, 1, 0);
       if (this_wave < 4) then
         eq.spawn_condition(this_zone, instance_id, 1, 1);
@@ -154,7 +161,7 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_efficiency', Event.timer,          307000, Efficiency_Timer);
   eq.register_npc_event('mpg_efficiency', Event.signal,         307000, Efficiency_Signal);
 
-  eq.register_npc_event('mpg_efficiency', Event.tick,           308012, Deathtouch_Tick);
+  eq.register_npc_event('mpg_efficiency', Event.tick,           307006, Deathtouch_Tick);
 
   eq.register_npc_event('mpg_efficiency', Event.death_complete, 307004, Enforcer_Death);
 

@@ -17,42 +17,48 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
   local client_globals;
 
   for k,v in pairs(player_list_in) do
-    -- Set a 72 hour lockout on a Win
-    eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
     client = entity_list:GetClientByCharID(v) 
-    client_globals = eq.get_qglobals(client);
-  
-    -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
-    -- a Character complets a trial.
-    local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
-    if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
+    if ( client.valid ) then 
+      -- Set a 72 hour lockout on a Win (And in the Zone)
+      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
+      client_globals = eq.get_qglobals(client);
     
-    local has_done_this_trial; 
-    if (bit.band(mpg_group_trials, this_bit_in) == 0) then
-      has_done_this_trial = false;
-    else
-      has_done_this_trial = true;
-    end
-
-    -- Has character done this trial before?
-    if ( has_done_this_trial == false ) then
-
-      local trial_bit_list = {1,2,4,8,16,32};
-      local aas_to_grant = 0;
-      for bitkey,bitval in pairs(trial_bit_list) do
-        if (bit.band(mpg_group_trials,bitval) == 0 ) then
-        else
-          aas_to_grant = aas_to_grant + 1;
-        end
+      -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
+      -- a Character complets a trial.
+      local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
+      if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
+      
+      local has_done_this_trial; 
+      if (bit.band(mpg_group_trials, this_bit_in) == 0) then
+        has_done_this_trial = false;
+      else
+        has_done_this_trial = true;
       end
-      aas_to_grant = aas_to_grant + 1;
 
-      eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit_in)), "F", 0, v, 0);
-      client:GrantAlternateAdvancementAbility(466, aas_to_grant);
+      -- Has character done this trial before?
+      if ( has_done_this_trial == false ) then
 
-      client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
-    else 
-      client:Message(15, "You have again mastered this trial.  Congratulations.");
+        local trial_bit_list = {1,2,4,8,16,32};
+        local aas_to_grant = 0;
+        for bitkey,bitval in pairs(trial_bit_list) do
+          if (bit.band(mpg_group_trials,bitval) == 0 ) then
+          else
+            aas_to_grant = aas_to_grant + 1;
+          end
+        end
+        aas_to_grant = aas_to_grant + 1;
+
+        eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit_in)), "F", 0, v, 0);
+        client:GrantAlternateAdvancementAbility(466, aas_to_grant);
+
+        client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
+      else 
+        client:Message(15, "You have again mastered this trial.  Congratulations.");
+      end
+    else
+      -- Client wasn't in the zone at the end of the trial; set a 2 hour lockout before
+      -- this client can redo the trial (basically a failure).
+      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
     end
   end
 end

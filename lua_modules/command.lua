@@ -31,7 +31,7 @@ function command_lockouts(e)
       { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"},
       { "MPG_fear", "MPG: The Mastery of Fear"},
       { "MPG_weaponry", "MPG: The Mastery of Weaponry"},
-      { "MPG_subvion", "MPG: The Mastery of Subversion"},
+      { "MPG_subversion", "MPG: The Mastery of Subversion"},
       { "MPG_efficiency", "MPG: The Mastery of Efficiency"},
       { "MPG_ingenuity", "MPG: The Mastery of Ingenuity"},
       { "MPG_destruction", "MPG: The Mastery of Destruction"}

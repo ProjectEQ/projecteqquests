@@ -1,2 +1,1 @@
-eq.load_encounter('mpg_fear');
-eq.load_encounter('mpg_hate');
+eq.load_encounter('mpg_destruction');

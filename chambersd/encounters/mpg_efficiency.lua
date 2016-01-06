@@ -67,7 +67,7 @@ end
 
 function Efficiency_Timer(e)
   if (e.timer == "test_of_efficiency") then
-    e.self:CastSpell(5701, e.self:GetID());
+    e.self:CastSpell(5708, e.self:GetID());
 
   elseif (e.timer == "waves") then
     eq.stop_timer('waves');

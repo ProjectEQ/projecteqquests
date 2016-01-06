@@ -47,12 +47,15 @@ function Destruction_Say(e)
     e.self:Say("'This is the Mastery of Destruction trial. You must demonstrate your ability to annihilate your enemies, destroying as many opponents as possible within a given time frame. Are you ready to [ " .. eq.say_link('begin',false,'begin') .. " ]?'");
 
   elseif (e.message:findi("begin")) then
+    eq.spawn_condition(this_zone, instance_id, 1, 0);
     eq.spawn_condition(this_zone, instance_id, 1, 1);
 
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+  elseif (e.message:findi("test") and e.other:Admin() > 80) then
+    eq.signal(309061, 1);
   end
 end
 
@@ -75,6 +78,9 @@ function Destruction_Timer(e)
     else 
       eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
+  elseif ( e.timer == 'destruction' ) then
+    -- Every 6 seconds the Master of Destruction is alive; make him harder
+    e.self:ModifyNPCStat("max_hit", tostring( e.self:GetMaxDMG() + 500 ) );
   end
 end
 
@@ -117,6 +123,9 @@ function Destruction_Signal(e)
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
     e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
+
+    eq.set_timer('destruction', 6 * 1000);
+
   end
 end
 

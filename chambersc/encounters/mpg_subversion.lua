@@ -24,6 +24,7 @@ local warnings;
 local minutes_remaining;
 local player_list;
 local instance_requests;
+local points;
 
 function Subversion_Spawn(e)
   instance_requests = require("instance_requests");
@@ -31,6 +32,7 @@ function Subversion_Spawn(e)
   player_list = eq.get_characters_in_instance(instance_id);
   minutes_remaining = 15;
   warnings = 0;
+  points = 0;
 
   eq.spawn_condition(this_zone, instance_id, 1, 0);
 end
@@ -51,7 +53,6 @@ function Subversion_Say(e)
     
     -- Until EVENT_LOOT gets exported to lua for stuffs; just set a 5min timer; it might 
     -- take about 5minutes to collect 300 points; in my mind.
-    eq.set_timer("fake", 5 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   end
 end
@@ -75,14 +76,6 @@ function Subversion_Timer(e)
     else 
       eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
-  elseif (e.timer == "fake") then
-    -- The fake Timer to be removed when we can catch item looting events.
-    eq.signal(306000, 1);
-
-    e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
-    e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
-    e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
-
   end
 end
 
@@ -127,11 +120,35 @@ function Deathtouch_Tick(e)
   end
 end
 
+function Subversion_Signal(e)
+  if (e.signal == 1) then
+    -- Copper Seal of Subversion = 10 pts
+    points = points + 10;
+  elseif (e.signal == 2) then
+    -- Silver Seal of Subversion = 20 pts
+    points = points + 20;
+  elseif (e.signal == 3) then
+    -- Gold Seal of Subversion = 30 pts
+    points = points + 30;
+  end
+
+  if (points >= 300) then
+    -- Notify the Guardians to become active
+    eq.signal(306000, 1);
+
+    -- Activate Thyself
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+    e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_subversion', Event.spawn,          306001, Subversion_Spawn);
   eq.register_npc_event('mpg_subversion', Event.say,            306001, Subversion_Say);
   eq.register_npc_event('mpg_subversion', Event.death_complete, 306001, Subversion_Death);
   eq.register_npc_event('mpg_subversion', Event.timer,          306001, Subversion_Timer);
+  eq.register_npc_event('mpg_subversion', Event.signal,         306001, Subversion_Signal);
 
   eq.register_npc_event('mpg_subversion', Event.tick,           306020, Deathtouch_Tick);
 

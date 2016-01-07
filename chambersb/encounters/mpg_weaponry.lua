@@ -107,22 +107,41 @@ end
 -- The Bazu, Hulking Bazu, is weak to slashing. 
 function Bazu_Spawn(e)
 	e.self:ModSkillDmgTaken(1, 200); -- 1h slashing
+	e.self:ModSkillDmgTaken(3, 200); -- 2h slashing
+  e.self:ModSkillDmgTaken(36,-15); -- piercing
+  e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
+  e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
+  e.self:ModSkillDmgTaken(28, 15); -- h2h
 end
 
 -- The Dragorn, Hemkai the Ascendant, is weak to piercing. 
 function Ascendant_Spawn(e)
 	e.self:ModSkillDmgTaken(36, 200); -- piercing
+	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
+	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
+  e.self:ModSkillDmgTaken(0, -15); -- 1h blunt
+  e.self:ModSkillDmgTaken(2, -15); -- 2h blunt
+  e.self:ModSkillDmgTaken(28, 15); -- h2h
 end
 
 -- The Golem, Granite Stoneguardian, is weak to blunt weapons. 
 function Stoneguardian_Spawn(e)
 	e.self:ModSkillDmgTaken(0, 200); -- 1h blunt
 	e.self:ModSkillDmgTaken(2, 200); -- 2h blunt
+	e.self:ModSkillDmgTaken(28, 200); -- h2h
+	e.self:ModSkillDmgTaken(36, -85); -- piercing
+	e.self:ModSkillDmgTaken(1, -15); -- 1h slashing
+	e.self:ModSkillDmgTaken(3, -15); -- 2h slashing
 end
 
 -- The Lightning mob, Steelshock, is weak to nukes. 
 function Steelshock_Spawn(e)
-	e.self:ModSkillDmgTaken(2, 200); -- 2h blunt
+	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
+	e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
+	e.self:ModSkillDmgTaken(28,-15); -- h2h
+	e.self:ModSkillDmgTaken(36,-85); -- piercing
+	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
+	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
 end
 
 function Mini_Death(e)

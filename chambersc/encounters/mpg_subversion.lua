@@ -24,7 +24,7 @@ local warnings;
 local minutes_remaining;
 local player_list;
 local instance_requests;
-local points;
+local points=0;
 
 function Subversion_Spawn(e)
   instance_requests = require("instance_requests");
@@ -141,6 +141,18 @@ function Subversion_Signal(e)
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
     e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
   end
+
+  -- Use Signal 9 to force Jagged Rust (Zam describes this as "nasty effects")
+  if (e.signal == 9) then
+    e.self:CastSpell(6130, e.self:GetID());
+  end
+end
+
+function Chest_Opened(e)
+  local chance = eq.ChooseRandom(1,2,3);
+  if ( chance == 1 ) then 
+    eq.signal(306001, 9);
+  end
 end
 
 function event_encounter_load(e)
@@ -153,6 +165,13 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_subversion', Event.tick,           306020, Deathtouch_Tick);
 
   eq.register_npc_event('mpg_subversion', Event.signal,         306000, Guardian_Signal);
+
+  eq.register_npc_event('mpg_subversion', Event.death_complete, 306002, Chest_Opened);
+  eq.register_npc_event('mpg_subversion', Event.death_complete, 306003, Chest_Opened);
+  eq.register_npc_event('mpg_subversion', Event.death_complete, 306004, Chest_Opened);
+  eq.register_npc_event('mpg_subversion', Event.death_complete, 306005, Chest_Opened);
+  eq.register_npc_event('mpg_subversion', Event.death_complete, 306007, Chest_Opened);
+  eq.register_npc_event('mpg_subversion', Event.death_complete, 306008, Chest_Opened);
 end
 
 function event_encounter_unload(e)

@@ -44,7 +44,7 @@ function InstanceRequests.ValidateGroupRequest(instance, version, min_players, m
   return request;
 end
 
-function InstanceRequests.ValidateRaidRequest(instance, version,  min_players, max_players, min_level, req_item_id, requestor, event_globals)
+function InstanceRequests.ValidateRaidRequest(instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
   -- You do not meet the player count requirement.  You have 1 players.  You must have at least 6 and no more than 54.
   local player_list = nil;
   local player_list_count = nil;
@@ -64,10 +64,11 @@ function InstanceRequests.ValidateRaidRequest(instance, version,  min_players, m
             for i = 0, player_list_count - 1, 1 do
               local client = player_list:GetMember(i):CastToClient();
               if (client.valid) then
-                if (req_item_id ~= nil) then
-                  if (client:HasItem(req_item_id) == false) then
+                if (item_requirements ~= nil) then
+                  local item_validation = InstanceRequests.ValidateItemRequirements(client, item_requirements);
+                  if (item_validation == false) then
                     requestor:Message(13, client:GetCleanName() .. " is missing a required item.");
-                    return request;
+                    return request; 
                   end
                 end
                 local client_bits = InstanceRequests.GetClientLockoutBits(client, event_globals);
@@ -98,6 +99,25 @@ function InstanceRequests.ValidateRaidRequest(instance, version,  min_players, m
     requestor:Message(13, "You are not in a valid raid.");
   end
   return request;
+end
+
+function InstanceRequests.ValidateItemRequirements(client, item_requirements)
+  if (item_requirements.require_any ~= nil) then
+    for i, id in ipairs(item_requirements.require_any) do
+      if (client:HasItem(id) == true) then
+        return true;
+      end
+    end
+    return false;
+  else
+    local required_ids = item_requirements.require_all or item_requirements;
+    for i, id in ipairs(required_ids) do
+      if (client:HasItem(id) == false) then
+        return false;
+      end
+    end
+    return true;
+  end
 end
 
 function InstanceRequests.ValidateInstanceRequest(instance, max_players, requestor, event_globals)

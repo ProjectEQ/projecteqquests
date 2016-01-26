@@ -9,3 +9,7 @@ function event_click_door(e)
 
   end
 end
+
+function event_zone(e)
+  e.self:ClearCompassMark();
+end

@@ -13,7 +13,7 @@ function event_say(e)
       }
       local request = instance_requests.ValidateRaidRequest("takc", 0, 6, 54, 61, {any = {41000, 40999}}, e.other, lockout_globals);
       if (request.valid and request.flags == 1) then
-        instance_requests.DisplayLockouts(e.other, e.other, lockout_globals)
+        instance_requests.DisplayLockouts(e.other, e.other, lockout_globals);
       elseif (request.valid and request.flags == 0) then
         local raid = e.other:GetRaid();
         local instance_id = eq.create_instance("takc", 0, 21600);

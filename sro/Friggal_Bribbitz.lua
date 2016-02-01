@@ -18,7 +18,7 @@ function event_say(e)
         instance_requests.DisplayLockouts(e.other, e.other, lockout_globals)
       elseif (request.valid and request.flags == 0) then
         local raid = e.other:GetRaid();
-        local instance_id = eq.create_instance("gukg", 0, 21600);
+        local instance_id = eq.create_instance("gukg", 50, 21600);
         eq.set_global(instance_id.."_gukg_bit",tostring(request.flags),7,"H6");
         if (raid.valid) then
           eq.assign_raid_to_instance(instance_id);

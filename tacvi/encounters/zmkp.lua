@@ -64,7 +64,7 @@ local ZMKP_Inactive = "19,1^20,1^21,1^24,1^25,1";
 local ZMKP_AC     = 1800; -- Defense
 local ZMKP_MaxHit = 3900; -- Fury
 local ZMKP_MinHit = 1430;
-local ZMKP_AtkHit = 2000; -- Rage
+local ZMKP_AtkHit = 400; -- Rage
 local ZMKP_Delay  = 20;
 
 -- Time out on Balancing seemed to be about 70 seconds
@@ -81,6 +81,12 @@ function ZMKP_Spawn(e)
   eq.spawn2(298127, 0, 0, 412.0, -646.0, -4.125, 159.0);
   eq.spawn2(298128, 0, 0, 339.0, -646.0, -4.125, 95.0);
 
+  ZMKP_AC     = 1800; -- Defense
+  ZMKP_MaxHit = 3900; -- Fury
+  ZMKP_MinHit = 1430;
+  ZMKP_AtkHit = 400; -- Rage
+  ZMKP_Delay  = 20;
+  
   e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
   e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
   e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
@@ -137,7 +143,7 @@ function ZMKP_Timer(e)
     end
     if ( rage  < low or rage  > hi) then
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Rage is falling out of balance. ");
-      ZMKP_AtkHit = ZMKP_AtkHit + 300;
+      ZMKP_AtkHit = ZMKP_AtkHit + 200;
       e.self:ModifyNPCStat("atk",           tostring(ZMKP_AtkHit));
     else
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Rage seems to be tipping in your favor. ");

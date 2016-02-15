@@ -256,7 +256,8 @@ function Tunat_Second_HP(e)
     e.self:SendIllusionPacket({race=400,gender=2,texture=11});
     e.self:TempName("Zun`Muram Mordl Delt");
 
-    eq.set_timer("zmmd_adds", 12 * 1000);
+    eq.spawn2(298050, 0, 0, 334, -117, 21, 140);
+    eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
     
     -- Rehaste 4740
     e.self:CastSpell(4740, e.self:GetID());
@@ -287,8 +288,6 @@ function Tunat_Second_HP(e)
 
     e.self:SendIllusionPacket({race=399,gender=2,texture=11});
     e.self:TempName("Tunat`Muram Cuu Vauax");
-
-    eq.stop_timer("zmmd_adds");
 
     -- Rehaste 4740
     e.self:CastSpell(4740, e.self:GetID());
@@ -346,10 +345,6 @@ function Tunat_Second_Timer(e)
     eq.spawn2(298045, 0, 0, 353, -201, 21, 217);
     eq.spawn2(298045, 0, 0, 322, -215, 21, 248);
     eq.spawn2(298045, 0, 0, 322, -225, 21, 248);
-
-  elseif (e.timer == "zmmd_adds") then
-    eq.spawn2(298050, 0, 0, 334, -117, 21, 140);
-    eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
 
   elseif (e.timer == "ae_timer") then
     local cast_ae = eq.ChooseRandom(1,2,3);

@@ -47,7 +47,7 @@ sub EVENT_TIMER {
 
     quest::say("This is highway robbery.");
   }
-  if ($targetname=~/highway_bandit/i) {
+  if ($npc->GetTarget() && ($targetname=~/highway_bandit/i)) {
     $npc->WipeHateList();
   }
 }

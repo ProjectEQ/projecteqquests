@@ -48,10 +48,10 @@
 local door = 0;
 local entity_list = eq.get_entity_list();
 
-local juxtapincer = 0;
-local lifebleeder = 0;
-local manasipper  = 0;
-local ragehound   = 0;
+local juxtapincer = 4;
+local lifebleeder = 4;
+local manasipper  = 4;
+local ragehound   = 4;
 
 local inst_id = 0;
 
@@ -108,6 +108,11 @@ function PXK_Hp(e)
       if (door ~= nil) then door:SetLockPick(-1); end
       e.self:Emote("begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
       eq.set_next_hp_event(90);
+
+      juxtapincer = 0;
+      lifebleeder = 0;
+      manasipper  = 0;
+      ragehound   = 0;
    end
 
    --90pct unroot

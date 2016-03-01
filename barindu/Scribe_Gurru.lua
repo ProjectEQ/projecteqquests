@@ -6,8 +6,16 @@ function event_say(e)
 	
 	-- determine which instances the player is in already
 	-- Lua table contains zone short name and instance version as the key/pair values initially
-	local instance_id_list = {["snpool"] = 0, ["snlair"] = 0, ["snplant"] = 1, ["sncrematory"] = 0, ["vxed"] = 0, ["tipt"] = 0};
+	local instance_id_list = {["snpool"] = 0, ["snlair"] = 0, ["sncrematory"] = 0, ["vxed"] = 0, ["tipt"] = 0};
 
+	-- handles snplant version 1 by apprenteice udrana(prog) or version 0 by gammesh(exp)
+	local inplan0 = eq.get_instance_id("snplant",0);	
+	if(inplan0 > 0) then
+		instance_id_list["snplant"]=0;
+	else
+		instance_id_list["snplant"]=1;
+	end
+	
 	if(e.message:findi("hail")) then
 		if (qglobals["temp_sewers"] ~= nil) then
 			-- if the player is working on sewer instance, update appropriately.

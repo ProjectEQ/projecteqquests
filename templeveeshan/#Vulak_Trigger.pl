@@ -20,27 +20,27 @@ my $variance = int(rand(720));
 my $spawntime = 4320 + $variance;
 $check = 0;
   if($timer eq "vulak") {
-    $check_boss = $entity_list->GetMobByNpcTypeID(124077);
+    $check_boss = $entity_list->GetMobByNpcTypeID(124077);#Lady_Mirenilla
     if ($check_boss) {
       $check = 1
     }
-    $check_boss = $entity_list->GetMobByNpcTypeID(124076);
+    $check_boss = $entity_list->GetMobByNpcTypeID(124076);#Lady_Nevederia
     if ($check_boss) {
       $check = 1
     }
-    $check_boss = $entity_list->GetMobByNpcTypeID(124008);
+    $check_boss = $entity_list->GetMobByNpcTypeID(124008);#Lord_Feshlak
     if ($check_boss) {
       $check = 1
     }
-    $check_boss = $entity_list->GetMobByNpcTypeID(124103);
+    $check_boss = $entity_list->GetMobByNpcTypeID(124010);#Aaryonar
     if ($check_boss) {
       $check = 1
     }
-    $check_boss = $entity_list->GetMobByNpcTypeID(124074);
+    $check_boss = $entity_list->GetMobByNpcTypeID(124074);#Lord_Kreizenn
     if ($check_boss) {
       $check = 1
     }
-    $check_boss = $entity_list->GetMobByNpcTypeID(124017);
+    $check_boss = $entity_list->GetMobByNpcTypeID(124017);#Lord_Vyemm
     if ($check_boss) {
       $check = 1
     }

@@ -65,6 +65,7 @@ sub EVENT_ITEM {
 #Dirk handin for the 10th ring
   elsif(plugin::check_handin(\%itemcount, 1465 => 1) && $faction == 1) {
     quest::say("My good %t, you have served me well. You have flushed out all who sought to oppose me and my people. I am afraid I need to call upon you and your friends one final time. The dissention and treason ran deeper than I had anticipated. Our population has been cleansed, but we lost a full third of our army to the poisonous words of those rebels. In retaliation for your deeds, the Kromrif have made plans to attack us in this, our weakest hour. Can I count on your help outlander?");
+    quest::say("Several of our greatest officers, including a few veterans from the war on Yesterwinter are assembling just outside our city. Gather your army at once and give this parchment and the ninth ring to Sentry Badian. I will remain inside the city with a few of my troops to defend it against any who might penetrate your defense. May Brell be with you, %t.");
     quest::summonitem(1567);
   }
   # Runed Coldain Prayer Shawl (7th shawl)

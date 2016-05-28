@@ -8,6 +8,7 @@ sub EVENT_SIGNAL {
     $icefang = 10;
   }
   elsif ($signal == 1161102) {
+    quest::SetRunning(1);
     quest::moveto(1803, -7757, 193);
     $icefang = 25;
   }
@@ -134,6 +135,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
 
   elsif ($icefang == 180) {
+    quest::SetRunning(0);
     quest::moveto(-4404, -3354, 146);
     $icefang = 190;
   }

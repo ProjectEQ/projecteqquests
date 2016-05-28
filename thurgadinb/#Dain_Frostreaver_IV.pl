@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 #Dirk handin for the 10th ring
   elsif(plugin::check_handin(\%itemcount, 1465 => 1) && $faction == 1) {
     quest::say("My good %t, you have served me well. You have flushed out all who sought to oppose me and my people. I am afraid I need to call upon you and your friends one final time. The dissention and treason ran deeper than I had anticipated. Our population has been cleansed, but we lost a full third of our army to the poisonous words of those rebels. In retaliation for your deeds, the Kromrif have made plans to attack us in this, our weakest hour. Can I count on your help outlander?");
-    quest::summonitem(1465);
+    quest::summonitem(1567);
   }
   # Runed Coldain Prayer Shawl (7th shawl)
   elsif(plugin::check_handin(\%itemcount, 1199 => 1) || plugin::check_handin(\%itemcount, 8895 => 1)) {

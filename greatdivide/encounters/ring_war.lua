@@ -49,7 +49,7 @@ function Stop_Event()
   eq.spawn_condition("greatdivide", 0, 21, 0);
 end
 
-function Ten_Start(e)
+function Master_Spawn(e)
   -- The first spawn condition to work with is 3; so 
   -- if we reset the event; we need to reset this to 3
   current_spawn_condition = 3;
@@ -57,6 +57,23 @@ function Ten_Start(e)
   -- Reset all the spawn conditions to a clean state.
   Stop_Event();
 
+end
+
+function Start_Event()
+  eq.spawn_condition("greatdivide", 0, 1, 0);
+  eq.spawn_condition("greatdivide", 0, 2, 1);
+
+  -- Signal the ringtemmaster to spawn the first wave...
+  eq.signal(118173, 1);
+
+  -- Spawn the Dwarf Generals with spawn commands 
+  -- so they aren't depopped when Narandi is killed
+  -- and the zone is reset to normal mode.
+  eq.spawn2(118169, 0, 0, -44, -792, 51, 115);
+  eq.spawn2(118172, 0, 0, -37, -788, 51, 115);
+  eq.spawn2(118171, 0, 0, -27, -788, 51, 115);
+  eq.spawn2(118170, 0, 0, -17, -788, 51, 115);
+  eq.spawn2(118168, 0, 0, -7,  -788, 51, 115);
 end
 
 function Zrelik_Say(e)
@@ -71,64 +88,8 @@ function Zrelik_Say(e)
       eq.depop_all(118168);
 
     elseif (e.message:findi('start')) then
-      eq.zone_emote(13, "and so it begins...");
-      eq.spawn_condition("greatdivide", 0, 1, 0);
-      eq.spawn_condition("greatdivide", 0, 2, 1);
+      Start_Event();
 
-      -- Signal the ringtemmaster to spawn the first wave...
-      eq.signal(118173, 1);
-
-      -- Spawn the Dwarf Generals with spawn commands 
-      -- so they aren't depopped when Narandi is killed
-      -- and the zone is reset to normal mode.
-      eq.spawn2(118169, 0, 0, -44, -792, 51, 115);
-      eq.spawn2(118172, 0, 0, -37, -788, 51, 115);
-      eq.spawn2(118171, 0, 0, -27, -788, 51, 115);
-      eq.spawn2(118170, 0, 0, -17, -788, 51, 115);
-      eq.spawn2(118168, 0, 0, -7,  -788, 51, 115);
-
-    elseif (e.message:findi('wave 14')) then
-      eq.zone_emote(15, "Wave 14");
-      eq.spawn_condition("greatdivide", 0, 16, 1);
-    elseif (e.message:findi('wave 13')) then
-      eq.zone_emote(15, "Wave 13");
-      eq.spawn_condition("greatdivide", 0, 15, 1);
-    elseif (e.message:findi('wave 12')) then
-      eq.zone_emote(15, "Wave 12");
-      eq.spawn_condition("greatdivide", 0, 14, 1);
-    elseif (e.message:findi('wave 11')) then
-      eq.zone_emote(15, "Wave 11");
-      eq.spawn_condition("greatdivide", 0, 13, 1);
-    elseif (e.message:findi('wave 10')) then
-      eq.zone_emote(15, "Wave 10");
-      eq.spawn_condition("greatdivide", 0, 12, 1);
-    elseif (e.message:findi('wave 1')) then
-      eq.zone_emote(15, "Wave 1");
-      eq.spawn_condition("greatdivide", 0, 3, 1);
-    elseif (e.message:findi('wave 2')) then
-      eq.zone_emote(15, "Wave 2");
-      eq.spawn_condition("greatdivide", 0, 4, 1);
-    elseif (e.message:findi('wave 3')) then
-      eq.zone_emote(15, "Wave 3");
-      eq.spawn_condition("greatdivide", 0, 5, 1);
-    elseif (e.message:findi('wave 4')) then
-      eq.zone_emote(15, "Wave 4");
-      eq.spawn_condition("greatdivide", 0, 6, 1);
-    elseif (e.message:findi('wave 5')) then
-      eq.zone_emote(15, "Wave 5");
-      eq.spawn_condition("greatdivide", 0, 7, 1);
-    elseif (e.message:findi('wave 6')) then
-      eq.zone_emote(15, "Wave 6");
-      eq.spawn_condition("greatdivide", 0, 8, 1);
-    elseif (e.message:findi('wave 7')) then
-      eq.zone_emote(15, "Wave 7");
-      eq.spawn_condition("greatdivide", 0, 9, 1);
-    elseif (e.message:findi('wave 8')) then
-      eq.zone_emote(15, "Wave 8");
-      eq.spawn_condition("greatdivide", 0, 10, 1);
-    elseif (e.message:findi('wave 9')) then
-      eq.zone_emote(15, "Wave 9");
-      eq.spawn_condition("greatdivide", 0, 11, 1);
     end
   end
 end
@@ -155,6 +116,21 @@ function Master_Timer(e)
 
     eq.spawn_condition("greatdivide", 0, current_spawn_condition, 1);
   end
+end
+
+function Seneschal_Spawn(e)
+  e.self:Shout(" 'Good citizens of Thurgadin, hear me! Our city, our people, our very lives are in danger this day. The Kromrif are at this very moment marching towards us in an offensive they hope will bring about our demise...' ");
+
+  e.self:Shout(" 'I hereby command, by authority of Dain Frostreaver the Fourth, that all able bodied Coldain fight to the death in defense of our land. Children, disabled citzens, and unseasoned travellers are advised to evacuate immediately!' ");
+
+  e.self:Shout(" 'My fellow soldiers, take heart! For we are not alone in this endeavor. One among us, an outlander, has earned the title Hero of the Dain for valiant service to our people. This newcomer has brought with him allies that will fight alongside you to help bring about our victory.' ");
+
+  e.self:Shout(" 'My friends... Brell did not place us here so many centuries ago to be slaughtered by these heathens. Nor did our forefather, Colin Dain, sacrifice himself simply to have us fail here now. Through these events we were brought to this day to test our strength and our faith.' ");
+
+  e.self:Shout(" 'Will we be shackled together to slave away in Kromrif mines or will we stand united and feed these beasts Coldain blades? By Brell, I promise you, it is better to die on our feet than to live on our knees!' ");
+
+  e.self:Shout(" 'TROOPS, TAKE YOUR POSITIONS!!' ");
+
 end
 
 function Seneschal_Death(e)
@@ -273,12 +249,23 @@ function Garadain_Trade(e)
   item_lib.return_items(e.self, e.other, e.trade);
 end
 
+function Zrelik_Trade(e)
+  local item_lib = require("items");
+  if (item_lib.check_turn_in(e.trade, {item1 = 18511})) then
+    Start_Event();
+  end
+  item_lib.return_items(e.self, e.other, e.trade);
+end
+
 function event_encounter_load(e)
-  eq.register_npc_event('ring_war', Event.spawn,          118173, Ten_Start);
+  eq.register_npc_event('ring_war', Event.spawn,          118173, Master_Spawn);
   eq.register_npc_event('ring_war', Event.signal,         118173, Master_Signal);
   eq.register_npc_event('ring_war', Event.timer,          118173, Master_Timer);
 
   eq.register_npc_event('ring_war', Event.say,            118167, Zrelik_Say);
+  eq.register_npc_event('ring_war', Event.trade,          118167, Zrelik_Trade);
+
+  eq.register_npc_event('ring_war', Event.spawn,          118166, Seneschal_Spawn);
   eq.register_npc_event('ring_war', Event.death_complete, 118166, Seneschal_Death);
 
   -- Kromrif Captain's Death

@@ -91,8 +91,6 @@
 -- 16 MPG_adaptation     - The Mastery of Adaptation (Raid)
 -- 32 MPG_corruption     - The Mastery of Corruption (Raid)  
 
-local inspect = require('inspect');
-
 local instance_id;
 local lockout_name = 'MPG_hate';
 local lockout_win = 108;

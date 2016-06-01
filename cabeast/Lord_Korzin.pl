@@ -16,9 +16,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(($itemcount{12401} == 1) && ($itemcount{5122} == 1)){ #Test of Suffering (Greenmist Quest 3/8)
+ if(plugin::check_handin(\%itemcount, 12401 => 1, 5122 => 1)) { #Test of Suffering (Greenmist Quest 3/8)
   quest::say("Excellent work! You are no squire. You are now a knight of the crusaders. Your next step shall be zealot. And every zealot wields a magical khukri.");
-  quest::summonitem(5123);
+  quest::summonitem(5123); #Knight's Khukri
   quest::givecash("0","0","15","0"); 
   quest::exp(1500);
   quest::ding();

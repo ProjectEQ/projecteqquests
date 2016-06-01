@@ -34,7 +34,9 @@ function command_lockouts(e)
       { "MPG_subversion", "MPG: The Mastery of Subversion"},
       { "MPG_efficiency", "MPG: The Mastery of Efficiency"},
       { "MPG_ingenuity", "MPG: The Mastery of Ingenuity"},
-      { "MPG_destruction", "MPG: The Mastery of Destruction"}
+      { "MPG_destruction", "MPG: The Mastery of Destruction"},
+      { "MPG_hatred", "MPG: Trial of Hatred" } 
+
 
 		}
   instance_requests.DisplayLockouts(e.self, e.self, lockout_globals)

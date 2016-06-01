@@ -63,4 +63,23 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
   end
 end
 
+function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_name_in)
+  local entity_list = eq.get_entity_list();
+  local client;
+  local client_globals;
+
+  for k,v in pairs(player_list_in) do
+    client = entity_list:GetClientByCharID(v) 
+    if ( client.valid ) then 
+      -- Set a 108 hour lockout on a Win (And in the Zone)
+      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
+
+    else
+      -- Client wasn't in the zone at the end of the trial; set a 2 hour lockout before
+      -- this client can redo the trial (basically a failure).
+      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(3)), "H3", 0, v, 0);
+    end
+  end
+end
+
 return mpg_helper;

@@ -148,6 +148,9 @@ function Subversion_Signal(e)
   end
 end
 
+-- Disorienting vortex 3rd ae
+-- Hazy cloudcurse 2nd ae
+-- Jagged Rust
 function Chest_Opened(e)
   local chance = eq.ChooseRandom(1,2,3);
   if ( chance == 1 ) then 

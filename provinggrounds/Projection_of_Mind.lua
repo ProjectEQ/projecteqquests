@@ -39,6 +39,8 @@ function event_say(e)
       eq.assign_raid_to_instance(instance_id);
 
       e.self:Say("Anger is a tool if you wield it correctly.  Invoking hatred in your enemies will provoke them into predictable and controllable behavior.  Can you harness your foes' hatred and twist it to your advantage?  If you have this ability, now is the opportunity to prove your worth!");
+
+      eq.cross_zone_message_player_by_name(5, "GMFizban", "Mastery of Hatred -- Instance: " .. instance_id);
     end
   end
 end

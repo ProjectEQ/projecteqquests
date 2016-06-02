@@ -45,7 +45,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($itemcount{30046} == 1) {
+  if (plugin::check_handin(\%itemcount, 30046 => 1)) {
     quest::emote("grins widely and slaps you on the arm.");
     quest::say("Har har! You're crazier than I am. And since I know that I must not be that crazy after all. Ahh, I haven't felt this good in ages..' He shuffles the pieces and jots down a few notes here and there. 'There, now it's really finished. Let's get us outta here. Hold this fer me.");
     quest::echo(0, "As he starts to try and crawl up the hill, a sleek figure darts towards him.");
@@ -56,6 +56,7 @@ sub EVENT_ITEM {
     my $mobnpc = $mob->CastToNPC();
     $mobnpc->AddToHateList($npc, 1);
   }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: iceclad  ID:110057 -- a_lost_pirate

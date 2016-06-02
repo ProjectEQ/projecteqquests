@@ -19,12 +19,13 @@ if($text=~/Hail/i){
 	  }
 }
 sub EVENT_ITEM{
-   if ($itemcount{28079} == 1){
+   if (plugin::check_handin(\%itemcount, 28079 => 1)){
    #I think there is a 'Collection of Weapons' item missing from the database at entry 28079.
       quest::say("These will do. Please accept this as a show of my appreciation. Now if you'll excuse me I have much work left to do.");
       quest::summonitem(28243);
 	  #I would love to put 'Improved Damage II' or "Affliction Haste II" on this 'Fine Antique Poniard' as well to complete the focus effect collection, but not necissary.
   }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge Gammle_Hecht
 

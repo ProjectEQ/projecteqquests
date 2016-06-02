@@ -7,7 +7,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if($itemcount{4199} == 1){
+  if(plugin::check_handin(\%itemcount, 4199 => 1)){
   quest::say("Earn what is mine. Show me you have the power worthy to wield what I possess.");
   my $x = $npc->GetX();
   my $y = $npc->GetY();

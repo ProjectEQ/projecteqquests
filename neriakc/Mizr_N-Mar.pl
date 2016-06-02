@@ -34,12 +34,12 @@ sub EVENT_ITEM {
   #     291   Shadowed Men
   # experience received:
   #     1000
-  elsif($itemcount{10791} == 1) {
+  if(plugin::check_handin(\%itemcount, 10791 => 1)) {
     quest::say("Ah - the Coin of Tash - and already enchanted by.. ? Tarn? Very good! I have enchanted it further - you must now take the coin to Raine Beteria in the Library of Erudin to get the final enchantment.");
     quest::summonitem(10792);
     quest::faction(442,  10);
     quest::faction(291, -10);
     quest::exp(1000);
   }
-
+  plugin::return_items(\%itemcount);
 } 

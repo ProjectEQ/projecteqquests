@@ -17,7 +17,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 
-	if(($itemcount{6348} == 1)){ #Razor Tooth
+	if(plugin::check_handin(\%itemcount, 6348 => 1)){ #Razor Tooth
 		quest::say("Rarr, Feren not haunted by Razortooth no more. Feren grateful and give you this possession.");
 		quest::summonitem(1062); #Kerran Fishingpole
 		quest::faction(175,10); # Kerra Isle

@@ -33,11 +33,12 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($itemcount{30042} == 1) {
+  if (plugin::check_handin(\%itemcount, 30042 => 1)) {
     quest::say("Oh! I've been needing this!' She reads over the pages intently. 'Uh. Pirate - A sea robber.' She scratches her head. 'I totally forgot we were supposed to be robbing people. Put down yer weapons and hand over yer platinum and gold ya port side bilge suckers! Heh. This is great. Thank you, $name.");
     quest::emote("grins and goes back to reading.");
     quest::summonitem(18962);
   }
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: iceclad ID:110062 -- Ami

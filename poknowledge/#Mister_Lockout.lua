@@ -37,7 +37,13 @@ function event_say(e)
       { "MPG_subversion", "MPG: The Mastery of Subversion"},
       { "MPG_efficiency", "MPG: The Mastery of Efficiency"},
       { "MPG_ingenuity", "MPG: The Mastery of Ingenuity"},
-      { "MPG_destruction", "MPG: The Mastery of Destruction"}
+      { "MPG_destruction", "MPG: The Mastery of Destruction"},
+      { "MPG_hatred", "MPG: Trial of Hatred" },
+      { "MPG_specialization", "MPG: Trial of Specialization" },
+      { "MPG_endurance", "MPG: Trial of Endurance" },
+      { "MPG_foresight", "MPG: Trial of Foresight" },
+      { "MPG_adaptation", "MPG: Trial of Adaptation" },
+      { "MPG_corruption", "MPG: Trial of Corruption" }
 
 		}
 

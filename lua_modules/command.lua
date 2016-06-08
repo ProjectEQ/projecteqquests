@@ -35,9 +35,12 @@ function command_lockouts(e)
       { "MPG_efficiency", "MPG: The Mastery of Efficiency"},
       { "MPG_ingenuity", "MPG: The Mastery of Ingenuity"},
       { "MPG_destruction", "MPG: The Mastery of Destruction"},
-      { "MPG_hatred", "MPG: Trial of Hatred" } 
-
-
+      { "MPG_hatred", "MPG: Trial of Hatred" },
+      { "MPG_specialization", "MPG: Trial of Specialization" },
+      { "MPG_endurance", "MPG: Trial of Endurance" },
+      { "MPG_foresight", "MPG: Trial of Foresight" },
+      { "MPG_adaptation", "MPG: Trial of Adaptation" },
+      { "MPG_corruption", "MPG: Trial of Corruption" }
 		}
   instance_requests.DisplayLockouts(e.self, e.self, lockout_globals)
 end

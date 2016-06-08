@@ -242,7 +242,7 @@ sub EVENT_ITEM {
   }
 
 # Ring 8 reward moved to #Garadain_Glacierbane to emulate Live's timing of head turn-in
-#  if ($itemcount{1092} == 1) {
+#  if (plugin::check_handin(\%itemcount, 1092 => 1)) {
 #    quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your #help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you #ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
 #    quest::summonitem(30164);
 #

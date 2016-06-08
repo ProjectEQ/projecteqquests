@@ -9,18 +9,17 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   $faction = $client->GetCharacterFactionLevel(342);
-
-  if ($itemcount {14375} == 1 && $faction >= 42) {
+  if (($faction >= 42) && plugin::check_handin(\%itemcount, 14375 => 1)) {
     quest::say("At last! I have been waiting for my brother for weeks! We are doomed! Innoruuk will taint our seed into some perverse, twisted, maddened breed. The prophecy has begun to unfold and there are none capable of stopping it. Quickly, return this note to Marl, we must hide! We have failed the master! We must escape the hateful one's wrath!");
     quest::faction(342, 1);
     quest::summonitem(14376);
   }
-
-  if ($itemcount {14378} == 1 && $faction >= 58) {
+  if (($faction >= 58) && plugin::check_handin(\%itemcount, 14378 => 1)) {
     quest::say("Good travels, dark one! May Innoruuk curse your enemies!");
     quest::faction(342, 7);
     quest::summonitem(14369);
   }
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

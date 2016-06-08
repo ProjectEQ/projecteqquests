@@ -21,18 +21,18 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(($itemcount{12381} == 1) && ($itemcount{5120} == 1)){ #Test of the Pawn (Greenmist Quest 1/8)
+ if(plugin::check_handin(\%itemcount, 12381 => 1, 5120 => 1)) { #Test of the Pawn (Greenmist Quest 1/8)
   quest::say("You have learned to behead your opponents with great precision. Take the khukri of the knave. It shall prove most formidable in combat when wielded by a young crusader. You may now assist us with a [greater concern] than your training.");
-  quest::summonitem(5121);
+  quest::summonitem(5121); #Knave's Khukri
   quest::givecash("0","0","1","0"); 
   quest::exp(100);
   quest::ding();
   quest::faction(62,20);
   quest::faction(193,10);
  }
- if(($itemcount{12382} == 1) && ($itemcount{5121} == 1)){ #Test of Pain (Greenmist Quest 2/8)
+ if(plugin::check_handin(\%itemcount, 12382 => 1, 5121 => 1)) { #Test of Pain (Greenmist Quest 2/8)
   quest::say("You have done as instructed. You are wise to hand this tome to me. It could bring you nothing more than insanity. As your reward, you shall have the squire's khukri. Soon you shall wield the knight's khukri, but that is for another Lord of Pain to decide.");
-  quest::summonitem(5122);
+  quest::summonitem(5122); #Squire's Khukri
   quest::givecash("0","0","3","0"); 
   quest::exp(300);
   quest::ding();

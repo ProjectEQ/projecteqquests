@@ -59,11 +59,12 @@ alligator teeth, one larval carapace, and one pristine kobold paw, and combine t
 }
 
 sub EVENT_ITEM {
-  if($itemcount{51093} == 1) {
+  if(plugin::check_handin(\%itemcount, 51093 => 1)) {
 	#text made up
 	quest::say("Thank you for retrieving the artifact, young one.  Your training is now complete, and I present to you the last of the equipment granted to Yun Initiates, the cudgel of our order.  May it serve you well in your travels.");
 	quest::summonitem(51095);
   }
+  plugin::return_items(\%itemcount);
 }
 
 #end of file

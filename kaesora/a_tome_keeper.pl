@@ -12,7 +12,7 @@ sub EVENT_SAY {
 
 
 sub EVENT_ITEM {
-  if($itemcount{4196} == 1){
+  if(plugin::check_handin(\%itemcount, 4196 => 1)){
   my $Tome = quest::ChooseRandom(18359,18462,18463,18464,18465,18466,18467,18468,18469,18470);
   quest::emote("drops a tattered tome at your feet and says nothing more. You pick it up and place it among your things.");
   quest::summonitem($Tome);

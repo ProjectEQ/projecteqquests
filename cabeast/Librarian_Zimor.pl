@@ -7,17 +7,17 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(($itemcount{3887} == 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)
+ if(plugin::check_handin(\%itemcount, 3887 => 1)) { #Crusaders of Greenmist (Greenmist Quest 8/8)
   quest::emote("looks disturbed as he examines the book. His hands tremble as he mouths the words on the ancient parchment pages. 'This book may alter the reality you see before you,' the scholar says as he continues to read the tome. 'The information that has been waiting in this book may have been brought to us by your hand, but your fate has obviously been chosen by our Lord. Our mystics have conveyed a new vision to us in this most recent season. Please take this note to Hierophant Oxyn, while I continue to translate this tome.' the Librarian hands you a note and turns his attention back to the book.");
-  quest::summonitem(3895);
+  quest::summonitem(3895); #Note to Oxyn
   quest::exp(5000);
   quest::ding();
   quest::faction(62,20);
   quest::faction(193,10);
  }
- if(($itemcount{3893} == 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)
+ if(plugin::check_handin(\%itemcount, 3893 => 1)) { #Crusaders of Greenmist (Greenmist Quest 8/8)
   quest::say("I am very glad you have returned. Your discovery of the tynnonium is extraordinary! This Sarnak tome has been an incredible source of information. It appears that they have been studying the Greenmist for some time. I'm sure they sought it as nothing more than a trinket to be collected. Their shortsightedness will be their eventual undoing. I have compiled a book of notes that will aid you in your quest for the Greenmist. Please take care to keep this information out of the grasp of our enemies.");
-  quest::summonitem(18320);
+  quest::summonitem(18320); #Notes from the Greenmist Tome
   quest::exp(5000);
   quest::ding();
   quest::faction(62,20);

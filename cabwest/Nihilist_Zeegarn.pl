@@ -14,7 +14,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
- if(($itemcount{18272} == 1) && ($itemcount{24770} == 1)){ #The Penance quest
+ if(plugin::check_handin(\%itemcount, 18272 => 1, 24770 => 1)){ #The Penance quest
   quest::emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time.");
   quest::say("Lucky you. You have earned a second chance. Praise Cazic-Thule!");
   quest::summonitem(12407);

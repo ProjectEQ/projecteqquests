@@ -22,7 +22,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(($itemcount{12708} == 1) && ($itemcount{12712} == 1) && ($itemcount{12713} == 1)){ #Test of the Lord (Greenmist Quest 7/8)
+  if(plugin::check_handin(\%itemcount, 12708 => 1, 12712 => 1, 12713 => 1)){ #Test of the Lord (Greenmist Quest 7/8)
   quest::emote("escapes with a flash, but before he goes, he speaks, 'At last!! The keys which shall bring me freedom! I thank you and here is the contraption needle. Good luck.'");
   quest::summonitem(12714);
   quest::exp(2000);

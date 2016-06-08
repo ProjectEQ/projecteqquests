@@ -26,27 +26,27 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(($itemcount{12496} == 1) && ($itemcount{5123} == 1)){ #Test of the Zealot (Greenmist Quest 4/8)
+ if(plugin::check_handin(\%itemcount, 12496 => 1, 5123 => 1)) { #Test of the Zealot (Greenmist Quest 4/8)
   quest::say("At last!! The Chalp diagram. I shall see that the emperor gets this at once. You have proven yourself more than just a mere knight, you are a zealot. Being new to the temple we have need of you in a [matter of betrayal].");
-  quest::summonitem(5124);
+  quest::summonitem(5124); #Zealot's Khukri
   quest::givecash("0","0","6","1"); 
   quest::exp(1600);
   quest::ding();
   quest::faction(62,20);
   quest::faction(193,10);
  }
- elsif(($itemcount{1729} == 1) && ($itemcount{1730} == 1) && ($itemcount{5124} == 1)){ #Test of Betrayal (Greenmist Quest 5/8)
+ elsif(plugin::check_handin(\%itemcount, 1729 => 1, 1730 => 1, 5124 => 1)) { #Test of Betrayal (Greenmist Quest 5/8)
   quest::say("Congratulations! You are now a true crusader, but there is no time for celebration. We have lost two of our operatives. Crusaders Golin and Fodcod were dispatched to seek out an ancient artifact, the [visceral dagger]. Where they have gone, I do not know. They have been gone far too long. Find them and return the dagger to me with your crusader khukri and you shall be a hero.");
-  quest::summonitem(5125);
-  quest::givecash("0","0","0","2"); 
+  quest::summonitem(5125); #Crusader's Khukri
+  quest::givecash("0","0","0","1"); 
   quest::exp(2000);
   quest::ding();
   quest::faction(62,20);
   quest::faction(193,10);
  }
- elsif(($itemcount{7324} == 1) && ($itemcount{5125} == 1)){ #Test of the Hero (Greenmist Quest 6/8)
+ elsif(plugin::check_handin(\%itemcount, 7324 => 1, 5125 => 1)) { #Test of the Hero (Greenmist Quest 6/8)
   quest::emote("gazes in astonishment at the dagger. 'Ahhh!! You have brought the sacred visceral dagger back to the Temple of Terror. Let all be aware that the great $name has returned to Cabilis a hero!! You now wield the weapon of a hero. Hail, $name, hero of the Crusaders of Greenmist.");
-  quest::summonitem(5126);
+  quest::summonitem(5126); #Hero's Khukri
   quest::givecash("0","0","0","3"); 
   quest::exp(3000);
   quest::ding();

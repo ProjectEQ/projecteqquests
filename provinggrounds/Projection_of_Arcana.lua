@@ -41,6 +41,8 @@ function event_say(e)
       eq.assign_raid_to_instance(instance_id);
 
       e.self:Say("At times it pays to be focused in your abilities, and at times it does not. This trial will test your skill at using your strengths when they are most effective, and otherwise relying on your companions. If you have this ability now is the time to prove your worth.");
+
+      eq.cross_zone_message_player_by_name(5, "GMFizban", "Mastery of Specialization -- Instance: " .. instance_id);
     end
   end
 end

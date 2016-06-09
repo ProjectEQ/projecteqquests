@@ -133,6 +133,15 @@ function Hate_Say(e)
     -- Enable the Death Toucher
     eq.spawn_condition('chambersa', instance_id, 3, 1 );
 
+    -- Enable the Feran Mothers
+    eq.signal(304019, 1);
+    eq.signal(304023, 1);
+    eq.signal(304024, 1);
+    eq.signal(304025, 1);
+    eq.signal(304026, 1);
+    eq.signal(304027, 1);
+    
+    -- Set the timer to spawn the direpups from the living mothers.
     eq.set_timer('direpups', pup_spawn_seconds  * 1000);
   end
 end
@@ -268,6 +277,26 @@ function Deathtouch_Tick(e)
   end
 end
 
+function Feran_spawn(e)
+  -- 24 Will Not Aggro
+  -- 25 Immune to Aggro
+  -- 35 No Harm from Players
+  e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
+  e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+  e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
+end
+
+function Feran_Signal(e)
+  if (e.signal == 1) then
+    -- 24 Will Not Aggro
+    -- 25 Immune to Aggro
+    -- 35 No Harm from Players
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+    e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.spawn,          304017, Hate_Spawn);
   eq.register_npc_event('mpg_hate', Event.say,            304017, Hate_Say);
@@ -284,6 +313,20 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.death_complete, 304025, Feran_Death);
   eq.register_npc_event('mpg_hate', Event.death_complete, 304026, Feran_Death);
   eq.register_npc_event('mpg_hate', Event.death_complete, 304027, Feran_Death);
+
+  eq.register_npc_event('mpg_hate', Event.spawn,          304019, Feran_Spawn);
+  eq.register_npc_event('mpg_hate', Event.spawn,          304023, Feran_Spawn);
+  eq.register_npc_event('mpg_hate', Event.spawn,          304024, Feran_Spawn);
+  eq.register_npc_event('mpg_hate', Event.spawn,          304025, Feran_Spawn);
+  eq.register_npc_event('mpg_hate', Event.spawn,          304026, Feran_Spawn);
+  eq.register_npc_event('mpg_hate', Event.spawn,          304027, Feran_Spawn);
+
+  eq.register_npc_event('mpg_hate', Event.signal,         304019, Feran_Signal);
+  eq.register_npc_event('mpg_hate', Event.signal,         304023, Feran_Signal);
+  eq.register_npc_event('mpg_hate', Event.signal,         304024, Feran_Signal);
+  eq.register_npc_event('mpg_hate', Event.signal,         304025, Feran_Signal);
+  eq.register_npc_event('mpg_hate', Event.signal,         304026, Feran_Signal);
+  eq.register_npc_event('mpg_hate', Event.signal,         304027, Feran_Signal);
 end
 
 function event_encounter_unload(e)

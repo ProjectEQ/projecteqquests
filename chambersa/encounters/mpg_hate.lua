@@ -277,7 +277,7 @@ function Deathtouch_Tick(e)
   end
 end
 
-function Feran_spawn(e)
+function Feran_Spawn(e)
   -- 24 Will Not Aggro
   -- 25 Immune to Aggro
   -- 35 No Harm from Players

@@ -64,6 +64,7 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
 end
 
 function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_name_in)
+  local instance_requests = require("instance_requests");
   local entity_list = eq.get_entity_list();
   local client;
   local client_globals;
@@ -75,7 +76,7 @@ function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_
       eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
 
     else
-      -- Client wasn't in the zone at the end of the trial; set a 2 hour lockout before
+      -- Client wasn't in the zone at the end of the trial; set a 3 hour lockout before
       -- this client can redo the trial (basically a failure).
       eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(3)), "H3", 0, v, 0);
     end

@@ -33,7 +33,7 @@ function event_say(e)
   elseif (e.message:findi("specialization")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_specialization', 'MPG: Trial of Specialization' } }
-    local requests = instance_requests.ValidateRaidRequest( 'chambresd', 2, 2, 54, 65, nil, e.other, lockouts);
+    local requests = instance_requests.ValidateRaidRequest( 'chambersd', 2, 2, 54, 65, nil, e.other, lockouts);
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 

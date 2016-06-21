@@ -13,6 +13,7 @@ function event_say(e)
 	elseif(e.message:findi("stolen") and qglobals["shaman_epic"] == "3") then
 		e.self:Say("The vermin that stole it now abuses it to gain control over spirits it wants to command. It is a peculiar beast that lives way up in the heavens on the moon. It is not often seen, so your timing must be right. Return its amulet to me when you obtain it. We will all be better off without this creature lurking about.");
 		eq.set_global("shaman_epic_nadox","1",5,"F");
+	end
 end
 
 function event_trade(e)

@@ -19,6 +19,7 @@ function event_combat(e)
 		eq.set_timer("flamewall",30*1000);
 		eq.set_timer("pyro",12*1050);		
 end
+end
 
 function event_timer(e)
 	if (e.timer=="depop") then

@@ -19,6 +19,11 @@ sub EVENT_SAY {
 		if ($text=~/solusek ro/i) {
 			quest::say("So I've got another one eh? Alright, well if you really want to enter the relm of the flame, you're going to have to 'convince' the Burning Prince to remove his seal. He has been staying in his tower lately, so you will be able to find him there. Not that it matters. Nobody ever makes it to see him anyways.");
 		}
+		if (($text=~/elemental essences/i) && defined($qglobals{mage_epic}) && ($qglobals{mage_epic}==6)) {
+			quest::say("Ahh the eternal search for knowledge, both bane and blessing to mortals. So, you seek the Elemental Essence of Fire? I have heard very little of it in many years, although, come to think of it, I have heard rumors of a powerful elemental trapped in the personal forge of Tagrin. I suspect that might be a good place to begin your search at the very least, but you'll need to find someone there willing to speak with you. Good luck seeker.");
+			quest::setglobal("mage_epic_fire1", 1, 5, "F");
+		}		
+		
 	}
 {
 $pop_pon_hedge_jezith=undef;

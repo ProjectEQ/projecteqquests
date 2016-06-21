@@ -1,7 +1,10 @@
 sub EVENT_SAY { 
    if ($text=~/hail/i) {
-      if ($faction <= 7) {
-         quest::say("How is life treating you, bud? What are you doing around the mines? Either you are a [member of 628] or you are lost. If you are lost, I can't help you. I ain't no guide.");
+	  if ( $client->GetGlobal("Fatestealer") ==1) { #Rogue 1.5
+         quest::emote("sneers, Well if it isn't the sticky-fingered, back-stabbin', murderin', ne'er-do-well $name. We were just talkin' about ye. I was mentioning' how I'd like to personally see to it that ye disappear and never turn up again, save for bedtime stories to scare the little ones to sleep. Why don't ye do us all a favor and make yourself scarce?' He pauses to stroke his beard, 'But, before ye go, I have a [" . quest::saylink("small job") . "]	 I need taken care of. I might be able to assist ye in your no-doubt nefarious endeavors if ye could lend me a hand.");	 
+	  }
+      elsif ($faction <= 7) {
+         quest::say("How is life treating you, bud? What are you doing around the mines? Either you are a [member of 628] or you are lost. If you are lost, I can't help you. I ain't no guide.");		 
       }
       else {
          quest::say("The word around the mines is that you are not to be trusted. You'd best leave before my dagger finds a new home in your back.");
@@ -51,12 +54,12 @@ sub EVENT_SAY {
          quest::say("The word around the mines is that you are not to be trusted. You'd best leave before my dagger finds a new home in your back.");
       }
    }
-   #Rogue Epic 1.5 Pre-Quest
+   #Rogue Epic 1.5
    elsif ($text=~/small job/i) {
-      if (($ulevel >= 46) && ($class eq "Rogue")) {
+      if ($client->GetGlobal("Fatestealer") ==1) {
          quest::say("Consider this both a favor and a test. I couldn't rest at night knowing that someone carrying around my secrets was anything less than proficient at smithin'. On top of that, relics crafted by the infamous $name will make some fine conversation pieces I think. Ha ha. If that isn't clear enough for ye, I'd like ye to demonstrate your skill with forge and a hammer. Here's a list of items that ye can make for me. Seal them up in this satchel when you're done and bring them back to me, lad.");
          quest::summonitem(8775);
-         quest::summonitem(52331);
+         quest::summonitem(52331);  
       }
       else {
          quest::emote("doesn't appear to want to speak with you.");
@@ -86,11 +89,17 @@ sub EVENT_ITEM {
       quest::exp(5000);
       quest::summonitem(12166); # Parrying Pick 628
    }
-   elsif (plugin::check_handin(\%itemcount, 9813 => 1)) { # Rogue Epic 1.5 handin
+   elsif ($client->GetGlobal("Fatestealer") ==1 and plugin::check_handin(\%itemcount, 9813 => 1)) { # Rogue Epic 1.5
       quest::say("Fine job, $name. I knew ye had the burning fire of a smith ragin' inside ye. These little relics are going on my mantle, or I may sell em. Not sure yet.' He sets the items aside, 'Now, sit fer a spell and allow me to tell ye what you need to know. It should go without sayin', $name, that a fine blade is crafted with the best metals possible. Any fool knows that. What ye don't know is that the lightest and sturdiest stuff to be found is an alloy called Velixite. With a few pounds of raw Velixite you could truly forge a blade to be feared. Give me jes' a moment while I take down some notes in your journal, $name. There ye are, all done!");
-      quest::emote("You have coerced Diggins into revealing his secret. ");
-      #Add global
+	  $client->Message(15,"You have coerced Diggins into revealing his secret.");
+	  quest::setglobal('Fatestealer_nk',1, 5, 'F' );
    }
+   elsif ($client->GetGlobal("Fatestealer_gem") ==0 and $client->GetGlobal("Fatestealer") ==1 and $client->GetRace()==8 and plugin::check_handin(\%itemcount, 52353 => 1)) {
+      quest::say("Now, sit fer a spell and allow me to tell ye what you need to know. It should go without sayin', $name, that a fine blade is crafted with the best metals possible. Any fool knows that. What ye don't know is that the lightest and sturdiest stuff to be found is an alloy called Velixite. With a few pounds of raw Velixite you could truly forge a blade to be feared. Give me jes' a moment while I take down some notes in your journal, $name. There ye are, all done!");
+      $client->Message(15,"You have coerced Diggins into revealing his secret.");
+	  quest::setglobal('Fatestealer_nk',1, 5, 'F' );
+	  quest::setglobal('Fatestealer_gem',1, 5, 'F' );
+   }   
    
    #do all other handins first with plugin, then let it do disciplines
    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');

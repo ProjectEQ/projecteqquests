@@ -12,9 +12,9 @@ end
 
 
 function event_loot(e)
-	if(e.self:Class() == "Rogue") then
+	if(e.self:Class() == "Rogue" and e.item:GetID() == 52337 ) then
 		local qglobals = eq.get_qglobals(e.self);
-		if(qglobals["Fatestealer"] == "1"  and qglobals["rogue_hate_chest"] == nil and e.item:GetID() == 52337 ) then
+		if(qglobals["Fatestealer"] == "1"  and qglobals["rogue_hate_chest"] == nil ) then
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("rogue_hate_chest","1",5,"F");
 		end

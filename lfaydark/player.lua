@@ -32,9 +32,9 @@ end
 
 
 function event_loot(e)
-	if(e.self:Class() == "Cleric") then
+	if(e.self:Class() == "Cleric" and e.item:GetID() == 9585 ) then
 		local qglobals = eq.get_qglobals(e.self);
-		if(qglobals["cleric_epic"] >= "4" and qglobals["cleric_epic_lfay"] == nil and e.item:GetID() == 9585 ) then
+		if(qglobals["cleric_epic"] >= "4" and qglobals["cleric_epic_lfay"] == nil ) then
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("cleric_epic_lfay","1",5,"F");
 		end

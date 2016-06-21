@@ -9,9 +9,9 @@ function event_enter_zone(e)
 end
 
 function event_loot(e)
-	if(e.self:Class() == "Magician") then
+	if(e.self:Class() == "Magician" and e.item:GetID() == 16773) then
 		local qglobals = eq.get_qglobals(e.self);
-		if(qglobals["mage_epic_air1"] == "1" and qglobals["mage_epic_causeway"] == nil and e.item:GetID() == 16773 ) then
+		if(qglobals["mage_epic_air1"] == "1" and qglobals["mage_epic_causeway"] == nil) then
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("mage_epic_causeway","1",5,"F");
 		end

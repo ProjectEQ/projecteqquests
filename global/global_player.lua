@@ -37,6 +37,36 @@ function event_combine_success(e)
 		e.self:SummonItem(reward[ctype][tostring(e.recipe_id)]);
 		e.self:SummonItem(67704);
 		e.self:Message(1, "Success");
+	--cleric 1.5
+	elseif(e.recipe_id == 19460) then
+		e.self:AddAAPoints(5);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 5 ability points!');
+		e.self:SetAATitle('Priest');
+		eq.set_global("cleric_epic","7",5,"F");
+	--rogue 1.5
+	elseif(e.recipe_id == 19490 or e.recipe_id == 19491 or e.recipe_id == 19492 or e.recipe_id == 19493) then
+		e.self:Message(15,"The piece of the metal orb fuses together with the blue diamonds under the intense heat of the forge. As it does, a flurry of images flash through your mind... A ranger and his bear side by side, stoic and unafraid, in a war-torn forest. A bitter tattooed woman with bluish skin wallowing in misery in a waterfront tavern. An endless barrage of crashing thunder and lightning illuminating a crimson brick ampitheater. Two halflings locked in a battle of wits using a checkered board. The images then fade from your mind");
+	--ranger 1.5 tree
+	elseif(e.recipe_id ==13412) then
+		eq.set_global("ranger_epic","3",5,"F");
+		if(eq.get_zone_short_name()=="jaggedpine") then
+			e.self:Message(15,"The seed grows rapidly the moment you push it beneath the soil. It appears at first as a mere shoot, but within moments grows into a stout sapling and then into a gigantic tree. The tree is one you've never seen before. It is the coloration and thick bark of a redwood with the thick bole indicative of the species. The tree is, however, far too short and has spindly branches sprouting from it with beautiful flowers that you would expect on a dogwood. You take all of this in at a glance. It takes you a moment longer to realize that the tree is moving.");			
+			eq.spawn2(181222, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0);
+		else
+			e.self:Message(15,"The soil conditions prohibit the seed from taking hold");
+			e.self:SummonItem(72091);
+			e.self:SummonItem(62621);
+			e.self:SummonItem(62622);
+			e.self:SummonItem(62844);
+		end
+	--ranger 1.5 final
+	elseif(e.recipe_id ==13413) then
+		e.self:AddAAPoints(5);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 5 ability points!');
+		e.self:SetAATitle('Earthguard');
+		eq.set_global("ranger_epic","5",5,"F");
 	end
 end
 

@@ -1,8 +1,10 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail and well met "..e.other:GetName()..". I am Shana Liskia. Enchantress of Freeport. I have studied my art for years here in our wonderful academy. I am also delighted to meet and teach those that come here to gain knowledge. My specialty however lies in Beguiling so I like to train young newcomers to our academy. Are you studying the ways of a [Magician] an [Enchanter] or a [Wizard]??");
+		e.self:Say("Hail and well met "..e.other:GetName()..". I am Shana Liskia. Enchantress of Freeport. I have studied my art for years here in our wonderful academy. I am also delighted to meet and teach those that come here to gain knowledge. My specialty however lies in Beguiling so I like to train young newcomers to our academy. Are you studying the ways of a [" .. eq.say_link("Magician") .. "] an [" .. eq.say_link("Enchanter") .. "] or a [" .. eq.say_link("Wizard") .. "]??");
 	elseif(e.message:findi("magician") or e.message:findi("enchanter") or e.message:findi("wizard")) then
-		e.self:Say("Wonderful! Let me be the first to tell you that your training here will be top notch and you will learn all that is to be known about being an enchanter should you put forth the willingness to learn. I will walk you through your early training and assist you in your hunting and gathering skills. I have created a [special sewing kit] that I present to all of the new initiates.");
+		e.self:Say("Wonderful! Let me be the first to tell you that your training here will be top notch and you will learn all that is to be known about being an enchanter should you put forth the willingness to learn. I will walk you through your early training and assist you in your hunting and gathering skills. I have created a [" .. eq.say_link("special sewing kit") .. "] that I present to all of the new initiates.");
+	elseif(e.message:findi("diseases of the mind")) then
+		e.self:Say("I study the mind. My most recent research deals with, well, I'd rather not discuss that. Unless you need something specific, I don't really have time for long random conversations right now.");
 	elseif(e.other:Class() == "Enchanter" or e.other:Class() == "Magician" or e.other:Class() == "Wizard") then
 		if(e.message:findi("special sewing kit")) then
 			e.self:Say("This kit that I speak of is one that is able to magically infuse different components into materials used for creating Arcane Scientists Armor. The components that you use will be collected from numerous different areas and shops in Freeport. You will use these materials along with patterns that I will present you with to create your armor. Once you are [ready to begin] I will present you with your Enchanted Sewing Kit.");
@@ -48,6 +50,17 @@ function event_trade(e)
 			e.other:Ding();
 			e.other:AddEXP(100);
 		end
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 62617})) then
+		e.self:Say("Well, this certainly is an interesting puzzle. I see here that these creatures were infected in their spinal columns. I'll tell you that a part of my research involves the use of the fluids of the brain and spine. I suspect that further details might be unpleasant. I might be able to help you, but I'll need materials to work with. Gather fluids from the brain of the creature with the greatest mental power that you can find. I'll test it and see if it's strong enough and has the right properties. If I can duplicate what you saw in these infected creatures, perhaps I can help. Aslo, bring back those notes that Corun made, I'll need them as well.");
+		e.self:Emote("makes a few hasty scribbles in the margins of Corun's Notes and hands them back to you.");
+		e.other:SummonItem(62654);
+		eq.set_global("ranger_epic","2",5,"F");
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 40420})) then
+		e.self:Say("Perfect! Yes, this will work nicely. Shana looks through Corun's notes while gathering items from her stores. This should work. What I'm going to do is grow a crystal around this fluid and some of the key ingredients of the disease. The crystal will focus the power of the fluid and the elements of the disease will guide it. If this goes well, I should be able to create a crystal that will guide you to the disease. Shana places the gathered items into a violet-tinted container and casts a spell over them. A moment later she retrieves a crystal from the container. The crystal is clear except for a dark, murky coloration at the center. Take that crystal and see if you can locate any creatures with the disease. If you have any success, please return and let me know.");
+		e.other:SummonItem(62846);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 62618,item2 = 62619})) then
+		e.self:Say("Ah, well, it seems as though the crystal was attuned to these other crystals. They must have come in contact with a rather large element of the disease, otherwise I just can't see how the Mind Crystal would have noticed them. These crystals were created by someone with more experience than I have in this area. I will examine them further and attempt to learn something from them. I can tell now, though, that they were probably created in a fashion similar to the one I used to create the Mind Crystal. Shana pulls out a piece of parchment and writes a note. She gives you the note and says, Take this note to Corun along with the Mind Crystal. He can use the crystal and my notes to seek out the plague in whatever fashion he thinks is best. I need to get to work investigating these new crystals.");
+		e.other:SummonItem(62655);	
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

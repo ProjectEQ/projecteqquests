@@ -2,9 +2,6 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-<<<<<<< HEAD
-    quest::say("Hail, traveler! I sense you did not simply chance upon my isolation here, but are instead seeking me for something.");
-=======
 	  if ($client->GetGlobal("Fatestealer_forge") ==1) { #Rogue 1.5  
 		quest::say("Well, if it isn't $name. I trust you don't have any unsavory women tailing you again. There's nothing more unnerving than a humie lass armed with poisoned blades. He shivers involuntarily. Still gives me nightmares to this day. But enough about that. I'm certain you didn't seek me out again for small talk. What can I help you with? Recovered any unusual artifacts lately?");
 		
@@ -16,7 +13,6 @@ sub EVENT_SAY {
   }
   if($text=~/blue orb/i) {
 	quest::say("Ah yes, a blue orb composed of strange metal. My studies referred to an artifact such as that. I believe it was once in the hands of a gentleman called Laarthik K'Shin. And Laarthik, he was in the employ of someone or other, hmm. Forgive my poor memory.' His eyes widen suddenly, 'Oh! I do recall that the metal orb could be reforged over extreme heat if you were able to recover every missing piece. That by itself wouldn't be enough though, you'd need a binding element with the same aura. Furthermore, if you don't have all the pieces, melding a piece with several diamonds of bluish hue inside a forge may indicate where the remaining fragments are hidden. The orb wants to be whole again.");
->>>>>>> f835478835597030526c9cc9e1d0fbb45f74dfb1
   }
   if($text=~/translate/i) {
     quest::say("Oh, if it is written in Eder Teir'Dal, most likely I can translate it. I will be happy to try, in any case. Let me see it, please.");
@@ -25,11 +21,7 @@ sub EVENT_SAY {
     quest::say("In the Plane of Hate, where dwell Innoruuk and his minions, there is a tome. This tome is called the Book of Souls.");
   }
   if($text=~/book of souls/i) {
-<<<<<<< HEAD
-    quest::say("The Book of Souls chronicles all the lives Innoruuk has tainted over the years. It is in the care of the Maestro of Rancor. I can use this tome as a basis for my translation, if you return it and the note to me. An experienced practitioner in the art of non-detection should be able to snatch it from its resting place, don't you think, $race?");
-=======
     quest::say("The Book of Souls chronicles all the lives Innoruuk has tainted over the years. It is in the care of the Maestro of Rancor. I can use this tome as a basis for my translation, if you return it and the note to me. An experienced practitioner in the art of non-detection should be able to snatch it from its resting place, don't you think, $race?'");
->>>>>>> f835478835597030526c9cc9e1d0fbb45f74dfb1
   }
 }
 
@@ -40,11 +32,7 @@ sub EVENT_ITEM {
     quest::exp(500);
     quest::summonitem(28055);
   }
-<<<<<<< HEAD
   elsif(plugin::check_handin(\%itemcount, 28055 => 1, 28016 => 1)) {
-=======
-  elsif(plugin::check_handin(\%itemcount, 28055 => 1, 28016=> 1)) {
->>>>>>> f835478835597030526c9cc9e1d0fbb45f74dfb1
     my $x = $npc->GetX();
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
@@ -61,8 +49,4 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-<<<<<<< HEAD
-#END of FILE  Quest by: Solid11  Zone:steamfont  ID:56012 -- Yendar_Starpyre
-=======
 #END of FILE  Zone:steamfontmts  ID:448035 -- Yendar_Starpyre
->>>>>>> f835478835597030526c9cc9e1d0fbb45f74dfb1

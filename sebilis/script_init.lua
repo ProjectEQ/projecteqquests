@@ -1,0 +1,1 @@
+eq.load_encounter('berserkerepic_1_5');

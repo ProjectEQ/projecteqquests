@@ -30,7 +30,14 @@ sub EVENT_CLICKDOOR {
       } else {
         $client->Message(13, "You are not a part of an instance!");
       }
-  } elsif(($doorid == 17) && ($yxtta_door == 0)) {
+  } #Berserker 1.5
+	elsif($doorid == 37 || $doorid == 39 || $doorid == 41) {
+	if((!defined $qglobals{yx_fern} || $qglobals{yx_fern}==0) && ($class eq "Berserker")) {
+		quest::summonitem(16949);    # Taelosian Fern Sample
+		quest::setglobal('yx_fern', 1, 3, 'H1' );
+	}	
+  }
+	elsif(($doorid == 17) && ($yxtta_door == 0)) {
     $yxtta_door = 1;
     ASK_QUESTION();
   } elsif(($doorid == 18) && ($yxtta_door == 0)) {

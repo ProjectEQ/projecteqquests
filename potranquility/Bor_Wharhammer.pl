@@ -36,7 +36,13 @@ sub EVENT_ITEM {
   $cash = 0;
   $cash = $platinum * 1000 + $gold * 100 + $silver * 10 + $copper;
 
-  if($ulevel > 54) { #Must be level 55 or higher
+  	if ($client->GetGlobal("mage_epic_fire1") ==1) {
+		if (plugin::check_handin(\%itemcount, 32409 => 1, 15791 => 1)) {
+		 quest::say("Eh? I see ol' Gnaap 'as gotten' 'imself in'o a pickle again. Well le's see. I figu'e tha'ye need a good solven'. Ye'll need t'fin yer'self some metallic liquid, 'at'll make a fine suspension. Then fin' yerself some'un good wit' a brew barrel. Have'em mix tha' wit' sum 'ydro-lize'd ether, an' sum 'evy water.");
+		 quest::summonitem(16577); #reinforced flask
+		}
+	}
+   if($ulevel > 54) { #Must be level 55 or higher
     if ($cash >= 500000) { #Money for class emblem
   	#This is very ugly.  Should be a case/switch instead, but dunno
   	#if that's available.
@@ -112,8 +118,8 @@ sub EVENT_ITEM {
       quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
     }
     else {
-      quest::say("Tis not enuff!");
       if ($cash > 0) {
+		quest::say("Tis not enuff!");      
         quest::givecash($copper,$silver,$gold,$platinum); #Return money
       }
       plugin::return_items(\%itemcount);

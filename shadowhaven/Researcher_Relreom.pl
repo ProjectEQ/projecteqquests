@@ -1,10 +1,10 @@
 sub EVENT_SAY {
  if($text=~/hail/i){
-  quest::say("Hello there. Im afraid I really dont have time to have a conversation though. I have been sent on a very important task to retrieve some lost pages to a very [important book].");
+  quest::say("Hello there. Im afraid I really dont have time to have a conversation though. I have been sent on a very important task to retrieve some lost pages to a very  [" . quest::saylink("important book") . "].");
  }
  if($text=~/important book/i){ 
   # Monk Epic 1.5
-  quest::say("Oh dear, I shouldnt have said anything at all. I guess another set of eyes on the look out couldnt hurt though. I have been searching for some pages that were torn from a book in Erudin. These pages are illegible to the untrained eye due to the enchantment we place on them in case of such an occurrence, but I am afraid if the [pages] arent recovered soon, the enchantment will fade exposing our secrets.");
+  quest::say("Oh dear, I shouldnt have said anything at all. I guess another set of eyes on the look out couldnt hurt though. I have been searching for some pages that were torn from a book in Erudin. These pages are illegible to the untrained eye due to the enchantment we place on them in case of such an occurrence, but I am afraid if the  [" . quest::saylink("pages") . "] arent recovered soon, the enchantment will fade exposing our secrets.");
  }
  if($text=~/pages/i){ 
   # Monk Epic 1.5

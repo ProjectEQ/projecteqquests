@@ -11,9 +11,15 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-	if($text =~ /hail/i) {
+	if($text =~ /hail/i ) {
+		if(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >= 1) {
+		quest::say("Well hello thar! It's good to see ya again, what can I do fer ye? Oh, you lost your soul gem, eh? Well, let's see what I can do here. Ahh yes, here ye go, but take good care of this one, they are not easy to create. Ye might want to seek out Keras and apprise him of yer progress in your quest to learn to focus and control yer rage.");		
+		quest::summonitem(11999);
+		}
+	elsif($qglobals{berserk_epic} == undef) {
 		quest::say("Greetin's $name! You say ye wish to join up with us? That be great! Read the note in yer inventory and then hand it to me and we can start yer trainin! I almost forgot. Ask me about that [tome] in yer inventory if ye want to know how to use it.");
-	}
+		}
+	}	
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();
 		my $Yel = plugin::PWColor("Yellow");

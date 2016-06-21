@@ -31,7 +31,11 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("On my way, Iceberg!!");
+<<<<<<< HEAD
 		local mobtypeID = eq.get_entity_list():GetMobByNpcTypeID(30062);
+=======
+		local mobtypeID =  eq.get_entity_list():GetMobByNpcTypeID(30062);
+>>>>>>> f835478835597030526c9cc9e1d0fbb45f74dfb1
 		local follow_mob = mobtypeID:GetID();
 		eq.follow(follow_mob);
 		eq.stop_timer("follow");		

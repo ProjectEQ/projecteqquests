@@ -23,7 +23,7 @@ function event_trade(e)
 		e.self:Say("When you have all the pieces you need, you must find the great shaman who seeks greater knowledge of the spirit world. You will need his guidance with this task.");
 		e.other:SummonItem(57704); --Thatched Medicine Bag
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 57087, item2 = 57085}) and qglobals["shaman_epic"] == "3") then --hand in Ring of the Undead Spiritcharmer (drops from Spiritseeker Nadox in Crypt of Nadox) and Amulet of the Spiritist (drops from Netherbian Swarmfiend in Umbral Plains)
+	if(qglobals["shaman_epic"] == "3" and item_lib.check_turn_in(e.trade, {item1 = 57087, item2 = 57085})) then --hand in Ring of the Undead Spiritcharmer (drops from Spiritseeker Nadox in Crypt of Nadox) and Amulet of the Spiritist (drops from Netherbian Swarmfiend in Umbral Plains)
 		e.self:Say("Marvelous! You have come a long way, " .. e.other:GetName() .. " . I didn't have many doubts, but to see you return with this very rare and precious item is a joy. Now that we have this, we are yet another step closer to performing the Ruchu. I will keep this and deliver it. Thank you and stay strong, heyokah.");
 		e.self:Say("I'll be! You have successfully put an end to that fiend. This amulet will be used by the spirits during Ruchu. Now this amulet which I had used so many times in the past will help the one who wears it during the ritual to bind itself to the consciousness of the spirits so that they can be called. Stay focused shaman.");
 		eq.delete_global("shaman_epic_nadox");

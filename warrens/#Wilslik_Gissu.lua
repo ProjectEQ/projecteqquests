@@ -14,7 +14,7 @@ end
 function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 57550, item2 = 57369}) and qglobals["shaman_epic"] == "1") then -- hand in Shadowed Pulp and Brittle Twigs (both are result of combines of quest items gathered up to this point, recipes probably need to be added to db)
+	if(qglobals["shaman_epic"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 57550, item2 = 57369})) then -- hand in Shadowed Pulp and Brittle Twigs (both are result of combines of quest items gathered up to this point, recipes probably need to be added to db)
 		e.self:Say("Take these and return to the spirit!");
 		e.other:SummonItem(52921); --Distilled Potion of Endurance
 	end

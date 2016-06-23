@@ -20,6 +20,13 @@ sub EVENT_SAY {
   if ($text=~/what task/i) {
     quest::say("Bring me the torn pages of Magi'kot. The first section can be found in the depths of a tainted forest, warded by an angry lupine. It is also rumored that one section is found in the haunted estate of a murderer, on a many armed creature. The last may be found in the belly of an amphibian who thirsts for blood.");
   }
+  if ($text=~/bantil sent me/i) {
+    quest::say("You are working with Bantil? I hope you had some luck finding the books. Let me know if there is anything I can do to help you. Bantil is a friend, despite his gnomish heritage.");
+	quest::setglobal("mage_epic_jah", 1, 5, "F");
+	if(defined $qglobals{mage_epic_wal}) {
+		quest::say("Oh, you may want to speak to Akksstaff again, he and Bantil never quite saw eye to eye, you may want to ask him about Bantil again.");
+	}
+  }   
 }
 
 sub EVENT_ITEM {

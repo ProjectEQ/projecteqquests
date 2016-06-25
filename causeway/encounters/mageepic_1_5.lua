@@ -17,6 +17,8 @@ end
 
 function Air_HP(e)
   if (e.hp_event == 80) then
+	e.self:SetSpecialAbility(19, 1);
+	e.self:SetSpecialAbility(20, 1);  
 	e.self:SetSpecialAbility(24, 1);
 	e.self:SetSpecialAbility(25, 1);
 	e.self:SetInvisible(2);
@@ -25,9 +27,12 @@ function Air_HP(e)
 	eq.set_next_hp_event(60);
 	eq.spawn2(303101,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	eq.spawn2(303101,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-	e.self:GMMove(-1097,-1732,254,0);	
+	e.self:GMMove(-1097,-1732,254,0);
+	e.self:WipeHateList();	
   end
   if (e.hp_event == 60) then
+	e.self:SetSpecialAbility(19, 1);
+	e.self:SetSpecialAbility(20, 1);    
 	e.self:SetSpecialAbility(24, 1);
 	e.self:SetSpecialAbility(25, 1);	
 	e.self:SetInvisible(2);
@@ -37,9 +42,12 @@ function Air_HP(e)
 	eq.spawn2(303102,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	eq.spawn2(303102,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	eq.spawn2(303102,0,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());	
-	e.self:GMMove(-1097,-1732,254,0);	
+	e.self:GMMove(-1097,-1732,254,0);
+	e.self:WipeHateList();
   end 
   if (e.hp_event == 40) then
+	e.self:SetSpecialAbility(19, 1);
+	e.self:SetSpecialAbility(20, 1);    
 	e.self:SetSpecialAbility(24, 1);
 	e.self:SetSpecialAbility(25, 1);
 	e.self:SetInvisible(2);
@@ -50,9 +58,12 @@ function Air_HP(e)
 	eq.spawn2(303103,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	eq.spawn2(303103,0,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
 	eq.spawn2(303103,0,0,e.self:GetX(),e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading());
-	e.self:GMMove(-1097,-1732,254,0);	
+	e.self:GMMove(-1097,-1732,254,0);
+	e.self:WipeHateList();	
   end 
   if (e.hp_event == 20) then
+	e.self:SetSpecialAbility(19, 1);
+	e.self:SetSpecialAbility(20, 1);   
 	e.self:SetSpecialAbility(24, 1);
 	e.self:SetSpecialAbility(25, 1);
 	e.self:SetInvisible(2);
@@ -65,8 +76,11 @@ function Air_HP(e)
 	eq.spawn2(303104,0,0,e.self:GetX(),e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading());
 	eq.spawn2(303104,0,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
 	e.self:GMMove(-1097,-1732,254,0);
+	e.self:WipeHateList();
   end 
   if (e.hp_event == 10) then
+	e.self:SetSpecialAbility(19, 1);
+	e.self:SetSpecialAbility(20, 1);   
 	e.self:SetSpecialAbility(24, 1);
 	e.self:SetSpecialAbility(25, 1);
 	e.self:SetInvisible(2);
@@ -79,26 +93,33 @@ function Air_HP(e)
 	eq.spawn2(303105,0,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());		
 	eq.spawn2(303105,0,0,e.self:GetX()+10,e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading());
 	e.self:GMMove(-1097,-1732,254,0);
+	e.self:WipeHateList();
   end   
 end
 
 function Air_Signal(e)
 	if(e.signal==303101) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303101) == false ) then 
+		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303101) == false ) then
+			e.self:SetSpecialAbility(19, 0);
+			e.self:SetSpecialAbility(20, 0);		
 			e.self:SetSpecialAbility(24, 0);
 			e.self:SetSpecialAbility(25, 0);
 			e.self:SetInvisible(0);
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303102) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303102) == false ) then 
+		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303102) == false ) then
+			e.self:SetSpecialAbility(19, 0);
+			e.self:SetSpecialAbility(20, 0);
 			e.self:SetSpecialAbility(24, 0);
 			e.self:SetSpecialAbility(25, 0);
 			e.self:SetInvisible(0);
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303103) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303103) == false ) then 
+		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303103) == false ) then
+			e.self:SetSpecialAbility(19, 0);
+			e.self:SetSpecialAbility(20, 0);		
 			e.self:SetSpecialAbility(24, 0);
 			e.self:SetSpecialAbility(25, 0);
 			e.self:SetInvisible(0);
@@ -106,13 +127,17 @@ function Air_Signal(e)
 		end
 	elseif(e.signal==303104) then
 		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303104) == false ) then 
+			e.self:SetSpecialAbility(19, 0);
+			e.self:SetSpecialAbility(20, 0);			
 			e.self:SetSpecialAbility(24, 0);
 			e.self:SetSpecialAbility(25, 0);
 			e.self:SetInvisible(0);
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303105) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303105) == false ) then 
+		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303105) == false ) then
+			e.self:SetSpecialAbility(19, 0);
+			e.self:SetSpecialAbility(20, 0);		
 			e.self:SetSpecialAbility(24, 0);
 			e.self:SetSpecialAbility(25, 0);
 			e.self:SetInvisible(0);

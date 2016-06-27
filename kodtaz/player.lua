@@ -5,7 +5,7 @@ function event_click_door(e)
 	  local qglobals = eq.get_qglobals(e.self);
 		if(e.self:Class() == "Berserker" and qglobals["kt_fern"] == nil) then
 				e.self:SummonItem(16949); --Taelosian Fern Sample 
-				eq.set_global("kt_fern","1",3,"H1")
+				eq.set_global("kt_" .. door_id .. "fern","1",3,"H1")
 		end
 	end
 end

@@ -34,7 +34,7 @@ sub EVENT_CLICKDOOR {
 	elsif($doorid == 37 || $doorid == 39 || $doorid == 41) {
 	if((!defined $qglobals{yx_fern} || $qglobals{yx_fern}==0) && ($class eq "Berserker")) {
 		quest::summonitem(16949);    # Taelosian Fern Sample
-		quest::setglobal('yx_fern', 1, 3, 'H1' );
+		quest::setglobal("yx_fern_$doorid", 1, 3, 'H1' );
 	}	
   }
 	elsif(($doorid == 17) && ($yxtta_door == 0)) {

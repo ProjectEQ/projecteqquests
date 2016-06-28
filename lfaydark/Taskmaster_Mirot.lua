@@ -8,6 +8,7 @@ function event_say(e)
 		e.self:Emote("looks at you for a moment before his eyes shine with recognition. 'Its you, I've heard about you. We will not allow you to interfere with our plans again!");
 		e.self:SetInvisible(2);
 		e.self:SetTargetable(false);
+		e.self:GMMove(3435.6,-79.3,-2.8,250);
 		eq.depop_all(57152);
 		eq.spawn2(57153,0,0,3430,-13.5,-1.9,90);
 		eq.spawn2(57153,0,0, 3425,-25 ,-1.9,330);
@@ -33,7 +34,7 @@ end
 function event_signal(e)
 	if (e.signal == 1) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(57153) == false) then
-			eq.spawn2(57151,0,0,3420,-33.5,-1.9,90);	
+			eq.spawn2(57151,0,0,3420,-33.5,-1.9,41);	
 			eq.spawn2(57154,0,0,3430,-13.5,-1.9,90);
 			eq.spawn2(57154,0,0, 3425,-25 ,-1.9,330);
 			eq.spawn2(57154,0,0, 3430,-33.5 ,-1.9,0);

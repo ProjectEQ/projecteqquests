@@ -7,17 +7,21 @@ sub EVENT_SAY {
 	#epic 1.5
 	if($qglobals{berserk_epic} >=1) {
 	#have Raging Soul Shard
-		if($text=~/hail/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
-			quest::emote("appears to be lost in this own thoughts, mumbling to himself occasionally, and barely acknowledging your existence. Just as you're about to speak again, he says, 'Ach, ya have to forgive me absentmindedness, friend. I've been rather busy pondering [matters] at hand.");
+		if($text=~/hail/i && ($qglobals{berserk_epic} ==1 || $qglobals{berserk_epic} ==2)  && plugin::check_hasitem($client, 11999)) {
+			quest::emote("appears to be lost in this own thoughts, mumbling to himself occasionally, and barely acknowledging your existence. Just as you're about to speak again, he says, 'Ach, ya have to forgive me absentmindedness, friend. I've been rather busy pondering [" . quest::saylink("matters") . "] at hand.");
+						quest::setglobal("berserk_epic",3, 5, "F");
 		}
+		if($text=~/hail/i && $qglobals{berserk_epic} ==1 && !plugin::check_hasitem($client, 11999)) {
+			quest::emote("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Have you spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
+		}		
 		if($text=~/matters/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
-			quest::say("Since the recent discovery of the portal on Taelosia, we've been finding many different types of ores, plants, and minerals that were unlike anything we'd ever seen before. These materials have been used to craft simple weapons, potions, and sometimes even been used in various recipes for. . .uh. . .some interesting dishes. Yet I believe that they can be used for [something] much, much more.");
+			quest::say("Since the recent discovery of the portal on Taelosia, we've been finding many different types of ores, plants, and minerals that were unlike anything we'd ever seen before. These materials have been used to craft simple weapons, potions, and sometimes even been used in various recipes for. . .uh. . .some interesting dishes. Yet I believe that they can be used for [" . quest::saylink("something") . "] much, much more.");
 		}
 		if($text=~/something/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
-			quest::say("Some of these materials were of a quality that I feel can be used to craft implements of incredible power and perhaps these [materials] can even be incorporated into the processes used to craft the Axe of Ire to create an even more durable [weapon].");
+			quest::say("Some of these materials were of a quality that I feel can be used to craft implements of incredible power and perhaps these [" . quest::saylink("materials") . "] can even be incorporated into the processes used to craft the Axe of Ire to create an even more durable [" . quest::saylink("weapon") . "].");
 		}
 		if($text=~/materials/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
-			quest::say("Smiths have used many different types of tempering materials, from water to plant extracts to even blood from exotic animals on occasion. Why I've even heard about one legendary smith using the tears of a god! But given the magical properties of the ore that yew are collecting for me, I suspect that the plants and even some of the animal have been affected by the same type of magic. It is my theory that if we combined the [ore] with [blood] and [extracts] from the plants and animals of Taelosia, we would increase our efforts doubly.");
+			quest::say("Smiths have used many different types of tempering materials, from water to plant extracts to even blood from exotic animals on occasion. Why I've even heard about one legendary smith using the tears of a god! But given the magical properties of the ore that yew are collecting for me, I suspect that the plants and even some of the animal have been affected by the same type of magic. It is my theory that if we combined the [" . quest::saylink("ore") . "] with [" . quest::saylink("blood") . "] and [" . quest::saylink("extracts") . "] from the plants and animals of Taelosia, we would increase our efforts doubly.");
 		}
 		if($text=~/ore/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
 			quest::say("I thank ye for volunteering. The ore I seek comes form the areas closest to where the portal to Discord was originally opened. Ore from this area, I've been told, seems to be the purest form available. Once yew've gathered 4 pieces of this ore, return to me so that I may continue my research.");
@@ -30,12 +34,15 @@ sub EVENT_SAY {
 		}
 		if($text=~/weapon/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
 			quest::say("Ever since I've heard stories about these materials, I've been working on various designs for a new axe. . .trying to figure out how one could imbue it with the essence and spirit of a true berserker. Unfortunately I have been unable to get my hands on any raw ore of a high enough quality to experiment with.");
+		}
+		if($text=~/hail/i && $qglobals{berserk_epic} ==4) {
+			quest::emote("once again looks lost in deep thought, 'Apologies $name. Another student o'mine has not returned yet and shall soon be overdue. I am beginning to worry that she may be in trouble. Yet she still has more time to complete her task so mayhap I shouldnah worry. Shaking himself of his concerns Keras asks, 'Come now, how well did the axes fair?'");
 		}		
 	  }
 	  #epic 1.0
 	  else {
 		  if($text=~/hail/i && $class eq "Berserker" && plugin::check_hasitem($client, 68299) && $berserk_epic == undef) {
-			quest::say("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Hav eyou spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
+			quest::say("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Have you spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
 			quest::setglobal("berserk_epic", 1, 5, "F");
 		  }
 		  if($text=~/hail/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef  && !plugin::check_hasitem($client, 68299)) {

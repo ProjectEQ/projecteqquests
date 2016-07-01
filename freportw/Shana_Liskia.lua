@@ -55,7 +55,7 @@ function event_trade(e)
 		e.self:Emote("makes a few hasty scribbles in the margins of Corun's Notes and hands them back to you.");
 		e.other:SummonItem(62654);
 		eq.set_global("ranger_epic","2",5,"F");
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 40420,item2 = 62654}})) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 40420,item2 = 62654})) then
 		e.self:Say("Perfect! Yes, this will work nicely. Shana looks through Corun's notes while gathering items from her stores. This should work. What I'm going to do is grow a crystal around this fluid and some of the key ingredients of the disease. The crystal will focus the power of the fluid and the elements of the disease will guide it. If this goes well, I should be able to create a crystal that will guide you to the disease. Shana places the gathered items into a violet-tinted container and casts a spell over them. A moment later she retrieves a crystal from the container. The crystal is clear except for a dark, murky coloration at the center. Take that crystal and see if you can locate any creatures with the disease. If you have any success, please return and let me know.");
 		e.other:SummonItem(62846);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 62618,item2 = 62619})) then

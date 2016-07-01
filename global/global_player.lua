@@ -45,7 +45,7 @@ function event_combine_success(e)
 		e.self:SetAATitle('Priest');
 		eq.set_global("cleric_epic","7",5,"F");
 	--rogue 1.5
-	elseif(e.recipe_id == 19490 or e.recipe_id == 19491 or e.recipe_id == 19492 or e.recipe_id == 19493) then
+	elseif(e.recipe_id == 13402 or e.recipe_id == 13403 or e.recipe_id == 13404 or e.recipe_id == 13405) then
 		e.self:Message(15,"The piece of the metal orb fuses together with the blue diamonds under the intense heat of the forge. As it does, a flurry of images flash through your mind... A ranger and his bear side by side, stoic and unafraid, in a war-torn forest. A bitter tattooed woman with bluish skin wallowing in misery in a waterfront tavern. An endless barrage of crashing thunder and lightning illuminating a crimson brick ampitheater. Two halflings locked in a battle of wits using a checkered board. The images then fade from your mind");
 	--ranger 1.5 tree
 	elseif(e.recipe_id ==13412) then

@@ -15,7 +15,7 @@ function event_trade(e)
 	elseif(qglobals["cleric_epic"] >= "5" and item_lib.check_turn_in(e.trade, {item1 = 9945, item2 = 9948, item3 = 9597})) then -- Shissar Cerebral Cortex // Dragon Cerebrum // Akhevan Brain Stem
 		e.self:Say("Excellent work! The leader will be pleased. He should be here any moment to collect them.");
 		eq.spawn2(119176,0,0,861.99,-3016.40,20,0); --Dark Disciple Master
-		eq.depop();
+		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

@@ -13,4 +13,5 @@ sub EVENT_ITEM {
     quest::summonitem(20481);
     quest::depop();
   }
+  plugin::return_items(\%itemcount);
 }

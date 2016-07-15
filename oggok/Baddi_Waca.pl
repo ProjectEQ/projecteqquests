@@ -11,8 +11,14 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-	if($text =~ /hail/i) {
+	if($text =~ /hail/i ) {
+		if(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >= 1) {
+		quest::say("Me's kan tell dat yuz lose da soul gem. Iz yuz wanting anoder wun? Mez tinkin yez! Yuz needz to takez gud care uv dis wun now becuz dey are not easy to make! Mez tink dat Keras may want to knowz dat yuz is doin gud on yer serch for focusin' and controlin' yur rage.");		
+		quest::summonitem(11999);
+		}
+	elsif($qglobals{berserk_epic} == undef) {
 		quest::say("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");
+		}
 	}
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();

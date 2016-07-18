@@ -100,27 +100,27 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(item_lib.check_turn_in(e.trade, {item1 = 20426}) and qglobals["warrior_pre"] == "1") then --hand in Korbuk's Weapon Plans (dropped by The Diaku Overseer in PoTactics)
+	if(qglobals["warrior_pre"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 20426})) then --hand in Korbuk's Weapon Plans (dropped by The Diaku Overseer in PoTactics)
 		e.self:Say("Ahh, da plans! You really gave it to dat overseer, huh? Not too bad, I must say. You're not done yet though. There are still a couple errands left dat I need finished. You know da most important part of any sword is da blade it's forged from, right? Well, it is. I had da perfect [" .. eq.say_link("shank") .. "] ready and waiting for me.");
 		eq.set_global("warrior_pre","2",5,"F");
 		e.other:SummonItem(20426); --get Korbuk's Weapon Plans back
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60286}) and qglobals["warrior_pre"] == "2") then --hand in Elegant Shank (dropped by Shoqui the Forgotten in Hate's Fury)
+	if(qglobals["warrior_pre"] == "2" and item_lib.check_turn_in(e.trade, {item1 = 60286})) then --hand in Elegant Shank (dropped by Shoqui the Forgotten in Hate's Fury)
 		e.self:Say("You found it?! Did you slay da beast dat had it locked away too? You must have! Good work, you're really proving yourself nicely. There's some more work to be done though, so don't get too excited yet. Dis next errand is actually a favor I owe to a long time family friend. Perhaps you know of da Redblade family? Specifically, I'm talking about Kargek Redblade. He's in need of some help and you're da perfect person to help him. Just tell him I [sent you to help].");
 		eq.set_global("warrior_pre","3",5,"F");
 		e.other:SummonItem(60286); -- get Elegant Shank back
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60288}) and qglobals["warrior_pre"] == "3") then --hand in Emblazoned Champion's Hilt (received from Kargek Redblade from previous step)
+	if(qglobals["warrior_pre"] == "3" and item_lib.check_turn_in(e.trade, {item1 = 60288})) then --hand in Emblazoned Champion's Hilt (received from Kargek Redblade from previous step)
 		e.self:Say("Kargek must have been very appreciative, especially to give you a hilt dis fine. I know he gave dis to you, but since my sword is almost completed I thought I could use dis hilt to accompany my blade. I'll repay you, have no doubt about dat. I have everything I need now though, so there's just one more [" .. eq.say_link("job") .. "] I need you to do for me.");
 		eq.set_global("warrior_pre","4",5,"F");
 		e.other:SummonItem(60288); --get Emblazoned Champion's Hilt back
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60292}) and qglobals["warrior_pre"] == "5") then --hand in Dardek's Forged Blade (Received from Dardek Bladewright after previous step)
+	if(qglobals["warrior_pre"] == "5" and item_lib.check_turn_in(e.trade, {item1 = 60292})) then --hand in Dardek's Forged Blade (Received from Dardek Bladewright after previous step)
 		e.self:Say("At long last, my sword is completed! It's fantastic and just as amazing as ever I thought it could be. Thank you so much for helping me realize my dream and for helping me complete this sword. Now I think you're ready -- if you're still willing -- to help me with some other [" .. eq.say_link("work") .. "] I have to get done. Since you've helped so much, why don't you keep hold of da sword for a while longer? I think you may find it will come in handy.");
 		e.other:SummonItem(60293); --Korbuk's Blade of Mastery
 		eq.set_global("warrior_pre","6",5,"F");
 	end	
-	if(item_lib.check_turn_in(e.trade, {item1 = 60295, item2 = 60296, item3 = 60297, item4 = 60298}) and qglobals["warrior_epic"] >= "1") then --Decomposing Page 1,2,3 and Decomposing Cover (all groundspawns)
+	if(qglobals["warrior_epic"] >= "1" and item_lib.check_turn_in(e.trade, {item1 = 60295, item2 = 60296, item3 = 60297, item4 = 60298})) then --Decomposing Page 1,2,3 and Decomposing Cover (all groundspawns)
 		e.self:Say("Those... those are da pages and da cover I saw. You don't suppose dat da two are linked, do you? What if they are, what could dat mean? I don't even know what these say! I think you should take these to a linguist to decipher them. I knew one in da abysmal sea, aboard da hulking boat, but I forget his name. I do recall dat it was a funny name, though.");
 		eq.set_global("warrior_epic","2",5,"F");
 		e.other:SummonItem(60295); --Decomposing Page 1
@@ -128,42 +128,42 @@ function event_trade(e)
 		e.other:SummonItem(60297); --Decomposing Page 3
 		e.other:SummonItem(60298); --Decomposing Cover
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60299}) and qglobals["warrior_epic"] >= "2") then --Recounted History of War (get from previous step)
+	if(qglobals["warrior_epic"] >= "2" and item_lib.check_turn_in(e.trade, {item1 = 60299})) then --Recounted History of War (get from previous step)
 		e.self:Emote("grimaces in pain for a moment before opening his eyes");
 		e.self:Say("Things are getting stranger by da moment. I just had a vision of a creature dat wanders about da area below, then it went dark. I'm not sure if this creature is part of everything else, but it certainly is something we should check out. I know it seems silly, but you should have this [" .. eq.say_link("rock") .. "].");
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60301}) and qglobals["warrior_epic"] >= "2") then --Blackfall Ore (From previous step)
+	if(qglobals["warrior_epic"] >= "2" and item_lib.check_turn_in(e.trade, {item1 = 60301})) then --Blackfall Ore (From previous step)
 		e.self:Say("And you say you found this in a pile dat da creature left behind? I wonder what da story behind dat is... In any case, touching this gave me a brief glimpse of something sharp. It almost seemed like it was a blade. You should probably take this to get it looked at by a skilled [" .. eq.say_link("smith") .. "].");
 		e.other:SummonItem(60301); --Blackfall Ore
 		e.other:SummonItem(60302); --Smelting Plans
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60303}) and qglobals["warrior_epic"] >= "2") then --Blackfall Blade (from previous step)
+	if(qglobals["warrior_epic"] >= "2" and item_lib.check_turn_in(e.trade, {item1 = 60303})) then --Blackfall Blade (from previous step)
 		e.self:Say("What a fine looking blade, I must say dat smith did good work in such a short time. Hopefully it wasn't too much touble for you. I... oh my, this can't be good. Da creature... it's [" .. eq.say_link("loose") .. "]!");
 		e.other:SummonItem(60303); --Blackfall Blade back
 		eq.set_global("warrior_epic","3",5,"F");
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60304}) and qglobals["warrior_epic"] >= "3") then --Vial of Blackfall Blood (from Vxed encounter)
+	if(qglobals["warrior_epic"] >= "3" and item_lib.check_turn_in(e.trade, {item1 = 60304})) then --Vial of Blackfall Blood (from Vxed encounter)
 		e.self:Say("Dat was too close! You did a good job though and stopped dat beast before it could get too far on Norrath. We don't know what it might have been capable of otherwise. I've sealed da blood of da beast in a vial for you for da [" .. eq.say_link("journey") .. "]. I also got another [" .. eq.say_link("vision") .. "] when I took hold of da vial.");
 		eq.delete_global("warrior_epic_vxed");
 		e.other:SummonItem(60305); --Sealed Vial of Blackfall Blood
 	end	
-	if(item_lib.check_turn_in(e.trade, {item1 = 60306}) and qglobals["warrior_epic"] >= "4") then --Potion of Blackfall Spirit (from Kimber in EF)
+	if(qglobals["warrior_epic"] >= "4" and item_lib.check_turn_in(e.trade, {item1 = 60306})) then --Potion of Blackfall Spirit (from Kimber in EF)
 		e.self:Emote("gags as he takes hold of the potion, then quickly returns it to you.");
 		e.self:Say("I had no idea such a strong presence would be coming from this after Kimber worked with it. I hope he's ok. Now dat we've taken care of dat, we can focus on the last [" .. eq.say_link("vision") .. "] I had.");
 		eq.set_global("warrior_epic","5",5,"F");
 		e.other:SummonItem(60306); --Potion of Blackfall Spirit
 	end	
-	if(item_lib.check_turn_in(e.trade, {item1 = 60307}) and qglobals["warrior_epic"] >= "5") then --Decrepit Hilt (from Girplan Devourer in Bloodfields)
+	if(qglobals["warrior_epic"] >= "5" and item_lib.check_turn_in(e.trade, {item1 = 60307})) then --Decrepit Hilt (from Girplan Devourer in Bloodfields)
 		e.self:Say("What a worthless specimen this is. I don't understand why my vision would show me dat creature if all it had was this mediocre quality hilt. I also don't understand why there's energy emanating from da hilt when it cannot be used to wield a blade in its current state. I think we're going to have to look into [" .. eq.say_link("cleaning up da hilt") .. "].");
 		eq.set_global("warrior_epic","6",5,"F");
 		e.other:SummonItem(60307); --Decrepit Hilt
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60311}) and qglobals["warrior_epic"] >= "9") then --Glistening Hilt (from Corfia)
+	if(qglobals["warrior_epic"] >= "9" and item_lib.check_turn_in(e.trade, {item1 = 60311})) then --Glistening Hilt (from Corfia)
 		e.self:Say("Ah yes, Corfia. I remember her now. She did quite a fine job cleaning up dat hilt, eh? It's more ornate than it looked before. Didn't you say she added a couple additional touches to make it stronger? I wonder if style changes were part of dat... in any case... I... oh boy. I just had another [" .. eq.say_link("glimpse") .. "] from touching da hilt. Here take it back.");
 		eq.set_global("warrior_epic","10",5,"F");
 		e.other:SummonItem(60311); --get Glistening Hilt back
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60312, item2 = 60313, item3 = 60314, item4 = 60315}) and qglobals["warrior_epic"] == "10") then --4 diff Stone of Eternal Power
+	if(qglobals["warrior_epic"] == "10" and item_lib.check_turn_in(e.trade, {item1 = 60312, item2 = 60313, item3 = 60314, item4 = 60315})) then --4 diff Stone of Eternal Power
 		e.self:Say("Yes, those must be da stones dat fit into those holes! I'm not entirely sure how... wait, I know! We need to have a gem setter put these back in place and I know just da one. His name is Gridbar Galund and he makes his stay out in da towering mountains of Butcherblock. He owes me a favor or two, so I'm sure he'd be more than willing to help you out with this.");
 		eq.set_global("warrior_epic","11",5,"F");
 		e.other:SummonItem(60312); --Stone of Eternal Power: Northeast Eye
@@ -171,30 +171,28 @@ function event_trade(e)
 		e.other:SummonItem(60314); --Stone of Eternal Power: Southeast Eye
 		e.other:SummonItem(60315); --Stone of Eternal Power: Southwest Eye
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60320}) and qglobals["warrior_epic"] >= "13") then --Hilt of Eternal Power
+	if(qglobals["warrior_epic"] >= "13" and item_lib.check_turn_in(e.trade, {item1 = 60320})) then --Hilt of Eternal Power
 		e.self:Say("Met up with Gridbar did you? He's an oddball, for certain, but he's da best at what he does. I don't think I've ever seen stones set so finely into anything before, wouldn't you say? Alrighty, I think... wow [" .. eq.say_link("another image") .. "]...");
 		e.other:SummonItem(60320); --Hilt of Eternal Power
 		eq.set_global("warrior_epic","14",5,"F");
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60322}) and qglobals["warrior_epic"] == "16") then --Kreljnok's Muddled Rage from Possessed Brute in MPG
+	if(qglobals["warrior_epic"] == "16" and item_lib.check_turn_in(e.trade, {item1 = 60322})) then --Kreljnok's Muddled Rage from Possessed Brute in MPG
 		e.self:Say("All too easy. For you, I mean. You did well. I'm... I'm getting unclear visions from this essence. I can't seem to understand what it's trying to tell me. This essence is impure and needs to be purified. I happen to know of a [purification expert] dat can help us clear this mystery up.");
 		eq.set_global("warrior_epic","17",5,"F");
 		e.other:SummonItem(60322); --Kreljnok's Muddled Rage
 	end	
-	if(item_lib.check_turn_in(e.trade, {item1 = 60325}) and qglobals["warrior_epic"] == "18") then --Larnik's Locked Purification Kit, dropped by Larnik the Recluse in EW
+	if(qglobals["warrior_epic"] == "18" and item_lib.check_turn_in(e.trade, {item1 = 60325})) then --Larnik's Locked Purification Kit, dropped by Larnik the Recluse in EW
 		e.self:Say("Uh oh. I'm guessing dat he didn't want to part with this peacefully? Well, I can't say I'm sorry. He was a jerk to me da last time we talked. I guess I just figured someone else might be able to persuade him to change his mind. I went ahead and broke open da lock for you. You'll be able to make use of da [" .. eq.say_link("kit") .. "] now.");
 		e.other:SummonItem(60326); -- Larnik's Unlocked Purification Kit
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 47100}) and qglobals["warrior_epic"] == "18") then --Globe of Discordant Energy
+	if(qglobals["warrior_epic"] == "18" and item_lib.check_turn_in(e.trade, {item1 = 47100})) then --Globe of Discordant Energy
 		e.self:Say("Yes, this is precisely what I felt. Its power is indescribable. We're so close now! I can see what's left and it's a glorious end to a glorious journey. There are just two [" .. eq.say_link("last items") .. "] you need to take care of.");
 		eq.set_global("warrior_epic","19",5,"F");
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60321, item2 = 60327}) and qglobals["warrior_epic"] == "19") then --Kreljnok's Focused Rage and Champion's Sword of Eternal Power
+	if(qglobals["warrior_epic"] == "19" and item_lib.check_turn_in(e.trade, {item1 = 60321, item2 = 60327})) then --Kreljnok's Focused Rage and Champion's Sword of Eternal Power
 		e.self:Say("Well done. Well done, indeed. I knew da moment I saw you dat you were da right person for all of this. Here is da sword, but there's one [" .. eq.say_link("last item") .. "] dat you need to do.");
 		eq.set_global("warrior_epic","20",5,"F");
 		e.other:SummonItem(60329); --Raging Sword of Eternal Power
 	end	
 	item_lib.return_items(e.self, e.other, e.trade, e.text);
 end
-	
-	

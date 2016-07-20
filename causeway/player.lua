@@ -15,5 +15,11 @@ function event_loot(e)
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("mage_epic_causeway","1",5,"F");
 		end
+	elseif (e.self:Class() == "Necromancer" and e.item:GetID() == 55855) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["Soulwhisper"] == "3" and qglobals["nec_epic_causeway"] == nil) then
+			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+			eq.set_global("nec_epic_causeway","1",5,"F");
+		end		
 	end	
 end

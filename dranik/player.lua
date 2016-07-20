@@ -1,7 +1,6 @@
 function event_loot(e)
 	if(e.self:Class() == "Warrior" and e.item:GetID() == 60321 and e.corpse:GetNPCTypeID()==336091) then
 		local qglobals = eq.get_qglobals(e.self);
-		e.self:Say("You are too weak for me! Die now by my hand!");
 		if(qglobals["warrior_epic"] == "15" and qglobals["warrior_epic_dranik"] == nil ) then
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("warrior_epic_dranik","1",5,"F");

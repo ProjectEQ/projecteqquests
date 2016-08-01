@@ -1,16 +1,17 @@
-local treesize = 1;
+local treesize;
 local ThreadManager = require("thread_manager");
 local currclient=Client();
 
 function event_spawn(e)
-	eq.set_timer("grow",1000);
+	treesize=1;
+	eq.set_timer("grow",2000);
 end
 
 function event_timer(e)
 	if(e.timer=="grow") then
-		treesize=treesize+1;
+		treesize=treesize+2;
 		e.self:ChangeSize(treesize);
-		if(treesize==8)  then
+		if(treesize>=8)  then
 			eq.stop_timer("grow");
 		end
 	elseif(e.timer=="e1") then
@@ -32,7 +33,7 @@ end
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.message:findi("hail") and treesize==8 and qglobals["ranger_epic"] == "3") then
+	if(e.message:findi("hail") and treesize>=8 and qglobals["ranger_epic"] == "3") then
 		e.self:Emote("looks about for a moment. It peers at the sky and the earth for a while. It then looks down and says, We finally meet. Thank you for helping me to grow. I understand that I have been blessed by spirits of rain and earth and that is why I can speak to you and move. You have given me much, my friend. Now I would give something to you. The great treant gently pulls a small piece of wood from its bole. The wood is hard and dark. It then reaches down with one of its high branches and plucks a singular flower, smaller and of blue color that differs from the white of the others. The petals fall from the flower as he reaches out and hands you these two items. I have been with you and your people for a while. I know what you seek. That seed will grow the plant you need. The heartwood is for you. May it serve you well.");
 		e.other:SummonItem(62623); --Red Dogwood Heartwood
 		e.other:SummonItem(62624); --Spring Dogwood Seed

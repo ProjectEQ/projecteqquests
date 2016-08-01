@@ -37,12 +37,11 @@ function event_death_complete(e)
 	local zloc = e.self:GetZ();
 	local heading = e.self:GetHeading();
 	eq.spawn2(119179,0,0,xloc,yloc,zloc,heading); -- a gilded chest
-	eq.signal(57150,2);
 end
 		
 function event_timer(e)
 	eq.stop_timer("depop");
 	eq.depop_all(119178);
-	eq.depop_all(119177);  
+	eq.depop_all(119177);
 	eq.depop();
 end		

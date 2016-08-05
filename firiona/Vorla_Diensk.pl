@@ -1,4 +1,5 @@
 sub EVENT_SAY {
+ if ($client->GetGlobal("Fatestealer") ==1) {
   if ($text=~/hail/i) {
     quest::emote("stares at you blankly. She is wearing a pendant that resembles a sun occluded by the horizon.");
   }
@@ -11,14 +12,12 @@ sub EVENT_SAY {
   if ($text=~/come in/i) {
     quest::say("You must find these rogues and deal with them.' She chuckles, 'Don't worry, you needn't cause them harm. Deal with them diplomatically. Here, take this pendant so that they recognize your status. Your name is inscribed on the pendant in symbols that they will understand. Many of these individuals are legendary members of the rogue community, or at the very least . . . Infamous. Causing them grief will solve nothing. Find out what they know. We can use this knowledge to [" . quest::saylink("craft another blade") . "]. If you can, find out who they spoke to. Use whatever methods you have at your disposal - these blaggards are not necessarily beneath bribery.");
     quest::summonitem(52009);
-	quest::setglobal('Fatestealer',1, 5, 'F' );
   }
   if ($text=~/craft another blade/i) {
-    quest::say("We have multiple reasons for wanting to forge a duplicate blade: Firstly, we want to find out what we're up against. Second, it only makes sense to carry comparable weaponry in case you have to tangle with the assassin. Third, it will help us to uncover who was behind the creation of the original.");
-	
+    quest::say("We have multiple reasons for wanting to forge a duplicate blade: Firstly, we want to find out what we're up against. Second, it only makes sense to carry comparable weaponry in case you have to tangle with the assassin. Third, it will help us to uncover who was behind the creation of the original.");	
   }
+ }
 }
-
 sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }

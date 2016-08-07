@@ -11,9 +11,7 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-	if ($text=~/hail/i) {
-		quest::say("Well met, friend. May I be of assistance?");
-	}
+
 	if(($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)){
 		quest::say("Luckily for you someone found it.");
 		quest::summonitem(2873);
@@ -22,16 +20,23 @@ sub EVENT_SAY {
 		quest::say("Someone found a rockhopper chewing on this in the pit. Try not to lose it this time.");
 		quest::summonitem(2878);
 	}
-  if (defined($qglobals{fatestealer}) && ($qglobbals{fatestealer} >= 1)) { #Rogue 1.5
-    if ($text=~/hail/i) {
+ 
+  if ($text=~/hail/i) {
+   if ( $client->GetGlobal("Fatestealer") ==1) { #Rogue 1.5
       quest::emote("gazes at you, his amber eyes gleaming.");
-      quest::say("I have been awaiting your arrival. The information that you seek is here, and I have no qualms sharing it with someone of your illustrious background. The name '$name' pops up in idle conversation here more than you would realize. However, my knowledge does come at a price: one pouch of gems. I've no need for your money, but a contribution of gemstones is symbolic of your dedication to the craft and your understanding of the value of that which I am about to impart to you. Nothing of value is ever given freely. You should understand that more than anyone. If you are lacking coin at the moment, a [small task] will do the trick as well. Whichever you'd prefer.");
-    }
-    if ($text=~/small task/i) {
+      quest::say("I have been awaiting your arrival. The information that you seek is here, and I have no qualms sharing it with someone of your illustrious background. The name '$name' pops up in idle conversation here more than you would realize. However, my knowledge does come at a price: one pouch of gems. I've no need for your money, but a contribution of gemstones is symbolic of your dedication to the craft and your understanding of the value of that which I am about to impart to you. Nothing of value is ever given freely. You should understand that more than anyone. If you are lacking coin at the moment, a [" . quest::saylink("small task") . "] will do the trick as well. Whichever you'd prefer.");  	  
+   }
+   else{
+	 quest::say("Well met, friend. May I be of assistance?");
+	 }
+	}
+
+   if ( $client->GetGlobal("Fatestealer") ==1) { #Rogue 1.5
+       if ($text=~/small task/i) {
       quest::say("King Raja deserves to be well-fed, and I deserve to be in his good graces. You can take care of both these problems simultaneously by assembling a culinary masterpiece for the King. There are delicacies from far off lands that we have only heard rumors of, but they sound incredibly appetizing. Collect the various foodstuffs on this list. Return them to me and then I will bestow upon you the information you desire. Farewell, $name.");
       quest::summonitem(52334); #King's Feast Request
-    }
-  }
+	}
+   }
 }
 
 sub EVENT_ITEM {
@@ -60,9 +65,16 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::exp(100);
   }
-  elsif (plugin::check_handin(\%itemcount, 9491 => 1)) { #King's Feast
-    quest::say("Mmm, that is a delicious aroma. The King will most definitely be pleased, $name. And now it seems I owe you a favor.' He pauses momentarily as if gathering his thoughts then speaks. 'Let me ask you, what is the greatest advantage of a Vah Shir's claws?' He retracts a single dark claw and holds it forward, studying it with his amber eyes. 'The design is simple but beautifully effective. Elegant, sharp, and dangerous. Most importantly, I want you to notice this: our enemies feel the claw's pierce twice, both when penetrated and when the implement of pain is ripped out. That is key to creating the perfect blade. I can describe the topic more fully in writing. There you are, I've scribbled some notes in your journal.");
-    quest::emote("You have coerced Rakutah into revealing his secret."); #need to add 1.5 global here
+  elsif ($client->GetGlobal("Fatestealer") ==1 and plugin::check_handin(\%itemcount, 9491 => 1)) { #King's Feast
+    quest::say("Mmm, that is a delicious aroma. The King will most definitely be pleased, $name. And now it seems I owe you a favor. He pauses momentarily as if gathering his thoughts then speaks. 'Let me ask you, what is the greatest advantage of a Vah Shir's claws?' He retracts a single dark claw and holds it forward, studying it with his amber eyes. The design is simple but beautifully effective. Elegant, sharp, and dangerous. Most importantly, I want you to notice this: our enemies feel the claw's pierce twice, both when penetrated and when the implement of pain is ripped out. That is key to creating the perfect blade. I can describe the topic more fully in writing. There you are, I've scribbled some notes in your journal.");
+	$client->Message(15,"You have coerced Rakutah into revealing his secret.");	
+	quest::setglobal('Fatestealer_sv',1, 5, 'F' );
+  }
+  elsif (!defined $qglobals{"Fatestealer_gem"} and $client->GetGlobal("Fatestealer") ==1 and $client->GetRace()==130 and plugin::check_handin(\%itemcount, 52353 => 1)) {
+    quest::say("Let me ask you, what is the greatest advantage of a Vah Shir's claws?' He retracts a single dark claw and holds it forward, studying it with his amber eyes. The design is simple but beautifully effective. Elegant, sharp, and dangerous. Most importantly, I want you to notice this: our enemies feel the claw's pierce twice, both when penetrated and when the implement of pain is ripped out. That is key to creating the perfect blade. I can describe the topic more fully in writing. There you are, I've scribbled some notes in your journal.");
+    $client->Message(15,"You have coerced Rakutah into revealing his secret.");	 
+	quest::setglobal('Fatestealer_sv',1, 5, 'F' );
+	quest::setglobal('Fatestealer_gem',1, 5, 'F' );
   }
   plugin::return_items(\%itemcount);
 }

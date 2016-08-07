@@ -19,6 +19,7 @@ function event_trade(e)
 		e.other:SummonItem(52355,2); -- Dilapidated Head of Shakey
 		e.other:Ding();
 		e.other:AddEXP(500);
+		eq.set_global("Fatestealer_shak","1",5,"F");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -13,14 +13,13 @@ end
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);
 	
-	if(qglobals["fatestealer"] ~= nil) then
-		if(tonumber(qglobals["fatestealer"]) >= 1) then
+	if(qglobals["Fatestealer"] == "1") then
 			if(e.message:findi("hail")) then
-				e.self:Say("So there you are, " .. e.other:GetName() .. ". You are, of course, preceded by your reputation. I was wondering when I would have the pleasure of receiving your company. Word has it that you're looking for information, and I'm afraid you've come to the wrong bar, friend. The drinks are downstairs and the information is strictly off limits. That is, unless you can take care of a [small job] for me. I might be willing to entertain the notion of overlooking your stature if you can assist me with a special problem.");
+				e.self:Say("So there you are, " .. e.other:GetName() .. ". You are, of course, preceded by your reputation. I was wondering when I would have the pleasure of receiving your company. Word has it that you're looking for information, and I'm afraid you've come to the wrong bar, friend. The drinks are downstairs and the information is strictly off limits. That is, unless you can take care of a [" .. eq.say_link("small job") .. "] for me. I might be willing to entertain the notion of overlooking your stature if you can assist me with a special problem.");						
 			elseif(e.message:findi("small job")) then
 				e.self:Say("One of my girls stumbled across a beverage that should bring in crowds to the Fool's Gold. It's fantastic stuff, really. I am expecting folks to travel all the way from Freeport. But without having even tasted a drop of the stuff, Mayor Gubbin has outlawed it in Rivervale. He won't let me bring in a shipment of ingredients, and my shippers have refused to deliver here anymore after being turned away at the gate so many times - rudely I might add! If you were to brew a bottle of the stuff and convince Gubbin to take a drink, I think he might appreciate it enough to change his mind. Here's the recipe. I'm counting on you, " .. e.other:GetName() .. ".");
+				e.other:SummonItem(52333);
 			end
-		end
 	elseif(e.message:findi("hail")) then
 		e.self:Say("Its nice to meet you " .. e.other:GetName() .. ". Allow me to introduce myself. I am Lendel Deeppockets master Assassin of Rivervale. I am personally in charge of all [training] we have the new recruits go through before they are sent out on specific missions.");
 	elseif(e.message:findi("training")) then
@@ -62,7 +61,8 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-
+	local qglobals = eq.get_qglobals(e.self,e.other);
+	
 	if(item_lib.check_turn_in(e.trade, {item1 = 18732})) then -- Tattered Note
 		e.self:Say("HA! I asked that fool Denry to send me a professional, and this is what I get?!? Oh diddlepicks! That crotchety old coot never liked me anyway. And after all I've done for him! Hrrmf! Ah well, let's get you started and see what ya got, huh, kid? Here, wear this. Maybe I'll have Toelia break you in, huh? Yeah, that'll work! Go find her, and she'll put you to work. Just remember, we all earn our keep around here, or else it's back to hay farm for you! Oh yeah, tell her you're the [new dishwasher] so she knows you are on the level. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13539); -- Old Brown Vest*
@@ -77,9 +77,15 @@ function event_trade(e)
 		e.other:SummonItem(22695); -- Dirk of the Slickfinger
 		e.other:Ding();
 		e.other:AddEXP(200);
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 13588})) then -- Rogue 1.5 handin
+	elseif(qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 9475})) then -- Rogue 1.5 handin
 		e.self:Say("Well done, " .. e.other:GetName() .. ". With the Mayor's blessing to sell this liqueur in the Fool's Gold we'll make a mint, and there's almost nothing illegitimate about it. Now that we have the formalities taken care of, allow me to tell you something. What I know is fundamental to the idea of creating a perfect blade. It's my pleasure to pass that knowledge on to you. Many people are hung up on the shape and size of a weapon. I'm here to tell you that it's not about size, but overall weight and balance.' Lendel holds out his dagger and balances the point on the tip of his finger. 'You see what I mean, " .. e.other:GetName() .. "? Perfect. In the heat of combat, when every precision strike counts, you can't afford to be wielding an unbalanced bulky blade. I have some notes I've written up on the topic. Here, I'll jot them down in your journal.");
-		e.self:Emote("You have coerced Lendel into revealing his secret");
+		e.other:Message(15,"You have coerced Lendel into revealing his secret");
+		eq.set_global("Fatestealer_rv","1",5,"F");
+	elseif(qglobals["Fatestealer"] == "1" and qglobals["Fatestealer_gem"] == nil and e.other:Race()=="Halfling" and item_lib.check_turn_in(e.trade, {item1 = 52353})) then
+		e.self:Say("Now that we have the formalities taken care of, allow me to tell you something. What I know is fundamental to the idea of creating a perfect blade. It's my pleasure to pass that knowledge on to you. Many people are hung up on the shape and size of a weapon. I'm here to tell you that it's not about size, but overall weight and balance.' Lendel holds out his dagger and balances the point on the tip of his finger. 'You see what I mean, " .. e.other:GetName() .. "? Perfect. In the heat of combat, when every precision strike counts, you can't afford to be wielding an unbalanced bulky blade. I have some notes I've written up on the topic. Here, I'll jot them down in your journal.");
+		e.other:Message(15,"You have coerced Lendel into revealing his secret");
+		eq.set_global("Fatestealer_rv","1",5,"F");
+		eq.set_global("Fatestealer_gem","1",5,"F");		
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

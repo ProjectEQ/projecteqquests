@@ -11,8 +11,14 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-	if($text =~ /hail/i) {
-		quest::say('If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that [tome] in your inventory as well.  It will help you greatly during your adventures.');
+	if($text =~ /hail/i ) {
+		if(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >= 1) {
+		quest::say("What can I help you with today? What's that? Something about your soul gem? Hmm...Let's see what we can do here. Here you go, but please take care of this one, they are not easy to create. I'd imagine that Keras will want to see that you are progressing nicely on your quest to seek a way to focus and control your rage.");		
+		quest::summonitem(11999);
+		}
+	elsif($qglobals{berserk_epic} == undef) {
+		quest::say("If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that [tome] in your inventory as well.  It will help you greatly during your adventures.");
+		}
 	}
 	if(($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)) {
 		quest::say("Luckily for you someone found it.");

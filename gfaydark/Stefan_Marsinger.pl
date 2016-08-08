@@ -69,6 +69,26 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 54038 => 1, 54059 => 1, 54057 => 1, 54061 => 1, 54038 => 1)) { #caster 4
     quest::summonitem(54039); #glimmering gem
     quest::exp(60000);
-  } 
+  }
+  if (plugin::check_handin(\%itemcount, 9590 => 1)) {
+    quest::emote("accepts the note and begins to read");
+	quest::say("What's this? You wish us to cease and desist spreading slander about the swashbuckler known as Stanos, or else . . .? Else what? You understand we don't fabricate the stories told in our songs. As messengers, we carry the tunes that we learn during our travels. If there's anything I can vouch for, it's that every story has a little bit of truth to it. If this Stanos gentleman is so concerned about his reputation - perhaps he should begin by taking a look at the source, himself. As for you, you're soon to find out that my twin sibling and I don't take kindly to threats.' The Marsinger crumples up the note and tosses it at your feet. 'You have earned the wrath of our most dissonant chords.");  
+	$npc->SetSpecialAbility(19,0);
+	$npc->SetSpecialAbility(20,0);
+	$npc->SetSpecialAbility(24,0);
+	$npc->SetSpecialAbility(25,0);
+
+	my $guards = $entity_list->GetMobByNpcTypeID(54102);
+
+    if ($guards) {
+      my $guards = $guards->CastToNPC();
+ 	$guards->SetSpecialAbility(19,0);
+	$guards->SetSpecialAbility(20,0);
+	$guards->SetSpecialAbility(24,0);
+	$guards->SetSpecialAbility(25,0);
+    $guards->AddToHateList($client, 1);
+    }
+	$npc->AddToHateList($client, 1);
+   }  
   plugin::return_items(\%itemcount);    
 }

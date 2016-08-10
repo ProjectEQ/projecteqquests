@@ -42,7 +42,6 @@ function event_combine_success(e)
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
-		e.self:SetAATitle('Priest');
 		eq.set_global("cleric_epic","7",5,"F");
 	--rogue 1.5
 	elseif(e.recipe_id == 13402 or e.recipe_id == 13403 or e.recipe_id == 13404 or e.recipe_id == 13405) then
@@ -65,7 +64,6 @@ function event_combine_success(e)
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
-		e.self:SetAATitle('Earthguard');
 		eq.set_global("ranger_epic","5",5,"F");
 	end
 end

@@ -71,7 +71,6 @@ function event_say(e)
 			e.other:AddAAPoints(5);
 			e.other:Ding();
 			e.other:Message(15,'You have gained 5 ability points!');
-			e.other:SetAATitle('Fateseer');
 			eq.set_global("shaman_epic","7",5,"F");
 		elseif(e.message:findi("prepared to carry on") and e.other:HasItem(57400)) then
 			e.self:Say("I knew we could count on you," .. e.other:GetName() .. "The time for Ruchu is drawing ever nearer, but we still must gather some essential elements. Soon, you will have to cross the barrier into that realm of Discord. Lupot Nukla can help you.");

@@ -13,6 +13,7 @@ local qglobals = eq.get_qglobals(e.self,e.other);
 	elseif(e.message:findi("change their tune")) then
 		e.self:Say("Yes, exactly. Bards. The self-proclaimed heralds of Norrath. What they are is slander, personified. It seems there are several of them that have been sullying Stanos' name in both story and song. Deliver this letter to them. It's a 'request' that they speak favorably about our generous benefactor, lest some ill fate befall them. If they refuse, you know what to do. Empty threats mean nothing.");
 		e.other:SummonItem(9590);
+	end
  end
 end
 end

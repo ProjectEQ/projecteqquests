@@ -16,6 +16,7 @@ local qglobals = eq.get_qglobals(e.self,e.other);
 	end
  end
 end
+end
 
 function event_trade(e)
 	local item_lib = require("items");

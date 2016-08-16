@@ -1,8 +1,7 @@
 function event_enter_zone(e)
 	e.self:ClearCompassMark();
-	eq.delete_global("hpb_zone_emote");
 	local qglobals = eq.get_qglobals(e.self);
-	if ( qglobals["hpb_zone_emote"] == nil) then
+	if (qglobals["Fatestealer"] == "1" and qglobals["hpb_zone_emote"] == nil) then
 		eq.set_timer("s1",5000);
 		eq.set_timer("s2",10000);
 		eq.set_timer("s3",15000);

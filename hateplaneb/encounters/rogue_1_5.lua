@@ -12,18 +12,19 @@ function Lanys_Say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(qglobals["Fatestealer"] == "1") then
 		if(e.message:findi("hail")) then
+			e.self:TempName();
 			e.other:Message(15,"The Teir`dal looks away, pretending not to notice you. However, beneath her facade of indifference you sense that she is suppressing unbridled anger. Perhaps you could taunt her into attacking by saying the right things... ");
 		elseif(e.message:findi("Tunare")) then
-			e.self:TempName("an embodiment of hatred");
+			e.self:TempName("an_embodiment_of_hatred");
 			e.self:Emote("glares at you angrily, Keep using your tongue like that and I will do you the pleasure of removing it.");
 		elseif(e.message:findi("Firiona")) then
-			e.self:TempName("a child of hatred");
+			e.self:TempName("a_child_of_hatred");
 			e.self:Say("WHAT did you say!? You dare bring up the name of that tart in my presence?");
 		elseif(e.message:findi("Kithicor")) then
-			e.self:TempName("The Child of Hate");
+			e.self:TempName("The_Child_of_Hate");
 			e.self:Say("Never speak those words again.");		
 		elseif(e.message:findi("Laarthik")) then
-			e.self:TempName("Lanys T`Vyl");
+			e.self:TempName("Lanys_T`Vyl");
 			e.self:SetLevel(73);
 			e.self:Say("Innoruuk forgive me! I refuse to suffer these fool's arrogance any longer!");
 			e.self:Say("The finest Teir`dal male that has ever existed. You sully his name by even thinking it.");

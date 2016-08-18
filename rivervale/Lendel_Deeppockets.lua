@@ -77,7 +77,7 @@ function event_trade(e)
 		e.other:SummonItem(22695); -- Dirk of the Slickfinger
 		e.other:Ding();
 		e.other:AddEXP(200);
-	elseif(qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 9475})) then -- Rogue 1.5 handin
+	elseif(qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 13588})) then -- Rogue 1.5 handin
 		e.self:Say("Well done, " .. e.other:GetName() .. ". With the Mayor's blessing to sell this liqueur in the Fool's Gold we'll make a mint, and there's almost nothing illegitimate about it. Now that we have the formalities taken care of, allow me to tell you something. What I know is fundamental to the idea of creating a perfect blade. It's my pleasure to pass that knowledge on to you. Many people are hung up on the shape and size of a weapon. I'm here to tell you that it's not about size, but overall weight and balance.' Lendel holds out his dagger and balances the point on the tip of his finger. 'You see what I mean, " .. e.other:GetName() .. "? Perfect. In the heat of combat, when every precision strike counts, you can't afford to be wielding an unbalanced bulky blade. I have some notes I've written up on the topic. Here, I'll jot them down in your journal.");
 		e.other:Message(15,"You have coerced Lendel into revealing his secret");
 		eq.set_global("Fatestealer_rv","1",5,"F");

@@ -20,7 +20,7 @@ function event_say(e)
 		elseif(e.message:findi("strange")) then
 			e.self:Say("Aha, you have sensed it as well. For a while, I believed it was just me dat noticed it. Now dat you've confirmed my suspicions, I'm sure I can move forward with my [" .. eq.say_link("work") .. "].");
 		elseif(e.message:findi("work")) then
-			if(e.other:HasItem(17859) or e.other:HasItem(17869) or qglobals["warrior_pre"] == "6") then --Have old Red Scabbard or New Red Scabbard or have finished prequest
+			if (((e.other:HasItem(10910) and e.other:HasItem(10909)) or e.other:HasItem(10908)) or qglobals["warrior_pre"] == "6") then --Have 1.0 or have finished prequest
 				e.self:Say("Yeah, ok. You look like da respectable type. I wish it was an easy story to tell, but me thinks it's not so easy. I'm uncertain if you know da story of da red scabbard. I was named after my ancestor by da same name. In a great war, Rallos Zek bestowed to my ancestor da fabled red scabbard after Suteng was slain. It had been his charge and dat of my family to hold da scabbard until a [" .. eq.say_link("true warrior") .. "] would step forward to claim it as theirs once more.");
 				if(qglobals["warrior_epic"] == nil) then
 					eq.set_global("warrior_epic","1",5,"F"); --flagged to start epic 1.5

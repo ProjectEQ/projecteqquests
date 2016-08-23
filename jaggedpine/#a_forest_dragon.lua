@@ -5,6 +5,8 @@ local dire_id = 250030 -- spawn2 ID
 function event_combat(e)
     if (e.joined == false and e.self:GetHPRatio() < 97) then
         eq.set_timer("depop", 12000)
+    elseif (e.joined == true) then
+        eq.stop_timer("depop)")
     end
 end
 

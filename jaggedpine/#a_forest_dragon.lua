@@ -12,7 +12,7 @@ end
 
 function event_timer(e)
     if (e.self:GetHPRatio() == 100) then
-        eq.update_spawn_timer(dire_id, 0)
+        eq.update_spawn_timer(dire_id, 1000)
         eq.depop()
     end
 end

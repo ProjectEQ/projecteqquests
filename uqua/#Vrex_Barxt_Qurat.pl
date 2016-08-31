@@ -33,7 +33,7 @@ sub EVENT_TIMER {
     EVENT_SIGNAL();
   }
   if($timer == 3){
-   if($y < -250) {
+   if($y < -184) {
     $npc->GMMove(-869,-16,65,125);
    }
   } 

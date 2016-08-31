@@ -26,7 +26,7 @@ sub EVENT_ENTER {
 sub EVENT_SIGNAL {
 	if ($signal == 297209) {
 		#runt died or had multiple aggro, go active
-		quest::modifynpcstat("special_attacks","SQUMCNIDfr");
+		quest::modifynpcstat("special_attacks","SQUMCNIDfrR");
 	}
 }
 

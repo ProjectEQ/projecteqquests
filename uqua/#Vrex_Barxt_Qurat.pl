@@ -41,8 +41,18 @@ sub EVENT_TIMER {
 
 sub EVENT_HP {
   if($hpevent == 40) {
+    quest::emote("Barxt's bond with the Guardian of Destruction causes his skin to harden like rock, giving his lithe body an onyx sheen.  He cracks a devilish smile and beckons you to continue.");
     quest::spawn2(292074,0,0,-748,16,60,191);
     quest::spawn2(292075,0,0,-985,15,60,62);
+    $npc->ModSkillDmgTaken(0, -70); #1h blunt
+    $npc->ModSkillDmgTaken(1, -70); #1h slashing
+    $npc->ModSkillDmgTaken(2, -70); #2h blunt
+    $npc->ModSkillDmgTaken(3, -70); #2h slashing
+    $npc->ModSkillDmgTaken(7, -70); #archery
+    $npc->ModSkillDmgTaken(28, -70); #hand to hand
+    $npc->ModSkillDmgTaken(36, -70); #piercing
+    $npc->ModSkillDmgTaken(51, -70); #throwing
+    $npc->ModSkillDmgTaken(77, -70); #2h piercing
   }
 }
 

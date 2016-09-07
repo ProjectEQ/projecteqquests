@@ -11,7 +11,7 @@ function event_spawn(e)
     else
         e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1)
         e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 25)
-        e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 50)
+        e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 35)
     end
     eq.set_timer("tether", 6000) -- live has a fairly long timer
 end

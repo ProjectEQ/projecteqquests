@@ -53,6 +53,14 @@ sub EVENT_HP {
     $npc->ModSkillDmgTaken(36, -70); #piercing
     $npc->ModSkillDmgTaken(51, -70); #throwing
     $npc->ModSkillDmgTaken(77, -70); #2h piercing
+    quest::setnexthpevent(10);
+  } elsif ($hpevent == 10) {
+    quest::emote("Barxt's cronies focus their attention to his defense, causing tendrils of dark magic to wrap around his slender frame.  He laughs, reveling in his newfound resistance to offensive spells.");
+    quest::modifynpcstat("mr","1000");
+    quest::modifynpcstat("pr","1000");
+    quest::modifynpcstat("fr","1000");
+    quest::modifynpcstat("cr","1000");
+    quest::modifynpcstat("dr","1000");
   }
 }
 

@@ -32,6 +32,16 @@ sub EVENT_TIMER {
 	$npc->AddAISpell(0, 5120, nuke, -1, -1, -400);
 	quest::modifynpcstat("max_hit",4800);
 	quest::modifynpcstat("special_attacks","SEFQUMCNIDf");
+	quest::modifynpcstat("max_hp","600000");
+	$npc->ModSkillDmgTaken(36, -50); #piercing
+	$npc->ModSkillDmgTaken(77, -50); #2h piercing
+	$npc->ModSkillDmgTaken(2, -50); #2h blunt
+	$npc->ModSkillDmgTaken(51, -50); #throwing
+	$npc->ModSkillDmgTaken(28, -50); #hand to hand
+	$npc->ModSkillDmgTaken(1, -50); #1h slashing
+	$npc->ModSkillDmgTaken(3, -50); #2h slashing
+	$npc->ModSkillDmgTaken(7, -50); #archery
+	$npc->ModSkillDmgTaken(0, -50); #1h blunt
 	quest::stoptimer("absorb_twin");
   }
 }

@@ -33,21 +33,21 @@ sub EVENT_CLICKDOOR
   	}
   	if($doorid == 19)
 	{
-		$zonename = "Innothule Swamp";
-		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
-	  	{
-	  		quest::movepc(46,-34,-721,-27,221.21);
-	  	}
-	  	elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
-	  	{
-	  		quest::movepc(413,-361,-462,5);
-	  	}
-	  	else  #SoF/SoD/UF
-	  	{
+		#$zonename = "Innothule Swamp";
+		#if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
+	  	#{
+	  	#	quest::movepc(46,-34,-721,-27,221.21);
+	  	#}
+	  	#elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
+	  	#{
+	  	#	quest::movepc(413,-361,-462,5);
+	  	#}
+	  	#else  #SoF/SoD/UF
+	  	#{
 	  		#quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",2,1);
 			#quest::settimer(2,5);
 			quest::movepc(46,-34,-721,-27,221.21);
-	  	}
+	  	#}
   	}
   	if($doorid == 22)    #erud
 	{
@@ -87,39 +87,39 @@ sub EVENT_CLICKDOOR
   	}
   	if($doorid == 24)
 	{
-		$zonename = "Steamfont Mountains";
-		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
-		{
-		  	quest::movepc(56,933.79,-1358,-109);
-		}
-		elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
-		{
-		  	quest::movepc(448,940,-1122,5,98);
-		}
-		else  #SoF/SoD/UF
-		{
-		       #quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",5,1);
-		       #quest::settimer(5,5);
+		#$zonename = "Steamfont Mountains";
+		#if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
+		#{
+		#  	quest::movepc(56,933.79,-1358,-109);
+		#}
+		#elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
+		#{
+		#  	quest::movepc(448,940,-1122,5,98);
+		#}
+		#else  #SoF/SoD/UF
+		#{
+		#       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",5,1);
+		#       quest::settimer(5,5);
 		       quest::movepc(56,933.79,-1358,-109);
-		}
+		#}
   	}
   	if($doorid == 25)
 	{
-		$zonename = "Freeport West";
-		if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
-		{
-		  	quest::movepc(9,77.31,-660.57,-30.24);
-		}
-		elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
-		{
-		  	quest::movepc(383,-173,-188,-69,192);
-		}
-		else  #SoF/SoD/UF
-		{
-		      # quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",6,1);
-		      # quest::settimer(6,5);
+		#$zonename = "Freeport West";
+		#if(($client->GetClientVersionBit() & 3)!= 0) #062/Titanium
+		#{
+		#  	quest::movepc(9,77.31,-660.57,-30.24);
+		#}
+		#elsif(($client->GetClientVersionBit() & 4294967264)!= 0) #RoF+
+		#{
+		# 	quest::movepc(383,-173,-188,-69,192);
+		#}
+		#else  #SoF/SoD/UF
+		#{
+		#      quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",6,1);
+		#      quest::settimer(6,5);
 		      quest::movepc(9,77.31,-660.57,-30.24);
-		}
+		#}
   	}
 }
 

@@ -5,7 +5,7 @@ function event_loot(e)
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("rogue_solc_chest","1",5,"F");
 		end
-	elseif(e.item:GetID() == 11619) then --Loot Wisp of Pure Flame
+	elseif(e.self:Class() == "Wizard" and e.item:GetID() == 11619) then --Loot Wisp of Pure Flame
 		local qglobals = eq.get_qglobals(e.self);
 		if(qglobals["wiz_solc_chest"] == nil) then
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)

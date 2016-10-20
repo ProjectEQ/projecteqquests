@@ -11,15 +11,15 @@ function event_timer(e)
 	eq.stop_timer("delay");
 --	eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-50, e.self:GetY()+50);
 	eq.set_proximity(-407-18, -407+18, 782-18, 782+18);
-	eq.zone_emote(15,"proximity set");
-	eq.zone_emote(15,"x range: " .. e.self:GetX()-18 .. " " .. e.self:GetX()+18 .. "y range: " .. e.self:GetY()-18 .. " " .. e.self:GetY()+18);
+--	eq.zone_emote(15,"proximity set");
+--	eq.zone_emote(15,"x range: " .. e.self:GetX()-18 .. " " .. e.self:GetX()+18 .. "y range: " .. e.self:GetY()-18 .. " " .. e.self:GetY()+18);
 	eq.enable_proximity_say();
 end
 
 function event_proximity_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	
-	if (e.message:findi("gems") and qglobals.wiz_epic == "1") then
+	if (e.message:findi("gems") and qglobals["wiz_epic"] == "1") then
 		eq.zone_emote(15, "A voice booms from the center of the cauldron. These gems are sacred, important to our survival, you shall not have them.");
 		eq.spawn2(175306,525410,0,-334.12,-3.41,-37.06,10);
 		eq.depop_with_timer();

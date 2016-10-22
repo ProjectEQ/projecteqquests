@@ -20,9 +20,12 @@ function event_proximity_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if (e.message:findi("debug")) then
 		e.self:Say("Lua Version: " .. _VERSION);
-		e.self:Say("QGlobals Size: " .. #qglobals);
 		e.self:Say("QGlobal 'debug': " .. qglobals["debug"]);
-		e.self:Say("QGlobal 'wiz_epic': " .. qglobals["wiz_epic"]);
+		if (qglobals["wiz_epic"] == "1") then
+			e.self:Say("QGlobal 'wiz_epic': " .. qglobals["wiz_epic"]);
+		else
+			e.self:Say("QGlobal 'wiz_epic' not set");
+		end
 	end
 	if (e.message:findi("gems") and qglobals["wiz_epic"] == "1") then
 		eq.zone_emote(15, "A voice booms from the center of the cauldron. These gems are sacred, important to our survival, you shall not have them.");

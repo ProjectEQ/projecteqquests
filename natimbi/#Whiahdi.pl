@@ -29,6 +29,9 @@ sub EVENT_ITEM {
     quest::say("Take this weapon for helping me. I regret giving away a weapon of such power, but having it near me was most unsettling. Do not ask how I obtained it.");
     quest::summonitem(62581); #Soulwhisper
     quest::delglobal("Soulwhisper");
+	$client->AddAAPoints(5);
+	$client->Message(15,"You have gained 5 ability points!");	
+	quest::ding();
 #    quest::settitle("Deathspeaker");
 #    quest::giveAA(5);
   }

@@ -2,7 +2,7 @@
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(eq.is_task_active(220)) then
-		if(e.message:findi("trick of treat")) then
+		if(e.message:findi("trick or treat")) then
 			e.self:Say("Ah, here you go. Fresh from the Sugar Assembalage 2000.");
 			e.other:SummonItem(eq.ChooseRandom(84091,84092,84093,84087,84087,84087,84087,84087,84087));
 			eq.update_task_activity(220,1,1);

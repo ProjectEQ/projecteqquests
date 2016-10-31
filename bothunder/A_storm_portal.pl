@@ -1,7 +1,7 @@
 sub EVENT_SIGNAL {
 
 	if($signal == 1) {
-		quest::settimer(3,30); #spawn adds every 30s
+		quest::settimer(3,120); #spawn adds every 120s
 	} elsif($signal == 2) {
 		quest::stoptimer(3); #stop spawning
 		quest::settimer(4,1200); #depop adds after 20 minutes

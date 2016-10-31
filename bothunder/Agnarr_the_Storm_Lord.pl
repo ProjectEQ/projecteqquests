@@ -1,7 +1,7 @@
 # NPCID: 209026 Agnarr_the_Storm_Lord
 
 sub EVENT_SPAWN {
-	quest::setnexthpevent(76); #spawn first giant at 75%
+	quest::setnexthpevent(98); #spawn first giant at 98%
 }
 
 sub EVENT_COMBAT {
@@ -15,14 +15,17 @@ sub EVENT_COMBAT {
 
 
 sub EVENT_HP {
-	if ($hpevent == 76) {
-		quest::spawn2(209104,0,0,-888,-1623,2252,100); #first giant
-		quest::setnexthpevent(51); #spawn next giant at 50
-	} elsif ($hpevent == 51) {
-		quest::spawn2(209105,0,0,-888,-1890,2252,9); #second giant
-		quest::setnexthpevent(26); #spawn next giant at 25
-	} elsif ($hpevent == 26) {
-		quest::spawn2(209106,0,0,-1017,-1717,2252,66); #third giant
+	if ($hpevent == 98) {
+            	quest::spawn2(209115,0,0,-1083.25,-1741,2251.75,100); #first giant
+		quest::setnexthpevent(75); #spawn next giant at 75
+	} elsif ($hpevent == 75) {
+		quest::spawn2(209104,0,0,-888,-1623,2252,100); #second giant
+		quest::setnexthpevent(50); #spawn next giant at 50
+	} elsif ($hpevent == 50) {
+		quest::spawn2(209105,0,0,-888,-1890,2252,9); #third giant
+		quest::setnexthpevent(25); #spawn next giant at 25
+	} elsif ($hpevent == 25) {
+		quest::spawn2(209106,0,0,-1017,-1717,2252,66); #fourth giant
 	}
 }
 

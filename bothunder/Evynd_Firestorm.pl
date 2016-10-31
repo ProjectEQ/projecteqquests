@@ -19,7 +19,7 @@ sub EVENT_TIMER {
 			# if I have no aggro stop the portals from spawning adds
 			quest::signalwith(209038,2,1);
 			#depop the firestorm portal adds.
-			quest::depopall(209037);
+			quest::depopall(209118);
 			quest::stoptimer("evynd_aggro_check");
 		}
 	}

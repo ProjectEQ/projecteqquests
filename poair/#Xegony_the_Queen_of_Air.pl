@@ -9,18 +9,26 @@ sub EVENT_HP {
   		$entid2 = quest::spawn2(215465,0,0,-433,-306,1440.25,24.5); #An_Air_Infused_Defender
   		$entid3 = quest::spawn2(215465,0,0,-487,-270,1445.38,24.5); #An_Air_Infused_Defender
   		$entid4 = quest::spawn2(215472,0,0,-460.7,-355.6,1437.1,21.2); #An_Elemental_Arbitor
+		$entid5 = quest::spawn2(215465,0,0,-487,-270,1445.38,24.5); #An_Air_Infused_Defender
+		$entid6 = quest::spawn2(215465,0,0,-433,-306,1440.25,24.5); #An_Air_Infused_Defender
   		$mob1 = $entity_list->GetMobID($entid1);
   		$mob2 = $entity_list->GetMobID($entid2);
   		$mob3 = $entity_list->GetMobID($entid3);
   		$mob4 = $entity_list->GetMobID($entid4);
+		$mob5 = $entity_list->GetMobID($entid5);
+		$mob6 = $entity_list->GetMobID($entid6);
   		$mobnpc1 = $mob1->CastToNPC();
   		$mobnpc2 = $mob2->CastToNPC();
   		$mobnpc3 = $mob3->CastToNPC();
   		$mobnpc4 = $mob4->CastToNPC();
+		$mobnpc5 = $mob5->CastToNPC();
+		$mobnpc6 = $mob6->CastToNPC();
   		$mobnpc1->AddToHateList($npc->GetHateTop());
   		$mobnpc2->AddToHateList($npc->GetHateTop());
   		$mobnpc3->AddToHateList($npc->GetHateTop());
   		$mobnpc4->AddToHateList($npc->GetHateTop());
+		$mobnpc5->AddToHateList($npc->GetHateTop());
+		$mobnpc6->AddToHateList($npc->GetHateTop());
 		quest::setnexthpevent(82);
 	}
 	if ($hpevent == 82) { 
@@ -29,6 +37,8 @@ sub EVENT_HP {
   		$entid2 = quest::spawn2(215466,0,0,-582,207,1460.5,115.5); #A_Knight_of_Air
   		$entid3 = quest::spawn2(215466,0,0,-550,217,1457.5,115.5); #A_Knight_of_Air
   		$entid4 = quest::spawn2(215434,0,0,-551.8,258.6,1455,115.5); #Rindaler_Egulrtan
+		$entid5 = quest::spawn2(215466,0,0,-550,217,1457.5,115.5); #A_Knight_of_Air
+		$entid6 = quest::spawn2(215466,0,0,-550,217,1457.5,115.5); #A_Knight_of_Air
   		$mob1 = $entity_list->GetMobID($entid1);
   		$mob2 = $entity_list->GetMobID($entid2);
   		$mob3 = $entity_list->GetMobID($entid3);

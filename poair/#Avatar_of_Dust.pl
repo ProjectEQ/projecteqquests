@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
 quest::settimer(45,2700);
-quest::shout("How dare you!");
+quest::shout("Elements of Air and Dust I call upon you to aid me in the defense of this land!");
 }
 
 sub EVENT_TIMER {

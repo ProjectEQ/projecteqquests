@@ -146,7 +146,7 @@ function Spawn_TMCV()
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 601.0, -362.0, 25.125, 129.0);
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 538.0, -416.0, 19.125, 129.0);
 
-  eq.spawn2(298014, 0, 0, 462, -171, 32, 8);
+  eq.spawn2(298014, 0, 0, 462, -171, 32, 64.1);
 
   -- Rashere's remains
   eq.spawn2(298031, 0, 0, 506, 147, -6.03, 240):SetAppearance(3);

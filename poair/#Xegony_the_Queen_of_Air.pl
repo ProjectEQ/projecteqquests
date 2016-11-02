@@ -59,6 +59,8 @@ sub EVENT_HP {
   		$entid2 = quest::spawn2(215464,0,0,-223,-251,1440.25,218.5); #An_Air_Phoenix_Scout
   		$entid3 = quest::spawn2(215464,0,0,-195,-213,1440.25,218.5); #An_Air_Phoenix_Scout
   		$entid4 = quest::spawn2(215440,0,0,-173,-290.7,1437.1,215.5); #Weruis_Herfadban
+		$entid5 = quest::spawn2(215464,0,0,-195,-213,1440.25,218.5); #An_Air_Phoenix_Scout
+		$entid6 = quest::spawn2(215464,0,0,-195,-213,1440.25,218.5); #An_Air_Phoenix_Scout
   		$mob1 = $entity_list->GetMobID($entid1);
   		$mob2 = $entity_list->GetMobID($entid2);
   		$mob3 = $entity_list->GetMobID($entid3);
@@ -79,6 +81,8 @@ sub EVENT_HP {
   		$entid2 = quest::spawn2(215479,0,0,-351,326,1443.25,130.5); #Servant_of_Air
   		$entid3 = quest::spawn2(215479,0,0,-407,329,1447.13,130.5); #Servant_of_Air
   		$entid4 = quest::spawn2(215445,0,0,-352.8,372.7,1440.35,130.5); #Wesreh_Galleantan
+		$entid5 = quest::spawn2(215479,0,0,-407,329,1447.13,130.5); #Servant_of_Air
+		$entid6 = quest::spawn2(215479,0,0,-407,329,1447.13,130.5); #Servant_of_Air
   		$mob1 = $entity_list->GetMobID($entid1);
   		$mob2 = $entity_list->GetMobID($entid2);
   		$mob3 = $entity_list->GetMobID($entid3);
@@ -99,6 +103,8 @@ sub EVENT_HP {
   		$entid2 = quest::spawn2(215463,0,0,-3,-231,1437.13,193); #A_Deadly_Cloudwalker
   		$entid3 = quest::spawn2(215463,0,0,-2,-187,1437.13,193); #A_Deadly_Cloudwalker
   		$entid4 = quest::spawn2(215437,0,0,39,-232.5,1437.13,193); #Huridaf_Vorgaasna
+		$entid5 = quest::spawn2(215463,0,0,-2,-187,1437.13,193); #A_Deadly_Cloudwalker
+		$entid6 = quest::spawn2(215463,0,0,-2,-187,1437.13,193); #A_Deadly_Cloudwalker
   		$mob1 = $entity_list->GetMobID($entid1);
   		$mob2 = $entity_list->GetMobID($entid2);
   		$mob3 = $entity_list->GetMobID($entid3);
@@ -119,6 +125,8 @@ sub EVENT_HP {
   		$entid2 = quest::spawn2(215462,0,0,-5,427,1440.20,187); #A_Djinni_Air_Defender
   		$entid3 = quest::spawn2(215462,0,0,-12,481,1440.25,187); #A_Djinni_Air_Defender
   		$entid4 = quest::spawn2(215444,0,0,40.5,432.9,1437.13,187); #Nuquernal_Belegrodian
+		$entid5 = quest::spawn2(215462,0,0,-12,481,1440.25,187); #A_Djinni_Air_Defender
+		$entid6 = quest::spawn2(215462,0,0,-12,481,1440.25,187); #A_Djinni_Air_Defender
   		$mob1 = $entity_list->GetMobID($entid1);
   		$mob2 = $entity_list->GetMobID($entid2);
   		$mob3 = $entity_list->GetMobID($entid3);

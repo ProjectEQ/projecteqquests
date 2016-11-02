@@ -1,20 +1,21 @@
---scarlet\#Trigger_EliteSunRevenant.lua NPC ID 175307
+--scarlet\The_Gem_Guardian.lua NPC ID 175307
 --Wizard Epic 1.5
 --scarlet\Elite_Sun_Revenant.lua Trigger
 
 function event_spawn(e)
-	eq.set_timer("delay",3000);
+	eq.set_timer("delay",2000);
 end
 
 function event_timer(e)
 	eq.stop_timer("delay");
-	eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-50, e.self:GetY()+50);
+	eq.set_proximity(e.self:GetX()-18, e.self:GetX()+18, e.self:GetY()-18, e.self:GetY()+18);
 	eq.enable_proximity_say();
 end
 
-function event_proximity_say(e)
+-- Need to convert this to invisible_man and event_proximity_say() once issues with proximity say are fixed on PEQ
+function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if (e.message:findi("gems") then
+	if (e.message:findi("gems")) then
 		if (qglobals["wiz_epic"] == "1") then
 			eq.zone_emote(15, "A voice booms from the center of the cauldron. These gems are sacred, important to our survival, you shall not have them.");
 			eq.spawn2(175306,525410,0,-334.12,-3.41,-37.06,10);
@@ -24,5 +25,3 @@ function event_proximity_say(e)
 		end
 	end
 end
-
--- 

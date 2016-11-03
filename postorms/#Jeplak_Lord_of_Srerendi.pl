@@ -51,6 +51,7 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("battle");
+	quest::stoptimer("adds");
 }
 
 # End of File  Zone: PoStorms  ID: 210231 -- #Jeplak_Lord_of_Srerendi

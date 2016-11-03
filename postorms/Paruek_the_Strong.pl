@@ -20,8 +20,8 @@ sub EVENT_TIMER {
         quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
         quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
         quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-        }
     } else {
         quest::stoptimer("tumadds");
     }    
+}
 }

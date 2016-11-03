@@ -10,14 +10,18 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_TIMER {
   if($timer == "tumadds") {
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
-    }
+    if($npc->IsEngaged()) {
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
+        }
+    } else {
+        quest::stoptimer("tumadds");
+    }    
 }

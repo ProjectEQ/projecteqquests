@@ -5,6 +5,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_DEATH_COMPLETE {
     quest::signal(210179,0);
+    quest::stoptimer("tumadds");
 }
 
 sub EVENT_TIMER {

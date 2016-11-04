@@ -1,41 +1,45 @@
 local InstanceRequests = {}
 
-function InstanceRequests.ValidateGroupRequest(instance, version, min_players, max_players, min_level, requestor, event_globals)
+function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
   local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
 
   local player_list = nil;
-  player_list = requestor:GetGroup();
-  if (!player_list.valid) then
-    requestor:Message(13, "You are not in a valid group.");
-    return invalidRequest;
+  local player_list_count = 0;
+  if (groupOrRaid == 'raid') then
+    player_list = requestor:GetRaid();
+    player_list_count = player_list:RaidCount();
+  else if (groupOrRaid == 'group')
+    player_list = requestor:GetGroup();
+    player_list_count = player_list:GroupCount();
   end
 
   local instance_id = eq.get_instance_id(instance, version);
-  if (instance_id ~= nil or instance_id ~= 0) then
-    requestor:Message(13, "You are already in an instance.");
-    return invalidRequest;
-  end
-
-  local player_list_count = player_list:GroupCount();
-  if ( player_list_count < min_players or player_list_count > max_players) then
-    requestor:Message(13, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
+  local basicRequirementsAreValid =
+    InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level player_list, player_list_count);
+  if (!basicRequirementsAreValid)
     return invalidRequest;
   end
 
   local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
-
   for i = 0, player_list_count - 1, 1 do
-    local groupMember = player_list:GetMember(i):CastToClient();
-    if (!groupMember.valid) then
-      requestor:Message(13, "All members of the group need to be in " .. eq.get_zone_long_name() .. ". " );
+    local member = player_list:GetMember(i):CastToClient();
+    if (!member.valid) then
+      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
       return invalidRequest;
     end
-    local groupMember_bits = InstanceRequests.GetClientLockoutBits(groupMember, event_globals);
-    local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, groupMember_bits));
+    if (item_requirements ~= nil) then
+      local member_has_valid_items = InstanceRequests.ValidateItemRequirements(member, item_requirements);
+      if (member_has_valid_items == false) then
+        requestor:Message(13, member:GetCleanName() .. " is missing a required item.");
+        return invalidRequest; 
+      end
+    end
+    local member_bits = InstanceRequests.GetClientLockoutBits(member, event_globals);
+    local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, member_bits));
     --conflicting lockouts, but not a GM over level 80 with GM status turned on
     if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
-      requestor:Message(13, groupMember:GetCleanName().." has the following lockouts:");
-      InstanceRequests.DisplayLockouts(requestor, groupMember, event_globals);
+      requestor:Message(13, member:GetCleanName().." has the following lockouts:");
+      InstanceRequests.DisplayLockouts(requestor, member, event_globals);
       return invalidRequest;
     end
   end
@@ -43,57 +47,28 @@ function InstanceRequests.ValidateGroupRequest(instance, version, min_players, m
   return { ["valid"] = true, ["flags"] = requestor_bits };
 end
 
-function InstanceRequests.ValidateRaidRequest(instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
-  local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
-
-  local raid = requestor:GetRaid();
-  if (!raid.valid) then
-    requestor:Message(13, "You are not in a valid raid.");
-    return invalidRequest;
+function InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count)
+  if (!player_list.valid) then
+    requestor:Message(13, "You are not in a valid group/raid.");
+    return false;
   end
 
-  local instance_id = eq.get_instance_id(instance, version);
   if (instance_id ~= nil or instance_id ~= 0) then
     requestor:Message(13, "You are already in an instance.");
-    return invalidRequest;
+    return false;
   end
 
-  local raidCount = raid:RaidCount();
-  if (raidCount < min_players or raidCount > max_players) then
-    requestor:Message(13, "You do not meet the player count requirement.  You have " .. raidCount .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
-    return invalidRequest;
+  if (player_list_count < min_players or player_list_count > max_players) then
+    requestor:Message(13, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
+    return false;
   end
 
-  if (raid:GetLowestLevel() < min_level) then
+  if (player_list:GetLowestLevel() < min_level) then
     requestor:Message(13, "All members must be over level " .. min_level .. ".");
-    return invalidRequest;
+    return false;
   end
 
-  local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
-  for i = 0, raidCount - 1, 1 do
-    local raidMember = raid:GetMember(i):CastToClient();
-    if (!raidMember.valid) then
-      requestor:Message(13, "All members of the raid need to be in " .. eq.get_zone_long_name() .. ". " );
-      return invalidRequest;
-    end
-    if (item_requirements ~= nil) then
-      local member_has_valid_items = InstanceRequests.ValidateItemRequirements(raidMember, item_requirements);
-      if (member_has_valid_items == false) then
-        requestor:Message(13, raidMember:GetCleanName() .. " is missing a required item.");
-        return invalidRequest; 
-      end
-    end
-    local raidMember_bits = InstanceRequests.GetClientLockoutBits(raidMember, event_globals);
-    local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, raidMember_bits));
-    --conflicting lockouts, but not a GM over level 80 with GM status turned on
-    if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
-      requestor:Message(13, raidMember:GetCleanName().." has the following lockouts:");
-      InstanceRequests.DisplayLockouts(requestor, raidMember, event_globals);
-      return invalidRequest;
-    end
-  end
-
-  return { ["valid"] = true, ["flags"] = requestor_bits };
+  return true;
 end
 
 function InstanceRequests.ValidateItemRequirements(client, item_requirements)
@@ -113,47 +88,6 @@ function InstanceRequests.ValidateItemRequirements(client, item_requirements)
     end
     return true;
   end
-end
-
-function InstanceRequests.ValidateInstanceRequest(instance, max_players, requestor, event_globals)
-  local invalidRequest = { ["valid"] = false, ["flags"] = 0 }
-
-  local raid = requestor:GetRaid();
-  if (!raid.valid) then
-    requestor:Message(13, "You are not in a raid.");
-    return invalidRequest;
-  end
-
-  local instance_id = eq.get_instance_id(instance,0);
-  if (instance_id ~= nil or instance_id ~= 0) then
-    requestor:Message(13, "You are already in an instance.");
-    return invalidRequest;
-  end
-
-  raidCount = raid:RaidCount();
-  if(raid:RaidCount() > max_players) then
-    requestor:Message(13, "You have "..raidCount.." players in raid.  A maximum of "..max_players.." is allowed.");
-    return invalidRequest;
-  end
-
-  local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
-  for i = 0, raidCount - 1, 1 do
-    local raidMember = raid:GetMember(i):CastToClient();
-    if (!raidMember.valid) then
-      requestor:Message(13, "All members of the raid need to be in " .. eq.get_zone_long_name() .. ". " );
-      return invalidRequest;
-    end
-    local raidMember_bits = InstanceRequests.GetClientLockoutBits(raidMember, event_globals);
-    local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, raidMember_bits));
-    --conflicting lockouts, but not a GM over level 80 with GM status turned on
-    if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
-      requestor:Message(13, raidMember:GetCleanName().." has the following lockouts:");
-      InstanceRequests.DisplayLockouts(requestor, raidMember, event_globals);
-      return invalidRequest;
-    end
-  end
-
-  return { ["valid"] = true, ["flags"] = requestor_bits };
 end
 
 function InstanceRequests.GetLockedOutEvents(locked_bits, event_globals)

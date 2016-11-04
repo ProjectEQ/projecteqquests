@@ -36,7 +36,7 @@ function event_click_door(e)
     end
     if ( e.self:GetInventory():HasItem(17288, 1, 32) == 30 ) then 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) == false) then 
-        local request = instance_requests.ValidateRaidRequest("tacvi", 0, 6, 54, 65, {}, e.self, lockout_globals);
+        local request = instance_requests.ValidateRequest('raid', "tacvi", 0, 6, 54, 65, {}, e.self, lockout_globals);
         if (request.valid) then                                                     
           local instance_id = eq.create_instance("tacvi", 0, 21600);              
           eq.set_global(instance_id.."_tacvi_bit",tostring(request.flags),7,"H6");

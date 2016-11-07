@@ -8,22 +8,24 @@ function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_p
   if (groupOrRaid == 'raid') then
     player_list = requestor:GetRaid();
     player_list_count = player_list:RaidCount();
-  else if (groupOrRaid == 'group')
-    player_list = requestor:GetGroup();
-    player_list_count = player_list:GroupCount();
+  else 
+    if (groupOrRaid == 'group') then
+      player_list = requestor:GetGroup();
+      player_list_count = player_list:GroupCount();
+    end
   end
 
   local instance_id = eq.get_instance_id(instance, version);
   local basicRequirementsAreValid =
-    InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level player_list, player_list_count);
-  if (!basicRequirementsAreValid)
+    InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count);
+  if (basicRequirementsAreValid == false) then
     return invalidRequest;
   end
 
   local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
   for i = 0, player_list_count - 1, 1 do
     local member = player_list:GetMember(i):CastToClient();
-    if (!member.valid) then
+    if (member.valid == false) then
       requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
       return invalidRequest;
     end
@@ -48,12 +50,12 @@ function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_p
 end
 
 function InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count)
-  if (!player_list.valid) then
+  if (player_list.valid == false) then
     requestor:Message(13, "You are not in a valid group/raid.");
     return false;
   end
 
-  if (instance_id ~= nil or instance_id ~= 0) then
+  if (instance_id ~= nil and instance_id ~= 0) then
     requestor:Message(13, "You are already in an instance.");
     return false;
   end

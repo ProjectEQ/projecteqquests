@@ -1,104 +1,76 @@
 local InstanceRequests = {}
 
-function InstanceRequests.ValidateGroupRequest(instance, version, min_players, max_players, min_level, requestor, event_globals)
-  -- You do not meet the player count requirement.  You have 1 players.  You must have at least 2 and no more than 6.
+function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
+  local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
+
   local player_list = nil;
-  local player_list_count = nil;
-  local request = { ["valid"] = false, ["flags"] = 0 };
-
-  player_list = requestor:GetGroup();
-  if (player_list.valid) then
-    player_list_count = player_list:GroupCount();
-
-    local instance_id = eq.get_instance_id(instance, version);
-    if (instance_id == nil or instance_id == 0) then
-      if ( player_list_count >= min_players and player_list_count <= max_players) then
-        local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
-        request.flags = requestor_bits;
-        for i = 0, player_list_count - 1, 1 do
-          local client = player_list:GetMember(i):CastToClient();
-          if (client.valid) then
-            local client_bits = InstanceRequests.GetClientLockoutBits(client, event_globals);
-            local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, client_bits));
-            if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
-              local client_lockouts = InstanceRequests.GetLockedOutEvents(compared_bits, event_globals);
-              requestor:Message(13, client:GetCleanName().." has the following lockouts:");
-              InstanceRequests.DisplayLockouts(requestor, client, event_globals);
-              return request;
-            end
-          else
-            requestor:Message(13, "All members of the group need to be in " .. eq.get_zone_long_name() .. ". " );
-            return request;
-          end
-        end
-        request.valid = true;
-      else
-        requestor:Message(13, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
-      end
-    else
-      requestor:Message(13, "You are already in an instance.");
+  local player_list_count = 0;
+  if (groupOrRaid == 'raid') then
+    player_list = requestor:GetRaid();
+    player_list_count = player_list:RaidCount();
+  else 
+    if (groupOrRaid == 'group') then
+      player_list = requestor:GetGroup();
+      player_list_count = player_list:GroupCount();
     end
-  else
-    requestor:Message(13, "You are not in a valid group.");
   end
-  return request;
+
+  local instance_id = eq.get_instance_id(instance, version);
+  local basicRequirementsAreValid =
+    InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count);
+  if (basicRequirementsAreValid == false) then
+    return invalidRequest;
+  end
+
+  local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
+  for i = 0, player_list_count - 1, 1 do
+    local member = player_list:GetMember(i):CastToClient();
+    if (member.valid == false) then
+      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
+      return invalidRequest;
+    end
+    if (item_requirements ~= nil) then
+      local member_has_valid_items = InstanceRequests.ValidateItemRequirements(member, item_requirements);
+      if (member_has_valid_items == false) then
+        requestor:Message(13, member:GetCleanName() .. " is missing a required item.");
+        return invalidRequest; 
+      end
+    end
+    local member_bits = InstanceRequests.GetClientLockoutBits(member, event_globals);
+    local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, member_bits));
+    --conflicting lockouts, but not a GM over level 80 with GM status turned on
+    if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
+      requestor:Message(13, member:GetCleanName().." has the following lockouts:");
+      InstanceRequests.DisplayLockouts(requestor, member, event_globals);
+      return invalidRequest;
+    end
+  end
+
+  return { ["valid"] = true, ["flags"] = requestor_bits };
 end
 
-function InstanceRequests.ValidateRaidRequest(instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
-  -- You do not meet the player count requirement.  You have 1 players.  You must have at least 6 and no more than 54.
-  local player_list = nil;
-  local player_list_count = nil;
-  local raid = requestor:GetRaid();
-  local request = { ["valid"] = false, ["flags"] = 0 };
-
-  if (raid.valid) then
-    local instance_id = eq.get_instance_id(instance, version);
-    if (instance_id == nil or instance_id == 0) then
-      player_list = raid;
-      player_list_count = raid:RaidCount();
-      if (player_list ~= nil) then
-        if (player_list_count >= min_players and player_list_count <= max_players) then
-          if (raid:GetLowestLevel() >= min_level) then
-            local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
-            request.flags = requestor_bits;
-            for i = 0, player_list_count - 1, 1 do
-              local client = player_list:GetMember(i):CastToClient();
-              if (client.valid) then
-                if (item_requirements ~= nil) then
-                  local item_validation = InstanceRequests.ValidateItemRequirements(client, item_requirements);
-                  if (item_validation == false) then
-                    requestor:Message(13, client:GetCleanName() .. " is missing a required item.");
-                    return request; 
-                  end
-                end
-                local client_bits = InstanceRequests.GetClientLockoutBits(client, event_globals);
-                local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, client_bits));
-                if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
-                  local client_lockouts = InstanceRequests.GetLockedOutEvents(compared_bits, event_globals);
-                  requestor:Message(13, client:GetCleanName().." has the following lockouts:");
-                  InstanceRequests.DisplayLockouts(requestor, client, event_globals);
-                  return request;
-                end
-              else
-                requestor:Message(13, "All members of the raid need to be in " .. eq.get_zone_long_name() .. ". " );
-                return request;
-              end
-            end
-            request.valid = true;
-          else
-            requestor:Message(13, "All members must be over level " .. min_level .. ".");
-          end
-        else
-          requestor:Message(13, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
-        end
-      end
-    else 
-      requestor:Message(13, "You are already in an instance.");
-    end
-  else
-    requestor:Message(13, "You are not in a valid raid.");
+function InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count)
+  if (player_list.valid == false) then
+    requestor:Message(13, "You are not in a valid group/raid.");
+    return false;
   end
-  return request;
+
+  if (instance_id ~= nil and instance_id ~= 0) then
+    requestor:Message(13, "You are already in an instance.");
+    return false;
+  end
+
+  if (player_list_count < min_players or player_list_count > max_players) then
+    requestor:Message(13, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
+    return false;
+  end
+
+  if (player_list:GetLowestLevel() < min_level) then
+    requestor:Message(13, "All members must be over level " .. min_level .. ".");
+    return false;
+  end
+
+  return true;
 end
 
 function InstanceRequests.ValidateItemRequirements(client, item_requirements)
@@ -118,47 +90,6 @@ function InstanceRequests.ValidateItemRequirements(client, item_requirements)
     end
     return true;
   end
-end
-
-function InstanceRequests.ValidateInstanceRequest(instance, max_players, requestor, event_globals)
-  local player_list = nil;
-  local player_list_count = nil;
-  local raid = requestor:GetRaid();
-  local request = { ["valid"] = false, ["flags"] = 0 }
-  if (raid.valid) then
-    local instance_id = eq.get_instance_id(instance,0);
-    if (instance_id == nil or instance_id == 0) then
-      player_list = raid;
-      player_list_count = raid:RaidCount();
-      if (player_list ~= nil) then
-        if(raid:RaidCount() <= max_players) then
-          local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
-          request.flags = requestor_bits;
-          for i = 0, player_list_count - 1, 1 do
-            local client = player_list:GetMember(i):CastToClient();
-            if (client.valid) then
-              local client_bits = InstanceRequests.GetClientLockoutBits(client, event_globals);
-              local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, client_bits));
-              if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
-                local client_lockouts = InstanceRequests.GetLockedOutEvents(compared_bits, event_globals);
-                requestor:Message(13, client:GetCleanName().." has the following lockouts:");
-                InstanceRequests.DisplayLockouts(requestor, client, event_globals);
-                return request;
-              end
-            end
-          end
-          request.valid = true;
-        else
-          requestor:Message(13, "You have "..player_list_count.." players in raid.  A maximum of "..max_players.." is allowed.");
-        end
-      end
-    else
-      requestor:Message(13, "You are already in an instance.");
-    end
-  else
-    requestor:Message(13, "You are not in a raid.");
-  end
-  return request;
 end
 
 function InstanceRequests.GetLockedOutEvents(locked_bits, event_globals)

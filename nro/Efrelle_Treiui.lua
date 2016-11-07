@@ -11,7 +11,7 @@ function event_say(e)
       local lockout_globals = {
         {'LDON_takc', 'LDoN Raid: Takish-Hiz: Within the Compact'}
       }
-      local request = instance_requests.ValidateRaidRequest("takc", 0, 6, 54, 61, {any = {41000, 40999}}, e.other, lockout_globals);
+      local request = instance_requests.ValidateRequest('raid', "takc", 0, 6, 54, 61, {any = {41000, 40999}}, e.other, lockout_globals);
       if (request.valid and request.flags == 1) then
         instance_requests.DisplayLockouts(e.other, e.other, lockout_globals);
       elseif (request.valid and request.flags == 0) then

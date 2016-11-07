@@ -39,12 +39,16 @@ sub EVENT_TIMER {
 	}
 	
 	if ($timer eq "adds") {
-		quest::spawn2(210233,0,0,$x,$y,$z,$h);
-		quest::spawn2(210233,0,0,$x,$y,$z,$h);
-		quest::spawn2(210233,0,0,$x,$y,$z,$h);
-		quest::spawn2(210234,0,0,$x,$y,$z,$h);
-		quest::spawn2(210234,0,0,$x,$y,$z,$h);
-		quest::spawn2(210234,0,0,$x,$y,$z,$h);
+		if($npc->IsEngaged()) { 					
+			quest::spawn2(210233,0,0,$x,$y,$z,$h);
+			quest::spawn2(210233,0,0,$x,$y,$z,$h);
+			quest::spawn2(210233,0,0,$x,$y,$z,$h);
+			quest::spawn2(210234,0,0,$x,$y,$z,$h);
+			quest::spawn2(210234,0,0,$x,$y,$z,$h);
+			quest::spawn2(210234,0,0,$x,$y,$z,$h);
+		} else {
+			quest::stoptimer("adds");
+			}
 	}		
 		
 }

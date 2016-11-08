@@ -1,3 +1,3 @@
-function event_death_complete(e)
+function event_death(e)
   e.self:CastSpell(2321, e.self:GetID());
 end

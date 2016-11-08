@@ -65,6 +65,7 @@ function event_timer(e)
   if (e.timer == 'wipecheck') then
      eq.depop_all(303106);
      eq.depop();
+     eq.stop_timer('wipecheck');
     
      eq.spawn2(303081, 0, 0, 1753.99, 1788, 316.853, 164.375);
   end

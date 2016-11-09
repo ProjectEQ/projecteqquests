@@ -104,7 +104,7 @@ end
 function Huhn_Say(e)
   if ( event_started ~= true ) then
     if ( e.message:findi("hail") ) then
-      e.self:Say("'Hail to you as well, " .. e.other:GetName() .. ", but what exactly are you doing here ? I'm sorry, but as you can see, you've arrived too late. Moments ago we defeated Huhn-Abram the Corrupted and we're currently regrouping and resurrecting our fallen members. Please respect our control of this area and leave at once. I have to admit your presence here is making me a bit nervous. We don't want any trouble.' They stare at you fearfully, 'So, are you going to leave us in peace, or did you come [ " .. eq.say_link('expecting a fight', false, 'expecting a fight') .. "]?' ");
+      e.self:Say("'Hail to you as well, " .. e.other:GetName() .. ", but what exactly are you doing here ? I'm sorry, but as you can see, you've arrived too late. Moments ago we defeated Huhn-Abram the Corrupted and we're currently regrouping and resurrecting our fallen members. Please respect our control of this area and leave at once. I have to admit your presence here is making me a bit nervous. We don't want any trouble.' They stare at you fearfully, 'So, are you going to leave us in peace, or did you come [ " .. eq.say_link('expecting a fight', false, 'expecting a fight') .. " ]?' ");
 
     elseif ( e.message:findi("expecting a fight") ) then
       e.self:Say("'I should have known the trial of corruption wouldn't be so easy. Bring it on!'");
@@ -119,7 +119,7 @@ function Spawn_Mob(my_table, path, x, y, z, h)
   local my_num = math.random(1,table.getn(my_table));
   local my_mob = my_table[my_num][1];
 
-  eq.spawn2(tonumber(my_mob), 0, 0, x, y, z, h);
+  eq.spawn2(tonumber(my_mob), tonumber(path), 0, x, y, z, h);
 end
 
 function Spawn_Wave(wave_number)
@@ -129,69 +129,70 @@ function Spawn_Wave(wave_number)
   -- Wave 3: 3 war 3 clr 2 rog 2 mnk 2 enc 2 wiz 2 mag 2 nec
   local x1 = 0; local y1 = 36;
   local z = 0; local h = 0;
+  local grid = 1;
 
   if (wave_number == 1) then 
     -- 1 Warrior
-    Spawn_Mob(list_warrior, 0, x1, y1, z, h);
+    Spawn_Mob(list_warrior, grid, x1, y1, z, h);
     -- 1 Cleric
-    Spawn_Mob(list_cleric, 0, x1+5, y1, z, h);
+    Spawn_Mob(list_cleric, grid, x1+5, y1, z, h);
     -- 1 Rogue
-    Spawn_Mob(list_rogue, 0, x1-5, y1, z, h);
+    Spawn_Mob(list_rogue, grid, x1-5, y1, z, h);
     -- 1 Monk
-    Spawn_Mob(list_monk, 0, x1+10, y1, z, h);
+    Spawn_Mob(list_monk, grid, x1+10, y1, z, h);
     -- 1 Enchanter
-    Spawn_Mob(list_enchanter, 0, x1-10, y1, z, h);
+    Spawn_Mob(list_enchanter, grid, x1-10, y1, z, h);
     -- 1 Wizard
-    Spawn_Mob(list_wizard, 0, x1+15, y1, z, h);
+    Spawn_Mob(list_wizard, grid, x1+15, y1, z, h);
 
   elseif (wave_number == 2) then
     -- 2 Warrior
-    Spawn_Mob(list_warrior, 0, x1, y1, z, h);
-    Spawn_Mob(list_warrior, 0, x1, y1-10, z, h);
+    Spawn_Mob(list_warrior, grid, x1, y1, z, h);
+    Spawn_Mob(list_warrior, grid, x1, y1-10, z, h);
     -- 2 Cleric
-    Spawn_Mob(list_cleric, 0, x1+5, y1, z, h);
-    Spawn_Mob(list_cleric, 0, x1+5, y1-10, z, h);
+    Spawn_Mob(list_cleric, grid, x1+5, y1, z, h);
+    Spawn_Mob(list_cleric, grid, x1+5, y1-10, z, h);
     -- 2 Rogue
-    Spawn_Mob(list_rogue, 0, x1-5, y1, z, h);
-    Spawn_Mob(list_rogue, 0, x1-5, y1-10, z, h);
+    Spawn_Mob(list_rogue, grid, x1-5, y1, z, h);
+    Spawn_Mob(list_rogue, grid, x1-5, y1-10, z, h);
     -- 2 Monk
-    Spawn_Mob(list_monk, 0, x1+10, y1, z, h);
-    Spawn_Mob(list_monk, 0, x1+10, y1-10, z, h);
+    Spawn_Mob(list_monk, grid, x1+10, y1, z, h);
+    Spawn_Mob(list_monk, grid, x1+10, y1-10, z, h);
     -- 1 Enchanter
-    Spawn_Mob(list_enchanter, 0, x1-10, y1, z, h);
+    Spawn_Mob(list_enchanter, grid, x1-10, y1, z, h);
     -- 1 Wizard
-    Spawn_Mob(list_wizard, 0, x1+15, y1, z, h);
+    Spawn_Mob(list_wizard, grid, x1+15, y1, z, h);
     -- 1 Magician
-    Spawn_Mob(list_magician, 0, x1-10, y1-10, z, h);
+    Spawn_Mob(list_magician, grid, x1-10, y1-10, z, h);
     -- 1 Necromancer
-    Spawn_Mob(list_necromancer, 0, x1+15, y1-10, z, h);
+    Spawn_Mob(list_necromancer, grid, x1+15, y1-10, z, h);
   elseif (wave_number == 3) then
     -- 3 Warrior
-    Spawn_Mob(list_warrior, 0, x1, y1, z, h);
-    Spawn_Mob(list_warrior, 0, x1, y1-10, z, h);
-    Spawn_Mob(list_warrior, 0, x1, y1-15, z, h);
+    Spawn_Mob(list_warrior, grid, x1, y1, z, h);
+    Spawn_Mob(list_warrior, grid, x1, y1-10, z, h);
+    Spawn_Mob(list_warrior, grid, x1, y1-15, z, h);
     -- 3 Cleric
-    Spawn_Mob(list_cleric, 0, x1+5, y1, z, h);
-    Spawn_Mob(list_cleric, 0, x1+5, y1-10, z, h);
-    Spawn_Mob(list_cleric, 0, x1+5, y1-15, z, h);
+    Spawn_Mob(list_cleric, grid, x1+5, y1, z, h);
+    Spawn_Mob(list_cleric, grid, x1+5, y1-10, z, h);
+    Spawn_Mob(list_cleric, grid, x1+5, y1-15, z, h);
     -- 2 Rogue
-    Spawn_Mob(list_rogue, 0, x1-5, y1, z, h);
-    Spawn_Mob(list_rogue, 0, x1-5, y1-10, z, h);
+    Spawn_Mob(list_rogue, grid, x1-5, y1, z, h);
+    Spawn_Mob(list_rogue, grid, x1-5, y1-10, z, h);
     -- 2 Monk
-    Spawn_Mob(list_monk, 0, x1-5, y1-15, z, h);
-    Spawn_Mob(list_monk, 0, x1+10, y1, z, h);
+    Spawn_Mob(list_monk, grid, x1-5, y1-15, z, h);
+    Spawn_Mob(list_monk, grid, x1+10, y1, z, h);
     -- 2 Enchanter
-    Spawn_Mob(list_enchanter, 0, x1+10, y1-10, z, h);
-    Spawn_Mob(list_enchanter, 0, x1+10, y1-15, z, h);
+    Spawn_Mob(list_enchanter, grid, x1+10, y1-10, z, h);
+    Spawn_Mob(list_enchanter, grid, x1+10, y1-15, z, h);
     -- 2 Wizard
-    Spawn_Mob(list_wizard, 0, x1-10, y1, z, h);
-    Spawn_Mob(list_wizard, 0, x1-10, y1-10, z, h);
+    Spawn_Mob(list_wizard, grid, x1-10, y1, z, h);
+    Spawn_Mob(list_wizard, grid, x1-10, y1-10, z, h);
     -- 2 Magician
-    Spawn_Mob(list_magician, 0, x1-10, y1-15, z, h);
-    Spawn_Mob(list_magician, 0, x1+15, y1, z, h);
+    Spawn_Mob(list_magician, grid, x1-10, y1-15, z, h);
+    Spawn_Mob(list_magician, grid, x1+15, y1, z, h);
     -- 2 Necromancer
-    Spawn_Mob(list_necromancer, 0, x1+15, y1-10, z, h);
-    Spawn_Mob(list_necromancer, 0, x1+15, y1-15, z, h);
+    Spawn_Mob(list_necromancer, grid, x1+15, y1-10, z, h);
+    Spawn_Mob(list_necromancer, grid, x1+15, y1-15, z, h);
   end
 end
 
@@ -225,12 +226,10 @@ function Deathtouch_Tick(e)
 end
 
 function Mob_Death(e)
-  e.self:Shout("I have died!");
   eq.signal(309006, 1);
 end
 
 function Huhn_Signal(e)
-  e.self:Shout("I have gotten a signal! wave: " .. this_wave);
   mobs_slain = mobs_slain + 1;
   
   if (this_wave == 1 and mobs_slain == 6) then
@@ -241,6 +240,12 @@ function Huhn_Signal(e)
     this_wave = this_wave + 1;
     mobs_slain = 0;
     Spawn_Wave(this_wave);
+  elseif (this_wave == 3 and mobs_slain == 18) then
+    -- Spawn a Greedy Dwarf to distribute loot until all MPG Raid Trials are complete
+    eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+
+    -- depop the mob
+    eq.depop();
   end
 end
 

@@ -23,3 +23,24 @@ function event_hp(e)
     eq.spawn2(336239, 0, 0, 1765, 2822, -24.97, 126.5);
   end
 end
+
+function event_combat(e)
+  if (e.joined == true) then
+    eq.stop_timer('wipecheck');
+  else
+    eq.set_timer('wipecheck', 600 * 1000);
+  end
+end
+
+function event_timer(e)
+  if (e.timer == 'wipecheck') then
+    eq.depop_all(336117);
+    eq.depop_all(336118);
+    eq.depop_all(336119);
+    eq.depop_all(336237);
+    eq.depop_all(336238);
+    eq.depop_all(336239);
+    eq.depop_with_timer();
+    eq.stop_timer('wipecheck');
+  end
+end 

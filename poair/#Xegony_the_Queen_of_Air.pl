@@ -143,5 +143,34 @@ sub EVENT_HP {
 	
 }
 sub EVENT_DEATH_COMPLETE {
-	quest::spawn2(215438,0,0,$x,$y,$z,$h);	
+	quest::spawn2(215438,0,0,$x,$y,$z,$h);
+	quest::stoptimer("xego_wipe");
 }
+
+sub EVENT_COMBAT
+	if ($combat_state == 1){
+		quest::stoptimer("xego_wipe");
+	} else {
+		quest::settimer("xego_wipe", 60);
+}
+
+sub EVENT_TIMER {
+	if ($timer eq "xego_wipe") {	
+		quest::depopall(215465);
+		quest::depopall(215472);
+		quest::depopall(215466);
+		quest::depopall(215434);
+		quest::depopall(215464);
+		quest::depopall(215440);
+		quest::depopall(215479);
+		quest::depopall(215445);
+		quest::depopall(215463);
+		quest::depopall(215437);
+		quest::depopall(215462);
+		quest::depopall(215444);
+		quest::depop();
+		quest::stoptimer("xego_wipe");
+		
+		quest::spawn2(215056,0,0,64,24.70,1467.4,193.4);			
+	}
+}	

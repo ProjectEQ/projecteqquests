@@ -19,7 +19,7 @@ local this_zone = 'chambersf';
 local lockout_win = 72;
 local lockout_loss = 2;
 local lockout_name = 'MPG_destruction';
-local warnings;
+local warnings = 0;
 local minutes_remaining;
 local player_list;
 local instance_requests;

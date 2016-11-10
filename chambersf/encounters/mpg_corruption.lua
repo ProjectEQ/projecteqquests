@@ -7,12 +7,15 @@
 -- 16 MPG_adaptation     - The Mastery of Adaptation (Raid)
 -- 32 MPG_corruption     - The Mastery of Corruption (Raid)  
 --
+-- Group Trial Version 1 of zone
+-- Raid Trial Version 2 of zone
 
 local event_started = 0;
 local instance_id;
 local lockout_name = 'MPG_corruption';
 local lockout_win = 108;
 local this_bit = 32;
+local this_zone = 'chambersf';
 local player_list;
 local warnings = 0;
 local this_wave = 1;
@@ -101,6 +104,17 @@ function setup()
   };
 end
 
+function Huhn_Spawn(e)
+  setup();
+  this_wave = 1;
+  mobs_slain = 0;
+  event_started = false;
+  instance_id = eq.get_zone_instance_id();
+  player_list = eq.get_characters_in_instance(instance_id);
+
+  eq.spawn_condition(this_zone, instance_id, 2, 0);
+end
+
 function Huhn_Say(e)
   if ( event_started ~= true ) then
     if ( e.message:findi("hail") ) then
@@ -111,6 +125,7 @@ function Huhn_Say(e)
 
       Spawn_Wave(this_wave);
       event_started = true;
+      eq.spawn_condition(this_zone, instance_id, 2, 1);
     end
   end
 end
@@ -196,13 +211,6 @@ function Spawn_Wave(wave_number)
   end
 end
 
-function Huhn_Spawn(e)
-  setup();
-  this_wave = 1;
-  mobs_slain = 0;
-  event_started = false;
-end
-
 function Deathtouch_Tick(e)
   local my_id = eq.get_zone_instance_id();
   local my_list = eq.get_characters_in_instance(my_id);
@@ -241,11 +249,18 @@ function Huhn_Signal(e)
     mobs_slain = 0;
     Spawn_Wave(this_wave);
   elseif (this_wave == 3 and mobs_slain == 18) then
+    -- Despawn the #death_touch mob
+    eq.spawn_condition(this_zone, instance_id, 2, 0);
+
     -- Spawn a Greedy Dwarf to distribute loot until all MPG Raid Trials are complete
     eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 
     -- depop the mob
     eq.depop();
+
+    -- Set a Lockout 
+    local mpg_helper = require("mpg_helper");
+    mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
   end
 end
 

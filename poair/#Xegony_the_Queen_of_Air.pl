@@ -147,15 +147,15 @@ sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("xego_wipe");
 }
 
-sub EVENT_COMBAT
+sub EVENT_COMBAT {
 	if ($combat_state == 1) {
 		quest::stoptimer("xego_wipe");
 	} else {
-		quest::settimer("xego_wipe",60);
+		quest::settimer("xego_wipe", 60);
 }
 
 sub EVENT_TIMER {
-	if ($timer eq "xego_wipe") {	
+	if ($timer eq "xego_wipe") {
 		quest::depopall(215465);
 		quest::depopall(215472);
 		quest::depopall(215466);

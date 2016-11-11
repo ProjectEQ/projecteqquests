@@ -148,10 +148,10 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_COMBAT
-	if ($combat_state == 1){
+	if ($combat_state == 1) {
 		quest::stoptimer("xego_wipe");
 	} else {
-		quest::settimer("xego_wipe", 60);
+		quest::settimer("xego_wipe",60);
 }
 
 sub EVENT_TIMER {

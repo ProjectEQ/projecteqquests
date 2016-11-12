@@ -20,18 +20,17 @@ sub EVENT_TIMER {
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
-  }
-
-  if($timer == "paffa_2") {
+    quest::stoptimer("paffa_1");
+    
+  } elsif ($timer == "paffa_2") {
     quest::emote("A crazed chant echoes through the room as Banord calls for more minions to attack.");
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
-  }
-
-  if($timer == "paffa_3") {
+    quest::stoptimer("paffa_2");
+  } elsif ($timer == "paffa_3") {
     quest::emote("A loud and maddened scream of rage is heard as Banord prepares to attack.");
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
@@ -40,8 +39,7 @@ sub EVENT_TIMER {
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(200059,0,0,$x,$y,$z,$h);
     
-    quest::stoptimer("paffa_2",190);
-    quest::stoptimer("paffa_3",380);
-    quest::depop_withtimer(200000);
+    quest::depop_withtimer();
+    quest::stoptimer("paffa_3");
   }
 }

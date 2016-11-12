@@ -11,7 +11,7 @@ function event_loot(e)
 	end
 end
 
-  
+
 --Wizard Epic 1.5 Spawn Mistress
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);

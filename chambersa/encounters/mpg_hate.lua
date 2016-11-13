@@ -92,7 +92,7 @@
 -- 32 MPG_corruption     - The Mastery of Corruption (Raid)  
 
 local instance_id;
-local lockout_name = 'MPG_hate';
+local lockout_name = 'MPG_hatred';
 local lockout_win = 108;
 local this_bit = 1;
 local player_list;
@@ -106,7 +106,7 @@ local hate_scale_seconds = 1;
 
 function Hate_Spawn(e)
   instance_id = eq.get_zone_instance_id();
-  lockout_name = 'MPG_hate';
+  lockout_name = 'MPG_hatred';
   lockout_win = 108;
   this_bit = 1;
   player_list = eq.get_characters_in_instance(instance_id);

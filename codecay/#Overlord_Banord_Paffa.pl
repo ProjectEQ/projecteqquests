@@ -30,6 +30,7 @@ sub EVENT_TIMER {
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     quest::stoptimer("paffa_2");
+    
   } elsif ($timer == "paffa_3") {
     quest::emote("A loud and maddened scream of rage is heard as Banord prepares to attack.");
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);

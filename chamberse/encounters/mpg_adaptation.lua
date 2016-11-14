@@ -117,8 +117,12 @@ end
 
 function Boss_Spawn(e)
   event_started = false;
+  instance_id = eq.get_zone_instance_id();
+  player_list = eq.get_characters_in_instance(instance_id);
+  lockout_name = 'MPG_adaptation';
+  lockout_win = 108;
+  this_bit = 16;
   setup();
-
 end
 
 function Boss_Say(e)
@@ -128,8 +132,9 @@ function Boss_Say(e)
     elseif ( e.message:findi("begin") ) then
       e.self:Say("Very well!  Let the battle commence!");
 
+      eq.spawn_condition('chamberse', instance_id, 2, 1 );
       event_started = true;
-      eq.set_timer('shapeshift', 10 * 1000);
+      eq.set_timer('shapeshift', 90 * 1000);
       ShapeShift(e);
     end
   end
@@ -139,6 +144,20 @@ function Boss_Timer(e)
   if (e.timer == "shapeshift") then
     ShapeShift(e);
   end
+end
+
+function Boss_Death(e)
+  eq.stop_all_timers();
+
+  -- Disable the deathtouch
+  eq.spawn_condition('chamberse', instance_id, 2, 0 );
+
+  -- Spawn Greedy Dwarf
+  eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+
+  -- Update the Lockouts
+  local mpg_helper = require("mpg_helper");
+  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
 end
 
 function Deathtouch_Tick(e)
@@ -167,6 +186,7 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_adaptation', Event.say,            308010, Boss_Say);
   eq.register_npc_event('mpg_adaptation', Event.spawn,          308010, Boss_Spawn);
   eq.register_npc_event('mpg_adaptation', Event.timer,          308010, Boss_Timer);
+  eq.register_npc_event('mpg_adaptation', Event.death_complete, 308010, Boss_Death);
 
   eq.register_npc_event('mpg_adaptation', Event.tick,           304021, Deathtouch_Tick);
 end

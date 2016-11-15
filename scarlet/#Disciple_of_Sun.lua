@@ -22,6 +22,6 @@ end
 function event_timer(e)
 	if(e.timer=="depop") then
 		e.self:Say("You have failed to prove yourself to be true. Be gone from my sight");
-		eq.depop;
+		eq.depop();
 	end
 end

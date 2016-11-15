@@ -1,3 +1,5 @@
+my $repeat_flag = 0;
+
 sub EVENT_SPAWN {
   $x = $npc->GetX();
   $y = $npc->GetY();
@@ -6,8 +8,11 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  quest::emote("A deep voice bellows from just ahead saying, 'Come fools see if you can match the power of Banord and his puslings.  Puslings come your master has need of you!' Wretched howls of the twisted puslings begin to echo throughout the room.");
-  quest::settimer("paffa_1",190);
+    if ($repeat_flag == 0) {
+      quest::emote("A deep voice bellows from just ahead saying, 'Come fools see if you can match the power of Banord and his puslings.  Puslings come your master has need of you!' Wretched howls of the twisted puslings begin to echo throughout the room.");
+      quest::settimer("paffa_1",190);
+      $repeat_flag = 1;
+    }
 }
 
 sub EVENT_TIMER {

@@ -46,8 +46,7 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_TIMER {
   if(($x <= -2100) || ($y >= 230) || ($y <= -265) || ($x >= -1600)) {
-    quest::shout("Never shall I be removed from nightmares!");
-    quest::depop_withtimer();
+    quest::emote("Terris-Thule disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
   }
 }
 

@@ -12,6 +12,6 @@ quest::depop();
 sub EVENT_SAY {
 if($text=~/hail/i) {
 $client->Message(9,"You are doing well... The Storm Lord does not stand a chance!");
-quest::movepc(209,-371,-1680,2356);
+quest::movepc(209,-663,-1738,2254);
 }
 }

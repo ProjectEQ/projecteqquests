@@ -24,6 +24,7 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading);
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading);
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
 		eq.set_next_hp_event(76);
 	elseif (e.hp_event == 76) then
 		-- spawn a_summoned_boar and a_summoned_minion
@@ -44,6 +45,8 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading);
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading);
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);	
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
 	end
 end

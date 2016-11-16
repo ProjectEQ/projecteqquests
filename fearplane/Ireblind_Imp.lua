@@ -16,7 +16,7 @@ function event_hp(e)
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.set_next_hp_event("51");
+		eq.set_next_hp_event(51);
 	end
 	
 	if(e.hp_event == 51) then
@@ -24,7 +24,7 @@ function event_hp(e)
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
 		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.set_next_hp_event("26");
+		eq.set_next_hp_event(26);
 	end
 	
 	if(e.hp_event == 26) then

@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE { 
-	quest::spawn2(200055,0,0,0,280,-244,0);
+	quest::spawn2(200055,0,0,-61.75,-.22,-288.5,192.4);
 }
 
 sub EVENT_SIGNAL {

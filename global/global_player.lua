@@ -17,7 +17,7 @@ function event_enter_zone(e)
 				.. "and find out more. Adventure awaits you, my friend.\'");
 		end
 	end
-end
+end 
 
 function event_combine_success(e)
 	if (e.recipe_id == 10904 or e.recipe_id == 10905 or e.recipe_id == 10906 or e.recipe_id == 10907) then

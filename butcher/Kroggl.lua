@@ -12,7 +12,7 @@ function event_say(e)
         {'LDON_mmcc', 'LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny'}
       }
 
-      local request = instance_requests.ValidateRaidRequest("mmcc", 50, 6, 54, 61, {any = {41000, 40999}}, e.other, lockout_globals);
+      local request = instance_requests.ValidateRequest('raid', "mmcc", 50, 6, 54, 61, {any = {41000, 40999}}, e.other, lockout_globals);
       if (request.valid and request.flags == 1) then
         instance_requests.DisplayLockouts(e.other, e.other, lockout_globals)
       elseif (request.valid and request.flags == 0) then

@@ -41,6 +41,27 @@
 -- 308008 Construct_of_Ice
 -- 308000 Construct_of_Pain
 -- 308009 Construct_of_Power
+--
+
+-- piercing (36)
+-- 1h blunt (0)
+-- 1h slashing (1)
+-- 2h blunt (2)
+-- 2h slashing (3)
+-- archery (7)
+-- throwing (51)
+-- hand to hand (28)
+--
+-- RESIST_NONE = 0,
+-- RESIST_MAGIC = 1,
+-- RESIST_FIRE = 2,
+-- RESIST_COLD = 3,
+-- RESIST_POISON = 4,
+-- RESIST_DISEASE = 5,
+-- RESIST_CHROMATIC = 6,
+-- RESIST_PRISMATIC = 7,
+-- RESIST_PHYSICAL = 8,  // see Muscle Shock, Back Swing
+-- RESIST_CORRUPTION = 9
 
 local event_started = false;
 local instance_id;
@@ -52,19 +73,25 @@ local list_constructs = {};
 local last_mob;
 
 function setup()
-  -- ID
-  -- Name
-  -- Race
-  -- Gender
-  -- Texture
-  -- sub-npcs
-  -- special abilities
+  -- ID, Name, Race, Gender, Texture, sub-npcs, special abilities, weakness to weapons 
+  local strong = -50;
+  local weak = 50;
+  local normal = 0;
+  local resists_norm = {{'mr','275'},{'fr','275'},{'cr','275'},{'pr','275'},{'dr','275'}};
+  local resists_weak = {{'mr','100'},{'fr','100'},{'cr','100'},{'pr','100'},{'dr','100'}};
+  local resists_high = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  
   list_constructs = {
-    [1] = {'308014', 'Construct of Brutality', 409, 2, 1, {}, {} },
-    [2] = {'308013', 'Construct of Fire', 408, 2, 1, {308003}, {} },
-    [3] = {'308008', 'Construct of Ice', 417, 2, 1, {308002}, {} },
-    [4] = {'308000', 'Construct of Pain', 413, 2, 1, {}, {SpecialAbility.area_rampage} },
-    [5] = {'308009', 'Construct of Power', 405, 2, 1, {308001}, {} }
+    [1] = {'308014', 'Construct of Brutality', 409, 2, 1, {}, {}, 
+      {{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal}}, resists_norm },
+    [2] = {'308013', 'Construct of Fire', 408, 2, 1, {308003}, {}, 
+      {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_weak, {5705} },
+    [3] = {'308008', 'Construct of Ice', 417, 2, 1, {308002}, {}, 
+      {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_high , {1248}},
+    [4] = {'308000', 'Construct of Pain', 413, 2, 1, {}, {SpecialAbility.flurry}, 
+      {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_norm },
+    [5] = {'308009', 'Construct of Power', 405, 2, 1, {308001, 308001, 308001, 308001, 308001}, {}, 
+      {{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50}}, resists_norm } 
   };
 
   last_mob = {};
@@ -78,15 +105,19 @@ function ShapeShift(e)
   if ( last_mob ~= nil ) then
     -- Depop Sub-NPCs
     if ( last_mob[6] ~= nil ) then
-      for k,v in pairs(last_mob[6]) do
+      for _,v in pairs(last_mob[6]) do
         eq.depop_all(tonumber(v));
       end
     end
     -- Unset Special Abilities
     if ( last_mob[7] ~= nil ) then
-      for k,v in pairs(last_mob[7]) do
+      for _,v in pairs(last_mob[7]) do
         e.self:SetSpecialAbility(v, 0);
-      eq.zone_emote(15, "SetSpecialAbility: " .. v .. " 0" );
+      end
+    end
+    if ( last_mob[10] ~= nil ) then
+      for _,v in pairs(last_mob[10]) do
+        e.self:RemoveAISpell(v);
       end
     end
   end
@@ -94,24 +125,57 @@ function ShapeShift(e)
   local num = math.random(1,table.getn(list_constructs));
   local mob = list_constructs[num];
 
+  -- Lets prevent the mob from shapeshifting to its same form; recursively
+  if (mob[1] == last_mob[1]) then
+    ShapeShift(e);
+    return;
+  end
+
   e.self:SendIllusionPacket({race=mob[3],gender=mob[4],texture=mob[5]});
   e.self:TempName(mob[2]);
   e.self:SetNPCFactionID(79);
 
   -- Spawn Sub-NPCs 
   if ( mob[6] ~= nil ) then 
-    for k,v in pairs(mob[6]) do
-      eq.spawn2( v, 0, 0, e.self:GetX() + 15, e.self:GetY() + 15, e.self:GetZ(), e.self:GetHeading() );
+    local x = -2;
+    for _,v in pairs(mob[6]) do
+      eq.spawn2( v, 0, 0, e.self:GetX() + (x*5), e.self:GetY() + (x*5) + 10, e.self:GetZ(), e.self:GetHeading() );
+      x = x + 1;
     end
   end
 
   -- Set Special Abilities
   if ( mob[7] ~= nil ) then
-    for k,v in pairs(mob[7]) do
-      eq.zone_emote(15, "SetSpecialAbility: " .. v .. " 1" );
+    for _,v in pairs(mob[7]) do
       e.self:SetSpecialAbility(v, 1);
     end
   end
+
+  -- Set the Shapes weakness to weaponry
+  if ( mob[8] ~= nil ) then
+    for _,v in pairs(mob[8]) do
+      if (v ~= nil and v[1] ~= nil and v[2] ~= nil) then
+        e.self:ModSkillDmgTaken(v[1], v[2]); 
+      end
+    end
+  end
+
+  -- Set the Shapes resists
+  if ( mob[9] ~= nil ) then
+    for _,v in pairs(mob[9]) do
+      if (v ~= nil and v[1] ~= nil and v[2] ~= nil) then
+        e.self:ModifyNPCStat(v[1], tostring(v[2]));
+      end
+    end
+  end
+
+  -- Spells if present
+  if ( mob[10] ~= nil ) then
+    for _,v in pairs(mob[10]) do
+      e.self:AddAISpell(0, v, 1024, -1, 30, -1);
+    end
+  end
+
   last_mob = mob;
 end
 
@@ -130,12 +194,12 @@ function Boss_Say(e)
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
-      e.self:Say("Very well!  Let the battle commence!");
-
       eq.spawn_condition('chamberse', instance_id, 2, 1 );
       event_started = true;
       eq.set_timer('shapeshift', 90 * 1000);
       ShapeShift(e);
+
+      e.self:Say("Very well!  Let the battle commence!");
     end
   end
 end

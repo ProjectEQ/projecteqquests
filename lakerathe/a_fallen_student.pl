@@ -1,11 +1,15 @@
 sub EVENT_SAY {
  if($text=~/hail/i){
-  quest::me("As you look at this individual, you can tell he has something bothering him greatly.");
-  quest::say("Eh? There is nothing I can help you with. I have nothing for myself anymore... except these [" . quest::saylink("cursed dreams") . "].");
+
  # quest::setglobal("monk_epic", "2", 5, "F");
  # quest::delglobal("monk_epic");
-	if(plugin::check_hasitem($client, 10652) && $client->GetGlobal("monk_epic") ==undef) {
+	if(plugin::check_hasitem($client, 10652) && $client->GetGlobal("monk_epic") ==undef){
 		quest::setglobal("monk_epic", "1", 5, "F"); 
+		quest::me("As you look at this individual, you can tell he has something bothering him greatly.");
+		quest::say("Eh? There is nothing I can help you with. I have nothing for myself anymore... except these [" . quest::saylink("cursed dreams") . "].");
+	}
+	elsif($client->GetGlobal("monk_epic") ==1){
+		quest::say("In my dreams I see sand as red as blood and skies scorched from war. It is a terrible vision that has haunted me greatly. Please find a way to let me know if this is fact or fiction, $name.");
 	}
 }	
   if(($text=~/cursed dreams/i)){
@@ -24,11 +28,11 @@ sub EVENT_SAY {
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Very well then. There is a place full of mirrors. Locate one of them and speak the words, I am ready to be tested. It is at this point you will face the darkness within yourself. You will have to face this foe alone, remember that. Return to me if you manage to prove that you are worthy of true enlightenment.");
   }
-  if($text=~/vision/i){
+  if($client->GetGlobal("monk_epic") ==1 && $text=~/vision/i){
    # Monk Epic 1.5
-   quest::say("I have seen visions of a dark foe gaining new strength in a plane unknown to me. It grows stronger with every passing minute. It gathers those that stand for chaos and disorder and is sending them out to search for the ultimate power of the Immortals, but it cannot be real. History reveals that he has been defeated. I see this same dream every night. It haunts me greatly. This dream seems too real, however, to not have some truth to it. If only I knew if this was a gift of foresight, or if I have finally lost my mind. If I only knew, I would be able to rest again. Please find a way to let me know if this is fact or fiction, $name .");
+   quest::say("I have seen visions of a dark foe gaining new strength in a plane unknown to me. It grows stronger with every passing minute. It gathers those that stand for chaos and disorder and is sending them out to search for the ultimate power of the Immortals, but it cannot be real. History reveals that he has been defeated. I see this same dream every night. It haunts me greatly. This dream seems too real, however, to not have some truth to it. If only I knew if this was the gift of foresight, or if I have finally lost my mind. If I only knew, I would be able to rest again.");
   }
-  if($text=~/time/i){
+  if($client->GetGlobal("monk_epic") ==2 && $text=~/time/i){
    # Monk Epic 1.5
    quest::say("Time for what? Time for us to find a way to defeat this menace that threatens our ways of life. Go out and find one that may know more about the [" . quest::saylink("power of the Immortals") . "]. Please do not return until you have found someone to help.");
   }
@@ -36,11 +40,11 @@ sub EVENT_SAY {
    # Monk Epic 1.5
    quest::say("Kaiarens Diary? I havent seen it in some time now. If I were not such a coward, I would have kept it. I have heard rumors of it being torn in half. Some students that wanted to learn the ways of the Celestial Fists were looking for it a while back. One was a pirate that wanted to only learn the Path of the Silent to gain more treasures then he had. The other, wanted to become the most powerful fighter alive. You may want to seek them out and see if they have located pieces of it. I am sorry I could not be of more help. If you do happen to locate the two pieces, bring them back to me and maybe I will be able to aid you further. Now that you know my secret, there is no reason to remain hidden from the world. You will be able to find me resting in the Plane of Tranquility. Be safe, $name .");
   }
-  if($text=~/power of the Immortals/i){
+  if($client->GetGlobal("monk_epic") ==2 && $text=~/power of the Immortals/i){
    # Monk Epic 1.5  
   quest::say("Power of the Immortals? Hmmm. . .well of course I know about that, but at the moment I have more pressing issues at hand. I'm sorry I could not be of more help, but maybe after my assistant has returned I can help you.");
   }
-  if( $client->GetGlobal("monk_epic") ==2 && $text=~/Vortix/i) {
+  if( $client->GetGlobal("monk_epic") ==3 && $text=~/Vortix/i) {
   quest::say("I see you know who I truly am now. It does not matter though. There is nothing I can help you with. Danl should have been able to help you more than I could.");
   quest::spawn2(203433,0,0,$x,$y,$z,$h);
   quest::depop();
@@ -50,6 +54,7 @@ sub EVENT_ITEM {
  # Handin: Muramite Sand
  if(plugin::check_handin(\%itemcount, 48122 => 1)){
   # Monk Epic 1.5
+  quest::setglobal("monk_epic", "2", 5, "F");
   quest::say("Where did you find this? Could it really be happening now, after all of this time? It couldnt be. He had been defeated... there is little [" . quest::saylink("time") . "] left for us now I am afraid.");
   }
  # Handin: Seal of Cedrick & Seal of Mystik

@@ -73,7 +73,7 @@ local list_constructs = {};
 local last_mob;
 
 function setup()
-  -- ID, Name, Race, Gender, Texture, sub-npcs, special abilities, weakness to weapons 
+  -- ID, Name, Race, Gender, Texture, sub-npcs, special abilities (only sets parm0 at this time), weakness to weapons, buffs to cast
   local strong = -50;
   local weak = 50;
   local normal = 0;
@@ -82,15 +82,15 @@ function setup()
   local resists_high = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
   
   list_constructs = {
-    [1] = {'308014', 'Construct of Brutality', 409, 2, 1, {}, {}, 
+    [1] = {'308014', 'Construct of Brutality', 409, 2, 1, {}, {{SpecialAbility.rampage,50},{SpecialAbility.area_rampage,50}}, 
       {{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal}}, resists_norm },
     [2] = {'308013', 'Construct of Fire', 408, 2, 1, {308003}, {}, 
       {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_weak, {5705} },
     [3] = {'308008', 'Construct of Ice', 417, 2, 1, {308002}, {}, 
       {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_high , {1248}},
-    [4] = {'308000', 'Construct of Pain', 413, 2, 1, {}, {SpecialAbility.flurry}, 
+    [4] = {'308000', 'Construct of Pain', 413, 2, 1, {}, {{SpecialAbility.flurry,20}}, 
       {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_norm },
-    [5] = {'308009', 'Construct of Power', 405, 2, 1, {308001, 308001, 308001, 308001, 308001}, {}, 
+    [5] = {'308009', 'Construct of Power', 405, 2, 1, {308001, 308001, 308001, 308001, 308001}, {{SpecialAbility.flurry,50}}, 
       {{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50}}, resists_norm } 
   };
 
@@ -112,7 +112,9 @@ function ShapeShift(e)
     -- Unset Special Abilities
     if ( last_mob[7] ~= nil ) then
       for _,v in pairs(last_mob[7]) do
-        e.self:SetSpecialAbility(v, 0);
+        if ( v[1] ~= nil ) then
+          e.self:SetSpecialAbility(v[1], 0);
+        end
       end
     end
     if ( last_mob[10] ~= nil ) then
@@ -147,7 +149,12 @@ function ShapeShift(e)
   -- Set Special Abilities
   if ( mob[7] ~= nil ) then
     for _,v in pairs(mob[7]) do
-      e.self:SetSpecialAbility(v, 1);
+      if ( v[1] ~= nil ) then
+        e.self:SetSpecialAbility(v[1], 1);
+        if ( v[2] ~= nil ) then
+          e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, v[2]);
+        end
+      end
     end
   end
 

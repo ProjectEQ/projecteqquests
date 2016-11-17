@@ -5,6 +5,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 67521 => 1, 67522 => 1, 67523 => 1, 67524 => 1)) {
     quest::spawn2(284092,0,0,1413.38,-491.76,106.13,192);
+    quest::emote("takes each weapon piece from you one by one and places them on the ground. He looks to the ceiling and says, 'Vtiink, there are some weapons here that need to be replaced and some intruders who need to be destroyed.' Suddenly the dank air in the room becomes ominous as a twisted monstrosity appears before you. Smith turns to you all and says, 'There is no more time. Your gods cannot save you now.' Vtiink sends out a wave of energy that forces Smith to crumple.");
   }
   plugin::return_items(\%itemcount);
 }

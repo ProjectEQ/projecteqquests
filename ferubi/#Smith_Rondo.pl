@@ -4,7 +4,7 @@ sub EVENT_ITEM {
     quest::summonitem(67520);
   }
   if (plugin::check_handin(\%itemcount, 67521 => 1, 67522 => 1, 67523 => 1, 67524 => 1)) {
-    quest::spawn2(284092,0,0,1238,-491,106,64);
+    quest::spawn2(284092,0,0,1413.38,-491.76,106.13,192);
   }
   plugin::return_items(\%itemcount);
 }

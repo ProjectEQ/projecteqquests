@@ -25,6 +25,7 @@ sub EVENT_TIMER {
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     
     quest::settimer("paffa_2",190);
+  }
     
   if ($timer == "paffa_2") {
     quest::emote("A crazed chant echoes through the room as Banord calls for more minions to attack.");
@@ -35,6 +36,7 @@ sub EVENT_TIMER {
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h);
     
     quest::settimer("paffa_3",190);
+  }
     
   if ($timer == "paffa_3") {
     quest::emote("A loud and maddened scream of rage is heard as Banord prepares to attack.");

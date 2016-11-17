@@ -6,6 +6,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if($timer == "murkadds") {
     quest::spawn2(300084,0,0,$x,$y,$z,$h);
+  }
   if($timer == "despawn") {
     quest::depop();
   }

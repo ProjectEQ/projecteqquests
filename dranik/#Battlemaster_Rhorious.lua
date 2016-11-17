@@ -30,12 +30,11 @@ function event_combat(e)
 	if (e.joined == true) then
 		eq.stop_timer("wipecheck");
 	else
-		eq.set_timer("wipecheck", 30*1000);
+		eq.set_timer("wipecheck", 600*1000);
 	end
 end
 
 function event_timer(e)
     eq.stop_timer("wipecheck");
 	eq.signal(336240,94);
-	eq.zone_emote(15, "wipe signal sent");
 end 

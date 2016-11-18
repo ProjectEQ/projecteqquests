@@ -13,7 +13,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	
-	if ($timer == "warning") {
+	if ($timer eq "warning") {
 		quest::say("Running out of ore soon, get em while they're hot!");
 		quest::stoptimer("warning");
 	}

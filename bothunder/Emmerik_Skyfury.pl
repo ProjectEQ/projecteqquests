@@ -14,7 +14,7 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_TIMER {
-	if ($timer == "emmerik_aggro_check") {
+	if ($timer eq "emmerik_aggro_check") {
 		if(!$npc->IsEngaged()) {
 			# if I have no aggro stop the portals from spawning adds
 			quest::signalwith(209036,2,1); 

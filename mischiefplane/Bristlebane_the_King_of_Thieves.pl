@@ -76,7 +76,7 @@ sub EVENT_HP {  # adds does not aggro unless within aggro range
 }
 
 sub EVENT_TIMER {
-	if($timer == "timeup") {
+	if($timer eq "timeup") {
 		quest::depop();
 	}
 }

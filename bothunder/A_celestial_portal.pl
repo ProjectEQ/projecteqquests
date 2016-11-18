@@ -11,7 +11,7 @@
  } 
  
  sub EVENT_TIMER { 
- 	if($timer == "celestial_portal_adds") { 
+ 	if($timer eq "celestial_portal_adds") { 
  		#spawn #An_animated_meteor
  		quest::spawn2(209116,0,0,$x,$y,$z,$h);  
  	}  

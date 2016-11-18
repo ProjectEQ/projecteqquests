@@ -4,10 +4,10 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  if($timer == "murkadds") {
+  if($timer eq "murkadds") {
     quest::spawn2(300084,0,0,$x,$y,$z,$h);
   }
-  if($timer == "despawn") {
+  if($timer eq "despawn") {
     quest::depop();
   }
 }

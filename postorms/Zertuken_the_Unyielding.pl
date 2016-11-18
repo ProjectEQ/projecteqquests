@@ -9,7 +9,7 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_TIMER {
-  if($timer == "tumadds") {
+  if($timer eq "tumadds") {
     if($npc->IsEngaged()) {
       quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);
       quest::spawn2(210247,0,0,($x + 10),$y,$z,$h);

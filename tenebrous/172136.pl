@@ -12,7 +12,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_TIMER {
-	if($timer == "kill") {
+	if($timer eq "kill") {
 		quest::signalwith(172032,2,0);
 		quest::signalwith(172074,2,0);
 		quest::signalwith(172073,2,0);

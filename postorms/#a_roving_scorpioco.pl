@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  if($timer == "despawnScorp") {
+  if($timer eq "despawnScorp") {
     quest::depopall(210249);
   }
 } 

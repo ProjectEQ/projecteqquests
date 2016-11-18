@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  if($timer == "depop_hatchling") {
+  if($timer eq "depop_hatchling") {
     quest::depop();
   }
 }

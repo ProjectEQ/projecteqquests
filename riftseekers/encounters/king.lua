@@ -85,6 +85,7 @@ end
 -- king hooks
 function KingSpawn(e)
     king = e.self
+    princecount = 0
     eq.unique_spawn(334040, 0, 0, -215.000000, -580.000000, -768.375000, 0.000000) -- Ilsin
     eq.unique_spawn(334039, 0, 0, -181.529999, -579.500000, -775.599976, 0.800000) -- Cynin
     eq.unique_spawn(334038, 0, 0, -148.000000, -580.000000, -768.375000, 0) -- Scyllus

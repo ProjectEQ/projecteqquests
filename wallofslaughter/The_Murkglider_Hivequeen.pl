@@ -3,7 +3,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_TIMER {
-  if($timer == "eggs") {
+  if($timer eq "eggs") {
     if($npc->IsEngaged()) {
       quest::emote("The Murkglider Hivequeen  spews several slimy eggs unto the ground.  They begin to quiver almost immediately.");
       quest::spawn2(300083,0,0,($x + 10),$y,$z,$h);

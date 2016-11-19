@@ -156,6 +156,7 @@ function PrinceDeath(e)
         king:SetSpecialAbility(SpecialAbility.immune_melee, 0)
         king:SetSpecialAbility(SpecialAbility.immune_magic, 0)
         king:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
+        king:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
     end
 end
 

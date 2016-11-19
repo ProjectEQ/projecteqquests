@@ -7,7 +7,7 @@ local crystal_regen = 0;
 function event_combat(e)
   if (e.joined == true) then
     eq.set_timer('Tadds', 60 * 1000);
-  else 
+  else
     eq.stop_timer('Tadds');
   end
 end
@@ -25,6 +25,6 @@ function event_signal(e)
   end
   if (crystal_regen == 4) then
     e.self:ModifyNPCStat("hp_regen","500");
-    crystal_regen = 0;
+    crystal_regen = 0;
   end
 end

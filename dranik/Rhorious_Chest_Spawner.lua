@@ -36,11 +36,14 @@ end
 
 function event_timer(e)
 	eq.stop_timer('respawn_battlemaster'); -- Respawn event after 2 hour cooldown
+	ironhoof_dead = 0;
+	mexmielk_dead = 0;
+	groundpounder_dead = 0;
+	battlemaster_dead = 0;
 	eq.spawn2(336120, 0, 0, 1678, 2778, -25, 130.5);
 	eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, .5);
 	eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, .5);
 	eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 126.5);
 	eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 126.5);
 	eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 126.5);
-	eq.set_next_hp_event(75);
 end

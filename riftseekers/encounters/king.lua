@@ -28,7 +28,7 @@
 --  Second phase: (killing all princes triggers)
 --      King becomes active and aggros the raid
 --      Every 40-60 seconds the King will cause a portal to activate
---      Same adds as First phase
+--      An orb will always spawn when the King activates a portal
 --
 --  There is no resetting the event
 --

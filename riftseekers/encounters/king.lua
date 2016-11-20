@@ -291,7 +291,12 @@ function event_encounter_load(e)
 
     -- spawn portals
     CheckPortals()
-    king = eq.get_entity_list():GetMob(334041) -- incase he's up already for some reason
+    local temp = eq.get_entity_list():GetMobByNpcTypeID(334041) -- incase he's up already for some reason
+    if temp.valid then
+        queen = temp:CastToNPC()
+    else
+        queen = nil
+    end
 end
 
 function event_encounter_unload(e)

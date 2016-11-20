@@ -228,6 +228,7 @@ function AddTimer(e)
                 local client = eq.get_entity_list():GetRandomClient(-41, -431, -780, 250000) -- TODO: fix range
                 if client.valid then
                     orbstate[e.self:GetID()] = client:GetID()
+                    e.self:SetRunning(true)
                     e.self:MoveTo(client:GetX(), client:GetY(), client:GetZ(), 0, true)
                 else
                     ExploadOrb(e.self) -- ahh I guess so? something went wrong so lets just die :P

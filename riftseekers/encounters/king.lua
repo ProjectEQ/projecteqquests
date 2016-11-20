@@ -102,7 +102,8 @@ function KingTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
-            PortalAdds(portals[eq.ChooseRandom(334040, 334039, 334038, 334037, 334036, 334035)])
+            local portal = portals[eq.ChooseRandom(334040, 334039, 334038, 334037, 334036, 334035)]
+            eq.spawn2(334095, 0, 0, portal:GetX(), portal:GetY(), portal:GetZ(), portal:GetHeading())
         else
             eq.stop_timer("portals")
             timerstate[e.self:GetID()] = false

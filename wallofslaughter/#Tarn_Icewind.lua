@@ -1,7 +1,3 @@
-local xloc = e.self:GetX();
-local yloc = e.self:GetY();
-local zloc = e.self:GetZ();
-local heading = e.self:GetHeading();
 local crystal_regen = 0;
 
 function event_combat(e)
@@ -14,6 +10,11 @@ end
 
 function event_timer(e)
   if (e.timer == 'Tadds') then
+    local xloc = e.self:GetX();
+    local yloc = e.self:GetY();
+    local zloc = e.self:GetZ();
+    local heading = e.self:GetHeading();
+    
     eq.spawn2(300065,0,0,xloc,yloc - 15,zloc,heading);
     eq.spawn2(300062,0,0,xloc,yloc - 15,zloc,heading);
   end

@@ -200,7 +200,7 @@ function AddTimer(e)
 end
 
 function event_encounter_load(e)
-    eq.register_npc_event("queen", event.spawn, 334049, Queenspawn)
+    eq.register_npc_event("queen", Event.spawn, 334049, Queenspawn)
     eq.register_npc_event("queen", Event.timer, 334049, QueenTimer)
     eq.register_npc_event("queen", Event.combat, 334049, QueenCombat)
     eq.register_npc_event("queen", Event.death_complete, 334049, QueenDeath)

@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
 }
   
 sub EVENT_TIMER {
-  if($timer == "despawnTrees") {
+  if($timer eq "despawnTrees") {
     quest::depopall(210248);
   }
 }

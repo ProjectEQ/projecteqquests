@@ -11,7 +11,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_TIMER {
-	if($timer == "firestorm_portal_adds") {
+	if($timer eq "firestorm_portal_adds") {
 		#spawn A_firestorm_elemental_
 		quest::spawn2(209118,0,0,$x,$y,$z,$h);
 	}

@@ -22,7 +22,7 @@ sub EVENT_SIGNAL {
 			quest::say("Begone " . $TopHate->GetName());
 			$npc->SetHate($TopHate,1,1);
 			my $MoveName = $entity_list->GetClientByName($TopHate->GetName());
-			$MoveName->MovePCInstance(296, $instid, -62, -826, -126, 0);
+			$MoveName->MovePCInstance(296, $instid, -117, -912, -127, 64);
 		}
 	}
 }

@@ -24,7 +24,7 @@ function event_signal(e)
     crystal_regen = crystal_regen + 1;
   end
   if (crystal_regen == 4) then
-    e.self:ModifyNPCStat("hp_regen","500");
+    e.self:ModifyNPCStat("hp_regen", 500);
     crystal_regen = 0;
   end
 end

@@ -19,6 +19,7 @@ function event_signal(e)
     eq.spawn2(300086, 0, 0, 631, 216, 4.22,0);
     eq.spawn2(300086, 0, 0, 483, 211, 4.22,0);
     eq.spawn2(300086, 0, 0, 487, 69, 4.22,0);
+    eq.depop_with_timer();
     ice_crystal = 0;
   end
 end

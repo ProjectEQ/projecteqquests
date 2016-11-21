@@ -11,8 +11,8 @@ end
 function event_timer(e)
   if (e.timer == 'Tadds') then
     local xloc = e.self:GetX();
-    local heading = e.self:GetHeading();
-    local heading = e.self:GetHeading();
+    local yloc = e.self:GetY();
+    local zloc = e.self:GetZ();
     local heading = e.self:GetHeading();
     
     eq.spawn2(300065,0,0,xloc,yloc - 15,zloc,heading);

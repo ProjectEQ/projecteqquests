@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-  quest::settimer("despawn",600);
+  quest::settimer("despawn",100);
   quest::settimer("murkadds",30);
 }
 

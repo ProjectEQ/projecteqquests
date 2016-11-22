@@ -21,3 +21,13 @@ sub EVENT_LOOT {
 		}
 	}
 }
+
+sub EVENT_LOOT {
+  if( ($looted_id == 69951) && !defined($qglobals{paladin_epic_pon}) && ($qglobals{paladin_epic} >= 5) ) { 
+    $x = $client->GetX();
+    $y = $client->GetY();
+    $z = $client->GetZ();
+    quest::spawn2(283157,0,0,$x,$y,$z,0); #a chest epic 1.5
+	quest::setglobal("paladin_epic_pon", 1, 0, "F");
+  }
+}

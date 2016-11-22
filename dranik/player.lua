@@ -29,3 +29,25 @@ function event_timer(e)
 		end
 	end
 end
+
+function event_click_door(e)
+  local door_id = e.door:GetDoorID();
+  if (door_id == 7) then  
+	local dca0 = eq.get_instance_id('dranikcatacombsa', 0);
+	local dca1 = eq.get_instance_id('dranikcatacombsa', 1); --paladin 1.5
+	local dcb0 = eq.get_instance_id('dranikcatacombsb', 0);
+	local dcc0 = eq.get_instance_id('dranikcatacombsc', 0);
+	--MovePCInstance(Integer zone, Integer instance, Real x, Real y, Real z, Real heading);
+    if (dca0 > 0) then
+      e.self:MovePCInstance(328, dca0, 0, 0, -10.49, 254);
+	elseif (dca1 > 0) then
+	  e.self:MovePCInstance(328, dca1, 0, 0, -10.49, 254);
+	elseif (dcb0 > 0) then
+	  e.self:MovePCInstance(329, dcb0, 212.58, 650.72, -14.78, 144);
+	elseif (dcc0 > 0) then
+	  e.self:MovePCInstance(330, dcc0, -10.17, -214.3, -3.35, 57);	  
+    else		
+      e.self:Message(13, "You are not part of an instance.");
+    end     
+  end
+end

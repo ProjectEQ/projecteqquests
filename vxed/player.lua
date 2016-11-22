@@ -15,3 +15,13 @@ function event_enter_zone(e)
 		eq.spawn2(290070 ,0,0,-1600,-1700,326.1,152);
 	end
 end
+
+function event_loot(e)
+	if(e.self:Class() == "Paladin" and e.item:GetID() == 69944 and e.self:HasItem(69924)) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["paladin_epic"] >= "5" and qglobals["paladin_epic_vxed"] == nil ) then
+			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+			eq.set_global("paladin_epic_vxed","1",5,"F");
+		end
+	end
+end

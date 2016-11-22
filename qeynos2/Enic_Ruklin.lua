@@ -1,8 +1,13 @@
 function event_say(e)
+ local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail! These are the sacred grounds of the Temple of Life. Please do not cause any disturbances while on our grounds. I would hate to have to hurt you. In the name of Rodcet Nife, of course. Now excuse me, I have a [problem] to attend to.");
+		if(qglobals["paladin_epic"] == "1") then
+			e.self:Say(e.other:GetName() .. "! I'm glad you are here. Something terrible has occurred recently. Would you like to know [" .. eq.say_link("what happened") .. "]?");
+		else
+			e.self:Say("Hail! These are the sacred grounds of the Temple of Life. Please do not cause any disturbances while on our grounds. I would hate to have to hurt you. In the name of Rodcet Nife, of course. Now excuse me, I have a [" .. eq.say_link("problem") .. "] to attend to.");
+		end
 	elseif(e.message:findi("problem")) then
-		e.self:Say("I have been charged with the duty of protecting the [Pool of Jahnda] and its fish. Now it seems as though a beast by the name of [Frostbite] has slurped up another one of the sacred fish, the [Koalindl]. If I do not get the little corpse of this fish back, I could be in trouble. Any respected member of this temple who aids me will be rewarded greatly.");
+		e.self:Say("I have been charged with the duty of protecting the [" .. eq.say_link("Pool of Jahnda") .. "] and its fish. Now it seems as though a beast by the name of [" .. eq.say_link("Frostbite") .. "] has slurped up another one of the sacred fish, the [" .. eq.say_link("Koalindl") .. "]. If I do not get the little corpse of this fish back, I could be in trouble. Any respected member of this temple who aids me will be rewarded greatly.");
 	elseif(e.message:findi("pool of jahnda")) then
 		e.self:Say("The Pool of Jahnda is not meant for public use. It is a sacred pool created for the [Koalindl]. They say that, every so often, the Prime Healer visits our plane in the guise of a Koalindl. He swims in our pool.");
 	elseif(e.message:findi("koalindl")) then
@@ -12,7 +17,12 @@ function event_say(e)
 	elseif(e.message:findi("donate")) then
 		e.self:Say("I would be glad to help you out. The Knights of Thunder are a respected order.");
 		e.other:SummonItem(13292);
-	end
+	elseif(qglobals["paladin_epic"] == "1" and e.message:findi("what happened")) then
+		e.self:Say("A few nights ago, I was standing guard at the Pool of Jahnda like any other night, but something was different. The night air was cooler than usual and the sky was barely visible because of all of the dark clouds. Sometime around midnight, a flash occurred near the pool and I saw an Iksar run off with a Koalindl. As I chased him, he casted a portal spell and disappeared. This is grave indeed! I will need your help, " .. e.other:GetName() .. ". Will you help [" .. eq.say_link("track down") .. "] this Iksar and return the Koalindl?");
+	elseif(qglobals["paladin_epic"] == "1" and e.message:findi("track down")) then
+		e.self:Say("Very well, " .. e.other:GetName() .. ". Unfortunately, I cannot offer you any hints. My only guess is that this Iksar might be near a large body of water, for the Koalindl needs to be kept near water at all times. I fear that the Koalindl may have been destroyed. Go now and find the Koalindl or the remnants of that great servant of the Prime Healer!");	
+		eq.set_global("paladin_epic","2",5,"F");
+	end	
 end
 
 function event_trade(e)

@@ -22,7 +22,7 @@ sub EVENT_TIMER {
     quest::depop();
   }
   if($timer == 2) {
-    if($y < -250) {
+    if($y < -184) {
       $npc->GMMove(-866,-43,61,130);
     }
   }

@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
 quest::settimer(36,2700);
-quest::shout("How dare you!");
+quest::shout("The time has come for all intruders to be tested! I will not allow you to pillage this plane any longer!");
 }
 
 sub EVENT_TIMER {

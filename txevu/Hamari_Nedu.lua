@@ -33,7 +33,7 @@ function event_say(e)
     if (e.other:HasItem(64034)) then 
       --#if have signet of command
       --#create tacvi instance
-      local request = instance_requests.ValidateRaidRequest("tacvi", 0, 6, 54, 65, {}, e.other, lockout_globals);
+      local request = instance_requests.ValidateRequest('raid', "tacvi", 0, 6, 54, 65, {}, e.other, lockout_globals);
       -- Only check request.valid here; because when you zone in; the status will calculate which mobs
       -- are active as each mob has its own lockout.
       if (request.valid) then 

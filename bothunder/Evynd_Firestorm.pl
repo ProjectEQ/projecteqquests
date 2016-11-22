@@ -14,12 +14,12 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_TIMER {
-	if ($timer == "evynd_aggro_check") {
+	if ($timer eq "evynd_aggro_check") {
 		if(!$npc->IsEngaged()) {
 			# if I have no aggro stop the portals from spawning adds
 			quest::signalwith(209038,2,1);
 			#depop the firestorm portal adds.
-			quest::depopall(209037);
+			quest::depopall(209118);
 			quest::stoptimer("evynd_aggro_check");
 		}
 	}

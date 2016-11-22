@@ -10,7 +10,7 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  if($timer == "spawn1") {
+  if($timer eq "spawn1") {
     quest::stoptimer("spawn1");
 #Garadain Glacierbane
     quest::spawn2(116084,236,0,-389.6,-2713.6,181,19);

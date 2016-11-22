@@ -1,6 +1,12 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::emote("bows deeply. 'I have been expecting you, $name. The waters have foretold your arrival. I am High Priest Omat Vastsea of the Triumvirate missionaries. Please feel free to enjoy the quiet solitude of this inn.'");
+	if (plugin::check_hasitem($client,28048) && plugin::check_hasitem($client,28049) && plugin::check_hasitem($client,28050)) { #respawn Jhassad if failed during initial attempt
+	  quest::say("Jhassad told me to notify him the minute you returned.  Hurry down to the beach so you do not miss him again!");
+	  quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
+	}
+	else {
+      quest::emote("bows deeply. 'I have been expecting you, $name. The waters have foretold your arrival. I am High Priest Omat Vastsea of the Triumvirate missionaries. Please feel free to enjoy the quiet solitude of this inn.'");
+    }
   }
   if ($text=~/Triumvirate/i) {
     quest::say("The Triumvirate of Water are: E'ci, the mistress of ice; Tarew Marr, the lord of water; and Povar, the formless master of vapor and mist. We Triumvirate missionaries are granted great divinatory powers and wisdom through our devotion to the Triumvirate and must defend the waters of Norrath from the ravages of the Tyrant of Fire, Fennin Ro.");

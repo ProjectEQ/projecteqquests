@@ -35,15 +35,3 @@ function event_death_complete(e)
 	eq.toggle_spawn_event(65, true, false, false)
 end
 
-function event_tick(e)
-	-- If CBQ is moving she has fairly normal regen, if she's stationary it's pretty insane
-	local moving = e.self:IsMoving() or heading ~= e.self:GetHeading();
-	if (moving and super_regen) then
-		e.self:ModifyNPCStat("hp_regen", "100");
-		super_regen = false;
-	elseif (not super_regen) then
-		e.self:ModifyNPCStat("hp_regen", "10000");
-		super_regen = true;
-	end
-	heading = e.self:GetHeading();
-end

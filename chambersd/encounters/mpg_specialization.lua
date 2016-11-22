@@ -59,6 +59,10 @@ function Boss_Spawn(e)
   lockout_win = 108;
   this_bit = 8;
   setup();
+
+  e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
+  e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+  e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
 end
 
 function Boss_Say(e)
@@ -76,6 +80,10 @@ function Boss_Say(e)
     eq.set_timer('spell_timer', spell_timer  * 1000);
 
     e.self:AddToHateList(e.other, 1);
+
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+    e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+    e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
   end
 end
 

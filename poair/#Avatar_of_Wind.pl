@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
 quest::settimer(35,2700);
-quest::shout("How dare you!");
+quest::shout("I will certainly make sure that no mortal is allowed to defile this sacred realm!");
 }
 
 sub EVENT_TIMER {

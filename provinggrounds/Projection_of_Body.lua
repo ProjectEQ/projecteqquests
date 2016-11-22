@@ -12,12 +12,12 @@ end
 
 function event_say(e)
   if (e.message:findi("hail")) then
-    e.self:Say("'Halt, " .. e.other:GetCleanName() .. ", and hear my words. Your background and your status are of no consequence. All are welcome to participate in the trials to prove their worth, or die trying. Whosoever approaches me has addressed the embodiment of Body, keeper of the trials of Weaponry and Endurance. The former is a small-scale test, while the latter is large-scale. My task is to explain the rules and usher hopefuls into the battle arena. Would you like to hear the rules for [small-scale] or [large-scale] trials, or do you wish to enroll in [ " .. eq.say_link("Weaponry", false, "Weaponry") .. " ] or [Endurance]?' ");
+    e.self:Say("'Halt, " .. e.other:GetCleanName() .. ", and hear my words. Your background and your status are of no consequence. All are welcome to participate in the trials to prove their worth, or die trying. Whosoever approaches me has addressed the embodiment of Body, keeper of the trials of Weaponry and Endurance. The former is a small-scale test, while the latter is large-scale. My task is to explain the rules and usher hopefuls into the battle arena. Would you like to hear the rules for [small-scale] or [large-scale] trials, or do you wish to enroll in [ " .. eq.say_link("Weaponry", false, "Weaponry") .. " ] or [ " .. eq.say_link('Endurance', false, 'Endurance') .. " ]?' ");
 
   elseif (e.message:findi("weaponry")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_weaponry', 'MPG: The Mastery of Weaponry' } } 
-    local requests = instance_requests.ValidateGroupRequest('chambersb', 1, 2, 6, 65, e.other, lockouts);
+    local requests = instance_requests.ValidateRequest('group', 'chambersb', 1, 2, 6, 65, nil, e.other, lockouts);
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then
@@ -28,19 +28,17 @@ function event_say(e)
     end
     
 
-  elseif (e.message:findi("hatred")) then
-    if (e.other:Admin() > 80) then 
-      local instance_requests = require("instance_requests");
-      local lockouts = { { 'MPG_hatred', 'MPG: Trial of Hatred' } }
-      local requests = instance_requests.ValidateRaidRequest( 'chambresa', 2, 2, 54, 65, nil, e.other, lockouts);
-      if (requests.valid and requests.flags == 1) then
-        instance_requests.DisplayLockouts(e.other, e.other, lockouts);
-      elseif (requests.valid and requests.flags == 0) then 
-        local instance_id = eq.create_instance('chambersa', 2, 21600);
-        eq.assign_raid_to_instance(instance_id);
+  elseif (e.message:findi("endurance")) then
+    local instance_requests = require("instance_requests");
+    local lockouts = { { 'MPG_endurance', 'MPG: Trial of Endurance' } }
+    local requests = instance_requests.ValidateRequest('raid',  'chambresb', 2, 2, 54, 65, nil, e.other, lockouts);
+    if (requests.valid and requests.flags == 1) then
+      instance_requests.DisplayLockouts(e.other, e.other, lockouts);
+    elseif (requests.valid and requests.flags == 0) then 
+      local instance_id = eq.create_instance('chambersb', 2, 21600);
+      eq.assign_raid_to_instance(instance_id);
 
-        e.self:Say("Anger is a tool if you wield it correctly.  Invoking hatred in your enemies will provoke them into predictable and controllable behavior.  Can you harness your foes' hatred and twist it to your advantage?  If you have this ability, now is the opportunity to prove your worth!");
-      end
+      e.self:Say("In a battle of attrition, an extended engagement, you must have the endurance to outlast your opposition. When the defense is inpenetrable, your tenacity is more important than your offensive prowess. If you have this ability, now is the oppurtunity to prove your worth.");
     end
   end
 end

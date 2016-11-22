@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
 quest::settimer(37,2700);
-quest::shout("How dare you!");
+quest::shout("Leave now foolish mortal you have begun to send events in motion that you cannot possibly understand!");
 }
 
 sub EVENT_TIMER {

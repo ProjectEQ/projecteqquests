@@ -14,8 +14,7 @@ sub EVENT_SPAWN {
 sub EVENT_AGGRO {
 	quest::stoptimer("engage");
 	quest::settimer("battle", 2700);   # 45 min to kill
-	quest::spawn2(210235,0,0,$x,$y,$z,$h);	# spawn Royal Scorpions
-        quest::spawn2(210235,0,0,$x,$y,$z,$h);	# spawn Royal Scorpions
+	quest::settimer("ScorpAdds", 30);
 }
 
 sub EVENT_TIMER {
@@ -28,6 +27,19 @@ sub EVENT_TIMER {
 	if ($timer eq "battle") {	# if he was not killed in time, despawns
 		quest::depop();
 	}
+	
+	if ($timer eq "ScorpAdds") {
+		if($npc->IsEngaged()) {
+			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			} else {
+			quest::stoptimer("ScorpAdds");
+			}		
+	}		
 }
 
 sub EVENT_DEATH_COMPLETE {

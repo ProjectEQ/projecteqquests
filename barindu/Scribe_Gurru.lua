@@ -16,6 +16,13 @@ function event_say(e)
 		instance_id_list["snplant"]=1;
 	end
 	
+	local invxed0 = eq.get_instance_id("vxed",0);
+	if(invxed0 > 0) then
+		instance_id_list["vxed"]=0;
+	else
+		instance_id_list["vxed"]=1;
+	end	
+	
 	if(e.message:findi("hail")) then
 		if (qglobals["temp_sewers"] ~= nil) then
 			-- if the player is working on sewer instance, update appropriately.

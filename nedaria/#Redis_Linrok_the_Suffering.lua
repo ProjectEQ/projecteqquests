@@ -2,15 +2,10 @@ function event_say(e)
 	-- load the current qglobals
 	local qglobals = eq.get_qglobals(e.self,e.other);
 	
-	
-	local instance_id = eq.get_instance_id("dranikcatacombsa", 1);
-	e.self:Say("instance " .. instance_id);
-	eq.remove_all_from_instance(instance_id);
-	
-	if (qglobals["paladin_epic"] == "6") then		
+	if (qglobals["paladin_epic"] >= "6") then		
 		local instance_requests = require("instance_requests");
-		local lockouts = { { 'paladinEpicDranikCata' } } 
-		local requests = instance_requests.ValidateGroupRequest('dranikcatacombsa', 1, 2, 6, 65, e.other, lockouts);
+		local lockouts = { { 'paladinEpicDranikCata','Dranik Catacombs A' } } 
+		local requests = instance_requests.ValidateRequest('group','dranikcatacombsa', 1, 2, 6, 65, nil, e.other, lockouts);
 		if (requests.valid and requests.flags == 1) then
 		  instance_requests.DisplayLockouts(e.other, e.other, lockouts);
 		elseif (requests.valid and requests.flags == 0) then

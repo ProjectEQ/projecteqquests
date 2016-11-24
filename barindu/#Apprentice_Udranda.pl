@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	 $vxedPally = quest::GetInstanceID("vxed",1);
 	 $raid = $client->GetRaid();
 	 
-	  quest::say("instanceid $vxedPally");
+	  #quest::say("instanceid $vxedPally");
 	  quest::say("I heard you released Reiya from his tourture, $name. I have seen muramites gathering in Vxed and I fear this may have to do with Reiya and the creatures responsible. Go there now and investigate, Noble Knight.");
 	   if ($raid) {
 		if ($raid->RaidCount() <= 24 && $raid->RaidCount() >= 6) {

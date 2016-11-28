@@ -22,7 +22,6 @@ sub EVENT_SAY {
 				$client->Message(13, "You are already in an instance!");
 			  }	  
 		 } else {
-			$client->Message(13, "You have ".$raid->RaidCount()." players in raid.  Only 24 allowed");
 		 } 
        }
       else {

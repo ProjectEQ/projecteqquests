@@ -12,3 +12,16 @@ function event_signal(e)
         eq.update_task_activity(213, 0, 1)
     end
 end
+
+function event_enter_zone(e)
+    if e.self:GetClass() == 8 then
+        local qglobals = eq.get_qglobals(e.self)
+        if qglobals["bard15"] ~= nil and qglobals["bard15"] >= "5" then
+            local entity_list = eq.get_entity_list()
+            if entity_list:IsMobSpawnedByNpcTypeID(20290) == false and entity_list:IsMobSpawnedByNpcTypeID(20291) == false and entity_list:IsMobSpawnedByNpcTypeID(20292) == false then
+                eq.spawn2(20290, 140, 0, 1157, 537, 131, 245)
+            end
+        end
+    end
+end
+

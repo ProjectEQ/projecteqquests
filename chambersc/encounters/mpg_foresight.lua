@@ -23,6 +23,10 @@ local warnings = 0;
 local emotes = {};
 local hazards = {};
 local hazard_timer = 30;
+local kyvs = {};
+local kyv_client;
+local kyv_targets = {};
+local kyv_timer = 10;
 local last_emote = '';
 local emote_grace = 8;
 
@@ -32,19 +36,24 @@ function setup()
     [2]  = { "The room begins to heat up dramatically. The south side looks safe.", south_safe },
     [3]  = { "The room begins to heat up dramatically. The east side looks safe.", east_safe },
     [4]  = { "The room begins to heat up dramatically. The west side looks safe.", west_safe },
-  }
-  other_emotes = {
-  }
+  };
+
+  kyvs = {
+    [1]  = { "From the corner of your eye, you notice a Kyv taking aim at your position. You should move.", kyv_move },
+    [2]  = { "From the corner of your eye, you notice a Kyv taking aim near your position. He appears to be leading the target, anticipating your next movement. You should stand still.", kyv_stop },
+    [3]  = { "From the corner of your eye, you notice a Kyv taking aim at your head. You should duck.", kyv_duck },
+  };
+
   more_emote = {
-    [2]  = { "The room begins to heat up dramatically. The center looks safe.", center_safe },
-    [5]  = { "From the corner of your eye, you notice a Kyv taking aim at your position. You should move." },
-    [6]  = { "From the corner of your eye, you notice a Kyv taking aim near your position. He appears to be leading the target, anticipating your next movement. You should stand still." },
-    [7]  = { "From the corner of your eye, you notice a Kyv taking aim at your head. You should duck." },
     [8]  = { "The Dragorn before you is developing an anti-magic aura." },
     [9]  = { "You notice that the Dragorn before you is preparing to cast a devastating close-range spell." },
     [10] = { "You notice that the Dragorn before you is preparing to cast a devastating spell. Doing enough damage to him might interrupt the process." },
     [11] = { "The Dragorn before you is sprouting sharp spikes." },
     [12] = { "The Weapon in your right hand begins to heat up dramatically. You should remove it." }
+  }
+
+  other_emotes = {
+    [2]  = { "The room begins to heat up dramatically. The center looks safe.", center_safe },
   }
 end
 
@@ -61,11 +70,11 @@ function Start_Event(e)
   eq.spawn2(306018, 0, 0, -158, 160, 60, 241); -- Dragorn Spellscribe
 
   eq.spawn2(306012, 0, 0, -194, 286, 66, 48);  -- a kyv sureshot
-  eq.spawn2(306012, 0, 0, -227, 290, 66, 214);  -- a kyv sureshot
-  eq.spawn2(306012, 0, 0, -223, 260, 66, 138); -- a kyv sureshot
-  eq.spawn2(306012, 0, 0, -188, 257, 66, 83); -- a kyv sureshot
+  eq.spawn2(306021, 0, 0, -227, 290, 66, 214);  -- a kyv sureshot
+  eq.spawn2(306021, 0, 0, -223, 260, 66, 138); -- a kyv sureshot
+  eq.spawn2(306021, 0, 0, -188, 257, 66, 83); -- a kyv sureshot
 
-  eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
+  --eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 
   eq.set_timer("emotes", 5 * 1000);
 end
@@ -119,12 +128,79 @@ function Boss_Timer(e)
   end
 end
 
+function Kyv_Spawn(e)
+  eq.set_timer('kyv', kyv_timer * 1000);
+end
+
+function Kyv_Timer(e)
+  local msg = '';
+  local client;
+  local num;
+  local loc;
+  if (e.timer == 'kyv') then
+    eq.stop_timer(e.timer);
+
+    for i=1,4,1 do
+      client = eq.get_entity_list():GetRandomClient(-204, 270, 65, 150000);
+      num = math.random(1,table.getn(kyvs));
+      --num = 2;
+      client:Message(14, kyvs[num][1]);
+      kyv_targets[i] = { client, num, {client:GetX(), client:GetY() }};
+      eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
+    end
+    
+    eq.set_timer('kyv_action', 3000);
+  elseif (e.timer == 'kyv_action') then
+    eq.stop_timer(e.timer);
+    for i=1,4,1 do
+      client = kyv_targets[i][1];
+      loc = kyv_targets[i][3];
+      if ( kyvs[kyv_targets[i][2]][2](e, client, loc) == false ) then
+        msg = 'You are struck by a stray arrow!';
+        e.self:CastSpell(5696, client:GetID());
+      else
+        msg = 'An arrow narrowly misses you.';
+      end
+      client:Message(14, msg);
+    end
+    eq.set_timer('kyv', kyv_timer * 1000);
+  end
+end
+
+-- Return true if client moved
+-- Return false if they did not
+function kyv_move(e, client, loc)
+  eq.debug("name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_move old_x: " .. loc[1] .. " old_y:" .. loc[2]);
+
+  if (loc[1] == client:GetX() and loc[2] == client:GetY()) then
+    return false;
+  end
+  return true;
+end
+
+-- Return true if client has stopped or engaged in battle
+-- Return false if they are moving or engaged in battle
+function kyv_stop(e, client, loc)
+  eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_stop");
+  if ( client:IsMoving() or client:IsEngaged() ) then
+    return false;
+  end
+  return true;
+end
+
+-- Return true if client has ducked
+-- return false if client has not ducked
+function kyv_duck(e, client, loc)
+  eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_duck");
+  return true;
+end
+
 function Hazard_Spawn(e)
   eq.set_timer('hazard', hazard_timer * 1000);
 end
 
 function Hazard_Timer(e)
---eq.zone_emote(15, "name: " .. e.self:GetName() .. " timer: " .. e.timer);
+  eq.debug( "name: " .. e.self:GetName() .. " timer: " .. e.timer);
   eq.stop_timer(e.timer);
   if (e.timer == "north") then
     ae_check(e, -327, -89, 270, 398);
@@ -141,6 +217,12 @@ function Hazard_Timer(e)
 end
 
 function Event_Win(e)
+  -- Depop the hazards
+  eq.depop_all(306011);
+
+  -- Depop the sureshots
+  eq.depop_all(306012);
+
   -- Disable the deathtouch
   eq.depop_all(306020);
 
@@ -158,8 +240,8 @@ function ae_check(e, xmin, xmax, ymin, ymax)
   for v in cl.entries do
     x = v:GetX();
     y = v:GetY();
--- eq.zone_emote(15, "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
--- eq.zone_emote(15, "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
+-- eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
+-- eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
     if (x < xmin or x > xmax or y < ymin or y > ymax) then
       e.self:CastSpell(5693, v:GetID());
       v:Message(14,'The room explodes with chaotic energy.');
@@ -223,6 +305,9 @@ function event_encounter_load(e)
 
   eq.register_npc_event('mpg_foresight', Event.spawn,          306011, Hazard_Spawn);
   eq.register_npc_event('mpg_foresight', Event.timer,          306011, Hazard_Timer);
+
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306012, Kyv_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306012, Kyv_Timer);
 
   eq.register_npc_event('mpg_foresight', Event.tick,           306020, Deathtouch_Tick);
 

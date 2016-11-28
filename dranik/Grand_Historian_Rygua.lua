@@ -154,33 +154,3 @@ function set_compass_sewer(group)
 		end
 	end
 end
---[[
-gersh  Greetings, traveler. I am Grand Historian Gersh and I can open your mind to the history of our people if you wish.  I can show you the remnants of our [caves]
---where we hid from the raiding Muramite Army.
-
--- not enough people --minimum 3 people
---"I'm sorry but the area is too dangerous for you.  I would feel better if you had more adventurers with you.
-
-
-You have chosen to explore the Caves of Dranik.  The caves are home to some frightening creatures.  The caves you will be exploring arehome to a vicious
-pair of creatures known for their strength and cunning.  Should you come across a murkglider known as the Inky Murkglider, or a rat known as Silentpaw,
-prepare yourself for a tough battle.  The battle might be hard fought, but some would say the riches are well worth it.
-say(Be safe in your travels through the caves, $name)
--- set compass (yellow)
--- message (yellow) Dranik's Hollows: Murkglider Hive is now available to you.
-
-You have chosen to explore the Caves of Dranik.  The caves are home to some frightening creatures.  The caves you will be exploring arehome to a vicious
-pair of creatures known for their strength and cunning.  Should you come across a kyv known as the Kyv Bowkeeper, or an Ukun known as the Ukun Fleshrender,
-prepare yourself for a tough battle.  The battle might be hard fought, but some would say the riches are well worth it.
-say(Be safe in your travels through the caves, $name)
--- set compass (yellow)
--- message (yellow) Dranik's Hollows: Fire Pit is now available to you.
-
-You have chosen to explore the Caves of Dranik.  The caves are home to some frightening creatures.  The caves you will be exploring arehome to a vicious
-pair of creatures known for their strength and cunning.  Should you come across a girplan known as the Girplan Pathmaker, or a discordling known as the Discordling Hollower,
-prepare yourself for a tough battle.  The battle might be hard fought, but some would say the riches are well worth it.
-say(Be safe in your travels through the caves, $name)
--- set compass (yellow)
--- message (yellow) Dranik's Hollows: Watering Hole is now available to you.
-
---]]

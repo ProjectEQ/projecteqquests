@@ -72,6 +72,11 @@ function event_combine_success(e)
 		e.self:Message(15,'You have gained 5 ability points!');	
 		eq.set_global("paladin_epic","8",5,"F");
 		e.self:Message(6,"As the four soulstones come together, a soft blue light eminates around the dark sword. The soulstones find themselves at home within the sword. A flash occurs and four voices in unison speak in your mind, 'Thank you for saving us and giving us a purpose again. You are truly our savior and our redeemer, and we shall serve you from now on. Thank you, noble knight!")
+	elseif(e.recipe_id == 19882) then
+		e.self:AddAAPoints(5);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 5 ability points!');	
+		eq.set_global("bard15","6",5,"F");
 	end
 end
 

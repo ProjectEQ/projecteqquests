@@ -31,7 +31,7 @@ function event_say(e)
         e.self:Say("There are no finer leggings for a bard than lambent greaves.  Collect for me two pairs of lesser greaves and I will give you some.  Bring me icy greaves from the caverns of Permafrost and shin greaves from a ghoul knight, as well as a lambent fire opal and I will bestow a pair of lambent greaves upon you .")
     elseif e.message:findi("lambent boots") then
         e.self:Say("Lambent boots are the boots of choice for most bards.  If you can bring me firewalker boots from a Solusek Mage and the middle portion of the rune of the One Eye from Froon then I ill give you a pair of lambent boots.  Oh, I almost forgot! I will need a lambent sapphire as well.")
-    elseif qgloabls["bard15"] ~= nil and qglobals["bard15"] >= "4" and e.message:findi("note") then
+    elseif qglobals["bard15"] ~= nil and qglobals["bard15"] >= "4" and e.message:findi("note") then
         e.self:Say("TODO: This part is not implemented, please report if you know how it should work.")
     end
 end

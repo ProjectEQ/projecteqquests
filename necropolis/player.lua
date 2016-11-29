@@ -1,5 +1,12 @@
 function event_loot(e)
     -- bard 1.5 Drac chest
+    if e.self:GetClass() == 8 and e.item:GetID() == 77613 then
+        local qglobals = eq.get_qglobals(e.self)
+        if qglobals["bard15"] ~= nil and qglobals["bard15"] >= "3" and qglobals["bard15_dracchest"] == nil then
+            eq.spawn2(283157, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading())
+            eq.set_global("bard15_dracchest", "1", 5, "F")
+        end
+    end
 end
 
 function event_enter_zone(e)

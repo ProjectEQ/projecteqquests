@@ -50,7 +50,7 @@ function MalignantDeath(e)
     if death_count == 10 then
         eq.spawn2(20292, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading())
     end
-    eq.spawn2(20291, 0, 0, e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.sef:GetSpawnPointH())
+    eq.spawn2(20291, 0, 0, e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH())
 end
 
 function ThiefSpawn(e)

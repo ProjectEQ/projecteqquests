@@ -24,7 +24,7 @@ function event_say(e)
                 e.self:Emote("'s eyes glitter with energy as you mention Baldric's Name. 'So I was not mistaken, you do know Baldric.  He was a friend, and as a great a mortal as I have ever known.  You must be an exceptional mortal yourself if Baldric saw fit to bequeath the blade to you.  Yes I know of it.  I could feel it's energy around your body.  Perhaps fate has brought you to me this day.  I am in great need of help " .. e.other:GetRace() .. ".")
                 e.self:Say("One of our scouts recently came upon a band of mercenaries in possession of a letter from King Tormax.  The letter described a mission to recover relics from the necropolis.  This cannot be allowed to happen.  The holy resting place of my kin shall not be defiled!  Journey to the necropolis and stop the mercenaries.  Bring me anything you might find that would provide a clue as to what Tormax has planned.")
                 if qglobals["bard15"] == nil then
-                    --eq.set_global("bard15", "1", 5, "F")
+                    eq.set_global("bard15", "1", 5, "F")
                 end
             end
         end

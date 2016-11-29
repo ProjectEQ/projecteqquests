@@ -41,7 +41,7 @@ function event_trade(e)
             eq.spawn2(123169, 0, 0, -2443, -7, 12, 383)
             -- zombies
             eq.spawn2(123170, 0, 0, -2639, -214, 12, 310):Emote("shambles forward, dripping flesh.")
-            vesthon:Emote("smiles wickedly as he begins a dark spell.")
+            --vesthon:Emote("smiles wickedly as he begins a dark spell.") -- not working for some reason
             eq.spawn2(123170, 0, 0, -2638, -225, 12, 310)
             eq.spawn2(123170, 0, 0, -2639, -233, 12, 310)
             eq.set_global("hsagra_cooldown", "1", 0, "m20") -- unsure if there should be one

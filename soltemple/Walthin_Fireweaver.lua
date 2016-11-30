@@ -39,17 +39,17 @@ end
 function event_trade(e)
     local item_lib = require("items");
 
-    if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2318, item2 = 10119, item3 = 10561})) then
+    if(item_lib.check_turn_in(e.trade, {item1 = 2318, item2 = 10119, item3 = 10561})) then
         e.self:Say("Excellent. Here are your Lambent Boots.");
         e.other:Faction(320,5);        -- Temple of Solusek Ro better
         e.other:Faction(291,-5);       -- Shadow Men worse
         e.other:QuestReward(e.self,0,0,0,0,4159,1000); --boots
-    elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 2319, item2 = 10117, item3 = 4114})) then
+    elseif(item_lib.check_turn_in(e.trade, {item1 = 2319, item2 = 10117, item3 = 4114})) then
         e.self:Say("Excellent. Here are your Lambent Gauntlets.");
         e.other:Faction(320,5);        -- Temple of Solusek Ro better
         e.other:Faction(291,-5);       -- Shadow Men worse
         e.other:QuestReward(e.self,0,0,0,0,4157,1000); --gauntlets
-    elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 4115, item2 = 10128, item3 = 4116})) then
+    elseif(item_lib.check_turn_in(e.trade, {item1 = 4115, item2 = 10128, item3 = 4116})) then
         e.self:Say("Excellent. Here are your Lambent Greaves.");
         e.other:Faction(320,5);        -- Temple of Solusek Ro better
         e.other:Faction(291,-5);       -- Shadow Men worse

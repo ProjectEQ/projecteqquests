@@ -31,3 +31,33 @@ function event_loot(e)
 		end
 	end	
 end
+
+function event_click_door(e)
+  local door_id = e.door:GetDoorID();
+  local inst_id;
+  --watering hole
+  if (door_id == 2) then 
+	inst_id=eq.get_instance_id('dranikhollowsa', 0);
+	if (inst_id > 0 ) then
+		e.self:MovePCInstance(318, inst_id, 3522.5, 1584.2, 2.8, 70);
+    else		
+      e.self:Message(13, "You are not part of an instance.");		
+	end
+  --firepit
+  elseif (door_id == 3) then  
+	inst_id=eq.get_instance_id('dranikhollowsb', 0);
+	if (inst_id > 0 ) then
+		e.self:MovePCInstance(319, inst_id, 0, -447 , -38.5, 254);
+    else		
+      e.self:Message(13, "You are not part of an instance.");		
+	end
+	--murkglider
+  elseif (door_id==4) then
+	inst_id=eq.get_instance_id('dranikhollowsc', 0);
+	if (inst_id > 0 ) then
+		e.self:MovePCInstance(320, inst_id, 3944, -252, 139, 254);
+    else		
+      e.self:Message(13, "You are not part of an instance.");		
+	end
+  end
+end

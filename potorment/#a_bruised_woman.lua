@@ -6,7 +6,8 @@ end
 
 function event_trade(e)
     local item_lib = require("items")
-    if item_lib.check_turn_in(e.trade, {item1 = 77629}) then -- Vhalen's Necklace
+    local qglobals = eq.get_qglobals(e.other)
+    if qglobals["bard15"] == "5" and item_lib.check_turn_in(e.trade, {item1 = 77629}) then -- Vhalen's Necklace
         local entity_list = eq.get_entity_list()
         e.self:Emote("'s eyebrows shift into the shadow of a quizzical expression as you show her the necklace.  A flash of recognition crosses her face and she jerks back across the floor in horror.  A screeching wail tears through your mind 'You are a fool Vahlen!  You send these peasants to do your dirty work, you never were much for getting your hands dirty!  The path of pain is the only way to true power.  I will never turn from it!")
         entity_list:MessageClose(e.self, true, 120, 1, "You notice a distinct change in the air around you as something inside your packs grows hot and heavy.  Black tendrils sprout from your pack as the words of Hsagra echo in your mind.  Beware the orb!")

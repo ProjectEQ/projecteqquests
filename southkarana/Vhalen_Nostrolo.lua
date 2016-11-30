@@ -27,6 +27,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local qglobals = eq.get_qglobals(e.other);
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13114})) then -- Lisera Lute
 		e.self:Say("Ahh, I see Cassius still don't trust his lute to anyone else. Please be kind to return this letter to him about his lute. It should make him quite pleased.");
@@ -49,7 +50,7 @@ function event_trade(e)
 		e.other:Faction(53,-5,0); -- Mayong Mistmoore
 		e.other:AddEXP(5000);
 		e.other:GiveCash(5,0,0,0);
-	elseif(item_lib.check_turn_in(e.trade, {item1= 77627})) then -- Note from Metala, bard 1.5
+	elseif(qglobals["bard15"] == "5" and item_lib.check_turn_in(e.trade, {item1= 77627})) then -- Note from Metala, bard 1.5
 		e.self:Say("No this can't be true! Metala must have been kidnapped and forced to sign this letter!  You must find her and save her, " .. e.other:GetName() .. "! Please!  Take this necklace; it was a gift she gave me on our anniversary long ago.  Surely it will help her remember her true self and make her come to her senses.");
 		e.other:QuestReward(e.self, 0, 0, 0, 0, 77629, 1); -- Vhalen's Necklace
 	end

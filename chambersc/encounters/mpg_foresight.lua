@@ -36,10 +36,10 @@ function setup()
     [2] = { "The room begins to heat up dramatically. The south side looks safe.", south_safe },
     [3] = { "The room begins to heat up dramatically. The east side looks safe.", east_safe },
     [4] = { "The room begins to heat up dramatically. The west side looks safe.", west_safe },
+    [5] = { "Your rings constrict and bite into your fingers.  You should remove them.", remove_rings },
   };
 
   rings = {
-    [5] = { "Your rings constrict and bite into your fingers.  You should remove them.", remove_rings },
   };
 
   kyvs = {
@@ -78,7 +78,7 @@ function Start_Event(e)
   eq.spawn2(306022, 0, 0, -223, 260, 66, 138); -- a kyv sureshot
   eq.spawn2(306023, 0, 0, -188, 257, 66, 83);  -- a kyv sureshot
 
-  -- eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
+  eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 
   eq.set_timer("emotes", 5 * 1000);
 end

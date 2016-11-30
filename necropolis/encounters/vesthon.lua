@@ -52,6 +52,7 @@ minions[123181] = 123188
 function VesthSpawn(e)
     minion_db = 58
     minion_di = 20
+    lich_count = 0 -- just in case GM repops
 
     eq.spawn2(123174, 0, 0, -1048, 1285, 2, 510):SetAppearance(3)
 

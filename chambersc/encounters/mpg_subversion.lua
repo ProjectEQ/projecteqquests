@@ -20,7 +20,7 @@ local this_version = 1;
 local lockout_win = 72;
 local lockout_loss = 2;
 local lockout_name = 'MPG_subversion';
-local warnings;
+local warnings=0;
 local minutes_remaining;
 local player_list;
 local instance_requests;

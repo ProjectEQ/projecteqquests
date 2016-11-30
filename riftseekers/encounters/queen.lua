@@ -173,7 +173,7 @@ function AddTimer(e)
             -- if he is active, he might of moved, maybe better way to do this
             e.self:MoveTo(queen:GetX(), queen:GetY(), queen:GetZ(), 0, true)
             if DistanceToWaypoint(e.self) <= 10 then
-                local client = eq.get_entity_list():GetRandomClient(197, -556, -296, 250000) -- TODO: fix range
+                local client = eq.get_entity_list():GetRandomClient(197, -556, 296, 250000) -- TODO: fix range
                 if client.valid then
                     bombstate[e.self:GetID()] = client:GetID()
                     e.self:SetRunning(true)

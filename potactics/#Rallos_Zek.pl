@@ -4,6 +4,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_HP {
+	quest::emote("laughs in an ominous tone of death.  'Flee whelps! Flee before the might of the Warlord!");
 	quest::signalwith(214123, 214052, 0);	# tell trigger mob mini Rallos is dead
 	quest::stoptimer("despawn");
 	quest::depop();

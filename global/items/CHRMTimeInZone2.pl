@@ -5,8 +5,8 @@ sub EVENT_ITEM_ENTERZONE {
 }
 
 sub EVENT_SCALE_CALC {
-  if ($whimsy{$name} < 120) { #120 minutes
+  if ($whimsy{$name} < 1200) { #120 minutes
     $whimsy{$name}++;
   }
-  $questitem->SetScale($whimsy{$name}/120);
+  $questitem->SetScale($whimsy{$name}/1200);
 }

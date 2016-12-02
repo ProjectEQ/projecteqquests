@@ -3,5 +3,5 @@ function event_death(e)
   local yloc = e.self:GetY();
   local zloc = e.self:GetZ();
   local heading = e.self:GetHeading();
-  eq.spawn2(eq.ChooseRandom(158102,158101,158100,158103,158104),0,0,xloc,yloc - 15,zloc,heading);
+  eq.spawn2(eq.ChooseRandom(158102,158101,158100,158103,158104),0,0,xloc,yloc,zloc,heading);
 end

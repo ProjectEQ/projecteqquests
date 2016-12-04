@@ -1,5 +1,12 @@
 #This charm gains power the closer it is until midnight.
+#midnight and noon seem to not fit the formula
 
 sub EVENT_SCALE_CALC {
-  $questitem->SetScale((abs($zonehour-12) / 2 * 0.089) + 1);
+  if ($zonehour == 0) {
+    $questitem->SetScale(1.55);
+  } elsif ($zonehour == 12) {
+    $questitem->SetScale(0.85);
+  } else {
+    $questitem->SetScale((150 - (5 * (12 - abs(12 - $zonehour)))) / 100.0);
+  }
 }

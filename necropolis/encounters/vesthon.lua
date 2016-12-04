@@ -86,6 +86,8 @@ function VesthSpawn(e)
 
     eq.spawn2(123188, 0, 0, -1127, 1310, 2, 144)
     eq.spawn2(123188, 0, 0, -1120, 1333, 2, 159)
+
+    eq.set_timer("despawn", 1200000) -- 20 mins
 end
 
 function VesthDeath(e)
@@ -93,6 +95,24 @@ function VesthDeath(e)
         eq.depop_all(123174)
         eq.spawn2(123189, 0, 0, -1048, 1285, 2, 510)
     end
+end
+
+function VesthTimer(e)
+    eq.depop_all(123175)
+    eq.depop_all(123176)
+    eq.depop_all(123177)
+    eq.depop_all(123178)
+    eq.depop_all(123179)
+    eq.depop_all(123180)
+    eq.depop_all(123181)
+    eq.depop_all(123182)
+    eq.depop_all(123183)
+    eq.depop_all(123184)
+    eq.depop_all(123185)
+    eq.depop_all(123186)
+    eq.depop_all(123187)
+    eq.depop_all(123188)
+    eq.depop()
 end
 
 function RelicsSpawn(e)
@@ -157,12 +177,13 @@ function MinionSignal(e)
 end
 
 function DracDeath(e)
-    -- spawn cast
+    eq.set_global("drac_cooldown", "1", 0, "m20") -- unsure
 end
 
 function event_encounter_load(e)
     eq.register_npc_event("vesthon", Event.spawn, 123173, VesthSpawn)
     eq.register_npc_event("vesthon", Event.death_complete, 123173, VesthDeath)
+    eq.register_npc_event("vesthon", Event.timer, 123173, VesthTimer)
 
     eq.register_npc_event("vesthon", Event.spawn, 123174, RelicsSpawn)
     eq.register_npc_event("vesthon", Event.timer, 123174, RelicsTimer)

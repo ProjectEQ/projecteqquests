@@ -1,5 +1,6 @@
 function event_say(e)
- local qglobals = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.other);
+
 	if(e.message:findi("hail")) then
 		if(qglobals["paladin_epic"] == "1") then
 			e.self:Say(e.other:GetName() .. "! I'm glad you are here. Something terrible has occurred recently. Would you like to know [" .. eq.say_link("what happened") .. "]?");
@@ -20,14 +21,15 @@ function event_say(e)
 	elseif(qglobals["paladin_epic"] == "1" and e.message:findi("what happened")) then
 		e.self:Say("A few nights ago, I was standing guard at the Pool of Jahnda like any other night, but something was different. The night air was cooler than usual and the sky was barely visible because of all of the dark clouds. Sometime around midnight, a flash occurred near the pool and I saw an Iksar run off with a Koalindl. As I chased him, he casted a portal spell and disappeared. This is grave indeed! I will need your help, " .. e.other:GetName() .. ". Will you help [" .. eq.say_link("track down") .. "] this Iksar and return the Koalindl?");
 	elseif(qglobals["paladin_epic"] == "1" and e.message:findi("track down")) then
-		e.self:Say("Very well, " .. e.other:GetName() .. ". Unfortunately, I cannot offer you any hints. My only guess is that this Iksar might be near a large body of water, for the Koalindl needs to be kept near water at all times. I fear that the Koalindl may have been destroyed. Go now and find the Koalindl or the remnants of that great servant of the Prime Healer!");	
+		e.self:Say("Very well, " .. e.other:GetName() .. ". Unfortunately, I cannot offer you any hints. My only guess is that this Iksar might be near a large body of water, for the Koalindl needs to be kept near water at all times. I fear that the Koalindl may have been destroyed. Go now and find the Koalindl or the remnants of that great servant of the Prime Healer!");
 		eq.set_global("paladin_epic","2",5,"F");
-	end	
+	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
-	
+	local qglobals = eq.get_qglobals(e.other);
+
 	if(e.other:GetFaction(e.self) < 5) then -- requires amiably
 		if(item_lib.check_turn_in(e.trade, {item1 = 13383})) then
 			e.other:Ding();
@@ -43,10 +45,13 @@ function event_trade(e)
 		end
 	end	
 
-	if(qglobals["paladin_epic"] >= "3" and item_lib.check_turn_in(e.trade, {item1 = 69929, item2 = 69930, item3 = 69931, item4 = 69932})) then
-		e.self:Say("So this is what happened to the Koalindl? This is sad indeed. I have heard that you have stopped a greater tragedy from occuring by treating the pestilence that was being brought to the seas. You have done a very good job, " .. e.other:GetName() ..". I present you with a seal of nobility that was given to me long ago. This seal has granted me audiences with many of the different races of Norrath, including the Ring of Scale. Perhaps it will aide you in your journeys. Thank you again, sir.");
-		eq.set_global("paladin_epic","4",5,"F");
-		e.other:SummonItem(69933);
-	end	
-	item_lib.return_items(e.self, e.other, e.trade)
+	if(qglobals["paladin_epic"] >= "3") then
+		if item_lib.check_turn_in(e.trade, {item1 = 69929, item2 = 69930, item3 = 69931, item4 = 69932}) then
+			e.self:Say("So this is what happened to the Koalindl? This is sad indeed. I have heard that you have stopped a greater tragedy from occuring by treating the pestilence that was being brought to the seas. You have done a very good job, " .. e.other:GetName() ..". I present you with a seal of nobility that was given to me long ago. This seal has granted me audiences with many of the different races of Norrath, including the Ring of Scale. Perhaps it will aide you in your journeys. Thank you again, sir.");
+			eq.set_global("paladin_epic","4",5,"F");
+			e.other:SummonItem(69933);
+		end
+	end
+
+	item_lib.return_items(e.self, e.other, e.trade);
 end

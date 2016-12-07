@@ -31,5 +31,5 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::signalwith(297034, 297209); #let Champion know I died
-	quest::spawn2(297211,0,0,-39,40,-438,180); #Ixt_Hsek_Syat
+	quest::spawn2(297211,0,0,20,-2,-435,112); #Ixt_Hsek_Syat
 }

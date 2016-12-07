@@ -66,14 +66,14 @@ sub EVENT_HP {  # adds does not aggro unless within aggro range
  	if($hpevent == 40) {
 		quest::setnexthpevent(30);
 		quest::emote("shakes with laughter and says, 'You are much stronger than I thought. Looks like I'm gonna have to use all the tricks of the trade!' He then shouts a string of mystical words and is suddenly surrounded by a magical glowing aura and his skin takes on a rock like appearance.");
-		  quest::modifynpcstat("min_hit", "660");
-		  quest::modifynpcstat("max_hit", "1800");
-		  quest::modifynpcstat("ac", "1587");
-		  quest::modifynpcstat("mr", "500");
-		  quest::modifynpcstat("fr", "500");
-		  quest::modifynpcstat("cr", "500");
-		  quest::modifynpcstat("dr", "500");
-		  quest::modifynpcstat("pr", "500");
+		quest::modifynpcstat("min_hit", "660");
+		quest::modifynpcstat("max_hit", "1800");
+		quest::modifynpcstat("ac", "1587");
+		quest::modifynpcstat("mr", "500");
+		quest::modifynpcstat("fr", "500");
+		quest::modifynpcstat("cr", "500");
+		quest::modifynpcstat("dr", "500");
+		quest::modifynpcstat("pr", "500");
 	}
 	if($hpevent == 30) {
 		quest::setnexthpevent(20);

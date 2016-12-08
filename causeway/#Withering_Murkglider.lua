@@ -2,6 +2,12 @@ function event_spawn(e)
   eq.set_next_hp_event(99);
 end
 
+function event_combat(e)
+  if (e.joined == false) then
+    eq.set_next_hp_event(99);
+  end
+end
+
 function event_hp(e)
   local xloc = e.self:GetX();
   local yloc = e.self:GetY();

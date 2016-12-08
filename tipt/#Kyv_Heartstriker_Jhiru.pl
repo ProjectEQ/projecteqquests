@@ -15,7 +15,7 @@ sub EVENT_TIMER {
   if($x < 420 || $x > 900 || $y > 2400 || $y < 2100){
     quest::modifynpcstat("max_hit",3221);
     quest::modifynpcstat("min_hit",1183);
-    quest::emote(13, "gnashes his teeth in anger as he redoubles his efforts to slay you.");
+    quest::ze(13, "Kyv Heartstriker Jhiru gnashes his teeth in anger as he redoubles his efforts to slay you.");
   }
 }
 

@@ -39,5 +39,6 @@ function event_say(e)
       eq.cross_zone_message_player_by_name(5, "GMFizban", "Mastery of Foresight -- Instance: " .. instance_id);
 
       e.self:Say("Perception and split-second reactions are not something you can acquire in training. It's a gift learned on the battlefield, and the penalty for being a slow learner is a quick and decisive death. Can you see the arrow as it sails towards your heart and sidestep out of the way? If you have this ability now is the opportunity to prove your worth.");
+    end
   end
 end

@@ -27,6 +27,9 @@ local kyvs = {};
 local kyv_client;
 local kyv_targets = {};
 local kyv_timer = 10;
+local equipment = {};
+local equipment_client;
+local equipment_timer = 15;
 local last_emote = '';
 local emote_grace = 8;
 
@@ -36,11 +39,10 @@ function setup()
     [2] = { "The room begins to heat up dramatically. The south side looks safe.", south_safe },
     [3] = { "The room begins to heat up dramatically. The east side looks safe.", east_safe },
     [4] = { "The room begins to heat up dramatically. The west side looks safe.", west_safe },
-    [5] = { "Your rings constrict and bite into your fingers.  You should remove them.", remove_rings },
   };
-
-  rings = {
-  };
+  other_emotes = {
+    [2]  = { "The room begins to heat up dramatically. The center looks safe.", center_safe },
+  }
 
   kyvs = {
     [1]  = { "From the corner of your eye, you notice a Kyv taking aim at your position. You should move.", kyv_move, 5696 },
@@ -48,17 +50,18 @@ function setup()
     [3]  = { "From the corner of your eye, you notice a Kyv taking aim at your head. You should duck.", kyv_duck, 5694 },
   };
 
+  equipment = {
+    [1] = { "Your rings constrict and bite into your fingers.  You should remove them.", check_rings },
+    [2] = { "The Weapon in your right hand begins to heat up dramatically. You should remove it.", check_weapon }
+  };
+    
   more_emote = {
     [8]  = { "The Dragorn before you is developing an anti-magic aura." },
     [9]  = { "You notice that the Dragorn before you is preparing to cast a devastating close-range spell." },
     [10] = { "You notice that the Dragorn before you is preparing to cast a devastating spell. Doing enough damage to him might interrupt the process." },
     [11] = { "The Dragorn before you is sprouting sharp spikes." },
-    [12] = { "The Weapon in your right hand begins to heat up dramatically. You should remove it." }
   }
 
-  other_emotes = {
-    [2]  = { "The room begins to heat up dramatically. The center looks safe.", center_safe },
-  }
 end
 
 function Start_Event(e)
@@ -81,6 +84,7 @@ function Start_Event(e)
   eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 
   eq.set_timer("emotes", 5 * 1000);
+  eq.set_timer("equipment", equipment_timer * 1000);
 end
 
 function Boss_Spawn(e)
@@ -101,29 +105,9 @@ function Boss_Say(e)
       e.self:Say("Very well!  Let the battle commence!");
       Start_Event(e);
     elseif ( e.message:findi("test")) then
-      if ( e.other:GetAppearance() == Appearance.Crouching ) then
-        eq.zone_emote(15, "Name: " .. e.other:GetName() .. " is ducking.");
-      end
-      eq.zone_emote(15, "Ring: " .. e.other:GetItemIDAt(15) .. " Ring: " .. e.other:GetItemIDAt(16) );
-      if ( e.other:GetItemIDAt(15) ~= -1 ) then
-        e.self:CastSpell(5695, e.other:GetID());
-      end
-      if ( e.other:GetItemIDAt(16) ~= -1 ) then
-        e.self:CastSpell(5695, e.other:GetID());
-      end
+      eq.set_timer("equipment", 5 * 1000);
     end
   end
-end
-
-function Do_Emote()
---   local num = math.random(1,table.getn(emotes));
---   if ( last_emote == num ) then
---     Do_Emote();
---   end
---   eq.zone_emote(14, emotes[num][1]);
---   last_emote = num;
--- 
---   emotes[num][2]();
 end
 
 function Do_Hazard()
@@ -138,8 +122,21 @@ function Do_Hazard()
 end
 
 function Boss_Timer(e)
-  if (e.timer == "emotes") then
-    -- Do_Emote();
+  local client;
+  local num;
+  eq.debug( "name: " .. e.self:GetName() .. " timer: " .. e.timer);
+  eq.stop_timer(e.timer);
+  if (e.timer == "equipment") then
+    client = eq.get_entity_list():GetRandomClient(-204,270,65,150000);
+    num = math.random(1,table.getn(equipment));
+    equipment_client = {client, num};
+    client:Message(14, equipment[num][1]);
+    eq.set_timer("equipment_action", 3 * 1000);
+  elseif (e.timer == "equipment_action") then
+    client = equipment_client[1];
+    num = equipment_client[2];
+    equipment[num][2](e.self,client);
+    eq.set_timer("equipment", equipment_timer * 1000);
   end
 end
 
@@ -226,24 +223,30 @@ function Hazard_Timer(e)
     ae_check(e, -327, -206, 150, 398);
   elseif (e.timer == "west") then
     ae_check(e, -206, -89, 150, 398);
-  elseif (e.timer == "ring") then
-    ring_check(e);
   elseif (e.timer == "hazard") then
     Do_Hazard();
   end
 end
 
-function ring_check(e)
-  local cl = eq.get_entity_list():GetClientList();
-  for v in cl.entries do
-    if ( v:GetItemIDAt(15) ~= -1 ) then
-      e.self:CastSpell(5695, v:GetID());
-    end
-    if ( v:GetItemIDAt(16) ~= -1 ) then
-      e.self:CastSpell(5695, v:GetID());
-    end
+function check_rings(mob, client)
+  if ( client:GetItemIDAt(15) ~= -1 ) then
+    mob:CastSpell(5695, client:GetID());
+  else
+    client:Message(14, "Your fingers feel relief from Gopro's Plight");
   end
-  eq.set_timer('hazard', hazard_timer * 1000);
+  if ( client:GetItemIDAt(16) ~= -1 ) then
+    mob:CastSpell(5695, client:GetID());
+  else
+    client:Message(14, "Your fingers feel relief from Gopro's Plight");
+  end
+end
+
+function check_weapon(mob, client)
+  if ( client:GetItemIDAt(14) ~= -1 ) then
+    mob:CastSpell(2315, client:GetID());
+  else
+    client:Message(14, "Your weaponry cools down.");
+  end
 end
 
 function ae_check(e, xmin, xmax, ymin, ymax)
@@ -264,10 +267,6 @@ function ae_check(e, xmin, xmax, ymin, ymax)
   eq.set_timer('hazard', hazard_timer * 1000);
 end
 
-function remove_rings()
-  eq.set_timer('ring', emote_grace * 1000);
-end
-
 function north_safe()
   eq.set_timer('north', emote_grace * 1000);
 end
@@ -286,28 +285,6 @@ end
 
 function west_safe()
   eq.set_timer("west", emote_grace * 1000);
-end
-
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-  end
 end
 
 function Event_Win(e)
@@ -351,8 +328,6 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_foresight', Event.timer,          306022, Kyv_Timer);
   eq.register_npc_event('mpg_foresight', Event.spawn,          306023, Kyv_Spawn);
   eq.register_npc_event('mpg_foresight', Event.timer,          306023, Kyv_Timer);
-
-  eq.register_npc_event('mpg_foresight', Event.tick,           306020, Deathtouch_Tick);
 
 end
 

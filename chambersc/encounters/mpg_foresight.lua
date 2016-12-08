@@ -31,7 +31,7 @@ local equipment = {};
 local equipment_client;
 local equipment_timer = 15;
 local dragorns = {};
-local dragorn_timer = 3;
+local dragorn_timer = 35;
 
 local last_emote = '';
 local emote_grace = 8;

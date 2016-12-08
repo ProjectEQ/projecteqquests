@@ -147,12 +147,27 @@ function Boss_Timer(e)
 end
 
 function Boss_Signal(e)
-  if (e.signal == 9) then
+  if (e.signal == 1) then
+    -- Check to see if any of the Dragorn are still alive.
+    local el = eq.get_entity_list();
+    if ( el:IsMobSpawnedByNpcTypeID(306013) == false and
+         el:IsMobSpawnedByNpcTypeID(306014) == false and
+         el:IsMobSpawnedByNpcTypeID(306015) == false and
+         el:IsMobSpawnedByNpcTypeID(306016) == false and
+         el:IsMobSpawnedByNpcTypeID(306017) == false and
+         el:IsMobSpawnedByNpcTypeID(306018) == false ) then
+      Event_Win(e);
+    end
+         
+  elseif (e.signal == 9) then
     -- received a signal that someone has zoned out
     -- recheck the current client count v/s the count
     -- when the event started
     local now_clients = eq.get_entity_list():GetClientList();
 
+    -- TODO: Need to add a check here to ensure no one
+    -- dies or camps or zones out (instant failure).
+    Event_Loss(e);
   end
 end
 
@@ -307,6 +322,10 @@ function Dragorn_Spawn(e)
   eq.set_timer('dragorn', dragorn_timer * 1000);
 end
 
+function Dragorn_Death(e)
+  eq.signal(306019, 1);
+end
+
 function Dragorn_Timer(e)
   local num;
   if (e.timer == 'dragorn') then
@@ -352,6 +371,8 @@ function Event_Win(e)
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+
+  eq.depop_with_timer();
 end
 
 function event_encounter_load(e)
@@ -387,6 +408,12 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_foresight', Event.timer,          306016, Dragorn_Timer);
   eq.register_npc_event('mpg_foresight', Event.timer,          306017, Dragorn_Timer);
   eq.register_npc_event('mpg_foresight', Event.timer,          306018, Dragorn_Timer);
+  eq.register_npc_event('mpg_foresight', Event.death_complete, 306013, Dragorn_Death);
+  eq.register_npc_event('mpg_foresight', Event.death_complete, 306014, Dragorn_Death);
+  eq.register_npc_event('mpg_foresight', Event.death_complete, 306015, Dragorn_Death);
+  eq.register_npc_event('mpg_foresight', Event.death_complete, 306016, Dragorn_Death);
+  eq.register_npc_event('mpg_foresight', Event.death_complete, 306017, Dragorn_Death);
+  eq.register_npc_event('mpg_foresight', Event.death_complete, 306018, Dragorn_Death);
 end
 
 function event_encounter_unload(e)

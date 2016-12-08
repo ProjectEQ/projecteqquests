@@ -30,8 +30,12 @@ local kyv_timer = 10;
 local equipment = {};
 local equipment_client;
 local equipment_timer = 15;
+local dragorns = {};
+local dragorn_timer = 3;
+
 local last_emote = '';
 local emote_grace = 8;
+local client_list;
 
 function setup()
   hazards = {
@@ -42,6 +46,7 @@ function setup()
   };
   other_emotes = {
     [2]  = { "The room begins to heat up dramatically. The center looks safe.", center_safe },
+    [10] = { "You notice that the Dragorn before you is preparing to cast a devastating spell. Doing enough damage to him might interrupt the process." },
   }
 
   kyvs = {
@@ -55,11 +60,10 @@ function setup()
     [2] = { "The Weapon in your right hand begins to heat up dramatically. You should remove it.", check_weapon }
   };
     
-  more_emote = {
-    [8]  = { "The Dragorn before you is developing an anti-magic aura." },
-    [9]  = { "You notice that the Dragorn before you is preparing to cast a devastating close-range spell." },
-    [10] = { "You notice that the Dragorn before you is preparing to cast a devastating spell. Doing enough damage to him might interrupt the process." },
-    [11] = { "The Dragorn before you is sprouting sharp spikes." },
+  dragorns = {
+    [1] = { "You notice that the Dragorn before you is preparing to cast a devastating close-range spell.", 5693, cast_5693 },
+    [2] = { "The Dragorn before you is developing an anti-magic aura.", 5699, self_cast },
+    [3] = { "The Dragorn before you is sprouting sharp spikes.", 5698, self_cast },
   }
 
 end
@@ -85,6 +89,8 @@ function Start_Event(e)
 
   eq.set_timer("emotes", 5 * 1000);
   eq.set_timer("equipment", equipment_timer * 1000);
+
+  client_list = eq.get_characters_in_instance(instance_id);
 end
 
 function Boss_Spawn(e)
@@ -137,6 +143,16 @@ function Boss_Timer(e)
     num = equipment_client[2];
     equipment[num][2](e.self,client);
     eq.set_timer("equipment", equipment_timer * 1000);
+  end
+end
+
+function Boss_Signal(e)
+  if (e.signal == 9) then
+    -- received a signal that someone has zoned out
+    -- recheck the current client count v/s the count
+    -- when the event started
+    local now_clients = eq.get_entity_list():GetClientList();
+
   end
 end
 
@@ -287,6 +303,36 @@ function west_safe()
   eq.set_timer("west", emote_grace * 1000);
 end
 
+function Dragorn_Spawn(e)
+  eq.set_timer('dragorn', dragorn_timer * 1000);
+end
+
+function Dragorn_Timer(e)
+  local num;
+  if (e.timer == 'dragorn') then
+    num = math.random(1,table.getn(dragorns));
+    dragorns[num][3](e.self, dragorns[num][2]);
+  end
+end
+
+function cast_5693(mob, spell)
+  local dist = 30;
+  local mob_x = mob:GetX();
+  local mob_y = mob:GetY();
+  local x,y,z;
+  local cl = eq.get_entity_list():GetClientList();
+  for v in cl.entries do
+    x = v:GetX(); y = v:GetY(); z = v:GetZ();
+    if (mob:CalculateDistance( x, y, z ) < dist ) then
+      mob:CastSpell(spell, v:GetID());
+    end
+  end
+end
+
+function self_cast(mob,spell)
+  mob:CastSpell(spell, mob:GetID());
+end
+
 function Event_Win(e)
   -- Depop the hazards
   eq.depop_all(306011);
@@ -329,6 +375,18 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_foresight', Event.spawn,          306023, Kyv_Spawn);
   eq.register_npc_event('mpg_foresight', Event.timer,          306023, Kyv_Timer);
 
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306013, Dragorn_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306014, Dragorn_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306015, Dragorn_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306016, Dragorn_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306017, Dragorn_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.spawn,          306018, Dragorn_Spawn);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306013, Dragorn_Timer);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306014, Dragorn_Timer);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306015, Dragorn_Timer);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306016, Dragorn_Timer);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306017, Dragorn_Timer);
+  eq.register_npc_event('mpg_foresight', Event.timer,          306018, Dragorn_Timer);
 end
 
 function event_encounter_unload(e)

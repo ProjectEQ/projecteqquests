@@ -55,4 +55,10 @@ sub EVENT_TIMER {
   }
 }
 
+sub EVENT_COMBAT {
+  if($combat_state == 0) {
+    $npc->SetHP($npc->GetMaxHP());
+    quest::setnexthpevent(76);
+  }
+}
 #EndFile: nightmareb\#Terris_Thule.pl (221008)

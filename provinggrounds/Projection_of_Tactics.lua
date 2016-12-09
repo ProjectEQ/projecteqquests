@@ -12,7 +12,7 @@ end
 
 function event_say(e)
   if (e.message:findi("hail")) then
-    e.self:Say("Halt, Dark Elf, and hear my words.  Your background and your status are of no consequence.  All are welcome to participate in the trials to prove their worth, or die trying.  Whosoever approaches me has addressed the embodiment of Tactics, keeper of the trials of Subversion and Foresight.  The former is a small-scale test, while the latter is large-scale.  My task is to explain the rules and usher hopefuls into the battle arena.  Would you like to hear the rules for [small-scale] or [large-scale] trials, or do you wish to enroll in [ " .. eq.say_link('Subversion', false, 'Subversion') .. " ] or [ " .. eq.say_link('Foresight', flase, 'Foresight') .. " ]?");
+    e.self:Say("Halt, Dark Elf, and hear my words.  Your background and your status are of no consequence.  All are welcome to participate in the trials to prove their worth, or die trying.  Whosoever approaches me has addressed the embodiment of Tactics, keeper of the trials of Subversion and Foresight.  The former is a small-scale test, while the latter is large-scale.  My task is to explain the rules and usher hopefuls into the battle arena.  Would you like to hear the rules for [small-scale] or [large-scale] trials, or do you wish to enroll in [ " .. eq.say_link('Subversion', false, 'Subversion') .. " ] or [ " .. eq.say_link('Foresight', false, 'Foresight') .. " ]?");
 
   elseif (e.message:findi("Subversion")) then
     local instance_requests = require("instance_requests");

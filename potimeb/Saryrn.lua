@@ -12,7 +12,7 @@ end
 function event_combat(e)
 	if (e.joined == false) then
 		e.self:SetHP(e.self:GetMaxHP());
-		eq.set_next_hp_event(99);
+		eq.set_next_hp_event(91);
 	end
 end
 

@@ -9,6 +9,13 @@ function event_death_complete(e)
 	eq.set_global(instance_id.."_potimeb_phase_bit",tostring(bit.bor(phase_bit,1)),7,"H13");
 end
 
+function event_combat(e)
+	if (e.joined == false) then
+		e.self:SetHP(e.self:GetMaxHP());
+		eq.set_next_hp_event(99);
+	end
+end
+
 function event_spawn(e)
 	eq.set_next_hp_event(91);
 end

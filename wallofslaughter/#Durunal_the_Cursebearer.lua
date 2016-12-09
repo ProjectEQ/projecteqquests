@@ -8,7 +8,9 @@ function event_combat(e)
 	e.self:CastSpell(13536, e.self:GetTarget():GetID());
 	eq.set_timer("adds",30*1000);
 	eq.set_timer("epoch",9*1000);
-	eq.set_timer("gyro",3*1000);	
+	eq.set_timer("gyro",3*1000);
+  else
+    eq.stop_all_timers();
   end
 end
 

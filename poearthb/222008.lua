@@ -3,6 +3,13 @@ function event_spawn(e)
     eq.set_next_hp_event(70)
 end
 
+function event_combat(e)
+    if (e.joined == false) then
+        e.self:SetHP(e.self:GetMaxHP());
+        eq.set_next_hp_event(70);
+    end
+end
+
 --[ NPC flecks down at each HP event
 --Starting damage:
 --  DI = 123.2

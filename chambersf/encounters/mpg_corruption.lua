@@ -211,33 +211,14 @@ function Spawn_Wave(wave_number)
   end
 end
 
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-  end
-end
-
 function Mob_Death(e)
+  eq.zone_emote(15, 'I have Died, I shall be avenged');
+  e.self:ClearItemList();
   eq.signal(309006, 1);
 end
 
 function Huhn_Signal(e)
+  eq.zone_emote(15, 'Signaled');
   mobs_slain = mobs_slain + 1;
   
   if (this_wave == 1 and mobs_slain == 6) then
@@ -269,62 +250,60 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_corruption', Event.spawn,          309006, Huhn_Spawn);
   eq.register_npc_event('mpg_corruption', Event.signal,         309006, Huhn_Signal);
 
-  eq.register_npc_event('mpg_corruption', Event.tick,           304021, Deathtouch_Tick);
-
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309041, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309040, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309050, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309008, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309020, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309049, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309005, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309024, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309052, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309013, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309003, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309026, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309038, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309053, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309025, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309044, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309012, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309021, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309042, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309004, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309039, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309009, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309043, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309022, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309023, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309051, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309010, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309011, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309032, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309033, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309031, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309018, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309060, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309059, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309048, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309029, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309045, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309036, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309001, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309000, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309035, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309014, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309054, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309046, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309028, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309015, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309027, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309037, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309058, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309017, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309057, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309002, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309030, Mob_Death);
-  eq.register_npc_event('mpg_corruption', Event.death_complete, 309047, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309041, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309040, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309050, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309008, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309020, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309049, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309005, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309024, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309052, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309013, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309003, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309026, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309038, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309053, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309025, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309044, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309012, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309021, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309042, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309004, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309039, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309009, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309043, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309022, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309023, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309051, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309010, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309011, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309032, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309033, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309031, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309018, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309060, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309059, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309048, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309029, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309045, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309036, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309001, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309000, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309035, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309014, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309054, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309046, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309028, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309015, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309027, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309037, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309058, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309017, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309057, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309002, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309030, Mob_Death);
+  eq.register_npc_event('mpg_corruption', Event.death, 309047, Mob_Death);
 
 end
 

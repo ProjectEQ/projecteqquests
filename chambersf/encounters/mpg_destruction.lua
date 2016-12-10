@@ -93,29 +93,6 @@ function Destruction_Death(e)
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
 end
 
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-
-  end
-end
-
 function Destruction_Signal(e)
   if (e.signal == 1) then
     eq.spawn_condition(this_zone, instance_id, 1, 0);
@@ -151,7 +128,6 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_destruction', Event.death_complete, 309063, Mini_Death);
   eq.register_npc_event('mpg_destruction', Event.death_complete, 309065, Mini_Death);
 
-  eq.register_npc_event('mpg_destruction', Event.tick,           309069, Deathtouch_Tick);
 end
 
 function event_encounter_unload(e)

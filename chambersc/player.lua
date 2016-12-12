@@ -17,3 +17,8 @@ function event_loot(e)
     eq.signal(306001, 3);
   end
 end
+
+function event_zone(e)
+  eq.zone_emote(15, "player: " .. e.self:GetCleanName() .. " has left the zone.");
+  eq.signal(306019, 9);
+end

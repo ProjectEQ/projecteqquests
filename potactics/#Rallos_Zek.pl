@@ -1,6 +1,5 @@
 sub EVENT_SPAWN {
 	quest::setnexthpevent(60);
-	quest::settimer("despawn", 1200);	# 20 min till he despawns on his own
 }
 
 sub EVENT_HP {
@@ -29,7 +28,9 @@ sub EVENT_TIMER {
 sub EVENT_COMBAT {
 	if($combat_state == 1) {
 		quest::settimer("fakeRZadds", 45);
+		quest::stoptimer("despawn");
 	} else {
+		quest::settimer("despawn", 1020);
 		quest::stoptimer("fakeRZadds");
 	}
 }

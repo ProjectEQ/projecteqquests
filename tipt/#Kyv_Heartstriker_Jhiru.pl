@@ -3,7 +3,8 @@ sub EVENT_COMBAT {
     quest::settimer(1,1);
   } 
   if($combat_state == 0) { 
-    quest::modifynpcstat("max_hit",2500); 
+    quest::modifynpcstat("max_hit",1800);
+    quest::modifynpcstat("min_hit",660);
     quest::stoptimer(1);
   }
 }
@@ -12,7 +13,9 @@ sub EVENT_TIMER {
   $x = $npc->GetX();
   $y = $npc->GetY();
   if($x < 420 || $x > 900 || $y > 2400 || $y < 2100){
-    quest::modifynpcstat("max_hit",3500); 
+    quest::modifynpcstat("max_hit",3221);
+    quest::modifynpcstat("min_hit",1183);
+    quest::ze(13, "Kyv Heartstriker Jhiru gnashes his teeth in anger as he redoubles his efforts to slay you.");
   }
 }
 

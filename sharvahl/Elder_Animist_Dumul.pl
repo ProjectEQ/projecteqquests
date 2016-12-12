@@ -11,7 +11,7 @@ sub EVENT_SAY {
   if ($text=~/ready to be briefed/i && $bstepic >= 1) {
     quest::say("As you may have gathered during our first meeting, we have been dealing with a situation that differs from any that we have dealt with in the past. We dismissed the situation as improbable at first, but unfortunately we have just attained certain proof. Our scouts have found that an individual has discovered a means of manipulating elder spirits. These spirits have a great deal of power over their natural environments. This person has used some new magic to take that power for himself");
   }
-  if ($text=~/lost seal/i && $bstepic >=1) {
+  if ($text=~/lost the seal/i && $bstepic >=1) {
     quest::say("Here you go.  Keep this one safe.");
     quest::summonitem(9031);
   }

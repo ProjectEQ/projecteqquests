@@ -9,7 +9,7 @@ function event_click_door(e)
       instance_id = eq.get_instance_id('chambersa', 1);
     end
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(304, instance_id, 5, 5, 0, 254);
+      e.self:MovePCInstance(304, instance_id, 0, -37, .3, 254);
     else
       e.self:Message(13, "You are not part of an instance.");
     end
@@ -20,7 +20,7 @@ function event_click_door(e)
       instance_id = eq.get_instance_id('chambersf', 1);
     end
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(309, instance_id, 5, 5, 0, 254);
+      e.self:MovePCInstance(309, instance_id, 0, -37, .3, 254);
     else
       e.self:Message(13, "You are not part of an instance.");
     end
@@ -31,7 +31,7 @@ function event_click_door(e)
       instance_id = eq.get_instance_id('chambersb', 1);
     end
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(305, instance_id, 5, 5, 0, 254);
+      e.self:MovePCInstance(305, instance_id, 0, -37, .3, 254);
     else
       e.self:Message(13, "You are not part of an instance.");
     end
@@ -42,7 +42,7 @@ function event_click_door(e)
       instance_id = eq.get_instance_id('chambersc', 1);
     end
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(306, instance_id, 5, 5, 0, 254);
+      e.self:MovePCInstance(306, instance_id, 0, -37, .3, 254);
     else
       e.self:Message(13, "You are not part of an instance.");
     end
@@ -53,7 +53,7 @@ function event_click_door(e)
       instance_id = eq.get_instance_id('chambersd', 1);
     end
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(307, instance_id, 5, 5, 0, 254);
+      e.self:MovePCInstance(307, instance_id, 0, -37, .3, 254);
     else
       e.self:Message(13, "You are not part of an instance.");
     end
@@ -64,7 +64,7 @@ function event_click_door(e)
       instance_id = eq.get_instance_id('chamberse', 1);
     end
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(308, instance_id, 5, 5, 0, 254);
+      e.self:MovePCInstance(308, instance_id, 0, -37, .3, 254);
     else
       e.self:Message(13, "You are not part of an instance.");
     end

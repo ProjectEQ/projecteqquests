@@ -8,7 +8,6 @@ function event_say(e)
 			e.self:Say("I am sorry, we don't currently have any work available. We are still setting up, and cleaning up the orcish filth from this area. Return later, I should have some work available.");
 		e.self:SetSpecialAbility(19, 0);
 		e.self:SetSpecialAbility(20, 0);
-		e.self:SetSpecialAbility(21, 0);
 		e.self:SetSpecialAbility(24, 0);
 		e.self:SetSpecialAbility(25, 0);
 		e.self:AddToHateList(e.other,1);

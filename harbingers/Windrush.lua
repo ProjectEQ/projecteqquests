@@ -8,7 +8,6 @@ function event_say(e)
 		e.self:Say("I will teach you to disturb what you cannot change!");
 		e.self:SetSpecialAbility(19, 0);
 		e.self:SetSpecialAbility(20, 0);
-		e.self:SetSpecialAbility(21, 0);
 		e.self:SetSpecialAbility(24, 0);
 		e.self:SetSpecialAbility(25, 0);
 		e.self:AddToHateList(e.other,1);

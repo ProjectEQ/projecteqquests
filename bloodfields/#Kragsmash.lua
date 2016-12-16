@@ -6,7 +6,6 @@ function event_say(e)
 		e.self:Say("Prepare to meet your god, fool!");
 		e.self:SetSpecialAbility(19, 0);
 		e.self:SetSpecialAbility(20, 0);
-		e.self:SetSpecialAbility(21, 0);
 		e.self:SetSpecialAbility(24, 0);
 		e.self:SetSpecialAbility(25, 0);
 		e.self:AddToHateList(e.other,1);

@@ -17,11 +17,31 @@ end
 function event_combat(e)
   if (e.joined == true) then
 	eq.set_timer("depop", 1800 * 1000);
+	eq.set_next_hp_event(70);
   end
+end
+
+function event_hp(e)
+	if(e.hp_event == 70) then
+		e.self:Say("I know what you seek but I now hold all the power that is Kaiaren's mind!");
+		eq.set_next_hp_event(40);
+		eq.set_timer("stun", 1 * 1000);
+	elseif(e.hp_event == 40) then
+		e.self:Say("Fools! You cannot fathom the power an enlightened mind has.");
+		eq.set_timer("spectrum", 1 * 1000);
+	end
 end
 
 function event_timer(e)
 	if(e.timer=="depop") then
 		eq.depop_with_timer();
+	elseif(e.timer=="spectrum") then
+		eq.stop_timer("spectrum");
+		e.self:CastSpell(3908, e.self:GetTarget():GetID());	
+		eq.set_timer("spectrum", 15 * 1000);
+	elseif(e.timer=="stun") then
+		eq.stop_timer("stun");
+		e.self:CastSpell(1968, e.self:GetTarget():GetID());	
+		eq.set_timer("stun", 20 * 1000);
 	end
 end

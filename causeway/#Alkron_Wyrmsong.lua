@@ -30,7 +30,8 @@ function event_say(e)
 
     if e.message:findi("summon") and qglobals["bard20"] == "1" then
         e.self:Emote(" nods at you and begins to scrawl runes on the ground.  His voice starts quietly and grows to a dull roar as he recites an incantation of some sort.  You feel the ground begin to rumble around you as dark energy pervades your soul. Alkron screams out, 'The devourer is here! Fight for your world Norrathian!")
-        -- spawn aggro clearing version
+        -- TODO: this one should actually have aggro clearing and aggroing bard behavior
+        eq.unique_spawn(303125, 0, 0, 556, 1921, 320, 166) -- #Oshiruk
     end
 end
 
@@ -43,7 +44,17 @@ function event_trade(e)
             e.self:Emote(" nods slowly and places the armor on the ground at his feet with the discordant orb in the center.  'Now we shall see if our efforts are for our salvation or destruction.  He begins to mark the ground with Dragorn runes and recite an ancient Dragorn rite.  The armor begins to hum as the orb dissolves into a black pool on the ground.  Alkron draws back in terror. 'No! I was a fool to think I could destroy him! I have brought about the end of us all!'  The armor spins and crackles with energy as it flies from your hands and rises into the air.  The armor begins to grow as bolts of energy begin to snap between them.  A maniacal cackle fills the air as the armor forms into a vaguely humanoid shape.")
             e.other:Message(15, "The blade in your hand begins to glow as the dark orb begins to burn your flesh.  You struggle to keep the orb from flying away.") -- unsure on color or if it should be close
             eq.set_global("bard20", "1", 5, "F") -- lets you resummon on fail or whenever because why not!
-            -- spawn named
+            -- this version has normal aggro and no clearing
+            eq.unique_spawn(303125, 0, 0, 556, 1921, 320, 166) -- #Oshiruk
+        end
+    end
+
+    if qglobals["bard20"] == "1" then
+        if item_lib.check_turn_in(e.trade, {item1 = 77644, item2 = 77613, item3 = 77631}) then -- Dragorn Essence, Dark Orb, Prismatic Dragon Blade
+            e.other:AddAAPoints(10)
+            e.other:Message(15, "You have gained 10 ability point(s)!")
+            e.self:Emote(" takes the blade and the two orbs from you.  He thrusts the sword into the ground at his feet and takes an orb in either hand.  He begins to recite an ancient dragorn rite as the air fills with magic around you.  Energy begins to surge between the two orbs and eventually begin to strike the blade as well.  The roar of energy rises and culminates in a flash of light.  The two orbs disappear into thin air as your sword takes on a new glow of power.")
+            e.other:QuestReward(e.self, 0, 0, 0, 0, 77640, 1) -- Blade of Vesagran
         end
     end
 

@@ -49,5 +49,14 @@ function event_trade(e)
         end
     end
 
+    if qglobals["bard20"] == "1" then
+        if item_lib.check_turn_in(e.trade, {item1 = 77644, item2 = 77613, item3 = 77631}) then -- Dragorn Essence, Dark Orb, Prismatic Dragon Blade
+            e.other:AddAAPoints(10)
+            e.other:Message(15, "You have gained 10 ability point(s)!")
+            e.self:Emote(" takes the blade and the two orbs from you.  He thrusts the sword into the ground at his feet and takes an orb in either hand.  He begins to recite an ancient dragorn rite as the air fills with magic around you.  Energy begins to surge between the two orbs and eventually begin to strike the blade as well.  The roar of energy rises and culminates in a flash of light.  The two orbs disappear into thin air as your sword takes on a new glow of power.")
+            e.other:QuestReward(e.self, 0, 0, 0, 0, 77640, 1) -- Blade of Vesagran
+        end
+    end
+
     item_lib.return_items(e.self, e.other, e.trade)
 end

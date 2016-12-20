@@ -275,6 +275,20 @@ function Feran_Signal(e)
   end
 end
 
+function Pup_Combat(e)
+  if e.joined == true then
+    eq.set_timer('lashout', 2 * 1000);
+  end
+end
+
+function Pup_Timer(e)
+  if (e.timer == 'lashout') then
+    eq.stop_timer("lashout");
+    e.self:CastSpell(6135, e.self:GetTarget():GetID()); 
+    eq.set_timer("lashout", 12 * 1000);
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.spawn,          304017, Hate_Spawn);
   eq.register_npc_event('mpg_hate', Event.say,            304017, Hate_Say);
@@ -303,6 +317,14 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.signal,         304025, Feran_Signal);
   eq.register_npc_event('mpg_hate', Event.signal,         304026, Feran_Signal);
   eq.register_npc_event('mpg_hate', Event.signal,         304027, Feran_Signal);
+
+  eq.register_npc_event('mpg_hate', Event.combat,         304015, Pup_Combat);
+  eq.register_npc_event('mpg_hate', Event.combat,         304016, Pup_Combat);
+  eq.register_npc_event('mpg_hate', Event.combat,         304018, Pup_Combat);
+
+  eq.register_npc_event('mpg_hate', Event.combat,         304015, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.combat,         304016, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.combat,         304018, Pup_Timer);
 end
 
 function event_encounter_unload(e)

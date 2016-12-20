@@ -86,36 +86,11 @@ function Ingenuity_Death(e)
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
 end
 
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-
-  end
-end
-
 function event_encounter_load(e)
   eq.register_npc_event('mpg_ingenuity', Event.spawn,          308007, Ingenuity_Spawn);
   eq.register_npc_event('mpg_ingenuity', Event.say,            308007, Ingenuity_Say);
   eq.register_npc_event('mpg_ingenuity', Event.death_complete, 308007, Ingenuity_Death);
   eq.register_npc_event('mpg_ingenuity', Event.timer,          308007, Ingenuity_Timer);
-
-  eq.register_npc_event('mpg_ingenuity', Event.tick,           308012, Deathtouch_Tick);
 end
 
 function event_encounter_unload(e)

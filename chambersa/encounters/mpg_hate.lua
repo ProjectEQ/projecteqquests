@@ -255,28 +255,6 @@ function Feran_Death(e)
   eq.signal(304017, 1);
 end
 
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-  end
-end
-
 function Feran_Spawn(e)
   -- 24 Will Not Aggro
   -- 25 Immune to Aggro
@@ -297,6 +275,20 @@ function Feran_Signal(e)
   end
 end
 
+function Pup_Combat(e)
+  if e.joined == true then
+    eq.set_timer('lashout', 2 * 1000);
+  end
+end
+
+function Pup_Timer(e)
+  if (e.timer == 'lashout') then
+    eq.stop_timer("lashout");
+    e.self:CastSpell(6135, e.self:GetTarget():GetID()); 
+    eq.set_timer("lashout", 12 * 1000);
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.spawn,          304017, Hate_Spawn);
   eq.register_npc_event('mpg_hate', Event.say,            304017, Hate_Say);
@@ -304,8 +296,6 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.death_complete, 304017, Hate_Death);
   eq.register_npc_event('mpg_hate', Event.signal,         304017, Hate_Signal);
   eq.register_npc_event('mpg_hate', Event.combat,         304017, Hate_Combat);
-
-  eq.register_npc_event('mpg_hate', Event.tick,           304021, Deathtouch_Tick);
 
   eq.register_npc_event('mpg_hate', Event.death_complete, 304019, Feran_Death);
   eq.register_npc_event('mpg_hate', Event.death_complete, 304023, Feran_Death);
@@ -327,6 +317,14 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.signal,         304025, Feran_Signal);
   eq.register_npc_event('mpg_hate', Event.signal,         304026, Feran_Signal);
   eq.register_npc_event('mpg_hate', Event.signal,         304027, Feran_Signal);
+
+  eq.register_npc_event('mpg_hate', Event.combat,         304015, Pup_Combat);
+  eq.register_npc_event('mpg_hate', Event.combat,         304016, Pup_Combat);
+  eq.register_npc_event('mpg_hate', Event.combat,         304018, Pup_Combat);
+
+  eq.register_npc_event('mpg_hate', Event.combat,         304015, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.combat,         304016, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.combat,         304018, Pup_Timer);
 end
 
 function event_encounter_unload(e)

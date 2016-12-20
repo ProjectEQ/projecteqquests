@@ -127,29 +127,6 @@ function Efficiency_Signal(e)
   end
 end
 
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-
-  end
-end
-
 function Enforcer_Death(e)
   eq.signal(307000, 1);
 end
@@ -160,10 +137,7 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_efficiency', Event.timer,          307000, Efficiency_Timer);
   eq.register_npc_event('mpg_efficiency', Event.signal,         307000, Efficiency_Signal);
 
-  eq.register_npc_event('mpg_efficiency', Event.tick,           307006, Deathtouch_Tick);
-
   eq.register_npc_event('mpg_efficiency', Event.death_complete, 307004, Enforcer_Death);
-
 end
 
 function event_encounter_unload(e)

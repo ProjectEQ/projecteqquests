@@ -322,9 +322,9 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_hate', Event.combat,         304016, Pup_Combat);
   eq.register_npc_event('mpg_hate', Event.combat,         304018, Pup_Combat);
 
-  eq.register_npc_event('mpg_hate', Event.combat,         304015, Pup_Timer);
-  eq.register_npc_event('mpg_hate', Event.combat,         304016, Pup_Timer);
-  eq.register_npc_event('mpg_hate', Event.combat,         304018, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.timer,         304015, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.timer,         304016, Pup_Timer);
+  eq.register_npc_event('mpg_hate', Event.timer,         304018, Pup_Timer);
 end
 
 function event_encounter_unload(e)

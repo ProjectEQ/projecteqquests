@@ -201,9 +201,11 @@ function Boss_Say(e)
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
-      eq.spawn_condition('chamberse', instance_id, 2, 1 );
+      --eq.spawn_condition('chamberse', instance_id, 2, 1 );
+      eq.spawn2(308012,0,0,0,0,0,0);
       event_started = true;
       eq.set_timer('shapeshift', 90 * 1000);
+      eq.set_next_hp_event(90);
       ShapeShift(e);
 
       e.self:Say("Very well!  Let the battle commence!");
@@ -214,6 +216,8 @@ end
 function Boss_Timer(e)
   if (e.timer == "shapeshift") then
     ShapeShift(e);
+  elseif (e.timer == "leftcombat") then
+    ResetEvent(e);
   end
 end
 
@@ -221,7 +225,8 @@ function Boss_Death(e)
   eq.stop_all_timers();
 
   -- Disable the deathtouch
-  eq.spawn_condition('chamberse', instance_id, 2, 0 );
+  --eq.spawn_condition('chamberse', instance_id, 2, 0 );
+  eq.depop_all(308012);
 
   -- Spawn Greedy Dwarf
   eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
@@ -231,8 +236,65 @@ function Boss_Death(e)
   mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
 end
 
+function Boss_Hp(e)
+  local new_time;
+  if (e.hp_event == 90) then
+    -- 85 to 135 seconds
+    new_time = math.random(85, 135);
+    eq.set_next_hp_event(80);
+  elseif (e.hp_event == 80) then
+    -- 80 to 120
+    new_time = math.random(80, 120);
+    eq.set_next_hp_event(70);
+  elseif (e.hp_event == 70) then
+    -- 75 to 105
+    new_time = math.random(75, 105);
+    eq.set_next_hp_event(60);
+  elseif (e.hp_event == 60) then
+    -- 70 to 90
+    new_time = math.random(70, 90);
+    eq.set_next_hp_event(50);
+  elseif (e.hp_event == 50) then
+    -- 65 to 75
+    new_time = math.random(65, 75);
+    eq.set_next_hp_event(40);
+  elseif (e.hp_event == 40) then
+    -- 55 to 65
+    new_time = math.random(55, 65);
+    eq.set_next_hp_event(30);
+  elseif (e.hp_event == 30) then
+    -- 45 to 55
+    new_time = math.random(45, 55);
+    eq.set_next_hp_event(20);
+  elseif (e.hp_event == 20) then
+    -- 35 to 45
+    new_time = math.random(35, 45);
+    eq.set_next_hp_event(10);
+  elseif (e.hp_event == 10) then
+    -- 25 to 35
+    new_time = math.random(25, 35);
+  end
+  eq.stop_timer('shapeshift');
+  eq.set_timer('shapeshift', new_time * 1000);
+end
+
+function Boss_Combat(e)
+  if (e.joined == false) then
+    eq.set_timer('leftcombat', 30 * 1000);
+  else
+    eq.stop_timer('leftcombat');
+  end
+end
+
+function ResetEvent(e)
+  eq.stop_all_timers();
+  eq.repop_zone();
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_adaptation', Event.say,            308010, Boss_Say);
+  eq.register_npc_event('mpg_adaptation', Event.hp,             308010, Boss_Hp);
+  eq.register_npc_event('mpg_adaptation', Event.combat,         308010, Boss_Combat);
   eq.register_npc_event('mpg_adaptation', Event.spawn,          308010, Boss_Spawn);
   eq.register_npc_event('mpg_adaptation', Event.timer,          308010, Boss_Timer);
   eq.register_npc_event('mpg_adaptation', Event.death_complete, 308010, Boss_Death);

@@ -46,6 +46,7 @@ end
 
 function Start_Event(e)
   eq.spawn_condition('chamberse', instance_id, 2, 1 );
+  eq.spawn2(305006, 0, 0, 0, 0, 0, 0);
 
   eq.get_entity_list():GetNPCByNPCTypeID(305007):SetNPCFactionID(79);
   eq.get_entity_list():GetNPCByNPCTypeID(305008):SetNPCFactionID(79);
@@ -182,6 +183,7 @@ function Event_Win(e)
 
   -- Disable the deathtouch
   eq.spawn_condition('chambersb', instance_id, 2, 0 );
+  eq.depop_all(305006);
 
   -- Spawn Greedy Dwarf
   eq.spawn2(304028, 0, 0, -204, 274, 66, 72);
@@ -189,28 +191,6 @@ function Event_Win(e)
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
-end
-
-function Deathtouch_Tick(e)
-  local my_id = eq.get_zone_instance_id();
-  local my_list = eq.get_characters_in_instance(my_id);
-
-  for k,v in pairs(my_list) do
-    local client = eq.get_entity_list():GetClientByCharID(v);
-    if (client.valid) then 
-      if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
-        if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
-          if (client:Admin() < 80) then 
-            client:Kill();
-          end
-        else 
-          warnings = warnings + 1;
-        end
-      end
-    end
-  end
 end
 
 function event_encounter_load(e)
@@ -230,8 +210,6 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_endurance', Event.death,          305011, Add_Death);
   eq.register_npc_event('mpg_endurance', Event.death,          305012, Add_Death);
   eq.register_npc_event('mpg_endurance', Event.death,          305013, Add_Death);
-
-  eq.register_npc_event('mpg_endurance', Event.tick,           304021, Deathtouch_Tick);
 end
 
 function event_encounter_unload(e)

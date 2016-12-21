@@ -82,11 +82,11 @@ function setup()
   local strong = -50;
   local weak = 50;
   local normal = 0;
-  local resists_brut = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
-  local resists_fire = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
-  local resists_ice  = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
-  local resists_pain = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
-  local resists_power= {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  local resists_brut = {{'mr','350'},{'fr','275'},{'cr','275'},{'pr','125'},{'dr','125'}};
+  local resists_fire = {{'mr','35'},{'fr','350'},{'cr','60'},{'pr','250'},{'dr','250'}};
+  local resists_ice  = {{'mr','35'},{'fr','60'},{'cr','350'},{'pr','250'},{'dr','250'}};
+  local resists_pain = {{'mr','35'},{'fr','275'},{'cr','275'},{'pr','250'},{'dr','250'}};
+  local resists_power= {{'mr','175'},{'fr','275'},{'cr','275'},{'pr','250'},{'dr','250'}};
   
   list_constructs = {
     [1] = { '308014',

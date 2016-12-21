@@ -62,6 +62,7 @@
 -- RESIST_PRISMATIC = 7,
 -- RESIST_PHYSICAL = 8,  // see Muscle Shock, Back Swing
 -- RESIST_CORRUPTION = 9
+local ThreadManager = require("thread_manager");
 
 local event_started = false;
 local instance_id;
@@ -71,36 +72,80 @@ local this_bit = 16;
 local player_list;
 local list_constructs = {};
 local last_mob;
+local spells_on_change = {};
+local self;
+local cast_buffs = {};
+local cast_spells = {};
 
 function setup()
   -- ID, Name, Race, Gender, Texture, sub-npcs, special abilities (only sets parm0 at this time), weakness to weapons, buffs to cast
   local strong = -50;
   local weak = 50;
   local normal = 0;
-  local resists_norm = {{'mr','275'},{'fr','275'},{'cr','275'},{'pr','275'},{'dr','275'}};
-  local resists_weak = {{'mr','100'},{'fr','100'},{'cr','100'},{'pr','100'},{'dr','100'}};
-  local resists_high = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  local resists_brut = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  local resists_fire = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  local resists_ice  = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  local resists_pain = {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
+  local resists_power= {{'mr','600'},{'fr','600'},{'cr','600'},{'pr','600'},{'dr','600'}};
   
   list_constructs = {
-    [1] = {'308014', 'Construct of Brutality', 409, 2, 1, {}, {{SpecialAbility.rampage,50},{SpecialAbility.area_rampage,50}}, 
-      {{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal}}, resists_norm },
-    [2] = {'308013', 'Construct of Fire', 408, 2, 1, {308003}, {}, 
-      {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_weak, {5705} },
-    [3] = {'308008', 'Construct of Ice', 417, 2, 1, {308002}, {}, 
-      {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_high , {1248}},
-    [4] = {'308000', 'Construct of Pain', 413, 2, 1, {}, {{SpecialAbility.flurry,20}}, 
-      {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, resists_norm },
-    [5] = {'308009', 'Construct of Power', 405, 2, 1, {308001, 308001, 308001, 308001, 308001}, {{SpecialAbility.flurry,50}}, 
-      {{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50}}, resists_norm } 
+    [1] = { '308014',
+            'Construct of Brutality', 
+            409,  -- Race
+            2,    -- Gender
+            1,    -- Texture
+            {},   -- Sub-npcs
+            {{SpecialAbility.rampage,50},{SpecialAbility.area_rampage,50}}, 
+            {{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal}}, 
+            resists_brut },
+    [2] = { '308013', 
+            'Construct of Fire', 
+            408, 
+            2, 
+            1, 
+            {308003}, 
+            {}, 
+            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, 
+            resists_fire, 
+            {5706},
+            {5705}},
+    [3] = { '308008', 
+            'Construct of Ice', 
+            417, 
+            2, 
+            1, 
+            {308002}, 
+            {}, 
+            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, 
+            resists_ice, 
+            {1248},
+            {5704}},
+    [4] = { '308000', 
+            'Construct of Pain', 
+            413, 
+            2, 
+            1, 
+            {}, 
+            {{SpecialAbility.flurry,20}}, 
+            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, 
+            resists_pain,
+            {5692},
+            {5699}},
+    [5] = { '308009', 
+            'Construct of Power', 
+            405, 
+            2, 
+            1, 
+            {308001, 308001, 308001, 308001, 308001}, 
+            {{SpecialAbility.flurry,50}}, 
+            {{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50}}, 
+            resists_power } 
   };
 
   last_mob = {};
 end
 
 function ShapeShift(e)
-  -- Cast Balance of the Nameless on self to remove debuffs
-  e.self:CastSpell(3230, e.self:GetID());  
-
   -- Clean Up Last Mob
   if ( last_mob ~= nil ) then
     -- Depop Sub-NPCs
@@ -117,11 +162,6 @@ function ShapeShift(e)
         end
       end
     end
-    if ( last_mob[10] ~= nil ) then
-      for _,v in pairs(last_mob[10]) do
-        e.self:RemoveAISpell(v);
-      end
-    end
   end
 
   local num = math.random(1,table.getn(list_constructs));
@@ -133,9 +173,14 @@ function ShapeShift(e)
     return;
   end
 
+  --mob = list_constructs[4];
+
   e.self:SendIllusionPacket({race=mob[3],gender=mob[4],texture=mob[5]});
   e.self:TempName(mob[2]);
   e.self:SetNPCFactionID(79);
+
+  -- Cast Balance of the Nameless on self to remove debuffs
+  e.self:CastSpell(3230, e.self:GetID());  
 
   -- Spawn Sub-NPCs 
   if ( mob[6] ~= nil ) then 
@@ -176,14 +221,42 @@ function ShapeShift(e)
     end
   end
 
-  -- Spells if present
+  self = e.self;
+  ThreadManager:Clear();
+
+  -- Spells if present to add to the AI
   if ( mob[10] ~= nil ) then
-    for _,v in pairs(mob[10]) do
-      e.self:AddAISpell(0, v, 1024, -1, 30, -1);
-    end
+    eq.set_timer('castspells', 1000);
+    cast_spells = mob[10];
+    ThreadManager:Create("CastSpells", CastSpells);
   end
 
+  -- Spells to cast once (self buffs)
+  if ( mob[11] ~= nil ) then
+    eq.set_timer('castbuffs', 500);
+    cast_buffs = mob[11];
+    ThreadManager:Create("CastBuffs", CastBuffs);
+  end
   last_mob = mob;
+end
+
+function CastBuffs()
+  if (cast_buffs ~= nil) then
+    for _,v in pairs(cast_buffs) do
+      self:CastSpell(v, self:GetID());  
+      ThreadManager:Wait(1.0);
+    end
+    cast_buffs = {};
+  end
+end
+
+function CastSpells()
+  if (cast_spells ~= null) then
+   for _,v in pairs(cast_spells) do
+     self:CastSpell(v, self:GetTarget():GetID());
+     ThreadManager:Wait(2.5);
+   end
+  end
 end
 
 function Boss_Spawn(e)
@@ -218,10 +291,15 @@ function Boss_Timer(e)
     ShapeShift(e);
   elseif (e.timer == "leftcombat") then
     ResetEvent(e);
+  elseif (e.timer == "castbuffs") then
+    ThreadManager:Resume("CastBuffs");
+  elseif (e.timer == "castspells") then
+    ThreadManager:Resume("CastSpells");
   end
 end
 
 function Boss_Death(e)
+  ThreadManager:Clear();
   eq.stop_all_timers();
 
   -- Disable the deathtouch
@@ -287,6 +365,7 @@ function Boss_Combat(e)
 end
 
 function ResetEvent(e)
+  ThreadManager:Clear();
   eq.stop_all_timers();
   eq.repop_zone();
 end

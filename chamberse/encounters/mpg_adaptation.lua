@@ -51,6 +51,7 @@
 -- archery (7)
 -- throwing (51)
 -- hand to hand (28)
+-- 2hp (77)
 --
 -- RESIST_NONE = 0,
 -- RESIST_MAGIC = 1,
@@ -96,7 +97,7 @@ function setup()
             1,    -- Texture
             {},   -- Sub-npcs
             {{SpecialAbility.rampage,50},{SpecialAbility.area_rampage,50}}, 
-            {{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal}}, 
+            {{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal},{77,weak}}, 
             resists_brut },
     [2] = { '308013', 
             'Construct of Fire', 
@@ -105,7 +106,7 @@ function setup()
             1, 
             {308003}, 
             {}, 
-            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, 
+            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
             resists_fire, 
             {5706},
             {5705}},
@@ -116,7 +117,7 @@ function setup()
             1, 
             {308002}, 
             {}, 
-            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, 
+            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
             resists_ice, 
             {1248},
             {5704}},
@@ -127,7 +128,7 @@ function setup()
             1, 
             {}, 
             {{SpecialAbility.flurry,20}}, 
-            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal}}, 
+            {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
             resists_pain,
             {5692},
             {5699}},
@@ -138,7 +139,7 @@ function setup()
             1, 
             {308001, 308001, 308001, 308001, 308001}, 
             {{SpecialAbility.flurry,50}}, 
-            {{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50}}, 
+            {{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50},{77,-85}}, 
             resists_power } 
   };
 

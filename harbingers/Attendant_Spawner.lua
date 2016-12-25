@@ -16,7 +16,6 @@ function event_signal(e)
     atten_spawn = atten_spawn + 1;
   end
   if (atten_spawn == 8) then
-    eq.spawn2(335051, 0, 0, -1403.74, 391.99, 570.58, 134.6);
     eq.depop_with_timer();
     atten_spawn = 0;
   end

@@ -276,13 +276,9 @@ end
 function check_rings(mob, client)
   if ( client:GetItemIDAt(15) ~= -1 ) then
     mob:CastSpell(5695, client:GetID());
-  else
-    client:Message(14, "Your fingers feel relief from Gopro's Plight");
   end
   if ( client:GetItemIDAt(16) ~= -1 ) then
     mob:CastSpell(5695, client:GetID());
-  else
-    client:Message(14, "Your fingers feel relief from Gopro's Plight");
   end
 end
 

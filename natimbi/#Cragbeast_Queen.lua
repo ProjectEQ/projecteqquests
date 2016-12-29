@@ -33,5 +33,6 @@ end
 function event_death_complete(e)
 	-- turn the depop spawn_event back on
 	eq.toggle_spawn_event(65, true, false, false)
+	eq.zone_emote(10, "The Cragbeast Queen roars in defiance.  She staggers for a moment before her gargantuan form comes crashing to the sandy ground.  The impact shakes the entire beach of Natimbi.");
 end
 

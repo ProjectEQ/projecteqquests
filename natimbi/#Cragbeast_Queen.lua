@@ -5,14 +5,14 @@ local heading = 0.0; -- IsMoving doesn't catch heading changes ...
 function event_spawn(e)
 	eq.zone_emote(15,"A muffled roar echoes in the distance.");
 	-- piercing does more damage, rest do less, special attacks not touched
-	e.self:ModSkillDmgTaken(36, 65); -- piercing
+	e.self:ModSkillDmgTaken(36, 30); -- piercing
 	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
 	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
 	e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
 	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
 	e.self:ModSkillDmgTaken(7, -85); -- archery
 	e.self:ModSkillDmgTaken(51, -85); -- throwing
-	e.self:ModSkillDmgTaken(28, 15); -- hand to hand
+	e.self:ModSkillDmgTaken(77, 30); -- 2h pierce
 end
 
 function event_combat(e)

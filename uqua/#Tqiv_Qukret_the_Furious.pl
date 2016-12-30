@@ -33,6 +33,7 @@ sub EVENT_TIMER {
 	quest::modifynpcstat("max_hit",4800);
 	quest::modifynpcstat("special_attacks","SEFQUMCNIDf");
 	quest::modifynpcstat("max_hp","600000");
+	quest::modifynpcstat("accuracy","1500");
 	$npc->ModSkillDmgTaken(36, -50); #piercing
 	$npc->ModSkillDmgTaken(77, -50); #2h piercing
 	$npc->ModSkillDmgTaken(2, -50); #2h blunt

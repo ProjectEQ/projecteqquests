@@ -194,8 +194,8 @@ function Event_Win(e)
   eq.spawn_condition('chambersb', instance_id, 2, 0 );
   eq.depop_all(305006);
 
-  -- Spawn Greedy Dwarf
-  eq.spawn2(304028, 0, 0, -204, 274, 66, 72);
+  -- Spawn Shell of the Ancients
+  eq.spawn2(305014, 0, 0, -204, 274, 66, 72);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

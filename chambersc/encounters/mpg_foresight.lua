@@ -380,8 +380,8 @@ function Event_Win(e)
   -- Disable the deathtouch
   eq.depop_all(306020);
 
-  -- Spawn Greedy Dwarf
-  eq.spawn2(304028, 0, 0, -204, 274, 66, 72);
+  -- Spawn Shell of the Master
+  eq.spawn2(306024, 0, 0, -204, 274, 66, 72);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

@@ -162,8 +162,8 @@ function Hate_Death(e)
   -- Disable the Death Toucher
   eq.spawn_condition('chambersa', instance_id, 3, 0 );
 
-  -- Spawn a Greedy Dwarf to distribute loot until all MPG Raid Trials are complete
-  eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+  -- Spawn a Shell of the Master (304020)
+  eq.spawn2(304020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 
   -- Update the Win Lockout
   local mpg_helper = require("mpg_helper");

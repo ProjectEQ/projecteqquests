@@ -233,8 +233,8 @@ function Huhn_Signal(e)
     -- Despawn the #death_touch mob
     eq.spawn_condition(this_zone, instance_id, 2, 0);
 
-    -- Spawn a Greedy Dwarf to distribute loot until all MPG Raid Trials are complete
-    eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+    -- Spawn a Shell of the Corrupted
+    eq.spawn2(309034, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 
     -- depop the mob
     eq.depop();

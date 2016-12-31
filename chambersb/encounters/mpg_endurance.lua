@@ -195,7 +195,7 @@ function Event_Win(e)
   eq.depop_all(305006);
 
   -- Spawn Shell of the Ancients
-  eq.spawn2(305014, 0, 0, -204, 274, 66, 72);
+  eq.unique_spawn(305014, 0, 0, -204, 274, 66, 72);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

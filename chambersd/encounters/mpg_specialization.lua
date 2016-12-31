@@ -152,8 +152,8 @@ function Boss_Death(e)
   eq.spawn_condition('chambersd', instance_id, 5, 0 );
   eq.depop_all(307006);
 
-  -- Spawn a Greedy Dwarf to distribute loot until all MPG Raid Trials are complete
-  eq.spawn2(304028, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+  -- Spawn Shell of the Master 
+  eq.spawn2(307008, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 
   -- Update the Win Lockout
   local mpg_helper = require("mpg_helper");

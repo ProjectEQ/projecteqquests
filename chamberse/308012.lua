@@ -1,3 +1,8 @@
+local warnings = 0;
+function event_spawn(e)
+  warnings = 0;
+end
+
 function event_tick(e)
   local my_id = eq.get_zone_instance_id();
   local my_list = eq.get_characters_in_instance(my_id);

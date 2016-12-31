@@ -105,15 +105,29 @@ end
 
 function Boss_Say(e)
   if ( event_started ~= true ) then
-    if ( e.message:findi("hail") ) then
-      e.self:Say("This is the Mastery of Foresight Trial. You must react quickly to deadly and unforgiving hazards. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
-    elseif ( e.message:findi("begin") ) then
-      e.self:Say("Very well!  Let the battle commence!");
-      Start_Event(e);
-    elseif ( e.message:findi("test")) then
-      eq.set_timer("equipment", 5 * 1000);
+    if (ValidatePlayersAreInZone(e.other)) then
+      if ( e.message:findi("hail") ) then
+        e.self:Say("This is the Mastery of Foresight Trial. You must react quickly to deadly and unforgiving hazards. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
+      elseif ( e.message:findi("begin") ) then
+        e.self:Say("Very well!  Let the battle commence!");
+        Start_Event(e);
+      end
+    else
+      e.self:Say("It appears all members of your adventure are not present, please have them join you before you begin.");
     end
   end
+end
+
+function ValidatePlayersAreInZone(requestor)
+  local el = eq.get_entity_list();
+  for k,v in pairs(player_list) do
+    member = el:GetClientByCharID(v)
+    if (member.valid == false) then
+      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
+      return false;
+    end
+  end
+  return true;
 end
 
 function Do_Hazard()
@@ -262,13 +276,9 @@ end
 function check_rings(mob, client)
   if ( client:GetItemIDAt(15) ~= -1 ) then
     mob:CastSpell(5695, client:GetID());
-  else
-    client:Message(14, "Your fingers feel relief from Gopro's Plight");
   end
   if ( client:GetItemIDAt(16) ~= -1 ) then
     mob:CastSpell(5695, client:GetID());
-  else
-    client:Message(14, "Your fingers feel relief from Gopro's Plight");
   end
 end
 
@@ -352,6 +362,11 @@ function self_cast(mob,spell)
   mob:CastSpell(spell, mob:GetID());
 end
 
+function Event_Loss(e)
+  eq.depop_with_timer();
+  eq.repop_zone();
+end
+
 function Event_Win(e)
   -- Depop the hazards
   eq.depop_all(306011);
@@ -365,8 +380,8 @@ function Event_Win(e)
   -- Disable the deathtouch
   eq.depop_all(306020);
 
-  -- Spawn Greedy Dwarf
-  eq.spawn2(304028, 0, 0, -204, 274, 66, 72);
+  -- Spawn Shell of the Master
+  eq.spawn2(306024, 0, 0, -204, 274, 66, 72);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

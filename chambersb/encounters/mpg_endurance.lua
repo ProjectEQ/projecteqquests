@@ -15,6 +15,13 @@
 -- 305011 a_dragorn_defender
 -- 305012 a_frantic_discordling
 -- 305013 a_muramite_sentinel
+--
+-- [9:09 PM] huffin: 3to66
+-- [9:09 PM] huffin: 5to
+-- [9:10 PM] huffin: 6 @ 55
+-- [9:25 PM] huffin: 3:100-66/\5:66-40/\6:40-30/\7:30-0
+-- [9:26 PM] huffin: endurance adds . repop every 3 min
+-- [9:29 PM] huffin: so no excuses now. every1 knows =p
 
 local event_started = false;
 local instance_id;
@@ -81,9 +88,11 @@ function Spawn_Adds()
   wave = wave + 1;
   -- Wave Number:
   -- 1: 3 adds 100-65 (1,3,6)
-  -- 2: 5 adds 65-30a (4,5)
-  -- 3: 6 adds 30-20  (2)
-  -- 4: 7 adds 20-0   (center)
+  -- 2: 5 adds 65-40 (4,5)
+  -- 3: 6 adds 40-30  (2)
+  -- 4: 7 adds 30-0   (center)
+  -- [9:25 PM] huffin: 3:100-66/\5:66-40/\6:40-30/\7:30-0
+  -- [9:26 PM] huffin: endurance adds . repop every 3 min
   --
   -- 1st LOC: -161, 386, 58, 146
   -- 2nd LOC: -254, 389, 58, 115
@@ -146,9 +155,9 @@ function Boss_Timer(e)
     
     if (tonumber(boss_hp) == 65) then
       Spawn_Adds();
-    elseif (tonumber(boss_hp) == 30) then
+    elseif (tonumber(boss_hp) == 40) then
       Spawn_Adds();
-    elseif (tonumber(boss_hp) == 20) then
+    elseif (tonumber(boss_hp) == 30) then
       Spawn_Adds();
     elseif (tonumber(boss_hp) < 1) then
       eq.stop_all_timers();
@@ -185,8 +194,8 @@ function Event_Win(e)
   eq.spawn_condition('chambersb', instance_id, 2, 0 );
   eq.depop_all(305006);
 
-  -- Spawn Greedy Dwarf
-  eq.spawn2(304028, 0, 0, -204, 274, 66, 72);
+  -- Spawn Shell of the Ancients
+  eq.spawn2(305014, 0, 0, -204, 274, 66, 72);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

@@ -24,5 +24,16 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_SPAWN {
+  quest::settimer(1,20);
+}
+sub EVENT_TIMER {
+  if ($entity_list->IsMobSpawnedByNpcTypeID(102112)) {
+    quest::stoptimer(1);
+    quest::depop_withtimer();
+  }
+}
+
+
 # EOF zone: karnor ID: 102099 NPC: Venril_Sathirs_remains
 

@@ -7,19 +7,19 @@
 sub EVENT_SAY
 {
 	if ($text=~/Hail/i) {
-		quest::emote("turns toward you with a crazed look in his eyes. 'Hail?. . . All day long I [study] here and all day long the dirty Human says, 'hail.' What do you know of 'hail'?! I know not of 'hail'! You have injured my soul forever!'");
+		quest::emote("turns toward you with a crazed look in his eyes. 'Hail?. . . All day long I [" . quest::saylink("study",false,"study") . "] here and all day long the dirty Human says, 'hail.' What do you know of 'hail'?! I know not of 'hail'! You have injured my soul forever!'");
 	}
 	
 	if ($text=~/study/i) {
-		quest::emote("glares at you and then falls silent. He stares into the distance for a moment, lost in thought. Without warning, he speaks again. 'Yes. I study [Discord]. Why do you ask?' ");
+		quest::emote("glares at you and then falls silent. He stares into the distance for a moment, lost in thought. Without warning, he speaks again. 'Yes. I study [" . quest::saylink("Discord",false,"Discord") . "]. Why do you ask?' ");
 	}
 	
 	if ($text=~/discord/i) {
-		quest::say("So, you know of Discord then! Excellent!' The dragorn extends his hand. 'I am a student of Yemall the Arcane, a dragorn noble who sought to [understand] the magic of Discord. He was a great teacher . . . until he died, leaving me to carry on the study of Discord alone. Some say the study of Discord has made me insane. Some say, 'Karsor, stop studying Discord! It is making you insane,' but I say to them, 'If I'm insane, then why are my eyes on fire?' Ha ha! That usually puts them in their place, especially when my eyes are, in fact, on fire.");
+		quest::say("So, you know of Discord then! Excellent!' The dragorn extends his hand. 'I am a student of Yemall the Arcane, a dragorn noble who sought to [" . quest::saylink("understand",false,"understand") . "] the magic of Discord. He was a great teacher . . . until he died, leaving me to carry on the study of Discord alone. Some say the study of Discord has made me insane. Some say, 'Karsor, stop studying Discord! It is making you insane,' but I say to them, 'If I'm insane, then why are my eyes on fire?' Ha ha! That usually puts them in their place, especially when my eyes are, in fact, on fire.");
 	}
 	
 	if ($text=~/understand/i) {
-		quest::say("Ahhh, you want to understand too, do you? He he. Well, I've been studying the magic of Discord for ten years! That's a long time. So . . . I . . . understand! If you bring me a Muramite [rune], I can help you understand too.");
+		quest::say("Ahhh, you want to understand too, do you? He he. Well, I've been studying the magic of Discord for ten years! That's a long time. So . . . I . . . understand! If you bring me a Muramite [" . quest::saylink("rune",false,"rune") . "], I can help you understand too.");
 	}
 	
 	if ($text=~/rune/i) {
@@ -77,18 +77,15 @@ sub EVENT_SAY
 	#}
 	
 	#if ($text=~/mar/i) {
-	#	if(!defined $qglobals{MuramiteAncient}){
-	#		quest::say("No global to reset.");
-	#	}
-	#	else {
 	#		quest::delglobal("MuramiteAncient");
 	#		quest::say("Muramite Ancient Reset.");
-	#	}
 	#}
 }
 
 sub EVENT_ITEM
 {
+=commenting this stuff out because it doesnt work and we dont use it anyway
+
 	if(plugin::check_handin(\%itemcount, 59983 => 1)) {#Minor Muramite Rune
 		# If the global isn't defined for us, do so and set it at once, else increment it by one
 		if(!defined $qglobals{MuramiteMinor}){
@@ -270,14 +267,16 @@ sub EVENT_ITEM
 			quest::summonitem(59987);
 		}
 	}
-	
-	elsif(plugin::check_handin(\%itemcount, 59988 => 1)) {#Ancient Muramite Rune
+=cut
+
+	if(plugin::check_handin(\%itemcount, 59988 => 1)) {#Ancient Muramite Rune
+		
 		# If the global isn't defined for us, do so and set it at once, else increment it by one
-		if(!defined $qglobals{MuramiteAncient}){
+		if($client->GetGlobal("MuramiteAncient") ==undef){
 			quest::setglobal("MuramiteAncient", 1, 5, "F");
 		}
 		else {
-			my $x = $qglobals{MuramiteAncient};
+			my $x = $client->GetGlobal("MuramiteAncient");
 			$x++;
 			quest::setglobal("MuramiteAncient", $x, 5, "F");
 		}
@@ -288,11 +287,12 @@ sub EVENT_ITEM
 		#Number of spells in this progression
 		$count = @spell_choices;
 		
-		if (!($qglobals{MuramiteAncient} >= $count) && !(@spell_choices[$qglobals{MuramiteAncient}] eq "none")) {
+		my $y = $client->GetGlobal("MuramiteAncient");
+		$y--;
+		if (!($y >= $count) && !(@spell_choices[$y] eq "none")) {
 			quest::emote("giggles as he sets about translating the rune onto a scroll. When he's finished, he looks up with a crazed energy in his eyes. 'What is this? What have you brought me?! This has sliced deep into my soul. Take your translation and go!' ");
-			quest::summonitem(@spell_choices[$qglobals{MuramiteAncient}]);
-		}
-		
+			quest::summonitem(@spell_choices[$y]);
+		}	
 		else {
 			quest::emote("throws the rune back at you. 'What is this! We've been over this rune already! My soul burns with fury and you are stoking the embers!'");
 			#We don't want this global to keep growing everytime someone tries to turn in a rune when they've completed the spell progression.

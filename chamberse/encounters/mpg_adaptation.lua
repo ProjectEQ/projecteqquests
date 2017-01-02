@@ -271,15 +271,18 @@ function Boss_Spawn(e)
 end
 
 function Boss_Say(e)
+  
   if ( event_started ~= true ) then
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
       --eq.spawn_condition('chamberse', instance_id, 2, 1 );
+	  local shifttime = math.random(90, 150);
       eq.spawn2(308012,0,0,0,0,0,0);
       event_started = true;
-      eq.set_timer('shapeshift', 90 * 1000);
-      eq.set_next_hp_event(90);
+      eq.set_timer('shapeshift', shifttime * 1000);
+	  eq.debug( "starting shift time: " .. shifttime .. " seconds");
+      --eq.set_next_hp_event(90);
       ShapeShift(e);
 
       e.self:Say("Very well!  Let the battle commence!");
@@ -290,6 +293,32 @@ end
 function Boss_Timer(e)
   if (e.timer == "shapeshift") then
     ShapeShift(e);
+	  local new_time;
+	  local boss_hp = math.floor(100*e.self:GetHP()/e.self:GetMaxHP());
+	  if (boss_hp <= 10 ) then 
+		new_time = math.random(25, 35);
+	  elseif (boss_hp <= 20) then
+		new_time = math.random(35, 45);	 
+	  elseif (boss_hp <= 30) then
+		new_time = math.random(45, 55);
+	  elseif (boss_hp <= 40) then
+		new_time = math.random(55, 65);
+	  elseif (boss_hp <= 50) then
+		new_time = math.random(65, 75);	
+	  elseif (boss_hp <= 60) then
+		new_time = math.random(70, 90);
+	  elseif (boss_hp <= 70) then
+		new_time = math.random(75, 105);	
+	  elseif (boss_hp <= 80) then
+		new_time = math.random(80, 120);		
+	  elseif (boss_hp <= 90) then
+		new_time = math.random(85, 135);
+	  else
+		new_time = math.random(90, 150);
+	  end
+	  eq.stop_timer('shapeshift');
+	  eq.debug( "HP: " .. boss_hp .. "  New Timer:" .. new_time .. " seconds");
+	  eq.set_timer('shapeshift', new_time * 1000);	
   elseif (e.timer == "leftcombat") then
     ResetEvent(e);
   elseif (e.timer == "castbuffs") then
@@ -315,48 +344,6 @@ function Boss_Death(e)
   mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
 end
 
-function Boss_Hp(e)
-  local new_time;
-  if (e.hp_event == 90) then
-    -- 85 to 135 seconds
-    new_time = math.random(85, 135);
-    eq.set_next_hp_event(80);
-  elseif (e.hp_event == 80) then
-    -- 80 to 120
-    new_time = math.random(80, 120);
-    eq.set_next_hp_event(70);
-  elseif (e.hp_event == 70) then
-    -- 75 to 105
-    new_time = math.random(75, 105);
-    eq.set_next_hp_event(60);
-  elseif (e.hp_event == 60) then
-    -- 70 to 90
-    new_time = math.random(70, 90);
-    eq.set_next_hp_event(50);
-  elseif (e.hp_event == 50) then
-    -- 65 to 75
-    new_time = math.random(65, 75);
-    eq.set_next_hp_event(40);
-  elseif (e.hp_event == 40) then
-    -- 55 to 65
-    new_time = math.random(55, 65);
-    eq.set_next_hp_event(30);
-  elseif (e.hp_event == 30) then
-    -- 45 to 55
-    new_time = math.random(45, 55);
-    eq.set_next_hp_event(20);
-  elseif (e.hp_event == 20) then
-    -- 35 to 45
-    new_time = math.random(35, 45);
-    eq.set_next_hp_event(10);
-  elseif (e.hp_event == 10) then
-    -- 25 to 35
-    new_time = math.random(25, 35);
-  end
-  eq.stop_timer('shapeshift');
-  eq.set_timer('shapeshift', new_time * 1000);
-end
-
 function Boss_Combat(e)
   if (e.joined == false) then
     eq.set_timer('leftcombat', 30 * 1000);
@@ -373,7 +360,6 @@ end
 
 function event_encounter_load(e)
   eq.register_npc_event('mpg_adaptation', Event.say,            308010, Boss_Say);
-  eq.register_npc_event('mpg_adaptation', Event.hp,             308010, Boss_Hp);
   eq.register_npc_event('mpg_adaptation', Event.combat,         308010, Boss_Combat);
   eq.register_npc_event('mpg_adaptation', Event.spawn,          308010, Boss_Spawn);
   eq.register_npc_event('mpg_adaptation', Event.timer,          308010, Boss_Timer);

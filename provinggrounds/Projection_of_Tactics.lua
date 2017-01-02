@@ -34,7 +34,7 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then
-      local instance_id = eq.create_instance('chambersc', 2, 21600);
+      local instance_id = eq.create_instance('chambersc', 2, 10800);
       eq.assign_raid_to_instance(instance_id);
       eq.cross_zone_message_player_by_name(5, "GMFizban", "Mastery of Foresight -- Instance: " .. instance_id);
 

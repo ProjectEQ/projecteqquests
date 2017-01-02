@@ -91,7 +91,7 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(707834);
+				quest::summonitem(70834);
 				}
 			if($class eq "Magician")
 				{

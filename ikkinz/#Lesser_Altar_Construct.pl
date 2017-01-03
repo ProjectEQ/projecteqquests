@@ -9,12 +9,20 @@ sub EVENT_TIMER {
 	my $c = quest::ChooseRandom(1,2,3,4);
 	if ($c == 1) {
 	  $npc->GMMove(566,-212,-50,196);
+	  $npc->CastSpell(3791, $npc->GetID());
+	  $npc->WipeHateList();
 	} elsif ($c == 2) {
 	  $npc->GMMove(632,-147,-50,155);
+	  $npc->CastSpell(3791, $npc->GetID());
+	  $npc->WipeHateList();
 	} elsif ($c == 3) {
 	  $npc->GMMove(611,-146,-50,153);
+	  $npc->CastSpell(3791, $npc->GetID());
+	  $npc->WipeHateList();
 	} else {
 	  $npc->GMMove(575,-272,-50,250);
+	  $npc->CastSpell(3791, $npc->GetID());
+	  $npc->WipeHateList();
 	}
   }
 }

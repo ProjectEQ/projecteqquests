@@ -1,10 +1,8 @@
---swampofnohope/Skurza_Slicekutt.lua NPCID 
---SK Epic 1.5
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);	
 	if(e.message:findi("hail")) then
 		if ( qglobals["shadowknight_epic"] == "6") then
-			e.self:Say("bashhh!");
+			e.self:Emote("hisses furiously");
 			e.self:SetSpecialAbility(19, 0);
 			e.self:SetSpecialAbility(20, 0);
 			e.self:SetSpecialAbility(24, 0);
@@ -20,5 +18,3 @@ function event_trade(e)
 	local item_lib = require("items");
 	item_lib.return_items(e.self, e.other, e.trade, e.text);
 end
-	
-	

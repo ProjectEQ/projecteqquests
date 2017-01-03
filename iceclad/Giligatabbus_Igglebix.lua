@@ -1,10 +1,18 @@
 --iceclad/Giligatabbus_Igglebix.lua NPCID 
 --SK Epic 1.5
 function event_say(e)
-	local qglobals = eq.get_qglobals(e.other);
-	if(e.message:findi("hail") and qglobals["shadowknight_epic"] == "6") then
-		--eq.spawn2( ,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --lvl 66 version, currently not in db
-		eq.depop_with_timer();
+	local qglobals = eq.get_qglobals(e.other);	
+	if(e.message:findi("hail")) then
+		if ( qglobals["shadowknight_epic"] == "6") then
+			e.self:Say("arggg!");
+			e.self:SetSpecialAbility(19, 0);
+			e.self:SetSpecialAbility(20, 0);
+			e.self:SetSpecialAbility(24, 0);
+			e.self:SetSpecialAbility(25, 0);
+			e.self:SetSpecialAbility(35, 0);
+			e.self:SetLevel(66);
+			e.self:AddToHateList(e.other,1);
+		end
 	end
 end
 

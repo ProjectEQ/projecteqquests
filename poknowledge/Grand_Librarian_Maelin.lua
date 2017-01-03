@@ -25,9 +25,9 @@ function event_say(e)
 			e.message:Other(4,"You receive a character flag!");
 		end
 	end
-	if(e.other:Class() == "Shadowknight" and qglobals["shadowknight_epic"] == "1") then
+	if(qglobals["shadowknight_epic"] == "1") then
 		if(e.message:findi("tome")) then
-			e.self:Say("Yes, I seem to recall having such a tome. But evil it is. I don't hand out such dangerous knowledge to just anyone. However. . . I am curious about something and perhaps you can help me. A prominent professor of biology and I have a bet as to how a certain creature from the Realm of Discord, known as a murkglider breeds. He believes they give live birth, and I believe they are egg layers. Unfortunately, I have been so busy here, that I have not been able to make arrangements to travel there and observe the creatures more. If you could travel to the Realm of Discord and [find an egg] for me, I will give you the book you seek.");
+			e.self:Say("Yes, I seem to recall having such a tome. But evil it is. I don't hand out such dangerous knowledge to just anyone. However. . . I am curious about something and perhaps you can help me. A prominent professor of biology and I have a bet as to how a certain creature from the Realm of Discord, known as a murkglider breeds. He believes they give live birth, and I believe they are egg layers. Unfortunately, I have been so busy here, that I have not been able to make arrangements to travel there and observe the creatures more. If you could travel to the Realm of Discord and [" ..eq.say_link('find an egg', false, 'find an egg') .. "] for me, I will give you the book you seek.");
 		elseif(e.message:findi("find an egg")) then
 			e.self:Say("I appreciate your help with this! The creature I was supposed to study are most commonly known as murkgliders. The easiest way to describe them is that they look like large, floating octopuses. See if you can hunt down any breeding murkgliders and return an egg to me that I can study. You might want to bring some companions along, as this might be a dangerous task.");
 		end
@@ -41,7 +41,7 @@ end
 function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 55900}) and qglobals["shadowknight_epic"] == "1") then --hand in Gelatinous Murkglider Egg (Drops from Murkglider Breeder in Ruined City of Dranik)
+	if(qglobals["shadowknight_epic"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 55900})) then --hand in Gelatinous Murkglider Egg (Drops from Murkglider Breeder in Ruined City of Dranik)
 		e.self:Say("I knew they were egg-layers! Ha, this is one gnome who hates losing a bet and thanks to you I wont! This is the tome you seek. Please bring it back to me when you are done.");
 		e.other:SummonItem(20520); --The Silent Gods
 	end

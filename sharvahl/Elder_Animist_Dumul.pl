@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Well, my prying little friend. Someone as inquisitive as you may be of use to us. Perhaps you were sent to us by the very ones we seek to help. The spirits are capable of far more impressive manipulations. If any time warrants such trickery or nudging of fate, I would guess that this day would qualify. Be aware of one thing, youth... the beastlord that follows the path I see before us this day may not return to this house unscathed... if they return to me at all. If you are the Khati Sha I seek, prove your worth in combat and return to me with the Copper Medal of War. You can get this medal from assisting the soldiers in the Grimling Forest.");
   }
   if ($text=~/ready/i && $bstepic >= 1) {
-    quest::say("Their is a magic-user that is using wooden totems to siphon the power of elder spirits using [new magic]. He is using this power to summon entities of malign intent.");
+    quest::say("Their is a magic-user that is using wooden totems to siphon the power of elder spirits using [" . quest::saylink("new magic") . "]. He is using this power to summon entities of malign intent.");
   }
   if ($text=~/new magic/i && $bstepic >= 1) {
     quest::say("The scouts were able to witness some of the rituals used to capture the spirits. They described a process that involved the use of a wooden totem, shaped in the image of the spirit's true form. The magic-user is able to use that totem to siphon the power of the spirit. He then uses that power to transform the spirit into an entity of malign intent. Fortunately, our research has given us the name of this vile magic-user.");

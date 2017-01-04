@@ -37,7 +37,7 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 
-      local instance_id = eq.create_instance('chambersf', 2, 21600);
+      local instance_id = eq.create_instance('chambersf', 2, 10800);
       eq.assign_raid_to_instance(instance_id);
 
       e.other:Say("Prepare yourself for the greatest challenge of all. The Mastery of Corruption will test your battle prowess as well as your strength of character. Can you see through corruption and rout it out, or are you corrupt yourself ? The spoils of war include the chance to rewrite history. The victor will decide who was right and who was wrong, but in the end - do such things ever matter?' ");

@@ -37,7 +37,7 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 
-      local instance_id = eq.create_instance('chambersd', 2, 21600);
+      local instance_id = eq.create_instance('chambersd', 2, 10800);
       eq.assign_raid_to_instance(instance_id);
 
       e.self:Say("At times it pays to be focused in your abilities, and at times it does not. This trial will test your skill at using your strengths when they are most effective, and otherwise relying on your companions. If you have this ability now is the time to prove your worth.");

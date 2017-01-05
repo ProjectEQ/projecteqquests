@@ -114,6 +114,7 @@ function PRT_HP(e)
   elseif (e.hp_event == 25) then
     --add Ikaav's Venom AE
     eq.set_timer("VenomAE", 30000)
+    e.self:CastSpell(751,e.self:GetID())
     eq.set_next_hp_event(10)
 
   elseif (e.hp_event == 10) then

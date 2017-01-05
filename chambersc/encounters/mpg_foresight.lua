@@ -106,16 +106,16 @@ end
 
 function Boss_Say(e)
   if ( event_started ~= true ) then
-    --if (ValidatePlayersAreInZone(e.other)) then
+    if (ValidatePlayersAreInZone(e.other)) then
       if ( e.message:findi("hail") ) then
         e.self:Say("This is the Mastery of Foresight Trial. You must react quickly to deadly and unforgiving hazards. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
       elseif ( e.message:findi("begin") ) then
         e.self:Say("Very well!  Let the battle commence!");
         Start_Event(e);
       end
-    --else
-    --  e.self:Say("It appears all members of your adventure are not present, please have them join you before you begin.");
-    --end
+    else
+      e.self:Say("It appears all members of your adventure are not present, please have them join you before you begin.");
+    end
   end
 end
 

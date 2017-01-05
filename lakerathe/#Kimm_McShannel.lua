@@ -3,12 +3,12 @@
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("elder spirit sent me") and qglobals["shaman_epic"] == "1") then
-		e.self:Say("Aye, well then. Watch yerself. Thar be a crazy fella over there. Been trying for days, I 'ave, to get 'im to make some sense about this megalodon creature 'e keeps prattling on about. I been a bit shy o' stepping in the lake to get some seaweed for the spirit's potion. Maybe you could go take a look. Somethin' usually comes by to snap 'em up when they grow, so ye may need to route around a tad out there. You think you are [up to it]?");
+		e.self:Say("Aye, well then. Watch yerself. Thar be a crazy fella over there. Been trying for days, I 'ave, to get 'im to make some sense about this megalodon creature 'e keeps prattling on about. I been a bit shy o' stepping in the lake to get some seaweed for the spirit's potion. Maybe you could go take a look. Somethin' usually comes by to snap 'em up when they grow, so ye may need to route around a tad out there. You think you are [" .. eq.say_link("up to it") .. "]?");
 	elseif(e.message:findi("up to it") and qglobals["shaman_epic"] == "1") then
 		e.self:Say("Very well, then, off you go in search of the seaweed.");
 		eq.spawn2(51160,0,0,2812,-771,-199,146); --Ancient Megalodon
 	elseif(e.message:findi("break down") and qglobals["shaman_epic"] == "5") then
-		e.self:Say("As most things, the process is not a simple one and we'll need some ingredients for a special potion. You must retrieve four items, which should not prove difficult for a shaman of your stature. They are very specific and I can tell you more about the [skin], the [powder], the [tooth], and the [goo]. When you have all of these things, use my medicine bag to create this potion and return it to me.");
+		e.self:Say("As most things, the process is not a simple one and we'll need some ingredients for a special potion. You must retrieve four items, which should not prove difficult for a shaman of your stature. They are very specific and I can tell you more about the [" .. eq.say_link("skin") .. "], the [" .. eq.say_link("powder") .. "], the [" .. eq.say_link("tooth") .. "], and the [" .. eq.say_link("goo") .. "]. When you have all of these things, use my medicine bag to create this potion and return it to me.");
 		e.other:SummonItem(52922); --Heyokah Medicine Bag
 	elseif(e.message:findi("skin") and qglobals["shaman_epic"] == "5") then
 		e.self:Say("First, you must find your way to Kuua for part of the potion. There you will find a foul hound of flesh with no fur and fangs. We need a perfect specimen of some of its skin for our potion. Three should do nicely.");
@@ -29,7 +29,7 @@ function event_trade(e)
 		e.other:SummonItem(57600); --Twine-wrapped Lustrous Seaweed
 	end
 	if(item_lib.check_turn_in(e.trade, {item1 = 57088})) then --hand in Gemmed Bangle of Enlightenment (From Elder Spirit of Enlightenment after previous step)
-		e.self:Say("Aye, so ye have returned. We have much to do here, me friend. The first thing we must do is [break down] this bangle into its gems and metal. This here bangle was very carefully made. First, the gems were blessed by the spirits, then the metal itself as it was forged. Aye, we need to carefully separate them. The two gems were blessed by the spirits of Wisdom and Patience, and the metal was strengthened by the Spirit of Might. We will use these to call them back to us.");
+		e.self:Say("Aye, so ye have returned. We have much to do here, me friend. The first thing we must do is [" .. eq.say_link("break down") .. "] this bangle into its gems and metal. This here bangle was very carefully made. First, the gems were blessed by the spirits, then the metal itself as it was forged. Aye, we need to carefully separate them. The two gems were blessed by the spirits of Wisdom and Patience, and the metal was strengthened by the Spirit of Might. We will use these to call them back to us.");
 		eq.set_global("shaman_epic","5",5,"F");
 	end
 	if(item_lib.check_turn_in(e.trade, {item1 = 57560})) then --hand in Shaman's Precious Diffusing Agent (made from combining various drops for this stage, recipe likely needs added to db)

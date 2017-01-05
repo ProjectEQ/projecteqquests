@@ -118,6 +118,8 @@ function PXK_Hp(e)
    --90pct unroot
    if (e.hp_event == 90) then
       e.self:SetPseudoRoot(false);
+      e.self:CastSpell(4729, e.self:GetTarget():GetID());
+      e.self:AddAISpell(0, 4729, 1, -1, -1, -350);
       eq.set_next_hp_event(50);
    end
 
@@ -126,7 +128,6 @@ function PXK_Hp(e)
       e.self:Emote("The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
       -- she begins casting Spirit Cleaver & Wave of Rage
       -- void AddAISpell(int priority, int spell_id, int type, int mana_cost, int recast_delay, int resist_adjust);
-      e.self:AddAISpell(0, 4729, 1, -1, -1, -350);
       e.self:AddAISpell(0, 4728, 1, -1, -1, -350);
       -- Begins to AE Ramp (r or 4)
       -- Ends Flurry (F or 5)

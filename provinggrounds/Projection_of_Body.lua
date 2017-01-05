@@ -35,7 +35,7 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 
-      local instance_id = eq.create_instance('chambersb', 2, 21600);
+      local instance_id = eq.create_instance('chambersb', 2, 10800);
       eq.assign_raid_to_instance(instance_id);
 
       e.self:Say("In a battle of attrition, an extended engagement, you must have the endurance to outlast your opposition. When the defense is inpenetrable, your tenacity is more important than your offensive prowess. If you have this ability, now is the oppurtunity to prove your worth.");

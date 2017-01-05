@@ -35,7 +35,7 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 
-      local instance_id = eq.create_instance('chamberse', 2, 21600);
+      local instance_id = eq.create_instance('chamberse', 2, 10800);
       eq.assign_raid_to_instance(instance_id);
 
       e.self:Say("Can you modify your strategy in the heat of battle ? In an unpredictable and chaotic environment will you be able to adapt quickly to whatever adversities you face ? If you have this ability now is the opportunity to prove your worth.");

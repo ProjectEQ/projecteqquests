@@ -119,7 +119,7 @@ function setup()
             {}, 
             {{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
             resists_ice, 
-            {1248},
+            {5707},
             {5704}},
     [4] = { '308000', 
             'Construct of Pain', 
@@ -199,6 +199,7 @@ function ShapeShift(e)
         e.self:SetSpecialAbility(v[1], 1);
         if ( v[2] ~= nil ) then
           e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, v[2]);
+		  e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 25);
         end
       end
     end
@@ -268,6 +269,14 @@ function Boss_Spawn(e)
   lockout_win = 108;
   this_bit = 16;
   setup();
+end
+
+function Lick_Spawn(e)
+ e.self:CastSpell(5705, e.self:GetID())
+end
+
+function Mote_Spawn(e)
+ e.self:CastSpell(5704, e.self:GetID())
 end
 
 function Boss_Say(e)
@@ -362,6 +371,8 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_adaptation', Event.say,            308010, Boss_Say);
   eq.register_npc_event('mpg_adaptation', Event.combat,         308010, Boss_Combat);
   eq.register_npc_event('mpg_adaptation', Event.spawn,          308010, Boss_Spawn);
+  eq.register_npc_event('mpg_adaptation', Event.spawn,          308003, Lick_Spawn);
+  eq.register_npc_event('mpg_adaptation', Event.spawn,          308002, Mote_Spawn);
   eq.register_npc_event('mpg_adaptation', Event.timer,          308010, Boss_Timer);
   eq.register_npc_event('mpg_adaptation', Event.death_complete, 308010, Boss_Death);
 end

@@ -199,6 +199,7 @@ function ShapeShift(e)
         e.self:SetSpecialAbility(v[1], 1);
         if ( v[2] ~= nil ) then
           e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, v[2]);
+		  e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 25);
         end
       end
     end

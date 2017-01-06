@@ -69,6 +69,8 @@ local hatchlings_killed = 0;
 local PKK_hitpoints = 100; -- Also reset to 100 on wipe
 
 function PKK_Spawn(e)
+  e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
+  e.self:ModSkillDmgTaken(1, -30); -- 1h slashing
   if (PKK_hitpoints == 100) then -- First spawn/wipe!
     eq.set_next_hp_event(98);
 

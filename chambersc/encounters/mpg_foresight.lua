@@ -64,7 +64,7 @@ function setup()
     [1] = { "You notice that the Dragorn before you is preparing to cast a devastating close-range spell.", 5693, cast_5693 },
     [2] = { "The Dragorn before you is developing an anti-magic aura.", 5699, self_cast },
     [3] = { "The Dragorn before you is sprouting sharp spikes.", 5698, self_cast },
-	[4] = { "You notice that the Dragorn before you is making preparations to cast a devastating spell.  Doing enough damage to him might interrupt the process." , 5693, cast_5693 }
+    [4] = { "You notice that the Dragorn before you is making preparations to cast a devastating spell.  Doing enough damage to him might interrupt the process." , 5693, cast_5693 }
   }
 
 end
@@ -119,7 +119,6 @@ function Boss_Say(e)
   end
 end
 
---this throws errors, no idea
 function ValidatePlayersAreInZone(requestor)
   local el = eq.get_entity_list();
   for k,v in pairs(player_list) do
@@ -181,8 +180,6 @@ function Boss_Signal(e)
     -- when the event started
     local now_clients = eq.get_entity_list():GetClientList();
 
-    -- TODO: Need to add a check here to ensure no one
-    -- dies or camps or zones out (instant failure).
     Event_Loss(e);
   end
 end
@@ -309,10 +306,11 @@ function ae_check(e, xmin, xmax, ymin, ymax)
     eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
     eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
     if (x < xmin or x > xmax or y < ymin or y > ymax) then
-      e.self:CastSpell(5693, v:GetID());
+      --e.self:CastSpell(5693, v:GetID());
+      v:Damage(e.self, 5000, 5693, 1);
       v:Message(14,'The room explodes with chaotic energy.');
     else
-	  v:Message(14,'The room explodes with chaotic energy.');
+      v:Message(14,'The room explodes with chaotic energy.');
       v:Message(14,'You escape the blast unscathed.');
     end
   end

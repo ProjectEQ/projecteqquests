@@ -128,7 +128,7 @@ function PKK_Timer(e)
       eq.get_entity_list():FindDoor(5):SetLockPick(0);
     end
   elseif (e.timer == "tenae") then
-      e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetID());
+      e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
   end
 end
 
@@ -205,7 +205,7 @@ function PKK_Hp(e)
   elseif (e.hp_event == 10) then
     Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
-    e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetID());
+    e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
     eq.set_timer("tenae", 12 * 1000);
   end
 end

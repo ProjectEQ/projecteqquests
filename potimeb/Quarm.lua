@@ -18,11 +18,14 @@ function event_waypoint_arrive(e)
 end
 
 function event_combat(e)
-	if (e.joined) then
+	if (e.joined == true) then
 		-- begin 30 second timer to spawn adds
 		eq.set_timer("quarm_adds",30000);
 	else
 		eq.stop_timer("quarm_adds");
+		e.self:SetHP(e.self:GetMaxHP());
+		e.self:SendIllusionPacket({race=304,gender=2,texture=0,helmtexture=0});
+		eq.set_next_hp_event(76)	
 	end
 end
 

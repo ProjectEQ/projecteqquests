@@ -44,8 +44,6 @@
 --]]
 
 local golems_spawn = false;
-local golems12_spawn = false;
-
 ---
 -- @param NPC#event_spawn e
 function PRT_Spawn(e)
@@ -58,7 +56,7 @@ function PRT_Spawn(e)
 
   eq.set_next_hp_event(90)
   golems_spawn = false;
-  golems12_spawn = false;
+
 end
 
 function PRT_Combat(e)
@@ -68,16 +66,13 @@ function PRT_Combat(e)
     eq.stop_timer('wipecheck');
     
     if (spawn_golem == true) then
-      eq.set_timer("SpawnGolem", 15 * 1000);
-    elseif (spawn12_golem == true) then
-      eq.set_timer("SpawnGolem12", 15 * 1000);
+      eq.set_timer("SpawnGolem", 6 * 1000);
     end
   else
     -- Wipe stuff
     eq.get_entity_list():FindDoor(23):SetLockPick(0)
     eq.set_timer('wipecheck', 300 * 1000);
 
-    eq.stop_timer('SpawnGolem12');
     eq.stop_timer('SpawnGolem');
     eq.stop_timer('VenomAE');
     eq.stop_timer('Delusional');
@@ -100,18 +95,14 @@ function PRT_HP(e)
     eq.set_next_hp_event(30)
 
   elseif (e.hp_event == 30) then
-    --spawn 4 mini exploding golems every 15 seconds
-    eq.set_timer("SpawnGolem", 15 * 1000)
+    --start golem waves, first spawn is 4, next are based on hp (4 <=30%, 8 <=20%, 12 <=10%)
+    eq.set_timer("SpawnGolem", 6 * 1000)
     e.self:Say("You and your friends are starting to annoy me.  Come forth my little experiments.  Choose one of these fools and show them the surprise you have waiting.");
     --spawn 4 mini golems
     --an_unstable_construct (298045)
-    eq.spawn2(298045,0,0,150, -565, -7,0)
-    eq.spawn2(298045,0,0,157, -622, -7,0)
-    eq.spawn2(298045,0,0,216, -585, -7,0)
-    eq.spawn2(298045,0,0,216, -585, -7,0)
     eq.set_next_hp_event(25)
 
-    spawn_golems = true;
+    golems_spawn = true;
 
   elseif (e.hp_event == 25) then
     --add Ikaav's Venom AE
@@ -125,12 +116,6 @@ function PRT_HP(e)
     e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
     e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
 
-    -- At 10% spawn 12 golems instead of 4
-    eq.stop_timer("SpawnGolem");
-    eq.set_timer("SpawnGolem12", 15 * 1000);
-    spawn_golems = false;
-    spawn12_golems = true;
-
   end
 end
 
@@ -138,35 +123,28 @@ function PRT_Timer(e)
   if (e.timer == "Delusional") then
     --Delusional Vision single target DD/Drunk whole fight
     e.self:SpellFinished(889, e.self:GetHateTop()) --CastToClient?
-
   elseif (e.timer == "VenomAE") then
     --Ikaav's Venom 751
     e.self:CastSpell(751,e.self:GetID())
-
   elseif (e.timer == "SpawnGolem") then
-    --spawn 4 mini golems
-    --an_unstable_construct (298045)
+	eq.stop_timer("SpawnGolem")
     eq.spawn2(298045,0,0,150, -565, -7,0)
     eq.spawn2(298045,0,0,157, -622, -7,0)
     eq.spawn2(298045,0,0,205, -559, -7,0)
     eq.spawn2(298045,0,0,214, -616, -7,0)
-
-  elseif (e.timer == "SpawnGolem12") then
-    eq.spawn2(298045,0,0,150, -565, -7,0)
-    eq.spawn2(298045,0,0,157, -622, -7,0)
-    eq.spawn2(298045,0,0,205, -559, -7,0)
-    eq.spawn2(298045,0,0,214, -616, -7,0)
-
-    eq.spawn2(298045,0,0,183, -622, -7,0)
-    eq.spawn2(298045,0,0,178, -563, -7,0)
-    eq.spawn2(298045,0,0,172, -627, -7,0)
-    eq.spawn2(298045,0,0,149, -597, -7,0)
-
-    eq.spawn2(298045,0,0,149, -611, -7,0)
-    eq.spawn2(298045,0,0,165, -563, -7,0)
-    eq.spawn2(298045,0,0,196, -570, -7,0)
-    eq.spawn2(298045,0,0,204, -613, -7,0)
-
+	if (e.self:GetHPRatio() < 20) then
+		eq.spawn2(298045,0,0,183, -622, -7,0)
+		eq.spawn2(298045,0,0,178, -563, -7,0)
+		eq.spawn2(298045,0,0,172, -627, -7,0)
+		eq.spawn2(298045,0,0,149, -597, -7,0)
+	end
+	if (e.self:GetHPRatio() < 10) then
+		eq.spawn2(298045,0,0,149, -611, -7,0)
+		eq.spawn2(298045,0,0,165, -563, -7,0)
+		eq.spawn2(298045,0,0,196, -570, -7,0)
+		eq.spawn2(298045,0,0,204, -613, -7,0)
+	end	
+	eq.set_timer("SpawnGolem", 15*1000)
   elseif (e.timer == 'wipecheck') then
     eq.depop_all(298045);
     eq.depop_all(298002);

@@ -58,6 +58,16 @@ function Start_Event(e)
   eq.get_entity_list():GetNPCByNPCTypeID(305007):SetNPCFactionID(79);
   eq.get_entity_list():GetNPCByNPCTypeID(305008):SetNPCFactionID(79);
 
+  -- 24 Will Not Aggro
+  -- 25 Immune to Aggro
+  -- 35 No Harm from Players
+  eq.get_entity_list():GetNPCByNPCTypeID(305007):SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+  eq.get_entity_list():GetNPCByNPCTypeID(305007):SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+  eq.get_entity_list():GetNPCByNPCTypeID(305007):SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
+  
+  eq.get_entity_list():GetNPCByNPCTypeID(305008):SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+  eq.get_entity_list():GetNPCByNPCTypeID(305008):SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+  eq.get_entity_list():GetNPCByNPCTypeID(305008):SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
   event_started = true;
 
   start_timers();

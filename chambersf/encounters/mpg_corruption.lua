@@ -106,6 +106,7 @@ end
 
 function Huhn_Spawn(e)
   setup();
+  this_zone = 'chambersf';
   this_wave = 1;
   mobs_slain = 0;
   event_started = false;

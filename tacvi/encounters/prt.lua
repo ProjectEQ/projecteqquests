@@ -47,6 +47,8 @@ local golems_spawn = false;
 ---
 -- @param NPC#event_spawn e
 function PRT_Spawn(e)
+  e.self:ModSkillDmgTaken(1, -30); -- 1h slashing
+  e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
   --spawn the two starting golems
   --a_corrupted_construct (298002)
   eq.spawn2(298002, 0, 0, 229.0, -572.0, -3.25, 192.0):SetAppearance(3);

@@ -69,6 +69,8 @@ local hatchlings_killed = 0;
 local PKK_hitpoints = 100; -- Also reset to 100 on wipe
 
 function PKK_Spawn(e)
+  e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
+  e.self:ModSkillDmgTaken(1, -30); -- 1h slashing
   if (PKK_hitpoints == 100) then -- First spawn/wipe!
     eq.set_next_hp_event(98);
 
@@ -125,6 +127,8 @@ function PKK_Timer(e)
       eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
       eq.get_entity_list():FindDoor(5):SetLockPick(0);
     end
+  elseif (e.timer == "tenae") then
+      e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
   end
 end
 
@@ -201,6 +205,8 @@ function PKK_Hp(e)
   elseif (e.hp_event == 10) then
     Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
+    e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
+    eq.set_timer("tenae", 12 * 1000);
   end
 end
 

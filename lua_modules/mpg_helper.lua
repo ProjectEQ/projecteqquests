@@ -56,30 +56,20 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
         client:Message(15, "You have again mastered this trial.  Congratulations.");
       end
     else
-      -- Client wasn't in the zone at the end of the trial; set a 2 hour lockout before
-      -- this client can redo the trial (basically a failure).
-      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
+      -- Client wasn't in the zone - but the Trial was Won so set the same lockout as if they were in the zone
+      -- Since they weren't in the zone we can't award the AA; maybe we can add an NPC to hail similar
+      -- to inktuta someday so won trials can get the reward if thats "live like" or if I just decide too.
+      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
     end
   end
 end
 
 function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_name_in)
   local instance_requests = require("instance_requests");
-  local entity_list = eq.get_entity_list();
-  local client;
-  local client_globals;
 
   for k,v in pairs(player_list_in) do
-    client = entity_list:GetClientByCharID(v) 
-    if ( client.valid ) then 
-      -- Set a 108 hour lockout on a Win (And in the Zone)
-      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
-
-    else
-      -- Client wasn't in the zone at the end of the trial; set a 3 hour lockout before
-      -- this client can redo the trial (basically a failure).
-      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(3)), "H3", 0, v, 0);
-    end
+    -- Set a lockout 
+    eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
   end
 end
 

@@ -22,12 +22,12 @@ sub EVENT_TIMER {
   if($timer == 1) {
     #increment $goactive
     $goactive++;
-    #now check if we have been incrementing for 3 minutes.
-    #increments at +1 per 5 seconds means $goactive == 36 is 3 minutes.
-    if($goactive == 36) {
+    #now check if we have been incrementing for 5 minutes.
+    #increments at +1 per 5 seconds means $goactive == 60 is 5 minutes.
+    if($goactive == 60) {
       quest::stoptimer(1);
       BEGIN_MB_EVENT();
-    } elsif($goactive > 36) {
+    } elsif($goactive > 60) {
       #reset all the counters and start over something went wrong
       $first_signal = 0;
       $goactive = 0;

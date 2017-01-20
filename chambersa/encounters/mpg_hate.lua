@@ -163,7 +163,7 @@ function Hate_Death(e)
   eq.spawn_condition('chambersa', instance_id, 3, 0 );
 
   -- Spawn a Shell of the Master (304020)
-  eq.spawn2(304020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+  eq.spawn2(304020, 0, 0, -212, 270, 66, e.self:GetHeading());
 
   -- Update the Win Lockout
   local mpg_helper = require("mpg_helper");

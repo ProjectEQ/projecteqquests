@@ -61,7 +61,7 @@
 local ZMKP_Active = "1,1^2,1^3,1^5,1^7,1^13,1^14,1^15,1^16,1^17,1^21,1^42,1";
 local ZMKP_Inactive = "19,1^20,1^21,1^24,1^25,1";
 
-local ZMKP_AC     = 1800; -- Defense
+local ZMKP_AC     = 568; -- Defense
 local ZMKP_MaxHit = 3900; -- Fury
 local ZMKP_MinHit = 1430;
 local ZMKP_AtkHit = 400; -- Rage
@@ -81,7 +81,7 @@ function ZMKP_Spawn(e)
   eq.spawn2(298127, 0, 0, 412.0, -646.0, -4.125, 159.0);
   eq.spawn2(298128, 0, 0, 339.0, -646.0, -4.125, 95.0);
 
-  ZMKP_AC     = 1800; -- Defense
+  ZMKP_AC     = 568; -- Defense
   ZMKP_MaxHit = 3900; -- Fury
   ZMKP_MinHit = 1430;
   ZMKP_AtkHit = 400; -- Rage
@@ -127,7 +127,7 @@ function ZMKP_Timer(e)
     end
     if ( defen < low or defen > hi) then
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Defense is falling out of balance. ");
-      ZMKP_AC = ZMKP_AC + 150;
+      ZMKP_AC = ZMKP_AC + 100;
       e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
     else
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Defense seems to be tipping in your favor. ");

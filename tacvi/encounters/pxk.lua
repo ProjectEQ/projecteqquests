@@ -120,9 +120,15 @@ function PXK_Hp(e)
       e.self:SetPseudoRoot(false);
       e.self:CastSpell(4729, e.self:GetTarget():GetID());
       e.self:AddAISpell(0, 4729, 1, -1, -1, -350);
+      eq.modify_npc_stat("ac", "1150");
+      eq.set_next_hp_event(70);
+   end
+  
+   if (e.hp_event == 70) then
+      eq.modify_npc_stat("ac", "604");
       eq.set_next_hp_event(50);
    end
-
+  
    -- At 50% you see
    if (e.hp_event == 50) then
       e.self:Emote("The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
@@ -133,8 +139,9 @@ function PXK_Hp(e)
       -- Ends Flurry (F or 5)
       e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
       e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
-      e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 15); 
-
+      e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 15);
+      eq.modify_npc_stat("ac", "900");
+    
       eq.set_next_hp_event(45);
    end
 
@@ -155,6 +162,7 @@ function PXK_Hp(e)
       --Emotes at 30% and DPS picks up.
       eq.modify_npc_stat("min_hit", "1355");
       eq.modify_npc_stat("max_hit", "6200");
+      eq.modify_npc_stat("ac", "700");
       e.self:Say("I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.");
       eq.set_next_hp_event(10);
    end

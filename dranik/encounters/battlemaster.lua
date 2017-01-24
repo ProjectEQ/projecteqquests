@@ -40,13 +40,12 @@ function Battlemaster_Combat(e)
 	if (e.joined == true) then
 		eq.stop_timer("wipecheck");
 	else
-		eq.set_timer("wipecheck", 60*1000); -- 10m (600s) wipe timer XXXXXXXXXXXXXXXXXXXX
+		eq.set_timer("wipecheck", 60*10*1000); -- 10m (600s) wipe timer
 	end
 end
 
 function Battlemaster_Timer(e)
 	if (e.timer == "wipecheck") then
-		--eq.update_spawn_timer(336120, 15*1000); -- Reset event, spawn 2 (7200s) hours after failure XXXXXXXXXXXXXXXXXXXX
 		eq.depop_all(336117);
 		eq.depop_all(336118);
 		eq.depop_all(336119);

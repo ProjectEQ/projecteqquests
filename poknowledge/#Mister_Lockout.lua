@@ -4,8 +4,7 @@
 function event_say(e)
 	local instance_requests = require("instance_requests")
 	local lockout_globals = {
-			--LDoN raid needs to be set in lua
-			--{ "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
+			{ "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
 			{ "potimeb_lockout", "Plane of Time"},
 			{ "lockout_ikky_g1", "Ikkinz Group Trial #1: Singular Might"},
 			{ "lockout_ikky_g2", "Ikkinz Group Trial #2: Twin Struggles"},

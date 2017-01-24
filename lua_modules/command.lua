@@ -1,8 +1,7 @@
 function command_lockouts(e)
 	local instance_requests = require("instance_requests")
 	local lockout_globals = {
-			--LDoN raid needs to be set in lua
-			--{ "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
+			{ "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
 			{ "potimeb_lockout", "Plane of Time"},
 			{ "lockout_ikky_g1", "Ikkinz Group Trial #1: Singular Might"},
 			{ "lockout_ikky_g2", "Ikkinz Group Trial #2: Twin Struggles"},
@@ -54,9 +53,15 @@ function command_endurance(e)
 	tar:SetEndurance(tar:GetMaxEndurance());
 end
 
+function command_questpull(e)
+  -- os.execute("echo hello");
+  e.self:Message(13, "Date: " .. os.execute("echo hello") );
+end
+
 local commands = { };
 commands["endurance"] = { 50, command_endurance };
 commands["lockouts"] = { 0, command_lockouts };
+commands["questpull"] = { 0, command_questpull };
 
 function eq.DispatchCommands(e)
 	local command = commands[e.command];

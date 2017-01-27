@@ -17,12 +17,12 @@ function event_hp(e)
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 70);
     eq.set_timer('infurate', 2 * 1000);
-
-  elseif (e.hp_event == 10) then 
+    eq.zone_emote(13, e.self:GetName() .. " is infuriated!");
+  elseif (e.hp_event == 10) then
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 70);
     eq.set_timer('infurate', 2 * 1000);
-
+    eq.zone_emote(13, e.self:GetName() .. " is infuriated!");
   end
 end
 
@@ -30,7 +30,7 @@ function event_timer(e)
   if (e.timer == 'infurate') then
     eq.stop_timer(e.timer);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
-
+    eq.zone_emote(13, e.self:GetName() .. " is no longer infuriated.");
   elseif (e.timer == 'leash') then
     if (e.self:GetX() < 120 or e.self:GetX() > 35 or e.self:GetY() < -100 or e.self:GetY() > -310) then
       e.self:GotoBind();

@@ -224,7 +224,6 @@ function Mob_Deathcomplete(e)
 end
 
 function Huhn_Signal(e)
-  eq.zone_emote(15, 'Signaled');
   mobs_slain = mobs_slain + 1;
   
   if (this_wave == 1 and mobs_slain == 6) then

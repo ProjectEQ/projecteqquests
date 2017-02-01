@@ -7,12 +7,12 @@ function event_combat(e)
 end
 
 function event_timer(e)
+	if (e.timer == "adds") then		
 		local xloc = e.self:GetX();
 		local zloc = e.self:GetZ();
 		local zloc = e.self:GetZ();
 		local heading = e.self:GetHeading();
 	
-		if(e.timer == "adds") then		
-			eq.spawn2(336213,0,0,xloc,yloc,zloc,heading);
+		eq.spawn2(336213,0,0,xloc,yloc,zloc,heading);
 	end
 end

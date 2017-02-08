@@ -134,7 +134,7 @@ sub EVENT_SIGNAL {
     my $char_id;
     foreach $pc (@char_list) {
       ($char_id) = $pc =~ /\(([^\]]+)\).*/;
-      quest::targlobal("mirb_50_lockout", 1, "D3", 0, $char_id, 0);
+      quest::targlobal("mirb_50_lockout", time() + 259200, "D3", 0, $char_id, 0);
     }
   } #end of signal 5
 }

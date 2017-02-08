@@ -38,8 +38,8 @@ sub EVENT_SAY {
         $client->Message(13, "You have a player below level 61 in your raid!");
       } elsif ($InInstanceMirB!=0) {
         $client->Message(13, "You are already in an instance!");
-#      } elsif (defined $qglobals{mirb_50_lockout}) {
-#        $client->Message(13, "You have recently completed this raid!");
+      } elsif (defined $qglobals{mirb_50_lockout}) {
+        $client->Message(13, "You have recently completed this raid!");
       } else {
         ASSIGN_RAID_TO_INSTANCE();
       }

@@ -125,12 +125,16 @@ sub EVENT_SIGNAL {
       #will be used by zone_status to know if it needs to respawn a chest or not.
       quest::setglobal($instid.'_mirb_event', 1, 7, "H3");
     }
-    #Establish the lockout for the raid
-    #there is no $client available here since this is a signal event from an NPC.
-    #$raid = $entity_list->GetRaidByClient($client);
-    #best we can do here is to hit everyone in the zone.
-    foreach $pc ($entity_list->GetClientList()) {
-      quest::targlobal("mirb_50_lockout", 1, "D3", 0, $pc->CharacterID(), 0);
+    # Establish the lockout for the raid
+    # Set the lockout for everyone in the instance, some clients may be out
+    # of the zone when the event ends and they should still get the lockout.
+    my $char_in_inst_str = quest::GetCharactersInInstance($instid);
+    my @char_in_inst_spl = split(':', $char_in_inst_str);
+    my @char_list = split(',', $char_in_inst_spl[1]);
+    my $char_id;
+    foreach $pc (@char_list) {
+      ($char_id) = $pc =~ /\(([^\]]+)\).*/;
+      quest::targlobal("mirb_50_lockout", 1, "D3", 0, $char_id, 0);
     }
   } #end of signal 5
 }

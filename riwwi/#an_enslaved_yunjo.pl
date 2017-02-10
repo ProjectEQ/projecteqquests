@@ -17,8 +17,8 @@ sub EVENT_SAY {
   if ($text=~/defy/i) {
    if (defined $qglobals{riwwiarena} && $qglobals{riwwiarena} >= 1) {
      quest::shout("$name defies you! Do you hear me? $name defies you and will destroy your kind!");
-     quest::depop(282096);
-     quest::depop(282026);
+     quest::depop_withtimer(282096);
+     quest::depop_withtimer(282026);
      quest::unique_spawn(282098,0,0,-174,625,73,129);  #officaitor
      quest::summonitem(52223);   #satchel I
 

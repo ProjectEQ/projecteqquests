@@ -41,7 +41,7 @@ sub EVENT_SAY {
 	  }
 	  #epic 1.0
 	  else {
-		  if($text=~/hail/i && $class eq "Berserker" && plugin::check_hasitem($client, 68299) && $berserk_epic == undef) {
+		  if($text=~/hail/i && $class eq "Berserker" && plugin::check_hasitem($client, 68299) && $qglobals{"berserk_epic"} == undef) {
 			quest::say("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Have you spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
 			quest::setglobal("berserk_epic", 1, 5, "F");
 		  }

@@ -68,6 +68,7 @@ function Subversion_Timer(e)
       eq.spawn_condition(this_zone, instance_id, 1, 0);
 
       eq.zone_emote(13, "You have been found unworthy.");
+      eq.depop_all(306000);
       eq.depop();
 
       for k,v in pairs(player_list) do

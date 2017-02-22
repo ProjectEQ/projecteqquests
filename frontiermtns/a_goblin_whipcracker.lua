@@ -1,5 +1,5 @@
 function event_say(e)
- if(e.language == 14 and e.self:GetLanguageSkill(14) >= 100 and zone_time["zone_hour"]==19 and e.other:FindBuff(5574))
+ if(e.language == 14 and e.self:GetLanguageSkill(14) >= 100 and zone_time["zone_hour"]==19 and e.other:FindBuff(5574)) then
 	local qglobals = eq.get_qglobals(e.other);
 	local zone_time = eq.get_zone_time();
 	if (e.message:findi("start the contest")) then

@@ -33,8 +33,14 @@ sub EVENT_SAY {
     quest::say("Yes. I cannot see any longer, my sight long since lost in the march of years. By the blessings of Tunare and Karana, though, I still make myself useful.");
   }
   if ($text=~/out of balance/i){
-	if ( $client->GetGlobal("ranger_epic") ==1) {
+	if ($class eq "Ranger" && $client->GetGlobal("ranger_epic") ==1) {
 		quest::say("I don't know for certain what is wrong. It feels like the start of a cold, a sort of tickling at the back of Norrath's throat, if I may make such a poor metaphor. In much the same way that I can sense that you have wielded the power of nature, probably in the form of the weapons known as Swiftwind and Earthcaller, I can sense a power of illness creeping upon the land. Please, if you come across anything suspicious bring it to me. I am worried, this does not feel like a natural sickness to me. Go with the blessing of the Mother and the speed of the Storm, my child.");
+	}
+	elsif($class eq "Druid" && plugin::check_hasitem($client, 20490)) { #has druid 1.0
+		quest::say("I am certain that you would sense it too, had you been so blessed as to be without sight. My sense of the life of Norrath is greatly heightened without the hindrance of vision. As I can sense that you have at your call the power of the lands, perhaps in the form of the Nature Walkers Scimitar. I can feel an unnatural illness creeping about the edges of Norrath. Please, if you come across anything suspicious bring it to me. I am worried about this cold sickness that I can almost taste. Go with the blessing of the Mother and the speed of the Storm, my child.");
+		if($client->GetGlobal("druid_epic") ==undef) {
+			quest::setglobal("druid_epic", "1", 5, "F"); 
+		}
 	}
 	else {
 		quest::say("I sense something foreboding, young one, but you should think nothing of it. The sons and daughters of nature will be able to deal with this problem.");
@@ -48,9 +54,9 @@ sub EVENT_ITEM {
     quest::summonitem(20450);
     quest::unique_spawn(15178,0,0,-1595,-2595,3.2,127); #spawn sionae
   }
-  elsif(plugin::check_handin(\%itemcount, 62810 => 1)){
+  elsif(plugin::check_handin(\%itemcount, 62810 => 1)){ #Sickly Maiden's Hair
     quest::say("This plant has an illness that I have never sensed before.' Althele pauses in thought for a moment. 'You are a hunter, so I shall put your skills to work. First, take this to Corun in Surefall. He is an expert on animal illnesses. Then put your hunting skills to work and see if you can capture any animals that may have eaten this plant. Corun will want to see them to help him discover what the sickness is.");
-    quest::summonitem(62811);
+    quest::summonitem(62811); #Tuft of Sickly Maiden's Hair
   }
   elsif (plugin::check_handin(\%itemcount, 20452 => 1)) {
     quest::emote("hands the book to Tholris who reads through it with lines of concern etched on his face, then whispers into her ear. 'Dire news, indeed. This cannot be allowed. I must keep this book but you, $name, must not allow Innoruuk to seed the land with his hatred and filth. You have only just begun your quest. The path you are guided upon will be difficult, if not impossible, but someone must finish it. Please, take this, read of it, follow its instructions. Tunare bless your path and Karana watch over you.");

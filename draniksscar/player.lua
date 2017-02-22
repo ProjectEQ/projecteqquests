@@ -4,7 +4,7 @@ local recepactive=false;
 function event_enter_zone(e)
 	if(e.self:Class() == "Warrior" ) then
 		local qglobals = eq.get_qglobals(e.self);
-		if (qglobals["warrior_epic"] >= "2") then                                
+		if (qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "2") then
 			eq.set_timer("borer",5000);
 		end
 	end

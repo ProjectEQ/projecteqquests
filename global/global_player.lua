@@ -72,11 +72,29 @@ function event_combine_success(e)
 		e.self:Message(15,'You have gained 5 ability points!');	
 		eq.set_global("paladin_epic","8",5,"F");
 		e.self:Message(6,"As the four soulstones come together, a soft blue light eminates around the dark sword. The soulstones find themselves at home within the sword. A flash occurs and four voices in unison speak in your mind, 'Thank you for saving us and giving us a purpose again. You are truly our savior and our redeemer, and we shall serve you from now on. Thank you, noble knight!")
+	--bard 1.5 final	
 	elseif(e.recipe_id == 19882) then
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');	
 		eq.set_global("bard15","6",5,"F");
+	--druid 1.5 feerrott
+	elseif(e.recipe_id == 19888) then
+		if(eq.get_zone_short_name()=="feerrott") then
+			eq.spawn2(47209, 0, 0, e.self:GetX()+10,e.self:GetY()+10,e.self:GetZ(),0);
+			e.self:Message(0,"compelled spirit screams as his essences is forced back into the world of the living. 'What is this? Where am I? Who are you? What do you want from me?");
+		else
+			e.self:SummonItem(62827);
+			e.self:SummonItem(62828);
+			e.self:SummonItem(62836);
+		end
+	-- druid 1.5 final
+	elseif(e.recipe_id ==19892) then
+		e.self:AddAAPoints(5);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 5 ability points!');	
+		eq.set_global("druid_epic","8",5,"F");	
+		e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
 	end
 end
 

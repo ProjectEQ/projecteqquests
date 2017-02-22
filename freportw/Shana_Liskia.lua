@@ -60,7 +60,18 @@ function event_trade(e)
 		e.other:SummonItem(62846);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 62618,item2 = 62619})) then
 		e.self:Say("Ah, well, it seems as though the crystal was attuned to these other crystals. They must have come in contact with a rather large element of the disease, otherwise I just can't see how the Mind Crystal would have noticed them. These crystals were created by someone with more experience than I have in this area. I will examine them further and attempt to learn something from them. I can tell now, though, that they were probably created in a fashion similar to the one I used to create the Mind Crystal. Shana pulls out a piece of parchment and writes a note. She gives you the note and says, Take this note to Corun along with the Mind Crystal. He can use the crystal and my notes to seek out the plague in whatever fashion he thinks is best. I need to get to work investigating these new crystals.");
-		e.other:SummonItem(62655);	
+		e.other:SummonItem(62655);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 62852,item2 = 62852,item3 = 62852})) then
+		e.self:Say("Well these certainly are interesting. You say there might be more of them on those necromancers that escaped? Well here, take this. Find all of them and place them into this bag to keep them safe. Then bring them all to me and I'll examine them more closely. I can tell you that they are similiar to the Mind Crystal, but it appears to have different magical properties. I have never seen anything like them and I suspect that they are not from Norrath.");
+		e.other:SummonItem(62852);
+		e.other:SummonItem(62852);
+		e.other:SummonItem(62852);
+		e.other:SummonItem(62853);
+		eq.set_global("druid_epic", "5", 5, "F");
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 62854})) then  --Full Padded Bag
+		e.self:Emote("takes the crystal fragments from the pouch. She applies a drop of liquid to it. The liquid turns the crystal white where it spreads.");
+		e.self:Say("These small crystals are easier to work with than the Mind Crystal. They also differ from the Mind Crystal in that they are from the Plane of Discord. Take this mixture and find something to enhance its magical power and you just might be able to purify the Mind Crystal. I have no idea what that might be, but I know what it should be. You'll need two components. One will increase the power of the mixture, something with a lot of magical power. It needs to be a liquid or powder to integrate properly. And you'll need a stabilizer, something to help the mixture and the new material to remain stable. This influences the kind of attunement that the crystal takes on during the process. It should be something from nature if you want the result to suit your tastes. You'll have to find someone that knows of something about it among the druids for help on what to use.");
+		e.other:SummonItem(62855); --Bowl of Foul-smelling Liquid	
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -11,7 +11,7 @@ sub EVENT_CLICKDOOR {
 sub EVENT_ENTERZONE {
 #quest::delglobal("druid_epic_natimbi");
   if (defined($qglobals{druid_epic}) && $qglobals{druid_epic}==6 && !defined $qglobals{druid_epic_natimbi}) {
-	#quest::setglobal("druid_epic_natimbi",1,3,"H2");
+	quest::setglobal("druid_epic_natimbi",1,3,"H2");
 	quest::unique_spawn(280090,0,0,1451.65,957.84,517.86,216); #ritual conduit
   } 
 }

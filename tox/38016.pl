@@ -20,7 +20,7 @@ sub EVENT_SAY {
   if ($text=~/i will do it/i) {
     quest::say("Ya better hold this.");
 	$client->SummonItem(62829);
-	quest::settimer("pathback",600);
+	quest::settimer("pathback",1200);
 	quest::moveto(-317.17,-2532.23,-41.15,0,1);
 	quest::depop_withtimer(38017);
 	quest::settimer("movetwo",12);

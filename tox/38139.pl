@@ -87,6 +87,6 @@ sub EVENT_SIGNAL {
 	$skelent=0;
 	$skelnpc=0;	
 	$eventstart=1;
-	quest::settimer(2,600);
+	quest::settimer(2,1200);
   }
 }

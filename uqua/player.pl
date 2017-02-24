@@ -41,7 +41,7 @@ sub EVENT_CLICKDOOR {
 	if ($doorid == 12) {
 		if($check_gasnpc2 == 0) {
 			quest::forcedooropen(12);
-        } elsif (($oncursor{67707} && ($qglobals{$instid."_gaschmb2"} == 1)) || ($oncursor{67708} && ($qglobals{$instid."_gaschmb2"} == 2)) || ($oncursor{67709} && ($qglobals{$instid."_gaschmb2"} == 3)) || ($oncursor{67710} && ($qglobals{$instid."_gaschmb2"} == 4)) || ($qglobals{$instid."_gaschmb1complete"} == 1)) {
+		} elsif (defined $qglobals{$instid."_gaschmb2"} && (($oncursor{67707} && ($qglobals{$instid."_gaschmb2"} == 1)) || ($oncursor{67708} && ($qglobals{$instid."_gaschmb2"} == 2)) || ($oncursor{67709} && ($qglobals{$instid."_gaschmb2"} == 3)) || ($oncursor{67710} && ($qglobals{$instid."_gaschmb2"} == 4)) || ($qglobals{$instid."_gaschmb1complete"} == 1))) {
 			quest::forcedooropen(12);
 			quest::setglobal($instid."_gaschmb2complete",1,3,"H6");
 		} else {

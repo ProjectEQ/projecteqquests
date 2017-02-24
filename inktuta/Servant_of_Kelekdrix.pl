@@ -2,7 +2,7 @@ my $instid = 0;
 
 sub EVENT_SAY {
 	$instid = quest::GetInstanceID("inktuta",0);
-	if($qglobals{$instid.'_inktuta_status'} == 0) {
+	if(defined $qglobals{$instid.'_inktuta_status'} && $qglobals{$instid.'_inktuta_status'} == 0) {
 		if ($text=~/hail/i) {
 			quest::emote("screams");
 			quest::say("No, don't kill me!' He relaxes slightly and gives you a strange look. 'Have you been afflicted by the curse? Are you mad!? Have you any idea [" . quest::saylink("who Kelekdrix") . "] is? She will be here any moment to destroy you all. Leave now, or there will be dire [" . quest::saylink("consequences") . "]!");

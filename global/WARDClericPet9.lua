@@ -7,7 +7,7 @@ function event_timer(e)
 	if e.timer=="cast_spell" then
 		e.self:CastSpell(8130, e.self:GetID()); --Aura of Cleansing I
 	elseif e.timer=="first_cast" then
-		e.self:CastSpell(8130 e.self:GetID()); --Aura of Cleansing I
+		e.self:CastSpell(8130, e.self:GetID()); --Aura of Cleansing I
 		eq.stop_timer("first_cast");
 	end
 end

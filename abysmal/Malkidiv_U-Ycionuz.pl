@@ -51,7 +51,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58027 => 1)) { #Chunk of Broken Taelosian Stone Worker
     quest::say("Ah, yes. Here is your clay.");
-    quest::summonitem(58032); #Clump of Refined Taelosian Clay
+    quest::summonitem(58032,2); #Clump of Refined Taelosian Clay
   }
   elsif (plugin::check_handin(\%itemcount, 58200 => 4) || plugin::check_handin(\%itemcount, 58200 => 3) || plugin::check_handin(\%itemcount, 58200 => 2) || plugin::check_handin(\%itemcount, 58200 => 1)) { #Wayfarer Plate
     quest::say("Ah, yes. Thank you.");

@@ -19,7 +19,7 @@ function event_click_door(e)
     end
     local instance_id = eq.get_instance_id("rujd", 50);
     if (instance_id > 0) then
-      e.self:MovePCInstance(260, instance_id, 238, -1163, 130, 0);
+      e.self:MovePCInstance(245, instance_id, -322, 1254, -9525, 120);
     end
   end
 end

@@ -41,6 +41,17 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_TIMER {
 	if($timer == 2) {
+		foreach my $spawn2 (@spawn2list) {   # Depsawn all the mobs in the pit
+			# Set pit mobs to respawn in 30 minutes. comment this line out to not set the 30 minute timer for testing.
+			quest::updatespawntimer($spawn2,1800000);
+			#re-enable the spawn2 entry for all the pit mobs.
+			quest::enable_spawn2($spawn2);
+		}
+		#set the piglet's respawn to 30 minutes.
+		quest::updatespawntimer(157400,1800000);
+		#re-enable the spawn2 entry for piglet
+		quest::enable_spawn2(157400);
+		
 		quest::stoptimer(2);
 		quest::stoptimer(1);
 		quest::depopall(214114);

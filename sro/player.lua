@@ -3,6 +3,10 @@ function event_enter_zone(e)
   if (instance_id > 0) then
     e.self:MarkSingleCompassLoc(1346.18, -2099.33, -88.0377);
   end
+  local instance_id = eq.get_instance_id("rujd", 50);
+  if (instance_id > 0) then
+    e.self:MarkSingleCompassLoc(1346.18, -2099.33, -88.0377);
+  end  
 end
 
 function event_click_door(e)
@@ -13,6 +17,9 @@ function event_click_door(e)
     if (instance_id > 0) then
       e.self:MovePCInstance(260, instance_id, 238, -1163, 130, 0);
     end
-
+    local instance_id = eq.get_instance_id("rujd", 50);
+    if (instance_id > 0) then
+      e.self:MovePCInstance(260, instance_id, 238, -1163, 130, 0);
+    end
   end
 end

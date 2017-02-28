@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("They've been a real problem lately. Not that they aren't always a problem, but there was all this commotion about some sort of contest with a prize a while ago. It seems that they've [" .. eq.say_link("forgotten") .. "] it again for the moment, thank goodness.");
 	elseif(e.message:findi("forgotten")) then
 		e.self:Say("Yes, forgotten. They forget about this contest for a while, then suddenly one of them remembers. Fights break out for a while over who will win the [" .. eq.say_link("prize") .. "] then they forget again until the next one remembers it. I wish they'd have this contest already and get it over with.");
-	elseif(e.message:findi("forgotten")) then
+	elseif(e.message:findi("prize")) then
 		e.self:Say("I don't know for sure what the prize is, I don't speak goblin all that well. All I know is that they discovered something on some poor [" .. eq.say_link("victim") .. "] that they desire. I'm not certain that they even know what it is from the way they talk about it.");
 	elseif(e.message:findi("victim")) then
 		e.self:Say("I don't know who it was, just someone that they caught sneaking into or out of Droga. You know, I'm tempted to dress up like a goblin and insist that they start the contest already, just so it will be over and we can go back to the relative peace and quiet I've learned to enjoy out here.");			

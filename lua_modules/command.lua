@@ -1,7 +1,6 @@
 function command_lockouts(e)
 	local instance_requests = require("instance_requests")
-	local lockout_globals = {
-			{ "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
+	local lockout_globals = {			
 			{ "potimeb_lockout", "Plane of Time"},
 			{ "lockout_ikky_g1", "Ikkinz Group Trial #1: Singular Might"},
 			{ "lockout_ikky_g2", "Ikkinz Group Trial #2: Twin Struggles"},
@@ -24,10 +23,14 @@ function command_lockouts(e)
       { "Tacvi_ZMMD", "Tacvi: Zun`Muram Mordl Delt" },
       { "Tacvi_ZMYV", "Tacvi: Zun`Muram Yihst Vor" },   
       { "Tacvi_TMCV", "Tacvi: Tunat`Muram Cuu Vauax" },
+	  { "LDON_rujd", "LDoN Raid: Rujarkian Hills: Prison Break"},
       { "LDON_rujg", "LDoN Raid: Rujarkian Hills: Hidden Vale of Deceit"},
+	  { "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
+	  { "LDON_mirg", "LDoN Raid: Miragul's Menagerie: Folly of Miragul's Ambition"},
       { "LDON_mmcc", "LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny"},
       { "LDON_takc", "LDoN Raid: Takish-Hiz: Within the Compact" },
-      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"},
+	  { "LDON_guke", "LDoN Raid: Deepest Guk: The Curse Reborn"},
+      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"}, 	  
       { "MPG_fear", "MPG: The Mastery of Fear"},
       { "MPG_weaponry", "MPG: The Mastery of Weaponry"},
       { "MPG_subversion", "MPG: The Mastery of Subversion"},

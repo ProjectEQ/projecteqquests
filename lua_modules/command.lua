@@ -1,3 +1,4 @@
+--use the command.lua in /server/lua_modules, not this one
 function command_lockouts(e)
 	local instance_requests = require("instance_requests")
 	local lockout_globals = {			
@@ -26,11 +27,11 @@ function command_lockouts(e)
 	  { "LDON_rujd", "LDoN Raid: Rujarkian Hills: Prison Break"},
       { "LDON_rujg", "LDoN Raid: Rujarkian Hills: Hidden Vale of Deceit"},
 	  { "mirb_50_lockout", "LDoN Raid: Miragul's Menagerie: Frozen Nightmare"},
-	  { "LDON_mirg", "LDoN Raid: Miragul's Menagerie: Folly of Miragul's Ambition"},
+	  { "LDON_mirg", "LDoN Raid: Miragul's Menagerie: Folly of Miragul's Ambition"},	  
       { "LDON_mmcc", "LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny"},
       { "LDON_takc", "LDoN Raid: Takish-Hiz: Within the Compact" },
 	  { "LDON_guke", "LDoN Raid: Deepest Guk: The Curse Reborn"},
-      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"}, 	  
+      { "LDON_gukg", "LDoN Raid: Deepest Guk: Ritualist of Hate"},
       { "MPG_fear", "MPG: The Mastery of Fear"},
       { "MPG_weaponry", "MPG: The Mastery of Weaponry"},
       { "MPG_subversion", "MPG: The Mastery of Subversion"},

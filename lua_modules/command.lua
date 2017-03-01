@@ -1,4 +1,4 @@
---use the command.lua in /server/lua_modules, not this one
+--copy or symbolic link this file to /server/lua_modules/, it will not work in /server/quests/lua_modules/
 function command_lockouts(e)
 	local instance_requests = require("instance_requests")
 	local lockout_globals = {			
@@ -43,7 +43,8 @@ function command_lockouts(e)
       { "MPG_endurance", "MPG: Trial of Endurance" },
       { "MPG_foresight", "MPG: Trial of Foresight" },
       { "MPG_adaptation", "MPG: Trial of Adaptation" },
-      { "MPG_corruption", "MPG: Trial of Corruption" }
+      { "MPG_corruption", "MPG: Trial of Corruption" },
+	  { "paladinEpicDranikCata","Dranik Catacombs A" }
 		}
   instance_requests.DisplayLockouts(e.self, e.self, lockout_globals)
 end

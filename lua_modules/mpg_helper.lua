@@ -1,3 +1,27 @@
+-- Group Trial Version 1 of zone
+-- Raid  Trial Version 2 of zone
+--
+-- MPG Group Trial Bits:
+-- 1  MPG_fear
+-- 2  MPG_ingenuity
+-- 4  MPG_weaponry
+-- 8  MPG_subversion
+-- 16 MPG_efficiency
+-- 32 MPG_destruciton
+--
+-- Lockout on Win: 72 hours
+-- Lockout on Loss: 2 hours
+--
+-- MPG Raid Trial General Notes
+-- 1  MPG_hate           - The Mastery of Hate (Raid)
+-- 2  MPG_endurance      - The Mastery of Endurance (Raid)
+-- 4  MPG_foresight      - The Mastery of Foresight (Raid)
+-- 8  MPG_specialization - The Mastery of Specialization (Raid)
+-- 16 MPG_adaptation     - The Mastery of Adaptation (Raid)
+-- 32 MPG_corruption     - The Mastery of Corruption (Raid)
+--
+-- Lockout on Win: 5 days
+-- Lockout on Loss: 2 hours (think the instance lives for 3 hours now so its really 3 hours)
 local mpg_helper = {};
 
 -- Function: UpdateGroupTrialLockout
@@ -73,4 +97,36 @@ function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_
   end
 end
 
+-- lockout time is in hours
+function mpg_helper.SetLockoutTime(instance_id_in, lockout_name_in, lockout_time_in)
+  local instance_requests = require("instance_requests");
+  local player_list = eq.get_characters_in_instance(instance_id_in);
+  for k,v in pairs(player_list) do
+    eq.debug( "k: " .. k .. " v: " .. v .. " lockout: " .. lockout_name_in );
+    eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(lockout_time_in)), "H" .. lockout_time_in, 0, v, 0);
+  end
+end
+
+function mpg_helper.Display_Group_Trials_Completed(client)
+  -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
+  -- a Character complets a trial.
+  local client_globals = eq.get_qglobals(client);
+  local mpg_group_trials = tonumber(client_globals["mpg_group_trials"]);
+  if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
+
+  local trial_bit_list = {1,2,4,8,16,32};
+  local trial_bit_table = {
+    {1, "The Mastery of Fear"},
+    {2, "The Mastery of Ingenuity"},
+    {4, "The Mastery of Weaponry"},
+    {8, "The Mastery of Subversion"},
+    {16,"The Mastery of Efficiency"},
+    {32,"The Mastery of Destruction"}};
+
+  for bitkey,bitval in pairs(trial_bit_table) do
+    if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then
+      client:Message(15, "You have completed: " .. bitval[2]);
+    end
+  end
+end
 return mpg_helper;

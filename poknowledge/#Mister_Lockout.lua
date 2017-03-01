@@ -45,8 +45,8 @@ function event_say(e)
       { "MPG_endurance", "MPG: Trial of Endurance" },
       { "MPG_foresight", "MPG: Trial of Foresight" },
       { "MPG_adaptation", "MPG: Trial of Adaptation" },
-      { "MPG_corruption", "MPG: Trial of Corruption" }
-
+      { "MPG_corruption", "MPG: Trial of Corruption" },
+	  { "paladinEpicDranikCata","Dranik Catacombs A" }
 		}
 
 	if(e.message:findi("hail")) then

@@ -1,21 +1,21 @@
 sub EVENT_SAY {
- if($text=~/hail/i){
-
- # quest::setglobal("monk_epic", "2", 5, "F");
- # quest::delglobal("monk_epic");
-	if($client->GetGlobal("monk_epic") == undef){
-		quest::me("As you look at this individual, you can tell he has something bothering him greatly.");
-		quest::say("Eh? There is nothing I can help you with. I have nothing for myself anymore... except these [" . quest::saylink("cursed dreams") . "].");
-    if(plugin::check_hasitem($client, 10652) or $client->GetGlobal("MnkPre") == 3 ) {
-      quest::setglobal("monk_epic", "1", 5, "F"); 
-    } else {
-      quest::setglobal("MnkPre", "1", 5, "F"); 
+  if ($text=~/hail/i) {
+    if ($client->GetGlobal("monk_epic") == undef) {
+      quest::me("As you look at this individual, you can tell he has something bothering him greatly.");
+      quest::say("Eh? There is nothing I can help you with. I have nothing for myself anymore... except these [" . quest::saylink("cursed dreams") . "].");
+      if(plugin::check_hasitem($client, 10652) or $client->GetGlobal("MnkPre") == 3 ) {
+        quest::setglobal("monk_epic", "1", 5, "F"); 
+      } 
+      else {
+        if ($client->GetGlobals("MnkPre") == undef) {
+          quest::setglobal("MnkPre", "1", 5, "F"); 
+        }
+      }
+    } elsif($client->GetGlobal("monk_epic") ==1) {
+      quest::say("In my dreams I see sand as red as blood and skies scorched from war. It is a terrible vision that has haunted me greatly. Please find a way to let me know if this is fact or fiction, $name.");
     }
-	}
-	elsif($client->GetGlobal("monk_epic") ==1){
-		quest::say("In my dreams I see sand as red as blood and skies scorched from war. It is a terrible vision that has haunted me greatly. Please find a way to let me know if this is fact or fiction, $name.");
-	}
-}	
+  }
+	
   if(($text=~/cursed dreams/i)){
 	  if ( $client->GetGlobal("monk_epic") ==1 ) {
          quest::say("I pray that they stay locked within my mind for the world as we know it would be changed forever. In my dreams I see sand as red as blood and skies scorched from war. It is a terrible [" . quest::saylink("vision") . "].");	 
@@ -23,7 +23,7 @@ sub EVENT_SAY {
     elsif ($client->GetGlobal("MnkPre") == 1 ) {
          quest::say("I sense something within you. You may walk the path, but I must be certain. The information I possess is too important to give to just anyone. If you believe you are worthy of the information I hold you will complete this [" . quest::saylink("task") . "] I ask.");
       }	 
-}
+  }
   if($text=~/task/i){
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Do not think that it will be an easy feat, even for one with such capabilities as yourself. There are two masters you must find. They will show you the ways of the enlightened. Return to me after you have gained proof of your deeds.");

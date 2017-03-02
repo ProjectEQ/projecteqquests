@@ -1,11 +1,15 @@
 sub EVENT_SAY {
- if($text=~/hail/i){ 
+ if($text=~/hail/i and $client->GetGlobal("MnkPre") == 1 ){ 
   # Monk Epic 1.5/2.0 (Prequest)
-  quest::say("So you wish to challenge me, eh? Why else would you be here bearing the Sign of Acceptance. It is your own funeral though. If you still wish to [prove your worth] and ascend to the next level I am ready.");
+  quest::say("So you wish to challenge me, eh? Why else would you be here bearing the Sign of Acceptance. It is your own funeral though. If you still wish to [" . quest::saylink("I will prove my worth", false, "prove your worth") . "] and ascend to the next level I am ready.");
   }
- elsif($text=~/i will prove my worth/i){ 
+ elsif($text=~/i will prove my worth/i and $client->GetGlobal("MnkPre") == 1 ){ 
   # Monk Epic 1.5/2.0 (Prequest)
   quest::say("I didnt know slime could speak common.. go back to the sewer before I lose my temper.");
+  $npc->SetSpecialAbility(19, 0);
+  $npc->SetSpecialAbility(20, 0);
+  $npc->SetSpecialAbility(24, 0);
+  $npc->SetSpecialAbility(25, 0);
   quest::attack($name);  
  }
 }

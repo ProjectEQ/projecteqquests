@@ -1,6 +1,7 @@
 sub EVENT_SAY {
  if($text=~/hail/i) {
-	 if($client->GetGlobal("monk_epic") >=5 && (plugin::check_hasitem($client, 48111) || plugin::check_hasitem($client, 48112) || plugin::check_hasitem($client, 48113))){ 
+	 if($client->GetGlobal("monk_epic") >=5 && (plugin::check_hasitem($client, 48111) || plugin::check_hasitem($client, 48112) || plugin::check_hasitem($client, 48113)
+	 || plugin::check_hasitem($client, 48124) || plugin::check_hasitem($client, 48125) || plugin::check_hasitem($client, 48126))){ 
 	  # Monk Epic 1.5
 	  quest::say("Ah, I see you have seen a Disciple. The tokens you now possess are used to represent status among the Order. There used to be a tradesman that would fashion them into sashes for us but I'm afraid he has since passed on. I believe there may be another that has learned his trade. His name is Eryke Stremstin, and you should be able to find him peddling his wares across the land. Take this and give it to him. He should be able to tell you of what you will need to fashion your new sash. Once you have fashioned it please bring it to me.");
 	  quest::summonitem(48128); 
@@ -93,6 +94,7 @@ sub EVENT_ITEM {
   # Summon: Globe of Discordant Energy
   quest::summonitem(47100);
  }
+ plugin::return_items(\%itemcount);
 }
 
 

@@ -260,7 +260,7 @@ function Prisoner_Trade(e)
 	else
 		e.self:Emote("'s eyes gleam as the key clicks in the lock and the shackles fall to the ground. 'Thanks you friend, I knew the brotherhood would send someone for us.  Hurry and free the others before the warden returns.");
 	end
-		e.other:AddEXP(3976503);
+		e.other:AddEXP(397650);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

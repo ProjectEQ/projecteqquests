@@ -69,7 +69,7 @@ sub EVENT_SAY
 	}
 	
 	if ($text=~/help you/i) {
-		quest::say("Then let's get started! This man Tylis suffers from mental torment. Look at him ______ he is in pain. His illness is no ordinary illness. Someone is controlling his mind and we need to stop the source ofthis torment. You can find the one who controls his mind inside the Plane of Torment. We want to learn more about how his brain works. Destroy the source and bring me back his brain so we can set those under his spell free.");
+		quest::say("Then let's get started! This man Tylis suffers from mental torment. Look at him $name he is in pain. His illness is no ordinary illness. Someone is controlling his mind and we need to stop the source ofthis torment. You can find the one who controls his mind inside the Plane of Torment. We want to learn more about how his brain works. Destroy the source and bring me back his brain so we can set those under his spell free.");
 	}
 	
 	if ($text=~/mylik/i) {

@@ -29,10 +29,9 @@ sub EVENT_LOOT {
 			$x = $client->GetX();
 			$y = $client->GetY();
 			$z = $client->GetZ();
-			quest::spawn2(283157,0,0,$x,$y,$z,0);
-			return 0;
+			quest::spawn2(283157,0,0,$x,$y,$z,0);			
 		}
- 
+	  return 0;
 	}
 	else 
 	{

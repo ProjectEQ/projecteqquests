@@ -1,30 +1,34 @@
 sub EVENT_SAY {
- if($text=~/hail/i){
-
- # quest::setglobal("monk_epic", "2", 5, "F");
- # quest::delglobal("monk_epic");
-	if(plugin::check_hasitem($client, 10652) && $client->GetGlobal("monk_epic") ==undef){
-		quest::setglobal("monk_epic", "1", 5, "F"); 
-		quest::me("As you look at this individual, you can tell he has something bothering him greatly.");
-		quest::say("Eh? There is nothing I can help you with. I have nothing for myself anymore... except these [" . quest::saylink("cursed dreams") . "].");
-	}
-	elsif($client->GetGlobal("monk_epic") ==1){
-		quest::say("In my dreams I see sand as red as blood and skies scorched from war. It is a terrible vision that has haunted me greatly. Please find a way to let me know if this is fact or fiction, $name.");
-	}
-}	
+  if ($text=~/hail/i) {
+    if ($client->GetGlobal("monk_epic") == undef) {
+      quest::me("As you look at this individual, you can tell he has something bothering him greatly.");
+      quest::say("Eh? There is nothing I can help you with. I have nothing for myself anymore... except these [" . quest::saylink("cursed dreams") . "].");
+      if(plugin::check_hasitem($client, 10652) or $client->GetGlobal("MnkPre") == 3 ) {
+        quest::setglobal("monk_epic", "1", 5, "F"); 
+      } 
+      else {
+        if ($client->GetGlobals("MnkPre") == undef) {
+          quest::setglobal("MnkPre", "1", 5, "F"); 
+        }
+      }
+    } elsif($client->GetGlobal("monk_epic") ==1) {
+      quest::say("In my dreams I see sand as red as blood and skies scorched from war. It is a terrible vision that has haunted me greatly. Please find a way to let me know if this is fact or fiction, $name.");
+    }
+  }
+	
   if(($text=~/cursed dreams/i)){
-	  if ( $client->GetGlobal("monk_epic") ==1 || $client->GetGlobal("MnkPre") ==1) {
+	  if ( $client->GetGlobal("monk_epic") ==1 ) {
          quest::say("I pray that they stay locked within my mind for the world as we know it would be changed forever. In my dreams I see sand as red as blood and skies scorched from war. It is a terrible [" . quest::saylink("vision") . "].");	 
 	  }
-      else {
+    elsif ($client->GetGlobal("MnkPre") == 1 ) {
          quest::say("I sense something within you. You may walk the path, but I must be certain. The information I possess is too important to give to just anyone. If you believe you are worthy of the information I hold you will complete this [" . quest::saylink("task") . "] I ask.");
       }	 
-}
+  }
   if($text=~/task/i){
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Do not think that it will be an easy feat, even for one with such capabilities as yourself. There are two masters you must find. They will show you the ways of the enlightened. Return to me after you have gained proof of your deeds.");
   }
-  if($text=~/the way/i){
+  if($text=~/the way/i and $client->GetGlobals("MnkPre") == 2){
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Very well then. There is a place full of mirrors. Locate one of them and speak the words, I am ready to be tested. It is at this point you will face the darkness within yourself. You will have to face this foe alone, remember that. Return to me if you manage to prove that you are worthy of true enlightenment.");
   }
@@ -61,13 +65,13 @@ sub EVENT_ITEM {
  elsif(plugin::check_handin(\%itemcount, 48100 => 1, 48101 => 1)){ 
   # Monk Epic 1.5/2.0 (Prequest)
   quest::say("I see you do have the skill that is needed to continue this quest, but you must now face your hardest foe yet. For your final task, you will be alone, and in that moment you will have to face your true self. Many cannot bear to see what they find within. It is at that time we really see what we are capable of. If you wish to continue, I will show you [" . quest::saylink("the way") . "].");
+  quest::setglobal("MnkPre", "2", 5, "F");
  }
  # Handin: Medal of Identity
  elsif(plugin::check_handin(\%itemcount, 48102 => 1)){ 
   # Monk Epic 1.5/2.0 (Prequest)(END)
-  # Flag Monk Prequest = true (need code) 
   quest::say("So I see you do truely have the ability to follow the path of the Enlightened. I am sorry I was not sure before but I am now. Now I must tell you of my [" . quest::saylink("cursed dreams") . "].");
-  quest::setglobal("monk_epic", "2", 5, "F"); 
+  quest::setglobal("MnkPre", "3", 5, "F"); 
  } 
 }
 

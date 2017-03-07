@@ -22,11 +22,20 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_LOOT {
-  if( ($looted_id == 16807) && !defined($qglobals{mage_epic_potchest}) && ($qglobals{mage_epic_fire1} == 1) ) { 
-    $x = $client->GetX();
-    $y = $client->GetY();
-    $z = $client->GetZ();
-    quest::spawn2(283157,0,0,$x,$y,$z,0); #a chest epic 1.5
-	quest::setglobal("mage_epic_potchest", 1, 0, "F");
+  if ($class eq "Magician" && $looted_id == 16807) {
+	if (defined($qglobals{mage_epic_fire1}) && $qglobals{mage_epic_fire1} == 1) {
+	  if (!defined($qglobals{mage_epic_potchest})) {
+			quest::setglobal("mage_epic_potchest", "1", 5, "F"); 
+			$x = $client->GetX();
+			$y = $client->GetY();
+			$z = $client->GetZ();
+			quest::spawn2(283157,0,0,$x,$y,$z,0);			
+		}
+	  return 0;
+	}
+	else 
+	{
+		return 1;
+	}
   }
 }

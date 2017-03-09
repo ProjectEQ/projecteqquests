@@ -16,17 +16,19 @@ function event_hp(e)
 		eq.set_next_hp_event(30);
 	elseif(e.hp_event == 30) then
 		e.self:Emote("chants for a moment, animating fallen soldiers from the ground around him.");
-		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());		-- 'Minions of the Master'
-		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading()); 		-- 'Minions of the Master'
-		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());		-- 'Minions of the Master'
-		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading()); 		-- 'Minions of the Master'
-		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());		-- 'Minions of the Master'
-		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading()); 		-- 'Minions of the Master'
-		eq.set_next_hp_event(10);
-	elseif(e.hp_event == 10) then
+		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());	
+		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());	
+		eq.set_next_hp_event(20);
+	elseif(e.hp_event == 20) then
+		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());		
+		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());		
+		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());
 		e.self:Say("You have underestimated me! I will not fall this day!");
-		e.self:CastSpell(1248, e.self:GetID()); -- He will cast Spiritual Echo on himself at this point.
-		e.self:CastSpell(4746, e.self:GetID()); -- He will also cast Protection of Discord III on himself at this point.
+		e.self:CastSpell(1248, e.self:GetID());	
+		eq.set_next_hp_event(19);
+	elseif(e.hp_event == 19) then
+		e.self:CastSpell(4746, e.self:GetID());
 	end
 end
 

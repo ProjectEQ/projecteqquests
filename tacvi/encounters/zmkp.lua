@@ -75,6 +75,13 @@ local ZMKP_Rage = 100;
 local ZMKP_Speed = 100;
 local ZMKP_Defense = 100;
 
+local target_hp = 90;
+
+local defense_balanced = false;
+local fury_balanced = false;
+local rage_balanced = false;
+local speed_balanced = false;
+
 function ZMKP_Spawn(e)
   eq.spawn2(298125, 0, 0, 412.0, -714.0, -4.125, 227.0);
   eq.spawn2(298126, 0, 0, 339.0, -714.0, -4.125, 44.0);
@@ -86,13 +93,14 @@ function ZMKP_Spawn(e)
   ZMKP_MinHit = 1430;
   ZMKP_AtkHit = 400; -- Rage
   ZMKP_Delay  = 20;
-  
+
   e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
   e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
   e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
   e.self:ModifyNPCStat("atk",           tostring(ZMKP_AtkHit));
   e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
   eq.set_next_hp_event(90);
+  target_hp = 90;
 end
 
 function ZMKP_Combat(e)
@@ -108,52 +116,61 @@ function ZMKP_Timer(e)
   if (e.timer == 'balance') then
     eq.stop_timer(e.timer);
     eq.stop_timer("wipecheck");
-    local speed = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298125):GetHPRatio());
-    local defen = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298126):GetHPRatio());
-    local fury  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298127):GetHPRatio());
-    local rage  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298128):GetHPRatio());
-    local zmkp  = math.floor(eq.get_entity_list():GetMobByNpcTypeID(298029):GetHPRatio());
-
-    local low = math.floor(zmkp - 3);
-    local hi  = math.floor(zmkp + 3);
-
-    if ( speed < low or speed > hi) then
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Speed is falling out of balance. ");
-      -- Reduce ZMKP's Attack Delay by 10% each time the Speed mob is out of Balance.
-      ZMKP_Delay = ZMKP_Delay * 0.90;
-      e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
-    else
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Speed seems to be tipping in your favor. ");
-    end
-    if ( defen < low or defen > hi) then
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Defense is falling out of balance. ");
-      ZMKP_AC = ZMKP_AC + 100;
-      e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
-    else
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Defense seems to be tipping in your favor. ");
-    end
-    if ( fury  < low or fury  > hi) then
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Fury is falling out of balance. ");
-      ZMKP_MaxHit = ZMKP_MaxHit + 585;
-      ZMKP_MinHit = ZMKP_MinHit + 215;
-      e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
-      e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
-    else
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Fury seems to be tipping in your favor. ");
-    end
-    if ( rage  < low or rage  > hi) then
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Rage is falling out of balance. ");
-      ZMKP_AtkHit = ZMKP_AtkHit + 200;
-      e.self:ModifyNPCStat("atk",           tostring(ZMKP_AtkHit));
-    else
-      eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Balance of Rage seems to be tipping in your favor. ");
-    end
-    --eq.zone_emote(14, 'low => ' .. low .. ' hi => ' .. hi .. ' Fury => ' .. fury .. " Rage => " .. rage .. " Speed => " .. speed .. " Defense => " .. defen );
     eq.signal(298125, 1);
     eq.signal(298126, 1);
     eq.signal(298127, 1);
     eq.signal(298128, 1);
-    e.self:ProcessSpecialAbilities(ZMKP_Active);
+
+    local failed = false;
+
+    if (not speed_balanced) then
+      -- Reduce ZMKP's Attack Delay by 10% each time the Speed mob is out of Balance.
+      ZMKP_Delay = ZMKP_Delay * 0.90;
+      e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
+      failed = true;
+    end
+    if (not defense_balanced) then
+      ZMKP_AC = ZMKP_AC + 100;
+      e.self:ModifyNPCStat("ac",            tostring(ZMKP_AC));
+      failed = true;
+    end
+    if (not fury_balanced) then
+      ZMKP_MaxHit = ZMKP_MaxHit + 585;
+      ZMKP_MinHit = ZMKP_MinHit + 215;
+      e.self:ModifyNPCStat("max_hit",       tostring(ZMKP_MaxHit));
+      e.self:ModifyNPCStat("min_hit",       tostring(ZMKP_MinHit));
+      failed = true;
+    end
+    if (not rage_balanced) then
+      ZMKP_AtkHit = ZMKP_AtkHit + 200;
+      e.self:ModifyNPCStat("atk",           tostring(ZMKP_AtkHit));
+      failed = true;
+    end
+
+    if (failed) then
+      eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Your failure to balance the scales has added to Kvxe's already impressive skills.");
+    else
+      eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe's body trembles as he fails to gather power from the balanced scales.");
+    end
+
+    -- so dots will oddly still hurt him, with enough necros it is possible to skip an event if we just used HP events (live doesn't skip, probably does if you manage to kill him though)
+    -- So instead of just using straight HP events, we gotta do some checking here!
+    if (math.floor(e.self:GetHPRatio()) <= (target_hp - 10)) then
+        -- we'll we gotta skip an active phase basically, to next balance!
+        eq.set_timer("balance", ZMKP_Balance_Timer);
+        eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+        e.self:SetOOCRegen(0);
+        target_hp = target_hp - 10;
+
+        eq.signal(298125, 2);
+        eq.signal(298126, 2);
+        eq.signal(298127, 2);
+        eq.signal(298128, 2);
+    else
+        e.self:ProcessSpecialAbilities(ZMKP_Active);
+        target_hp = target_hp - 10;
+        eq.set_next_hp_event(target_hp);
+    end
   elseif (e.timer == "wipecheck") then
     -- Check to see if there are any Clients in the room with ZMKP
     local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 9000);
@@ -176,9 +193,8 @@ function ZMKP_Hp(e)
   if (e.hp_event == 90) then
     eq.get_entity_list():FindDoor(16):SetLockPick(-1);
 
-    eq.set_next_hp_event( e.hp_event -10);
     eq.set_timer("balance", ZMKP_Balance_Timer);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
@@ -189,8 +205,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 80) then
-    eq.set_next_hp_event( e.hp_event -10);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
@@ -202,8 +217,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 70) then
-    eq.set_next_hp_event( e.hp_event -10);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
@@ -215,8 +229,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 60) then
-    eq.set_next_hp_event( e.hp_event -10);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
@@ -228,8 +241,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 50) then
-    eq.set_next_hp_event( e.hp_event -10);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
@@ -241,8 +253,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 40) then
-    eq.set_next_hp_event( e.hp_event -10);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
@@ -254,8 +265,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 30) then
-    eq.set_next_hp_event( e.hp_event -10);
-    e.self:Emote(" enters a state of battle meditation. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
     eq.set_timer("balance", ZMKP_Balance_Timer);
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetOOCRegen(0);
@@ -267,7 +277,7 @@ function ZMKP_Hp(e)
     eq.signal(298128, 2);
 
   elseif (e.hp_event == 20) then
-    e.self:Emote("enters a state of seething rage as he accelerates his combat speed. ");
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of seething rage as he accelerates his combat speed.");
     ZMKP_Delay = ZMKP_Delay * 0.90;
     e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
   end
@@ -307,10 +317,60 @@ function ZMKP_Signal_Balance(e)
     e.self:ProcessSpecialAbilities(ZMKP_Inactive);
     e.self:SetHP(e.self:GetMaxHP());
     e.self:WipeHateList();
+
+    -- lets double check
+    if (e.self:GetHPRatio() <= (target_hp - 3)) then
+      local id = e.self:GetNPCTypeID();
+      if (id == 298125) then
+        speed_balanced = false;
+      elseif (id == 298126) then
+        defense_balanced = false;
+      elseif (id == 298127) then
+        fury_balanced = false;
+      elseif (id == 298128) then
+        rage_balanced = false;
+      end
+      eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " is falling out of balance.");
+    end
   elseif (e.signal == 2) then
+    defense_balanced = false;
+    fury_balanced = false;
+    rage_balanced = false;
+    speed_balanced = false;
+
+    eq.set_next_hp_event(target_hp + 3);
     e.self:ProcessSpecialAbilities("42,1")
     e.self:SetHP(e.self:GetMaxHP());
     e.self:WipeHateList();
+  end
+end
+
+function ZMKP_Hp_Balance(e)
+  if (e.hp_event == (target_hp + 3)) then
+    local id = e.self:GetNPCTypeID();
+    if (id == 298125) then
+      speed_balanced = true;
+    elseif (id == 298126) then
+      defense_balanced = true;
+    elseif (id == 298127) then
+      fury_balanced = true;
+    elseif (id == 298128) then
+      rage_balanced = true;
+    end
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " seems to be tipping in your favor.");
+    eq.set_next_hp_event(target_hp - 3)
+  elseif (e.hp_event == (target_hp - 3)) then
+    local id = e.self:GetNPCTypeID();
+    if (id == 298125) then
+      speed_balanced = false;
+    elseif (id == 298126) then
+      defense_balanced = false;
+    elseif (id == 298127) then
+      fury_balanced = false;
+    elseif (id == 298128) then
+      rage_balanced = false;
+    end
+    eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " is falling out of balance.");
   end
 end
 
@@ -332,6 +392,11 @@ function event_encounter_load(e)
   eq.register_npc_event('zmkp', Event.signal,         298126, ZMKP_Signal_Balance);
   eq.register_npc_event('zmkp', Event.signal,         298127, ZMKP_Signal_Balance);
   eq.register_npc_event('zmkp', Event.signal,         298128, ZMKP_Signal_Balance);
+
+  eq.register_npc_event('zmkp', Event.hp,             298125, ZMKP_Hp_Balance);
+  eq.register_npc_event('zmkp', Event.hp,             298126, ZMKP_Hp_Balance);
+  eq.register_npc_event('zmkp', Event.hp,             298127, ZMKP_Hp_Balance);
+  eq.register_npc_event('zmkp', Event.hp,             298128, ZMKP_Hp_Balance);
 end
 
 function event_encounter_unload(e)

@@ -179,8 +179,14 @@ function Boss_Signal(e)
     -- recheck the current client count v/s the count
     -- when the event started
     local now_clients = eq.get_entity_list():GetClientList();
-
-    Event_Loss(e);
+    local count = 0;
+    for v in now_clients.entries do
+      count = count + 1;
+    end
+    
+    if (count < 6) then
+      Event_Loss(e);
+    end
   end
 end
 

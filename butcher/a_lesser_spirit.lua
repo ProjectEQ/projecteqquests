@@ -1,4 +1,7 @@
 --This will start Shaman Epic 1.0
+function event_spawn(e)
+  eq.set_timer("depop",600000);
+end
 
 function event_say(e)
 	if(e.message:findi("hail")) then 					--Part of Shaman Epic 1.0
@@ -16,8 +19,11 @@ function event_say(e)
 	elseif(e.message:findi("know more")) then 			--Part of Shaman Epic 1.0
 		e.self:Say("That is good, " .. e.other:GetName() .. ". Take this gem. It is a part of us like the clouds to the sky and is a wonderful gift from the grandfather. Take this gem to where the humans gather to spoil the land and water. Some call it a port. There you will find one of us, a shaman like yourself. Give him the gem and perhaps he will tell you more of the spirits.");
 		e.other:SummonItem(1665);
-		eq.depop();
 	end
+end
+
+function event_timer(e)
+  eq.depop()
 end
 
 --Submitted by: Jim Mills

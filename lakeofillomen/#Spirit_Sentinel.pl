@@ -16,11 +16,11 @@ if ($text=~/ingredients/i) {
 }
 }
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 1678 =>1 )) {
+  if (defined $qglobals{shaman_pre} && $qglobals{shaman_pre} == 1 && plugin::check_handin(\%itemcount, 1678 =>1 )) {
     quest::say("You can now be called a heyokah, but there is much you may still do. I do require several [ingredients] for the potion I am required to make and should you assist me, there is a spirit with even greater tasks that will give you audience.");
     quest::setglobal("shaman_pre",2,5,"F");
   }
-  if (plugin::check_handin(\%itemcount, 57988 =>1, 57991 =>1, 57990 =>1, 57989 =>1 )) {
+  if (defined $qglobals{shaman_pre} && ${shaman_pre} == 2 && plugin::check_handin(\%itemcount, 57988 =>1, 57991 =>1, 57990 =>1, 57989 =>1 )) {
    quest::say("You have served us well and now I may get to work. You are indeed ready and should seek out the Elder Spirit of Enlightenment as soon as you are able. Should he deem you worthy and wise enough, he will have much work for you to do to preserve the way of the shaman."); 
    quest::setglobal("shaman_pre",3,5,"F");
   }

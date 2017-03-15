@@ -6,7 +6,7 @@
 --local warnings;
 --local minutes_remaining;
 --local player_list;
---local instance_requests; 
+--local instance_requests;
   
 local prisoners_freed=0; --3 to spawn #Prison_Guard_Talkor
 local pg_chest=0; --killed #Prison_Guard_Talkor
@@ -15,6 +15,8 @@ local rpg_dead=0; --# of a_Rujarkian_prison_guard "dead" via npc or pc
 local rpg_piyea=0;
 local rpg_eneau=0;
 local rpg_maziyae=0;
+
+local boss_spawn=0;
 
 function TM_Combat(e)
 	if e.joined then
@@ -188,10 +190,11 @@ function RPG_Death(e)
 end
 
 function check_RPG()
-	if (rpg_dead>=5) then
+	if (rpg_dead>=5 and boss_spawn==0) then
 		eq.zone_emote(15, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
 		eq.spawn2(245296, 0, 0, 898, -1023, -16, 128);  --warden
 		eq.spawn2(245284, 0, 0, 896, -1107, -17.8, 0);  --shaman
+		boss_spawn=1;
 	end
 end
 

@@ -215,15 +215,17 @@ function Kyv_Timer(e)
     eq.stop_timer(e.timer);
     i = e.self:GetNPCTypeID();
     client = kyv_targets[i][1];
-    loc = kyv_targets[i][3];
-    if ( kyvs[kyv_targets[i][2]][2](e, client, loc) == false ) then
-	  client:Message(14, kyvs[kyv_targets[i][2]][4]);
-      e.self:CastSpell(kyvs[kyv_targets[i][2]][3], client:GetID(), 0, 4500);
-      eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
-    else
-      msg = 'An arrow narrowly misses you.';
+    if (client.valid) then 
+      loc = kyv_targets[i][3];
+      if ( kyvs[kyv_targets[i][2]][2](e, client, loc) == false ) then
+        client:Message(14, kyvs[kyv_targets[i][2]][4]);
+        e.self:CastSpell(kyvs[kyv_targets[i][2]][3], client:GetID(), 0, 4500);
+        eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
+      else
+        msg = 'An arrow narrowly misses you.';
+      end
+      client:Message(14, msg);
     end
-    client:Message(14, msg);
     eq.set_timer('kyv', kyv_timer * 1000 + 4500);
   end
 end
@@ -281,13 +283,13 @@ end
 
 function check_rings(mob, client)
   if ( client:GetItemIDAt(15) ~= -1 ) then
-	client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
+    client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
     mob:CastSpell(5695, client:GetID());
   else
     client:Message(14, "Your regain the use of your fingers.");
   end
   if ( client:GetItemIDAt(16) ~= -1 ) then
-	client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
+    client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
     mob:CastSpell(5695, client:GetID());
   else
     client:Message(14, "Your regain the use of your fingers.");

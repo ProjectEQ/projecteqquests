@@ -20,7 +20,7 @@ he says this every 5.5 minutes - why?
 Keldovan the Harrier says 'You have earned the right to die at my feet.'
 --]]
 
-local entity_list = eq.get_entity_list();
+--local entity_list = eq.get_entity_list();
 local dead_dogs = 0
 local inst_id = 0;
 local touch_enabled = 1;
@@ -115,14 +115,15 @@ function Keldovan_Timer(e)
 end
 
 function check_dogs(e,inc_or_dec)
-	e.self:Shout("incordec:" .. inc_or_dec);
+	--e.self:Shout("incordec:" .. inc_or_dec);
 	if (dead_dogs == 0) then
 		e.self:ModifyNPCStat("mr", "600");
 		e.self:ModifyNPCStat("fr", "600");
 		e.self:ModifyNPCStat("cr", "600");
 		e.self:ModifyNPCStat("pr", "600");
 		e.self:ModifyNPCStat("dr", "600");
-		e.self:ModifyNPCStat("special_attacks","1,1^2,1^5,1^7,1^12,1^13,1^14,1^15,1^16,1^17,1^21,1");
+		e.self:SetSpecialAbility(SpecialAbility.unslowable, 1);
+		--e.self:ModifyNPCStat("special_attacks","1,1^2,1^5,1^7,1^12,1^13,1^14,1^15,1^16,1^17,1^21,1");
 		e.self:ModifyNPCStat("avoidance", "250");
 		torment_enabled=1;
 		touch_enabled=1;		
@@ -146,7 +147,8 @@ function check_dogs(e,inc_or_dec)
 		else
 			e.self:Emote("regains his senses."); --made this up
 		end
-		e.self:ModifyNPCStat("special_attacks","1,1^2,1^5,1^7,1^13,1^14,1^15,1^16,1^17,1^21,1"); --removed 12, unslowable
+		e.self:SetSpecialAbility(SpecialAbility.unslowable, 0);
+		--e.self:ModifyNPCStat("special_attacks","1,1^2,1^5,1^7,1^13,1^14,1^15,1^16,1^17,1^21,1"); --removed 12, unslowable
 		e.self:ModifyNPCStat("avoidance", "250");
 	elseif (dead_dogs == 3) then
 		if (inc_or_dec > 0) then

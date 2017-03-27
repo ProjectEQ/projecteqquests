@@ -13,19 +13,19 @@ sub EVENT_SAY
 {
 	if($text=~/hail/i)
 		{
-		quest::say("Greetings, $name. You have certainly traveled far from home. To what does Taromani owe the pleasure of this visit? Have you come to tell me a [story]?");
+		quest::say("Greetings, $name. You have certainly traveled far from home. To what does Taromani owe the pleasure of this visit? Have you come to tell me a [" . quest::saylink("story") . "]?");
 		}
 	if($text=~/story/i)
 		{
-		quest::say("Splendid! I relish an opportunity to swap tales with mortals. Allow me to go first. In a shattered realm, there existed a twisted overlord that ruled all. He laid waste to entire worlds, destroying or consuming whatever he touched. Those that resisted his influence were quickly annihilated or enslaved. His lands were governed with an iron fist and later abandoned when they no longer served his purpose. This overlord was universally feared and despised. Yet, while his presence was eternally felt, the despot was rarely seen. He had sealed himself away in his citadel in the sky, flanked by his most trusted underlings. None [dared challenge] him there.");
+		quest::say("Splendid! I relish an opportunity to swap tales with mortals. Allow me to go first. In a shattered realm, there existed a twisted overlord that ruled all. He laid waste to entire worlds, destroying or consuming whatever he touched. Those that resisted his influence were quickly annihilated or enslaved. His lands were governed with an iron fist and later abandoned when they no longer served his purpose. This overlord was universally feared and despised. Yet, while his presence was eternally felt, the despot was rarely seen. He had sealed himself away in his citadel in the sky, flanked by his most trusted underlings. None [" . quest::saylink("dared challenge") . "] him there.");
 		}
 	if($text=~/dared challenge/i)
 		{
-		quest::emote("smirks and continues, 'The reason no one challenged the overlord was because his realm was fatal to all but a select few. The forces of chaos magic present there would tear most beings to shreds. Only with the proper protection could a mortal hope to enter the citadel of Anguish and survive the experience. It was the ultimate defense against invasion. However, there was a [flaw] in the overlord's plans.");
+		quest::emote("smirks and continues, 'The reason no one challenged the overlord was because his realm was fatal to all but a select few. The forces of chaos magic present there would tear most beings to shreds. Only with the proper protection could a mortal hope to enter the citadel of Anguish and survive the experience. It was the ultimate defense against invasion. However, there was a [" . quest::saylink("flaw") . "] in the overlord's plans.");
 		}
 	if($text=~/flaw/i)
 		{
-		quest::emote("licks her lips and whispers, 'The overlord failed to consider what would occur if a certain $race named $name were to do a few favors for a Pyrilen named Taromani in return for her protection. Now it's your turn to finish the story. How does it end? Does the $race assist with the [favors]?");
+		quest::emote("licks her lips and whispers, 'The overlord failed to consider what would occur if a certain $race named $name were to do a few favors for a Pyrilen named Taromani in return for her protection. Now it's your turn to finish the story. How does it end? Does the $race assist with the [" . quest::saylink("favors") . "]?");
 		}
 	if($text=~/favors/i)
 		{

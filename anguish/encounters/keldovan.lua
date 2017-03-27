@@ -126,11 +126,11 @@ function check_dogs(e,inc_or_dec)
 		e.self:ModifyNPCStat("avoidance", "250");
 		torment_enabled=1;
 		touch_enabled=1;		
-		if (inc_or_dec < 0) 
+		if (inc_or_dec < 0) then
 			e.self:Emote("regains his protection from magic."); --made this up
 		end		
 	elseif (dead_dogs == 1) then
-		if (inc_or_dec > 0) 
+		if (inc_or_dec > 0) then
 			e.self:Emote("reels in pain as his protection from magic wavers.");
 		else
 			e.self:Emote("regains his protection from slow."); --made this up
@@ -141,7 +141,7 @@ function check_dogs(e,inc_or_dec)
 		e.self:ModifyNPCStat("pr", "236");
 		e.self:ModifyNPCStat("dr", "236");
 	elseif (dead_dogs == 2) then
-		if (inc_or_dec > 0) 
+		if (inc_or_dec > 0) then
 			e.self:Emote("howls as his protection from slow dwindles.");
 		else
 			e.self:Emote("regains his senses."); --made this up
@@ -149,7 +149,7 @@ function check_dogs(e,inc_or_dec)
 		e.self:ModifyNPCStat("special_attacks","1,1^2,1^5,1^7,1^13,1^14,1^15,1^16,1^17,1^21,1"); --removed 12, unslowable
 		e.self:ModifyNPCStat("avoidance", "250");
 	elseif (dead_dogs == 3) then
-		if (inc_or_dec > 0) 
+		if (inc_or_dec > 0) then
 			e.self:Emote("appears less able to sense those around him.");
 		else
 			e.self:Emote("regains his spellcasting abilities"); --made this up
@@ -158,7 +158,7 @@ function check_dogs(e,inc_or_dec)
 		torment_enabled=1;
 		touch_enabled=1;
 	elseif (dead_dogs == 4) then
-		if (inc_or_dec > 0) 
+		if (inc_or_dec > 0) then
 			e.self:Emote("loses his spellcasting prowess"); --made this up
 		end		
 		torment_enabled=0;

@@ -7,7 +7,7 @@ sub EVENT_SAY {
         quest::setglobal("monk_epic", "1", 5, "F"); 
       } 
       else {
-        if ($client->GetGlobals("MnkPre") == undef) {
+        if ($client->GetGlobal("MnkPre") == undef) {
           quest::setglobal("MnkPre", "1", 5, "F"); 
         }
       }

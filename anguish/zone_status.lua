@@ -72,21 +72,6 @@ end
 function Spawn_omm()
 end
 
-function Door_Lock(door_id)
-  local door = 0;
-  door = entity_list:FindDoor(door_id);
-  if (door ~= nil) then
-    door:SetLockPick(-1);
-  end
-end
-
-function Door_Unlock(door_id)
-  local door = 0;
-  door = entity_list:FindDoor(door_id);
-  if (door ~= nil) then
-    door:SetLockPick(0);
-  end
-end
 
 function AddLockout(lockout)
   local lockout_name = lockout[1]; 

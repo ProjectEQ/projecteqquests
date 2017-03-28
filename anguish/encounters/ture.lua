@@ -58,38 +58,36 @@ function Ture_Combat(e)
     --eq.set_timer("wipecheck", 1 * 1000);
 	eq.stop_timer("wanton");
 	eq.stop_timer("breath");
-	eq.stop_timer("aeramp");
+	eq.stop_timer("aeramp_warn");
   end
 end
 
 function Ture_Timer(e)
 	if (e.timer == "wanton") then
 		e.self:CastSpell(1250, e.self:GetTarget():GetID());
-		eq.stop_timer("wanton");
 		eq.set_timer("wanton",75*1000); 
 	elseif (e.timer == "breath") then
 	--is breath target random or tank?
 	--local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 300);
     --if (client:IsClient() == false) then
+	--e.self:CastSpell(eq.ChooseRandom(5804,5806,5807), e.self:GetHateRandom():GetID());
 		e.self:CastSpell(eq.ChooseRandom(5804,5806,5807), e.self:GetTarget():GetID());
 		eq.set_timer("breath",30*1000);
 	elseif (e.timer == "aeramp_warn") then
 		e.self:Emote(" roars with fury as it surveys its attackers.");
 		eq.set_timer("aeramp_warn",60*1000);
-		eq.set_timer("aeramp_on",5*1000);
+		eq.set_timer("aeramp_on",6*1000);
 	elseif (e.timer == "aeramp_on") then
 		eq.stop_timer("aeramp_on");
 		e.self:Emote("'s eyes roll into its head as it goes into a frenzy.");
-		e.self:ModifyNPCStat("attack_delay", "18"); 
 		e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
 		e.self:SetSpecialAbility(SpecialAbility.rampage, 0);	
 	    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
 		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 100);
-		eq.set_timer("aeramp_off",11*1000);
+		eq.set_timer("aeramp_off",10*1000);
 	elseif (e.timer == "aeramp_off") then
 		eq.stop_timer("aeramp_off");
-		e.self:Emote(" calms and regains its focus.");
-		e.self:ModifyNPCStat("attack_delay", "14");	
+		e.self:Emote(" calms and regains its focus.");	
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
 		e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
 		e.self:SetSpecialAbility(SpecialAbility.rampage, 1);	

@@ -190,23 +190,11 @@ function Jelvan_Timer(e)
 			tanthi_ae=0;
 			tantho_ae=0;
 			tanthu_ae=0;
-			--hacky workaround for inability to cast spells consecutively
-			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID());
-			if (eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID() ~= eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID()) then
-				eq.set_timer("c2",1000);
-			end
-			if (eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID() ~= eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID()) then
-				eq.set_timer("c3",2000);
-			end		
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID(),0,1);
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID(),0,1);
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,1);	
 			e.self:Shout("Here you go! This should help!");
 		end
-	elseif (e.timer == "c2") then
-		eq.stop_timer("c2");
-		e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID(),0,0);
-	elseif (e.timer == "c3") then
-		eq.stop_timer("c3");
-		e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,0);
-	end
 end
 
 function Tanthi_Combat(e)

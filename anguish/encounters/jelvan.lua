@@ -41,14 +41,20 @@ lowest hp tormentor calls for help
 after 2nd tormentor dies, the shouts/hp check stop
 
 [Fri Sep 25 08:24:06 2015] You hear Jelvan's shouts of gratitude as he runs into the shadows.
+
+
+--jelvan circle radius is ~140, checking that and Z axis (-151 is pit floor) for leash purposes, -121 is jelvan Z axis
 --]]
 local event_started =0;
 local tanthi_ae=0;
 local tantho_ae=0;
 local tanthu_ae=0;
-local tanthi_aggro=1;
-local tantho_aggro=1;
-local tanthi_aggro=1;
+local tanthi_aggro=0;
+local tantho_aggro=0
+local tanthi_aggro=0;
+
+
+local tether_box = box(160.5, 15.5, 751.5, 832.5)
 
 function Jelvan_spawn(e)
 	eq.set_timer("emote", 60 *1000); --how often is the emote?
@@ -58,34 +64,29 @@ end
 function Jelvan_Say(e)
   if event_started==0 then
 	if(e.message:findi("hail")) then
-		e.self:Say("The tormentors. They are trying to break me. They want me to be one of them. They want my power. You must [" .. eq.say_link("help") .. "] me. You must destroy them.");
+		e.self:Emote("grabs his head in pain. 'The voices. Make them stop. My thoughts are my own! You will not break me! Shhh. Can you [" .. eq.say_link("hear") .. "] them?");
 	elseif(e.message:findi("hear")) then
-		e.self:Say("wut?"); --??
+		e.self:Say("The tormentors. They are trying to break me. They want me to be one of them. They want my power. You must [" .. eq.say_link("help") .. "] me. You must destroy them.");
 	elseif(e.message:findi("help")) then
 		e.self:Say("They must be killed! They... Can you here them? They are coming close. I will help you while I can, but I can already feel their taint seeping into my bones");
 		event_started=1;
 		tanthi_ae=0;
 		tantho_ae=0;
 		tanthu_ae=0;
-		tanthi_aggro=1;
-		tantho_aggro=1;
-		tanthu_aggro=1;
+		tanthi_aggro=0;
+		tantho_aggro=0;
+		tanthu_aggro=0;
 		eq.unique_spawn(317099,0,0, -174, 2152, -149, 167);
 		eq.unique_spawn(317100,0,0, -341, 2152, -149, 77);
 		eq.unique_spawn(317101,0,0, -252, 2008, -149, 0);
-		eq.set_timer("emote", 60 *1000);
 		eq.set_timer("check_event",1*1000);
-		eq.set_timer("balance", 5*1000);
+		eq.set_timer("balance",60*1000);
 	end
   end
 end
 
 function Jelvan_Timer(e)
-	if (e.timer == "emote") then
-		if event_started==0 then
-			e.self:Emote("grabs his head in pain. 'The voices. Make them stop. My thoughts are my own! You will not break me! Shhh. Can you [" .. eq.say_link("hear") .. "] them.");
-		end
-	elseif (e.timer=="check_event") then
+	if (e.timer=="check_event") then
 		local torment_alive=0;
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317099)==true) then
 			torment_alive=torment_alive+1;
@@ -97,14 +98,17 @@ function Jelvan_Timer(e)
 			torment_alive=torment_alive+1;
 		end		
 		if(torment_alive==0) then
+		--set player lockout
+		--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"			
+			eq.signal(317116 , 317004);
 			eq.unique_spawn(317111,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Jelvan`s_Keepsake (317111)
-			eq.zone_emote(15,"You hear Jelvan's shouts of gratitude as he runs into the shadows.");
+			eq.zone_emote(15,"You hear Jelvan's shouts of gratitude as he runs into the shadows.");	
 			event_started=0;
 			eq.depop();
 		elseif (torment_alive==1) then
 			eq.stop_timer("balance");
 		elseif (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0) then
-			eq.set_timer("depop_event",300*1000);
+			eq.set_timer("depop_event",2*1000);
 		else
 			eq.stop_timer("depop_event");
 		end
@@ -116,10 +120,7 @@ function Jelvan_Timer(e)
 			eq.depop_all(317099);
 			eq.depop_all(317100);
 			eq.depop_all(317101);
-			event_started=0;
-			tanthi_aggro=0;
-			tantho_aggro=0;
-			tanthi_aggro=0;			
+			event_started=0;		
 		end		
 	elseif (e.timer == "balance") then
 		local tanthi_hp=100;
@@ -195,6 +196,7 @@ function Jelvan_Timer(e)
 			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,1);	
 			e.self:Shout("Here you go! This should help!");
 		end
+	end
 end
 
 function Tanthi_Combat(e)
@@ -205,6 +207,7 @@ function Tanthi_Combat(e)
 	eq.set_timer("relinq",  math.random(10,60) * 1000);
 	eq.set_timer("torment", math.random(10,60) * 1000);
 	tanthi_aggro=1;
+	aggro_all_tormentor(e);
   else
 	eq.stop_timer("cast");
 	eq.stop_timer("void");
@@ -221,6 +224,7 @@ function Tantho_Combat(e)
 	eq.set_timer("relinq",  math.random(10,60) * 1000);
 	eq.set_timer("torment", math.random(10,60) * 1000);
 	tantho_aggro=1;
+	aggro_all_tormentor(e);
   else
 	eq.stop_timer("cast");
 	eq.stop_timer("void");
@@ -237,6 +241,7 @@ function Tanthu_Combat(e)
 	eq.set_timer("relinq",  math.random(10,60) * 1000);
 	eq.set_timer("torment", math.random(10,60) * 1000);
 	tanthu_aggro=1;
+	aggro_all_tormentor(e);
   else
 	eq.stop_timer("cast");
 	eq.stop_timer("void");
@@ -246,10 +251,27 @@ function Tanthu_Combat(e)
   end
 end
 
+function aggro_all_tormentor(e)
+	local npc_list =  eq.get_entity_list():GetNPCList();
+	for npc in npc_list.entries do
+		if (npc.valid and (npc:GetNPCTypeID() == 317099 or npc:GetNPCTypeID() == 317100 or npc:GetNPCTypeID() == 317101)) then
+			npc:AddToHateList(e.self:GetHateTop(),1);
+		end
+	end	
+end
+
 function Tanthi_Timer(e)
 	if (e.timer == "cast") then
 		e.self:CastSpell(5678, e.self:GetTarget():GetID());
 		eq.set_timer("cast",45*1000);
+	elseif (e.timer == "check_leash") then
+		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
+			e.self:GotoBind()
+			e.self:SetHP(e.self:GetMaxHP())
+			e.self:CastSpell(3791, e.self:GetID())
+			e.self:WipeHateList();
+			aggro_all_tormentor(e);
+		end
 	end
 	if(tanthi_ae==1) then
 		if (e.timer=="void") then
@@ -268,6 +290,14 @@ function Tantho_Timer(e)
 	if (e.timer == "cast") then
 		e.self:CastSpell(5679, e.self:GetTarget():GetID());
 		eq.set_timer("cast",45*1000);
+	elseif (e.timer == "check_leash") then
+		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
+			e.self:GotoBind()
+			e.self:SetHP(e.self:GetMaxHP())
+			e.self:CastSpell(3791, e.self:GetID())
+			e.self:WipeHateList();
+			aggro_all_tormentor(e);			
+		end	
 	end
 	if(tantho_ae==1) then
 		if (e.timer=="void") then
@@ -286,6 +316,14 @@ function Tanthu_Timer(e)
 	if (e.timer == "cast") then
 		e.self:CastSpell(5680, e.self:GetTarget():GetID());
 		eq.set_timer("cast",45*1000);
+	elseif (e.timer == "check_leash") then
+		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
+			e.self:GotoBind()
+			e.self:SetHP(e.self:GetMaxHP())
+			e.self:CastSpell(3791, e.self:GetID())
+			e.self:WipeHateList();
+			aggro_all_tormentor(e);			
+		end
 	end
 	if(tanthu_ae==1) then
 		if (e.timer=="void") then

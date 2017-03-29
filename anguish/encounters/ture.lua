@@ -100,8 +100,12 @@ function Ture_Timer(e)
   --    eq.depop();
   --  end
   --end
-  
-  --
+end
+
+function Ture_Death(e)
+	eq.signal(317116 , 317003);
+	--set player lockout
+	--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"	
 end
 
 function event_encounter_load(e)

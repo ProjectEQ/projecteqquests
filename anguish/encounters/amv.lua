@@ -75,24 +75,25 @@ function AMV_Timer(e)
 		e.self:CastSpell(5680, e.self:GetTarget():GetID());
 		eq.set_timer("gaze",70*1000); 
 	elseif (e.timer == "mark") then				
-		--cast on 10 people
+		--cast on 6 people
 		local num_hit=0;
 		local client_list = {};
-		while( num_hit < 10 )
+		while( num_hit < 6 )
 		do
 			local client = eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000);
-			if client.valid and has_value(client_list,client:GetID()) then	
+			--if client.valid and has_value(client_list,client:GetID()) then
+			if client.valid then
 				e.self:CastSpell(5678, client:GetID());
-				client_list[num_hit]=client:GetID();
+				--client_list[num_hit]=client:GetID();
 				num_hit=num_hit+1;
 			end
 		end
 		eq.set_timer("mark",75*1000);
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
-			eq.spawn2(317110,0,0,625, 4847, 277.5, 225):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,378, 4969, 279, 64):AddToHateList(e.self:GetHateRandom(),1);
 		else
-			eq.spawn2(317110,0,0,381, 4843, 277.5, 30):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,618, 4969, 279, 192):AddToHateList(e.self:GetHateRandom(),1);
 		end
 	elseif (e.timer == "focus30") then
 		eq.stop_timer("focus30");
@@ -119,16 +120,21 @@ function AMV_Death(e)
 	eq.depop_all(317108);
 	
 	eq.signal(317116 , 317107);
+	
+	eq.get_entity_list():FindDoor(57):ForceOpen(e.self);
+	eq.get_entity_list():FindDoor(58):ForceOpen(e.self);
+	eq.get_entity_list():FindDoor(59):ForceOpen(e.self);
+	eq.get_entity_list():FindDoor(60):ForceOpen(e.self);
 end
 
-local function has_value (tab, val)
-    for index, value in ipairs(tab) do
-        if value == val then
-            return true
-        end
-    end
-    return false
-end
+--local function has_value (tab, val)
+--    for index, value in ipairs(tab) do
+--        if value == val then
+--            return true
+--        end
+--    end
+--   return false
+--end
 
 function Convert_Spawn(e)
 	eq.set_timer("grow_stronger",1*1000);  
@@ -168,7 +174,9 @@ function event_encounter_load(e)
 	eq.register_npc_event('amv', Event.spawn,         	317107, AMV_Spawn); 
 	eq.register_npc_event('amv', Event.combat,        	317107, AMV_Combat); 
 	eq.register_npc_event('amv', Event.timer,         	317107, AMV_Timer);
+	eq.register_npc_event('amv', Event.hp,         		317107, AMV_HP);
 	eq.register_npc_event('amv', Event.death_complete,	317107, AMV_Death);
+	
 	eq.register_npc_event('amv', Event.spawn, 			317108, Focus_Spawn); 
 	eq.register_npc_event('amv', Event.combat, 			317108, Focus_Combat);  
 	eq.register_npc_event('amv', Event.timer, 			317108, Focus_Timer);

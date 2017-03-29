@@ -96,11 +96,11 @@ function AMV_Timer(e)
 		end
 	elseif (e.timer == "focus30") then
 		eq.stop_timer("focus30");
-		eq.set_timer("focus40",40*1000;
+		eq.set_timer("focus40",40*1000);
 		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
 	elseif (e.timer == "focus40") then
 		eq.stop_timer("focus40");
-		eq.set_timer("focus30",30*1000;
+		eq.set_timer("focus30",30*1000);
 		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
 	elseif (e.timer == "reset") then
 		eq.set_next_hp_event(75);

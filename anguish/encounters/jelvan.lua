@@ -53,9 +53,6 @@ local tanthi_aggro=0;
 local tantho_aggro=0
 local tanthi_aggro=0;
 
-
-local tether_box = box(160.5, 15.5, 751.5, 832.5)
-
 function Jelvan_spawn(e)
 	eq.set_timer("emote", 60 *1000); --how often is the emote?
 	event_started =0;

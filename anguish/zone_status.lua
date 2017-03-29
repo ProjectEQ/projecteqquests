@@ -26,7 +26,7 @@ local charid_list;
 local current_bit = 0;
 local entity_list;
 local instance_requests = require("instance_requests");
-local Anguish_Lockouts = {}
+local Anguish_Lockouts = {};
 
 function setup_lockouts()
   Anguish_Lockouts = {

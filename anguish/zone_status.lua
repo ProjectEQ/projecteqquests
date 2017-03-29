@@ -36,7 +36,7 @@ function setup_lockouts()
     [317002] = {'Anguish_hanvar',   8,   Spawn_hanvar},
     [317001] = {'Anguish_amv',      16,  Spawn_amv},
     [317000] = {'Anguish_omm',      32,  Spawn_omm},
-	[1]		 = {'Anguish_lower_orb',64,  Spawn_lorb}
+	[1]		 = {'Anguish_lower_orb',64,  Spawn_lorb},
 	[2]		 = {'Anguish_upper_orb',128, Spawn_uorb},
 	[3]		 = {'Anguish_upper_orb',256, Spawn_augs}
   }

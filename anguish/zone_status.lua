@@ -10,7 +10,9 @@
 -- 4 -     8 - hanvar
 -- 5 -    16 - amv
 -- 6 -    32 - omm
---
+-- 7 -    64 - lower 2.0 orb
+-- 8 -    128- upper 2.0 orb
+-- 9 -    256- aug named
 -- Mob IDs:
 --
 -- Zone Trash:
@@ -28,12 +30,15 @@ local Anguish_Lockouts = {}
 
 function setup_lockouts()
   Anguish_Lockouts = {
-    [317005] = {'Anguish_keldovan', 1,  Spawn_keldovan},
-    [317004] = {'Anguish_jelvan',   2,  Spawn_jelvan},
-    [317003] = {'Anguish_ture',     4,  Spawn_ture},
-    [317002] = {'Anguish_hanvar',   8,  Spawn_hanvar},
-    [317001] = {'Anguish_amv',      16, Spawn_amv},
-    [317000] = {'Anguish_omm',      32, Spawn_omm}
+    [317005] = {'Anguish_keldovan', 1,   Spawn_keldovan},
+    [317004] = {'Anguish_jelvan',   2,   Spawn_jelvan},
+    [317003] = {'Anguish_ture',     4,   Spawn_ture},
+    [317002] = {'Anguish_hanvar',   8,   Spawn_hanvar},
+    [317001] = {'Anguish_amv',      16,  Spawn_amv},
+    [317000] = {'Anguish_omm',      32,  Spawn_omm}
+	[1]		 = {'Anguish_lower_orb',64,  Spawn_lorb}
+	[2]		 = {'Anguish_upper_orb',128, Spawn_uorb}
+	[3]		 = {'Anguish_upper_orb',256, Spawn_augs}
   }
 end
 
@@ -55,23 +60,35 @@ function event_spawn(e)
 end
 
 function Spawn_keldovan()
+	eq.unique_spawn(317005,0,0, -301 ,702, -201, 64);
 end
 
 function Spawn_jelvan()
+	eq.unique_spawn(317004,0,0, -256 ,2100, -121, 0);
 end
 
 function Spawn_ture()
+	eq.unique_spawn(317003,0,0, 610, 3381, -12, 130);
 end
 
 function Spawn_hanvar()
+	eq.unique_spawn(317002,0,0, 424, 4389, 222, 64);
 end
 
 function Spawn_amv()
+	eq.unique_spawn(317107,0,0, 336, 4486, 278, 0);
 end
 
 function Spawn_omm()
+	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 127);
 end
 
+function Spawn_lorb()
+end
+function Spawn_uorb()
+end
+function Spawn_augs()
+end
 
 function AddLockout(lockout)
   local lockout_name = lockout[1]; 

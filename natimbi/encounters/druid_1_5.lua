@@ -52,11 +52,11 @@ function Jugg_Timer(e)
 		eq.set_timer("conduit",20*1000);
 	elseif (e.timer == "checkleash") then
 		if (e.self:CalculateDistance(1451,957,517) > 95) then
-			e.self:CastSpell(5269, e.self:GetHateTop():GetID()); --mark of blameless
-			e.self:GMMove(1451.65,957.84,517.86,216);
+			e.self:GotoBind()
+			e.self:SetHP(e.self:GetMaxHP())
+			e.self:CastSpell(3791, e.self:GetID())
 			e.self:WipeHateList();
-			e.self:SetHP(e.self:GetMaxHP());
-		end	
+		end
 	end
 end
 

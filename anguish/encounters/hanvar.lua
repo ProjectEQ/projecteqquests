@@ -12,6 +12,7 @@ a_veteran_guard   (317015)
 a_weathered_guard (317016)
 an_elite_guard    (317018)
 --]]
+
 local min_hp=100;
 
 function Hanvar_Spawn(e)
@@ -20,7 +21,6 @@ end
 
 function Hanvar_Combat(e)
   if (e.joined == true) then
-    --e.self:Say("");
 	Spawn_Adds(e);
 	eq.set_timer("adds", 120 * 1000);	
 	eq.set_timer("chains", math.random(10,45) * 1000);
@@ -29,7 +29,7 @@ function Hanvar_Combat(e)
 	eq.set_timer("check_hp", 1000);
 	eq.stop_timer("reset");
   else
-    eq.set_timer("reset", 300 * 1000);
+    eq.set_timer("reset", 60 * 1000);
 	eq.stop_timer("adds");
 	eq.stop_timer("chains");
 	eq.stop_timer("feedback");
@@ -57,12 +57,27 @@ function Guard_Death(e)
   min_hp=min_hp-5;
 end
 
+function Guard_Spawn(e)
+  eq.set_timer("depop_warn",45*1000);
+end
+
+function Guard_Timer(e)
+  if (e.timer == "depop_warn") then
+	eq.set_timer("depop",10*1000);
+	eq.stop_timer("depop_warn");
+	e.self:Emote("prepares to sacrifice its life to Hanvar.");
+  elseif(e.timer=="depop") then
+	e.self:CastSpell(5681, e.self:GetTarget():GetID()); --Feedback Dispersion
+	e.self:Emote("guard sacrifices himself to give the warden an explosive blast of energy.");
+  end
+end
+
 function Hanvar_Timer(e)
 	if (e.timer == "check_hp") then
 		if (e.self:GetHPRatio() < min_hp) then
-			local new_hp = e.self:GetMaxHP() * (min_hp/100);
-			-- eq.zone_emote(15, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. boss_hp .. " new_hp: " .. new_hp);
-			e.self:SetHP(min_hp);		
+			local new_hp = e.self:GetMaxHP() * min_hp/100;
+			--eq.zone_emote(15, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. e.self:GetMaxHP() .. " new_hp: " .. new_hp);
+			e.self:SetHP(new_hp);		
 		end	
 	elseif (e.timer == "chains") then
 		e.self:CastSpell(5682, e.self:GetTarget():GetID());
@@ -77,6 +92,7 @@ function Hanvar_Timer(e)
 		Spawn_Adds(e);
 	elseif (e.timer == "reset") then
 		min_hp=100;
+		e.self:SetHP(100);
 		eq.depop_all(317015);
 		eq.depop_all(317016);
 		eq.depop_all(317017);
@@ -85,8 +101,11 @@ function Hanvar_Timer(e)
 end
 
 function Hanvar_Death(e)
-
+	eq.signal(317116 , 317002);
+	--set player lockout
+	--chance to spawn 2.0 orb, if so set zone lockout for "top orb"?
 end
+
 
 function event_encounter_load(e)
   eq.register_npc_event('hanvar', Event.spawn,          317002, Hanvar_Spawn); 
@@ -96,7 +115,15 @@ function event_encounter_load(e)
   eq.register_npc_event('hanvar', Event.death_complete, 317015, Guard_Death);  
   eq.register_npc_event('hanvar', Event.death_complete, 317016, Guard_Death);
   eq.register_npc_event('hanvar', Event.death_complete, 317017, Guard_Death);
-  eq.register_npc_event('hanvar', Event.death_complete, 317018, Guard_Death);  
+  eq.register_npc_event('hanvar', Event.death_complete, 317018, Guard_Death);
+  eq.register_npc_event('hanvar', Event.spawn, 317015, Guard_Spawn);  
+  eq.register_npc_event('hanvar', Event.spawn, 317016, Guard_Spawn);
+  eq.register_npc_event('hanvar', Event.spawn, 317017, Guard_Spawn);
+  eq.register_npc_event('hanvar', Event.spawn, 317018, Guard_Spawn);
+  eq.register_npc_event('hanvar', Event.timer, 317015, Guard_Timer);  
+  eq.register_npc_event('hanvar', Event.timer, 317016, Guard_Timer);
+  eq.register_npc_event('hanvar', Event.timer, 317017, Guard_Timer);
+  eq.register_npc_event('hanvar', Event.timer, 317018, Guard_Timer);   
 end
 
 function event_encounter_unload(e)

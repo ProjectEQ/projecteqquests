@@ -44,7 +44,15 @@ function Lockouts_Def.Lockout_Globals()
       { "MPG_foresight", "MPG: Trial of Foresight" },
       { "MPG_adaptation", "MPG: Trial of Adaptation" },
       { "MPG_corruption", "MPG: Trial of Corruption" },
-	    { "paladinEpicDranikCata","Dranik Catacombs A" }
+	    { "paladinEpicDranikCata","Dranik Catacombs A" },
+      { "Anguish_keldovan", "Anguish: Keldovan" },
+      { "Anguish_jelvan", "Anguish: Jelvan" },
+      { "Anguish_hanvar", "Anguish: Hanvar" },
+      { "Anguish_amv", "Anguish: AMV" },
+      { "Anguish_omm", "Anguish: OMM" },
+      { "Anguish_lower_orb", "Anguish: Lower Orb" },
+      { "Anguish_upper_orb", "Anguish: Upper Orb" },
+      { "Anguish_augs", "Anguish: Augs" }
   }
 end
 

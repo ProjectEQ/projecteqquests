@@ -17,16 +17,22 @@ local min_hp=100;
 
 function Hanvar_Spawn(e)
     min_hp=100;
+	eq.enable_spawn2(54535);
+	eq.enable_spawn2(54536);
+	eq.enable_spawn2(54537);
+	eq.enable_spawn2(54538);
+	eq.enable_spawn2(54539);	
 end
 
 function Hanvar_Combat(e)
   if (e.joined == true) then
-	Spawn_Adds(e);
-	eq.set_timer("adds", 120 * 1000);	
+	Aggro_Adds(e);
+	eq.set_timer("adds", 10 * 1000);	
 	eq.set_timer("chains", math.random(10,45) * 1000);
 	eq.set_timer("feedback", math.random(10,30) * 1000);
 	eq.set_timer("wail", math.random(10,45) * 1000);
 	eq.set_timer("check_hp", 1000);
+	eq.set_timer("leash", 3000);
 	eq.stop_timer("reset");
   else
     eq.set_timer("reset", 60 * 1000);
@@ -38,13 +44,13 @@ function Hanvar_Combat(e)
   end
 end
 
-function Spawn_Adds(e)
+function Aggro_Adds(e)
 	--spawn 5 adds
-	eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4347, 209.9, 64);
-	eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4427, 209.9, 64);
-	eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 458, 4490, 209.9, 148);
-	eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 381, 4394, 209.9, 64);
-	eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 456, 4322, 209.9, 246);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4347, 209.9, 64);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4427, 209.9, 64);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 458, 4490, 209.9, 148);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 381, 4394, 209.9, 64);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 456, 4322, 209.9, 246);
 	local npc_list =  eq.get_entity_list():GetNPCList();
 	for npc in npc_list.entries do
 		if (npc.valid and (npc:GetNPCTypeID() == 317015 or npc:GetNPCTypeID() == 317016 or npc:GetNPCTypeID() == 317017 or npc:GetNPCTypeID() == 317018)) then
@@ -57,8 +63,15 @@ function Guard_Death(e)
   min_hp=min_hp-5;
 end
 
+function Guard_Combat(e)
+  if (e.joined == true) then
+	eq.set_timer("depop_warn",45*1000);
+  else
+    eq.stop_timer("depop_warn");
+  end
+end
+
 function Guard_Spawn(e)
-  eq.set_timer("depop_warn",45*1000);
 end
 
 function Guard_Timer(e)
@@ -89,19 +102,31 @@ function Hanvar_Timer(e)
 		e.self:CastSpell(5678, e.self:GetTarget():GetID());
 		eq.set_timer("wail",45*1000); 
 	elseif (e.timer == "adds") then		
-		Spawn_Adds(e);
+		Aggro_Adds(e);
+	elseif (e.timer == "leash") then
+		if (e.self:CalculateDistance(424, 4389, 221.94) >270) then
+			reset(e);			
+		end
 	elseif (e.timer == "reset") then
-		min_hp=100;
-		e.self:SetHP(100);
-		eq.depop_all(317015);
-		eq.depop_all(317016);
-		eq.depop_all(317017);
-		eq.depop_all(317018);
+		reset(e);
     end
 end
 
+function reset(e)
+	e.self:GotoBind()
+	e.self:SetHP(e.self:GetMaxHP())
+	e.self:CastSpell(3791, e.self:GetID())
+	e.self:WipeHateList()
+	min_hp=100;	
+end
+
 function Hanvar_Death(e)
-	eq.signal(317116 , 317002);
+	eq.signal(317116, 317002);
+	eq.disable_spawn2(54535);
+	eq.disable_spawn2(54536);
+	eq.disable_spawn2(54537);
+	eq.disable_spawn2(54538);
+	eq.disable_spawn2(54539);
 	--set player lockout
 	--chance to spawn 2.0 orb, if so set zone lockout for "top orb"?
 end
@@ -119,7 +144,11 @@ function event_encounter_load(e)
   eq.register_npc_event('hanvar', Event.spawn, 317015, Guard_Spawn);  
   eq.register_npc_event('hanvar', Event.spawn, 317016, Guard_Spawn);
   eq.register_npc_event('hanvar', Event.spawn, 317017, Guard_Spawn);
-  eq.register_npc_event('hanvar', Event.spawn, 317018, Guard_Spawn);
+  eq.register_npc_event('hanvar', Event.spawn, 317018, Guard_Spawn);  
+  eq.register_npc_event('hanvar', Event.combat, 317015, Guard_Combat);
+  eq.register_npc_event('hanvar', Event.combat, 317016, Guard_Combat);
+  eq.register_npc_event('hanvar', Event.combat, 317017, Guard_Combat);
+  eq.register_npc_event('hanvar', Event.combat, 317018, Guard_Combat);   
   eq.register_npc_event('hanvar', Event.timer, 317015, Guard_Timer);  
   eq.register_npc_event('hanvar', Event.timer, 317016, Guard_Timer);
   eq.register_npc_event('hanvar', Event.timer, 317017, Guard_Timer);

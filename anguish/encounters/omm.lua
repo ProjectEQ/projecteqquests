@@ -9,10 +9,6 @@ a_languished_convert (317110)
 #Piraand (317120)
 #Garishi (317121)
 
-at 30% walk back to spawn
-set model to wings over head
-before banish set regen to 0
-
 60% 55-60 sec
 20% 25-55 sec
 20% 08-25 sec
@@ -119,8 +115,8 @@ function OMM_HP(e)
 		e.self:CameraEffect(1000,2);
 		eq.signal(317118,1);
 		eq.signal(317119,2);		
-		eq.set_timer("move_to_spawn",30*100);
-		eq.set_timer("banish",60*100);
+		eq.set_timer("move_to_spawn",30*1000);
+		eq.set_timer("banish",60*1000);
 		eq.set_timer("limit_20pct",1000);
 	end		
 end
@@ -128,7 +124,6 @@ end
 function OMM_Combat(e)
 	if (e.joined == true) then
 		e.self:SetAppearance(0);
-		e.self:ModifyNPCStat("hp_regen", "10000");
 		eq.stop_timer("reset");
 		eq.stop_timer("keep_banished_hp");
 		--these become static after first roll
@@ -243,7 +238,6 @@ function OMM_Timer(e)
 		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		eq.stop_timer("banish");
 		eq.stop_timer("limit_20pct");				
-		e.self:ModifyNPCStat("hp_regen", "0");
 		local now_clients = eq.get_entity_list():GetClientList();
 		local instance_id = eq.get_zone_instance_id();
 		--eq.get_entity_list():GetClientList():RemoveFromTargets(e, true);

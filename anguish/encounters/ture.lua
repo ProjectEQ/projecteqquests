@@ -67,10 +67,6 @@ function Ture_Timer(e)
 		e.self:CastSpell(1250, e.self:GetTarget():GetID());
 		eq.set_timer("wanton",75*1000); 
 	elseif (e.timer == "breath") then
-	--is breath target random or tank?
-	--local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 300);
-    --if (client:IsClient() == false) then
-	--e.self:CastSpell(eq.ChooseRandom(5804,5806,5807), e.self:GetHateRandom():GetID());
 		e.self:CastSpell(eq.ChooseRandom(5804,5806,5807), e.self:GetTarget():GetID());
 		eq.set_timer("breath",30*1000);
 	elseif (e.timer == "aeramp_warn") then
@@ -92,14 +88,6 @@ function Ture_Timer(e)
 		e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
 		e.self:SetSpecialAbility(SpecialAbility.rampage, 1);	
 	end
-  --if (e.timer == "wipecheck") then
-  --  local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 8000);
-  --  if (client:IsClient() == false) then
-      -- Wipe Mechanics
-  --    eq.spawn2(298023, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-  --    eq.depop();
-  --  end
-  --end
 end
 
 function Ture_Death(e)

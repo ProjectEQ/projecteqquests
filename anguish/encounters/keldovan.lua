@@ -139,11 +139,11 @@ function check_dogs(e,inc_or_dec)
 		else
 			e.self:Emote("begins to quicken his attacks again.");
 		end
-		e.self:ModifyNPCStat("mr", "236"); --need to check these resists
-		e.self:ModifyNPCStat("fr", "236"); --need to check these resists
-		e.self:ModifyNPCStat("cr", "236"); --need to check these resists
-		e.self:ModifyNPCStat("pr", "236"); --need to check these resists
-		e.self:ModifyNPCStat("dr", "236"); --need to check these resists
+		e.self:ModifyNPCStat("mr", "265");
+		e.self:ModifyNPCStat("fr", "205");
+		e.self:ModifyNPCStat("cr", "265");
+		e.self:ModifyNPCStat("pr", "265");
+		e.self:ModifyNPCStat("dr", "240");
 		e.self:ModifyNPCStat("slow_mitigation","85");
 	elseif (dead_dogs == 3) then
 		if (inc_or_dec > 0) then

@@ -11,7 +11,6 @@ Void of Suppression
 Relinquish Spirit 
 Torment of Body
 
-
 Blessing of Jelvan 5674, cast on the target tanking each Tormentor
 [Tue Nov 29 20:44:16 2016] [20:44:16] Jelvan begins to cast a spell. <Blessing of Jelvan>
 [Tue Nov 29 20:44:16 2016] [20:44:16] Clasper is encased in a protective light.
@@ -32,8 +31,6 @@ lowest hp tormentor calls for help
 [Tue Nov 29 21:09:45 2016] Tanthu dies
 [Tue Nov 29 21:10:11 2016] [21:10:11] Jelvan shouts 'Here you go! This should help!'
 
-[Tue Nov 29 21:10:21 2016] [21:10:21] Jelvan shouts 'My power is theirs...I'm sorry, I cannot... fight... them...'
-[Tue Nov 29 21:10:26 2016] [21:10:26] Tantho the Tormentor begins to cast a spell. <Relinquish Spirit>
 [Tue Nov 29 21:10:51 2016] [21:10:51] Tantho the Tormentor begins to cast a spell. <Torment of Body>
 [Tue Nov 29 21:10:52 2016] Tantho dies
 [Tue Nov 29 21:11:28 2016] Tanthi dies
@@ -41,7 +38,8 @@ lowest hp tormentor calls for help
 after 2nd tormentor dies, the shouts/hp check stop
 
 [Fri Sep 25 08:24:06 2015] You hear Jelvan's shouts of gratitude as he runs into the shadows.
-
+[Tue Nov 29 21:10:21 2016] [21:10:21] Jelvan shouts 'My power is theirs...I'm sorry, I cannot... fight... them...'
+[Tue Nov 29 21:10:26 2016] [21:10:26] Tantho the Tormentor begins to cast a spell. <Relinquish Spirit>
 
 --jelvan circle radius is ~140, checking that and Z axis (-151 is pit floor) for leash purposes, -121 is jelvan Z axis
 --]]
@@ -78,6 +76,7 @@ function Jelvan_Say(e)
 		eq.unique_spawn(317101,0,0, -252, 2008, -149, 0);
 		eq.set_timer("check_event",1*1000);
 		eq.set_timer("balance",60*1000);
+		eq.set_timer("check_leash",4000);
 	end
   end
 end
@@ -118,7 +117,9 @@ function Jelvan_Timer(e)
 			eq.depop_all(317100);
 			eq.depop_all(317101);
 			event_started=0;		
-		end		
+		end
+	elseif (e.timer=="check_leash") then
+			Leash_Tormentors(e);
 	elseif (e.timer == "balance") then
 		local tanthi_hp=100;
 		local tantho_hp=100;
@@ -174,13 +175,15 @@ function Jelvan_Timer(e)
 		--if out of balance send lowest_npc signal to call for helps
 		if (tanth_io==0 or tanth_iu==0 or tanth_ou==0) then
 			local npc = eq.get_entity_list():GetNPCByNPCTypeID(lowest_npc);
-			npc:Emote("calls for Jelvan's assistance as the balance tips.");
-			if(lowest_npc==317099) then 
-				tanthi_ae=1;
-			elseif(lowest_npc==317100) then
-				tantho_ae=1;
-			elseif(lowest_npc==317101) then
-				tanthu_ae=1;
+			if npc.valid then
+				npc:Emote("calls for Jelvan's assistance as the balance tips.");
+				if(lowest_npc==317099) then 
+					tanthi_ae=1;
+				elseif(lowest_npc==317100) then
+					tantho_ae=1;
+				elseif(lowest_npc==317101) then
+					tanthu_ae=1;
+				end
 			end
 			e.self:Shout("My power is theirs...I'm sorry, I cannot... fight... them...");
 		--in balance
@@ -196,107 +199,69 @@ function Jelvan_Timer(e)
 	end
 end
 
-function Tanthi_Combat(e)
+function Tormentor_Combat(e)
+  local myid=e.self:GetID(); 
   if (e.joined == true) then
     --e.self:Say("");
 	eq.set_timer("cast", 	math.random(15,30) * 1000);
 	eq.set_timer("void", 	math.random(10,60) * 1000);
 	eq.set_timer("relinq",  math.random(10,60) * 1000);
 	eq.set_timer("torment", math.random(10,60) * 1000);
-	tanthi_aggro=1;
-	aggro_all_tormentor(e);
+	if (myid==317099) then
+		tanthi_aggro=1;
+	elseif (myid==317100) then
+		tantho_aggro=1;
+	elseif (myid==317101) then
+		tanthu_aggro=1;
+	end
+	Aggro_Tormentor(e);
   else
 	eq.stop_timer("cast");
 	eq.stop_timer("void");
 	eq.stop_timer("relinq");
 	eq.stop_timer("torment");
-	tanthi_aggro=0;
-  end
-end
-function Tantho_Combat(e)
-  if (e.joined == true) then
-    --e.self:Say("");
-	eq.set_timer("cast", 	math.random(15,30) * 1000);
-	eq.set_timer("void", 	math.random(10,60) * 1000);
-	eq.set_timer("relinq",  math.random(10,60) * 1000);
-	eq.set_timer("torment", math.random(10,60) * 1000);
-	tantho_aggro=1;
-	aggro_all_tormentor(e);
-  else
-	eq.stop_timer("cast");
-	eq.stop_timer("void");
-	eq.stop_timer("relinq");
-	eq.stop_timer("torment");
-	tantho_aggro=0;
-  end
-end
-function Tanthu_Combat(e)
-  if (e.joined == true) then
-    --e.self:Say("");
-	eq.set_timer("cast", 	math.random(15,30) * 1000);
-	eq.set_timer("void", 	math.random(10,60) * 1000);
-	eq.set_timer("relinq",  math.random(10,60) * 1000);
-	eq.set_timer("torment", math.random(10,60) * 1000);
-	tanthu_aggro=1;
-	aggro_all_tormentor(e);
-  else
-	eq.stop_timer("cast");
-	eq.stop_timer("void");
-	eq.stop_timer("relinq");
-	eq.stop_timer("torment");
-	tanthu_aggro=0;
+	if (myid==317099) then
+		tanthi_aggro=0;
+	elseif (myid==317100) then
+		tantho_aggro=0;
+	elseif (myid==317101) then
+		tanthu_aggro=0;
+	end
   end
 end
 
-function aggro_all_tormentor(e)
-	local npc_list =  eq.get_entity_list():GetNPCList();
-	for npc in npc_list.entries do
-		if (npc.valid and (npc:GetNPCTypeID() == 317099 or npc:GetNPCTypeID() == 317100 or npc:GetNPCTypeID() == 317101)) then
-			npc:AddToHateList(e.self:GetHateTop(),1);
-		end
-	end	
+function Aggro_Tormentor(e)
+--	local npc_list =  eq.get_entity_list():GetNPCList();
+--	for npc in npc_list.entries do
+--		if (npc.valid and (npc:GetNPCTypeID() == 317099 or npc:GetNPCTypeID() == 317100 or npc:GetNPCTypeID() == 317101)) then
+--			npc:AddToHateList(e.self:GetHateTop(),1);
+--		end
+--	end
+	eq.get_entity_list():GetNPCByNPCTypeID(317099):AddToHateList(e.self:GetHateTop(),1)
+	eq.get_entity_list():GetNPCByNPCTypeID(317100):AddToHateList(e.self:GetHateTop(),1)
+	eq.get_entity_list():GetNPCByNPCTypeID(317101):AddToHateList(e.self:GetHateTop(),1)	
 end
 
-function Tanthi_Timer(e)
-	if (e.timer == "cast") then
+function Tormentor_Timer(e)
+	local myid=e.self:GetID();
+	if (myid==317099 and e.timer == "cast") then
 		e.self:CastSpell(5678, e.self:GetTarget():GetID());
 		eq.set_timer("cast",45*1000);
-	elseif (e.timer == "check_leash") then
-		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
-			e.self:GotoBind()
-			e.self:SetHP(e.self:GetMaxHP())
-			e.self:CastSpell(3791, e.self:GetID())
-			e.self:WipeHateList();
-			aggro_all_tormentor(e);
-		end
-	end
-	if(tanthi_ae==1) then
-		if (e.timer=="void") then
-			e.self:CastSpell(5677, e.self:GetTarget():GetID());
-			eq.set_timer("void",60*1000);
-		elseif (e.timer=="relinq") then
-			e.self:CastSpell(5675, e.self:GetTarget():GetID());
-			eq.set_timer("relinq",30*1000);
-		elseif (e.timer=="torment") then
-			e.self:CastSpell(5676, e.self:GetTarget():GetID());
-			eq.set_timer("torment",60*1000);
-		end
-	end
-end
-function Tantho_Timer(e)
-	if (e.timer == "cast") then
+	elseif (myid==317100 and e.timer == "cast") then
 		e.self:CastSpell(5679, e.self:GetTarget():GetID());
 		eq.set_timer("cast",45*1000);
-	elseif (e.timer == "check_leash") then
+	elseif (myid==317101 and e.timer == "cast") then
+		e.self:CastSpell(5680, e.self:GetTarget():GetID());
+		eq.set_timer("cast",45*1000);		
+	elseif (e.timer == "check_leash") then	
 		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
-			e.self:GotoBind()
-			e.self:SetHP(e.self:GetMaxHP())
-			e.self:CastSpell(3791, e.self:GetID())
-			e.self:WipeHateList();
-			aggro_all_tormentor(e);			
-		end	
+			Leash_Tormentors(e);		
+		end
+	elseif (e.timer == "unleash") then
+		eq.stop_timer("leasing");
+		leashing=0;
 	end
-	if(tantho_ae==1) then
+	if((myid==317099 and tanthi_ae==1) or (myid==317100 and tantho_ae==1) or (myid==317101 and tanthu_ae==1)) then
 		if (e.timer=="void") then
 			e.self:CastSpell(5677, e.self:GetTarget():GetID());
 			eq.set_timer("void",60*1000);
@@ -309,30 +274,44 @@ function Tantho_Timer(e)
 		end
 	end
 end
-function Tanthu_Timer(e)
-	if (e.timer == "cast") then
-		e.self:CastSpell(5680, e.self:GetTarget():GetID());
-		eq.set_timer("cast",45*1000);
-	elseif (e.timer == "check_leash") then
-		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
-			e.self:GotoBind()
-			e.self:SetHP(e.self:GetMaxHP())
-			e.self:CastSpell(3791, e.self:GetID())
-			e.self:WipeHateList();
-			aggro_all_tormentor(e);			
+
+function Leash_Tormentors(e)
+	local tanthi_l= eq.get_entity_list():GetNPCByNPCTypeID(317099);
+	local tantho_l= eq.get_entity_list():GetNPCByNPCTypeID(317100);
+	local tanthu_l= eq.get_entity_list():GetNPCByNPCTypeID(317101);
+	
+	if tanthi_l.valid then
+		if (tanthi_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthi_l:GetZ() > -130 or tanthi_l:GetZ() < -160) then
+		eq.signal(317099,1);
+			--Gate_Tormentors(tanthi_l:CastToNPC());
+		end
+	elseif tantho_o.valid then
+		if (tantho_o:CalculateDistance( -256, 2100, -120.9) > 140 or tantho_o:GetZ() > -130 or tantho_o:GetZ() < -160) then
+		eq.signal(317100,1);
+		--Gate_Tormentors(tanthi_o:CastToNPC());
+		end
+	elseif tanthu_l.valid then
+		if (tanthu_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthu_l:GetZ() > -130 or tanthu_l:GetZ() < -160) then
+		eq.signal(317101,1);
+		--Gate_Tormentors(tanthi_u:CastToNPC());
 		end
 	end
-	if(tanthu_ae==1) then
-		if (e.timer=="void") then
-			e.self:CastSpell(5677, e.self:GetTarget():GetID());
-			eq.set_timer("void",60*1000);
-		elseif (e.timer=="relinq") then
-			e.self:CastSpell(5675, e.self:GetTarget():GetID());
-			eq.set_timer("relinq",30*1000);
-		elseif (e.timer=="torment") then
-			e.self:CastSpell(5676, e.self:GetTarget():GetID());
-			eq.set_timer("torment",60*1000);
-		end
+end
+
+function Tormentor_Signal(e)
+	if (e.signal==1) then
+		local instance_id = eq.get_zone_instance_id();
+		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
+		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
+		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient()) then
+			  local currclient=ent:CastToClient();
+			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0);
+			end
+		  end
+		);		
 	end
 end
 
@@ -341,14 +320,16 @@ function event_encounter_load(e)
   eq.register_npc_event('jelvan', Event.say,          	317004, Jelvan_Say);
   eq.register_npc_event('jelvan', Event.timer,        	317004, Jelvan_Timer);
   
-  eq.register_npc_event('jelvan', Event.combat,			317099, Tanthi_Combat);
-  eq.register_npc_event('jelvan', Event.timer,        	317099, Tanthi_Timer);
-  
-  eq.register_npc_event('jelvan', Event.combat,			317100, Tantho_Combat);
-  eq.register_npc_event('jelvan', Event.timer,        	317100, Tantho_Timer);
-  
-  eq.register_npc_event('jelvan', Event.combat,			317101, Tanthu_Combat);
-  eq.register_npc_event('jelvan', Event.timer,        	317101, Tanthu_Timer);    
+  eq.register_npc_event('jelvan', Event.combat,			317099, Tormentor_Combat);
+  eq.register_npc_event('jelvan', Event.timer,        	317099, Tormentor_Timer);  
+  eq.register_npc_event('jelvan', Event.combat,			317100, Tormentor_Combat);
+  eq.register_npc_event('jelvan', Event.timer,        	317100, Tormentor_Timer);
+  eq.register_npc_event('jelvan', Event.combat,			317101, Tormentor_Combat);
+  eq.register_npc_event('jelvan', Event.timer,        	317101, Tormentor_Timer);
+
+  eq.register_npc_event('jelvan', Event.signal,        	317099, Tormentor_Signal);
+  eq.register_npc_event('jelvan', Event.signal,        	317100, Tormentor_Signal);
+  eq.register_npc_event('jelvan', Event.signal,        	317101, Tormentor_Signal);
 end
 
 function event_encounter_unload(e)

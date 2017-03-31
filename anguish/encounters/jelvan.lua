@@ -120,7 +120,7 @@ function Jelvan_Timer(e)
 		end
 	elseif (e.timer=="check_leash") then
 			Leash_Tormentors(e);
-	elseif (e.timer == "balance") then
+	elseif (e.timer == "balance" and (tanthi_aggro==1 or tantho_aggro==1 or tanthu_aggro==1)) then
 		local tanthi_hp=100;
 		local tantho_hp=100;
 		local tanthu_hp=100;
@@ -203,7 +203,7 @@ function Tormentor_Combat(e)
   local myid=e.self:GetID(); 
   if (e.joined == true) then
     --e.self:Say("");
-	eq.set_timer("cast", 	math.random(15,30) * 1000);
+	eq.set_timer("cast", 	math.random(15,45) * 1000);
 	eq.set_timer("void", 	math.random(10,60) * 1000);
 	eq.set_timer("relinq",  math.random(10,60) * 1000);
 	eq.set_timer("torment", math.random(10,60) * 1000);
@@ -243,8 +243,8 @@ function Aggro_Tormentor(e)
 end
 
 function Tormentor_Timer(e)
-	local myid=e.self:GetID();
-	if (myid==317099 and e.timer == "cast") then
+	local myid=e.self:GetNPCTypeID(); 
+	if (myid==317099 and e.timer == "cast") then		
 		e.self:CastSpell(5678, e.self:GetTarget():GetID());
 		eq.set_timer("cast",45*1000);
 	elseif (myid==317100 and e.timer == "cast") then
@@ -275,6 +275,23 @@ function Tormentor_Timer(e)
 	end
 end
 
+function Tormentor_Signal(e)
+	if (e.signal==1) then
+		local instance_id = eq.get_zone_instance_id();
+		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
+		eq.get_entity_list():GetNPCByNPCTypeID(317100):CastSpell(16234,0,0,1);
+		eq.get_entity_list():GetNPCByNPCTypeID(317101):CastSpell(16234,0,0,1);
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient()) then
+			  local currclient=ent:CastToClient();
+			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0);
+			end
+		  end
+		);		
+	end
+end
+
 function Leash_Tormentors(e)
 	local tanthi_l= eq.get_entity_list():GetNPCByNPCTypeID(317099);
 	local tantho_l= eq.get_entity_list():GetNPCByNPCTypeID(317100);
@@ -295,23 +312,6 @@ function Leash_Tormentors(e)
 		eq.signal(317101,1);
 		--Gate_Tormentors(tanthi_u:CastToNPC());
 		end
-	end
-end
-
-function Tormentor_Signal(e)
-	if (e.signal==1) then
-		local instance_id = eq.get_zone_instance_id();
-		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
-		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
-		eq.get_entity_list():GetNPCByNPCTypeID(317099):CastSpell(16234,0,0,1);
-		e.self:ForeachHateList(
-		  function(ent, hate, damage, frenzy)
-			if(ent:IsClient()) then
-			  local currclient=ent:CastToClient();
-			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0);
-			end
-		  end
-		);		
 	end
 end
 

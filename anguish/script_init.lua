@@ -4,3 +4,4 @@ eq.load_encounter('ture');
 eq.load_encounter('hanvar');
 eq.load_encounter('amv');
 eq.load_encounter('omm');
+eq.load_encounter('augs');

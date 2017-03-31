@@ -53,6 +53,7 @@ function Lockouts_Def.Lockout_Globals()
       { "Anguish_lower_orb", "Anguish: Lower Globe of Discordant Energy" },
       { "Anguish_upper_orb", "Anguish: Upper Globe of Discordant Energy" },
       { "Anguish_augs", "Anguish: Replay Timer" }
+
   }
 end
 

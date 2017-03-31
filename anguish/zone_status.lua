@@ -81,10 +81,6 @@ end
 
 function Spawn_omm()
 	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 127);
-	eq.get_entity_list():FindDoor(57):SetLockPick(-1);
-	eq.get_entity_list():FindDoor(58):SetLockPick(-1);
-	eq.get_entity_list():FindDoor(59):SetLockPick(-1);
-	eq.get_entity_list():FindDoor(60):SetLockPick(-1);	
 end
 
 function Spawn_lorb()

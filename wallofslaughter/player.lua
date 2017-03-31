@@ -35,3 +35,58 @@ function event_loot(e)
 		e.self:Message(6,"As you hold the sword, your soul is tugged for a few seconds and then all four soulstones speak in unison, 'This sword is the key, this sword is the misery, this sword is the instrument that took us away, and this sword is what will set us free. Take this cursed sword to Irak Altil, for he will know how to end our pain.");	
 	end
 end
+
+function event_click_door(e)
+  local door_id = e.door:GetDoorID();
+  local instance_id = nil;
+
+  local lockouts = {
+      { "Anguish_keldovan", "Anguish: Keldovan the Harrier" },
+      { "Anguish_jelvan", "Anguish: Rescing Jelvan" },
+      { "Anguish_hanvar", "Anguish: Warden Hanvar" },
+      { "Anguish_amv", "Anguish: Arch Magus Vangi" },
+      { "Anguish_omm", "Anguish: Overlord Mata Muram" },
+      { "Anguish_lower_orb", "Anguish: Lower Globe of Discordant Energy" },
+      { "Anguish_upper_orb", "Anguish: Upper Globe of Discordant Energy" },
+      { "Anguish_augs", "Anguish: Replay Timer" }
+  };
+  eq.debug("Door: " .. door_id .. " clicked");
+
+  if (door_id == 3) then
+    instance_id = eq.get_instance_id('anguish', 0);
+    
+    if (instance_id ~= nil and instance_id ~= 0) then
+      e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 255);
+    else 
+      local instance_requests = require("instance_requests");
+
+      -- Every member of the raid needs to have 2 quest_globals set: oow_rss_taromani_insignias and oow_mpg_raids_complete
+      local required_globals = {
+        {'oow_rss_taromani_insignias', "is not protected from the chaos magic in Mata Muram's citadel." },
+        {'oow_mpg_raids_complete', 'must complete the Muramite Proving Grounds raid trials'}
+      };
+      --local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, {}, e.self, lockouts );
+      local request = instance_requests.ValidateRequestNew('raid', 'anguish', 0, 2, 54, 65, {}, required_globals, e.self, lockouts);
+      if (request.valid and request.flags == 1) then
+        instance_requests.DisplayLockouts(e.self, e.self, lockouts);
+      elseif (request.valid and request.flags == 0) then
+        instance_id = eq.create_instance('anguish', 0, 10800);
+        eq.assign_raid_to_instance(instance_id);
+        e.self:Message(14, "Anguish is open to you");
+
+        -- Set the lockout for the instance with the bits that represent the mobs that 
+        -- will be spawned by the zone_status upon entry
+        eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
+
+        -- Set a 2h lockout on the members of the raid
+        local player_list = eq.get_characters_in_instance(instance_id);
+        local lockout_name = 'anguish';
+        for k,v in pairs(player_list) do
+          eq.target_global(lockout_name,tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
+        end
+        eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
+      end
+    end
+  end
+
+end

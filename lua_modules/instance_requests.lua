@@ -1,5 +1,66 @@
 local InstanceRequests = {}
 
+function InstanceRequests.ValidateRequestNew(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, global_requirements, requestor, event_globals)
+  local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
+
+  local player_list = nil;
+  local player_list_count = 0;
+  if (groupOrRaid == 'raid') then
+    player_list = requestor:GetRaid();
+    player_list_count = player_list:RaidCount();
+  else 
+    if (groupOrRaid == 'group') then
+      player_list = requestor:GetGroup();
+      player_list_count = player_list:GroupCount();
+    end
+  end
+
+  local instance_id = eq.get_instance_id(instance, version);
+  local basicRequirementsAreValid =
+    InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count);
+  if (basicRequirementsAreValid == false) then
+    return invalidRequest;
+  end
+
+  local reqs = InstanceRequests.PlayersHaveQuestGlobals(requestor, player_list, player_list_count, global_requirements);
+  if (reqs == false) then
+    return invalidRequest;
+  end
+
+  local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
+  for i = 0, player_list_count - 1, 1 do
+    local member = player_list:GetMember(i):CastToClient();
+    if (member.valid == false) then
+      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
+      return invalidRequest;
+    end
+    if (item_requirements ~= nil) then
+      local member_has_valid_items = InstanceRequests.ValidateItemRequirements(member, item_requirements);
+      if (member_has_valid_items == false) then
+        requestor:Message(13, member:GetCleanName() .. " is missing a required item.");
+        return invalidRequest; 
+      end
+    end
+    local member_bits = InstanceRequests.GetClientLockoutBits(member, event_globals);
+    local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, member_bits));
+    --conflicting lockouts, but not a GM over level 80 with GM status turned on
+    if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and requestor:GetGM() == false))) then
+      requestor:Message(13, member:GetCleanName().." has the following lockouts:");
+      InstanceRequests.DisplayLockouts(requestor, member, event_globals);
+      return invalidRequest;
+    end
+    -- Check each client for the required globals
+    if (global_requirements ~= nil) then
+      local member_has_quest_globals = InstanceRequests.PlayerHasQuestGlobals(requestor, member, global_requirements);
+      if (member_has_quest_globals == false) then
+        return invalidRequest;
+      end
+    end
+  end
+
+  return { ["valid"] = true, ["flags"] = requestor_bits };
+end
+
 function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
   local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
 
@@ -149,4 +210,27 @@ function InstanceRequests.DisplayLockouts(requestor, client, event_globals)
   end
 end
 
+function InstanceRequests.PlayersHaveQuestGlobals(requestor, player_list, player_list_count, required_globals)
+  local retval = true;
+  for i = 0, player_list_count -1, 1 do
+    local member = player_list:GetMember(i):CastToClient();
+    local member_check = InstanceRequests.PlayerHasQuestGlobals(requestor, member, required_globals);
+    if (member_check == false) then
+      retval = false;
+    end
+  end
+  return retval;
+end
+
+function InstanceRequests.PlayerHasQuestGlobals(requestor, member, required_globals)
+  local member_globals = eq.get_qglobals(member);
+  local retval = true;
+  for k,v in pairs(required_globals) do
+    if (member_globals[v[1]] == nil) then
+      requestor:Message(13, member:GetName() .. " " .. v[2] );
+      retval = false;
+    end
+  end
+  return retval;
+end
 return InstanceRequests;

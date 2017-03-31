@@ -43,6 +43,7 @@ function event_click_door(e)
   local lockouts = {
       { "Anguish_keldovan", "Anguish: Keldovan the Harrier" },
       { "Anguish_jelvan", "Anguish: Rescing Jelvan" },
+	  { "Anguish_ture", "Anguish: Ture" },	  
       { "Anguish_hanvar", "Anguish: Warden Hanvar" },
       { "Anguish_amv", "Anguish: Arch Magus Vangi" },
       { "Anguish_omm", "Anguish: Overlord Mata Muram" },

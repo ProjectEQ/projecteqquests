@@ -107,6 +107,49 @@ function mpg_helper.SetLockoutTime(instance_id_in, lockout_name_in, lockout_time
   end
 end
 
+function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
+  -- 1  (Hate)       Mastery of Mind Rune 52407
+  -- 2  (Endurance)  Mastery of Body Rune 52408
+  -- 4  (Foresight)  Mastery of Tactics Rune 52409
+  -- 8  (Spec)       Mastery of Arcana Rune 52410
+  -- 16 (Adaptation) Mastery of Realms Rune 52411
+  -- 32 (Corruption) Mastery of Power Rune 52412
+  local client_globals = eq.get_qglobals(client);
+  local trial_bits_list = {{1,52407},{2,52408},{4,52409},{8,52410},{16,52411},{32,52412}};
+  local mpg_raid_trials; 
+  local has_all_trials;
+
+  if (client.valid) then
+    mpg_raid_trials = tonumber(client_globals['mpg_raid_trials']);
+    if ( mpg_raid_trials == nil ) then mpg_raid_trials = 0; end
+
+    if (bit.band(mpg_raid_trials, lockout_bit_in) == 0) then
+    else
+      mpg_raid_trials = bit.bor(mpg_raid_trials, lockout_bit_in);
+      eq.target_global("mpg_raid_trials", tostring(mpg_raid_trials), "F", 0, v, 0);
+
+      for bk,bv in pairs(trial_bit_list) do
+        if (lockout_bit_in == bv[1]) then
+          client:SummonItem(bv[2]);
+        end
+      end
+    end
+
+    has_all_trials = true;
+    for bk,bv in pairs(trial_bit_list) do
+      if (bit.band(mpg_raid_trials,bv[1]) == 0) then
+      else
+        has_all_trials = false;
+      end
+    end
+    if (has_all_trials) then
+      eq.target_global("oow_mpg_raids_complete", 1, "F", 0, v, 0);
+      -- Summon: Seal: Mastery of All Tarnished Signet
+      client:SummonItem(52413);
+    end
+  end
+end
+
 function mpg_helper.Display_Group_Trials_Completed(client)
   -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
   -- a Character complets a trial.

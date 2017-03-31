@@ -76,7 +76,8 @@ function Jelvan_Say(e)
 		eq.unique_spawn(317101,0,0, -252, 2008, -149, 0);
 		eq.set_timer("check_event",1*1000);
 		eq.set_timer("balance",60*1000);
-		eq.set_timer("check_leash",4000);
+		eq.set_timer("check_leash",3000);
+		eq.set_timer("depop_event",30*1000);  --depop 30 sec if no aggro
 	end
   end
 end
@@ -105,7 +106,7 @@ function Jelvan_Timer(e)
 			eq.stop_timer("balance");
 		elseif (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0) then
 			eq.set_timer("depop_event",2*1000);
-		else
+		elseif (tanthi_aggro==1 or tantho_aggro==1 or tanthu_aggro==1) then
 			eq.stop_timer("depop_event");
 		end
 	elseif (e.timer=="depop_event") then
@@ -200,7 +201,7 @@ function Jelvan_Timer(e)
 end
 
 function Tormentor_Combat(e)
-  local myid=e.self:GetID(); 
+  local myid=e.self:GetNPCTypeID(); 
   if (e.joined == true) then
     --e.self:Say("");
 	eq.set_timer("cast", 	math.random(15,45) * 1000);

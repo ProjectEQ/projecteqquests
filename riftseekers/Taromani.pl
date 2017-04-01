@@ -41,6 +41,6 @@ sub EVENT_ITEM
 		quest::setglobal("oow_rss_taromani_insignias", 1, 5, "F");
 		$client->Message(15,"You are now protected from the chaos magic in Mata Muram's citadel.");
 		quest::say("Yes, you haven't disappointed me. This is exactly what I was hoping to see, $name. Mata Muram's forces will be hampered considerably. Now for your reward. . .' She kisses her palm and reaches forward, pressing the hand against your cheek. The skin is warm, almost unbearably so. You feel queasy for a moment, and when the sensation passes she withdraws her arm. 'You'll soon discover that his impenetrable defenses aren't so impenetrable after all. Soon you will be seeing the world through the shroud of Anguish.");
-		quest::exp(875000000);
+		quest::exp(47500000);
 		}
 }

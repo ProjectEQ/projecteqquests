@@ -30,6 +30,7 @@ local convert_min_hit=278;
 local convert_max_hit=1855;
 
 function OMM_Spawn(e)
+	e.self:SetOOCRegen(0);
 	if (banished_raid==0) then
 		event_started =0;
 		banished_hp=30;
@@ -42,7 +43,7 @@ function OMM_Spawn(e)
 	else 
 		e.self:SetAppearance(1);
 		eq.set_timer("reset",15*60*1000);	
-		eq.set_timer("keep_banished_hp",1000);
+		--eq.set_timer("keep_banished_hp",1000);
 		e.self:SetHP(banished_hp);
 	end
 end
@@ -257,8 +258,8 @@ function OMM_Timer(e)
 		end
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
 		eq.depop();
-	elseif (e.timer =="keep_banished_hp") then
-		e.self:SetHP(banished_hp);
+	--elseif (e.timer =="keep_banished_hp") then
+	--	e.self:SetHP(banished_hp);
 	elseif (e.timer == "reset") then
 		eq.depop_all(317110);
 		eq.depop_all(317114);

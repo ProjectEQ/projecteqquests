@@ -49,10 +49,10 @@ local tantho_ae=0;
 local tanthu_ae=0;
 local tanthi_aggro=0;
 local tantho_aggro=0
-local tanthi_aggro=0;
+local tanthu_aggro=0;
+local depopping=0;
 
-function Jelvan_spawn(e)
-	eq.set_timer("emote", 60 *1000); --how often is the emote?
+function Jelvan_spawn()
 	event_started =0;
 end
 
@@ -65,6 +65,7 @@ function Jelvan_Say(e)
 	elseif(e.message:findi("help")) then
 		e.self:Say("They must be killed! They... Can you here them? They are coming close. I will help you while I can, but I can already feel their taint seeping into my bones");
 		event_started=1;
+		depopping=1;
 		tanthi_ae=0;
 		tantho_ae=0;
 		tanthu_ae=0;
@@ -77,7 +78,7 @@ function Jelvan_Say(e)
 		eq.set_timer("check_event",1*1000);
 		eq.set_timer("balance",60*1000);
 		eq.set_timer("check_leash",3000);
-		eq.set_timer("depop_event",30*1000);  --depop 30 sec if no aggro
+		eq.set_timer("depop_event",15*1000);  --depop 15 sec if no aggro
 	end
   end
 end
@@ -104,13 +105,15 @@ function Jelvan_Timer(e)
 			eq.depop();
 		elseif (torment_alive==1) then
 			eq.stop_timer("balance");
-		elseif (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0) then
-			eq.set_timer("depop_event",2*1000);
+		elseif (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0 and depopping==0) then
+			eq.set_timer("depop_event",15*1000);
+      depopping=1;
 		elseif (tanthi_aggro==1 or tantho_aggro==1 or tanthu_aggro==1) then
 			eq.stop_timer("depop_event");
+      depopping=0;
 		end
 	elseif (e.timer=="depop_event") then
-		if (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0) then
+		if (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0 and depopping==1) then
 			eq.stop_timer("depop_event");
 			eq.stop_timer("check_event");
 			eq.stop_timer("balance");
@@ -203,11 +206,10 @@ end
 function Tormentor_Combat(e)
   local myid=e.self:GetNPCTypeID(); 
   if (e.joined == true) then
-    --e.self:Say("");
-	eq.set_timer("cast", 	math.random(15,45) * 1000);
-	eq.set_timer("void", 	math.random(10,60) * 1000);
-	eq.set_timer("relinq",  math.random(10,60) * 1000);
-	eq.set_timer("torment", math.random(10,60) * 1000);
+	eq.set_timer("cast", 	math.random(10,45) * 1000);
+	eq.set_timer("void", 	math.random(1,20) * 1000);
+	eq.set_timer("relinq",  math.random(20,40) * 1000);
+	eq.set_timer("torment", math.random(40,60) * 1000);
 	if (myid==317099) then
 		tanthi_aggro=1;
 	elseif (myid==317100) then
@@ -232,12 +234,6 @@ function Tormentor_Combat(e)
 end
 
 function Aggro_Tormentor(e)
---	local npc_list =  eq.get_entity_list():GetNPCList();
---	for npc in npc_list.entries do
---		if (npc.valid and (npc:GetNPCTypeID() == 317099 or npc:GetNPCTypeID() == 317100 or npc:GetNPCTypeID() == 317101)) then
---			npc:AddToHateList(e.self:GetHateTop(),1);
---		end
---	end
 	eq.get_entity_list():GetNPCByNPCTypeID(317099):AddToHateList(e.self:GetHateTop(),1)
 	eq.get_entity_list():GetNPCByNPCTypeID(317100):AddToHateList(e.self:GetHateTop(),1)
 	eq.get_entity_list():GetNPCByNPCTypeID(317101):AddToHateList(e.self:GetHateTop(),1)	
@@ -293,25 +289,22 @@ function Tormentor_Signal(e)
 	end
 end
 
-function Leash_Tormentors(e)
+function Leash_Tormentors()
 	local tanthi_l= eq.get_entity_list():GetNPCByNPCTypeID(317099);
 	local tantho_l= eq.get_entity_list():GetNPCByNPCTypeID(317100);
 	local tanthu_l= eq.get_entity_list():GetNPCByNPCTypeID(317101);
 	
 	if tanthi_l.valid then
 		if (tanthi_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthi_l:GetZ() > -130 or tanthi_l:GetZ() < -160) then
-		eq.signal(317099,1);
-			--Gate_Tormentors(tanthi_l:CastToNPC());
+      eq.signal(317099,1);
 		end
-	elseif tantho_o.valid then
+	elseif tantho_l.valid then
 		if (tantho_o:CalculateDistance( -256, 2100, -120.9) > 140 or tantho_o:GetZ() > -130 or tantho_o:GetZ() < -160) then
-		eq.signal(317100,1);
-		--Gate_Tormentors(tanthi_o:CastToNPC());
+      eq.signal(317100,1);
 		end
 	elseif tanthu_l.valid then
 		if (tanthu_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthu_l:GetZ() > -130 or tanthu_l:GetZ() < -160) then
-		eq.signal(317101,1);
-		--Gate_Tormentors(tanthi_u:CastToNPC());
+      eq.signal(317101,1);
 		end
 	end
 end
@@ -322,7 +315,7 @@ function event_encounter_load(e)
   eq.register_npc_event('jelvan', Event.timer,        	317004, Jelvan_Timer);
   
   eq.register_npc_event('jelvan', Event.combat,			317099, Tormentor_Combat);
-  eq.register_npc_event('jelvan', Event.timer,        	317099, Tormentor_Timer);  
+  eq.register_npc_event('jelvan', Event.timer,			317099, Tormentor_Timer);  
   eq.register_npc_event('jelvan', Event.combat,			317100, Tormentor_Combat);
   eq.register_npc_event('jelvan', Event.timer,        	317100, Tormentor_Timer);
   eq.register_npc_event('jelvan', Event.combat,			317101, Tormentor_Combat);

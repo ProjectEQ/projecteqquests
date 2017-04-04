@@ -187,11 +187,11 @@ function OMM_Timer(e)
 		eq.stop_timer("mmgaze_cast");		
 		if (gaze_client.valid) then		
 			e.self:Emote("fixes his gaze on " .. gaze_client:GetName());						
-			if (gaze_client:FindBuff(6494)) then
-				eq.zone_emote(15, "Overlord Mata Muram's spell has been reflected by " .. gaze_client:GetName() .. ".");			
+			--if (gaze_client:FindBuff(6494)) then
+				--eq.zone_emote(15, "Overlord Mata Muram's spell has been reflected by " .. gaze_client:GetName() .. ".");			
 			--else
 			--	eq.zone_emote(15, "client didnt have buff");
-			end
+			--end
 			e.self:CastSpell(5685, gaze_client:GetID());--Mata Muram's Gaze
 		--else
 		--what happens if someone dies while they are target? assume nothing
@@ -331,7 +331,7 @@ function event_encounter_load(e)
 	eq.register_npc_event('omm', Event.spawn,         	317109, OMM_Spawn); 
 	eq.register_npc_event('omm', Event.combat,        	317109, OMM_Combat); 
 	eq.register_npc_event('omm', Event.timer,         	317109, OMM_Timer);
-	eq.register_npc_event('amv', Event.hp,         		317109, OMM_HP);
+	eq.register_npc_event('omm', Event.hp,         		317109, OMM_HP);
 	eq.register_npc_event('omm', Event.death_complete,	317109, OMM_Death);
 	eq.register_npc_event('omm', Event.signal,			317109, OMM_Signal);	    
 	eq.register_npc_event('omm', Event.death_complete,	317114, Coerced_Death);

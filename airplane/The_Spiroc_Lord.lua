@@ -1,3 +1,17 @@
+function event_spawn(e)
+		eq.set_timer("dt",math.random(1,5)*1000);	
+end
+
+function event_timer(e)
+	if e.timer=="dt" then
+		local targ=e.self:GetTarget():GetID();
+		if (targ ~= nil and target ~=0) then
+			e.self:CastSpell(982, targ); --100k cazic touch
+			eq.set_timer("dt",30*1000);
+		end
+	end
+end
+
 function event_death_complete(e)
 	local qglobals = eq.get_qglobals();
 	

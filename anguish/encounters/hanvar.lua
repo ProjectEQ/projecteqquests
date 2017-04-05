@@ -82,6 +82,7 @@ function Guard_Timer(e)
   elseif(e.timer=="depop") then
 	e.self:CastSpell(5681, e.self:GetTarget():GetID()); --Feedback Dispersion
 	e.self:Emote("guard sacrifices himself to give the warden an explosive blast of energy.");
+	eq.depop_with_timer();
   end
 end
 

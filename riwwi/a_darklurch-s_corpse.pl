@@ -25,6 +25,7 @@ sub EVENT_SIGNAL {
 if($counter == 7) {
    quest::creategroundobject(52151,174,-910,-20,200,300000);
    quest::spawn_condition($zonesn,1,0);
+   quest::me("In the bottom of the waterway, the glint of a silvery object catches your eye.  It must have fallen into the canal during the chaos of battle.");
    quest::depop_withtimer();
    }		
 }

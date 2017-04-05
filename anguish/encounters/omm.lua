@@ -52,22 +52,24 @@ function OMM_Say(e)
   if event_started==0 then
 	if(e.message:findi("hail")) then
 		e.self:Say("So. You are the mighty god killers. I am not surprised you managed to make it this far. I did expect there to be more of you, do you really think so little of me? I have destroyed [" .. eq.say_link("worlds") .. "] where animals roam with power that would cause your gods to tremble.");
-	elseif(e.message:findi("worlds")) then	
-		e.self:Say("You would have made fine additions to my army, were you not so willful. Prepare yourself for power beyond your greatest nightmares.");
-		event_started=1;
-		reset_countdown=0;
-		banished_raid=0;
-		banished_hp=30;
-		eq.spawn2(317114,0,0,378, 4969, 279, 64);
-		eq.spawn2(317114,0,0,618, 4969, 279, 192);		
-		eq.set_next_hp_event(80);
-		e.self:AddToHateList(e.other,1);
-		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
-		e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0);
-		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
-		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
-		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);	
-		e.self:AddToHateList(e.other,1);
+	elseif(e.message:findi("worlds")) then
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107)==false) -- if amv is up, ignore hails
+			e.self:Say("You would have made fine additions to my army, were you not so willful. Prepare yourself for power beyond your greatest nightmares.");
+			event_started=1;
+			reset_countdown=0;
+			banished_raid=0;
+			banished_hp=30;
+			eq.spawn2(317114,0,0,378, 4969, 279, 64);
+			eq.spawn2(317114,0,0,618, 4969, 279, 192);		
+			eq.set_next_hp_event(80);
+			e.self:AddToHateList(e.other,1);
+			e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
+			e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0);
+			e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+			e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);	
+			e.self:AddToHateList(e.other,1);
+		end
 	end
   end
 end

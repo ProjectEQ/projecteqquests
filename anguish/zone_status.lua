@@ -34,7 +34,7 @@ function setup_lockouts()
     [317004] = {'Anguish_jelvan',   2,   Spawn_jelvan},
     [317003] = {'Anguish_ture',     4,   Spawn_ture},
     [317002] = {'Anguish_hanvar',   8,   Spawn_hanvar},
-    [317001] = {'Anguish_amv',      16,  Spawn_amv},
+    [317001] = {'Anguish_amv',      16,  PH_amv},
     [317000] = {'Anguish_omm',      32,  Spawn_omm},
 	[1]		 = {'Anguish_lower_orb',64,  PH_lorb},
 	[2]		 = {'Anguish_upper_orb',128, PH_uorb},
@@ -75,11 +75,12 @@ function Spawn_hanvar()
 	eq.unique_spawn(317002,0,0, 424, 4389, 222, 64);
 end
 
-function Spawn_amv()
-	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0);
+function PH_amv()	
 end
 
 function Spawn_omm()
+--always spawn AMV if OMM is up.  AMV only drops chest on the first kill
+	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0);
 	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 127);
 end
 
@@ -93,6 +94,11 @@ end
 function Check_lorb()
 end
 function Check_uorb()
+end
+
+function Check_amv_chest()
+--spawn ornate chest only if noone in the raid has AMV lockout
+--if chest spawned, give lockout, else do nothing
 end
 
 function Spawn_augs()
@@ -162,21 +168,27 @@ function AddLockout(lockout)
   else
     lockout_duration="H108";
   end
+ 
+  if (lockout_name=="Anguish_amv") then
+  --you cant blanket assign a lockout to AMV, chest spawn logic must occur and dont assign a lockout if one already exists
+    Check_amv_chest();
+  else 
   
-  current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]); 
-  eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,lockout_bit)),7,"H6"); 
+	  current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]); 
+	  eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,lockout_bit)),7,"H6"); 
 
-  for k,v in pairs(charid_list) do
-    eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), lockout_duration, 0,v, 0);
-  end
+	  for k,v in pairs(charid_list) do
+		eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), lockout_duration, 0,v, 0);
+	  end
 
-  --wait til after lockouts set to spawn in case of crash, etc
-  if (lockout_name=="Anguish_augs") then
-	Spawn_augs();
-  elseif (lockout_name=="Anguish_keldovan" or lockout_name=="Anguish_jelvan") then
-	Check_lorb();
-  elseif (lockout_name=="Anguish_ture" or lockout_name=="Anguish_hanvar") then
-    Check_uorb();
+	  --wait til after lockouts set to spawn in case of crash, etc
+	  if (lockout_name=="Anguish_augs") then
+		Spawn_augs();
+	  elseif (lockout_name=="Anguish_keldovan" or lockout_name=="Anguish_jelvan") then
+		Check_lorb();
+	  elseif (lockout_name=="Anguish_ture" or lockout_name=="Anguish_hanvar") then
+		Check_uorb();
+	  end
   end
 end
 

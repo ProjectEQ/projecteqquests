@@ -106,6 +106,7 @@ function AMV_Timer(e)
 		e.self:SetHP(100);
 		convert_min_hit=278;
 		convert_max_hit=1855;
+		e.self:GotoBind(); --this should not be needed, he should walk home.  just in case
     end
 end
 

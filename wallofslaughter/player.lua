@@ -58,6 +58,13 @@ function event_click_door(e)
     
     if (instance_id ~= nil and instance_id ~= 0) then
       e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 255);
+
+    -- if GM just give him an instance
+    elseif (e.self:Admin() >= 80 and e.self:GetGM()) then
+      instance_id = eq.create_instance('anguish', 0, 21600);
+      eq.assign_raid_to_instance(instance_id);
+      e.self:Message(14, "GM Exception: Anguish is open to you");
+      eq.set_global(instance_id.."_anguish_bit",tostring(0),7,"H6");
     else 
       local instance_requests = require("instance_requests");
 
@@ -71,21 +78,21 @@ function event_click_door(e)
       if (request.valid and request.flags == 1) then
         instance_requests.DisplayLockouts(e.self, e.self, lockouts);
       elseif (request.valid and request.flags == 0) then
-        instance_id = eq.create_instance('anguish', 0, 10800);
+        instance_id = eq.create_instance('anguish', 0, 21600);
         eq.assign_raid_to_instance(instance_id);
-        e.self:Message(14, "Anguish is open to you");
 
         -- Set the lockout for the instance with the bits that represent the mobs that 
         -- will be spawned by the zone_status upon entry
         eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
 
-        -- Set a 2h lockout on the members of the raid
-        local player_list = eq.get_characters_in_instance(instance_id);
-        local lockout_name = 'anguish';
-        for k,v in pairs(player_list) do
-          eq.target_global(lockout_name,tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
-        end
+        -- Set a 6h lockout on the members of the raid
+--        local player_list = eq.get_characters_in_instance(instance_id);
+--         local lockout_name = 'anguish';
+--         for k,v in pairs(player_list) do
+--           eq.target_global(lockout_name,tostring(instance_requests.GetLockoutEndTimeForHours(6)), "H6", 0, v, 0);
+--         end
         eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
+        e.self:Message(14, "Anguish is open to you");
       end
     end
   end

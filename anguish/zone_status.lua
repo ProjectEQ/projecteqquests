@@ -76,7 +76,7 @@ function Spawn_hanvar()
 end
 
 function Spawn_amv()
-	eq.unique_spawn(317107,0,0, 336, 4486, 278, 0);
+	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0);
 end
 
 function Spawn_omm()

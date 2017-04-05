@@ -88,12 +88,18 @@ function Jelvan_Timer(e)
 		local torment_alive=0;
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317099)==true) then
 			torment_alive=torment_alive+1;
+		else
+			tanthi_aggro=0;
 		end
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317100)==true) then
 			torment_alive=torment_alive+1;
+		else
+			tantho_aggro=0;			
 		end
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317101)==true) then
 			torment_alive=torment_alive+1;
+		else
+			tanthu_aggro=0;			
 		end		
 		if(torment_alive==0) then
 		--set player lockout
@@ -107,10 +113,10 @@ function Jelvan_Timer(e)
 			eq.stop_timer("balance");
 		elseif (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0 and depopping==0) then
 			eq.set_timer("depop_event",15*1000);
-      depopping=1;
+			depopping=1;
 		elseif (tanthi_aggro==1 or tantho_aggro==1 or tanthu_aggro==1) then
 			eq.stop_timer("depop_event");
-      depopping=0;
+			depopping=0;
 		end
 	elseif (e.timer=="depop_event") then
 		if (tanthi_aggro==0 and tanthi_aggro==0 and tanthu_aggro==0 and depopping==1) then

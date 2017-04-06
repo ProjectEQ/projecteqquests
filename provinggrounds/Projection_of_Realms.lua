@@ -16,7 +16,7 @@ function event_say(e)
   elseif (e.message:findi("ingenuity")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_ingenuity', 'MPG: The Mastery of Ingenuity' } } 
-    local requests = instance_requests.ValidateRequest('group', 'chamberse', 1, 2, 6, 65, nil, e.other, lockouts);
+    local requests = instance_requests.ValidateRequest('group', 'chamberse', 1, 2, 6, 65, nil, nil, e.other, lockouts);
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then
@@ -31,7 +31,7 @@ function event_say(e)
   elseif (e.message:findi("adaptation")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_adaptation', 'MPG: Trial of Adaptation' } }
-    local requests = instance_requests.ValidateRequest('raid',  'chambrese', 2, 2, 54, 65, nil, e.other, lockouts);
+    local requests = instance_requests.ValidateRequest('raid',  'chambrese', 2, 2, 54, 65, nil, nil, e.other, lockouts);
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 

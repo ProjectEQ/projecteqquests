@@ -1,6 +1,6 @@
 local InstanceRequests = {}
 
-function InstanceRequests.ValidateRequestNew(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, global_requirements, requestor, event_globals)
+function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, global_requirements, requestor, event_globals)
   local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
 
   local player_list = nil;
@@ -22,9 +22,12 @@ function InstanceRequests.ValidateRequestNew(groupOrRaid, instance, version,  mi
     return invalidRequest;
   end
 
-  local reqs = InstanceRequests.PlayersHaveQuestGlobals(requestor, player_list, player_list_count, global_requirements);
-  if (reqs == false) then
-    return invalidRequest;
+  -- Check each client for the required globals
+  if (global_requirements ~= nil) then
+    local reqs = InstanceRequests.PlayersHaveQuestGlobals(requestor, player_list, player_list_count, global_requirements);
+    if (reqs == false) then
+      return invalidRequest;
+    end
   end
 
   local requestor_bits = InstanceRequests.GetClientLockoutBits(requestor, event_globals);
@@ -49,19 +52,12 @@ function InstanceRequests.ValidateRequestNew(groupOrRaid, instance, version,  mi
       InstanceRequests.DisplayLockouts(requestor, member, event_globals);
       return invalidRequest;
     end
-    -- Check each client for the required globals
-    if (global_requirements ~= nil) then
-      local member_has_quest_globals = InstanceRequests.PlayerHasQuestGlobals(requestor, member, global_requirements);
-      if (member_has_quest_globals == false) then
-        return invalidRequest;
-      end
-    end
   end
 
   return { ["valid"] = true, ["flags"] = requestor_bits };
 end
 
-function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
+function InstanceRequests.ValidateRequestOLD(groupOrRaid, instance, version,  min_players, max_players, min_level, item_requirements, requestor, event_globals)
   local invalidRequest = { ["valid"] = false, ["flags"] = 0 };
 
   local player_list = nil;

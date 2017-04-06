@@ -32,6 +32,8 @@ local convert_max_hit=1855;
 function OMM_Spawn(e)
 	e.self:SetOOCRegen(0);
 	if (banished_raid==0) then
+		eq.debug("spawn, banished == 0");
+		--e.self:SetHP(e.self:GetMaxHP());
 		event_started =0;
 		banished_hp=30;
 		e.self:SetAppearance(1); --sitting
@@ -41,6 +43,7 @@ function OMM_Spawn(e)
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
 	else 
+		eq.debug("spawn, banished != 0");
 		e.self:SetAppearance(1);
 		eq.set_timer("reset",15*60*1000);	
 		--eq.set_timer("keep_banished_hp",1000);
@@ -114,12 +117,15 @@ function OMM_HP(e)
 		eq.stop_timer("mmgaze");
 		eq.stop_timer("gaze");
 		eq.stop_timer("relinq");
-		eq.stop_timer("void");		
+		eq.stop_timer("void");
+		e.self:SetAppearance(1);		
 		e.self:CameraEffect(1000,2);
 		eq.signal(317118,1);
 		eq.signal(317119,2);		
-		eq.set_timer("move_to_spawn",30*1000);
+		--eq.set_timer("move_to_spawn",30*1000);
+		--eq.debug("move_to_spawn timer start: " .. os.date("!%c"));
 		eq.set_timer("banish",60*1000);
+		eq.debug("banish start: " .. os.date("!%c"));
 		eq.set_timer("limit_20pct",1000);
 	end		
 end
@@ -220,15 +226,17 @@ function OMM_Timer(e)
 		--else
 		--what happens if someone dies while they are target? assume nothing			
 		end
-	elseif (e.timer == "move_to_spawn") then
-		e.self:MoveTo(507, 4969, 296.53, 127.6,true);
-		eq.stop_timer("move_to_spawn");
+	--elseif (e.timer == "move_to_spawn") then
+	--	eq.debug("move_to_spawn end: " .. os.date("!%c"));
+	--	e.self:MoveTo(507, 4969, 296.53, 127.6,true);
+	--	eq.stop_timer("move_to_spawn");
 	elseif (e.timer == "limit_20pct") then
 		if (e.self:GetHPRatio() < 20) then
 			local new_hp = e.self:GetMaxHP() * 20/100;
 			e.self:SetHP(new_hp);		
 		end	
 	elseif (e.timer == "banish") then
+		eq.debug("banish end: " .. os.date("!%c"));
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		eq.depop_all(317118);
@@ -263,12 +271,14 @@ function OMM_Timer(e)
 	--elseif (e.timer =="keep_banished_hp") then
 	--	e.self:SetHP(banished_hp);
 	elseif (e.timer == "reset") then
+		eq.debug("resetting event: " .. os.date("!%c"));
+		event_started=0;
+		banished_raid=0;
 		eq.depop_all(317110);
 		eq.depop_all(317114);
 		eq.depop_all(317117);
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
-		eq.depop();
-		event_started=0;
+		eq.depop();		
     end
 end
 
@@ -280,9 +290,12 @@ end
 
 function OMM_Signal(e)
 	--30 sec reset timer on first click up after raid is banished 
-	if (e.signal==1 and reset_countdown==0 and banished_raid==0) then
-		eq.set_timer("reset_event",30*1000);
-		reset_countdown=1;
+	if (e.signal==1) then
+		if (reset_countdown==0 and banished_raid==1) then
+			eq.set_timer("reset",30*1000);
+			reset_countdown=1;
+			eq.debug("someone clicked up after banish, starting reset countdown: 30s " .. os.date("!%c") );
+		end
 	end
 end
 

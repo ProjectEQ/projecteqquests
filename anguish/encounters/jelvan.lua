@@ -297,19 +297,19 @@ end
 
 function Leash_Tormentors()
 	local tanthi_l= eq.get_entity_list():GetNPCByNPCTypeID(317099);
-	local tantho_l= eq.get_entity_list():GetNPCByNPCTypeID(317100);
-	local tanthu_l= eq.get_entity_list():GetNPCByNPCTypeID(317101);
+	local tantho_o= eq.get_entity_list():GetNPCByNPCTypeID(317100);
+	local tanthu_u= eq.get_entity_list():GetNPCByNPCTypeID(317101);
 	
 	if tanthi_l.valid then
 		if (tanthi_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthi_l:GetZ() > -130 or tanthi_l:GetZ() < -160) then
       eq.signal(317099,1);
 		end
-	elseif tantho_l.valid then
+	elseif tantho_o.valid then
 		if (tantho_o:CalculateDistance( -256, 2100, -120.9) > 140 or tantho_o:GetZ() > -130 or tantho_o:GetZ() < -160) then
       eq.signal(317100,1);
 		end
-	elseif tanthu_l.valid then
-		if (tanthu_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthu_l:GetZ() > -130 or tanthu_l:GetZ() < -160) then
+	elseif tanthu_u.valid then
+		if (tanthu_u:CalculateDistance( -256, 2100, -120.9) > 140 or tanthu_u:GetZ() > -130 or tanthu_u:GetZ() < -160) then
       eq.signal(317101,1);
 		end
 	end

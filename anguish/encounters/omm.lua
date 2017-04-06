@@ -53,7 +53,7 @@ function OMM_Say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("So. You are the mighty god killers. I am not surprised you managed to make it this far. I did expect there to be more of you, do you really think so little of me? I have destroyed [" .. eq.say_link("worlds") .. "] where animals roam with power that would cause your gods to tremble.");
 	elseif(e.message:findi("worlds")) then
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107)==false) -- if amv is up, ignore hails
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107)==false) then -- if amv is up, ignore hails
 			e.self:Say("You would have made fine additions to my army, were you not so willful. Prepare yourself for power beyond your greatest nightmares.");
 			event_started=1;
 			reset_countdown=0;

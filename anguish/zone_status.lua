@@ -18,28 +18,28 @@
 -- Zone Trash:
 --
 --]]
---
 local lockout_bit;
 local instance_id = 0;
 local qglobals = {};
 local charid_list;
 local current_bit = 0;
 local entity_list;
+local spawn_orb=false;
 local instance_requests = require("instance_requests");
 local Anguish_Lockouts = {};
 
 function setup_lockouts()
-  Anguish_Lockouts = {
-    [317005] = {'Anguish_keldovan', 1,   Spawn_keldovan},
-    [317004] = {'Anguish_jelvan',   2,   Spawn_jelvan},
-    [317003] = {'Anguish_ture',     4,   Spawn_ture},
-    [317002] = {'Anguish_hanvar',   8,   Spawn_hanvar},
-    [317001] = {'Anguish_amv',      16,  PH_amv},
-    [317000] = {'Anguish_omm',      32,  Spawn_omm},
-	[1]		 = {'Anguish_lower_orb',64,  PH_lorb},
-	[2]		 = {'Anguish_upper_orb',128, PH_uorb},
-	[3]		 = {'Anguish_augs'	   ,256, PH_augs}
-  }
+	Anguish_Lockouts = {
+		[317005] = {'Anguish_keldovan', 1,   Spawn_keldovan},
+		[317004] = {'Anguish_jelvan',   2,   Spawn_jelvan},
+		[317003] = {'Anguish_ture',     4,   Spawn_ture},
+		[317002] = {'Anguish_hanvar',   8,   Spawn_hanvar},
+		[317107] = {'Anguish_amv',      16,  PH_amv},
+		[317109] = {'Anguish_omm',      32,  Spawn_omm},
+		[1]		 = {'Anguish_lower_orb',64,  PH_lorb},
+		[2]		 = {'Anguish_upper_orb',128, PH_uorb},
+		[3]		 = {'Anguish_augs'	   ,256, PH_augs}
+	};
 end
 
 function event_spawn(e)
@@ -50,7 +50,7 @@ function event_spawn(e)
   lockout_bit = tonumber(qglobals[instance_id .. "_anguish_bit"]);
   if (lockout_bit == nil) then lockout_bit = 0 end
   setup_lockouts();
-
+  eq.debug("Lockout Bit: " ..  lockout_bit);
   for k,v in pairs(Anguish_Lockouts) do
     if (bit.band(lockout_bit, v[2]) == 0 and v[3] ~= nil ) then
       v[3]();
@@ -91,14 +91,82 @@ end
 function PH_augs()
 end
 
-function Check_lorb()
+function Check_lorb(lockout_name)
+	qglobals = eq.get_qglobals()
+	spawn_orb=false;
+	current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
+	--if lower orb bit(64) is not set
+	if (bit.band(current_bit,64)==0) then
+		--if keldovan (1) and jelvan(2) dead spawn orb 
+		if (bit.band(current_bit,1)==1 and bit.band(current_bit,2)==2) then
+			spawn_orb=true
+		--if only keldovan or jelvan are dead, 50% chance to spawn orb
+		elseif (math.random(1,2)==1) then
+			spawn_orb=true
+		end
+		
+		if(spawn_orb==true) then
+			AddLockout(Anguish_Lockouts[1]);
+			
+			if lockout_name =="Anguish_keldovan" then
+				eq.spawn2(317087,0,0, -301 ,702, -201, 0);
+			elseif lockout_name == "Anguish_jelvan" then
+				eq.get_entity_list():GetNPCByNPCTypeID(317111):AddItem(47100,1);
+			end	
+			eq.debug("Check_lorb: Spawn Lower Orb");
+		else
+			eq.debug("Check_lorb: No Lower Orb");
+		end
+	end
 end
-function Check_uorb()
+
+function Check_uorb(lockout_name)
+	qglobals = eq.get_qglobals()
+	--eq.debug("checking urb"):
+	spawn_orb=false;
+	current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
+	--eq.zone_emote(13,"in uorb bit: " .. bit.band(current_bit,128));
+	--if upper orb bit(128) is not set
+	if (bit.band(current_bit,128)==0) then
+		--eq.debug("urb bit not set: ".. current_bit .. " :  bitand: " .. bit.band(current_bit,128)):
+		--if ture (4) and hanvar(8) dead spawn orb 
+		if (bit.band(current_bit,4)==4 and bit.band(current_bit,8)==8) then
+			spawn_orb=true
+		--if only ture or hanvar are dead, 50% chance to spawn orb
+		elseif (math.random(1,2)==1) then
+			spawn_orb=true
+		end
+		
+		if(spawn_orb==true) then
+			AddLockout(Anguish_Lockouts[2]);
+			
+			if lockout_name =="Anguish_ture" then
+				eq.spawn2(317087,0,0, 610, 3381, -12, 0);
+			elseif lockout_name == "Anguish_hanvar" then
+				eq.spawn2(317087,0,0, 478, 4390, 209, 0);
+			end				
+			eq.debug("Check_uorb: Spawn Upper Orb");
+		else
+			eq.debug("Check_uorb: No Upper Orb");
+		end
+	end
 end
 
 function Check_amv_chest()
---spawn ornate chest only if noone in the raid has AMV lockout
---if chest spawned, give lockout, else do nothing
+	qglobals = eq.get_qglobals()
+--spawn ornate chest only if amv lockout is not already set
+--do not set AMV lockout if it already exists
+	current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
+	if (bit.band(current_bit,16)==0) then
+		eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,16)),7,"H6"); 
+		for k,v in pairs(charid_list) do
+			eq.target_global('Anguish_amv', tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
+		end
+		eq.unique_spawn(317112,0,0, 366, 4886, 278, 0); --Ornate_Chest
+		eq.debug("Check_amv_chest: Spawn Chest");
+	else
+		eq.debug("Check_amv_chest: No Chest");
+	end	
 end
 
 function Spawn_augs()
@@ -107,8 +175,8 @@ function Spawn_augs()
 	local mob_list = {};
 	local num_to_spawn;
 	local mob_in_list=false;
-
---#a_lightning_warrior_commander (317076)
+	
+	--#a_lightning_warrior_commander (317076) is placeholder
   list_named = {
     [1] = { 317094, 'Grenlok_the_Converter', 4, 1638, -204, 128},
     [2] = { 317105, 'Vilria_the_Keeper', 204, 703, -202, 195},
@@ -128,7 +196,7 @@ function Spawn_augs()
 		num_to_spawn=5;
 	end
 
-	--eq.zone_emote(13,"num_to_spawn: " .. num_to_spawn);
+	eq.debug("Aug Named to spawn: " .. num_to_spawn);
 	while( num_mob < num_to_spawn ) do
 		rolled_mob=list_named[math.random(1,5)][1];	
 		mob_in_list=false;		
@@ -160,41 +228,47 @@ function Spawn_augs()
 end
 
 function AddLockout(lockout)
-  local lockout_name = lockout[1]; 
-  local lockout_bit = lockout[2];
-  local lockout_duration;
-  if (lockout_name=="Anguish_augs") then
-	lockout_duration="H2";
-  else
-    lockout_duration="H108";
-  end
- 
-  if (lockout_name=="Anguish_amv") then
-  --you cant blanket assign a lockout to AMV, chest spawn logic must occur and dont assign a lockout if one already exists
-    Check_amv_chest();
-  else 
-  
-	  current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]); 
-	  eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,lockout_bit)),7,"H6"); 
+	qglobals = eq.get_qglobals()
+	local lockout_name = lockout[1]; 
+	local lockout_bit = lockout[2];
+	local lockout_duration;
+	local lockout_end_time;
+	if (lockout_name=="Anguish_augs") then
+		lockout_duration="H2";
+		lockout_end_time=tostring(instance_requests.GetLockoutEndTimeForHours(2));
+	else
+		lockout_duration="H108";
+		lockout_end_time=tostring(instance_requests.GetLockoutEndTimeForHours(108));
+	end	
+	--you cant blanket assign a lockout to AMV
+	if (lockout_name=="Anguish_amv") then	
+		Check_amv_chest();
+	else		
+		current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
+		--if (lockout_bit == nil) then lockout_bit = 0 end
+		--if (current_bit ~= nil and current_bit > 0 and bit.bor(current_bit,lockout_bit)==0) then
+		eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,lockout_bit)),7,"H6"); 
 
-	  for k,v in pairs(charid_list) do
-		eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), lockout_duration, 0,v, 0);
-	  end
+		for k,v in pairs(charid_list) do
+			eq.target_global(lockout_name, lockout_end_time, lockout_duration, 0,v, 0);
+		end
 
-	  --wait til after lockouts set to spawn in case of crash, etc
-	  if (lockout_name=="Anguish_augs") then
-		Spawn_augs();
-	  elseif (lockout_name=="Anguish_keldovan" or lockout_name=="Anguish_jelvan") then
-		Check_lorb();
-	  elseif (lockout_name=="Anguish_ture" or lockout_name=="Anguish_hanvar") then
-		Check_uorb();
-	  end
-  end
+		--wait til after lockouts set to spawn in case of crash, etc
+		if (lockout_name=="Anguish_augs") then
+			Spawn_augs();
+		elseif (lockout_name=="Anguish_keldovan" or lockout_name=="Anguish_jelvan") then
+			Check_lorb(lockout_name);
+		elseif (lockout_name=="Anguish_ture" or lockout_name=="Anguish_hanvar") then
+			Check_uorb(lockout_name);			
+		end
+		--end
+	end
 end
 
 function event_signal(e)
-  if ( Anguish_Lockouts[e.signal] ~= nil ) then
-    AddLockout( Anguish_Lockouts[e.signal] );
+  eq.debug("signal: " .. e.signal);
+  if ( Anguish_Lockouts[e.signal] ~= nil ) then  	
+    AddLockout(Anguish_Lockouts[e.signal]);
   end
 end
 

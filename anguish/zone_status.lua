@@ -181,7 +181,7 @@ function Spawn_augs()
     [1] = { 317094, 'Grenlok_the_Converter', 4, 1638, -204, 128},
     [2] = { 317105, 'Vilria_the_Keeper', 204, 703, -202, 195},
     [3] = { 317106, 'Damlin_Lingering_Charge', 355, 3815, 141, 193},
-    [4] = { 317078, 'First_Lieutenant_Minas', 345, 4669, 215.4, 0},
+    [4] = { 317078, 'First_Lieutenant_Minas', 345, 4642, 209.4, 126},
     [5] = { 317077, 'Administrator_Charial', 20.75, 3811.7, 143, 64}
 	};
 	
@@ -211,6 +211,7 @@ function Spawn_augs()
 		end
 	end
 	
+	local grid;
 	for i = 1, 5 do
 		mob_in_list=false
 		for k,v in pairs(mob_list) do
@@ -218,12 +219,15 @@ function Spawn_augs()
 				mob_in_list=true;
 			end
 		end
+		
+		if i==4 then grid=16 else grid=0 end
+		
 		if mob_in_list then
 			--eq.zone_emote(15,"spawn: " .. list_named[i][1] .. " ," .. list_named[i][3] .. " ," .. list_named[i][4] .. " ," .. list_named[i][5] .. " ," ..list_named[i][6]); 
-		    eq.spawn2(list_named[i][1],0,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);		  
+		    eq.spawn2(list_named[i][1],grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);		  
 		 else
-			eq.spawn2(317076,0,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);
-		end;
+			eq.spawn2(317076,grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);
+		end;		
 	end
 end
 

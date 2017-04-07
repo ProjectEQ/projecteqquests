@@ -88,15 +88,6 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
   end
 end
 
-function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_name_in)
-  local instance_requests = require("instance_requests");
-
-  for k,v in pairs(player_list_in) do
-    -- Set a lockout 
-    eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
-  end
-end
-
 -- lockout time is in hours
 function mpg_helper.SetLockoutTime(instance_id_in, lockout_name_in, lockout_time_in)
   local instance_requests = require("instance_requests");
@@ -104,6 +95,27 @@ function mpg_helper.SetLockoutTime(instance_id_in, lockout_name_in, lockout_time
   for k,v in pairs(player_list) do
     eq.debug( "k: " .. k .. " v: " .. v .. " lockout: " .. lockout_name_in );
     eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(lockout_time_in)), "H" .. lockout_time_in, 0, v, 0);
+  end
+end
+
+function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_name_in)
+  local instance_requests = require("instance_requests");
+  local el = eq.get_entity_list();
+  local client;
+
+  for k,v in pairs(player_list_in) do
+    -- Set a lockout 
+    eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
+
+    client = el:GetClientByCharID(v);
+    if (client.valid) then 
+      -- Client is in the zone update the raid bit 
+      mpg_helper.RaidAnguishAccess(client, this_bit_in);
+    else
+      -- Client is not in the zone so set a 'temporary' global on the charcter which 
+      -- will update the bit the next time the character zones into this trial.
+      eq.target_global('mpg_raid_trial_won', tostring(this_bit_in), 'F', 0, v, 0);
+    end
   end
 end
 
@@ -115,7 +127,7 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
   -- 16 (Adaptation) Mastery of Realms Rune 52411
   -- 32 (Corruption) Mastery of Power Rune 52412
   local client_globals = eq.get_qglobals(client);
-  local trial_bits_list = {{1,52407},{2,52408},{4,52409},{8,52410},{16,52411},{32,52412}};
+  local trial_bit_list = {{1,52407},{2,52408},{4,52409},{8,52410},{16,52411},{32,52412}};
   local mpg_raid_trials; 
   local has_all_trials;
 
@@ -123,27 +135,29 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
     mpg_raid_trials = tonumber(client_globals['mpg_raid_trials']);
     if ( mpg_raid_trials == nil ) then mpg_raid_trials = 0; end
 
-    if (bit.band(mpg_raid_trials, lockout_bit_in) == 0) then
+    eq.debug('mpg_raid_trials: ' .. mpg_raid_trials .. ' lockout_bit_in: .. ' .. lockout_bit_in);
+    if (bit.band(mpg_raid_trials, lockout_bit_in) ~= 0) then
     else
       mpg_raid_trials = bit.bor(mpg_raid_trials, lockout_bit_in);
-      eq.target_global("mpg_raid_trials", tostring(mpg_raid_trials), "F", 0, v, 0);
+      eq.target_global("mpg_raid_trials", tostring(mpg_raid_trials), "F", 0, client:CharacterID(), 0);
 
-      for bk,bv in pairs(trial_bit_list) do
-        if (lockout_bit_in == bv[1]) then
-          client:SummonItem(bv[2]);
-        end
-      end
+-- Creamo/Mackal say this is no longer needed - only the full pie.
+--       for bk,bv in pairs(trial_bit_list) do
+--         if (lockout_bit_in == bv[1]) then
+--           client:SummonItem(bv[2]);
+--         end
+--       end
     end
 
     has_all_trials = true;
     for bk,bv in pairs(trial_bit_list) do
-      if (bit.band(mpg_raid_trials,bv[1]) == 0) then
+      if (bit.band(mpg_raid_trials,bv[1]) ~= 0) then
       else
         has_all_trials = false;
       end
     end
     if (has_all_trials) then
-      eq.target_global("oow_mpg_raids_complete", 1, "F", 0, v, 0);
+      eq.target_global("oow_mpg_raids_complete", "1", "F", 0, client:CharacterID(), 0);
       -- Summon: Seal: Mastery of All Tarnished Signet
       client:SummonItem(52413);
     end

@@ -29,8 +29,8 @@ function Hanvar_Combat(e)
 	Aggro_Adds(e);
 	eq.set_timer("adds", 10 * 1000);	
 	eq.set_timer("chains", math.random(10,45) * 1000);
-	eq.set_timer("feedback", math.random(10,30) * 1000);
-	eq.set_timer("wail", math.random(10,45) * 1000);
+	--eq.set_timer("feedback", math.random(10,30) * 1000);
+	eq.set_timer("wail", math.random(15,90) * 1000);
 	eq.set_timer("check_hp", 1000);
 	eq.set_timer("leash", 3000);
 	eq.stop_timer("reset");
@@ -96,16 +96,16 @@ function Hanvar_Timer(e)
 	elseif (e.timer == "chains") then
 		e.self:CastSpell(5682, e.self:GetTarget():GetID());
 		eq.set_timer("chains",45*1000); 
-	elseif (e.timer == "feedback") then
-		e.self:CastSpell(5681, e.self:GetTarget():GetID());
-		eq.set_timer("feedback",30*1000); 
+	--elseif (e.timer == "feedback") then
+	--	e.self:CastSpell(5681, e.self:GetTarget():GetID());
+	--	eq.set_timer("feedback",30*1000); 
 	elseif (e.timer == "wail") then
 		e.self:CastSpell(5678, e.self:GetTarget():GetID());
-		eq.set_timer("wail",45*1000); 
+		eq.set_timer("wail",90*1000); 
 	elseif (e.timer == "adds") then		
 		Aggro_Adds(e);
 	elseif (e.timer == "leash") then
-		if (e.self:CalculateDistance(424, 4389, 221.94) >270) then
+		if (e.self:CalculateDistance(424, 4389, 221.94) >280) then
 			reset(e);			
 		end
 	elseif (e.timer == "reset") then

@@ -48,6 +48,7 @@ function OMM_Spawn(e)
 		eq.set_timer("reset",15*60*1000);	
 		--eq.set_timer("keep_banished_hp",1000);
 		e.self:SetHP(banished_hp);
+		e.self:ModifyNPCStat("hp_regen", "2500");
 	end
 end
 
@@ -61,9 +62,7 @@ function OMM_Say(e)
 			event_started=1;
 			reset_countdown=0;
 			banished_raid=0;
-			banished_hp=30;
-			eq.spawn2(317114,0,0,378, 4969, 279, 64);
-			eq.spawn2(317114,0,0,618, 4969, 279, 192);		
+			banished_hp=30;		
 			eq.set_next_hp_event(80);
 			e.self:AddToHateList(e.other,1);
 			e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
@@ -133,6 +132,7 @@ end
 function OMM_Combat(e)
 	if (e.joined == true) then
 		e.self:SetAppearance(0);
+		e.self:ModifyNPCStat("hp_regen", "10000");
 		eq.stop_timer("reset");
 		eq.stop_timer("keep_banished_hp");
 		--these become static after first roll
@@ -144,6 +144,8 @@ function OMM_Combat(e)
 		eq.set_timer("wail",    math.random(179,718)* 1000);		
 		eq.set_timer("gaze",	math.random(162,646)* 1000);
 		eq.set_timer("relinq",	math.random(170,680)* 1000);
+		eq.spawn2(317114,0,0,378, 4969, 279, 64);
+		eq.spawn2(317114,0,0,618, 4969, 279, 192);
 	else
 		eq.set_timer("reset", 15 * 60 * 1000);
 		eq.stop_timer("torment");
@@ -248,12 +250,12 @@ function OMM_Timer(e)
 		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
 		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		eq.stop_timer("banish");
-		eq.stop_timer("limit_20pct");				
+		eq.stop_timer("limit_20pct");			
 		local now_clients = eq.get_entity_list():GetClientList();
 		local instance_id = eq.get_zone_instance_id();
 		--eq.get_entity_list():GetClientList():RemoveFromTargets(e, true);
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
+			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000000) then
 				--client:GetPet():WipeHateList();
 				client:WipeHateList();				
 				client:MovePCInstance(317,instance_id, 641,3285,-10,0);

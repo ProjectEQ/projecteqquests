@@ -80,7 +80,8 @@ function AMV_Timer(e)
 	elseif (e.timer == "mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
+			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000000) then
+				eq.debug("mark on: " .. client:GetName());
 				client:Message(15,"You feel the cold grip of death looming over you.");
 				e.self:CastSpell(5684, client:GetID(),0,1,0);
 			end

@@ -42,7 +42,7 @@ local inst_name;
 		else
 			local instance_requests = require("instance_requests");
 			local lockouts = { { 'dranikhollowsc','dranikhollowsc'} } 																			
-			local requests = instance_requests.ValidateRequest('group',inst_name, 0, 3, 6, 65, nil, e.other, lockouts);
+			local requests = instance_requests.ValidateRequest('group',inst_name, 0, 3, 6, 65, nil, nil, e.other, lockouts);
 			if (requests.valid and requests.flags == 1) then
 			  instance_requests.DisplayLockouts(e.other, e.other, lockouts);
 			elseif (requests.valid and requests.flags == 0) then		 

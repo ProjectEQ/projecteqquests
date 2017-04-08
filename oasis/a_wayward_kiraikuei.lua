@@ -14,7 +14,7 @@ function event_trade(e)
 	if(qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 9599 })) then
 		local instance_requests = require("instance_requests");
 		local lockout_globals = {{'hate_rogue_1_5', 'Plane of Hate: Innoruuks Realm'}}
-		local request = instance_requests.ValidateRequest('raid', "hateplaneb", 1, 6, 36, 61, nil, e.other, lockout_globals);
+		local request = instance_requests.ValidateRequest('raid', "hateplaneb", 1, 6, 36, 61, nil, nil, e.other, lockout_globals);
 		if (request.valid and request.flags == 1) then
 			instance_requests.DisplayLockouts(e.other, e.other, lockout_globals);
 			e.other:SummonItem(9599);

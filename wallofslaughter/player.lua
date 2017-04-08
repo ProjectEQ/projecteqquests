@@ -74,7 +74,7 @@ function event_click_door(e)
         {'oow_mpg_raids_complete', 'must complete the Muramite Proving Grounds raid trials'}
       };
       --local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, {}, e.self, lockouts );
-      local request = instance_requests.ValidateRequestNew('raid', 'anguish', 0, 2, 54, 65, {}, required_globals, e.self, lockouts);
+      local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, nil, required_globals, e.self, lockouts);
       if (request.valid and request.flags == 1) then
         instance_requests.DisplayLockouts(e.self, e.self, lockouts);
       elseif (request.valid and request.flags == 0) then
@@ -85,14 +85,8 @@ function event_click_door(e)
         -- will be spawned by the zone_status upon entry
         eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
 
-        -- Set a 6h lockout on the members of the raid
---        local player_list = eq.get_characters_in_instance(instance_id);
---         local lockout_name = 'anguish';
---         for k,v in pairs(player_list) do
---           eq.target_global(lockout_name,tostring(instance_requests.GetLockoutEndTimeForHours(6)), "H6", 0, v, 0);
---         end
         eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
-        e.self:Message(14, "Anguish is open to you");
+        e.self:Message(14, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
       end
     end
   end

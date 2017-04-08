@@ -89,9 +89,12 @@ function OMM_HP(e)
 		while( num_hit <10 )
 		do
 			local client = eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
-			if client.valid then
-				client:Message(15,"You feel the cold grip of death looming over you.");
+			if client.valid then			
 				e.self:CastSpell(5684, client:GetID(),0,1,0);
+				e.self:SpellFinished(5684, client:CastToMob());			
+				client:Message(15,"You feel the cold grip of death looming over you.");
+				eq.debug("mark on: " .. client:GetName());
+				
 				num_hit=num_hit+1;
 			end
 		end
@@ -102,7 +105,11 @@ function OMM_HP(e)
 		eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
+		--e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		e.self:WipeHateList();
+		--e.self:GotoBind();	
+		--e.self:MoveTo(507, 4969, 296.53, 127.6,true);
+		e.self:Stun(60*1000);
 		eq.spawn2(317118,0,0,504, 4840, 280, 0); --#Vyishe (317118) south
 		eq.spawn2(317119,0,0,381, 4843, 280, 192); --#Anishy (317119) west
 		eq.spawn2(317120,0,0,393, 4968, 280, 64); --#Piraand (317120) east
@@ -255,7 +262,7 @@ function OMM_Timer(e)
 		local instance_id = eq.get_zone_instance_id();
 		--eq.get_entity_list():GetClientList():RemoveFromTargets(e, true);
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000000) then
+			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
 				--client:GetPet():WipeHateList();
 				client:WipeHateList();				
 				client:MovePCInstance(317,instance_id, 641,3285,-10,0);
@@ -288,6 +295,9 @@ function OMM_Death(e)
 	eq.zone_emote(13,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
 	e.self:CameraEffect(1000,8);	
 	eq.signal(317116 , 317109);
+	eq.depop_all(317110);
+	eq.depop_all(317114);
+	eq.depop_all(317117);
 end
 
 function OMM_Signal(e)

@@ -89,9 +89,12 @@ function OMM_HP(e)
 		while( num_hit <10 )
 		do
 			local client = eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
-			if client.valid then
-				client:Message(15,"You feel the cold grip of death looming over you.");
+			if client.valid then			
 				e.self:CastSpell(5684, client:GetID(),0,1,0);
+				e.self:SpellFinished(5684, client:CastToMob());			
+				client:Message(15,"You feel the cold grip of death looming over you.");
+				eq.debug("mark on: " .. client:GetName());
+				
 				num_hit=num_hit+1;
 			end
 		end

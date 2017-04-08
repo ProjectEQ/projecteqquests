@@ -68,27 +68,31 @@ function event_click_door(e)
     else 
       local instance_requests = require("instance_requests");
 
-      -- Every member of the raid needs to have 2 quest_globals set: oow_rss_taromani_insignias and oow_mpg_raids_complete
-      local required_globals = {
-        {'oow_rss_taromani_insignias', "is not protected from the chaos magic in Mata Muram's citadel." },
-        {'oow_mpg_raids_complete', 'must complete the Muramite Proving Grounds raid trials'}
-      };
-      --local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, {}, e.self, lockouts );
-      local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, nil, required_globals, e.self, lockouts);
-      if (request.valid and request.flags == 1) then
-        instance_requests.DisplayLockouts(e.self, e.self, lockouts);
-      elseif (request.valid and request.flags == 0) then
-        instance_id = eq.create_instance('anguish', 0, 21600);
-        eq.assign_raid_to_instance(instance_id);
+      -- If a Player has Anguish_augs then they can not start an instance of anguish.
+      local augs_check = instance_requests.CheckPlayersForLockout('raid', 'Anguish_augs', 'Anguish: Replay Timer', e.self);
+      if (augs_check ) then
+        e.self:Message(13, "The way to Anguish is blocked to your raid at this time");
+      else
+        -- Every member of the raid needs to have 2 quest_globals set: oow_rss_taromani_insignias and oow_mpg_raids_complete
+        local required_globals = {
+          {'oow_rss_taromani_insignias', "is not protected from the chaos magic in Mata Muram's citadel." },
+          {'oow_mpg_raids_complete', 'must complete the Muramite Proving Grounds raid trials'}
+        };
+        local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, nil, required_globals, e.self, lockouts);
+        if (request.valid and request.flags == 1) then
+          instance_requests.DisplayLockouts(e.self, e.self, lockouts);
+        elseif (request.valid and request.flags == 0) then
+          instance_id = eq.create_instance('anguish', 0, 21600);
+          eq.assign_raid_to_instance(instance_id);
 
-        -- Set the lockout for the instance with the bits that represent the mobs that 
-        -- will be spawned by the zone_status upon entry
-        eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
+          -- Set the lockout for the instance with the bits that represent the mobs that 
+          -- will be spawned by the zone_status upon entry
+          eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
 
-        eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
-        e.self:Message(14, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
+          eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
+          e.self:Message(14, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
+        end
       end
     end
   end
-
 end

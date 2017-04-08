@@ -229,4 +229,32 @@ function InstanceRequests.PlayerHasQuestGlobals(requestor, member, required_glob
   end
   return retval;
 end
+
+-- Check all the members of the raid or group for a specific quest_global, if they they 
+-- have that quest_global print out the associated description with the players name
+-- so the requestor can punt them from the raid and try again.
+-- If any of the players have the lockout then 'true' is returned
+-- otherwise false is returned
+function InstanceRequests.CheckPlayersForLockout(thing, global, globals_desc, requestor)
+  local retval = false;
+  local player_list = nil;
+  local player_list_count = 0;
+  if (thing == 'raid') then
+    player_list = requestor:GetRaid();
+    player_list_count = player_list:RaidCount();
+  elseif (thing == 'group') then
+    player_list = requestor:GetGroup();
+    player_list_count = player_list:GroupCount();
+  end
+
+  for i = 0, player_list_count -1, 1 do
+    local member = player_list:GetMember(i):CastToClient();
+    local member_globals = eq.get_qglobals(member);
+    if (member_globals[global] ~= nil) then
+      requestor:Message(13, member:GetName() .. ' has ' .. globals_desc);
+      retval = true;
+    end
+  end
+  return retval;
+end
 return InstanceRequests;

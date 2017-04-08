@@ -149,17 +149,19 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
 --       end
     end
 
-    has_all_trials = true;
-    for bk,bv in pairs(trial_bit_list) do
-      if (bit.band(mpg_raid_trials,bv[1]) ~= 0) then
-      else
-        has_all_trials = false;
+    if (client:HasItem(52413) == false or (client_globals['oow_mpg_raids_complete'] == nil)) then
+      has_all_trials = true;
+      for bk,bv in pairs(trial_bit_list) do
+        if (bit.band(mpg_raid_trials,bv[1]) ~= 0) then
+        else
+          has_all_trials = false;
+        end
       end
-    end
-    if (has_all_trials) then
-      eq.target_global("oow_mpg_raids_complete", "1", "F", 0, client:CharacterID(), 0);
-      -- Summon: Seal: Mastery of All Tarnished Signet
-      client:SummonItem(52413);
+      if (has_all_trials) then
+        eq.target_global("oow_mpg_raids_complete", "1", "F", 0, client:CharacterID(), 0);
+        -- Summon: Seal: Mastery of All Tarnished Signet
+        client:SummonItem(52413);
+      end
     end
   end
 end
@@ -179,6 +181,35 @@ function mpg_helper.Display_Group_Trials_Completed(client)
     {8, "The Mastery of Subversion"},
     {16,"The Mastery of Efficiency"},
     {32,"The Mastery of Destruction"}};
+
+  for bitkey,bitval in pairs(trial_bit_table) do
+    if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then
+      client:Message(15, "You have completed: " .. bitval[2]);
+    end
+  end
+end
+
+function mpg_helper.Display_Raid_Trials_Completed(client)
+  -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
+  -- a Character complets a trial.
+  -- 1  MPG_hate           - The Mastery of Hate (Raid)
+  -- 2  MPG_endurance      - The Mastery of Endurance (Raid)
+  -- 4  MPG_foresight      - The Mastery of Foresight (Raid)
+  -- 8  MPG_specialization - The Mastery of Specialization (Raid)
+  -- 16 MPG_adaptation     - The Mastery of Adaptation (Raid)
+  -- 32 MPG_corruption     - The Mastery of Corruption (Raid)
+  local client_globals = eq.get_qglobals(client);
+  local mpg_group_trials = tonumber(client_globals["mpg_raid_trials"]);
+  if ( mpg_group_trials == nil ) then mpg_group_trials = 0; end
+
+  local trial_bit_list = {1,2,4,8,16,32};
+  local trial_bit_table = {
+    {1, "The Mastery of Hate"},
+    {2, "The Mastery of Endurance"},
+    {4, "The Mastery of Foresight"},
+    {8, "The Mastery of Specialization"},
+    {16,"The Mastery of Adaptation"},
+    {32,"The Mastery of Corruption"}};
 
   for bitkey,bitval in pairs(trial_bit_table) do
     if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then

@@ -86,11 +86,23 @@ function Ingenuity_Death(e)
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
 end
 
+function Chest_Spawn(e)
+  local client_list = eq.get_entity_list():GetClientList();
+  for v in client_list.entries do
+    if (v:GetGlobal("cleric20_mpg_drop") == "1") then
+      e.self:CastToNPC():AddItem(56016, 1);
+      return
+    end
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_ingenuity', Event.spawn,          308007, Ingenuity_Spawn);
   eq.register_npc_event('mpg_ingenuity', Event.say,            308007, Ingenuity_Say);
   eq.register_npc_event('mpg_ingenuity', Event.death_complete, 308007, Ingenuity_Death);
   eq.register_npc_event('mpg_ingenuity', Event.timer,          308007, Ingenuity_Timer);
+
+  eq.register_npc_event('mpg_ingenuity', Event.spawn, 308004, Chest_Spawn);
 end
 
 function event_encounter_unload(e)

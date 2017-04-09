@@ -29,6 +29,10 @@ sub EVENT_ITEM {
     }
     quest::depop_withtimer();
   }
+  elsif ($qglobal{cleric20} >= 2 && plugin::check_handin(\%itemcount, 12509 => 1)) { #Robe of Plasmatic Priesthood
+    quest::say("Yes, Omat told me you were coming.  Let me see what I can divine from the robe.'  She holds the robe to her temple and closes her eyes.  You notice a brief glow from behind her eyelids before her eyes shoot open. 'This is truly terrible news.  The Plasmatic Priests are still fighting for the destruction of Norrath.  Fennin Ro's voice is silent to them now.  The remainder of their power faded with the Pantheon's interest in mortal affairs.  In their mad pursuit of power, they have allied themselves with Mata Muram.  They plan on trading their home-world for the promise of power.  Even now their leader is within the Muramite Trials.  Trying to earn a position of rank within the Legion.  Once he completes the trials we may lose our opportunity.  I am afraid you will have to visit the Labyrinth's trials and stop him before he is able to complete them.  Best of luck to you.'");
+    quest::setglobal("cleric20_mpg_drop", 1, 5, "F");
+  }
   plugin::return_items(\%itemcount);
 }
 

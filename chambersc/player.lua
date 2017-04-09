@@ -15,6 +15,13 @@ function event_loot(e)
   elseif (e.item:GetID() == 52173) then
     -- Gold Seal of Subversion
     eq.signal(306001, 3);
+  elseif (e.item:GetID() == 56016 and e.corpse:GetNPCTypeID() == 306009) then
+    if (e.self:GetGlobal("cleric20_mpg_drop") == "1") then
+      e.self:DelGlobal("cleric20_mpg_drop");
+      return 0;
+    else
+      return 1; -- loot denial
+    end
   end
 end
 

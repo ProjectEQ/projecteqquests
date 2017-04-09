@@ -42,6 +42,10 @@ sub EVENT_ITEM {
     quest::exp(100000); 
     quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
   }
+  elsif ($qglobals{cleric20} >= 2 && plugin::check_handin(\%itemcount, 12433)) { #Dark Red Robe
+    quest::summonitem(12509); #Robe of Plasmatic Priesthood
+    quest::say("What? You found this on a Disciple in Discord?  This is a robe of the Plasmatic Priesthood, without question.  Bring this to Cecilia quickly, hopefully she will be able to divine their intentions.");
+  }
   plugin::return_items(\%itemcount);
 }
 #End of File, Zone:timorous  NPC:96033 -- Omat_Vastsea

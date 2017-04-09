@@ -129,6 +129,10 @@ function AMV_Death(e)
 	eq.get_entity_list():FindDoor(58):ForceOpen(e.self);
 	eq.get_entity_list():FindDoor(59):ForceOpen(e.self);
 	eq.get_entity_list():FindDoor(60):ForceOpen(e.self);
+	eq.get_entity_list():FindDoor(57):SetDisableTimer(true);
+	eq.get_entity_list():FindDoor(58):SetDisableTimer(true);
+	eq.get_entity_list():FindDoor(59):SetDisableTimer(true);
+	eq.get_entity_list():FindDoor(60):SetDisableTimer(true);
 end
 
 function Convert_Spawn(e)

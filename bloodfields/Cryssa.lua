@@ -18,7 +18,7 @@ function event_trade(e)
 			eq.set_global("cleric20_darkdisciples", "1", 5, "F"); -- this lets us spawn the dark disciples, live doesn't seem to really care if you have the item, or maybe they flag you to not be able to spawn them anymore .. either way, this will be removed once you get your robe
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 12433})) then
 			e.self:Say("What is this? No... it can't be. Bring this to Omat as quickly as you can. He must see this.");
-			e.other:SummonItem(12509); -- Robe of Plasmatic Priesthood
+			e.other:SummonItem(12433); -- Get the robe back
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

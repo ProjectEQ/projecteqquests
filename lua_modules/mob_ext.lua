@@ -23,7 +23,8 @@ function Mob:CountHateList(cond)
 	return ret;
 end
 
-function Mob:CastedSpellFinished(spell_id, target, cast_time)
-	self:SendBeginCast(spell_id, cast_time);
+function Mob:CastedSpellFinished(spell_id, target) -- note, we do have a server side function (not exported) called this too ...
+	self:SendBeginCast(spell_id, 0);
 	self:SpellFinished(spell_id, target);
 end
+

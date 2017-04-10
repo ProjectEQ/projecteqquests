@@ -23,15 +23,14 @@ function AMV_Spawn(e)
 	eq.unique_spawn(317108,0,0, 617,5080,278,248); --Vangl`s_Focus (317108)
 	eq.set_next_hp_event(75);
 	
-	eq.get_entity_list():FindDoor(57):ForceClose(e.self);
-	eq.get_entity_list():FindDoor(58):ForceClose(e.self);
-	eq.get_entity_list():FindDoor(59):ForceClose(e.self);
-	eq.get_entity_list():FindDoor(60):ForceClose(e.self);
-	
 	eq.get_entity_list():FindDoor(57):SetOpenType(58);
 	eq.get_entity_list():FindDoor(58):SetOpenType(58);
 	eq.get_entity_list():FindDoor(59):SetOpenType(58);
 	eq.get_entity_list():FindDoor(60):SetOpenType(58);	
+	eq.get_entity_list():FindDoor(57):ForceClose(e.self);
+	eq.get_entity_list():FindDoor(58):ForceClose(e.self);
+	eq.get_entity_list():FindDoor(59):ForceClose(e.self);
+	eq.get_entity_list():FindDoor(60):ForceClose(e.self);	
 	
 end
 
@@ -80,9 +79,9 @@ function AMV_Timer(e)
 	elseif (e.timer == "mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then			
-				e.self:CastSpell(5684, client:GetID(),0,1,0);
-				e.self:SpellFinished(5684, client:CastToMob());			
+			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then	
+				e.self:SendBeginCast(5684, 0);
+				e.self:SpellFinished(5684, client:CastToMob());	
 				client:Message(15,"You feel the cold grip of death looming over you.");
 				eq.debug("mark on: " .. client:GetName());
 			end
@@ -129,10 +128,6 @@ function AMV_Death(e)
 	eq.get_entity_list():FindDoor(58):ForceOpen(e.self);
 	eq.get_entity_list():FindDoor(59):ForceOpen(e.self);
 	eq.get_entity_list():FindDoor(60):ForceOpen(e.self);
-	eq.get_entity_list():FindDoor(57):SetDisableTimer(true);
-	eq.get_entity_list():FindDoor(58):SetDisableTimer(true);
-	eq.get_entity_list():FindDoor(59):SetDisableTimer(true);
-	eq.get_entity_list():FindDoor(60):SetDisableTimer(true);
 end
 
 function Convert_Spawn(e)

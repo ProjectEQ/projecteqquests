@@ -85,7 +85,7 @@ function event_click_door(e)
           {'oow_rss_taromani_insignias', "is not protected from the chaos magic in Mata Muram's citadel." },
           {'oow_mpg_raids_complete', 'must complete the Muramite Proving Grounds raid trials'}
         };
-        local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 2, 54, 65, nil, required_globals, e.self, lockouts);
+        local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 6, 54, 65, nil, required_globals, e.self, lockouts);
         if (request.valid and request.flags == 1) then
           instance_requests.DisplayLockouts(e.self, e.self, lockouts);
         elseif (request.valid and request.flags == 0) then

@@ -30,11 +30,11 @@ local convert_min_hit=278;
 local convert_max_hit=1855;
 
 function OMM_Spawn(e)
-	e.self:SetOOCRegen(0);
 	if (banished_raid==0) then
 		eq.debug("spawn, banished == 0");
 		--e.self:SetHP(e.self:GetMaxHP());
-		event_started =0;
+		event_started=0;
+		reset_countdown=0;
 		banished_hp=30;
 		e.self:SetAppearance(1); --sitting
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
@@ -42,13 +42,13 @@ function OMM_Spawn(e)
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
-	else 
-		eq.debug("spawn, banished != 0");
+	else		
+		eq.debug("spawn, banished != 0");		
+		eq.set_timer("reset",60*60*1000);	
 		e.self:SetAppearance(1);
-		eq.set_timer("reset",15*60*1000);	
-		--eq.set_timer("keep_banished_hp",1000);
+		e.self:SetOOCRegen(0);
+		e.self:ModifyNPCStat("hp_regen", "0");
 		e.self:SetHP(banished_hp);
-		e.self:ModifyNPCStat("hp_regen", "2500");
 	end
 end
 
@@ -64,7 +64,6 @@ function OMM_Say(e)
 			banished_raid=0;
 			banished_hp=30;		
 			eq.set_next_hp_event(80);
-			e.self:AddToHateList(e.other,1);
 			e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
@@ -89,12 +88,11 @@ function OMM_HP(e)
 		while( num_hit <10 )
 		do
 			local client = eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
-			if client.valid then			
-				e.self:CastSpell(5684, client:GetID(),0,1,0);
-				e.self:SpellFinished(5684, client:CastToMob());			
+			if client.valid then
+				e.self:SendBeginCast(5684, 0);
+				e.self:SpellFinished(5684, client:CastToMob());
 				client:Message(15,"You feel the cold grip of death looming over you.");
-				eq.debug("mark on: " .. client:GetName());
-				
+				eq.debug("mark on: " .. client:GetName());				
 				num_hit=num_hit+1;
 			end
 		end
@@ -104,9 +102,11 @@ function OMM_HP(e)
 		eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);
 		eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
+		e.self:CameraEffect(2000,3);
+		e.self:SetOOCRegen(0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
-		--e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		e.self:WipeHateList();
+		e.self:SetAppearance(1);		
 		--e.self:GotoBind();	
 		--e.self:MoveTo(507, 4969, 296.53, 127.6,true);
 		e.self:Stun(60*1000);
@@ -114,25 +114,18 @@ function OMM_HP(e)
 		eq.spawn2(317119,0,0,381, 4843, 280, 192); --#Anishy (317119) west
 		eq.spawn2(317120,0,0,393, 4968, 280, 64); --#Piraand (317120) east
 		eq.spawn2(317121,0,0,381, 4843, 280, 128); --#Garishi (317121) north
-		eq.depop_all(317114);
-		eq.stop_timer("torment");
-		eq.stop_timer("touch");
-		eq.stop_timer("buzz");
-		eq.stop_timer("buzz_spawn");
-		eq.stop_timer("wail");
-		eq.stop_timer("mmgaze");
-		eq.stop_timer("gaze");
-		eq.stop_timer("relinq");
-		eq.stop_timer("void");
-		e.self:SetAppearance(1);		
-		e.self:CameraEffect(1000,2);
 		eq.signal(317118,1);
 		eq.signal(317119,2);		
-		--eq.set_timer("move_to_spawn",30*1000);
-		--eq.debug("move_to_spawn timer start: " .. os.date("!%c"));
+		eq.depop_all(317114); --Coerced_Lieutenant
+		eq.depop_all(317117); --Frenzied_Lasher
+		eq.stop_timer("torment");
+		eq.stop_timer("pick6");
+		eq.stop_timer("buzz");
+		eq.stop_timer("buzz_spawn");
+		eq.stop_timer("mmgaze");
 		eq.set_timer("banish",60*1000);
+		eq.set_timer("banish_hp_watch", 1000);
 		eq.debug("banish start: " .. os.date("!%c"));
-		eq.set_timer("limit_20pct",1000);
 	end		
 end
 
@@ -141,79 +134,46 @@ function OMM_Combat(e)
 		e.self:SetAppearance(0);
 		e.self:ModifyNPCStat("hp_regen", "10000");
 		eq.stop_timer("reset");
-		eq.stop_timer("keep_banished_hp");
-		--these become static after first roll
 		eq.set_timer("buzz",    math.random(25,55)  * 1000);
 		eq.set_timer("mmgaze",  math.random(45,75)  * 1000);
-		--these are always random ranges
-		eq.set_timer("torment", math.random(5,25)   * 1000);
-		eq.set_timer("touch",   math.random(120,479)* 1000);
-		eq.set_timer("wail",    math.random(179,718)* 1000);		
-		eq.set_timer("gaze",	math.random(162,646)* 1000);
-		eq.set_timer("relinq",	math.random(170,680)* 1000);
+		eq.set_timer("torment", math.random(10,20)  * 1000);
+		eq.set_timer("pick6", 50 * 1000);		
 		eq.spawn2(317114,0,0,378, 4969, 279, 64);
 		eq.spawn2(317114,0,0,618, 4969, 279, 192);
 	else
-		eq.set_timer("reset", 15 * 60 * 1000);
-		eq.stop_timer("torment");
-		eq.stop_timer("touch");
+		eq.set_timer("reset", 65 * 1000);
 		eq.stop_timer("buzz");
-		eq.stop_timer("wail");
+		eq.stop_timer("torment");
+		eq.stop_timer("pick6");
 		eq.stop_timer("mmgaze");
-		eq.stop_timer("gaze");
-		eq.stop_timer("relinq");
-		eq.stop_timer("void");
 	end
 end
 
 function OMM_Timer(e)
 	if (e.timer == "torment") then		
 		e.self:CastSpell(5676,e.self:GetHateRandom():GetID()); --Torment of Body
-		local diceroll=math.random(1,10);
-		if (diceroll <=2) then
-			eq.set_timer("torment",math.random(8,25)*1000);
-		elseif (diceroll <=4) then
-			eq.set_timer("torment",math.random(25,55)*1000);
-		else
-			eq.set_timer("torment",math.random(55,66)*1000);
-		end
-	elseif (e.timer == "touch") then
-		e.self:CastSpell(5679,e.self:GetHateRandom():GetID()); --Touch of Anguish
-	elseif (e.timer == "wail") then
-		e.self:CastSpell(5678,e.self:GetHateRandom():GetID()); --Wail of Anguish		
-	elseif (e.timer == "gaze") then
-		e.self:CastSpell(5680, e.self:GetTarget():GetID()); --Gaze of Anguish
-	elseif (e.timer == "void") then
-		e.self:CastSpell(5677, e.self:GetTarget():GetID()); --Void of Suppression
-	elseif (e.timer == "relinq") then
-		e.self:CastSpell(5675, e.self:GetTarget():GetID()); --Relinquish Spirit
+		eq.set_timer("torment",   math.random(60,66)* 1000);
+	elseif (e.timer == "pick6") then
+	--5680 Gaze of Anguish, 5679 Touch of Anguish, 5678 Wail of Anguish, 5677 Void of Suppression, 5676 Torment of Body, 5675 Relinquish Spirit
+		e.self:CastSpell(eq.ChooseRandom(5680,5679,5678,5677,5676,5675),e.self:GetTarget():GetID());
 	elseif (e.timer == "mmgaze") then
 		eq.set_timer("mmgaze",70*1000);
-		--eq.set_timer("mmgaze",10*1000);	--TESTING
 		gaze_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
 		if gaze_client.valid then
 			eq.zone_emote(15, "Mata Muram fixes his gaze on one of your companions.");
 			gaze_client:Message(6,"You feel a gaze of deadly power focusing on you.");
 			eq.set_timer("mmgaze_cast",10*1000);
-			--eq.set_timer("mmgaze_cast",5*1000); --TESTING
 		else
-			eq.zone_emote(15, "INVALID CLIENT GAZE");
-			e.self:Say("clientfail is: " .. gaze_client:GetName());
+			eq.debug("Invalud MMGaze Client: " .. os.date("!%c"));
 		end
 	elseif (e.timer == "mmgaze_cast") then
 		eq.stop_timer("mmgaze_cast");		
 		if (gaze_client.valid) then		
 			e.self:Emote("fixes his gaze on " .. gaze_client:GetName());						
-			--if (gaze_client:FindBuff(6494)) then
-				--eq.zone_emote(15, "Overlord Mata Muram's spell has been reflected by " .. gaze_client:GetName() .. ".");			
-			--else
-			--	eq.zone_emote(15, "client didnt have buff");
-			--end
 			e.self:CastSpell(5685, gaze_client:GetID());--Mata Muram's Gaze
-		--else
-		--what happens if someone dies while they are target? assume nothing
+		else
+			eq.debug("Invalud MMGaze Cast Client: " .. os.date("!%c"));
 		end
-
 	elseif (e.timer == "buzz") then
 		eq.set_timer("buzz",55*1000);
 		eq.set_timer("buzz_spawn",6*1000);
@@ -227,58 +187,44 @@ function OMM_Timer(e)
 			local clienty=buzz_client:GetY()
 			local clientz=buzz_client:GetZ()
 			local clienth=buzz_client:GetHeading()
-			eq.spawn2(317117,0,0,clientx  ,clienty-5,clientz,clienth)
-			eq.spawn2(317117,0,0,clientx-1,clienty-5,clientz,clienth)
-			eq.spawn2(317117,0,0,clientx+1,clienty-5,clientz,clienth)
-			eq.spawn2(317117,0,0,clientx-2,clienty-5,clientz,clienth)
-			eq.spawn2(317117,0,0,clientx+2,clienty-5,clientz,clienth)			
-		--else
-		--what happens if someone dies while they are target? assume nothing			
+			eq.spawn2(317117,0,0,clientx,clienty,clientz,clienth)
+			eq.spawn2(317117,0,0,clientx,clienty,clientz,clienth)
+			eq.spawn2(317117,0,0,clientx,clienty,clientz,clienth)
+			eq.spawn2(317117,0,0,clientx,clienty,clientz,clienth)
+			eq.spawn2(317117,0,0,clientx,clienty,clientz,clienth)			
+		else
+			eq.debug("Invalud Buzz Client: " .. os.date("!%c"));		
 		end
-	--elseif (e.timer == "move_to_spawn") then
-	--	eq.debug("move_to_spawn end: " .. os.date("!%c"));
-	--	e.self:MoveTo(507, 4969, 296.53, 127.6,true);
-	--	eq.stop_timer("move_to_spawn");
-	elseif (e.timer == "limit_20pct") then
-		if (e.self:GetHPRatio() < 20) then
-			local new_hp = e.self:GetMaxHP() * 20/100;
-			e.self:SetHP(new_hp);		
-		end	
 	elseif (e.timer == "banish") then
 		eq.debug("banish end: " .. os.date("!%c"));
+		eq.stop_timer("banish");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		eq.depop_all(317118);
 		eq.depop_all(317119);
 		eq.depop_all(317120);
 		eq.depop_all(317121);
-		eq.depop_all(317117);
 		eq.depop_all(317110);
 		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
-		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
-		eq.stop_timer("banish");
-		eq.stop_timer("limit_20pct");			
+		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");				
 		local now_clients = eq.get_entity_list():GetClientList();
 		local instance_id = eq.get_zone_instance_id();
-		--eq.get_entity_list():GetClientList():RemoveFromTargets(e, true);
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
-				--client:GetPet():WipeHateList();
+			if (client.valid) then
 				client:WipeHateList();				
 				client:MovePCInstance(317,instance_id, 641,3285,-10,0);
-				--client:Message(1,"moving you");
-				--e.self:CastSpell(47282, client:GetID(),0,1,0); --47282 Banishment of Mata Muram
 			end
 		end
 		banished_raid=1;
 		banished_hp=math.ceil(e.self:GetMaxHP()*e.self:GetHPRatio()/100);
-		if banished_hp < 20 then
-			banished_hp=20
-		end
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
 		eq.depop();
-	--elseif (e.timer =="keep_banished_hp") then
-	--	e.self:SetHP(banished_hp);
+	elseif (e.timer == "banish_hp_watch") then
+		--if hp is less than 20% then banish after 3 sec
+		if(e.self:GetHPRatio() < 20) then	
+			eq.set_timer("banish",3000);
+			eq.stop_timer("banish_hp_watch");
+		end;
 	elseif (e.timer == "reset") then
 		eq.debug("resetting event: " .. os.date("!%c"));
 		event_started=0;
@@ -305,6 +251,7 @@ function OMM_Signal(e)
 	if (e.signal==1) then
 		if (reset_countdown==0 and banished_raid==1) then
 			eq.set_timer("reset",30*1000);
+			e.self:ModifyNPCStat("hp_regen", "10000");
 			reset_countdown=1;
 			eq.debug("someone clicked up after banish, starting reset countdown: 30s " .. os.date("!%c") );
 		end
@@ -329,7 +276,7 @@ function Riftseeker_Timer(e)
 end
 
 function Coerced_Death(e)
-	eq.set_timer("respawn",10*1000);
+	eq.set_timer("respawn",2*1000);
 end
 
 function Coerced_Timer(e)
@@ -372,21 +319,3 @@ end
 
 function event_encounter_unload(e)
 end
-
---elseif (e.timer == "mask_15sec") then
---	eq.stop_timer("mask_15sec");
---	e.self:WipeHateList();
---	e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
---	e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
---	eq.zone_emote(15, "Mata Muram roars in anger, 'You dare use my own magic against me!'");	
---	--so... what is he debuffed with from 15 to 30 sec?
---elseif (e.timer == "mask_30sec") then
---	eq.stop_timer("mask_30sec");
---	eq.zone_emote(15, "Mata Muram shakes off the effects of his affliction.");
---	--shakes off what??	maybe doesnt cast ae til now?
-
-
---eq.zone_emote(15, "Mata Muram grows weak as he is afflicted with his own magic.");  old way
-
---e.self:CastSpell(5685, e.self:GetID());	--Mata Muram's Gaze
---e.self:CastSpell(6296, gaze_client:GetID()); --Mata Muram's Gaze Recourse

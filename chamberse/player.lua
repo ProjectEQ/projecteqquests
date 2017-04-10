@@ -7,3 +7,13 @@ function event_enter_zone(e)
     eq.target_global('mpg_raid_trial_won', '0', 'S1', 0, e.self:CharacterID(), 0);
   end
 end
+function event_loot(e)
+  if (e.item:GetID() == 56016 and e.corpse:GetNPCTypeID() == 308004) then
+    if (e.self:GetGlobal("cleric20_mpg_drop") == "1") then
+      e.self:DelGlobal("cleric20_mpg_drop");
+      return 0;
+    else
+      return 1;
+    end
+  end
+end

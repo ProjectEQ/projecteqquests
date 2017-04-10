@@ -48,6 +48,7 @@ function OMM_Spawn(e)
 		eq.set_timer("reset",15*60*1000);	
 		--eq.set_timer("keep_banished_hp",1000);
 		e.self:SetHP(banished_hp);
+		e.self:ModifyNPCStat("hp_regen", "2500");
 	end
 end
 
@@ -61,9 +62,7 @@ function OMM_Say(e)
 			event_started=1;
 			reset_countdown=0;
 			banished_raid=0;
-			banished_hp=30;
-			eq.spawn2(317114,0,0,378, 4969, 279, 64);
-			eq.spawn2(317114,0,0,618, 4969, 279, 192);		
+			banished_hp=30;		
 			eq.set_next_hp_event(80);
 			e.self:AddToHateList(e.other,1);
 			e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
@@ -90,9 +89,12 @@ function OMM_HP(e)
 		while( num_hit <10 )
 		do
 			local client = eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
-			if client.valid then
-				client:Message(15,"You feel the cold grip of death looming over you.");
+			if client.valid then			
 				e.self:CastSpell(5684, client:GetID(),0,1,0);
+				e.self:SpellFinished(5684, client:CastToMob());			
+				client:Message(15,"You feel the cold grip of death looming over you.");
+				eq.debug("mark on: " .. client:GetName());
+				
 				num_hit=num_hit+1;
 			end
 		end
@@ -103,7 +105,11 @@ function OMM_HP(e)
 		eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
+		--e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		e.self:WipeHateList();
+		--e.self:GotoBind();	
+		--e.self:MoveTo(507, 4969, 296.53, 127.6,true);
+		e.self:Stun(60*1000);
 		eq.spawn2(317118,0,0,504, 4840, 280, 0); --#Vyishe (317118) south
 		eq.spawn2(317119,0,0,381, 4843, 280, 192); --#Anishy (317119) west
 		eq.spawn2(317120,0,0,393, 4968, 280, 64); --#Piraand (317120) east
@@ -133,6 +139,7 @@ end
 function OMM_Combat(e)
 	if (e.joined == true) then
 		e.self:SetAppearance(0);
+		e.self:ModifyNPCStat("hp_regen", "10000");
 		eq.stop_timer("reset");
 		eq.stop_timer("keep_banished_hp");
 		--these become static after first roll
@@ -144,6 +151,8 @@ function OMM_Combat(e)
 		eq.set_timer("wail",    math.random(179,718)* 1000);		
 		eq.set_timer("gaze",	math.random(162,646)* 1000);
 		eq.set_timer("relinq",	math.random(170,680)* 1000);
+		eq.spawn2(317114,0,0,378, 4969, 279, 64);
+		eq.spawn2(317114,0,0,618, 4969, 279, 192);
 	else
 		eq.set_timer("reset", 15 * 60 * 1000);
 		eq.stop_timer("torment");
@@ -248,7 +257,7 @@ function OMM_Timer(e)
 		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
 		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		eq.stop_timer("banish");
-		eq.stop_timer("limit_20pct");				
+		eq.stop_timer("limit_20pct");			
 		local now_clients = eq.get_entity_list():GetClientList();
 		local instance_id = eq.get_zone_instance_id();
 		--eq.get_entity_list():GetClientList():RemoveFromTargets(e, true);
@@ -286,6 +295,9 @@ function OMM_Death(e)
 	eq.zone_emote(13,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
 	e.self:CameraEffect(1000,8);	
 	eq.signal(317116 , 317109);
+	eq.depop_all(317110);
+	eq.depop_all(317114);
+	eq.depop_all(317117);
 end
 
 function OMM_Signal(e)

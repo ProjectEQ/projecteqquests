@@ -4,8 +4,11 @@ function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:Class() == "Cleric") then
 		if(e.message:findi("hail")) then
-			if(e.other:HasItem(9955)) then -- has 1.5 Harmony of the Soul, start 2.0
+			if(e.other:HasItem(9955) and qglobals["cleric20"] ~= nil) then -- has 1.5 Harmony of the Soul, start 2.0
 				e.self:Say("I hear you were able to put that shield to some use. That is good to hear. I was able to find some news on the leader, someone matching his description has been seen on the other side of the Wayfarer's portal in the Realm of Discord. Please visit my friend Cryssa, at the camp in Discord. She has been working on tracking the Disciple's movement in Discord.");
+				if (qglobals["cleric20"] == "1") then
+					eq.set_global("cleric20", "2", 5, "F");
+				end
 			elseif(e.other:HasItem(5532)) then -- has 1.0 Water Sprinkler of Nem Ankh, or Prequest Finished // Will need a flag entered. Prequest granted no item.  Start 1.5
 				e.self:Say("Greetings " .. e.other:GetName() .. ", I see you helped my brother in eradicating the Plasmatic Priests, stopping Zordak Ragefire, and saved Norrath from an eternity of flames. We need to [call] you to [duty] again");
 				if(qglobals["cleric_epic"] == nil) then

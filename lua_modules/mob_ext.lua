@@ -22,3 +22,8 @@ function Mob:CountHateList(cond)
 	
 	return ret;
 end
+
+function Mob:CastedSpellFinished(spell_id, target, cast_time)
+	self:SendBeginCast(spell_id, cast_time);
+	self:SpellFinished(spell_id, target);
+end

@@ -80,12 +80,14 @@ function AMV_Timer(e)
 	elseif (e.timer == "mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
-				client:Message(15,"You feel the cold grip of death looming over you.");
+			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then			
 				e.self:CastSpell(5684, client:GetID(),0,1,0);
+				e.self:SpellFinished(5684, client:CastToMob());			
+				client:Message(15,"You feel the cold grip of death looming over you.");
+				eq.debug("mark on: " .. client:GetName());
 			end
 		end
-		eq.set_timer("mark",75*1000);
+		eq.set_timer("mark",75* 1000);
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
 			eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);

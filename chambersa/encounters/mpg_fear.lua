@@ -108,6 +108,16 @@ function Fearable_Tick(e)
   end
 end
 
+function Chest_Spawn(e)
+  local client_list = eq.get_entity_list():GetClientList();
+  for v in client_list.entries do
+    if (v:GetGlobal("cleric20_mpg_drop") == "1") then
+      e.self:CastToNPC():AddItem(56016, 1);
+      return
+    end
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_fear', Event.tick, 304006, Fearable_Tick);
   eq.register_npc_event('mpg_fear', Event.tick, 304007, Fearable_Tick);
@@ -123,6 +133,8 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_fear', Event.say,            304004, Fear_Say);
   eq.register_npc_event('mpg_fear', Event.signal,         304004, Fear_Signal);
   eq.register_npc_event('mpg_fear', Event.timer,          304004, Fear_Timer);
+
+  eq.register_npc_event('mpg_fear', Event.spawn, 304013, Chest_Spawn);
 end
 
 function event_encounter_unload(e)

@@ -114,6 +114,16 @@ function Mini_Death(e)
   end
 end
 
+function Chest_Spawn(e)
+  local client_list = eq.get_entity_list():GetClientList();
+  for v in client_list.entries do
+    if (v:GetGlobal("cleric20_mpg_drop") == "1") then
+      e.self:CastToNPC():AddItem(56016, 1);
+      return
+    end
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_destruction', Event.spawn,          309061, Destruction_Spawn);
   eq.register_npc_event('mpg_destruction', Event.say,            309061, Destruction_Say);
@@ -127,6 +137,8 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_destruction', Event.death_complete, 309066, Mini_Death);
   eq.register_npc_event('mpg_destruction', Event.death_complete, 309063, Mini_Death);
   eq.register_npc_event('mpg_destruction', Event.death_complete, 309065, Mini_Death);
+
+  eq.register_npc_event('mpg_destruction', Event.spawn, 309068, Chest_Spawn);
 
 end
 

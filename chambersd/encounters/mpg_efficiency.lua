@@ -131,6 +131,16 @@ function Enforcer_Death(e)
   eq.signal(307000, 1);
 end
 
+function Chest_Spawn(e)
+  local client_list = eq.get_entity_list():GetClientList();
+  for v in client_list.entries do
+    if (v:GetGlobal("cleric20_mpg_drop") == "1") then
+      e.self:CastToNPC():AddItem(56016, 1);
+      return
+    end
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mpg_efficiency', Event.spawn,          307000, Efficiency_Spawn);
   eq.register_npc_event('mpg_efficiency', Event.say,            307000, Efficiency_Say);
@@ -138,6 +148,8 @@ function event_encounter_load(e)
   eq.register_npc_event('mpg_efficiency', Event.signal,         307000, Efficiency_Signal);
 
   eq.register_npc_event('mpg_efficiency', Event.death_complete, 307004, Enforcer_Death);
+
+  eq.register_npc_event('mpg_efficiency', Event.spawn, 307005, Chest_Spawn);
 end
 
 function event_encounter_unload(e)

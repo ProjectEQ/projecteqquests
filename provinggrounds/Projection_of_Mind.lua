@@ -21,13 +21,13 @@ function event_say(e)
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then
-      local mpg = require("mpg_helper");
+--      local mpg = require("mpg_helper");
       local instance_id = eq.create_instance('chambersa', 1, 3600);
       eq.assign_group_to_instance(instance_id);
 
       e.self:Say("Fear is power.  An opponent whose resolve has been broken has already been defeated.  You must learn to invoke terror in the hearts of your enemies and destroy them as they cower in weakness.  If you have this ability, now is the opportunity to prove your worth!");
 
-      mpg.SetLockoutTime(instance_id, lockouts[1][1], 1); 
+--      mpg.SetLockoutTime(instance_id, lockouts[1][1], 1); 
     end
   elseif (e.message:findi("hatred")) then
     local instance_requests = require("instance_requests");
@@ -41,7 +41,7 @@ function event_say(e)
 
       e.self:Say("Anger is a tool if you wield it correctly.  Invoking hatred in your enemies will provoke them into predictable and controllable behavior.  Can you harness your foes' hatred and twist it to your advantage?  If you have this ability, now is the opportunity to prove your worth!");
 
-      mpg.SetLockoutTime(instance_id, lockouts[1][1], 3); 
+--      mpg.SetLockoutTime(instance_id, lockouts[1][1], 3); 
       eq.cross_zone_message_player_by_name(5, "GMFizban", "Mastery of Hatred -- Instance: " .. instance_id);
     end
 --   elseif (e.message:findi("remove")) then

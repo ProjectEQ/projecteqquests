@@ -56,5 +56,9 @@ function NPC:RandomRoam(maxx,maxy,maxz,los)
 		end
 	end
 end
-			
-			
+
+function NPC:CastedSpellFinished(spell_id, target) -- note, we do have a server side function (not exported) called this too ...
+	self:SendBeginCast(spell_id, 0);
+	self:SpellFinished(spell_id, target);
+end
+

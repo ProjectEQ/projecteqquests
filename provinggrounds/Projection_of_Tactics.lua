@@ -45,5 +45,8 @@ function event_say(e)
   elseif (e.message:findi("progress")) then
     local mpg_helper = require("mpg_helper");
     mpg_helper.Display_Group_Trials_Completed(e.other);
+  elseif (e.message:findi('raids')) then
+    local mpg_helper = require("mpg_helper");
+    mpg_helper.Display_Raid_Trials_Completed(e.other);
   end
 end

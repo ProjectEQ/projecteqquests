@@ -5,8 +5,11 @@ function event_say(e)
 	if(qglobals["cleric_epic"] >= "5" and e.message:findi("hail")) then
 		if(e.other:HasItem(9955)) then -- Player has Harmony of the Soul
 			e.self:Emote("examines your craftsmanship. 'Impressive, but I'm afraid that the temper was not sufficient to unlock the full potential of the shield. For now you may use it in its current state. I suspect to fully realize the latent potential of the shield you will require a soulstone from the person who it was bound to originally as well as a Globe of Discordant Energy. Return to me when you have that, I will assist you in completing its enhancement.");
+			if (qglobals["cleric20"] == nil) then
+				eq.set_global("cleric20", "1", 5, "F");
+			end
 		else
-		e.self:Say("Greetings, well met, salutations, and good day! I hear you are trying to change the resonance on a shield from Discord. Well I believe that is something with which I can assist you. You will need to have a temper made from some of the native creatures of Discord, you'll need the plasma from one of the giants of Discord, one of those flying squids, and the plasma from one of those fiery women. Brewing the temper should prove no trouble for you. Once you have the temper combine it with the shield in the forge with a flask of water, and it should become attuned to you. Once you are finished return to me, so I may evaluate your work.");
+			e.self:Say("Greetings, well met, salutations, and good day! I hear you are trying to change the resonance on a shield from Discord. Well I believe that is something with which I can assist you. You will need to have a temper made from some of the native creatures of Discord, you'll need the plasma from one of the giants of Discord, one of those flying squids, and the plasma from one of those fiery women. Brewing the temper should prove no trouble for you. Once you have the temper combine it with the shield in the forge with a flask of water, and it should become attuned to you. Once you are finished return to me, so I may evaluate your work.");
 		end
 	elseif(e.other:HasItem(47100)) then -- Player has Globe of Discordant Energy from Anguish for Final Turn-in.
 		e.self:Say("Greetings. The metals of Discord are quite amazing. I could spend a lifetime just studying their properties.");

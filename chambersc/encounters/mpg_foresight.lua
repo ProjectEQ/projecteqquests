@@ -1,13 +1,5 @@
 -- MPG Trial General Notes
 --
--- MPG Group Trial Bits:
--- 1  MPG_fear
--- 2  MPG_ingenuity
--- 4  MPG_weaponry
--- 8  MPG_foresight
--- 16 MPG_efficiency
--- 32 MPG_destruciton
---
 -- Lockout on Win: 72 hours
 -- Lockout on Loss: 2 hours
 --
@@ -17,7 +9,7 @@ local event_started = false;
 local instance_id;
 local lockout_name = 'MPG_foresight';
 local lockout_win = 108;
-local this_bit = 8;
+local this_bit = 4;
 local player_list;
 local warnings = 0;
 local emotes = {};
@@ -100,7 +92,7 @@ function Boss_Spawn(e)
   player_list = eq.get_characters_in_instance(instance_id);
   lockout_name = 'MPG_foresight';
   lockout_win = 108;
-  this_bit = 8;
+  this_bit = 4;
   emote_grace = 8;
 end
 

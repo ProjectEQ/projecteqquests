@@ -42,6 +42,16 @@ sub EVENT_ITEM {
     quest::exp(100000); 
     quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
   }
+  elsif ($client->GetGlobal("cleric20") >= 2 && plugin::check_handin(\%itemcount, 12433 => 1)) { #Dark Red Robe
+    quest::summonitem(12509); #Robe of Plasmatic Priesthood
+    quest::say("What? You found this on a Disciple in Discord?  This is a robe of the Plasmatic Priesthood, without question.  Bring this to Cecilia quickly, hopefully she will be able to divine their intentions.");
+  }
+  elsif ($client->GetGlobal("cleric20") >= 2 && plugin::check_handin(\%itemcount, 56013 => 1)) { #Ethereal Disciple's Journal
+    quest::emote("grows pale as he reads the journal, 'It is just as a feared. I can't believe he is on his way here.");
+    $client->Message(13, "The walls of the cove tremble as the Prime Disciple appears before Omat. 'Well this is an unexpected surprise, I came looking for Omat, however revenge on you, $name, will be that much sweeter."); #forgot to note color ... assume red like rest of the quest :P
+    $client->SetGlobal("cleric20", "3", 5, "F");
+    quest::spawn2(96368, 0, 0, $client->GetX(), $client->GetY(), $client->GetZ(), $client->GetHeading()); ##Gefaari_Drokaz
+  }
   plugin::return_items(\%itemcount);
 }
 #End of File, Zone:timorous  NPC:96033 -- Omat_Vastsea

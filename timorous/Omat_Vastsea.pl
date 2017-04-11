@@ -51,6 +51,7 @@ sub EVENT_ITEM {
     $client->Message(13, "The walls of the cove tremble as the Prime Disciple appears before Omat. 'Well this is an unexpected surprise, I came looking for Omat, however revenge on you, $name, will be that much sweeter."); #forgot to note color ... assume red like rest of the quest :P
     $client->SetGlobal("cleric20", "3", 5, "F");
     quest::spawn2(96368, 0, 0, $client->GetX(), $client->GetY(), $client->GetZ(), $client->GetHeading()); ##Gefaari_Drokaz
+    quest::summonitem(56013); #Ethereal Disciple's Journal returned in case of failure
   }
   plugin::return_items(\%itemcount);
 }

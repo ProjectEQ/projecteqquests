@@ -96,7 +96,7 @@ function OMM_HP(e)
 				num_hit=num_hit+1;
 			end
 		end
-		eq.set_timer("check_mark",58* 1000);
+		eq.set_timer("check_mark",15*1000); --omm mark of death triggers after 15s
 	elseif (e.hp_event == 50) then
 		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
@@ -157,7 +157,6 @@ function OMM_Timer(e)
 	elseif (e.timer == "pick6") then
 	--5680 Gaze of Anguish, 5679 Touch of Anguish, 5678 Wail of Anguish, 5677 Void of Suppression, 5676 Torment of Body, 5675 Relinquish Spirit
 		e.self:CastSpell(eq.ChooseRandom(5680,5679,5678,5677,5676,5675),e.self:GetTarget():GetID());
-	--temp work around for mark of death having no recourse
 	elseif (e.timer == "check_mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do

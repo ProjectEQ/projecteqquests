@@ -20,6 +20,17 @@ function event_loot(e)
 		if(qglobals["Soulwhisper"] == "3" and qglobals["nec_epic_causeway"] == nil) then
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("nec_epic_causeway","1",5,"F");
-		end		
-	end	
+		end
+	elseif (e.self:Class() == "Bard" and e.item:GetID() == 77644 and e.corpse:GetNPCTypeID() == 303125) then
+		local qglobals = eq.get_qglobals(e.self);
+		if (qglobals["bard20"] == "1") then
+			if (qglobals["bard20_chest"] == nil) then
+				eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+				eq.set_global("bard20_chest", "1", 5, "F");
+			end
+			return 0;
+		else
+			return 1;
+		end
+	end
 end

@@ -2,6 +2,14 @@ function event_spawn(e)
     eq.set_next_hp_event(90);
 end
 
+function event_combat(e)
+    if (e.joined == true) then
+        eq.stop_timer("depop");
+    else
+        eq.start_timer("depop", 1800000) -- 30 mins
+    end
+end
+
 function event_hp(e)
     if (e.hp_event == 90) then
         e.self:TempName("Zordak Ragefire");
@@ -56,6 +64,9 @@ function event_timer(e)
         e.self:CastSpell(5163, e.self:GetID()); -- Force Breath
     elseif (e.timer == "timelesspanic") then
         e.self:CastSpell(3070, e.self:GetID()); -- Timeless Panic
+    elseif (e.timer == "depop") then
+        eq.depop_all(96369);
+        eq.depop();
     end
 end
 

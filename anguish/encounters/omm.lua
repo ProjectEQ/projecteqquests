@@ -96,6 +96,7 @@ function OMM_HP(e)
 				num_hit=num_hit+1;
 			end
 		end
+		eq.set_timer("check_mark",58* 1000);
 	elseif (e.hp_event == 50) then
 		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
@@ -111,9 +112,9 @@ function OMM_HP(e)
 		--e.self:MoveTo(507, 4969, 296.53, 127.6,true);
 		e.self:Stun(60*1000);
 		eq.spawn2(317118,0,0,504, 4840, 280, 0); --#Vyishe (317118) south
-		eq.spawn2(317119,0,0,381, 4843, 280, 192); --#Anishy (317119) west
+		eq.spawn2(317119,0,0,619, 4968, 280, 192); --#Anishy (317119) west
 		eq.spawn2(317120,0,0,393, 4968, 280, 64); --#Piraand (317120) east
-		eq.spawn2(317121,0,0,381, 4843, 280, 128); --#Garishi (317121) north
+		eq.spawn2(317121,0,0,504, 5081, 280, 128); --#Garishi (317121) north
 		eq.signal(317118,1);
 		eq.signal(317119,2);		
 		eq.depop_all(317114); --Coerced_Lieutenant
@@ -156,6 +157,17 @@ function OMM_Timer(e)
 	elseif (e.timer == "pick6") then
 	--5680 Gaze of Anguish, 5679 Touch of Anguish, 5678 Wail of Anguish, 5677 Void of Suppression, 5676 Torment of Body, 5675 Relinquish Spirit
 		e.self:CastSpell(eq.ChooseRandom(5680,5679,5678,5677,5676,5675),e.self:GetTarget():GetID());
+	--temp work around for mark of death having no recourse
+	elseif (e.timer == "check_mark") then				
+		local now_clients = eq.get_entity_list():GetClientList();
+		for client in now_clients.entries do
+			if (client.valid and client:FindBuff(5684)) then	
+				e.self:SendBeginCast(982, 0);
+				e.self:SpellFinished(982, client:CastToMob());	
+				eq.debug("cazic touch: " .. client:GetName());
+			end
+		end
+		eq.stop_timer("check_mark");		
 	elseif (e.timer == "mmgaze") then
 		eq.set_timer("mmgaze",70*1000);
 		gaze_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);

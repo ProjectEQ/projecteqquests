@@ -1,8 +1,8 @@
 function event_combat(e)
     if (e.joined == true) then
-        eq.start_timer("start_attrition", 5000);
-        eq.start_timer("start_feedback", 6000);
-        eq.start_timer("start_discord", 10000);
+        eq.set_timer("start_attrition", 5000);
+        eq.set_timer("start_feedback", 6000);
+        eq.set_timer("start_discord", 10000);
     else
         eq.stop_all_timers();
     end

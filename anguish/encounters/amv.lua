@@ -23,15 +23,7 @@ function AMV_Spawn(e)
 	eq.unique_spawn(317108,0,0, 617,5080,278,248); --Vangl`s_Focus (317108)
 	eq.set_next_hp_event(75);
 	
-	eq.get_entity_list():FindDoor(57):SetOpenType(58);
-	eq.get_entity_list():FindDoor(58):SetOpenType(58);
-	eq.get_entity_list():FindDoor(59):SetOpenType(58);
-	eq.get_entity_list():FindDoor(60):SetOpenType(58);	
-	eq.get_entity_list():FindDoor(57):ForceClose(e.self);
-	eq.get_entity_list():FindDoor(58):ForceClose(e.self);
-	eq.get_entity_list():FindDoor(59):ForceClose(e.self);
-	eq.get_entity_list():FindDoor(60):ForceClose(e.self);	
-	
+	eq.set_timer("close_doors",1000);	
 end
 
 function AMV_HP(e)
@@ -86,7 +78,19 @@ function AMV_Timer(e)
 				eq.debug("mark on: " .. client:GetName());
 			end
 		end
+		eq.set_timer("check_mark",58* 1000);
 		eq.set_timer("mark",75* 1000);
+	--temp work around for mark of death having no recourse
+	elseif (e.timer == "check_mark") then				
+		local now_clients = eq.get_entity_list():GetClientList();
+		for client in now_clients.entries do
+			if (client.valid and client:FindBuff(5684)) then	
+				e.self:SendBeginCast(982, 0);
+				e.self:SpellFinished(982, client:CastToMob());	
+				eq.debug("cazic touch: " .. client:GetName());
+			end
+		end
+		eq.stop_timer("check_mark");	
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
 			eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);
@@ -108,6 +112,15 @@ function AMV_Timer(e)
 		convert_min_hit=278;
 		convert_max_hit=1855;
 		e.self:GotoBind(); --this should not be needed, he should walk home.  just in case
+	elseif (e.timer =="close_doors") then			
+		eq.get_entity_list():FindDoor(57):SetOpenType(58);
+		eq.get_entity_list():FindDoor(58):SetOpenType(58);
+		eq.get_entity_list():FindDoor(59):SetOpenType(58);
+		eq.get_entity_list():FindDoor(60):SetOpenType(58);	
+		eq.get_entity_list():FindDoor(57):ForceClose(e.self);
+		eq.get_entity_list():FindDoor(58):ForceClose(e.self);
+		eq.get_entity_list():FindDoor(59):ForceClose(e.self);
+		eq.get_entity_list():FindDoor(60):ForceClose(e.self);	
     end
 end
 

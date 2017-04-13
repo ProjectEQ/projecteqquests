@@ -78,9 +78,8 @@ function AMV_Timer(e)
 				eq.debug("mark on: " .. client:GetName());
 			end
 		end
-		eq.set_timer("check_mark",58* 1000);
+		eq.set_timer("check_mark",30* 1000);  --amv mark of death triggers after 30s
 		eq.set_timer("mark",75* 1000);
-	--temp work around for mark of death having no recourse
 	elseif (e.timer == "check_mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do

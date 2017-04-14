@@ -85,6 +85,17 @@ function event_loot(e)
     else
       return 1;
     end
+  elseif (e.item:GetID() == 15825 and e.corpse:GetNPCTypeID() == 316034) then
+    local qglobals = eq.get_qglobals(e.self);
+    if (qglobals["wiz_epic20"] ~= nil and qglobals["wiz_epic20"] == "2") then
+      if (qglobals["wiz20_mpg_chest"] == nil) then
+        eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+        eq.set_global("wiz20_mpg_chest", "1", 5, "F");
+      end
+      return 0;
+    else
+      return 1;
+    end
   end
 end
 

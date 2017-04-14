@@ -25,6 +25,9 @@ function event_trade(e)
 			e.other:Ding();
 			e.other:AddExp(10000); -- not sure how much exp to reward
 			e.other:SummonItem(20076); -- Aegis of Superior Divinity // Grant Title High Priest/High Priestess//10AAs
+			e.other:AddAAPoints(10);
+			e.other:Ding();
+			e.other:Message(15,'You have gained 10 ability points!');
 		end
 		item_lib.return_items(e.self, e.other, e.trade);
 end

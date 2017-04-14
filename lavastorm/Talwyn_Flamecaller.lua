@@ -1,7 +1,14 @@
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 
-	if(e.message:findi("hail") and e.other:HasItem(14341)) then
+	if (e.message:findi("final taks") and qglobals["wiz_epic"] == "4") then
+		e.self:Say("Your first task is to take the right half of the orb to the highest point achieved by a wizards spire on Norrath. On the western prong, you will find a small tear in space. Place the orb inside this tear; it will absorb the pure essence of teleportation. The second task will take you to the highest point achieved by a wizards spire on Luclin. Find another tear in space there and absorb that essence as well. Return to me with both halves imbued with the proper essence and hand them to me, along with your staff.");
+	elseif (e.message:findi("hail") and e.other:HasItem(12665)) then
+		e.self:Say("The power of the wizard courses through your veins thoroughly, ever in search of the opportunity to harness even more power. You have created a staff of immense power, yet even in its glory, is limited. To unleash the full potential of this weapon will be a large undertaking of its own. You must obtain a globe of pure discordant energy and return it to me. Look for assistance from the Plane of Discord from Grathnok Gilforgan. I know not where this being may be, but I do know that once you find him, he will be willing to assist you in finding the globe you seek.");
+		if (qglobals["wiz_epic20"] == nil) then
+			eq.set_global("wiz_epic20", "1", 5, "F"); -- start 2.0
+		end
+	elseif(e.message:findi("hail") and e.other:HasItem(14341)) then
 		if(qglobals["wiz_epic"] == nil) then
 			e.self:Say("The fire of destruction burns within you, does it not? I can see that your affinity for destructive magic has served you well in your travels. It has served you so well that it has caught the eye of Solusek Ro. He has created and sent me here to discuss the matter of joining his legions. If you do, you will be granted power unheard of on mortal lands. Will you [" .. eq.say_link("agree") .. "]?");
 			eq.set_global("wiz_epic","1",5,"F"); --Flagged to start epic, Step 1 of 5, Step 2 == \lavastorm\Talwyn_Flamecaller.lua line 31
@@ -59,6 +66,17 @@ function event_trade(e)
 		e.other:AddAAPoints(5);
 		e.other:Ding();
 		e.other:Message(15,'You have gained 5 ability points!');
+	elseif (qglobals["wiz_epic20"] ~= nil and qglobals["wiz_epic20"] >= "3" and item_lib.check_turn_in(e.trade, {item1 = 47100})) then -- Globe of Discordant Energy
+		e.self:Say("To obtain this globe was no trivial task, yet you have prevailed! Your staff is nearly complete now, you have only two final tasks remaining.', he says as he begins to murmur a brief incantation. Without warning, the orb splits into two equal halves and are then given to you. They will infuse your staff with one of the most useful powers of a wizard; teleportation.'");
+		e.other:SummonItem(15836); -- Broken Orb of Discordant Energy
+		e.other:SummonItem(16147); -- Broken Orb of Discordant Energy
+		eq.set_global("wiz_epic20", "4", 5, "F"); -- flag for talking
+	elseif (qglobals["wiz_epic20"] == "4" and item_lib.check_turn_in(e.trade, {item1 = 16451, item2 = 16334, item3 = 12665})) then
+		e.self:Say("With these Infused Orbs, your path to becoming a soldier of Solusek's legions has been completed. You have surpassed even my expectations!' he says. You hear Talwyn chant in low, almost inaudible tones. His hands glow bright with power as he assembles a weapon worthy of Solusek himself. 'Take this staff as a symbol of your loyalty to Solusek and wield it proudly, wizard!");
+		e.other:SummonItem(16576); -- Staff of Phenomenal Power, Wiz 2.0
+		e.other:AddAAPoints(10);
+		e.other:Ding();
+		e.other:Message(15, 'You have gained 10 ability points!');
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

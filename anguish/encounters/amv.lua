@@ -53,7 +53,7 @@ function AMV_Combat(e)
 		eq.stop_timer("reset");
 	else
 		eq.set_timer("reset", 60 * 1000);
-		eq.stop_timer("add");
+		eq.stop_timer("adds");
 		eq.stop_timer("touch");
 		eq.stop_timer("gaze");
 		eq.stop_timer("mark");

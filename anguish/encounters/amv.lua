@@ -119,7 +119,8 @@ function AMV_Timer(e)
 		eq.get_entity_list():FindDoor(57):ForceClose(e.self);
 		eq.get_entity_list():FindDoor(58):ForceClose(e.self);
 		eq.get_entity_list():FindDoor(59):ForceClose(e.self);
-		eq.get_entity_list():FindDoor(60):ForceClose(e.self);	
+		eq.get_entity_list():FindDoor(60):ForceClose(e.self);
+		eq.stop_timer("close_doors");		
     end
 end
 

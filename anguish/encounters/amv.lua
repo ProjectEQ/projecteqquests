@@ -105,9 +105,12 @@ function AMV_Timer(e)
 		eq.set_timer("focus30",30*1000);
 		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
 	elseif (e.timer == "reset") then
+		eq.stop_timer("reset");
 		eq.set_next_hp_event(75);
 		eq.depop_all(317110);
-		e.self:SetHP(100);
+		e.self:SetHP(e.self:GetMaxHP())
+		e.self:CastSpell(3791, e.self:GetID())
+		e.self:WipeHateList();
 		convert_min_hit=278;
 		convert_max_hit=1855;
 		e.self:GotoBind(); --this should not be needed, he should walk home.  just in case

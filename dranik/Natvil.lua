@@ -22,12 +22,12 @@ function event_trade(e)
 	
 		if(item_lib.check_turn_in(e.trade, {item1 = 56014, item2 = 47100, item3 = 9955})) then   -- Soulshard // Globe of Discordant Energy // Harmony of the Soul  Turn-in
 			e.self:Say("Amazing! You have found everything.' He then pulls deftly complete the shield. 'Quickly, take this back. It will bind itself to you. You have done well.");
-			e.other:Ding();
-			e.other:AddExp(10000); -- not sure how much exp to reward
+			e.other:Ding();			
 			e.other:SummonItem(20076); -- Aegis of Superior Divinity // Grant Title High Priest/High Priestess//10AAs
 			e.other:AddAAPoints(10);
 			e.other:Ding();
 			e.other:Message(15,'You have gained 10 ability points!');
+			e.other:AddEXP(10000); -- not sure how much exp to reward
 		end
 		item_lib.return_items(e.self, e.other, e.trade);
 end

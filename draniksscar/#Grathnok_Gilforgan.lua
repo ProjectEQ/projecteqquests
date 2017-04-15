@@ -15,15 +15,10 @@ function event_say(e)
     end
 end
 
-function event_item(e)
+function event_trade(e)
     local qglobals = eq.get_qglobals(e.other);
     local item_lib = require("items");
 
-    if (qglobals["wiz_epic20"] == nil) then
-        eq.debug("wiz_epic20 is nil");
-    else
-        eq.debug("wiz_epic20 is " .. qglobals["wiz_epic20"]);
-    end
     if (qglobals["wiz_epic20"] ~= nil and qglobals["wiz_epic20"] >= "2") then
         if (item_lib.check_turn_in(e.trade, {item1 = 15825})) then
             e.self:Say("Your resolve and strength of will astounds me. You have returned to my people, the most sacred artifact we have on this world, and for that, you have earned my gratitude. As promised, I will give you the information that I have on the discordant globes. These globes can only be collected in one area, where the magic of discord constantly fluxes and an eerie sense of pain and anguish resides. Beware, it is an extremely dangerous area, protected by many of the Muramite Army's best and highest ranking members. Good luck to you, I hope you achieve all that you aspire.");

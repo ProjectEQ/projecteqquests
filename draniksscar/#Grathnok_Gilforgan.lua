@@ -1,5 +1,5 @@
 function event_say(e)
-    local qglobals = eq.get_qglobals(e.self);
+    local qglobals = eq.get_qglobals(e.other);
 
     if (qglobals["wiz_epic20"] ~= nil and qglobals["wiz_epic20"] >= "1") then
         if (e.message:findi("globe of pure discordant energy")) then

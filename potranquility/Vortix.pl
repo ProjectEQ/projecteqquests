@@ -69,6 +69,7 @@ sub EVENT_ITEM {
   # Monk Epic 1.5
   quest::say("I see you have gained great strength during your journey as you now wear the Sash of the Celestial Order. I am glad you have made it this far. You will need that for the next steps of your [" . quest::saylink("journey") . "].");
   quest::setglobal("monk_epic", "7", 5, "F");
+  quest::summonitem(48127); # yep, you get this back ... need to handle for bugged toons some how ...
  }
  # Handin: Kaiaren's Mind & Kaiaren's Body
  elsif($client->GetGlobal("monk_epic") ==7 && plugin::check_handin(\%itemcount, 48137 => 1, 48138 => 1)){

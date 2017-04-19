@@ -26,12 +26,10 @@ function event_say(e)
       e.self:Say("'When faced with an insurmountable goal - an unbeatable adversary - do you accept defeat or can you identify the weaknesses that reverse the odds and secure a win in your favor? Do you have the ingenuity to see through to victory even when facing certain failure? If you have this ability, now is the opportunity to prove your worth!'");
 
     end
-    
-
   elseif (e.message:findi("adaptation")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_adaptation', 'MPG: Trial of Adaptation' } }
-    local requests = instance_requests.ValidateRequest('raid',  'chambrese', 2, 2, 54, 65, nil, nil, e.other, lockouts);
+    local requests = instance_requests.ValidateRequest('raid',  'chamberse', 2, 2, 54, 65, nil, nil, e.other, lockouts);
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 

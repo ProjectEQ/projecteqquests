@@ -63,7 +63,7 @@
 -- RESIST_PRISMATIC = 7,
 -- RESIST_PHYSICAL = 8,  // see Muscle Shock, Back Swing
 -- RESIST_CORRUPTION = 9
-local ThreadManager = require("thread_manager");
+--local ThreadManager = require("thread_manager");
 
 local event_started = false;
 local instance_id;
@@ -199,7 +199,7 @@ function ShapeShift(e)
         e.self:SetSpecialAbility(v[1], 1);
         if ( v[2] ~= nil ) then
           e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, v[2]);
-		  e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 25);
+          e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 25);
         end
       end
     end
@@ -224,20 +224,22 @@ function ShapeShift(e)
   end
 
   self = e.self;
-  ThreadManager:Clear();
+  --ThreadManager:Clear();
 
   -- Spells if present to add to the AI
   if ( mob[10] ~= nil ) then
-    eq.set_timer('castspells', 1000);
+    -- eq.set_timer('castspells', 1000);
     cast_spells = mob[10];
-    ThreadManager:Create("CastSpells", CastSpells);
+    CastSpells();
+    --ThreadManager:Create("CastSpells", CastSpells);
   end
 
   -- Spells to cast once (self buffs)
   if ( mob[11] ~= nil ) then
-    eq.set_timer('castbuffs', 500);
+    -- eq.set_timer('castbuffs', 500);
     cast_buffs = mob[11];
-    ThreadManager:Create("CastBuffs", CastBuffs);
+    CastSpells();
+    --ThreadManager:Create("CastBuffs", CastBuffs);
   end
   last_mob = mob;
 end
@@ -245,8 +247,10 @@ end
 function CastBuffs()
   if (cast_buffs ~= nil) then
     for _,v in pairs(cast_buffs) do
-      self:CastSpell(v, self:GetID());  
-      ThreadManager:Wait(1.0);
+      --self:CastSpell(v, self:GetID());  
+      --ThreadManager:Wait(1.0);
+      self:CastedSpellFinished(v, self);
+      eq.debug('Casting: ' .. v .. ' on ' .. self:GetID() );
     end
     cast_buffs = {};
   end
@@ -255,8 +259,9 @@ end
 function CastSpells()
   if (cast_spells ~= null) then
    for _,v in pairs(cast_spells) do
-     self:CastSpell(v, self:GetTarget():GetID());
-     ThreadManager:Wait(2.5);
+     --self:CastSpell(v, self:GetTarget():GetID());
+     --ThreadManager:Wait(2.5);
+     self:CastedSpellFinished(v, self:GetTarget());
    end
   end
 end
@@ -272,7 +277,7 @@ function Boss_Spawn(e)
 end
 
 function Lick_Spawn(e)
- e.self:CastSpell(5705, e.self:GetID())
+  e.self:CastSpell(5705, e.self:GetID())
 end
 
 function Mote_Spawn(e)
@@ -285,13 +290,11 @@ function Boss_Say(e)
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
-      --eq.spawn_condition('chamberse', instance_id, 2, 1 );
-	  local shifttime = math.random(90, 150);
+      local shifttime = math.random(90, 150);
       eq.spawn2(308012,0,0,0,0,0,0);
       event_started = true;
       eq.set_timer('shapeshift', shifttime * 1000);
-	  eq.debug( "starting shift time: " .. shifttime .. " seconds");
-      --eq.set_next_hp_event(90);
+      eq.debug( "starting shift time: " .. shifttime .. " seconds");
       ShapeShift(e);
 
       e.self:Say("Very well!  Let the battle commence!");
@@ -305,40 +308,40 @@ function Boss_Timer(e)
 	  local new_time;
 	  local boss_hp = math.floor(100*e.self:GetHP()/e.self:GetMaxHP());
 	  if (boss_hp <= 10 ) then 
-		new_time = math.random(25, 35);
+      new_time = math.random(25, 35);
 	  elseif (boss_hp <= 20) then
-		new_time = math.random(35, 45);	 
+      new_time = math.random(35, 45);	 
 	  elseif (boss_hp <= 30) then
-		new_time = math.random(45, 55);
+      new_time = math.random(45, 55);
 	  elseif (boss_hp <= 40) then
-		new_time = math.random(55, 65);
+      new_time = math.random(55, 65);
 	  elseif (boss_hp <= 50) then
-		new_time = math.random(65, 75);	
+      new_time = math.random(65, 75);	
 	  elseif (boss_hp <= 60) then
-		new_time = math.random(70, 90);
+      new_time = math.random(70, 90);
 	  elseif (boss_hp <= 70) then
-		new_time = math.random(75, 105);	
+      new_time = math.random(75, 105);	
 	  elseif (boss_hp <= 80) then
-		new_time = math.random(80, 120);		
+      new_time = math.random(80, 120);		
 	  elseif (boss_hp <= 90) then
-		new_time = math.random(85, 135);
+      new_time = math.random(85, 135);
 	  else
-		new_time = math.random(90, 150);
+      new_time = math.random(90, 150);
 	  end
 	  eq.stop_timer('shapeshift');
 	  eq.debug( "HP: " .. boss_hp .. "  New Timer:" .. new_time .. " seconds");
 	  eq.set_timer('shapeshift', new_time * 1000);	
   elseif (e.timer == "leftcombat") then
     ResetEvent(e);
-  elseif (e.timer == "castbuffs") then
-    ThreadManager:Resume("CastBuffs");
-  elseif (e.timer == "castspells") then
-    ThreadManager:Resume("CastSpells");
+    --elseif (e.timer == "castbuffs") then
+    --ThreadManager:Resume("CastBuffs");
+    --elseif (e.timer == "castspells") then
+    --ThreadManager:Resume("CastSpells");
   end
 end
 
 function Boss_Death(e)
-  ThreadManager:Clear();
+  --ThreadManager:Clear();
   eq.stop_all_timers();
 
   -- Disable the deathtouch
@@ -362,7 +365,7 @@ function Boss_Combat(e)
 end
 
 function ResetEvent(e)
-  ThreadManager:Clear();
+  --ThreadManager:Clear();
   eq.stop_all_timers();
   eq.repop_zone();
 end

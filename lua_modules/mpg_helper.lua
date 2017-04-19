@@ -167,6 +167,11 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
   end
 end
 
+function mpg_helper.Display_Completed_Trials(client)
+  mpg_helper.Display_Group_Trials_Completed(client);
+  mpg_helper.Display_Raid_Trials_Completed(client);
+end
+
 function mpg_helper.Display_Group_Trials_Completed(client)
   -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
   -- a Character complets a trial.
@@ -176,12 +181,12 @@ function mpg_helper.Display_Group_Trials_Completed(client)
 
   local trial_bit_list = {1,2,4,8,16,32};
   local trial_bit_table = {
-    {1, "The Mastery of Fear"},
-    {2, "The Mastery of Ingenuity"},
-    {4, "The Mastery of Weaponry"},
-    {8, "The Mastery of Subversion"},
-    {16,"The Mastery of Efficiency"},
-    {32,"The Mastery of Destruction"}};
+    {1, "The Mastery of Fear (Group)"},
+    {2, "The Mastery of Ingenuity (Group)"},
+    {4, "The Mastery of Weaponry (Group)"},
+    {8, "The Mastery of Subversion (Group)"},
+    {16,"The Mastery of Efficiency (Group)"},
+    {32,"The Mastery of Destruction (Group)"}};
 
   for bitkey,bitval in pairs(trial_bit_table) do
     if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then
@@ -205,12 +210,12 @@ function mpg_helper.Display_Raid_Trials_Completed(client)
 
   local trial_bit_list = {1,2,4,8,16,32};
   local trial_bit_table = {
-    {1, "The Mastery of Hate"},
-    {2, "The Mastery of Endurance"},
-    {4, "The Mastery of Foresight"},
-    {8, "The Mastery of Specialization"},
-    {16,"The Mastery of Adaptation"},
-    {32,"The Mastery of Corruption"}};
+    {1, "The Mastery of Hate (Raid)"},
+    {2, "The Mastery of Endurance (Raid)"},
+    {4, "The Mastery of Foresight (Raid)"},
+    {8, "The Mastery of Specialization (Raid)"},
+    {16,"The Mastery of Adaptation (Raid)"},
+    {32,"The Mastery of Corruption (Raid)"}};
 
   for bitkey,bitval in pairs(trial_bit_table) do
     if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then

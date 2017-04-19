@@ -69,6 +69,7 @@ sub EVENT_ITEM {
   # Monk Epic 1.5
   quest::say("I see you have gained great strength during your journey as you now wear the Sash of the Celestial Order. I am glad you have made it this far. You will need that for the next steps of your [" . quest::saylink("journey") . "].");
   quest::setglobal("monk_epic", "7", 5, "F");
+  quest::summonitem(48127); # yep, you get this back ... need to handle for bugged toons some how ...
  }
  # Handin: Kaiaren's Mind & Kaiaren's Body
  elsif($client->GetGlobal("monk_epic") ==7 && plugin::check_handin(\%itemcount, 48137 => 1, 48138 => 1)){
@@ -88,11 +89,14 @@ sub EVENT_ITEM {
   quest::ding();  
  }
  # Handin: Globe of Discordant Energy
- elsif(plugin::check_handin(\%itemcount, 47100 => 1)){
+ elsif($client->GetGlobal("mnk_epic20") >= 5 && plugin::check_handin(\%itemcount, 47100 => 1)){
   # Monk Epic 2.0
   quest::say("By handing me this I already know of the events that have taken place this day. You must not be upset. Everything has balanced itself again. The Order has been restored and we must continue to train in the ways of the Enlightened. Take the globe back, and with it and your Fistwraps of Celestial Discipline, please find Sebast Muckle in Plane of Knowledge and hand them to him. He is a great sage and will be able to know what to do with them to reward you properly.");
   # Summon: Globe of Discordant Energy
   quest::summonitem(47100);
+  if ($client->GetGlobal("mnk_epic20") == 5) {
+    $client->SetGlobal("mnk_epic20", 6, 5, "F");
+  }
  }
  plugin::return_items(\%itemcount);
 }

@@ -26,12 +26,10 @@ function event_say(e)
       e.self:Say("'When faced with an insurmountable goal - an unbeatable adversary - do you accept defeat or can you identify the weaknesses that reverse the odds and secure a win in your favor? Do you have the ingenuity to see through to victory even when facing certain failure? If you have this ability, now is the opportunity to prove your worth!'");
 
     end
-    
-
   elseif (e.message:findi("adaptation")) then
     local instance_requests = require("instance_requests");
     local lockouts = { { 'MPG_adaptation', 'MPG: Trial of Adaptation' } }
-    local requests = instance_requests.ValidateRequest('raid',  'chambrese', 2, 2, 54, 65, nil, nil, e.other, lockouts);
+    local requests = instance_requests.ValidateRequest('raid',  'chamberse', 2, 2, 54, 65, nil, nil, e.other, lockouts);
     if (requests.valid and requests.flags == 1) then
       instance_requests.DisplayLockouts(e.other, e.other, lockouts);
     elseif (requests.valid and requests.flags == 0) then 
@@ -44,6 +42,6 @@ function event_say(e)
     e.self:Say("'Every test has its rules and these trials are no exception. The following guidelines must be followed to the letter, or else you stand to forfeit or perish. You are allowed no more than six participants in the battle. Once the trial has begun, you must remain in the combat area. Violators of this rule will be warned and then destroyed. Your [ ".. eq.say_link('progress') .. " ] will be carefully monitored. If you take too long, you will fail. These are the rules and they are not negotiable.'");
   elseif (e.message:findi("progress")) then
     local mpg_helper = require("mpg_helper");
-    mpg_helper.Display_Group_Trials_Completed(e.other);
+    mpg_helper.Display_Completed_Trials(e.other);
   end
 end

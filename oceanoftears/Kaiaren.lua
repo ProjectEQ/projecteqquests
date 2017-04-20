@@ -91,7 +91,7 @@ function event_death_complete(e)
     local client = entity_list:GetClientByCharID(char_id);
     if (client.valid) then
         local qglobals = eq.get_qglobals(client);
-        if (qlobals["mnk20_oot_chest"] == nil) then
+        if (qglobals["mnk20_oot_chest"] == nil) then
             eq.spawn2(893, 0, 0, client:GetX(), client:GetY(), client:GetZ(), client:GetHeading()); -- a chest (epic 2.0)
             client:SetGlobal("mnk20_oot_chest", "1", 5, "F");
         end

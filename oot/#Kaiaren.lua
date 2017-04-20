@@ -1,8 +1,6 @@
-local spawn_chest = false;
 local char_id = 0;
 
 function event_spawn(e)
-    spawn_chest = false;
     char_id = 0;
 end
 
@@ -41,7 +39,6 @@ function event_say(e)
                 e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
                 e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
                 char_id = e.other:CharacterID();
-                spawn_chest = qlobals["mnk20_oot_chest"] == nil;
                 eq.attack(e.other:GetName());
             end
         end
@@ -80,11 +77,10 @@ function event_timer(e)
         e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
         e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
         char_id = 0;
-        spawn_chest = false;
     elseif (e.timer == "start_cast") then
         e.self:CastSpell(5117, e.self:GetID());
         eq.stop_timer(e.timer);
-        eq.start_timer("cast", 120000);
+        eq.set_timer("cast", 120000);
     elseif (e.timer == "cast") then
         e.self:CastSpell(5117, e.self:GetID());
     end
@@ -92,7 +88,7 @@ end
 
 function event_death_complete(e)
     local entity_list = eq.get_entity_list();
-    local client = entity_list.GetClientByCharID(char_id);
+    local client = entity_list:GetClientByCharID(char_id);
     if (client.valid) then
         local qglobals = eq.get_qglobals(client);
         if (qlobals["mnk20_oot_chest"] == nil) then

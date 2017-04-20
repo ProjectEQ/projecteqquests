@@ -10,7 +10,7 @@ function event_say(e)
     local qglobals = eq.get_qglobals(e.other);
 
     -- 1.5 done
-    if (qglobals["mnk_epic"] == "9") then
+    if (qglobals["monk_epic"] == "9") then
         if (e.message:findi("hail")) then
             e.self:Say("Hello, " .. e.other:GetName() .. ", I have been [" .. eq.say_link("expecting") .. "] you.");
         elseif (e.message:findi("expecting")) then

@@ -9,6 +9,7 @@ function event_say(e)
             e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
             e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
             e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
+            eq.attack(e.other:GetName());
         end
     end
 end

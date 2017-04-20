@@ -1,8 +1,6 @@
-local spawn_chest = false;
 local char_id = 0;
 
 function event_spawn(e)
-    spawn_chest = false;
     char_id = 0;
 end
 
@@ -10,7 +8,7 @@ function event_say(e)
     local qglobals = eq.get_qglobals(e.other);
 
     -- 1.5 done
-    if (qglobals["mnk_epic"] == "9") then
+    if (qglobals["monk_epic"] == "9") then
         if (e.message:findi("hail")) then
             e.self:Say("Hello, " .. e.other:GetName() .. ", I have been [" .. eq.say_link("expecting") .. "] you.");
         elseif (e.message:findi("expecting")) then
@@ -41,7 +39,6 @@ function event_say(e)
                 e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
                 e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
                 char_id = e.other:CharacterID();
-                spawn_chest = qlobals["mnk20_oot_chest"] == nil;
                 eq.attack(e.other:GetName());
             end
         end
@@ -80,11 +77,10 @@ function event_timer(e)
         e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
         e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
         char_id = 0;
-        spawn_chest = false;
     elseif (e.timer == "start_cast") then
         e.self:CastSpell(5117, e.self:GetID());
         eq.stop_timer(e.timer);
-        eq.start_timer("cast", 120000);
+        eq.set_timer("cast", 120000);
     elseif (e.timer == "cast") then
         e.self:CastSpell(5117, e.self:GetID());
     end
@@ -92,10 +88,10 @@ end
 
 function event_death_complete(e)
     local entity_list = eq.get_entity_list();
-    local client = entity_list.GetClientByCharID(char_id);
+    local client = entity_list:GetClientByCharID(char_id);
     if (client.valid) then
         local qglobals = eq.get_qglobals(client);
-        if (qlobals["mnk20_oot_chest"] == nil) then
+        if (qglobals["mnk20_oot_chest"] == nil) then
             eq.spawn2(893, 0, 0, client:GetX(), client:GetY(), client:GetZ(), client:GetHeading()); -- a chest (epic 2.0)
             client:SetGlobal("mnk20_oot_chest", "1", 5, "F");
         end
@@ -103,4 +99,3 @@ function event_death_complete(e)
     end
     char_id = 0;
 end
-

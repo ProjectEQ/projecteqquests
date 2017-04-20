@@ -9,6 +9,7 @@ function event_say(e)
             e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
             e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
             e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
+            eq.attack(e.other:GetName());
         end
     end
 end
@@ -24,17 +25,25 @@ end
 
 function event_timer(e)
     if (e.timer == "start_strike") then
-        e.self:CastSpell(3168, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3168, e.self:GetTarget():GetID());
+        end
         eq.stop_timer(e.timer);
         eq.set_timer("cast_strike", 45000);
     elseif (e.timer == "start_blinding") then
-        e.self:CastSpell(3166, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3166, e.self:GetTarget():GetID());
+        end
         eq.stop_timer(e.timer);
         eq.set_timer("cast_blinding", 60000);
     elseif (e.timer == "cast_strike") then
-        e.self:CastSpell(3168, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3168, e.self:GetTarget():GetID());
+        end
     elseif (e.timer == "cast_blinding") then
-        e.self:CastSpell(3166, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3166, e.self:GetTarget():GetID());
+        end
     end
 end
 

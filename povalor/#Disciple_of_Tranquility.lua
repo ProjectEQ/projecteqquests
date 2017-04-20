@@ -25,7 +25,9 @@ end
 
 function event_timer(e)
     if (e.timer == "start_strike") then
-        e.self:CastSpell(3168, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3168, e.self:GetTarget():GetID());
+        end
         eq.stop_timer(e.timer);
         eq.set_timer("cast_strike", 45000);
     elseif (e.timer == "start_blinding") then
@@ -35,9 +37,13 @@ function event_timer(e)
         eq.stop_timer(e.timer);
         eq.set_timer("cast_blinding", 60000);
     elseif (e.timer == "cast_strike") then
-        e.self:CastSpell(3168, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3168, e.self:GetTarget():GetID());
+        end
     elseif (e.timer == "cast_blinding") then
-        e.self:CastSpell(3166, e.self:GetID());
+        if (e.self:GetTarget().valid) then
+            e.self:CastSpell(3166, e.self:GetTarget():GetID());
+        end
     end
 end
 

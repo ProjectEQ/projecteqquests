@@ -7,4 +7,6 @@ function event_trade(e)
 		eq.spawn2(72106,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 		eq.depop_with_timer();
 	end
+
+	item_lib.return_items(e.self, e.other, e.trade);
 end

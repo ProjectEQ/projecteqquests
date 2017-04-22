@@ -6,6 +6,8 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:SummonItem(eq.ChooseRandom(5037,5029,13313));
 	end
+
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 --by Angelox

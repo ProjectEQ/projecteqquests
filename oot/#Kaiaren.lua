@@ -60,6 +60,8 @@ function event_trade(e)
             eq.set_global("mnk_epic20", "4", 5, "F"); -- flags to continue dialog
         end
     end
+
+    item_lib.return_items(e.self, e.other, e.trade);
 end
 
 function event_combat(e)

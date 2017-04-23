@@ -27,13 +27,18 @@ end
 function Hanvar_Combat(e)
   if (e.joined == true) then
 	Aggro_Adds(e);
-	eq.set_timer("adds", 10 * 1000);	
+	eq.set_timer("adds", 5 * 1000);	
 	eq.set_timer("chains", math.random(10,45) * 1000);
 	--eq.set_timer("feedback", math.random(10,30) * 1000);
 	eq.set_timer("wail", math.random(15,90) * 1000);
 	eq.set_timer("check_hp", 1000);
 	eq.set_timer("leash", 3000);
 	eq.stop_timer("reset");
+	eq.enable_spawn2(54535);
+	eq.enable_spawn2(54536);
+	eq.enable_spawn2(54537);
+	eq.enable_spawn2(54538);
+	eq.enable_spawn2(54539);
   else
     eq.set_timer("reset", 60 * 1000);
 	eq.stop_timer("adds");

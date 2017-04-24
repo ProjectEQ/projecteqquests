@@ -59,5 +59,7 @@ function event_trade(e)
 		e.self:Emote("gawks in amazement.  By the Gods, where did you come by these embers? These are positively unnatural, and they bare the mark of Solusek himself!' She sprinkles a handful of the smoldering lumps into the forge and -KABOOM- a blast of incredible heat knocks you off your feet. Immediately, the metal of the forge swells and becomes white hot. 'Yep, this will do the trick,' she gloats cheerfully. The blazing heat doesnt seem to bother her.");
 		eq.set_global("Fatestealer_forge","1",5,"F");
 		e.other:Message(13,"You have fueled Smith Dandi's furnace with Solusek's Embers.");
-	end	
+	end
+
+	item_lib.return_items(e.self, e.other, e.trade);
 end

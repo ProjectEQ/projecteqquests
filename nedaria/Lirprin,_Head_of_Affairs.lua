@@ -17,7 +17,8 @@ function event_trade(e)
 		e.other:AddAAPoints(5);
 		e.other:Ding();
 		e.other:Message(15,'You have gained 5 ability points!');
-		e.other:SetAATitle('Infiltrator');
 		eq.set_global("Fatestealer","2",5,"F");
-	end	
+	end
+
+	item_lib.return_items(e.self, e.other, e.trade);
 end

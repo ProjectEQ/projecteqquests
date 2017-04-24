@@ -11,4 +11,6 @@ function event_trade(e)
 		e.self:Say("It is not often that I receive a request from Maelin himself. Please, take these and be most careful.");
 		e.other:SummonItem(52959); --Sealed Documents
 	end
+
+	item_lib.return_items(e.self, e.other, e.trade);
 end

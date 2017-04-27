@@ -37,7 +37,7 @@ function event_say(e)
     for k,v in pairs(char_list) do
       member = eq.get_entity_list():GetClientByCharID(v);
       if (member.valid == false) then
-        e.other:Message(13, "All members of the instance need to be in " .. eq.get_zone_long_name() .. " in order to desolve the instance.");
+        e.other:Message(13, "All members of the instance need to be in " .. eq.get_zone_long_name() .. " in order to dissolve the instance.");
         all_members_here = false;
       end
     end

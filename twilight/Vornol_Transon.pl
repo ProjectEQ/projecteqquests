@@ -60,7 +60,11 @@ sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 4493 => 1, 4584 => 1, 4585 => 1)) { #bracer
     quest::summonitem(3689);
     quest::exp(10000);
-     } 
+     }
+ if (plugin::check_handin(\%itemcount, 19441 => 1)) { #small pouch of riftseeker essence
+	quest::emote("furrows his brow for a little bit as he mixes the powder in a small flask. 'This is most intriguing. There is nothing here that represents elemental magic as we understand it. These beings seem to use different means to channel their power. Let's see. . . Chaos represents fire, Order corresponds to Water, Air is channeled by Spirit, and. . . hmmm. . . Yes! There it is! Earth ties with Body. There you are, Chaos, Order, Spirit, and Body, those are the primal elements, and I suspect they are the key to unlocking the full potential of your new staff there. Which is quite nice if I do say so myself. If you find essences of the Primal elements you may want to speak with Bantil again. He should have some insight on how to complete your journey. Iilivina has been in Discord long enough, she may have some insight as to where these essences can be located.");
+	quest::setglobal('mage_epic', 9, 5, 'F' );
+ } 
   plugin::return_items(\%itemcount);
 }
 

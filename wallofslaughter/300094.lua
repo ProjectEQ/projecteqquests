@@ -25,20 +25,39 @@ function event_say(e)
 		end
 	elseif(e.message:findi("leave")) then
 		local inst_id =  eq.get_instance_id('anguish', 0);
-		local instance_id;		
- 		for i in string.gmatch(e.message, "%S+") do
- 			if (tonumber(i)) then
- 				instance_id = tonumber(i);
- 			end
- 		end
+
+
+    -- Make sure all the people from the instance are in the zone and are removed properly.  
+    -- There can be problems/exploits if people are in the instanced zone and removed
+    -- from the instance.
+    local char_list = eq.get_characters_in_instance(inst_id);
+    local all_members_here = true;
+    local member;
+    --    for i = 0, player_list_count - 1, 1 do
+    for k,v in pairs(char_list) do
+      member = eq.get_entity_list():GetClientByCharID(v);
+      if (member.valid == false) then
+        e.other:Message(13, "All members of the instance need to be in " .. eq.get_zone_long_name() .. " in order to dissolve the instance.");
+        all_members_here = false;
+      end
+    end
 			  
-		if(inst_id == instance_id) then
-			local charid_list=eq.get_characters_in_instance(instance_id);
-			for k,v in pairs(charid_list) do
-				eq.target_global(inst_id.."_anguish_bit", "0", "1", 0,v, 0);
-			end	
-			eq.remove_all_from_instance(inst_id);
-		end
+    if (all_members_here == true) then 
+      local instance_id;		
+      for i in string.gmatch(e.message, "%S+") do
+        if (tonumber(i)) then
+          instance_id = tonumber(i);
+        end
+      end
+
+      if(inst_id == instance_id) then
+        local charid_list=eq.get_characters_in_instance(instance_id);
+        for k,v in pairs(charid_list) do
+          eq.target_global(inst_id.."_anguish_bit", "0", "1", 0,v, 0);
+        end	
+        eq.remove_all_from_instance(inst_id);
+      end
+    end
 	--[[
 	elseif(e.message:findi("Citadel of Anguish")) then
 	  -- 1  (Hate)       Mastery of Mind Rune 52407

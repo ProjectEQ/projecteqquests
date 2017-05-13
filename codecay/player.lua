@@ -1,4 +1,11 @@
 -- player.lua codecay
+function event_enter_zone(e)
+	local qglobals = eq.get_qglobals(e.self);
+	
+	if(qglobals["mage_epic"] == "10" and qglobals["mage_epic_cod"] == nil) then
+		e.self:Message(15,"Your staff begins to glow");
+	end
+end
 
 function event_click_door(e)
 	local qglobals = eq.get_qglobals(e.self)
@@ -13,5 +20,14 @@ function event_click_door(e)
 	end
 end
 
-		
+function event_loot(e)
+	if(e.self:Class() == "Magician" and e.item:GetID() == 19544 and e.corpse:GetNPCTypeID()==200060) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["mage_epic"] == "10") then
+			return 0;
+		else
+			return 1;
+		end
+	end
+end		
 

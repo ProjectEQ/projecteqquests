@@ -8,8 +8,8 @@ end
 
 function event_enter(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["shaman_epic"] == "9") then
-		--eq.spawn2( ,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Lightning Warrior Spiritseeker
+	if(qglobals["shaman_epic"] == "11") then
+		eq.spawn2(316073,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Lightning Warrior Spiritseeker
 		eq.depop_with_timer();
 	end
 end

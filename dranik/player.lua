@@ -34,6 +34,18 @@ function event_loot(e)
 			return 1;
 		end
 	end
+	
+	if(e.self:Class() == "Shaman" and e.item:GetID() == 57315) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["shaman_epic"] == "11") then
+			if(qglobals["shaman_chest_dranik"] == nil ) then
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.set_global("shaman_chest_dranik","1",5,"F");
+			end
+		else
+			return 1;
+		end
+	end	
 end
 
 function event_click_door(e)

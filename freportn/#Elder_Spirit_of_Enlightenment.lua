@@ -160,7 +160,7 @@ function event_timer(e)
 		eq.spawn2(8122 ,0,0,56.7 ,59.5 ,17.13 , 210); --#Elder Spirit of Will
 		eq.spawn2(8123 ,0,0, 46.3,55 ,17.13 ,0 ); --#Elder Spirit of Sense
 		e.self:Say("It is time to begin the Ruchu. Collect your strength and let us begin.");
-		eq.set_timer("event",5000);
+		eq.set_timer("event",10000);
 		eq.stop_timer("start_event");
 	elseif e.timer=="event" then
 		if(count == 0) then

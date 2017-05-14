@@ -10,6 +10,10 @@ function event_enter_zone(e)
 		--Spawn Time Terror for Froggy-Went-A-Portin' quest
 		eq.spawn2(86172, 0, 0, 9699.00, 1107.00, 2332.00, 0);
 	end
+	
+	if(qglobals["mage_epic"] == "10") then
+		e.self:Message(15,"Your staff begins to glow");
+	end	
 end
 
 function event_timer(e)

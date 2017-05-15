@@ -10,22 +10,12 @@ function event_combat(e)
 		eq.set_timer("symbol", math.random(3,30) * 1000);
 		eq.set_timer("chant", math.random(3,18) * 1000);
 		eq.set_timer("grip", math.random(3,45) * 1000);
-		eq.set_next_hp_event(70);
 	else
 		eq.stop_timer("symbol");
 		eq.stop_timer("chant");
 		eq.stop_timer("grip");
 	end
 end
-
-function event_hp(e)
-	if (e.hp_event == 70) then
-		eq.spawn2(300093, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-		eq.spawn2(300093, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-		eq.spawn2(300093, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-		eq.spawn2(300093, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());  	
-	end
-end 
   
 function event_timer(e)
 	if e.timer=="depop" then

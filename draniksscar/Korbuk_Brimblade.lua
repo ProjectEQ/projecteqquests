@@ -177,7 +177,7 @@ function event_trade(e)
 		eq.set_global("warrior_epic","14",5,"F");
 	end
 	if(qglobals["warrior_epic"] == "16" and item_lib.check_turn_in(e.trade, {item1 = 60322})) then --Kreljnok's Muddled Rage from Possessed Brute in MPG
-		e.self:Say("All too easy. For you, I mean. You did well. I'm... I'm getting unclear visions from this essence. I can't seem to understand what it's trying to tell me. This essence is impure and needs to be purified. I happen to know of a [purification expert] dat can help us clear this mystery up.");
+		e.self:Say("All too easy. For you, I mean. You did well. I'm... I'm getting unclear visions from this essence. I can't seem to understand what it's trying to tell me. This essence is impure and needs to be purified. I happen to know of a [" .. eq.say_link("purification expert") .. "] dat can help us clear this mystery up.");
 		eq.set_global("warrior_epic","17",5,"F");
 		e.other:SummonItem(60322); --Kreljnok's Muddled Rage
 	end	

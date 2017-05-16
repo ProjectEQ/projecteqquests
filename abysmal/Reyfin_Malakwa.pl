@@ -5,10 +5,29 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("stares silently out over the ocean towards the magical wards protecting the ship from the unyielding onslaught of the pounding waves. He jumps back terrorized when he realizes your presence. His visage calms a bit when he senses you mean him no immediate harm. He ponders you timidly for a moment and then leans down and begins drawing something in the sea grime that covers one of the boxes. You study his sketch for a moment and begin to understand that it is a rune of sorts. Three arching lines join in the center to form a sort of Y-shape.");
+    if (plugin::check_hasitem($client, 62863)) {
+		$client->Message(1, "The bedraggled Taelosian refugee looks up at you after drawing the symbol and looks you directly in the eyes for the first time. He seems to draw strength from your presence and you sense that he feels the power of nature that you carry. He smiles weakly at you and then bends down and erases the symbol by smearing around the surrounding grime. He then draws a new symbol. This symbol is much more complicated, it is an arch with rods protruding from either side at the base. The rod to the right splits into four branches, the one on the left ends in a swirl. He looks up at you with a pleading look in his eyes as he hands you a small bag that appears to be made from his own clothing");
+		if($client->GetGlobal("druid_epic") < 9) {
+			quest::setglobal('druid_epic',9, 5, 'F' );
+		}
+		quest::summonitem(62881); #Ragged Cloth Bag
+	}
   }
 }
 
 sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 62882 => 1)) { # Wrapped Cloth Bag
+	quest::setglobal('druid_epic',10, 5, 'F' );
+	quest::emote("looks almost delighted, certainly happier than he has been in years. He smiles and raises his arms, both hands tightly clenching the rune fragments you have recovered. A small burst of magical energies pops off his hands. He lowers his arms and holds out to you the rune, reformed. He then speaks a single word to you, 'Yuisaha.'");
+    quest::summonitem(62868); #Rune of Yuisaha 
+  }
+  if (plugin::check_handin(\%itemcount, 62885 => 1)) { # Synched Leather Bag
+	quest::setglobal('druid_epic',12, 5, 'F' );
+	quest::emote("makes a motion with his hands, slowly clasping them together until they are locked tightly. He points at you, then at the shards, then makes the motion again");
+    quest::summonitem(62885); #Synched Leather Bag
+  }  
+  
+
   if (plugin::check_handin(\%itemcount, 59907 => 1)) { # Chaos Rune
     quest::emote("eyes grow wide as you hand him the glowing black rune. He holds the chaos rune in his left hand and begins to speak. Your skin begins to crawl as you recognize the words as the language of the legion. The runes melt into a sticky mass of darkness which seeps out over Reyfin's hands. He tips his head toward your hands and you bring them out in front of you. Without any visible motion from Reyfin, the black mass quivers and slides through the air toward you and settles in your out stretched hands. The goo begins to solidify and your eyes quiver with amazement as the letters begin to form into familiar words on the black stone."); 
     if ($class eq "Warrior"){quest::summonitem(59909);} # Chaos Cry

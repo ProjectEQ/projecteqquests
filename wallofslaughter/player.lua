@@ -50,6 +50,16 @@ function event_loot(e)
 		else
 			return 1;
 		end
+	elseif(e.self:Class() == "Druid" and e.item:GetID() == 62872) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["shaman_epic"] == "10") then
+			if(qglobals["druid_epic_wos"] == nil ) then
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.set_global("druid_epic_wos","1",5,"F");
+			end
+		else
+			return 1;
+		end		
 	end
 end
 

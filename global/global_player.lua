@@ -39,6 +39,7 @@ function event_combine_success(e)
 		e.self:Message(1, "Success");
 	--cleric 1.5
 	elseif(e.recipe_id == 19460) then
+		e.other:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
@@ -61,12 +62,14 @@ function event_combine_success(e)
 		end
 	--ranger 1.5 final
 	elseif(e.recipe_id ==13413) then
+		e.other:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
 		eq.set_global("ranger_epic","5",5,"F");
 	-- paladin 1.5 final
 	elseif(e.recipe_id ==19880) then
+		e.other:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');	
@@ -74,6 +77,7 @@ function event_combine_success(e)
 		e.self:Message(6,"As the four soulstones come together, a soft blue light eminates around the dark sword. The soulstones find themselves at home within the sword. A flash occurs and four voices in unison speak in your mind, 'Thank you for saving us and giving us a purpose again. You are truly our savior and our redeemer, and we shall serve you from now on. Thank you, noble knight!")
 	--bard 1.5 final	
 	elseif(e.recipe_id == 19882) then
+		e.other:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');	
@@ -95,6 +99,27 @@ function event_combine_success(e)
 		e.self:Message(15,'You have gained 5 ability points!');	
 		eq.set_global("druid_epic","8",5,"F");	
 		e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
+	--druid 2.0 sub final
+	elseif(e.recipe_id ==19908) then
+		if(eq.get_zone_short_name()=="anguish") then
+			eq.spawn2(317115, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0);
+			e.self:SummonItem(62883);
+			e.self:SummonItem(62876);			
+		else
+			e.self:Message(15,"The rain spirit cannot be reached here");
+			e.self:SummonItem(47100);
+			e.self:SummonItem(62876);
+			e.self:SummonItem(62878);
+			e.self:SummonItem(62879);
+		end
+	--druid 2.0 sub final
+	elseif(e.recipe_id ==19909) then	
+		e.other:AddEXP(50000);
+		e.self:AddAAPoints(10);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 10 ability points!');	
+		eq.set_global("druid_epic","13",5,"F");	
+		--e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
 	-- CLR 2.0
 	elseif (e.recipe_id == 19893) then
 		e.self:Message(13, "Omat should probably see this.");

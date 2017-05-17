@@ -39,7 +39,7 @@ function event_combine_success(e)
 		e.self:Message(1, "Success");
 	--cleric 1.5
 	elseif(e.recipe_id == 19460) then
-		e.other:AddEXP(25000);
+		e.self:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
@@ -62,14 +62,14 @@ function event_combine_success(e)
 		end
 	--ranger 1.5 final
 	elseif(e.recipe_id ==13413) then
-		e.other:AddEXP(25000);
+		e.self:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
 		eq.set_global("ranger_epic","5",5,"F");
 	-- paladin 1.5 final
 	elseif(e.recipe_id ==19880) then
-		e.other:AddEXP(25000);
+		e.self:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');	
@@ -77,7 +77,7 @@ function event_combine_success(e)
 		e.self:Message(6,"As the four soulstones come together, a soft blue light eminates around the dark sword. The soulstones find themselves at home within the sword. A flash occurs and four voices in unison speak in your mind, 'Thank you for saving us and giving us a purpose again. You are truly our savior and our redeemer, and we shall serve you from now on. Thank you, noble knight!")
 	--bard 1.5 final	
 	elseif(e.recipe_id == 19882) then
-		e.other:AddEXP(25000);
+		e.self:AddEXP(25000);
 		e.self:AddAAPoints(5);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');	
@@ -114,7 +114,7 @@ function event_combine_success(e)
 		end
 	--druid 2.0 sub final
 	elseif(e.recipe_id ==19909) then	
-		e.other:AddEXP(50000);
+		e.self:AddEXP(50000);
 		e.self:AddAAPoints(10);
 		e.self:Ding();
 		e.self:Message(15,'You have gained 10 ability points!');	

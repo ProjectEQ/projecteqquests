@@ -30,7 +30,7 @@ function event_say(e)
 				eq.set_global("warrior_pre","1",5,"F"); --flagged to start prequest
 			end
 		elseif(e.message:findi("errands") and qglobals["warrior_pre"] == "1") then	
-			e.self:Say("You see, I had some things taken from me. I want to get dem back. I'm very partial to my weapons, and had some great [plans] to make a sword dat would be unmatched by any other. I thought it would be nice to start da plans with my brethren by talking to some of dem about da tactics involved in creating a sword.");
+			e.self:Say("You see, I had some things taken from me. I want to get dem back. I'm very partial to my weapons, and had some great [" .. eq.say_link("plans") .. "] to make a sword dat would be unmatched by any other. I thought it would be nice to start da plans with my brethren by talking to some of dem about da tactics involved in creating a sword.");
 		elseif(e.message:findi("plans") and qglobals["warrior_pre"] == "1") then
 			e.self:Say("Da sword was going to be made of da finest metal with a hilt dat's handcrafted by someone I'm very close to. It was going to have my family seal engraved into da base of da blade and was to be my finest sword ever. But da plans were stolen by someone -- no doubt someone who oversees everything where I was working -- and I have yet to get them back. You look more than capable of recovering da plans for me. Hurry back when you've found dem.");
 		elseif(e.message:findi("shank") and qglobals["warrior_pre"] == "2") then

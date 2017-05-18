@@ -28,7 +28,8 @@ function event_trade(e)
       eq.set_global("warrior_pre","5",5,"F");
       e.self:Say("Take this back to Korbuk Brimblade");
       e.other:SummonItem(60292);
-      e.self:Depop();
+      --e.self:Depop();
+      eq.depop_with_timer(115253);
     end
   end
   item_lib.return_items(e.self, e.other, e.trade, e.text);

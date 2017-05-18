@@ -23,7 +23,7 @@
 
 sub EVENT_SAY {
     if($text=~/Hail/i) {
-        quest::say("Should you wish to return from whence you came, tell me you wish to [go home] and I will send you.");
+        quest::say("Should you wish to return from whence you came, tell me you wish to [" . quest::saylink("go home") . "] and I will send you.");
     }
 
     if($text=~/home/i) {

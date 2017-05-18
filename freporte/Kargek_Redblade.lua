@@ -15,6 +15,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+  local qglobals = eq.get_qglobals(e.other);
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 20684,item2 = 20679})) then -- Tenal's Note to Kargek & Spiroc Wingblade
 		e.self:Say("What is this? A note from my brother? Thank you for the gift as well.' Kargek reads the note and hands you the huge sword hilt. Your mind is filled with the sound of battle and a voice. 'Place the ancient sword blade, ancient blade, finely crafted dragon head hilt and the jeweled dragon head hilt into the scabbard to receive your rewards. If you think you are worthy, place your rewards into the scabbard and see what havoc you can unleash on the world. Kargek addresses you as you turn to leave. 'One more thing. Gartrog over there has told me of a great discovery. Seems there are all sorts of stones being found in the recently discovered lost dungeons scattered around Antonica. The Wayfarer's Brotherhood has found a way to make items even more powerful by using the stones with existing items.");
@@ -24,6 +25,10 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20674})) then -- Tiny Lute
 		e.self:Say("Thank you for delivering the note to my associate. Take this book - it will tell you a little of the history of the old scabbard. If you would like to own the scabbard, seek out my younger brother Tenal and give him the book.");
 		e.other:SummonItem(18083); -- Redblade's Legacy
+		e.other:Ding();
+		e.other:AddEXP(1000);
+  elseif (qglobals['warrior_pre'] ~= nil and qglobals['warrior_pre'] == "3" and item_lib.check_turn_in(e.trade, {item1 = 60287})) then
+    e.other:SummonItem(60288);
 		e.other:Ding();
 		e.other:AddEXP(1000);
 	end

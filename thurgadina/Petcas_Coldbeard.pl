@@ -1,14 +1,20 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    quest::say("Hail to ye as well offlander. I bid you welcome to the Icy Mug, one o' the finest establishments for a drink in Thurgadin. Whether it's [souvenirs] or stories yer lookin for, you've come to the right place.");
+    quest::say("Hail to ye as well offlander. I bid you welcome to the Icy Mug, one o' the finest establishments for a drink in Thurgadin. Whether it's [" . quest::saylink("souvenirs") . "], stories, or that [" . quest::saylink("special brew") ."] yer lookin for, you've come to the right place.");
   }
   if($text=~/souvenirs/i) {
     quest::say("Here at the Icy Mug we have our own signature stein fer yer drinkin pleasure. For only 5 gold pieces ye can take one home to show yer kinfolk.");
   }
+  if ($text =~ /special brew/i) {
+    quest::say("Aha, you're looking for something with a kick to it, eh? Well, I'm willing to give some up to you, but it's going to cost you. Give me 350 gold pieces and I might consider parting ways with some.'");
+  }
 }
 
 sub EVENT_ITEM {
-  if($gold == 5) {
+  if ($gold == 350) {
+    quest::say("Here ya go!");
+    quest::summonitem(60290);
+  } elsif ($gold == 5) {
     quest::say("Here ya go!");
     quest::summonitem(30145); #The Icy Mug Souvenir Stein
   }

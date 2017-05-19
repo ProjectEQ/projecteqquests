@@ -2,9 +2,6 @@
 --Warrior Epic 2.0
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
-	--if(qglobals["warrior_epic"] == "18" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(NPCID) == false) then --NPCID is #Larnik_Trigger ID
-		--eq.spawn2( ,0,0, , , , ) --#Larnik_Trigger
-	--end
 	
 	--on druid 1.5 and has Waterproof Collection Bag
 	if(qglobals["druid_epic"] == "1" and qglobals["druid_epic_ew"] == nil and e.self:HasItem(62812)) then

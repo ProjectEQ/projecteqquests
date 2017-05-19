@@ -18,7 +18,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);		
-		if(qglobals["warrior_epic"] >= "15" and item_lib.check_turn_in(e.trade, {item1 = 60323})) then --Frozen Pestle
+		if(qglobals["warrior_epic"] == "17" and item_lib.check_turn_in(e.trade, {item1 = 60323})) then --Frozen Pestle
 		e.self:Say("You... you found it! My pestle! Hooray! I can get back to my work! I'm so grateful for this kind act, I've got to have something in my knapsack that you want! Here, how about some lint... wait, how did that get in there. You don't want lint! Hah! How about some cogs? No, what would you do with cogs? I know... you'll be able to make special use of this [" .. eq.say_link("map") .. "] I have.");
 		eq.set_global("warrior_epic","18",5,"F");
 		end

@@ -5,9 +5,8 @@ function event_say(e)
 	if(e.other:Class() == "Warrior") then
 		if(e.message:findi("hail")) then
 			if(e.other:HasItem(60327) and qglobals["warrior_epic"] == "18") then --Kreljnok's Focused Rage
-				e.self:Say("You were able to purify da presence, good. Just as I thought, da essence is pure and unadultered. Things are becoming ever clearer da closer we come to unraveling this mystery. Even without touching da essence, I can see pure rage surrounding a sword. I cannot even begin to express what it looks like. It's a very powerful image, to be sure. We're not quite done yet, however. There's a bit [" .. eq.say_link("more") .. "] da needs to be done.");
-			end		
-			if(e.other:HasItem(60321) and qglobals["warrior_epic"] == "15") then --Epic 1.5
+				e.self:Say("You were able to purify da presence, good. Just as I thought, da essence is pure and unadultered. Things are becoming ever clearer da closer we come to unraveling this mystery. Even without touching da essence, I can see pure rage surrounding a sword. I cannot even begin to express what it looks like. It's a very powerful image, to be sure. We're not quite done yet, however. There's a bit [" .. eq.say_link("more") .. "] da needs to be done.");		
+			elseif(e.other:HasItem(60321) and qglobals["warrior_epic"] == "15") then --Epic 1.5
 					e.self:Say("Dat sword, there's something wrong with it. Was it my brother? This is terrible news. I had no idea he had been so corrupted by this place. I had no idea he'd turn into a monster and try to steal away dat which we have been charged to protect! Luckily you were able to stop him and recover da sword. You should keep it in your possession. I have a feeling you're da [" .. eq.say_link("one") .. "] I've been waiting for.");
 					e.other:AddAAPoints(5);
 					e.other:Ding();
@@ -178,22 +177,26 @@ function event_trade(e)
       eq.set_global("warrior_epic","14",5,"F");
     end
     if(qglobals["warrior_epic"] == "16" and item_lib.check_turn_in(e.trade, {item1 = 60322})) then --Kreljnok's Muddled Rage from Possessed Brute in MPG
-      e.self:Say("All too easy. For you, I mean. You did well. I'm... I'm getting unclear visions from this essence. I can't seem to understand what it's trying to tell me. This essence is impure and needs to be purified. I happen to know of a [" .. eq.say_link("purification expert") .. "] dat can help us clear this mystery up.");
+	  e.self:Say("All too easy. For you, I mean. You did well. I'm... I'm getting unclear visions from this essence. I can't seem to understand what it's trying to tell me. This essence is impure and needs to be purified. I happen to know of a [" .. eq.say_link("purification expert") .. "] dat can help us clear this mystery up.");
       eq.set_global("warrior_epic","17",5,"F");
       e.other:SummonItem(60322); --Kreljnok's Muddled Rage
+	  e.other:AddEXP(10000);
     end	
     if(qglobals["warrior_epic"] == "18" and item_lib.check_turn_in(e.trade, {item1 = 60325})) then --Larnik's Locked Purification Kit, dropped by Larnik the Recluse in EW
       e.self:Say("Uh oh. I'm guessing dat he didn't want to part with this peacefully? Well, I can't say I'm sorry. He was a jerk to me da last time we talked. I guess I just figured someone else might be able to persuade him to change his mind. I went ahead and broke open da lock for you. You'll be able to make use of da [" .. eq.say_link("kit") .. "] now.");
       e.other:SummonItem(60326); -- Larnik's Unlocked Purification Kit
+	  e.other:AddEXP(10000);
     end
     if(qglobals["warrior_epic"] == "18" and item_lib.check_turn_in(e.trade, {item1 = 47100})) then --Globe of Discordant Energy
       e.self:Say("Yes, this is precisely what I felt. Its power is indescribable. We're so close now! I can see what's left and it's a glorious end to a glorious journey. There are just two [" .. eq.say_link("last items") .. "] you need to take care of.");
       eq.set_global("warrior_epic","19",5,"F");
+	  e.other:AddEXP(10000);
     end
     if(qglobals["warrior_epic"] == "19" and item_lib.check_turn_in(e.trade, {item1 = 60321, item2 = 60327})) then --Kreljnok's Focused Rage and Champion's Sword of Eternal Power
       e.self:Say("Well done. Well done, indeed. I knew da moment I saw you dat you were da right person for all of this. Here is da sword, but there's one [" .. eq.say_link("last item") .. "] dat you need to do.");
       eq.set_global("warrior_epic","20",5,"F");
       e.other:SummonItem(60329); --Raging Sword of Eternal Power
+	  e.other:AddEXP(10000);
     end	
   end
 	item_lib.return_items(e.self, e.other, e.trade, e.text);

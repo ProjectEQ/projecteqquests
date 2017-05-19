@@ -7,6 +7,7 @@ function event_enter(e)
 		local qglobals = eq.get_qglobals(e.self,e.other);
 		if(qglobals["warrior_epic"] == "20" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(303129) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(303128) == false) then	
 			eq.spawn2(303128, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),100); --Korbuk
+			eq.depop_with_timer();
 		end
 	end
 end

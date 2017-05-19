@@ -5,11 +5,12 @@ end
 function event_enter(e)
 	if(e.other:Class() == "Druid") then
 		local qglobals = eq.get_qglobals(e.self,e.other);
-		if(qglobals["druid_epic"] == "10" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(300096) == false ) then	
+		if(qglobals["druid_epic"] == "10" and qglobals["druid_wos"]==nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(300096) == false ) then	
 			eq.spawn2(300096, 0, 0, 414.8,311,128.6,128);
 			eq.spawn2(300097, 0, 0, 396.7,198,129,128);
 			eq.spawn2(300097, 0, 0, 436.6,198,129,128);
 			eq.set_timer("depop",30*60*1000);
+			eq.set_global("druid_wos","1",3,"M20");
 		end
 	end
 end

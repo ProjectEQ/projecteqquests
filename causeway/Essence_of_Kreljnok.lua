@@ -1,5 +1,7 @@
 function event_spawn(e)
 	eq.set_timer("depop",30*60*1000);
+	eq.zone_emote(15,"Korbuk's death has released a more powerful spirit into the mortal realm.");
+	e.self:Shout("You foolish mortals! How dare you defy the will of Kreljnok! I will be reborn and shall have my sword once more! Hand over what is rightfully mine!");
 end
 
 
@@ -7,7 +9,8 @@ function event_combat(e)
 	if e.joined==true then
 		eq.set_timer("drain", math.random(5,10) * 1000);
 		eq.set_timer("spawn_adds",150*1000);
-		eq.set_timer("check_adds_alive", 2000);		
+		eq.set_timer("check_adds_alive", 2000);
+		e.self:Say("The power of the sword has revived me! Prepare to die!");
 	else
 		eq.stop_timer("drain");
 		eq.stop_timer("spawn_adds");
@@ -25,6 +28,7 @@ function event_timer(e)
 		e.self:CastSpell(6118, e.self:GetTarget():GetID());	
 		eq.set_timer("drain", 25 * 1000);
 	elseif e.timer=="spawn_adds" then
+		e.self:Emote("calls forth to the brood for two new souls to harvest!");
 		eq.spawn2(303131, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
 		eq.spawn2(303130, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);	
 	elseif e.timer=="check_adds_alive" then
@@ -34,4 +38,8 @@ function event_timer(e)
 			e.self:ModifyNPCStat("hp_regen", "100")
 		end
 	end
+end
+
+function event_death_complete(e)
+	eq.zone_emote(15,"The death of Kreljnok signals the end of his power in this region. The once powerful warrior has had his life taken by a far superior force.");
 end

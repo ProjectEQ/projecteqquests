@@ -112,7 +112,7 @@ function event_combine_success(e)
 			e.self:SummonItem(62878);
 			e.self:SummonItem(62879);
 		end
-	--druid 2.0 sub final
+	--druid 2.0 final
 	elseif(e.recipe_id ==19909) then	
 		e.self:AddEXP(50000);
 		e.self:AddAAPoints(10);
@@ -120,6 +120,13 @@ function event_combine_success(e)
 		e.self:Message(15,'You have gained 10 ability points!');	
 		eq.set_global("druid_epic","13",5,"F");	
 		--e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
+	--warrior 2.0
+	elseif(e.recipe_id ==19902) then	
+		e.self:AddEXP(50000);
+		e.self:AddAAPoints(10);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 10 ability points!');	
+		eq.set_global("warrior_epic","21",5,"F");		
 	-- CLR 2.0
 	elseif (e.recipe_id == 19893) then
 		e.self:Message(13, "Omat should probably see this.");

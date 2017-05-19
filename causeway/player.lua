@@ -32,5 +32,16 @@ function event_loot(e)
 		else
 			return 1;
 		end
+	elseif (e.self:Class() == "Warrior" and e.item:GetID() == 60330 and e.corpse:GetNPCTypeID() == 303129) then
+		local qglobals = eq.get_qglobals(e.self);
+		if (qglobals["warrior_epic"] == "20") then
+			if (qglobals["warr_chest_causeway"] == nil) then
+				eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+				eq.set_global("warr_chest_causeway", "1", 5, "F");
+			end
+			return 0;
+		else
+			return 1;
+		end		
 	end
 end

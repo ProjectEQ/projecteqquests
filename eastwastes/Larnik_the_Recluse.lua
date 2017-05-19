@@ -12,6 +12,11 @@ function event_say(e)
 	elseif(e.message:findi("the great purification") and qglobals["warrior_epic"] == "18") then
 		e.self:Say("Raaaa! I'm out of that business! I'll never help him or anyone else purify another thing so long as I live! Get away from me!");
 		e.self:Say("I'll not be hunted any more! Begone with you!");
+		e.self:SetSpecialAbility(19, 0);
+		e.self:SetSpecialAbility(20, 0);
+		e.self:SetSpecialAbility(24, 0);
+		e.self:SetSpecialAbility(25, 0);
+		e.self:SetSpecialAbility(35, 0);
 		e.self:AddToHateList(e.other);
 	end	
 end

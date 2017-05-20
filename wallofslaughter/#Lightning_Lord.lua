@@ -36,6 +36,6 @@ function event_timer(e)
 			end;
 		end
 	elseif e.timer=="eshock" then
-		e.self:Cast(5810,e.self:GetID());
+		e.self:CastSpell(5810,e.self:GetID());
 	end
 end

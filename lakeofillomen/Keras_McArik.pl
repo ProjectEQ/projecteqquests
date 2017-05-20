@@ -4,9 +4,35 @@
 # 9/13/07
 #quest::delglobal("berserk_epic");
 sub EVENT_SAY {
+	if($qglobals{berserk_epic} ==9) {
+	  if($text=~/enhance my axe/i) {
+	    quest::emote("chuckles as he hears your request. 'I knew ye would be askin' fer this soon enough!' Keras slowly drags his eyes over your axe examining it from tip to tip. 'Ah, yes. Teekan's enchantments have weathered your journey fine. Yet I sense that even that even more may be done with it. Like yerself, the potential within this axe is truly astounding. As the basis of power of yer axe comes from gems and metals I would seek those out. Ye may also wish to look for other items of power that could fortify it further. After ye've managed to procure such things, come back and give them and yer axe to me and I'll see what I can dew fer ye then.");
+	  }
+	  elsif ($text=~/items of power/i) {
+        quest::say("I'm no tinkerer so I cannah tell ye what ye should be lookin' fer. Perhaps ye should head to Steamfont and seek out the advice of a Gnome as they are clever folk with all sorts of objects.");
+	  }
+	  elsif ($text=~/gem/i) {
+	    quest::say("I have heard of a Dwarven jewel merchant that goes by the name of Tarvash Scriller that is currently studying the gems found Discord. Seek him out fer I am sure he can help ye with information as he is an expert in all manner of gems and jewels. Ye need keep ye purse strings tightly closed though as I've heard he's a crafty devil with a sly tongue that would surely sell ya the stars if'in he could.");
+	  }
+	  elsif ($text=~/metal/i) {
+	    quest::say("Ach, there's the rub! I dinnah know much about the metals ye brought back the first time as they were all used in those axes. Maybe ye should look for a smith from that area. You must let them look at the axe but be wary though fer little do we know of them.");
+	  }	  
+	}
+	elsif(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >=7) {
+		if($text=~/hail/i) {
+			quest::emote("eyes your axe in a somewhat awe-stricken fashion. 'What have ye got there? Let me take a look at that! You stride up to Keras and proudly outstretch your finished Axe but notice that it takes Keras a moment before he realizes that you've even arrived. 'Ach. . .sorry lad. Let's have a look, shall we?' Keras begins to carefully examine the axe, each step of the way nodding approvingly. 'This is truly excellent work. Teekan has never let me down. This axe is possibly the highest quality that I have ever seen and should serve ye well in ye travels.' As he hands you the axe back, you once again notice a deep concern growing over his countenance. 'I am sorry that I canna' spend more time wit ye but ye've no doubt noticed that as of late, I've been troubled.");
+		}
+		if($text=~/troubled/i) {
+			quest::say("That student o' mine is now long overdue and I fear she may have her failed in her lesson. Would ye do an old man a favor and find out what has happened to me other student?");
+		}
+		if($text=~/find out/i && $qglobals{berserk_epic}==7) {
+			quest::say("I dinnah not exactly know where she may be, but her name is Julei Direaxe and I fear that she may be in trouble. Please, hurry, strike out and find her, rescue her from any troubles she may be in. Return her to safety and bring me proof that she is alright and ye shall forever have me gratitude.");
+			quest::setglobal("berserk_epic",8, 5, "F");
+		}			
+	}
 	#epic 1.5
-	if($qglobals{berserk_epic} >=1) {
-	#have Raging Soul Shard
+	elsif(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >=1) {
+		#have Raging Soul Shard
 		if($text=~/hail/i && ($qglobals{berserk_epic} ==1 || $qglobals{berserk_epic} ==2)  && plugin::check_hasitem($client, 11999)) {
 			quest::emote("appears to be lost in this own thoughts, mumbling to himself occasionally, and barely acknowledging your existence. Just as you're about to speak again, he says, 'Ach, ya have to forgive me absentmindedness, friend. I've been rather busy pondering [" . quest::saylink("matters") . "] at hand.");
 						quest::setglobal("berserk_epic",3, 5, "F");
@@ -39,63 +65,63 @@ sub EVENT_SAY {
 			quest::emote("once again looks lost in deep thought, 'Apologies $name. Another student o'mine has not returned yet and shall soon be overdue. I am beginning to worry that she may be in trouble. Yet she still has more time to complete her task so mayhap I shouldnah worry. Shaking himself of his concerns Keras asks, 'Come now, how well did the axes fair?'");
 		}		
 	  }
-	  #epic 1.0
-	  else {
-		  if($text=~/hail/i && $class eq "Berserker" && plugin::check_hasitem($client, 68299) && $qglobals{"berserk_epic"} == undef) {
-			quest::say("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Have you spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
-			quest::setglobal("berserk_epic", 1, 5, "F");
-		  }
-		  if($text=~/hail/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef  && !plugin::check_hasitem($client, 68299)) {
-			quest::say("Aye, I see a familiar look in yer eye. Ye are much like me, friend. If ye truly wish to [master the fires] within ye and become a true berserker, ye must learn many lessons.");
-		  }
-		  if($text=~/master the fires/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
-			quest::say("Much as ye are now, I was once saddled with unbridled rage, and now with age and experience, I have learned to master the power that comes with my anger.");
-			quest::say("Once ye have mastered yer abilities, ye will be rewarded with a gift that only a true berserker can control. It is a gift that will harness yer rage and use it to yer advantage. This is why ye must walk the same path I did in me youth. Do ye wish to take this [great stride]?");
-		  }
-		  if($text=~/great stride/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
-			quest::say("Ye do understand there is no turning back? I hope so. This is a journey -- and sometimes a long one -- depending on what ye've leared so far. Yer skills and wisdom in battle will be tested. Go talk to an old, fallen friend of mine, Lingering Axefall. We call him that because he reguses to let his spirit rest. He failed his task and remains bound here to lead others into the trial he lost. Be wary, though. He is elusive.");
-			quest::say("The foe he stood against and lost to still wishes to extinguish his spirit. Take this axe and give it to him so he will know that ye are ready for the test and that I sent ye. Also, take this medal with you. It will help me keep track of your progress. Best of luck, friend.");
-			quest::summonitem(60189);
-			quest::summonitem(60190);
-		  }
-		  if($text=~/hail/i && $ulevel < 46 && $class eq "Berserker") {
-			quest::say("Return once you have trained more, young Berserker.");
-		  }
-		  if($text=~/challenge/i && plugin::check_hasitem($client, 60194)) { #Check for Medal of Mirages
-			quest::say("The challange is for ye, and ye alone. If you have anyone try to assist ye, ye will fail. Do not attempt to cheat yerself of yer own development. Ye must seek out Mardic Crimsonsteel and get his guidance. He will prepare ye to fight a mirage of a berserker that has been created through years of refined magic. I cannot tell ye the source of such magic, but ye must know that I used that mirage as me sparring partner, constantly improving me skills against it and advancing. Perhaps now it's yer turn to face it... alone. Take this sealed note to Mardic. It will give him instructions for yer test.");
-			quest::summonitem(60195); #Sealed Note for Mardic
-		  }
-		  if($text=~/strategize in battle/i && plugin::check_hasitem($client, 60198)) { #Check for Medal of Strategy
-			quest::say("One of the best strategists I've ever met is ready and willing to help any who attempt to prove their skills in battle. Seek out Treanik Ireblade. She won't give ye any advantage, however. This is yer fight to win, not hers, though she'll be itchin' to get her blade bloodied. Take this note and give it to her.");
-			quest::summonitem(60199); # Note for Treanik
-			$dragon=undef;
-		  }
-		  if($text=~/ready/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
-			quest::say("Eager one, aren't ye? Good to see, but do not underestimate how volatile our rage is. In me youth, it snuck up on me and in a blind rage, I had slain me sparring partner. It was then that I knew I was different and shouldn't keep close friends until I'ad my rage under control. There are some, though, that will [never control the rage].");
-		  }
-		  if($text=~/never control the rage/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
-			quest::say("Well, you see, the fire that drives the rage through us and into our muscles and minds can burn out of control in come creatures. I have encountered several in my travels, aye. They are merciless and blind to the rage, which makes 'em poor at strategy, but deadly in combat. Ye will have to [face one] of 'em so that ye may learn how dangerous ye can truly become if ye do not complete these trials and master the rage. I do 'ope ye appreciate this lesson.");
-		  }
-		  if($text=~/face one/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
-			quest::say("This creature is unlike any you have seen wandering the lands. this beast is fearsome and ethereal. It strikes out with its rage without thought or care. Ye must learn to recognize this type of beast if ye are to learn how to master it and yer own abilities. It will try to disguise itself so ye don't recognize the fury it holds within it -- it has an [enraged essence] within it and I want ye to bring it to me. Remember, $name, do not be fooled and always be aware.");
-		  }
-		  if($text=~/enraged essence/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
-			quest::say("I will give ye no more hints. Ye must seek this creature out alone. Look far and use your mind and brawn to beat it. Yer noggin will give ye an advantage o'er this un.");
-			$imp=undef;
-		  }
-		 if($text=~/do/i && ($hunting == 1 || plugin::check_hasitem($client,60204))) { #Hunting stage complete 
-			quest::say("For my mirage to remain part of my trials, I need some very specific reagents. There is a sickly gorilla that carries a rotting organ which I am in need of. Also, I need a paw of a very special and dangerous kobold. Lastly, bring me the poison sac of a dangerous spider. A potion that allows us to create a gate from one place to another is also required. If ye believe ye can do this for me, tell me so, and I will give ye a bag to hold them in. When ye have all of the ingredients, combine them in the bag I've given ye, and bring it back to me. Good luck in your hunt!"); 
-			quest::summonitem(60205); 
-			$hunting=undef; 
-		  } 
-		  if($text=~/next challenge/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
-			quest::say("For this encounter, ye must be prepared for the unexpected and, in the face of chaos, be able to focus on the task at hand. Yer stamina will also be tested. When I first encountered this wicked trap in me travels, even I had to attempt it a couple of times. However, I do have faith in ye. With my advance warning, ye shouldn't be caught off guard. This challenge will also prove how loyal and skilled yer own friends are. One thing is for certain, ye can't complete this [next test] alone."); 
-		  } 
-		  if($text=~/next test/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
-			quest::say("Make your way to the woods in Kunark. Use the hunting skills ye have gained to find a most unusual and war-hungry creature. It has a very unique magic in its battle repertoire that will definitely test yer mettle. Off with ye, then. I do hope I see ye again...I've become quite fond of ye. I recently sent another like ye to do this trial and I haven't heard from him..."); 
-			$mastery=undef; 
-		  } 
-		}
+  #epic 1.0
+  else {
+	  if($text=~/hail/i && $class eq "Berserker" && plugin::check_hasitem($client, 68299) && $qglobals{"berserk_epic"} == undef) {
+		quest::say("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Have you spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
+		quest::setglobal("berserk_epic", 1, 5, "F");
+	  }
+	  if($text=~/hail/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef  && !plugin::check_hasitem($client, 68299)) {
+		quest::say("Aye, I see a familiar look in yer eye. Ye are much like me, friend. If ye truly wish to [master the fires] within ye and become a true berserker, ye must learn many lessons.");
+	  }
+	  if($text=~/master the fires/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
+		quest::say("Much as ye are now, I was once saddled with unbridled rage, and now with age and experience, I have learned to master the power that comes with my anger.");
+		quest::say("Once ye have mastered yer abilities, ye will be rewarded with a gift that only a true berserker can control. It is a gift that will harness yer rage and use it to yer advantage. This is why ye must walk the same path I did in me youth. Do ye wish to take this [great stride]?");
+	  }
+	  if($text=~/great stride/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
+		quest::say("Ye do understand there is no turning back? I hope so. This is a journey -- and sometimes a long one -- depending on what ye've leared so far. Yer skills and wisdom in battle will be tested. Go talk to an old, fallen friend of mine, Lingering Axefall. We call him that because he reguses to let his spirit rest. He failed his task and remains bound here to lead others into the trial he lost. Be wary, though. He is elusive.");
+		quest::say("The foe he stood against and lost to still wishes to extinguish his spirit. Take this axe and give it to him so he will know that ye are ready for the test and that I sent ye. Also, take this medal with you. It will help me keep track of your progress. Best of luck, friend.");
+		quest::summonitem(60189);
+		quest::summonitem(60190);
+	  }
+	  if($text=~/hail/i && $ulevel < 46 && $class eq "Berserker") {
+		quest::say("Return once you have trained more, young Berserker.");
+	  }
+	  if($text=~/challenge/i && plugin::check_hasitem($client, 60194)) { #Check for Medal of Mirages
+		quest::say("The challange is for ye, and ye alone. If you have anyone try to assist ye, ye will fail. Do not attempt to cheat yerself of yer own development. Ye must seek out Mardic Crimsonsteel and get his guidance. He will prepare ye to fight a mirage of a berserker that has been created through years of refined magic. I cannot tell ye the source of such magic, but ye must know that I used that mirage as me sparring partner, constantly improving me skills against it and advancing. Perhaps now it's yer turn to face it... alone. Take this sealed note to Mardic. It will give him instructions for yer test.");
+		quest::summonitem(60195); #Sealed Note for Mardic
+	  }
+	  if($text=~/strategize in battle/i && plugin::check_hasitem($client, 60198)) { #Check for Medal of Strategy
+		quest::say("One of the best strategists I've ever met is ready and willing to help any who attempt to prove their skills in battle. Seek out Treanik Ireblade. She won't give ye any advantage, however. This is yer fight to win, not hers, though she'll be itchin' to get her blade bloodied. Take this note and give it to her.");
+		quest::summonitem(60199); # Note for Treanik
+		$dragon=undef;
+	  }
+	  if($text=~/ready/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
+		quest::say("Eager one, aren't ye? Good to see, but do not underestimate how volatile our rage is. In me youth, it snuck up on me and in a blind rage, I had slain me sparring partner. It was then that I knew I was different and shouldn't keep close friends until I'ad my rage under control. There are some, though, that will [never control the rage].");
+	  }
+	  if($text=~/never control the rage/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
+		quest::say("Well, you see, the fire that drives the rage through us and into our muscles and minds can burn out of control in come creatures. I have encountered several in my travels, aye. They are merciless and blind to the rage, which makes 'em poor at strategy, but deadly in combat. Ye will have to [face one] of 'em so that ye may learn how dangerous ye can truly become if ye do not complete these trials and master the rage. I do 'ope ye appreciate this lesson.");
+	  }
+	  if($text=~/face one/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
+		quest::say("This creature is unlike any you have seen wandering the lands. this beast is fearsome and ethereal. It strikes out with its rage without thought or care. Ye must learn to recognize this type of beast if ye are to learn how to master it and yer own abilities. It will try to disguise itself so ye don't recognize the fury it holds within it -- it has an [enraged essence] within it and I want ye to bring it to me. Remember, $name, do not be fooled and always be aware.");
+	  }
+	  if($text=~/enraged essence/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1) {
+		quest::say("I will give ye no more hints. Ye must seek this creature out alone. Look far and use your mind and brawn to beat it. Yer noggin will give ye an advantage o'er this un.");
+		$imp=undef;
+	  }
+	 if($text=~/do/i && ($hunting == 1 || plugin::check_hasitem($client,60204))) { #Hunting stage complete 
+		quest::say("For my mirage to remain part of my trials, I need some very specific reagents. There is a sickly gorilla that carries a rotting organ which I am in need of. Also, I need a paw of a very special and dangerous kobold. Lastly, bring me the poison sac of a dangerous spider. A potion that allows us to create a gate from one place to another is also required. If ye believe ye can do this for me, tell me so, and I will give ye a bag to hold them in. When ye have all of the ingredients, combine them in the bag I've given ye, and bring it back to me. Good luck in your hunt!"); 
+		quest::summonitem(60205); 
+		$hunting=undef; 
+	  } 
+	  if($text=~/next challenge/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
+		quest::say("For this encounter, ye must be prepared for the unexpected and, in the face of chaos, be able to focus on the task at hand. Yer stamina will also be tested. When I first encountered this wicked trap in me travels, even I had to attempt it a couple of times. However, I do have faith in ye. With my advance warning, ye shouldn't be caught off guard. This challenge will also prove how loyal and skilled yer own friends are. One thing is for certain, ye can't complete this [next test] alone."); 
+	  } 
+	  if($text=~/next test/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
+		quest::say("Make your way to the woods in Kunark. Use the hunting skills ye have gained to find a most unusual and war-hungry creature. It has a very unique magic in its battle repertoire that will definitely test yer mettle. Off with ye, then. I do hope I see ye again...I've become quite fond of ye. I recently sent another like ye to do this trial and I haven't heard from him..."); 
+		$mastery=undef; 
+	  } 
+	}
 }	
 
 		
@@ -168,8 +194,16 @@ sub EVENT_ITEM {
     quest::emote("grabs each axe individually and mutters something inaudible. He takes each axe in his hands and looks them over. 'This axe seems to display almost no wear, which is highly unusual, given the amount of punishment ye must have put it through. Surely all three of these axes are of higher quality than the ones we normally make, but this one is vastly superior. Given the quality of this axe, I'd say that it could very easily benefit from some enchantments. So the next step in this axe's journey should be to imbue it with some of the owner's essence. This will create an axe that can actually become aware of its owner's wishes to help him realize his true Berserker's potential. Why if I were the owner and had a rare Soul Gem handy, I'd be headin' off to Teekan the Enchanter in the Abysmal Sea. Her abilities to weave such magic are unsurpassed.");
 	quest::setglobal("berserk_epic", 5, 5, "F");
 	quest::summonitem(18976); 
-  }  
-# 
+  }
+#2.0
+  elsif(plugin::check_handin(\%itemcount, 17200 => 1)) {
+    quest::emote("'s demeanor quickly changes from one fraught with worry and guilt to one of relief. 'Ach! Julei is in good health. Tis good news indeed! My thanks to ye. If'in there be anything I can do for ye, ask and ye shall have it.");
+    quest::setglobal("berserk_epic",9, 5, "F");
+  }
+  elsif(plugin::check_handin(\%itemcount, 72029 => 1, 18398 => 1, 17349 => 1, 17137 => 1)) {  
+    quest::summonitem(20072);
+    quest::say("Ah ye've returned with the necessary components, me friend? Give me but a moment to look over what you've managed to get yer hands on. Yes, these should do the job quite nicely. We'll see just what potential can be unleashed in this axe of yours! So the Dragorn smith said to reinforce the haft with this ore, eh? I can accomplish that surely. Work with the Moonstone should be easy enough tew as it don't seem to require much enchantment from me. The Lightning Core will require a bit o' work though as I'm not very experienced with it. Still though, I can surely do something with it. I would na ever thought of using one of these on an axe though! Crafty Gnomes indeed.' After some time and a bit of effort, Keras hands you back your axe. 'Here ya go, lad. I tried honing the edge further but I dinnah have a whetstone strong enough. Maybe that smith o' yours can help ye futher?");
+  }
   plugin::return_items(\%itemcount);
 }
 

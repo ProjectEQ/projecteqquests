@@ -11,7 +11,7 @@ function event_say(e)
 					e.other:AddAAPoints(5);
 					e.other:Ding();
 					e.other:Message(15,'You have gained 5 ability points!');
-					e.other:SetAATitle('Conqueror');		
+					--e.other:SetAATitle('Conqueror');		
 					eq.set_global("warrior_epic","16",5,"F");
 			else
 				e.self:Say("Well now, aren't you a meager one? Da name is Korbuk Brimblade. Have you felt anything strange lately?");

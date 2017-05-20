@@ -4,8 +4,12 @@ function event_combat(e)
   if (e.joined == true) then
     eq.set_next_hp_event(90);
     eq.stop_timer('wipecheck');
+	eq.set_timer("breath", math.random(3,8) * 1000);
+	eq.set_timer("stomp", math.random(10,15) * 1000);
   else
     eq.set_timer('wipecheck', 300 * 1000);
+	eq.stop_timer('breath');
+	eq.stop_timer('stomp');
   end
 end
 
@@ -63,11 +67,16 @@ end
 
 function event_timer(e)
   if (e.timer == 'wipecheck') then
-    eq.depop_all(303106);
-     eq.depop();
-     eq.stop_timer('wipecheck');
-
+     eq.depop_all(303106);
      eq.spawn2(303081, 0, 0, 1753.99, 1788, 316.853, 164.375);
+	 eq.depop();
+     eq.stop_timer('wipecheck');
+  elseif e.timer=="breath" then
+     e.self:CastSpell(5559,e.self:GetTarget():GetID());
+	 eq.set_timer("breath", 30*1000);
+  elseif e.timer=="stomp" then
+     e.self:CastSpell(5558,e.self:GetTarget():GetID());
+	 eq.set_timer("stomp", 30*1000);
   end
 end
 

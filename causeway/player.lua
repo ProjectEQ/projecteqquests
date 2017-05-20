@@ -42,6 +42,17 @@ function event_loot(e)
 			return 0;
 		else
 			return 1;
+		end
+	elseif (e.self:Class() == "Berserker" and e.item:GetID() == 17349 and e.corpse:GetNPCTypeID() == 303081) then
+		local qglobals = eq.get_qglobals(e.self);
+		if (qglobals["berserk_epic"] == "9") then
+			if (qglobals["ber_chest_causeway"] == nil) then
+				eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+				eq.set_global("ber_chest_causeway", "1", 5, "F");
+			end
+			return 0;
+		else
+			return 1;
 		end		
 	end
 end

@@ -10,6 +10,14 @@ function event_enter_zone(e)
 			eq.set_global("paladin_wos","1",3,"H2");
 		end
 	end
+
+	if(qglobals["ranger_epic"] == "8" and qglobals["rng_spawn_wos"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(300057) == false) then
+		eq.unique_spawn(300057,0,0,-1491,2015,51.2,96); --#Herrian_Warfrost
+		eq.spawn2(300058,0,0,-1495,1965,51.2,80); --an_excited_builder (300058)
+		eq.spawn2(300058,0,0,-1447,2014,51.2,110);
+		eq.spawn2(300058,0,0,-1454,1976,51.2,96);	
+		--eq.set_global("rng_spawn_wos","1",2,"H2");
+	end		
 end
 
 function event_loot(e)
@@ -59,7 +67,17 @@ function event_loot(e)
 			end
 		else
 			return 1;
-		end		
+		end
+	elseif(e.self:Class() == "Ranger" and e.item:GetID() == 76999) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["ranger_epic"] == "8") then
+			if(qglobals["rng_wos_chest"] == nil ) then
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.set_global("rng_wos_chest","1",5,"F");
+			end
+		else
+			return 1;
+		end			
 	end
 end
 

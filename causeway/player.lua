@@ -53,6 +53,13 @@ function event_loot(e)
 			return 0;
 		else
 			return 1;
-		end		
+		end
+	elseif (e.self:Class() == "Beastlord"  and (e.item:GetID() == 57012 or e.item:GetID() == 57013)) then
+		local qglobals = eq.get_qglobals(e.self);
+		if (qglobals["beast_epic"] == "18") then
+			return 0;
+		else
+			return 1;
+		end			
 	end
 end

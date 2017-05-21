@@ -20,4 +20,17 @@ function event_loot(e)
 			eq.set_global("monk_epic_keeper","1",5,"F");
 		end
 	end
+	if(e.self:Class() == "Beastlord" and e.item:GetID() == 57014 ) then
+		local qglobals = eq.get_qglobals(e.self);
+		if (qglobals["beast_epic"] == "20") then
+			if (qglobals["bst_chest_causeway"] == nil) then
+				eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+				eq.set_global("bst_chest_causeway", "1", 5, "F");
+			end
+			return 0;
+		else
+			return 1;
+		end
+	end	
+	
 end

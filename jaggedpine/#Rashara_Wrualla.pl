@@ -8,8 +8,8 @@ if ($client->GetGlobal("beast_epic") ==4) {
  if ($client->GetGlobal("beast_epic") ==15) {
   if ($text=~/hail/i) { 
   quest::say("Aye, I do remember that face, Beastlord. I am still recovering from my short trip to Kuua that suffers from the touch of the Realm of Discord. What a dark and foul place it is. Some of the creatures have hearts so dark it is nearly inconceivable. One of those creatures has robbed me of what I hold [" . quest::saylink("most dear") . "].");
-}
-}
+  }
+ }
  if ($client->GetGlobal("beast_epic") ==15) {
   if ($text=~/most dear/i) {
    quest::say("There is a beast called a girplan, and while it does draw blood, it digs its fangs much deeper. I was traveling with my warder and encountered a girplan that was different somehow. It attacked me and my faithful warder ran to my aid. I did come upon some [" . quest::saylink("luck") . "], though.");
@@ -20,12 +20,18 @@ if ($client->GetGlobal("beast_epic") ==15) {
   quest::say("I was able to get some distance when it landed a fatal blow to my companion. But, not only did it draw its blood afterward, it drew its essence, and now I am unable to summon my companion to my aid. I do not understand how it happened and I would have thought it [" . quest::saylink("not possible") . "].");
   }
   }
-if ($client->GetGlobal("beast_epic") ==15) {
- if ($text=~/not possible/i) {
+ if ($client->GetGlobal("beast_epic") ==15) {
+   if ($text=~/not possible/i) {
     quest::say("It would mean a great deal to me and the elders if you could seek out this girplan in that eerie scarred land and, perhaps, discover what it did to my warder. I am unable to go myself as I could never dream of traveling without my warder. You will find a beastlord in Discord who also seeks the same creature. Give him this note.");
     quest::summonitem(52906);
    }
+ }
+ if ($client->GetGlobal("beast_epic") ==17) {
+  if ($text=~/hail/i) { 
+   quest::say("I'm so glad you are here. There is a gnoll here seeking to steal my very essence! How did I come upon such bad luck? I believe this gnoll heard about the theft of my warder's esseence, and now it wants mine. You must find it and spill its blood and take it to Muada forthwith!");
+   quest::unique_spawn(181225,0,0,800,3400,83,150);  #Dismal_Darkpaw_Mystic
   }
+ } 
 }
  
  

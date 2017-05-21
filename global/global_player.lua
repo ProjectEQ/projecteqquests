@@ -67,6 +67,16 @@ function event_combine_success(e)
 		e.self:Ding();
 		e.self:Message(15,'You have gained 5 ability points!');
 		eq.set_global("ranger_epic","5",5,"F");
+	--ranger 2.0
+	elseif(e.recipe_id ==19914 or e.recipe_id==19915) then
+		e.self:Message(15,'Very Good. Now we must attune the cage to the specific element we wish to free. You will need two items, one must protect from the element and the other must be able to absorb an incredible amount of that element. This is not a simple task. You must first discover the nature of the spirit that you wish to free and then find such items that will allow you to redirect its power. You must know that each spirit represents a specific area within their element and that is what you must focus on, not their element specifically. For example, Grinbik was an earth spirit, but his area of power was fertility. Senvial was a spirit of Water, but his power was in mist and fog.');
+		eq.set_global("ranger_epic","8",5,"F");
+	elseif(e.recipe_id ==19916) then
+		e.self:Message(15,"The Red Dogwood Treant speaks to you from within your sword. 'Well done. This should allow me to free a spirit with power over cold and ice. Now you need to find the power that binds the spirit and unleash it where that spirit is bound.'");	
+	elseif(e.recipe_id ==19917) then
+		if(eq.get_zone_short_name()=="anguish") then
+			eq.spawn2(317113, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		end
 	-- paladin 1.5 final
 	elseif(e.recipe_id ==19880) then
 		e.self:AddEXP(25000);

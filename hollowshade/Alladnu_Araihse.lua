@@ -28,7 +28,7 @@ function event_trade(e)
 		eq.set_global("beast_epic","22",5,"F");
 		e.self:Say("Follow me, "..e.other:GetName()..". We will embark upon the final steps of your journey.");
 		e.self:MoveTo(1809,-1050,-108,90,true);
-		eq.set_timer("startevent",45*1000);
+		eq.set_timer("startevent",60*1000);
 		finished_event=0;
 	end
 	item_lib.return_items(e.self, e.other, e.trade, e.text);
@@ -39,7 +39,7 @@ function event_timer(e)
 	if e.timer=="startevent" then
 		eq.stop_timer("startevent");
 		e.self:Say("Wait here for a moment.");
-		eq.set_timer("event1",10*100);
+		eq.set_timer("event1",15*100);
 	elseif e.timer=="event1" then
 		eq.stop_timer("event1");
 		e.self:Emote("begins to growl and ascend into the realm of the wild spirits as she closes her eyes");

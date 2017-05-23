@@ -6,9 +6,9 @@ function event_combat(e)
 	eq.set_timer("grip", math.random(5,10) * 1000);
 	eq.set_timer("symbol", math.random(5,10) * 1000);
   else
-    eq.stop_timer('breath', 300 * 1000);
-	eq.stop_timer('grip', 300 * 1000);
-	eq.stop_timer('symbol', 300 * 1000);
+    eq.stop_timer("breath");
+	eq.stop_timer("grip");
+	eq.stop_timer("symbol");
   end
 end
 

@@ -21,23 +21,30 @@ function event_say(e)
 		if(e.message:findi("hail")) then
 			e.self:Say("Greetings, " .. e.other:GetName() .. ". As you may have guessed I have been sent here by the Wayfarers Brotherhood to assist those that dare subject themselves to our magic. I promise you I have trained long and hard to be up to the task.  I only rarely make the type of mistakes you may have heard about regarding these spells of travel. Come, let me know where you would like to go and I'll send you on your way.  I can send you to any of the Wayfarer camps in [" .. eq.say_link("Butcherblock",false,"Butcherblock") .. "], [" .. eq.say_link("Commonlands",false,"Commonlands") .. "], [" .. eq.say_link("Everfrost",false,"Everfrost") .. "], [" .. eq.say_link("North Ro",false,"North Ro") .. "], [" .. eq.say_link("South Ro",false,"South Ro") .. "], or [" .. eq.say_link("Nedaria's Landing",false,"Nedaria's Landing") .. "].");
 		elseif(e.message:findi("butcherblock")) then
-			e.self:CastSpell(4179,e.other:GetID(),0,0);
+			e.self:SpellFinished(4179, e.other:GetID());
+			--e.self:CastSpell(4179,e.other:GetID(),0,0);
 		elseif(e.message:findi("commonlands")) then
-			e.self:CastSpell(4176,e.other:GetID(),0,0);
+			e.self:SpellFinished(4176, e.other:GetID());
+			--e.self:CastSpell(4176,e.other:GetID(),0,0);
 		elseif(e.message:findi("everfrost")) then
-			e.self:CastSpell(4180,e.other:GetID(),0,0);
+			e.self:SpellFinished(4176, e.other:GetID());
+			--e.self:CastSpell(4180,e.other:GetID(),0,0);
 		elseif(e.message:findi("nedaria")) then
-			e.self:CastSpell(4580,e.other:GetID(),0,0);
+			e.self:SpellFinished(4580, e.other:GetID());
+			--e.self:CastSpell(4580,e.other:GetID(),0,0);
 		elseif(e.message:findi("north ro")) then
-			e.self:CastSpell(4177,e.other:GetID(),0,0);
+			e.self:SpellFinished(4177, e.other:GetID());
+			--e.self:CastSpell(4177,e.other:GetID(),0,0);
 		elseif(e.message:findi("south ro")) then
-			e.self:CastSpell(4178,e.other:GetID(),0,0);
+			e.self:SpellFinished(4178, e.other:GetID());
+			--e.self:CastSpell(4178,e.other:GetID(),0,0);
 		end
 	else --no Adventurers Stone
 		if(e.message:findi("hail")) then
 			e.self:Say("You will have to excuse me, I am quite busy studying this Farstone and the possibility of using the magic stored inside of it.  Perhaps you should talk to those at the Wayfarer camps to see if they have any use for you.  I have enough time to send you to [" .. eq.say_link("Nedaria's Landing") .. "], if you'd like.");
 		elseif(e.message:findi("nedaria")) then
-			e.self:CastSpell(4580,e.other:GetID(),0,0);
+			e.self:SpellFinished(4580, e.other:GetID());
+			--e.self:CastSpell(4580,e.other:GetID(),0,0);
 		end
 	end
 end

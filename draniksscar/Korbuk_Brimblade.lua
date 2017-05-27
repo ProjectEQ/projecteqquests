@@ -25,8 +25,11 @@ function event_say(e)
 					eq.set_global("warrior_epic","1",5,"F"); --flagged to start epic 1.5
 				end
 			else
-				e.self:Say("Hmm, I'm not sure if I should go into any more detail. After all, we've just met and I don't know how trustworthy you really are. Listen, if you really want to know what work I'm involved with, I'll need you to run a couple [" .. eq.say_link("errands") .. "] for me first, just so I know you're da real deal.");
-				eq.set_global("warrior_pre","1",5,"F"); --flagged to start prequest
+        -- only set the flag to start the prequest if the quest global to track the quest isn't set.
+        if (qglobals["warrior_pre"] == nil) then
+          e.self:Say("Hmm, I'm not sure if I should go into any more detail. After all, we've just met and I don't know how trustworthy you really are. Listen, if you really want to know what work I'm involved with, I'll need you to run a couple [" .. eq.say_link("errands") .. "] for me first, just so I know you're da real deal.");
+          eq.set_global("warrior_pre","1",5,"F"); --flagged to start prequest
+        end
 			end
 		elseif(e.message:findi("errands") and qglobals["warrior_pre"] == "1") then	
 			e.self:Say("You see, I had some things taken from me. I want to get dem back. I'm very partial to my weapons, and had some great [" .. eq.say_link("plans") .. "] to make a sword dat would be unmatched by any other. I thought it would be nice to start da plans with my brethren by talking to some of dem about da tactics involved in creating a sword.");

@@ -45,7 +45,19 @@ function event_loot(e)
 		else
 			return 1;
 		end
-	end	
+	end
+
+	if(e.self:Class() == "Necromancer" and (e.item:GetID() == 55940 or e.item:GetID() == 55932)) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["necro_epic"] == "5") then
+			if(qglobals["nec_chest_dranik"] == nil ) then
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.set_global("nec_chest_dranik","1",5,"F");
+			end
+		else
+			return 1;
+		end
+	end		
 end
 
 function event_click_door(e)

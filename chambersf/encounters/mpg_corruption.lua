@@ -242,7 +242,7 @@ function Huhn_Signal(e)
     eq.spawn2(309034, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 
     -- depop the mob
-    eq.depop();
+    eq.depop_with_timer();
 
     -- Set a Lockout 
     local mpg_helper = require("mpg_helper");

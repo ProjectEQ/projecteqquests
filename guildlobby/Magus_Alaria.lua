@@ -24,7 +24,7 @@ function event_say(e)
 			e.other:MovePC(68,-2489,-1107,-.9,68);
 			--e.self:CastSpell(4179,e.other:GetID(),0,0);
 		elseif(e.message:findi("commonlands")) then
-			e.other:MovePC(21, -144,-1543,2.5,127);
+			e.other:MovePC(22, -144,-1543,2.5,127);
 			--e.self:CastSpell(4176,e.other:GetID(),0,0);
 		elseif(e.message:findi("everfrost")) then
 			e.other:MovePC(30, -5043,1863,-61.4,127);

@@ -73,11 +73,12 @@ function event_trade(e)
 		e.self:Say("You did it. I can scarely believe my eyes! This is wonderful. Let me have a closer look. Lairyn unbuckles the leather satchel and pours out the contents then begins arranging the shards in a pattern on the ground. He slides them around like pieces of a complex puzzle, swapping them backwards and forwards faster than your eyes can track. Ah yes, very clever. I am beginning to understand. This is not such a challenge after all, once you know the trick. Enough talk, I would like you to be the first to try it! Lairyn withdraws his journal again and flips through it until he locates a blank page. He scribbles furiously with a quill for several moments, then tears the page form the binding and hands it to you.");
 		e.other:SummonItem(59021); --spell: frozen harpoon
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 52354}) ) then --cloudy potion
-		e.self:SetHP(e.self:GetHP()+1500);
+		e.self:SetHP(e.self:GetHP()+3000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 52344}) ) then --krill head
 		e.self:Emote("adjusts his spectacles and peers at the head, 'True enough. This is a Wayfarer . . . Errr, was at one time. I imagine he renounced his membership in the Brotherhood sometime before he took up a career of tormenting a poor scholar. They must have been trying to get to Nedaria by coming after me. I am famliar with Krill and he is a follower, not a leader. Someone else is the mastermind behind this - a person with access to magical disguises to hide their identity. Lirprin must know of this at once, ".. e.other:GetName() .. ".");
 		eq.set_global("rogue_epic_lairyn","1",5,"F");
 		eq.depop_with_timer();
+		e.other:Message(15,"You have confirmed Lairyn's innocence.");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

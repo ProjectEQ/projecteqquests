@@ -43,7 +43,7 @@ sub EVENT_SAY {
       quest::spawn2(237797, 0, 0, 216.00, 397.00, -9.75, 128.00); #spawn Laskuth the Colossus
       $Laskuth_spawned = 1;
     } else {
-      quest::say("Greetings adventurer, and welcome to this horrid nightmare. In order to fully understand Miragul and escape this horrid place, I ask that you aid me in some [tasks].");
+      quest::say("Greetings adventurer, and welcome to this horrid nightmare. In order to fully understand Miragul and escape this horrid place, I ask that you aid me in some [" . quest::saylink("tasks") . "].");
       if ($task1 == 1) {
         quest::say("The sludge no longer blocks the passage ahead.");
       }
@@ -59,16 +59,32 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/tasks/i) {
-    quest::say("The first task is to dispatch the slime just beyond here. Once completed, proceed to the [second] task.");
+    quest::say("The first task is to dispatch the slime just beyond here. Once completed, proceed to the [" . quest::saylink("second") . "] task.");
   }
   if ($text=~/second/i) {
-    quest::say("Some animated skeletons haunt these caverns. The heat of battle is their weakness, but their strength lies in numbers. Destroy all four together so they may not aid each other in their ethereal forms. When this terror is gone, prepare for the [third] task.");
+    quest::say("Some animated skeletons haunt these caverns. The heat of battle is their weakness, but their strength lies in numbers. Destroy all four together so they may not aid each other in their ethereal forms. When this terror is gone, prepare for the [" . quest::saylink("third") . "] task.");
   }
   if ($text=~/third/i) {
-    quest::say("An abomination named Marrow the Broken spreads dismay throughout these cold regions. Destroy the vile beast, then I will have one [final] task.");
+    quest::say("An abomination named Marrow the Broken spreads dismay throughout these cold regions. Destroy the vile beast, then I will have one [" . quest::saylink("final") . "] task.");
   }
   if ($text=~/final/i) {
     quest::say("My dear, Sharalla, passed on within these caves. I ask that you only protect her form from the beasts until the nightmare ends.");
+  }
+
+  if ($text=~/Lirprin sent me/i) {	
+	my $event_status = $qglobals{$instid.'_mirb_event'};
+	if(($event_status==2 || $event_status==1) && $qglobals{Fatestealer} == 3) {
+	  quest::say("There's no need to mince words $name. I have no quarrel with Lirprin, but unfortunately the reverse is not also true. The man is undoubtedly angry with me. He will never forgive me for courting Sharalla and does not realize that it was her choice. She loved me, and not him. His paranoia and overbearing attitude, and eventually the outright abuse of his leadership position merely pushed her away. Now that she has fallen in the valiant service of the Brotherhood there is no further need for his insecurity.");
+	  quest::setglobal("rogue_epic_durgin", 1, 5, "F");
+	  $client->Message(13, "You have confirmed Durgin's innocence.");
+	  if(!defined($qglobals{rogue_chest_mira})) {
+			quest::setglobal("rogue_chest_mira", "1", 5, "F"); 
+			$x = $client->GetX();
+			$y = $client->GetY();
+			$z = $client->GetZ();
+			quest::spawn2(893,0,0,$x,$y,$z,0);	  
+	  }
+	}
   }
 }
 

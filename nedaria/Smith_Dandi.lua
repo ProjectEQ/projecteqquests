@@ -49,6 +49,27 @@ function event_say(e)
 			e.self:Say("Hmm, you're still missing a few things. Keep at it, " .. e.other:GetName() .. "."); 
 		end		
 	end
+	if( qglobals["Fatestealer"] == "3" and e.message:findi("hail")) then
+		e.self:Emote("wipes her sooty hands on her apron and smiles at you. 'So, it looks as if you'll need the services of Smith Dandi once again. I was hoping you'd stop by soon so we could talk. Fantastic work clearing the names of those innocent Wayfarers. I knew them all personally and they weren't bad folk. It's a shame Lirprin can be so quick to judge. Now, something tells me you're looking to get that blade of yours improved. Let's see if you have what we need. . .");
+		if (e.other:HasItem(47100)) then		
+			e.other:Message(15,"From the deadly realm of Mata Muram himself, you have recovered a source of discordant energy.");
+		else
+			e.other:Message(13,"Smith Dandi is unable to duplicate the enchantments on Wren's weapon without a source of discordant energy.");
+		end
+		if (e.other:HasItem(52342)) then		
+			e.other:Message(15,"From the freezing depths of Iceclad, you have recovered a lump of Velixite alloy.");
+		else
+			e.other:Message(13,"Smith Dandi is unable to craft the blade without a special alloy.");
+		end		
+ 		if (e.other:HasItem(21346)) then		
+			e.other:Message(15,"You have slain Wren Simsy and recovered her blade, which courses with discordant energy. ");
+		else
+			e.other:Message(13,"Smith Dandi requires a blade touched by discordant energy.");
+		end
+		if (e.other:HasItem(47100) and e.other:HasItem(52342) and e.other:HasItem(21346)) then	
+			e.self:Say("Seems you're all ready to craft the blade. We'll need the Velixite alloy, the weapon I crafted for you last time, an example of someone else's weapon that I can use for a reference, and a source of pure discordant energy. Show those items to Lirprin and we'll get started!");
+		end
+	end
 end
 
 function event_trade(e)

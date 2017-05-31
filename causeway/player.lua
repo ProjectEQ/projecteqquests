@@ -60,6 +60,17 @@ function event_loot(e)
 			return 0;
 		else
 			return 1;
-		end			
+		end
+	elseif (e.self:Class() == "Enchanter"  and (e.item:GetID() == 52951)) then
+		local qglobals = eq.get_qglobals(e.self);
+		if (qglobals["ench_epic"] == "9") then
+			if (qglobals["ench_chest_causeway"] == nil) then
+				eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+				eq.set_global("ench_chest_causeway", "1", 5, "F");
+			end
+			return 0;
+		else
+			return 1;
+		end
 	end
 end

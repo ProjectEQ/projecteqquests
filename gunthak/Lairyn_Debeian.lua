@@ -6,7 +6,7 @@ function event_say(e)
 		if(e.other:Class() == "Wizard") then
 			e.self:Emote("peers up from his journal and smiles at you warmly, 'Greetings, friend. I was so involved in my research that I did not hear you approaching.' He closes the leather-bound tome and pats it with one slender hand. 'Please forgive my lack of courtesy. I am Lairyn from the order of the Crimson Hands, and this little book here is my life's work. I am currently unraveling the secret of a [" .. eq.say_link("new power") .. "] that has emerged on Broken Skull Rock.");
 		else
-			e.self:Emote("stares at you directly in the eyes. 'Greetings, $name.  I suppose you're here like everyone else in search of fame and fortune.  Good luck to you, and good day.  I have many things to attend to.");
+			e.self:Emote("stares at you directly in the eyes. 'Greetings, " .. e.other:GetName() .. ".  I suppose you're here like everyone else in search of fame and fortune.  Good luck to you, and good day.  I have many things to attend to.");
 		end
 	elseif(e.message:findi("new power")) then
 		e.self:Say("The strange beasts known as Luggalds that reside on Broken Skull Rock have an amazing power over the dark waters of the deep. They are able to conjure it up in the form of an immense spear of ice. I have seen them do so with my own eyes, though I was watching from afar, of course. I would not dare venture close enough to anger the foul beasts. Their grasp of this magic is simply breathtaking, and from my observations alone, I am very close to unlocking their methods. Unfortunately, I have run into an obstacle, as I cannot complete my research without something more tangible. If only I were brave enough to get closer, or foolish enough. As you can see, I am more intellectual than adventurer.");
@@ -43,13 +43,13 @@ function event_timer(e)
 	elseif e.timer=="move3" then	
 		eq.stop_timer("move3");
 		e.self:Shout("They're still following me! Help!");
-		eq.set_timer("adds",1000);
+		eq.set_timer("adds",3000);
 	elseif e.timer=="adds" then
-		eq.set_timer("adds",30*1000);		
+		eq.set_timer("adds",55*1000);		
 		if add_waves < 5 then
-			eq.spawn2(224433,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.self,500); --thug
-			eq.spawn2(224434,0,0,e.self:GetX()+15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.self,500); --assass
-			eq.spawn2(224435,0,0,e.self:GetX()   ,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.self,500); --enforce
+			eq.spawn2(224433,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ()+3,e.self:GetHeading()):AddToHateList(e.self,500); --thug
+			eq.spawn2(224434,0,0,e.self:GetX()+15,e.self:GetY()-15,e.self:GetZ()+3,e.self:GetHeading()):AddToHateList(e.self,500); --assass
+			eq.spawn2(224435,0,0,e.self:GetX()   ,e.self:GetY()-15,e.self:GetZ()+3,e.self:GetHeading()):AddToHateList(e.self,500); --enforce
 		else
 			eq.stop_timer("adds");
 		end		
@@ -61,7 +61,7 @@ end
 function event_signal(e)
 	if e.signal==1 then
 		e.self:Say("Oh no . . . I'd recognize the echo of those footfalls anywhere. That sounds like Krill . . .'");
-		eq.spawn2(224436,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.self,500);
+		eq.spawn2(224436,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ()+3,e.self:GetHeading()):AddToHateList(e.self,500);
 	else
 		e.self:Say("For my own knowledge and to bring some closure to this terror, can you bring me his head? I want to see with my own eyes. I need to know if it was him.");
 	end

@@ -4,6 +4,7 @@ function event_say(e)
 	if (event_started==1) then
 		e.self:Emote("is struggling to keep his eyes open, 'Well done. Of the thousands of battles I have observed in my days, none have ever fought more valiantly then yourself. You should...get out of here before someone finds us like this. War will come. It always does. Turmoil...is life's one constant. It is inevitable. Don't...worry. You tried.'");
 		eq.depop_with_timer();
+		eq.debug("depop_with_timer");
 	elseif(e.message:findi("hail")) then
 		e.self:Emote("Greetings, "..e.other:GetRace()..". Don't worry, I will not make any aggressive actions toward you. Look around. Do you see the bars, the guarded exits? This is a prison - a comfortable location but a cage nonetheless. I am only guilty of [" .. eq.say_link("one crime") .. "], but the repercussions are serious. It's likely that the remainder of my life will be spent in closely guarded captivity.");
 	elseif(e.message:findi("crime")) then

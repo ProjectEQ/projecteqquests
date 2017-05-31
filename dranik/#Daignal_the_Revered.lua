@@ -1,13 +1,11 @@
 local event_started=0;
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.message:findi("hail")) then
-		if event_started==0 then
-			e.self:Emote("Greetings, "..e.other:GetRace()..". Don't worry, I will not make any aggressive actions toward you. Look around. Do you see the bars, the guarded exits? This is a prison - a comfortable location but a cage nonetheless. I am only guilty of [" .. eq.say_link("one crime") .. "], but the repercussions are serious. It's likely that the remainder of my life will be spent in closely guarded captivity.");
-		else
-			e.self:Emote("is struggling to keep his eyes open, 'Well done. Of the thousands of battles I have observed in my days, none have ever fought more valiantly then yourself. You should...get out of here before someone finds us like this. War will come. It always does. Turmoil...is life's one constant. It is inevitable. Don't...worry. You tried.'");
-			eq.depop();
-		end
+	if (event_started==1) then
+		e.self:Emote("is struggling to keep his eyes open, 'Well done. Of the thousands of battles I have observed in my days, none have ever fought more valiantly then yourself. You should...get out of here before someone finds us like this. War will come. It always does. Turmoil...is life's one constant. It is inevitable. Don't...worry. You tried.'");
+		eq.depop_with_timer();
+	elseif(e.message:findi("hail")) then
+		e.self:Emote("Greetings, "..e.other:GetRace()..". Don't worry, I will not make any aggressive actions toward you. Look around. Do you see the bars, the guarded exits? This is a prison - a comfortable location but a cage nonetheless. I am only guilty of [" .. eq.say_link("one crime") .. "], but the repercussions are serious. It's likely that the remainder of my life will be spent in closely guarded captivity.");
 	elseif(e.message:findi("crime")) then
 		e.self:Emote("lifts his chin proudly, 'My crime? Simply being who I am. Daignal. A Dragorn with the will to do what is right for my people, the might to destroy my enemies in battle, and the respect and reputation to call hundreds, if not thousands, of fellow Dragorn to my aid. The legions of Mata Muram have wisely decided to cage me rather than make me [" .. eq.say_link("into a martyr") .. "] and face an uprising. No one, including me, wants that. It would be a valiant but futile attempt to thwart their control over this world and succeed only in generating a catastrophic body count. I've already seen enough bloodshed to last a thousand lifetimes.");
 	elseif(e.message:findi("martyr")) then

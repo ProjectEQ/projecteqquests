@@ -6,7 +6,11 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, " .. e.other:GetName() .. ". I am Inte Akera. I have retired to the Plane of Sky after a long life toiling on Norrath's soil. Have you retreated here as well, or are you merely visiting?");
+		if (e.other:HasItem(64031)) then
+			e.self:Say("Welcome " .. e.other:GetName() .. ", I have been waiting for you. I see you have brought Redemption with you, which symbolizes the completion of your training with Irak. You must know that I do not train many knights, so for you to be here and receiving training is a special event. You should feel honored and proud, for not many knights will get to this point of Valor and Courage. Though, you still have a [" .. eq.say_link("long journey") .. "] ahead of you.");
+		else
+			e.self:Say("Greetings, " .. e.other:GetName() .. ". I am Inte Akera. I have retired to the Plane of Sky after a long life toiling on Norrath's soil. Have you retreated here as well, or are you merely visiting?");
+		end
 	elseif(e.message:findi("toil")) then
 		e.self:Say("Long ago, before I came to this plane, I fought in the name of Prexus against all the evils that plagued Norrath. In that time, I have done everything one can do. I have fought for the causes of good. I gained the esteem of kings and lords. The sword I hold is but one example of the treasures I have sought and won. I have accomplished all that I can, have all that I desire. My toil is done and now I sit among the clouds in peace, occasionally blessing those who seek it and are found worthy.");
 	elseif(e.message:findi("blessing")) then
@@ -23,6 +27,8 @@ function event_say(e)
 		e.self:Say("No.. I was unable to kill my most hated foe, Miragul. The head of this wretched, foul necromancer is forever out of the reach of justice. It would be worth restoring him to his former state for the chance to take his head as a trophy.");
 	elseif(e.message:findi("miragul")) then
 		e.self:Say("You think you can succeed where I cannot? Perhaps you can noble one.. Bring me the head of Miragul, his robe and hand me back the two blessings I gave you, and in return I shall bequeath to you this sword I carry. Good luck my friend.");
+	elseif(e.other:HasItem(64031) and e.message:findi("long journey")) then
+		e.self:Say("Yes, this training will be long and hard, and the risk for failure is very high. Though I have granted you the chance to train with me, that does not mean you can falter; you must be strong and dilligent. Your training will consist of four rites: The rite of compassion, the rite of chivalry, the rite of heroism, and the rite of cleansing. To complete each rite you will need to acquire a token of that rite. These tokens are very important, for they symbolize your virtues as a paladin. Once you have all four tokens, speak to me with them in hand and I will instruct you on further tasks. Good luck on your journey, knight.");
 	end
 end
 

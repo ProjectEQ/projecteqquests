@@ -140,6 +140,18 @@ function event_combine_success(e)
 	-- CLR 2.0
 	elseif (e.recipe_id == 19893) then
 		e.self:Message(13, "Omat should probably see this.");
+	--ench 2.0
+	elseif (e.recipe_id == 19919) then
+		eq.set_global("ench_epic","9",5,"F");
+		e.self:Message(15,"Your Oculus of Persuasion gleams with a blinding light for a moment, dimming quickly to its previous understated beauty. The light has left an image burned into your mind, a strangely tattooed woman chanting by a waterfall.");
+	--ench 2.0 final
+	elseif (e.recipe_id == 19920) then
+		e.self:Message(15,"The discordant energy shoots through the staff, sending a shower of sparks through the air. The crystal shatters before you, and as the sparks fade away you notice the changes in your staff.");
+		e.self:AddEXP(50000);
+		e.self:AddAAPoints(10);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 10 ability points!');
+		eq.set_global("ench_epic","10",5,"F");
 	end
 end
 

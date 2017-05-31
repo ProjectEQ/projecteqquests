@@ -30,6 +30,10 @@ function event_say(e)
 	elseif(e.message:findi("I need a sack")) then
 		e.self:Say("Take this sack and combine the items I requested in it. Then return it to me.");
 		e.other:SummonItem(17861);
+	elseif(e.message:findi("purify") and e.other:HasItem(52952)) then
+		e.self:Say("The purification is not something that I alone have the power to complete. There was once a crystal that held the power to purify something of this magnitude, however it was shattered long ago. You will need to speak to the masters that remain of dwindling races.");
+	elseif(e.message:findi("races") and e.other:HasItem(52952)) then
+		e.self:Say("The masters are of races that walked Norrath before you or I. I do not know their current whereabouts. Alaurin and Vohnkare were the eldest of the four. There was a noble . . Ah, yes and Feyana. I do hope you find them.");		
 	end
 end
 

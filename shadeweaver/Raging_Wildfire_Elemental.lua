@@ -4,6 +4,7 @@ function event_trade(e)
       e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
            e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
       e.self:AddToHateList(e.other,1);
+	  e.other:SummonItem(11304); -- Vial of Elemental Binding
    end
    item_lib.return_items(e.self, e.other, e.trade)
 end

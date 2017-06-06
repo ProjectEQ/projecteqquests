@@ -5,7 +5,7 @@ end
 
 function event_timer(e)
 	if e.timer=="depop" then
-		eq.depop_all();--shad
+		eq.depop_all(336255);--shad
 		eq.depop();
 	elseif e.timer=="kill_daig" then
 		eq.signal(336063,1,1000);

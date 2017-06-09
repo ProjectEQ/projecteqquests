@@ -147,7 +147,9 @@ function AMV_Death(e)
 end
 
 function Convert_Spawn(e)
-	eq.set_timer("grow_stronger",10*1000);  
+	eq.set_timer("grow_stronger",10*1000);
+	convert_min_hit=278;
+	convert_max_hit=1855;	
 end
 
 --damage is multiplied by 1.2 every 10 sec

@@ -128,11 +128,11 @@ end
 
 function Hanvar_Death(e)
 	eq.signal(317116, 317002);
-	eq.disable_spawn2(54535);
-	eq.disable_spawn2(54536);
-	eq.disable_spawn2(54537);
-	eq.disable_spawn2(54538);
-	eq.disable_spawn2(54539);
+	--eq.disable_spawn2(54535);
+	--eq.disable_spawn2(54536);
+	--eq.disable_spawn2(54537);
+	--eq.disable_spawn2(54538);
+	--eq.disable_spawn2(54539);
 	--set player lockout
 	--chance to spawn 2.0 orb, if so set zone lockout for "top orb"?
 end

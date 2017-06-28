@@ -9,7 +9,7 @@ function event_say(e)
 
     -- 1.5 done
     if (qglobals["monk_epic"] == "9") then
-        if (qglobals['mnk_epic20'] =~ nil) then
+        if (qglobals['mnk_epic20'] ~= nil) then
           eq.set_global("mnk_epic20", "1", 5, "F"); 
         end
         if (e.message:findi("hail")) then

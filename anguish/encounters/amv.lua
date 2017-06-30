@@ -149,7 +149,9 @@ end
 function Convert_Spawn(e)
 	eq.set_timer("grow_stronger",10*1000);
 	convert_min_hit=278;
-	convert_max_hit=1855;	
+	convert_max_hit=1855;
+	e.self:ModifyNPCStat("min_hit", tostring(convert_min_hit));
+	e.self:ModifyNPCStat("max_hit", tostring(convert_max_hit));	
 end
 
 --damage is multiplied by 1.2 every 10 sec

@@ -39,7 +39,7 @@ function event_loot(e)
 		local qglobals = eq.get_qglobals(e.self);
 		if(qglobals["shaman_epic"] == "11") then
 			if(qglobals["shaman_chest_dranik"] == nil ) then
-				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 2.0)
 				eq.set_global("shaman_chest_dranik","1",5,"F");
 			end
 		else
@@ -51,8 +51,20 @@ function event_loot(e)
 		local qglobals = eq.get_qglobals(e.self);
 		if(qglobals["necro_epic"] == "5") then
 			if(qglobals["nec_chest_dranik"] == nil ) then
-				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 2.0)
 				eq.set_global("nec_chest_dranik","1",5,"F");
+			end
+		else
+			return 1;
+		end
+	end
+	
+	if(e.self:Class() == "Shadow Knight" and e.item:GetID() == 55903) then
+		local qglobals = eq.get_qglobals(e.self);
+		if(qglobals["shadowknight_epic"] == "11") then
+			if(qglobals["sk_chest_dranik"] == nil ) then
+				eq.spawn2(893,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 2.0)
+				eq.set_global("sk_chest_dranik","1",5,"F");
 			end
 		else
 			return 1;

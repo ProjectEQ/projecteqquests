@@ -2,17 +2,17 @@
 --SK Epic 1.5 and 2.0
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.other:Class() == "Shadow knight") then
-		if(e.message:findi("vision") and qglobals["shadowknight_epic"] == "9") then
-			--if(qglobals["shadowknight_epic"] < "9" or qglobals["shadowknight_epic"] == nil) then
-			--	eq.set_global("shadowknight_epic","9",5,"F");
-			--end
+	if(e.other:Class() == "Shadow Knight") then
+		if(e.message:findi("vision") and e.other:HasItem(50003)) then
+			if(qglobals["shadowknight_epic"] == nil or tonumber(qglobals["shadowknight_epic"]) < 9) then
+				eq.set_global("shadowknight_epic","9",5,"F");
+			end
 			e.self:Say("My recent vision was of Lhranc. Perhaps you remember him, perhaps not. In any case, his spirit has returned from the dead. He now seeks revenge on those who killed him. There is something sinister behind his return. What exactly is going on, I do not know at this time, but I fear the worst. You must find Lhranc and [" ..eq.say_link('destroy', false, 'destroy') .. "] him.");
 		elseif(e.message:findi("destroy") and qglobals["shadowknight_epic"] == "9") then
 			e.self:Say("'I sent a servant of mine named, Kilidna to the City of Mist to investigate Lhranc's reappearance but he has not returned. Go to the City of Mist and see if you can find him. Return to me if you find anything.");
 		elseif(e.message:findi("powerful beings") and qglobals["shadowknight_epic"] == "10") then
 			e.self:Say("Yes, what powerful beings? Out with it, head!' 'Well, master, one of these powerful beings has resurrected Lhranc from the dead! When I confronted him, he turned me into a mindless zombie! I overheard Lhranc talking about recovering the sword for himself. You are both in great danger! Lhranc cannot be defeated in his current form and he will surely be coming for the sword!' Gilina tosses Kilidna's head aside. 'Thank you, Kilidna. Your services are no longer required. Well it seems we have quite the [" ..eq.say_link('dilemma', false, 'dilemma') .. "] on our hands, wouldn't you say?");
-		elseif(e.message:findi("dilema") and qglobals["shadowknight_epic"] == "10") then	
+		elseif(e.message:findi("dilemma") and qglobals["shadowknight_epic"] == "10") then	
 			e.self:Say("Luckily, I have much knowledge of Lhranc, the first of the shadowknights. We must find a way to anchor him to this plane so that he will be vulnerable to our attacks. I believe if we recover some items of his from his former life, we may be able to accomplish this. First, you will need to find his pendant. Look for it in the City of Mist. Next, you will need to recover Lhranc's corroded bracer from Charasis. Lastly, you will need to find Lhranc's ring from the undead in the Kithicor Woods. Once you have all these items, return them to me.");	
 		end	
 	end	
@@ -42,8 +42,7 @@ function event_trade(e)
 		e.other:Message(15,'You have gained 5 ability points!');
 	end
 	if(qglobals["shadowknight_epic"] == "9" and item_lib.check_turn_in(e.trade, {item1 = 19098})) then --hand in Kilidna's Head (drops from Kilidna in City of Mist)
-		e.self:Emote("takes the head from you and holds it by the hair. Gilina casts a small spell and the head springs to life.");
-		e.self:Say("Talk, Kilidna. What has happened to you?' Kilidna's head begins to sob. 'I am sorry, master. I was corrupted by evil magic! Now look at me! I dare say I will not be able to finish my studies any time soon.' Gilina scowls, 'What did you find out while in the city of mist? Tell me now!' 'Well master, it seems that when Innoruuk's Voice was summoned to this plane, it drew the attention of many [" ..eq.say_link('powerful beings', false, 'powerful beings') .. "].");
+		e.self:Emote("takes the head from you and holds it by the hair. Gilina casts a small spell and the head springs to life.  'Talk, Kilidna. What has happened to you?' Kilidna's head begins to sob. 'I am sorry, master. I was corrupted by evil magic! Now look at me! I dare say I will not be able to finish my studies any time soon.' Gilina scowls, 'What did you find out while in the city of mist? Tell me now!' 'Well master, it seems that when Innoruuk's Voice was summoned to this plane, it drew the attention of many [" ..eq.say_link('powerful beings', false, 'powerful beings') .. "].'");
 		eq.set_global("shadowknight_epic","10",5,"F");
 	end
 	if(qglobals["shadowknight_epic"] == "10" and item_lib.check_turn_in(e.trade, {item1 = 24612, item2 = 23489, item3 = 24632})) then --hand in Lhranc's Corroded Bracer (dropped from golems in Charasis), Lhranc's Pendant (dropped from black reavers in City of Mist), Lhranc's Ring (dropped from various undead in Kithicor)

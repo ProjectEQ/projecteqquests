@@ -19,7 +19,9 @@ function event_say(e)
             e.self:Say("I will need to you to gather some [" .. eq.say_link("sunless nectar") .. "] and some meat from and some meat from an [" .. eq.say_link("ancient creature") .. "].");
         elseif (e.message:findi("menace")) then
             e.self:Say("What menace? For sure Vortix has mentioned to you his dreams? His dreams provide a rare gift of forsight into what lies ahead. There is a dark threat that looms over the Order's head like a vice. It wants nothing more than to destroy all that know of it's existence.");
-            eq.set_global("mnk_epic20", "1", 5, "F"); -- gotta flag us some where ... too lazy to do one for each dialog though :P
+            if (qglobals['mnk_epic20'] == nil) then
+              eq.set_global("mnk_epic20", "1", 5, "F");
+            end
         elseif (e.message:findi("sunless nectar")) then
             e.self:Say("The sunless nectar comes from the darkest parts of Norrath. Once you find it you must combine it with some spices and a pie tin to make a Sugar and Spice Nectar Pie. Please return soon after you have both items.");
         elseif (e.message:findi("ancient creature")) then

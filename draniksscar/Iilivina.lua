@@ -18,7 +18,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["mage_epic"] ==7 and item_lib.check_turn_in(e.trade, {item1 = 19092})) then --epic 1.5
+	if(qglobals["mage_epic"] == "7" and item_lib.check_turn_in(e.trade, {item1 = 19092})) then --epic 1.5
 		e.self:Say("My goodness, I did not realize you were the one [" .. eq.say_link("Bantil") .. "] sent to me! This is truly amazing! I was shocked when Magi'Kot's dream had been realized. I never thought it would be surpassed. My, so much focused elemental energy. This is truly amazing. You have accomplished quite a feat.");
 		eq.set_global("mage_epic","8",5,"F");
 		e.other:SummonItem(19092); --Give back epic 1.5

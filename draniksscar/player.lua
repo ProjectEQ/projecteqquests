@@ -17,7 +17,7 @@ function event_timer(e)
 			e.self:Message(4,"The energy receptor appears to be active");		
 			eq.depop_all(302050);
 			eq.spawn2(302050, 0, 0, 155,-1053,29.5, 76);
-			eq.create_ground_object(60301,155,-1053,29.5,0,150000);	
+			eq.create_ground_object(60301,155,-1053,29.5,0);	
 			recepactive=true;
 		end
 	end

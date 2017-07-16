@@ -1,3 +1,5 @@
+local client_to_check
+
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();
@@ -11,12 +13,23 @@ function event_enter(e)
 end
 
 function event_say(e)
-	if(e.message:findi("trades")) then
-		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
-	elseif(e.message:findi("second book")) then
-		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+	local qglobals = eq.get_qglobals(e.other);
+	if(qglobals["paladin_epic"] == "9") then
+		if(e.message:findi("hail")) then
+			e.self:Say("Greetings " .. e.other:Race() .. " What can a brave and noble Paladin like I help you with? Are you possibly looking for a [" .. eq.say_link("blessed gem") .. "]?");
+		elseif(e.message:findi("blessed gem")) then
+			e.self:Say("So you're the one that we been hearing about. Excellent work so far " .. e.other:GetName() .. ". Helping Kemik out like you are brings pride to every Paladin on Norrath. Sit before me sir and you shall receive the holy gem of Ak`Anon.");
+			client_to_check=eq.get_entity_list():GetClientByID(e.other:GetID());
+			eq.set_timer("check_sit",1000);
+		end
+	else
+		if(e.message:findi("trades")) then
+			e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+			e.other:SummonItem(51121);
+		elseif(e.message:findi("second book")) then
+			e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
+			e.other:SummonItem(51122);
+		end
 	end
 end
 
@@ -33,4 +46,14 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
+end
+
+function event_timer(e)
+	if e.timer=="check_sit" then
+		if(client_to_check:IsSitting()) then
+			e.self:Say("Here is the gem that will help you out. The final piece you seek is hidden in the vale.");
+			client_to_check:SummonItem(69966); --akanon prayer bead
+			eq.stop_timer("check_sit");
+		end
+	end
 end

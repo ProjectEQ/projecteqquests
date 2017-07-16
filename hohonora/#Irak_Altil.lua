@@ -44,6 +44,7 @@ function event_say(e)
 		e.self:Say("I have had visions recently of various beings who have been captured by some foreign minion and tortured. The visions all were similar in nature. Very horrible things were done to these beings, very gruesome things. As the being kept fighting the pain and anguish, more torture was applied to break them...it was a horrible vision. A spell was casted mid-way though this ritual and the tormented being was held in a stasis. I felt a tugging at my soul, and I saw that the being's soul was being pulled from their body. The soul was removed from the being and imprisoned in a crystal of foreign origin. My only guess is that whoever is behind this ploy has been stealing the souls of various races of Norrath for some dark purpose. Help those that are tormented, find the crystals, and this will help you find the minions behind this plot. Go now noble Crusader!");
 	elseif(e.other:HasItem(64031) and e.message:findi("tell me about your master")) then
 		e.self:Say("Yes, this was my final master, the one who rarely taught knights. You have proven yourself to be a powerful and honorable paladin, and you have surpassed anything I could teach you. You have already met my master once, a very long time ago. His name is Inte Ikera, the noblest servant of Prexus. Go to him now with Redemption in hand so that you can begin your training. Good bye and good luck, friend.");
+		eq.set_global("paladin_epic","9",5,"F");
 	end		
 end
 

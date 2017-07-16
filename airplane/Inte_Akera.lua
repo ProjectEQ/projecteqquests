@@ -6,7 +6,9 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		if (e.other:HasItem(64031)) then
+		if (e.other:HasItem(69953) and e.other:HasItem(69954) and e.other:HasItem(69955) and e.other:HasItem(69956)) then
+			e.self:Say("Excellent job " .. e.other:GetName() .. ", I see you have acquired all four tokens. You are now ready for the final two rites: The rite of loyalty and the rite of conviction. For these final two rites, your task is simple, yet very difficult to accomplish. The main commanders in the Muramite army, found in Anguish, are set on destroying Norrath. They have already attempted once to abduct me from this plane and use me for some dark purpose, and I feel that they are doing the same to other prominent residents of Norrath. You will need to head to Anguish and defeat them and bring back proof that this has been done. Once you have completed this task, I will give you the token of loyalty and the token of conviction, for your help in defending all of Norrath. May Prexus be with you, crusader.");
+		elseif (e.other:HasItem(64031)) then
 			e.self:Say("Welcome " .. e.other:GetName() .. ", I have been waiting for you. I see you have brought Redemption with you, which symbolizes the completion of your training with Irak. You must know that I do not train many knights, so for you to be here and receiving training is a special event. You should feel honored and proud, for not many knights will get to this point of Valor and Courage. Though, you still have a [" .. eq.say_link("long journey") .. "] ahead of you.");
 		else
 			e.self:Say("Greetings, " .. e.other:GetName() .. ". I am Inte Akera. I have retired to the Plane of Sky after a long life toiling on Norrath's soil. Have you retreated here as well, or are you merely visiting?");
@@ -49,6 +51,14 @@ function event_trade(e)
 			e.self:Say("Long have I awaited this moment. You have done what even I thought impossible. Take this sword, the Fiery Avenger. You have earned both it and my deepest respect.");
 			eq.depop();
 		end
+	end
+	if (e.other:HasItem(69953) and e.other:HasItem(69954) and e.other:HasItem(69955) and e.other:HasItem(69956) and item_lib.check_turn_in(e.trade, {item1 = 47100})) then
+		e.self:Say("You have defeated the minions of Anguish and have exceeded my expectations, " .. e.other:GetName() .. ". You have proven yourself to be a powerful paladin and a savior of all of Norrath. These tokens are the embodiment of your virtues, " .. e.other:GetName() .. ". Take them and this scabbard and create your final sword. Place all of your tokens into this scabbard along with Redemption and forge the sword out of your own virtues. Today is a joyous day among paladins everywhere, for we have a new mentor lord protector among us.");
+		e.other:SummonItem(69957); --token
+		e.other:SummonItem(69958); --token
+		e.other:SummonItem(69959); --scabbard
+		e.other:AddEXP(100000);
+		eq.set_global("paladin_epic","10",5,"F");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

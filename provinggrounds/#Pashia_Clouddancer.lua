@@ -60,7 +60,7 @@ function event_timer(e)
 			eq.stop_follow();
 			eq.debug("stop follow: " .. event_starter:GetName());
 			e.self:MoveTo(e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading(),true);
-		elseif (e.self:CalculateDistance(event_starter:GetX(),event_starter:GetY(),event_starter:GetZ()) <=200 and arrived=false) then
+		elseif (e.self:CalculateDistance(event_starter:GetX(),event_starter:GetY(),event_starter:GetZ()) <=200 and arrived==false) then
 			following=true;
 			eq.follow(event_starter:GetID());
 			eq.debug("following: " .. event_starter:GetName());

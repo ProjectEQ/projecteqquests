@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Welcome back, young Shin. I hope your training is going well. I have made note of your progress as best I can, and you are truly following in the footsteps of Marr with every day that passes. As a paladin of Marr we must uphold His name and destroy those that wish to bring evil upon our people. Under Marr, I am able to offer you an additional path for training, should you truly desire to follow the path of a [Paladin].");
+    quest::say("Welcome back, young Shin. I hope your training is going well. I have made note of your progress as best I can, and you are truly following in the footsteps of Marr with every day that passes. As a paladin of Marr we must uphold His name and destroy those that wish to bring evil upon our people. Under Marr, I am able to offer you an additional path for training, should you truly desire to follow the path of a [" . quest::saylink("Paladin") . "].");
   }
   if ($text=~/paladin/i) {
     quest::say("Very good. Initiates of the Knighthood of Marr must pass a series of tests. If you are devout and loyal to our cause you will be rewarded with our [ceremonial armor].");
@@ -42,7 +42,15 @@ sub EVENT_SAY {
   }
   if ($text=~/final task/i) {
     quest::say("Not all of our brethren follow the ways of The Truthbringer. In fact, a once noble paladin of our cause has decided to betray us and side with the trolls. For what reason, I do not know. His name is Fipok Glubble. There have been numerous sightings of him in the swamp. He must be stopped before he can cause any harm to our people. If you can find him, bring me his head and I will reward you.");
-  }      
+  }
+  if ($client->GetGlobal("paladin_epic") ==9) {
+	if ($text=~/prayer bead/i) {
+	  quest::say("This gem that you're in search for, it [" . quest::saylink("will help") . "] cure this Kemik?");
+	}
+	elsif ($text=~/will help/i) {
+	  quest::say("Bring me a quiver of Marr and I will help your cause.");
+	}
+  }  
 }
 
 sub EVENT_ITEM {
@@ -56,6 +64,10 @@ sub EVENT_ITEM {
     quest::faction(202,5);
     quest::faction(136,5);
   }
+  if ($client->GetGlobal("paladin_epic")==9 && plugin::check_handin(\%itemcount, 17307 => 1)) {
+	quest::summonitem(69964);
+	quest::say("You are quite the noble Paladin $name. Take this gem and see if it fits into that set of prayer beads. If my memory is correct I believe you will find a similar gem on Odus. You should head that way to continue your journey. Be well $name.");
+  }  
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
   plugin::return_items(\%itemcount);
 }

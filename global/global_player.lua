@@ -152,6 +152,16 @@ function event_combine_success(e)
 		e.self:Ding();
 		e.self:Message(15,'You have gained 10 ability points!');
 		eq.set_global("ench_epic","10",5,"F");
+	--pal 2.0 final
+	elseif (e.recipe_id == 19925) then
+		e.self:Message(15,"As you combine all six tokens in the scabbard with Redemption, you feel a tugging at your soul. An energy flows through you as you feel the virtues of your inner self being tugged and tempered into the weapon. For a second you feel drained, but now that feeling has subsided. A final flash of light occurs and a new sword is tempered; Nightbane, Sword of the Valiant");
+		e.self:AddEXP(50000);
+		e.self:AddAAPoints(10);
+		e.self:Ding();
+		e.self:Message(15,'You have gained 10 ability points!');
+		eq.set_global("paladin_epic","11",5,"F");
+		eq.delete_global("paladin_epic_mmcc");
+		eq.delete_global("paladin_epic_hollowc");
 	end
 end
 

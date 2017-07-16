@@ -53,6 +53,7 @@ function event_timer(e)
 			following=false;
 			eq.stop_timer("check_dist");
 			eq.debug("arrived");
+			e.self:MoveTo(e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading(),true);
 		end
 		--dont let wise guys coh/bard to zone in
 		if (e.self:CalculateDistance(event_starter:GetX(),event_starter:GetY(),event_starter:GetZ()) >200) then		

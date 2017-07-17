@@ -1,5 +1,6 @@
-###AKKADIUS###
-###Usage plugin::commify(12302302); Would output value 12,302,302
+#::: Author: Akkadius
+#::: Description: Used to commify strings
+#::: Usage: plugin::commify(12302302); Would output value 12,302,302
 sub commify {
    local $_  = shift;
    s{(?<!\d|\.)(\d{4,})}

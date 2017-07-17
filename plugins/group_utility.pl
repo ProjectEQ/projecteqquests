@@ -1,6 +1,8 @@
-#takes a client variable ex: @members = plugin::GetGroupMembers($client)
-sub GetGroupMembers
-{
+#::: Author: Trevius
+#::: Description: Returns Group members or Raid members if present
+#::: Usage: takes a client variable ex: @members = plugin::GetGroupMembers($client)
+
+sub GetGroupMembers{
 	my $cl = shift;
 	my @group_array;
 	my $group = $cl->GetGroup();
@@ -22,8 +24,7 @@ sub GetGroupMembers
 	}
 	
 	$group = $cl->GetRaid();
-	if($group)
-	{
+	if($group){
 		my $gid = $group->GetGroup($cl->GetName());
 		print "group is $gid";
 		if($gid < 0 || $gid >= 12)
@@ -51,41 +52,42 @@ sub GetGroupMembers
 	return @group_array;
 }
 
-sub GetGroupID{ ###Used in conjuction with Instance plugin ###Akkadius
+#::: Author: Akkadius
+#::: Description: Used in conjuction with Instance plugin
+
+sub GetGroupID{ 
 	my $client = plugin::val('$client');
 	my $ClientGroup = $client->GetGroup();
-		if ($ClientGroup){
-		my $GroupID = $ClientGroup->GetID();
-		return $GroupID;
-		}
-		else{
-		$GroupID = undef;
-		}
+	if ($ClientGroup){ my $GroupID = $ClientGroup->GetID(); return $GroupID; }
+	else{ $GroupID = undef; }
 }
 
-sub CastGroupSpell
-{
+#::: Author: ?
+#::: Description: Used in conjuction with Instance plugin
+
+sub CastGroupSpell{
 	my $cl = shift;
 	my $caster = shift;
 	my $spell_id = shift;
 	
 	my $group = $cl->GetGroup();
-	if($group)
-	{
+	if($group){
 		$group->CastGroupSpell($caster, $spell_id);
 		return;
 	}
 	
 	$group = $cl->GetRaid();
-	if($group)
-	{
+	if($group){
 		$group->CastGroupSpell($caster, $spell_id);
 		return;
 	}	
 }
 
-sub MoveGroup
-{
+#::: Author: ?
+#::: Description: Moves group to destination
+#::: Usage: plugin::MoveGroup(zoneid, x, y, z, h)
+
+sub MoveGroup{
 	my $cl = shift;
 	my $zone_id = shift;
 	my $x_dest = shift;
@@ -103,8 +105,11 @@ sub MoveGroup
 	}
 }
 
-sub MoveGroupInstance
-{
+#::: Author: ?
+#::: Description: Moves group to destination instance
+#::: Usage: plugin::MoveGroupInstance(zoneid, instanceid, x, y, z, h)
+
+sub MoveGroupInstance{
 	my $cl = shift;
 	my $zone_id = shift;
 	my $instance_id = shift;
@@ -123,7 +128,7 @@ sub MoveGroupInstance
 	}
 }
 
-#Usage: plugin::CastOnGroup(SpellID, MaxDist=0, Client=$client);
+# Usage: plugin::CastOnGroup(SpellID, MaxDist=0, Client=$client);
 # This script will cast the spell on the client's group from an NPC (such as a buff bot).
 # SpellID - This is just the spell ID to be cast.
 # MaxDist - This is an optional field for setting the Max Distance for the spell to land on group members.
@@ -139,16 +144,14 @@ sub CastOnGroup {
 	my $Caster = $_[2];
 
 	#plugin::Debug("If the caster field was not set, use the client interacting with the NPC as the caster");
-	if (!$Caster)
-	{
+	if (!$Caster){
 		$Caster = $client;
 	}
 	
 	my $ClientGroup = $client->GetGroup();
 	
 	#plugin::Debug("If the client is grouped");
-	if ($ClientGroup)
-	{
+	if ($ClientGroup){
 		#plugin::Debug("Cycle through all 6 possible group members");
 		my $GCount = 0;
 		while ($GCount < 6)
@@ -211,17 +214,18 @@ sub CastOnGroup {
 
 }
 
-sub MessageGroup
-{
+#::: Author: Akkadius
+#::: Description: Messages group
+#::: Usage: plugin::MessageGroup(color, message)
+
+sub MessageGroup{
 	my $Color = $_[0];
 	my $Message = $_[1];
 	my $client = plugin::val('$client');
 	my @group_array = plugin::GetGroupMembers($client);
 	
-	foreach $ent (@group_array)
-	{
-		if($ent)
-		{
+	foreach $ent (@group_array) {
+		if($ent) {
 			$ent->Message($Color, $Message);
 		}
 	}

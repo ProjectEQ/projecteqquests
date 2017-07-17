@@ -1,8 +1,8 @@
-#Usage: plugin::RandomFeatures(Mob);
-# Chooses a random set of facial features for playable races (NPCs or Players)
+#::: Author: Trevius
+#::: Usage: plugin::RandomFeatures(Mob);
+#::: Description: Chooses a random set of facial features for playable races (NPCs or Players)
 
 sub RandomFeatures {
-
 	my $Mob = $_[0];
 
 	if ($Mob)
@@ -228,13 +228,12 @@ sub RandomFeatures {
 
 }
 
-
-#Usage: plugin::CloneAppearance(MobA, MobB, CloneName=false);
-# Clones the looks of a mob
-# MobA is the target mob to clone from
-# MonB is the mob that is changing to clone MobA
-# CloneName is an optional field that if set to 1 will clone the name of the target as well
-
+#::: Author: Trevius
+#::: Usage: plugin::CloneAppearance(MobA, MobB, CloneName=false)
+#::: Description: Clones the look of a target
+#:::	 MobA is the target mob to clone from
+#:::	 MonB is the mob that is changing to clone MobA
+#:::	 CloneName is an optional field that if set to 1 will clone the name of the target as well
 sub CloneAppearance {
 	my $MobA = $_[0];
 	my $MobB = $_[1];

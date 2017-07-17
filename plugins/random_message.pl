@@ -1,4 +1,8 @@
 ###Usage: plugin::RandomSay(chance(1-100), "message1","message2", etc..);
+
+#::: Author: Trevius
+#::: Description: Used for random quest::say messages
+#::: Usage: plugin::RandomSay(chance(1-100), "message1","message2", etc..);
 sub RandomSay {
 	my $chance = $_[0];
 	my $DoMessage = 0;
@@ -24,7 +28,9 @@ sub RandomSay {
 	}
 }
 
-###Usage: plugin::RandomEmote(chance(1-100), "message1","message2", etc..);
+#::: Author: Trevius
+#::: Description: Used for random quest::emote messages
+#::: Usage: plugin::RandomEmote(chance(1-100), "message1","message2", etc..);
 sub RandomEmote {
 	my $chance = $_[0];
 	my $DoMessage = 0;
@@ -50,7 +56,9 @@ sub RandomEmote {
 	}
 }
 
-###Usage: plugin::RandomGroupEmote(chance(1-100), "message1","message2", etc..);
+#::: Author: Trevius
+#::: Description: Used for random emote messages to group
+#::: Usage: plugin::RandomGroupEmote(chance(1-100), "message1","message2", etc..);
 sub RandomGroupEmote {
 	my $npc = plugin::val('$npc');
 	my $client = plugin::val('$client');

@@ -1,7 +1,5 @@
-###############################################################################################################################
-###plugin::SendToInstance("solo/guild/group/public", "Zone Short Name", Version, X, Y, Z, "Identifier", duration in seconds");
-###Akkadius###
-###############################################################################################################################
+#::: plugin::SendToInstance("solo/guild/group/public", "Zone Short Name", Version, X, Y, Z, "Identifier", duration in seconds");
+#::: Author: Akkadius
 
 sub SendToInstance{
 	my $InstanceType = $_[0];
@@ -21,37 +19,40 @@ sub SendToInstance{
 	my $accountname = $client->AccountName();
 	my $GETGROUP = plugin::GetGroupID();
 	my $space = "_";
-	my $ZoneSNTOID = plugin::ListZoneSNToID($ZoneSN);
 	%InstType = (
 		"solo" =>	"$name",
 		"guild" =>	"$uguild_id",
 		"group" =>	"$GETGROUP",
 		"public" =>	"pub",
-		);
+	);
 	my $TYPE = $InstType{$InstanceType};
-	###quest::say("DEBUG: InstanceType = $InstanceType Zone SN = $ZoneSN InstVer = $InstVersion InstDur = $InstanceDuration ZONEID = $ZoneSNTOID ");
-	if ($qglobals->{"$TYPE$space$InstanceName$space$ZoneSN"}) { ### IF THERE IS AN INSTANCE ASSIGNED!
-			my $InstID = $qglobals->{"$TYPE$space$InstanceName$space$ZoneSN"};
-			quest::AssignToInstance($InstID);
-			quest::MovePCInstance($ZoneSNTOID, $InstID, $GotoX, $GotoY, $GotoZ); 
-		}
-		else { ### IF THERE ISN'T AN INSTANCE ASSIGNED, ASSIGN IT!
-			my $InstID = quest::CreateInstance("$ZoneSN", $InstVersion, $InstanceDuration);
-			quest::AssignToInstance($InstID); 
-			$client->SetGlobal("$TYPE$space$InstanceName$space$ZoneSN", $InstID, 7, "S$InstanceDuration"); 
-			quest::write("InstanceLogs/$TYPE$space$InstanceName$space$ZoneSN.txt","[$timestamp] : $name has created instance $zoneln");
-			quest::MovePCInstance($ZoneSNTOID, $InstID, $GotoX, $GotoY, $GotoZ);
-		}	
-		
+	if($ZoneSN =~ /^[+-]?\d+$/) { #::: Check if it is an integer
+		$ZoneSNTOID = $ZoneSN;
+		$ZoneSN = ListZoneSNToID($ZoneSN);
+	}
+	else{ $ZoneSNTOID = ListZoneSNToID($ZoneSN); }
+	
+	if ($qglobals->{"$TYPE$space$InstanceName$space$ZoneSN"}) { #::: IF THERE IS AN INSTANCE ASSIGNED!
+		my $InstID = $qglobals->{"$TYPE$space$InstanceName$space$ZoneSN"};
+		quest::AssignToInstance($InstID);
+		quest::MovePCInstance($ZoneSNTOID, $InstID, $GotoX, $GotoY, $GotoZ); 
+	}
+	else { #::: IF THERE ISN'T AN INSTANCE ASSIGNED, ASSIGN IT!
+		my $InstID = quest::CreateInstance("$ZoneSN", $InstVersion, $InstanceDuration);
+		quest::AssignToInstance($InstID); 
+		$client->SetGlobal("$TYPE$space$InstanceName$space$ZoneSN", $InstID, 7, "S$InstanceDuration"); 
+		quest::write("InstanceLogs/$TYPE$space$InstanceName$space$ZoneSN.txt","[$timestamp] : $name has created instance $zoneln");
+		quest::MovePCInstance($ZoneSNTOID, $InstID, $GotoX, $GotoY, $GotoZ);
+	}	
 }
-###############################################################################################################################							
-###Plugin::ListZoneSNToID("Zone Short Name Here")
-###Converts the zone short name to ID in use for Akkadius's Instance plugin
-###############################################################################################################################
+
+#::: Plugin::ListZoneSNToID("Zone Short Name Here")
+#::: Converts the zone short name to ID in use for Akkadius's Instance plugin
+
 sub ListZoneSNToID{
-my $ZoneSN = $_[0];
-my $text = plugin::val('$text');
-		%ZoneList = (
+	my $ZoneSN = $_[0];
+	my $text = plugin::val('$text');
+	%ZoneList = (
 		"qeynos" => 1,
 		"qeynos2" => 2,
 		"qrg" => 3,
@@ -506,8 +507,17 @@ my $text = plugin::val('$text');
 		"arttest" => 996,
 		"fhalls" => 998,
 		"apprentice" => 999,
-		);
-		$ZoneList{$ZoneSN};
+	);
+	
+	if($_[0] =~ /^[+-]?\d+$/) {
+		while ( ($key, $value) = each %ZoneList ){
+			if($value == $_[0]){
+				return $key;
+			}
+		}
+	}
+	
+	return $ZoneList{$ZoneSN};
 }
 
 return 1;

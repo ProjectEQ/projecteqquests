@@ -1,8 +1,11 @@
+#::: Usage: plugin::DoAnim("salute"); or plugin::DoAnim("animationname");
+#::: Description: Will take in an easy to remember name or string and take care of the conversion to ID in the scripting process
+#::: Author: Akkadius
+
 sub DoAnim {
-	###Usage: plugin::DoAnim(salute);
 	my $client = plugin::val('$client');
 	my $text = $_[0];
-		%Animlist = (
+	%Animlist = (
 		"kick" => 1,
 		"pierce" => 2,
 		"2hslash" => 3,
@@ -66,21 +69,25 @@ sub DoAnim {
 		"shiver" => 68,
 		"tapfoot" => 69,
 		"bowto" => 70,
-		);
-			quest::doanim($Animlist{$text});
+	);
+	quest::doanim($Animlist{$text});
 }
 
-	sub SetAnim {
-		##Usage: plugin::SetAnim(sit);
-		my $npc = plugin::val('$npc');
-		my $SetAnimVal = $_[0];
-			%SetAnimList = (
-			"stand" => 0,
-			"sit" => 1,
-			"duck" => 2,
-			"dead" => 3,
-			"kneel" => 4,
-			);
-				$npc->SetAppearance($SetAnimList{$SetAnimVal}); 
-	}
+#::: Usage: plugin::SetAnim("animation") see below for SetAnim options (stand/sit/duck/dead/kneel)
+#::: Description: Will take in an easy to remember name or string and take care of the conversion to ID in the scripting process
+#::: Author: Akkadius
+
+sub SetAnim {
+	##Usage: plugin::SetAnim(sit);
+	my $npc = plugin::val('$npc');
+	my $SetAnimVal = $_[0];
+		%SetAnimList = (
+		"stand" => 0,
+		"sit" => 1,
+		"duck" => 2,
+		"dead" => 3,
+		"kneel" => 4,
+		);
+	$npc->SetAppearance($SetAnimList{$SetAnimVal}); 
+}
 return 1;

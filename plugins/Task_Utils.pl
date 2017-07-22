@@ -1,5 +1,12 @@
-###Akkadius###
-###AssignTask(UpdateType=[solo, group, raid], TaskID, [NPCID = 0] ($npc->GetID());
+#::: Author: Akkadius
+#::: These plugins are used to send solo, group or raid task updates/failures/assigns/etc
+#::: 
+#::: plugin::AssignTask(UpdateType=[solo, group, raid], TaskID, [NPCID = 0] ($npc->GetID());
+#::: plugin::FailTask(UpdateType=[solo, group, raid], TaskID);
+#::: plugin::UpdateTaskActivity(UpdateType=[solo, group, raid], TaskID, ActivityID, Count);
+#:::
+#::: For explanation of use, see: http://wiki.eqemulator.org/i?M=Wiki&Page=Perl_Plugins_Master_Reference
+
 sub AssignTask{
 	my $UT = $_[0];
 	my $TaskID = $_[1];
@@ -15,15 +22,11 @@ sub AssignTask{
 	
 	if($UT eq "group"){
 		my $group = $client->GetGroup();
-		if($group)
-		{
-			for($count = 0; $count < 6; $count++)
-			{
+		if($group) {
+			for($count = 0; $count < 6; $count++) {
 				my $cur = $group->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->AssignTask($TaskID, $NPCID);
 					}
 				}
@@ -33,30 +36,22 @@ sub AssignTask{
 	
 	if($UT eq "raid"){
 		my $raid = $client->GetRaid();
-		if($raid)
-		{
-			for($count = 0; $count < 72; $count++)
-			{
+		if($raid) {
+			for($count = 0; $count < 72; $count++) {
 				my $cur = $raid->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->AssignTask($TaskID, $NPCID);
 					}
 				}
 			}
 		}
 		my $group = $client->GetGroup();
-		if($group && !$raid)
-		{
-			for($count = 0; $count < 6; $count++)
-			{
+		if($group && !$raid) {
+			for($count = 0; $count < 6; $count++) {
 				my $cur = $group->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->AssignTask($TaskID, $NPCID);
 					}
 				}
@@ -65,7 +60,6 @@ sub AssignTask{
 	}
 }
 
-###FailTask(UpdateType=[solo, group, raid], TaskID);
 sub FailTask{
 	my $UT = $_[0];
 	my $TaskID = $_[1];
@@ -80,15 +74,11 @@ sub FailTask{
 	
 	if($UT eq "group"){
 		my $group = $client->GetGroup();
-		if($group)
-		{
-			for($count = 0; $count < 6; $count++)
-			{
+		if($group) {
+			for($count = 0; $count < 6; $count++) {
 				my $cur = $group->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->FailTask($TaskID);
 					}
 				}
@@ -98,30 +88,22 @@ sub FailTask{
 	
 	if($UT eq "raid"){
 		my $raid = $client->GetRaid();
-		if($raid)
-		{
-			for($count = 0; $count < 72; $count++)
-			{
+		if($raid) {
+			for($count = 0; $count < 72; $count++) {
 				my $cur = $raid->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->FailTask($TaskID);
 					}
 				}
 			}
 		}
 		my $group = $client->GetGroup();
-		if($group && !$raid)
-		{
-			for($count = 0; $count < 6; $count++)
-			{
+		if($group && !$raid) {
+			for($count = 0; $count < 6; $count++) {
 				my $cur = $group->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->AssignTask($TaskID, $NPCID);
 					}
 				}
@@ -130,7 +112,6 @@ sub FailTask{
 	}
 }
 
-###UpdateTaskActivity(UpdateType=[solo, group, raid], TaskID, ActivityID, Count);
 sub UpdateTaskActivity{
 	my $UT = $_[0];
 	my $TaskID = $_[1];
@@ -147,15 +128,11 @@ sub UpdateTaskActivity{
 	
 	if($UT eq "group"){
 		my $group = $client->GetGroup();
-		if($group)
-		{
-			for($count = 0; $count < 6; $count++)
-			{
+		if($group) {
+			for($count = 0; $count < 6; $count++) {
 				my $cur = $group->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur) {
+					if($cur->IsClient()) {
 						$cur->UpdateTaskActivity($TaskID, $ActivityID, $TCount);
 					}
 				}
@@ -165,30 +142,22 @@ sub UpdateTaskActivity{
 	
 	if($UT eq "raid"){
 		my $raid = $client->GetRaid();
-		if($raid)
-		{
-			for($count = 0; $count < 72; $count++)
-			{
+		if($raid) {
+			for($count = 0; $count < 72; $count++){
 				my $cur = $raid->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur){
+					if($cur->IsClient()){
 						$cur->UpdateTaskActivity($TaskID, $ActivityID, $TCount);
 					}
 				}
 			}
 		}
 		my $group = $client->GetGroup();
-		if($group && !$raid)
-		{
-			for($count = 0; $count < 6; $count++)
-			{
+		if($group && !$raid){
+			for($count = 0; $count < 6; $count++){
 				my $cur = $group->GetMember($count);
-				if($cur)
-				{
-					if($cur->IsClient())
-					{
+				if($cur){
+					if($cur->IsClient()){
 						$cur->AssignTask($TaskID, $NPCID);
 					}
 				}

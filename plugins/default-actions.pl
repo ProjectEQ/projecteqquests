@@ -2,8 +2,7 @@
 #
 # Default actions to perform if the user performs particular actions on an NPC.
 
-sub defaultSay
-{
+sub defaultSay{
   my $handled = plugin::nullzero(shift);
   my $name = plugin::assocName();
   my $text = plugin::val('$text');
@@ -154,7 +153,15 @@ sub defaultCombat()
       {
       }
     }
+   }
   }
-}
   
-return 1;
+  return;
+
+  # Sample code to work from
+  my $random_result = int(rand(100));
+    if(($combat_state == 1) &&($random_result<=50)){
+    quest::say("Death!!  Death to all who oppose the Crushbone orcs!!");
+   }else{
+   quest::say("You've ruined your lands. You'll not ruin mine!");
+ }

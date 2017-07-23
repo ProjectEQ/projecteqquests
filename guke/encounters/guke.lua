@@ -11,9 +11,11 @@
 local event_started=false;
 local exec_position=1;
 local exec_chest=false;
-local num_wisp=0;
 
+local mwp10=false;
 local mwp20=false;
+local mwp27=false;
+local mwp33=false;
 local mwp36=false;
 local gwp33=false;
 local gwp35=false;
@@ -27,21 +29,29 @@ function Granos_Spawn(e)
 end
 
 function Mainil_Say(e)
-	if(e.message:findi("hail") and event_started==false) then
-		e.self:Say("Greetings friend, thank you for making such haste to get here. The situation is worse than we feared. Not only is the First Witness attempting to complete his spell, he has minions that he is sending to the outside. He is hoping that by assaulting Gukta he will distract us. My friend here will help you guard the exit, please ensure that nothing happens to him. I'll be talking half of you with me, so we can assess the situation. As soon as I have a better idea of what is going on, I will pass on more instructions to you. When you are [" .. eq.say_link("ready",false,"ready") .. "] please let me know, and we shall be off.");
+	if(e.message:findi("hail")) then
+		if event_started==false then
+			e.self:Say("Greetings friend, thank you for making such haste to get here. The situation is worse than we feared. Not only is the First Witness attempting to complete his spell, he has minions that he is sending to the outside. He is hoping that by assaulting Gukta he will distract us. My friend here will help you guard the exit, please ensure that nothing happens to him. I'll be talking half of you with me, so we can assess the situation. As soon as I have a better idea of what is going on, I will pass on more instructions to you. When you are [" .. eq.say_link("ready",false,"ready") .. "] please let me know, and we shall be off.");
+		else
+			e.self:Say("If you need me to [" .. eq.say_link("wait",false,"wait") .. "] then let me know");
+		end
 	elseif(e.message:findi("ready") and event_started==false) then
 		event_started=true;
-		e.self:Say("Ok, half of you please accompany me while we scout ahead. Granos, I will let you know when I know more.");
-		eq.set_timer("adds_on_granos",60*1000); --60
-		eq.set_timer("adds_emote",60*1000); --60
-		eq.set_timer("granos_move",290*1000); --290		
+		e.self:Say("Ok, half of you please accompany me while we scout ahead. Granos, I will let you know when I know more.");			
 		eq.stop_timer("pause_wander");
+	elseif(e.message:findi("wait") and event_started==true) then
+		e.self:PauseWandering(30);
+		e.self:Say("Very well, we can wait here a moment.");
 	end
 end
 
 function Granos_Say(e)
-	if(e.message:findi("hail") and event_started==false) then
-		e.self:Say("Greetings, it is good that you came to assist us. We cannot allow the First Witness of Hate to complete his spell. Half of you are going to have to go ahead with my companion, while the other half are going to need to wait here with me. We suspect that the First Witness will attempt to send a force here as a diversion. We will be able to catch up with them soon");
+	if(e.message:findi("hail")) then
+		if event_started==false then
+			e.self:Say("Greetings, it is good that you came to assist us. We cannot allow the First Witness of Hate to complete his spell. Half of you are going to have to go ahead with my companion, while the other half are going to need to wait here with me. We suspect that the First Witness will attempt to send a force here as a diversion. We will be able to catch up with them soon");
+		else
+			e.self:Say("'Now is not the time to talk, there is fighting to be done!'");
+		end
 	end
 end
 
@@ -53,6 +63,8 @@ end
 
 function Granos_Signal(e)
 	if e.signal==1 then
+		e.self:Say("It appears as though the assault is starting.  Prepare yourselves.");
+	elseif e.signal==2 then
 		eq.stop_timer("pause_wander");
 	end
 end
@@ -60,34 +72,53 @@ end
 function Mainil_Timer(e)
 	if e.timer=="adds_on_granos" then
 		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,64):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);
-		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,56):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);
-	elseif e.timer=="adds_emote" then
-		eq.stop_timer("adds_emote");
-		e.self:Say("It sounds as though the assault has begun. I hope that Granos and your companions can hold the entrance.' He then studies the ground, 'It appears as though we are on the right track. We are making excellent time so far.");
-	elseif e.timer=="granos_move" then
-		eq.stop_timer("adds_on_granos");
-		eq.signal(249001,1)
+		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,56):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);				
 	elseif e.timer=="pause_wander" then
 		e.self:PauseWandering(3);
+	elseif e.timer=="finish_note" then
+		e.self:Emote("finishes scrawling his note, and leans over to listen to the ground. 'It sounds as though the assault on your companions has ended, Grannos should be moving in this direction soon.  We'll be off in just a moment.  I am curious as to what lies ahead.'");
+		eq.stop_timer("finish_note");
+		eq.signal(249001,2)
 	end
 end
 
 function Mainil_Waypoint_Arrive(e)
 	eq.debug("mainil wp: " .. e.wp);
-	if (e.wp == 20) then
+	if (e.wp == 10) then
+		if mwp10 ==false then
+			mwp10=true;
+			e.self:Say("It sounds as though the assault has begun. I hope that Granos and your companions can hold the entrance.' He then studies the ground, 'It appears as though we are on the right track. We are making excellent time so far.");
+			eq.set_timer("adds_on_granos",60*1000); --60
+			eq.signal(249001,1)
+		end
+	elseif (e.wp == 20) then
 		if mwp20 ==false then 
+			mwp20=true;
 			eq.debug("at wp 20- emote");
 			e.self:Say("Hmm, this is very unusual. There seems to be a second path leading off to the North. It appears as though someone may be assisting the first witness. I will need to follow this second set of prints to investigate further.' He then scratches a note into the boulder before him with instructions for his partner.");	
-			eq.zone_emote(1,"The scout appears to no longer need your protection. ");
-			e.self:PauseWandering(15);
-			mwp20=true;
+			eq.zone_emote(1,"The scout appears to no longer need your protection.");
+			e.self:ModifyNPCStat("hp_regen", "4000");
+			e.self:ModifyNPCStat("ac", "1000");
+			e.self:PauseWandering(30);			
+			eq.set_timer("finish_note",25*1000);
+			eq.stop_timer("adds_on_granos");
 		end
+	elseif (e.wp == 27) then
+		if mwp27 ==false then 
+			mwp27=true;
+			e.self:Emote("glances casually at the tainted water as he wades effortlessly through the murky liquid.  The torchlight illuminates the dark pool, giving it a forbidding green glow.");
+		end
+	elseif (e.wp == 33) then
+		if mwp33 ==false then 
+			mwp33=true;
+			eq.zone_emote(1,"The smell of death is carried heavy on a wind from the South.  An unnatural chill sets the hairs on the back of your neck on end.  Scout Mainlil looks uncomfortable for a moment, 'As much as it pains me, we must head South.  Something tells me there is more than we expected at work.'");
+		end		
 	elseif (e.wp == 36) then --executioner
 		if mwp36==false then 
+			mwp36=true;
 			eq.debug("at wp 36- spawn exec");
 			e.self:Say("This is worse than I feared.  The Executioner is feeding those souls to the Cauldron to assist the First Witness.  I fear that your friends may have more to deal with than just those that are assisting with his spell.  It appears the Executioner is protected by the same magic that guards the First Witness of Hate.  All we will be able to do is stem the flow of Souls from this place, aside from that, your friends will be on their own.");
 			eq.spawn2(249078,0,0,512.5,521.6,-107.87,128); --Executioner_Gimdk
-			mwp36=true;
 			e.self:MoveTo(508.73,433.41,-107.87,0,true);
 			e.self:PauseWandering(86400);
 			e.self:StopWandering();
@@ -98,20 +129,26 @@ end;
 
 function Granos_Waypoint_Arrive(e)
 	eq.debug("gran wp: " .. e.wp);
-	if (e.wp==33) then
+	if (e.wp==21) then
+		if gwp21==false then
+			gwp21=true;
+			e.self:PauseWandering(5);
+			e.self:Emote("reads the note scratched into the rock.  'Mainil left us instructions to head East, he is going to explore what lies North.  He believes we should find the First Witness in that direction.  Let us not dally, he is getting stronger as we speak!");			
+		end
+	elseif (e.wp==30) then
 		if gwp33==false then
+			gwp33=true;
 			eq.debug("at wp 33- spawn dudes");
 			eq.spawn2(249083,0,0,154.03,681.46,-17.09,128); --First Witness 154.03,681.46,-17.09
 			eq.spawn2(249077,0,0,153.7,663.2,-38.87,128); --Energy
 			eq.spawn2(249079,0,0,192.32,729,-23.87,64); --Matter
-			eq.spawn2(249082,0,0,117.15,729,-23.87,192); --Spirit
-			gwp33=true;
+			eq.spawn2(249082,0,0,117.15,729,-23.87,192); --Spirit		
 		end
 	elseif (e.wp == 35) then
 		if gwp35==false then
-			eq.debug("at wp 35- emote");
-			e.self:Say("There are the foci. They must be destroyed before he completes his spell, or his power will increase tenfold.");
 			gwp35=true;
+			eq.debug("at wp 35- emote");
+			e.self:Say("There are the foci. They must be destroyed before he completes his spell, or his power will increase tenfold.");			
 			e.self:MoveTo(e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading(),true);
 			e.self:PauseWandering(86400);
 			e.self:StopWandering();
@@ -206,7 +243,7 @@ end
 
 function Executioner_Death(e)
 	local el=eq.get_entity_list();
-	if (num_wisp <=5 and el:IsMobSpawnedByNpcTypeID(249000) == true and el:IsMobSpawnedByNpcTypeID(249001) == true) then
+	if (el:IsMobSpawnedByNpcTypeID(249000) == true and el:IsMobSpawnedByNpcTypeID(249001) == true) then
 		exec_chest=true;
 		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 	end
@@ -218,7 +255,6 @@ end
 
 function Risen_Timer(e)
 	if e.timer=="depop" then
-		num_wisp=num_wisp+1;
 		eq.spawn2(249128,58,0,508.73,433.41,-107.87,0);
 		eq.zone_emote(3,"The Risen before the Executioner explodes, leaving a small bit of dancing energy where it once stood.");
 		eq.depop();
@@ -233,7 +269,7 @@ function Wisp_Waypoint_Arrive(e)
 	if (e.wp == 35) then
 		eq.depop();
 		eq.zone_emote(15,"The flames roar with angry heat as the Cauldron consumes the soul.");
-		eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),128);
+		eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,153.2,673.4,-38.87,128);
 	end
 end
 
@@ -310,6 +346,15 @@ function First_Death(e)
 		end
 		eq.spawn2(249075,0,0,138.56,681.64,-16.87,64); --#Chest_of_the_Foci (249075)
 		eq.spawn2(249076,0,0,153.5,660.5,-38.87,128); --#The_Slimy_Chest_of_the_Witness (249076)
+		
+		local instance_requests = require("instance_requests");
+		local lockout_name = 'LDON_guke';
+		local instance_id = eq.get_zone_instance_id();
+		local raid_list = eq.get_characters_in_instance(instance_id);
+
+		for k,v in pairs(raid_list) do
+			eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0, v, 0);
+		end
 	end
 end
 

@@ -22,6 +22,7 @@ local gwp35=false;
 function Mainil_Spawn(e)
 	e.self:PauseWandering(3);
 	eq.set_timer("pause_wander",1000);
+	eq.set_timer("auto_start", 1000);
 end
 function Granos_Spawn(e)
 	e.self:PauseWandering(3);
@@ -78,7 +79,19 @@ function Mainil_Timer(e)
 	elseif e.timer=="finish_note" then
 		e.self:Emote("finishes scrawling his note, and leans over to listen to the ground. 'It sounds as though the assault on your companions has ended, Grannos should be moving in this direction soon.  We'll be off in just a moment.  I am curious as to what lies ahead.'");
 		eq.stop_timer("finish_note");
-		eq.signal(249001,2)
+		eq.signal(249001,2);
+	elseif e.timer=="auto_start" then
+		local now_clients = eq.get_entity_list():GetClientList();
+		for client in now_clients.entries do
+			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) >150) then	
+				eq.debug("player > 150 dist, starting event");
+				event_started=true;
+				e.self:Say("Ok, half of you please accompany me while we scout ahead. Granos, I will let you know when I know more.");			
+				eq.stop_timer("pause_wander");
+				eq.stop_timer("auto_start");
+				break;				
+			end
+		end		
 	end
 end
 

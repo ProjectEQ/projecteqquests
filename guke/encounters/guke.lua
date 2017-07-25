@@ -279,10 +279,10 @@ end
 
 function Wisp_Waypoint_Arrive(e)
 	eq.debug("wisp wp: " .. e.wp);
-	if (e.wp == 35) then
-		eq.depop();
+	if (e.wp == 35) then		
 		eq.zone_emote(15,"The flames roar with angry heat as the Cauldron consumes the soul.");
-		eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,153.2,673.4,-38.87,128);
+		eq.spawn2(eq.ChooseRandom(249011,249061,249053,249056,249070,249142),0,0,153.2,673.4,-38.87,128);
+		eq.depop();
 	end
 end
 

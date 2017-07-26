@@ -15,7 +15,7 @@ sub EVENT_ITEM {
         
         quest::say("Wonderful! This Is precisely what I am seeking. May my magic heal your mind and body.");
 
-        $npc->CastSpell($greater_rejuv_spell_id, e.self:GetID());
+        $npc->CastSpell($greater_rejuv_spell_id, 48030);
     }
 }
 
@@ -23,7 +23,7 @@ sub EVENT_SIGNAL {
     # signal 1 = RoF Won 
     if ($signal == 1) {
         quest::say("My rescuers, you have recovered the runes I need and my magic has been depleted. I shall take my leave now. May your forces stand against the corruption of the temple.");
-        quest:depopall(e.self:GetID());
+        quest:depopall(48030);
     }
 }
 

@@ -62,7 +62,7 @@ sub EVENT_TIMER {
         quest::shout("Lord Cazic, grant me the power to instill fear in our enemies!");
         
         quest::spawn2($avatar_of_dread_id, 0,0, 625, 1090, -94, 90);
-        $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+        $npc->CastSpell($avatar_of_fear_spell_id, 48238);
 
         SPAWN_RANDOM_WAVE();
         quest::settimer(6, 100);
@@ -95,7 +95,7 @@ sub EVENT_TIMER {
         quest::shout("Lord Cazic, empower me with the might to destroy the unbelievers!");
         
         quest::spawn2($avatar_of_fright_id, 0,0, 587, 1128, 94, 180);
-        $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+        $npc->CastSpell($avatar_of_fear_spell_id, 48238);
         
         SPAWN_RANDOM_WAVE();
         quest::settimer(11, 100);
@@ -128,7 +128,7 @@ sub EVENT_TIMER {
         quest::shout("Lord Cazic,  may your temple run red with the blood of the infidels!");
         
         quest::spawn2($avatar_of_terror_id, 0,0, 550, 1090, 94, 270);
-        $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+        $npc->CastSpell($avatar_of_fear_spell_id, 48238);
         
         SPAWN_RANDOM_WAVE();
         quest::settimer(16, 100);

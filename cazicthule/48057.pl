@@ -43,7 +43,7 @@ sub EVENT_TIMER {
         quest::ze(1, "The walls of the temple begin to crack as the ground beneath your feet shakes violently.");
 
         # signal Justicars
-        quest::signalWith($a_tae_ew_justicar_id, 1, 0);
+        quest::signalwith($a_tae_ew_justicar_id, 1, 0);
 
 
         # spawn the 2nd version of Tahia Felwah

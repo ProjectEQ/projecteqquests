@@ -8,7 +8,7 @@ my $avatar_of_fear_id = 48238;
 sub EVENT_SPAWN {
     quest::emote("glows, and then dissipates");
 
-    $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+    $npc->CastSpell($avatar_of_fear_spell_id, 48253);
 
     quest::ze(1, "You struggle with the desire to flee in terror!");
 

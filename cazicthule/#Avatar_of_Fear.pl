@@ -158,21 +158,21 @@ sub EVENT_TIMER {
     elsif ($timer == 20) {
         quest::stoptimer(20);
         # Wave 20 `Avatar of Dread` comes to life
-        quest::signalWith($avatar_of_dread_id, 1, 0);
+        quest::signalwith($avatar_of_dread_id, 1, 0);
         SPAWN_RANDOM_WAVE();
         quest::settimer(21, 100);
     }
     elsif ($timer == 21) {
         quest::stoptimer(21);
         # Wave 20 `Avatar of Fright` comes to life
-        quest::signalWith($avatar_of_fright_id, 1, 0);
+        quest::signalwith($avatar_of_fright_id, 1, 0);
         SPAWN_RANDOM_WAVE();
         quest::settimer(22, 100);
     }
     elsif ($timer == 22) {
         quest::stoptimer(22);
         # Wave 20 `Avatar of Terror` comes to life
-        quest::signalWith($avatar_of_terror_id, 1, 0);
+        quest::signalwith($avatar_of_terror_id, 1, 0);
         SPAWN_RANDOM_WAVE();
         quest::settimer(23, 100);
     }
@@ -251,6 +251,6 @@ sub SPAWN_RANDOM_WAVE {
 
 sub EVENT_DEATH {
     # signal victory
-    quest::signalWith($tahia_felwah_id_2, 1, 0);
+    quest::signalwith($tahia_felwah_id_2, 1, 0);
     quest::depopall($unstable_rift_id);
 }

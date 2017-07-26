@@ -19,8 +19,6 @@ my $avatar_of_fear_spell_id = 2128;
 # npcId = 48238
 sub EVENT_SPAWN {
     
-    quest::pause(1);
-    quest::pathto(593, 1023, -94);
     quest::shout("Minions of fear hear me now! The temple of the great Cazic Thule has been defiled. I summon you to assist me in its cleansing!");
 
     # TODO now the Avatar of Fear does a grid around the room

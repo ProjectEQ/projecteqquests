@@ -46,7 +46,7 @@ sub EVENT_DEATH {
     quest::say("Oh facelesss one, I have fallen! Pleasse avenge the death of your faithful ssservant!");
 
     # Send signal to Tahia Felwah to Wake up and start event
-    quest::signalwith($tahia_felwah_id, 1, 5);
+    quest::signalwith($tahia_felwah_1_id, 1, 5);
 }
 
 

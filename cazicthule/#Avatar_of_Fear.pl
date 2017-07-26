@@ -177,9 +177,9 @@ sub EVENT_TIMER {
     elsif ($timer == 23) {
         quest::stoptimer(23);
         # Wave 20 `Avatar of Fear` comes to life
-        e.self.SetSpecialAbility(24, 0);
-        e.self.SetSpecialAbility(25, 0);
-        e.self.SetSpecialAbility(35, 0);
+            $npc->SetSpecialAbility(24,0);
+            $npc->SetSpecialAbility(25,0);
+            $npc->SetSpecialAbility(35,0);
     }
 }
 

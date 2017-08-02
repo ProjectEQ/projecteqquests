@@ -7,7 +7,7 @@ my $rune_of_faceless_id = 8234;
 # npcId = 48030
 sub EVENT_SPAWN {
     # Spawns and then sits
-    $npc->SetAppearance(1);
+    plugin::SetAnim(dead);
 }
 
 sub EVENT_ITEM {

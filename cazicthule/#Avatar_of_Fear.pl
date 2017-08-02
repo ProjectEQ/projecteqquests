@@ -94,7 +94,7 @@ sub EVENT_TIMER {
         quest::pause(5);
         quest::shout("Lord Cazic, empower me with the might to destroy the unbelievers!");
         
-        quest::spawn2($avatar_of_fright_id, 0,0, 587, 1128, 94, 180);
+        quest::spawn2($avatar_of_fright_id, 0,0, 587, 1128, -94, 180);
         $npc->CastSpell($avatar_of_fear_spell_id, 48238);
         
         SPAWN_RANDOM_WAVE();
@@ -127,7 +127,7 @@ sub EVENT_TIMER {
         quest::pause(5);
         quest::shout("Lord Cazic,  may your temple run red with the blood of the infidels!");
         
-        quest::spawn2($avatar_of_terror_id, 0,0, 550, 1090, 94, 270);
+        quest::spawn2($avatar_of_terror_id, 0,0, 550, 1090, -94, 270);
         $npc->CastSpell($avatar_of_fear_spell_id, 48238);
         
         SPAWN_RANDOM_WAVE();
@@ -177,9 +177,9 @@ sub EVENT_TIMER {
     elsif ($timer == 23) {
         quest::stoptimer(23);
         # Wave 20 `Avatar of Fear` comes to life
-        e.self.SetSpecialAbility(24, 0);
-        e.self.SetSpecialAbility(25, 0);
-        e.self.SetSpecialAbility(35, 0);
+            $npc->SetSpecialAbility(24,0);
+            $npc->SetSpecialAbility(25,0);
+            $npc->SetSpecialAbility(35,0);
     }
 }
 

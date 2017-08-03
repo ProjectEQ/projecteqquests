@@ -29,6 +29,6 @@ sub EVENT_TIMER {
     if ($timer == 1) {
         quest::stoptimer(1);
 
-        quest:depopall(48029);
+        quest::depopall(48029);
     }
 }

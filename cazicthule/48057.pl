@@ -1,4 +1,5 @@
 # RoF Event
+my $unstable_rift_id = 48253;
 
 my $a_tae_ew_justicar_id = 48029;
 
@@ -6,7 +7,7 @@ my $tahia_felwah_2_id = 48030;
 
 # npcId = 48057
 sub EVENT_SPAWN {
-    $npc->SetAppearance(3);
+    quest::spawn2($unstable_rift_id, 0,0, 587, 1090, -98, 180);
 }
 
 sub EVENT_SIGNAL {

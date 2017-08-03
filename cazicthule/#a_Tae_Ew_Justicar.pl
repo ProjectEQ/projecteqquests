@@ -27,10 +27,6 @@ sub EVENT_TIMER {
 
     # timer 1 = waiting for Justicars to finish casting
     if ($timer == 1) {
-        
-
-        # spawn unstable rift
-        quest::spawn2($unstable_rift_id, 0,0, 587, 1090, -98, 180);
         quest::stoptimer(1);
 
         quest:depopall(48029);

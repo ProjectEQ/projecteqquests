@@ -27,10 +27,10 @@ my $avatar_of_fear_id = 48238;
 sub EVENT_SPAWN {
     CLEANUP_OLD_EVENT();
 
-    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 587, 1055, -94, 360);
-    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 550, 1090, -94, 270);
-    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 587, 1128, -94, 180);
-    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 625, 1090, -94, 90);
+    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 587, 1055, -94, 0);
+    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 550, 1090, -94, 65);
+    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 587, 1128, -94, 127);
+    quest::spawn2($a_tae_ew_justicar_id, 0, 0, 625, 1090, -94, 194);
     quest::spawn2($tahia_felwah_1_id, 0, 0, 590, 1070, -94, 90);
 }
 

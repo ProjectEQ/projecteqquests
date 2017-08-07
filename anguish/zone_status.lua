@@ -101,8 +101,8 @@ function Check_lorb(lockout_name)
 		if (bit.band(current_bit,1)==1 and bit.band(current_bit,2)==2) then
 			spawn_orb=true
 		--if only keldovan or jelvan are dead, 50% chance to spawn orb
-		elseif (math.random(1,2)==1) then
-			spawn_orb=true
+		--elseif (math.random(1,2)==1) then
+		--	spawn_orb=true
 		end
 		
 		if(spawn_orb==true) then
@@ -133,8 +133,8 @@ function Check_uorb(lockout_name)
 		if (bit.band(current_bit,4)==4 and bit.band(current_bit,8)==8) then
 			spawn_orb=true
 		--if only ture or hanvar are dead, 50% chance to spawn orb
-		elseif (math.random(1,2)==1) then
-			spawn_orb=true
+		--elseif (math.random(1,2)==1) then
+		--	spawn_orb=true
 		end
 		
 		if(spawn_orb==true) then

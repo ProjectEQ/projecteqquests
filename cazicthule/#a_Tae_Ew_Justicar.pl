@@ -12,11 +12,13 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
     # signal 1 = emote and blow up lizards
     if ($signal == 1) {
+        quest::settimer(1, 15);
+    
         quest::emote("looks paniced as planar forces shoot through it's body.");
 
-        $npc->CastSpell($tragedy_at_cazic_thule_spell_id, e.self:GetID());
+        $npc->CastSpell($tragedy_at_cazic_thule_spell_id, 48029);
 
-        quest::settimer(1, 15);
+        
 
     }
 }
@@ -27,9 +29,6 @@ sub EVENT_TIMER {
     if ($timer == 1) {
         quest::stoptimer(1);
 
-        # spawn unstable rift
-        quest::spawn2($unstable_rift_id, 0,0, 587, 1090, -98, 180);
-
-        quest:depopall(e.self:GetID());
+        quest::depopall(48029);
     }
 }

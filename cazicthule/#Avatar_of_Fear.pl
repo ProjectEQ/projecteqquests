@@ -19,8 +19,6 @@ my $avatar_of_fear_spell_id = 2128;
 # npcId = 48238
 sub EVENT_SPAWN {
     
-    quest::pause(1);
-    quest::pathto(593, 1023, -94);
     quest::shout("Minions of fear hear me now! The temple of the great Cazic Thule has been defiled. I summon you to assist me in its cleansing!");
 
     # TODO now the Avatar of Fear does a grid around the room
@@ -64,7 +62,7 @@ sub EVENT_TIMER {
         quest::shout("Lord Cazic, grant me the power to instill fear in our enemies!");
         
         quest::spawn2($avatar_of_dread_id, 0,0, 625, 1090, -94, 90);
-        $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+        $npc->CastSpell($avatar_of_fear_spell_id, 48238);
 
         SPAWN_RANDOM_WAVE();
         quest::settimer(6, 100);
@@ -96,8 +94,8 @@ sub EVENT_TIMER {
         quest::pause(5);
         quest::shout("Lord Cazic, empower me with the might to destroy the unbelievers!");
         
-        quest::spawn2($avatar_of_fright_id, 0,0, 587, 1128, 94, 180);
-        $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+        quest::spawn2($avatar_of_fright_id, 0,0, 587, 1128, -94, 180);
+        $npc->CastSpell($avatar_of_fear_spell_id, 48238);
         
         SPAWN_RANDOM_WAVE();
         quest::settimer(11, 100);
@@ -129,8 +127,8 @@ sub EVENT_TIMER {
         quest::pause(5);
         quest::shout("Lord Cazic,  may your temple run red with the blood of the infidels!");
         
-        quest::spawn2($avatar_of_terror_id, 0,0, 550, 1090, 94, 270);
-        $npc->CastSpell($avatar_of_fear_spell_id, e.self:GetID());
+        quest::spawn2($avatar_of_terror_id, 0,0, 550, 1090, -94, 270);
+        $npc->CastSpell($avatar_of_fear_spell_id, 48238);
         
         SPAWN_RANDOM_WAVE();
         quest::settimer(16, 100);
@@ -158,30 +156,30 @@ sub EVENT_TIMER {
     elsif ($timer == 20) {
         quest::stoptimer(20);
         # Wave 20 `Avatar of Dread` comes to life
-        quest::signalWith($avatar_of_dread_id, 1, 0);
+        quest::signalwith($avatar_of_dread_id, 1, 0);
         SPAWN_RANDOM_WAVE();
         quest::settimer(21, 100);
     }
     elsif ($timer == 21) {
         quest::stoptimer(21);
         # Wave 20 `Avatar of Fright` comes to life
-        quest::signalWith($avatar_of_fright_id, 1, 0);
+        quest::signalwith($avatar_of_fright_id, 1, 0);
         SPAWN_RANDOM_WAVE();
         quest::settimer(22, 100);
     }
     elsif ($timer == 22) {
         quest::stoptimer(22);
         # Wave 20 `Avatar of Terror` comes to life
-        quest::signalWith($avatar_of_terror_id, 1, 0);
+        quest::signalwith($avatar_of_terror_id, 1, 0);
         SPAWN_RANDOM_WAVE();
         quest::settimer(23, 100);
     }
     elsif ($timer == 23) {
         quest::stoptimer(23);
         # Wave 20 `Avatar of Fear` comes to life
-        e.self.SetSpecialAbility(24, 0);
-        e.self.SetSpecialAbility(25, 0);
-        e.self.SetSpecialAbility(35, 0);
+            $npc->SetSpecialAbility(24,0);
+            $npc->SetSpecialAbility(25,0);
+            $npc->SetSpecialAbility(35,0);
     }
 }
 
@@ -251,6 +249,6 @@ sub SPAWN_RANDOM_WAVE {
 
 sub EVENT_DEATH {
     # signal victory
-    quest::signalWith($tahia_felwah_id_2, 1, 0);
+    quest::signalwith($tahia_felwah_id_2, 1, 0);
     quest::depopall($unstable_rift_id);
 }

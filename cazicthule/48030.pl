@@ -1,13 +1,14 @@
 # RoF Event
 
+my $unstable_rift_id = 48253;
+
 my $greater_rejuv_spell_id = 2093;
 
 my $rune_of_faceless_id = 8234;
 
 # npcId = 48030
 sub EVENT_SPAWN {
-    # Spawns and then sits
-    $npc->SetAppearance(1);
+    quest::settimer(1, 12);
 }
 
 sub EVENT_ITEM {
@@ -15,7 +16,7 @@ sub EVENT_ITEM {
         
         quest::say("Wonderful! This Is precisely what I am seeking. May my magic heal your mind and body.");
 
-        $npc->CastSpell($greater_rejuv_spell_id, e.self:GetID());
+        $npc->CastSpell($greater_rejuv_spell_id, 48030);
     }
 }
 
@@ -23,8 +24,15 @@ sub EVENT_SIGNAL {
     # signal 1 = RoF Won 
     if ($signal == 1) {
         quest::say("My rescuers, you have recovered the runes I need and my magic has been depleted. I shall take my leave now. May your forces stand against the corruption of the temple.");
-        quest:depopall(e.self:GetID());
+        quest::depopall(48030);
     }
 }
 
+sub EVENT_TIMER {
+    if ($timer == 1) {
+        quest::spawn2($unstable_rift_id, 0,0, 587, 1090, -98, 180);
+        quest::stoptimer(1);
+        plugin::SetAnim(sit);
+    }
+}
 

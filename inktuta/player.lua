@@ -1,6 +1,7 @@
 function event_click_door(e)
 	local door_id = e.door:GetDoorID();
 	local entity_list = eq.get_entity_list();
+	instance_id = eq.get_zone_instance_id();
 	-- if the door to the stonemites is clicked aggro the monoliths guarding it. 
 	if (door_id == 41) then
 		-- get all the npcs 
@@ -16,11 +17,27 @@ function event_click_door(e)
 				end
 			end
 		end
-	elseif (door_id == 42 and entity_list:FindDoor(42):GetLockPick() == 0) then
-		-- open door 43 also
-		entity_list:FindDoor(43):ForceOpen(e.self);
-	elseif (door_id == 43 and entity_list:FindDoor(43):GetLockPick() == 0) then
+	elseif (door_id == 42) then
+		-- open door 43 also		
+		if (entity_list:FindDoor(42):GetLockPick() == 0) then
+			entity_list:FindDoor(43):ForceOpen(e.self);
+			eq.signal(296075,5);
+			e.self:Message(1,"You heave at the stone doors with all your might!  They shudder and give way.");		
+		else
+			e.self:Message(1,"You heave at the stone doors with all your might but they do not budge.");
+			e.self:Message(13,"The stone is scalding hot!");		
+			e.self:CastSpell(2315,e.self:GetID()); --searing heat 2315
+		end
+	elseif (door_id == 43) then
 		-- open door 42 also
-		entity_list:FindDoor(42):ForceOpen(e.self);
+		if (entity_list:FindDoor(43):GetLockPick() == 0) then
+			entity_list:FindDoor(42):ForceOpen(e.self);
+			eq.signal(296075,5);
+			e.self:Message(1,"You heave at the stone doors with all your might!  They shudder and give way.");		
+		else
+			e.self:Message(1,"You heave at the stone doors with all your might but they do not budge.");
+			e.self:Message(13,"The stone is scalding hot!");		
+			e.self:CastSpell(2315,e.self:GetID()); --searing heat 2315
+		end
 	end
 end

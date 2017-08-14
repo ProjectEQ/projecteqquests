@@ -30,7 +30,10 @@ sub EVENT_SIGNAL {
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::spawn2(214111,188,0,996,580,133.1,192.5);
                     quest::spawn2(214108,187,0,996,-559,133.1,192.5);
-
+					$entity_list->FindDoor(14)->SetLockPick(0);
+					$entity_list->FindDoor(15)->SetLockPick(0);
+					$entity_list->FindDoor(16)->SetLockPick(0);
+					$entity_list->FindDoor(17)->SetLockPick(0);
                     $Berik = 0;
                     $Grunhork = 0;
                 } else {
@@ -46,7 +49,10 @@ sub EVENT_SIGNAL {
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::spawn2(214111,188,0,996,580,133.1,192.5);
                     quest::spawn2(214108,187,0,996,-559,133.1,192.5);
-
+					$entity_list->FindDoor(14)->SetLockPick(0);
+					$entity_list->FindDoor(15)->SetLockPick(0);
+					$entity_list->FindDoor(16)->SetLockPick(0);
+					$entity_list->FindDoor(17)->SetLockPick(0);					
                     $Berik = 0;
                     $Grunhork = 0;
                 } else {

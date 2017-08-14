@@ -32,7 +32,9 @@ sub EVENT_CLICKDOOR {
 			quest::forcedooropen(9);
 			quest::setglobal($instid."_gaschmb1complete",1,3,"H6");
         } else {
-			$check_gasnpc1->SpellFinished(5054,$client);			
+			$check_gasnpc1->SpellFinished(5054,$client);
+			$check_gasnpc1->SpellFinished(5054,$client);
+			$check_gasnpc1->SpellFinished(5054,$client);
 		}
 	}
 	if (($doorid == 8) && (defined($qglobals{$instid."_gaschmb1"})) && !($check_gasnpc1 == 0)) {
@@ -45,7 +47,9 @@ sub EVENT_CLICKDOOR {
 			quest::forcedooropen(12);
 			quest::setglobal($instid."_gaschmb2complete",1,3,"H6");
 		} else {
-			$check_gasnpc2->SpellFinished(5054,$client);
+			$check_gasnpc1->SpellFinished(5054,$client);
+			$check_gasnpc1->SpellFinished(5054,$client);
+			$check_gasnpc1->SpellFinished(5054,$client);
 		}
 	}
 	if (($doorid == 11) && (defined($qglobals{$instid."_gaschmb2"})) && !($check_gasnpc1 == 0)) {

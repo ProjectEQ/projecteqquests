@@ -9,3 +9,18 @@ sub EVENT_SAY {
     quest::say("Ahh..Lithiniath, the first of the black unicorns, cursed by Fizzlethorpe Bristlebane to spread madness and delusions. Lithiniath is not evil, but his lawful magical nature has been replaced with a chaotic reflection of it that has twisted his mind. Lithiniaths physical form can not survive the removal of the chaotic magical nature. The only cure for Lithiniath is death and rebirth into a lawful vessel.");
   }
 }
+
+sub EVENT_TIMER {
+  if ($timer == "dt") {
+    $npc->CastSpell(982, $npc->GetHateTop()->GetID());
+  }
+}
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+	$npc->CastSpell(982, $npc->GetHateTop()->GetID());
+	quest::settimer("dt",30);
+  } else {
+	quest::stoptimer("dt");
+  }
+}

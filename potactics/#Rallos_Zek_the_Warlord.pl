@@ -19,6 +19,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_AGGRO {
         quest::settimer(1,60);
+		quest::settimer("dt_outofarena",5);
 }
 
 sub EVENT_DEATH_COMPLETE {
@@ -78,6 +79,20 @@ sub EVENT_TIMER {
 		} else {		
 			quest::stoptimer(1);
 		}
+	}
+	if($timer == "dt_outofarena") {
+		my @hate_list = $npc->GetHateList();
+		my $hate_count = @hate_list;
+		if ($hate_count > 0) {
+		  foreach $ent (@hate_list) {
+			my $h_ent = $ent->GetEnt();
+			if ($h_ent->IsClient()) {
+			  if ($h_ent->GetX() > 950) {
+				$npc->CastSpell(982,$h_ent->GetID());
+			  }
+			}
+		  }
+		}	
 	}
 }
 

@@ -51,6 +51,8 @@ function Efficiency_Say(e)
 
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.set_timer("test_of_efficiency", 5 * 60 * 1000);
+	
+	e.self:CastSpell(5708, eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),250000):GetID());
     eq.set_timer("waves", 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     
@@ -67,8 +69,7 @@ end
 
 function Efficiency_Timer(e)
   if (e.timer == "test_of_efficiency") then
-    e.self:CastSpell(5708, e.self:GetID());
-
+    e.self:CastSpell(5708, eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),250000):GetID());
   elseif (e.timer == "waves") then
     eq.stop_timer('waves');
     eq.set_timer('waves', minutes_per_wave * 60 * 1000);

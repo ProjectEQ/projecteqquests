@@ -1,14 +1,15 @@
-function event_spawn(e)
-		eq.set_timer("dt",math.random(1,5)*1000);	
-end
-
 function event_timer(e)
 	if e.timer=="dt" then
-		local targ=e.self:GetTarget():GetID();
-		if (targ ~= nil and target ~=0) then
-			e.self:CastSpell(982, targ); --100k cazic touch
-			eq.set_timer("dt",30*1000);
-		end
+		e.self:CastSpell(982, e.self:GetTarget():GetID()); --100k cazic touch
+	end
+end
+
+function event_combat(e)
+	if e.joined then
+		e.self:CastSpell(982, e.other:GetID()); --100k cazic touch
+		eq.set_timer("dt",30*1000);
+	else
+		eq.stop_timer("dt");
 	end
 end
 
@@ -23,8 +24,3 @@ function event_death_complete(e)
 		eq.update_spawn_timer(2630,1000); --update to respawn in 1 sec if vanquisher or guardian are still up
 	end
 end
-
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------

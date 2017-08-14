@@ -1,4 +1,17 @@
---Spawns an iksar broodling on the death of the golems 75% of the time.
+function event_timer(e)
+	if e.timer=="dt" then
+		e.self:CastSpell(982, e.self:GetTarget():GetID()); --100k cazic touch
+	end
+end
+
+function event_combat(e)
+	if e.joined then
+		e.self:CastSpell(982, e.other:GetID()); --100k cazic touch
+		eq.set_timer("dt",30*1000);
+	else
+		eq.stop_timer("dt");
+	end
+end
 
 function event_signal(e)
 	entity_list = eq.get_entity_list();
@@ -14,17 +27,8 @@ function event_signal(e)
 	end
 end
 
+--Spawns an iksar broodling on the death of the golems 75% of the time.
 function event_death_complete(e)
 	local a = eq.ChooseRandom(72105,72105,72105,0);
-	-- local x = e.self:GetX();
-	-- local y = e.self:GetY();
-	-- local z = e.self:GetZ();
-	-- local h = e.self:GetHeading();
 	eq.spawn2(a,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 end
-
---Submitted by: Jim Mills (Gilmore Girls`Is`Awesome`XOXO)
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------

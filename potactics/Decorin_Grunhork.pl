@@ -13,6 +13,9 @@ sub EVENT_SPAWN {
 	
 	if (!$trigger_up) {
 		quest::depop_withtimer();
+	} else {
+		$entity_list->FindDoor(16)->SetLockPick(1);
+		$entity_list->FindDoor(17)->SetLockPick(1);
 	}
 }
 

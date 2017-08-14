@@ -27,8 +27,8 @@ end
 
 function event_timer(e)
 	if (e.timer == "vz_fail") then --event failed, depop all mobs
-		eq.depopall(214083); --real vallon
-		eq.depopall(214110); --fake vallons
+		eq.depop_all(214083); --real vallon
+		eq.depop_all(214110); --fake vallons
 		eq.depop_with_timer(); --myself with respawn timer
 	end
 end

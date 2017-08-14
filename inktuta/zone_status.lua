@@ -5,7 +5,7 @@ local instid = 0;
 local confused_say = 0;
 local rambling_say = 0;
 local incoherent_say = 0;
-local irrational_say = 0; 
+local irrational_say = 0;
 local instance_id = 0;
 local qglobals = {};
 local instance_id;
@@ -13,16 +13,21 @@ local charid_list;
 local current_bit = 0;
 
 function event_spawn(e)
-	
 	qglobals = eq.get_qglobals();
 	instance_id = eq.get_zone_instance_id();
 	charid_list = eq.get_characters_in_instance(instance_id);
+	
 	-- Check the bit that was set on request, this tells us which events to spawn
 	LockoutBit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
-	--bandaid to fix issue where LockoutBit was sometimes nil?
-	--May potentially give people more (all) mobs than should be up, but better than nothing spawning.
-	if (LockoutBit == nil) then LockoutBit = 0 end
-
+	--bandaid to fix issue where LockoutBit was sometimes nil?	happens when using instance create
+	if (LockoutBit == nil) then 
+		LockoutBit = 0
+		if ((qglobals[instance_id.."_inktuta_bit"])==nil) then
+			eq.set_global(instance_id.."_inktuta_bit","0",7,"H6");
+		end
+	end
+	--LockoutBit=0; --for testing
+	eq.debug("lb: " .. LockoutBit);
 	if (bit.band(LockoutBit, 1) == 0) then
 		SpawnKelekdrix();
 	else
@@ -88,9 +93,13 @@ function event_signal(e)
 		eq.depop_all(296066) --Mirror_Image
 		eq.depop_all(296074); --Noqufiel
 		eq.depop_all(296075); --noqufiel_trigger
-		eq.spawn2(296071,0,0,-55, -653, -127, 128); --Jomica_the_Unforgiven
+		eq.spawn2(296071,0,0,-89, -615, -127, 84); --Jomica_the_Unforgiven
+		eq.spawn2(296067,0,0,-63,-600,-127,128); --#an ancient sentinel
 		eq.spawn2(296068,0,0,-127,-652,-127, 121); --bones (loot)
 		AddLockout(5);
+	elseif (e.signal == 296071) then
+		eq.spawn2(296072,0,0,5,-654,-127,175);  --pile of bones
+		AddLockout(6);
 	end
 end
 
@@ -246,5 +255,9 @@ function AddLockout(which_lockout)
 		qglobals = eq.get_qglobals();
 		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
 		eq.set_global(instance_id.."_inktuta_bit",tostring(bit.bor(current_bit,16)),7,"H6");
+	elseif (which_lockout == 6) then		
+		qglobals = eq.get_qglobals();
+		current_bit = tonumber(qglobals[instance_id.."_inktuta_bit"]);
+		eq.set_global(instance_id.."_inktuta_bit",tostring(bit.bor(current_bit,32)),7,"H6");
 	end
 end

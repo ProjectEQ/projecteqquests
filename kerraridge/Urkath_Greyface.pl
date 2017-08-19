@@ -1,11 +1,13 @@
-sub EVENT_SAY { 
-if($text=~/Hail/i){
-quest::say("Errr?  What you say to Urrrkath?  Ah.  Hello to you as well. furrrless type person. Would you do Urrrkath a [favor]?"); }
-if ($text=~/what favor/i) {
-  quest::say("Grrreatful I am that you would think to do this for me.  I am in need of a special leaf, called a [Sylvani Leaf], if you could brrrring this to me I would rrrrreward you verrrry well.");
-}
-if ($text=~/Sylvani Leaf/i) {
-  quest::say("They say that the leaf only exists in a small forest farrrrr frrrrrom ourrrrrr island");
+sub EVENT_SAY {
+  if($text=~/Hail/i) {
+    quest::say("Errr?  What you say to Urrrkath?  Ah.  Hello to you as well. furrrless type person. Would you do Urrrkath a [favor]?");
+  }
+  if ($text=~/favor/i) {
+    quest::say("Grrreatful I am that you would think to do this for me.  I am in need of a special leaf, called a [Sylvani Leaf], if you could brrrring this to me I would rrrrreward you verrrry well.");
+  }
+  if ($text=~/Sylvani Leaf/i) {
+    quest::say("They say that the leaf only exists in a small forest farrrrr frrrrrom ourrrrrr island");
+  }
 }
 
 sub EVENT_ITEM {
@@ -14,7 +16,4 @@ sub EVENT_ITEM {
     quest::summonitem(2045);
   }
 }
-
-}
 #END of FILE Zone:kerraridge  ID:74090 -- Urkath_Greyface *Text is not correct, need correct text if anyone has it.
-

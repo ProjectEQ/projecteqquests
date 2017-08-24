@@ -14,12 +14,3 @@ function event_say(e)
         e.self:Emote("smiles.  'The arrow of course.  Mundane materials would not have been sufficient to hold the enchantments necessary to get this bow to perform as he requested.  I had Rhionn gather the materials I needed, the claw of a black drake, feathers from the Spiroc Lord, and a dracolich bone for the shaft.  I had no idea what he would use it for");
     end
 end
-
-function event_trade(e)
-    local item_lib = require("items");
-    item_lib.return_items(e.self, e.other, e.trade)
-end
-
-function event_combat(e)
-    e.self:Emote("cries out, 'Guards!  Guards!");
-end

@@ -43,7 +43,7 @@ function TrueCombat(e)
 			eq.debug("event started");
 		end
 		eq.set_timer("leash",1*1000);
-		eq.set_timer("random_change",12*1000);
+		eq.set_timer("random_change",15*1000);
 		eq.signal(296075,4);  --refresh reset timer
 		if event_started==true then
 			eq.set_timer("name",5*1000);
@@ -71,7 +71,7 @@ function MirrorTimer(e)
 		if (e.self:GetHP()< mirr_spawned_hp-10 and mirr_shakes==false) then
 			e.self:Emote("shivers violently, as if about to explode!");
 			mirr_shakes=true
-		elseif (e.self:GetHP()< mirr_spawned_hp-500) then
+		elseif (e.self:GetHP()< mirr_spawned_hp-1000) then
 			e.self:CastSpell(2490,e.self:GetHateRandom():GetID());
 			e.self:Emote("shudders and explodes!");
 			eq.depop();

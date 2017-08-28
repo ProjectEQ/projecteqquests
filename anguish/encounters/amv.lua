@@ -57,6 +57,8 @@ function AMV_Combat(e)
 		eq.stop_timer("touch");
 		eq.stop_timer("gaze");
 		eq.stop_timer("mark");
+		eq.stop_timer("focus40");
+		eq.stop_timer("focus30");
 	end
 end
 

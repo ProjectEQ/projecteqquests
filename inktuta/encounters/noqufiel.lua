@@ -9,9 +9,10 @@ local mirr_max_hp=326854;
 local mirr_spawned_hp=326854;
 local event_started=false;
 local mirr_shakes=false;
-local inst_id=0
+local inst_id=0;
 
 function TriggerSpawn(e)
+	inst_id = eq.get_zone_instance_id()
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(296065) == false) then
 		Spawn_Noqu();
 		true_hp=true_max_hp;
@@ -125,7 +126,6 @@ function TrueSignal(e)
 			e.self:Say("begone " .. rand_hate:GetName())
 			e.self:SetHate(rand_hate, 1, 1)
 			rand_hate:MovePCInstance(296, inst_id, -117, -912, -127, 64)
-			e.self:SetHate(rand_hate, 0, 0)
 		end
 	end
 end
@@ -211,7 +211,6 @@ function TrueDeath(e)
 end
 
 function event_encounter_load(e)
-	inst_id = eq.get_zone_instance_id()
 	eq.register_npc_event("noqufiel", Event.spawn, 296075, TriggerSpawn)
 	eq.register_npc_event("noqufiel", Event.signal, 296075, TriggerSignal)
 	eq.register_npc_event("noqufiel", Event.timer, 296075, TriggerTimer)

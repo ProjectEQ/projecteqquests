@@ -22,7 +22,7 @@ sub EVENT_SAY {
     quest::summonitem(19559);
   }
   if ($text=~/boots/i) {
-    quest::say("To craft Scourge Sorcerer Gloves you require two [silk thread], klicnik drone bile, two giant field rat whiskers, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
+    quest::say("To craft Scourge Sorcerer Boots you require two [silk thread], klicnik drone bile, and two large king snake skins. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
     quest::summonitem(19561);
   }
   if ($text=~/sleeves/i) {

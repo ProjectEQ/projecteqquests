@@ -23,7 +23,7 @@ function AMV_Spawn(e)
 	eq.unique_spawn(317108,0,0, 617,5080,278,248); --Vangl`s_Focus (317108)
 	eq.set_next_hp_event(75);
 	
-	eq.set_timer("close_doors",1000);	
+	eq.set_timer("close_doors",30*1000);	
 end
 
 function AMV_HP(e)
@@ -133,7 +133,7 @@ function AMV_Death(e)
 	--check if OMM is up and there are no preexisting AMV lockouts in raid -> spawn chest
 	--eq.unique_spawn(317112,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Ornate_Chest (317112)
 	eq.zone_emote(13,"As the Arch Magus' corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep gutteral laugh growing louder.");
-	e.self:CameraEffect(15000,8);
+	e.self:CameraEffect(15000,5);
 	eq.depop_all(317108);
 	
 	eq.signal(317116 , 317107);

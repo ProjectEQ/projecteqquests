@@ -12,7 +12,6 @@ local mirr_shakes=false;
 local inst_id=0;
 
 function TriggerSpawn(e)
-	inst_id = eq.get_zone_instance_id()
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(296065) == false) then
 		Spawn_Noqu();
 		true_hp=true_max_hp;
@@ -121,11 +120,16 @@ end
 
 function TrueSignal(e)
 	if e.signal==1 then
-		local rand_hate = e.self:GetHateRandom():CastToClient()
-		if (rand_hate.valid) then
-			e.self:Say("begone " .. rand_hate:GetName())
-			e.self:SetHate(rand_hate, 1, 1)
-			rand_hate:MovePCInstance(296, inst_id, -117, -912, -127, 64)
+		local rand_hate = e.self:GetHateRandom()
+		eq.debug("banish selected: " ..rand_hate:GetName());
+		if (rand_hate ~= nil and rand_hate.valid) then
+			local MoveName = eq.get_entity_list():GetClientByName(rand_hate:GetName())
+			if (MoveName ~= nil  and MoveName.valid) then
+				eq.debug(MoveName:GetName());
+				e.self:Say("begone " .. MoveName:GetName())
+				e.self:SetHate(MoveName, 1, 1)
+				MoveName:MovePCInstance(296, inst_id, -117, -912, -127, 64)
+			end
 		end
 	end
 end
@@ -167,7 +171,7 @@ function TriggerSignal(e)
 	if e.signal==1 then
 		eq.debug("start cc ban timer");
 		eq.set_timer("cursecallers",30*1000)
-		eq.set_timer("banish",45*1000)				
+		eq.set_timer("banish",45*1000)			
 	elseif e.signal==2 then
 		eq.stop_timer("cursecallers")
 		eq.stop_timer("banish")
@@ -211,6 +215,7 @@ function TrueDeath(e)
 end
 
 function event_encounter_load(e)
+	inst_id = eq.get_zone_instance_id()
 	eq.register_npc_event("noqufiel", Event.spawn, 296075, TriggerSpawn)
 	eq.register_npc_event("noqufiel", Event.signal, 296075, TriggerSignal)
 	eq.register_npc_event("noqufiel", Event.timer, 296075, TriggerTimer)

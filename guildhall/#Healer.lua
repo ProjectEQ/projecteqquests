@@ -17,7 +17,7 @@ function event_enter(e)
 end
 
 function event_exit(e)
-    e.other:EnableAreaRegens(1000)
+    e.other:DisableAreaRegens()
     e.other:SendColoredText(0, "The energy fades away as you leave the healing pool.")
     e.other:RemoveNimbusEffect(412)
 end

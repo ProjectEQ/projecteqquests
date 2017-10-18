@@ -22,8 +22,8 @@ my $depopnpc5;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
+	if($class eq "Ranger" && (plugin::check_hasitem($client, 20488) || plugin::check_hasitem($client, 62600))) {
     quest::say("Hello, friend. Beautiful is what I would call such a day normally, but lately? I sense that something is [" . quest::saylink("out of balance") . "].");
-	if($class eq "Ranger" && plugin::check_hasitem($client, 20488)) {
 		if($client->GetGlobal("ranger_epic") ==undef) {
 			quest::setglobal("ranger_epic", "1", 5, "F"); 
 		}	

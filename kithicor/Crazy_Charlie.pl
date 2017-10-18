@@ -39,7 +39,7 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 97289 => 4) && (!defined $qglobals{halloween_zombie_heart})){ 
     
         	quest::summonitem(85062);
-          quest::setglobal("halloween_zombie_heart",1,0,"D30");
+          quest::setglobal("halloween_zombie_heart",1,0,"D1");
     	}
     
        	plugin::return_items(\%itemcount);

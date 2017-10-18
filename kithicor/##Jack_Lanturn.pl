@@ -47,7 +47,7 @@ sub EVENT_TIMER {
 	my $min = 3600;
      	my $range = 1800;
       	my $randomspawn = int(rand($range)) + $min;
-      	my $globalspawn = $randomspawn+7200;
+      	my $globalspawn = $randomspawn;
 
 	if ($timer == 1 && !defined $qglobals{halloween_great_pumpkin}) {
 		quest::stoptimer(1);

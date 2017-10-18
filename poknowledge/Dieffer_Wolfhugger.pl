@@ -94,7 +94,7 @@ sub EVENT_ITEM {
 					quest::summonitem($item_id);
 				}
 				
-				quest::shout("Congratulations to $name for winning a $prize!");
+				quest::shout("Congratulations to $name for winning a " . quest::varlink($item_id));
 
 				my $nextglobal = $qglobals{halloween_special_winner} + 1;
 				quest::setglobal("halloween_special_winner", $nextglobal, 0, "D30");

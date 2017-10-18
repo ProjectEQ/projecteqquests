@@ -6,7 +6,7 @@ my $tahia_felwah_2_id = 48030;
 
 # npcId = 48057
 sub EVENT_SPAWN {
-    $npc->SetAppearance(3);
+    quest::settimer("FD", 1);
 }
 
 sub EVENT_SIGNAL {
@@ -39,5 +39,10 @@ sub EVENT_TIMER {
         # Tahia has walked to waypoint 1 (start Justicars)
         # depop version 1 of Tahia Felwah
         quest::depop();
+    }
+    elsif ($timer == "FD")
+        quest::stoptimer("FD");
+        
+        plugin::SetAnim(dead);
     }
 }

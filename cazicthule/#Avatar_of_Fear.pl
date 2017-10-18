@@ -192,56 +192,56 @@ sub SPAWN_RANDOM_WAVE {
     }
     elsif ($which == 1) {
         # 3 shiverbacks
-        quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($a_shiverback_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($a_shiverback_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($a_shiverback_id, 0,0, 534, 1089, -94, 63);
     }
     elsif ($which == 2) {
         # 3 amygdalans
-        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($amygdalan_knight_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($amygdalan_knight_id, 0,0, 534, 1089, -94, 63);
     }
     elsif ($which == 3) {
         # 5 tentacle terror
-        quest::spawn2($tentacle_terror_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($tentacle_terror_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($tentacle_terror_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($tentacle_terror_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($tentacle_terror_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($tentacle_terror_id, 0,0, 534, 1089, -94, 63);
         quest::spawn2($tentacle_terror_id, 0,0, 587, 1090, -94, 180);
         quest::spawn2($tentacle_terror_id, 0,0, 587, 1090, -94, 180);
     }
     elsif ($which == 4) {
         # 5 gorgon
-        quest::spawn2($a_gorgon_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_gorgon_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_gorgon_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($a_gorgon_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($a_gorgon_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($a_gorgon_id, 0,0, 534, 1089, -94, 63);
         quest::spawn2($a_gorgon_id, 0,0, 587, 1090, -94, 180);
         quest::spawn2($a_gorgon_id, 0,0, 587, 1090, -94, 180);
     }
     elsif ($which == 5) {
         # 5 shiverbacks
-        quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($a_shiverback_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($a_shiverback_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($a_shiverback_id, 0,0, 534, 1089, -94, 63);
         quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
         quest::spawn2($a_shiverback_id, 0,0, 587, 1090, -94, 180);
     }
     elsif ($which == 6) {
         # 4 amygdalans
-        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($amygdalan_knight_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($amygdalan_knight_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($amygdalan_knight_id, 0,0, 534, 1089, -94, 63);
         quest::spawn2($amygdalan_knight_id, 0,0, 587, 1090, -94, 180);
     }
     elsif ($which == 7) {
         # 8 spiders
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
-        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 645, 1089, -94, 194);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1145, -94, 128);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 534, 1089, -94, 63);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 557, 1042, -94, 60);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 622, 1048, -94, 191);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 625, 1144, -94, 143);
+        quest::spawn2($a_spinechill_spider_id, 0,0, 547, 1135, -94, 97);
         quest::spawn2($a_spinechill_spider_id, 0,0, 587, 1090, -94, 180);
     }
 

@@ -1,14 +1,14 @@
 sub EVENT_SAY {
+	if($text=~/interested/i) { 
+		quest::say("Great! Take this tool. It'll help you track down your targets. Be warned, however! Your tool is not protected from sabatoge, and does not work well if your target roams about, instead of staying in a single spot. My boys know this, and will take advantage! If you have trouble finding a particular target, Icarus may be able to help. Let me know when you are [" . quest::saylink("ready") . "].");
+		quest::summonitem(111901);
+	}
 	if(!quest::istaskactive(222)){
 		if($text=~/Hail/i) {
 			quest::say("Greetings! I am the eldest member of the Rattus faction Norvegicus. Standing next to me is our youngest member my apprentice Icarus. Once a year, the three clans get together to test their survival skills. For the first time ever, outsiders have been invitied to join in the [" . quest::saylink("hunt") . "]!");
 		}
 		if($text=~/Hunt/i) {
 			quest::say("Norvegicus test their skills by hiding randomly in the world allowing their comrades to hunt them. This year, all members have hidden themselves save myself and Icarus. If you are [" . quest::saylink("interested") . "] in participating, I can sign you up and send you off on the hunt.");
-		}
-		if($text=~/interested/i) { 
-			quest::say("Great! Take this tool. It'll help you track down your targets. Be warned, however! Your tool is not protected from sabatoge, and does not work well if your target roams about, instead of staying in a single spot. My boys know this, and will take advantage! If you have trouble finding a particular target, Icarus may be able to help. Let me know when you are [" . quest::saylink("ready") . "].");
-			quest::summonitem(111901);
 		}
 		if($text=~/ready/i){
 			quest::say("You are signed up! Also! You are not just competing with Rattus, other hunters will be searching for the same targets as you. To make things more interesting and to double your rewards, I can make you a hunter killer [" . quest::saylink("PVP on") . "]. I can also return you to normal after one of your hours [" . quest::saylink("PVP off") . "]. Your first target is Kai! Good luck!");

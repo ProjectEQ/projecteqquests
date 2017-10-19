@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
     # signal 1 = Wake Tahia Up 
     if ($signal == 1) {
-        quest::settimer(1, 12);
+        quest::settimer(1, 15);
         
         quest::say("Brave adventurers, I am Tahia Felwah, and I owe you my life. I was to be a sacrifice to the faceless. Listen to my words carefully, there isn't much time now.");
         
@@ -20,7 +20,7 @@ sub EVENT_SIGNAL {
         
         plugin::SetAnim(stand);
         
-        quest::moveto(573, 1005, -94);
+        quest::moveto(573, 1005, -94, 0, 1);
     }
 }
 

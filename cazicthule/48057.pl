@@ -42,7 +42,7 @@ sub EVENT_TIMER {
         # depop version 1 of Tahia Felwah
         quest::depop();
     }
-    elsif ($timer == "FD")
+    elsif ($timer eq "FD")
         quest::stoptimer("FD");
         
         plugin::SetAnim(dead);

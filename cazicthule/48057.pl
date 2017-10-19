@@ -6,7 +6,7 @@ my $tahia_felwah_2_id = 48030;
 
 # npcId = 48057
 sub EVENT_SPAWN {
-    $npc->SetAppearance(3);
+    quest::settimer("FD", 1);
 }
 
 sub EVENT_SIGNAL {
@@ -18,7 +18,9 @@ sub EVENT_SIGNAL {
         
         quest::say("You have interrupted a complicated ritual and soon the rift to the Faceless will become unstable. I must collect three runes of the Faceless for my research. I have been appointed to uncover the source of these lizards' newfound power. If I fail, their kind will surely spread across the land and threaten the balance of Norrath.");
         
-        quest::pathto(573, 1005, -94);
+        plugin::SetAnim(stand);
+        
+        quest::moveto(573, 1005, -94);
     }
 }
 
@@ -39,5 +41,10 @@ sub EVENT_TIMER {
         # Tahia has walked to waypoint 1 (start Justicars)
         # depop version 1 of Tahia Felwah
         quest::depop();
+    }
+    elsif ($timer == "FD")
+        quest::stoptimer("FD");
+        
+        plugin::SetAnim(dead);
     }
 }

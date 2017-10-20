@@ -1,4 +1,4 @@
-local wave_time=2;
+local wave_time=300;
 
 function event_say(e)
 	if(e.message:findi("hail")) then

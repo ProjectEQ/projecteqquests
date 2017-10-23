@@ -44,4 +44,6 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294599,0,0,522,-233,-50,68);
   quest::spawn2(294600,0,0,516,-182,-50,68);
   quest::signalwith(294631,5); #set lockout
+  quest::ze(15,"The death of the Guardian of Transcendence reveals a trusik geomancer! It appears he was the guardian all along and used his phenomenal abilities to lure you into his den!");
+  quest::ze(15,"Vrex Xalkak Nixki says, 'I won't be defeated so easily! Come forth, my sentinels! Your time to work is at hand!'");
 }

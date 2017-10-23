@@ -44,20 +44,20 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_SIGNAL {
 	#signals received from enter/exit proximity of various NPCs
-	if ($client->GetRace() != 127) {
+	#if ($client->GetRace() != 127) {
 		#I am not invisible from auto-afk, and I'm still moving around, reset auto-afk timer
-		quest::settimer("afk_check", 1200);
-	} else {
+		#quest::settimer("afk_check", 1200);
+	#} else {
 		#I was already set invisible from auto-afk, but now I am moving, set back to base race - not afk
-		$client->SetRace($client->GetBaseRace());
-		$client->SetGender($client->GetBaseGender());
-		if ($client->GetPetID()) {
-			$Pet_ENT = $entity_list->GetMobByID($client->GetPetID());
-			$Pet_ENT->SetRace($Pet_ENT->GetBaseRace());
-		}
-		$client->Message(4, "You are no longer idle.");
-		quest::settimer("afk_check", 1200);
-	}	
+		#$client->SetRace($client->GetBaseRace());
+		#$client->SetGender($client->GetBaseGender());
+		#if ($client->GetPetID()) {
+		#	$Pet_ENT = $entity_list->GetMobByID($client->GetPetID());
+		#	$Pet_ENT->SetRace($Pet_ENT->GetBaseRace());
+		#}
+		#$client->Message(4, "You are no longer idle.");
+		#quest::settimer("afk_check", 1200);
+	#}	
 }
 	
 sub EVENT_TIMER {

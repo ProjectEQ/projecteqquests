@@ -22,7 +22,7 @@ sub EVENT_DEATH_COMPLETE {
   elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) && ($qglobals{$instanceid.adhere1} == 4)) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
-  elsif(((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{$instanceid.adhere1} == 1)) {
+  elsif((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{$instanceid.adhere1} == 1)) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
   else {

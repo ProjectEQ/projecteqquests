@@ -5,5 +5,5 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-  e.other:MovePCInstance(294, instance_id, -157, 23, -2.87, 0.0);
+  --e.other:MovePCInstance(294, instance_id, -157, 23, -2.87, 0.0);
 end

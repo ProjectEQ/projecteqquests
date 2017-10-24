@@ -158,7 +158,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	quest::stoptimer("Trash", 30);
-	quest::stoptimer("MiniNamed", 120);
-	quest::stoptimer("FinalNamed", 1200);
+	quest::stoptimer("Trash");
+	quest::stoptimer("MiniNamed");
+	quest::stoptimer("FinalNamed");
 }

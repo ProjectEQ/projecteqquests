@@ -1,68 +1,86 @@
 sub EVENT_SPAWN {
  quest::setnexthpevent(80);
-if(!defined($qglobals{asentkill})) {
+if(!defined($qglobals{$instanceid.asentkill})) {
     $altarkill = int(rand(4)) + 1;
-    quest::setglobal("asentkill",$altarkill,3,"H6");
+    quest::setglobal($instanceid.asentkill,$altarkill,3,"H6");
   }
   else {
-    $altarkill = $qglobals{asentkill};
+    $altarkill = $qglobals{$instanceid.asentkill};
   }
 }
 
 sub EVENT_DEATH_COMPLETE {
   if ( $status >= 80 ) {
     quest::spawn2(294628,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Bard") && ($qglobals{asentkill} == 2)) {
+  elsif(($class eq "Bard") && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Beastlord") && ($qglobals{asentkill} == 2)) {
+  elsif(($class eq "Beastlord") && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Berserker") && ($qglobals{asentkill} == 3)) {
+  elsif(($class eq "Berserker") && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Cleric") && ($qglobals{asentkill} == 4)) {
+  elsif(($class eq "Cleric") && ($qglobals{$instanceid.asentkill} == 4)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Druid") && ($qglobals{asentkill} == 4)) {
+  elsif(($class eq "Druid") && ($qglobals{$instanceid.asentkill} == 4)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Enchanter") && ($qglobals{asentkill} == 1)) {
+  elsif(($class eq "Enchanter") && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Magician") && ($qglobals{asentkill} == 1)) {
+  elsif(($class eq "Magician") && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Monk") && ($qglobals{asentkill} == 3)) {
+  elsif(($class eq "Monk") && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Necromancer") && ($qglobals{asentkill} == 1)) {
+  elsif(($class eq "Necromancer") && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Paladin") && ($qglobals{asentkill} == 2)) {
+  elsif(($class eq "Paladin") && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Ranger") && ($qglobals{asentkill} == 2)) {
+  elsif(($class eq "Ranger") && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Rogue") && ($qglobals{asentkill} == 3)) {
+  elsif(($class eq "Rogue") && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Shadowknight") && ($qglobals{asentkilll} == 2)) {
+  elsif(($class eq "Shadowknight") && ($qglobals{$instanceid.asentkilll} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Shaman") && ($qglobals{asentkill} == 4)) {
+  elsif(($class eq "Shaman") && ($qglobals{$instanceid.asentkill} == 4)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Warrior") && ($qglobals{asentkill} == 3)) {
+  elsif(($class eq "Warrior") && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Wizard") && ($qglobals{asentkill} == 1)) {
+  elsif(($class eq "Wizard") && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h);
+	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
   else {
     quest::spawn2(294602,0,0,$x,$y,$z,$h);
+	quest::ze(0,"Your energy didn't match that required to kill the stone worker.");
     if($altarkill == 1) {
       quest::emote("The creature will perish under the strength of intelligent magic");
     }
@@ -75,6 +93,7 @@ sub EVENT_DEATH_COMPLETE {
     if($altarkill == 4) {
       quest::emote("The creature cannot stand up to the power of healers");
     }  
+	quest::ze(0,"It reforms instantly!");
   }
   quest::signalwith(294614, 1, 0);
 }
@@ -82,17 +101,17 @@ sub EVENT_HP {
   if($hpevent == 80) {
    $npc->WipeHateList();
    quest::setnexthpevent(60);
-   quest::emote("changes target");
+   quest::emote("focuses its attention on someone new!");
    }
   if($hpevent == 60) {
    $npc->WipeHateList();
    quest::setnexthpevent(40);
-   quest::emote("changes target");
+   quest::emote("focuses its attention on someone new!");
    }
    if($hpevent == 40) {
    $npc->WipeHateList();
    quest::setnexthpevent(20);
-   quest::emote("changes target");   
+   quest::emote("focuses its attention on someone new!");   
    }
    if($hpevent == 20) {
    $npc->WipeHateList();

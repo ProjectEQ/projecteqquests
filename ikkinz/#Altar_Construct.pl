@@ -42,5 +42,6 @@ sub EVENT_TIMER {
 }
 sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294620,0,0,815,139,-72,128);
+  quest:ze(0,"As the construct falls you sense that a very powerful protector of the altar is waiting for you.");
 }
 

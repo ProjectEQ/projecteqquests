@@ -41,5 +41,6 @@ end
 function event_death_complete(e)
   -- Tell Trigger_Ikkinz_3 that an Transcendent Acolyte has died
   eq.signal(294597, 9);
+  eq.zone_emote(0,"The acolyte was only a diversion, but important nonetheless. You must forge ahead to uncover the mysterious glimpses you've seen of the Guardian of Transcendence.");
 end
 

@@ -38,3 +38,10 @@ sub quickGreeting
   
   return plugin::random('Hail', 'Hello', 'Welcome');
 }
+
+sub ZoneMarquee(color,opacity,fade_in,fade_out,duration,message) {
+	my @nlist = $entity_list->GetClientList();
+	foreach my $n (@nlist){
+		$n->SendMarqueeMessage(color,opacity,fade_in,fade_out,duration,message);
+	}
+}

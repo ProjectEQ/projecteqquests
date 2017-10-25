@@ -30,4 +30,5 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294596,0,0,618,-232,-50,2);
   quest::signalwith(294631,6); #set lockout
   quest::ze(0,"Vrex Xalkak Nixki has been defeated! The whole time you were led to believe that this guardian was just another stone sentinel left as a test by the trusik priests of the past. Congratulations on a most difficult task indeed!");
+  #plugin::ZoneMarquee(10,510,1,1,6000,"Vrex Xalkak Nixki has been defeated! Congratulations!");
 }

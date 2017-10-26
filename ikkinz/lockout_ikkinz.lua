@@ -32,6 +32,8 @@ function event_signal(e)
 		for k,v in pairs(charid_list) do
 			eq.target_global("ikkylockout4", tostring(instance_requests.GetLockoutEndTimeForHours(67)), "H67", 0,v, 0);
 		end
+		eq.zone_emote(0,"The Guardian of Glorification has been defeated! This massive stone golem is a testament to the ancient trusik geomancy powers and you have been powerful enough to defeat it. Congratulations on completing a difficult deed.");
+		eq.ZoneMarquee(10,510,1,1,6000,"The Guardian of Glorification has been defeated! Congratulations!");
 	elseif (e.signal == 5) then
 		--Guardian of Transcendence dead
 		for k,v in pairs(charid_list) do

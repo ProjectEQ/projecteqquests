@@ -43,7 +43,7 @@ function event_death_complete(e)
 		elseif(qglobals[instance_id .. "vrexkill4"] == "4") then
 			eq.zone_emote(15,"The creature fears true shots and fast blades")
 		elseif(qglobals[instance_id .. "vrexkill4"] == "5") then
-			eq.zone_emote(15,"The creature dreads the strike of dead");
+			eq.zone_emote(15,"It appears that this creature dreads the strike of death");
 		elseif(qglobals[instance_id .. "vrexkill4"] == "6") then
 			eq.zone_emote(15,"The creature seems weak in the face of the power of nature");
 		elseif(qglobals[instance_id .. "vrexkill4"] == "7") then
@@ -53,9 +53,9 @@ function event_death_complete(e)
 		elseif(qglobals[instance_id .. "vrexkill4"] == "9") then
 			eq.zone_emote(15,"The creature ignores anything behind it");
 		elseif(qglobals[instance_id .. "vrexkill4"] == "10") then
-			eq.zone_emote(15,"The creature cringes at the appearance of talismans");
+			eq.zone_emote(15,"You sense the creature cringe at the appearance of talismans");
 		elseif(qglobals[instance_id .. "vrexkill4"] == "11") then
-			eq.zone_emote(15,"The creature fears doom of death");
+			eq.zone_emote(15,"The creature cowers from the doom of death");
 		elseif(qglobals[instance_id .. "vrexkill4"] == "12") then
 			eq.zone_emote(15,"falters when struck with the power of the elements");
 		elseif(qglobals[instance_id .. "vrexkill4"] == "13") then

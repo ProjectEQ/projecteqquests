@@ -49,7 +49,8 @@ function event_death_complete(e)
   for k,v in pairs(charid_list) do
     eq.target_global("lockout_ikky_g1", tostring(instance_requests.GetLockoutEndTimeForHours(17)), "H17", 0,v, 0);
   end
-
+  q.zone_emote(0,"The Diabolic Destroyer has been defeated! Though the legion may send a replacement, you have finished what you sought out to do and delayed their progress for a time! Congratulations!");
+  eq.ZoneMarquee(10,510,1,1,6000,"The Diabolic Destroyer has been defeated! Congratulations!");
 end
 
 function set_event_start()

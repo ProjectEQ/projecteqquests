@@ -5,10 +5,6 @@ my $h;
 
 sub EVENT_SPAWN { 
 	quest::settimer("engage", 1200);   # 20 min to engage
-	$x = $npc->GetX();
-	$y = $npc->GetY();
-	$z = $npc->GetZ();
-	$h = $npc->GetHeading();
 }
 
 sub EVENT_AGGRO {
@@ -29,7 +25,12 @@ sub EVENT_TIMER {
 	}
 	
 	if ($timer eq "ScorpAdds") {
+	
 		if($npc->IsEngaged()) {
+			$x = $npc->GetX();
+			$y = $npc->GetY();
+			$z = $npc->GetZ();
+			$h = $npc->GetHeading();
 			quest::spawn2(210249,0,0,$x,$y,$z,$h);
 			quest::spawn2(210249,0,0,$x,$y,$z,$h);
 			quest::spawn2(210249,0,0,$x,$y,$z,$h);

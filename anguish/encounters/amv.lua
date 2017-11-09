@@ -204,7 +204,7 @@ function event_encounter_load(e)
 	eq.register_npc_event('amv', Event.combat, 			317108, Focus_Combat);  
 	eq.register_npc_event('amv', Event.timer, 			317108, Focus_Timer);
 	
-	eq.register_npc_event('amv', Event.spawn, 			317015, Convert_Spawn);
+	eq.register_npc_event('amv', Event.spawn, 			317110, Convert_Spawn);
 	eq.register_npc_event('amv', Event.timer, 			317110, Convert_Timer);    
 end
 

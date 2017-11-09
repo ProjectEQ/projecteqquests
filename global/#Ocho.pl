@@ -18,7 +18,7 @@ sub EVENT_SAY {
 			}
 			if(qglobals{halloween_ratter_complete_pvp} > 5 && $pcpvp == 1){
 				$client->Message(0, "You have already claimed a PVP reward for this activity or a higher and do not qualify for another.");
-			}			}
+			}
 			my $newzone_ocho = plugin::GetRandomFreeLocation(0,30);
 			quest::targlobal("halloween_ratter_ocho",$newzone_ocho,"F",0,0,0);
 			quest::depop();

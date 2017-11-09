@@ -156,3 +156,9 @@ sub EVENT_TIMER {
 		quest::depop_withtimer();
 	}
 }
+
+sub EVENT_DEATH_COMPLETE {
+	quest::stoptimer("Trash");
+	quest::stoptimer("MiniNamed");
+	quest::stoptimer("FinalNamed");
+}

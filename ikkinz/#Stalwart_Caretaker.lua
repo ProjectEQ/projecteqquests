@@ -8,6 +8,10 @@ function event_trade(e)
 		e.self:Emote("motions towards the door behind it. You have passed the first test.");
 		eq.zone_emote(0,"Only research can solve the mystery of the runed glyphs");
 		eq.ZoneMarquee(10,510,1,1,6000,"Only research can solve the mystery of the runed glyphs");
-		eq.zone_emote(15,"Stone grinds against stone and the door slides open");	
+		eq.zone_emote(15,"Stone grinds against stone and the door slides open");
+		eq.get_entity_list():FindDoor(15):SetLockPick(0);
+		eq.get_entity_list():FindDoor(16):SetLockPick(0);
+		eq.get_entity_list():FindDoor(15):ForceOpen(e.self);
+		eq.get_entity_list():FindDoor(16):ForceOpen(e.self);
 	end
-end	
+end

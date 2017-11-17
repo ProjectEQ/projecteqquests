@@ -76,10 +76,10 @@ function event_signal(e)
 	end
 
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294610) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294611) == false ) then
-		eq.get_entity_list():FindDoor(8):SetLockPick(0);
-		eq.get_entity_list():FindDoor(9):SetLockPick(0);
-		eq.get_entity_list():FindDoor(8):ForceOpen(e.self);
-		eq.get_entity_list():FindDoor(9):ForceOpen(e.self);
+		eq.get_entity_list():FindDoor(12):SetLockPick(0);
+		eq.get_entity_list():FindDoor(10):SetLockPick(0);
+		eq.get_entity_list():FindDoor(12):ForceOpen(e.self);
+		eq.get_entity_list():FindDoor(10):ForceOpen(e.self);
 		eq.depop_all(294636);
 	end
 

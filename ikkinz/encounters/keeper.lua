@@ -16,14 +16,14 @@ function KeeperTimer(e)
 		e.self:Emote("quakes violently as Adhere assailants form from the ground to join in battle!");
 		eq.set_timer("assail",60*1000);
 		eq.spawn2(294622,0,0,680,59,-73,78);
-		eq.spawn2(294622,0,0,908,111,-73,150);
 		eq.spawn2(294622,0,0,816,125,-73,124);
-		eq.spawn2(294622,0,0,761,118,-73,121);
 		eq.spawn2(294622,0,0,744,46,-73,101);
-		eq.spawn2(294622,0,0,852,73,-73,146);
 		eq.spawn2(294622,0,0,746,125,-73,60);
-		eq.spawn2(294622,0,0,803,84,-73,0);
-		eq.spawn2(294622,0,0,888,123,-73,205);
+		--eq.spawn2(294622,0,0,908,111,-73,150);		
+		--eq.spawn2(294622,0,0,852,73,-73,146);		
+		--eq.spawn2(294622,0,0,852,73,-73,146);		
+		--eq.spawn2(294622,0,0,803,84,-73,0);
+		--eq.spawn2(294622,0,0,888,123,-73,205);
 	elseif e.timer=="adhere" then
 		e.self:Emote("slams its fist to the ground which calls forth an adherent to aid it in battle!");
 		eq.set_timer("adhere",100*1000);
@@ -67,7 +67,6 @@ end
 
 function KeeperCombat(e)
 	if e.joined then
-		eq.zone_emote(0,"started")
 		eq.set_timer("assail", math.random(10,15) * 1000);	
 		eq.set_timer("adhere", math.random(45,60) * 1000);
 		eq.set_timer("shrap",  math.random(5,10) * 1000);
@@ -92,6 +91,7 @@ function KeeperDeath(e)
 	eq.zone_emote(10,"The Keeper of the Altar has been defeated! You have found a way do what even the trusik priests of old had trouble with." ..
 	"You are well on your way to uncovering the secrets that Txevu has holed up inside its walls. Congratulations!");
 	eq.ZoneMarquee(10,510,1,1,6000,"The Keeper of the Altar has been defeated! Congratulations!");
+	eq.depop_all(294622);
 end
 
 function AssailSpawn(e)

@@ -63,7 +63,7 @@ function event_trade(e)
 	local item_lib = require("items");
   local qglobals = eq.get_qglobals(e.other);
 
-  if ( e.other:Class() == "Ranger" ) then
+  if ( e.other:Class() == "Ranger" and qglobals["ranger_epic15_pre"] ~= nil) then
     eq.debug(e.other:GetName() .. " ranger_peic15_pre: " .. qglobals["ranger_epic15_pre"]);
   end
 

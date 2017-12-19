@@ -51,7 +51,7 @@ sub EVENT_SAY {
   if( $client->GetGlobal("monk_epic") ==3 && $text=~/Vortix/i) {
   quest::say("I see you know who I truly am now. It does not matter though. There is nothing I can help you with. Danl should have been able to help you more than I could.");
   quest::spawn2(203433,0,0,$x,$y,$z,$h);
-  quest::depop();
+  quest::depop_withtimer();
   }
 }
 sub EVENT_ITEM {

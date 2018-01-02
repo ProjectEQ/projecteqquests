@@ -13,8 +13,8 @@ sub EVENT_CLICKDOOR {
 
 sub EVENT_LOOT {
     if ( $class eq "Paladin" && $looted_id == 69951 ) {
-        if ( defined( $qglobals{paladin_epic_pon} )
-            && $qglobals{paladin_epic_pon} >= 5 )
+        if ( defined( $qglobals{paladin_epic} )
+            && $qglobals{paladin_epic} >= 5 )
         {
             if ( !defined( $qglobals{paladin_epic_pon} ) ) {
                 quest::setglobal( "paladin_epic_pon", "1", 5, "F" );
@@ -22,8 +22,8 @@ sub EVENT_LOOT {
                 $y = $client->GetY();
                 $z = $client->GetZ();
                 quest::spawn2( 283157, 0, 0, $x, $y, $z, 0 );
-                return 0;
             }
+            return 0;
         }
         else {
             return 1;

@@ -53,12 +53,14 @@ function Efficiency_Say(e)
     eq.set_timer("test_of_efficiency", 5 * 60 * 1000);
 
     local clients = eq.get_entity_list():GetClientList();
-    for client in now_clients.entries do
+    for client in clients.entries do
         if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
             e.self:SendBeginCast(5708, 0); -- should it do this? idk don't have logs
             e.self:SpellFinished(5708, client:CastToMob());
         end
     end
+
+    eq.set_timer("waves", 1000);
 
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   elseif ( e.message:findi('end') and e.other:Admin() > 80) then
@@ -74,7 +76,13 @@ end
 
 function Efficiency_Timer(e)
   if (e.timer == "test_of_efficiency") then
-    e.self:CastSpell(5708, eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),250000):GetID());
+    local clients = eq.get_entity_list():GetClientList();
+    for client in clients.entries do
+        if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
+            e.self:SendBeginCast(5708, 0); -- should it do this? idk don't have logs
+            e.self:SpellFinished(5708, client:CastToMob());
+        end
+    end
   elseif (e.timer == "waves") then
     eq.stop_timer('waves');
     eq.set_timer('waves', minutes_per_wave * 60 * 1000);

@@ -51,11 +51,16 @@ function Efficiency_Say(e)
 
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.set_timer("test_of_efficiency", 5 * 60 * 1000);
-	
-	e.self:CastSpell(5708, eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),250000):GetID());
-    eq.set_timer("waves", 1000);
+
+    local clients = eq.get_entity_list():GetClientList();
+    for client in now_clients.entries do
+        if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
+            e.self:SendBeginCast(5708, 0); -- should it do this? idk don't have logs
+            e.self:SpellFinished(5708, client:CastToMob());
+        end
+    end
+
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
-    
   elseif ( e.message:findi('end') and e.other:Admin() > 80) then
 
     eq.spawn_condition(this_zone, instance_id, 1, 0);

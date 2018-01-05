@@ -38,6 +38,16 @@ function Efficiency_Spawn(e)
   eq.spawn_condition(this_zone, instance_id, 1, 0);
 end
 
+function check_debuff(m)
+  local clients = eq.get_entity_list():GetClientList();
+  for client in clients.entries do
+    if (client.valid and not client:FindBuff(5708) and m:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <= 500) then
+      m:SendBeginCast(5708, 0);
+      m:SpellFinished(5708, client:CastToMob());
+    end
+  end
+end
+
 function Efficiency_Say(e)
   if (e.message:findi("hail")) then
     e.self:Say("'This is the Mastery of Efficiency trial. You must demonstrate your ability to function under less than perfect conditions, battling with limited resources. Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
@@ -50,15 +60,9 @@ function Efficiency_Say(e)
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);
-    eq.set_timer("test_of_efficiency", 5 * 60 * 1000);
+    eq.set_timer("test_of_efficiency", 1500); -- this event checks for the debuff on a timer, 1.5 seconds shouldn't be too bad with only a max of 6 toons
 
-    local clients = eq.get_entity_list():GetClientList();
-    for client in clients.entries do
-        if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
-            e.self:SendBeginCast(5708, 0); -- should it do this? idk don't have logs
-            e.self:SpellFinished(5708, client:CastToMob());
-        end
-    end
+    check_debuff(e.self);
 
     eq.set_timer("waves", 1000);
 
@@ -76,13 +80,7 @@ end
 
 function Efficiency_Timer(e)
   if (e.timer == "test_of_efficiency") then
-    local clients = eq.get_entity_list():GetClientList();
-    for client in clients.entries do
-        if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then
-            e.self:SendBeginCast(5708, 0); -- should it do this? idk don't have logs
-            e.self:SpellFinished(5708, client:CastToMob());
-        end
-    end
+    check_debuff(e.self);
   elseif (e.timer == "waves") then
     eq.stop_timer('waves');
     eq.set_timer('waves', minutes_per_wave * 60 * 1000);

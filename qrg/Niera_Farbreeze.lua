@@ -71,7 +71,7 @@ function event_trade(e)
 		eq.set_global("druid_epic", "4", 5, "F");
 	end
 	
-	if(qglobals["druid_epic"] == "4" and item_lib.check_turn_in(e.trade, {item1 = 62844, item2 = 62845})) then --Red Dogwood Seed, Living Brambles Seed
+	if(qglobals["druid_epic"] >= "4" and item_lib.check_turn_in(e.trade, {item1 = 62844, item2 = 62845})) then --Red Dogwood Seed, Living Brambles Seed
 		e.self:Say("Wonderful! These are amazing seeds! I've never seen any just like them before. And you got them from one of the Unkempt. Amazing.' Niera examines the seeds closely while referring to a book called Unkempt Seed Rituals. She wraps both seeds in a soft, moist cloth and hands one of them to you. 'I think I know what the Unkempt meant. This one is for you. Keep it safe. I believe that I know where the other is needed. I have learned much while you were gone and I need to tell you about it.");
 		e.other:SummonItem(62850); --Living Brambles Seed (protected)
 		e.other:SummonItem(62846); --Mind Crystal		

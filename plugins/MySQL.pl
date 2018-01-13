@@ -7,25 +7,25 @@ sub LoadMysql {
 	use DBD::mysql;
 	use JSON;
 	
-    my $json = new JSON();
+    	my $json = new JSON();
 
 	#::: Load Config
-    my $content;
-    open(my $fh, '<', "eqemu_config.json") or die "cannot open file $filename"; {
-        local $/;
-        $content = <$fh>;
-    }
-    close($fh);
+	my $content;
+	open(my $fh, '<', "eqemu_config.json") or die "cannot open file $filename"; {
+		local $/;
+		$content = <$fh>;
+	}
+	close($fh);
 
 	#::: Decode
-    $config = $json->decode($content);
-    
+	$config = $json->decode($content);
+
 	#::: Set MySQL Connection vars
-    $db = $config->{"server"}{"database"}{"db"};
-    $host = $config->{"server"}{"database"}{"host"};
-    $user = $config->{"server"}{"database"}{"username"};
-    $pass = $config->{"server"}{"database"}{"password"};
-	
+	$db = $config->{"server"}{"database"}{"db"};
+	$host = $config->{"server"}{"database"}{"host"};
+	$user = $config->{"server"}{"database"}{"username"};
+	$pass = $config->{"server"}{"database"}{"password"};
+
 	#::: Map DSN
 	$dsn = "dbi:mysql:$db:$host:3306";
 	

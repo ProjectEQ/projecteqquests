@@ -17,7 +17,7 @@ function event_trade(e)
 		e.other:Faction(105,5,0); -- Freeport Militia
 		e.other:Faction(258,-1,0); -- priests of marr
 		e.other:Faction(184,-1,0); -- Knights of Truth
-		e.other:Faction(48,-1,0); -- coalition of trade folk underground
+		e.other:Faction(48,1,0); -- coalition of trade folk underground
 		e.other:AddEXP(28000); --14000 xp per belt
 		e.other:GiveCash(0,0,8,0);
 	end

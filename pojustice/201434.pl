@@ -6,11 +6,11 @@ sub EVENT_SAY
 {
 	if(defined $qglobals{pop_poj_mavuin}) {
 		if($text=~/Hail/i) {
-			quest::emote(" fixes you with a dark, peircing gaze. 'What do you want, mortal? Are you [prepared]?");
+			quest::emote(" fixes you with a dark, peircing gaze. 'What do you want, mortal? Are you [" . quest::saylink("prepared") . "]?");
 		}
 		
 		elsif($text=~/prepared/i) {
-			quest::say("Very well. When you are ready, you may begin the trial of flame. You must endure the heat of the fire and be sure not to let its creatures reach the center. We shall judge the mark of your success.");
+			quest::say("Very well. When you are ready, you may [" . quest::saylink("begin the trial of flame", 0, "begin the trial of flame") . "]. You must endure the heat of the fire and be sure not to let its creatures reach the center. We shall judge the mark of your success.");
 		}
 		
 		elsif($text=~/begin the trial of flame/i) {

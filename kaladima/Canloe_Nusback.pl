@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::faction(219,40);
     quest::faction(215,40);
     quest::faction(57,-120);
-    quest::exp(14580);
+    quest::exp(28000);
   }
   elsif (plugin::check_handin(\%itemcount, 13318 => 3)) { #Crushbone Belt x 3
     quest::say("Good work, warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
@@ -44,7 +44,7 @@ sub EVENT_ITEM {
     quest::faction(219,30);
     quest::faction(215,30);
     quest::faction(57,-90);
-    quest::exp(10935);
+    quest::exp(21000);
   }
   elsif (plugin::check_handin(\%itemcount, 13318 => 2)) { #Crushbone Belt x 2
     quest::say("Good work, warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
@@ -57,7 +57,7 @@ sub EVENT_ITEM {
     quest::faction(219,20);
     quest::faction(215,20);
     quest::faction(57,-60);
-    quest::exp(7290);
+    quest::exp(14000);
   }
   elsif (plugin::check_handin(\%itemcount, 13318 => 1)) { #Crushbone Belt x 1
     quest::say("Good work, warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
@@ -69,7 +69,7 @@ sub EVENT_ITEM {
     quest::faction(219,10);
     quest::faction(215,10);
     quest::faction(57,-30);
-    quest::exp(3645);
+    quest::exp(7000);
   }
   elsif (plugin::check_handin(\%itemcount, 13319 => 4)) { #Crushbone Shoulderpads x 4
     quest::say("Aha!! You have downed a Crushbone legionnaire!! You have shown yourself to be a strong warrior. Take this. This is more becoming of a great warrior such as yourself. Let no creature stand in the way of the Stormguard!");
@@ -81,7 +81,7 @@ sub EVENT_ITEM {
     quest::faction(219,20);
     quest::faction(215,20);
     quest::faction(57,-60);
-    quest::exp(14580);
+    quest::exp(64000);
   }
   elsif (plugin::check_handin(\%itemcount, 13319 => 2)) { #Crushbone Shoulderpads x 2
     quest::say("Aha!! You have downed a Crushbone legionnaire!! You have shown yourself to be a strong warrior. Take this. This is more becoming of a great warrior such as yourself. Let no creature stand in the way of the Stormguard!");
@@ -93,7 +93,7 @@ sub EVENT_ITEM {
     quest::faction(219,10);
     quest::faction(215,10);
     quest::faction(57,-30);
-    quest::exp(7290);
+    quest::exp(32000);
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);

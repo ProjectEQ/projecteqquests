@@ -12,6 +12,7 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 2485 => 1)) {
+      quest::emote("thanks you and scurries off into the shadows");
       quest::signalwith(226200,23,0);
       quest::exp("100000");
       quest::depop_withtimer();

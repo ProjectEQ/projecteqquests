@@ -10,7 +10,7 @@ function event_say(e)
 			e.self:Say("Ah yes, you again. Do you have the items? Give me the three you possess and I'll combine them with my own.");
 		elseif(qglobals["wizepicA"] == "1") then
 			e.self:Say("Ah, but it pains my heart to see this. How I could love a women like that is beyond me. And yet, I still do love her. It was on the day I was to ask her to marry me that I lost my powers. When I was about to cast my greatest spell to prove my love to her, my magic failed. She ran out on me that day. But enough of me, do you wish to hear my story?");
-		else
+		elseif(qglobals["wiz_epic_challicering"] == nil) then
 			e.self:Say("Before I tell you anything, I require you to help me. Seek a woman named Challice. Give her this ring and then return to me.");
 			e.other:SummonItem(14334);
 		end
@@ -23,7 +23,6 @@ function event_say(e)
 	elseif(e.message:findi("the gnome") and e.other:Class() == "Wizard") then
 		e.self:Say("Ah, the gnome I know very little about. I know he was small and crafty, and that he had a brother. His brother's craft was that of making fireworks, and he was the unfortunate victim of one of his own experiments. His firework exploded, leaving his mind diminished in capacity, even for a gnome. I remember others calling him 'Old Stewpot' in jest. I do not know if this is his birth name, but it may help you to locate him. I hear he also stays close to water because of the explosion. You never know when another gnomish invention will go awry. Give him this letter to help motivate him to remember.");
 		e.other:SummonItem(18169);
-		e.other:Faction(342, 30,0); 									--Truespirit
 		eq.depop();
 	end
 end
@@ -44,6 +43,7 @@ function event_trade(e)
 			e.self:Say("Here, this pack contains all of our items. You will never be able to open it again, so you must deliver the pack, intact, to Solomen. He will then reward you. Now that I have helped you, leave me in peace.");
 			e.other:Ding();
 			e.other:SummonItem(14340);
+			e.other:Faction(342, 30,0); 									--Truespirit
 			eq.delete_global("wizepicA");
 		end
 	end

@@ -17,6 +17,7 @@ sub EVENT_ITEM {
 	if($itemcount{14340} == 1){
 		quest::say("You actually did it! I never would have thought that anyone could have truly followed this path. This is a tribute to your intelligence and patience. Here, take this staff and know that you have made Solusek Ro and all the wizards of the world proud this day.");
 		quest::summonitem(14341);
+		quest::faction(342, -100); #truespirit, resets the +100 in gains from quest start up to this point.
 	} else {
 		quest::say("I don't need this.");
 		if($item1 > 0){quest::summonitem("$item1");} 

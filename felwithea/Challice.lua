@@ -5,11 +5,9 @@ function event_say(e)
 end
 
 function event_trade(e)
-	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
 
-	if(qglobals["wiz_epic_challicering"] == nil and item_lib.check_turn_in(e.trade, {item1 = 14334})) then -- Note handin:
-		eq.set_global("wiz_epic_challicering","1",5,"F");
+    if(item_lib.check_turn_in(e.trade, {item1 = 14334})) then -- Note handin:
 		e.self:Say("Oh yes? Arantir? What a fool he was! the man gave me everything, but for all his intelligence, he could never understand why I was truly with him. It was for his power; he could do anything. But when he mysteriously lost it, he became just another toy. I never loved him. Return this ring to him. He will understand that I have no desire to see him again.");
 		e.other:Ding();
 		e.other:Faction(342, 10,0); --Truespirit

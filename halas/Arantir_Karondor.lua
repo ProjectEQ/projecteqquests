@@ -10,7 +10,7 @@ function event_say(e)
 			e.self:Say("Ah yes, you again. Do you have the items? Give me the three you possess and I'll combine them with my own.");
 		elseif(qglobals["wizepicA"] == "1") then
 			e.self:Say("Ah, but it pains my heart to see this. How I could love a women like that is beyond me. And yet, I still do love her. It was on the day I was to ask her to marry me that I lost my powers. When I was about to cast my greatest spell to prove my love to her, my magic failed. She ran out on me that day. But enough of me, do you wish to hear my story?");
-		elseif(qglobals["wiz_epic_challicering"] == nil) then
+		else
 			e.self:Say("Before I tell you anything, I require you to help me. Seek a woman named Challice. Give her this ring and then return to me.");
 			e.other:SummonItem(14334);
 		end

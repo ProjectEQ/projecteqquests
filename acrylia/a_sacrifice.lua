@@ -4,8 +4,11 @@
 
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then
-		e.self:CastSpell(6974,154155); -- cast Health Infusion on Ward of Death (154155) -- ??
---		quest::castspell(154155,6974); -- cast Health Infusion on Ward of Death (154155)
+		local el = eq.get_entity_list();
+		local ward = el:GetNPCByNPCTypeID(154155);
+		if (ward.valid) then
+			e.self:CastSpell(6974, ward:GetID()); -- cast Health Infusion on Ward of Death (154155) -- ??
+		end
 		eq.depop();
 	end
 end

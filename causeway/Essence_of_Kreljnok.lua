@@ -7,12 +7,10 @@ end
 
 function event_combat(e)
 	if e.joined==true then
-		eq.set_timer("drain", math.random(5,10) * 1000);
 		eq.set_timer("spawn_adds",150*1000);
 		eq.set_timer("check_adds_alive", 2000);
 		e.self:Say("The power of the sword has revived me! Prepare to die!");
 	else
-		eq.stop_timer("drain");
 		eq.stop_timer("spawn_adds");
 		eq.stop_timer("check_adds_alive");
 	end
@@ -24,9 +22,6 @@ function event_timer(e)
 		eq.depop_all(303131);
 		eq.depop_all(303130);
 		eq.depop();
-	elseif e.timer=="drain" then
-		e.self:CastSpell(6118, e.self:GetTarget():GetID());	
-		eq.set_timer("drain", 25 * 1000);
 	elseif e.timer=="spawn_adds" then
 		e.self:Emote("calls forth to the brood for two new souls to harvest!");
 		eq.spawn2(303131, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);

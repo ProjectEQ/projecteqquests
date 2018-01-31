@@ -25,33 +25,18 @@ function event_hp(e)
 	if(e.hp_event == 65) then
 		e.self:Say("I shall show you how your soul will obey me!");
 		eq.set_next_hp_event(35);
-		eq.set_timer("breath", 1 * 1000);
-		eq.set_timer("stun", 3 * 1000);
+		e.self:AddAISpell(0, 2308, 1, -1, -1, -300); -- add as nuke
+		e.self:AddAISpell(0, 1968, 1, -1, -1, -200); -- add as nuke
 	elseif(e.hp_event == 35) then
 		e.self:Say("You will cringe at the sound of my voice and your spirit shall be mine forever!");
-		eq.set_timer("bandit", 1 * 1000);
-		eq.set_timer("relinq", 3 * 1000);
+		e.self:AddAISpell(0, 5675, 1, -1, -1, -375); -- add as nuke
+		e.self:AddAISpell(0, 5756, 1, -1, -1, -1000); -- add as nuke
 	end
 end
 
 function event_timer(e)
 	if(e.timer=="depop") then
 		eq.depop_with_timer();
-	elseif(e.timer=="breath") then
-		eq.stop_timer("breath");
-		e.self:CastSpell(2308, e.self:GetTarget():GetID());	
-		eq.set_timer("breath", 15 * 1000);
-	elseif(e.timer=="stun") then
-		eq.stop_timer("stun");
-		e.self:CastSpell(1968, e.self:GetTarget():GetID());	
-		eq.set_timer("stun", 18 * 1000);	
-	elseif(e.timer=="relinq") then
-		eq.stop_timer("relinq");
-		e.self:CastSpell(5675, e.self:GetTarget():GetID());	
-		eq.set_timer("relinq", 30 * 1000);
-	elseif(e.timer=="bandit") then
-		eq.stop_timer("bandit");
-		e.self:CastSpell(5756, e.self:GetTarget():GetID());	
-		eq.set_timer("bandit", 45 * 1000);	
 	end
 end
+

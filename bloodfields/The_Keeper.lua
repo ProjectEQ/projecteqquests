@@ -25,12 +25,8 @@ function event_hp(e)
 	if(e.hp_event == 65) then
 		e.self:Say("I shall show you how your soul will obey me!");
 		eq.set_next_hp_event(35);
-		e.self:AddAISpell(0, 2308, 1, -1, -1, -300); -- add as nuke
-		e.self:AddAISpell(0, 1968, 1, -1, -1, -200); -- add as nuke
 	elseif(e.hp_event == 35) then
 		e.self:Say("You will cringe at the sound of my voice and your spirit shall be mine forever!");
-		e.self:AddAISpell(0, 5675, 1, -1, -1, -375); -- add as nuke
-		e.self:AddAISpell(0, 5756, 1, -1, -1, -1000); -- add as nuke
 	end
 end
 

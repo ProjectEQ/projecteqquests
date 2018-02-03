@@ -1,21 +1,38 @@
 function event_spawn(e)
-  e.self:SetPseudoRoot(true);
-  eq.set_next_hp_event(85);
-
-  -- Aura of Rage if its in the list
-  e.self:RemoveAISpell(887);
-  -- Add Zun`Muram Terror (silence)
-  e.self:AddAISpell(5821, 0, 0, 0, 0, 0);
-  -- Add Rage of Zun`Muram
-  e.self:AddAISpell(6096, 0, 0, 0, 0, 0);
+    e.self:SetPseudoRoot(true);
+    eq.set_next_hp_event(85);
 end
 
 function event_hp(e)
-  if (e.hp_event == 85) then
-    e.self:SetPseudoRoot(false);
-    -- Add Aura of Rage
-    e.self:AddAISpell(887, 0, 0, 0, 0, 0);
-    -- Remove Zun'Muram Terror (silence)
-    e.self:RemoveAISpell(5821);
-  end
+    if (e.hp_event == 85) then
+        e.self:SetPseudoRoot(false);
+        eq.stop_timer("terror");
+    end
 end
+
+function CastTerror(self)
+    local client_list = eq.get_entity_list():GetClientList();
+
+    for client in client_list do
+        if (client.valid and self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <= 120) then
+            self:SpellFinished(5821, client); -- Zun`Muram's Terror
+            eq.debug("Terror on: " .. client:GetName());
+        end
+    end
+end
+
+function event_timer(e)
+    if (e.timer == "terror") then
+        CastTerror(e.self);
+    end
+end
+
+function event_combat(e)
+    if (e.joined == true && e.self:GetHPRatio() > 85) then
+        eq.set_timer("terror", 5000); -- every 5 seconds
+        CastTerror(e.self);
+    else
+        eq.stop_timer("terror");
+    end
+end
+

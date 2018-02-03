@@ -13,12 +13,12 @@ sub EVENT_TIMER {
     $npc->GMMove(453,-142,6,192);
   }
   if($timer == 1) {
-  $npc->SetHP(71250);
+  $npc->SetHP(165000);
   quest::stoptimer(1);
   quest::settimer(3,6);
   }
   if($timer == 3) {
-  $npc->SetHP(1425000);
+  $npc->SetHP(3300000);
   quest::stoptimer(3);
   quest::settimer(1,6);
   }

@@ -13,7 +13,7 @@ end
 function CastTerror(self)
     local client_list = eq.get_entity_list():GetClientList();
 
-    for client in client_list do
+    for client in client_list.entries do
         if (client.valid and self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <= 120) then
             self:SpellFinished(5821, client); -- Zun`Muram's Terror
             eq.debug("Terror on: " .. client:GetName());

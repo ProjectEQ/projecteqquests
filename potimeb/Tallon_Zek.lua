@@ -8,3 +8,19 @@ function event_death_complete(e)
 	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
 	eq.set_global(instance_id.."_potimeb_phase_bit",tostring(bit.bor(phase_bit,4)),7,"H13");
 end
+
+function event_timer(e)
+	if (e.timer == "barb") then
+		e.self:CastSpell(eq.ChooseRandom(2449, 2450, 2451, 2452), e.self:GetTarget():GetID());
+		eq.set_timer("barb", math.random(2, 6) * 1000); -- don't think it's on reuse of the one he casts, none are 2 seconds!
+	end
+end
+
+function event_combat(e)
+	if (e.joined == true) then
+		eq.set_timer("barb", math.random(1, 4) * 1000);
+	else
+		eq.stop_timer("barb");
+	end
+end
+

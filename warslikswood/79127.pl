@@ -24,7 +24,7 @@ sub EVENT_TIMER {
   quest::stoptimer(1);
   quest::signal(79129); #a frantic goblin
   quest::signal(79128); #Ferocious Goblin
-  quest::shout("Aha! My minions have defeated you!");
+  quest::shout("How pathetic. You are weaker than I guessed! Like all the others, you present no threat! I shall leave as you are a such a bore. Return to challenge me when you are a less of a chore.");
   quest::depop();
 }
 
@@ -33,7 +33,7 @@ sub EVENT_SIGNAL {
     quest::stoptimer(1);
     quest::signal(79129); #a frantic goblin
     quest::signal(79128); #Ferocious Goblin
-    quest::shout("Aha! My minions have defeated you!");
+    quest::shout("How pathetic. You are weaker than I guessed! Like all the others, you present no threat! I shall leave as you are a such a bore. Return to challenge me when you are a less of a chore.");
     quest::depop();    
   }
   if ($signal == 2) { #Signal from a killed goblin

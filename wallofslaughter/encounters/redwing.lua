@@ -118,3 +118,6 @@ function event_encounter_load(e)
     eq.register_npc_event('redwing', Event.timer, 300103, RealR_Timer)
 end
 
+function event_encounter_unload(e)
+end
+

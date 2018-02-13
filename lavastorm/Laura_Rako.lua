@@ -13,7 +13,7 @@ function event_trade(e)
         if (item_lib.check_turn_in(e.trade, {item1 = 56010})) then --Check for "Talisman of the Plasmatic Priests"
 			e.other:SummonItem(56010); --return "Talisman of the Plasmatic Priests"
             -- Spawn High Priestess Shima
-            eq.spawn2(27077, 0, 0, 113, 1672, 56, 231);
+            eq.spawn2(27128, 0, 0, 113, 1672, 56, 231);
             -- Spawn 2 A Plasmatic Priest
             eq.spawn2(27129, 0, 0, 132, 1669, 55, 0);
             eq.spawn2(27129, 0, 0, 89, 1672, 55, 20);

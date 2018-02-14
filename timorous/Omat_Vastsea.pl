@@ -17,6 +17,16 @@ sub EVENT_SAY {
   if ($text=~/plasmatic priesthood/i) {
     quest::say("The Plasmatic Priesthood are worshipers of the Tyrant of Fire, but they have been driven mad by their fanaticism and have forgotten the importance of the balance. In their madness they would set the whole world aflame, leaving nothing but lifeless ash.");
   }
+  if ($text=~/Tavon sent me/i) {
+    quest::say("I received word from my brother that you would be coming. I have just the task for you. I am sure you heard of the [" . quest::saylink("Plasmatic Priests") . "]");
+  }
+  if ($text=~/Plasmatic Priests/i) {
+    quest::say("The Plasmatic Priests were worshippers of Fennin Ro. Their numbers were all but destroyed by adventurers, and with the silence of the Pantheon they no longer draw power from the Tyrant of Fire. However they are still a danger, please find the last remnants of their order and bring me proof of their[" . quest::saylink("destruction") . "]");
+  }
+  if ($text=~/destruction/i) {
+    quest::say("They are in hiding, the few alcoves that I managed to find were shrouded and hidden. Take this signet and find the keeper for each alcove. Show it to him and he will drop the veil. Strike fast and exterminate the camp before he is able to cloak the camp again. Return the talisman to me with proof of the deaths of the three remaining high priests. Once you have done this, I will send you to my brother with my blessings.");
+	quest::summonitem(56010);
+  }
 }
 
 sub EVENT_ITEM {

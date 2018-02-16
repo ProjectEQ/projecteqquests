@@ -26,7 +26,7 @@ sub EVENT_TIMER {
 
   if ($timer == 2) {
     quest::shout("Come forth coward, this time we fight on equal terms!");
-    my $entid = quest::spawn2(50331,0,0,-1960.1,2713.3,3.3,149.0); # Spawn Troll Captain Krignok - even whilst writing this, "unmatched paladin", lol. I had to nerf Krignok so Chalek would win.
+    my $entid = quest::spawn2(50331,0,0,-1960.1,2713.3,3.3,298); # Spawn Troll Captain Krignok - even whilst writing this, "unmatched paladin", lol. I had to nerf Krignok so Chalek would win.
     my $mob = $entity_list->GetMobID($entid); # This little section adds Warrior_spirit_chalex to the hatelist - thanks, Itchy for the example.
     my $mobnpc = $mob->CastToNPC(); # Shamelessly lifted from iceclad/a_lost_pirate.pl
     $mobnpc->AddToHateList($npc, 1);

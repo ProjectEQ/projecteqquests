@@ -47,8 +47,8 @@ sub EVENT_ITEM {
 }
 sub EVENT_SIGNAL {
   if($signal == 1) {
-	quest::spawn2(294610,0,0,673,-727,-46,190);
-	quest::spawn2(294610,0,0,670,-700,-46,187);
+	quest::spawn2(294610,0,0,673,-727,-46,380);
+	quest::spawn2(294610,0,0,670,-700,-46,374);
 	quest::depopall(294611);
 	quest::depop();
   }

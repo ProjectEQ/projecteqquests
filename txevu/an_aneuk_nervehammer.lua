@@ -12,7 +12,7 @@ end
 
 function event_timer(e)
 	if (e.self:GetX() < 1218) then
-		e.self:GMMove(1306, 0, -304, 192)
+		e.self:GMMove(1306, 0, -304, 384)
 		e.self:WipeHateList()
 	end
 end

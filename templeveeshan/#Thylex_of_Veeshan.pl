@@ -40,7 +40,7 @@ $check = 0;
     if ($check == 0 && $entity_list->IsMobSpawnedByNpcTypeID(124155)) {
     }
     elsif ($check == 0 && !defined $qglobals{vulak}) {
-      quest::spawn2(124155,0,0,-739.4,517.2,121,255);
+      quest::spawn2(124155,0,0,-739.4,517.2,121,510);
       quest::depop_withtimer();
       quest::setglobal("vulak",1,2,"M$spawntime");
     }

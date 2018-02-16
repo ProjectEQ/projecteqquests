@@ -51,11 +51,11 @@ end
 
 function Aggro_Adds(e)
 	--spawn 5 adds
-	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4347, 209.9, 64);
-	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4427, 209.9, 64);
-	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 458, 4490, 209.9, 148);
-	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 381, 4394, 209.9, 64);
-	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 456, 4322, 209.9, 246);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4347, 209.9, 128);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 297, 4427, 209.9, 128);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 458, 4490, 209.9, 296);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 381, 4394, 209.9, 128);
+	--eq.spawn2(eq.ChooseRandom(317015,317016,317017,317018),0,0, 456, 4322, 209.9, 492);
 	local npc_list =  eq.get_entity_list():GetNPCList();
 	for npc in npc_list.entries do
 		if (npc.valid and (npc:GetNPCTypeID() == 317015 or npc:GetNPCTypeID() == 317016 or npc:GetNPCTypeID() == 317017 or npc:GetNPCTypeID() == 317018)) then

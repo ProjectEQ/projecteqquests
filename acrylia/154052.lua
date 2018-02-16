@@ -18,7 +18,7 @@ function event_say(e)
 	elseif(e.message:findi("ready")) then -- ready for you to begin your spell
 		e.self:Emote("begins to chant.");
 		eq.signal(154130,1,0);
-		eq.spawn2(154156,0,0,342.75,-232.48,-7.94,187); -- Spawn Spiritist V2
+		eq.spawn2(154156,0,0,342.75,-232.48,-7.94,374); -- Spawn Spiritist V2
 		eq.depop();
 	end
 end

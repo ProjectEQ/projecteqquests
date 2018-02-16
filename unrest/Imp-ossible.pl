@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("Nooo! I cannot be defeated! Its imp-ossible!");
-	quest::spawn2(63101,0,0,17,579,3.1,154);
+	quest::spawn2(63101,0,0,17,579,3.1,308);
 }

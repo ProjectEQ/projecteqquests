@@ -52,7 +52,7 @@ function Add_Timer(e)
  if (e.timer=='wparrive') then
 	 if DistanceToWaypoint(e.self) <= 10 then
 		--eq.zone_emote(15, "depop");
-		eq.spawn2(204079, 0, 0, -1475+40-math.random(1,80), -2555-20-math.random(1,40), 179.38, 128);
+		eq.spawn2(204079, 0, 0, -1475+40-math.random(1,80), -2555-20-math.random(1,40), 179.38, 256);
 		eq.depop();
 		eq.stop_timer('wparrive');
 		
@@ -111,7 +111,7 @@ function Mujaki_Death(e)
 				 --eq.zone_emote(15, "death2");
 				if (currclient:HasItem(69928)) then				
 					--eq.zone_emote(15, "death3");
-					eq.spawn2(204081, 0, 0, -1475, -2555, 179.38, 128);
+					eq.spawn2(204081, 0, 0, -1475, -2555, 179.38, 256);
 					return; --only spawn 1
 				end
 			end
@@ -147,20 +147,20 @@ function Mujaki_Timer(e)
   if (e.timer=='spawnwave') then
 	--event_started, 2 min timer til first wave
 	if (wave <= 3 or wave==8 ) then
-		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1851.48, -2663.94, 172.75, 50);
+		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1851.48, -2663.94, 172.75, 100);
 		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1462.50, -2977.26, 172.69, 0);
-		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1096.82, -2660.80, 175.06, 202);
+		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1096.82, -2660.80, 175.06, 404);
 	elseif (wave >=4 and wave <= 7) then
-		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1851.48, -2663.94, 172.75, 50);
+		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1851.48, -2663.94, 172.75, 100);
 		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1462.50, -2977.26, 172.69, 0);
-		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1096.82, -2660.80, 175.06, 202);
-		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1851.48, -2663.94, 172.75, 50);
+		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1096.82, -2660.80, 175.06, 404);
+		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1851.48, -2663.94, 172.75, 100);
 		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1462.50, -2977.26, 172.69, 0);
-		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1096.82, -2660.80, 175.06, 202);	    
+		eq.spawn2(eq.ChooseRandom( 204077, 204077, 204077, 204078 ), 0, 0, -1096.82, -2660.80, 175.06, 404);	    
 	elseif (wave==9) then
 	--muj + unkilled
 		eq.stop_all_timers();
-		eq.spawn2(204080, 0, 0, -1475, -2555, 179.38, 128);				
+		eq.spawn2(204080, 0, 0, -1475, -2555, 179.38, 256);				
 		eq.signal(204079,1);	
 	end
 	wave=wave+1;

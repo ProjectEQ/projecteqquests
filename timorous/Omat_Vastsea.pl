@@ -2,7 +2,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
 	if (plugin::check_hasitem($client,28048) && plugin::check_hasitem($client,28049) && plugin::check_hasitem($client,28050)) { #respawn Jhassad if failed during initial attempt
 	  quest::say("Jhassad told me to notify him the minute you returned.  Hurry down to the beach so you do not miss him again!");
-	  quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
+	  quest::unique_spawn(96074,0,0,-1781,-11959,14.3,2); #Jhassad Oceanson
 	}
 	else {
       quest::emote("bows deeply. 'I have been expecting you, $name. The waters have foretold your arrival. I am High Priest Omat Vastsea of the Triumvirate missionaries. Please feel free to enjoy the quiet solitude of this inn.'");
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
     quest::say("I see now that Zordak Ragefire and the exiled elder dragon Zordakalicus were the same being. That explains how he resisted our attempts to divine his affairs and past. Each of these orbs I have granted you represents one of the Triumvirate. Jhassad Oceanson awaits on the shore below to perform the ritual that will merge the orbs into a single Orb of the Triumvirate and summon an avatar from the Plane of Water. Present the Orb of the Triumvirate to the Avatar of Water when it arrives and allow your destiny to be unraveled.");
     quest::summonitem(28050); #Orb of Vapor
     quest::exp(100000); 
-    quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
+    quest::unique_spawn(96074,0,0,-1781,-11959,14.3,2); #Jhassad Oceanson
   }
   elsif ($client->GetGlobal("cleric20") >= 2 && plugin::check_handin(\%itemcount, 12433 => 1)) { #Dark Red Robe
     quest::summonitem(12509); #Robe of Plasmatic Priesthood

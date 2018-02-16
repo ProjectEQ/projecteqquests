@@ -5,7 +5,7 @@ quest::say("Councilor Darakor here would have you believe we should march every 
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(6,895,-2,128,1);
+		quest::moveto(6,895,-2,256,1);
 	}
 	if($signal==2) {
 		quest::moveto(-10,534,67,0,1);

@@ -12,7 +12,7 @@ sub EVENT_SAY {
  if ($client->GetGlobal("beast_epic") ==12) {
   if ($text=~/happening/i) {
      quest::say("Something . . . is wrong. My companion . . . it weakens me . . .");
-     quest::spawn2(50326,0,0,-3241,3550,39,1224);
+     quest::spawn2(50326,0,0,-3241,3550,39,1224); # needs_heading_validation
      quest::depop_withtimer();
      }
  }

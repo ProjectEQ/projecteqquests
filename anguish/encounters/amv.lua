@@ -20,7 +20,7 @@ local convert_max_hit=1855;
 local cazic_cooldown =0;
 
 function AMV_Spawn(e)
-	eq.unique_spawn(317108,0,0, 617,5080,278,248); --Vangl`s_Focus (317108)
+	eq.unique_spawn(317108,0,0, 617,5080,278,496); --Vangl`s_Focus (317108)
 	eq.set_next_hp_event(75);
 	
 	eq.set_timer("close_doors",30*1000);	
@@ -94,9 +94,9 @@ function AMV_Timer(e)
 		eq.stop_timer("check_mark");	
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
-			eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
 		else
-			eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);
 		end
 	elseif (e.timer == "focus30") then
 		eq.stop_timer("focus30");

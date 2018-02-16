@@ -25,7 +25,7 @@ function event_say(e)
 	elseif(e.message:findi("llaw eht htiw eno I ma") and qglobals["sirran"] == "6") then 		--island6
 		e.self:Say("Kcul doog! Ouy rof ydaer si erips eht fo retsis eht won, sdik boj doog.");
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71076) == false) then
-			eq.spawn2(71076,0,0,-929,-1035,1093,64); 							--used Magelo to get the closest loc as possible.
+			eq.spawn2(71076,0,0,-929,-1035,1093,128); 							--used Magelo to get the closest loc as possible.
 		end
 	elseif(e.message:findi("traverse this plane") and qglobals["sirran"] == "1") then
 		e.self:Say("Ahah! Wise you are and tell you I will. Hrm? Don't have wings, do you? Fairies have swords! Fairies stole my lucky feet! Hand me them, one by one, and be in for a treat! Haha!");

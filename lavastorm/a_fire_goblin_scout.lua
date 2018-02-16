@@ -3,7 +3,7 @@
 function event_death_complete(e)
 	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(scorchfist)==false) then
 		if(math.random(100) < 10) then
-			eq.spawn2(27126,101,0,820,1270,-77.9,193);
+			eq.spawn2(27126,101,0,820,1270,-77.9,386);
 		end
 	end
 end

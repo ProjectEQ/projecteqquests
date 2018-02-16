@@ -131,7 +131,7 @@ function Efficiency_Signal(e)
     eq.spawn_condition(this_zone, instance_id, 2, 0);
     
     eq.stop_all_timers();
-    eq.spawn2(307005, 0, 0, -212, 273, 71, 20);
+    eq.spawn2(307005, 0, 0, -212, 273, 71, 40);
     eq.depop();
 
     local mpg_helper = require("mpg_helper");

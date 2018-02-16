@@ -13,13 +13,13 @@ function event_trade(e)
         if (item_lib.check_turn_in(e.trade, {item1 = 56010})) then --Check for "Talisman of the Plasmatic Priests"
 			e.other:SummonItem(56010); --return "Talisman of the Plasmatic Priests"
             -- Spawn High Priest Valon
-            eq.spawn2(175308, 0, 0, 1468, -1710, -45, 201);
+            eq.spawn2(175308, 0, 0, 1468, -1710, -45, 402);
             -- Spawn 2 A Plasmatic Priest
-            eq.spawn2(27129, 0, 0, 1464, -1716, -45, 251);
-            eq.spawn2(27129, 0, 0, 1454, -1712, -47, 22);
+            eq.spawn2(27129, 0, 0, 1464, -1716, -45, 502);
+            eq.spawn2(27129, 0, 0, 1454, -1712, -47, 44);
             -- Spawn 3 A Plasmatic Priestess
-            eq.spawn2(27130, 0, 0, 1473, -1692, -47, 187);
-            eq.spawn2(27130, 0, 0, 1451, -1694, -47, 56);
+            eq.spawn2(27130, 0, 0, 1473, -1692, -47, 374);
+            eq.spawn2(27130, 0, 0, 1451, -1694, -47, 112);
             eq.depop_with_timer();
         end
 		

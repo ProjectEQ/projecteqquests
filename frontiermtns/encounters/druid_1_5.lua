@@ -53,10 +53,10 @@ function King_Timer(e)
 	elseif (e.timer == "spawn_hiders") then
 		eq.stop_timer("spawn_hiders");
 		e.self:Shout("Contest start now!");
-		eq.spawn2(92202,0,0,2950.3,947.4,415.7,120);
-		eq.spawn2(92202,0,0,746.9,-1143,-258,133);
-		eq.spawn2(92202,0,0,-1891.8,-1803.4,13.11,113);
-		eq.spawn2(92202,0,0,-3431.6,3034.9,307.9,232);
+		eq.spawn2(92202,0,0,2950.3,947.4,415.7,240);
+		eq.spawn2(92202,0,0,746.9,-1143,-258,266);
+		eq.spawn2(92202,0,0,-1891.8,-1803.4,13.11,226);
+		eq.spawn2(92202,0,0,-3431.6,3034.9,307.9,464);
 		local npc_list = eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and npc:GetNPCTypeID() == 92202) then

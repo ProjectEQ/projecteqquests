@@ -18,11 +18,11 @@ sub EVENT_TIMER {
 
         if (!$check_boss && !defined $qglobals{vine_ring} && !defined $qglobals{vine_ring_run}) { #When no more A_Tainted_Rock_Beast are up, spawn the A_Bloodthirsty_Vegerog 
 			quest::spawn2(218040,0,0,483,-781,43.5,0); #A_Bloodthirsty_Vegerog 
-			quest::spawn2(218040,0,0,434,-832,43.5,192);
-			quest::spawn2(218040,0,0,483,-883,43.5,128);
-			quest::spawn2(218040,0,0,533,-832,43.5,64);
-			quest::spawn2(218040,0,0,533,-911,41.5,128);
-			quest::spawn2(218040,0,0,434,-911,41.5,128);
+			quest::spawn2(218040,0,0,434,-832,43.5,384);
+			quest::spawn2(218040,0,0,483,-883,43.5,256);
+			quest::spawn2(218040,0,0,533,-832,43.5,128);
+			quest::spawn2(218040,0,0,533,-911,41.5,256);
+			quest::spawn2(218040,0,0,434,-911,41.5,256);
 			quest::spawn2(218040,0,0,533,-751,41.5,0);
 			quest::spawn2(218040,0,0,431,-751,43.5,0);
 			quest::spawn2(218040,0,0,482,-950,37.5,0);

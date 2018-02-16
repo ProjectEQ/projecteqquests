@@ -4,7 +4,7 @@ function event_spell_effect(e)
   if ( mob:IsClient() ) then 
     local client = e.target:CastToClient();
     if (client.valid) then 
-      client:MovePC(35, 120, -1046, 8, 185);
+      client:MovePC(35, 120, -1046, 8, 370);
     end
   end
 

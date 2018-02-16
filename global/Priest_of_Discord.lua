@@ -56,7 +56,7 @@ function event_say(e)
          --e.self:Say("I am sorry but Discord is closed to me right now.");
          e.self:Say("Prepare yourself to cross into the depths of Discord!");
          eq.set_global("OOW_PoD_Origin",tostring(eq.get_zone_id()),5,"F");
-         e.other:MovePC(302, -1485.52, -1263.29, 222.0,36);
+         e.other:MovePC(302, -1485.52, -1263.29, 222.0,72);
       end
 end
 

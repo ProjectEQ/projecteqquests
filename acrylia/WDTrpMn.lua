@@ -5,8 +5,8 @@
 local event_counter;
 
 function event_spawn(e)
-	eq.spawn2(154053,0,0,344.07, -323.49, -7.94,187); -- Spiritist_Kama_Resan V2
-	eq.spawn2(154052,0,0,342.75, -232.48, -7.94,187); -- Spiritual Arcanist V1
+	eq.spawn2(154053,0,0,344.07, -323.49, -7.94,374); -- Spiritist_Kama_Resan V2
+	eq.spawn2(154052,0,0,342.75, -232.48, -7.94,374); -- Spiritual Arcanist V1
 	event_counter = 0;
 end
 
@@ -18,31 +18,31 @@ function event_signal(e)
 
 		if(event_counter == 1) then
 			-- Room A
-			eq.spawn2(154147,0,0,356.00,-250.00,-7.00,260);
-			eq.spawn2(154147,0,0,328.00,-250.00,-7.00,260);
-			eq.spawn2(154147,0,0,356.00,-219.00,-7.00,260);
-			eq.spawn2(154147,0,0,328.00,-219.00,-7.00,260);
+			eq.spawn2(154147,0,0,356.00,-250.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,328.00,-250.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,356.00,-219.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,328.00,-219.00,-7.00,260); -- needs_heading_validation
 			-- Room B
-			eq.spawn2(154147,0,0,356.00,-337.00,-7.00,260);
-			eq.spawn2(154147,0,0,329.00,-337.00,-7.00,260);
-			eq.spawn2(154147,0,0,329.00,-305.00,-7.00,260);
-			eq.spawn2(154147,0,0,356.00,-305.00,-7.00,260);
+			eq.spawn2(154147,0,0,356.00,-337.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,329.00,-337.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,329.00,-305.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,356.00,-305.00,-7.00,260); -- needs_heading_validation
 		elseif (event_counter== 9) then
 			-- Room A
-			eq.spawn2(154147,0,0,356.00,-250.00,-7.00,260);
-			eq.spawn2(154147,0,0,328.00,-250.00,-7.00,260);
-			eq.spawn2(154147,0,0,356.00,-219.00,-7.00,260);
-			eq.spawn2(154147,0,0,328.00,-219.00,-7.00,260);
+			eq.spawn2(154147,0,0,356.00,-250.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,328.00,-250.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,356.00,-219.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,328.00,-219.00,-7.00,260); -- needs_heading_validation
 			-- Room B
-			eq.spawn2(154147,0,0,356.00,-337.00,-7.00,260);
-			eq.spawn2(154147,0,0,329.00,-337.00,-7.00,260);
-			eq.spawn2(154147,0,0,329.00,-305.00,-7.00,260);
-			eq.spawn2(154147,0,0,356.00,-305.00,-7.00,260);
-			eq.spawn2(154155,0,0,403.10,-239.98,37.06,130); -- Ward of death
+			eq.spawn2(154147,0,0,356.00,-337.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,329.00,-337.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,329.00,-305.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154147,0,0,356.00,-305.00,-7.00,260); -- needs_heading_validation
+			eq.spawn2(154155,0,0,403.10,-239.98,37.06,260); -- Ward of death
 		elseif(event_counter == 17) then
-			eq.spawn2(154154,0,0,345.00,-277.00,-6.00,260); -- Ward of Life
+			eq.spawn2(154154,0,0,345.00,-277.00,-6.00,260); -- Ward of Life -- needs_heading_validation
 		elseif(event_counter == 19) then
-			eq.spawn2(eq.ChooseRandom(154095,154122),0,0,614.00,-345.00,-23.00,187); -- Spawn EVinvis or #raidman
+			eq.spawn2(eq.ChooseRandom(154095,154122),0,0,614.00,-345.00,-23.00,374); -- Spawn EVinvis or #raidman
 		end
 
 	elseif(e.signal == 3) then -- Succed

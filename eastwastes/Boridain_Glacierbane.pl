@@ -122,7 +122,7 @@ sub EVENT_WAYPOINT_DEPART {
   elsif ($boridain == 18) {  #loc 1530 -2491 306
     quest::say("Who am I kidding, I'm no hunter. I'll never be a hunter. I may as well give up and become a miner like dad.");
     $npc->SetAppearance(1);
-    $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 125.5);
+    $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 251);
     $mob = $entity_list->GetMobID($kodiak);
     $mobnpc = $mob->CastToNPC();
     $mobnpc->MoveTo(1530, -2491, 306);

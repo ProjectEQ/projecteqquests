@@ -11,7 +11,7 @@ sub EVENT_TIMER {
 	}
 	if (($count == 1) && ($zonetime < 800 || $zonetime > 1999)) {
 		quest::stop;
-		quest::moveto(-630,-71,-24.75,162);
+		quest::moveto(-630,-71,-24.75,324);
 	}	
 	if ($count ==2 ) {
 	quest::settimer("checks",125);

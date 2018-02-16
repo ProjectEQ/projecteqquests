@@ -279,7 +279,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
   elsif ($walk5 == undef) {
     $walk5=$walk5+1;
-    quest::spawn2(116576,237,0,521.2,-3140,195.6,130.5);
+    quest::spawn2(116576,237,0,521.2,-3140,195.6,261);
     quest::depop_withtimer();
   }
 }

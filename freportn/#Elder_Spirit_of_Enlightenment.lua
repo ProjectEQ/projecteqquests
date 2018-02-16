@@ -155,10 +155,10 @@ end
 
 function event_timer(e)
 	if e.timer=="start_event" then
-		eq.spawn2(8119 ,0,0, 41, 73, 17.13 ,90);	--#Elder Spirit of Perseverance 
-		eq.spawn2(8120 ,0,0, 50.65, 72.66,17.13 ,130); --#Elder Spirit of Understanding
-		eq.spawn2(8121 ,0,0, 57.8,67.3 ,17.13 , 192); --#Elder Spirit of Fortitude
-		eq.spawn2(8122 ,0,0,56.7 ,59.5 ,17.13 , 210); --#Elder Spirit of Will
+		eq.spawn2(8119 ,0,0, 41, 73, 17.13 ,180);	--#Elder Spirit of Perseverance 
+		eq.spawn2(8120 ,0,0, 50.65, 72.66,17.13 ,260); --#Elder Spirit of Understanding
+		eq.spawn2(8121 ,0,0, 57.8,67.3 ,17.13 , 384); --#Elder Spirit of Fortitude
+		eq.spawn2(8122 ,0,0,56.7 ,59.5 ,17.13 , 420); --#Elder Spirit of Will
 		eq.spawn2(8123 ,0,0, 46.3,55 ,17.13 ,0 ); --#Elder Spirit of Sense
 		e.self:Say("It is time to begin the Ruchu. Collect your strength and let us begin.");
 		eq.set_timer("event",10000);
@@ -179,12 +179,12 @@ function event_timer(e)
 			client:Message(0,"The spirits begin to chant in unison in a language no Norrathian understands, but you only hear it in your mind. 'Ruchu immana kiratu. Ruchu immana kiratu.'");
 		elseif(count == 6) then	
 			client:Message(0,"As the magic fades, the Spirit of Wisdom lies inside the circle, dazed and confused.");
-			eq.spawn2(8125 ,0,0, 45.15, 61.72, 17.13,37); --#Elder Spirit of Wisdom
+			eq.spawn2(8125 ,0,0, 45.15, 61.72, 17.13,74); --#Elder Spirit of Wisdom
 		elseif(count == 7) then	
 			client:Message(0,"The spirits continue to chant.");
 		elseif(count == 9) then	
 			client:Message(0,"This time, the Spirit of Patience appears from the ether, looking tired, but bright-eyed.");
-			eq.spawn2( 8126,0,0, 45.1,67.5,17.13 ,96 ); --#Elder Spirit of Patience
+			eq.spawn2( 8126,0,0, 45.1,67.5,17.13 ,192 ); --#Elder Spirit of Patience
 		elseif(count == 10) then	
 			eq.signal(8125 ,1); --#Elder Spirit of Wisdom
 		elseif(count == 11) then	
@@ -197,7 +197,7 @@ function event_timer(e)
 			client:Message(0,"The spirits respond by chanting louder. The rattling of talisman beads fills the air.");
 		elseif(count == 16) then
 			client:Message(0,"Finally, the Spirit of Might appears, its essence is faded and it is so weak it barely keeps a hold on its own existence.");
-			eq.spawn2(8124,0,0,50.25 ,64 , 17.13 ,190 ); --#Elder Spirit of Might
+			eq.spawn2(8124,0,0,50.25 ,64 , 17.13 ,380 ); --#Elder Spirit of Might
 		elseif(count == 17) then	
 			client:Message(0,"The spirits slow their chanting and then there is silence. ");
 		elseif(count == 18) then	

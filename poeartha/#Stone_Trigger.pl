@@ -71,10 +71,10 @@ sub EVENT_SIGNAL {
       if(!$check_boss) {	  
   #when all fortificatiosn are dead, we spawn the next wave, 4 A_Mound_of_Rubble
   		quest::spawn_condition($zonesn,2,0);
-        	quest::spawn2(218076,0,0,-645,-290,85,30); #Mound_of_Rubble
-		quest::spawn2(218076,0,0,-643,-226,85,30);
-		quest::spawn2(218076,0,0,-576,-226,85,30);
-		quest::spawn2(218076,0,0,-576,-290,85,30);
+        	quest::spawn2(218076,0,0,-645,-290,85,60); #Mound_of_Rubble
+		quest::spawn2(218076,0,0,-643,-226,85,60);
+		quest::spawn2(218076,0,0,-576,-226,85,60);
+		quest::spawn2(218076,0,0,-576,-290,85,60);
         	
         }
 }
@@ -85,7 +85,7 @@ sub EVENT_SIGNAL {
             if($counter == 4 ) {			
 	#depop the notarget PH and spawn the real deal
 	quest::depop(218029); #A_Rock_Monstrosity
-	quest::spawn2(218089,0,0,-612.9,-262.4,89.1,66.5); #A_Rock_Monstrosity
+	quest::spawn2(218089,0,0,-612.9,-262.4,89.1,133); #A_Rock_Monstrosity
 	$counter=0;
 	}
       }

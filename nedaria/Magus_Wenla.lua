@@ -10,23 +10,23 @@ function event_say(e)
 		e.self:CastSpell(4180,e.other:GetID(),0,1);
 
 	elseif(e.message:findi("natimbi")) then
-		e.other:MovePC(280, -1557, -853, 241,90);
+		e.other:MovePC(280, -1557, -853, 241,180);
 
 	elseif(e.message:findi("north ro")) then
 		--e.self:CastSpell(4177,e.other:GetID(),0,1);		 
-		e.other:MovePC(34, 914, 2679, -25, 10);		 
+		e.other:MovePC(34, 914, 2679, -25, 20);		 
 
 	elseif(e.message:findi("south ro")) then
 		--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-		e.other:MovePC(35, 1033, -1447, -23, 83);
+		e.other:MovePC(35, 1033, -1447, -23, 166);
 
 	elseif(e.message:findi("commonlands")) then
 		--e.self:CastSpell(4176,e.other:GetID(),0,1);
-		e.other:MovePC(22,-140,-1520,3,280);
+		e.other:MovePC(22,-140,-1520,3,280); -- needs_heading_validation
 
 	elseif(e.message:findi("abysmal sea")) then
 		--Translocate Abysmal is unknown
-		e.other:MovePC(279,39,-150,141,90);
+		e.other:MovePC(279,39,-150,141,180);
 	end
 end
 

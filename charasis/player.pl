@@ -84,7 +84,7 @@ sub LOCK_DOORS {
 
 sub EVENT_ENTERZONE {
   if ($class eq "Ranger" && plugin::check_hasitem($client, 62637)) {
-    quest::unique_spawn(105290, 0, 0, 121, 546, 3, 65);
+    quest::unique_spawn(105290, 0, 0, 121, 546, 3, 130);
   }
 }
 

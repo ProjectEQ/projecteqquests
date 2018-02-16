@@ -15,7 +15,7 @@ function event_trade(e)
 		e.self:Say(string.format("Thanks %s.  Now hand this crate to the fellow behind you.",e.other:GetName()));
 		e.other:SummonItem(19930);
 		e.other:Ding();
-		eq.spawn2(383269,0,0,229,-153,-39,175);
+		eq.spawn2(383269,0,0,229,-153,-39,350);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

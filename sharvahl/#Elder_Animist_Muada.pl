@@ -198,7 +198,7 @@ sub EVENT_ITEM {
  }
   if (plugin::check_handin(\%itemcount, 57013 =>1 )) {
     quest::say("Yes, yes, this is what we need. It's unfortunate you had to get it by the means you did. It seems that the command of the spirits is getting difficult to master with all the trouble coming about from that portal to that foul realm. Wait a moment, $name . . . a messenger is coming.");
-    quest::unique_spawn(155345,0,0,509.7,-170,-102,190); #Messenger_Yuashar
+    quest::unique_spawn(155345,0,0,509.7,-170,-102,380); #Messenger_Yuashar
 	quest::settimer("respond",10);	
   }
   if (plugin::check_handin(\%itemcount, 57052 =>1 )) {

@@ -62,7 +62,7 @@ sub EVENT_SIGNAL {
 	
 sub EVENT_TIMER {
 	if($timer == 1) {
-		quest::MovePCInstance(344,5,$x,$y,$z,225);
+		quest::MovePCInstance(344,5,$x,$y,$z,450);
 	} elsif($timer == 2) {
 		quest::movepc(344,$x,$y,$z,225);
 	} elsif($timer eq "afk_check") {

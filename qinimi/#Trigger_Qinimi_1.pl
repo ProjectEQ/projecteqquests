@@ -45,9 +45,9 @@ sub EVENT_TIMER {
   if ($timer == 2) {  #starts event
     quest::stoptimer(2);
     quest::depopall(281115); #a_chamber_guardian (NoTarget)
-    quest::spawn2(281114,0,0,-1675,-1151,-15,209); #a_chamber_guardian
-    quest::spawn2(281114,0,0,-1666,-1140,-15,219); #a_chamber_guardian
-    quest::spawn2(281114,0,0,-1691,-1169,-15,230); #a_chamber_guardian
+    quest::spawn2(281114,0,0,-1675,-1151,-15,418); #a_chamber_guardian
+    quest::spawn2(281114,0,0,-1666,-1140,-15,438); #a_chamber_guardian
+    quest::spawn2(281114,0,0,-1691,-1169,-15,460); #a_chamber_guardian
   }
 }
 
@@ -56,22 +56,22 @@ sub EVENT_SIGNAL {
     $counter += 1;
     if($counter == 3) {
       quest::depopall(281120); #a_chamber_guardian (NoTarget)
-      quest::spawn2(281114,0,0,-1702,-993,-15,139); #a_chamber_guardian
-      quest::spawn2(281114,0,0,-1686,-999,-15,143); #a_chamber_guardian
-      quest::spawn2(281114,0,0,-1662,-1012,-15,164); #a_chamber_guardian
+      quest::spawn2(281114,0,0,-1702,-993,-15,278); #a_chamber_guardian
+      quest::spawn2(281114,0,0,-1686,-999,-15,286); #a_chamber_guardian
+      quest::spawn2(281114,0,0,-1662,-1012,-15,328); #a_chamber_guardian
     }
     if ($counter == 6)  {
       quest::depopall(281121); #a_chamber_guardian (NoTarget)
-      quest::spawn2(281114,0,0,-1778,-1167,-15,13); #a_chamber_guardian
-      quest::spawn2(281114,0,0,-1804,-1155,-15,26); #a_chamber_guardian
-      quest::spawn2(281114,0,0,-1829,-1102,-15,51); #a_chamber_guardian
+      quest::spawn2(281114,0,0,-1778,-1167,-15,26); #a_chamber_guardian
+      quest::spawn2(281114,0,0,-1804,-1155,-15,52); #a_chamber_guardian
+      quest::spawn2(281114,0,0,-1829,-1102,-15,102); #a_chamber_guardian
     }
     if ($counter == 9)  {
       quest::depopall(281118); #Pixtt_Tixxrt_Kvrok (NoTarget)
       quest::depopall(281122); #Trixxrt`s_Guardsman (NoTarget)
-      quest::spawn2(281123,0,0,-1741,-1078,-4.8,126.5); #Pixtt_Tixxrt_Kvrok
-      quest::spawn2(281117,0,0,-1690,-1080,-14.4,193.3); #Trixxrt`s_Guardsman
-      quest::spawn2(281117,0,0,-1788,-1079,-14.5,67); #Trixxrt`s_Guardsman
+      quest::spawn2(281123,0,0,-1741,-1078,-4.8,253); #Pixtt_Tixxrt_Kvrok
+      quest::spawn2(281117,0,0,-1690,-1080,-14.4,386.6); #Trixxrt`s_Guardsman
+      quest::spawn2(281117,0,0,-1788,-1079,-14.5,134); #Trixxrt`s_Guardsman
     }
   }
   if ($signal == 2) { #Signal from Executioner_Hexxt_Xocik
@@ -87,7 +87,7 @@ sub EVENT_SIGNAL {
 sub REMOVE_PLAYERS {
   foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
-    $pc->MovePC(281,-1053,438,-16,1);
+    $pc->MovePC(281,-1053,438,-16,2);
   }
   @player_list = ();
 }

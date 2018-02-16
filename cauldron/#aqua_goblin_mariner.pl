@@ -9,7 +9,7 @@ sub EVENT_DEATH_COMPLETE{
   #quest::say("I already died once!");
  }else{
    #quest::say("Starting cycle");
-   quest::spawn2($a,5,0,-296.37,-122.31,-349.32,122);
+   quest::spawn2($a,5,0,-296.37,-122.31,-349.32,244);
    $mdied=1; #mark mariner died once
  }
 }

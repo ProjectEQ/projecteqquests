@@ -27,9 +27,9 @@ sub EVENT_SIGNAL {
         quest::depop(216070); # Depop "tough" #Pwelon_of_Vapor
         quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
         quest::depop(216061); # Depop "tough" #Vamuil_of_Water
-        quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,69); # Repop weak Pwelon_of_Vapor
-        quest::spawn2(216108,0,0,$x-10,$y,$z+5,69); # Repop weak Nrinda_of_Ice
-        quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,69); # Repop weak Vamuil_of_Water
+        quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,138); # Repop weak Pwelon_of_Vapor
+        quest::spawn2(216108,0,0,$x-10,$y,$z+5,138); # Repop weak Nrinda_of_Ice
+        quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,138); # Repop weak Vamuil_of_Water
         quest::setglobal("coirnav_wave", 4, 7, "M10");
       }
     }
@@ -39,7 +39,7 @@ sub EVENT_SIGNAL {
     quest::depopall(216067);
     quest::depopall(216057);
     quest::setglobal("coirnav_done", 3, 7, "D4"); # You can't attempt this again for 5 days
-    quest::spawn2(216066,0,0,$x,$y,$z,69); #Spawn Essence of Water
+    quest::spawn2(216066,0,0,$x,$y,$z,138); #Spawn Essence of Water
   }
 }
 
@@ -156,7 +156,7 @@ sub SPAWN_WAVE1 {
     quest::spawn2(216071,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); # Triloun Vaporfiend
     $count ++;
   }
-  quest::spawn2(216070,0,0,$x+5,$y-20,$z+5,69); # Spawn #Pwelon_of_Vapor associated with this wave
+  quest::spawn2(216070,0,0,$x+5,$y-20,$z+5,138); # Spawn #Pwelon_of_Vapor associated with this wave
   quest::setglobal("coirnav_wave", 1, 7, "M15");
 }
 
@@ -183,7 +183,7 @@ sub SPAWN_WAVE2 {
     quest::spawn2(216076,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); #Hraquis icefiend
     $count ++;
   }
-  quest::spawn2(216061,0,0,$x-10,$y,$z+5,69); # Spawn #Nrinda_of_Ice associated with this wave
+  quest::spawn2(216061,0,0,$x-10,$y,$z+5,138); # Spawn #Nrinda_of_Ice associated with this wave
   quest::setglobal("coirnav_wave", 2, 7, "M12");
   quest::stoptimer(2); # Stop timer
 }
@@ -212,7 +212,7 @@ sub SPAWN_WAVE3 {
     quest::spawn2(216060,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); # Regrua waterfiend
     $count ++;
   }
-  quest::spawn2(216065,0,0,$x+5,$y+20,$z+5,69); # Spawn #Vamuil_of_Water associated with this wave
+  quest::spawn2(216065,0,0,$x+5,$y+20,$z+5,138); # Spawn #Vamuil_of_Water associated with this wave
   quest::setglobal("coirnav_wave", 3, 7, "M10");
   quest::stoptimer(3); # Stop timer
 }
@@ -221,9 +221,9 @@ sub SPAWN_WAVE4 {
   quest::depop(216070); # Depop "tough" #Pwelon_of_Vapor
   quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
   quest::depop(216061); # Depop "tough" #Vamuil_of_Water
-  quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,69); # Repop weak Pwelon_of_Vapor
-  quest::spawn2(216108,0,0,$x-10,$y,$z+5,69); # Repop weak Nrinda_of_Ice
-  quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,69); # Repop weak Vamuil_of_Water
+  quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,138); # Repop weak Pwelon_of_Vapor
+  quest::spawn2(216108,0,0,$x-10,$y,$z+5,138); # Repop weak Nrinda_of_Ice
+  quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,138); # Repop weak Vamuil_of_Water
   quest::setglobal("coirnav_wave", 4, 7, "M15");
   quest::stoptimer(8);
   quest::settimer(9,1); #timer to check for wave 4 to be dead and spawn wave 5. (safety check for failed signal)
@@ -257,7 +257,7 @@ sub SPAWN_WAVE5 {
     }
     $count ++;
   }
-  quest::spawn2(216094,0,0,$x,$y,$z-10,69); # The Real Corinav
+  quest::spawn2(216094,0,0,$x,$y,$z-10,138); # The Real Corinav
   quest::setglobal("coirnav_wave", 5, 7, "M10");
   quest::stoptimer(9);
 }

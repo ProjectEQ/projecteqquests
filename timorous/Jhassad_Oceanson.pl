@@ -5,7 +5,7 @@ sub EVENT_ITEM {
     quest::emote("kneels in the sand and places the three orbs into a large abalone shell bowl. A blue glow surrounds his hands as he waves them over the orbs resting in the bowl. The orbs crack and fall apart, releasing their contents, then reform into a single glowing orb. Jhassad Oceanson gently removes the Orb of the Triumvirate and places it in your hands.");
     quest::say("The Avatar of Water approaches. You must hand him the Orb of the Triumvirate and it will be decided if it is your destiny to wield the Nem Ankh Sprinkler."); 
     quest::summonitem(28023); # Orb of the triumvirate
-    quest::unique_spawn(96086,21,0,-1886,-11661,1,192); #Avatar of water
+    quest::unique_spawn(96086,21,0,-1886,-11661,1,384); #Avatar of water
     quest::depop();
   }
   plugin::return_items(\%itemcount);

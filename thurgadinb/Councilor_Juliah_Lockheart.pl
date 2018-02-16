@@ -21,7 +21,7 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(14,883,-2,232,1);
+		quest::moveto(14,883,-2,464,1);
 	}
 	if($signal==2) {
 		quest::moveto(-25,542,65,0,1);

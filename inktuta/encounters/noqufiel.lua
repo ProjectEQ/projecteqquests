@@ -105,7 +105,7 @@ function TrueTimer(e)
 				local mY=mirrnoq:GetY();
 				local mZ=mirrnoq:GetZ();
 				eq.depop_all(296066);
-				eq.spawn2(296066, 0, 0,mX,mY,mZ,192);
+				eq.spawn2(296066, 0, 0,mX,mY,mZ,384);
 				eq.spawn2(296065, 0, 0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),192);
 				eq.depop();
 			end
@@ -128,7 +128,7 @@ function TrueSignal(e)
 				eq.debug(MoveName:GetName());
 				e.self:Say("begone " .. MoveName:GetName())
 				e.self:SetHate(MoveName, 1, 1)
-				MoveName:MovePCInstance(296, inst_id, -117, -912, -127, 64)
+				MoveName:MovePCInstance(296, inst_id, -117, -912, -127, 128)
 			end
 		end
 	end
@@ -136,7 +136,7 @@ end
 
 function TriggerTimer(e)
 	if e.timer=="cursecallers" then
-		eq.spawn2(eq.ChooseRandom(296059,296060,296061,296062,296063,296064), 0, 0,-238,-657,-126,121);
+		eq.spawn2(eq.ChooseRandom(296059,296060,296061,296062,296063,296064), 0, 0,-238,-657,-126,242);
 		eq.get_entity_list():GetMobByNpcTypeID(296065):Emote("rejoices. 'May find strength in your passing, as I have'");
 		eq.debug("spawn cc");
 	elseif e.timer=="banish" then
@@ -195,11 +195,11 @@ function Spawn_Noqu(loc)
 	eq.depop_all(296065);
 	eq.depop_all(296066);
 	if (eq.ChooseRandom(1,2)==1) then		
-		eq.spawn2(296066, 0, 0,20,-706,-126,192);
-		eq.spawn2(296065, 0, 0,20,-633,-126,192);
+		eq.spawn2(296066, 0, 0,20,-706,-126,384);
+		eq.spawn2(296065, 0, 0,20,-633,-126,384);
 	else
-		eq.spawn2(296065, 0, 0,20,-706,-126,192);
-		eq.spawn2(296066, 0, 0,20,-633,-126,192);		
+		eq.spawn2(296065, 0, 0,20,-706,-126,384);
+		eq.spawn2(296066, 0, 0,20,-633,-126,384);		
 	end
 end
 

@@ -22,16 +22,16 @@ function Researcher_Death(e)
     eq.spawn2(260062, 0, 0, 1375, -2, 145, 0):SetAppearance(3); 
 
     -- Flawless Experimental Battlelord
-    eq.spawn2(260069, 0, 0, 1512, -65, 146, 188);
+    eq.spawn2(260069, 0, 0, 1512, -65, 146, 376);
 
     -- Steeslave Researcher
-    eq.spawn2(260070, 0, 0, 1525, -105, 144, 215);
-    eq.spawn2(260070, 0, 0, 1534, -25, 143, 155);
+    eq.spawn2(260070, 0, 0, 1525, -105, 144, 430);
+    eq.spawn2(260070, 0, 0, 1534, -25, 143, 310);
 
     -- Flawless Experimental Brute
-    eq.spawn2(260063, 0, 0, 1344, -71, 143, 184);
-    eq.spawn2(260063, 0, 0, 1422, -35, 143, 170);
-    eq.spawn2(260063, 0, 0, 1427, -84, 143, 196);
+    eq.spawn2(260063, 0, 0, 1344, -71, 143, 368);
+    eq.spawn2(260063, 0, 0, 1422, -35, 143, 340);
+    eq.spawn2(260063, 0, 0, 1427, -84, 143, 392);
   end
 end
 
@@ -61,8 +61,8 @@ end
 function Battlelord_Timer(e)
   if (e.timer == "swarm") then
     eq.zone_emote(15, "Flawless Experimental Battlelord roars as his muscles bulge to gargantuan proportions!");
-    eq.spawn2(260071, 0, 0, 1389, -7, 143, 131);
-    eq.spawn2(260071, 0, 0, 1375, -99, 144, 228);
+    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262);
+    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456);
   end
 end
 

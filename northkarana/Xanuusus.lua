@@ -54,7 +54,7 @@ end
 function event_timer(e)
   eq.debug("timer: " .. e.timer);
   if ( e.timer == "spawn_beast" ) then
-    eq.unique_spawn( 13131, 0, 0, 345.57, 1290, 22.87, 52.0);
+    eq.unique_spawn( 13131, 0, 0, 345.57, 1290, 22.87, 104);
     eq.stop_timer(e.timer);
   end
 end

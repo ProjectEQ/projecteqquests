@@ -18,7 +18,7 @@ sub EVENT_SIGNAL {
       quest::stoptimer("sig_prisoner");
       quest::stoptimer("do_execution");
       #Spawn new executioner
-      quest::spawn2(201439,0,0,232,-1048,74,180);
+      quest::spawn2(201439,0,0,232,-1048,74,360);
       #Depop this executioner
       quest::depop();
    }
@@ -54,7 +54,7 @@ sub EVENT_TIMER {
    if ($timer eq "begin_delay") {
       quest::stoptimer("begin_delay");
       quest::modifynpcstat("runspeed", $rspeed);
-      quest::moveto(196, -1052, 73.1, -1, 1);
+      quest::moveto(196, -1052, 73.1, -2, 1);
       $dest = 1;
       quest::settimer("move_check",1);
    }
@@ -66,7 +66,7 @@ sub EVENT_TIMER {
       if ($dest == 1) {
          $dist = $npc->CalculateDistance(196, -1052, $npc->GetZ());
          if ($dist < 1.5) {
-            quest::moveto(196, -1156, 80.1, -1, 1);
+            quest::moveto(196, -1156, 80.1, -2, 1);
             $dest = 2;
          }
          quest::settimer("move_check", 1);
@@ -74,7 +74,7 @@ sub EVENT_TIMER {
       elsif ($dest == 2) {
          $dist = $npc->CalculateDistance(196, -1156, $npc->GetZ());
          if ($dist < 1.5) {
-            quest::moveto(173, -1156, 80.1, -1, 1);   
+            quest::moveto(173, -1156, 80.1, -2, 1);   
             $dest = 3;
          }
          quest::settimer("move_check", 1);

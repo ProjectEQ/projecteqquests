@@ -11,21 +11,21 @@ sub EVENT_SPAWN {
 sub EVENT_HP {
   if($hpevent == 76) {
     quest::me("As if in a waking nightmare, you feel your movements slow and your arms begin to fail you.  Each swing of your weapon feels as if it will miss its mark.   Even your legs begin to fail you, as you fall deeper into the dreamlike state!");
-    quest::spawn2(221006,0,0,-1858,-25,134,5); #a dream defiler
-    quest::spawn2(221006,0,0,-1780,-59,134,193); #a dream defiler
-    quest::spawn2(221006,0,0,-1833,102,134,165); #a dream defiler
-    quest::spawn2(221006,0,0,-1852,48,134,157); #a dream defiler
-    quest::spawn2(221006,0,0,-1876,-63,134,228); #a dream defiler
-    quest::spawn2(221006,0,0,-1933,49,134,156); #a dream defiler
-    quest::spawn2(221006,0,0,-1984,-61,134,148); #a dream defiler
-    quest::spawn2(221006,0,0,-1896,-108,134,230); #a dream defiler
-    quest::spawn2(221006,0,0,-1899,-65,134,243); #a dream defiler
-    quest::spawn2(221006,0,0,-1732,3,134,190); #a dream defiler
-    quest::spawn2(221006,0,0,-1773,-39,134,187); #a dream defiler
-    quest::spawn2(221006,0,0,-2005,85,134,99); #a dream defiler
-    quest::spawn2(221006,0,0,-2031,-3,134,142); #a dream defiler
-    quest::spawn2(221006,0,0,-1954,-29,134,71); #a dream defiler
-    quest::spawn2(221006,0,0,-1887,33,134,113); #a dream defiler
+    quest::spawn2(221006,0,0,-1858,-25,134,10); #a dream defiler
+    quest::spawn2(221006,0,0,-1780,-59,134,386); #a dream defiler
+    quest::spawn2(221006,0,0,-1833,102,134,330); #a dream defiler
+    quest::spawn2(221006,0,0,-1852,48,134,314); #a dream defiler
+    quest::spawn2(221006,0,0,-1876,-63,134,456); #a dream defiler
+    quest::spawn2(221006,0,0,-1933,49,134,312); #a dream defiler
+    quest::spawn2(221006,0,0,-1984,-61,134,296); #a dream defiler
+    quest::spawn2(221006,0,0,-1896,-108,134,460); #a dream defiler
+    quest::spawn2(221006,0,0,-1899,-65,134,486); #a dream defiler
+    quest::spawn2(221006,0,0,-1732,3,134,380); #a dream defiler
+    quest::spawn2(221006,0,0,-1773,-39,134,374); #a dream defiler
+    quest::spawn2(221006,0,0,-2005,85,134,198); #a dream defiler
+    quest::spawn2(221006,0,0,-2031,-3,134,284); #a dream defiler
+    quest::spawn2(221006,0,0,-1954,-29,134,142); #a dream defiler
+    quest::spawn2(221006,0,0,-1887,33,134,226); #a dream defiler
     quest::setnexthpevent(51);
   }
   elsif($hpevent == 51) {
@@ -35,10 +35,10 @@ sub EVENT_HP {
   }
   elsif($hpevent == 40) {
     quest::me("The air grows thick with the smell of burning mana.  A rumbling sound draws your attention to the massive statues that rest above the ancient monoliths.  The statues begin to crumble, as they shift their attention from the heavens to you!");
-    quest::spawn2(221007,0,0,-1993,-102,134,239); #a grotesque statue
-    quest::spawn2(221007,0,0,-1798,-102,134,201); #a grotesque statue
-    quest::spawn2(221007,0,0,-1993,78,134,159); #a grotesque statue
-    quest::spawn2(221007,0,0,-1798,78,134,191); #a grotesque statue
+    quest::spawn2(221007,0,0,-1993,-102,134,478); #a grotesque statue
+    quest::spawn2(221007,0,0,-1798,-102,134,402); #a grotesque statue
+    quest::spawn2(221007,0,0,-1993,78,134,318); #a grotesque statue
+    quest::spawn2(221007,0,0,-1798,78,134,382); #a grotesque statue
   }
 }
 
@@ -51,7 +51,7 @@ sub EVENT_TIMER {
   if(($x <= -2065) || ($y >= 230) || ($y <= -245) || ($x >= -1647)) {
     quest::emote("disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
     $npc->CastSpell(3791, $npc->GetID());
-    $npc->GMMove(-1883,-13,133.30,192);
+    $npc->GMMove(-1883,-13,133.30,384);
   }
 }
 

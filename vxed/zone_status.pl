@@ -33,7 +33,7 @@ sub EVENT_AGGRO {
 
 sub SPAWN_EKIKOA {
   if(!$entity_list->IsMobSpawnedByNpcTypeID(290062)) {
-    quest::spawn2(290062,0,0,-1156,396,469,166);
+    quest::spawn2(290062,0,0,-1156,396,469,332);
     quest::ze(1,"A series of low chants comes to you from the Northeast, as Stonespiritist Ekikoa emerges from the shadows.");
   }
 }

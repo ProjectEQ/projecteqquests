@@ -15,11 +15,11 @@ function event_trade(e)
             -- Spawn High Priest Maltan
             eq.spawn2(118211, 0, 0, -489, -6115, -557, 0);
             -- Spawn 2 A Plasmatic Priest
-            eq.spawn2(27129, 0, 0, -510, -6104, -557, 62);
-            eq.spawn2(27129, 0, 0, -501, -6085, -555, 102);
+            eq.spawn2(27129, 0, 0, -510, -6104, -557, 124);
+            eq.spawn2(27129, 0, 0, -501, -6085, -555, 204);
             -- Spawn 3 A Plasmatic Priestess
-            eq.spawn2(27130, 0, 0, -476, -6084, -555, 148);
-            eq.spawn2(27130, 0, 0, -469, -6104, -557, 188);
+            eq.spawn2(27130, 0, 0, -476, -6084, -555, 296);
+            eq.spawn2(27130, 0, 0, -469, -6104, -557, 376);
             eq.depop_with_timer();
         end
 		

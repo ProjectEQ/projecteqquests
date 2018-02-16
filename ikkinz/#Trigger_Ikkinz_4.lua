@@ -27,8 +27,8 @@ function event_spawn(e)
   doorman_6 = eq.spawn2(294635, 0, 0, 656, -237, -50, 0.00);
   doorman_7 = eq.spawn2(294635, 0, 0, 656, -187, -50, 0.00);
 
-  eq.spawn2(294636, 0, 0, 719, -730, -50, 188);
-  eq.spawn2(294636, 0, 0, 719, -700, -50, 188);
+  eq.spawn2(294636, 0, 0, 719, -730, -50, 376);
+  eq.spawn2(294636, 0, 0, 719, -700, -50, 376);
   
   -- Set a timer to check the zone; this is needed
   -- in case the zone crashes to reset the doormen 
@@ -87,6 +87,6 @@ end
 
 function event_proximity_say(e)
   if (e.message:findi("return")) then
-    e.other:MovePCInstance(294, instance_id, 500, -615, -50, 286 );
+    e.other:MovePCInstance(294, instance_id, 500, -615, -50, 286 ); -- needs_heading_validation
   end
 end

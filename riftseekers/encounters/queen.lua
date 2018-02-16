@@ -63,12 +63,12 @@ function DistanceToWaypoint(self)
 end
 
 function CheckPortals()
-    portals[334048] = eq.unique_spawn(334042, 0, 0, -10.410000, -460.600006, 301.529999, 102.199997) -- Zulaqua
-    portals[334047] = eq.unique_spawn(334116, 0, 0, 20.139999, -448.910004, 301.519989, 105.599998) -- Yelnia
-    portals[334045] = eq.unique_spawn(334117, 0, 0, 360.079987, -437.690002, 301.519989, 146.600006) -- Quellon
-    portals[334043] = eq.unique_spawn(334118, 0, 0, 433, -467, 301.437286, 152.750000) -- Puja
-    portals[334044] = eq.unique_spawn(334119, 0, 0, 401.299988, -446.410004, 301.529999, 151.199997) -- Lana
-    portals[334046] = eq.unique_spawn(334120, 0, 0, 46, -439, 305, 104) -- Kira
+    portals[334048] = eq.unique_spawn(334042, 0, 0, -10.410000, -460.600006, 301.529999, 204.399994) -- Zulaqua
+    portals[334047] = eq.unique_spawn(334116, 0, 0, 20.139999, -448.910004, 301.519989, 211.199996) -- Yelnia
+    portals[334045] = eq.unique_spawn(334117, 0, 0, 360.079987, -437.690002, 301.519989, 293.200012) -- Quellon
+    portals[334043] = eq.unique_spawn(334118, 0, 0, 433, -467, 301.437286, 305.5) -- Puja
+    portals[334044] = eq.unique_spawn(334119, 0, 0, 401.299988, -446.410004, 301.529999, 302.399994) -- Lana
+    portals[334046] = eq.unique_spawn(334120, 0, 0, 46, -439, 305, 208) -- Kira
 end
 
 -- Queen hooks
@@ -76,11 +76,11 @@ function QueenSpawn(e)
     queen = e.self
     princesscount = 0
     eq.unique_spawn(334048, 0, 0, 25, -725, 308.750000, 0) -- Zulaqua
-    eq.unique_spawn(334047, 0, 0, 64.239998, -725.890015, 301.559998, 255.600006) -- Yelnia
+    eq.unique_spawn(334047, 0, 0, 64.239998, -725.890015, 301.559998, 511.200012) -- Yelnia
     eq.unique_spawn(334045, 0, 0, 310.910004, -726.130005, 301.464203, 0) -- Quellon
     eq.unique_spawn(334043, 0, 0, 387.399994, -727.260010, 301.464233, 0) -- Puja
     eq.unique_spawn(334044, 0, 0, 348.929993, -726.700012, 301.464233, 0) -- Lana
-    eq.unique_spawn(334046, 0, 0, 101.529999, -725.630005, 301.464203, 0.75) -- Kira
+    eq.unique_spawn(334046, 0, 0, 101.529999, -725.630005, 301.464203, 1.5) -- Kira
     eq.set_timer("tether", 6000)
     CheckPortals() -- need to verify (#repop can break the encounter loading :P)
     timerstate[e.self:GetID()] = false

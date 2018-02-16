@@ -7,7 +7,7 @@ sub EVENT_SIGNAL {
     $counter += 1;
 }
   if ($counter == 12) { #spawn Navigator
-    quest::spawn2(228110,0,0,1542,982,-582,125);
+    quest::spawn2(228110,0,0,1542,982,-582,250);
     quest::depop();
     $counter = 0;
 }

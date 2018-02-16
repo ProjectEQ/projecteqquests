@@ -12,7 +12,7 @@ sub	EVENT_WAYPOINT_ARRIVE
 		{
 		# He reached his goal.
 		quest::stop();
-		quest::moveto(2637, 1226, 143.12,180,1);
+		quest::moveto(2637, 1226, 143.12,360,1);
 		}
 	}
 

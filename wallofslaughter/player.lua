@@ -6,16 +6,16 @@ function event_enter_zone(e)
 
 	if(e.self:HasItem(69941) and e.self:HasItem(69952) and e.self:HasItem(69942) and e.self:HasItem(69983)) then -- Paladin 1.5 trigger
 		if(qglobals["paladin_wos"] ==  nil) then
-			eq.spawn2(300087,0,0,-1118.76,1007,13.45,113);
+			eq.spawn2(300087,0,0,-1118.76,1007,13.45,226);
 			eq.set_global("paladin_wos","1",3,"H2");
 		end
 	end
 
 	if(qglobals["ranger_epic"] == "8" and qglobals["rng_spawn_wos"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(300057) == false) then
-		eq.unique_spawn(300057,0,0,-1491,2015,51.2,96); --#Herrian_Warfrost
-		eq.spawn2(300058,0,0,-1495,1965,51.2,80); --an_excited_builder (300058)
-		eq.spawn2(300058,0,0,-1447,2014,51.2,110);
-		eq.spawn2(300058,0,0,-1454,1976,51.2,96);	
+		eq.unique_spawn(300057,0,0,-1491,2015,51.2,192); --#Herrian_Warfrost
+		eq.spawn2(300058,0,0,-1495,1965,51.2,160); --an_excited_builder (300058)
+		eq.spawn2(300058,0,0,-1447,2014,51.2,220);
+		eq.spawn2(300058,0,0,-1454,1976,51.2,192);	
 		--eq.set_global("rng_spawn_wos","1",2,"H2");
 	end		
 end
@@ -112,7 +112,7 @@ function event_click_door(e)
     instance_id = eq.get_instance_id('anguish', 0);
     
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 255);
+      e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 510);
 
     -- if GM just give him an instance
     elseif (e.self:Admin() >= 80 and e.self:GetGM()) then

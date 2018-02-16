@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("I am most honored to be able to help you. Please choose from one of my instructors. Lelulean or Enderbite.");
 	elseif((e.message:findi("Enderbite")) and (e.other:Class() == "Enchanter")) then
 		e.self:Say("I will summon him for you then");
-		eq.spawn2(71085,0,0,640,1303.2,-766.9,0.4);
+		eq.spawn2(71085,0,0,640,1303.2,-766.9,0.8);
 		eq.depop_with_timer();
 	elseif((e.message:findi("lelulean")) and (e.other:Class() == "Enchanter")) then
 		e.self:Say("I will summon him for you then");
-		eq.spawn2(71104,0,0,640,1303.2,-766.9,0.4);
+		eq.spawn2(71104,0,0,640,1303.2,-766.9,0.8);
 		eq.depop_with_timer();
 	end
 end

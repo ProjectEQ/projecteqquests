@@ -24,7 +24,7 @@ function event_click_door(e)
   elseif (door_id == 25 or door_id == 23) then 
     local instance_id = eq.get_instance_id("tacvi",0);       
     if (instance_id > 0) then                                  
-      e.self:MovePCInstance(298, instance_id, 4.00, 9.00, -6.87, 188.0);   
+      e.self:MovePCInstance(298, instance_id, 4.00, 9.00, -6.87, 376);   
     else                                                       
       e.self:Message(13, "You are not a part of an instance!");
     end                                                        

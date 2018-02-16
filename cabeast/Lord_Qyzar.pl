@@ -18,7 +18,7 @@ sub EVENT_SAY {
   }
  elsif($text=~/matter of betrayal/i){ #Test of the Betrayal (Greenmist Quest 5/8)
   quest::say("One of our agents, a hero by the name of Goxnok, has found evidence that the book entitled 'Charasis' has been taken from this temple and is to be delivered to an unknown foe in the Outlands. Go at once to the lower levels of the temple and greet Goxnok. Hurry, before he departs!");
-  quest::spawn2(106301,0,0,-113,1000,-23.9,30);
+  quest::spawn2(106301,0,0,-113,1000,-23.9,60);
   }
  elsif($text=~/visceral dagger/i){ #Test of the Hero (Greenmist Quest 6/8)
   quest::say("The visceral dagger was an ancient torturing weapon. I do not know much of it other than that it was forged by a member of the Brood of Kotiz, but that was ages ago. He is surely dust by now.");

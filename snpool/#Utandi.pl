@@ -14,7 +14,7 @@ sub EVENT_SAY {
     }
     if ($text=~/i will help/i) {
       quest::say("Thanks! Try to find a big pile of slime, I think he has my map.");
-      quest::spawn2(285085,0,0,1354,471,-138,187);
+      quest::spawn2(285085,0,0,1354,471,-138,374);
       $event = 1;
     }
   }

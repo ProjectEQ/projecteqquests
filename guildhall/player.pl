@@ -87,7 +87,7 @@ sub EVENT_CLICKDOOR
     if ($doorid == 2 || $doorid == 5) {
 # Do we really need the check here?
 #      if ($client->CalculateDistance(-3.4, -162.9, 6.9) <= 30) {
-        quest::MovePCInstance(344, 5, 0, 588, 1.75, 130);
+        quest::MovePCInstance(344, 5, 0, 588, 1.75, 260);
 #      }
     }
   }

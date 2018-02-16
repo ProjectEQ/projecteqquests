@@ -11,7 +11,7 @@ function event_signal(e)
 			end
 		end
 		-- we only get here if there were no NPC's found, spawn the an_aneuk_fleshweaver
-		eq.spawn2(289038,0,0,-804,1583,538,121); -- an_aneuk_fleshweaver
+		eq.spawn2(289038,0,0,-804,1583,538,242); -- an_aneuk_fleshweaver
 		-- get the zone instance id
 		local instance_id = eq.get_zone_instance_id();
 		-- set the global that the an_aneuk_fleshweaver should be spawned

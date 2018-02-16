@@ -100,8 +100,8 @@ function OMM_HP(e)
 	elseif (e.hp_event == 50) then
 		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
-		eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);		
+		eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
 		e.self:CameraEffect(2000,3);
 		e.self:SetOOCRegen(0);
@@ -112,9 +112,9 @@ function OMM_HP(e)
 		--e.self:MoveTo(507, 4969, 296.53, 127.6,true);
 		e.self:Stun(60*1000);
 		eq.spawn2(317118,0,0,504, 4840, 280, 0); --#Vyishe (317118) south
-		eq.spawn2(317119,0,0,619, 4968, 280, 192); --#Anishy (317119) west
-		eq.spawn2(317120,0,0,393, 4968, 280, 64); --#Piraand (317120) east
-		eq.spawn2(317121,0,0,504, 5081, 280, 128); --#Garishi (317121) north
+		eq.spawn2(317119,0,0,619, 4968, 280, 384); --#Anishy (317119) west
+		eq.spawn2(317120,0,0,393, 4968, 280, 128); --#Piraand (317120) east
+		eq.spawn2(317121,0,0,504, 5081, 280, 256); --#Garishi (317121) north
 		eq.signal(317118,1);
 		eq.signal(317119,2);		
 		eq.depop_all(317114); --Coerced_Lieutenant
@@ -139,8 +139,8 @@ function OMM_Combat(e)
 		eq.set_timer("mmgaze",  math.random(45,75)  * 1000);
 		eq.set_timer("torment", math.random(10,20)  * 1000);
 		eq.set_timer("pick6", 50 * 1000);		
-		eq.spawn2(317114,0,0,378, 4969, 279, 64);
-		eq.spawn2(317114,0,0,618, 4969, 279, 192);
+		eq.spawn2(317114,0,0,378, 4969, 279, 128);
+		eq.spawn2(317114,0,0,618, 4969, 279, 384);
 	else
 		eq.set_timer("reset", 65 * 1000);
 		eq.stop_timer("buzz");

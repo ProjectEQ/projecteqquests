@@ -28,7 +28,7 @@ function event_timer(e)
 		eq.set_timer("warpback",5*60*1000);
 	elseif e.timer=="warpback" then
 		eq.stop_timer("warpback");
-		e.self:GMMove(-174.5, 497.5, -235.5, 192);
+		e.self:GMMove(-174.5, 497.5, -235.5, 384);
 		e.self:MoveTo(-233.7, 486, -219.3, 29, true);
 		ignoresay=0;
 	end

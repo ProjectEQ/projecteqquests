@@ -3,7 +3,7 @@ sub EVENT_SIGNAL {
 		quest::depop_withtimer();
 	}
 	if($signal==2) {
-		quest::moveto(2733,2480,-49,195,1);
+		quest::moveto(2733,2480,-49,390,1);
 	}
 	if($signal==3) {
 		quest::SetRunning(1);

@@ -66,8 +66,8 @@ sub EVENT_DEATH_COMPLETE {
 
 sub INSTANCE_WIN {
   #loot & advancement pieces
-  quest::spawn2(294140,0,0,-7,-126,-2,129);
-  quest::spawn2(294139,0,0,-9,-285,-2,251);
+  quest::spawn2(294140,0,0,-7,-126,-2,258);
+  quest::spawn2(294139,0,0,-9,-285,-2,502);
   #set lockout
   quest::signalwith(294631,9);
 }

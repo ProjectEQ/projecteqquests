@@ -6,7 +6,7 @@ function event_death(e)
 				if(currclient:GetClass() ==7) then			
 				local qglobals = eq.get_qglobals(currclient);
 					if(qglobals["monk_epic"] == "5" and qglobals["monk_epic_scarlet"] == nil) then				
-						eq.spawn2(175179,0,0,-1024,666,157,247);
+						eq.spawn2(175179,0,0,-1024,666,157,494);
 						eq.set_global("monk_epic_scarlet","1",3,"H2");
 						return; --only spawn 1
 					end

@@ -52,7 +52,7 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 20647 => 1)) { #Symbol of Testing
     quest::say("As you hand Kazen the symbol, you hear him speak directly into your mind. 'Good luck, my student!' Kazen finishes an incantation and suddenly hands begin to reach up from the ground, as if they were pulling themselves from the grave all around you. A piercing scream fills the air as the creatures advance upon you!");
-    quest::spawn2(51153,0,0,-1498.9,283.8,58.4,57.6); #a bone golem
+    quest::spawn2(51153,0,0,-1498.9,283.8,58.4,115.2); #a bone golem
   }
   elsif(plugin::check_handin(\%itemcount, 20653 => 1)) { #Prepared Reagent Box
     quest::emote("stares through you at the horizon, pausing as he reaches into his robes. Kazen pulls out a scythe with a shimmering black blade that seems too large to have been hidden there. As quickly and gracefully as it was displayed to you, it is returned to the void inside Kazen's robes. 'It is a creation of Miragul which was looted from his lair under the ice. Take this tome, it will be your final task for me as an apprentice.'");

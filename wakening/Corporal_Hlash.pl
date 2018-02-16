@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	if($timer=="onset") {
-		quest::moveto(-4341,-748,-183,-1,1);
+		quest::moveto(-4341,-748,-183,-2,1);
 		quest::stoptimer("onset");
 	}
 	if(($timer=="readygo") && ($x==-4341 && $y==-748)) {
@@ -38,10 +38,10 @@ sub EVENT_SIGNAL {
 	}
 	if ($signal == 2) {
 		quest::say("Grraaaggh! AMBUSH!! Die well!");  
-		quest::spawn2(119174,0,0,-146,1703,-192,187);  # a_sifaye_defender
-		quest::spawn2(119174,0,0,-149,1731,-192,187);  # a_sifaye_defender
-		quest::spawn2(119174,0,0,-162,1738,-192,187);  # a_sifaye_defender
-		quest::spawn2(119174,0,0,-172,1758,-192,182);  # a_sifaye_defender
+		quest::spawn2(119174,0,0,-146,1703,-192,374);  # a_sifaye_defender
+		quest::spawn2(119174,0,0,-149,1731,-192,374);  # a_sifaye_defender
+		quest::spawn2(119174,0,0,-162,1738,-192,374);  # a_sifaye_defender
+		quest::spawn2(119174,0,0,-172,1758,-192,364);  # a_sifaye_defender
 	}
 }
 

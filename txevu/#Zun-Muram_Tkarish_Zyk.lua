@@ -40,21 +40,21 @@ function event_timer(e)
 			if (banished_pc:GetX() >= 1410 and banished_pc:GetX() <= 1501 and banished_pc:GetY() >= 178 and banished_pc:GetY() <= 237) then
 				-- Spawn north jail ghosts, a_vengeful_apparition
 				banished_pc:Message(7,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.")
-				eq.spawn2(297152,0,0,1500, 180, -328, 198)
-				eq.spawn2(297152,0,0,1500, 234, -328, 154)
-				eq.spawn2(297152,0,0,1469, 236, -328, 130)
-				eq.spawn2(297152,0,0,1449, 235, -328, 118)
-				eq.spawn2(297152,0,0,1413, 234, -328, 100)	
-				eq.spawn2(297152,0,0,1412, 207, -328, 69)
+				eq.spawn2(297152,0,0,1500, 180, -328, 396)
+				eq.spawn2(297152,0,0,1500, 234, -328, 308)
+				eq.spawn2(297152,0,0,1469, 236, -328, 260)
+				eq.spawn2(297152,0,0,1449, 235, -328, 236)
+				eq.spawn2(297152,0,0,1413, 234, -328, 200)	
+				eq.spawn2(297152,0,0,1412, 207, -328, 138)
 			elseif (banished_pc:GetX() >= 1410 and banished_pc:GetX() <= 1501 and banished_pc:GetY() >= -237 and banished_pc:GetY() <= -178) then
 				-- Spawn south jail ghosts, a_vengeful_apparition
 				banished_pc:Message(7,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.")
-				eq.spawn2(297152,0,0,1500, -180, -328, 198)
-				eq.spawn2(297152,0,0,1500, -234, -328, 230)
-				eq.spawn2(297152,0,0,1469, -236, -328, 255)
-				eq.spawn2(297152,0,0,1449, -235, -328, 255)
-				eq.spawn2(297152,0,0,1413, -234, -328, 36)	
-				eq.spawn2(297152,0,0,1412, -207, -328, 67)
+				eq.spawn2(297152,0,0,1500, -180, -328, 396)
+				eq.spawn2(297152,0,0,1500, -234, -328, 460)
+				eq.spawn2(297152,0,0,1469, -236, -328, 510)
+				eq.spawn2(297152,0,0,1449, -235, -328, 510)
+				eq.spawn2(297152,0,0,1413, -234, -328, 72)	
+				eq.spawn2(297152,0,0,1412, -207, -328, 134)
 			end
 		end
 		eq.stop_timer("ghost_check")
@@ -65,7 +65,7 @@ function event_timer(e)
 			e.self:SetHate(banished_pc,1,1)
 			local MoveName = eq.get_entity_list():GetClientByName(banished_pc:GetName())
 			-- Randomly north or south jail
-			MoveName:MovePC(297, 1475, eq.ChooseRandom(205, -205), -327, 192)
+			MoveName:MovePC(297, 1475, eq.ChooseRandom(205, -205), -327, 384)
 			-- If they don't open the door and get out within 20 seconds, the ghosts spawn2
 			eq.set_timer("ghost_check", 20000)
 			-- live emotes from jail room. Not Implemented yet.
@@ -78,11 +78,11 @@ function event_timer(e)
 			local which_add = eq.ChooseRandom(297159, 297161, 297161, 297222, 297222, 297223, 297223)
 			local which_loc = eq.ChooseRandom(1,2,3,4)
 			if (which_loc == 1) then
-				eq.spawn2(which_add,0,0,1330, 0, -304, 64):AddToHateList(e.self:GetHateTop(),1)
+				eq.spawn2(which_add,0,0,1330, 0, -304, 128):AddToHateList(e.self:GetHateTop(),1)
 			elseif (which_loc == 2) then eq.spawn2(which_add,0,0,1305, 27, -304, 0):AddToHateList(e.self:GetHateTop(),1) elseif (which_loc == 3) then
-				eq.spawn2(which_add,0,0,1305, -27, -304, 128):AddToHateList(e.self:GetHateTop(),1)
+				eq.spawn2(which_add,0,0,1305, -27, -304, 256):AddToHateList(e.self:GetHateTop(),1)
 			elseif (which_loc == 4) then
-				eq.spawn2(which_add,0,0,1276, 0, -304, 192):AddToHateList(e.self:GetHateTop(),1)
+				eq.spawn2(which_add,0,0,1276, 0, -304, 384):AddToHateList(e.self:GetHateTop(),1)
 			end
 			eq.set_timer("spawn_add", add_timer)
 		else
@@ -103,14 +103,14 @@ function event_timer(e)
 		banished_pc = nil
 		init_engage = false
 		eq.stop_all_timers()
-		eq.spawn2(297150,0,0,1506,2,-285,187) -- myself, which also will trigger Spawn_Event()
+		eq.spawn2(297150,0,0,1506,2,-285,374) -- myself, which also will trigger Spawn_Event()
 		eq.depop()
 	elseif (e.timer == "wanton") then
 		e.self:CastSpell(1250,e.self:GetID())
 		eq.set_timer("wanton", eq.ChooseRandom(100,120) * 1000)
 	elseif (e.timer == "NS_Leash") then
 		if (e.self:GetY() < -105 or e.self:GetY() > 105) then
-			e.self:GMMove(1506, 0, -285, 187)
+			e.self:GMMove(1506, 0, -285, 374)
 		end
 	end
 end
@@ -122,12 +122,12 @@ end
 
 function spawn_event()
 	-- 4 Ikaav Ritualist and the two Inquisitor goats.
-	eq.spawn2(297147,0,0,1353, 0, -305, 192)
-	eq.spawn2(297147,0,0,1305, 45, -305, 128)
+	eq.spawn2(297147,0,0,1353, 0, -305, 384)
+	eq.spawn2(297147,0,0,1305, 45, -305, 256)
 	eq.spawn2(297147,0,0,1305, -45, -305, 0)
-	eq.spawn2(297147,0,0,1260, 0, -305, 64)
-	eq.spawn2(297148,0,0,1528, 30, -285, 192)
-	eq.spawn2(297149,0,0,1528, -30, -285, 192)
+	eq.spawn2(297147,0,0,1260, 0, -305, 128)
+	eq.spawn2(297148,0,0,1528, 30, -285, 384)
+	eq.spawn2(297149,0,0,1528, -30, -285, 384)
 end
 
 function event_death_complete(e)

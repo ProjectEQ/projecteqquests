@@ -7,9 +7,9 @@ function Juggernaut_Death(e)
 			if(currclient:GetClass() ==16) then			
 				local qglobals = eq.get_qglobals(currclient);
 				if(qglobals["berserk_epic"] == "3" and qglobals["berserker_seb"] == nil) then				
-					eq.spawn2(89194, 0, 0, -225.93, -1556.52, -173.84, 320);
-					eq.spawn2(89195, 0, 0, -214, -1572, -173.84, 55);
-					eq.spawn2(89195, 0, 0, -214, -1538, -173.84, 76);
+					eq.spawn2(89194, 0, 0, -225.93, -1556.52, -173.84, 320); -- needs_heading_validation
+					eq.spawn2(89195, 0, 0, -214, -1572, -173.84, 110);
+					eq.spawn2(89195, 0, 0, -214, -1538, -173.84, 152);
 					eq.set_global("berserker_seb","1",3,"H2");
 					return; --only spawn 1
 				end

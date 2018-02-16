@@ -33,7 +33,7 @@ function event_timer(e)
 		end					
 		
   elseif(e.timer == 'gate') then
-  	e.self:GMMove(-635.84,-32.48,-5.81,164);
+  	e.self:GMMove(-635.84,-32.48,-5.81,328);
   end
 end
 

@@ -32,7 +32,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12144, item2 = 13865})) then -- Token of Bravery  / Token of Generosity
 		e.self:Say("Go to the open sewer across the way. Inside you shall find your opponent. Victory shall bring your final token. Return it to me. Remember our ways and remember our foes. Send them to their judgement in the afterlife. Be swift with your thoughts. May Marr be with you.");
-		eq.unique_spawn(8110,0,0,-257,132,-17,120); -- spawns Guard Willia
+		eq.unique_spawn(8110,0,0,-257,132,-17,240); -- spawns Guard Willia
 		e.other:Ding();
 		e.other:Faction(184,1,0); -- Knights of Truth
 		e.other:Faction(86,-1,0); -- Dismal Rage

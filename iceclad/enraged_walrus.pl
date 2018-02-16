@@ -8,7 +8,7 @@
 #
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(110091,0,0,2049,852,-31.80,132); #spawn the agitated snowfang
+  quest::spawn2(110091,0,0,2049,852,-31.80,264); #spawn the agitated snowfang
 }
 
 #END of FILE Zone: iceclad ID:110093 -- enraged_walrus

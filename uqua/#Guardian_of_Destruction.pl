@@ -11,7 +11,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_HP {
   if($hpevent == 70) {
-    quest::spawn2(292069,0,0,-869,-16,65,125);
+    quest::spawn2(292069,0,0,-869,-16,65,250);
     quest::depop(292068);
   }
 }
@@ -23,7 +23,7 @@ sub EVENT_TIMER {
   }
   if($timer == 2) {
     if($y < -184) {
-      $npc->GMMove(-866,-43,61,130);
+      $npc->GMMove(-866,-43,61,260);
     }
   }
 }

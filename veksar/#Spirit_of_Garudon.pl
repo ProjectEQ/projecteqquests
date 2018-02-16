@@ -9,7 +9,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 65574 => 4)) {
-    quest::spawn2(109107,0,0,-245,-115,-14,190);
+    quest::spawn2(109107,0,0,-245,-115,-14,380);
     quest::shout("As you place the remains of the dragon on the ground, a cold draft fills the air. Suddenly in a great vortex, the bones begin to rise up and move carried by the wind. They jut through the air and come down inside of the nearby theater. You hear the faint sound of bones clanking together, which is then followed by a massive moan. A sharp bolt of fear trickles up your spine as you feel anticipation fill the air.");
     quest::depop_withtimer();
   }

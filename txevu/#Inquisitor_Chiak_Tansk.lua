@@ -10,6 +10,6 @@ end
 
 function event_timer(e)
 	if (e.self:GetY() < -105 or e.self:GetY() > 105) then
-			e.self:GMMove(1528, 30, -285, 192)
+			e.self:GMMove(1528, 30, -285, 384)
 	end
 end

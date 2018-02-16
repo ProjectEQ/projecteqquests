@@ -13,9 +13,9 @@ function event_proximity_say(e)
 		local qglobals = eq.get_qglobals(e.other)
 		if (qglobals["necro_epic"] == "5") then
 			e.self:Emote("implodes, blinding you with a bright flash of light, Three horrendous creatures now appear before you, and they don't look happy... ");
-			eq.spawn2(336244, 0, 0, 152,2362.5,118.5,100); --rag
-			eq.spawn2(336243, 0, 0, 158,2381.5,118.5,100); --gor
-			eq.spawn2(336242, 0, 0, 132,2362.5,118.5,100); --arl
+			eq.spawn2(336244, 0, 0, 152,2362.5,118.5,200); --rag
+			eq.spawn2(336243, 0, 0, 158,2381.5,118.5,200); --gor
+			eq.spawn2(336242, 0, 0, 132,2362.5,118.5,200); --arl
 			eq.depop_with_timer();
 		end
 	end

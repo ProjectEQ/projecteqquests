@@ -28,8 +28,8 @@ sub EVENT_SIGNAL {
                 if ($Grunhork == 1) {   # Spawn Vallon and Tallon
                     quest::stoptimer("Decorin");
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
-                    quest::spawn2(214111,188,0,996,580,133.1,192.5);
-                    quest::spawn2(214108,187,0,996,-559,133.1,192.5);
+                    quest::spawn2(214111,188,0,996,580,133.1,385);
+                    quest::spawn2(214108,187,0,996,-559,133.1,385);
 					$entity_list->FindDoor(14)->SetLockPick(0);
 					$entity_list->FindDoor(15)->SetLockPick(0);
 					$entity_list->FindDoor(16)->SetLockPick(0);
@@ -47,8 +47,8 @@ sub EVENT_SIGNAL {
                 if ($Berik == 1) {   # Spawn Vallon and Tallon
                     quest::stoptimer("Decorin");
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
-                    quest::spawn2(214111,188,0,996,580,133.1,192.5);
-                    quest::spawn2(214108,187,0,996,-559,133.1,192.5);
+                    quest::spawn2(214111,188,0,996,580,133.1,385);
+                    quest::spawn2(214108,187,0,996,-559,133.1,385);
 					$entity_list->FindDoor(14)->SetLockPick(0);
 					$entity_list->FindDoor(15)->SetLockPick(0);
 					$entity_list->FindDoor(16)->SetLockPick(0);
@@ -85,7 +85,7 @@ sub EVENT_SIGNAL {
 
 		if ($signal == 214052) {	# Mini Rallos done
 			quest::stoptimer("Mini");
-			quest::spawn2(214113,0,0,550,24,-294.9,64.2);
+			quest::spawn2(214113,0,0,550,24,-294.9,128.4);
 		}
 		
 		if ($signal == 214113) {	#RZtW dead, depop

@@ -61,10 +61,10 @@ sub EVENT_ITEM {
 		quest::exp(1000);
 		quest::ding();
 		quest::summonitem(1708); # Mission Report
-		quest::spawn2(119168,0,0,-4975,-699,-182,63);  # Corporal_Hlash
-		quest::spawn2(119166,0,0,-4954,-697,-182,63);  # Berzerker_Dolvad
-		quest::spawn2(119167,0,0,-4954,-671,-182,63);  # Berzerker_Voldak
-		quest::spawn2(119169,0,0,-4976,-672,-182,63);  # Disciple_Atharm
+		quest::spawn2(119168,0,0,-4975,-699,-182,126);  # Corporal_Hlash
+		quest::spawn2(119166,0,0,-4954,-697,-182,126);  # Berzerker_Dolvad
+		quest::spawn2(119167,0,0,-4954,-671,-182,126);  # Berzerker_Voldak
+		quest::spawn2(119169,0,0,-4976,-672,-182,126);  # Disciple_Atharm
 	}	
 	plugin::return_items(\%itemcount);
 }

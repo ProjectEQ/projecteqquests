@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("Then what are you doing down here? Leave before they shackle you to this cage or strap you to the operating table!");
 	elseif(e.message:findi("fenn kaedrick")) then
 		e.self:Say("Are you searching for the rogue named Fenn Kaedrick? He used to be locked in here with me. That Lady McCabe bailed him out just minutes before the Teir'Dal planned to operate on him. He said that if I ever did escape, to venture to the very roof of this keep and wait till he showed up to escort me away from here.");
-		eq.unique_spawn(6184,0,0,-87,2,66,128);
+		eq.unique_spawn(6184,0,0,-87,2,66,256);
 	end
 end
 

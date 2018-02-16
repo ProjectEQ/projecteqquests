@@ -19,10 +19,10 @@ sub EVENT_TIMER {
     #time ran out, go inactive
 	quest::modifynpcstat("special_attacks","ABfHG");
 	$npc->WipeHateList();
-    quest::spawn2(292018,0,0,-1252,-911,8,67);
-    quest::spawn2(292018,0,0,-1250,-878,8,64);
-    quest::spawn2(292018,0,0,-1193,-911,8,189);
-    quest::spawn2(292018,0,0,-1190,-878,8,193);
+    quest::spawn2(292018,0,0,-1252,-911,8,134);
+    quest::spawn2(292018,0,0,-1250,-878,8,128);
+    quest::spawn2(292018,0,0,-1193,-911,8,378);
+    quest::spawn2(292018,0,0,-1190,-878,8,386);
 	quest::stoptimer(1);
 	quest::stoptimer(2);
   } elsif ($timer eq "absorb_twin") {

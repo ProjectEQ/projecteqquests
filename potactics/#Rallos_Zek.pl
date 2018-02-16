@@ -21,8 +21,8 @@ sub EVENT_TIMER {
 	}
 	if($timer eq "fakeRZadds") {
 		my $hate_target = $npc->GetHateRandom();
-		quest::spawn2(214130,0,0,978,-560,133.13,192.9);
-		quest::spawn2(214130,0,0,978,580,133.13,192.9);
+		quest::spawn2(214130,0,0,978,-560,133.13,385.8);
+		quest::spawn2(214130,0,0,978,580,133.13,385.8);
 		my @npc_list = $entity_list->GetNPCList();
 		foreach $npc (@npc_list) {
 			if($npc->GetNPCTypeID() == 214130) {

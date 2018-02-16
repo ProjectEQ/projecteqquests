@@ -34,7 +34,7 @@ sub EVENT_TIMER
 
 	if($timer == 1)
 		{
-		quest::spawn2(78212,0,0,920,518,175,65);  #Berserker’s Image
+		quest::spawn2(78212,0,0,920,518,175,130);  #Berserker’s Image
 		quest::stoptimer(1);
 		}
 }
@@ -45,7 +45,7 @@ sub EVENT_SIGNAL
 
 	if($signal == 15)
 		{
-		quest::spawn2(78213,0,0,985,520,175,65);
+		quest::spawn2(78213,0,0,985,520,175,130);
             $handin=1;
 		}
 }

@@ -16,10 +16,10 @@ sub EVENT_ITEM {
   quest::stoptimer("sit");
   quest::start(273);
   quest::settimer("Depop",8);
-  quest::spawn2(93190,0,0,1955,2825,-49,190); #Spawn the golem and three guards
-  quest::spawn2(93303,0,0,1955,2794,-49,190);
-  quest::spawn2(93303,0,0,1954,2855,-49,190);
-  quest::spawn2(93303,0,0,1915,2825,-49,190);
+  quest::spawn2(93190,0,0,1955,2825,-49,380); #Spawn the golem and three guards
+  quest::spawn2(93303,0,0,1955,2794,-49,380);
+  quest::spawn2(93303,0,0,1954,2855,-49,380);
+  quest::spawn2(93303,0,0,1915,2825,-49,380);
   quest::signalwith(93077,0,0);
   }
   plugin::return_items(\%itemcount);

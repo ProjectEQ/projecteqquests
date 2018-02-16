@@ -229,9 +229,9 @@ function spawn_wraith()
 	local location = eq.ChooseRandom(1,2);
 
 	if ( location == 1 ) then
-		eq.spawn2(201452, 51, 0, 723, -1120, 88, 68);
+		eq.spawn2(201452, 51, 0, 723, -1120, 88, 136);
 	else 
-		eq.spawn2(201452, 0, 0, 915, -1120, 58, 194);
+		eq.spawn2(201452, 0, 0, 915, -1120, 58, 388);
 	end
 	eq.set_timer("wraith_timer", 60000);
 end
@@ -248,12 +248,12 @@ function spawn_mobs(wave)
 	local mob1 = 201473 + (4 * wave);
 
 	-- South Spawns
-	eq.spawn2(mob1    , 49,0,857,-1220,73,255 );
-	eq.spawn2((mob1+1), 49,0,882,-1220,73,255 );
+	eq.spawn2(mob1    , 49,0,857,-1220,73,510 );
+	eq.spawn2((mob1+1), 49,0,882,-1220,73,510 );
 
 	-- North Spawns
-	eq.spawn2((mob1+2), 50,0,857,-1015,73, 130 );
-	eq.spawn2((mob1+3), 50,0,882,-1015,73, 130 );
+	eq.spawn2((mob1+2), 50,0,857,-1015,73, 260 );
+	eq.spawn2((mob1+3), 50,0,882,-1015,73, 260 );
 	
 	if (wave == 1) then
 		wave1_spawned = 1;
@@ -269,16 +269,16 @@ end
 
 function spawn_prisoners()
 	-- a tortured prisoner
-	eq.spawn2(201476, 0, 0, 907, -1157, 58, 222);
-	eq.spawn2(201476, 0, 0, 831, -1157, 58, 31);
-	eq.spawn2(201476, 0, 0, 831, -1084, 58, 90);
-	eq.spawn2(201476, 0, 0, 906, -1084, 58, 156);
+	eq.spawn2(201476, 0, 0, 907, -1157, 58, 444);
+	eq.spawn2(201476, 0, 0, 831, -1157, 58, 62);
+	eq.spawn2(201476, 0, 0, 831, -1084, 58, 180);
+	eq.spawn2(201476, 0, 0, 906, -1084, 58, 312);
 
 	-- Pain and Suffering
-	eq.spawn2(201475, 0,0, 912,-1161, 60, 222);
-	eq.spawn2(201475, 0,0, 824,-1161, 60, 35);
-	eq.spawn2(201475, 0,0, 824,-1078, 60, 90);
-	eq.spawn2(201475, 0,0, 910,-1078, 60, 162);
+	eq.spawn2(201475, 0,0, 912,-1161, 60, 444);
+	eq.spawn2(201475, 0,0, 824,-1161, 60, 70);
+	eq.spawn2(201475, 0,0, 824,-1078, 60, 180);
+	eq.spawn2(201475, 0,0, 910,-1078, 60, 324);
 end
 
 function despawn_prisoners() 

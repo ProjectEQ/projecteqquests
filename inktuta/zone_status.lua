@@ -93,12 +93,12 @@ function event_signal(e)
 		eq.depop_all(296066) --Mirror_Image
 		eq.depop_all(296074); --Noqufiel
 		eq.depop_all(296075); --noqufiel_trigger
-		eq.spawn2(296071,0,0,-89, -615, -127, 84); --Jomica_the_Unforgiven
-		eq.spawn2(296067,0,0,-63,-600,-127,128); --#an ancient sentinel
-		eq.spawn2(296068,0,0,-127,-652,-127, 121); --bones (loot)
+		eq.spawn2(296071,0,0,-89, -615, -127, 168); --Jomica_the_Unforgiven
+		eq.spawn2(296067,0,0,-63,-600,-127,256); --#an ancient sentinel
+		eq.spawn2(296068,0,0,-127,-652,-127, 242); --bones (loot)
 		AddLockout(5);
 	elseif (e.signal == 296071) then
-		eq.spawn2(296072,0,0,5,-654,-127,175);  --pile of bones
+		eq.spawn2(296072,0,0,5,-654,-127,350);  --pile of bones
 		AddLockout(6);
 	end
 end
@@ -137,47 +137,47 @@ end
 
 function SpawnKelekdrix()
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(296023) == false) then
-		eq.spawn2(296023,0,0,353,-656,-2,194); --Servant_of_Keleldrix
+		eq.spawn2(296023,0,0,353,-656,-2,388); --Servant_of_Keleldrix
 	end
 end
 
 
 function SpawnMites()
 	--exiles
-	eq.spawn2(296030,0,0,-274,-531,-52,125); 
-	eq.spawn2(296033,0,0,-557,-237,-2,63);
-	eq.spawn2(296035,0,0,-385,-562,-76,305);
-	eq.spawn2(296036,0,0,-305,-310,-51,190);
+	eq.spawn2(296030,0,0,-274,-531,-52,250); 
+	eq.spawn2(296033,0,0,-557,-237,-2,126);
+	eq.spawn2(296035,0,0,-385,-562,-76,305); -- needs_heading_validation
+	eq.spawn2(296036,0,0,-305,-310,-51,380);
 end
 
 function SpawnGolems()
 	--first set of golems
 	eq.spawn2(296020,0,0,-494,-479,-85,0); --loose tile
-	eq.spawn2(296002,0,0,-454,-500,-72,192); --golem
-	eq.spawn2(296002,0,0,-494,-401,-72,128); --golem
-	eq.spawn2(296002,0,0,-533,-500,-72,54);  --golem
+	eq.spawn2(296002,0,0,-454,-500,-72,384); --golem
+	eq.spawn2(296002,0,0,-494,-401,-72,256); --golem
+	eq.spawn2(296002,0,0,-533,-500,-72,108);  --golem
 	--second set
 	eq.spawn2(296045,0,0,-494,-623,-102,0);
-	eq.spawn2(296049,0,0,-533,-580,-97,64);
-	eq.spawn2(296049,0,0,-454,-649,-97,192);
-	eq.spawn2(296049,0,0,-533,-649,-97,64);
-	eq.spawn2(296049,0,0,-454,-580,-97,192);
+	eq.spawn2(296049,0,0,-533,-580,-97,128);
+	eq.spawn2(296049,0,0,-454,-649,-97,384);
+	eq.spawn2(296049,0,0,-533,-649,-97,128);
+	eq.spawn2(296049,0,0,-454,-580,-97,384);
 	--third set
 	eq.spawn2(296046,0,0,-494,-776,-120,0); 
-	eq.spawn2(296050,0,0,-533,-737,-122,64); 
-	eq.spawn2(296050,0,0,-533,-798,-122,64);
-	eq.spawn2(296050,0,0,-454,-798,-122,192);
-	eq.spawn2(296050,0,0,-454,-737,-122,192);
+	eq.spawn2(296050,0,0,-533,-737,-122,128); 
+	eq.spawn2(296050,0,0,-533,-798,-122,128);
+	eq.spawn2(296050,0,0,-454,-798,-122,384);
+	eq.spawn2(296050,0,0,-454,-737,-122,384);
 	--fourth set
 	eq.spawn2(296047,0,0,-312,-911,-127,0);
 	eq.spawn2(296051,0,0,-371,-953,-122,0);
 	eq.spawn2(296051,0,0,-296,-953,-122,0);
-	eq.spawn2(296051,0,0,-296,-869,-122,128);
-	eq.spawn2(296051,0,0,-371,-869,-122,128);
+	eq.spawn2(296051,0,0,-296,-869,-122,256);
+	eq.spawn2(296051,0,0,-371,-869,-122,256);
 end
 
 function SpawnCallers()
-	eq.spawn2(296052,0,0,-166,-911,-127,194); --Noqufiel
+	eq.spawn2(296052,0,0,-166,-911,-127,388); --Noqufiel
 end
 
 function SpawnNoqufiel()

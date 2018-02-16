@@ -26,11 +26,11 @@ if($pumpkin == 1)
    quest::settimer(8,8);
    }
 if($pumpkin == 3)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 4)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 5)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 6)
    {
 
@@ -39,11 +39,11 @@ if($pumpkin == 6)
    quest::settimer(6,23);
     }
 if($pumpkin == 7)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 8)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 9)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 10)
    {
  
@@ -52,11 +52,11 @@ if($pumpkin == 10)
    quest::settimer(9,27);
    }
 if($pumpkin == 11)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 12)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 13)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 14)
    {
  
@@ -65,11 +65,11 @@ if($pumpkin == 14)
    quest::settimer(10,27);
    }
 if($pumpkin == 15)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 16)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 17)
-   {quest::spawn2(201424,46,0,232,-1048,74,180);}
+   {quest::spawn2(201424,46,0,232,-1048,74,360);}
 if($pumpkin == 18)
    {
  
@@ -92,42 +92,42 @@ sub EVENT_TIMER
    
    {   if($timer == 4 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,180);
+            quest::spawn2(201432,0,0,224,-1071,73,360);
             }
       else
 
    
       {   if($timer == 4 && ($random_number <= 96 && $random_number > 91))
                {
-               quest::spawn2(201431,0,0,224,-1071,73,180);
+               quest::spawn2(201431,0,0,224,-1071,73,360);
                }
 
          else
 
          {   if($timer == 4 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,180);      
+                  quest::spawn2(201428,0,0,224,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 4 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,180);      
+                     quest::spawn2(201430,0,0,224,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 4 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,180);      
+                        quest::spawn2(201429,0,0,224,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 4 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201427,0,0,224,-1071,73,180);      
+                           quest::spawn2(201427,0,0,224,-1071,73,360);      
                            }
    }
       }   
@@ -138,42 +138,42 @@ sub EVENT_TIMER
 
    {   if($timer == 4 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,180);
+            quest::spawn2(201432,0,0,168,-1071,73,360);
             }
       else
 
    
       {   if($timer == 4 && ($random_number2 <= 96 && $random_number2 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1071,73,180);
+               quest::spawn2(201431,0,0,168,-1071,73,360);
                }
 
          else
 
          {   if($timer == 4 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,180);      
+                  quest::spawn2(201428,0,0,168,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 4 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,180);      
+                     quest::spawn2(201430,0,0,168,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 4 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,180);      
+                        quest::spawn2(201429,0,0,168,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 4 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,180);      
+                           quest::spawn2(201427,0,0,168,-1071,73,360);      
                            }
    }
       }   
@@ -184,42 +184,42 @@ sub EVENT_TIMER
 
 {   if($timer == 4 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,180);
+            quest::spawn2(201432,0,0,168,-1121,73,360);
             }
       else
 
    
       {   if($timer == 4 && ($random_number3 <= 96 && $random_number3 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1121,73,180);
+               quest::spawn2(201431,0,0,168,-1121,73,360);
                }
 
          else
 
          {   if($timer == 4 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,180);      
+                  quest::spawn2(201428,0,0,168,-1121,73,360);      
                   }
 
             else
 
             {   if($timer == 4 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,180);      
+                     quest::spawn2(201430,0,0,168,-1121,73,360);      
                      }
 
                else
 
                {   if($timer == 4 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,180);      
+                        quest::spawn2(201429,0,0,168,-1121,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 4 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,180);      
+                           quest::spawn2(201427,0,0,168,-1121,73,360);      
                            }
    }
       }   
@@ -230,7 +230,7 @@ sub EVENT_TIMER
 
 {   if($timer == 4 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,180);
+            quest::spawn2(201432,0,0,224,-1121,73,360);
             quest::stoptimer(4);
             }
       else
@@ -238,7 +238,7 @@ sub EVENT_TIMER
    
       {   if($timer == 4 && ($random_number4 <= 96 && $random_number4 > 91))
                {
-               quest::spawn2(201431,0,0,224,-1121,73,180);
+               quest::spawn2(201431,0,0,224,-1121,73,360);
                quest::stoptimer(4);
                }
 
@@ -246,7 +246,7 @@ sub EVENT_TIMER
 
          {   if($timer == 4 && ($random_number4 <= 91 && $random_number4 > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1121,73,180);
+                  quest::spawn2(201428,0,0,224,-1121,73,360);
                   quest::stoptimer(4);      
                   }
 
@@ -254,7 +254,7 @@ sub EVENT_TIMER
 
             {   if($timer == 4 && ($random_number4 <= 65 && $random_number4 > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1121,73,180);
+                     quest::spawn2(201430,0,0,224,-1121,73,360);
                      quest::stoptimer(4);      
                      }
 
@@ -262,7 +262,7 @@ sub EVENT_TIMER
 
                {   if($timer == 4 && ($random_number4 <= 40 && $random_number4 > 20))
                         {
-                        quest::spawn2(201430,0,0,224,-1121,73,180);
+                        quest::spawn2(201430,0,0,224,-1121,73,360);
                         quest::stoptimer(4);      
                         }   
 
@@ -270,7 +270,7 @@ sub EVENT_TIMER
 
                   {   if($timer == 4 && ($random_number4 <= 20 && $random_number4 >= 0))
                            {
-                           quest::spawn2(201430,0,0,224,-1121,73,180);
+                           quest::spawn2(201430,0,0,224,-1121,73,360);
                            quest::stoptimer(4);      
                            }
    }
@@ -282,42 +282,42 @@ sub EVENT_TIMER
 
 {   if($timer == 5 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,180);
+            quest::spawn2(201432,0,0,224,-1071,73,360);
             }
       else
 
    
       {   if($timer == 5 && ($random_number <= 96 && $random_number > 91))
                {
-               quest::spawn2(201431,0,0,224,-1071,73,180);
+               quest::spawn2(201431,0,0,224,-1071,73,360);
                }
 
          else
 
          {   if($timer == 5 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,180);      
+                  quest::spawn2(201428,0,0,224,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 5 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,180);      
+                     quest::spawn2(201430,0,0,224,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 5 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,180);      
+                        quest::spawn2(201429,0,0,224,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 5 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201427,0,0,224,-1071,73,180);      
+                           quest::spawn2(201427,0,0,224,-1071,73,360);      
                            }
    }
       }   
@@ -328,42 +328,42 @@ sub EVENT_TIMER
 
    {   if($timer == 5 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,180);
+            quest::spawn2(201432,0,0,168,-1071,73,360);
             }
       else
 
    
       {   if($timer == 5 && ($random_number2 <= 96 && $random_number2 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1071,73,180);
+               quest::spawn2(201431,0,0,168,-1071,73,360);
                }
 
          else
 
          {   if($timer == 5 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,180);      
+                  quest::spawn2(201428,0,0,168,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 5 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,180);      
+                     quest::spawn2(201430,0,0,168,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 5 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,180);      
+                        quest::spawn2(201429,0,0,168,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 5 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,180);      
+                           quest::spawn2(201427,0,0,168,-1071,73,360);      
                            }
    }
       }   
@@ -374,42 +374,42 @@ sub EVENT_TIMER
 
 {   if($timer == 5 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,180);
+            quest::spawn2(201432,0,0,168,-1121,73,360);
             }
       else
 
    
       {   if($timer == 5 && ($random_number3 <= 96 && $random_number3 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1121,73,180);
+               quest::spawn2(201431,0,0,168,-1121,73,360);
                }
 
          else
 
          {   if($timer == 5 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,180);      
+                  quest::spawn2(201428,0,0,168,-1121,73,360);      
                   }
 
             else
 
             {   if($timer == 5 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,180);      
+                     quest::spawn2(201430,0,0,168,-1121,73,360);      
                      }
 
                else
 
                {   if($timer == 5 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,180);      
+                        quest::spawn2(201429,0,0,168,-1121,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 5 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,180);      
+                           quest::spawn2(201427,0,0,168,-1121,73,360);      
                            }
    }
       }   
@@ -420,7 +420,7 @@ sub EVENT_TIMER
 
 {   if($timer == 5 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,180);
+            quest::spawn2(201432,0,0,224,-1121,73,360);
             quest::stoptimer(5);
             }
       else
@@ -428,7 +428,7 @@ sub EVENT_TIMER
    
       {   if($timer == 5 && ($random_number4 <= 96 && $random_number4 > 91))
                {
-               quest::spawn2(201431,0,0,224,-1121,73,180);
+               quest::spawn2(201431,0,0,224,-1121,73,360);
                quest::stoptimer(5);
                }
 
@@ -436,7 +436,7 @@ sub EVENT_TIMER
 
          {   if($timer == 5 && ($random_number4 <= 91 && $random_number4 > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1121,73,180);
+                  quest::spawn2(201428,0,0,224,-1121,73,360);
                   quest::stoptimer(5);      
                   }
 
@@ -444,7 +444,7 @@ sub EVENT_TIMER
 
             {   if($timer == 5 && ($random_number4 <= 65 && $random_number4 > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1121,73,180);
+                     quest::spawn2(201430,0,0,224,-1121,73,360);
                      quest::stoptimer(5);      
                      }
 
@@ -452,7 +452,7 @@ sub EVENT_TIMER
 
                {   if($timer == 5 && ($random_number4 <= 40 && $random_number4 > 20))
                         {
-                        quest::spawn2(201430,0,0,224,-1121,73,180);
+                        quest::spawn2(201430,0,0,224,-1121,73,360);
                         quest::stoptimer(5);      
                         }   
 
@@ -460,7 +460,7 @@ sub EVENT_TIMER
 
                   {   if($timer == 5 && ($random_number4 <= 20 && $random_number4 >= 0))
                            {
-                           quest::spawn2(201430,0,0,224,-1121,73,180);
+                           quest::spawn2(201430,0,0,224,-1121,73,360);
                            quest::stoptimer(5);      
                            }
    }
@@ -472,42 +472,42 @@ sub EVENT_TIMER
 
 {   if($timer == 7 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,180);
+            quest::spawn2(201432,0,0,224,-1071,73,360);
             }
       else
 
    
       {   if($timer == 7 && ($random_number <= 96 && $random_number > 91))
                {
-               quest::spawn2(201431,0,0,224,-1071,73,180);
+               quest::spawn2(201431,0,0,224,-1071,73,360);
                }
 
          else
 
          {   if($timer == 7 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,180);      
+                  quest::spawn2(201428,0,0,224,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 7 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,180);      
+                     quest::spawn2(201430,0,0,224,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 7 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,180);      
+                        quest::spawn2(201429,0,0,224,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 7 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201429,0,0,224,-1071,73,180);      
+                           quest::spawn2(201429,0,0,224,-1071,73,360);      
                            }
    }
       }   
@@ -518,42 +518,42 @@ sub EVENT_TIMER
 
    {   if($timer == 7 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,180);
+            quest::spawn2(201432,0,0,168,-1071,73,360);
             }
       else
 
    
       {   if($timer == 7 && ($random_number2 <= 96 && $random_number2 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1071,73,180);
+               quest::spawn2(201431,0,0,168,-1071,73,360);
                }
 
          else
 
          {   if($timer == 7 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,180);      
+                  quest::spawn2(201428,0,0,168,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 7 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,180);      
+                     quest::spawn2(201430,0,0,168,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 7 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,180);      
+                        quest::spawn2(201429,0,0,168,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 7 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,180);      
+                           quest::spawn2(201427,0,0,168,-1071,73,360);      
                            }
    }
       }   
@@ -564,42 +564,42 @@ sub EVENT_TIMER
 
 {   if($timer == 7 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,180);
+            quest::spawn2(201432,0,0,168,-1121,73,360);
             }
       else
 
    
       {   if($timer == 7 && ($random_number3 <= 96 && $random_number3 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1121,73,180);
+               quest::spawn2(201431,0,0,168,-1121,73,360);
                }
 
          else
 
          {   if($timer == 7 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,180);      
+                  quest::spawn2(201428,0,0,168,-1121,73,360);      
                   }
 
             else
 
             {   if($timer == 7 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,180);      
+                     quest::spawn2(201430,0,0,168,-1121,73,360);      
                      }
 
                else
 
                {   if($timer == 7 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,180);      
+                        quest::spawn2(201429,0,0,168,-1121,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 7 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,180);      
+                           quest::spawn2(201427,0,0,168,-1121,73,360);      
                            }
    }
       }   
@@ -610,7 +610,7 @@ sub EVENT_TIMER
 
 {   if($timer == 7 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,180);
+            quest::spawn2(201432,0,0,224,-1121,73,360);
             quest::stoptimer(7);
             }
       else
@@ -618,7 +618,7 @@ sub EVENT_TIMER
    
       {   if($timer == 7 && ($random_number4 <= 96 && $random_number4 > 91))
                {
-               quest::spawn2(201431,0,0,224,-1121,73,180);
+               quest::spawn2(201431,0,0,224,-1121,73,360);
                quest::stoptimer(7);
                }
 
@@ -626,7 +626,7 @@ sub EVENT_TIMER
 
          {   if($timer == 7 && ($random_number4 <= 91 && $random_number4 > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1121,73,180);
+                  quest::spawn2(201428,0,0,224,-1121,73,360);
                   quest::stoptimer(7);      
                   }
 
@@ -634,7 +634,7 @@ sub EVENT_TIMER
 
             {   if($timer == 7 && ($random_number4 <= 65 && $random_number4 > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1121,73,180);
+                     quest::spawn2(201430,0,0,224,-1121,73,360);
                      quest::stoptimer(7);      
                      }
 
@@ -642,7 +642,7 @@ sub EVENT_TIMER
 
                {   if($timer == 7 && ($random_number4 <= 40 && $random_number4 > 20))
                         {
-                        quest::spawn2(201430,0,0,224,-1121,73,180);
+                        quest::spawn2(201430,0,0,224,-1121,73,360);
                         quest::stoptimer(7);      
                         }   
 
@@ -650,7 +650,7 @@ sub EVENT_TIMER
 
                   {   if($timer == 7 && ($random_number4 <= 20 && $random_number4 >= 0))
                            {
-                           quest::spawn2(201430,0,0,224,-1121,73,180);
+                           quest::spawn2(201430,0,0,224,-1121,73,360);
                            quest::stoptimer(7);      
                            }
    }
@@ -662,42 +662,42 @@ sub EVENT_TIMER
 
 {   if($timer == 11 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,180);
+            quest::spawn2(201432,0,0,224,-1071,73,360);
             }
       else
 
    
       {   if($timer == 11 && ($random_number <= 96 && $random_number > 91))
                {
-               quest::spawn2(201431,0,0,224,-1071,73,180);
+               quest::spawn2(201431,0,0,224,-1071,73,360);
                }
 
          else
 
          {   if($timer == 11 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,180);      
+                  quest::spawn2(201428,0,0,224,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 11 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,180);      
+                     quest::spawn2(201430,0,0,224,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 11 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,180);      
+                        quest::spawn2(201429,0,0,224,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 11 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201427,0,0,224,-1071,73,180);      
+                           quest::spawn2(201427,0,0,224,-1071,73,360);      
                            }
    }
       }   
@@ -708,42 +708,42 @@ sub EVENT_TIMER
 
    {   if($timer == 11 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,180);
+            quest::spawn2(201432,0,0,168,-1071,73,360);
             }
       else
 
    
       {   if($timer == 11 && ($random_number2 <= 96 && $random_number2 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1071,73,180);
+               quest::spawn2(201431,0,0,168,-1071,73,360);
                }
 
          else
 
          {   if($timer == 11 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,180);      
+                  quest::spawn2(201428,0,0,168,-1071,73,360);      
                   }
 
             else
 
             {   if($timer == 11 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,180);      
+                     quest::spawn2(201430,0,0,168,-1071,73,360);      
                      }
 
                else
 
                {   if($timer == 11 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,180);      
+                        quest::spawn2(201429,0,0,168,-1071,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 11 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,180);      
+                           quest::spawn2(201427,0,0,168,-1071,73,360);      
                            }
    }
       }   
@@ -754,42 +754,42 @@ sub EVENT_TIMER
 
 {   if($timer == 11 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,180);
+            quest::spawn2(201432,0,0,168,-1121,73,360);
             }
       else
 
    
       {   if($timer == 11 && ($random_number3 <= 96 && $random_number3 > 91))
                {
-               quest::spawn2(201431,0,0,168,-1121,73,180);
+               quest::spawn2(201431,0,0,168,-1121,73,360);
                }
 
          else
 
          {   if($timer == 11 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,180);      
+                  quest::spawn2(201428,0,0,168,-1121,73,360);      
                   }
 
             else
 
             {   if($timer == 11 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,180);      
+                     quest::spawn2(201430,0,0,168,-1121,73,360);      
                      }
 
                else
 
                {   if($timer == 11 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,180);      
+                        quest::spawn2(201429,0,0,168,-1121,73,360);      
                         }   
 
                   else
 
                   {   if($timer == 11 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,180);      
+                           quest::spawn2(201427,0,0,168,-1121,73,360);      
                            }
    }
       }   
@@ -800,7 +800,7 @@ sub EVENT_TIMER
 
 {   if($timer == 11 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,180);
+            quest::spawn2(201432,0,0,224,-1121,73,360);
             quest::stoptimer(11);
             }
       else
@@ -808,7 +808,7 @@ sub EVENT_TIMER
    
       {   if($timer == 11 && ($random_number4 <= 96 && $random_number4 > 91))
                {
-               quest::spawn2(201431,0,0,224,-1121,73,180);
+               quest::spawn2(201431,0,0,224,-1121,73,360);
                quest::stoptimer(11);
                }
 
@@ -816,7 +816,7 @@ sub EVENT_TIMER
 
          {   if($timer == 11 && ($random_number4 <= 91 && $random_number4 > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1121,73,180);
+                  quest::spawn2(201428,0,0,224,-1121,73,360);
                   quest::stoptimer(11);      
                   }
 
@@ -824,7 +824,7 @@ sub EVENT_TIMER
 
             {   if($timer == 11 && ($random_number4 <= 65 && $random_number4 > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1121,73,180);
+                     quest::spawn2(201430,0,0,224,-1121,73,360);
                      quest::stoptimer(11);      
                      }
 
@@ -832,7 +832,7 @@ sub EVENT_TIMER
 
                {   if($timer == 11 && ($random_number4 <= 40 && $random_number4 > 20))
                         {
-                        quest::spawn2(201430,0,0,224,-1121,73,180);
+                        quest::spawn2(201430,0,0,224,-1121,73,360);
                         quest::stoptimer(11);      
                         }   
 
@@ -840,7 +840,7 @@ sub EVENT_TIMER
 
                   {   if($timer == 11 && ($random_number4 <= 20 && $random_number4 >= 0))
                            {
-                           quest::spawn2(201430,0,0,224,-1121,73,180);
+                           quest::spawn2(201430,0,0,224,-1121,73,360);
                            quest::stoptimer(11);      
                            }
    }
@@ -852,22 +852,22 @@ sub EVENT_TIMER
 
 
    {if($timer == 6){
-      quest::spawn2(201424,46,0,232,-1048,74,180);
+      quest::spawn2(201424,46,0,232,-1048,74,360);
       quest::stoptimer(6);
       }
    }
    {if($timer == 8){
-      quest::spawn2(201424,46,0,232,-1048,74,180);
+      quest::spawn2(201424,46,0,232,-1048,74,360);
       quest::stoptimer(8);
       }
    }
    {if($timer == 9){
-      quest::spawn2(201424,46,0,232,-1048,74,180);
+      quest::spawn2(201424,46,0,232,-1048,74,360);
       quest::stoptimer(9);
       }
    }
    {if($timer == 10){
-      quest::spawn2(201424,46,0,232,-1048,74,180);
+      quest::spawn2(201424,46,0,232,-1048,74,360);
       quest::stoptimer(10);
       }
    }

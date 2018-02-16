@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(90189, 0, 0, 28.1, 1.4, 7, 192.5); ##Marl Kastane
+  quest::spawn2(90189, 0, 0, 28.1, 1.4, 7, 385); ##Marl Kastane
 }
 
 # Quest by mystic414

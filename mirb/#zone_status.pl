@@ -33,7 +33,7 @@ sub EVENT_AGGRO {
 sub KICK_ALL_PLAYERS {
   #zone all players back to Everfrost
   foreach $pc ($entity_list->GetClientList()) {
-    $pc->MovePC(30, -5460, -630, 190, 128);
+    $pc->MovePC(30, -5460, -630, 190, 256);
   }
 }
 
@@ -70,14 +70,14 @@ sub EVENT_TIMER {
       POP_EVENT4();
       if ($qglobals{$instid.'_mirb_event'} == 0) { #event triggered, nothing dead.
         #spawn both bosses.
-        quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 42.00); # Raid Leader Sig Chol
-        quest::spawn2(237785,0,0,713.00, 970.00, 6.25, 71.00); # Taskmaster Suitalp
+        quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 84); # Raid Leader Sig Chol
+        quest::spawn2(237785,0,0,713.00, 970.00, 6.25, 142); # Taskmaster Suitalp
       } elsif ($qglobals{$instid.'_mirb_event'} == 1) { # Taskmaster dead.
         #spawn only raid leader
-        quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 42.00); # Raid Leader Sig Chol
+        quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 84); # Raid Leader Sig Chol
       } elsif ($qglobals{$instid.'_mirb_event'} == 2) { # Raid Leader dead
         #spawn only Taskmaster
-        quest::spawn2(237785,0,0,713.00, 970.00, 6.25, 71.00); # Taskmaster Suitalp
+        quest::spawn2(237785,0,0,713.00, 970.00, 6.25, 142); # Taskmaster Suitalp
       }
     } elsif ($qglobals{$instid.'_mirb_status'} == 2) { #goblin event completed, Durgin Skell events not done
       #despawn trigger_goblin (should not be up but safety check)
@@ -237,15 +237,15 @@ sub EVENT_TIMER {
 
 sub POP_EVENT1 {
   DEPOP_EVENT1();
-  quest::spawn2(237748,0,0,180,-5,6,55); #a_sundering_sludge
+  quest::spawn2(237748,0,0,180,-5,6,110); #a_sundering_sludge
 }
 
 sub POP_EVENT2 {
   DEPOP_EVENT2();
-  quest::spawn2(237756,0,0,-289,-19,-54.5,224); #a_chromatic_bonewalker
-  quest::spawn2(237756,0,0,295,-582,-117.5,223); #a_chromatic_bonewalker
-  quest::spawn2(237757,0,0,-334,-46,-54.5,28); #a_chromatic_bonewalker
-  quest::spawn2(237791,0,0,220,-514,-85.875,35); #a_chromatic_bonewalker
+  quest::spawn2(237756,0,0,-289,-19,-54.5,448); #a_chromatic_bonewalker
+  quest::spawn2(237756,0,0,295,-582,-117.5,446); #a_chromatic_bonewalker
+  quest::spawn2(237757,0,0,-334,-46,-54.5,56); #a_chromatic_bonewalker
+  quest::spawn2(237791,0,0,220,-514,-85.875,70); #a_chromatic_bonewalker
 }
 
 sub POP_EVENT3 {
@@ -255,8 +255,8 @@ sub POP_EVENT3 {
 
 sub POP_EVENT4 {
   DEPOP_EVENT4();
-  quest::spawn2(237772,0,0,-104,-933,53.5,92.5); #Sharalla`s warder
-  quest::spawn2(237773,0,0,-94,-944,55.375,51.5); #Sharalla`s corpse
+  quest::spawn2(237772,0,0,-104,-933,53.5,185); #Sharalla`s warder
+  quest::spawn2(237773,0,0,-94,-944,55.375,103); #Sharalla`s corpse
 }
 
 sub DEPOP_EVENT1 {

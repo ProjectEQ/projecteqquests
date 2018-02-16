@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 		quest::say("You have done a great service for these poor souls. I have sent for a courier to come for the chest of skulls but he is quite late in his arrival.");
 		quest::me("The runes inscribed on the chest and iron bands begin to softly glow with a golden light.");
 		quest::say("I will keep it safe until the courier arrives.");
-		quest::spawn2(160427,22,0,-60.64,-0.86,4.06,60);  # A Vah Shir courier 
+		quest::spawn2(160427,22,0,-60.64,-0.86,4.06,120);  # A Vah Shir courier 
 		quest::signal(160024,20000); # Centurion Manik
 		quest::signal(160288,20000); # Centurion Goran
 		quest::signal(160427,700000); # A Vah Shir Courier Depop signal
@@ -58,14 +58,14 @@ sub EVENT_SIGNAL {
 	#	quest::say("Catch him and bring back that crate of skulls!");
 	#}
 	#	if($signal == 7) { # Signal from Couriers death
-	quest::spawn2(160461,0,0,-4.00,-36.31,4.06,10);  # a_reanimated_vah_shir -N
-	quest::spawn2(160461,0,0,-4.00,32.89,4.06,125);  # a_reanimated_vah_shir -S
-	quest::spawn2(160461,0,0,-44.76,-0.14,4.06,60);  # a_reanimated_vah_shir -E
-	quest::spawn2(160461,0,0,25.63,-2.65,4.06,190);  # a_reanimated_vah_shir -W
-	quest::spawn2(160461,0,0,17.85,-25.35,4.06,225);  # a_reanimated_vah_shir -NE
-	quest::spawn2(160461,0,0,-35.98,28.26,4.06,90);  # a_reanimated_vah_shir -SW
-	quest::spawn2(160461,0,0,19.31,21.24,4.06,160);  # a_reanimated_vah_shir -SE
-	quest::spawn2(160461,0,0,-26.56,-24.31,4.06,30);  # a_reanimated_vah_shir -NW
+	quest::spawn2(160461,0,0,-4.00,-36.31,4.06,20);  # a_reanimated_vah_shir -N
+	quest::spawn2(160461,0,0,-4.00,32.89,4.06,250);  # a_reanimated_vah_shir -S
+	quest::spawn2(160461,0,0,-44.76,-0.14,4.06,120);  # a_reanimated_vah_shir -E
+	quest::spawn2(160461,0,0,25.63,-2.65,4.06,380);  # a_reanimated_vah_shir -W
+	quest::spawn2(160461,0,0,17.85,-25.35,4.06,450);  # a_reanimated_vah_shir -NE
+	quest::spawn2(160461,0,0,-35.98,28.26,4.06,180);  # a_reanimated_vah_shir -SW
+	quest::spawn2(160461,0,0,19.31,21.24,4.06,320);  # a_reanimated_vah_shir -SE
+	quest::spawn2(160461,0,0,-26.56,-24.31,4.06,60);  # a_reanimated_vah_shir -NW
 	quest::signal(160461,600000); # Ten minutes to kill the 8 NPCs Might need adjusted
 }
 

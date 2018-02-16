@@ -52,7 +52,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20448 => 1)) {
     quest::emote("looks at the coin and nods gravely at you as she slips it into a fold of her clothing. 'I see. The story of this coin speaks much to me as do the words you have given me. Telin sent word that you would arrive. The tidings you bring are ill indeed. Here, take this amulet and find Sionae. She is nearby. We will speak more on this matter when all are present.'");
     quest::summonitem(20450);
-    quest::unique_spawn(15178,0,0,-1595,-2595,3.2,127); #spawn sionae
+    quest::unique_spawn(15178,0,0,-1595,-2595,3.2,254); #spawn sionae
   }
   elsif(plugin::check_handin(\%itemcount, 62810 => 1)){ #Sickly Maiden's Hair
     quest::say("This plant has an illness that I have never sensed before.' Althele pauses in thought for a moment. 'You are a hunter, so I shall put your skills to work. First, take this to Corun in Surefall. He is an expert on animal illnesses. Then put your hunting skills to work and see if you can capture any animals that may have eaten this plant. Corun will want to see them to help him discover what the sickness is.");
@@ -130,9 +130,9 @@ sub EVENT_TIMER {
     quest::stoptimer("attack");
     quest::emote("snaps her head towards you. 'Innoruuk's brood is upon us. Go, find the spawn of hatred before they reach this point and destroy them!");
 
-    $entid1 = quest::spawn2(15153,0,0,-996,-1529,354,130); #corruptor
-    $entid2 = quest::spawn2(15150,0,0,-1090,-1529,355.4,130); #reaver
-    $entid3 = quest::spawn2(15150,0,0,-1063,-1490,367.5,130); #reaver
+    $entid1 = quest::spawn2(15153,0,0,-996,-1529,354,260); #corruptor
+    $entid2 = quest::spawn2(15150,0,0,-1090,-1529,355.4,260); #reaver
+    $entid3 = quest::spawn2(15150,0,0,-1063,-1490,367.5,260); #reaver
     $mob1 = $entity_list->GetMobID($entid1);
     $mob2 = $entity_list->GetMobID($entid2);
     $mob3 = $entity_list->GetMobID($entid3);

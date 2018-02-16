@@ -5,7 +5,7 @@ quest::say("I'm sure if you've listened to my fellow councilors babble on for aw
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(-103,703,39,132,1);
+		quest::moveto(-103,703,39,264,1);
 	}
 	if($signal==2) {
 		quest::moveto(0,535,68,0,1);

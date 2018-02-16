@@ -66,7 +66,7 @@ function RealS_Timer(e)
             e.self:Emote(" staggers backward as her shadowy duplicates fade away.")
             if shadow_counters == 0 then
                 eq.depop()
-                eq.spawn2(300103, 0, 0, 729, 11, 130, 212)
+                eq.spawn2(300103, 0, 0, 729, 11, 130, 424)
             else
                 eq.depop()
                 SpawnShadows()
@@ -89,7 +89,7 @@ end
 
 function RealS_Death(e)
     -- hmmm not sure what happens here, but ahh w/e lets just do this
-    eq.spawn2(300103, 0, 0, 729, 11, 130, 212)
+    eq.spawn2(300103, 0, 0, 729, 11, 130, 424)
 end
 
 function RealR_Spawn(e)

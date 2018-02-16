@@ -31,7 +31,7 @@ function event_say(e)
     if e.message:findi("summon") and qglobals["bard20"] == "1" then
         e.self:Emote(" nods at you and begins to scrawl runes on the ground.  His voice starts quietly and grows to a dull roar as he recites an incantation of some sort.  You feel the ground begin to rumble around you as dark energy pervades your soul. Alkron screams out, 'The devourer is here! Fight for your world Norrathian!")
         -- TODO: this one should actually have aggro clearing and aggroing bard behavior
-        eq.unique_spawn(303125, 0, 0, 556, 1921, 320, 166) -- #Oshiruk
+        eq.unique_spawn(303125, 0, 0, 556, 1921, 320, 332) -- #Oshiruk
     end
 end
 
@@ -45,7 +45,7 @@ function event_trade(e)
             e.other:Message(15, "The blade in your hand begins to glow as the dark orb begins to burn your flesh.  You struggle to keep the orb from flying away.") -- unsure on color or if it should be close
             eq.set_global("bard20", "1", 5, "F") -- lets you resummon on fail or whenever because why not!
             -- this version has normal aggro and no clearing
-            eq.unique_spawn(303125, 0, 0, 556, 1921, 320, 166) -- #Oshiruk
+            eq.unique_spawn(303125, 0, 0, 556, 1921, 320, 332) -- #Oshiruk
         end
     end
 

@@ -7,6 +7,6 @@ function event_say(e)
 		e.other:Message(15, string.format("You have %i bodies available in Shadowrest.",corpse));
 	elseif(e.message:findi("ready")) then
 		e.other:Message(13, "The world stretches and twists around you as you feel yourself being pulled from this world.");
-		e.other:MovePC(187,-27,-245.6,8,192);
+		e.other:MovePC(187,-27,-245.6,8,384);
 	end
 end

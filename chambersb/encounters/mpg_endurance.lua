@@ -123,25 +123,25 @@ function Spawn_Adds()
 
   if (wave == 1) then
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -161, 386, 58, 146);
+    eq.spawn2(mob, 0, 0, -161, 386, 58, 292);
 
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -157, 158, 58, 239);
+    eq.spawn2(mob, 0, 0, -157, 158, 58, 478);
 
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -317, 319, 58, 82);
+    eq.spawn2(mob, 0, 0, -317, 319, 58, 164);
   elseif (wave == 2) then
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -318, 226, 58, 50);
+    eq.spawn2(mob, 0, 0, -318, 226, 58, 100);
 
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -251, 161, 58, 16);
+    eq.spawn2(mob, 0, 0, -251, 161, 58, 32);
   elseif (wave == 3) then
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -254, 389, 58, 115);
+    eq.spawn2(mob, 0, 0, -254, 389, 58, 230);
   elseif (wave == 4) then
     mob = mobs[math.random(1,table.getn(mobs))];
-    eq.spawn2(mob, 0, 0, -204, 274, 66, 72);
+    eq.spawn2(mob, 0, 0, -204, 274, 66, 144);
   end
 end
 
@@ -205,7 +205,7 @@ function Event_Win(e)
   eq.depop_all(305006);
 
   -- Spawn Shell of the Ancients
-  eq.unique_spawn(305014, 0, 0, -204, 274, 66, 72);
+  eq.unique_spawn(305014, 0, 0, -204, 274, 66, 144);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

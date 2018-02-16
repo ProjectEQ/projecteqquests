@@ -8,10 +8,10 @@ end
 
 function event_combat(e) -- ??
 	if(e.joined == true) then
-		eq.spawn2(154054,0,0,972.00,-556.00,-41.00,185); -- Defiled Minion
-		eq.spawn2(154054,0,0,970.00,-602.00,-41.00,225); -- Defiled Minion
-		eq.spawn2(154054,0,0,910.00,-602.00,-41.00,30); -- Defiled Minion
-		eq.spawn2(154054,0,0,905.00,-556.00,-41.00,60); -- Defiled Minion
+		eq.spawn2(154054,0,0,972.00,-556.00,-41.00,370); -- Defiled Minion
+		eq.spawn2(154054,0,0,970.00,-602.00,-41.00,450); -- Defiled Minion
+		eq.spawn2(154054,0,0,910.00,-602.00,-41.00,60); -- Defiled Minion
+		eq.spawn2(154054,0,0,905.00,-556.00,-41.00,120); -- Defiled Minion
 		eq.set_timer("2",120000);
 	end
 end
@@ -21,10 +21,10 @@ function event_timer(e)
 	local yloc = e.self:GetY();
 
 		if(e.timer == "2") then
-			eq.spawn2(154054,0,0,972.00,-556.00,-41.00,185); -- Defiled Minion
-			eq.spawn2(154054,0,0,970.00,-602.00,-41.00,225); -- Defiled Minion
-			eq.spawn2(154054,0,0,910.00,-602.00,-41.00,30); -- Defiled Minion
-			eq.spawn2(154054,0,0,905.00,-556.00,-41.00,60); -- Defiled Minion
+			eq.spawn2(154054,0,0,972.00,-556.00,-41.00,370); -- Defiled Minion
+			eq.spawn2(154054,0,0,970.00,-602.00,-41.00,450); -- Defiled Minion
+			eq.spawn2(154054,0,0,910.00,-602.00,-41.00,60); -- Defiled Minion
+			eq.spawn2(154054,0,0,905.00,-556.00,-41.00,120); -- Defiled Minion
 		end
 
 		if(e.timer == "1" and yloc > -545) then
@@ -45,10 +45,10 @@ function event_signal(e)
 	e.self:Emote("Who dares break the seals and defile the inner sanctum? Come forth so that I may crush you!");
 	e.self:Say("With the seals broken the grimlings come to help solidify the door, to make sure no one enters."); -- ??
 	-- quest::me("With the seals broken the grimlings come to help solidify the door, to make sure no one enters.");
-	eq.spawn2(154129,0,0,684.93,-380.15,-23.94,260);
-	eq.spawn2(154129,0,0,684.93,-368.50,-23.94,260);
-	eq.spawn2(154129,0,0,670.74,-358.34,-23.94,260);
-	eq.spawn2(154129,0,0,670.74,-391.97,-23.94,260);
+	eq.spawn2(154129,0,0,684.93,-380.15,-23.94,260); -- needs_heading_validation
+	eq.spawn2(154129,0,0,684.93,-368.50,-23.94,260); -- needs_heading_validation
+	eq.spawn2(154129,0,0,670.74,-358.34,-23.94,260); -- needs_heading_validation
+	eq.spawn2(154129,0,0,670.74,-391.97,-23.94,260); -- needs_heading_validation
 	eq.set_timer("3",7200000); -- 2 Hour kill timer
 end
 

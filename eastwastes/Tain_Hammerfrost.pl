@@ -15,11 +15,11 @@ sub EVENT_SAY {
     $flag = 1;
     quest::settimer(3, 600);
     quest::say("Thank Brell! I hear them approaching from just over that hill! Slay the leader, Ghrek, and give me his elixir.");
-    my $mobid1 = quest::spawn2(116560, 0, 0, -2991, -4837, 229, 65);
-    my $mobid2 = quest::spawn2(116030, 0, 0, -2991, -4815, 229, 65);
-    my $mobid3 = quest::spawn2(116030, 0, 0, -2991, -4793, 229, 65);
-    my $mobid4 = quest::spawn2(116030, 0, 0, -2991, -4859, 229, 65);
-    my $mobid5 = quest::spawn2(116030, 0, 0, -2991, -4881, 229, 65);
+    my $mobid1 = quest::spawn2(116560, 0, 0, -2991, -4837, 229, 130);
+    my $mobid2 = quest::spawn2(116030, 0, 0, -2991, -4815, 229, 130);
+    my $mobid3 = quest::spawn2(116030, 0, 0, -2991, -4793, 229, 130);
+    my $mobid4 = quest::spawn2(116030, 0, 0, -2991, -4859, 229, 130);
+    my $mobid5 = quest::spawn2(116030, 0, 0, -2991, -4881, 229, 130);
 
     my $mob1 = $entity_list->GetMobID($mobid1);
     my $mob2 = $entity_list->GetMobID($mobid2);

@@ -6,7 +6,7 @@ function event_say(e)
 	elseif(e.message:findi("study enchantment")) then
 		e.self:Say("Then I welcome you into our circle. It is good to see new blood. I have a favor to ask of you. Do you wish to [assist Toresian] or do you not have the time?");
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(23080) == false or eq.get_entity_list():IsMobSpawnedByNpcTypeID(23001) ==  false) then
-			eq.unique_spawn(eq.ChooseRandom(23080,23001),0,0,575,683,-12.13,78);
+			eq.unique_spawn(eq.ChooseRandom(23080,23001),0,0,575,683,-12.13,156);
 		end
 	elseif(e.message:findi("assist Toresian")) then
 		if(e.other:GetFaction(e.self) < 5) then

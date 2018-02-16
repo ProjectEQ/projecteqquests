@@ -6,8 +6,8 @@ local el = nil;
 function event_spawn(e)
   counter = 0;
 
-  eq.spawn2(294632, 0, 0, 726, -713, -50, 193);
-  eq.spawn2(294632, 0, 0, 659, -213, -50, 60);
+  eq.spawn2(294632, 0, 0, 726, -713, -50, 386);
+  eq.spawn2(294632, 0, 0, 659, -213, -50, 120);
 
   eq.set_timer("checkdoors", 5 * 1000);
 end
@@ -28,7 +28,7 @@ function event_signal(e)
   end
 
   if (counter == 4) then
-    eq.spawn2(294594,0,0,534,-210,-50, 72);
+    eq.spawn2(294594,0,0,534,-210,-50, 144);
   end
 end
 

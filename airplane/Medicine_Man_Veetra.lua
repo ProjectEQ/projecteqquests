@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("Then welcome to the tests of the medicine man. I have two tomes, each tells of a shaman of great accomplishment. They are Gina MacStargan and Ooga. Simply tell me the name of the shaman you want to be tested by.");
 	elseif((e.message:findi("Gina MacStargan")) and (e.other:Class() == "Shaman")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71087,0,0,631.9,1401.9,-766.9,129.8);
+		eq.spawn2(71087,0,0,631.9,1401.9,-766.9,259.6);
 		eq.depop_with_timer();
 	elseif((e.message:findi("Ooga")) and (e.other:Class() == "Shaman")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71093,0,0,653.4,1399.0,-766.9,129.8);
+		eq.spawn2(71093,0,0,653.4,1399.0,-766.9,259.6);
 		eq.depop_with_timer();
 	end
 end

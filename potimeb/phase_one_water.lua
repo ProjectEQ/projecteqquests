@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Water") then
 		-- spawn first wave of 2 a_triloun_gatherer and Anar_of_Water
-		eq.spawn2(223104,0,0,68,867,495,185.5);
-		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,877,495,185.5);
-		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,857,495,185.5);
+		eq.spawn2(223104,0,0,68,867,495,371);
+		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,877,495,371);
+		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,857,495,371);
 		eq.stop_timer("Phase1Water");
 	end
 end

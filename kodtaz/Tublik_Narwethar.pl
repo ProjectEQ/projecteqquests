@@ -60,7 +60,7 @@ sub EVENT_SAY {
   }
   if (($text=~/stop it/i) && defined($qglobals{ikky}) && ($qglobals{ikky} >= 10) && !defined($qglobals{ageless})) {
     quest::say("You must return to the Pit of the Lost and find whatever this fiend is and destroy it. I believe that it will have some kind of artifact that is linked to the ones you returned to me in the sealed bag. Return whatever it may have to me. Good luck, $name, I have no doubt that the artifact it holds will be as interesting of a find as anything else we've uncovered so far!");
-    quest::spawn2(293221,0,0,2176,2184,-476,137);
+    quest::spawn2(293221,0,0,2176,2184,-476,274);
     quest::setglobal("ageless",1,0,"H8");
   }
   if (($text=~/four temples/i) && defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {

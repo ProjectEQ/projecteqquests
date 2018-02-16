@@ -17,7 +17,7 @@ function Keelee_Say(e)
 			event_started=true;
 			event_won=false
 			num_wave=0;
-			eq.spawn2(37162, 0, 0,1304.8,1478.7,4.6,226); --##Remal_the_Black (37162) UNTARGETABLE
+			eq.spawn2(37162, 0, 0,1304.8,1478.7,4.6,452); --##Remal_the_Black (37162) UNTARGETABLE
 			eq.set_timer("spawn_wave",1000);
 			eq.set_timer("banish",3000);
 		end
@@ -38,10 +38,10 @@ function Keelee_Timer(e)
 	if e.timer=="spawn_wave" then
 		if num_wave < 4 then
 			num_wave=num_wave+1
-			eq.spawn2(37160, 0, 0,1342.6,1507.6,4.6,149); --#an_orc (37160)
-			eq.spawn2(37160, 0, 0,1347.6,1429.77,4.6,224); --#an_orc (37160)
-			eq.spawn2(37160, 0, 0,1283.6,1416,4.6,32); --#an_orc (37160)
-			eq.spawn2(37160, 0, 0,1287,1498.4,11,95); --#an_orc (37160)
+			eq.spawn2(37160, 0, 0,1342.6,1507.6,4.6,298); --#an_orc (37160)
+			eq.spawn2(37160, 0, 0,1347.6,1429.77,4.6,448); --#an_orc (37160)
+			eq.spawn2(37160, 0, 0,1283.6,1416,4.6,64); --#an_orc (37160)
+			eq.spawn2(37160, 0, 0,1287,1498.4,11,190); --#an_orc (37160)
 			eq.set_timer("spawn_wave",120*1000);
 		else
 			--if no #an_orc, next phase
@@ -49,8 +49,8 @@ function Keelee_Timer(e)
 				eq.depop(37162);
 				eq.zone_emote(15,"A mystical portal is formed. Keelee and Remal dissappear.");
 				e.self:Shout("Help me, I'm at some orc camp, help please!");
-				e.self:GMMove(-690.6 ,-1825, 5.55, 24);
-				eq.spawn2(37161,0,0,-704.5,-1835,6,26); --#Remal_the_Black (37161)
+				e.self:GMMove(-690.6 ,-1825, 5.55, 48);
+				eq.spawn2(37161,0,0,-704.5,-1835,6,52); --#Remal_the_Black (37161)
 				eq.set_timer("depop",60*60*1000);
 				eq.stop_timer("banish");
 				eq.stop_timer("spawn_wave");
@@ -63,7 +63,7 @@ function Keelee_Timer(e)
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=300 and client:GetID()~=event_starter:GetID()) then	
-				client:MovePC(37, -956,725,50,60);
+				client:MovePC(37, -956,725,50,120);
 				client:Message(15,"Foolish adventurer, do not interfere with this ritual!");
 			end
 		end

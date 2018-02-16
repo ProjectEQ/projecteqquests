@@ -55,10 +55,10 @@ sub EVENT_TIMER {
     }
     elsif ($check == 0) {
       if (defined $qglobals{glyphed_dead}) {
-        quest::spawn2(162253,0,0,-51,-9,-218.1,63);#runed
+        quest::spawn2(162253,0,0,-51,-9,-218.1,126);#runed
       }
       elsif (!defined $qglobals{glyphed_dead}) {
-        quest::spawn2(162261,0,0,-51,-9,-218.1,63);#glyphed
+        quest::spawn2(162261,0,0,-51,-9,-218.1,126);#glyphed
       }
       quest::stoptimer("cursed");
       quest::stoptimer("one");
@@ -78,13 +78,13 @@ sub EVENT_TIMER {
 
 sub EVENT_SIGNAL {
   if ($signal == 1 && defined $qglobals{exiled_dead}) {
-    quest::spawn2(162214,0,0,-51,-9,-218.1,63);#Banished
+    quest::spawn2(162214,0,0,-51,-9,-218.1,126);#Banished
   }
   elsif ($signal == 1 && !defined $qglobals{exiled_dead}) {
-    quest::spawn2(162232,0,0,-51,-9,-218.1,63);#Exiled
+    quest::spawn2(162232,0,0,-51,-9,-218.1,126);#Exiled
   }
   if ($signal == 2 && !defined $qglobals{cursed_dead}) {
-    quest::spawn2(162206,0,0,-51,-9,-218.1,63);#Cursed
+    quest::spawn2(162206,0,0,-51,-9,-218.1,126);#Cursed
   }
   if ($signal == 3) {	
     quest::setglobal("cursed_dead",1,3,"M$spawntime");

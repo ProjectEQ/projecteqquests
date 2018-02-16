@@ -51,7 +51,7 @@ sub EVENT_ITEM {
     quest::echo(0, "As he starts to try and crawl up the hill, a sleek figure darts towards him.");
     quest::exp(50000);
     quest::summonitem(30047);
-    my $entid = quest::spawn2(116008,0,0,1002,6354,-32.09,65); #rabid snow cougar does not exist using regular for now
+    my $entid = quest::spawn2(116008,0,0,1002,6354,-32.09,130); #rabid snow cougar does not exist using regular for now
     my $mob = $entity_list->GetMobID($entid);
     my $mobnpc = $mob->CastToNPC();
     $mobnpc->AddToHateList($npc, 1);

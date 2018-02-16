@@ -17,7 +17,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_TIMER {
   if(($timer == 1) && ($x > 720 || $x < 500 || $y < -300 || $y > -120)) {
-    $npc->GMMove(531,-157,-49,126);
+    $npc->GMMove(531,-157,-49,252);
   }
   if($timer == 2) {
     quest::ze(15,"The creature shudders as if somehow changing.");
@@ -42,22 +42,22 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH_COMPLETE {
   if((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{$instanceid.marakill} == 1)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
+    quest::spawn2(294595,0,0,480,-592,-50,128);
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }  
   elsif((($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") || ($class eq "Shadowknight")) && ($qglobals{$instanceid.marakill} == 2)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
+    quest::spawn2(294595,0,0,480,-592,-50,128);
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }
   elsif((($class eq "Berserker") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior")) && ($qglobals{$instanceid.marakill} == 3)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
+    quest::spawn2(294595,0,0,480,-592,-50,128);
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }
   elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) && ($qglobals{$instanceid.marakill} == 4)) {
-    quest::spawn2(294595,0,0,480,-592,-50,64);
+    quest::spawn2(294595,0,0,480,-592,-50,128);
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }

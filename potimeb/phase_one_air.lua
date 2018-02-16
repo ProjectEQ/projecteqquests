@@ -19,10 +19,10 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Air") then
 		-- spawn first wave of 4 An_Air_Phoenix_Noble
-		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,67,1364,494.8,185.5);
-		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,67,1347,494.8,185.5);
-		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,62,1364,494.8,185.5);
-		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,62,1347,494.8,185.5);
+		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,67,1364,494.8,371);
+		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,67,1347,494.8,371);
+		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,62,1364,494.8,371);
+		eq.spawn2(eq.ChooseRandom(223087,223226),0,0,62,1347,494.8,371);
 		eq.stop_timer("Phase1Air");
 	end
 end
@@ -34,11 +34,11 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn second wave
 		if (event_counter == 4) then
-			eq.spawn2(223120,0,0,68,1355,494.8,185.5); -- Neimon_of_Air
-			eq.spawn2(223111,0,0,68,1365,494.8,185.5); -- Servitor_of_Xegony
-			eq.spawn2(223111,0,0,68,1375,494.8,185.5); -- Servitor_of_Xegony
-			eq.spawn2(223111,0,0,68,1345,494.8,185.5); -- Servitor_of_Xegony
-			eq.spawn2(223111,0,0,68,1335,494.8,185.5); -- Servitor_of_Xegony
+			eq.spawn2(223120,0,0,68,1355,494.8,371); -- Neimon_of_Air
+			eq.spawn2(223111,0,0,68,1365,494.8,371); -- Servitor_of_Xegony
+			eq.spawn2(223111,0,0,68,1375,494.8,371); -- Servitor_of_Xegony
+			eq.spawn2(223111,0,0,68,1345,494.8,371); -- Servitor_of_Xegony
+			eq.spawn2(223111,0,0,68,1335,494.8,371); -- Servitor_of_Xegony
 			event_counter = 0;
 		end
 	-- signal 2 comes from the mobs in the final wave of the air event

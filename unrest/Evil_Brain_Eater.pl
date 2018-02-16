@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("Braaaains...");
-	quest::spawn2(63104,0,0,65,531,19.1,176.2);
+	quest::spawn2(63104,0,0,65,531,19.1,352.4);
 }

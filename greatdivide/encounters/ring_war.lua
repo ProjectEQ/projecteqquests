@@ -69,11 +69,11 @@ function Start_Event()
   -- Spawn the Dwarf Generals with spawn commands 
   -- so they aren't depopped when Narandi is killed
   -- and the zone is reset to normal mode.
-  eq.spawn2(118169, 0, 0, -44, -792, 51, 115);
-  eq.spawn2(118172, 0, 0, -37, -788, 51, 115);
-  eq.spawn2(118171, 0, 0, -27, -788, 51, 115);
-  eq.spawn2(118170, 0, 0, -17, -788, 51, 115);
-  eq.spawn2(118168, 0, 0, -7,  -788, 51, 115);
+  eq.spawn2(118169, 0, 0, -44, -792, 51, 230);
+  eq.spawn2(118172, 0, 0, -37, -788, 51, 230);
+  eq.spawn2(118171, 0, 0, -27, -788, 51, 230);
+  eq.spawn2(118170, 0, 0, -17, -788, 51, 230);
+  eq.spawn2(118168, 0, 0, -7,  -788, 51, 230);
 end
 
 function Zrelik_Say(e)

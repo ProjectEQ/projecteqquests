@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("The test of songs holds both joy and sorrow. Choose who you wish to begin with, Denise or Clarisa");
 	elseif((e.message:findi("Clarisa")) and (e.other:Class() == "Bard")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71081,0,0,660.7,1388.9,-766.9,192.6);
+		eq.spawn2(71081,0,0,660.7,1388.9,-766.9,385.2);
 		eq.depop_with_timer();
 	elseif((e.message:findi("Denise")) and (e.other:Class() == "Bard")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71082,0,0,660.7,1368.4,-766.9,192.6);
+		eq.spawn2(71082,0,0,660.7,1368.4,-766.9,385.2);
 		eq.depop_with_timer();
 	end
 end

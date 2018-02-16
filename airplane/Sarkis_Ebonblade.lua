@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("You will be tested by either Gragrot or Tynicon.  Choose one!");
 	elseif((e.message:findi("Gragrot")) and (e.other:Class() == "Shadowknight")) then
 		e.self:Say("I will summon him for you then");
-		eq.spawn2(71063,0,0,563.3,1351.9,-766.9,63.4);
+		eq.spawn2(71063,0,0,563.3,1351.9,-766.9,126.8);
 		eq.depop_with_timer();
 	elseif((e.message:findi("Tynicon")) and (e.other:Class() == "Shadowknight")) then
 		e.self:Say("I will summon him for you then");
-		eq.spawn2(71098,0,0,563.3,1351.9,-766.9,63.4);
+		eq.spawn2(71098,0,0,563.3,1351.9,-766.9,126.8);
 		eq.depop_with_timer();
 	end
 end

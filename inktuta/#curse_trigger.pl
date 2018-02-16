@@ -42,7 +42,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
 	if($timer eq "initial_bearers") {
-		quest::spawn2($curse_bearers[$initial],0,0,42,-912,-126,195);
+		quest::spawn2($curse_bearers[$initial],0,0,42,-912,-126,390);
 		if($initial == 5) {
 			quest::stoptimer("initial_bearers");
 			quest::settimer("spawn_cursebearer",15);
@@ -65,7 +65,7 @@ sub EVENT_TIMER {
 		for ($count = 0; $count <= 5; $count++) {
 			if ($entity_list->IsMobSpawnedByNpcTypeID($curse_callers[$count])) {
 				if(!$entity_list->IsMobSpawnedByNpcTypeID($curse_bearers[$count]) && $spawned_one == 0) {
-					quest::spawn2($curse_bearers[$count],0,0,42,-912,-126,195);
+					quest::spawn2($curse_bearers[$count],0,0,42,-912,-126,390);
 					$spawned_one = 1;
 				}		
 			} else {

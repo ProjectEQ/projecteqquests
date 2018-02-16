@@ -51,8 +51,8 @@ function PRT_Spawn(e)
   e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
   --spawn the two starting golems
   --a_corrupted_construct (298002)
-  eq.spawn2(298002, 0, 0, 229.0, -572.0, -3.25, 192.0):SetAppearance(3);
-  eq.spawn2(298002, 0, 0, 225.0, -600.0, -3.25, 205.0):SetAppearance(3);
+  eq.spawn2(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3);
+  eq.spawn2(298002, 0, 0, 225.0, -600.0, -3.25, 410):SetAppearance(3);
 
   eq.set_next_hp_event(90)
   golems_spawn = false;
@@ -150,7 +150,7 @@ function PRT_Timer(e)
     eq.depop_all(298002);
     eq.depop();
 
-    eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 190.0);
+    eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 380);
 
   end
 end

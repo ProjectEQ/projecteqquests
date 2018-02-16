@@ -32,11 +32,11 @@ function event_say(e)
 					client_e = e;
 				else
 					client_e = e;
-					e.other:MovePC(201, 729, -1119, 88, 64);
+					e.other:MovePC(201, 729, -1119, 88, 128);
 				end
 
 				-- Spawn the Controller
-				eq.spawn2(201450, 0, 0, 878, -1128, 58, 180);
+				eq.spawn2(201450, 0, 0, 878, -1128, 58, 360);
 
 				-- Set the Proximity Check Timer; if everyone has left the trial (wipe); then reset things
 				eq.set_timer("proximitycheck", 60000);
@@ -83,7 +83,7 @@ function event_timer(e)
 		if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, 772, -1148, 76, 175, 456, 825, 9, 180, "A mysterious force translocates you."); 
 		else
-			client_e.other:MovePC( 201, 456, 825, 9, 180 );
+			client_e.other:MovePC( 201, 456, 825, 9, 360 );
 			client_e.other:Message(3, "A mysterious force translocates you.");
 		end
 		HandleCorpses(772, -1148, 76, 175);

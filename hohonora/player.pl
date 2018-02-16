@@ -1,7 +1,7 @@
 sub EVENT_ENTERZONE {
   if(($class eq "Enchanter") && plugin::check_hasitem($client, 52963)) { #Sullied Gold Filigree
     if(!$entity_list->GetNPCByNPCTypeID(211047) && !defined($qglobals{anthone})) {
-      quest::spawn2(211047,0,0,-1853,2479,-110,20); ##Anthone_Chapin
+      quest::spawn2(211047,0,0,-1853,2479,-110,40); ##Anthone_Chapin
     }
   }
 

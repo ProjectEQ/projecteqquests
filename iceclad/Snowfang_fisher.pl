@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::emote("sniffs the offering and seems to relax.");
     quest::say("Very good, very worthy. You take this magic thing, with you maybe this evil is broken.");
     quest::echo(0, "Before he can hand you the parchment a roar explodes from the ocean and a gigantic dark shadow slams into the ice floe.");
-    my $entid = quest::spawn2(110093,0,0,2000,1000,-31.9,111.2);
+    my $entid = quest::spawn2(110093,0,0,2000,1000,-31.9,222.4);
     my $mob = $entity_list->GetMobID($entid);
     my $mobnpc = $mob->CastToNPC();
     $mobnpc->AddToHateList($npc, 1);

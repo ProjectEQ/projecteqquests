@@ -14,7 +14,7 @@ function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);	
 	if(qglobals["mage_epic_water1"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 19022, item2 = 19022, item3 = 19022, item4 = 19022})) then
 		e.self:Say("Tiknonmanin awaits your challenge.");
-		eq.spawn2(117094,0,0,318,741,-22,90); --Tiknonmanin
+		eq.spawn2(117094,0,0,318,741,-22,180); --Tiknonmanin
 	end
 	item_lib.return_items(e.self, e.other, e.trade)	
 end

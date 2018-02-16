@@ -87,7 +87,7 @@ function event_timer(e)
       if (trial_group ~= nil and trial_group.valid) then
          MoveGroup( trial_group, trial_x, trial_y, trial_z, 250, 456, 825, 9, 180, "A mysterious force translocates you."); 
       else
-         client_e.other:MovePC( 201, 456, 825, 9, 180 );
+         client_e.other:MovePC( 201, 456, 825, 9, 360 );
 			client_e.other:Message( 3, "A mysterious force translocates you.");
       end
       HandleCorpses(trial_x, trial_y, trial_z, 200);

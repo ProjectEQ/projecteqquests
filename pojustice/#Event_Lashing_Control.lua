@@ -78,34 +78,34 @@ function event_timer(e)
 end
 
 function spawn_spirits()
-   eq.spawn2( 201469, 0, 0, 1298, -1169, -13, 63 );
-   eq.spawn2( 201469, 0, 0, 1153, -1119,  88, 63 );
-   eq.spawn2( 201469, 0, 0, 1298, -1072, -13, 63 );
+   eq.spawn2( 201469, 0, 0, 1298, -1169, -13, 126 );
+   eq.spawn2( 201469, 0, 0, 1153, -1119,  88, 126 );
+   eq.spawn2( 201469, 0, 0, 1298, -1072, -13, 126 );
 
-   eq.spawn2( 201467, 0, 0, 1350, -1127, 2, 62);
+   eq.spawn2( 201467, 0, 0, 1350, -1127, 2, 124);
 end
 
 function spawn_mobs(wave)
 
    if (wave < 5) then
-      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1395, -1169, 1, 64 );
-      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1378, -1169, 1, 64 );
-      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1395, -1070, 1, 64 );
-      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1378, -1070, 1, 64 );
+      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1395, -1169, 1, 128 );
+      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1378, -1169, 1, 128 );
+      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1395, -1070, 1, 128 );
+      eq.spawn2( eq.ChooseRandom( 201464, 201465, 201466, 201470 ), 0, 0, 1378, -1070, 1, 128 );
       
       eq.set_timer("spirit_timer", 30000);
 
    elseif (wave == 5) then
       -- Spawn the boss
-      eq.spawn2(201468, 0,0, 1350, -1127, 2, 62);
+      eq.spawn2(201468, 0,0, 1350, -1127, 2, 124);
    end
 end
 
 function spawn_prisoners()
    -- a tortured prisoner
-   eq.spawn2(201463, 0, 0, 1417, -1168, 1, 196);
-   eq.spawn2(201463, 0, 0, 1417, -1120, 1, 196);
-   eq.spawn2(201463, 0, 0, 1417, -1072, 1, 196);
+   eq.spawn2(201463, 0, 0, 1417, -1168, 1, 392);
+   eq.spawn2(201463, 0, 0, 1417, -1120, 1, 392);
+   eq.spawn2(201463, 0, 0, 1417, -1072, 1, 392);
 end
 
 function despawn_prisoners() 

@@ -6,10 +6,10 @@ sub EVENT_SAY {
   }
   else {
     if (defined($qglobals{amote}) && ($qglobals{amote} == 2)) { #Emote spawnwer "Vast"
-      quest::spawn2(189119,0,0,-126.0,-295.8,3.0,124.8);
+      quest::spawn2(189119,0,0,-126.0,-295.8,3.0,249.6);
     }
     if (defined($qglobals{bmote}) && ($qglobals{bmote} == 2)) { #Emote spawner "Screams"
-      quest::spawn2(189120,0,0,-385.2,-516.3,-39.3,135.1);
+      quest::spawn2(189120,0,0,-385.2,-516.3,-39.3,270.2);
     }
     if ($text=~/hail/i) {
       if(quest::istaskactivityactive(22,2)) {

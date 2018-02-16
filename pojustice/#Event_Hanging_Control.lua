@@ -168,7 +168,7 @@ function spawn_spirit(spirit_id)
 	eq.set_timer("fdtimer_" ..   prisoners_list[steps], 25000);
 
 	-- Spawn the Mob
-	eq.spawn2( spirit_id, 0, 0, (490 + spirit_x[steps]), -1139, 73, 125);
+	eq.spawn2( spirit_id, 0, 0, (490 + spirit_x[steps]), -1139, 73, 250);
 
 	spirits_to_prisoners[ spirit_id ] = prisoners_list[ steps ];
 
@@ -176,13 +176,13 @@ end
 
 function spawn_mobs()
 	-- Spawn 2 of the 4 mobs randomly at the two spawn points.
-	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 440, -1093, 73, 124 );
-	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 536, -1093, 73, 124 );
+	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 440, -1093, 73, 248 );
+	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 536, -1093, 73, 248 );
 end
 
 function spawn_boss()
 	-- Spawn the Gallows Master Teion
-	eq.spawn2( 201461, 0, 0, 488, -1068, 73, 125);
+	eq.spawn2( 201461, 0, 0, 488, -1068, 73, 250);
 
 	-- Signal the Agenent of the Tribunal (can't leave once the boss spawns)
 	eq.signal( 201075, 3 );
@@ -190,9 +190,9 @@ end
 
 function spawn_prisoners()
 	-- Spawn the 3 prisoners by the hangmen's noose
-	eq.spawn2( 201471, 0, 0, 440, -1175, 80, 255);
-	eq.spawn2( 201472, 0, 0, 490, -1175, 80, 255);
-	eq.spawn2( 201473, 0, 0, 540, -1175, 80, 255);
+	eq.spawn2( 201471, 0, 0, 440, -1175, 80, 510);
+	eq.spawn2( 201472, 0, 0, 490, -1175, 80, 510);
+	eq.spawn2( 201473, 0, 0, 540, -1175, 80, 510);
 end
 
 function depop_list()

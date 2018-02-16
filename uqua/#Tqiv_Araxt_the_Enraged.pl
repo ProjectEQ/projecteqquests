@@ -12,17 +12,17 @@ sub EVENT_AGGRO {
 sub EVENT_TIMER {
   if ($timer == 1) {
     if(($x > -470) || ($x < -600) || ($y > -480) || ($y < -810)) {
-      $npc->GMMove(-537,-620,-5,2);
+      $npc->GMMove(-537,-620,-5,4);
     }
   }
   elsif ($timer == 2) {
 	#time ran out, go inactive
 	quest::modifynpcstat("special_attacks","ABfHG");
 	$npc->WipeHateList();
-    quest::spawn2(292015,0,0,-567,-875,9,67);
-    quest::spawn2(292015,0,0,-572,-911,9,64);
-    quest::spawn2(292015,0,0,-514,-911,9,195);
-    quest::spawn2(292015,0,0,-514,-875,9,192);
+    quest::spawn2(292015,0,0,-567,-875,9,134);
+    quest::spawn2(292015,0,0,-572,-911,9,128);
+    quest::spawn2(292015,0,0,-514,-911,9,390);
+    quest::spawn2(292015,0,0,-514,-875,9,384);
 	quest::stoptimer(1);
 	quest::stoptimer(2);
   } elsif ($timer eq "absorb_twin") {

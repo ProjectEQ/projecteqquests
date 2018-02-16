@@ -1,7 +1,7 @@
 function event_enter_zone(e)
   local qglobals = eq.get_qglobals(e.self);
 	if ( qglobals["ranger_epic15_pre"] == "3" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(39168) == false) then
-    eq.spawn2(39168, 0, 0, 420, 110, -347, 60);
+    eq.spawn2(39168, 0, 0, 420, 110, -347, 120);
   end
 end
 

@@ -462,41 +462,41 @@ sub	SPAWN_ARMY
 
 	if ($location eq "HollowshadeNorth")	#spawn northern army
 		{
-		quest::spawn2($npc,0,0,1103,2134,137,182);
-		quest::spawn2($npc,0,0,1137,2109,143,178);
-		quest::spawn2($npc,0,0,1129,2166,143,187);
-		quest::spawn2($npc,0,0,1175,2175,170,172);
-		quest::spawn2($npc,0,0,1185,2121,167,180);
+		quest::spawn2($npc,0,0,1103,2134,137,364);
+		quest::spawn2($npc,0,0,1137,2109,143,356);
+		quest::spawn2($npc,0,0,1129,2166,143,374);
+		quest::spawn2($npc,0,0,1175,2175,170,344);
+		quest::spawn2($npc,0,0,1185,2121,167,360);
 		if ($atype eq "A")
 			{
-			quest::spawn2($npc,0,0,1140,2191,170,172);
-			quest::spawn2($npc,0,0,1150,2098,165,180);
+			quest::spawn2($npc,0,0,1140,2191,170,344);
+			quest::spawn2($npc,0,0,1150,2098,165,360);
 			}
 		}
 	elsif ($location eq "HollowshadeEast")	#spawn eastern army
 		{
-		quest::spawn2($npc,0,0,-2704,541,46,39);
-		quest::spawn2($npc,0,0,-2730,592,48,60);
-		quest::spawn2($npc,0,0,-2714,571,47,57);
-		quest::spawn2($npc,0,0,-2747,498,51,43);
-		quest::spawn2($npc,0,0,-2719,514,46,65);
+		quest::spawn2($npc,0,0,-2704,541,46,78);
+		quest::spawn2($npc,0,0,-2730,592,48,120);
+		quest::spawn2($npc,0,0,-2714,571,47,114);
+		quest::spawn2($npc,0,0,-2747,498,51,86);
+		quest::spawn2($npc,0,0,-2719,514,46,130);
 		if ($atype eq "A")
 			{
-			quest::spawn2($npc,0,0,-2738,590,50,50);
-			quest::spawn2($npc,0,0,-2709,555,50,46);
+			quest::spawn2($npc,0,0,-2738,590,50,100);
+			quest::spawn2($npc,0,0,-2709,555,50,92);
 			}
 		}
 	else									#spawn southern army
 		{
-		quest::spawn2($npc,0,0,-621,-2753,55,252);
-		quest::spawn2($npc,0,0,-602,-2764,60,242);
-		quest::spawn2($npc,0,0,-633,-2773,60,239);
-		quest::spawn2($npc,0,0,-644,-2794,68,254);
-		quest::spawn2($npc,0,0,-591,-2794,69,252);
+		quest::spawn2($npc,0,0,-621,-2753,55,504);
+		quest::spawn2($npc,0,0,-602,-2764,60,484);
+		quest::spawn2($npc,0,0,-633,-2773,60,478);
+		quest::spawn2($npc,0,0,-644,-2794,68,508);
+		quest::spawn2($npc,0,0,-591,-2794,69,504);
 		if ($atype eq "A")
 			{
-			quest::spawn2($npc,0,0,-611,-2760,61,240);
-			quest::spawn2($npc,0,0,-600,-2780,61,251);
+			quest::spawn2($npc,0,0,-611,-2760,61,480);
+			quest::spawn2($npc,0,0,-600,-2780,61,502);
 			}
 		}
 	}

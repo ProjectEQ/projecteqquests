@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("Ah! My eye! My only weakness!");
-	quest::spawn2(63106,0,0,-274,502,15.1,66.6);
+	quest::spawn2(63106,0,0,-274,502,15.1,133.2);
 }

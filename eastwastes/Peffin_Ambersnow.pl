@@ -12,9 +12,9 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 18171 => 1)) { #letter to peffin
-    quest::spawn2(116182,0,0,3364,-1579,163.8,35.8);
-    quest::spawn2(116182,0,0,3314,-1557,163.8,42.4);
-    quest::spawn2(116182,0,0,3355,-1625,163.8,36.9);
+    quest::spawn2(116182,0,0,3364,-1579,163.8,71.6);
+    quest::spawn2(116182,0,0,3314,-1557,163.8,84.8);
+    quest::spawn2(116182,0,0,3355,-1625,163.8,73.8);
     quest::settimer(1,10);
     quest::moveto(3303,-1623,163.3);
   }
@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 sub EVENT_TIMER {
   if($timer == 1) {
     quest::stoptimer(1);
-    quest::spawn2(116574,0,0,3419.4,-1739.7,143.9,191.5);
+    quest::spawn2(116574,0,0,3419.4,-1739.7,143.9,383);
     quest::depop_withtimer();
   }
 }

@@ -16,18 +16,18 @@ sub EVENT_TIMER {
       quest::setglobal("Emperor",1,0,"F"); #Normal Cycle Start
     }
     if (($qglobals{Emperor} == 1) && !$entity_list->GetNPCByNPCTypeID(162065)) {
-      quest::spawn2(162189,0,0,877.0,-325.0,400.5,192.0); ##Blood_of_Ssraeshza
-      quest::spawn2(162065,0,0,990.0,-325.0,415.0,192.0); ##Emperor_Ssraeshza (No Target)
+      quest::spawn2(162189,0,0,877.0,-325.0,400.5,384); ##Blood_of_Ssraeshza
+      quest::spawn2(162065,0,0,990.0,-325.0,415.0,384); ##Emperor_Ssraeshza (No Target)
     }
     if (!defined($qglobals{BloodCoolDown}) && ($qglobals{Emperor} == 2) && !$entity_list->GetNPCByNPCTypeID(162065) && !$entity_list->GetNPCByNPCTypeID(162227) && ($EmpPrep == 0)) {
-      quest::spawn2(162064,0,0,877.0,-325.0,400.5,192.0); #Ssraeshzian_Blood_Golem
-      quest::spawn2(162065,0,0,990.0,-325.0,415.0,192.0); ##Emperor_Ssraeshza (No Target)
+      quest::spawn2(162064,0,0,877.0,-325.0,400.5,384); #Ssraeshzian_Blood_Golem
+      quest::spawn2(162065,0,0,990.0,-325.0,415.0,384); ##Emperor_Ssraeshza (No Target)
     }
   }
   if ($timer eq "EmpPrep") {
     quest::stoptimer("EmpPrep");
     quest::depop(162065); ##Emperor_Ssraeshza (No Target)
-    quest::spawn2(162227,0,0,990.0,-325.0,415.0,192.0); ##Emperor_Ssraeshza_ (Real)
+    quest::spawn2(162227,0,0,990.0,-325.0,415.0,384); ##Emperor_Ssraeshza_ (Real)
     quest::setglobal("Emperor",2,0,"F");
     quest::setglobal("BloodCoolDown",0,0,"M$BloodCoolDownTime"); #Cooldown timer
     $EmpPrep = 0;

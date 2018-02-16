@@ -15,8 +15,8 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   START_GOBLIN_EVENT();
-  quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 42.00); # Raid Leader Sig Chol
-  quest::spawn2(237785,0,0,713.00, 970.00, 6.25, 71.00); # Taskmaster Suitalp
+  quest::spawn2(237786,0,0,326.00, 1009.00, -53.625, 84); # Raid Leader Sig Chol
+  quest::spawn2(237785,0,0,713.00, 970.00, 6.25, 142); # Taskmaster Suitalp
   #update status global that this event was started
   my $instid = quest::GetInstanceID("mirb",50);
   quest::setglobal($instid.'_mirb_status',1,7,"H3");

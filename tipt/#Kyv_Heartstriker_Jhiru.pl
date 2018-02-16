@@ -20,7 +20,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(289032,0,0,1411,2143,730,242);
+  quest::spawn2(289032,0,0,1411,2143,730,484);
   quest::stoptimer(1);
   #update zone status
   my $instid = quest::GetInstanceID("tipt",0);

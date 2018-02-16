@@ -3,7 +3,7 @@ sub EVENT_SIGNAL {
 		quest::depop_withtimer();
 	}
 	if($signal==2) {
-		quest::moveto(2717,2500,-49,65,1);
+		quest::moveto(2717,2500,-49,130,1);
 		quest::settimer("getset",525);
 	}
 }

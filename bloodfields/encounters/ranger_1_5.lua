@@ -5,7 +5,6 @@
 
 function Marshall_Combat(e)
 	if (e.joined == true) then		
-		eq.set_timer("rend",14*1000);
 		eq.set_timer("adds",10*1000);
 		local entity_list = eq.get_entity_list();
 		local npc_list = entity_list:GetNPCList();
@@ -14,14 +13,6 @@ function Marshall_Combat(e)
 				npc:AddToHateList(e.self:GetHateRandom(),1);
 			end
 		end			
-	end
-end
-
-function Marshall_Timer(e)
-	if(e.timer=="rend") then
-		eq.stop_timer("rend");
-		eq.set_timer("rend",20*1000);
-		e.self:CastSpell(5814, e.self:GetHateTop():GetID()); -- Spirit Rend
 	end
 end
 
@@ -67,7 +58,6 @@ function Grinbik_HP(e)
 end
 
 function event_encounter_load(e)
-  eq.register_npc_event('ranger_1_5', Event.timer,          301065, Marshall_Timer);
   eq.register_npc_event('ranger_1_5', Event.combat,         301065, Marshall_Combat);  
   eq.register_npc_event('ranger_1_5', Event.say,	   	   	301066, Grinbik_Say);
   eq.register_npc_event('ranger_1_5', Event.spawn,          301066, Grinbik_Spawn);

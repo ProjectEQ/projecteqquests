@@ -32,3 +32,7 @@ function event_timer(e)
     end
 end
 
+function event_death_complete(e)
+    eq.spawn2(218068, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+end
+

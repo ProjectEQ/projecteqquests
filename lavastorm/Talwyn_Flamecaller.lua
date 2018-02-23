@@ -1,7 +1,7 @@
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 
-	if (e.message:findi("final taks") and qglobals["wiz_epic"] == "4") then
+	if (e.message:findi("final task") and qglobals["wiz_epic"] == "4") then
 		e.self:Say("Your first task is to take the right half of the orb to the highest point achieved by a wizards spire on Norrath. On the western prong, you will find a small tear in space. Place the orb inside this tear; it will absorb the pure essence of teleportation. The second task will take you to the highest point achieved by a wizards spire on Luclin. Find another tear in space there and absorb that essence as well. Return to me with both halves imbued with the proper essence and hand them to me, along with your staff.");
 	elseif (e.message:findi("hail") and e.other:HasItem(12665)) then
 		e.self:Say("The power of the wizard courses through your veins thoroughly, ever in search of the opportunity to harness even more power. You have created a staff of immense power, yet even in its glory, is limited. To unleash the full potential of this weapon will be a large undertaking of its own. You must obtain a globe of pure discordant energy and return it to me. Look for assistance from the Plane of Discord from Grathnok Gilforgan. I know not where this being may be, but I do know that once you find him, he will be willing to assist you in finding the globe you seek.");

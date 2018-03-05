@@ -337,7 +337,7 @@ function check_chests()
 		eq.zone_emote(15,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure");
 		eq.zone_emote(15,"The last of the prisoners has escaped and the warden lies dead at your feet.  You have done well.");
 
-		eq.spawn2(245297,0,0, 867.00,-1043.00,-3.00,192); --#Yenner`s_Decorative_Chest		
+		eq.spawn2(245297,0,0, 867.00,-1043.00,0,192); --#Yenner`s_Decorative_Chest		
 		if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
 			eq.spawn2(245295,0,0, 919.00,-1058.00,-21.50,320); --#Taskmaster`s_Stone_Chest
 		end;	

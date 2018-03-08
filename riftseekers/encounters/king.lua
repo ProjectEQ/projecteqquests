@@ -64,12 +64,10 @@ function DistanceToWaypoint(self)
 end
 
 function ExploadOrb(mob)
-    -- The crystals should be spread out a bit, but they shouldn't go into walls etc
-    -- will just spawn here for now
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 0.0)
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 128.0)
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 256.0)
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 384.0)
     eq.depop()
 end
 

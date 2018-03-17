@@ -28,7 +28,7 @@ sub EVENT_SAY {
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Do not think that it will be an easy feat, even for one with such capabilities as yourself. There are two masters you must find. They will show you the ways of the enlightened. Return to me after you have gained proof of your deeds.");
   }
-  if($text=~/the way/i and $client->GetGlobals("MnkPre") == 2){
+  if($text=~/the way/i and $client->GetGlobal("MnkPre") == 2){
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Very well then. There is a place full of mirrors. Locate one of them and speak the words, I am ready to be tested. It is at this point you will face the darkness within yourself. You will have to face this foe alone, remember that. Return to me if you manage to prove that you are worthy of true enlightenment.");
   }

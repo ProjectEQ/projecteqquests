@@ -26,9 +26,9 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 20410 => 1)) {	# Bladesoul's Spiritual Pouch
-		# Handin text will need to go here, not sure what it is
+		quest::say("Paldar Bladesoul melds the components inside the pouch to form a spiritual concoction. He then ingests the mixture and changes shape into a menacing drake. Unawares of the difficulties of spiritual transference to corporeal form, the beast goes insane and begins attacking you!");
 		quest::depop_withtimer();
-		quest::spawn2(128094,0,0,$x,$y,$z,$h); # May need to change the ID since Paldar the Insane isn't in the DB yet
+		quest::spawn2(128140,0,0,$x,$y,$z,$h);
 	}
 
 	plugin::return_items(%itemcount);

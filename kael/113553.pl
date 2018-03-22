@@ -15,7 +15,7 @@ sub EVENT_PROXIMITY_SAY {
 
 sub EVENT_SIGNAL {
   if ($dwarf == 1) {
-    quest::spawn2(113508,29,0,1130.3,-933.2,-125.6,126.8);
+    quest::spawn2(113508,29,0,1126,-840,-118.3,126.8);
     $dwarf = 0
   }
   elsif ($dwarf != 1) {

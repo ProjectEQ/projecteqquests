@@ -10,10 +10,10 @@ setmetatable(box, {
 
 function box.new(top, bottom, right, left)
     local self = setmetatable({}, box)
-    self.top = top
-    self.bottom = bottom
-    self.right = right
-    self.left = left
+    self.top = top or -99999
+    self.bottom = bottom or 99999
+    self.right = right or 99999
+    self.left = left or -99999
     return self
 end
 
@@ -23,6 +23,22 @@ function box:contains(x, y)
         return true
     else
         return false
+    end
+end
+
+-- expands the box to contain provided x/y (used to auto calculate)
+function box:add(x, y)
+    if x < self.right then
+        self.right = x
+    end
+    if x > self.left then
+        self.left = x
+    end
+    if y < self.bottom then
+        self.bottom = y
+    end
+    if y > self.top then
+        self.top = y
     end
 end
 

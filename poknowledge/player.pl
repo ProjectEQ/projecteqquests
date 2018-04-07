@@ -20,7 +20,7 @@ sub EVENT_CLICKDOOR
       			}
       			else
       			{
-        			quest::movepc(344,18,-46,6,225);
+        			quest::movepc(344,18,-46,6,492);
       			}
     		}
 	}

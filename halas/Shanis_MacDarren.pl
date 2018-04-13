@@ -11,13 +11,6 @@ sub EVENT_ENTER {
 }
 
 sub EVENT_SAY {
-	my $debug = "My text is " . $text . ". berserk_epic is ";
-	if (defined $qglobals{berserk_epic}) {
-		$debug = $debug . "defined with a value of " . $qglobals{berserk_epic} . ". ";
-	} else {
-		$debug = $debug . "undefined.";
-	}
-	quest::debug($debug);
 	if($text =~ /hail/i) {
 		if(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >= 1) {
 		quest::emote("looks around briefly, 'It's a great day out here today, it almost makes me want to be out on the tundra enjoying it!' She continues to admire the day for a moment more. 'What can I help you with today? What's that? Something about your soul gem? Hmm . . . Let's see what we can do here. Here you go, but please take care of this one, they are not easy to create. You may wish to seek out Keras. He will be interested in one so young as you who has begun the process of learning to control and focus their rage.'");

@@ -3,7 +3,7 @@
 --alot of this logic is to prevent doing this quest if you already have your 1.0 or if you've previously done the prequest
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.other:Class() == "Shadowknight") then
+	if(e.other:Class() == "Shadow knight") then
 		if(e.other:HasItem(41000)) then --Have Epic 1.0 Innoruuk's Curse
 		else --Doesnt have epic 1.0 Innoruuk's Curse
 			if(e.message:findi("hail") and qglobals["shadowknight_pre"] == nil) then

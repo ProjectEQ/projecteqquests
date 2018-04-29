@@ -228,6 +228,7 @@ function OMM_Timer(e)
 		end
 		banished_raid=1;
 		banished_hp=math.ceil(e.self:GetMaxHP()*e.self:GetHPRatio()/100);
+		e.self:WipeHateList(); -- let's wipe ours too, it should be empty, maybe fix bards being instantly killed for some reason
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
 		eq.depop();
 	elseif (e.timer == "banish_hp_watch") then

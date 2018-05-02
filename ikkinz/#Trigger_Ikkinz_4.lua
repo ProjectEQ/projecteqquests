@@ -65,7 +65,7 @@ function event_signal(e)
 	-- the door into the 3 stall room
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294604) == false ) then
 		eq.depop_all(294634);
-		eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-70, e.self:GetY()+70);
+		eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-70, e.self:GetY()+70, , -999999, 999999, true);
 		eq.enable_proximity_say();
 	end
 

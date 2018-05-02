@@ -3,7 +3,7 @@ my $event_started = 0;
 my $counter = 0;
 
 sub EVENT_SPAWN {
-  quest::set_proximity($x-20,$x+20,$y-20,$y+20); 
+  quest::set_proximity($x-20,$x+20,$y-20,$y+20, -999999, 999999, 1);
   quest::enable_proximity_say();
 }
 

@@ -20,6 +20,15 @@ function event_say(e)
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
 		e.other:SummonItem(51122);
+	elseif(e.message:findi("hail")) then
+		e.self:Say("Oh, what is it now. Can't you see that I am a very busy gnome?");
+	elseif(e.message:findi("translating device") and e.other:HasItem(52947)) then
+		e.self:Say("Rilgor Plegnog rubs his chin thoughtfully. 'A translating device? Now that is something rather complicated. It would take all of my skill as both a tinkerer and an enchanter. This is not the sort of thing I would do for nothing, no no no. I would need some sort of [compensation] for a project like that!' ");
+	elseif(e.message:findi("compensation") and e.other:HasItem(52947)) then
+		e.self:Say("'Hmm, well now that you mention it, some fine silks might do rather nicely. Oh yes, indeed. I do love my robe ever so much, but well, the rest of me could use some sprucing up. I always did feel a bit left out that I never picked up some of that nice Insidious");
+	elseif(e.message:findi("insidious") and e.other:HasItem(52947)) then
+		e.self:Say("'Yes indeed, it is lovely. Fetch me a set and I just might consider undertaking that translating device of yours. Take this sack. I am quite interested in the halo, sleeves, manacle, gloves, pantaloons, and slippers. As I said, my robe is still serving me quite nicely, so no need to worry about that.' ");
+		e.other:SummonItem(54303);
 	end
 end
 
@@ -39,6 +48,9 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:AddEXP(50000);
 		e.other:SummonItem(10600);
+	elseif (item_lib.check_turn_in(e.trade, {item1 = 54317})) then
+		e.self:Say("'Very fine it is. So kind of you to fulfill a dream of mine. I believe this device should be able to handle just about anything you'd need. In fact, if I were you I would take it along to your master right away.' ");
+		e.other:SummonItem(52945);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -1,4 +1,6 @@
 sub EVENT_SPAWN {
+  #::: Set flymode to 1 will have Aerin Dar avoid snapping Z to the ground below the platform 'door'
+  $npc->SetFlyMode(1);
   quest::setnexthpevent(80);
 }
 

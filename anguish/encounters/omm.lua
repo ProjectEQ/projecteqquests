@@ -283,6 +283,7 @@ function OMM_Timer(e)
 				local var = client:GetEntityVariable("clicked_up");
 				if ((var == nil or var == "0") and room_box:contains(client:GetX(), client:GetY())) then
 					eq.debug(client:GetName() .. " shouldn't be up here yet: " .. os.date("!%c"));
+					eq.debug(room_box.right .. " " .. room_box.left .. " " .. room_box.bottom .. " " .. room_box.top);
 					client:MovePCInstance(317,instance_id, 641,3285,-10,0);
 				end
 			end

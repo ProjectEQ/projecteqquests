@@ -379,7 +379,6 @@ function event_encounter_load(e)
 	eq.register_npc_event('omm', Event.signal,			317118, Riftseeker_Signal);
 	eq.register_npc_event('omm', Event.signal,			317119, Riftseeker_Signal);	
 	eq.register_npc_event('omm', Event.timer,			317119, Riftseeker_Timer);	
-	-- didn't work doing it up where we defined room_box
 end
 
 function event_encounter_unload(e)

@@ -265,17 +265,17 @@ function OMM_Timer(e)
 		banished_raid=0;
 		reenable_summon = false;
 		eq.stop_timer("banish_phase2");
-		eq.stop_tiemr("reenable_summon");
+		eq.stop_timer("enable_summon");
 		eq.depop_all(317110);
 		eq.depop_all(317114);
 		eq.depop_all(317117);
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
 		eq.depop();
-	elseif (e.timer == "reenable_summon") then
+	elseif (e.timer == "enable_summon") then
 		eq.debug("re-enabling summon: " .. os.date("!%c"));
 		e.self:SetSpecialAbility(SpecialAbility.summon, 1);
 		reenable_summon = false;
-		eq.stop_timer("reenable_summon");
+		eq.stop_timer("enable_summon");
 	elseif (e.timer == "banish_phase2") then
 		-- so we need to banish people who are up here incorrectly (warp, logged and relogged, etc)
 		-- we set the entity variable when PCs click up which we check here to

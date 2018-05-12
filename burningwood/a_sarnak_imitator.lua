@@ -3,7 +3,7 @@
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);	
-	if(e.message:findi("hail") and (e.other:HasItem(10650) or qglobals["ench_pre"] == "3")) then --has 1.0 or prequest (prequest not done)
+	if(e.message:findi("hail") and (e.other:HasItem(10650) or qglobals["EnchPre"] == "2")) then --has 1.0 or prequest
 		e.self:Say("Much time has passed since the creation of the Staff of the Serpent. The power of discord is seeping into our fair world, and only the most powerful of us shall stand to force it back. The time has come for a new tool, and a new breed of enchanter. [" .. eq.say_link("Are you prepared") .. "] to meet this challenge?");
 		if(qglobals["ench_epic"] == nil) then
 			eq.set_global("ench_epic","1",5,"F"); --Flagged to start epic
@@ -61,6 +61,10 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Message(15,'You have gained 5 ability points!');
 		eq.set_global("ench_epic","7",5,"F");
+	elseif (item_lib.check_turn_in(e.trade, {item1 = 52947,item2 = 52945})) then
+		e.self:Say("'How very interesting. This could prove to be invaluable to my work. I have long been researching a new and most powerful tool to help our kind. It is necessary in these most dangerous of times. Unfortunately, it appears as though time has taken its toll on this tome. It is incomplete. Seek the missing pages so that I may study it in depth. There should be ten, unless they have been destroyed by time and decay.' ");
+		e.other:SummonItem(57918);
+		eq.set_global("EnchPre","2",5,"F");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

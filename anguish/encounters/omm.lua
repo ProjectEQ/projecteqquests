@@ -33,10 +33,6 @@ local convert_max_hit=1855;
 local box = require("aa_box");
 
 local room_box = box();
-room_box:add(522.11, 5163.37);
-room_box:add(700.66, 495.69);
-room_box:add(501.94, 4725.47);
-room_box:add(309.39, 4976.69);
 
 function OMM_Spawn(e)
 	if (banished_raid==0) then
@@ -281,6 +277,7 @@ function OMM_Timer(e)
 		-- we set the entity variable when PCs click up which we check here to
 		-- prevent any sort of race condition with the signal
 		local now_clients = eq.get_entity_list():GetClientList();
+		local instance_id = eq.get_zone_instance_id();
 		for client in now_clients.entries do
 			if (client.valid) then
 				local var = client:GetEntityVariable("clicked_up");
@@ -378,6 +375,11 @@ function event_encounter_load(e)
 	eq.register_npc_event('omm', Event.signal,			317118, Riftseeker_Signal);
 	eq.register_npc_event('omm', Event.signal,			317119, Riftseeker_Signal);	
 	eq.register_npc_event('omm', Event.timer,			317119, Riftseeker_Timer);	
+	-- didn't work doing it up where we defined room_box
+	room_box:add(522.11, 5163.37);
+	room_box:add(700.66, 495.69);
+	room_box:add(501.94, 4725.47);
+	room_box:add(309.39, 4976.69);
 end
 
 function event_encounter_unload(e)

@@ -33,6 +33,10 @@ local convert_max_hit=1855;
 local box = require("aa_box");
 
 local room_box = box();
+room_box:add(522.11, 5163.37);
+room_box:add(700.66, 4958.69);
+room_box:add(501.94, 4725.47);
+room_box:add(309.39, 4976.69);
 
 function OMM_Spawn(e)
 	if (banished_raid==0) then
@@ -377,10 +381,6 @@ function event_encounter_load(e)
 	eq.register_npc_event('omm', Event.signal,			317119, Riftseeker_Signal);	
 	eq.register_npc_event('omm', Event.timer,			317119, Riftseeker_Timer);	
 	-- didn't work doing it up where we defined room_box
-	room_box:add(522.11, 5163.37);
-	room_box:add(700.66, 495.69);
-	room_box:add(501.94, 4725.47);
-	room_box:add(309.39, 4976.69);
 end
 
 function event_encounter_unload(e)

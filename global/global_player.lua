@@ -166,7 +166,7 @@ function event_combine_success(e)
 end
 
 function event_task_complete(e)
-	if (e.task_id == 273 or e.task_id == 274 or e.task_id == 277) then -- Blood of the Winged, Goblin Broth, Population Control
+	if (e.task_id == 273 or e.task_id == 274 or e.task_id == 277 or e.task_id == 278) then -- Blood of the Winged, Goblin Broth, Population Control, Gathering Silk
 		e.self:Faction(429, 20); -- Norrath's Keepers
 		e.self:Faction(101, 20); -- Firiona Vie -- unsure if correct one
 		e.self:Faction(425, -20); -- Lanys T`Vyl

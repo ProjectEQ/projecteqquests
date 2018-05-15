@@ -171,6 +171,11 @@ function event_task_complete(e)
 		e.self:Faction(101, 20); -- Firiona Vie -- unsure if correct one
 		e.self:Faction(425, -20); -- Lanys T`Vyl
 		e.self:Faction(404, -20); -- Dark Reign
+	elseif (e.task_id == 275 or e.task_id == 276) then -- Blood Money, Spider's Web
+		e.self:Faction(404, 20); -- Dark Reign
+		e.self:Faction(425, 20); -- Lanys T`Vyl
+		e.self:Faction(101, -20); -- Firiona Vie -- unsure if correct one
+		e.self:Faction(429, -20); -- Norrath's Keepers
 	end
 end
 

@@ -13,6 +13,7 @@ function event_say(e)
         --Underhanded Exploration
         --Find the Ore
         eq.task_selector({223, 224, 225, 226, 227, 228, 229, 230});
+    end
 end
 
 function event_trade(e)

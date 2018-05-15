@@ -14,7 +14,8 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		if (e.other:GetFaction(e.self) >= 5) then
+		local NKF=e.other:GetFactionLevel(e.other:GetID(), e.self:GetID(), e.other:GetBaseRace(), e.other:GetClass(), e.other:GetDeity(), 429, e.self);
+		if (NKF >= 5) then
 			e.self:Say("I'm not that interested in becoming a servant of those followers of Firiona Vie myself, but I don't mind the cash they pay me. I keep most for me and throw a little back to the Wayfarers crew. If you're looking to get on their good side, I can make some money and you can gain their audience.");
 			eq.task_selector({273, 274}); --Blood of the Winged, Goblin Broth
 		else

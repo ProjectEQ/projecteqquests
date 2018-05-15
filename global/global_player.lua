@@ -171,7 +171,7 @@ function event_task_complete(e)
 		e.self:Faction(101, 20); -- Firiona Vie -- unsure if correct one
 		e.self:Faction(425, -20); -- Lanys T`Vyl
 		e.self:Faction(404, -20); -- Dark Reign
-	elseif (e.task_id == 275 or e.task_id == 276) then -- Blood Money, Spider's Web
+	elseif (e.task_id == 275 or e.task_id == 276 or e.task_id == 279 or e.task_id == 280) then -- Blood Money, Spider's Web, Meat for Stew, Taunting the Brood
 		e.self:Faction(404, 20); -- Dark Reign
 		e.self:Faction(425, 20); -- Lanys T`Vyl
 		e.self:Faction(101, -20); -- Firiona Vie -- unsure if correct one

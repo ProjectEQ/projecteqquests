@@ -21,6 +21,8 @@ function event_say(e)
 			-- Blood of the Winged, Goblin Broth
 			if (not e.other:IsTaskActive(273) and not e.other:IsTaskActive(274)) then
 				eq.task_selector({273, 274});
+			else
+				e.other:Message(15, "Sorry " .. e.other:GetName() .. ", you already have the maximum number of active tasks."); -- string id 6010, do later, task system should generate it
 			end
 		else
 			e.self:Say("I've gotten acquainted with Norrath's Keepers well enough to know they might be interested in speaking with you.");

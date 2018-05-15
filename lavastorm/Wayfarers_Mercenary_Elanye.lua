@@ -22,6 +22,7 @@ function event_say(e)
 			if (not e.other:IsTaskActive(273) and not e.other:IsTaskActive(274)) then
 				e.other:AssignTask(eq.ChooseRandom(273, 274), e.self:GetID(), true);
 			end
+		else
 			e.self:Say("I've gotten acquainted with Norrath's Keepers well enough to know they might be interested in speaking with you.");
 			--e.self:Say("You can probably go try to speak to the Dark Reign for work. I've got nothing for you.");
 		end

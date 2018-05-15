@@ -19,9 +19,9 @@ function event_say(e)
 			e.self:Say("I'm not that interested in becoming a servant of those followers of Firiona Vie myself, but I don't mind the cash they pay me. I keep most for me and throw a little back to the Wayfarers crew. If you're looking to get on their good side, I can make some money and you can gain their audience.");
 			-- so we get a random task here if we don't have one. Should we do like even/odd in game minute so everyone in the group can get the same?
 			-- Blood of the Winged, Goblin Broth
-			if (not e.other:IsTaskActive(273) and not e.other:IsTaskActive(274)) then
-				e.other:AssignTask(eq.ChooseRandom(273, 274), e.self:GetID(), true);
-			end
+--			if (not e.other:IsTaskActive(273) and not e.other:IsTaskActive(274)) then
+				eq.task_set_selector(11);
+--			end
 		else
 			e.self:Say("I've gotten acquainted with Norrath's Keepers well enough to know they might be interested in speaking with you.");
 			--e.self:Say("You can probably go try to speak to the Dark Reign for work. I've got nothing for you.");

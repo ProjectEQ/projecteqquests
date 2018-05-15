@@ -165,6 +165,15 @@ function event_combine_success(e)
 	end
 end
 
+function event_task_complete(e)
+	if (e.task_id == 273 or e.task_id == 274) then -- Blood of the Winged, Goblin Broth
+		e.self:Faction(429, 20); -- Norrath's Keepers
+		e.self:Faction(101, 20); -- Firiona Vie -- unsure if correct one
+		e.self:Faction(425, -20); -- Lanys T`Vyl
+		e.self:Faction(404, -20); -- Dark Reign
+	end
+end
+
 function event_command(e)
 	return eq.DispatchCommands(e);
 end

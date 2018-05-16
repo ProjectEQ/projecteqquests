@@ -25,5 +25,6 @@ function event_say(e)
 			end
 		else
 			e.self:Say("I understand your desire to win the hearts of Norrath's Keepers.  I'm sure they'd be happy to talk with you.");
+		end
 	end
 end

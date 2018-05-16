@@ -25,5 +25,6 @@ function event_say(e)
 			end
 		else
 			e.self:Say("I've gotten acquainted with Norrath's Keepers well enough to know they might be interested in speaking with you.");
+		end
 	end
 end

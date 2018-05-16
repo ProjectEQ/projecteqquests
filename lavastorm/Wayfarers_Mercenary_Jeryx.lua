@@ -17,8 +17,6 @@ function event_say(e)
 		local DRF=e.other:GetFactionLevel(e.other:GetID(), e.self:GetID(), e.other:GetBaseRace(), e.other:GetClass(), e.other:GetDeity(), 404, e.self);
 		if (DRF >= 5) then
 			e.self:Say("So, you want to get in good with them dark crusaders, eh? I might be able to help you. If you run a few errands for me, I can probably put in a good word.");
-			-- so we get a random task here if we don't have one. Should we do like even/odd in game minute so everyone in the group can get the same?
-			-- Meat for Stew, Taunting the Brood
 			if (not e.other:IsTaskActive(279) and not e.other:IsTaskActive(280)) then
 				eq.task_selector({279, 280});
 			else

@@ -11,7 +11,7 @@ sub EVENT_CLICKDOOR {
 				$guildinstance = quest::CreateInstance("guildhall", 1, 86400);
 				quest::AssignToInstance($guildinstance); 
 				quest::setglobal("ginstance$uguild_id",$guildinstance,7,"H25");
-				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34)
+				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34);
 			}
 		}
   	} elsif((($doorid >= 5) && ($doorid <= 38)) ||  (($doorid >= 43) && ($doorid <= 76))) {

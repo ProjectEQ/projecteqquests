@@ -1,7 +1,11 @@
 local char_id = 0;
+local spawn_chest = false;
+local update_global = false;
 
 function event_spawn(e)
     char_id = 0;
+    spawn_chest = false;
+    update_global = false;
 end
 
 function event_say(e)
@@ -42,6 +46,13 @@ function event_say(e)
                 e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
                 char_id = e.other:CharacterID();
                 eq.attack(e.other:GetName());
+                if (qglobals["mnk20_oot_chest"] == nil) then
+                    spawn_chest = true;
+                end
+
+                if (qglobals["mnk_epic20"] == "4") then
+                    update_global = true;
+                end
             end
         end
     end
@@ -67,10 +78,7 @@ function event_trade(e)
 end
 
 function event_combat(e)
-    if (e.joined == true) then
-        eq.stop_all_timers();
-        eq.set_timer("start_cast", 1000);
-    else
+    if (e.joined == false) then
         eq.stop_all_timers();
         eq.set_timer("reset", 900000); -- 15 mins
     end
@@ -81,26 +89,23 @@ function event_timer(e)
         e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
         e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
         char_id = 0;
-    elseif (e.timer == "start_cast") then
-        e.self:CastSpell(5117, e.self:GetID());
-        eq.stop_timer(e.timer);
-        eq.set_timer("cast", 120000);
-    elseif (e.timer == "cast") then
-        e.self:CastSpell(5117, e.self:GetID());
+        spawn_chest = false;
+        update_global = false;
     end
 end
 
 function event_death_complete(e)
     local entity_list = eq.get_entity_list();
-    local client = entity_list:GetClientByCharID(char_id);
-    if (client.valid) then
-        local qglobals = eq.get_qglobals(client);
-        if (qglobals["mnk20_oot_chest"] == nil) then
-            eq.spawn2(893, 0, 0, client:GetX(), client:GetY(), client:GetZ(), client:GetHeading()); -- a chest (epic 2.0)
-            client:SetGlobal("mnk20_oot_chest", "1", 5, "F");
-        end
-        client:SetGlobal("mnk_epic20", "5", 5, "F"); -- hmmm well, kind screwed if you died ... oh well :(
+    -- if someone comes along before he resets, I guess you get the globals set ... oh well
+    if (spawn_chest) then
+        eq.spawn2(893, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- a chest (epic 2.0)
+        eq.target_global("mnk20_oot_chest", "1", "F", 0, char_id, 0);
+    end
+    if (update_global) then
+        eq.target_global("mnk_epic20", "5", 0, char_id, 0);
     end
     char_id = 0;
+    spawn_chest = false;
+    update_global = false;
 end
 

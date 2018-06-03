@@ -102,7 +102,7 @@ function event_death_complete(e)
         eq.target_global("mnk20_oot_chest", "1", "F", 0, char_id, 0);
     end
     if (update_global) then
-        eq.target_global("mnk_epic20", "5", 0, char_id, 0);
+        eq.target_global("mnk_epic20", "5", "F", 0, char_id, 0);
     end
     char_id = 0;
     spawn_chest = false;

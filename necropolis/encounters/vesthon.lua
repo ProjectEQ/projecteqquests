@@ -87,7 +87,7 @@ function VesthSpawn(e)
     eq.spawn2(123188, 0, 0, -1127, 1310, 2, 288)
     eq.spawn2(123188, 0, 0, -1120, 1333, 2, 318)
 
-    eq.set_timer("despawn", 1200000) -- 20 mins
+    eq.set_timer("despawn", 7200000) -- 2 hours
 end
 
 function VesthDeath(e)

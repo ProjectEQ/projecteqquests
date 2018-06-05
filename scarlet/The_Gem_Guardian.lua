@@ -12,8 +12,7 @@ function event_timer(e)
 	eq.enable_proximity_say();
 end
 
--- Need to convert this to invisible_man and event_proximity_say() once issues with proximity say are fixed on PEQ
-function event_say(e)
+function event_proximity_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if (e.message:findi("gems")) then
 		if (qglobals["wiz_epic"] == "1") then

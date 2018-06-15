@@ -177,6 +177,7 @@ function RPG_Timer(e)
 end
 
 function RPG_Death(e)
+	eq.debug("RPG_Death(): GetSpawnPointY() = " .. e.self:GetSpawnPointY());
 	--Gaddian_Opaleye guard
 	if (e.self:GetSpawnPointY()==-1048) then
 		eq.signal(245264,1);
@@ -190,6 +191,7 @@ function RPG_Death(e)
 end
 
 function check_RPG()
+	eq.debug("check_RPG(): rpg_dead = " .. rpg_dead .. " boss_spawn = " .. boss_spawn);
 	if (rpg_dead>=5 and boss_spawn==0) then
 		eq.zone_emote(15, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
 		eq.spawn2(245296, 0, 0, 898, -1023, -16, 256);  --warden

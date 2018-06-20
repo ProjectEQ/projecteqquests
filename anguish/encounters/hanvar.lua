@@ -40,7 +40,7 @@ function Hanvar_Combat(e)
 	eq.enable_spawn2(54538);
 	eq.enable_spawn2(54539);
   else
-    eq.set_timer("reset", 60 * 1000);
+	eq.set_timer("reset", 60 * 1000);
 	eq.stop_timer("adds");
 	eq.stop_timer("chains");
 	eq.stop_timer("feedback");
@@ -108,7 +108,11 @@ function Hanvar_Timer(e)
 		e.self:CastSpell(5678, e.self:GetTarget():GetID());
 		eq.set_timer("wail",90*1000); 
 	elseif (e.timer == "adds") then		
-		Aggro_Adds(e);
+		if (min_hp ~= 0) then
+			Aggro_Adds(e);
+		else
+			eq.stop_timer("adds"); -- can we stop this in Guard_Death? w/e
+		end
 	elseif (e.timer == "leash") then
 		if (e.self:CalculateDistance(424, 4389, 221.94) >280) then
 			reset(e);			

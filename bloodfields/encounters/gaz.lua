@@ -17,15 +17,35 @@ end
 
 function Gaz_Combat(e)
   if (e.joined == true) then
-    eq.stop_all_timers();
+    eq.stop_timer('reset');
+    eq.set_timer('aeramp', 30 * 1000);
   else 
-    eq.set_timer('reset', 640 * 1000);
+    eq.set_timer('reset', 1200 * 1000);
   end
 end
 
 function Gaz_Timer(e)
   if (e.timer == 'reset') then
     eq.spawn2(301034, 0, 0, 677, -419, -816, 0);
+    eq.depop_all(301062);
+  elseif(e.timer=='aeramp') then
+    e.self:RemoveAISpell(5822);
+    e.self:Emote("slows its gait");
+    e.self:SetSpecialAbility(46, 0);
+    e.self:SetSpecialAbility(4, 1, 20, 0, 200);
+    e.self:ModifyNPCStat("runspeed","1");
+    e.self:AddAISpell(1, 2490, 1, -1, 5, -350);
+    eq.set_timer('reflect', 30 * 1000);
+    eq.stop_timer('aeramp');
+  elseif(e.timer=='reflect') then
+    e.self:RemoveAISpell(2490);
+    e.self:Emote("picks up speed");
+    e.self:SetSpecialAbility(46, 1);
+    e.self:SetSpecialAbility(4, 0);
+    e.self:ModifyNPCStat("runspeed","2");
+    e.self:AddAISpell(1, 5822, 1024, -1, 40, -1);
+    eq.set_timer('aeramp', 30 * 1000);
+    eq.stop_timer('reflect');
   end
 end
 

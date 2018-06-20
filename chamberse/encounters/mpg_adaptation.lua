@@ -238,7 +238,7 @@ function ShapeShift(e)
   if ( mob[11] ~= nil ) then
     -- eq.set_timer('castbuffs', 500);
     cast_buffs = mob[11];
-    CastSpells();
+    CastBuffs();
     --ThreadManager:Create("CastBuffs", CastBuffs);
   end
   last_mob = mob;

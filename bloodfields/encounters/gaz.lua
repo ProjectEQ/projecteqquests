@@ -33,7 +33,7 @@ function Gaz_Timer(e)
     e.self:Emote("slows its gait");
     e.self:SetSpecialAbility(46, 0);
     e.self:SetSpecialAbility(4, 1, 20, 0, 200);
-    e.self:ModifyNPCStat("runspeed","1");
+    e.self:ModifyNPCStat("runspeed", 1);
     e.self:AddAISpell(1, 2490, 1, -1, 5, -350);
     eq.set_timer('reflect', 30 * 1000);
     eq.stop_timer('aeramp');
@@ -42,7 +42,7 @@ function Gaz_Timer(e)
     e.self:Emote("picks up speed");
     e.self:SetSpecialAbility(46, 1);
     e.self:SetSpecialAbility(4, 0);
-    e.self:ModifyNPCStat("runspeed","2");
+    e.self:ModifyNPCStat("runspeed", 2);
     e.self:AddAISpell(1, 5822, 1024, -1, 40, -1);
     eq.set_timer('aeramp', 30 * 1000);
     eq.stop_timer('reflect');

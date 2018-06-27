@@ -36,7 +36,7 @@ sub EVENT_SAY {
 	if ($class eq "Ranger" && $client->GetGlobal("ranger_epic") ==1) {
 		quest::say("I don't know for certain what is wrong. It feels like the start of a cold, a sort of tickling at the back of Norrath's throat, if I may make such a poor metaphor. In much the same way that I can sense that you have wielded the power of nature, probably in the form of the weapons known as Swiftwind and Earthcaller, I can sense a power of illness creeping upon the land. Please, if you come across anything suspicious bring it to me. I am worried, this does not feel like a natural sickness to me. Go with the blessing of the Mother and the speed of the Storm, my child.");
 	}
-	elsif($class eq "Druid" && plugin::check_hasitem($client, 20490)) { #has druid 1.0
+	elsif($class eq "Druid" && plugin::check_hasitem($client, 20490) or plugin::check_hasitem($client, 62809)) { #has druid 1.0 OR Seed of Wrath
 		quest::say("I am certain that you would sense it too, had you been so blessed as to be without sight. My sense of the life of Norrath is greatly heightened without the hindrance of vision. As I can sense that you have at your call the power of the lands, perhaps in the form of the Nature Walkers Scimitar. I can feel an unnatural illness creeping about the edges of Norrath. Please, if you come across anything suspicious bring it to me. I am worried about this cold sickness that I can almost taste. Go with the blessing of the Mother and the speed of the Storm, my child.");
 		if($client->GetGlobal("druid_epic") ==undef) {
 			quest::setglobal("druid_epic", "1", 5, "F"); 

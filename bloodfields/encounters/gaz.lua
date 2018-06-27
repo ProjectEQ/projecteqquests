@@ -42,7 +42,7 @@ function Gaz_Timer(e)
     eq.stop_timer('reflect');
     e.self:RemoveAISpell(2490);
     e.self:Emote("unleashes an earth shattering roar and picks up speed.");
-    e.self:AddAISpell(1, 5822, 1024, -1, 40, -1);
+    e.self:AddAISpell(1, 5822, 1024, -1, 1, -1);
     eq.set_timer('aeramp', 30 * 1000);
     e.self:SetSpecialAbility(SpecialAbility.immune_ranged_attacks, 1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);

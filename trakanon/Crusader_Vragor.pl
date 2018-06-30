@@ -16,7 +16,7 @@ sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 18051 => 1, 17031 => 1)){
   quest::say("The tome! I can finally pass on in peace. Before I go I will tell you that Zhaoku rests to the east of here near Old Sebilis. He is gigantic and not easily missed.");
   quest::emote("Crusader Vragor vanishes into a mist, his sigh of relief the only thing left behind.");
-  quest::spawn2(95184,0,0,-1801,-2260,-365,38);
+  quest::spawn2(95184,0,0,-1801,-2260,-365,76);
   quest::exp(20000);
   quest::ding();
   quest::faction(317,20);

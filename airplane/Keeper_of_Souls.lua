@@ -14,7 +14,7 @@ end
 function event_death_complete(e)
 	sirran= nil;
 	eq.set_global("sirran","4",3,"M20");
-	eq.spawn2(71058,0,0,-543,767,174,64);
+	eq.spawn2(71058,0,0,-543,767,174,128);
 end
 
 --Quest by: Solid11

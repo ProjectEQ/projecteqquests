@@ -72,8 +72,8 @@ end
 
 function Mainil_Timer(e)
 	if e.timer=="adds_on_granos" then
-		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,64):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);
-		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,56):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);				
+		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,128):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);
+		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,112):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);				
 	elseif e.timer=="pause_wander" then
 		e.self:PauseWandering(3);
 	elseif e.timer=="finish_note" then
@@ -131,7 +131,7 @@ function Mainil_Waypoint_Arrive(e)
 			mwp36=true;
 			eq.debug("at wp 36- spawn exec");
 			e.self:Say("This is worse than I feared.  The Executioner is feeding those souls to the Cauldron to assist the First Witness.  I fear that your friends may have more to deal with than just those that are assisting with his spell.  It appears the Executioner is protected by the same magic that guards the First Witness of Hate.  All we will be able to do is stem the flow of Souls from this place, aside from that, your friends will be on their own.");
-			eq.spawn2(249078,0,0,512.5,521.6,-107.87,128); --Executioner_Gimdk
+			eq.spawn2(249078,0,0,512.5,521.6,-107.87,256); --Executioner_Gimdk
 			e.self:MoveTo(508.73,433.41,-107.87,0,true);
 			e.self:PauseWandering(86400);
 			e.self:StopWandering();
@@ -152,10 +152,10 @@ function Granos_Waypoint_Arrive(e)
 		if gwp33==false then
 			gwp33=true;
 			eq.debug("at wp 33- spawn dudes");
-			eq.spawn2(249083,0,0,154.03,681.46,-17.09,128); --First Witness 154.03,681.46,-17.09
-			eq.spawn2(249077,0,0,153.7,663.2,-38.87,128); --Energy
-			eq.spawn2(249079,0,0,192.32,729,-23.87,64); --Matter
-			eq.spawn2(249082,0,0,117.15,729,-23.87,192); --Spirit		
+			eq.spawn2(249083,0,0,154.03,681.46,-17.09,256); --First Witness 154.03,681.46,-17.09
+			eq.spawn2(249077,0,0,153.7,663.2,-38.87,256); --Energy
+			eq.spawn2(249079,0,0,192.32,729,-23.87,128); --Matter
+			eq.spawn2(249082,0,0,117.15,729,-23.87,384); --Spirit		
 		end
 	elseif (e.wp == 35) then
 		if gwp35==false then
@@ -281,7 +281,7 @@ function Wisp_Waypoint_Arrive(e)
 	eq.debug("wisp wp: " .. e.wp);
 	if (e.wp == 35) then		
 		eq.zone_emote(15,"The flames roar with angry heat as the Cauldron consumes the soul.");
-		eq.spawn2(eq.ChooseRandom(249011,249061,249053,249056,249070,249142),0,0,153.2,673.4,-38.87,128);
+		eq.spawn2(eq.ChooseRandom(249011,249061,249053,249056,249070,249142),0,0,153.2,673.4,-38.87,256);
 		eq.depop();
 	end
 end
@@ -355,10 +355,10 @@ function First_Death(e)
 		eq.zone_emote(13,"The First Witness screams silently as his magic fails.  You feel a wave of hate wash over you, as a voice whispers in your head, 'There will always be a First.  You have not won.'");
 		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 		if exec_chest==true then
-			eq.spawn2(249234,0,0,169.36,681.64,-16.87,192); --#Gimdk`s_chest (249234)
+			eq.spawn2(249234,0,0,169.36,681.64,-16.87,384); --#Gimdk`s_chest (249234)
 		end
-		eq.spawn2(249075,0,0,138.56,681.64,-16.87,64); --#Chest_of_the_Foci (249075)
-		eq.spawn2(249076,0,0,153.5,660.5,-38.87,128); --#The_Slimy_Chest_of_the_Witness (249076)
+		eq.spawn2(249075,0,0,138.56,681.64,-16.87,128); --#Chest_of_the_Foci (249075)
+		eq.spawn2(249076,0,0,153.5,660.5,-38.87,256); --#The_Slimy_Chest_of_the_Witness (249076)
 		
 		local instance_requests = require("instance_requests");
 		local lockout_name = 'LDON_guke';

@@ -29,11 +29,11 @@ sub EVENT_ITEM {
     quest::signalwith(228115,666,0); #drowning_spell
     quest::signalwith(228116,666,0); #hate_spell
     quest::signalwith(228117,666,0); #languish_spell
-    quest::spawn2(228121,0,0,-1281,-46,-285.8,60); #Captain_Krasnok
+    quest::spawn2(228121,0,0,-1281,-46,-285.8,120); #Captain_Krasnok
     quest::spawn2(228122,0,0,-1281,-120,-285.8,0); #Fist_of_Krasnok
-    quest::spawn2(228122,0,0,-1281,118,-285.8,124); #Fist_of_Krasnok
+    quest::spawn2(228122,0,0,-1281,118,-285.8,248); #Fist_of_Krasnok
     quest::spawn2(228122,0,0,-1090,-120,-285.8,0); #Fist_of_Krasnok
-    quest::spawn2(228122,0,0,-1090,124,-285.8,124); #Fist_of_Krasnok
+    quest::spawn2(228122,0,0,-1090,124,-285.8,248); #Fist_of_Krasnok
     quest::depop();
   }
   plugin::return_items(\%itemcount);

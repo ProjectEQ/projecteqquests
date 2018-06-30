@@ -10,13 +10,13 @@ sub EVENT_DEATH_COMPLETE{
  my $b=70062; #npc - #an_undertow_skeleton
  my $c=70069; #The_Fabled_Bilge_Farfathom
  if($random_result<85){
-  quest::spawn2($b,6,0,-974.5,436.4,-343.8,29);
+  quest::spawn2($b,6,0,-974.5,436.4,-343.8,58);
   #quest::say("spawn skele");
   }elsif($random_result<95){
-  quest::spawn2($c,6,0,-974.5,436.4,-343.8,29);
+  quest::spawn2($c,6,0,-974.5,436.4,-343.8,58);
   #quest::say("spawn Fabled");
   }else{
     #quest::say("Spawning Bilge Farfathom");
-    quest::spawn2($a,4,0,-1123.30,-1194.57,-98.32,122);
+    quest::spawn2($a,4,0,-1123.30,-1194.57,-98.32,244);
   };
  };

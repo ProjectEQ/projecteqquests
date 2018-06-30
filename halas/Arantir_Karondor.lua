@@ -23,7 +23,6 @@ function event_say(e)
 	elseif(e.message:findi("the gnome") and e.other:Class() == "Wizard") then
 		e.self:Say("Ah, the gnome I know very little about. I know he was small and crafty, and that he had a brother. His brother's craft was that of making fireworks, and he was the unfortunate victim of one of his own experiments. His firework exploded, leaving his mind diminished in capacity, even for a gnome. I remember others calling him 'Old Stewpot' in jest. I do not know if this is his birth name, but it may help you to locate him. I hear he also stays close to water because of the explosion. You never know when another gnomish invention will go awry. Give him this letter to help motivate him to remember.");
 		e.other:SummonItem(18169);
-		e.other:Faction(342, 30,0); 									--Truespirit
 		eq.depop();
 	end
 end
@@ -44,6 +43,7 @@ function event_trade(e)
 			e.self:Say("Here, this pack contains all of our items. You will never be able to open it again, so you must deliver the pack, intact, to Solomen. He will then reward you. Now that I have helped you, leave me in peace.");
 			e.other:Ding();
 			e.other:SummonItem(14340);
+			e.other:Faction(342, 30,0); 									--Truespirit
 			eq.delete_global("wizepicA");
 		end
 	end

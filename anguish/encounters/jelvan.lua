@@ -72,8 +72,8 @@ function Jelvan_Say(e)
 		tanthi_aggro=0;
 		tantho_aggro=0;
 		tanthu_aggro=0;
-		eq.unique_spawn(317099,0,0, -174, 2152, -149, 167);
-		eq.unique_spawn(317100,0,0, -341, 2152, -149, 77);
+		eq.unique_spawn(317099,0,0, -174, 2152, -149, 334);
+		eq.unique_spawn(317100,0,0, -341, 2152, -149, 154);
 		eq.unique_spawn(317101,0,0, -252, 2008, -149, 0);
 		eq.set_timer("check_event",1*1000);
 		eq.set_timer("balance",60*1000);

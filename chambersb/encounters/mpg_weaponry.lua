@@ -73,7 +73,7 @@ function Weaponry_Signal(e)
   if (e.signal == 1) then 
     eq.spawn_condition('chambersb', instance_id, 1, 0);
     eq.stop_all_timers();
-    eq.spawn2(305005, 0, 0, -212, 273, 71, 20);
+    eq.spawn2(305005, 0, 0, -212, 273, 71, 40);
     eq.depop();
 
     local mpg_helper = require("mpg_helper");

@@ -4,7 +4,7 @@ sub EVENT_SAY {
 	if($client->GetGlobal("paladin_epic") ==4 && plugin::check_hasitem($client, 69933)) {
       quest::say("Welcome $name. I see you have the Seal of Enic, I imagine you have done a very good deed for Enic to acquire that. If Enic gave you that, he must trust you. And if he trusts you, then so shall I. I ask a favor of you, paladin. I wish for you to help me with a servant of mine. Rithnok, a very loyal servant of the Peak, disappeared a few days ago. He has returned, but he is not the same. . .he appears beaten and torn. I feel he has been tormented by some unknown being. For what reason? I do not know. However, he must be relieved of his suffering. I ask you to release him from the confines of this world and bring me back anything you find. Go now.");
 	  quest::depopall(91193);
-	  quest::spawn2(91193,0,0,2696,2377,-95,64);
+	  quest::spawn2(91193,0,0,2696,2377,-95,128);
     }
 	else {
 	  quest::say("What brings you here mortal? I am the new guardian of Veeshan's Peak and I will not allow you to pass. And even if I did, the ward on the door will not allow you to pass. Though, you do seem like the resourceful type and I do have something that I need researched. Would you be [" . quest::saylink("willing to do a task") . "] for me?");

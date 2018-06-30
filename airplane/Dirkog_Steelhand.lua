@@ -29,7 +29,7 @@ function event_trade(e)
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {platinum = 500})) then
 		e.self:Say("Thank ye, laddie! He's awaitin' ya up top!");
-		eq.spawn2(71091,0,0,-586,767,176,64);
+		eq.spawn2(71091,0,0,-586,767,176,128);
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

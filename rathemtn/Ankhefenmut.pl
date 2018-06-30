@@ -64,7 +64,7 @@ sub EVENT_ITEM {
 if ($client->GetGlobal("beast_epic") ==13) {
   if (plugin::check_handin(\%itemcount, 52904 =>1 )) {
     quest::say("What is this? Too . . . late . . . I do not understand. I am fading!");
-    quest::spawn2(50327,0,0,-3304,3476,28,1180);
+    quest::spawn2(50327,0,0,-3304,3476,28,1180); # needs_heading_validation
     quest::depop_withtimer();
   }
 

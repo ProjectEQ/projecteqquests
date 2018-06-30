@@ -27,7 +27,7 @@ sub EVENT_TIMER {
     $ring_seven_start=undef;
     quest::say("Uh oh, looks like they were tipped off somehow... I hope you can handle them.");
     quest::spawn2(116119, 0,0, $x, $y, $z, $h);
-    quest::spawn2(116569, 0,0, -2139, 168, 150, 57);
+    quest::spawn2(116569, 0,0, -2139, 168, 150, 114);
     quest::depop_withtimer();
   }
   if($timer == 1 && $x == -3183 && $y == -586 && defined($final_path) && $final_path == 1) {
@@ -36,7 +36,7 @@ sub EVENT_TIMER {
     $ring_seven_start=undef;
     $final_path=undef;
     $turnin=1;
-    quest::spawn2(116119, 0, 0, $x, $y, $z, 9);
+    quest::spawn2(116119, 0, 0, $x, $y, $z, 18);
     quest::say("I have escaped! With the help of our friends here I was saved from certain death. We are in their debt.");
     quest::signalwith(116118, 1, 1000);
     quest::depop_withtimer();

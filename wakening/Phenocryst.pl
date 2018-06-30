@@ -42,9 +42,9 @@ if(plugin::check_handin(\%itemcount, 1694 => 1, 1695 => 1, 1697 =>1, 1696 => 1))
 	quest::emote("familiar thoughts flood into your mind again, You truly are the Harbinger, take this Focus as a mark of your friendship with us. Now we can construct the Menhir, we need .. the stones speak.. , There is a problem. Ones of flesh are coming, the large ones, 3 of them. They must not disturb us while we construct the Menhir! Please stop them Harbinger! bring us proof of their distruction along with your Focus and then we will begin the calling. Our asscention is at hand!");
 	quest::faction(116,15); # Geonid Collective
 	quest::summonitem(1698); # Azurite Focus
-	quest::spawn2(119158,0,0,408.10, -690.21, -201.55,187); # accolyte of Zek  A
-	quest::spawn2(119158,0,0,-564.04, -985.80, -191.31,187); # accolyte of Zek  B
-	quest::spawn2(119164,0,0,303.02, 254.44, -201.54,187); # Bloodpriest Ioukond  C
+	quest::spawn2(119158,0,0,408.10, -690.21, -201.55,374); # accolyte of Zek  A
+	quest::spawn2(119158,0,0,-564.04, -985.80, -191.31,374); # accolyte of Zek  B
+	quest::spawn2(119164,0,0,303.02, 254.44, -201.54,374); # Bloodpriest Ioukond  C
 	quest::settimer(5,3600); # 1 hour
 	}
 

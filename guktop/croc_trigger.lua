@@ -10,32 +10,32 @@ function croc_spawns()
 	RandomNumber = math.random(100);
 	
 	if(RandomNumber <=45) then
-		eq.spawn2(RandomCroc,0,0,470,1661,-70,66);
-		eq.spawn2(RandomCroc,0,0,462,1653,-70,66);
+		eq.spawn2(RandomCroc,0,0,470,1661,-70,132);
+		eq.spawn2(RandomCroc,0,0,462,1653,-70,132);
 		CrocUp = 2;
 	elseif(RandomNumber > 45 and RandomNumber <= 75) then
-		eq.spawn2(RandomCroc,0,0,470,1661,-70,66);
-		eq.spawn2(RandomCroc,0,0,462,1653,-70,66);
-		eq.spawn2(RandomCroc,0,0,450,1661,-70,66);
+		eq.spawn2(RandomCroc,0,0,470,1661,-70,132);
+		eq.spawn2(RandomCroc,0,0,462,1653,-70,132);
+		eq.spawn2(RandomCroc,0,0,450,1661,-70,132);
 		CrocUp = 3;
 	elseif(RandomNumber > 75 and RandomNumber <= 90) then
-		eq.spawn2(RandomCroc,0,0,470,1661,-70,66);
+		eq.spawn2(RandomCroc,0,0,470,1661,-70,132);
 		CrocUp = 1;
 	elseif(RandomNumber > 90 and RandomNumber <= 95) then
-		eq.spawn2(65139,0,0,462,1653,-70,66); -- an ancient croc
+		eq.spawn2(65139,0,0,462,1653,-70,132); -- an ancient croc
 		CrocUp = 1;
 	elseif(RandomNumber > 95 and RandomNumber <= 98) then
-		eq.spawn2(RandomCroc,0,0,470,1661,-70,66);
-		eq.spawn2(RandomCroc,0,0,462,1653,-70,66);
-		eq.spawn2(RandomCroc,0,0,450,1661,-70,66);
-		eq.spawn2(RandomCroc,0,0,459,1671,-70,66); -- need exact loc
+		eq.spawn2(RandomCroc,0,0,470,1661,-70,132);
+		eq.spawn2(RandomCroc,0,0,462,1653,-70,132);
+		eq.spawn2(RandomCroc,0,0,450,1661,-70,132);
+		eq.spawn2(RandomCroc,0,0,459,1671,-70,132); -- need exact loc
 		CrocUp = 4;
 	elseif(RandomNumber > 98) then
-		eq.spawn2(RandomCroc,0,0,470,1661,-70,66);
-		eq.spawn2(RandomCroc,0,0,462,1653,-70,66);
-		eq.spawn2(RandomCroc,0,0,450,1661,-70,66);
-		eq.spawn2(RandomCroc,0,0,459,1671,-70,66); -- need exact loc
-		eq.spawn2(RandomCroc,0,0,480,1667,-70,66); -- need exact loc
+		eq.spawn2(RandomCroc,0,0,470,1661,-70,132);
+		eq.spawn2(RandomCroc,0,0,462,1653,-70,132);
+		eq.spawn2(RandomCroc,0,0,450,1661,-70,132);
+		eq.spawn2(RandomCroc,0,0,459,1671,-70,132); -- need exact loc
+		eq.spawn2(RandomCroc,0,0,480,1667,-70,132); -- need exact loc
 		CrocUp = 5;
 	end
 end

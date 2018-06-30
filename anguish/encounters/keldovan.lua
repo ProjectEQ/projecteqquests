@@ -43,10 +43,10 @@ function Keldovan_Combat(e)
 	eq.set_timer("torment",math.random(5,30)*1000);
 	eq.set_timer("touch",math.random(5,30)*1000);
 	eq.set_timer("say",300*1000);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 210);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 30);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 90);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 165);
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420);
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60);
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180);
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330);
   else
 	eq.stop_timer("packmaster");
 	eq.stop_timer("torment");
@@ -88,16 +88,16 @@ function Keldovan_Timer(e)
 		eq.set_timer("touch",45*1000);	
 	elseif (e.timer == "Dog_NE") then
 		eq.stop_timer("Dog_NE");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 210);
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420);
 	elseif (e.timer == "Dog_NW") then
 		eq.stop_timer("Dog_NW");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 30);
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60);
 	elseif (e.timer == "Dog_SW") then
 		eq.stop_timer("Dog_SW");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 90);	
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180);	
 	elseif (e.timer == "Dog_SE") then
 		eq.stop_timer("Dog_SE");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 165);
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330);
 	elseif (e.timer == "depop_dogs") then
 		eq.stop_timer("depop_dogs");
 		eq.depop_all(317102);

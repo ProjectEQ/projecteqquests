@@ -87,7 +87,7 @@ function PXK_Combat(e)
     eq.depop_all(298043);
     eq.depop_all(298042);
     eq.depop_all(298041);
-    eq.spawn2(298039,0,0,151,-162,-6,192.5);
+    eq.spawn2(298039,0,0,151,-162,-6,385);
     eq.depop();
 
     -- reset the pet event counters in case of a wipe.
@@ -149,10 +149,10 @@ function PXK_Hp(e)
       eq.zone_emote(15,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'");
 
       -- Spawn the Pets
-      eq.spawn2(298044,0,0, 151, -113, -6.87, 157);
-      eq.spawn2(298043,0,0, 151, -218, -6.87, 225);
-      eq.spawn2(298042,0,0,  81, -113, -6.87,  97);
-      eq.spawn2(298041,0,0,  81, -218, -6.87,  20);
+      eq.spawn2(298044,0,0, 151, -113, -6.87, 314);
+      eq.spawn2(298043,0,0, 151, -218, -6.87, 450);
+      eq.spawn2(298042,0,0,  81, -113, -6.87,  194);
+      eq.spawn2(298041,0,0,  81, -218, -6.87,  40);
 
       eq.set_next_hp_event(30);
    end
@@ -183,7 +183,7 @@ end
 function PXK_Juxtapincer_Death(e)
   if ( juxtapincer < 3 ) then
     juxtapincer = juxtapincer + 1;
-    eq.spawn2(298044,0,0, 151, -113, -6.87, 157);
+    eq.spawn2(298044,0,0, 151, -113, -6.87, 314);
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
@@ -191,7 +191,7 @@ end
 function PXK_Lifebleeder_Death(e)
   if (lifebleeder < 3) then
     lifebleeder = lifebleeder + 1;
-    eq.spawn2(298043,0,0, 151, -218, -6.87, 225);
+    eq.spawn2(298043,0,0, 151, -218, -6.87, 450);
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
@@ -199,7 +199,7 @@ end
 function PXK_Manasipper_Death(e)
   if (manasipper < 3) then
     manasipper = manasipper + 1;
-    eq.spawn2(298042,0,0,  81, -113, -6.87,  97);
+    eq.spawn2(298042,0,0,  81, -113, -6.87,  194);
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
@@ -207,7 +207,7 @@ end
 function PXK_Ragehound_Death(e)
   if (ragehound < 3) then
     ragehound = ragehound + 1;
-    eq.spawn2(298041,0,0,  81, -218, -6.87,  20);
+    eq.spawn2(298041,0,0,  81, -218, -6.87,  40);
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end

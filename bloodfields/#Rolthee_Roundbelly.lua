@@ -19,6 +19,6 @@ function event_combat(e)
 	end
 end
 function event_death_complete(e)
-  eq.spawn2(301078,0,0,-1279,168,-924,106);
+  eq.spawn2(301078,0,0,-1279,168,-924,212);
 end
 -- spawn rog 2.0 mob

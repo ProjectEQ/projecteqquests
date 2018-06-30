@@ -3,7 +3,7 @@
 function event_combat(e)
 	if (e.joined) then
 		-- spawn #tunare to fight
-		eq.spawn2(127098,0,0,-247,1609,-40,424);
+		eq.spawn2(127098,0,0,-247,1609,-40,424); -- needs_heading_validation
 		call_zone_to_assist(e.other);
 		eq.depop_with_timer();
 	end

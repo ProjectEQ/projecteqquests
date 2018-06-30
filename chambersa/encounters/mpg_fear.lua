@@ -73,7 +73,7 @@ function Fear_Timer(e)
 
       if (mobs_died >= mobs_must_die) then
 
-        eq.spawn2(304013, 0, 0, -212, 273, 71, 20);
+        eq.spawn2(304013, 0, 0, -212, 273, 71, 40);
         eq.depop();
 
         local mpg_helper = require("mpg_helper");

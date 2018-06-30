@@ -16,7 +16,7 @@ function event_timer(e)
 		if(e.self:GetItemIDAt(30)==60300 and recepactive==false) then --energy receptor on cursor
 			e.self:Message(4,"The energy receptor appears to be active");		
 			eq.depop_all(302050);
-			eq.spawn2(302050, 0, 0, 155,-1053,29.5, 76);
+			eq.spawn2(302050, 0, 0, 155,-1053,29.5, 152);
 			eq.create_ground_object(60301,155,-1053,29.5,0);	
 			recepactive=true;
 		end
@@ -40,7 +40,7 @@ function event_click_door(e)
   if (door_id == 2) then 
 	inst_id=eq.get_instance_id('dranikhollowsa', 0);
 	if (inst_id > 0 ) then
-		e.self:MovePCInstance(318, inst_id, 3522.5, 1584.2, 2.8, 70);
+		e.self:MovePCInstance(318, inst_id, 3522.5, 1584.2, 2.8, 140);
     else		
       e.self:Message(13, "You are not part of an instance.");		
 	end
@@ -48,7 +48,7 @@ function event_click_door(e)
   elseif (door_id == 3) then  
 	inst_id=eq.get_instance_id('dranikhollowsb', 0);
 	if (inst_id > 0 ) then
-		e.self:MovePCInstance(319, inst_id, 0, -447 , -38.5, 254);
+		e.self:MovePCInstance(319, inst_id, 0, -447 , -38.5, 508);
     else		
       e.self:Message(13, "You are not part of an instance.");		
 	end
@@ -56,7 +56,7 @@ function event_click_door(e)
   elseif (door_id==4) then
 	inst_id=eq.get_instance_id('dranikhollowsc', 0);
 	if (inst_id > 0 ) then
-		e.self:MovePCInstance(320, inst_id, 3944, -252, 139, 254);
+		e.self:MovePCInstance(320, inst_id, 3944, -252, 139, 508);
     else		
       e.self:Message(13, "You are not part of an instance.");		
 	end

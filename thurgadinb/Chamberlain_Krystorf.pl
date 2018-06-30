@@ -25,7 +25,7 @@ if(plugin::check_handin(\%itemcount, 29062 => 4)){
       } else {
          quest::say("One moment the Dain has been waiting for you. I will call for him.. oh here he is now, show your shawl to him.");
          quest::summonitem(8895);
-         quest::spawn2(129003, 0, 0, 4.0, 690.0, 68.38, 128.0);
+         quest::spawn2(129003, 0, 0, 4.0, 690.0, 68.38, 256);
       }
    }
   plugin::return_items(\%itemcount);

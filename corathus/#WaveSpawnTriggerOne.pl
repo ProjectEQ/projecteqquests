@@ -14,16 +14,16 @@ sub EVENT_TIMER
 	elsif($timer eq "bot1")
 	{
 		quest::stoptimer("bot1");
-		quest::spawn2(365029, 0, 0, 140, -606, -47, 17);
+		quest::spawn2(365029, 0, 0, 140, -606, -47, 34);
 	}
 	elsif($timer eq "bot2")
 	{
 		quest::stoptimer("bot2");
-		quest::spawn2(365029, 0, 0, 140, -606, -47, 17);
+		quest::spawn2(365029, 0, 0, 140, -606, -47, 34);
 	}
 	elsif($timer eq "bot3")
 	{
 		quest::stoptimer("bot3");
-		quest::spawn2(365029, 0, 0, 140, -606, -47, 17);
+		quest::spawn2(365029, 0, 0, 140, -606, -47, 34);
 	}
 }

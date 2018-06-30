@@ -14,8 +14,8 @@ function event_trade(e)
 		e.self:Say("WOW, thanks! This must be worth a fortune! I could drink for a month after sellin' this to one of them fool merchants. I'm going to see how much I can get for it right now!");
 		e.other:Faction(342,100,0);
 		e.other:AddEXP(1000);
-		eq.spawn2(8117,0,0,62,66,32.1,254);
-		eq.spawn2(8118,0,0,67,103,32.1,508);
+		eq.spawn2(8117,0,0,62,66,32.1,508);
+		eq.spawn2(8118,0,0,67,103,32.1,508); -- needs_heading_validation
 		e.self:Say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 sub EVENT_SAY {
   if ($text=~/defeat/i && $class eq "Berserker" && $beast == 1) {
     quest::say("Argh, it has sensed my presence. It is near! You must protect me and save me from this beast. If you do, you will pass this test. You must yourself take a tooth from its mouth as evidence to show to McArik that you've passed this trial. Tell me if you [need more axes].");
-    quest::spawn2(85225,0,0,2158,70,102,60); #An_Impervious_Bloodbeast
+    quest::spawn2(85225,0,0,2158,70,102,120); #An_Impervious_Bloodbeast
     $beast = 0;
   }
   if ($text=~/need more axes/i && $axe == 1) {

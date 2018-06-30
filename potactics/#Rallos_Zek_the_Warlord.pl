@@ -23,7 +23,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	quest::spawn2(214105,0,0,699,8,-294,64);   # spawn a_planar_projection
+	quest::spawn2(214105,0,0,699,8,-294,128);   # spawn a_planar_projection
 	quest::stoptimer(2);
 	quest::stoptimer(1);
 	quest::signalwith(214123, 214113);         # let the trigger know RZtW died
@@ -61,14 +61,14 @@ sub EVENT_TIMER {
 
 	if($timer == 1) {
 		if($npc->IsEngaged()) {
-			quest::spawn2(214114,0,0,565,-95,-293,66);
-			quest::spawn2(214114,0,0,815,-100,-293,255);
-			quest::spawn2(214114,0,0,815,-295,-293,68);
+			quest::spawn2(214114,0,0,565,-95,-293,132);
+			quest::spawn2(214114,0,0,815,-100,-293,510);
+			quest::spawn2(214114,0,0,815,-295,-293,136);
 			quest::spawn2(214114,0,0,565,185,-293,0);
-			quest::spawn2(214114,0,0,565,-95,-293,66);
-			quest::spawn2(214114,0,0,565,-95,-293,66);
-			quest::spawn2(214114,0,0,815,-100,-293,255);
-			quest::spawn2(214114,0,0,815,-295,-293,68);
+			quest::spawn2(214114,0,0,565,-95,-293,132);
+			quest::spawn2(214114,0,0,565,-95,-293,132);
+			quest::spawn2(214114,0,0,815,-100,-293,510);
+			quest::spawn2(214114,0,0,815,-295,-293,136);
 			quest::spawn2(214114,0,0,565,185,-293,0);
 			my @npc_list = $entity_list->GetNPCList();
 			foreach $npc (@npc_list) {

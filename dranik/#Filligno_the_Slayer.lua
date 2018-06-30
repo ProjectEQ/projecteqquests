@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("Oh mighty, Lhranc! We have slain your minions and have the blade that you seek! If you want it, come get it!' Filligno looks your way. 'What? You wanted a more elaborate incantion? It really doesn't take much to anger him. Trust me.' A moment later the ground begins to shake and a mighty voice booms out, 'Fools, I have followed the steps of this pathetic weakling who believes themselves to be a shadowknight. Now your lives will end and I will retrieve the blade destined to be mine! All of Norrath will fall before the might of the Mata Muram! Attack! Leave none standing!");
 		e.self:Emote("begins to cower in fear.");
 		e.self:Say("The blade isn't mine! Don't kill me! Please!");
-		eq.spawn2(336251,0,0, 1001.5,2418.5,-25.1,100) --#a_Minion_of_Lhranc
+		eq.spawn2(336251,0,0, 1001.5,2418.5,-25.1,200) --#a_Minion_of_Lhranc
 		count = 0
 	end	
 	
@@ -37,10 +37,10 @@ function event_signal(e)
 	if(e.signal == 1) then --Minion of Lhranc dead
 		count = count + 1;
 		if(count == 1) then
-			eq.spawn2(336251,0,0, 987.5,2407.5,-25.1,100) --#a_Minion_of_Lhranc
-			eq.spawn2(336251,0,0, 1021.5,2431.5,-25.1,100) --#a_Minion_of_Lhranc
+			eq.spawn2(336251,0,0, 987.5,2407.5,-25.1,200) --#a_Minion_of_Lhranc
+			eq.spawn2(336251,0,0, 1021.5,2431.5,-25.1,200) --#a_Minion_of_Lhranc
 		elseif(count > 2) then
-			eq.spawn2(336250 ,0,0, 1001.5,2418.5,-25.1,100) --#Lhranc
+			eq.spawn2(336250 ,0,0, 1001.5,2418.5,-25.1,200) --#Lhranc
 		end
 	elseif(e.signal == 2) then --Lhranc dead
 		e.self:Say("You have done it! That wasn't so bad, eh? Oh, I wasn't really scared. He just startled me for a moment. You now have in your grasp the very essence of the power that shadowknight's possess! Hand it to me along with Innoruuk's Voice and I can reward you!");

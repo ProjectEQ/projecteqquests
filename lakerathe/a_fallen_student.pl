@@ -28,7 +28,7 @@ sub EVENT_SAY {
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Do not think that it will be an easy feat, even for one with such capabilities as yourself. There are two masters you must find. They will show you the ways of the enlightened. Return to me after you have gained proof of your deeds.");
   }
-  if($text=~/the way/i and $client->GetGlobals("MnkPre") == 2){
+  if($text=~/the way/i and $client->GetGlobal("MnkPre") == 2){
    # Monk Epic 1.5/2.0 (Prequest)
    quest::say("Very well then. There is a place full of mirrors. Locate one of them and speak the words, I am ready to be tested. It is at this point you will face the darkness within yourself. You will have to face this foe alone, remember that. Return to me if you manage to prove that you are worthy of true enlightenment.");
   }
@@ -44,14 +44,14 @@ sub EVENT_SAY {
    # Monk Epic 1.5
    quest::say("Kaiarens Diary? I havent seen it in some time now. If I were not such a coward, I would have kept it. I have heard rumors of it being torn in half. Some students that wanted to learn the ways of the Celestial Fists were looking for it a while back. One was a pirate that wanted to only learn the Path of the Silent to gain more treasures then he had. The other, wanted to become the most powerful fighter alive. You may want to seek them out and see if they have located pieces of it. I am sorry I could not be of more help. If you do happen to locate the two pieces, bring them back to me and maybe I will be able to aid you further. Now that you know my secret, there is no reason to remain hidden from the world. You will be able to find me resting in the Plane of Tranquility. Be safe, $name .");
   }
-  if($client->GetGlobal("monk_epic") ==2 && $text=~/power of the Immortals/i){
+  #if($client->GetGlobal("monk_epic") ==2 && $text=~/power of the Immortals/i){
    # Monk Epic 1.5  
-  quest::say("Power of the Immortals? Hmmm. . .well of course I know about that, but at the moment I have more pressing issues at hand. I'm sorry I could not be of more help, but maybe after my assistant has returned I can help you.");
-  }
+  #quest::say("Power of the Immortals? Hmmm. . .well of course I know about that, but at the moment I have more pressing issues at hand. I'm sorry I could not be of more help, but maybe after my assistant has returned I can help you.");
+  #}
   if( $client->GetGlobal("monk_epic") ==3 && $text=~/Vortix/i) {
   quest::say("I see you know who I truly am now. It does not matter though. There is nothing I can help you with. Danl should have been able to help you more than I could.");
   quest::spawn2(203433,0,0,$x,$y,$z,$h);
-  quest::depop();
+  quest::depop_withtimer();
   }
 }
 sub EVENT_ITEM {

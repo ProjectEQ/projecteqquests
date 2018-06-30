@@ -2,7 +2,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
 	if (plugin::check_hasitem($client,28048) && plugin::check_hasitem($client,28049) && plugin::check_hasitem($client,28050)) { #respawn Jhassad if failed during initial attempt
 	  quest::say("Jhassad told me to notify him the minute you returned.  Hurry down to the beach so you do not miss him again!");
-	  quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
+	  quest::unique_spawn(96074,0,0,-1781,-11959,14.3,2); #Jhassad Oceanson
 	}
 	else {
       quest::emote("bows deeply. 'I have been expecting you, $name. The waters have foretold your arrival. I am High Priest Omat Vastsea of the Triumvirate missionaries. Please feel free to enjoy the quiet solitude of this inn.'");
@@ -16,6 +16,16 @@ sub EVENT_SAY {
   }
   if ($text=~/plasmatic priesthood/i) {
     quest::say("The Plasmatic Priesthood are worshipers of the Tyrant of Fire, but they have been driven mad by their fanaticism and have forgotten the importance of the balance. In their madness they would set the whole world aflame, leaving nothing but lifeless ash.");
+  }
+  if ($text=~/Tavon sent me/i) {
+    quest::say("I received word from my brother that you would be coming. I have just the task for you. I am sure you heard of the [" . quest::saylink("Plasmatic Priests") . "]");
+  }
+  if ($text=~/Plasmatic Priests/i) {
+    quest::say("The Plasmatic Priests were worshippers of Fennin Ro. Their numbers were all but destroyed by adventurers, and with the silence of the Pantheon they no longer draw power from the Tyrant of Fire. However they are still a danger, please find the last remnants of their order and bring me proof of their[" . quest::saylink("destruction") . "]");
+  }
+  if ($text=~/destruction/i) {
+    quest::say("They are in hiding, the few alcoves that I managed to find were shrouded and hidden. Take this signet and find the keeper for each alcove. Show it to him and he will drop the veil. Strike fast and exterminate the camp before he is able to cloak the camp again. Return the talisman to me with proof of the deaths of the three remaining high priests. Once you have done this, I will send you to my brother with my blessings.");
+	quest::summonitem(56010);
   }
 }
 
@@ -40,7 +50,7 @@ sub EVENT_ITEM {
     quest::say("I see now that Zordak Ragefire and the exiled elder dragon Zordakalicus were the same being. That explains how he resisted our attempts to divine his affairs and past. Each of these orbs I have granted you represents one of the Triumvirate. Jhassad Oceanson awaits on the shore below to perform the ritual that will merge the orbs into a single Orb of the Triumvirate and summon an avatar from the Plane of Water. Present the Orb of the Triumvirate to the Avatar of Water when it arrives and allow your destiny to be unraveled.");
     quest::summonitem(28050); #Orb of Vapor
     quest::exp(100000); 
-    quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
+    quest::unique_spawn(96074,0,0,-1781,-11959,14.3,2); #Jhassad Oceanson
   }
   elsif ($client->GetGlobal("cleric20") >= 2 && plugin::check_handin(\%itemcount, 12433 => 1)) { #Dark Red Robe
     quest::summonitem(12509); #Robe of Plasmatic Priesthood
@@ -52,6 +62,10 @@ sub EVENT_ITEM {
     $client->SetGlobal("cleric20", "3", 5, "F");
     quest::spawn2(96368, 0, 0, $client->GetX(), $client->GetY(), $client->GetZ(), $client->GetHeading()); ##Gefaari_Drokaz
     quest::summonitem(56013); #Ethereal Disciple's Journal returned in case of failure
+  }
+  elsif (plugin::check_handin(\%itemcount, 5768 => 1, 6505 => 1, 6506 => 1, 56010 => 1)) { #Cleric Prequest 3 heads and talisman
+    quest::say("Excellent. I think this was the last of the organized Plasmatic Priests. You have done well. I will send you to my brother with my blessing. Thank you for your assistance.");
+    $client->SetGlobal("cleric15pre", "1", 5, "F"); #Set prequest complete flag
   }
   plugin::return_items(\%itemcount);
 }

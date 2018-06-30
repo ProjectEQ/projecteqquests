@@ -6,7 +6,7 @@ function event_say(e)
 		e.self:Say("Aye, well then. Watch yerself. Thar be a crazy fella over there. Been trying for days, I 'ave, to get 'im to make some sense about this megalodon creature 'e keeps prattling on about. I been a bit shy o' stepping in the lake to get some seaweed for the spirit's potion. Maybe you could go take a look. Somethin' usually comes by to snap 'em up when they grow, so ye may need to route around a tad out there. You think you are [" .. eq.say_link("up to it") .. "]?");
 	elseif(e.message:findi("up to it") and qglobals["shaman_epic"] == "1") then
 		e.self:Say("Very well, then, off you go in search of the seaweed.");
-		eq.spawn2(51160,0,0,2812,-771,-199,146); --Ancient Megalodon
+		eq.spawn2(51160,0,0,2812,-771,-199,292); --Ancient Megalodon
 	elseif(e.message:findi("break down") and qglobals["shaman_epic"] == "5") then
 		e.self:Say("As most things, the process is not a simple one and we'll need some ingredients for a special potion. You must retrieve four items, which should not prove difficult for a shaman of your stature. They are very specific and I can tell you more about the [" .. eq.say_link("skin") .. "], the [" .. eq.say_link("powder") .. "], the [" .. eq.say_link("tooth") .. "], and the [" .. eq.say_link("goo") .. "]. When you have all of these things, use my medicine bag to create this potion and return it to me.");
 		e.other:SummonItem(52922); --Heyokah Medicine Bag

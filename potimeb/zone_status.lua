@@ -120,9 +120,9 @@ function event_spawn(e)
 		-- send signal to flavor text NPC
 		eq.signal(223227,6);
 		-- spawn Quarm
-		eq.spawn2(223201,0,0,-401,-1106,32.5,92.8125);
+		eq.spawn2(223201,0,0,-401,-1106,32.5,185.625);
 		-- spawn #A_Servitor_of_Peace
-		eq.spawn2(223101,0,0,244,-1106,-1.125,97.03125);
+		eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625);
 		-- spawn untargetable Zebuxoruk's Cage
 		eq.spawn2(223228,0,0,-579,-1119,60.625,0);
 	end
@@ -201,9 +201,9 @@ function event_signal(e)
 			-- reset counter for later use
 			event_counter = 0;
 			-- spawn Quarm
-			eq.spawn2(223201,0,0,-401,-1106,32.5,92.8125);
+			eq.spawn2(223201,0,0,-401,-1106,32.5,185.625);
 			-- spawn #A_Servitor_of_Peace
-			eq.spawn2(223101,0,0,244,-1106,-1.125,97.03125);
+			eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625);
 			-- spawn untargetable Zebuxoruk's Cage
 			eq.spawn2(223228,0,0,-579,-1119,60.625,0);
 			-- unlock the stone from phase 5 to phase 6
@@ -224,7 +224,7 @@ function event_signal(e)
 		local client_list = entity_list:GetClientList();
 		for c in client_list.entries do
 			if (c.valid) then
-				c:MovePC(202,1015,20,392,132);
+				c:MovePC(202,1015,20,392,264);
 			end
 		end
 		-- depop the zone nothing else to do here
@@ -281,15 +281,15 @@ function SpawnPhaseTwo()
 		eq.spawn_condition("potimeb",instance_id,10,1);
 		-- now spawn the named also since this is wave 2.
 		-- Earthen_Overseer
-		eq.spawn2(223134,0,0,262,1644,493,192.5);
+		eq.spawn2(223134,0,0,262,1644,493,385);
 		-- Windshapen_Warlord_of_Air
-		eq.spawn2(223118,0,0,262,1354,493,192.5);
+		eq.spawn2(223118,0,0,262,1354,493,385);
 		-- Ralthos_Enrok
-		eq.spawn2(223127,0,0,262,1109,493,192.5);
+		eq.spawn2(223127,0,0,262,1109,493,385);
 		-- War_Shapen_Emissary
-		eq.spawn2(223096,0,0,262,869,493,192.5);
+		eq.spawn2(223096,0,0,262,869,493,385);
 		-- Gutripping_War_Beast
-		eq.spawn2(223146,0,0,262,574,493,192.5);
+		eq.spawn2(223146,0,0,262,574,493,385);
 	end
 end
 
@@ -299,27 +299,27 @@ function ControlPhaseThree()
 		-- set the spawn condition for the first wave
 		eq.spawn_condition("potimeb",instance_id,2,1);
 		-- spawn the untargetable version of the phase 3 named
-		eq.spawn2(223010,0,0,1280,1010,359.38,195); -- A_Needletusk_Warboar
-		eq.spawn2(223011,0,0,1280,1030,359.38,195); -- Deathbringer_Rianit
-		eq.spawn2(223012,0,0,1260,1250,359.38,195); -- Sinrunal_Gorgedreal
-		eq.spawn2(223013,0,0,1260,1270,359.38,195); -- Herlsoakian
-		eq.spawn2(223014,0,0,1280,1210,359.38,195); -- Xerskel_Gerodnsal
-		eq.spawn2(223015,0,0,1280,1190,359.38,195); -- Dersool_Fal`Giersnaol
-		eq.spawn2(223016,0,0,1260,970,359.38,195); -- Xeroan_Xi`Geruonask
-		eq.spawn2(223017,0,0,1260,950,359.38,195); -- Kraksmaal_Fir`Dethsin
-		eq.spawn2(223018,0,0,1300,1070,359.38,195); -- Dreamwarp
-		eq.spawn2(223019,0,0,1300,1090,359.38,195); -- Champion_of_Torment
-		eq.spawn2(223020,0,0,1300,1130,359.38,195); -- Dark_Knight_of_Terris
-		eq.spawn2(223021,0,0,1300,1150,359.38,195); -- Undead_Squad_Leader
-		eq.spawn2(223022,0,0,1230,1330,359.38,175); -- A_Deadly_Warboar
-		eq.spawn2(223023,0,0,1230,1310,359.38,175); -- Deathbringer_Skullsmash
-		--eq.spawn2(223155,0,0,1250,1135,359.5,192); -- A_Ferocious_Warboar
-		--eq.spawn2(223156,0,0,1250,1085,359.5,192); -- Deathbringer_Blackheart
+		eq.spawn2(223010,0,0,1280,1010,359.38,390); -- A_Needletusk_Warboar
+		eq.spawn2(223011,0,0,1280,1030,359.38,390); -- Deathbringer_Rianit
+		eq.spawn2(223012,0,0,1260,1250,359.38,390); -- Sinrunal_Gorgedreal
+		eq.spawn2(223013,0,0,1260,1270,359.38,390); -- Herlsoakian
+		eq.spawn2(223014,0,0,1280,1210,359.38,390); -- Xerskel_Gerodnsal
+		eq.spawn2(223015,0,0,1280,1190,359.38,390); -- Dersool_Fal`Giersnaol
+		eq.spawn2(223016,0,0,1260,970,359.38,390); -- Xeroan_Xi`Geruonask
+		eq.spawn2(223017,0,0,1260,950,359.38,390); -- Kraksmaal_Fir`Dethsin
+		eq.spawn2(223018,0,0,1300,1070,359.38,390); -- Dreamwarp
+		eq.spawn2(223019,0,0,1300,1090,359.38,390); -- Champion_of_Torment
+		eq.spawn2(223020,0,0,1300,1130,359.38,390); -- Dark_Knight_of_Terris
+		eq.spawn2(223021,0,0,1300,1150,359.38,390); -- Undead_Squad_Leader
+		eq.spawn2(223022,0,0,1230,1330,359.38,350); -- A_Deadly_Warboar
+		eq.spawn2(223023,0,0,1230,1310,359.38,350); -- Deathbringer_Skullsmash
+		--eq.spawn2(223155,0,0,1250,1135,359.5,384); -- A_Ferocious_Warboar
+		--eq.spawn2(223156,0,0,1250,1085,359.5,384); -- Deathbringer_Blackheart
 		-- depop untargetable and pop targetable versions
 		--eq.depop(223155); -- A_Ferocious_Warboar
 		--eq.depop(223156); -- Deathbringer_Blackheart
-		eq.spawn2(223008,0,0,1250,1135,359.5,192); -- A_Ferocious_Warboar
-		eq.spawn2(223009,0,0,1250,1085,359.5,192); -- Deathbringer_Blackheart
+		eq.spawn2(223008,0,0,1250,1135,359.5,384); -- A_Ferocious_Warboar
+		eq.spawn2(223009,0,0,1250,1085,359.5,384); -- Deathbringer_Blackheart
 		current_phase = "Phase3.1";
 	elseif (current_phase == "Phase3.1") then
 		event_counter = event_counter + 1;
@@ -333,8 +333,8 @@ function ControlPhaseThree()
 			-- depop untargetable and pop targetable versions
 			eq.depop(223016); -- Xeroan_Xi`Geruonask
 			eq.depop(223017); -- Kraksmaal_Fir`Dethsin
-			eq.spawn2(223024,0,0,1250,1085,359.5,192); -- Kraksmaal_Fir`Dethsin
-			eq.spawn2(223025,0,0,1250,1135,359.5,192); -- Xeroan_Xi`Geruonask
+			eq.spawn2(223024,0,0,1250,1085,359.5,384); -- Kraksmaal_Fir`Dethsin
+			eq.spawn2(223025,0,0,1250,1135,359.5,384); -- Xeroan_Xi`Geruonask
 		end
 	elseif (current_phase == "Phase3.2") then
 		event_counter = event_counter + 1;
@@ -347,8 +347,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,4,1);
 			eq.depop(223022); -- A_Deadly_Warboar
 			eq.depop(223023); -- Deathbringer_Skullsmash
-			eq.spawn2(223031,0,0,1250,1085,359.5,192); -- Deathbringer_Skullsmash
-			eq.spawn2(223032,0,0,1250,1135,359.5,192); -- A_Deadly_Warboar
+			eq.spawn2(223031,0,0,1250,1085,359.5,384); -- Deathbringer_Skullsmash
+			eq.spawn2(223032,0,0,1250,1135,359.5,384); -- A_Deadly_Warboar
 		end
 	elseif (current_phase == "Phase3.3") then
 		event_counter = event_counter + 1;
@@ -361,8 +361,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,5,1);
 			eq.depop(223012); -- Sinrunal_Gorgedreal
 			eq.depop(223013); -- Herlsoakian
-			eq.spawn2(223038,0,0,1250,1085,359.5,192); -- Sinrunal_Gorgedreal
-			eq.spawn2(223037,0,0,1250,1135,359.5,192); -- Herlsoakian
+			eq.spawn2(223038,0,0,1250,1085,359.5,384); -- Sinrunal_Gorgedreal
+			eq.spawn2(223037,0,0,1250,1135,359.5,384); -- Herlsoakian
 			end
 	elseif (current_phase == "Phase3.4") then
 		event_counter = event_counter + 1;
@@ -375,8 +375,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,6,1);
 			eq.depop(223010); -- A_Needletusk_Warboar
 			eq.depop(223011); -- Deathbringer_Rianit
-			eq.spawn2(223047,0,0,1250,1085,359.5,192); -- A_Needletusk_Warboar
-			eq.spawn2(223046,0,0,1250,1135,359.5,192); -- Deathbringer_Rianit
+			eq.spawn2(223047,0,0,1250,1085,359.5,384); -- A_Needletusk_Warboar
+			eq.spawn2(223046,0,0,1250,1135,359.5,384); -- Deathbringer_Rianit
 		end
 	elseif (current_phase == "Phase3.5") then
 		event_counter = event_counter + 1;
@@ -389,8 +389,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,7,1);
 			eq.depop(223014); -- Xerskel_Gerodnsal
 			eq.depop(223015); -- Dersool_Fal`Giersnaol
-			eq.spawn2(223050,0,0,1250,1085,359.5,192); -- Dersool_Fal`Giersnaol
-			eq.spawn2(223051,0,0,1250,1135,359.5,192); -- Xerskel_Gerodnsal
+			eq.spawn2(223050,0,0,1250,1085,359.5,384); -- Dersool_Fal`Giersnaol
+			eq.spawn2(223051,0,0,1250,1135,359.5,384); -- Xerskel_Gerodnsal
 		end
 	elseif (current_phase == "Phase3.6") then
 		event_counter = event_counter + 1;
@@ -403,8 +403,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,8,1);
 			eq.depop(223020); -- Dark_Knight_of_Terris
 			eq.depop(223021); -- Undead_Squad_Leader
-			eq.spawn2(223058,0,0,1250,1085,359.5,192); -- Dark_Knight_of_Terris
-			eq.spawn2(223057,0,0,1250,1135,359.5,192); -- Undead_Squad_Leader
+			eq.spawn2(223058,0,0,1250,1085,359.5,384); -- Dark_Knight_of_Terris
+			eq.spawn2(223057,0,0,1250,1135,359.5,384); -- Undead_Squad_Leader
 		end
 	elseif (current_phase == "Phase3.7") then
 		event_counter = event_counter + 1;
@@ -417,8 +417,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,9,1);
 			eq.depop(223018); -- Dreamwarp
 			eq.depop(223019); -- Champion_of_Torment
-			eq.spawn2(223066,0,0,1250,1085,359.5,192); -- Dreamwarp
-			eq.spawn2(223065,0,0,1250,1135,359.5,192); -- Champion_of_Torment
+			eq.spawn2(223066,0,0,1250,1085,359.5,384); -- Dreamwarp
+			eq.spawn2(223065,0,0,1250,1135,359.5,384); -- Champion_of_Torment
 		end
 	elseif (current_phase == "Phase3.8") then
 		event_counter = event_counter + 1;
@@ -429,8 +429,8 @@ function ControlPhaseThree()
 			eq.spawn_condition("potimeb",instance_id,9,0);
 			eq.clear_spawn_timers();
 			-- spawn golems
-			eq.spawn2(223073,0,0,1492,1110,374.1,195.5); -- Avatar_of_the_Elements
-			eq.spawn2(223074,0,0,1563,1110,374.1,195.5); -- Supernatural_Guardian
+			eq.spawn2(223073,0,0,1492,1110,374.1,391); -- Avatar_of_the_Elements
+			eq.spawn2(223074,0,0,1563,1110,374.1,391); -- Supernatural_Guardian
 		end
 	elseif (current_phase == "Phase3.9") then
 		event_counter = event_counter + 1;
@@ -470,22 +470,22 @@ function SpawnPhaseFour()
 		eq.repop_zone();
 	else
 		if (bit.band(phase_bit, 1) == 0) then
-			eq.spawn2(223075,0,0,-310,307,365,95); -- Terris Thule
+			eq.spawn2(223075,0,0,-310,307,365,190); -- Terris Thule
 		else
 			event_counter = event_counter + 1;
 		end
 		if (bit.band(phase_bit, 2) == 0) then
-			eq.spawn2(223076,0,0,-320,-316,358,32.5); -- Saryrn
+			eq.spawn2(223076,0,0,-320,-316,358,65); -- Saryrn
 		else
 			event_counter = event_counter + 1;
 		end
 		if (bit.band(phase_bit, 4) == 0) then
-			eq.spawn2(223077,0,0,405,-84,358,192); -- Tallon Zek
+			eq.spawn2(223077,0,0,405,-84,358,384); -- Tallon Zek
 		else
 			event_counter = event_counter + 1;
 		end
 		if (bit.band(phase_bit, 8) == 0) then
-			eq.spawn2(223078,0,0,405,75,358,192); -- Vallon Zek
+			eq.spawn2(223078,0,0,405,75,358,384); -- Vallon Zek
 		else
 			event_counter = event_counter + 1;
 		end
@@ -506,22 +506,22 @@ function SpawnPhaseFive()
 		-- god that hasn't yet been killed.
 		if (bit.band(phase_bit, 16) == 0) then 
 			if (bit.band(phase_bit, 1) == 0) then
-				eq.spawn2(223098,0,0,-299,-297,23.3,31); -- Fake Bertoxxulous
+				eq.spawn2(223098,0,0,-299,-297,23.3,62); -- Fake Bertoxxulous
 			else
 				event_counter = event_counter + 1;
 			end
 			if (bit.band(phase_bit, 2) == 0) then
-				eq.spawn2(223165,0,0,-257,255,6,101.5); -- Fake Cazic
+				eq.spawn2(223165,0,0,-257,255,6,203); -- Fake Cazic
 			else
 				event_counter = event_counter + 1;
 			end
 			if (bit.band(phase_bit, 4) == 0) then
-				eq.spawn2(223000,0,0,303.3,306,13.3,161.5); -- Fake Innoruuk
+				eq.spawn2(223000,0,0,303.3,306,13.3,323); -- Fake Innoruuk
 			else
 				event_counter = event_counter + 1;
 			end
 			if (bit.band(phase_bit, 8) == 0) then
-				eq.spawn2(223001,0,0,264,-279,18.75,217.5); -- Fake Rallos
+				eq.spawn2(223001,0,0,264,-279,18.75,435); -- Fake Rallos
 			else
 				event_counter = event_counter + 1;
 			end
@@ -533,22 +533,22 @@ function SpawnPhaseFive()
 		-- Armies are dead, which gods should we pop
 		else 
 			if (bit.band(phase_bit, 1) == 0) then
-				eq.spawn2(223142,0,0,-299,-297,23.3,31); -- Real Bertoxxulous
+				eq.spawn2(223142,0,0,-299,-297,23.3,62); -- Real Bertoxxulous
 			else 
 				event_counter = event_counter + 1;
 			end
 			if (bit.band(phase_bit, 2) == 0) then
-				eq.spawn2(223166,0,0,-257,255,6,101.5); -- Real Cazic
+				eq.spawn2(223166,0,0,-257,255,6,203); -- Real Cazic
 			else 
 				event_counter = event_counter + 1;
 			end
 			if (bit.band(phase_bit, 4) == 0) then
-				eq.spawn2(223167,0,0,303.3,306,13.3,161.5); -- Real Innoruuk
+				eq.spawn2(223167,0,0,303.3,306,13.3,323); -- Real Innoruuk
 			else 
 				event_counter = event_counter + 1;
 			end
 			if (bit.band(phase_bit, 8) == 0) then
-				eq.spawn2(223168,0,0,264,-279,18.75,217.5); -- Real Rallos
+				eq.spawn2(223168,0,0,264,-279,18.75,435); -- Real Rallos
 			else 
 				event_counter = event_counter + 1;
 			end

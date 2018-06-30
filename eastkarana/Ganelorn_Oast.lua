@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20881,item2 = 20880,item3 = 10151,item4 = 5408})) then
 		e.self:Say("You have done well. I sense the one I have been hunting in the distance. As your final test, you must track him down and destroy him.");
-		eq.spawn2(15183,0,0,-800,-2712,15.6,138);
+		eq.spawn2(15183,0,0,-800,-2712,15.6,276);
 		e.other:Ding();
 		e.other:Faction(99,50,0);
 		e.other:Faction(178,50,0);

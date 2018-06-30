@@ -170,10 +170,10 @@ function Tunat_Second_HP(e)
     e.self:TempName("Pixtt Xxeric Kex");
 
     -- Spawn Adds
-    eq.spawn2(298044, 0, 0, 334, -117, 21, 140);
-    eq.spawn2(298043, 0, 0, 356, -154, 21, 178);
-    eq.spawn2(298042, 0, 0, 353, -201, 21, 217);
-    eq.spawn2(298041, 0, 0, 322, -215, 21, 248);
+    eq.spawn2(298044, 0, 0, 334, -117, 21, 280);
+    eq.spawn2(298043, 0, 0, 356, -154, 21, 356);
+    eq.spawn2(298042, 0, 0, 353, -201, 21, 434);
+    eq.spawn2(298041, 0, 0, 322, -215, 21, 496);
 
     -- Rehaste 4740
     e.self:CastSpell(4740, e.self:GetID());
@@ -256,8 +256,8 @@ function Tunat_Second_HP(e)
     e.self:SendIllusionPacket({race=400,gender=2,texture=11});
     e.self:TempName("Zun`Muram Mordl Delt");
 
-    eq.spawn2(298050, 0, 0, 334, -117, 21, 140);
-    eq.spawn2(298050, 0, 0, 356, -154, 21, 178);
+    eq.spawn2(298050, 0, 0, 334, -117, 21, 280);
+    eq.spawn2(298050, 0, 0, 356, -154, 21, 356);
     
     -- Rehaste 4740
     e.self:CastSpell(4740, e.self:GetID());
@@ -298,7 +298,7 @@ function Tunat_Second_HP(e)
 end
 
 function Tunat_First_Death(e)
-	eq.spawn2(298055,0,0, 309, -170.8, 21.3, 59.4);
+	eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8);
 
   eq.depop_all(298113);
   eq.depop_all(298209);
@@ -308,19 +308,19 @@ function Tunat_First_Spawn(e)
   eq.set_next_hp_event(40);
 
   -- Spawn the Dogs
-  eq.spawn2(298209, 0, 0, 445, -203, 25, 17);
-  eq.spawn2(298209, 0, 0, 447, -139, 25, 99);
+  eq.spawn2(298209, 0, 0, 445, -203, 25, 34);
+  eq.spawn2(298209, 0, 0, 447, -139, 25, 198);
 
   -- Spawn the Living
-  lp_list[1] = eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 56.00);
-  lp_list[2] = eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 56.00);
-  lp_list[3] = eq.spawn2(298113, 0, 0,498.00, -193.00, 23.75, 56.00);
-  lp_list[4] = eq.spawn2(298113, 0, 0,476.00, -242.00, 23.75, 123.00);
-  lp_list[5] = eq.spawn2(298113, 0, 0,428.00, -242.00, 23.75, 123.00);
-  lp_list[6] = eq.spawn2(298113, 0, 0,454.00, -242.00, 23.75, 123.00);
-  lp_list[7] = eq.spawn2(298113, 0, 0,478.00, -100.00, 23.75, 14.00);
-  lp_list[8] = eq.spawn2(298113, 0, 0,454.00, -100.00, 23.75, 14.00);
-  lp_list[9] = eq.spawn2(298113, 0, 0,431.00, -100.00, 23.75, 14.00);
+  lp_list[1] = eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 112);
+  lp_list[2] = eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 112);
+  lp_list[3] = eq.spawn2(298113, 0, 0,498.00, -193.00, 23.75, 112);
+  lp_list[4] = eq.spawn2(298113, 0, 0,476.00, -242.00, 23.75, 246);
+  lp_list[5] = eq.spawn2(298113, 0, 0,428.00, -242.00, 23.75, 246);
+  lp_list[6] = eq.spawn2(298113, 0, 0,454.00, -242.00, 23.75, 246);
+  lp_list[7] = eq.spawn2(298113, 0, 0,478.00, -100.00, 23.75, 28);
+  lp_list[8] = eq.spawn2(298113, 0, 0,454.00, -100.00, 23.75, 28);
+  lp_list[9] = eq.spawn2(298113, 0, 0,431.00, -100.00, 23.75, 28);
 
 end
 
@@ -334,17 +334,17 @@ end
 function Tunat_Second_Timer(e)
 
   if (e.timer == "pkk_adds") then
-    eq.spawn2(298048, 0, 0, 334, -117, 21, 140);
-    eq.spawn2(298048, 0, 0, 356, -154, 21, 178);
-    eq.spawn2(298048, 0, 0, 353, -201, 21, 217);
-    eq.spawn2(298048, 0, 0, 322, -215, 21, 248);
+    eq.spawn2(298048, 0, 0, 334, -117, 21, 280);
+    eq.spawn2(298048, 0, 0, 356, -154, 21, 356);
+    eq.spawn2(298048, 0, 0, 353, -201, 21, 434);
+    eq.spawn2(298048, 0, 0, 322, -215, 21, 496);
 
   elseif (e.timer == "prt_adds") then
-    eq.spawn2(298045, 0, 0, 334, -117, 21, 140);
-    eq.spawn2(298045, 0, 0, 356, -154, 21, 178);
-    eq.spawn2(298045, 0, 0, 353, -201, 21, 217);
-    eq.spawn2(298045, 0, 0, 322, -215, 21, 248);
-    eq.spawn2(298045, 0, 0, 322, -225, 21, 248);
+    eq.spawn2(298045, 0, 0, 334, -117, 21, 280);
+    eq.spawn2(298045, 0, 0, 356, -154, 21, 356);
+    eq.spawn2(298045, 0, 0, 353, -201, 21, 434);
+    eq.spawn2(298045, 0, 0, 322, -215, 21, 496);
+    eq.spawn2(298045, 0, 0, 322, -225, 21, 496);
 
   elseif (e.timer == "ae_timer") then
     local cast_ae = eq.ChooseRandom(1,2,3);
@@ -374,7 +374,7 @@ function Tunat_Second_Timer(e)
 
     eq.depop_all(298050);
 
-    eq.spawn2(298055,0,0, 309, -170.8, 21.3, 59.4);
+    eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8);
     eq.depop();
 
   end
@@ -428,7 +428,7 @@ function Tunat_First_Timer(e)
     eq.depop();
     eq.depop_all(298113);
     eq.depop_all(298209);
-    eq.spawn2(298014, 0, 0, 462, -171, 32, 8);
+    eq.spawn2(298014, 0, 0, 462, -171, 32, 16);
 
   end
 end

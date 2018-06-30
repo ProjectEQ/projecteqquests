@@ -20,10 +20,10 @@ local convert_max_hit=1855;
 local cazic_cooldown =0;
 
 function AMV_Spawn(e)
-	eq.unique_spawn(317108,0,0, 617,5080,278,248); --Vangl`s_Focus (317108)
+	eq.unique_spawn(317108,0,0, 617,5080,278,496); --Vangl`s_Focus (317108)
 	eq.set_next_hp_event(75);
 	
-	eq.set_timer("close_doors",1000);	
+	eq.set_timer("close_doors",30*1000);	
 end
 
 function AMV_HP(e)
@@ -57,6 +57,8 @@ function AMV_Combat(e)
 		eq.stop_timer("touch");
 		eq.stop_timer("gaze");
 		eq.stop_timer("mark");
+		eq.stop_timer("focus40");
+		eq.stop_timer("focus30");
 	end
 end
 
@@ -92,9 +94,9 @@ function AMV_Timer(e)
 		eq.stop_timer("check_mark");	
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
-			eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
 		else
-			eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);
 		end
 	elseif (e.timer == "focus30") then
 		eq.stop_timer("focus30");
@@ -131,7 +133,7 @@ function AMV_Death(e)
 	--check if OMM is up and there are no preexisting AMV lockouts in raid -> spawn chest
 	--eq.unique_spawn(317112,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Ornate_Chest (317112)
 	eq.zone_emote(13,"As the Arch Magus' corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep gutteral laugh growing louder.");
-	e.self:CameraEffect(15000,8);
+	e.self:CameraEffect(15000,5);
 	eq.depop_all(317108);
 	
 	eq.signal(317116 , 317107);
@@ -202,7 +204,7 @@ function event_encounter_load(e)
 	eq.register_npc_event('amv', Event.combat, 			317108, Focus_Combat);  
 	eq.register_npc_event('amv', Event.timer, 			317108, Focus_Timer);
 	
-	eq.register_npc_event('amv', Event.spawn, 			317015, Convert_Spawn);
+	eq.register_npc_event('amv', Event.spawn, 			317110, Convert_Spawn);
 	eq.register_npc_event('amv', Event.timer, 			317110, Convert_Timer);    
 end
 

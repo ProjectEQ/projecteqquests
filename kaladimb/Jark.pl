@@ -11,7 +11,7 @@ sub EVENT_SAY {
   }
   if ($text=~/dinner/i) {
     quest::say("Har, I know you were a good sort. Nella has it. She's out there somewhere in the lower areas. She likes to visit the temple, so maybe she's there. Just tell 'er Jark sent ya and she'll prolly have everythin' ready fer me.");
-    quest::spawn2(67090,0,0,178.5,708.9,3.4,194.2); #spawn Nella Stonebraids
+    quest::spawn2(67090,0,0,178.5,708.9,3.4,388.4); #spawn Nella Stonebraids
   }
 }
 

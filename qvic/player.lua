@@ -24,7 +24,7 @@ function event_click_door(e)
 			for i = 0, player_list_count - 1, 1 do
 				local client_v = player_list:GetMember(i):CastToClient();
 				if (client_v.valid) then
-					client_v:MovePC(297, -327, 0, -418, 65);
+					client_v:MovePC(297, -327, 0, -418, 130);
 				end
 			end
 		end

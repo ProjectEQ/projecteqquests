@@ -54,46 +54,46 @@ function VesthSpawn(e)
     minion_di = 20
     lich_count = 0 -- just in case GM repops
 
-    eq.spawn2(123174, 0, 0, -1048, 1285, 2, 510):SetAppearance(3)
+    eq.spawn2(123174, 0, 0, -1048, 1285, 2, 510):SetAppearance(3) -- needs_heading_validation
 
     -- necros
-    eq.spawn2(123175, 0, 0, -1005, 1314, 2, 346)
-    eq.spawn2(123176, 0, 0, -1009, 1288, 2, 382)
-    eq.spawn2(123177, 0, 0, -1013, 1254, 2, 442)
-    eq.spawn2(123178, 0, 0, -1044, 1214, 2, 506)
-    eq.spawn2(123179, 0, 0, -1084, 1230, 2, 58)
-    eq.spawn2(123180, 0, 0, -1107, 1269, 2, 112)
-    eq.spawn2(123181, 0, 0, -1096, 1317, 2, 166)
+    eq.spawn2(123175, 0, 0, -1005, 1314, 2, 346) -- needs_heading_validation
+    eq.spawn2(123176, 0, 0, -1009, 1288, 2, 382) -- needs_heading_validation
+    eq.spawn2(123177, 0, 0, -1013, 1254, 2, 442) -- needs_heading_validation
+    eq.spawn2(123178, 0, 0, -1044, 1214, 2, 506) -- needs_heading_validation
+    eq.spawn2(123179, 0, 0, -1084, 1230, 2, 116)
+    eq.spawn2(123180, 0, 0, -1107, 1269, 2, 224)
+    eq.spawn2(123181, 0, 0, -1096, 1317, 2, 332)
 
     -- minions
-    eq.spawn2(123182, 0, 0, -992, 1325, 2, 341)
-    eq.spawn2(123182, 0, 0, -987, 1316, 2, 350)
+    eq.spawn2(123182, 0, 0, -992, 1325, 2, 341) -- needs_heading_validation
+    eq.spawn2(123182, 0, 0, -987, 1316, 2, 350) -- needs_heading_validation
 
-    eq.spawn2(123183, 0, 0, -989, 1296, 2, 376)
-    eq.spawn2(123183, 0, 0, -989, 1282, 2, 386)
+    eq.spawn2(123183, 0, 0, -989, 1296, 2, 376) -- needs_heading_validation
+    eq.spawn2(123183, 0, 0, -989, 1282, 2, 386) -- needs_heading_validation
 
-    eq.spawn2(123184, 0, 0, -991, 1256, 2, 396)
-    eq.spawn2(123184, 0, 0, -996, 1230, 2, 423)
+    eq.spawn2(123184, 0, 0, -991, 1256, 2, 396) -- needs_heading_validation
+    eq.spawn2(123184, 0, 0, -996, 1230, 2, 423) -- needs_heading_validation
 
-    eq.spawn2(123185, 0, 0, -1034, 1195, 2, 505)
-    eq.spawn2(123185, 0, 0, -1047, 1192, 2, 503)
+    eq.spawn2(123185, 0, 0, -1034, 1195, 2, 505) -- needs_heading_validation
+    eq.spawn2(123185, 0, 0, -1047, 1192, 2, 503) -- needs_heading_validation
 
-    eq.spawn2(123186, 0, 0, -1102, 1194, 2, 39)
-    eq.spawn2(123186, 0, 0, -1101, 1204, 2, 56)
+    eq.spawn2(123186, 0, 0, -1102, 1194, 2, 78)
+    eq.spawn2(123186, 0, 0, -1101, 1204, 2, 112)
 
-    eq.spawn2(123187, 0, 0, -1125, 1257, 2, 111)
-    eq.spawn2(123187, 0, 0, -1128, 1268, 2, 113)
+    eq.spawn2(123187, 0, 0, -1125, 1257, 2, 222)
+    eq.spawn2(123187, 0, 0, -1128, 1268, 2, 226)
 
-    eq.spawn2(123188, 0, 0, -1127, 1310, 2, 144)
-    eq.spawn2(123188, 0, 0, -1120, 1333, 2, 159)
+    eq.spawn2(123188, 0, 0, -1127, 1310, 2, 288)
+    eq.spawn2(123188, 0, 0, -1120, 1333, 2, 318)
 
-    eq.set_timer("despawn", 1200000) -- 20 mins
+    eq.set_timer("despawn", 7200000) -- 2 hours
 end
 
 function VesthDeath(e)
     if event_active then
         eq.depop_all(123174)
-        eq.spawn2(123189, 0, 0, -1048, 1285, 2, 510)
+        eq.spawn2(123189, 0, 0, -1048, 1285, 2, 510) -- needs_heading_validation
     end
 end
 

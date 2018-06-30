@@ -29,7 +29,7 @@ if ($client->GetGlobal("beast_epic") ==15) {
  if ($client->GetGlobal("beast_epic") ==17) {
   if ($text=~/hail/i) { 
    quest::say("I'm so glad you are here. There is a gnoll here seeking to steal my very essence! How did I come upon such bad luck? I believe this gnoll heard about the theft of my warder's esseence, and now it wants mine. You must find it and spill its blood and take it to Muada forthwith!");
-   quest::unique_spawn(181225,0,0,800,3400,83,150);  #Dismal_Darkpaw_Mystic
+   quest::unique_spawn(181225,0,0,800,3400,83,300);  #Dismal_Darkpaw_Mystic
   }
  } 
 }

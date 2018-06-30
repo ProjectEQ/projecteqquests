@@ -19,7 +19,7 @@ function event_trade(e)
 			e.other:Faction(53,-1,0); -- Corrupt Guards of Qeynos
 			e.other:Faction(105,-1,0); -- Freeport Militia
 			e.other:Faction(184,1,0); -- Knights of Truth
-			eq.unique_spawn(382245,56,0,820,-931,-23,128); -- spawns Krazen Loosh
+			eq.unique_spawn(382245,56,0,820,-931,-23,256); -- spawns Krazen Loosh
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

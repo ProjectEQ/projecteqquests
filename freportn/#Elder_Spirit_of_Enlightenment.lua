@@ -1,7 +1,7 @@
 --freeportwest/Elder_Spirit_of_Enlightenment.lua NPCID 383145
 --Shaman Epic 1.5, 2.0 and Prequest
 local count = 0;
-local char_id;
+local char_id = 0;
 local client;
 
 function event_say(e)
@@ -91,11 +91,10 @@ function event_say(e)
 			e.self:Say("The fiend that is consuming our spirits is in Discord and is siphoning what little energy and strength we have remaining. We are losing ourselves in the passage of Discord. Without the spirits of Might, Patience, and Wisdom, we may not [" .. eq.say_link("survive") .. "]. We are not whole without them.");
 		elseif(e.message:findi("survive") and qglobals["shaman_epic"] == "12") then
 			e.self:Say("Make your way to a place of great suffering and death in Kuua. You will need to investigate to help us learn more about our waning spirits. We have no influence there and it is a wholly unpredictable place.");
-		elseif(e.message:findi("prepared for the ceremony") and qglobals["shaman_epic"] == "14") then
+		elseif(e.message:findi("prepared for the ceremony") and qglobals["shaman_epic"] == "14" and char_id == 0) then
 			e.self:Say("Follow me closely. We must gather the spirits and try to call our ethereal kin of Might, Patience, and Wisdom. The other spirits will join us for Ruchu, namely the Spirit of Perseverance, Spirit of Understanding, Spirit of Fortitude, Spirit of Will, and the Spirit of Sense.");
 			eq.set_timer("start_event",5000);
 			char_id = e.other:CharacterID();
-			client = eq.get_entity_list():GetClientByCharID(char_id);
 			count=0;
 		elseif(e.message:findi("faithful heyokah") and qglobals["shaman_epic"] == "14") then
 			e.self:Say("Well, then, the time has come. Give me your Crafted Talisman of Fates, heyokah. Should you not have it now, give it to me when you do. If you have lost it, tell me so. I may be able to help you.");	
@@ -149,21 +148,42 @@ function event_trade(e)
 		eq.depop_all(8124);
 		eq.depop_all(8125);
 		eq.depop_all(8126);
+		-- reset variables if they skip the event
+		eq.stop_timer("event");
+		char_id = 0;
+		client = nil;
 	end
 	item_lib.return_items(e.self, e.other, e.trade, e.text);
 end
 
 function event_timer(e)
 	if e.timer=="start_event" then
-		eq.spawn2(8119 ,0,0, 41, 73, 17.13 ,90);	--#Elder Spirit of Perseverance 
-		eq.spawn2(8120 ,0,0, 50.65, 72.66,17.13 ,130); --#Elder Spirit of Understanding
-		eq.spawn2(8121 ,0,0, 57.8,67.3 ,17.13 , 192); --#Elder Spirit of Fortitude
-		eq.spawn2(8122 ,0,0,56.7 ,59.5 ,17.13 , 210); --#Elder Spirit of Will
+		eq.spawn2(8119 ,0,0, 41, 73, 17.13 ,180);	--#Elder Spirit of Perseverance 
+		eq.spawn2(8120 ,0,0, 50.65, 72.66,17.13 ,260); --#Elder Spirit of Understanding
+		eq.spawn2(8121 ,0,0, 57.8,67.3 ,17.13 , 384); --#Elder Spirit of Fortitude
+		eq.spawn2(8122 ,0,0,56.7 ,59.5 ,17.13 , 420); --#Elder Spirit of Will
 		eq.spawn2(8123 ,0,0, 46.3,55 ,17.13 ,0 ); --#Elder Spirit of Sense
 		e.self:Say("It is time to begin the Ruchu. Collect your strength and let us begin.");
 		eq.set_timer("event",10000);
 		eq.stop_timer("start_event");
 	elseif e.timer=="event" then
+		-- prevent crash
+		client = eq.get_entity_list():GetClientByCharID(char_id);
+		if (not client.valid) then
+			char_id = 0;
+			client = nil;
+			eq.stop_timer("event");
+			eq.depop_all(8119);
+			eq.depop_all(8120);
+			eq.depop_all(8121);
+			eq.depop_all(8122);
+			eq.depop_all(8123);
+			eq.depop_all(8124);
+			eq.depop_all(8125);
+			eq.depop_all(8126);
+			return
+		end
+
 		if(count == 0) then
 			client:Message(0,"You recognize that the spirits hold items you've retrieved -- crafted totems, the necklace, beads. ");
 		elseif(count == 1) then
@@ -179,12 +199,12 @@ function event_timer(e)
 			client:Message(0,"The spirits begin to chant in unison in a language no Norrathian understands, but you only hear it in your mind. 'Ruchu immana kiratu. Ruchu immana kiratu.'");
 		elseif(count == 6) then	
 			client:Message(0,"As the magic fades, the Spirit of Wisdom lies inside the circle, dazed and confused.");
-			eq.spawn2(8125 ,0,0, 45.15, 61.72, 17.13,37); --#Elder Spirit of Wisdom
+			eq.spawn2(8125 ,0,0, 45.15, 61.72, 17.13,74); --#Elder Spirit of Wisdom
 		elseif(count == 7) then	
 			client:Message(0,"The spirits continue to chant.");
 		elseif(count == 9) then	
 			client:Message(0,"This time, the Spirit of Patience appears from the ether, looking tired, but bright-eyed.");
-			eq.spawn2( 8126,0,0, 45.1,67.5,17.13 ,96 ); --#Elder Spirit of Patience
+			eq.spawn2( 8126,0,0, 45.1,67.5,17.13 ,192 ); --#Elder Spirit of Patience
 		elseif(count == 10) then	
 			eq.signal(8125 ,1); --#Elder Spirit of Wisdom
 		elseif(count == 11) then	
@@ -197,7 +217,7 @@ function event_timer(e)
 			client:Message(0,"The spirits respond by chanting louder. The rattling of talisman beads fills the air.");
 		elseif(count == 16) then
 			client:Message(0,"Finally, the Spirit of Might appears, its essence is faded and it is so weak it barely keeps a hold on its own existence.");
-			eq.spawn2(8124,0,0,50.25 ,64 , 17.13 ,190 ); --#Elder Spirit of Might
+			eq.spawn2(8124,0,0,50.25 ,64 , 17.13 ,380 ); --#Elder Spirit of Might
 		elseif(count == 17) then	
 			client:Message(0,"The spirits slow their chanting and then there is silence. ");
 		elseif(count == 18) then	
@@ -206,6 +226,8 @@ function event_timer(e)
 			e.self:Say("You are not to blame. The voice of Discord is becoming deafening in Norrath. This heyokah has done right by all of us and should be suitably rewarded.' The spirits all nod in thanks as they prepare to quickly take the returned spirits back to their ethereal existence to strengthen them.");
 		elseif(count == 20) then	
 			e.self:Say("Come to me shaman and state to me that you are, indeed, a [" .. eq.say_link("faithful heyokah") .. "].");
+			char_id = 0;
+			client = nil;
 			eq.stop_timer("event");
 			eq.set_timer("depop_spirits",10*1000);
 		end	

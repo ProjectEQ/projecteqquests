@@ -26,6 +26,6 @@ sub	EVENT_WAYPOINT_ARRIVE
 		# He reached his goal. Spead out
 		quest::stop();
 		quest::shout("Wait!  Guard the way to Shar Vahl!  We cannot let them advance any further.");
-		quest::moveto(2645, 1206, 143.12,180,1);
+		quest::moveto(2645, 1206, 143.12,360,1);
 		}
 	}

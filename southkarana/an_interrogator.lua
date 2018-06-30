@@ -50,15 +50,15 @@ function event_waypoint_arrive(e)
 	if(e.wp == 1) then
 		--e.self:PauseWandering(60000);  This does not seems to work properly on existing grid.
 		e.self:Say("Theodore Exanthem by order of the Council of Qeynos and his lordship Antonius Bayle, I order you to come out of there immediately!");
-		eq.unique_spawn(14146,0,0,-2680,-5465,0,192);
+		eq.unique_spawn(14146,0,0,-2680,-5465,0,384);
 	elseif(e.wp == 2) then  -- a workaround for waypoint
 		eq.signal(14146,6,5000);
 	elseif(e.wp == 3) then
-		eq.unique_spawn(14147,0,0,-3287,-6040,0,28);
-		eq.unique_spawn(14127,0,0,-3280,-6050,0,31);
-		eq.spawn2(14140,0,0,-3285,-6075,0,78);
+		eq.unique_spawn(14147,0,0,-3287,-6040,0,56);
+		eq.unique_spawn(14127,0,0,-3280,-6050,0,62);
+		eq.spawn2(14140,0,0,-3285,-6075,0,156);
 		eq.spawn2(14140,0,0,-3333,-6055,0,0);
-		eq.spawn2(14148,0,0,-3306,-6056,0,66);
+		eq.spawn2(14148,0,0,-3306,-6056,0,132);
 		eq.signal(14146,7,2000);
 	end
 end

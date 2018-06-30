@@ -3,7 +3,7 @@ local phase = 0;
 function event_spawn(e)
 	phase = 1;
 	--spawn vallon up by the door
-	eq.spawn2(214083,0,0,-822,1980,205,130.9); --Real Vallon
+	eq.spawn2(214083,0,0,-822,1980,205,261.8); --Real Vallon
 end
 
 function event_signal(e)
@@ -15,11 +15,11 @@ function event_signal(e)
 		end
 		phase = phase + 1; --increment phase passed to vallon
 		--spawn Vallon and 4 clones.
-		eq.spawn2(214110,0,0,-606,1980,195.1,130.9);	-- Fake Vallon
-		eq.spawn2(214110,0,0,-666,1980,195.1,130.9);	-- Fake Vallon
-		eq.spawn2(214110,0,0,-636,1950,195.1,130.9);	-- Fake Vallon
-		eq.spawn2(214110,0,0,-636,2010,195.1,130.9);	-- Fake Vallon
-		eq.spawn2(214083,0,0,-636,1980,195.1,130.9);	-- Real Vallon
+		eq.spawn2(214110,0,0,-606,1980,195.1,261.8);	-- Fake Vallon
+		eq.spawn2(214110,0,0,-666,1980,195.1,261.8);	-- Fake Vallon
+		eq.spawn2(214110,0,0,-636,1950,195.1,261.8);	-- Fake Vallon
+		eq.spawn2(214110,0,0,-636,2010,195.1,261.8);	-- Fake Vallon
+		eq.spawn2(214083,0,0,-636,1980,195.1,261.8);	-- Real Vallon
 	elseif (e.signal == 3) then --vallon dead, despawn with timer
 		eq.depop_with_timer();
 	end

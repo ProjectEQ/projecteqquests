@@ -30,10 +30,10 @@
    }
    if ($elemwave == 8) {  
     quest::emote("The room grows warmer as the lava pool begins to steam heavily."); 
-    quest::spawn2(278123,0,0,-203,-61,-17.5,195); 
-    quest::spawn2(278123,0,0,-207,-124,-17.5,195); 
-    quest::spawn2(278123,0,0,-262,-130,-17.5,195); 
-    quest::spawn2(278123,0,0,-256,-54,-17.5,195); 
+    quest::spawn2(278123,0,0,-203,-61,-17.5,390); 
+    quest::spawn2(278123,0,0,-207,-124,-17.5,390); 
+    quest::spawn2(278123,0,0,-262,-130,-17.5,390); 
+    quest::spawn2(278123,0,0,-256,-54,-17.5,390); 
     $elemwave = 0; 
     } 
    if ($elemwavea == 4) {  

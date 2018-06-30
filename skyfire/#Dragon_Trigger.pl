@@ -11,7 +11,7 @@ sub EVENT_TIMER {
       }
 
         if($timer == 1 && defined $qglobals{door_one} && defined $qglobals{door_two} && defined $qglobals{door_three} && defined $qglobals{door_four} && !defined $qglobals{dragon_not_ready}) {
-          quest::spawn2(91097,0,0,921.7,936.8,-172.7,144.4);
+          quest::spawn2(91097,0,0,921.7,936.8,-172.7,288.8);
           quest::depop_withtimer();
           }
 }

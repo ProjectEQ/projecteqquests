@@ -52,23 +52,23 @@ function event_timer(e)
 		eq.set_timer("endevent",200*1000);
 	elseif e.timer=="ukki" then
 		eq.stop_timer("ukki");
-		eq.spawn2(166297,0,0,1785,-1058,-110.3,48);
+		eq.spawn2(166297,0,0,1785,-1058,-110.3,96);
 		eq.signal(166297, 1, 15);
 	elseif e.timer=="nyrash" then
 		eq.stop_timer("nyrash");
-		eq.spawn2(166296,0,0,1814,-1016,-102,131);
+		eq.spawn2(166296,0,0,1814,-1016,-102,262);
 		eq.signal(166296, 1, 15);
 	elseif e.timer=="nudulk" then
 		eq.stop_timer("nudulk");
-		eq.spawn2(166299,0,0,1817,-1078.5,-109,242);
+		eq.spawn2(166299,0,0,1817,-1078.5,-109,484);
 		eq.signal(166299, 1, 15);
 	elseif e.timer=="mikkily" then
 		eq.stop_timer("mikkily");
-		eq.spawn2(166295,0,0,1836,-1047,-107.5,187);
+		eq.spawn2(166295,0,0,1836,-1047,-107.5,374);
 		eq.signal(166295, 1, 15);
 	elseif e.timer=="wiqak" then
 		eq.stop_timer("wiqak");
-		eq.spawn2(166298,0,0,1791,-1027,-104.6,98);
+		eq.spawn2(166298,0,0,1791,-1027,-104.6,196);
 		eq.signal(166298, 1, 15);
 	elseif e.timer=="zemote" then
 		eq.stop_timer("zemote");

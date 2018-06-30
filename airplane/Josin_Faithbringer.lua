@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("I have faith that you will do well. Choose Alan or Deric");
 	elseif((e.message:findi("Alan")) and (e.other:Class() == "Cleric")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71080,0,0,660.7,1361.6,-766.9,193.2);
+		eq.spawn2(71080,0,0,660.7,1361.6,-766.9,386.4);
 		eq.depop_with_timer();
 	elseif((e.message:findi("Deric")) and (e.other:Class() == "Cleric")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71083,0,0,660.7,1338.0,-766.9,193.2);
+		eq.spawn2(71083,0,0,660.7,1338.0,-766.9,386.4);
 		eq.depop_with_timer();
 	end
 end

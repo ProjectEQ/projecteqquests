@@ -92,10 +92,10 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
        if ($timer == 1 && $start_event == 1 && $named_up == 0)  {
                quest::spawn_condition($zonesn,1,1);
                quest::ze(1,"Four enraged roars of fury echo from further down the bridge over the cacophany of an army waiting to hand out death. The powerful voice is then heard saying, 'Rexanous, Azobian, Hebabbilys, and Javonn! Come destroy these intruders.'");
-               quest::spawn2(217079,0,0,-1325,-1521.6,-202.2,98.9);
-               quest::spawn2(217080,0,0,-1283.4,-1568.4,-222.5,95.6);
-               quest::spawn2(217077,0,0,-1285.1,-1520.2,-202.2,88.3);
-               quest::spawn2(217078,0,0,-1350.4,-1559,-202.2,85.5);
+               quest::spawn2(217079,0,0,-1325,-1521.6,-202.2,197.8);
+               quest::spawn2(217080,0,0,-1283.4,-1568.4,-222.5,191.2);
+               quest::spawn2(217077,0,0,-1285.1,-1520.2,-202.2,176.6);
+               quest::spawn2(217078,0,0,-1350.4,-1559,-202.2,171);
                $start_event = 2;
             }
 
@@ -103,10 +103,10 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
         elsif ($timer == 1 && $start_event == 2 && $named_up == 0){
                 quest::spawn_condition($zonesn,1,0);
 		quest::ze(1,"As the last of the army is defeated visions of endless burning flames intrude into your mind. Suddenly the visions ends as a call comes from just ahead saying, 'Prepare to meet your end at the hands of the Council of Fire!'");
-                quest::spawn2(217083,0,0,-1459.5,-1150,-197.2,127.6);
-                quest::spawn2(217084,0,0,-1545.1,-1147.5,-197.2,130.6);
-                quest::spawn2(217082,0,0,-1432.1,-902.2,-185.8,134.80);
-                quest::spawn2(217081,0,0,-1578.1,-904.1,-185.8,132.8);
+                quest::spawn2(217083,0,0,-1459.5,-1150,-197.2,255.2);
+                quest::spawn2(217084,0,0,-1545.1,-1147.5,-197.2,261.2);
+                quest::spawn2(217082,0,0,-1432.1,-902.2,-185.8,269.6);
+                quest::spawn2(217081,0,0,-1578.1,-904.1,-185.8,265.6);
                 $start_event = 3;
             }
             

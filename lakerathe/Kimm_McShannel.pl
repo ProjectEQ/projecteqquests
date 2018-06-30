@@ -7,7 +7,7 @@ sub EVENT_SAY {
   if (defined $qglobals{shaman_epic} && $qglobals{shaman_epic} == 1) {
   if ($text=~/up to it/i) {
     quest::say("Very well, then, off you go in search of the seaweed.");
-    quest::spawn2(51160,0,0,2812,-771,-199,146);
+    quest::spawn2(51160,0,0,2812,-771,-199,292);
   }  
 }
 if (defined $qglobals{shaman_epic} && $qglobals{shaman_epic} == 3) {

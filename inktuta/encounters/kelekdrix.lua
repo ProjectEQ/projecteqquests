@@ -40,7 +40,7 @@ function KeleTimer(e)
 	if (top_hate.valid) then
 		kele:Say("Begone " .. top_hate:GetName())
 		kele:SetHate(top_hate, 1, 1)
-		top_hate:MovePCInstance(296, inst_id, 210, -500, -26, 245)
+		top_hate:MovePCInstance(296, inst_id, 210, -500, -26, 490)
 	end
 end
 
@@ -63,7 +63,7 @@ end
 
 function event_encounter_unload(e)
 	eq.get_entity_list():FindDoor(41):SetLockPick(0) -- unlock door
-	eq.spawn2(296027, 0, 0, 90, -515, -27, 64) -- #Mimezpo_the_Oracle
+	eq.spawn2(296027, 0, 0, 90, -515, -27, 128) -- #Mimezpo_the_Oracle
 	eq.set_global(inst_id .. "_inktuta_status", "2", 3, "H6")
 	eq.spawn_condition("inktuta", inst_id, 1, 0) -- turn off Usher/Watcher spawns
 	eq.depop_all(296025)

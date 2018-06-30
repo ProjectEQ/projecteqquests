@@ -4,7 +4,7 @@ function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail") and qglobals["shaman_epic"] == "9") then
 		e.self:Say("Are you here to help me? Yes, I feel the intent of your spirit. You must be careful, the evil beast that stole my necklace is ever near.");
-		eq.spawn2(293233,0,0,182.6,-661.5, -428.8,72); --Ikaav Spiritstealer
+		eq.spawn2(293233,0,0,182.6,-661.5, -428.8,144); --Ikaav Spiritstealer
 	end
 end
 

@@ -7,6 +7,8 @@ function event_click_door(e)
 			local instance_id = eq.get_zone_instance_id();
 			--e.self:MovePC(317, 504, 4729, 277.6, 0);
 			e.self:MovePCInstance(317,instance_id, 504, 4729, 277.6, 0)
+			-- so we need to signal to OMM about the click but we don't want to have any weird race with signal processing and client getting up there
+			e.self:SetEntityVariable("clicked_up", "1");
 			eq.signal(317109 , 1); --signal OMM that a click up happened
 			eq.debug("click up to amv");
 		else

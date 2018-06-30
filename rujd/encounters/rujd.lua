@@ -35,7 +35,7 @@ end
 
 function TM_Devrak_Death(e)
 	e.self:Emote("corpse crumples to the ground lifeless.  You search his lifeless body for some sign of a key, but are unable to find anything.  You do however notice a treasure chest out of the corner of your eye that you could have sworn wasn't there a minute ago.");
-	eq.spawn2(245241,0,0,-487,1002,-34.75,144); --spawn chest with Heavy Orcish Prison Key
+	eq.spawn2(245241,0,0,-487,1002,-34.75,288); --spawn chest with Heavy Orcish Prison Key
 	local el = eq.get_entity_list();
 	if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
 		treasure_shroud();
@@ -51,7 +51,7 @@ function TM_Dokorel_Death(e)
 end
 function TM_Velrek_Death(e)
 	e.self:Emote("corpse crumples to the ground lifeless.  You search his lifeless body for some sign of a key, but are unable to find anything.  You do however notice a treasure chest out of the corner of your eye that you could have sworn wasn't there a minute ago.");
-	eq.spawn2(245241,0,0,115,1082,-24.25,192); --spawn chest with Heavy Orcish Prison Key
+	eq.spawn2(245241,0,0,115,1082,-24.25,384); --spawn chest with Heavy Orcish Prison Key
 	local el = eq.get_entity_list();
 	if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
 		treasure_shroud();
@@ -158,18 +158,18 @@ function RPG_Timer(e)
 			--#Jealac_Yzinaql (245261) saved by #Piyea_Frost (245228) 
 			if (e.self:GetSpawnPointY()==-844) then
 				rpg_piyea=1;
-				eq.spawn2(245228, 0, 0, 908.3, -844, -31.4, 63);
+				eq.spawn2(245228, 0, 0, 908.3, -844, -31.4, 126);
 			--near west room
 			--#Bacluu_Iggn (245272) saved by #Eneau_Welani (245225) 
 			elseif (e.self:GetSpawnPointY()==-1006) then			
 				rpg_eneau=1;
-				eq.spawn2(245225, 0, 0, 1101, -999, -40, 93);
+				eq.spawn2(245225, 0, 0, 1101, -999, -40, 186);
 				--e.self:Say("rpg_eneau: " .. rpg_eneau)
 			--far west room
 			--#Yipzma_Tixxlea (245276) saved by #Maziyae_Xanl`Utin (245217)
 			elseif (e.self:GetSpawnPointY()==-1154) then
 				rpg_maziyae=1;
-				eq.spawn2(245217, 0, 0, 1340, -1152.3, -31.4, 184);			
+				eq.spawn2(245217, 0, 0, 1340, -1152.3, -31.4, 368);			
 			end
 		end
 		--e.self:Say("rpg_dead: " .. rpg_dead)
@@ -177,6 +177,7 @@ function RPG_Timer(e)
 end
 
 function RPG_Death(e)
+	eq.debug("RPG_Death(): GetSpawnPointY() = " .. e.self:GetSpawnPointY());
 	--Gaddian_Opaleye guard
 	if (e.self:GetSpawnPointY()==-1048) then
 		eq.signal(245264,1);
@@ -190,9 +191,10 @@ function RPG_Death(e)
 end
 
 function check_RPG()
+	eq.debug("check_RPG(): rpg_dead = " .. rpg_dead .. " boss_spawn = " .. boss_spawn);
 	if (rpg_dead>=5 and boss_spawn==0) then
 		eq.zone_emote(15, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
-		eq.spawn2(245296, 0, 0, 898, -1023, -16, 128);  --warden
+		eq.spawn2(245296, 0, 0, 898, -1023, -16, 256);  --warden
 		eq.spawn2(245284, 0, 0, 896, -1107, -17.8, 0);  --shaman
 		boss_spawn=1;
 	end
@@ -259,7 +261,7 @@ function Prisoner_Trade(e)
 		prisoners_freed=prisoners_freed+1;
 	if (prisoners_freed >= 3) then --im the last prisoner, different emote
 		e.self:Emote("grins as the shackles fall away.  'Thank you for freeing us, but your quest is not nearly finished.  Five of our brothers were dragged away not long ago to be executed in the gladiator pits.  You must hurry and free them!  The orcs will most certainly move quickly to kill our friends if they are alerted to our presence.  You'll have to split up and coordinate your ambush if we hope to free them all.  The three of us will meet you there, but you must keep the orcs busy while we free our friends.  Hurry! I think I hear the metal boots of that foul warden approaching, you must keep him from sounding the alarm!  He then fades into the shadows without a sound.");
-		eq.spawn2(245290, 0, 0, -290, 304, -23, 192); --#Prison_Guard_Talkor				
+		eq.spawn2(245290, 0, 0, -290, 304, -23, 384); --#Prison_Guard_Talkor				
 	else
 		e.self:Emote("'s eyes gleam as the key clicks in the lock and the shackles fall to the ground. 'Thanks you friend, I knew the brotherhood would send someone for us.  Hurry and free the others before the warden returns.");
 	end
@@ -337,12 +339,12 @@ function check_chests()
 		eq.zone_emote(15,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure");
 		eq.zone_emote(15,"The last of the prisoners has escaped and the warden lies dead at your feet.  You have done well.");
 
-		eq.spawn2(245297,0,0, 867.00,-1043.00,-3.00,96); --#Yenner`s_Decorative_Chest		
+		eq.spawn2(245297,0,0, 867.00,-1043.00,0,192); --#Yenner`s_Decorative_Chest		
 		if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
-			eq.spawn2(245295,0,0, 919.00,-1058.00,-21.50,160); --#Taskmaster`s_Stone_Chest
+			eq.spawn2(245295,0,0, 919.00,-1058.00,-21.50,320); --#Taskmaster`s_Stone_Chest
 		end;	
 		if (pg_chest==1) then
-			eq.spawn2(245287,0,0,877,-1093,21.50, 35) --#Talkor`s_Bloody_Chest
+			eq.spawn2(245287,0,0,877,-1093,21.50, 70) --#Talkor`s_Bloody_Chest
 		end;
 		
 		local instance_requests = require("instance_requests");

@@ -1,11 +1,11 @@
 
 
 function Battlemaster_Spawn(e)
-	eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, .5);
-	eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, .5);
-	eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 126.5);
-	eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 126.5);
-	eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 126.5);
+	eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, 1);
+	eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, 1);
+	eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 253);
+	eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 253);
+	eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253);
 	eq.set_next_hp_event(75);
 end
 
@@ -13,8 +13,8 @@ function Battlemaster_HP(e)
 	if (e.hp_event == 75) then
 		eq.depop_all(336119);
 		eq.depop_all(336118);
-		eq.spawn2(336237, 0, 0, 1882.69, 2280.94, -24.97, .5);
-		eq.spawn2(336238, 0, 0, 1462.19, 2280.65, -24.97, .5);
+		eq.spawn2(336237, 0, 0, 1882.69, 2280.94, -24.97, 1);
+		eq.spawn2(336238, 0, 0, 1462.19, 2280.65, -24.97, 1);
 		eq.set_next_hp_event(50);
 		local npc_list = eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
@@ -24,9 +24,9 @@ function Battlemaster_HP(e)
 		end	
 	elseif (e.hp_event == 50) then
 		eq.depop_all(336117);
-		eq.spawn2(336239, 0, 0, 1589, 2822, -24.97, 126.5);
-		eq.spawn2(336239, 0, 0, 1677, 2822, -24.97, 126.5);
-		eq.spawn2(336239, 0, 0, 1765, 2822, -24.97, 126.5);
+		eq.spawn2(336239, 0, 0, 1589, 2822, -24.97, 253);
+		eq.spawn2(336239, 0, 0, 1677, 2822, -24.97, 253);
+		eq.spawn2(336239, 0, 0, 1765, 2822, -24.97, 253);
 		local npc_list = eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 336239)) then
@@ -52,11 +52,11 @@ function Battlemaster_Timer(e)
 		eq.depop_all(336237);
 		eq.depop_all(336238);
 		eq.depop_all(336239);
-		eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, .5);
-		eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, .5);
-		eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 126.5);
-		eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 126.5);
-		eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 126.5);
+		eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, 1);
+		eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, 1);
+		eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 253);
+		eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 253);
+		eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253);
         e.self:GotoBind()
         e.self:SetHP(e.self:GetMaxHP())
         e.self:CastSpell(3791, e.self:GetID())		
@@ -77,7 +77,7 @@ function All_Death(e)
 	end	
 	if (add_alive==0) then
 		--eq.zone_emote(15, "no adds alive" .. add_alive);
-		eq.spawn2(336134, 0, 0, 1678,2778,-24.97,130.5); -- spawn ironbound chest
+		eq.spawn2(336134, 0, 0, 1678,2778,-24.97,261); -- spawn ironbound chest
 	end
 end
 

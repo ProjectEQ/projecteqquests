@@ -9,7 +9,7 @@ local mirr_max_hp=326854;
 local mirr_spawned_hp=326854;
 local event_started=false;
 local mirr_shakes=false;
-local inst_id=0
+local inst_id=0;
 
 function TriggerSpawn(e)
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(296065) == false) then
@@ -43,7 +43,7 @@ function TrueCombat(e)
 			eq.debug("event started");
 		end
 		eq.set_timer("leash",1*1000);
-		eq.set_timer("random_change",12*1000);
+		eq.set_timer("random_change",15*1000);
 		eq.signal(296075,4);  --refresh reset timer
 		if event_started==true then
 			eq.set_timer("name",5*1000);
@@ -71,7 +71,7 @@ function MirrorTimer(e)
 		if (e.self:GetHP()< mirr_spawned_hp-10 and mirr_shakes==false) then
 			e.self:Emote("shivers violently, as if about to explode!");
 			mirr_shakes=true
-		elseif (e.self:GetHP()< mirr_spawned_hp-500) then
+		elseif (e.self:GetHP()< mirr_spawned_hp-1000) then
 			e.self:CastSpell(2490,e.self:GetHateRandom():GetID());
 			e.self:Emote("shudders and explodes!");
 			eq.depop();
@@ -105,7 +105,7 @@ function TrueTimer(e)
 				local mY=mirrnoq:GetY();
 				local mZ=mirrnoq:GetZ();
 				eq.depop_all(296066);
-				eq.spawn2(296066, 0, 0,mX,mY,mZ,192);
+				eq.spawn2(296066, 0, 0,mX,mY,mZ,384);
 				eq.spawn2(296065, 0, 0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),192);
 				eq.depop();
 			end
@@ -120,19 +120,23 @@ end
 
 function TrueSignal(e)
 	if e.signal==1 then
-		local rand_hate = e.self:GetHateRandom():CastToClient()
-		if (rand_hate.valid) then
-			e.self:Say("begone " .. rand_hate:GetName())
-			e.self:SetHate(rand_hate, 1, 1)
-			rand_hate:MovePCInstance(296, inst_id, -117, -912, -127, 64)
-			e.self:SetHate(rand_hate, 0, 0)
+		local rand_hate = e.self:GetHateRandom()
+		eq.debug("banish selected: " ..rand_hate:GetName());
+		if (rand_hate ~= nil and rand_hate.valid) then
+			local MoveName = eq.get_entity_list():GetClientByName(rand_hate:GetName())
+			if (MoveName ~= nil  and MoveName.valid) then
+				eq.debug(MoveName:GetName());
+				e.self:Say("begone " .. MoveName:GetName())
+				e.self:SetHate(MoveName, 1, 1)
+				MoveName:MovePCInstance(296, inst_id, -117, -912, -127, 128)
+			end
 		end
 	end
 end
 
 function TriggerTimer(e)
 	if e.timer=="cursecallers" then
-		eq.spawn2(eq.ChooseRandom(296059,296060,296061,296062,296063,296064), 0, 0,-238,-657,-126,121);
+		eq.spawn2(eq.ChooseRandom(296059,296060,296061,296062,296063,296064), 0, 0,-238,-657,-126,242);
 		eq.get_entity_list():GetMobByNpcTypeID(296065):Emote("rejoices. 'May find strength in your passing, as I have'");
 		eq.debug("spawn cc");
 	elseif e.timer=="banish" then
@@ -167,7 +171,7 @@ function TriggerSignal(e)
 	if e.signal==1 then
 		eq.debug("start cc ban timer");
 		eq.set_timer("cursecallers",30*1000)
-		eq.set_timer("banish",45*1000)				
+		eq.set_timer("banish",45*1000)			
 	elseif e.signal==2 then
 		eq.stop_timer("cursecallers")
 		eq.stop_timer("banish")
@@ -191,11 +195,11 @@ function Spawn_Noqu(loc)
 	eq.depop_all(296065);
 	eq.depop_all(296066);
 	if (eq.ChooseRandom(1,2)==1) then		
-		eq.spawn2(296066, 0, 0,20,-706,-126,192);
-		eq.spawn2(296065, 0, 0,20,-633,-126,192);
+		eq.spawn2(296066, 0, 0,20,-706,-126,384);
+		eq.spawn2(296065, 0, 0,20,-633,-126,384);
 	else
-		eq.spawn2(296065, 0, 0,20,-706,-126,192);
-		eq.spawn2(296066, 0, 0,20,-633,-126,192);		
+		eq.spawn2(296065, 0, 0,20,-706,-126,384);
+		eq.spawn2(296066, 0, 0,20,-633,-126,384);		
 	end
 end
 

@@ -6,7 +6,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		if (event_counter == 12) then
 			-- spawn real Bertoxxulous
-			eq.spawn2(223142,0,0,-299,-297,23.3,31);
+			eq.spawn2(223142,0,0,-299,-297,23.3,62);
 			-- make myself go away!
 			eq.depop();
 		end

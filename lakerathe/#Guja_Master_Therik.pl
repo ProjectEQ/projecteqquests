@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 63112 => 1, 63113 => 1, 63091 => 1)) { # First Marker, Second Marker, Guja Token
     quest::say("And here it comes . . .");
-    quest::spawn2(51171, 0, 0, 1613, 156, -224, 155);
+    quest::spawn2(51171, 0, 0, 1613, 156, -224, 310);
   }
   if (plugin::check_handin(\%itemcount, 63102 => 1)) { # Eye of the Lurker
     quest::say("Well done. You have earned a notch for your token, warrior. You are but a step away from joining our ranks. But that step is a long one. Practice your skills, for they will need to be very advanced. Then return to Sugal and give him your token.");

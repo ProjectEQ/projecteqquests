@@ -10,17 +10,3 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_TIMER {
-  if ($timer == "dt") {
-    $npc->CastSpell(982, $npc->GetHateTop()->GetID());
-  }
-}
-
-sub EVENT_COMBAT {
-  if ($combat_state == 1) {
-	$npc->CastSpell(982, $npc->GetHateTop()->GetID());
-	quest::settimer("dt",30);
-  } else {
-	quest::stoptimer("dt");
-  }
-}

@@ -1,13 +1,10 @@
 --dulak/Ritald.lua NPCID 225230
 --Shadowknight Epic Prequest
---alot of this logic is to prevent doing this quest if you already have your 1.0 or if you've previously done the prequest
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.other:Class() == "Shadowknight") then
-		if(e.other:HasItem(41000)) then --Have Epic 1.0 Innoruuk's Curse
-		else --Doesnt have epic 1.0 Innoruuk's Curse
+	if(e.other:Class() == "Shadow Knight") then
 			if(e.message:findi("hail") and qglobals["shadowknight_pre"] == nil) then
-				e.self:Say("Greetings, dark one. Do you feel it? I am sure you do. Innoruuk's voice is so distant now. His voice is merely a whisper. This disturbs me greatly. How will the evil ones do their master's bidding without his dark guidance? I fear the end is almost near for true champions of darkness such as yourself. We cannot let that happen! I believe I know of a way to slow down the diminishing of our master's voice. There is a sword of great evil. It is however not of this world. I believe I can summon it to this plane of existence, but I will need several items first. Will you [take on this task]? Your future and the future of all our dark brethren depends on obtaining this sword!");
+				e.self:Say("Greetings, dark one. Do you feel it? I am sure you do. Innoruuk's voice is so distant now. His voice is merely a whisper. This disturbs me greatly. How will the evil ones do their master's bidding without his dark guidance? I fear the end is almost near for true champions of darkness such as yourself. We cannot let that happen! I believe I know of a way to slow down the diminishing of our master's voice. There is a sword of great evil. It is however not of this world. I believe I can summon it to this plane of existence, but I will need several items first. Will you [" .. eq.say_link("take on this task") .. "]? Your future and the future of all our dark brethren depends on obtaining this sword!");
 				eq.set_global("shadowknight_pre","1",5,"F"); --Flagged for Prequest
 			end
 			if(e.message:findi("take on this task") and qglobals["shadowknight_pre"] == "1") then 
@@ -16,7 +13,6 @@ function event_say(e)
 			if(e.message:findi("have done it") and e.other:HasItem(22944))	then
 				e.self:Say("This sword known as Innoruuk's Voice emanates great evil. It should help to generate enough evil to sustain the mysterious powers that make one a shadowknight. It is not at full power yet however. I am now trusting you to take this sword and help to recover its full power. You will be its new champion. Take it to Sienn Kastane in the Plane of Knowledge. I believe she should be able to help you with returning the sword to its full power.");
 			end
-		end
 	end
 end
 

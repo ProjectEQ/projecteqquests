@@ -5,7 +5,7 @@ my $priest;
 
 sub EVENT_SPAWN {
 	quest::spawn_condition("txevu", 1, 1); #enable Vrex_Invoker Spawns
-	quest::spawn2(297072,0,0,-720, 346, -475.8, 133); #restless_wraith
+	quest::spawn2(297072,0,0,-720, 346, -475.8, 266); #restless_wraith
 	$counter = 0;
 }
 
@@ -14,7 +14,7 @@ sub EVENT_SIGNAL {
 		$counter += 1;
 		if($counter == 5) {
 			quest::depopall(297072); #restless_wraith
-			quest::spawn2(297218,0,0,-720, 346, -475.8, 133); #High_Priest_Nkosi_Bakari
+			quest::spawn2(297218,0,0,-720, 346, -475.8, 266); #High_Priest_Nkosi_Bakari
 			quest::spawn_condition("txevu", 1, 0);
 			$priest = $entity_list->GetNPCByNPCTypeID(297218);
 		}

@@ -8,7 +8,7 @@ function event_say(e)
 			e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
 		elseif(e.message:findi("see stanos") and class == "Rogue" and level >= 50) then
 			e.self:Say("This better be important.");
-			eq.spawn2(5088,0,0,336,10,45,225);
+			eq.spawn2(5088,0,0,336,10,45,450);
 		end
 	else
 		e.self:Say("Go away! We don't have time for the likes of you.");
@@ -29,7 +29,7 @@ function event_trade(e)
 		e.other:Message(15,"You receive 100 gold from Anson McBale.");
 		e.other:Message(15,"You receive 25 platinum from Anson McBale.")
 		e.other:AddMoneyToPP(0, 0, 100, 25, true);
-		eq.spawn2(5088,0,0,336,10,45,225);
+		eq.spawn2(5088,0,0,336,10,45,450);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

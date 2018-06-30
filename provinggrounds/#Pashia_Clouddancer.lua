@@ -16,7 +16,7 @@ function event_say(e)
 			eq.depop_with_timer();
 		elseif(e.message:findi("duram wants you to come home") and following==false) then
 			e.self:Say("Duram sent you? Unbelievable. Before I go anywhere, I need my sword back, it was taken from me earlier. That beast in there took it and knocked me down. . .he thought I was dead because I didn't move. Defeat him and bring me back my sword and I will leave with you.");
-			eq.spawn2(316075, 0, 0,-1919,-756.75,-309.8,124); --#Diad_the_Devourer (316075)
+			eq.spawn2(316075, 0, 0,-1919,-756.75,-309.8,248); --#Diad_the_Devourer (316075)
 		elseif(e.message:findi("follow") and e.other:GetID()==event_starter:GetID()) then
 			e.self:Say("Ok, let's get out of here!");
 			eq.follow(event_starter:GetID());

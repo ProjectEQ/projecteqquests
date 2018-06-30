@@ -64,22 +64,20 @@ function DistanceToWaypoint(self)
 end
 
 function ExploadOrb(mob)
-    -- The crystals should be spread out a bit, but they shouldn't go into walls etc
-    -- will just spawn here for now
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
-    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 0.0)
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 128.0)
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 256.0)
+    eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 384.0)
     eq.depop()
 end
 
 function CheckPortals()
-    portals[334040] = eq.unique_spawn(334034, 0, 0, -254.000000, -348.000000, -775.640015, 99.400002) -- Ilsin
-    portals[334039] = eq.unique_spawn(334113, 0, 0, -227.350693, -330.371887, -775.744202, 100.375000) -- Cynin
-    portals[334038] = eq.unique_spawn(334112, 0, 0, -201.000000, -315.000000, -771.000000, 104.000000) -- Scyllus
-    portals[334037] = eq.unique_spawn(334115, 0, 0, 100.360001, -310.549988, -775.650024, 146.600006) -- Britalic
-    portals[334036] = eq.unique_spawn(334114, 0, 0, 128.330002, -325.309998, -775.650024, 150.600006) -- Allin
-    portals[334035] = eq.unique_spawn(334111, 0, 0, 153.787323, -343.277649, -775.744202, 155.500000) -- Kiranus
+    portals[334040] = eq.unique_spawn(334034, 0, 0, -254.000000, -348.000000, -775.640015, 198.800004) -- Ilsin
+    portals[334039] = eq.unique_spawn(334113, 0, 0, -227.350693, -330.371887, -775.744202, 200.75) -- Cynin
+    portals[334038] = eq.unique_spawn(334112, 0, 0, -201.000000, -315.000000, -771.000000, 208) -- Scyllus
+    portals[334037] = eq.unique_spawn(334115, 0, 0, 100.360001, -310.549988, -775.650024, 293.200012) -- Britalic
+    portals[334036] = eq.unique_spawn(334114, 0, 0, 128.330002, -325.309998, -775.650024, 301.200012) -- Allin
+    portals[334035] = eq.unique_spawn(334111, 0, 0, 153.787323, -343.277649, -775.744202, 311) -- Kiranus
 end
 
 -- king hooks
@@ -87,7 +85,7 @@ function KingSpawn(e)
     king = e.self
     princecount = 0
     eq.unique_spawn(334040, 0, 0, -215.000000, -580.000000, -768.375000, 0.000000) -- Ilsin
-    eq.unique_spawn(334039, 0, 0, -181.529999, -579.500000, -775.599976, 0.800000) -- Cynin
+    eq.unique_spawn(334039, 0, 0, -181.529999, -579.500000, -775.599976, 1.6) -- Cynin
     eq.unique_spawn(334038, 0, 0, -148.000000, -580.000000, -768.375000, 0) -- Scyllus
     eq.unique_spawn(334037, 0, 0, 59.000000, -580.000000, -768.375000, 0) -- Britalic
     eq.unique_spawn(334036, 0, 0, 92.400002, -579.369995, -775.599976, 0) -- Allin

@@ -35,7 +35,7 @@ function event_timer(e)
 		counting = counting + 1;
 	end
 	if(counting == 1) then
-		eq.spawn2(98051,0,0,4198.4,-1563.4,-291.5,152);
+		eq.spawn2(98051,0,0,4198.4,-1563.4,-291.5,304);
 	elseif(counting == 5) then
 		e.self:Say("Hey Dillon, why don't you tell us again about what happened up top? You know, where they blew that big hole into the ground.");
 		eq.signal(98051,0);
@@ -44,7 +44,7 @@ function event_timer(e)
 		e.self:Say("Okay, well, I've had enough. Yet again, we've waited for nothing. Sometimes I really wonder if the spirits are real after all. Well I for one am going to go find something fun to do - this is obviously a waste of time. Come with me, shaman, it'll be great fun! Fairwell Dillon.");
 		eq.signal(98051,2);
 	elseif(counting == 7) then
-		eq.spawn2(98047,0,0,4208.8,-1588.6,-291.7,205);
+		eq.spawn2(98047,0,0,4208.8,-1588.6,-291.7,410);
 		eq.stop_timer("DillonSpawn");
 		eq.depop();
 	end

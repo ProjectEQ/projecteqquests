@@ -10,7 +10,7 @@ function event_enter(e)
 				e.other:Message(15,"The Order elemental focuses into your sight.");	
 				eq.set_global("mage_epic_hoh","1",3,"H2");
 				eq.set_timer("mage_epic_depop",30*60*1000);
-				eq.spawn2(211057, 0, 0, -72.8,-2330.4,-117,192);				
+				eq.spawn2(211057, 0, 0, -72.8,-2330.4,-117,384);				
 			else				
 				e.other:Message(15,"The blue gem on your staff glows.")
 			end

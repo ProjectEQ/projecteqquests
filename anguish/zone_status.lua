@@ -60,7 +60,7 @@ function event_spawn(e)
 end
 
 function Spawn_keldovan()
-	eq.unique_spawn(317005,0,0, -301 ,702, -201, 64);
+	eq.unique_spawn(317005,0,0, -301 ,702, -201, 128);
 end
 
 function Spawn_jelvan()
@@ -68,11 +68,11 @@ function Spawn_jelvan()
 end
 
 function Spawn_ture()
-	eq.unique_spawn(317003,0,0, 610, 3381, -12, 130);
+	eq.unique_spawn(317003,0,0, 610, 3381, -12, 260);
 end
 
 function Spawn_hanvar()
-	eq.unique_spawn(317002,0,0, 424, 4389, 222, 64);
+	eq.unique_spawn(317002,0,0, 424, 4389, 222, 128);
 end
 
 function PH_amv()	
@@ -81,7 +81,7 @@ end
 function Spawn_omm()
 --always spawn AMV if OMM is up.  AMV only drops chest on the first kill
 	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0);
-	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 127);
+	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 254);
 end
 
 function PH_lorb()

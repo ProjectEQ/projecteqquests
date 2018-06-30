@@ -3,5 +3,5 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(113556,28,0,1130.3,-933.2,-125.6,126.8);
+  quest::spawn2(113556,28,0,1130.3,-933.2,-125.6,253.6);
 }

@@ -21,9 +21,9 @@ end
 function event_hp(e)
 	--at 75% I go inactive and spawn my 3 Ravs and they automatically aggro
 	e.self:Say("You fight well.  We shall see how you handle my new pets in battle.")
-	eq.spawn2(295131,0,0,84,423,-410,84)
-	eq.spawn2(295132,0,0,126,310,-422,232)
-	eq.spawn2(295133,0,0,267,283,-410,124)
+	eq.spawn2(295131,0,0,84,423,-410,168)
+	eq.spawn2(295132,0,0,126,310,-422,464)
+	eq.spawn2(295133,0,0,267,283,-410,248)
 	eq.modify_npc_stat("special_attacks","ABfHG")
 	InitAggroRavs(e)
 	e.self:WipeHateList()
@@ -104,28 +104,28 @@ function CheckRavs()
      --the arena, and bring their tank with them
      if (rav1 ~= nil) then
      	if (rav1:CalculateDistance(171,342,-418) > 250) then
-     		rav1:GMMove(171,342,-418,168)
+     		rav1:GMMove(171,342,-418,336)
      		local r1ht = rav1:GetHateTop():CastToClient()
      		if (r1ht.valid) then
-     			r1ht:MovePC(295,171,342,-418,168)
+     			r1ht:MovePC(295,171,342,-418,336)
      		end
      	end
      end
      if (rav2 ~= nil) then
      	if (rav2:CalculateDistance(171,342,-418) > 250) then
-     		rav2:GMMove(171,342,-418,168)
+     		rav2:GMMove(171,342,-418,336)
      		local r2ht = rav2:GetHateTop():CastToClient()
      		if (r2ht.valid) then
-     			r2ht:MovePC(295,171,342,-418,168)
+     			r2ht:MovePC(295,171,342,-418,336)
      		end
      	end
      end
      if (rav3 ~= nil) then
      	if (rav3:CalculateDistance(171,342,-418) > 250) then
-     		rav3:GMMove(171,342,-418,168)
+     		rav3:GMMove(171,342,-418,336)
      		local r3ht = rav3:GetHateTop():CastToClient()
      		if (r3ht.valid) then
-     			r3ht:MovePC(295,171,342,-418,168)
+     			r3ht:MovePC(295,171,342,-418,336)
      		end
      	end
      end

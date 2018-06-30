@@ -58,14 +58,14 @@ if ($timer == 2) {
 
 sub EVENT_DEATH_COMPLETE {
   quest::depopall(294578);
-  quest::spawn2(294344,0,0,309,-595,2,154);
-  quest::spawn2(294344,0,0,355,-644,2,181);
-  quest::spawn2(294344,0,0,348,-714,2,203);
-  quest::spawn2(294344,0,0,205,-589,2,97);
-  quest::spawn2(294345,0,0,153,-643,2,73);
-  quest::spawn2(294346,0,0,316,-778,2,224);
-  quest::spawn2(294346,0,0,201,-776,2,29);
-  quest::spawn2(294346,0,0,161,-717,2,52);
+  quest::spawn2(294344,0,0,309,-595,2,308);
+  quest::spawn2(294344,0,0,355,-644,2,362);
+  quest::spawn2(294344,0,0,348,-714,2,406);
+  quest::spawn2(294344,0,0,205,-589,2,194);
+  quest::spawn2(294345,0,0,153,-643,2,146);
+  quest::spawn2(294346,0,0,316,-778,2,448);
+  quest::spawn2(294346,0,0,201,-776,2,58);
+  quest::spawn2(294346,0,0,161,-717,2,104);
   quest::signalwith(294342,1,0);
   quest::signalwith(294631,1); #set lockout
   $entity_list->FindDoor(11)->SetLockPick(0);

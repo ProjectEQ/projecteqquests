@@ -9,23 +9,9 @@ function event_say(e)
 end
 
 function event_death_complete(e)
-	eq.spawn2(71060,48,0,-1462.2,-270.1,1250.9,62.9);
+	eq.spawn2(71060,48,0,-1462.2,-270.1,1250.9,125.8);
 end
 
-function event_timer(e)
-	if e.timer=="dt" then
-		e.self:CastSpell(982, e.self:GetTarget():GetID()); --100k cazic touch
-	end
-end
-
-function event_combat(e)
-	if e.joined then
-		e.self:CastSpell(982, e.other:GetID()); --100k cazic touch
-		eq.set_timer("dt",30*1000);
-	else
-		eq.stop_timer("dt");
-	end
-end
 -------------------------------------------------------------------------------------------------
 -- Converted to .lua using MATLAB converter written by Stryd
 -- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen

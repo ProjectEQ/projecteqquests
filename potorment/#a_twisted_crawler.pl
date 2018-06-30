@@ -2,7 +2,7 @@ sub EVENT_DEATH_COMPLETE {
     #depop the untargetable Tylis
     quest::depop_withtimer(207081);
 	#spawn a targetable Tylis
-	quest::spawn2(207014,0,0,-1,-7,468,99.5);
+	quest::spawn2(207014,0,0,-1,-7,468,199);
 	#depop all the minions
 	quest::depopall(207069);
 	#set maareq's respawn, without this line he will repop on zone reset

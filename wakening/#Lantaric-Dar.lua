@@ -65,12 +65,12 @@ function event_trade(e)
     elseif qglobals["bardPQ"] == "1" and  item_lib.check_turn_in(e.trade, {item1 = 77601}) then -- Kromzek Supply Orders
         eq.set_global("bardPQ", "2", 5, "F")
         e.self:Emote("studies the orders for a few moments. 'Well done " .. e.other:Race() .. ". This explains much of the giants' movements of late. This list shows orders for creating equipment for creatures closer to your stature then a giant. The Kromzek must be recruiting more mercenaries. Find the troop this order was meant to supply " .. e.other:GetName() .. ". There must be a reason for Tormax's new interest in mortal conscripts.")	
-		eq.spawn2(119182, 0, 0, 300,-2578,-4,50); --Cristoc_Bonethug
-		eq.spawn2(119183, 0, 0, 318,-2610,-4,56); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 320,-2542,-4,62); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 307,-2595,-4,44); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 293,-2560,-4,44); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 330,-2578,-4,50); --a_Bonethug_mercenary
+		eq.spawn2(119182, 0, 0, 300,-2578,-4,100); --Cristoc_Bonethug
+		eq.spawn2(119183, 0, 0, 318,-2610,-4,112); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 320,-2542,-4,124); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 307,-2595,-4,88); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 293,-2560,-4,88); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 330,-2578,-4,100); --a_Bonethug_mercenary
 	elseif qglobals["bardPQ"] == "2" and  item_lib.check_turn_in(e.trade, {item1 = 77602}) then -- Sealed Note
 		eq.set_global("bardPQ", "3", 5, "F")
         e.self:Say("Once again you have exceeded my expectations " .. e.other:GetName() .. ". Rarely have I encountered a mortal with your talents, in fact not since Baldric walked these lands. But I digress, and we have more work to do. For now, take this mark as a symbol of my trust.")			

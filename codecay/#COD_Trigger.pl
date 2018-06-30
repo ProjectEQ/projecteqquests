@@ -12,7 +12,7 @@ quest::settimer(77,1);
 
 if($timer == 77 && $high_priest == 2)
   {
-quest::spawn2(200032,0,0,310,328,-71.5,125);
+quest::spawn2(200032,0,0,310,328,-71.5,250);
 $high_priest=0;
 quest::stoptimer(69);
   }

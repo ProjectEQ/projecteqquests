@@ -142,18 +142,18 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("That is incorrect.");
-    quest::spawn2(289040,0,0,-301,2093,634,171); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-302,2060,634,199); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-316,2040,648,239); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-334,2096,642,118); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-287,2079,634,182); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-258,2081,635,184); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-255,2065,634,187); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-251,2045,634,204); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-258,2091,634,184); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-261,2106,634,166); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-239,2069,634,191); #a_feeble_beludu_shade
-    quest::spawn2(289040,0,0,-239,2087,634,188); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-301,2093,634,342); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-302,2060,634,398); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-316,2040,648,478); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-334,2096,642,236); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-287,2079,634,364); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-258,2081,635,368); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-255,2065,634,374); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-251,2045,634,408); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-258,2091,634,368); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-261,2106,634,332); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-239,2069,634,382); #a_feeble_beludu_shade
+    quest::spawn2(289040,0,0,-239,2087,634,376); #a_feeble_beludu_shade
   }
   if ($event == 2) {
     quest::say("You hear the grinding of stone as the door unlocks before you.");

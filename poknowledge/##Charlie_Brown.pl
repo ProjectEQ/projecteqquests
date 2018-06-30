@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
 	if ($timer == 1) {
 		quest::stoptimer(1);
-		quest::settimer(1,180);
+		quest::settimer(1,900);
 		if (!defined $qglobals{halloween_great_pumpkin}) {
 			quest::shout("Help! Everyone! The undead are preparing to attack Freeport! We plan to head them off in the Kithicor Forest. Please, lend us your strength!");
 		}

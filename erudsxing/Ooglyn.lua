@@ -26,7 +26,7 @@ function event_waypoint_arrive(e)
 end
 
 function event_timer(e)
-	eq.spawn2(98046,0,0,4209.4,-1575.5,-289.4,181);
+	eq.spawn2(98046,0,0,4209.4,-1575.5,-289.4,362);
 	eq.depop_with_timer();
 end
 

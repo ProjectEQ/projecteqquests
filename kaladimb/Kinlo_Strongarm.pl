@@ -54,7 +54,7 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 20485 => 1)) {
       quest::emote("looks at the hammer and nods once before slamming the head against his anvil, and shattering the head. In a cloud of dust, another dwarf appears from the cloud and tosses you a hunk of metal. Kinlo stares in awe.");
       quest::summonitem(20482);
-      quest::spawn2(67089,0,0,-189.5,346.8,1.8,34.5);
+      quest::spawn2(67089,0,0,-189.5,346.8,1.8,69);
     }
     elsif (plugin::check_handin(\%itemcount, 20482 => 1)) {
       quest::say("Erm. Well, I ain't never worked with this stuff but here's what I got for ya. It ain't bad, pretty much like the one ye got there. I suppose ye should take the one the ancient made and show it ta yer friend.");

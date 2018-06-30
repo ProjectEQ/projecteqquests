@@ -46,7 +46,7 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 63114})) then
 		e.other:Message(15, "Anlut Heavenfall tells you, 'Let us see if you've learned the hidden way or if you must return the crystal to me and beg for further guidance. . .");
 		e.other:SummonItem(63115); -- Portal Prism
-		e.other:MovePC(152, 0.00, 0.00, -30.25, 180); -- Teleport to Nexus
+		e.other:MovePC(152, 0.00, 0.00, -30.25, 360); -- Teleport to Nexus
 	-- Portal Prism (63115), Twilight Bloom x3
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 63115, item2 = 63125, item3 = 63125, item4 = 63125})) then
 		e.other:Message(15, "Anlut Heavenfall tells you, 'Hmph. Well, I hope that you've studied it more carefully this time . . .");

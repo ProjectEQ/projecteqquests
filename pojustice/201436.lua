@@ -36,11 +36,11 @@ function event_say(e)
                MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 490, -1094, 73, 180); 
             else
                client_e = e;
-               e.other:MovePC(201, 490, -1094, 73, 180);
+               e.other:MovePC(201, 490, -1094, 73, 360);
             end
 
             -- Move To: 201, 500, -1045, 73.1
-            eq.spawn2(201448, 0, 0, 490, -1094, 73, 180);
+            eq.spawn2(201448, 0, 0, 490, -1094, 73, 360);
 
             -- Set a variable to indicate the Trial is unavailable.
             hanging_flag = 1;
@@ -83,7 +83,7 @@ function event_timer(e)
       if (trial_group.valid) then
 			MoveGroup( trial_group, 490, -1094, 73, 140, 456, 825, 9, 180); 
       else
-         client_e.other:MovePC( 201, 456, 825, 9, 180 );
+         client_e.other:MovePC( 201, 456, 825, 9, 360 );
 			client_e.other:Message(3, "A mysterious force translocates you.");
       end
 

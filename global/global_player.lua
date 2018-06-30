@@ -165,6 +165,20 @@ function event_combine_success(e)
 	end
 end
 
+function event_task_complete(e)
+	if (e.task_id == 273 or e.task_id == 274 or e.task_id == 277 or e.task_id == 278) then -- Blood of the Winged, Goblin Broth, Population Control, Gathering Silk
+		e.self:Faction(429, 20); -- Norrath's Keepers
+		e.self:Faction(101, 20); -- Firiona Vie -- unsure if correct one
+		e.self:Faction(425, -20); -- Lanys T`Vyl
+		e.self:Faction(404, -20); -- Dark Reign
+	elseif (e.task_id == 275 or e.task_id == 276 or e.task_id == 279 or e.task_id == 280) then -- Blood Money, Spider's Web, Meat for Stew, Taunting the Brood
+		e.self:Faction(404, 20); -- Dark Reign
+		e.self:Faction(425, 20); -- Lanys T`Vyl
+		e.self:Faction(101, -20); -- Firiona Vie -- unsure if correct one
+		e.self:Faction(429, -20); -- Norrath's Keepers
+	end
+end
+
 function event_command(e)
 	return eq.DispatchCommands(e);
 end

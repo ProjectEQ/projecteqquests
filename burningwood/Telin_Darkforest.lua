@@ -47,7 +47,7 @@ function event_trade(e)
 			e.self:Emote("smiles slowly. 'Now that's fine work, " .. e.other:GetName() .. ". Just a moment, we have a friend here who can enchant one of the blades. Give her the blade that the ancient smithed.'");
 			e.other:Ding();
 			e.other:SummonItem(20481);
-			eq.spawn2(54237,0,0,2852,3239,-155,109.5);
+			eq.spawn2(54237,0,0,2852,3239,-155,219);
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

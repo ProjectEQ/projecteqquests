@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	if($timer=="onset1") {
-		quest::moveto(-4311,-720,-183,-1,1);
+		quest::moveto(-4311,-720,-183,-2,1);
 		quest::stoptimer("onset1");
 	}
 }

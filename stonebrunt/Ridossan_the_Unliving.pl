@@ -5,6 +5,6 @@ sub EVENT_SPAWN {
 
 sub EVENT_WAYPOINT_ARRIVE {
   if ($wp == 6) {
-    quest::unique_spawn(100133, 0, 0, -629, 1219, 1028, 39.5); #Disciple_Okarote
+    quest::unique_spawn(100133, 0, 0, -629, 1219, 1028, 79); #Disciple_Okarote
   }
 }

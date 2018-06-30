@@ -30,17 +30,17 @@ sub EVENT_TIMER {
     quest::emote("Chuga.. Chug..Chug..");
     quest::emote("The chugging of the Cargo Clockwork comes to a halt.");
 
-    $bandit1 = quest::spawn2($bandit1id,0,0,30,-700,-109,62); #Hector
+    $bandit1 = quest::spawn2($bandit1id,0,0,30,-700,-109,124); #Hector
     $bandit1obj = $entity_list->GetMobID($bandit1);
     $bandit1npc = $bandit1obj->CastToNPC();
     $bandit1npc->AddToHateList($npc,1);
 
-    $bandit2 = quest::spawn2($bandit2id,0,0,95,-732,-108,240); #Renaldo
+    $bandit2 = quest::spawn2($bandit2id,0,0,95,-732,-108,480); #Renaldo
     $bandit2obj = $entity_list->GetMobID($bandit2);
     $bandit2npc = $bandit2obj->CastToNPC();
     $bandit2npc->AddToHateList($npc,1);
 
-    $bandit3 = quest::spawn2($bandit3id,0,0,53,-615,-107,113); #Jerald
+    $bandit3 = quest::spawn2($bandit3id,0,0,53,-615,-107,226); #Jerald
     $bandit3obj = $entity_list->GetMobID($bandit3);
     $bandit3npc = $bandit3obj->CastToNPC();
     $bandit3npc->AddToHateList($npc,1);

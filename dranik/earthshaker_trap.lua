@@ -12,7 +12,7 @@ function event_enter(e)
 			e.other:Message(15,"The ground shakes violently and a deep thudding sound rolls across the land");
 			eq.set_global("druid_epic_dranik","1",2,"H2");
 			eq.set_timer("druid_epic_depop",30*60*1000);
-			eq.spawn2(336214, 0, 0, -1591,536,-40,101);
+			eq.spawn2(336214, 0, 0, -1591,536,-40,202);
 		end
 	end
 end

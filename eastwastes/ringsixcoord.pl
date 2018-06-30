@@ -8,11 +8,11 @@ my $entid5;
  
 sub EVENT_SIGNAL {
   # made these locs up, but they work
-  $entid1 = quest::spawn2(116566, 0, 0, -4446, -3350, 150, 74);
-  $entid2 = quest::spawn2(116544, 0, 0, -4423, -3332, 150, 131);
-  $entid3 = quest::spawn2(116544, 0, 0, -4391, -3353, 150, 191);
-  $entid4 = quest::spawn2(116544, 0, 0, -4413, -3380, 150, 240);
-  $entid5 = quest::spawn2(116544, 0, 0, -4443, -3371, 150, 36);
+  $entid1 = quest::spawn2(116566, 0, 0, -4446, -3350, 150, 148);
+  $entid2 = quest::spawn2(116544, 0, 0, -4423, -3332, 150, 262);
+  $entid3 = quest::spawn2(116544, 0, 0, -4391, -3353, 150, 382);
+  $entid4 = quest::spawn2(116544, 0, 0, -4413, -3380, 150, 480);
+  $entid5 = quest::spawn2(116544, 0, 0, -4443, -3371, 150, 72);
  
   quest::settimer("depop", 600);
 }

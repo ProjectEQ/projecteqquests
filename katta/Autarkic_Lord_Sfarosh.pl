@@ -23,9 +23,9 @@ sub EVENT_SIGNAL{
 	if($signal == 6){
 		quest::say("Attempt to slay me if you so desire, and if you succeed it matters not. I will return as I am a creature of shadows and shadows never die, merely slumber!");
                 quest::spawn2(160474,0,0,$x,$y,$z,$h);  # ---  #Autarkic_Lord_Sfarosh
-		quest::spawn2(160437,0,0,-25,-762,4,160); #an autarkic umbrage shade
-		quest::spawn2(160437,0,0,-164,-760,4,96); #an autarkic umbrage shade
-		quest::spawn2(160437,0,0,-30,-901,4,224); #an autarkic umbrage shade
+		quest::spawn2(160437,0,0,-25,-762,4,320); #an autarkic umbrage shade
+		quest::spawn2(160437,0,0,-164,-760,4,192); #an autarkic umbrage shade
+		quest::spawn2(160437,0,0,-30,-901,4,448); #an autarkic umbrage shade
 		quest::depop();
 	}
 }

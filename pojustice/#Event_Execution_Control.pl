@@ -66,7 +66,7 @@ sub EVENT_SIGNAL {
       quest::settimer("execution_wave3", 365);   
       quest::settimer("execution_wave4", 525);                   
       #Spawn the prisoner
-      quest::spawn2(201424, 0, 0, 165, -1156, 80, 61);      
+      quest::spawn2(201424, 0, 0, 165, -1156, 80, 122);      
    }
    
    elsif ($signal == 2) {
@@ -196,7 +196,7 @@ sub EVENT_TIMER {
                }
                else {
                   $ent->Message(15, 'You are not a part of this trial.');
-                  $ent->MovePC(201,456,825,9,1);
+                  $ent->MovePC(201,456,825,9,2);
                }
             }
             
@@ -304,7 +304,7 @@ sub EVENT_TIMER {
          $c = $entity_list->GetClientByName($player);
          
          if ($c) {
-            $c->MovePC(201,456,825,9, 1);
+            $c->MovePC(201,456,825,9, 2);
             $c->Message(15, "A mysterious force translocates you.");
          }
       }
@@ -408,7 +408,7 @@ sub SpawnExecutionMobs {
       
       if ($spawn_ex == 1) {
          #Spawn An_Executioner (201439)
-         quest::spawn2(201439,0,0,232,-1048,74,180);
+         quest::spawn2(201439,0,0,232,-1048,74,360);
          #Signal Exe to set wave/speed
          quest::signalwith(201439, $wave, 100);
          $spawn_ex = 0;

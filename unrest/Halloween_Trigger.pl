@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-	quest::spawn2(63099,0,0,-281,696,20.8,74.9);
+	quest::spawn2(63099,0,0,-281,696,20.8,149.8);
 }
 
 sub EVENT_SIGNAL {

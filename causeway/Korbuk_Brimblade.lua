@@ -17,14 +17,6 @@ function event_say(e)
 	end	
 end
 
-function event_combat(e)
-	if e.joined==true then
-		eq.set_timer("ww", math.random(5,10) * 1000);
-	else
-		eq.stop_timer("ww");
-	end
-end
-
 function event_death_complete(e)
 	eq.spawn2(303129,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Essence of Kreljnok
 end
@@ -35,8 +27,5 @@ function event_timer(e)
 		eq.stop_timer("say");
 	elseif e.timer=="depop" then
 		eq.depop();
-	elseif e.timer=="ww" then
-		e.self:CastSpell(6119, e.self:GetTarget():GetID());	
-		eq.set_timer("ww", 20 * 1000);	
 	end
 end

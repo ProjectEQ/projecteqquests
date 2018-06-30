@@ -15,6 +15,10 @@ sub EVENT_SPAWN {
   quest::set_proximity($x-$aggro,$x+$aggro,$y-$aggro,$y+$aggro);
   #make priests non aggro, etc.
   quest::modifynpcstat("special_attacks",ABfHG);
+  	my @nlist = $entity_list->GetClientList();
+	foreach my $n (@nlist){
+		$n->SendMarqueeMessage(10,510,1,1,6000,"The Malevolent Priests have been defeated! Congratulations!");
+	}
 }
 
 sub EVENT_ENTER {
@@ -54,6 +58,7 @@ sub EVENT_TIMER {
 	  quest::modifynpcstat("special_attacks",TUMCNIDf);
 	  $servitor_up = 0;
       quest::stoptimer(2);
+	  quest::ze(0,"With the death of the final servitor, the two Malevolent Priests must fend for themselves!");
     }
   }
 }
@@ -66,8 +71,10 @@ sub EVENT_DEATH_COMPLETE {
 
 sub INSTANCE_WIN {
   #loot & advancement pieces
-  quest::spawn2(294140,0,0,-7,-126,-2,129);
-  quest::spawn2(294139,0,0,-9,-285,-2,251);
+  quest::spawn2(294140,0,0,-7,-126,-2,258);
+  quest::spawn2(294139,0,0,-9,-285,-2,502);
+  quest::ze(0,"The Malevolent Priests have been defeated! Though the legion may send replacements, you have finished what you sought out to do and delayed their progress for a time! Congratulations!");
+  #plugin::ZoneMarquee(10,510,1,1,6000,"The Malevolent Priests have been defeated! Congratulations!");
   #set lockout
   quest::signalwith(294631,9);
 }

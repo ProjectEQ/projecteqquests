@@ -1,50 +1,13 @@
 # Guild Hall Regen Pool Script - Player Portion
 
-sub EVENT_SIGNAL {
-  if ($signal == 1) {
-    quest::settimer("DoRegen", 6);
-  }
-  if ($signal == 2) {
-    quest::stoptimer("DoRegen");
-  }
-}
-
 sub EVENT_ENTERZONE {
   quest::settimer("ZoneIn", 3);
-}
-
-sub EVENT_ZONE {
-  quest::stoptimer("DoRegen"); #Stop the timer if they zone
 }
 
 sub EVENT_TIMER {
   if ($timer eq "ZoneIn") {
     quest::stoptimer("ZoneIn");
     quest::signalwith(345004,$charid);
-  } else {
-    quest::stoptimer("DoRegen");
-    my $RegenPercent = 10; # Set Regen Percent per tic here
-    if ($client) {
-      my $HPRatio = $client->GetHPRatio();
-      if ($HPRatio < 100) {
-        my $HPMax = $client->GetMaxHP();
-        my $HPNew = (($HPRatio + $RegenPercent) / 100) * $HPMax;
-        $client->SetHP($HPNew);
-      }
-      my $ManaRatio = $client->GetManaRatio();
-      if ($ManaRatio < 100) {
-        my $ManaMax = $client->GetMaxMana();
-        my $ManaNew = (($ManaRatio + $RegenPercent) / 100) * $ManaMax;
-        $client->SetMana($ManaNew);
-      }
-      my $EnduranceRatio = $client->GetEnduranceRatio();
-      if ($EnduranceRatio < 100) {
-        my $EnduranceMax = $client->GetMaxEndurance();
-        my $EnduranceNew = (($EnduranceRatio + $RegenPercent) / 100) * $EnduranceMax;
-        $client->SetEndurance($EnduranceNew);
-      }
-      quest::settimer("DoRegen", 6);
-    }
   }
 }
 
@@ -124,7 +87,7 @@ sub EVENT_CLICKDOOR
     if ($doorid == 2 || $doorid == 5) {
 # Do we really need the check here?
 #      if ($client->CalculateDistance(-3.4, -162.9, 6.9) <= 30) {
-        quest::MovePCInstance(344, 5, 0, 588, 1.75, 130);
+        quest::MovePCInstance(344, 5, 0, 588, 1.75, 260);
 #      }
     }
   }

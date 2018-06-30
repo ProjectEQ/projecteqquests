@@ -124,7 +124,7 @@ function PKK_Timer(e)
       eq.depop_all(298146); -- Reflection 4
       eq.depop_all(298048); -- Hatchling
       eq.depop(); -- will depop either husk or PKK
-      eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
+      eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378);
       eq.get_entity_list():FindDoor(5):SetLockPick(0);
     end
   elseif (e.timer == "tenae") then
@@ -165,8 +165,8 @@ function PKK_Hp(e)
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
     eq.depop();
-    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
-    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
     Spawn_Hatchlings(4, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
   elseif (e.hp_event == 70) then
@@ -175,33 +175,33 @@ function PKK_Hp(e)
 
     eq.depop();
     Spawn_Hatchlings(5, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
-    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
-    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
+    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
   elseif (e.hp_event == 50) then
     e.self:Say("You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
     eq.depop();
     Spawn_Hatchlings(6, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
-    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
-    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 81.0);
-    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
+    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162);
+    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
   elseif (e.hp_event == 30) then
     e.self:Say("My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
     e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 
     eq.depop();
     Spawn_Hatchlings(7, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 189.0):SetAppearance(3); -- husk
+    eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
-    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 166.0); -- reflection
-    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 81.0);
-    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0);
-    eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0);
+    eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
+    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162);
+    eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
+    eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0); -- needs_heading_validation
   elseif (e.hp_event == 10) then
     Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
@@ -214,7 +214,7 @@ function PKK_Hatchling_Death(e)
   hatchlings_killed = hatchlings_killed + 1;
   -- the events at 10 don't want to do extra hatchling stuff
   if ( hatchlings_killed >= hatchlings_spawned and PKK_hitpoints ~= 10 ) then
-    eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 189.0);
+    eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378);
     eq.signal(298203, 1);
     eq.signal(298204, 1);
     eq.signal(298203, 1);

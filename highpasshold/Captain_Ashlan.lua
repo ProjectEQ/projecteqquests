@@ -49,7 +49,7 @@ function event_trade(e)
 				e.other:Faction(214,2,0);
 				e.other:Faction(53,2,0);
 				e.other:Faction(105,2,0);
-				e.other:AddEXP(1000);
+				e.other:AddEXP(30);
 				e.other:GiveCash(random_copper,random_silver,random_gold,random_plat);
 				scalp = scalp - 1;
 			until scalp == 0

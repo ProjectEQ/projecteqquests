@@ -22,8 +22,8 @@ my $depopnpc5;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
+	if($class eq "Ranger" && (plugin::check_hasitem($client, 20488) || plugin::check_hasitem($client, 62600))) {
     quest::say("Hello, friend. Beautiful is what I would call such a day normally, but lately? I sense that something is [" . quest::saylink("out of balance") . "].");
-	if($class eq "Ranger" && plugin::check_hasitem($client, 20488)) {
 		if($client->GetGlobal("ranger_epic") ==undef) {
 			quest::setglobal("ranger_epic", "1", 5, "F"); 
 		}	
@@ -36,7 +36,7 @@ sub EVENT_SAY {
 	if ($class eq "Ranger" && $client->GetGlobal("ranger_epic") ==1) {
 		quest::say("I don't know for certain what is wrong. It feels like the start of a cold, a sort of tickling at the back of Norrath's throat, if I may make such a poor metaphor. In much the same way that I can sense that you have wielded the power of nature, probably in the form of the weapons known as Swiftwind and Earthcaller, I can sense a power of illness creeping upon the land. Please, if you come across anything suspicious bring it to me. I am worried, this does not feel like a natural sickness to me. Go with the blessing of the Mother and the speed of the Storm, my child.");
 	}
-	elsif($class eq "Druid" && plugin::check_hasitem($client, 20490)) { #has druid 1.0
+	elsif($class eq "Druid" && plugin::check_hasitem($client, 20490) or plugin::check_hasitem($client, 62809)) { #has druid 1.0 OR Seed of Wrath
 		quest::say("I am certain that you would sense it too, had you been so blessed as to be without sight. My sense of the life of Norrath is greatly heightened without the hindrance of vision. As I can sense that you have at your call the power of the lands, perhaps in the form of the Nature Walkers Scimitar. I can feel an unnatural illness creeping about the edges of Norrath. Please, if you come across anything suspicious bring it to me. I am worried about this cold sickness that I can almost taste. Go with the blessing of the Mother and the speed of the Storm, my child.");
 		if($client->GetGlobal("druid_epic") ==undef) {
 			quest::setglobal("druid_epic", "1", 5, "F"); 
@@ -52,7 +52,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20448 => 1)) {
     quest::emote("looks at the coin and nods gravely at you as she slips it into a fold of her clothing. 'I see. The story of this coin speaks much to me as do the words you have given me. Telin sent word that you would arrive. The tidings you bring are ill indeed. Here, take this amulet and find Sionae. She is nearby. We will speak more on this matter when all are present.'");
     quest::summonitem(20450);
-    quest::unique_spawn(15178,0,0,-1595,-2595,3.2,127); #spawn sionae
+    quest::unique_spawn(15178,0,0,-1595,-2595,3.2,254); #spawn sionae
   }
   elsif(plugin::check_handin(\%itemcount, 62810 => 1)){ #Sickly Maiden's Hair
     quest::say("This plant has an illness that I have never sensed before.' Althele pauses in thought for a moment. 'You are a hunter, so I shall put your skills to work. First, take this to Corun in Surefall. He is an expert on animal illnesses. Then put your hunting skills to work and see if you can capture any animals that may have eaten this plant. Corun will want to see them to help him discover what the sickness is.");
@@ -130,9 +130,9 @@ sub EVENT_TIMER {
     quest::stoptimer("attack");
     quest::emote("snaps her head towards you. 'Innoruuk's brood is upon us. Go, find the spawn of hatred before they reach this point and destroy them!");
 
-    $entid1 = quest::spawn2(15153,0,0,-996,-1529,354,130); #corruptor
-    $entid2 = quest::spawn2(15150,0,0,-1090,-1529,355.4,130); #reaver
-    $entid3 = quest::spawn2(15150,0,0,-1063,-1490,367.5,130); #reaver
+    $entid1 = quest::spawn2(15153,0,0,-996,-1529,354,260); #corruptor
+    $entid2 = quest::spawn2(15150,0,0,-1090,-1529,355.4,260); #reaver
+    $entid3 = quest::spawn2(15150,0,0,-1063,-1490,367.5,260); #reaver
     $mob1 = $entity_list->GetMobID($entid1);
     $mob2 = $entity_list->GetMobID($entid2);
     $mob3 = $entity_list->GetMobID($entid3);

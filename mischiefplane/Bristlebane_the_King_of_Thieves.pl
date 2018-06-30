@@ -17,8 +17,8 @@ sub EVENT_HP {  # adds does not aggro unless within aggro range
 	}
 	if ($hpevent == 80) {
 		quest::setnexthpevent(70);
-		quest::spawn2(126375,0,0,-88,886,178,192); # a_devious_guardian_jokester
-		quest::spawn2(126376,0,0,-157,886,178,64); # a_tricky_guardian_jester 
+		quest::spawn2(126375,0,0,-88,886,178,384); # a_devious_guardian_jokester
+		quest::spawn2(126376,0,0,-157,886,178,128); # a_tricky_guardian_jester 
 		quest::emote("shakes with laughter and says, 'You are much stronger than I thought. Looks like I'm gonna have to use all the tricks of the trade!' He then shouts a mystical word of power and is suddenly surrrounded by a magical glowing aura.");
 		quest::modifynpcstat("ac", "1087");
 		quest::modifynpcstat("mr", "500");
@@ -51,8 +51,8 @@ sub EVENT_HP {  # adds does not aggro unless within aggro range
 	}
 	if ($hpevent == 50) {
 		quest::setnexthpevent(40);
-		quest::spawn2(126375,0,0,-88,886,178,192); # a_devious_guardian_jokester
-		quest::spawn2(126378,0,0,-157,886,178,64); # a_charming_guardian_jester
+		quest::spawn2(126375,0,0,-88,886,178,384); # a_devious_guardian_jokester
+		quest::spawn2(126378,0,0,-157,886,178,128); # a_charming_guardian_jester
 		quest::spawn2(126377,0,0,-127,840,178,0); # a_dazed_guardian_jester
 		quest::emote("shakes with laughter and says, 'You are much stronger than I thought. Looks like I'm gonna have to use all the tricks of the trade!' He then shouts a mystical word of power and suddenly his muscles bulge with incomprehensible strength.");
 		quest::modifynpcstat("mr", "144");
@@ -88,8 +88,8 @@ sub EVENT_HP {  # adds does not aggro unless within aggro range
 	}
 	if ($hpevent == 20) {
 		quest::setnexthpevent(10);
-		quest::spawn2(126377,0,0,-88,886,178,192); # a_dazed_guardian_jester
-		quest::spawn2(126378,0,0,-157,886,178,64); # a_charming_guardian_jester
+		quest::spawn2(126377,0,0,-88,886,178,384); # a_dazed_guardian_jester
+		quest::spawn2(126378,0,0,-157,886,178,128); # a_charming_guardian_jester
 		quest::spawn2(126377,0,0,-146,840,178,0); # a_dazed_guardian_jester
 		quest::spawn2(126377,0,0,-110,840,178,0); # a_dazed_guardian_jester
 		quest::spawn2(126375,0,0,-127,840,178,0); # a_devious_guardian_jokester

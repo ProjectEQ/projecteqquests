@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("I will not take your word for it!  You must prove your greatness to one of my apprentices.  Do you wish to be tested by Rayne or by Kendrick?");
 	elseif((e.message:findi("Rayne")) and (e.other:Class() == "Rogue")) then
 		e.self:Say("I will summon him for you then");
-		eq.spawn2(71061,0,0,563.3,1372.6,-766.9,63.4);
+		eq.spawn2(71061,0,0,563.3,1372.6,-766.9,126.8);
 		eq.depop_with_timer();
 	elseif((e.message:findi("Kendrick")) and (e.other:Class() == "Rogue")) then
 		e.self:Say("I will summon him for you then");
-		eq.spawn2(71068,0,0,563.3,1372.6,-766.9,63.4);
+		eq.spawn2(71068,0,0,563.3,1372.6,-766.9,126.8);
 		eq.depop_with_timer();
 	end
 end

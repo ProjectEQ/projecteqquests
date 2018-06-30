@@ -27,8 +27,8 @@ function event_spawn(e)
   doorman_6 = eq.spawn2(294635, 0, 0, 656, -237, -50, 0.00);
   doorman_7 = eq.spawn2(294635, 0, 0, 656, -187, -50, 0.00);
 
-  eq.spawn2(294636, 0, 0, 719, -730, -50, 188);
-  eq.spawn2(294636, 0, 0, 719, -700, -50, 188);
+  eq.spawn2(294636, 0, 0, 719, -730, -50, 376);
+  eq.spawn2(294636, 0, 0, 719, -700, -50, 376);
   
   -- Set a timer to check the zone; this is needed
   -- in case the zone crashes to reset the doormen 
@@ -49,42 +49,44 @@ function event_timer(e)
 end
 
 function event_signal(e)
-  -- When Altar Wardens are dead; remove the bouncers blocking
-  -- the Alter Sentrys
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294591) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294592) == false) then
-    eq.depop_all(294632);
-  end
+	-- When Altar Wardens are dead; remove the bouncers blocking
+	-- the Alter Sentrys
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294591) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294592) == false) then
+		eq.depop_all(294632);
+	end
 
-  -- When the Altar Sentrys are dead; remove the bouncer blocking
-  -- the Altar Overseeer
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294602) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294603) == false) then
-    eq.depop_all(294633);
-  end
+	-- When the Altar Sentrys are dead; remove the bouncer blocking
+	-- the Altar Overseeer
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294602) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294603) == false) then
+		eq.depop_all(294633);
+	end
 
-  -- When the Altar Overseer is dead; remove the bouncers blocking
-  -- the door into the 3 stall room
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294604) == false ) then
-    eq.depop_all(294634);
-    eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-70, e.self:GetY()+70);
-    eq.enable_proximity_say();
-  end
+	-- When the Altar Overseer is dead; remove the bouncers blocking
+	-- the door into the 3 stall room
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294604) == false ) then
+		eq.depop_all(294634);
+		eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-70, e.self:GetY()+70, -999999, 999999, true);
+		eq.enable_proximity_say();
+	end
 
-  -- When the Oracle of the Altar is dead; remove the bouncers blocking
-  -- the Altar Construct
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294613) == false ) then
-    eq.depop_all(294635);
-  end
+	-- When the Oracle of the Altar is dead; remove the bouncers blocking
+	-- the Altar Construct
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294613) == false ) then
+		eq.depop_all(294635);
+	end
 
-  if (e.signal == 294611) then
-    stone_counter = stone_counter + 1;
-    if (stone_counter >= 2) then
-      eq.signal(294611, 1);
-    end
-  end
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294610) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294611) == false ) then
+		eq.get_entity_list():FindDoor(12):SetLockPick(0);
+		eq.get_entity_list():FindDoor(10):SetLockPick(0);
+		eq.get_entity_list():FindDoor(12):ForceOpen(e.self);
+		eq.get_entity_list():FindDoor(10):ForceOpen(e.self);
+		eq.depop_all(294636);
+	end
+
 end
 
 function event_proximity_say(e)
   if (e.message:findi("return")) then
-    e.other:MovePCInstance(294, instance_id, 500, -615, -50, 286 );
+    e.other:MovePCInstance(294, instance_id, 500, -615, -50, 286 ); -- needs_heading_validation
   end
 end

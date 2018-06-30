@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("Oh, I've wasted my life");
-	quest::spawn2(63102,0,0,68,493,5.1,212.5);
+	quest::spawn2(63102,0,0,68,493,5.1,425);
 }

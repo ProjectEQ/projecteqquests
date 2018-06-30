@@ -12,8 +12,8 @@ sub EVENT_AGGRO {
 
 sub EVENT_TIMER {
   if($timer == 1) {
-   $entid1 = quest::spawn2(284098,0,0,-170,-884,3,57);
-   $entid2 = quest::spawn2(284098,0,0,-167,-792,3,68);
+   $entid1 = quest::spawn2(284098,0,0,-170,-884,3,114);
+   $entid2 = quest::spawn2(284098,0,0,-167,-792,3,136);
 
    $mob1 = $entity_list->GetMobID($entid1);
    $mob2 = $entity_list->GetMobID($entid2);

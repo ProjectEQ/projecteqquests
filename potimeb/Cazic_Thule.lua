@@ -6,7 +6,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		if (event_counter == 12) then
 			-- spawn real Cazic
-			eq.spawn2(223166,0,0,-257,255,6,101.5);
+			eq.spawn2(223166,0,0,-257,255,6,203);
 			-- make myself go away!
 			eq.depop();
 		end

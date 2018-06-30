@@ -28,7 +28,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 54240 => 1)) {
 	quest::say("That should do nicely. Now, about Firwyn. You should be able to find her in the forest nearby but I would be careful if I were you. She can be a bit feisty, and you don't exactly look like a warrior if you know what I mean.");
-	quest::spawn2(181226, 0, 0,-386,-37,-27.3,50);
+	quest::spawn2(181226, 0, 0,-386,-37,-27.3,100);
   }
   plugin::return_items(\%itemcount);
 }

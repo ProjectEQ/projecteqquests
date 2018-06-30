@@ -5,11 +5,11 @@ function event_say(e)
 		e.self:Say("Choose you path. Wu or Ton Po");
 	elseif((e.message:findi("wu")) and (e.other:Class() == "Monk")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71097,0,0,660.0,1332.3,-766.9,189.9);
+		eq.spawn2(71097,0,0,660.0,1332.3,-766.9,379.8);
 		eq.depop_with_timer();
 	elseif((e.message:findi("ton po")) and (e.other:Class() == "Monk")) then
 		e.self:Say("I shall summon them for you");
-		eq.spawn2(71096,0,0,660.0,1315.0,-766.9,189.9);
+		eq.spawn2(71096,0,0,660.0,1315.0,-766.9,379.8);
 		eq.depop_with_timer();
 	end
 end

@@ -1,0 +1,30 @@
+sub EVENT_SAY {
+	if(quest::istaskactivityactive(222,6)) {
+		if($text=~/Hail/i) {
+			$pcpvp = $client->GetPVP();
+			quest::say("Here, let me fix your tracking device for you.");
+			quest::emote("takes device and repairs it, hands it back to you. 'You want my boss Toby next.'");
+			quest::updatetaskactivity(222,6);
+			if($qglobals{halloween_ratter_complete} < 6){
+				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),5);
+				quest::setglobal("halloween_ratter_complete",6,5,"D30");
+			}
+			if($qglobals{halloween_ratter_complete} > 5){
+				$client->Message(0, "You have already claimed a reward for this activity or a higher and do not qualify for another.");
+			}
+			if($qglobals{halloween_ratter_complete_pvp} < 6 && $pcpvp == 1){
+				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),5);
+				quest::setglobal("halloween_ratter_complete_pvp",6,5,"D30");
+			}
+			if(qglobals{halloween_ratter_complete_pvp} > 5 && $pcpvp == 1){
+				$client->Message(0, "You have already claimed a PVP reward for this activity or a higher and do not qualify for another.");
+			}
+			my $newzone_ocho = plugin::GetRandomFreeLocation(0,30);
+			quest::targlobal("halloween_ratter_ocho",$newzone_ocho,"F",0,0,0);
+			quest::depop();
+		}
+	}
+	else {
+		quest::emote("stands on his hind legs and sniffs you. You are uninteresting to him.");
+	}
+}

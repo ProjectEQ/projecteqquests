@@ -7,7 +7,7 @@ my $avatar_of_fear_id = 48238;
 # npcId = 48253
 sub EVENT_SPAWN {
     # spawn Avatar of Fear
-    quest::spawn2($avatar_of_fear_id, 86,0, 587, 1090, -94, 180);
+    quest::spawn2($avatar_of_fear_id, 86,0, 587, 1090, -94, 360);
     quest::emote("glows, and then dissipates");
 
     $npc->CastSpell($avatar_of_fear_spell_id, 48253);

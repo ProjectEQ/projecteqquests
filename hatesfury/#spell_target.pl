@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-  quest::spawn2(228010,0,0,-1112,-46,-285.58,60); #Attendant_Mi`Ta
+  quest::spawn2(228010,0,0,-1112,-46,-285.58,120); #Attendant_Mi`Ta
 } 
 
 sub EVENT_SIGNAL {
@@ -8,14 +8,14 @@ sub EVENT_SIGNAL {
   }
   if ($signal == 333) {
     quest::stoptimer("3hours");
-    quest::spawn2(228010,0,0,-1112,-46,-285.58,60); #Attendant_Mi`Ta
+    quest::spawn2(228010,0,0,-1112,-46,-285.58,120); #Attendant_Mi`Ta
   }
 }
 
 sub EVENT_TIMER {
   if ($timer eq "3hours") {
     quest::stoptimer("3hours");
-    quest::spawn2(228010,0,0,-1112,-46,-285.58,60); #Attendant_Mi`Ta
+    quest::spawn2(228010,0,0,-1112,-46,-285.58,120); #Attendant_Mi`Ta
     quest::signalwith(228121,66,0); #Captain_Krasnok
     quest::signalwith(228122,66,0); #Fist_of_Krasnok
     quest::signalwith(228114,333,0); #bleeding_spell

@@ -40,7 +40,7 @@ sub EVENT_SAY {
     }
     if ($tasks_done && !$Laskuth_spawned) {
       quest::say("Fantastic work, friends. I'm not sure how, but you have accomplished the impossible by ridding the Menagerie of the most horrible abominations imaginable. You've done a great service for the brotherhood. I'm sure Morden will reward you handsomely for . . . Wait, what was that noise?' The caverns tremble and fragments of ice rain down like hail. A deep, thundering roar rumbles from the northeast. 'Oh dear. It sounds like our work is not quite finished. I'll just . . . wait here if you don't mind.");
-      quest::spawn2(237797, 0, 0, 216.00, 397.00, -9.75, 128.00); #spawn Laskuth the Colossus
+      quest::spawn2(237797, 0, 0, 216.00, 397.00, -9.75, 256); #spawn Laskuth the Colossus
       $Laskuth_spawned = 1;
     } else {
       quest::say("Greetings adventurer, and welcome to this horrid nightmare. In order to fully understand Miragul and escape this horrid place, I ask that you aid me in some [" . quest::saylink("tasks") . "].");

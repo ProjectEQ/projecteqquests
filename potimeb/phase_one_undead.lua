@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Undead") then
 		-- spawn first wave of 3 an_undead_guardian
-		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1109.7,494.8,185.5); 
-		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1119.7,494.8,185.5);
-		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1099.7,494.8,185.5);
+		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1109.7,494.8,371); 
+		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1119.7,494.8,371);
+		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1099.7,494.8,371);
 		eq.stop_timer("Phase1Undead");
 	end
 end
@@ -33,21 +33,21 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn second wave consisting of 4 an_undead_guardian
 		if (event_counter == 3) then
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1103,494.8,185.5); 
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1120,494.8,185.5);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1103,494.8,185.5);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1120,494.8,185.5);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1103,494.8,371); 
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1120,494.8,371);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1103,494.8,371);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1120,494.8,371);
 		-- spawn third wave consisting of 4 an_undead_guardian
 		elseif (event_counter == 7) then
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1103,494.8,185.5); 
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1120,494.8,185.5);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1103,494.8,185.5);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1120,494.8,185.5);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1103,494.8,371); 
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1120,494.8,371);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1103,494.8,371);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1120,494.8,371);
 		-- spawn boss and grunts
 		elseif (event_counter == 11) then
-			eq.spawn2(223129,0,0,65.2,1109.7,494.8,185.5); -- Rythor_of_the_Undead
-			eq.spawn2(223150,0,0,65.2,1119.7,494.8,185.5); -- an_undead_protector
-			eq.spawn2(223150,0,0,65.2,1099.7,494.8,185.5); -- an_undead_protector
+			eq.spawn2(223129,0,0,65.2,1109.7,494.8,371); -- Rythor_of_the_Undead
+			eq.spawn2(223150,0,0,65.2,1119.7,494.8,371); -- an_undead_protector
+			eq.spawn2(223150,0,0,65.2,1099.7,494.8,371); -- an_undead_protector
 			-- reset event_counter for the final wave signal check
 			event_counter = 0;
 		end

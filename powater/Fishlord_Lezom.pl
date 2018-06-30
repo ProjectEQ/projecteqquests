@@ -27,15 +27,15 @@ sub EVENT_ITEM {
 	if($platinum == 100 && !defined$qglobals{fishlord}) {
 		quest::say("Very well, I will summon forth the creatures of the deep. They do not like being disturbed so you must protect me from harm. I am very vulnerable when summoning the dwellers of the deep. If death claims me the summoning will be finished. During the course of the summoning many powerful dwellers will appear. You must watch for them.");
 		
-		quest::settimer("Trash", 420);
+		quest::settimer("Trash", 30);
 		
-		quest::settimer("MiniNamed", 2400);
+		quest::settimer("MiniNamed", 120);
 		
-		quest::settimer("FinalNamed", 21600);
+		quest::settimer("FinalNamed", 1200);
 		
 		quest::setglobal("fishlord", 1, 3, "H4");
 		
-		quest::moveto(143.8, 131.5, -377.9);
+		quest::moveto(143.8, 131.5, -377.9, 0, 1);
 	}
 }
 
@@ -64,22 +64,22 @@ sub EVENT_TIMER {
 			$spawnLoc = int(rand(6));
 			
 			if($spawnLoc == 1) {
-				quest::spawn2($spawnNpcID, 0, 0, -285.6, 125.1, -369.7, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 143, 16, -354, $h);
 			}
 			elsif($spawnLoc == 2) {
-				quest::spawn2($spawnNpcID, 0, 0, -267, 120.7, -368, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 123, 61, -353, $h);
 			}
 			elsif($spawnLoc == 3) {
-				quest::spawn2($spawnNpcID, 0, 0, -272.5, 214.6, -368.5, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 148, 99, -358, $h);
 			}
 			elsif($spawnLoc == 4) {
-				quest::spawn2($spawnNpcID, 0, 0, -252.4, 220.1, -370.9, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 72, 254, -362, $h);
 			}
 			elsif($spawnLoc == 5) {
-				quest::spawn2($spawnNpcID, 0, 0, -273, 44, -361.7, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 106, 209, -361.7, $h);
 			}
 			elsif($spawnLoc == 6) {
-				quest::spawn2($spawnNpcID, 0, 0, -259.5, 48.4, -367.3, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 124, 172, -359, $h);
 			}
 		
 		$numSpawned = $numSpawned + 1;
@@ -124,22 +124,22 @@ sub EVENT_TIMER {
 			$spawnLoc = int(rand(6));
 			
 			if($spawnLoc == 1) {
-				quest::spawn2($spawnNpcID, 0, 0, -285.6, 125.1, -369.7, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 149, 82, -369.7, $h);
 			}
 			elsif($spawnLoc == 2) {
-				quest::spawn2($spawnNpcID, 0, 0, -267, 120.7, -368, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 149, 95, -347, $h);
 			}
 			elsif($spawnLoc == 3) {
-				quest::spawn2($spawnNpcID, 0, 0, -272.5, 214.6, -368.5, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 151, 97, -368.5, $h);
 			}
 			elsif($spawnLoc == 4) {
-				quest::spawn2($spawnNpcID, 0, 0, -252.4, 220.1, -370.9, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 119, 177, -370.9, $h);
 			}
 			elsif($spawnLoc == 5) {
-				quest::spawn2($spawnNpcID, 0, 0, -273, 44, -361.7, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 119, 177, -345, $h);
 			}
 			elsif($spawnLoc == 6) {
-				quest::spawn2($spawnNpcID, 0, 0, -259.5, 48.4, -367.3, $h);
+				quest::spawn2($spawnNpcID, 0, 0, 123, 159, -361, $h);
 			}
 			
 			$miniNamedCount = $miniNamedCount + 1;
@@ -155,4 +155,10 @@ sub EVENT_TIMER {
 		quest::spawn2(216088, 0, 0, $x, $y, $z, $h);#supreme
 		quest::depop_withtimer();
 	}
+}
+
+sub EVENT_DEATH_COMPLETE {
+	quest::stoptimer("Trash");
+	quest::stoptimer("MiniNamed");
+	quest::stoptimer("FinalNamed");
 }

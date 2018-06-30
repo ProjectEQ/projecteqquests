@@ -55,7 +55,7 @@ sub RandomRoam {
 				my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY, $NewZ, $LoSMobSize);
 				#Check LoS to the new random Loc
 				if ($LoS_Check) {
-					quest::moveto($NewX, $NewY, $NewZ, -1, 1);
+					quest::moveto($NewX, $NewY, $NewZ, -2, 1);
 				}
 			}
 		}
@@ -105,7 +105,7 @@ sub StraightPath {
 							my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY + 2, $NewZ, 5);
 							#Check LoS to the new random Loc
 							if ($LoS_Check) {
-								quest::moveto($NewX, $NewY, $NewZ, -1, 1);
+								quest::moveto($NewX, $NewY, $NewZ, -2, 1);
 							}
 						}
 						else {
@@ -113,13 +113,13 @@ sub StraightPath {
 							my $LoS_Check = $npc->CheckLoSToLoc($NewX, $NewY - 2, $NewZ, 5);
 							#Check LoS to the new random Loc
 							if ($LoS_Check) {
-								quest::moveto($NewX, $NewY, $NewZ, -1, 1);
+								quest::moveto($NewX, $NewY, $NewZ, -2, 1);
 							}
 						}
 					}
 				}
 				else {	# If not moving on the same Axis they are already on, just return them to their Spawn Point
-					quest::moveto($OrigX, $OrigY, $OrigZ, -1, 1);
+					quest::moveto($OrigX, $OrigY, $OrigZ, -2, 1);
 				}
 			}
 			else {	# If we are not using the orignal X, then use the original Y instead
@@ -132,7 +132,7 @@ sub StraightPath {
 							my $LoS_Check = $npc->CheckLoSToLoc($NewX + 2, $OrigY, $NewZ, 5);
 							#Check LoS to the new random Loc
 							if ($LoS_Check) {
-								quest::moveto($NewX, $OrigY, $NewZ, -1, 1);
+								quest::moveto($NewX, $OrigY, $NewZ, -2, 1);
 							}
 						}
 						else {
@@ -141,13 +141,13 @@ sub StraightPath {
 							#Check LoS to the new random Loc
 							if ($LoS_Check) {
 
-								quest::moveto($NewX, $OrigY, $NewZ, -1, 1);
+								quest::moveto($NewX, $OrigY, $NewZ, -2, 1);
 							}
 						}
 					}
 				}
 				else {	# If not moving on the same Axis they are already on, just return them to their Spawn Point
-					quest::moveto($OrigX, $OrigY, $OrigZ, -1, 1);
+					quest::moveto($OrigX, $OrigY, $OrigZ, -2, 1);
 				}
 			}
 		}
@@ -199,7 +199,7 @@ sub RandomSwim {
 					#if($npc->GetFlyMode() != 1) {
 					#	$npc->SetFlyMode(1);
 					#}
-					quest::moveto($NewX, $NewY, $SwimZ, -1, 1);
+					quest::moveto($NewX, $NewY, $SwimZ, -2, 1);
 				}
 			}
 		}

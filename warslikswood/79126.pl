@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
   quest::stoptimer(1);
-  quest::shout("I knew that you could not defeat me!!"); #Text made up
+  quest::shout("If you thought you could dawdle, you were not right. Because you're lazy, you lost the chance to fight.");
   quest::depop();
 }
 

@@ -29,7 +29,7 @@ sub EVENT_ITEM{
 		quest::say("Give this box to the ghost of Holin Aeridia.");
 		quest::ding();
 		quest::summonitem(10682); # Holin Aeridia's Belongings
-		quest::spawn2(160478,0,0,-1702,-633,11,2);
+		quest::spawn2(160478,0,0,-1702,-633,11,4);
 		quest::faction(168,10); #Katta Castellum Citizens
 		quest::faction(350,10); #Validus Custodus
 		quest::faction(206,10); #Magus Conlegium
@@ -43,7 +43,7 @@ sub EVENT_ITEM{
 		quest::say("Give this crate to the ghost of Raien Talikar.");
 		quest::ding();
 		quest::summonitem(10683); # Raien Talikars Belongings
-		quest::spawn2(160479,0,0,-1730,-568,11,100);
+		quest::spawn2(160479,0,0,-1730,-568,11,200);
 		quest::faction(168,10); #Katta Castellum Citizens
 		quest::faction(350,10); #Validus Custodus
 		quest::faction(206,10); #Magus Conlegium
@@ -57,7 +57,7 @@ sub EVENT_ITEM{
 		quest::say("Give this crate to the ghost of Shoeon Malicus.");
 		quest::ding();
 		quest::summonitem(10684); # Shoeon Malicus' Belongings
-		quest::spawn2(160480,0,0,-1667,-559,11,130);
+		quest::spawn2(160480,0,0,-1667,-559,11,260);
 		quest::faction(168,10); #Katta Castellum Citizens
 		quest::faction(350,10); #Validus Custodus
 		quest::faction(206,10); #Magus Conlegium

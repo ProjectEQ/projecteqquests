@@ -91,7 +91,7 @@ end
 function Subversion_Death(e)
   eq.spawn_condition(this_zone, instance_id, 1, 0);
   eq.stop_all_timers();
-  eq.spawn2(306009, 0, 0, -212, 273, 71, 20);
+  eq.spawn2(306009, 0, 0, -212, 273, 71, 40);
 
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);

@@ -32,7 +32,11 @@ end
 
 function event_timer(e)
 	if(e.timer == "heal") then
-		e.self:CastSpell(12,87154);
+		local el = eq.get_entity_list();
+		local doval = el:GetNPCByNPCTypeID(87154);
+		if (doval.valid) then
+			e.self:CastSpell(12, doval:GetID());
+		end
 	end
 end
 

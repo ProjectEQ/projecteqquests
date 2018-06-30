@@ -16,11 +16,11 @@ sub EVENT_CLICKDOOR
     		{
       			if(($client->GetClientVersionBit() & 4294967264)!= 0)
       			{
-        			quest::MovePCInstance(344,5,18,-46,6,225);
+        			quest::MovePCInstance(344,5,18,-46,6,450);
       			}
       			else
       			{
-        			quest::movepc(344,18,-46,6,225);
+        			quest::movepc(344,18,-46,6,492);
       			}
     		}
 	}

@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 		quest::depop(206067); #real Xanamech
 	}
 	if(!$entity_list->IsMobSpawnedByNpcTypeID(206068)) {
-		quest::spawn2(206068,0,0,-735,1580,-50,125.8); #fake Xanamech
+		quest::spawn2(206068,0,0,-735,1580,-50,251.6); #fake Xanamech
 	}
 }
 
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
 	if($timer == 1 && $x == -720 && $y == 1500 && !$entity_list->IsMobSpawnedByNpcTypeID(206067)) {
-		quest::spawn2(206067,0,0,-735,1580,-50,125.8); # real Xanamech
+		quest::spawn2(206067,0,0,-735,1580,-50,251.6); # real Xanamech
 		quest::depop(206068); #fake Xanamech
 		quest::stoptimer(1);
 		quest::settimer(2,1);

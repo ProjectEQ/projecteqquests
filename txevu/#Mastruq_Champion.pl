@@ -38,7 +38,7 @@ sub EVENT_HP {
 sub EVENT_TIMER {
 	if ($timer == 1) {
 		if ($emote == 0) {
-			quest::moveto(0,0,-430, -1, 1);
+			quest::moveto(0,0,-430, -2, 1);
 			quest::say("Look what we have here, boys? One of them softies found its way into our pit. What is it that we do with softies again?");
 		} elsif ($emote == 1) {
 			quest::ze(15,'The cry goes up from the crowd, "KILL THEM!"');
@@ -54,7 +54,7 @@ sub EVENT_TIMER {
 			quest::say("I bet this one here can't even take the runt!");
 		} elsif ($emote == 7) {
 			quest::ze(15,"The crowd bursts into jeers as a wretched creature pulls itself out of the pond and cowers before the champion.");
-			quest::spawn2(297209,0,0,-50,0,-438,66); #runt
+			quest::spawn2(297209,0,0,-50,0,-438,132); #runt
 		} elsif ($emote == 8) {
 			quest::say("Go on, show us what you're made of! Just you and the runt. No pets, no friends, no healing, no nuttin! You win and you can walk away with your head still on your shoulder. But I warn you, we don't take kindly to cheaters.");
 			quest::stoptimer(1);
@@ -64,7 +64,7 @@ sub EVENT_TIMER {
 	$emote++;
 	} elsif ($timer eq "reset") {
 		quest::modifynpcstat("special_attacks","ABfHG"); #go inactive
-		quest::moveto(-39,-8,-433,90,1);
+		quest::moveto(-39,-8,-433,180,1);
 		quest::depopall(297209); #runt
     quest::depopall(297211); #Ixt_Hsek_Syat
 		quest::stoptimer("reset");

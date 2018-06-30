@@ -47,7 +47,7 @@ my $shawlsignal = 0;
 sub EVENT_SIGNAL {
    #quest::shout("Signal recv: $signal");
    if ($signal == 1) {
-      quest::moveto(1309.1, 4591.8, 71.9, 62.5);
+      quest::moveto(1309.1, 4591.8, 71.9, 125);
       $shawlsignal = 1;
    }
    elsif ($signal == 3) {
@@ -60,7 +60,7 @@ sub EVENT_SIGNAL {
    }
    elsif ($signal == 10) {
       quest::emote("scratches his head, 'Yar ya do that ya crazy Coldain.'");
-      quest::moveto(1324.9, 4638.9, 73.3, 124.5);
+      quest::moveto(1324.9, 4638.9, 73.3, 249);
    }
 }
 

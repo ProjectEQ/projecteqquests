@@ -13,7 +13,7 @@ sub	EVENT_WAYPOINT_ARRIVE
 		{
 		# He reached his goal. Spread out.
 		quest::stop();
-		quest::moveto(2619, 1333, 147.12,180,1);
+		quest::moveto(2619, 1333, 147.12,360,1);
 		}
 	}
 

@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Fire") then
 		-- spawn first wave of 3 #a_flame_mephit
-	    eq.spawn2(223088,0,0,68,573,504,185.5);
-		eq.spawn2(223088,0,0,68,563,504,185.5);
-		eq.spawn2(223088,0,0,68,583,504,185.5);
+	    eq.spawn2(223088,0,0,68,573,504,371);
+		eq.spawn2(223088,0,0,68,563,504,371);
+		eq.spawn2(223088,0,0,68,583,504,371);
 		eq.stop_timer("Phase1Fire");
 	end
 end
@@ -34,7 +34,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn Kazrok_of_Fire
 		if (event_counter == 9) then
-			eq.spawn2(223090,0,0,68,573,504,185.5); 
+			eq.spawn2(223090,0,0,68,573,504,371); 
 			event_counter = 0;
 		end
 	-- signal 2 comes from Kazrok_of_Fire,an_inferno_mephit_, and a_flame_mephit_

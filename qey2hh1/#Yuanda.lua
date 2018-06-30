@@ -16,11 +16,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 15809})) then -- Note to Yuanda
 		e.self:Say("So you are working for Geboron? Yes I have seen the paladins and the staff they were guarding. They passed through here just one day ago. From what I have been told, they were attacked by a pack of werewolves. All of the paladins were killed and one of the werewolves took the staff. If you want the staff you will need to find these werewolves. Oh, no! Here they come now! I am getting out of here!");
 		e.other:Ding();
-		eq.spawn2(12183, 0, 0, xloc -18, yloc -35, zloc,   128); -- a snarling werewolf (normal)
-		eq.spawn2(12183, 0, 0, xloc +18, yloc -35, zloc,   128); -- a snarling werewolf (normal)
-		eq.spawn2(12183, 0, 0, xloc -35, yloc +10, zloc+5, 128); -- a snarling werewolf (normal)
-		eq.spawn2(12183, 0, 0, xloc +35, yloc +10, zloc,   128); -- a snarling werewolf (normal)
-		eq.spawn2(12184, 0, 0, xloc,    yloc +35, zloc,   128); -- a snarling werewolf (high)
+		eq.spawn2(12183, 0, 0, xloc -18, yloc -35, zloc,   256); -- a snarling werewolf (normal)
+		eq.spawn2(12183, 0, 0, xloc +18, yloc -35, zloc,   256); -- a snarling werewolf (normal)
+		eq.spawn2(12183, 0, 0, xloc -35, yloc +10, zloc+5, 256); -- a snarling werewolf (normal)
+		eq.spawn2(12183, 0, 0, xloc +35, yloc +10, zloc,   256); -- a snarling werewolf (normal)
+		eq.spawn2(12184, 0, 0, xloc,    yloc +35, zloc,   256); -- a snarling werewolf (high)
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

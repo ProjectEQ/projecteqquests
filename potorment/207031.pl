@@ -16,7 +16,7 @@ sub EVENT_DEATH_COMPLETE {
 	foreach $ent (@clientlist) {
 		#distance restriction so the members need to be reasonably close.
 		if ($ent->CalculateDistance($npc->GetX(),$npc->GetY(),$npc->GetZ()) <= 200) {
-		$ent->MovePC(207,1,-890,-27,180); #back to Baraguj_Szuul
+		$ent->MovePC(207,1,-890,-27,360); #back to Baraguj_Szuul
 		}
 	}
 }

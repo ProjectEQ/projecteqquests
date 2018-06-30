@@ -179,12 +179,12 @@ sub EVENT_CLICKDOOR {
 }
 
 sub STONE_ATTACK {
-  quest::spawn2(291138,0,0,-1118,816,-426,128);  #an unbound guardian
+  quest::spawn2(291138,0,0,-1118,816,-426,256);  #an unbound guardian
   quest::spawn2(291133,0,0,-1125,451,-426,0);   #a liberated stoneworker
   quest::spawn2(291131,0,0,-1190,532,-426,0);   #a freed rockbearer
-  quest::spawn2(291131,0,0,-1203,685,-426,128);   #a freed rockbearer
-  quest::spawn2(291131,0,0,-1150,793,-426,128);   #a freed rockbearer
-  quest::spawn2(291131,0,0,-984,740,-426,128);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-1203,685,-426,256);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-1150,793,-426,256);   #a freed rockbearer
+  quest::spawn2(291131,0,0,-984,740,-426,256);   #a freed rockbearer
   quest::spawn2(291131,0,0,-964,564,-426,0);   #a freed rockbearer
 }
 

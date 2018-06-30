@@ -32,7 +32,7 @@ sub EVENT_TIMER {
     if ($timer == 1) {
         quest::stoptimer(1);
 
-        quest::spawn2($unstable_rift_id, 0,0, 587, 1090, -98, 180);
+        quest::spawn2($unstable_rift_id, 0,0, 587, 1090, -98, 360);
 
         plugin::SetAnim(sit);
     }

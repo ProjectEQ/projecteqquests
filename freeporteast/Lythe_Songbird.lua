@@ -33,7 +33,7 @@ function event_timer(e)
 		end					
 		
   elseif(e.timer == 'gate') then
-  	e.self:GMMove(-873,-1025,11.3,72);
+  	e.self:GMMove(-873,-1025,11.3,144);
   end
 end
 -- END of FILE Zone:freporteast -- Lythe_Songbird

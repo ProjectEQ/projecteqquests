@@ -14,7 +14,7 @@ sub EVENT_ITEM {
 
     quest::exp(500);
 
-    quest::spawn2(20205,0,0,2316,797,275,193.5);
+    quest::spawn2(20205,0,0,2316,797,275,387);
  }
 
   plugin::return_items(\%itemcount);

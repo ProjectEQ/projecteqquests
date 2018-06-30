@@ -3,7 +3,7 @@ function event_click_door(e)
 	local door_id = e.door:GetDoorID();
 
 	if ( door_id >= 8 and door_id <= 13 ) then 
-		e.self:MovePC(201, 456, 825, 9, 180);
+		e.self:MovePC(201, 456, 825, 9, 360);
 	elseif ( door_id >= 1 and door_id <= 6 ) then
 		if ( e.self:GetItemIDAt(30) == 31599 ) then 
  			MoveGroup(e.self:GetGroup(), e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 65, 1308, 7, 121);
@@ -17,7 +17,7 @@ function event_click_door(e)
 				eq.set_global("monk_7thhammer","1",3,"H2");
 			end	
 		else
- 			e.self:MovePC(201, 156, 470, -48, 180);
+ 			e.self:MovePC(201, 156, 470, -48, 360);
 		end
 	end
 end

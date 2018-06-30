@@ -15,11 +15,11 @@ function event_say(e)
 
 		elseif(e.message:findi("south ro")) then
 			--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-			e.other:MovePC(35, 1033, -1447, -23, 83);
+			e.other:MovePC(35, 1033, -1447, -23, 166);
 
 		elseif(e.message:findi("commonlands")) then
 			--e.self:CastSpell(4176,e.other:GetID(),0,1);
-			e.other:MovePC(22,-140,-1520,3,280);
+			e.other:MovePC(22,-140,-1520,3,280); -- needs_heading_validation
 		
 		end
 	else --no Adventurers Stone

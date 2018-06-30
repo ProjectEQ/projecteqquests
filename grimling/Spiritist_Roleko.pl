@@ -22,10 +22,10 @@ sub EVENT_ITEM {
    quest::say("I shall begin the ritual immediately.");
    quest::say("What is that?! Look! There is a grimling heading this way followed by what appear to be grimling undead. Defend me while I perform the ritual.");
 
-   quest::spawn2(167573,0,0,-975.17,-825.20,6.74,260); # A possesed griming
-   quest::spawn2(167615,0,0,-958.44,-834.88,6.74,260); # A Reanmiated Grimling
-   quest::spawn2(167615,0,0,-979.17,-839.41,1.14,260); # A Reanmiated Grimling
-   quest::spawn2(167615,0,0,-967.86,-838.92,4.63,260); # A Reanmiated Grimling
+   quest::spawn2(167573,0,0,-975.17,-825.20,6.74,260); # A possesed griming # needs_heading_validation
+   quest::spawn2(167615,0,0,-958.44,-834.88,6.74,260); # A Reanmiated Grimling # needs_heading_validation
+   quest::spawn2(167615,0,0,-979.17,-839.41,1.14,260); # A Reanmiated Grimling # needs_heading_validation
+   quest::spawn2(167615,0,0,-967.86,-838.92,4.63,260); # A Reanmiated Grimling # needs_heading_validation
    
 }
 
@@ -44,7 +44,7 @@ sub EVENT_ITEM {
    quest::emote("Scribe Cholsa prepares the ritual components according to the ritual instructions.");
    quest::say("I will need to maintain my concentration to keep the Rakshasa from escaping back into the spirit realm. If you kill him while he is materialized he will be slain and his body will remain material. Bring me the head of the Rakshasa when he is slain.");
    quest::delglobal(Rakshasa);
-   quest::spawn2(167546,0,0,-975.17,-825.20,6.74,20); # Rakshasa Karwoaro
+   quest::spawn2(167546,0,0,-975.17,-825.20,6.74,40); # Rakshasa Karwoaro
    quest::faction(68,10); # Dar Khura
    quest::exp(2000);
    quest::ding();

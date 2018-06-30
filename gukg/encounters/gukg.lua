@@ -58,11 +58,11 @@ function Update_Lockout(lockout)
 end
 
 function Spawn_Leklos()
-  eq.spawn2(259047, 0, 0, 583, -70, 2.13, 184);
+  eq.spawn2(259047, 0, 0, 583, -70, 2.13, 368);
 end
 
 function Spawn_Creeper()
-  eq.spawn2(259129, 0, 0, -97, 328, -23, 130);
+  eq.spawn2(259129, 0, 0, -97, 328, -23, 260);
 end
 
 function Leklos_Death(e)
@@ -72,7 +72,7 @@ function Leklos_Death(e)
 end
 
 function Spawn_Spore()
-  eq.spawn2(259135, 0, 0, -160, 1034, -97, 136);
+  eq.spawn2(259135, 0, 0, -160, 1034, -97, 272);
 end
 
 function Creeper_Death(e)
@@ -100,7 +100,7 @@ function Spore_Death(e)
 end
 
 function Spawn_Keeper()
-  eq.spawn2(259154, 0, 0, -723, 766, -27, 57);
+  eq.spawn2(259154, 0, 0, -723, 766, -27, 114);
 end
 
 function Gragna_Death(e)
@@ -112,16 +112,16 @@ function Keeper_Death(e)
   eq.signal(259159, 259154);
 
   -- Bidip`s Ornate Chest
-  eq.spawn2(259158, 0, 0, -725, 786, -27, 57);
+  eq.spawn2(259158, 0, 0, -725, 786, -27, 114);
 
   -- Cursed Keepers` Slimy Chest
-  eq.spawn2(259155, 0, 0, -722, 756, -27, 57);
+  eq.spawn2(259155, 0, 0, -722, 756, -27, 114);
 
   -- Gragna`s Worn Chest
-  eq.spawn2(259156, 0, 0, -689, 734, -27, 57);
+  eq.spawn2(259156, 0, 0, -689, 734, -27, 114);
 
   -- Leklos` Bonepile
-  eq.spawn2(259157, 0, 0, -674, 814, -27, 164);
+  eq.spawn2(259157, 0, 0, -674, 814, -27, 328);
 
   for k,v in pairs(raid) do
     eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(lockout_length)), "H" .. lockout_length, 0, v, 0);

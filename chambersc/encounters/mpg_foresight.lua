@@ -66,17 +66,17 @@ function Start_Event(e)
   event_started = true;
   eq.spawn2(306020, 0, 0, 0, 0, 0, 0);
   
-  eq.spawn2(306013, 0, 0, -161, 385, 60, 142); -- Dragorn Acolyte
-  eq.spawn2(306014, 0, 0, -256, 384, 60, 110); -- Dragorn Adept
-  eq.spawn2(306015, 0, 0, -315, 317, 60, 80);  -- Dragorn Annihilator
-  eq.spawn2(306016, 0, 0, -316, 223, 60, 48);  -- Dragorn Flamecaster
-  eq.spawn2(306017, 0, 0, -249, 164, 60, 15);  -- Dragorn Incinerator
-  eq.spawn2(306018, 0, 0, -158, 160, 60, 241); -- Dragorn Spellscribe
+  eq.spawn2(306013, 0, 0, -161, 385, 60, 284); -- Dragorn Acolyte
+  eq.spawn2(306014, 0, 0, -256, 384, 60, 220); -- Dragorn Adept
+  eq.spawn2(306015, 0, 0, -315, 317, 60, 160);  -- Dragorn Annihilator
+  eq.spawn2(306016, 0, 0, -316, 223, 60, 96);  -- Dragorn Flamecaster
+  eq.spawn2(306017, 0, 0, -249, 164, 60, 30);  -- Dragorn Incinerator
+  eq.spawn2(306018, 0, 0, -158, 160, 60, 482); -- Dragorn Spellscribe
 
-  eq.spawn2(306012, 0, 0, -194, 286, 66, 48);  -- a kyv sureshot
-  eq.spawn2(306021, 0, 0, -227, 290, 66, 214); -- a kyv sureshot
-  eq.spawn2(306022, 0, 0, -223, 260, 66, 138); -- a kyv sureshot
-  eq.spawn2(306023, 0, 0, -188, 257, 66, 83);  -- a kyv sureshot
+  eq.spawn2(306012, 0, 0, -194, 286, 66, 96);  -- a kyv sureshot
+  eq.spawn2(306021, 0, 0, -227, 290, 66, 428); -- a kyv sureshot
+  eq.spawn2(306022, 0, 0, -223, 260, 66, 276); -- a kyv sureshot
+  eq.spawn2(306023, 0, 0, -188, 257, 66, 166);  -- a kyv sureshot
 
   eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 
@@ -408,7 +408,7 @@ function Event_Win(e)
   eq.depop_all(306020);
 
   -- Spawn Shell of the Master
-  eq.spawn2(306024, 0, 0, -204, 274, 66, 72);
+  eq.spawn2(306024, 0, 0, -204, 274, 66, 144);
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

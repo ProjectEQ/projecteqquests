@@ -23,11 +23,20 @@ a_languished_convert (317110)
 local event_started =0;
 local banished_raid=0;
 local banished_hp=30;
+local reenable_summon = false;
 local reset_countdown=0;
 local gaze_client=nil;
 local buzz_client=nil;
 local convert_min_hit=278;
 local convert_max_hit=1855;
+
+local box = require("aa_box");
+
+local room_box = box();
+room_box:add(522.11, 5163.37);
+room_box:add(700.66, 4958.69);
+room_box:add(501.94, 4725.47);
+room_box:add(309.39, 4976.69);
 
 function OMM_Spawn(e)
 	if (banished_raid==0) then
@@ -43,12 +52,21 @@ function OMM_Spawn(e)
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
 	else		
-		eq.debug("spawn, banished != 0");		
-		eq.set_timer("reset",60*60*1000);	
+		eq.debug("spawn, banished != 0");
+		eq.set_timer("reset",60*60*1000);
+		eq.set_timer("banish_phase2", 1000); -- banish anyone that wasn't up here correctly
 		e.self:SetAppearance(1);
 		e.self:SetOOCRegen(0);
 		e.self:ModifyNPCStat("hp_regen", "0");
 		e.self:SetHP(banished_hp);
+		e.self:SetSpecialAbility(SpecialAbility.summon, 0); -- he doesn't summon off the bat
+		-- just in case somehow someone gets up there (we're seeing issues with him summoning ...)
+		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
+		e.self:SetSpecialAbility(SpecialAbility.immune_melee, 1);
+		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
+		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
+		reenable_summon = true;
 	end
 end
 
@@ -62,13 +80,13 @@ function OMM_Say(e)
 			event_started=1;
 			reset_countdown=0;
 			banished_raid=0;
-			banished_hp=30;		
+			banished_hp=30;
 			eq.set_next_hp_event(80);
 			e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
-			e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);	
+			e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
 			e.self:AddToHateList(e.other,1);
 		end
 	end
@@ -92,7 +110,7 @@ function OMM_HP(e)
 				e.self:SendBeginCast(5684, 0);
 				e.self:SpellFinished(5684, client:CastToMob());
 				client:Message(15,"You feel the cold grip of death looming over you.");
-				eq.debug("mark on: " .. client:GetName());				
+				eq.debug("mark on: " .. client:GetName());
 				num_hit=num_hit+1;
 			end
 		end
@@ -100,8 +118,8 @@ function OMM_HP(e)
 	elseif (e.hp_event == 50) then
 		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
-		eq.spawn2(317110,0,0,331, 4961, 278, 64):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(317110,0,0,505, 4792, 278, 192):AddToHateList(e.self:GetHateRandom(),1);		
+		eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
 		e.self:CameraEffect(2000,3);
 		e.self:SetOOCRegen(0);
@@ -112,9 +130,9 @@ function OMM_HP(e)
 		--e.self:MoveTo(507, 4969, 296.53, 127.6,true);
 		e.self:Stun(60*1000);
 		eq.spawn2(317118,0,0,504, 4840, 280, 0); --#Vyishe (317118) south
-		eq.spawn2(317119,0,0,619, 4968, 280, 192); --#Anishy (317119) west
-		eq.spawn2(317120,0,0,393, 4968, 280, 64); --#Piraand (317120) east
-		eq.spawn2(317121,0,0,504, 5081, 280, 128); --#Garishi (317121) north
+		eq.spawn2(317119,0,0,619, 4968, 280, 384); --#Anishy (317119) west
+		eq.spawn2(317120,0,0,393, 4968, 280, 128); --#Piraand (317120) east
+		eq.spawn2(317121,0,0,504, 5081, 280, 256); --#Garishi (317121) north
 		eq.signal(317118,1);
 		eq.signal(317119,2);		
 		eq.depop_all(317114); --Coerced_Lieutenant
@@ -139,8 +157,11 @@ function OMM_Combat(e)
 		eq.set_timer("mmgaze",  math.random(45,75)  * 1000);
 		eq.set_timer("torment", math.random(10,20)  * 1000);
 		eq.set_timer("pick6", 50 * 1000);		
-		eq.spawn2(317114,0,0,378, 4969, 279, 64);
-		eq.spawn2(317114,0,0,618, 4969, 279, 192);
+		eq.spawn2(317114,0,0,378, 4969, 279, 128);
+		eq.spawn2(317114,0,0,618, 4969, 279, 384);
+		if (reenable_summon == true) then
+			eq.set_timer("enable_summon", 10 * 1000); -- need to parse timer
+		end
 	else
 		eq.set_timer("reset", 65 * 1000);
 		eq.stop_timer("buzz");
@@ -180,7 +201,7 @@ function OMM_Timer(e)
 	elseif (e.timer == "mmgaze_cast") then
 		eq.stop_timer("mmgaze_cast");		
 		if (gaze_client.valid) then		
-			e.self:Emote("fixes his gaze on " .. gaze_client:GetName());						
+			e.self:Emote("fixes his gaze on " .. gaze_client:GetName());
 			e.self:CastSpell(5685, gaze_client:GetID());--Mata Muram's Gaze
 		else
 			eq.debug("Invalud MMGaze Cast Client: " .. os.date("!%c"));
@@ -217,17 +238,19 @@ function OMM_Timer(e)
 		eq.depop_all(317121);
 		eq.depop_all(317110);
 		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
-		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");				
+		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		local now_clients = eq.get_entity_list():GetClientList();
 		local instance_id = eq.get_zone_instance_id();
 		for client in now_clients.entries do
 			if (client.valid) then
-				client:WipeHateList();				
+				client:WipeHateList();
 				client:MovePCInstance(317,instance_id, 641,3285,-10,0);
+				client:SetEntityVariable("clicked_up", "0"); -- set to 0, they're no longer up here correctly
 			end
 		end
 		banished_raid=1;
 		banished_hp=math.ceil(e.self:GetMaxHP()*e.self:GetHPRatio()/100);
+		e.self:WipeHateList(); -- let's wipe ours too, it should be empty, maybe fix bards being instantly killed for some reason
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
 		eq.depop();
 	elseif (e.timer == "banish_hp_watch") then
@@ -240,12 +263,35 @@ function OMM_Timer(e)
 		eq.debug("resetting event: " .. os.date("!%c"));
 		event_started=0;
 		banished_raid=0;
+		reenable_summon = false;
+		eq.stop_timer("banish_phase2");
+		eq.stop_timer("enable_summon");
 		eq.depop_all(317110);
 		eq.depop_all(317114);
 		eq.depop_all(317117);
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
-		eq.depop();		
-    end
+		eq.depop();
+	elseif (e.timer == "enable_summon") then
+		eq.debug("re-enabling summon: " .. os.date("!%c"));
+		e.self:SetSpecialAbility(SpecialAbility.summon, 1);
+		reenable_summon = false;
+		eq.stop_timer("enable_summon");
+	elseif (e.timer == "banish_phase2") then
+		-- so we need to banish people who are up here incorrectly (warp, logged and relogged, etc)
+		-- we set the entity variable when PCs click up which we check here to
+		-- prevent any sort of race condition with the signal
+		local now_clients = eq.get_entity_list():GetClientList();
+		local instance_id = eq.get_zone_instance_id();
+		for client in now_clients.entries do
+			if (client.valid) then
+				local var = client:GetEntityVariable("clicked_up");
+				if ((var == nil or var == "0") and room_box:contains(client:GetX(), client:GetY())) then
+					eq.debug(client:GetName() .. " shouldn't be up here yet: " .. os.date("!%c"));
+					client:MovePCInstance(317,instance_id, 641,3285,-10,0);
+				end
+			end
+		end
+	end
 end
 
 function OMM_Death(e)
@@ -262,9 +308,16 @@ function OMM_Signal(e)
 	if (e.signal==1) then
 		if (reset_countdown==0 and banished_raid==1) then
 			eq.set_timer("reset",30*1000);
+			eq.stop_timer("banish_phase2");
 			e.self:ModifyNPCStat("hp_regen", "10000");
 			reset_countdown=1;
 			eq.debug("someone clicked up after banish, starting reset countdown: 30s " .. os.date("!%c") );
+			-- we turned these on for phase 2 to prevent him magically aggroing for some reason
+			e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
+			e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0);
+			e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+			e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
 		end
 	end
 end

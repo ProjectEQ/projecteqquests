@@ -5,7 +5,7 @@ quest::say("Hail there, $name. Amberfeld's the name and minin' is my trade. As t
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(108,665,38,63,1);
+		quest::moveto(108,665,38,126,1);
 	}
 	if($signal==2) {
 		quest::moveto(25,542,65,0,1);

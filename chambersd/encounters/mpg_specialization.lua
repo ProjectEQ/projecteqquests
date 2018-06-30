@@ -40,14 +40,14 @@ local spell_timer = 25;
 
 function setup()
   spell_list = {
-    [1] = {'5700', Cast_Imprecision},
-    [2] = {'5723', Cast_Searing_Pain}, 
-    [3] = {'5701', Cast_Rigidity},
-    [4] = {'5724', Cast_Chilling_Agony}, 
-    [5] = {'5702', Cast_Curse_of_Misfortune},
-    [6] = {'5725', Cast_Glimmering_Aura}, 
-    [7] = {'5703', Cast_Impurity},
-    [8] = {'5726', Cast_Toxic_Blast}
+    [1] = 5700,
+    [2] = 5723,
+    [3] = 5701,
+    [4] = 5724,
+    [5] = 5702,
+    [6] = 5725,
+    [7] = 5703,
+    [8] = 5726
   }
 end
 
@@ -100,49 +100,10 @@ function CastSpells(e)
   end
 
   -- Cast the Spell
-  e.self:CastSpell(tonumber(spell_list[spell_idx][1]), e.self:GetHateTop():GetID());
-
-  -- Call the function to adjust the abilities accordingly
-  spell_list[spell_idx][2](e);
+  e.self:CastSpell(spell_list[spell_idx], e.self:GetHateTop():GetID());
 
   -- Increment the spell casting index;
   spell_idx = spell_idx + 1;
-end
-
-function Cast_Imprecision(e)
-  e.self:Emote("begins to cast a spell. <Imprecision>"); 
-  -- IMPRECISION: Don't use piercing weapons, back stab or fire based spells (damage will be decreased);
-end
-
-function Cast_Searing_Pain(e)
-  e.self:Emote("begins to cast a spell. <Searing Pain>"); 
-end
-
-function Cast_Rigidity(e)
-  e.self:Emote("begins to cast a spell. <Rigidity>"); 
-  -- RIGIDITY: Don't use blunt weapons or cold based spells (casting time will be slowed);
-end
-
-function Cast_Chilling_Agony(e)
-  e.self:Emote("begins to cast a spell. <Chilling Agony>"); 
-end
-
-function Cast_Curse_of_Misfortune(e)
-  e.self:Emote("begins to cast a spell. <Curse of Misfortune>"); 
-  -- CURSE OF MISFORTUNE: Don't use slashing weapons and or magic based spells (MOB becomes 100% resistant to them);
-end
-
-function Cast_Glimmering_Aura(e)
-  e.self:Emote("begins to cast a spell. <Glimmering Aura>"); 
-end
-
-function Cast_Impurity(e)
-  e.self:Emote("begins to cast a spell. <Impurity>"); 
-  -- IMPURITY: Don't use hand to hand, flying kick, poison based spells or disease based spells (there is a significant mana increase to cast spells);
-end
-
-function Cast_Toxic_Blast(e)
-  e.self:Emote("begins to cast a spell. <Toxic Blast>"); 
 end
 
 function Boss_Death(e)

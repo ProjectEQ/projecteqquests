@@ -11,12 +11,12 @@ function event_enter_zone(e)
 		else
 			e.self:Message(15,"Decaying Lord Galuk Drek has sensed your presence. He's waiting for you... ");
 			eq.set_global("warrior_epic_gulak","1",3,"H1");
-			eq.spawn2(109906 ,0,0,-437,291,-22.9,178); --Decaying Lord Galuk Drek, not be in db yet
+			eq.spawn2(109906 ,0,0,-437,291,-22.9,356); --Decaying Lord Galuk Drek, not be in db yet
 		end
 	end
 	
 	if(qglobals["ranger_epic"] == "1" and qglobals["ranger_epic_veks"] == nil and el:IsMobSpawnedByNpcTypeID(109907) == false) then
-		eq.unique_spawn(109907,0,0,-347.25,-549.5,-17.15,234); 	
+		eq.unique_spawn(109907,0,0,-347.25,-549.5,-17.15,468); 	
 		eq.set_global("ranger_epic_veks","1",2,"H2");		
 	end
 end

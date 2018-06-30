@@ -5,7 +5,7 @@ quest::say("Watch yer step around the Icewell there, $name. I've heard that a gi
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(93,655,39,244,1);
+		quest::moveto(93,655,39,488,1);
 	}
 	if($signal==2) {
 		quest::moveto(15,543,66,0,1);

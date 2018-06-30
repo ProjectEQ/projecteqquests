@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Earth") then
 		-- spawn first wave of 3 a_pile_of_living_rubble
-		eq.spawn2(223106,0,0,70.3,1644.5,493.7,185.5);
-		eq.spawn2(223106,0,0,70.3,1654.5,493.7,185.5);
-		eq.spawn2(223106,0,0,70.3,1634.5,493.7,185.5);
+		eq.spawn2(223106,0,0,70.3,1644.5,493.7,371);
+		eq.spawn2(223106,0,0,70.3,1654.5,493.7,371);
+		eq.spawn2(223106,0,0,70.3,1634.5,493.7,371);
 		eq.stop_timer("Phase1Earth");
 	end
 end
@@ -33,7 +33,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn Terlok_of_Earth
 		if (event_counter == 9) then
-			eq.spawn2(223119,0,0,70.3,1644.5,493.7,185.5); 
+			eq.spawn2(223119,0,0,70.3,1644.5,493.7,371); 
 			event_counter = 0;
 		end
 	-- signal 2 comes from Terlok_of_Earth

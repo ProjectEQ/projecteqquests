@@ -18,8 +18,9 @@ sub EVENT_HP {
         quest::setnexthpevent(50);
   }
   if($hpevent == 50) {
-  quest::spawn2(294583,0,0,1038,-484,-68,192);
-  quest::spawn2(294583,0,0,1039,-431,-68,192);
+  quest::ze(0,"Guardian of Glorification splits into two smaller stone workers!");
+  quest::spawn2(294583,0,0,1038,-484,-68,384);
+  quest::spawn2(294583,0,0,1039,-431,-68,384);
   quest::depop();
   }
 }

@@ -21,6 +21,9 @@ function Gaz_Combat(e)
     eq.set_timer('aeramp', 30 * 1000);
   else 
     eq.set_timer('reset', 1200 * 1000);
+    eq.stop_timer('aeramp');
+    eq.stop_timer('reflect');
+    eq.stop_timer('detonate');
   end
 end
 
@@ -32,7 +35,7 @@ function Gaz_Timer(e)
     eq.stop_timer('aeramp');
     e.self:RemoveAISpell(5822);
     e.self:Emote("slows its gait and begins flailing muscular arms in all directions.");
-    e.self:AddAISpell(1, 2490, 1, -1, 5, -350);
+    eq.set_timer('detonate', 5 * 1000);
     eq.set_timer('reflect', 30 * 1000);
     e.self:SetSpecialAbility(SpecialAbility.immune_ranged_attacks, 0);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
@@ -40,13 +43,16 @@ function Gaz_Timer(e)
     e.self:ModifyNPCStat("runspeed", 1);
   elseif(e.timer=='reflect') then
     eq.stop_timer('reflect');
+    eq.stop_timer('detonate');
     e.self:RemoveAISpell(2490);
     e.self:Emote("unleashes an earth shattering roar and picks up speed.");
-    e.self:AddAISpell(1, 5822, 1024, -1, 1, -1);
+    e.self:CastSpell(5822, 0);
     eq.set_timer('aeramp', 30 * 1000);
     e.self:SetSpecialAbility(SpecialAbility.immune_ranged_attacks, 1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
     e.self:ModifyNPCStat("runspeed", 2);
+  elseif(e.timer=='detonate') then
+    e.self:CastSpell(2490, 0);
   end
 end
 

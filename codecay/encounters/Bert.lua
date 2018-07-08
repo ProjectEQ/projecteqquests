@@ -20,6 +20,7 @@ local kavillis_spawned=false;
 function Spectre_Death(e)
 	local el = eq.get_entity_list();
 	if ( el:IsMobSpawnedByNpcTypeID(200016) == false) then
+	trash_dead=0;
 	eq.zone_emote(10,"Crazed laughter is heard as you notice a foul creature standing before you. The creature then speaks saying, 'Violaters of the depths of Lxanvom shall pay with your lives!'  The foul minion of decay then begins chanting a dark ritual.  Deeper within the depths of the crypt more chanting can be heard.");
 	eq.signal(200056, 1);
 	end

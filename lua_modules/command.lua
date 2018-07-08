@@ -1,26 +1,19 @@
 --copy or symbolic link this file to /server/lua_modules/, it will not work in /server/quests/lua_modules/
-function command_lockouts(e)
-  local lockouts = require("lockouts_def");
-	local instance_requests = require("instance_requests");
-  lockout_globals = lockouts.Lockout_Globals();
-  instance_requests.DisplayLockouts(e.self, e.self, lockout_globals)
-end
 
-function command_endurance(e)
-	local tar = e.self:GetTarget();
-	if(tar.null) then
-		tar = e.self;
-	end
-	
-	tar:SetEndurance(tar:GetMaxEndurance());
-end
+local commands_path = "lua_modules/commands/";
+local commands      = { };
 
-local commands = { };
-commands["endurance"] = { 50, command_endurance };
-commands["lockouts"] = { 0, command_lockouts };
+commands["endurance"] = { 50,  require(commands_path .. "endurance") };
+commands["lockouts"]  = { 0,   require(commands_path .. "lockouts") };
+commands["findnpcs"]  = { 200, require(commands_path .. "find_npcs") };
 
 function eq.DispatchCommands(e)
 	local command = commands[e.command];
+
+	for k,v in pairs(e.args) do
+		eq.debug("[command.lua] key " .. k .. ' value ' .. v);
+	end
+
 	if(command) then
 		local access = command[1];
 		if(access > e.self:Admin()) then

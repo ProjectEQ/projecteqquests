@@ -17,11 +17,7 @@ function event_say(e)
 		local DRF=e.other:GetFactionLevel(e.other:GetID(), e.self:GetID(), e.other:GetBaseRace(), e.other:GetClass(), e.other:GetDeity(), 404, e.self);
 		if (DRF >= 5) then
 			e.self:Say("So, you want to get in good with them dark crusaders, eh? I might be able to help you. If you run a few errands for me, I can probably put in a good word.");
-			if (not e.other:IsTaskActive(279) and not e.other:IsTaskActive(280)) then
-				eq.task_selector({279, 280});
-			else
-				e.other:Message(15, "Sorry " .. e.other:GetName() .. ", you already have the maximum number of active tasks."); -- string id 6010, do later, task system should generate it
-			end
+			eq.task_selector({279, 280});
 		else
 			e.self:Say("You can probably go try to speak to the Dark Reign for work.  I've got nothing for you.");
 		end

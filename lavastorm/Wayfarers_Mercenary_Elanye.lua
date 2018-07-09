@@ -18,11 +18,7 @@ function event_say(e)
 		if (NKF >= 5) then
 			e.self:Say("I'm not that interested in becoming a servant of those followers of Firiona Vie myself, but I don't mind the cash they pay me. I keep most for me and throw a little back to the Wayfarers crew. If you're looking to get on their good side, I can make some money and you can gain their audience.");
 			-- Blood of the Winged, Goblin Broth
-			if (not e.other:IsTaskActive(273) and not e.other:IsTaskActive(274)) then
-				eq.task_selector({273, 274});
-			else
-				e.other:Message(15, "Sorry " .. e.other:GetName() .. ", you already have the maximum number of active tasks."); -- string id 6010, do later, task system should generate it
-			end
+			eq.task_selector({273, 274});
 		else
 			e.self:Say("I've gotten acquainted with Norrath's Keepers well enough to know they might be interested in speaking with you.");
 		end

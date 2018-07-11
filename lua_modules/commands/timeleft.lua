@@ -1,4 +1,4 @@
-function time_left(e)
+local function time_left(e)
   local ttime = eq.get_instance_timer();
   local day = math.floor(ttime / 86400000); 
   local hour = math.floor(ttime / 3600000) % 24;

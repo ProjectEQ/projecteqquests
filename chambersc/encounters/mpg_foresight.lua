@@ -141,15 +141,19 @@ function Boss_Timer(e)
   eq.stop_timer(e.timer);
   if (e.timer == "equipment") then
     client = eq.get_entity_list():GetRandomClient(-204,270,65,150000);
-    num = math.random(1,table.getn(equipment));
-    equipment_client = {client, num};
-    client:Message(14, equipment[num][1]);
-    eq.set_timer("equipment_action", 3 * 1000);
+    if (client.valid) then
+      num = math.random(1,table.getn(equipment));
+      equipment_client = {client, num};
+      client:Message(14, equipment[num][1]);
+      eq.set_timer("equipment_action", 3 * 1000);
+    end
   elseif (e.timer == "equipment_action") then
     client = equipment_client[1];
-    num = equipment_client[2];
-    equipment[num][2](e.self,client);
-    eq.set_timer("equipment", equipment_timer * 1000);
+    if (client.valid) then 
+      num = equipment_client[2];
+      equipment[num][2](e.self,client);
+      eq.set_timer("equipment", equipment_timer * 1000);
+    end
   end
 end
 
@@ -197,12 +201,14 @@ function Kyv_Timer(e)
 
     i = e.self:GetNPCTypeID();
     client = eq.get_entity_list():GetRandomClient(-204, 270, 65, 150000);
-    num = math.random(1,table.getn(kyvs));
-    kyv_targets[i] = { client, num, {client:GetX(), client:GetY() }};
-    client:Message(14, kyvs[num][1]);
-    
-    eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
-    eq.set_timer('kyv_action', 3000);
+    if (client.valid) then
+      num = math.random(1,table.getn(kyvs));
+      kyv_targets[i] = { client, num, {client:GetX(), client:GetY() }};
+      client:Message(14, kyvs[num][1]);
+      
+      eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
+      eq.set_timer('kyv_action', 3000);
+    end
   elseif (e.timer == 'kyv_action') then
     eq.stop_timer(e.timer);
     i = e.self:GetNPCTypeID();
@@ -225,10 +231,12 @@ end
 -- Return true if client moved
 -- Return false if they did not
 function kyv_move(e, client, loc)
-  eq.debug("name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_move old_x: " .. loc[1] .. " old_y:" .. loc[2]);
+  if (client.valid) then 
+    eq.debug("name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_move old_x: " .. loc[1] .. " old_y:" .. loc[2]);
 
-  if (loc[1] == client:GetX() and loc[2] == client:GetY()) then
-    return false;
+    if (loc[1] == client:GetX() and loc[2] == client:GetY()) then
+      return false;
+    end
   end
   return true;
 end
@@ -236,9 +244,11 @@ end
 -- Return true if client has stopped or engaged in battle
 -- Return false if they are moving or engaged in battle
 function kyv_stop(e, client, loc)
-  eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_stop");
-  if ( client:IsMoving() or client:IsEngaged() ) then
-    return false;
+  if (client.valid) then 
+    eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_stop");
+    if ( client:IsMoving() or client:IsEngaged() ) then
+      return false;
+    end
   end
   return true;
 end
@@ -246,9 +256,11 @@ end
 -- Return true if client has ducked
 -- return false if client has not ducked
 function kyv_duck(e, client, loc)
-  eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_duck");
-  if ( client:GetAppearance() == Appearance.Crouching ) then
-    return true;
+  if (client.valid) then 
+    eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_duck");
+    if ( client:GetAppearance() == Appearance.Crouching ) then
+      return true;
+    end
   end
   return false;
 end
@@ -274,26 +286,30 @@ function Hazard_Timer(e)
 end
 
 function check_rings(mob, client)
-  if ( client:GetItemIDAt(15) ~= -1 ) then
-    client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
-    mob:CastSpell(5695, client:GetID());
-  else
-    client:Message(14, "Your regain the use of your fingers.");
-  end
-  if ( client:GetItemIDAt(16) ~= -1 ) then
-    client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
-    mob:CastSpell(5695, client:GetID());
-  else
-    client:Message(14, "Your regain the use of your fingers.");
+  if (client.valid) then 
+    if ( client:GetItemIDAt(15) ~= -1 ) then
+      client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
+      mob:CastSpell(5695, client:GetID());
+    else
+      client:Message(14, "Your regain the use of your fingers.");
+    end
+    if ( client:GetItemIDAt(16) ~= -1 ) then
+      client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
+      mob:CastSpell(5695, client:GetID());
+    else
+      client:Message(14, "Your regain the use of your fingers.");
+    end
   end
 end
 
 function check_weapon(mob, client)
-  if ( client:GetItemIDAt(14) ~= -1 ) then
-    client:Message(14, "Your weaponry becomes incredibly hot, searing your hands!");
-    mob:CastSpell(2315, client:GetID());
-  else
-    client:Message(14, "Your weaponry cools down.");
+  if (client.valid) then 
+    if ( client:GetItemIDAt(14) ~= -1 ) then
+      client:Message(14, "Your weaponry becomes incredibly hot, searing your hands!");
+      mob:CastSpell(2315, client:GetID());
+    else
+      client:Message(14, "Your weaponry cools down.");
+    end
   end
 end
 
@@ -301,17 +317,19 @@ function ae_check(e, xmin, xmax, ymin, ymax)
   local cl = eq.get_entity_list():GetClientList();
   local x,y;
   for v in cl.entries do
-    x = v:GetX();
-    y = v:GetY();
-    eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
-    eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
-    if (x < xmin or x > xmax or y < ymin or y > ymax) then
-      --e.self:CastSpell(5693, v:GetID());
-      v:Damage(e.self, 5000, 5693, 1);
-      v:Message(14,'The room explodes with chaotic energy.');
-    else
-      v:Message(14,'The room explodes with chaotic energy.');
-      v:Message(14,'You escape the blast unscathed.');
+    if (v.valid) then 
+      x = v:GetX();
+      y = v:GetY();
+      eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
+      eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
+      if (x < xmin or x > xmax or y < ymin or y > ymax) then
+        --e.self:CastSpell(5693, v:GetID());
+        v:Damage(e.self, 5000, 5693, 1);
+        v:Message(14,'The room explodes with chaotic energy.');
+      else
+        v:Message(14,'The room explodes with chaotic energy.');
+        v:Message(14,'You escape the blast unscathed.');
+      end
     end
   end
   eq.set_timer('hazard', hazard_timer * 1000);
@@ -355,10 +373,12 @@ function Dragorn_Timer(e)
 	  local x,y,z;
 	  local cl = eq.get_entity_list():GetClientList();
 	  for v in cl.entries do
-		x = v:GetX(); y = v:GetY(); z = v:GetZ();
-		if (e.self:CalculateDistance( x, y, z ) < dist ) then
-		  v:Message(8, dragorns[num][1]);
-		end
+      if (v.valid) then 
+        x = v:GetX(); y = v:GetY(); z = v:GetZ();
+        if (e.self:CalculateDistance( x, y, z ) < dist ) then
+          v:Message(8, dragorns[num][1]);
+        end
+      end
 	  end
 	--  eq.set_timer('dragorn_cast', dragorn_timer * 1000);
     dragorns[num][3](e.self, dragorns[num][2]);
@@ -376,9 +396,11 @@ function cast_5693(mob, spell)
   local x,y,z;
   local cl = eq.get_entity_list():GetClientList();
   for v in cl.entries do
-    x = v:GetX(); y = v:GetY(); z = v:GetZ();
-    if (mob:CalculateDistance( x, y, z ) < dist ) then
-      mob:CastSpell(spell, v:GetID(),0,8000);
+    if (v.valid) then
+      x = v:GetX(); y = v:GetY(); z = v:GetZ();
+      if (mob:CalculateDistance( x, y, z ) < dist ) then
+        mob:CastSpell(spell, v:GetID(),0,8000);
+      end
     end
   end
 end

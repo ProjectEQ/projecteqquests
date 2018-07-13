@@ -291,6 +291,10 @@ function Boss_Say(e)
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
       local shifttime = math.random(90, 150);
+      e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0)
+      e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0)
+      e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
+      e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
       eq.spawn2(308012,0,0,0,0,0,0);
       event_started = true;
       eq.set_timer('shapeshift', shifttime * 1000);

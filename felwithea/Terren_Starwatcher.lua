@@ -1,6 +1,8 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome friend! Have you come to the Temple of Tunare to give praise or are you a young Cleric seeking [guidance] from your elders?");
+	elseif(e.message:findi("further guidance")) then
+		e.self:Say("If you are ready to put your life on the line for the citizens of our homeland than hear my words. The Crushbone Clan of Orcs are evil and strong adversaries of we Koada`Dal. Recently an orc scout assaulted a merchant from our city carrying a valuable amulet from the Fier`Dal city of Kelethin. Our seers have divined the name of the orc that is in possession of the amulet. Gurleg Bribgok. Find this despicable creature and return the amulet to me so that I may return it to its proper owner."); 
 	elseif(e.message:findi("guidance")) then
 		e.self:Say("Tunare shall be pleased to have a new disciple amongst her Koada`Dal children. We Clerics of Tunare offer spiritual guidance to the citizens of Felwithe and when needed aid the Paladins of Tunare and the Keepers of the Art in the defense of our people and forest from those [creatures] that seek to cause us harm. Every young cleric should pursue acquiring a [suit of armor] to protect themselves when aiding those in need outside of the safety of Felwithes walls.");
 	elseif(e.message:findi("creatures")) then
@@ -29,8 +31,6 @@ function event_say(e)
 	elseif(e.message:findi("breastplate")) then
 		e.self:Say("To assemble a sylvan initiate breastplate you will need to obtain four bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Bronze Breastplate with a Giant Sylvan Bat Fur. and two Mature Arborean Barks in the Mail Assembly Kit.");
 		e.other:SummonItem(19637);
-	elseif(e.message:findi("further guidance")) then
-		e.self:Say("If you are ready to put your life on the line for the citizens of our homeland than hear my words. The Crushbone Clan of Orcs are evil and strong adversaries of we Koada`Dal. Recently an orc scout assaulted a merchant from our city carrying a valuable amulet from the Fier`Dal city of Kelethin. Our seers have divined the name of the orc that is in possession of the amulet. Gurleg Bribgok. Find this despicable creature and return the amulet to me so that I may return it to its proper owner."); 
 	end
 end
 

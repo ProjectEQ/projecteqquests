@@ -41,8 +41,12 @@ sub EVENT_TIMER {
 		quest::signal(211102);
 		quest::signal(211103);
 		quest::signal(211104);
+		quest::signal(211107);
+		quest::signal(211108);
+		quest::signal(211109);
+		
 	}
-	if($timer == 1 && $badguys == 9) {
+	if($timer == 1 && $badguys == 12) {
 		quest::spawn2(211105,0,0,456,1374,-113,131); #hail version of Rhaliq
 		quest::updatespawntimer(44016,259200000); #Rhaliq Trell 3 days on win
 		$villager=undef;
@@ -64,6 +68,10 @@ sub EVENT_TIMER {
 		quest::signal(211102);
 		quest::signal(211103);
 		quest::signal(211104);
+		quest::signal(211107);
+		quest::signal(211108);
+		quest::signal(211109);
+		
 	}
 	if($timer == 2) {
 		quest::updatespawntimer(44016,86400000); #Rhaliq Trell 24 hours on fail
@@ -85,5 +93,9 @@ sub EVENT_TIMER {
 		quest::signal(211102);
 		quest::signal(211103);
 		quest::signal(211104);
+		quest::signal(211107);
+		quest::signal(211108);
+		quest::signal(211109);
+		
 	}
 }

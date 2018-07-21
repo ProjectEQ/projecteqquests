@@ -38,7 +38,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 20293})) then -- Orc Thaumaturgists Spell Book
-		e.self:Say("Excellent work, " .. e.other:GetName() .. ". Now I need you to gather a Pristine Forest Drakeling Scale and an Arborean Amber. Return this staff and the items I require and then I will create your new staff."); -- Text made up
+		e.self:Say("Well done young Art Keeper. Take this Rough Art Keepers Initiate Staff and go forth and gather a Pristine Forest Drakeling Scales and an Arborean Amber. When you have acquired those two items return them to me with the Rough Art Keepers Initiate Staff and I will put the final touches on the staff.");
 		e.other:SummonItem(20296); -- Rough Art Keepers Initiate Staff
 		e.other:Ding();
 		e.other:Faction(170,10,0); -- Keepers of the Art

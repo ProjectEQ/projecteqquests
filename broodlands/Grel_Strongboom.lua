@@ -13,3 +13,11 @@ function event_waypoint_arrive(e)
 		e.self:Say("Arr! I'll look for it later around here. I'll be back you whelps! Grel will find his hat, count on it! Minions, stay here and guard my retreat!");
 	end
 end
+
+function event_spawn(e)
+eq.spawn2(337039, 87, 0, 1573, 734, 26.93, 295);
+eq.spawn2(337052, 87, 0, 1573, 734, 26.93, 295);
+eq.spawn2(337063, 87, 0, 1573, 734, 26.93, 295);
+eq.spawn2(337112, 87, 0, 1573, 734, 26.93, 295);
+eq.spawn2(337116, 87, 0, 1573, 734, 26.93, 295);
+end

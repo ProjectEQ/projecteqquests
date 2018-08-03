@@ -9,7 +9,6 @@ end
 function event_combat(e)
 	if (e.joined) then
 		-- call all mobs to assist
-		e.self:Shout("Denizens of Growth, your master commands you to come forth to her aid!!");
 		-- do not aggro these mobs #_Tunare (127001), #Tunare (127098), a_warm_light (127004)
 		-- #BouncerMan (127097), Flighty_Viridian_Wisp (127105)
 		send_signal_to_all_npc_in_zone(1, {127001,127004,127097,127098,127105});

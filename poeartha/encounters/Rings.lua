@@ -948,15 +948,26 @@ function Deruph_Spawn(e)
 	eq.depop_all(218040); -- depop bloodthirsty(1) (Targetable version)
 	eq.depop(218128); -- depop Bloodsoaked Vegerog
 	eq.depop(218058); -- depop Deru Named
+	eq.spawn2(218126,0,0,447.24,-868.75,37.75,68.8); -- Spawn all 10 Bloodthirsty Vegerog
+	eq.spawn2(218126,0,0,484.89,-872.28,37.75,510.8);
+	eq.spawn2(218126,0,0,521.35,-870.67,37.75,455.8);
+	eq.spawn2(218126,0,0,521.84,-831.45,37.75,387.0);
+	eq.spawn2(218126,0,0,523.63,-795.69,37.75,336.8);
+	eq.spawn2(218126,0,0,483.41,-793.68,37.75,258.8);
+	eq.spawn2(218126,0,0,446.91,-793.18,37.75,197.3);
+	eq.spawn2(218126,0,0,443.52,-834.30,37.75,130.8);
+	eq.spawn2(218126,0,0,461.58,-855.27,33.75,67.0);
+	eq.spawn2(2181265,0,0,509.08,-806.73,33.75,313.0);
+	
 end
 
 function Tainted_Death(e)
 	local el = eq.get_entity_list();
 	tainted_dead=tainted_dead+1; -- Count deaths
-	eq.debug("Tainted: " .. tainted_dead);
+	eq.debug("Tainted:" .. tainted_dead);
 	if tainted_dead == 30 and el:IsMobSpawnedByNpcTypeID(218127) == true then
 	eq.depop_with_timer(218127); -- Depop ring timer mob.
-	eq.depop_with_timer(218126); -- Depop Bloodthirsty Vegerog & Repop them to agro
+	eq.depop_all(218126); -- Depop Bloodthirsty Vegerog & Repop them to agro
 	tainted_dead=0; -- Reset count on tainted.
 	eq.debug("Tainted: " .. tainted_dead);
 	eq.spawn2(218040,0,0,447.24,-868.75,37.75,68.8); -- Spawn all 10 Bloodthirsty Vegerog

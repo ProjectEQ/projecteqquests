@@ -454,7 +454,7 @@ function Encrusted_Death(e) --PH Death
 		eq.debug("Stone_Success: " .. stone_counter);
 		if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(15,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -465,7 +465,7 @@ function Encrusted_Death(e) --PH Death
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 		else
-		eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+		--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
 		end
 end
 		

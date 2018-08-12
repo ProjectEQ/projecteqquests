@@ -951,9 +951,10 @@ function Deruph_Spawn(e)
 end
 
 function Tainted_Death(e)
+	local el = eq.get_entity_list();
 	tainted_dead=tainted_dead+1; -- Count deaths
 	eq.debug("Tainted: " .. tainted_dead);
-	if tainted_dead == 30 then
+	if tainted_dead == 30 and el:IsMobSpawnedByNpcTypeID(218127) == true then
 	eq.depop_with_timer(218127); -- Depop ring timer mob.
 	eq.depop_with_timer(218126); -- Depop Bloodthirsty Vegerog & Repop them to agro
 	tainted_dead=0; -- Reset count on tainted.

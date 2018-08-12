@@ -797,9 +797,9 @@ function Soil_Death(e)
 	soil_dead=0; -- Reset soil counter
 	eq.depop_with_timer(218093); -- Depop ## Dust Trigger ## so we can pop PH if needed
 	elseif soil_dead == 3 and el:IsMobSpawnedByNpcTypeID(218093) == false then
-	eq.spawn2(218122,0,0,-32.37,-560.45,31.75,127.8);
-	eq.spawn2(218122,0,0,24.07,-581.69,31.75,456.0); -- Spawn the PH ring ## Dust Follower x 3 ##
-	eq.spawn2(218122,0,0,25.65,-527.70,31.75,332.5);
+	eq.spawn2(218122,0,0,-32.37,-560.45,31.75,127.8):AddToHateList(e.self:GetTarget(),1);
+	eq.spawn2(218122,0,0,24.07,-581.69,31.75,456.0):AddToHateList(e.self:GetTarget(),1); -- Spawn the PH ring ## Dust Follower x 3 ##
+	eq.spawn2(218122,0,0,25.65,-527.70,31.75,332.5):AddToHateList(e.self:GetTarget(),1);
 	follower_dead=0; -- Set follower counter to 0.
 	end
 end

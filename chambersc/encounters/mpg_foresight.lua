@@ -287,13 +287,13 @@ end
 
 function check_rings(mob, client)
   if (client.valid) then 
-    if ( client:GetItemIDAt(15) ~= -1 ) then
+    if ( client:GetItemIDAt(Slot.Finger1) ~= -1 ) then
       client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
       mob:CastSpell(5695, client:GetID());
     else
       client:Message(14, "Your regain the use of your fingers.");
     end
-    if ( client:GetItemIDAt(16) ~= -1 ) then
+    if ( client:GetItemIDAt(Slot.Finger2) ~= -1 ) then
       client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
       mob:CastSpell(5695, client:GetID());
     else
@@ -304,7 +304,7 @@ end
 
 function check_weapon(mob, client)
   if (client.valid) then 
-    if ( client:GetItemIDAt(14) ~= -1 ) then
+    if ( client:GetItemIDAt(Slot.Secondary) ~= -1 ) then
       client:Message(14, "Your weaponry becomes incredibly hot, searing your hands!");
       mob:CastSpell(2315, client:GetID());
     else

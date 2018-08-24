@@ -61,9 +61,6 @@ function MoveGroup(src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h)
 				end
 			end
 		end
-	else
-		-- should we port up the clicker if not group/raid? probably
-		clicker:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h);
 	end
 end
 

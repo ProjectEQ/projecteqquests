@@ -8,14 +8,23 @@ Kessdona:
 <chlorine cloud>
 <Eye of kessdona> cast randomly on unknown amount of people at unknown intervals (need info)
 casts <kessdona's burning breath" every 30 seconds with emote that gives people 5 seconds to move
-Phase 1: 5 "inactive manashard guardian" and 1 "active manashard guardian" are non-agro/unkillable around Kess. Raid must bring Kess to 90% at 90% Kessdona heals with spell <Recreation> and the 1 active manashard guardian's HP drops by 20% each time. Rinse and repeat a total of 5 times. Active manashard guardian 'dies' and 
-"depleted manashard guardian" come to life with 10 of their total HP, depop the inactive manashard and replace it with a new active guardian.
-Phase 2: at 80% Kess HP locks and "Protector of Kessdona" start spawning, 4 at a time. 1 is "real" 3 are "fake." If a fake is killed, Kess HP is set to 100%, and all the rest of the golems despawn  later with a new set of 4. This does not reset event. If real one is killed,
- HP unlocks and you can dps to 60%,  This pattern happens at 80,60,40,20%.
+Phase 1: 5 "inactive manashard guardian" and 1 "active manashard guardian" are non-agro/unkillable around Kess. Raid must bring Kess to 90% at Kessdona heals with spell <Recreation> and the 1 active manashard guardian's HP drops by 20% each time. Rinse and repeat a total of 5 times. Active manashard guardian 'dies' and 
+6 "depleted manashard guardian" come to life with 5% of their total HP, depop the inactive manashard guardians.
+Phase 2: at 80% Kess HP locks and "Protector of Kessdona" start spawning, 4 at a time. 1 is "real" 3 are "fake." If a fake is killed, Kess HP is set to 100%, and all the rest of the golems despawn and respawn 15 seconds later with a new set of 4. This does not reset event. If real one is killed,
+ HP unlocks and you can dps to 60%, set of 4 golems respawns 15 sec later.. This pattern happens at 80,60,40,20%.
  
  
- ##6546## Recreation. Kessdona begins to cast a spell. <Recreation>
+ ##6546## Recreation. <Kessdona>
  
+ [Fri Aug 31 21:16:02 2018] Your Location is 6356.93, 1287.83, 754.18
+ [Fri Aug 31 21:16:05 2018] Your Location is 6423.52, 1299.33, 755.13
+ [Fri Aug 31 21:16:10 2018] Your Location is 6478.35, 1202.17, 754.83
+ [Fri Aug 31 21:16:15 2018] Your Location is 6409.48, 1126.67, 753.60
+ 
+ 1287.83,6356.93,754.18,407.5
+ 1299.33,6423.52,755.13,433.3
+ 1202.17,6478.35,754.83,222.0  Protector locations.
+ 1126.67,6409.48,753.60,189.5
  --]]
  
  
@@ -106,97 +115,97 @@ end
 			eq.set_timer("Lock",3000); -- Lock my  HP at this value.
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
-				eq.spawn2(339115,0,0,1127.07,6463.92,745.10,219.8); -- Real
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339115,0,0,1172.59,6463.36,753.17,332.0); -- Real
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339115,0,0,1144.50,6405.04,747.07,487.3); -- Real
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339115,0,0,1100.92,6411.72,748.74,79.0); -- Real
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	elseif (e.hp_event == 60) and unlocktwo == false then -- If my HP is 60% and I have not locked my HP yet.
 			eq.set_timer("Lock",3000); -- Lock my HP here
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
-				eq.spawn2(339115,0,0,1127.07,6463.92,745.10,219.8); -- Real
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339115,0,0,1172.59,6463.36,753.17,332.0); -- Real
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339115,0,0,1144.50,6405.04,747.07,487.3); -- Real
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339115,0,0,1100.92,6411.72,748.74,79.0); -- Real
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	elseif (e.hp_event == 40) and unlockthree == false then -- If my HP is 40% and I have not locked my HP yet.
 			eq.set_timer("Lock",3000); -- Lock my HP here
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
-				eq.spawn2(339115,0,0,1127.07,6463.92,745.10,219.8); -- Real
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339115,0,0,1172.59,6463.36,753.17,332.0); -- Real
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339115,0,0,1144.50,6405.04,747.07,487.3); -- Real
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339115,0,0,1100.92,6411.72,748.74,79.0); -- Real
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	elseif (e.hp_event == 20) and unlockfour == false then -- If my HP is 20% and I have not locked my HP yet.
 			eq.set_timer("Lock",3000); -- Lock my HP here
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
-				eq.spawn2(339115,0,0,1127.07,6463.92,745.10,219.8); -- Real
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339115,0,0,1172.59,6463.36,753.17,332.0); -- Real
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339115,0,0,1144.50,6405.04,747.07,487.3); -- Real
-				eq.spawn2(339111,0,0,1100.92,6411.72,748.74,79.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1127.07,6463.92,745.10,219.8);
-				eq.spawn2(339111,0,0,1172.59,6463.36,753.17,332.0);
-				eq.spawn2(339111,0,0,1144.50,6405.04,747.07,487.3);
-				eq.spawn2(339115,0,0,1100.92,6411.72,748.74,79.0); -- Real
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	end
 end

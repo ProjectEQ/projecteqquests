@@ -389,7 +389,7 @@ function Kess_Death(e)
 end
 
 function Kess_BeginCast(e)
-	if (e.spell:GetID() == 6543) then
+	if (e.spell:ID() == 6543) then
 		eq.zone_emote(15,"Kessdona rears back and fills her lungs, preparing to exhale a cone of disintegrating flame.");
 	end
 end

@@ -10,3 +10,7 @@ function event_signal(e)
     e.self:ModifyNPCStat("hp_regen", "3200");
   end
 end
+
+function event_death_complete(e)
+  eq.signal(342060,1); --signal fd npc event is won
+end

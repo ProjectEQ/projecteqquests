@@ -66,6 +66,8 @@ Phase 2: at 80% Kess HP locks and "Protector of Kessdona" start spawning, 4 at a
  function Kess_Combat(e) -- Set all variables back to default if party wipes and I am not in combat.
 	if (e.joined == true) then -- Keep track of my location every 3 seconds. If I am not in my box, put me there.
 	eq.set_timer("Kess", 3000);
+	eq.set_timer("Charm", 90000);
+	eq.set_timer("Breath",30000);
 	elseif (e.joined == false) then
 	eq.set_timer("Fail",30000); -- set a 30s fail condition if I am not in combat.
 	eq.set_timer("Respawn",40000);
@@ -296,10 +298,25 @@ function Kess_Timer(e)
 	eq.depop(339111);
 	eq.depop(339115);
 	eq.depop(339116);
+	elseif (e.timer == "Breath") then
+	eq.zone_emote(15,"Kessdona rears back and fills her lungs, preparing to exhale a cone of disintegrating flame.");
+	e.self:CastSpell(6543, e.self:GetTarget():GetID());
 	elseif (e.timer == "Respawn") then
 	eq.depop(339110);
 	eq.spawn2(339110,0,0,1227,6338.75,744.19,73.0); -- Respawn myself
 	eq.stop_timer('Respawn');
+	elseif (e.timer == "Charm") then
+	local cl = eq.get_entity_list():GetShuffledClientList();
+	local count = 0;
+		for client in cl.entries do
+			if client.valid then
+			e.self:CastedSpellFinished(6544, client);
+			count = count + 1;
+			end
+			if (count == 3) then -- or 6, w/e
+			break
+			end
+		end
 	end
 end
 

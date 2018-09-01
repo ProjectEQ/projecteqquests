@@ -11,3 +11,10 @@ eq.spawn2(342054,0,0,-161,2064,-11,149);
 eq.spawn2(342055,0,0,-85,1961,-.23,35);
 eq.signal(342052,2); --emoush goes back to sleep
 end
+
+function event_signal(e)
+  if(e.signal == 1) then
+    eq.stop_timer('reset');
+    eq.depop_all(342060);
+  end
+end

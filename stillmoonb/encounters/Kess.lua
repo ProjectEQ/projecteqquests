@@ -67,7 +67,6 @@ Phase 2: at 80% Kess HP locks and "Protector of Kessdona" start spawning, 4 at a
 	if (e.joined == true) then -- Keep track of my location every 3 seconds. If I am not in my box, put me there.
 	eq.set_timer("Kess", 3000);
 	eq.set_timer("Charm", 90000);
-	eq.set_timer("Breath",30000);
 	elseif (e.joined == false) then
 	eq.set_timer("Fail",30000); -- set a 30s fail condition if I am not in combat.
 	eq.set_timer("Respawn",40000);
@@ -298,9 +297,6 @@ function Kess_Timer(e)
 	eq.depop(339111);
 	eq.depop(339115);
 	eq.depop(339116);
-	elseif (e.timer == "Breath") then
-	eq.zone_emote(15,"Kessdona rears back and fills her lungs, preparing to exhale a cone of disintegrating flame.");
-	e.self:CastSpell(6543, e.self:GetTarget():GetID());
 	elseif (e.timer == "Respawn") then
 	eq.depop(339110);
 	eq.spawn2(339110,0,0,1227,6338.75,744.19,73.0); -- Respawn myself
@@ -392,6 +388,12 @@ function Kess_Death(e)
 	eq.spawn2(339117,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- Spawn a chest with loot at my location upon death.
 end
 
+function Kess_BeginCast(e)
+	if (e.spell:GetID() == 6543) then
+		eq.zone_emote(15,"Kessdona rears back and fills her lungs, preparing to exhale a cone of disintegrating flame.");
+	end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('Kess', Event.spawn,            339110, Kess_Spawn);
   eq.register_npc_event('Kess', Event.hp,				339110,	Kess_HP);
@@ -404,6 +406,7 @@ function event_encounter_load(e)
   eq.register_npc_event('Kess', Event.signal,			339110, Kess_Signal);
   eq.register_npc_event('Kess', Event.death_complete,	339111, Fake_Death);
   eq.register_npc_event('Kess', Event.death_complete,	339115, Correct_Death);
+  eq.register_npc_event('Kess', Event.cast_begin,		339110, Kess_BeginCast);
   
   
 end

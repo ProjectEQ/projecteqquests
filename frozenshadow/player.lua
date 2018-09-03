@@ -31,37 +31,37 @@ function event_click_door(e)
     -- if the player_list is not nil, we have people to move!
     if (player_list ~= nil) then
         if (door_id == 2 or door_id == 166) then -- First Floor Door
-            if (e.self:KeyRingCheck(200033) or e.self:HasItem(20033)) then
+            if (e.self:KeyRingCheck(20033) or e.self:HasItem(20033)) then
                 dest_x = 660;
                 dest_y = 100;
                 dest_z = 40;
             end
         elseif (door_id == 4 or door_id == 167) then -- Second Floor Door
-            if (e.self:KeyRingCheck(200034) or e.self:HasItem(20034)) then
+            if (e.self:KeyRingCheck(20034) or e.self:HasItem(20034)) then
                 dest_x = 670;
                 dest_y = 750;
                 dest_z = 75;
             end
         elseif (door_id == 16 or door_id == 165) then -- Third Floor Door
-            if (e.self:KeyRingCheck(200035) or e.self:HasItem(20035)) then
+            if (e.self:KeyRingCheck(20035) or e.self:HasItem(20035)) then
                 dest_x = 170;
                 dest_y = 755;
                 dest_z = 175;
             end
         elseif (door_id == 27 or door_id == 169) then -- Fourth Floor Door
-            if (e.self:KeyRingCheck(200036) or e.self:HasItem(20036)) then
+            if (e.self:KeyRingCheck(20036) or e.self:HasItem(20036)) then
                 dest_x = -150;
                 dest_y = 160;
                 dest_z = 217;
             end
         elseif (door_id == 34 or door_id == 168) then -- Fifth Floor Door
-            if (e.self:KeyRingCheck(200037) or e.self:HasItem(20037)) then
+            if (e.self:KeyRingCheck(20037) or e.self:HasItem(20037)) then
                 dest_x = -320;
                 dest_y = 725;
                 dest_z = 12;
             end
         elseif (door_id == 1) then -- Sixth Floor Door
-            if (e.self:KeyRingCheck(200039) or e.self:HasItem(20039)) then
+            if (e.self:KeyRingCheck(20039) or e.self:HasItem(20039)) then
                 dest_x = 20;
                 dest_y = 250;
                 dest_z = 355;

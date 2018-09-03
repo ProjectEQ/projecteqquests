@@ -69,16 +69,18 @@ function event_click_door(e)
         end
 
         -- okay, we have destination now, maybe. If we do, we need to port our group members (but not us)
-        for i = 0, player_list_count - 1, 1 do
-            -- group:GetMember returns mob, so we need to cast it (this may be a group or raid)
-            local pc = player_list:GetMember(i):CastToClient();
-            if (pc.valid) then
-                -- don't move the initiator of this event
-                if (pc:CharacterID() ~= e.self:CharacterID()) then
-                    -- if we're in a normal group (raid_group == nil) we don't need to verify the Group Number
-                    if (raid_group == nil or player_list:GetGroupNumber(i) == raid_group) then
-                        if (pc:CalculateDistance(cur_x, cur_y, cur_z) <= 40) then
-                            pc:MovePC(111, dest_x, dest_y, dest_z, 0);
+        if (dest_x ~= 0) then
+            for i = 0, player_list_count - 1, 1 do
+                -- group:GetMember returns mob, so we need to cast it (this may be a group or raid)
+                local pc = player_list:GetMember(i):CastToClient();
+                if (pc.valid) then
+                    -- don't move the initiator of this event
+                    if (pc:CharacterID() ~= e.self:CharacterID()) then
+                        -- if we're in a normal group (raid_group == nil) we don't need to verify the Group Number
+                        if (raid_group == nil or player_list:GetGroupNumber(i) == raid_group) then
+                            if (pc:CalculateDistance(cur_x, cur_y, cur_z) <= 40) then
+                                pc:MovePC(111, dest_x, dest_y, dest_z, 0);
+                            end
                         end
                     end
                 end

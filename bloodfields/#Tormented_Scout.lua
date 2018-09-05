@@ -15,5 +15,5 @@ function event_trade(e)
 		e.other:SummonItem(57052);--Wrapped Gemmed Wand
 		e.self:Emote("looks at you with sad eyes. 'Me so sorry, but me could not stop it. Wand is terrible power. Me wrap it again like Jillaa. You take it to Muada, quickly. Me tinks we did it! It has no power without dis wand!");
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

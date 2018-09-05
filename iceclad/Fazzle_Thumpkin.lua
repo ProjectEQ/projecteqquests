@@ -22,7 +22,7 @@ function event_trade(e)
 		e.self:Say("You... you found it! My pestle! Hooray! I can get back to my work! I'm so grateful for this kind act, I've got to have something in my knapsack that you want! Here, how about some lint... wait, how did that get in there. You don't want lint! Hah! How about some cogs? No, what would you do with cogs? I know... you'll be able to make special use of this [" .. eq.say_link("map") .. "] I have.");
 		eq.set_global("warrior_epic","18",5,"F");
 		end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

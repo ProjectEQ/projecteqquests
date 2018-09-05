@@ -56,5 +56,5 @@ function event_trade(e)
 		eq.set_global("paladin_epic","7",5,"F");
 		e.other:SummonItem(69972);
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

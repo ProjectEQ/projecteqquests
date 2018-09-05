@@ -18,7 +18,7 @@ function event_trade(e)
 		end
 		eq.depop_with_timer();
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 function event_waypoint_arrive(e)

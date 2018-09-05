@@ -18,5 +18,5 @@ function event_trade(e)
 		e.self:Say("Take these and return to the spirit!");
 		e.other:SummonItem(52921); --Distilled Potion of Endurance
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

@@ -30,7 +30,7 @@ function event_trade(e)
 		e.other:Message(15,'You have gained 10 ability points!');
 		eq.set_global("shadowknight_epic","12",5,"F");		
 	end	
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 function event_signal(e)

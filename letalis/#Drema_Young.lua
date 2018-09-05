@@ -11,5 +11,5 @@ function event_trade(e)
 		eq.unique_spawn(169128,0,0,-1278,825,0,0);
 		eq.depop_with_timer();
 	end	
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

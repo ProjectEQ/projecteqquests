@@ -13,7 +13,7 @@ function event_trade(e)
 		e.other:SummonItem(16779);
 		eq.set_global("berserk_epic","3",5,"F");		
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);	
+	item_lib.return_items(e.self, e.other, e.trade);	
 end
 
 

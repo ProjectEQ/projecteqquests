@@ -19,5 +19,5 @@ function event_trade(e)
     e.other:Faction(135,50,0);
     e.other:AddEXP(1000);
   end
-  item_lib.return_items(e.self, e.other, e.trade, e.text)
+  item_lib.return_items(e.self, e.other, e.trade)
 end

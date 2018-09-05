@@ -39,7 +39,7 @@ function event_trade(e)
 		e.self:Say("You have done well," .. e.other:GetName() .. ". We are drawing nearer to being fully prepared for the Ruchu. I've put the bark and the necklace into this satchel that is protected by a spell. The only one who may open it is the Spirit of Enlightenment. Go and give that to it.");
 		e.other:SummonItem(57551); --Impervious Medicine Bag
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

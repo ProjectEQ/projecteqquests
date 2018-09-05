@@ -48,7 +48,7 @@ function event_trade(e)
 		e.other:SummonItem(60311); --Glistening Hilt
 		eq.delete_global("warrior_epic_veksar");
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

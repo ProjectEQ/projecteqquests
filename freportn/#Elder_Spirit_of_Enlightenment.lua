@@ -153,7 +153,7 @@ function event_trade(e)
 		char_id = 0;
 		client = nil;
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 function event_timer(e)

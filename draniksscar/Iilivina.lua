@@ -30,5 +30,5 @@ function event_trade(e)
 		eq.set_global("mage_epic","11",5,"F");
 		e.self:Say("You work so fast! Amazing work you have done.' She looks at the 4 essences for a moment, 'Yes, these can probably be used to bind to your staff, but we'll need some sort of binding. Something that can be used to keep large amounts of energy bound together. I have no idea where you'd find such a thing, but if you do bring it to Bantil with your staff, and he'll be able to finish your journey.");
 	end	
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

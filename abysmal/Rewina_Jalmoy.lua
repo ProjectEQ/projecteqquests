@@ -16,7 +16,7 @@ function event_trade(e)
 		e.self:Say("Oh my, what is this? Someone looking to interact with me who isn't making fun of my name?! I'm shocked! So what have you brought me, hmm? Ooo, what a collection of fine specimens! Where on Norrath did you find these? Did you find them on Norrath? Oh wordy me! I always seem to get sidetracked, but I did manage to decipher what these pages say for you. Don't be a stranger, come back and see me any time you like!");
 		e.other:SummonItem(60299); --Recounted History of War
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

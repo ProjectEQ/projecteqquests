@@ -206,13 +206,18 @@ end
 
 function Mourning_Say(e)
 	if(e.message:findi("shoulder my burden")) then
-	e.other:BuffFadeBySpellID(6646); -- Remove creeping doom from player.
-	e.other:Message(15,"The mournful spirit draws corruption from your body and absorbs it, destroying itself in the process."); -- Let them know I sacrificed myself.
-	eq.depop(); -- Depop myself
-	mourning_count=mourning_count-1; -- Let vish know my count went down.
-	eq.debug("Shoulder my Burdens left to complete: " .. mourning_count);
-	eq.signal(343094,5); -- Signal to him that I died so he can unlock his HP.
-	eq.set_next_hp_event(mourning_count); -- set next event to mourning_count value now.
+		local cl = eq.get_entity_list():GetClientList();
+		for client in cl.entries do
+			if (client.valid and client:FindBuff(6646)) then
+				e.other:BuffFadeBySpellID(6646); -- Remove creeping doom from player.
+				e.other:Message(15,"The mournful spirit draws corruption from your body and absorbs it, destroying itself in the process."); -- Let them know I sacrificed myself.
+				eq.depop(); -- Depop myself
+				mourning_count=mourning_count-1; -- Let vish know my count went down.
+				eq.debug("Shoulder my Burdens left to complete: " .. mourning_count);
+				eq.signal(343094,5); -- Signal to him that I died so he can unlock his HP.
+				eq.set_next_hp_event(mourning_count); -- set next event to mourning_count value now.
+			end
+		end
 	end
 end
 

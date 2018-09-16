@@ -58,7 +58,7 @@ function Deputy_Signal(e)
 		eq.stop_timer("Rez2");
 	elseif (e.signal == 4) then
 		eq.zone_emote(15,"General Huffin cackles, Well we can fix that!");
-		eq.set_timer("Adds",45000);
+		eq.set_timer("Adds",90000);
 		eq.set_timer("Bags",15000);
 	elseif (e.signal == 5) and stunned == 1 then
 		e.self:ModSkillDmgTaken(0, -650) -- 1h blunt
@@ -209,7 +209,7 @@ end
 
 function Deputy_Combat(e)
 	if (e.joined == true) then
-		eq.set_timer("Fear",60000);
+		eq.set_timer("Fear",150000);
 	end
 end
 
@@ -317,7 +317,7 @@ function Deputy_Timer(e)
 	elseif (e.timer == "Blind") then
 		eq.zone_emote(15,"General Huffin raises up his weapon and the light begins to shines into your eyes. Look away quickly!");
 	elseif (e.timer == "BlindCast") then
-			eq.set_timer("BlindCast",45000);
+			eq.set_timer("BlindCast",70000);
 			eq.zone_emote(13,"General Huffin says, No more games!");
 			local cl = eq.get_entity_list():GetClientList();
 			for client in cl.entries do
@@ -394,8 +394,8 @@ function Deputy_HP(e)
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 75);
 		eq.spawn2(33169,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); 
 		eq.spawn2(33169,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading());
-		eq.set_timer("Blind",45000);
-		eq.set_timer("BlindCast",50000);
+		eq.set_timer("Blind",60000);
+		eq.set_timer("BlindCast",70000);
 		eq.set_next_hp_event(50);
 	elseif (e.hp_event == 50) then
 		e.self:SendIllusionPacket({race=454,gender=2,texture=4});
@@ -442,6 +442,7 @@ end
 function Deputy_Death(e)
 	e.self:Shout("My reign isnt over!");
 	eq.stop_all_timers();
+	eq.depop_all(33167);
 	eq.signal(33165,4);
 end
 

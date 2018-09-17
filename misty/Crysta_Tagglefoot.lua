@@ -38,6 +38,6 @@ function event_timer(e)
 	eq.spawn2(33161,0,0,-2395.84,496.42,-453,123.3);
 	e.self:Shout("Hey over here, thief!! Don't think we can't see you!");
 	e.self:Say("I hope you're ready for this!");
-	eq.depop(33164);
+	eq.depop_with_timer(33164);
 	end
 end

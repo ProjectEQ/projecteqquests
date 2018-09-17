@@ -47,6 +47,7 @@ function Deputy_Signal(e)
 	if (e.signal == 1) then
 		e.self:SetRunning(true);
 		e.self:MoveTo(-2358.64,736.61,3.90,429.3,true);
+		stunned=0;
 		eq.set_timer("Talk",18000);
 	elseif (e.signal == 2) and deputydeath == false then
 		eq.set_timer("Rez1",15000);
@@ -202,6 +203,7 @@ function Deputy_Spawn(e)
 		e.self:ModSkillDmgTaken(74, -999) -- frenzy
 		e.self:ModSkillDmgTaken(77, -650) -- 2hp
 		e.self:TempName("General_Huffin");
+		stunned=0;
 		eq.set_timer("Laugh",20000);
 		eq.set_next_hp_event(75);
 	end	
@@ -210,6 +212,9 @@ end
 function Deputy_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer("Fear",150000);
+	elseif (e.joined == false) then
+		eq.set_timer("Fail",10000);
+		spawned=true;
 	end
 end
 
@@ -369,6 +374,13 @@ function Deputy_Timer(e)
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0)
 		e.self:AddToHateList(e.self:GetTarget(),1);
 		eq.stop_timer("Root");
+	elseif (e.timer == "Fail") then
+		eq.signal(33165,6);
+		eq.depop_all(33168);
+		eq.depop_all(33167);
+		eq.depop_all(33169);
+		eq.depop_all(33170);
+		eq.depop();
 	end
 	
 end
@@ -450,12 +462,16 @@ end
 function Deputy1_Combat(e)
 	if (e.joined == true) then
 	eq.set_next_hp_event(80);
+	elseif (e.joined == false) then
+	eq.depop();
 	end
 end
 
 function Deputy2_Combat(e)
 	if (e.joined == true) then
 	eq.set_next_hp_event(80);
+	elseif (e.joined == false) then
+	eq.depop();
 	end
 end
 
@@ -645,8 +661,13 @@ function Crysta_Signal(e)
 	e.self:Shout("Quickly comrades, pick up the candy before HE gets it!! See if theres something in there that would be useful for weakening him! Return it to me if so.");
 	elseif (e.signal == 4) then
 	e.self:Shout("It is today!");
+	eq.depop(33165);
 	elseif (e.signal == 5) then
 	e.self:Shout("His damage reduction is weakening. Keep it up!");
+	elseif (e.signal == 6) then
+	eq.stop_all_timers();
+	eq.spawn2(33164,0,0,-2401.77,786.17,-4.53,252.00);
+	eq.depop();
 	end
 end
 

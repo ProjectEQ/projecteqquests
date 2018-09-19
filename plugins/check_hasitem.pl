@@ -9,11 +9,11 @@ sub check_hasitem {
     my $i;
     my $body_count = $client->GetCorpseCount();
     my $body_id;
-    my $augsocket_begin = quest::inventory("augsocket_begin");
-    my $augsocket_end = quest::inventory("augsocket_end");
+    my $augsocket_begin = quest::getinventoryslotid("augsocket.begin");
+    my $augsocket_end = quest::getinventoryslotid("augsocket.end");
 
 #Check possessions
-    for($slot1=quest::inventory("possessions_begin"); $slot1<=quest::inventory("possessions_end"); $slot1++) {
+    for($slot1=quest::getinventoryslotid("possessions.begin"); $slot1<=quest::getinventoryslotid("possessions.end"); $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
       for($i=$augsocket_begin; $i<=$augsocket_end; $i++) {
          $augid1=$client->GetAugmentIDAt($slot1, $i);
@@ -26,7 +26,7 @@ sub check_hasitem {
         }
     }
 #Check general and cursor containers
-    for($slot1=quest::inventory("generalbags_begin"); $slot1<=quest::inventory("cursorbag_end"); $slot1++) {
+    for($slot1=quest::getinventoryslotid("generalbags.begin"); $slot1<=quest::getinventoryslotid("cursorbag.end"); $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
       for($i=$augsocket_begin; $i<=$augsocket_end; $i++) {
          $augid1=$client->GetAugmentIDAt($slot1, $i);
@@ -39,7 +39,7 @@ sub check_hasitem {
         }
     }
 #Check bank
-    for($slot1=quest::inventory("bank_begin"); $slot1<=quest::inventory("bank_end"); $slot1++) {
+    for($slot1=quest::getinventoryslotid("bank.begin"); $slot1<=quest::getinventoryslotid("bank.end"); $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
       for($i=$augsocket_begin; $i<=$augsocket_end; $i++) {
          $augid1=$client->GetAugmentIDAt($slot1, $i);
@@ -52,7 +52,7 @@ sub check_hasitem {
         }
     }
 #Check bank containers
-    for($slot1=quest::inventory("bankbags_begin"); $slot1<=quest::inventory("bankbags_end"); $slot1++) {
+    for($slot1=quest::getinventoryslotid("bankbags.begin"); $slot1<=quest::getinventoryslotid("bankbags.end"); $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
       for($i=$augsocket_begin; $i<=$augsocket_end; $i++) {
          $augid1=$client->GetAugmentIDAt($slot1, $i);
@@ -65,7 +65,7 @@ sub check_hasitem {
         }
     }
 #Check shared bank
-    for($slot1=quest::inventory("sharedbank_begin"); $slot1<=quest::inventory("sharedbank_end"); $slot1++) {
+    for($slot1=quest::getinventoryslotid("sharedbank.begin"); $slot1<=quest::getinventoryslotid("sharedbank.end"); $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
       for($i=$augsocket_begin; $i<=$augsocket_end; $i++) {
          $augid1=$client->GetAugmentIDAt($slot1, $i);
@@ -78,7 +78,7 @@ sub check_hasitem {
         }
     }
 #Check shared bank containers
-    for($slot1=quest::inventory("sharedbankbags_begin"); $slot1<=quest::inventory("sharedbankbags_end"); $slot1++) {
+    for($slot1=quest::getinventoryslotid("sharedbankbags.begin"); $slot1<=quest::getinventoryslotid("sharedbankbags.end"); $slot1++) {
         $itemid1=$client->GetItemIDAt($slot1);
       for($i=$augsocket_begin; $i<=$augsocket_end; $i++) {
          $augid1=$client->GetAugmentIDAt($slot1, $i);
@@ -94,13 +94,13 @@ sub check_hasitem {
   if ($body_count > 0) {
     for ($i=1; $i<=$body_count; $i++) {
       $body_id = $client->GetCorpseID($i);
-      for ($slot1=quest::inventory("possessions_begin"); $slot1<=quest::inventory("possessions_end"); $slot1++) {
+      for ($slot1=quest::getinventoryslotid("possessions.begin"); $slot1<=quest::getinventoryslotid("possessions.end"); $slot1++) {
         $itemid1 = $client->GetCorpseItemAt($body_id, $slot1);
         if ($itemid1 == $itmchk) {
           return 1;
         }
       }
-      for ($slot1=quest::inventory("generalbags_begin"); $slot1<=quest::inventory("cursorbag_end"); $slot1++) {
+      for ($slot1=quest::getinventoryslotid("generalbags.begin"); $slot1<=quest::getinventoryslotid("cursorbag.end"); $slot1++) {
         $itemid1 = $client->GetCorpseItemAt($body_id, $slot1);
         if ($itemid1 == $itmchk) {
           return 1;

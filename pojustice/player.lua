@@ -4,9 +4,28 @@ function event_click_door(e)
 
 	if ( door_id >= 8 and door_id <= 13 ) then 
 		e.self:MovePC(201, 456, 825, 9, 360);
-	elseif ( door_id >= 1 and door_id <= 6 ) then
-		if (e.self:GetItemIDAt(Slot.Cursor) == 31599) then 
- 			MoveGroup(e.self:GetGroup(), e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 65, 1308, 7, 121);
+	elseif (door_id >= 1 and door_id <= 6) then
+		if (e.self:GetItemIDAt(Slot.Cursor) == 31599) then
+			-- make sure these are reset
+			player_list = nil;
+			player_list_count = nil;
+			raid_group = nil;
+			clicker = e.self;
+			-- if we're in a raid, we need to move our raid group members
+			local raid = e.self:GetRaid();
+			if (raid.valid) then
+				player_list = raid;
+				player_list_count = raid:RaidCount();
+				raid_group = raid:GetGroup(e.self);
+			else
+				-- so we're not in raid, lets check for real groups
+				local group = e.self:GetGroup();
+				if (group.valid) then
+					player_list = group;
+					player_list_count = group:GroupCount();
+				end
+			end
+ 			MoveGroup(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 65, 1308, 7, 121);
 			--using this until proximity_say is fixed
 			--monk has to have all trials done to loot Symbol on live so force monk to do the clickup or no triggered spawn
 			local qglobals = eq.get_qglobals(e.self);

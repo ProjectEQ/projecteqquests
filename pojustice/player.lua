@@ -5,7 +5,7 @@ function event_click_door(e)
 	if ( door_id >= 8 and door_id <= 13 ) then 
 		e.self:MovePC(201, 456, 825, 9, 360);
 	elseif ( door_id >= 1 and door_id <= 6 ) then
-		if ( e.self:GetItemIDAt(Slot.Cursor) == 31599 ) then 
+		if (e.self:GetItemIDAt(Slot.Cursor) == 31599) then 
  			MoveGroup(e.self:GetGroup(), e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 65, 1308, 7, 121);
 			--using this until proximity_say is fixed
 			--monk has to have all trials done to loot Symbol on live so force monk to do the clickup or no triggered spawn

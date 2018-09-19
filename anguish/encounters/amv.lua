@@ -81,7 +81,11 @@ function AMV_Timer(e)
 			end
 		end
 		eq.set_timer("check_mark",30* 1000);  --amv mark of death triggers after 30s
-		eq.set_timer("mark",75* 1000);
+		local seconds = 45; -- 45 seconds after we check the mark we will re-mark
+		if (e.self:GetHPRatio() < 75) then
+			seconds = 30; -- unless our HP is less than 75%, then it's in 30 seconds
+		end
+		eq.set_timer("mark", (seconds + 30) * 1000);
 	elseif (e.timer == "check_mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
@@ -91,7 +95,7 @@ function AMV_Timer(e)
 				eq.debug("cazic touch: " .. client:GetName());
 			end
 		end
-		eq.stop_timer("check_mark");	
+		eq.stop_timer("check_mark");
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
 			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);

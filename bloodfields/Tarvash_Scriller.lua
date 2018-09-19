@@ -20,5 +20,5 @@ function event_trade(e)
 		e.self:Say("I can see that axe ye carry already has some enchantments woven into the haft. By my eye tis not a half bad job but I bet there is room a'plenty in that axe for more wild magics yet. Ye won't find any gems right around here though, that will help ye in your search. I think that if ye managed to weave a Facetted Moonstone into the haft of yer axe, one could imbue it with another essence at a later time. Fer another 50 platinum pieces, I could be persuaded to tell ye where ye could find one.");
 	end
 
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

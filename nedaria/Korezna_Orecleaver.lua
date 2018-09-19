@@ -23,7 +23,7 @@ function event_trade(e)
 		e.other:SummonItem(60303); --Blackfall Blade
 		eq.depop();
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

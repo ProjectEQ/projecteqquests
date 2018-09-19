@@ -22,5 +22,5 @@ function event_trade(e)
 		e.self:Say("Yes, yes, welcome back. Me so worried. Me gave dat wand to scout, an ogre friend, and now it gone! And so is da scout. Someone told me dey found a tattered tunic dat looked liked da scout may have worn it quite far from here! It covered in strange black hairs and a sharp claw was stuck in it. Me don't want to tink about dat too much. It make me sad. Please go find da scout. And hurry!");
 		eq.set_global("beast_epic","20",5,"F");
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

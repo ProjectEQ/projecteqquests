@@ -29,5 +29,5 @@ function event_trade(e)
 		eq.delete_global("shaman_epic_nadox");
 		eq.set_global("shaman_epic","4",5,"F");
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

@@ -50,5 +50,5 @@ function event_trade(e)
 		e.self:Say("This item will be used to help anchor Lhranc to this plane of existence. The anchor will not be enough however. In an area in the Realm of Discord known as Anguish, you will need to find a globe of discordant energy. This will be used to infuse the earthly anchor with the power of discord. When you have these two items, hand them to my contact, Filligno the Slayer. He has tracked down Lhranc in Dranik, the Ruined City in the Realm of Discord. He will need your help to get Lhranc's attention however.");
 		e.other:SummonItem(24584); --Lhranc's Earthly Anchor
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

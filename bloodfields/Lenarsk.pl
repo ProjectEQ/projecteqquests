@@ -80,7 +80,7 @@ sub EVENT_ITEM {
 	{
 	if (plugin::check_handin(\%itemcount, 51481 => 1, 51502 => 2))
 		{
-		quest::say("Makyah's Axe! Now that this is returned to us, I hold hope that it may be wielded in our stuggle, to bolster our people's hope once more. Thankyou $name."); #made up
+		quest::say("Makyah's Axe! Now that this is returned to us, I hold hope that it may be wielded in our stuggle, to bolster our people's hope once more. Thank you $name."); #made up
 		quest::exp(100000);
 		quest::summonitem($ihands);
 		}
@@ -92,7 +92,7 @@ sub EVENT_ITEM {
 		}
 	if (plugin::check_handin(\%itemcount, 51479 => 1, 51500 => 2))
 		{
-		quest::emote("seems lost in a moment of sorrow as you hand him the pouch. 'Thankyou $name. You do not know how much this gladdens me, and saddens me, to have this returned..."); #made up
+		quest::emote("seems lost in a moment of sorrow as you hand him the pouch. 'Thank you $name. You do not know how much this gladdens me, and saddens me, to have this returned..."); #made up
 		quest::exp(100000);
 		quest::summonitem($iarms);
 		}

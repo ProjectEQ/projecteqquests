@@ -32,7 +32,5 @@ function event_trade(e)
 		e.self:Say("Nice, just what Gridbar needed. I needed. No he didn't. I want a sandwich. Gnome sandwich? Which sandwich is which? Aha! Genius! Who? This helps me finish the gem setting. Good good. Here's your socket piece. Gridbar likes it. Huh?");
 		e.other:SummonItem(60320) --Hilt of Eternal Power
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
-	
-	

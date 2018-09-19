@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:SummonItem(22944); --statless Innoruuk's Voice
 		eq.set_global("shadowknight_pre","2",5,"F");
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

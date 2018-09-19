@@ -149,7 +149,7 @@ function event_trade(e)
 		eq.depop_all(8125);
 		eq.depop_all(8126);
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 function event_timer(e)

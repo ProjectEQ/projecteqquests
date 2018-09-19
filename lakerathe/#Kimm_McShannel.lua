@@ -37,7 +37,7 @@ function event_trade(e)
 		e.self:Say("Perfect! Now, you must return the gems and platinum to the Spirit of Enlightenment. I've put it in a purse to keep them safe. You truly are beginning to surpass all of our expectations, " .. e.other:GetName() .. ".");
 		e.other:SummonItem(57614); --Runed Purse of the McShannels
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 	
 	

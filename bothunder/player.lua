@@ -1,6 +1,7 @@
 -- global script variables
 local player_list = nil;
 local player_list_count = nil;
+local raid_group = nil;
 local client_e = nil;
 local entity_list = nil;
 
@@ -14,12 +15,14 @@ function event_click_door(e)
 	-- make sure the player_list is clear
 	player_list = nil;
 	player_list_count = nil;
+	raid_group = nil;
 	-- only time we will use the raid value is if they are clicking on the Agnarr door
 	-- otherwise, it is a group only port up.
 	local raid = e.self:GetRaid();
-	if (door_id == 51 and raid.valid) then
+	if (raid.valid) then
 		player_list = raid;
 		player_list_count = raid:RaidCount();
+		raid_group = raid:GetGroup(e.self);
 	else
 		-- if group is not valid, it is a single player click up
 		local group = e.self:GetGroup();
@@ -35,9 +38,9 @@ function event_click_door(e)
 		-- the point of checking both status and GM flag is so a dev with status > 80 can still pretend to be a non-GM.
 		-- by using the status, we ensure someone cannot bypass the check by another GM using "#gm on" on a player.
 		if (e.self:Admin() >= 80 and e.self:GetGM()) then
-			PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 100, -765, -1735, 1270, 0);
+			PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 100, -765, -1735, 1270, 0, false);
 		elseif (e.self:HasItem(9433)) then
-			PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 100, -765, -1735, 1270, 0);
+			PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 100, -765, -1735, 1270, 0, false);
 		else
 			SendGargoyles(209024);
 		end
@@ -60,7 +63,7 @@ function event_click_door(e)
 		if (door_id == 61) then
 			-- did the player have the key?
 			if (key_found) then
-				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, 85, 145, 635, 128);
+				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, 85, 145, 635, 128, true);
 			else
 				SendGargoyles(209110);
 			end
@@ -68,7 +71,7 @@ function event_click_door(e)
 		elseif (door_id == 63) then
 			-- did the player have the key?
 			if (key_found) then
-				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, -830, -865, 1375, 128);
+				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, -830, -865, 1375, 128, true);
 			else
 				SendGargoyles(209111);
 			end
@@ -76,7 +79,7 @@ function event_click_door(e)
 		elseif (door_id == 65) then
 			-- did the player have the key?
 			if (key_found) then
-				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, -350, -2200, 1955, 255);
+				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, -350, -2200, 1955, 255, true);
 			else
 				SendGargoyles(209112);
 			end
@@ -84,7 +87,7 @@ function event_click_door(e)
 		elseif (door_id == 67) then
 			-- did the player have the key?
 			if (key_found) then
-				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, 150, -1220, 1120, 128);
+				PortIntoTower(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 50, 150, -1220, 1120, 128, true);
 			else
 				SendGargoyles(209113);
 			end
@@ -105,7 +108,7 @@ function SendGargoyles(npcid_to_aggro)
 	end
 end
 
-function PortIntoTower(cur_x, cur_y, cur_z, distance, dest_x, dest_y, dest_z, dest_h)
+function PortIntoTower(cur_x, cur_y, cur_z, distance, dest_x, dest_y, dest_z, dest_h, group_only)
 	-- player_list contains e.self:GetGroup or e.self:GetRaid or is nil for a single player
 	-- if it is not nil then port up the group/raid as long as they are in range
 	if (player_list ~= nil) then
@@ -115,10 +118,14 @@ function PortIntoTower(cur_x, cur_y, cur_z, distance, dest_x, dest_y, dest_z, de
 			local client_v = player_list:GetMember(i):CastToClient();
 			-- make sure we actually have a valid client
 			if (client_v.valid) then
-				-- check the distance and port them up if close enough
-				if (client_v:CalculateDistance(cur_x, cur_y, cur_z) <= distance) then
-					-- port the player up
-					client_v:MovePC(209, dest_x, dest_y, dest_z, dest_h);
+				-- if raid_group is not nil, we're in a raid, so we need to verify group number if group_only is true
+				-- yes yes, this is a bit gross
+				if (raid_group == nil or (not group_only or (raid_group ~= -1 and player_list:GetGroupNumber(i) == raid_group) or client_v:GetID() == client_e.self:GetID())) then
+					-- check the distance and port them up if close enough
+					if (client_v:CalculateDistance(cur_x, cur_y, cur_z) <= distance) then
+						-- port the player up
+						client_v:MovePC(209, dest_x, dest_y, dest_z, dest_h);
+					end
 				end
 			end
 		end

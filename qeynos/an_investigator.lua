@@ -48,7 +48,7 @@ function event_trade(e)
 		eq.delete_global("invest_badge");
 		eq.depop_with_timer();
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text)
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 function event_timer(e)

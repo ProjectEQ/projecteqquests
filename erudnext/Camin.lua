@@ -27,6 +27,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(342,10,0); -- Truespirit
 		e.other:AddEXP(500);
+		eq.delete_global("wizepicA"); -- Delete this global so if a player deletes Arantir's ring they can restart epic again. The only known way to delete this global is to finish the epic. Delete it here instead.
 		eq.set_global("wizepic","1",0,"D30");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

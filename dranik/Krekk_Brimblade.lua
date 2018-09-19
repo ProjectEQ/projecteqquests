@@ -34,5 +34,5 @@ function event_trade(e)
 		e.self:SetSpecialAbility(35, 0);
 		e.self:AddToHateList(e.other,1);
 	end
-	item_lib.return_items(e.self, e.other, e.trade, e.text);
+	item_lib.return_items(e.self, e.other, e.trade);
 end

@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Begone unless you seek the armor of the [trooper]");
     }
   if ($text=~/trooper/i) {
-    quest::say("I can provide [boots], [bracer], [guantlets], or [greaves]");
+    quest::say("I can provide [boots], [bracer], [gauntlets], or [greaves]");
   }
   if ($text=~/boots/i) {
     quest::say("You wish the boots worn by the ancients? Then you must first master the virtue of confidence. For our brothers of the dead, confidence is the virtue that allows them to control the forces that would tear them apart if they knew it not. When a warrior steps, he must be confident, for a weak step cannot crush your enemies. Take this note to the current Harbinger in Cabilis and learn from him.");

@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Oh hello there, I'm in charge of the docks here and wife to Alton.");
   }
   if ($text=~/ranger/i) {
-    quest:say("Very well. If you want the Woodsman's [Mantle], Woodsman's [Mask], Woodsman's [Cape], Woodsman's [Guantlets], Woodsman's [Choker], or Woodsman's [Belt] I have some errands that need to be done.");
+    quest:say("Very well. If you want the Woodsman's [Mantle], Woodsman's [Mask], Woodsman's [Cape], Woodsman's [Gauntlets], Woodsman's [Choker], or Woodsman's [Belt] I have some errands that need to be done.");
   }
   if ($text=~/armor/i) {
     quest:say("Oh you wish to get the armor that Alton's great granddaddy used to wear. If you are a ranger just let me know.");
@@ -18,7 +18,7 @@ sub EVENT_SAY {
     quest:say("If you want the Woodsman's Choker bring me an astral jewel, a mark of ambidexterity, and a small ancient sculpture.");
   }
   if ($text=~/gauntlets/i) {
-    quest:say("If you want the Woodsman's Guantlets bring me a meteor jewel, a mark of animals, and a tattered old card.");
+    quest:say("If you want the Woodsman's Gauntlets bring me a meteor jewel, a mark of animals, and a tattered old card.");
   }
   if ($text=~/mantle/i) {
     quest:say("If you want the Woodsman's Mantle bring me a sun jewel, a mark of rivers, and a temporal sack.");

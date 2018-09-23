@@ -25,7 +25,7 @@ function event_say(e)
 	elseif(e.message:findi("greave")) then
 		e.self:Say("Pants are a must on the battlefield for reasons that I should not have to mention! To create your greaves material you will need to combine 4 Bricks of Crude Iron Ore, 1 Deathfist Orc Skull, 1 Zombie Skin , 1 Bottle and 1 Lion Tail in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Greaves of the Ordained.");
 		e.other:SummonItem(22614); --An Enchanted Greaves Mold
-	elseif(e.message:findi(" guantlet")) then
+	elseif(e.message:findi("gauntlet")) then
 		e.self:Say("Gauntlets will be a very important part of your armor set because it is extremely important that you keep your hands free from harm or you will find yourself having troubles with your spellcasting. To create your gauntlets material you will need to combine 3 Bricks of Crude Iron Ore, 1 Black Bear Paw, 1 Giant Scarab Brain , and 2 Spider Legs in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Gauntlets of the Ordained.");
 		e.other:SummonItem(22615); --An Enchanted Gauntlet Mold
 	elseif(e.message:findi("breastplate")) then

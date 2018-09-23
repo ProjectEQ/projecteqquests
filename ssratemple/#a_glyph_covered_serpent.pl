@@ -4,5 +4,5 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_SPAWN {
-	quest::ze(0, "A roar fills the lower temple halls! The smell of burning ozone and decay fills the air!);
+	quest::ze(0, "A roar fills the lower temple halls! The smell of burning ozone and decay fills the air!");
 }

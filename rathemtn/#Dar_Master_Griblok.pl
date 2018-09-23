@@ -37,7 +37,7 @@ sub EVENT_SAY {
       quest::say("Ah, the quick defense against bloodthirsty blades. You'll need a Crab Spider's Carapace, two Spiderling Silks and a Malleable Bleeder Skin. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Bracer of the Dar Initiate.");
       quest::summonitem(63058);
     }
-    if ($text=~/guantlets/i) {
+    if ($text=~/gauntlets/i) {
     quest::say("You'll need a Bleeder's Poison Sack, Blackened Fungus and two Bleeder Carapaces. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Gauntlets of the Dar Initiate.");
     quest::summonitem(63057);
       }

@@ -26,7 +26,7 @@ sub EVENT_SAY {
     quest::say("If youz wants ta make Da Basher Greaves, youz needs ta find a Giant Moccasin Eye, two Kobold Livers, and a Larval Carapace. After you does dat, den you needs ta take Da Basher Greaves Material to da forge with dis mold ta maker da greaves.");
     quest::summonitem(55176);
   }
-  if ($text=~/guantlets/i) {
+  if ($text=~/gauntlets/i) {
     quest::say("If youz wants ta make Da Basher Gauntlets to protect yer handses, den you need ta find a Bleeder's Poison Sac, Blackened Fungus, and two Bleeder Carapaces. Den youz needs ta take Da Basher Gauntlets Material to a forge with dis here mold ta make yer new Gauntlets.");
     quest::summonitem(55177);
   }

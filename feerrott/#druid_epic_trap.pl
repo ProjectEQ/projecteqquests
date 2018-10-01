@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-	my $charmitem = $client->GetItemIDAt(0);
+	my $charmitem = $client->GetItemIDAt(quest::getinventoryslotid("charm"));
 	if ($charmitem==62815) {
 		if ($client->GetPetID()) {
 		my $PetID = $client->GetPetID();

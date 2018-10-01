@@ -129,10 +129,10 @@ end
 
 function Client:HasItem(itemid)
 
-	--main inventory and cursor
-	for i = 0, 30, 1 do
+	--possessions
+	for i = Slot.PossessionsBegin, Slot.PossessionsEnd, 1 do
 		local thisitem = self:GetItemIDAt(i);
-		for a = 0, 5, 1 do
+		for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
 			local thisaugitem = self:GetAugmentIDAt(i,a);
 			if(thisaugitem == itemid) then
 				return true;
@@ -142,11 +142,11 @@ function Client:HasItem(itemid)
 			return true;
 		end
 	end
-
-	--main/cursor containers
-	for i = 251, 340, 1 do
+	
+	--general and cursor containers
+	for i = Slot.GeneralBagsBegin, Slot.CursorBagEnd, 1 do
 		local thisitem = self:GetItemIDAt(i);
-		for a = 0, 5, 1 do
+		for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
 			local thisaugitem = self:GetAugmentIDAt(i,a);
 			if(thisaugitem == itemid) then
 				return true;
@@ -158,9 +158,9 @@ function Client:HasItem(itemid)
 	end
 
 	--bank
-	for i = 2000, 2015, 1 do
+	for i = Slot.BankBegin, Slot.BankEnd, 1 do
 		local thisitem = self:GetItemIDAt(i);
-		for a = 0, 5, 1 do
+		for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
 			local thisaugitem = self:GetAugmentIDAt(i,a);
 			if(thisaugitem == itemid) then
 				return true;
@@ -172,9 +172,9 @@ function Client:HasItem(itemid)
 	end
 
 	--bank containers
-	for i = 2030, 2190, 1 do
+	for i = Slot.BankBagsBegin, Slot.BankBagsEnd, 1 do
 		local thisitem = self:GetItemIDAt(i);
-		for a = 0, 5, 1 do
+		for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
 			local thisaugitem = self:GetAugmentIDAt(i,a);
 			if(thisaugitem == itemid) then
 				return true;
@@ -186,9 +186,23 @@ function Client:HasItem(itemid)
 	end
 	
 	--shared bank
-	for i = 2531, 2550, 1 do
+	for i = Slot.SharedBankBegin, Slot.SharedBankEnd, 1 do
 		local thisitem = self:GetItemIDAt(i);
-		for a = 0, 5, 1 do
+		for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
+			local thisaugitem = self:GetAugmentIDAt(i,a);
+			if(thisaugitem == itemid) then
+				return true;
+			end
+		end
+		if(thisitem == itemid) then
+			return true;
+		end
+	end
+	
+	--shared bank containers
+	for i = Slot.SharedBankBagsBegin, Slot.SharedBankBagsEnd, 1 do
+		local thisitem = self:GetItemIDAt(i);
+		for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
 			local thisaugitem = self:GetAugmentIDAt(i,a);
 			if(thisaugitem == itemid) then
 				return true;
@@ -205,13 +219,13 @@ function Client:HasItem(itemid)
 	if(bodycount > 0) then
 		for b = 0, bodycount, 1 do
 			local bodyid = self:GetCorpseID(b); 
-			for i = 0, 30, 1 do
+			for i = Slot.PossessionsBegin, Slot.PossessionsEnd, 1 do
 				local thisitem = self:GetCorpseItemAt(bodyid, i);
 				if(thisitem == itemid) then
 					return true;
 				end
 			end
-			for i = 251, 340, 1 do
+			for i = Slot.GeneralBagsBegin, Slot.CursorBagEnd, 1 do
 				local thisitem = self:GetCorpseItemAt(bodyid, i);
 				if(thisitem == itemid) then
 					return true;

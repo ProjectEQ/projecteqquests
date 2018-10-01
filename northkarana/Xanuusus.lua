@@ -30,7 +30,7 @@ function event_say(e)
     if ( e.other:HasItem(62631) and e.other:HasItem(62633) and e.other:HasItem(62603) ) then
       eq.debug(e.other:GetName() .. " has the required items.");
       local client = e.other;
-      if ( client:GetItemIDAt(3) == 62603 and client:GetItemIDAt(13) == 62633 and client:GetItemIDAt(14) == 62631 ) then
+      if ( client:GetItemIDAt(Slot.Face) == 62603 and client:GetItemIDAt(Slot.Primary) == 62633 and client:GetItemIDAt(Slot.Secondary) == 62631 ) then
         eq.debug(e.other:GetName() .. " has the required items equiped.");
         e.self:Say("Stay close or this won't work. It is better that you do this, for trees are not very well structured to withstand lightning.");
         e.self:Emote("The treant releases a sound from his hollows that sounds much like thunder.");
@@ -40,8 +40,8 @@ function event_say(e)
         e.self:CastSpell(5687, e.other:GetID());
         client:Message(14, "As the lightning courses through your body, you feel the stone dissolving. That material flows from your mouth in an unnatural fashion and you see it fade as it rushes away from you across the planes toward something moving in the distance.");
 
-        client:DeleteItemInInventory(14, 1, true);
-        client:DeleteItemInInventory(3, 1, true);
+        client:DeleteItemInInventory(Slot.Secondary, 1, true);
+        client:DeleteItemInInventory(Slot.Face, 1, true);
 
         -- During all this, A Tainted Beast spawns who /cons blue at level 75. He hits for around 200, and dies quickly. However, you MUST aggro him within a minute or he despawns and you lose the Taskmaster's Cutlass and the Polished Blasted Stone. If you fail, you can hail Xanuusus for another stone, but the Taskmaster's Cutlass must be acquired again. A Tainted Beast is a griffon who beelines for Xanuusus from the southeast. Once it's dead, loot the Stone of Winde. Now go talk to Xanusuus again. 
         eq.set_timer("spawn_beast", 45 * 1000);

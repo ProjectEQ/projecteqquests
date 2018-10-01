@@ -12,7 +12,7 @@ my $eventstart;
 sub EVENT_SAY {
  if ($class eq "Druid") {
   if ($text=~/I am on the job/i && $askresponse==1 && $beenonjob) {
-	if ($client->GetItemIDAt(13) == 62829) {
+	if ($client->GetItemIDAt(quest::getinventoryslotid("primary")) == 62829) {
 		quest::say("Well I'll be, a druid that wants to be a miner! Alright then, you keep at it. Don't break a nail or strain your delicate sensibilities!");
 		$jobresponse=1;
 	}

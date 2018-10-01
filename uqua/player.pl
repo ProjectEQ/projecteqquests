@@ -69,8 +69,8 @@ sub EVENT_CLICKDOOR {
 
 
 sub AURA {
-	$RangedItemID = $client->GetItemIDAt(14);
-	$SecondaryItemID = $client->GetItemIDAt(11);
+	$RangedItemID = $client->GetItemIDAt(quest::getinventoryslotid("ranged"));
+	$SecondaryItemID = $client->GetItemIDAt(quest::getinventoryslotid("secondary"));
 	if (defined($qglobals{$instid."_destper"})) {
 		quest::selfcast(5051);
 	} elsif ($RangedItemID == 67736 || $RangedItemID == 67737 || $RangedItemID == 67738 || $RangedItemID == 67739 || $SecondaryItemID == 67736 || $SecondaryItemID == 67737 || $SecondaryItemID == 67738 || $SecondaryItemID == 67739 || $client->FindBuff(756)) {

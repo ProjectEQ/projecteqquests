@@ -12,7 +12,7 @@ function event_timer(e)
 					if(ent:IsClient()) then
 						if(ent:CastToMob():GetClass()==4 and damage > 0) then
 							local currclient=ent:CastToClient();
-							if(currclient:GetItemIDAt(13)==62648) then
+							if(currclient:GetItemIDAt(Slot.Primary)==62648) then
 								currclient:SummonItem(62645);
 								eq.depop_with_timer();
 							end

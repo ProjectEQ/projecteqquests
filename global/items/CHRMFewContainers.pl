@@ -2,7 +2,7 @@ sub EVENT_SCALE_CALC
 {
         my $value = 0;
         my $item = undef;
-        for($for_x = 22; $for_x < 30; $for_x++)
+        for($for_x = quest::getinventoryslotid("general.begin"); $for_x <= quest::getinventoryslotid("general.end"); $for_x++)
         {
                 $item = $client->GetItemAt($for_x);
                 if($item)

@@ -1,4 +1,11 @@
 local event_started=0;
+
+
+function event_spawn(e)
+	event_started=0;
+end
+
+
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if (event_started==1) then

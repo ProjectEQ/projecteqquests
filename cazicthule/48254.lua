@@ -1,21 +1,26 @@
 function event_waypoint_arrive(e)
-	if(e.wp == 10) then
+	if(e.wp == 10 and tracker < 1) then
 		e.self:Say("Well look at this thing! A splendid example of a Tae Ew sacrificial death mask or something. At first glance, this thing looked like beautifully carved wood, but alas it is just skin.");
     		eq.set_timer("adds", 6 * 1000);
-	elseif(e.wp == 26) then
+		tracker = 1;
+	elseif(e.wp == 26 and tracker == 1) then
 		e.self:Say("My map is paying off. This mask is just where they said it would be. Just give me a minute to scribble this down and we'll continue. Please continue to scan the room. I'll feel much better if you're eaten first... err... if you watch my back.");
    		eq.set_timer("adds", 6 * 1000);
-  	elseif(e.wp == 40) then
+		tracker = 2;
+  	elseif(e.wp == 40 and tracker == 2) then
 		e.self:Say("Well, that was a nice little trek. Take a breather while I note this area in my journal. I know that you must be tired. I haven't seen a head as large as yours in quite some time. Lean it against the wall or something. We'll need to leave in a moment.");
     		eq.set_timer("adds", 6 * 1000);
-  	elseif(e.wp == 65) then
+		tracker = 3;
+  	elseif(e.wp == 65 and tracker == 3) then
 		e.self:Say("Oh joy, there's nothing down this hallway. That will teach me to follow you again. Let me look at my map and see if I can undo your handy work. One moment please. Shheeesh!");
     		eq.set_timer("adds", 6 * 1000);
-  	elseif(e.wp == 76) then
+		tracker = 4;
+  	elseif(e.wp == 76 and tracker == 4) then
 		e.self:Say("Ack ack ack! Eat them not me!");
     		eq.set_timer("adds", 6 * 1000);
     		eq.set_timer("Named", 60 * 1000);
-  	elseif(e.wp == 96) then
+		tracker = 5;
+  	elseif(e.wp == 96 and tracker == 5) then
 		e.self:Say("Well, here we are. See, you didn't even have to break a sweat. I'm all ready to... hmm... wait, I seem to have dropped my favorite quill. Did you pick it up by chance? I'll add a little something to your payment if you did.");
 	  	eq.spawn2(48255,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	  	eq.depop();
@@ -72,4 +77,8 @@ elseif (e.timer == "Named") then
       		eq.stop_timer("Named");
       		eq.spawn2(48209,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
   end
+end
+
+function event_spawn(e)
+	tracker = 0;
 end

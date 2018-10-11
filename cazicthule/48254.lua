@@ -67,9 +67,9 @@ which = math.random(1,6);
       		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
       		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
       		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-    	elseif (e.timer == "Named") then
+    	end
+elseif (e.timer == "Named") then
       		eq.stop_timer("Named");
       		eq.spawn2(48209,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-	end
   end
 end

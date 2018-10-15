@@ -5,7 +5,7 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 13844})) then
 		e.self:Say("Tick.. Pop.. Access granted.");
 		e.other:Ding();
-		e.other:SummonItem(13212);
+		e.other:SummonItem(13211); -- Blackbox XXVIC
 		e.other:Faction(176,1,0);
 		e.other:Faction(91,1,0);
 		e.other:Faction(115,1,0);

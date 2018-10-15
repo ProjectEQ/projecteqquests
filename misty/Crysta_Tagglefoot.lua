@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Say("I'm so happy you were able to find me, just around the corner is the thief, We can end his parade of theft right this minute!");
 		e.self:Say("Tell me when you're ready! [" .. eq.say_link("Extreme") .. "] (Recommended 36+ players)");
 		eq.set_global("Halloween2018","5",5,"h3");
-	elseif (e.message:findi("extreme")) then
+	elseif (e.message:findi("extreme")) and qglobals["Halloween2018"] == "7") then
 		e.self:Say("Lets try to summon him first, I don't know what I'm doing by the way. Lets just wing it! I call upon you, whoever has been stealing my goods. Show yourself!");
 		e.self:Say("This may take a few seconds!");
 		eq.set_timer("Summonone", 15000);

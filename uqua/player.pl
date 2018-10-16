@@ -69,7 +69,7 @@ sub EVENT_CLICKDOOR {
 
 
 sub AURA {
-	$RangedItemID = $client->GetItemIDAt(quest::getinventoryslotid("ranged"));
+	$RangedItemID = $client->GetItemIDAt(quest::getinventoryslotid("range"));
 	$SecondaryItemID = $client->GetItemIDAt(quest::getinventoryslotid("secondary"));
 	if (defined($qglobals{$instid."_destper"})) {
 		quest::selfcast(5051);

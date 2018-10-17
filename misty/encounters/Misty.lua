@@ -383,9 +383,6 @@ function Deputy_Timer(e)
 		e.self:CastSpell(7757, e.self:GetTarget():GetID());	
 	elseif (e.timer == "Root") then
 		e.self:SetPseudoRoot(true);
-		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
-		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0)
-		e.self:AddToHateList(e.self:GetTarget(),1);
 		eq.stop_timer("Root");
 	elseif (e.timer == "Fail") then
 		eq.signal(33165,6);
@@ -404,8 +401,6 @@ function Deputy_HP(e)
 		eq.zone_emote(13,"General Huffin yells, I'm tired of playing these games!");
 		eq.zone_emote(15,"General Huffin shimmers in front of your eyes and enters a seething rage");
 		e.self:SetRunning(true);
-		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
-		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1)
 		e.self:AddToHateList(e.self:GetTarget(),1);	
 		e.self:MoveTo(-2375.15,794.00,-2.90,165.8,true);
 		eq.set_timer("Root",5000);

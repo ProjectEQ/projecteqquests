@@ -222,9 +222,6 @@ end
 function Deputy_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer("Fear",150000);
-	elseif (e.joined == false) then
-		eq.set_timer("Fail",10000);
-		spawned=true;
 	end
 end
 
@@ -403,7 +400,6 @@ function Deputy_HP(e)
 		e.self:SendIllusionPacket({race=471,gender=0,texture=0});
 		eq.zone_emote(13,"General Huffin yells, I'm tired of playing these games!");
 		eq.zone_emote(15,"General Huffin shimmers in front of your eyes and enters a seething rage");
-		e.self:WipeHateList();
 		e.self:SetRunning(true);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1)

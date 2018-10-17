@@ -34,7 +34,6 @@ function event_say(e)
 	elseif (e.message:findi("experience")) then
 		e.self:Say("Hello traveler! I need a certain idol that is deep in the ruins of Befallen, do you think you could search for one there and return it to me, I hear its very valuable. If you take the time to bring me one I will make it worth your while!");
 		eq.set_global("Halloween2018EXP","1",5,"h4");
-		end
 	end	
 end
 

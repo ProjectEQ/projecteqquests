@@ -10,6 +10,15 @@ Halloween Event 2018! Written by ##Drogerin## -- Enjoy!
 
 --]]
 
+
+local box = require("aa_box")
+
+local Mob = box();
+Mob:add(-2415.48, 828.08);
+Mob:add(-2421.36, 709.22);
+Mob:add(-2308.31, 689.55);
+Mob:add(-2288.73, 844.17);
+
 local deputydeath=false;
 local healed=false;
 local phase1=true;
@@ -206,6 +215,7 @@ function Deputy_Spawn(e)
 		stunned=0;
 		eq.set_timer("Laugh",20000);
 		eq.set_next_hp_event(75);
+		eq.set_timer("Mob", 3000);
 	end	
 end
 
@@ -219,6 +229,9 @@ function Deputy_Combat(e)
 end
 
 function Deputy_Timer(e)
+	if not Mob:contains(e.self:GetX(), e.self:GetY()) then -- If I am not inside this box - respawn me back at spawn point.
+        e.self:GotoBind();
+	end
 	if (e.timer == "Talk") then
 		e.self:Say("Oh Crysta, what a pity.  Have you come to take all of your goods back? Do you think anyone will believe you? What is with this crew of people as well, you don't actually think you can win?");
 		eq.set_timer("Convo_",8000);

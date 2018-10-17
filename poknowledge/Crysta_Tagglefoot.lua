@@ -26,18 +26,14 @@ function event_say(e)
 		e.self:Say("Please return to me if you find anything!");
 		e.self:Say("Oh, If you happen to lose the note just return to me I have a stack full!");
 		e.other:SummonItem(21699);
-		if(qglobals["Halloween2018"] == nil) then
-			eq.set_global("Halloween2018","1",5,"h3");
-		end
-	elseif (e.message:findi("willing") and qglobals["Halloween2018"] == "3") then
+		eq.set_global("Halloween2018","1",5,"h4");
+	elseif (e.message:findi("willing") and qglobals["Halloween2018"] == "2") then
 		e.self:Say("You've turned out to be more help than all of my city! Before we go back to kithicor, we're going to need some items. I'm going to need a flask of water, a stick of sugarcane, a sprig of spices, some steel wire, hemp twine, and a strands of golden thread for the trap");
 		e.self:Say("Here, take this and combine it all in this bag and bring it back to me quickly! I'd imagine you can find all of these items around this area if you ask the merchants kindly enough");
 		e.other:SummonItem(84016);
-		eq.set_global("Halloween2018","4",5,"h3"); 
 	elseif (e.message:findi("experience")) then
 		e.self:Say("Hello traveler! I need a certain idol that is deep in the ruins of Befallen, do you think you could search for one there and return it to me, I hear its very valuable. If you take the time to bring me one I will make it worth your while!");
-		if(qglobals["Halloween2018EXP"] == nil) then
-			eq.set_global("Halloween2018EXP","1",5,"h4");
+		eq.set_global("Halloween2018EXP","1",5,"h4");
 		end
 	end	
 end
@@ -53,14 +49,14 @@ function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 46200}) and qglobals["Halloween2018"] == "2") then -- Halloween 2018
+	if(item_lib.check_turn_in(e.trade, {item1 = 46200}) and qglobals["Halloween2018"] == "1") then -- Halloween 2018
 		e.self:Say("Thank you " .. e.other:GetName() .. "! Lets see what the message says.");
 		e.self:Emote("opens the letter and begins reading silently, her eyes widening the further down the note she goes.");
 		eq.set_timer("open_letter",10000);
-		eq.set_global("Halloween2018","3",5,"h3");
+		eq.set_global("Halloween2018","2",5,"h3");
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 84017})) then
 		e.self:Say("Wow, that was quick " .. e.other:GetName() .. "! Lets get a move on to Kithicor, Meet Innkeep Min back at her shop if you would, tell her 'you have returned' and she will assist you further on our plan of action");
-		eq.set_global("Halloween2018","5",5,"h3");
+		eq.set_global("Halloween2018","3",5,"h3");
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 19004}) and qglobals["Haloween2018"] == "1") then
 		e.self:Say("Wow, I've never seen something so perfect before, here you go " .. e.other:GetName() .. ", you deserve this, thank you so much!");
 		eq.set_global("Halloween2018EXP","2",5,"h4");

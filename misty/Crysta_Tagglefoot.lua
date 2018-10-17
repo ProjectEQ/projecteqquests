@@ -15,12 +15,12 @@ end
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if (e.message:findi("hail") and qglobals["Halloween2018"] == "6") then
+	if (e.message:findi("hail") and qglobals["Halloween2018"] == "4") then
 		e.self:Say("I'm so happy you were able to find me, just around the corner is the thief, We can end his parade of theft right this minute!");
-		eq.set_global("Halloween2018","7",5,"h3");
+		eq.set_global("Halloween2018","5",5,"h3");
 		e.self:Say("We only have a few hours, so make sure to be quick!");
 		e.self:Say("Tell me when you're ready! [" .. eq.say_link("Extreme") .. "] (Recommended 36+ players)");
-	elseif (e.message:findi("extreme") and event_started == 0 and qglobals["Halloween2018"] == "7") then
+	elseif (e.message:findi("extreme") and event_started == 0 and qglobals["Halloween2018"] == "5") then
 		e.self:Say("Lets try to summon him first, I don't know what I'm doing by the way. Lets just wing it! I call upon you, whoever has been stealing my goods. Show yourself!");
 		e.self:Say("This may take a few seconds!");
 		eq.set_timer("Summonone", 15000);
@@ -52,3 +52,4 @@ function event_timer(e)
 	eq.depop_with_timer(33164);
 	end
 end
+	

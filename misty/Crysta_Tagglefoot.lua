@@ -46,7 +46,7 @@ function event_timer(e)
 	e.self:Say("Yuck I hate spiders!!  Look over there by the entrance of Rivervale, I think I see someone coming out of the city. Could that be him?");
 	eq.stop_timer("Retry");
 	eq.spawn2(33165,0,0,-2395.99,757.44,-2.00,253.3);
-	eq.spawn2(33161,0,0,-2395.84,496.42,-453,123.3);
+	eq.spawn2(33161,0,0,-2366.59,715.95,-4.84,459.0);
 	e.self:Shout("Hey over here, thief!! Don't think we can't see you!");
 	e.self:Say("I hope you're ready for this!");
 	eq.depop_with_timer(33164);

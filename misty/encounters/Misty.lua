@@ -222,6 +222,7 @@ end
 function Deputy_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer("Fear",150000);
+		eq.stop_timer("Fail");
 	elseif (e.joined == false) then
 		eq.set_timer("Fail",10000);
 		spawned=true;

@@ -54,10 +54,8 @@ local stunned=0;
 
 function Deputy_Signal(e)
 	if (e.signal == 1) then
-		e.self:SetRunning(true);
-		e.self:MoveTo(-2358.64,736.61,3.90,429.3,true);
-		stunned=0;
 		eq.set_timer("Talk",18000);
+		stunned=0;
 	elseif (e.signal == 2) and deputydeath == false then
 		eq.set_timer("Rez1",15000);
 	elseif (e.signal == 2) and deputydeath == true then
@@ -652,7 +650,6 @@ end
 function Crysta_Spawn(e)
 	eq.signal(33161,1);
 	eq.set_timer("Talk",21000);
-	
 end
 
 function Crysta_Signal(e)

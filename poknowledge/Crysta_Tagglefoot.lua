@@ -56,7 +56,7 @@ function event_trade(e)
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 84017})) then
 		e.self:Say("Wow, that was quick " .. e.other:GetName() .. "! Lets get a move on to Kithicor, Meet Innkeep Min back at her shop if you would, tell her 'you have returned' and she will assist you further on our plan of action");
 		eq.set_global("Halloween2018","3",5,"h3");
-	elseif (item_lib.check_turn_in(e.trade, {item1 = 19004}) and qglobals["Haloween2018"] == "1") then
+	elseif (item_lib.check_turn_in(e.trade, {item1 = 19004}) and qglobals["Halloween2018EXP"] == "1") then
 		e.self:Say("Wow, I've never seen something so perfect before, here you go " .. e.other:GetName() .. ", you deserve this, thank you so much!");
 		eq.set_global("Halloween2018EXP","2",5,"h4");
 		local which=0;

@@ -130,7 +130,7 @@ end
 function Client:HasItem(itemid, trade)
 	-- trade because ahh people sometimes
 	trade = trade or nil
-	if (trade == nil) then
+	if (trade ~= nil) then
 		-- shallow copy
 		local trade_copy = {};
 		for k, v in pairs(trade) do

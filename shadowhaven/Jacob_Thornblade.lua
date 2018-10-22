@@ -17,29 +17,12 @@ function event_say(e)
     end
 end
 
--- so someone was trading the Gold Ticket AND one of the prizes to try ???
-function CheckTrade(trade, item)
-    -- shallow copy
-    local trade_copy = {};
-    for k, v in pairs(trade) do
-        trade_copy[k] = v;
-    end
-
-    for i = 1, 4 do
-        local key = "item" .. i;
-        if (trade_copy[key] ~= nil and trade_copy[key].valid and trade_copy[key]:GetID() == item) then
-            return true;
-        end
-    end
-    return false;
-end
-
 function event_trade(e)
     local item_lib = require("items");
     if (item_lib.check_turn_in(e.trade, {item1 = 66615})) then -- Gold Ticket
         local valid_prizes = { };
         for k, v in pairs(prizes) do
-            if (not e.other:HasItem(v) and not (v == 2469 and e.other:GetBaseRace() == 6) and not CheckTrade(e.trade, v)) then -- dark elf can't get mask
+            if (not e.other:HasItem(v, e.trade) and not (v == 2469 and e.other:GetBaseRace() == 6)) then -- dark elf can't get mask
                 valid_prizes[#valid_prizes + 1] = v;
             end
         end

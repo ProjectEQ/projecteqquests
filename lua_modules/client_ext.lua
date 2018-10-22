@@ -127,7 +127,31 @@ function Client:Race()
 	end
 end
 
-function Client:HasItem(itemid)
+function Client:HasItem(itemid, trade)
+	-- trade because ahh people sometimes
+	trade = trade or nil
+	if (trade == nil) then
+		-- shallow copy
+		local trade_copy = {};
+		for k, v in pairs(trade) do
+			trade_copy[k] = v;
+		end
+
+		for i = 1, 4 do
+			local key = "item" .. i;
+			if (trade_copy[key] ~= nil and trade_copy[key].valid) then
+				for a = Slot.AugSocketBegin, Slot.AugSocketEnd, 1 do
+					local thisaugitem = self:GetAugmentIDAt(i,a);
+					if(thisaugitem == itemid) then
+						return true;
+					end
+				end
+				if(trade_copy[key]:GetID() == itemid) then
+					return true;
+				end
+			end
+		end
+	end
 
 	--possessions
 	for i = Slot.PossessionsBegin, Slot.PossessionsEnd, 1 do

@@ -216,6 +216,7 @@ function Deputy_Spawn(e)
 		eq.set_timer("Laugh",20000);
 		eq.set_next_hp_event(75);
 		eq.set_timer("Mob", 3000);
+		phase1=true;
 	end	
 end
 

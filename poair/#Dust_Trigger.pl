@@ -41,7 +41,7 @@ sub EVENT_SIGNAL
         	
      		if ($counter == 3) 
      		{
-        		quest::spawn2(215042,0,0,-400,850.8,433.6,258.8); #Sigi
+        		quest::spawn2(215042,0,0,-399,907,436.8,258.8); #Sigi
         	}
      		elsif ($counter == 2) 
      		{

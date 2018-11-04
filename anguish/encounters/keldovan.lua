@@ -25,6 +25,7 @@ local dead_dogs = 0
 local inst_id = 0;
 local touch_enabled = 1;
 local torment_enabled = 1;
+local dogs = {} -- [Spawn ID, mob pointer] used for aggro linking
 
 function Keldovan_Spawn(e)
 	eq.start_timer("decrease_dog",90*1000);
@@ -34,6 +35,16 @@ function Keldovan_Death(e)
 	eq.signal(317116 , 317005);
 	--set player lockout
 	--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"
+
+	-- hmm well, server still follows the corpse :P
+	for k, m in pairs(dogs) do
+		local mob = eq.get_entity_list():GetMobID(k); -- using this pointer stored here gets racey for some reason /shrug
+		if (mob.valid and mob:IsNPC() and not mob:IsEngaged()) then
+			local npc = mob:CastToNPC();
+			npc:SetFollowID(0);
+			npc:SetFollowCanRun(true); -- reset
+		end
+	end
 end
 
 function Keldovan_Combat(e)
@@ -43,6 +54,7 @@ function Keldovan_Combat(e)
 	eq.set_timer("torment",math.random(5,30)*1000);
 	eq.set_timer("touch",math.random(5,30)*1000);
 	eq.set_timer("say",300*1000);
+	eq.set_timer("aggro_link", 1000); -- we'll do it in 1 second first time just cuz
 	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420);
 	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60);
 	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180);
@@ -53,6 +65,7 @@ function Keldovan_Combat(e)
 	eq.stop_timer("touch");
 	eq.stop_timer("say");
 	eq.set_timer("depop_dogs",6*1000);
+	eq.stop_timer("aggro_link");
   end
 end
 
@@ -116,6 +129,19 @@ function Keldovan_Timer(e)
 			dead_dogs=0;
 		end
 		check_dogs(e,-1);
+	elseif (e.timer == "aggro_link") then
+		eq.set_timer("aggro_link", 6 * 1000); -- every 6 seconds
+		for k, m in pairs(dogs) do
+			local mob = eq.get_entity_list():GetMobID(k); -- using this pointer stored here gets racey for some reason /shrug
+			if (mob.valid and mob:IsNPC() and not mob:IsEngaged()) then
+				local npc = mob:CastToNPC();
+				npc:SetFollowID(e.self:GetID());
+				npc:SetFollowCanRun(false); -- we want them walking
+				if (e.self:GetHateTop().valid) then
+					npc:AddToHateList(e.self:GetHateTop(), 10);
+				end
+			end
+		end
 	end
 end
 
@@ -186,6 +212,11 @@ function Dog_Death(e)
 	elseif (e.self:GetSpawnPointY() == 642) then --SE
 		eq.signal(317005,4);    
 	end
+	dogs[e.self:GetID()] = nil;
+end
+
+function Dog_Spawn(e)
+	dogs[e.self:GetID()] = e.self;
 end
 
 function event_encounter_load(e)
@@ -198,6 +229,8 @@ function event_encounter_load(e)
   eq.register_npc_event('keldovan', Event.death_complete, 317005, Keldovan_Death);
   eq.register_npc_event('keldovan', Event.death_complete, 317102, Dog_Death); -- Frenzied_Pit_Fiend
   eq.register_npc_event('keldovan', Event.death_complete, 317103, Dog_Death); -- Raging_Pit_Hound 
+  eq.register_npc_event('keldovan', Event.spawn, 317102, Dog_Spawn); -- Frenzied_Pit_Fiend
+  eq.register_npc_event('keldovan', Event.spawn, 317103, Dog_Spawn); -- Raging_Pit_Hound
 end
 
 function event_encounter_unload(e)

@@ -18,9 +18,11 @@ sub EVENT_SAY {
     }
     foreach $player (@player_list) {
       $pc = $entity_list->GetClientByName($player);
-      $charid = $pc->CharacterID();
-      quest::targlobal("temp_sewers", 1, "F", 283052, $charid, 283);
-      $pc->Message(4,"You receive a temporary flag!");
+	  if ($pc) {
+        $charid = $pc->CharacterID();
+        quest::targlobal("temp_sewers", 1, "F", 283052, $charid, 283);
+        $pc->Message(4,"You receive a temporary flag!");
+	  }
     }
   }
   if (($text=~/hail/i) && ($event == 0)) {

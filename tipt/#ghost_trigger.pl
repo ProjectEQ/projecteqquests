@@ -34,9 +34,9 @@ sub EVENT_ENTER {
     $instid = quest::GetInstanceID("tipt",0);
   }
   if($qglobals{$instid.'_tipt_status'} == 3) {
-    my $close_clount = 0;
+    my $close_count = 0;
     foreach $pc ($entity_list->GetClientList()) {
-      if($pc->CalculateDistance($x, $y, $z) <= 50) {
+      if($pc->CalculateDistance($x, $y, $z) <= 100) {
         $close_count++;
       }
     }

@@ -15,7 +15,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,  20605 => 1, 20606 => 1)) {
-    quest::say("A Wandering Spirit quickly grabs the amulet and crescent symbol before speaking. 'At long last! I can now rest in peace along with my fellow brethren. Thank you Lanathorn. May the might of Marr follow you wherever you may go.");
+    quest::say("A Wandering Spirit quickly grabs the amulet and crescent symbol before speaking. 'At long last! I can now rest in peace along with my fellow brethren. Thank you "..e.other:GetName()..". May the might of Marr follow you wherever you may go.");
     quest::exp(120000);
     quest::ding();
     quest::spawn(208177,0,0,$x,$y,$z); #A Wandering Spirit

@@ -8,6 +8,7 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20608 => 1, 20607 => 1)) { #Unwavering Shield of Faith, Unwavering Sword of Faith
+    quest::say("A Wandering Spirit looks at you with surprise. It's been quite some time since I've been without my weaponry. Thank you for returning them to me $name.");
     quest::exp(200000);
     quest::ding();
     quest::depop();

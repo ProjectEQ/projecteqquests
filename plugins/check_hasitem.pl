@@ -90,7 +90,7 @@ sub check_hasitem {
     }
 #Check corpses
   if ($body_count > 0) {
-    for ($i=1; $i<=$body_count; $i++) {
+    for ($i=0; $i<$body_count; $i++) {
       $body_id = $client->GetCorpseID($i);
       for ($slot1=0; $slot1<=30; $slot1++) {
         $itemid1 = $client->GetCorpseItemAt($body_id, $slot1);

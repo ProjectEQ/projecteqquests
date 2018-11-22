@@ -33,10 +33,16 @@ function event_trade(e)
 		e.other:Faction(9,5,0); -- Antonious Bayle
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18937,item2 = 13947,item3 = 18828,item4 = 12197})) then
-		if(fac < 3) then -- items will get eaten if faction not high enough.
+		if(fac < 3) then
 			e.self:Say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
 			e.other:SummonItem(5504); --  soulfire
 			e.other:Ding();
+		else
+			e.self:Say("You have not proven yourself worthy to hold Soulfire."); -- Text made up
+			e.other:SummonItem(18937);
+			e.other:SummonItem(13947);
+			e.other:SummonItem(18828);
+			e.other:SummonItem(12197);
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

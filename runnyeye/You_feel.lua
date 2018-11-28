@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("brave enough to challenge the Goblin Lord in his lair.  Brave, or foolish?");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc, "You feel brave enough to challenge the Goblin Lord in his lair.  Brave, or foolish?");
 end

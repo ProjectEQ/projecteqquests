@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("bards and storytellers will sing a song of your death here one day.");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc,"Perhaps bards and storytellers will sing a song of your death here one day.");
 end

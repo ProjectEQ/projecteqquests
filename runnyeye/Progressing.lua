@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("further into the citadel may prove to be a bad idea.");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc, "Progressing further into the citadel may prove to be a bad idea.");
 end

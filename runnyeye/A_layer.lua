@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("of foul smelling slime coats the floors here, as well as your feet.");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc,"A layer of foul smelling slime coats the floors here, as well as your feet.");
 end

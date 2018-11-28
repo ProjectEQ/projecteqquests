@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("of great treasures and fame spur you on.  Thoughts of certain and painful death do not deter you.");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc, "Thoughts of great treasures and fame spur you on.  Thoughts of certain and painful death do not deter you.");
 end

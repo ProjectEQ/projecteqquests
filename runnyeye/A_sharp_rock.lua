@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("falls from the low ceiling, banging you on the head!  Why are you here again?");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc, "A sharp rock falls from the low ceiling, banging you on the head!  Why are you here again?");
 end

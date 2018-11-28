@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("not quite sure what a moldmaster is, but you are sure that you don't want to meet it alone, and in the dark.");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc,"You are not quite sure what a moldmaster is, but you are sure that you don't want to meet it alone, and in the dark.");
 end

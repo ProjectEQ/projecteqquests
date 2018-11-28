@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("yowling and gibberish of goblins echos throughout the passageways.");
+	local msgc = eq.ChooseRandom(0,4,5,13,14,15,21);
+	e.other:SendColoredText(msgc, "The constant yowling and gibberish of goblins echos throughout the passageways.");
 end

@@ -10,17 +10,17 @@ function event_say(e)
 					eq.set_global("cleric20", "2", 5, "F");
 				end
 			elseif(e.other:HasItem(5532) or qglobals["cleric15pre"] == "1") then -- has 1.0 Water Sprinkler of Nem Ankh, or Prequest Finished // Will need a flag entered. Prequest granted no item.  Start 1.5
-				e.self:Say("Greetings " .. e.other:GetName() .. ", I see you helped my brother in eradicating the Plasmatic Priests, stopping Zordak Ragefire, and saved Norrath from an eternity of flames. We need to [call] you to [duty] again");
+				e.self:Say("Greetings " .. e.other:GetName() .. ", I see you helped my brother in eradicating the Plasmatic Priests, stopping Zordak Ragefire, and saved Norrath from an eternity of flames. We need to [ " .. eq.say_link('call you to duty') .. " ] again");
 				if(qglobals["cleric_epic"] == nil) then
 					eq.set_global("cleric_epic","1",5,"F"); --Flagged to start epic
 				end		
 			else -- Has no epics, Start Prequest for 1.5
 				e.self:Say("Greetings "  .. e.other:GetName() .. ", I am afraid that I need someone that I can [trust] with this task, these are dark times, and it is hard to tell friend from foe.");
 			end
-		elseif(e.message:findi("call to duty")) then
-			e.self:Say("This time the crisis threatens not only Norrath, but all of existence as we know it. Invaders from the Realm of Discord have transversed time and space to conquer this realm. The invaders, these Muramites, are not where the true threat lies. All of Norrath has banded together to stop these invaders, we have managed to halt their incursion for the time being. There are, however, whispers of a [dark faction] within our own, Norrathians who see our fight as futile, and are looking to swear fealty to the forces of the Legion.");
+		elseif(e.message:findi("call you to duty")) then
+			e.self:Say("This time the crisis threatens not only Norrath, but all of existence as we know it. Invaders from the Realm of Discord have transversed time and space to conquer this realm. The invaders, these Muramites, are not where the true threat lies. All of Norrath has banded together to stop these invaders, we have managed to halt their incursion for the time being. There are, however, whispers of a [ " .. eq.say_link('dark faction') .. " ] within our own, Norrathians who see our fight as futile, and are looking to swear fealty to the forces of the Legion.");
 		elseif(e.message:findi("dark faction")) then
-			e.self:Say("We don't know much more about them. As I said, they are just whispers, but whispers in unison are loud enough for deaf ears. We cannot afford to present anything short of a unified front, should the Legion push toward Norrath with its full force. We need your assistance to find and exterminate these traitors. I can give you what little [information] I have, hopefully you will be able to track these betrayers to their leader.");
+			e.self:Say("We don't know much more about them. As I said, they are just whispers, but whispers in unison are loud enough for deaf ears. We cannot afford to present anything short of a unified front, should the Legion push toward Norrath with its full force. We need your assistance to find and exterminate these traitors. I can give you what little [ " .. eq.say_link('information') .. " ] I have, hopefully you will be able to track these betrayers to their leader.");
 		elseif(e.message:findi("information")) then
 			e.self:Say("Travel to Taelosia. There you will find a young native, named Jomaj who had some suspicious dealings with someone claiming they were with the wayfarer's brotherhood. This is the closest I have to direction, gather information from this Taelosian, and bring it to my friend Shav on the Thorn. Find proof as to whether or not these traitors actually exist and return it to me.");
 		elseif(e.message:findi("trust")) then

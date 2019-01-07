@@ -9,6 +9,12 @@ function event_timer(e)
     eq.spawn2(340388, 0, 0, -2970, 3002, 272, 61);
     eq.spawn2(340387, 0, 0, -2715, 3002, 275, 457);
     eq.spawn2(340386, 0, 0, -2715, 3380, 272, 325);
+  elseif (e.timer == 'repop') then
+    eq.stop_timer('repop');
+    eq.unique_spawn(340389, 0, 0, -2969, 3380, 275, 199);
+    eq.unique_spawn(340388, 0, 0, -2970, 3002, 272, 61);
+    eq.unique_spawn(340387, 0, 0, -2715, 3002, 275, 457);
+    eq.unique_spawn(340386, 0, 0, -2715, 3380, 272, 325);
   end
 end
 
@@ -18,9 +24,6 @@ function event_signal(e)
     eq.depop_all(340388);
     eq.depop_all(340387);
     eq.depop_all(340386);
-    eq.unique_spawn(340389, 0, 0, -2969, 3380, 275, 199);
-    eq.unique_spawn(340388, 0, 0, -2970, 3002, 272, 61);
-    eq.unique_spawn(340387, 0, 0, -2715, 3002, 275, 457);
-    eq.unique_spawn(340386, 0, 0, -2715, 3380, 272, 325);
+    eq.set_timer('repop', 10 * 1000);
   end
 end

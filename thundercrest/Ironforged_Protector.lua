@@ -7,7 +7,7 @@ end
 end
 
 function event_timer(e)
-if (e.timer == 'spawn') then
+if (e.timer == 'depop') then
 eq.stop_timer('depop');
 eq.signal(340390,1);
 end

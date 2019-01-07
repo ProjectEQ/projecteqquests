@@ -9,13 +9,13 @@ end
 function event_timer(e)
 if (e.timer == 'spawn') then
 eq.stop_timer('depop');
-eq.signal(2000903,1);
+eq.signal(340390,1);
 end
 end
 
 function event_death_complete(e)
-if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(2000902) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(2000901) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(2000900) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(2000899) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(2000903) == true) then
+if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(340389) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340388) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340387) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340386) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340390) == true) then
 eq.spawn2(340032, 0, 0, -2844, 3143, 307, 0);
-eq.depop_with_timer(2000903);
+eq.depop_with_timer(340390);
 end
 end

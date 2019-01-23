@@ -34,7 +34,7 @@ function event_click_door(e)
     elseif (door_id == 21 and e.self:HasItem(17288)) then
       entity_list:FindDoor(10):ForceOpen(e.self);
     end
-    if ( e.self:GetInventory():HasItem(17288, 1, 32) == 30 ) then 
+    if ( e.self:GetInventory():HasItem(17288, 1, 32) == Slot.Cursor) then 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) == false) then 
         local request = instance_requests.ValidateRequest('raid', "tacvi", 0, 6, 54, 65, nil, nil, e.self, lockout_globals);
         if (request.valid) then                                                     

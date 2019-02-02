@@ -19,7 +19,7 @@ sub EVENT_ITEM {
  }
   else {
     quest::say("I have no use for this, $name.");
-    quest::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 # End of File

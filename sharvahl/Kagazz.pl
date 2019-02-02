@@ -16,7 +16,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I have no use for this, $name.");
-    quest::return_items(\%itemcount);
   }
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155279 -- Kagazz

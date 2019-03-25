@@ -37,19 +37,19 @@ function event_trade(e)
 		e.self:Say("Excellent, my friend! Well done indeed. These are exactly what I needed to make the tunic Nolan has requested of you. And. . . thank you for avenging my dear, departed friend. She shall be missed, and it is in her memory that I give you the Jade Studded Tunic. Go now, my friend. Nolan awaits and I am sure that he will be most impressed with your success thus far");
 		e.other:SummonItem(8761); -- jade-studden rawhide tunic
 		e.other:Ding();
-		e.other:Faction(271,20,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,20,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,20,0);  -- Protectors of Pine
-		e.other:Faction(135,20,0);  -- Guards of Qeynos
+		e.other:Faction(1597,20,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,20,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,20,0);  -- Protectors of Pine
+		e.other:Faction(262,20,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 8884,item2 = 8885})) then -- blackened mithril chain & shadowjade weave
 		e.self:Say("Excellent, my friend! Well done indeed. These are exactly what I needed to make the circlet. Go now, my friend. Cheyloh awaits and I am sure that he will be most impressed with your success thus far.");  -- text made up/adapted from the tunic reward
 		e.other:SummonItem(8883); -- shadowjade circlet
 		e.other:Ding();
-		e.other:Faction(271,20,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,20,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,20,0);  -- Protectors of Pine
-		e.other:Faction(135,20,0);  -- Guards of Qeynos
+		e.other:Faction(1597,20,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,20,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,20,0);  -- Protectors of Pine
+		e.other:Faction(262,20,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 
 	end

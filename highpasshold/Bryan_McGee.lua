@@ -15,22 +15,22 @@ function event_trade(e)
 		e.self:Say("On second thought.. You can do a little favor for me first. An associate of mine has asked me to acquire a case of spirits for him. Take this box and seek out what is needed to fill it. Inside you will combine the spirits of Lendel's Grand Lager, Gator Gulp Ale, Blackburrow Swig, Tunare's Finest, Underfoot Triple Bock, Frozen Toe Rum, Blood Spirit, Vasty Deep Ale, Clockwork Oil Stout and the legendary..[Oblong Bottle].");
 		e.other:SummonItem(17984); -- Bottle Crate
 		e.other:Ding();
-		e.other:Faction(48,10,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(47,10,0); -- Coalition of Tradefolk
-		e.other:Faction(31,10,0); -- Carson McCabe
-		e.other:Faction(53,10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,10,0); -- The Freeport Militia
+		e.other:Faction(336,10,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,10,0); -- Coalition of Tradefolk
+		e.other:Faction(329,10,0); -- Carson McCabe
+		e.other:Faction(230,10,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,10,0); -- The Freeport Militia
 		e.other:AddEXP(15000);
 		e.other:GiveCash(0,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12365})) then
 		e.self:Say("I cannot believe you actually acquired all those drinks!! You do good work, kid. Here is the gem as I promised. And a few plat for good measure. Don't let it be said that the Axe doesn't treat his friends right.");
 		e.other:SummonItem(12348);
 		e.other:Ding();
-		e.other:Faction(48,10,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(47,10,0); -- Coalition of Tradefolk
-		e.other:Faction(31,10,0); -- Carson McCabe
-		e.other:Faction(53,10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,10,0); -- The Freeport Militia
+		e.other:Faction(336,10,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,10,0); -- Coalition of Tradefolk
+		e.other:Faction(329,10,0); -- Carson McCabe
+		e.other:Faction(230,10,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,10,0); -- The Freeport Militia
 		e.other:AddEXP(15000);
 		e.other:GiveCash(0,0,0,7);
 	end

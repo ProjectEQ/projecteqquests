@@ -25,15 +25,15 @@ sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 18768 => 1)) {
 	  quest::say("Welcome, we are the Paladins of the Underfoot. I am Datur, and I will help teach you the word and will of the Duke of Below, Brell Serilis. Here is our guild tunic. Let's get started, shall we?");
       quest::summonitem(13514);
-      quest::faction(44,100); # Clerics of Underfoot
-      quest::faction(169,100); # Kazon Stormhammer
-      quest::faction(219,75); # Miners Guild 249
+      quest::faction(227,100); # Clerics of Underfoot
+      quest::faction(274,100); # Kazon Stormhammer
+      quest::faction(293,75); # Miners Guild 249
    }
    if (($faction <= 4) && (plugin::check_handin(\%itemcount, 12279 => 1))) {
       quest::say("The chalice is returned!! Praise be to Brell!! You have proven yourself to our church and have earned our respect. Let me welcome you into our brotherhood with the Cape of Underfoot. Wear it with pride as all of our finest paladins do.");
-      quest::faction(44, 25);
-      quest::faction(169, 25);
-      quest::faction(219, 25);
+      quest::faction(227, 25);
+      quest::faction(274, 25);
+      quest::faction(293, 25);
       quest::exp(250);
       quest::givecash(0, 0, 0, 3);
       quest::summonitem(12281);

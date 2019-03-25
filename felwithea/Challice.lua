@@ -10,7 +10,7 @@ function event_trade(e)
     if(item_lib.check_turn_in(e.trade, {item1 = 14334})) then -- Note handin:
 		e.self:Say("Oh yes? Arantir? What a fool he was! the man gave me everything, but for all his intelligence, he could never understand why I was truly with him. It was for his power; he could do anything. But when he mysteriously lost it, he became just another toy. I never loved him. Return this ring to him. He will understand that I have no desire to see him again.");
 		e.other:Ding();
-		e.other:Faction(342, 10,0); --Truespirit
+		e.other:Faction(404, 10,0); --Truespirit
 		e.other:AddEXP(100000);
 		e.other:SummonItem(14335);
 	end

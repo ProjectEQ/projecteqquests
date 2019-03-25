@@ -24,11 +24,11 @@ function event_trade(e)
 		e.self:Say("Why thank you, kind adventurer! Here is a little something to keep food in your belly. Now back to practice. La la la..");
 		e.other:SummonItem(13119); -- Winds of Karana sheet 2
 		e.other:Ding();
-		e.other:Faction(135,2,0);
-		e.other:Faction(184,2,0);
-		e.other:Faction(192,2,0);
-		e.other:Faction(207,-5,0);
-		e.other:Faction(273,-5,0);
+		e.other:Faction(262,2,0);
+		e.other:Faction(281,2,0);
+		e.other:Faction(284,2,0);
+		e.other:Faction(285,-5,0);
+		e.other:Faction(304,-5,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,2,0,0);
 	end

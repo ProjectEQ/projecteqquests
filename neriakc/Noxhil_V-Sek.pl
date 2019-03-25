@@ -29,24 +29,24 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 13389 => 1)){#Box of Beetle Eyes
 		quest::say("Fantastic work, my child! We shall store these for further experiments. Take this as extra payment for a fine job. You have done so well I believe you can assist in obtaining two [other components].");
-		quest::faction(322, 5); #The Dead
-		quest::faction(268, 5); #Queen Cristanos Thex
-		quest::faction(177,-10); #King Naythox Thex
-		quest::faction(170,-10); #Keepers of Art
-		quest::faction(91,-10); #Eldritch Collective
-		quest::faction(260,-10); #Primordial Malice
+		quest::faction(239, 5); #The Dead
+		quest::faction(303, 5); #Queen Cristanos Thex
+		quest::faction(278,-10); #King Naythox Thex
+		quest::faction(275,-10); #Keepers of Art
+		quest::faction(245,-10); #Eldritch Collective
+		quest::faction(1522,-10); #Primordial Malice
 		quest::exp(17150);#5% level 8 experience, comments on alla's suggest the reward is this much.
 		quest::givecash(0,16,0,0);#16 silver
 		quest::summonitem(quest::ChooseRandom(13021, 13022));#Neriak Necter or Rotgrub Rye
 	}
 	if(plugin::check_handin(\%itemcount, 10124 => 2)){#Mammoth Tusks
 		quest::say("These will do.  Thank you, child.");#text made up
-		quest::faction(322, 5); #The Dead
-		quest::faction(268, 5); #Queen Cristanos Thex
-		quest::faction(177,-10); #King Naythox Thex
-		quest::faction(170,-10); #Keepers of Art
-		quest::faction(91,-10); #Eldritch Collective
-		quest::faction(260,-10); #Primordial Malice
+		quest::faction(239, 5); #The Dead
+		quest::faction(303, 5); #Queen Cristanos Thex
+		quest::faction(278,-10); #King Naythox Thex
+		quest::faction(275,-10); #Keepers of Art
+		quest::faction(245,-10); #Eldritch Collective
+		quest::faction(1522,-10); #Primordial Malice
 		quest::exp(17150);#5% level 8 experience, comments on alla's suggest the reward is this much.
 		#Lesser summon corpse was not in the game when I played, and not one of the rewards.
 		#However, it is a level 12 necro spell now, and I have no clue if it was added to the

@@ -41,10 +41,10 @@ sub EVENT_ITEM {
       return 1;
     }
 
-    quest::faction(189, 20);  # +Kromzek
-    quest::faction(188, 20);  # +Kromrif
-    quest::faction(179, 20);  # +King Tormax
-    quest::faction(42, -60);  # -Claws of Veeshan
+    quest::faction(448, 20);  # +Kromzek
+    quest::faction(419, 20);  # +Kromrif
+    quest::faction(429, 20);  # +King Tormax
+    quest::faction(430, -60);  # -Claws of Veeshan
 
     quest::exp(100);
   }

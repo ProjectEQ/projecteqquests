@@ -33,27 +33,27 @@ function event_trade(e)
 		e.self:Say("Haaah!! Bow to Hukulk!! Hukulk make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood!");
 		e.other:SummonItem(13530);	-- Black and Green Tunic*
 		e.other:Ding();
-		e.other:Faction(292,100,0);	-- Shadowknights of Night Keep
-		e.other:Faction(128,-15,0);	-- Green Blood Knights
-		e.other:Faction(22,-25,0);	-- Broken Skull Clan
-		e.other:Faction(66,5,0);	-- Da Bashers
+		e.other:Faction(308,100,0);	-- Shadowknights of Night Keep
+		e.other:Faction(261,-15,0);	-- Green Blood Knights
+		e.other:Faction(222,-25,0);	-- Broken Skull Clan
+		e.other:Faction(235,5,0);	-- Da Bashers
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13073, item2 = 13073, item3 = 13073, item4 = 13073})) then -- Bone Chips
 		e.self:Say("You good. Take dis. Make much pain and hurt. Make tings bleeds. Kill, hurt all. Innoruuk and me say do, now go. You do much, come bak. Teach you how more hurt and pain make. Go.");
 		e.other:SummonItem(5023);	-- Rusty Two Handed Sword
 		e.other:Ding();
-		e.other:Faction(292,10,0);	-- Shadowknights of Night Keep
-		e.other:Faction(128,-10,0);	-- Green Blood Knights
-		e.other:Faction(22,-25,0);	-- Broken Skull Clan
-		e.other:Faction(66,10,0);	-- Da Bashers
+		e.other:Faction(308,10,0);	-- Shadowknights of Night Keep
+		e.other:Faction(261,-10,0);	-- Green Blood Knights
+		e.other:Faction(222,-25,0);	-- Broken Skull Clan
+		e.other:Faction(235,10,0);	-- Da Bashers
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 12201, item2 = 12202})) then -- Happy Love Bracers and Troll Head(Lumpin)
 		e.self:Say("Ha!! Ha!! Who have last laugh now!! You do good werk.  Now me give you extra helm of Hukulk. Now go away!!");
 		e.other:SummonItem(3316);	-- Helm of Hukulk
 		e.other:Ding();
-		e.other:Faction(292,10,0);	-- Shadowknights of Night Keep
-		e.other:Faction(128,-10,0);	-- Green Blood Knights
-		e.other:Faction(22,-15,0);	-- Broken Skull Clan
-		e.other:Faction(66,10,0);	-- Da Bashers
+		e.other:Faction(308,10,0);	-- Shadowknights of Night Keep
+		e.other:Faction(261,-10,0);	-- Green Blood Knights
+		e.other:Faction(222,-15,0);	-- Broken Skull Clan
+		e.other:Faction(235,10,0);	-- Da Bashers
 		e.other:AddEXP(250);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

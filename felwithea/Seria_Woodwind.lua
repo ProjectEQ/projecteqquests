@@ -52,9 +52,9 @@ function event_trade(e)
 		e.self:Say("Here is your new weapon young defender. May it serve you well in your service to the Koada'Vie.");
 		e.other:SummonItem(20329);
 		e.other:Ding();
-		e.other:Faction(43,10,0); -- Clerics of Tunare
-		e.other:Faction(178,9,0); -- King Tearis Thex
-		e.other:Faction(8,8,0); -- Anti-Mage
+		e.other:Faction(226,10,0); -- Clerics of Tunare
+		e.other:Faction(279,9,0); -- King Tearis Thex
+		e.other:Faction(5001,5001,0); -- Anti-Mage
 		e.other:AddEXP(75000); -- Give ~2 bubbles of exp at level 10
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

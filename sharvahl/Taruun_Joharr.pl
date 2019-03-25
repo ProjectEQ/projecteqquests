@@ -32,7 +32,7 @@ if(plugin::check_handin(\%itemcount,5563=>1)){
    quest::summonitem(17607);
    quest::ding();
    quest::exp(1250);
-   quest::faction(319,10);
+   quest::faction(1530,10);
 }
 
 if(plugin::check_handin(\%itemcount,5568=>1)){
@@ -44,7 +44,7 @@ if(plugin::check_handin(\%itemcount,5568=>1)){
    quest::summonitem(5564);
    quest::ding();
    quest::exp(1500);
-   quest::faction(319,10);
+   quest::faction(1530,10);
 }
 plugin::return_items(\%itemcount);
 }

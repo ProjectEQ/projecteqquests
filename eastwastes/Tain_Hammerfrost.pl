@@ -61,10 +61,10 @@ sub EVENT_ITEM {
     quest::settimer(2,15);
 
     # Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
     quest::exp(80000);
   }
 }

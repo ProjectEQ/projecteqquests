@@ -24,31 +24,31 @@ local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade,  {item1 = 13958})) then
 		e.self:Say("Well it is about time!  The mayor gets very upset if he does not have the freshest of carrots in his stew.  Here is the money for the carrots.  Be off with you.  Now. where the heck did [Jillin] go?");
 		e.other:GiveCash(1,0,0,0);
-		e.other:Faction(77, 1);
-		e.other:Faction(218, 1);
-		e.other:Faction(31, -2);
-		e.other:Faction(33, -2);
-		e.other:Faction(48, -2);
+		e.other:Faction(241, 1);
+		e.other:Faction(292, 1);
+		e.other:Faction(329, -2);
+		e.other:Faction(223, -2);
+		e.other:Faction(336, -2);
 		e.other:AddEXP(100);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade,  {item1 = 13957})) then
 		e.self:Say("Oh excellent! These carrots are perfect! The finest Reebo has ever sent us. The mayor will be so pleased. Here is the payment for the carrots. Excuse me, but I must finish preparing the stew. Hmm. Where the heck did [Jillin] go?");
 		e.other:GiveCash(10,0,0,0);
-		e.other:Faction(77, 5);
-		e.other:Faction(218, 5);
-		e.other:Faction(31, -10);
-		e.other:Faction(33, -10);
-		e.other:Faction(48, -10);
+		e.other:Faction(241, 5);
+		e.other:Faction(292, 5);
+		e.other:Faction(329, -10);
+		e.other:Faction(223, -10);
+		e.other:Faction(336, -10);
 		e.other:AddEXP(200);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade,  {item1 = 13971})) then
 		e.self:Say("What are these?!  I am trying to make stew for the mayor and you bring me ROTTEN CARROTS?!  Have you no sense??  Take these back to Reebo.");
 		e.other:SummonItem(13972);
-		e.other:Faction(77, -4);
-		e.other:Faction(218, -4);
-		e.other:Faction(31, 2);
-		e.other:Faction(33, 2);
-		e.other:Faction(48, 2);
+		e.other:Faction(241, -4);
+		e.other:Faction(292, -4);
+		e.other:Faction(329, 2);
+		e.other:Faction(223, 2);
+		e.other:Faction(336, 2);
 	else
 		item_lib.return_items(e.self, e.other, e.trade);
 	end

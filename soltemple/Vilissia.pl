@@ -28,8 +28,8 @@ sub EVENT_ITEM {
   if(($itemcount{2352} == 1) && ($itemcount{2368} == 1) && ($itemcount{10558} == 1) && ($itemcount{2367} == 1)) {
     quest::say("Well done $name. You truly are a powerful wizard. I have crafted your mask. Take it.");
     quest::summonitem(2366);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -37,8 +37,8 @@ sub EVENT_ITEM {
   if(($itemcount{2332} == 1) && ($itemcount{10553} == 1) && ($itemcount{10554} == 1) && ($itemcount{10555} == 1)) {
     quest::say("Well done $name. You truly are a powerful wizard. I have crafted your cloak. Take it.");
     quest::summonitem(2364);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -46,8 +46,8 @@ sub EVENT_ITEM {
   if(($itemcount{10035} == 2) && ($itemcount{10000} == 1)) {
     quest::say("Okay, here is your Lambent Ruby.");
     quest::summonitem(10118);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 

@@ -29,26 +29,26 @@ sub EVENT_ITEM {
   #End of Counteragents
   quest::say("Excellent work, the Loyalist Empire is grateful for your assistance. Governor Maralicis and I will have our researchers resume their work on curing Luclin of its diseases.");
   quest::summonitem('31743'); #Mug of Purifying Tonic  
-  quest::faction(206,10);  # +Magus Conlegium
-  quest::faction(168,10);  # +Katta Castellum Citizens
-  quest::faction(350,10);  # +Validus Custodus
-  quest::faction(284,-10); # -Seru
-  quest::faction(139,-10); # -Hand of Seru
-  quest::faction(96,-10);  # -Eye of Seru
-  quest::faction(138,-10); # -Hand Legionnaries
+  quest::faction(1504,10);  # +Magus Conlegium
+  quest::faction(1502,10);  # +Katta Castellum Citizens
+  quest::faction(1503,10);  # +Validus Custodus
+  quest::faction(1483,-10); # -Seru
+  quest::faction(1484,-10); # -Hand of Seru
+  quest::faction(1485,-10);  # -Eye of Seru
+  quest::faction(1541,-10); # -Hand Legionnaries
  }
  #Handin: 3x Shissar Organs (10416)
  if(plugin::check_handin(\%itemcount, 10416 => 3)){
   #End of Undead Snake Organs
   quest::say("Excellent work $name! The acquisition of these organs is a fantastic accomplishment!");
   quest::summonitem('31744'); #Amulet of the Grey Wastes 
-  quest::faction(206,10);  # +Magus Conlegium
-  quest::faction(168,10);  # +Katta Castellum Citizens
-  quest::faction(350,10);  # +Validus Custodus
-  quest::faction(284,-10); # -Seru
-  quest::faction(139,-10); # -Hand of Seru
-  quest::faction(96,-10);  # -Eye of Seru
-  quest::faction(138,-10); # -Hand Legionnaries
+  quest::faction(1504,10);  # +Magus Conlegium
+  quest::faction(1502,10);  # +Katta Castellum Citizens
+  quest::faction(1503,10);  # +Validus Custodus
+  quest::faction(1483,-10); # -Seru
+  quest::faction(1484,-10); # -Hand of Seru
+  quest::faction(1485,-10);  # -Eye of Seru
+  quest::faction(1541,-10); # -Hand Legionnaries
  }
 }
 

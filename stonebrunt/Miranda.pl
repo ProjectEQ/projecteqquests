@@ -27,15 +27,15 @@ sub EVENT_ITEM
   quest::say("Chocolate cherries!! My favorite!! Here try some of this!!");
   quest::exp(50);
   quest::summonitem(20115);
-  quest::faction(172,5);
-  quest::faction(274,2);
+  quest::faction(473,5);
+  quest::faction(398,2);
  }
  if($itemcount{2088} == 1)
  {
   quest::summonitem(20116);
   quest::say("You found my dice!!! Thank you!!");
   quest::exp(120);
-  quest::faction(172,5);
-  quest::faction(274,2);
+  quest::faction(473,5);
+  quest::faction(398,2);
  }
 } 

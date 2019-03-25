@@ -26,9 +26,9 @@ local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 1736, item2 = 1737, item3 = 1735})) then
 		e.self:Emote("cheers as you hand him the samples of zombie flesh. He says, 'You have them! Excellent! Thank you very much, "..e.other:GetName().."! Now I have much work to do so shoo before you break something else. Oh and here is your reward. It's an anklet that all our acolytes wear. Not only is it functional, but we can show off our beautiful foot hairs at the same time. Us halflings are pretty smart really.");
 		e.other:SummonItem(1731);
-		e.other:Faction(259,20);
-		e.other:Faction(208,20); 
-		e.other:Faction(133,20);
+		e.other:Faction(300,20);
+		e.other:Faction(286,20); 
+		e.other:Faction(263,20);
 		e.other:GiveCash(18,13,0,0);
 		e.other:AddEXP(100);
 	else

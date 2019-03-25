@@ -29,10 +29,10 @@ sub EVENT_ITEM {
 		quest::say("Welcome to the Emerald Warriors. Hmmm, you have a lot of training to do, so let's get started right away. Here's our guild tunic, represent us well, young $name. Once you are ready to begin your training please make sure that you see Josylyn Greenblade, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13533); #Old Green Tunic
 		quest::ding();
-		quest::faction(92,100); #Emerald Warriors
-		quest::faction(155,-15); #Indigo Brotherhood
-		quest::faction(212,10); #Merchants of Felwithe
-		quest::faction(174,10);  #Kelethin Merchants
+		quest::faction(326,100); #Emerald Warriors
+		quest::faction(270,-15); #Indigo Brotherhood
+		quest::faction(325,10); #Merchants of Felwithe
+		quest::faction(276,10);  #Kelethin Merchants
 		quest::exp(100);
 	}
 	if (plugin::check_handin(\%itemcount,13073=>1,13782=>1,13253=>1,13069=>1)) {
@@ -40,10 +40,10 @@ sub EVENT_ITEM {
 		@randomGivenItems = (5013,5014,5015,5016,5019,5020,5021,5022,5023,5024,5025,5042,5043,5044,5045,5046,5047,5048,5049,5070,5071,6011,6013,6014,6015,6016,6030,6031,6032,6033,7007,7008,7009,7010,7021,7022,7023,7024);
 		my $a = $randomGivenItems[int(rand(scalar @randomGivenItems))];
 		quest::summonitem($a);
-		quest::faction(92,10);
-		quest::faction(155,-10);
-		quest::faction(174,10);
-		quest::faction(212,10);
+		quest::faction(326,10);
+		quest::faction(270,-10);
+		quest::faction(276,10);
+		quest::faction(325,10);
 		quest::exp(500);
 	}
 	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

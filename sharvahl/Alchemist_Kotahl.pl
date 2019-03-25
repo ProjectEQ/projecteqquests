@@ -13,42 +13,42 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 7285 => 1)) { # Claw of the High Grimling
 quest::summonitem(7286); # Claw of the Grimling Slayer
 quest::exp(500);
-quest::faction(132,2); # Guardians of Shar Vahl
+quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 
 elsif (plugin::check_handin(\%itemcount, 7295 => 1)) { # Dirk of the High Grimling
 quest::summonitem(7296); # Dirk of Grimling Slaying
 quest::exp(500);
-quest::faction(132,2); # Guardians of Shar Vahl
+quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 
 elsif (plugin::check_handin(\%itemcount, 7289 => 1)) { # Great Sword of the High Grimling
 quest::summonitem(7290); # Great Sword of Grimling Slayer
 quest::exp(500);
-quest::faction(132,2); # Guardians of Shar Vahl
+quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 
 elsif (plugin::check_handin(\%itemcount, 7291 => 1)) { # Hammer of the High Grimling
 quest::summonitem(7292); # Hammer of Grimling Slayer
 quest::exp(500);
-quest::faction(132,2); # Guardians of Shar Vahl
+quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 
 elsif (plugin::check_handin(\%itemcount, 7287 => 1)) { # Short Sword of the High Grimling
 quest::summonitem(7288); # Short Sword of Grimling Slayer
 quest::exp(500);
-quest::faction(132,2); # Guardians of Shar Vahl
+quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 
 elsif (plugin::check_handin(\%itemcount, 7293 => 1)) { # Staff of the High Grimling
 quest::summonitem(7294); # Staff of Grimling Slayer
 quest::exp(500); 
-quest::faction(132,2); # Guardians of Shar Vahl
+quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 

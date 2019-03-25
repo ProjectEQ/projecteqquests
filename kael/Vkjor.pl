@@ -39,10 +39,10 @@ if($text=~/Ice wurm/i){
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 25128 => 1, 25129 => 1, 25127 => 1)) { # Bloody claws of Draazak, Jerigozia, and Veredenia
 	quest::say("I honestly did not expect you to be able to destroy her children, $name. Vkjrog must have guided your hand as you slew those beasts. Nevederia will now know sorrow the like of which she has never felt.' Vkjor drops a shiny pair of gauntlets on the ground before you as he turns his attention to the bloody claws he now holds.");  
-	quest::faction(189,5); # Kromzek
-	quest::faction(188,5); # Kromrif
-	quest::faction(179,5); # King Tormax
-	quest::faction(42,-10); # Claws of Veeshan
+	quest::faction(448,5); # Kromzek
+	quest::faction(419,5); # Kromrif
+	quest::faction(429,5); # King Tormax
+	quest::faction(430,-10); # Claws of Veeshan
 	quest::exp(40000);
 	quest::summonitem(25078); # Silver Steel Gauntlets	
 	}

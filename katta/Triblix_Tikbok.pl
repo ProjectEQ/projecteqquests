@@ -26,12 +26,12 @@ sub EVENT_ITEM {
   #End of Zelniak Oil
   quest::say("Thank you $name! It would be pretty hard to see around here if we didnt keep the fires burning, it never being daytime and all.");
   quest::summonitem('10694'); #Combine Fire Flask
-  quest::faction(206,10); # +Magus Conlegium
-  quest::faction(168,10); # +Katta Castellum Citizens
-  quest::faction(350,10); # +Validus Custodus
-  quest::faction(37,-10); # -Citizens of Seru
-  quest::faction(284,-10); # -Seru
-  quest::faction(298,-10); # -Shoulders of Seru
+  quest::faction(1504,10); # +Magus Conlegium
+  quest::faction(1502,10); # +Katta Castellum Citizens
+  quest::faction(1503,10); # +Validus Custodus
+  quest::faction(1499,-10); # -Citizens of Seru
+  quest::faction(1483,-10); # -Seru
+  quest::faction(1487,-10); # -Shoulders of Seru
   quest::exp(500);
   quest::givecash(0,0,1,0); 
  }

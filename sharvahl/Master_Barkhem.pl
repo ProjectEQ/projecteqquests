@@ -59,7 +59,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29806 => 1, 29809 => 1, 29812 => 1, 29815 => 1)) {
     quest::emote("shuffles through the work orders. 'Well they have some lovely things to say about your work!'");
     quest::emote("disappears into the back room for a moment only to return dragging some sort of large iron block in his hands and crashes it down on the counter. 'Do you know what this is? I see you nodding your head, and yes it is an anvil... but it is so much more. This is a specially crafted anvil for only my most promising students as not just anyone has it within them to smith on a [spirit anchor].'");
-    quest::faction(132,10);
+    quest::faction(1513,10);
     quest::exp(500);
     quest::summonitem(29816); # Vah Shir Anvil
   }
@@ -70,7 +70,7 @@ sub EVENT_ITEM {
   # apprentice mallet 29802
   if (plugin::check_handin(\%itemcount, 29802 => 1, 29819 => 1)) {
     quest::say("Well done, $name! I trust you are beginning to see the power that shadow can grant you. Now it is time for you to learn to manipulate sound. Here is your very own mallet, use it to form the substance of sound into tangible matter. Pound yourself out a few humming orbs and I'll know you're ready to combine shadow and sound into a precarious balance of forces.");
-    quest::faction(132,10);
+    quest::faction(1513,10);
     quest::exp(500);
     quest::summonitem(29820); # Luclinite Mallet
   }
@@ -79,7 +79,7 @@ sub EVENT_ITEM {
   # 3 humming orbs 29823 + Luclinite Mallet
   if (plugin::check_handin(\%itemcount, 29820=> 1, 29823 => 3)) {
     quest::emote("looks genuinely pleased with your craftsmanship. He sets down one of the orbs onto a special anvil and swings your mallet high in the air crashing it down on the orb causing it to shatter with a terrible shriek. He repeats this action with each of the remaining orbs and hands you back the now humming mallet. 'Here, $name, this mallet will enable you to combine shadow with sound. Smith wisely and be careful what you create with it,' Barkhem pauses, looking quite serious, 'it is very powerful. You'll be able to make Shadowscream steel with it.'");
-    quest::faction(132,10);
+    quest::faction(1513,10);
     quest::exp(500);
     quest::summonitem(29824); # Humming Luclinite Mallet
   }
@@ -87,7 +87,7 @@ sub EVENT_ITEM {
   # receive Rakutah's Seal
   if (plugin::check_handin(\%itemcount, 29826 => 1)) {
     quest::say("Back already, $name? I've only just sent you out and you've finished your very first professional job, well done! I'm very proud of your progression! My wife and I have made you a pair of greaves that I'm sure you'll love to wear. Take them as a reward on a job well done. I have pressing matters that require my attention right now, or else I'd teach you more about the powers of shadow and sound. Experiment with the Shadowscream steel until I can teach you more.");
-    quest::faction(132,10);
+    quest::faction(1513,10);
     quest::exp(500);
     quest::summonitem(29827); # Barkhem Fancy Pantaloons
   }

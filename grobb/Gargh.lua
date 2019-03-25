@@ -25,37 +25,37 @@ function event_trade(e)
 		e.self:Say("You done good. You begin to know fear by causing fear. Next you learn about da animals. You learn about da animals by fighting dem and tearing them apart. You ready to [" .. eq.say_link("learn about da animals",false,"learn about da animals") .. "]?");
 		e.other:SummonItem(7380);
 		e.other:Ding();
-		e.other:Faction(70,10,0);
-		e.other:Faction(292,10,0);
-		e.other:Faction(106,-10,0);
+		e.other:Faction(237,10,0);
+		e.other:Faction(308,10,0);
+		e.other:Faction(251,-10,0);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13782, item2 = 13782, item3 = 13782, item4 = 13782})) then
 		e.self:Say("So you know all about da wolf now. Dat is good. Next step is important. You need to learn to [" .. eq.say_link("fight like da alligator",false,"fight like da alligator") .. "].");
 		e.other:SummonItem(7381);
 		e.other:Ding();
-		e.other:Faction(70,10,0);
-		e.other:Faction(292,10,0);
-		e.other:Faction(106,-10,0);
+		e.other:Faction(237,10,0);
+		e.other:Faction(308,10,0);
+		e.other:Faction(251,-10,0);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13417, item2 = 13417})) then
 		e.self:Say("Ok meez believe you. Here your reward. Meez think you just about ready for [" .. eq.say_link("next part of your training",false,"next part of your training") .. "].");
 		e.other:SummonItem(7382);
 		e.other:Ding();
-		e.other:Faction(70,10,0);
-		e.other:Faction(292,10,0);
-		e.other:Faction(106,-10,0);
+		e.other:Faction(237,10,0);
+		e.other:Faction(308,10,0);
+		e.other:Faction(251,-10,0);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13060})) then
 		e.self:Say("You did it! You cause lots of fear for them. Dat good. Even da spirits are starting to tremble. Soon you will be able to make dem do what you want. But there is [" .. eq.say_link("one more task",false,"one more task") .. "] meez want you to do.");
 		e.other:SummonItem(7383);
 		e.other:Ding();
-		e.other:Faction(70,10,0);
-		e.other:Faction(292,10,0);
-		e.other:Faction(106,-10,0);
+		e.other:Faction(237,10,0);
+		e.other:Faction(308,10,0);
+		e.other:Faction(251,-10,0);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 22572, item2 = 22572, item3 = 22572, item4 = 22572})) then
 		e.self:Say("You did it! You cause lots of fear for them. Dat good. Even da spirits are starting to tremble. Soon you will be able to make dem do what you want. You have passed your final test.");
 		e.other:SummonItem(7384);
 		e.other:Ding();
-		e.other:Faction(70,10,0);
-		e.other:Faction(292,10,0);
-		e.other:Faction(106,-10,0);
+		e.other:Faction(237,10,0);
+		e.other:Faction(308,10,0);
+		e.other:Faction(251,-10,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

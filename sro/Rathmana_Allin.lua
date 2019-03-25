@@ -21,8 +21,8 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {gold = 30})) then
 		e.self:Say("Good luck, my friend. May Solusek Ro guide your hand.");
 		e.other:Ding();
-		e.other:Faction(320,1,0);  -- Temple of Solusek Ro
-		e.other:Faction(291,-1,0); -- Shadowed Men
+		e.other:Faction(415,1,0);  -- Temple of Solusek Ro
+		e.other:Faction(416,-1,0); -- Shadowed Men
 		e.other:AddEXP(100);
 		-- Force Snap, Bind Affinity, Lightning Bolt, Quickness, Whirl Til You Hurl, Column of Fire, Engulfing Darkness, Banshee Aura, Lifedraw, Charm, Rotted Illegible Scroll (Multiple copies added to increase percentage)
 		e.other:SummonItem(eq.ChooseRandom(15022, 15035, 15038, 15039, 15303, 15328, 15355, 15364, 15445, 16425, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360, 13360));

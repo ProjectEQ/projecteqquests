@@ -14,10 +14,10 @@ function event_trade(e)
 		e.self:Say("I knew that Deputy Tagil had simply forgotten. He really is a good young halfling. Here, take this as a small payment for your time.");
 		e.other:SummonItem(eq.ChooseRandom(13977,13100,14014,13083));
 		e.other:Ding();
-		e.other:Faction(316,1,0);
-		e.other:Faction(208,1,0);
-		e.other:Faction(218,1,0);
-		e.other:Faction(347,-1,0);
+		e.other:Faction(355,1,0);
+		e.other:Faction(286,1,0);
+		e.other:Faction(292,1,0);
+		e.other:Faction(324,-1,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

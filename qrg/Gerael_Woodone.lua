@@ -21,21 +21,21 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18911})) then
 		e.self:Say("Oh my!! Our Qeynos Ambassador, Gash, is in danger. Please take the note over to Captain Tillin of the Qeynos Guard then find Gash and inform him [they are trying to kill him]. Go!!");
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(267,10,0);
-		e.other:Faction(347,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(343,10,0);
+		e.other:Faction(324,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(random_copper,random_silver,random_gold,random_planinum);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12141})) then
 		e.self:Say("So the Unkempt Druids are alive and well.  We shall keep a watchful eye out as should you.  Take this for your bravery and defense of the Jaggedpine.");
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(267,10,0);
-		e.other:Faction(347,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(343,10,0);
+		e.other:Faction(324,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(random_copper,random_silver,random_gold,random_planinum);
 	end

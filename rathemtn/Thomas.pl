@@ -29,10 +29,10 @@ sub EVENT_ITEM {
       if(plugin::check_handin(\%itemcount,12308 => 2)){
          quest::say("You have proven yourself to Karana.  I grant you the mold of the Ro Helm.  May the winds of Karana blow in your favor.  Now you must seek out [Lord Searfire] and  ask him for [ronium] to complete the second and only other component needed to be fashioned by a master blacksmith.");
          quest::summonitem("12298");
-         quest::faction(183,2); #Knights of Thunder
-         quest::faction(21,-3); #Bloodsabers
-         quest::faction(257,3); #Priests of Life
-         quest::faction(135,2); #Guards of Qeynos
+         quest::faction(280,2); #Knights of Thunder
+         quest::faction(221,-3); #Bloodsabers
+         quest::faction(341,3); #Priests of Life
+         quest::faction(262,2); #Guards of Qeynos
       } elsif(plugin::check_handin(\%itemcount,12308 => 1)){
          quest::say("I called for two cyclops skulls.");
       }

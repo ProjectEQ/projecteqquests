@@ -13,9 +13,9 @@ function event_trade(e)
 		e.self:Say("Good work. I knew you could do it. Take this as reward.");
 		e.other:SummonItem(13053);
 		e.other:Ding();
-		e.other:Faction(247,5,0);
-		e.other:Faction(145,5,0);
-		e.other:Faction(143,-10,0);
+		e.other:Faction(298,5,0);
+		e.other:Faction(266,5,0);
+		e.other:Faction(265,-10,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

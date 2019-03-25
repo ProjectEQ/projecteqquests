@@ -20,11 +20,11 @@ function event_trade(e)
 		e.self:Say("Ah, good work, " .. e.other:GetName() .. ". And quick too, I'll makes sure that Elisi hears of your loyal work. Here... take this for your efforts.. it's not much, but it's all I have on me right now.");
 		e.other:SummonItem(1054); -- Used Merchants Gloves
 		e.other:Ding();
-		e.other:Faction(48,1,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(47,1,0); -- Coalition of Trade Folk
-		e.other:Faction(31,1,0); -- Carson McCabe
-		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,1,0); -- Freeport Militia
+		e.other:Faction(336,1,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(329,1,0); -- Carson McCabe
+		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,1,0); -- Freeport Militia
 		e.other:AddEXP(100);
 		e.other:GiveCash(6,0,0,0);
 	end

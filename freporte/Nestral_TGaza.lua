@@ -15,11 +15,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13158})) then -- Rebby's Rat Whiskers
 		e.self:Say("Thank you " .. e.other:GetName() .. ", You have done well.");
 		e.other:Ding();
-		e.other:Faction(48,7,0);
-		e.other:Faction(47,7,0);
-		e.other:Faction(31,1,0);
-		e.other:Faction(53,1,0);
-		e.other:Faction(105,1,0);
+		e.other:Faction(336,7,0);
+		e.other:Faction(229,7,0);
+		e.other:Faction(329,1,0);
+		e.other:Faction(230,1,0);
+		e.other:Faction(330,1,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(7,0,0,0);
 	end

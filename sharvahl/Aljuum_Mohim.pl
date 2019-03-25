@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6157 =>1 )) {
   quest::say("How was your little encounter with those beasts? Quite nasty in combat, eh? I told you as much. Well, now that you've seen them firsthand, I'll tell you how to deal with them like a true hunter. Take this hilt piece and show Hana Sulm. She'll give you some sketches. Once you have those sketches, go to Arms Historian Qua and purchase the tomes on Wolf Bane Lore or something like that. He'll know what you mean. You can use those books and the sketches to make a weapon that offers considerable power against those wolves. Once you have the weapon, bring it to me with your apprentice cloak. I'll have something for you. Now go away and let me finish this drink.");
   quest::summonitem(6144);
-  quest::faction( 132,10 );
+  quest::faction( 1513,10 );
     
   }
   if (plugin::check_handin(\%itemcount, 6158 =>1, 5966 =>1 )) {

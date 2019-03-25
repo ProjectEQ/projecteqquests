@@ -27,14 +27,14 @@ function event_trade(e)
 		e.other:GiveCash(0,0,0,1);
 		e.other:AddEXP(250);
 		e.other:Ding();
-		e.other:Faction( 213,3);
-		e.other:Faction( 361,3);
-		e.other:Faction( 294,3);
+		e.other:Faction( 328,3);
+		e.other:Faction( 320,3);
+		e.other:Faction( 327,3);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12275, item2 = 12276, item3 = 12282, item4 = 13953})) then
 		e.self:Say("Here is your Candle o' Bravery.");
-		e.other:Faction(213,25);
-		e.other:Faction(361,25);
-		e.other:Faction(294,25);
+		e.other:Faction(328,25);
+		e.other:Faction(320,25);
+		e.other:Faction(327,25);
 		e.other:AddEXP(50000);
 		e.other:SummonItem(12277);
 	end

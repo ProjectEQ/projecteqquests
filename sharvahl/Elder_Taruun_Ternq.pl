@@ -6,7 +6,7 @@ sub EVENT_ITEM {
     quest::say("I see that Joharr introduced you to our cavern dwelling friends. This report shows that you were very successful on your last patrol. Your progress as a Taruun is most pleasing. You have shown us that you are ready to advance to the level of apprentice. I will send someone for your new cloak in a moment. While I am doing that, please use this bowl to prepare some spicy fish stew and take it to Kerr Tiparr in the Hollowshade outpost. It's not often that they get good food out there. If you don't remember the recipe, just ask cook Mylis. When you are done, please return with your old cloak and the empty pot. Always remember... Service to the community should always precede any thoughts of personal advancement.");
     quest::ding();
     quest::exp(1000);
-    quest::faction(319,10);
+    quest::faction(1530,10);
     quest::summonitem(5570);
   }
   if (plugin::check_handin(\%itemcount, 5566 => 1, 3465 => 1)) {
@@ -14,7 +14,7 @@ sub EVENT_ITEM {
     quest::shout("Hear me fellow Vah Shir! The Taruun have seen fit to escalate citizen $name to the rank of apprentice. He grows in strength and wisdom daily. We are proud as should you all be. May this student of our ways continue to progress and live worthy of our noble heritage.");
     quest::ding();
     quest::exp(2500);
-    quest::faction(319,20);
+    quest::faction(1530,20);
     quest::summonitem(5558);
   }
   if (plugin::check_handin(\%itemcount, 5558 => 1, 6158 => 1)) {

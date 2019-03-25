@@ -15,7 +15,7 @@ function event_say(e)
 	elseif(e.message:findi("tax collection") and tax.tax_collection ~= nil) then
 		e.self:Say("Argh! You curvy sea goblin! Taxes, you say?! Peh! I got your taxes right here! I sure don't get the services those taxes are supposed to provide! You can tell them ol' Captain Rohand said so!");
 		e.other:SummonItem(13177);
-		e.other:Faction(217,-10,0);
+		e.other:Faction(291,-10,0);
 	end
 	
 end
@@ -27,11 +27,11 @@ function event_trade(e)
   if(item_lib.check_turn_in(e.trade, {item1 = 13034})) then
     e.self:Say("Yeah, this is just what I've been craving!");
 	e.other:SendSound();
-    e.other:Faction(135,10,0);
-    e.other:Faction(9,10,0);
-    e.other:Faction(369,10,0);
-    e.other:Faction(33,-20,0);
-    e.other:Faction(217,10,0);
+    e.other:Faction(262,10,0);
+    e.other:Faction(219,10,0);
+    e.other:Faction(5015,10,0);
+    e.other:Faction(223,-20,0);
+    e.other:Faction(291,10,0);
 	e.other:AddEXP(8000);
   end
   

@@ -12,10 +12,10 @@ sub EVENT_ITEM {
 #    quest::say("REWARD TEXT HERE");
 #    quest::exp(25000);
 #    quest::summonitem(24887); #Holgresh Mojo Stick (Holgresh Air Wand)
-#    quest::faction(189,10); #Kromzek
-#    quest::faction(188,10); #Kromrif
-#    quest::faction(179,10); #King Tormax
-#    quest::faction(42,-10); #Claws of Veeshan
+#    quest::faction(448,10); #Kromzek
+#    quest::faction(419,10); #Kromrif
+#    quest::faction(429,10); #King Tormax
+#    quest::faction(430,-10); #Claws of Veeshan
 #  }
 #  else {
 #    quest::say("I do not need this.");

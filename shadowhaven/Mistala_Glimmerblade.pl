@@ -18,9 +18,9 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4761 => 1)) {
     quest::say("It's nice to see that Broansas is doing well. I would not have been able to retrieve this information without your assistance, $name. I thank you for your help and will be sure to tell the council members of your good deeds. I often need reports retrieved so please check back if you would like to help to the House of Fordel.");
     quest::exp(2500);
-    quest::faction(152,10); #house of fordel
-    quest::faction(140,10); #haven defenders
-    quest::faction(338,10); #traders of the haven
+    quest::faction(1510,10); #house of fordel
+    quest::faction(1509,10); #haven defenders
+    quest::faction(1508,10); #traders of the haven
   }
   plugin::return_items(\%itemcount);
 }

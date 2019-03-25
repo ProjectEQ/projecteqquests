@@ -39,19 +39,19 @@ function event_trade(e)
 		e.self:Say("You have done well. Karana is pleased. I cannot say the same for the cat people. I now bestow upon you the knowledge of Holy Armor. Study the words and soon the power shall be bestowed upon you by the greatness that is the Rainkeeper.");
 		e.other:Ding();
 		e.other:SummonItem(15011); -- spell:holy armor
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(21,-10,0); -- Bloodsabers
-		e.other:Faction(257,5,0); -- Priest of Life
-		e.other:Faction(135,5,0); -- Guards of Qeynos
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(221,-10,0); -- Bloodsabers
+		e.other:Faction(341,5,0); -- Priest of Life
+		e.other:Faction(262,5,0); -- Guards of Qeynos
 		e.other:AddEXP(200);		
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13289})) then -- Chest of Faith (closed)
 		e.self:Say("You have done supremely well, my young acolyte of Thunder. For your great service to the Temple of Thunder. Now go and cast the storm into the populace of Antonica.");
 		e.other:Ding();
 		e.other:SummonItem(15218); -- spell:ward undead
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(21,-10,0); -- Bloodsabers
-		e.other:Faction(257,5,0); -- Priest of Life
-		e.other:Faction(135,5,0); -- Guards of Qeynos
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(221,-10,0); -- Bloodsabers
+		e.other:Faction(341,5,0); -- Priest of Life
+		e.other:Faction(262,5,0); -- Guards of Qeynos
 		e.other:AddEXP(200);	
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

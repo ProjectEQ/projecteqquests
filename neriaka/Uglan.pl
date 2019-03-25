@@ -7,12 +7,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13357 => 1)) {
     quest::say("You from Oggok. Me waiting for you. Me know dark elves have dark plan for ogres. We must stop plan. You must go to Nektulos Forest. Wait for blue orc. He deliver message for dark elf king. Not good. You kill blue orc runners. If message on them then you take to Lork in Oggok. Ogres must know plan.");
-    quest::faction(322,10);
-    quest::faction(268,10);
-    quest::faction(177,-10);
-    quest::faction(170,-10);
-    quest::faction(91,-10);
-    quest::faction(260,-10);
+    quest::faction(239,10);
+    quest::faction(303,10);
+    quest::faction(278,-10);
+    quest::faction(275,-10);
+    quest::faction(245,-10);
+    quest::faction(1522,-10);
     quest::exp(500);
   }
   plugin::return_items(\%itemcount);

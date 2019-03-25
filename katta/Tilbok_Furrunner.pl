@@ -36,44 +36,44 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29891 => 1)) { #Report to Tilbok
     quest::emote("reads through the report, hands you a small satchel then starts to explain. 'Finally, news from Euzan. I knew that it would take a long time to get planted within Seru, but I still worried about their mission constantly. This report shows that you have earned trust from Euzan, so I in turn will show the same trust. Euzan and Torsten were placed in the city for information. They are deep undercover and risk their life everyday. Every person in that city is ingrained with the [purpose] of either destroying Katta or converting his people.'");
     quest::summonitem(17121); #Report Satchel
-    quest::faction(350,20);  #Validus Custodus
-    quest::faction(168,20);  #Katta Castellum Citizens
-    quest::faction(206,20);  #Magus Conlegium
-    quest::faction(228,-50); #Nathyn Illuminious
-    quest::faction(55,-50);  #Coterie of the Eternal Night
-    quest::faction(284,-50); #Seru
-    quest::faction(139,-50); #Hand of Seru
-    quest::faction(96,-50);  #Eye of Seru
-    quest::faction(138,-50); #Hand Legionnaries
+    quest::faction(1503,20);  #Validus Custodus
+    quest::faction(1502,20);  #Katta Castellum Citizens
+    quest::faction(1504,20);  #Magus Conlegium
+    quest::faction(1505,-50); #Nathyn Illuminious
+    quest::faction(1506,-50);  #Coterie of the Eternal Night
+    quest::faction(1483,-50); #Seru
+    quest::faction(1484,-50); #Hand of Seru
+    quest::faction(1485,-50);  #Eye of Seru
+    quest::faction(1541,-50); #Hand Legionnaries
     quest::exp(100000);
   }
   elsif (plugin::check_handin(\%itemcount, 29858 => 1, 29889 => 1)) { #Etched Earring of Veracity and Full Satchel
     quest::say("According to these reports Seru resides in a building called the Arx Seru. It is the large complex in the center of the four Praesertum Consillium. We must take [action] now. Do not underestimate the power of Sanctus Seru for what they do they feel is right.");
     quest::summonitem(29859); #Runed Earring of Veracity
-    quest::faction(350,20);  #Validus Custodus
-    quest::faction(168,20);  #Katta Castellum Citizens
-    quest::faction(206,20);  #Magus Conlegium
-    quest::faction(228,-50); #Nathyn Illuminious
-    quest::faction(55,-50);  #Coterie of the Eternal Night
-    quest::faction(284,-50); #Seru
-    quest::faction(139,-50); #Hand of Seru
-    quest::faction(96,-50);  #Eye of Seru
-    quest::faction(138,-50); #Hand Legionnaries
+    quest::faction(1503,20);  #Validus Custodus
+    quest::faction(1502,20);  #Katta Castellum Citizens
+    quest::faction(1504,20);  #Magus Conlegium
+    quest::faction(1505,-50); #Nathyn Illuminious
+    quest::faction(1506,-50);  #Coterie of the Eternal Night
+    quest::faction(1483,-50); #Seru
+    quest::faction(1484,-50); #Hand of Seru
+    quest::faction(1485,-50);  #Eye of Seru
+    quest::faction(1541,-50); #Hand Legionnaries
     quest::exp(1000000);
     quest::setglobal("EarringVeracity3","1",1,"Y1"); #Used with Lcea Katta
    }
   elsif (plugin::check_handin(\%itemcount, 29844 => 1)) { #Dossier: Case 3463827
     quest::emote("reads through the dossier and then looks at you, eyebrow raised curiously, 'look at the mess you have gotten yourself in the middle of,' he says with a chuckle, while beginning to jot a note. 'Here take this and...' he stops midsentence. 'I guess I haven't even given you the chance to say whether or not you want to help. Would you like to see this through to the end?'");
     quest::summonitem(29845); #Field Orders
-    quest::faction(350,20);  #Validus Custodus
-    quest::faction(168,20);  #Katta Castellum Citizens
-    quest::faction(206,20);  #Magus Conlegium
-    quest::faction(228,-50); #Nathyn Illuminious
-    quest::faction(55,-50);  #Coterie of the Eternal Night
-    quest::faction(284,-50); #Seru
-    quest::faction(139,-50); #Hand of Seru
-    quest::faction(96,-50);  #Eye of Seru
-    quest::faction(138,-50); #Hand Legionnaries
+    quest::faction(1503,20);  #Validus Custodus
+    quest::faction(1502,20);  #Katta Castellum Citizens
+    quest::faction(1504,20);  #Magus Conlegium
+    quest::faction(1505,-50); #Nathyn Illuminious
+    quest::faction(1506,-50);  #Coterie of the Eternal Night
+    quest::faction(1483,-50); #Seru
+    quest::faction(1484,-50); #Hand of Seru
+    quest::faction(1485,-50);  #Eye of Seru
+    quest::faction(1541,-50); #Hand Legionnaries
     quest::exp(5000);
   }
   #do all other handins first with plugin, then let it do disciplines

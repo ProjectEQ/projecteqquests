@@ -11,11 +11,11 @@ function event_trade(e)
 		e.self:Say(string.format("Ah, hello there, %s. It's such a fine day out, wouldn't you say? Ah, reports are due in. Very well, here you go. Say hello to the fellows back at the Wind Spirit's Song for me. May you have many safe travels, my friend.",e.other:GetName()));
 		e.other:SummonItem(18024);
 		e.other:Ding();
-		e.other:Faction(192,2,0);
-		e.other:Faction(184,2,0);
-		e.other:Faction(135,2,0);
-		e.other:Faction(273,-2,0);
-		e.other:Faction(207,-2,0);
+		e.other:Faction(284,2,0);
+		e.other:Faction(281,2,0);
+		e.other:Faction(262,2,0);
+		e.other:Faction(304,-2,0);
+		e.other:Faction(285,-2,0);
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

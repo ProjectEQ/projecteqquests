@@ -30,24 +30,24 @@ sub EVENT_ITEM {
 		quest::summonitem(2317);#Cloak of the Undead Eye
 		quest::givecash(0,14,0,0);#14 silver
 		quest::exp(33750);#1% level 16 exp
-		quest::faction(322, 5); #The Dead
-		quest::faction(268, 5); #Queen Cristanos Thex
-		quest::faction(177,-10); #King Naythox Thex
-		quest::faction(170,-10); #Keepers of Art
-		quest::faction(91,-10); #Eldritch Collective
-		quest::faction(260,-10); #Primordial Malice		
+		quest::faction(239, 5); #The Dead
+		quest::faction(303, 5); #Queen Cristanos Thex
+		quest::faction(278,-10); #King Naythox Thex
+		quest::faction(275,-10); #Keepers of Art
+		quest::faction(245,-10); #Eldritch Collective
+		quest::faction(1522,-10); #Primordial Malice		
 	}
 	if(plugin::check_handin(\%itemcount, 13390 => 1)){#Thex Mallet
 		quest::say("Oh how grand it is!! Look at it!! I feel the power trembling within. Who would have thought such an item would be abandoned? You have performed supremely. Queen Cristanos shall reward me greatly and I shall reward you greatly. Here is my weapon from years past.. the Reaper of the Dead. I believe it has one soul still trapped within.");
 		quest::summonitem(5374);#Reaper of the Dead
 		quest::givecash(0,14,0,0);#14 silver
 		quest::exp(33750);#1% level 16 exp
-		quest::faction(322, 5); #The Dead
-		quest::faction(268, 5); #Queen Cristanos Thex
-		quest::faction(177,-10); #King Naythox Thex
-		quest::faction(170,-10); #Keepers of Art
-		quest::faction(91,-10); #Eldritch Collective
-		quest::faction(260,-10); #Primordial Malice		
+		quest::faction(239, 5); #The Dead
+		quest::faction(303, 5); #Queen Cristanos Thex
+		quest::faction(278,-10); #King Naythox Thex
+		quest::faction(275,-10); #Keepers of Art
+		quest::faction(245,-10); #Eldritch Collective
+		quest::faction(1522,-10); #Primordial Malice		
 	}
   	#do all other handins first with plugin, then let it do disciplines
   	plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');

@@ -15,16 +15,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 29062 => 1)) { #Giant Warrior Helmet
     quest::say("Very good, you are on your way to proving yourself.");
-    quest::faction(42,5);   #CoV
-    quest::faction(362,5);  #Yelinak
-    quest::faction(189,-5); #Kromzek
+    quest::faction(430,5);   #CoV
+    quest::faction(436,5);  #Yelinak
+    quest::faction(448,-5); #Kromzek
   }
   if(plugin::check_handin(\%itemcount, 29624 => 1)) { #Mercenary Assignments
     quest::say("Ahhh yes! Well done $class. Here is your reward. Your status with our people grows with each interloper you eradicate.");
     quest::givecash(13,6,6,0); #Copper x 13, Silver x 6, Gold x 6
-    quest::faction(42,5);   #CoV
-    quest::faction(362,5);  #Yelinak
-    quest::faction(189,-5); #Kromzek
+    quest::faction(430,5);   #CoV
+    quest::faction(436,5);  #Yelinak
+    quest::faction(448,-5); #Kromzek
   }
   plugin::return_items(\%itemcount);
 }

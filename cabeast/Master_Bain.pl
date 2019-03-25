@@ -26,16 +26,16 @@ sub EVENT_ITEM {
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 18467 => 1, 22922 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
   elsif(plugin::check_handin(\%itemcount, 12688 => 1)) { #Monk Training Bag
     quest::say("Excellent work young one. Take this armor and wear it with pride!"); #Text made up

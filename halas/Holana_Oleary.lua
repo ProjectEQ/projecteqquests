@@ -15,11 +15,11 @@ function event_trade(e)
 		e.other:GiveCash(math.random(99),math.random(99),math.random(99),0);
 		e.other:AddEXP(1600);
 		e.other:Ding();
-		e.other:Faction(213,2); 								--Merchants of Halas
-		e.other:Faction(294,2); 								--Shamen of Justice
-		e.other:Faction(33,-3); 								--Circle of Unseen Hands
-		e.other:Faction(48,-3); 								--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 								--Hall of the Ebon Mask
+		e.other:Faction(328,2); 								--Merchants of Halas
+		e.other:Faction(327,2); 								--Shamen of Justice
+		e.other:Faction(223,-3); 								--Circle of Unseen Hands
+		e.other:Faction(336,-3); 								--Coalition of Tradefolk Underground
+		e.other:Faction(5006,-3); 								--Hall of the Ebon Mask
 		if(rewardr  < 4) then
 			-- : Drowsy : Frost Rift : Sicken : Fleting Fury : Spirit of Bear : Cure Blindness : Spirit Sight : Scale Skin : Spirit Pouch : In that order
 			local spellreward = eq.ChooseRandom(15270,15275,15075,15271,15279,15212,15079,15274,15272);

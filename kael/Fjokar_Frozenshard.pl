@@ -23,10 +23,10 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1717 => 1)) {#Sealed Letter (Sealed Letter to Wenglawks)
   	quest::say("You have found what I was unable to. King Tormax's protection of Wenglawks will end soon. His death will be so very delightful to invoke.");
   	quest::emote("rushes out of the room, dropping his spear as he does.");
-  	quest::faction(189, 20);#Kromzek
-  	quest::faction(179, 20);#King Tormax
-  	quest::faction(67, -30);#Dain Frostreaver IV
-  	quest::faction(362, -30);#Yelinak
+  	quest::faction(448, 20);#Kromzek
+  	quest::faction(429, 20);#King Tormax
+  	quest::faction(405, -30);#Dain Frostreaver IV
+  	quest::faction(436, -30);#Yelinak
   	quest::exp(1107392);#1% of level 45 exp
   	quest::summonitem(25030);#Frozen Shard
   }

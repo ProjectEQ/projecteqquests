@@ -10,7 +10,7 @@ sub EVENT_ITEM {
     quest::summonitem(30609);
     quest::exp(10000);
     quest::ding();
-    quest::faction(132,20);
+    quest::faction(1513,20);
   }
   plugin::return_items(\%itemcount);
 }

@@ -26,7 +26,7 @@ function event_trade(e)
 		e.self:Say("Ah.. ye wish to be a member o' the White Rose, then. eh? Well, let's train ye fer a bit. and see if ye've got what it takes. Once you are ready to begin adventuring make sure you see Lysbith first, she might have a few tasks for you.  Return to me for guidance anytime, I have much to teach you, from the secrets of the profession, to the various [trades] you may wish to dabble in.");
 		e.other:Ding();
 		e.other:SummonItem(13513);	-- torn white tunic
-		e.other:Faction(275,100); 	-- Rogues of the White Rose
+		e.other:Faction(305,100); 	-- Rogues of the White Rose
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

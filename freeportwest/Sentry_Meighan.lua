@@ -11,9 +11,9 @@ function event_trade(e)
 		e.self:Say("Very good. Nothing more than a sip and I feel much more alert. The next sentry awaits you.");
 		e.other:SummonItem(12132);
 		e.other:Ding();
-		e.other:Faction(258,5,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,5,0);
+		e.other:Faction(362,5,0);
+		e.other:Faction(330,-10,0);
+		e.other:Faction(281,5,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -25,15 +25,15 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12408 => 4)) { 
     quest::say("Good work, my young apprentice. You will make a fine addition to our ranks. Here is your first apprentice skullcap. Wear it as a sign of our circle. Do not lose it. Someday you shall wear a necromancer skullcap, but next shall come the [second rank skullcap]."); 
     quest::exp(100); 
-    quest::faction(193,20);
-    quest::faction(24,20);
+    quest::faction(441,20);
+    quest::faction(443,20);
     quest::summonitem(4260);
   }
   elsif (plugin::check_handin(\%itemcount, 4260 => 1, 18208 => 1)) {
     quest::say("A job well done, apprentice. Your fine service shall earn you the second circle apprentice skullcap. I would advise you to forget this tapestry, it is nothing more than an ancient rug of no importance.");
     quest::exp(120); 
-    quest::faction(193,20);
-    quest::faction(24,20);
+    quest::faction(441,20);
+    quest::faction(443,20);
     quest::summonitem(4261);
   }
   elsif (plugin::check_handin(\%itemcount, 14793 => 1)) {

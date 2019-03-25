@@ -25,11 +25,11 @@ function event_trade(e)
 		e.self:Say("Wear this shield imbued with my very essence. Wear it in honor of your great services to our Lord Cazic-Thule!");
 		e.other:SummonItem(14107);
 		e.other:Ding();
-		e.other:Faction(143,50,0);
-		e.other:Faction(79,-50,0);
-		e.other:Faction(112,-50,0);
-		e.other:Faction(56,-50,0);
-		e.other:Faction(60,-50,0);
+		e.other:Faction(265,50,0);
+		e.other:Faction(242,-50,0);
+		e.other:Faction(254,-50,0);
+		e.other:Faction(231,-50,0);
+		e.other:Faction(233,-50,0);
 		e.other:AddEXP(1000);
 		eq.depop();
 	end

@@ -35,32 +35,32 @@ sub EVENT_ITEM {
   quest::summonitem(4193);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
   }
  elsif(plugin::check_handin(\%itemcount, 12821 => 1, 4192 => 1, 4193 => 1)){
   quest::say("Very good!! Here is your Shackle of Copper. The Emperor shall be pleased that I, Mistress Niska, have slain the outlander. Do you have some time? I need someone to be my [personal courier]. Will you?");
   quest::summonitem(4194);
   quest::exp(40000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
   }
  elsif(plugin::check_handin(\%itemcount, 18466 => 1, 22921 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 18465 => 1, 22920 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
   elsif(plugin::check_handin(\%itemcount, 18272 => 1, 24770 => 1)){
     quest::emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all this time");

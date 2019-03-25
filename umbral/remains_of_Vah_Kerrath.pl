@@ -36,8 +36,8 @@ sub EVENT_ITEM {
   }
   if(plugin::check_handin(\%itemcount, 28102 => 4)) { #Elysian Skull
     quest::say("You have done well. Clear your mind of all distractions and ask the whisperlings if you are worthy of my knowledge.");
-    quest::faction(358,5); #Whisperling
-    quest::faction(3,-5);  #Akheva
+    quest::faction(1520,5); #Whisperling
+    quest::faction(1521,-5);  #Akheva
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

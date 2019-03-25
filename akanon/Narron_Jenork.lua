@@ -54,10 +54,10 @@ function event_trade(e)
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12378})) then -- Box of Undead Brownies
 		e.self:Say("Wonderful!! Watchman Dexlin sent word that you would be returning these specimens. I shall see that the Eldritch Collective gets them.  For you there is a reward. Manik has donated a pair of Watchman Boots!!");
-		e.other:Faction(115,15,0); 	-- Gem Choppers better
-		e.other:Faction(210,15,0); 	-- Merchants of Ak'Anon better
-		e.other:Faction(176,15,0); 	-- King Ak'Anon better
-		e.other:Faction(71,-15,0); 	-- Dark Reflection worse
+		e.other:Faction(255,15,0); 	-- Gem Choppers better
+		e.other:Faction(288,15,0); 	-- Merchants of Ak'Anon better
+		e.other:Faction(333,15,0); 	-- King Ak'Anon better
+		e.other:Faction(238,-15,0); 	-- Dark Reflection worse
 		e.other:AddEXP(10000);
 		e.other:Ding();
 		e.other:SummonItem(12379);	-- Watchman Boots

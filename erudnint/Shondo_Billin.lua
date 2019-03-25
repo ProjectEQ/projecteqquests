@@ -16,10 +16,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13126})) then
 		e.self:Say("Gulp.. Gulp.. Aaahhh!!! That hits the spot. All I can tell you is that the heretic's name was E'lial B'rook. He mumbled something about a rendezvous and he would be floating down a river, smooth sailing back to something called Paineel. That's all I know.");
 		e.other:Ding();
-		e.other:Faction(115,10,0);
-		e.other:Faction(210,10,0);
-		e.other:Faction(176,10,0);
-		e.other:Faction(71,-30,0);
+		e.other:Faction(255,10,0);
+		e.other:Faction(288,10,0);
+		e.other:Faction(333,10,0);
+		e.other:Faction(238,-30,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

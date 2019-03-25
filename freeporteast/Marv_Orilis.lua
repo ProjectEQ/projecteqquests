@@ -41,9 +41,9 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19924,item2 = 19852,item3 = 19936})) then
 		e.other:SummonItem(19941);
 		e.other:Ding();
-		e.other:Faction(86,3,0);
-		e.other:Faction(184,-3,0);
-		e.other:Faction(235,3,0);
+		e.other:Faction(271,3,0);
+		e.other:Faction(281,-3,0);
+		e.other:Faction(296,3,0);
 		e.other:AddEXP(250);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

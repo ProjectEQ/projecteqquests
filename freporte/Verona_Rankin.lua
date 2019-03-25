@@ -43,11 +43,11 @@ function event_trade(e)
 		e.self:Say("You have proven yourself worthy of our cause. Take this and use it to bring down non followers of Innoruuk.");
 		e.other:SummonItem(19937); --Coalition Trader Dirk
 		e.other:Ding();
-		e.other:Faction(369,1,0); -- Coalition of TradeFolk III
-		e.other:Faction(47,1,0); -- Coalition of Trade Folk
-		e.other:Faction(31,1,0); -- Carson McCabe
-		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,1,0); -- Freeport Militia
+		e.other:Faction(5015,1,0); -- Coalition of TradeFolk III
+		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(329,1,0); -- Carson McCabe
+		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,1,0); -- Freeport Militia
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

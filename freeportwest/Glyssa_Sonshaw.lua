@@ -8,10 +8,10 @@ function event_trade(e)
 		e.other:SummonItem(14585); -- Odd Cold Iron Necklace
 		e.other:SummonItem(1779); -- A Note
 		e.other:Ding();
-		e.other:Faction(11,20,0);
-		e.other:Faction(184,20,0);
-		e.other:Faction(235,-20,0);
-		e.other:Faction(105,-20,0);
+		e.other:Faction(220,20,0);
+		e.other:Faction(281,20,0);
+		e.other:Faction(296,-20,0);
+		e.other:Faction(330,-20,0);
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -1,11 +1,11 @@
 sub EVENT_SPAWN {
    quest::emote("runs up and steals the note.");
   quest::say("Aha!! Foolish Qeynite or whatever you call yourself!! I have found the note and now I shall take it to my superior!! Just try and catch me!!");
-  quest::faction( 184,1 );
-    quest::faction( 86,-1 );
-    quest::faction( 105,-1 );
+  quest::faction( 281,1 );
+    quest::faction( 271,-1 );
+    quest::faction( 330,-1 );
     quest::faction( 311,1 );
-    quest::faction( 258,1 );
+    quest::faction( 362,1 );
     quest::settimer(1,10);
     quest::settimer(2,600);
 }

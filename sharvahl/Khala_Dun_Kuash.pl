@@ -13,7 +13,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6217 =>1 )) {
   quest::say("Well, you're beginning to scare me you're so tough! Just pullin your tail. Those were some scary beasts, eh? I thought so. I've got a dagger that helps me to deal with them. It's made in a special way to hurt the wolves more than usual. If you want one, you're going to need to make your own. I still got the molds that I used when I was craftin blades for people. If you run this status report to Bookkeeper Leaha in the Grunt Forest outpost for me, I'll go by my house and get the molds for you. Sound like a deal? I thought so.");
   quest::summonitem(6219);
-  quest::faction( 132,10 );
+  quest::faction( 1513,10 );
   quest::exp(1000);
       }
       
@@ -23,7 +23,7 @@ sub EVENT_ITEM {
        quest::summonitem(6142);
        quest::summonitem(6148);
        quest::exp(1000);
-       quest::faction(132,10);
+       quest::faction(1513,10);
       }
   if (plugin::check_handin(\%itemcount, 5557 =>1,6158 =>1 )) {
     quest::say("You have done well #name.  Wear this cloak with pride and enjoy the benefits of being a Khala Dun Journeyman.");

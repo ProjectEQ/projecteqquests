@@ -31,9 +31,9 @@ sub EVENT_ITEM {
 		quest::say("You have saved me!!  $name, you are my hero!!  Take my amulet and the royal suite key to Tearon in Highkeep.  Help put his soul at ease and he shall reward you.  Now I must go.. I am sorry I cannot transport you as well, but my powers are weak from much swimming.  Farewell, brave soul!");
 		quest::summonitem(13109);
 		quest::ding();
-		quest::faction( 8, 10);
-		quest::faction( 43, 10);
-		quest::faction( 178, 10);
+		quest::faction( 5001, 10);
+		quest::faction( 226, 10);
+		quest::faction( 279, 10);
 		quest::exp(500); 
 		quest::depop();
 	}

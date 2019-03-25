@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10953 => 1)) {#Large Shipment of High Quality Ore
     quest::say("Thank you $name! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
     quest::exp(250);
-    quest::faction(157, 10);#Inhabitants of Tanaan
+    quest::faction(1636, 10);#Inhabitants of Tanaan
     quest::givecash(0, 0, 0, 44);#44pp is specified exactly as part of the reward.
     
     #Get my location
@@ -40,7 +40,7 @@ sub EVENT_ITEM {
  elsif(plugin::check_handin(\%itemcount, 10952 => 1)) {#Small Shipment of High Quality Ore
     quest::say("Thank you $name! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
     quest::exp(250);
-    quest::faction(157, 5);#Inhabitants of Tanaan
+    quest::faction(1636, 5);#Inhabitants of Tanaan
     quest::givecash(0, 0, 0, 14);#14pp is specified exactly as part of the reward.
     
     #Get my location

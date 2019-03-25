@@ -42,11 +42,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18722})) then -- Sealed Note For Knargon
 		e.self:Say("Hmm. Carson better deal with his little 'problem' soon, it's costing us a lot of money. Hanns is gonna skin us all when he hears this. Go tell Hanns that [Carson has a mole in the Highpass] guards, and see what he wants us to do.");
 		e.other:Ding();
-		e.other:Faction(33,5,0); -- Circle of Unseen Hands
-		e.other:Faction(53,5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(164,5,0); -- Kane Bayle
-		e.other:Faction(217,-10,0); -- Merchants of Qeynos
-		e.other:Faction(135,-10,0); -- Guards of Qeynos
+		e.other:Faction(223,5,0); -- Circle of Unseen Hands
+		e.other:Faction(230,5,0); -- Corrupt Qeynos Guards
+		e.other:Faction(273,5,0); -- Kane Bayle
+		e.other:Faction(291,-10,0); -- Merchants of Qeynos
+		e.other:Faction(262,-10,0); -- Guards of Qeynos
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

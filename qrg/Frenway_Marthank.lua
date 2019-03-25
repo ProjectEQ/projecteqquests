@@ -17,10 +17,10 @@ function event_trade(e)
 		e.self:Say(string.format("It is not right to feel satisfied at the sight of Mammoth's hide, but I do. Thank you, %s.",e.other:GetName()));
 		e.other:SummonItem(18809);
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(279,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(306,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,6,0,0);
 	end

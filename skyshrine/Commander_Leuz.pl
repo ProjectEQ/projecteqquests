@@ -17,9 +17,9 @@ sub EVENT_ITEM {
   # if you give him the scout report from WW's Scout
   if (plugin::check_handin(\%itemcount,29688=>1)) {
     quest::say("Well this artifact will definitely need study. Thank you for this report. Perhaps after we have researched this object more we will have more for you to search for.");
-    quest::faction(42,10); # Claws of Veeshan
-    quest::faction(362,10); # Yelinak
-    quest::faction(189,-20); # Kromzek
+    quest::faction(430,10); # Claws of Veeshan
+    quest::faction(436,10); # Yelinak
+    quest::faction(448,-20); # Kromzek
     quest::exp(10000);
   }
 

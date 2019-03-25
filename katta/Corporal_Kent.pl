@@ -27,15 +27,15 @@ quest::say("Well done, $name, this should really help keep our costs down. Here,
 quest::summonitem(quest::ChooseRandom(10664, 10668, 10663, 10665)); # Combine Throwing Spear, Validus Custodus Flight Arrow, Combine Throwing Knife, Combine Shuriken
 quest::summonitem(quest::ChooseRandom(10664, 10668, 10663, 10665)); # Combine Throwing Spear, Validus Custodus Flight Arrow, Combine Throwing Knife, Combine Shuriken
 # Don't know the command to summon 2 items from one line 
-  quest::faction(206,10);  # +Magus Conlegium
-  quest::faction(168,10);  # +Katta Castellum Citizens
-  quest::faction(350,10);  # +Validus Custodus
-  quest::faction(284,-10); # -Seru
-  quest::faction(139,-10); # -Hand of Seru
-  quest::faction(96,-10);  # -Eye of Seru
-  quest::faction(138,-10); # -Hand Legionnaries
-  quest::faction(228,-5); # -Nathyn Illuminnious
-  quest::faction(55,-5); # -Coterie of the Eternal Night
+  quest::faction(1504,10);  # +Magus Conlegium
+  quest::faction(1502,10);  # +Katta Castellum Citizens
+  quest::faction(1503,10);  # +Validus Custodus
+  quest::faction(1483,-10); # -Seru
+  quest::faction(1484,-10); # -Hand of Seru
+  quest::faction(1485,-10);  # -Eye of Seru
+  quest::faction(1541,-10); # -Hand Legionnaries
+  quest::faction(1505,-5); # -Nathyn Illuminnious
+  quest::faction(1506,-5); # -Coterie of the Eternal Night
 }
 }
 #END of FILE Zone:katta  ID:160210 -- Corporal_Kent.pl 

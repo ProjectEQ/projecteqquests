@@ -25,18 +25,18 @@ function event_trade(e)
 		e.self:Say("Good work! Now, hold the bottle by the label! When you hand Flynn the bottle, the label will slide off. Bring me the label as proof of the deed.");
 		e.other:SummonItem(13122);
 		e.other:Ding();
-		e.other:Faction(56,1,0); -- Craftkeepers
-		e.other:Faction(145,1,0); -- High Council of Erudin
-		e.other:Faction(143,-1,0); -- Heretics 
-		e.other:Faction(147,1,1); -- High Guard of Erudin
+		e.other:Faction(231,1,0); -- Craftkeepers
+		e.other:Faction(266,1,0); -- High Council of Erudin
+		e.other:Faction(265,-1,0); -- Heretics 
+		e.other:Faction(267,1,1); -- High Guard of Erudin
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13123})) then
 		e.self:Say("Fantastic. Now I can rest assured that my brother stands a better chance of finding the right path without that manipulating little man around. Master Lanken can rest assured that the waters are safe from abuse.");
 		e.other:Ding();
-		e.other:Faction(56,5,0); -- Craftkeepers
-		e.other:Faction(145,5,0); -- High Council of Erudin
-		e.other:Faction(143,-10); -- Heretics
-		e.other:Faction(147,5,0); -- High Guard of Erudin
+		e.other:Faction(231,5,0); -- Craftkeepers
+		e.other:Faction(266,5,0); -- High Council of Erudin
+		e.other:Faction(265,-10); -- Heretics
+		e.other:Faction(267,5,0); -- High Guard of Erudin
 		e.other:AddEXP(100);
 		e.other:SummonItem(eq.ChooseRandom(13122, 5019, 6017));
 	end

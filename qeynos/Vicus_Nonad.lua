@@ -30,11 +30,11 @@ function event_trade(e)
 		e.self:Say("<cough> Great! Thank you so much. Here is a small gratuity for a job well done. Thank you again. <cough> Antonius Bayle and the People of Qeynos appreciate all yo have done.");
 		eq.delete_global("tax_collection");
 		e.other:Ding();
-		e.other:Faction(9,10,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(219,10,0);
+		e.other:Faction(262,10,0);
+		e.other:Faction(304,-15,0);
 		e.other:Faction(273,-15,0);
-		e.other:Faction(164,-15,0);
-		e.other:Faction(217,10,0);
+		e.other:Faction(291,10,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,1,2,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13181})) then

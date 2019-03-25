@@ -18,7 +18,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 64015 => 1)) { # Head of Ra'Tuk Hrux Vexkit V2
     quest::say("Kayin has escaped? That's wonderful news! I feared he had already been killed in the games. Please, take this ring as a token of my thanks. It was given to me by my father and Proteri Amari tells me there is some magic within the stone.");
     quest::summonitem(64016); # Crude Stone Ring
-    quest::faction(231,5); # Nihil
+    quest::faction(1761,5); # Nihil
     quest::exp(25000);
   }
   plugin::return_items(\%itemcount);

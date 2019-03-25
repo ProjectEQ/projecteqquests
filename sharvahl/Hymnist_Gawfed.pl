@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::say("It looks like you're all set. I'll have this sent over to my brother at once. Thank you again for fetching the vase for me. I can't wait to give it to the missus. I just know that she's going to love it. I have another task for you. It shouldn't take much time at all. Your cloak won't be done for a while, so you can do this while you wait. Take this piece of parchment to Jangle. He'll give you a bag of lute strings. I'm restringing all of my instruments before the party. Please be quick. Thank you again.");
     quest::summonitem(5960); #Note for Jangle
     quest::exp(1000);
-    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::faction(1513,10); #Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 5962 => 1)) { #Note from Jangle
     quest::say("I really must be losing my mind. I could have sworn I specified the quantities. Oh well, I apologize for the confusion. Please take this back to him with my apologies.");
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 5965 => 1)) { #Bag of Lute Strings
     quest::say("My dear friend, $name, you have been a wondrous help! Though we have not had an opportunity to work on the more refined Jharin teachings, you have definitely proven yourself to be an honorable citizen and worthy apprentice. My brother has returned with your cloak. Please take it along with the title of Jharin Apprentice. To further demonstrate my appreciation of your work for me, please take this lute.");
-    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::faction(1513,10); #Guardians of Shar Vahl
     quest::summonitem(5966); #Cloak of the Jharin Apprentice
     quest::summonitem(5967); #Lute of the Jharin Apprentice
     quest::exp(3000);

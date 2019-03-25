@@ -13,7 +13,7 @@ function event_trade(e)
 		e.self:Say("It's about time you figured it out, genius! Maybe you should spend more time in the library. Here, take this tonic and get out of here before they see me giving it to you and turn us both inside out.");
 		e.other:SummonItem(13118);
 		e.other:Ding();
-		e.other:Faction(380,1,0);
+		e.other:Faction(694,1,0);
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

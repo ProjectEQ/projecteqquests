@@ -9,7 +9,7 @@ function event_say(e)
 	elseif(e.message:findi("gnoll loving weakling who isn't fit to comb my feet")and tax.tax_collection ~= nil) then
 		e.self:Say(string.format("BWAH! HA HA HA! Did you all hear that?! %s is a gnoll loving weakling who isn't fit to comb my feet! BWAH HA HA! MY FEET! HA HA HA! Oh.. too rich.. Heh.. HA HA HA! Oh.. Heh heh heh",e.other:GetName()));
 		e.other:SummonItem(13174);
-		e.other:Faction(33,-10,0);
+		e.other:Faction(223,-10,0);
 		eq.signal(2083,6);
 		eq.signal(2063,5);
 	end
@@ -23,11 +23,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13122})) then
 		e.self:Say("Well, now... That's cutting out the middle man. Thanks, chum! Now, beat it!");
 		e.other:Ding();
-		e.other:Faction(33,-20,0);
-		e.other:Faction(217,20,0);
-		e.other:Faction(53,-20,0);
-		e.other:Faction(135,20,0);
-		e.other:Faction(164,-20,0);
+		e.other:Faction(223,-20,0);
+		e.other:Faction(291,20,0);
+		e.other:Faction(230,-20,0);
+		e.other:Faction(262,20,0);
+		e.other:Faction(273,-20,0);
 		e.other:AddEXP(500);
 		e.other:SummonItem(13123);
 	end

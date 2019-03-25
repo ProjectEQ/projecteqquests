@@ -23,9 +23,9 @@ function event_trade(e)
 		e.self:Say("Peace..  I can rest now.  You now hold my Silent Watch Shield.  Protect Felwithe..");
 		e.other:SummonItem(9312);
 		e.other:Ding();
-		e.other:Faction(8,10,0);
-		e.other:Faction(43,10,0);
-		e.other:Faction(178,10,0);
+		e.other:Faction(5001,10,0);
+		e.other:Faction(226,10,0);
+		e.other:Faction(279,10,0);
 		e.other:AddEXP(2000);
 		eq.depop_with_timer();
 	end

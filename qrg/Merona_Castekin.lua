@@ -12,10 +12,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18014})) then
 		e.self:Say("Oh Tunare why!?!? Those foul Bloodsabers will pay for my brother's death!! Here. You have given us valuable information about a new threat to our homes. Take this a token of our appreciation.");
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(279,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(306,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(10),math.random(10),math.random(10),math.random(10));
 	end

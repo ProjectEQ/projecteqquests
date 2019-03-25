@@ -69,22 +69,22 @@ sub EVENT_ITEM {
    if (($faction <= 4) && (plugin::check_handin(\%itemcount, 13054 => 4))) { # Giant Rat Pelt
       quest::say("Great work, young one! We shall soon rid our mines of these pests. Keep a lookout for that [metal rat]. Here is a small reward for such fine work. Soon, you shall be know as Kaladim's resident exterminator.");
       quest::ding();
-      quest::faction(314, 10); # Storm Guard
-      quest::faction(169, 10); # Kazon Stormhammer
-      quest::faction(219, 10); # Miner's Guild 249
-      quest::faction(215, 10); # Merchants of Kaladim
-      quest::faction(57, -10); # Craknek Warriors
+      quest::faction(312, 10); # Storm Guard
+      quest::faction(274, 10); # Kazon Stormhammer
+      quest::faction(293, 10); # Miner's Guild 249
+      quest::faction(290, 10); # Merchants of Kaladim
+      quest::faction(232, -10); # Craknek Warriors
       quest::exp(500);
       quest::givecash(0,3,0,0);
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 13282 => 1))) { # Scrap Metal
       quest::say("I thank you, my friend. I was to destroy this metal monster months ago. I could never find him. Please accept this reward for such good service. Oh yes.. And take this card to a man named [Doran Vargnus]. He is a fine blacksmith. I am sure he will reward you with one of his finest suits of armor. Perhaps you may now assist in an [important Stormguard matter].");
       quest::ding();
-      quest::faction(314, 10); # Storm Guard
-      quest::faction(169, 10); # Kazon Stormhammer
-      quest::faction(219, 10); # Miner's Guild 249
-      quest::faction(215, 10); # Merchants of Kaladim
-      quest::faction(57, -10); # Craknek Warriors
+      quest::faction(312, 10); # Storm Guard
+      quest::faction(274, 10); # Kazon Stormhammer
+      quest::faction(293, 10); # Miner's Guild 249
+      quest::faction(290, 10); # Merchants of Kaladim
+      quest::faction(232, -10); # Craknek Warriors
       quest::exp(500);
       quest::givecash(4, 0, 0, 0);
       quest::summonitem(13995); # Knight (Card)
@@ -92,11 +92,11 @@ sub EVENT_ITEM {
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 13321 => 1))) { # Eye of Stormhammer
       #Quest text, exp, cash, factions made up
       quest::say("You've found it! I'm glad you managed to hunt down and return the stolen eye for us, $name. Such effort requires a similar reward so take this and use it well.");
-      quest::faction(314, 20); # Storm Guard
-      quest::faction(169, 20); # Kazon Stormhammer
-      quest::faction(219, 20); # Miner's Guild 249
-      quest::faction(215, 20); # Merchants of Kaladim
-      quest::faction(57, -10); # Craknek Warriors
+      quest::faction(312, 20); # Storm Guard
+      quest::faction(274, 20); # Kazon Stormhammer
+      quest::faction(293, 20); # Miner's Guild 249
+      quest::faction(290, 20); # Merchants of Kaladim
+      quest::faction(232, -10); # Craknek Warriors
       quest::exp(5000);
       quest::givecash(4, 0, 0, 0);
       quest::summonitem(5415); # Avenger Battle Axe

@@ -16,11 +16,11 @@ function event_trade(e)
 		e.self:Say("I am not even going to bother asking where you got that. Just take this set I already made and hurry them back to Fabian.");
 		e.other:SummonItem(13709);
 		e.other:Ding();
-		e.other:Faction(192,30,0);
-		e.other:Faction(184,30,0);
-		e.other:Faction(135,30,0);
-		e.other:Faction(273,-30,0);
-		e.other:Faction(207,-30,0);
+		e.other:Faction(284,30,0);
+		e.other:Faction(281,30,0);
+		e.other:Faction(262,30,0);
+		e.other:Faction(304,-30,0);
+		e.other:Faction(285,-30,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

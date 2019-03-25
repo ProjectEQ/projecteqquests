@@ -29,9 +29,9 @@ sub EVENT_ITEM {
       if (plugin::check_handin(\%itemcount,1861=>1,1864=>1,1865=>1,1863=>1)) {
         quest::say("So you finally made it ! Head back to Ralgyn to get your reward.");
         quest::summonitem(1866); # 1866  Glanitar's Imbued Talisman
-        quest::faction(362,20); # Yelinak
-        quest::faction(42,20); # Claws of Veeshan
-        quest::faction(189,-10); # Kromzek
+        quest::faction(436,20); # Yelinak
+        quest::faction(430,20); # Claws of Veeshan
+        quest::faction(448,-10); # Kromzek
         quest::exp(100000);
         quest::targlobal("CircletFalinkan","2","Y1",114002,$charid,114); # sets the global to 2 for Ralgyn in skyshrine
       }

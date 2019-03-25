@@ -15,12 +15,12 @@ sub EVENT_ITEM {
 		quest::say("Hmmm, I hope you're tougher than you look. Here, put this on. Go find Ulraz, he'll beat you into shape. There's no turning back now, punk. So, you'd better do well, got it?");
 		quest::ding();
 		quest::summonitem(13586); #Black Training Tunic
-		quest::faction(322,100); #The Dead
-		quest::faction(268,15); #Queen Cristanos Thex
-		quest::faction(177,-15); #King Naythox Thex
-		quest::faction(170,-15); #Keeper of the Art
-		quest::faction(91,-15); #Eldritch Collective
-		quest::faction(260,-200); #Primodial Malice
+		quest::faction(239,100); #The Dead
+		quest::faction(303,15); #Queen Cristanos Thex
+		quest::faction(278,-15); #King Naythox Thex
+		quest::faction(275,-15); #Keeper of the Art
+		quest::faction(245,-15); #Eldritch Collective
+		quest::faction(1522,-200); #Primodial Malice
 		quest::exp(100);
   }
   #do all other handins first with plugin, then let it do disciplines

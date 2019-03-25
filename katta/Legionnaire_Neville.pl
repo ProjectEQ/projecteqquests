@@ -25,15 +25,15 @@ if(plugin::check_handin(\%itemcount,31772=>1)){
    quest::say("Thanks! $name, I hope this does the trick.");
    quest::ding();
    quest::exp(2000);
-   quest::faction(350, 10);
-   quest::faction(168, 10);
-   quest::faction(206, 10);
-   quest::faction(55, -10);
-   quest::faction(96, -10);
-   quest::faction(138, -10);
-   quest::faction(139, -10);
-   quest::faction(283, -10);
-   quest::faction(228, -10);
+   quest::faction(1503, 10);
+   quest::faction(1502, 10);
+   quest::faction(1504, 10);
+   quest::faction(1506, -10);
+   quest::faction(1485, -10);
+   quest::faction(1541, -10);
+   quest::faction(1484, -10);
+   quest::faction(316, -10);
+   quest::faction(1505, -10);
 }
 }
 

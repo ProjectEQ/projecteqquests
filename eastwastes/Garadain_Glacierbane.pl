@@ -114,10 +114,10 @@ sub EVENT_ITEM {
     quest::summonitem(30131);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(50000);
   }
@@ -131,10 +131,10 @@ sub EVENT_ITEM {
     quest::summonitem(30133);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(60000);
   }
@@ -148,10 +148,10 @@ sub EVENT_ITEM {
     quest::summonitem(30132);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(70000);
   }
@@ -165,10 +165,10 @@ sub EVENT_ITEM {
     quest::summonitem(30134);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(80000);
   }
@@ -182,10 +182,10 @@ sub EVENT_ITEM {
     quest::summonitem(30268);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(90000);
   }
@@ -199,10 +199,10 @@ sub EVENT_ITEM {
     quest::summonitem(30162);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(100000);
   }
@@ -216,10 +216,10 @@ sub EVENT_ITEM {
     quest::summonitem(30163);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(110000);
   }
@@ -233,10 +233,10 @@ sub EVENT_ITEM {
     quest::summonitem(1093);
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49, 30);
-    quest::faction(67, 30);
-    quest::faction(188, -30);
-    quest::faction(189, -30);
+    quest::faction(406, 30);
+    quest::faction(405, 30);
+    quest::faction(419, -30);
+    quest::faction(448, -30);
 
     quest::exp(120000);
   }
@@ -247,10 +247,10 @@ sub EVENT_ITEM {
 #    quest::summonitem(30164);
 #
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-#    quest::faction(49,30);
-#    quest::faction(67,30);
-#    quest::faction(188,-30);
-#    quest::faction(189,-30);
+#    quest::faction(406,30);
+#    quest::faction(405,30);
+#    quest::faction(419,-30);
+#    quest::faction(448,-30);
 #
 #    quest::exp(2000000);
 #  }

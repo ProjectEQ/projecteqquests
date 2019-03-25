@@ -41,20 +41,20 @@ function event_trade(e)
 		e.self:Say("Well done young Art Keeper. Take this Rough Art Keepers Initiate Staff and go forth and gather a Pristine Forest Drakeling Scales and an Arborean Amber. When you have acquired those two items return them to me with the Rough Art Keepers Initiate Staff and I will put the final touches on the staff.");
 		e.other:SummonItem(20296); -- Rough Art Keepers Initiate Staff
 		e.other:Ding();
-		e.other:Faction(170,10,0); -- Keepers of the Art
-		e.other:Faction(178,10,0); -- King Tearis Thex
-		e.other:Faction(99,10,0); -- Faydark's Champions
-		e.other:Faction(322,-10,0); -- The Dead
+		e.other:Faction(275,10,0); -- Keepers of the Art
+		e.other:Faction(279,10,0); -- King Tearis Thex
+		e.other:Faction(246,10,0); -- Faydark's Champions
+		e.other:Faction(239,-10,0); -- The Dead
 		e.other:AddEXP(250);
 	-- Handin: Rough Artkeepers Initiate Staff, Pristine Forest Drakeling Scales, Arborean Amber
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20296,item2 = 20271,item3 = 20274})) then
 		e.self:Emote("fashions a grip for the staff from the pristine forest drakeling scales, places the arborean amber into a mithril fixture and attaches the fixture to one end of the staff. 'Here is your new staff young Art Keeper may it serve you well in the pursuit of your studies.'");
 		e.other:SummonItem(20332); -- Art Keepers Initiate Staff
 		e.other:Ding();
-		e.other:Faction(170,10,0); -- Keepers of the Art
-		e.other:Faction(178,10,0); -- King Tearis Thex
-		e.other:Faction(99,10,0); -- Faydark's Champions
-		e.other:Faction(322,-10,0); -- The Dead
+		e.other:Faction(275,10,0); -- Keepers of the Art
+		e.other:Faction(279,10,0); -- King Tearis Thex
+		e.other:Faction(246,10,0); -- Faydark's Champions
+		e.other:Faction(239,-10,0); -- The Dead
 		e.other:AddEXP(250);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

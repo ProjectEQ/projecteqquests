@@ -29,22 +29,22 @@ if (plugin::check_handin(\%itemcount, 19573 => 1)) {
    quest::say("I'm surprised, I really am. I didn't think somebody like you could pull it off. Here, take this before I change my mind.");
   quest::summonitem(19607);
   quest::exp(1000);
-  quest::faction(69,10);
-  quest::faction(87,10);
-  quest::faction(88,10);
-  quest::faction(322,10);
-  quest::faction(91,-20);
+  quest::faction(236,10);
+  quest::faction(370,10);
+  quest::faction(334,10);
+  quest::faction(239,10);
+  quest::faction(245,-20);
 }
 if (plugin::check_handin(\%itemcount, 19570 => 4)) {
    quest::emote("fashions the petrified femurs into a shield frame. This will be the frame of your new shield. Return now again to the Nektulos Forest, in the gray ashen region of the forest near the Lavastorm mountains the basilisks often come down from the fiery peaks to lay their eggs in the ashen soil. Basilisk hatchlings can be found there as they make their way towards the warmer interior of the mountains. Hunt these basilisk hatchlings and gather two Basilisk Hatchling Skins. Once this is done take the skins and frame to Medron Y'Lask at the Furrier Royale.");
    quest::summonitem(19571);
    quest::exp(1000);
-   quest::faction(322,10);
-   quest::faction(268,10);
-   quest::faction(177,-20);
-   quest::faction(170,-20);
-   quest::faction(91,-20);
-   quest::faction(260,-20);
+   quest::faction(239,10);
+   quest::faction(303,10);
+   quest::faction(278,-20);
+   quest::faction(275,-20);
+   quest::faction(245,-20);
+   quest::faction(1522,-20);
 }
  if ($item1=="18757"){quest::say("Thanks.");
 	quest::summonitem("13586");

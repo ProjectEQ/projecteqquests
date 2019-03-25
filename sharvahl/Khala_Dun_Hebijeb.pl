@@ -12,7 +12,7 @@ quest::emote("looks at you with an expression of approval");
     quest::say("Your completion of the assigned task has been noted. Accept this weapon as a token of the Khala Dun's gratitude. You will find the Khala Dun to be very generous to it's humble students, quick to reward obedience. I have been notified that one of our citizens needs some assistance, bring me proof that you have aided Dronqam Runghi.");
     quest::summonitem(3445);
     quest::exp(1000);
-    quest::faction(132,10 );
+    quest::faction(1513,10 );
   }
 if (plugin::check_handin(\%itemcount, 3449 => 1)) {
 quest::emote("takes the acrylia dust and places it in a vial already half full of the metal");
@@ -23,7 +23,7 @@ quest::summonitem(3450);
 if (plugin::check_handin(\%itemcount, 3451 =>1, 3445=>1, 2878=>1 )) {
   quest::say("Your progress pleases our order young one, and I am proud to promote you to the rank of recruit within the Khala Dun. Wear this cloak with pride, $name. I have completed your buckler as well as enhanced your sword. The blade will now be more effective when used against the skeletons from which it was constructed. Show the buckler to Armsman Khaigesh and he will instruct you further.");
   quest::shout("Fellow citizens of Shar Vahl, help me welcome $name to the rank of recruit in the honorable Khala Dun. May his actions henceforth reflect the strict sense of loyalty to our king that defines our order. May he exhaust his every resource in glorious defense of our proud people!");
-  quest::faction( 132,10 );
+  quest::faction( 1513,10 );
   quest::exp(2000);
   quest::ding();
   quest::summonitem(3453);

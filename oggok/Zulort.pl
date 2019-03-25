@@ -34,20 +34,20 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13187 => 4)) {
     quest::say("Oh, me.. um.. Warlord BERRY happy. Berry like dese. Gimme. Uh, why is you still here? Take dis and gets more kills. You learning good, come sees me. I teaches you bout stuff. Make you [bedder shaman]. Go. He and me watching.");
     quest::summonitem(15093);
-    quest::faction(295, 10);
+    quest::faction(394, 10);
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 14199 => 1, 13367 => 3)) {
     quest::say("Dis good stuff! Me and Warlord happy! Wear dis symbol and he make yoo strong with majik!");
     quest::summonitem(1444);
-    quest::faction(295, 10);
+    quest::faction(394, 10);
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 18788 => 1)) { #Tattered Note
     quest::say("Take, take.. You now Shaman of War.. Zulort make you majik, too.  When you [gonna help] you tell Zulort. You return to me and when you stronger, I teach you many things I know, including how to start working in the various [trades].");
     quest::summonitem(13526); #Dirty Patched Fur Tunic*
 	quest::ding();
-	quest::faction(295, 100); # Shaman of War
+	quest::faction(394, 100); # Shaman of War
 	quest::exp(100);
   }
   plugin::return_items(\%itemcount);

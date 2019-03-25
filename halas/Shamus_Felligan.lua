@@ -16,11 +16,11 @@ function event_trade(e)
 		e.self:Say("Yes thankyou. This was exactly what i was after, maybe a little battered, but worth a little something none-the-less.");
 		e.other:AddEXP(1600);
 		e.other:Ding();
-		e.other:Faction(213,2);																--Merchants of Halas
-		e.other:Faction(294,2); 															--Shamen of Justice
-		e.other:Faction(33,-3); 															--Circle of Unseen Hands
-		e.other:Faction(48,-3); 															--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 															--Hall of the Ebon Mask
+		e.other:Faction(328,2);																--Merchants of Halas
+		e.other:Faction(327,2); 															--Shamen of Justice
+		e.other:Faction(223,-3); 															--Circle of Unseen Hands
+		e.other:Faction(336,-3); 															--Coalition of Tradefolk Underground
+		e.other:Faction(5006,-3); 															--Hall of the Ebon Mask
 		if(e.other:Class() == "Shaman" or e.other:Class() == "Beastlord") then
 			e.other:SummonItem(eq.ChooseRandom(15270,15275,15075,15271,15279,15212,15079));	--A Random Spell Listed Above
 		end
@@ -28,11 +28,11 @@ function event_trade(e)
 		e.self:Say("Yes thankyou. This was exactly what i was after, and in pristine condition ta boot, Take this for your efforts.");
 		e.other:AddEXP(6400);
 		e.other:Ding();
-		e.other:Faction(213,6); 															--Merchants of Halas
-		e.other:Faction(294,6); 															--Shamen of Justice
-		e.other:Faction(33,-9); 															--Circle of Unseen Hands
-		e.other:Faction(48,-9); 															--Coalition of Tradefolk Underground
-		e.other:Faction(137,-9); 															--Hall of the Ebon Mask
+		e.other:Faction(328,6); 															--Merchants of Halas
+		e.other:Faction(327,6); 															--Shamen of Justice
+		e.other:Faction(223,-9); 															--Circle of Unseen Hands
+		e.other:Faction(336,-9); 															--Coalition of Tradefolk Underground
+		e.other:Faction(5006,-9); 															--Hall of the Ebon Mask
 		if(e.other:Class() == "Shaman" or e.other:Class() == "Beastlord") then
 			e.other:SummonItem(6028); 														--Gavel of Justice
 		end

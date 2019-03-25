@@ -51,18 +51,18 @@ function event_trade(e)
 		e.self:Say("We are deeply honored to have such great warrior as part of our Clan. With a proper burial, Shen and Dareb's souls will finally be at peace, and with the death of that vile Ghanex, the plains will be much safer for travelers. It is a great honor to present you, " .. e.other:GetName() .. ", with the red headband of the Silent Fist Clan.");
 		e.other:SummonItem(10113);
 		e.other:Ding();
-		e.other:Faction(300,5,0); -- Silent Fist Clan
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(12,5,0); -- Ashen Order
+		e.other:Faction(309,5,0); -- Silent Fist Clan
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(361,5,0); -- Ashen Order
 		e.other:AddEXP(500);
 	-- Red Headband, Skull of Jhen`Tra, Dagger of Marnek, Zaharn's Coronet
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10113, item2 =13168, item3 = 13169, item4 = 3000})) then
 		e.self:Say("In honor of your recent acts of courage and dedication, I reward you, " .. e.other:GetName() .. ", with the purple headband of the Silent Fist Clan.");
 		e.other:SummonItem(10114); -- Purple Headband
 		e.other:Ding();
-		e.other:Faction(300,10,0); -- Silent Fist Clan
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(12,10,0); -- Ashen Order
+		e.other:Faction(309,10,0); -- Silent Fist Clan
+		e.other:Faction(262,10,0); -- Guards of Qeynos
+		e.other:Faction(361,10,0); -- Ashen Order
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

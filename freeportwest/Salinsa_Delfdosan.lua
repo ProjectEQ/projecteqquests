@@ -45,10 +45,10 @@ function event_trade(e)
 		e.self:Say("Yes, finally I can read the messages from Qeynos. Please take this as a reward for your efforts."); --  text made up
 		e.other:SummonItem(9937); -- Mace of the Ordained
 		e.other:Ding();
-		e.other:Faction(184,1,0);
-		e.other:Faction(258,1,0);
-		e.other:Faction(48,-2,0);
-		e.other:Faction(105,-2,0);
+		e.other:Faction(281,1,0);
+		e.other:Faction(362,1,0);
+		e.other:Faction(336,-2,0);
+		e.other:Faction(330,-2,0);
 		e.other:Faction(311,1,0);
 		e.other:AddEXP(200);
 	end

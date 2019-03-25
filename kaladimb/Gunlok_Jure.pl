@@ -21,17 +21,17 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(2116,2122,5013,5014,5016,5023,6011,13002,13003));
     quest::ding();
     quest::givecash(7,10,0,0); # Cash
-    quest::faction(44,10);             # Clerics of Underfoot
-    quest::faction(169,10);            # Kazon Stormhammer
-    quest::faction(219,10);            # Miners Guild 249
+    quest::faction(227,10);             # Clerics of Underfoot
+    quest::faction(274,10);            # Kazon Stormhammer
+    quest::faction(293,10);            # Miners Guild 249
     quest::exp(2000);                  # Experience
   }
   elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 13332 => 1))) { # Dwarf Bones
     quest::say("Many thanks, my friend. Now my brother can rest in peace. Please take this spell. May it serve you well.");
     quest::ding();
-    quest::faction(44, 25);  # Clerics of Underfoot
-    quest::faction(169, 25); # Kazon Stormhammer
-    quest::faction(219, 25); # Miners Guild 249
+    quest::faction(227, 25);  # Clerics of Underfoot
+    quest::faction(274, 25); # Kazon Stormhammer
+    quest::faction(293, 25); # Miners Guild 249
     quest::exp(10000);
     quest::givecash(0, 0, 2, 0);
     quest::summonitem(15201); # Spell: Flash of Light

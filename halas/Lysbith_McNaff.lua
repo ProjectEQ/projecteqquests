@@ -24,9 +24,9 @@ function event_trade(e)
 		e.other:SummonItem(7322);
 		e.other:AddEXP(300);
 		e.other:Ding();
-		e.other:Faction(361,5);			-- Wolves of the North
-		e.other:Faction(294,5);			-- Shamen of Justice
-		e.other:Faction(213,5);			-- Merchants of Halas
+		e.other:Faction(320,5);			-- Wolves of the North
+		e.other:Faction(327,5);			-- Shamen of Justice
+		e.other:Faction(328,5);			-- Merchants of Halas
 		e.other:Faction(311,5);			-- Steel Warriors
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13898})) then
 		e.self:Say("Ye've done well, me young " .. e.other:Class() .. " .  We've gathered these to add to yer provisions.  While in the Everfrost Peaks, be on the watch fer any gnolls ye may find.  I declare there to be a [gnoll bounty].");
@@ -34,9 +34,9 @@ function event_trade(e)
 		e.other:GiveCash(0,0,4,0);
 		e.other:Ding();
 		e.other:SummonItem(13005,1);	-- Reward: Iron Ration
-		e.other:Faction(361,5);			-- Wolves of the North
-		e.other:Faction(294,5);			-- Shamen of Justice
-		e.other:Faction(213,5);			-- Merchants of Halas
+		e.other:Faction(320,5);			-- Wolves of the North
+		e.other:Faction(327,5);			-- Shamen of Justice
+		e.other:Faction(328,5);			-- Merchants of Halas
 		e.other:Faction(311,5);			-- Steel Warriors
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13915, item2 = 13915, item3 = 13915})) then	-- Gnoll Bounty - Return 3 Gnoll Fangs
 		e.self:Say("Fine work, fine work!  The gnoll threat must be extinguished before it can ever fully grow.  Ye've done yer part to aid our cause.  Please allow me to repay ye with a few provisions and a wee bit o' coin.  Then, continue with yer good deeds.");
@@ -44,9 +44,9 @@ function event_trade(e)
 		e.other:GiveCash(0,0,5,0);
 		e.other:Ding();
 		e.other:SummonItem(13005,1);	-- Reward: Iron Ration
-		e.other:Faction(361,10);		-- Wolves of the North
-		e.other:Faction(294,10);		-- Shamen of Justice
-		e.other:Faction(213,10);		-- Merchants of Halas
+		e.other:Faction(320,10);		-- Wolves of the North
+		e.other:Faction(327,10);		-- Shamen of Justice
+		e.other:Faction(328,10);		-- Merchants of Halas
 		e.other:Faction(311,10);		-- Steel Warriors
 	end
 item_lib.return_items(e.self, e.other, e.trade)

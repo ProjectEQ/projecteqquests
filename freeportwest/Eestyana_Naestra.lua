@@ -32,10 +32,10 @@ function event_trade(e)
 		e.self:Say("You must be the young member of the Hall of Truth who was sent by Theron. I am glad to see you avoided any interference. Please take this as a reward for your service.");
 		e.other:SummonItem(9985);
 		e.other:Ding();
-		e.other:Faction(184,10,0);
-		e.other:Faction(86,-15,0);
-		e.other:Faction(105,-15,0);
-		e.other:Faction(258,10,0);
+		e.other:Faction(281,10,0);
+		e.other:Faction(271,-15,0);
+		e.other:Faction(330,-15,0);
+		e.other:Faction(362,10,0);
 		e.other:Faction(311,10,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(9,0,0,0);
@@ -43,10 +43,10 @@ function event_trade(e)
 		e.self:Say("Thank you, defender of Karana! We have heard rumors of the followers of Bertoxxulous gaining knowledge of our knight who infiltrated the ranks of the [Militia]. They would have tried to sell the information to the Militia. We will inform our knight immediately. As for you, here is a donation to your journey's expenses. Stay clear of the Freeport Militia. There is no doubt they have learned of your alliance with us.");
 		e.other:SummonItem(eq.ChooseRandom(6016,13296));
 		e.other:Ding();
-		e.other:Faction(184,10,0);
-		e.other:Faction(86,-15,0);
-		e.other:Faction(105,-15,0);
-		e.other:Faction(258,10,0);
+		e.other:Faction(281,10,0);
+		e.other:Faction(271,-15,0);
+		e.other:Faction(330,-15,0);
+		e.other:Faction(362,10,0);
 		e.other:Faction(311,10,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,0,7,1);
@@ -54,10 +54,10 @@ function event_trade(e)
 		e.self:Say("The Truthbringer welcomes you into his life. Here is the tunic of Marr. Wear it with pride and be sure to conduct yourself with valor. Once you are ready to begin your training please make sure that yo see Salinsa Delfdosan, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13554); -- Faded Purple Tunic*
 		e.other:Ding();
-		e.other:Faction(184,100,0); -- knight of truth
-		e.other:Faction(86,-15,0); -- dismal rage
-		e.other:Faction(105,-15,0); -- freeport militia
-		e.other:Faction(258,20,0); -- priest of marr
+		e.other:Faction(281,100,0); -- knight of truth
+		e.other:Faction(271,-15,0); -- dismal rage
+		e.other:Faction(330,-15,0); -- freeport militia
+		e.other:Faction(362,20,0); -- priest of marr
 		e.other:Faction(311,10,0); -- steel warrior
 		e.other:AddEXP(100);
 	end

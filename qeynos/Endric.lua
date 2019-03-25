@@ -12,11 +12,11 @@ function event_trade(e)
 		e.self:Say("Yes,  I do believe this was the child's dress.  Here, take this as your share of the reward.  Her father will be heartbroken..");
 		e.other:SummonItem(eq.ChooseRandom(10018,10018,10320));
 		e.other:Ding();
-		e.other:Faction(135,5,0);
-		e.other:Faction(9,5,0);
-		e.other:Faction(53,-5,0);
-		e.other:Faction(33,-5,0);
-		e.other:Faction(217,5,0);
+		e.other:Faction(262,5,0);
+		e.other:Faction(219,5,0);
+		e.other:Faction(230,-5,0);
+		e.other:Faction(223,-5,0);
+		e.other:Faction(291,5,0);
 		e.other:GiveCash(0,4,0,0);
 		e.other:AddEXP(100);
 	end

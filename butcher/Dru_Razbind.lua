@@ -30,10 +30,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 12281})) then
 		e.self:Say("I thank you, my friend. You are truly a great paladin and noble addition to our ranks. I now can walk in Kaladim. Take this as a reward. It is the Holy Partisan of Underfoot. It is now yours. I believe it still has a couple of charges. Use it wisely as the only cleric able to recharge it was lost amid the lava filled lands of Antonica.");
 		e.other:Ding();
-		e.other:Faction(246, 25);
-		e.other:Faction(169, 25);
-		e.other:Faction(44, 25);
-		e.other:Faction(351, 25);
+		e.other:Faction(297, 25);
+		e.other:Faction(274, 25);
+		e.other:Faction(227, 25);
+		e.other:Faction(216, 25);
 		e.other:AddEXP(750);
 		e.other:SummonItem(5376, 5);
 	end

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 67702 => 1)) {
     quest::say("Fine work. We are very grateful. Take this Scout Cape. May you use it to serve Kelethin.");
     quest::summonitem(2914);
-    quest::faction(283,10);
+    quest::faction(316,10);
     quest::exp(5000);
     quest::ding();
   }

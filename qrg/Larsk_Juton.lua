@@ -23,20 +23,20 @@ function event_trade(e)
 		e.self:Say("So, I see you rid the hills of the beast. Good work! I have a reward for you. I hope it will be usefull. I am afraid this gnoll\'s death will not halt the alliance between the two. I shall require your services to [assist in the extermination of the gnoll brewers].");
 		e.other:SummonItem(2140);
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(279,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(306,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(10),math.random(10),math.random(10),math.random(10));
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 17970,item2 = 17970, item3 = 17970})) then
 		e.self:Say("Excellent!  Ridding the area of those foul beasts will certainly slow down whatever it is they are planning.  Here is the Cloak of Jaggedpine.  You should keep this, for you never know when we may decide to alter the enchantments on it.");
 		e.other:SummonItem(2915);
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(279,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(306,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(10),math.random(10),math.random(10),math.random(10));
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18811})) then

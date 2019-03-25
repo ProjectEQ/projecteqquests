@@ -53,10 +53,10 @@ sub EVENT_ITEM {
     quest::say("$name, you have done a great service to my people. I had not imagined the treachery had run so deeply within our ranks. Here. Take this ring as your reward. From this day forth, you shall be known as the Hero of the Coldain. Take my Dirk as well, and if you wish to further aid us in our cause, then return it to me.");
     quest::summonitem(30369); #9th ring
     quest::summonitem(1465); #dirk of the Dain
-    quest::faction(49,50); #coldain
-    quest::faction(67,50); #Dain
-    quest::faction(188,-50); #Kromrif
-    quest::faction(189,-50); #Kromzek
+    quest::faction(406,50); #coldain
+    quest::faction(405,50); #Dain
+    quest::faction(419,-50); #Kromrif
+    quest::faction(448,-50); #Kromzek
     quest::exp(4000000);
   }
   #Tormax's head
@@ -64,9 +64,9 @@ sub EVENT_ITEM {
     quest::say("You have done what no Coldain could do, $name! This is indeed a glorious say in our people's history. In return for your invaluable service I present you with the Tri-plated Golden Hackle Hammer. Its magic is powerful and I am sure it will serve you well.");
     quest::ze(2, "Let it be know from this day forth that $name and their companions are Heros of the Coldain Kingdom. King Tormax has been slain, it is a time for celebration. Let no tankard go unfilled!");
     quest::summonitem(30502);
-    quest::faction(49,100);
-    quest::faction(67,100);
-    quest::faction(179,-100);
+    quest::faction(406,100);
+    quest::faction(405,100);
+    quest::faction(429,-100);
   }
 #Dirk handin for the 10th ring
   elsif(plugin::check_handin(\%itemcount, 1465 => 1) && $faction == 1) {

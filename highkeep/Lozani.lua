@@ -24,11 +24,11 @@ function event_trade(e)
 	if(scroll == 1) then
 		e.other:SummonItem(eq.ChooseRandom(15200, 15042, 15226, 13360, 15246, 15276));
 		e.other:Ding();
-		e.other:Faction(115,5,0); -- Gem Choppers
-		e.other:Faction(176,5,0); -- King AkAnon
-		e.other:Faction(210,5,0); -- Merchants of AkAnon
-		e.other:Faction(71,-5,0); -- Dark Reflection
-		e.other:Faction(322,-5,0); -- The Dead
+		e.other:Faction(255,5,0); -- Gem Choppers
+		e.other:Faction(333,5,0); -- King AkAnon
+		e.other:Faction(288,5,0); -- Merchants of AkAnon
+		e.other:Faction(238,-5,0); -- Dark Reflection
+		e.other:Faction(239,-5,0); -- The Dead
 		e.other:AddEXP(100);
 		scroll = 0;
 	end

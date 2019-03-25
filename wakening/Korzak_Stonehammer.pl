@@ -12,10 +12,10 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 25266 =>1)) { # Giant Sack of Supplies
 		quest::say("It's about time the supplies got here.  Not like it's a long trip from the center of Kael to us out here.  Payment?  I already paid Wenglawks for the supplies I ordered.  Don't give me any trouble, little one.  I have enough trouble with the missing helmets.");
 		quest::ding();
-		quest::faction(189,10); # Kromzek
-		quest::faction(188,10); # Kromrif
-		quest::faction(49,-30); # Coldain
-		quest::faction(42,-30); # Claws of Veeshan
+		quest::faction(448,10); # Kromzek
+		quest::faction(419,10); # Kromrif
+		quest::faction(406,-30); # Coldain
+		quest::faction(430,-30); # Claws of Veeshan
 		quest::exp(250);
 	}
 	plugin::return_items(\%itemcount);

@@ -37,8 +37,8 @@ sub EVENT_ITEM
 		#Revenge on the Ikaav
 		if(plugin::check_handin(\%itemcount, 36532 => 3, 36531 => 1,)) {#3x Scrap of Ikaav Skin, Ujani's Amulet
 			quest::say("Outstanding!  Take this!");#text made up
-			quest::faction(410, 10);#Dranik Loyalists
-			quest::faction(432, -20);#Overlord Mata Muram
+			quest::faction(1016, 10);#Dranik Loyalists
+			quest::faction(1013, -20);#Overlord Mata Muram
 			quest::exp(10000);
 			#Reward depends on class
 			if (($class eq "Wizard") || ($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {
@@ -51,8 +51,8 @@ sub EVENT_ITEM
 		#Revenge on the Kyv
 		elsif(plugin::check_handin(\%itemcount, 36530 => 3, 36529 => 1)) {#3x Broken Kyv Bow, Elaborate Gauntlets
 			quest::say("Perfect! This will light a fire under those laggards. Here, take this ring I found in the gauntlets. It appears you were a bit tough on him when you pulled these off. Good for you!");
-			quest::faction(410, 10);#Dranik Loyalists
-			quest::faction(432, -20);#Overlord Mata Muram
+			quest::faction(1016, 10);#Dranik Loyalists
+			quest::faction(1013, -20);#Overlord Mata Muram
 			quest::exp(10000);
 			#Reward depends on class
 			if (($class eq "Wizard") || ($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {
@@ -65,8 +65,8 @@ sub EVENT_ITEM
 		#Revenge on the Noc
 		elsif(plugin::check_handin(\%itemcount, 36534 => 3, 36533 => 1)) {#3x Noc Hide, Blood Encrusted Helm
 			quest::say("Superb!  Take this!");#Text made up
-			quest::faction(410, 10);#Dranik Loyalists
-			quest::faction(432, -20);#Overlord Mata Muram
+			quest::faction(1016, 10);#Dranik Loyalists
+			quest::faction(1013, -20);#Overlord Mata Muram
 			quest::exp(10000);
 			#Reward depends on class
 			if (($class eq "Wizard") || ($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {

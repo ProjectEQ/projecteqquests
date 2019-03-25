@@ -24,11 +24,11 @@ sub EVENT_ITEM {
 			quest::emote("hands you a shimmering black piece of armor which smells quite horrid. You find it hard to keep it from slithering out of your hand. 'Here is the armor the tailors have been working on for the legion. You may test it for us. Keep up your fine work and I may have other pieces available for you to test.'");
 			quest::summonitem(quest::ChooseRandom(12917,12918,12919,12920,12921));
 			quest::ding();
-			quest::faction( 193,10);
-			quest::faction( 30,10);
-			quest::faction( 282,10);
-			quest::faction( 62,10);
-			quest::faction( 317,10);
+			quest::faction( 441,10);
+			quest::faction( 440,10);
+			quest::faction( 445,10);
+			quest::faction( 442,10);
+			quest::faction( 444,10);
 			quest::exp(1000);
 			quest::givecash(0,14,0,0);
 		}
@@ -36,11 +36,11 @@ sub EVENT_ITEM {
 			quest::say("Well done recruit, I knew we could count on you to do the job.  Here is the reward you were promised");
 			quest::summonitem(12674);
 			quest::ding();
-			quest::faction( 193,2);
-			quest::faction( 30,2);
-			quest::faction( 282,2);
-			quest::faction( 62,2);
-			quest::faction( 317,2);
+			quest::faction( 441,2);
+			quest::faction( 440,2);
+			quest::faction( 445,2);
+			quest::faction( 442,2);
+			quest::faction( 444,2);
 			quest::exp(250);
 			quest::givecash(0,9,0,0);
 		}

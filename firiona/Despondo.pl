@@ -49,11 +49,11 @@ sub EVENT_ITEM {
     quest::emote("embraces the bottles as if they were babes. 'Rejoice my friends!! Your souls are safe. $name, you are a good wizard. You deserve to know the secret of concussion.'");   
     quest::summonitem(12968); # Scroll of Brain Bite
     quest::exp(100000);
-    quest::faction(101,20);  # Firiona Vie
-    quest::faction(92,20);   # Emarald Warriors
-    quest::faction(314,20);  # Storm Guard
-    quest::faction(193,-60); # Legions of Cabilis
-    quest::faction(250,-60); # Pirates of Guntak
+    quest::faction(1022,20);  # Firiona Vie
+    quest::faction(326,20);   # Emarald Warriors
+    quest::faction(312,20);  # Storm Guard
+    quest::faction(441,-60); # Legions of Cabilis
+    quest::faction(313,-60); # Pirates of Guntak
   }
   plugin::return_items(\%itemcount);
 }

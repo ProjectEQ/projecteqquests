@@ -19,9 +19,9 @@ sub EVENT_ITEM {
     quest::say("Ah, excellent. You've returned with the papers we needed. There is some rather interesting information here that I'm sure the council will be glad to have in their possession, and it will allow for our further fortification against the giants. You have proven yourself to be an honorable ally and a friend to the shrine and we thank you for it. I cannot offer you much for this but in time, your actions may prove to be invaluable to the shrine and its kin.");
     quest::exp(5000);
     quest::givecash(2,3,5,7);
-    quest::faction(42,10); #CoV
-    quest::faction(362,10); #Yelinak
-    quest::faction(189,-30); #Kromzek
+    quest::faction(430,10); #CoV
+    quest::faction(436,10); #Yelinak
+    quest::faction(448,-30); #Kromzek
     quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount);

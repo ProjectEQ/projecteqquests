@@ -15,16 +15,16 @@ sub EVENT_ITEM {
       quest::say("So my little one is still out there. This is wonderful news. I can now die in peace. The Wayfarers have transcribed my final wishes onto this parchment. Please deliver this to Namosa.");
       quest::summonitem(52178);
       quest::exp(10000);
-      quest::faction(363,10);
-      quest::faction(416,-10);
+      quest::faction(1770,10);
+      quest::faction(1771,-10);
     }
     if (plugin::check_handin(\%itemcount, 52177 => 1)) {
       quest::emote("looks quizzically at the symbol and rubs it in her hands. She smiles as if realizing something");
       quest::say("Ah, Tentric, you are always right. I can't give up on this world or my family. I'm not sure why I was behaving so selfishly. Take this flower to my niece, she will know what it means.");
       quest::summonitem(52175);
       quest::exp(10000);
-      quest::faction(363,10);
-      quest::faction(416,-10);
+      quest::faction(1770,10);
+      quest::faction(1771,-10);
     }
   }
   plugin::return_items(\%itemcount);

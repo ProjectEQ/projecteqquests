@@ -29,21 +29,21 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,16972=>2)) { #  Mt. Death Mineral Salts
     quest::say("Ah, most excellent! You are sure to be more highly valued as our servant once I speak to my masters of this! Mountain Death Mineral Salts, they shall grace the Overkings table this very night! Be off, minion! Fetch us some more salts to prove your value!");
-    quest::faction(23,10);
-    quest::faction(384,-30);
+    quest::faction(451,10);
+    quest::faction(5022,-30);
     quest::exp(8000);
   }
   if (plugin::check_handin(\%itemcount,22135=>1)) { # Green Goblin Skin
     quest::say("Green Goblin Skin! You have indeed been busy! I shall speak to my masters of this, continue your good work and return to me with more skins.");
-    quest::faction(23,10);
-    quest::faction(384,-30);
+    quest::faction(451,10);
+    quest::faction(5022,-30);
     quest::exp(8000);
   } 
   if (plugin::check_handin(\%itemcount,6476=>1,5728=>1)) { # Head of Skargus & Di'Zok Signet of Service
     quest::say("Ah hah! You are notworthy indeed amongst the servants of the Sarnak! Perhaps I should have you killed, before your deeds outdo mine.. Hmm..");
     quest::say("Guards! Guards! Haha, do not panic menial being, in fact I am most impressed with your service. Here is the ring I promised you in exchange for your efforts.");
-    quest::faction(23,50);
-    quest::faction(384,-30);
+    quest::faction(451,50);
+    quest::faction(5022,-30);
     quest::exp(50000);
     quest::summonitem(5727); # 5727  Regal Band of Bathezid
     quest::delglobal("RegalBandBathezid");

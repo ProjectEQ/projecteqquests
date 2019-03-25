@@ -11,10 +11,10 @@ function event_trade(e)
 		e.self:Say("Ah great, I have been meaning to go and pick one of these up from the Trade Commissioner but I have been very busy with my work. I'm sure Henry has been waiting for my sales report so here it is. Please return it to him for me if you could and thanks again!");
 		e.self:Emote("gives you a Sales Report.");
 		e.other:SummonItem(26056);	--Sales Report/Economy Report..There is some confusion here about which gives which, as the quest specifies a "Sales Report" but the item named after the mob is an "Economy Report" and vice versa.  I picked one and went with it, should be internally consistent at least.
-		e.other:Faction(338, 5); 	--Traders of the Haven
-		e.other:Faction(152, 5); 	--House of Fordel
-		e.other:Faction(153, 5); 	--House of Midst
-		e.other:Faction(154, 5); 	--House of Stout
+		e.other:Faction(1508, 5); 	--Traders of the Haven
+		e.other:Faction(1510, 5); 	--House of Fordel
+		e.other:Faction(1511, 5); 	--House of Midst
+		e.other:Faction(1512, 5); 	--House of Stout
 		e.other:Ding();
 		e.other:AddEXP(1000);		--This quest is doable at level 1, I didn't feel comfortable giving out more xp than this per step
 	end

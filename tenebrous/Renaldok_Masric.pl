@@ -16,10 +16,10 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 10799 => 1)){#Skin of Akheva Blood
 		quest::say("Well done, for a mortal you have served us well");
 		quest::summonitem(7778);#Coterie Mask of the Dead
-		quest::faction(55, 5); #Coterie of Eternal Night
-		quest::faction(349, 5); #Valdanov Zevfeer
-		quest::faction(228, -10); #Nathyn Illuminious
-		quest::faction(350, 2); #Validus Custodus
+		quest::faction(1506, 5); #Coterie of Eternal Night
+		quest::faction(1507, 5); #Valdanov Zevfeer
+		quest::faction(1505, -10); #Nathyn Illuminious
+		quest::faction(1503, 2); #Validus Custodus
 	}
     plugin::return_items(\%itemcount);
 }

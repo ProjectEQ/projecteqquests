@@ -26,7 +26,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13384 => 1)) {
     quest::say("Uggh!! Froglok legs!! Me hate smelly legs, but me need it for fat trolls.");
-    quest::faction(378,10);
+    quest::faction(353,10);
     quest::exp(150);
     quest::summonitem(13386);
   }

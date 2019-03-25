@@ -19,7 +19,7 @@ sub EVENT_ITEM
   if (plugin::check_handin(\%itemcount, 2692 => 4)) {
     quest::say("Hah! I knew that we could do it! Oh, you can take my weapon for helping me out again. I will just tell the Hand it was lost in battle. I guess that I better take this evidence back to the Hand, right after one more lap!.");
     quest::summonitem($combine);
-    quest::faction(284,2); #Seru
+    quest::faction(1483,2); #Seru
   }
   plugin::return_items(\%itemcount);
 }

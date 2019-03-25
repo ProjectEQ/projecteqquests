@@ -50,8 +50,8 @@ sub EVENT_ITEM
 		#The Spire Beacon
 		if(plugin::check_handin(\%itemcount, 36541 => 1, 36540 => 1, 36539 => 1, 36538 => 1)) {#Sliver of Wood, Cornerstone Fragment, Tower Mortar, Harbingers Spire Blueprints
 			quest::say("Excellent! You've found all that I asked for. I will review these plans and materials immediately and see what can be done. Take this belt as a reward. It has been in my family for ages, but seems a fitting reward for your efforts.");
-			quest::faction(410, 10);#Dranik Loyalists
-			quest::faction(432, -20);#Overlord Mata Muram
+			quest::faction(1016, 10);#Dranik Loyalists
+			quest::faction(1013, -20);#Overlord Mata Muram
 			quest::exp(10000);
 			#Reward depends on class
 			if (($class eq "Wizard") || ($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {
@@ -64,8 +64,8 @@ sub EVENT_ITEM
 		#Honor Ladislev
 		elsif(plugin::check_handin(\%itemcount, 36536 => 1, 36537 => 1, 36535 => 1)) {#Ladislev's Toolbox, Book of Sketches, Ring of Architectural Mastery
 			quest::say("So the rumors were true. I both feared and hoped they were. At least Ladislev no longer needs to suffer the torture of the Muramites. Thank you for looking into this for me and retrieving what you could. I will see that the knowledge is not lost and shall pass it down to the generations after me. Please take this mantle as a token of my gratitude. it was given to me by Ladislev on the day I became his student.");
-			quest::faction(410, 10);#Dranik Loyalists
-			quest::faction(432, -20);#Overlord Mata Muram
+			quest::faction(1016, 10);#Dranik Loyalists
+			quest::faction(1013, -20);#Overlord Mata Muram
 			quest::exp(10000);
 			#Reward depends on class
 			if (($class eq "Wizard") || ($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {
@@ -78,8 +78,8 @@ sub EVENT_ITEM
 		#Recover the Family Crest
 		elsif(plugin::check_handin(\%itemcount, 36543 => 3, 36542 => 1)) {#3x Chain Leash, Large Dragorn Crest
 			quest::say("Take this amult as a reward.");#Text made up
-			quest::faction(410, 10);#Dranik Loyalists
-			quest::faction(432, -20);#Overlord Mata Muram
+			quest::faction(1016, 10);#Dranik Loyalists
+			quest::faction(1013, -20);#Overlord Mata Muram
 			quest::exp(10000);
 			#Reward depends on class
 			if (($class eq "Wizard") || ($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {

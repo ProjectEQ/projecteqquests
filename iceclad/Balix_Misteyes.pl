@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::emote("pulls its lips back as it scratches and cuts the skin, working it around the bloody puma bone.");
     quest::say("Good for hitting or for talisman. Powerful thing to hold. All Snowfang thank you. Now, all of us are safer.");
     quest::summonitem(30056);
-    quest::faction(303, 10);
+    quest::faction(439, 10);
     quest::exp(1000);
   }
 }

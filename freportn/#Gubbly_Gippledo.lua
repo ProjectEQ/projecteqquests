@@ -20,11 +20,11 @@ function event_trade(e)
 		e.other:SummonItem(55032);
 		e.other:SummonItem(55031);
 		e.other:Ding();
-		e.other:Faction(35,2,0);
-		e.other:Faction(136,2,0);
-		e.other:Faction(146,2,0);
-		e.other:Faction(202,2,0);
-		e.other:Faction(264,2,0);
+		e.other:Faction(1719,2,0);
+		e.other:Faction(1718,2,0);
+		e.other:Faction(1716,2,0);
+		e.other:Faction(1717,2,0);
+		e.other:Faction(1709,2,0);
 		e.other:AddEXP(4000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

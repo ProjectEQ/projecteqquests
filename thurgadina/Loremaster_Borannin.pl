@@ -58,10 +58,10 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
     return 1;
   }
-  quest::faction(49,10); #coldain
-  quest::faction(67,10); #dain
-  quest::faction(188,-30); #krif
-  quest::faction(189,-30); #kzek
+  quest::faction(406,10); #coldain
+  quest::faction(405,10); #dain
+  quest::faction(419,-30); #krif
+  quest::faction(448,-30); #kzek
 }
 
 # EOF zone: thurgadina ID: 115016 Name: Loremaster_Borannin

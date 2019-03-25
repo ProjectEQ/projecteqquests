@@ -19,11 +19,11 @@ function event_trade(e)
 		e.self:Say("Thanks, friend. I have run a long way to get here in time. Mostly at night. I lost my lantern in a card game in Highkeep.");
 		e.other:SummonItem(eq.ChooseRandom(13824, 13824, 13824, 13824, 13824, 13824, 13824, 13824, 13824, 12334)); -- 1/10 chance of wooden heart 9/10 chance of Wooden Shards
 		e.other:Ding();
-		e.other:Faction(99,1,0); -- Faydark's Champions
-		e.other:Faction(178,1,0); -- King Tearis Thex
-		e.other:Faction(43,1,0); -- Clerics of Tunare
-		e.other:Faction(304,1,0); -- Soldiers of Tunare
-		e.other:Faction(63,-1,0); -- Crushbone Orcs
+		e.other:Faction(246,1,0); -- Faydark's Champions
+		e.other:Faction(279,1,0); -- King Tearis Thex
+		e.other:Faction(226,1,0); -- Clerics of Tunare
+		e.other:Faction(310,1,0); -- Soldiers of Tunare
+		e.other:Faction(234,-1,0); -- Crushbone Orcs
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

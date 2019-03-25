@@ -7,7 +7,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 13253 => 4)){
   quest::say("Thank you for your help! But I must go, as you can see there are still many spiders for me to exterminate!");
-  quest::faction(264,10);  
+  quest::faction(1709,10);  
   quest::exp(5);
   quest::givecash(1,1,1,0);
  }

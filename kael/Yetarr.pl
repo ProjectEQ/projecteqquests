@@ -22,19 +22,19 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 25122 => 1)) {#Head of the Huntsman
   	quest::say("The death of this one must be causing great strife amoung the Coldain. Your work is greatly appreciated. I wish I could reward you with more, but these boots are among the few things I have to give.");
-  	quest::faction(188, 20);#Kromrif
-  	quest::faction(189, 20);#Kromzek
-  	quest::faction(179, 10);#King Tormax
-  	quest::faction(42, -30);#Claws of Veeshan
+  	quest::faction(419, 20);#Kromrif
+  	quest::faction(448, 20);#Kromzek
+  	quest::faction(429, 10);#King Tormax
+  	quest::faction(430, -30);#Claws of Veeshan
   	quest::exp(1750000);#1% of level 51 exp
   	quest::summonitem(25027);#Coldain Skin Boots
   }
   elsif(plugin::check_handin(\%itemcount, 25123 => 1)) {#Head of the Royal Scribe
   	quest::say("The death of this one must be causing great strife amoung the Coldain. Your work is greatly appreciated. I wish I could reward you with more, but these gloves are among the few things I have to give.");#Text borrowed and modified
-  	quest::faction(188, 20);#Kromrif
-  	quest::faction(189, 20);#Kromzek
-  	quest::faction(179, 10);#King Tormax
-  	quest::faction(42, -30);#Claws of Veeshan
+  	quest::faction(419, 20);#Kromrif
+  	quest::faction(448, 20);#Kromzek
+  	quest::faction(429, 10);#King Tormax
+  	quest::faction(430, -30);#Claws of Veeshan
   	quest::exp(1750000);#1% of level 51 exp
   	quest::summonitem(25026);#Coldain Skin Gloves
   }

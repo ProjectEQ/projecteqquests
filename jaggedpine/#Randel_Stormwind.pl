@@ -58,10 +58,10 @@ way you have. I'm glad to call you a friend and not an enemy. Well, I did promis
 compensation for your efforts and I'm true to my word. Please take this ring as a token of my
 gratitude.");
     quest::summonitem(9226); #Sigil Ring of Jaggedpine
-    quest::faction(271,10); #Residents of Jaggedpine
-    quest::faction(159,10); #Jaggedpine Treefolk
-    quest::faction(265,10); #Protectors of Pine
-    quest::faction(135,10); #Guards of Qeynos
+    quest::faction(1597,10); #Residents of Jaggedpine
+    quest::faction(272,10); #Jaggedpine Treefolk
+    quest::faction(302,10); #Protectors of Pine
+    quest::faction(262,10); #Guards of Qeynos
   }
   plugin::return_items(\%itemcount);
 }

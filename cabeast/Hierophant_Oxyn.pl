@@ -44,8 +44,8 @@ sub EVENT_ITEM {
     quest::summonitem(3892);
     quest::exp(5000);
     quest::ding();
-    quest::faction(62,20);
-    quest::faction(193,10);
+    quest::faction(442,20);
+    quest::faction(441,10);
   }
   elsif(plugin::check_handin(\%itemcount, 3886=>1)) { #Crusaders of Greenmist (Greenmist Quest 8/8)
     quest::emote("holds the ore in his hands and begins to chant. His eyes go white as he raises the chunk of ore above his head. He lowers his arms and shakes his head for a moment. His eyes return to their normal state as they focus on you. The shaman hands you the ore and says, 'Seek out the creator of Rile's blade. He is still on this plane. I have felt his torment. Take this note to Librarian Zimor. He learned a great deal from the tome and can instruct you further.'");
@@ -53,22 +53,22 @@ sub EVENT_ITEM {
     quest::summonitem(3893);
     quest::exp(5000);
     quest::ding();
-    quest::faction(62,20);
-    quest::faction(193,10);
+    quest::faction(442,20);
+    quest::faction(441,10);
   }
   #Cursed Wafers turn in
   elsif(plugin::check_handin(\%itemcount, 12403 => 1) && ($class == "Shaman")) { #Full Component Mortar
     quest::say("We appreciate your service. Take a few copper for your deed as well as some of our cursed waters. They will provide you with nourishment. As for future tasks, we are searching for a few [lost skulls] and i am sure you are searching for your [iron cudgel of the clairvoyant] And i also hear that the furscales are in need of some broodlings to do some manual labor. Tell them Oxyn sent you.");
     quest::setglobal("shmskullquest",1,5,"F"); #set a global flag so that user can do shm skull quest
-    quest::faction(282, 10); #Scaled Mystics
-    quest::faction(193, 10); #Legion of Cabilis
+    quest::faction(445, 10); #Scaled Mystics
+    quest::faction(441, 10); #Legion of Cabilis
     quest::summonitem(12406, 2); #Cursed Wafers
   }
   #Shaman Skull Quest No.1 turn in - Check for  Logrin Skull, Morgl Skull, and Waz Skull hand in along with Iron Cudgel of the Petitioner
   elsif((plugin::check_handin(\%itemcount, 12721 => 1, 12722 => 1, 12723 => 1, 5140 => 1)) && ($faction <= 5) && ($shmskullquest >= 1)) {
     quest::say("Excellent, you have retrieved the three skulls of the ancients for us.  There are yet mroe skulls that I must ask you to retrieve before I can assist you in furthering your progress to becoming a clairvoyant. I will tell you with whom you need to speak to to continue the path of clairvoyance upon bringing me the [other skulls].");
-    quest::faction(282, 10); #Scaled Mystics
-    quest::faction(193, 10); #Legion of Cabilis
+    quest::faction(445, 10); #Scaled Mystics
+    quest::faction(441, 10); #Legion of Cabilis
     quest::summonitem(5141); #Iron Cudgel of the Clairvoyant
     quest::exp(2000); #give decent xp...
     quest::givecash (0,0,0,1);
@@ -77,8 +77,8 @@ sub EVENT_ITEM {
   #shaman skull quest no.2 turn in - check for Skull with I and Skull with II turn in and cudgel
   elsif((plugin::check_handin(\%itemcount, 12724 => 1, 12725 => 1, 5141 => 1)) && ($faction <= 5) && ($shmskullquest >= 1)) {
     quest::say("We are in your debt. You are truly one who shall collect all the lost ancient skulls. Take your weapon. Go to Hierophant Zand and he shall guide you further. Tell him you are [the chosen saviour].");
-    quest::faction(282, 10); #Scaled Mystics
-    quest::faction(193, 10); #Legion of Cabilis
+    quest::faction(445, 10); #Scaled Mystics
+    quest::faction(441, 10); #Legion of Cabilis
     quest::exp(60000); #give 2 blues of xp
     quest::givecash (0,0,5,1);
     quest::summonitem(5142); #Iron Cudgel of the Seer

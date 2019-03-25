@@ -60,7 +60,7 @@ sub EVENT_ITEM {
       quest::say("Hmm.. I hope you can prove yourself a lot more valuable than you look. Here, throw this on.. it'll help protect you a little. Once you have become a bit more experienced, return to me, I have many things to teach you about advanced combat and some of the various [trades] you will have available to you.");
       quest::summonitem(13535); #Old Worn Gray Tunic*
       quest::ding();
-      quest::faction(283,100); #Tunare's Scouts
+      quest::faction(316,100); #Tunare's Scouts
       quest::exp(100);
    }
    elsif (plugin::check_handin(\%itemcount, 54019 => 1)) {
@@ -73,7 +73,7 @@ sub EVENT_ITEM {
       quest::say("Well, well. I didn't think you could do it. Here's your cut and don't be surprised that it's not much because it's your first lesson. Remember. the smaller the operation. the bigger the share, and the richest rogues have the tightest lips.");
       quest::summonitem("7021");
       quest::givecash("0","5","0","0");
-      quest::faction(283,5);
+      quest::faction(316,5);
       quest::exp(100);
    }
    elsif (plugin::check_handin(\%itemcount,  13322=> 1)) {

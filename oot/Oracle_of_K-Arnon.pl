@@ -68,8 +68,8 @@ if(plugin::check_handin(\%itemcount, 18302 => 1)){ # Book of Scale
 if(plugin::check_handin(\%itemcount, 18202 => 1)){ # Book of Turmoil
 	quest::say("Thank thee for this tome. Be sure to check back with me later, as I might have another task for thee.");
 	quest::summonitem(10071); # Glowing Torch
-	quest::faction(236, 5);
-	quest::faction(237, -10);
+	quest::faction(402, 5);
+	quest::faction(403, -10);
 	quest::exp(72900); # 10% of level 10 xp
 	}
 	

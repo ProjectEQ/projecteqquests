@@ -33,11 +33,11 @@ function event_trade(e)
 		e.other:AddEXP(1600);
 		e.other:Ding();
 		e.other:GiveCash(math.random(99),math.random(99),eq.ChooseRandom(3,4,5),0);
-		e.other:Faction(213,2); 															--Merchants of Halas
-		e.other:Faction(294,2); 															--Shamen of Justice
-		e.other:Faction(33,-3); 															--Circle of Unseen Hands
-		e.other:Faction(48,-3); 															--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 															--Hall of the Ebon Mask
+		e.other:Faction(328,2); 															--Merchants of Halas
+		e.other:Faction(327,2); 															--Shamen of Justice
+		e.other:Faction(223,-3); 															--Circle of Unseen Hands
+		e.other:Faction(336,-3); 															--Coalition of Tradefolk Underground
+		e.other:Faction(5006,-3); 															--Hall of the Ebon Mask
 		if(e.other:Class() == "Shaman" or e.other:Class() == "Beastlord") then
 			-- : Drowsy : Frost Rift : Sicken : Fleting Fury : Spirit of Bear : Cure Blindness : Spirit Sight : In that order
 			local spellreward = eq.ChooseRandom(15270,15275,15075,15271,15279,15212,15079);
@@ -70,11 +70,11 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18761})) then
 		e.self:Say("Welcome t' the Church o' the Tribunal. Here, we practice the will o' the Six Hammers. This is our guild tunic - wear it with pride and represent us well. Once you are ready to begin adventuring please see Jinkus Felligan, he can help you with tasks geared towards your development as a great Shaman. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:Ding();
-		e.other:Faction(294, 100);  -- Shamen of Justice
-		e.other:Faction(213, 15);   -- Merchants of Halas
-		e.other:Faction(33, -15);   -- Circle of Unseen Hands
-		e.other:Faction(48, -15);   -- Coalition of Tradefolk Underground
-		e.other:Faction(90, -20);   -- Ebon Mask
+		e.other:Faction(327, 100);  -- Shamen of Justice
+		e.other:Faction(328, 15);   -- Merchants of Halas
+		e.other:Faction(223, -15);   -- Circle of Unseen Hands
+		e.other:Faction(336, -15);   -- Coalition of Tradefolk Underground
+		e.other:Faction(244, -20);   -- Ebon Mask
 		e.other:SummonItem(13512); 	-- Faded Blue Tunic
 		e.other:AddEXP(100);        -- Give exp for turning in quest
 	end

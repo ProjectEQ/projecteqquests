@@ -14,11 +14,11 @@ function event_trade(e)
 		e.self:Say("What are you? The Rat's new bag man? Peh, he is useless. That bum drinks any gold he gets. Here ya go, kid!");
 		e.other:Ding();
 		e.other:SummonItem(13901);
-		e.other:Faction(33,10,0); -- +Circle of Unseen Hands
-		e.other:Faction(217,-10,0); -- -Merchants of Qeynos
-		e.other:Faction(53,10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(135,-10,0); -- -Guards of Qeynos
-		e.other:Faction(164,10,0); -- Kane Bayle
+		e.other:Faction(223,10,0); -- +Circle of Unseen Hands
+		e.other:Faction(291,-10,0); -- -Merchants of Qeynos
+		e.other:Faction(230,10,0); -- Corrupt Qeynos Guards
+		e.other:Faction(262,-10,0); -- -Guards of Qeynos
+		e.other:Faction(273,10,0); -- Kane Bayle
 		e.other:AddEXP(250);
 		e.other:GiveCash(0,0,6,0);
 	end

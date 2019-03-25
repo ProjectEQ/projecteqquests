@@ -13,9 +13,9 @@ function event_trade(e)
 		e.self:Say("This! This is the gift my daughter gave Ariam to aid his cause. This too is the piece of my soul that was missing. Your news of his fate is troubling, yet his heroism even beyond this life is cause for celebration. Here, keep this token. My heart is mended and I have no need of it. Once such as yourself who will continue to fight for the things in which my son believes ought to bear this. I am sure my daughter would agree.");
 		e.other:SummonItem(31495);
 		e.other:Ding();
-		e.other:Faction(8,3,0);
-		e.other:Faction(43,3,0);
-		e.other:Faction(178,3,0);
+		e.other:Faction(5001,3,0);
+		e.other:Faction(226,3,0);
+		e.other:Faction(279,3,0);
 		e.other:AddEXP(300);
 		e.other:GiveCash(0,5,0,0); 
 	end

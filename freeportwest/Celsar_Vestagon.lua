@@ -15,10 +15,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13872})) then
 		e.self:Say("You have done well. The Marr Minnow shall have a greater chance of flourishing. Please take this as a reward.");
 		e.other:Ding();
-		e.other:Faction(184,1,0);
-		e.other:Faction(258,-1,0);
-		e.other:Faction(105,-1,0);
-		e.other:Faction(86,1,0);
+		e.other:Faction(281,1,0);
+		e.other:Faction(362,-1,0);
+		e.other:Faction(330,-1,0);
+		e.other:Faction(271,1,0);
 		e.other:Faction(311,1,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(23,0,0,0);

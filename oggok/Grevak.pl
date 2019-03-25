@@ -52,13 +52,13 @@ sub EVENT_ITEM {
    quest::summonitem("13453");
    quest::exp("500");
    # Increase faction -- Clurg
-   quest::faction("46","10");
+   quest::faction("228","10");
    # Increase faction -- Greenblood Knights
-   quest::faction("128","20");
+   quest::faction("261","20");
    # Decrease faction -- Shadowknights of Night Keep
-   quest::faction("292","-20");
+   quest::faction("308","-20");
    # Decrease faction -- Storm Guard
-   quest::faction("314","-10");
+   quest::faction("312","-10");
 
     }
 elsif(plugin::check_handin(\%itemcount, 13367 => 2))
@@ -69,9 +69,9 @@ elsif(plugin::check_handin(\%itemcount, 13367 => 2))
    quest::summonitem(quest::ChooseRandom(13453,5013,5014,5016,5019,5020,5023,5025));
    quest::exp("500");
    # Increase faction -- Greenblood Knights
-   quest::faction("128","20");
+   quest::faction("261","20");
    # Decrease faction -- Shadowknights of Night Keep
-   quest::faction("292","-20");
+   quest::faction("308","-20");
 
     }
 

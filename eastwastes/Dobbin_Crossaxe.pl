@@ -15,10 +15,10 @@ sub EVENT_ITEM {
     quest::say("Thank you. $name. your deeds will be mentioned to  the Dain. Please take this note from Corbin to Garadain. it may help him to achieve victory over the enemy.");
     $ring_seven_final=undef;
     quest::summonitem(1047);
-    quest::faction(49,5);
-    quest::faction(67,5);
-    quest::faction(188,-10);
-    quest::faction(189,-10);
+    quest::faction(406,5);
+    quest::faction(405,5);
+    quest::faction(419,-10);
+    quest::faction(448,-10);
   }
   plugin::return_items(\%itemcount);
 }

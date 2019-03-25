@@ -25,7 +25,7 @@ sub EVENT_ITEM {
    
    quest::say("So it seems there is more truth to the legends of the Rakshasa than is commonly believed. I recall much of the tales of the wicked shaman who sold their souls and bodies to the dark spirits.  There is a ritual that must be performed to force the Rakshasa to fully materialize in our realm so that it may be slain. I will write down the instructions for the ritual but the [components] I'm afraid may be difficult to obtain.");
 #   quest::setglobal("Rakshasa", 1, 5, "F"); # global to keep from starting at this point
-   quest::faction(68,10); # Dar Khura
+   quest::faction(1533,10); # Dar Khura
    quest::exp(500);
    quest::ding();
    

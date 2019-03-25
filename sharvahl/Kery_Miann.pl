@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     quest::say("You have done very well, youth. I hope that you are beginning to understand what it means to walk the path of Khati Sha. Public service is very important. Our namesake is the fundamental figure in the foundation of this society. Our walls are made of the ore that he discovered. His exploration of the lands that surround our home made it possible for us to live here in peace. This leads us to our next lesson. I would like you to seek out the caverns beyond the thicket. A breed of shelled creatures roam the tunnels of those caverns. Occasionally, a strong glow will manifest itself in one of these creatures. Find such a creature and bring me the source of its glow. Wrap the light source in your Khati Sha recruit's cloak and place them both in this box.");
     quest::summonitem(17610);
     quest::exp(1000);
-    quest::faction(423,1);
+    quest::faction(1532,1);
   }
   elsif (plugin::check_handin(\%itemcount, 5579 => 1)) {
     quest::emote("opens the box and removes your old cloak. She unwraps the orb and looks at it for a moment.");
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     quest::shout("Citizens of Shar Vahl, take this time to welcome $name to the level of Khati Sha Apprentice. We are all in the debt of each and every citizen that works a hard as $name to improve our city.");
     quest::summonitem(5580);
     quest::exp(10000);
-    quest::faction(423,1);
+    quest::faction(1532,1);
   }
   plugin::return_items(\%itemcount);
 }

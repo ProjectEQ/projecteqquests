@@ -27,15 +27,15 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 19188 => 1)) {
     quest::emote("gingerly takes the boot from you, handling it as though it were a fine porcelain. With a look of thanks to you he slowly lifts it to his lips and suddenly tips it back to empty it in one gulp, frothing his beard in the process. 'Yar! That's the ticket! Damn fine stuff that is, just like me uncle always said. A service to the Validus Custodus have ye done, my friend... And I'd be happy to assist ye in that service again sometime. HAR!'");
     quest::exp(10000);
-    quest::faction(350,10); #validus custodus
-    quest::faction(168,10); #katta castellum citizens
-    quest::faction(206,10); #magus conlegium
-    quest::faction(228,-30); #nathyn illuminious
-    quest::faction(55,-30); #coterie of the eternal night
-    quest::faction(284,-30); #seru
-    quest::faction(139,-30); #hand of seru
-    quest::faction(96,-30); #eye of seru
-    quest::faction(138,-30); #hand legionnaires
+    quest::faction(1503,10); #validus custodus
+    quest::faction(1502,10); #katta castellum citizens
+    quest::faction(1504,10); #magus conlegium
+    quest::faction(1505,-30); #nathyn illuminious
+    quest::faction(1506,-30); #coterie of the eternal night
+    quest::faction(1483,-30); #seru
+    quest::faction(1484,-30); #hand of seru
+    quest::faction(1485,-30); #eye of seru
+    quest::faction(1541,-30); #hand legionnaires
   }
   plugin::return_items(\%itemcount);
 }

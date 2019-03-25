@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::say("I'm pretty sure that they're all here. Just take this back and act like your didn't just see that.");
     quest::emote("He winks and hands you the report.");
     quest::summonitem(6221);
-    quest::faction( 132,10 );
+    quest::faction( 1513,10 );
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

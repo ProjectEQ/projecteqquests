@@ -30,7 +30,7 @@ sub EVENT_ITEM {
 		quest::signal(160024,20000); # Centurion Manik
 		quest::signal(160288,20000); # Centurion Goran
 		quest::signal(160427,700000); # A Vah Shir Courier Depop signal
-		quest::faction(132,10); # Guardians of Shar Vahl
+		quest::faction(1513,10); # Guardians of Shar Vahl
 		quest::exp(1500);
 		quest::ding();
 	}
@@ -38,7 +38,7 @@ sub EVENT_ITEM {
 		quest::say("It appears this situation is much more dire than we had first presumed. It would be unsafe to send this crate within the walls of Shar Vahl should another innocent be possessed and the tormented Vah Shir be resurrected once more. I shall scribe a note explaining the occurrences for you to deliver along with the crate to Spiritualist Roleko at the Vah Shir outpost in Grimling Forest");
 		quest::summonitem(31841);  # Roshawna's Report of Occurrences
 		quest::summonitem(31839);  # Resealed runed iron bound chest
-		quest::faction(132,10); # Guardians of Shar Vahl
+		quest::faction(1513,10); # Guardians of Shar Vahl
 		quest::exp(2000);
 		quest::ding();
 	}

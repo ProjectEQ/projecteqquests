@@ -19,30 +19,30 @@ function event_trade(e)
 		e.self:Say("Ah! Excellent work! I think we may have further use for you if you like.");
 		e.other:AddEXP(1000);
 		e.other:GiveCash(1,3,1,2);
-		e.other:Faction(115,3,0); 	-- gem choppers
-		e.other:Faction(176,3,0); 	-- King ak'anon
-		e.other:Faction(210,10,0); 	-- Merchants of Ak'Anon
-		e.other:Faction(39,-10,0); 	-- Clan Grikbar
-		e.other:Faction(71,-10,0); 	-- Dark Reflection
+		e.other:Faction(255,3,0); 	-- gem choppers
+		e.other:Faction(333,3,0); 	-- King ak'anon
+		e.other:Faction(288,10,0); 	-- Merchants of Ak'Anon
+		e.other:Faction(1604,-10,0); 	-- Clan Grikbar
+		e.other:Faction(238,-10,0); 	-- Dark Reflection
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13212, item2 = 13211, item3 = 13213, item4 = 13214})) then
 		e.self:Say("Ah!! I see you had no problem finding all of the C series clockworks. Good work. Here. Take this blackbox. We received it from Clockwork 27C. Take it to Jogl Doobraugh. He is the operator of the only blackbox definer in Ak'Anon. He is out at the windmills checking on their operation.");
 		e.other:SummonItem(13209);
-		e.other:Faction(115,1,0); 	-- gem choppers
-		e.other:Faction(176,1,0); 	-- King ak'anon
-		e.other:Faction(210,1,0); 	-- Merchants of Ak'Anon
-		e.other:Faction(39,-1,0); 	-- Clan Grikbar
-		e.other:Faction(71,-1,0); 	-- Dark Reflection
+		e.other:Faction(255,1,0); 	-- gem choppers
+		e.other:Faction(333,1,0); 	-- King ak'anon
+		e.other:Faction(288,1,0); 	-- Merchants of Ak'Anon
+		e.other:Faction(1604,-1,0); 	-- Clan Grikbar
+		e.other:Faction(238,-1,0); 	-- Dark Reflection
 		e.other:AddEXP(5000);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13215})) then -- text is not per live. Need original
 		e.self:Say("What's this? You've found and smashed Red V?! Amazing! Wonderful! Take this as a sign of my thanks!");
 		e.other:SummonItem(eq.ChooseRandom(13219, 13219, 13220, 13220, 1013, 1018, 1015, 1019, 1022, 1023, 1024, 1017, 1016, 1020, 1014, 1021));
-		e.other:Faction(115,1,0); 	-- gem choppers
-		e.other:Faction(176,1,0); 	-- King ak'anon
-		e.other:Faction(210,1,0); 	-- Merchants of Ak'Anon
-		e.other:Faction(39,-1,0); 	-- Clan Grikbar
-		e.other:Faction(71,-1,0); 	-- Dark Reflection
+		e.other:Faction(255,1,0); 	-- gem choppers
+		e.other:Faction(333,1,0); 	-- King ak'anon
+		e.other:Faction(288,1,0); 	-- Merchants of Ak'Anon
+		e.other:Faction(1604,-1,0); 	-- Clan Grikbar
+		e.other:Faction(238,-1,0); 	-- Dark Reflection
 		e.other:AddEXP(5000);
 		e.other:Ding();
 		e.other:GiveCash(1,3,0,0);

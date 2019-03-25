@@ -29,35 +29,35 @@ sub EVENT_ITEM {
     quest::say("Ah! Excellent! Now just watch... and... here! Now you know how to make your own boots! Take this pair in case you didn't actually learn anything.");
     quest::exp(1000);
     quest::summonitem(4984); #scaled mystic boots
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 3061 => 1, 10035 => 1, 14769 => 1, 14770 => 1)) {
     quest::say("What's this? Oh the parts for your bracer. Well just watch me work... and... done! Take these as an example of what a skilled craftsman can do. Strive for this perfection.");
     quest::summonitem(4988); #scaled mystic bracers
     quest::exp(1000);
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 3058 => 1, 10032 => 1, 14765 => 1, 14766 => 1)) {
     quest::say("Well you finally brought the parts to learn how to make your cloak. Just watch this... and... all done. It's not the best I've ever made, but it's fitting for a novice.");
     quest::summonitem(4991); #scaled mystic cloak
     quest::exp(1000);
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 3060 => 1, 10034 => 1, 14763 => 1, 14764 => 1)) {
     quest::exp(1000);
     quest::summonitem(4986); #scaled mystic vambraces
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   plugin::return_items(\%itemcount);

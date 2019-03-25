@@ -28,11 +28,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 12280,item2 = 18946,gold = 100})) then
 		e.self:Say("Biggily boo, biggily borc.. Raise that stinky orc!! Bamm!! Okay!! It's done. Now all you have to do is find him in the spot where his soul left him and give him an orc shovel. Oh!! I didn't mention that? Oh, well. I'm sure you can find one.. somewhere. Now, get lost before I turn you into a toad!");
 		e.other:Ding();
-		e.other:Faction(91, 25,0);
-		e.other:Faction(71, -25,0);
-		e.other:Faction(322, -25,0);
-		e.other:Faction(115, 25,0);
-		e.other:Faction(176, 25,0);
+		e.other:Faction(245, 25,0);
+		e.other:Faction(238, -25,0);
+		e.other:Faction(239, -25,0);
+		e.other:Faction(255, 25,0);
+		e.other:Faction(333, 25,0);
 		e.other:AddEXP(18000);
 		eq.spawn2(70072, 0, 0, -2133.49, -727.05, 154.86, 0);
 	end

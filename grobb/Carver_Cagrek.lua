@@ -17,7 +17,7 @@ function event_trade(e)
 		e.self:Say("Whut tooks you so long!! Ah, dis please Cagrek as I can grind dese up to make special bread. Me get on that right away. Here is you reward, now out of Cagrek's way.");
 		e.other:SummonItem(28243);
 		e.other:Ding();
-		e.other:Faction(131,15,0);
+		e.other:Faction(376,15,0);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13368, item2 = 13368, item3 = 13368, item4 = 18940})) then
 		e.self:Say("Finally!! What takes yous so long? Now carver Cagrek try and makes meat and feeds to trolls. Yous getting to be deputy carver. Mes give you Grobb cleaver!! Make strong and smarts on you it will. Just like carver Cagrek.");
 		e.other:SummonItem(5413);

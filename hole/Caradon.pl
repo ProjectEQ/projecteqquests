@@ -1,7 +1,7 @@
 # Part of SK Epic 1.0
 
 sub EVENT_SAY {
-  $faction = $client->GetCharacterFactionLevel(342);
+  $faction = $client->GetCharacterFactionLevel(404);
   if ($faction >= 44) {
     if ($text=~/Hail/i) {
       quest::say("Please help me get out of here! My companion, Kyrenna, and I are trapped in this hellish place!");
@@ -16,11 +16,11 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  $faction = $client->GetCharacterFactionLevel(342);
+  $faction = $client->GetCharacterFactionLevel(404);
   if ($faction >= 44 && plugin::check_handin(\%itemcount, 14373 => 1)) {
     quest::say("Kyrenna! We are free!");
     quest::spawn2(39155, 0, 0, -195.8, 426.6, -213.9, 230);
-    quest::faction(342, 7);
+    quest::faction(404, 7);
     quest::attack($name);
   }
   plugin::return_items(\%itemcount);

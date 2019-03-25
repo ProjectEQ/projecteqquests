@@ -34,7 +34,7 @@ quest::summonitem(quest::ChooseRandom(31584,31589,31586,31590,31593,31594,31595,
 quest::givecash(0,2,3,0);
 quest::exp(1000);
 quest::ding();
-quest::faction(132,8);
+quest::faction(1513,8);
 }
 if (plugin::check_handin(\%itemcount,30665 => 3)) {
 quest::say("A blessing indeed! You have done well to bring this to me. With these glands I will be able to save many lives. Thank you friend. Shar Vahl And its people are in your debt. Please, accept these gifts to assist you in your endeavors. It Is the least I can do to return the favor!");
@@ -44,7 +44,7 @@ quest::summonitem(quest::ChooseRandom(31584,31589,31586,31590,31593,31594,31595,
 quest::givecash(0,4,2,0);
 quest::exp(750);
 quest::ding();
-quest::faction(132,6);
+quest::faction(1513,6);
 }
 if (plugin::check_handin(\%itemcount,30665 => 2)) {
 quest::say("A blessing indeed! You have done well to bring this to me. With these glands I will be able to save many lives. Thank you friend. Shar Vahl And its people are in your debt. Please, accept these gifts to assist you in your endeavors. It Is the least I can do to return the favor!");
@@ -53,7 +53,7 @@ quest::summonitem(quest::ChooseRandom(31584,31589,31586,31590,31593,31594,31595,
 quest::givecash(0,6,1,0);
 quest::exp(500);
 quest::ding();
-quest::faction(132,4);
+quest::faction(1513,4);
 }
 if (plugin::check_handin(\%itemcount,30665 => 1)) {
 quest::say("A blessing indeed! You have done well to bring this to me. With these glands I will be able to save many lives. Thank you friend. Shar Vahl and its people are in your debt. Please, accept these gifts to assist you in your endeavors. It Is the least I can do to return the favor!");
@@ -61,7 +61,7 @@ quest::summonitem(quest::ChooseRandom(31584,31589,31586,31590,31593,31594,31595,
 quest::givecash(0,8,0,0);
 quest::exp(250);
 quest::ding();
-quest::faction(132,2);
+quest::faction(1513,2);
 }
 if (plugin::check_handin(\%$itemcount, 30602 => 1, 30964 => 1)){
 quest::say("Well done $name. I hope it isnt too late.");

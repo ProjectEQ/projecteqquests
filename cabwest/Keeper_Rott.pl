@@ -23,8 +23,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12854 => 1, 12855 => 1, 12856 => 1, 12857 => 1)) {
     quest::say("Oh, great necromancer, how can I repay you?!! I know. Here is a spell I recently researched. It should help you increase the strength of a summoned pet. Learn it well.");
     quest::summonitem("16426");
-    quest::faction(24, 3);
-    quest::faction(193, 3); 
+    quest::faction(443, 3);
+    quest::faction(441, 3); 
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

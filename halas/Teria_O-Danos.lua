@@ -19,9 +19,9 @@ function event_trade(e)
 		e.self:Say("Ye've returned!! How wonderful! The people o' Halas thank ye! It isn't often we get to indulge ourselves in the delicacies o' warmer climates. Here ye go, me friend. Ye've completed the delivery in good time. I hope ye deliver more often. Here, try some of me new creation.. [Lion Delight].");
 		e.other:SummonItem(12221,1); 							--Lion Delight
 		e.other:GiveCash(0,0,3,0); 								--Gold x 3
-		e.other:Faction(213,5); 								--Merchants of Halas
-		e.other:Faction(361,5); 								--Wolves of the North
-		e.other:Faction(294,5);									--Shamen of Justice
+		e.other:Faction(328,5); 								--Merchants of Halas
+		e.other:Faction(320,5); 								--Wolves of the North
+		e.other:Faction(327,5);									--Shamen of Justice
 		e.other:AddEXP(1000);
 		e.other:Ding();
 	end

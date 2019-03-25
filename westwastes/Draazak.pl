@@ -7,9 +7,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1908 => 1)) { #Jualicn's Token
     quest::say("$name, whom Relinar found to be necessary for the success of the magic against those foul giants. I present this Rune of Concentration to you with faith that you are trusted amongst us or you would not have been sent to me. Make haste so that no time is wasted in extracting revenge for their past transgressions.");
-    quest::faction(42,10);   #Claws of Veeshan
-    quest::faction(362,10);  #Yelinak
-    quest::faction(189,-30); #Kromzek
+    quest::faction(430,10);   #Claws of Veeshan
+    quest::faction(436,10);  #Yelinak
+    quest::faction(448,-30); #Kromzek
     quest::exp(1000);
     quest::summonitem(1896); #Rune of Concentration
     if(!plugin::check_hasitem($client,1893) || !plugin::check_hasitem($client,1894) || !plugin::check_hasitem($client,1895)) {

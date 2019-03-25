@@ -11,10 +11,10 @@ function event_trade(e)
 		e.self:Say("This is good work! I know this isn't much, but it is all I can offer you. Thanks for your help!");
 		e.other:SummonItem(0);
 		e.other:Ding();
-		e.other:Faction(48,1,0);
-		e.other:Faction(105,1,0);
-		e.other:Faction(184,-1,0);
-		e.other:Faction(258,-1,0);
+		e.other:Faction(336,1,0);
+		e.other:Faction(330,1,0);
+		e.other:Faction(281,-1,0);
+		e.other:Faction(362,-1,0);
 		e.other:AddEXP(50);
 		e.other:GiveCash(1,2,1,0);
 	end

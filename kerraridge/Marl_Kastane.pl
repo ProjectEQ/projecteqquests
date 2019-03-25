@@ -1,7 +1,7 @@
 # Part of SK Epic 1.0
 
 sub EVENT_SAY {
-  $faction = $client->GetCharacterFactionLevel(342);
+  $faction = $client->GetCharacterFactionLevel(404);
   if ($text=~/Hail/i) {
     quest::say("Begone!! You do not have the will to do the things I require!");
   }
@@ -36,19 +36,19 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  $faction = $client->GetCharacterFactionLevel(342);
+  $faction = $client->GetCharacterFactionLevel(404);
   if (($faction >= 43) && plugin::check_handin(\%itemcount, 14376 => 1)) {
     quest::emote("reads the note, eyes widening in panic. He raises his eyes to you and says, 'This is grave news, friend. If the prophecy is allowed to be fulfilled, our strength will vanish into obscurity. Goodness and purity will spread like a plague across the land and the servants of Hate will be powerless to stop it!'");
-    quest::faction(342, 1);
+    quest::faction(404, 1);
   }
   if (($faction >= 51) && plugin::check_handin(\%itemcount, 14381 => 1)) {
     quest::say("Here, you take this shroud. You must now find the spirit of glohnor and place this item on him. This should force him back into his mummified body and then you must destroy this newly raised form and return to me its wrappings.");
-    quest::faction(342, 7);
+    quest::faction(404, 7);
     quest::summonitem(14377);
   }
   if (($faction >= 58) && plugin::check_handin(\%itemcount, 14379 => 1)) {
     quest::say("You've done it! Your efforts will stand as a tribute to our kind for time eternal, my friend. Although nothing could possibly serve as a just reward for your accomplishments, please accept this as well as my eternal gratitude. It has been fashioned from the wraps of the mummy and shall protect you well.");
-    quest::faction(342, 7);
+    quest::faction(404, 7);
     quest::summonitem(14370);
   }
   plugin::return_items(\%itemcount);

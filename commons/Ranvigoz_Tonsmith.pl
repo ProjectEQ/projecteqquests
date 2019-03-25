@@ -37,10 +37,10 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::say("Here is your armor. I hope it fits better now.");
-    quest::faction(47,10); #coalition of tradefolk
-    quest::faction(184,10); #knights of truth
-    quest::faction(217,10); #merchants of qeynos
-    quest::faction(369,10); #coalition of tradefolk iii
+    quest::faction(229,10); #coalition of tradefolk
+    quest::faction(281,10); #knights of truth
+    quest::faction(291,10); #merchants of qeynos
+    quest::faction(5015,10); #coalition of tradefolk iii
   }
 }
 

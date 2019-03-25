@@ -13,10 +13,10 @@ function event_trade(e)
 		e.self:Say("As I promised, some silver and of course, the Highpass lottery ticket. Oh yes, I forgot to mention the ticket was for last season's lottery. Ha Ha!! You now own a losing Highpass lottery ticket, lucky you! Ha!!");
 		e.other:SummonItem(eq.ChooseRandom(12264, 12265, 12261, 12262, 12263,12266));
 		e.other:Ding();
-		e.other:Faction(47,1,0); -- Coalition of Tradefolk
-		e.other:Faction(184,1,0); -- Knights of Truth 
-		e.other:Faction(217,1,0); -- Merchants of Qeynos
-		e.other:Faction(48,1,0); -- Coalition of Tradesfolk Underground 
+		e.other:Faction(229,1,0); -- Coalition of Tradefolk
+		e.other:Faction(281,1,0); -- Knights of Truth 
+		e.other:Faction(291,1,0); -- Merchants of Qeynos
+		e.other:Faction(336,1,0); -- Coalition of Tradesfolk Underground 
 		e.other:AddEXP(200);
 		e.other:GiveCash(0,3,0,0);
 	end

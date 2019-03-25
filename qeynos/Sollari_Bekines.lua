@@ -39,9 +39,9 @@ function event_trade(e)
 		e.self:Say("Great work, " .. e.other:GetName() .. ".  You have rid the world of more gnolls and brought me the components I require.  Take this blade and use it well!");
 		e.other:SummonItem(27493);
 		e.other:Ding();
-		e.other:Faction(192,1,0);
-		e.other:Faction(217,1,0);
-		e.other:Faction(135,1,0);
+		e.other:Faction(284,1,0);
+		e.other:Faction(291,1,0);
+		e.other:Faction(262,1,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

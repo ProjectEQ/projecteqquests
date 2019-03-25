@@ -16,10 +16,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13990})) then -- Sack of Hay
 		e.self:Say("Thank you so much. Tiny gets quite tired doing this by himself. Here you go.");
 		e.other:Ding();
-		e.other:Faction(167,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(257,10,0);
-		e.other:Faction(183,10,0);
+		e.other:Faction(345,10,0);
+		e.other:Faction(262,10,0);
+		e.other:Faction(341,10,0);
+		e.other:Faction(280,10,0);
 		e.other:AddEXP(100);
 		e.other:GiveCash(4,0,0,0);
 	end

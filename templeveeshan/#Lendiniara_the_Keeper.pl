@@ -38,41 +38,41 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 31262 => 1, 31261 => 1, 31263 => 1, 31260 => 1)) { ## request of the arcane
       quest::summonitem(31463);
       quest::emote("looks happy as she hands you the reward.");
-      quest::faction(42,+75); # claws of veeshan
-      quest::faction(362,+75); # yelinak
-      quest::faction(189,-100); # zek
+      quest::faction(430,+75); # claws of veeshan
+      quest::faction(436,+75); # yelinak
+      quest::faction(448,-100); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31267 => 1, 31266 => 1, 31265 => 1, 31264 => 1)) { ## request of the strong
       quest::summonitem(31464);
       quest::emote("looks happy as she hands you the reward.");
-      quest::faction(42,+75); # claws of veeshan
-      quest::faction(362,+75); # yelinak
-      quest::faction(189,-100); # zek
+      quest::faction(430,+75); # claws of veeshan
+      quest::faction(436,+75); # yelinak
+      quest::faction(448,-100); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31259 => 1, 31270 => 1, 31253 => 1, 31250 => 1)) { ## test of the ruby tear
       quest::summonitem(31460);
       quest::emote("looks happy as she hands you the reward.");
-      quest::faction(42,+75); # claws of veeshan
-      quest::faction(362,+75); # yelinak
-      quest::faction(189,-100); # zek
+      quest::faction(430,+75); # claws of veeshan
+      quest::faction(436,+75); # yelinak
+      quest::faction(448,-100); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31251 => 1, 31269 => 1, 31252 => 1, 31254 => 1)) { ## test of the platinum tear
       quest::summonitem(31461);
       quest::emote("looks happy as she hands you the reward.");
-      quest::faction(42,+75); # claws of veeshan
-      quest::faction(362,+75); # yelinak
-      quest::faction(189,-100); # zek
+      quest::faction(430,+75); # claws of veeshan
+      quest::faction(436,+75); # yelinak
+      quest::faction(448,-100); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31256 => 1, 31255 => 1)) { ## test of the emerald tear
       quest::summonitem(31462);
       quest::emote("looks happy as she hands you the reward.");
-      quest::faction(42,+75); # claws of veeshan
-      quest::faction(362,+75); # yelinak
-      quest::faction(189,-100); # zek
+      quest::faction(430,+75); # claws of veeshan
+      quest::faction(436,+75); # yelinak
+      quest::faction(448,-100); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 69333 => 1)) { ## Note from Xygoz

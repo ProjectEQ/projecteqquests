@@ -11,11 +11,11 @@ sub EVENT_ITEM {
  #Handin: 4x Explorer Survival Knife (8004)
  if(plugin::check_handin(\%itemcount, 8004 => 4)){
   quest::say("Great work, the Legion of Cabilis will not soon forget your dedication. The trespassers shall all be dealt with.");
-  quest::faction(193,10); # +Legion of Cabilis
-  quest::faction(30,10); # +Cabilis Residents
-  quest::faction(282,10); # +Scaled Mystics
-  quest::faction(62,10); # +Crusaders of Greenmist
-  quest::faction(317,10); # +Swifttails
+  quest::faction(441,10); # +Legion of Cabilis
+  quest::faction(440,10); # +Cabilis Residents
+  quest::faction(445,10); # +Scaled Mystics
+  quest::faction(442,10); # +Crusaders of Greenmist
+  quest::faction(444,10); # +Swifttails
   quest::exp(25);  
  }
   plugin::return_items(\%itemcount);

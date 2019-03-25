@@ -8,11 +8,11 @@ function event_trade(e)
 local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13071, item2 = 13071, item3 = 13071, item4 = 13071})) then --End of Exterminate the Vermin (Scripted By: Fatty Beerbelly)
 		e.self:Say('Nice work! Take these coins. Oh no, there are still more rodents! I better get to work. Farewell, friend!');
-		e.other:Faction(133,10); 
-		e.other:Faction(208,10); 
-		e.other:Faction(316,10);  
-		e.other:Faction(218,10); 
-		e.other:Faction(88,-10); 
+		e.other:Faction(263,10); 
+		e.other:Faction(286,10); 
+		e.other:Faction(355,10);  
+		e.other:Faction(292,10); 
+		e.other:Faction(334,-10); 
 		e.other:AddEXP(5);
 		e.other:GiveCash(1,1,1,0);
 	else

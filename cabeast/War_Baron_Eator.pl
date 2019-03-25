@@ -18,27 +18,27 @@ sub EVENT_ITEM {
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  if(plugin::check_handin(\%itemcount, 18463 => 1, 22918 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
      if (plugin::check_handin(\%itemcount, 12899 =>1, 12898 =>1, 12896 =>1, 5132 =>1 )) {
   quest::emote("gulps down a wad of phlegm.");
   quest::say("My memory has returned! Boneripper! You are no footman. I grant you the rank of soldier. Go and forge your weapon. Do not return to me until you become a [brave trooper of the empire].");
   quest::say("Find Drill Master Kyg to help you in this task?  [Footman Moglok] needs help.");    #not live text, link to 4th pike beginning
   quest::summonitem(12476);
-  quest::faction( 30,2);
-   quest::faction( 193,2);
-   quest::faction( 282,2);
-   quest::faction( 317,2);
-   quest::faction( 62,2);
+  quest::faction( 440,2);
+   quest::faction( 441,2);
+   quest::faction( 445,2);
+   quest::faction( 444,2);
+   quest::faction( 442,2);
    quest::ding();
    quest::exp(800);
 }
@@ -46,11 +46,11 @@ if (plugin::check_handin(\%itemcount, 18073 => 1, 18072 => 1, 18074 => 1, 5134 =
    quest::emote("takes away your pike and hands you plans not for a pike head, but for the crown of another polearm.");
   quest::say("It is time to wield the weapon of a [true warrior of the legion]. You have done well, Legionnaire $name!");
   quest::summonitem(12478);
-  quest::faction( 30,2);
-   quest::faction( 193,2);
-   quest::faction( 282,2);
-   quest::faction( 317,2);
-   quest::faction( 62,2);
+  quest::faction( 440,2);
+   quest::faction( 441,2);
+   quest::faction( 445,2);
+   quest::faction( 444,2);
+   quest::faction( 442,2);
    quest::ding();
    quest::exp(4000);
 }

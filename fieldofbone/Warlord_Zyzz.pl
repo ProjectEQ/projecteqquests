@@ -13,11 +13,11 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12650 => 4)){
    #Scorpion Pincers (END)
    quest::say("Magnificent!! The more pincers I get the lesser scorpions there are. Here. Take the bounty.");
-   quest::faction(193,5);  # +Legion of Cabilis
-   quest::faction(30,5);   # +Cabilis Residents
-   quest::faction(282,5);  # +Scaled Mystics
-   quest::faction(62,5);   # +Crusaders of Greenmist
-   quest::faction(317,5);  # +Swifttails
+   quest::faction(441,5);  # +Legion of Cabilis
+   quest::faction(440,5);   # +Cabilis Residents
+   quest::faction(445,5);  # +Scaled Mystics
+   quest::faction(442,5);   # +Crusaders of Greenmist
+   quest::faction(444,5);  # +Swifttails
    quest::givecash(4,2,0,0);
    quest::exp(10);  
   }

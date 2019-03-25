@@ -31,11 +31,11 @@ function event_trade(e)
 		repeat
 			e.self:Say("Mmmm. This smells delicious. Oh great!! No milk!! Don't you have any sense?! Just tell me the name of the bakery and I will run and get it myself. I am sure Lady Shae will be safe.");
 			e.other:Ding();
-			e.other:Faction(43,5,0); -- Clerics of Tunare
-			e.other:Faction(99,5,0); -- Faydark's Champions
-			e.other:Faction(178,5,0); -- King Tearis Thex
-			e.other:Faction(304,5,0); -- Soldiers of Tunare
-			e.other:Faction(63,-10,0); -- Crushbone Orcs
+			e.other:Faction(226,5,0); -- Clerics of Tunare
+			e.other:Faction(246,5,0); -- Faydark's Champions
+			e.other:Faction(279,5,0); -- King Tearis Thex
+			e.other:Faction(310,5,0); -- Soldiers of Tunare
+			e.other:Faction(234,-10,0); -- Crushbone Orcs
 			e.other:AddEXP(25);
 			muffin = muffin - 1;
 		until muffin == 0

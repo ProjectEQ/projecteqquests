@@ -24,11 +24,11 @@ sub EVENT_ITEM {
     quest::say("Thank you, that hit the spot!! Here is the spool, as promised."); #Real text still needed
     quest::summonitem(12111); #Dwarven Wire
     quest::exp(1000);
-    quest::faction(314,5); #Storm Guard
-    quest::faction(169,5); #Kazon Stormhammer
-    quest::faction(219,5); #Miners Guild 249
-    quest::faction(215,5); #Merchants of Kaladim
-    quest::faction(57,-5); #Craknek Warriors
+    quest::faction(312,5); #Storm Guard
+    quest::faction(274,5); #Kazon Stormhammer
+    quest::faction(293,5); #Miners Guild 249
+    quest::faction(290,5); #Merchants of Kaladim
+    quest::faction(232,-5); #Craknek Warriors
     if($ItemCount == 1) {
       quest::say('Hey!! Only one?!!');
     }
@@ -42,11 +42,11 @@ sub EVENT_ITEM {
       quest::say("Thank you, that hit the spot!! Here is the spool, as promised."); #Real text still needed
       quest::summonitem(12111); #Dwarven Wire
       quest::exp(1000);
-      quest::faction(314,5); #Storm Guard
-      quest::faction(169,5); #Kazon Stormhammer
-      quest::faction(219,5); #Miners Guild 249
-      quest::faction(215,5); #Merchants of Kaladim
-      quest::faction(57,-5); #Craknek Warriors
+      quest::faction(312,5); #Storm Guard
+      quest::faction(274,5); #Kazon Stormhammer
+      quest::faction(293,5); #Miners Guild 249
+      quest::faction(290,5); #Merchants of Kaladim
+      quest::faction(232,-5); #Craknek Warriors
       $ItemCount = 0;
     }
   }

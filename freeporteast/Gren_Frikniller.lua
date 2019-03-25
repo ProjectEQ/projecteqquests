@@ -17,11 +17,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13159})) then
 		e.self:Say(string.format("What's this? Oh, ol' Grandpa Frikniller's lucky necklace, huh? I'll bet this broken piece of junk won't even get me a sip of ale up at the bar. And lucky? How lucky could this thing be? Poor gramps was lonely and copperless his whole life. Bah!! Oh, well. Here's some coin for your efforts, thanks, %s.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(48,1,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(47,1,0); -- Coalition of Trade Folk
-		e.other:Faction(31,1,0); -- Carson McCabe
-		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,1,0); -- Freeport Militia
+		e.other:Faction(336,1,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(329,1,0); -- Carson McCabe
+		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,1,0); -- Freeport Militia
 		e.other:AddEXP(200);
 		e.other:GiveCash(6,1,0,0);
 	end

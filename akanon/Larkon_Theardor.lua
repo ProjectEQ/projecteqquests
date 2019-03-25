@@ -22,32 +22,32 @@ function event_trade(e)
 		e.self:Say("Fine work. You have earned the respect of the Library. Here is a small token of our appreciation. We shall have this ground down as soon as we find someone to go to Kaladim.");
 		e.other:AddEXP(100);
 		e.other:Ding();
-		e.other:Faction(91,10,0); 	-- eldritch collective
-		e.other:Faction(115,10,0); 	-- gem choppers
-		e.other:Faction(176,10,0); 	-- king ak'anon
-		e.other:Faction(71,-30,0); 	-- Dark reflection
-		e.other:Faction(322,-30,0); -- the dead
+		e.other:Faction(245,10,0); 	-- eldritch collective
+		e.other:Faction(255,10,0); 	-- gem choppers
+		e.other:Faction(333,10,0); 	-- king ak'anon
+		e.other:Faction(238,-30,0); 	-- Dark reflection
+		e.other:Faction(239,-30,0); -- the dead
 		e.other:GiveCash(6,1,2,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13271})) then -- Air Tight Box
 		e.self:Say("Ah! See? you weren't too afraid to get your hands dirty after all. Now go take a bath!");
 		e.other:AddEXP(100);
 		e.other:Ding();
-		e.other:Faction(91,10,0);	-- eldritch collective
-		e.other:Faction(115,10,0); 	-- gem choppers
-		e.other:Faction(176,10,0); 	-- king ak'anon
-		e.other:Faction(71,-30,0); 	-- Dark reflection
-		e.other:Faction(322,-30,0); -- the dead
+		e.other:Faction(245,10,0);	-- eldritch collective
+		e.other:Faction(255,10,0); 	-- gem choppers
+		e.other:Faction(333,10,0); 	-- king ak'anon
+		e.other:Faction(238,-30,0); 	-- Dark reflection
+		e.other:Faction(239,-30,0); -- the dead
 		e.other:GiveCash(6,1,2,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12160, item2 = 12160, item3 = 12160, item4 = 12160})) then -- Basilisk Tongue x 4
 		e.self:Say("Very very good! I can use these in some of our experiments. These tongues are hard to come by and more than a few of our scouts have been turned to stone because of these creatures, but I'm sure you found that out by now, eh?");
 		e.other:AddEXP(100);
 		e.other:Ding();
 		e.other:SummonItem(eq.ChooseRandom(15205,15211,15288,15310,15311,15313,15331,15050,15093,15315,15316,15058,15317,15318,15036,15094,15246,15322,15323,15325,15851,15324,15332,15400,15399,15398,15042,15613)); -- mage lvl 1-8 spells excluding pet item spells
-		e.other:Faction(91,10,0); 	-- eldritch collective
-		e.other:Faction(115,10,0); 	-- gem choppers
-		e.other:Faction(176,10,0); 	-- king ak'anon
-		e.other:Faction(71,-30,0); 	-- Dark reflection
-		e.other:Faction(322,-30,0); -- the dead
+		e.other:Faction(245,10,0); 	-- eldritch collective
+		e.other:Faction(255,10,0); 	-- gem choppers
+		e.other:Faction(333,10,0); 	-- king ak'anon
+		e.other:Faction(238,-30,0); 	-- Dark reflection
+		e.other:Faction(239,-30,0); -- the dead
 		e.other:GiveCash(6,1,5,1);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13272})) then -- Bozinite Pestle
 		e.self:Say("Outstanding " .. e.other:GetName() .. "!! This should be of help to you.");

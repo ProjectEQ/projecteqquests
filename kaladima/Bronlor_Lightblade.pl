@@ -38,9 +38,9 @@ sub EVENT_ITEM {
 		quest::say("I knew I was able to trust ye to help me rid the land of these nasty goblins! The Bloodforge Brigade salutes ye $name. Ye will be well known in our city for being the young one that helped rid our mountains of these goblins. Please take this as a symbol of your devotion to your faith and your God and return to me when ye are ready for yer next [task].");
 		# Summon: Initiate Symbol of Brell Serilis
 		quest::summonitem(1430);
-		quest::faction(44,10);   # +Clerics of Underfoot
-		quest::faction(169,10);  # +Kazon Stormhammer
-		quest::faction(219,10);  # +Miners Guild 249
+		quest::faction(227,10);   # +Clerics of Underfoot
+		quest::faction(274,10);  # +Kazon Stormhammer
+		quest::faction(293,10);  # +Miners Guild 249
 		quest::exp(25);
 	}
 	plugin::return_items(\%itemcount);

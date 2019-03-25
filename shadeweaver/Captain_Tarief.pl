@@ -54,19 +54,19 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30861 => 4)) { #Saurek Hopper Scales
     quest::say("Excellent work, $name. Please take this as a reward."); #generic text
     quest::summonitem(30870); #Hunting Leather Boots
-    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::faction(1513,10); #Guardians of Shar Vahl
     quest::exp(2500);
   }
   elsif (plugin::check_handin(\%itemcount, 30862 => 4)) { #Saurek Darkclaw Scales
     quest::say("Excellent work, $name. Please take this as a reward."); #generic text
     quest::summonitem(30867); #Hunting Leather Bracer
-    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::faction(1513,10); #Guardians of Shar Vahl
     quest::exp(2500);
   }
   elsif (plugin::check_handin(\%itemcount, 30863 => 4)) { #Saurek Shredder Scales
     quest::say("Excellent work, $name. Please take this as a reward."); #generic text
     quest::summonitem(30866); #Hunting Leather Sleeves
-    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::faction(1513,10); #Guardians of Shar Vahl
     quest::exp(2500);
   }
     #do all other handins first with plugin, then let it do disciplines

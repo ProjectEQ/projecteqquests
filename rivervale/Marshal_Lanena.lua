@@ -23,22 +23,22 @@ function event_trade(e)
 		e.self:Say("What was I thinking?!! Piranha are coming downstream and eating our supply of fish! We have never had a problem like this!!  Where are these little beasts coming from?  For now we must collect more. Take this bag. Collect enough teeth to fill the bag. Don't worry, if it takes a while I shall reward you with the [Rantho Rapier].  We will need to examine the teeth.");
 		e.other:SummonItem(17968);
 		e.other:Ding();
-		e.other:Faction(133,10,0);
-		e.other:Faction(208,10,0);
-		e.other:Faction(316,10,0);
-		e.other:Faction(218,10,0);
-		e.other:Faction(88,-10,0);
+		e.other:Faction(263,10,0);
+		e.other:Faction(286,10,0);
+		e.other:Faction(355,10,0);
+		e.other:Faction(292,10,0);
+		e.other:Faction(334,-10,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(0,1,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12155})) then
 		e.self:Say("Fine work. We shall continue to study these and shall determine if we need to seek the source.");
 		e.other:SummonItem(5423);
 		e.other:Ding();
-		e.other:Faction(133,15,0);
-		e.other:Faction(208,15,0);
-		e.other:Faction(316,15,0);
-		e.other:Faction(218,15,0);
-		e.other:Faction(88,-20,0);
+		e.other:Faction(263,15,0);
+		e.other:Faction(286,15,0);
+		e.other:Faction(355,15,0);
+		e.other:Faction(292,15,0);
+		e.other:Faction(334,-20,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(0,1,0,0);
 	end

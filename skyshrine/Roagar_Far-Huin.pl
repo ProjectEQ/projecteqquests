@@ -72,9 +72,9 @@ sub EVENT_ITEM {
       quest::emote("smiles wildly as he hands you your reward.");
       quest::say("Well done, $name.");
       quest::exp(175000);
-      quest::faction(42,30); # CoV
-      quest::faction(362,30); # Yelinak
-      quest::faction(189,-60); # Kromzek
+      quest::faction(430,30); # CoV
+      quest::faction(436,30); # Yelinak
+      quest::faction(448,-60); # Kromzek
    }
    else {
       quest::say("I do not know you well enough to entrust such an item to you, yet.");

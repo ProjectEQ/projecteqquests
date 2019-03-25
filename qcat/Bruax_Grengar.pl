@@ -52,10 +52,10 @@ sub EVENT_ITEM {
     quest::summonitem(20264);
     quest::exp(100);
     quest::ding();
-    quest::faction(21,1);
-    quest::faction(135,-1);
-    quest::faction(235,1);
-    quest::faction(257,-1);
+    quest::faction(221,1);
+    quest::faction(262,-1);
+    quest::faction(296,1);
+    quest::faction(341,-1);
   }
   plugin::return_items(\%itemcount);
 }

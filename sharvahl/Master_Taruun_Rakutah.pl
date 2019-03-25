@@ -54,7 +54,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 29825 => 1)) { #Shadowscream Boot Case
     quest::emote("inspects the boots for a moment and looks you square in the eyes. 'This is excellent work, $name, you do not disappoint! Would that you could outfit all of my hunters with these boots, but I must not keep your talents all to myself. Take some change for your troubles and this seal back to Barkhem - let him know that I am very impressed with his new protege.'");
-    quest::faction(132,10); #Guardians of Shar Vahl
+    quest::faction(1513,10); #Guardians of Shar Vahl
     quest::exp(500);
     quest::summonitem(29826); #Rakutah's Seal
   }

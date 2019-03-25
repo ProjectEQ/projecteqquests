@@ -43,10 +43,10 @@ function event_trade(e)
 		e.self:Say("These are exactly what I needed! Its for sure that I have a lot to learn about Smithing but low and behold I was able to create this fine blade out of my remaining materials. Please carry it with you as a symbol of my gratitude. Rodcet smiles down upon you young " .. e.other:GetName() .. ", you have done well.");
 		e.other:SummonItem(27490);
 		e.other:Ding();
-		e.other:Faction(183,3,0);
-		e.other:Faction(21,-3,0);
-		e.other:Faction(257,3,0);
-		e.other:Faction(135,3,0);
+		e.other:Faction(280,3,0);
+		e.other:Faction(221,-3,0);
+		e.other:Faction(341,3,0);
+		e.other:Faction(262,3,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

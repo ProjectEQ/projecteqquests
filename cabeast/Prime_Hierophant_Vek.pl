@@ -29,8 +29,8 @@ sub EVENT_ITEM {
 		quest::say("Welcome, young petitioner. You have been summoned to this temple to join with the Scaled Mystics. Ours is the way of pain and suffering. Here is the weapon of a petitioner. Through you the power of our ancestors shall flow. As your wisdom grows, so shall your power. Someday you may be a vessel for the supreme might of the ancients. Seek knowldege with Oxyn, he is here to help you. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(5140); #Iron Cudgel of the Petitioner
 		quest::ding();
-		quest::faction(282,100); #Scaled Mystics
-		quest::faction(193,25); #Legion of Cabilis
+		quest::faction(445,100); #Scaled Mystics
+		quest::faction(441,25); #Legion of Cabilis
 		quest::exp(100);
 	}
 	elsif(plugin::check_handin(\%itemcount, 18462 => 1, 22917 => 1)){
@@ -38,16 +38,16 @@ sub EVENT_ITEM {
 		quest::summonitem(7881);
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(317,20);
-		quest::faction(193,10);
+		quest::faction(444,20);
+		quest::faction(441,10);
 	}
 	elsif(plugin::check_handin(\%itemcount, 18359 => 1, 22916 => 1)){
 		quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
 		quest::summonitem(7881);
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(317,20);
-		quest::faction(193,10);
+		quest::faction(444,20);
+		quest::faction(441,10);
 	}
 	elsif (plugin::check_handin(\%itemcount, 14790 =>1 )) {
 		quest::emote("stares down at the note, confused, until he recognizes the writing and gasps in shock!");

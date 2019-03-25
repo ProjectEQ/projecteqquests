@@ -20,8 +20,8 @@ sub EVENT_ITEM {
     quest::say("These will be no more threat.  Take this, $name.");#text made up
     quest::exp(1750000);#1% of Level 51 xp
     quest::summonitem(55240);#Enchanted Lava Spider Blood
-    quest::faction(341, 10);#Tribe Vrodak
-    quest::faction(120, -30);#Goblins of Fire Peak
+    quest::faction(1732, 10);#Tribe Vrodak
+    quest::faction(258, -30);#Goblins of Fire Peak
   }
   plugin::return_items(\%itemcount);
 }#Done

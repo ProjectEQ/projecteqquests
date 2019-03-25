@@ -13,9 +13,9 @@ end
 	if(item_lib.check_turn_in(e.trade, {item1 = 31825})) then
 		e.self:Say("You have my gratitude, " .. e.other:GetName() .. "! This will make a valuable addition to our historical volumes and perhaps offer some insight into the workings of Kobold society.");
 		e.other:Ding();
-		e.other:Faction(211,5,0);
-		e.other:Faction(145,5,0);
-		e.other:Faction(147,5,0);
+		e.other:Faction(289,5,0);
+		e.other:Faction(266,5,0);
+		e.other:Faction(267,5,0);
 		e.other:AddEXP(1500);
 		e.other:GiveCash(50,0,0,0);
 	end

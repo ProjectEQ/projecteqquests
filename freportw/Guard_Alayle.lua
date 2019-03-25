@@ -15,10 +15,10 @@ function event_trade(e)
 			e.other:SummonItem(18818); -- A Tattered Flier
 			e.other:Ding();
 			e.other:Faction(311,1,0); -- Steel Warriors
-			e.other:Faction(135,1,0); -- Guards of Qeynos
-			e.other:Faction(53,-1,0); -- Corrupt Guards of Qeynos
-			e.other:Faction(105,-1,0); -- Freeport Militia
-			e.other:Faction(184,1,0); -- Knights of Truth
+			e.other:Faction(262,1,0); -- Guards of Qeynos
+			e.other:Faction(230,-1,0); -- Corrupt Guards of Qeynos
+			e.other:Faction(330,-1,0); -- Freeport Militia
+			e.other:Faction(281,1,0); -- Knights of Truth
 			eq.unique_spawn(9143,87,0,-154,-55,-10,256); -- spawns Krazen Loosh
 		end
 	end

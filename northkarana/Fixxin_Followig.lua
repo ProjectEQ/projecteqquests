@@ -21,10 +21,10 @@ function event_trade(e)
 		e.self:Say(string.format("thanks %s heartily. 'Here is the book as promised. I wish you luck with your enchanted weapons. May they slay many lycanthropes before they go dull.'",e.other:GetName()));
 		e.other:SummonItem(18178);
 		e.other:Ding();
-		e.other:Faction(167,10,0); -- karana residents
-		e.other:Faction(135,10,0); -- guards of qeynos
-		e.other:Faction(257,10,0); -- priests of life
-		e.other:Faction(183,10,0); -- knights of thunder
+		e.other:Faction(345,10,0); -- karana residents
+		e.other:Faction(262,10,0); -- guards of qeynos
+		e.other:Faction(341,10,0); -- priests of life
+		e.other:Faction(280,10,0); -- knights of thunder
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

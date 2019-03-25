@@ -17,7 +17,7 @@ sub EVENT_ITEM {
 		quest::say("You have proven yourself a hero of our cause, and so I entrust you with this information: the poachers have set up an outpost in the caves on the outskirts of the thicket. Go and wreak havoc upon this deplorable filth that has mistreated our friends. As a badge of the honor you have earned, construct a champion's robe and have the High Priestess Bast bless it for you. The ceremony will require three drops of the blood of those who would bring harm to the felidae. It will be the High Priestess's honor to receive you.");
 		quest::summonitem(30854);#Hero's Shroud, giving it back
 		quest::summonitem(30855);#Champion Cape Pattern
-		quest::faction(132, 10);#Guardians of Shar Vahl faction
+		quest::faction(1513, 10);#Guardians of Shar Vahl faction
 	}
   	
 		plugin::return_items(\%itemcount);

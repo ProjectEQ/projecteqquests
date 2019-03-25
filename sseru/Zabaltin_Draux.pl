@@ -18,13 +18,13 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 29863 => 1)) {
     quest::say("Ha! His gaudy ring! You have done well young rogue. Perhaps you would be an asset to the Eye after all. You can have his nasty ring back, I am sure that it is worthless. Darn thing weighs as much as a Netherbian and is twice as ugly!");
     quest::summonitem(29864);
-    quest::faction(96,10); #eye of seru
-    quest::faction(139,10); #hand of seru
-    quest::faction(142,10); #heart of seru
-    quest::faction(284,10); #seru
-    quest::faction(141,-30); #haven smugglers
-    quest::faction(350,-30); #validus custodus
-    quest::faction(206,-30); #magus conlegium
+    quest::faction(1485,10); #eye of seru
+    quest::faction(1484,10); #hand of seru
+    quest::faction(1486,10); #heart of seru
+    quest::faction(1483,10); #seru
+    quest::faction(1542,-30); #haven smugglers
+    quest::faction(1503,-30); #validus custodus
+    quest::faction(1504,-30); #magus conlegium
   }
   plugin::return_items(\%itemcount);
 }

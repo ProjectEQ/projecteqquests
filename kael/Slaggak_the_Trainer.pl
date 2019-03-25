@@ -54,10 +54,10 @@ sub EVENT_ITEM {
 
     quest::say("You are truly a worthy little $race. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.");
 
-    quest::faction(188, 20);  # +Kromrif
-    quest::faction(189, 20);  # +Kromzek
-    quest::faction(49, -60);  # -Coldain
-    quest::faction(42, -60);  # -Claws of Veeshan
+    quest::faction(419, 20);  # +Kromrif
+    quest::faction(448, 20);  # +Kromzek
+    quest::faction(406, -60);  # -Coldain
+    quest::faction(430, -60);  # -Claws of Veeshan
     
     quest::exp(100);
 

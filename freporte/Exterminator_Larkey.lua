@@ -10,10 +10,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13071,item2 = 13071,item3 = 13071,item4 = 13071})) then
 		e.self:Say(string.format("I knew I could count on you %s, here is a little something for you.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(105,10,0);
-		e.other:Faction(48,10,0);
-		e.other:Faction(184,-10,0);
-		e.other:Faction(258,-10,0);
+		e.other:Faction(330,10,0);
+		e.other:Faction(336,10,0);
+		e.other:Faction(281,-10,0);
+		e.other:Faction(362,-10,0);
 		e.other:AddEXP(50);
 		e.other:GiveCash(1,1,1,0);
 	end

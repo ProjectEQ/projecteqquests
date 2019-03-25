@@ -26,11 +26,11 @@ function event_trade(e)
 		repeat
 			e.self:Say("Well done! We could really use the extra help around here.");
 			e.other:Ding();
-			e.other:Faction(149,4,0);
-			e.other:Faction(31,4,0);
-			e.other:Faction(214,4,0);
-			e.other:Faction(53,4,0);
-			e.other:Faction(105,4,0);
+			e.other:Faction(332,4,0);
+			e.other:Faction(329,4,0);
+			e.other:Faction(331,4,0);
+			e.other:Faction(230,4,0);
+			e.other:Faction(330,4,0);
 			e.other:AddEXP(30);
 			e.other:GiveCash(3,3,4,0);
 			ear = ear - 1;

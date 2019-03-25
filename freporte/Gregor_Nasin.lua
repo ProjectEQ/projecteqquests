@@ -28,11 +28,11 @@ function event_trade(e)
 		e.self:Say("Now I have every ingredient mentioned in the Barkeep Compendium. Here. You take it. <..click!.> Whoops!! I just closed it. It's magically sealed, I never closed it before. It's useless to you. I have no need for it any longer. Maybe you can return it to [Clurg] for some type of reward.");
 		e.other:SummonItem(13379); -- Barkeep Compendium
 		e.other:Ding();
-		e.other:Faction(48,1,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(47,1,0); -- Coalition of Trade Folk
-		e.other:Faction(31,1,0); -- Carson McCabe
-		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,1,0); -- Freeport Militia
+		e.other:Faction(336,1,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(329,1,0); -- Carson McCabe
+		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,1,0); -- Freeport Militia
 		e.other:AddEXP(200);
 		e.other:GiveCash(0,0,0,2);
 	end

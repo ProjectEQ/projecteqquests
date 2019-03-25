@@ -44,7 +44,7 @@ function event_trade(e)
 		e.other:SummonItem(10604);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10639})) then
 		e.self:Say("The path you trod was long and hard. Now you are worthy to bear the Serpent. Use it well.");
-		e.other:Faction(342,30);
+		e.other:Faction(404,30);
 		e.other:AddEXP(1500000);
 		e.other:SummonItem(10650);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 54267})) then

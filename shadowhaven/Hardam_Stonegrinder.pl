@@ -41,8 +41,8 @@ sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 5986 => 1)) { # Hardams Custom Helm
    
    quest::say("Ah, what a pleasant surprise indeed it seems my Helm is done! Many thanks for all your help once again Xeiko. And safe travels to you.");
-   quest::faction(154,5); # House of Stout
-   quest::faction(338,5); # Traders of the Haven
+   quest::faction(1512,5); # House of Stout
+   quest::faction(1508,5); # Traders of the Haven
    quest::exp(200);
    quest::ding();
    

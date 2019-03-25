@@ -15,11 +15,11 @@ function event_trade(e)
 		e.self:Say("Commendable work, you have proven yourself a valuable member of our order. Our chanters have summoned the avatar of Dread. Hurry and take him this mundane shield so that he may forge it into a truly valuable symbol of your devotion to the lord of Fear!");
 		e.other:SummonItem(14105);
 		e.other:Ding();
-		e.other:Faction(143,400,0);
-		e.other:Faction(79,-400,0);
-		e.other:Faction(112,-400,0);
-		e.other:Faction(56,-400,0);
-		e.other:Faction(60,-400,0);
+		e.other:Faction(265,400,0);
+		e.other:Faction(242,-400,0);
+		e.other:Faction(254,-400,0);
+		e.other:Faction(231,-400,0);
+		e.other:Faction(233,-400,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(9),math.random(9),math.random(9),math.random(9));
 		eq.unique_spawn(75164,0,0,474,1230,-37,256); -- spawn avatar of dread

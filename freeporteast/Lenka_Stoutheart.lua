@@ -27,20 +27,20 @@ function event_trade(e)
 		e.self:Say("Oh!! You must work for that Erudite named Palatos. I guess he won't have to spend anymore money drinking in Freeport. Here. Here is the portrait I kept until he could get me a new boat beacon.");
 		e.other:SummonItem(12146); -- A'kanon's Portrait
 		e.other:Ding();
-		e.other:Faction(361,1,0);
-		e.other:Faction(294,1,0);
-		e.other:Faction(143,1,0);
-		e.other:Faction(147,1,0);
+		e.other:Faction(320,1,0);
+		e.other:Faction(327,1,0);
+		e.other:Faction(265,1,0);
+		e.other:Faction(267,1,0);
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13814})) then -- L.S. Pouch
 		e.self:Say("You found my pouch! Thanks kid. Let me buy you A drink and this is for the good work. Hmmmm. It looks as though they took my voucher. Darn it! Hey... It looks like they were using my bag to hold items they were stealing. Here you go. You can have it. It looks like junk.");
 		e.other:SummonItem(eq.ChooseRandom(13922,13923)); -- Snapped Pole or Moggok's Right Eye
 		e.other:Ding();
-		e.other:Faction(361,2,0);
-		e.other:Faction(294,2,0);
-		e.other:Faction(213,2,0);
+		e.other:Faction(320,2,0);
+		e.other:Faction(327,2,0);
+		e.other:Faction(328,2,0);
 		e.other:Faction(311,2,0);
-		e.other:Faction(275,-2,0);
+		e.other:Faction(305,-2,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(0,2,0,0);
 	end

@@ -10,11 +10,11 @@ sub EVENT_SAY {
     quest::say("Thank you, $name.  Here is your reward.");
     quest::exp(50);
     quest::givecash(0,5,0,0);
-    quest::faction( 30,3 );
-    quest::faction( 193,3 );
-    quest::faction( 62,3 );
-    quest::faction( 317,3 );
-    quest::faction( 282,3 );
+    quest::faction( 440,3 );
+    quest::faction( 441,3 );
+    quest::faction( 442,3 );
+    quest::faction( 444,3 );
+    quest::faction( 445,3 );
    
   }
 }

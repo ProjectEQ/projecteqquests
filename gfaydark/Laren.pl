@@ -20,7 +20,7 @@ sub EVENT_ITEM {
   if($faction == 1) { #Requires ally faction
     if(plugin::check_handin(\%itemcount, 12186 => 1)) { #Half Elf Head
       quest::say("You have proven yourself to be a worthy Scout of Tunare and as such you are worthy to hold the hilt of a scout blade. Remember, rogues in class are we, but in our chests beats the heart of the forest. Our skills are used in defense of Kelethin and her allies. Next you shall speak to Master Tylfon. He will inform you of the [scout silvermesh leggings].");
-      quest::faction(283,10); #Scouts of Tunare
+      quest::faction(316,10); #Scouts of Tunare
       quest::exp(20000);
       quest::givecash(0,0,28,0); #Gold x 28
       quest::summonitem(7321); #Scouts Blade

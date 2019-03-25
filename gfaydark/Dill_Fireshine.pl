@@ -28,11 +28,11 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(5047,5048,7032)); #Tarnished Scimitar, Tarnished Bastard Sword, Cast-Iron Rapier
     my %cash = plugin::RandomCash(10,20); #1sp ~ 2sp
     quest::givecash($cash{copper},$cash{silver},0,0); #Random cash reward
-    quest::faction(99,3);  #Faydark's Champions
-    quest::faction(178,3); #King Tearis Thex
-    quest::faction(43,3);  #Clerics of Tunare
-    quest::faction(304,3); #Soldiers of Tunare
-    quest::faction(63,-6); #Crushbone Orcs
+    quest::faction(246,3);  #Faydark's Champions
+    quest::faction(279,3); #King Tearis Thex
+    quest::faction(226,3);  #Clerics of Tunare
+    quest::faction(310,3); #Soldiers of Tunare
+    quest::faction(234,-6); #Crushbone Orcs
   }
   elsif(plugin::check_handin(\%itemcount, 12108 => 1)) { #Orc Hatchet
     quest::say("I expect to receive TWO orc hatchets.");
@@ -43,22 +43,22 @@ sub EVENT_ITEM {
     quest::summonitem(8003); #Longbow
     my %cash = plugin::RandomCash(900,2000); #9gp ~ 2pp
     quest::givecash($cash{copper},$cash{silver},$cash{gold},$cash{platinum}); #Random Cash Reward
-    quest::faction(99,3);  #Faydark's Champions
-    quest::faction(178,3); #King Tearis Thex
-    quest::faction(43,3);  #Clerics of Tunare
-    quest::faction(304,3); #Soldiers of Tunare
-    quest::faction(63,-6); #Crushbone Orcs
+    quest::faction(246,3);  #Faydark's Champions
+    quest::faction(279,3); #King Tearis Thex
+    quest::faction(226,3);  #Clerics of Tunare
+    quest::faction(310,3); #Soldiers of Tunare
+    quest::faction(234,-6); #Crushbone Orcs
   }
   elsif (plugin::check_handin(\%itemcount, 13226 => 1)) { #Runner Pouch
     quest::say("Good work. We shall cut off correspondence between these two. It is for the best. Remember, if you find any notes to Neriak from the ambassador in Crushbone, give them to me.");
     quest::summonitem(2140); #Raw-hide Tunic
     my %cash = plugin::RandomCash(900,2000); #9gp ~ 2pp
     quest::givecash($cash{copper},$cash{silver},$cash{gold},$cash{platinum}); #Random Cash Reward
-    quest::faction(99,3);  #Faydark's Champions
-    quest::faction(178,3); #King Tearis Thex
-    quest::faction(43,3);  #Clerics of Tunare
-    quest::faction(304,3); #Soldiers of Tunare
-    quest::faction(63,-6); #Crushbone Orcs
+    quest::faction(246,3);  #Faydark's Champions
+    quest::faction(279,3); #King Tearis Thex
+    quest::faction(226,3);  #Clerics of Tunare
+    quest::faction(310,3); #Soldiers of Tunare
+    quest::faction(234,-6); #Crushbone Orcs
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Ranger');

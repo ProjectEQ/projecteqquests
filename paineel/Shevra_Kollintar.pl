@@ -15,11 +15,11 @@ sub EVENT_ITEM {
 		quest::say("Ah, excellent work.  I certainly had my doubts about you, $name.  Wear this well.");
 		quest::ding();
 		quest::summonitem(quest::ChooseRandom(3040,3042,3043,3044,3046,3047,3048,3049,3050,3051)); #random blackened iron
-		quest::faction(143,5);  #Heretics
-		quest::faction(79,-5);  #Deepwater Knights
-		quest::faction(112,-5); #Gate Callers
-		quest::faction(56,-5);  #Craftkeepers
-		quest::faction(60,-5);  #Crimson Hands
+		quest::faction(265,5);  #Heretics
+		quest::faction(242,-5);  #Deepwater Knights
+		quest::faction(254,-5); #Gate Callers
+		quest::faction(231,-5);  #Craftkeepers
+		quest::faction(233,-5);  #Crimson Hands
                 quest::exp(250);
 	}
 	#do all other handins first with plugin, then let it do disciplines

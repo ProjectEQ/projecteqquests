@@ -67,12 +67,12 @@ sub EVENT_ITEM {
     return 1;
   }
   quest::say("Excellent work, $name. We will study the architecture of these weapons to better the legions of Cabilis. Soon your name will be known among the Iksar.");
-  quest::faction(318,10); #syrik iceblood
-  quest::faction(193,10); #legion of cabilis
-  quest::faction(30,10); #cabilis residents
-  quest::faction(282,10); #scaled mystics
-  quest::faction(62,10); #crusaders of greenmist
-  quest::faction(317,10); #swift tails
+  quest::faction(1725,10); #syrik iceblood
+  quest::faction(441,10); #legion of cabilis
+  quest::faction(440,10); #cabilis residents
+  quest::faction(445,10); #scaled mystics
+  quest::faction(442,10); #crusaders of greenmist
+  quest::faction(444,10); #swift tails
   quest::exp(50000);
   quest::givecash(0,6,12,12);
 }

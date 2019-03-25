@@ -5,10 +5,10 @@ function event_trade(e)
 		e.self:Say("Mmmm.. I feel much warmer. Thank you. You should now find Bryndin McMill. He could use a swig also. I saw him hanging around two other guards.");
 		e.other:SummonItem(13242); -- 3/4 Full Bottle of Elixir
 		e.other:Ding();
-		e.other:Faction(213,1,0); -- Merchants of Halas
-		e.other:Faction(294,1,0); -- Shaman of Justice
+		e.other:Faction(328,1,0); -- Merchants of Halas
+		e.other:Faction(327,1,0); -- Shaman of Justice
 		e.other:Faction(311,1,0); -- Steel Warriors
-		e.other:Faction(361,1,0); -- Wolves of the North
+		e.other:Faction(320,1,0); -- Wolves of the North
 		e.other:AddEXP(150);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

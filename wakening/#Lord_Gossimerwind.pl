@@ -21,7 +21,7 @@ sub EVENT_ITEM {
       # Made text up
       quest::say("Good, ze Foreman iz dead and now we will be left in peazz.  Take diz az a zign of my friendship.");
       quest::summonitem(24868);
-      quest::faction(344, 30); # +Tunarean Court
+      quest::faction(449, 30); # +Tunarean Court
       quest::exp(100);
     }
     else {

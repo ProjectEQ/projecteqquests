@@ -44,11 +44,11 @@ function event_trade(e)
 	if(moredrinks == 4) then
 		e.self:Say("BWAH hah hah! I knew you wasn't the loser you.. <gulp>.. <gulp>.. appear to be! I will have to tell [Kane].. <burp>.. all about you. Maybe get you in the gang!");
 		e.other:Ding();
-		e.other:Faction(33,2,0);
-		e.other:Faction(217,-2,0);
-		e.other:Faction(53,2,0);
-		e.other:Faction(135,-2,0);
-		e.other:Faction(164,2,0);
+		e.other:Faction(223,2,0);
+		e.other:Faction(291,-2,0);
+		e.other:Faction(230,2,0);
+		e.other:Faction(262,-2,0);
+		e.other:Faction(273,2,0);
 		e.other:AddEXP(200);	
 	end
 	drinks = 0;

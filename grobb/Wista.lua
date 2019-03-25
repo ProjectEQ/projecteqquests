@@ -15,7 +15,7 @@ function event_trade(e)
 		e.self:Say("Deez berry gud. Makes berry good suff. Me berry happy. Yous gets more bring dem ta mees. Yous takes dis and tanks fer da meats.");
 		e.other:Ding();
 		e.other:SummonItem(17004);
-		e.other:Faction(131,10,0);  -- +Grobb Merchants
+		e.other:Faction(376,10,0);  -- +Grobb Merchants
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

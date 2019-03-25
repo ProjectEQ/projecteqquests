@@ -25,8 +25,8 @@ sub EVENT_ITEM {
   if(($itemcount{10548} == 1) && ($itemcount{10549} == 1) && ($itemcount{10550} == 1) && ($itemcount{6048} == 1)) {
     quest::say("Well done, $name. Now I will craft your Staff of Temperate Flux, as promised.");
     quest::summonitem(6342);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -34,8 +34,8 @@ sub EVENT_ITEM {
   if(($itemcount{10551} == 1) && ($itemcount{6338} == 1) && ($itemcount{10557} == 1) && ($itemcount{14364} == 1)) {
     quest::say("Well done, $name. Now I will craft your Weeping Wand, as promised.");
     quest::summonitem(6341);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -43,8 +43,8 @@ sub EVENT_ITEM {
   if(($itemcount{10034} == 2) && ($itemcount{10000} == 1)) {
     quest::say("Ahh, Genni must have sent you to me.  Very well, here is your Lambent Sapphire.");
     quest::summonitem(10119);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 }

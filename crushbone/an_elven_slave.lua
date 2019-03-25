@@ -17,8 +17,8 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20020})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(170,1,0);
-			e.other:Faction(178,1,0);
+			e.other:Faction(275,1,0);
+			e.other:Faction(279,1,0);
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -35,8 +35,8 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20021})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(170,1,0);
-			e.other:Faction(178,1,0);
+			e.other:Faction(275,1,0);
+			e.other:Faction(279,1,0);
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -53,9 +53,9 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20018})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(99,1,0);
-			e.other:Faction(174,1,0);
-			e.other:Faction(212,1,0);
+			e.other:Faction(246,1,0);
+			e.other:Faction(276,1,0);
+			e.other:Faction(325,1,0);
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -72,9 +72,9 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20019})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(99,1,0);
-			e.other:Faction(174,1,0);
-			e.other:Faction(212,1,0);
+			e.other:Faction(246,1,0);
+			e.other:Faction(276,1,0);
+			e.other:Faction(325,1,0);
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();

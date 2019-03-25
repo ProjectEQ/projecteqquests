@@ -13,10 +13,10 @@ function event_trade(e)
 		e.self:Say("May the Rainkeeper keep you safe. I thank you. Here is the empty chalice. By the way, inform your superior that the operations of the [Karana bandits] are getting closer to Qeynos.");
 		e.other:SummonItem(12104);
 		e.other:Ding();
-		e.other:Faction(167,1,0);
-		e.other:Faction(183,1,0);
-		e.other:Faction(135,1,0);
-		e.other:Faction(257,1,0);
+		e.other:Faction(345,1,0);
+		e.other:Faction(280,1,0);
+		e.other:Faction(262,1,0);
+		e.other:Faction(341,1,0);
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

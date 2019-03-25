@@ -36,31 +36,31 @@ function event_trade(e)
 		e.other:SummonItem(13572); -- Dirty Training Tunic*
 		e.other:Ding();
 		e.other:Faction(311,100,0); -- Steel Warriors
-		e.other:Faction(135,20,0); -- Guard of Qeynos
-		e.other:Faction(53,-15,0); -- Corrupted Qeynos Guard
-		e.other:Faction(105,-15,0); -- The Freeport Militia
-		e.other:Faction(184,20,0); -- Knight of Truth
+		e.other:Faction(262,20,0); -- Guard of Qeynos
+		e.other:Faction(230,-15,0); -- Corrupted Qeynos Guard
+		e.other:Faction(330,-15,0); -- The Freeport Militia
+		e.other:Faction(281,20,0); -- Knight of Truth
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13423})) then
 		e.self:Say("The map!! It is all blurred. The ink has run. I shall never be able to decipher it now. Still, I owe you for completion of your mission. May these be of assistance. It is always good for a warrior to be well supplied.");
 		e.other:SummonItem(5082);
 		e.other:Ding();
-		e.other:Faction(135,1,0);
-		e.other:Faction(184,1,0);
+		e.other:Faction(262,1,0);
+		e.other:Faction(281,1,0);
 		e.other:Faction(311,1,0);
-		e.other:Faction(53,-5,0);
-		e.other:Faction(105,-5,0);
+		e.other:Faction(230,-5,0);
+		e.other:Faction(330,-5,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,3,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13424, item2 =13424, item3 = 13424,item4 = 13424})) then
 		e.self:Say("Incredible!! Such grand tones. It shall make a fine rug. You have shown me that you cannot always judge a book by its cover. You are quite skilled. Would you like to perform a [dangerous task] for me?");
 		e.other:SummonItem(eq.ChooseRandom(2101,2102,2103,2104,2105,2106,2107,2108,2109,2110,2111,2112));
 		e.other:Ding();
-		e.other:Faction(135,1,0);
-		e.other:Faction(184,1,0);
+		e.other:Faction(262,1,0);
+		e.other:Faction(281,1,0);
 		e.other:Faction(311,1,0);
-		e.other:Faction(53,-5,0);
-		e.other:Faction(105,-5,0);
+		e.other:Faction(230,-5,0);
+		e.other:Faction(330,-5,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,4,0,0);
 	end

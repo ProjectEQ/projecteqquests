@@ -28,7 +28,7 @@ quest::summonitem(17076); }
 if (plugin::check_handin(\%itemcount, 5541 => 1)) {
 quest::say("Thank you very much! I was almost out of these eyes and I'm sure you'll agree they aren't easy to come by. Your assistance will not go unnoticed. Here is the blessing I promised you. Take this token to Spiritualist Fehril along with your recruits cloak, and your wonderful new buckler. He'll know that I send you with my blessing. Take care and may the spirits guide you, young Dar Khura.");
 quest::summonitem(5542);
-quest::faction(68,10);
+quest::faction(1533,10);
 quest::exp(3500); }
 
 plugin::return_items(\%itemcount);

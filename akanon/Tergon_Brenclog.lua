@@ -30,30 +30,30 @@ function event_trade(e)
 		e.self:Say("So, you have survived. There is no doubt in my mind that you achieved this solely with your own powers. Only a dim one requires the assistance of others. Take this. May it help you in your pursuit of greatness. [Further tasks] may bring you to that point.");
 		e.other:SummonItem(15058);
 		e.other:SummonItem(eq.ChooseRandom(15400,15397,15399,15398,15317,15058));
-		e.other:Faction(91,3,0);
-		e.other:Faction(71,-3,0);
-		e.other:Faction(322,-3,0);
-		e.other:Faction(115,3,0);
-		e.other:Faction(176,3,0);
+		e.other:Faction(245,3,0);
+		e.other:Faction(238,-3,0);
+		e.other:Faction(239,-3,0);
+		e.other:Faction(255,3,0);
+		e.other:Faction(333,3,0);
 		e.other:Ding();
 		e.other:AddEXP(150);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13387})) then
 		e.self:Say("Thank you " .. e.other:GetName() .. ". I had no doubt you would fulfill my will and return my spellbook.. here is your reward for such effort. Now I have news of a larger matter. It has to do with a [defector].");
-		e.other:Faction(91,3,0);
-		e.other:Faction(71,-3,0);
-		e.other:Faction(322,-3,0);
-		e.other:Faction(115,3,0);
-		e.other:Faction(176,3,0);
+		e.other:Faction(245,3,0);
+		e.other:Faction(238,-3,0);
+		e.other:Faction(239,-3,0);
+		e.other:Faction(255,3,0);
+		e.other:Faction(333,3,0);
 		e.other:Ding();
 		e.other:AddEXP(150);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13388})) then
 		e.self:Say("Excellent work, " .. e.other:GetName() .. ". It's unfortunate this had to be done, but we cannot allow our secrets to fall into the hands of others.");
 		e.other:SummonItem(17502); -- elemental grimoire
-		e.other:Faction(91,3,0);
-		e.other:Faction(71,-3,0);
-		e.other:Faction(322,-3,0);
-		e.other:Faction(115,3,0);
-		e.other:Faction(176,3,0);
+		e.other:Faction(245,3,0);
+		e.other:Faction(238,-3,0);
+		e.other:Faction(239,-3,0);
+		e.other:Faction(255,3,0);
+		e.other:Faction(333,3,0);
 		e.other:Ding();
 		e.other:AddEXP(300);
 	end

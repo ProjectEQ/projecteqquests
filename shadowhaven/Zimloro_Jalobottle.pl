@@ -16,14 +16,14 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 4759 => 1)) {
     quest::say("You did it, $name! Finally I can finish these potions that I have been working on for such a long time. I will surely tell all of my friends of your willingness to help me!");
-    quest::faction(154,10); #house of stout
-    quest::faction(338,10); #traders of the haven
+    quest::faction(1512,10); #house of stout
+    quest::faction(1508,10); #traders of the haven
   }
   if (plugin::check_handin(\%itemcount, 4765 => 1)) {
     quest::say("Ah, of course, the antidote supplies I have been waiting for from Daksins. I hope he is ok, we all told him it was not wise to go out to the cursed mountains alone. I thank you for bringing me these supplies because Daksins was unable too. There have been many reports lately of people receiving the disease carried by the beasts you encountered. Should you come across these extracts in the future bring them to me if you like. Thank you again, your actions will not go unnoticed.");
     quest::exp(5000);
-    quest::faction(154,10); #house of stout
-    quest::faction(338,10); #traders of the haven
+    quest::faction(1512,10); #house of stout
+    quest::faction(1508,10); #traders of the haven
   }
   plugin::return_items(\%itemcount);
 }

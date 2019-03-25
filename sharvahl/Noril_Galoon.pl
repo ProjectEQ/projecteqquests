@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::say("Great work $name.  Thanks for the tools to finish your upgrade.  Here is your new shield.  Take your buckler, cloak and sword back to Armsman Khaigesh and show him the progress you have made.");
     quest::summonitem(5550);
     quest::exp(2000);
-    quest::faction( 132,10 );
+    quest::faction( 1513,10 );
   }
   plugin::return_items(\%itemcount);
 }

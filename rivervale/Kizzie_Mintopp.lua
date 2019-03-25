@@ -29,11 +29,11 @@ function event_trade(e)
 		e.self:Say("You are one lucky bixie buster. I just made a batch of honey jum. Here. No waiting for you.  One jar for your good work. Bye, now!");
 		e.other:SummonItem(13952);
 		e.other:Ding();
-		e.other:Faction(218,5,0);
-		e.other:Faction(77,5,0);
-		e.other:Faction(133,5,0);
-		e.other:Faction(208,5,0);
-		e.other:Faction(48,-5,0);
+		e.other:Faction(292,5,0);
+		e.other:Faction(241,5,0);
+		e.other:Faction(263,5,0);
+		e.other:Faction(286,5,0);
+		e.other:Faction(336,-5,0);
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

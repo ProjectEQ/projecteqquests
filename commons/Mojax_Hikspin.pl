@@ -16,11 +16,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13087 =>1 )) {
     quest::say("Aaahhhh. Now that is refreshing. Just let me rest for a bit. The note is safe and sound in my bedroll inside the inn.");
-    quest::faction( 184,1 );
-    quest::faction( 86,-1 );
-    quest::faction( 105,-1 );
+    quest::faction( 281,1 );
+    quest::faction( 271,-1 );
+    quest::faction( 330,-1 );
     quest::faction( 311,1 );
-    quest::faction( 258,1 );
+    quest::faction( 362,1 );
     quest::spawn2(21136,0,0,2750,-307,-62);
   }
   plugin::return_items(\%itemcount);

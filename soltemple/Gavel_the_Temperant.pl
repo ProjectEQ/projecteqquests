@@ -33,8 +33,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,16507 => 2, 19010 => 1, 19009 => 1)) {
     quest::say("Well done! You are truly a skilled cleric. I have crafted you a bracer - take it.");
     quest::summonitem(4925);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -42,8 +42,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,16507 => 2, 19016 => 1, 19015 => 1)) {
     quest::say("Well done! You are truly a skilled cleric. I have crafted you a weapon - take it.");
     quest::summonitem(6407);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -51,8 +51,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,19047 => 2, 19011 => 1, 19012 => 1)) {
     quest::say("Well done! You are truly a skilled cleric. I have crafted you a chestplate - take it.");
     quest::summonitem(4926);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -60,8 +60,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,19048 => 2, 19013 => 1, 19014 => 1)) {
     quest::say("Well done! You are truly a skilled cleric. I have crafted you a shield - take it.");
     quest::summonitem(9427);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

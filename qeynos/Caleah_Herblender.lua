@@ -16,10 +16,10 @@ function event_trade(e)
   if(item_lib.check_turn_in(e.trade, {item1 = 13071, item2 = 13069, item3 = 10307})) then
     e.self:Say(string.format("Hmm. Good job, %s, let's give this a try. Flame and fire. Heat and spark. Touch of Ro, light this dark! Ahh. It stills needs a little work, I guess. Thanks for your help, here's a little something for your effort.",e.other:GetName()));
 	e.other:SendSound();
-    e.other:Faction(240,5,0);
-    e.other:Faction(135,5,0);
-    e.other:Faction(21,-10,0);
-    e.other:Faction(235,-10,0);
+    e.other:Faction(342,5,0);
+    e.other:Faction(262,5,0);
+    e.other:Faction(221,-10,0);
+    e.other:Faction(296,-10,0);
     e.other:AddEXP(200);
 	e.other:GiveCash(8, 0, 0, 0);
   end

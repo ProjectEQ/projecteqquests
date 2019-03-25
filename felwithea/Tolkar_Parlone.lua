@@ -15,10 +15,10 @@ function event_trade(e)
 		e.self:Say("Oh, my, she did get herself into some trouble! I thank you for rescuing her, my friend. Here, take this old cloak. I am afraid its power has faded, but if you bring it to my wife, she might be able to do something for you. She is currently studying in Erudin.");
 		e.other:SummonItem(1056); -- Faded Cloak
 		e.other:Ding();
-		e.other:Faction(170,5,0); -- Keepers of the Art
-		e.other:Faction(178,5,0); -- King Tearis Thex
-		e.other:Faction(99,5,0); -- Faydark's Champions
-		e.other:Faction(322,-5,0); -- The Dead
+		e.other:Faction(275,5,0); -- Keepers of the Art
+		e.other:Faction(279,5,0); -- King Tearis Thex
+		e.other:Faction(246,5,0); -- Faydark's Champions
+		e.other:Faction(239,-5,0); -- The Dead
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

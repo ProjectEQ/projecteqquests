@@ -17,10 +17,10 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 4766})) then --Assorted Tailoring Supplies
 		e.self:Say("Ah you were sent from Steaon I see. So what's that tall drink of water up too? He must be busy at the store if he has you delivering his supplies for him. Well enough about all that. If he has trusted you to bring his supplies here I suppose I can give you these gems I picked up for him. Will you [take the gems] to him?");
-		e.other:Faction(338, 100); 	--Traders of the Haven
-		e.other:Faction(152, 5); 	--House of Fordel
-		e.other:Faction(153, 15); 	--House of Midst
-		e.other:Faction(154, 15); 	--House of Stout
+		e.other:Faction(1508, 100); 	--Traders of the Haven
+		e.other:Faction(1510, 5); 	--House of Fordel
+		e.other:Faction(1511, 15); 	--House of Midst
+		e.other:Faction(1512, 15); 	--House of Stout
 		e.other:AddEXP(1000);		--This quest is doable at level 1, I didn't feel comfortable giving out more xp than this per step
 		eq.set_global("DeliveredToGearo","1",0,"D30");--Set a variable here.
 	end

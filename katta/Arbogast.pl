@@ -60,14 +60,14 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 29898 => 1)){
 		quest::say("He simply gave this to you?  Cunning indeed for him to cover his weakness so thoroughly- he must have powerful protective enchantments in place, no doubt put in place by his good friend and associate, Tsaph Katta!");
 		quest::ding();
-		quest::faction(333,10);
+		quest::faction(1577,10);
 		quest::exp(1000000);
 		quest::summonitem(17516);
 	}
 	elsif(plugin::check_handin(\%itemcount, 29692 => 1)){
 		quest::say("Ahh, you have retrieved the memoirs, let me see.' Arbogast opens the book and starts flipping through pages, 'Yes here, you... no, wait it must be back... hrmmm, maybe he... but it must... Well, that was pretty clever of old Tsaph Katta, removing any record of who he truly is- probably did it to cover up the fact that Norrath does not really exist.");
 		quest::ding();
-		quest::faction(333,10);
+		quest::faction(1577,10);
 		quest::exp(1000000);
 		quest::summonitem(17517); #gold wrapping paper
 	}
@@ -75,7 +75,7 @@ sub EVENT_ITEM {
 		quest::say("Ahhh, excellent... I am glad to see your interest piqued. It is the truth that will liberate the masses when the masses fail to liberate the truth. To continue to divine and demystify the truth from the mistruth, I employ a powerful component known to the Akheva as 'Akuel xi ans Vius' which translated means 'Thing that tells Truth.");
 		quest::signal(160226,5000);
 		quest::ding();
-		quest::faction(333,10);
+		quest::faction(1577,10);
 		quest::exp(1000000);
 		quest::summonitem(17518); #black wrapping paper
 	}
@@ -83,7 +83,7 @@ sub EVENT_ITEM {
 		quest::say("'Oh, would you look at that?");
 		quest::signalwith(160111,6,5000);
 		quest::ding();
-		quest::faction(333,10);
+		quest::faction(1577,10);
 		quest::exp(1000000);
 	}
 	plugin::return_items(\%itemcount);

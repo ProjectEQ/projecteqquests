@@ -24,11 +24,11 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 13379 => 1)) {
     quest::summonitem(13380);
-    quest::faction(46,10);   #Clurg
-    quest::faction(169,-30); #Kazon Stormhammer
-    quest::faction(128,10);  #Green Blood Knights
-    quest::faction(57,10);   #Craknek Warriors
-    quest::faction(232,10);  #Oggok Guards
+    quest::faction(228,10);   #Clurg
+    quest::faction(274,-30); #Kazon Stormhammer
+    quest::faction(261,10);  #Green Blood Knights
+    quest::faction(232,10);   #Craknek Warriors
+    quest::faction(337,10);  #Oggok Guards
   }
   elsif (plugin::check_handin(\%itemcount, 13378 => 1)) {
    quest::say("Ahahaha! Dat witch sur did get wat was commin ta her!");

@@ -8,10 +8,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 10400})) then
 		e.self:Say('At last I may leave this place!! Good luck destroying my abomination, you will surely need it against my most powerful yet uncontrolable creation!');
 		e.other:Ding();
-		e.other:Faction(71,1);
-		e.other:Faction(91,-1);
-		e.other:Faction(115,-1);
-		e.other:Faction(76,-1);
+		e.other:Faction(238,1);
+		e.other:Faction(245,-1);
+		e.other:Faction(255,-1);
+		e.other:Faction(240,-1);
 		eq.unique_spawn(63111,0,0,60,622,20,0); -- spawns Khrixs Abomination
 		e.other:AddEXP(1000);
 	end

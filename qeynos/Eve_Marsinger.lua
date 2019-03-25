@@ -19,11 +19,11 @@ function event_trade(e)
 		e.self:Say("Incoming mail - very good! Please take this gold for your troubles.");
 		local gp = math.random(15);
 		e.other:Ding();
-		e.other:Faction(192,10,0);
-		e.other:Faction(184,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(273,-30,0);
-		e.other:Faction(207,-30,0);
+		e.other:Faction(284,10,0);
+		e.other:Faction(281,10,0);
+		e.other:Faction(262,10,0);
+		e.other:Faction(304,-30,0);
+		e.other:Faction(285,-30,0);
 		e.other:AddEXP(150);
 		e.other:GiveCash(0,0,gp,0);
 	end

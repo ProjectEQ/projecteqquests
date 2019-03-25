@@ -13,11 +13,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13864})) then
 		e.self:Say("Oh thank you so much! Here. Take this reward for your time. I will also tell Te'Anara of you.");
 		e.other:Ding();
-		e.other:Faction(159, 10,0); --Jaggedpine Treefolk
-		e.other:Faction(265, 10,0); --Protectors of Pine
-		e.other:Faction(267, 10,0); --QRG Protected Animals
-		e.other:Faction(347, -30,0); --Unkempt Druids
-		e.other:Faction(135, 10,0);   --Guards of Qeynos
+		e.other:Faction(272, 10,0); --Jaggedpine Treefolk
+		e.other:Faction(302, 10,0); --Protectors of Pine
+		e.other:Faction(343, 10,0); --QRG Protected Animals
+		e.other:Faction(324, -30,0); --Unkempt Druids
+		e.other:Faction(262, 10,0);   --Guards of Qeynos
 		e.other:AddEXP(250);
 		e.other:GiveCash(10,2,0,0);
 	end

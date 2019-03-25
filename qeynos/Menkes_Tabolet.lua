@@ -35,25 +35,25 @@ function event_trade(e)
 		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
 		e.other:SummonItem(1050); -- rat fur cap
 		e.other:Ding();
-		e.other:Faction(434,5,0); -- Qeynos Citizen
+		e.other:Faction(121,5,0); -- Qeynos Citizen
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13054,item2 = 13054,item3 = 13054,gold = 4})) then
 		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
 		e.other:SummonItem(1051); -- rat pelt cloak
 		e.other:Ding();
-		e.other:Faction(434,5,0); -- Qeynos Citizen
+		e.other:Faction(121,5,0); -- Qeynos Citizen
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13067,item2 = 13067,item3 = 13067,gold = 2})) then
 		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
 		e.other:SummonItem(1052); -- Snake fang necklace
 		e.other:Ding();
-		e.other:Faction(434,5,0); -- Qeynos Citizen
+		e.other:Faction(121,5,0); -- Qeynos Citizen
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13065,item2 = 13071,item3 = 13071,item4 = 13033})) then
 		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
 		e.other:SummonItem(1053); -- rat's foot necklace
 		e.other:Ding();
-		e.other:Faction(434,5,0); -- Qeynos Citizen
+		e.other:Faction(121,5,0); -- Qeynos Citizen
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

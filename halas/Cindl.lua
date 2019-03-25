@@ -17,20 +17,20 @@ function event_trade(e)
 		e.self:Say("This is much appreciated.  Please accept this used armor in return and also a gold piece for yer troubles.  You have done well! I may have a [second job] fer ye, if ye like?");
 		e.other:SummonItem(eq.ChooseRandom(2131, 2134, 2127, 2126, 2129, 2125, 2133));
 		e.other:Ding();
-		e.other:Faction(213, 5);
-		e.other:Faction(361, 5);
-		e.other:Faction(294, 5);
-		e.other:Faction(275, -5);
+		e.other:Faction(328, 5);
+		e.other:Faction(320, 5);
+		e.other:Faction(327, 5);
+		e.other:Faction(305, -5);
 		e.other:AddEXP(150);
 		e.other:GiveCash(0,0,1,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12223, item2 = 12223})) then
 		e.self:Say("Fine work hunter!  As your reward please accept this item which I have fashioned for you.");
 		e.other:SummonItem(eq.ChooseRandom(2034, 2171, 2164));
 		e.other:Ding();
-		e.other:Faction(213, 5);
-		e.other:Faction(361, 5);
-		e.other:Faction(294, 5);
-		e.other:Faction(275, -5);
+		e.other:Faction(328, 5);
+		e.other:Faction(320, 5);
+		e.other:Faction(327, 5);
+		e.other:Faction(305, -5);
 		e.other:AddEXP(150);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -14,9 +14,9 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 7776 => 1)) { #Skin of Blood Like Substance
     quest::say("Excellent work, $name. It is just as I feared. Take this as a reward for reporting on the Coterie activities."); #Text made up
     quest::summonitem(7777); #Validus Scout Cloak
-    quest::faction(52, 10);   #Concillium Universus
-    quest::faction(284, -10); #Seru
-    quest::faction(139, -10); #Hand of Seru
+    quest::faction(1561, 10);   #Concillium Universus
+    quest::faction(1483, -10); #Seru
+    quest::faction(1484, -10); #Hand of Seru
   }
   plugin::return_items(\%itemcount);
 }

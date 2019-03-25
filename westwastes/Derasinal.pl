@@ -7,9 +7,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1908 => 1)){ #Jualicn's Token
     quest::say("I have given you the Rune of Bleve, to assist you in your research for the once lost magic against the Kromzek. I hope that you can make good use of it, for it is very sacred to me. May Veeshan guide your path!");
-    quest::faction(42,10);   #Claws of Veeshan
-    quest::faction(362,10);  #Yelinak
-    quest::faction(189,-30); #Kromzek
+    quest::faction(430,10);   #Claws of Veeshan
+    quest::faction(436,10);  #Yelinak
+    quest::faction(448,-30); #Kromzek
     quest::exp(1000);
     quest::summonitem(1895); #Rune of Bleve
     if(!plugin::check_hasitem($client,1893) || !plugin::check_hasitem($client,1894) || !plugin::check_hasitem($client,1896)) {

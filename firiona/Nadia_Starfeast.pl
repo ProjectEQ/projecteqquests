@@ -38,7 +38,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 10637 => 1)) { #A Sack For Nadia
     quest::say("Lovely! You are indeed quite the charmer. Here, take the third part, and seek out the last master. The time draws near.");
-    quest::faction(342,30); #True Spirit
+    quest::faction(404,30); #True Spirit
     quest::exp(10000);
     quest::summonitem(10612); #3rd Piece of Staff
   }

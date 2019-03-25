@@ -30,10 +30,10 @@ function event_trade(e)
 		-- random bronze item reward
 		e.other:SummonItem(eq.ChooseRandom(7012,7013,7014,7016,4204,4201,4202,4203,4204,4205,4206,4207,4208,4209,4210,4211,4212,4213,4214,4215,4216,4217,4218,4219,4220,4221,4222,4223,4224,4225,5035,5036,6019,6021));
 		e.other:Ding();
-		e.other:Faction(183,10,0); -- Knights of Thunder
-		e.other:Faction(21,-10,0); -- Blood Sabers
-		e.other:Faction(257,10,0); -- Priests of Life
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(280,10,0); -- Knights of Thunder
+		e.other:Faction(221,-10,0); -- Blood Sabers
+		e.other:Faction(341,10,0); -- Priests of Life
+		e.other:Faction(262,10,0); -- Guards of Qeynos
 		e.other:AddEXP(2000);
 		e.other:GiveCash(0,12,1,0); -- 1 gold, 12 silver
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18839})) then
@@ -41,10 +41,10 @@ function event_trade(e)
 		-- Backpack, Cast-Iron Warhammer, Raw-hide Gorget, Small Raw-hide Mask
 		e.other:SummonItem(eq.ChooseRandom(17005,6041,2139,2150));
 		e.other:Ding();
-		e.other:Faction(183,10,0); -- Knights of Thunder
-		e.other:Faction(21,-10,0); -- Blood Sabers
-		e.other:Faction(257,10,0); -- Priests of Life
-		e.other:Faction(135,10,0); -- Guards of Qeynos
+		e.other:Faction(280,10,0); -- Knights of Thunder
+		e.other:Faction(221,-10,0); -- Blood Sabers
+		e.other:Faction(341,10,0); -- Priests of Life
+		e.other:Faction(262,10,0); -- Guards of Qeynos
 		e.other:AddEXP(1500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -12,8 +12,8 @@ sub EVENT_ITEM
 {
 	if(plugin::check_handin(\%itemcount, 55801 => 1)) {#Kyv Heart
 		quest::say("Well done. For every kyv you bring down you save the life of one of my few remaining soldiers. Soon you will be hailed as a friend amongst the few dragorn that still resist the Muramites.");
-		quest::faction(410, 10);#Dranik Loyalists
-		quest::faction(432, -20);#Overlord Mata Muram
+		quest::faction(1016, 10);#Dranik Loyalists
+		quest::faction(1013, -20);#Overlord Mata Muram
 	}
   plugin::return_items(\%itemcount);
 }#END of FILE Zone:draniksscar ID:302047 --Vorskahn.pl

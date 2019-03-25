@@ -20,19 +20,19 @@ function event_trade(e)
 		e.self:Emote("performs a subtle divinatory ritual. 'This is a powerful evil indeed. The smoke from special candles crafted by the Teir'Dal and burned in this candlestick allows the creation of undead of unordinary might. The Ghasts are only one of its many possible creations. I will concoct a powder for you to take back to Yeolarn that will assist in defeating the monstrosities the candle has produced. The candlestick itself will remain here within the High Tower of Erudin for the time being.'");
 		e.other:SummonItem(1599); -- Powder of Unanimation
 		e.other:Ding();
-		e.other:Faction(99,10,0);
-		e.other:Faction(170,10,0);
-		e.other:Faction(178,10,0);
-		e.other:Faction(322,-30,0);
+		e.other:Faction(246,10,0);
+		e.other:Faction(275,10,0);
+		e.other:Faction(279,10,0);
+		e.other:Faction(239,-30,0);
 		e.other:AddEXP(1500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1056})) then --Faded Cloak
 		e.self:Say("Oh my lord Tunare! I did not know my daughter was in trouble. I thank you for saving her. Here, I have returned the once lost power to this cloak. Wear it with my humblest gratitude.");
 		e.other:SummonItem(1057); --Mystic Cloak
 		e.other:Ding();
-		e.other:Faction(99,10,0);
-		e.other:Faction(170,10,0);
-		e.other:Faction(178,10,0);
-		e.other:Faction(322,-30,0);
+		e.other:Faction(246,10,0);
+		e.other:Faction(275,10,0);
+		e.other:Faction(279,10,0);
+		e.other:Faction(239,-30,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

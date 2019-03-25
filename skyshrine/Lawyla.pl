@@ -29,9 +29,9 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1897 => 1, 1898 => 1, 1899 => 1)){
   #Hsagra's Wrath(END)
    quest::say("$name, you are to be commended for your valor and determination in assisting my Kin. Here is the spell that Hsagra died so long ago over. I only ask that each time that you use the sorcery here, that you remember Hsagra in a silent prayer of thanks. For I hope that will help ease Yelinak's still tormented soul from his loss. I bid you farewell. You are welcome amongst our ranks.");
-   quest::faction(42,100); # +ClawsofVeeshan 
-   quest::faction(362,100); # +Yelinak
-   quest::faction(189,-100); # -Kromzek
+   quest::faction(430,100); # +ClawsofVeeshan 
+   quest::faction(436,100); # +Yelinak
+   quest::faction(448,-100); # -Kromzek
    quest::exp(1000); 
    #Summon: Hsagra's Wrath (19470)
    quest::summonitem(19470);

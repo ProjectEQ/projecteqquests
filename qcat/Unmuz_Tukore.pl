@@ -21,11 +21,11 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20186 => 1)) {
     quest::say("Excellent, the Knights of Thunder must learn that by beginning an inquisition of the Bloodsabers they are effectively declaring war. Take this Rusty Scourge Knight Saber to a forge and sharpen it with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done take the Tarnished Scourge Knight Saber and a Giant King Snake Skin to Wellis Pestule and he will put the finsihing touches on the weapon.");
     quest::summonitem(20187);
-    quest::faction(21,1);
-    quest::faction(135,-1);
-    quest::faction(235,1);
-    quest::faction(257,-1);
-    quest::faction(53,1);
+    quest::faction(221,1);
+    quest::faction(262,-1);
+    quest::faction(296,1);
+    quest::faction(341,-1);
+    quest::faction(230,1);
     quest::ding();
     quest::exp(100);
   }

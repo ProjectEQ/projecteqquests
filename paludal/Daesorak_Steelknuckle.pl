@@ -35,8 +35,8 @@ sub EVENT_ITEM {
     return 1;
   }
   quest::exp(2500);
-  quest::faction(154,10); #house of stout
-  quest::faction(338,10); #traders of the haven
+  quest::faction(1512,10); #house of stout
+  quest::faction(1508,10); #traders of the haven
 }
 
 # EOF zone: paludal ID: 156067 NPC: Daesorak_Steelknuckle

@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 8199 => 1)) { #Hand-In: Dryad Pate
     quest::say("Ohh. . . This really good, thanks! You take this token of friendship. You all smell the same so this way I know who you are. I can make nice [necklaces] for my friends.");
     quest::summonitem(8270); #Token of Friendship
-    quest::faction(6,50); #Anchorites of Brell Serilis
+    quest::faction(1598,50); #Anchorites of Brell Serilis
   }
   if (plugin::check_handin(\%itemcount, 8270 => 1)) { #Hand-In: Token of Friendship
     quest::say("Ok, here pouch to collect stuff. Come back when pouch full. Make sure you seal pouch or stuff may fall out.");
@@ -32,17 +32,17 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9228 => 1)) { #Hand-In: Sealed Wolf Fang Pouch
     quest::say("Oh hello friend, I make this nice necklace for you! You wear this and feel the spirit of the wolf run through you!");
     quest::summonitem(8258); #Wolf Fang Necklace
-    quest::faction(6,50); #Anchorites of Brell Serilis
+    quest::faction(1598,50); #Anchorites of Brell Serilis
   }
   if (plugin::check_handin(\%itemcount, 9229 => 1)) { #Hand-In: Sealed Bear Fang Pouch
     quest::say("My friend returns again! I make this nice necklace for you. Wear this and feel the essence of the bear flow through you.");
     quest::summonitem(8261); #Bear Fang Necklace
-    quest::faction(6,50); #Anchorites of Brell Serilis
+    quest::faction(1598,50); #Anchorites of Brell Serilis
   }
   if (plugin::check_handin(\%itemcount, 9230 => 1)) { #Hand-In: Sealed Panther Fang Pouch
     quest::say("Hello again friend. This nice panther fang, here you take this necklace I make you. It imbued with spirit of the cat.");
     quest::summonitem(8257); #Panther Fang Necklace
-    quest::faction(6,50); #Anchorites of Brell Serilis
+    quest::faction(1598,50); #Anchorites of Brell Serilis
   } 
   plugin::return_items(\%itemcount);
 }

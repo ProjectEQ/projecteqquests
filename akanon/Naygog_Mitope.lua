@@ -36,19 +36,19 @@ function event_trade(e)
 		e.other:SummonItem(11077);	-- plague warrior battle axe
 		e.other:AddEXP(100);
 		e.other:Ding();
-		e.other:Faction(115,-10,0); 	-- gem choppers
-		e.other:Faction(71,3,0); 		-- dark reflection
-		e.other:Faction(91,-10,0); 	-- eldritch collective
-		e.other:Faction(176,-10,0); 	-- King ak'anon
-		e.other:Faction(209,3,0); 	-- meldrath
+		e.other:Faction(255,-10,0); 	-- gem choppers
+		e.other:Faction(238,3,0); 		-- dark reflection
+		e.other:Faction(245,-10,0); 	-- eldritch collective
+		e.other:Faction(333,-10,0); 	-- King ak'anon
+		e.other:Faction(287,3,0); 	-- meldrath
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 18759})) then -- Stained Parchment
 		e.self:Say("This is fabulous news!! You have done well, young one. Once you are ready for [further instruction] please let me know, I will guide you through your early and most dangerous days. When you have become more experienced in our art, I will be able to further train you, both in our art as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13518); 	-- Tin Patched Tunic*
 		e.other:Ding();
-		e.other:Faction(71,100,0); 	-- Dark reflection
-		e.other:Faction(91,-10,0); 	-- eldritch collective
-		e.other:Faction(115,-10,0); -- gem choppers
-		e.other:Faction(76,-10,0); 	-- Deepmuses
+		e.other:Faction(238,100,0); 	-- Dark reflection
+		e.other:Faction(245,-10,0); 	-- eldritch collective
+		e.other:Faction(255,-10,0); -- gem choppers
+		e.other:Faction(240,-10,0); 	-- Deepmuses
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

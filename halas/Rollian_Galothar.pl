@@ -50,9 +50,9 @@ sub EVENT_ITEM {
     quest::say("I must say, I am impressed. You have passed your training and should now have a full set of armor to begin your adventures. Take this weapon as a symbol of your dedication and hard work. You have earned it. Your training with me has ended. Farewell.");
     quest::summonitem(55103);
     quest::exp(5000);
-    quest::faction(361,30);
-    quest::faction(294,30);
-    quest::faction(213,30);
+    quest::faction(320,30);
+    quest::faction(327,30);
+    quest::faction(328,30);
     quest::faction(311,30);
   }
   plugin::return_items(\%itemcount);

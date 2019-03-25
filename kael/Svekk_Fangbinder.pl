@@ -49,30 +49,30 @@ sub EVENT_ITEM {
 		if(plugin::takeItems(25278=>1)) { # Velium Torque
 			quest::say("Ahh, a Velium torque!  Here, I'll give you one hundred pieces of gold for that!'  Svekk places the torque in his pocket and drops some coins at his feet.");
 			quest::ding();
-			quest::faction(189,10); # Kromzek
-			quest::faction(188,10); # Kromrif
-			quest::faction(179,10); # King Tormax
-			quest::faction(42,-30); # Claws of Veeshan
+			quest::faction(448,10); # Kromzek
+			quest::faction(419,10); # Kromrif
+			quest::faction(429,10); # King Tormax
+			quest::faction(430,-30); # Claws of Veeshan
 			quest::exp(250);
 			quest::givecash(0,0,0,15);
 		}
 		if(plugin::takeItems(25267=>1)) { # Bekerak's Letter to Svekk
 			quest::say("This is unbelievable!  The fool is asking for things I don't even have in stock!  Listen, $name, you're the one that wanted to help them out, I'm just here working for Wenglawks.  I can get most of these supplies ready but I have no source for Klezendian Crystals.  I will start bundling the more mundane items Bekerak wants.  If you find any Klezendian return to me with the crystal and this voucher.");
 			quest::ding();
-			quest::faction(189,10); # Kromzek
-			quest::faction(188,10); # Kromrif
-			quest::faction(179,10); # King Tormax
-			quest::faction(42,-30); # Claws of Veeshan
+			quest::faction(448,10); # Kromzek
+			quest::faction(419,10); # Kromrif
+			quest::faction(429,10); # King Tormax
+			quest::faction(430,-30); # Claws of Veeshan
 			quest::exp(250);
 			quest::summonitem(25270); # Supply Voucher
 		}
 		if(plugin::takeItems(25270=>1, 25271=>1)) { # Supply Voucher / Klezendian Crystal
 			quest::say("Did you travel to the crystal caverns to get that crystal, $name?  You are quite brave for a $race.  I have the other supplies ready for your trip, they are quite heavy but I think you will get by.");
 			quest::ding();
-			quest::faction(189,10); # Kromzek
-			quest::faction(188,10); # Kromrif
-			quest::faction(179,10); # King Tormax
-			quest::faction(42,-30); # Claws of Veeshan
+			quest::faction(448,10); # Kromzek
+			quest::faction(419,10); # Kromrif
+			quest::faction(429,10); # King Tormax
+			quest::faction(430,-30); # Claws of Veeshan
 			quest::exp(250);
 			quest::summonitem(25269); # Large Supply Sack for Bekerak
 		}

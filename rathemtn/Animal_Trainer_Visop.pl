@@ -61,7 +61,7 @@ if(plugin::check_handin(\%itemcount, 54001 => 1))
 
 this as a token of my gratitude.");
   quest::ding();
-  quest::faction(264,100);
+  quest::faction(1709,100);
   quest::exp(25000);
   quest::summonitem(54002);
   }

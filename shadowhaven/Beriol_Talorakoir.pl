@@ -24,8 +24,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4770 => 1)) {
     quest::say("This is exactly the research book that I was in need of. I am very thankful for you getting these for me. Should you ever feel up to it again in the future Dersino always is getting new books in that could be very helpful in my studies. Again, I thank you and wish you the best of luck.");
     quest::exp(1000);
-    quest::faction(153,10); #house of midst
-    quest::faction(338,10); #traders of the haven
+    quest::faction(1511,10); #house of midst
+    quest::faction(1508,10); #traders of the haven
   }
   plugin::return_items(\%itemcount);
 }

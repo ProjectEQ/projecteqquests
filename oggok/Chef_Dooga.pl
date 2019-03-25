@@ -19,11 +19,11 @@ sub EVENT_ITEM {
     quest::say("MmmmMmm. Human make good meat pies. Here. A little coins for you.");
     quest::ding();
     quest::exp(1000);
-    quest::faction(46,10); #Clurg
-    quest::faction(57,10); #Craknek Warriors
-    quest::faction(128,10); #Green Blood Knights
-    quest::faction(232,10); #Oggok Gaurds
-    quest::faction(169,-15); #Kazon Stormhammer
+    quest::faction(228,10); #Clurg
+    quest::faction(232,10); #Craknek Warriors
+    quest::faction(261,10); #Green Blood Knights
+    quest::faction(337,10); #Oggok Gaurds
+    quest::faction(274,-15); #Kazon Stormhammer
     quest::givecash(0,3,6,9);
   }
   elsif (plugin::check_handin(\%itemcount, 13452 => 3)) {

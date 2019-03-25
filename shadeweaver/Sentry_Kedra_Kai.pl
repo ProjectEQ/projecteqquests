@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     #Quest: Insect Carapace Shield (End)
     #Paludal Carapace Shield
     quest::summonitem(85054);
-    quest::faction(132,5); # +Guardians of Shar Vahl
+    quest::faction(1513,5); # +Guardians of Shar Vahl
     quest::exp(250);
     quest::ding();
     }

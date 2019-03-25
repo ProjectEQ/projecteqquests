@@ -17,10 +17,10 @@ function event_trade(e)
 		e.self:Emote("examines the blade carefully, his manner seeming distant -- as if he were in a trance. The druid then turns to the ancient scroll and slowly begins to read the ancient druidic runes; his voice a soft chant and the rhythm of his incantation slow and powerful. As Gurrin weaves his spell the blade in his hands begins to bleed from the red gem in the hilt, which drains its color as the corruption is purged from its very nature. By the end of the druid's spell the gem in the blade is pure and white and the blade itself seems to have been altered -- sentient and purged of all evil. Gurrin extends the blade to Malvesti, 'The corruption is no more, although the essence of the blade has been returned to the powers that forged it. The Deathrot Knight will exist again and that I cannot change. However, the blade has been set upon a new path and all it needs now is a proper hand and will to [guide] it.'");
 		e.other:SummonItem(8915); -- Purified Silver Blade
 		e.other:Ding();
-		e.other:Faction(271,20,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,20,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,20,0);  -- Protectors of Pine
-		e.other:Faction(135,20,0);  -- Guards of Qeynos
+		e.other:Faction(1597,20,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,20,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,20,0);  -- Protectors of Pine
+		e.other:Faction(262,20,0);  -- Guards of Qeynos
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

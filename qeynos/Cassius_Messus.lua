@@ -15,11 +15,11 @@ function event_trade(e)
     e.self:Say("Vhalen does such fine work. I can't wait till he comes back to Qeynos.");
 	e.other:SendSound();
     e.other:SummonItem(15007); -- Song: Hymn of Restoration
-    e.other:Faction(135,5,0); -- Guards of Qeynos
-    e.other:Faction(184,5,0); -- Knights of Truth
-    e.other:Faction(192,5,0); -- League of Antonican Bards
-    e.other:Faction(53,-10,0); -- Corrupt Qeynos Guards
-    e.other:Faction(105,-10,0); -- Freeport Militia
+    e.other:Faction(262,5,0); -- Guards of Qeynos
+    e.other:Faction(281,5,0); -- Knights of Truth
+    e.other:Faction(284,5,0); -- League of Antonican Bards
+    e.other:Faction(230,-10,0); -- Corrupt Qeynos Guards
+    e.other:Faction(330,-10,0); -- Freeport Militia
 	e.other:AddEXP(100);
   end  
   item_lib.return_items(e.self, e.other, e.trade)

@@ -34,9 +34,9 @@ function event_trade(e)
 			e.self:Say("Good work!! Kylan will never know o' me negligence. I owe ye one, young warrior. Let's call it even with this. Twas found by one of our foraging parties. It is still useful. And... I believe ye can assist with a more [dangerous matter] as well");
 			e.other:Ding();
 			e.other:SummonItem(eq.ChooseRandom(17009, 17001));
-			e.other:Faction( 361, 5);
-			e.other:Faction( 294, 5);
-			e.other:Faction( 213, 5);
+			e.other:Faction( 320, 5);
+			e.other:Faction( 327, 5);
+			e.other:Faction( 328, 5);
 			e.other:Faction( 311, 5);
 			e.other:AddEXP(2000);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 13249, item2 = 13248, item3 = 13247, item4 = 13233})) then
@@ -50,18 +50,18 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 12227, item2 = 13248, item3 = 13247, item4 = 13233})) then
 			e.self:Say("Nice work " .. e.other:GetName() .. "! Basil has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax for your efforts.");
 			e.other:Ding();
-			e.other:Faction( 361, -15);	--shows neg faction hit on live.   possibly to avoid exploits
-			e.other:Faction( 294, -15);
-			e.other:Faction( 213, -15);
+			e.other:Faction( 320, -15);	--shows neg faction hit on live.   possibly to avoid exploits
+			e.other:Faction( 327, -15);
+			e.other:Faction( 328, -15);
 			e.other:Faction( 311, -15);
 			e.other:AddEXP(10000);
 			e.other:SummonItem(5367);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 12225, item2 = 13248, item3 = 13247, item4 = 13233})) then
 			e.self:Say("Nice work " .. e.other:GetName() .. "! Paglan has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax of the Wolves for your efforts.");
 			e.other:Ding();
-			e.other:Faction( 361, -20);
-			e.other:Faction( 294, -20);
-			e.other:Faction( 213, -20);
+			e.other:Faction( 320, -20);
+			e.other:Faction( 327, -20);
+			e.other:Faction( 328, -20);
 			e.other:Faction( 311, -20);
 			e.other:AddEXP(12000);
 			e.other:SummonItem(5368);

@@ -11,11 +11,11 @@ function event_trade(e)
 		e.self:Say("Welcome to the Guild, here's your guild robe. Now, let's get to work.");
 		e.other:SummonItem(13562); -- Dark Stained Robe
 		e.other:Ding();
-		e.other:Faction(235,100,0); -- Opal Dark Briar
-		e.other:Faction(86,25,0); -- Dismal Rage
-		e.other:Faction(322,25,0); -- The Dead
-		e.other:Faction(71,25,0); -- Dark Reflection
-		e.other:Faction(21,25,0); -- Bloodsabers
+		e.other:Faction(296,100,0); -- Opal Dark Briar
+		e.other:Faction(271,25,0); -- Dismal Rage
+		e.other:Faction(239,25,0); -- The Dead
+		e.other:Faction(238,25,0); -- Dark Reflection
+		e.other:Faction(221,25,0); -- Bloodsabers
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

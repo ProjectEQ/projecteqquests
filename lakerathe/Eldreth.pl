@@ -24,10 +24,10 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(500);
     quest::summonitem(28053);
-    quest::faction(240,20);#Order of Three
-    quest::faction(21,-10);#Bloood Sabers
-    quest::faction(135,10);#Guards of Qeynos
-    quest::faction(235,10);#Opal Dark Briar
+    quest::faction(342,20);#Order of Three
+    quest::faction(221,-10);#Bloood Sabers
+    quest::faction(262,10);#Guards of Qeynos
+    quest::faction(296,10);#Opal Dark Briar
   }
   plugin::return_items(\%itemcount);
 }

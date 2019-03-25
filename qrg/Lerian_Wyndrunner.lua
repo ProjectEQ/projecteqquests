@@ -32,46 +32,46 @@ function event_trade(e)
 		e.self:Emote(string.format("studies the hide carefully -- using his eyes, fingertips, and sense of smell to be sure that it is indeed of the panthers native to the Jaggedpine forest. Accepting the true identity of the hide, Lerian removes a small vial of clear oil and smears it across the flawless midnight fur. He then retrieves the seeds from the small pouch given to him by %s, and begins to chant lowly and softly in his ancient druidic tongue. The seeds begin to sprout, growing at an unnatural pace from the nourishing oil. The fern imbeds itself in a beautiful design upon the hide as they grow -- their roots and the thin, delicate vines rendering the flora secure in its place. Lerian then offers the hide to %s, 'You will need to seek out one other item -- the Blackened Mithril Boots from the kobold priest in Solusek's eye. Once you have the boots, you will need a master's knowledge of tailoring to carefully fit this hide over the boots before returning them to Cheyloh.",e.other:GetName(),e.other:GetName()));
 		e.other:SummonItem(8764); -- cured panther hide
 		e.other:Ding();
-		e.other:Faction(271,10,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,10,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,10,0);  -- Protectors of Pine
-		e.other:Faction(135,10,0);  -- Guards of Qeynos
+		e.other:Faction(1597,10,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,10,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,10,0);  -- Protectors of Pine
+		e.other:Faction(262,10,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 8799,item2 = 8797})) then -- shark rib & flayed panther hide
 		e.self:Emote(string.format("inspects the rib and the hide, checking for imperfections that might disable him from completing his work. Satisfied with the quality of the components, Lerian places the rib in the center of the hide, which is draped over his arm. He then begins to speak softly in an ancient, druidic tongue that is foreign to your ears and knowledge. As he speaks, the black fur of the hide seems to pierce the cartilage shark rib, binding it in-place. The rest of the hide folds back, wrapping itself around the druid's arm. Lerian then completes his chant and removes the Reinforced Rawhide Sleeves from his arm and offers it to %s 'There is [more that you must do], my friend, before this task is complete.'",e.other:GetName()));
 		e.other:SummonItem(8863); --reinforced rawhide sleeves
 		e.other:Ding();
-		e.other:Faction(271,10,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,10,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,10,0);  -- Protectors of Pine
-		e.other:Faction(135,10,0);  -- Guards of Qeynos
+		e.other:Faction(1597,10,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,10,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,10,0);  -- Protectors of Pine
+		e.other:Faction(262,10,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 8879,item2 = 8873,item3 = 8878,item4 = 8878})) then -- jaggedpine panther hide,shadowjade fern seeds,2x shadowjade fern leaves
 		e.self:Emote(string.format("studies the hide carefully -- using his eyes, fingertips, and sense of smell to be sure that it is indeed of the panthers native to the Jaggedpine forest. Accepting the true identity of the hide, Lerian removes a small vial of clear oil and smears it across the flawless midnight fur. He then retrieves the seeds from the small pouch given to him by %s, and begins to chant lowly and softly in his ancient druidic tongue. The seeds begin to sprout, growing at an unnatural pace from the nourishing oil. The fern imbeds itself in a beautiful design upon the hide as they grow -- their roots and the thin, delicate vines rendering the flora secure in its place. Lerian then offers the hide to %s, 'You will need to seek out one other item -- the Blackened Mithril Boots from the kobold priest in Solusek's eye. Once you have the boots, you will need a master's knowledge of tailoring to carefully fit this hide over the boots before returning them to Cheyloh.",e.other:GetName(),e.other:GetName()));
 		e.other:SummonItem(8881); -- shadowjade hide
 		e.other:Ding();
-		e.other:Faction(271,10,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,10,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,10,0);  -- Protectors of Pine
-		e.other:Faction(135,10,0);  -- Guards of Qeynos
+		e.other:Faction(1597,10,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,10,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,10,0);  -- Protectors of Pine
+		e.other:Faction(262,10,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 8866,item2 = 8867})) then -- braids of pine & black rawhide bracer
 		e.self:Emote(string.format("gently places the braids of pine across the rawhide bracer.  He murmurs a few soft syllables, and the braids begin to move and grow, as if of their own volition.  Wrapping around and through the blackened rawhide, the bracer is soon completely covered by the braids.  With twinkle in his eye, Lerian hands the bracer to %s.",e.other:GetName()));
 		e.other:SummonItem(8865); -- bracer of braided pine 
 		e.other:Ding();
-		e.other:Faction(271,10,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,10,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,10,0);  -- Protectors of Pine
-		e.other:Faction(135,10,0);  -- Guards of Qeynos
+		e.other:Faction(1597,10,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,10,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,10,0);  -- Protectors of Pine
+		e.other:Faction(262,10,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 8872,item2 = 8792,item3 = 8878})) then -- blackened mithril gloves & shadowjade moss & fern leaves
 		e.self:Emote(string.format("examines the gloves, checking the item's stability and quality of make. Satisfied, Lerian then pulls the gloves onto his hands and proceeds to carefully cover the gloves with the dark emerald moss. He then closes his eyes and begins to whisper a soft chant in an ancient druidic language as he opens the small pouch and sprinkles the fern seeds across the palms and back of his hands. As he chants, his hands hold a soft emerald radiance and the seeds begin to sprout before your eyes. The tiny ferns weave in an out of the Mithril netting, binding the moss to the gloves and creating a beautiful design upon the back of each gloves. Lerian removes the gloves as his chant ends and extends them to %s, a delicate, warm smile upon his face in silent approval.",e.other:GetName()));
 		e.other:SummonItem(8871); -- forest woven gloves
 		e.other:Ding();
-		e.other:Faction(271,10,0);  -- Residents of Jaggedpine
-		e.other:Faction(159,10,0);  -- Jaggedpine Treefolk
-		e.other:Faction(265,10,0);  -- Protectors of Pine
-		e.other:Faction(135,10,0);  -- Guards of Qeynos
+		e.other:Faction(1597,10,0);  -- Residents of Jaggedpine
+		e.other:Faction(272,10,0);  -- Jaggedpine Treefolk
+		e.other:Faction(302,10,0);  -- Protectors of Pine
+		e.other:Faction(262,10,0);  -- Guards of Qeynos
 		e.other:AddEXP(2000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

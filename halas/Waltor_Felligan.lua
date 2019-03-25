@@ -24,11 +24,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13966})) then 						-- Jar of Fungus turn in for random spell
 		e.other:SummonItem(eq.ChooseRandom(15203, 15270, 15271, 15275, 15036, 15075));
 		e.self:Say("Aye! Ye've filled the jar. I'll see to it that Holana locks this away. Tis difficult to obtain and we can only spare the talents of our young shamans. Allow me to give ye a reward. Thank ye kindly fer yer service.");
-		e.other:Faction(294, 10);													--faction with Shamen of Halas increased
-		e.other:Faction(213, 10);													--faction with Merchants of Halas increased
-		e.other:Faction(33, -30);													--faction with Circle of Unseen Hands decreased
-		e.other:Faction(47,-30);													--faction with Coalition of Tradefolk decreased
-		e.other:Faction(90,-30);													--faction with Ebon Mask decreased
+		e.other:Faction(327, 10);													--faction with Shamen of Halas increased
+		e.other:Faction(328, 10);													--faction with Merchants of Halas increased
+		e.other:Faction(223, -30);													--faction with Circle of Unseen Hands decreased
+		e.other:Faction(229,-30);													--faction with Coalition of Tradefolk decreased
+		e.other:Faction(244,-30);													--faction with Ebon Mask decreased
 		e.other:GiveCash(0,0,4,0);
 		e.other:AddEXP(50);
 		e.other:Ding();

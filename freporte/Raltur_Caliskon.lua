@@ -12,9 +12,9 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18822})) then
 		e.self:Say("So the great Antonius Bayle wishes to ally himself with the mighty Knights of Truth. How pathetic. It would appear that the alliance has spawned infiltrators of sorts. Of course, we of the Dismal Rage are already aware of this, but I am sure Sir Lucan D'Lere knows nothing as usual. I have a [mission] for any evil shadowknight of Innoruuk.");
 		e.other:Ding();
-		e.other:Faction(235,1,0);
-		e.other:Faction(86,1,0);
-		e.other:Faction(184,-3,0);
+		e.other:Faction(296,1,0);
+		e.other:Faction(271,1,0);
+		e.other:Faction(281,-3,0);
 		e.other:AddEXP(5000);
 		e.other:GiveCash(0,2,0,0);
 	end

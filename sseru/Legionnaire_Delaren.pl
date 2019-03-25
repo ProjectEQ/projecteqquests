@@ -28,12 +28,12 @@ sub EVENT_ITEM
   if (plugin::check_handin(\%itemcount, 10692 => 4)) {
     quest::say("Although your service to Seru is appreciated, I just recieved word that you were not the one that was sent to do this menial task. That lazy boy [Peran] was supposed to take the job.");
     quest::givecash(9,9,9,9); #this amount is made up i could not locate the correct amount
-    quest::faction(37,2); #Citizen of Seru
-    quest::faction(139,2); #Hand of Seru
-    quest::faction(142,2); #Heart of Seru
-    quest::faction(96,2); #Eye of Seru
-    quest::faction(298,2); #Shoulder of Seru
-    quest::faction(168,-4); #Katta Castellum Citizen
+    quest::faction(1499,2); #Citizen of Seru
+    quest::faction(1484,2); #Hand of Seru
+    quest::faction(1486,2); #Heart of Seru
+    quest::faction(1485,2); #Eye of Seru
+    quest::faction(1487,2); #Shoulder of Seru
+    quest::faction(1502,-4); #Katta Castellum Citizen
   }
   plugin::return_items(\%itemcount);
 }

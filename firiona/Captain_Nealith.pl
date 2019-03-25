@@ -22,21 +22,21 @@ sub EVENT_ITEM {
     quest::say("Fine work, $name. I wish all my own troops showed the same tenacity. I salute you. This will keep you well fed during your long patrols. Use your wages to better equip yourself. Continue the fight!! The General is pleased.");
     quest::summonitem(13155,7);
     quest::givecash(7,12,3,0);
-    quest::faction(418,1);
-    quest::faction(314,1);
-    quest::faction(193,-3);
-    quest::faction(250,-3); 
+    quest::faction(248,1);
+    quest::faction(312,1);
+    quest::faction(441,-3);
+    quest::faction(313,-3); 
   }
   if (plugin::check_handin(\%itemcount,18076 => 1)) { #blood soaked note Captain Nealith's Brother quest
     quest::emote ("nearly faints after reading the letter. 'Dear Marltek!! I shall miss you. There is more evil in this land!! Madness beyond description. Thank you $name. You put my soul at ease and give me new direction. Please accept my brothers blade. He found it in the wilds. May you use it to slay many Drolvarg!!'");
     quest::exp(25580); #no clue actual amount of xp
     quest::givecash(0,0,0,14); #14pp another guess
     quest::summonitem(12978); #Glaive of Marltek
-    quest::faction(419,50); # +Inhabitants of Firiona Vie
-    quest::faction(92,50); # +Emerald Warriors
-    quest::faction(314,50); # +Storm Guard
-    quest::faction(250,-50); # -Pirates of Gunthak
-    quest::faction(193,-50); # -Legion of Cabilis
+    quest::faction(5025,50); # +Inhabitants of Firiona Vie
+    quest::faction(326,50); # +Emerald Warriors
+    quest::faction(312,50); # +Storm Guard
+    quest::faction(313,-50); # -Pirates of Gunthak
+    quest::faction(441,-50); # -Legion of Cabilis
   }
   quest::emote("Captain Nealith holds the canine in his palm."); #These next two lines are most likely if you don't turn in enough teeth.
   quest::say("Good work, but you will have to slay more than this to earn your wages.");

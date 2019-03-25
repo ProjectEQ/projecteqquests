@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12319 => 1)) {
     quest::say("Excellent work, young ayyar! You have proven your willingness to dispose of the enemies of our tribe, now you must face one of their most murderous sentries! Bring me the head of Sentinel Creot and I shall induct you into our sejah!");
-    quest::faction(175,20);
+    quest::faction(382,20);
     quest::givecash(0,6,0,0);
     quest::summonitem(10343);
     quest::exp(5000);
@@ -18,7 +18,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12438 => 1)) {
     quest::say("You have proven your self yet again! You are now a full member of our sejah because of this brave act! To show your status here is a bracer for you to wear.");
     quest::summonitem(3147);
-    quest::faction(175,30);
+    quest::faction(382,30);
     quest::exp(6500);
   }
   plugin::return_items(\%itemcount);

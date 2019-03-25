@@ -21,10 +21,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 4767 => 1)) {#Bag of Assorted Gems
     quest::say("Hey again $name. It's nice to see you back so soon, thank you for bringing my supplies to that crazy Gnome and bringing back my gems that he got for me. You are always welcome in my shop, good luck to you!");
-    quest::faction(338, 300); #Traders of the Haven
-    quest::faction(152, 10); #House of Fordel
-    quest::faction(153, 50); #House of Midst
-    quest::faction(154, 50); #House of Stout
+    quest::faction(1508, 300); #Traders of the Haven
+    quest::faction(1510, 10); #House of Fordel
+    quest::faction(1511, 50); #House of Midst
+    quest::faction(1512, 50); #House of Stout
     quest::exp(1000);#This quest is doable at level 1, I didn't feel comfortable giving out more xp than this per step    
   }
   plugin::return_items(\%itemcount);

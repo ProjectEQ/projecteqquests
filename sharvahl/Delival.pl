@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 		quest::summonitem(12000);
 		quest::exp(100);
 		quest::givecash(12,9,0,0);
-		quest::faction(132,5); #Guardian of Shar Vahl
+		quest::faction(1513,5); #Guardian of Shar Vahl
 		quest::signalwith(155339,1,10);
 	}
 	plugin::return_items(\%itemcount);

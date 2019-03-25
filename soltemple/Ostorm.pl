@@ -22,8 +22,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if($itemcount{10035} == 1) {
     quest::say("..hear me? Ah, you seem to be coming out of your stupor. I think you have been exposed to the crystal long enough. By the time you leave the temple, your memories should have faded. Do you have the [fifty gold] coins that you owe me?");
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     foreach $skill (43, 44, 45, 46, 47) {
       if($client->GetSkill($skill) > 49) {
         $client->SetSkill($skill, 49);
@@ -35,16 +35,16 @@ sub EVENT_ITEM {
 
   if($gold == 50) {
     quest::say("Thank you.");
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   #Lambent Fire Opal
   if(($itemcount{10031} == 2) && ($itemcount{10000} == 1)) {
     quest::say("Ahh, Genni must have sent you to me.  Very well, here is your Lambent Fire Opal.");
     quest::summonitem(10128);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   #magnetized platinum

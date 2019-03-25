@@ -44,30 +44,30 @@ function event_trade(e)
 		e.self:Say("Here ya go! That should keep ya nice and warm! Be sure to tell all the friends you're going to impress where you got this fine cloak. Although I am sure they probably have heard of me already.");
 		e.other:SummonItem(2905);
 		e.other:Ding();
-		e.other:Faction(167,1,0); -- Karana Residents
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(257,1,0); -- Priests of Life
-		e.other:Faction(183,1,0); -- Priests of Life
+		e.other:Faction(345,1,0); -- Karana Residents
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(341,1,0); -- Priests of Life
+		e.other:Faction(280,1,0); -- Priests of Life
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13754, gold == 15})) then
 		e.self:Say("Good work! Now have you the rest of what I require?");
 		e.self:Say("They are exquisite, if I do say so myself. Hope they fit.");
 		e.other:SummonItem(2906);
 		e.other:Ding();
-		e.other:Faction(167,1,0); -- Karana Residents
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(257,1,0); -- Priests of Life
-		e.other:Faction(183,1,0); -- Priests of Life
+		e.other:Faction(345,1,0); -- Karana Residents
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(341,1,0); -- Priests of Life
+		e.other:Faction(280,1,0); -- Priests of Life
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13753, gold == 5})) then
 		e.self:Say("Good work! Now have you the rest of what I require?");
 		e.self:Say("I hate working with such low quality hides. They lack the sheen that makes a high quality pelt look so fine! Anyhow, here's your belt.");
 		e.other:SummonItem(2907);
 		e.other:Ding();
-		e.other:Faction(167,1,0); -- Karana Residents
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(257,1,0); -- Priests of Life
-		e.other:Faction(183,1,0); -- Priests of Life
+		e.other:Faction(345,1,0); -- Karana Residents
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(341,1,0); -- Priests of Life
+		e.other:Faction(280,1,0); -- Priests of Life
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

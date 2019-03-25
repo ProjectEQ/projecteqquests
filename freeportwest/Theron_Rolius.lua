@@ -22,21 +22,21 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13921})) then
 		e.self:Say("Fantastic work, my young knight.  Here is a small token of the my appreciation.  I would offer you a sharkskin shield, but I have made only a few and the paladins are testing them.");
-		e.other:Faction(184,10,0); -- knights of truth
-		e.other:Faction(258,10,0); -- priests of marr
+		e.other:Faction(281,10,0); -- knights of truth
+		e.other:Faction(362,10,0); -- priests of marr
 		e.other:Faction(311,10,0); -- steel warriors
-		e.other:Faction(86,-30,0); -- dismal rage
-		e.other:Faction(105,-30,0); -- freeport militia
+		e.other:Faction(271,-30,0); -- dismal rage
+		e.other:Faction(330,-30,0); -- freeport militia
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,0,0,3);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13873})) then
 		e.self:Say("Thanks for the hard work, here is a shield to help you in your duties.");
 		e.other:SummonItem(13868);
-		e.other:Faction(184,10,0); -- knights of truth
-		e.other:Faction(258,10,0); -- priests of marr
+		e.other:Faction(281,10,0); -- knights of truth
+		e.other:Faction(362,10,0); -- priests of marr
 		e.other:Faction(311,10,0); -- steel warriors
-		e.other:Faction(86,-30,0); -- dismal rage
-		e.other:Faction(105,-30,0); -- freeport militia
+		e.other:Faction(271,-30,0); -- dismal rage
+		e.other:Faction(330,-30,0); -- freeport militia
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -74,10 +74,10 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::exp(100000);
-    quest::faction(49,20); # coldain
-    quest::faction(67,20); # Dain Frostreaver IV
-    quest::faction(188,-60); # Kromrif
-    quest::faction(189,-60); # Kromzek
+    quest::faction(406,20); # coldain
+    quest::faction(405,20); # Dain Frostreaver IV
+    quest::faction(419,-60); # Kromrif
+    quest::faction(448,-60); # Kromzek
     quest::emote("smiles warmly as she hands you your reward.");
     quest::say("You have done well.");
   }

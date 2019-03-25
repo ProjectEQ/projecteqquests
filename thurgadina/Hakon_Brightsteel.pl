@@ -15,10 +15,10 @@ if($text=~/stonetooth sent me/i) {
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 1690 => 1,22569 => 1)) { # Small piece of Velium, Norman's Axe V1 5 damage
 	quest::say("Excellent! I'll get ta work now. Hakon whistles an unfamiliar tune as he repairs and sharpens the pick axe. Here ye are, $name. Watch that old Stonetooth, he's a few steins short of a keg, if ye know what I mean.");
-	quest::faction(49,5); # Coldain
-	quest::faction(67,5); # Dain Frostreaver IV
-	quest::faction(189,-10); # Kromzek
-	quest::faction(188,-10); # Kromrif
+	quest::faction(406,5); # Coldain
+	quest::faction(405,5); # Dain Frostreaver IV
+	quest::faction(448,-10); # Kromzek
+	quest::faction(419,-10); # Kromrif
 	quest::exp(1000);
 	quest::summonitem(1691); # Norman's Axe V2 6 Damage
 	}

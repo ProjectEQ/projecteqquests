@@ -25,11 +25,11 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(9009,2113,2114,2115,2116,2117,2118,2119,2120,2122,2123,2124));
     quest::givecash(0,quest::ChooseRandom(20,21,22,23,24),0,0);
     quest::ding();
-    quest::faction(314,40);
-    quest::faction(169,40);
-    quest::faction(219,40);
-    quest::faction(215,40);
-    quest::faction(57,-120);
+    quest::faction(312,40);
+    quest::faction(274,40);
+    quest::faction(293,40);
+    quest::faction(290,40);
+    quest::faction(232,-120);
     quest::exp(28000);
   }
   elsif (plugin::check_handin(\%itemcount, 13318 => 3)) { #Crushbone Belt x 3
@@ -39,11 +39,11 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(9009,2113,2114,2115,2116,2117,2118,2119,2120,2122,2123,2124));
     quest::givecash(0,quest::ChooseRandom(14,15,16,17,18,19),0,0);
     quest::ding();
-    quest::faction(314,30);
-    quest::faction(169,30);
-    quest::faction(219,30);
-    quest::faction(215,30);
-    quest::faction(57,-90);
+    quest::faction(312,30);
+    quest::faction(274,30);
+    quest::faction(293,30);
+    quest::faction(290,30);
+    quest::faction(232,-90);
     quest::exp(21000);
   }
   elsif (plugin::check_handin(\%itemcount, 13318 => 2)) { #Crushbone Belt x 2
@@ -52,11 +52,11 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(9009,2113,2114,2115,2116,2117,2118,2119,2120,2122,2123,2124));
     quest::givecash(0,quest::ChooseRandom(10,11,12,13,14),0,0);
     quest::ding();
-    quest::faction(314,20);
-    quest::faction(169,20);
-    quest::faction(219,20);
-    quest::faction(215,20);
-    quest::faction(57,-60);
+    quest::faction(312,20);
+    quest::faction(274,20);
+    quest::faction(293,20);
+    quest::faction(290,20);
+    quest::faction(232,-60);
     quest::exp(14000);
   }
   elsif (plugin::check_handin(\%itemcount, 13318 => 1)) { #Crushbone Belt x 1
@@ -64,11 +64,11 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(9009,2113,2114,2115,2116,2117,2118,2119,2120,2122,2123,2124));
     quest::givecash(0,quest::ChooseRandom(5,6,7,8,9),0,0);
     quest::ding();
-    quest::faction(314,10);
-    quest::faction(169,10);
-    quest::faction(219,10);
-    quest::faction(215,10);
-    quest::faction(57,-30);
+    quest::faction(312,10);
+    quest::faction(274,10);
+    quest::faction(293,10);
+    quest::faction(290,10);
+    quest::faction(232,-30);
     quest::exp(7000);
   }
   elsif (plugin::check_handin(\%itemcount, 13319 => 4)) { #Crushbone Shoulderpads x 4
@@ -76,11 +76,11 @@ sub EVENT_ITEM {
     quest::summonitem(10017,2);
     quest::givecash(0,0,8,0);
     quest::ding();
-    quest::faction(314,20);
-    quest::faction(169,20);
-    quest::faction(219,20);
-    quest::faction(215,20);
-    quest::faction(57,-60);
+    quest::faction(312,20);
+    quest::faction(274,20);
+    quest::faction(293,20);
+    quest::faction(290,20);
+    quest::faction(232,-60);
     quest::exp(64000);
   }
   elsif (plugin::check_handin(\%itemcount, 13319 => 2)) { #Crushbone Shoulderpads x 2
@@ -88,11 +88,11 @@ sub EVENT_ITEM {
     quest::summonitem(10017);
     quest::givecash(0,0,4,0);
     quest::ding();
-    quest::faction(314,10);
-    quest::faction(169,10);
-    quest::faction(219,10);
-    quest::faction(215,10);
-    quest::faction(57,-30);
+    quest::faction(312,10);
+    quest::faction(274,10);
+    quest::faction(293,10);
+    quest::faction(290,10);
+    quest::faction(232,-30);
     quest::exp(32000);
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

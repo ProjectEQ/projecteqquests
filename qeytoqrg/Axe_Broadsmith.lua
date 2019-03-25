@@ -14,20 +14,20 @@ function event_trade(e)
 		eq.unique_spawn(4192,0,0,1055,3858,-19); -- a_strange_skeleton
 		e.other:Ding();
 		e.other:Faction(311,15,0); -- Steel Warriors
-		e.other:Faction(135,15,0); -- Guards of Qeynos
-		e.other:Faction(53,-15,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,-15,0); -- Freeport Militia
-		e.other:Faction(184,15,0); -- Knights of Truth
+		e.other:Faction(262,15,0); -- Guards of Qeynos
+		e.other:Faction(230,-15,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-15,0); -- Freeport Militia
+		e.other:Faction(281,15,0); -- Knights of Truth
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13397})) then -- Skull
 		e.self:Say("So you are the new warrior. Let us test your skill. Across the pond is a skeleton. See him? Engage him in combat. He awaits. Return his skull to me and I shall call you a Steel Warrior. Be quick. He will dissipate soon.");
 		e.other:SummonItem(18895); -- Letter of Recommendation
 		e.other:Ding();
 		e.other:Faction(311,15,0); -- Steel Warriors
-		e.other:Faction(135,15,0); -- Guards of Qeynos
-		e.other:Faction(53,-15,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,-15,0); -- Freeport Militia
-		e.other:Faction(184,15,0); -- Knights of Truth
+		e.other:Faction(262,15,0); -- Guards of Qeynos
+		e.other:Faction(230,-15,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-15,0); -- Freeport Militia
+		e.other:Faction(281,15,0); -- Knights of Truth
 		e.other:AddEXP(6000);
 		e.other:GiveCash(7,0,0,0);
 	end

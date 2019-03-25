@@ -21,9 +21,9 @@ sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,12309=>2) && $faction <=4) { # A Dark Cauldron
       quest::say("You have earned the mold.  You will now need go and speak with Thomas about [Lord Searfire].");
       quest::summonitem(12299); # Mold of Ro Breastplate 
-      quest::faction("43","1");  # Clerics of Tunare
-      quest::faction("178","1"); # King Tearis Thex
-      quest::faction("8","1"); # Anti-Mage
+      quest::faction("226","1");  # Clerics of Tunare
+      quest::faction("279","1"); # King Tearis Thex
+      quest::faction("5001","1"); # Anti-Mage
    } elsif (plugin::check_handin(\%itemcount,12309=>1) && $faction <=4 ) {
       quest::say("I instructed you to return with no less than two dark pots.");
    }

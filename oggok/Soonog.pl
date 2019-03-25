@@ -31,20 +31,20 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18789 => 1)) {
     quest::say("Soonog own you now.. fight for Soonog.. Soonog make you strong.. When you ready for task you tell Soonog.  Soonog army rule all!! You return to me when you stronger, I teach you many things I know, including how to start working in the various [trades].");
     quest::summonitem(13527);
-	quest::faction(128,100);  # Green Blood Knight
-	quest::faction(46,50);   # Clurg
-	quest::faction(314,-15); # Storm Guard
-	quest::faction(292,-15); # Shadowknight of Night Keep
+	quest::faction(261,100);  # Green Blood Knight
+	quest::faction(228,50);   # Clurg
+	quest::faction(312,-15); # Storm Guard
+	quest::faction(308,-15); # Shadowknight of Night Keep
 	quest::ding();
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 13410 => 4)) {
     quest::say("Small meats but is good nuff.  You take dis and go kill eberyting.  Make all scared of da Greenblood knights.  You get ready for next inb.. ins.. invat.. you get ready for next war.  You learning stuff, you come bak here and me teach you more Greenblood stuf so we be more tuffest.");
     quest::summonitem(5023);
-		quest::faction(128,5);  # Green Blood Knight
-		quest::faction(46,5);   # Clurg
-		quest::faction(314,-10); # Storm Guard
-		quest::faction(292,-10); # Shadowknight of Night Keep
+		quest::faction(261,5);  # Green Blood Knight
+		quest::faction(228,5);   # Clurg
+		quest::faction(312,-10); # Storm Guard
+		quest::faction(308,-10); # Shadowknight of Night Keep
 		quest::ding();
     quest::exp(50);
   }

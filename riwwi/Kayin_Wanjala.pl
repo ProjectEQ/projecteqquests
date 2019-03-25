@@ -34,8 +34,8 @@ if($text=~/help you/i){
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 64014 => 1)) {  # Head of Ra'Tuk Hrux Vexkit V1
 	quest::say("Hah! What an ugly mug on this one! Thank you, friend. I can slip out of here now and know that my friend is still relatively safe. Here, you keep the head. Maybe you can show it to my friend Njanu Dinari back in Barindu and tell him the story. I'm sure he's worried about me and it might ease his mind a bit.");
-	quest::faction(363,5); # Yunjo Slave Resistance
-	quest::faction(416,-5); # Gladiators of Mata Muram
+	quest::faction(1770,5); # Yunjo Slave Resistance
+	quest::faction(1771,-5); # Gladiators of Mata Muram
 	quest::summonitem(64015); # Head of Ra'Tuk Hrux Vexkit V2
 	quest::exp(300000);
 	}

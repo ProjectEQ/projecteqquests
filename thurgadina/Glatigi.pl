@@ -40,70 +40,70 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 25814 => 3, 24935 => 1)) { # tunic 
       quest::summonitem(55318); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24937 => 1)) { # sleeves 
       quest::summonitem(55319); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif 
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif 
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24936 => 1)) { # leggings 
       quest::summonitem(55322); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif 
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif 
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24941 => 1)) { # gauntlets 
       quest::summonitem(55321); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif 
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif 
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");  
     } 
     elsif (plugin::check_handin(\%itemcount, 25831 => 3, 24940 => 1)) { # coif 	
       quest::summonitem(55317); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif 
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif 
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24939 => 1)) { # bracers 
       quest::summonitem(55320); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif 
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif 
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24938 => 1)) { # boots 
       quest::summonitem(55323); 
       quest::exp(100000); 
-      quest::faction(49,20); # coldain 
-      quest::faction(67,20); # Dain Frostreaver IV 
-      quest::faction(188,-60); # Kromrif 
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain 
+      quest::faction(405,20); # Dain Frostreaver IV 
+      quest::faction(419,-60); # Kromrif 
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     } 

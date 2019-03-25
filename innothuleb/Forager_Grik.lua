@@ -11,7 +11,7 @@ function event_trade(e)
 		e.self:Say("Grrrikk.. This is Groak's vial!! He must be in danger. Here. Return this liquid to him. Be quick!");
 		e.other:SummonItem(13376);
 		e.other:Ding();
-		e.other:Faction(106,20,0);
+		e.other:Faction(251,20,0);
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

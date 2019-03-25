@@ -36,10 +36,10 @@ sub EVENT_ITEM {
 	if((plugin::check_handin(\%itemcount, 22851 => 2, 22852 =>1, 1703 =>1))&& (defined $qglobals{krofer_assignment})) { # 2x panther meat, raptor meat, Tar Goo Strand
 		quest::say("Well, I suppose you may be worth something more than fodder after all. Here is your payment. Speak to me again when you are ready for your next assignment. For now, get some rest, you will need it.");
 		quest::ding();
-		quest::faction(189,10);
-		quest::faction(188,10);
-		quest::faction(179,10);
-		quest::faction(42,-30);
+		quest::faction(448,10);
+		quest::faction(419,10);
+		quest::faction(429,10);
+		quest::faction(430,-30);
 		quest::exp(1000);
 		quest::givecash(1,7,0,12);
 		quest::delglobal("krofer_assignment");
@@ -48,10 +48,10 @@ sub EVENT_ITEM {
 	if((plugin::check_handin(\%itemcount, 1704 =>1))&& (defined $qglobals{tunarean_regiment})) { # Sifaye messenger's report
 		quest::say("Excellent, $name. With this we can plan an attack that might actually accomplish something. Here is your payment. You have also earned this cloak, it should help protect you from the clawing undergrowth of this savage land. Your next mission will be more complex and dangerous, however we may be able to spare a laborer or two to assist you. Rest now, and tell me when you are prepared.");
 		quest::ding();
-		quest::faction(189,10);
-		quest::faction(188,10);
-		quest::faction(179,10);
-		quest::faction(42,-30);
+		quest::faction(448,10);
+		quest::faction(419,10);
+		quest::faction(429,10);
+		quest::faction(430,-30);
 		quest::exp(1000);
 		quest::givecash(0,5,4,11);
 		quest::summonitem(1705); # Velium Studded Cloak

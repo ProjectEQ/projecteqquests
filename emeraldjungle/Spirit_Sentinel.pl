@@ -39,17 +39,17 @@ sub EVENT_ITEM {
  if ($faction <= 3) {
   if(plugin::check_handin(\%itemcount, 1668 => 1)){ #Part of Shaman Epic 1.0
    quest::say("Ahh, you live, shaman! I am glad the beasts of this jungle haven't torn your body asunder. Tell me, do you still walk the path? Are you willing to [" . quest::saylink("continue what you have started") . "]?");
-   quest::faction(342,150);
+   quest::faction(404,150);
   }
   elsif(plugin::check_handin(\%itemcount, 1672 => 1)){ #Part of Shaman Epic 1.0
    quest::emote("begins to weep softly as he sees the pelt, battered and bloody. After a few moments, he says, 'We can only hope his passing was quick and painless. The Dire was powerful and yet you overcame him. Always remember that when you became [" . quest::saylink("Heyokah") . "], it was the passing of a noble, yet misguided being that allowed you to do so. You should hold a special place in your heart for him and what he was in life. To help you remember him, we will fashion this pelt into a pair of boots and give them to you. With every step you take, you must think on the Dire, else his death be in vain forever.");
    quest::summonitem(1678);
-   quest::faction(342,50);
+   quest::faction(404,50);
    quest::exp(50000);
   }
   elsif(plugin::check_handin(\%itemcount, 3599 => 1)){ #Part of Shaman Epic 1.0
    quest::emote("Ahhh good, let us hope what you have found will point us in the right direction. Hmmm...this is interesting. It appears the disappearance of the first queen may have caused Rak'Ashiir's faith to decline. From there, the first King Rak laid down the groundwork for the city's eventual demise. We need to learn what happened to the queen. Perhaps bringing this knowledge to the King's now cursed form will lift the mantle. We've learned that the last lord of Torsis, Ghiosk, was a bit of a historian. Find him and see what you can learn about the queen. Take what you find to my brother here in the jungle beneath the murky waters of a pond.");
-   quest::faction(342,100);
+   quest::faction(404,100);
    quest::exp(75000);
   }
  }

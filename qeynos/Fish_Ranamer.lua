@@ -7,7 +7,7 @@ function event_say(e)
 	elseif(e.message:findi("tax collection") and tax.tax_collection ~= nil) then
 		e.self:Say("Taxes?! Taxes?! Tax me right out of business is what you folks are doing! Take your taxes and get out of my pub! Unless, of course, you care to buy some drinks...?");
 		e.other:SummonItem(13178);
-		e.other:Faction(217,-10,0);
+		e.other:Faction(291,-10,0);
 	end
 	
 end

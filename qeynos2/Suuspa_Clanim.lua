@@ -16,21 +16,21 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13301})) then
 		e.self:Say("Ah, one less of the Plaguebringer's followers to poison these lands. Take this as a reward for your service."); -- Text improvised
 		e.other:Ding();
-		e.other:Faction(9,5,0); -- Antonius Bayle
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(257,5,0); -- Priests of Life
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(21,-5,0); -- Bloodsabers
+		e.other:Faction(219,5,0); -- Antonius Bayle
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(341,5,0); -- Priests of Life
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(221,-5,0); -- Bloodsabers
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(20),math.random(20),0,0); -- Random from 20cp20sp
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13908})) then
 		e.self:Say("This is not good. Hmph. It appears they are shattered. For the first time one of our members has been swayed. I reward you for your deed. Also, if you have found anything upon Trintle, let me know.");
 		e.other:Ding();
-		e.other:Faction(9,5,0); -- Antonius Bayle
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(257,5,0); -- Priests of Life
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(21,-5,0); -- Bloodsabers
+		e.other:Faction(219,5,0); -- Antonius Bayle
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(341,5,0); -- Priests of Life
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(221,-5,0); -- Bloodsabers
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(20),math.random(20),0,0); -- Random from 20cp20sp
 	end

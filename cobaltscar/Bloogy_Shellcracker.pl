@@ -12,8 +12,8 @@ sub EVENT_ITEM {
     quest::say("It has been many moons since my people have feasted on this rarest of meat. Take this totem crafted in the form of our oceanlord Prexus and inscribed with the runes of our people. May the oceans watch over you, $name.");
     quest::summonitem(28514); #Othmir Prexus Totem
     quest::exp(15000);
-    quest::faction(241, 30); #Othmir
-    quest::faction(345, -60); #Ulthork
+    quest::faction(432, 30); #Othmir
+    quest::faction(431, -60); #Ulthork
   }
   plugin::return_items(\%itemcount);
 }

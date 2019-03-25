@@ -31,14 +31,14 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10032 => 2, 10000 => 1)) {
     quest::say("Here is your prize - a lambent star ruby.");
     quest::summonitem(10117);
-    quest::faction(320,15);
-    quest::faction(291,-15);
+    quest::faction(415,15);
+    quest::faction(416,-15);
   }
   elsif($gold == 550) {
     quest::say("Here is your prize - a lambent star ruby.");
     quest::summonitem(10117);
-    quest::faction(320,15);
-    quest::faction(291,-15);
+    quest::faction(415,15);
+    quest::faction(416,-15);
   }
   elsif(plugin::check_handin(\%itemcount, 16507 => 1)) {
     quest::say("I see that Gavel has sent you to me. Very well, I have galvanized your platinum bar - take it.");

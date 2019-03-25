@@ -80,17 +80,17 @@ sub EVENT_ITEM
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
    quest::summonitem(11815);
    # The Dead
-   quest::faction("322","10");
+   quest::faction("239","10");
    # Queen Cristanos Thex 
-   quest::faction("268","10");
+   quest::faction("303","10");
    # King Naythox Thex 
-   quest::faction("177","-10");
+   quest::faction("278","-10");
    # Keepers of the Art 
-   quest::faction("170","-10");
+   quest::faction("275","-10");
    # Eldritch Collective
-   quest::faction("91","-10");
+   quest::faction("245","-10");
    # Primordial Malice
-   quest::faction("260","-10");
+   quest::faction("1522","-10");
    #Approx half a blue at level 31
    quest::exp(62000);
 
@@ -101,17 +101,17 @@ sub EVENT_ITEM
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
    quest::summonitem(11836);
    # The Dead
-   quest::faction("322","10");
+   quest::faction("239","10");
    # Queen Cristanos Thex 
-   quest::faction("268","10");
+   quest::faction("303","10");
    # King Naythox Thex 
-   quest::faction("177","-10");
+   quest::faction("278","-10");
    # Keepers of the Art 
-   quest::faction("170","-10");
+   quest::faction("275","-10");
    # Eldritch Collective
-   quest::faction("91","-10");
+   quest::faction("245","-10");
    # Primordial Malice
-   quest::faction("260","-10");
+   quest::faction("1522","-10");
    #Approx half a blue at level 31
    quest::exp(62000);
 
@@ -122,17 +122,17 @@ sub EVENT_ITEM
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
    quest::summonitem(11858);
    # The Dead
-   quest::faction("322","10");
+   quest::faction("239","10");
    # Queen Cristanos Thex 
-   quest::faction("268","10");
+   quest::faction("303","10");
    # King Naythox Thex 
-   quest::faction("177","-10");
+   quest::faction("278","-10");
    # Keepers of the Art 
-   quest::faction("170","-10");
+   quest::faction("275","-10");
    # Eldritch Collective
-   quest::faction("91","-10");
+   quest::faction("245","-10");
    # Primordial Malice
-   quest::faction("260","-10");
+   quest::faction("1522","-10");
    #Approx half a blue at level 31
    quest::exp(62000);
  }
@@ -142,17 +142,17 @@ sub EVENT_ITEM
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
    quest::summonitem(11864);
    # The Dead
-   quest::faction("322","10");
+   quest::faction("239","10");
    # Queen Cristanos Thex 
-   quest::faction("268","10");
+   quest::faction("303","10");
    # King Naythox Thex 
-   quest::faction("177","-10");
+   quest::faction("278","-10");
    # Keepers of the Art 
-   quest::faction("170","-10");
+   quest::faction("275","-10");
    # Eldritch Collective
-   quest::faction("91","-10");
+   quest::faction("245","-10");
    # Primordial Malice
-   quest::faction("260","-10");
+   quest::faction("1522","-10");
    #Approx half a blue at level 31
    quest::exp(62000);
  }

@@ -22,15 +22,15 @@ sub EVENT_ITEM {
     #End of Assassins Part1
     quest::say("I see you have met with success $name! You have earned the respect of the Validus Custodus. Please take this as a symbol of our gratitude and your bravery. You are gaining notoriety with the Coterie, be wary of the [Coterie Infiltrators].");
     quest::summonitem('31829'); #Reflective Combine Claymore
-    quest::faction(206,10);  # +Magus Conlegium
-    quest::faction(168,10);  # +Katta Castellum Citizens
-    quest::faction(350,10);  # +Validus Custodus
-    quest::faction(228,-10); # -Nathyn Illuminious
-    quest::faction(55,-10);  # -Coterie of the Eternal Night
-    quest::faction(284,-10); # -Seru
-    quest::faction(139,-10); # -Hand of Seru
-    quest::faction(96,-10);  # -Eye of Seru
-    quest::faction(138,-10); # -Hand Legionnaries
+    quest::faction(1504,10);  # +Magus Conlegium
+    quest::faction(1502,10);  # +Katta Castellum Citizens
+    quest::faction(1503,10);  # +Validus Custodus
+    quest::faction(1505,-10); # -Nathyn Illuminious
+    quest::faction(1506,-10);  # -Coterie of the Eternal Night
+    quest::faction(1483,-10); # -Seru
+    quest::faction(1484,-10); # -Hand of Seru
+    quest::faction(1485,-10);  # -Eye of Seru
+    quest::faction(1541,-10); # -Hand Legionnaries
     quest::exp(1000);
   }
   #Handin: 2x Vampyre Infiltrator Fang (31832), 1x Gem of Condensed Flame (31831), 1x Reflective Combine Claymore (31829)
@@ -38,30 +38,30 @@ sub EVENT_ITEM {
     #End of Assassins Part2
     quest::say("Congratulations $name! You have done great deeds for the Validus Custodus and the safety of Katta Castellum. I award you with Ashbringer, a weapon wielded in the past by some of the Validus Custodus most fervent undead slayers. May it pass into good hands and may it continue to turn the undead to ash and dust.");
     quest::summonitem('31830'); #Ashbringer
-    quest::faction(206,10);  # +Magus Conlegium
-    quest::faction(168,10);  # +Katta Castellum Citizens
-    quest::faction(350,10);  # +Validus Custodus
-    quest::faction(228,-10); # -Nathyn Illuminious
-    quest::faction(55,-10);  # -Coterie of the Eternal Night
-    quest::faction(284,-10); # -Seru
-    quest::faction(139,-10); # -Hand of Seru
-    quest::faction(96,-10);  # -Eye of Seru
-    quest::faction(138,-10); # -Hand Legionnaries
+    quest::faction(1504,10);  # +Magus Conlegium
+    quest::faction(1502,10);  # +Katta Castellum Citizens
+    quest::faction(1503,10);  # +Validus Custodus
+    quest::faction(1505,-10); # -Nathyn Illuminious
+    quest::faction(1506,-10);  # -Coterie of the Eternal Night
+    quest::faction(1483,-10); # -Seru
+    quest::faction(1484,-10); # -Hand of Seru
+    quest::faction(1485,-10);  # -Eye of Seru
+    quest::faction(1541,-10); # -Hand Legionnaries
     quest::exp(1000);
   }
   elsif(plugin::check_handin(\%itemcount, 3873 => 1)){ #Colain head turn-in for Saureem's Assistance
     quest::say("It is very unfortunate that you had to be exposed to such corruption.  Please, do not consider what you have seen during this situation to be the standard for our community.  This was a rare occurrence.  This situation did however allow you to prove yourself to us.  We thank you for your bravery and selfless action in this matter.  May you be followed by favor and may this small gift from my fellow governors and me assist you in your journeys.");
 	quest::ding();
     quest::summonitem('3875'); #Elaborately Gilded Wooden Spear
-    quest::faction(206,10);  # +Magus Conlegium
-    quest::faction(168,10);  # +Katta Castellum Citizens
-    quest::faction(350,10);  # +Validus Custodus
-    quest::faction(228,-10); # -Nathyn Illuminious
-    quest::faction(55,-10);  # -Coterie of the Eternal Night
-    quest::faction(284,-10); # -Seru
-    quest::faction(139,-10); # -Hand of Seru
-    quest::faction(96,-10);  # -Eye of Seru
-    quest::faction(138,-10); # -Hand Legionnaries
+    quest::faction(1504,10);  # +Magus Conlegium
+    quest::faction(1502,10);  # +Katta Castellum Citizens
+    quest::faction(1503,10);  # +Validus Custodus
+    quest::faction(1505,-10); # -Nathyn Illuminious
+    quest::faction(1506,-10);  # -Coterie of the Eternal Night
+    quest::faction(1483,-10); # -Seru
+    quest::faction(1484,-10); # -Hand of Seru
+    quest::faction(1485,-10);  # -Eye of Seru
+    quest::faction(1541,-10); # -Hand Legionnaries
     quest::exp(1000);
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');

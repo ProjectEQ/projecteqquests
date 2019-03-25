@@ -24,17 +24,17 @@ function event_trade(e)
 		e.self:Say("Welcome to the house of the Ashen Order. We are a small guild of monks who have devoted our lives to refining our minds, souls, and physical beings to their maximum potential. Please see Brother Torresk as soon as you get a chance. He is in charge of helping our newer members begin their training. Good luck, " .. e.other:GetName() .. ".");
 		e.other:SummonItem(13507); -- Torn Cloth Tunic
 		e.other:Ding();
-		e.other:Faction(12,100,0); -- Ashen Order
-		e.other:Faction(184,15,0); -- Knights of Truth
-		e.other:Faction(300,5,0); -- Silent Fist Clan
+		e.other:Faction(361,100,0); -- Ashen Order
+		e.other:Faction(281,15,0); -- Knights of Truth
+		e.other:Faction(309,5,0); -- Silent Fist Clan
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 28055})) then -- Tattered Parchment
 		e.self:Say("You have performed a great service to one who is your brother. Your loyalty shines brightly, as does your skill. Take the treant fists. They are yours now.");
 		e.other:SummonItem(12344); -- Treant Fists
 		e.other:Ding();
-		e.other:Faction(12,10,0); -- Ashen Order
-		e.other:Faction(184,5,0); -- Knights of Truth
-		e.other:Faction(300,5,0); -- Silent Fist Clan
+		e.other:Faction(361,10,0); -- Ashen Order
+		e.other:Faction(281,5,0); -- Knights of Truth
+		e.other:Faction(309,5,0); -- Silent Fist Clan
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

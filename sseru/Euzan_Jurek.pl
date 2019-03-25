@@ -26,15 +26,15 @@ sub EVENT_ITEM {
     quest::summonitem(29858); # 29858  Etched Earring of Veracity
     quest::summonitem(29891); # 29891  Report to Tilbok
     quest::exp(30000);
-    quest::faction(96,-30); # Eye of Seru
-    quest::faction(139,-30); # Hand of Seru
-    quest::faction(284,-30); # Seru
-    quest::faction(55,-30); # Coterie of the Eternal Night
-    quest::faction(138,-30); # Hand Legionnaries
-    quest::faction(228,-30); # Nathyn Illuminious
-    quest::faction(168,10); # Katta Castellum Citizens
-    quest::faction(350,10); # Validus Custodus
-    quest::faction(206,10); # Magus Conlegium
+    quest::faction(1485,-30); # Eye of Seru
+    quest::faction(1484,-30); # Hand of Seru
+    quest::faction(1483,-30); # Seru
+    quest::faction(1506,-30); # Coterie of the Eternal Night
+    quest::faction(1541,-30); # Hand Legionnaries
+    quest::faction(1505,-30); # Nathyn Illuminious
+    quest::faction(1502,10); # Katta Castellum Citizens
+    quest::faction(1503,10); # Validus Custodus
+    quest::faction(1504,10); # Magus Conlegium
   }
 
   plugin::return_items(\%itemcount); # return unused items

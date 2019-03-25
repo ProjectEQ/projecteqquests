@@ -22,11 +22,11 @@ sub EVENT_ITEM {
    quest::emote("hands you plans for a trooper's pike head.");
    quest::say("Congratulations. You are now a trooper of the Legion of Cabilis. Now you may fight with honor and a mighty weapon.");
    quest::summonitem(12477); 
-   quest::faction( 30,2);
-   quest::faction( 193,2);
-   quest::faction( 282,2);
-   quest::faction( 317,2);
-   quest::faction( 62,2);
+   quest::faction( 440,2);
+   quest::faction( 441,2);
+   quest::faction( 445,2);
+   quest::faction( 444,2);
+   quest::faction( 442,2);
    quest::exp(1200);
    quest::ding();
   }
@@ -35,11 +35,11 @@ sub EVENT_ITEM {
     quest::summonitem(18073);
     quest::exp(2000);
     quest::ding();
-    quest::faction( 30,2);
-   quest::faction( 193,2);
-   quest::faction( 282,2);
-   quest::faction( 317,2);
-   quest::faction( 62,2);
+    quest::faction( 440,2);
+   quest::faction( 441,2);
+   quest::faction( 445,2);
+   quest::faction( 444,2);
+   quest::faction( 442,2);
       }
   plugin::return_items(\%itemcount);
 }

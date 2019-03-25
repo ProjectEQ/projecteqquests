@@ -27,8 +27,8 @@ sub EVENT_ITEM {
   if(($itemcount{19001} == 1) && ($itemcount{19002} == 1) && ($itemcount{16507} == 1)) {
     quest::say("Well done! Please take these boots as your reward.");  # text made up
     quest::summonitem(4921);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -36,8 +36,8 @@ sub EVENT_ITEM {
   if(($itemcount{19007} == 1) && ($itemcount{19008} == 1) && ($itemcount{19049} == 1)) {
     quest::say("Well done! Please take these greaves as your reward.");  # text made up
     quest::summonitem(4924);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -45,8 +45,8 @@ sub EVENT_ITEM {
   if(($itemcount{19003} == 1) && ($itemcount{19004} == 1) && ($itemcount{19047} == 1)) {
     quest::say("Well done! Please take these gauntlets as your reward.");  # text made up
     quest::summonitem(4922);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -54,8 +54,8 @@ sub EVENT_ITEM {
   if(($itemcount{19005} == 1) && ($itemcount{19006} == 1) && ($itemcount{19048} == 1)) {
     quest::say("Well done! Please take these vambraces as your reward.");  # text made up
     quest::summonitem(4923);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 

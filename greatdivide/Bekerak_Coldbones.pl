@@ -16,20 +16,20 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 25266 =>1)) { # Giant Sack of Supplies
 		quest::say("Supplies from Svekk?  Where are the rest of them little one!  There must be more, we are here pushing the Coldain back into their hole in the wall and Svekk sends a $race to deliver a small portion of supplies.  Take this note back to that fool.  Leave quickly before I take my rage out upon you.");
 		quest::ding();
-		quest::faction(189,10); # Kromzek
-		quest::faction(188,10); # Kromrif
-		quest::faction(49,-30); # Coldain
-		quest::faction(42,-30); # Claws of Veeshan
+		quest::faction(448,10); # Kromzek
+		quest::faction(419,10); # Kromrif
+		quest::faction(406,-30); # Coldain
+		quest::faction(430,-30); # Claws of Veeshan
 		quest::exp(250);
 		quest::summonitem(25267); # Bekerak's Letter to Svekk
 	}
 	if(plugin::check_handin(\%itemcount, 25269 =>1)) { # Large Supply Sack for Bekerak
 		quest::say("I am in your debt, $race.  These supplies will help our effort to destroy the Coldain.  I wish I had more to give than what I do.'  Bekerak pulls a strange looking totem on a string from one of his pockets and hands it to you.  'May Lord Rallos smile upon you, $name.'");
 		quest::ding();
-		quest::faction(189,10); # Kromzek
-		quest::faction(188,10); # Kromrif
-		quest::faction(49,-30); # Coldain
-		quest::faction(42,-30); # Claws of Veeshan
+		quest::faction(448,10); # Kromzek
+		quest::faction(419,10); # Kromrif
+		quest::faction(406,-30); # Coldain
+		quest::faction(430,-30); # Claws of Veeshan
 		quest::exp(250);
 		quest::summonitem(25268); # Kromrif Battle Totem
 	}

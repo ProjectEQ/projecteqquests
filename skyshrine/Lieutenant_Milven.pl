@@ -17,9 +17,9 @@ sub EVENT_ITEM {
  #Handin: Giant Warrior Helmet (29062)
  if(plugin::check_handin(\%itemcount, 29062 => 1)){ #End of: Helms of Giant Warriors
   quest::say("Well done, $name. You are proving to be worth the risk of sending a new recruit out on a mission such as this. If you feel this is the type of mission you're best suited for, feel free to slay more of these beasts and return their helmets to me. The fewer giants there are out there, the less chance they continue their random attacks against us. I also may have another [assignment] for you if you're interested.");
-  quest::faction(42,50); # +Claws of Veeshan
-  quest::faction(362,50); # +Yelinak
-  quest::faction(189,-50); # -Kromzek
+  quest::faction(430,50); # +Claws of Veeshan
+  quest::faction(436,50); # +Yelinak
+  quest::faction(448,-50); # -Kromzek
   quest::exp(150);
  }
  #Handin: Storm Giant Toes (29124)
@@ -27,9 +27,9 @@ sub EVENT_ITEM {
   quest::emote("chuckles as he looks at the toes of the giants.");
   quest::say("You have indeed proven yourself to me, and in doing so to the shrine. Keep it up and you'll be on your way to becoming a great ally to the shrine. We appreciate your efforts in this matter greatly, and if you choose to continue your endeavors in this matter, we won't hold it against you.");
   quest::emote("gives you a sly grin before going back to his work.");
-  quest::faction(42,50); # +Claws of Veeshan
-  quest::faction(362,50); # +Yelinak
-  quest::faction(189,-50); # -Kromzek
+  quest::faction(430,50); # +Claws of Veeshan
+  quest::faction(436,50); # +Yelinak
+  quest::faction(448,-50); # -Kromzek
   quest::givecash(14,10,14,4);
   quest::exp(250);
  }
@@ -38,9 +38,9 @@ sub EVENT_ITEM {
   quest::emote("chuckles as he looks at the toes of the giants.");
   quest::say("You have indeed proven yourself to me, and in doing so to the shrine. Keep it up and you'll be on your way to becoming a great ally to the shrine. We appreciate your efforts in this matter greatly, and if you choose to continue your endeavors in this matter, we won't hold it against you.");
   quest::emote("gives you a sly grin before going back to his work.");
-  quest::faction(42,50); # +Claws of Veeshan
-  quest::faction(362,50); # +Yelinak
-  quest::faction(189,-50); # -Kromzek
+  quest::faction(430,50); # +Claws of Veeshan
+  quest::faction(436,50); # +Yelinak
+  quest::faction(448,-50); # -Kromzek
   quest::givecash(14,10,14,4);
   quest::exp(250);
  }

@@ -11,11 +11,11 @@ function event_trade(e)
 		e.self:Say("Ah. Good for you! Here you are. Take this to McNeal, but next time there will be no stout if there are no weapons.");
 		e.other:SummonItem(13131);
 		e.other:Ding();
-		e.other:Faction(33,5,0);
-		e.other:Faction(217,-10,0);
-		e.other:Faction(53,5,0);
-		e.other:Faction(135,-10,0);
-		e.other:Faction(164,5,0);
+		e.other:Faction(223,5,0);
+		e.other:Faction(291,-10,0);
+		e.other:Faction(230,5,0);
+		e.other:Faction(262,-10,0);
+		e.other:Faction(273,5,0);
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

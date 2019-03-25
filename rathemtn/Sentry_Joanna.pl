@@ -22,9 +22,9 @@ sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,12312 => 1) && $faction <=4 ){
       quest::say("Thank you my friend.  It is good to see him free at last.  I shall miss him.  Here now is the mold of gauntlets as promised. Go and speak with Thomas for information about [Lord Searfire].");
       quest::summonitem("12302");
-      quest::faction("184","1"); #Knights of Truth
-      quest::faction("105","-1"); #Freeport Militia
-      quest::faction("258","1"); #Priests of Marr
+      quest::faction("281","1"); #Knights of Truth
+      quest::faction("330","-1"); #Freeport Militia
+      quest::faction("362","1"); #Priests of Marr
    }
    plugin::return_items(\%itemcount);
 }

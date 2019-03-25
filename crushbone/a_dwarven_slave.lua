@@ -17,10 +17,10 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20016})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(169,1,0);
-			e.other:Faction(314,1,0);
-			e.other:Faction(220,1,0);
-			e.other:Faction(215,1,0);
+			e.other:Faction(274,1,0);
+			e.other:Faction(312,1,0);
+			e.other:Faction(322,1,0);
+			e.other:Faction(290,1,0);
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -37,8 +37,8 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20017})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(170,1,0);
-			e.other:Faction(178,1,0);
+			e.other:Faction(275,1,0);
+			e.other:Faction(279,1,0);
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();

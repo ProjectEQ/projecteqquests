@@ -23,8 +23,8 @@ sub EVENT_ITEM
 	if (plugin::check_handin(\%itemcount, 55835 == 1)) #Thin Out the Murkgliders
 		{
 		quest::me("The dragorn takes the blood from you. 'Thank you, $name. This should keep the murkgliders at bay for a while. Let me know if you recover any more.'");
-		quest::faction(410,1); #dranik loyalists
-		quest::faction(432,-3); #overlord mata muram
+		quest::faction(1016,1); #dranik loyalists
+		quest::faction(1013,-3); #overlord mata muram
 		}
 		plugin::return_items(\%itemcount);
 }

@@ -47,10 +47,10 @@ function event_trade(e)
 		e.self:Say("I knew I could rely on Rephas to finish this research for me. We both know that this would not have been possible without your help young " .. e.other:GetName() .. " . Please take this dagger as a symbol of your dedication to the Order of Three. Your good deeds will surely be known throughout our guildhouse. Good luck to you!");
 		e.other:SummonItem(27495);
 		e.other:Ding();
-		e.other:Faction(240,30,0);
-		e.other:Faction(21,-30,0);
-		e.other:Faction(135,30,0);
-		e.other:Faction(235,-30,0);
+		e.other:Faction(342,30,0);
+		e.other:Faction(221,-30,0);
+		e.other:Faction(262,30,0);
+		e.other:Faction(296,-30,0);
 		e.other:AddEXP(5000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -11,11 +11,11 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18242 => 1, 12463 => 1)) { #Legion Order (2 signed), Legion Lager
     quest::emote("slowly signs the order. '...Love, Innoruuk. There you go. Now run along. Let me enjoy my last brew alone.'");
     quest::summonitem(18243); #Legion Order (3 signed)
-    quest::faction(193,5); #Legion of Cabilis
-    quest::faction(30,5); #Cabilis Residents
-    quest::faction(282,5); #Scaled Mystics
-    quest::faction(62,5); #Crusaders of Greenmist
-    quest::faction(317,5); #Swift Tails
+    quest::faction(441,5); #Legion of Cabilis
+    quest::faction(440,5); #Cabilis Residents
+    quest::faction(445,5); #Scaled Mystics
+    quest::faction(442,5); #Crusaders of Greenmist
+    quest::faction(444,5); #Swift Tails
     quest::exp(500);
   }
   elsif (plugin::check_handin(\%itemcount, 18242 => 1)) {

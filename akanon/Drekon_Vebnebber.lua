@@ -13,20 +13,20 @@ function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 18837})) then
 		e.self:Say("Why, thank you. Hey!! This log indicates some messy business is going on at the scrapyard. Something happened to a group of gnomes. They never came out!! Go check out the scrapyard! I believe the rumors of [Red 5] are true.");
-		e.other:Faction(115,2);
-		e.other:Faction(210,2);
-		e.other:Faction(176,2);
-		e.other:Faction(71,-2);
-		e.other:Faction(39,-2);
+		e.other:Faction(255,2);
+		e.other:Faction(288,2);
+		e.other:Faction(333,2);
+		e.other:Faction(238,-2);
+		e.other:Faction(1604,-2);
 		e.other:AddEXP(2000);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 18838})) then
 		e.self:Say("Why, thank you. Hey!! What's this? This log is showing that two obsolete duster models have escaped! Well they'll need to be taken care of right away. Go out and find models V and X and take care of them. Bring Sanfyrd Featherhead proof that you've destroyed them and he'll probably have a reward for you."); -- text not live-like. Need original
-		e.other:Faction(115,2);
-		e.other:Faction(210,2);
-		e.other:Faction(176,2);
-		e.other:Faction(71,-2);
-		e.other:Faction(39,-2);
+		e.other:Faction(255,2);
+		e.other:Faction(288,2);
+		e.other:Faction(333,2);
+		e.other:Faction(238,-2);
+		e.other:Faction(1604,-2);
 		e.other:AddEXP(2000);
 		e.other:Ding();
 	end

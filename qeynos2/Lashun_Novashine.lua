@@ -40,11 +40,11 @@ function event_trade(e)
 			else
 				e.self:Say("Very well, young one. May the light of the Prime Healer wash away your scars.");
 			end
-			e.other:Faction(257,2,0);
-			e.other:Faction(183,2,0);
-			e.other:Faction(135,2,0);
-			e.other:Faction(21,-2,0);
-			e.other:Faction(9,2,0);
+			e.other:Faction(341,2,0);
+			e.other:Faction(280,2,0);
+			e.other:Faction(262,2,0);
+			e.other:Faction(221,-2,0);
+			e.other:Faction(219,2,0);
 			e.other:AddEXP(10);
 			number_of_bone_chip = number_of_bone_chip - 1;
 		until number_of_bone_chip == 0

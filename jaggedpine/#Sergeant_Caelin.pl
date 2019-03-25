@@ -29,28 +29,28 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 8264 => 4)) { #Gnoll Canine x 4
-    quest::faction(135,20); #Guards of Qeynos
-    quest::faction(159,20); #Jaggedpine Treefolk
-    quest::faction(265,20); #Protectors of Pine
-    quest::faction(271,20); #Residents of Jaggedpine
+    quest::faction(262,20); #Guards of Qeynos
+    quest::faction(272,20); #Jaggedpine Treefolk
+    quest::faction(302,20); #Protectors of Pine
+    quest::faction(1597,20); #Residents of Jaggedpine
   }
   elsif(plugin::check_handin(\%itemcount, 8264 => 3)) { #Gnoll Canine x 3
-    quest::faction(135,15); #Guards of Qeynos
-    quest::faction(159,15); #Jaggedpine Treefolk
-    quest::faction(265,15); #Protectors of Pine
-    quest::faction(271,15); #Residents of Jaggedpine
+    quest::faction(262,15); #Guards of Qeynos
+    quest::faction(272,15); #Jaggedpine Treefolk
+    quest::faction(302,15); #Protectors of Pine
+    quest::faction(1597,15); #Residents of Jaggedpine
   }
   elsif(plugin::check_handin(\%itemcount, 8264 => 2)) { #Gnoll Canine x 2
-    quest::faction(135,10); #Guards of Qeynos
-    quest::faction(159,10); #Jaggedpine Treefolk
-    quest::faction(265,10); #Protectors of Pine
-    quest::faction(271,10); #Residents of Jaggedpine
+    quest::faction(262,10); #Guards of Qeynos
+    quest::faction(272,10); #Jaggedpine Treefolk
+    quest::faction(302,10); #Protectors of Pine
+    quest::faction(1597,10); #Residents of Jaggedpine
   }
   elsif(plugin::check_handin(\%itemcount, 8264 => 1)) { #Gnoll Canine
-    quest::faction(135,5); #Guards of Qeynos
-    quest::faction(159,5); #Jaggedpine Treefolk
-    quest::faction(265,5); #Protectors of Pine
-    quest::faction(271,5); #Residents of Jaggedpine
+    quest::faction(262,5); #Guards of Qeynos
+    quest::faction(272,5); #Jaggedpine Treefolk
+    quest::faction(302,5); #Protectors of Pine
+    quest::faction(1597,5); #Residents of Jaggedpine
   }
   elsif(plugin::check_handin(\%itemcount, 2388 => 1)) { #Qeynos Badge of Honor
     quest::emote("takes your badge and places his mark upon it.");

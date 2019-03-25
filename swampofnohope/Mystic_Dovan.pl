@@ -37,8 +37,8 @@ sub EVENT_ITEM
 	#Full C.O.R.N. Chest turn in and Cudgel of the Mystic
 	if(plugin::check_handin(\%itemcount, 12736 => 1, 5143 => 1) && $faction <= 5 && $shmskullquest >= 6) {
 		quest::say("I see that you have found your answers. Now I must ask you to to retrieve for the council the skulls of the Di Nozok.  The sarnak in Lake of Ill Omen hold one of the skulls, while [Galdon Vok Nir] holds the other. Once you have retrieved them, give them to Hierphant Zand.");
-		quest::faction(282, 10); #Scaled Mystics
-		quest::faction(193, 10); #Legion of Cabilis
+		quest::faction(445, 10); #Scaled Mystics
+		quest::faction(441, 10); #Legion of Cabilis
 		quest::summonitem(5144); #Give the player the Iron Cudgel of the Prophet
 		quest::exp(100000); #give decent xp...
 		quest::setglobal("shmskullquest", 7,5,"F"); #set a global flag so that user can do shm skull quest part 5
@@ -48,23 +48,23 @@ sub EVENT_ITEM
 	elsif(plugin::check_handin(\%itemcount, 12671 => 1)) {#giant blood sac
 		quest::say("Day destroys the night, night divides the day. Tried to run, tried to hide, break on through to the other side.");#Obviously borrowed.
 		quest::castspell($userid, 213);
-		quest::faction(282, 10); #Scaled Mystics
-		quest::faction(193, 10); #Legion of Cabilis
+		quest::faction(445, 10); #Scaled Mystics
+		quest::faction(441, 10); #Legion of Cabilis
 	}
 	
 	#Heal (Light Healing)
 	elsif(plugin::check_handin(\%itemcount, 12739 => 2)) {#2x Brittle Iksar Skull
 		quest::emote("Destruction leads to a very rough road, but it also breeds creation.");#Obviouslyborrowed.
 		quest::castspell($userid, 17);
-		quest::faction(282, 10); #Scaled Mystics
-		quest::faction(193, 10); #Legion of Cabilis
+		quest::faction(445, 10); #Scaled Mystics
+		quest::faction(441, 10); #Legion of Cabilis
 	}
 	#Cure Poison
 	elsif(plugin::check_handin(\%itemcount, 12441 => 1)) {#Watcher Signal Torch
 		quest::emote("All the money you make will never buy back your soul.");#Obviously borrowed.
 		quest::castspell($userid, 203);
-		quest::faction(282, 10); #Scaled Mystics
-		quest::faction(193, 10); #Legion of Cabilis
+		quest::faction(445, 10); #Scaled Mystics
+		quest::faction(441, 10); #Legion of Cabilis
 	}
 	plugin::return_items(\%itemcount); #return items if not the ones required
 } 

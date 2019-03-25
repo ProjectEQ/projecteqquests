@@ -11,11 +11,11 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13069 => 2, 13250 => 2)) { #Bat Fur x 2, Fire Beetle Leg x 2
     quest::say("Very good young one. Here is something to assist in your studies of the principles of terror.");
     #quest::summonitem(); #Cleric scroll? Still need to figure out true reward.
-    quest::faction(143, 5);  #Heretics
-    quest::faction(79, -5);  #Deepwater Knights
-    quest::faction(112, -5); #Gate Callers
-    quest::faction(56, -5);  #Craftkeepers
-    quest::faction(60, -5);  #Crimson Hands
+    quest::faction(265, 5);  #Heretics
+    quest::faction(242, -5);  #Deepwater Knights
+    quest::faction(254, -5); #Gate Callers
+    quest::faction(231, -5);  #Craftkeepers
+    quest::faction(233, -5);  #Crimson Hands
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

@@ -11,10 +11,10 @@ function event_trade(e)
 		e.self:Say("Welcome to the Freeport Militia. As a reserve member we require you to wear this tunic and fight when, who and wherever Sir Lucan commands, no questions asked!! There is no turning back!! Remember to keep clear of North Freeport. You have made a wise decision. Hail Sir Lucan!!");
 		e.other:SummonItem(3097);
 		e.other:Ding();
-		e.other:Faction(105,10,0); -- freeport militia
-		e.other:Faction(48,10,0); -- coalition of tradefolk underground
-		e.other:Faction(184,-30,0); -- knights of truth
-		e.other:Faction(258,-30,0); -- priests of marr
+		e.other:Faction(330,10,0); -- freeport militia
+		e.other:Faction(336,10,0); -- coalition of tradefolk underground
+		e.other:Faction(281,-30,0); -- knights of truth
+		e.other:Faction(362,-30,0); -- priests of marr
 		e.other:AddEXP(10000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

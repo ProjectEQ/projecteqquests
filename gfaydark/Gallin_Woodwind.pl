@@ -12,10 +12,10 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount,  12121=> 1)) {
 quest::say("Very good. This meat will supply our warriors with much strength. We have found the meat from sharks to be quite nourishing. Here, then, are your wages and your weapon. All of Kelethin appreciates your great deed.");
-   quest::faction( 92, 10);
-   quest::faction( 155, -10);
-   quest::faction( 212, 10);
-   quest::faction( 174, 10);
+   quest::faction( 326, 10);
+   quest::faction( 270, -10);
+   quest::faction( 325, 10);
+   quest::faction( 276, 10);
    quest::exp(150);
    quest::givecash(0,7,0,23);
 }

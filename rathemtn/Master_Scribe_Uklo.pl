@@ -48,11 +48,11 @@ sub EVENT_ITEM {
   if ($faction => 9 && plugin::check_handin(\%itemcount, 67014 => 1, 67015 => 1, 67013 => 1)) { # Restore the Blade - Tarnished Cross-Guard, Tarnished Pommel, Fused Sword Blade
     quest::say("I just can't believe that I am holding all three items. You are truly amazing. Now let me see. . . Seems the blade has been fused with some sort of material. We must remove this before the sword can be restored. I think this calls for an old recipe. Take this distiller and use it to mix some skyash bile and a pinch of drake lava powder together. You should be able to find the bile in the mountains of fire and the drake lava powder is best retrieved from fire drakes in the mountains of lava. Bring me the result and I should be able to restore this ancient weapon.");
     quest::summonitem(67019);  # Uklo's Distiller.
-    quest::faction(484, 20); # Guktan Suppliers
-    quest::faction(264, 25); # Protectors of Gukta
-    quest::faction(146, 25); # High Council of Gukta
-    quest::faction(202, 25); # Lorekeepers of Gukta
-    quest::faction(136, 25); # Guktan Elders
+    quest::faction(1720, 20); # Guktan Suppliers
+    quest::faction(1709, 25); # Protectors of Gukta
+    quest::faction(1716, 25); # High Council of Gukta
+    quest::faction(1717, 25); # Lorekeepers of Gukta
+    quest::faction(1718, 25); # Guktan Elders
     quest::exp(200000);
     quest::ding;
     }
@@ -61,11 +61,11 @@ sub EVENT_ITEM {
     quest::emote("grins as you hand him the restorative."); #Text modified as quest::echo not working
     quest::say("Words cannot describe what you have done. This is truly a wonderful day for our citizens. Now I can rebuild the sword and our hero can finally finish that which he started. Please, while this is more then enough proof of your loyalty, I must ask that you take this sword and place it in the remains. Return with proof that it has been done and I shall reward you with the knowledge you seek.");
     quest::summonitem(67012);  # You receive Marr's Retribution.
-    quest::faction(484, 20); # Guktan Suppliers
-    quest::faction(264, 25); # Protectors of Gukta
-    quest::faction(146, 25); # High Council of Gukta
-    quest::faction(202, 25); # Lorekeepers of Gukta
-    quest::faction(136, 25); # Guktan Elders
+    quest::faction(1720, 20); # Guktan Suppliers
+    quest::faction(1709, 25); # Protectors of Gukta
+    quest::faction(1716, 25); # High Council of Gukta
+    quest::faction(1717, 25); # Lorekeepers of Gukta
+    quest::faction(1718, 25); # Guktan Elders
     quest::exp(400000);
     quest::ding;
     }
@@ -74,11 +74,11 @@ sub EVENT_ITEM {
     quest::emote("kneels before you as tears of happiness roll down his face."); #Text modified as quest::echo not working
     quest::say("I thank you. Since our creation it has been rare that we have received such kindness. You will always be welcome in our city and future generations will croak the story of your greatness. Please take this as a small token of my gratitude you have truly earned it.");
     quest::summonitem(67011); # Spell: Illusion: Guktan
-    quest::faction(484, 20); # Guktan Suppliers
-    quest::faction(264, 25); # Protectors of Gukta
-    quest::faction(146, 25); # High Council of Gukta
-    quest::faction(202, 25); # Lorekeepers of Gukta
-    quest::faction(136, 25); # Guktan Elders
+    quest::faction(1720, 20); # Guktan Suppliers
+    quest::faction(1709, 25); # Protectors of Gukta
+    quest::faction(1716, 25); # High Council of Gukta
+    quest::faction(1717, 25); # Lorekeepers of Gukta
+    quest::faction(1718, 25); # Guktan Elders
     quest::exp(1200000); # Poor amount for a hard quest, but that was live for you, you will bask instead in your reward, damn you!
     quest::spawn2(50328,0,0,$x,$y+8,$z,$h); # spawn the 'Memory of Chalex' for completeness
     quest::ding;

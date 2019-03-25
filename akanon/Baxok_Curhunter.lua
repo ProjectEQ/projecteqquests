@@ -38,20 +38,20 @@ function event_trade(e)
 		e.self:Say("I, Baxok, guildmaster, welcome you to Gemchopper Hall, young warrior! You are expected to serve his majesty, King Ak'Anon, with pride. You have much to learn. You may report to Naygog for further guidance. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13520); -- Torn and Ripped Tunic*
 		e.other:Ding();
-		e.other:Faction(115,100,0); -- +Gem Cutters
-		e.other:Faction(210,25,0); -- +Merchants of Ak'anon
-		e.other:Faction(176,25,0); -- +King Akanon
-		e.other:Faction(71,-25,0); -- -Dark Reflection
-		e.other:Faction(39,-5,0); -- -Clan Grikbar
+		e.other:Faction(255,100,0); -- +Gem Cutters
+		e.other:Faction(288,25,0); -- +Merchants of Ak'anon
+		e.other:Faction(333,25,0); -- +King Akanon
+		e.other:Faction(238,-25,0); -- -Dark Reflection
+		e.other:Faction(1604,-5,0); -- -Clan Grikbar
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13344})) then
 		e.other:SummonItem(eq.ChooseRandom(9002,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1010,1011)); -- cloth armor or round shield
 		e.other:Ding();
-		e.other:Faction(115,10,0); -- +Gem Cutters
-		e.other:Faction(210,10,0); -- +Merchants of Ak'anon
-		e.other:Faction(176,10,0); -- +King Akanon
-		e.other:Faction(71,-10,0); -- -Dark Reflection
-		e.other:Faction(39,-10,0); -- -Clan Grikbar
+		e.other:Faction(255,10,0); -- +Gem Cutters
+		e.other:Faction(288,10,0); -- +Merchants of Ak'anon
+		e.other:Faction(333,10,0); -- +King Akanon
+		e.other:Faction(238,-10,0); -- -Dark Reflection
+		e.other:Faction(1604,-10,0); -- -Clan Grikbar
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

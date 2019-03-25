@@ -32,21 +32,21 @@ sub EVENT_ITEM {
 		quest::say("You are welcomed into the fold.  Now go out, and prove yourself, young one.  You have much to learn about the Dark Truth. Once you are ready to begin your training please make sure that you see Shwara Volemo, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13551); #Dirt Soiled Robe*
 		quest::ding();
-		quest::faction(143,100); # Heretics
-		quest::faction(79,-100); # Deepwater Knights
-		quest::faction(112,-100); # Gate Callers
-		quest::faction(56,-100); # Craftkeepers
-		quest::faction(60,-100); # Crimson Hands
+		quest::faction(265,100); # Heretics
+		quest::faction(242,-100); # Deepwater Knights
+		quest::faction(254,-100); # Gate Callers
+		quest::faction(231,-100); # Craftkeepers
+		quest::faction(233,-100); # Crimson Hands
 		quest::exp(100);
 	}
 	elsif(plugin::check_handin(\%itemcount, 13068 => 2, 13067 => 2)) { #Bat Wing x 2, Snake Fang x 2
 		quest::say("Very good, young acolyte. Maintain your diligence in your duties and you will quickly learn the secrets of the Dark Truth.");
 		quest::summonitem(15338); #Spell: Cavorting Bones
-		quest::faction(143,1);  # Heretics
-		quest::faction(56,-1);  # Craftkeepers
-		quest::faction(60,-1);  # Crimson Hands
-		quest::faction(79,-1);  # Deepwater Knights
-		quest::faction(112,-1); # Gate Callers
+		quest::faction(265,1);  # Heretics
+		quest::faction(231,-1);  # Craftkeepers
+		quest::faction(233,-1);  # Crimson Hands
+		quest::faction(242,-1);  # Deepwater Knights
+		quest::faction(254,-1); # Gate Callers
 	}
 	plugin::return_items(\%itemcount);
 }

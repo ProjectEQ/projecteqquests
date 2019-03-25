@@ -15,11 +15,11 @@ function event_trade(e)
 		e.self:Say("Wonderful!! I am sure that was a lot safer than battling a treant.");
 		e.other:SummonItem(13824); -- Wooden Shards
 		e.other:Ding();
-		e.other:Faction(217,10,0); -- +Merchants of Qeynos
-		e.other:Faction(33,10,0); -- -Circle Of Unseen Hands
-		e.other:Faction(9,10,0); -- +Antonius Bayle
-		e.other:Faction(47,10,0); -- +Coalition of Tradefolk
-		e.other:Faction(135,10,0); -- +Guards of Qeynos
+		e.other:Faction(291,10,0); -- +Merchants of Qeynos
+		e.other:Faction(223,10,0); -- -Circle Of Unseen Hands
+		e.other:Faction(219,10,0); -- +Antonius Bayle
+		e.other:Faction(229,10,0); -- +Coalition of Tradefolk
+		e.other:Faction(262,10,0); -- +Guards of Qeynos
 		e.other:AddEXP(2432);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -14,11 +14,11 @@ sub EVENT_ITEM {
     quest::say("My revenge has been satisfied. Thank you, my child. You have proven yourself to be a most worthy asset to our cause. Here, I no longer have any use for this, my ties to the old life are now severed.");
     quest::exp(2000);
     quest::givecash(5,3,0,0);
-    quest::faction(143,5);  #Heretics
-    quest::faction(79,-5);  #Deepwater Knights
-    quest::faction(112,-5); #Gate Callers
-    quest::faction(56,-5);  #Craftkeepers
-    quest::faction(60,-5);  #Crimson Hands
+    quest::faction(265,5);  #Heretics
+    quest::faction(242,-5);  #Deepwater Knights
+    quest::faction(254,-5); #Gate Callers
+    quest::faction(231,-5);  #Craftkeepers
+    quest::faction(233,-5);  #Crimson Hands
   }
   plugin::return_items(\%itemcount);
 }

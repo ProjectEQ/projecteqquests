@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::summonitem(30783);
     quest::exp(75000);
     quest::ding();
-    quest::faction(132,20);
+    quest::faction(1513,20);
   }
   plugin::return_items(\%itemcount);
 }

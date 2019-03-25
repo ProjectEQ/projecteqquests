@@ -30,10 +30,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 10953})) then
 		e.self:Say("Thank you " .. e.other:GetName() .. "! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
 		e.other:AddEXP(250);
-		e.other:Faction(152, 10);
-		e.other:Faction(153, 10);
-		e.other:Faction(154, 10);
-		e.other:Faction(338, 10);
+		e.other:Faction(1510, 10);
+		e.other:Faction(1511, 10);
+		e.other:Faction(1512, 10);
+		e.other:Faction(1508, 10);
 		e.other:GiveCash(0, 0, 0, 44);
 		x = e.self:GetX();
 		y = e.self:GetY();
@@ -44,10 +44,10 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10952})) then
 		e.self:Say("Thank you " .. e.other:GetName() .. "! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
 		e.other:AddEXP(250);
-		e.other:Faction(152, 10);
-		e.other:Faction(153, 10);
-		e.other:Faction(154, 10);
-		e.other:Faction(338, 10);
+		e.other:Faction(1510, 10);
+		e.other:Faction(1511, 10);
+		e.other:Faction(1512, 10);
+		e.other:Faction(1508, 10);
 		e.other:GiveCash(0, 0, 0, 14);
 		x = e.self:GetX();
 		y = e.self:GetY();

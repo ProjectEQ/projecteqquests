@@ -25,11 +25,11 @@ if(plugin::check_handin(\%itemcount, 13916 => 1)){
 quest::say("Grand work. Deputy $name! You will become a full-fledged deputy in no time. You should check in with Marshal Ghobber from time to time to see if you have earned your squad ring. Just go up to him and ask. 'Am I one with the Wall?' He will know. but you must first show your bravery in many battles against the goblins.");
 quest::givecash("0","0","9","0");
 quest::summonitem(13024);
-quest::faction(133, 4);
-quest::faction(208, 4);
-quest::faction(316, 4);
-quest::faction(218, 4);
-quest::faction(88, -10);
+quest::faction(263, 4);
+quest::faction(286, 4);
+quest::faction(355, 4);
+quest::faction(292, 4);
+quest::faction(334, -10);
 quest::exp(100);
  }
 plugin::return_items(\%itemcount);

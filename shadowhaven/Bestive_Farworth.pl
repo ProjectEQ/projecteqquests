@@ -13,10 +13,10 @@ sub EVENT_ITEM {
     quest::emote("rattles around in a drawer and pulls out some tools and hinges. 'Ah yes, this will do. shouldn't take but a minute.'");
     quest::say("Yep! Here you are, one pristine beetle box to go and I will even throw in a little spare coin to go in it. Remember,they are quite special-you can only ever carry one.");
     quest::summonitem(17072); #Pristine Beetle Box
-    quest::faction(338,5); #Traders of the Haven
-    quest::faction(152,5); #House of Fordel
-    quest::faction(153,5); #House of Midst
-    quest::faction(154,5); #House of Stout
+    quest::faction(1508,5); #Traders of the Haven
+    quest::faction(1510,5); #House of Fordel
+    quest::faction(1511,5); #House of Midst
+    quest::faction(1512,5); #House of Stout
     quest::exp(100);
     quest::givecash(8,2,0,0); #Copper x 8, Silver x 2
   }

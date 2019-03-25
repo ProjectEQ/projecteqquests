@@ -45,21 +45,21 @@ sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 20420 => 1)) {
     quest::say("Well done $name.These parchments will be inspected immediately by some of The Abattoirs most experienced translators and researchers. Take this Rough Abattoir initiate Staff then go forth an obtain a Giant Briar Snake Skin and a Petrified Eyeball. Once you have done so bring me those items and the rough abattoir initiate staff and I will put the final touches on what will be your new instrument of power.");
     quest::summonitem(20358);
-    quest::faction(143, 1);
-    quest::faction(79, -3);
-    quest::faction(112, -3);
-    quest::faction(56, -3);
-    quest::faction(60, -3);
+    quest::faction(265, 1);
+    quest::faction(242, -3);
+    quest::faction(254, -3);
+    quest::faction(231, -3);
+    quest::faction(233, -3);
 }
  if (plugin::check_handin(\%itemcount, 20358 => 1, 20356 => 1, 20402 => 1)) {
     quest::emote("fashions a grip out of the Giant Briar Snake Skin, fastens the Petrified Eyeball to a steel mount on one end of the staff, and tarnishes the wood of the staff with a shimmering black substance.");
     quest::say("Here is your new Abattoirs Initiate Staff, $name. May it serve you well in your pursuit for power.");
     quest::summonitem(20418);
-    quest::faction(143, 1);
-    quest::faction(79, -3);
-    quest::faction(112, -3);
-    quest::faction(56, -3);
-    quest::faction(60, -3);
+    quest::faction(265, 1);
+    quest::faction(242, -3);
+    quest::faction(254, -3);
+    quest::faction(231, -3);
+    quest::faction(233, -3);
     quest::ding();
 }
   plugin::return_items(\%itemcount);

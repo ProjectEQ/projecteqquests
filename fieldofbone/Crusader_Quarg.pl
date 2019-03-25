@@ -17,8 +17,8 @@ sub EVENT_ITEM
    if(plugin::check_handin(\%itemcount, 18054 => 1) && $faction <= 5 && $shmskullquest >= 4)
    {
       quest::say("Ah, i see you have proven yourself to Zand and he wishes to see more of your prowess.  go to the Tower of Kurn and bring him the Skulls of the Caste of Bone Brethren, a caste of powerful shamans who perished fighting undead in the Field of Bone several decades ago.");
-      quest::faction(282, 10); #Scaled Mystics
-      quest::faction(193, 10); #Legion of Cabilis
+      quest::faction(445, 10); #Scaled Mystics
+      quest::faction(441, 10); #Legion of Cabilis
       quest::summonitem(17034); #Give the player a six slot container to combine the 5 skulls with an "X" in
       quest::exp(10000); #give decent xp...
       quest::setglobal("shmskullquest", 5,5,"F"); #set a global flag so that user can do shm skull quest part 3.3
@@ -28,8 +28,8 @@ sub EVENT_ITEM
    elsif(plugin::check_handin(\%itemcount, 12735 => 1, 5142 => 1) && $faction <= 5 && $shmskullquest >= 5)
    {
       quest::say("The temple shall be pleased. As instructed by the Hierophants, here is your Iron Cudgel of the Mystic. You have done well that I must ask you to [collect the Crusaders of Rok Nilok]. Take this chest. Inside you shall combine the skull of their leader and at least five of the caste members. You then will go to the Swamp Garrison and deliver the full chest and your Iron Cudgel of the Mystic to Mystic Dovan. Go to him now and inquire of the Crusaders of Rok Nolok.");
-      quest::faction(282, 10); #Scaled Mystics
-      quest::faction(193, 10); #Legion of Cabilis
+      quest::faction(445, 10); #Scaled Mystics
+      quest::faction(441, 10); #Legion of Cabilis
       quest::summonitem(5143); #Give the player the Iron Cudgel of the Mystic
       quest::summonitem(17035); #Give the player A Skull Chest (C.O.R.N. Chest) to combine Tiny Glowing Skulls in
       quest::exp(100000); #give decent xp...

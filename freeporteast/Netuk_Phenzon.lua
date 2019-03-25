@@ -13,9 +13,9 @@ function event_trade(e)
 		e.self:Say("It is about time you returned! Innoruuk would be proud of the red you have spread upon the land.");
 		e.other:SummonItem(15343); -- Spell: Siphon Strengh
 		e.other:Ding();
-		e.other:Faction(86,1,0); -- Dismal Rage
-		e.other:Faction(184,-5,0); -- Knights of Truth
-		e.other:Faction(235,1,0); -- Opal Dark Briar
+		e.other:Faction(271,1,0); -- Dismal Rage
+		e.other:Faction(281,-5,0); -- Knights of Truth
+		e.other:Faction(296,1,0); -- Opal Dark Briar
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,12,6,0);
 	end

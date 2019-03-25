@@ -16,8 +16,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 14362 => 1)) { #Flower
     quest::say("Thank you. Since you have done me a service with no thought of reward, I offer you this small token of my favor.");
     quest::summonitem(14364); #Scepter
-    quest::faction(320,15);  #Temple of Solusek Ro
-    quest::faction(291,-15); #Shadowed Men
+    quest::faction(415,15);  #Temple of Solusek Ro
+    quest::faction(416,-15); #Shadowed Men
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

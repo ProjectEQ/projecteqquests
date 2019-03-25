@@ -44,32 +44,32 @@ sub EVENT_ITEM {
     quest::say("You are welcomed into the fold. Now go out. and prove yourself. young one. You have much to learn about the Dark Truth. Once you are ready to begin your training please make sure that you see Sadorno Chomosh, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
     quest::summonitem(13573); # Blood Splattered Tunic
     quest::ding();
-    quest::faction(143,100); # Heretics
-    quest::faction(79,-100); # Deepwater Knights
-    quest::faction(112,-100); # Gate Callers
-    quest::faction(56,-100); # Craftkeepers
-    quest::faction(60,-100); # Crimson Hands
+    quest::faction(265,100); # Heretics
+    quest::faction(242,-100); # Deepwater Knights
+    quest::faction(254,-100); # Gate Callers
+    quest::faction(231,-100); # Craftkeepers
+    quest::faction(233,-100); # Crimson Hands
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 13270 => 4)) {
     quest::say("Well done, go now and continue your contemplations of fear. Keep up with your [duties] and you will soon be reaping the rewards granted by our Lord Cazic-Thule!!");
     quest::summonitem(1437); #Initiate Symbol of Cazic Thule
     quest::exp(200);
-    quest::faction(143, 10);
-    quest::faction(56, -30);
-    quest::faction(60, -30);
-    quest::faction(79, -30);
-    quest::faction(112, -30);
+    quest::faction(265, 10);
+    quest::faction(231, -30);
+    quest::faction(233, -30);
+    quest::faction(242, -30);
+    quest::faction(254, -30);
   } 
   elsif (plugin::check_handin(\%itemcount, 13074 => 1, 16990 => 1, 14102 => 1, 14103 => 1)) {
     quest::say("Excellent job, $name. These components will help with our research immeasurably. You will soon be reaping the rewards granted by our Lord Cazic-Thule!! If you want to further assist our research effots, talk to Atdehim Sqonci.");
     quest::summonitem(14100); #Fright Forged Helm
     quest::exp(1000);
-    quest::faction(143, 150);
-    quest::faction(56, -30);
-    quest::faction(60, -30);
-    quest::faction(79, -30);
-    quest::faction(112, -30);
+    quest::faction(265, 150);
+    quest::faction(231, -30);
+    quest::faction(233, -30);
+    quest::faction(242, -30);
+    quest::faction(254, -30);
   } 
   plugin::return_items(\%itemcount);
 }

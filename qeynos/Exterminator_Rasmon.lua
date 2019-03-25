@@ -9,11 +9,11 @@ function event_trade(e)
   if(item_lib.check_turn_in(e.trade, {item1 = 13071,item2 = 13071,item3 = 13071,item4 = 13071})) then
     e.self:Say(string.format("I am very impressed, %s! A few more cleaners like yourself and we could have a rodent-free Qeynos in no time!",e.other:GetName()));
     e.other:Ding();
-    e.other:Faction(135,1,0); -- Guards of Qeynos
-    e.other:Faction(9,1,0); -- Antonius Bayle
-    e.other:Faction(53,-1,0); -- Merchants of Qeynos
-    e.other:Faction(33,-1,0); -- Corrupt Qeynos Guards
-    e.other:Faction(217,1,0); -- Circle of Unseen Hands
+    e.other:Faction(262,1,0); -- Guards of Qeynos
+    e.other:Faction(219,1,0); -- Antonius Bayle
+    e.other:Faction(230,-1,0); -- Merchants of Qeynos
+    e.other:Faction(223,-1,0); -- Corrupt Qeynos Guards
+    e.other:Faction(291,1,0); -- Circle of Unseen Hands
     e.other:AddEXP(50);
     e.other:GiveCash(0,4,0,0);
   end

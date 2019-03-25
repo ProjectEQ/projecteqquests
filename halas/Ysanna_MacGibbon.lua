@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:AddEXP(125);
 		e.other:Ding();
 		e.other:GiveCash(0,2,2,1);
-		e.other:Faction(275,10);						-- 275 : Faction Rogue's of the White Rose
+		e.other:Faction(305,10);						-- 305 : Faction Rogue's of the White Rose
 		e.other:SummonItem(1349);						--Fang of the Wolf
 	end
 	if(item_lib.check_turn_in(e.trade, {item1 = 7507}) and e.other:GetFaction(e.self) < 6) then	--Shrieking Ahlspiess

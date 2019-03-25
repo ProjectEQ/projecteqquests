@@ -10,11 +10,11 @@ function event_trade(e)
 		e.self:Say("Mmmm.. <Burp!!> Thank you. Here is a little dona.. <Hic!!> dona.. <Hic!!> mmmoney for your generosity.");
 		e.other:SendSound();
 		e.other:SummonItem(13291); -- donation 2
-		e.other:Faction(217,5,0); -- Merchants of Qeynos
-		e.other:Faction(33,-10,0); -- Circle of Unseen Hand
-		e.other:Faction(9,5,0); -- Antonius Bayle
-		e.other:Faction(47,5,0); -- Coalition of Tradefolk
-		e.other:Faction(135,5,0); -- Guard of Qeynos
+		e.other:Faction(291,5,0); -- Merchants of Qeynos
+		e.other:Faction(223,-10,0); -- Circle of Unseen Hand
+		e.other:Faction(219,5,0); -- Antonius Bayle
+		e.other:Faction(229,5,0); -- Coalition of Tradefolk
+		e.other:Faction(262,5,0); -- Guard of Qeynos
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

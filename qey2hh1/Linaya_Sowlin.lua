@@ -25,11 +25,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13945})) then
 		e.self:Say("Oh thank Tunare you showed up when you did. I was at a nearby merchant house when a fellow dropped a [note] and I picked it up and read it. It talked of the [Unkempt Druids] and before I could read on, the man swiped it from my hands. I ran for dear life, for surely he would kill me for reading the note. I think I lost him in the woods but I am not sure. Please stay with me a while to be sure.");
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(267,10,0);
-		e.other:Faction(347,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(343,10,0);
+		e.other:Faction(324,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(math.random(10),math.random(10),math.random(10),math.random(10));
 		eq.spawn2(12181,0,0,-8000,-3400,23,205.8);

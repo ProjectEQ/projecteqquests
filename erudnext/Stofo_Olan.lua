@@ -25,7 +25,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 10600,item2 = 10601,item3 = 10602})) then
 		e.self:Say("Yes, that is what I wanted. Here, take these notes. My teacher will be very interested if he is shown what I have found.");
 		e.other:Ding();
-		e.other:Faction(342,10,0);
+		e.other:Faction(404,10,0);
 		e.other:SummonItem(10603);
 		e.other:AddEXP(50000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 54008,item2 = 54007})) then -- A Dimly Glowing Ring, Note to Stofo

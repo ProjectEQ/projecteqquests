@@ -21,9 +21,9 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 11990 => 3)){
     # Kromzek Mercenary Brooches [End]
     quest::say("Well done $name! The Draconic Loyalist Fellowship and the residents of Skyshrine are grateful for your assistance in eliminating the threat the Kromzeks mercenaries pose to the dragons and dragon-kin of Velious. Here is the bounty that has been promised.");
-    quest::faction(42,25);   # +Claws of Veeshan
-    quest::faction(362,25);  # +Yelinak
-    quest::faction(189,-25); # -Kromzek
+    quest::faction(430,25);   # +Claws of Veeshan
+    quest::faction(436,25);  # +Yelinak
+    quest::faction(448,-25); # -Kromzek
     quest::exp(1000);
     # Summon: Potion of Draconic Rage
     quest::summonitem(12555);
@@ -32,9 +32,9 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 11991 => 1, 11993 => 1, 11992 => 1)){
     # Mercenary Captains [End]
     quest::say("This is good news indeed for the dragon-kin of Skyshrine. Word will be passed to the rulers of Skyshrine of the assistance you have provided the Draconic Loyalist Fellowship. Here is the bounty that has been promised for the lives of the mercenary captains.");
-    quest::faction(42,50);   # +Claws of Veeshan
-    quest::faction(362,50);  # +Yelinak
-    quest::faction(189,-50); # -Kromzek
+    quest::faction(430,50);   # +Claws of Veeshan
+    quest::faction(436,50);  # +Yelinak
+    quest::faction(448,-50); # -Kromzek
     quest::exp(1500);
     # Summon: Draconic Girdle
     quest::summonitem(12556);
@@ -43,9 +43,9 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 11995 => 1, 11994 => 1, 11997 => 1, 11996 => 1)){
     # Notorious Mercenaries [End]
     quest::say("Congratulations on successfully eliminating this deadly band of murderous mercenaries. The nobles of Skyshrine will be pleased with your actions, as is the Draconic Loyalist Fellowship. Here is the bounty that has been promised for the lives of these notorious slayers of dragon-kin.");
-    quest::faction(42,100);   # +Claws of Veeshan
-    quest::faction(362,100);  # +Yelinak
-    quest::faction(189,-100); # -Kromzek
+    quest::faction(430,100);   # +Claws of Veeshan
+    quest::faction(436,100);  # +Yelinak
+    quest::faction(448,-100); # -Kromzek
     quest::exp(2000);
     # Summon: Draconic Pauldrons
     quest::summonitem(12557);

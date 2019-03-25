@@ -28,11 +28,11 @@ sub EVENT_ITEM {
       quest::say("Great! Looks like everything is here! Hopefully Master Hanns won't send me to Steamfront now, I have a really bad feeling about that assignment. Here take this Seal, it was dropped by that dark stranger. It glows with a dark power I just don't understand. Be wary of further sightings of that dark assassin.");
       quest::summonitem(24073);
       quest::exp(200000);
-      quest::faction(33,20); # Circle Of Unseen Hands
-      quest::faction(217,-20); # Merchants of Qeynos
-      quest::faction(53,20); # Corrupt Qeynos Guards
-      quest::faction(135,-20); # Guards of Qeynos
-      quest::faction(164,20); # Kane Bayle
+      quest::faction(223,20); # Circle Of Unseen Hands
+      quest::faction(291,-20); # Merchants of Qeynos
+      quest::faction(230,20); # Corrupt Qeynos Guards
+      quest::faction(262,-20); # Guards of Qeynos
+      quest::faction(273,20); # Kane Bayle
       quest::depop_withtimer();
   }
   else {

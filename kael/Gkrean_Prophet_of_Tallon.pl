@@ -19,10 +19,10 @@ sub EVENT_ITEM {
     quest::say("You are a brave little beast to gain this tome. Let me impart a bit of wisdom to you. Tactics must change - if you do not ever adapt to new surroundings, environments and rules, you will surely perish.");
     quest::summonitem(quest::ChooseRandom(25037,25038,25039,25042));
     quest::exp(50000);
-    quest::faction(188,30); #kromrif
-    quest::faction(189,30); #kromzek
-    quest::faction(179,30); #tormax
-    quest::faction(42,-90); #CoV
+    quest::faction(419,30); #kromrif
+    quest::faction(448,30); #kromzek
+    quest::faction(429,30); #tormax
+    quest::faction(430,-90); #CoV
   }
   plugin::return_items(\%itemcount);
 }

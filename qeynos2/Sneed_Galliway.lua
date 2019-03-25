@@ -11,7 +11,7 @@ function event_say(e)
 	elseif(e.message:findi("tax collection")and tax.tax_collection ~= nil) then
 		e.self:Say(string.format("Hey, %s, how the heck did Vicus convince you to do his job? He better be paying you well. Here you go.",e.other:GetName()));
 		e.other:SummonItem(13172);
-		e.other:Faction(217,-10,0);		
+		e.other:Faction(291,-10,0);		
 	end
 	
 end
@@ -23,11 +23,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13717})) then -- rat head
 		e.self:Say("HA! Good work! I knew you were the person for the job. A regular ratslayer you are. Here is your reward as promised. be sure you keep this between us.");
 		e.other:Ding();
-		e.other:Faction(217,5,0);
-		e.other:Faction(33,-10,0);
-		e.other:Faction(9,5,0);
-		e.other:Faction(47,5,0);
-		e.other:Faction(135,5,0);
+		e.other:Faction(291,5,0);
+		e.other:Faction(223,-10,0);
+		e.other:Faction(219,5,0);
+		e.other:Faction(229,5,0);
+		e.other:Faction(262,5,0);
 		e.other:AddEXP(250);
 		e.other:GiveCash(4,0,0,0);
 	end

@@ -18,20 +18,20 @@ function event_trade(e)
 		e.self:Say("Well done, my young apprentice. I call you apprentice for you are nothing but a spark to my fire. This is the final component for my greatest creation. AHA!! I call it - iced tea!! Never again shall I boil under the hot sun. As for you, take this. It should serve you well. Now go away. There is no iced tea for you");
 		e.other:Ding();
 		e.other:SummonItem(12208);
-		e.other:Faction(60,10,0); --faction with Crimson hands increased
-		e.other:Faction(145,10,0); --faction with High Council of Erudin increased
-		e.other:Faction(143,-30,0); --faction with Heretics decreased
-		e.other:Faction(147,10,0); --faction with High Guards of Erudin increased
+		e.other:Faction(233,10,0); --faction with Crimson hands increased
+		e.other:Faction(266,10,0); --faction with High Council of Erudin increased
+		e.other:Faction(265,-30,0); --faction with Heretics decreased
+		e.other:Faction(267,10,0); --faction with High Guards of Erudin increased
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,7,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12207})) then -- Ilanic's Scroll
 		e.self:Say("Go now and use his research to aid yourself. Seems that I lack the will to use Ilanic's knowledge for my better good.");
 		e.other:Ding();
 		e.other:SummonItem(15380);
-		e.other:Faction(60,10,0); --faction with Crimson hands increased
-		e.other:Faction(145,10,0); --faction with High Council of Erudin increased
-		e.other:Faction(143,-30,0); --faction with Heretics decreased
-		e.other:Faction(147,10,0); --faction with High Guards of Erudin increased
+		e.other:Faction(233,10,0); --faction with Crimson hands increased
+		e.other:Faction(266,10,0); --faction with High Council of Erudin increased
+		e.other:Faction(265,-30,0); --faction with Heretics decreased
+		e.other:Faction(267,10,0); --faction with High Guards of Erudin increased
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,7,0,0);
 	end

@@ -14,12 +14,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18884 => 1)) {
     quest::say("I see you finally decided to return. Hmmm. What is this? Those little hoppers have done well. What!! So the troll scum have been aiding our foes, the lizards!! The lizard mystics are trained by this troll shaman called Zimbittle. Find him!! Kill him. Bring me his shaman pouch!! Now!!");
-    quest::faction(295,20);
+    quest::faction(394,20);
     quest::summonitem(quest::ChooseRandom(15270,15226,15279,15211));
   }
   if (plugin::check_handin(\%itemcount, 17929 => 1)) {
     quest::say("Ahhh!! Good work. You are a bright one. Now let us see if you can master this spell. Learn it well and may it bring you much glory.");
-    quest::faction(295,20);
+    quest::faction(394,20);
     quest::summonitem(quest::ChooseRandom(15270,15226,15279,15211));
   }
   plugin::return_items(\%itemcount);

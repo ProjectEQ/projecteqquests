@@ -19,11 +19,11 @@ sub EVENT_ITEM {
    	quest::say("Fine work for a scrub. Maybe one day you will be able to test this new snakescale armor out. For the moment you shall take the [Dark Shield of Ebon] if you do not own one already.");
 	quest::summonitem("12258");
 	quest::givecash("0","4","0","0");
-	quest::faction(361,-1);
-        quest::faction(135, -1);
-        quest::faction(90, 2);
-        quest::faction(133,-1);
-        quest::faction(31,-1);
+	quest::faction(320,-1);
+        quest::faction(262, -1);
+        quest::faction(244, 2);
+        quest::faction(263,-1);
+        quest::faction(329,-1);
         
  }
   #do all other handins first with plugin, then let it do disciplines

@@ -50,11 +50,11 @@ sub EVENT_ITEM {
     quest::say("You have done well and learned much during your training. You have made me proud, $name. Take this weapon as a symbol of your dedication and hard work. You have earned it. Your training with me has ended. Farewell.");
     quest::summonitem(55126);
     quest::exp(5000);
-    quest::faction(294,30); #shamen of justice
-    quest::faction(213,30); #merchants of halas
-    quest::faction(33,-30); #circle of unseen hands
-    quest::faction(48,-30); #coalition of tradefolk underground
-    quest::faction(90,-30); #ebon mask
+    quest::faction(327,30); #shamen of justice
+    quest::faction(328,30); #merchants of halas
+    quest::faction(223,-30); #circle of unseen hands
+    quest::faction(336,-30); #coalition of tradefolk underground
+    quest::faction(244,-30); #ebon mask
   }
   plugin::return_items(\%itemcount);
 }

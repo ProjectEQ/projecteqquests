@@ -16,20 +16,20 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 12104})) then
 		e.self:Say("You have done a good service for the flock of Karana. Study the words upon this scroll and soon Karana shall keep you from thirst.");
 		e.other:Ding();
-		e.other:Faction(183,5,0);
-		e.other:Faction(21,-10,0);
-		e.other:Faction(257,5,0);
-		e.other:Faction(135,5,0);
+		e.other:Faction(280,5,0);
+		e.other:Faction(221,-10,0);
+		e.other:Faction(341,5,0);
+		e.other:Faction(262,5,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(16,9,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12101,item2 = 12101})) then -- spectacle
 		e.self:Say("The bounty will not be paid until two spectacles are received.");
 		e.self:Say("Excellent work. These foul men have no right to be proficient in the ways of healing. Here then is your bounty. Use it in your continued war against the Karana bandits.");
 		e.other:Ding();
-		e.other:Faction(183,5,0);
-		e.other:Faction(21,-10,0);
-		e.other:Faction(257,5,0);
-		e.other:Faction(135,5,0);
+		e.other:Faction(280,5,0);
+		e.other:Faction(221,-10,0);
+		e.other:Faction(341,5,0);
+		e.other:Faction(262,5,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,1,3,1);
 	end

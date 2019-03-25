@@ -15,11 +15,11 @@ sub EVENT_ITEM {
     quest::emote("gasps in astonishment");
     quest::say("You...you..found my hat!! This is the most I can repay you but perhaps I can reward you further for some [other tasks]?");
     quest::summonitem("1530");#black lace sash
-    quest::faction("143","1");
-    quest::faction("56","-3");
-    quest::faction("60","-3");
-    quest::faction("79","-3");
-    quest::faction("112","-3");
+    quest::faction("265","1");
+    quest::faction("231","-3");
+    quest::faction("233","-3");
+    quest::faction("242","-3");
+    quest::faction("254","-3");
   }
   if(plugin::check_handin(\%itemcount, 19076 => 1,12096 => 1, 22502 => 1)){#Mighty Bear Paw's Belt Gold Thread and Imbued Amber
     quest::say("Well done $name, here is your new hat wear it with pride");#couldnt find the text

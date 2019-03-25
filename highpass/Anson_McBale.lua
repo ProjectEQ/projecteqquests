@@ -20,11 +20,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 28014}) and e.other:Class() == "Rogue" and e.other:GetLevel() >= 50) then
 		e.self:Say("Ah, we have been expecting this. Let me get Stanos, he will want to inspect it first, but here are your coins.");
 		e.other:Ding();
-		e.other:Faction(149,5,0);
-		e.other:Faction(31,10,0);
-		e.other:Faction(214,5,0);
-		e.other:Faction(53,5,0);
-		e.other:Faction(105,5,0);
+		e.other:Faction(332,5,0);
+		e.other:Faction(329,10,0);
+		e.other:Faction(331,5,0);
+		e.other:Faction(230,5,0);
+		e.other:Faction(330,5,0);
 		e.other:AddEXP(500);
 		e.other:Message(15,"You receive 100 gold from Anson McBale.");
 		e.other:Message(15,"You receive 25 platinum from Anson McBale.")

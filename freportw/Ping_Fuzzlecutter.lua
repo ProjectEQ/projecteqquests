@@ -30,10 +30,10 @@ function event_trade(e)
 		e.self:Say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guaranteed to lower prices world wide. Guaranteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
 		e.other:SummonItem(12254);
 		e.other:Ding();
-		e.other:Faction(47,3,0);
-		e.other:Faction(184,3,0);
-		e.other:Faction(217,3,0);
-		e.other:Faction(48,3,0);
+		e.other:Faction(229,3,0);
+		e.other:Faction(281,3,0);
+		e.other:Faction(291,3,0);
+		e.other:Faction(336,3,0);
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

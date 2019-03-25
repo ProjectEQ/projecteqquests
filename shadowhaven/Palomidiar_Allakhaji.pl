@@ -23,8 +23,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4768 => 1)) {
     quest::say("This is it, this is what I am looking for to continue my studies. It is generating the same if not more energy then the rock before it! Excellent work, $name. You have my sincere thanks. Should you collect further samples in the future please bring them to me directly.");
     quest::exp(2500);
-    quest::faction(153,30); #house of midst
-    quest::faction(338,30); #traders of the haven
+    quest::faction(1511,30); #house of midst
+    quest::faction(1508,30); #traders of the haven
   }
   plugin::return_items(\%itemcount);
 }

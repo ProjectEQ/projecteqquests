@@ -28,20 +28,20 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13886 => 1)) { #Goblin Supply Pouch
     quest::say("Fine work. I trust the denizens of Lavastorm were not unkind. Please take this featherweight pouch as a reward. May it keep you fleet of foot.");
     quest::summonitem(17972); #Featherweight Pouch
-	quest::faction(155, 2); #Indigo Brotherhood
-  	quest::faction(92,-5); #Emerald Warriors
+	quest::faction(270, 2); #Indigo Brotherhood
+  	quest::faction(326,-5); #Emerald Warriors
   	quest::faction(311,-5); #Steel Warriors
-  	quest::faction(260,-5); #Primordial Malice
+  	quest::faction(1522,-5); #Primordial Malice
   	quest::exp(17150);#5% of level 8 experience, quest is for levels 8+  
   }
   if(plugin::check_handin(\%itemcount, 13113 => 4)) { #Leatherfoot Raider Skullcap
   	quest::say("Yes, you have done well. Take this, and slay more!"); #text made up
   	quest::summonitem(12257);#Footman's Voulge
   	quest::givecash(0,0,4,0);#4gp
-	quest::faction(155, 2); #Indigo Brotherhood
-  	quest::faction(92,-5); #Emerald Warriors
+	quest::faction(270, 2); #Indigo Brotherhood
+  	quest::faction(326,-5); #Emerald Warriors
   	quest::faction(311,-5); #Steel Warriors
-  	quest::faction(260,-5); #Primordial Malice
+  	quest::faction(1522,-5); #Primordial Malice
   	quest::exp(250);#5% of level 2 experience, quest is for levels 2+
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

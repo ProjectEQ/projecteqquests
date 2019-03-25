@@ -29,15 +29,15 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 19967 => 1)) {
     quest::emote("takes a wee sip and smacks his lips together, proclaiming, 'Ahhh, a finer stout has never passed my lips, ' before draining the mug in one gulp. 'Yer a saint amongst us, I say. Feel free to keep 'em coming, $name!'");
     quest::exp(10000);
-    quest::faction(350,10); #validus custodus
-    quest::faction(168,10); #katta castellum citizens
-    quest::faction(206,10); #magus conlegium
-    quest::faction(228,-30); #nathyn illuminious
-    quest::faction(55,-30); #coterie of the eternal night
-    quest::faction(284,-30); #seru
-    quest::faction(139,-30); #hand of seru
-    quest::faction(96,-30); #eye of seru
-    quest::faction(138,-30); #hand legionnaires
+    quest::faction(1503,10); #validus custodus
+    quest::faction(1502,10); #katta castellum citizens
+    quest::faction(1504,10); #magus conlegium
+    quest::faction(1505,-30); #nathyn illuminious
+    quest::faction(1506,-30); #coterie of the eternal night
+    quest::faction(1483,-30); #seru
+    quest::faction(1484,-30); #hand of seru
+    quest::faction(1485,-30); #eye of seru
+    quest::faction(1541,-30); #hand legionnaires
   }
   plugin::return_items(\%itemcount);
 }

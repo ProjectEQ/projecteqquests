@@ -16,8 +16,8 @@ sub EVENT_ITEM {
     quest::say("Thank you so much. I am so glad I did not have to deal with such a rowdy band of troopers as these. Please take some coin and perhaps a book from my personal library.");
     quest::summonitem(quest::ChooseRandom(12460, 12461)); #The Code of Combat, The Book of Knowledge - No IDs for The History of Combat or The Tome of Combat 
     quest::givecash(0,5,0,0);
-    quest::faction(30,30); #Cabilis Residents
-    quest::faction(193,30); #Legion of Cabilis
+    quest::faction(440,440); #Cabilis Residents
+    quest::faction(441,30); #Legion of Cabilis
     quest::exp(1200);
   }
   plugin::return_items(\%itemcount);

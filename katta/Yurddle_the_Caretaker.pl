@@ -30,12 +30,12 @@ sub EVENT_ITEM{
 		quest::ding();
 		quest::summonitem(10682); # Holin Aeridia's Belongings
 		quest::spawn2(160478,0,0,-1702,-633,11,4);
-		quest::faction(168,10); #Katta Castellum Citizens
-		quest::faction(350,10); #Validus Custodus
-		quest::faction(206,10); #Magus Conlegium
-		quest::faction(37,-10); #Citizens of Seru
-		quest::faction(284,-10); #Seru 
-		quest::faction(298,-10); #Shoulders of Seru
+		quest::faction(1502,10); #Katta Castellum Citizens
+		quest::faction(1503,10); #Validus Custodus
+		quest::faction(1504,10); #Magus Conlegium
+		quest::faction(1499,-10); #Citizens of Seru
+		quest::faction(1483,-10); #Seru 
+		quest::faction(1487,-10); #Shoulders of Seru
 		quest::exp(1000);
 	}
 	elsif(plugin::check_handin(\%itemcount, 10674 => 1, 10675 => 1, 10676 => 1, 10677 => 1)) {
@@ -44,12 +44,12 @@ sub EVENT_ITEM{
 		quest::ding();
 		quest::summonitem(10683); # Raien Talikars Belongings
 		quest::spawn2(160479,0,0,-1730,-568,11,200);
-		quest::faction(168,10); #Katta Castellum Citizens
-		quest::faction(350,10); #Validus Custodus
-		quest::faction(206,10); #Magus Conlegium
-		quest::faction(37,-10); #Citizens of Seru
-		quest::faction(284,-10); #Seru 
-		quest::faction(298,-10); #Shoulders of Seru
+		quest::faction(1502,10); #Katta Castellum Citizens
+		quest::faction(1503,10); #Validus Custodus
+		quest::faction(1504,10); #Magus Conlegium
+		quest::faction(1499,-10); #Citizens of Seru
+		quest::faction(1483,-10); #Seru 
+		quest::faction(1487,-10); #Shoulders of Seru
 		quest::exp(1000);
 	}
 	elsif(plugin::check_handin(\%itemcount, 10678 => 1, 10679 => 1, 10680 => 1, 10681 => 1)) {
@@ -58,12 +58,12 @@ sub EVENT_ITEM{
 		quest::ding();
 		quest::summonitem(10684); # Shoeon Malicus' Belongings
 		quest::spawn2(160480,0,0,-1667,-559,11,260);
-		quest::faction(168,10); #Katta Castellum Citizens
-		quest::faction(350,10); #Validus Custodus
-		quest::faction(206,10); #Magus Conlegium
-		quest::faction(37,-10); #Citizens of Seru
-		quest::faction(284,-10); #Seru 
-		quest::faction(298,-10); #Shoulders of Seru
+		quest::faction(1502,10); #Katta Castellum Citizens
+		quest::faction(1503,10); #Validus Custodus
+		quest::faction(1504,10); #Magus Conlegium
+		quest::faction(1499,-10); #Citizens of Seru
+		quest::faction(1483,-10); #Seru 
+		quest::faction(1487,-10); #Shoulders of Seru
 		quest::exp(1000);
 	}
   plugin::return_items(\%itemcount);

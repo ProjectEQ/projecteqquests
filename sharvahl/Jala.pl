@@ -13,7 +13,7 @@ quest::say("Wonderful! I'm not much of a hunter myself, so as you can see it can
 sub EVENT_ITEM { 
 if (plugin::check_handin(\%itemcount, 2789 =>4 )) {
   quest::say("Woohoo! Thank you so much $name! Hey, maybe you would like to try your hand at weaving as well. If you combine the silks in that loom over there, you can make some decent thread to work with. Make four of them and bring them to me. I will judge your craftsmanship.");
-quest::faction(132,5);
+quest::faction(1513,5);
 quest::exp(1000);
 }
 

@@ -22,15 +22,15 @@ sub EVENT_ITEM{
     quest::emote("pulls out a hollow book entitled 'A Detailed Look at Etiquette and Proper Grammar' and opens it to find a journal placed inside.");
     quest::say("This is astounding. The information in this journal is invaluable and must be brought to the others' attention. Take this insignia. When you are ready to help us further seek out Euzan Jurek, tell him you were sent by me, and he will tell you what you can do to further our cause. I can not tell you more than this, but keep the insignia close to you for now.");
     quest::summonitem(29857); # 29857    Insignia Earring of Veracity
-    quest::faction(350,10); # Validus Custodus
-    quest::faction(168,10); # Katta Castellum Citizens
-    quest::faction(206,10); # Magus Conlegium
-    quest::faction(228,-30); # Nathyn Illuminious
-    quest::faction(55,-30); # Coterie of the Ethernal Night
-    quest::faction(284,-30); # Seru
-    quest::faction(139,-30); # Hand of seru
-    quest::faction(96,-30); # Eye of seru
-    quest::faction(138,-30); # Hand legionnaries
+    quest::faction(1503,10); # Validus Custodus
+    quest::faction(1502,10); # Katta Castellum Citizens
+    quest::faction(1504,10); # Magus Conlegium
+    quest::faction(1505,-30); # Nathyn Illuminious
+    quest::faction(1506,-30); # Coterie of the Ethernal Night
+    quest::faction(1483,-30); # Seru
+    quest::faction(1484,-30); # Hand of seru
+    quest::faction(1485,-30); # Eye of seru
+    quest::faction(1541,-30); # Hand legionnaries
   }
   
   plugin::return_items(\%itemcount);

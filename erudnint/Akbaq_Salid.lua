@@ -26,28 +26,28 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 6960,item2 = 6946})) then -- astral cloak of the titans 
 			e.self:Say("These are the pelts of the most powerful of the known Titan spirits. You have done well, $name, and you will be rewarded for your services."); 
 			e.other:Ding();
-			e.other:Faction(60,10,0); -- Crimson hands 
-			e.other:Faction(145,10,0); -- High Council of Erudin 
-			e.other:Faction(143,-30,0); -- Heretics decreased 
-			e.other:Faction(147,10,0); -- High Guards of Erudin 
+			e.other:Faction(233,10,0); -- Crimson hands 
+			e.other:Faction(266,10,0); -- High Council of Erudin 
+			e.other:Faction(265,-30,0); -- Heretics decreased 
+			e.other:Faction(267,10,0); -- High Guards of Erudin 
 			e.other:AddEXP(500); 
 			e.other:SummonItem(2573); 
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 6958,item2 = 6964})) then -- astral leggings of the titans 
 			e.self:Say("Excellent! These pelts are in fine condition. I was unsure what would happen to the physical forms of the titans when slain in this realm.");      
 			e.other:Ding();
-			e.other:Faction(60,10,0); -- Crimson hands 
-			e.other:Faction(145,10,0); -- High Council of Erudin 
-			e.other:Faction(143,-30,0); -- Heretics decreased 
-			e.other:Faction(147,10,0); -- High Guards of Erudin 
+			e.other:Faction(233,10,0); -- Crimson hands 
+			e.other:Faction(266,10,0); -- High Council of Erudin 
+			e.other:Faction(265,-30,0); -- Heretics decreased 
+			e.other:Faction(267,10,0); -- High Guards of Erudin 
 			e.other:AddEXP(500); 
 			e.other:SummonItem(2575); 
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 6947,item2 = 12097})) then -- scaled robe of the elder serpent 
 			e.self:Say("Ah! I have been anxiously awaiting the oppurtunity to craft some powerful robes from these mystical scales."); 
 			e.other:Ding();
-			e.other:Faction(60,10,0); -- Crimson hands 
-			e.other:Faction(145,10,0); -- High Council of Erudin 
-			e.other:Faction(143,-30,0); -- Heretics decreased 
-			e.other:Faction(147,10,0); -- High Guards of Erudin 
+			e.other:Faction(233,10,0); -- Crimson hands 
+			e.other:Faction(266,10,0); -- High Council of Erudin 
+			e.other:Faction(265,-30,0); -- Heretics decreased 
+			e.other:Faction(267,10,0); -- High Guards of Erudin 
 			e.other:AddEXP(500); 
 			e.other:SummonItem(2574); 
 		end

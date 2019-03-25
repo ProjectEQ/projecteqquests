@@ -33,10 +33,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13131})) then
 		e.self:Say("Good work, pal. Here's a little dough to spend, just don't spend it at any other bar.");
 		e.other:Ding();
-		e.other:Faction(167,1,0);
-		e.other:Faction(135,1,0);
-		e.other:Faction(257,1,0);
-		e.other:Faction(183,1,0);
+		e.other:Faction(345,1,0);
+		e.other:Faction(262,1,0);
+		e.other:Faction(341,1,0);
+		e.other:Faction(280,1,0);
 		e.other:GiveCash(0,0,3,9);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10070,item2 = 10070,item3 = 10070,item4 = 10070})) then
 		moonstone = 4;
@@ -52,10 +52,10 @@ function event_trade(e)
 			e.self:Say("Here you go then. Don't go tellin' no Guards where that came from, I would hate to rid myself of a good paying customer.");
 			e.other:Ding();
 			e.other:SummonItem(13107,1);
-			e.other:Faction(167,1,0);
-			e.other:Faction(135,1,0);
-			e.other:Faction(257,1,0);
-			e.other:Faction(183,1,0);
+			e.other:Faction(345,1,0);
+			e.other:Faction(262,1,0);
+			e.other:Faction(341,1,0);
+			e.other:Faction(280,1,0);
 			e.other:AddEXP(500);
 			moonstone = moonstone - 1;
 		until moonstone == 0

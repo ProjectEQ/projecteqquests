@@ -24,30 +24,30 @@ sub EVENT_ITEM {
   	quest::say("Excellent, $name. Here is the bounty as promised.");
     quest::ding();
     quest::givecash(0,0,5,10);
-    quest::faction(188,30); #kromrif
-    quest::faction(189,30); #kromzek
-    quest::faction(179,30); #tormax
-    quest::faction(42,-90); #CoV
+    quest::faction(419,30); #kromrif
+    quest::faction(448,30); #kromzek
+    quest::faction(429,30); #tormax
+    quest::faction(430,-90); #CoV
     quest::exp(10000);
   }
   elsif (plugin::check_handin(\%itemcount, 25301 => 4)) {
   	quest::say("Excellent, $name. Here is the bounty as promised.");
     quest::ding();
     quest::summonitem(quest::ChooseRandom(25077,25084));
-    quest::faction(188,30); #kromrif
-    quest::faction(189,30); #kromzek
-    quest::faction(179,30); #tormax
-    quest::faction(42,-90); #CoV	
+    quest::faction(419,30); #kromrif
+    quest::faction(448,30); #kromzek
+    quest::faction(429,30); #tormax
+    quest::faction(430,-90); #CoV	
 	quest::exp(20000);
   }
   elsif (plugin::check_handin(\%itemcount, 1718 => 1)) {#Wurmscale Scroll 
   	quest::say("This indeed points to Wenglawks being a traitor. If only there were more proof I could take this to the king. Thank you, $name, you have done a great service for Kael. Take this mask as a reward for your service to this city.");
     quest::ding();
     quest::summonitem(25024);#Mask of War
-    quest::faction(188,30); #kromrif
-    quest::faction(189,30); #kromzek
-    quest::faction(179,30); #tormax
-    quest::faction(42,-90); #CoV
+    quest::faction(419,30); #kromrif
+    quest::faction(448,30); #kromzek
+    quest::faction(429,30); #tormax
+    quest::faction(430,-90); #CoV
 	quest::exp(20000);
   }
   plugin::return_items(\%itemcount);

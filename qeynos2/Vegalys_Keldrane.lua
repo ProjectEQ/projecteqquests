@@ -48,11 +48,11 @@ function event_trade(e)
 		e.self:Say("Thank you for bringing this person to justice. Please read this manual very, VERY carefully. Commit it to memory. We do everything strictly by the book. We are a people of law and order and I simply won't tolerate a breach of protocol. Investigators are expected to accurately report findings, are authorized to issue warrants and to notarize official documents for all lands under the jurisdiction of Antonius Bayle and the council. I sincerely hope you can earn your Investigator's Badge.");
 		e.other:SummonItem(18289); -- Investigator's Briefing
 		e.other:Ding();
-		e.other:Faction(9,10,0); -- Antonius Bayle
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(273,-10,0); -- Ring of Scale
-		e.other:Faction(164,-10,0); -- Kane Bayle
-		e.other:Faction(217,10,0); -- Merchants of Qeynos
+		e.other:Faction(219,10,0); -- Antonius Bayle
+		e.other:Faction(262,10,0); -- Guards of Qeynos
+		e.other:Faction(304,-10,0); -- Ring of Scale
+		e.other:Faction(273,-10,0); -- Kane Bayle
+		e.other:Faction(291,10,0); -- Merchants of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 2386})) then -- Investigator's Badge
 		e.self:Say("Very well, here is the briefing document. Please read it very carefully. I wish you luck friend, this mission could prove to be dangerous.");

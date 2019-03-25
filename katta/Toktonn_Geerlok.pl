@@ -15,9 +15,9 @@ sub EVENT_ITEM {
     quest::say("Excellent! Soon the grimlings may be coerced into being less stingy with their precious ore!");
     quest::summonitem(31727);
     quest::exp(10000);
-    quest::faction(52,10); #concillium universus
-    quest::faction(284,-30); #seru
-    quest::faction(142,-30); #heart of seru
+    quest::faction(1561,10); #concillium universus
+    quest::faction(1483,-30); #seru
+    quest::faction(1486,-30); #heart of seru
   }
   plugin::return_items(\%itemcount);
 }

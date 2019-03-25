@@ -38,22 +38,22 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 19949})) then
 		e.self:Say("It is a shame when human blood must be shed in the defense of our brother wolves and bears. I thank you for your dedication to the Jaggedpine Treefolk. Take this rusty pine scout sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done return the sharpened sword to me with a gnoll fang and a large king snake skin and I will put the finishing touches on the weapon.");
 		e.other:Ding();
-		e.other:Faction(159,30); --jaggedpine treefolk
-		e.other:Faction(265,30); --protectors of pine
-		e.other:Faction(267,30); --qrg protected animals
-		e.other:Faction(347,-30); --unkempt druids
-		e.other:Faction(135,30); --guards of qeynos
+		e.other:Faction(272,30); --jaggedpine treefolk
+		e.other:Faction(302,30); --protectors of pine
+		e.other:Faction(343,30); --qrg protected animals
+		e.other:Faction(324,-30); --unkempt druids
+		e.other:Faction(262,30); --guards of qeynos
 		e.other:AddEXP(5000);
 		e.other:SummonItem(19950);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20104,item2 = 13915, item3 = 19945})) then
 		e.self:Emote("fashions a grip from the large king snake skin, attaches the gnoll fang to the heel of the swords hilt, and polishes the blade of the sword with a luminescent green polish.");
 		e.self:Say("Here is your new weapon young ranger. May it serve you well.");
 		e.other:Ding();
-		e.other:Faction(159,30); --jaggedpine treefolk
-		e.other:Faction(265,30); --protectors of pine
-		e.other:Faction(267,30); --qrg protected animals
-		e.other:Faction(347,-30); --unkempt druids
-		e.other:Faction(135,30); --guards of qeynos
+		e.other:Faction(272,30); --jaggedpine treefolk
+		e.other:Faction(302,30); --protectors of pine
+		e.other:Faction(343,30); --qrg protected animals
+		e.other:Faction(324,-30); --unkempt druids
+		e.other:Faction(262,30); --guards of qeynos
 		e.other:AddEXP(10000);
 		e.other:SummonItem(20263);
 	end

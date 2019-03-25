@@ -20,11 +20,11 @@ sub EVENT_ITEM {
     quest::say("Great work!! You have saved me from disgrace. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");
     quest::summonitem(12657);
     quest::exp(1000);
-    quest::faction(30,2);
-    quest::faction(193,2);
-    quest::faction(282,2);
-    quest::faction(317,2);
-    quest::faction(62,2);
+    quest::faction(440,2);
+    quest::faction(441,2);
+    quest::faction(445,2);
+    quest::faction(444,2);
+    quest::faction(442,2);
     quest::givecash(0,0,1,0);
     quest::ding();
   }
@@ -33,11 +33,11 @@ sub EVENT_ITEM {
     quest::summonitem(18072);
     quest::ding();
     quest::exp(2000);
-    quest::faction(30,2);
-    quest::faction(193,2);
-    quest::faction(282,2);
-    quest::faction(317,2);
-    quest::faction(62,2);    
+    quest::faction(440,2);
+    quest::faction(441,2);
+    quest::faction(445,2);
+    quest::faction(444,2);
+    quest::faction(442,2);    
   }
   plugin::return_items(\%itemcount);
 }

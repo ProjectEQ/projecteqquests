@@ -45,23 +45,23 @@ sub EVENT_ITEM {
   quest::summonitem(12797);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 12829 => 1)){
   quest::emote("opens the box to reveal a variety of pebbles. 'How grand!! My pebbles!! Now I can continue with my rock garden!! Hmmm. You look familiar. Hey!! I bet you can help me complete my garden!! Would you please [assist old Rinmark in completing his rock garden]?'");
   quest::exp(30000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 12836 => 1)){
   quest::emote("graciously accepts the tin box filled with precious rocks and gems. 'Thank you greatly, young $name. For your deed, I bestow upon you the shackle of bronze!! You have completed the third rung. Alas, there is no time for celebration. I need your help in rescuing a [student] of mine.'");
   quest::summonitem(4195);
   quest::exp(30000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  plugin::return_items(\%itemcount);
 }

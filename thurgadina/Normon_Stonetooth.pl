@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 1691 => 1)) { # Norman's Axe V2 6 Damage
 	quest::say("Ahhhh, good work, $name. Now ta speak with the stone ye need somethin' ta focus on. Use this piece o' velium as yer focus. Ta speak the language o' the stone ye need ta slow down like the stone. Rock looks like it don't move but it does, just real slow. So place yer focus on the stones ye wish ta speak with and get yerself real slow, both yer body an' yer noggin. Then if yer quiet enough ye might hear 'em. An' that's what's to it.");
 	quest::summonitem(1692); # Velium Focus V1
-	quest::faction(116,20); # Geonid Collective
+	quest::faction(458,20); # Geonid Collective
 	quest::exp(500);
 	
 	}

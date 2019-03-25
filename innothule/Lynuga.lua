@@ -13,9 +13,9 @@ function event_trade(e)
 		e.self:Say("Mmm. Ruby!! Me thank's you! Here take this, me got it off dead someone who try take my collection. Me think's this valuable thing..");
 		e.other:SummonItem(eq.ChooseRandom(10080, 10081, 10082)); -- Random: Brutechopper, Midnight Mallet, Ivandyr's Hoop
 		e.other:Ding();
-		e.other:Faction(22,5,0);
-		e.other:Faction(292,-5,0);
-		e.other:Faction(66,-5,0);
+		e.other:Faction(222,5,0);
+		e.other:Faction(308,-5,0);
+		e.other:Faction(235,-5,0);
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

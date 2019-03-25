@@ -25,10 +25,10 @@ function event_trade(e)
 		e.other:AddEXP(125);
 		e.other:GiveCash(3,0,0,0);
 		e.other:SummonItem(eq.ChooseRandom(2012,17001,10004,10017,1038,10016,13877,2135,7007,8008,10009,13007,5014,13003)); -- random low level items
-		e.other:Faction(213,10); -- 213 : Faction Merchant's of Halas
-		e.other:Faction(294,10); -- 294 : Faction Shaman of Justice
+		e.other:Faction(328,10); -- 328 : Faction Merchant's of Halas
+		e.other:Faction(327,10); -- 327 : Faction Shaman of Justice
 		e.other:Faction(311,10); -- 311 : Faction Steel Warriors
-		e.other:Faction(361,10); -- 361 : Faction Wolves of the North
+		e.other:Faction(320,10); -- 320 : Faction Wolves of the North
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

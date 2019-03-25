@@ -35,31 +35,31 @@ function event_trade(e)
 		e.self:Say("Join us in fulfilling teh will of Bertoxxulous. You can train with us here, in the shadows of the Abbey. Wear this tunic to help conceal your true identity. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. Once you are ready to begin your training please make sure that you see Derthix Gibblix, he can assist you in developing your hunting and gathering skills.");
 		e.other:Ding();
 		e.other:SummonItem(13518);	-- Tin Patched Tunic*
-		e.other:Faction(71,100,0); 	-- Dark reflection
-		e.other:Faction(91,-10,0); 	-- eldritch collective
-		e.other:Faction(115,-10,0); -- gem choppers
-		e.other:Faction(76,-10,0); 	-- Deepmuses
+		e.other:Faction(238,100,0); 	-- Dark reflection
+		e.other:Faction(245,-10,0); 	-- eldritch collective
+		e.other:Faction(255,-10,0); -- gem choppers
+		e.other:Faction(240,-10,0); 	-- Deepmuses
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10263})) then -- empty infectious vial
 		e.self:Say("I hope you enjoyed the thrill of your first lesson and the awakening of your vision. Now you must prove your utility to our society. Take this airtight container and gather the [components] for another dose of the plague rat disease.");
 		e.other:Ding();
 		e.other:SummonItem(17357); 	-- airtight metal box
-		e.other:Faction(71,3,0); 	-- dark reflection
-		e.other:Faction(322,3,0); 	-- the dead
-		e.other:Faction(91,-3,0); 	-- eldritch collective
-		e.other:Faction(115,-3,0); 	-- gem choppers
-		e.other:Faction(179,-3,0); 	-- king ak'anon
+		e.other:Faction(238,3,0); 	-- dark reflection
+		e.other:Faction(239,3,0); 	-- the dead
+		e.other:Faction(245,-3,0); 	-- eldritch collective
+		e.other:Faction(255,-3,0); 	-- gem choppers
+		e.other:Faction(429,-3,0); 	-- king ak'anon
 		e.other:AddEXP(150);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10266})) then
 		e.self:Say("Ahhh good good. Thse will be put to fine use creating more disease to spread through the rodents. you have done excellent work in helping to spread the work of the Plague Bringer. Take this Symbol of Initiation as your reward.");
 		e.other:SummonItem(1390); 	-- Initiate symbol of Bertoxxulous
 		e.other:Ding();
 		e.other:AddEXP(200);
-		e.other:Faction(91,-3,0); 	-- eldritch collective
-		e.other:Faction(115,-3,0); 	-- gem choppers
-		e.other:Faction(176,-3,0); 	-- king ak'anon
-		e.other:Faction(71,3,0); 	-- Dark reflection
-		e.other:Faction(322,3,0); 	-- the dead
+		e.other:Faction(245,-3,0); 	-- eldritch collective
+		e.other:Faction(255,-3,0); 	-- gem choppers
+		e.other:Faction(333,-3,0); 	-- king ak'anon
+		e.other:Faction(238,3,0); 	-- Dark reflection
+		e.other:Faction(239,3,0); 	-- the dead
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

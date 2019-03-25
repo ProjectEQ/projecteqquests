@@ -15,19 +15,19 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 9969 => 1)) { #Aglthin's Fishing Pole
     quest::say("Yes, this will do.");
     quest::summonitem(13697); #Staff of the Abattoir Initiate
-    quest::faction(143,10);  #Heretics
-    quest::faction(112,-30); #Gate Callers
-    quest::faction(79,-30);  #Deepwater Knights
-    quest::faction(56,-30);  #Craftkeepers
-    quest::faction(60,-30);  #Crimson Hands
+    quest::faction(265,10);  #Heretics
+    quest::faction(254,-30); #Gate Callers
+    quest::faction(242,-30);  #Deepwater Knights
+    quest::faction(231,-30);  #Craftkeepers
+    quest::faction(233,-30);  #Crimson Hands
   }
   if(plugin::check_handin(\%itemcount, 9967 => 1)) { #Karran's Head
     quest::say("I take it he got the message... Excellent work!");
-    quest::faction(143,10);  #Heretics
-    quest::faction(112,-30); #Gate Callers
-    quest::faction(79,-30);  #Deepwater Knights
-    quest::faction(56,-30);  #Craftkeepers
-    quest::faction(60,-30);  #Crimson Hands
+    quest::faction(265,10);  #Heretics
+    quest::faction(254,-30); #Gate Callers
+    quest::faction(242,-30);  #Deepwater Knights
+    quest::faction(231,-30);  #Craftkeepers
+    quest::faction(233,-30);  #Crimson Hands
     quest::givecash(5,4,6,1);
     quest::exp(1000);
   }

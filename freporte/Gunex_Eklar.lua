@@ -16,9 +16,9 @@ function event_trade(e)
 		e.self:Say("It took you long enough. I wonder if the Militia will be able to identify the body minus its head. Take this Dull Dismal Long Sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished deliver the Sharpened Dismal Long Sword and a Giant Rattlesnake Skin to Quan Nektogo. He will make the final preparations on your weapon.");
 		e.other:SummonItem(19923); --Dull Dismal Longsword
 		e.other:Ding();
-		e.other:Faction(86,1,0); --Dismal Rage
-		e.other:Faction(235,1,0); --Opal Dark Briar
-		e.other:Faction(184,-1,0); --Knights of Truth
+		e.other:Faction(271,1,0); --Dismal Rage
+		e.other:Faction(296,1,0); --Opal Dark Briar
+		e.other:Faction(281,-1,0); --Knights of Truth
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

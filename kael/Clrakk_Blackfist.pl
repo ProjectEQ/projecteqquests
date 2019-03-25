@@ -17,19 +17,19 @@ sub EVENT_ITEM
 	if(plugin::check_handin(\%itemcount, 25115 => 1)) {#Hand of Deaen Greyforge
 		quest::say("You truly are a bringer of strife, $name. Take this. I hope it will assist you. Use it in our war against the Coldain scum.");
 		quest::summonitem(25054);#Mask of Malediction
-		quest::faction(188, 10);#Kromrif
-		quest::faction(189, 10);#Kromzek
-		quest::faction(49, -20);#Coldain
-		quest::faction(42, -20);#Claws of Veeshan
+		quest::faction(419, 10);#Kromrif
+		quest::faction(448, 10);#Kromzek
+		quest::faction(406, -20);#Coldain
+		quest::faction(430, -20);#Claws of Veeshan
 	}
 	
 	elsif(plugin::check_handin(\%itemcount, 25114 => 1)) {#Legs of Deaen Greyforge
 		quest::say("You truly are a bringer of strife, $name. Take this. I hope it will assist you. Use it in our war against the Coldain scum.");
 		quest::summonitem(25051);#Dark Spear of Venom
-		quest::faction(188, 10);#Kromrif
-		quest::faction(189, 10);#Kromzek
-		quest::faction(49, -20);#Coldain
-		quest::faction(42, -20);#Claws of Veeshan
+		quest::faction(419, 10);#Kromrif
+		quest::faction(448, 10);#Kromzek
+		quest::faction(406, -20);#Coldain
+		quest::faction(430, -20);#Claws of Veeshan
 	}
    
 	plugin::return_items(\%itemcount); #return items if not the ones required

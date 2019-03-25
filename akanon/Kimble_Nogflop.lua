@@ -14,11 +14,11 @@ function event_trade(e)
 		e.self:Say("The flask of nitrates I sent for!! As was the deal, here is my [Regurgitonic]. Give it to whoever may need it and they will surely cough up whatever may be inside them with no harm to them whatsoever.");
 		e.other:SummonItem(12140);	-- Regurgitonic
 		e.other:Ding();
-		e.other:Faction(115,10,0); 	-- Gem Choppers
-		e.other:Faction(210,10,0); 	-- Merchants of Ak'Anon
-		e.other:Faction(176,10,0); 	-- King Ak'Anon
-		e.other:Faction(71,-30,0); 	-- Dark Reflection
-		e.other:Faction(39,-30,0); 	-- Clan Grikbar
+		e.other:Faction(255,10,0); 	-- Gem Choppers
+		e.other:Faction(288,10,0); 	-- Merchants of Ak'Anon
+		e.other:Faction(333,10,0); 	-- King Ak'Anon
+		e.other:Faction(238,-30,0); 	-- Dark Reflection
+		e.other:Faction(1604,-30,0); 	-- Clan Grikbar
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -16,11 +16,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12137 => 1)) {
     quest::say("The head for my commander. Let us see. I have a body ready for it. There. Hahahaha!! As for your fine work, take this. Also, I believe you can help me find my beloved [Arlena].");
-    quest::faction(21, 15);
-    quest::faction(135, -2);
-    quest::faction(235, 1);
-    quest::faction(257, -3);
-    quest::faction(53, 1);
+    quest::faction(221, 15);
+    quest::faction(262, -2);
+    quest::faction(296, 1);
+    quest::faction(341, -3);
+    quest::faction(230, 1);
     quest::givecash(0, 0, 7, 0);
     quest::summonitem(plugin::RandomRange(2137, 2148));
   }

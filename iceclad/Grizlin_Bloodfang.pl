@@ -23,8 +23,8 @@ sub EVENT_ITEM {
     quest::say("Yes, this fine weapon. This hero weapon! Groumshak have harpoon much like this. May it bring much food for your pack, furless one.");
     quest::emote("hands you the harpoon with a nod of his head.");
     quest::summonitem(30052);
-    quest::faction(303, 30);
-    quest::faction(345, -30);
+    quest::faction(439, 30);
+    quest::faction(431, -30);
     quest::exp(1000);
   }
 }

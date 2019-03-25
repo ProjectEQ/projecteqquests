@@ -29,25 +29,25 @@ function event_trade(e)
 		e.self:Say("Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want to [" .. eq.say_link("help Innoruuk",false,"help Innoruuk") .. "]?");
 		e.other:SummonItem(15093);
 		e.other:Ding();
-		e.other:Faction(70,5,0);  -- +Dark Ones
-		e.other:Faction(292,5,0);  -- +Shadowknights of Night Keep
-		e.other:Faction(106,-10,0); -- -Frogloks of Guk
+		e.other:Faction(237,5,0);  -- +Dark Ones
+		e.other:Faction(308,5,0);  -- +Shadowknights of Night Keep
+		e.other:Faction(251,-10,0); -- -Frogloks of Guk
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13916})) then -- More Help for Innoruuk
 		e.self:Say("Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.");
 		e.other:SummonItem(15272);
 		e.other:Ding();
-		e.other:Faction(70,5,0);  -- +Dark Ones
-		e.other:Faction(292,5,0);  -- +Shadowknights of Night Keep
-		e.other:Faction(106,-10,0); -- -Frogloks of Guk
+		e.other:Faction(237,5,0);  -- +Dark Ones
+		e.other:Faction(308,5,0);  -- +Shadowknights of Night Keep
+		e.other:Faction(251,-10,0); -- -Frogloks of Guk
 		e.other:AddEXP(150);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 18791})) then -- Tattered Note
 		e.self:Say("Good.. Kaglari need you help.. Kaglari teach you majik now.  When you ready for task you tell Kaglari!!  Yooz reeturn to mez when yooz ar strongur, mez teech yooz bout da mor advanced tings.");
 		e.other:SummonItem(13529); -- Muck Stained Tunic
 		e.other:Ding();
-		e.other:Faction(70,100,0);  -- +Dark Ones
-		e.other:Faction(292,25,0);  -- +Shadowknights of Night Keep
-		e.other:Faction(106,-15,0); -- -Frogloks of Guk
+		e.other:Faction(237,100,0);  -- +Dark Ones
+		e.other:Faction(308,25,0);  -- +Shadowknights of Night Keep
+		e.other:Faction(251,-15,0); -- -Frogloks of Guk
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

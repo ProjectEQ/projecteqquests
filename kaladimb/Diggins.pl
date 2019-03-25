@@ -70,22 +70,22 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 13931 => 4)) { # RunnyEye Warbeads
       quest::say("Good work. We shall add these to the stash. Here is your reward, as promised. Be happy with it and continue your work. Maybe soon you shall be able to [earn a parrying pick].");
-      quest::faction(220, 10); # Miners Guild 628
-      quest::faction(33, -10); # Circle Of Unseen Hands
-      quest::faction(29, -10); # Butcherblock Bandits
-      quest::faction(77, 10);  # Deeppockets
-      quest::faction(90, -10); # Ebon Mask
+      quest::faction(322, 10); # Miners Guild 628
+      quest::faction(223, -10); # Circle Of Unseen Hands
+      quest::faction(379, -10); # Butcherblock Bandits
+      quest::faction(241, 10);  # Deeppockets
+      quest::faction(244, -10); # Ebon Mask
       quest::exp(5000);
       quest::givecash(0, 4, 0, 0);
       quest::summonitem(quest::ChooseRandom(7007,7008,7009,7010));
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12170 => 1, 12172 => 1, 12174 => 1, 12178 => 1))) { # Dunfire Tongues
       quest::say("Excellent work!! You are quite an asset to this mining guild. Please accept this Parrying Pick 628 for your great service. If you truly wish to serve our guild. Go and speak with Mater. Tell him you are [ready to earn Mining Pick 628].");
-      quest::faction(220, 10); # Miners Guild 628
-      quest::faction(33, -10); # Circle Of Unseen Hands
-      quest::faction(29, -10); # Butcherblock Bandits
-      quest::faction(77, 10);  # Deeppockets
-      quest::faction(90, -10); # Ebon Mask
+      quest::faction(322, 10); # Miners Guild 628
+      quest::faction(223, -10); # Circle Of Unseen Hands
+      quest::faction(379, -10); # Butcherblock Bandits
+      quest::faction(241, 10);  # Deeppockets
+      quest::faction(244, -10); # Ebon Mask
       quest::exp(5000);
       quest::summonitem(12166); # Parrying Pick 628
    }

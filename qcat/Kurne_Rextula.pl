@@ -19,11 +19,11 @@ sub EVENT_ITEM {
     quest::summonitem(17002);
     quest::ding();
     quest::exp(1000);
-    quest::faction(21,1);
-    quest::faction(135,-1);
-    quest::faction(235,-1);
-    quest::faction(257,-1);
-    quest::faction(53,1);
+    quest::faction(221,1);
+    quest::faction(262,-1);
+    quest::faction(296,-1);
+    quest::faction(341,-1);
+    quest::faction(230,1);
     quest::givecash(0,3,0,0);
   }
   plugin::return_items(\%itemcount);

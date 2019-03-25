@@ -13,14 +13,14 @@ sub EVENT_ITEM {
     quest::exp(100);
     quest::givecash(0,0,4,0);
     quest::summonitem(17041);
-    quest::faction(24,2); #Brood of Kotiz
-    quest::faction(193,2); #Legion of Cabilis
+    quest::faction(443,2); #Brood of Kotiz
+    quest::faction(441,2); #Legion of Cabilis
   }
   if (plugin::check_handin(\%itemcount, 12885 => 1)) {
     quest::say("Yes this is exactly what i wanted. Here is your spell.");
     quest::summonitem(15444); #Spell Renew Bones
-    quest::faction(24,2); #Brood of Kotiz
-    quest::faction(193,2); #Legion of Cabilis
+    quest::faction(443,2); #Brood of Kotiz
+    quest::faction(441,2); #Legion of Cabilis
   }
   plugin::return_items(\%itemcount);
 }

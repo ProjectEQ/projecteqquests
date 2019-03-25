@@ -25,11 +25,11 @@ sub EVENT_ITEM {
     quest::say("Good work! I knew you could prove your worth. Most waste time training. I do not reward those who waste my time. Please take this. It is from our horde, from countless robberies. I hope you can use it to advance yourself. Remember to always stay faithful to Neriak.");
     quest::exp(5000);
     quest::givecash(0,8,0,0);
-    quest::faction(90,5);
-    quest::faction(135,-5);
-    quest::faction(361,-5);
-    quest::faction(133,-5);
-    quest::faction(31,-5);
+    quest::faction(244,5);
+    quest::faction(262,-5);
+    quest::faction(320,-5);
+    quest::faction(263,-5);
+    quest::faction(329,-5);
     quest::summonitem(5066);
   }
 

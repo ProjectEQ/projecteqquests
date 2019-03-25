@@ -34,8 +34,8 @@ sub EVENT_ITEM {
     my $goldGiven = $randomGivenGold[int(rand(scalar @randomGivenGold))];
     quest::summonitem($itemGiven);
     quest::givecash($copperGiven,$silverGiven,$goldGiven,0);
-    quest::faction(30,10);
-    quest::faction(193,10);
+    quest::faction(440,10);
+    quest::faction(441,10);
     quest::exp(10000);
     quest::ding();
   }

@@ -28,20 +28,20 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13700})) then
 		e.self:Say("Thank you for tracking down the filthy little poacher. Take this as your reward."); -- This is not from live as I have not seen the little bugger on live yet.
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(279,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(306,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(1500);
 		e.other:GiveCash(random_copper,random_silver,random_gold,random_planinum);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13231,item2 = 13232})) then
 		e.self:Say("Excellent! Here is a Jaggedpine Crook of your own. Please use it only to defend yourself and never to attack one of Tunare's creatures. You will find that while wielding the crook, Tunare grants you a boon of strength and the power to smite enemies who would otherwise be impervious to physical attacks.");
 		e.other:SummonItem(13230);
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(279,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(302,10,0);
+		e.other:Faction(272,10,0);
+		e.other:Faction(306,-30,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(1500);
 		e.other:GiveCash(random_copper,random_silver,random_gold,random_planinum);		
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 62811})) then

@@ -63,11 +63,11 @@ sub EVENT_ITEM {
         quest::exp("100");
         quest::ding();
         # Ashen Order Faction ID-12
-        quest::faction("12","10");
+        quest::faction("361","10");
         # Knights of Truth Faction ID-184
-        quest::faction("184","10");
+        quest::faction("281","10");
         # Silent Fist Clan Faction ID-300
-        quest::faction("300","10");
+        quest::faction("309","10");
     }
     plugin::return_items(\%itemcount);
 }

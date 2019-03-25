@@ -11,7 +11,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6347 => 1)) {
     quest::say("You.. You kill the rats? Errr. Thalith thanks you. Here. Take this. It's good luck charm I've had for years.");
     quest::summonitem(1061);
-    quest::faction( 175, 10);
+    quest::faction( 382, 10);
   }   
 }
 #END of FILE Zone:kerraridge  ID:74089 -- Thalith_Mamluk

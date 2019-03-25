@@ -19,12 +19,12 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12622, item2 = 12619})) then	--List of Qeynos Most Wanted
 		e.self:Say("Fantastic, Fantastic... Here you have more than proven your right to wear this. Use it wisely...");
 		e.other:SummonItem(1376); 													--Initiate Symbol of the Tribunal
-		e.other:Faction(15,2);  													--Banker
-		e.other:Faction(213,2);  													--Merchants of Halas
-		e.other:Faction(294,2);  													--Shamen of Justice
-		e.other:Faction(33,-3);  													--Circle of Unseen Hands
-		e.other:Faction(48,-3);  													--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 													--Hall of the Ebon Mask
+		e.other:Faction(5002,2);  													--Banker
+		e.other:Faction(328,2);  													--Merchants of Halas
+		e.other:Faction(327,2);  													--Shamen of Justice
+		e.other:Faction(223,-3);  													--Circle of Unseen Hands
+		e.other:Faction(336,-3);  													--Coalition of Tradefolk Underground
+		e.other:Faction(5006,-3); 													--Hall of the Ebon Mask
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -28,17 +28,17 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13882})) then -- A Box of Bones
 		e.self:Say("This is fabulous work, my friend! You have served your people well. Take this as a gift. I hope it can be of use to you. We need proof of these skeletons' origins. Continue the eradication of the undead and find out who creates them. Once you know, bring their head to me.");
-		e.other:Faction(247,10,0);  -- Peace Keepers (Quellious temple)      
-		e.other:Faction(145,5,0);  -- High Council of Erudin      
-		e.other:Faction(143,-10,0);  -- Heretics
+		e.other:Faction(298,10,0);  -- Peace Keepers (Quellious temple)      
+		e.other:Faction(266,5,0);  -- High Council of Erudin      
+		e.other:Faction(265,-10,0);  -- Heretics
 		e.other:AddEXP(200);      
 		e.other:GiveCash(0,12,3,0); -- 12 silver 3 gold per Allakhazam
 		e.other:SummonItem(eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,15203,15207,15201,15208,15209,15014,15205,15210,6012));
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13816})) then -- The completed Peacekeeper Staff
 		e.self:Say("You have done well, neophyte.Let me add the touch of harmony to finish the job.. Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].");
-		e.other:Faction(247,10,0);  -- Peace Keepers (Quellious temple)      
-		e.other:Faction(145,5,0);  -- High Council of Erudin      
-		e.other:Faction(143,-10,0);  -- Heretics      
+		e.other:Faction(298,10,0);  -- Peace Keepers (Quellious temple)      
+		e.other:Faction(266,5,0);  -- High Council of Erudin      
+		e.other:Faction(265,-10,0);  -- Heretics      
 		e.other:AddEXP(600);      
 		e.other:GiveCash(12,11,0,0);
 		e.other:SummonItem(eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012));

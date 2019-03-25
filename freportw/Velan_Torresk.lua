@@ -32,18 +32,18 @@ function event_trade(e)
 			e.self:Say("Good work, " .. e.other:GetName() .. ", you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
 			e.other:SummonItem(10130); -- White Training Sash
 			e.other:Ding();
-			e.other:Faction(12,2,0); -- Ashen Order
-			e.other:Faction(184,2,0); -- Knights of Truth
-			e.other:Faction(300,2,0); -- Silent Fist Clan
+			e.other:Faction(361,2,0); -- Ashen Order
+			e.other:Faction(281,2,0); -- Knights of Truth
+			e.other:Faction(309,2,0); -- Silent Fist Clan
 			e.other:AddEXP(500);
 		-- White Training Sash - Giant Snake Rattle - Deathfist Slashed Belt - Desert Tarantula Chitin
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10130,item2 = 13058,item3 = 13916,item4 = 20901})) then
 			e.self:Say("Good work, " .. e.other:GetName() .. ", you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
 			e.other:SummonItem(10131); -- Yellow Sash of Order
 			e.other:Ding();
-			e.other:Faction(12,5,0); -- Ashen Order
-			e.other:Faction(184,5,0); -- Knights of Truth
-			e.other:Faction(300,5,0); -- Silent Fist Clan
+			e.other:Faction(361,5,0); -- Ashen Order
+			e.other:Faction(281,5,0); -- Knights of Truth
+			e.other:Faction(309,5,0); -- Silent Fist Clan
 			e.other:AddEXP(750);
 		end
 	end

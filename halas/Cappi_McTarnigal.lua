@@ -12,7 +12,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 5243, item2 = 5243, item3 = 5243, item4 = 5243})) then	-- Mammoth Calf Hide X 4
 		e.self:Say("You returned? We believed the gnoll pups got you. The caravan has already left, and these do me little good now. But, as I said before, one must remain respectable. Here is what I promised.");
 		e.other:SummonItem(eq.ChooseRandom(5238,5239,5242,5236,5233,5231,5240,5241,5234,5232,5235,5237));
-		e.other:Faction(275,10,0); 																		-- 275 : Faction Rogue's of the White Rose
+		e.other:Faction(305,10,0); 																		-- 305 : Faction Rogue's of the White Rose
 		e.other:AddEXP(2500);
 		e.other:Ding();
 	end

@@ -17,32 +17,32 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 7170 => 1)) { # Claw of the Grunt
     quest::summonitem(7171); # Grimling Bane Claw
     quest::exp(300); 
-    quest::faction(132,2); # Guardians of Shar Vahl
+    quest::faction(1513,2); # Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 7180 => 1)) { # Dirk of the Grunt
     quest::summonitem(7181); # Grimling Bane Dirk
     quest::exp(300);
-    quest::faction(132,2); # Guardians of Shar Vahl
+    quest::faction(1513,2); # Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 7174 => 1)) { # Great Sword of the Grunt
     quest::summonitem(7175); # Grimling Bane Great Sword
     quest::exp(300);
-    quest::faction(132,2); # Guardians of Shar Vahl
+    quest::faction(1513,2); # Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 7176 => 1)) { # Hammer of the Grunt
     quest::summonitem(7177); # Grimling Bane Hammer
     quest::exp(300);
-    quest::faction(132,2); # Guardians of Shar Vahl
+    quest::faction(1513,2); # Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 7172 => 1)) { # Short Sword of the Grunt
     quest::summonitem(7173); # Grimling Bane Short Sword
     quest::exp(300);
-    quest::faction(132,2); # Guardians of Shar Vahl
+    quest::faction(1513,2); # Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 7178 => 1)) { # Staff of the Grunt
     quest::summonitem(7179); # Grimling Bane Staff
     quest::exp(300);
-    quest::faction(132,2); # Guardians of Shar Vahl
+    quest::faction(1513,2); # Guardians of Shar Vahl
   }
   plugin::return_items(\%itemcount);
 }

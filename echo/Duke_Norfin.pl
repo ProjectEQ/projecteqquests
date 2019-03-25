@@ -26,11 +26,11 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 19840 => 1)) {
     quest::say("Excellent work. I'm glad you were able to collect this shipment. The buyers were getting anxious to have it delivered. Come back later and I may have another job for you.");
     quest::exp(25000);
-    quest::faction(141,30); #haven smugglers
-    quest::faction(191,30); #lake recondite bandits
-    quest::faction(152,-40); #house of fordel
-    quest::faction(153,-40); #house of midst
-    quest::faction(154,-40); #house of stout
+    quest::faction(1542,30); #haven smugglers
+    quest::faction(1559,30); #lake recondite bandits
+    quest::faction(1510,-40); #house of fordel
+    quest::faction(1511,-40); #house of midst
+    quest::faction(1512,-40); #house of stout
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');

@@ -27,8 +27,8 @@ sub EVENT_ITEM
    if(plugin::check_handin(\%itemcount, 5145 => 1, 12748 => 1, 12750 => 1, 12749 => 1) && $faction <= 5 && $shmskullquest >= 8)
    {
       quest::say("You have returned the skulls of the Sisters of Scale. For this you shall be rewarded. Take this hierophant's weapon. May you use it to smite the foes of our people.' Dexl comes out of the trance. 'What?!! Whew. Hey!! Where is my cudgel?");
-      quest::faction(282, 10); #Scaled Mystics
-      quest::faction(193, 10); #Legion of Cabilis
+      quest::faction(445, 10); #Scaled Mystics
+      quest::faction(441, 10); #Legion of Cabilis
       quest::summonitem(5146); #Give the player The Cudgel of the Hierophant
       quest::exp(140000); #give decent xp...
       quest::givecash (0,0,0,10);

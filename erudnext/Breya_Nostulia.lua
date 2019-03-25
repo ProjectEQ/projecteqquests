@@ -17,9 +17,9 @@ function event_trade(e)
 		e.self:Say("Well done, " .. e.other:GetName() .. ". I had a feeling you would return victorious. Here is your reward, the Leggings of Midnight Sea. Wear them with pride for the Ocean Lord. If you are interested in aiding us further, you may want to ask Gans about his brother.");
 		e.other:SummonItem(1762);
 		e.other:Ding();
-		e.other:Faction(79,2,0);
-		e.other:Faction(145,2,0);
-		e.other:Faction(143,-2,0);
+		e.other:Faction(242,2,0);
+		e.other:Faction(266,2,0);
+		e.other:Faction(265,-2,0);
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

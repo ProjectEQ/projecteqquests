@@ -31,7 +31,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 10635 => 1)) {
     quest::say("Excellent, you have done well. Here is the first piece of the staff. Now you must go seek out the second master; he will clear the path for you.");
-    quest::faction(342,30);
+    quest::faction(404,30);
     quest::exp(100000);
     quest::summonitem(10610);
   }

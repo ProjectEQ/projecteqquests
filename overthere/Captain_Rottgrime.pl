@@ -12,7 +12,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12982 => 4)){
     quest::say("Great job marine!! Word of your heroics shall be passed on to the Admiral. If you don't have a shield then take one, if you do then get back to the frontlines. There is no time for R n R!! Move it marine!! Or you'll be pushing Danak till the cockatrice crow!!");
     quest::summonitem(12981); #Guard of the Marines
-    quest::faction(353,10); # +Venril Sathir
+    quest::faction(318,10); # +Venril Sathir
     quest::exp(10);
     quest::givecash(0,0,1,0);
   }

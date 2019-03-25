@@ -54,10 +54,10 @@ sub EVENT_ITEM {
     quest::say("Hahaha.. I see you actually killed a respected, well-known citizen of Qeynos. No loss for them, but you are certainly a gain for our shrine. Maybe this shall do you some good. If not now, then surely later. You may need it when the Qeynos Guards hunt you down."); 
     quest::summonitem($garuc_reward);
     quest::givecash($garuc_randomCP,$garuc_randomSP,0,0);# Random from 20cp20sp
-    quest::faction(135,-5); #Guards of Qeynos
-    quest::faction(257,-5); #Priests of Life
-    quest::faction(183,-5); #Knights of Thunder
-    quest::faction(21,3);   #Bloodsabers
+    quest::faction(262,-5); #Guards of Qeynos
+    quest::faction(341,-5); #Priests of Life
+    quest::faction(280,-5); #Knights of Thunder
+    quest::faction(221,3);   #Bloodsabers
     quest::exp(500);
   }
   #do all other handins first with plugin, then let it do disciplines

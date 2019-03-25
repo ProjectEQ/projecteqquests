@@ -32,8 +32,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","6","1"); 
   quest::exp(1600);
   quest::ding();
-  quest::faction(62,20);
-  quest::faction(193,10);
+  quest::faction(442,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 1729 => 1, 1730 => 1, 5124 => 1)) { #Test of Betrayal (Greenmist Quest 5/8)
   quest::say("Congratulations! You are now a true crusader, but there is no time for celebration. We have lost two of our operatives. Crusaders Golin and Fodcod were dispatched to seek out an ancient artifact, the [visceral dagger]. Where they have gone, I do not know. They have been gone far too long. Find them and return the dagger to me with your crusader khukri and you shall be a hero.");
@@ -41,8 +41,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","0","1"); 
   quest::exp(2000);
   quest::ding();
-  quest::faction(62,20);
-  quest::faction(193,10);
+  quest::faction(442,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 7324 => 1, 5125 => 1)) { #Test of the Hero (Greenmist Quest 6/8)
   quest::emote("gazes in astonishment at the dagger. 'Ahhh!! You have brought the sacred visceral dagger back to the Temple of Terror. Let all be aware that the great $name has returned to Cabilis a hero!! You now wield the weapon of a hero. Hail, $name, hero of the Crusaders of Greenmist.");
@@ -50,8 +50,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","0","3"); 
   quest::exp(3000);
   quest::ding();
-  quest::faction(62,20);
-  quest::faction(193,10);
+  quest::faction(442,20);
+  quest::faction(441,10);
  }
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
  plugin::return_items(\%itemcount);

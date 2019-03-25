@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   quest::say("Oh thank you ever so much! You are truly as sweet as the gift you bring.");
   quest::summonitem(30625);
   quest::exp(2500);
-  quest::faction(132,10);
+  quest::faction(1513,10);
   }
 
 }

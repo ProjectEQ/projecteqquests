@@ -14,21 +14,21 @@ function event_trade(e)
   if(item_lib.check_turn_in(e.trade, {item1 = 18027})) then
     e.self:Say(string.format("Ah, thank you, kind %s.  You've made two foolish lovebirds very happy.  Please, take this..  Though it is not much, it will help keep you warm on those chilly Karana nights.  It is very good to have a friend such as yourself, and I will one day repay you for your kindness and generosity.",e.other:GetName()));
     e.other:SendSound();
-    e.other:Faction(192,2,0);
-    e.other:Faction(184,2,0);
-    e.other:Faction(135,2,0);
-    e.other:Faction(273,-2,0);
-    e.other:Faction(207,-2,0);
+    e.other:Faction(284,2,0);
+    e.other:Faction(281,2,0);
+    e.other:Faction(262,2,0);
+    e.other:Faction(304,-2,0);
+    e.other:Faction(285,-2,0);
     e.other:AddEXP(250);
   elseif(item_lib.check_turn_in(e.trade, {item1 = 18021})) then
     e.self:Emote(string.format("yawns and says, 'Oh, report time already again?  Yeah, here ya go, %s.  Be careful around here at night, I've been seeing some rough looking characters lurking about.",e.other:GetName()));
     e.other:SendSound();
     e.other:SummonItem(18023);
-    e.other:Faction(192,2,0);
-    e.other:Faction(184,2,0);
-    e.other:Faction(135,2,0);
-    e.other:Faction(273,-2,0);
-    e.other:Faction(207,-2,0);
+    e.other:Faction(284,2,0);
+    e.other:Faction(281,2,0);
+    e.other:Faction(262,2,0);
+    e.other:Faction(304,-2,0);
+    e.other:Faction(285,-2,0);
     e.other:AddEXP(250);
   end
   item_lib.return_items(e.self, e.other, e.trade)

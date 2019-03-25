@@ -26,11 +26,11 @@ sub EVENT_ITEM {
 		quest::say("A new warrior of hate always pleases me. Here is your tunic, please return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13598); #Ruined Training Tunic*
 		quest::ding();
-		quest::faction(21,100); #Bloodsabers
-		quest::faction(135,-15); #Guards of Qeynos
-		quest::faction(235,10); #Opal Dark Briar
-		quest::faction(257,-25); #Priest of Life
-		quest::faction(53,5); #Corrupt Qeynos Guards
+		quest::faction(221,100); #Bloodsabers
+		quest::faction(262,-15); #Guards of Qeynos
+		quest::faction(296,10); #Opal Dark Briar
+		quest::faction(341,-25); #Priest of Life
+		quest::faction(230,5); #Corrupt Qeynos Guards
 		quest::exp(100);
 	}
   else {

@@ -10,11 +10,11 @@ function event_trade(e)
     e.self:QuestSay(e.other, "Oh, report time already again? Yeah, here ya go, "..e.other:GetName()..". Be careful around here at night, I've been seeing some rough looking characters lurking about.");
     e.other:SendSound();
     e.other:SummonItem(18022);
-    e.other:Faction(192,2,0);
-    e.other:Faction(184,2,0);
-    e.other:Faction(135,2,0);
-    e.other:Faction(273,-2,0);
-    e.other:Faction(207,-2,0);
+    e.other:Faction(284,2,0);
+    e.other:Faction(281,2,0);
+    e.other:Faction(262,2,0);
+    e.other:Faction(304,-2,0);
+    e.other:Faction(285,-2,0);
     e.other:AddEXP(200);
   end
   item_lib.return_items(e.self, e.other, e.trade)

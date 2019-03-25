@@ -34,7 +34,7 @@ sub EVENT_ITEM {
    quest::say("I am grateful for your assistance. I will be able to complete the rest of the ritual without danger now that the spirits in the skulls have been calmed. Please take this report of occurrences to Scribe Cholsa in Shar Vahl.");
    
    quest::summonitem(31849);  # Rolekos Report of Occurrences
-   quest::faction(68,10); # Dar Khura
+   quest::faction(1533,10); # Dar Khura
    quest::exp(2000);
    quest::ding();
    
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
    quest::say("I will need to maintain my concentration to keep the Rakshasa from escaping back into the spirit realm. If you kill him while he is materialized he will be slain and his body will remain material. Bring me the head of the Rakshasa when he is slain.");
    quest::delglobal(Rakshasa);
    quest::spawn2(167546,0,0,-975.17,-825.20,6.74,40); # Rakshasa Karwoaro
-   quest::faction(68,10); # Dar Khura
+   quest::faction(1533,10); # Dar Khura
    quest::exp(2000);
    quest::ding();
 
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
    elsif (plugin::check_handin(\%itemcount, 10916 =>1)) { # Head of the Rakshasa
 
    quest::say("The threat of the Rakshasa appears to be eliminated. You have the gratitude of the Dar Khura for your bravery and assistance. Let us be wary however, the Rakshasa gained his power by allying with dark spirits that may not be indifferent to the Rakshasas death.");
-   quest::faction(68,30); # Dar Khura
+   quest::faction(1533,30); # Dar Khura
    quest::exp(5000);
    quest::ding();
    quest::summonitem(31837); # Shield of Bane Warding

@@ -24,9 +24,9 @@ sub EVENT_ITEM {
       quest::say("What is it you have here, $name? Could this possibly be the talisman of Glantitar? I am afraid I am having trouble identifying if it is indeed is. I can see that you had a great battle with one of the wicked giants. I appreciate that you present to me this head of the evil Kromzek Taskmaster along with the talisman. It proves to me that you are one that is here to aid us in our fight. However, you must seek out Rolandal to proceed further for only he can help you identify this talisman.");
       quest::summonitem(1861); # 1861  An old worn Talisman
       quest::targlobal("CircletFalinkan","1","Y1",119104,$charid,119); # Muuss
-      quest::faction(362,20); # Yelinak
-      quest::faction(42,20); # Claws of Veeshan
-      quest::faction(189,-60); # Kromzek
+      quest::faction(436,20); # Yelinak
+      quest::faction(430,20); # Claws of Veeshan
+      quest::faction(448,-60); # Kromzek
       quest::exp(50000);
     }
   }

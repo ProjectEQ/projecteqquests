@@ -10,16 +10,16 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 18200 => 1)){#
 		quest::say("Take this note and be gone with you.");
 		quest::summonitem(18201);#a note (book of Turmoil, Text: TomeOfAges2)
-		quest::faction(87, 10);#Dreadguard Inner
-		quest::faction(88, 10);#Dreadguard Outer
-		quest::faction(69, 10);#Dark Bargainers
+		quest::faction(370, 10);#Dreadguard Inner
+		quest::faction(334, 10);#Dreadguard Outer
+		quest::faction(236, 10);#Dark Bargainers
 	}
 	elsif(plugin::check_handin(\%itemcount, 13846 => 1)){#Dark Elf Decapitated Head
 		quest::say("Take this book and be gone with you.");
 		quest::summonitem(18202);#Book of Turmoil
-		quest::faction(87, 10);#Dreadguard Inner
-		quest::faction(88, 10);#Dreadguard Outer
-		quest::faction(69, 10);#Dark Bargainers
+		quest::faction(370, 10);#Dreadguard Inner
+		quest::faction(334, 10);#Dreadguard Outer
+		quest::faction(236, 10);#Dark Bargainers
 		quest::exp(72900);#10% of level 10 xp
 		#The mob you kill for this quest is trivial at even level 10, or should be.  Giving a percentage of level 40
 		#xp seems too much.

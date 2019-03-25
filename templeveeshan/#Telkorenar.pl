@@ -48,9 +48,9 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::emote("looks pleased as she hands you the reward.");
-    quest::faction(42,+75); # claws of veeshan
-    quest::faction(362,+75); # yelinak
-    quest::faction(189,-100); # zek
+    quest::faction(430,+75); # claws of veeshan
+    quest::faction(436,+75); # yelinak
+    quest::faction(448,-100); # zek
     quest::exp(200000);
   }
   else {

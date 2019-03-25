@@ -7,8 +7,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13071 => 4)){
     quest::say("Here are you coins as promised. Have a nice day. I wish I could.");
-    quest::faction(212,5);
-    quest::faction(8,5);
+    quest::faction(325,5);
+    quest::faction(5001,5);
     quest::givecash(1,1,1,0);
   }
   plugin::return_items(\%itemcount);

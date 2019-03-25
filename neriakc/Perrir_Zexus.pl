@@ -32,33 +32,33 @@ sub EVENT_ITEM {
     quest::emote("laughs. 'Here, take this then!  You are now and initiate of Innoruuk.  Speak with Ithvol K`Jasn for further advancement.'"); #text made up
     quest::summonitem(1369); #Initiate Symbol of Innoruuk
     quest::exp(2000);
-    quest::faction(177, 10);  #King Naythox Thex
-    quest::faction(256, 10);  #Priests of Innoruuk
-    quest::faction(43, -30);  #Clerics of Tunare
-    quest::faction(257, -30); #Priests of Life
-    quest::faction(258, -30); #Priests of Marr
+    quest::faction(278, 10);  #King Naythox Thex
+    quest::faction(340, 10);  #Priests of Innoruuk
+    quest::faction(226, -30);  #Clerics of Tunare
+    quest::faction(341, -30); #Priests of Life
+    quest::faction(362, -30); #Priests of Marr
   }
   if(plugin::check_handin(\%itemcount, 18756 => 1)) { #Tattered Note
     quest::say("Welcome, child of Hate. I am Perrir Zexus, High Priest. We all draw power from the very source that created us, the will of Innoruuk. Here, put on this tunic. It is the tunic of our guild. Once you are ready to begin your training please make sure that you see High Priest Alexandrian, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
     quest::ding();
     quest::summonitem(13585); #Crimson Training Tunic*
     quest::exp(100);
-    quest::faction(256, 100);  #Priests of Innoruuk
-    quest::faction(177, 15);   #King Naythox Thex
-    quest::faction(258, -35);  #Priests of Marr
-    quest::faction(43, -25);   #Clerics of Tunare
-    quest::faction(257, -15);  #Priests of Life
-    quest::faction(260, -400); #Primordial Malice
+    quest::faction(340, 100);  #Priests of Innoruuk
+    quest::faction(278, 15);   #King Naythox Thex
+    quest::faction(362, -35);  #Priests of Marr
+    quest::faction(226, -25);   #Clerics of Tunare
+    quest::faction(341, -15);  #Priests of Life
+    quest::faction(1522, -400); #Primordial Malice
   }
   if(plugin::check_handin(\%itemcount, 18148 => 1)) { #Letter of recommendation
     quest::say("$name, eh? My sister has a keen perception for seeing into a person's soul. You may store an abundance of hate, but hate can be devoted to different ideals. Prove to me your devotion to our Lord Innoruuk by bringing me the skullcap of a Leatherfoot Raider who has invaded our forest. Go, $name, and do as I have requested!");
     quest::ding();
-    quest::faction(256, 200);  #Priests of Innoruuk
-    quest::faction(43, -25);   #Clerics of Tunare
-    quest::faction(257, -15);  #Priests of Life
-    quest::faction(260, -400); #Primordial Malice
-    quest::faction(177, 15);   #King Naythox Thex
-    quest::faction(258, -35);  #Priests of Marr
+    quest::faction(340, 200);  #Priests of Innoruuk
+    quest::faction(226, -25);   #Clerics of Tunare
+    quest::faction(341, -15);  #Priests of Life
+    quest::faction(1522, -400); #Primordial Malice
+    quest::faction(278, 15);   #King Naythox Thex
+    quest::faction(362, -35);  #Priests of Marr
   }
   plugin::return_items(\%itemcount);
 }

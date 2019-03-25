@@ -1,7 +1,7 @@
 # Part of SK Epic 1.0
 
 sub EVENT_SAY {
-  $faction = $client->GetCharacterFactionLevel(342);
+  $faction = $client->GetCharacterFactionLevel(404);
   if ($text=~/hail/i && $class eq "Shadowknight")  {
     quest::say("Hello $name, it's good to see another shadowknight around here. I'm Teydar. I've made it my life to fashion suitable scabbards and sheaths for our order.");
   }
@@ -11,10 +11,10 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  $faction = $client->GetCharacterFactionLevel(342);
+  $faction = $client->GetCharacterFactionLevel(404);
   if ($faction >= 28 && plugin::check_handin(\%itemcount, 14372 => 1, 14371 => 1, 16507 => 1)) {
     quest::say("I did it! The pieces you got me were perfect! It took a huge effort on my part to craft this, of course. It saddens me that I'm unable to keep one of my best works, but a deal is a deal. There is honor among shadowknights.");
-    quest::faction(342, 7);
+    quest::faction(404, 7);
     quest::summonitem(14366);
   }
   plugin::return_items(\%itemcount);

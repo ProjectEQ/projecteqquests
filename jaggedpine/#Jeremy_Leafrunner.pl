@@ -20,10 +20,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 8970=>1)) { #Letter to Jeremy
     quest::say("Thank you! It is great to hear from my grandmother."); #Real text still needed
-    quest::faction(271,20);  #Residents of Jaggedpine
-    quest::faction(159,20);  #Jaggedpine Treefolk
-    quest::faction(265,20);  #Protectors of Pine
-    quest::faction(135,20);  #Guards of Qeynos
+    quest::faction(1597,20);  #Residents of Jaggedpine
+    quest::faction(272,20);  #Jaggedpine Treefolk
+    quest::faction(302,20);  #Protectors of Pine
+    quest::faction(262,20);  #Guards of Qeynos
   }
   plugin::return_items(\%itemcount);
 }

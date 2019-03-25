@@ -14,10 +14,10 @@ sub EVENT_ITEM {
   if($faction==1 && plugin::check_handin(\%itemcount,26010=>1)) {
     quest::say("Thank you for your assistance.  Now I may get back to higher matters at hand.  Leave me.");
     quest::summonitem(28060);
-    quest::faction(32, 3);
-    quest::faction(365, 3);
-    quest::faction(42, -6);
-    quest::faction(273, -6);
+    quest::faction(462, 3);
+    quest::faction(464, 3);
+    quest::faction(430, -6);
+    quest::faction(304, -6);
     quest::exp(250000);
     quest::ding();
   }

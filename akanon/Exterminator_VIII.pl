@@ -9,11 +9,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10967 => 4)){ #Clockwork Rat Leg Section x 4
     quest::say("Four Clockwork Rat Leg Sections recieved *bzzzt* processing reward. Reward mode initiated. Coins given. Mission *Terminate Vermin* reset one second *bzzt whirr*.");
-    quest::faction(176,10); # +King Ak'Anon
-    quest::faction(91,10); # +Eldritch Collective
-    quest::faction(115,10); # +Gem Choppers
-    quest::faction(71,-10); # -Dark Reflection
-    quest::faction(209,-10); # -Meldrath
+    quest::faction(333,10); # +King Ak'Anon
+    quest::faction(245,10); # +Eldritch Collective
+    quest::faction(255,10); # +Gem Choppers
+    quest::faction(238,-10); # -Dark Reflection
+    quest::faction(287,-10); # -Meldrath
     quest::exp(5);
     quest::givecash(1,1,1,0);
   }

@@ -21,11 +21,11 @@ sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 12660 => 2)){
   quest::say("A deal is a deal. Here is one pile of granite pebbles. I hope you need more because I know there are more escaped froglok slaves.");
   quest::summonitem(12689);
-  quest::faction(193,2);
-  quest::faction(30,2);
-  quest::faction(282,2);
-  quest::faction(62,2);
-  quest::faction(317,2);
+  quest::faction(441,2);
+  quest::faction(440,2);
+  quest::faction(445,2);
+  quest::faction(442,2);
+  quest::faction(444,2);
   quest::ding();
   quest::exp(350);
   quest::givecash(12,0,0,0);

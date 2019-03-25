@@ -14,9 +14,9 @@ sub EVENT_ITEM {
   $cash = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper;
   if ($cash == 1000000) { #1000 Platinum
     quest::say("Okay, enjoy me drink!");
-    quest::faction(69,5); #Dark Bargainers
-    quest::faction(88,5); #Dreadguard Outer
-    quest::faction(87,5); #Dreadguard Inner
+    quest::faction(236,5); #Dark Bargainers
+    quest::faction(334,5); #Dreadguard Outer
+    quest::faction(370,5); #Dreadguard Inner
     quest::summonitem(14365); #Cough Elixir
   }
   else {

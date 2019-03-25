@@ -41,20 +41,20 @@ function event_trade(e)
 		e.self:Say("It is a shame that some people decide to throw away their humanity with the worship of evil deities. Your actions have saved the lives of many creatures that rely on the waters of this glade. Take this Rusty Pine Druid Scimitar and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done return to me with the Sharpened Pine Druid Scimitar, a Gnoll Fang, and a Large King Snake Skin.");
 		e.other:SummonItem(20258);
 		e.other:Ding();
-		e.other:Faction(159,30,0); --
-		e.other:Faction(265,30,0); --
-		e.other:Faction(267,30,0); --
-		e.other:Faction(135,30,0); --
-		e.other:Faction(347,-30,0); --
+		e.other:Faction(272,30,0); --
+		e.other:Faction(302,30,0); --
+		e.other:Faction(343,30,0); --
+		e.other:Faction(262,30,0); --
+		e.other:Faction(324,-30,0); --
 		e.other:AddEXP(5000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20259,item2 = 13915,item3 = 19945})) then
 		e.other:SummonItem(20265);
 		e.other:Ding();
-		e.other:Faction(159,30,0); --
-		e.other:Faction(265,30,0); --
-		e.other:Faction(267,30,0); --
-		e.other:Faction(135,30,0); --
-		e.other:Faction(347,-30,0); --
+		e.other:Faction(272,30,0); --
+		e.other:Faction(302,30,0); --
+		e.other:Faction(343,30,0); --
+		e.other:Faction(262,30,0); --
+		e.other:Faction(324,-30,0); --
 		e.other:AddEXP(10000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

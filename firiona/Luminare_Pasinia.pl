@@ -19,11 +19,11 @@ sub EVENT_ITEM {
    #Illusion Iksar (END)
    quest::emote("place's the items into a sack and removes a scroll from her robe.");
    quest::say("This is yours. A spell I discovered and translated for one with less intelligence than the great Luminare of Firiona Vie. You may kiss my feet now.");
-   quest::faction(418,10);  # +Inhabitants of Firiona Vie
-   quest::faction(92,10);   # +Emerald Warriors
-   quest::faction(314,10);  # +Storm Guard
-   quest::faction(193,-10); # -Legion of Cabilis
-   quest::faction(250,-10); # -Pirates of Gunthak    
+   quest::faction(248,10);  # +Inhabitants of Firiona Vie
+   quest::faction(326,10);   # +Emerald Warriors
+   quest::faction(312,10);  # +Storm Guard
+   quest::faction(441,-10); # -Legion of Cabilis
+   quest::faction(313,-10); # -Pirates of Gunthak    
    quest::exp(250);
    #Summon: Vision of Sebilite
    quest::summonitem(12949);

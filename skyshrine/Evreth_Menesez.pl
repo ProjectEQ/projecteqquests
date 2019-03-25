@@ -20,9 +20,9 @@ sub EVENT_ITEM {
     if(plugin::check_handin(\%itemcount,12550 => 1)) {
       quest::say("By Veeshans claws, you've found it! You have done a great service for the residents of Skyshrine, $name! I will make sure that news of your accomplishment reaches the nobles of Skyshrine. Here is the reward that has been promised for your assistance.");
       quest::summonitem(12558);
-      quest::faction(42,30);
-      quest::faction(362,30);
-      quest::faction(189,-30);
+      quest::faction(430,30);
+      quest::faction(436,30);
+      quest::faction(448,-30);
       quest::exp(1250);
      }
   }

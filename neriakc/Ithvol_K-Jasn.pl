@@ -28,23 +28,23 @@ sub EVENT_ITEM {
     quest::emote("You have focused the hate within you and discovered that hate and rage are not the same. Hate can be calculating and deceptive. For your service in defending the Kingdom of King Naythox Thex from the halfling invaders, I award you the disciple symbol of Innoruuk. Wear it with pride, $name.");
     quest::summonitem(1370); #Disciple Symbol of Innoruuk
     quest::exp(4000);
-    quest::faction(177, 10);  #King Naythox Thex
-    quest::faction(256, 10);  #Priests of Innoruuk
-    quest::faction(43, -30);  #Clerics of Tunare
-    quest::faction(257, -30); #Priests of Life
-    quest::faction(258, -30); #Priests of Marr
-    quest::faction(260, -30); #Primordial Malice
+    quest::faction(278, 10);  #King Naythox Thex
+    quest::faction(340, 10);  #Priests of Innoruuk
+    quest::faction(226, -30);  #Clerics of Tunare
+    quest::faction(341, -30); #Priests of Life
+    quest::faction(362, -30); #Priests of Marr
+    quest::faction(1522, -30); #Primordial Malice
   }
   if(plugin::check_handin(\%itemcount, 12499 => 1, 12498 => 1, 19029 => 1, 1370 => 1)) { #Voucher of Service to Naythox, Swiftmoon's Head, Receipt for Provisions Crate, Disciple Symbol of Innoruuk
     quest::say("Your devotion to the ideals of hatred and your service to our King Naythox Thex has proven your usefulness within these spires and within our great city. I award you the Regent Symbol of Innoruuk. Congratulations, Regent $name!");
     quest::summonitem(1371);#Regent Symbol of Innoruuk
     quest::exp(8000);
-    quest::faction(177, 10);  #King Naythox Thex
-    quest::faction(256, 10);  #Priests of Innoruuk
-    quest::faction(43, -30);  #Clerics of Tunare
-    quest::faction(257, -30); #Priests of Life
-    quest::faction(258, -30); #Priests of Marr
-    quest::faction(260, -30); #Primordial Malice
+    quest::faction(278, 10);  #King Naythox Thex
+    quest::faction(340, 10);  #Priests of Innoruuk
+    quest::faction(226, -30);  #Clerics of Tunare
+    quest::faction(341, -30); #Priests of Life
+    quest::faction(362, -30); #Priests of Marr
+    quest::faction(1522, -30); #Primordial Malice
   }
   plugin::return_items(\%itemcount);
 }

@@ -58,11 +58,11 @@ sub EVENT_ITEM {
    if (($faction <= 4) && (plugin::check_handin(\%itemcount, 13316 => 1))) { # Ogre Head
       if ($cash >= 30000) { # 300 Gold
          quest::say("Very good!! You found him. His head shall bring us a great reward from the Stormguard. And as for you, here is your Mining Pick 628. Only a member of 628 can wield this fine weapon. We are the only ones who can wield it in such a way as to pierce our foes.");
-         quest::faction(220, 10); # Miners Guild 628
-         quest::faction(33, -10); # Circle Of Unseen Hands
-         quest::faction(29, -10); # Butcherblock Bandits
-         quest::faction(77, 10);  # Deeppockets
-         quest::faction(90, -10); # Ebon Mask
+         quest::faction(322, 10); # Miners Guild 628
+         quest::faction(223, -10); # Circle Of Unseen Hands
+         quest::faction(379, -10); # Butcherblock Bandits
+         quest::faction(241, 10);  # Deeppockets
+         quest::faction(244, -10); # Ebon Mask
          quest::exp(5000);
          quest::summonitem(12161); # Mining Pick 628
       }
@@ -75,11 +75,11 @@ sub EVENT_ITEM {
       quest::say("Ah, welcome! We could use some fresh blood around here. The name's Mater, and I run this little outfit. Work hard for me, and I will reward you well. Cross me, and you'll find yourself buried under the mine cap. Once you are ready to begin your training please make sure that you see Crovsar Dirkbringer, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
       quest::summonitem(13516); #Ruined Miner's Tunic
       quest::ding();
-      quest::faction(220, 100); # Miners Guild 628
-      quest::faction(33, -5); # Circle of Unseen Hands
-      quest::faction(29, -5); # Butcherblock Bandits
-      quest::faction(77, 5); # Deeppoockets
-      quest::faction(90, -15); # Ebon Mask
+      quest::faction(322, 100); # Miners Guild 628
+      quest::faction(223, -5); # Circle of Unseen Hands
+      quest::faction(379, -5); # Butcherblock Bandits
+      quest::faction(241, 5); # Deeppoockets
+      quest::faction(244, -15); # Ebon Mask
       quest::exp(100);
    }
    

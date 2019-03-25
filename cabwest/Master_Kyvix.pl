@@ -28,16 +28,16 @@ sub EVENT_ITEM {
     quest::say("Well done, here's your fourth rank skull cap. You can now start your [true mission].");
     quest::exp(200);
     quest::summonitem(4263); #dark binder skullcap
-    quest::faction(193,20);
-    quest::faction(24,20);
+    quest::faction(441,20);
+    quest::faction(443,20);
   }
   if(plugin::check_handin(\%itemcount, 55978 => 1, 4263 => 1)) { #a journal and dark binder skullcap
     quest::say("Well done, here's your fifth rank skull cap. You can now track
 down the [Kor Sha Candlestick].");
     quest::exp(200);
     quest::summonitem(4264); #occultist skullcap
-    quest::faction(193,20);
-    quest::faction(24,20);
+    quest::faction(441,20);
+    quest::faction(443,20);
   }
   if (plugin::check_handin(\%itemcount, 12853 => 1, 12852 => 1, 4264 => 1 )) { 
 #Stem of Candlestick, Foot of Candlestick, occultist skullcap
@@ -46,8 +46,8 @@ takes your cap which disintegrates in his palm. He hands you another cap.");
     quest::say("Welcome, Revenant $name. You have done well. The Harbinger awaits you. He seeks a [new revenant].");
     quest::exp(200);
     quest::summonitem(4265); #Revenant Skullcap
-    quest::faction(193,20);
-    quest::faction(24,20);
+    quest::faction(441,20);
+    quest::faction(443,20);
     quest::givecash(0,0,6,0);
   }
     plugin::return_items(\%itemcount);

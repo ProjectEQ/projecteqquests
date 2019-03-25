@@ -26,20 +26,20 @@ function event_trade(e)
 			e.other:SummonItem(18893); -- A Sealed Letter - lore: Note to Axe Broadsmith
 			e.other:Ding();
 			e.other:Faction(311,5,0); -- Steel Warriors
-			e.other:Faction(135,5,0); -- Guards of Qeynos
-			e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-			e.other:Faction(105,-5,0); -- Freeport Militia
-			e.other:Faction(184,5,0); -- Knights of Truth
+			e.other:Faction(262,5,0); -- Guards of Qeynos
+			e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
+			e.other:Faction(330,-5,0); -- Freeport Militia
+			e.other:Faction(281,5,0); -- Knights of Truth
 			e.other:AddEXP(6000);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 18895})) then -- Letter of Recommendation - lore: Letter of Recommendation from Axe
 			e.self:Say("So I see you have performed the test of undead. Good show. Now it is time you truly tested your mettle. Take this note to Grahan Rothkar. He can be found beneath the arena in the pens. May you live to join our brotherhood.");
 			e.other:SummonItem(18894); -- A Sealed Letter - lore: Letter to Grahan Rothkar
 			e.other:Ding();
 			e.other:Faction(311,5,0); -- Steel Warriors
-			e.other:Faction(135,5,0); -- Guards of Qeynos
-			e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-			e.other:Faction(105,-5,0); -- Freeport Militia
-			e.other:Faction(184,5,0); -- Knights of Truth
+			e.other:Faction(262,5,0); -- Guards of Qeynos
+			e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
+			e.other:Faction(330,-5,0); -- Freeport Militia
+			e.other:Faction(281,5,0); -- Knights of Truth
 			e.other:AddEXP(6000);
 			e.other:GiveCash(7,0,0,0);
 		end

@@ -19,11 +19,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13931 => 4)){
     quest::say("You finally have proven yourself a warrior, a slow one!!  Take this reward and ask for nothing else.  You should be proud to defend Kaladim and expect no reward.");
-    quest::faction(314,15);   # StormGuard better
-    quest::faction(169,15);   # KazonStormhammer better
-    quest::faction(219,15);   # MinersGuild249 better
-    quest::faction(215,15);   # MerchantsOfKaladim better
-    quest::faction(57,-15);   # CraknekWarriors worse
+    quest::faction(312,15);   # StormGuard better
+    quest::faction(274,15);   # KazonStormhammer better
+    quest::faction(293,15);   # MinersGuild249 better
+    quest::faction(290,15);   # MerchantsOfKaladim better
+    quest::faction(232,-15);   # CraknekWarriors worse
     quest::exp(10000);
     quest::ding();
     quest::givecash(7,1,2,0);
@@ -31,22 +31,22 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 13741 => 1, 13740 => 1)){
     quest::say("I underestimated you.  You are truly a great warrior.  I reward you with a piece of my own Bloodforge armor.  You would be fine Bloodforge Brigade material!  How would you like to [take a little trip] in the name of the Bloodforge Brigade?");
-    quest::faction(314,15);   # StormGuard better
-    quest::faction(169,15);   # KazonStormhammer better
-    quest::faction(219,15);   # MinersGuild249 better
-    quest::faction(215,15);   # MerchantsOfKaladim better
-    quest::faction(57,-15);   # CraknekWarriors worse
+    quest::faction(312,15);   # StormGuard better
+    quest::faction(274,15);   # KazonStormhammer better
+    quest::faction(293,15);   # MinersGuild249 better
+    quest::faction(290,15);   # MerchantsOfKaladim better
+    quest::faction(232,-15);   # CraknekWarriors worse
     quest::exp(10000);
     quest::ding;
     quest::summonitem(quest::ChooseRandom(3090,3090,3090,3090,3090,3090,3091,3092,3093,3094,3095,3096));  
   }
   elsif(plugin::check_handin(\%itemcount, 12136 => 1)){
     quest::say("Ha!! His death brings me great happiness.  I owe you much.  Take this hammer.  It is the hammer of the Bloodforge Brigade.  May it serve you well.  Now go,so I can enjoy this moment of happiness alone.");
-    quest::faction(314,15);   # StormGuard better
-    quest::faction(169,15);   # KazonStormhammer better
-    quest::faction(219,15);   # MinersGuild249 better
-    quest::faction(215,15);   # MerchantsOfKaladim better
-    quest::faction(57,-15);   # CraknekWarriors worse
+    quest::faction(312,15);   # StormGuard better
+    quest::faction(274,15);   # KazonStormhammer better
+    quest::faction(293,15);   # MinersGuild249 better
+    quest::faction(290,15);   # MerchantsOfKaladim better
+    quest::faction(232,-15);   # CraknekWarriors worse
     quest::exp(10000);
     quest::ding;
     quest::summonitem(13314);

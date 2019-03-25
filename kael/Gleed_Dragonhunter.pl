@@ -34,10 +34,10 @@ sub EVENT_ITEM {
       quest::say("My, you do have a hunters spirit! If you could track down Vluudeen and slay him without the aid of my bow, you must be worthy. Take the bow, huntsman. Use it to slay others of Vluudeen's kind.");
       quest::summonitem(25033);
       quest::exp(35000);
-      quest::faction(188,10); #kromrif
-      quest::faction(189,10); #kromzek
-      quest::faction(42,-30); #CoV
-      quest::faction(49,-30); #coldain
+      quest::faction(419,10); #kromrif
+      quest::faction(448,10); #kromzek
+      quest::faction(430,-30); #CoV
+      quest::faction(406,-30); #coldain
     }
     else {
       plugin::return_items(\%itemcount);

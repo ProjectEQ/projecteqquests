@@ -18,12 +18,12 @@ sub EVENT_ITEM
 {
   if (plugin::check_handin(\%itemcount, 6269 => 1)) {
     quest::emote("looks at you puzzled and takes the letter and reads it. 'Oh I am so glad that he is alive! I am happy that you took the time to ease my worries about him. I shall let the people of this town know that you come with good intentions. For now i will rest for I have not slept in days.'");
-    quest::faction(37,2); #Citizens of Seru
-    quest::faction(139,2); #Hand of Seru
-    quest::faction(142,2); #Heart of Seru
-    quest::faction(96,2); #Eye of Seru
-    quest::faction(298,2); #Shoulders of Seru
-    quest::faction(168,-4); #Katta Castellum Citizens
+    quest::faction(1499,2); #Citizens of Seru
+    quest::faction(1484,2); #Hand of Seru
+    quest::faction(1486,2); #Heart of Seru
+    quest::faction(1485,2); #Eye of Seru
+    quest::faction(1487,2); #Shoulders of Seru
+    quest::faction(1502,-4); #Katta Castellum Citizens
   }
   plugin::return_items(\%itemcount);
 }

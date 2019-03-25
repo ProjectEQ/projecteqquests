@@ -9,11 +9,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13071,item2 = 13071,item3 = 13071,item4 = 13071})) then
 		e.self:Say(string.format("Here is something for you, %s. I certainly appreciate your help with our pest problem here. Great work.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(135,5,0);
-		e.other:Faction(9,5,0);
-		e.other:Faction(53,-5,0);
-		e.other:Faction(33,-5,0);
-		e.other:Faction(217,5,0);
+		e.other:Faction(262,5,0);
+		e.other:Faction(219,5,0);
+		e.other:Faction(230,-5,0);
+		e.other:Faction(223,-5,0);
+		e.other:Faction(291,5,0);
 		e.other:AddEXP(50);
 		e.other:GiveCash(0,4,0,0);
 	end

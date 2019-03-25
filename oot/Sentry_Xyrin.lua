@@ -22,9 +22,9 @@ function event_trade(e)
 		e.self:Say("I thank you. I cannot do battle at this moment. I am summoned elsewhere. May Marr guide you from this isle.");
 		e.other:SummonItem(12135);
 		e.other:Ding();
-		e.other:Faction(258,5,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,5,0);
+		e.other:Faction(362,5,0);
+		e.other:Faction(330,-10,0);
+		e.other:Faction(281,5,0);
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

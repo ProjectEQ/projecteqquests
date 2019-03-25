@@ -9,10 +9,10 @@ sub EVENT_ITEM {
     quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
     quest::summonitem(30164);
 #Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(49,30);
-    quest::faction(67,30);
-    quest::faction(188,-30);
-    quest::faction(189,-30);
+    quest::faction(406,30);
+    quest::faction(405,30);
+    quest::faction(419,-30);
+    quest::faction(448,-30);
     quest::exp(2000000);
     quest::depop();
   }

@@ -58,12 +58,12 @@ sub EVENT_ITEM
   }
   if (plugin::check_handin(\%itemcount, 3883 => 1)) {
     quest::say("It is good to see you again friend. Your deeds are well known within the ranks of the Eye. You have allowed us to remove several traintors from the walls of this sanctum. We are extremely tankful for you dedication and efforts. Please take this gift and watch for us to call upon you again in the bear future.");
-    quest::faction(37,-2); #Citizens of Seru
-    quest::faction(139,-2); #Hand of Seru
-    quest::faction(142,-2); #Heart of Seru
-    quest::faction(96,2); #Eye of Seru
-    quest::faction(298,-2); #Shoulders of Seru
-    quest::faction(168,-2); #Katta Castellum Citizens
+    quest::faction(1499,-2); #Citizens of Seru
+    quest::faction(1484,-2); #Hand of Seru
+    quest::faction(1486,-2); #Heart of Seru
+    quest::faction(1485,2); #Eye of Seru
+    quest::faction(1487,-2); #Shoulders of Seru
+    quest::faction(1502,-2); #Katta Castellum Citizens
     quest::exp(100);
     quest::summonitem(3884);
   }

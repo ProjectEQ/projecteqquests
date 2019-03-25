@@ -40,20 +40,20 @@ sub EVENT_ITEM {
     quest::say("Marvelously done, my friend. The idol's return by your hand bodes well indeed toward the success of your quest. Now, it shall remain without a hand to possess it -- but in time, perhaps, it may find a suitable possessor in you. If [you wish to prove yourself worthy] of the idol and further prove your faith as notable enough to belong to the sacred order of The Gale Weavers, then speak your pledge and your test shall continue.");
     quest::exp(10000);
     quest::ding();
-    quest::faction(271,10); #Residents of Jaggedpine
-    quest::faction(159,10); #Jaggedpine Treefolk
-    quest::faction(265,10); #Protectors of Pine
-    quest::faction(135,10); #Guards of Qeynos
+    quest::faction(1597,10); #Residents of Jaggedpine
+    quest::faction(272,10); #Jaggedpine Treefolk
+    quest::faction(302,10); #Protectors of Pine
+    quest::faction(262,10); #Guards of Qeynos
     quest::setglobal("galeweaver",1,0,"F");
    }
   elsif (plugin::check_handin(\%itemcount, 8964 => 1, 8963 => 1, 8962 => 1 ) && $qglobals{galeweaver} == 1){ # Writ, sphere, and scroll turn in
     quest::say("You have done well, my child. The ancient scroll has impressed upon it a small mirror of your faith. As it was with you through your travels, the runes have changed to reflect your own heart and what lies within it. I have woven for you the Orb of the Gale -- your Orb of the Gale, but do not think that your journey ends here. It is still hollow -- the winds are dormant and the clouds lie in wait. Their lifeblood is missing, and you must seek it. To do this, you must venture to the realm where the Gale thrives -- the Plane of Sky. There are ethereal creatures known as Gale Weavers that dwell there. You must extinguish their temporary tangible form and from that, take the essence of the Gale that they have woven. Do not feel remorse for destroying these planar creatures, for you do not truly destroy them. Once you have obtained the Essence of the Gale, place it into the orb and seal it, creating the Orb of the Gale that must be returned to me.");
     quest::exp(10000);
     quest::ding();
-    quest::faction(271,10); #Residents of Jaggedpine
-    quest::faction(159,10); #Jaggedpine Treefolk
-    quest::faction(265,10); #Protectors of Pine
-    quest::faction(135,10); #Guards of Qeynos
+    quest::faction(1597,10); #Residents of Jaggedpine
+    quest::faction(272,10); #Jaggedpine Treefolk
+    quest::faction(302,10); #Protectors of Pine
+    quest::faction(262,10); #Guards of Qeynos
     quest::summonitem(17135);
     quest::setglobal("galeweaver",2,0,"F");
   }
@@ -61,10 +61,10 @@ sub EVENT_ITEM {
     quest::say("You astound me, my child. Well done indeed, and I am very pleased to know that you have been successful in these endeavors. It is an honor to bestow upon you this, our sacred symbol, and welcome you into the order of The Gale Weavers. Bear it proudly, but do not flaunt pride. Keep your sacred duties to The Rainkeeper first and foremost in your thoughts and actions -- the Gale Weaver shall guide you when you need guidance most, and it shall protect you when your time for failure has not yet come. The idol shall remain with me, where I shall bury it at the Shrine of Karana in honor of your coming into our ranks. When the time comes for you to pass beyond, it shall be unearthed by another who has taken my place as high priest of our order, for I will likely have passed into the Eye of Karana's Storm before your final day.");
     quest::exp(10000);
     quest::ding();
-    quest::faction(271,10); #Residents of Jaggedpine
-    quest::faction(159,10); #Jaggedpine Treefolk
-    quest::faction(265,10); #Protectors of Pine
-    quest::faction(135,10); #Guards of Qeynos
+    quest::faction(1597,10); #Residents of Jaggedpine
+    quest::faction(272,10); #Jaggedpine Treefolk
+    quest::faction(302,10); #Protectors of Pine
+    quest::faction(262,10); #Guards of Qeynos
     quest::summonitem(8967);
   }
   plugin::return_items(\%itemcount);

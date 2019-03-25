@@ -19,11 +19,11 @@ function event_trade(e)
 		e.self:Say("");
 		e.other:SummonItem(18722); --Sealed Note For Knargon 
 		e.other:Ding();
-		e.other:Faction(31,5,0); -- Carson McCabe
-		e.other:Faction(48,5,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(273,-10,0); -- Ring of Scale
-		e.other:Faction(149,5,0); -- Highpass Guards
-		e.other:Faction(214,5,0); -- Merchants of Highpass
+		e.other:Faction(329,5,0); -- Carson McCabe
+		e.other:Faction(336,5,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(304,-10,0); -- Ring of Scale
+		e.other:Faction(332,5,0); -- Highpass Guards
+		e.other:Faction(331,5,0); -- Merchants of Highpass
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

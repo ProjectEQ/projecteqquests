@@ -31,11 +31,11 @@ function event_trade(e)
 		e.self:Say("There you go, sport. If you get caught with that, you didn't get it from me!");
 		e.other:SummonItem(13107);
 		e.other:Ding();
-		e.other:Faction(135,-10,0); -- Guards of Qeynos
-		e.other:Faction(164,10,0); -- Kane Bayle
-		e.other:Faction(53,10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(33,10,0); -- Circle Of Unseen Hands
-		e.other:Faction(21,10,0); -- Bloodsabers
+		e.other:Faction(262,-10,0); -- Guards of Qeynos
+		e.other:Faction(273,10,0); -- Kane Bayle
+		e.other:Faction(230,10,0); -- Corrupt Qeynos Guards
+		e.other:Faction(223,10,0); -- Circle Of Unseen Hands
+		e.other:Faction(221,10,0); -- Bloodsabers
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

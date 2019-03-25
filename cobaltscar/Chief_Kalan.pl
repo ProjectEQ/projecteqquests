@@ -17,21 +17,21 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24874 => 4)) { # Ulthork Tusks
     quest::say("Many thanks to you, strange one. Our craftsman will be pleased. They have been in need of a new bundle of ivory.");
-    quest::faction(241, 30);
-    quest::faction(345, -60);
+    quest::faction(432, 30);
+    quest::faction(431, -60);
     my $itemid = quest::ChooseRandom(10036, 22503, 16976, 10037, 10033, 10049, 10031, 10053, 10035, 10051, 10034, 10050, 10032, 10048);
     quest::summonitem($itemid);
   }
   elsif (plugin::check_handin(\%itemcount, 30068 => 1)) { # Bulthar Herdmaster Tusk
     quest::say("Such wasteful creatures the Bulthar are. It is a shame they are not intelligent enough to realize the harm they do to the very oceans that sustain them.");
-    quest::faction(241, 30);
-    quest::faction(345, -60);
+    quest::faction(432, 30);
+    quest::faction(431, -60);
     quest::summonitem(22817);
   }
   elsif (plugin::check_handin(\%itemcount, 30067 => 2)) { # Regular Bulthar Tusks
     quest::say("Such wasteful creatures the Bulthar are. It is a shame they are not intelligent enough to realize the harm they do to the very oceans that sustain them.");
-    quest::faction(241, 30);
-    quest::faction(345, -60);
+    quest::faction(432, 30);
+    quest::faction(431, -60);
     my $itemid = quest::ChooseRandom(10036, 22503, 16976, 10037, 10033, 10049, 10031, 10053, 10035, 10051, 10034, 10050, 10032, 10048);
     quest::summonitem($itemid);
   }

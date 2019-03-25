@@ -12,10 +12,10 @@ function event_trade(e)
 		e.other:SummonItem(13302);
 		e.other:Ding();
 		e.other:Faction(311,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(53,-10,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,10,0);
+		e.other:Faction(262,10,0);
+		e.other:Faction(230,-10,0);
+		e.other:Faction(330,-10,0);
+		e.other:Faction(281,10,0);
 		e.other:AddEXP(2000);
 		eq.unique_spawn(15193,135,0,-5521,-1870,3,452);
 		e.other:GiveCash(0,0,0,0);
@@ -24,10 +24,10 @@ function event_trade(e)
 		e.other:SummonItem(eq.ChooseRandom(3040,5231,1037,17005,13003,10008,1005,8791,1336,2910));
 		e.other:Ding();
 		e.other:Faction(311,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(53,-10,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,10,0);
+		e.other:Faction(262,10,0);
+		e.other:Faction(230,-10,0);
+		e.other:Faction(330,-10,0);
+		e.other:Faction(281,10,0);
 		e.other:AddEXP(2000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

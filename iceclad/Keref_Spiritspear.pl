@@ -19,8 +19,8 @@ sub EVENT_ITEM {
     quest::say("This true hero weapon. This just like harpoon of mighty Groumshak! Now I can find family! Many thanks, friend to Snowfang. Take this for thanks. It protect from danger.");
     quest::emote("hands you an intricately carved ice totem. A feeling of safety washes over you as he places it in your hand.");
     quest::summonitem(30051);
-    quest::faction(303, 30);
-    quest::faction(345, -30);
+    quest::faction(439, 30);
+    quest::faction(431, -30);
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

@@ -30,9 +30,9 @@ function event_trade(e)
 		eq.signal(30061,2);
 		e.other:SummonItem(12226);
 		e.other:Ding();
-		e.other:Faction(361,5,0);
-		e.other:Faction(294,5,0);
-		e.other:Faction(213,5,0);
+		e.other:Faction(320,5,0);
+		e.other:Faction(327,5,0);
+		e.other:Faction(328,5,0);
 		e.other:Faction(311,5,0);
 		e.other:AddEXP(1000);
 	end

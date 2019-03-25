@@ -12,10 +12,10 @@ sub EVENT_ITEM {
    quest::say("Grand doing business with you. Hold your nose. I can never get rid of the orc stench of the vests. That is why the other merchants do not pay me much for them."); 
   quest::summonitem(12187); 
   quest::exp(100); 
-  quest::faction(8,10);
-  quest::faction(174,10);
-  quest::faction(99,10);
-  quest::faction(92,10);
+  quest::faction(5001,10);
+  quest::faction(276,10);
+  quest::faction(246,10);
+  quest::faction(326,10);
   } 
 } 
 

@@ -26,18 +26,18 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if (($faction <= 4) && (plugin::check_handin(\%itemcount, 12157 => 4))) {
       quest::say("You have done well. Your deeds shall be recorded within our journals. Here, then, is your reward. May you strive to serve us to the full extent of your powers. The [elders] must also die.");
-      quest::faction(44, 20);  #Clerics Of Underfoot
-      quest::faction(169, 20); #Kazon Stormhammer
-      quest::faction(219, 20); #Miner's Guild 249
+      quest::faction(227, 20);  #Clerics Of Underfoot
+      quest::faction(274, 20); #Kazon Stormhammer
+      quest::faction(293, 20); #Miner's Guild 249
       quest::exp(5000);
       quest::summonitem(quest::ChooseRandom(2116,2118,2120,2123,2124));
       quest::ding();
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12158 => 4))) {
       quest::say("Ahh! you are truly brave, $name!");
-      quest::faction(44, 40);  #Clerics Of Underfoot
-      quest::faction(169, 40); #Kazon Stormhammer
-      quest::faction(219, 40); #Miner's Guild 249
+      quest::faction(227, 40);  #Clerics Of Underfoot
+      quest::faction(274, 40); #Kazon Stormhammer
+      quest::faction(293, 40); #Miner's Guild 249
       quest::exp(80000);
       quest::givecash(0,4,5,2);
       quest::ding();

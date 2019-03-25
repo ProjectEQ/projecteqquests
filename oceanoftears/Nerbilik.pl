@@ -10,8 +10,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12203 => 1)) {
     quest::say("Oooh!! Grub locker! There is a loud click. He opens the locker and unwraps dwarf pickles. What this dumb wrapper? R, E, C, I, P, E.. Ahh!! It say pickles!! Me read good. Here your plat. Me give you little more. Me was very hungry for pickles.");
-    quest::faction(66,10); #Da Bashers
-    quest::faction(22,10); #Broken Skull Clan
+    quest::faction(235,10); #Da Bashers
+    quest::faction(222,10); #Broken Skull Clan
     quest::exp(150);
     quest::givecash(0,0,0,2);
   }

@@ -46,11 +46,11 @@ sub EVENT_ITEM {
     }
     quest::exp(2000);                 # Experience
     quest::givecash("8","2","0","0"); # Cash
-    quest::faction("56","-1");        # Craftkeepers
-    quest::faction("60","-1");        # Crimson Hands
-    quest::faction("143","1");        # Heretics
-    quest::faction("79","-1");        # Deepwater Knights
-    quest::faction("112","-1");       # Gate Callers
+    quest::faction("231","-1");        # Craftkeepers
+    quest::faction("233","-1");        # Crimson Hands
+    quest::faction("265","1");        # Heretics
+    quest::faction("242","-1");        # Deepwater Knights
+    quest::faction("254","-1");       # Gate Callers
   }
   plugin::return_items(\%itemcount);
 } 

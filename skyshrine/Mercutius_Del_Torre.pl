@@ -57,7 +57,7 @@ sub EVENT_ITEM {
     return 1;
   }
   quest::exp(50000);
-  quest::faction(42,10); #cov
+  quest::faction(430,10); #cov
 }
 
 # EOF zone: skyshrine ID: 114278 NPC: Mercutius_Del_Torre

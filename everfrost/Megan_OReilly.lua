@@ -16,10 +16,10 @@ function event_trade(e)
 		e.self:Say("Oh thank you. Sorry, but the bottle is empty now. I hope you did't need any. Take the empty bottle back to Dargon. He may refill it for you.");
 		e.other:SummonItem(13245); -- Empty Bottle of Elixir
 		e.other:Ding();
-		e.other:Faction(213,1,0); -- Merchants of Halas
-		e.other:Faction(294,1,0); -- Shaman of Justice
+		e.other:Faction(328,1,0); -- Merchants of Halas
+		e.other:Faction(327,1,0); -- Shaman of Justice
 		e.other:Faction(311,1,0); -- Steel Warriors
-		e.other:Faction(361,1,0); -- Wolves of the North
+		e.other:Faction(320,1,0); -- Wolves of the North
 		e.other:AddEXP(150);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

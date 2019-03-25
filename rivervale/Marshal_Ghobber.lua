@@ -12,7 +12,7 @@ function event_say(e)
 	elseif(e.message:findi("one with the wall") and fac == 1) then
 		e.self:Say("Yes!! Welcome, Deputy " .. e.other:GetName() .. "! You are now an elite member of the Great Wall Division. Wear this ring with pride. You may take it to Hendi Mrubble of the Clerics of Mischief for healing at any time. Wear it with pride.");
 		e.other:SummonItem(13936);
-		e.other:Faction(133, -500,0); -- YES! This is correct. Sucks, eh?
+		e.other:Faction(263, -500,0); -- YES! This is correct. Sucks, eh?
 	elseif(e.message:findi("new threat") and fac < 5) then
 		e.self:Say("The new threat I refer to is the community of goblins which was found beyond the Great Wall of Serilis. They are called Clan Runnyeye. They have begun to sneak over the wall. The deputies have reported seeing them launch themselves up the wall in a matter of seconds using ornate grappling hooks. We have attempted to obtain one of these devices for further inspection, but we have yet to find one on any of the dead goblins. If you should ever find one, be sure to bring it to me immediately.");
 	end

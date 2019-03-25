@@ -17,22 +17,22 @@ function event_trade(e)
 		e.self:Say("Good work. I see you have removed that retchid pirate from here.");
 		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340));
 		e.other:Ding();
-		e.other:Faction(99,5,0); -- Faydarks Champoins
-		e.other:Faction(178,5,0); -- King Tearis Thex
-		e.other:Faction(304,5,0); -- Soldiers of Tunare
-		e.other:Faction(43,5,0); -- Clerics of Tunare
-		e.other:Faction(63,-10,0); -- Crushbone Orcs
+		e.other:Faction(246,5,0); -- Faydarks Champoins
+		e.other:Faction(279,5,0); -- King Tearis Thex
+		e.other:Faction(310,5,0); -- Soldiers of Tunare
+		e.other:Faction(226,5,0); -- Clerics of Tunare
+		e.other:Faction(234,-10,0); -- Crushbone Orcs
 		e.other:AddEXP(250);
 		e.other:GiveCash(0,5,5,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13336})) then -- Pirate Earrings
 		e.self:Say("Good work. I see you have removed that retchid pirate from here.");
 		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340));
 		e.other:Ding();
-		e.other:Faction(99,5,0); -- Faydarks Champoins
-		e.other:Faction(178,5,0); -- King Tearis Thex
-		e.other:Faction(304,5,0); -- Soldiers of Tunare
-		e.other:Faction(43,5,0); -- Clerics of Tunare
-		e.other:Faction(63,-10,0); -- Crushbone Orcs
+		e.other:Faction(246,5,0); -- Faydarks Champoins
+		e.other:Faction(279,5,0); -- King Tearis Thex
+		e.other:Faction(310,5,0); -- Soldiers of Tunare
+		e.other:Faction(226,5,0); -- Clerics of Tunare
+		e.other:Faction(234,-10,0); -- Crushbone Orcs
 		e.other:AddEXP(100);
 		e.other:GiveCash(0,1,4,0);
 	end

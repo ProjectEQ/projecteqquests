@@ -47,20 +47,20 @@ sub EVENT_ITEM {
     quest::say("I shall see that my father gets the materials. I hope this can be of use to you. It will serve as your starting point toward fletching a Trueshot longbow. It is unfortunate that we are unable to enchant the bow to its [next incarnation], but it is still a fine weapon. You do know the [correct components] needed for fletching such a bow, do you not?");
     quest::givecash(0,6,0,0); #6 gold
     quest::summonitem(8091); #Treant Bow Staff
-    quest::faction(99,10); #Faydark's Champions
-    quest::faction(178,10); #King Tearis Thex
-    quest::faction(43,10); #Clerics of Tunare got better. 
-    quest::faction(304,10); #Soldiers of Tunare got better. 
-    quest::faction(63,-10); #Crushbone Orcs got worse. 
+    quest::faction(246,10); #Faydark's Champions
+    quest::faction(279,10); #King Tearis Thex
+    quest::faction(226,10); #Clerics of Tunare got better. 
+    quest::faction(310,10); #Soldiers of Tunare got better. 
+    quest::faction(234,-10); #Crushbone Orcs got worse. 
   }
   elsif (plugin::check_handin(\%itemcount, 18785 => 1)) { #A tattered note
     quest::say("Hail, $name, and welcome.. I am Maesyn Trueshot, leader of Faydark's Champions. I will teach and train you, as I have done for many others. Let's get started.. Here, put this on.. it'll help protect you from the elements. Once you are ready to begin your training please make sure that you see Samatansyn Flamecaller, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::ding();
-    quest::faction(99,100);  # Faydark's Champions
-    quest::faction(178,25); # King Tearis Thex
-    quest::faction(43,25);  # Clerics of Tunare
-    quest::faction(304,25); # Soldiers of Tunare
-    quest::faction(63,-25); # Crushbone Orcs
+    quest::faction(246,100);  # Faydark's Champions
+    quest::faction(279,25); # King Tearis Thex
+    quest::faction(226,25);  # Clerics of Tunare
+    quest::faction(310,25); # Soldiers of Tunare
+    quest::faction(234,-25); # Crushbone Orcs
     quest::exp(100);
     quest::summonitem(13536); # Dirty Green Tunic* 
   }

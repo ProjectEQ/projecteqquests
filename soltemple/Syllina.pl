@@ -35,16 +35,16 @@ sub EVENT_ITEM {
   # Shadow Silk info
   if($gold >= 50) {
     quest::say("You will need to give the following components to a tailor: a Shadow Wolf Pelt, a Silk Swatch and a Scroll of Gather Shadows. Have the tailor weave them together and she will make you Shadow Silk. To make large shadow silk add an extra shadow wolf pelt. To make inky shadow silk, add an extra scroll.");
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   # Robe of Enshroudment
   if(($itemcount{16484} == 1) && ($itemcount{13239} == 1) && ($itemcount{2309} == 1) && ($itemcount{10535} == 1)) {
     quest::say("Well done, $name!  Here is your robe, as promised."); # Made this text up
     quest::summonitem(1355);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -52,8 +52,8 @@ sub EVENT_ITEM {
   if(($itemcount{14363} == 1) && ($itemcount{13234} == 1) && ($itemcount{10534} == 1) && ($itemcount{16485} == 1)) {
     quest::say("Well done, $name!  Here are your gloves, as promised."); # Made this text up
     quest::summonitem(3318);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 
@@ -61,8 +61,8 @@ sub EVENT_ITEM {
   if(($itemcount{14364} == 1) && ($itemcount{13180} == 1) && ($itemcount{10533} == 1) && ($itemcount{16483} == 1)) {
     quest::say("Well done, $name!  Here are your boots, as promised."); # Made this text up
     quest::summonitem(3317);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
     quest::exp(1000);
   }
 

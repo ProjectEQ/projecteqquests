@@ -20,10 +20,10 @@ function event_trade(e)
 		e.other:SummonItem(5033);
 		e.other:Ding();
 		e.other:Faction(311,1,0); -- Steel Warriors
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,-5,0); -- Freeport Militia
-		e.other:Faction(184,1,0); -- Knights of Truth
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-5,0); -- Freeport Militia
+		e.other:Faction(281,1,0); -- Knights of Truth
 		e.other:AddEXP(10000);
 		e.other:GiveCash(0,0,0,2);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12188})) then
@@ -31,10 +31,10 @@ function event_trade(e)
 		e.other:SummonItem(12189);
 		e.other:Ding();
 		e.other:Faction(311,1,0); -- Steel Warriors
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,-5,0); -- Freeport Militia
-		e.other:Faction(184,1,0); -- Knights of Truth
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-5,0); -- Freeport Militia
+		e.other:Faction(281,1,0); -- Knights of Truth
 		e.other:AddEXP(10000);
 		e.other:GiveCash(0,0,0,2);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13398})) then
@@ -42,10 +42,10 @@ function event_trade(e)
 		e.other:SummonItem(13229);
 		e.other:Ding();
 		e.other:Faction(311,15,0); -- Steel Warriors
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,-5,0); -- Freeport Militia
-		e.other:Faction(184,1,0); -- Knights of Truth
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-5,0); -- Freeport Militia
+		e.other:Faction(281,1,0); -- Knights of Truth
 		e.other:AddEXP(8000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18894})) then
 		e.self:Say("So you are ready to encounter your final test. I wish you well, young warrior. Take this key to the pen on the left along the wall with three doors. There you shall meet your final challenge. Return with proof of victory. Exit before it is at an end and I shall not help you.");

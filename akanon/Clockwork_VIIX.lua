@@ -27,7 +27,7 @@ function event_trade(e)
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 10636})) then
 		e.self:Say("Oh excellent, you have done what is required. Here take this part, and seek the third master, you are well on your way.");
 		e.other:Ding();
-		e.other:Faction(342,30,0);
+		e.other:Faction(404,30,0);
 		e.other:AddEXP(100000);
 		e.other:SummonItem(10611);
 	end

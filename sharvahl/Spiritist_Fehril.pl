@@ -70,7 +70,7 @@ quest::exp(500); }
 if (plugin::check_handin(\%itemcount, 5542 => 1, 3496 => 1, 5543 => 1)) {
 quest::say("Your progress fills me with pride. Please take these things as a sign of our appreciation. I hope that they help you as much as you have helped us. When you are ready to continue your training, please contact Jaima Seyel. You'll most likely find her in the Dar Khura Guildhall. She will train you from this point.");
 quest::shout("Fellow citizens, may I present to you with our newest apprentice to the sacred Dar Khura. $name has assisted us for some time now and we can only hope that this assistance doesn't go unnoticed. Now, please join me in thanking $name for such selfless service to our people.");
-quest::faction(68,20);
+quest::faction(1533,20);
 quest::exp(1500);
 quest::summonitem(5543);
 quest::summonitem(5544);

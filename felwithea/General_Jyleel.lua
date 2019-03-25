@@ -24,33 +24,33 @@ function event_trade(e)
 		e.self:Say("Very fine work. A pity you are not Koada'Vie. Here is a small reward for you. Anytime you come upon an oracle. remember to return its scroll to me. Go and find your fate on the field of battle.");
 		e.other:SummonItem(eq.ChooseRandom(15200, 15042, 15226, 13360, 15246, 15276)); -- low level spell or Rotted Illegible Scroll
 		e.other:Ding();
-		e.other:Faction(43,5,0); -- Clerics of Tunare
-		e.other:Faction(178,5,0); -- King Tearis Thex
-		e.other:Faction(8,3,0); -- Anti Mage
+		e.other:Faction(226,5,0); -- Clerics of Tunare
+		e.other:Faction(279,5,0); -- King Tearis Thex
+		e.other:Faction(5001,3,0); -- Anti Mage
 		e.other:AddEXP(500);
 		e.other:GiveCash(1,2,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13226})) then
 		e.self:Say("So, you succeeded in stopping a Crushbone runner! That is good. Now take this as reward. Keep up your fine work. The people of Felwithe are grateful.");
 		e.other:Ding();
-		e.other:Faction(43,10,0); -- Clerics of Tunare
-		e.other:Faction(178,10,0); -- King Tearis Thex
-		e.other:Faction(8,7,0); -- Anti Mage
+		e.other:Faction(226,10,0); -- Clerics of Tunare
+		e.other:Faction(279,10,0); -- King Tearis Thex
+		e.other:Faction(5001,7,0); -- Anti Mage
 		e.other:AddEXP(500);
 		e.other:GiveCash(1,2,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18840})) then
 		e.self:Say("So, the Teir'Dal are behind the recent advances of the orcs?!! Your news has shed light on their union. It is time to step forth and prove yourself a [" .. eq.say_link("faithful paladin of this court") .. "].");
 		e.other:Ding();
-		e.other:Faction(43,5,0); -- Clerics of Tunare
-		e.other:Faction(178,5,0); -- King Tearis Thex
-		e.other:Faction(8,3,0); -- Anti Mage
+		e.other:Faction(226,5,0); -- Clerics of Tunare
+		e.other:Faction(279,5,0); -- King Tearis Thex
+		e.other:Faction(5001,3,0); -- Anti Mage
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12330,item2 = 12329,item3 = 13227})) then -- A Large Locked Crate, Blue Orc Head, Black Heart
 		e.self:Say("'A noble deed has been done and the alliance of evil has been stalled. I present you with the falchion of the Koada`Vie. You are now an honorable member of our order. Hail Felwithe, and may you defender her with honor.");
 		e.other:SummonItem(5379); -- Falchion of the Koada'Vie 
 		e.other:Ding();
-		e.other:Faction(43,5,0); -- Clerics of Tunare
-		e.other:Faction(178,5,0); -- King Tearis Thex
-		e.other:Faction(8,3,0); -- Anti Mage
+		e.other:Faction(226,5,0); -- Clerics of Tunare
+		e.other:Faction(279,5,0); -- King Tearis Thex
+		e.other:Faction(5001,3,0); -- Anti Mage
 		e.other:AddEXP(500);
 	elseif(qglobals["paladin_epic"] == "9" and item_lib.check_turn_in(e.trade, {platinum = 1000})) then
 		e.self:Say("Tunare thanks you " .. e.other:GetName() .. " for the kind donation. For another small donation of 500 platinum I will give you some more information on where you can find another gem.");

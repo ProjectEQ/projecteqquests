@@ -33,10 +33,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13118})) then
 		e.self:Say("Oh thank the maker you have returned. Here is a little something in return");
 		e.other:Ding();
-		e.other:Faction(60,20,0);
-		e.other:Faction(145,20,0);
-		e.other:Faction(143,-20,0);
-		e.other:Faction(147,20,0);
+		e.other:Faction(233,20,0);
+		e.other:Faction(266,20,0);
+		e.other:Faction(265,-20,0);
+		e.other:Faction(267,20,0);
 		e.other:AddEXP(200);
 		e.other:GiveCash(5,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13994})) then

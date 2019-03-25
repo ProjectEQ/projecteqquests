@@ -14,11 +14,11 @@ quest::say("I have been waiting for someone to come and retrieve this staff.  He
 
 quest::summonitem("17917"); #Peacekeeper Staff container
 
-quest::faction("211","10"); # +Merchants of Erudin
+quest::faction("289","10"); # +Merchants of Erudin
 
-quest::faction("145","10"); # +High Council of Erudin
+quest::faction("266","10"); # +High Council of Erudin
 
-quest::faction("147","10"); # +High Guard of Erudin
+quest::faction("267","10"); # +High Guard of Erudin
 
 quest::exp(2432);
 
@@ -30,11 +30,11 @@ quest::say("Wonderful work!! These shards will work nicely. Here you are then. I
 
 quest::summonitem("13822"); #Treant Resin
 
-quest::faction("211","10"); # +Merchants of Erudin
+quest::faction("289","10"); # +Merchants of Erudin
 
-quest::faction("145","10"); # +High Council of Erudin
+quest::faction("266","10"); # +High Council of Erudin
 
-quest::faction("147","10"); # +High Guard of Erudin
+quest::faction("267","10"); # +High Guard of Erudin
 
 quest::exp(2432);
 

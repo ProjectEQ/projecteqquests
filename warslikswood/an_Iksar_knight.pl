@@ -21,8 +21,8 @@ sub EVENT_ITEM {
   quest::summonitem(12496);
   quest::exp(1000);
   quest::ding();
-  quest::faction(62,20);
-  quest::faction(193,10);
+  quest::faction(442,20);
+  quest::faction(441,10);
   quest::depop_withtimer();
  }
  else{ 

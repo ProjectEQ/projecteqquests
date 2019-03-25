@@ -13,11 +13,11 @@ function event_trade(e)
 		e.self:Say(string.format("Ahh wonderful work %s Here is the substance....don't spill it HAHAHAaahhahehehe...yes......you don't want to spill that heheh.",e.other:GetName()));
 		e.other:SummonItem(1793); -- Putrid substance
 		e.other:Ding();
-		e.other:Faction(21,1,0); -- Bloodsabers
-		e.other:Faction(235,1,0); -- Opal Dark Briar
-		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(135,-1,0); -- Guards of Qeynos
-		e.other:Faction(257,-1,0); -- Priests of Life
+		e.other:Faction(221,1,0); -- Bloodsabers
+		e.other:Faction(296,1,0); -- Opal Dark Briar
+		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(262,-1,0); -- Guards of Qeynos
+		e.other:Faction(341,-1,0); -- Priests of Life
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

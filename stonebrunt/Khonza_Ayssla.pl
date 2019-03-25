@@ -33,8 +33,8 @@ sub EVENT_ITEM {
   quest::say("I thought the kobolds would have you for dinner, but you made it back.");
   quest::me("Ayssla takes the satchel and begins to pour different vials of foul smelling liquid into it. She then takes the entire contents of the bag and dumps it into a large kettle and begins to chant in an unknown language. After a few minutes, she takes a small amount of the now boiling liquid and puts it in a vial.");
   quest::say("Take this vial back to Jali. I pray to the Titan Spirits that it works.");
-  quest::faction(172,30);
-  quest::faction(247,30);
+  quest::faction(473,30);
+  quest::faction(298,30);
   quest::summonitem(6976);
  }
 

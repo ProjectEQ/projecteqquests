@@ -18,20 +18,20 @@ function event_trade(e)
 		e.other:SummonItem(12209);
 		e.self:Say("You have mastered these spells quickly. You shall now wear the gloves of the Gatecaller. Cumbersome they may feel, but they protect the hands of a young magician. In your young days of magic they will protect you from harm. They are not valued much by merchants, but they are prized by other circles. Nevertheless, we offer them only to our young Gatecallers. You may now be of assistance with a [slight problem].");
 		e.other:Ding();
-		e.other:Faction(112,10,0); --faction with Gate Callers increased
-		e.other:Faction(145,10,0); --faction with High Council of Erudin increased
-		e.other:Faction(147,10,0); --faction with High Guards of Erudin increased
-		e.other:Faction(143,-30,0); --faction with Heretics decreased
+		e.other:Faction(254,10,0); --faction with Gate Callers increased
+		e.other:Faction(266,10,0); --faction with High Council of Erudin increased
+		e.other:Faction(267,10,0); --faction with High Guards of Erudin increased
+		e.other:Faction(265,-30,0); --faction with Heretics decreased
 		e.other:AddEXP(175);
 		e.other:GiveCash(0,0,5,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13895})) then -- Rungupp
 		e.other:SummonItem(15313);
 		e.self:Say("So the rumor shows true. Good work. You are an excellent student and a noble Erudite. Here is your spell as I promised. Go forth and fill your brain with knowledge.");
 		e.other:Ding();
-		e.other:Faction(112,10,0); --faction with Gate Callers increased
-		e.other:Faction(145,10,0); --faction with High Council of Erudin increased
-		e.other:Faction(147,10,0); --faction with High Guards of Erudin increased
-		e.other:Faction(143,-30,0); --faction with Heretics decreased
+		e.other:Faction(254,10,0); --faction with Gate Callers increased
+		e.other:Faction(266,10,0); --faction with High Council of Erudin increased
+		e.other:Faction(267,10,0); --faction with High Guards of Erudin increased
+		e.other:Faction(265,-30,0); --faction with Heretics decreased
 		e.other:AddEXP(250);
 		e.other:GiveCash(0,10,0,0);
 	end

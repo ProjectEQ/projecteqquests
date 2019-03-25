@@ -71,20 +71,20 @@ sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 8918 => 1, 8917 => 1)) {
       quest::say("You have done well thus far and I commend your actions and success. Now, the trials shall continue and this shall be the walk that tests your faith -- judging its suitability to bear the symbol. Take this, Nyrein's Prayer, to one known as Lord Mrallon in the city of Qeynos. He is aware of the rites of the Tempest Guard and will know full well of the path that has been set before you. With the prayer, he will expect the [Tempest Rune] that you must obtain before seeking him. Once you have the rune, you shall return it and the prayer to Lord Mrallon and should you prove successful in this task and thus worthy of the final trial, he shall guide you further.");
          quest::summonitem(8919);
-         quest::faction(271,50); #Residents of Jaggedpine
-         quest::faction(159,50); #Jaggedpine Treefolk
-         quest::faction(265,50); #Protectors of Pine
-         quest::faction(135,50); #Guards of Qeynos
+         quest::faction(1597,50); #Residents of Jaggedpine
+         quest::faction(272,50); #Jaggedpine Treefolk
+         quest::faction(302,50); #Protectors of Pine
+         quest::faction(262,50); #Guards of Qeynos
          quest::exp(1000);
    }
    if (plugin::check_handin(\%itemcount, 8952 => 1)) {
       quest::emote("gives a warm, gentle smile and a deep bow of respect to $name as she extends a white steel crown ornamented with a single blue gem.");
       quest::say("Welcome to the Veterans of the Storm, and we honor you as Tempest Guard $name. Bear this symbol in humility and as a sign of your eternal pledge in service and protection of all that The Rainkeeper holds dear and sacred.");
       quest::summonitem(8954); #Crown of the Tempest Guard
-      quest::faction(271,100); #Residents of Jaggedpine
-      quest::faction(159,100); #Jaggedpine Treefolk
-      quest::faction(265,100); #Protectors of Pine
-      quest::faction(135,100); #Guards of Qeynos
+      quest::faction(1597,100); #Residents of Jaggedpine
+      quest::faction(272,100); #Jaggedpine Treefolk
+      quest::faction(302,100); #Protectors of Pine
+      quest::faction(262,100); #Guards of Qeynos
       quest::exp(2000);
    }
   }

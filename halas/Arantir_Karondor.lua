@@ -43,7 +43,7 @@ function event_trade(e)
 			e.self:Say("Here, this pack contains all of our items. You will never be able to open it again, so you must deliver the pack, intact, to Solomen. He will then reward you. Now that I have helped you, leave me in peace.");
 			e.other:Ding();
 			e.other:SummonItem(14340);
-			e.other:Faction(342, 30,0); 									--Truespirit
+			e.other:Faction(404, 30,0); 									--Truespirit
 			eq.delete_global("wizepicA");
 		end
 	end

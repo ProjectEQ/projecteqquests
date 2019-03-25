@@ -13,11 +13,11 @@ function event_trade(e)
 		e.self:Say("Oh dear.. no.. no.. I warned her about the aqueducts.. I warned her.. I coudn't watch her every minute of the day, could I? Oh Lucie.. Why didn't you listen to me? Here, take this. It belonged to her mother. She always said that in times of need, it gave her courage to go on.. Thank you so much for your efforts.");
 		e.other:SummonItem(13188);
 		e.other:Ding();
-		e.other:Faction(135,5,0);
-		e.other:Faction(9,5,0);
-		e.other:Faction(53,-1,0);
-		e.other:Faction(33,-1,0);
-		e.other:Faction(217,5,0);
+		e.other:Faction(262,5,0);
+		e.other:Faction(219,5,0);
+		e.other:Faction(230,-1,0);
+		e.other:Faction(223,-1,0);
+		e.other:Faction(291,5,0);
 		e.other:AddEXP(100);
 		e.other:GiveCash(0,3,0,0);
 	end

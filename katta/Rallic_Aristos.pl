@@ -35,9 +35,9 @@ if(plugin::check_handin(\%itemcount, 31730 => 1)){
 quest::say("Excellent. The contents of the pouch shall be examined immediately. Take this pattern for a crafting a pack that will be sure to lighten the burden of its contents. I'm afraid I do not have the rest of the [required materials] at hand.");
 
 quest::summonitem(31729);
-quest::faction(52,5);
-quest::faction(284,-10);
-quest::faction(142,-10);
+quest::faction(1561,5);
+quest::faction(1483,-10);
+quest::faction(1486,-10);
 quest::exp(250);
 quest::ding();
  }

@@ -18,9 +18,9 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6709 => 1)) {
     quest::say("Thank you, Knight. With this task accomplished, I shall reward you with this scroll. It is an ancient spell that only the holiest of knights may cast. Remember your duty!");
     quest::summonitem(15693);
-    quest::faction(258,100); #priests of marr
-    quest::faction(105,-50); #freeport militia
-    quest::faction(184,100); #knights of truth
+    quest::faction(362,100); #priests of marr
+    quest::faction(330,-50); #freeport militia
+    quest::faction(281,100); #knights of truth
     quest::exp(200000);
   }
   plugin::return_items(\%itemcount);

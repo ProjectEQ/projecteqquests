@@ -47,7 +47,7 @@ sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,20415 => 1, 20355 => 1, 20402 => 1)){
    quest::say("Very good work. Here is the Cudgel, use it well!");
    quest::summonitem(20417);
-   quest::faction(143,10);
+   quest::faction(265,10);
    quest::exp(500);
    }
    plugin::return_items(\%itemcount);

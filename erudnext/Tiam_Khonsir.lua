@@ -18,9 +18,9 @@ function event_trade(e)
 		if(math.random(4) == 1) then
 			e.other:SummonItem(eq.ChooseRandom(3120,3123,3115,3117,3122,3113,3116,3118,3121,3124,3119,3108,3107,3111,3103,3105,3110,3101,3104,3106,3109,3112,3132,3135,3127,3129,3134,3125,3128,3130,3133,3136,3131));
 		end
-		e.other:Faction(145,5,0); -- High Council of Erudin
-		e.other:Faction(143,-5,0);-- Heretics
-		e.other:Faction(79,5,0);  -- Deepwater Knights
+		e.other:Faction(266,5,0); -- High Council of Erudin
+		e.other:Faction(265,-5,0);-- Heretics
+		e.other:Faction(242,5,0);  -- Deepwater Knights
 		e.other:AddEXP(2000);
 		e.other:GiveCash(12,14,5,0); -- Copper x 12, Silver x 14, Gold x 5
 	end

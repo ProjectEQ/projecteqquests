@@ -17,8 +17,8 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13885 => 4)){
     # Orc Pawn Picks [END]
     quest::say("As instructed, I shaw reward your good deed. But I choose to reward you with provisions from the pantries of Neriak. They shall keep you strong.");
-    quest::faction(155,5);   # +Indigo Brotherhood
-    quest::faction(92,-5);   # -Emerald Warriors
+    quest::faction(270,5);   # +Indigo Brotherhood
+    quest::faction(326,-5);   # -Emerald Warriors
     quest::faction(311,-5);  # -Steel Warriors
     quest::exp(25);
     quest::ding();

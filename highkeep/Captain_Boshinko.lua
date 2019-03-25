@@ -28,11 +28,11 @@ function event_trade(e)
 			e.self:Say("Good work, bounty hunter! You have served your legend well. I hope a few plat is good enough and, please, take this item we confiscated from one of our guests now serving time in our dungeon.");
 			e.other:SummonItem(eq.ChooseRandom(2314,2314,2314,7321));
 			e.other:Ding();
-			e.other:Faction(149, 25,0);
-			e.other:Faction(31, 25,0);
-			e.other:Faction(214, 25,0);
-			e.other:Faction(53, 25,0);
-			e.other:Faction(105, 25,0);
+			e.other:Faction(332, 25,0);
+			e.other:Faction(329, 25,0);
+			e.other:Faction(331, 25,0);
+			e.other:Faction(230, 25,0);
+			e.other:Faction(330, 25,0);
 			e.other:AddEXP(250);
 			e.other:GiveCash(0,0,0,4);
 		end

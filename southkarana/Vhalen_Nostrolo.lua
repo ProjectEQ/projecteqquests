@@ -33,21 +33,21 @@ function event_trade(e)
 		e.self:Say("Ahh, I see Cassius still don't trust his lute to anyone else. Please be kind to return this letter to him about his lute. It should make him quite pleased.");
 		e.other:SummonItem(18803); -- Note To Cassius
 		e.other:Ding();
-		e.other:Faction(135,2,0); -- Guards of Qeynos
-		e.other:Faction(184,2,0); -- Knights of Truth
-		e.other:Faction(192,2,0); -- League of Antonican Bards
-		e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,-5,0); -- Freeport Militia
+		e.other:Faction(262,2,0); -- Guards of Qeynos
+		e.other:Faction(281,2,0); -- Knights of Truth
+		e.other:Faction(284,2,0); -- League of Antonican Bards
+		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-5,0); -- Freeport Militia
 		e.other:AddEXP(5000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13116,item2 = 13119})) then -- Winds of Karana sheet 1, Winds of Karana sheet 2
 		e.self:Say("Thank you, my friend. I have just completed the composition. It is a work of art. Here. Have a copy. I hope you have the musical talent required to play it. If not.. Practice, practice, practice!");
 		e.other:SummonItem(eq.ChooseRandom(15722,15717)); -- Song: Jaxan's Jig o' Vigor or Song: Selo's Accelerando 
 		e.other:Ding();
-		e.other:Faction(192,2,0); -- League of Antonican Bards
-		e.other:Faction(184,2,0); -- Knights of Truth
-		e.other:Faction(135,2,0); -- Guards of Qeynos
-		e.other:Faction(273,-5,0); -- Ring of scale
-		e.other:Faction(53,-5,0); -- Mayong Mistmoore
+		e.other:Faction(284,2,0); -- League of Antonican Bards
+		e.other:Faction(281,2,0); -- Knights of Truth
+		e.other:Faction(262,2,0); -- Guards of Qeynos
+		e.other:Faction(304,-5,0); -- Ring of scale
+		e.other:Faction(230,-5,0); -- Mayong Mistmoore
 		e.other:AddEXP(5000);
 		e.other:GiveCash(5,0,0,0);
 	elseif(qglobals["bard15"] == "5" and item_lib.check_turn_in(e.trade, {item1= 77627})) then -- Note from Metala, bard 1.5

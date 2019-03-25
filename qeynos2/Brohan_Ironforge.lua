@@ -22,11 +22,11 @@ function event_trade(e)
 		local random_item = eq.RandomNumber({5303,5304,5305,5313,6303,6311,6312,7300,7301,7311,7499});
 		e.other:SummonItem(random_item);
 		e.other:Ding();
-		e.other:Faction(9,10,0); -- Antonius Bayle
-		e.other:Faction(47,10,0); -- Coalition of Tradefolk
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(217,10,0); -- Merchants of Qeynos
-		e.other:Faction(33,-10,0); -- Circle of Unseen Hands
+		e.other:Faction(219,10,0); -- Antonius Bayle
+		e.other:Faction(229,10,0); -- Coalition of Tradefolk
+		e.other:Faction(262,10,0); -- Guards of Qeynos
+		e.other:Faction(291,10,0); -- Merchants of Qeynos
+		e.other:Faction(223,-10,0); -- Circle of Unseen Hands
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -51,9 +51,9 @@ sub EVENT_ITEM {
     quest::summonitem(1727);
     quest::exp(12500);
     quest::givecash(0,0,10,10);
-    quest::faction(362,10); #Yelinak
-    quest::faction(42,10); #CoV
-    quest::faction(189,-30); #Kromzek
+    quest::faction(436,10); #Yelinak
+    quest::faction(430,10); #CoV
+    quest::faction(448,-30); #Kromzek
     quest::setglobal("friendofthekin",1,0,"D30");
   }
   if (plugin::check_handin(\%itemcount, 29065 => 1) && ($friendofthekin == 1)) {
@@ -61,9 +61,9 @@ sub EVENT_ITEM {
     quest::summonitem(29050);
     quest::exp(32500);
     quest::givecash(0,0,10,10);
-    quest::faction(362,10); #Yelinak
-    quest::faction(42,10); #CoV
-    quest::faction(189,-30); #Kromzek
+    quest::faction(436,10); #Yelinak
+    quest::faction(430,10); #CoV
+    quest::faction(448,-30); #Kromzek
     quest::delglobal("friendofthekin");
   }
   plugin::return_items(\%itemcount);

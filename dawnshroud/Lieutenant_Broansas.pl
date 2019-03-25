@@ -12,9 +12,9 @@ sub EVENT_ITEM {
     quest::say("You are sent from Lady Mistala I see? Ah of course she needs my reports. I trust you will return these documents to Mistala at once. Here you are, and thank you for your help. I shall have more reports soon.");
     quest::summonitem(4761);
     quest::exp(2500);
-    quest::faction(152,10); #house of fordel
-    quest::faction(140,10); #haven defenders
-    quest::faction(338,10); #traders of the haven
+    quest::faction(1510,10); #house of fordel
+    quest::faction(1509,10); #haven defenders
+    quest::faction(1508,10); #traders of the haven
   }
   plugin::return_items(\%itemcount);
 }

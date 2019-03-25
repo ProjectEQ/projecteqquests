@@ -41,17 +41,17 @@ function event_trade(e)
 		e.self:Say("Greetings. young paladin!  I am Master Tynkale of the Clerics of Tunare.  Here. we shall teach and train you in the skills needed to defeat our evil and diseased enemies.  Take this, our guild tunic - it will help protect you.  Once you are ready to begin your training please make sure that you see Seria Woodwind, she can assist you in experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13591); -- Used Gold Training Tunic*
 		e.other:Ding();
-		e.other:Faction(43,100,0);  --Clerics of Tunare
-		e.other:Faction(178,100,0); --King Tearis Thex
-		e.other:Faction(8,75,0);   --Anti-mage
+		e.other:Faction(226,100,0);  --Clerics of Tunare
+		e.other:Faction(279,100,0); --King Tearis Thex
+		e.other:Faction(5001,75,0);   --Anti-mage
 		e.other:AddEXP(100); 
 	elseif(e.other:GetFaction(e.self) < 5) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 13351})) then
 			e.self:Say("So you have proven yourself to be a great slayer of beasts.Now it is time to prove yourself to be an asset to the Crown. You are to meet a man named Tolon Nurbyte.He will be at the local inn. Go to him and repeat the phrase, 'The glory of the Mother shines bright.' I can say no more. Oh.. and here. This may help you on your upcoming adventure.");
 			e.other:Ding();
-			e.other:Faction(43,10,0);  --Clerics of Tunare
-			e.other:Faction(178,10,0); --King Tearis Thex
-			e.other:Faction(8,10,0);   --Anti-mage
+			e.other:Faction(226,10,0);  --Clerics of Tunare
+			e.other:Faction(279,10,0); --King Tearis Thex
+			e.other:Faction(5001,10,0);   --Anti-mage
 			e.other:AddEXP(150); 
 		end
 	end

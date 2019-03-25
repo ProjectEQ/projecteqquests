@@ -45,70 +45,70 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 25841 => 3, 24919 => 1)) { # cap
       quest::summonitem(25398);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25805 => 3, 24914 => 1)) { # bp
       quest::summonitem(25399);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24916 => 1)) { # sleeves
       quest::summonitem(25400);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25836 => 3, 24918 => 1)) { # wrist
       quest::summonitem(25401);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24920 => 1)) { # gloves
       quest::summonitem(25402);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24915 => 1)) { # legs
       quest::summonitem(25403);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24917 => 1)) { # boots
       quest::summonitem(25404);
       quest::exp(150000);
-      quest::faction(179,20); # King Tormax
-      quest::faction(189,20); # Kromzek
-      quest::faction(42,-20); # Claws of Veeshan
-      quest::faction(49,-60); # Coldain
+      quest::faction(429,20); # King Tormax
+      quest::faction(448,20); # Kromzek
+      quest::faction(430,-20); # Claws of Veeshan
+      quest::faction(406,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }

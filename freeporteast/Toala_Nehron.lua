@@ -38,21 +38,21 @@ function event_trade(e)
 			e.self:Say("Good work!! We will soon catch Opal. I have started to formulate a plan to stop her. When I complete it, I shall notify you. Here. Take this small reward. I am sure killing Shintl was no trouble. She was just a halfling.");
 			e.other:Ding();
 			e.other:Faction(311,5,0); -- Steel Warriors
-			e.other:Faction(135,5,0); -- Guards of Qeynos
-			e.other:Faction(184,5,0); -- Knights of Truth
-			e.other:Faction(53,-10,0); -- Corrupt Qeynos Guards
-			e.other:Faction(105,-10,0); -- Freeport Militia
+			e.other:Faction(262,5,0); -- Guards of Qeynos
+			e.other:Faction(281,5,0); -- Knights of Truth
+			e.other:Faction(230,-10,0); -- Corrupt Qeynos Guards
+			e.other:Faction(330,-10,0); -- Freeport Militia
 			e.other:AddEXP(2000);
 			e.other:GiveCash(0,10,2,0);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 13814})) then -- L.S. Pouch
 			e.self:Say("You found my pouch! Thanks kid. Let me buy you A drink and this is for the good work. Hmmmm. It looks as though they took my voucher. Darn it! Hey... It looks like they were using my bag to hold items they were stealing. Here you go. You can have it. It looks like junk.");
 			e.other:SummonItem(eq.ChooseRandom(13922, 13923)); -- Snapped Pole or Moggok's Right Eye
 			e.other:Ding();
-			e.other:Faction(361,2,0); -- Wolves of the North
-			e.other:Faction(294,2,0); -- Shamen of Justice
-			e.other:Faction(213,2,0); -- Merchants of Halas
+			e.other:Faction(320,2,0); -- Wolves of the North
+			e.other:Faction(327,2,0); -- Shamen of Justice
+			e.other:Faction(328,2,0); -- Merchants of Halas
 			e.other:Faction(311,2,0); -- Steel Warriors
-			e.other:Faction(275,-2,0); -- Rogues of the White Rose
+			e.other:Faction(305,-2,0); -- Rogues of the White Rose
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,2,0,0);
 		end

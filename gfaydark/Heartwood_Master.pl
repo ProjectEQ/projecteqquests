@@ -39,9 +39,9 @@ sub EVENT_ITEM {
 		#:: Grant a small amount of experience
 		quest::exp(100);
 		#:: Set factions
-		quest::faction(304,100);	#:: + Soldiers of Tunare
-		quest::faction(178,15);		#:: + King Tearis Thex
-		quest::faction(99,15);		#:: + Faydark's Champions
+		quest::faction(310,100);	#:: + Soldiers of Tunare
+		quest::faction(279,15);		#:: + King Tearis Thex
+		quest::faction(246,15);		#:: + Faydark's Champions
 	}
 	#:: Match a 5013 - Rusty Short Sword, 5016 - Rusty Broad Sword, 5019 - Rusty Long Sword and 5022 - Rusty Bastard Sword
 	if (plugin::takeItems(5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
@@ -57,9 +57,9 @@ sub EVENT_ITEM {
 		#:: Grant a random cash reward
 		quest::givecash($cash{copper},$cash{silver},$cash{gold},$cash{platinum});
 		#:: Set factions
-		quest::faction(304,1);		#:: + Soldiers of Tunare
-		quest::faction(178,1);		#:: + King Tearis Thex
-		quest::faction(99,1);		#:: + Faydark's Champions
+		quest::faction(310,1);		#:: + Soldiers of Tunare
+		quest::faction(279,1);		#:: + King Tearis Thex
+		quest::faction(246,1);		#:: + Faydark's Champions
 	}
 	#:: Return unused items
 	plugin::return_items(\%itemcount);

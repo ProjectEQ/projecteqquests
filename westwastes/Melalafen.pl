@@ -25,10 +25,10 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 27329 => 1, 27265 => 1)) {
       quest::say("Thank you for returning this to us. Here is your reward, imbued with the essence of a fool who held one of the keys to our Masters prison. If you are unhappy with your reward, return it to us and perhaps we can give you something more appropriate.");
       quest::exp(5000000);
-      quest::faction(84,10);   #Disciples of Kerafyrm
-      quest::faction(42,10);   #Claws of Veeshan
-      quest::faction(273,10);  #Ring of Scale
-      quest::faction(189,-30); #Kromzek
+      quest::faction(1623,10);   #Disciples of Kerafyrm
+      quest::faction(430,10);   #Claws of Veeshan
+      quest::faction(304,10);  #Ring of Scale
+      quest::faction(448,-30); #Kromzek
       quest::summonitem(2698);
     }
     elsif (plugin::check_handin(\%itemcount, 2698 => 1)) {

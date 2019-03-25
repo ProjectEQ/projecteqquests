@@ -18,10 +18,10 @@ function event_trade(e)
 		e.self:Say("Good Work. Unfortunately, I must investigate other matters in the name of Ak'anon.  Here.  You deliver the tin box to Lord Jenork of the Gem Choppers.  He shall reward you. Be safe my friend.  I must go now. Farewell.");
 		e.other:SummonItem(12378); -- Give Undead Brownie Bones for turnin to Narron Jenork (Ak'Anon)
 		e.other:Ding();
-		e.other:Faction(115,15,0); -- Gem Choppers
-		e.other:Faction(210,15,0); -- Merchants of Ak'Anon
-		e.other:Faction(176,15,0); -- King Ak'Anon
-		e.other:Faction(71,-15,0); -- Dark Reflection
+		e.other:Faction(255,15,0); -- Gem Choppers
+		e.other:Faction(288,15,0); -- Merchants of Ak'Anon
+		e.other:Faction(333,15,0); -- King Ak'Anon
+		e.other:Faction(238,-15,0); -- Dark Reflection
 		e.other:AddEXP(10000);
 		eq.depop_with_timer();
 	end

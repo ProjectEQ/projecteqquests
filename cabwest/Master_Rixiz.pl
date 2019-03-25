@@ -20,8 +20,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12411 => 1, 4261 => 1)) { 
     quest::say("You have done well. Here is your final apprentice skullcap."); 
     quest::exp(150); 
-    quest::faction(193,20);
-    quest::faction(24,20);
+    quest::faction(441,20);
+    quest::faction(443,20);
     quest::summonitem(4262);
     quest::givecash(0,0,10,0);
   }

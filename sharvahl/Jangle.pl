@@ -11,14 +11,14 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,  5961=>1 )) {
   quest::say("Thank you for gathering these materials for me. This bag should last for some time. I'll need to clean this bag and make the strings. While I'm doing that, please take this note back to Gawfed and have him specify how many of each string he wants. He only listed the sizes in his note, not the quantities.");
   quest::summonitem(5962);
-    quest::faction( 132,10 );
+    quest::faction( 1513,10 );
     quest::exp(1000);
   }
   
   if (plugin::check_handin(\%itemcount, 5963 =>1 )) {
   quest::say("Very good, he's got it all written down this time. These strings should work nicely for him, and let's not mention the fact that they are absolutely free. Take care and remember to shop here for all of your Jharin needs.");
   quest::summonitem(5965);
-  quest::faction(132 ,10 );
+  quest::faction(1513 ,10 );
   quest::exp(1000);
     
   }

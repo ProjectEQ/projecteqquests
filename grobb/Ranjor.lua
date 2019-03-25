@@ -24,8 +24,8 @@ function event_trade(e)
 		e.self:Say("Arhh.. Ranjor mighty warrior.. Ranjor teach you warrior.. you fight for Ranjor now.");
 		e.other:Ding();
 		e.other:SummonItem(13528);  -- Mud Covered Tunic
-		e.other:Faction(66,100,0);  	-- Da Basher
-		e.other:Faction(22,-15,0);  -- Broken Skull Clan
+		e.other:Faction(235,100,0);  	-- Da Basher
+		e.other:Faction(222,-15,0);  -- Broken Skull Clan
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 5014, item2 = 5014, gold = 2})) then -- correct text needed
 		e.self:Say("Raar.. Ranjor give yous a good weapon...");

@@ -24,19 +24,19 @@ function event_trade(e)
 		e.self:Say("Good work, my friend! I thank you and the Unkempt Druids thank you. Unfortunately I have sold the other song sheet to a traveling bard of the plains. I believe her name was Cordelia. Now be on your way. Unless you plan to join the Unkempt Druids..?");
 		e.other:SummonItem(13116); -- Winds of Karana sheet 1
 		e.other:Ding();
-		e.other:Faction(347,10,0); -- unkempt druids
-		e.other:Faction(135,-10,0); -- guard of qeynos
-		e.other:Faction(159,-10,0); -- jaggedpine treefolks
-		e.other:Faction(267,10,0); -- qrg Protected animal
+		e.other:Faction(324,10,0); -- unkempt druids
+		e.other:Faction(262,-10,0); -- guard of qeynos
+		e.other:Faction(272,-10,0); -- jaggedpine treefolks
+		e.other:Faction(343,10,0); -- qrg Protected animal
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13913})) then -- barbarian head (Talym's Head)
 		e.self:Say("What fine work you do! In the name of all Norrath's beasts and of the Unkempt Druids, I thank you. No longer will there be senseless slaughter. Here is the flute.");
 		e.other:SummonItem(13310); -- A cracked Flute
 		e.other:Ding();
-		e.other:Faction(347,10,0); -- unkempt druids
-		e.other:Faction(135,-10,0); -- guard of qeynos
-		e.other:Faction(159,-10,0); -- jaggedpine treefolks
-		e.other:Faction(267,10,0); -- qrg Protected animal
+		e.other:Faction(324,10,0); -- unkempt druids
+		e.other:Faction(262,-10,0); -- guard of qeynos
+		e.other:Faction(272,-10,0); -- jaggedpine treefolks
+		e.other:Faction(343,10,0); -- qrg Protected animal
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

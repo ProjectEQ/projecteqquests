@@ -33,9 +33,9 @@ sub EVENT_ITEM {
   }
   quest::say("Oh! Thank you so much! You have saved much time and trouble! Now if only those tinkerers in the Illuminarium Industria could figure out how to get that artificial light working!"); #using reward text from the rare plants quest for both quests
   quest::exp(5000);
-  quest::faction(52,10); #concillium universus
-  quest::faction(142,-30); #heart of seru
-  quest::faction(284,-30); #seru
+  quest::faction(1561,10); #concillium universus
+  quest::faction(1486,-30); #heart of seru
+  quest::faction(1483,-30); #seru
 }
 
 # EOF zone: katta ID: 160192 NPC: Tobala_Honeyjar

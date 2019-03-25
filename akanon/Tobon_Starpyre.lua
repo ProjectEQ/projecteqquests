@@ -37,11 +37,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18774})) then -- Registration Letter
 		e.self:Say("Ah.. Welcome, friend! I am Tobon Starpyre, Master Wizard of Library Mechanimagica. This is our tunic - wear it with pride. Study hard, master your skills, and make us proud. Once you are ready to begin your training please make sure that you see Xalirilan, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13523);	-- Soot Stained Gold Robe*
-		e.other:Faction(91,100,0); 	-- eldritch collective
-		e.other:Faction(71,-15,0); 	-- Dark reflection
-		e.other:Faction(322,-5,0);	-- the dead
-		e.other:Faction(115,15,0); 	-- gem choppers
-		e.other:Faction(176,15,0); 	-- king ak'anon
+		e.other:Faction(245,100,0); 	-- eldritch collective
+		e.other:Faction(238,-15,0); 	-- Dark reflection
+		e.other:Faction(239,-5,0);	-- the dead
+		e.other:Faction(255,15,0); 	-- gem choppers
+		e.other:Faction(333,15,0); 	-- king ak'anon
 		e.other:Ding();
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13275, item2 = 13276, item3 = 13277, item4 = 13279})) then

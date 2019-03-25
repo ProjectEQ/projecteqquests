@@ -39,11 +39,11 @@ function event_trade(e)
 		e.self:Say("You have done our city a great service and helped to bring several criminals to justice this day! Wear this Investigator's Badge with pride! Speak again with Vegalys Keldrane, he may have information about [advancing further] in rank.");
 		e.other:SendSound();
 		e.other:SummonItem(2386);
-		e.other:Faction(135,10,0);
-		e.other:Faction(9,10,0);
+		e.other:Faction(262,10,0);
+		e.other:Faction(219,10,0);
+		e.other:Faction(304,-10,0);
 		e.other:Faction(273,-10,0);
-		e.other:Faction(164,-10,0);
-		e.other:Faction(217,10,0);
+		e.other:Faction(291,10,0);
 		e.other:AddEXP(2000);
 		eq.delete_global("invest_badge");
 		eq.depop_with_timer();

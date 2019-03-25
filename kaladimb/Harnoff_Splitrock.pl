@@ -20,20 +20,20 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10952 => 1)) { #Small Shipment of High Quality Ore
     quest::exp(2000);
     quest::givecash(0,0,0,8); #Platinum x 8
-    quest::faction(169,5); #Kazon Stormhammer
-    quest::faction(215,5); #Merchants of Kaladim
-    quest::faction(220,-5); #Miners Guild 628
-    quest::faction(219,5); #Miners Guild 249
-    quest::faction(314,5); #Storm Guard
+    quest::faction(274,5); #Kazon Stormhammer
+    quest::faction(290,5); #Merchants of Kaladim
+    quest::faction(322,-5); #Miners Guild 628
+    quest::faction(293,5); #Miners Guild 249
+    quest::faction(312,5); #Storm Guard
   }
   elsif(plugin::check_handin(\%itemcount, 10953 => 1)) { #Large Shipment of High Quality Ore
     quest::exp(3500);
     quest::givecash(0,0,0,14); #Platinum x 14
-    quest::faction(169,5); #Kazon Stormhammer
-    quest::faction(215,5); #Merchants of Kaladim
-    quest::faction(220,-5); #Miners Guild 628
-    quest::faction(219,5); #Miners Guild 249
-    quest::faction(314,5); #Storm Guard
+    quest::faction(274,5); #Kazon Stormhammer
+    quest::faction(290,5); #Merchants of Kaladim
+    quest::faction(322,-5); #Miners Guild 628
+    quest::faction(293,5); #Miners Guild 249
+    quest::faction(312,5); #Storm Guard
   }
   plugin::return_items(\%itemcount);
 }

@@ -17,9 +17,9 @@ function event_trade(e)
 		e.self:Say("I sent you after that book ages ago! What took you so long? I have already completed my studies. Luckily I found the original manuscript under my bedroll. I forgot I had kept it there. Take this as a token of my apology. Maybe it will aid you in your next book hunt. I know how cunning those books can be.");
 		e.other:SummonItem(eq.ChooseRandom(15302,6351,89036,16647));
 		e.other:Ding();
-		e.other:Faction(145,-10,0);
-		e.other:Faction(247,5,0);
-		e.other:Faction(143,5,0);
+		e.other:Faction(266,-10,0);
+		e.other:Faction(298,5,0);
+		e.other:Faction(265,5,0);
 		e.other:AddEXP(12500);
 		e.other:GiveCash(0,0,20,3);
 	end

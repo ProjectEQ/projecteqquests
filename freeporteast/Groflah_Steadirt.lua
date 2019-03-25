@@ -32,10 +32,10 @@ function event_trade(e)
 		repeat
 			e.self:Say("Mmmm. Weee thats a good drink you made there.");
 			e.other:Ding();
-			e.other:Faction(47,1,0);
-			e.other:Faction(48,1,0);
-			e.other:Faction(184,1,0);
-			e.other:Faction(217,1,0);
+			e.other:Faction(229,1,0);
+			e.other:Faction(336,1,0);
+			e.other:Faction(281,1,0);
+			e.other:Faction(291,1,0);
 			e.other:AddEXP(15);
 			Tumpy_Tonic = Tumpy_Tonic - 1;
 		until Tumpy_Tonic == 0

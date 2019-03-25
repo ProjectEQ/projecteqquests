@@ -39,8 +39,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     if ($faction <= 2 && plugin::check_handin(\%itemcount, 36504 => 1, 36505 => 1, 36506 => 1, 36507 => 1)) { #Makyahs Statue
       quest::say("Can it be? You've found it! I shall have this pieced together where no Muramite can find it again. It will be an inspiration for the coming generations and a beacon of hope in these times of darkness. Here take this mask. May it help you always to see the light and protect you from the trials of darkness.");
-      quest::faction(410,1); #dranik loyalists
-      quest::faction(432,-1); #overlord mata muram
+      quest::faction(1016,1); #dranik loyalists
+      quest::faction(1013,-1); #overlord mata muram
       quest::exp(100000);
       if($class eq "Warrior" || $class eq "Paladin" || $class eq "Shadowknight" || $class eq "Monk" || $class eq "Bard" || $class eq "Rogue" || $class eq "Ranger" || $class eq "Beastlord" || $class eq "Berserker") {
         quest::summonitem(36504); #at this time was  
@@ -54,8 +54,8 @@ sub EVENT_ITEM {
     }
     if ($faction <= 2 && plugin::check_handin(\%itemcount, 36500 => 1, 36501 => 1, 36502 => 1, 36503 => 1)) { #Zakarivs Shattered Sword
       quest::say("This... this is amazing. I never thought to have anything to remember Zakariv by. Thank you for returning these pieces to me. I will have them reforged and once again this weapon will be amazing to behold! Here, take this cloak as a reward. It was one that I wore in my days as a warrior. Perhaps some of the enchantments on it will still prove useful.");
-      quest::faction(410,1); #dranik loyalists
-      quest::faction(432,-1); #overlord mata muram
+      quest::faction(1016,1); #dranik loyalists
+      quest::faction(1013,-1); #overlord mata muram
       quest::exp(100000);
       if($class eq "Warrior" || $class eq "Paladin" || $class eq "Shadowknight" || $class eq "Monk" || $class eq "Bard" || $class eq "Rogue" || $class eq "Ranger" || $class eq "Beastlord" || $class eq "Berserker") {
         quest::summonitem(71151); #Cloak of the Dragorn Militia

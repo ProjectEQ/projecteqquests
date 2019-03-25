@@ -14,11 +14,11 @@ if (plugin::check_handin(\%itemcount, 25102 => 1)) { # Large Note
 if (plugin::check_handin(\%itemcount, 25193 => 1)) { # Signet ring
 	quest::emote("swipes the ring from your outstretched hand.");
 	quest::say("Yes, this is Felkak's ring, a twin of my own. He would never part with this willingly so this is truly a sign of his passing. I thank you for delivering this news to me. Though it saddens me deeply, at least I will know now what has become of him. One day I may return to the arena but for now I must wander these lands to cool the fury of my heart. Please take what little coins I have as thanks in return.");  
-	quest::faction(189,5); # Kromzek
-	quest::faction(188,5); # Kromrif
-	quest::faction(179,5); # King Tormax
-	quest::faction(42,-10); # Claws of Veeshan
-	quest::faction(49,-10); # Coldain
+	quest::faction(448,5); # Kromzek
+	quest::faction(419,5); # Kromrif
+	quest::faction(429,5); # King Tormax
+	quest::faction(430,-10); # Claws of Veeshan
+	quest::faction(406,-10); # Coldain
 	quest::exp(25000);
 	quest::givecash(0,0,0,5);
 	}

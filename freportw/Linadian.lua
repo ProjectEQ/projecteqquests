@@ -19,19 +19,19 @@ function event_trade(e)
 		e.self:Say("Grand doing business with you. Hold your nose. I can never get rid of the Orc stench of the vests. That is why the other merchants do not pay me much for them.");
 		e.other:SummonItem(12187); -- Banded Orc Vest
 		e.other:Ding();
-		e.other:Faction(174,1,0); -- Kelethin Merchants
-		e.other:Faction(99,1,0); -- Faydark's Champions
-		e.other:Faction(92,1,0); -- Emerald Warriors
-		e.other:Faction(8,1,0); -- Anti-mage Faction
+		e.other:Faction(276,1,0); -- Kelethin Merchants
+		e.other:Faction(246,1,0); -- Faydark's Champions
+		e.other:Faction(326,1,0); -- Emerald Warriors
+		e.other:Faction(5001,1,0); -- Anti-mage Faction
 		e.other:AddEXP(150);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13319,item2 = 13319,item3 = 13318,item4 = 13318,gold = 10})) then -- 2x Crushbone Shoulderpads, 2x Crushbone Belt, 10 gold
 		e.self:Say("Grand doing business with you. Hold your nose. I can never get rid of the Orc stench of the vests. That is why the other merchants do not pay me much for them.");
 		e.other:SummonItem(12187); -- Banded Orc Vest
 		e.other:Ding();
-		e.other:Faction(174,1,0); -- Kelethin Merchants
-		e.other:Faction(99,1,0); -- Faydark's Champions
-		e.other:Faction(92,1,0); -- Emerald Warriors
-		e.other:Faction(8,1,0); -- Anti-mage Faction
+		e.other:Faction(276,1,0); -- Kelethin Merchants
+		e.other:Faction(246,1,0); -- Faydark's Champions
+		e.other:Faction(326,1,0); -- Emerald Warriors
+		e.other:Faction(5001,1,0); -- Anti-mage Faction
 		e.other:AddEXP(150);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

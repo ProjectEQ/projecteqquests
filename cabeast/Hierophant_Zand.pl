@@ -26,8 +26,8 @@ sub EVENT_ITEM {
   #Shaman Skull Quest No.3.1 turn in - Check for  A froglok hex doll
   elsif((plugin::check_handin(\%itemcount, 12734 => 1)) && ($faction <= 5) && ($shmskullquest >= 3)) {
     quest::say("You have proven your prowess to me, now take this note to Crusader Quarg outside the city and he will test you further.");
-    quest::faction(282, 10); #Scaled Mystics
-    quest::faction(193, 10); #Legion of Cabilis
+    quest::faction(445, 10); #Scaled Mystics
+    quest::faction(441, 10); #Legion of Cabilis
     quest::summonitem(18054); #A note to take to crusader Quarg.
     quest::exp(80000); #give decent xp...
     quest::givecash (0,0,0,5);
@@ -36,8 +36,8 @@ sub EVENT_ITEM {
   #Shaman Skull Quest No.5 turn in - Iksar Skull Helm and Iksar Skull and Cudgel of the Prophet
   elsif((plugin::check_handin(\%itemcount, 12741 => 1, 5144 => 1, 12740 => 1)) && ($faction <= 5) && ($shmskullquest >= 7)) {
     quest::say("You have done well in proving yourself to this council, but we have yet more tests for you before you will be a true clairvoyant. Speak with Hierophant Dexl for your next test.");
-    quest::faction(282, 10); #Scaled Mystics
-    quest::faction(193, 10); #Legion of Cabilis
+    quest::faction(445, 10); #Scaled Mystics
+    quest::faction(441, 10); #Legion of Cabilis
     quest::summonitem(5145); #Give the player The Cudgel of the Channeler
     quest::exp(120000); #give decent xp...
     quest::givecash (0,0,0,10);

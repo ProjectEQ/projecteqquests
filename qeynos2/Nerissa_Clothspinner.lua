@@ -36,11 +36,11 @@ function event_trade(e)
 		e.self:QuestSay(e.other, "Thank you my friend. I understand that Astaed Wemor of the Temple of Life has been concerned for my well being. Take him this note. I am sure he will reward you for easing my troubled mind.. If you are a respected member.");
 		e.other:Ding();
 		e.other:SummonItem(18862);
-		e.other:Faction(217, 1, 0);
-		e.other:Faction(33, -1, 0);
-		e.other:Faction(9, 1, 0);
-		e.other:Faction(47, 1, 0);
-		e.other:Faction(135, 1, 0);
+		e.other:Faction(291, 1, 0);
+		e.other:Faction(223, -1, 0);
+		e.other:Faction(219, 1, 0);
+		e.other:Faction(229, 1, 0);
+		e.other:Faction(262, 1, 0);
 		e.other:AddEXP(3000);
 		e.other:GiveCash(0, 10, 0, 0);
 	end

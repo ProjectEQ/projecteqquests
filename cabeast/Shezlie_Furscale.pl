@@ -27,36 +27,36 @@ sub EVENT_ITEM {
     quest::say("Ah. Very good. Take this breastplate for your own good.");
     quest::summonitem(4989); #scaled mystic breastplate
     quest::exp(2000);
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 3062 => 1, 10035 => 1, 14773 => 1, 14774 => 1)) {
     quest::say("Hmmm? Oh. Your gauntlets. Yes. Here you are. Now be careful.");
     quest::summonitem(4985); #scaled mystic gauntlets
     quest::exp(1000);
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 3063 => 1, 10033 => 1, 14775 => 1, 14776 => 1)) {
     quest::say("Ahhh yes. These will protect your legs from the threat of tables.");
     quest::summonitem(4987); #scaled mystic greaves
     quest::exp(1000);
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 3053 => 1, 10034 => 1, 14771 => 1, 14772 => 1)) {
     quest::say("Take this helment and keep your head down when you leave. The door is a little low.");
     quest::summonitem(4990); #scaled mystic helm
     quest::exp(1000);
-    quest::faction(282,10);
-    quest::faction(193,5);
-    quest::faction(30,5);
+    quest::faction(445,10);
+    quest::faction(441,5);
+    quest::faction(440,5);
     quest::ding();
   }
 }

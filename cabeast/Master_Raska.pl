@@ -26,40 +26,40 @@ sub EVENT_ITEM {
   quest::summonitem(4191);
   quest::exp(5000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 4190 => 1, 4191 => 1, 12428 => 2)){
   quest::say("You have done supremely, $name. You have earned your shackle of stone. Mistress Niska will now help you on your way to earning the shackle of rock. May the elements guide you to the next rung.");
   quest::summonitem(4192);
   quest::exp(10000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 18469 => 1, 12822 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 18470 => 1, 22924 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
   quest::exp(20000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 18232 => 1, 18233 => 1)){
   quest::say("This is all that was ever found of Gandan Tailfist. I wish you luck in your quest. May you fare better than he did."); #Unable to find the true text; made this up
   quest::summonitem(12429);
   quest::exp(5000);
   quest::ding();
-  quest::faction(317,20);
-  quest::faction(193,10);
+  quest::faction(444,20);
+  quest::faction(441,10);
  }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Monk');

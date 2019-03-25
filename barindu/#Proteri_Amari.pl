@@ -46,7 +46,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 64016 => 1)) { #Crude Stone Ring
     quest::say("I heard what you did for Kayin and Njanu. When you help my brothers and sisters, you help me as well. You have my thanks. Njanu was correct about this ring. It holds magic deep within the rock.' Proteri Amari holds the ring between his hands and whispers to the stone. Glancing up, he says, 'It's all about knowing how to convince the stone that it wants to awaken.' When he opens his hands, the ring seems to glow from within. Proteri Amari says 'There you go. Again, thank you for your aid and take care with that ring. When the stone is freshly awakened, it tends to be a bit fragile.");
-    quest::faction(231,10); # Nihil
+    quest::faction(1761,10); # Nihil
     quest::summonitem(64017); # Njanu's Ring of Gratitude
     quest::exp(200000);
   }
@@ -60,7 +60,7 @@ sub EVENT_ITEM {
     quest::say("It's all about knowing how to convince the stone that it wants to awaken. When he opens his hands, the bracelet seems to glow from within.");
     quest::say("There you are. Again, thank you for your aid and take care with that bracelet. When the stone is freshly awakened, it tends to be a bit fragile.");
     quest::summonitem(64013);
-    quest::faction(231,15);
+    quest::faction(1761,15);
     quest::exp(100000);
   }
   plugin::return_items(\%itemcount);

@@ -52,11 +52,11 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13268 => 1, 18011 => 1)) {
     quest::say("Excellent! Good work! I knew you were the one for this job! Thank you so much! My collection just gets better and better each day. Here is your reward as I promised.");
     quest::summonitem(quest::ChooseRandom(14010,13281,13280,14015,16875));
-    quest::faction(218, 12);
-    quest::faction(77, 12);
-    quest::faction(133, 12);
-    quest::faction(208, 12);
-    quest::faction(48, -15);
+    quest::faction(292, 12);
+    quest::faction(241, 12);
+    quest::faction(263, 12);
+    quest::faction(286, 12);
+    quest::faction(336, -15);
     quest::exp(65);
     quest::givecash(0,8,3,0);
   }

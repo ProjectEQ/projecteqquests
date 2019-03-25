@@ -32,12 +32,12 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 6323 => 1, 6324 => 1, 6335 => 1, 6336 => 1)) {
       quest::emote("cackles with glee as she slowly assembles the runed rods, and with a muttered incantation and a flash of light, disappears, leaving only a note that slowly drifts to the ground.");
       quest::summonitem(18401); # Scroll of Flayed Goblin Skin
-      quest::faction(256, 20); #Priests of Innoruuk
-      quest::faction(177, 20); #King Naythox Thex
-      quest::faction(258, -60); #Priests of Marr
-      quest::faction(43, -60); #Clerics of Tunare
-      quest::faction(257, -60); #Priests of Life
-      quest::faction(260, -60); #Primordial Malice
+      quest::faction(340, 20); #Priests of Innoruuk
+      quest::faction(278, 20); #King Naythox Thex
+      quest::faction(362, -60); #Priests of Marr
+      quest::faction(226, -60); #Clerics of Tunare
+      quest::faction(341, -60); #Priests of Life
+      quest::faction(1522, -60); #Primordial Malice
       quest::exp(132775);   # 2.5% @ level 30
       quest::depop_withtimer();
     }

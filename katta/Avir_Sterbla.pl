@@ -13,13 +13,13 @@ sub EVENT_ITEM {
   if((plugin::check_handin(\%itemcount, 2692 => 4)) || (plugin::check_handin(\%itemcount, 2693 => 4))){
   quest::say("Thank you $name! These samples will be put to good use I assure you. The Coterie will not stand much longer against the forces of Katta Castellum.");
   quest::summonitem(10015, 8); # Malachite
-  quest::faction(206,10);  # +Magus Conlegium
-  quest::faction(168,10);  # +Katta Castellum Citizens
-  quest::faction(350,10);  # +Validus Custodus
-  quest::faction(284,-10); # -Seru
-  quest::faction(139,-10); # -Hand of Seru
-  quest::faction(96,-10);  # -Eye of Seru
-  quest::faction(138,-10); # -Hand Legionnaries
+  quest::faction(1504,10);  # +Magus Conlegium
+  quest::faction(1502,10);  # +Katta Castellum Citizens
+  quest::faction(1503,10);  # +Validus Custodus
+  quest::faction(1483,-10); # -Seru
+  quest::faction(1484,-10); # -Hand of Seru
+  quest::faction(1485,-10);  # -Eye of Seru
+  quest::faction(1541,-10); # -Hand Legionnaries
   }
   plugin::return_items(\%itemcount);
 }

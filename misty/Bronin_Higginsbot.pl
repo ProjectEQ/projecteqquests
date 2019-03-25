@@ -38,20 +38,20 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 13110 => 1 )) { # Bloody Shank
       quest::say("AHH!! You have been sent by the Highkeep Guards!! You will never take Bronin Higginsbot alive!!");
-      quest::faction(77, -25); # Deeppockets
-      quest::faction(33, -25); # Circle Of Unseen Hands
-      quest::faction(218, 25); # Merchants of Rivervale
-      quest::faction(48, -25); # Coalition of Tradefolk Underground
-      quest::faction(31, -25); # Carson McCabe
+      quest::faction(241, -25); # Deeppockets
+      quest::faction(223, -25); # Circle Of Unseen Hands
+      quest::faction(292, 25); # Merchants of Rivervale
+      quest::faction(336, -25); # Coalition of Tradefolk Underground
+      quest::faction(329, -25); # Carson McCabe
       quest::attack($name);
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12192 => 1 ))) { # Froglok Leg
       quest::say("So I see you have defeated Slaythe. I shall sleep much better now that he is gone. I placed the emerald shard in one of the Highkeep strongboxes in Highpass. Give the bank clerk's assistant, Kiolna this key. There is a [second piece of the gem] which I hid near Kelethin. You will need it to complete the gem. I hope it brings you better luck than I.");
-      quest::faction(77, 10);   # Deeppockets
-      quest::faction(33, 10);   # Circle Of Unseen Hands
-      quest::faction(218, -10); # Merchants of Rivervale
-      quest::faction(48, 10);   # Coalition of Tradefolk Underground
-      quest::faction(31, 10);   # Carson McCabe
+      quest::faction(241, 10);   # Deeppockets
+      quest::faction(223, 10);   # Circle Of Unseen Hands
+      quest::faction(292, -10); # Merchants of Rivervale
+      quest::faction(336, 10);   # Coalition of Tradefolk Underground
+      quest::faction(329, 10);   # Carson McCabe
       quest::exp(500);
       quest::summonitem(12193); # H.K. 106
    }

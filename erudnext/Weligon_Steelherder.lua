@@ -47,33 +47,33 @@ function event_trade(e)
 		e.self:Say("Very good, my dear young follower of Prexus. You will learn that swimming is a strong skill among the Deepwater Knights. Keep this up and you may wield a Deepwater harpoon soon enough. For now, you shall wear this barnacle breastplate. It is strong enough to aid a young knight in his quest for perfection.");
 		e.other:SummonItem(12194);
 		e.other:Ding();
-		e.other:Faction(79,10,0); --  Deepwater Knights
-		e.other:Faction(145,10,0); 	--  High Council of Erudin
-		e.other:Faction(143,-15,0); --  Heretics
+		e.other:Faction(242,10,0); --  Deepwater Knights
+		e.other:Faction(266,10,0); 	--  High Council of Erudin
+		e.other:Faction(265,-15,0); --  Heretics
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13879})) then -- Pearls of Odus Handin: full bag of pearls
 		e.self:Say("Fine work, Deepwater Knight. You have proven yourself an excellent addition to our ranks. These shall be used to create more Peacekeeper staffs. Oh yes, I almost forgot your reward. Here you are. Now, go, and serve Prexus.");
 		e.other:SummonItem(eq.ChooseRandom(2104, 2106, 2108, 2111, 2112));
 		e.other:Ding();
-		e.other:Faction(79,10,0); --  Deepwater Knights
-		e.other:Faction(145,10,0); 	--  High Council of Erudin
-		e.other:Faction(143,-15,0); --  Heretics
+		e.other:Faction(242,10,0); --  Deepwater Knights
+		e.other:Faction(266,10,0); 	--  High Council of Erudin
+		e.other:Faction(265,-15,0); --  Heretics
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18835,item2 = 13838,item3 = 13839,item4 = 13840})) then -- Bridge Quest Handin: 3 heads + sealed list
 		e.self:Say("It is done!! I pray to Prexus that the knowledge of the bridge's design has departed from this world with the passing of these intelligent men. A pity they had to die. As for you, the other states may not tolerate your presence any longer, but you have proven that allegiance to Erudin is paramount among all Erudites. I am afraid the [harpoon is no more]!! I bestow upon you Deep Six, my personal cutlass!! May you wield it in the name of Erudin.");
 		e.other:SummonItem(5377);
 		e.other:Ding();
-		e.other:Faction(79,10,0); --  Deepwater Knights
-		e.other:Faction(145,10,0); 	--  High Council of Erudin
-		e.other:Faction(143,-15,0); --  Heretics
+		e.other:Faction(242,10,0); --  Deepwater Knights
+		e.other:Faction(266,10,0); 	--  High Council of Erudin
+		e.other:Faction(265,-15,0); --  Heretics
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18725})) then -- Tattered Note
 		e.self:Say("Greetings and welcome to the Deepwater Knights. Here is your guild tunic. Wear it with pride, and Prexus will keep a watchful eye on you. Go find sister Laoni, she will help you get started with your studies.");
 		e.other:Ding();
 		e.other:SummonItem(13544); --  Old Blue Tunic*
-		e.other:Faction(79,100,0); --  Deepwater Knights
-		e.other:Faction(145,15,0); 	--  High Council of Erudin
-		e.other:Faction(143,-15,0); --  Heretics
+		e.other:Faction(242,100,0); --  Deepwater Knights
+		e.other:Faction(266,15,0); 	--  High Council of Erudin
+		e.other:Faction(265,-15,0); --  Heretics
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

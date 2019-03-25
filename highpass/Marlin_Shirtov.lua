@@ -15,9 +15,9 @@ function event_trade(e)
 		e.self:Say("Ahh!! The silk evening tunic. Mistress Anna will look stunning in this. Here is the key to Princess Lenya's cell. Good luck, hero!");
 		e.other:SummonItem(20008); -- Brass Key
 		e.other:Ding();
-		e.other:Faction(214, 10,0); -- Merchant of Highpass
-		e.other:Faction(149, 10,0); -- Highpass Guard
-		e.other:Faction(31, 10,0); -- Carson McCabe
+		e.other:Faction(331, 10,0); -- Merchant of Highpass
+		e.other:Faction(332, 10,0); -- Highpass Guard
+		e.other:Faction(329, 10,0); -- Carson McCabe
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

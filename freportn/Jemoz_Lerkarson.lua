@@ -29,20 +29,20 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13921})) then
 		e.self:Say("Bless you, my child. Marr is grateful, as are we. Here is our thanks. Let it bring you greater strength to defeat the Militia. Go and continue the crusade. Soon you will be strong enough to slay the [true organizer].");
 		e.other:Ding();
-		e.other:Faction(184,3,0);
-		e.other:Faction(258,3,0);
-		e.other:Faction(48,-10,0);
-		e.other:Faction(105,-10,0);
+		e.other:Faction(281,3,0);
+		e.other:Faction(362,3,0);
+		e.other:Faction(336,-10,0);
+		e.other:Faction(330,-10,0);
 		e.other:Faction(311,10,0);
 		e.other:AddEXP(5000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12142})) then
 		e.self:Say("We heard of your assault. We even attempted to slay Lucan. Alas, we failed. You have done your part and as such have earned our thanks. Beware of the Freeport Militia. They will no doubt be on the lookout for you. May Marr protect you. Perhaps you should speak with Valeron Dushire, paladin of the Knights of Truth. He seeks other to slay the fallen knight.");
 		e.other:SummonItem(eq.ChooseRandom(15560,15230,15219,15229,15222,15012));
 		e.other:Ding();
-		e.other:Faction(184,3,0);
-		e.other:Faction(258,3,0);
-		e.other:Faction(48,-10,0);
-		e.other:Faction(105,-10,0);
+		e.other:Faction(281,3,0);
+		e.other:Faction(362,3,0);
+		e.other:Faction(336,-10,0);
+		e.other:Faction(330,-10,0);
 		e.other:Faction(311,10,0);
 		e.other:AddEXP(5000);
 	end

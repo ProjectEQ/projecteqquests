@@ -58,11 +58,11 @@ sub EVENT_ITEM {
     quest::say("In the name of The Truthbringer! You have done it! Excellent work! Take this Blade of the Shin Initiate. May it aid you in your future battles!");
     quest::summonitem(55016);
     quest::exp(1000);
-    quest::faction(245,5);
-    quest::faction(264,5);
-    quest::faction(146,5);
-    quest::faction(202,5);
-    quest::faction(136,5);
+    quest::faction(1713,5);
+    quest::faction(1709,5);
+    quest::faction(1716,5);
+    quest::faction(1717,5);
+    quest::faction(1718,5);
   }
   if ($client->GetGlobal("paladin_epic")==9 && plugin::check_handin(\%itemcount, 17307 => 1)) {
 	quest::summonitem(69964);

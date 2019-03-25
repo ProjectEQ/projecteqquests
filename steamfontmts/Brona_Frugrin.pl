@@ -18,8 +18,8 @@ sub EVENT_ITEM {
     quest::say("This lens is perfect, $name!  Please, take this staff in return for your services.");  # Couldn't find real text, so I made this up.
     quest::summonitem(10171);
     quest::exp(100);
-    quest::faction(176, 15);  # King Ak'Anon
-    quest::faction(91, 15);  # Eldrich COllective... I'm not sure about this, but quest text seems to indicate it should be here
+    quest::faction(333, 15);  # King Ak'Anon
+    quest::faction(245, 15);  # Eldrich COllective... I'm not sure about this, but quest text seems to indicate it should be here
   }
   plugin::return_items(\%itemcount);
 }

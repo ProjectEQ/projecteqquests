@@ -14,13 +14,13 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29892 => 1)) {
     quest::say("You actually did it? You have done an invaluable service ridding us of that wretched little halfing. You deserve to be a soldier in Seru's army. Take this Quiver with my regard, $name.");
     quest::summonitem(17120);
-    quest::faction(96,10); #eye of seru
-    quest::faction(139,10); #hand of seru
-    quest::faction(142,10); #heart of seru
-    quest::faction(284,10); #seru
-    quest::faction(141,-30); #haven smugglers
-    quest::faction(350,-30); #validus custodus
-    quest::faction(206,-30); #magus conlegium
+    quest::faction(1485,10); #eye of seru
+    quest::faction(1484,10); #hand of seru
+    quest::faction(1486,10); #heart of seru
+    quest::faction(1483,10); #seru
+    quest::faction(1542,-30); #haven smugglers
+    quest::faction(1503,-30); #validus custodus
+    quest::faction(1504,-30); #magus conlegium
   }
   plugin::return_items(\%itemcount);
 }

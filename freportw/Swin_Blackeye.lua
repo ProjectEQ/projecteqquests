@@ -13,10 +13,10 @@ function event_trade(e)
 		e.self:Say("Here you go then.");
 		e.other:SummonItem(18814); -- A Sealed Letter
 		e.other:Ding();
-		e.other:Faction(47,1,0); -- Coalition of Trade Folk
-		e.other:Faction(184,1,0); -- Knights of Truth
-		e.other:Faction(217,1,0); -- Merchants of Qeynos
-		e.other:Faction(369,1,0); -- Coalition of TradeFolk III
+		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(281,1,0); -- Knights of Truth
+		e.other:Faction(291,1,0); -- Merchants of Qeynos
+		e.other:Faction(5015,1,0); -- Coalition of TradeFolk III
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

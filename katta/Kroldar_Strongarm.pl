@@ -28,15 +28,15 @@ four vampyres that you slay. Should you be ambitious and skilled enough to confr
 
 the honor that you deserve.");
   quest::summonitem('31728'); #Vial of Blessed Water
-  quest::faction(206,10); # +Magus Conlegium
-  quest::faction(168,10); # +Katta Castellum Citizens
-  quest::faction(350,10); # +Validus Custodus
-  quest::faction(228,-10); # -Nathyn Illuminious
-  quest::faction(55,-10); # -Coterie of the Eternal Night
-  quest::faction(284,-10); # -Seru
-  quest::faction(139,-10); # -Hand of Seru
-  quest::faction(96,-10); # -Eye of Seru
-  quest::faction(138,-10); # -Hand Legionnaries
+  quest::faction(1504,10); # +Magus Conlegium
+  quest::faction(1502,10); # +Katta Castellum Citizens
+  quest::faction(1503,10); # +Validus Custodus
+  quest::faction(1505,-10); # -Nathyn Illuminious
+  quest::faction(1506,-10); # -Coterie of the Eternal Night
+  quest::faction(1483,-10); # -Seru
+  quest::faction(1484,-10); # -Hand of Seru
+  quest::faction(1485,-10); # -Eye of Seru
+  quest::faction(1541,-10); # -Hand Legionnaries
   quest::exp(500);
  }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

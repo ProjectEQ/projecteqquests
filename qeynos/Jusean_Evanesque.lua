@@ -48,20 +48,20 @@ function event_trade(e)
 	
 	if(item_check == 1) then
 		e.other:Ding();
-		e.other:Faction(192,3,0); -- league of antonican bards
-		e.other:Faction(184,3,0); -- knights of truth
-		e.other:Faction(135,3,0); -- guards of qeynos
-		e.other:Faction(273,-3,0); -- ring of scale
-		e.other:Faction(207,-3,0); -- mayong mistmoore
+		e.other:Faction(284,3,0); -- league of antonican bards
+		e.other:Faction(281,3,0); -- knights of truth
+		e.other:Faction(262,3,0); -- guards of qeynos
+		e.other:Faction(304,-3,0); -- ring of scale
+		e.other:Faction(285,-3,0); -- mayong mistmoore
 		e.other:AddEXP(500);
 		e.other:GiveCash(10,2,0,0);
 	elseif(item_check == 2) then
 		e.other:Ding();
-		e.other:Faction(192,10,0); -- league of antonican bards
-		e.other:Faction(184,10,0); -- knights of truth
-		e.other:Faction(135,10,0); -- guards of qeynos
-		e.other:Faction(273,-30,0); -- ring of scale
-		e.other:Faction(207,-30,0); -- mayong mistmoore
+		e.other:Faction(284,10,0); -- league of antonican bards
+		e.other:Faction(281,10,0); -- knights of truth
+		e.other:Faction(262,10,0); -- guards of qeynos
+		e.other:Faction(304,-30,0); -- ring of scale
+		e.other:Faction(285,-30,0); -- mayong mistmoore
 		e.other:AddEXP(2500);	
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

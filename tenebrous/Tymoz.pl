@@ -16,10 +16,10 @@ sub EVENT_ITEM {
 	if((plugin::check_handin(\%itemcount, 31748 => 2)) || (plugin::check_handin(\%itemcount, 31749 => 2))){#Damaged Custodus Legionnaire Helm or Damaged Custodus Centurion Helm
 		quest::say("Excellent! Two less of thos self righteous Validus Custodus goons to worry about!");
 		quest::summonitem(31750);# Blood Dipped Dart
-		quest::faction(55, 5); #Coterie of Eternal Night
-		quest::faction(349, 5); #Valdanov Zevfeer
-		quest::faction(228, -10); #Nathyn Illuminious
-		quest::faction(350, 2); #Validus Custodus
+		quest::faction(1506, 5); #Coterie of Eternal Night
+		quest::faction(1507, 5); #Valdanov Zevfeer
+		quest::faction(1505, -10); #Nathyn Illuminious
+		quest::faction(1503, 2); #Validus Custodus
 	}
   plugin::return_items(\%itemcount);
 }#Done

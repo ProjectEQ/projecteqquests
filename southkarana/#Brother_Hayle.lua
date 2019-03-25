@@ -16,21 +16,21 @@ function event_trade(e)
 		e.self:Say("I am needed!! What am I doing here? I must return to the Temple of Life to commune with the Prime Healer. Rodcet Nife will give me more strength to finish this job. Thank you, young one! Take this key as a reward. Turn it into Tyokan in the temple shop. Safe journey to you!");
 		e.other:SummonItem(13306); --  T.O.L. 2020 (Strongbox Key)
 		e.other:Ding();
-		e.other:Faction(257,5,0); -- Priest of Life
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(21,-5,0); -- BloodSabers
-		e.other:Faction(9,5,0); -- Antonious Bayle
+		e.other:Faction(341,5,0); -- Priest of Life
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(221,-5,0); -- BloodSabers
+		e.other:Faction(219,5,0); -- Antonious Bayle
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18936})) then -- A Sealed Note
 		e.self:Say("Finally!! I see that Ariska has found a noble knight to retrieve Soulfire. Per Ariska's orders I am not to give Soulfire to you until you can show me [proof of nobility]. You must honor both the Temple of Life as well as the Hall of Truth and to a high degree. Only then shall you hold Soulfire.");
 		e.other:SummonItem(18937); --  a note
 		e.other:Ding();
-		e.other:Faction(257,5,0); -- Priest of Life
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(21,-5,0); -- BloodSabers
-		e.other:Faction(9,5,0); -- Antonious Bayle
+		e.other:Faction(341,5,0); -- Priest of Life
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(221,-5,0); -- BloodSabers
+		e.other:Faction(219,5,0); -- Antonious Bayle
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18937,item2 = 13947,item3 = 18828,item4 = 12197})) then
 		if(fac < 3) then

@@ -42,10 +42,10 @@ sub EVENT_ITEM {
     quest::say("Ohh, that's better. I get so touchy when I'm hungry. I should probably go apologize to Derrin for being snappy. Please return this to Mordin for me.");
     quest::summonitem(1424);
     quest::exp(150000);
-    quest::faction(49,20); # coldain
-    quest::faction(67,20); # Dain Frostreaver IV
-    quest::faction(188,-60); # Kromrif
-    quest::faction(189,-60); # Kromzek
+    quest::faction(406,20); # coldain
+    quest::faction(405,20); # Dain Frostreaver IV
+    quest::faction(419,-60); # Kromrif
+    quest::faction(448,-60); # Kromzek
   }
   elsif (plugin::check_handin(\%itemcount, 1427 => 1)) {
     quest::say("Ohh, that's better. I get so touchy when I'm hungry. I should probably go apologize to Derrin for being snappy.");
@@ -79,10 +79,10 @@ sub EVENT_ITEM {
         return 1;
       }
       quest::exp(100000);
-      quest::faction(49,20); # coldain
-      quest::faction(67,20); # Dain Frostreaver IV
-      quest::faction(188,-60); # Kromrif
-      quest::faction(189,-60); # Kromzek
+      quest::faction(406,20); # coldain
+      quest::faction(405,20); # Dain Frostreaver IV
+      quest::faction(419,-60); # Kromrif
+      quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
     }

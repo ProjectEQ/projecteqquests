@@ -12,11 +12,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18821})) then
 		e.self:Say("What the..? This voucher was for Kwint, not you! I will find someone more trustworthy to take it to him.");
 		e.other:Ding();
-		e.other:Faction(217,-10,0);
-		e.other:Faction(33,5,0);
-		e.other:Faction(9,-10,0);
-		e.other:Faction(47,-10,0);
-		e.other:Faction(135,-10,0);
+		e.other:Faction(291,-10,0);
+		e.other:Faction(223,5,0);
+		e.other:Faction(219,-10,0);
+		e.other:Faction(229,-10,0);
+		e.other:Faction(262,-10,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

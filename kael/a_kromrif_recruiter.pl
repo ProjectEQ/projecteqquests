@@ -23,10 +23,10 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 30081 => 1)) {
       quest::say("Very good, $name. Slay more of the beasts and your name will be known by all of the Kromrif!");
       quest::exp(5000);
-      quest::faction(188,10); #kromrif
-      quest::faction(189,10); #kromzek
-      quest::faction(42,-30); #CoV
-      quest::faction(49,-30); #coldain
+      quest::faction(419,10); #kromrif
+      quest::faction(448,10); #kromzek
+      quest::faction(430,-30); #CoV
+      quest::faction(406,-30); #coldain
     }
     else {
       plugin::return_items(\%itemcount);

@@ -57,7 +57,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20181 => 1, 27424 => 1, 27409 => 1, 27427 => 1)) {
     quest::say("I must say, $name, I am impressed. You have passed your training and should now have a full set of armor to begin your adventures. Take this weapon as a symbol of your dedication and hard work. You have earned it. Your training with me has ended. Farewell.");
     quest::summonitem(55148);
-    quest::faction(275,30);
+    quest::faction(305,30);
   }
   plugin::return_items(\%itemcount);
 }

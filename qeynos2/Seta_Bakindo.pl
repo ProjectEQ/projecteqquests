@@ -126,11 +126,11 @@ sub EVENT_ITEM {
       # Silent Fist Clansman Hand Wraps ID-27494
       quest::summonitem("27494");
       # Silent Fist Clan faction
-      quest::faction("300","1");
+      quest::faction("309","1");
       # Guards of Qeynos faction
-      quest::faction("135","1");
+      quest::faction("262","1");
       # Ashen Order faction
-      quest::faction("12","1");
+      quest::faction("361","1");
       quest::exp("300");
    }
    #do all other handins first with plugin, then let it do disciplines

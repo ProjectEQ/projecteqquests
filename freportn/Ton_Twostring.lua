@@ -23,11 +23,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18164,item2 = 18166})) then
 		e.self:Say("More mail - you have done us a noteworthy service!  Please take this gold for your troubles.  If you are interested in more work, just ask me.");
 		e.other:Ding();
-		e.other:Faction(192,10,0); -- league of antonican bards
-		e.other:Faction(184,10,0); -- knights of truth
-		e.other:Faction(135,10,0); -- guards of qeynos
-		e.other:Faction(273,-30,0); -- ring of scale
-		e.other:Faction(207,-30,0); -- mayong mistmoore
+		e.other:Faction(284,10,0); -- league of antonican bards
+		e.other:Faction(281,10,0); -- knights of truth
+		e.other:Faction(262,10,0); -- guards of qeynos
+		e.other:Faction(304,-30,0); -- ring of scale
+		e.other:Faction(285,-30,0); -- mayong mistmoore
 		e.other:AddEXP(100);
 		e.other:GiveCash(0,0,eq.ChooseRandom(8,9,10,11,12),0);
 	end

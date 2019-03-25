@@ -14,9 +14,9 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13881})) then
 		e.self:Say("Good work. You have shown these rogues who are the better swimmers. Now we have proof of their involvement. You are a fine addition to the temple. Take this small reward. Go, and serve Prexus.");
 		e.other:Ding();
-		e.other:Faction(79,10,0);
-		e.other:Faction(145,10,0);
-		e.other:Faction(143,-15,0);
+		e.other:Faction(242,10,0);
+		e.other:Faction(266,10,0);
+		e.other:Faction(265,-15,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -21,7 +21,7 @@ sub EVENT_ITEM {
       # Made text up
       quest::say("Thank you for your assistance, $name, though I am greatly saddened by the death of my herald.  Truly you are a friend of the Tunarean Court.  Take this crest as a token of my gratitude.");
       quest::summonitem(24867);
-      quest::faction(344, 30); # +Tunarean Court
+      quest::faction(449, 30); # +Tunarean Court
       quest::exp(100);
     }
     else {

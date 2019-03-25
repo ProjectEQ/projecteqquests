@@ -5,8 +5,8 @@ function event_trade(e)
 		e.self:Say("The Coin of Tash. Very good. I have laid a basic enhancement on it - to get it further enhanced you must take the coin to Mizn N'Mar in the Library of Neriak.");
 		e.other:SummonItem(10791); -- Glowing Coin of Tash
 		e.other:Ding();
-		e.other:Faction(442,10,0); -- Temple of Sol Ro
-		e.other:Faction(291,-10,0); -- Shadowed Men
+		e.other:Faction(5029,10,0); -- Temple of Sol Ro
+		e.other:Faction(416,-10,0); -- Shadowed Men
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10086,gold = 50})) then -- Gold x 50, Glamour Stone
 		e.self:Say("Here is your stone, fully enchanted."); -- Made this text up

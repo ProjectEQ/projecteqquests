@@ -30,11 +30,11 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 13860})) then -- A Strongbox
 			e.self:Say("Grand and fantastic!! You have made my day complete. Here is what little I can offer. Most of my money goes into my research. Thank you.");
 			e.other:Ding();
-			e.other:Faction(11,3,0); -- Arcane Scientists
-			e.other:Faction(11,1,0); -- Arcane Scientists
-			e.other:Faction(184,1,0); -- Knights of Truth
-			e.other:Faction(235,-5,0); -- Opal Dark Briar
-			e.other:Faction(105,-5,0); -- The Freeport Militia
+			e.other:Faction(220,3,0); -- Arcane Scientists
+			e.other:Faction(220,1,0); -- Arcane Scientists
+			e.other:Faction(281,1,0); -- Knights of Truth
+			e.other:Faction(296,-5,0); -- Opal Dark Briar
+			e.other:Faction(330,-5,0); -- The Freeport Militia
 			e.other:AddEXP(100);
 			e.other:GiveCash(2,10,0,0);
 		end

@@ -24,11 +24,11 @@ function event_trade(e)
 		e.self:Say("I thank you, my good friend. Surely the road to Freeport was not easily trod. Please take this as compensation for your costs and I also grant you the ability to call forth the power of Rodcet Nife to smite the enemy. Go forth to defend life.");
 		e.other:SummonItem(15016); -- spell: smite
 		e.other:Ding();
-		e.other:Faction(257,10,0); -- Priests of Life
-		e.other:Faction(183,10,0); -- Knights of Thunder
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(21,-20,0); -- Bloodsabers
-		e.other:Faction(9,10,0); -- Antonius Bayle
+		e.other:Faction(341,10,0); -- Priests of Life
+		e.other:Faction(280,10,0); -- Knights of Thunder
+		e.other:Faction(262,10,0); -- Guards of Qeynos
+		e.other:Faction(221,-20,0); -- Bloodsabers
+		e.other:Faction(219,10,0); -- Antonius Bayle
 		e.other:AddEXP(0);
 		e.other:GiveCash(0,0,25,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 16581,item2 = 13009})) then -- Bog Juice, Bandages

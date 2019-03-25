@@ -21,11 +21,11 @@ sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,12310=>2) && $faction <=4) {
       quest::say("You now own a mold for the Vambracers of Ro.  Go and ask Thomas of [Lord Searfire] for the final component.");  
       quest::summonitem(12300);
-      quest::faction("183","1"); #Knights of Thunder
-      quest::faction("21","-1"); # Bloodsabers
-      quest::faction("257","1"); # Priests of Life
-      quest::faction("135","1"); # Guards of Qeynos
-      quest::faction("9","1"); # Antonius Bayle
+      quest::faction("280","1"); #Knights of Thunder
+      quest::faction("221","-1"); # Bloodsabers
+      quest::faction("341","1"); # Priests of Life
+      quest::faction("262","1"); # Guards of Qeynos
+      quest::faction("219","1"); # Antonius Bayle
    } 
    plugin::return_items(\%itemcount);
 }

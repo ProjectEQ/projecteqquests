@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 		quest::say("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
 		&DoRandomPatchwork();
 		quest::givecash("0","2","0","0");
-		quest::faction(283, 10);#Scouts of Tunare
+		quest::faction(316, 10);#Scouts of Tunare
 		quest::exp(800);#10% of level 3 experience.  Newbie quest, being a bit generous compared to the guidelines.
 	} 
 

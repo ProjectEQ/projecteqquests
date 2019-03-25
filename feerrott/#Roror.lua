@@ -27,9 +27,9 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13990,gold = 66})) then
-		e.other:SummonItem(14320);
+		e.other:SummonItem(14320); -- Item: Sack of Cursed Hay
 		e.other:Ding();
-		e.other:Faction(344,10,0);
+		e.other:Faction(344,10,0); -- Faction: Beta Neutral
 		e.other:AddEXP(300);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -65,10 +65,10 @@ end
 function AMV_Timer(e)
 	if (e.timer == "check_hp") then
 	elseif (e.timer == "touch") then
-		e.self:CastSpell(5679, e.self:GetTarget():GetID());
+		e.self:CastSpell(5679, e.self:GetTarget():GetID()); -- Spell: Touch of Anguish
 		eq.set_timer("touch",70*1000); 
 	elseif (e.timer == "gaze") then
-		e.self:CastSpell(5680, e.self:GetTarget():GetID());
+		e.self:CastSpell(5680, e.self:GetTarget():GetID()); -- Spell: Gaze of Anguish
 		eq.set_timer("gaze",70*1000); 
 	elseif (e.timer == "mark") then				
 		local now_clients = eq.get_entity_list():GetClientList();
@@ -140,7 +140,7 @@ function AMV_Death(e)
 	e.self:CameraEffect(15000,5);
 	eq.depop_all(317108);
 	
-	eq.signal(317116 , 317107);
+	eq.signal(317116 , 317107); -- NPC: zone_status
 
 	eq.get_entity_list():FindDoor(57):SetOpenType(59);
 	eq.get_entity_list():FindDoor(58):SetOpenType(59);

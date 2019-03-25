@@ -150,7 +150,7 @@ function PRT_Timer(e)
     eq.depop_all(298002);
     eq.depop();
 
-    eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 380);
+    eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 380); -- NPC: Pixtt_Riel_Tavas
 
   end
 end
@@ -166,7 +166,7 @@ function PRT_Death(e)
   eq.get_entity_list():FindDoor(22):SetLockPick(0)
   eq.get_entity_list():FindDoor(17):SetLockPick(0)
 
-  eq.signal(298223, 298032);
+  eq.signal(298223, 298032); -- NPC: zone_status
 end
 
 -- a_corrupted_construct (298002)
@@ -186,7 +186,7 @@ end
 -- mini golems that cast a AE DD when they die
 
 function Unstable_Death(e)
-  e.self:CastSpell(4661, e.self:GetID());
+  e.self:CastSpell(4661, e.self:GetID()); -- Spell: Cataclysm of Stone
 end
 
 function event_encounter_load(e)

@@ -11,11 +11,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13884})) then
 		e.self:Say("Good work. I knew you could do it. Take this as reward.");
-		e.other:SummonItem(13053);
+		e.other:SummonItem(13053); -- Item: Brass Ring
 		e.other:Ding();
-		e.other:Faction(298,5,0);
-		e.other:Faction(266,5,0);
-		e.other:Faction(265,-10,0);
+		e.other:Faction(298,5,0); -- Faction: Peace Keepers
+		e.other:Faction(266,5,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-10,0); -- Faction: Heretics
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

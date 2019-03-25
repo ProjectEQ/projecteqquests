@@ -19,7 +19,7 @@ function event_trade(e)
 		e.other:AddEXP(3000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 3301})) then
 		e.self:Say("AHA!! My ringmail!! My, you ARE a resourceful one! Here is your reward as promised. It is exquisite, if I do say so myself. You might also wish to tell the priest in the cell over there that the king is dead. I am sure he will be pleased to hear that and might even be able to help you further. Farewell! It's time for me to make my escape!");
-		e.other:SummonItem(6315);
+		e.other:SummonItem(6315); -- Item: Dwarven Mace
 		e.other:Ding();
 		e.other:AddEXP(3000);
 		eq.depop_with_timer();

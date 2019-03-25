@@ -13,7 +13,7 @@ function event_say(e)
 	elseif(e.message:findi("find da poshuns")) then
 		e.self:Say("Take dis as it be all me know.");
 		e.other:Ding();
-		e.other:SummonItem(18651);
+		e.other:SummonItem(18651); -- Item: Note to the Troll
 	end
 end
 
@@ -21,12 +21,12 @@ function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 13984})) then -- Bregna's Big Mistake
 		e.self:Say("Now Kaglari won't be mad at Bregna.");
-		e.other:SummonItem(12212);
+		e.other:SummonItem(12212); -- Item: Kaglari Mana Doll
 		e.other:Ding();
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 26632, item2 = 26640, item3 = 29921, item4 = 26662})) then -- Aid Garuuk
 		e.self:Say("Ere. take dis back to Garuuk, K.");
-		e.other:SummonItem(28740);
+		e.other:SummonItem(28740); -- Item: Troll Receipt
 		e.other:Ding();
 		e.other:AddEXP(10000);
 	end

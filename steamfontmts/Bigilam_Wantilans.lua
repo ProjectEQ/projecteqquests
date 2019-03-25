@@ -13,7 +13,7 @@ function event_trade(e)
 	
 	if(qglobals["paladin_epic"] == "9" and item_lib.check_turn_in(e.trade, {item1 = 9181})) then --Mana Battery - Class Six
 		e.self:Say("Good! You found a mana battery!! Here is the heart I owe you. Bye bye now!");
-		e.other:SummonItem(69979);
+		e.other:SummonItem(69979); -- Item: Slain Vampire's Heart
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

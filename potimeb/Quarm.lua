@@ -51,19 +51,19 @@ function event_hp(e)
 		e.self:Emote(" roars in pain as his red head explodes in a shower of flaming ethereal energy!");
 		-- remove red head
 		e.self:SendIllusionPacket({race=304,gender=2,texture=1,helmtexture=1});
-		e.self:CastSpell(3230,e.self:GetID());
+		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
 		eq.set_next_hp_event(51);
 	elseif (e.hp_event == 51) then
 		e.self:Emote(" roars in pain as his blue head explodes into pure ethereal energy!");
 		-- remove blue head
 		e.self:SendIllusionPacket({race=304,gender=2,texture=2,helmtexture=2});
-		e.self:CastSpell(3230,e.self:GetID());
+		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
 		eq.set_next_hp_event(26);
 	elseif (e.hp_event == 26) then
 		e.self:Emote(" shakes the cavern with a bellow of pain as the white head explodes into a swirling vortex of ethereal energy!");
 		-- remove white head
 		e.self:SendIllusionPacket({race=304,gender=2,texture=3,helmtexture=3});
-		e.self:CastSpell(3230,e.self:GetID());
+		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
 	end
 end
 
@@ -73,12 +73,12 @@ function event_death_complete(e)
 	-- update the zone status
 	eq.set_global(instance_id.."_potimeb_status","QuarmDead",7,"H13");
 	-- signal the zone_status that we died
-	eq.signal(223097,7);
+	eq.signal(223097,7); -- NPC: zone_status
 	-- depop all existing time vortex mobs
 	eq.depop_all(223112);
 	-- depop untargetable and pop targetable spawn Zebuxoruk's Cage
 	eq.depop(223228);
-	eq.spawn2(223214,0,0,-579,-1119,60.625,0);
+	eq.spawn2(223214,0,0,-579,-1119,60.625,0); -- NPC: _
 	-- load the current quest globals
 	local qglobals = eq.get_qglobals(e.self);
 	if ( qglobals.time_emote == "TimeEntered" and e.self:Admin() < 10 ) then

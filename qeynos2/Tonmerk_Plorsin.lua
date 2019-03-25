@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Say("The Academy of Arcane Science is the greatest school of magic in Antonica.  It houses a wealth of resources and knowledge pertaining to any of the circles of magic.  It is also a marvel of magical engineering.  If you should ever visit Freeport. be sure to let me know.  I seek a faithful cleric to [pickup a reagent].");
 	elseif(e.message:findi("pickup a reagent")) then
 		e.self:Say("Please deliver this potion to Serna Tasknon in The Academy of Arcane Science, she will know what it is that I require.");
-		e.other:SummonItem(13983);
+		e.other:SummonItem(13983); -- Item: Inert Potion
 	end
 end
 
@@ -33,13 +33,13 @@ function event_trade(e)
 		e.other:GiveCash(0,0,25,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 16581,item2 = 13009})) then -- Bog Juice, Bandages
 		e.self:Say("The glory of Rodcet Nife flows through your soul. May your body and soul live in righteous health.");
-		e.self:CastSpell(96,e.other:GetID());
+		e.self:CastSpell(96,e.other:GetID()); -- Spell: Counteract Disease
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13067})) then -- Snake fang
 		e.self:Say("The glory of Rodcet Nife flows through your soul. May your body and soul live in righteous health.");
-		e.self:CastSpell(95,e.other:GetID());
+		e.self:CastSpell(95,e.other:GetID()); -- Spell: Counteract Poison
 	elseif(item_lib.check_turn_in(e.trade, {gold = 5})) then
 		e.self:Say("The glory of Rodcet Nife flows through your soul. May your body and soul live in righteous health.");
-		e.self:CastSpell(17,e.other:GetID());
+		e.self:CastSpell(17,e.other:GetID()); -- Spell: Light Healing
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

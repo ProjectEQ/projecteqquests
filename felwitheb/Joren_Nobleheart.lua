@@ -17,7 +17,7 @@ function event_trade(e)
 		e.self:Say("Vengeance has been fufilled! However, the King still has a heavy heart. Not until Firiona has been returned can this sadness be lifted. But in appreciation of your efforts, I am honored to present to you the King's Chalice.");
 		e.other:Ding();
 		e.other:AddEXP(100000);
-		e.other:SummonItem(10608);
+		e.other:SummonItem(10608); -- Item: Chalice of Kings
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

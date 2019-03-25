@@ -17,7 +17,7 @@ function event_say(e)
 		e.self:Say("Frostbite is a dog. He belongs to some barbarian who visits the city every so often. I know not where they are from. I cannot see them coming from Halas. Their visits are too frequent.");
 	elseif(e.message:findi("donate")) then
 		e.self:Say("I would be glad to help you out. The Knights of Thunder are a respected order.");
-		e.other:SummonItem(13292);
+		e.other:SummonItem(13292); -- Item: Donation
 	elseif(qglobals["paladin_epic"] == "1" and e.message:findi("what happened")) then
 		e.self:Say("A few nights ago, I was standing guard at the Pool of Jahnda like any other night, but something was different. The night air was cooler than usual and the sky was barely visible because of all of the dark clouds. Sometime around midnight, a flash occurred near the pool and I saw an Iksar run off with a Koalindl. As I chased him, he casted a portal spell and disappeared. This is grave indeed! I will need your help, " .. e.other:GetName() .. ". Will you help [" .. eq.say_link("track down") .. "] this Iksar and return the Koalindl?");
 	elseif(qglobals["paladin_epic"] == "1" and e.message:findi("track down")) then
@@ -39,7 +39,7 @@ function event_trade(e)
 			e.other:Faction(262,50); -- Guards of Qeynos
 			e.other:Faction(221,-25); -- Bloodsabers
 			e.other:Faction(219,15); -- Antonius Bayle
-			e.other:SummonItem(eq.ChooseRandom(13297,13296));
+			e.other:SummonItem(eq.ChooseRandom(13297,13296)); -- Item(s): Band of Rodcet Nife (13297), Prayer Beads (13296)
 			e.other:GiveCash(0,0,2,0);
 			e.other:AddEXP(400);
 		end
@@ -49,7 +49,7 @@ function event_trade(e)
 		if item_lib.check_turn_in(e.trade, {item1 = 69929, item2 = 69930, item3 = 69931, item4 = 69932}) then
 			e.self:Say("So this is what happened to the Koalindl? This is sad indeed. I have heard that you have stopped a greater tragedy from occuring by treating the pestilence that was being brought to the seas. You have done a very good job, " .. e.other:GetName() ..". I present you with a seal of nobility that was given to me long ago. This seal has granted me audiences with many of the different races of Norrath, including the Ring of Scale. Perhaps it will aide you in your journeys. Thank you again, sir.");
 			eq.set_global("paladin_epic","4",5,"F");
-			e.other:SummonItem(69933);
+			e.other:SummonItem(69933); -- Item: Seal of Enic
 		end
 	end
 

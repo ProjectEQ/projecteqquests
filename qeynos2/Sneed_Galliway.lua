@@ -10,8 +10,8 @@ function event_say(e)
 		e.self:Say("Ronn? I saw him a few days ago. He was with someone dressed in black I didn't recognize .. I think I saw them later that day, swimming in the north pond. They really should stay away from the aqueducts. They can be quite dangerous. Full of rats, ya know.");
 	elseif(e.message:findi("tax collection")and tax.tax_collection ~= nil) then
 		e.self:Say(string.format("Hey, %s, how the heck did Vicus convince you to do his job? He better be paying you well. Here you go.",e.other:GetName()));
-		e.other:SummonItem(13172);
-		e.other:Faction(291,-10,0);		
+		e.other:SummonItem(13172); -- Item: Galliway's Tax Payment
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos		
 	end
 	
 end
@@ -23,11 +23,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13717})) then -- rat head
 		e.self:Say("HA! Good work! I knew you were the person for the job. A regular ratslayer you are. Here is your reward as promised. be sure you keep this between us.");
 		e.other:Ding();
-		e.other:Faction(291,5,0);
-		e.other:Faction(223,-10,0);
-		e.other:Faction(219,5,0);
-		e.other:Faction(229,5,0);
-		e.other:Faction(262,5,0);
+		e.other:Faction(291,5,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(223,-10,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(219,5,0); -- Faction: Antonius Bayle
+		e.other:Faction(229,5,0); -- Faction: Coalition of Tradefolk
+		e.other:Faction(262,5,0); -- Faction: Guards of Qeynos
 		e.other:AddEXP(250);
 		e.other:GiveCash(4,0,0,0);
 	end

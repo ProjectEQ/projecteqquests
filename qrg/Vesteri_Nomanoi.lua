@@ -3,7 +3,7 @@ function event_say(e)
 		e.self:Say(string.format("Hail, %s. I am Vesteri Namanoi. I provide training to the Jaggedpine Treefolk and their allies. If you are not busy, I would like to ask a small [favor] of you.",e.other:GetName()));
 	elseif(e.message:findi("favor")) then
 		e.self:Say("I need you to take this claim check to Qeynos for me. Nesiff Talaherd is a woodcarver who owns a shop in South Qeynos. I am having him carve a small statue of Tunare for Te'Anara. With my training schedule, I can not make the journey to Qeynos. Please give this claim check to Nesiff and bring the statue to me. It is a surprise, so please do not say anything to Te'Anara about it.");
-		e.other:SummonItem(18012);
+		e.other:SummonItem(18012); -- Item: Claim Check
 	end
 end
 

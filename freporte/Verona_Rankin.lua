@@ -4,31 +4,31 @@ function event_say(e)
 	elseif(e.message:findi("boot")) then
 		e.self:Say("To craft Coalition Trader Boots you require two [silk thread], two ruined cat pelts, two desert spiderling hairs, and a rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
 		-- Tattered Boot Pattern ID-19561
-		e.other:SummonItem(19561);
+		e.other:SummonItem(19561); -- Item: Tattered Boot Pattern
 	elseif(e.message:findi("bracer")) then
 		e.self:Say("To craft an Coalition Trader Bracer you require a [silk thread], a ruined cat pelt, and a desert spiderling hairs. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
 		-- Tattered Wristband Pattern ID-19558
-		e.other:SummonItem(19558);
+		e.other:SummonItem(19558); -- Item: Tattered Wristband Pattern
 	elseif(e.message:findi("cap")) then
 		e.self:Say("To craft a Coalition Trader Cap you require two [silk thread], a ruined cat pelt, a dune spiderling hairs, and a rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Coif Pattern.");
 		-- Tattered Cap Pattern ID-19555
-		e.other:SummonItem(19555);
+		e.other:SummonItem(19555); -- Item: Tattered Cap Pattern
 	elseif(e.message:findi("glove")) then
 		e.self:Say("To craft Coalition Trader Gloves you require two [silk thread], a ruined cat pelt, two desert spiderling hairs, and a rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
 		-- Tattered Glove Pattern ID-19559
-		e.other:SummonItem(19559);
+		e.other:SummonItem(19559); -- Item: Tattered Glove Pattern
 	elseif(e.message:findi("legging")) then
 		e.self:Say("To craft Coalition Trader Leggings you require three [silk thread], a low quality cat pelt, two dune spiderling hairs, and a large rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Pant Pattern.");
 		-- Tattered Pant Pattern ID-19560
-		e.other:SummonItem(19560);
+		e.other:SummonItem(19560); -- Item: Tattered Pant Pattern
 	elseif(e.message:findi("sleeve")) then
 		e.self:Say("To craft Coalition Trader Sleeves you require two [silk thread], a low quality cat pelt, two dune spiderling hairs, and a large rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Sleeves Pattern.");
 		-- Tattered Sleeve Pattern ID-19557
-		e.other:SummonItem(19557);
+		e.other:SummonItem(19557); -- Item: Tattered Sleeve Pattern
 	elseif(e.message:findi("tunic")) then
 		e.self:Say("To craft a Coalition Trader Tunic you require four [silk thread], a medium quality cat pelt, a desert tarantula hairs, and a giant rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Tunic Pattern.");
 		-- Tattered Tunic Pattern ID-19556
-		e.other:SummonItem(19556);
+		e.other:SummonItem(19556); -- Item: Tattered Tunic Pattern
 	elseif(e.message:findi("silk thread")) then
 		e.self:Say("I'm sure you could find a tailor in town to make you some silk thread or you can make your own with 2 Spiderling Silk.");
 	end

@@ -12,14 +12,14 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {gold == 10})) then
 		e.self:Say("Thank you, " .. e.other:GetName() .. ". I will tell him to expect visitors.");
-		eq.spawn2(71073,0,0,287.9,662.5,-54.1,218.6);
+		eq.spawn2(71073,0,0,287.9,662.5,-54.1,218.6); -- NPC: Gkzzallk
 		eq.depop_with_timer();
 	end
 end
 
 function event_death_complete(e)
 	eq.set_global("sirran","1",3,"M20");
-	eq.spawn2(71058,0,0,688,1381,-645,384);
+	eq.spawn2(71058,0,0,688,1381,-645,384); -- NPC: Sirran_the_Lunatic
 end
 
 -------------------------------------------------------------------------------------------------

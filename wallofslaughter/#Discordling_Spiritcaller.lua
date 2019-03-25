@@ -24,13 +24,13 @@ function event_timer(e)
 		eq.depop_all(300092);
 		eq.depop();
 	elseif e.timer=="symbol" then
-		e.self:CastSpell(1155, e.self:GetTarget():GetID());	
+		e.self:CastSpell(1155, e.self:GetTarget():GetID()); -- Spell: Black Symbol of Agony	
 		eq.set_timer("symbol", 60 * 1000);
 	elseif e.timer=="chant" then
-		e.self:CastSpell(2046, e.self:GetTarget():GetID());	
+		e.self:CastSpell(2046, e.self:GetTarget():GetID()); -- Spell: Deathly Chants	
 		eq.set_timer("chant", 18 * 1000);	
 	elseif e.timer=="grip" then
-		e.self:CastSpell(3644, e.self:GetTarget():GetID());	
+		e.self:CastSpell(3644, e.self:GetTarget():GetID()); -- Spell: Grip of Mental Reality	
 		eq.set_timer("grip", 60 * 1000);		
 	end
 end

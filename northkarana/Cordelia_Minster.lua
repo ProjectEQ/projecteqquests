@@ -24,11 +24,11 @@ function event_trade(e)
 		e.self:Say("Why thank you, kind adventurer! Here is a little something to keep food in your belly. Now back to practice. La la la..");
 		e.other:SummonItem(13119); -- Winds of Karana sheet 2
 		e.other:Ding();
-		e.other:Faction(262,2,0);
-		e.other:Faction(281,2,0);
-		e.other:Faction(284,2,0);
-		e.other:Faction(285,-5,0);
-		e.other:Faction(304,-5,0);
+		e.other:Faction(262,2,0); -- Faction: Guards of Qeynos
+		e.other:Faction(281,2,0); -- Faction: Knights of Truth
+		e.other:Faction(284,2,0); -- Faction: League of Antonican Bards
+		e.other:Faction(285,-5,0); -- Faction: Mayong Mistmoore
+		e.other:Faction(304,-5,0); -- Faction: Ring of Scale
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,2,0,0);
 	end

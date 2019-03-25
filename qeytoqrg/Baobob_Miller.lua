@@ -1,7 +1,7 @@
 function event_waypoint_arrive(e)
 	if(e.wp == 3) then
 		e.self:Say("Greetings, sister! I just wanted to make sure no harm had befallen you.");
-		eq.signal(4052,5);
+		eq.signal(4052,5); -- NPC: Chanda_Miller
 		e.self:SetRunning(true);
 	elseif(e.wp == 4) then
 		e.self:SetRunning(false);
@@ -42,7 +42,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13755, gold == 21})) then
 		e.self:Say("Good work! Now have you the rest of what I require?");
 		e.self:Say("Here ya go! That should keep ya nice and warm! Be sure to tell all the friends you're going to impress where you got this fine cloak. Although I am sure they probably have heard of me already.");
-		e.other:SummonItem(2905);
+		e.other:SummonItem(2905); -- Item: Wolf-hide Cape
 		e.other:Ding();
 		e.other:Faction(345,1,0); -- Karana Residents
 		e.other:Faction(262,1,0); -- Guards of Qeynos
@@ -52,7 +52,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13754, gold == 15})) then
 		e.self:Say("Good work! Now have you the rest of what I require?");
 		e.self:Say("They are exquisite, if I do say so myself. Hope they fit.");
-		e.other:SummonItem(2906);
+		e.other:SummonItem(2906); -- Item: Wolf-hide Boots
 		e.other:Ding();
 		e.other:Faction(345,1,0); -- Karana Residents
 		e.other:Faction(262,1,0); -- Guards of Qeynos
@@ -62,7 +62,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13753, gold == 5})) then
 		e.self:Say("Good work! Now have you the rest of what I require?");
 		e.self:Say("I hate working with such low quality hides. They lack the sheen that makes a high quality pelt look so fine! Anyhow, here's your belt.");
-		e.other:SummonItem(2907);
+		e.other:SummonItem(2907); -- Item: Wolf-hide Belt
 		e.other:Ding();
 		e.other:Faction(345,1,0); -- Karana Residents
 		e.other:Faction(262,1,0); -- Guards of Qeynos

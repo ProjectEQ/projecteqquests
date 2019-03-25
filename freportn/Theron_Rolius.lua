@@ -11,7 +11,7 @@ function event_say(e)
 		e.self:Say("I have been creating shields for the crusade.  Right now I work on the sharkskin shield for the knights.  I require two shark skins. Unfortunately, most sharks are too dangerous for the squires.  I have begun using [reef shark] skins.  Will you hunt the [reef sharks]?");
 	elseif(e.message:findi("reef shark")) then
 		e.self:Say("Reef sharks are the smallest and most docile of the sharks.  Even a young acolyte can slay one.  I have heard there are some in the Ocean of Tears.  I need a young acolyte to [hunt] reef sharks.  I require their skins.");
-		e.other:SummonItem(17937);
+		e.other:SummonItem(17937); -- Item: Empty Shark Sack
 	elseif(e.message:findi("hunt")) then
 		e.self:Say("I thought I spied the shoulders of a swimmer upon you! Take this large sack. Travel to the Ocean of Tears. There are numerous reef sharks there. I shall require no fewer than two shark skins. When the full sack is combined and returned to me, I shall reward you.");
 	end
@@ -31,7 +31,7 @@ function event_trade(e)
 		e.other:GiveCash(0,0,0,3);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13873})) then
 		e.self:Say("Thanks for the hard work, here is a shield to help you in your duties.");
-		e.other:SummonItem(13868);
+		e.other:SummonItem(13868); -- Item: Sharkskin Shield
 		e.other:Faction(281,10,0); -- knights of truth
 		e.other:Faction(362,10,0); -- priests of marr
 		e.other:Faction(311,10,0); -- steel warriors

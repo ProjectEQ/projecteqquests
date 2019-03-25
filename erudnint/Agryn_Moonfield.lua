@@ -11,7 +11,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13989})) then
 		e.self:Say("Ah!! A Peacekeeper. I have some Vasty Deep water sitting out already. Here you are. Do not let it fall into the wrong hands.");
-		e.other:SummonItem(13939);
+		e.other:SummonItem(13939); -- Item: Clear Water
 		e.other:Ding();
 		e.other:AddEXP(100);
 	end

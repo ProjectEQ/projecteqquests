@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:Faction(265,-10,0);  -- Heretics
 		e.other:AddEXP(200);      
 		e.other:GiveCash(0,12,3,0); -- 12 silver 3 gold per Allakhazam
-		e.other:SummonItem(eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,15203,15207,15201,15208,15209,15014,15205,15210,6012));
+		e.other:SummonItem(eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,15203,15207,15201,15208,15209,15014,15205,15210,6012)); -- Item(s): Backpack (17005), Belt Pouch (17002), Hematite (10018), Raw-hide Sleeves (2144), Raw-hide Wristbands (2145), Raw-hide Gloves (2146), Rusty Mace (6011), Rusty Morning Star (6016), Spell: Cure Poison (15203), Spell: Divine Aura (15207), Spell: Flash of Light (15201), Spell: Lull (15208), Spell: Spook the Dead (15209), Spell: Strike (15014), Spell: True North (15205), Spell: Yaulp (15210), Worn Great Staff (6012)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13816})) then -- The completed Peacekeeper Staff
 		e.self:Say("You have done well, neophyte.Let me add the touch of harmony to finish the job.. Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].");
 		e.other:Faction(298,10,0);  -- Peace Keepers (Quellious temple)      
@@ -41,7 +41,7 @@ function event_trade(e)
 		e.other:Faction(265,-10,0);  -- Heretics      
 		e.other:AddEXP(600);      
 		e.other:GiveCash(12,11,0,0);
-		e.other:SummonItem(eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012));
+		e.other:SummonItem(eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012)); -- Item(s): Backpack (17005), Belt Pouch (17002), Hematite (10018), Raw-hide Sleeves (2144), Raw-hide Wristbands (2145), Raw-hide Gloves (2146), Rusty Mace (6011), Rusty Morning Star (6016), Worn Great Staff (6012)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

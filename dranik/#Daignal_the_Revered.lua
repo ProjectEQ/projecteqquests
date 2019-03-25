@@ -23,7 +23,7 @@ function event_say(e)
 	elseif(e.message:findi("kill")) then
 		if(qglobals["Fatestealer"] == "3" and qglobals["rogue_epic_keetra"] == "1" and qglobals["rogue_epic_lairyn"] == "1" and qglobals["rogue_epic_larithim"] == "1" and qglobals["rogue_epic_durgin"] == "1") then
 			event_started=0
-			eq.spawn2(336253,0,0,694,828.2,145.2,240);
+			eq.spawn2(336253,0,0,694,828.2,145.2,240); -- NPC: #Wren_Simsy
 		else
 			e.self:Say("you are speaking jibberish, what proof do you have?");
 		end

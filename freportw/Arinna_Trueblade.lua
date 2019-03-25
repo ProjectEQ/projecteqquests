@@ -24,7 +24,7 @@ function event_say(e)
 			e.other:SummonItem(22614); -- An Enchanted Greaves Mold
 		elseif(e.message:findi("gauntlets")) then
 			e.self:Say("Keeping your hands well guarded is without question the most important thing a warrior will do. Suffering a blow to the hands that would prevent you from defending yourself would most certainly mean death. To create your gauntlet material you will need to combine three Bricks of Crude Iron Ore, one Armadillo Tail, one Severed Orc Foot, and two Spider Legs in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Steel Warriors Gauntlets.");
-			e.other:SummonItem(22615);
+			e.other:SummonItem(22615); -- Item: Enchanted Gauntlet Mold
 		elseif(e.message:findi("breastplate")) then
 			e.self:Say("Your dedication to learning everything about your class is impressive, "..e.other:GetName()..". I have no doubt that you are ready to collect the pieces for your Steel Warriors Breastplate. To create your breastplate material you will need to combine five Bricks of Crude Iron Ore, one Deathfist Orc Skull, one Woven Spider Silk, one Armadillo Carapace, one Matted Lion Pelt and one Rusty Short Sword in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Steel Warriors Breastplate. Please come back to see me after you are finished with your breastplate for your [final task].");
 			e.other:SummonItem(22616); -- An Enchanted Breastplate Mold

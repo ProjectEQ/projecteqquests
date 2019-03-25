@@ -7,7 +7,7 @@ function event_timer(e)
 	if (e.timer == "vzspawned") then
 		--tell vallon_controller I spawned
 		eq.stop_timer("vzspawned");
-		eq.signal(214112,1);
+		eq.signal(214112,1); -- NPC: #vallon_controller
 	end
 end
 
@@ -24,7 +24,7 @@ end
 
 function event_hp(e)
 	--tell vallon_controller I have depopped
-	eq.signal(214112,2);
+	eq.signal(214112,2); -- NPC: #vallon_controller
 	eq.depop();
 end
 
@@ -33,7 +33,7 @@ function event_death_complete(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();
 	local zloc = e.self:GetZ();
-	eq.spawn2(202368,0,0,xloc,yloc,zloc,0);
+	eq.spawn2(202368,0,0,xloc,yloc,zloc,0); -- NPC: A_Planar_Projection
 	--tell vallon_controller I died
-	eq.signal(214112,3);
+	eq.signal(214112,3); -- NPC: #vallon_controller
 end

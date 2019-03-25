@@ -27,7 +27,7 @@ function event_signal(e)
    if (e.signal == 1) then
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 
-      eq.signal(201435, 1);
+      eq.signal(201435, 1); -- NPC: The_Tribunal Lashing Trial
 
       despawn_mobs();
       eq.depop();
@@ -37,7 +37,7 @@ function event_signal(e)
       eq.get_entity_list():MessageClose(e.self, false, 120, 3, "An unnatural silence falls around you.  The justice of the Tribunal has been pronounced once again.  The defendants have been found... lacking.");
 
       despawn_prisoners();
-      eq.signal(201435, 2);
+      eq.signal(201435, 2); -- NPC: The_Tribunal Lashing Trial
 
 		-- Depop the Scourge of Honor as they are immune to damage and despawned
 		-- by the controller we are about to depop.
@@ -78,11 +78,11 @@ function event_timer(e)
 end
 
 function spawn_spirits()
-   eq.spawn2( 201469, 0, 0, 1298, -1169, -13, 126 );
-   eq.spawn2( 201469, 0, 0, 1153, -1119,  88, 126 );
-   eq.spawn2( 201469, 0, 0, 1298, -1072, -13, 126 );
+   eq.spawn2( 201469, 0, 0, 1298, -1169, -13, 126 ); -- NPC: #a_flickering_spirit
+   eq.spawn2( 201469, 0, 0, 1153, -1119,  88, 126 ); -- NPC: #a_flickering_spirit
+   eq.spawn2( 201469, 0, 0, 1298, -1072, -13, 126 ); -- NPC: #a_flickering_spirit
 
-   eq.spawn2( 201467, 0, 0, 1350, -1127, 2, 124);
+   eq.spawn2( 201467, 0, 0, 1350, -1127, 2, 124); -- NPC: #A_Scourge_of_Honor
 end
 
 function spawn_mobs(wave)
@@ -97,15 +97,15 @@ function spawn_mobs(wave)
 
    elseif (wave == 5) then
       -- Spawn the boss
-      eq.spawn2(201468, 0,0, 1350, -1127, 2, 124);
+      eq.spawn2(201468, 0,0, 1350, -1127, 2, 124); -- NPC: #Lashman_Azakal
    end
 end
 
 function spawn_prisoners()
    -- a tortured prisoner
-   eq.spawn2(201463, 0, 0, 1417, -1168, 1, 392);
-   eq.spawn2(201463, 0, 0, 1417, -1120, 1, 392);
-   eq.spawn2(201463, 0, 0, 1417, -1072, 1, 392);
+   eq.spawn2(201463, 0, 0, 1417, -1168, 1, 392); -- NPC: #a_tormented_prisoner
+   eq.spawn2(201463, 0, 0, 1417, -1120, 1, 392); -- NPC: #a_tormented_prisoner
+   eq.spawn2(201463, 0, 0, 1417, -1072, 1, 392); -- NPC: #a_tormented_prisoner
 end
 
 function despawn_prisoners() 

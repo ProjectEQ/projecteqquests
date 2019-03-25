@@ -28,7 +28,7 @@ end
 function TM_Timer(e)
 	if (e.timer == "orcbreath") then
 		eq.stop_timer("orcbreath");		
-		e.self:CastSpell(4192, e.self:GetHateTop():GetID());
+		e.self:CastSpell(4192, e.self:GetHateTop():GetID()); -- Spell: Orc Breath
 		eq.set_timer("orcbreath",45*1000)	
 	end
 end
@@ -158,18 +158,18 @@ function RPG_Timer(e)
 			--#Jealac_Yzinaql (245261) saved by #Piyea_Frost (245228) 
 			if (e.self:GetSpawnPointY()==-844) then
 				rpg_piyea=1;
-				eq.spawn2(245228, 0, 0, 908.3, -844, -31.4, 126);
+				eq.spawn2(245228, 0, 0, 908.3, -844, -31.4, 126); -- NPC: #Piyea_Frost
 			--near west room
 			--#Bacluu_Iggn (245272) saved by #Eneau_Welani (245225) 
 			elseif (e.self:GetSpawnPointY()==-1006) then			
 				rpg_eneau=1;
-				eq.spawn2(245225, 0, 0, 1101, -999, -40, 186);
+				eq.spawn2(245225, 0, 0, 1101, -999, -40, 186); -- NPC: #Eneau_Welani
 				--e.self:Say("rpg_eneau: " .. rpg_eneau)
 			--far west room
 			--#Yipzma_Tixxlea (245276) saved by #Maziyae_Xanl`Utin (245217)
 			elseif (e.self:GetSpawnPointY()==-1154) then
 				rpg_maziyae=1;
-				eq.spawn2(245217, 0, 0, 1340, -1152.3, -31.4, 368);			
+				eq.spawn2(245217, 0, 0, 1340, -1152.3, -31.4, 368); -- NPC: #Maziyae_Xanl`Utin			
 			end
 		end
 		--e.self:Say("rpg_dead: " .. rpg_dead)
@@ -180,11 +180,11 @@ function RPG_Death(e)
 	eq.debug("RPG_Death(): GetSpawnPointY() = " .. e.self:GetSpawnPointY());
 	--Gaddian_Opaleye guard
 	if (e.self:GetSpawnPointY()==-1048) then
-		eq.signal(245264,1);
+		eq.signal(245264,1); -- NPC: #Gaddian_Opaleye
 		rpg_dead=rpg_dead+1;
 	--Leannra_Nuadr guard
 	elseif (e.self:GetSpawnPointY()==-1351) then
-		eq.signal(245275,1);
+		eq.signal(245275,1); -- NPC: #Leannra_Nuadr
 		rpg_dead=rpg_dead+1;
 	end
 	check_RPG();
@@ -239,7 +239,7 @@ function PG_Talkor_Timer(e)
 		eq.depop();
 	elseif (e.timer=="orcbreath") then
 		eq.stop_timer("orcbreath");		
-		e.self:CastSpell(4192, e.self:GetHateTop():GetID());
+		e.self:CastSpell(4192, e.self:GetHateTop():GetID()); -- Spell: Orc Breath
 		eq.set_timer("orcbreath",45*1000)
 	end
 end
@@ -284,16 +284,16 @@ function Prisoner_Timer(e)
 		eq.signal(245271,1); --rpg
 	elseif (e.timer=="245278") then
 		eq.stop_timer("245272");
-		eq.signal(245278,1);
+		eq.signal(245278,1); -- NPC: a_Rujarkian_prison_guard
 	elseif (e.timer=="245272") then
 		eq.stop_timer("245272");
-		eq.signal(245272,1);
+		eq.signal(245272,1); -- NPC: #Bacluu_Iggn
 	elseif (e.timer=="245276") then
 		eq.stop_timer("245276");
-		eq.signal(245276,1);
+		eq.signal(245276,1); -- NPC: #Yipzma_Tixxlea
 	elseif (e.timer=="245261") then
 		eq.stop_timer("245261");
-		eq.signal(245261,1);		
+		eq.signal(245261,1); -- NPC: #Jealac_Yzinaql		
 	end
 end
 
@@ -307,7 +307,7 @@ end
 
 function Warden_Timer(e)
 	if (e.timer == "roar") then
-		e.self:CastSpell(4417, e.self:GetHateTop():GetID());
+		e.self:CastSpell(4417, e.self:GetHateTop():GetID()); -- Spell: Warden's Roar
 	end
 end
 
@@ -322,7 +322,7 @@ end
 function Shaman_Timer(e)
 	if (e.timer == "orcbreath") then
 		eq.stop_timer("orcbreath");		
-		e.self:CastSpell(4192, e.self:GetHateTop():GetID());
+		e.self:CastSpell(4192, e.self:GetHateTop():GetID()); -- Spell: Orc Breath
 		eq.set_timer("orcbreath",45*1000)	
 	end
 end

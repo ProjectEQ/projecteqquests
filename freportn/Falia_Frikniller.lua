@@ -9,7 +9,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18925})) then
 		e.self:Say("Heh, that good for nothing fool. I've been here for over a month already, and I haven't seen him yet. Bah, anyway, could you take this back to him for me? It was our grandfather's lucky necklace. He passed it down to our father, and now onto my brother. Knowing that little worm, Grenny, he'll probably trade it for a mug of ale. Oh well, thanks for delivering the letter, friend. Good day to you, and safe travels.");
-		e.other:SummonItem(13159);
+		e.other:SummonItem(13159); -- Item: Broken Heirloom Necklace
 		e.other:Ding();
 		e.other:AddEXP(500);
 	end

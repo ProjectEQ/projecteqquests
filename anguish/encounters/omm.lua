@@ -133,8 +133,8 @@ function OMM_HP(e)
 		eq.spawn2(317119,0,0,619, 4968, 280, 384); --#Anishy (317119) west
 		eq.spawn2(317120,0,0,393, 4968, 280, 128); --#Piraand (317120) east
 		eq.spawn2(317121,0,0,504, 5081, 280, 256); --#Garishi (317121) north
-		eq.signal(317118,1);
-		eq.signal(317119,2);		
+		eq.signal(317118,1); -- NPC: #Vyishe
+		eq.signal(317119,2); -- NPC: #Anishy		
 		eq.depop_all(317114); --Coerced_Lieutenant
 		eq.depop_all(317117); --Frenzied_Lasher
 		eq.stop_timer("torment");
@@ -157,8 +157,8 @@ function OMM_Combat(e)
 		eq.set_timer("mmgaze",  math.random(45,75)  * 1000);
 		eq.set_timer("torment", math.random(10,20)  * 1000);
 		eq.set_timer("pick6", 50 * 1000);		
-		eq.spawn2(317114,0,0,378, 4969, 279, 128);
-		eq.spawn2(317114,0,0,618, 4969, 279, 384);
+		eq.spawn2(317114,0,0,378, 4969, 279, 128); -- NPC: Coerced_Lieutenant
+		eq.spawn2(317114,0,0,618, 4969, 279, 384); -- NPC: Coerced_Lieutenant
 		if (reenable_summon == true) then
 			eq.set_timer("enable_summon", 10 * 1000); -- need to parse timer
 		end
@@ -244,7 +244,7 @@ function OMM_Timer(e)
 		for client in now_clients.entries do
 			if (client.valid) then
 				client:WipeHateList();
-				client:MovePCInstance(317,instance_id, 641,3285,-10,0);
+				client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: riwwi
 				client:SetEntityVariable("clicked_up", "0"); -- set to 0, they're no longer up here correctly
 			end
 		end
@@ -287,7 +287,7 @@ function OMM_Timer(e)
 				local var = client:GetEntityVariable("clicked_up");
 				if ((var == nil or var == "0") and room_box:contains(client:GetX(), client:GetY())) then
 					eq.debug(client:GetName() .. " shouldn't be up here yet: " .. os.date("!%c"));
-					client:MovePCInstance(317,instance_id, 641,3285,-10,0);
+					client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: riwwi
 				end
 			end
 		end
@@ -297,7 +297,7 @@ end
 function OMM_Death(e)
 	eq.zone_emote(13,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
 	e.self:CameraEffect(1000,8);	
-	eq.signal(317116 , 317109);
+	eq.signal(317116 , 317109); -- NPC: zone_status
 	eq.depop_all(317110);
 	eq.depop_all(317114);
 	eq.depop_all(317117);

@@ -42,7 +42,7 @@ function event_spawn(e)
 		UpdateFailTimer(3600,3600);
 		current_phase = "Phase2";
 		-- send signal to flavor text NPC
-		eq.signal(223227,2);
+		eq.signal(223227,2); -- NPC: zone_emoter
 		-- spawn phase 2 mobs without the named
 		SpawnPhaseTwo(false);
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase3") then
@@ -54,7 +54,7 @@ function event_spawn(e)
 		UpdateFailTimer(7200,4500);
 		current_phase = "Phase3";
 		-- send signal to flavor text NPC
-		eq.signal(223227,3);
+		eq.signal(223227,3); -- NPC: zone_emoter
 		-- begin Phase 3
 		ControlPhaseThree();
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase4") then
@@ -71,7 +71,7 @@ function event_spawn(e)
 		UpdateFailTimer(11700,14400);
 		current_phase = "Phase4";
 		-- send signal to flavor text NPC
-		eq.signal(223227,4);
+		eq.signal(223227,4); -- NPC: zone_emoter
 		SpawnPhaseFour();
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase5") then
 		-- unlock all the phase 1 and 2 doors.
@@ -92,7 +92,7 @@ function event_spawn(e)
 		UpdateFailTimer(26100,14400);
 		current_phase = "Phase5";
 		-- send signal to flavor text NPC
-		eq.signal(223227,5);
+		eq.signal(223227,5); -- NPC: zone_emoter
 		SpawnPhaseFive();
 	elseif (qglobals[instance_id.."_potimeb_status"] == "Phase6") then
 		-- unlock all the phase 1 and 2 doors.
@@ -118,13 +118,13 @@ function event_spawn(e)
 		UpdateFailTimer(40500,7200);
 		current_phase = "Phase6";
 		-- send signal to flavor text NPC
-		eq.signal(223227,6);
+		eq.signal(223227,6); -- NPC: zone_emoter
 		-- spawn Quarm
-		eq.spawn2(223201,0,0,-401,-1106,32.5,185.625);
+		eq.spawn2(223201,0,0,-401,-1106,32.5,185.625); -- NPC: Quarm
 		-- spawn #A_Servitor_of_Peace
-		eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625);
+		eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625); -- NPC: #A_Servitor_of_Peace
 		-- spawn untargetable Zebuxoruk's Cage
-		eq.spawn2(223228,0,0,-579,-1119,60.625,0);
+		eq.spawn2(223228,0,0,-579,-1119,60.625,0); -- NPC: _ Zebuxoruk's Cage
 	end
 end
 
@@ -136,7 +136,7 @@ function event_signal(e)
 		-- npc global for status tracking.
 		current_phase = "Phase1";
 		-- send signal to flavor text NPC
-		eq.signal(223227,1);
+		eq.signal(223227,1); -- NPC: zone_emoter
 		UpdateFailTimer(0,3600);
 	-- signal 2 comes from the mobs in the final wave of each phase 1 event
 	elseif (e.signal == 2 and current_phase == "Phase1") then
@@ -151,7 +151,7 @@ function event_signal(e)
 			-- add 1 hour (3600 seconds) to the fail timer
 			UpdateFailTimer(3600,3600);
 			-- send signal to flavor text NPC
-			eq.signal(223227,2);
+			eq.signal(223227,2); -- NPC: zone_emoter
 			-- reset counter for later use
 			event_counter = 0;
 			-- spawn phase 2 mobs without the named
@@ -174,7 +174,7 @@ function event_signal(e)
 			-- add 4 hours (14400 seconds) to the fail timer
 			UpdateFailTimer(26100,14400);
 			-- send signal to flavor text NPC
-			eq.signal(223227,5);
+			eq.signal(223227,5); -- NPC: zone_emoter
 			-- reset counter for later use
 			event_counter = 0;
 			-- spawn phase 5
@@ -197,15 +197,15 @@ function event_signal(e)
 			-- add 2 hours (7200 seconds) to the fail timer
 			UpdateFailTimer(40500,7200);
 			-- send signal to flavor text NPC
-			eq.signal(223227,6);
+			eq.signal(223227,6); -- NPC: zone_emoter
 			-- reset counter for later use
 			event_counter = 0;
 			-- spawn Quarm
-			eq.spawn2(223201,0,0,-401,-1106,32.5,185.625);
+			eq.spawn2(223201,0,0,-401,-1106,32.5,185.625); -- NPC: Quarm
 			-- spawn #A_Servitor_of_Peace
-			eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625);
+			eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625); -- NPC: #A_Servitor_of_Peace
 			-- spawn untargetable Zebuxoruk's Cage
-			eq.spawn2(223228,0,0,-579,-1119,60.625,0);
+			eq.spawn2(223228,0,0,-579,-1119,60.625,0); -- NPC: _ Zebuxoruk's Cage
 			-- unlock the stone from phase 5 to phase 6
 			door = entity_list:FindDoor(51);
 			if(door ~= nil) then
@@ -224,7 +224,7 @@ function event_signal(e)
 		local client_list = entity_list:GetClientList();
 		for c in client_list.entries do
 			if (c.valid) then
-				c:MovePC(202,1015,20,392,264);
+				c:MovePC(202,1015,20,392,264); -- Zone: lavastorm
 			end
 		end
 		-- depop the zone nothing else to do here
@@ -255,7 +255,7 @@ function ControlPhaseTwo()
 			current_phase = "Phase3";
 			ControlPhaseThree();
 			-- send signal to flavor text NPC
-			eq.signal(223227,3);
+			eq.signal(223227,3); -- NPC: zone_emoter
 			-- grab the entity list so we can unlock doors.
 			local entity_list = eq.get_entity_list();
 			-- unlock all of the Phase 2 doors
@@ -281,15 +281,15 @@ function SpawnPhaseTwo()
 		eq.spawn_condition("potimeb",instance_id,10,1);
 		-- now spawn the named also since this is wave 2.
 		-- Earthen_Overseer
-		eq.spawn2(223134,0,0,262,1644,493,385);
+		eq.spawn2(223134,0,0,262,1644,493,385); -- NPC: Earthen_Overseer
 		-- Windshapen_Warlord_of_Air
-		eq.spawn2(223118,0,0,262,1354,493,385);
+		eq.spawn2(223118,0,0,262,1354,493,385); -- NPC: Windshapen_Warlord_of_Air
 		-- Ralthos_Enrok
-		eq.spawn2(223127,0,0,262,1109,493,385);
+		eq.spawn2(223127,0,0,262,1109,493,385); -- NPC: Ralthos_Enrok
 		-- War_Shapen_Emissary
-		eq.spawn2(223096,0,0,262,869,493,385);
+		eq.spawn2(223096,0,0,262,869,493,385); -- NPC: War_Shapen_Emissary
 		-- Gutripping_War_Beast
-		eq.spawn2(223146,0,0,262,574,493,385);
+		eq.spawn2(223146,0,0,262,574,493,385); -- NPC: Gutripping_War_Beast
 	end
 end
 
@@ -438,7 +438,7 @@ function ControlPhaseThree()
 			event_counter = 0;
 			current_phase = "Phase4";
 			-- send signal to flavor text NPC
-			eq.signal(223227,4);
+			eq.signal(223227,4); -- NPC: zone_emoter
 			-- grab the entity list so we can unlock door.
 			local entity_list = eq.get_entity_list();
 			-- unlock the portal to port up to phase 4

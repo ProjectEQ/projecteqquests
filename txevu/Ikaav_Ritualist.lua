@@ -11,7 +11,7 @@ end
 
 function event_death_complete(e)
 	--tell ZMTZ I died, spawn adds slower
-	eq.signal(297150, 297147);
+	eq.signal(297150, 297147); -- NPC: #Zun`Muram_Tkarish_Zyk
 end
 
 function event_combat(e)

@@ -21,10 +21,10 @@ function event_say(e)
 		e.self:Say("So, you think you be of assistance to me? Let me test your skill. Travel to Erudin and seek out the beasts which are called Kobolds. I have never seen one and would very much like to have four Kobold Hides with which to make a rug. To do so would earn you some barely used rawhide armor - maybe even a shield.");
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 
@@ -43,24 +43,24 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13423})) then
 		e.self:Say("The map!! It is all blurred. The ink has run. I shall never be able to decipher it now. Still, I owe you for completion of your mission. May these be of assistance. It is always good for a warrior to be well supplied.");
-		e.other:SummonItem(5082);
+		e.other:SummonItem(5082); -- Item: Cast-Iron Long Sword
 		e.other:Ding();
-		e.other:Faction(262,1,0);
-		e.other:Faction(281,1,0);
-		e.other:Faction(311,1,0);
-		e.other:Faction(230,-5,0);
-		e.other:Faction(330,-5,0);
+		e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
+		e.other:Faction(281,1,0); -- Faction: Knights of Truth
+		e.other:Faction(311,1,0); -- Faction: Steel Warriors
+		e.other:Faction(230,-5,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(330,-5,0); -- Faction: The Freeport Militia
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,3,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13424, item2 =13424, item3 = 13424,item4 = 13424})) then
 		e.self:Say("Incredible!! Such grand tones. It shall make a fine rug. You have shown me that you cannot always judge a book by its cover. You are quite skilled. Would you like to perform a [dangerous task] for me?");
-		e.other:SummonItem(eq.ChooseRandom(2101,2102,2103,2104,2105,2106,2107,2108,2109,2110,2111,2112));
+		e.other:SummonItem(eq.ChooseRandom(2101,2102,2103,2104,2105,2106,2107,2108,2109,2110,2111,2112)); -- Item(s): Tattered Skullcap (2101), Tattered Mask (2102), Tattered Gorget (2103), Patchwork Tunic (2104), Tattered Shoulderpads (2105), Patchwork Cloak (2106), Tattered Belt (2107), Patchwork Sleeves (2108), Tattered Wristbands (2109), Tattered Gloves (2110), Patchwork Pants (2111), Patchwork Boots (2112)
 		e.other:Ding();
-		e.other:Faction(262,1,0);
-		e.other:Faction(281,1,0);
-		e.other:Faction(311,1,0);
-		e.other:Faction(230,-5,0);
-		e.other:Faction(330,-5,0);
+		e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
+		e.other:Faction(281,1,0); -- Faction: Knights of Truth
+		e.other:Faction(311,1,0); -- Faction: Steel Warriors
+		e.other:Faction(230,-5,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(330,-5,0); -- Faction: The Freeport Militia
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,4,0,0);
 	end

@@ -9,6 +9,6 @@ end
 function event_timer(e)
   if (e.timer == "plague") then
     eq.stop_timer("plague");
-    e.self:CastSpell(5713, e.self:GetTarget():GetID());
+    e.self:CastSpell(5713, e.self:GetTarget():GetID()); -- Spell: Plague of Hulcror
   end
 end

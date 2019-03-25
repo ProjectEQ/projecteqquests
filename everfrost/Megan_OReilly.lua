@@ -5,7 +5,7 @@ function event_say(e)
 		e.self:Say("You were sent to retrieve the remains? I am sorry, I lost them. It was not my fault! There was no escort as I was told. I got lost returning to Halas and ended up on a frozen river. The ice broke and the remains were scattered into the freezing water. Will you [dive for the remains]?");
 	elseif(e.message:findi("dive for the remains")) then
 		e.self:Say("Thank the Tribunal!! I would have, but I cannot swim. Take this chest. Fill it with the four pieces which fell below the surface. I know not what else lies within. When you fill the box and combine the items, return it to Renth. Good luck, $name.");
-		e.other:SummonItem(17945);
+		e.other:SummonItem(17945); -- Item: Empty Box
 	end
 end
 

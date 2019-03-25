@@ -6,7 +6,7 @@ function event_say(e)
 	elseif(e.message:findi("I am a new recruit")) then
 		e.self:Say("I am always pleased to see new blood ready to serve the Steel Warriors. All new recruits are asked to go through training that I personally oversee. These training exercises will test both your mind body and spirit because they are not easily completed. If you are [ready to begin] I will explain to you how the tests work and present you with your Steel Warriors Assembly Kit.");
 	elseif(e.message:findi("I am ready to begin")) then
-		e.other:SummonItem(17268);
+		e.other:SummonItem(17268); -- Item: Steel Warriors Assembly Kit
 		e.self:Say("Here is your Steel Warriors Assembly Kit. In this kit you will combine numerous [magical items] that can be infused in certain quantities to create an armor material. These armor materials can then be placed in a forge along with the correct mold to fashion a piece of Battlemasters Platemail Armor.");
 	elseif(e.message:findi("What magical item")) then
 		e.self:Say("The items you will need for your armor materials will be collected throughout the Qeynos area. You will find items that you need by hunting and by talking to local merchants. Once you are ready to begin collecting the items for an armor material you must simply tell me what piece you [want] to craft. I can provide you with the recipes and armor molds for Battlemasters Platemail [Helm], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets] and [Breastplate].");
@@ -41,7 +41,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 27421,item2 = 27421, item3 = 27421,item4 = 27422})) then
 		e.self:Say("I salute you young warrior! Take this reward with pride.");
-		e.other:SummonItem(27492);
+		e.other:SummonItem(27492); -- Item: Warsword of the Battlemaster
 		e.other:Ding();
 		e.other:AddEXP(100);
 	end

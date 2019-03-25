@@ -22,7 +22,7 @@ function Keelee_Say(e)
 			eq.set_timer("banish",3000);
 		end
 		if(e.message:findi("hail") and event_started==true and event_won==true and e.other:GetID()==event_starter:GetID()) then
-			e.other:SummonItem(69982);
+			e.other:SummonItem(69982); -- Item: Keelee's Brooch
 			e.self:Say(e.other:GetName() .. "! You are my savior. Thank you very much for saving me. Here is my Brooch, take it as a symbol of friendship from me to you. I need to depart. I still have some collecting to do.");
 			local qglobals = eq.get_qglobals(e.other);
 			if(qglobals["pal_chest_keel"] == nil ) then
@@ -63,7 +63,7 @@ function Keelee_Timer(e)
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=300 and client:GetID()~=event_starter:GetID()) then	
-				client:MovePC(37, -956,725,50,120);
+				client:MovePC(37, -956,725,50,120); -- Zone: chambersa
 				client:Message(15,"Foolish adventurer, do not interfere with this ritual!");
 			end
 		end

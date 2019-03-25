@@ -21,7 +21,7 @@ function event_signal(e)
 		e.self:Say("Here's one for Sir Lucan... He's just a ruler. In a long line of rulers. Looking for a few more orcs to slay. They say that he fights them with one hand tied to his back. And he won't leave Freeport till you remember his name. Thank you.");
 	elseif(SingASong == 2) then
 		e.self:Say("Look around you. Stand up tall!! Feel for the poor and never have a cold heart. Becausee we are all in this. We are not like the rest. We're all here together and know we are the best. So Norrath, can't you see the error in your ways? You're living separated each and every day. Don't be thinking that we don't want you, because, Norrath, we do. Freeport is the only place where your friend can be from afar. I hope you enjoyed that one.");
-		eq.signal(10199,1);
-		eq.signal(10182,1);
+		eq.signal(10199,1); -- NPC: Sir_Edwin_Motte
+		eq.signal(10182,1); -- NPC: Talym_Shoontar
 	end
 end

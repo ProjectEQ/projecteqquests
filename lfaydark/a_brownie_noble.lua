@@ -20,7 +20,7 @@ function event_trade(e)
 	if(qglobals["ench_epic"] == "8" and item_lib.check_turn_in(e.trade, {item1 = 52946}) and e.other:HasItem(52952) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(119184) == false) then
 		e.self:Say("Very well, here is the fragment. I can only imagine at the power of the unified crystal.");
 		e.other:AddEXP(10000);
-		e.other:SummonItem(52957);
+		e.other:SummonItem(52957); -- Item: Purifying Crystal Fragment
 	end	
 	item_lib.return_items(e.self, e.other, e.trade)
 end

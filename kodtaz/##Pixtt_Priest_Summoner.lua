@@ -17,5 +17,5 @@
 --	end
 --end
 function event_death_complete(e)
-	eq.signal(293218, 0);
+	eq.signal(293218, 0); -- NPC: #Trigger_Kodtaz_1
 end

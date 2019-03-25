@@ -10,21 +10,21 @@ function event_hp(e)
 	local zloc = e.self:GetZ();
 	local heading = e.self:GetHeading();
 	if(e.hp_event == 80) then
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
 	end
 end
 
 function event_death_complete(e)
 	-- send a signal to the zone_status that I died
-	eq.signal(223097,6);
+	eq.signal(223097,6); -- NPC: zone_status
 	-- get the zone instance id
 	local instance_id = eq.get_zone_instance_id();
 	-- load qglobals and set bit 4

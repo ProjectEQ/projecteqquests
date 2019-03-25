@@ -3,7 +3,7 @@ function event_say(e)
 		e.self:Say(string.format("Hail, %s. You had best keep moving. One who stands around too long in Qeynos Hills tends to get surprised by vicious creatures.",e.other:GetName()));
 	elseif(e.message:findi("donate")) then
 		e.self:Say("Why, yes! I would love to donate to the Temple of Thunder. My father was a brave and noble member of that order. Here you are. You should ask Guard Cheslin also. His father and mine are both members of Thunder. Now, move along!");
-		e.other:SummonItem(13294);
+		e.other:SummonItem(13294); -- Item: Donation
 	end
 end
 

@@ -8,15 +8,15 @@ function event_trade(e)
 end
 
 function event_death_complete(e)
-	eq.signal(6186,0);
-	eq.signal(6187,0);
+	eq.signal(6186,0); -- NPC: Lartin
+	eq.signal(6187,0); -- NPC: Grex
 	eq.stop_timer("depop");
 end
 
 function event_timer(e)
 	if(e.timer == "depop") then
-		eq.signal(6186,0);
-		eq.signal(6187,0);		
+		eq.signal(6186,0); -- NPC: Lartin
+		eq.signal(6187,0); -- NPC: Grex		
 		eq.depop();
 	end
 end

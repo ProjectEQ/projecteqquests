@@ -73,7 +73,7 @@ function Fear_Timer(e)
 
       if (mobs_died >= mobs_must_die) then
 
-        eq.spawn2(304013, 0, 0, -212, 273, 71, 40);
+        eq.spawn2(304013, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
         eq.depop();
 
         local mpg_helper = require("mpg_helper");
@@ -94,7 +94,7 @@ function Fear_Timer(e)
 end
 
 function Fearless_Died(e)
-  eq.signal(304004, 1);
+  eq.signal(304004, 1); -- NPC: Master_of_Fear
 end
 
 function Fearable_Tick(e)

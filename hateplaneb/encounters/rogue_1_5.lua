@@ -4,7 +4,7 @@ local mitflag=1;
 function Trash_Death(e) 
   deadtrash = deadtrash+1;
   if(deadtrash ==20) then
-	eq.spawn2(186190,0,0,-460,-1597,70.2,0);
+	eq.spawn2(186190,0,0,-460,-1597,70.2,0); -- NPC: a_Teir`Dal_guardian
   end
 end
 

@@ -55,7 +55,7 @@ function Destruction_Say(e)
     eq.set_timer("minutes", 1 * 60 * 1000);
     eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   elseif (e.message:findi("test") and e.other:Admin() > 80) then
-    eq.signal(309061, 1);
+    eq.signal(309061, 1); -- NPC: Master_of_Destruction
   end
 end
 
@@ -87,7 +87,7 @@ end
 function Destruction_Death(e)
   eq.spawn_condition(this_zone, instance_id, 1, 0);
   eq.stop_all_timers();
-  eq.spawn2(309068, 0, 0, -212, 273, 71, 40);
+  eq.spawn2(309068, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
 
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
@@ -110,7 +110,7 @@ function Mini_Death(e)
   mobs_killed = mobs_killed + 1;
 
   if ( mobs_killed >= mobs_to_kill ) then
-    eq.signal(309061, 1);
+    eq.signal(309061, 1); -- NPC: Master_of_Destruction
   end
 end
 

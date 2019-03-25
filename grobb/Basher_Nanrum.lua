@@ -14,17 +14,17 @@ function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 10307, item2 = 10307, item3 = 10307})) then
 		e.self:Say("Heh heh. All da eyeballses! I didn't think ya could do it but ya did. Here is da shiny. If you gets more I always have more shinies.");
-		e.other:SummonItem(eq.ChooseRandom(10351, 10026, 10060, 10018, 10006, 10017));
+		e.other:SummonItem(eq.ChooseRandom(10351, 10026, 10060, 10018, 10006, 10017)); -- Item(s): Brass Earring (10351)
 		e.other:Faction(235,10,0); -- Da Bashers
 		e.other:Faction(222,-5,0); -- Broken Skull Clan
 		e.other:Ding();
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 10307, item2 = 10307})) then
 	 	e.self:Say("Well dat be some of da eyeballses I askeded for. But I you needs ta give me three for da shiny.");
-		e.other:SummonItem(10307,2);
+		e.other:SummonItem(10307,2); -- Item: Fire Beetle Eye
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 10307})) then
 	 	e.self:Say("Well dat be some of da eyeballses I askeded for. But I you needs ta give me three for da shiny.");
-		e.other:SummonItem(10307);
+		e.other:SummonItem(10307); -- Item: Fire Beetle Eye
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

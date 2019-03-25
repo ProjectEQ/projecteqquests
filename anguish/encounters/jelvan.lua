@@ -72,9 +72,9 @@ function Jelvan_Say(e)
 		tanthi_aggro=0;
 		tantho_aggro=0;
 		tanthu_aggro=0;
-		eq.unique_spawn(317099,0,0, -174, 2152, -149, 334);
-		eq.unique_spawn(317100,0,0, -341, 2152, -149, 154);
-		eq.unique_spawn(317101,0,0, -252, 2008, -149, 0);
+		eq.unique_spawn(317099,0,0, -174, 2152, -149, 334); -- NPC: Tanthi_the_Tormentor
+		eq.unique_spawn(317100,0,0, -341, 2152, -149, 154); -- NPC: Tantho_the_Tormentor
+		eq.unique_spawn(317101,0,0, -252, 2008, -149, 0); -- NPC: Tanthu_the_Tormentor
 		eq.set_timer("check_event",1*1000);
 		eq.set_timer("balance",60*1000);
 		eq.set_timer("check_leash",3000);
@@ -104,7 +104,7 @@ function Jelvan_Timer(e)
 		if(torment_alive==0) then
 		--set player lockout
 		--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"			
-			eq.signal(317116 , 317004);
+			eq.signal(317116 , 317004); -- NPC: zone_status
 			eq.unique_spawn(317111,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Jelvan`s_Keepsake (317111)
 			eq.zone_emote(15,"You hear Jelvan's shouts of gratitude as he runs into the shadows.");	
 			event_started=0;
@@ -201,9 +201,9 @@ function Jelvan_Timer(e)
 			tanthi_ae=0;
 			tantho_ae=0;
 			tanthu_ae=0;
-			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID(),0,1);
-			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID(),0,1);
-			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,1);	
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan	
 			e.self:Shout("Here you go! This should help!");
 		end
 	end
@@ -248,13 +248,13 @@ end
 function Tormentor_Timer(e)
 	local myid=e.self:GetNPCTypeID(); 
 	if (myid==317099 and e.timer == "cast") then		
-		e.self:CastSpell(5678, e.self:GetTarget():GetID());
+		e.self:CastSpell(5678, e.self:GetTarget():GetID()); -- Spell: Wail of Anguish
 		eq.set_timer("cast",45*1000);
 	elseif (myid==317100 and e.timer == "cast") then
-		e.self:CastSpell(5679, e.self:GetTarget():GetID());
+		e.self:CastSpell(5679, e.self:GetTarget():GetID()); -- Spell: Touch of Anguish
 		eq.set_timer("cast",45*1000);
 	elseif (myid==317101 and e.timer == "cast") then
-		e.self:CastSpell(5680, e.self:GetTarget():GetID());
+		e.self:CastSpell(5680, e.self:GetTarget():GetID()); -- Spell: Gaze of Anguish
 		eq.set_timer("cast",45*1000);		
 	elseif (e.timer == "check_leash") then	
 		if(e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160) then
@@ -266,13 +266,13 @@ function Tormentor_Timer(e)
 	end
 	if((myid==317099 and tanthi_ae==1) or (myid==317100 and tantho_ae==1) or (myid==317101 and tanthu_ae==1)) then
 		if (e.timer=="void") then
-			e.self:CastSpell(5677, e.self:GetTarget():GetID());
+			e.self:CastSpell(5677, e.self:GetTarget():GetID()); -- Spell: Void of Suppression
 			eq.set_timer("void",60*1000);
 		elseif (e.timer=="relinq") then
-			e.self:CastSpell(5675, e.self:GetTarget():GetID());
+			e.self:CastSpell(5675, e.self:GetTarget():GetID()); -- Spell: Relinquish Spirit
 			eq.set_timer("relinq",30*1000);
 		elseif (e.timer=="torment") then
-			e.self:CastSpell(5676, e.self:GetTarget():GetID());
+			e.self:CastSpell(5676, e.self:GetTarget():GetID()); -- Spell: Torment of Body
 			eq.set_timer("torment",60*1000);
 		end
 	end
@@ -288,7 +288,7 @@ function Tormentor_Signal(e)
 		  function(ent, hate, damage, frenzy)
 			if(ent:IsClient()) then
 			  local currclient=ent:CastToClient();
-			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0);
+			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0); -- Zone: riwwi
 			end
 		  end
 		);		
@@ -302,15 +302,15 @@ function Leash_Tormentors()
 	
 	if tanthi_l.valid then
 		if (tanthi_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthi_l:GetZ() > -130 or tanthi_l:GetZ() < -160) then
-      eq.signal(317099,1);
+      eq.signal(317099,1); -- NPC: Tanthi_the_Tormentor
 		end
 	elseif tantho_o.valid then
 		if (tantho_o:CalculateDistance( -256, 2100, -120.9) > 140 or tantho_o:GetZ() > -130 or tantho_o:GetZ() < -160) then
-      eq.signal(317100,1);
+      eq.signal(317100,1); -- NPC: Tantho_the_Tormentor
 		end
 	elseif tanthu_u.valid then
 		if (tanthu_u:CalculateDistance( -256, 2100, -120.9) > 140 or tanthu_u:GetZ() > -130 or tanthu_u:GetZ() < -160) then
-      eq.signal(317101,1);
+      eq.signal(317101,1); -- NPC: Tanthu_the_Tormentor
 		end
 	end
 end

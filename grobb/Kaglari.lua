@@ -27,7 +27,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 13073, item2 = 13073, item3 = 13070, item4 = 13070})) then -- Majik power
 		e.self:Say("Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want to [" .. eq.say_link("help Innoruuk",false,"help Innoruuk") .. "]?");
-		e.other:SummonItem(15093);
+		e.other:SummonItem(15093); -- Item: Spell: Burst of Flame
 		e.other:Ding();
 		e.other:Faction(237,5,0);  -- +Dark Ones
 		e.other:Faction(308,5,0);  -- +Shadowknights of Night Keep
@@ -35,7 +35,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13916})) then -- More Help for Innoruuk
 		e.self:Say("Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.");
-		e.other:SummonItem(15272);
+		e.other:SummonItem(15272); -- Item: Spell: Spirit Pouch
 		e.other:Ding();
 		e.other:Faction(237,5,0);  -- +Dark Ones
 		e.other:Faction(308,5,0);  -- +Shadowknights of Night Keep

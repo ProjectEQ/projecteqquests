@@ -10,7 +10,7 @@ function event_trade(e)
     local class = e.other:GetClass();
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 14321})) then
-		e.other:SummonItem(eq.ChooseRandom(13980, 13980, 14031));
+		e.other:SummonItem(eq.ChooseRandom(13980, 13980, 14031)); -- Item(s): Wee Harvester (13980)
 		e.other:Ding();
 		e.other:AddEXP(500);
 	elseif((class == 8 or class == 9) and item_lib.check_turn_in(e.trade, {item1 = 11139})) then

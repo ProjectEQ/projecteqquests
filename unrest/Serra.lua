@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Emote("claps her hands. 'Oh goody! But... I cannot seem to remember his name. He gave me this note before I...");
 	elseif(e.message:findi("note")) then
 		e.self:Say("I hope it will help you out. Please find him so I can leave this place?");
-		e.other:SummonItem(20374);
+		e.other:SummonItem(20374); -- Item: Ripped Qeynos Bards Guild Flyer
 	end
 end
 
@@ -17,7 +17,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 20370})) then
 		e.self:Say("Oh! You have the dolly! Thank you! Thank you! Thank you! I can go home now. Please give this to my father, Baenar. He will understand when he gets it.' Serra begins to fade away. 'Bye bye!");
 		e.other:Ding();
-		e.other:SummonItem(20371);
+		e.other:SummonItem(20371); -- Item: Note for Baenar
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -18,7 +18,7 @@ function event_timer(e)
 	elseif(e.timer == "8") then
 		eq.stop_timer("7");
 		eq.stop_timer("8");
-		eq.signal(154130,5,10);
+		eq.signal(154130,5,10); -- NPC: WDTrpMn
 		eq.depop();
 	end
 end
@@ -26,5 +26,5 @@ end
 function event_death_complete(e)
 	eq.stop_timer(7);
 	eq.stop_timer(8);
-	eq.signal(154130,1,10);
+	eq.signal(154130,1,10); -- NPC: WDTrpMn
 end

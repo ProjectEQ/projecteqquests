@@ -3,25 +3,25 @@ function event_say(e)
 		e.self:Say("Yes? What is it you want from me? I have nothing that you would be interested in. Not even money to pay the ridiculous taxes imposed by the Freeport Militia.");
 	elseif(e.message:findi("dismal priest boots")) then
 		e.self:Say("'To assemble Dismal priest Mail Boots you will need to obtain two bricks of crude iron and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Iron Boots with two Ruined Coyote Pelts, and two Large Fire Beetle Tarsi in the Mail Assembly Kit.");
-		e.other:SummonItem(19634);
+		e.other:SummonItem(19634); -- Item: Crude Boot Mold
 	elseif(e.message:findi("dismal priest bracer")) then
 		e.self:Say("To assemble a Dismal priest Mail Bracer you will need to obtain a brick of crude iron and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Iron Bracer with a Ruined Coyote Pelt and a Sand Scarab Hatchling Sternite in the Mail Assembly Kit.");
-		e.other:SummonItem(19632);
+		e.other:SummonItem(19632); -- Item: Crude Bracer Mold
 	elseif(e.message:findi("dismal priest breastplate")) then
 		e.self:Say("To assemble a Dismal priest Breastplate you will need to obtain four bricks of crude iron and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Iron Breastplate with a Coyote Pelt, a Giant Fire Beetle Carapace, and two Giant Fire Beetle Tergites in the Mail Assembly Kit.");
-		e.other:SummonItem(19637);
+		e.other:SummonItem(19637); -- Item: Crude Breastplate Mold
 	elseif(e.message:findi("dismal priest gauntlets")) then
 		e.self:Say("To assemble Dismal priest Gauntlets you will need to obtain two bricks of crude iron and smelt them in a forge with a Water Flask and this crude Gauntlet Mold. Once that is done combine the Crude Iron Gauntlets with a Ruined Coyote Pelt and two Sand Scarab Hatchling Tarsi in the Mail Assembly Kit.");
-		e.other:SummonItem(19633);
+		e.other:SummonItem(19633); -- Item: Crude Gauntlets Mold
 	elseif(e.message:findi("dismal priest greaves")) then
 		e.self:Say("To assemble Dismal priest Greaves you will need to obtain two bricks of crude iron and smelt them in a forge with a Water Flask and this Crude Greaves Mold. Once that is done combine the Crude Iron Greaves with two Low Quality Coyote Pelts and two Large Fire Beetle Sternites in the Mail Assembly Kit.");
-		e.other:SummonItem(19636);
+		e.other:SummonItem(19636); -- Item: Crude Greaves Mold
 	elseif(e.message:findi("dismal priest helm")) then
 		e.self:Say("To assemble a Dismal priest Helm you will need to obtain two bricks of crude iron and smelt them in a forge with a Water Flask and this Crude Helm Mold. Once that is done combine the Crude Iron Helm with a Ruined Coyote Pelt and two Sand Scarab Hatchling Eyes in the Mail Assembly Kit.");
-		e.other:SummonItem(19631);
+		e.other:SummonItem(19631); -- Item: Crude Helm Mold
 	elseif(e.message:findi("dismal priest vambraces")) then
 		e.self:Say("To assemble Dismal priest Vambraces you will need to obtain two bricks of crude iron and smelt them in a forge with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Iron Vambraces with a Low Quality Coyote Pelt and two Large Fire Beetle Patella in the Mail Assembly Kit.");
-		e.other:SummonItem(19635);
+		e.other:SummonItem(19635); -- Item: Crude Vambrace Mold
 	end
 end
 

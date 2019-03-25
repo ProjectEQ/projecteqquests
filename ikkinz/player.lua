@@ -1,6 +1,6 @@
 function event_enter_zone(e)
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(227074) == false) then
-		eq.spawn2(294631,0,0,0,0,0,0);
+		eq.spawn2(294631,0,0,0,0,0,0); -- NPC: lockout_ikkinz
 	end
 end
 

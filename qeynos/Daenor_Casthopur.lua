@@ -5,7 +5,7 @@ function event_say(e)
 	elseif(e.message:findi("neclo")) then
 		if(fac < 6) then
 			e.self:Say("Neclo Rheslar is an old friend of mine. Right now, he's out working in the Qeynos Hills. In fact, if you have some free time, you should go out and meet him. Here, if you go, take this note to him for me. Thanks, friend.");
-			e.other:SummonItem(18823);
+			e.other:SummonItem(18823); -- Item: Note to Neclo
 		else
 			e.self:Say("The Order of Three has been monitoring your recent activities, and we are appalled by you and your actions! Now, begone!");
 		end

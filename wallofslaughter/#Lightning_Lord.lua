@@ -2,7 +2,7 @@ function event_spawn(e)
 	eq.set_next_hp_event(90);
 	eq.set_timer("check_hp",1000);
 	eq.set_timer("eshock",30*1000);
-	e.self:CastSpell(5810, e.self:GetID());
+	e.self:CastSpell(5810, e.self:GetID()); -- Spell: Electric Shock
 end
 
 function event_hp(e)
@@ -36,6 +36,6 @@ function event_timer(e)
 			end;
 		end
 	elseif e.timer=="eshock" then
-		e.self:CastSpell(5810,e.self:GetID());
+		e.self:CastSpell(5810,e.self:GetID()); -- Spell: Electric Shock
 	end
 end

@@ -17,7 +17,7 @@ function event_trade(e)
 		e.other:AddEXP(150);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1768})) then
 		e.self:Say("Thank you for recovering my tools, please take this to my brother for your reward.");
-		e.other:SummonItem(1771);
+		e.other:SummonItem(1771); -- Item: Yelesom's Reports
 		e.other:Ding();
 		e.other:AddEXP(150);
 	end

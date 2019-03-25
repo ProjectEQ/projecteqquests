@@ -60,19 +60,19 @@ function event_spawn(e)
 end
 
 function Spawn_keldovan()
-	eq.unique_spawn(317005,0,0, -301 ,702, -201, 128);
+	eq.unique_spawn(317005,0,0, -301 ,702, -201, 128); -- NPC: Keldovan_the_Harrier
 end
 
 function Spawn_jelvan()
-	eq.unique_spawn(317004,0,0, -256 ,2100, -121, 0);
+	eq.unique_spawn(317004,0,0, -256 ,2100, -121, 0); -- NPC: Jelvan
 end
 
 function Spawn_ture()
-	eq.unique_spawn(317003,0,0, 610, 3381, -12, 260);
+	eq.unique_spawn(317003,0,0, 610, 3381, -12, 260); -- NPC: Ture
 end
 
 function Spawn_hanvar()
-	eq.unique_spawn(317002,0,0, 424, 4389, 222, 128);
+	eq.unique_spawn(317002,0,0, 424, 4389, 222, 128); -- NPC: Warden_Hanvar
 end
 
 function PH_amv()	
@@ -80,8 +80,8 @@ end
 
 function Spawn_omm()
 --always spawn AMV if OMM is up.  AMV only drops chest on the first kill
-	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0);
-	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 254);
+	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0); -- NPC: Arch_Magus_Vangl
+	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 254); -- NPC: Overlord_Mata_Muram
 end
 
 function PH_lorb()
@@ -109,9 +109,9 @@ function Check_lorb(lockout_name)
 			AddLockout(Anguish_Lockouts[1]);
 			
 			if lockout_name =="Anguish_keldovan" then
-				eq.spawn2(317087,0,0, -301 ,702, -201, 0);
+				eq.spawn2(317087,0,0, -301 ,702, -201, 0); -- NPC: Orb_of_Discordant_Energy
 			elseif lockout_name == "Anguish_jelvan" then
-				eq.get_entity_list():GetNPCByNPCTypeID(317111):AddItem(47100,1);
+				eq.get_entity_list():GetNPCByNPCTypeID(317111):AddItem(47100,1); -- NPC: a_minor_scarab
 			end	
 			eq.debug("Check_lorb: Spawn Lower Orb");
 		else
@@ -141,9 +141,9 @@ function Check_uorb(lockout_name)
 			AddLockout(Anguish_Lockouts[2]);
 			
 			if lockout_name =="Anguish_ture" then
-				eq.spawn2(317087,0,0, 610, 3381, -12, 0);
+				eq.spawn2(317087,0,0, 610, 3381, -12, 0); -- NPC: Orb_of_Discordant_Energy
 			elseif lockout_name == "Anguish_hanvar" then
-				eq.spawn2(317087,0,0, 478, 4390, 209, 0);
+				eq.spawn2(317087,0,0, 478, 4390, 209, 0); -- NPC: Orb_of_Discordant_Energy
 			end				
 			eq.debug("Check_uorb: Spawn Upper Orb");
 		else
@@ -226,7 +226,7 @@ function Spawn_augs()
 			--eq.zone_emote(15,"spawn: " .. list_named[i][1] .. " ," .. list_named[i][3] .. " ," .. list_named[i][4] .. " ," .. list_named[i][5] .. " ," ..list_named[i][6]); 
 		    eq.spawn2(list_named[i][1],grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);		  
 		 else
-			eq.spawn2(317076,grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);
+			eq.spawn2(317076,grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]); -- NPC: #a_lightning_warrior_commander
 		end;		
 	end
 end

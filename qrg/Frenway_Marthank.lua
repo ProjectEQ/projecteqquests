@@ -15,12 +15,12 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18809,item2 = 13912})) then
 		e.self:Say(string.format("It is not right to feel satisfied at the sight of Mammoth's hide, but I do. Thank you, %s.",e.other:GetName()));
-		e.other:SummonItem(18809);
+		e.other:SummonItem(18809); -- Item: Bayle List II
 		e.other:Ding();
-		e.other:Faction(302,10,0);
-		e.other:Faction(272,10,0);
-		e.other:Faction(306,-30,0);
-		e.other:Faction(262,10,0);
+		e.other:Faction(302,10,0); -- Faction: Protectors of Pine
+		e.other:Faction(272,10,0); -- Faction: Jaggedpine Treefolk
+		e.other:Faction(306,-30,0); -- Faction: Sabertooths of Blackburrow
+		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,6,0,0);
 	end

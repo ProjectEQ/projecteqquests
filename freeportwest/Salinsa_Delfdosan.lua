@@ -45,11 +45,11 @@ function event_trade(e)
 		e.self:Say("Yes, finally I can read the messages from Qeynos. Please take this as a reward for your efforts."); --  text made up
 		e.other:SummonItem(9937); -- Mace of the Ordained
 		e.other:Ding();
-		e.other:Faction(281,1,0);
-		e.other:Faction(362,1,0);
-		e.other:Faction(336,-2,0);
-		e.other:Faction(330,-2,0);
-		e.other:Faction(311,1,0);
+		e.other:Faction(281,1,0); -- Faction: Knights of Truth
+		e.other:Faction(362,1,0); -- Faction: Priests of Marr
+		e.other:Faction(336,-2,0); -- Faction: Coalition of Tradefolk Underground
+		e.other:Faction(330,-2,0); -- Faction: The Freeport Militia
+		e.other:Faction(311,1,0); -- Faction: Steel Warriors
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -8,13 +8,13 @@
 function event_loot(e)
   if (e.item:GetID() == 52171) then
     -- Coper Seal of Subversion 
-    eq.signal(306001, 1);
+    eq.signal(306001, 1); -- NPC: Master_of_Subversion
   elseif (e.item:GetID() == 52172) then
     -- Silver Seal of Subversion
-    eq.signal(306001, 2);
+    eq.signal(306001, 2); -- NPC: Master_of_Subversion
   elseif (e.item:GetID() == 52173) then
     -- Gold Seal of Subversion
-    eq.signal(306001, 3);
+    eq.signal(306001, 3); -- NPC: Master_of_Subversion
   elseif (e.item:GetID() == 56016 and e.corpse:GetNPCTypeID() == 306009) then
     if (e.self:GetGlobal("cleric20_mpg_drop") == "1") then
       e.self:DelGlobal("cleric20_mpg_drop");
@@ -26,7 +26,7 @@ function event_loot(e)
 end
 
 function event_zone(e)
-  eq.signal(306019, 9);
+  eq.signal(306019, 9); -- NPC: Master_of_Foresight
 end
 
 function event_enter_zone(e)

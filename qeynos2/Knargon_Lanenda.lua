@@ -1,19 +1,19 @@
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then
 		e.self:Say("Hey Pelshia, how's business?");
-		eq.signal(2073,1);
+		eq.signal(2073,1); -- NPC: Pelshia_Thuxpire Weapons
 	elseif(e.wp == 7) then
 		e.self:Say("And what about you, gorgeous? Looking as delightful as ever, I must say.");
 	elseif(e.wp == 18) then
 		e.self:Say("So, yeah, that Pelshia, she's all over me. And Renux, too. She was giving me the look, man. I'm telling ya. Zan, all the ladies want a piece of the Knargman.");
-		eq.signal(2085,1);
+		eq.signal(2085,1); -- NPC: Zannsin_Resdinet Rogue Guildmaster
 	end
 end
 
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("How about you and I go take a stroll under the docks tonight?");
-		eq.signal(2073,2);
+		eq.signal(2073,2); -- NPC: Pelshia_Thuxpire Weapons
 	end
 end
 

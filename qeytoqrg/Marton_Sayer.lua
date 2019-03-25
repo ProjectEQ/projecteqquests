@@ -15,23 +15,23 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12204})) then
 		e.self:Say("Baby Joseph!! Look, Momma!! Baby Joseph has been rescued by this good adventurer!! That evil Lord Elgnub made good on his word and snatched my son from under our noses. You saved the day!! For this you shall wield 'Gnoll Slayer'!! Be aware of its [true potential].");
-		e.other:SummonItem(5416);
+		e.other:SummonItem(5416); -- Item: Gnoll Slayer
 		e.other:Ding();
-		e.other:Faction(291,10,0);
-		e.other:Faction(223,-10,0);
-		e.other:Faction(219,10,0);
-		e.other:Faction(229,10,0);
-		e.other:Faction(262,10,0);
+		e.other:Faction(291,10,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(223,-10,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(219,10,0); -- Faction: Antonius Bayle
+		e.other:Faction(229,10,0); -- Faction: Coalition of Tradefolk
+		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 8357,item2 = 8356,item3 = 5416})) then
 		e.self:Say("'The eye and the journal! What a great day! The Gnoll Slayer shall be returned to full strength because of you. Your service to Qeynos will not soon be forgotten.");
-		e.other:SummonItem(5417);
+		e.other:SummonItem(5417); -- Item: Gnoll Slayer
 		e.other:Ding();
-		e.other:Faction(291,10,0);
-		e.other:Faction(223,-10,0);
-		e.other:Faction(219,10,0);
-		e.other:Faction(229,10,0);
-		e.other:Faction(262,10,0);
+		e.other:Faction(291,10,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(223,-10,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(219,10,0); -- Faction: Antonius Bayle
+		e.other:Faction(229,10,0); -- Faction: Coalition of Tradefolk
+		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

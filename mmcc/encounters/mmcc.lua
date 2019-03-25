@@ -42,10 +42,10 @@ end
 
 function Real_Death(e)
   eq.stop_timer('valdoon');
-  eq.spawn2(243680, 0, 0, 1129, 560, 10.13, 372);
-  eq.spawn2(243681, 0, 0, 1129, 477, 10.13, 372);
+  eq.spawn2(243680, 0, 0, 1129, 560, 10.13, 372); -- NPC: Guardian`s_Stone_Chest
+  eq.spawn2(243681, 0, 0, 1129, 477, 10.13, 372); -- NPC: Guardian`s_Granite_Chest
   if (extra_loot == true) then
-    eq.spawn2(243679, 0, 0, 1241, 510, -3.90, 380);
+    eq.spawn2(243679, 0, 0, 1241, 510, -3.90, 380); -- NPC: Valdoon`s_gilded_coffin
   end
 
   local lockout_name = 'LDON_mmcc';
@@ -65,10 +65,10 @@ end
 
 function Real_Timer(e)
   if (e.timer == 'valdoon') then
-    eq.spawn2(243678, 0, 0, 1060, 480, 11.73, 506);
-    eq.spawn2(243678, 0, 0, 1030, 480, 11.73, 506);
-    eq.spawn2(243678, 0, 0, 1060, 564, 11.73, 242);
-    eq.spawn2(243678, 0, 0, 1030, 564, 11.73, 242);
+    eq.spawn2(243678, 0, 0, 1060, 480, 11.73, 506); -- NPC: Kel`Novar_Lookout
+    eq.spawn2(243678, 0, 0, 1030, 480, 11.73, 506); -- NPC: Kel`Novar_Lookout
+    eq.spawn2(243678, 0, 0, 1060, 564, 11.73, 242); -- NPC: Kel`Novar_Lookout
+    eq.spawn2(243678, 0, 0, 1030, 564, 11.73, 242); -- NPC: Kel`Novar_Lookout
   end
 end
 

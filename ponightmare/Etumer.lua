@@ -11,7 +11,7 @@ function event_say(e)
 		 e.self:Say("Mujaki? Haven't seen him around lately");
 	else
 		MoveGroup(e.other:GetGroup(), e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, -1939, -2114, 167.48, 121);
-		eq.signal(204039,1);
+		eq.signal(204039,1); -- NPC: Mujaki_the_Devourer
 	end
   end
 end
@@ -25,7 +25,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
             -- check the distance and port them up if close enough
             if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
                -- port the player up
-               client_v:MovePC(204, tgt_x, tgt_y, tgt_z, tgt_h);
+               client_v:MovePC(204, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lfaydark
             end
          end
       end

@@ -22,14 +22,14 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 10604})) then
 		e.self:Say("It is time then, are you ready to get the required components?");
 		e.other:Ding();
-		e.other:SummonItem(10604);
-		e.other:SummonItem(17861);
+		e.other:SummonItem(10604); -- Item: Jeb's Seal
+		e.other:SummonItem(17861); -- Item: Enchanters Sack
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 10636})) then
 		e.self:Say("Oh excellent, you have done what is required. Here take this part, and seek the third master, you are well on your way.");
 		e.other:Ding();
-		e.other:Faction(404,30,0);
+		e.other:Faction(404,30,0); -- Faction: Truespirit
 		e.other:AddEXP(100000);
-		e.other:SummonItem(10611);
+		e.other:SummonItem(10611); -- Item: 2nd Piece of Staff
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

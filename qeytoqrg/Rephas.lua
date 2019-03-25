@@ -11,7 +11,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13072})) then
 		e.self:Say("Ahh yes..  These are a little small, but still some good eating, if you know how to cook 'em of course..   Here ya go, enjoy and may Karana keep your fields lush and green.");
-		e.other:SummonItem(13719);
+		e.other:SummonItem(13719); -- Item: Grilled Rat Ears
 		e.other:Ding();
 		e.other:Faction(220,2,0); -- Arcane Scientists
 		e.other:Faction(281,2,0); -- Knights of Truth
@@ -20,7 +20,7 @@ function event_trade(e)
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13719})) then
 		e.self:Say("Wha?..   Ah, I guess it's a bit of an acquired taste..  Oh well, your loss..  Here, take this..  They ain't no ears, but it's the least I could do..   And if ya find any more rat ears, good ol' Rephas here will be glad to take 'em off your hands for ya!");
-		e.other:SummonItem(13076);
+		e.other:SummonItem(13076); -- Item: Fish Scales
 		e.other:Ding();
 		e.other:Faction(220,2,0); -- Arcane Scientists
 		e.other:Faction(281,2,0); -- Knights of Truth
@@ -29,7 +29,7 @@ function event_trade(e)
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13050,item2 = 13050,item3 = 13050,item4 = 13050})) then
 		e.self:Say("Wow!..  How big was the dang varmint that these come off of?!  Bigger'n a ol' grizzly, I bet!  You've earned this, my friend!  It's my own secret recipe for rat ear pie..  sure is tasty, easy to make, and keeps your belly full while you're running about in the hills and such.  Take care, and may Karana keep your path clear and our lakes full.");
-		e.other:SummonItem(18103);
+		e.other:SummonItem(18103); -- Item: Rat Ear Pie
 		e.other:Ding();
 		e.other:Faction(220,8,0); -- Arcane Scientists
 		e.other:Faction(281,8,0); -- Knights of Truth
@@ -46,7 +46,7 @@ function event_trade(e)
 		e.other:AddEXP(50);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 27428,item2 = 27429,item3 = 27430})) then
 		e.self:Say("Ah! You've found them! I hope those gnolls payed dearly for stealing them from me. Did they beg for mercy? I sure hope so. Well, here is the completed research book for Juegile.");
-		e.other:SummonItem(27431);
+		e.other:SummonItem(27431); -- Item: Enchanted Book
 		e.other:Ding();
 		e.other:AddEXP(200);
 	end

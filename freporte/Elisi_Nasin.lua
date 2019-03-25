@@ -3,7 +3,7 @@ function event_say(e)
 		e.self:Say("Listen. this is a pretty busy [operation] I run here.  I certainly don't have any spare time to sit around and chit-chat with you all day. got it?");
 	elseif(e.message:findi("operation")) then
 		e.self:Say("Look. " .. e.other:GetName() .. ". I don't have time for this.  Let's just say importing exotic goods is our main interest. along with a few other profitable ventures.  Now quit pestering me. or you'll force me to sic Grenny here on ya.");
-		eq.signal(10122,10);
+		eq.signal(10122,10); -- NPC: Gren_Frikniller
 	end
 end
 

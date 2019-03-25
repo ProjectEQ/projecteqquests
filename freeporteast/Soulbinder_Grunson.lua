@@ -6,7 +6,7 @@ local qglobals = eq.get_qglobals(e.other)
 		e.self:Say("Greetings " .. e.other:GetName() .. ". When a hero of our world is slain their soul returns to the place it was last bound and the body is reincarnated. As a member of the Order of Eternity  it is my duty to [" .. eq.say_link("bind my soul",false,"bind your soul") .. "] to this location if that is your wish.");
 	elseif(e.message:findi("bind my soul")) then
 		e.self:Say("Binding your soul. You will return here when you die.");
-		e.self:CastSpell(2049,e.other:GetID(),0,1);
+		e.self:CastSpell(2049,e.other:GetID(),0,1); -- Spell: Bind Affinity
 	elseif(qglobals["druid_epic"] == "3" and e.message:findi("identify this mangled head")) then
 		e.self:Say("We soulbinders do not deal in such foul magic, we purged that [" .. eq.say_link("one") .. "] from our ranks long ago.");
 	elseif(qglobals["druid_epic"] == "3" and e.message:findi("one")) then

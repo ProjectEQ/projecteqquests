@@ -13,13 +13,13 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 16540,item2 = 13739,item3 = 14111,item4 = 14112}) and (e.other:GetFaction(e.self) < 5)) then
 		e.self:Say("Commendable work, you have proven yourself a valuable member of our order. Our chanters have summoned the avatar of Dread. Hurry and take him this mundane shield so that he may forge it into a truly valuable symbol of your devotion to the lord of Fear!");
-		e.other:SummonItem(14105);
+		e.other:SummonItem(14105); -- Item: Mundane Shield
 		e.other:Ding();
-		e.other:Faction(265,400,0);
-		e.other:Faction(242,-400,0);
-		e.other:Faction(254,-400,0);
-		e.other:Faction(231,-400,0);
-		e.other:Faction(233,-400,0);
+		e.other:Faction(265,400,0); -- Faction: Heretics
+		e.other:Faction(242,-400,0); -- Faction: Deepwater Knights
+		e.other:Faction(254,-400,0); -- Faction: Gate Callers
+		e.other:Faction(231,-400,0); -- Faction: Craftkeepers
+		e.other:Faction(233,-400,0); -- Faction: Crimson Hands
 		e.other:AddEXP(1000);
 		e.other:GiveCash(math.random(9),math.random(9),math.random(9),math.random(9));
 		eq.unique_spawn(75164,0,0,474,1230,-37,256); -- spawn avatar of dread

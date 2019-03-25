@@ -16,10 +16,10 @@ end
 
 function event_timer(e)
 	if (e.timer == "freeze") then
-		e.self:CastSpell(5819, e.self:GetTarget():GetID());
+		e.self:CastSpell(5819, e.self:GetTarget():GetID()); -- Spell: Winter's Freeze
 		eq.set_timer("freeze",20*1000);
 	elseif e.timer=="hoar" then
-		e.self:CastSpell(5818, e.self:GetTarget():GetID());
+		e.self:CastSpell(5818, e.self:GetTarget():GetID()); -- Spell: Hoarfrost
 		eq.set_timer("hoar",20*1000);
 	elseif e.timer=="depop" then
 		eq.depop();

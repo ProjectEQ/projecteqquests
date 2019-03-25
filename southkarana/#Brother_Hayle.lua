@@ -39,10 +39,10 @@ function event_trade(e)
 			e.other:Ding();
 		else
 			e.self:Say("You have not proven yourself worthy to hold Soulfire."); -- Text made up
-			e.other:SummonItem(18937);
-			e.other:SummonItem(13947);
-			e.other:SummonItem(18828);
-			e.other:SummonItem(12197);
+			e.other:SummonItem(18937); -- Item: Note
+			e.other:SummonItem(13947); -- Item: Brilliant Sword of Faith
+			e.other:SummonItem(18828); -- Item: Testimony
+			e.other:SummonItem(12197); -- Item: Glowing Sword Hilt
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

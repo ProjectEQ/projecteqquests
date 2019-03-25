@@ -17,10 +17,10 @@ function event_say(e)
 		e.self:Say("What I need are some bat wings for a spell I am researching. If you bring me back four bat wings, I would be willing to reward you with a scroll.");
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 
@@ -29,12 +29,12 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13068,item2 = 13068,item3 = 13068,item4 = 13068})) then
 		e.self:Say("Ah yes.  These are exactly what I need.  Thank you very much.");
-		e.other:SummonItem(eq.ChooseRandom(15310,15332));
+		e.other:SummonItem(eq.ChooseRandom(15310,15332)); -- Item(s): Spell: Flare (15310), Spell: Shield of Fire (15332)
 		e.other:Ding();
-		e.other:Faction(275,5,0);
-		e.other:Faction(279,5,0);
-		e.other:Faction(246,5,0);
-		e.other:Faction(239,-10,0);
+		e.other:Faction(275,5,0); -- Faction: Keepers of the Art
+		e.other:Faction(279,5,0); -- Faction: King Tearis Thex
+		e.other:Faction(246,5,0); -- Faction: Faydarks Champions
+		e.other:Faction(239,-10,0); -- Faction: The Dead
 		e.other:AddEXP(350);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18777})) then -- Enrollment Letter
 		e.self:Say("Welcome. I am Niola Impholder. Master Magician of the Keepers of the Art. Here is our guild tunic. Once you are ready to begin your training please make sure that you see Yuin Starchaser, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
@@ -47,7 +47,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18902})) then
 		e.self:Say("She is still alive? OH, thank you for this news.");
-		e.other:SummonItem(1307);
+		e.other:SummonItem(1307); -- Item: Gossamer Robe
 		e.other:Ding();
 		e.other:AddEXP(30000);
 	end

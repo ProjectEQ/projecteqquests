@@ -69,7 +69,7 @@ function event_timer(e)
 		eq.stop_timer("Combat");
 	elseif (e.timer == "Respawn") then
 		eq.depop(341063);
-		eq.spawn2(341063,0,0,-1952.39,-1877.55,-156.35,93.0);
+		eq.spawn2(341063,0,0,-1952.39,-1877.55,-156.35,93.0); -- NPC: Volkara
 		eq.stop_all_timers();
 	end
 	

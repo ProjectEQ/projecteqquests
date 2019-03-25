@@ -72,7 +72,7 @@ function MirrorTimer(e)
 			e.self:Emote("shivers violently, as if about to explode!");
 			mirr_shakes=true
 		elseif (e.self:GetHP()< mirr_spawned_hp-1000) then
-			e.self:CastSpell(2490,e.self:GetHateRandom():GetID());
+			e.self:CastSpell(2490,e.self:GetHateRandom():GetID()); -- Spell: Detonation
 			e.self:Emote("shudders and explodes!");
 			eq.depop();
 		end
@@ -105,7 +105,7 @@ function TrueTimer(e)
 				local mY=mirrnoq:GetY();
 				local mZ=mirrnoq:GetZ();
 				eq.depop_all(296066);
-				eq.spawn2(296066, 0, 0,mX,mY,mZ,384);
+				eq.spawn2(296066, 0, 0,mX,mY,mZ,384); -- NPC: #Mirror_Image_of_Noqufiel
 				eq.spawn2(296065, 0, 0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),192);
 				eq.depop();
 			end
@@ -136,11 +136,11 @@ end
 
 function TriggerTimer(e)
 	if e.timer=="cursecallers" then
-		eq.spawn2(eq.ChooseRandom(296059,296060,296061,296062,296063,296064), 0, 0,-238,-657,-126,242);
+		eq.spawn2(eq.ChooseRandom(296059,296060,296061,296062,296063,296064), 0, 0,-238,-657,-126,242); -- NPC(s): #a_brainless_cursebearer (296059), #a_deadened_cursebearer (296060), #a_mindless_cursebearer (296061), #a_numbed_cursebearer (296062), #a_vacuous_cursebearer (296063), #an_unfeeling_cursebearer (296064)
 		eq.get_entity_list():GetMobByNpcTypeID(296065):Emote("rejoices. 'May find strength in your passing, as I have'");
 		eq.debug("spawn cc");
 	elseif e.timer=="banish" then
-		eq.signal(296065,1);
+		eq.signal(296065,1); -- NPC: #True_Image_of_Noqufiel
 	elseif e.timer=="unlock_doors" then
 		local entity_list = eq.get_entity_list();
 		entity_list:FindDoor(42):SetLockPick(0);
@@ -195,17 +195,17 @@ function Spawn_Noqu(loc)
 	eq.depop_all(296065);
 	eq.depop_all(296066);
 	if (eq.ChooseRandom(1,2)==1) then		
-		eq.spawn2(296066, 0, 0,20,-706,-126,384);
-		eq.spawn2(296065, 0, 0,20,-633,-126,384);
+		eq.spawn2(296066, 0, 0,20,-706,-126,384); -- NPC: #Mirror_Image_of_Noqufiel
+		eq.spawn2(296065, 0, 0,20,-633,-126,384); -- NPC: #True_Image_of_Noqufiel
 	else
-		eq.spawn2(296065, 0, 0,20,-706,-126,384);
-		eq.spawn2(296066, 0, 0,20,-633,-126,384);		
+		eq.spawn2(296065, 0, 0,20,-706,-126,384); -- NPC: #True_Image_of_Noqufiel
+		eq.spawn2(296066, 0, 0,20,-633,-126,384); -- NPC: #Mirror_Image_of_Noqufiel		
 	end
 end
 
 function TrueDeath(e)
 	e.self:Say("This is but a temporary setback. I will return.");
-	eq.signal(296070,296065);
+	eq.signal(296070,296065); -- NPC: zone_status
 	eq.depop_all(296059);
 	eq.depop_all(296060);
 	eq.depop_all(296061);

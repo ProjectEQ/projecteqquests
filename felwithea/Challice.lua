@@ -12,7 +12,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(404, 10,0); --Truespirit
 		e.other:AddEXP(100000);
-		e.other:SummonItem(14335);
+		e.other:SummonItem(14335); -- Item: Arantir's Ring
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

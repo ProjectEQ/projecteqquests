@@ -7,13 +7,13 @@ function event_say(e)
 		e.self:Say("I have messages that need to go to Highpass, Kelethin, and Qeynos.  Will you [deliver] mail to [Kelethin], [Highpass], or [Qeynos] for me?");
 	elseif(e.message:findi("deliver to kelethin")) then
 		e.self:Say("Take this pouch to Idia in Kelethin.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles.");
-		e.other:SummonItem(18167);
+		e.other:SummonItem(18167); -- Item: Pouch of Mail (Kelethin)
 	elseif(e.message:findi("deliver to highpass")) then
 		e.self:Say("Take this pouch to Lislia Goldtune in Highpass.  You can find her at the entrance to HighKeep.  I am sure she will compensate you for your troubles."); 
-		e.other:SummonItem(18156);
+		e.other:SummonItem(18156); -- Item: Pouch of Mail (Highpass)
 	elseif(e.message:findi("deliver to qeynos")) then
 		e.self:Say("Take this pouch to Eve Marsinger in Qeynos.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles.");
-		e.other:SummonItem(18165);
+		e.other:SummonItem(18165); -- Item: Pouch of Mail (Qeynos)
 	end
 end
 

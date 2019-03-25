@@ -5,7 +5,7 @@ end
 
 function event_combat(e)
   if (e.joined == true) then
-	e.self:CastSpell(13536, e.self:GetTarget():GetID());
+	e.self:CastSpell(13536, e.self:GetTarget():GetID()); -- Spell: Harm Touch
 	eq.set_timer("adds",120*1000);
 	eq.set_timer("epoch",9*1000);
 	eq.set_timer("gyro",3*1000);
@@ -32,16 +32,16 @@ function event_timer(e)
 		eq.spawn2(300090, 0, 0, e.self:GetX()-15, e.self:GetY()+15,  e.self:GetZ(),  e.self:GetHeading());	
 	elseif (e.timer=="epoch") then
 	--3779 Epoch Conviction 60s
-	e.self:CastSpell(3779, e.self:GetTarget():GetID());
+	e.self:CastSpell(3779, e.self:GetTarget():GetID()); -- Spell: Epoch Conviction
 		eq.stop_timer("epoch");
 		eq.set_timer("epoch",60*1000);
 	elseif (e.timer=="gyro") then
 	--1078 Gyrosonic Disruption 60s
-		e.self:CastSpell(1078, e.self:GetTarget():GetID());
+		e.self:CastSpell(1078, e.self:GetTarget():GetID()); -- Spell: Gyrosonic Disruption
 		eq.stop_timer("gyro");
 		eq.set_timer("gyro",60*1000);
 	elseif (e.timer=="thunder") then		
-		e.self:CastSpell(1026, e.self:GetTarget():GetID());
+		e.self:CastSpell(1026, e.self:GetTarget():GetID()); -- Spell: Thunder Call
 		eq.stop_timer("thunder");
 		eq.set_timer("thunder",90*1000);
 	end

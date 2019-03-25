@@ -18,11 +18,11 @@ function event_say(e)
 			-- Teleport non-Guktan Clients to random Rathe Mountains locations
 			rand = math.random(99);
 			if (rand <= 33) then
-				e.other:MovePC(50, 1756.00, 1517.00, 200.00, e.self:GetHeading());
+				e.other:MovePC(50, 1756.00, 1517.00, 200.00, e.self:GetHeading()); -- Zone: commonlands
 			elseif (rand <= 66) then
-				e.other:MovePC(50, 1226.00, 160.00, 183.21, e.self:GetHeading());
+				e.other:MovePC(50, 1226.00, 160.00, 183.21, e.self:GetHeading()); -- Zone: commonlands
 			else
-				e.other:MovePC(50, 371.00, -1024.00, 28.34, e.self:GetHeading());
+				e.other:MovePC(50, 371.00, -1024.00, 28.34, e.self:GetHeading()); -- Zone: commonlands
 			end
 		end
 	elseif (e.message:findi("own choice")) then

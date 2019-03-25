@@ -14,7 +14,7 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 13403,item2 = 13403})) then -- Wolf Meat for Wista
 		e.self:Say("Deez berry gud. Makes berry good suff. Me berry happy. Yous gets more bring dem ta mees. Yous takes dis and tanks fer da meats.");
 		e.other:Ding();
-		e.other:SummonItem(17004);
+		e.other:SummonItem(17004); -- Item: Large Bag
 		e.other:Faction(376,10,0);  -- +Grobb Merchants
 		e.other:AddEXP(100);
 	end

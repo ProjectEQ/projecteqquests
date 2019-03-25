@@ -4,7 +4,7 @@ function event_say(e)
 	if(fac < 7) then
 		if(e.message:findi("hail")) then
 			e.self:Say("Hail!! You are welcome to rest here.");
-			eq.signal(70007,5);
+			eq.signal(70007,5); -- NPC: Ghilanbiddle_Nylwadil
 		elseif(e.message:findi("escort")) then
 			e.self:Say("Yes. Follow me closely!!");
 			eq.move_to(-141.75, 1201.45, 141.42, 0);

@@ -35,7 +35,7 @@ function event_say(e)
                 e.self:Say("As I thought you would; you will find them as you did the others, in their natural essence. You will find the Disciple of Focus in the hills and mountains training diligently. The Disciple of Tranquility you shall find in a clearing where many do not travel without knowing valor and courage. It is there that you will be able to find your calmness. Please return to me when you have gained their respect as well as their symbols. I will also require your sash.");
                 -- bug fix, missing sash and on this exact step!
                 if (not e.other:HasItem(48127) and qglobals["mnk_epic20"] == "2") then
-                    e.other:SummonItem(48127);
+                    e.other:SummonItem(48127); -- Item: Initiate's Sash of the Celestial Order
                 end
                 eq.set_global("mnk_epic20", "3", 5, "F"); -- can activate Disciples now
             elseif (e.message:findi("final task") and qglobals["mnk_epic20"] >= "4") then

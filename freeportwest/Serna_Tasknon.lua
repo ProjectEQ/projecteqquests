@@ -8,7 +8,7 @@ function event_say(e)
 	elseif(e.message:findi("assist")) then
 		if(fac < 5) then
 			e.self:Say("Good. Take this Potion of Marr to the Sentries of Passion. They are the protectors of this temple. Start in alphabetical order and the first shall take but a sip then you shall take it to the next in order of the alphabet. There are but eight sentries. Sentry Andlin to Sentry Xyrin. Go.");
-			e.other:SummonItem(12127);
+			e.other:SummonItem(12127); -- Item: Full Potion of Marr
 		else
 			e.self:Say("The path you walk is correct, but you have further to travel before you need worry about this.");
 		end
@@ -23,26 +23,26 @@ function event_trade(e)
 		e.self:Say("The arangement was for three shark bones and 10 gold coins");
 		e.self:Say("The arangement was for three shark bones and 10 gold coins");
 		e.self:Say("I thank you for your ten gold coins. Now we can pay the weekly oxygen tax imposed by the militia. Here is the shark powder.");
-		e.other:SummonItem(12125);
+		e.other:SummonItem(12125); -- Item: Shark Powder
 		e.other:Ding();
-		e.other:Faction(362,5,0);
-		e.other:Faction(330,-10,0);
-		e.other:Faction(281,5,0);
+		e.other:Faction(362,5,0); -- Faction: Priests of Marr
+		e.other:Faction(330,-10,0); -- Faction: The Freeport Militia
+		e.other:Faction(281,5,0); -- Faction: Knights of Truth
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13983})) then
 		e.self:Say("I see Tonmerk has found a use for my shark powder. We agreed to this trade when last we met. Unfortunately, I am out of it. If you desire the shark powder you will have to get me three shark bones. I wish you luck. Oh. I also require a payment of ten gold pieces. The taxes in Freeport are fierce.");
 		e.other:Ding();
-		e.other:Faction(362,5,0);
-		e.other:Faction(330,-10,0);
-		e.other:Faction(281,5,0);
+		e.other:Faction(362,5,0); -- Faction: Priests of Marr
+		e.other:Faction(330,-10,0); -- Faction: The Freeport Militia
+		e.other:Faction(281,5,0); -- Faction: Knights of Truth
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12135})) then
 		e.self:Say("The Sentries of Passion informed me of your journey to the Ocean of Tears and the demise of Sentry Xyrin. You performed beyond the call of duty. This is what makes an exceptional person. Take this for your great deed. The twin deities would wish it so.");
-		e.other:SummonItem(15207);
+		e.other:SummonItem(15207); -- Item: Spell: Divine Aura
 		e.other:Ding();
-		e.other:Faction(362,5,0);
-		e.other:Faction(330,-10,0);
-		e.other:Faction(281,5,0);
+		e.other:Faction(362,5,0); -- Faction: Priests of Marr
+		e.other:Faction(330,-10,0); -- Faction: The Freeport Militia
+		e.other:Faction(281,5,0); -- Faction: Knights of Truth
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

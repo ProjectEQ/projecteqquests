@@ -27,7 +27,7 @@ function event_trade(e)
     if ( qglobals["warrior_pre"] == "4" and item_lib.check_turn_in(e.trade, {item1 = 60285, item2 = 60286, item3 = 60288})) then 
       eq.set_global("warrior_pre","5",5,"F");
       e.self:Say("Take this back to Korbuk Brimblade");
-      e.other:SummonItem(60292);
+      e.other:SummonItem(60292); -- Item: Dardek's Forged Blade
       --e.self:Depop();
       eq.depop_with_timer(115253);
     end

@@ -8,10 +8,10 @@ function event_trade(e)
 		e.other:SummonItem(14585); -- Odd Cold Iron Necklace
 		e.other:SummonItem(1779); -- A Note
 		e.other:Ding();
-		e.other:Faction(220,20,0);
-		e.other:Faction(281,20,0);
-		e.other:Faction(296,-20,0);
-		e.other:Faction(330,-20,0);
+		e.other:Faction(220,20,0); -- Faction: Arcane Scientists
+		e.other:Faction(281,20,0); -- Faction: Knights of Truth
+		e.other:Faction(296,-20,0); -- Faction: Opal Darkbriar
+		e.other:Faction(330,-20,0); -- Faction: The Freeport Militia
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

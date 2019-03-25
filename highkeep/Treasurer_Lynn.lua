@@ -18,7 +18,7 @@ function event_trade(e)
 		e.other:GiveCash(16,11,10,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12266})) then
 		e.self:Say("Congratulations!! You are the winner of last season's Highkeep lottery. Here is the key to the royal suite. You should find this room on the third floor.");
-		e.other:SummonItem(12267);
+		e.other:SummonItem(12267); -- Item: Highkeep Royal Suite
 		e.other:Ding();
 		e.other:AddEXP(500);
 	end

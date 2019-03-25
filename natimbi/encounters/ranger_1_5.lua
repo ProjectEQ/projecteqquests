@@ -22,7 +22,7 @@ function Trenz_Timer(e)
 		eq.spawn2(280089,0,0,e.self:GetX()+15,e.self:GetY()+15,e.self:GetZ(),e.self:GetHeading());
 		eq.stop_timer("senvial");
 	elseif (e.timer=="adds") then
-		eq.spawn2(eq.ChooseRandom(280085,280086,280087,280088),0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(eq.ChooseRandom(280085,280086,280087,280088),0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): a_bound_earth_spirit (280085), a_bound_fire_spirit (280086), a_bound_water_spirit (280087), a_bound_air_spirit (280088)
 		local entity_list = eq.get_entity_list();
 		local npc_list = entity_list:GetNPCList();
 		for npc in npc_list.entries do
@@ -38,7 +38,7 @@ function Senvial_Say(e)
 	if(qglobals["ranger_epic"] == "2" and e.other:HasItem(62844) == true) then
 		if(e.message:findi("hail")) then
 			e.self:Say("Thank you for freeing me, "..e.other:GetName()..". I am not sure how it is that you broke the power that commanded me, but for that I am very grateful. The water spirit looks at you carefully before speaking again. I sense that you will need my aid in the future. To repay my debt to you I give you my blessing. This is no mean thing, it carries with it a portion of my own power. Mine is the cool rain and soft mist. I am the essence of morning dew and the lazy fog. I have no doubt that you will use it wisely. There are more of my kin enslaved by these beasts and others like them. You appear to have the power to rescue them as you have me. I am not a being of foresight or far-seeing, mine is the realm of small, gentle things, but even I can see that you are a being of portent. I am honored to have met you. I must return to my realm. I shall never forget this place and what it has made me do, nor shall I forget the one thing that freed me.");
-			e.other:SummonItem(62621);
+			e.other:SummonItem(62621); -- Item: Senvial's Blessing
 			if(qglobals["ranger_natimbi_chest"] == nil) then
 				eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 				eq.set_global("ranger_natimbi_chest","1",5,"F");		

@@ -28,7 +28,7 @@ function event_timer(e)
 end
 
 function bard_sing()
-	eq.signal(10141,1);
-	eq.signal(10158,1);
-	eq.signal(10165,1);
+	eq.signal(10141,1); -- NPC: Trolon_Lightleer
+	eq.signal(10158,1); -- NPC: Branis_Noolright
+	eq.signal(10165,1); -- NPC: Palana_Willin
 end

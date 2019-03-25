@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20669})) then
 		e.self:Say("Where in the world did you drag that up?!' He peers closely at the severely damaged dragon head hilt. 'This metal is the same material that some mages use to make powerful golems and this other metal looks like rejesiam ore. If you can find some of those materials, I can fix this hilt up easily.");
-		e.other:SummonItem(20669);
+		e.other:SummonItem(20669); -- Item: Severely Damaged Dragon Head Hilt
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

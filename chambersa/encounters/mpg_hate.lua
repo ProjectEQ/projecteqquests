@@ -134,12 +134,12 @@ function Hate_Say(e)
     eq.spawn_condition('chambersa', instance_id, 3, 1 );
 
     -- Enable the Feran Mothers
-    eq.signal(304019, 1);
-    eq.signal(304023, 1);
-    eq.signal(304024, 1);
-    eq.signal(304025, 1);
-    eq.signal(304026, 1);
-    eq.signal(304027, 1);
+    eq.signal(304019, 1); -- NPC: Voracious_Feran
+    eq.signal(304023, 1); -- NPC: Voracious_Feran
+    eq.signal(304024, 1); -- NPC: Voracious_Feran
+    eq.signal(304025, 1); -- NPC: Voracious_Feran
+    eq.signal(304026, 1); -- NPC: Voracious_Feran
+    eq.signal(304027, 1); -- NPC: Voracious_Feran
     
     -- Set the timer to spawn the direpups from the living mothers.
     eq.set_timer('direpups', pup_spawn_seconds  * 1000);
@@ -252,7 +252,7 @@ end
 
 function Feran_Death(e)
   -- If all the Ferans are dead; then stop the direpups timer and activate the Master of Hate
-  eq.signal(304017, 1);
+  eq.signal(304017, 1); -- NPC: Master_of_Hate
 end
 
 function Feran_Spawn(e)

@@ -11,11 +11,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12133})) then
 		e.self:Say("Thank you. I believe you need to seek out Sentry Xyrin. She is not at the temple. I believe she left to speak with [Sisterhood of Erollisi]. She was to speak with Styria.");
-		e.other:SummonItem(12134);
+		e.other:SummonItem(12134); -- Item: Last of Potion of Marr
 		e.other:Ding();
-		e.other:Faction(362,5,0);
-		e.other:Faction(330,-10,0);
-		e.other:Faction(281,5,0);
+		e.other:Faction(362,5,0); -- Faction: Priests of Marr
+		e.other:Faction(330,-10,0); -- Faction: The Freeport Militia
+		e.other:Faction(281,5,0); -- Faction: Knights of Truth
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

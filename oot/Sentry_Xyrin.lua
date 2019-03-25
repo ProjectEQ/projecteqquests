@@ -20,11 +20,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12134})) then
 		e.self:Say("I thank you. I cannot do battle at this moment. I am summoned elsewhere. May Marr guide you from this isle.");
-		e.other:SummonItem(12135);
+		e.other:SummonItem(12135); -- Item: Empty Potion of Marr
 		e.other:Ding();
-		e.other:Faction(362,5,0);
-		e.other:Faction(330,-10,0);
-		e.other:Faction(281,5,0);
+		e.other:Faction(362,5,0); -- Faction: Priests of Marr
+		e.other:Faction(330,-10,0); -- Faction: The Freeport Militia
+		e.other:Faction(281,5,0); -- Faction: Knights of Truth
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

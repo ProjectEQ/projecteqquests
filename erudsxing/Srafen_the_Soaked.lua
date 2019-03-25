@@ -18,7 +18,7 @@ function event_say(e)
 		e.self:Say("Ahh, yes, there's also a really old guy I've only seen a couple times, name's Froham. Whew, he is really old, and not much of a talker. Mostly mumbles from time to time. Dillon says he's been here since Erud first took his people across the sea. Not sure who this Erud feller is but Froham isn't in the best of shape, so it must have been a LONG time ago. Froham did mention there's one other guy but we've never seen him. He apparently had something to do with the Combine Empire, no idea what that is though.");
 	elseif(e.message:findi("an illusion")) then -- Part of Shaman Epic 1.0
 		e.self:Say("Awww, well that's too bad. Although illusions and real people don't seem to be much different at times, so, please stay and keep Dillon and me company. We could use it, right Dillon?");
-		eq.signal(98051,1);
+		eq.signal(98051,1); -- NPC: Dillon_the_Drowned
 	end
 end
 
@@ -35,16 +35,16 @@ function event_timer(e)
 		counting = counting + 1;
 	end
 	if(counting == 1) then
-		eq.spawn2(98051,0,0,4198.4,-1563.4,-291.5,304);
+		eq.spawn2(98051,0,0,4198.4,-1563.4,-291.5,304); -- NPC: Dillon_the_Drowned
 	elseif(counting == 5) then
 		e.self:Say("Hey Dillon, why don't you tell us again about what happened up top? You know, where they blew that big hole into the ground.");
-		eq.signal(98051,0);
+		eq.signal(98051,0); -- NPC: Dillon_the_Drowned
 	elseif(counting == 6) then
 		eq.start(58);
 		e.self:Say("Okay, well, I've had enough. Yet again, we've waited for nothing. Sometimes I really wonder if the spirits are real after all. Well I for one am going to go find something fun to do - this is obviously a waste of time. Come with me, shaman, it'll be great fun! Fairwell Dillon.");
-		eq.signal(98051,2);
+		eq.signal(98051,2); -- NPC: Dillon_the_Drowned
 	elseif(counting == 7) then
-		eq.spawn2(98047,0,0,4208.8,-1588.6,-291.7,410);
+		eq.spawn2(98047,0,0,4208.8,-1588.6,-291.7,410); -- NPC: Froham_the_Forgotten
 		eq.stop_timer("DillonSpawn");
 		eq.depop();
 	end

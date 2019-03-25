@@ -83,10 +83,10 @@ local rage_balanced = false;
 local speed_balanced = false;
 
 function ZMKP_Spawn(e)
-  eq.spawn2(298125, 0, 0, 412.0, -714.0, -4.125, 454);
-  eq.spawn2(298126, 0, 0, 339.0, -714.0, -4.125, 88);
-  eq.spawn2(298127, 0, 0, 412.0, -646.0, -4.125, 318);
-  eq.spawn2(298128, 0, 0, 339.0, -646.0, -4.125, 190);
+  eq.spawn2(298125, 0, 0, 412.0, -714.0, -4.125, 454); -- NPC: #Balance_of_Speed
+  eq.spawn2(298126, 0, 0, 339.0, -714.0, -4.125, 88); -- NPC: #Balance_of_Defense
+  eq.spawn2(298127, 0, 0, 412.0, -646.0, -4.125, 318); -- NPC: #Balance_of_Fury
+  eq.spawn2(298128, 0, 0, 339.0, -646.0, -4.125, 190); -- NPC: #Balance_of_Rage
 
   ZMKP_AC     = 568; -- Defense
   ZMKP_MaxHit = 3900; -- Fury
@@ -116,10 +116,10 @@ function ZMKP_Timer(e)
   if (e.timer == 'balance') then
     eq.stop_timer(e.timer);
     eq.stop_timer("wipecheck");
-    eq.signal(298125, 1);
-    eq.signal(298126, 1);
-    eq.signal(298127, 1);
-    eq.signal(298128, 1);
+    eq.signal(298125, 1); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 1); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 1); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 1); -- NPC: #Balance_of_Rage
 
     local failed = false;
 
@@ -162,10 +162,10 @@ function ZMKP_Timer(e)
         e.self:SetOOCRegen(0);
         target_hp = target_hp - 10;
 
-        eq.signal(298125, 2);
-        eq.signal(298126, 2);
-        eq.signal(298127, 2);
-        eq.signal(298128, 2);
+        eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+        eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+        eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+        eq.signal(298128, 2); -- NPC: #Balance_of_Rage
     else
         e.self:ProcessSpecialAbilities(ZMKP_Active);
         target_hp = target_hp - 10;
@@ -199,10 +199,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 80) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
@@ -211,10 +211,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 70) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
@@ -223,10 +223,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 60) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
@@ -235,10 +235,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 50) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
@@ -247,10 +247,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 40) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
@@ -259,10 +259,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 30) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
@@ -271,10 +271,10 @@ function ZMKP_Hp(e)
     e.self:SetOOCRegen(0);
     e.self:WipeHateList();
 
-    eq.signal(298125, 2);
-    eq.signal(298126, 2);
-    eq.signal(298127, 2);
-    eq.signal(298128, 2);
+    eq.signal(298125, 2); -- NPC: #Balance_of_Speed
+    eq.signal(298126, 2); -- NPC: #Balance_of_Defense
+    eq.signal(298127, 2); -- NPC: #Balance_of_Fury
+    eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 
   elseif (e.hp_event == 20) then
     eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of seething rage as he accelerates his combat speed.");
@@ -287,7 +287,7 @@ function ZMKP_Signal(e)
 end
 
 function ZMKP_Death(e)
-  eq.signal(298223, 298029);
+  eq.signal(298223, 298029); -- NPC: zone_status
 
   eq.depop_all(298125);
   eq.depop_all(298126);

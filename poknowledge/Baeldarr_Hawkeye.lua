@@ -7,10 +7,10 @@ function event_trade(e)
 	end
 	if(item_lib.check_turn_in(e.trade, {item1 = 17286, item2 = 17286, item3 = 17286, item4 = 17286}) and qglobals["berserk_epic"] >= "2") then
 		e.self:Emote("looks pleased to see you.  Excellent timing friend! I just finished turning the ore samples you brought me earlier into some fine axe heads. It'll be but a moment till I complete the axes . . . The only thing that remains is they need to be thoroughly tested against a very hard-skinned creature, which will allow us to discover their durability. Deep within the recesses of Old Sebilis reside several golems of massive proportions. Slay the largest of these golems to test these axes out thoroughly. Return to Keras with the result so that he may inspect his handywork.");
-		e.other:SummonItem(17370);
-		e.other:SummonItem(17700);
-		e.other:SummonItem(17759);
-		e.other:SummonItem(16779);
+		e.other:SummonItem(17370); -- Item: Trial Taelosian Alloy Blood Axe
+		e.other:SummonItem(17700); -- Item: Trial Taelosian Alloy Blood Axe
+		e.other:SummonItem(17759); -- Item: Trial Taelosian Alloy Blood Axe
+		e.other:SummonItem(16779); -- Item: Trial Taelosian Alloy Blood Axe
 		eq.set_global("berserk_epic","3",5,"F");		
 	end
 	item_lib.return_items(e.self, e.other, e.trade);	

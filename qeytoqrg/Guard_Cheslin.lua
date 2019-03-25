@@ -15,7 +15,7 @@ function event_say(e)
 		e.self:Say("My father has no need to worry and I do not need a baby sitter. I may be in training still, but a Qeynos guard in training is still a formidable opponent. EVIL, BEWARE!!   HAIL ANTONIUS BAYLE! ");
 	elseif(e.message:findi("donate")) then
 		e.self:Say("Of course I shall donate to that esteemed order. Here you are, my good friend. Now run along before you are injured by some nasty creature. By the way, you should speak with my fellow guard, Leopold. He also would donate.");
-		e.other:SummonItem(13295);
+		e.other:SummonItem(13295); -- Item: Donation
 	elseif(e.message:findi("illusion")) then
 		if(illusionResponse == 0) then
 			e.self:Say("Yes!! I seem to have dropped some of my [Illusion] cards.");
@@ -54,7 +54,7 @@ function event_trade(e)
 	if(chronoReturned == 1 and diamondReturned == 1 and ebonReturned == 1 and libraryReturned == 1) then
 		e.self:Say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 		e.other:Ding();
-		e.other:SummonItem(18839);
+		e.other:SummonItem(18839); -- Item: Sealed Letter
 		e.other:Faction(262,5,0); -- Guards of Qeynos
 		e.other:Faction(219,5,0); -- Antonius Bayle
 		e.other:Faction(230,-10,0); -- Corrupt Qeynos Guards
@@ -72,8 +72,8 @@ function event_waypoint_arrive(e)
 	local zloc = e.self:GetZ();
 	if(e.wp == 1) then
 		e.self:Say("Hail, fellow guards! I am off to protect the travelers of the hills from evil. I shall return!");
-		eq.signal(4142,1);
-		eq.signal(4069,1);
+		eq.signal(4142,1); -- NPC: Hefax_Tinmar
+		eq.signal(4069,1); -- NPC: Mogan_Delfin
 	elseif(e.wp == 3) then
 		e.self:Say("Fear not, simple travelers. Cheslin the masterful is here to protect you.");
 		eq.create_ground_object(library,xloc,yloc,zloc,0,300000);

@@ -23,7 +23,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18729})) then
 		e.self:Say("Welcome to the Craft Keepers! You have much to learn. and I'm sure you are anxious to get started. Here's your training robe. Go see Nolusia. she'll give you your first lesson.");
-		e.other:SummonItem(13549);
+		e.other:SummonItem(13549); -- Item: Old Patched Robe*
 		e.other:Ding();
 		e.other:Faction(231,100,0); -- Craftkeepers
 		e.other:Faction(266,10,0); -- High Council of Erudin

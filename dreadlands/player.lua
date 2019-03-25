@@ -8,7 +8,7 @@ function event_enter_zone(e)
 	
 	if (qglobals.time_terror == "1") then
 		--Spawn Time Terror for Froggy-Went-A-Portin' quest
-		eq.spawn2(86172, 0, 0, 9699.00, 1107.00, 2332.00, 0);
+		eq.spawn2(86172, 0, 0, 9699.00, 1107.00, 2332.00, 0); -- NPC: Time_Terror
 	end
 	
 	if(qglobals["mage_epic"] == "10") then

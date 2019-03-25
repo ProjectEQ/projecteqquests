@@ -71,7 +71,7 @@ end
 function Shade_Timer(e)
  if (e.timer=='depop') then
 	eq.depop();
-	eq.signal(204039,2);
+	eq.signal(204039,2); -- NPC: Mujaki_the_Devourer
  end
 end
 
@@ -87,7 +87,7 @@ function Mujaki2_Timer(e)
  if (e.timer=='depop') then
 	eq.depop_all(204079); --guardians
 	eq.depop();	
-	eq.signal(204039,2);
+	eq.signal(204039,2); -- NPC: Mujaki_the_Devourer
  end
 end
 
@@ -111,7 +111,7 @@ function Mujaki_Death(e)
 				 --eq.zone_emote(15, "death2");
 				if (currclient:HasItem(69928)) then				
 					--eq.zone_emote(15, "death3");
-					eq.spawn2(204081, 0, 0, -1475, -2555, 179.38, 256);
+					eq.spawn2(204081, 0, 0, -1475, -2555, 179.38, 256); -- NPC: #Shade_of_Mujaki_the_Devourer
 					return; --only spawn 1
 				end
 			end
@@ -160,8 +160,8 @@ function Mujaki_Timer(e)
 	elseif (wave==9) then
 	--muj + unkilled
 		eq.stop_all_timers();
-		eq.spawn2(204080, 0, 0, -1475, -2555, 179.38, 256);				
-		eq.signal(204079,1);	
+		eq.spawn2(204080, 0, 0, -1475, -2555, 179.38, 256); -- NPC: #Mujaki_the_Devourer				
+		eq.signal(204079,1); -- NPC: #a_servant_of_Mujaki	
 	end
 	wave=wave+1;
   end

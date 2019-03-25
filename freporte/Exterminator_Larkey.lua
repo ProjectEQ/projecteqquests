@@ -10,10 +10,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13071,item2 = 13071,item3 = 13071,item4 = 13071})) then
 		e.self:Say(string.format("I knew I could count on you %s, here is a little something for you.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(330,10,0);
-		e.other:Faction(336,10,0);
-		e.other:Faction(281,-10,0);
-		e.other:Faction(362,-10,0);
+		e.other:Faction(330,10,0); -- Faction: The Freeport Militia
+		e.other:Faction(336,10,0); -- Faction: Coalition of Tradefolk Underground
+		e.other:Faction(281,-10,0); -- Faction: Knights of Truth
+		e.other:Faction(362,-10,0); -- Faction: Priests of Marr
 		e.other:AddEXP(50);
 		e.other:GiveCash(1,1,1,0);
 	end

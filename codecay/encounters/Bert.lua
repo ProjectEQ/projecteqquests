@@ -22,7 +22,7 @@ function Spectre_Death(e)
 	if ( el:IsMobSpawnedByNpcTypeID(200016) == false) then
 	trash_dead=0;
 	eq.zone_emote(10,"Crazed laughter is heard as you notice a foul creature standing before you. The creature then speaks saying, 'Violaters of the depths of Lxanvom shall pay with your lives!'  The foul minion of decay then begins chanting a dark ritual.  Deeper within the depths of the crypt more chanting can be heard.");
-	eq.signal(200056, 1);
+	eq.signal(200056, 1); -- NPC: Summoner_of_Bertoxxulous
 	end
 end
 
@@ -33,7 +33,7 @@ function Trash_Death(e)
 	eq.debug("Trash Dead: " .. trash_dead);
 		if trash_dead == 42 and darwol_spawned == false then		--42 Trash
 		eq.zone_emote(10,"An unsettling feeling of fear passes through you as you hear the summoners finish a dark incantation then cry out saying, 'We call to you corrupted King of Lxanvom, Darwol Adan, your master has need of you!' A bestial squeak thunders through the crypt as a foul fiend of Bertoxxulous is summoned forth.");
-		eq.spawn2(200046,0,0,-3.09,280.74,-245.20,255.5);
+		eq.spawn2(200046,0,0,-3.09,280.74,-245.20,255.5); -- NPC: #Darwol_Adan
 		darwol_spawned=true;
 	
 		elseif trash_dead == 46 and feig_spawned == false then	--46 Trash
@@ -115,7 +115,7 @@ function Bert_Death(e)
 		eq.depop_all(200056);
 		eq.depop_all(200024);
 		eq.spawn_condition("codecay",0,1,0);
-		eq.spawn2(218068,0,0,-61.75,-.22,-288.5,384.8);
+		eq.spawn2(218068,0,0,-61.75,-.22,-288.5,384.8); -- NPC: A_Planar_Projection
 	end
 end
 

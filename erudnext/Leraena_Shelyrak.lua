@@ -19,13 +19,13 @@ function event_say(e)
 		e.self:Say("You are so young...  Go to Toxxulia and find these kobold shamans.  Cut off their paws and return them to me.  I require three paws as proof of your worth to our temple."); 
 	elseif(e.message:findi("guild coin")) then
 		e.self:Say("Yes, of course. Here it is. Remember that it is not a form of currency.");
-		e.other:SummonItem(13989);
+		e.other:SummonItem(13989); -- Item: Peacekeeper Token
 	elseif(e.message:findi("powerful shamen")) then -- need correct text
 		e.self:Say("There are obviously other shaman with greater healing ability than those we have yet seen.  Take this pouch and collect some of their odd necklaces so that we may study them.");
-		e.other:SummonItem(17090);
+		e.other:SummonItem(17090); -- Item: Small Embroidered Sack
 	elseif(e.message:findi("greater kobold shamen")) then
 		e.self:Say("Return to the Warrens and obtain eight of the bronze symbols worn by the kobolds greater shaman. Place them in this sack that has been blessed by the powers of Quellious to protect you from the evil influence of the evil symbols. Return the full sack with your initiate symbol of Quellious.");
-		e.other:SummonItem(17090);
+		e.other:SummonItem(17090); -- Item: Small Embroidered Sack
 	elseif(e.message:findi("ready to advance")) then
 		e.self:Say("You are ready to strike at the body of the kobold shamans power. There is no reasoning with the Kobolds thus there shall be no peace in our beloved lands until their devotion to their wicked deity ceases. Return once again to the Warrens and bring me the unholy symbol worn by the High Shaman.");
 	end
@@ -51,36 +51,36 @@ function event_trade(e)
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13883,item2 = 13883,item3 = 13883})) then
 		e.self:Say("Fine work. They shall never lay hands upon another kobold again. I mean paws. Here is a small reward for a fine job. Unfortunatly we have recently learned that the shamen in the forest are merely underlings to [more powerful kobold shamen] that reside in the kobold warrens. Continue the work of Quellious.");
-		e.other:SummonItem(eq.ChooseRandom(15213, 15011));
+		e.other:SummonItem(eq.ChooseRandom(15213, 15011)); -- Item(s): Spell: Cure Disease (15213)
 		e.other:Ding();
-		e.other:Faction(298,20,0);
-		e.other:Faction(266,20,0);
-		e.other:Faction(265,-20,0);
+		e.other:Faction(298,20,0); -- Faction: Peace Keepers
+		e.other:Faction(266,20,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-20,0); -- Faction: Heretics
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 14582})) then -- need correct text
 		e.self:Say("I am unfamiliar with the markings that adorn these necklaces. You have done well thus far in hindering the kobolds worship of their evil deity. I award you the Initiate Symbol of Quellious. Return to me when you feel you are ready to deal with the [greater kobold shaman].");
 		e.other:Ding();
-		e.other:SummonItem(1564);
+		e.other:SummonItem(1564); -- Item: Initiate Symbol of Quellious
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 14583,item2 = 1564})) then
 		e.self:Say("Your service to this temple is commendable. I award you the rank of Disciple for your devotions to The Tranquil. When you are [ready to advance] return to me and I will set you upon another task.");
-		e.other:SummonItem(1565);
+		e.other:SummonItem(1565); -- Item: Disciple Symbol of Quellious
 		e.other:Ding();
-		e.other:Faction(298,20,0);
-		e.other:Faction(266,20,0);
-		e.other:Faction(265,-20,0);
+		e.other:Faction(298,20,0); -- Faction: Peace Keepers
+		e.other:Faction(266,20,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-20,0); -- Faction: Heretics
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 14585})) then
 		e.self:Say("It is imperative that we discern the nature of these symbols and the source of the kobolds shamanistic powers. There is a citizen of Erudin residing in Freeport named Glyssa Sonshaw. She is quite possibly the most knowledgeable individual in the field of heraldic and hieroglyphic studies. Take the high shamans necklace and this note to her. When you have discovered the nature of the symbols return to me with the documentation and your Disciple Symbol of Quellious.");
 		e.other:Ding();
-		e.other:SummonItem(1772);
-		e.other:SummonItem(14585);
+		e.other:SummonItem(1772); -- Item: Sealed Parchment
+		e.other:SummonItem(14585); -- Item: Odd Cold Iron Necklace
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1780,item2 = 1781,item3 = 1565})) then
 		e.self:Say("You have done well yet again, young disciple. I award you the rank of Regent of the Peacekeepers. With this information we can hopefully gain some insight into the workings of the kobolds' religion.");
-		e.other:SummonItem(1566);
+		e.other:SummonItem(1566); -- Item: Regent Symbol of Quellious
 		e.other:Ding();
-		e.other:Faction(298,20,0);
-		e.other:Faction(266,20,0);
-		e.other:Faction(265,-20,0);
+		e.other:Faction(298,20,0); -- Faction: Peace Keepers
+		e.other:Faction(266,20,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-20,0); -- Faction: Heretics
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -46,72 +46,72 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #requires ally Kromzek faction
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24912 => 1)) { # cap
-      quest::summonitem(25377);
+      quest::summonitem(25377); -- Item: Deceiver's Crown
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24907 => 1)) { # bp
-      quest::summonitem(25378);
+      quest::summonitem(25378); -- Item: Deceiver's Chestguard
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24909 => 1)) { # sleeves
-      quest::summonitem(25379);
+      quest::summonitem(25379); -- Item: Deceiver's Vambraces
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24911 => 1)) { # wrist
-      quest::summonitem(25380);
+      quest::summonitem(25380); -- Item: Deceiver's Bracer
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24913 => 1)) { # gloves
-      quest::summonitem(25381);
+      quest::summonitem(25381); -- Item: Deceiver's Gauntlets
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24908 => 1)) { # legs
-      quest::summonitem(25382);
+      quest::summonitem(25382); -- Item: Deceiver's Greaves
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24910 => 1)) { # boots
-      quest::summonitem(25383);
+      quest::summonitem(25383); -- Item: Deceiver's Boots
       quest::exp(150000);
-      quest::faction(429,20); # King Tormax
-      quest::faction(448,20); # Kromzek
-      quest::faction(430,-20); # Claws of Veeshan
-      quest::faction(406,-60); # Coldain
+      quest::faction(429,20); -- Faction: King Tormax # King Tormax
+      quest::faction(448,20); -- Faction: Kromzek # Kromzek
+      quest::faction(430,-20); -- Faction: Claws of Veeshan # Claws of Veeshan
+      quest::faction(406,-60); -- Faction: Coldain # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }

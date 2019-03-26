@@ -15,7 +15,7 @@ sub EVENT_PROXIMITY_SAY {
 
 sub EVENT_SIGNAL {
   if ($dwarf == 1) {
-    quest::spawn2(113508,31,0,1126,-840,-118.3,126.8);
+    quest::spawn2(113508,31,0,1126,-840,-118.3,126.8); # NPC: #Doldigun_Steinwielder
     $dwarf = 0
   }
   elsif ($dwarf != 1) {

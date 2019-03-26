@@ -27,7 +27,7 @@ sub EVENT_ITEM {
   #mask
   if(($itemcount{2352} == 1) && ($itemcount{2368} == 1) && ($itemcount{10558} == 1) && ($itemcount{2367} == 1)) {
     quest::say("Well done $name. You truly are a powerful wizard. I have crafted your mask. Take it.");
-    quest::summonitem(2366);
+    quest::summonitem(2366); # Item: Acumen Mask
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -36,7 +36,7 @@ sub EVENT_ITEM {
   #cloak
   if(($itemcount{2332} == 1) && ($itemcount{10553} == 1) && ($itemcount{10554} == 1) && ($itemcount{10555} == 1)) {
     quest::say("Well done $name. You truly are a powerful wizard. I have crafted your cloak. Take it.");
-    quest::summonitem(2364);
+    quest::summonitem(2364); # Item: Runescale Cloak
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
   #lambent stone
   if(($itemcount{10035} == 2) && ($itemcount{10000} == 1)) {
     quest::say("Okay, here is your Lambent Ruby.");
-    quest::summonitem(10118);
+    quest::summonitem(10118); # Item: Lambent Ruby
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
   #vulcanized platinum
   if($itemcount{16507} == 1) {
     quest::say("I see that Gavel has sent you to me.  Very well, I have vulcanized your platinum bar - take it.");
-    quest::summonitem(19048);
+    quest::summonitem(19048); # Item: Vulcanized Platinum Bar
   }
 
 }

@@ -20,15 +20,15 @@ if($signal == 4) {
 }
 if($counterone == 8) {
   quest::ze(1,"You have found some tools");
-  quest::signalwith(286098,1,0);
+  quest::signalwith(286098,1,0); # NPC: Alej_Leraji
 }
 if($countertwo == 6) {
   quest::ze(1,"You have found some tools");
-  quest::signalwith(286098,1,0);
+  quest::signalwith(286098,1,0); # NPC: Alej_Leraji
 }
 if($counterthree == 8) {
   quest::ze(1,"You have found some tools");
-  quest::signalwith(286098,1,0);  
+  quest::signalwith(286098,1,0); # NPC: Alej_Leraji  
 }
 }
 sub EVENT_TIMER {

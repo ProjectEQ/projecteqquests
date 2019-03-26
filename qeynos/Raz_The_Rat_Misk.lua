@@ -11,22 +11,22 @@ function event_trade(e)
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.trade, {gold = 5})) then
 		e.self:Say("Very good, master! Best of luck in locating the proper owner. Maybe try giving it to ol' Crow in North Qeynos. Everyone knows if you need to fence.. er.. find something in Qeynos, Crow is your man. He always seems to know who's missing what. I am off to get some food.");
-		e.other:SummonItem(17600);
+		e.other:SummonItem(17600); -- Item: Tattered Leather Pouch
 		e.other:Ding();
-		e.other:Faction(223,10,0);
-		e.other:Faction(291,-10,0);
-		e.other:Faction(230,10,0);
-		e.other:Faction(262,-10,0);
-		e.other:Faction(273,10,0);
+		e.other:Faction(223,10,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(230,10,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(262,-10,0); -- Faction: Guards of Qeynos
+		e.other:Faction(273,10,0); -- Faction: Kane Bayle
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.trade, {gold = 3})) then
 		e.self:Say("Thank you, kind master. I don't wish to trouble you further but I do have another [favor] to ask..");
 		e.other:Ding();
-		e.other:Faction(223,10,0);
-		e.other:Faction(291,-10,0);
-		e.other:Faction(230,10,0);
-		e.other:Faction(262,-10,0);
-		e.other:Faction(273,10,0);
+		e.other:Faction(223,10,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(230,10,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(262,-10,0); -- Faction: Guards of Qeynos
+		e.other:Faction(273,10,0); -- Faction: Kane Bayle
 		e.other:AddEXP(200);
 	end
 	

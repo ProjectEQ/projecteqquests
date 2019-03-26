@@ -12,7 +12,7 @@ quest::emote("looks up from her teary handkerchief, the deepest sadness visible 
   if ($text=~/what story/i) {
   #not live text
     quest::say("Here.  Take this and read it, I can't bear to relate it again");
-    quest::summonitem(18324);
+    quest::summonitem(18324); # Item: Kalila'a Diary
   }
 }
 

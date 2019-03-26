@@ -31,13 +31,13 @@ sub EVENT_ITEM {
 
    if(plugin::check_handin(\%itemcount,10195=>1)) {
       quest::say("Prickly pears! I just love prickly pears!! Thank you so much for getting these for me. I really, really appreciate your gift and I shall not.. OWW!! I hate it when I stick myself with the needles! Oh look, I am bleeding now! <Sigh.> Can you hold this note for a moment, please? My hands are full and I must clean up.");
-      quest::summonitem(10196);
+      quest::summonitem(10196); # Item: Bloodied Piece of Parchment
       quest::exp(1000);
    }
    elsif (plugin::check_handin(\%itemcount,10193=>1)) {
       quest::emote("bounces around with glee at the sight of your gift, smiles at you, and dons the telesm. As she clasps the telesm around her neck, she begins to writhe in agony, and slowly fades from sight leaving just the telesm, which is now pulsating with vibrant energy.");
       quest::depop_withtimer();
-      quest::summonitem(10194);
+      quest::summonitem(10194); # Item: Pulsating Hyacinth Telesm
       quest::exp(10000);
    }
   plugin::return_items(\%itemcount);

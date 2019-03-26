@@ -26,14 +26,14 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10604 => 1)) {
     quest::say("Ah yes, Jeb's seal. The time to craft a Serpent must have come. I will need components collected to craft the first of the pieces. I will also provide you with a sack in which you must combine the items. Are you ready to collect them?");
-    quest::summonitem(10604);
-    quest::summonitem(17861);
+    quest::summonitem(10604); # Item: Jeb's Seal
+    quest::summonitem(17861); # Item: Enchanters Sack
   }
   if (plugin::check_handin(\%itemcount, 10635 => 1)) {
     quest::say("Excellent, you have done well. Here is the first piece of the staff. Now you must go seek out the second master; he will clear the path for you.");
-    quest::faction(404,30);
+    quest::faction(404,30); # Faction: Truespirit
     quest::exp(100000);
-    quest::summonitem(10610);
+    quest::summonitem(10610); # Item: 1st Piece of Staff
   }
   plugin::return_items(\%itemcount);
 }

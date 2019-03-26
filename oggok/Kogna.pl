@@ -12,8 +12,8 @@ if ($text=~/meats/i) {
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 13410 => 4)) {
   quest::say("Yous really did it. Mebbe you tuff Craknek after all.");
-  quest::faction( 228, 15);
-  quest::faction( 232, 15);
+  quest::faction( 228, 15); # Faction: Clurg
+  quest::faction( 232, 15); # Faction: Craknek Warriors
 }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

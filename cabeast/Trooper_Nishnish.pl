@@ -20,15 +20,15 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 18244 => 1)) {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
-    quest::summonitem(18244);
+    quest::summonitem(18244); # Item: Legion Order
   }
   elsif (plugin::check_handin(\%itemcount, 12465 => 2)) {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
-    quest::summonitem(12465,2);
+    quest::summonitem(12465,2); # Item: Barracuda Tooth
   }
   elsif (plugin::check_handin(\%itemcount, 12465 => 1)) {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
-    quest::summonitem(12465);
+    quest::summonitem(12465); # Item: Barracuda Tooth
   }
   plugin::return_items(\%itemcount);
 }

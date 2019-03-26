@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-     quest::movepc(207,-16,-49,452);
+     quest::movepc(207,-16,-49,452); # Zone: lopingplains
 }
 
 sub EVENT_SIGNAL {

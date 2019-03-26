@@ -136,7 +136,7 @@ sub EVENT_SAY {
   }
   if (($text=~/have done all you asked/i) && defined($qglobals{ikkyalt}) && ($qglobals{ikkyalt} == 8)) {
     quest::say("Indeed you have and your help is greatly appreciated. Take this back to L`diava I believe it has the answers she seeks.");
-    quest::summonitem(67562);
+    quest::summonitem(67562); # Item: Sealed Confession
   }
 }
 
@@ -157,17 +157,17 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 60146 => 1, 60147 => 1, 60148 => 1, 60149 => 1)) {
       quest::emote("examines the strange glyphs. 'These glyphs are faded. I won't be able to decipher them until they've been cleaned up. You'll need to go back to the Martyrs Passage and recover some dust from the grounds nearby. Once you've gotten a pile of dust, you'll need to speak with Tublik Narwethar who is south of the Martyrs Passage. He has a stone tablet that can add some clarity to the glyphs with the help of that dust. Hurry along, $name, this information is important!'");
       $client->Message(4, "Finished! - You've recovered important glyphs from the Temple of the Damned!");
-      quest::summonitem(60147);
-      quest::summonitem(60149);
-      quest::summonitem(60146);
-      quest::summonitem(60148);
+      quest::summonitem(60147); # Item: Glyph of the Damned
+      quest::summonitem(60149); # Item: Glyph of the Damned
+      quest::summonitem(60146); # Item: Glyph of the Damned
+      quest::summonitem(60148); # Item: Glyph of the Damned
       quest::setglobal("ikky",6,5,"F");
     }
   }
   if (defined($qglobals{ikky}) && ($qglobals{ikky} == 6)) {
     if (plugin::check_handin(\%itemcount, 60150 => 1)) {
       quest::emote("copies down the intricate patterns from the glyph. 'Very interesting, but very dangerous. I've gone over the glyphs and they suggest there is great danger in the summoning of some kind of ferocious beast. I need to study the markings further, but since I've transcribed them already, you can keep the glyph for your own use. Nicely done, $name.'");
-      quest::summonitem(60150);
+      quest::summonitem(60150); # Item: Translated Glyph of the Damned
       quest::setglobal("ikky",7,5,"F");
       $client->Message(4, "Finished! - You've successfully translated the glyphs you found in the Temple of the Damned!");
     }

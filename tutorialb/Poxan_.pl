@@ -11,7 +11,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM{
   if (plugin::check_handin(\%itemcount, 59968 => 1)) {
     quest::say("Excellent, thank you, $name. Now I can fight along side the revolt against the kobolds. Here take this. I found it in the tunnels earlier. You might need it.");
-    quest::summonitem(59969);
+    quest::summonitem(59969); # Item: Kobold Leather Mask
     quest::exp(10);
   }
   plugin::return_items(\%itemcount);

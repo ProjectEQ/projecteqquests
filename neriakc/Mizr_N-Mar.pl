@@ -20,7 +20,7 @@ sub EVENT_ITEM {
   # Rune of Fortune (Bottom)
   if($gold == 50) {
     quest::say("I see that Sultin has sent you to me.  Very well, here is your rune."); # Made this text up
-    quest::summonitem(10532);
+    quest::summonitem(10532); # Item: Rune of Fortune
   }
 
   # Tashania Quest
@@ -36,9 +36,9 @@ sub EVENT_ITEM {
   #     1000
   if(plugin::check_handin(\%itemcount, 10791 => 1)) {
     quest::say("Ah - the Coin of Tash - and already enchanted by.. ? Tarn? Very good! I have enchanted it further - you must now take the coin to Raine Beteria in the Library of Erudin to get the final enchantment.");
-    quest::summonitem(10792);
-    quest::faction(5029,  10);
-    quest::faction(416, -10);
+    quest::summonitem(10792); # Item: Gleaming Coin of Tash
+    quest::faction(5029,  10); # Faction: Temple Of Sol Ro
+    quest::faction(416, -10); # Faction: Shadowed Men
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

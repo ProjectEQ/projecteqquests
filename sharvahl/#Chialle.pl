@@ -7,10 +7,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30625 => 4)) {
     quest::say("Oh wow! This is just what I was hoping for. Thank you so much! You must be a real good friend to Saren to have her make you these, she never makes freshly squeezed nectar unless she really likes someone. You have a kind heart Khatzhana. Please take this with you as a token of my friendship.");
-    quest::summonitem(30609);
+    quest::summonitem(30609); # Item: Chialle's Friendship Ring
     quest::exp(10000);
     quest::ding();
-    quest::faction(1513,20);
+    quest::faction(1513,20); # Faction: Guardians of Shar Vahl
   }
   plugin::return_items(\%itemcount);
 }

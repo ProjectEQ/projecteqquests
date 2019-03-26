@@ -178,10 +178,10 @@ function ShapeShift(e)
 
   e.self:SendIllusionPacket({race=mob[3],gender=mob[4],texture=mob[5]});
   e.self:TempName(mob[2]);
-  e.self:SetNPCFactionID(79);
+  e.self:SetNPCFactionID(79); -- Faction: Gargoyle
 
   -- Cast Balance of the Nameless on self to remove debuffs
-  e.self:CastSpell(3230, e.self:GetID());  
+  e.self:CastSpell(3230, e.self:GetID()); -- Spell: Balance of the Nameless  
 
   -- Spawn Sub-NPCs 
   if ( mob[6] ~= nil ) then 
@@ -295,7 +295,7 @@ function Boss_Say(e)
       e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0)
       e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
       e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
-      eq.spawn2(308012,0,0,0,0,0,0);
+      eq.spawn2(308012,0,0,0,0,0,0); -- NPC: #death_touch
       event_started = true;
       eq.set_timer('shapeshift', shifttime * 1000);
       eq.debug( "starting shift time: " .. shifttime .. " seconds");

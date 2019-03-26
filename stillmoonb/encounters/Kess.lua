@@ -77,7 +77,7 @@ end
  
  function Kess_Spawn(e)
 	eq.spawn2(339109,0,0,1257.17,6330.92,747.16,462.3); -- Spawn 1 active manashard guardian.
-	eq.spawn2(339108,0,0,1158.62,6328.01,745.01,28.5);
+	eq.spawn2(339108,0,0,1158.62,6328.01,745.01,28.5); -- NPC: inactive_manashard_guardian
 	eq.spawn2(339118,0,0,1128.33,6414.53,744.35,129.5);
 	eq.spawn2(339119,0,0,1156.67,6486.17,745.00,196.3); -- Spawn 5 inactive manashard guardians
 	eq.spawn2(339120,0,0,1229.06,6507.49,754.67,235.3);
@@ -117,23 +117,23 @@ end
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
 				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	elseif (e.hp_event == 60) and unlocktwo == false then -- If my HP is 60% and I have not locked my HP yet.
@@ -141,23 +141,23 @@ end
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
 				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	elseif (e.hp_event == 40) and unlockthree == false then -- If my HP is 40% and I have not locked my HP yet.
@@ -165,23 +165,23 @@ end
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
 				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	elseif (e.hp_event == 20) and unlockfour == false then -- If my HP is 20% and I have not locked my HP yet.
@@ -189,23 +189,23 @@ end
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
 				eq.spawn2(339115,0,0,1287.83,6356.93,754.18,407.5); -- Real
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 2) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1299.33,6423.52,755.13,433.3); -- Real
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 3) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1202.17,6478.35,754.83,222.0); -- Real
-				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5);
+				eq.spawn2(339111,0,0,1126.67,6409.48,753.60,189.5); -- NPC: #Protector_of_Kessdona
 			elseif (which == 4) then
-				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5);
-				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3);
-				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0);
+				eq.spawn2(339111,0,0,1287.83,6356.93,754.18,407.5); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1299.33,6423.52,755.13,433.3); -- NPC: #Protector_of_Kessdona
+				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
 	end

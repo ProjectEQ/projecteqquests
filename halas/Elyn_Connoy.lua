@@ -5,8 +5,8 @@ local qglobals = eq.get_qglobals(e.self,e.other);
 		e.self:Emote("feints an attack. She swings her dagger with incredible speed, bringing the tip of the blade to a stop less than an inch short of your neck. 'Another step closer, cur, and I'll end your miserable life. This ain't no place for no Dark Elf, and you'll be doing yourself a favor by leaving the premises. Quick as ye blink.' With a flick of her wrist, she flings her dagger at the table and it sinks deep into the wood with a satisfying thwack. Just as quickly, she withdraws another pair of previously concealed blades from her bodice and brandishes them menacingly. So, are you going to step off, or do you have the guts to take care of a [" .. eq.say_link("small job") .. "] for me? You should know that this ain't no boondoggle and I don't tolerate [" .. eq.say_link("stupid questions") .. "].");
 	elseif(e.message:findi("small job")) then
 		e.self:Say("How's your sewing, " .. e.other:GetName() .. "?' Elyn smirks at the absurdity of her query. Don't worry, this ain't no woman's work. I've got my eye on a certain market - for those in need of tasteful tailoring that conceals cold steel. You'd be surprised how much interest there is in such a product. The catch is, I need high quality materials and I need this taken care of discreetly. My contact wants to see a sample of the product soon. Everything you need to know you'll find on this list. Bring the items back to me in this here satchel, and don't let anyone catch you at work.");
-		e.other:SummonItem(8775);
-		e.other:SummonItem(52330);
+		e.other:SummonItem(8775); -- Item: Collection Satchel
+		e.other:SummonItem(52330); -- Item: Deceiver's Garb Instructions
 	elseif(e.message:findi("stupid questions")) then
 		e.self:AddToHateList(e.other);
 	end

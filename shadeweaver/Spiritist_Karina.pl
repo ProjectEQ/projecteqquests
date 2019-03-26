@@ -82,7 +82,7 @@ sub EVENT_ITEM {
     quest::exp(1000);
     quest::ding();
     #Rebirth Leather Gloves
-    quest::summonitem(30879);
+    quest::summonitem(30879); # Item: Rebirth Leather Gloves
   }
   #Handin: A Sharp Toothed Jawbone
   elsif(plugin::check_handin(\%itemcount, 30873 => 4)){
@@ -92,7 +92,7 @@ sub EVENT_ITEM {
     quest::say("I can sense the mark of the [Loda Kai] within these jawbones. This is a horror, for Loda Kai was once a member of my people. I do not know how he came about these strange magical forces but it can not be good news. Please wear these sleeves for protection. This new discovery worries me 
 deeply.");
     #Rebirth Leather Sleeves
-    quest::summonitem(30877);
+    quest::summonitem(30877); # Item: Rebirth Leather Sleeves
     quest::faction(1513,10); # +Guardians of Shar Vahl
     quest::exp(1000);
     quest::ding();

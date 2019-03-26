@@ -28,51 +28,51 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 12686 => 4)) { #Armor of the Patriarch Quest (part 2 - Patriarch's Cap)
 		quest::say("You have done well in your first test young patriarch! Wear these bracers to help protect you from the dangers you may find in your journey. Now for your next test you shall bring me three spiderling silks and one scarab carapace as continued proof our your growing powers. ");
-		quest::summonitem(7827);
+		quest::summonitem(7827); # Item: Patriarch's Bracer
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(445,20);
-		quest::faction(441,10);
+		quest::faction(445,20); # Faction: Scaled Mystics
+		quest::faction(441,10); # Faction: Legion of Cabilis
 	}
 	elsif(plugin::check_handin(\%itemcount, 13099 => 3, 13849 => 1)) { #Armor of the Patriarch Quest (part 3 - Patriarch's Leggings)
 		quest::say("You have done well again young patriarch. Wear this cap proudly. Now for your next test, you shall bring me four watcher signal torches as proof of your growing powers. ");
-		quest::summonitem(7828);
+		quest::summonitem(7828); # Item: Patriarch's Cap
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(445,20);
-		quest::faction(441,10);
+		quest::faction(445,20); # Faction: Scaled Mystics
+		quest::faction(441,10); # Faction: Legion of Cabilis
 	}
 	elsif(plugin::check_handin(\%itemcount, 12441 => 4)) { #Armor of the Patriarch Quest (part 4 - Patriarch's Claw)
 		quest::say("You are doing very well in your training young patriarch! Wear these leggings proudly. For your next text, you will need to bring me two Sarnak Broodling fangs and two Goblin Hunter javelins. When you have completed this test, I will reward you with the Patriarch's claw. ");
-		quest::summonitem(7829);
+		quest::summonitem(7829); # Item: Patriarch's Leggings
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(445,20);
-		quest::faction(441,10);
+		quest::faction(445,20); # Faction: Scaled Mystics
+		quest::faction(441,10); # Faction: Legion of Cabilis
 	}
 	elsif(plugin::check_handin(\%itemcount, 14599 => 2, 12432 => 2)) { #Armor of the Patriarch Quest (part 5 - Patriarch's Leather)
 		quest::say("You have made me proud young patriarch! Here is your Patriarch's claw, which will help you against the dangers you will find in your journeys. Now there is one final task that you will need to complete. For this task, you will need to bring me four froglok tuk buckers. When you have completed this final task, you will indeed be a true Patriarch of Cabilis. ");
-		quest::summonitem(7830);
+		quest::summonitem(7830); # Item: Patriarch's Claw
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(445,20);
-		quest::faction(441,10);
+		quest::faction(445,20); # Faction: Scaled Mystics
+		quest::faction(441,10); # Faction: Legion of Cabilis
 	}
 	elsif(plugin::check_handin(\%itemcount, 8999 => 4)) { #Armor of the Patriarch Quest
 		quest::say("Congratulations young Patriarch, you have proven yourself to be worthy of our cause. Wear your armor proudly, as it is the symbol of a true Patriarch of Cabilis. ");
-		quest::summonitem(7831);
+		quest::summonitem(7831); # Item: Patriarch's Leather
 		quest::exp(20000);
 		quest::ding();
-		quest::faction(445,20);
-		quest::faction(441,10);
+		quest::faction(445,20); # Faction: Scaled Mystics
+		quest::faction(441,10); # Faction: Legion of Cabilis
 	}
 	elsif(plugin::check_handin(\%itemcount, 12409 => 1, 12431 => 1, 12428 => 1, 12727 => 1)){ #Claw of the Cub Quest (Claw of the Spiritual Elder Quest Line 1/6)
 		quest::say("You have done well on your way to becoming a great patriarch. Now I must tend to other pressing issues. Take your reward and wear it proudly.");
-		quest::summonitem(48045);
+		quest::summonitem(48045); # Item: Claw of the Cub
 		quest::exp(80000);
 		quest::ding();
-		quest::faction(445,20);
-		quest::faction(441,10);
+		quest::faction(445,20); # Faction: Scaled Mystics
+		quest::faction(441,10); # Faction: Legion of Cabilis
 	}
 	elsif (plugin::check_handin(\%itemcount, 18848 => 1)) { #A tattered note
 		quest::say("The Hierophants have sensed that your spirit is strong with obedience inspiring fear! You must learn to harness your [powers] over the scaled wolves! Wear this tunic so that the Legion of Cabilis will recognize you as a Scaled Spiritist."); #Proper text still needed

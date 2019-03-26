@@ -27,28 +27,28 @@ sub EVENT_ITEM {
   if (defined($qglobals{bic}) && ($qglobals{bic} == 18)) {
     if (plugin::check_handin(\%itemcount, 67564 => 1)) {
       quest::say("Ah, perfect. I am glad you were successful in finding it. Now, if you will give me one second I will condense the shard into concentrated energy which you can add to your stone. There we are. Please take the time to attach this, but make sure you do it in the order I mentioned when we first spoke.");
-      quest::summonitem(67572);
+      quest::summonitem(67572); # Item: Condensed Matter Shard
       quest::setglobal("bic",19,5,"F");
     }
   }
   if (defined($qglobals{bic}) && ($qglobals{bic} == 19)) {
     if (plugin::check_handin(\%itemcount, 67565 => 1)) {
       quest::say("Ah, perfect. I am glad you were successful in finding it. Now, if you will give me one second I will condense the shard into concentrated energy which you can add to your stone. There we are. Please take the time to attach this, but make sure you do it in the order I mentioned when we first spoke.");
-      quest::summonitem(67573);
+      quest::summonitem(67573); # Item: Condensed Matter Shard
       quest::setglobal("bic",20,5,"F");
     }
   }
   if (defined($qglobals{bic}) && ($qglobals{bic} == 20)) {
     if (plugin::check_handin(\%itemcount, 67566 => 1)) {
       quest::say("Ah, perfect. I am glad you were successful in finding it. Now, if you will give me one second I will condense the shard into concentrated energy which you can add to your stone. There we are. Please take the time to attach this, but make sure you do it in the order I mentioned when we first spoke.");
-      quest::summonitem(67575);
+      quest::summonitem(67575); # Item: Condensed Matter Shard
       quest::setglobal("bic",21,5,"F");
     }
   }
   if (defined($qglobals{bic}) && ($qglobals{bic} == 21)) {
     if (plugin::check_handin(\%itemcount, 67567 => 1)) {
       quest::say("Ah, perfect. I am glad you were successful in finding it. Now, if you will give me one second I will condense the shard into concentrated energy which you can add to your stone. There we are. Please take the time to attach this, but make sure you do it in the order I mentioned when we first spoke.");
-      quest::summonitem(67574);
+      quest::summonitem(67574); # Item: Condensed Shard of Power
       quest::setglobal("bic",22,5,"F");
     }
   }

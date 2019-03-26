@@ -14,7 +14,7 @@ sub EVENT_SAY {
     }
     if($text=~/ruined/i) {
       quest::say("Fantastic! I need to replace all those old poisons, the vial and that old scareling blade. I think the bottles had the following written on them Bane, Burn, Essence, Sloth, Rage, Swiftness, Disorientation, and Dimethyl. Please hurry!");
-      quest::summonitem(17148);
+      quest::summonitem(17148); # Item: Unfilled Box
     }
   }
   else {
@@ -26,7 +26,7 @@ sub EVENT_ITEM {
   $makepoison = $client->GetSkill(56);
   if ($faction <= 2 && $makepoison >= 278 && plugin::check_handin(\%itemcount, 24072 => 1)) {
       quest::say("Great! Looks like everything is here! Hopefully Master Hanns won't send me to Steamfront now, I have a really bad feeling about that assignment. Here take this Seal, it was dropped by that dark stranger. It glows with a dark power I just don't understand. Be wary of further sightings of that dark assassin.");
-      quest::summonitem(24073);
+      quest::summonitem(24073); # Item: Grandmaster Assassin's Seal
       quest::exp(200000);
       quest::faction(223,20); # Circle Of Unseen Hands
       quest::faction(291,-20); # Merchants of Qeynos

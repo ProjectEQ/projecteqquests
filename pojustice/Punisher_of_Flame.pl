@@ -14,5 +14,5 @@ sub EVENT_SIGNAL {
 
 sub EVENT_DEATH_COMPLETE {
 	#Stop the AEs when I die, they have won.
-	quest::signalwith(201417, 2, 5);
+	quest::signalwith(201417, 2, 5); # NPC: #Event_Burning_Control
 }

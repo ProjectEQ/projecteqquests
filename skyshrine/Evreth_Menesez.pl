@@ -10,7 +10,7 @@ sub EVENT_SAY {
     }
     if($text=~/sections/i) {
       quest::say("It is my belief from the information I have gathered thus far, that sections of the tome have been scattered into four sections that were hidden across Velious. The pages of the tome are a thick durable parchment, possibly magically preserved, and the ancient dragon script was penned in the blood of the author. Here is a binding that can be used to store the sections of the tome should you come across them in your explorations. If you find all the sections of the tome return the complete tome to me and I will reward you for your assistance with treasures from the Skyshrine coffers.");
-      quest::summonitem(17166);
+      quest::summonitem(17166); # Item: Empty Dragon Tome Binding
     }
   }
 }
@@ -19,10 +19,10 @@ sub EVENT_ITEM {
   if ($faction == 1) {
     if(plugin::check_handin(\%itemcount,12550 => 1)) {
       quest::say("By Veeshans claws, you've found it! You have done a great service for the residents of Skyshrine, $name! I will make sure that news of your accomplishment reaches the nobles of Skyshrine. Here is the reward that has been promised for your assistance.");
-      quest::summonitem(12558);
-      quest::faction(430,30);
-      quest::faction(436,30);
-      quest::faction(448,-30);
+      quest::summonitem(12558); # Item: Orb of Draconic Energy
+      quest::faction(430,30); # Faction: Claws of Veeshan
+      quest::faction(436,30); # Faction: Yelinak
+      quest::faction(448,-30); # Faction: Kromzek
       quest::exp(1250);
      }
   }

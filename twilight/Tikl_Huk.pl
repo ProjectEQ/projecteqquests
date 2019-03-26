@@ -9,7 +9,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 57080 =>3 )) {
     quest::say("Me proud! Now you must protect dat for da spirit. It need it badly. You be careful. Dere might be some baddies out dere dat may want to take dat from you. Spirit said dere are evils working against us. I hab tied da shrub for you so dat it don't get ruined.");
-    quest::summonitem(52920);
+    quest::summonitem(52920); # Item: Tied Twinkling Shrubs
   }
   plugin::return_items(\%itemcount);
 }

@@ -42,31 +42,31 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 4492 => 1, 4741 => 1, 4742 => 1, 4743 => 1)) { #cap
-    quest::summonitem(3723);
+    quest::summonitem(3723); # Item: Cap of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4493 => 1, 4744 => 1, 4745 => 1, 4746 => 1)) { #robe
-    quest::summonitem(3724);
+    quest::summonitem(3724); # Item: Robe of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4494 => 1, 4748 => 1, 4749 => 1, 4750 => 1)) { #sleeves
-    quest::summonitem(3725);
+    quest::summonitem(3725); # Item: Sleeves of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4488 => 1, 4751 => 1, 4752 => 1, 4753 => 1)) { #pants
-    quest::summonitem(3726);
+    quest::summonitem(3726); # Item: Pants of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4489 => 1, 4771 => 1, 4772 => 1)) { #shawl
-    quest::summonitem(3727);
+    quest::summonitem(3727); # Item: Shawl of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4490 => 1, 4773 => 1, 4774 => 1)) { #bracer
-    quest::summonitem(3728);
+    quest::summonitem(3728); # Item: Bracer of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4491 => 1, 4775 => 1, 4776 => 1)) { #sandals
-    quest::summonitem(3729);
+    quest::summonitem(3729); # Item: Sandals of Pestilence
     quest::exp(10000);
      } 
      plugin::return_items(\%itemcount);

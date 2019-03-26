@@ -16,7 +16,7 @@ sub EVENT_SIGNAL {
          }
 
    if($hedge_roamer == 1){
-      quest::spawn2(204016,116,0,-4725,5200,4,0);
+      quest::spawn2(204016,116,0,-4725,5200,4,0); # NPC: Thelin_Poxbourne
       quest::settimer(5,7200);
       }
    

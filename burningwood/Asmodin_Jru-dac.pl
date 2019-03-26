@@ -10,6 +10,6 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62098 => 3, 62099 =>1)) {
     quest::say("Thank you for helping me to gain my revenge.  May this help you on your way.");
-    quest::summonitem(62205);
+    quest::summonitem(62205); # Item: Sacred Mantle of Stone
   }
 }

@@ -42,15 +42,15 @@ Once you have the shellac fire the old dragon horn or brontotherium femur in a k
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 11655 => 1, 11654 => 1)) { #drum - kromrif bones, cured bronto hide
     quest::say("This will do nicely. Here take the drum I have already prepared and I will craft myself another drum from the materials you have collected.");
-    quest::summonitem(12552);
+    quest::summonitem(12552); # Item: Draconic Fellowship Drum
   }
   elsif (plugin::check_handin(\%itemcount, 1834 => 1, 11657 => 1)) { #lute - siren hair, shellacked femur
     quest::say("This will do nicely. Here take the lute I have already prepared and I will craft myself another lute from the materials you have collected.");
-    quest::summonitem(12553);
+    quest::summonitem(12553); # Item: Draconic Fellowship Lute
   }
   elsif (plugin::check_handin(\%itemcount, 10036 => 1, 11658 => 1)) { #horn - black sapphire, shellacked dragon horn
     quest::say("This will do nicely. Here take the horn I have already prepared and I will craft myself another horn from the materials you have collected.");
-    quest::summonitem(12554);
+    quest::summonitem(12554); # Item: Draconic Fellowship Horn
   }
   else {
     plugin::return_items(\%itemcount);

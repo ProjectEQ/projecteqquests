@@ -17,7 +17,7 @@ sub EVENT_ITEM{
     quest::say("Many thanks, $name! I don't know what I would have done without you. Probably stagger around the island half blind for the rest of my life! At any rate I can repay you with a little trick I picked up along the way. If you ever get in a jam, hopefully you won't be as forgetful as I was!");
     quest::emote("hands you a scroll with several runes scrawled across it.");
     quest::exp(1000);
-    quest::summonitem(59020);
+    quest::summonitem(59020); # Item: Spell: Vision Shift
   }
   plugin::return_items(\%itemcount);
 }

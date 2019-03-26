@@ -7,7 +7,7 @@ sub EVENT_SAY {
   }
   elsif($text=~/second shackle/i){
     quest::say("Then you shall perform the first rite. Take this pack. To the Outlands you will go. You will fill and combine the pack with one of each of the following: goblin scout beads, a large scorpion pincer, a froglok skipper skipping stone, and a sabertooth cub canine. Bring these to me and you shall prove yourself a monk.");
-    quest::summonitem(17026);
+    quest::summonitem(17026); # Item: First Rite Pack
   }
   elsif($text=~/shackle of stone/i){
     quest::say("Interested in the shackle of stone are we? They are made for monks who have earned their first two shackles and are ready to climb up to the next rung. A monk who feels he is ready to wear the shackle of stone must first perform the [task of cleansing].");
@@ -23,43 +23,43 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 12427 => 1)){
   quest::say("You have succeeded, young $name! You have proven yourself a skilled monk. You will now wear the shackle of clay. You will now be required to increase your intensity of training in hopes that you may soon be able to earn your [shackle of stone].");
-  quest::summonitem(4191);
+  quest::summonitem(4191); # Item: Shackle of Clay
   quest::exp(5000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 4190 => 1, 4191 => 1, 12428 => 2)){
   quest::say("You have done supremely, $name. You have earned your shackle of stone. Mistress Niska will now help you on your way to earning the shackle of rock. May the elements guide you to the next rung.");
-  quest::summonitem(4192);
+  quest::summonitem(4192); # Item: Shackle of Stone
   quest::exp(10000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 18469 => 1, 12822 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 18470 => 1, 22924 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 18232 => 1, 18233 => 1)){
   quest::say("This is all that was ever found of Gandan Tailfist. I wish you luck in your quest. May you fare better than he did."); #Unable to find the true text; made this up
-  quest::summonitem(12429);
+  quest::summonitem(12429); # Item: Ancient Thin Flute
   quest::exp(5000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Monk');

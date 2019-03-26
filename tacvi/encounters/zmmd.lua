@@ -104,8 +104,8 @@ function ZMMD_Hp(e)
     eq.set_next_hp_event(70);
 
     ZMMD_Inactivate(e);
-    eq.spawn2(298050,0,0, 367, 130, -6.7, 370);
-    eq.spawn2(298050,0,0, 367, 151, -6.7, 394);
+    eq.spawn2(298050,0,0, 367, 130, -6.7, 370); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298050,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
 
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
@@ -113,26 +113,26 @@ function ZMMD_Hp(e)
     eq.set_next_hp_event(50);
 
     ZMMD_Inactivate(e);
-    eq.spawn2(298051,0,0, 367, 130, -6.7, 370);
-    eq.spawn2(298051,0,0, 367, 151, -6.7, 394);
-    eq.spawn2(298051,0,0, 367, 171, -6.7, 394);
+    eq.spawn2(298051,0,0, 367, 130, -6.7, 370); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298051,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298051,0,0, 367, 171, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
   elseif (e.hp_event == 50) then
     eq.set_next_hp_event(30);
 
     ZMMD_Inactivate(e);
-    eq.spawn2(298052,0,0, 367, 130, -6.7, 370);
-    eq.spawn2(298052,0,0, 367, 151, -6.7, 394);
-    eq.spawn2(298052,0,0, 367, 170, -6.7, 394);
-    eq.spawn2(298052,0,0, 367, 110, -6.7, 394);
+    eq.spawn2(298052,0,0, 367, 130, -6.7, 370); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298052,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298052,0,0, 367, 170, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298052,0,0, 367, 110, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
   elseif (e.hp_event == 30) then
     eq.modify_npc_stat("min_hit", "1670");
     eq.modify_npc_stat("max_hit", "4900");
-    eq.spawn2(298053,0,0, 367, 151, -6.7, 394);
-    eq.spawn2(298053,0,0, 367, 171, -6.7, 394);
+    eq.spawn2(298053,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298053,0,0, 367, 171, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
 
   end
 
@@ -145,7 +145,7 @@ function ZMMD_Signal(e)
 end
 
 function ZMMD_Death(e)
-  eq.signal(298223, 298020);
+  eq.signal(298223, 298020); -- NPC: zone_status
 
   eq.get_entity_list():FindDoor(13):SetLockPick(0);
 end
@@ -156,7 +156,7 @@ function ZMMD_Add_Death(e)
     and eq.get_entity_list():IsMobSpawnedByNpcTypeID( 298052 ) == false) then
 
     -- Wake ZMMD Main Mob back up.
-    eq.signal(298020,1);
+    eq.signal(298020,1); -- NPC: Zun`Muram_Mordl_Delt
   end
 end
 

@@ -48,23 +48,23 @@ quest::summonitem(3996); #turnin message?
 }
 
 elsif (plugin::check_handin(\%itemcount, 4489 => 1,  5941 => 1, 5942 => 1,  5943 => 1)){
-quest::summonitem(3993);
+quest::summonitem(3993); # Item: Feral Cape
 }
 
 elsif (plugin::check_handin(\%itemcount, 4493 => 1, 5951 => 1,  5952 => 1, 5953 => 1)){
-quest::summonitem(3997);
+quest::summonitem(3997); # Item: Feral Claws
 }
 
 elsif (plugin::check_handin(\%itemcount, 4490 => 1, 5944 => 1,  5945 => 1)){
-quest::summonitem(3994);
+quest::summonitem(3994); # Item: Feral Gloves
 }
 
 elsif (plugin::check_handin(\%itemcount, 4491 => 1, 5946 => 1,  5947 => 1)){
-quest::summonitem(3995);
+quest::summonitem(3995); # Item: Feral Talisman
 }
 
 elsif (plugin::check_handin(\%itemcount, 4488 => 1, 5939 => 1,  5940 => 1)){
-quest::summonitem(3992);
+quest::summonitem(3992); # Item: Feral Veil
 }
 
 }

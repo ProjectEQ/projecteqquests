@@ -13,7 +13,7 @@ sub EVENT_SAY {
  }
  if($text=~/tailor training bags/i){
   quest::say("Then take this leech husk pouch and fill it with the obvious.  Once done. combine the skins and take the full leech husk pouch to a local tailor by the name of Klok Mugruk.  He is the one who cleans and toughens the husks for us. He shall hand you a ready-made training bag husk.  He will instruct you further.");
-  quest::summonitem(17998);
+  quest::summonitem(17998); # Item: Leech Husk Pouch
  }
  if($text=~/master rinmark/i){
   quest::say("Seeking Master Rinmark? He has left the Court of Pain. Gone to focus his thoughts on the elements of wind and thunder. I believe he was headed toward the Overthere. That was the last I heard of his trek.");
@@ -23,19 +23,19 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 18468 => 1, 22923 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 18467 => 1, 22922 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
   elsif(plugin::check_handin(\%itemcount, 12688 => 1)) { #Monk Training Bag
     quest::say("Excellent work young one. Take this armor and wear it with pride!"); #Text made up

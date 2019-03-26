@@ -10,7 +10,7 @@ sub EVENT_ITEM
     quest::faction(1503,-2); #Validus Custodus
     quest::faction(1504,-2); #Magus Conlegium
     quest::exp(100);
-    quest::summonitem(3879);
+    quest::summonitem(3879); # Item: Official Seal of the Hand
   }
   plugin::return_items(\%itemcount);
 }

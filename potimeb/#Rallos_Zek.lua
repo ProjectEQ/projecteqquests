@@ -1,6 +1,6 @@
 function event_death_complete(e)
 	-- send a signal to the zone_status that I died
-	eq.signal(223097,6);
+	eq.signal(223097,6); -- NPC: zone_status
 	-- get the zone instance id
 	local instance_id = eq.get_zone_instance_id();
 	-- load qglobals and set bit 8
@@ -28,32 +28,32 @@ function event_hp(e)
 	e.self:Emote("Rallos Zek roars a mighty war cry and swings his axe in vengeance.");
 	if (e.hp_event == 91) then
 		-- spawn a_summoned_boar and a_summoned_minion
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.set_next_hp_event(76);
 	elseif (e.hp_event == 76) then
 		-- spawn a_summoned_boar and a_summoned_minion
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.set_next_hp_event(51);
 	elseif (e.hp_event == 51) then
 		-- spawn a_summoned_boar and a_summoned_minion
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.set_next_hp_event(26);
 	elseif (e.hp_event == 26) then
 		-- spawn a_summoned_boar and a_summoned_minion
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);	
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)	
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 	end
 end

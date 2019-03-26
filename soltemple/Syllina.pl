@@ -42,7 +42,7 @@ sub EVENT_ITEM {
   # Robe of Enshroudment
   if(($itemcount{16484} == 1) && ($itemcount{13239} == 1) && ($itemcount{2309} == 1) && ($itemcount{10535} == 1)) {
     quest::say("Well done, $name!  Here is your robe, as promised."); # Made this text up
-    quest::summonitem(1355);
+    quest::summonitem(1355); # Item: Robe of Enshroudment
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -51,7 +51,7 @@ sub EVENT_ITEM {
   # Shadowbound Gloves
   if(($itemcount{14363} == 1) && ($itemcount{13234} == 1) && ($itemcount{10534} == 1) && ($itemcount{16485} == 1)) {
     quest::say("Well done, $name!  Here are your gloves, as promised."); # Made this text up
-    quest::summonitem(3318);
+    quest::summonitem(3318); # Item: ShadowBound Gloves
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -60,7 +60,7 @@ sub EVENT_ITEM {
   # Shadowbound Boots
   if(($itemcount{14364} == 1) && ($itemcount{13180} == 1) && ($itemcount{10533} == 1) && ($itemcount{16483} == 1)) {
     quest::say("Well done, $name!  Here are your boots, as promised."); # Made this text up
-    quest::summonitem(3317);
+    quest::summonitem(3317); # Item: ShadowBound Boots
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);

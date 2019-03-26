@@ -7,11 +7,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
 	if(plugin::check_handin(\%itemcount, 12271 => 1)){
 		quest::emote("gladly gulps up your odd mixture and transforms into..!!");
-		quest::unique_spawn(51176,0,0,$x,$y,$z,$h);
+		quest::unique_spawn(51176,0,0,$x,$y,$z,$h); # NPC: Princess_Lenya_Thex
 		quest::ding();
-		quest::faction( 5001, 10);
-		quest::faction( 226, 10);
-		quest::faction( 279, 10);
+		quest::faction( 5001, 10); # Faction: Anti-mage
+		quest::faction( 226, 10); # Faction: Clerics of Tunare
+		quest::faction( 279, 10); # Faction: King Tearis Thex
 		quest::depop_withtimer();
 	}
 	plugin::return_items(\%itemcount);

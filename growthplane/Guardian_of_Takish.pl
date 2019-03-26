@@ -18,10 +18,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31427 => 1, 31430 => 1, 31429 => 1, 31428 => 1)) {
-    quest::summonitem(1209);
+    quest::summonitem(1209); # Item: Natures Defender
   }
   if (plugin::check_handin(\%itemcount, 31432 => 1, 31434 => 1, 31431 => 1, 31433 => 1)) {
-    quest::summonitem(1223);
+    quest::summonitem(1223); # Item: Symbol of Tunarian Worship
   }
   else {
     plugin::return_items(\%itemcount);

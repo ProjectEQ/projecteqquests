@@ -19,10 +19,10 @@ sub EVENT_TIMER {
 	#time ran out, go inactive
 	quest::modifynpcstat("special_attacks","ABfHG");
 	$npc->WipeHateList();
-    quest::spawn2(292015,0,0,-567,-875,9,134);
-    quest::spawn2(292015,0,0,-572,-911,9,128);
-    quest::spawn2(292015,0,0,-514,-911,9,390);
-    quest::spawn2(292015,0,0,-514,-875,9,384);
+    quest::spawn2(292015,0,0,-567,-875,9,134); # NPC: a_construct_of_rage
+    quest::spawn2(292015,0,0,-572,-911,9,128); # NPC: a_construct_of_rage
+    quest::spawn2(292015,0,0,-514,-911,9,390); # NPC: a_construct_of_rage
+    quest::spawn2(292015,0,0,-514,-875,9,384); # NPC: a_construct_of_rage
 	quest::stoptimer(1);
 	quest::stoptimer(2);
   } elsif ($timer eq "absorb_twin") {
@@ -69,7 +69,7 @@ sub EVENT_SIGNAL {
 sub EVENT_DEATH_COMPLETE {
 	quest::creategroundobject(67705,-537,-620,-5,2,3600000);
 	#tell other twin I died
-	quest::signalwith(292021,3);
+	quest::signalwith(292021,3); # NPC: #Tqiv_Qukret_the_Furious
 	#lockouts
-	quest::signalwith(292079, 1);
+	quest::signalwith(292079, 1); # NPC: lockout_uqua
 }

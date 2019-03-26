@@ -10,6 +10,6 @@ sub EVENT_SAY {
   if (plugin::check_handin(\%itemcount, 62091 => 1, 62090 => 3)) {
     quest::say("Excellent, justice has been served.  Please take this as your reward.");
   }  
-  quest::summonitem(62201);
+  quest::summonitem(62201); # Item: Grim Necklace of Destruction
   }
 }

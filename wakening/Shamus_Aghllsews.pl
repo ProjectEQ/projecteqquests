@@ -32,8 +32,8 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 1095 => 1)) {
     quest::say("Thank you $name, here is your reward.  Welcome to full membership in the Tunarean Court.");
-    quest::summonitem(8950);
-    quest::faction(449,50);
+    quest::summonitem(8950); # Item: Tunarean Signet Ring
+    quest::faction(449,50); # Faction: Tunarean Court
     quest::exp(10000);
   }
   plugin::return_items(\%itemcount);

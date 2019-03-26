@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/i am worthy/i) {
     quest::say("'Very well then. Here are the plans for the weapon that is said to cut holes into the enemy without much effort. Legend has it that if the wind is blowing, your enemy will be whistling after the fight. But they won't be whistling voluntarily.' Allaria smiles. 'Good luck to you friend.'");
-    quest::summonitem(18347);
+    quest::summonitem(18347); # Item: Rozzuts plans
   }
 }
 

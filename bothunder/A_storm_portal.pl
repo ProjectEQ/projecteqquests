@@ -11,7 +11,7 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
 
 	if($timer == 3) {
-		$npc->CastSpell(1037,209033);
+		$npc->CastSpell(1037,209033); # Spell: Flame Wind
 		quest::spawn2(209107,0,0,$x,$y,$z,$h); #spawn add
 	} elsif ($timer == 4) { #20 minutes, depop all adds
 		quest::stoptimer(4);

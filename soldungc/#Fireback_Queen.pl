@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if ($timer eq "queen") {
   quest::stoptimer("queen");
-  quest::signalwith(278119,71,0);
+  quest::signalwith(278119,71,0); # NPC: #fireback_counter
   quest::depopall(278112);
   quest::depopall(278113);
   quest::depop();

@@ -5,10 +5,10 @@ local doorman_1 = nil;
 local doorman_2 = nil;
 local doorman_3 = nil;
 function event_spawn(e)
-  doorman_1 = eq.spawn2(294632, 0, 0, 218, -336, -2.77, 0.00);
-  doorman_2 = eq.spawn2(294632, 0, 0, 90, -412, -2.77, 0.00);
+  doorman_1 = eq.spawn2(294632, 0, 0, 218, -336, -2.77, 0.00); -- NPC: doorman
+  doorman_2 = eq.spawn2(294632, 0, 0, 90, -412, -2.77, 0.00); -- NPC: doorman
 
-  doorman_3 = eq.spawn2(294633, 0, 0, 240, -496, -2.87, 0.00);
+  doorman_3 = eq.spawn2(294633, 0, 0, 240, -496, -2.87, 0.00); -- NPC: doorman
   
   -- Set a timer to check the zone; this is needed
   -- in case the zone crashes to reset the doormen 
@@ -22,7 +22,7 @@ end
 function event_timer(e)
   if (e.timer == "checkdoors") then
     eq.stop_timer(e.timer);
-    eq.signal(294141, 1);
+    eq.signal(294141, 1); -- NPC: #Trigger_Ikkinz_1
   end
 end
 

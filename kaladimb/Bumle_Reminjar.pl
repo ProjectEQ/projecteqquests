@@ -30,7 +30,7 @@ sub EVENT_ITEM {
       quest::faction(274, 20); #Kazon Stormhammer
       quest::faction(293, 20); #Miner's Guild 249
       quest::exp(5000);
-      quest::summonitem(quest::ChooseRandom(2116,2118,2120,2123,2124));
+      quest::summonitem(quest::ChooseRandom(2116,2118,2120,2123,2124)); # Item(s): Small Patchwork Tunic (2116), Small Patchwork Cloak (2118), Small Patchwork Sleeves (2120), Small Patchwork Pants (2123), Small Patchwork Boots (2124)
       quest::ding();
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12158 => 4))) {

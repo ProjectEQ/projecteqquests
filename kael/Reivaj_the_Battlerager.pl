@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 25117 => 1)) {
       # text made up
       quest::say("Excellent, this will do nicely.  Take this sword for your efforts.");
-      quest::summonitem(25083);
+      quest::summonitem(25083); # Item: Vehement Sword of Reivaj
       quest::exp(1000);
     }
   }

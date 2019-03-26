@@ -81,8 +81,8 @@ sub EVENT_SAY {
 	  if($text=~/great stride/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
 		quest::say("Ye do understand there is no turning back? I hope so. This is a journey -- and sometimes a long one -- depending on what ye've leared so far. Yer skills and wisdom in battle will be tested. Go talk to an old, fallen friend of mine, Lingering Axefall. We call him that because he reguses to let his spirit rest. He failed his task and remains bound here to lead others into the trial he lost. Be wary, though. He is elusive.");
 		quest::say("The foe he stood against and lost to still wishes to extinguish his spirit. Take this axe and give it to him so he will know that ye are ready for the test and that I sent ye. Also, take this medal with you. It will help me keep track of your progress. Best of luck, friend.");
-		quest::summonitem(60189);
-		quest::summonitem(60190);
+		quest::summonitem(60189); # Item: Throwing Axe of the Spirit
+		quest::summonitem(60190); # Item: Medal of Blood
 	  }
 	  if($text=~/hail/i && $ulevel < 46 && $class eq "Berserker") {
 		quest::say("Return once you have trained more, young Berserker.");
@@ -111,7 +111,7 @@ sub EVENT_SAY {
 	  }
 	 if($text=~/do/i && ($hunting == 1 || plugin::check_hasitem($client,60204))) { #Hunting stage complete 
 		quest::say("For my mirage to remain part of my trials, I need some very specific reagents. There is a sickly gorilla that carries a rotting organ which I am in need of. Also, I need a paw of a very special and dangerous kobold. Lastly, bring me the poison sac of a dangerous spider. A potion that allows us to create a gate from one place to another is also required. If ye believe ye can do this for me, tell me so, and I will give ye a bag to hold them in. When ye have all of the ingredients, combine them in the bag I've given ye, and bring it back to me. Good luck in your hunt!"); 
-		quest::summonitem(60205); 
+		quest::summonitem(60205); # Item: McArik Reagent Satchel 
 		$hunting=undef; 
 	  } 
 	  if($text=~/next challenge/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
@@ -134,28 +134,28 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 60196 => 1, 60194 => 1)) {
     quest::say("Well, I am indeed hopeful and pleased about yer progress, $name. Ye should be proud that you have now attained the Medal of Strategy. Well done, indeed! It seems that ye can best yer equal now. The next test of yer masters of yer abilities is much more difficult, however, and may require ye to ask yer friends for some 'elp... but it must be the right kind of 'elp. This test will determine how well ye [strategize in battle]. Ye must gather trustworthy friends and they must be willing to work under yer command.");
-    quest::summonitem(60198);
+    quest::summonitem(60198); # Item: Medal of Strategy
 	$dragon=1;
   }
   elsif(plugin::check_handin(\%itemcount, 60201 => 1, 60198 => 1)) {
     quest::say("Ye are well on the way, me friend. I knew the moment I saw ye that ye were going to get through this. I'm just not convinced that yer as powerful as even ye may think. So, are ye [ready] for the next trial ye must face?");
-    quest::summonitem(60202);
+    quest::summonitem(60202); # Item: Medal of Fervid Rage
     $imp=1;
     quest::settimer(1,1000);
   }
   elsif(plugin::check_handin(\%itemcount, 60202 => 1, 60203 => 1)) {
     quest::say("I am indeed impressed by yer control and ability to best such a horrific beast, my friend. Ye are certainly well on yer way to mastering yer rage and taking advantage of the abilities ye were born with. Here is your Medal of Hunting. Ye are nearly there -- nearly complete with yer trials, but there are a few more things ye [must do] for me. ");
-    quest::summonitem(60204);
+    quest::summonitem(60204); # Item: Medal of Hunting
     $hunting=1;
   }
   elsif(plugin::check_handin(\%itemcount, 60209 => 1, 60204 => 1)) {
     quest::say("Wonderful. Ye have earned yer Medal of Mastery, but ye are not done yet. There is one final test ye must complete before I can recognize ye as a true berserker. Ye must prove that in the face of great adversity, ye can keep yer wits about ye. This final test, naturally, is the most difficult, but I would not present this [next challenge] to ye if I thought ye could not finish yer journey.");
-    quest::summonitem(60210);		
+    quest::summonitem(60210); # Item: Medal of Mastery		
     $mastery=1;
   }
   elsif(plugin::check_handin(\%itemcount, 60210 => 1, 60211 => 1)) {
     quest::say("I am so impressed and proud of ye, $name. This had been a long journey, hasn't it? That said, this will be the most important adventure of yer life, for now you are a true berserker and a master of all of yer skills. As I promised, the completion of these trials would not only bring ye the honor of being recognized as a true berserker, but also a weapon only a true berserker can wield -- one that I fashioned myself. Use this weapon in yer travels and may it serve ye well in battle. Be well,$name, the Berserker.");
-    quest::summonitem(68299);
+    quest::summonitem(68299); # Item: Kerasian Axe of Ire
 	quest::setglobal("berserk_epic", 1, 5, "F");
   }
 #1.5 turnins 
@@ -193,7 +193,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 18976 => 1, 17833 => 1, 17898 => 1, 17399 => 1)) {
     quest::emote("grabs each axe individually and mutters something inaudible. He takes each axe in his hands and looks them over. 'This axe seems to display almost no wear, which is highly unusual, given the amount of punishment ye must have put it through. Surely all three of these axes are of higher quality than the ones we normally make, but this one is vastly superior. Given the quality of this axe, I'd say that it could very easily benefit from some enchantments. So the next step in this axe's journey should be to imbue it with some of the owner's essence. This will create an axe that can actually become aware of its owner's wishes to help him realize his true Berserker's potential. Why if I were the owner and had a rare Soul Gem handy, I'd be headin' off to Teekan the Enchanter in the Abysmal Sea. Her abilities to weave such magic are unsurpassed.");
 	quest::setglobal("berserk_epic", 5, 5, "F");
-	quest::summonitem(18976); 
+	quest::summonitem(18976); # Item: Taelosian Alloy Blood Axe 
   }
 #2.0
   elsif(plugin::check_handin(\%itemcount, 17200 => 1)) {
@@ -201,7 +201,7 @@ sub EVENT_ITEM {
     quest::setglobal("berserk_epic",9, 5, "F");
   }
   elsif(plugin::check_handin(\%itemcount, 72029 => 1, 18398 => 1, 17349 => 1, 17137 => 1)) {  
-    quest::summonitem(20072);
+    quest::summonitem(20072); # Item: Unhoned Vengeful Taelosian Blood Axe
     quest::say("Ah ye've returned with the necessary components, me friend? Give me but a moment to look over what you've managed to get yer hands on. Yes, these should do the job quite nicely. We'll see just what potential can be unleashed in this axe of yours! So the Dragorn smith said to reinforce the haft with this ore, eh? I can accomplish that surely. Work with the Moonstone should be easy enough tew as it don't seem to require much enchantment from me. The Lightning Core will require a bit o' work though as I'm not very experienced with it. Still though, I can surely do something with it. I would na ever thought of using one of these on an axe though! Crafty Gnomes indeed.' After some time and a bit of effort, Keras hands you back your axe. 'Here ya go, lad. I tried honing the edge further but I dinnah have a whetstone strong enough. Maybe that smith o' yours can help ye futher?");
   }
   plugin::return_items(\%itemcount);

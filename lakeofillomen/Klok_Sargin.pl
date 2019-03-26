@@ -28,5 +28,5 @@ sub EVENT_ITEM
 sub EVENT_SIGNAL
 {
    quest::say("Ye.. Ye.. Yes.. Yes, Bruiser.");
-   quest::signalwith(85226,51);
+   quest::signalwith(85226,51); # NPC: Bruiser_Noz
 } 

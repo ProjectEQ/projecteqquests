@@ -72,11 +72,11 @@ sub EVENT_ITEM {
     quest::exp(60000);
   }
   if (plugin::check_handin(\%itemcount, 54035 => 1, 54058 => 1, 54060 => 1, 54056 => 1)) { #melee 4
-    quest::summonitem(54039);
+    quest::summonitem(54039); # Item: Marsinger's Glimmering Gem
     quest::exp(60000);
   }
   if (plugin::check_handin(\%itemcount, 54029 => 1, 54059 => 1, 54061 => 1, 54057 => 1)) { #priest 4
-    quest::summonitem(54039);
+    quest::summonitem(54039); # Item: Marsinger's Glimmering Gem
     quest::exp(60000);
   }
   if (plugin::check_handin(\%itemcount, 9590 => 1)) {

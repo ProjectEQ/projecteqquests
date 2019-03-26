@@ -11,7 +11,7 @@ sub EVENT_SAY {
   }
   if ($text=~/take the mining picks/i && $notecheck == 1) {
     quest::say("Very well then, here are the new mining picks, send Daesorak my regards.");
-    quest::summonitem(4755);
+    quest::summonitem(4755); # Item: Bundle of Mining Picks
     $notecheck = 0;
   }
 }

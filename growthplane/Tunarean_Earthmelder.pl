@@ -16,11 +16,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   # Gloves of Earthcrafting
   if (plugin::check_handin(\%itemcount, 31424 => 1, 31425 => 1, 31426 => 1, 31423 => 1)) {
-    quest::summonitem(1208);
+    quest::summonitem(1208); # Item: Gloves of Earthcrafting
   }
   # Helm of the Tracker
   elsif (plugin::check_handin(\%itemcount, 31419 => 1, 31420 => 1, 31421 => 1, 31422 => 1)) {
-    quest::summonitem(1207);
+    quest::summonitem(1207); # Item: Helm of the Tracker
   }
   else {
     plugin::return_items(\%itemcount);

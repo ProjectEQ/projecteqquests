@@ -94,7 +94,7 @@ function PKK_Spawn(e)
 end
 
 function PKK_Death(e)
-  eq.signal(298223, 298201);
+  eq.signal(298223, 298201); -- NPC: zone_status
   eq.get_entity_list():FindDoor(5):SetLockPick(0);
 end
 
@@ -124,7 +124,7 @@ function PKK_Timer(e)
       eq.depop_all(298146); -- Reflection 4
       eq.depop_all(298048); -- Hatchling
       eq.depop(); -- will depop either husk or PKK
-      eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378);
+      eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378); -- NPC: Pixtt_Kretv_Krakxt
       eq.get_entity_list():FindDoor(5):SetLockPick(0);
     end
   elseif (e.timer == "tenae") then
@@ -136,22 +136,22 @@ function Spawn_Hatchlings(number, x, y, z, h)
   hatchlings_spawned = number;
   hatchlings_killed = 0;
 
-  eq.spawn2(298048,0,0,x+15, y+15, z, h);
-  eq.spawn2(298048,0,0,x+15, y-15, z, h);
-  eq.spawn2(298048,0,0,x-15, y-15, z, h);
+  eq.spawn2(298048,0,0,x+15, y+15, z, h); -- NPC: an_ikaav_hatchling
+  eq.spawn2(298048,0,0,x+15, y-15, z, h); -- NPC: an_ikaav_hatchling
+  eq.spawn2(298048,0,0,x-15, y-15, z, h); -- NPC: an_ikaav_hatchling
 
   if (number >= 4) then
-    eq.spawn2(298048,0,0,x-15, y+15, z, h);
+    eq.spawn2(298048,0,0,x-15, y+15, z, h); -- NPC: an_ikaav_hatchling
   end
 
   if (number >= 5) then
-    eq.spawn2(298048,0,0,x+7, y+15, z, h);
+    eq.spawn2(298048,0,0,x+7, y+15, z, h); -- NPC: an_ikaav_hatchling
   end
   if (number >= 6) then
-    eq.spawn2(298048,0,0,x+7, y+7, z, h);
+    eq.spawn2(298048,0,0,x+7, y+7, z, h); -- NPC: an_ikaav_hatchling
   end
   if (number >= 7) then
-    eq.spawn2(298048,0,0,x, y, z, h);
+    eq.spawn2(298048,0,0,x, y, z, h); -- NPC: an_ikaav_hatchling
   end
 end
 
@@ -188,7 +188,7 @@ function PKK_Hp(e)
     eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
-    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162);
+    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162); -- NPC: Reflection_of_Kretv_Krakxt
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
   elseif (e.hp_event == 30) then
     e.self:Say("My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
@@ -199,7 +199,7 @@ function PKK_Hp(e)
     eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
-    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162);
+    eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162); -- NPC: Reflection_of_Kretv_Krakxt
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
     eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0); -- needs_heading_validation
   elseif (e.hp_event == 10) then
@@ -214,12 +214,12 @@ function PKK_Hatchling_Death(e)
   hatchlings_killed = hatchlings_killed + 1;
   -- the events at 10 don't want to do extra hatchling stuff
   if ( hatchlings_killed >= hatchlings_spawned and PKK_hitpoints ~= 10 ) then
-    eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378);
-    eq.signal(298203, 1);
-    eq.signal(298204, 1);
-    eq.signal(298203, 1);
-    eq.signal(298046, 1);
-    eq.signal(298146, 1);
+    eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378); -- NPC: Pixtt_Kretv_Krakxt
+    eq.signal(298203, 1); -- NPC: Reflection_of_Kretv_Krakxt
+    eq.signal(298204, 1); -- NPC: Reflection_of_Kretv_Krakxt
+    eq.signal(298203, 1); -- NPC: Reflection_of_Kretv_Krakxt
+    eq.signal(298046, 1); -- NPC: Reflection_of_Kretv_Krakxt
+    eq.signal(298146, 1); -- NPC: Reflection_of_Kretv_Krakxt
   end
   e.self:Emote("black blood spills on the floor");
 end

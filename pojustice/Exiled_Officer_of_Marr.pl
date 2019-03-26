@@ -12,8 +12,8 @@ sub EVENT_ITEM
 {
 	if(plugin::check_handin(\%itemcount, 29281 => 1))
 	{
-		quest::summonitem(29281);
-		quest::summonitem(29294);
+		quest::summonitem(29281); # Item: Box of Souls
+		quest::summonitem(29294); # Item: Soul Sphere
 	}
 	plugin::return_items(\%itemcount);
 }

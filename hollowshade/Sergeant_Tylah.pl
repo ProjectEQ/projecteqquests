@@ -7,7 +7,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 3457 => 4)) {
     quest::emote("devours all four of the eggs in the blink of an eye, 'Delicious! May the spirits bless you $name! Here are a few acrylia flakes for your trouble. I'll be happy to pay for more should you find yourself with any extra!");
-    quest::summonitem(3459);
+    quest::summonitem(3459); # Item: Acrylia Flakes
   }
   plugin::return_items(\%itemcount);
 }

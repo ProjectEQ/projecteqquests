@@ -16,11 +16,11 @@ sub EVENT_SAY {
 	}
 	if(($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)){
 		quest::say("Luckily for you someone found it.");
-		quest::summonitem(2873);
+		quest::summonitem(2873); # Item: Application for Citizenship
 	}
 	if(($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)){
 		quest::say("Someone found this stuck in the top of a palm tree in the center of the plaza. I don't even want to know how it got there, just try not to lose it this time.");
-		quest::summonitem(2878);
+		quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
 	}
 }
 
@@ -36,7 +36,7 @@ sub EVENT_ITEM {
 	elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
 		quest::say("Congratulations $name! Welcome to your new life as an official citizen of Shar Vahl. This cloak symbolizes your commitment to serving this people through continuous self-improvement. For now, you must strenghten yourself until you become worthy to train in the way of the Khala Dun. Show your acylia slate to Guard Hebijeb. He will direct you further. May the spirits of our ancestors be your guide.");
 		quest::setglobal("Shar_Vahl_Cit",7,5,"F");
-		quest::summonitem(2878);
+		quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
 		quest::ding();
 		quest::exp(100);
 	}

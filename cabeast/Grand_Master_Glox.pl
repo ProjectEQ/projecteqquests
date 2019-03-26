@@ -19,7 +19,7 @@ sub EVENT_SAY {
 	}
 	if($text=~/ready/i){
 		quest::say('We shall spar then, I hope you are as prepared as you think you are.');
-		quest::movepc(106,-190.9,1089.8,-25.2);
+		quest::movepc(106,-190.9,1089.8,-25.2); # Zone: elddara
 	}
 }
 
@@ -34,11 +34,11 @@ sub EVENT_ITEM {
 	}
 	elsif (plugin::check_handin(\%itemcount, 14788 =>1 )) {
 		quest::emote("sits whispering incoherently for a long moment before even regarding the note you dropped in front of him. The Grand Master suddenly snatches up the note from Xlixinar, removes a small charcoal marker from a belt pouch, and scrawls some intructions upon it. He drops the note immediately after finishing and resumes his meditation without a word.");
-		quest::summonitem(18980);
+		quest::summonitem(18980); # Item: Note from Glox
 	}
 	elsif (plugin::check_handin(\%itemcount, 14782 =>1, 10032 =>1 )) {
 		quest::emote("nods slightly");
-		quest::summonitem(14783);
+		quest::summonitem(14783); # Item: Glox Reference
 		quest::ding();
 		quest::exp(10000);
 	}

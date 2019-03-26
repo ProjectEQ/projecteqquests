@@ -53,7 +53,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30616 => 4)) {
     quest::say("Well done, hunter."); #generic reward text
     quest::exp(2000);
-    quest::summonitem(13009,6);
+    quest::summonitem(13009,6); # Item: Bandages
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

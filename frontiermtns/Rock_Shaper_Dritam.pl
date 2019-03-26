@@ -12,6 +12,6 @@ quest::say("For justice to be brought to them you will need to strike at some of
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62078 => 3, 62079 => 1)) {
     quest::say("Thank you for helping me avenge my time in the mines.  Take this, and I hope that it serves you well.");
-    quest::summonitem(62195);
+    quest::summonitem(62195); # Item: Earthen Gloves of Wisdom
   }
 }

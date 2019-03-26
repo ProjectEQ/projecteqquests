@@ -27,7 +27,7 @@ if($text=~/gravel leaf tea/i){
    quest::say("To make the tea you'll need a flask of crystal clear water and some gravel pit
 leaves. Boil the water in a brew barrel and add the leaves when it's hot. That makes for the
 strongest dose of the sedative qualities of the tea.");
-   quest::summonitem(17099);
+   quest::summonitem(17099); # Item: Empty Crate
 }
 if($text=~/hollow palm tea/i){
    quest::say("You'll need some Crystal water, just as you do with all of our teas, and some
@@ -48,7 +48,7 @@ if(plugin::check_handin(\%itemcount,2877=>1)){
 tea leaves from below the city. I need these leaves to make some tea for the guards under the
 arena. I need 10 of these leaves to brew enough tea for the guards. Take this pouch and fill it
 with leaves and return it to me.");
-   quest::summonitem(17098);
+   quest::summonitem(17098); # Item: Empty Pouch
 }
 
 if(plugin::check_handin(\%itemcount,31764=>1)){
@@ -56,7 +56,7 @@ if(plugin::check_handin(\%itemcount,31764=>1)){
  this seal as proof of your helping me. You wouldn't happen to know anyone who would be [interested]
  in learning the art of Vah Shir Brewing would you? I could really use the help in these hard times,
  I can barely keep up with all the demand.");
-   quest::summonitem(31774);
+   quest::summonitem(31774); # Item: Ahlam's seal
 }
 
 if(plugin::check_handin(\%itemcount,31774=>1)){
@@ -65,7 +65,7 @@ brewing. You'll need a steady hand if you are to master the brew barrel. The fir
 need to learn is how to purify the water we use for all our finest brews. Take this Acrylia filter
 and use it to [purify water]. Bring me 4 flasks of crystal clear water and I'll teach you how to make
 the tea from the gravel tea leaves.");
-   quest::summonitem(31760);
+   quest::summonitem(31760); # Item: Acrylia sand purifier
 }
 
 if(plugin::check_handin(\%itemcount,31762=>4)){
@@ -79,7 +79,7 @@ if(plugin::check_handin(\%itemcount,31775=>1)){
 ready to move on to something a bit more challenging now. Take this strainer, it will allow you to
 create some very potent brews from some of the more rare herbs to be found near the city. You'll
 want to start by making some [Hollow palm tea] to get used to how the strainer works.");
-   quest::summonitem(31768);
+   quest::summonitem(31768); # Item: Metal Strainer
 }
 
 if(plugin::check_handin(\%itemcount,31769=>1, 31768=>1)){
@@ -91,20 +91,20 @@ if(plugin::check_handin(\%itemcount,31769=>1, 31768=>1)){
  drinking anything made from grimroot makes my stomach churn. At any rate, tinker a bit with that
  strainer and don't be afraid of trying some new brews with it. If you create anything interesting
  that you think I might like bring it to me so I can taste it.");
-   quest::summonitem(31771);
+   quest::summonitem(31771); # Item: Runed Metal strainer
 }
 
 if(plugin::check_handin(\%itemcount,31772=>1)){
    quest::say("Great job, here is my seal of approval.  Hand that back in along with your stainer
 for an upgrade.");
-   quest::summonitem(31776);
+   quest::summonitem(31776); # Item: Ahlam's Approval
    
 }
 
 if(plugin::check_handin(\%itemcount,31776=>1, 31771=>1)){
    quest::say("Here is the Acrylia Handled Strainer.  Use it with regular water to replace the
 crystal clear water.");
-   quest::summonitem(31777);
+   quest::summonitem(31777); # Item: Acrylia Handled Strainer
 }
 }
 

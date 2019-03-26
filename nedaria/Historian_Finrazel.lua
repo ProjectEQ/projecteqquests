@@ -2,7 +2,7 @@ function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("plan to find") and qglobals["druid_epic"] == "10") then
 		e.self:Say("Then you'll need this. I use it to store magical potions, but it might work for holding frozen pieces of a greater rain spirit.' He shrugs. 'I hope so, anyway. I don't exactly see a lot of frozen rain spirits.' He smiles. 'I wish you luck, friend. Rescuing such a being would be a boon for all of Norrath.");
-		e.other:SummonItem(62884);
+		e.other:SummonItem(62884); -- Item: Thick Leather Bag
 	end
 end
 
@@ -15,7 +15,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 62885})) then		
 		e.self:Emote("opens the bag and examines the shards with care and awe. He then seals them back into the bag and returns it to you. 'Well, isn't that a sight to behold. I'm grateful to you for letting me see them. It appears that the stories were correct. My guess would be that those shards were given to various Muramite leaders as rewards for some particularly horrible work they had done. I hope you can find a way to make those pieces whole again. I wish I could help you, but you've already exceeded the bounds of my knowledge. I wish you luck finding someone to help you restore the rain spirit shards.");
 		eq.set_global("druid_epic","11",5,"F");
-		e.other:SummonItem(62885);
+		e.other:SummonItem(62885); -- Item: Synched Leather Bag
 	end	
 	item_lib.return_items(e.self, e.other, e.trade)
 end

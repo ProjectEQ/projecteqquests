@@ -21,7 +21,7 @@ function event_click_door(e)
 		-- open door 43 also		
 		if (entity_list:FindDoor(42):GetLockPick() == 0) then
 			entity_list:FindDoor(43):ForceOpen(e.self);
-			eq.signal(296075,5);
+			eq.signal(296075,5); -- NPC: #noqufiel_trigger
 			e.self:Message(1,"You heave at the stone doors with all your might!  They shudder and give way.");		
 		else
 			e.self:Message(1,"You heave at the stone doors with all your might but they do not budge.");
@@ -32,7 +32,7 @@ function event_click_door(e)
 		-- open door 42 also
 		if (entity_list:FindDoor(43):GetLockPick() == 0) then
 			entity_list:FindDoor(42):ForceOpen(e.self);
-			eq.signal(296075,5);
+			eq.signal(296075,5); -- NPC: #noqufiel_trigger
 			e.self:Message(1,"You heave at the stone doors with all your might!  They shudder and give way.");		
 		else
 			e.self:Message(1,"You heave at the stone doors with all your might but they do not budge.");

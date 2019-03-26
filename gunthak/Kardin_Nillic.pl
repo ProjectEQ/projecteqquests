@@ -22,12 +22,12 @@ sub EVENT_ITEM{
   if(plugin::check_handin(\%itemcount, 59022 => 1)) {
     #not sure what the text is here - please say if you know.
     quest::say("I can't read all of it, Take the rest to Jusean Evanesque of South Qeynos, he will understand.");
-    quest::summonitem(59023);
+    quest::summonitem(59023); # Item: Faded Songbook
  }
   if(plugin::check_handin(\%itemcount, 59024 => 1)) {
     quest::say("You have done well $name, my friend will now be saved, let me share my song with you.");
     quest::exp(1000);
-    quest::summonitem(59002);
+    quest::summonitem(59002); # Item: Song: Aria of Asceticism
   }
   plugin::return_items(\%itemcount);
 }

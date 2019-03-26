@@ -21,16 +21,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction <= 5) {
     if (plugin::check_handin(\%itemcount, 4178 => 1)) {
-      quest::summonitem(4186);
+      quest::summonitem(4186); # Item: Small Crafted Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 4176 => 1)) {
-      quest::summonitem(4184);
+      quest::summonitem(4184); # Item: Small Crafted Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 4173 => 1)) {
-      quest::summonitem(4181);
+      quest::summonitem(4181); # Item: Small Crafted Helm
     }
     elsif (plugin::check_handin(\%itemcount, 4180 => 1)) {
-      quest::summonitem(4188);
+      quest::summonitem(4188); # Item: Small Crafted Plate Boots
     }
     else {
       plugin::return_items(\%itemcount);

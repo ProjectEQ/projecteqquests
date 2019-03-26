@@ -29,7 +29,7 @@ function event_trade(e)
 
         if (#valid_prizes == 0) then
             e.self:Say("I don't have any prizes for you at this time.");
-            e.other:SummonItem(66615);
+            e.other:SummonItem(66615); -- Item: Gold Ticket
         else
             e.self:Shout(string.format("Ladies and Gentlemen gather around, as our brave %s is turning in their Golden Ticket for a chance at the big time! With a spin of the wheel let us determine the prize. Ladies and gentlemen, the $race wins a prize! Everyone please congratulate %s on this excellent luck!", e.other:GetName(), e.other:GetName()));
             local which = math.random(1, table.getn(valid_prizes));

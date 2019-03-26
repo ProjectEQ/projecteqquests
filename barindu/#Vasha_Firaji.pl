@@ -13,8 +13,8 @@ sub EVENT_ITEM {
   if ((plugin::check_handin(\%itemcount, 64011 =>1 )) && ($faction <= 2)) {
     quest::emote("The look on Vasha Firaji's face softens and a tear rolls down her cheek.");
     quest::say("Thank you friend. With the beast where he belongs, I can finally begin to mourn. Please take this bracelet as a token of my thanks. It was my husband's. Proteri Amari tells me there is some magic locked away inside it.");
-    quest::summonitem(64012);
-    quest::faction(1761,15);
+    quest::summonitem(64012); # Item: Engraved Stone Bracelet
+    quest::faction(1761,15); # Faction: Nihil
   }
   plugin::return_items(\%itemcount);
 }

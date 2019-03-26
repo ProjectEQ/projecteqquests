@@ -13,7 +13,7 @@ function event_say(e)
 	end
 	if(e.message:findi("young warrior") and e.other:GetFaction(e.self) < 5) then
 		e.self:Say("Ach, 'tis good o' ye! Take this bottle of elixir to Everfrost Peaks. Find Talin O'Donal. He'll take the first sip, and then instruct ye on who else ye need to find. Do that, and I'll give ye a fine reward when ye return the empty elixir bottle. Good luck, then. Don't die.");
-		e.other:SummonItem(13241);
+		e.other:SummonItem(13241); -- Item: Full Bottle of Elixir
 	end
 end
 

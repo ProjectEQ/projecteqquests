@@ -13,6 +13,6 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 25112 => 1, 25113 => 1)) {
     quest::say("You are starting to prove yourself here is a small token for your work");
-    quest::summonitem(25056);
+    quest::summonitem(25056); # Item: Silver Dragon Tattoo
   }
 }

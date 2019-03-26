@@ -10,7 +10,7 @@ function event_say(e)
 		end
 	elseif(e.message:findi("prepared") and qglobals["ench_epic"] >= "1") then	
 		e.self:Say("I have recently received this ancient tome; it contains knowledge that may prove invaluable to the construction of a new staff. Unfortunately, time has had its way with it. I need you to find the missing pages so we can get to work. There should be ten, unless they have been destroyed by time and decay.");
-		e.other:SummonItem(57918);		
+		e.other:SummonItem(57918); -- Item: Tattered Illegible Tome		
 	elseif(e.message:findi("chest") and qglobals["ench_epic"] >= "3") then	
 		e.other:SummonItem(52960); --Ornate Staff Chest						
 	elseif(e.message:findi("are you jeb lumsed")) then
@@ -29,7 +29,7 @@ function event_say(e)
 		e.self:Say("Master of the Phantasms - he is the last one you will seek out. Hmm...Polzin is native to Erudin, however, after the incident near Paineel, no one has heard from him. I hope that he is well.");
 	elseif(e.message:findi("I need a sack")) then
 		e.self:Say("Take this sack and combine the items I requested in it. Then return it to me.");
-		e.other:SummonItem(17861);
+		e.other:SummonItem(17861); -- Item: Enchanters Sack
 	elseif(e.message:findi("purify") and e.other:HasItem(52952)) then
 		e.self:Say("The purification is not something that I alone have the power to complete. There was once a crystal that held the power to purify something of this magnitude, however it was shattered long ago. You will need to speak to the masters that remain of dwindling races.");
 	elseif(e.message:findi("races") and e.other:HasItem(52952)) then
@@ -41,12 +41,12 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 10603})) then
 		e.self:Say("I see that you have what I was waiting for. Stofo does do excellent work. It seems that you are to start on a long journey. Take this seal and it will guide you on your next step. Seek out the masters of enchantment. In time we will craft the Serpent for you. When you have collected the four parts of the staff, you must combine them in a bundle for me.");
-		e.other:SummonItem(10604);
+		e.other:SummonItem(10604); -- Item: Jeb's Seal
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10639})) then
 		e.self:Say("The path you trod was long and hard. Now you are worthy to bear the Serpent. Use it well.");
-		e.other:Faction(404,30);
+		e.other:Faction(404,30); -- Faction: Truespirit
 		e.other:AddEXP(1500000);
-		e.other:SummonItem(10650);
+		e.other:SummonItem(10650); -- Item: Staff of the Serpent
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 54267})) then
 		e.self:Say("As I suspected, this is something extraordinary. You must go speak to Maelin at once. It has been many moons since I have entered the Plane of Knowledge. He may well have some new information for me. Go at once and tell him I sent you.");
 		eq.set_global("ench_epic","2",5,"F");
@@ -63,7 +63,7 @@ function event_trade(e)
 		eq.set_global("ench_epic","7",5,"F");
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 52947,item2 = 52945})) then
 		e.self:Say("'How very interesting. This could prove to be invaluable to my work. I have long been researching a new and most powerful tool to help our kind. It is necessary in these most dangerous of times. Unfortunately, it appears as though time has taken its toll on this tome. It is incomplete. Seek the missing pages so that I may study it in depth. There should be ten, unless they have been destroyed by time and decay.' ");
-		e.other:SummonItem(57918);
+		e.other:SummonItem(57918); -- Item: Tattered Illegible Tome
 		eq.set_global("EnchPre","2",5,"F");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

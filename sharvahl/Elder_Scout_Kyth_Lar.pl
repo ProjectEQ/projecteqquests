@@ -13,11 +13,11 @@ sub EVENT_SAY {
 ##No idea if Live does this now or not. If these do exist there, feel free to adjust it.
   if (($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)) {
     quest::say("Luckily for you someone found it.");
-    quest::summonitem(2873);
+    quest::summonitem(2873); # Item: Application for Citizenship
   }
   if (($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)) {
     quest::say("Someone found this in a scorpion nest down in the pit. Try not to lose it this time.");
-    quest::summonitem(2878);
+    quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
   }
 }
 
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 2897 => 1)) { #Notorized Application
     quest::say("Allow me to be the first to welcome you. Accept this cloak, young initiate. It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Harbin Gernawl and he will give you instruction. May the spirits of the beasts guide you and keep you safe.");
-    quest::summonitem(2878);
+    quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
     quest::setglobal("Shar_Vahl_Cit", 7, 5, "F");
   }
   plugin::try_tome_handins(\%itemcount, $class, "Rogue");

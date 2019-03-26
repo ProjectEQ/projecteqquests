@@ -9,7 +9,7 @@ if($clientver > 2){
 		if($text=~/Hail/i) {
 			if(quest::istaskactivityactive(213,1)){
 				quest::emote("seems disappointed at the instability of his cure, and shrugs a bit before fishing out your reward.");
-				quest::summonitem(87318,5);
+				quest::summonitem(87318,5); # Item: Gummy Bear Delight
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_cure",1,0,"H3");
 				quest::updatetaskactivity(213,1);
@@ -37,7 +37,7 @@ if($clientver > 2){
 				quest::say("That's the spirit! Take these cures and help out as many of those poor souls as you can.");
                                 quest::assigntask(219);
 				quest::assigntask(213);
-				quest::summonitem(87310);
+				quest::summonitem(87310); # Item: Wand of the Blood Curse
 			}
 		}
 		else {

@@ -48,7 +48,7 @@ sub EVENT_SAY {
           }
           foreach $player (@player_list) {
             $pc = $entity_list->GetClientByName($player);
-            $pc->MovePC(281,-521,36,-8,332);
+            $pc->MovePC(281,-521,36,-8,332); # Zone: podisease
            }
           $event_started = 1;
           quest::spawn2(281127,0,0,0,0,0,188); #Trigger_Qinimi_2
@@ -78,7 +78,7 @@ sub EVENT_ITEM {
     if (defined($qglobals{bic_qin}) && ($qglobals{bic_qin} == 2)) {
       quest::emote("covers the three pieces in his hands, closes his eyes, and begins to chant. A glow begins to emanate from his hands and he begins to chant louder. Then, just as quickly as it began, the glow in his hands dims and the chanting stops.");
       quest::say("There you are -- the key which grants you and your party access to the courtroom. Just stand on the pedestal in the center of the large building in this part of the city with the key in your hand and say you wish to enter. There is one more [thing] I must tell you before you go.");
-      quest::summonitem(67415);
+      quest::summonitem(67415); # Item: Stone of Entry
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67403 => 1)) {
@@ -101,7 +101,7 @@ sub EVENT_SIGNAL {
 sub REMOVE_PLAYERS {
   foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
-    $pc->MovePC(281,-1053,438,-16,2);
+    $pc->MovePC(281,-1053,438,-16,2); # Zone: podisease
   }
   @player_list = ();
 }

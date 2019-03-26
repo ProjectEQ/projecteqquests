@@ -10,5 +10,5 @@
 # 1 hour pop, PH'd  by undead frogloks, L45 SK.
 
 sub EVENT_DEATH_COMPLETE {
-    quest::spawn2(66174,0,0,$x,$y,$z,$h);
+    quest::spawn2(66174,0,0,$x,$y,$z,$h); # NPC: #a_spectral_shimmer
 }

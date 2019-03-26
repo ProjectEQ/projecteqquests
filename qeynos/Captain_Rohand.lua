@@ -14,8 +14,8 @@ function event_say(e)
 		e.self:Say("Even I can't tell you much about that continent. Kunark is a tough place, populated by even tougher creatures. I hear the high elves of Faydwer have been trying for years to establish a small port on Kunark's hostile shores.");
 	elseif(e.message:findi("tax collection") and tax.tax_collection ~= nil) then
 		e.self:Say("Argh! You curvy sea goblin! Taxes, you say?! Peh! I got your taxes right here! I sure don't get the services those taxes are supposed to provide! You can tell them ol' Captain Rohand said so!");
-		e.other:SummonItem(13177);
-		e.other:Faction(291,-10,0);
+		e.other:SummonItem(13177); -- Item: Rohand's Tax Payment
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos
 	end
 	
 end
@@ -27,11 +27,11 @@ function event_trade(e)
   if(item_lib.check_turn_in(e.trade, {item1 = 13034})) then
     e.self:Say("Yeah, this is just what I've been craving!");
 	e.other:SendSound();
-    e.other:Faction(262,10,0);
-    e.other:Faction(219,10,0);
-    e.other:Faction(5015,10,0);
-    e.other:Faction(223,-20,0);
-    e.other:Faction(291,10,0);
+    e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
+    e.other:Faction(219,10,0); -- Faction: Antonius Bayle
+    e.other:Faction(5015,10,0); -- Faction: Coalition of TradeFolk III
+    e.other:Faction(223,-20,0); -- Faction: Circle of Unseen Hands
+    e.other:Faction(291,10,0); -- Faction: Merchants of Qeynos
 	e.other:AddEXP(8000);
   end
   

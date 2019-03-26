@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 6701})) then --a dusty old leg bone
 		e.self:Say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
-		e.other:SummonItem(6701);
+		e.other:SummonItem(6701); -- Item: Dusty Old Leg Bone
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18827})) then --a testimony of truth
 		e.self:Say("Praise be to Marr!! You have done the impossible!! Sir Lucan is finally sent to the higher courts of the Tribunal. The city now has a chance to prosper. The Hall of Truth has been redeemed and gives you thanks. Take this, it is the Sword of Faith. May you wield it with righteousness. Beware of the remainder of the militia. They will be hunting for your head.");

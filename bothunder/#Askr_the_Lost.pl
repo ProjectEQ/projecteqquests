@@ -12,6 +12,6 @@ quest::depop();
 sub EVENT_SAY {
 if($text=~/hail/i) {
 $client->Message(9,"Kill the stormlord!");
-quest::movepc(209,-727,-1662,1728);
+quest::movepc(209,-727,-1662,1728); # Zone: maidensgrave
 }
 }

@@ -11,21 +11,21 @@ $qglobals{kerafyrm} = undef;
 
 sub EVENT_TIMER {
  if($timer eq "kerafyrma" && defined $qglobals{kerafyrm} && $qglobals{kerafyrm} == 1) {
-  quest::signalwith(114508,66,0);
-  quest::signalwith(114435,66,1);
+  quest::signalwith(114508,66,0); # NPC: A_Guardian_of_the_Shrine
+  quest::signalwith(114435,66,1); # NPC: Pyrox
   quest::stoptimer("kerafyrma");
   quest::settimer("kerafyrmb",30);
   $qglobals{kerafyrm} = undef;
 }
  elsif($timer eq "kerafyrma" && defined $qglobals{kerafyrm} && $qglobals{kerafyrm} == 2) {
-  quest::spawn2(114583,20,0,1197.73,1257.63,3.752,0);
+  quest::spawn2(114583,20,0,1197.73,1257.63,3.752,0); # NPC: #Kerafyrm
   quest::stoptimer("kerafyrma");
   quest::settimer("kerafyrmc",1);
   $qglobals{kerafyrm} = undef;
 }
 
  if($timer eq "kerafyrmb" && defined $qglobals{kerafyrm} && $qglobals{kerafyrm} == 2) {
-  quest::spawn2(114583,0,0,1,1,1,0);
+  quest::spawn2(114583,0,0,1,1,1,0); # NPC: #Kerafyrm
   quest::stoptimer("kerafyrmb");
   quest::settimer("kerafyrmc",1);
   $qglobals{kerafyrm} = undef;

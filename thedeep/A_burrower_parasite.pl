@@ -6,12 +6,12 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::signalwith(164098,101,0);
+  quest::signalwith(164098,101,0); # NPC: The_Burrower_Beast
   quest::depop();
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(164098,201,0);
+  quest::signalwith(164098,201,0); # NPC: The_Burrower_Beast
   quest::stoptimer("countdown");
 }
 

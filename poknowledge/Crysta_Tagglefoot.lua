@@ -25,12 +25,12 @@ function event_say(e)
 		e.self:Say("Oh thank you, thank you, thank you! I'll stay here and warn other adventurers like yourself so we can gather up a team! Take this letter explaining what we just talked about and hand it to the Innkeep Min just outside Rivervale in Kithicor. She's one of my dearest friends and I know she should have some information of when this thief comes and goes!");
 		e.self:Say("Please return to me if you find anything!");
 		e.self:Say("Oh, If you happen to lose the note just return to me I have a stack full!");
-		e.other:SummonItem(21699);
+		e.other:SummonItem(21699); -- Item: Scribbled Parchment
 		eq.set_global("Halloween2018","1",5,"h4");
 	elseif (e.message:findi("willing") and qglobals["Halloween2018"] == "2") then
 		e.self:Say("You've turned out to be more help than all of my city! Before we go back to kithicor, we're going to need some items. I'm going to need a flask of water, a stick of sugarcane, a sprig of spices, some steel wire, hemp twine, and a strands of golden thread for the trap");
 		e.self:Say("Here, take this and combine it all in this bag and bring it back to me quickly! I'd imagine you can find all of these items around this area if you ask the merchants kindly enough");
-		e.other:SummonItem(84016);
+		e.other:SummonItem(84016); -- Item: Collection Bag
 	elseif (e.message:findi("experience")) then
 		e.self:Say("Hello traveler! I need a certain idol that is deep in the ruins of Befallen, do you think you could search for one there and return it to me, I hear its very valuable. If you take the time to bring me one I will make it worth your while!");
 		eq.set_global("Halloween2018EXP","1",5,"h4");
@@ -62,18 +62,18 @@ function event_trade(e)
 		local which=0;
 		which = math.random(6);
 		if  (which == 1) then
-		e.other:SummonItem(41961);
+		e.other:SummonItem(41961); -- Item: Bottle of Adventure I
 		elseif (which == 2) then
-		e.other:SummonItem(41962);
+		e.other:SummonItem(41962); -- Item: Bottle of Adventure II
 		elseif (which == 3) then
-		e.other:SummonItem(43494);
+		e.other:SummonItem(43494); -- Item: Bottle of Adventure III
 		e.self:Say("What luck!");
 		elseif (which == 4) then
-		e.other:SummonItem(48083);
+		e.other:SummonItem(48083); -- Item: Bottle of Shared Adventure I
 		elseif (which == 5) then
-		e.other:SummonItem(48084);
+		e.other:SummonItem(48084); -- Item: Bottle of Shared Adventure II
 		elseif (which == 6) then
-		e.other:SummonItem(48085);
+		e.other:SummonItem(48085); -- Item: Bottle of Shared Adventure III
 		e.self:Say("WOW! Congratulations!");
 		end
 	end

@@ -33,31 +33,31 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4489 => 1, 4961 => 1, 4962 => 1, 4992 => 1)) { #cap
-    quest::summonitem(3762);
+    quest::summonitem(3762); # Item: Earth Blessed Cap
     quest::exp(10000);   
   }
   if(plugin::check_handin(\%itemcount, 4490 => 1, 4993 => 1, 4994 => 1, 4995 => 1)) { #tunic
-    quest::summonitem(3763);
+    quest::summonitem(3763); # Item: Earth Blessed Tunic
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4491 => 1, 4996 => 1, 4997 => 1, 4998 => 1)) { #sleeves
-    quest::summonitem(3764);
+    quest::summonitem(3764); # Item: Earth Blessed Sleeves
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4492 => 1, 4999 => 1, 5000 => 1, 5068 => 1)) { #leggings
-    quest::summonitem(3765);
+    quest::summonitem(3765); # Item: Earth Blessed Leggings
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4493 => 1, 5069 => 1, 5079 => 1)) { #mantle
-    quest::summonitem(3766);
+    quest::summonitem(3766); # Item: Earth Blessed Mantle
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4494 => 1, 5089 => 1, 5094 => 1)) { #bracer
-    quest::summonitem(3767);
+    quest::summonitem(3767); # Item: Earth Blessed Bracer
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4488 => 1, 5095 => 1, 5096 => 1)) { #boots
-    quest::summonitem(3768);
+    quest::summonitem(3768); # Item: Earth Blessed Boots
     quest::exp(10000);
   }
   plugin::return_items(\%itemcount);

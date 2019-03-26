@@ -12,7 +12,7 @@ function event_say(e)
 	elseif(e.message:findi("supplies")) then
 		e.self:Say("Take this message to Konem and find out where my supplies are.");
 		-- Message to Konem ID-18921
-		e.other:SummonItem(18921);
+		e.other:SummonItem(18921); -- Item: Message to Konem
 	elseif(e.message:findi("gnoll")) then
 		e.self:Say("Those vile creatures are constantly attacking our city.. and often killing innocent citizens. It is our duty to help defend Qeynos from their vicious raids.");
 	elseif(fac <= 5) then
@@ -35,38 +35,38 @@ function event_trade(e)
 	-- White Headband ID-10110 requires four Gnoll Pup Scalp ID-13789
 	if(item_lib.check_turn_in(e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789}) and fac <= 5) then
 		e.self:Say("Good job, " .. e.other:GetName() .. ", keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
-		e.other:SummonItem(10110);
+		e.other:SummonItem(10110); -- Item: White Headband
 		e.other:Ding();
-		e.other:Faction(309,5,0);
-		e.other:Faction(262,5,0);
-		e.other:Faction(361,5,0);
+		e.other:Faction(309,5,0); -- Faction: Silent Fist Clan
+		e.other:Faction(262,5,0); -- Faction: Guards of Qeynos
+		e.other:Faction(361,5,0); -- Faction: Ashen Order
 		e.other:AddEXP(100);
 	-- Yellow Headband ID-10111 requires three Putrid Rib Bone ID-13722 and the White Headband ID-10110
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13722,item2 = 13722, item3 = 13722,item4 = 10110})) then
 		e.self:Say("Good work.. and, as promised, here is your reward. It is an honor to present this yellow headband to " .. e.other:GetName() .. ", for recent acts of courage and heroism, on behalf of the Silent Fist Clan.");
-		e.other:SummonItem(10111);
+		e.other:SummonItem(10111); -- Item: Yellow Headband
 		e.other:Ding();
-		e.other:Faction(309,2,0);
-		e.other:Faction(262,2,0);
-		e.other:Faction(361,2,0);
+		e.other:Faction(309,2,0); -- Faction: Silent Fist Clan
+		e.other:Faction(262,2,0); -- Faction: Guards of Qeynos
+		e.other:Faction(361,2,0); -- Faction: Ashen Order
 		e.other:AddEXP(200);
 	-- Orange Headband ID-10112 requires two Blackburrow Gnoll Pelt ID-13027, one Blackburrow Gnoll Skin ID-13028 and the Yellow Headband ID-10111
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13027,item2 = 13027, item3 = 13028,item4 = 10111})) then
 		e.self:Say("It is an honor to present the orange headband of the Silent Fist Clan to one of our finest members, " .. e.other:GetName() .. " the mighty!");
-		e.other:SummonItem(10112);
+		e.other:SummonItem(10112); -- Item: Orange Headband
 		e.other:Ding();
-		e.other:Faction(309,3,0);
-		e.other:Faction(262,3,0);
-		e.other:Faction(361,3,0);
+		e.other:Faction(309,3,0); -- Faction: Silent Fist Clan
+		e.other:Faction(262,3,0); -- Faction: Guards of Qeynos
+		e.other:Faction(361,3,0); -- Faction: Ashen Order
 		e.other:AddEXP(300);
 	-- Note from Konem, Grathins Invoice ID-18922
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18922})) then
 		e.self:Say("Oh this is not good. Too many inoccent traders have been getting robbed lately by those vile bandits out in the Karanas. Something must be done soon. Anyway, thank you for delivering the message... you did very well, young " .. e.other:GetName() .. ". Here's a little something to quench your thirst from all that running around.");
 		e.other:SummonItem(13006); -- Water Flask
 		e.other:Ding();
-		e.other:Faction(309,1,0);
-		e.other:Faction(262,1,0);
-		e.other:Faction(361,1,0);
+		e.other:Faction(309,1,0); -- Faction: Silent Fist Clan
+		e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
+		e.other:Faction(361,1,0); -- Faction: Ashen Order
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

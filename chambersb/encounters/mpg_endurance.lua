@@ -53,7 +53,7 @@ end
 
 function Start_Event(e)
   eq.spawn_condition('chamberse', instance_id, 2, 1 );
-  eq.spawn2(305006, 0, 0, 0, 0, 0, 0);
+  eq.spawn2(305006, 0, 0, 0, 0, 0, 0); -- NPC: #death_touch
 
   eq.get_entity_list():GetNPCByNPCTypeID(305007):SetNPCFactionID(79);
   eq.get_entity_list():GetNPCByNPCTypeID(305008):SetNPCFactionID(79);
@@ -205,7 +205,7 @@ function Event_Win(e)
   eq.depop_all(305006);
 
   -- Spawn Shell of the Ancients
-  eq.unique_spawn(305014, 0, 0, -204, 274, 66, 144);
+  eq.unique_spawn(305014, 0, 0, -204, 274, 66, 144); -- NPC: Shell_of_the_Ancients
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

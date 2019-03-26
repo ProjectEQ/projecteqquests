@@ -10,23 +10,23 @@ sub EVENT_TIMER {
 	}
 
 	if ($timer == 1 && $x == 50 && $y == 0) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == 50 && $y == -150) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == -50 && $y == -150) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == -50 && $y == 0) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == 50 && $y == 0 ) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 2) {

@@ -87,7 +87,7 @@ function ZMYV_Hp(e)
 end
 
 function ZMYV_Death(e)
-  eq.signal(298223,298023);
+  eq.signal(298223,298023); -- NPC: zone_status
   eq.get_entity_list():FindDoor(21):SetLockPick(0);
 end
 

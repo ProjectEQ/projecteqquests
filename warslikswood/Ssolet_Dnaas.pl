@@ -12,7 +12,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6353 => 1)) {
     quest::say("Sssss. Thisss is what I need. You have my thanksss. Please, take thiss. I know not what it iss for but maybe you will find a ussse for it.");
-    quest::summonitem(19958);
+    quest::summonitem(19958); # Item: Piece of a medallion
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

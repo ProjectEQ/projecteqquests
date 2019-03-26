@@ -21,7 +21,7 @@ sub EVENT_SAY {
   }
   if($text =~ /heretics/i) {
     quest::say("The heretics have not only corrupted their own spirits but they defile the spirits of the dead with their evil sorceries. Fill this satchel with the heads of invading heretics and I shall reward you for your allegiance to Kejek.");
-    quest::summonitem(17883);
+    quest::summonitem(17883); # Item: Burlap Satchel
   }
   if($text =~ /rognarog/i) {
     quest::say("Rognarog the Infuriated was once a mighty warrior for Clan Kolbok until his devotion to the kobold god Rolfron Zek devoured his spirit and drove him mad with anguish. Now he wanders the mountains and valleys of Stonebrunt shedding the blood of whatever creatures cross his path. Should you face Rognarog and release him from this life I will reward you for his severed head.");
@@ -31,11 +31,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if($itemcount{6969} == 1) {
     quest::say("Less heretics to defile the lands and spirits. You have the gratitude of Kejek for your assistance in repelling the heretic threat.");
-    quest::summonitem(quest::ChooseRandom(6955,6953));
+    quest::summonitem(quest::ChooseRandom(6955,6953)); # Item(s): Kejekan Tribal Headband (6955), Swiftclaw Sash (6953)
   }
   if($itemcount{6968} == 1) {
     quest::say("Thank you $name. Let's hope that sends out a strong message to the hertics. Please, take this as a reward.");
-    quest::summonitem(quest::ChooseRandom(6982,6983,6984));
+    quest::summonitem(quest::ChooseRandom(6982,6983,6984)); # Item(s): Titan Blessed Tanto (6982), Titan Blessed Tachi (6983), Titan Blessed Bokken (6984)
   }
 }
 

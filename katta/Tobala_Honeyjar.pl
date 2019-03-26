@@ -13,7 +13,7 @@ sub EVENT_SAY {
   }
   if ($text=~/fertilizer/i) {
     quest::say("How humble of you to assist me with my mundane tasks! Take this bag and fill it with Three piles of Owlbear Dung, Three Piles of Fungus Compost, and Two Piles of Netherbian Nitrate.");
-    quest::summonitem(17870);
+    quest::summonitem(17870); # Item: Empty Fertilizer Bag
   }
   if ($text=~/rare plants/i) {
     quest::say("I am seeking seeds and plants that I may extract the seeds from that are native to the light side of Luclin so that I am prepared should the Illuminarium Industria succeed in constructing a lantern that will provide the plants with the nutrients they need to survive here on the dark side. It would be a tremendous help if you could bring me a Twilight Orchid, Dawnflower Seeds, a Red Sands Cactus, and a Letalis Zenith Vine.");
@@ -22,10 +22,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31779 => 1)) {
-    quest::summonitem(12809,5);
+    quest::summonitem(12809,5); # Item: Midnight Tangelo
   }
   elsif (plugin::check_handin(\%itemcount, 14936 => 1, 14931 => 1, 14952 => 1, 14953 => 1)) {
-    quest::summonitem(10695);
+    quest::summonitem(10695); # Item: Foraging Machette
   }
   else {
     plugin::return_items(\%itemcount);

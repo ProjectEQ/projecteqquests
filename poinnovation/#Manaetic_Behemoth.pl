@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE    {
   #signal to Giwin to give flags.
-  quest::signalwith(206038,1,1);
+  quest::signalwith(206038,1,1); # NPC: Giwin_Mirakon
 }
 
 sub EVENT_TIMER {
@@ -27,7 +27,7 @@ sub EVENT_TIMER {
     #leash
     $npc->GMMove(1125,0,12.5,0);
     #signal to giwin about being out of room
-    quest::signalwith(206038,2,1);
+    quest::signalwith(206038,2,1); # NPC: Giwin_Mirakon
   }
 }
 

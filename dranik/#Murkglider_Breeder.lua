@@ -12,6 +12,6 @@ function event_timer(e)
 		local yloc = e.self:GetY();
 		local zloc = e.self:GetZ();
 		local heading = e.self:GetHeading();
-		eq.spawn2(336213,0,0,xloc,yloc,zloc,heading);
+		eq.spawn2(336213,0,0,xloc,yloc,zloc,heading); -- NPC: Murkglider_Spawn
 	end
 end

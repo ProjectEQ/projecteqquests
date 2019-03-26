@@ -8,7 +8,7 @@ quest::say("Very well then! Let us begin.  First you must attune yourself with t
 sub EVENT_ITEM { 
   if(plugin::check_handin(\%itemcount, 30601 => 1)) {
     quest::say("Excellent! You have done well.  I can sense that you are in tune with the spirits around you. Take this, for you will need it in your next task. When you are [ready] for your next lesson let me know.");
-    quest::summonitem(15093,1);
+    quest::summonitem(15093,1); # Item: Spell: Burst of Flame
   }
   plugin::return_items(\%itemcount);
 }

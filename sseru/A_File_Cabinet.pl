@@ -5,7 +5,7 @@ sub EVENT_ITEM {
       quest::summonitem(29856); # 29856  Original Records
       quest::emote("slams shut after you take the original records out.");
       # the chest spawns Guard Hargrar
-      $guardhargrar = quest::spawn2(159687,0,0,$x,$y,$z,$h);
+      $guardhargrar = quest::spawn2(159687,0,0,$x,$y,$z,$h); # NPC: Guard_Hargrar
       $attack = $entity_list->GetMobID($guardhargrar);
       $gogetem = $attack->CastToNPC();
       $gogetem->AddToHateList($client, 1);

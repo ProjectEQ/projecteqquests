@@ -36,7 +36,7 @@ sub EVENT_SAY {
   if ($text=~/i will find the parts/i) {
     quest::emote("laughs.");
     quest::say("Its yer funeral, boyo. I'm not even sure they're readable. Oh, well. Here, take this. It's the cover of the book I was puttin' the map in. If ya get the first four parts, put em in there. If ya get the fifth, just go give it ta Ami the way ya find it. Hey, if ya find em all, come get me so I can find me way back. I'm thinkin' I'd like ta go back now.");
-    quest::summonitem(17053);
+    quest::summonitem(17053); # Item: Map Binding
   }
   if ($text=~/chapter p/i) {
     quest::emote("stares at the water");
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
     quest::say("Har har! You're crazier than I am. And since I know that I must not be that crazy after all. Ahh, I haven't felt this good in ages..' He shuffles the pieces and jots down a few notes here and there. 'There, now it's really finished. Let's get us outta here. Hold this fer me.");
     quest::echo(0, "As he starts to try and crawl up the hill, a sleek figure darts towards him.");
     quest::exp(50000);
-    quest::summonitem(30047);
+    quest::summonitem(30047); # Item: Completed Map of Iceclad
     my $entid = quest::spawn2(116008,0,0,1002,6354,-32.09,130); #rabid snow cougar does not exist using regular for now
     my $mob = $entity_list->GetMobID($entid);
     my $mobnpc = $mob->CastToNPC();

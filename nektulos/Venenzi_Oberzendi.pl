@@ -20,13 +20,13 @@ sub EVENT_ITEM {
     quest::say("I see you serve my master as well now. I assume you are here to take the reagents from me which I have gathered for him? I don't know if I like the idea of you gaining the credit for my hard work here. I might consider giving you these reagents, if only you do a small [task] for me.");
     quest::ding();
     quest::exp(500);
-    quest::summonitem(20643);
+    quest::summonitem(20643); # Item: Twisted Symbol of the Apprentice
   }
   elsif(plugin::check_hasitem($client, 20643) && plugin::check_handin(\%itemcount, 1320 => 1)) {
     quest::say("Thank you, $name. I did not think you would track down Najena and slay her. I think that I am going to return to my old life in Neriak. I am sick of the way Kazen has been treating me. He never seems to teach me anything worthwhile. Don't forget to give his lapdog that symbol with the reagents. I'm sure he will give you a new one.");
     quest::ding();
     quest::exp(500);
-    quest::summonitem(20649);
+    quest::summonitem(20649); # Item: Rolling Stone Moss
   }
   plugin::return_items(\%itemcount);
 }

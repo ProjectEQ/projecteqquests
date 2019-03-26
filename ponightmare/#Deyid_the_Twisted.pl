@@ -9,12 +9,12 @@ sub EVENT_SPAWN {
 sub EVENT_HP {
 
     if ($hpevent == 61) {
-    quest::spawn2(204068,0,0,922,1028,280);
-    quest::spawn2(204068,0,0,947,1117,200);
-    quest::spawn2(204068,0,0,1031,1164,276);
-    quest::spawn2(204068,0,0,1121,1154,277);
-    quest::spawn2(204068,0,0,1206,1067,280);
-    quest::spawn2(204068,0,0,1237,887,272);
+    quest::spawn2(204068,0,0,922,1028,280); # NPC: #a_corrupt_treant
+    quest::spawn2(204068,0,0,947,1117,200); # NPC: #a_corrupt_treant
+    quest::spawn2(204068,0,0,1031,1164,276); # NPC: #a_corrupt_treant
+    quest::spawn2(204068,0,0,1121,1154,277); # NPC: #a_corrupt_treant
+    quest::spawn2(204068,0,0,1206,1067,280); # NPC: #a_corrupt_treant
+    quest::spawn2(204068,0,0,1237,887,272); # NPC: #a_corrupt_treant
     quest::settimer(1,30)     # Timer to spawn targetable treants 30 seconds after untargetables are spawned
     }  
 }
@@ -22,12 +22,12 @@ sub EVENT_TIMER {
 	if ($timer == 1) {
 		quest::signal(204068);	# Despawn untargetable treants
 		# Spawn the targetable treants
-		quest::spawn2(204069,0,0,922,1028,280);
-		quest::spawn2(204069,0,0,947,1117,200);
-		quest::spawn2(204069,0,0,1031,1164,276);
-		quest::spawn2(204069,0,0,1121,1154,277);
-		quest::spawn2(204069,0,0,1206,1067,280);
-		quest::spawn2(204069,0,0,1237,887,272);
+		quest::spawn2(204069,0,0,922,1028,280); # NPC: a_corrupt_treant
+		quest::spawn2(204069,0,0,947,1117,200); # NPC: a_corrupt_treant
+		quest::spawn2(204069,0,0,1031,1164,276); # NPC: a_corrupt_treant
+		quest::spawn2(204069,0,0,1121,1154,277); # NPC: a_corrupt_treant
+		quest::spawn2(204069,0,0,1206,1067,280); # NPC: a_corrupt_treant
+		quest::spawn2(204069,0,0,1237,887,272); # NPC: a_corrupt_treant
 	}
 }
 

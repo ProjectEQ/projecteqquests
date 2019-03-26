@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("That wasn't very friendly...");
-	quest::spawn2(63103,0,0,-65,703,11.7,0);
+	quest::spawn2(63103,0,0,-65,703,11.7,0); # NPC: Evil_Brain_Eater
 }

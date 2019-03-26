@@ -14,9 +14,9 @@ function event_trade(e)
 		local sp = math.random(60);
 		local cp = math.random(100);
 		e.self:Say(string.format("Why thank you, %s. If you do happen to come across any more of these, please bring them to me.",e.other:GetName()));
-		e.other:SummonItem(12076);
+		e.other:SummonItem(12076); -- Item: Karana's Tear
 		e.other:Ding();
-		e.other:Faction(121,30,0);
+		e.other:Faction(121,30,0); -- Faction: Qeynos Citizens
 		e.other:AddEXP(100);
 		e.other:GiveCash(cp,sp,gp,pp);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = (18504 or 18505 or 18506 or 18507)})) then
@@ -26,7 +26,7 @@ function event_trade(e)
 		local cp = math.random(25);
 		e.self:Say(string.format("Why thank you, %s. If you do happen to come across any more of these, please bring them to me.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(121,5,0);
+		e.other:Faction(121,5,0); -- Faction: Qeynos Citizens
 		e.other:AddEXP(100);
 		e.other:GiveCash(cp,sp,gp,pp);
 	end

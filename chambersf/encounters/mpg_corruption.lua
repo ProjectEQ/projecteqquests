@@ -220,7 +220,7 @@ end
 
 function Mob_Deathcomplete(e)
   eq.debug(e.self:GetName() .. ': I have died.');
-  eq.signal(309006, 1);
+  eq.signal(309006, 1); -- NPC: Huhn-Abram`s_corpse
 end
 
 function Huhn_Signal(e)

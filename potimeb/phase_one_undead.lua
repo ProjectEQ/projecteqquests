@@ -10,7 +10,7 @@ end
 
 function event_enter(e)
 	-- tell zone_status phase 1 was started
-	eq.signal(223097,1);
+	eq.signal(223097,1); -- NPC: zone_status
 	-- wait 45 seconds before spawning the mobs.
 	eq.clear_proximity();
 	eq.set_timer("Phase1Undead",45000);
@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Undead") then
 		-- spawn first wave of 3 an_undead_guardian
-		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1109.7,494.8,371); 
-		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1119.7,494.8,371);
-		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1099.7,494.8,371);
+		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1109.7,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121) 
+		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1119.7,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121)
+		eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,65.2,1099.7,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121)
 		eq.stop_timer("Phase1Undead");
 	end
 end
@@ -33,16 +33,16 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn second wave consisting of 4 an_undead_guardian
 		if (event_counter == 3) then
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1103,494.8,371); 
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1120,494.8,371);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1103,494.8,371);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1120,494.8,371);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1103,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121) 
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,67,1120,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121)
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1103,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121)
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121),0,0,62,1120,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121)
 		-- spawn third wave consisting of 4 an_undead_guardian
 		elseif (event_counter == 7) then
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1103,494.8,371); 
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1120,494.8,371);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1103,494.8,371);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1120,494.8,371);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1103,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121), an_undead_guardian (223122), an_undead_guardian (223149) 
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,67,1120,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121), an_undead_guardian (223122), an_undead_guardian (223149)
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1103,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121), an_undead_guardian (223122), an_undead_guardian (223149)
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,62,1120,494.8,371); -- NPC(s): an_undead_guardian (223105), an_undead_guardian (223116), an_undead_guardian (223121), an_undead_guardian (223122), an_undead_guardian (223149)
 		-- spawn boss and grunts
 		elseif (event_counter == 11) then
 			eq.spawn2(223129,0,0,65.2,1109.7,494.8,371); -- Rythor_of_the_Undead
@@ -57,7 +57,7 @@ function event_signal(e)
 		-- event completed
 		if (event_counter == 3) then
 			-- tell zone_status
-			eq.signal(223097,2);
+			eq.signal(223097,2); -- NPC: zone_status
 			local entity_list = eq.get_entity_list();
 			-- depop as my job is done.
 			eq.depop();

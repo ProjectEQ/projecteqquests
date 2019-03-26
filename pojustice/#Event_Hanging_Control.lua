@@ -62,7 +62,7 @@ function event_signal(e)
 		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 		
 		-- Signal the Tribunal that the Group was Successful
-		eq.signal(201436, 1);
+		eq.signal(201436, 1); -- NPC: The_Tribunal Hanging Trial
 
 		-- Depop the Controller
 		eq.depop();
@@ -133,7 +133,7 @@ function event_timer(e)
 		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "The prisoner gives one final twitch and suddenly becomes still, its limbs no longer flailing.  You have failed.");
 
 		-- Signal the Tribunal that the Group has failed
-		eq.signal(201436, 2);
+		eq.signal(201436, 2); -- NPC: The_Tribunal Hanging Trial
 		
 		depop_prisoners();
 		depop_list();
@@ -182,17 +182,17 @@ end
 
 function spawn_boss()
 	-- Spawn the Gallows Master Teion
-	eq.spawn2( 201461, 0, 0, 488, -1068, 73, 250);
+	eq.spawn2( 201461, 0, 0, 488, -1068, 73, 250); -- NPC: Gallows_Master_Teion
 
 	-- Signal the Agenent of the Tribunal (can't leave once the boss spawns)
-	eq.signal( 201075, 3 );
+	eq.signal( 201075, 3 ); -- NPC: Agent_of_The_Tribunal
 end
 
 function spawn_prisoners()
 	-- Spawn the 3 prisoners by the hangmen's noose
-	eq.spawn2( 201471, 0, 0, 440, -1175, 80, 510);
-	eq.spawn2( 201472, 0, 0, 490, -1175, 80, 510);
-	eq.spawn2( 201473, 0, 0, 540, -1175, 80, 510);
+	eq.spawn2( 201471, 0, 0, 440, -1175, 80, 510); -- NPC: a_sentenced_prisoner
+	eq.spawn2( 201472, 0, 0, 490, -1175, 80, 510); -- NPC: a_sentenced_prisoner
+	eq.spawn2( 201473, 0, 0, 540, -1175, 80, 510); -- NPC: a_sentenced_prisoner
 end
 
 function depop_list()
@@ -219,7 +219,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 				-- check the distance and port them up if close enough
 				if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
 					-- port the player up
-					client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h);
+					client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
 				end
 			end
 		end

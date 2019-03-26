@@ -16,7 +16,7 @@ sub EVENT_SAY {
   }
   if ($text=~/aid our cause/i) {
     quest::say("I thought you may, $name. We have an issue at hand that you may be able to help with. It seems as though there are rumors of the sarnak factions gathering forces. We must find out all the information we can regarding this situation. Travel to the kly's and seek what they know. Place all of their letters in this tome, which shall combine their mystical energies. Bring back the completed message to me with your claw of the apprentice and you will be rewarded.");
-    quest::summonitem(48060);
+    quest::summonitem(48060); # Item: Spiritual Tome
   }
   if ($text=~/attack/i) {
     quest::say("I have heard of no such attacks. We are safe within these walls. Zreezas is just paranoid.");
@@ -26,20 +26,20 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12844 => 1, 12845 => 1, 12633 => 1, 48045 => 1)) {
    quest::say("You have returned unharmed with the items I asked for. Here is your reward now. If you wish to [continue training] please let me know.");
-   quest::summonitem(48046); 
+   quest::summonitem(48046); # Item: Claw of the Scout 
    quest::exp(1000);
    quest::ding();
   }
   elsif (plugin::check_handin(\%itemcount, 48051 => 1, 48046 => 1)) {
     quest::say("Because of you, we now know that Welgaz is safe and will be returning to us shortly. Take this to represent our appreciation for your deeds completed here today. Please return soon once you have decided to [aid the cause].");
-    quest::summonitem(48047);
+    quest::summonitem(48047); # Item: Claw of the Apprentice
     quest::exp(2000);
     quest::ding();
   }
   elsif (plugin::check_handin(\%itemcount, 48061 => 1, 48047 => 1)) {
     quest::say("I see you have returned with the information asked. Hmm . . . this doesn't bode well. I will need some time to think about the situation now. Take this and wear it proudly. You are a Young Patriarch now.");
     quest::exp(4000);
-    quest::summonitem(48048);
+    quest::summonitem(48048); # Item: Claw of the Young Patriarch
     quest::ding();
   }
   elsif (plugin::check_handin(\%itemcount, 48064 => 1)) {

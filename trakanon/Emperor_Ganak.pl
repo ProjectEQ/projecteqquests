@@ -25,13 +25,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 19951 => 1, 19952 => 1)) {
     quest::say("You have returned to me two medallions of my people. In return, I give you this key to enter the ruins of Sebilis. Be wary though, for Trakanon, Scourge of the Sibilisian empire resides within. ");
-    quest::summonitem(20883);
+    quest::summonitem(20883); # Item: Trakanon Idol
     quest::exp(10000);
     quest::set_zone_flag(89);
   }
   if (plugin::check_handin(\%itemcount, 7276 => 1, 19953 => 1, 19954 => 1, 19955 => 1)) {
     quest::say("I must say, I thought your flesh would be rotting from your bones alongside the remains of the ancient Sebilisians. I commend you on your victory over the poison dragon and thank you for returning the ancient medallions of my people. I reward you with the key you seek. A place shall be prepared for your souls among the most honored of the dead. Soon you will be seeing the world through the shroud of death.");
-    quest::summonitem(20884);
+    quest::summonitem(20884); # Item: Key of Veeshan
     quest::set_zone_flag(108);
   }
   plugin::return_items(\%itemcount);

@@ -23,7 +23,7 @@ function event_timer(e)
 	elseif (e.timer == "druzzil5") then
 		eq.stop_timer("druzzil5");
 		-- tell the zone_status to port everyone out shortly.
-		eq.signal(223097,8);
+		eq.signal(223097,8); -- NPC: zone_status
 		eq.depop();
 	end
 end

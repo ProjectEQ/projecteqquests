@@ -18,8 +18,8 @@ sub EVENT_ITEM {
     $z = $npc->GetZ();
     $h = $npc->GetHeading();
     quest::emote("flips you a coin after he recognizes the ring. 'It seems we have a mutual 'acquaintance.' The coin repays an old debt. You don't have to worry about what that is. Luckily, Lord Innoruuk has informed me of your coming and your desires. Fortunately, I have all the answers you require right here at the end of my friend's blade. I think I'll be paying my old 'friend' a visit.'");
-    quest::summonitem(20447);
-    my $reaver = quest::spawn2(20190,0,0,$x+20,$y+20,$z,$h);
+    quest::summonitem(20447); # Item: Dark Metal Coin
+    my $reaver = quest::spawn2(20190,0,0,$x+20,$y+20,$z,$h); # NPC: Teir`Dal_Reaver
     my $attack = $entity_list->GetMobID($reaver);
     my $reaverattack = $attack->CastToNPC();
     $reaverattack->AddToHateList($client, 1);

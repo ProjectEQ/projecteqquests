@@ -37,11 +37,11 @@ sub EVENT_ITEM
 		quest::givecash("7","0","0","0");
 
 		# Freeport Militia Faction
-		quest::faction(330, -1);
+		quest::faction(330, -1); # Faction: The Freeport Militia
 		# Steel Warriors Factions
-		quest::faction(311,1);
+		quest::faction(311,1); # Faction: Steel Warriors
 		# Knights of Truth Faction
-		quest::faction(281,1);
+		quest::faction(281,1); # Faction: Knights of Truth
 	}
 
 	if(plugin::check_handin(\%itemcount, 1004 => 1))
@@ -52,11 +52,11 @@ sub EVENT_ITEM
 		quest::summonitem("13865");
 
 		# Freeport Militia Faction
-		quest::faction(330, -1);
+		quest::faction(330, -1); # Faction: The Freeport Militia
 		# Steel Warriors Factions
-		quest::faction(311,1);
+		quest::faction(311,1); # Faction: Steel Warriors
 		# Knights of Truth Faction
-		quest::faction(281,1); 
+		quest::faction(281,1); # Faction: Knights of Truth 
 	}
 }
 

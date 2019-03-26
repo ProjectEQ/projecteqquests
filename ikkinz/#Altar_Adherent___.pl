@@ -26,7 +26,7 @@ sub EVENT_DEATH_COMPLETE {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
   else {
-    quest::spawn2(294639 ,0,0,$x,$y,$z,$h);
+    quest::spawn2(294639 ,0,0,$x,$y,$z,$h); # NPC: #Altar_Adherent___
 	quest::ze(0,"Your energy didn't match that required to kill the stone worker.");
     if($adhere == 1) {
       quest::ze(0,"The creature will perish under the strength of intelligent magic");

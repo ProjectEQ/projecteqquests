@@ -45,25 +45,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24961 => 1)) { #cap
-      quest::summonitem(31098);
+      quest::summonitem(31098); # Item: Blood Lord's Crown
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24956 => 1)) { #bp
-      quest::summonitem(31099);
+      quest::summonitem(31099); # Item: Blood Lord's Breastplate
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24958 => 1)) { #arm
-      quest::summonitem(31100);
+      quest::summonitem(31100); # Item: Blood Lord's Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24960 => 1)) { #bracer
-      quest::summonitem(31101);
+      quest::summonitem(31101); # Item: Blood Lord's Bracer
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24962 => 1)) { #glove
-      quest::summonitem(31102);
+      quest::summonitem(31102); # Item: Blood Lord's Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24957 => 1)) { #leg
-      quest::summonitem(31103);
+      quest::summonitem(31103); # Item: Blood Lord's Greaves
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24959 => 1)) { #boots
-      quest::summonitem(31104);
+      quest::summonitem(31104); # Item: Blood Lord's Boots
     }
     else {
       plugin::return_items(\%itemcount);

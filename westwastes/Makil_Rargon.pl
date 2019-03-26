@@ -9,19 +9,19 @@ sub EVENT_SAY {
   }
   if ($text=~/research/i) {
     quest::say("Ah. Yes, his fusibility research. Al'Kabor has been studying the melting point of minerals. Here, take this journal. It explains what fusibility is. Over the last few years, he has conducted several tests on [fusible ores].");
-    quest::summonitem(18290);
+    quest::summonitem(18290); # Item: Fusibility Study: Part 1
   }
   if ($text=~/fusible ores/i) {
     quest::say("An ore is considered fusible if it can be melted. Now, this book explains the most unique forms of fusible ore that the master has conducted [experiments] on.");
-    quest::summonitem(18293);
+    quest::summonitem(18293); # Item: Fusibility Study: Part 2
   }
   if ($text=~/experiments/i) {
     quest::say("So far his research has been quite successful. This journal explains what he has been able to accomplish. He has managed to create several magical items including an artifactual scepter of great power. While only he can grant permission to a worthy wizard to possess the artifact, if you are willing to help me complete a [fusibility test], I can offer you another item of great strength against the elements.");
-    quest::summonitem(18294);
+    quest::summonitem(18294); # Item: Fusibility Study: Part 3
   }
   if ($text=~/fusibility test/i) {
     quest::say("Very well then . . . Fill this Empty Fusible Ore Crate up with four different fusible ores then seal it. Bring me back the Full Crate of Fusible Ore and I will use the compound to create a magical item that was developed by Master Al'Kabor.");
-    quest::summonitem(17408);
+    quest::summonitem(17408); # Item: Empty Fusible Ore Crate
   }
 }
 
@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24069 => 1)) {
     quest::say("Well done, $name. Here is your reward."); #generic text
     quest::exp(500000);
-    quest::summonitem(24070);
+    quest::summonitem(24070); # Item: Strength of the Elements
   }
   plugin::return_items(\%itemcount);
 }

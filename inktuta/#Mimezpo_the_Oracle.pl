@@ -1,9 +1,9 @@
 sub EVENT_SPAWN {
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,82,-468,-27,506);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,-21,-454,-27,252);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,38,-452,-27,390);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,118,-530,-27,76);
-  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,38,-515,-27,162);
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,82,-468,-27,506); # NPC(s): a_shambling_exile (296031), a_blighted_exile (296032), a_dying_exile (296034)
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,-21,-454,-27,252); # NPC(s): a_shambling_exile (296031), a_blighted_exile (296032), a_dying_exile (296034)
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,38,-452,-27,390); # NPC(s): a_shambling_exile (296031), a_blighted_exile (296032), a_dying_exile (296034)
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,118,-530,-27,76); # NPC(s): a_shambling_exile (296031), a_blighted_exile (296032), a_dying_exile (296034)
+  quest::spawn2(quest::ChooseRandom(296031,296032,296034),0,0,38,-515,-27,162); # NPC(s): a_shambling_exile (296031), a_blighted_exile (296032), a_dying_exile (296034)
 }
 
 sub EVENT_AGGRO {

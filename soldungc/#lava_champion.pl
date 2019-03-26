@@ -18,5 +18,5 @@ if ($elemrest || $furiousmagma || $inflamedchamp || $protectorfire) {
     }
    
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(278125,90,0);
+  quest::signalwith(278125,90,0); # NPC: _
   }

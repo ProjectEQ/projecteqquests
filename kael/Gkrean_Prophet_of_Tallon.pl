@@ -17,7 +17,7 @@ Coldain tactics and strategies. Do not waste my time without a scroll or book th
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24987 => 1) || plugin::check_handin(\%itemcount, 24988 => 1)) {
     quest::say("You are a brave little beast to gain this tome. Let me impart a bit of wisdom to you. Tactics must change - if you do not ever adapt to new surroundings, environments and rules, you will surely perish.");
-    quest::summonitem(quest::ChooseRandom(25037,25038,25039,25042));
+    quest::summonitem(quest::ChooseRandom(25037,25038,25039,25042)); # Item(s): Circlet of Tallon (25037), Book of Tactics (25038), Gauntlets of Iron Tactics (25039), Bracelet of Sacrifice (25042)
     quest::exp(50000);
     quest::faction(419,30); #kromrif
     quest::faction(448,30); #kromzek

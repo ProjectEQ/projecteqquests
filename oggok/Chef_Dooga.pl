@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/froglok legs/i) {
     quest::say("You think so!! That be good thing. Make the Gobbler happy. Maybe he give you something good. Maybe not. You take this. Deliver meat.");
-    quest::summonitem(13384);
+    quest::summonitem(13384); # Item: Preserved Leg
   }
 }
 
@@ -28,7 +28,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 13452 => 3)) {
     quest::say("Eww icky frogs. Me promise to give you reward, here yous go."); #Not actual text
-    quest::summonitem(12217);
+    quest::summonitem(12217); # Item: Ogre Butcher Apron
   }
   plugin::return_items(\%itemcount);
 }

@@ -30,7 +30,7 @@ function event_signal(e)
    if (e.signal == 1) then
 		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "Success!");
 
-      eq.signal(201437, 1);
+      eq.signal(201437, 1); -- NPC: The_Tribunal Stoning Trial
 
       despawn_mobs();
       eq.depop();
@@ -40,7 +40,7 @@ function event_signal(e)
       eq.get_entity_list():MessageClose(e.self, false, 120,3, "An unnatural silence falls around you.  The justice of the Tribunal has been pronounced once again.  The defendants have been found... lacking.");
 
       despawn_prisoners();
-      eq.signal(201437, 2);
+      eq.signal(201437, 2); -- NPC: The_Tribunal Stoning Trial
 
       eq.depop();
 
@@ -62,7 +62,7 @@ function event_signal(e)
 		end
 
 		if ( mobs_killed == 16 ) then 
-			eq.spawn2(201498, 0,0, -122, -1134, 74, 508);
+			eq.spawn2(201498, 0,0, -122, -1134, 74, 508); -- NPC: Yurae_Zhaleem
 		end
    end
 
@@ -89,8 +89,8 @@ function spawn_mobs(wave)
 	
 	-- Spawn Archers
 	if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(201494) == false ) then 
-		eq.spawn2( 201494, 0, 0, -177, -1188, 73, 2);
-		eq.spawn2( 201494, 0, 0,  -82, -1188, 73, 2);
+		eq.spawn2( 201494, 0, 0, -177, -1188, 73, 2); -- NPC: a_pitiless_avenger
+		eq.spawn2( 201494, 0, 0,  -82, -1188, 73, 2); -- NPC: a_pitiless_avenger
 	end
 
    if (wave < 5) then
@@ -115,9 +115,9 @@ end
 
 function spawn_prisoners()
    -- an accursed prisoner
-   eq.spawn2(201493, 0, 0, -88, -1046, 73, 250);
-   eq.spawn2(201493, 0, 0, -129, -1046, 73, 250);
-   eq.spawn2(201493, 0, 0, -171, -1046, 73, 250);
+   eq.spawn2(201493, 0, 0, -88, -1046, 73, 250); -- NPC: an_accursed_prisoner
+   eq.spawn2(201493, 0, 0, -129, -1046, 73, 250); -- NPC: an_accursed_prisoner
+   eq.spawn2(201493, 0, 0, -171, -1046, 73, 250); -- NPC: an_accursed_prisoner
 end
 
 function despawn_prisoners() 

@@ -9,6 +9,6 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18234 =>1 )) {
     quest::emote("beams a big smile.");
     quest::say("Oh, joy! They have finally sent someone to help me on my mission! I was once a trooper, but I got demoted. I failed to bring Warlord Hikyg the three heads of the Gubbnubb triplets. Here is one head, but we need them all. Track the other two down and take all three heads and your soldier pike to Warlord Hikyg. I quit this outfit!!");
-    quest::summonitem(12435);
+    quest::summonitem(12435); # Item: Froglok Head
   }
 }

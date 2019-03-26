@@ -25,7 +25,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31445 => 1, 31446 => 1, 31443 => 1, 31444 => 1)) {
     quest::say("In my hands I hold the teachings of those who gave their lives to produce a defense against the evils of mind control. For what you have done for me I cannot thank you enough; please accept this magical item as a reminder of my gratitude.");
-    quest::summonitem(1325);
+    quest::summonitem(1325); # Item: Wreath of Nature
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

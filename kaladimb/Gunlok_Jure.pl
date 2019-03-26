@@ -18,7 +18,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13073 => 4)) {
     quest::say("You have done well. We thank you for your deed with this humble reward. The power behind the raising of our dead shall soon be found. You will earn more respect with more bone chips. I only wish you could assist in the return of the [remains of Cromil].");
-    quest::summonitem(quest::ChooseRandom(2116,2122,5013,5014,5016,5023,6011,13002,13003));
+    quest::summonitem(quest::ChooseRandom(2116,2122,5013,5014,5016,5023,6011,13002,13003)); # Item(s): Small Patchwork Tunic (2116), Small Tattered Gloves (2122), Rusty Short Sword (5013), Rusty Axe (5014), Rusty Broad Sword (5016), Rusty Two Handed Sword (5023), Rusty Mace (6011), Torch (13002), Small Lantern (13003)
     quest::ding();
     quest::givecash(7,10,0,0); # Cash
     quest::faction(227,10);             # Clerics of Underfoot

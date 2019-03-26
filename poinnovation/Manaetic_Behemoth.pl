@@ -37,7 +37,7 @@ sub EVENT_TIMER {
 
 sub BEGIN_MB_EVENT {
   #spawn the targetable version and depop untargetable version.
-  quest::spawn2(206074,0,0,$x,$y,$z,0);
+  quest::spawn2(206074,0,0,$x,$y,$z,0); # NPC: #Manaetic_Behemoth
   #depop with respawn timer active.
   quest::depop_withtimer();
 }

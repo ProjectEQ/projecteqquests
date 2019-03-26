@@ -19,12 +19,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67001 =>1 )) {
     quest::say("You've done it! I'd thank the gods if I believed in them. Take this stone and it will allow you to travel amongst their ranks as one of them. Once you have infiltrated their city give this poisoned ale to Dar Strategist Guib. When the trolls hear of the strategist's death perhaps we can persuade them to leave our city and reclaim theirs. The stone will only work once so use it wisely. If you somehow make a mistake in using it return it to me and I will imbue it once again.");
-    quest::summonitem(67008);
-    quest::summonitem(67010);
+    quest::summonitem(67008); # Item: Froglok Stone
+    quest::summonitem(67010); # Item: Mug of Poisoned Ale
   }
   if (plugin::check_handin(\%itemcount, 67009 =>1 )) {
     quest::say("EXCELLENT! This is the best news I've received since those dirty trolls moved in. You have done so well, I may have use for you in the future. For now, I will grant you a spell from my personal library.");
-    quest::summonitem(67011);
+    quest::summonitem(67011); # Item: Spell: Illusion Guktan
   }
   plugin::return_items(\%itemcount);
 }

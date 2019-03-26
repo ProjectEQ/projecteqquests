@@ -68,7 +68,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4493 => 1, 4691 => 1, 4692 => 1)) { #sandals
 
-    quest::summonitem(3703);
+    quest::summonitem(3703); # Item: Sandals of Enrapturement
 
     quest::exp(10000);   
 
@@ -76,7 +76,7 @@ sub EVENT_ITEM {
 
   if(plugin::check_handin(\%itemcount, 4494 => 1, 4693 => 1, 4694 => 1)) { #mask
 
-    quest::summonitem(3704);
+    quest::summonitem(3704); # Item: Veil of Enrapturement
 
     quest::exp(10000);
 
@@ -84,7 +84,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4488 => 1, 4695 => 1, 4696 => 1, 4697 => 1)) { #cloak
 
-    quest::summonitem(3705);
+    quest::summonitem(3705); # Item: Cape of Enrapturement
 
     quest::exp(10000);
 
@@ -92,7 +92,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4489 => 1, 4698 => 1, 4699 => 1)) { #gloves
 
-    quest::summonitem(3706);
+    quest::summonitem(3706); # Item: Gloves of Enrapturement
 
     quest::exp(10000);
 
@@ -100,7 +100,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4490 => 1, 4701 => 1, 4702 => 1)) { #choker
 
-    quest::summonitem(3707);
+    quest::summonitem(3707); # Item: Choker of Enrapturement
 
     quest::exp(10000);
 
@@ -108,7 +108,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4491 => 1, 4703 => 1, 4704 => 1, 4705 => 1)) { #belt
 
-    quest::summonitem(3708);
+    quest::summonitem(3708); # Item: Belt of Enrapturement
 
     quest::exp(10000);
 
@@ -116,7 +116,7 @@ sub EVENT_ITEM {
   
     if (plugin::check_handin(\%itemcount, 4491 => 1, 4706 => 1, 4707 => 1, 4708 => 1)) { #staff 
 
-    quest::summonitem(3709);
+    quest::summonitem(3709); # Item: Staff of Enrapturement
 
     quest::exp(10000);
 

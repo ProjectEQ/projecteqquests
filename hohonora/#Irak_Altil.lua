@@ -54,7 +54,7 @@ function event_trade(e)
 	if(qglobals["paladin_epic"] == "6" and item_lib.check_turn_in(e.trade, {item1 = 69971})) then
 		e.self:Emote("I see you have destroyed the monster responsible for this plot. This sword, this twisted piece of steel and blood that lies in your hands, must be the instrument used by Durunal to twist and corrupt those he tortured. I can feel that this sword has a dark magical power that he used to forcibly and violently siphon the soul of those he tormented. There is only one way to correct Durunal's wrong-doings, as well as lay to rest the souls of those he tortured. You must take the crystals you have gathered and meld them with the sword. . .give those tormented souls a new purpose and a new meaning. After you have joined the souls with this weapon, I will [" .. eq.say_link("tell me about your master",false,"tell you about my master") .. "].");
 		eq.set_global("paladin_epic","7",5,"F");
-		e.other:SummonItem(69972);
+		e.other:SummonItem(69972); -- Item: Dark and Twisted Sword
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

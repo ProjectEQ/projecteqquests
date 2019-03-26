@@ -15,7 +15,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 20530})) then
 		e.self:Say("Where did you find this? I thought the cyclops took it. I am in your debt, " .. e.other:GetName() .. ". This horn has always been special to me.");
 		e.self:Emote("reaches into her pack and pulls out a note. 'Do you think you could deliver this to my gnome friend Forpar? I have not spoken to him in a while and unfortunatly I will be unable to make the trip to visit him. If you are looking to have an instrument made he is the man to ask.'");
-		e.other:SummonItem(20378);
+		e.other:SummonItem(20378); -- Item: Note to Forpar Fizfla
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

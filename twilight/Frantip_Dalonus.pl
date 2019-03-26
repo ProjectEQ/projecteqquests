@@ -41,27 +41,27 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 4492 => 1, 4777 => 1, 4778 => 1)) { #veil
-    quest::summonitem(3730);
+    quest::summonitem(3730); # Item: Veil of Pestilence
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4493 => 1, 4779 => 1, 4781 => 1, 4782 => 1)) { #cloak
-    quest::summonitem(3731);
+    quest::summonitem(3731); # Item: Cape of Pestilence
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4494 => 1, 4783 => 1, 4784 => 1)) { #gloves
-    quest::summonitem(3732);
+    quest::summonitem(3732); # Item: Gloves of Pestilence
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4488 => 1, 4785 => 1, 4786 => 1)) { #choker
-    quest::summonitem(3733);
+    quest::summonitem(3733); # Item: Choker of Pestilence
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4489 => 1, 4787 => 1, 4788 => 1, 4789 => 1)) { #belt
-    quest::summonitem(3734);
+    quest::summonitem(3734); # Item: Belt of Pestilence
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4490 => 1, 4790 => 1, 4791 => 1, 4792 => 1)) { #staff
-    quest::summonitem(3735);
+    quest::summonitem(3735); # Item: Staff of Pestilence
     quest::exp(10000);
      } 
     plugin::return_items(\%itemcount);

@@ -36,17 +36,17 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 11445, item2 = 11448, item3 = 11474, item4 = 11576})) then --  Fluxing Staff
 		e.self:Say("You are indeed ready to join the ranks as a soldier of Solusek Ro. Every soldier in Solusek's league must wield a staff of power, which will focus your abilities in a way that you have never felt before! Fear will consume you as you feel your essence being ripped from your body. Do not give up, use the staff with faith and hope that you will be rewarded with the most [" .. eq.say_link("powerful item") .. "] you could ever imagine.");
-		e.other:SummonItem(11596);
+		e.other:SummonItem(11596); -- Item: Staff of Fluxing Power
 		eq.set_global("wiz_epic","2",5,"F"); --1.5 Progression Flag, Step 2 of 5, next step 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 11619})) then -- Wisp of Pure Flame
 		e.self:Say("You have obtained the pure flame? That was impressive how quickly you did it, the other wizards I am recruiting have not returned yet. Back to the recruitment, you will need pure ice. The ice is coldest in the wastes of Velious. Retrieve this pure ice and bring it back to me.");
-		e.other:SummonItem(11619);
+		e.other:SummonItem(11619); -- Item: Wisp of Pure Flame
 		if(qglobals.wiz_epic == "2") then
 			eq.set_global("wiz_epic_wisp","1",5,"F");
 		end
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 11599})) then -- Shard of Pure Ice
 		e.self:Say("I can see the pure ice is in your possession. Take care while handling it because it is fragile. To infuse the staff with the powers you have attained you will need to retrieve a tapestry bag from the weavers in the Plane of Tranquility. Go talk to Kalym; he should be able to help you.");
-		e.other:SummonItem(11599);
+		e.other:SummonItem(11599); -- Item: Shard of Pure Ice
 		if(qglobals.wiz_epic == "2") then
 			eq.set_global("wiz_epic_shard","1",5,"F");
 		end
@@ -56,7 +56,7 @@ function event_trade(e)
 		eq.set_global("wiz_epic","4",5,"F");
 		eq.delete_global("wiz_epic_wisp");
 		eq.delete_global("wiz_epic_shard");
-		e.other:SummonItem(12596);
+		e.other:SummonItem(12596); -- Item: Silken Tapestry Satchel
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 16753})) then -- Full Tapestry Satchel
 		e.self:Emote("removes the components from the tapestry satchel they begin to vibrate with power. They pulse quickly as they move towards each other, static flies in each direction as the pieces fuse into each other. In a final burst of magic the staff is complete. Talwyn looks it over with wise eyes before giving it to you.");
 		e.self:Say("The staff of power is yours to wield. If you are up to the task I can set you on the final portions of what is needed to become a true avatar of Solusek.");

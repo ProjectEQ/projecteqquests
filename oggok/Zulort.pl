@@ -33,14 +33,14 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13187 => 4)) {
     quest::say("Oh, me.. um.. Warlord BERRY happy. Berry like dese. Gimme. Uh, why is you still here? Take dis and gets more kills. You learning good, come sees me. I teaches you bout stuff. Make you [bedder shaman]. Go. He and me watching.");
-    quest::summonitem(15093);
-    quest::faction(394, 10);
+    quest::summonitem(15093); # Item: Spell: Burst of Flame
+    quest::faction(394, 10); # Faction: Shamen of War
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 14199 => 1, 13367 => 3)) {
     quest::say("Dis good stuff! Me and Warlord happy! Wear dis symbol and he make yoo strong with majik!");
-    quest::summonitem(1444);
-    quest::faction(394, 10);
+    quest::summonitem(1444); # Item: Initiate Symbol of Rallos Zek
+    quest::faction(394, 10); # Faction: Shamen of War
     quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 18788 => 1)) { #Tattered Note

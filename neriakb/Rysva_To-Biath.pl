@@ -25,7 +25,7 @@ sub EVENT_ITEM {
 		#xp seems too much.
 	}
     elsif(plugin::check_handin(\%itemcount, 19071 => 1, 19070 => 1) && $platinum >= 1000) {
-        quest::summonitem(18302);
+        quest::summonitem(18302); # Item: Book of Scale
     }
   	plugin::return_items(\%itemcount);
 }#END of FILE Zone:neriakb  ID:41042 -- Rysva_To`Biath 

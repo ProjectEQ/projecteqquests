@@ -25,7 +25,7 @@ sub EVENT_ITEM {
 
    if(plugin::check_handin(\%itemcount,4310=>1,6335=>1)) {
      quest::say("You have done well. Here is the reward for your deeds.");
-     quest::summonitem(6364);
+     quest::summonitem(6364); # Item: Sap Sheen Staff
      quest::exp(25000);
    }
   plugin::return_items(\%itemcount);

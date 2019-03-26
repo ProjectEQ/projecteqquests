@@ -7,12 +7,12 @@ sub EVENT_SPAWN {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1092 => 1)) {
     quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
-    quest::summonitem(30164);
+    quest::summonitem(30164); # Item: Velium Coldain Insignia Ring
 #Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406,30);
-    quest::faction(405,30);
-    quest::faction(419,-30);
-    quest::faction(448,-30);
+    quest::faction(406,30); # Faction: Coldain
+    quest::faction(405,30); # Faction: Dain Frostreaver IV
+    quest::faction(419,-30); # Faction: Kromrif
+    quest::faction(448,-30); # Faction: Kromzek
     quest::exp(2000000);
     quest::depop();
   }

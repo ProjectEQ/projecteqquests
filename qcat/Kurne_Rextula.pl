@@ -16,14 +16,14 @@ quest::say("The problem is, he was strong in Karana's faith. And as sometimes is
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18805 => 1)) {
     quest::say("Good work! You shall rise quickly in our ranks of evil. Let no man stand in your way and never betray the shrine or you to will join our collection of undead. You can also assist me with a [new task].");
-    quest::summonitem(17002);
+    quest::summonitem(17002); # Item: Belt Pouch
     quest::ding();
     quest::exp(1000);
-    quest::faction(221,1);
-    quest::faction(262,-1);
-    quest::faction(296,-1);
-    quest::faction(341,-1);
-    quest::faction(230,1);
+    quest::faction(221,1); # Faction: Bloodsabers
+    quest::faction(262,-1); # Faction: Guards of Qeynos
+    quest::faction(296,-1); # Faction: Opal Darkbriar
+    quest::faction(341,-1); # Faction: Priests of Life
+    quest::faction(230,1); # Faction: Corrupt Qeynos Guards
     quest::givecash(0,3,0,0);
   }
   plugin::return_items(\%itemcount);

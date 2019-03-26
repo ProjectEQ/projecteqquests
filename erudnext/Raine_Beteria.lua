@@ -14,12 +14,12 @@ function event_trade(e)
 	if(e.other:GetFaction(e.self) <= 5) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 6339,gold = 50})) then
 			e.self:Say("Your silver wand has been fully enchanted. Take it and the pouch of silver dust back to the temple of Ro.");
-			e.other:SummonItem(6340);
+			e.other:SummonItem(6340); -- Item: Glowing Silver Wand
 			e.other:Ding();
 			e.other:AddEXP(1000);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10792})) then
 			e.self:Say("Thank you very much. I have always wanted one of these! Hehehe? Just kidding. I see that you have enchanted this coin. I have placed the final enchantment on it - take it back to Romar.");
-			e.other:SummonItem(10793);
+			e.other:SummonItem(10793); -- Item: Radiant Coin of Tash
 			e.other:Ding();
 			e.other:AddEXP(200000);
 		end

@@ -11,10 +11,10 @@ sub EVENT_SPAWN {
 
 sub EVENT_WAYPOINT_ARRIVE {
   if (($wp == 4) && ($wave == 0)) {
-    $wave1_1 = quest::spawn2(204072,0,0,$x+20,$y+20,$z,$h);
-    $wave1_2 = quest::spawn2(204072,0,0,$x-20,$y-20,$z,$h);
-    $wave1_3 = quest::spawn2(204072,0,0,$x+20,$y-20,$z,$h);
-    $wave1_4 = quest::spawn2(204072,0,0,$x-20,$y+20,$z,$h);
+    $wave1_1 = quest::spawn2(204072,0,0,$x+20,$y+20,$z,$h); # NPC: #a_tortured_banshee
+    $wave1_2 = quest::spawn2(204072,0,0,$x-20,$y-20,$z,$h); # NPC: #a_tortured_banshee
+    $wave1_3 = quest::spawn2(204072,0,0,$x+20,$y-20,$z,$h); # NPC: #a_tortured_banshee
+    $wave1_4 = quest::spawn2(204072,0,0,$x-20,$y+20,$z,$h); # NPC: #a_tortured_banshee
     $wave1_obj1 = $entity_list->GetMobID($wave1_1);
     $wave1_obj2 = $entity_list->GetMobID($wave1_2);
     $wave1_obj3 = $entity_list->GetMobID($wave1_3);
@@ -30,8 +30,8 @@ sub EVENT_WAYPOINT_ARRIVE {
     $wave = 1;
   }
   if (($wp == 10) && ($wave == 1)) {
-    $wave2_1 = quest::spawn2(204073,0,0,$x+20,$y+20,$z,$h);
-    $wave2_2 = quest::spawn2(204073,0,0,$x-20,$y-20,$z,$h);
+    $wave2_1 = quest::spawn2(204073,0,0,$x+20,$y+20,$z,$h); # NPC: #a_nightstalker
+    $wave2_2 = quest::spawn2(204073,0,0,$x-20,$y-20,$z,$h); # NPC: #a_nightstalker
     $wave2_obj1 = $entity_list->GetMobID($wave2_1);
     $wave2_obj2 = $entity_list->GetMobID($wave2_2);
     $wave2_npc1 = $wave2_obj1->CastToNPC();
@@ -41,10 +41,10 @@ sub EVENT_WAYPOINT_ARRIVE {
     $wave = 2;
   }
   if (($wp == 19) && ($wave == 2)) {
-    $wave3_1 = quest::spawn2(204074,0,0,$x+20,$y+20,$z,$h);
-    $wave3_2 = quest::spawn2(204074,0,0,$x-20,$y-20,$z,$h);
-    $wave3_3 = quest::spawn2(204074,0,0,$x+20,$y-20,$z,$h);
-    $wave3_4 = quest::spawn2(204074,0,0,$x-20,$y+20,$z,$h);
+    $wave3_1 = quest::spawn2(204074,0,0,$x+20,$y+20,$z,$h); # NPC: #a_hobgoblin
+    $wave3_2 = quest::spawn2(204074,0,0,$x-20,$y-20,$z,$h); # NPC: #a_hobgoblin
+    $wave3_3 = quest::spawn2(204074,0,0,$x+20,$y-20,$z,$h); # NPC: #a_hobgoblin
+    $wave3_4 = quest::spawn2(204074,0,0,$x-20,$y+20,$z,$h); # NPC: #a_hobgoblin
     $wave3_obj1 = $entity_list->GetMobID($wave3_1);
     $wave3_obj2 = $entity_list->GetMobID($wave3_2);
     $wave3_obj3 = $entity_list->GetMobID($wave3_3);
@@ -60,12 +60,12 @@ sub EVENT_WAYPOINT_ARRIVE {
     $wave = 3;
   }
   if (($wp == 24) && ($wave == 3)) {
-    $wave4_1 = quest::spawn2(204072,0,0,$x+20,$y,$z,$h);
-    $wave4_2 = quest::spawn2(204072,0,0,$x-20,$y,$z,$h);
-    $wave4_3 = quest::spawn2(204072,0,0,$x,$y-20,$z,$h);
-    $wave4_4 = quest::spawn2(204075,0,0,$x+20,$y+20,$z,$h);
-    $wave4_5 = quest::spawn2(204075,0,0,$x-20,$y-20,$z,$h);
-    $wave4_6 = quest::spawn2(204075,0,0,$x+20,$y-20,$z,$h);
+    $wave4_1 = quest::spawn2(204072,0,0,$x+20,$y,$z,$h); # NPC: #a_tortured_banshee
+    $wave4_2 = quest::spawn2(204072,0,0,$x-20,$y,$z,$h); # NPC: #a_tortured_banshee
+    $wave4_3 = quest::spawn2(204072,0,0,$x,$y-20,$z,$h); # NPC: #a_tortured_banshee
+    $wave4_4 = quest::spawn2(204075,0,0,$x+20,$y+20,$z,$h); # NPC: #a_tremulous_bat
+    $wave4_5 = quest::spawn2(204075,0,0,$x-20,$y-20,$z,$h); # NPC: #a_tremulous_bat
+    $wave4_6 = quest::spawn2(204075,0,0,$x+20,$y-20,$z,$h); # NPC: #a_tremulous_bat
     $wave4_obj1 = $entity_list->GetMobID($wave4_1);
     $wave4_obj2 = $entity_list->GetMobID($wave4_2);
     $wave4_obj3 = $entity_list->GetMobID($wave4_3);
@@ -91,7 +91,7 @@ sub EVENT_WAYPOINT_ARRIVE {
     $npc->SetAppearance(1);
   }
   if (($wp == 26) && ($wave == 4)) {
-    $wave5_1 = quest::spawn2(204076,0,0,$x+20,$y+20,$z,$h);
+    $wave5_1 = quest::spawn2(204076,0,0,$x+20,$y+20,$z,$h); # NPC: #The_Dreamkeeper
     $wave5_obj1 = $entity_list->GetMobID($wave5_1);
     $wave5_npc1 = $wave5_obj1->CastToNPC();
     $wave5_npc1->AddToHateList($npc,1);

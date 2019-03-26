@@ -1,12 +1,12 @@
 function event_spawn(e)
 	e.self:Say("Well met again, Srafen. How goes it?");
-	eq.signal(98046,0);
+	eq.signal(98046,0); -- NPC: Srafen_the_Soaked
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then -- Part of Shaman Epic 1.0
 		e.self:Say("Hey Srafen, who is this weirdo talking to me? Or is it another one of those funny illusions Froham keeps talking about?");
-		eq.signal(98046,1);
+		eq.signal(98046,1); -- NPC: Srafen_the_Soaked
 	elseif(e.message:findi("bore")) then -- Part of Shaman Epic 1.0
 		e.self:Say("Well ok, I was sent here a long time ago to wait. When I got here, I couldn't believe all the violence going on. Why would the spirits send me here to wait when all this fighting and commotion was going on, I wondered. There were great battles on the ocean in splendid ships made of pine and shining with [" .. eq.say_link("magical enhancements") .. "]. While I was waiting below, blasted, bloody body parts were floating down to the bottom of the ocean all around me.");
 	elseif(e.message:findi("magical enhancements")) then -- Part of Shaman Epic 1.0

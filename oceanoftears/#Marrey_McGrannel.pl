@@ -1,7 +1,7 @@
 sub EVENT_SAY {
   if ($text=~/way/i) {
     quest::say("I do miss me time with Muada and I suppose I'll get me chance again. I'll have to leave ye now and go to Muada so that I may learn what I must do for him to end the threat to our ways as beastlords. Be well and ready to open your mind to learn from Muada.");
-    quest::summonitem(57008);
+    quest::summonitem(57008); # Item: Letter from Muada
     quest::setglobal("muadalet",1,5,"F");
   }
   if (defined $qglobals{muadalet} && $qglobals{muadalet} == 7) {
@@ -47,7 +47,7 @@ sub EVENT_SAY {
   if (defined $qglobals{muadalet} && $qglobals{muadalet} == 7) {
   if ($text=~/speak/i) {
     quest::say("We must accommodate their requests to build trust. This means we must weave through their riddles. Once we do, we will be able to talk to them and help them. We've decided that ye be the beastlord who will take on this task. Go tell them you are willing to help them and see what you learn.");
-    quest::summonitem(52901);
+    quest::summonitem(52901); # Item: Feral Lord's Brooch
     quest::setglobal("muadalet",8,5,"F");
   }
   }

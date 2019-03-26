@@ -47,14 +47,14 @@ sub EVENT_TIMER {
         if(!$entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
           quest::spawn2(289045,0,0,-2005,163,250,0); #aemc_trigger
         }
-        quest::spawn2(289034,0,0,-2106,188,250,156);
-        quest::spawn2(289034,0,0,-2075,246,250,240);
-        quest::spawn2(289034,0,0,-2019,247,250,206);
-        quest::spawn2(289034,0,0,-1945,257,250,286);
-        quest::spawn2(289034,0,0,-1895,196,250,334);
-        quest::spawn2(289034,0,0,-1865,140,250,426);
-        quest::spawn2(289034,0,0,-1953,94,250,444);
-        quest::spawn2(289034,0,0,-2047,125,250,44);      
+        quest::spawn2(289034,0,0,-2106,188,250,156); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-2075,246,250,240); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-2019,247,250,206); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-1945,257,250,286); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-1895,196,250,334); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-1865,140,250,426); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-1953,94,250,444); # NPC: a_cragbeast_hatchling
+        quest::spawn2(289034,0,0,-2047,125,250,44); # NPC: a_cragbeast_hatchling      
       } elsif($qglobals{$instid.'_tipt_status'} == 2) { #mother spawned
         quest::spawn2(289036,0,0,-2040,196,250,226); #spawn #an_enraged_maternal_cragbeast
         if($entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
@@ -69,14 +69,14 @@ sub EVENT_TIMER {
           quest::spawn2(289046,0,0,-1290,891,398,388); #ghost_trigger
         }
         quest::ze(13,'shivers run up and down your spine, something is not quite right here, the area feels quite chill and desolate'); 
-        quest::spawn2(289035,0,0,-1274,996,396,382);
-        quest::spawn2(289035,0,0,-1351,796,394,8);
-        quest::spawn2(289035,0,0,-1323,996,396,128);
-        quest::spawn2(289035,0,0,-1275,779,396,386);
-        quest::spawn2(289035,0,0,-1348,973,394,244);
-        quest::spawn2(289035,0,0,-1321,779,396,126);
-        quest::spawn2(289035,0,0,-1254,799,395,492);
-        quest::spawn2(289035,0,0,-1249,962,394,306);
+        quest::spawn2(289035,0,0,-1274,996,396,382); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1351,796,394,8); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1323,996,396,128); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1275,779,396,386); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1348,973,394,244); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1321,779,396,126); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1254,799,395,492); # NPC: an_arisen_beludu
+        quest::spawn2(289035,0,0,-1249,962,394,306); # NPC: an_arisen_beludu
       } elsif($qglobals{$instid.'_tipt_status'} == 5) { #Garjah spawned
         quest::spawn2(289033,0,0,-1290,891,398,0); #spawn Garkah Zotaki
       } elsif($qglobals{$instid.'_tipt_status'} == 6) { #aneuk trigger spawned
@@ -119,6 +119,6 @@ sub KICK_ALL_PLAYERS {
   #zone all players back to barindu
   my @pc_list = $entity_list->GetClientList();
   foreach $pc ($entity_list->GetClientList()) {
-    $pc->MovePC(283, -1225, 501, -121, 348);
+    $pc->MovePC(283, -1225, 501, -121, 348); # Zone: poearthb
   }
 }

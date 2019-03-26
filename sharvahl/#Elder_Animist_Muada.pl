@@ -49,7 +49,7 @@ sub EVENT_SAY {
 	if(plugin::check_hasitem($client, 57007)) {
 	  if ($text=~/i am done/i) {
 		quest::say("Ah, I see you were successful! You become more like one of the elders each day -- elders which may now become known to you. I would like you to become familiar with some of the greater animists of Norrath, so I will have you make some deliveries on my behalf. These elder animists are very busy and you must find them on your own in our lands. Show this letter to the elders as you find them.");
-		quest::summonitem(57008);  
+		quest::summonitem(57008); # Item: Letter from Muada  
 	  }
 	}
 	if ($client->GetGlobal("beast_epic") ==6) {
@@ -66,7 +66,7 @@ sub EVENT_SAY {
 	if ($client->GetGlobal("beast_epic") ==7) {
 	  if ($text=~/greater calling/i) {
 	  quest::say("Irionu Bastun has discovered another spirit that suffers. I understand she has already told you about the ways of the Rhinoceros. This is yet another creature than was once easily tamed that is endangering the lives of many. More importantly, its spirit has become plagued witht he chaotic magic of discord. Irionu believes that its spirit may have been traded or confused with one from the dark realm. I need you to learn more and tell me what you know. Go find Irionu as soon as you are able to and give her this letter.");
-	  quest::summonitem(57996);
+	  quest::summonitem(57996); # Item: Note to Irionu
 	  }
 	}
 	if ($client->GetGlobal("beast_epic") ==9) {
@@ -98,7 +98,7 @@ sub EVENT_SAY {
 	if ($client->GetGlobal("beast_epic") ==16) {
 	  if ($text=~/stopped/i) {  
 		quest::say("Go speak to Erana Farrel. She is in the city of the dragorn and will most likely be in hiding while she investigates. She was the first to discover this evil plot and has the most information to help you. Give her this cloak. She had asked for some protection while she was out in that volatile realm.");
-		quest::summonitem(52909);
+		quest::summonitem(52909); # Item: Elder Cloak of Resilience
 	  } 
 	}
 	if ($client->GetGlobal("beast_epic") ==17) { 
@@ -162,8 +162,8 @@ sub EVENT_ITEM {
   }
   
   if (plugin::check_handin(\%itemcount, 57001 =>1, 57002 =>1, 57003 =>1, 57004 =>1 )) {
-   quest::summonitem(57005); 
-   quest::summonitem(57006);
+   quest::summonitem(57005); # Item: Plain Animist Helm 
+   quest::summonitem(57006); # Item: Shiny Sewing Needle
   }
   if ($client->GetGlobal("beast_epic") ==6) {
    if (plugin::check_handin(\%itemcount, 57008 =>1 )) {
@@ -189,7 +189,7 @@ sub EVENT_ITEM {
  if ($client->GetGlobal("beast_epic") ==16) {
   if (plugin::check_handin(\%itemcount, 52914 =>1 )) {
    quest::say("I am honored to have had the opportunity to observe you -- a feral champion for the ills that have befallen our kind. You have certainly made your name known among us. While the spirit world is not freed from danger, it is much more promising with all that you've done. Take this token of our appreciation. It may not appear to be too much right now, but it will be very important should you [" . quest::saylink("wish to continue to walk among the elders") . "] of the lords of beasts.");
-   quest::summonitem(52911);
+   quest::summonitem(52911); # Item: Savage Lord's Totem
    $client->AddAAPoints(5);
    $client->Message(15,"You have gained 5 ability points!");	
    quest::ding();

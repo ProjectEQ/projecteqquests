@@ -25,7 +25,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31435 => 1, 31436 => 1, 31437 => 1, 31438 => 1)) {
     quest::emote("whispers, like wind through the tree tops, as it speaks hushed words to the tree."); # Not sure if this is the right response
-    quest::summonitem(1224);
+    quest::summonitem(1224); # Item: Chord of Vines
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

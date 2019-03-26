@@ -3,16 +3,16 @@
 --280091 #Noc_Juggernaut
 
 function RC_Spawn(e)
-	eq.spawn2(280069,0,0,1511,974,518,380);
-	eq.spawn2(280069,0,0,1468,897,518,492);
-	eq.spawn2(280069,0,0,1376,948,518,432);
-	eq.spawn2(280069,0,0,1381,988,518,180);
-	eq.spawn2(280069,0,0,1378,1006,517,180);
-	eq.spawn2(280069,0,0,1397,1012,518,180);
-	eq.spawn2(280069,0,0,1274,1165,468,304);
-	eq.spawn2(280069,0,0,1257,1030,468,432);
-	eq.spawn2(280069,0,0,1308,1115,468,432);
-	eq.spawn2(280069,0,0,1202,1055,468,50);
+	eq.spawn2(280069,0,0,1511,974,518,380); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1468,897,518,492); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1376,948,518,432); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1381,988,518,180); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1378,1006,517,180); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1397,1012,518,180); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1274,1165,468,304); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1257,1030,468,432); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1308,1115,468,432); -- NPC: Reborn
+	eq.spawn2(280069,0,0,1202,1055,468,50); -- NPC: Reborn
 	eq.set_timer("depop",15*60*1000);	
 	--eq.spawn2(280091,0,0,1451.65,957.84,517.86,432);
 end
@@ -48,7 +48,7 @@ function Jugg_Timer(e)
 		eq.depop_all(280090);
 	elseif (e.timer=="conduit") then
 		eq.stop_timer("conduit");
-		e.self:CastSpell(5800, e.self:GetHateTop():GetID());
+		e.self:CastSpell(5800, e.self:GetHateTop():GetID()); -- Spell: Energy Conduit
 		eq.set_timer("conduit",20*1000);
 	elseif (e.timer == "checkleash") then
 		if (e.self:CalculateDistance(1451,957,517) > 95) then
@@ -62,7 +62,7 @@ end
 
 function Reborn_Death(e)
 	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(280069) == false) then
-		eq.spawn2(280091,0,0,1451.65,957.84,517.86,432);
+		eq.spawn2(280091,0,0,1451.65,957.84,517.86,432); -- NPC: #Noc_Juggernaut
 		eq.depop_all(280090);
 	end
 end

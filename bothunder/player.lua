@@ -124,13 +124,13 @@ function PortIntoTower(cur_x, cur_y, cur_z, distance, dest_x, dest_y, dest_z, de
 					-- check the distance and port them up if close enough
 					if (client_v:CalculateDistance(cur_x, cur_y, cur_z) <= distance) then
 						-- port the player up
-						client_v:MovePC(209, dest_x, dest_y, dest_z, dest_h);
+						client_v:MovePC(209, dest_x, dest_y, dest_z, dest_h); -- Zone: maidensgrave
 					end
 				end
 			end
 		end
 	else
 		-- port the player up
-		client_e.self:MovePC(209, dest_x, dest_y, dest_z, dest_h);
+		client_e.self:MovePC(209, dest_x, dest_y, dest_z, dest_h); -- Zone: maidensgrave
 	end
 end

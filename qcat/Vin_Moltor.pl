@@ -9,11 +9,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13016 =>3, 13192 =>1 )) {
     quest::say("Ah thanks, here is what I promised you.");
-    quest::summonitem(17014);
+    quest::summonitem(17014); # Item: Severed Paw
   }
   if (plugin::check_handin(\%itemcount, 13016 =>3, 18103 =>1 )) {
     quest::say("Ah thanks, here is what I promised you.");
-    quest::summonitem(17014);
+    quest::summonitem(17014); # Item: Severed Paw
  }
  plugin::return_items(\%itemcount);
 }

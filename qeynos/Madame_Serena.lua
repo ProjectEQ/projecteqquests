@@ -54,7 +54,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {gold = 50})) then
 		e.self:Say("Fifty gold? You must want a rune of fortune. If you want another one, give fifty gold to Mizr N'Mar in the Neriak library.");
 		e.other:Ding();
-		e.other:SummonItem(10531);
+		e.other:SummonItem(10531); -- Item: Rune of Fortune
 		e.other:AddEXP(100);
 	end
 	

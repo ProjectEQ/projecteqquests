@@ -16,11 +16,11 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 18243 => 1)) {
     quest::say("No deal! You bring me the legion order and the froglok skipping stone.");
-    quest::summonitem(18243);
+    quest::summonitem(18243); # Item: Legion Order
   }
   elsif (plugin::check_handin(\%itemcount, 12425 => 1)) {
     quest::say("No deal! You bring me the legion order and the froglok skipping stone.");
-    quest::summonitem(12425);
+    quest::summonitem(12425); # Item: Skipping Stone
   }
   plugin::return_items(\%itemcount);
 }

@@ -6,19 +6,19 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 75) {
-  quest::signalwith(294344,1,0);
+  quest::signalwith(294344,1,0); # NPC: Crumbling_Monument
   quest::setnexthpevent(47);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);    
   }
   if($hpevent == 47) {
-  quest::signalwith(294345,1,0);
+  quest::signalwith(294345,1,0); # NPC: Crumbling_Monument
   quest::setnexthpevent(26);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);
   }
   if($hpevent == 26) {
-  quest::signalwith(294346,1,0);
+  quest::signalwith(294346,1,0); # NPC: Crumbling_Monument
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);
   }
@@ -58,15 +58,15 @@ if ($timer == 2) {
 
 sub EVENT_DEATH_COMPLETE {
   quest::depopall(294578);
-  quest::spawn2(294344,0,0,309,-595,2,308);
-  quest::spawn2(294344,0,0,355,-644,2,362);
-  quest::spawn2(294344,0,0,348,-714,2,406);
-  quest::spawn2(294344,0,0,205,-589,2,194);
-  quest::spawn2(294345,0,0,153,-643,2,146);
-  quest::spawn2(294346,0,0,316,-778,2,448);
-  quest::spawn2(294346,0,0,201,-776,2,58);
-  quest::spawn2(294346,0,0,161,-717,2,104);
-  quest::signalwith(294342,1,0);
+  quest::spawn2(294344,0,0,309,-595,2,308); # NPC: Crumbling_Monument
+  quest::spawn2(294344,0,0,355,-644,2,362); # NPC: Crumbling_Monument
+  quest::spawn2(294344,0,0,348,-714,2,406); # NPC: Crumbling_Monument
+  quest::spawn2(294344,0,0,205,-589,2,194); # NPC: Crumbling_Monument
+  quest::spawn2(294345,0,0,153,-643,2,146); # NPC: Crumbling_Monument
+  quest::spawn2(294346,0,0,316,-778,2,448); # NPC: Crumbling_Monument
+  quest::spawn2(294346,0,0,201,-776,2,58); # NPC: Crumbling_Monument
+  quest::spawn2(294346,0,0,161,-717,2,104); # NPC: Crumbling_Monument
+  quest::signalwith(294342,1,0); # NPC: Crumbling_Monolith
   quest::signalwith(294631,1); #set lockout
   $entity_list->FindDoor(11)->SetLockPick(0);
 }

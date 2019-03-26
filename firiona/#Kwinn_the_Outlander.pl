@@ -13,7 +13,7 @@ sub EVENT_SAY {
   }
   if ($text=~/trade for the mechanical thing/i) {
     quest::emote("takes out an extra pack. 'Thought you might be interested. I don't want to take a loss and I only trade for things I am hunting, so here!! Inside this pack you need to combine the following items; a sabertooth tiger mane, a pair of pygmy brute choppers, a lime plume and a war bone fist. Return the full sack to me and the tail is yours.'");
-    quest::summonitem(17038);
+    quest::summonitem(17038); # Item: Empty Pack from Kwinn
   }
 }
 
@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12828 => 1)) {
     quest::say("Kackling Quellious!! This will bring a fortune on the black market!! Well, a deal is a deal. Here is the tail.");
     quest::exp(25000);
-    quest::summonitem(12822);
+    quest::summonitem(12822); # Item: Mechanical Iksar Tail
   }
   plugin::return_items(\%itemcount);
 }

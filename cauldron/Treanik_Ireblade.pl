@@ -55,7 +55,7 @@ sub EVENT_ITEM
 	if(plugin::check_handin(\%itemcount, 60200 => 1))
 		{
 		quest::say("My axe! Me so happy! You are big force to be rekoned with, $name. Me wasn't sure... but now, look at you, like spiroc fluffing feathers. McArik be so pleased! Take dis amulet me made. I know not much, but me swore to McArik that anyone who passes dis test would get a trinket from me.");
-		quest::summonitem(60201);
+		quest::summonitem(60201); # Item: Bone Trinket
 		}
   plugin::return_items(\%itemcount);
 }

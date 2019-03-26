@@ -13,7 +13,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_DEATH_COMPLETE {
   quest::say("Even now Coirnav awaits to deal swift death to you. Flee, weaklings.");
-  quest::signalwith(216107,1,0);
+  quest::signalwith(216107,1,0); # NPC: #coirnav_controller
 }
 
 sub EVENT_TIMER {

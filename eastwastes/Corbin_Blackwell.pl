@@ -26,8 +26,8 @@ sub EVENT_TIMER {
     $event_spawn=1;			
     $ring_seven_start=undef;
     quest::say("Uh oh, looks like they were tipped off somehow... I hope you can handle them.");
-    quest::spawn2(116119, 0,0, $x, $y, $z, $h);
-    quest::spawn2(116569, 0,0, -2139, 168, 150, 114);
+    quest::spawn2(116119, 0,0, $x, $y, $z, $h); # NPC: Corbin_Blackwell
+    quest::spawn2(116569, 0,0, -2139, 168, 150, 114); # NPC: Commander_Bahreck
     quest::depop_withtimer();
   }
   if($timer == 1 && $x == -3183 && $y == -586 && defined($final_path) && $final_path == 1) {
@@ -36,9 +36,9 @@ sub EVENT_TIMER {
     $ring_seven_start=undef;
     $final_path=undef;
     $turnin=1;
-    quest::spawn2(116119, 0, 0, $x, $y, $z, 18);
+    quest::spawn2(116119, 0, 0, $x, $y, $z, 18); # NPC: Corbin_Blackwell
     quest::say("I have escaped! With the help of our friends here I was saved from certain death. We are in their debt.");
-    quest::signalwith(116118, 1, 1000);
+    quest::signalwith(116118, 1, 1000); # NPC: Dobbin_Crossaxe
     quest::depop_withtimer();
   }
   if($timer == 2) { #Not sure why this is here. Timer 2 is not defined/declared
@@ -52,7 +52,7 @@ sub EVENT_TIMER {
     $ring_seven_start=undef;
     $final_path=undef;
     $turnin=undef;
-    quest::signalwith(116118, 2, 0);
+    quest::signalwith(116118, 2, 0); # NPC: Dobbin_Crossaxe
     quest::depop_withtimer();
   }
 }
@@ -60,10 +60,10 @@ sub EVENT_TIMER {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1046 => 1, 30162 => 1) && !defined($ring_seven_start) && !defined($final_path)) {
     quest::say("I thought I was a dwarfskin rug there for a minute! Thank Brell for your help stranger! Now cover me while I make good my escape. I am weakened and cannot endure much more.");
-    quest::summonitem(30162);
+    quest::summonitem(30162); # Item: Mithril Coldain Insignia Ring
     $ring_seven_start=1;
     $event_spawn=undef;
-    quest::spawn2(116119,234, 0, $x, $y, $z, $h);
+    quest::spawn2(116119,234, 0, $x, $y, $z, $h); # NPC: Corbin_Blackwell
     quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount);
@@ -72,7 +72,7 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
   $event_spawn=undef;
   $final_path=1;
-  quest::spawn2(116119, 235, 0, $x, $y, $z, $h);
+  quest::spawn2(116119, 235, 0, $x, $y, $z, $h); # NPC: Corbin_Blackwell
   quest::depop_withtimer();
 }
 

@@ -17,7 +17,7 @@ local qglobals = eq.get_qglobals(e.other)
 		e.other:SummonItem(62836); --Soul Stone
 		e.self:SetLevel(65);
 		e.self:TempName("Soulbender Geadin Gyths");
-		e.self:CastSpell(36, 0);
+		e.self:CastSpell(36, 0); -- Spell: Gate
 		eq.set_timer("gate",3000);		
 	end	
 end

@@ -18,12 +18,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction < 3) { # Require kindly or better faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head
-      quest::summonitem(25858);
+      quest::summonitem(25858); # Item: Belt of Dwarf Slaying
       quest::faction(406,-100); # -coldain
       quest::faction(405,-100); # -dain
     }
     elsif (plugin::check_handin(\%itemcount, 24984 => 1)) { ## Yelinak head
-      quest::summonitem(25857);
+      quest::summonitem(25857); # Item: Gauntlets of Dragon Slaying
       quest::faction(436,-100); # -Yelinak
       quest::faction(405,-100); # -dain
     }

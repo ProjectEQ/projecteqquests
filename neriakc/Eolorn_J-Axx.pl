@@ -19,15 +19,15 @@ sub EVENT_SAY {
   }
   if($text=~/chest/i) {
     quest::say("You seem able enough. Here. Take this note to Freeport. Go through the Commonlands and be careful not to encounter any Freeport guards. There is a network of aqueducts accessible through hidden passages. Search the outside walls of Freeport. Take the note to Giz. She will meet you at night, on an island in the harbor. Good luck.");
-    quest::summonitem(18844);
+    quest::summonitem(18844); # Item: Sealed Letter
   }
 	if ($text=~/trade/i) {
 		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		quest::summonitem(51121);
+		quest::summonitem(51121); # Item: Tradeskill Basics : Volume I
 	}
 	if ($text=~/second book/i) {
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
-		quest::summonitem(51122);
+		quest::summonitem(51122); # Item: Tradeskill Basics : Volume II
 	}
 }
 

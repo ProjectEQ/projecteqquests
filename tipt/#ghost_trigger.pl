@@ -42,14 +42,14 @@ sub EVENT_ENTER {
     }
     if($close_count >= 3) {
       quest::ze(13,'shivers run up and down your spine, something is not quite right here, the area feels quite chill and desolate'); 
-      quest::spawn2(289035,0,0,-1274,996,396,382);
-      quest::spawn2(289035,0,0,-1351,796,394,8);
-      quest::spawn2(289035,0,0,-1323,996,396,128);
-      quest::spawn2(289035,0,0,-1275,779,396,386);
-      quest::spawn2(289035,0,0,-1348,973,394,244);
-      quest::spawn2(289035,0,0,-1321,779,396,126);
-      quest::spawn2(289035,0,0,-1254,799,395,492);
-      quest::spawn2(289035,0,0,-1249,962,394,306);
+      quest::spawn2(289035,0,0,-1274,996,396,382); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1351,796,394,8); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1323,996,396,128); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1275,779,396,386); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1348,973,394,244); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1321,779,396,126); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1254,799,395,492); # NPC: an_arisen_beludu
+      quest::spawn2(289035,0,0,-1249,962,394,306); # NPC: an_arisen_beludu
 
       #set zone status to 4
       quest::setglobal($instid.'_tipt_status',4,7,"H6");

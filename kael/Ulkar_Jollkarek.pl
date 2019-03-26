@@ -46,7 +46,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #requires ally Kromzek faction
     if (plugin::check_handin(\%itemcount, 25837 => 3, 24926 => 1)) { # cap
-      quest::summonitem(25405);
+      quest::summonitem(25405); # Item: Circlet of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24921 => 1)) { # bp
-      quest::summonitem(25406);
+      quest::summonitem(25406); # Item: Robe of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -66,7 +66,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24923 => 1)) { # sleeves
-      quest::summonitem(25407);
+      quest::summonitem(25407); # Item: Sleeves of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -76,7 +76,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24925 => 1)) { # wrist
-      quest::summonitem(25408);
+      quest::summonitem(25408); # Item: Bangle of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -86,7 +86,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24927 => 1)) { # gloves
-      quest::summonitem(25409);
+      quest::summonitem(25409); # Item: Gloves of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -96,7 +96,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24922 => 1)) { # legs
-      quest::summonitem(25410);
+      quest::summonitem(25410); # Item: Pants of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -106,7 +106,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24924 => 1)) { # boots
-      quest::summonitem(25411);
+      quest::summonitem(25411); # Item: Boots of the Invoker
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek

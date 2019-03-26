@@ -29,24 +29,24 @@ quest::say("Hi there. who are you?  What are you doing here? Oh I'm one of Vorno
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4736 => 1, 4735 => 1, 4738 => 1, 4490 => 1)) { #belt
-    quest::summonitem(3721);
+    quest::summonitem(3721); # Item: Belt of Detonation
     quest::say("Ah! Now I can return to my studies!"); #made up
     quest::exp(75000);
   }
   elsif (plugin::check_handin(\%itemcount, 4374 => 1, 4489 => 1, 4737 => 1)) { #choker
-    quest::summonitem(3720);
+    quest::summonitem(3720); # Item: Choker of Detonation
   }
   elsif (plugin::check_handin(\%itemcount, 4494 => 1, 4731 => 1, 4729 => 1, 4730 => 1)) { #cloak
-    quest::summonitem(3718);
+    quest::summonitem(3718); # Item: Cloak of Detonation
   }
   elsif (plugin::check_handin(\%itemcount, 4733 => 1, 4732 => 1, 4488 => 1)) { #gloves
-    quest::summonitem(3719);
+    quest::summonitem(3719); # Item: Gloves of Detonation
   }
   elsif (plugin::check_handin(\%itemcount, 4491 => 1, 4739 => 1, 4740 => 1, 5973 => 1)) { #staff
-    quest::summonitem(3722);
+    quest::summonitem(3722); # Item: Staff of Detonation
   }
   elsif (plugin::check_handin(\%itemcount, 4728 => 1, 4727 => 1, 4493 => 1)) { #mask
-    quest::summonitem(3717);
+    quest::summonitem(3717); # Item: Veil of Detonation
   }
 }
 #END of FILE Zone:twilight  ID:170130 -- Trizpo_Tobbnokcog 

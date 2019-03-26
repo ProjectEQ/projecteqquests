@@ -18,11 +18,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12492 => 1, 12493 => 1, 12494 => 1, 6026 => 1)){ #Test of the Zealot (Greenmist Quest 4/8)
   quest::emote("accidently swallows a mouthful of flarefire seeds. 'ACCCKK!!  I can't believe you did it!! Here is the Chalp diagram.'");
-  quest::summonitem(12496);
+  quest::summonitem(12496); # Item: Chalp Diagram
   quest::exp(1000);
   quest::ding();
-  quest::faction(442,20);
-  quest::faction(441,10);
+  quest::faction(442,20); # Faction: Crusaders of Greenmist
+  quest::faction(441,10); # Faction: Legion of Cabilis
   quest::depop_withtimer();
  }
  else{ 

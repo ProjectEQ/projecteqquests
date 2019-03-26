@@ -25,12 +25,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 59955 => 1) && quest::istaskactivityactive(22,3)) {
     quest::say("Thanks! Very helpful!"); 
-    quest::summonitem(59765);
+    quest::summonitem(59765); # Item: Shimmering Vial of Vigor
     quest::updatetaskactivity(22,3);
   }
    elsif (plugin::check_handin(\%itemcount, 59955 => 1)) {
     quest::say("Thanks! Very helpful!"); 
-    quest::summonitem(59765);
+    quest::summonitem(59765); # Item: Shimmering Vial of Vigor
   }
   plugin::return_items(\%itemcount);
 }

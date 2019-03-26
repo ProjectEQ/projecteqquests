@@ -69,7 +69,7 @@ function event_trade(e)
 			e.self:Message(4,"Finished!- You have completed the trial at the Temple of Singular Might!");
 		else
 			e.self:Say("I appreciate that you must have fought hard for this, but I cannot accept it yet. Please speak with Kevren Nalavat about the trials and once I have received word that you are actually ready to do the trials, you can present it to me again.");
-			e.other:SummonItem(60153);
+			e.other:SummonItem(60153); -- Item: Stained Stone Chalice
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

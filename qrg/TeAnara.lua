@@ -21,7 +21,7 @@ function event_say(e)
 		e.self:Say("Mammoth is not eating. We believe something is lodged in his throat. We require a young druid to [fetch a special potion].");
 	elseif(e.message:findi("special potion")) then
 		e.self:Say("Go to the gnome city of Ak'Anon on the continent of Faydwer. With their great zoo, you will find a gnome named Kimble Nogflop. Give him this flask of nitrates and he shall hand you a special potion which will force Mammoth to cough up whatever may be stuck inside his throat. Be sure to show me what you find inside his throat upon your return.");
-		e.other:SummonItem(13945);
+		e.other:SummonItem(13945); -- Item: Flask of Nitrates
 	end
 end
 
@@ -30,7 +30,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18713})) then -- Tattered Note
 		e.self:Say("Well met, friend of the forest. You will find power and enlightenment amidst these woods. Here, wear this tunic and represent the Jaggedpine with pride. Gerael Woodone will help train you and teach you the duties of Jaggedpine Treefolk. The forests, being the soul and heart of Norrath, depend on you and your actions from this day forth.");
-		e.other:SummonItem(13510);
+		e.other:SummonItem(13510); -- Item: Dried Grass Tunic*
 		e.other:Ding();
 		e.other:Faction(272, 100,0); --Jaggedpine Treefolk
 		e.other:Faction(302, 25,0); --Protectors of Pine
@@ -40,7 +40,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18809})) then
 		e.self:Say("Oh my, this must belong to Antonius Bayle! I shall see that he receives it. You have done a great service to Qeynos and Surefall Glade. I rewards you with this. May it be of good use in your future deeds.");
-		e.other:SummonItem(15222);
+		e.other:SummonItem(15222); -- Item: Spell: Invigor
 		e.other:Ding();
 		e.other:Faction(272, 10,0); --Jaggedpine Treefolk
 		e.other:Faction(302, 10,0); --Protectors of Pine

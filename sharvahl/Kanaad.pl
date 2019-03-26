@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     quest::say("Ah my tools, I guess Ragnar sent these over with you.  So are you looking for Hoober?");
   }
   if (plugin::check_handin(\%itemcount, 5991 =>1, 5992 =>1, 5993 =>1 )) {
-    quest::summonitem(5994);
+    quest::summonitem(5994); # Item: Elixir of Obsession
     quest::say("Thanks for gathering the supplies.  Here is your potion!");
   }
   plugin::return_items(\%itemcount);

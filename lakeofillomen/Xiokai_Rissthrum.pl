@@ -10,6 +10,6 @@ sub EVENT_SAY {
   if (plugin::check_handin(\%itemcount, 62077 => 1, 62076 => 3)) {
     quest::say("Excellent, justice has been served.  Please take this as your reward.");
   }  
-  quest::summonitem(62194);
+  quest::summonitem(62194); # Item: Crafty Mask of Awareness
   }
 }

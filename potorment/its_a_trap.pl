@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  quest::spawn2(quest::ChooseRandom(207072,207073,207075),0,0,$x,$y,$z,0);
+  quest::spawn2(quest::ChooseRandom(207072,207073,207075),0,0,$x,$y,$z,0); # NPC(s): a_parylyx_hatchling (207072), a_parylyx_hatchling (207073), a_parylyx_limb_binder (207075)
   quest::depop_withtimer();
 }
 

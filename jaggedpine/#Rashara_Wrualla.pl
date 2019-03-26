@@ -2,7 +2,7 @@ sub EVENT_SAY {
 if ($client->GetGlobal("beast_epic") ==4) {
   if ($text=~/wait/i) {
     quest::say("I have no time to study now. I must leave and prepare to assist Muada. I would guess you have a role in all of this too. Goodbye, young one.");
-    quest::summonitem(57008);
+    quest::summonitem(57008); # Item: Letter from Muada
   }
   }
  if ($client->GetGlobal("beast_epic") ==15) {
@@ -23,7 +23,7 @@ if ($client->GetGlobal("beast_epic") ==15) {
  if ($client->GetGlobal("beast_epic") ==15) {
    if ($text=~/not possible/i) {
     quest::say("It would mean a great deal to me and the elders if you could seek out this girplan in that eerie scarred land and, perhaps, discover what it did to my warder. I am unable to go myself as I could never dream of traveling without my warder. You will find a beastlord in Discord who also seeks the same creature. Give him this note.");
-    quest::summonitem(52906);
+    quest::summonitem(52906); # Item: Request of the Elders
    }
  }
  if ($client->GetGlobal("beast_epic") ==17) {

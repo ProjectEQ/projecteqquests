@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("You certainly do not look like you could read the scrolls I have been working on so I am wondering why you are questioning what they are. I am waiting for some scrolls from my friend Elisi. The last time I saw her she gave me this [parchment] but I am waiting for her to complete it, would you be able to [return] it to Brianna for me? It is quite clear that she trusts you so I suppose I should as well.");
 	elseif(e.message:findi("return")) then
 		e.self:Say("Very well here you are. If we are done here please excuse me for I have much work to do.");
-		e.other:SummonItem(21699);
+		e.other:SummonItem(21699); -- Item: Scribbled Parchment
 	elseif(e.message:findi("Elisi")) then
 		e.self:Say("You know, Elisi was a bit like you she didn't know when to quit. You and her will soon share the same [fate] I should think.");
 	elseif(e.message:findi("fate")) then

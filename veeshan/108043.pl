@@ -22,10 +22,10 @@ sub EVENT_ITEM {
 			quest::summonitem(69380); #Wand of the Lava Shaper
 		} elsif (plugin::check_handin(\%itemcount, 69380 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
-			quest::summonitem(69379);
+			quest::summonitem(69379); # Item: Bow of the Ring
 		} elsif (plugin::check_handin(\%itemcount, 69379 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
-			quest::summonitem(69380);
+			quest::summonitem(69380); # Item: Wand of the Lava Shaper
 		}
 	}
 	plugin::return_items(\%itemcount);

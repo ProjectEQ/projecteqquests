@@ -19,7 +19,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 32403 => 1, 32510 => 1, 19836 => 1)) {
     quest::say("Thank you so much!! These will help so much in trying to find a cure for these people. Here, take this as a token of my gratitude.");
-    quest::summonitem(19842);
+    quest::summonitem(19842); # Item: Tarafol's Pendant
   }
   plugin::return_items(\%itemcount);
 }

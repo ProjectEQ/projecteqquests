@@ -17,7 +17,7 @@ sub EVENT_SAY {
     quest::say("Much thanks must I give, $name. Furless one still wants magic thing, after all the troubles? Say quickly. Much pain from attack. Must go, shaman help.");
   }
   if ($text=~/magic thing/i) {
-    quest::summonitem(30042);
+    quest::summonitem(30042); # Item: Chapter P
     quest::stoptimer("despawn");
     quest::depop();
   }

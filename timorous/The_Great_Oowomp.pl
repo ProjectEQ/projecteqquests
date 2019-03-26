@@ -55,7 +55,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 12942=>1, 12945 => 1, 12944 => 1, 12943 =>1)){
     quest::say("Ahh, you've gathered all the ritual components. Very good, as promised, a cop...I mean, priceless scroll of McMerin's Feast for you!");
-    quest::summonitem(12941);
+    quest::summonitem(12941); # Item: Spell: Cannibalize II
     quest::exp(45000);
   }
   plugin::return_items(\%itemcount);
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
   if ($timer == 1) {
-    quest::signalwith(96088,5,0);
+    quest::signalwith(96088,5,0); # NPC: a_dancing_skeleton
     quest::stoptimer(1);
   }
 }

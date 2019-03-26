@@ -11,7 +11,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 5) then
 		e.self:Say("Hello, Alayle. We just got a message from Qeynos. I think you should come with me.");
-		eq.signal(382217,1);
+		eq.signal(382217,1); -- NPC: Guard_Alayle
 		e.self:SetRunning(false);
 	end
 end

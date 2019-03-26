@@ -29,22 +29,22 @@ sub EVENT_ITEM {
       quest::faction(430,10);   #Claws of Veeshan
       quest::faction(304,10);  #Ring of Scale
       quest::faction(448,-30); #Kromzek
-      quest::summonitem(2698);
+      quest::summonitem(2698); # Item: Essence Lens
     }
     elsif (plugin::check_handin(\%itemcount, 2698 => 1)) {
-      quest::summonitem(2699);
+      quest::summonitem(2699); # Item: Essence Mace
     }
     elsif (plugin::check_handin(\%itemcount, 2699 => 1)) {
-      quest::summonitem(2700);
+      quest::summonitem(2700); # Item: Essence Blade
     }
     elsif (plugin::check_handin(\%itemcount, 2700 => 1)) {
-      quest::summonitem(2748);
+      quest::summonitem(2748); # Item: Essence Pearl
     }
     elsif (plugin::check_handin(\%itemcount, 2748 => 1)) {
-      quest::summonitem(2842);
+      quest::summonitem(2842); # Item: Essence Ring
     }
     elsif (plugin::check_handin(\%itemcount, 2842 => 1)) {
-      quest::summonitem(2698);
+      quest::summonitem(2698); # Item: Essence Lens
     }
   }
   plugin::return_items(\%itemcount);

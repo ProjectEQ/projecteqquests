@@ -13,11 +13,11 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 12156 =>1, 5014 =>1 )) {
   quest::say("Well Done!");
   quest::exp(5000);
-  quest::faction(274,5);
-  quest::faction(312,5);
-  quest::faction(293,5);  
-  quest::faction(5025,5);
-  quest::faction(232,-5);
+  quest::faction(274,5); # Faction: Kazon Stormhammer
+  quest::faction(312,5); # Faction: Storm Guard
+  quest::faction(293,5); # Faction: Miners Guild 249  
+  quest::faction(5025,5); # Faction: Kaladim Merchants
+  quest::faction(232,-5); # Faction: Craknek Warriors
   quest::ChooseRandom(5034,7013,6024,5027,6019);
   quest::givecash(3,6,10,0);
 }

@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25837 => 3, 24982 => 1)) { #cap
-      quest::summonitem(31175);
+      quest::summonitem(31175); # Item: Illusionist's Headband
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24977 => 1)) { #bp
-      quest::summonitem(31176);
+      quest::summonitem(31176); # Item: Illusionist's Robe
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24979 => 1)) { #arm
-      quest::summonitem(31177);
+      quest::summonitem(31177); # Item: Illusionist's Sleeves
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24981 => 1)) { #bracer
-      quest::summonitem(31178);
+      quest::summonitem(31178); # Item: Illusionist's Wristguard
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24983 => 1)) { #glove
-      quest::summonitem(31179);
+      quest::summonitem(31179); # Item: Illusionist's Gloves
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24978 => 1)) { #leg
-      quest::summonitem(31180);
+      quest::summonitem(31180); # Item: Illusionist's Pantaloons
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24980 => 1)) { #boots
-      quest::summonitem(31181);
+      quest::summonitem(31181); # Item: Illusionist's Slippers
     }
     else {
       plugin::return_items(\%itemcount);

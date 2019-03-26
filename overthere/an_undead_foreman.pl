@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   quest::me("an undead foreman places the gem deep within his hollow eye socket. He pulls a giant sledgehammer from thin air and hands it to you.");
   quest::say("Here!! You shall be assigned to the lower decks of the Scaled Trident.");
   #Summon: a worker sledgemallet (12863)
-  quest::summonitem(12863);
+  quest::summonitem(12863); # Item: Worker Sledgemallet
  }
   else {
     quest::say("I do not know you well enough to entrust such an item to you, yet.");

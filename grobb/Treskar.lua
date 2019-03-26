@@ -25,7 +25,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 12190})) then
 		e.self:Say("Ha! Dats one big dead head. You smashed him guud. Take dis mask, Shadowknight uv Nightkeep - I seez great tings for you."); -- Guessed Dialog as quest was revised when removed to Neriak
-		e.other:SummonItem(2308);
+		e.other:SummonItem(2308); -- Item: Froglok Skin Mask
 		e.other:Ding();
 		e.other:Faction(235,50,0); 	-- Da Bashers (Grobb general guards)
 		e.other:Faction(222,-20,0); 	-- Broken Skull Clan
@@ -34,7 +34,7 @@ function event_trade(e)
 		e.other:AddEXP(10000); 		-- Appropriate for ~level 10?
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13782,item2 = 13782,item3 = 13782, item4 = 10307})) then
 		e.self:Say("Dats gud, here take dis armor to helps you be stronger. Come sees me when you want [another] job");
-		e.other:SummonItem(2104);
+		e.other:SummonItem(2104); -- Item: Patchwork Tunic
 		e.other:Ding();
 		e.other:AddEXP(1000);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13088, item2 = 13088})) then

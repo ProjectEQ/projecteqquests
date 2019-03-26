@@ -144,10 +144,10 @@ end
 
 function SpawnMites()
 	--exiles
-	eq.spawn2(296030,0,0,-274,-531,-52,250); 
-	eq.spawn2(296033,0,0,-557,-237,-2,126);
+	eq.spawn2(296030,0,0,-274,-531,-52,250); -- NPC: #a_rambling_exile 
+	eq.spawn2(296033,0,0,-557,-237,-2,126); -- NPC: #a_confused_exile
 	eq.spawn2(296035,0,0,-385,-562,-76,305); -- needs_heading_validation
-	eq.spawn2(296036,0,0,-305,-310,-51,380);
+	eq.spawn2(296036,0,0,-305,-310,-51,380); -- NPC: #an_irrational_exile
 end
 
 function SpawnGolems()
@@ -157,23 +157,23 @@ function SpawnGolems()
 	eq.spawn2(296002,0,0,-494,-401,-72,256); --golem
 	eq.spawn2(296002,0,0,-533,-500,-72,108);  --golem
 	--second set
-	eq.spawn2(296045,0,0,-494,-623,-102,0);
-	eq.spawn2(296049,0,0,-533,-580,-97,128);
-	eq.spawn2(296049,0,0,-454,-649,-97,384);
-	eq.spawn2(296049,0,0,-533,-649,-97,128);
-	eq.spawn2(296049,0,0,-454,-580,-97,384);
+	eq.spawn2(296045,0,0,-494,-623,-102,0); -- NPC: a_loose_tile2
+	eq.spawn2(296049,0,0,-533,-580,-97,128); -- NPC: a_clay_monolith_
+	eq.spawn2(296049,0,0,-454,-649,-97,384); -- NPC: a_clay_monolith_
+	eq.spawn2(296049,0,0,-533,-649,-97,128); -- NPC: a_clay_monolith_
+	eq.spawn2(296049,0,0,-454,-580,-97,384); -- NPC: a_clay_monolith_
 	--third set
-	eq.spawn2(296046,0,0,-494,-776,-120,0); 
-	eq.spawn2(296050,0,0,-533,-737,-122,128); 
-	eq.spawn2(296050,0,0,-533,-798,-122,128);
-	eq.spawn2(296050,0,0,-454,-798,-122,384);
-	eq.spawn2(296050,0,0,-454,-737,-122,384);
+	eq.spawn2(296046,0,0,-494,-776,-120,0); -- NPC: a_loose_tile3 
+	eq.spawn2(296050,0,0,-533,-737,-122,128); -- NPC: a_clay_monolith__ 
+	eq.spawn2(296050,0,0,-533,-798,-122,128); -- NPC: a_clay_monolith__
+	eq.spawn2(296050,0,0,-454,-798,-122,384); -- NPC: a_clay_monolith__
+	eq.spawn2(296050,0,0,-454,-737,-122,384); -- NPC: a_clay_monolith__
 	--fourth set
-	eq.spawn2(296047,0,0,-312,-911,-127,0);
-	eq.spawn2(296051,0,0,-371,-953,-122,0);
-	eq.spawn2(296051,0,0,-296,-953,-122,0);
-	eq.spawn2(296051,0,0,-296,-869,-122,256);
-	eq.spawn2(296051,0,0,-371,-869,-122,256);
+	eq.spawn2(296047,0,0,-312,-911,-127,0); -- NPC: a_loose_tile4
+	eq.spawn2(296051,0,0,-371,-953,-122,0); -- NPC: a_clay_monolith___
+	eq.spawn2(296051,0,0,-296,-953,-122,0); -- NPC: a_clay_monolith___
+	eq.spawn2(296051,0,0,-296,-869,-122,256); -- NPC: a_clay_monolith___
+	eq.spawn2(296051,0,0,-371,-869,-122,256); -- NPC: a_clay_monolith___
 end
 
 function SpawnCallers()

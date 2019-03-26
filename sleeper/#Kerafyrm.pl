@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
  if($timer eq "depop"){
   if($x == -675){
-   quest::spawn2(128095,2,0,1014,-981,-125,0);
+   quest::spawn2(128095,2,0,1014,-981,-125,0); # NPC: #Kerafyrm_
    quest::stoptimer("depop");   
    quest::depop();
   }

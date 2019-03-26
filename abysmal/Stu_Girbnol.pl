@@ -7,7 +7,7 @@ sub EVENT_SAY {
 sub EVENT_WAYPOINT_ARRIVE {
 	if ($wp == 1) {
 		quest::emote("looks sheepish and says quietly, 'It's almost too embarrassin' to admit, but on my way off the rail to sell my catch, I tripped over some stray rigging and fell on my face.  My whole day's catch slid right off the deck.  You boys are buyin' drinks for me tonight.'");
-		quest::signalwith(279046,2,15000);
+		quest::signalwith(279046,2,15000); # NPC: Barny_Magmilg
 	}
 	if($wp == 14) {
 		quest::settimer(1,120);
@@ -20,7 +20,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::say("That's unfortunate, lad.  My day wasn't so great either.  I got a bite an' gave it a pull.  Hooked it good.  I wasn't expecting whatever I caught to pull so hard!  Had the strength of twenty men!  Pulled me right over the rail, it did!  I had ta swim for my life!  Whatever it was, it didn't catch me before I got to the dock and back aboard.");
-		quest::signalwith(279045,2,15000);
+		quest::signalwith(279045,2,15000); # NPC: Devolnu_Solahpeka
 	}
 	if(($signal == 2) && ($x == 249) && ($y == -202)) {
 		quest::say("I'll have a malt and hurry it up!  I haven't got all day.");

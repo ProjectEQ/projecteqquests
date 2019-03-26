@@ -21,8 +21,8 @@ sub EVENT_ITEM {
   quest::emote("yells, 'Head count! Head count time!' A moment later he says");
     quest::say("I'm pretty sure that they're all here. Just take this back and act like your didn't just see that.");
     quest::emote("He winks and hands you the report.");
-    quest::summonitem(6221);
-    quest::faction( 1513,10 );
+    quest::summonitem(6221); # Item: Daily Status Report
+    quest::faction( 1513,10 ); # Faction: Guardians of Shar Vahl
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

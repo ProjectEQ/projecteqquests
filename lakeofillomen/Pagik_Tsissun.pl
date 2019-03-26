@@ -8,7 +8,7 @@ quest::say("Very well head to the Temple of Droga and seek out the so called gob
  }
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 62097=> 1, 62096=> 3)){
-quest::summonitem(62204);
+quest::summonitem(62204); # Item: Aged Earring of Aptitude
 quest::exp("1000");
 quest::givecash(2,1,5,2); 
 }

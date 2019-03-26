@@ -33,14 +33,14 @@ sub EVENT_ITEM {
    #White Dragonscale Cloak (END) 
    quest::say("My fiancee will be so excited! An exquisite ring for the wedding and a gorgeous necklace as my wedding gift to her. Well, as promised, here is your white dragonscale cloak.");
    #Summon: White Dragonscale Cloak
-   quest::summonitem(11603);
+   quest::summonitem(11603); # Item: White Dragonscale Cloak
   }
   #Handin:
   if (plugin::check_handin(\%itemcount, 11622 => 1, 14402 => 1) && ($platinum >= 1000)) {
    #Red Dragonscale Armor (END) 
    quest::say("Wonderful! Now I can get back to my fiance instantly! Isn't Love grand? As for your Red Dragonscale Armor, it is all done. Farewell!");
    #Summon: Red Dragonscale Armor 
-   quest::summonitem(11623);
+   quest::summonitem(11623); # Item: Red Dragonscale Armor
   }
   plugin::return_items(\%itemcount);
 }

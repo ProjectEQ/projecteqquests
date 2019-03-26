@@ -41,12 +41,12 @@ properly.");
     quest::say("Outstanding! Nothing like a sharp-looking shield to scare off the undesirables. And if you bring it back full of food I wouldn't complain either,");
     quest::emote("laughs, flashing a mischievous grin your way.");
     quest::say("Just kidding! You have much to do and Barkhem would have my hide if I kept you from your studies."); 
-    quest::summonitem(29813);
+    quest::summonitem(29813); # Item: Bokh's Dented Shield
   } 
   # You receive Bokh's Dented Shield. Take the dented shield and place it into a forge with your Vah Shir Apprentice Mallet. This creates Bokh's Immaculate Shield (the mallet will be returned). Give this shield back to Jasir to receive Bokh's Work Order.
   if (plugin::check_handin(\%itemcount,29814=>1)) {
     quest::say("Well done, shiny enough to eat off of. My compliments to you $name, Barkhem would be most pleased."); 
-    quest::summonitem(29815);
+    quest::summonitem(29815); # Item: Bokh's work order
   }
   
   plugin::return_items(\%itemcount);

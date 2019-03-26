@@ -26,7 +26,7 @@ sub EVENT_TIMER {
 	quest::stoptimer(3)
 	}
 	if($timer==4) {
-	quest::signalwith(155161,1,5);
+	quest::signalwith(155161,1,5); # NPC: High_Spiritist_Jimuul
 	quest::stoptimer(4);
 	}
 	if($timer==5) {
@@ -34,15 +34,15 @@ sub EVENT_TIMER {
 	quest::stoptimer(5);
 	}
 	if($timer==6) {
-	quest::signalwith(155161,2,5);
+	quest::signalwith(155161,2,5); # NPC: High_Spiritist_Jimuul
 	quest::stoptimer(6);
 	}
 	if($timer==7) {
-	quest::signal(155160,5);
+	quest::signal(155160,5); # NPC: Pathmaster_Kharin
 	quest::stoptimer(7);
 	}
 	if($timer==8) {
-	quest::signalwith(155161,3,5);
+	quest::signalwith(155161,3,5); # NPC: High_Spiritist_Jimuul
 	quest::stoptimer(8);
 	}
 	if($timer==9) {

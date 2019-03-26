@@ -49,7 +49,7 @@ sub EVENT_TIMER {
                         $c = $entity_list->GetClientByID($ClientID);
                         if($c) {
                                 quest::say("How about a little wine to quench your thirst?");
-                                $c->SummonItem(quest::ChooseRandom(64046, 64047), 10);
+                                $c->SummonItem(quest::ChooseRandom(64046, 64047), 10); # Item(s): Bristlebane's Wine (64046)
                         }
                 }
         }
@@ -63,7 +63,7 @@ sub EVENT_TIMER {
                 $ClientID = GetRandomClient();
                 if($ClientID > 0) {
                         quest::say("You need to be more down to earth.");
-                        $npc->CastSpell(345, $ClientID);
+                        $npc->CastSpell(345, $ClientID); # Spell: Shrink
                 }
         }
         elsif($action == 5) {
@@ -79,14 +79,14 @@ sub EVENT_TIMER {
                 $ClientID = GetRandomClient();
                 if($ClientID > 0) {
                         quest::say("How's the weather up there?");
-                        $npc->CastSpell(2522, $ClientID);
+                        $npc->CastSpell(2522, $ClientID); # Spell: Grow
                 }
         }
         elsif($action == 9) {
                 $c = GetRandomClient();
                 if($c > 0) {
                         quest::say("You look exhausted.");
-                        $npc->CastSpell(6897, $c, 10, 0);
+                        $npc->CastSpell(6897, $c, 10, 0); # Spell: Bristlebane's Surprise
                 }
         }
         elsif($action == 10) {
@@ -95,13 +95,13 @@ sub EVENT_TIMER {
                         $c = $entity_list->GetClientByID($ClientID);
                         if($c) {
                                 quest::say("Try a bite of my tasty bread.  I make it myself.");
-                                $c->SummonItem(quest::ChooseRandom(64044, 64045), 10);
+                                $c->SummonItem(quest::ChooseRandom(64044, 64045), 10); # Item(s): Bristlebane's Bread (64044)
                         }
                 }
         }
         elsif($action == 11) {
                 quest::say("This place really needs to lighten up.");
-                $npc->CastSpell(30, 0, 10, 0);
+                $npc->CastSpell(30, 0, 10, 0); # Spell: Blazing Comet
         }
         elsif($action == 12) {
                 quest::say("I've always heard that change must come from within but this is ridiculous.");

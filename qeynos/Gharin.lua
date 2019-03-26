@@ -18,12 +18,12 @@ function event_trade(e)
 		e.self:Say("Oh! That's tasty. I guess I could handle a few more.");
 		e.self:Say("Oohhh! My head. Stop the pub from spinning. I cannot make it to the Jaggedpine feeling like this. Please take this note to Te'Anara of the Treefolk. Here is a little silver for the favor. Thanks. Ooohhhh..");
 		e.other:Ding();
-		e.other:SummonItem(18807);
-		e.other:Faction(262,10,0);
-		e.other:Faction(219,10,0);
-		e.other:Faction(230,-20,0);
-		e.other:Faction(223,-20,0);
-		e.other:Faction(291,10,0);
+		e.other:SummonItem(18807); -- Item: Sealed Letter
+		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
+		e.other:Faction(219,10,0); -- Faction: Antonius Bayle
+		e.other:Faction(230,-20,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(223,-20,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(291,10,0); -- Faction: Merchants of Qeynos
 		e.other:AddEXP(8000);
 		e.other:GiveCash(0,4,0,0);
 	end

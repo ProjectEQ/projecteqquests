@@ -6,6 +6,6 @@ function event_timer(e)
 	if(e.timer == "talk") then
 		e.self:Say("Pardon me.  Have you seen a man named Gash Flockwalker?  He hails from Surefall Glade.");
 		eq.stop_timer("talk");
-		eq.signal(1104,2);
+		eq.signal(1104,2); -- NPC: Tasya_Huntlan General Supplies
 	end
 end

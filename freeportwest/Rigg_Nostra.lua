@@ -13,9 +13,9 @@ function event_trade(e)
 		e.self:Say("Excellent I've been waiting for the Coalition to send me some assistance. I have an associate waiting for some supplies that have not yet been collected. I need you to acquire a [crate of pick heads] and a [bundle of hardwood shafts] and bring them to me so that I may prepare them for delivery to my associate.");
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19931,item2 = 19929})) then
 		e.self:Say(string.format("Thanks %s.  Now hand this crate to the fellow behind you.",e.other:GetName()));
-		e.other:SummonItem(19930);
+		e.other:SummonItem(19930); -- Item: Large Crate of Mining Supplies
 		e.other:Ding();
-		eq.spawn2(383269,0,0,229,-153,-39,350);
+		eq.spawn2(383269,0,0,229,-153,-39,350); -- NPC: Orc_Centurion
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

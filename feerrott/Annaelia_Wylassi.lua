@@ -13,7 +13,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 22514,item2 = 17355,item3 = 10252,item4 = 9963})) then
 		e.self:Say("I will now try the reanimation.' Streams of mana surround the bones but nothing happens. Annaelia looks annoyed. 'Worthless bones! Why do they hum like this? Grah, I don't care I have too much to study. You want them? Take them!");
-		e.other:SummonItem(7984);
+		e.other:SummonItem(7984); -- Item: Resonant Bone Chips
 		e.other:Ding();
 		e.other:AddEXP(60000);
 	end

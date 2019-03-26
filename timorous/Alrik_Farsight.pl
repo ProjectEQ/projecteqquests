@@ -14,7 +14,7 @@ sub EVENT_SAY {
     }
     if ($text=~/take the artifact/i) {
       quest::say("Hah! Okay, then. Here take this to Farios Elianos in Felwithe. He will give you the receipt.");
-      quest::summonitem(20457);
+      quest::summonitem(20457); # Item: Crushed Pot
     }
   }
   if ($faction > 4) {
@@ -35,9 +35,9 @@ sub EVENT_ITEM {
 	if ($faction < 5) { #amiable or better Keepers of the Art
 		if (plugin::check_handin(\%itemcount, 20474 => 1)) {
 			quest::emote("grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'");
-			quest::summonitem(18960);
+			quest::summonitem(18960); # Item: Ancient Pattern
 			if($wp >= 3 && $wp <= 10) {
-				quest::signalwith(96035,2,30);
+				quest::signalwith(96035,2,30); # NPC: Xiblin_Fizzlebik
 			}
 		}
 	}
@@ -48,7 +48,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 	if ($wp == 8) {
 		quest::say("Hey there again, Xib!  Still a great day, isn't it?");
-		quest::signalwith(96035,1,30);
+		quest::signalwith(96035,1,30); # NPC: Xiblin_Fizzlebik
 	}
 	if ($wp == 14) {
 		quest::emote("grins a little and mumbles. 'This place is great.  Feels like I'm at the end of the universe.'");
@@ -57,7 +57,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 sub EVENT_SIGNAL {
 	quest::say("What was that, Xib?");
-	quest::signalwith(96035,3,30);
+	quest::signalwith(96035,3,30); # NPC: Xiblin_Fizzlebik
 }
 
 # EOF zone: timorous ID: 96032 NPC: Alrik_Farsight

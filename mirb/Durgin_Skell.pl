@@ -82,7 +82,7 @@ sub EVENT_SAY {
 			$x = $client->GetX();
 			$y = $client->GetY();
 			$z = $client->GetZ();
-			quest::spawn2(893,0,0,$x,$y,$z,0);	  
+			quest::spawn2(893,0,0,$x,$y,$z,0); # NPC: a_chest	  
 	  }
 	}
   }
@@ -131,10 +131,10 @@ sub EVENT_SIGNAL {
     quest::ze(15, "Your victory has shattered the shroud of magic surrounding the dungeon's treasure.");
     quest::setglobal($instid.'_mirb_status', 5, 7, "H3");
     # spawn loot chest
-    quest::spawn2(237763, 0, 0, 173, 402, -36, 0);
+    quest::spawn2(237763, 0, 0, 173, 402, -36, 0); # NPC: #a_frost_covered_box
     # Sharalla's event successful, spawn bonus chest
     if ($task4 > 1) {
-      quest::spawn2(237790, 0, 0, 242, 360, -34, 0);
+      quest::spawn2(237790, 0, 0, 242, 360, -34, 0); # NPC: #a_frozen_treasure_chest
       #will be used by zone_status to know if it needs to respawn a chest or not.
       quest::setglobal($instid.'_mirb_event', 2, 7, "H3");
     } else {

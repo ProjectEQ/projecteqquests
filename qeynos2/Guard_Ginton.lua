@@ -13,6 +13,6 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 18) then
 		e.self:Say("Have you noticed anything strange about Commander Bayle lately? I saw him talking to that trouble-making Irontoe the other day and one night late last week, when I was on patrol, I saw him sneaking into Crow's");
-		eq.signal(2094,1);
+		eq.signal(2094,1); -- NPC: Guard_Hezlan
 	end
 end

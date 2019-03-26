@@ -117,9 +117,9 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("engaged");
-	quest::signal(126375,10);
-	quest::signal(126376,10);
-	quest::signal(126377,10);
-	quest::signal(126378,10);
+	quest::signal(126375,10); # NPC: a_devious_guardian_jokester
+	quest::signal(126376,10); # NPC: a_tricky_guardian_jester
+	quest::signal(126377,10); # NPC: a_dazed_guardian_jester
+	quest::signal(126378,10); # NPC: a_charming_guardian_jester
 }
 

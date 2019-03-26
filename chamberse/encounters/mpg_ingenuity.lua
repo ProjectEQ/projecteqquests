@@ -73,14 +73,14 @@ function Ingenuity_Timer(e)
   elseif (e.timer == "reflective") then
     -- Spell: Reflective Sheen - 5822 
     e.self:Emote("begins to cast a spell.  <Reflective Sheen>");
-    e.self:CastSpell(5822, e.self:GetID());
+    e.self:CastSpell(5822, e.self:GetID()); -- Spell: Reflective Sheen
   end
 end
 
 function Ingenuity_Death(e)
   eq.spawn_condition('chamberse', instance_id, 1, 0);
   eq.stop_all_timers();
-  eq.spawn2(308004, 0, 0, -212, 273, 71, 40);
+  eq.spawn2(308004, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
 
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);

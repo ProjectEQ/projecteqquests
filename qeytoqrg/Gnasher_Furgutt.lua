@@ -9,13 +9,13 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18800})) then
 		e.self:Say("Ah. Good for you! Here you are. Take this to McNeal, but next time there will be no stout if there are no weapons.");
-		e.other:SummonItem(13131);
+		e.other:SummonItem(13131); -- Item: Case of Blackburrow Stout
 		e.other:Ding();
-		e.other:Faction(223,5,0);
-		e.other:Faction(291,-10,0);
-		e.other:Faction(230,5,0);
-		e.other:Faction(262,-10,0);
-		e.other:Faction(273,5,0);
+		e.other:Faction(223,5,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(230,5,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(262,-10,0); -- Faction: Guards of Qeynos
+		e.other:Faction(273,5,0); -- Faction: Kane Bayle
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

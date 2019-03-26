@@ -4,6 +4,6 @@ sub EVENT_SAY {
   }
   if($text=~/Challenge Bertoxxulous/i && $qglobals{pop_cod_preflag} == 1) {
     quest::say("Give the Crypt Lord my regards");
-    quest::movepc(200,0,-16,-289,128);
+    quest::movepc(200,0,-16,-289,128); # Zone: lakeofillomen
   }
 }

@@ -27,11 +27,11 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 63015})) then
 		e.self:Say("Well done. I can only imagine the evil you averted. Here. Take this a token of my personal thanks. May we all continue to benefit from your valor.");
 		if((e.other:Class() == "bard") or (e.other:Class() == "beastlord") or (e.other:Class() == "paladin") or (e.other:Class() == "ranger") or (e.other:Class() == "rogue") or (e.other:Class() == "shadowknight") or (e.other:Class() == "warrior")) then
-			e.other:SummonItem(63050);
+			e.other:SummonItem(63050); -- Item: Bonebite
 			e.other:Ding();
 			e.other:AddEXP(5000);
 		else
-			e.other:SummonItem(63051);
+			e.other:SummonItem(63051); -- Item: Signet of Grisk
 			e.other:Ding();
 			e.other:AddEXP(5000);
 		end

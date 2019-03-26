@@ -10,6 +10,6 @@ sub EVENT_DEATH_COMPLETE {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(48212,0,0,$x,$y,$z,$h);
+  quest::spawn2(48212,0,0,$x,$y,$z,$h); # NPC: #a_bubbling_ooze
 }
 # EOF zone: Cazicthule ID: NPC: #a_swirling_ooze 

@@ -40,7 +40,7 @@ sub EVENT_ITEM {
       quest::summonitem(59006); #Spell: Blood of Pain
     }
     else {
-      quest::summonitem(quest::ChooseRandom(59019,59006));
+      quest::summonitem(quest::ChooseRandom(59019,59006)); # Item(s): Spell: Auspice (59019), Spell: Blood of Pain (59006)
     } 
     quest::me("As you take the scroll from him you notice a sickly burning odor in the air. You glance down at Cedric's robes and notice several holes beginning to form where the blood touches his [robes].");
     quest::exp(300);

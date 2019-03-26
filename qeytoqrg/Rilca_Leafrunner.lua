@@ -23,7 +23,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 15931,item2 = 15932,item3 = 15933,item4 = 15934})) then
 		e.self:Emote("takes a look at the documents you handed her and smiles, 'This is exactly what we needed. We'll be better prepared if the gnolls are foolish enough to actually attack. I hope you are willing to assist us in the defense of Surefall. Should you choose to aid us, this club will serve you well.'");
-		e.other:SummonItem(15935);
+		e.other:SummonItem(15935); -- Item: Club of Gnoll Bashing
 		e.other:Ding();
 		e.other:AddEXP(15000);
 	end

@@ -42,7 +42,7 @@ if ($text=~/what tome/i) {
   }
   if (plugin::check_handin(\%itemcount,  55191=> 1)) {
     quest::say("So my creation has failed. Perhaps I am not the master of golem creation that I thought I was. This golem could have destroyed the Royal Family whould I have summoned it in front of them. I will destroy its heart and this tome so that this shall never happen again. Here is your reward as promised. Now leave me.");
-    quest::summonitem(55192);
+    quest::summonitem(55192); # Item: Golem Heart Ring
   }
  }
 }

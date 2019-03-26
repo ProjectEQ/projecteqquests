@@ -13,18 +13,18 @@ sub EVENT_SAY {
   }
   if($text=~/big mistake/i) {
     quest::say("Kaglari make me do the tasks for her. She tolds me to take crate of speshal poshuns to sumwun in Nektoolos forust. But I make mistake. I fall asleep under da trees becuz I was so tired. I wake up and poshuns are gone! Sumwun take the poshuns frum me. Dey leave dis note wit me. Me tinks dey play trick on me. Me tinks it be da stinkin' Halflings. Me needs ta gets dem back before Kaglari find out. I need sumwun to help me find da poshuns.");
-    quest::summonitem(18651);
+    quest::summonitem(18651); # Item: Note to the Troll
   }
 }
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 77522 => 1)) {
     quest::say("Phew! Me are safe from Kaglari's beating. Dank yoo, $name.  Take dis."); #Text made up, I have no reference.
-    quest::summonitem(12212);
+    quest::summonitem(12212); # Item: Kaglari Mana Doll
   }
   elsif (plugin::check_handin(\%itemcount, 26662 => 1, 29921 => 1, 26640 => 1, 26632 => 1)) {#Swirling Banshee Essence, Arachnae Fangs, A Wrulon Claw, A Blood Raven Tailfeather
     quest::say("Me been waitin for doze. Dank yoo, $name.  Take dis.");
-    quest::summonitem(28740);
+    quest::summonitem(28740); # Item: Troll Receipt
   }
     plugin::return_items(\%itemcount);
 } 

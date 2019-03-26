@@ -32,7 +32,7 @@ sub EVENT_ITEM {
 		$h = $npc->GetHeading();
     
     #Spawn the version of me with ore.
-    quest::spawn2(202068, 0, 0, $x, $y, $z, $h);
+    quest::spawn2(202068, 0, 0, $x, $y, $z, $h); # NPC: Yeril_Imsin Smithing Supplies
     
     #Depop myself
     quest::depop_withtimer();
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
 		$h = $npc->GetHeading();
     
     #Spawn the version of me with ore.
-    quest::spawn2(202068, 0, 0, $x, $y, $z, $h);
+    quest::spawn2(202068, 0, 0, $x, $y, $z, $h); # NPC: Yeril_Imsin Smithing Supplies
     
     #Depop myself
     quest::depop_withtimer();

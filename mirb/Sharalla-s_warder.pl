@@ -11,7 +11,7 @@ sub EVENT_SAY {
   # Upon hailing, start the event and signal to Durgin Skell that event 4 has now been attempted
   if ($text=~/hail/i) {
     quest::ze(15, "It is odd that Sharalla's warder remains here after her demise. It seems to be defending its master's remains. The warder turns toward you as it notices your presence. The moment it is distracted, several wild animals that had been hiding nearby lunge forth.");
-    quest::signalwith(237743,4,1);
+    quest::signalwith(237743,4,1); # NPC: Durgin_Skell
 
     quest::spawn2(237793, 12, 0, 20.26, -107.10, 6.60, 0); # a_starving_polar_bear (237793) - grid 12
     quest::spawn2(237794, 0, 0, -125.62, -953.26, 53.10, 0); # a_ravenous_snow_cougar (237794)
@@ -43,7 +43,7 @@ sub EVENT_SIGNAL {
     if ($animals_dead >= 4) {
       #Text missing. Using this to indicate successful task 4
       quest::ze(15, "You have protected Sharalla's body from the hungry animals of the caverns. Return to Durgin Skell to let him know she will rest peacefully.");
-      quest::signalwith(237743, 4, 1);
+      quest::signalwith(237743, 4, 1); # NPC: Durgin_Skell
     }
   }
 }

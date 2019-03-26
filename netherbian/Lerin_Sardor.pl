@@ -15,11 +15,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 5982 => 1)) {
     quest::say("Let us go then. Please be alert throughout the cavern. Once we get to the other side safely give me the signed agreement and you will have your payment.");
-    quest::summonitem(5983);
+    quest::summonitem(5983); # Item: Signed Agreement
   }
   if(plugin::check_handin(\%itemcount, 5983 => 1)) {
     quest::say("Thank you so much for your help! As I promised here is a small token of my appreciation.");
-    quest::summonitem(5984);
+    quest::summonitem(5984); # Item: Jasper Kundan Earring
   }
   plugin::return_items(\%itemcount);
 }

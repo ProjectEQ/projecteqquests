@@ -9,7 +9,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12273})) then
 		e.self:Say("Welcome to the Freeport Militia. As a reserve member we require you to wear this tunic and fight when, who and wherever Sir Lucan commands, no questions asked!! There is no turning back!! Remember to keep clear of North Freeport. You have made a wise decision. Hail Sir Lucan!!");
-		e.other:SummonItem(3097);
+		e.other:SummonItem(3097); -- Item: Reserve Militia Tunic
 		e.other:Ding();
 		e.other:Faction(330,10,0); -- freeport militia
 		e.other:Faction(336,10,0); -- coalition of tradefolk underground

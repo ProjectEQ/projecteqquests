@@ -20,12 +20,12 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10628 => 1)) {
     quest::emote("writes something down on a piece of parchment.");
     quest::say("You go tell dat Brokk dat he owe me big for smushing garden. Make him read dis.");
-    quest::summonitem(10629);
+    quest::summonitem(10629); # Item: Scribbled Parchment
   }
   elsif (plugin::check_handin(\%itemcount, 10630 => 1)) {
     quest::say("'Oh, dat silly Brokk. He sent me too many of these perty flowers. Me not know where put them all. Here, you take some cause you help Bozlum. Me like you. Flowers make you smell perty, too.");
     quest::exp(100);
-    quest::summonitem(10609);
+    quest::summonitem(10609); # Item: Snow Blossoms
   }
   plugin::return_items(\%itemcount);
 }

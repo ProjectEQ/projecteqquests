@@ -51,133 +51,133 @@ sub EVENT_ITEM {
       quest::emote("reaches out hungrily for the food sacks and the walking stick. 'Yes, this is Patorav's. I would recognize it anywhere. You can see just by looking at the metal that it hides some source of power. Why its appearance alone... how the metal looks as if it is reflecting moving storm clouds... fascinating. I most graciously thank you for this and the sacks of food. I had nearly finished this plate helm for a customer of mine, but I have heard he met a valiant end at the wall. Wear it honorably as he would have.");
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70853);
+        quest::summonitem(70853); # Item: Gladiator's Plate Helm of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70867);
+        quest::summonitem(70867); # Item: Dawnseeker's Coif of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70881);
+        quest::summonitem(70881); # Item: Duskbringer's Plate Helm of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70902);
+        quest::summonitem(70902); # Item: Farseeker's Plate Helm of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70860);
+        quest::summonitem(70860); # Item: Faithbringer's Cap of Conviction
       }
     }
     if (plugin::check_handin(\%itemcount, 51479 => 1, 51486 => 2)) { #sleeves
       quest::emote("takes the items from you before handing you your reward."); #made up
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70854);
+        quest::summonitem(70854); # Item: Gladiator's Plate Sleeves of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70868);
+        quest::summonitem(70868); # Item: Dawnseeker's Sleeves of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70882);
+        quest::summonitem(70882); # Item: Duskbringer's Plate Armguards of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70903);
+        quest::summonitem(70903); # Item: Farseeker's Plate Armbands of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70861);
+        quest::summonitem(70861); # Item: Faithbringer's Armguards of Conviction
       }
     }
     if (plugin::check_handin(\%itemcount, 51480 => 1, 51487 => 2)) { #bracers
       quest::emote("widens his eyes as you hand him the riftseeker heart. As you hand it to him, his eyes fix on the small pulsing light within the center of the gem. 'Yes, I am sure I can make good use of this. You have done well. And these pieces of ore will help replenish my supply. For your hard work, here is the plate bracer I spoke of earlier.");
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70855);
+        quest::summonitem(70855); # Item: Gladiator's Plate Bracer of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70869);
+        quest::summonitem(70869); # Item: Dawnseeker's Wristguard of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70883);
+        quest::summonitem(70883); # Item: Duskbringer's Plate Wristguard of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70904);
+        quest::summonitem(70904); # Item: Farseeker's Plate Wristguard of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70862);
+        quest::summonitem(70862); # Item: Faithbringer's Wristband of Conviction
       }
     }
     if (plugin::check_handin(\%itemcount, 51481 => 1, 51488 => 2)) { #gloves
       quest::emote("holds the axe up and begins to take a few mighty swings through the air in front of him. 'Yes, the axe of the fierce one himself. It will be a shame to remove some of these enchantments, but I am sure I can put them to better use for my people. I will use the two crystals you have just given me to safely remove some of the charms within the axe and put them in some of my newer designs. Here are the plate gloves I spoke of earlier.");
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70856);
+        quest::summonitem(70856); # Item: Gladiator's Plate Gloves of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70870);
+        quest::summonitem(70870); # Item: Dawnseeker's Mitts of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70884);
+        quest::summonitem(70884); # Item: Duskbringer's Plate Gloves of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70905);
+        quest::summonitem(70905); # Item: Farseeker's Plate Gloves of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70863);
+        quest::summonitem(70863); # Item: Faithbringer's Gloves of Conviction
       }
     }
     if (plugin::check_handin(\%itemcount, 51476 => 1, 51483 => 3)) { #breastplate
       quest::emote("takes the items from you before handing you your reward."); #made up
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70858);
+        quest::summonitem(70858); # Item: Gladiator's Plate Chestguard of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70872);
+        quest::summonitem(70872); # Item: Dawnseeker's Chestpiece of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70886);
+        quest::summonitem(70886); # Item: Duskbringer's Plate Chestguard of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70907);
+        quest::summonitem(70907); # Item: Farseeker's Plate Chestguard of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70865);
+        quest::summonitem(70865); # Item: Faithbringer's Breastplate of Conviction
       }
     }
     if (plugin::check_handin(\%itemcount, 51477 => 1, 51484 => 3)) { #leggings
       quest::emote("takes the items from you before handing you your reward."); #made up
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70859);
+        quest::summonitem(70859); # Item: Gladiator's Plate Legguards of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70873);
+        quest::summonitem(70873); # Item: Dawnseeker's Leggings of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70887);
+        quest::summonitem(70887); # Item: Duskbringer's Plate Legguards of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70908);
+        quest::summonitem(70908); # Item: Farseeker's Plate Legguards of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70866);
+        quest::summonitem(70866); # Item: Faithbringer's Leggings of Conviction
       }
     }
     if (plugin::check_handin(\%itemcount, 51478 => 1, 51485 => 2)) { #boots
       quest::emote("takes the items from you before handing you your reward."); #made up
       quest::exp(100000);
       if($class eq "Warrior") {
-        quest::summonitem(70857);
+        quest::summonitem(70857); # Item: Gladiator's Plate Boots of War
       }
       if($class eq "Paladin") {
-        quest::summonitem(70871);
+        quest::summonitem(70871); # Item: Dawnseeker's Boots of the Defender
       }
       if($class eq "Shadowknight") {
-        quest::summonitem(70885);
+        quest::summonitem(70885); # Item: Duskbringer's Plate Boots of the Hateful
       }
       if($class eq "Bard") {
-        quest::summonitem(70906);
+        quest::summonitem(70906); # Item: Farseeker's Plate Boots of Harmony
       }
       if($class eq "Cleric") {
-        quest::summonitem(70864);
+        quest::summonitem(70864); # Item: Faithbringer's Boots of Conviction
       }
     }
   }

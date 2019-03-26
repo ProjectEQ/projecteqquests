@@ -17,7 +17,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5996 => 1)) {
     quest::say("Ah this was my wife Aisha's locket. She had given it to Kalila. Thanks so much for returning it. Here take this belt as my thanks.");
-    quest::summonitem(5995);
+    quest::summonitem(5995); # Item: Belt of the Khala Dun
   }
   plugin::return_items(\%itemcount);
 }

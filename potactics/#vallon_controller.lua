@@ -8,7 +8,7 @@ end
 
 function event_signal(e)
 	if (e.signal == 1) then --tell vallon which phase we are on
-		eq.signal(214083,phase);
+		eq.signal(214083,phase); -- NPC: Vallon_Zek
 	elseif (e.signal == 2) then --Vallon Depopped
 		if (phase == 1) then
 			eq.set_timer("vz_fail",7200000); --two hour fail timer on first split

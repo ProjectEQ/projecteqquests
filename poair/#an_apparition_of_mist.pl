@@ -3,6 +3,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::signalwith(215455,5,1);
+  quest::signalwith(215455,5,1); # NPC: #Mist_Trigger
   quest::stoptimer("mist");
 }

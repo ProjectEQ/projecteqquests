@@ -7,7 +7,7 @@ sub EVENT_SAY {
 	}
 	if($text=~/learn to defend/i) {
 		quest::say("Take this note to Illie Roln. She will help get you outfitted in a suit of armor. Once you have been properly outfitted return to me and I will tell you how you can make yourself useful. I have a [small task] in mind.");
-		quest::summonitem(20205);
+		quest::summonitem(20205); # Item: Note to Illie Roln
 	}
 	if($text=~/small task/i) {
 		quest::say("The Priests of Life and Knights of Thunder often travel the roads from Qeynos carrying messages for the farmers of the Plains of Karana and the Knights of Truth in Freeport on the opposite coast of Antonica. We have recently been sending Bloodsabers to the Plains of Karana in search of a possible location for a new hidden temple should the need arise. One of the messengers of the Knights of Thunder has alerted the peasants of the plains the possibility of a Bloodsaber presence there and is using them to track our motions. Find the messenger. Lukas Hergo. and bring me his head.");
@@ -17,12 +17,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 20175 => 1)) {
 		quest::say("Well done $name. Now take this Rusty Scourge Warrior Broadsword to a forge and sharpen it with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done take the Tarnished Scourge Warrior Sword and a Giant King Snake Skin to Illie Roln and he will put the finishing touches on the weapon.");
-		quest::summonitem(20176);
-		quest::faction(221,1);
-		quest::faction(262,-1);
-		quest::faction(296,-1);
-		quest::faction(341,-1);
-		quest::faction(230,1);
+		quest::summonitem(20176); # Item: Rusty Scourge Warrior Broadsword
+		quest::faction(221,1); # Faction: Bloodsabers
+		quest::faction(262,-1); # Faction: Guards of Qeynos
+		quest::faction(296,-1); # Faction: Opal Darkbriar
+		quest::faction(341,-1); # Faction: Priests of Life
+		quest::faction(230,1); # Faction: Corrupt Qeynos Guards
 		quest::exp(100);
 		quest::ding();
 	}

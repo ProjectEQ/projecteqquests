@@ -7,16 +7,16 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 21805})) then
-		e.other:SummonItem(21820);
+		e.other:SummonItem(21820); -- Item: Bag of Platinum Pieces
 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 21806})) then
-		e.other:SummonItem(21821);
+		e.other:SummonItem(21821); -- Item: Heavy Bag of Platinum
 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 21807})) then
-		e.other:SummonItem(21822);
+		e.other:SummonItem(21822); -- Item: Big Bag of Platinum
 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 21808})) then
-		e.other:SummonItem(21823);
+		e.other:SummonItem(21823); -- Item: Huge Bag of Platinum
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

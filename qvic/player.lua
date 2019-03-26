@@ -24,7 +24,7 @@ function event_click_door(e)
 			for i = 0, player_list_count - 1, 1 do
 				local client_v = player_list:GetMember(i):CastToClient();
 				if (client_v.valid) then
-					client_v:MovePC(297, -327, 0, -418, 130);
+					client_v:MovePC(297, -327, 0, -418, 130); -- Zone: powater
 				end
 			end
 		end
@@ -32,7 +32,7 @@ function event_click_door(e)
 	elseif (door_id == 3) then
 		local instance_id = eq.get_instance_id("inktuta",0);
 		if (instance_id > 0) then
-			e.self:MovePCInstance(296, instance_id, 0, 65, -1, 253);
+			e.self:MovePCInstance(296, instance_id, 0, 65, -1, 253); -- Zone: powar
 		else
 			e.self:Message(13, "You are not a part of an instance!");
 		end

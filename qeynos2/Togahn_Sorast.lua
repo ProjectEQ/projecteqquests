@@ -49,7 +49,7 @@ function event_trade(e)
 	-- Orange Headband, Head of Ghanex Drah, Dareb's Skull, Head of Shen
 	if(item_lib.check_turn_in(e.trade, {item1 = 10112, item2 =13165, item3 = 13166, item4 = 13167})) then
 		e.self:Say("We are deeply honored to have such great warrior as part of our Clan. With a proper burial, Shen and Dareb's souls will finally be at peace, and with the death of that vile Ghanex, the plains will be much safer for travelers. It is a great honor to present you, " .. e.other:GetName() .. ", with the red headband of the Silent Fist Clan.");
-		e.other:SummonItem(10113);
+		e.other:SummonItem(10113); -- Item: Red Headband
 		e.other:Ding();
 		e.other:Faction(309,5,0); -- Silent Fist Clan
 		e.other:Faction(262,5,0); -- Guards of Qeynos

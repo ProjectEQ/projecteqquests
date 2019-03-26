@@ -14,7 +14,7 @@ sub EVENT_SPAWN{
 
 sub EVENT_TIMER{
    if($timer eq "ShrinkTime"){
-      $c->CastSpell(3393, $ClientID, 10, 0);
+      $c->CastSpell(3393, $ClientID, 10, 0); # Spell: Tiny Terror
       quest::stoptimer("ShrinkTime");
       quest::settimer("ShrinkTime", 60);
    }

@@ -6,12 +6,12 @@ sub EVENT_CLICKDOOR {
 			if (defined($qglobals{"ginstance$uguild_id"})) {
 				$guildinstance = $qglobals{"ginstance$uguild_id"};
 				quest::AssignToInstance($guildinstance);
-				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34);
+				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34); # Zone: skyfire
 			} else {
 				$guildinstance = quest::CreateInstance("guildhall", 1, 86400);
 				quest::AssignToInstance($guildinstance); 
 				quest::setglobal("ginstance$uguild_id",$guildinstance,7,"H25");
-				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34);
+				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34); # Zone: skyfire
 			}
 		}
   	} elsif((($doorid >= 5) && ($doorid <= 38)) ||  (($doorid >= 43) && ($doorid <= 76))) {
@@ -23,7 +23,7 @@ sub EVENT_ENTERZONE {
 
 	#off the map
 	if ($client->GetX() > 315 || $client->GetX() < -315 || $client->GetY() > 685 || $client->GetY() < -60 || $client->GetZ() < -5 || $client->GetZ() > 15) {
-		$client->MovePC(344, 0, 312, 2, 0);
+		$client->MovePC(344, 0, 312, 2, 0); # Zone: sirens
 	}
 
 	#if I am idle for more than xx seconds, auto-afk and go invisible/don't draw model
@@ -62,9 +62,9 @@ sub EVENT_SIGNAL {
 	
 sub EVENT_TIMER {
 	if($timer == 1) {
-		quest::MovePCInstance(344,5,$x,$y,$z,450);
+		quest::MovePCInstance(344,5,$x,$y,$z,450); # Zone: sirens
 	} elsif($timer == 2) {
-		quest::movepc(344,$x,$y,$z,225);
+		quest::movepc(344,$x,$y,$z,225); # Zone: sirens
 	} elsif($timer eq "afk_check") {
 		#I have been idle, go auto-afk and don't draw model
 		$client->Message(4, "You are idle, Auto-AFK");

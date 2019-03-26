@@ -3,5 +3,5 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(293218,1,0);
+  quest::signalwith(293218,1,0); # NPC: #Trigger_Kodtaz_1
 }

@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if(quest::istaskactive(220)){
        	if ($text=~/trick or treat/i) {
                         quest::say("Ah, here you go. Fresh from the Sugar Assembalage 2000.");
-                        quest::summonitem(quest::ChooseRandom(84091,84092,84093,84087,84087,84087,84087,84087,84087));
+                        quest::summonitem(quest::ChooseRandom(84091,84092,84093,84087,84087,84087,84087,84087,84087)); # Item(s): Sand (84091), Chunk of Coal (84092), Pocket Lint (84093), Jawbreaker (84087), Jawbreaker (84087), Jawbreaker (84087), Jawbreaker (84087), Jawbreaker (84087), Jawbreaker (84087)
 			   quest::updatetaskactivity(220,1);	
                 }
 	}

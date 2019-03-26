@@ -5,5 +5,5 @@ sub EVENT_SLAY {
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("I cannot die! I am the only true god!");
 	quest::emote("crashes to the ground. A horrific sound fills the room, but vanishes as quickly as it came.");
-	quest::signalwith(162255,3,0);
+	quest::signalwith(162255,3,0); # NPC: #cursed_controller
 }

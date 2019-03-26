@@ -160,7 +160,7 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
       if (has_all_trials) then
         eq.target_global("oow_mpg_raids_complete", "1", "F", 0, client:CharacterID(), 0);
         -- Summon: Seal: Mastery of All
-		client:SummonItem(52413);
+		client:SummonItem(52413); -- Item: Seal: Mastery of All
 		client:Message(14,"You have demonstrated adeptness at all aspects of power that Mata Muram holds dear. As you receive the final medal, the six wedges you have collected fuse, point to point, creating a hexagonal seal.  You now hold the key to Anguish, the Fallen Palace");        
       end
     end

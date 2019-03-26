@@ -17,7 +17,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 5018,item2 = 13036,item3 = 13036})) then
 		e.self:Emote("drinks one of the ales, burps loudly, then says 'By Brell's Beard! Yer a lifesaver, ya are! 'ere, take dis bone I've found 'ere in dis maze. Looks human ta me and I'm thinkin that a proper burial is in order. Freeport's the closest place dat has one o Marr's temples. I'm thinkin dis was one o' his Holy Knights by da look o' da tattered tunic I found it wrapped in. I'm thinkin Valeron might be havin an interest in it if you show that to him.'");
-		e.other:SummonItem(6701);
+		e.other:SummonItem(6701); -- Item: Dusty Old Leg Bone
 		e.other:Ding();
 		e.other:AddEXP(500);
 	end

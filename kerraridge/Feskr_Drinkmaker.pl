@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12360 => 1, 14914 => 1, 14915 => 1, 17969 => 1)) {
     quest::say("Ahhh. This will help. Many Kerrans will like these. Here. Take this old bag. I have too many. Maybe it help you.");
-    quest::summonitem(17032);
+    quest::summonitem(17032); # Item: Rough Leather Sack
     quest::exp(5000);
    }
    plugin::return_items(\%itemcount);

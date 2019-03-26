@@ -19,15 +19,15 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5761 => 1, 5762 => 1, 5766 => 1)) { #turn in for spell only
     quest::emote("smiles warmly, 'Brilliant, you've brought me some more supplies! Here, please take this last copy I've made. I'd planned to use it for myself, but I'll let you use it so you don't have to wait for me to make a new one. I do hope you enjoy it!'");
-    quest::summonitem(9722);
+    quest::summonitem(9722); # Item: Spell: Protection of the Cabbage
   }
   elsif (plugin::check_handin(\%itemcount, 9721 => 1)) {
     quest::say("Here you are friend, Xanthe's Earring of Nature. I'll see that your old earring goes to someone who can make better use of it. Safe travels, friend!");
-    quest::summonitem(28771);
+    quest::summonitem(28771); # Item: Earring of the Solstice
   }
   elsif (plugin::check_handin(\%itemcount, 28771 => 1)) {
     quest::say("Here you are friend, an earring of the Solstice. I'll see that your old earring goes to a druid who can make better use of it. Safe travels, friend!");
-    quest::summonitem(9721);
+    quest::summonitem(9721); # Item: Xanthe`s Earring of Nature
   }
   plugin::return_items(\%itemcount);
 }

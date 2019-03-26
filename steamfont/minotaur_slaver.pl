@@ -7,10 +7,10 @@
 sub EVENT_DEATH_COMPLETE{
   my $random_result = int(rand(100));
   if($random_result >= 94){
-    quest::unique_spawn(56152,177,0,-1294,1360,-103);
+    quest::unique_spawn(56152,177,0,-1294,1360,-103); # NPC: Minotaur_Hero
   }
   elsif($random_result >= 88 && $random_result < 94){
-    quest::unique_spawn(56161,0,0,-2179,1319,-101.2);
+    quest::unique_spawn(56161,0,0,-2179,1319,-101.2); # NPC: Minotaur_Lord
   }
   quest::say("I die soon! Meldrath, help me!");
 }

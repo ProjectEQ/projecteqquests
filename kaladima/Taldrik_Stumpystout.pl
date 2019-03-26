@@ -14,7 +14,7 @@ sub EVENT_SAY {
 	# Disciple Symbol of Brell Serilis
 		quest::say("Why a holy cask is what ye will need of course! Find the ingredients that I asked you for before and combine them within this holy cask along with barley from the forests of Kithicor and water summoned from none other then yourself. After doing this if the gods have smiled upon you a thick and hearty keg of Brells Blessed Stout will be created. Give this to me along with a Rat sandwich to enjoy while I sip the finest of ales as well as your initiate symbol that you carry now and I will be sure to reward you.");
 		# Summon: holy cask (SQL Submitted)
-                quest::summonitem(17070);
+                quest::summonitem(17070); # Item: Holy Cask
 	}
 }
 
@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 	# Disciple Symbol of Brell Serilis (End)
 		quest::say("Ye are a true Priest of Brell Serilis! And ye make me both proud and happy to have met ye so that I could enjoy this sweet drink once again! Please take this Disciple Symbol of Brell Serilis which I have crafted to enable tyou to turn water into this blessed ale for you have truly earned it! And when ye are ready for your next step come back and visit!");
 		# Summon: Disciple Symbol of Brell Serilis
-		quest::summonitem(1431); 
+		quest::summonitem(1431); # Item: Disciple Symbol of Brell Serilis 
 	}
 	plugin::return_items(\%itemcount);
 }

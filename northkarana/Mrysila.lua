@@ -21,12 +21,12 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 10300})) then -- Lightstone turn in, reward is either Runes and Research Volume I or II
 		e.self:Say("A lightstone? Thank you very much. Here is a copy of 'Runes and Research'.");
-		e.other:SummonItem(eq.ChooseRandom(18175,18176));
+		e.other:SummonItem(eq.ChooseRandom(18175,18176)); -- Item(s): Runes and Research Volume I (18175), Runes and Research Volume II (18176)
 		e.other:Ding();
 		e.other:AddEXP(14500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10400})) then -- Greater lightstone turn in, reward is Concordance of Research
 		e.self:Say("A greater lightstone? Thank you very much. Here is a 'Concordance of Research' for you.");
-		e.other:SummonItem(17504);
+		e.other:SummonItem(17504); -- Item: Concordance of Research
 		e.other:Ding();
 		e.other:AddEXP(16000);
 	end

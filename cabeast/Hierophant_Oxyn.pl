@@ -41,20 +41,20 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 3895=>1)) { #Crusaders of Greenmist (Greenmist Quest 8/8)
     quest::emote("takes the note and begins to howl into the air! 'The visions are true! The new prophecy begins today, Crusader,' the mystic growls with pleasure. He quickly turns and takes a bottle of murky liquid from one of his potion bags and hands it to you. 'Take this and keep it safe. Our visions have told of this day. We have been able to learn of the metal of prophecy. This [liquid] will help us to locate its true resting place!");
-    quest::summonitem(3892);
+    quest::summonitem(3892); # Item: Bottle of Liquid Deklium
     quest::exp(5000);
     quest::ding();
-    quest::faction(442,20);
-    quest::faction(441,10);
+    quest::faction(442,20); # Faction: Crusaders of Greenmist
+    quest::faction(441,10); # Faction: Legion of Cabilis
   }
   elsif(plugin::check_handin(\%itemcount, 3886=>1)) { #Crusaders of Greenmist (Greenmist Quest 8/8)
     quest::emote("holds the ore in his hands and begins to chant. His eyes go white as he raises the chunk of ore above his head. He lowers his arms and shakes his head for a moment. His eyes return to their normal state as they focus on you. The shaman hands you the ore and says, 'Seek out the creator of Rile's blade. He is still on this plane. I have felt his torment. Take this note to Librarian Zimor. He learned a great deal from the tome and can instruct you further.'");
-    quest::summonitem(3886);
-    quest::summonitem(3893);
+    quest::summonitem(3886); # Item: Chunk of Tynnonium
+    quest::summonitem(3893); # Item: Note to Librarian Zimor
     quest::exp(5000);
     quest::ding();
-    quest::faction(442,20);
-    quest::faction(441,10);
+    quest::faction(442,20); # Faction: Crusaders of Greenmist
+    quest::faction(441,10); # Faction: Legion of Cabilis
   }
   #Cursed Wafers turn in
   elsif(plugin::check_handin(\%itemcount, 12403 => 1) && ($class == "Shaman")) { #Full Component Mortar

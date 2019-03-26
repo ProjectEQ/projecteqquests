@@ -8,7 +8,7 @@ function event_timer(e)
 		eq.depop_all(336255);--shad
 		eq.depop();
 	elseif e.timer=="kill_daig" then
-		eq.signal(336063,1,1000);
+		eq.signal(336063,1,1000); -- NPC: #Daignal_the_Revered
 		eq.stop_timer("kill_daig");
 		e.self:DoAnim(87);
 		e.self:SetSpecialAbility(19, 0);

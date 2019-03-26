@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::say("I say, this is indeed a challenge. This is written in what I'm sure is the language of the High Priesthood of Innoruuk. I've often wished I could read this, but I have never had the key to unlock the language. Take this for now.");
     quest::ding();
     quest::exp(500);
-    quest::summonitem(28055);
+    quest::summonitem(28055); # Item: Tattered Parchment
   }
   elsif(plugin::check_handin(\%itemcount, 28055 => 1, 28016=> 1)) {
     my $x = $npc->GetX();
@@ -38,7 +38,7 @@ sub EVENT_ITEM {
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
     quest::say("My, this is quite a large list! Yes, I can use the names and dates recorded here to help me understand the script. It should be a simple matter now. A moment, please. Aha, yes, there we go. Translated as best I can! I do hope you're not involved in what is described here, as it is quite fiendish. Oi! You, woman! Give that back! $name, that woman there took your letter! I think I should leave you to discuss it with her. Best of luck!.");
-    quest::spawn2(56172,0,0,$x - 10,$y + 10,$z,$h);
+    quest::spawn2(56172,0,0,$x - 10,$y + 10,$z,$h); # NPC: Renux_Herkanor
     quest::depop_withtimer();
   }
   elsif(plugin::check_handin(\%itemcount, 52335 => 1)) {

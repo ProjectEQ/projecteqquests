@@ -14,13 +14,13 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13703,platinum = 1})) then
 		e.self:Say("I am not even going to bother asking where you got that. Just take this set I already made and hurry them back to Fabian.");
-		e.other:SummonItem(13709);
+		e.other:SummonItem(13709); -- Item: Lute Strings
 		e.other:Ding();
-		e.other:Faction(284,30,0);
-		e.other:Faction(281,30,0);
-		e.other:Faction(262,30,0);
-		e.other:Faction(304,-30,0);
-		e.other:Faction(285,-30,0);
+		e.other:Faction(284,30,0); -- Faction: League of Antonican Bards
+		e.other:Faction(281,30,0); -- Faction: Knights of Truth
+		e.other:Faction(262,30,0); -- Faction: Guards of Qeynos
+		e.other:Faction(304,-30,0); -- Faction: Ring of Scale
+		e.other:Faction(285,-30,0); -- Faction: Mayong Mistmoore
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -33,7 +33,7 @@ sub EVENT_AGGRO {
 sub KICK_ALL_PLAYERS {
   #zone all players back to Everfrost
   foreach $pc ($entity_list->GetClientList()) {
-    $pc->MovePC(30, -5460, -630, 190, 256);
+    $pc->MovePC(30, -5460, -630, 190, 256); # Zone: burningwood
   }
 }
 
@@ -62,7 +62,7 @@ sub EVENT_TIMER {
       #nothing to do at this time, the zone should be all up.
     } elsif ($qglobals{$instid.'_mirb_status'} == 1) { #goblin event started
       #send signal to trigger so it knows the event should be started.
-      quest::signalwith(237798,237774,0);
+      quest::signalwith(237798,237774,0); # NPC: #trigger_goblin
       #pop all the future events.
       POP_EVENT1();
       POP_EVENT2();
@@ -221,14 +221,14 @@ sub EVENT_TIMER {
     }
 	#don't really care is Sharalla's corpse is up or not at this point.
 	if ($qglobals{$instid.'_mirb_status'} == 5) { #Laskuth the Colossus dead, but chest(s) not opened
-	  quest::spawn2(237790, 0, 0, 242, 360, -34, 0);
+	  quest::spawn2(237790, 0, 0, 242, 360, -34, 0); # NPC: #a_frozen_treasure_chest
 	  if ($qglobals{$instid.'_mirb_event'} == 2) { #spawn bonus chest
-	    quest::spawn2(237763, 0, 0, 173, 402, -36, 0);
+	    quest::spawn2(237763, 0, 0, 173, 402, -36, 0); # NPC: #a_frost_covered_box
 	  }
 	} elsif ($qglobals{$instid.'_mirb_status'} == 6) { #win chest opened spawn bonus chest
-	  quest::spawn2(237763, 0, 0, 173, 402, -36, 0);
+	  quest::spawn2(237763, 0, 0, 173, 402, -36, 0); # NPC: #a_frost_covered_box
 	} elsif ($qglobals{$instid.'_mirb_status'} == 7) { #bonus chest opened spawn win chest
-	  quest::spawn2(237790, 0, 0, 242, 360, -34, 0);
+	  quest::spawn2(237790, 0, 0, 242, 360, -34, 0); # NPC: #a_frozen_treasure_chest
 	}
 	#status = 8 is complete win + chest(s) opened so nothing more to do.
     $npc->Depop(0); #depop no respawn timer because we always want this mob to spawn at zone start up

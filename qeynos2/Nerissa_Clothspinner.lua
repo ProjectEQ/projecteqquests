@@ -18,7 +18,7 @@ function event_say(e)
 			e.self:Say("I cannot trouble a person of your stature with such trivial talk.");
 		else
 			e.self:QuestSay(e.other, "Here you go then, brave adventurer. Godspeed to you.");
-			e.other:SummonItem(18801);
+			e.other:SummonItem(18801); -- Item: Tattered Note
 		end
 	elseif(e.message:findi("rumors")) then
 		e.self:QuestSay(e.other, "I have heard that a few of the Qeynos merchants and guards are not very happy with the current state of the city. Taxes are too high and many of the guards have been sent to the outlands, leaving Qeynos vulnerable to attack. I do not feel the same way, but I fear these few may become many. I [fear for my life].");
@@ -35,12 +35,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13302})) then
 		e.self:QuestSay(e.other, "Thank you my friend. I understand that Astaed Wemor of the Temple of Life has been concerned for my well being. Take him this note. I am sure he will reward you for easing my troubled mind.. If you are a respected member.");
 		e.other:Ding();
-		e.other:SummonItem(18862);
-		e.other:Faction(291, 1, 0);
-		e.other:Faction(223, -1, 0);
-		e.other:Faction(219, 1, 0);
-		e.other:Faction(229, 1, 0);
-		e.other:Faction(262, 1, 0);
+		e.other:SummonItem(18862); -- Item: Tattered Note
+		e.other:Faction(291, 1, 0); -- Faction: Merchants of Qeynos
+		e.other:Faction(223, -1, 0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(219, 1, 0); -- Faction: Antonius Bayle
+		e.other:Faction(229, 1, 0); -- Faction: Coalition of Tradefolk
+		e.other:Faction(262, 1, 0); -- Faction: Guards of Qeynos
 		e.other:AddEXP(3000);
 		e.other:GiveCash(0, 10, 0, 0);
 	end

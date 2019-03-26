@@ -8,7 +8,7 @@ function event_say(e)
 		e.other:SummonItem(17941); -- Box for bones
 	elseif(e.message:findi("dangerous mission")) then
 		e.self:Say("You must go into the catacombs and find a man named Drosco Finlayer. Pass him this note. He has been deep undercover in the Shrine of Bertoxxulous and will have directions to that vile place. To do this will surely show your allegiance to this temple.");
-		e.other:SummonItem(18804);
+		e.other:SummonItem(18804); -- Item: Tattered Note
 	elseif(e.message:findi("rat king")) then
 		e.self:Say("You may try, but no one has truly seen him.  I would look in the sewers.");
 	end
@@ -17,7 +17,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 4) then
 		e.self:Say("Your Excellency, we need to recruit a newcomer to find and infiltrate the Shrine of Bertoxxulous. The Shrine's eyes are watching all our moves.");
-		eq.signal(1128,1);
+		eq.signal(1128,1); -- NPC: Runethar_Hamest Paladin Guildmaster
 	end
 end
 
@@ -26,7 +26,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13882})) then -- A box of bones
 		e.self:Say("You have done well. Let it be known to all that you fight for the Rainkeeper. Go and continue the battle.");
-		e.other:SummonItem(13006);
+		e.other:SummonItem(13006); -- Item: Water Flask
 		e.other:Ding();
 		e.other:Faction(280,5,0); -- Knights of Thunder
 		e.other:Faction(341,5,0); -- Preists of Life
@@ -46,7 +46,7 @@ function event_trade(e)
 		e.other:GiveCash(0,0,8,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13396})) then -- Rat Kings Head
 		e.self:Say("So it is true, he does... or did, exist.  Well done "..e.other:GetName()..", take this for your trouble.");
-		e.other:SummonItem(eq.ChooseRandom(2112, 2106, 2111, 2104, 2108));
+		e.other:SummonItem(eq.ChooseRandom(2112, 2106, 2111, 2104, 2108)); -- Item(s): Patchwork Boots (2112)
 		e.other:Ding();
 		e.other:Faction(280,5,0); -- Knights of Thunder
 		e.other:Faction(341,5,0); -- Preists of Life

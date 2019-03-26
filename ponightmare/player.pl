@@ -21,7 +21,7 @@ sub EVENT_LOOT {
                 $x = $client->GetX();
                 $y = $client->GetY();
                 $z = $client->GetZ();
-                quest::spawn2( 283157, 0, 0, $x, $y, $z, 0 );
+                quest::spawn2( 283157, 0, 0, $x, $y, $z, 0 ); # NPC: a_chest
             }
             return 0;
         }
@@ -37,7 +37,7 @@ sub EVENT_LOOT {
                 $x = $client->GetX();
                 $y = $client->GetY();
                 $z = $client->GetZ();
-                quest::spawn2( 283157, 0, 0, $x, $y, $z, 0 );
+                quest::spawn2( 283157, 0, 0, $x, $y, $z, 0 ); # NPC: a_chest
             }
             return 0;
         }

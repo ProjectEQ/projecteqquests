@@ -17,7 +17,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10644 => 1, 10645 => 1, 10646 => 1, 10647 => 1)){
     #Quest: Insect Carapace Shield (End)
     #Paludal Carapace Shield
-    quest::summonitem(85054);
+    quest::summonitem(85054); # Item: Paludal Carapace Shield
     quest::faction(1513,5); # +Guardians of Shar Vahl
     quest::exp(250);
     quest::ding();

@@ -77,16 +77,16 @@ sub EVENT_SAY   {
 
 sub EVENT_ITEM {
       if(plugin::check_handin(\%itemcount, 80026 => 1 )) {#Dusty Golden Statue
-         quest::summonitem(80027);
+         quest::summonitem(80027); # Item: Broken Gearshard
       }
       if(plugin::check_handin(\%itemcount, 80027 => 1 )) {#Broken Gearshard
-         quest::summonitem(80028);
+         quest::summonitem(80028); # Item: Lost Coin
       }
       if(plugin::check_handin(\%itemcount, 80028 => 1 )) {#Lost Coin
-         quest::summonitem(80029);
+         quest::summonitem(80029); # Item: Locked Case
       }
       if(plugin::check_handin(\%itemcount, 80029 => 1 )) {#Locked Case
-         quest::summonitem(80026);
+         quest::summonitem(80026); # Item: Dusty Golden Statue
       }
 }
 

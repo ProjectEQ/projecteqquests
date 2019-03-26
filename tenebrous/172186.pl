@@ -3,6 +3,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-	quest::spawn2(172183,516092,0,$x,$y,$z,$h);
+	quest::spawn2(172183,516092,0,$x,$y,$z,$h); # NPC: Kerzar_Clawtore
 	quest::depop();
 }

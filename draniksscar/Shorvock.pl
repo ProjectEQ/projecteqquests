@@ -44,100 +44,100 @@ sub EVENT_ITEM {
    if($faction < 3) {
       if (plugin::check_handin(\%itemcount, 51460 => 2, 51446 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70849);
+         quest::summonitem(70849); # Item: Ragebound Chain Mittens
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70800);
+         quest::summonitem(70800); # Item: Darkraider's Gloves
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70807);
+         quest::summonitem(70807); # Item: Spiritkin Mittens
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70765);
+         quest::summonitem(70765); # Item: Sunrider's Gloves
          }
       }
       if (plugin::check_handin(\%itemcount, 51459 => 2, 51445 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70848);
+         quest::summonitem(70848); # Item: Ragebound Chain Wristband
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70799);
+         quest::summonitem(70799); # Item: Darkraider's Wristguard
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70806);
+         quest::summonitem(70806); # Item: Spiritkin Bracer
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70764);
+         quest::summonitem(70764); # Item: Sunrider's Wristguard
          }
       }
       if (plugin::check_handin(\%itemcount, 51458 => 2, 51444 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70847);
+         quest::summonitem(70847); # Item: Ragebound Chain Sleeves
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70798);
+         quest::summonitem(70798); # Item: Darkraider's Sleeves
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70805);
+         quest::summonitem(70805); # Item: Spiritkin Sleeves
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70763);
+         quest::summonitem(70763); # Item: Sunrider's Sleeves
          }
       }
       if (plugin::check_handin(\%itemcount, 51454 => 2, 51440 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70846);
+         quest::summonitem(70846); # Item: Ragebound Chain Cap
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70797);
+         quest::summonitem(70797); # Item: Darkraider's Coif
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70804);
+         quest::summonitem(70804); # Item: Spiritkin Cap
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70762);
+         quest::summonitem(70762); # Item: Sunrider's Hat
          }
       }
       if (plugin::check_handin(\%itemcount, 51455 => 3, 51441 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70851);
+         quest::summonitem(70851); # Item: Ragebound Chain Chestguard
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70802);
+         quest::summonitem(70802); # Item: Darkraider's Vest
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70809);
+         quest::summonitem(70809); # Item: Spiritkin Tunic
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70767);
+         quest::summonitem(70767); # Item: Sunrider's Vest
          }
       }
       if (plugin::check_handin(\%itemcount, 51456 => 3, 51442 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70852);
+         quest::summonitem(70852); # Item: Ragebound Chain Legguards
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70803);
+         quest::summonitem(70803); # Item: Darkraider's Pants
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70810);
+         quest::summonitem(70810); # Item: Spiritkin Leggings
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70768);
+         quest::summonitem(70768); # Item: Sunrider's Pants
          }
       }
       if (plugin::check_handin(\%itemcount, 51457 => 2, 51443 => 1 )) {
          if($class eq "Berserker") {
-         quest::summonitem(70850);
+         quest::summonitem(70850); # Item: Ragebound Chain Boots
          }
          elsif($class eq "Rogue") {
-         quest::summonitem(70801);
+         quest::summonitem(70801); # Item: Darkraider's Boots
          }
          elsif($class eq "Shaman") {
-         quest::summonitem(70808);
+         quest::summonitem(70808); # Item: Spiritkin Slippers
          }
          elsif($class eq "Ranger") {
-         quest::summonitem(70766);
+         quest::summonitem(70766); # Item: Sunrider's Boots
          }
       }
     else {

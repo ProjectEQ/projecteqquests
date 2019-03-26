@@ -21,15 +21,15 @@ function event_waypoint_arrive(e)
 		eq.clear_proximity();
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(118208)) then
 			eq.attack_npc_type(118208);
-			eq.signal(118207,1);
+			eq.signal(118207,1); -- NPC: #Fergul_Frostsky
 		end
 	end
 end
 
 -- if Player enter the proximity then spawns the 2 giants and clear proximity.
 function event_enter(e)
-	eq.spawn2(118207,0,0,-2397,-2615,294,0);
-	eq.spawn2(118208,0,0,-2391,-2569,299,0);
+	eq.spawn2(118207,0,0,-2397,-2615,294,0); -- NPC: #Fergul_Frostsky
+	eq.spawn2(118208,0,0,-2391,-2569,299,0); -- NPC: #Gralk_Dwarfkiller
 	eq.clear_proximity();
 end
 

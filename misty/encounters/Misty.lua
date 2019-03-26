@@ -251,7 +251,7 @@ function Deputy_Timer(e)
 		eq.depop();
 		eq.stop_timer("Agro");
 	elseif (e.timer == "Fear") then
-		e.self:CastSpell(3070, e.self:GetTarget():GetID());
+		e.self:CastSpell(3070, e.self:GetTarget():GetID()); -- Spell: Timeless Panic
 	elseif (e.timer == "Convo_") then
 		e.self:Say("Funny Crysta, like I would give up those precious goods!");
 		e.self:Shout("GUARDS!");
@@ -378,11 +378,11 @@ function Deputy_Timer(e)
 		eq.spawn2(33168,0,0,e.self:GetX()+30, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading());
 		e.self:Shout("Come forth Minions!");
 	elseif (e.timer == "Fog") then
-		e.self:CastSpell(7316, e.self:GetTarget():GetID());
+		e.self:CastSpell(7316, e.self:GetTarget():GetID()); -- Spell: Venomous Fog
 	elseif (e.timer == "Curse") then
-		e.self:CastSpell(7313, e.self:GetTarget():GetID());
+		e.self:CastSpell(7313, e.self:GetTarget():GetID()); -- Spell: Spider's Curse
 	elseif (e.timer == "Cloud") then
-		e.self:CastSpell(7757, e.self:GetTarget():GetID());	
+		e.self:CastSpell(7757, e.self:GetTarget():GetID()); -- Spell: Cloud of Viscous Venom	
 	elseif (e.timer == "Root") then
 		e.self:SetPseudoRoot(true);
 		eq.stop_timer("Root");
@@ -682,7 +682,7 @@ end
 
 function Crysta_Say(e)
 	if (e.message:findi("hail") and healed == false and phase1 == false) then
-		e.self:CastSpell(6495, e.other:GetID());
+		e.self:CastSpell(6495, e.other:GetID()); -- Spell: Spiritual Wake
 		healed=true;
 		phase1=true;
 	end

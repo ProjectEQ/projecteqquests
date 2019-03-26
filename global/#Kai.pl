@@ -5,14 +5,14 @@ sub EVENT_SAY {
 			quest::say("You got me! Your next target is Brutus.");
 			quest::updatetaskactivity(222,0);
 			if(!defined $qglobals{halloween_ratter_complete}){
-				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),1);
+				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),1); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete",0,5,"D30");
 			}
 			if(defined $qglobals{halloween_ratter_complete}){
 				$client->Message(0, "You have already claimed a reward for this activity or a higher and do not qualify for another.");
 			}
 			if(!defined $qglobals{halloween_ratter_complete_pvp} && $pcpvp == 1){
-				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),1);
+				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),1); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete_pvp",0,5,"D30");
 			}
 			if(defined $qglobals{halloween_ratter_complete_pvp} && $pcpvp == 1){

@@ -6,7 +6,7 @@ sub EVENT_SAY {
 
 sub EVENT_SIGNAL {
 	quest::say("I hope you're planning on cleaning that spill up for us, Olam!");
-	quest::signalwith(160219,9,9000);
+	quest::signalwith(160219,9,9000); # NPC: Lyneea_Doyle
 }
 
 #END of FILE Zone:katta  ID:160257 -- Jacob_Rutledge 

@@ -12,11 +12,11 @@ sub EVENT_TIMER {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::start(24);
-		quest::signalwith(119168,1,300);
+		quest::signalwith(119168,1,300); # NPC: Corporal_Hlash
 	}
 	if($signal == 2) {
 		quest::say("Woah! we're being ambushed!!");
-		quest::signalwith(119168,2,300);
+		quest::signalwith(119168,2,300); # NPC: Corporal_Hlash
 	}
 }
 

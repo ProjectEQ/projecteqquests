@@ -35,7 +35,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20376 => 1, 20383 => 1, 20377 => 1, 20538 => 1)) {
     quest::emote("looks shocked as you hand him the pages and the mystical lute. 'I will put on a symphony the likes of which the gods have never seen. Thank you so much, $name. Please take this sword as a token of my gratitude.");
-    quest::summonitem(20542);
+    quest::summonitem(20542); # Item: Singing Short Sword
     quest::exp(350000);
   }
   plugin::return_items(\%itemcount);

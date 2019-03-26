@@ -42,12 +42,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,20419 => 1)){
    quest::say("Ah, it appears you have learned to control your fear while ridding us of another fool.  Very well done. Take this Cudgel and return to me after sharpening it in a forge, along with a large Briar snake skin, and a petrified eyeball.");
-   quest::summonitem(20414);
+   quest::summonitem(20414); # Item: Rusty Templar of Fright Cudgel
 }
    if(plugin::check_handin(\%itemcount,20415 => 1, 20355 => 1, 20402 => 1)){
    quest::say("Very good work. Here is the Cudgel, use it well!");
-   quest::summonitem(20417);
-   quest::faction(265,10);
+   quest::summonitem(20417); # Item: Templar of Fright Cudgel
+   quest::faction(265,10); # Faction: Heretics
    quest::exp(500);
    }
    plugin::return_items(\%itemcount);

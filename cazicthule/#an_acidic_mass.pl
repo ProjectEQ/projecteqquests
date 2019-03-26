@@ -19,7 +19,7 @@ sub EVENT_HP {
         my $y = $npc->GetY();
         my $z = $npc->GetZ();
         my $h = $npc->GetHeading();
-        quest::spawn2(48004,0,0,$x - 10,$y,$z,$h);
+        quest::spawn2(48004,0,0,$x - 10,$y,$z,$h); # NPC: an_ooze
         quest::setnexthpevent(33);
     }
     if($hpevent == 33) {
@@ -27,8 +27,8 @@ sub EVENT_HP {
         my $y = $npc->GetY();
         my $z = $npc->GetZ();
         my $h = $npc->GetHeading();
-        quest::spawn2(48001,0,0,$x - 10,$y,$z,$h);
-        quest::spawn2(48001,0,0,$x + 10,$y,$z,$h);
+        quest::spawn2(48001,0,0,$x - 10,$y,$z,$h); # NPC: a_swirling_ooze
+        quest::spawn2(48001,0,0,$x + 10,$y,$z,$h); # NPC: a_swirling_ooze
     }
 }
 

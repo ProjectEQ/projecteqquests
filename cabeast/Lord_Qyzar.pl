@@ -18,7 +18,7 @@ sub EVENT_SAY {
   }
  elsif($text=~/matter of betrayal/i){ #Test of the Betrayal (Greenmist Quest 5/8)
   quest::say("One of our agents, a hero by the name of Goxnok, has found evidence that the book entitled 'Charasis' has been taken from this temple and is to be delivered to an unknown foe in the Outlands. Go at once to the lower levels of the temple and greet Goxnok. Hurry, before he departs!");
-  quest::spawn2(106301,0,0,-113,1000,-23.9,60);
+  quest::spawn2(106301,0,0,-113,1000,-23.9,60); # NPC: an_Iksar_crusader
   }
  elsif($text=~/visceral dagger/i){ #Test of the Hero (Greenmist Quest 6/8)
   quest::say("The visceral dagger was an ancient torturing weapon. I do not know much of it other than that it was forged by a member of the Brood of Kotiz, but that was ages ago. He is surely dust by now.");
@@ -32,8 +32,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","6","1"); 
   quest::exp(1600);
   quest::ding();
-  quest::faction(442,20);
-  quest::faction(441,10);
+  quest::faction(442,20); # Faction: Crusaders of Greenmist
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 1729 => 1, 1730 => 1, 5124 => 1)) { #Test of Betrayal (Greenmist Quest 5/8)
   quest::say("Congratulations! You are now a true crusader, but there is no time for celebration. We have lost two of our operatives. Crusaders Golin and Fodcod were dispatched to seek out an ancient artifact, the [visceral dagger]. Where they have gone, I do not know. They have been gone far too long. Find them and return the dagger to me with your crusader khukri and you shall be a hero.");
@@ -41,8 +41,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","0","1"); 
   quest::exp(2000);
   quest::ding();
-  quest::faction(442,20);
-  quest::faction(441,10);
+  quest::faction(442,20); # Faction: Crusaders of Greenmist
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 7324 => 1, 5125 => 1)) { #Test of the Hero (Greenmist Quest 6/8)
   quest::emote("gazes in astonishment at the dagger. 'Ahhh!! You have brought the sacred visceral dagger back to the Temple of Terror. Let all be aware that the great $name has returned to Cabilis a hero!! You now wield the weapon of a hero. Hail, $name, hero of the Crusaders of Greenmist.");
@@ -50,8 +50,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","0","3"); 
   quest::exp(3000);
   quest::ding();
-  quest::faction(442,20);
-  quest::faction(441,10);
+  quest::faction(442,20); # Faction: Crusaders of Greenmist
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
  plugin::return_items(\%itemcount);

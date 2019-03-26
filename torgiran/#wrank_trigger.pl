@@ -4,7 +4,7 @@ my $ocounter;
 sub EVENT_SPAWN {
    $wcounter = 0;
    $ocounter = 0;
-   quest::spawn2(226066,0,0,479,197,3,382);
+   quest::spawn2(226066,0,0,479,197,3,382); # NPC: #Overseer_Wrank
    }
 
 sub EVENT_SIGNAL {
@@ -21,18 +21,18 @@ sub EVENT_SIGNAL {
     $wcounter += 4;
 }
   if ($wcounter == 20 ) { 
-    quest::spawn2(226109,0,0,109,62,2.7,430);
-    quest::spawn2(226203,0,0,109,195,2.7,430);
-    quest::spawn2(226202,0,0,220,195,2.7,430);
-    quest::spawn2(226201,0,0,220,62,2.7,430); 
+    quest::spawn2(226109,0,0,109,62,2.7,430); # NPC: #Captain_Nago
+    quest::spawn2(226203,0,0,109,195,2.7,430); # NPC: #Captain_Lung
+    quest::spawn2(226202,0,0,220,195,2.7,430); # NPC: #Captain_Lkai
+    quest::spawn2(226201,0,0,220,62,2.7,430); # NPC: #Captain_Flang 
     $wcounter = 0;
 }
   if ($signal == 33) {
     $ocounter += 1;
 }
   if ($ocounter == 4 ) {
-    quest::signalwith(226066,66,0);
-    quest::spawn2(226095,0,0,479,197,3,382);
+    quest::signalwith(226066,66,0); # NPC: #Overseer_Wrank
+    quest::spawn2(226095,0,0,479,197,3,382); # NPC: Overseer_Wrank
     quest::depop_withtimer();
     $ocounter = 0;
 }

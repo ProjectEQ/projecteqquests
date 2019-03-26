@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Say("Oh!! Will you? Well then, go into the Plains of Karana and search for a man named Talym Shoontar. He is a murderer of Norrath's creatures. He must be stopped! Bring me his head and you shall have your flute.");
 	elseif(e.message:findi("join the unkempt")) then
 		e.self:Say("Then please wait outside for Master Jale Phlintoes. He will be arriving soon.");
-		eq.unique_spawn(14172, 109, 0, -3723, -5561, 0,0);
+		eq.unique_spawn(14172, 109, 0, -3723, -5561, 0,0); -- NPC: Jale_Phlintoes
 	end
 end
 

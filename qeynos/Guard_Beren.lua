@@ -11,7 +11,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 5) then
 		e.self:Say("How are they biting, little brother?");
-		eq.signal(1159,1);
+		eq.signal(1159,1); -- NPC: Faren
 	end
 end
 

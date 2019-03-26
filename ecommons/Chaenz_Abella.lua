@@ -92,7 +92,7 @@ function event_trade(e)
       e.self:Say("Here is a token of my appreciation. Should you lose your Wayfarers Brotherhood Emblem or misplace it, I or Barstre, Selephra, Ruanya, Teria, or Vual will replace it.");
 
       e.other:Ding();
-      e.other:SummonItem(40999);
+      e.other:SummonItem(40999); -- Item: Wayfarers Brotherhood Emblem
       
       eq.target_global("Wayfarer", "4", "F", 0, e.other:CharacterID(), 0);
     end

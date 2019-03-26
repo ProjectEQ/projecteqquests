@@ -10,16 +10,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13369 => 1)) {
     quest::say("Good work. That is one less troll slayer. My people shall learn of your good deed. Please search for the slayer captain. He must be stopped.");
-    quest::faction(374,20);
+    quest::faction(374,20); # Faction: Oggok Resident
     quest::exp(200);
     quest::givecash(0,0,7,5);
   }
   if (plugin::check_handin(\%itemcount, 13370 => 1)) {
     quest::say("'Oooh!! .. You have dispatched the slayer captain. It will take them time to reorganize the slayers. During this time the froglok foragers can gather more provisions for Guk. Please take this as a token of my people's appreciation. Your standing with my brethren has grown. As for Marda's information.. within Grobb lies my aide, Groak. He was captured. Tell him Glib sent you.");
-    quest::faction(374,20);
+    quest::faction(374,20); # Faction: Oggok Resident
     quest::exp(200);
     quest::givecash(0,0,1,0);
-    quest::summonitem(quest::ChooseRandom(17928,13371));
+    quest::summonitem(quest::ChooseRandom(17928,13371)); # Item(s): Forager Bag (17928), Hopper Spear (13371)
   }
   plugin::return_items(\%itemcount);
 }

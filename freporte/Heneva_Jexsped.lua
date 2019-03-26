@@ -9,7 +9,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18855})) then
 		e.self:Say("Welcome, friend. I see more than a slight glimmer of hate in your eyes. Good... for we have much work to do.");
-		e.other:SummonItem(13565);
+		e.other:SummonItem(13565); -- Item: Old Stained Robe*
 		e.other:Ding();
 		e.other:Faction(271,100,0); -- Dismal Rage
 		e.other:Faction(281,-15,0); -- Knights of Truth

@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_WAYPOINT_ARRIVE {
     if($wp == 26) { 
-    quest::signalwith(288088,1,0);
+    quest::signalwith(288088,1,0); # NPC: #gzifa_trigger
 
       }
     }

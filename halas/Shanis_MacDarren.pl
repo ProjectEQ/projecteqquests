@@ -14,7 +14,7 @@ sub EVENT_SAY {
 	if($text =~ /hail/i) {
 		if(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >= 1) {
 		quest::emote("looks around briefly, 'It's a great day out here today, it almost makes me want to be out on the tundra enjoying it!' She continues to admire the day for a moment more. 'What can I help you with today? What's that? Something about your soul gem? Hmm . . . Let's see what we can do here. Here you go, but please take care of this one, they are not easy to create. You may wish to seek out Keras. He will be interested in one so young as you who has begun the process of learning to control and focus their rage.'");
-		quest::summonitem(11999);
+		quest::summonitem(11999); # Item: Raging Soul Shard
 		}
 	elsif($qglobals{berserk_epic} == undef) {
 		quest::say("Why, as I live and breathe this frigid air, have ye come to join our fine guild of berserkers?  The Bloodrage Brawlers are a fearsome collection of berserkers, indeed, me friend.  If ye be interested in joinin' up with us, read the note in yer inventory and then hand it to me!  Oh, and don't ye be forgetin' to ask me about that [tome] in yer inventory if ye want ta learn to use it!");

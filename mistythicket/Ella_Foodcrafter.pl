@@ -22,7 +22,7 @@ sub EVENT_SAY {
   }
   if (($text=~/two tasks/i) && (defined $qglobals{shiny_tin_bowl})) {
     quest::say("Well, ya ask before ya act. That's a good sign. What I need isn't easy to find. First, I need a mixture. Plain sounding enough but it's a special one. Cleanses the mind and focuses the earth's energies into a forest walker's mind. I don't know how to make it. I don't even know what it's called. I merely know it exists and we'll be needing it for our task. When ya do find how to make it ya can mix it in that bowl. Keep it when you're done, it's a good bowl.");
-	quest::summonitem(17860);
+	quest::summonitem(17860); # Item: Shiny Tin Bowl
 	quest::delglobal("shiny_tin_bowl");
   }
   if ($text=~/second task/i) {
@@ -37,11 +37,11 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 20473 => 1, 20460 => 1)) {
     quest::emote("smiles slowly as she works the mixture in the bowl and it starts to shine with power. 'This is... a piece of a lost magic item known as Nature's Gem. When restored to completeness I've heard its healing powers will be extraordinary. Take it now. I will take the bowl and hopefully do some good from my end. From here, you can go many ways but I can't guide your path step by step. The only advice I can give you is to look for ones such as yourself.'");
-    quest::summonitem(20462);
+    quest::summonitem(20462); # Item: Softly Glowing Stone
   }
 elsif (plugin::check_handin(\%itemcount, 20468 => 1)) {
 	quest::emote("hands you a scimitar she usually wears at her side. 'Thank you, $name. With this we can hold back the corruption. We have learned something new though. Not only is this work the responsibility of the lord of hatred alone. For some reason we cannot know the lord of disease has decided it worthy of his time to work in conjunction with Innoruuk. The spirits of the three main continents, Faydwer Antonica and Kunark, have been corrupted. Look for the corrupted forces of the land and heal them. When you have found them all then take my scimitar and the spirits to Xanuusus.'");
-    quest::summonitem(20440);
+    quest::summonitem(20440); # Item: Elaborate Scimitar
 }
     plugin::return_items(\%itemcount);
 }

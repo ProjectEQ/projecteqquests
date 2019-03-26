@@ -73,39 +73,39 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 8790 => 1, 8769 => 1)) { #I assume these were one.
 quest::emote("smiles warmly at $name");
 quest::say("Excellent work, friend.  I have sewn the Polished Jade Acorns into your leggings.  May they serve you as well as you have served the natural world.");
-quest::summonitem(8442);
+quest::summonitem(8442); # Item: Leggings of the Pine
 }
 
 #shark tooth sleeves and jade leaves -> Sleeves of the Pine
 if(plugin::check_handin(\%itemcount, 8796 => 1, 8795 => 1)) {
 quest::say("Marvelously done, my friend. I am pleased to know that the natural world has embraced and recognized you so. I have bound the moss thread to the Polished Jade Leaves and your sleeves are complete. Take them and wear them with the selfless knowledge that you are equal to all of nature’s most devoted warders.");
-quest::summonitem(8445);
+quest::summonitem(8445); # Item: Sleeves of the Pine
 }
 
 #mithril fern boots & 2x jade plates -> boots of the pine
 if(plugin::check_handin(\%itemcount, 8877 => 1, 8876 => 2)) {
 quest::say("Aaaah. . . these will do nicely. Lerian's gifts upon the hide that you have expertly sewn into the boots have proved an extra enchantment that allowed me to appropriately fit the plates onto the toes and sides of the boots. You have earned this reward justly and without a selfish nature or compromise of your dedication to nature. May they serve you as you have served the world that has granted them to you.");
-quest::summonitem(8758);
+quest::summonitem(8758); # Item: Boots of the Pine
 }
 
 #bracer of braided pine & jade blossoms -> bracer of the pine
 #text made up/altered from sleeves reward
 if(plugin::check_handin(\%itemcount, 8865 => 1, 8864 => 1)) {
 quest::say("Marvelously done, my friend. I am pleased to know that the natural world has embraced and recognized you so. I have bound the braided pine to the Polished Jade Blossoms and your bracer is complete. Take it and wear it with the selfless knowledge that you are equal to all of nature's most devoted warders.");
-quest::summonitem(8499);
+quest::summonitem(8499); # Item: Bracer of the Pine
 }
 
 #forest woven gloves & jade studs -> gloves of the pine
 if(plugin::check_handin(\%itemcount, 8871 => 1, 8870 => 1)) {
 quest::say("Well done, $name. The Jade Studs have been easily bound to the enchantment of the Forest Woven Gloves. Although you will not see bindings to hold the studs in-place, know that they are quite secure. Lerian's gifts are not to be underestimated, nor taken for granted. You have earned this item selflessly in displaying your protection of the natural order of this world, and in-turn, your ward has blessed you in many ways with the creation of this item. May it protect you as you have protected the land and order that forged it.");
-quest::summonitem(8757);
+quest::summonitem(8757); # Item: Gloves of the Pine
 }
 
 #shadowjade circlet & jade tear -> circlet of the pine
 #text made up/altered from sleeves reward
 if(plugin::check_handin(\%itemcount, 8883 => 1, 8882 => 1)) {
 quest::say("Marvelously done, my friend. I am pleased to know that the natural world has embraced and recognized you so. I have bound the shadowjade circlet to the Polished Jade Tear. Take it and wear it with the selfless knowledge that you are equal to all of nature's most devoted warders.");
-quest::summonitem(8759);
+quest::summonitem(8759); # Item: Circlet of the Pine
 }
 
 #return items

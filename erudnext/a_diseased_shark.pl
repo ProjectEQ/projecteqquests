@@ -11,10 +11,10 @@ sub EVENT_DEATH_COMPLETE {
     my $adj = plugin::RandomRange(1, 2);
 
     if ($adj == 1) {
-      quest::spawn2(24110, 15, 0, $x + $xoff, $y + $yoff, $z, $h);
+      quest::spawn2(24110, 15, 0, $x + $xoff, $y + $yoff, $z, $h); # NPC: a_young_shark
     }
     else {
-      quest::spawn2(24110, 15, 0, $x - $xoff, $y - $yoff, $z, $h);
+      quest::spawn2(24110, 15, 0, $x - $xoff, $y - $yoff, $z, $h); # NPC: a_young_shark
     }
   }
 }

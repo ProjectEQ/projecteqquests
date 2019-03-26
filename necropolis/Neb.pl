@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::signalwith(123105,99,1000);
+    quest::signalwith(123105,99,1000); # NPC: a_Paebala_Spirit_Talker
   }
   if ($text=~/chetari/i) {
     quest::say("Rika sa vi na Chetari aga val rak Zlandicar. The Chetari are an evil breed, shaped by Zlandicar. Asila sa vi ne Paebala ika so takina. They enslave the Paebala. Canti ri va ni makata ra Paebala. The Paebala revolted years ago. Mishi ro ka rilla vi ne graka sal ogoo mashan rina, villi rassa rassa ke! They are powerful in the ways of death, but they fear our goo friends, and our teeth are sharp! Rika re rika so malti fe isha kora, Chetari fa rish na
@@ -24,8 +24,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 26033 => 1, 26009 => 1)) {
     quest::say("Ika Paebala ma ri skasha, Neb`ri mi re skashi! The Paebala
 are joyful, Neb is joyful! Misu na tona Vaniki esa Zlandicar, no re Paebala soka mora Chetari, ika tu. With the death of Vaniki and Zlandicar, the Paebala can conquer the Chetari, and rule! Mika na so kaka rika, ug boro Neb`ri, ek val Vaniki ushta. Take this, it is Neb's fighting bone, and here, this key I took from Vaniki.");
-    quest::summonitem(26040);
-    quest::summonitem(28060);
+    quest::summonitem(26040); # Item: Neb's Warbone
+    quest::summonitem(28060); # Item: Jaled Dar's Tomb Key
     quest::exp(250000);
     quest::faction(463,50); #paebala
     quest::faction(462,-150); #chetari
@@ -33,7 +33,7 @@ are joyful, Neb is joyful! Misu na tona Vaniki esa Zlandicar, no re Paebala soka
   }
   if (plugin::check_handin(\%itemcount, 69341 => 1)) {
   quest::say("Ika vora isa, viia solta ian raka. Thank you for this concoction. Loka vula riluua zlandicar. We will use this on Zlandicar's allies. Wurna so vi re drikinavi wo isa maka. This will aide us greatly in our struggle against them. Wula vaa ria muta nish ala aknila nexona. Here is a sealed note to give to Nexona as proof of this delivery. Val na vi paebala yi no sa saka! All of the paebala thank you, tallone!"); #For Assist Nexona Quest
-  quest::summonitem(69344);
+  quest::summonitem(69344); # Item: Neb's Note
   quest::exp(10000);    
   }
   plugin::return_items(\%itemcount);

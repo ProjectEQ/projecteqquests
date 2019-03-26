@@ -1,4 +1,4 @@
 sub EVENT_DEATH_COMPLETE {
 
-quest::signalwith(204016,8,1);
+quest::signalwith(204016,8,1); # NPC: Thelin_Poxbourne
 }

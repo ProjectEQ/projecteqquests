@@ -18,13 +18,13 @@ sub EVENT_SAY {
     # Toolset Delivery (kael)
     quest::say("Wonderful, $name. Take this note to Kellek and he will give you the tools.");
     # Summon: Voucher for toolset
-    quest::summonitem(25279);
+    quest::summonitem(25279); # Item: Voucher for Toolset
   }
   if($text=~/undertake/i){
     # Spear Delivery (kael)
     quest::say("In the great divide there is a small outpost of kromrif. In that outpost you will find Bekerak, my client. I have acquired this new hunting spear for him and he may wish to test it out. Because of one simple mistake, once in my past, he thinks all of my wares are shoddy. I need the payment for the transaction still so don't let him get away without giving it to you. Take this voucher to Kellek and he will give you the spear.");
     # Summon: Voucher for Spear 
-    quest::summonitem(25280);
+    quest::summonitem(25280); # Item: Voucher for Spear
   }
   if($text=~/third client/i){
     # Mechanical Net Delivery (kael)
@@ -38,7 +38,7 @@ sub EVENT_SAY {
     # Mechanical Net Delivery (kael)
     quest::say("I will curse your immortal soul if you fail, $name. In the depths of the icy waters of the cobalt scar lives an outcast siren who preys upon her own kind. We have a deal, I will provide her with an excellent hunting net and she will provide me with a giant cloak made of the scales of her kind. Take this voucher to Kellek and deliver the net. Do whatever it takes to get my cloak.");
     # Summon: Voucher for Mechanical Net 
-    quest::summonitem(25281);
+    quest::summonitem(25281); # Item: Voucher for Mechanical Net
   }
 }
 
@@ -48,7 +48,7 @@ sub EVENT_ITEM {
     # Key to Cobalt Scar (skyshrine)
     quest::say("Here is the information your employer requested. Now be gone. I have more business to take care of.");
     # Summon: Message to Herald
-    quest::summonitem(28601);
+    quest::summonitem(28601); # Item: Message to Herald
    }
   # Handin: Receipt
   elsif(plugin::check_handin(\%itemcount, 20474 => 1)){
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
     quest::say("I assume the delivery went well? You can have these as payment. One of my customers just decided he does not wish to buy them. They are rather sturdy! I do have another task available if you wish to [undertake] it.");
     quest::exp(1000);
     # Summon: Engraved Bone Pauldrons
-    quest::summonitem(25062);
+    quest::summonitem(25062); # Item: Engraved Bone Pauldrons
    }
   # Handin: Giant Icewurm Talisman
   elsif(plugin::check_handin(\%itemcount, 25130 => 1)){
@@ -64,7 +64,7 @@ sub EVENT_ITEM {
     quest::say("He has reconsidered the offer, you say? This is most excellent! I hope this will be acceptable payment for your troubles, $name. My cash situation is not the best at this point in time. I do have a [third client] who needs delivery...");
     quest::exp(1500);
     # Summon: Bracer of Midnight
-    quest::summonitem(25061);
+    quest::summonitem(25061); # Item: Bracer of Midnight
    }
   # Handin: Giant Siren Scale Cloak 
   elsif(plugin::check_handin(\%itemcount, 25110 => 1)){
@@ -72,14 +72,14 @@ sub EVENT_ITEM {
     quest::say("It is truly a sight to behold. This is the most fashionable cloak I have yet to see. Even King Tormax will be green with envy. This old bag has served me well, I hope you find it to your liking.");
     quest::exp(2000);
     # Summon: Wenglawks Manly Purse
-    quest::summonitem(17049);
+    quest::summonitem(17049); # Item: Wenglawks Manly Purse
   }
   # Handin: ?
   elsif(plugin::check_handin(\%itemcount, 29068 => 1) && ($platinum >= 100)) {
     # Quest: ?
     quest::say("Here is the information your employer requested. Now be gone. I have more business to take care of.");
     # Summon: ?
-    quest::summonitem(29626);
+    quest::summonitem(29626); # Item: Dispelling device
   }
   elsif(plugin::check_handin(\%itemcount, 1722 => 1)){ #Helssen's Voucher
 	quest::say("So you are the mercenary I have been hearing about! Not what I expected. Anyway, here is your reward. Carry it well. Also, this noble's seal will prove your loyalty to anyone who is skeptical.");

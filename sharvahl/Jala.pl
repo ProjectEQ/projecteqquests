@@ -13,13 +13,13 @@ quest::say("Wonderful! I'm not much of a hunter myself, so as you can see it can
 sub EVENT_ITEM { 
 if (plugin::check_handin(\%itemcount, 2789 =>4 )) {
   quest::say("Woohoo! Thank you so much $name! Hey, maybe you would like to try your hand at weaving as well. If you combine the silks in that loom over there, you can make some decent thread to work with. Make four of them and bring them to me. I will judge your craftsmanship.");
-quest::faction(1513,5);
+quest::faction(1513,5); # Faction: Guardians of Shar Vahl
 quest::exp(1000);
 }
 
 if (plugin::check_handin(\%itemcount,  2791=>4 )) {
 quest::say("Not bad at all! You definitely have some hidden talent there $name. Keep at it and you may just become a master tailor yourself. Here, take this with you. It will help protect you from the nasty bite of the Xakra worms.");
-quest::summonitem(quest::ChooseRandom(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012)); 
+quest::summonitem(quest::ChooseRandom(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012)); # Item(s): Cloth Cap (1001) 
 quest::exp(1000);
 }
 plugin::return_items(\%itemcount);

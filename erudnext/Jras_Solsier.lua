@@ -13,19 +13,19 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13825})) then
 		e.self:Say("You have served us well. The harmony of the forest shall be preserved. I have word that theses infidels were all working for one man. Find me evidence pertaining to this man. Surely one of these poachers has something which could aid in finding this man. We must stop him to stop the poachers. Go in peace.");
-		e.other:SummonItem(10004);
+		e.other:SummonItem(10004); -- Item: Copper Band
 		e.other:Ding();
-		e.other:Faction(298,20,0);
-		e.other:Faction(266,20,0);
-		e.other:Faction(265,-20,0);
+		e.other:Faction(298,20,0); -- Faction: Peace Keepers
+		e.other:Faction(266,20,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-20,0); -- Faction: Heretics
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13913})) then
 		e.self:Say("You found the man?  That is excellent work, young Paladin, here take this for your trouble and we thank you once again.");
-		e.other:SummonItem(15011);
+		e.other:SummonItem(15011); -- Item: Spell: Holy Armor
 		e.other:Ding();
-		e.other:Faction(298,20,0);
-		e.other:Faction(266,20,0);
-		e.other:Faction(265,-20,0);
+		e.other:Faction(298,20,0); -- Faction: Peace Keepers
+		e.other:Faction(266,20,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-20,0); -- Faction: Heretics
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

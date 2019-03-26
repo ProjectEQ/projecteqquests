@@ -41,31 +41,31 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 5194 => 1, 5192 => 1, 5193 => 1, 4488 => 1)) { #headband
-    quest::summonitem(3775);
+    quest::summonitem(3775); # Item: Steel Threaded Headband
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 5197 => 1, 5195 => 1, 4489 => 1, 5196 => 1)) { #gi
-    quest::summonitem(3776);
+    quest::summonitem(3776); # Item: Steel Threaded Gi
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 5244 => 1, 5198 => 1, 4490 => 1, 5199 => 1)) { #arm wraps
-    quest::summonitem(3777);
+    quest::summonitem(3777); # Item: Steel Threaded Arm Wraps
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4491 => 1, 5247 => 1, 5245 => 1, 5246 => 1)) { #leggings
-    quest::summonitem(3778);
+    quest::summonitem(3778); # Item: Steel Threaded Pants
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 5248 => 1, 5249 => 1, 4492 => 1)) { #shawl
-    quest::summonitem(3779);
+    quest::summonitem(3779); # Item: Steel Threaded Shawl
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 5251 => 1, 5250 => 1, 4493 => 1)) { #wrist wraps
-    quest::summonitem(3780);
+    quest::summonitem(3780); # Item: Steel Threaded Wrist Wraps
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4494 => 1, 5252 => 1, 5253 => 1)) { #sandals
-    quest::summonitem(3781);
+    quest::summonitem(3781); # Item: Steel Threaded Sandals
     quest::exp(10000);
      } 
   plugin::return_items(\%itemcount);

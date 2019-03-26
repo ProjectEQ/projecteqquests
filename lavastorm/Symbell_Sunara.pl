@@ -11,7 +11,7 @@ sub EVENT_ITEM {
     }
     else {
       quest::say("I have no use for this, $name.");
-      quest::summonitem(13418);
+      quest::summonitem(13418); # Item: Gnome Meat
     }
   }
   plugin::return_items(\%itemcount);

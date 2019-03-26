@@ -18,13 +18,13 @@ sub EVENT_ITEM{
 
 sub EVENT_HP {
 	if($hpevent == 15) {
-		quest::spawn2(172187,0,0,$x,$y,$z,$h);
+		quest::spawn2(172187,0,0,$x,$y,$z,$h); # NPC: #Kerzar_Clawtore
 		quest::depop();
 	}
 }
 
 sub EVENT_DEATH_COMPLETE {
    if(defined $qglobals{vampyre_vahshir_combat}){
-		quest::unique_spawn(172187,0,0,$x,$y,$z,$h);
+		quest::unique_spawn(172187,0,0,$x,$y,$z,$h); # NPC: #Kerzar_Clawtore
    }
 }

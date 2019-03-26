@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::say("DAMN YOU CHARLIE BROWN! YOU RATTED ME OUT!");
-	quest::signalwith(20260,6);
+	quest::signalwith(20260,6); # NPC: ##Jack_Lanturn
 }

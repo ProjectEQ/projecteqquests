@@ -30,27 +30,27 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4494 => 1, 4675 => 1, 4676 => 1, 4677 => 1)) { #cap
-    quest::summonitem(3697);
+    quest::summonitem(3697); # Item: Cap of Enrapturement
     quest::exp(10000);   
   }
   if(plugin::check_handin(\%itemcount, 4488 => 1, 4678 => 1, 4679 => 1, 4680 => 1)) { #robe
-    quest::summonitem(3698);
+    quest::summonitem(3698); # Item: Robe of Enrapturement
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4489 => 1, 4681 => 1, 4682 => 1, 4683 => 1)) { #sleeves
-    quest::summonitem(3699);
+    quest::summonitem(3699); # Item: Sleeves of Enrapturement
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4490 => 1, 4684 => 1, 4685 => 1, 4686 => 1)) { #pants
-    quest::summonitem(3700);
+    quest::summonitem(3700); # Item: Pants of Enrapturement
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4491 => 1, 4687 => 1, 4688 => 1)) { #shawl
-    quest::summonitem(3701);
+    quest::summonitem(3701); # Item: Shawl of Enrapturement
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4492 => 1, 4689 => 1, 4690 => 1)) { #bracer
-    quest::summonitem(3702);
+    quest::summonitem(3702); # Item: Bracer of Enrapturement
     quest::exp(10000);
   }
   plugin::return_items(\%itemcount);

@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("That was fun!");
-	quest::signal(63109,0);
+	quest::signal(63109,0); # NPC: Halloween_Trigger
 }

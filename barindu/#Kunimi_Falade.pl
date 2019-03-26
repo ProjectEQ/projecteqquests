@@ -32,7 +32,7 @@ sub EVENT_ITEM {
    if (defined $qglobals{bic_bar} && $qglobals{bic_bar} == 5) {
  quest::emote("takes the ingredients and gets to work. Within a few minutes, she produces a viscous green liquid. Plucking a bunch of fruit from the nearby plant, she coats the fruit in the poison.");
  quest::say("That should do it. I can't be positive that this will do more than give Ixvet an upset stomach, but we can hope. Please take this to Proteri Amari.");
- quest::summonitem(64006);
+ quest::summonitem(64006); # Item: Poisoned Fruit
  }
  }
  plugin::return_items(\%itemcount); 

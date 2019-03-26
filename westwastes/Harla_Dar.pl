@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   if ($faction <= 4) {
     if (plugin::check_handin(\%itemcount, 27260 => 1)) {
       quest::say("This...this is not what I had hoped for. My whelp is lost, but I take some comfort in knowing that you helped destroy his killer. Zlandicar has been a blight upon our race since the beginning. Here is your reward, as I promised. It will protect you in more ways than are obvious. Leave me now, it is time to mourn.");
-      quest::summonitem(27261);
+      quest::summonitem(27261); # Item: Shroud of the Dar Brood
       quest::exp(150000);
       quest::faction(430,10);   #Claws of Veeshan
       quest::faction(436,10);  #Yelinak

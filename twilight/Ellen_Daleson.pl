@@ -29,25 +29,25 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5850 => 1, 5849 => 1, 5848 => 1, 4489 => 1)) { #belt
-    quest::summonitem(3957);
+    quest::summonitem(3957); # Item: Woodsman's Girdle
     quest::emote("smiles at you.");
     quest::say("Thank You! Here is your payment.");
     quest::exp(25000);
   }
   if (plugin::check_handin(\%itemcount, 5844 => 1, 5698 => 1, 4492 => 1, 5699 => 1)) { #cape
-    quest::summonitem(3954);
+    quest::summonitem(3954); # Item: Woodsman's Cape
   }
   if (plugin::check_handin(\%itemcount, 4494 => 1, 5981 => 1, 5847 => 1)) { #choker
-    quest::summonitem(3956);
+    quest::summonitem(3956); # Item: Woodsman's Gorget
   }
   if (plugin::check_handin(\%itemcount, 5845 => 1, 4493 => 1, 5846 => 1)) { #gaunts
-    quest::summonitem(3955);
+    quest::summonitem(3955); # Item: Woodsman's Gauntlets
   }
   if (plugin::check_handin(\%itemcount, 5690 => 1, 4488 => 1, 5691 => 1)) { #mantle
-    quest::summonitem(3950);
+    quest::summonitem(3950); # Item: Woodsman's Mantle
   }
   if (plugin::check_handin(\%itemcount, 4491 => 1, 5696 => 1, 5697 => 1)) { #mask
-    quest::summonitem(3953);
+    quest::summonitem(3953); # Item: Woodsman's Mask
  
   }
 }

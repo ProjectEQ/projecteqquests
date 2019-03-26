@@ -49,25 +49,25 @@ sub EVENT_SIGNAL {
 sub EVENT_ITEM {
   if ($faction <= 3) { # Require warmly and greater faction
     if (plugin::check_handin(\%itemcount, 25805 => 3, 24928 => 1)) { # tunic
-      quest::summonitem(31043);
+      quest::summonitem(31043); # Item: Breastplate of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24930 => 1)) { #sleeves
-      quest::summonitem(31044);
+      quest::summonitem(31044); # Item: Vambraces of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24929 => 1)) { #legs
-      quest::summonitem(31047);
+      quest::summonitem(31047); # Item: Greaves of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24934 => 1)) { #gloves 
-      quest::summonitem(31046);
+      quest::summonitem(31046); # Item: Gauntlets of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24933 => 1)) { #cap
-      quest::summonitem(31042);
+      quest::summonitem(31042); # Item: Crown of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25836 => 3, 24932 => 1)) { #bracers 
-      quest::summonitem(31045);
+      quest::summonitem(31045); # Item: Bracers of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24931 => 1)) { # boots 
-      quest::summonitem(31048);
+      quest::summonitem(31048); # Item: Boots of Forbidden Rites
     }
     else {
       plugin::return_items(\%itemcount);

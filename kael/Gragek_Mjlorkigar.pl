@@ -46,7 +46,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #requires ally Kromzek faction
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24912 => 1)) { # cap
-      quest::summonitem(25363);
+      quest::summonitem(25363); # Item: Forest Stalker's Coif
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24907 => 1)) { # bp
-      quest::summonitem(25364);
+      quest::summonitem(25364); # Item: Forest Stalker's Breastplate
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -66,7 +66,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24909 => 1)) { # sleeves
-      quest::summonitem(25365);
+      quest::summonitem(25365); # Item: Forest Stalker's Vambraces
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -76,7 +76,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24911 => 1)) { # wrist
-      quest::summonitem(25366);
+      quest::summonitem(25366); # Item: Forest Stalker's Bracer
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -86,7 +86,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24913 => 1)) { # gloves
-      quest::summonitem(25367);
+      quest::summonitem(25367); # Item: Forest Stalker's Gauntlets
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -96,7 +96,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24908 => 1)) { # legs
-      quest::summonitem(25368);
+      quest::summonitem(25368); # Item: Forest Stalker's Greaves
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek
@@ -106,7 +106,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24910 => 1)) { # boots
-      quest::summonitem(25369);
+      quest::summonitem(25369); # Item: Forest Stalker's Boots
       quest::exp(150000);
       quest::faction(429,20); # King Tormax
       quest::faction(448,20); # Kromzek

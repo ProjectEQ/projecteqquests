@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     return 1;
   }
   quest::say("Aieee! Beastie huntin' fer us! Le's go! You give me back da contract when you had nuff beasties, yub. Me quit then, an' call no more beasties. I wait a minute so you make ready. Then ya follow me, and I take ya to da cave where we find beasties..");
-  quest::summonitem(28703);
+  quest::summonitem(28703); # Item: North Caller Contract
   quest::settimer("nprep",60);
 }
 

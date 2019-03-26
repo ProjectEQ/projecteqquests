@@ -4,7 +4,7 @@ sub EVENT_SAY {
   }
   if($text=~/key/i && $faction <= 5) {
     quest::say("Uggggg. Take dis keyz.");
-    quest::summonitem(6378);
+    quest::summonitem(6378); # Item: Bone Crafted Key
   }
 }
 

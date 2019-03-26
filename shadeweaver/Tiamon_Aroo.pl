@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30601 => 4)) {
     quest::say("Well done! You have brought me plenty of claws. I have enough now to make a needle for you. May it serve you well.");
     quest::exp(750);
-    quest::summonitem(30617);
+    quest::summonitem(30617); # Item: Claw Needle
   }
   plugin::return_items(\%itemcount);
 }

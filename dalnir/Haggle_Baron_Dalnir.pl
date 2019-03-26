@@ -9,7 +9,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13051 => 1, 13063 => 1, 3888 => 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)
   quest::emote("stares at the broken blade for some time. After a few moments of studying, the apparition begins to draw and scribble on the parchment. He works with amazing speed as the memories from his past flood from his quill. The diagrams and runes that etch the surface of the parchment begin to glow. The legendary Haggle Baron rolls the parchment and hands it to you. Smiling, he bows deeply and quickly fades away.");
-  quest::summonitem(3890);
+  quest::summonitem(3890); # Item: Greenmist Design Pattern
   quest::ding();
   quest::depop();
  }

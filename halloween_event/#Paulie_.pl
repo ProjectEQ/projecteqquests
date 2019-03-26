@@ -13,14 +13,14 @@ sub EVENT_SAY {
 			quest::say("I can't believe you beat me! You should see Roosevelt now.");
 			quest::updatetaskactivity(222,13);
 			if($qglobals{halloween_ratter_complete} < 13){
-				quest::summonitem(85062);
+				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				quest::setglobal("halloween_ratter_complete",13,5,"D30");
 			}
 			if($qglobals{halloween_ratter_complete} > 12){
 				$client->Message(0, "You have already claimed a reward for this activity or a higher and do not qualify for another.");
 			}
 			if($qglobals{halloween_ratter_complete_pvp} < 13 && $pcpvp == 1){
-				quest::summonitem(124688);
+				quest::summonitem(124688); # Item: Peace Be With You
 				quest::setglobal("halloween_pvp_paulie",1,5,"D30");
 				quest::setglobal("halloween_ratter_complete_pvp",13,5,"D30");
 			}

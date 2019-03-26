@@ -46,14 +46,14 @@ sub EVENT_ITEM
 				{
 					my $char_id = $ent->CharacterID();
 					$ent->KeyRingAdd(29215);
-					$ent->SummonItem(29215);
+					$ent->SummonItem(29215); # Item: Completed Diaku Emblem
 					quest::targlobal("pop_alt_access_potactics", "1", "F", 0, $char_id, 0);
 				}
 			}
 		}
 		
-		quest::faction(1609, 10);
-		quest::faction(1618, 10);		
+		quest::faction(1609, 10); # Faction: Askr the Lost
+		quest::faction(1618, 10); # Faction: Storm Guardians		
 	}
   plugin::return_items(\%itemcount);
 }#END of FILE Zone:postorms ID:210060 --Wembly_the_Forlorn.pl

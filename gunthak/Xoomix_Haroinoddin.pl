@@ -21,11 +21,11 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 21981 => 1, 21982 => 1, 21980 => 1, 21983 => 1)) {
     quest::say("I don't believe it. I never thought I would ever see these tools again. It is quite clear that you intend to help me and for that I am grateful. Here is a quick little something that put together for Golsodix. Bring him this and ask him for my gearbox. Once I have that, I think I can finally get home! Please come back soon!");
-    quest::summonitem(21984);
+    quest::summonitem(21984); # Item: Tinkered Contraption
   }
   elsif (plugin::check_handin(\%itemcount, 21985 => 1)) {
     quest::say("This is it indeed! It has everything I need in here to return home. Please take this charm that I have carried with me for many years. It has brought me good luck throughout my ordeal here and now that I am returning home, I do not think I will need it anymore. Safe travels to you $name, I must now ready my boat and finish my compass. May Lord Brell bless you forever!");
-    quest::summonitem(61003);
+    quest::summonitem(61003); # Item: Xoomix`s Mystical Charm
     quest::exp(100);
   }
   plugin::return_items(\%itemcount);

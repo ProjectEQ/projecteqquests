@@ -5,7 +5,7 @@ function Dream_Death(e)
     eq.depop_all(301034);
     
     -- Spawn Gaz the Gargantuan 301062
-    eq.spawn2(301062, 0, 0, 677, -419, -816, 0);
+    eq.spawn2(301062, 0, 0, 677, -419, -816, 0); -- NPC: #Gazz_the_Gargantuan
   end
 end
 
@@ -29,7 +29,7 @@ end
 
 function Gaz_Timer(e)
   if (e.timer == 'reset') then
-    eq.spawn2(301034, 0, 0, 677, -419, -816, 0);
+    eq.spawn2(301034, 0, 0, 677, -419, -816, 0); -- NPC: a_slumbering_beast
     eq.depop_all(301062);
   elseif(e.timer=='aeramp') then
     eq.stop_timer('aeramp');
@@ -48,7 +48,7 @@ function Gaz_Timer(e)
     eq.stop_timer('detonate');
     eq.set_timer('aeramp', 30 * 1000);
     
-    e.self:CastSpell(5822, 0);
+    e.self:CastSpell(5822, 0); -- Spell: Reflective Sheen
     
     e.self:RemoveAISpell(2490);
     
@@ -59,7 +59,7 @@ function Gaz_Timer(e)
     
     e.self:ModifyNPCStat("runspeed", 2);
   elseif(e.timer=='detonate') then
-    e.self:CastSpell(2490, 0);
+    e.self:CastSpell(2490, 0); -- Spell: Detonation
   end
 end
 

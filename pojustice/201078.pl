@@ -19,7 +19,7 @@ sub EVENT_SPAWN {
    #Depop any existing controllers
 	quest::depopall(201425);
    #Spawn the controller
-   quest::spawn2(201425, 0, 0, 194, -1120, 72, 0);
+   quest::spawn2(201425, 0, 0, 194, -1120, 72, 0); # NPC: #Event_Execution_Control
 }
 
 sub EVENT_SAY
@@ -39,7 +39,7 @@ sub EVENT_SAY
             $in_progress = 1;
             quest::settimer("delay_start", 30);
             #Tell Event_Execution_Control about it
-            quest::signalwith(201425, 1, 0);            
+            quest::signalwith(201425, 1, 0); # NPC: #Event_Execution_Control            
 
             #Cast Penance of Execution
             #quest::selfcast(1127); #required db edit targettype = 41
@@ -48,7 +48,7 @@ sub EVENT_SAY
               for ($count = 0; $count < $group->GroupCount(); $count++) {
                 $pc = $group->GetMember($count);
                 if ($pc->CalculateDistance($x,$y,$z) <= 50) {
-                  $pc->MovePC(201,254,-1053, 73, 300);
+                  $pc->MovePC(201,254,-1053, 73, 300); # Zone: lakerathe
                 }
               }
             }
@@ -108,7 +108,7 @@ sub EVENT_SAY
 		elsif($text=~/i seek knowledge/i) {
 			if (plugin::check_hasitem($client, 31842) && plugin::check_hasitem($client, 31796) && plugin::check_hasitem($client, 31960) && plugin::check_hasitem($client, 31845) && plugin::check_hasitem($client, 31844) && plugin::check_hasitem($client, 31846) ) { 
 				if (!plugin::check_hasitem($client, 31599)) {
-					quest::summonitem(31599);
+					quest::summonitem(31599); # Item: The Mark of Justice
 				} 
 			}elsif (plugin::check_hasitem($client, 31842) || plugin::check_hasitem($client, 31796) || plugin::check_hasitem($client, 31960) || plugin::check_hasitem($client, 31845) || plugin::check_hasitem($client, 31844) || plugin::check_hasitem($client, 31846) ) { 
 				quest::say("You have done well, mortal, but there are more trials yet for you to complete.");
@@ -127,7 +127,7 @@ sub EVENT_TIMER
    elsif ($timer eq "reset_execution") {
       quest::stoptimer("reset_execution");
       $hold_event = 0;
-      quest::signalwith(201078,0,5);
+      quest::signalwith(201078,0,5); # NPC: The_Tribunal Execution Trial
    }
 }
 
@@ -161,7 +161,7 @@ sub EVENT_ITEM
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_execution", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
-         quest::summonitem(31842);
+         quest::summonitem(31842); # Item: Mark of Execution
       }
       
       if(plugin::check_handin(\%itemcount, 31796 => 1)) {
@@ -169,7 +169,7 @@ sub EVENT_ITEM
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_flame", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
-         quest::summonitem(31796);
+         quest::summonitem(31796); # Item: Mark of Flame
       }
       
       if(plugin::check_handin(\%itemcount, 31960 => 1)) {
@@ -177,7 +177,7 @@ sub EVENT_ITEM
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_lashing", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
-         quest::summonitem(31960);
+         quest::summonitem(31960); # Item: Mark of Lashing
       }
       
       if(plugin::check_handin(\%itemcount, 31845 => 1)) {
@@ -185,7 +185,7 @@ sub EVENT_ITEM
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_stoning", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
-         quest::summonitem(31845);
+         quest::summonitem(31845); # Item: Mark of Stone
       }
       
       if(plugin::check_handin(\%itemcount, 31844 => 1)) {
@@ -193,7 +193,7 @@ sub EVENT_ITEM
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_torture", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
-         quest::summonitem(31844);
+         quest::summonitem(31844); # Item: Mark of Torture
       }
       
       if(plugin::check_handin(\%itemcount, 31846 => 1)) {
@@ -201,7 +201,7 @@ sub EVENT_ITEM
          quest::setglobal("pop_poj_tribunal", 1, 5, "F");
          quest::setglobal("pop_poj_hanging", 1, 5, "F");
          $client->Message(15,"You receive a character flag!");
-         quest::summonitem(31846);
+         quest::summonitem(31846); # Item: Mark of Suffocation
       }
    }
    plugin::return_items(\%itemcount);

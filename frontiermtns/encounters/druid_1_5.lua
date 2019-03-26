@@ -14,11 +14,11 @@ function King_Spawn(e)
 	eq.set_timer("shout2",7*60*1000);
 	eq.set_timer("shout3",7.5*60*1000);
 	seeker_rounds=1;
-	eq.spawn2(92201,0,0,2884,3320,345.5,0);
-	eq.spawn2(92201,0,0,2880,3325,345.5,0);
-	eq.spawn2(92201,0,0,2876,3330,345.5,0);
-	eq.spawn2(92201,0,0,2872,3335,345.5,0);
-	eq.spawn2(92201,0,0,2868,3340,345.5,0);
+	eq.spawn2(92201,0,0,2884,3320,345.5,0); -- NPC: #Goblin_Seeker
+	eq.spawn2(92201,0,0,2880,3325,345.5,0); -- NPC: #Goblin_Seeker
+	eq.spawn2(92201,0,0,2876,3330,345.5,0); -- NPC: #Goblin_Seeker
+	eq.spawn2(92201,0,0,2872,3335,345.5,0); -- NPC: #Goblin_Seeker
+	eq.spawn2(92201,0,0,2868,3340,345.5,0); -- NPC: #Goblin_Seeker
 	num_move=0;
 end
 
@@ -35,11 +35,11 @@ function King_Timer(e)
 		if (seeker_rounds > 10) then
 			eq.stop_timer("spawn_seekers");
 		end
-		eq.spawn2(92201,0,0,2878,3320,345.5,0);
-		eq.spawn2(92201,0,0,2876,3325,345.5,0);
-		eq.spawn2(92201,0,0,2874,3330,345.5,0);
-		eq.spawn2(92201,0,0,2876,3335,345.5,0);
-		eq.spawn2(92201,0,0,2878,3340,345.5,0);
+		eq.spawn2(92201,0,0,2878,3320,345.5,0); -- NPC: #Goblin_Seeker
+		eq.spawn2(92201,0,0,2876,3325,345.5,0); -- NPC: #Goblin_Seeker
+		eq.spawn2(92201,0,0,2874,3330,345.5,0); -- NPC: #Goblin_Seeker
+		eq.spawn2(92201,0,0,2876,3335,345.5,0); -- NPC: #Goblin_Seeker
+		eq.spawn2(92201,0,0,2878,3340,345.5,0); -- NPC: #Goblin_Seeker
 		seeker_rounds=seeker_rounds+1;
 	elseif (e.timer == "shout1") then
 		eq.stop_timer("shout1");
@@ -53,10 +53,10 @@ function King_Timer(e)
 	elseif (e.timer == "spawn_hiders") then
 		eq.stop_timer("spawn_hiders");
 		e.self:Shout("Contest start now!");
-		eq.spawn2(92202,0,0,2950.3,947.4,415.7,240);
-		eq.spawn2(92202,0,0,746.9,-1143,-258,266);
-		eq.spawn2(92202,0,0,-1891.8,-1803.4,13.11,226);
-		eq.spawn2(92202,0,0,-3431.6,3034.9,307.9,464);
+		eq.spawn2(92202,0,0,2950.3,947.4,415.7,240); -- NPC: #Goblin_Hider
+		eq.spawn2(92202,0,0,746.9,-1143,-258,266); -- NPC: #Goblin_Hider
+		eq.spawn2(92202,0,0,-1891.8,-1803.4,13.11,226); -- NPC: #Goblin_Hider
+		eq.spawn2(92202,0,0,-3431.6,3034.9,307.9,464); -- NPC: #Goblin_Hider
 		local npc_list = eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and npc:GetNPCTypeID() == 92202) then

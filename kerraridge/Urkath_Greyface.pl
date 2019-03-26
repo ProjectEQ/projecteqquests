@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1155 => 1)) {
     quest::say("Excellent! I can't believe you found it.  Here is the rrrreward that I promised you.");
-    quest::summonitem(2045);
+    quest::summonitem(2045); # Item: Worn Leather Shoulderpads
   }
 }
 #END of FILE Zone:kerraridge  ID:74090 -- Urkath_Greyface *Text is not correct, need correct text if anyone has it.

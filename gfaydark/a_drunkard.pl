@@ -20,10 +20,10 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 13347 => 1, 13349 => 1, 13348 => 1, 13350 => 1)) {
     quest::say("This is a sad day, but it was the just thing to do. The Nybright name will no longer be tarnished. Here you are my friend. This is a bit uncared for, but it is yours. My warrior days are over. Now go. I must be alone.");
-    quest::summonitem(quest::ChooseRandom(2314, 2007, 2005, 23359));
-    quest::faction(5001, 20);
-    quest::faction(226, 20);
-    quest::faction(279, 20);
+    quest::summonitem(quest::ChooseRandom(2314, 2007, 2005, 23359)); # Item(s): Bearskin Gloves (2314)
+    quest::faction(5001, 20); # Faction: Anti-mage
+    quest::faction(226, 20); # Faction: Clerics of Tunare
+    quest::faction(279, 20); # Faction: King Tearis Thex
     quest::exp(300);
   }
   plugin::return_items(\%itemcount);

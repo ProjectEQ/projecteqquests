@@ -74,7 +74,7 @@ sub EVENT_ITEM {
       quest::faction(241, 10);  # Deeppockets
       quest::faction(244, -10); # Ebon Mask
       quest::exp(5000);
-      quest::summonitem(quest::ChooseRandom(2108,2124,2118,2116,2120,2123));
+      quest::summonitem(quest::ChooseRandom(2108,2124,2118,2116,2120,2123)); # Item(s): Patchwork Sleeves (2108), Small Patchwork Boots (2124), Small Patchwork Cloak (2118), Small Patchwork Tunic (2116), Small Patchwork Sleeves (2120), Small Patchwork Pants (2123)
      }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 13282 => 1))) { # Scrap Metal
         quest::say("Great work!! We need this junk for something and we sure didn't need this rat sucking up any of our gems. Here. This is a Mining Cap 628. It's not much, but it is the mark of our miners and provides light for mining purposes. Hold onto it. You never know when we may call upon you to produce it.");
@@ -95,7 +95,7 @@ sub EVENT_ITEM {
       quest::faction(244, -10); # Ebon Mask
       quest::exp(5000);
       quest::givecash(0, 2, 0, 0);
-      quest::summonitem(quest::ChooseRandom(10009, 10015, 10500));
+      quest::summonitem(quest::ChooseRandom(10009, 10015, 10500)); # Item(s): Bead Necklace (10009)
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12162 => 1))) { # Gnome Take (Good)
       quest::say("Good work miner. This is a fantastic haul!! Those wrinkly little gnomes don't know what is going on. Here is your cut. Now get back to work.");
@@ -105,7 +105,7 @@ sub EVENT_ITEM {
       quest::faction(241, 10);  # Deeppockets
       quest::faction(244, -10); # Ebon Mask
       quest::exp(5000);
-      quest::summonitem(10005);
+      quest::summonitem(10005); # Item: Silver Stud
    }
    
    #do all other handins first with plugin, then let it do disciplines

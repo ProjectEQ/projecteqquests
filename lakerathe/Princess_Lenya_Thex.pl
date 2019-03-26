@@ -29,11 +29,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
 	if(plugin::check_handin(\%itemcount, 20008 => 1, 13108 => 1)){
 		quest::say("You have saved me!!  $name, you are my hero!!  Take my amulet and the royal suite key to Tearon in Highkeep.  Help put his soul at ease and he shall reward you.  Now I must go.. I am sorry I cannot transport you as well, but my powers are weak from much swimming.  Farewell, brave soul!");
-		quest::summonitem(13109);
+		quest::summonitem(13109); # Item: Royal Amulet of Thex
 		quest::ding();
-		quest::faction( 5001, 10);
-		quest::faction( 226, 10);
-		quest::faction( 279, 10);
+		quest::faction( 5001, 10); # Faction: Anti-mage
+		quest::faction( 226, 10); # Faction: Clerics of Tunare
+		quest::faction( 279, 10); # Faction: King Tearis Thex
 		quest::exp(500); 
 		quest::depop();
 	}

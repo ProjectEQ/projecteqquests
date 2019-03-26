@@ -14,7 +14,7 @@ sub EVENT_SAY {
   }
   if ($text=~/hunt dervish cutthroats/i) {
     quest::say("You will make a fine reserve!! Take this bag and fill it with Dervish Cutthroat Insignia Rings. When they are combined and returned to me you shall be accepted into the Reserve Freeport Militia!!");
-    quest::summonitem(17975);
+    quest::summonitem(17975); # Item: Bag for Cutthroat Rings
   }
 }
 
@@ -26,7 +26,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 12272 => 1)) {
     quest::say("Excellent work, $name!! You are quite formidable. Maybe soon you shall aid in our efforts to rid the Northern part of Freeport of the paladins!! Until then keep up the good work. Take this Armory Token to the Militia Armorer
 in the Militia House in Freeport to receive your tunic. He may not be there, but I assure you he will show up at some time. On the second floor. Hail Sir Lucan!!");
-    quest::summonitem(12273);
+    quest::summonitem(12273); # Item: Militia Armory Token
   }
   else {
     plugin::return_items(\%itemcount);

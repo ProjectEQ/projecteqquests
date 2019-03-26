@@ -9,9 +9,9 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13375})) then
 		e.self:Say("Grrrikk.. This is Groak's vial!! He must be in danger. Here. Return this liquid to him. Be quick!");
-		e.other:SummonItem(13376);
+		e.other:SummonItem(13376); -- Item: Ochre Liquid
 		e.other:Ding();
-		e.other:Faction(251,20,0);
+		e.other:Faction(251,20,0); -- Faction: Frogloks of Guk
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

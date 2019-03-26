@@ -15,7 +15,7 @@ sub EVENT_SAY {
     }
     else {
       quest::say("The Fist Strikes!");
-      $npc->CastSpell(905, $userid);
+      $npc->CastSpell(905, $userid); # Spell: Avatar Knockback
     }
   }
   if ($text=~/no rest/i) {
@@ -29,7 +29,7 @@ sub EVENT_SAY {
     }
     else {
       quest::say("The Fist Strikes!");
-      $npc->CastSpell(905, $userid);
+      $npc->CastSpell(905, $userid); # Spell: Avatar Knockback
     }
   }
   if ($text=~/right place/i) {
@@ -43,7 +43,7 @@ sub EVENT_SAY {
     }
     else {
       quest::say("The Fist Strikes!");
-      $npc->CastSpell(905, $userid);
+      $npc->CastSpell(905, $userid); # Spell: Avatar Knockback
     }
   }
   if ($text=~/truly ready/i) {

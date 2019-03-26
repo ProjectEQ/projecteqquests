@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction < 2) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24961 => 1)) { #cap
-      quest::summonitem(31133);
+      quest::summonitem(31133); # Item: Helm of Twilight
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24956 => 1)) { #bp
-      quest::summonitem(31134);
+      quest::summonitem(31134); # Item: Breastplate of Twilight
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24958 => 1)) { #arm
-      quest::summonitem(31135);
+      quest::summonitem(31135); # Item: Vambraces of Twilight
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24960 => 1)) { #wrist
-      quest::summonitem(31136);
+      quest::summonitem(31136); # Item: Bracer of Twilight
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24962 => 1)) { #hand
-      quest::summonitem(31137);
+      quest::summonitem(31137); # Item: Gauntlets of Twilight
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24957 => 1)) { #leg
-      quest::summonitem(31138);
+      quest::summonitem(31138); # Item: Greaves of Twilight
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24959 => 1)) { #boots
-      quest::summonitem(31139);
+      quest::summonitem(31139); # Item: Boots of Twilight
     }
     else {
       plugin::return_items(\%itemcount);

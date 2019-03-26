@@ -9,7 +9,7 @@ sub EVENT_TIMER {
 sub EVENT_SIGNAL {
 	if($signal == 1){
 		quest::say("So it seems you are aware of the outcome of his hidden experimentation. Care to enlighten us as to what that outcome was?");
-		quest::signalwith(160458,3,5000);
+		quest::signalwith(160458,3,5000); # NPC: Autarkic_Lord_Sfarosh
 	}
 	if($signal == 2){
 		quest::say("Ajeea! What's happened?! I sense there are dark powers at work here!");

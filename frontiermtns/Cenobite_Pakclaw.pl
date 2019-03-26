@@ -12,6 +12,6 @@ quest::say("For justice to be brought to them you will need to strike at some of
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62088 => 3, 62089 => 1)) {
     quest::say("I am grateful to you for your assistance.  Here take this.");
-    quest::summonitem(62200);
+    quest::summonitem(62200); # Item: Brimming Chalice of Youth
   }
 }

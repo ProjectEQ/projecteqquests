@@ -11,7 +11,7 @@ sub EVENT_TIMER {
 		if($random == 1){
 			quest::emote("shivers violently.  'I hate this place.  My sister always told me I shouldn't be a pirate and that you were nothing but a clockwork grease pouring imbecile!");
 		}
-		quest::signal(110066,100);
+		quest::signal(110066,100); # NPC: Sojan_the_Sleepless
 	}	
 }
 

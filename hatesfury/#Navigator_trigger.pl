@@ -7,6 +7,6 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-   quest::spawn2(228107,0,0,0,0,0,0);
+   quest::spawn2(228107,0,0,0,0,0,0); # NPC: #Navigator_counter
    quest::depop_withtimer();
 } 

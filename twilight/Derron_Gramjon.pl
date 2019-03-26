@@ -34,31 +34,31 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4490 => 1, 4839 => 1, 4840 => 1)) { #boots
-    quest::summonitem(3742);
+    quest::summonitem(3742); # Item: Boots of the Holy Rite
     quest::exp(10000);    
   }
   if(plugin::check_handin(\%itemcount, 4838 => 1, 4829 => 1, 4489 => 1)) { #bracer
-    quest::summonitem(3741);
+    quest::summonitem(3741); # Item: Bracer of the Holy Rite
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4798 => 1, 4797 => 1, 4796 => 1, 4492 => 1)) { #breastplate
-    quest::summonitem(3737);
+    quest::summonitem(3737); # Item: Breastplate of the Holy Rite
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4494 => 1, 4818 => 1, 4810 => 1, 4809 => 1)) { #greaves
-    quest::summonitem(3739);
+    quest::summonitem(3739); # Item: Greaves of the Holy Rite
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4491 => 1, 4795 => 1, 4793 => 1, 4794 => 1)) { #helm
-    quest::summonitem(3736);
+    quest::summonitem(3736); # Item: Helm of the Holy Rite
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4820 => 1, 4819 => 1, 4488 => 1)) { #pauldrons
-    quest::summonitem(3740);
+    quest::summonitem(3740); # Item: Pauldrons of the Holy Rite
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4799 => 1, 4493 => 1, 4808 => 1, 4800 => 1)) { #vambs
-    quest::summonitem(3738);
+    quest::summonitem(3738); # Item: Vambraces of the Holy Rite
     quest::exp(10000);
   }
   plugin::return_items(\%itemcount);

@@ -56,11 +56,11 @@ sub EVENT_SAY {
   }
   if (($text=~/collect the artifacts/i) && defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
     quest::emote("hands you a bag. 'Place four artifacts you find from the pit in this bag and seal it off. Return the sealed bag to me when you're done so I can further examine what you find. Make haste to the Pit of the Lost and be careful -- there's no telling what kind of evils are waiting for you there. If you have someone else with you that [needs a bag], have them tell me so.'");
-    quest::summonitem(60155);
+    quest::summonitem(60155); # Item: Tublik's Bag
   }
   if (($text=~/stop it/i) && defined($qglobals{ikky}) && ($qglobals{ikky} >= 10) && !defined($qglobals{ageless})) {
     quest::say("You must return to the Pit of the Lost and find whatever this fiend is and destroy it. I believe that it will have some kind of artifact that is linked to the ones you returned to me in the sealed bag. Return whatever it may have to me. Good luck, $name, I have no doubt that the artifact it holds will be as interesting of a find as anything else we've uncovered so far!");
-    quest::spawn2(293221,0,0,2176,2184,-476,274);
+    quest::spawn2(293221,0,0,2176,2184,-476,274); # NPC: Ageless_Relic_Protector
     quest::setglobal("ageless",1,0,"H8");
   }
   if (($text=~/four temples/i) && defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
@@ -176,30 +176,30 @@ sub EVENT_ITEM {
       quest::say("You have done great things for us, but your journey is not yet over.");  #need live text
       $client->Message(4, "Finished! - You've recovered the Sliver of the High Temple! Congratulations!");
       $client->Message(4, "You feel the magic protecting Qvic has softened.");
-      quest::summonitem(60176);
+      quest::summonitem(60176); # Item: Sliver of the High Temple
       quest::setglobal("god_qvic_access",1,5,"F");
       quest::set_zone_flag(295);
     }
     else {
       quest::say("You have done well in the Temple, please return when you have recovered the fragment also.");
-      quest::summonitem(60174);
+      quest::summonitem(60174); # Item: Sliver of the High Temple
     }
   }
   if (defined($qglobals{ikky}) && ($qglobals{ikky} == 6)) {
     if (plugin::check_handin(\%itemcount, 60146 => 1)) {
-      quest::summonitem(60146);
+      quest::summonitem(60146); # Item: Glyph of the Damned
       GIVE_TABLET();
     }
     if (plugin::check_handin(\%itemcount, 60147 => 1)) {
-      quest::summonitem(60147);
+      quest::summonitem(60147); # Item: Glyph of the Damned
       GIVE_TABLET();
     }
     if (plugin::check_handin(\%itemcount, 60148 => 1)) {
-      quest::summonitem(60148);
+      quest::summonitem(60148); # Item: Glyph of the Damned
       GIVE_TABLET();
     }
     if (plugin::check_handin(\%itemcount, 60149 => 1)) {
-      quest::summonitem(60149);
+      quest::summonitem(60149); # Item: Glyph of the Damned
       GIVE_TABLET();
     }
   }
@@ -207,10 +207,10 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 60162 => 1, 60163 => 1, 60164 => 1, 60165 => 1)) {
       quest::emote("grunts unhappily at the four pieces. 'I had hoped more work wouldn't be needed to uncover the clues, but it looks like there's a bit more you're going to need to do for me. Take a look at these edges. Do you see how they look really sinewy? That's because they're [" . quest::saylink("made of flesh") . "], probably that of the trusik. No doubt the Muramites have been quite cruel to them now that they are mostly used for slavery.'");
       quest::exp(100000);
-      quest::summonitem(60162);
-      quest::summonitem(60163);
-      quest::summonitem(60164);
-      quest::summonitem(60165);
+      quest::summonitem(60162); # Item: Frayed Flesh Scrap
+      quest::summonitem(60163); # Item: Frayed Flesh Scrap
+      quest::summonitem(60164); # Item: Frayed Flesh Scrap
+      quest::summonitem(60165); # Item: Frayed Flesh Scrap
       quest::setglobal("ikky",8,5,"F");
     }
   }
@@ -237,7 +237,7 @@ sub EVENT_ITEM {
       $client->Message(4, "Finished! - You've constructed your Icon of the Altar!");
       quest::setglobal("ikky",14,5,"F");
 	}
-	quest::summonitem(60173);
+	quest::summonitem(60173); # Item: Icon of the Altar
   }
   if (defined($qglobals{ikky}) && ($qglobals{ikky} < 14)) {
     if (plugin::check_handin(\%itemcount, 60173 => 1)) {
@@ -255,7 +255,7 @@ sub EVENT_ITEM {
         quest::setglobal("ikkyraid",1,5,"F");
         $client->Message(4, "Finished! - You've recovered the Artifact of Righteousness!");
       }
-      quest::summonitem(60170);
+      quest::summonitem(60170); # Item: Artifact of Righteousness
     }
     if (plugin::check_handin(\%itemcount, 60171 => 1)) {
       if (defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 1)) {
@@ -263,7 +263,7 @@ sub EVENT_ITEM {
         quest::setglobal("ikkyraid",2,5,"F");
         $client->Message(4, "Finished! - You've recovered the Artifact of Glorification!");
       }
-      quest::summonitem(60171);
+      quest::summonitem(60171); # Item: Artifact of Glorification
     }
     if (plugin::check_handin(\%itemcount, 60172 => 1)) {
       if (defined($qglobals{ikkyraid}) && ($qglobals{ikkyraid} == 2)) {
@@ -271,7 +271,7 @@ sub EVENT_ITEM {
         quest::setglobal("ikkyraid",3,5,"F");
         $client->Message(4, "Finished! - You've recovered the Artifact of Transcendence!");
       }
-      quest::summonitem(60172);
+      quest::summonitem(60172); # Item: Artifact of Transcendence
     }
   }
   plugin::return_items(\%itemcount);
@@ -279,7 +279,7 @@ sub EVENT_ITEM {
 
 sub GIVE_TABLET {
   quest::say("So, you really are helping Kevren with this. My apologies for being so blunt with the requirements, but you never can be too careful with things like this. Here's a stone tablet for your troubles. You're going to need to use as many piles of dust as you have glyphs, then combine the dust and the four glyphs together with the stone tablet to translate them. These glyphs can be tricky, so good luck.");
-  quest::summonitem(60175);
+  quest::summonitem(60175); # Item: Stone Tablet
 }
 
 sub PROGRESS_UPDATE {

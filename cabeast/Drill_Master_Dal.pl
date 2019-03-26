@@ -13,7 +13,7 @@ sub EVENT_SAY {
 	}
 	if(($text=~/ready for my task/i) && ($faction < 5)) {
 		quest::say("Yes. yes!!  It does not matter.  You must be ready.  I will hand you the Partisan pack.  Into it you shall combine one giant blood sac of the giant leech;  scout beads from a goblin scout; one sabertooth kitten canine and finally. three bone shards from decaying skeletons.  Hopefully. you will survive your attempt to obtain these items.  Return the full Partisan pack and you shall be rewarded with a curscale shield.");
-		quest::summonitem(17997);
+		quest::summonitem(17997); # Item: Partisan Pack
 	}
 }
 
@@ -22,25 +22,25 @@ sub EVENT_ITEM {
 	if($faction < 5) {
 		if (plugin::check_handin(\%itemcount, 12915 => 4)) {
 			quest::emote("hands you a shimmering black piece of armor which smells quite horrid. You find it hard to keep it from slithering out of your hand. 'Here is the armor the tailors have been working on for the legion. You may test it for us. Keep up your fine work and I may have other pieces available for you to test.'");
-			quest::summonitem(quest::ChooseRandom(12917,12918,12919,12920,12921));
+			quest::summonitem(quest::ChooseRandom(12917,12918,12919,12920,12921)); # Item(s): Leech Husk Tunic (12917), Leech Husk Leggings (12918), Leech Husk Gloves (12919), Leech Husk Wrist Bands (12920), Leech Husk Boots (12921)
 			quest::ding();
-			quest::faction( 441,10);
-			quest::faction( 440,10);
-			quest::faction( 445,10);
-			quest::faction( 442,10);
-			quest::faction( 444,10);
+			quest::faction( 441,10); # Faction: Legion of Cabilis
+			quest::faction( 440,10); # Faction: Cabilis Residents
+			quest::faction( 445,10); # Faction: Scaled Mystics
+			quest::faction( 442,10); # Faction: Crusaders of Greenmist
+			quest::faction( 444,10); # Faction: Swift Tails
 			quest::exp(1000);
 			quest::givecash(0,14,0,0);
 		}
 		if (plugin::check_handin(\%itemcount, 12673 => 1)) {
 			quest::say("Well done recruit, I knew we could count on you to do the job.  Here is the reward you were promised");
-			quest::summonitem(12674);
+			quest::summonitem(12674); # Item: Curscale Buckler
 			quest::ding();
-			quest::faction( 441,2);
-			quest::faction( 440,2);
-			quest::faction( 445,2);
-			quest::faction( 442,2);
-			quest::faction( 444,2);
+			quest::faction( 441,2); # Faction: Legion of Cabilis
+			quest::faction( 440,2); # Faction: Cabilis Residents
+			quest::faction( 445,2); # Faction: Scaled Mystics
+			quest::faction( 442,2); # Faction: Crusaders of Greenmist
+			quest::faction( 444,2); # Faction: Swift Tails
 			quest::exp(250);
 			quest::givecash(0,9,0,0);
 		}

@@ -18,7 +18,7 @@ Lily Ashwood says 'Oh! If you're going to see him, would you please take this le
 }
 if ($text=~/I will take him the letter/i) {
   quest::emote("Lily Ashwood smiles sweetly. 'Thank you sooo much.'");
-  quest::summonitem(20876);
+  quest::summonitem(20876); # Item: Love Letter (Sealed)
 }
 }
 #END of FILE Zone:gfaydark  ID:54081 -- Devin_Ashwood 

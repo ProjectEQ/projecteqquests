@@ -29,22 +29,22 @@ sub EVENT_ITEM {
   #Dreadscale Bracer for:  Scale=14824  Bracer=3061  Sapphire=10034  
   if(plugin::check_handin(\%itemcount,14824=>1,3061=>1,10034=>1)) {
     quest::say("Well done!  Here is the item we agreed upon.  May Cazic's glorious curses flow through you!");
-    quest::summonitem(4971);
+    quest::summonitem(4971); # Item: Dreadscale Bracer
   }
   #Dreadscale Greaves for:  Boots=14829  Head=14820  Greaves=3063  StarRuby=10032
   elsif(plugin::check_handin(\%itemcount,14829=>1,14820=>1,3063=>1,10032=>1)) {
     quest::say("Well done!  Here is the item we agreed upon.  May Cazic's glorious curses flow through you!");
-    quest::summonitem(4973);
+    quest::summonitem(4973); # Item: Dreadscale Greaves
   }
   #Dreadscale Mask for:  Wings=14827  Mask=3054  FireEmerald=10033
   elsif(plugin::check_handin(\%itemcount,14827=>1,3054=>1,10033=>1)) {
     quest::say("Well done!  Here is the item we agreed upon.  May Cazic's glorious curses flow through you!");
-    quest::summonitem(4975);
+    quest::summonitem(4975); # Item: Dreadscale Mask
   }
   #Dreadscale Breastplate for:  Braid=12982  Chitin=14821  Breastplate=3056  Ruby=10035  
   elsif(plugin::check_handin(\%itemcount,12982=>1,14821=>1,3056=>1,10035=>1)) {
     quest::say("Well done!  Here is the item we agreed upon.  May Cazic's glorious curses flow through you!");
-    quest::summonitem(4969);
+    quest::summonitem(4969); # Item: Dreadscale Breastplate
   }
   else {
     plugin::return_items(\%itemcount);

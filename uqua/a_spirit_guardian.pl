@@ -8,8 +8,8 @@ sub EVENT_SAY {
 	}
 	if (($text=~/ready/i) && ($rage_fury == 0)) {
 		quest::say("May your gods protect you. Let the trials begin.");
-		quest::spawn2(292056,0,0,-822,-1249,8,376);
-		quest::spawn2(292055,0,0,-917,-1251,8,122);
+		quest::spawn2(292056,0,0,-822,-1249,8,376); # NPC: a_rage_behemoth
+		quest::spawn2(292055,0,0,-917,-1251,8,122); # NPC: a_fury_behemoth
 		quest::depop(292019);
 		quest::depop(292020);
 		quest::settimer("fail_timer",5400);
@@ -37,15 +37,15 @@ sub EVENT_TIMER {
 	} elsif ($timer eq "orb_turnin") {
 		quest::stoptimer("orb_turnin");
 		quest::setglobal($instid."_spectre_door", 1, 3, "H6");
-		quest::spawn2(292062,0,0,-869,-691,25,508);
-		quest::spawn2(292063,0,0,-836,-692,25,510);
-		quest::spawn2(292062,0,0,-906,-692,25,26);
-		quest::spawn2(292063,0,0,-883,-636,26,266);
-		quest::spawn2(292064,0,0,-850,-637,26,254);
-		quest::spawn2(292065,5,0,-871,-209,59,250);
-		quest::spawn2(292066,0,0,-871,-209,59,250);
-		quest::spawn2(292067,0,0,-866,-43,61,260);
-		quest::spawn2(292068,0,0,-869,-16,65,250);
+		quest::spawn2(292062,0,0,-869,-691,25,508); # NPC: a_malevolent_spirit
+		quest::spawn2(292063,0,0,-836,-692,25,510); # NPC: a_coercing_spirit
+		quest::spawn2(292062,0,0,-906,-692,25,26); # NPC: a_malevolent_spirit
+		quest::spawn2(292063,0,0,-883,-636,26,266); # NPC: a_coercing_spirit
+		quest::spawn2(292064,0,0,-850,-637,26,254); # NPC: a_slighted_spirit
+		quest::spawn2(292065,5,0,-871,-209,59,250); # NPC: #Devastating_Construct
+		quest::spawn2(292066,0,0,-871,-209,59,250); # NPC: #Preshna_the_Lost
+		quest::spawn2(292067,0,0,-866,-43,61,260); # NPC: #Guardian_of_Destruction
+		quest::spawn2(292068,0,0,-869,-16,65,250); # NPC: Vrex_Barxt_Qurat
 		$entity_list->FindDoor(4)->SetLockPick(0);
 	}
 }

@@ -10,6 +10,6 @@ sub EVENT_SAY {
   if (plugin::check_handin(\%itemcount, 62087 => 1, 62086 => 3)) {
     quest::say("Excellent, justice has been served.  Please take this as your reward.");
   }  
-  quest::summonitem(62199);
+  quest::summonitem(62199); # Item: Silver Bracelet of the Heavens
   }
 }

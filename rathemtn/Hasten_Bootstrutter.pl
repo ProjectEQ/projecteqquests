@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 12268 => 1, 7100 => 1)) {
       quest::say("The time to trade has come!! I am now rich and you are now fast. Take the Journeyman Boots and run like the wind.");
       quest::exp(1250);
-      quest::summonitem(2300);
+      quest::summonitem(2300); # Item: Journeyman's Boots
     }
   }
   else {

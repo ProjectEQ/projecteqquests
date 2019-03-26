@@ -24,7 +24,7 @@ sub EVENT_SAY {
 
  if($text=~/fetch them/i){
   quest::say("Take this satchel and please listen closely. I need the following and they need to be relatively fresh. So don't waste time with frivolous strolls through the jungle. I require two Panda Claws, two Tiger Skins, two Asp Poison Sacs, a Bamboo Shoot, and a Kejekan Palm Fruit, which you will need to find somewhere in the jungle. Once you have these items, combine them in the bag and return to me."); 
-  quest::summonitem(17884);
+  quest::summonitem(17884); # Item: Burlap Satchel
  }
 }
 
@@ -33,9 +33,9 @@ sub EVENT_ITEM {
   quest::say("I thought the kobolds would have you for dinner, but you made it back.");
   quest::me("Ayssla takes the satchel and begins to pour different vials of foul smelling liquid into it. She then takes the entire contents of the bag and dumps it into a large kettle and begins to chant in an unknown language. After a few minutes, she takes a small amount of the now boiling liquid and puts it in a vial.");
   quest::say("Take this vial back to Jali. I pray to the Titan Spirits that it works.");
-  quest::faction(473,30);
-  quest::faction(298,30);
-  quest::summonitem(6976);
+  quest::faction(473,30); # Faction: Kejek Village
+  quest::faction(298,30); # Faction: Peace Keepers
+  quest::summonitem(6976); # Item: Vial of Healing Liquid
  }
 
   plugin::return_items(\%itemcount);

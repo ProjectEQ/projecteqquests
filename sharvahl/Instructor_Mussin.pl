@@ -6,9 +6,9 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
 	$count++;
 	if($count == 1) {
-		quest::signalwith(155310,1,1);
-		quest::signalwith(155309,1,1);
-		quest::signalwith(155308,1,1);
+		quest::signalwith(155310,1,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,1,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,1,1); # NPC: #Recruit_Omaj
 		quest::say("There are several routes available to you as a citizen of Shar Vahl. All citizens are expected to actively participate in the maintenance of our security.");
 	}
 	if($count==2) {
@@ -53,58 +53,58 @@ sub EVENT_TIMER {
 	}
 	if($count==13) {
 		quest::say("Please stand and prepare to demonstrate the attacks as I call them out. I understand that your form will be a little sloppy, but that is what practice is for. Will will keep practicing these moves until you can show me that you can be trusted to not injure yourselves with the wooden practice weapons.");
-		quest::signalwith(155310,2,1);
-		quest::signalwith(155309,2,1);
-		quest::signalwith(155308,2,1);
+		quest::signalwith(155310,2,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,2,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,2,1); # NPC: #Recruit_Omaj
 		quest::settimer("training",5);
 	}
 	if($count==14) {
 		quest::say("First move... the Kick! Attack!");
-		quest::signalwith(155310,3,1);
-		quest::signalwith(155309,3,1);
-		quest::signalwith(155308,3,1);
+		quest::signalwith(155310,3,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,3,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,3,1); # NPC: #Recruit_Omaj
 		plugin::DoAnim("clap");
 	}
 	if($count==15) {
 		quest::say("Now... the Bash! Attack!");
-		quest::signalwith(155310,4,1);
-		quest::signalwith(155309,4,1);
-		quest::signalwith(155308,4,1);
+		quest::signalwith(155310,4,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,4,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,4,1); # NPC: #Recruit_Omaj
 		plugin::DoAnim("clap");
 	}
 	if($count==16) {
 		quest::say("Next... the One-handed Stab! Attack!");
-		quest::signalwith(155310,5,1);
-		quest::signalwith(155309,5,1);
-		quest::signalwith(155308,5,1);
+		quest::signalwith(155310,5,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,5,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,5,1); # NPC: #Recruit_Omaj
 		plugin::DoAnim("clap");
 	}
 	if($count==17) {
 		quest::say("Arlight... Two-handed thrust! Attack!");
-		quest::signalwith(155310,6,1);
-		quest::signalwith(155309,6,1);
-		quest::signalwith(155308,6,1);
+		quest::signalwith(155310,6,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,6,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,6,1); # NPC: #Recruit_Omaj
 		plugin::DoAnim("clap");
 	}
 	if($count==18) {
 		quest::say("Now... smash with both hands! Attack!");
-		quest::signalwith(155310,7,1);
-		quest::signalwith(155309,7,1);
-		quest::signalwith(155308,7,1);
+		quest::signalwith(155310,7,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,7,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,7,1); # NPC: #Recruit_Omaj
 		plugin::DoAnim("clap");
 	}
 	if($count==19) {
 		quest::say("Okay...the One-handed swing! Attack!");
-		quest::signalwith(155310,8,1);
-		quest::signalwith(155309,8,1);
-		quest::signalwith(155308,8,1);
+		quest::signalwith(155310,8,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,8,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,8,1); # NPC: #Recruit_Omaj
 		plugin::DoAnim("clap");
 	}
 	if($count==20) {
 		quest::say("Go ahead and take a seat. As a whole you looked very good. Take a break and we will get ready to go through it again.");
-		quest::signalwith(155310,9,1);
-		quest::signalwith(155309,9,1);
-		quest::signalwith(155308,9,1);
+		quest::signalwith(155310,9,1); # NPC: #Recruit_Sihiq
+		quest::signalwith(155309,9,1); # NPC: #Recruit_Fahaar
+		quest::signalwith(155308,9,1); # NPC: #Recruit_Omaj
 		quest::settimer("training",90);
 	}
 	if($count==21) {

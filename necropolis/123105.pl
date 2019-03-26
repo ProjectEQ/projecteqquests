@@ -4,7 +4,7 @@
 sub EVENT_SIGNAL {
   if ($signal == 99) {
     quest::say("Chita ve ni ne, ni ne Neb!");
-    quest::signalwith(123045,101,1000);
+    quest::signalwith(123045,101,1000); # NPC: Neb
   }
 }
 

@@ -4,7 +4,7 @@ quest::say("Greetings $name. It is my duty to teach young Fier`Dal the arts of d
 }
 if($text=~/what suit of armor/i){
 quest::say("You will require this specially prepared Mail Assembly Kit to assemble a suit of Emerald Novice Armor. The required materials vary depending on the piece of armor you seek to craft. Once you have been properly outfitted return to me and I will present you with another [task]. Do you seek to craft [Emerald Novice Gauntlets], [Emerald Novice Boots], an [Emerald Novice Bracer], an [Emerald Novice Helm], [Emerald Novice Greaves], [Emerald Novice Vambraces], or an [Emerald Novice Breastplate]?");
-quest::summonitem(17124);
+quest::summonitem(17124); # Item: Mail Assembly Kit
 }
 if($text=~/what task/i){
 quest::say("Although our city of Kelethin gains much protection from its construction in the treetops of the Faydark, like all things it has weaknesses in its defenses. The Crushbone Orcs often attempt to ignite the trees with the fires of their torches. Young Emerald Warriors are often stationed on the forest floor beneath Kelethin to watch for these orc arsonists and stop them. Go now to the forest floor and should you catch one of these orcs slay him and bring me his orcish torch.");
@@ -47,11 +47,11 @@ quest::summonitem("19637"); }
 sub EVENT_ITEM {
  
   if(plugin::check_handin(\%itemcount, 20281 => 1)) {
-    quest::summonitem(20294);
+    quest::summonitem(20294); # Item: Dull Emerald Novice Sword
     quest::exp(200);
   }
   if(plugin::check_handin(\%itemcount, 20298 => 1, 20274 => 1, 20271 => 1)) {
-    quest::summonitem(20331);
+    quest::summonitem(20331); # Item: Emerald Novice Long Sword
     quest::exp(300);    
   }
   #do all other handins first with plugin, then let it do disciplines

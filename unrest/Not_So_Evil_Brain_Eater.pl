@@ -4,5 +4,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("Ok, I deserved that");
-	quest::spawn2(63107,0,0,1,151,3.1,0);
+	quest::spawn2(63107,0,0,1,151,3.1,0); # NPC: Super_Ghoul_of_Unlimited_Power
 }

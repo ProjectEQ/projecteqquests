@@ -19,7 +19,7 @@ sub EVENT_ITEM{
   if(plugin::check_handin(\%itemcount, 58010 => 1)) {
     quest::say("Well done, strange one. Your perception is admirable.' The spirit hands you an incredibly heavy rock. 'Can you, $name, be as [impassive as the sea]?");
     quest::exp(1000);
-    quest::summonitem(58013);
+    quest::summonitem(58013); # Item: Large Rock
   }
   elsif(plugin::check_handin(\%itemcount, 58013 => 1)) {
     quest::emote("melds with the murky ocean water, and two elements of the sea appear.");
@@ -28,7 +28,7 @@ sub EVENT_ITEM{
   }
   elsif(plugin::check_handin(\%itemcount, 58014 => 1, 58015 => 1)) {
     quest::say("Now you comprehend. This is the way things are, and the way they have always been. Your acceptance of these truths proves your worthiness.");
-    quest::summonitem(59013);
+    quest::summonitem(59013); # Item: Spell: Stoicism
   }
   plugin::return_items(\%itemcount);
 }

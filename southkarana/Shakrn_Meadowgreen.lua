@@ -35,22 +35,22 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13743,item2 = 10035})) then
 		e.self:Say("Excellent! Here is your reward, you have earned it!");
-		e.other:SummonItem(4173);
+		e.other:SummonItem(4173); -- Item: Crafted Helm
 		e.other:Ding();
 		e.other:AddEXP(25000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13737,item2 = 10032,item3 = 10032})) then
 		e.self:Say("Excellent! Here is your reward, you have earned it!");
-		e.other:SummonItem(4178);
+		e.other:SummonItem(4178); -- Item: Crafted Gauntlets
 		e.other:Ding();
 		e.other:AddEXP(25000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13744,item2 = 10034,item3 = 10034})) then
 		e.self:Say("Excellent! Here is your reward, you have earned it!");
-		e.other:SummonItem(4180);
+		e.other:SummonItem(4180); -- Item: Crafted Plate Boots
 		e.other:Ding();
 		e.other:AddEXP(25000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13739,item2 = 10033,item3 = 10033})) then
 		e.self:Say("Excellent! Here is your reward, you have earned it!");
-		e.other:SummonItem(4176);
+		e.other:SummonItem(4176); -- Item: Crafted Vambraces
 		e.other:Ding();
 		e.other:AddEXP(25000);
 	end

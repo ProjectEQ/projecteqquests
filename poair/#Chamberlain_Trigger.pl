@@ -16,86 +16,86 @@ sub EVENT_SIGNAL {
 if($signal == 0) {
  my $Chance = quest::ChooseRandom(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
  if($Chance == 1 && $ConstableA == 0 && $State == 0) {
-  quest::spawn2(215010,0,0,461,498,-85.8,5);
+  quest::spawn2(215010,0,0,461,498,-85.8,5); # NPC: #Constable_Alranderisan
   $State = 1;
   $ConstableA = 1;
  }
  elsif($Chance == 1 && $ConstableA == 1 && $ConstableB == 0 && $ConstableF == 0 && $State == 0) {
   my $Next = quest::ChooseRandom(1,2);
    if($Next == 1) {
-    quest::spawn2(215482,0,0,461,498,-85.8,5);
+    quest::spawn2(215482,0,0,461,498,-85.8,5); # NPC: #Constable_Belecohen
     $State = 1;
     $ConstableB = 1;
    }
    if($Next == 2) {
-    quest::spawn2(215009,0,0,461,498,-85.8,5);
+    quest::spawn2(215009,0,0,461,498,-85.8,5); # NPC: #Constable_Ferabalen
     $State = 1;
     $ConstableF = 1;
    }
  }
  elsif($Chance == 1 && $ConstableA == 1 && $ConstableB == 1 && $ConstableF == 0 && $State == 0) {
-  quest::spawn2(215009,0,0,461,498,-85.8,5);
+  quest::spawn2(215009,0,0,461,498,-85.8,5); # NPC: #Constable_Ferabalen
   $State = 1;
   $ConstableF = 1;
  }
  elsif($Chance == 1 && $ConstableA == 1 && $ConstableB == 0 && $ConstableF == 1 && $State == 0) {
-  quest::spawn2(215482,0,0,461,498,-85.8,5);
+  quest::spawn2(215482,0,0,461,498,-85.8,5); # NPC: #Constable_Belecohen
   $State = 1;
   $ConstableB = 1;
  }
  elsif($Chance == 2 && $ConstableB == 0 && $State == 0) {
-  quest::spawn2(215482,0,0,461,498,-85.8,5);
+  quest::spawn2(215482,0,0,461,498,-85.8,5); # NPC: #Constable_Belecohen
   $State = 1;
   $ConstableB = 1;
  }
  elsif($Chance == 2 && $ConstableA == 0 && $ConstableB == 1 && $ConstableF == 0 && $State == 0) {
   my $Next = quest::ChooseRandom(1,2);
    if($Next == 1) {
-    quest::spawn2(215010,0,0,461,498,-85.8,5);
+    quest::spawn2(215010,0,0,461,498,-85.8,5); # NPC: #Constable_Alranderisan
     $State = 1;
     $ConstableA = 1;
    }
    if($Next == 2) {
-    quest::spawn2(215009,0,0,461,498,-85.8,5);
+    quest::spawn2(215009,0,0,461,498,-85.8,5); # NPC: #Constable_Ferabalen
     $State = 1;
     $ConstableF = 1;
    }
  }
  elsif($Chance == 2 && $ConstableA == 1 && $ConstableB == 1 && $ConstableF == 0 && $State == 0) {
-  quest::spawn2(215009,0,0,461,498,-85.8,5);
+  quest::spawn2(215009,0,0,461,498,-85.8,5); # NPC: #Constable_Ferabalen
   $State = 1;
   $ConstableF = 1;
  }
  elsif($Chance == 2 && $ConstableA == 0 && $ConstableB == 1 && $ConstableF == 1 && $State == 0) {
-  quest::spawn2(215010,0,0,461,498,-85.8,5);
+  quest::spawn2(215010,0,0,461,498,-85.8,5); # NPC: #Constable_Alranderisan
   $State = 1;
   $ConstableA = 1;
  }
  elsif($Chance == 3 && $ConstableF == 0 && $State == 0) {
-  quest::spawn2(215009,0,0,461,498,-85.8,5);
+  quest::spawn2(215009,0,0,461,498,-85.8,5); # NPC: #Constable_Ferabalen
   $State = 1;
   $ConstableF = 1;
  }
  elsif($Chance == 3 && $ConstableA == 0 && $ConstableB == 0 && $ConstableF == 1 && $State == 0) {
   my $Next = quest::ChooseRandom(1,2);
    if($Next == 1) {
-    quest::spawn2(215010,0,0,461,498,-85.8,5);
+    quest::spawn2(215010,0,0,461,498,-85.8,5); # NPC: #Constable_Alranderisan
     $State = 1;
     $ConstableA = 1;
    }
    if($Next == 2) {
-    quest::spawn2(215482,0,0,461,498,-85.8,5);
+    quest::spawn2(215482,0,0,461,498,-85.8,5); # NPC: #Constable_Belecohen
     $State = 1;
     $ConstableB = 1;
    }
  }
  elsif($Chance == 3 && $ConstableA == 1 && $ConstableB == 0 && $ConstableF == 1 && $State == 0) {
-  quest::spawn2(215482,0,0,461,498,-85.8,5);
+  quest::spawn2(215482,0,0,461,498,-85.8,5); # NPC: #Constable_Belecohen
   $State = 1;
   $ConstableB = 1;
  }
  elsif($Chance == 3 && $ConstableA == 0 && $ConstableB == 1 && $ConstableF == 1 && $State == 0) {
-  quest::spawn2(215010,0,0,461,498,-85.8,5);
+  quest::spawn2(215010,0,0,461,498,-85.8,5); # NPC: #Constable_Alranderisan
   $State = 1;
   $ConstableA = 1;
   }

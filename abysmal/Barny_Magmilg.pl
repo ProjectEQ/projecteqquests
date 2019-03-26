@@ -16,11 +16,11 @@ sub EVENT_WAYPOINT_ARRIVE {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::say("That's the best you can do?  Have you ever seen one o' those giant turtles they have on Taelosia?  Last week one of them paddled out to the dock and scared off all my fish!  I had no choice but to get rid of it.  I carefully jumped onto its back.  I had to be careful, that thing is full of dagger-length spikes!  Once on, I rode that thing for hours until it got worn out and started back to the beach.  I suppose I coulda killed it and brought it back, but I was a might tired, and decided that it would be too heavy to try to get onto the boat and let it go.  Besides, it mighta been a momma turtle.");
-		quest::signalwith(279047,1,15000);
+		quest::signalwith(279047,1,15000); # NPC: Iawgom_Umzzig
 	}
 	if($signal == 2) {
 		quest::say("That's unfortunate, lad.  My day wasn't so great either.  I got a bite an' gave it a pull.  Hooked it good.  I wasn't expecting whatever I caught to pull so hard!  Had the strength of twenty men!  Pulled me right over the rail, it did!  I had ta swim for my life!  Whatever it was, it didn't catch me before I got to the dock and back aboard.");
-		quest::signalwith(279044,2,15000);
+		quest::signalwith(279044,2,15000); # NPC: Haon_McClure
 	}
 	if($signal == 3) {
 		quest::emote("scoffs 'I expected better from you.  I'm not saying that what you just said is less than the truth, but only because I know there are more amazing things in the world.  Have you ever been ice fishing?  I didn't think so.  I have, but only once.  I was traveling alone in the northlands with my favorite dog, my best rod and an axe.  I settled in, cut the hole I needed, and started writin' limericks in my head to pass the time.  It was so cold that I had to keep clearin' the hole every ten minutes!  It wasn't but an hour later when I felt a bite and gave the line a tug.  The line tugged back so hard that I slipped on the ice and went right into the hole!  Whatever had me pulled me straight down.'");

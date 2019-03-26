@@ -10,7 +10,7 @@ sub EVENT_SAY {
   elsif($text=~/treasure/i){
     quest::say("I do have an ancient token that I have carried with me for quite some time. It is very special to me, but if you have been sent here by Lawyla then you must be worthy, for she is quick to see through the lies that some believe will gain them admittance to our halls. Please take this and present it to each of the descendants so that they will know you are truthful when you say that you were sent by me");
    #Summon: Jualicn's Token 
-   quest::summonitem(1908);
+   quest::summonitem(1908); # Item: Jualicn's Token
   }
   #Hsagra's Wrath
   elsif($text=~/descendants of Relinar/i){
@@ -20,7 +20,7 @@ sub EVENT_SAY {
   elsif($text=~/I am ready to receive the lexicon/i){
     quest::say("Combine the four runes in this lexicon and you will then have the teachings of Relinar. After you have done this, you are required to speak again with Lawyla about the [problems] we are having [with Kromzek spies].");
    #Summon: Lexicon of Relinar  
-   quest::summonitem(17061); 
+   quest::summonitem(17061); # Item: Lexicon of Relinar 
   }
 }
 

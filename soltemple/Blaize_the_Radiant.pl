@@ -26,7 +26,7 @@ sub EVENT_ITEM {
   # boots of the reliant
   if(($itemcount{19001} == 1) && ($itemcount{19002} == 1) && ($itemcount{16507} == 1)) {
     quest::say("Well done! Please take these boots as your reward.");  # text made up
-    quest::summonitem(4921);
+    quest::summonitem(4921); # Item: Boots of the Reliant
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
   # greaves of the penitent
   if(($itemcount{19007} == 1) && ($itemcount{19008} == 1) && ($itemcount{19049} == 1)) {
     quest::say("Well done! Please take these greaves as your reward.");  # text made up
-    quest::summonitem(4924);
+    quest::summonitem(4924); # Item: Greaves of the Penitent
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -44,7 +44,7 @@ sub EVENT_ITEM {
   # Gauntlets of the Ardent
   if(($itemcount{19003} == 1) && ($itemcount{19004} == 1) && ($itemcount{19047} == 1)) {
     quest::say("Well done! Please take these gauntlets as your reward.");  # text made up
-    quest::summonitem(4922);
+    quest::summonitem(4922); # Item: Gauntlets of the Ardent
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
   # vambraces of the fervent
   if(($itemcount{19005} == 1) && ($itemcount{19006} == 1) && ($itemcount{19048} == 1)) {
     quest::say("Well done! Please take these vambraces as your reward.");  # text made up
-    quest::summonitem(4923);
+    quest::summonitem(4923); # Item: Vambraces of the Fervent
     quest::faction("415","15");
     quest::faction("416","-15");
     quest::exp(1000);

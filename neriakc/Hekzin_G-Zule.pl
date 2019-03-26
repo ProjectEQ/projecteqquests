@@ -4,14 +4,14 @@ quest::say("How's it going. scrub? Correct me if I'm wrong. but you appear to be
 }
 if($text=~/i am a new rogue/i){
 quest::say("We of the Ebon Mask must first be sure you are skilled with a blade. At the same time. we are attempting to create a new type of armor for our rogues. So it is the test of each young rogue to take this bag into Nektulos and fill it with three moss snake skins and three snake fangs. then combine them. We get the bag and you earn a little respect as well as the [Dark Shield of Ebon].");
-quest::summonitem(17943);
+quest::summonitem(17943); # Item: Empty Bag
 }
 if($text=~/what dark shield of ebon/i){
 quest::say("The Dark Shield of Ebon was made for the use of this house by the finest craftsmen of Neriak.  It can be carried in the hand as well as slung upon one's back.  Besides this advantage. it is much lighter than most other shields.");
 }
 if($text=~/i am joining this house of rogues/i){
 quest::say("We of the Ebon Mask must first be sure you are skilled with a blade. At the same time. we are attempting to create a new type of armor for our rogues. So it is the test of each young rogue to take this bag into Nektulos and fill it with three moss snake skins and three snake fangs. then combine them. We get the bag and you earn a little respect as well as the [Dark Shield of Ebon].");
-quest::summonitem(17943);
+quest::summonitem(17943); # Item: Empty Bag
  }
 }
 sub EVENT_ITEM { 
@@ -19,11 +19,11 @@ sub EVENT_ITEM {
    	quest::say("Fine work for a scrub. Maybe one day you will be able to test this new snakescale armor out. For the moment you shall take the [Dark Shield of Ebon] if you do not own one already.");
 	quest::summonitem("12258");
 	quest::givecash("0","4","0","0");
-	quest::faction(320,-1);
-        quest::faction(262, -1);
-        quest::faction(244, 2);
-        quest::faction(263,-1);
-        quest::faction(329,-1);
+	quest::faction(320,-1); # Faction: Wolves of the North
+        quest::faction(262, -1); # Faction: Guards of Qeynos
+        quest::faction(244, 2); # Faction: Ebon Mask
+        quest::faction(263,-1); # Faction: Guardians of the Vale
+        quest::faction(329,-1); # Faction: Carson McCabe
         
  }
   #do all other handins first with plugin, then let it do disciplines

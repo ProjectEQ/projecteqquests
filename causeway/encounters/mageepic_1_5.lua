@@ -153,23 +153,23 @@ end
 
 
 function Zeph_Death(e)
-	eq.signal(303100,303101);			
+	eq.signal(303100,303101); -- NPC: Elemental_Essence_of_Air			
 end
 
 function Gust_Death(e)
-	eq.signal(303100,303102);			
+	eq.signal(303100,303102); -- NPC: Elemental_Essence_of_Air			
 end
 
 function Breeze_Death(e)
-	eq.signal(303100,303103);			
+	eq.signal(303100,303103); -- NPC: Elemental_Essence_of_Air			
 end
 
 function Wind_Death(e)
-	eq.signal(303100,303104);			
+	eq.signal(303100,303104); -- NPC: Elemental_Essence_of_Air			
 end
 
 function Current_Death(e)
-	eq.signal(303100,303105);			
+	eq.signal(303100,303105); -- NPC: Elemental_Essence_of_Air			
 end
 
 

@@ -15,11 +15,11 @@ sub EVENT_ITEM {
   # Giving it to Buford results in a "Tin Box" with 6 slots. 
   if (plugin::check_handin(\%itemcount,10059=>1)) {
     quest::say("Thank you!! I never could have gone to Odus to replace this. Perhaps now you can collect some rare coins.");
-    quest::summonitem(17045);
+    quest::summonitem(17045); # Item: Tin Box
   }
   # put the 6 coins into the tin box, combine, and return it to Bufford, get Nostrolo Tambourine
   if (plugin::check_handin(\%itemcount,12829=>1)) {
-    quest::summonitem(12940);
+    quest::summonitem(12940); # Item: Nostrolo Tambourine
   }
   
   plugin::return_items(\%itemcount);

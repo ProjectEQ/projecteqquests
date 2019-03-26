@@ -16,7 +16,7 @@ sub EVENT_SAY {
   #Gives the empty curscale pack.
   if($text=~/perform a small service/i){
     quest::say("Good. You take thisss pack and fill it all with scaled curskins. Only the pupsss and cubs of the scaled wolves shall do. They are not much for one sssuch as you. Combine all those ssskins and return the full curskin pack and I shall reward you with any available piece of curskin armor and a sssmall amount of coin. Mossst important is that you shall be proving your allegiance to all of Cabilisss.");
-    quest::summonitem(17992);
+    quest::summonitem(17992); # Item: Empty Curskin Bag
   }
 }
 
@@ -34,8 +34,8 @@ sub EVENT_ITEM {
     my $goldGiven = $randomGivenGold[int(rand(scalar @randomGivenGold))];
     quest::summonitem($itemGiven);
     quest::givecash($copperGiven,$silverGiven,$goldGiven,0);
-    quest::faction(440,10);
-    quest::faction(441,10);
+    quest::faction(440,10); # Faction: Cabilis Residents
+    quest::faction(441,10); # Faction: Legion of Cabilis
     quest::exp(10000);
     quest::ding();
   }

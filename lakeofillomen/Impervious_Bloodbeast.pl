@@ -14,5 +14,5 @@
 ## Max melee hit 150 -- damage shield buff -- DOES NOT MOVE AT ALL.
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signal(85091,0);
+  quest::signal(85091,0); # NPC: Lingering_Axefall
 }

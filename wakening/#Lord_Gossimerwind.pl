@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 24873 => 1)) {
       # Made text up
       quest::say("Good, ze Foreman iz dead and now we will be left in peazz.  Take diz az a zign of my friendship.");
-      quest::summonitem(24868);
+      quest::summonitem(24868); # Item: Crest of the Faerie Dragons
       quest::faction(449, 30); # +Tunarean Court
       quest::exp(100);
     }

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     $y = $npc->GetY();
     $z = $npc->GetZ();
     $h = $npc->GetHeading();
-    quest::spawn2(102123,0,0,$x,$y,$z,$h);
+    quest::spawn2(102123,0,0,$x,$y,$z,$h); # NPC: Spirit_of_Venril_Sathir
     quest::depop_withtimer();
   }
 }

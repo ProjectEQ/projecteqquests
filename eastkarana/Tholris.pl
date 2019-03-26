@@ -33,9 +33,9 @@ sub EVENT_SAY {
 		elsif($saydisease==3) {
 			$saydisease=0;
 			quest::emote("shakes his head. Then he catches a glimpse of the Mind Crystal and looks thoughtful for a moment. Then he reaches into his pocket and produces two unusual crystals and hands them to you.");
-			quest::summonitem(62618);
-			quest::summonitem(62619);
-			quest::signalwith(15044,11111,1);
+			quest::summonitem(62618); # Item: Red Crystal
+			quest::summonitem(62619); # Item: Violet Crystal
+			quest::signalwith(15044,11111,1); # NPC: Althele
 		}
 	}
 }

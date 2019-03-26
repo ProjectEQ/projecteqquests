@@ -8,10 +8,10 @@ sub EVENT_SAY {
   if ($text=~/challenge/i) {
 	if (($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman") || $status >= 80) {
 		$client->Message(0,"You are a priest. It is your ability -- in fact, your very calling -- that requires you to be able to manipulate it. You must sew these together and return to me the product so that I can verify the truth in your words and in your soul.");
-		quest::summonitem(60241);
-		quest::summonitem(60241);
-		quest::summonitem(60241);
-		quest::summonitem(60241);
+		quest::summonitem(60241); # Item: Dried Segment of Flesh
+		quest::summonitem(60241); # Item: Dried Segment of Flesh
+		quest::summonitem(60241); # Item: Dried Segment of Flesh
+		quest::summonitem(60241); # Item: Dried Segment of Flesh
 	}
 	else {
 		$client->Message(0,"You are not of a similar mind as me. You will not understand the hardships. Be gone.");
@@ -20,19 +20,19 @@ sub EVENT_SAY {
  if ($text=~/north/i) {
   if ($qglobals{$instanceid.ikkymove} == 1) {
 	 if (!$entity_list->IsMobSpawnedByNpcTypeID(294614)) {
-      quest::spawn2(294614,0,0,213,-100,20,0);
+      quest::spawn2(294614,0,0,213,-100,20,0); # NPC: #Trigger_Ikkinz_4
 	 }  
      $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
-     quest::MovePCInstance(294,$InInstanceIkky7,195,-86,21,0);
+     quest::MovePCInstance(294,$InInstanceIkky7,195,-86,21,0); # Zone: potranquility
   }
  } 
  if ($text=~/south/i) {
   if ($qglobals{$instanceid.ikkymove} == 1) {
 	 if (!$entity_list->IsMobSpawnedByNpcTypeID(294614)) {
-      quest::spawn2(294614,0,0,213,-100,20,0);
+      quest::spawn2(294614,0,0,213,-100,20,0); # NPC: #Trigger_Ikkinz_4
 	 }  
     $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
-    quest::MovePCInstance(294,$InInstanceIkky7,206,-154,20,0);
+    quest::MovePCInstance(294,$InInstanceIkky7,206,-154,20,0); # Zone: potranquility
   }
  } 
 }
@@ -47,8 +47,8 @@ sub EVENT_ITEM {
 }
 sub EVENT_SIGNAL {
   if($signal == 1) {
-	quest::spawn2(294610,0,0,673,-727,-46,380);
-	quest::spawn2(294610,0,0,670,-700,-46,374);
+	quest::spawn2(294610,0,0,673,-727,-46,380); # NPC: Phantasmal_Priest_Guardian
+	quest::spawn2(294610,0,0,670,-700,-46,374); # NPC: Phantasmal_Priest_Guardian
 	quest::depopall(294611);
 	quest::depop();
   }

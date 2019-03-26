@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24968 => 1)) { #cap
-      quest::summonitem(31112);
+      quest::summonitem(31112); # Item: Golden Leaf Helm
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24963 => 1)) { #bp
-      quest::summonitem(31113);
+      quest::summonitem(31113); # Item: Golden Leaf Breastplate
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24965 => 1)) { #arm
-      quest::summonitem(31114);
+      quest::summonitem(31114); # Item: Golden Leaf Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24967 => 1)) { #bracer
-      quest::summonitem(31115);
+      quest::summonitem(31115); # Item: Golden Leaf Bracer
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24969 => 1)) { #glove
-      quest::summonitem(31116);
+      quest::summonitem(31116); # Item: Golden Leaf Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24964 => 1)) { #leg
-      quest::summonitem(31117);
+      quest::summonitem(31117); # Item: Golden Leaf Greaves
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24966 => 1)) { #boots
-      quest::summonitem(31118);
+      quest::summonitem(31118); # Item: Golden Leaf Boots
     }
     else {
       plugin::return_items(\%itemcount);

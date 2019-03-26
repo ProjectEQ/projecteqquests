@@ -16,37 +16,37 @@ sub EVENT_SAY {
   if($text=~/boots/i){
     quest::say("To create your boots material you will need to combine 3 Bricks of Crude Bronze, 1 Cracked Giant Scarab Carapace, 2 Runny Eye Warbeads and 1 Snake Scale and 1 Spiderling Silk in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Boots.");
     #Summon: Crude Boots Mold
-    quest::summonitem(19634);   
+    quest::summonitem(19634); # Item: Crude Boot Mold   
   }
   if($text=~/bracers/i){
     quest::say("To create your bracer material you will need to combine 1 Bricks of Crude Bronze, 1 Orc Scoutsmans Wrist Pouch, 1 Towering Brute War Helm and 1 Bandage in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Bracer.");
     #Summon: Crude Bracer Mold
-    quest::summonitem(19632);
+    quest::summonitem(19632); # Item: Crude Bracer Mold
   }
   if($text=~/coifs/i){
     quest::say("To create your coif material you will need to combine 2 Bricks of Crude Bronze, 1 Skunk Scent Gland, 1 Snake Scale and 1 Mead in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Coif.");
     #Summon: Crude Helm Mold
-    quest::summonitem(19631);
+    quest::summonitem(19631); # Item: Crude Helm Mold
   }
   if($text=~/gauntlets/i){
     quest::say("To create your gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Barmas Tongue, 1 Aqua Goblin Headdress, 1 Goblin Parts and 1 Dwarven Bandit Coinpurse in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Gauntlets.");
     #Summon: Crude Gauntlets Mold
-    quest::summonitem(19633);
+    quest::summonitem(19633); # Item: Crude Gauntlets Mold
   }
   if($text=~/legplates/i){
     quest::say("To create your legplates material you will need to combine 4 Bricks of Crude Bronze, 1 Symbol of Hatred, 1 Aqua Goblin Tongue and 1 Severed Greenblood Finger in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Legplates.");
     #Summon: Crude Greaves Mold
-    quest::summonitem(19636);
+    quest::summonitem(19636); # Item: Crude Greaves Mold
   }
   if($text=~/sleeves/i){
     quest::say("To create your sleeves material you will need to combine 2 Bricks of Crude Bronze, 2 Giant Bat Fur, 1 Spider Legs and 1 Giant Scarab Egg Sack in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Sleeves.");
     #Summon: Crude Vambraces Mold
-    quest::summonitem(19635);
+    quest::summonitem(19635); # Item: Crude Vambrace Mold
   }
   if($text=~/tunics/i){
     quest::say("To create your tunic material you will need to combine 5 Bricks of Crude Bronze, 1 Enraged Goblin Beads, 1 Pristine Forest Drakeling Scale, 1 Golden Bandit Tooth, 1 Basilisk Tongue and 1 Goblin Parts in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Tunic. When ye finish yer tunic come on back fer I got one more [assignment] for a miner that I know I can trust!");
     #Summon: Crude Breastplate Mold
-    quest::summonitem(19637);
+    quest::summonitem(19637); # Item: Crude Breastplate Mold
   }
   if($text=~/assignment/i){
     quest::say("Well da assignment is simple $name. I jess simply need ye to fetch me some items that I need to create a minin pick dat I plan on distributing to all da new miners around dese parts dat pass my exercises, much like yerself. If you would like to help me [collect] the items I need I could perhaps fix ye up one of dese first minin picks. Whatta ya say dere $name?");
@@ -60,7 +60,7 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 28067 => 1, 28068 => 2)){
     quest::say("Ah thank ye $name. Here is yer minin pick.");
     #Summon: Sharpened Mining Pick
-    quest::summonitem(26078);
+    quest::summonitem(26078); # Item: Sharpened Mining Pick
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');

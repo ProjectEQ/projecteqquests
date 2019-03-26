@@ -23,7 +23,7 @@ quest::say("I have a tome binder with the title 'The Origins of Pain'. Sounds li
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount,10029=> 1)){
 quest::exp(500);
-quest::summonitem(18068);
+quest::summonitem(18068); # Item: Before Green
 }
 plugin::return_items(\%itemcount); # return unused items
   }

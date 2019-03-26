@@ -45,13 +45,13 @@ sub EVENT_SIGNAL {
 
 sub exile_fail {
 	# X: -305, Y: -310, Z: -50
-	quest::spawn2(296044,0,0,-305,-290, $z, $h);
-	quest::spawn2(296044,0,0,-320,-300, $z, $h);
-	quest::spawn2(296044,0,0,-310,-300, $z, $h);
-	quest::spawn2(296044,0,0,-300,-300, $z, $h);
-	quest::spawn2(296044,0,0,-290,-300, $z, $h);
-	quest::spawn2(296044,0,0,-320,-310, $z, $h);
-	quest::spawn2(296044,0,0,-310,-310, $z, $h);
-	quest::spawn2(296044,0,0,-300,-310, $z, $h);
-	quest::spawn2(296044,0,0,-290,-310, $z, $h);
+	quest::spawn2(296044,0,0,-305,-290, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-320,-300, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-310,-300, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-300,-300, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-290,-300, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-320,-310, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-310,-310, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-300,-310, $z, $h); # NPC: an_ancient_stonemite
+	quest::spawn2(296044,0,0,-290,-310, $z, $h); # NPC: an_ancient_stonemite
 }

@@ -1,7 +1,7 @@
 function event_waypoint_arrive(e)
 	if(e.wp == 5) then
 		e.self:Say("I would like an Erudian tart, please.");
-		eq.signal(1110,1);
+		eq.signal(1110,1); -- NPC: Karn_Tassen Baking Supplies
 	elseif(e.wp == 8) then
 		e.self:Say("Time in the pub shall keep them from advancing to the next level of the mind. When will they learn?");
 	elseif(e.wp == 26) then

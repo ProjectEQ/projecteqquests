@@ -25,7 +25,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10179 => 1, 10178 => 1)) {
-   quest::summonitem(5408);
+   quest::summonitem(5408); # Item: Electrum-Bladed Wakizashi
    quest::say("Mother? Father? May you find peace at last. I shall avenge your suffering! I will grow stronger and set free the souls of the others.");
    quest::exp(5000);
   }

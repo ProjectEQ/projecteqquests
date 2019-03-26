@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24961 => 1)) { #cap
-      quest::summonitem(31119);
+      quest::summonitem(31119); # Item: Scaled Knight's Helm
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24956 => 1)) { #bp
-      quest::summonitem(31120);
+      quest::summonitem(31120); # Item: Scaled Knight's Breastplate
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24958 => 1)) { #arm
-      quest::summonitem(31121);
+      quest::summonitem(31121); # Item: Scaled Knight's Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24960 => 1)) { #bracer
-      quest::summonitem(31122);
+      quest::summonitem(31122); # Item: Scaled Knight's Bracer
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24962 => 1)) { #glove
-      quest::summonitem(31123);
+      quest::summonitem(31123); # Item: Scaled Knight's Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24957 => 1)) { #leg
-      quest::summonitem(31124);
+      quest::summonitem(31124); # Item: Scaled Knight's Greaves
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24959 => 1)) { #boots
-      quest::summonitem(31125);
+      quest::summonitem(31125); # Item: Scaled Knight's Boots
     }
     else {
       plugin::return_items(\%itemcount);

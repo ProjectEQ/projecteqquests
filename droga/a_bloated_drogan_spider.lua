@@ -13,7 +13,7 @@ function event_timer(e)
 						if(ent:CastToMob():GetClass()==4 and damage > 0) then
 							local currclient=ent:CastToClient();
 							if(currclient:GetItemIDAt(Slot.Primary)==62648) then
-								currclient:SummonItem(62644);
+								currclient:SummonItem(62644); -- Item: Captured Spider
 								eq.depop_with_timer();
 							end
 						end
@@ -58,5 +58,5 @@ function event_hp(e)
 end
 
 function event_death(e)
-	e.self:CastSpell(5688, e.self:GetHateRandom():GetID());
+	e.self:CastSpell(5688, e.self:GetHateRandom():GetID()); -- Spell: Epidermal Rot
 end

@@ -22,7 +22,7 @@ sub EVENT_ENTER {
   }
   else {
     quest::emote("and uncover the body of an injured coldain.");
-    quest::spawn2(116542,0,0,$x,$y,$z,0);
+    quest::spawn2(116542,0,0,$x,$y,$z,0); # NPC: Tanik_Greskil
     quest::depop_withtimer();
   }
 }

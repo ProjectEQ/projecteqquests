@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 #send signal to Sharalla's Warder(237772) that this animal is biting Sharalla's corpse
 sub EVENT_TIMER {
   if ($timer=="Bite") {
-    quest::signalwith(237772,1,1);
+    quest::signalwith(237772,1,1); # NPC: Sharalla`s_warder
     quest::settimer("Bite", quest::ChooseRandom(10,15,20,25));
   }
 }
@@ -13,5 +13,5 @@ sub EVENT_TIMER {
 #send signal to Sharalla's Warder(237772) that a famished leopard has died
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(237772,2,1);
+  quest::signalwith(237772,2,1); # NPC: Sharalla`s_warder
 }

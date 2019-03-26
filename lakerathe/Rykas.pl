@@ -16,14 +16,14 @@ sub EVENT_SAY {
   }
   if ($text=~/Magi'kot/i) {
     quest::say("If you seek to learn the tale of Trilith Magi'kot, your journey shall begin in the Commonlands. Search for Jahsohn Aksot and give him this token. He will share some of the knowledge I have bestowed upon him, and point you further down your path to Mastery. Bring me the Words of Mastery, Power of the Elements, and the Words of Magi'kot....Then you shall learn more about the power of the orb.");
-    quest::summonitem(28035);
+    quest::summonitem(28035); # Item: Token of Mastery
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28003 => 1, 28004 => 1, 28031 => 1)) {
     quest::say("I see that you have completed the quest I laid before you. That speaks well of your dedication, yet you do not realize your journey has just begun. Study this tome.");
-    quest::summonitem(18958);
+    quest::summonitem(18958); # Item: Power of the Orb
     quest::exp(2000);
   }
   plugin::return_items(\%itemcount);

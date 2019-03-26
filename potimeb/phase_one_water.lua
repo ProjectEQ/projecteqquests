@@ -10,7 +10,7 @@ end
 
 function event_enter(e)
 	-- tell zone_status phase 1 was started
-	eq.signal(223097,1);
+	eq.signal(223097,1); -- NPC: zone_status
 	-- wait 45 seconds before spawning the mobs.
 	eq.clear_proximity();
 	eq.set_timer("Phase1Water",45000);
@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Water") then
 		-- spawn first wave of 2 a_triloun_gatherer and Anar_of_Water
-		eq.spawn2(223104,0,0,68,867,495,371);
-		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,877,495,371);
-		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,857,495,371);
+		eq.spawn2(223104,0,0,68,867,495,371); -- NPC: Anar_of_Water
+		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,877,495,371); -- NPC(s): a_triloun_gatherer (223092), a_triloun_gatherer (223093)
+		eq.spawn2(eq.ChooseRandom(223092,223093),0,0,68,857,495,371); -- NPC(s): a_triloun_gatherer (223092), a_triloun_gatherer (223093)
 		eq.stop_timer("Phase1Water");
 	end
 end
@@ -35,7 +35,7 @@ function event_signal(e)
 		-- win on a 7 count
 		if (event_counter == 7) then
 			-- tell zone_status
-			eq.signal(223097,2);
+			eq.signal(223097,2); -- NPC: zone_status
 			-- depop as my job is done.
 			eq.depop();
 		end

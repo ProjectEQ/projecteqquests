@@ -13,20 +13,20 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 3918 => 4)) { #Finger bones x 4
     quest::say("Thanks, here is your reward!");
-    quest::summonitem(quest::ChooseRandom(7079,7074,7071,7078,7075,7072,7081,7073,7080,7076,7082,7077));
+    quest::summonitem(quest::ChooseRandom(7079,7074,7071,7078,7075,7072,7081,7073,7080,7076,7082,7077)); # Item(s): Hopperhide Wristbands (7079), Hopperhide Tunic (7074), Hopperhide Skullcap (7071), Hopperhide Sleeves (7078), Hopperhide Shoulderpads (7075), Hopperhide Mask (7072), Hopperhide Leggings (7081), Hopperhide Gorget (7073), Hopperhide Gloves (7080), Hopperhide Cloak (7076), Hopperhide Boots (7082), Hopperhide Belt (7077)
     quest::exp(1000);
     quest::ding();
   }
   elsif(plugin::check_handin(\%itemcount, 3812 => 4)) { #Grimling toes x 4
     quest::say("Thanks, here is your reward!");
-    quest::summonitem(quest::ChooseRandom(7079,7074,7071,7078,7075,7072,7081,7073,7080,7076,7082,7077));
+    quest::summonitem(quest::ChooseRandom(7079,7074,7071,7078,7075,7072,7081,7073,7080,7076,7082,7077)); # Item(s): Hopperhide Wristbands (7079), Hopperhide Tunic (7074), Hopperhide Skullcap (7071), Hopperhide Sleeves (7078), Hopperhide Shoulderpads (7075), Hopperhide Mask (7072), Hopperhide Leggings (7081), Hopperhide Gorget (7073), Hopperhide Gloves (7080), Hopperhide Cloak (7076), Hopperhide Boots (7082), Hopperhide Belt (7077)
     quest::exp(1000);
     quest::ding();
   }
   elsif(plugin::check_handin(\%itemcount, 3670 => 1)) { #BL Quest #2
     quest::say("Ahh, so Poren sent you to me, did he? Well then...you look like you have some training, but you are still young and inexperienced. However, I just may have a task for you.");
     quest::say("Take this wrinkled map I found just the other day and give it to a friend of mine. Her name is Kery and you can find her upstairs in that building over there. Do this, and she will help you upgrade those claws of yours.");
-    quest::summonitem(5571);
+    quest::summonitem(5571); # Item: Worn Map of the Area
   }
   plugin::return_items(\%itemcount);
 }

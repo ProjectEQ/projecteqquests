@@ -5,11 +5,11 @@ end
 
 function event_timer(e)
 	if(e.timer=="gate") then
-		e.self:CastSpell(36, 0);
+		e.self:CastSpell(36, 0); -- Spell: Gate
 		eq.set_timer("depop",3000);
 	elseif(e.timer=="gate") then
 		eq.stop_timer("gate");
-		e.self:CastSpell(36, 0);
+		e.self:CastSpell(36, 0); -- Spell: Gate
 		eq.set_timer("depop",3000);
 	elseif(e.timer=="depop") then
 		eq.stop_timer("depop");

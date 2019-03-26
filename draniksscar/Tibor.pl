@@ -56,104 +56,104 @@ sub EVENT_ITEM {
   if($faction < 3) {
     if (plugin::check_handin(\%itemcount, 51489 => 2, 51475 => 1)) { #cap
       if($class eq "Berserker") {
-        quest::summonitem(70958);
+        quest::summonitem(70958); # Item: Wrathbringer's Chain Helm of the Vindicator
       }
       if($class eq "Rogue") {
-        quest::summonitem(70909);
+        quest::summonitem(70909); # Item: Whispering Hat of Shadows
       }
       if($class eq "Shaman") {
-        quest::summonitem(70916);
+        quest::summonitem(70916); # Item: Ritualchanter's Cap of the Ancestors
       }
       if($class eq "Ranger") {
-        quest::summonitem(70874);
+        quest::summonitem(70874); # Item: Bladewhisper Chain Cap of Journeys
       }
     }
     elsif (plugin::check_handin(\%itemcount, 51493 => 2, 51479 => 1)) { #sleeves
       quest::emote("reaches for the pouch and quickly opens it. He dumps the contents on the ground and quickly rummages through the pile, picking up a folded note and reading it.");
       quest::say("Yes, it turns out my suspicions were correct. This pouch contained two sets of orders, one for the girplan and discordlings, and another set for the dragorn Muramites. Now that I am aware of their plans, I can prepare my forces accordingly. I also thank you for removing some of the ikaav as this will make it easier for my soldiers to move about undetected.");
       if($class eq "Berserker") {
-        quest::summonitem(70959);
+        quest::summonitem(70959); # Item: Wrathbringer's Chain Sleeves of the Vindicator
       }
       if($class eq "Rogue") {
-        quest::summonitem(70910);
+        quest::summonitem(70910); # Item: Whispering Armguard of Shadows
       }
       if($class eq "Shaman") {
-        quest::summonitem(70917);
+        quest::summonitem(70917); # Item: Ritualchanter's Armguards of the Ancestors
       }
       if($class eq "Ranger") {
-        quest::summonitem(70875);
+        quest::summonitem(70875); # Item: Bladewhisper Chain Sleeves of Journeys
       }
     }
     elsif (plugin::check_handin(\%itemcount, 51494 => 2, 51480 => 1)) { #bracers
       quest::emote("opens his eyes wide as you hand him the heart that glows with arcane magic. 'Ah, the heart of our enemy', he says holding the heart up to the light. Within the center of the heart you notice what appears to be a small diseased shadow. Tibor violently throws the gem down to the ground and as he grinds it to dust, you hear a faraway scream that sends a shiver down your spine. 'Here is a chain bracer that I myself once wore in battle. May it bring you countless victories.");
       if($class eq "Berserker") {
-        quest::summonitem(70960);
+        quest::summonitem(70960); # Item: Wrathbringer's Chain Wristguard of the Vindicator
       }
       if($class eq "Rogue") {
-        quest::summonitem(70911);
+        quest::summonitem(70911); # Item: Whispering Bracer of Shadows
       }
       if($class eq "Shaman") {
-        quest::summonitem(70918);
+        quest::summonitem(70918); # Item: Ritualchanter's Wristband of the Ancestors
       }
       if($class eq "Ranger") {
-        quest::summonitem(70876);
+        quest::summonitem(70876); # Item: Bladewhisper Chain Wristband of Journeys
       }
     }
     elsif (plugin::check_handin(\%itemcount, 51495 => 2, 51481 => 1)) { #gloves
       if($class eq "Berserker") {
-        quest::summonitem(70961);
+        quest::summonitem(70961); # Item: Wrathbringer's Chain Gloves of the Vindicator
       }
       if($class eq "Rogue") {
-        quest::summonitem(70912);
+        quest::summonitem(70912); # Item: Whispering Gloves of Shadows
       }
       if($class eq "Shaman") {
-        quest::summonitem(70919);
+        quest::summonitem(70919); # Item: Ritualchanter's Mitts of the Ancestors
       }
       if($class eq "Ranger") {
-        quest::summonitem(70877);
+        quest::summonitem(70877); # Item: Bladewhisper Chain Gloves of Journeys
       }
     }
     elsif (plugin::check_handin(\%itemcount, 51492 => 2, 51478 => 1)) { #boots
       if($class eq "Berserker") {
-        quest::summonitem(70962);
+        quest::summonitem(70962); # Item: Wrathbringer's Chain Boots of the Vindicator
       }
       if($class eq "Rogue") {
-        quest::summonitem(70913);
+        quest::summonitem(70913); # Item: Whispering Boots of Shadows
       }
       if($class eq "Shaman") {
-        quest::summonitem(70920);
+        quest::summonitem(70920); # Item: Ritualchanter's Boots of the Ancestors
       }
       if($class eq "Ranger") {
-        quest::summonitem(70878);
+        quest::summonitem(70878); # Item: Bladewhisper Chain Boots of Journeys
       }
     }
     elsif (plugin::check_handin(\%itemcount, 51490 => 3, 51476 => 1)) { #chest
       if($class eq "Berserker") {
-        quest::summonitem(70963);
+        quest::summonitem(70963); # Item: Wrathbringer's Chain Chestguard of the Vindicator
       }
       if($class eq "Rogue") {
-        quest::summonitem(70914);
+        quest::summonitem(70914); # Item: Whispering Tunic of Shadows
       }
       if($class eq "Shaman") {
-        quest::summonitem(70921);
+        quest::summonitem(70921); # Item: Ritualchanter's Tunic of the Ancestors
       }
       if($class eq "Ranger") {
-        quest::summonitem(70879);
+        quest::summonitem(70879); # Item: Bladewhisper Chain Vest of Journeys
       }
     }
     elsif (plugin::check_handin(\%itemcount, 51491 => 3, 51477 => 1)) { #leggings
       quest::say("Ah, the amulet. Yes, this surely belonged to a dragorn noble or perhaps an elder. I can still smell the stink of the Muramite that stole it though. I will see to it that it is returned to the owner or one of his brood. The demise of the architect and the girplan workers will buy our people some time to regroup. For your courageous acts, I will give you these chain leggings that are fit for even the most-skilled dragorn fighter.");
       if($class eq "Berserker") {
-        quest::summonitem(70964);
+        quest::summonitem(70964); # Item: Wrathbringer's Chain Leggings of the Vindicator
       }
       elsif($class eq "Rogue") {
-        quest::summonitem(70915);
+        quest::summonitem(70915); # Item: Whispering Pants of Shadows
       }
       elsif($class eq "Shaman") {
-        quest::summonitem(70922);
+        quest::summonitem(70922); # Item: Ritualchanter's Leggings of the Ancestors
       }
       elsif($class eq "Ranger") {
-        quest::summonitem(70880);
+        quest::summonitem(70880); # Item: Bladewhisper Chain Legguards of Journeys
       }
     }
   }

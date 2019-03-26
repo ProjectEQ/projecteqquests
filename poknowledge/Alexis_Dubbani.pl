@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28078 => 1)) {
     #I think there is a 'Collection of Books' item missing from the database at entry 28078.
     quest::say("These will do. Please accept this as a show of my appreciation. Now if you'll excuse me I have much work left to do.");
-    quest::summonitem(28240);
+    quest::summonitem(28240); # Item: Fine Antique Locket
   }
   plugin::return_items(\%itemcount);
 }

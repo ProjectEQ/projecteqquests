@@ -14,7 +14,7 @@ sub EVENT_ITEM {
   }
   elsif (($shipment == 1) && ($platinum >= 50)) {
     quest::emote("darts his eyes about the room before retrieving a large box from under the table. He takes the platinum and the note, then hands you the box without a word. ");
-    quest::summonitem(29064);
+    quest::summonitem(29064); # Item: Shipment of Velium Ore
     quest::delglobal("shipment");
   }
   plugin::return_items(\%itemcount);

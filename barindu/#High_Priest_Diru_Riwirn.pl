@@ -24,7 +24,7 @@ sub EVENT_SAY {
 	    				$Instance = quest::CreateInstance("snlair", 0, 10800);
 	    				quest::AssignGroupToInstance($Instance);	
 	    				quest::say("Instance added.");
-	    				quest::summonitem(68298);
+	    				quest::summonitem(68298); # Item: Seal of the Nihil High Priest
 	    			} else {
 					$client->Message(13, "You are already in an instance!");
 				}

@@ -16,7 +16,7 @@ sub EVENT_SAY {
   		}
   		if ($text=~/help/i) {
     			quest::say("I will forever be in your debt, $name. I will need you to gather a few things for me to make the ethereal essence needed to conjure her soul back to the living world.");
-  			quest::summonitem(87307);
+  			quest::summonitem(87307); # Item: Aragol's Empty Pouch
 			quest::assigntask(221);
 		}
 	}
@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   	if (plugin::check_handin(\%itemcount, 87308 => 1)) { 
     		quest::emote("begins to conjure the spirit of Iris Gloomflow...");
 		quest::updatetaskactivity(221,3);
-		quest::summonitem(87313,20);
+		quest::summonitem(87313,20); # Item: Fiery Rock Candy
   	}
   plugin::return_items(\%itemcount);
 }

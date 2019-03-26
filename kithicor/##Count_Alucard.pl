@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::say("Haha! Silly mortals! You cannot kill me! I'm immor...");
-	quest::signalwith(20260,5);
+	quest::signalwith(20260,5); # NPC: ##Jack_Lanturn
 }

@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Emote("chuckles and his spectacles slip a little further down his nose.");
 	elseif(e.message:findi("brave enough")) then
 		e.self:Emote("gasps in apparent surprise, 'What? Are you certain you wish to put yourself in such a perilous position? Well I certainly can't turn down good help, so I'll tell you what I know. The Luggalds often utilize their spells against creatures in the waters of the harbor. Whether this is for practice, or for sport, or to ward off attackers I am not sure. I would suggest investigating the harbor for further evidence. Take this bag and bring me whatever you can find.");
-		e.other:SummonItem(17194);
+		e.other:SummonItem(17194); -- Item: Small Pouch
 	elseif(e.message:findi("lirprin sent me") and qglobals["Fatestealer"] == "3") then
 		e.self:Emote("is disturbingly pale for an Erudite. He looks terribly frightened. 'They'll return any moment! The shadows are everywhere, always watching . . . Waiting for me to rest so they can kill me. I try to fight them off but they always return. They whisper to me when I am all alone. No one else in the gulf believes me. You must help! Please believe that what I say is true!");
 		e.self:Say("Oh no, here they come - please don't let the shadows take me away!");

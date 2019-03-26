@@ -17,10 +17,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13544 => 1)) {
     quest::say("Nice material!! I feel the ways of Prexus enlightening my soul. Unngh!! Enough of this fishing. Here take my broken fishing pole and toss it to the sea. All hail Prexus!!");
-    quest::summonitem(13922);
-    quest::faction(242, 5);
-    quest::faction(266, 5);
-    quest::faction(265, -5);
+    quest::summonitem(13922); # Item: Snapped Pole
+    quest::faction(242, 5); # Faction: Deepwater Knights
+    quest::faction(266, 5); # Faction: High Council of Erudin
+    quest::faction(265, -5); # Faction: Heretics
     quest::exp(100);
   }
   plugin::return_items(\%itemcount);

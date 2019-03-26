@@ -13,7 +13,7 @@ sub EVENT_SAY {
     
     if ($text=~/listen well/i) {
     quest::say("This Arcane Crucible will allow you to combine [various components] to form a basic magical mesh. This mesh, when combined with the proper mold and worked in a forge, will allow you to create your own Armor of the Jin Initiate.");
-    quest::summonitem(17831);
+    quest::summonitem(17831); # Item: Arcane Crucible
       }
       
       if ($text=~/various components/i) {
@@ -22,37 +22,37 @@ sub EVENT_SAY {
         
         if ($text=~/headband/i) {
         quest::say("Wise. Your mind is your greatest weapon and you must protect it. You'll need a Malleable Bleeder Skin, a Pristine Bleeder Skin and two Mushroom Spores. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Headband of the Jin Initiate ");
-        quest::summonitem(63080);
+        quest::summonitem(63080); # Item: Jin Headband Mold
         }
         
         if ($text=~/vestment/i) {
         quest::say("The true mark of an initiate and a banner to the world of our growing might. To make it you'll need a Pristine Bull Alligator Hide, Bull Alligator Spines, a Giant Moccasin Eye and some Spiderling Silk. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Vestment of the Jin Initiate. There is a [final lesson] you must learn.");
-        quest::summonitem(63086);
+        quest::summonitem(63086); # Item: Jin Vestment Mold
         }
         
         if ($text=~/armwraps/i) {
          quest::say("Gird yourself completely. To craft these you'll need a Bleeder Wing, an Undead Froglok Talisman, some Moccasin Eggs and a Water Moccasin Tail. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Armwraps of the Jin Initiate.");
-          quest::summonitem(63084);
+          quest::summonitem(63084); # Item: Jin Armwrap Mold
         }
         
         if ($text=~/bracer/i) {
           quest::say("This bracer will be a compliment to your other armor. You'll need a Blackened Fungus, Airborne Spores, a Bleeder Carapace and a Cracked Crab Spider Legs. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Bracer of the Jin Initiate.");
-          quest::summonitem(63082);
+          quest::summonitem(63082); # Item: Jin Bracer Mold
           }
           
         if ($text=~/handwraps/i) {
           quest::say("Your mind commands, but your hands implement. It is wise to protect them. You'll need a Bull Alligator Tooth, two Pristine Kobold Paws and a Larval Carapace. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Handwraps of the Jin Initiate.");
-          quest::summonitem(63081);
+          quest::summonitem(63081); # Item: Jin Handwrap Mold
           }
           
         if ($text=~/leggings/i) {
         quest::say("What better to protect you from all that lurks beneath the swamp's murky waters? You'll need a Kobold Talon, a Ball of Pulpy Fungus, a Kobold Liver and a Giant Moccasin Fang. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Leggings of the Jin Initiate.");
-        quest::summonitem(63085);
+        quest::summonitem(63085); # Item: Jin Leggings Mold
         }
         
         if ($text=~/sandals/i) {
         quest::say("Your feet will always touch your homeland. You'll need a Cracked Skeleton Skull, two Alligator Hides, and a Mosquito Carcass. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Sandals of the Jin Initiate.");  
-        quest::summonitem(63083);
+        quest::summonitem(63083); # Item: Jin Sandal Mold
         }
         
         if ($text=~/final lesson/i) {
@@ -68,7 +68,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,  63089=>1, 51036=>2, 51019=>1  )) {
     quest::say("You have done me a great favor and shown mercy to own of our own.  Here is you reward, use it well and remember your lessons.");
-    quest::summonitem(63079);
+    quest::summonitem(63079); # Item: Wand of the Jin
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

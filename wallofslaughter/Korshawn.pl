@@ -70,19 +70,19 @@ sub EVENT_ITEM
       quest::exp(10000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70835);
+				quest::summonitem(70835); # Item: Charmweaver's Mittens
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70828);
+				quest::summonitem(70828); # Item: Runemaster's Gloves
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70814);
+				quest::summonitem(70814); # Item: Deathcaller's Gloves
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70821);
+				quest::summonitem(70821); # Item: Spelldeviser's Cloth Gloves
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51445 => 1, 51473 => 2)) #wrists
@@ -91,19 +91,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70834);
+				quest::summonitem(70834); # Item: Charmweaver's Bracer
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70827);
+				quest::summonitem(70827); # Item: Runemaster's Wristband
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70813);
+				quest::summonitem(70813); # Item: Deathcaller's Wristguard
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70820);
+				quest::summonitem(70820); # Item: Spelldeviser's Cloth Wristband
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51444 => 1, 51472 => 2)) #arms
@@ -112,19 +112,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70833);
+				quest::summonitem(70833); # Item: Charmweaver's Armguards
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70826);
+				quest::summonitem(70826); # Item: Runemaster's Sleeves
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70812);
+				quest::summonitem(70812); # Item: Deathcaller's Armbands
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70819);
+				quest::summonitem(70819); # Item: Spelldeviser's Cloth Sleeves
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51440 => 1, 51468 => 2)) #head
@@ -133,19 +133,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70832);
+				quest::summonitem(70832); # Item: Charmweaver's Cap
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70825);
+				quest::summonitem(70825); # Item: Runemaster's Cap
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70811);
+				quest::summonitem(70811); # Item: Deathcaller's Skullcap
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70818);
+				quest::summonitem(70818); # Item: Spelldeviser's Cloth Hat
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51441 => 1, 51469 => 3)) #chest
@@ -154,19 +154,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70837);
+				quest::summonitem(70837); # Item: Charmweaver's Robe
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70830);
+				quest::summonitem(70830); # Item: Runemaster's Robe
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70816);
+				quest::summonitem(70816); # Item: Deathcaller's Robe
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70823);
+				quest::summonitem(70823); # Item: Spelldeviser's Cloth Robe
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51442 => 1, 51470 => 3)) #legs
@@ -175,19 +175,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70838);
+				quest::summonitem(70838); # Item: Charmweaver's Leggings
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70831);
+				quest::summonitem(70831); # Item: Runemaster's Pants
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70817);
+				quest::summonitem(70817); # Item: Deathcaller's Pants
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70824);
+				quest::summonitem(70824); # Item: Spelldeviser's Cloth Britches
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51443 => 1, 51471 => 2)) #feet
@@ -196,19 +196,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70836);
+				quest::summonitem(70836); # Item: Charmweaver's Slippers
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70829);
+				quest::summonitem(70829); # Item: Runemaster's Boots
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70815);
+				quest::summonitem(70815); # Item: Deathcaller's Slippers
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70822);
+				quest::summonitem(70822); # Item: Spelldeviser's Cloth Shoes
 				}
 		}
 	}

@@ -26,13 +26,13 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 54435 => 1)){ #bundle of shiny new picks x 1
 		quest::say("Oh, these are perfect! Please accept this as a reward. Actually, since you have done so much for me, I might be able to give you something [extra]");
 		quest::ding();
-		quest::summonitem(71705);
+		quest::summonitem(71705); # Item: Intricate Tool Belt
 		quest::exp(1000);
 	}
 	if (plugin::check_handin(\%itemcount, 7882 => 4)) { #fiery ore x 4
 		quest::say("That's the stuff. Three for me, one for you! Here is your ring $name. Thank you again for your help!");
 		quest::ding();
-		quest::summonitem(71706);
+		quest::summonitem(71706); # Item: Glowing Magma Ring
 		quest::exp(1000);
 	} 
 	plugin::returnUnusedItems();

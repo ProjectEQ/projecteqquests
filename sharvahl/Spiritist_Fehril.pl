@@ -17,7 +17,7 @@ if(plugin::check_handin(\%itemcount, 2877 => 1)){
 
 quest::say("$name! So good to see you! It is my honor to guide you for a time. May the spirits inspire my words that you might grow wise in the hearing. You are young and need to be strengthened. Bring me three hairless hides of rockhopper young. You can find them in the crater surrounding our city, formed when the portion of Norrath our city is built upon came to rest in its current location.");
 
-quest::summonitem(2877);
+quest::summonitem(2877); # Item: Acrylia Slate of Shar Vahl
 
 }
 
@@ -29,11 +29,11 @@ quest::summonitem(3489); #Hopper hide Buckler.
 
 quest::say("As a member of the sacred Dar Khura, you will be asked to become proficient in the art of brewing. Sweetwater is produced by combining xakra bile and scorpion blood with a flask of water in a brew barrel. Pour two flasks of sweetwater into this cask and return it to me.");
 
-quest::summonitem(17232);
+quest::summonitem(17232); # Item: Empty Cask
 
 quest::exp(500);
 
-quest::signalwith(155164,1,0);
+quest::signalwith(155164,1,0); # NPC: Elder_Spiritist_Grawleh Shaman Guildmaster
 
 }
 
@@ -70,10 +70,10 @@ quest::exp(500); }
 if (plugin::check_handin(\%itemcount, 5542 => 1, 3496 => 1, 5543 => 1)) {
 quest::say("Your progress fills me with pride. Please take these things as a sign of our appreciation. I hope that they help you as much as you have helped us. When you are ready to continue your training, please contact Jaima Seyel. You'll most likely find her in the Dar Khura Guildhall. She will train you from this point.");
 quest::shout("Fellow citizens, may I present to you with our newest apprentice to the sacred Dar Khura. $name has assisted us for some time now and we can only hope that this assistance doesn't go unnoticed. Now, please join me in thanking $name for such selfless service to our people.");
-quest::faction(1533,20);
+quest::faction(1533,20); # Faction: Dar Khura
 quest::exp(1500);
-quest::summonitem(5543);
-quest::summonitem(5544);
+quest::summonitem(5543); # Item: Imbued Hopperhide Buckler
+quest::summonitem(5544); # Item: Cloak of the Dar Khura Apprentice
 quest::summonitem(15282); }
 
 

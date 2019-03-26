@@ -1,3 +1,3 @@
 sub EVENT_DEATH_COMPLETE {
-quest::signal(212062,1);
+quest::signal(212062,1); # NPC: Dresolik_Trigger
 }

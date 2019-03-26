@@ -13,49 +13,49 @@ well den these special exercise will surely be right for ye! Aye.");
   if($text=~/recipes/i){
     quest::say("Now yer talking $name, I be glad to see yer ready to begin crafting yer honor and heed yer calling as a servant o Brell! I have the armor material recipes and molds for Brells Blessed Platemail [Helm], [Bracer], [Armguards], [Boots], [Greaves], [Gauntlets], and [Breastplate]. All ye must do is simply tell me what armor piece ye want to craft and I will gladly present ye with the material recipe and armor mold necessary fer craftin it.");
     # Holy Assembly Kit    
-    quest::summonitem(17253);
+    quest::summonitem(17253); # Item: Holy Assembly Kit
   }
   if($text=~/armguards/i){
     # Quest: Brells Blessed Platemail Armguards 
     quest::say("To create yer armguards material you will need to combine 2 Bricks of Crude Bronze, 1 Spiderling Silk and 1 Scarab Leg and 1 Elven Wine in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Armguards.");
     # Crude Vambrace Mold
-    quest::summonitem(19635);
+    quest::summonitem(19635); # Item: Crude Vambrace Mold
   }
   if($text=~/boots/i){
     # Quest: Brells Blessed Platemail Boots
     quest::say("To create yer boots material you will need to combine 3 Bricks of Crude Bronze, 1 Basilisk Tongue, 1 Bat Wing and 1 Bottle of Milk in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Boots.");
     # Crude Boot Mold
-    quest::summonitem(19634);
+    quest::summonitem(19634); # Item: Crude Boot Mold
   }
   if($text=~/bracer/i){
     # Quest: Brells Blessed Platemail Bracer
     quest::say("To create yer bracer material you will need to combine 1 Bricks of Crude Bronze, 2 Snake Fangs, 1 Bone Chip and 1 Cask in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Bracer.");
     # Crude Bracer Mold
-    quest::summonitem(19632);
+    quest::summonitem(19632); # Item: Crude Bracer Mold
   }
   if($text=~/breastplate/i){
     # Quest: Brells Blessed Platemail Breastplate
     quest::say("To create yer breastplate material you will need to combine 5 Bricks of Crude Bronze, 1 Glynns Tongue, 1 Dwarven Bandit Coinpurse, 1 Pristine Forest Drakeling Scale, 1 Undead Pawn Tibia and 1 Golden Bandit Tooth in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Breastplate. Please come back to see me after ye has completed yer final armor piece? I need a lil [help] with something that only a proven disciple of Brell can complete.");
     # Crude Breastplate Mold
-    quest::summonitem(19637);
+    quest::summonitem(19637); # Item: Crude Breastplate Mold
   }
   if($text=~/gauntlets/i){
     # Quest: Brells Blessed Platemail Gauntlets
     quest::say("To create yer gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Krag Chick Beak, 1 Rock Spiderling Legs, and 2 Bat Wings in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Gauntlets.");
     # Crude Gauntlets Mold
-    quest::summonitem(19633);
+    quest::summonitem(19633); # Item: Crude Gauntlets Mold
   }
   if($text=~/greaves/i){
     # Quest: Brells Blessed Platemail Greaves
     quest::say("To create yer greaves material you will need to combine 4 Bricks of Crude Bronze, 2 Snake Scales , 1 Gundls Tongue and 1 Raw Bamboo in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Greaves.");
     # Crude Greaves Mold
-    quest::summonitem(19636);
+    quest::summonitem(19636); # Item: Crude Greaves Mold
   }
   if($text=~/helm/i){
     # Quest: Brells Blessed Platemail Helm
     quest::say("To create yer helm material you will need to combine 2 Bricks of Crude Bronze, 1 Snake Egg, 1 Bat Fur and 1 Bottle in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Brells Blessed Helm.");
     # Crude Helm Mold
-    quest::summonitem(19631);
+    quest::summonitem(19631); # Item: Crude Helm Mold
   }
   if($text=~/help/i){
     # Quest: Brells Blessed Platemail Help
@@ -73,7 +73,7 @@ sub EVENT_ITEM {
     # Quest: Brells Blessed Platemail Help (End)
      quest::say("Well done $name! Here is your reward.");
      # Blessed Brellium Warhammer
-     quest::summonitem(26075);
+     quest::summonitem(26075); # Item: Blessed Brellium Warhammer
   }
 }
 

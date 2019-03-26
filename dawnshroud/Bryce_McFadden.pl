@@ -9,7 +9,7 @@ if($text=~/what gant/i){
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 30173 => 1)) {
     quest::say("Thanks!");
-    quest::summonitem(29897);
+    quest::summonitem(29897); # Item: Tribal Warblade
 }
  }
 #END of FILE Zone:dawnshroud  ID:174090 -- Bryce_McFadden 

@@ -4,15 +4,15 @@ sub EVENT_WAYPOINT_ARRIVE {
 	}
 	if ($wp == 11) {
 	quest::say("Hello there Faloensar, having a good day I would hope.");
-	quest::signalwith(150286,1,5);
+	quest::signalwith(150286,1,5); # NPC: Fordel_Keeper_Faloensar Banker
 	}
 	if ($wp == 12) {
 	quest::say("Ah well just here to make my daily deposit then it's back to the bar for me. Had quite a brawl last night and still got some cleaning up to do. Those crazy Dwarves I tell you, get a few drinks in them and they want to take on the world or the closest Barbarian.");
-	quest::signalwith(150286,2,5);
+	quest::signalwith(150286,2,5); # NPC: Fordel_Keeper_Faloensar Banker
 	}
 	if ($wp == 13) {
 	quest::say("Ill try my best! Nice doing business with you as always. Take care");
-	quest::signalwith(150286,3,5);
+	quest::signalwith(150286,3,5); # NPC: Fordel_Keeper_Faloensar Banker
 	}
 }
 

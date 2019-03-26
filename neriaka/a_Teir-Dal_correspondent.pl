@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/I understand/i) {
     quest::say("Good then. Travel to Broken Skull Rock and slay the troll pirates. You will find that the ranks of Broken Skull are varied and nearly every rave may be represented, however as Trolls themselves, the Troll heads are the most useful, and therefore the only I shall accept. Bring me three of these heads in this and you shall have your reward.");
-    quest::summonitem(17171);
+    quest::summonitem(17171); # Item: Dusty Burlap Sack
   }
 }
 
@@ -18,7 +18,7 @@ sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 54021 => 1)) {
    quest::emote("opens the bag and carefully removes three rather battered Troll heads.");
    quest::say("A bit beat up, but no true damage. You have done precisely as I have requested. Take this then, and be on your way.");
-   quest::summonitem(54023);
+   quest::summonitem(54023); # Item: Electrum Plated Band
    quest::exp(1000);
  } 
 }

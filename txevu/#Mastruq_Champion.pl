@@ -32,7 +32,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_HP {
 	#tell Ixt to assist
-	quest::signalwith(297211, 297034);
+	quest::signalwith(297211, 297034); # NPC: #Ixt_Hsek_Syat
 }		
 
 sub EVENT_TIMER {

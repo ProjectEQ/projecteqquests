@@ -40,11 +40,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12369 => 1)) {
     quest::say("Ashen Order!!  Prrr.. My order.  I have been expecting one of us.  Prrr.. Help me rejoin my native land.  Take this box.  Combine all the [remains of Thipt] within the box and return it to me.  This shall aid me in my redemption.");
-    quest::summonitem(17985);
+    quest::summonitem(17985); # Item: Box With Pawprints
   }
   if(plugin::check_handin(\%itemcount, 12371 => 1)) {
     quest::say("Prrr.. Thank you brother of Ashen. I can now spend my time upon this island in peace, until my penance is serrrved. He dabs his paw into the mud and places it upon a tattered parchment. Take this message to Puab. Farrrwell.");
-    quest::summonitem(28055);
+    quest::summonitem(28055); # Item: Tattered Parchment
     quest::exp(100);
     quest::ding();
   }

@@ -36,7 +36,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
 	if (plugin::check_handin(\%itemcount, 18787 => 1)) {
 		quest::say("Ahh..  good..  good..  here. take..  Now you Craknek! You bash good. Bash lizards. Bash froggies. Bash mushrooms. Remember. you no help Greenbloods. Crakneks stronger than Greenbloods. When you [want to help crakneks] you tell Guntrik. You return to me when you stronger, I teach you many things I know, including how to start working in the various [trades].");
-		quest::summonitem(13525);
+		quest::summonitem(13525); # Item: Mud Stained Skin Tunic*
 		quest::ding();
 		quest::faction(232,100);  # Craknek Warrior
 		quest::faction(228,15);  # Clurg
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
 	}
 	elsif (plugin::check_handin(\%itemcount, 13361 => 1)) {
 		quest::say("One less trouble. Hunhuh!! You do good work. Keep up. Remember to bring any special things to Guntrik. Here junk for good work. Go away now.");
-		quest::summonitem(quest::ChooseRandom(5032,5029, 5033, 5031, 13355));
+		quest::summonitem(quest::ChooseRandom(5032,5029, 5033, 5031, 13355)); # Item(s): Bronze Axe (5032), Bronze Bastard Sword (5029)
 	} 
 	#do all other handins first with plugin, then let it do disciplines
 	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

@@ -6,7 +6,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if($platinum >= 2000) {
-  quest::summonitem(57991);
+  quest::summonitem(57991); # Item: Clouded Glass Vial
   quest::say("As much as I do hate to part with these, I do hope you'll put it too good use and help the shaman of Norrath.");
 }
 plugin::return_items(\%itemcount);

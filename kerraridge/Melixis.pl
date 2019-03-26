@@ -19,15 +19,15 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 14042 => 1)) {
     quest::say("Thank you for this item, here is the dull ring");
-    quest::summonitem(13733);
+    quest::summonitem(13733); # Item: Copper Ring
   }  
   if (plugin::check_handin(\%itemcount, 14043 => 1)) {
     quest::say("You have gotten the spores that I asked for, very well, here is the ring as agreed");
-    quest::summonitem(13731);
+    quest::summonitem(13731); # Item: Silver Ring
   }
   if (plugin::check_handin(\%itemcount, 14044 => 1)) {
     quest::say("Excellent, I will gladly give you the ring for this weed that you have brought me");
-    quest::summonitem(13732);
+    quest::summonitem(13732); # Item: Gold Ring
   }
 }
 #EOF - The text is not accurate, if anyone has the correct text please feel free to update the file accordingly

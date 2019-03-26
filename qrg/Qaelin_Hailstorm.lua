@@ -6,7 +6,7 @@ function event_say(e)
 	elseif(e.message:findi("need a mark")) then
 		if(deity == 207) then
 			e.self:Say("Here you go, if you need another please let me know.");
-			e.other:SummonItem(66172);
+			e.other:SummonItem(66172); -- Item: Mark of Karana
 		else
 			e.self:Say("How dare you state that you are something that you aren't! You are no follower of the Rainbringer!");
 		end

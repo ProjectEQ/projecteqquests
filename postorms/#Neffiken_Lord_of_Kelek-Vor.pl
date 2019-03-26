@@ -17,7 +17,7 @@ sub EVENT_TIMER {
 		my $z = $npc->GetZ();
 		my $h = $npc->GetHeading();
 
-		quest::spawn2(210176,0,0,$x,$y,$z,$h);
+		quest::spawn2(210176,0,0,$x,$y,$z,$h); # NPC: Neffiken_Lord_of_Kelek`Vor
 		quest::depop();
 	}
 	
@@ -27,12 +27,12 @@ sub EVENT_TIMER {
 	
 	if ($timer eq "TreeAdds") {
 		if($npc->IsEngaged()) {
-		quest::spawn2(210248,0,0,$x,$y,$z,$h);
-		quest::spawn2(210248,0,0,$x,$y,$z,$h);
-		quest::spawn2(210248,0,0,$x,$y,$z,$h);
-		quest::spawn2(210248,0,0,$x,$y,$z,$h);
-		quest::spawn2(210248,0,0,$x,$y,$z,$h);
-		quest::spawn2(210248,0,0,$x,$y,$z,$h);
+		quest::spawn2(210248,0,0,$x,$y,$z,$h); # NPC: a_restrained_ent
+		quest::spawn2(210248,0,0,$x,$y,$z,$h); # NPC: a_restrained_ent
+		quest::spawn2(210248,0,0,$x,$y,$z,$h); # NPC: a_restrained_ent
+		quest::spawn2(210248,0,0,$x,$y,$z,$h); # NPC: a_restrained_ent
+		quest::spawn2(210248,0,0,$x,$y,$z,$h); # NPC: a_restrained_ent
+		quest::spawn2(210248,0,0,$x,$y,$z,$h); # NPC: a_restrained_ent
 		} else {
 		quest::stoptimer("TreeAdds");
 		}

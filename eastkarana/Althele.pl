@@ -51,7 +51,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20448 => 1)) {
     quest::emote("looks at the coin and nods gravely at you as she slips it into a fold of her clothing. 'I see. The story of this coin speaks much to me as do the words you have given me. Telin sent word that you would arrive. The tidings you bring are ill indeed. Here, take this amulet and find Sionae. She is nearby. We will speak more on this matter when all are present.'");
-    quest::summonitem(20450);
+    quest::summonitem(20450); # Item: Braided Grass Amulet
     quest::unique_spawn(15178,0,0,-1595,-2595,3.2,254); #spawn sionae
   }
   elsif(plugin::check_handin(\%itemcount, 62810 => 1)){ #Sickly Maiden's Hair
@@ -61,7 +61,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 20452 => 1)) {
     quest::emote("hands the book to Tholris who reads through it with lines of concern etched on his face, then whispers into her ear. 'Dire news, indeed. This cannot be allowed. I must keep this book but you, $name, must not allow Innoruuk to seed the land with his hatred and filth. You have only just begun your quest. The path you are guided upon will be difficult, if not impossible, but someone must finish it. Please, take this, read of it, follow its instructions. Tunare bless your path and Karana watch over you.");
     quest::exp(100000);
-    quest::summonitem(18959);
+    quest::summonitem(18959); # Item: Earth Stained Note
     $depop1 = $entity_list->GetMobByNpcTypeID(15178); #despawn the druids
     $depop2 = $entity_list->GetMobByNpcTypeID(15167);
     $depop3 = $entity_list->GetMobByNpcTypeID(15170);
@@ -121,10 +121,10 @@ sub EVENT_TIMER {
   if ($timer eq "prep") { # gives the last druid, teloa, time to walk to the gathering
     quest::stoptimer("prep");    
     quest::say("Great mother of life and father of sky, growth and spirit, Tunare and Karana. Innoruuk once again schemes and we have failed in our duties to protect our land. We give our powers in sacrifice for your help. Heed our call and send us your wisdom.");
-    quest::signalwith(15178,99,3);
-    quest::signalwith(15167,99,6);
-    quest::signalwith(15170,99,9);
-    quest::signalwith(15043,99,12);
+    quest::signalwith(15178,99,3); # NPC: Sionae
+    quest::signalwith(15167,99,6); # NPC: Nuien
+    quest::signalwith(15170,99,9); # NPC: Teloa
+    quest::signalwith(15043,99,12); # NPC: Tholris
   }
   elsif ($timer eq "attack") { #dark elves start to make their way to the gathering
     quest::stoptimer("attack");

@@ -8,7 +8,7 @@ function event_say(e)
 	elseif(e.other:GetClass() == 1) then
 		if(e.message:findi("shipment")) then
 			e.self:Say("We would be most thankful for your service. Please take this voucher over to Groflah at Groflahs Forge in North Freeport. He will give you the shipment of weapons.");
-			e.other:SummonItem(1717);
+			e.other:SummonItem(1717); -- Item: Sealed Letter
 		end
 	end
 end

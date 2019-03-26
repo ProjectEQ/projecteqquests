@@ -1,6 +1,6 @@
 sub EVENT_DEATH_COMPLETE {
   #send signal to #goblin_trigger(237798) that a boss has died
-  quest::signalwith(237798,1,1);
+  quest::signalwith(237798,1,1); # NPC: #trigger_goblin
   my $instid = quest::GetInstanceID("mirb",50);
   if ($qglobals{$instid.'_mirb_event'} == 2) {
     #Raid Leader already dead, update zone_status

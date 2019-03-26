@@ -21,7 +21,7 @@ sub EVENT_SAY {
   }
  elsif($text=~/ready to depart/i){ #Test of Betrayal (Greenmist Quest 5/8)
   quest::emote("slings his pack on his back and locks his sheath. 'Very well. I shall follow shortly. You must depart on your own. Go to the plains of the old skinless outpost. Beware, they have returned and patrol the hillside. Keep an eye on the gates of the outpost. I will be disguised within their ranks, I shall kneel as a sign. Give me this coin as your token.'");
-  quest::summonitem(12691);
+  quest::summonitem(12691); # Item: Coin
   }
 }
 

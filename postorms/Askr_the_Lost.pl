@@ -34,7 +34,7 @@ sub EVENT_SAY {
 
 		if(defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 && $text=~/Bastion of Thunder/i){
 			quest::say("To be honest, I cannot say that it is entirely possible, what with the ferocity of the giants and their reluctance to leave the lands they now inhabit. From what I do know, each of the Leaders of each tribe has one piece to allow entrance into the Bastion of Thunder. When two of these pieces are combined, they form an esoteric medallion that allows instant passage to the thunderous plains beyond. If you can find and seal two pieces of the medallion in this bag, I will be able to forge them into the medallion that will help you on your journey.");
-			quest::summonitem(17192);
+			quest::summonitem(17192); # Item: Askr's Bag of Verity
 		}
 	}
 {

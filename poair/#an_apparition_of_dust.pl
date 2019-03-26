@@ -3,6 +3,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::signalwith(215461,6,1);
+  quest::signalwith(215461,6,1); # NPC: #Dust_Trigger
   quest::stoptimer("dust");
 }

@@ -4,7 +4,7 @@ function event_trade(e)
 		e.self:Say("The slaves...thank you! Here, this will help you slaughter those foul orcs!");
 		e.other:AddEXP(30000);
 		e.other:Ding();
-		e.other:SummonItem(eq.ChooseRandom(5037,5029,13313));
+		e.other:SummonItem(eq.ChooseRandom(5037,5029,13313)); -- Item(s): Bronze Two Handed Battle Axe (5037), Bronze Bastard Sword (5029), Dwarven Axe (13313)
 	end
 
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -1,11 +1,11 @@
 sub EVENT_SPAWN {
-	quest::spawn2(160447,0,0,-1519,-764,4,402);
-	quest::spawn2(160446,28,0,-1378,-694,4,0);
-	quest::spawn2(160446,29,0,-1699,-682,4,0);
+	quest::spawn2(160447,0,0,-1519,-764,4,402); # NPC: #Rett_Jimmins
+	quest::spawn2(160446,28,0,-1378,-694,4,0); # NPC: a_glyph_covered_corpse
+	quest::spawn2(160446,29,0,-1699,-682,4,0); # NPC: a_glyph_covered_corpse
 }
 
 sub EVENT_COMBAT {
-	quest::signal(160447,500);
+	quest::signal(160447,500); # NPC: #Rett_Jimmins
 }
 
 sub EVENT_SAY { 

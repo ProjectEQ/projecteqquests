@@ -51,7 +51,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4494 => 1, 4586 => 1, 4587 => 1)) { #sandals
 
-    quest::summonitem(3690);
+    quest::summonitem(3690); # Item: Sandals of Matter
 
     quest::exp(10000);   
 
@@ -59,7 +59,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4488 => 1, 4588 => 1, 4589 => 1)) { #mask
 
-    quest::summonitem(3691);
+    quest::summonitem(3691); # Item: Veil of Matter
 
     quest::exp(10000);   
 
@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4489 => 1, 4597 => 1, 4598 => 1, 4599 => 1)) { #cloak
 
-    quest::summonitem(3692);
+    quest::summonitem(3692); # Item: Cloak of Matter
 
     quest::exp(10000);   
 
@@ -75,7 +75,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4490 => 1, 4600 => 1, 4601 => 1)) { #gloves
 
-    quest::summonitem(3693);
+    quest::summonitem(3693); # Item: Gloves of Matter
 
     quest::exp(10000);   
 
@@ -83,7 +83,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4491 => 1, 4602 => 1, 4603 => 1)) { #choker
 
-    quest::summonitem(3694);
+    quest::summonitem(3694); # Item: Choker of Matter
 
     quest::exp(10000);   
 
@@ -91,7 +91,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4492 => 1, 4604 => 1, 4828 => 1, 4605 => 1)) { #belt
 
-    quest::summonitem(3695);
+    quest::summonitem(3695); # Item: Belt of Matter
 
     quest::exp(10000);   
 
@@ -99,7 +99,7 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 4493 => 1, 4672 => 1, 4674 => 1, 4673 => 1)) { #staff
 
-    quest::summonitem(3696);
+    quest::summonitem(3696); # Item: Staff of Matter
 
     quest::exp(10000);   
 

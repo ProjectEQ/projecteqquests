@@ -317,13 +317,13 @@ sub TAKE_OVER {
 
 	#Notify the Vah Shir!!
 
-    quest::signalwith(166078, 5, 1);
-    quest::signalwith(166079, 5, 1);
-    quest::signalwith(166080, 5, 1);
-    quest::signalwith(166081, 5, 1);
-    quest::signalwith(166082, 5, 1);
-    quest::signalwith(166083, 5, 1);
-    quest::signalwith(166084, 5, 1);
+    quest::signalwith(166078, 5, 1); # NPC: Guard_Kliknaw
+    quest::signalwith(166079, 5, 1); # NPC: Guard_Rawkkun
+    quest::signalwith(166080, 5, 1); # NPC: Sergeant_Tylah
+    quest::signalwith(166081, 5, 1); # NPC: Rittuh_Purrik
+    quest::signalwith(166082, 5, 1); # NPC: Tokk_Smippah
+    quest::signalwith(166083, 5, 1); # NPC: Kerr_Tiparr
+    quest::signalwith(166084, 5, 1); # NPC: Tolah_Rakknak
 
 	# Spawn Appropriate named & his Crew
 

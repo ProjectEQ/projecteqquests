@@ -13,7 +13,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18735})) then
 		e.self:Say("Welcome to the Priests of Marr. Here, you will be taught how powerful passion truly is. The passion of Erollisi Marr, the Queen of Love, shall flow through you and into all those you meet. Wear this tunic in the name of Love.");
-		e.other:SummonItem(13556);
+		e.other:SummonItem(13556); -- Item: White and Blue Tunic*
 		e.other:Ding();
 		e.other:Faction(362,100,0); -- priest of marr
 		e.other:Faction(330,-10,0); -- freeport militia

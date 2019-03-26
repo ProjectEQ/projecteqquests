@@ -27,13 +27,13 @@ sub EVENT_ITEM {
     # Great Dragon's Head
     if (plugin::check_handin(\%itemcount, 25119 => 1)) {
       quest::say("This beast must have taken quite a force to slay. These boots have been crafted to reward your kind for such great efforts. Take them and wear them with pride. They will be a warning to other dragons that you are a great slayer of their kind.");
-      quest::summonitem(25029);
+      quest::summonitem(25029); # Item: Barbed Dragonscale Boots
     }
 
     # Greater Dragon's Head
     elsif (plugin::check_handin(\%itemcount, 25118 => 1)) {
       quest::say("You serve the crown well, $name. This is one less beast to ruin our lands. Take these pauldrons which I have fashioned from the first dragon scales brought to King Tormax's court.");
-      quest::summonitem(25028);
+      quest::summonitem(25028); # Item: Barbed Dragonscale Pauldrons
     }
 
     else {

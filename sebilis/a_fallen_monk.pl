@@ -13,7 +13,7 @@ sub EVENT_ITEM {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(89183,0,0,$x,$y,$z,$h);
+  quest::spawn2(89183,0,0,$x,$y,$z,$h); # NPC: a_fallen_monk_master
   quest::depop_withtimer();
  }
  plugin::return_items(\%itemcount);

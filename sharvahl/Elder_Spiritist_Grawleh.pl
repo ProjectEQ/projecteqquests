@@ -13,11 +13,11 @@ sub EVENT_ENTER {
 sub EVENT_SAY {
   if (($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)) {
     quest::say("Luckily for you someone found it.");
-    quest::summonitem(2873);
+    quest::summonitem(2873); # Item: Application for Citizenship
   }
   if (($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)) {
     quest::say("Someone found a grimling wearing this in the pit. Try not to lose it this time.");
-    quest::summonitem(2878);
+    quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
   }
 }
 
@@ -29,7 +29,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 30962 => 1)) {
-    quest::summonitem(15225, 1);
+    quest::summonitem(15225, 1); # Item: Spell: Endure Cold
   }
   if (plugin::check_handin(\%itemcount, 18551 => 1)) { # Dar Khura Guild Summons
     quest::say("Good $name, I am honored to meet you. You have come of age and it is time for you to register for citzenship of Shar Vahl. The Dar Khura, spiritual guides of our people, have sensed your spirit and deem you to be worthy of our training. First things first, take this application to Registrar Bindarah and return to me with proof of citzenship.");
@@ -42,7 +42,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 2897 => 1)) {
     quest::say("Welcome back, $name! I see that your documents are in order and you are an official citizen of Shar Vahl, which is great news! Let me be the first to welcome you to the ranks of the Dar Khura! Here, take this cloak and wear it with pride.");
     quest::say("Present your acrylia slate to spiritist Fehril and he will guide you through your early training. May the strongest of our ancestral spirits be your inspiration.");
-    quest::summonitem(2878);
+    quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
     quest::setglobal("Shar_Vahl_Cit", 7, 5, "F");
     quest::ding();
     quest::exp(100);

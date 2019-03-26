@@ -18,7 +18,7 @@ function event_say(e)
 		e.self:Emote("'s eyes suddenly come into focus, looking deep into your own and says, 'There was a time when we cared for the world and trod with the spirits along the paths of the cosmos. We built many great things and worked to preserve what was. I came here to wait for an answer when we began to die off. We could not figure why this was and I was chosen to come here and commune with our friends. We carved an arrow, and everyone who was left shaved a sliver of wood from it. We let it drop to hallowed ground and our highest shaman stepped on it, breaking it. I've been waiting here for so long. So, so long, to give it to the spirits, and thank them.");
 	elseif(e.message:findi("give them the arrow")) then -- Part of Shaman Epic 1.0
 		e.self:Emote("removes a quiver slung across his shoulder and solemnly hands it to you without a word.");
-		e.other:SummonItem(1680);
+		e.other:SummonItem(1680); -- Item: Broken Arrow
 	end
 end
 
@@ -33,7 +33,7 @@ function event_timer(e)
 		e.self:Emote("suddenly gasps and says, 'I have found it! I know the answer! Come with me and I will tell you. Eyes are everywhere and this knowledeg is not for everyone. Finally my centuries of waiting are over hahahaha! Follow me Shaman!");  
 		eq.start(58);
 	elseif (counting == 3) then
-		eq.spawn2(98052,0,0,4176.4,-1563.6,-291.4,230.6);
+		eq.spawn2(98052,0,0,4176.4,-1563.6,-291.4,230.6); -- NPC: a_greater_spirit
 		eq.depop();
 		eq.stop_timer("letbegin");
 	end

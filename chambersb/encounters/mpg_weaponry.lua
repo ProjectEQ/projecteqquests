@@ -73,7 +73,7 @@ function Weaponry_Signal(e)
   if (e.signal == 1) then 
     eq.spawn_condition('chambersb', instance_id, 1, 0);
     eq.stop_all_timers();
-    eq.spawn2(305005, 0, 0, -212, 273, 71, 40);
+    eq.spawn2(305005, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
     eq.depop();
 
     local mpg_helper = require("mpg_helper");
@@ -132,7 +132,7 @@ function Mini_Death(e)
       el:IsMobSpawnedByNpcTypeID(305003) == false and
       el:IsMobSpawnedByNpcTypeID(305000) == false ) then
     
-      eq.signal(305004, 1);
+      eq.signal(305004, 1); -- NPC: Master_of_Weaponry
   end
 end
 

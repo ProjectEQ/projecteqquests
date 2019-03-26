@@ -11,12 +11,12 @@ sub EVENT_SAY {
   }
   if ($text=~/retrieve the mining picks/i && $picks == 1) {
     quest::say("Excellent, $name. Please go see Terasol in Katta to retrieve my mining supplies. Bring him this note to show that you were sent by me. And dunt stray off track with these supplies, we needs em bad!");
-    quest::summonitem(4754);
+    quest::summonitem(4754); # Item: Jarbled Note
     $picks = 0;
   }
   if ($text=~/return a letter/i && $picks == 2) {
     quest::say("I thank you, $name. Without your help I doubt we would have been able to finish this project on time! Please take this to my wife Aliane back home. You can surely count on me telling the Patriarch of how much help you have been when I return home. I wish you good journeys as for me its back to work I go!");
-    quest::summonitem(4756);
+    quest::summonitem(4756); # Item: Letter to Aliane
     $picks = 0;
   }
 }

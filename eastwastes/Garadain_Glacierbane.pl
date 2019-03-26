@@ -37,7 +37,7 @@ sub EVENT_SAY {
   }
   if ($text=~/assistance/i) {
     quest::say("I'm taking a liking to you, stranger. Your eagerness to help us will not go unnoticed. Find my nephew and give him this axe. It should keep him from hurting himself. Return to me with the ring and proof that he is safe.");
-    quest::summonitem(30265);
+    quest::summonitem(30265); # Item: Dull Bladed Axe
   }
 
 ###########################
@@ -60,7 +60,7 @@ sub EVENT_SAY {
 
   if ($text=~/smithing hammer/i) {
     quest::say("[Tain] Hammerfrost can get you one. Find him and give him this.");
-    quest::summonitem(30139);
+    quest::summonitem(30139); # Item: Note to Tain
   }
   if ($text=~/tain/i) {
     quest::say("Tain left a short time ago, he said he had a score to settle with a particular Kromriff.");
@@ -111,13 +111,13 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 30135 => 1)) {
     quest::say("Ahh, that'll do fine. Take this, it is but a trinket for now, but continue to serve the Coldain and it will grow in power. I must get some rest now, for I have been told my [nephew] has disappeared again and I will need to track him down tomorrow.");
-    quest::summonitem(30131);
+    quest::summonitem(30131); # Item: Copper Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(50000);
   }
@@ -128,13 +128,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount,30267 => 1, 30131 => 1)) {
     quest::say("Well done friend! My nephew is safe at home and his thirst for adventure is quenched for now. The beast will claim no more of our people. I couldn't have handled it better myself. Now I can get back to the business of [hunting].");
-    quest::summonitem(30133);
+    quest::summonitem(30133); # Item: Silver Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(60000);
   }
@@ -145,13 +145,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount, 30133 => 1, 30137 => 1)) {
     quest::say("Hrmm, not quite the work of a Coldain. Barely functional, in fact. I'll be needing to touch this up a bit. Fetch me a Coldain [smithing hammer] and I'll be sure to tell my associates in Thurgadin of your deeds.");
-    quest::summonitem(30132);
+    quest::summonitem(30132); # Item: Gold Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(70000);
   }
@@ -162,13 +162,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount, 30140 => 1, 30132 => 1)) {
     quest::say("Ahh, there we go now, that's more like it. It would be time to return to the hunt were it not for the [plans] our spies have discovered.");
-    quest::summonitem(30134);
+    quest::summonitem(30134); # Item: Platinum Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(80000);
   }
@@ -179,13 +179,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount, 30141 => 1, 30134 => 1)) {
     quest::say("Without your assistance, we would have lost our camp and our lives. Again, I thank you. Now that you have proven your loyalty to the throne I have a special [favor] to ask of you.");
-    quest::summonitem(30268);
+    quest::summonitem(30268); # Item: Obsidian Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(90000);
   }
@@ -196,13 +196,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount, 1045 => 1, 18084 => 1, 30268 => 1)) {
     quest::emote("lowers his head and mutters, 'At least there will be some closure for their families, thanks to you. The Ry`gorr will pay for this with their lives! I will ask you to help us in the invasion of Ry`gorr keep, but first I have a delicate [mission] I was hoping you'd handle.");
-    quest::summonitem(30162);
+    quest::summonitem(30162); # Item: Mithril Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(100000);
   }
@@ -213,13 +213,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount, 1047 => 1)) {
     quest::say("Thank you, $name, your service to our people has been most helpful. The time has come for our people to make war with the Ry`gorr. They must pay for their transgressions against our people. We are just waiting on you. Prepare yourself for glorious battle and tell me when you are [ready].");
-    quest::summonitem(30163);
+    quest::summonitem(30163); # Item: Adamantium Coldain Insignia Ring
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(110000);
   }
@@ -230,13 +230,13 @@ sub EVENT_ITEM {
 
   elsif (plugin::check_handin(\%itemcount, 30163 => 1)) {
     quest::say("Give this to Gloradin and return to me immediately, it is time. May Brell be with us!");
-    quest::summonitem(1093);
+    quest::summonitem(1093); # Item: Marching Orders
 
 #   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
 
     quest::exp(120000);
   }
@@ -279,7 +279,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
   elsif ($walk5 == undef) {
     $walk5=$walk5+1;
-    quest::spawn2(116576,237,0,521.2,-3140,195.6,261);
+    quest::spawn2(116576,237,0,521.2,-3140,195.6,261); # NPC: #Garadain_Glacierbane
     quest::depop_withtimer();
   }
 }

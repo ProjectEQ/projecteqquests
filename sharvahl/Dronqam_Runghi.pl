@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 3446 => 1, 3447 => 1, 3448 => 1)) {
     quest::say("Wonderful! I have little to offer you for your trouble aside from my gratitude. Here is a pinch of acrylia dust. I know it's not much. If you have no need for it go to Mignah, he can always use all kinds of acrylia.");
-    quest::summonitem(3449);
+    quest::summonitem(3449); # Item: Pinch of Acrylia Dust
   }
   plugin::return_items(\%itemcount);
 }

@@ -22,7 +22,7 @@ sub EVENT_TIMER
 	{
 		quest::stoptimer("explode_timer");
 		quest::emote("overloads, eradicating everything around it.");
-		$npc->CastSpell(1948, $npc->GetID(), 10, 0);
+		$npc->CastSpell(1948, $npc->GetID(), 10, 0); # Spell: Destroy
 		$npc->Kill();
 	}
 }

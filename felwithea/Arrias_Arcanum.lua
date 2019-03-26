@@ -11,11 +11,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 31493})) then
 		e.self:Say("This! This is the gift my daughter gave Ariam to aid his cause. This too is the piece of my soul that was missing. Your news of his fate is troubling, yet his heroism even beyond this life is cause for celebration. Here, keep this token. My heart is mended and I have no need of it. Once such as yourself who will continue to fight for the things in which my son believes ought to bear this. I am sure my daughter would agree.");
-		e.other:SummonItem(31495);
+		e.other:SummonItem(31495); -- Item: Arrialla's Token
 		e.other:Ding();
-		e.other:Faction(5001,3,0);
-		e.other:Faction(226,3,0);
-		e.other:Faction(279,3,0);
+		e.other:Faction(5001,3,0); -- Faction: Anti-mage
+		e.other:Faction(226,3,0); -- Faction: Clerics of Tunare
+		e.other:Faction(279,3,0); -- Faction: King Tearis Thex
 		e.other:AddEXP(300);
 		e.other:GiveCash(0,5,0,0); 
 	end

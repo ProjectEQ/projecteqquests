@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     quest::faction(448,-25); # -Kromzek
     quest::exp(1000);
     # Summon: Potion of Draconic Rage
-    quest::summonitem(12555);
+    quest::summonitem(12555); # Item: Potion of Draconic Rage
   }
   # Handin: Captain Glargs Brooch, Captain Mc'Hershs Brooch, Captain Ulmogs Brooch
   elsif(plugin::check_handin(\%itemcount, 11991 => 1, 11993 => 1, 11992 => 1)){
@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::faction(448,-50); # -Kromzek
     quest::exp(1500);
     # Summon: Draconic Girdle
-    quest::summonitem(12556);
+    quest::summonitem(12556); # Item: Draconic Girdle
   }
   # Handin: Grenth Drakebane's Head, Julius Oresco's Head, Rontar O'Karn's Head, Sadeem Oujva's Head
   elsif(plugin::check_handin(\%itemcount, 11995 => 1, 11994 => 1, 11997 => 1, 11996 => 1)){
@@ -48,7 +48,7 @@ sub EVENT_ITEM {
     quest::faction(448,-100); # -Kromzek
     quest::exp(2000);
     # Summon: Draconic Pauldrons
-    quest::summonitem(12557);
+    quest::summonitem(12557); # Item: Draconic Pauldrons
   } 
   plugin::return_items(\%itemcount);
 }

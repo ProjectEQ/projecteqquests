@@ -17,12 +17,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {gold = 2})) then
 		e.self:Say("Yeah, well, these are pretty hard to come by. In fact, these came all the way from Odus. Enjoy, and tell your buddies.");
 		e.other:Ding();
-		e.other:SummonItem(18006);
-		e.other:Faction(223,2,0);
-		e.other:Faction(291,-2,0);
-		e.other:Faction(230,2,0);
-		e.other:Faction(262,-2,0);
-		e.other:Faction(273,2,0);
+		e.other:SummonItem(18006); -- Item: Blank Scroll Sheets
+		e.other:Faction(223,2,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(291,-2,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(230,2,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(262,-2,0); -- Faction: Guards of Qeynos
+		e.other:Faction(273,2,0); -- Faction: Kane Bayle
 		e.other:AddEXP(200);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

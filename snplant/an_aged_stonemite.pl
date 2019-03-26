@@ -1,5 +1,5 @@
 sub EVENT_DEATH_COMPLETE {
 
-    quest::signalwith(287136,1,1);
+    quest::signalwith(287136,1,1); # NPC: #Ansharu
 
 }

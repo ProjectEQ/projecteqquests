@@ -5,7 +5,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 10626})) then
 		e.self:Say("Crroooaak! Crrroooooaaakk!");
-		e.other:SummonItem(10601);
+		e.other:SummonItem(10601); -- Item: Ink of the Dark
 		e.other:Ding();
 		e.other:AddEXP(10000);
 	end

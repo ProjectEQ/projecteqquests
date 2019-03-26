@@ -91,7 +91,7 @@ end
 function Subversion_Death(e)
   eq.spawn_condition(this_zone, instance_id, 1, 0);
   eq.stop_all_timers();
-  eq.spawn2(306009, 0, 0, -212, 273, 71, 40);
+  eq.spawn2(306009, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
 
   local mpg_helper = require("mpg_helper");
   mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
@@ -112,7 +112,7 @@ function Subversion_Signal(e)
 
   if (points >= 300) then
     -- Notify the Guardians to become active
-    eq.signal(306000, 1);
+    eq.signal(306000, 1); -- NPC: a_dragorn_guardian
 
     -- Activate Thyself
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
@@ -122,7 +122,7 @@ function Subversion_Signal(e)
 
   -- Use Signal 9 to force Jagged Rust (Zam describes this as "nasty effects")
   if (e.signal == 9) then
-    e.self:CastSpell(6130, e.self:GetID());
+    e.self:CastSpell(6130, e.self:GetID()); -- Spell: Jagged Rust
   end
 end
 
@@ -132,7 +132,7 @@ end
 function Chest_Opened(e)
   local chance = eq.ChooseRandom(1,2,3);
   if ( chance == 1 ) then 
-    eq.signal(306001, 9);
+    eq.signal(306001, 9); -- NPC: Master_of_Subversion
   end
 end
 

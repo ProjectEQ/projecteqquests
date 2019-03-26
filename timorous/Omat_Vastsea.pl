@@ -25,7 +25,7 @@ sub EVENT_SAY {
   }
   if ($text=~/destruction/i) {
     quest::say("They are in hiding, the few alcoves that I managed to find were shrouded and hidden. Take this signet and find the keeper for each alcove. Show it to him and he will drop the veil. Strike fast and exterminate the camp before he is able to cloak the camp again. Return the talisman to me with proof of the deaths of the three remaining high priests. Once you have done this, I will send you to my brother with my blessings.");
-	quest::summonitem(56010);
+	quest::summonitem(56010); # Item: Talisman of the Plasmatic Priests
   }
 }
 

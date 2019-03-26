@@ -19,6 +19,6 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20524 => 1)) {
     quest::say("Excellent, I guess his entire race is now wiped from Norrath. This will indeed make a wonderful scroll case. I am a giant of my word. Take your prized item and be gone, you greedy little beast!");
-    quest::summonitem(25053);
+    quest::summonitem(25053); # Item: Flayed Coldain-Skin Leggings
   }
 }

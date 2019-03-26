@@ -51,7 +51,7 @@ function event_timer(e)
 		Bakery = 2;
 		eq.pause(60);
 		e.self:Say("I sure could use some of those famous muffins you make!");
-		eq.signal(9088,1,10000);
+		eq.signal(9088,1,10000); -- NPC: Pincia_Brownloe Baking Supplies
 	elseif(xloc == -497 and yloc == -204 and Bakery == 2) then
 		eq.stop();
 		eq.stop_timer("Pandos");
@@ -62,12 +62,12 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Thank you very much! These look delicious. Well, I need to get back to duty. I'll be back tomorrow!");
-		eq.signal(9088,2,10000);
+		eq.signal(9088,2,10000); -- NPC: Pincia_Brownloe Baking Supplies
 	elseif(e.signal == 2) then
 		eq.resume();
 	elseif(e.signal == 3) then
 		e.self:Say("Yes, Lady Shae.");
-		eq.signal(9058,3);
+		eq.signal(9058,3); -- NPC: Lady_Shae
 	end
 end
 

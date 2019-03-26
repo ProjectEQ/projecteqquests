@@ -10,13 +10,13 @@ function event_trade(e)
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13713})) then
 		e.self:Say("Yes,  I do believe this was the child's dress.  Here, take this as your share of the reward.  Her father will be heartbroken..");
-		e.other:SummonItem(eq.ChooseRandom(10018,10018,10320));
+		e.other:SummonItem(eq.ChooseRandom(10018,10018,10320)); -- Item(s): Hematite (10018), Hematite (10018), Golden Ear Stud (10320)
 		e.other:Ding();
-		e.other:Faction(262,5,0);
-		e.other:Faction(219,5,0);
-		e.other:Faction(230,-5,0);
-		e.other:Faction(223,-5,0);
-		e.other:Faction(291,5,0);
+		e.other:Faction(262,5,0); -- Faction: Guards of Qeynos
+		e.other:Faction(219,5,0); -- Faction: Antonius Bayle
+		e.other:Faction(230,-5,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(223,-5,0); -- Faction: Circle of Unseen Hands
+		e.other:Faction(291,5,0); -- Faction: Merchants of Qeynos
 		e.other:GiveCash(0,4,0,0);
 		e.other:AddEXP(100);
 	end

@@ -10,11 +10,11 @@ local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13959})) then
 		e.self:Say("Oh good!  Hey.  You are not Jillin..  Helping out Blinza huh?  She is quite a woman..  Yes indeed.  Quite a woman..  ah..  Oh sorry.  Here you go.  Thanks again.  Mayor Gubbin will be pleased.");
 		e.other:GiveCash(7,0,0,0);
-		e.other:Faction(263, 4);
-		e.other:Faction(286, 4);
-		e.other:Faction(355, 4);
-		e.other:Faction(292, 4);
-		e.other:Faction(334, -8);
+		e.other:Faction(263, 4); -- Faction: Guardians of the Vale
+		e.other:Faction(286, 4); -- Faction: Mayor Gubbin
+		e.other:Faction(355, 4); -- Faction: Storm Reapers
+		e.other:Faction(292, 4); -- Faction: Merchants of Rivervale
+		e.other:Faction(334, -8); -- Faction: Dreadguard Outer
 		e.other:AddEXP(1000); 
 	else
 		item_lib.return_items(e.self, e.other, e.trade);

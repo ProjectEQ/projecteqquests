@@ -34,7 +34,7 @@ function event_timer(e)
 	if(e.timer == "10") then
 		eq.stop_timer("9");
 		eq.stop_timer("10");
-		eq.signal(154130,5,10);
+		eq.signal(154130,5,10); -- NPC: WDTrpMn
 		eq.depop();
 	end
 end
@@ -42,5 +42,5 @@ end
 function event_death_complete(e)
 	eq.stop_timer(9);
 	eq.stop_timer(10);
-	eq.signal(154130,1,10);
+	eq.signal(154130,1,10); -- NPC: WDTrpMn
 end

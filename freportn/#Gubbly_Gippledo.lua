@@ -17,14 +17,14 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 55030,item2 = 55029})) then
 		e.self:Say("Magnificent! You are truly an inspiring individual, "..e.other:GetName().."! Now let me see about getting these gems back in place. I was a jeweler before I became a Paladin of Marr. There we go! It is almost as good as new. The other paladins here and I have been talking about this incident. We have all decided that you should keep the ring as a reward for your dedication to Marr's cause and your bravery. You are now its keeper. If you head back to Gukta, you may want to talk to Bibsy Gakdoo in Gukta. He is a master jeweler and can probably upgrade the ring for you. You might want to wait until you are more powerful however since any components used in the upgrade might be difficult to locate. When you do decide to talk to Bibsy, give him this note. It tells that the ring has been entrusted to you and that he will be compensated by the Shin Knights for upgrading it for you. May Marr bless you. I must be off to pray. Farewell, friend.");
-		e.other:SummonItem(55032);
-		e.other:SummonItem(55031);
+		e.other:SummonItem(55032); -- Item: Marr's Ring
+		e.other:SummonItem(55031); -- Item: Note to Bibsy
 		e.other:Ding();
-		e.other:Faction(1719,2,0);
-		e.other:Faction(1718,2,0);
-		e.other:Faction(1716,2,0);
-		e.other:Faction(1717,2,0);
-		e.other:Faction(1709,2,0);
+		e.other:Faction(1719,2,0); -- Faction: Citizens of Gukta
+		e.other:Faction(1718,2,0); -- Faction: Guktan Elders
+		e.other:Faction(1716,2,0); -- Faction: High Council of Gukta
+		e.other:Faction(1717,2,0); -- Faction: Lorekeepers of Gukta
+		e.other:Faction(1709,2,0); -- Faction: Protectors of Gukta
 		e.other:AddEXP(4000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -9,7 +9,7 @@ sub EVENT_ITEM {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::spawn2(56148,0,0,$x,$y,$z,$h);
+    quest::spawn2(56148,0,0,$x,$y,$z,$h); # NPC: diseased_female_rat
     quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount);

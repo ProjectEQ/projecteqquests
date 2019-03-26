@@ -36,7 +36,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 28000 => 1, 28001 => 1, 28002 => 1)) {
     quest::say("Rykas may have been right about you, $name. Now, go find Walnan. Walnan was apprenticed to a very powerful Mage. After her apprenticeship was complete, she wished to begin teaching other beings of Norrath. Even those who knew nothing of the art! I do not believe she was successful, though. Seek her out to further your tale. Good luck in your journeys, $name!");
-    quest::summonitem(28003);
+    quest::summonitem(28003); # Item: Words of Magi`kot
   }
   plugin::return_items(\%itemcount);
 }

@@ -16,36 +16,36 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 20523 => 1)) {
     quest::say("Ay danks. Take dis to Uglan.");
-    quest::summonitem(16547);
+    quest::summonitem(16547); # Item: Stein
   }
   elsif(plugin::check_handin(\%itemcount, 1717 => 1)) {
     quest::say("Arg! Dem damned Orcs and Dark Elves! To da hells with dem! I be wantin revenge! Bring me da hearts of da dark elf ammbassador's K'ryn who can be locat'd in da shamen tun'ls, and D'vinn who can be located in da crushbone with da orc emperor.");
   }
   elsif(plugin::check_handin(\%itemcount, 13227 => 1)) {
     quest::say("Ahahaha! Da basterds! Here be a reward for ye!");
-    quest::summonitem(13355);
+    quest::summonitem(13355); # Item: Crude Stein
   }
   elsif(plugin::check_handin(\%itemcount, 13356 => 1)) {
     quest::say("Ahhh!! Boohoohoo. Nork!! That you arm. Me will take care of you now. Thank you for killing gator. You must be strong. Now you help Crakneks. We hear.. ohh, poor Nork, we hear trouble begins. Find ogre warrior [Uglan]. Give him this. It broken. He know where you from. Go. Nork.. Poor Nork.");
-    quest::faction(232,10);
-    quest::faction(228,10);
-    quest::faction(261,-10);
-    quest::summonitem(13357);
+    quest::faction(232,10); # Faction: Craknek Warriors
+    quest::faction(228,10); # Faction: Clurg
+    quest::faction(261,-10); # Faction: Green Blood Knights
+    quest::summonitem(13357); # Item: Cracked Stein
     quest::exp(50);
   }
   elsif(plugin::check_handin(\%itemcount, 18840 => 1)) {
     quest::say("What this!! So, dark elves think they can bash ogres. Replace with blue orcs. Dumb Zulort friend with dark elf ambassador in Oggok. We kill him. We kill Crushbone dark elf ambassador also. This slow down plan. We need a hero. Me guess you do. You go. Go bring Lork both Crushbone and Oggok dark elf hearts. Then you be hero.");
-    quest::faction(232,10);
-    quest::faction(228,10);
-    quest::faction(261,-10);
+    quest::faction(232,10); # Faction: Craknek Warriors
+    quest::faction(228,10); # Faction: Clurg
+    quest::faction(261,-10); # Faction: Green Blood Knights
     quest::exp(100);
-    quest::summonitem(5030);
+    quest::summonitem(5030); # Item: Bronze Two Handed Sword
   }
   elsif(plugin::check_handin(\%itemcount, 13358 => 1, 13227 => 1)) {
     quest::say("That show dark elves who strongest. Me hope you kill many blue orcs. You Craknek Hero now. You take this. It mine. Hero reward. You great ogre now. Smash best.");
-    quest::faction(232,10);
-    quest::faction(228,10);
-    quest::faction(261,-10);
+    quest::faction(232,10); # Faction: Craknek Warriors
+    quest::faction(228,10); # Faction: Clurg
+    quest::faction(261,-10); # Faction: Green Blood Knights
     quest::exp(100);
     quest::ChooseRandom(13359,13355,2136,2130,2135,2132,2128);
   }

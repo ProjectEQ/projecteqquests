@@ -6,7 +6,7 @@ function event_say(e)
 	elseif(qglobals["wizepicK"] ~= nil) then
 		if(e.message:findi("what oil")) then
 			e.self:Say("Ah the oil! I recently sent a specially crafted golem to explore through a huge portal to another plane. It's instructions were to collect special oil that I suspect existed in the plane. What I think is the golem broke down. This looks like a good task for one like you. Go see what's wrong with the golem. Here is spare gears of mine incase it's broken. Be careful though, if you put it in wrong it could explode or worse!");
-			e.other:SummonItem(14319);
+			e.other:SummonItem(14319); -- Item: Golem Sprocket
 		end
 	end
 end
@@ -40,7 +40,7 @@ function event_trade(e)
 			--hack because we do not have this bag in the DB
 			e.other:Ding();
 			e.self:Say("**hack** Hand this skin back in when you turn in the mistletoe powder");
-			e.other:SummonItem(14332);
+			e.other:SummonItem(14332); -- Item: Cazic's Skin
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

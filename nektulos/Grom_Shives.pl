@@ -6,8 +6,8 @@ sub EVENT_SAY {
 	if(quest::istaskactivityactive(216,10)){
 		if($text=~/Hail/i) {
 			if(defined $qglobals{halloween_race_victory} && !defined $qglobals{halloween_race_complete}) {
-				quest::summonitem(80056);
-				quest::summonitem(85062);
+				quest::summonitem(80056); # Item: Cloak of Death
+				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_race_complete",1,0,"D30");
 				quest::delglobal("halloween_race_victory");
@@ -33,7 +33,7 @@ sub EVENT_SAY {
 			if($text=~/Ready/i) {
 				quest::setglobal("halloween_race_start",1,1,"M4");
    				quest::emote("places a twisted rotted mask into your hands, 'This will be your only guide, ride quickly and do not hesitate... Remember, you have only four minutes to reach the gates of Neriak.'");
-				quest::summonitem(80043);
+				quest::summonitem(80043); # Item: Mask of Eyes
 			}
 		}
       	}
@@ -63,7 +63,7 @@ sub EVENT_SAY {
    			quest::emote("hands you a bridle, 'When you are [ready], you will need to ride with haste and reach the gates of Neriak before the fourth minute has passed.'");
 			quest::assigntask(219);
       			quest::assigntask(216);
-			quest::summonitem(80039);	
+			quest::summonitem(80039); # Item: Bridle of the Cursed	
 		}
 	}	
 }

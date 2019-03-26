@@ -22,7 +22,7 @@ sub EVENT_SAY {
   }
   if ($text=~/prove myself worthy/i && $faction == 1 && $qglobals{galeweaver} == 1){
     quest::say("Then your endeavor shall continue, my child. Take this scroll -- to you now it holds no meaning but in due time you shall understand. Keep the scroll close to you until you have sought and successfully acquired the [Dormant Crystal Sphere] and [The Rainkeeper's Writ].");
-    quest::summonitem(8962);
+    quest::summonitem(8962); # Item: Ancient White Scroll
   }
   if ($text=~/dormant crystal sphere/i && $qglobals{galeweaver} == 1) {
     quest::say("There are several magical spheres throughout Norrath but this sphere is [unique to The Rainkeeper]. It is said that when Karana blessed this area with his first storm in acceptance of the nomadic tribe that would settle here, that the droplets of rain left upon the pines and blades of grass was gathered by one of these nomads and stored in a plain clay jar that was then buried as a symbol of their own gratitude toward the storm. Nearly a century later when Karana's Shrine and the Throne of Karana's Thunder were near completion, one known as Tanirun Galeweaver found the jar. The water was still inside, preserved by means unexplainable through simple reason. It is said that Tanirun poured the water into his own hands and wove a spell, sealing the wind within the orb of this ancient rain that was now crystallized by Tanirun's spell.");
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
     quest::faction(272,10); #Jaggedpine Treefolk
     quest::faction(302,10); #Protectors of Pine
     quest::faction(262,10); #Guards of Qeynos
-    quest::summonitem(17135);
+    quest::summonitem(17135); # Item: Dormant Gale Stone
     quest::setglobal("galeweaver",2,0,"F");
   }
   elsif (plugin::check_handin(\%itemcount, 8966 => 1) && $qglobals{galeweaver} == 2){ #Turn in orb of the gale
@@ -65,7 +65,7 @@ sub EVENT_ITEM {
     quest::faction(272,10); #Jaggedpine Treefolk
     quest::faction(302,10); #Protectors of Pine
     quest::faction(262,10); #Guards of Qeynos
-    quest::summonitem(8967);
+    quest::summonitem(8967); # Item: The Gale Weaver
   }
   plugin::return_items(\%itemcount);
 }

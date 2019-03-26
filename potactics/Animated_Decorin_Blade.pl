@@ -19,7 +19,7 @@ sub EVENT_COMBAT {
 sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("depop");
 	if($entity_list->IsMobSpawnedByNpcTypeID(214054)) {
-		quest::spawn2(214119,0,0,$x,$y,$z,$h);
+		quest::spawn2(214119,0,0,$x,$y,$z,$h); # NPC: Animated_Decorin_Blade
 	}
 }
 

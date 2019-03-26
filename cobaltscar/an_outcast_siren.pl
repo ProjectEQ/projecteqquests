@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 I will need more scales to make the cloak in his size. I have already slaughtered a good thirty sirens and the cloak is nearly complete. Go forth and slaughter my kind and bring me three excellent scales and this idol. Let this idol be your protection from the wrath of E'ci. I will continue my work on the cloak.");
     quest::exp(1000);
     # Summon: Idol of Solusek Ro (statless)
-    quest::summonitem(25108);
+    quest::summonitem(25108); # Item: Idol of Solusek Ro
   }
   # Handin: Excellent Siren Scales, Idol of Solusek Ro (statless)
   elsif(plugin::check_handin(\%itemcount, 25109 => 3, 25108 => 1)){
@@ -21,7 +21,7 @@ I will need more scales to make the cloak in his size. I have already slaughtere
     quest::emote("hands you a gigantic cloak made of slick siren scales.");
     quest::say("I was done making the cloak already. I just wanted to watch you slay the weak. I thank you for bringing more suffering into the world.");
     # Summon: Giant Siren Scale Cloak 
-    quest::summonitem(25110);
+    quest::summonitem(25110); # Item: Giant Siren Scale Cloak
   }
 }
 

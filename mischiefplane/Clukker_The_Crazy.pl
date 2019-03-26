@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13106 => 1)) {
     quest::emote("takes a bite out of the fishing grub that was handed to him. Clukker then says, 'Ha ha HA! Thanks for the tasty treat! Now here is your deck! Hee hee haw!'");
-    quest::summonitem(17054);
+    quest::summonitem(17054); # Item: Deck of Spontaneous Generation
   }
 }
 

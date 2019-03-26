@@ -8,8 +8,8 @@ function Juggernaut_Death(e)
 				local qglobals = eq.get_qglobals(currclient);
 				if(qglobals["berserk_epic"] == "3" and qglobals["berserker_seb"] == nil) then				
 					eq.spawn2(89194, 0, 0, -225.93, -1556.52, -173.84, 320); -- needs_heading_validation
-					eq.spawn2(89195, 0, 0, -214, -1572, -173.84, 110);
-					eq.spawn2(89195, 0, 0, -214, -1538, -173.84, 152);
+					eq.spawn2(89195, 0, 0, -214, -1572, -173.84, 110); -- NPC: A_Sebilite_Guardian
+					eq.spawn2(89195, 0, 0, -214, -1538, -173.84, 152); -- NPC: A_Sebilite_Guardian
 					eq.set_global("berserker_seb","1",3,"H2");
 					return; --only spawn 1
 				end
@@ -34,7 +34,7 @@ function Protector_Timer(e)
 		eq.depop_all(89194); --protector
 		eq.depop_all(89195); --guardian
 	elseif(e.timer=="nuke") then
-		e.self:CastSpell(2047, e.self:GetTarget():GetID());
+		e.self:CastSpell(2047, e.self:GetTarget():GetID()); -- Spell: Death Shackles
 	elseif(e.timer=="checkaxe") then
 			e.self:ForeachHateList(
 				function(ent, hate, damage, frenzy)
@@ -46,22 +46,22 @@ function Protector_Timer(e)
 									eq.target_global("berserk_epic_test17759", "1", "F", 0,currclient:CharacterID(),0);
 									currclient:Message(15,"After several heavy swings, the axe shatters into many fine pieces. Time for a new axe!");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
-									currclient:SummonItem(17833);
+									currclient:SummonItem(17833); -- Item: Broken Trial Taelosian Blood Axe
 								elseif(currclient:GetItemIDAt(Slot.Primary)== 17759 ) then
 									eq.target_global("berserk_epic_test17370", "1", "F", 0,currclient:CharacterID(),0);
 									currclient:Message(15,"After raining down nearly two dozen blows you begin to notice small hairline fractures developing in the axe head. You think testing for this axe has been completed.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
-									currclient:SummonItem(17898);
+									currclient:SummonItem(17898); -- Item: Damaged Trial Taelosian Blood Axe
 								elseif(currclient:GetItemIDAt(Slot.Primary)==17700) then
 									eq.target_global("berserk_epic_test17700", "1", "F", 0,currclient:CharacterID(),0);
 									currclient:Message(15,"After many swings you can feel this axe is failing and think that it will fall apart at any moment. You think that testing for this axe has been completed.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
-									currclient:SummonItem(17399);
+									currclient:SummonItem(17399); -- Item: Damaged Trial Taelosian Blood Axe
 								elseif(currclient:GetItemIDAt(Slot.Primary)== 17370) then
 									eq.target_global("berserk_epic_test16779", "1", "F", 0,currclient:CharacterID(),0);
 									currclient:Message(15,"The rigors of battle have had no effect of this axe. Keras should be very pleased with the result of this particular axe.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
-									currclient:SummonItem(18976);									
+									currclient:SummonItem(18976); -- Item: Taelosian Alloy Blood Axe									
 								end
 							end
 						end
@@ -73,9 +73,9 @@ end
 
 function Protector_HP(e)
   if (e.hp_event == 75) then
-	e.self:CastSpell(2047, e.self:GetTarget():GetID());
+	e.self:CastSpell(2047, e.self:GetTarget():GetID()); -- Spell: Death Shackles
 	eq.set_timer("nuke", 36*1000);
-	eq.signal(89195,75);		
+	eq.signal(89195,75); -- NPC: A_Sebilite_Guardian		
   end 
 end
 
@@ -137,7 +137,7 @@ function Protector_Death(e)
 			end				
 		end
 	);
-	eq.signal(89195,1);			
+	eq.signal(89195,1); -- NPC: A_Sebilite_Guardian			
 end
 
 

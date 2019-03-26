@@ -42,40 +42,40 @@ function CustodianDeath(e)
 
 	--Maidens--
 	--ROOM 1
-	eq.spawn2(211077,0,0,-2468,-1725,-113,130);
-	eq.spawn2(211077,0,0,-2485,-1719,-113,0);
-	eq.spawn2(211077,0,0,-2485,-1739,-113,256);
+	eq.spawn2(211077,0,0,-2468,-1725,-113,130); -- NPC: #a_norrathian_maiden
+	eq.spawn2(211077,0,0,-2485,-1719,-113,0); -- NPC: #a_norrathian_maiden
+	eq.spawn2(211077,0,0,-2485,-1739,-113,256); -- NPC: #a_norrathian_maiden
 
 	--ROOM 2
-	eq.spawn2(211078,0,0,-3190,-1725,-113,130);
-	eq.spawn2(211078,0,0,-3172,-1740,-113,256);
-	eq.spawn2(211078,0,0,-3172,-1705,-113,0);
+	eq.spawn2(211078,0,0,-3190,-1725,-113,130); -- NPC: #a_norrathian_maiden_
+	eq.spawn2(211078,0,0,-3172,-1740,-113,256); -- NPC: #a_norrathian_maiden_
+	eq.spawn2(211078,0,0,-3172,-1705,-113,0); -- NPC: #a_norrathian_maiden_
 
 	--ROOM 3
-	eq.spawn2(211079,0,0,-3172,-1097,-113,0);
-	eq.spawn2(211079,0,0,-3201,-1130,-113,384);
-	eq.spawn2(211079,0,0,-3151,-1129,-113,130);
+	eq.spawn2(211079,0,0,-3172,-1097,-113,0); -- NPC: #_a_norrathian_maiden
+	eq.spawn2(211079,0,0,-3201,-1130,-113,384); -- NPC: #_a_norrathian_maiden
+	eq.spawn2(211079,0,0,-3151,-1129,-113,130); -- NPC: #_a_norrathian_maiden
 
 	--MOBS--
 	--ROOM 1 TRASH
-	eq.spawn2(211080,0,0,-2400,-1600,-113,320);
-	eq.spawn2(211080,0,0,-2400,-1870,-113,462);
-	eq.spawn2(211080,0,0,-2582,-1872,-113,41.2);
-	eq.spawn2(211080,0,0,-2588,-1727,-113,462);
-	eq.spawn2(211080,0,0,-2588,-1600,-113,41.2);
+	eq.spawn2(211080,0,0,-2400,-1600,-113,320); -- NPC: a_crazed_norrathian
+	eq.spawn2(211080,0,0,-2400,-1870,-113,462); -- NPC: a_crazed_norrathian
+	eq.spawn2(211080,0,0,-2582,-1872,-113,41.2); -- NPC: a_crazed_norrathian
+	eq.spawn2(211080,0,0,-2588,-1727,-113,462); -- NPC: a_crazed_norrathian
+	eq.spawn2(211080,0,0,-2588,-1600,-113,41.2); -- NPC: a_crazed_norrathian
 
 	--ROOM 2 TRASH
-	eq.spawn2(211082,0,0,-3318,-1841,-113,26);
-	eq.spawn2(211082,0,0,-3319,-1725,-113,130);
-	eq.spawn2(211082,0,0,-3299,-1621,-113,41.2);
-	eq.spawn2(211082,0,0,-3034,-1636,-113,346);
+	eq.spawn2(211082,0,0,-3318,-1841,-113,26); -- NPC: #_a_crazed_norrathian
+	eq.spawn2(211082,0,0,-3319,-1725,-113,130); -- NPC: #_a_crazed_norrathian
+	eq.spawn2(211082,0,0,-3299,-1621,-113,41.2); -- NPC: #_a_crazed_norrathian
+	eq.spawn2(211082,0,0,-3034,-1636,-113,346); -- NPC: #_a_crazed_norrathian
 	eq.spawn2(211082,0,0,-3034,-1816,-113,316); -- needs_heading_validation
 
 	--ROOM 3 TRASH
-	eq.spawn2(211083,0,0,-3293,-1027,-113,172);
-	eq.spawn2(211083,0,0,-3027,-1035,-113,130);
-	eq.spawn2(211083,0,0,-3035,-1229,-113,434);
-	eq.spawn2(211083,0,0,-3303,-1229,-113,346);
+	eq.spawn2(211083,0,0,-3293,-1027,-113,172); -- NPC: a_crazed_norrathian_
+	eq.spawn2(211083,0,0,-3027,-1035,-113,130); -- NPC: a_crazed_norrathian_
+	eq.spawn2(211083,0,0,-3035,-1229,-113,434); -- NPC: a_crazed_norrathian_
+	eq.spawn2(211083,0,0,-3303,-1229,-113,346); -- NPC: a_crazed_norrathian_
 	eq.spawn2(211083,0,0,-3168,-1028,-113,316); -- needs_heading_validation
 
 end
@@ -83,21 +83,21 @@ end
 function RoomOneTrashDeath(e)
 	roomonetrash = roomonetrash + 1;
 	if ( roomonetrash == 5 and roomonemaid < 3 ) then 
-		eq.spawn2(211085,0,0,-2349,-1894,-113,466);
+		eq.spawn2(211085,0,0,-2349,-1894,-113,466); -- NPC: #Advocent_Joran
 	end
 end
 
 function RoomTwoTrashDeath(e)
 	roomtwotrash = roomtwotrash + 1;
 	if ( roomtwotrash == 5 and roomtwomaid < 3 ) then
-		eq.spawn2(211084,0,0,-3337,-1617,-113,152.4);
+		eq.spawn2(211084,0,0,-3337,-1617,-113,152.4); -- NPC: #Halgoz_Rellinic
 	end
 end
 
 function RoomThreeTrashDeath(e)
 	roomthrtrash = roomthrtrash + 1;
 	if ( roomthrtrash == 5 and roomthrmaid < 3 ) then
-		eq.spawn2(211086,0,0,-2996,-991,-113,306);
+		eq.spawn2(211086,0,0,-2996,-991,-113,306); -- NPC: #Freegan_Haun
 	end
 end
 

@@ -14,11 +14,11 @@ sub EVENT_SAY {
 
 	if(($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)){
 		quest::say("Luckily for you someone found it.");
-		quest::summonitem(2873);
+		quest::summonitem(2873); # Item: Application for Citizenship
 	}
 	if(($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)){
 		quest::say("Someone found a rockhopper chewing on this in the pit. Try not to lose it this time.");
-		quest::summonitem(2878);
+		quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
 	}
  
   if ($text=~/hail/i) {

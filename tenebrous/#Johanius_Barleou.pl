@@ -18,15 +18,15 @@ sub EVENT_SAY {
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp == 15) {
-		quest::spawn2(172074,0,0,-377,1268,-28,0);
-		quest::spawn2(172073,0,0,-366,1254,-28,0);
-		quest::spawn2(172136,0,0,-395,1360,-40,0);
+		quest::spawn2(172074,0,0,-377,1268,-28,0); # NPC: #Aellana_Barleou
+		quest::spawn2(172073,0,0,-366,1254,-28,0); # NPC: #Lyrra_Rutledge
+		quest::spawn2(172136,0,0,-395,1360,-40,0); # NPC: #invis_johanius_one
 	}
 }
 
 sub EVENT_SIGNAL {
 	if($signal == 1) {
-		quest::spawn2(172111,2,0,$x,$y,$z,$h);
+		quest::spawn2(172111,2,0,$x,$y,$z,$h); # NPC: #Sir_Johanius_Barleou
 		quest::depop_withtimer();
 	}
 	if($signal == 2) {

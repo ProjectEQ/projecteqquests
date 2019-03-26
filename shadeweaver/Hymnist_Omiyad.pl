@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     quest::emote("takes the remains and throws them into the fire, flames blaze immediatey with a sicky hue.");
 	quest::say("You have preformed a great service by helping destroy some of the wretched Lodi Kai. Take this small talisman, it is worn by the dancers here. Take it with you and feel free to do a dance whenever you like, haha!");
     #Talisman of the Flame
-    quest::summonitem(7498);
+    quest::summonitem(7498); # Item: Talisman of the Flame
     quest::faction(1513,10); # +Guardians of Shar Vahl
     quest::exp(250);
     quest::ding();

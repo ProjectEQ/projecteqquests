@@ -21,10 +21,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30667 => 1)) {
     quest::say("Great spirit you've done it! Thank you $name, we are in your debt. You have earned this weapon of the venomous scourge. Wield it with honor and pride.");
-    quest::summonitem(30783);
+    quest::summonitem(30783); # Item: Scorpialis
     quest::exp(75000);
     quest::ding();
-    quest::faction(1513,20);
+    quest::faction(1513,20); # Faction: Guardians of Shar Vahl
   }
   plugin::return_items(\%itemcount);
 }

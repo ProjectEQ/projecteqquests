@@ -7,7 +7,7 @@ sub EVENT_ITEM
 {
   if (plugin::check_handin(\%itemcount, 3881 => 1)) {
     quest::say("gasps silently for air and the falls completely still! No one seems to have heard you.");
-    quest::summonitem(3883);
+    quest::summonitem(3883); # Item: Empty Poison Vial
     quest::faction(1503,2); #Validus Custodus
     quest::faction(1502,2); #Katta Castellum Citizens
     quest::faction(1504,2); #Magus Conlegium

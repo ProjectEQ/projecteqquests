@@ -30,16 +30,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) {
     if (plugin::check_handin(\%itemcount, 31266 => 1, 31255 => 1, 31252 => 1, 31254 => 1)) { # first test of the arcane
-      quest::summonitem(31466);
+      quest::summonitem(31466); # Item: White Dragon Statue
     }
     elsif (plugin::check_handin(\%itemcount, 31262 => 1, 31270 => 1, 31259 => 1, 31250 => 1)) { # second test of the arcane
-      quest::summonitem(31468);
+      quest::summonitem(31468); # Item: Boots of Deep Thought
     }
     elsif (plugin::check_handin(\%itemcount, 31267 => 1, 31263 => 1, 31251 => 1, 31260 => 1)) { # test of long battle
-      quest::summonitem(31467);
+      quest::summonitem(31467); # Item: Boots of Silent Striding
     }
     elsif (plugin::check_handin(\%itemcount, 31253 => 1, 31258 => 1, 31257 => 1, 31269 => 1)) { # test of short battle
-      quest::summonitem(31465);
+      quest::summonitem(31465); # Item: White Dragon Idol
     }
     else {
       plugin::return_items(\%itemcount);

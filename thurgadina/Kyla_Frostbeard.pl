@@ -45,7 +45,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction <= 3) { # Require warmly and greater faction
     if (plugin::check_handin(\%itemcount, 25837 => 3, 24954 => 1)) { # cap
-      quest::summonitem(31070);
+      quest::summonitem(31070); # Item: Arch Mage's Crown
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV
@@ -55,7 +55,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24949 => 1)) { # robe
-      quest::summonitem(31071);
+      quest::summonitem(31071); # Item: Arch Mage's Robe
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV
@@ -65,7 +65,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24951 => 1)) { # sleeves
-      quest::summonitem(31072);
+      quest::summonitem(31072); # Item: Arch Mage's Sleeves
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV
@@ -75,7 +75,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24953 => 1)) { # wrist
-      quest::summonitem(31073);
+      quest::summonitem(31073); # Item: Arch Mage's Warband
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV
@@ -85,7 +85,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24955 => 1)) { # gloves
-      quest::summonitem(31074);
+      quest::summonitem(31074); # Item: Arch Mage's Gloves
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV
@@ -95,7 +95,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24950 => 1)) { # legs
-      quest::summonitem(31075);
+      quest::summonitem(31075); # Item: Arch Mage's Pantaloons
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV
@@ -105,7 +105,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24952 => 1)) { # boots
-      quest::summonitem(31076);
+      quest::summonitem(31076); # Item: Arch Mage's Boots
       quest::exp(100000);
       quest::faction(406,20); # coldain
       quest::faction(405,20); # Dain Frostreaver IV

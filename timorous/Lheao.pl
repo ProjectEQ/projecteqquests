@@ -24,7 +24,7 @@ sub EVENT_ITEM {
   # Monk Epic 1.0
   quest::say("Astonishing! To think that you are a master of an order thought to be lost in our world. Forgive my earlier doubts. I believe you are indeed worthy to be given the responsibility of watching over this book. Take great care that it does not fall into the wrong hands as it would be truly disastrous.");
   # Summon: Celestial Fists (Book)
-  quest::summonitem(1683);
+  quest::summonitem(1683); # Item: Celestial Fists
  }
   plugin::return_items(\%itemcount);
 }

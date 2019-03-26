@@ -8,10 +8,10 @@ end
 function event_combat(e)
 	if(e.joined == true) then
 		if(adds == 0) then
-			eq.spawn2(179161,0,0,-1714,1128,19.7,256);
-			eq.spawn2(179147,0,0,-1715,1034,19.7,0);
-			eq.spawn2(179160,0,0,-1771,1126,18.2,164);
-			eq.spawn2(179142,0,0,-1769,1035,18.2,90);
+			eq.spawn2(179161,0,0,-1714,1128,19.7,256); -- NPC: Xin`Xakra
+			eq.spawn2(179147,0,0,-1715,1034,19.7,0); -- NPC: Xin`Xakre
+			eq.spawn2(179160,0,0,-1771,1126,18.2,164); -- NPC: Xin`Xakri
+			eq.spawn2(179142,0,0,-1769,1035,18.2,90); -- NPC: Xin`Xakru
 			adds = 1;
 		end
 	end

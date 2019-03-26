@@ -12,7 +12,7 @@ function event_say(e)
 			e.self:Say("I hope you aren't against a little intimidation, " .. e.other:GetName() .. ".' He sighs, 'This is the problem. Our most influential contact in the Wayfarer's Brotherhood refuses to affiliate himself with us, even a little, until the bad publicity surrounding our organization lightens up a bit. Our shady background wasn't a problem in the past, but now he refuses to speak with us. We suspect he has turned over a new leaf and now that he considers himself a champion of the people, he doesn't want to tarnish this reputation. If you can convince those that have spoken out against Stanos to [" .. eq.say_link("change their tune") .. "], I think we stand a chance of garnering the favor of this contact again. This job is of utmost importance, " .. e.other:GetName() .. ", because this contact could lead us to the would-be assassin.");
 		elseif (e.message:findi("change their tune")) then
 			e.self:Say("Yes, exactly. Bards. The self-proclaimed heralds of Norrath. What they are is slander, personified. It seems there are several of them that have been sullying Stanos' name in both story and song. Deliver this letter to them. It's a 'request' that they speak favorably about our generous benefactor, lest some ill fate befall them. If they refuse, you know what to do. Empty threats mean nothing.");
-			e.other:SummonItem(9590);
+			e.other:SummonItem(9590); -- Item: Notice to Cease and Desist
 		end
 	end
 end
@@ -29,7 +29,7 @@ function event_trade(e)
 			e.self:Say("That should do the trick. I think our contact will speak with you now. His name is Lirpin, and he is a paladin that works for the Wayfarer's Brotherhood. I hear he led an expedition into Kuua recently, but his current location is anyone's guess. Good Luck.");
 			eq.set_global("Fatestealer_bard", "1", 5, "F");
 		else
-			e.other:SummonItem(9590);
+			e.other:SummonItem(9590); -- Item: Notice to Cease and Desist
 		end
 	elseif (qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 10239,item2 = 52416})) then
 		e.self:Say("Those Marsingers won't be speaking ill about us again anytime soon.");
@@ -39,7 +39,7 @@ function event_trade(e)
 			e.self:Say("That should do the trick. I think our contact will speak with you now. His name is Lirpin, and he is a paladin that works for the Wayfarer's Brotherhood. I hear he led an expedition into Kuua recently, but his current location is anyone's guess. Good Luck.");
 			eq.set_global("Fatestealer_bard", "1", 5, "F");
 		else
-			e.other:SummonItem(9590);
+			e.other:SummonItem(9590); -- Item: Notice to Cease and Desist
 		end
 	elseif (qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 10246})) then
 		e.self:Say("Excellent, Lythe has been silenced.");
@@ -49,7 +49,7 @@ function event_trade(e)
 			e.self:Say("That should do the trick. I think our contact will speak with you now. His name is Lirpin, and he is a paladin that works for the Wayfarer's Brotherhood. I hear he led an expedition into Kuua recently, but his current location is anyone's guess. Good Luck.");
 			eq.set_global("Fatestealer_bard", "1", 5, "F");
 		else
-			e.other:SummonItem(9590);
+			e.other:SummonItem(9590); -- Item: Notice to Cease and Desist
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

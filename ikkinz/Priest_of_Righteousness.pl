@@ -28,5 +28,5 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(294141,1,0);
+  quest::signalwith(294141,1,0); # NPC: #Trigger_Ikkinz_1
 }

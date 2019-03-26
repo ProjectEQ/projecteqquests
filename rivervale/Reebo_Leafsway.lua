@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("The hay he requires is difficult to obtain. It must have been harvested from the Plains of Karana, then cursed by a high priest of the Faceless, [" .. eq.say_link("Cazic-Thule",false,"Cazic-Thule") .. "]. Finally, you must cast the hay and a flask of blessed Oil of Life into an armorer's forge. Only then will the hay be ready. We Stormreapers will reward you greatly if you could accomplish this task. Remember, you must give the scarecrow stuffing to Shakey only after it has been properly prepared.");
 	elseif(e.message:findi("trail to karana's wisdom")) then
 		e.self:Say("Good. First you should learn that Karana's work is just that.. work. Karana provides us with the tools but it is by the sweat of our brows that we prosper. Common sense and hard work are two things that are highly prized by our people. Time for you to sweat, young one. Take this crate of carrots over to Blinza Toepopal in the Fool's Gold. They need our finest carrots for Mayor Gubbin's stew. When you return I will teach you a lesson of the Rainkeeper.");
-		e.other:SummonItem(13971); 
+		e.other:SummonItem(13971); -- Item: Crate of Rotten Carrots 
 	elseif(e.message:findi("karana")) then
 		e.self:Say("Karana is known as the Rainkeeper. It is through His will that our [" .. eq.say_link("crops",false,"crops") .. "] and our children grow big and healthy. He watches over us and protects us. calling down the fury of a tempest on those who wish harm upon His followers.");
 	elseif(e.message:findi("crops")) then
@@ -30,15 +30,15 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13971})) then
 		e.self:Say("Very good. Very good indeed. Karana does not need the blind obedience that so many deities require. Trust your instincts, they are more often right than not. Here, take this to Blinza. Hurry, she is expecting them. You may keep the donation she gives you in return.");
-		e.other:SummonItem(13957);
+		e.other:SummonItem(13957); -- Item: Crate of Fine Carrots
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13972})) then
 		e.self:Say("These carrots are rotten. They were rotten when I gave them to you. Why would you waste time and energy on such a fool's errand? Because I asked you to? Many, even those you trust will ask you to do things which you should not. Use the common sense that Karana has blessed you with to know which tasks can benefit our people and which could harm them. Learn this lesson well. You will need it if you plan to adventure beyond the vale. Now take these fresh carrots to Blinza and apologize for your error. You may keep the donation she gives you as payment.");
-		e.other:SummonItem(13958);
+		e.other:SummonItem(13958); -- Item: Crate of Carrots
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13974,item2 = 13974,item3 = 13974,item4 = 13974})) then
 		e.self:Say("Excellent!!  You must have taught ol' Nillipuss a great deal!  But he never seems to learn..  Oh well.  The Stormreapers and all of Rivervale owe you a debt of gratitude.  Please accept this token of our appreciation.");
-		e.other:SummonItem(eq.ChooseRandom(10308,8303,8304,10302,10303,10304,10305,10306,10309,17302,12001,10301,17301,17300,12002));
+		e.other:SummonItem(eq.ChooseRandom(10308,8303,8304,10302,10303,10304,10305,10306,10309,17302,12001,10301,17301,17300,12002)); -- Item(s): Anti-Poison Amulet (10308), Arrow of Contagion (8303), Arrow of Frost (8304), Earring of Disease Reflection (10302), Earring of Fire Reflection (10303), Earring of Frost Reflection (10304), Earring of Magic Reflection (10305), Earring of Poison Reflection (10306), Eye of Disvan (10309), Pierce's Pouch of Storing (17302), Rod of Identification (12001), Runners Ring (10301), Travelers Pack (17301), Travelers Pouch (17300), Wand of Frost Bolts (12002)
 		e.other:Ding();
 		e.other:AddEXP(27440);
 		e.other:GiveCash(0,4,6,0);

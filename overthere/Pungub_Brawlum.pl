@@ -10,6 +10,6 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62075 => 1, 62074 => 3)) {
     quest::say("Me thanks you for helping kill da gobbys.  Here yous go.");
-    quest::summonitem(62193);
+    quest::summonitem(62193); # Item: Dingy Pauldron of Brawling
   }
 }

@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20678 => 1)) {
     quest::say("Eh, you actually found one! Thank you, $name. Here is a block of ore for you. Just don't let the other giants know.");
-    quest::summonitem(20666);
+    quest::summonitem(20666); # Item: Rejesiam Ore
     quest::exp(25000);
   }
   plugin::return_items(\%itemcount);

@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::emote("begins jumping for joy. 'Yoohoo!! My wand!! Thank you. You must be some powerful adventurer. You can help me collect a few components. Fill this chest with a frost cystal, a cockatrice egg, a giant hornet egg and a plains pebble. Return the full chest to me and I shall offer you a spell I recently researched.");
     quest::exp(100);
     quest::givecash(0,0,4,0);
-    quest::summonitem(17041);
+    quest::summonitem(17041); # Item: Component Chest
     quest::faction(443,2); #Brood of Kotiz
     quest::faction(441,2); #Legion of Cabilis
   }

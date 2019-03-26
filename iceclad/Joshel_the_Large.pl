@@ -5,7 +5,7 @@ sub EVENT_SAY{
   if($text=~/icebreaker/i)
   {
   quest::say("What about it? Wait. How did you get here? There weren't no raft come to this island. Come to think o' it, I don't think I've heard hide nor hair o' the Icebreaker for a while. Well, drat. I wonder if anyone's been looking for me. Here, have this bandana to let whoever know that I'm alright. Thanks for checking up on me, but I'll be ok here for a while longer.");
-  quest::summonitem(60333);
+  quest::summonitem(60333); # Item: Joshel's Bandana
   }
 } 
 

@@ -11,19 +11,19 @@ sub EVENT_ENTER {
 	$InInstancePool = quest::GetInstanceID("snpool",0);
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
 	if($InInstancePlant1 > 0){
-		quest::MovePCInstance(287, $InInstancePlant1, 150, 127, -7);
+		quest::MovePCInstance(287, $InInstancePlant1, 150, 127, -7); # Zone: poknowledge
 	}
 	elsif($InInstancePlant > 0){
-	    	quest::MovePCInstance(287, $InInstancePlant, 150, 127, -7);
+	    	quest::MovePCInstance(287, $InInstancePlant, 150, 127, -7); # Zone: poknowledge
 	}	
 	elsif($InInstanceCrem > 0){
-    		quest::MovePCInstance(288, $InInstanceCrem, 31, 175, -17);	
+    		quest::MovePCInstance(288, $InInstanceCrem, 31, 175, -17); # Zone: ponightmare	
 	}
 	elsif($InInstancePool > 0){
-    		quest::MovePCInstance(285, $InInstancePool, 137, -5, -19);
+    		quest::MovePCInstance(285, $InInstancePool, 137, -5, -19); # Zone: poinnovation
 	}
 	elsif($InInstanceLair > 0){
-		quest::MovePCInstance(286, $InInstanceLair, 234, -70, -14);
+		quest::MovePCInstance(286, $InInstanceLair, 234, -70, -14); # Zone: pojustice
 	}	
 	else {
 		$client->Message(13, "You are not a part of an instance!");

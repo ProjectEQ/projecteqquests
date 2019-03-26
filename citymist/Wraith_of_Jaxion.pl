@@ -3,7 +3,7 @@
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10633 => 1)) {
-    quest::summonitem(10620);
+    quest::summonitem(10620); # Item: Enchanted Ruby
   }
   plugin::return_items(\%itemcount);
 }

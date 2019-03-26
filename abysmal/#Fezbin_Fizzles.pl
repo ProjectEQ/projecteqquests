@@ -27,8 +27,8 @@ sub EVENT_SAY {
         quest::say("With half of our numbers back home dealing with the investigation of the recently unearthed dungeons and the rest here on the ship handling what information we have and trying to decide the best plan of action, Morden figured it might be a good idea to ask some courageous individuals to assist us. Morden has authorized some form of valuable reward for those who can bring us any information regarding our missing scouts or the scouts themselves. Seeing as how you have been so interested in all I have said so far, do you think you would be [" . quest::saylink("interested in helping the Wayfarers Brotherhood") . "]?");
       } elsif($text=~/interested in helping the wayfarers brotherhood/i) {
         quest::say("Most excellent. Please take these as a token of our gratitude. It is not much to look at now, but by helping us you will find ways to make this stone more [" . quest::saylink("powerful") . "] when combining it with certain items in that sealer. Please take the time to find Taminoa Bialu, Vaifan Cogswin, and L`diava Rexxen. They are all located on this ship. Each of them is responsible for information from certain areas of the continent. Taminoa has all the information on the city area, Vaifan keeps the information on the mountain passes, and L`diava collects information on the temple areas. If you truly wish to help us, talk to some or all of them and they will help guide you to the right path. When you have finished helping them all, return to me and I shall give you the reward that has been approved by Morden.");
-        quest::summonitem(67512);
-        quest::summonitem(67659);
+        quest::summonitem(67512); # Item: Socketed White Crystal
+        quest::summonitem(67659); # Item: Vaifan's Experimental Sealer
       } elsif($text=~/powerful/i) {
         quest::say("The stone I have given you is very special indeed. It is a rare stone with a power that has not yet been revealed. After studying it we have come to the conclusion that its power is based off of resonance. You will see that there are fourteen sockets in the stone. Each socket requires a gem fragment of a certain resonance. As the fragments are set in the stone it will gradually increase in power. These fragments must be placed in the stone in a certain order using a set of clockwork gemcutter's tools, the stone, and the correct shard in the device I handed to you along with the stone. As you help find our scouts, you may come across the gem fragments that will fit into the stone. If you do, please try combining them in the special sealer. If at any time you lose the sealer or misplace the stone return to me and I will what I can do about a replacement.");
       }
@@ -36,7 +36,7 @@ sub EVENT_SAY {
     } elsif($text=~/have completed my task/i && $qglobals{bic} >= 14 && $qglobals{bic_yxt} == 16 && $qglobals{bic_kod} == 17) {
       quest::say("So I have been told, $name. Your help will long be remembered by the brotherhood. Since you first came to me, the stone should have grown in power and now I will give you the item that will unlock the stone's full potential. Please combine this with your stone after you have combined all of the other items given to you by the lead scouts and you will possess an item of immense power and a symbol of your fighting spirit. Once again, the brotherhood thanks you. I must bid you good day as I recently received some [interesting information].");
       $client->Message(15,"You have done quite well and your exploits will forever be talked about by the members of the Wayfarers Brotherhood, but don't you dare relax as there's still many more adventures and hidden treasures out there waiting for a hero like you.");
-      quest::summonitem(67571);
+      quest::summonitem(67571); # Item: Jagged Blood Shard
       quest::setglobal("bic",18,5,"F");
 	} elsif(($text=~/interesting information/i) && (defined $qglobals{bic} && $qglobals{bic} == 18)) {
       quest::say("Where are my manners? I should have known someone as adventurous as you would be interested in this. One of our researching experts by the name of Beanalle has recently discovered some very intriguing information about the temples beyond Yxtta and Kod'Taz.");
@@ -46,10 +46,10 @@ sub EVENT_SAY {
   if(defined $qglobals{bic} && $qglobals{bic} >= 1) {
     if($text=~/sealer/i) {
       quest::say("Be careful with this one.");
-      quest::summonitem(67659);
+      quest::summonitem(67659); # Item: Vaifan's Experimental Sealer
     } elsif($text=~/stone/i) {
       quest::say("Be careful with this one.");
-      quest::summonitem(67512);
+      quest::summonitem(67512); # Item: Socketed White Crystal
     }
   }
   #$qglobals{bic}=undef;

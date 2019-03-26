@@ -9,7 +9,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(284084,0,0,1447,-586,106,0);
+  quest::spawn2(284084,0,0,1447,-586,106,0); # NPC: #Smith`s_Spectral_Memory
 }
 
 sub EVENT_HP {

@@ -10,7 +10,7 @@ sub EVENT_SAY {
   elsif ($text=~/i will deliver the goods/i) {
     if ($shipment == 1) {
       quest::emote("looks around cautiously and hands you a package. 'Here, take this back to Duke Norfin as quick as you can.'"); #made up text
-      quest::summonitem(19840);
+      quest::summonitem(19840); # Item: Smuggled Goods
       $shipment = 0;
     }
   }

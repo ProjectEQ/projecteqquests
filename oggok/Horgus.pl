@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13354 => 4)) {
     quest::say("You smash lizards good. Here is armur me promise.");
-    quest::summonitem(quest::ChooseRandom(2136,2135,2132,2128,2130));
+    quest::summonitem(quest::ChooseRandom(2136,2135,2132,2128,2130)); # Item(s): Large Patchwork Boots (2136), Large Patchwork Pants (2135), Large Patchwork Sleeves (2132), Large Patchwork Tunic (2128), Large Patchwork Cloak (2130)
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

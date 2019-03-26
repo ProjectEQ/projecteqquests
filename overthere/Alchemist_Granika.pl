@@ -17,10 +17,10 @@ sub EVENT_ITEM {
   quest::start(273);
   quest::settimer("Depop",8);
   quest::spawn2(93190,0,0,1955,2825,-49,380); #Spawn the golem and three guards
-  quest::spawn2(93303,0,0,1955,2794,-49,380);
-  quest::spawn2(93303,0,0,1954,2855,-49,380);
-  quest::spawn2(93303,0,0,1915,2825,-49,380);
-  quest::signalwith(93077,0,0);
+  quest::spawn2(93303,0,0,1955,2794,-49,380); # NPC: #an_undead_marine
+  quest::spawn2(93303,0,0,1954,2855,-49,380); # NPC: #an_undead_marine
+  quest::spawn2(93303,0,0,1915,2825,-49,380); # NPC: #an_undead_marine
+  quest::signalwith(93077,0,0); # NPC: a_cliff_golem
   }
   plugin::return_items(\%itemcount);
 }

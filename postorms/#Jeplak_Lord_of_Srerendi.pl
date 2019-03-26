@@ -26,7 +26,7 @@ sub EVENT_SLAY {
 sub EVENT_TIMER {
 	if ($timer eq "engage") {	# if he was never engaged, respawns fake lord
 		quest::stoptimer("engage");		
-		quest::spawn2(210179,0,0,$x,$y,$z,$h);
+		quest::spawn2(210179,0,0,$x,$y,$z,$h); # NPC: Jeplak_Lord_of_Srerendi
 		quest::depop();
 	}
 	
@@ -40,12 +40,12 @@ sub EVENT_TIMER {
 			$y = $npc->GetY();
 			$z = $npc->GetZ();
 			$h = $npc->GetHeading();
-			quest::spawn2(210233,0,0,$x,$y,$z,$h);
-			quest::spawn2(210233,0,0,$x,$y,$z,$h);
-			quest::spawn2(210233,0,0,$x,$y,$z,$h);
-			quest::spawn2(210234,0,0,$x,$y,$z,$h);
-			quest::spawn2(210234,0,0,$x,$y,$z,$h);
-			quest::spawn2(210234,0,0,$x,$y,$z,$h);
+			quest::spawn2(210233,0,0,$x,$y,$z,$h); # NPC: a_mangled_traveller
+			quest::spawn2(210233,0,0,$x,$y,$z,$h); # NPC: a_mangled_traveller
+			quest::spawn2(210233,0,0,$x,$y,$z,$h); # NPC: a_mangled_traveller
+			quest::spawn2(210234,0,0,$x,$y,$z,$h); # NPC: a_lost_soul
+			quest::spawn2(210234,0,0,$x,$y,$z,$h); # NPC: a_lost_soul
+			quest::spawn2(210234,0,0,$x,$y,$z,$h); # NPC: a_lost_soul
 		} else {
 			quest::stoptimer("adds");
 			}

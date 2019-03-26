@@ -12,7 +12,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if(plugin::check_handin(\%itemcount, 13899 => 1)){
     quest::say("Thank you for setting his spirit free. Keep his memory alive with this.");
-    quest::summonitem(19010);
+    quest::summonitem(19010); # Item: Icon of the Reverent
   }
   plugin::return_items(\%itemcount);
 }

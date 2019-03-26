@@ -6,7 +6,7 @@ sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::setglobal("pop_wind_xegony_projection", 1, 5, "F");
 	$client->Message(4,"You receive a character flag!");
-	quest::summonitem(29164);
+	quest::summonitem(29164); # Item: Amorphous Cloud of Air
  }
 }
 sub EVENT_TIMER {

@@ -15,7 +15,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 6) then
 		e.self:Say("<urp>.. I don't feel so well.");
-		eq.signal(2091,1,1);
+		eq.signal(2091,1,1); -- NPC: Flynn_Merrington
 	elseif(e.wp == 14) then
 		eq.set_anim(2040,1);
 	end
@@ -33,16 +33,16 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13118})) then
 		e.self:Say("Oh thank the maker you have returned. Here is a little something in return");
 		e.other:Ding();
-		e.other:Faction(233,20,0);
-		e.other:Faction(266,20,0);
-		e.other:Faction(265,-20,0);
-		e.other:Faction(267,20,0);
+		e.other:Faction(233,20,0); -- Faction: Crimson Hands
+		e.other:Faction(266,20,0); -- Faction: High Council of Erudin
+		e.other:Faction(265,-20,0); -- Faction: Heretics
+		e.other:Faction(267,20,0); -- Faction: High Guard of Erudin
 		e.other:AddEXP(200);
 		e.other:GiveCash(5,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13994})) then
 		e.self:Say("Lucky you. We were hoping to really clean you out. Here you go. Take the page. Even together, the book is nothing more than fiction.");
 		e.other:Ding();
-		e.other:SummonItem(13836);
+		e.other:SummonItem(13836); -- Item: Page 34 of a Book
 	elseif(item_lib.check_turn_in(e.trade, {gold = 4})) then
 		local random_card = eq.ChooseRandom(13994,13993,13992,13995);
 		e.other:Ding();
@@ -51,7 +51,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {gold = 2})) then
 		e.self:Say("HA!! I hope you enjoy the book. It is missing pages 30 and 34. It is nothing more than garbage without them. A rogue ripped them from their bindings and sold them to [Ran].");
 		e.other:Ding();
-		e.other:SummonItem(17918);
+		e.other:SummonItem(17918); -- Item: Testament of Vanear
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

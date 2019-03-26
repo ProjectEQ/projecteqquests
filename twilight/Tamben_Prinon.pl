@@ -67,27 +67,27 @@ quest::summonitem(3985);  #text needed? dunno...
 }
 
 elsif (plugin::check_handin(\%itemcount, 4489 => 1, 5929 => 1, 5922 => 1,  5923 => 1)){
-quest::summonitem(3986);
+quest::summonitem(3986); # Item: Feral Tunic
 }
 
 elsif (plugin::check_handin(\%itemcount, 4490 => 1, 5925 => 1, 5924 => 1,  5926 => 1)){
-quest::summonitem(3987);
+quest::summonitem(3987); # Item: Feral Sleeves
 }
 
 elsif (plugin::check_handin(\%itemcount, 4491 => 1, 5930 => 1, 5931 => 1, 5932  => 1)){
-quest::summonitem(3988);
+quest::summonitem(3988); # Item: Feral Leggings
 }
 
 elsif (plugin::check_handin(\%itemcount, 4492 => 1, 5933 => 1, 5934 => 1)){
-quest::summonitem(3989);
+quest::summonitem(3989); # Item: Feral Mantle
 }
 
 elsif (plugin::check_handin(\%itemcount, 4493 => 1, 5935 => 1, 5936 => 1)){
-quest::summonitem(3990);
+quest::summonitem(3990); # Item: Feral Bracer
 }
 
 elsif (plugin::check_handin(\%itemcount, 4494 => 1, 5937 => 1, 5938 => 1)){
-quest::summonitem(3991);
+quest::summonitem(3991); # Item: Feral Boots
 }
 
 } 

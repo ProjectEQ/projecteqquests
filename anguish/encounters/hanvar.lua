@@ -99,13 +99,13 @@ function Hanvar_Timer(e)
 			e.self:SetHP(new_hp);		
 		end	
 	elseif (e.timer == "chains") then
-		e.self:CastSpell(5682, e.self:GetTarget():GetID());
+		e.self:CastSpell(5682, e.self:GetTarget():GetID()); -- Spell: Chains of Anguish
 		eq.set_timer("chains",45*1000); 
 	--elseif (e.timer == "feedback") then
 	--	e.self:CastSpell(5681, e.self:GetTarget():GetID());
 	--	eq.set_timer("feedback",30*1000); 
 	elseif (e.timer == "wail") then
-		e.self:CastSpell(5678, e.self:GetTarget():GetID());
+		e.self:CastSpell(5678, e.self:GetTarget():GetID()); -- Spell: Wail of Anguish
 		eq.set_timer("wail",90*1000); 
 	elseif (e.timer == "adds") then		
 		if (min_hp ~= 0) then
@@ -131,7 +131,7 @@ function reset(e)
 end
 
 function Hanvar_Death(e)
-	eq.signal(317116, 317002);
+	eq.signal(317116, 317002); -- NPC: zone_status
 	--eq.disable_spawn2(54535);
 	--eq.disable_spawn2(54536);
 	--eq.disable_spawn2(54537);

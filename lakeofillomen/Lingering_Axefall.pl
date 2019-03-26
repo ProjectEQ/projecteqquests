@@ -12,9 +12,9 @@ sub EVENT_ITEM {
     $axe = 1;
     $beast = 1;
     quest::say("Ah, yes. The signature axe of my good friend, McArik. Here to test your control, hm? I hope you have better luck than I did. As you can see, I didn't fare so well against the enemy I was sent to [defeat]. Here, take these. I fashioned them for you from McArik's throwing axe. You will need them.");
-    quest::summonitem(60191);
-    quest::summonitem(60191);
-    quest::summonitem(60191);
+    quest::summonitem(60191); # Item: Bore Axes of the Spirit
+    quest::summonitem(60191); # Item: Bore Axes of the Spirit
+    quest::summonitem(60191); # Item: Bore Axes of the Spirit
   }
   plugin::return_items(\%itemcount);
 }
@@ -27,9 +27,9 @@ sub EVENT_SAY {
   }
   if ($text=~/need more axes/i && $axe == 1) {
     quest::say("More Axes?");
-    quest::summonitem(60191);
-    quest::summonitem(60191);
-    quest::summonitem(60191);
+    quest::summonitem(60191); # Item: Bore Axes of the Spirit
+    quest::summonitem(60191); # Item: Bore Axes of the Spirit
+    quest::summonitem(60191); # Item: Bore Axes of the Spirit
   }
 }
 

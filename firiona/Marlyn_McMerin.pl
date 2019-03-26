@@ -55,7 +55,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12942=>1, 12945 => 1, 12944 => 1, 12943 =>1)){
     quest::say("What's this? This is amazing - you collected them all! To think, the power that these items hold if properly used. Never mind that now, here, take the scroll. You've certainly earned it.");
     quest::exp(45000);
-    quest::summonitem(12941);
+    quest::summonitem(12941); # Item: Spell: Cannibalize II
   }
   plugin::return_items(\%itemcount);
 }

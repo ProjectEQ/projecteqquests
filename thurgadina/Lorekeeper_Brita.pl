@@ -40,7 +40,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1427 => 1, 1417 => 1)) {
     quest::say("Ohh, that's better. I get so touchy when I'm hungry. I should probably go apologize to Derrin for being snappy. Please return this to Mordin for me.");
-    quest::summonitem(1424);
+    quest::summonitem(1424); # Item: Used Pie Tin
     quest::exp(150000);
     quest::faction(406,20); # coldain
     quest::faction(405,20); # Dain Frostreaver IV
@@ -54,25 +54,25 @@ sub EVENT_ITEM {
   else {
     if ($faction <= 3) { # Require warmly and greater faction
       if (plugin::check_handin(\%itemcount, 25837 => 3, 24954 => 1)) { # cap
-      quest::summonitem(31077);
+      quest::summonitem(31077); # Item: Beguiler's Crown
       }
       elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24949 => 1)) { # robe
-        quest::summonitem(31078);
+        quest::summonitem(31078); # Item: Beguiler's Robe
       }
       elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24951 => 1)) { # sleeves
-        quest::summonitem(31079);
+        quest::summonitem(31079); # Item: Beguiler's Sleeves
       }
       elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24953 => 1)) { # wrist
-        quest::summonitem(31080);
+        quest::summonitem(31080); # Item: Beguiler's Wristguard
       }
       elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24955 => 1)) { # gloves
-        quest::summonitem(31081);
+        quest::summonitem(31081); # Item: Beguiler's Gloves
       }
       elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24950 => 1)) { # legs
-        quest::summonitem(31082);
+        quest::summonitem(31082); # Item: Beguiler's Trousers
       }
       elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24952 => 1)) { # boots
-        quest::summonitem(31083);
+        quest::summonitem(31083); # Item: Beguiler's Slippers
       }
       else {
         plugin::return_items(\%itemcount);

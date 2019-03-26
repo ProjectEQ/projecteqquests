@@ -13,11 +13,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if($faction==1 && plugin::check_handin(\%itemcount,26010=>1)) {
     quest::say("Thank you for your assistance.  Now I may get back to higher matters at hand.  Leave me.");
-    quest::summonitem(28060);
-    quest::faction(462, 3);
-    quest::faction(464, 3);
-    quest::faction(430, -6);
-    quest::faction(304, -6);
+    quest::summonitem(28060); # Item: Jaled Dar's Tomb Key
+    quest::faction(462, 3); # Faction: Chetari
+    quest::faction(464, 3); # Faction: Zlandicar
+    quest::faction(430, -6); # Faction: Claws of Veeshan
+    quest::faction(304, -6); # Faction: Ring of Scale
     quest::exp(250000);
     quest::ding();
   }

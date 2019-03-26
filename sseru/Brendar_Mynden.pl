@@ -13,7 +13,7 @@ sub EVENT_ITEM {
     quest::doanim(15);
     $npc->SetAppearance(3);
     quest::depop_withtimer();
-    quest::summonitem(29863);
+    quest::summonitem(29863); # Item: Unadorned Ring
   }
   plugin::return_items(\%itemcount);
 }

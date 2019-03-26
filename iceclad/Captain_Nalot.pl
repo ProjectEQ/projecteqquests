@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::emote("squints and then knocks hard on the metal half of his face to get his eye back in adjustment. 'Arrr. This is perfect. Har! Now we can be plannin' our pillagin' and plunderin' all proper like. Good work, $name!'");
     quest::emote("slaps you on the back and accidentally drops his eyepatch. Being a proper pirate now you conveniently forget to mention it to him.");
     quest::exp(50000);
-    quest::summonitem(30008);
+    quest::summonitem(30008); # Item: Eyepatch of Plunder
   }
   plugin::return_items(\%itemcount);
 }
@@ -52,11 +52,11 @@ sub EVENT_SIGNAL {
    }
    elsif ($signal == 3) {
       quest::say("Arrrrrr what is it ye want?");
-      quest::signalwith(110118, 3, 500);
+      quest::signalwith(110118, 3, 500); # NPC: General_Bragmur_
    }
    elsif ($signal == 4) {
       quest::say("Velium eh? Well there matey lets hear what you have got to say!");
-      quest::signalwith(110118, 4, 500);
+      quest::signalwith(110118, 4, 500); # NPC: General_Bragmur_
    }
    elsif ($signal == 10) {
       quest::emote("scratches his head, 'Yar ya do that ya crazy Coldain.'");
@@ -76,7 +76,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 sub EVENT_TIMER {
    if ($timer eq "sigone") {
       quest::stoptimer("sigone");
-      quest::signalwith(110118, 2);
+      quest::signalwith(110118, 2); # NPC: General_Bragmur_
    }
 }
 

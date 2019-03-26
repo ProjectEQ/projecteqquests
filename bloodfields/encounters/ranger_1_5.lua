@@ -21,7 +21,7 @@ function Grinbik_Say(e)
 	if(qglobals["ranger_epic"] == "2" and e.other:HasItem(62844) == true) then
 		if(e.message:findi("hail")) then
 			e.self:Emote("shouts Aaaah! A deep rumbling voice flows along the ground. I thank you, "..e.other:GetName()..". You have freed me from such torture! Imagine me, Grinbik the Fertile, forced to kill and destroy! I was created to nurture and protect! I must go back to my own home and begin again to be what I was ment to be. I am honored and grateful to you for saving me. I see that you carry a powerful seed, nearly a seedling with its desire to grow! As my first act upon regaining myself I must aid you. If you wish that seed to flourish, you must find the land here that remains fertile. It is a rare thing but I have seen it. Take with you my blessing. This is a portion of my own power and it will aid you and that seed. I also know that my cousin Senvial is a slave here somewhere. You will need his aid as well to achieve your goal. Deliver that seedling and our blessings into the fertile ground and it will grow very quickly indeed! Thank you again "..e.other:GetName().."! All present should praise you for your kind heart and warrior soul.");
-			e.other:SummonItem(62622);
+			e.other:SummonItem(62622); -- Item: Grinbik's Blessing
 			if(qglobals["ranger_bloodfield_chest"] == nil) then
 				eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 				eq.set_global("ranger_bloodfield_chest","1",5,"F");		

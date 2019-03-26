@@ -17,22 +17,22 @@ sub EVENT_ITEM {
 
   # Priceless Velium Battlehammer => Priceless Velium Fist Wraps
   if (plugin::check_handin(\%itemcount, 27301 => 1)) {
-    quest::summonitem(5833);
+    quest::summonitem(5833); # Item: Priceless Velium Fist Wraps
   }
 
   # Primal Velium Battlehammer => Primal Velium Fist Wraps
   elsif (plugin::check_handin(\%itemcount, 27321 => 1)) {
-    quest::summonitem(27320);
+    quest::summonitem(27320); # Item: Primal Velium Fist Wraps
   }
 
   # Priceless Velium Warsword => Priceless Velium Knight's Sword
   elsif (plugin::check_handin(\%itemcount, 27300 => 1)) {
-    quest::summonitem(5834);
+    quest::summonitem(5834); # Item: Priceless Velium Knight's Sword
   }
 
   # Primal Velium Warsword => Primal Velium Knight's Sword
   elsif (plugin::check_handin(\%itemcount, 27328 => 1)) {
-    quest::summonitem(5835);
+    quest::summonitem(5835); # Item: Primal Velium Knight's Sword
   }
 
   else {

@@ -30,27 +30,27 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4489 => 1, 5097 => 1, 5098 => 1)) { #mask
-    quest::summonitem(3769);
+    quest::summonitem(3769); # Item: Earth Blessed Veil
     quest::exp(10000);   
   }
   if(plugin::check_handin(\%itemcount, 4490 => 1, 5099 => 1, 5107 => 1)) { #cloak
-    quest::summonitem(3770);
+    quest::summonitem(3770); # Item: Earth Blessed Cape
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4491 => 1, 5108 => 1, 5109 => 1)) { #gloves
-    quest::summonitem(3771);
+    quest::summonitem(3771); # Item: Earth Blessed Gloves
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4492 => 1, 5110 => 1, 5116 => 1)) { #talisman
-    quest::summonitem(3772);
+    quest::summonitem(3772); # Item: Earth Blessed Talisman
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4493 => 1, 5117 => 1, 5118 => 1, 5119 => 1)) { #belt
-    quest::summonitem(3773);
+    quest::summonitem(3773); # Item: Earth Blessed Belt
     quest::exp(10000);
   }
   if (plugin::check_handin(\%itemcount, 4494 => 1, 5129 => 1, 5190 => 1, 5191 => 1)) { #crook
-    quest::summonitem(3774);
+    quest::summonitem(3774); # Item: Earth Blessed Crook
     quest::exp(10000);
   }
   plugin::return_items(\%itemcount);

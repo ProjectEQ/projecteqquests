@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     quest::emote("gasps. Her ghostly skin grows even more pale as she comes to grips with her fate.");
     quest::say("Oh my. She . . . killed me, didn't she? Krisz slew me in front of everyone I knew and loved. Her fate is entwined with mine no longer. I will sing one last song and then leave this world. Thank you for avenging me, $name. The leather choker around Krisz's neck may prove of some use to you.");
     quest::exp(50000);
-    quest::summonitem(52137);
+    quest::summonitem(52137); # Item: Choker of Centaur Slaying
   }
   plugin::return_items(\%itemcount);
 }

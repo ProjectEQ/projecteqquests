@@ -16,7 +16,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 18136, item2 = 18137, item3 = 18138})) then
 		e.self:Say("Thank you, thank you. Let me read them. Oh! How could I want these brewing recipes after they made my brother insane? Where are they? I think this is all of them. Take them away from me! Delius can smile upon me now.");
-		e.other:SummonItem(18139);
+		e.other:SummonItem(18139); -- Item: Garsen's Brewing List
 		e.other:AddEXP(200);
 		e.other:Ding();
 	end

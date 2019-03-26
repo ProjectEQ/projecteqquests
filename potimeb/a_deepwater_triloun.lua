@@ -1,4 +1,4 @@
 function event_death_complete(e)
 	-- send a signal to the #water_trigger that I died
-	eq.signal(223172,1);
+	eq.signal(223172,1); -- NPC: phase_one_water
 end

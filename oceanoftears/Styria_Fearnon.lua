@@ -15,7 +15,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13337})) then -- Bracers of Erollisi 
 		e.self:Say("Good work. I see you have removed that retchid pirate from here.");
-		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340));
+		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340)); -- Item(s): Aviak Feather (13339), Conch Shell (13342), Fishing Spear (7017), Kiola Nut (13340)
 		e.other:Ding();
 		e.other:Faction(246,5,0); -- Faydarks Champoins
 		e.other:Faction(279,5,0); -- King Tearis Thex
@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:GiveCash(0,5,5,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13336})) then -- Pirate Earrings
 		e.self:Say("Good work. I see you have removed that retchid pirate from here.");
-		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340));
+		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340)); -- Item(s): Aviak Feather (13339), Conch Shell (13342), Fishing Spear (7017), Kiola Nut (13340)
 		e.other:Ding();
 		e.other:Faction(246,5,0); -- Faydarks Champoins
 		e.other:Faction(279,5,0); -- King Tearis Thex

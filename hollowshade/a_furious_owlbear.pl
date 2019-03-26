@@ -27,7 +27,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	# Stop grid, notify war we arrived and keep fighting if needed.
 	if ($x == $takeover_x)
 		{
-		quest::signalwith(166257, 6, 0);
+		quest::signalwith(166257, 6, 0); # NPC: War_Trigger
 		$npc->SaveGuardSpot();
 		quest::stop();
 		}

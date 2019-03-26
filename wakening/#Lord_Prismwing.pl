@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 24876 => 1)) {
       # Made text up
       quest::say("Thank you for your assistance, $name, though I am greatly saddened by the death of my herald.  Truly you are a friend of the Tunarean Court.  Take this crest as a token of my gratitude.");
-      quest::summonitem(24867);
+      quest::summonitem(24867); # Item: Crest of the Drixie
       quest::faction(449, 30); # +Tunarean Court
       quest::exp(100);
     }

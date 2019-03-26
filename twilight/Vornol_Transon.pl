@@ -38,27 +38,27 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 4488 => 1, 4495 => 1, 4496 => 1, 4497 => 1)) { #cap
-    quest::summonitem(3684);
+    quest::summonitem(3684); # Item: Cap of Matter
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4489 => 1, 4498 => 1, 4499 => 1, 4506 => 1)) { #robe
-    quest::summonitem(3685);
+    quest::summonitem(3685); # Item: Robe of Matter
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4490 => 1, 4507 => 1, 4508 => 1, 4509 => 1)) { #sleeves
-    quest::summonitem(3686);
+    quest::summonitem(3686); # Item: Sleeves of Matter
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 4491 => 1, 4510 => 1, 4511 => 1, 4512 => 1)) { #pants
-    quest::summonitem(3687);
+    quest::summonitem(3687); # Item: Pants of Matter
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4492 => 1, 4513 => 1, 4514 => 1)) { #shawl
-    quest::summonitem(3688);
+    quest::summonitem(3688); # Item: Shawl of Matter
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4493 => 1, 4584 => 1, 4585 => 1)) { #bracer
-    quest::summonitem(3689);
+    quest::summonitem(3689); # Item: Bracer of Matter
     quest::exp(10000);
      }
  if (plugin::check_handin(\%itemcount, 19441 => 1)) { #small pouch of riftseeker essence

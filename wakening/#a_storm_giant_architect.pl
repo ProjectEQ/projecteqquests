@@ -14,7 +14,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24872 => 4)) {
     quest::say("So you proved to be of value after all, take this for your work. Don't let it go to your head.");
     quest::exp(25000);
-    quest::summonitem(24877);
+    quest::summonitem(24877); # Item: Gigantic Kromzek Pick
     quest::faction(448,10); #kromzek
     quest::faction(419,10); #kromrif
     quest::faction(429,10); #king tormax

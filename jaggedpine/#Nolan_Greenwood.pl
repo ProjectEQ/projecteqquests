@@ -48,7 +48,7 @@ sub EVENT_ITEM {
   #jade studded rawhide tunic and silver griffon feathers -> tunic of the pine
 if(plugin::check_handin(\%itemcount, 8761 => 1, 8760 => 1)) {
 quest::say("You have done well, $name. I am impressed and most pleased to know that you are adapting and accepting our ways so easily. Take this and may it protect you in these troubling times.");
-quest::summonitem(8400);
+quest::summonitem(8400); # Item: Tunic of the Pine
 }
   plugin::return_items(\%itemcount);
 }

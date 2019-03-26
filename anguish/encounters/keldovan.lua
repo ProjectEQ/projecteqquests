@@ -32,7 +32,7 @@ function Keldovan_Spawn(e)
 end
 
 function Keldovan_Death(e)
-	eq.signal(317116 , 317005);
+	eq.signal(317116 , 317005); -- NPC: zone_status
 	--set player lockout
 	--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"
 
@@ -55,10 +55,10 @@ function Keldovan_Combat(e)
 	eq.set_timer("touch",math.random(5,30)*1000);
 	eq.set_timer("say",300*1000);
 	eq.set_timer("aggro_link", 1000); -- we'll do it in 1 second first time just cuz
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180);
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330);
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
   else
 	eq.stop_timer("packmaster");
 	eq.stop_timer("torment");
@@ -87,30 +87,30 @@ function Keldovan_Timer(e)
 	if (e.timer == "say") then
 		e.self:Say("You have earned the right to die at my feet.");
 	elseif (e.timer == "packmaster") then
-		e.self:CastSpell(4720, e.self:GetTarget():GetID());
+		e.self:CastSpell(4720, e.self:GetTarget():GetID()); -- Spell: Packmaster's Curse
 		eq.set_timer("packmaster",30*1000); 
 	elseif (e.timer == "torment") then
 		if torment_enabled ==1 then 
-			e.self:CastSpell(5676, e.self:GetTarget():GetID());
+			e.self:CastSpell(5676, e.self:GetTarget():GetID()); -- Spell: Torment of Body
 		end
 		eq.set_timer("torment",60*1000);
 	elseif (e.timer == "touch") then
 		if touch_enabled ==1 then 
-			e.self:CastSpell(5679, e.self:GetTarget():GetID());
+			e.self:CastSpell(5679, e.self:GetTarget():GetID()); -- Spell: Touch of Anguish
 		end			
 		eq.set_timer("touch",45*1000);	
 	elseif (e.timer == "Dog_NE") then
 		eq.stop_timer("Dog_NE");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420);
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
 	elseif (e.timer == "Dog_NW") then
 		eq.stop_timer("Dog_NW");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60);
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
 	elseif (e.timer == "Dog_SW") then
 		eq.stop_timer("Dog_SW");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180);	
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)	
 	elseif (e.timer == "Dog_SE") then
 		eq.stop_timer("Dog_SE");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330);
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
 	elseif (e.timer == "depop_dogs") then
 		eq.stop_timer("depop_dogs");
 		eq.depop_all(317102);
@@ -204,13 +204,13 @@ end
 function Dog_Death(e)
 	dead_dogs=dead_dogs+1;
 	if (e.self:GetSpawnPointY() == 755) then --NE
-		eq.signal(317005,1);
+		eq.signal(317005,1); -- NPC: Keldovan_the_Harrier
 	elseif (e.self:GetSpawnPointY() == 746) then --NW
-		eq.signal(317005,2);
+		eq.signal(317005,2); -- NPC: Keldovan_the_Harrier
 	elseif (e.self:GetSpawnPointY() == 643) then --SW
-		eq.signal(317005,3);
+		eq.signal(317005,3); -- NPC: Keldovan_the_Harrier
 	elseif (e.self:GetSpawnPointY() == 642) then --SE
-		eq.signal(317005,4);    
+		eq.signal(317005,4); -- NPC: Keldovan_the_Harrier    
 	end
 	dogs[e.self:GetID()] = nil;
 end

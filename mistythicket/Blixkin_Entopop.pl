@@ -40,23 +40,23 @@ sub EVENT_SAY {
   }
   if($text=~/collection/i) {
     quest::say("Here you go. Just follow the instructions on the [list] so you know what to collect and how to prepare the collection for me.");
-    quest::summonitem(17922);
+    quest::summonitem(17922); # Item: Bug Collection Box
   }
   if($text=~/list/i) {
     quest::say("What did you do, lose the list? Here is another one. Hold onto it because I will want it back when you are done.");
-    quest::summonitem(18011);
+    quest::summonitem(18011); # Item: Want List
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13268 => 1, 18011 => 1)) {
     quest::say("Excellent! Good work! I knew you were the one for this job! Thank you so much! My collection just gets better and better each day. Here is your reward as I promised.");
-    quest::summonitem(quest::ChooseRandom(14010,13281,13280,14015,16875));
-    quest::faction(292, 12);
-    quest::faction(241, 12);
-    quest::faction(263, 12);
-    quest::faction(286, 12);
-    quest::faction(336, -15);
+    quest::summonitem(quest::ChooseRandom(14010,13281,13280,14015,16875)); # Item(s): Potion of Poison Warding (14010), Silver Bracelet (13281), Bracelet of Beetlekind (13280), Spider Venom (14015), Stalking Probe (16875)
+    quest::faction(292, 12); # Faction: Merchants of Rivervale
+    quest::faction(241, 12); # Faction: Deeppockets
+    quest::faction(263, 12); # Faction: Guardians of the Vale
+    quest::faction(286, 12); # Faction: Mayor Gubbin
+    quest::faction(336, -15); # Faction: Coalition of Tradefolk Underground
     quest::exp(65);
     quest::givecash(0,8,3,0);
   }

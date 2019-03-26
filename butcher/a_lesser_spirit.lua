@@ -18,7 +18,7 @@ function event_say(e)
 
 	elseif(e.message:findi("know more")) then 			--Part of Shaman Epic 1.0
 		e.self:Say("That is good, " .. e.other:GetName() .. ". Take this gem. It is a part of us like the clouds to the sky and is a wonderful gift from the grandfather. Take this gem to where the humans gather to spoil the land and water. Some call it a port. There you will find one of us, a shaman like yourself. Give him the gem and perhaps he will tell you more of the spirits.");
-		e.other:SummonItem(1665);
+		e.other:SummonItem(1665); -- Item: Tiny Gem
 	end
 end
 

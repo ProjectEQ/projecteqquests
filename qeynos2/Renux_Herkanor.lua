@@ -6,10 +6,10 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 3) then
 		e.self:Say("When is Lomarc getting back from Odus? He was supposed to be back three nights ago. Have you heard anything?");
-		eq.signal(2074,3);
+		eq.signal(2074,3); -- NPC: Hanns_Krieghor Rogue Guildmaster
 	elseif(e.wp == 4) then
 		e.self:Say("Hanns, you are not going to want to hear this, but one of our boys in Donovan's gang swears he saw Stanos in the Karanas a week ago. And we still haven't cornered Malka Rale.");
-		eq.signal(2074, 4);
+		eq.signal(2074, 4); -- NPC: Hanns_Krieghor Rogue Guildmaster
 	end
 end
 

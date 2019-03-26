@@ -22,37 +22,37 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12084 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);
-   quest::summonitem(12085);
+   quest::summonitem(12085); # Item: Medium Quality Cat Pelt
   }
 
   elsif(plugin::check_handin(\%itemcount, 12085 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);
-   quest::summonitem(12086);
+   quest::summonitem(12086); # Item: High Quality Cat Pelt
   }
 
   elsif(plugin::check_handin(\%itemcount, 13753 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);
-   quest::summonitem(13754);
+   quest::summonitem(13754); # Item: Medium Quality Wolf Skin
   }
 
   elsif(plugin::check_handin(\%itemcount, 13754 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);
-   quest::summonitem(13755);
+   quest::summonitem(13755); # Item: High Quality Wolf Skin
   }
 
   elsif(plugin::check_handin(\%itemcount, 13750 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);
-   quest::summonitem(13751);
+   quest::summonitem(13751); # Item: Medium Quality Bear Skin
   }
 
   elsif(plugin::check_handin(\%itemcount, 13751 => 3)) {
    quest::say("Hmm. . . That seems like a fair trade. Let me see what I've got in my satchel. No. Wait, yes! I do have a fine specimen here that I think you'll agree is of superior quality.");
    quest::exp(150);
-   quest::summonitem(13752);
+   quest::summonitem(13752); # Item: High Quality Bear Skin
   }
 
   }

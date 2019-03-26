@@ -16,12 +16,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13087 =>1 )) {
     quest::say("Aaahhhh. Now that is refreshing. Just let me rest for a bit. The note is safe and sound in my bedroll inside the inn.");
-    quest::faction( 281,1 );
-    quest::faction( 271,-1 );
-    quest::faction( 330,-1 );
-    quest::faction( 311,1 );
-    quest::faction( 362,1 );
-    quest::spawn2(21136,0,0,2750,-307,-62);
+    quest::faction( 281,1 ); # Faction: Knights of Truth
+    quest::faction( 271,-1 ); # Faction: Dismal Rage
+    quest::faction( 330,-1 ); # Faction: The Freeport Militia
+    quest::faction( 311,1 ); # Faction: Steel Warriors
+    quest::faction( 362,1 ); # Faction: Priests of Marr
+    quest::spawn2(21136,0,0,2750,-307,-62); # NPC: Duggin_Scumber
   }
   plugin::return_items(\%itemcount);
 }

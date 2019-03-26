@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
   if ($signal == 66){
      quest::shout("I AM FREE!");
      quest::depop_withtimer();
-     quest::spawn2(128089,1,0,-1499,-2344.8,-1052.8,0);
+     quest::spawn2(128089,1,0,-1499,-2344.8,-1052.8,0); # NPC: #Kerafyrm
  }
 }
 #Original work by froglok23, additions by Jim Mills

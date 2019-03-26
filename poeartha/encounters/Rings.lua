@@ -110,16 +110,16 @@ function Rock_Death(e)   -- Count these, if 2 Spawn Fortification mobs at their 
 	rock_dead=rock_dead+1;
 	eq.debug("Rock Creation: " .. rock_dead);
 		if rock_dead == 2 then
-			eq.spawn2(218072,0,0,-597.67,-238.85,85.75,0.0);
-			eq.spawn2(218072,0,0,-610.87,-239.87,85.75,1.3);
-			eq.spawn2(218072,0,0,-622.58,-239.63,85.75,1.0);
-			eq.spawn2(218072,0,0,-633.35,-239.09,85.75,5.3);
-			eq.spawn2(218072,0,0,-627.90,-229.66,85.75,1.8);
-			eq.spawn2(218072,0,0,-617.99,-228.00,85.75,1.5);
-			eq.spawn2(218072,0,0,-607.09,-227.60,85.75,6.3);
-			eq.spawn2(218072,0,0,-610.82,-218.26,85.75,1.5);
-			eq.spawn2(218072,0,0,-621.35,-220.99,85.75,511.0);
-			eq.spawn2(218072,0,0,-614.37,-213.40,85.75,1.0);
+			eq.spawn2(218072,0,0,-597.67,-238.85,85.75,0.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-610.87,-239.87,85.75,1.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-622.58,-239.63,85.75,1.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-633.35,-239.09,85.75,5.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-627.90,-229.66,85.75,1.8); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-617.99,-228.00,85.75,1.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-607.09,-227.60,85.75,6.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-610.82,-218.26,85.75,1.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-621.35,-220.99,85.75,511.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-614.37,-213.40,85.75,1.0); -- NPC: A_Stone_Fortification
 			rock_dead=0;
 		end
 end
@@ -128,16 +128,16 @@ function Boulder_Death(e) -- Count these, if 2 Spawn Fortification mobs at their
 	boulder_dead=boulder_dead+1;
 	eq.debug("A Pile of Boulders: " .. boulder_dead);
 		if boulder_dead == 2 then
-			eq.spawn2(218072,0,0,-632.96,-286.16,85.75,258.5);
-			eq.spawn2(218072,0,0,-624.01,-286.51,85.75,256.3);
-			eq.spawn2(218072,0,0,-611.21,-285.47,85.75,257.0);
-			eq.spawn2(218072,0,0,-598.59,-285.46,85.75,258.3);
-			eq.spawn2(218072,0,0,-604.75,-293.35,85.75,258.3);
-			eq.spawn2(218072,0,0,-619.32,-295.48,85.75,256.3);
-			eq.spawn2(218072,0,0,-629.24,-295.47,85.75,258.5);
-			eq.spawn2(218072,0,0,-623.82,-303.16,85.75,260.5);
-			eq.spawn2(218072,0,0,-615.76,-303.35,85.75,257.0);
-			eq.spawn2(218072,0,0,-622.79,-307.56,85.75,255.3);
+			eq.spawn2(218072,0,0,-632.96,-286.16,85.75,258.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-624.01,-286.51,85.75,256.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-611.21,-285.47,85.75,257.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-598.59,-285.46,85.75,258.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-604.75,-293.35,85.75,258.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-619.32,-295.48,85.75,256.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-629.24,-295.47,85.75,258.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-623.82,-303.16,85.75,260.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-615.76,-303.35,85.75,257.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-622.79,-307.56,85.75,255.3); -- NPC: A_Stone_Fortification
 			boulder_dead=0;
 		end
 end
@@ -146,18 +146,18 @@ function Crumbling_Death(e) -- Count these, if 2 Spawn Fortification mobs at the
 	crumbling_dead=crumbling_dead+1;
 	eq.debug("Crumbling Stone Mass: " .. crumbling_dead);
 		if crumbling_dead == 2 then
-			eq.spawn2(218072,0,0,-640.19,-244.11,85.75,386.3);
-			eq.spawn2(218072,0,0,-640.40,-253.81,85.75,386.3);
-			eq.spawn2(218072,0,0,-639.98,-264.83,85.75,388.5);
-			eq.spawn2(218072,0,0,-639.67,-279.41,85.75,388.5);
-			eq.spawn2(218072,0,0,-649.83,-279.38,85.75,386.5);
-			eq.spawn2(218072,0,0,-649.83,-264.92,85.75,389.0);
-			eq.spawn2(218072,0,0,-649.63,-255.97,85.75,384.0);
-			eq.spawn2(218072,0,0,-649.62,-245.00,85.75,385.3);
-			eq.spawn2(218072,0,0,-656.50,-245.00,85.75,384.5);
-			eq.spawn2(218072,0,0,-656.48,-254.18,85.75,385.0);
-			eq.spawn2(218072,0,0,-655.70,-263.76,85.75,384.8);
-			eq.spawn2(218072,0,0,-655.76,-279.63,85.75,385.0);
+			eq.spawn2(218072,0,0,-640.19,-244.11,85.75,386.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-640.40,-253.81,85.75,386.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-639.98,-264.83,85.75,388.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-639.67,-279.41,85.75,388.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-649.83,-279.38,85.75,386.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-649.83,-264.92,85.75,389.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-649.63,-255.97,85.75,384.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-649.62,-245.00,85.75,385.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-656.50,-245.00,85.75,384.5); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-656.48,-254.18,85.75,385.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-655.70,-263.76,85.75,384.8); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-655.76,-279.63,85.75,385.0); -- NPC: A_Stone_Fortification
 			crumbling_dead=0;
 		end
 end
@@ -166,18 +166,18 @@ function Thrower_Death(e) -- Count these, if 2 Spawn Fortification mobs at their
 	thrower_dead=thrower_dead+1;
 	eq.debug("Boulder Thrower: " .. thrower_dead);
 		if thrower_dead == 2 then
-			eq.spawn2(218072,0,0,-592.13,-278.78,85.75,128.0);
-			eq.spawn2(218072,0,0,-591.91,-266.20,85.75,127.0);
-			eq.spawn2(218072,0,0,-591.75,-253.29,85.75,129.0);
-			eq.spawn2(218072,0,0,-591.81,-244.42,85.75,130.3);
-			eq.spawn2(218072,0,0,-584.14,-244.52,85.75,129.8);
-			eq.spawn2(218072,0,0,-583.40,-255.27,85.75,127.8);
-			eq.spawn2(218072,0,0,-583.40,-264.16,85.75,128.3);
-			eq.spawn2(218072,0,0,-583.10,-279.72,85.75,129.3);
-			eq.spawn2(218072,0,0,-574.32,-280.04,85.75,130.3);
-			eq.spawn2(218072,0,0,-575.21,-271.35,85.75,132.0);
-			eq.spawn2(218072,0,0,-575.24,-260.60,85.75,130.3);
-			eq.spawn2(218072,0,0,-574.49,-245.75,85.75,128.8);
+			eq.spawn2(218072,0,0,-592.13,-278.78,85.75,128.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-591.91,-266.20,85.75,127.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-591.75,-253.29,85.75,129.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-591.81,-244.42,85.75,130.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-584.14,-244.52,85.75,129.8); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-583.40,-255.27,85.75,127.8); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-583.40,-264.16,85.75,128.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-583.10,-279.72,85.75,129.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-574.32,-280.04,85.75,130.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-575.21,-271.35,85.75,132.0); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-575.24,-260.60,85.75,130.3); -- NPC: A_Stone_Fortification
+			eq.spawn2(218072,0,0,-574.49,-245.75,85.75,128.8); -- NPC: A_Stone_Fortification
 			throwing_dead=0;
 		end
 end
@@ -191,7 +191,7 @@ function Stone_Death(e) -- Count these mobs, if 44, spawn 4 x Rubble at their as
 		if stone_dead == 44 then
 		--eq.zone_emote(15,"YAY");
 		eq.depop_with_timer(218029);
-		eq.spawn2(218076,0,0,-588.14,-236.93,85.75,3.3);
+		eq.spawn2(218076,0,0,-588.14,-236.93,85.75,3.3); -- NPC: A_Mound_of_Rubble
 		eq.spawn2(218118,0,0,-642.33,-236.64,85.75,387.8);
 		eq.spawn2(218119,0,0,-640.72,-287.26,85.75,256.5);
 		eq.spawn2(218120,0,0,-589.11,-287.21,85.75,129.5);
@@ -328,7 +328,7 @@ function Rubble_Death(e)
 end
 
 function Monstrosity_Death(e) -- After my Death - Spawn Peregin & FD him, set his actions to not agro, go invuln, immune to all forms of agro. Also spawn the waves of Stone Heaps.
-		eq.spawn2(218049,0,0,-631.84,-277.58,89.75,64.3);
+		eq.spawn2(218049,0,0,-631.84,-277.58,89.75,64.3); -- NPC: Peregrin_Rockskull
 		heap_dead=0;
 		eq.debug("Heap Dead: " .. heap_dead);
 		eq.spawn2(218079,0,0,-545.32,-331.85,85.75,448.3):AddToHateList(e.self:GetTarget(),1);
@@ -520,29 +520,29 @@ end
 
 function Mudslinger_HP(e)
 	if (e.hp_event == 50) then
-	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
+	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3); -- NPC: A_Muddite_Mudling
 	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
-	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
-	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5);
-	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0);
-	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8);
-	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3);
-	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
-	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
-	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
+	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5); -- NPC: A_Muddite_Mudling
 	eq.set_next_hp_event(10);
 	end
 	if (e.hp_event == 10) then
-	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
+	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3); -- NPC: A_Muddite_Mudling
 	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
-	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
-	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5);
-	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0);
-	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8);
-	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3);
-	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
-	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
-	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
+	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5); -- NPC: A_Muddite_Mudling
 	end
 end
 
@@ -616,16 +616,16 @@ function Sludge_HP(e)
     Sludge_hitpoints = e.hp_event;
     mudlet_death=0;
     eq.depop(218070);
-    eq.spawn2(218084,0,0,381.52,127.78,71.75,258.8);
-    eq.spawn2(218084,0,0,355.95,130.11,71.75,284.3);
-    eq.spawn2(218084,0,0,329.38,129.46,71.75,257.0);
-    eq.spawn2(218084,0,0,304.61,130.28,71.75,231.0);
+    eq.spawn2(218084,0,0,381.52,127.78,71.75,258.8); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,355.95,130.11,71.75,284.3); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,329.38,129.46,71.75,257.0); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,304.61,130.28,71.75,231.0); -- NPC: A_Muck_Mudlet
     eq.spawn2(218084,0,0,303.52,104.01,71.75,207.5); -- Depop myself @ 75% HP - spawn 10 X ##Muck Muddlet##
-    eq.spawn2(218084,0,0,304.38,76.83,71.75,135.0);
-    eq.spawn2(218084,0,0,329.42,74.09,71.75,56.0);
-    eq.spawn2(218084,0,0,355.95,73.77,71.75,9.8);
-    eq.spawn2(218084,0,0,380.65,75.42,71.75,498.5);
-    eq.spawn2(218084,0,0,382.95,98.83,71.75,413.8);
+    eq.spawn2(218084,0,0,304.38,76.83,71.75,135.0); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,329.42,74.09,71.75,56.0); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,355.95,73.77,71.75,9.8); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,380.65,75.42,71.75,498.5); -- NPC: A_Muck_Mudlet
+    eq.spawn2(218084,0,0,382.95,98.83,71.75,413.8); -- NPC: A_Muck_Mudlet
 end
 
 function Mudlet_Death(e)
@@ -638,9 +638,9 @@ end
 function Sludge_Death(e)
 	Sludge_hitpoints = 100;
 	eq.spawn2(218042,0,0,303.93,128.79,71.75,134.3); -- spawn 4x ## Filth Gorger ##
-	eq.spawn2(218042,0,0,380.18,130.47,71.75,266.5);
-	eq.spawn2(218042,0,0,381.84,49.43,71.75,413.5);
-	eq.spawn2(218042,0,0,303.67,49.65,71.75,61.5);
+	eq.spawn2(218042,0,0,380.18,130.47,71.75,266.5); -- NPC: A_Filth_Gorger
+	eq.spawn2(218042,0,0,381.84,49.43,71.75,413.5); -- NPC: A_Filth_Gorger
+	eq.spawn2(218042,0,0,303.67,49.65,71.75,61.5); -- NPC: A_Filth_Gorger
 	eq.stop_timer('mud_box');
 end	
 
@@ -660,40 +660,40 @@ end
 
 function Monstrous_HP(e)
 	if (e.hp_event == 50) then
-	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
+	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3); -- NPC: A_Muddite_Mudling
 	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
-	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
-	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5);
-	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0);
-	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8);
-	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3);
-	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
-	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
-	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
+	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5); -- NPC: A_Muddite_Mudling
 	eq.set_next_hp_event(40);
 	elseif (e.hp_event == 40) then
-	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
+	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3); -- NPC: A_Muddite_Mudling
 	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
-	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
-	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5);
-	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0);
-	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8);
-	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3);
-	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
-	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
-	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
+	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5); -- NPC: A_Muddite_Mudling
 	eq.set_next_hp_event(10);
 	elseif (e.hp_event == 10) then
-	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
+	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3); -- NPC: A_Muddite_Mudling
 	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
-	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
-	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5);
-	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0);
-	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8);
-	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3);
-	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
-	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
-	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
+	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3); -- NPC: A_Muddite_Mudling
+	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5); -- NPC: A_Muddite_Mudling
 	end
 end
 
@@ -733,43 +733,43 @@ function Dusty_Spawn(e)
 end
 
 function Dusty_Death(e)
-	eq.spawn2(218064,0,0,-250,04.-1373.41,-34.25,511);
-	eq.spawn2(218064,0,0,-200.04,-1297.00,-40.55,472.8);
-	eq.spawn2(218064,0,0,-217.44,-1238.85,-42.13,289.8);
-	eq.spawn2(218064,0,0,-296.53,-1238.57,-41.95,205.8);
-	eq.spawn2(218064,0,0,-312.43,-1292.49,-39.75,89.3);
-	eq.spawn2(218064,0,0,-29.89,-714.25,12.33,263.0);
-	eq.spawn2(218064,0,0,43.08,-714.61,11.75,264.5);
-	eq.spawn2(218064,0,0,42.37,-685.50,31.75,260.0);
-	eq.spawn2(218064,0,0,-32.22,-683.71,31.75,260.3);
-	eq.spawn2(218064,0,0,-116.48,-598.69,31.75,390.3);
-	eq.spawn2(218064,0,0,-117.19,-521.14,31.75,389.8);
-	eq.spawn2(218064,0,0,-148.32,-523.52,11.75,388.0);
+	eq.spawn2(218064,0,0,-250,04.-1373.41,-34.25,511); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-200.04,-1297.00,-40.55,472.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-217.44,-1238.85,-42.13,289.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-296.53,-1238.57,-41.95,205.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-312.43,-1292.49,-39.75,89.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-29.89,-714.25,12.33,263.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,43.08,-714.61,11.75,264.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,42.37,-685.50,31.75,260.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-32.22,-683.71,31.75,260.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-116.48,-598.69,31.75,390.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-117.19,-521.14,31.75,389.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-148.32,-523.52,11.75,388.0); -- NPC: A_Dust_Devotee
 	eq.spawn2(218064,0,0,-148.06,-597.64,12.23,387.8); -- spawn 37 Dust Devotees in their designated locations. All 37 must be killed to proceed with ring.
-	eq.spawn2(218064,0,0,-28.08,-407.61,13.28,0.0);
-	eq.spawn2(218064,0,0,41.71,-406.70,12.42,4.0);
-	eq.spawn2(218064,0,0,-31.09,-437.54,31.75,3.0);
-	eq.spawn2(218064,0,0,43.23,-435.46,31.75,1.0);
-	eq.spawn2(218064,0,0,126.44,-522.99,31.75,130.3);
-	eq.spawn2(218064,0,0,127.82,-599.10,31.75,128.0);
-	eq.spawn2(218064,0,0,161.22,-596.43,12.47,134.5);
-	eq.spawn2(218064,0,0,159.26,-523.12,11.75,132.5);
-	eq.spawn2(218064,0,0,105.94,-599.41,31.75,384.8);
-	eq.spawn2(218064,0,0,107.98,-631.19,31.75,387.0);
-	eq.spawn2(218064,0,0,90.23,-663.51,31.75,509.3);
-	eq.spawn2(218064,0,0,46.31,-665.34,31.75,2.0);
-	eq.spawn2(218064,0,0,-33.62,-663.61,31.75,1.5);
-	eq.spawn2(218064,0,0,-78.24,-667.44,31.75,1.5);
-	eq.spawn2(218064,0,0,-96.73,-630.52,31.75,134.3);
-	eq.spawn2(218064,0,0,-98.16,-599.28,31.75,125.8);
-	eq.spawn2(218064,0,0,-94.86,-522.43,31.75,125.5);
-	eq.spawn2(218064,0,0,-97.43,-490.13,31.75,129.5);
-	eq.spawn2(218064,0,0,-78.36,-456.75,31.75,255.3);
-	eq.spawn2(218064,0,0,-37.29,-456.79,31.75,256.0);
-	eq.spawn2(218064,0,0,46.84,-457.67,31.75,257.8);
-	eq.spawn2(218064,0,0,89.89,-455.10,31.75,257.5);
-	eq.spawn2(218064,0,0,110.92,-490.27,31.75,380.5);
-	eq.spawn2(218064,0,0,108.52,-522.32,31.75,387.3);
+	eq.spawn2(218064,0,0,-28.08,-407.61,13.28,0.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,41.71,-406.70,12.42,4.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-31.09,-437.54,31.75,3.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,43.23,-435.46,31.75,1.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,126.44,-522.99,31.75,130.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,127.82,-599.10,31.75,128.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,161.22,-596.43,12.47,134.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,159.26,-523.12,11.75,132.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,105.94,-599.41,31.75,384.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,107.98,-631.19,31.75,387.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,90.23,-663.51,31.75,509.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,46.31,-665.34,31.75,2.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-33.62,-663.61,31.75,1.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-78.24,-667.44,31.75,1.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-96.73,-630.52,31.75,134.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-98.16,-599.28,31.75,125.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-94.86,-522.43,31.75,125.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-97.43,-490.13,31.75,129.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-78.36,-456.75,31.75,255.3); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-37.29,-456.79,31.75,256.0); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,46.84,-457.67,31.75,257.8); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,89.89,-455.10,31.75,257.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,110.92,-490.27,31.75,380.5); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,108.52,-522.32,31.75,387.3); -- NPC: A_Dust_Devotee
 	eq.spawn2(218131,0,0,-32.37,-560.45,31.75,127.8);
 	eq.spawn2(218131,0,0,24.07,-581.69,31.75,456.0); -- Spawn 3x Triumvirate Of Soil in a Pyramid Formation Untargetable.
 	eq.spawn2(218131,0,0,25.65,-527.70,31.75,332.5);
@@ -781,9 +781,9 @@ function Devotee_Death(e)
 	eq.debug("Dust_Dead: " .. devotee_death);
 	if devotee_death == 37 then
 	eq.depop_all(218131); -- Depop the Untarget Triumvirate of Soil
-	eq.spawn2(218045,0,0,-32.37,-560.45,31.75,127.8);
+	eq.spawn2(218045,0,0,-32.37,-560.45,31.75,127.8); -- NPC: Triumvirate_of_Soil
 	eq.spawn2(218045,0,0,24.07,-581.69,31.75,456.0); -- Respawn them - Agro 
-	eq.spawn2(218045,0,0,25.65,-527.70,31.75,332.5);
+	eq.spawn2(218045,0,0,25.65,-527.70,31.75,332.5); -- NPC: Triumvirate_of_Soil
 	devotee_death=0; -- Reset devotee death to 0.
 	end
 end
@@ -971,15 +971,15 @@ function Tainted_Death(e)
 	tainted_dead=0; -- Reset count on tainted.
 	eq.debug("Tainted: " .. tainted_dead);
 	eq.spawn2(218040,0,0,447.24,-868.75,37.75,68.8); -- Spawn all 10 Bloodthirsty Vegerog
-	eq.spawn2(218040,0,0,484.89,-872.28,37.75,510.8);
-	eq.spawn2(218040,0,0,521.35,-870.67,37.75,455.8);
-	eq.spawn2(218040,0,0,521.84,-831.45,37.75,387.0);
-	eq.spawn2(218040,0,0,523.63,-795.69,37.75,336.8);
-	eq.spawn2(218040,0,0,483.41,-793.68,37.75,258.8);
-	eq.spawn2(218040,0,0,446.91,-793.18,37.75,197.3);
-	eq.spawn2(218040,0,0,443.52,-834.30,37.75,130.8);
-	eq.spawn2(218040,0,0,461.58,-855.27,33.75,67.0);
-	eq.spawn2(218040,0,0,509.08,-806.73,33.75,313.0);
+	eq.spawn2(218040,0,0,484.89,-872.28,37.75,510.8); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,521.35,-870.67,37.75,455.8); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,521.84,-831.45,37.75,387.0); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,523.63,-795.69,37.75,336.8); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,483.41,-793.68,37.75,258.8); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,446.91,-793.18,37.75,197.3); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,443.52,-834.30,37.75,130.8); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,461.58,-855.27,33.75,67.0); -- NPC: A_Bloodthirsty_Vegerog
+	eq.spawn2(218040,0,0,509.08,-806.73,33.75,313.0); -- NPC: A_Bloodthirsty_Vegerog
 	end
 end
 

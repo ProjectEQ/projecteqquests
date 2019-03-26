@@ -14,7 +14,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 28032, item2 = 28009, item3 = 28006, item4 = 28033})) then
 		e.self:Say("You... are.. balanced... and.. powerful.. for.. a.. mortal... " .. e.other:GetName() .. " ..... " .. e.other:GetName() .. ". More.. so.. than.... Magi'kot. But.... you.. are.. not.. yet.. ready.. to.. transcend.. transcend... this.. mortal.. coil. Take.. take.. seize.. this.. Orb... for.. you.. are.. worthy.. of.. reward.. and.. with... the.. aid.. of... the... balance.. balance.. contained.. within.. the.. Orb.. you.. may.. yet.. reach.. the... ultimate... Mastery.");
-		e.other:SummonItem(19436);
+		e.other:SummonItem(19436); -- Item: Spell: Summon Orb
 		eq.depop();
 		eq.stop_timer("depop");
 	end

@@ -12,14 +12,14 @@ sub EVENT_SAY {
 	}
 	if($client->GetGlobal("paladin_epic") ==4 && $text=~/find anything/i){
 		quest::say("As we were turning back to Dawnshroud Peaks, my good friend Ryann Desgrey found her locket in the dirt in the Grey. Here, take the locket. Perhaps you will have a better chance of finding her, and perhaps she will come with you once you present her with the locket. Please, let her know that I miss her and that we all want her to come home safely. Go now, noble paladin.");
-		quest::summonitem(69945);
+		quest::summonitem(69945); # Item: Drema's Locket
 	}
 }
 
 sub EVENT_ITEM {
   if ($client->GetGlobal("paladin_epic") ==4 && plugin::check_handin(\%itemcount, 69946 => 1)) {
     quest::say("You have found her in Mons Letalis? This is her fingerbone, what has happened? She has turned into a skeleton? Oh my, this is grave news indeed. Show this fingerbone to Denns, maybe he can figure out a way to investigate this dire situation.");
-	quest::summonitem(69946);
+	quest::summonitem(69946); # Item: Drema's Fingerbone
 	quest::setglobal("paladin_epic",5,5,"F");
   }
   plugin::return_items(\%itemcount);

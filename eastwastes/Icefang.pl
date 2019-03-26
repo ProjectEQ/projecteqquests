@@ -22,7 +22,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
 
   elsif ($icefang == 20) {
-    quest::signalwith(116567, 116567, 0);
+    quest::signalwith(116567, 116567, 0); # NPC: Korrigain
     $icefang = 0;
   }
 
@@ -128,7 +128,7 @@ sub EVENT_WAYPOINT_DEPART {
     quest::settimer("icefang", 600);
     $icefang = 180;
     
-    my $entid = quest::spawn2(116571, 0, 0, -4319, -3500, 150, 0);
+    my $entid = quest::spawn2(116571, 0, 0, -4319, -3500, 150, 0); # NPC: ringsixcoord
     my $mob = $entity_list->GetMobID($entid);
     my $mobnpc = $mob->CastToNPC();
     $mobnpc->SignalNPC(1);

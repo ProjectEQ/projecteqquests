@@ -7,8 +7,8 @@ sub EVENT_ITEM {
 		quest::ze(0,"The guardian stirs slightly before settling down.");
 	 }
 	 elsif ($qglobals{$instanceid.ikkymove} == 2) {
-		quest::signalwith(294609,2,0);
-		quest::signalwith(294609,1,0);
+		quest::signalwith(294609,2,0); # NPC: #Phantasmal_Priest
+		quest::signalwith(294609,1,0); # NPC: #Phantasmal_Priest
 		quest::ze(0,"The two guardians come alive as the priest disperses! Your attempt at commanding them has failed!");
 	 }
    }

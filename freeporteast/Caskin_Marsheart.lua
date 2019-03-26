@@ -14,10 +14,10 @@ function event_say(e)
 local qglobals = eq.get_qglobals(e.other)
 	if(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	elseif(qglobals["druid_epic"] == "3" and e.message:findi("Soulbinder Grunson sent me")) then
 		e.self:Say("You mean Geadin. Caskin's eyes lose their focus for a moment as he appears to be reminiscing. Geadin was a good friend of mine but I haven't seen him in ten years, not since his [" .. eq.say_link("problems") .. "] with the Soulbinders.");
 	elseif(qglobals["druid_epic"] == "3" and e.message:findi("problems")) then
@@ -34,13 +34,13 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18747})) then
 		e.self:Say("Welcome to the guild. here's your guild tunic. Once you are ready to begin your training please make sure that you see Sten Harnak, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
-		e.other:SummonItem(13571);
+		e.other:SummonItem(13571); -- Item: Colorfully Patched Tunic*
 		e.other:Ding();
-		e.other:Faction(284,100,0);
-		e.other:Faction(281,15,0);
-		e.other:Faction(262,15,0);
-		e.other:Faction(304,-5,0);
-		e.other:Faction(285,-5,0);
+		e.other:Faction(284,100,0); -- Faction: League of Antonican Bards
+		e.other:Faction(281,15,0); -- Faction: Knights of Truth
+		e.other:Faction(262,15,0); -- Faction: Guards of Qeynos
+		e.other:Faction(304,-5,0); -- Faction: Ring of Scale
+		e.other:Faction(285,-5,0); -- Faction: Mayong Mistmoore
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

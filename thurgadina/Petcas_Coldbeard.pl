@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($gold == 350) {
     quest::say("Here ya go!");
-    quest::summonitem(60290);
+    quest::summonitem(60290); # Item: Special Beans
   } elsif ($gold == 5) {
     quest::say("Here ya go!");
     quest::summonitem(30145); #The Icy Mug Souvenir Stein
@@ -24,22 +24,22 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::say("What's the rush there, youngster?");
-		quest::signalwith(115019,1);
+		quest::signalwith(115019,1); # NPC: Ronodun
 	}
 	if($signal==2) {
 		quest::say("That's not good, the Grand Historian's mighty protective of his daughter. What he do after he caught ya?");
-		quest::signalwith(115019,2);
+		quest::signalwith(115019,2); # NPC: Ronodun
 	}
 	if($signal==3) {
-		quest::signalwith(115019,3);
+		quest::signalwith(115019,3); # NPC: Ronodun
 	}
 	if($signal==4) {
 		quest::say("Well, coulda been worse. A month's worth of sermons is a far sight better than a trip to the bottom of the Dain's well.");
-		quest::signalwith(115019,4);
+		quest::signalwith(115019,4); # NPC: Ronodun
 	}
 	if($signal==5) {
 		quest::say("Here ya go, Ronodun, on the house this time. Drink fast, don't need the Grand Historian to come lookin' fer ya...");
-		quest::signalwith(115019,5);
+		quest::signalwith(115019,5); # NPC: Ronodun
 	}
 	if($signal==6) {
 		quest::say("My pleasure, son. You just remember to keep me in all those prayers you'll be sayin this month. Hahhahah!");

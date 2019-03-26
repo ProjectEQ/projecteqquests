@@ -75,7 +75,7 @@ function Boss_Say(e)
 
     -- Enable the Death Toucher
     eq.spawn_condition('chambersd', instance_id, 5, 1 );
-    eq.spawn2(307006,0,0,0,0,0,0);
+    eq.spawn2(307006,0,0,0,0,0,0); -- NPC: #death_touch
 
     CastSpells(e);
     eq.set_timer('spell_timer', spell_timer  * 1000);

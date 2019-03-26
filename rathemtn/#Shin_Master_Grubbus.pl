@@ -10,35 +10,35 @@ sub EVENT_SAY {
   }     
   if ($text=~/ready to begin/i) {
     quest::say("Take this assembly kit. When you combine various items together in the assembly kit, you can create the different pieces of armor that you will need, such as [helm], [armguards], [breastplate], [bracers], [gauntlets], [legplates], and [boots]. If you would like to start crafting your armor, just tell me what piece you would like to craft and I will give you further instructions.");
-    quest::summonitem(17834);
+    quest::summonitem(17834); # Item: Shin Initiate's Assembly Kit
   }
   if ($text=~/helm/i) {
     quest::say("The Helm of the Shin Initiate is one of the more difficult parts of your armor that you will craft. Make sure you are prepared before you venture out to locate the needed items. To make your helm you will need to gather a Giant Snake Rattle, one Fungus Clump, one Spider Legs, and two Small Bricks of Ore from Innothule. If you cannot find any ore in the swamp, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold.");
-    quest::summonitem(38932);
+    quest::summonitem(38932); # Item: Mold for Froglok Helms
   }
   if ($text=~/armguards/i) {
     quest::say("To create armguards, go to Innothule and find a Giant Snake Rattle, two Snake Fangs, one Spiderling Legs, and one Small Brick of Ore. If you cannot find any ore in the swamp, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold.");
-    quest::summonitem(38929);
+    quest::summonitem(38929); # Item: Mold for Froglok Sleeves
   }
   if ($text=~/breastplate/i) {
     quest::say("This is the most difficult item that you will make. Please meditate on this and make sure you are ready before you begin. Through great perseverance and piety we are able to overcome almost any obstacle. To make a Breastplate of the Shin Initiate you will need to travel to the Common Lands, the Deserts of Ro, and Innothule Swamp and gather a Lightstone, one Pristine Giant Scarab Carapace, a Desert Tarantula Chitin, a Deathfist Slashed Belt, and two Small Bricks of Ore. If you cannot locate any ore in your travels, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold. After you have completed your Breastplate, come back to talk to me if you wish to perform your [final test].");
-    quest::summonitem(38933);
+    quest::summonitem(38933); # Item: Mold for Froglok Chestplates
   }
   if ($text=~/bracers/i) {
     quest::say("Creating bracers is a fairly easy task. However even the most basic of tasks are important when done in Marr's name. Gather one Snake Fang, one Zombie Skin, one Turquoise, and one Small Brick of Ore from the swamp. If you cannot locate any ore in the swamp, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold.");
-    quest::summonitem(38928);
+    quest::summonitem(38928); # Item: Mold for Froglok Wristguards
   }
   if ($text=~/gauntlets/i) {
     quest::say("Gauntlets are a good choice. Gauntlets of the Shin Initiate are fairly simple to craft. You will need to gather one Small Mosquito Wing, one Large Snake Skin, two Zombie Skins, and one Small Brick of Ore from Innothule. If you cannot find any ore in the swamp, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold.");
-    quest::summonitem(38930);
+    quest::summonitem(38930); # Item: Mold for Froglok Gloves
   }
   if ($text=~/legplates/i) {
     quest::say("In the battle for Grobb, many of our brethren fell. Their lives lost so that we may carry on Marr's Blessing. To aid in your forthcoming battles you may want to begin constructing Legplates of the Shin Initiate. Be forewarned however that they are somewhat difficult to construct. You will need to venture to the Deserts of Ro and gather a Desert Tarantula Chitin, a Giant Snake Fang, a Pristine Giant Scarab Carapace, and three Small Bricks of Ore. If you cannot locate any ore in the swamp or desert, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold.");
-    quest::summonitem(38934);
+    quest::summonitem(38934); # Item: Mold for Froglok Leggings
   }
   if ($text=~/boots/i) {
     quest::say("Very good. We, as paladins of Marr, have a duty to uphold Marr's teachings and be his voice to all who will listen. Though the crafting of Boots of the Shin Initiate are relatively easy to create, do not be idle in either thought or action. To craft your boots you will need to venture into the swamp and gather a few items. You will need to gather one Snake Fang, one Small Mosquito Wing, one Zombie Skin, and two Small Bricks of Ore. If you cannot locate any ore in the swamp, you might be able to find some ore for sale by visiting the local merchants. Once you have found these items, combine them in your assembly kit and take the newly created material to a forge, such as the one in the Gukta Exchange, along with this mold.");
-    quest::summonitem(38931);
+    quest::summonitem(38931); # Item: Mold for Froglok Boots
   }
   if ($text=~/final task/i) {
     quest::say("Not all of our brethren follow the ways of The Truthbringer. In fact, a once noble paladin of our cause has decided to betray us and side with the trolls. For what reason, I do not know. His name is Fipok Glubble. There have been numerous sightings of him in the swamp. He must be stopped before he can cause any harm to our people. If you can find him, bring me his head and I will reward you.");
@@ -56,16 +56,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 55017 => 1)) {
     quest::say("In the name of The Truthbringer! You have done it! Excellent work! Take this Blade of the Shin Initiate. May it aid you in your future battles!");
-    quest::summonitem(55016);
+    quest::summonitem(55016); # Item: Blade of the Shin Initiate
     quest::exp(1000);
-    quest::faction(1713,5);
-    quest::faction(1709,5);
-    quest::faction(1716,5);
-    quest::faction(1717,5);
-    quest::faction(1718,5);
+    quest::faction(1713,5); # Faction: Paladins of Gukta
+    quest::faction(1709,5); # Faction: Protectors of Gukta
+    quest::faction(1716,5); # Faction: High Council of Gukta
+    quest::faction(1717,5); # Faction: Lorekeepers of Gukta
+    quest::faction(1718,5); # Faction: Guktan Elders
   }
   if ($client->GetGlobal("paladin_epic")==9 && plugin::check_handin(\%itemcount, 17307 => 1)) {
-	quest::summonitem(69964);
+	quest::summonitem(69964); # Item: Gukta Prayer Bead
 	quest::say("You are quite the noble Paladin $name. Take this gem and see if it fits into that set of prayer beads. If my memory is correct I believe you will find a similar gem on Odus. You should head that way to continue your journey. Be well $name.");
   }  
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');

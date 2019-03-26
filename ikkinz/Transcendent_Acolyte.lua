@@ -40,6 +40,6 @@ end
 
 function event_death_complete(e)
   -- Tell Trigger_Ikkinz_3 that an Transcendent Acolyte has died
-  eq.signal(294597, 9);
+  eq.signal(294597, 9); -- NPC: #Trigger_Ikkinz_3
 end
 

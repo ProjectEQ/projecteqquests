@@ -16,8 +16,8 @@ sub EVENT_ENTER {
   $y = $npc->GetY();
   $z = $npc->GetZ();
   quest::emote("been ambushed!");
-  quest::spawn2(116540,0,0,$x+5,$y-5,$z,0);
-  quest::spawn2(116540,0,0,$x-5,$y+5,$z,0);
+  quest::spawn2(116540,0,0,$x+5,$y-5,$z,0); # NPC: Kromrif_Death_Squad
+  quest::spawn2(116540,0,0,$x-5,$y+5,$z,0); # NPC: Kromrif_Death_Squad
   quest::depop_withtimer();
 }
 

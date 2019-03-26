@@ -1,5 +1,5 @@
 sub EVENT_DEATH_COMPLETE {
 
-    quest::signalwith(286104,3,1);
+    quest::signalwith(286104,3,1); # NPC: #lair_trigger
 
 }

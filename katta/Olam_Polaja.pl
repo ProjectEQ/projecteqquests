@@ -7,40 +7,40 @@ sub EVENT_SAY {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::say("All right you begin, I am going to beat you this time!");
-		quest::signalwith(160219,1,8000);
+		quest::signalwith(160219,1,8000); # NPC: Lyneea_Doyle
 	}
 	if($signal == 2) {
 		quest::emote("attempts to flip a copper into a mug on the table and misses!");
-		quest::signalwith(160219,2,8000);
+		quest::signalwith(160219,2,8000); # NPC: Lyneea_Doyle
 	}
 	if($signal == 3) {
 		quest::emote("drinks a gulp of ale 'Nice toss!'");
-		quest::signalwith(160219,3,1);
+		quest::signalwith(160219,3,1); # NPC: Lyneea_Doyle
 	}
 	if($signal == 4) {
 		quest::emote("attempts to flip a copper into a mug on the table and succeeds!");
-		quest::signalwith(160219,4,8000);
+		quest::signalwith(160219,4,8000); # NPC: Lyneea_Doyle
 	}
 	if($signal == 5) {
-		quest::signalwith(160219,5,8000);
+		quest::signalwith(160219,5,8000); # NPC: Lyneea_Doyle
 	}
 	if($signal == 6) {
 		quest::emote("drinks a gulp of ale 'Nice toss!'");
-		quest::signalwith(160219,6,1);
+		quest::signalwith(160219,6,1); # NPC: Lyneea_Doyle
 	}
 	if($signal == 7) {
 		quest::emote("attempts to flip a copper into a mug on the table and misses!");
-		quest::signalwith(160219,7,36000);
+		quest::signalwith(160219,7,36000); # NPC: Lyneea_Doyle
 	}
 	if($signal == 8) {
 		quest::emote("takes another gulp of ale and begins to look dizzy");
-		quest::signalwith(160219,8,8000);
+		quest::signalwith(160219,8,8000); # NPC: Lyneea_Doyle
 	}
 	if($signal == 9) {
 		quest::say("I'll...be...fine....uhn..");
 		$npc->SetAppearance(3); 
 		$npc->SetAppearance(0);
-		quest::signal(160257,8000);
+		quest::signal(160257,8000); # NPC: Jacob_Rutledge
 	}
 }	
 

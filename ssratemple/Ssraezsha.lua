@@ -3,5 +3,5 @@ eq.set_proximity(e.self:GetX() - 60, e.self:GetX() + 60, e.self:GetY() - 60, e.s
 end
 
 function event_enter(e)
-e.self:CastSpell(2076, 0);
+e.self:CastSpell(2076, 0); -- Spell: Presence of Ssraeshza
 end

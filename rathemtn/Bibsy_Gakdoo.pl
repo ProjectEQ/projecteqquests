@@ -25,12 +25,12 @@ sub EVENT_ITEM {
      }
      if (plugin::check_handin(\%itemcount, 55033 => 1)) {
        quest::say("So the legend was true! Er, uh not that I doubted the validity of Marr's legends, milord.' Bibsy takes the Ring and the piece of the Emerald and sets them on the table. He then pulls out a small set of tools and begins to place the Emerald into the Ring. After a short while he hands the Ring back to you. 'Here you are. I do believe it is my finest work yet. Marr's blessing to you, milord!");
-       quest::faction( 1719, 10);
-       quest::faction( 1709, 10);
-       quest::faction( 1716, 10);
-       quest::faction( 1717, 10);
-       quest::faction( 1718, 10);
-       quest::summonitem(55034);
+       quest::faction( 1719, 10); # Faction: Citizens of Gukta
+       quest::faction( 1709, 10); # Faction: Protectors of Gukta
+       quest::faction( 1716, 10); # Faction: High Council of Gukta
+       quest::faction( 1717, 10); # Faction: Lorekeepers of Gukta
+       quest::faction( 1718, 10); # Faction: Guktan Elders
+       quest::summonitem(55034); # Item: Marr's Ring of Piety
        
      }
 }

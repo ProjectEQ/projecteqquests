@@ -14,7 +14,7 @@ sub EVENT_SAY {
 	if($text =~ /hail/i ) {
 		if(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >= 1) {
 		quest::say("What can I help you with today? What's that? Something about your soul gem? Hmm...Let's see what we can do here. Here you go, but please take care of this one, they are not easy to create. I'd imagine that Keras will want to see that you are progressing nicely on your quest to seek a way to focus and control your rage.");		
-		quest::summonitem(11999);
+		quest::summonitem(11999); # Item: Raging Soul Shard
 		}
 	elsif($qglobals{berserk_epic} == undef) {
 		quest::say("If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that [tome] in your inventory as well.  It will help you greatly during your adventures.");
@@ -22,11 +22,11 @@ sub EVENT_SAY {
 	}
 	if(($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)) {
 		quest::say("Luckily for you someone found it.");
-		quest::summonitem(2873);
+		quest::summonitem(2873); # Item: Application for Citizenship
 	}
 	if(($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)){
 		quest::say("Someone found this under a table at the one of the pubs. Try not to lose it this time.");
-		quest::summonitem(2878);
+		quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
 	}
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();
@@ -57,7 +57,7 @@ sub EVENT_ITEM {
 	}
 	elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
 		quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Pashir.  Farewell.");
-		quest::summonitem(2878);
+		quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
 		quest::ding();
 		quest::exp(100);
 		quest::setglobal("Shar_Vahl_Cit",7,5,"F");

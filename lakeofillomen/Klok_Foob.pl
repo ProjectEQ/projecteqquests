@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   # Catfish Croak Sandwich [Part 8][End]
     quest::say("Me thanks you very much!! Now me stop da tummy grumbles. You have this. And you takes dis. Foob make special, not sold yet, you test it. It is not toughest, but it take a little bashing just like you. It is called Foobscale!!");
   #Summon: Foobscale Coif (12448)
-    quest:summonitem(12448);
+    quest:summonitem(12448); # Item: Foobscale Coif
   }
   plugin::return_items(\%itemcount);
 }

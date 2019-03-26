@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 6182 => 1)) { #Small Bag of Teeth
     quest::say("Excellent, the spirits have returned you to me with your tail intact! The foe that you encountered was a young creature. Their elders are much less likely to allow your passage. The packs of wolves that roam the moor have proven to be quite a problem for our scouts. I will assist you in learning a method that will allow you to build and assist others in building a weapon that bites at the very spirit of those beasts. Take these claw mounts and use them in conjunction with the tomes that Qua sells. You'll need stretching dowels to treat the lashings. Jhimis usually keeps them behind the counter of his shop. Get a set from him and read through those tomes. Return to me with your new claws and your apprentice's cloak when you have completed the task.");
-    quest::faction(1532,3);
+    quest::faction(1532,3); # Faction: Khati Sha
     quest::exp(10000);
     quest::summonitem(6145); #Reinforced Claw Mounts
   }
@@ -38,7 +38,7 @@ sub EVENT_ITEM {
     quest::summonitem(6184); #Cloak of the Khati Sha Journeyman
     quest::summonitem(6185); #Sonic Wolf Bane Claw
     quest::summonitem(6186); #Sonic Wolf Bane Claw
-    quest::faction(1532,5);
+    quest::faction(1532,5); # Faction: Khati Sha
     quest::exp(50000);
   }
   plugin::return_items(\%itemcount);

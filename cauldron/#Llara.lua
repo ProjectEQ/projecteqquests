@@ -16,7 +16,7 @@ function event_say(e)
 			e.self:Say("I saw desperation. I spoke to many people who knew Amstaf trying to find out if anyone heard anything about that night. No one knew anything about it. When I had reached the dwarven hunting grounds I ran into a woman named Walnan. She kept rambling on and on about the power of the Orb and something about Magi`kot. I didn't understand what she was saying. She didn't know anything about my situation either, but she did tell me that there were others that may be able to help me. She told me that I should find [Ruathey].");
 		elseif(e.message:findi("ruathey")) then
 			e.self:Say("Ruathey is known for her ability to look into people's souls and find truth. Though I wasn't able to find Amstaf, I was able to recover his sword. I believe that by having his sword I am closer to finding him. Take this note to Ruathey and tell her that I sent you.");
-			e.other:SummonItem(2417);
+			e.other:SummonItem(2417); -- Item: Note to Ruathey
 			eq.delete_global("Llara");
 		end
 	end

@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 			$nMembers = $client_group->GroupCount();	 	    	    
 
 			# Summon Bangle of Disease Warding (9294) for client that turned in items
-			quest::summonitem(9294);
+			quest::summonitem(9294); # Item: Bangle of Disease Warding
 
 			# Flag each group member for Crypt of Decay	    		
 			for ($i = 0; $i < $nMembers; $i++) {

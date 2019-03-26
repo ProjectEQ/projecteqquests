@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_AGGRO {
   quest::emote("launches itself in your direction.");
-  $npc->CastSpell(3746, 303083);
+  $npc->CastSpell(3746, 303083); # Spell: Caustic Atmosphere
 }
 
 sub EVENT_TIMER {

@@ -12,7 +12,7 @@ sub EVENT_ITEM {
       plugin::check_handin(\%itemcount, 19294 => 1) || # splurt
       plugin::check_handin(\%itemcount, 19299 => 1)) { # thrall of bones
       quest::say("Here is the scroll that I promised. We have both gained much today. I hope to do business with you again soon. Farewell.");      
-      quest::summonitem(quest::ChooseRandom(19297,19421,19408,19409));
+      quest::summonitem(quest::ChooseRandom(19297,19421,19408,19409)); # Item(s): Spell: Minion of Shadows (19297), Spell: Sacrifice (19421), Spell: Scent of Terris (19408), Spell: Shadowbond (19409)
       quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

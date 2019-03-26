@@ -43,18 +43,18 @@ sub EVENT_ITEM {
   if ($faction <= 3) { # requires kindly faction
      if (plugin::check_handin(\%itemcount, 11637 => 2, 11636 => 1)) {
       quest::say("Thank you $name. Here is the container that the artifacts must be stored and returned to me in once they have been recovered. The artifacts I seek are a [Crystal Dragon Eye], a [Golden Dragon Claw], a [Dragon Scripture Tablet], and a [Platinum Dragon Scale]. When all the items have been recovered, seal the artifact container and return it to me. You shall be rewarded well for your assistance, I assure you.");
-      quest::summonitem(17167);
-      quest::faction(430,5);
-      quest::faction(436,5);
-      quest::faction(448,-10);
+      quest::summonitem(17167); # Item: Empty Artifact Container
+      quest::faction(430,5); # Faction: Claws of Veeshan
+      quest::faction(436,5); # Faction: Yelinak
+      quest::faction(448,-10); # Faction: Kromzek
       quest::exp(1250)       
      } 
      elsif (plugin::check_handin(\%itemcount, 28057 => 1)) {
      quest::say("You have made good on your word, $name.  This is indeed what I have been seeking, and as promised I will keep my end of the bargain. Take this mask and wear it with pride, it is symbolic of your aid to the The Draconic Loyalist Fellowship.");
-      quest::summonitem(12559);
-      quest::faction(430,5);
-      quest::faction(436,5);
-      quest::faction(448,-10);
+      quest::summonitem(12559); # Item: Mask of Draconic Enhancement
+      quest::faction(430,5); # Faction: Claws of Veeshan
+      quest::faction(436,5); # Faction: Yelinak
+      quest::faction(448,-10); # Faction: Kromzek
       quest::exp(1250)       
      }   
      else {

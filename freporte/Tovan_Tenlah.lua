@@ -15,8 +15,8 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 19918})) then
 		e.self:Say("Sharpen this dagger and take it with this gem and a rattlesnake skin to Verona Rankin.");
-		e.other:SummonItem(19919);
-		e.other:SummonItem(19920);
+		e.other:SummonItem(19919); -- Item: Faceted Blue Gem
+		e.other:SummonItem(19920); -- Item: Dull Coalition Dirk
 		e.other:Ding();
 		e.other:AddEXP(100);
 	end

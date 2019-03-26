@@ -78,7 +78,7 @@ sub EVENT_ITEM
  #Requires: 1 Charred Pearl, 1 Ruby, 1 A Wand (Charred Wood Wand?), 1 Bloodstone 
    if(plugin::check_handin(\%itemcount, 10083 => 1, 10035 => 1, 14160 => 1, 10019 => 1)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11829);
+   quest::summonitem(11829); # Item: Words of Allure
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 
@@ -99,7 +99,7 @@ sub EVENT_ITEM
   #Requires: 1 Sphere of Unrest, 1 Eye of Urd, 1 Star Rose Quartz 
    elsif(plugin::check_handin(\%itemcount, 10520 => 1, 10523 => 1, 10021 => 1)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11850);
+   quest::summonitem(11850); # Item: Words of Dark Paths
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 
@@ -120,7 +120,7 @@ sub EVENT_ITEM
   #Requires: 1 Fetid Skin, 1 Scare Straw, 1 Turmoil Warts, 1 Pearl 
    elsif(plugin::check_handin(\%itemcount, 13150 => 1, 13152 => 1, 8331 => 1, 10024 => 1)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11866);
+   quest::summonitem(11866); # Item: Words of Acquisition (Beza)
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 
@@ -140,7 +140,7 @@ sub EVENT_ITEM
    #Requires: 1 Globe of Fear, 1 Eye of Jin, 1 Jade 
    elsif(plugin::check_handin(\%itemcount, 10521 => 1, 10525 => 1, 10023 => 1)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11863);
+   quest::summonitem(11863); # Item: Words of Obligation
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 

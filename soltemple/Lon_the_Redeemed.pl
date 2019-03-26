@@ -4,7 +4,7 @@ sub EVENT_SAY {
   }
   if($text=~/i am a rogue in need of redemption/i){
     quest::say("Then so be it. Ro commands you to aid the saved one. Ortallius of the hot sands. He is in need of two gems: the gem of stamina, also known as the gem of passion, and the gem of righteousness. I once owned these gems in my former life. They rest with my old friend, [Conium Darkblade]. Take this note to him and he shall give you the gems which you will then take to Ortallius.  Be off.");
-    quest::summonitem(18955);
+    quest::summonitem(18955); # Item: Sealed Note
   }
   if($text=~/conium darkblade/i){
     quest::say("When evil ruled my life, I hid in the shadows with a fellow thief. This dwarf's name was Conium Darkblade. He was a genius when it came to poisons. I believe he now taints this world with his evil toxins. No doubt he hides near his homeland.");

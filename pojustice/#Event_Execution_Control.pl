@@ -66,7 +66,7 @@ sub EVENT_SIGNAL {
       quest::settimer("execution_wave3", 365);   
       quest::settimer("execution_wave4", 525);                   
       #Spawn the prisoner
-      quest::spawn2(201424, 0, 0, 165, -1156, 80, 122);      
+      quest::spawn2(201424, 0, 0, 165, -1156, 80, 122); # NPC: a_sentenced_prisoner      
    }
    
    elsif ($signal == 2) {
@@ -79,18 +79,18 @@ sub EVENT_SIGNAL {
       quest::stoptimer("execution_wave3");
       quest::stoptimer("execution_wave4");
       #Despawn executioner
-      quest::signalwith(201439, 5, 5);
+      quest::signalwith(201439, 5, 5); # NPC: An_Executioner
       #Despawn prisoner
-      quest::signalwith(201424, 0, 5);
+      quest::signalwith(201424, 0, 5); # NPC: a_sentenced_prisoner
       #Depawn trial trash
-      quest::signalwith(201427, 0, 5);
-      quest::signalwith(201428, 0, 5);
-      quest::signalwith(201429, 0, 5);
-      quest::signalwith(201430, 0, 5);
-      quest::signalwith(201431, 0, 5);
-      quest::signalwith(201432, 0, 5);
+      quest::signalwith(201427, 0, 5); # NPC: a_dark_nemesis
+      quest::signalwith(201428, 0, 5); # NPC: a_dark_nemesis
+      quest::signalwith(201429, 0, 5); # NPC: a_fierce_nemesis
+      quest::signalwith(201430, 0, 5); # NPC: a_fierce_nemesis
+      quest::signalwith(201431, 0, 5); # NPC: priest_of_doom
+      quest::signalwith(201432, 0, 5); # NPC: Herald_of_Destruction
       #Despawn the boss if he's up
-      quest::signalwith(201433, 0, 5);
+      quest::signalwith(201433, 0, 5); # NPC: Prime_Executioner_Vathoch
    }
    elsif ($signal == 3) {
       #fail message
@@ -100,7 +100,7 @@ sub EVENT_SIGNAL {
       }
       quest::ze(15, "An unnatural silence falls around you. The justice of the Tribunal has been pronounced once again. The defendants have been found...lacking.");
       #Signal self that it's over
-      quest::signalwith(201425, 2, 5);
+      quest::signalwith(201425, 2, 5); # NPC: #Event_Execution_Control
    }
 }
 
@@ -133,14 +133,14 @@ sub EVENT_TIMER {
             $wave++;
             if ($wave < 5) {
                #Depop Executioner
-               quest::signalwith(201439, 5, 0);
+               quest::signalwith(201439, 5, 0); # NPC: An_Executioner
                $mob_check = undef;
             }
             else {
                #Depop Executioner
-               quest::signalwith(201439, 5, 0);
+               quest::signalwith(201439, 5, 0); # NPC: An_Executioner
                #Prime_Executioner_Vathoch (201433)
-               quest::spawn2(201433,0,0,196,-1156,80.1,0);
+               quest::spawn2(201433,0,0,196,-1156,80.1,0); # NPC: Prime_Executioner_Vathoch
                $mob_check = undef;
                $boss = 1;
             }
@@ -148,7 +148,7 @@ sub EVENT_TIMER {
          elsif ( $found < $mob_count ) {
             $mob_count = $found;
             #Reset the Executioner
-            quest::signalwith(201439, 0, 0);
+            quest::signalwith(201439, 0, 0); # NPC: An_Executioner
          }
       }
       elsif (defined $boss){
@@ -196,7 +196,7 @@ sub EVENT_TIMER {
                }
                else {
                   $ent->Message(15, 'You are not a part of this trial.');
-                  $ent->MovePC(201,456,825,9,2);
+                  $ent->MovePC(201,456,825,9,2); # Zone: lakerathe
                }
             }
             
@@ -244,12 +244,12 @@ sub EVENT_TIMER {
             }   
 
             #Tell self it's over
-            quest::signalwith(201425,2,5);
+            quest::signalwith(201425,2,5); # NPC: #Event_Execution_Control
             #Everyone exited - Tell the tribunal it's over
-            quest::signalwith(201078, 0, 5);
+            quest::signalwith(201078, 0, 5); # NPC: The_Tribunal Execution Trial
             quest::stoptimer("trial_eject");
             #Make sure agent doesn't think boss is up
-            quest::signalwith(201075,11,2);
+            quest::signalwith(201075,11,2); # NPC: Agent_of_The_Tribunal
             @allowed = ();
             quest::settimer("clear_corpses", 60);
             HandleCorpses();
@@ -304,7 +304,7 @@ sub EVENT_TIMER {
          $c = $entity_list->GetClientByName($player);
          
          if ($c) {
-            $c->MovePC(201,456,825,9, 2);
+            $c->MovePC(201,456,825,9, 2); # Zone: lakerathe
             $c->Message(15, "A mysterious force translocates you.");
          }
       }
@@ -313,7 +313,7 @@ sub EVENT_TIMER {
       @allowed = ();
       @trial_group = ();
       #Tell the tribunal it's over
-      quest::signalwith(201078, 0, 5);
+      quest::signalwith(201078, 0, 5); # NPC: The_Tribunal Execution Trial
       $proximity_check_delay = 30;
       quest::settimer("proximity_check", $proximity_check_delay);
    }
@@ -371,46 +371,46 @@ sub SpawnExecutionMobs {
       my $test = int(rand(99));
       
       if (($test >= 0) && ($test <=19)) {
-         quest::spawn2(201427, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+         quest::spawn2(201427, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: a_dark_nemesis
       }
       
       elsif (($test >= 20) && ($test <=39)) {
-         quest::spawn2(201429, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+         quest::spawn2(201429, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: a_fierce_nemesis
       }
       
       elsif (($test >= 40) && ($test <=64)) {
-         quest::spawn2(201430, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+         quest::spawn2(201430, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: a_fierce_nemesis
       }
       
       elsif (($test >= 65) && ($test <=91)) {
-         quest::spawn2(201428, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+         quest::spawn2(201428, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: a_dark_nemesis
       }
       
       elsif (($test >= 92) && ($test <=95)) {
          if (!$priest) {
-            quest::spawn2(201431, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+            quest::spawn2(201431, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: priest_of_doom
             $priest = 1;
          }
          else {
-            quest::spawn2(201428, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+            quest::spawn2(201428, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: a_dark_nemesis
          }
       }
       
       else {
          if (!$herald) {
-            quest::spawn2(201432, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+            quest::spawn2(201432, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: Herald_of_Destruction
             $herald = 1;
          }
          else {
-            quest::spawn2(201428, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+            quest::spawn2(201428, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: a_dark_nemesis
          }
       }
       
       if ($spawn_ex == 1) {
          #Spawn An_Executioner (201439)
-         quest::spawn2(201439,0,0,232,-1048,74,360);
+         quest::spawn2(201439,0,0,232,-1048,74,360); # NPC: An_Executioner
          #Signal Exe to set wave/speed
-         quest::signalwith(201439, $wave, 100);
+         quest::signalwith(201439, $wave, 100); # NPC: An_Executioner
          $spawn_ex = 0;
       }
    }

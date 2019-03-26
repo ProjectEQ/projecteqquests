@@ -47,25 +47,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25837 => 3, 24982 => 1)) { #cap
-      quest::summonitem(31161);
+      quest::summonitem(31161); # Item: Rotting Crown
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24977 => 1)) { #bp
-      quest::summonitem(31162);
+      quest::summonitem(31162); # Item: Rotting Robe
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24979 => 1)) { #arm
-      quest::summonitem(31163);
+      quest::summonitem(31163); # Item: Rotting Sleeves
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24981 => 1)) { #bracer
-      quest::summonitem(31164);
+      quest::summonitem(31164); # Item: Rotting Wristguard
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24983 => 1)) { #glove
-      quest::summonitem(31165);
+      quest::summonitem(31165); # Item: Rotting Gloves
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24978 => 1)) { #leg
-      quest::summonitem(31166);
+      quest::summonitem(31166); # Item: Rotting Trousers
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24980 => 1)) { #boots
-      quest::summonitem(31167);
+      quest::summonitem(31167); # Item: Rotting Boots
     }
     quest::emote("smiles warmly as he hands you your reward.");
     quest::say("Well done, $name.");

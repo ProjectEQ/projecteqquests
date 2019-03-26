@@ -20,28 +20,28 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction <= 3) { # Require warmly and greater faction
     if (plugin::check_handin(\%itemcount, 31084 => 1)) { # Custom Champions Crown
-      quest::summonitem(31519);
+      quest::summonitem(31519); # Item: Custom Champion's Crown
     }
     elsif (plugin::check_handin(\%itemcount, 26025 => 1)) { # Custom Cowl of Mortalityqu
-      quest::summonitem(2612);
+      quest::summonitem(2612); # Item: Custom Cowl of Mortality
     }
     elsif (plugin::check_handin(\%itemcount, 31042 => 1)) { # Custom Crown of Forbidden Rites
-      quest::summonitem(31518);
+      quest::summonitem(31518); # Item: Custom Crown of Forbidden Rites
     }
     elsif (plugin::check_handin(\%itemcount, 25194 => 1)) { # Custom Crown of the Kromzek Kings
-      quest::summonitem(2611);
+      quest::summonitem(2611); # Item: Custom Crown of the Kromzek Kings
     }
     elsif (plugin::check_handin(\%itemcount, 31000 => 1)) { # Custom Dark Runed Crown
-      quest::summonitem(31515);
+      quest::summonitem(31515); # Item: Custom Dark Runed Crown
     }
     elsif (plugin::check_handin(\%itemcount, 30507 => 1)) { # Custom Frostreavers Velium Crown
-      quest::summonitem(2610);
+      quest::summonitem(2610); # Item: Custom Frostreaver's Velium Crown
     }
     elsif (plugin::check_handin(\%itemcount, 31035 => 1)) { # Custom Resonant Helm
-      quest::summonitem(31517);
+      quest::summonitem(31517); # Item: Custom Resonant Helm
     }
     elsif (plugin::check_handin(\%itemcount, 31021 => 1)) { # Custom Runed Protectors Helm
-      quest::summonitem(31516);
+      quest::summonitem(31516); # Item: Custom Runed Protector's Helm
     }
     else {
       plugin::return_items(\%itemcount);

@@ -29,10 +29,10 @@ function event_say(e)
 		e.self:Say("Excellent! You are indeed worthy to bear the title of Holy Knight! Now, about the coffin. I have spoken with Ping Fuzzlecutter, outside the western gates. Ask him about the coffin and once it is made, bring it to Simon Aldicott of Marr. I shall have Simon meet you by the lake in the Commonlands after Ping gives you the coffin.");
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 
@@ -51,7 +51,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 6701})) then --a dusty old leg bone
 		e.self:Say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
-		e.other:SummonItem(6701);
+		e.other:SummonItem(6701); -- Item: Dusty Old Leg Bone
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18827})) then --a testimony of truth
 		e.self:Say("Praise be to Marr!! You have done the impossible!! Sir Lucan is finally sent to the higher courts of the Tribunal. The city now has a chance to prosper. The Hall of Truth has been redeemed and gives you thanks. Take this, it is the Sword of Faith. May you wield it with righteousness. Beware of the remainder of the militia. They will be hunting for your head.");

@@ -63,15 +63,15 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 30516 => 1) && $faction == 1) {
     quest::say("You have done what no Coldain could do, $name! This is indeed a glorious say in our people's history. In return for your invaluable service I present you with the Tri-plated Golden Hackle Hammer. Its magic is powerful and I am sure it will serve you well.");
     quest::ze(2, "Let it be know from this day forth that $name and their companions are Heros of the Coldain Kingdom. King Tormax has been slain, it is a time for celebration. Let no tankard go unfilled!");
-    quest::summonitem(30502);
-    quest::faction(406,100);
-    quest::faction(405,100);
-    quest::faction(429,-100);
+    quest::summonitem(30502); # Item: Tri-Plated Golden Hackle Hammer
+    quest::faction(406,100); # Faction: Coldain
+    quest::faction(405,100); # Faction: Dain Frostreaver IV
+    quest::faction(429,-100); # Faction: King Tormax
   }
 #Dirk handin for the 10th ring
   elsif(plugin::check_handin(\%itemcount, 1465 => 1) && $faction == 1) {
     quest::say("My good $name, you have served me well. You have flushed out all who sought to oppose me and my people. I am afraid I need to call upon you and your friends one final time. The dissention and treason ran deeper than I had anticipated. Our population has been cleansed, but we lost a full third of our army to the poisonous words of those rebels. In retaliation for your deeds, the Kromrif have made plans to attack us in this, our weakest hour. Can I count on your help outlander?");
-    quest::summonitem(1465);
+    quest::summonitem(1465); # Item: Dirk of the Dain
   }
   # Runed Coldain Prayer Shawl (7th shawl)
   elsif(plugin::check_handin(\%itemcount, 1199 => 1) || plugin::check_handin(\%itemcount, 8895 => 1)) {

@@ -17,13 +17,13 @@ function event_say(e)
 		e.self:Say("What? How do you know fo my brother? Ahh I assume Breya told you. He's been gone for quite some time with no word sent on his progress or his wellbeing. I need to find someone to [check on him].");
 	elseif(e.message:findi("check on him")) then
 		e.self:Say("Thank you, " .. e.other:GetName() .. ". He's one of our people's most knowledgeable geologists and has left to survey an island out in Erud's Crossing. He was sending monthly reports until two weeks ago when his report never showed up. I'm worried something may have happened to him. Take this note to Yelesom and bring back something to assure me of his safety. A reward fitting a Deepwater Knight shall be yours upon your success.");
-		e.other:SummonItem(18173);
+		e.other:SummonItem(18173); -- Item: Gans's note to Yelesom
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 
@@ -40,7 +40,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1771})) then
 		e.self:Say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way.");
-		e.other:SummonItem(1763);
+		e.other:SummonItem(1763); -- Item: Midnight Sea Mail Sleeves
 		e.other:Ding();
 		e.other:AddEXP(300);
 	end

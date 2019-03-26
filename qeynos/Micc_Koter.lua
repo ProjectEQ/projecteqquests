@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("Beats me. Try going to the north near Surefall Glade. That is where those goodie goodies tend to hang out.");
 	elseif(e.message:findi("gnoll")) then
 		e.self:Say("A gnoll is a stupid dog that walks upright. They are dirty and stinky and hate humans. Just like my pal Klieb here. Heh!");
-		eq.signal(1071,1);
+		eq.signal(1071,1); -- NPC: Klieb_Torne
 	end
 end
 

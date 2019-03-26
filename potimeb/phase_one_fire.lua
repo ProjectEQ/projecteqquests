@@ -10,7 +10,7 @@ end
 
 function event_enter(e)
 	-- tell zone_status phase 1 was started
-	eq.signal(223097,1);
+	eq.signal(223097,1); -- NPC: zone_status
 	-- wait 45 seconds before spawning the mobs.
 	eq.clear_proximity();
 	eq.set_timer("Phase1Fire",45000);
@@ -19,9 +19,9 @@ end
 function event_timer(e)
 	if(e.timer == "Phase1Fire") then
 		-- spawn first wave of 3 #a_flame_mephit
-	    eq.spawn2(223088,0,0,68,573,504,371);
-		eq.spawn2(223088,0,0,68,563,504,371);
-		eq.spawn2(223088,0,0,68,583,504,371);
+	    eq.spawn2(223088,0,0,68,573,504,371); -- NPC: #a_flame_mephit
+		eq.spawn2(223088,0,0,68,563,504,371); -- NPC: #a_flame_mephit
+		eq.spawn2(223088,0,0,68,583,504,371); -- NPC: #a_flame_mephit
 		eq.stop_timer("Phase1Fire");
 	end
 end
@@ -34,7 +34,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn Kazrok_of_Fire
 		if (event_counter == 9) then
-			eq.spawn2(223090,0,0,68,573,504,371); 
+			eq.spawn2(223090,0,0,68,573,504,371); -- NPC: Kazrok_of_Fire 
 			event_counter = 0;
 		end
 	-- signal 2 comes from Kazrok_of_Fire,an_inferno_mephit_, and a_flame_mephit_
@@ -42,7 +42,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		if (event_counter == 7) then
 			-- tell zone_status
-			eq.signal(223097,2);
+			eq.signal(223097,2); -- NPC: zone_status
 			-- depop as my job is done.
 			eq.depop();
 		end

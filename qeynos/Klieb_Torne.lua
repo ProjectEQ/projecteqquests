@@ -4,7 +4,7 @@ end
 
 function event_timer(e)
 	e.self:Say("Can you believe that? That guy actually thinks he is going to find the [Paw of Opolla!]! Bwah ha ha ha!");
-	eq.signal(1072,1);
+	eq.signal(1072,1); -- NPC: Micc_Koter
 end
 
 function event_say(e)
@@ -12,7 +12,7 @@ function event_say(e)
 		e.self:Say(string.format("Hey, %s!  Do I know you from somewhere?  Highpass?  Nah, you ain't who I thought you were.  If I were you I would just keep my trap shut and buy some drinks.",e.other:GetName()));
 	elseif(e.message:findi("paw of opolla")) then
 		e.self:Say("Heh? Why don't you mind your own business bub?! Buzz off!");
-		eq.signal(1072,2);
+		eq.signal(1072,2); -- NPC: Micc_Koter
 	end
 end
 

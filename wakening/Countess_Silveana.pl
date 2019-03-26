@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 30221 => 1)) {
       quest::emote("claps boisterously.");
       quest::say("My people are in your debt for putting an end to that monster's murderous squashings! Here is the crest of the Sifaye.");
-      quest::summonitem(24866);
+      quest::summonitem(24866); # Item: Crest of the Sifaye
       quest::faction(449, 30); # +Tunarean Court
       quest::exp(100);
     }

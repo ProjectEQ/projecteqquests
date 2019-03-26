@@ -9,7 +9,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 1) then
 		e.self:Say("Belious, I'm working on this new tune I learned on my last trip to Kelethin. It's about Tunare. If you have a free ear, would you care to take a listen?");
-		eq.signal(1125,1);
+		eq.signal(1125,1); -- NPC: Belious_Naliedin Bard Guildmaster
 	elseif(e.wp == 2) then
 		e.self:Say("Ahem. Tunare and the Pact, sung by Joffrey Clay.");
 		e.self:DoAnim(58);

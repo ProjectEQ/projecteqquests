@@ -64,7 +64,7 @@ end
 function Start_Event(e)
   last_emote = '';
   event_started = true;
-  eq.spawn2(306020, 0, 0, 0, 0, 0, 0);
+  eq.spawn2(306020, 0, 0, 0, 0, 0, 0); -- NPC: #death_touch
   
   eq.spawn2(306013, 0, 0, -161, 385, 60, 284); -- Dragorn Acolyte
   eq.spawn2(306014, 0, 0, -256, 384, 60, 220); -- Dragorn Adept
@@ -289,13 +289,13 @@ function check_rings(mob, client)
   if (client.valid) then 
     if ( client:GetItemIDAt(Slot.Finger1) ~= -1 ) then
       client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
-      mob:CastSpell(5695, client:GetID());
+      mob:CastSpell(5695, client:GetID()); -- Spell: Crippling Clamp
     else
       client:Message(14, "Your regain the use of your fingers.");
     end
     if ( client:GetItemIDAt(Slot.Finger2) ~= -1 ) then
       client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
-      mob:CastSpell(5695, client:GetID());
+      mob:CastSpell(5695, client:GetID()); -- Spell: Crippling Clamp
     else
       client:Message(14, "Your regain the use of your fingers.");
     end
@@ -306,7 +306,7 @@ function check_weapon(mob, client)
   if (client.valid) then 
     if ( client:GetItemIDAt(Slot.Secondary) ~= -1 ) then
       client:Message(14, "Your weaponry becomes incredibly hot, searing your hands!");
-      mob:CastSpell(2315, client:GetID());
+      mob:CastSpell(2315, client:GetID()); -- Spell: Searing Heat
     else
       client:Message(14, "Your weaponry cools down.");
     end
@@ -360,7 +360,7 @@ function Dragorn_Spawn(e)
 end
 
 function Dragorn_Death(e)
-  eq.signal(306019, 1);
+  eq.signal(306019, 1); -- NPC: Master_of_Foresight
 end
 
 function Dragorn_Timer(e)
@@ -430,7 +430,7 @@ function Event_Win(e)
   eq.depop_all(306020);
 
   -- Spawn Shell of the Master
-  eq.spawn2(306024, 0, 0, -204, 274, 66, 144);
+  eq.spawn2(306024, 0, 0, -204, 274, 66, 144); -- NPC: Shell_of_the_Master_
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

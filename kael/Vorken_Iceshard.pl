@@ -44,12 +44,12 @@ sub EVENT_ITEM {
 
     if (plugin::check_handin(\%itemcount, 25117 => 1)) {
       quest::say("So, the beast was still alive! Now I may rest easier knowing my dreams are only dreams and not a prophecy of his return to finish me off. The king will surely hear of your deeds, $name. Take this belt as a token of my gratitude.");
-      quest::summonitem(25049);
+      quest::summonitem(25049); # Item: Dragonhide Belt
     }
     
     elsif (plugin::check_handin(\%itemcount, 25116 => 1)) {
       quest::say("Congratulations, mercenary. You have earned your precious reward. Tell me, did Ekelng whine like his father for forgiveness, or did he die like a true Kromrif warrior?");
-      quest::summonitem(25048);
+      quest::summonitem(25048); # Item: Vambraces of Avoidance
     }
 
     else {
@@ -57,10 +57,10 @@ sub EVENT_ITEM {
       return 1;
     }
     
-    quest::faction(419,30);
-    quest::faction(448,30);
-    quest::faction(406,-30);
-    quest::faction(430,-30);
+    quest::faction(419,30); # Faction: Kromrif
+    quest::faction(448,30); # Faction: Kromzek
+    quest::faction(406,-30); # Faction: Coldain
+    quest::faction(430,-30); # Faction: Claws of Veeshan
     quest::exp(1000);
 
   }

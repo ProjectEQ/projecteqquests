@@ -50,7 +50,7 @@ sub EVENT_DEATH_COMPLETE {
 sub EVENT_TIMER {
   if(($x <= -2065) || ($y >= 230) || ($y <= -245) || ($x >= -1647)) {
     quest::emote("disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
-    $npc->CastSpell(3791, $npc->GetID());
+    $npc->CastSpell(3791, $npc->GetID()); # Spell: Ocean's Cleansing
     $npc->GMMove(-1883,-13,133.30,384);
   }
 }

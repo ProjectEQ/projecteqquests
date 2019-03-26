@@ -2,7 +2,7 @@ sub EVENT_ITEM
 {
   if (plugin::check_handin(\%itemcount, 3880 => 1)) {
     quest::emote("gasps suddenly then falls still.");
-    quest::summonitem(3882);
+    quest::summonitem(3882); # Item: Empty Poison Vial
     quest::faction(1485,-2); #Eye of Seru
     quest::faction(1487,2); #Shoulders of Seru
     quest::faction(1486,-2); #Heart of Seru

@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::exp(25);
     quest::ding();
     # Summon: Neriak Nectar 
-    quest::summonitem(13021, 2);
+    quest::summonitem(13021, 2); # Item: Neriak Nectar
   }
    #do all other handins first with plugin, then let it do disciplines
    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

@@ -12,7 +12,7 @@ sub EVENT_TIMER {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5994 =>1 )) {
     quest::say("$name, you have bested me, here is a locket.  My potion!");
-    quest::summonitem(5996);
+    quest::summonitem(5996); # Item: Aisha'a Locket
     quest::depop();
   }
   plugin::return_items(\%itemcount);

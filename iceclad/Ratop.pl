@@ -8,7 +8,7 @@ sub EVENT_SIGNAL {
       $mobnpc->SignalNPC(1);
     }
     else {
-      my $mobid = quest::spawn2(110053, 0, 0, $x+9, $y+1, $z, $h);
+      my $mobid = quest::spawn2(110053, 0, 0, $x+9, $y+1, $z, $h); # NPC: Ritap
       my $mob = $entity_list->GetMobID($mobid);
       my $mobnpc = $mob->CastToNPC();
       $mobnpc->SignalNPC(1);

@@ -8,7 +8,7 @@ sub EVENT_SAY {
   sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 55004 => 1)) {
     quest::say("I cannot believe you did it. My father and I thank you for helping to find our missing goods. They are a bit wet but I think they are mostly salvageable. My father gave this to me long ago, but I want you to have it for your bravery. Stop by anytime and say hi!");
-    quest::summonitem(55028);
+    quest::summonitem(55028); # Item: Fluorite Stone Earring
     }  
    }
 }

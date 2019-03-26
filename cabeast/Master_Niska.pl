@@ -7,7 +7,7 @@ sub EVENT_SAY {
    quest::say("You dare disgrace us?");
    quest::emote("hisses at you.");
    quest::say("If you have truely lost the marking of our caste, you will need to take this note and speak to the Toilmaster immediately. Read it on the way and praise the will of Cazic Thule.");
-   quest::summonitem(18271);
+   quest::summonitem(18271); # Item: Ragged Book
   }
   elsif($text=~/yes/i){
    quest::say("Very good Broodling. Display your adornment with pride so that the enemies of the Brood may see our might as you rip through the weak will of their ranks. Now be gone from my sight.");
@@ -25,47 +25,47 @@ sub EVENT_SAY {
   }
   elsif($text=~/personal courier/i){
    quest::emote("grabs a tin box resting by her feet. 'Take this to Master Rinmark and be quick about it!!'");
-   quest::summonitem(12829);
+   quest::summonitem(12829); # Item: Tin Box
   }
 }
 
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 12797 => 1, 12798 => 1, 12799 => 1)){
   quest::emote("removes a crudley hewn shackle. 'This is yours. It is one of the keys to the third rung. I see that you are truely a great monk and have studied your disciplines well. I have need of one as you. I have heard of [troubles with an outlander].'");
-  quest::summonitem(4193);
+  quest::summonitem(4193); # Item: Shackle of Rock
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
   }
  elsif(plugin::check_handin(\%itemcount, 12821 => 1, 4192 => 1, 4193 => 1)){
   quest::say("Very good!! Here is your Shackle of Copper. The Emperor shall be pleased that I, Mistress Niska, have slain the outlander. Do you have some time? I need someone to be my [personal courier]. Will you?");
-  quest::summonitem(4194);
+  quest::summonitem(4194); # Item: Shackle of Copper
   quest::exp(40000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
   }
  elsif(plugin::check_handin(\%itemcount, 18466 => 1, 22921 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  elsif(plugin::check_handin(\%itemcount, 18465 => 1, 22920 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
   elsif(plugin::check_handin(\%itemcount, 18272 => 1, 24770 => 1)){
     quest::emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all this time");
     quest::say("Lucky you. You have earned a second chance. Praise Cazic-Thule!");
-    quest::summonitem(4190);
+    quest::summonitem(4190); # Item: Shackle of Dust
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Monk');

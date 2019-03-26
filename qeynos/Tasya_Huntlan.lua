@@ -6,8 +6,8 @@ function event_say(e)
 		e.self:Say(string.format("Hail, %s!  Are you just visiting Qeynos?  We have plenty of rooms available or, if your throat is parched, you can always visit Earron in our pub.",e.other:GetName()));
 	elseif(e.message:findi("tax collection") and tax.tax_collection ~= nil) then
 		e.self:Say("Taxes? Oh, that time again huh? Here you are. Give Vicus our best. I hear he is under the weather.");
-		e.other:SummonItem(13176);
-		e.other:Faction(291,-10,0);
+		e.other:SummonItem(13176); -- Item: Huntlan's Tax Payment
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos
 	end
 	
 end

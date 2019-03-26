@@ -2,7 +2,7 @@ sub EVENT_SAY {
   if ($client->GetGlobal("beast_epic") ==6) {
     if ($text=~/mastodon/i) {
       quest::say("Geez. No rest for me. He he. Must go. You go to. Dangerous for you here. You not so tough!");
-      quest::summonitem(57008);
+      quest::summonitem(57008); # Item: Letter from Muada
     }
   }
 }

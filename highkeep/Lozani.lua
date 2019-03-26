@@ -22,7 +22,7 @@ function event_trade(e)
 		scroll = 1;
 	end
 	if(scroll == 1) then
-		e.other:SummonItem(eq.ChooseRandom(15200, 15042, 15226, 13360, 15246, 15276));
+		e.other:SummonItem(eq.ChooseRandom(15200, 15042, 15226, 13360, 15246, 15276)); -- Item(s): Spell: Minor Healing (15200)
 		e.other:Ding();
 		e.other:Faction(255,5,0); -- Gem Choppers
 		e.other:Faction(333,5,0); -- King AkAnon

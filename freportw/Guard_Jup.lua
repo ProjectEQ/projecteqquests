@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("Go to Broken Skull Rock! Slay these impudent pirates and wreak havoc on their plans. Some of them carry a seal that grants passage about their society, bring me ten of these such seals and your duty to your city shall be fulfilled. We might even have some form of [reward] for you.");
 	elseif(e.message:findi("reward")) then
 		e.self:Say("First the seals, then the reward! Take this to transport them in.");
-		e.other:SummonItem(17174);
+		e.other:SummonItem(17174); -- Item: Militia Crate
 	end
 end
 
@@ -18,7 +18,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 54010})) then
 		e.self:Say(string.format("Excellent work, %s!  This will teach the pirates of Broken Skull a lesson and help our cause in repelling them.  Here is your reward.",e.other:GetName()));
-		e.other:SummonItem(54024);
+		e.other:SummonItem(54024); -- Item: Twisted Silver Torque
 		e.other:Ding();
 		e.other:AddEXP(10000);
 	end

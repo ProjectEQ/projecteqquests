@@ -7,35 +7,35 @@ sub EVENT_SAY {
   }
   if ($text=~/outfit and robe/i) {
     quest::say("I have prepared this special curing kit for the crafting of an outfit and robe. The materials required for each article of clothing vary. Do you desire to craft a [scourge sorcerer cap], [scourge sorcerer wristband], [scourge sorcerer gloves], [scourge sorcerer boots], [scourge sorcerer sleeves], [scourge sorcerer pantaloons], or [scourge sorcerer robe]?");
-    quest::summonitem(17125);
+    quest::summonitem(17125); # Item: Curing Kit
   }
   if ($text=~/cap/i) {
     quest::say("To craft a Scourge Sorcerer Cap you will require two [silk thread], klicnik drone bile, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Cap Pattern.");
-    quest::summonitem(19555);
+    quest::summonitem(19555); # Item: Tattered Cap Pattern
   }
   if ($text=~/wristband/i) {
     quest::say("To craft a Scourge Sorcerer Wristband you require a [silk thread], klicnik drone bile, and a king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
-    quest::summonitem(19558);
+    quest::summonitem(19558); # Item: Tattered Wristband Pattern
   }
   if ($text=~/gloves/i) {
     quest::say("To craft Scourge Sorcerer Gloves you require two [silk thread], klicnik drone bile, two giant field rat whiskers, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
-    quest::summonitem(19559);
+    quest::summonitem(19559); # Item: Tattered Glove Pattern
   }
   if ($text=~/boots/i) {
     quest::say("To craft Scourge Sorcerer Boots you require two [silk thread], klicnik drone bile, and two large king snake skins. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
-    quest::summonitem(19561);
+    quest::summonitem(19561); # Item: Tattered Boot Pattern
   }
   if ($text=~/sleeves/i) {
     quest::say("To craft Scourge Sorcerer Sleeves you require two [silk thread], klicnik warrior bile, and two large king snake skins. Once you have the necessary components combine them in your Curing Kit with this Tattered Sleeves Pattern.");
-    quest::summonitem(19557);
+    quest::summonitem(19557); # Item: Tattered Sleeve Pattern
   }
   if ($text=~/pantaloons/i) {
     quest::say("To craft Scourge Sorcerer Pantaloons you require two [silk thread], klicnik warrior bile, and four large king snake skins. Once you have the necessary components combine them in your Curing Kit with this Tattered Leggings Pattern.");
-    quest::summonitem(19560);
+    quest::summonitem(19560); # Item: Tattered Pant Pattern
   }
   if ($text=~/robe/i) {
     quest::say("To craft a Scourge Sorcerer Robe you will require three [silk thread], klicnik noble bile, two giant king snake skins, and a giant whiskered bat fur. Once you have the necessary components combine them in your Curing Kit with this Tattered Robe Pattern.");
-    quest::summonitem(11395);
+    quest::summonitem(11395); # Item: Tattered Robe Pattern
   }
   if($text=~/staff of the bloodsabers/i) {
     quest::say("A Staff of the Bloodsabers is a useful implement for young sorcerers dedicated to Bertoxxulous the Plague Lord. I will assist you in the creation of a staff but first you must complete a task for me. The sorcerers of The Order of Three are supporters of Antonius Bayle IV. the haughty ruler of Qeynos. They lend magical aid to the Knights of Thunder and Priests of Life to identify and capture members of the Bloodsabers. A rather troublesome member of The Order of Three, Larkin Tolman, has recently been spotted at a settlement in the Western Plains of Karana. Find this Larkin Tolman and bring me his head.");
@@ -45,17 +45,17 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20204 => 1)) {
     quest::say("Well done. The Bloodsabers have many enemies within the city of Qeynos and its surrounding regions. You must exercise much caution when not within the safety of our temple here in the Qeynos Catacombs. Take this Rough Bloodsaber Staff and when you have gathered a Giant King Snake Skin, two Gnoll Fangs, and a Giant Fire Beetle Eye, return them to me with this staff and I will complete its construction.");
-    quest::summonitem(20203);
+    quest::summonitem(20203); # Item: Rough Bloodsaber Staff
   }
   elsif (plugin::check_handin(\%itemcount, 13915 => 2, 19946 => 1, 13251 => 1, 20203 => 1)) {
     quest::say("Excellent work! Here is your reward.");
-    quest::summonitem(20264);
+    quest::summonitem(20264); # Item: Staff of the Bloodsabers
     quest::exp(100);
     quest::ding();
-    quest::faction(221,1);
-    quest::faction(262,-1);
-    quest::faction(296,1);
-    quest::faction(341,-1);
+    quest::faction(221,1); # Faction: Bloodsabers
+    quest::faction(262,-1); # Faction: Guards of Qeynos
+    quest::faction(296,1); # Faction: Opal Darkbriar
+    quest::faction(341,-1); # Faction: Priests of Life
   }
   plugin::return_items(\%itemcount);
 }

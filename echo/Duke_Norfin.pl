@@ -14,7 +14,7 @@ sub EVENT_SAY {
     }
     elsif ($text=~/destination/i) {
       quest::say("I have an important shipment coming from Katta Castellum that's late. The courier who was picking up the shipment should still be there. I'd like for you to go over there and see what the hold up is. Take this note and show it to Jarin Lorean so he knows you're on official business. Report back to me with news. Better yet, return with the shipment if you can.");
-      quest::summonitem(19841);
+      quest::summonitem(19841); # Item: Note to Jarin
     }
   }
   else {

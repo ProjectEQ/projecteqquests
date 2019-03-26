@@ -10,7 +10,7 @@ end
 
 function event_signal(e)
 	e.self:Say("I am f.. fff.. fff.. fine, brother. You um.. don't need to worry about me so much. I am a big girl now.");
-	eq.signal(4055,5);
+	eq.signal(4055,5); -- NPC: Baobob_Miller
 end
 
 function event_say(e)
@@ -43,7 +43,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13752, gold == 21})) then
 		e.self:Say("Oh.. I see.. But um.. I still need the other thing before I can make anything for you.. sorry.");
 		e.self:Say("Oh, good! I can make you a nice new cloak now. Here. Here. Oh, this.. it is a good one. Nice bear fur. Here you go!");
-		e.other:SummonItem(2902);
+		e.other:SummonItem(2902); -- Item: Bear-hide Cape
 		e.other:Ding();
 		e.other:Faction(345,1,0); -- Karana Residents
 		e.other:Faction(262,1,0); -- Guards of Qeynos
@@ -53,7 +53,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13751, gold == 15})) then
 		e.self:Say("Oh.. I see.. But um.. I still need the other thing before I can make anything for you.. sorry.");
 		e.self:Say("Ohh good.. good! I.. um.. can make.. Oh great. Here you go. I hope you like it. I always um.. try my best. Tell your um.. friends where you got your bear things!");
-		e.other:SummonItem(2903);
+		e.other:SummonItem(2903); -- Item: Bear-hide Boots
 		e.other:Ding();
 		e.other:Faction(345,1,0); -- Karana Residents
 		e.other:Faction(262,1,0); -- Guards of Qeynos
@@ -63,7 +63,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13750, gold == 5})) then
 		e.self:Say("Oh.. I see.. But um.. I still need the other thing before I can make anything for you.. sorry.");
 		e.self:Say("Great. Oh, here, now I can make the.. um.. ok.. here. Yes.. good. I love making bear skin belts. Here you go. I hope you like it.");
-		e.other:SummonItem(2904);
+		e.other:SummonItem(2904); -- Item: Bear-hide Belt
 		e.other:Ding();
 		e.other:Faction(345,1,0); -- Karana Residents
 		e.other:Faction(262,1,0); -- Guards of Qeynos

@@ -10,7 +10,7 @@ quest::say("I actually have a few items I am presently low on.  I would apprecia
 }
 if($text=~/fern flowers/i){
 quest::say("I have run low on fern flowers and must have more of them.  Take this [flower pouch].  Outside the city can be found carnivorous plants and a strain of them buds the flower in question.  Collect enough of these flowers to fill and combine the pouch and I shall reward you.");
-quest::summonitem(17025);
+quest::summonitem(17025); # Item: Fern Flower Pouch
 }
 if($text=~/bone chips/i){
 quest::say("I should tell you. I do not need the bone chips.  I need bone granite powder.  In order to get it. you must find some granite pebbles and then three piles of bone chips from decaying skeletons.  After you gather the items you will have to use your skill in alchemy to combine the items and create bone granite powder.  The powder is what I need."); 
@@ -19,7 +19,7 @@ quest::say("I should tell you. I do not need the bone chips.  I need bone granit
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12442 => 1)){
     quest::say("You have done well. Here is your reward."); #Text made up
-    quest::summonitem(12443);
+    quest::summonitem(12443); # Item: Kromdul Toothpick
   }
 }
 #END of FILE Zone:cabwest  ID:2846 -- Jondin 

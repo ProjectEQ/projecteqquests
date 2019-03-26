@@ -19,7 +19,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29865 => 1)) {
     quest::emote("delicately removes one of the embroidered symbols from the fading robe. Jylian then begins to weave spells to the robe until it becomes fully materialized. 'These robes have unusual symbols all about them. I must study this symbol in greater deatail. Here you can have this robe, I have placed an enchantment on it to keep it from fading from this plane of existence any further. Your service to Seru is appreciated. Now go, I need silence to concentrate.'");
-    quest::summonitem(29890);
+    quest::summonitem(29890); # Item: Frayed Ethereal Drape
   }
   plugin::return_items(\%itemcount);
 }

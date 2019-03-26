@@ -24,12 +24,12 @@ sub EVENT_ITEM {
   
   if (plugin::check_handin(\%itemcount, 18213 =>1 )) {
     quest::say("Ah!! Good to have you on board. We lack strong young recruits such as yourself. Take this box. Your task is to seek milita skeletons near this gate. Apparently, someone or something has been raising militia corpses and they now walk the land not knowing the difference between friend or foe. They even continue using their old call, 'Halt Who goes there?'. Fill and combine within the box their charred bone shards and return the filled box to me for your geozite tool.");
-    quest::summonitem(17996);
+    quest::summonitem(17996); # Item: Charred Bone Box
   }
   
   if (plugin::check_handin(\%itemcount, 12668 =>1 )) {
     quest::say("Great work!! You have helped keep the gate safe. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");  #text not from live
-    quest::summonitem(12657);
+    quest::summonitem(12657); # Item: Geozite Tool
   }
   plugin::return_items(\%itemcount);
 }

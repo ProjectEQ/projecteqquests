@@ -27,7 +27,7 @@ sub EVENT_SAY {
 sub EVENT_SIGNAL {
  if($signal == 0) {
   quest::say("Prismatic, you goof.");
-  quest::signalwith(128036,0,0);
+  quest::signalwith(128036,0,0); # NPC: #Bittles_the_Lost
  }
 }
 

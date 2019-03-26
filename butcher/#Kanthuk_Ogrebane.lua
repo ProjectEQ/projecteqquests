@@ -27,7 +27,7 @@ function event_say(e)
 			e.self:Say("That night I dreamt of many things. Random thoughts kept swirling around my mind. I kept seeing the image of a cloaked being and of Amstaf circled around a fire. I saw Ambreen's body convulsing above the fire as if life was being brought back to it. I don't know what happened that night. I don't even know if what i dreamt was real, but before I awoke I saw a [strange image].");
 		elseif(e.message:findi("strange image")) then
 			e.self:Say("I saw Amstaf lower his head and walked away in silence. He was surronded by two beings carrying a torch. I don't know what it meant, but I swear it was so real. When I awoke both Amstaf and Ambreen were gone. Please find Llara and give this pendant to her. This pendant belonged to Amstaf. She too had a vision that night that may clear things up. If she asks where you got it from, mention my name.");
-			e.other:SummonItem(2414);
+			e.other:SummonItem(2414); -- Item: Pendant
 			eq.delete_global("Kanthuk");
 		end
 	end

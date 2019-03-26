@@ -45,25 +45,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if ($faction == 1) { #req ally CoV
          if (plugin::check_handin(\%itemcount, 25831 => 3, 24968 => 1)) { #helm
-         quest::summonitem(55324);
+         quest::summonitem(55324); # Item: Coif of Fire's Fury
       }
       elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24963 => 1)) { #tunic
-         quest::summonitem(55325);
+         quest::summonitem(55325); # Item: Tunic of Fire's Fury
       }
       elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24965 => 1)) { #sleeves
-         quest::summonitem(55326);
+         quest::summonitem(55326); # Item: Sleeves of Fire's Fury
       }
       elsif (plugin::check_handin(\%itemcount, 25838 => 3,24967  => 1)) { #bracer
-         quest::summonitem(55327);
+         quest::summonitem(55327); # Item: Bracer of Fire's Fury
       }
       elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24969 => 1)) { #guantlet
-         quest::summonitem(55328);
+         quest::summonitem(55328); # Item: Gauntlets of Fire's Fury
       }
       elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24964 => 1)) { #leggings
-         quest::summonitem(55329);
+         quest::summonitem(55329); # Item: Leggings of Fire's Fury
       }
       elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24966 => 1)) { #boots
-         quest::summonitem(55330);
+         quest::summonitem(55330); # Item: Boots of Fire's Fury
       }
       else {
          plugin::return_items(\%itemcount);

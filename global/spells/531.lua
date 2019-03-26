@@ -5,7 +5,7 @@ function event_spell_effect(e)
  -- if (bit.band(client:GetClientVersionBit(), 4294967264) ~= 0) then
  --   client:MovePC(22, -144, -1543, 2, 244);
  -- else
-    client:MovePC(21, 1396, 345, -50, 490);
+    client:MovePC(21, 1396, 345, -50, 490); -- Zone: beholder
  -- end
 
   return 1;

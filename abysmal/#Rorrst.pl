@@ -12,7 +12,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if($gold >= 25000) {
-    quest::summonitem(52181);
+    quest::summonitem(52181); # Item: Impression of a Key
   }
   plugin::return_items(\%itemcount);
 }

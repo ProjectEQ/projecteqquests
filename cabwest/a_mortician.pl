@@ -6,7 +6,7 @@ sub EVENT_SAY {
   }
  elsif($text=~/mortar and pestle/i){ #The Penance quest
   quest::emote("moves with a mixture of creaks and clicks and produces a grotesque looking mortar and pestle set. He places the items in your hands and motions indicating you dismissal. You can feel the vile power of your god moving throughout the material that makes up the two items.");
-  quest::summonitem(17092);
+  quest::summonitem(17092); # Item: Grotesque Mortar and Pestle
   }
 }
 

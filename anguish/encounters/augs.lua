@@ -9,7 +9,7 @@ function Trash_Death(e)
 	trash_dead=trash_dead+1;
 	eq.debug("Trash Dead: " .. trash_dead);
 	if trash_dead == 38 then		
-		eq.signal(317116 , 3);
+		eq.signal(317116 , 3); -- NPC: zone_status
 		eq.zone_emote(15,"The walls of the castle tremble for a moment.  Your interference has notified Mata Muram's lieutenants to your presence.");
 	end
 end

@@ -20,7 +20,7 @@ function event_say(e)
 			e.self:Say("How dare you approach a member of the Clerics of Underfoot?! Dogs such as you lie in the same bed as aviaks and ogres!!");
 		else
 			e.self:Say("Yes, you shall do, noble " .. e.other:GetName() .. ". Take this. This is the Chalice Case. It is intended for the Chalice of Conquest and the [Candle of Bravery]. If you should get both, be sure to place them within the Chalice Case and combine them. Take the full Chalice Case to Lord Nightseer in Kaladim and I shall be redeemed and you shall surely earn a fine paladin's reward. Let your quest begin in the mountains of Rathe.");
-			e.other:SummonItem(17976);
+			e.other:SummonItem(17976); -- Item: Chalice Case - empty
 		end
 	end
 end
@@ -30,12 +30,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 12281})) then
 		e.self:Say("I thank you, my friend. You are truly a great paladin and noble addition to our ranks. I now can walk in Kaladim. Take this as a reward. It is the Holy Partisan of Underfoot. It is now yours. I believe it still has a couple of charges. Use it wisely as the only cleric able to recharge it was lost amid the lava filled lands of Antonica.");
 		e.other:Ding();
-		e.other:Faction(297, 25);
-		e.other:Faction(274, 25);
-		e.other:Faction(227, 25);
-		e.other:Faction(216, 25);
+		e.other:Faction(297, 25); -- Faction: Paladins of Underfoot
+		e.other:Faction(274, 25); -- Faction: Kazon Stormhammer
+		e.other:Faction(227, 25); -- Faction: Clerics of Underfoot
+		e.other:Faction(216, 25); -- Faction: Veeshan
 		e.other:AddEXP(750);
-		e.other:SummonItem(5376, 5);
+		e.other:SummonItem(5376, 5); -- Item: Holy Partisan of Underfoot
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

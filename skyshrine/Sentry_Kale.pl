@@ -27,7 +27,7 @@ sub EVENT_SAY {
     }
     if ($text=~/supplies/i) {
       quest::say("I may have been wrong in my initial thoughts about your race, $race. You may just prove to be worth my time. Take this note now and find Ungdin. Please hurry and remember to keep this information to yourself.");
-      quest::summonitem(1725);
+      quest::summonitem(1725); # Item: Velium Delivery Note
     }
     if (($text=~/i am interested/i) && ($friendofthekin == 1)) {
       quest::say("I'm glad to hear it. You see, we have received news that there is a spy amongst the kin, sending our movements and our defensive strategies to the giants. Every attempt of ours to decipher who the spy is have failed. It seems there is a great protective magic around them preventing us from centering on the source of the espionage. However, we do have a [source] of our own in the city of Kael who passes us information now and again.");
@@ -37,7 +37,7 @@ sub EVENT_SAY {
     }
     if (($text=~/i am capable/i) && ($friendofthekin == 1)) {
       quest::say("As I expected you would be. Take this note to Wenglawks and return to me when you have some -- any -- information on this spy among us.");
-      quest::summonitem(29068);
+      quest::summonitem(29068); # Item: Note to Wenglawks
     }
   }
   else {
@@ -48,7 +48,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29064 => 1)) {
     quest::say("You've returned, and with the shipment of ore intact! It was wise to send you out on that mission, $name, and I'm glad you did not fail. If you're looking for more assignments to do, I may have something that is just right for you. If you're interested in it, just let me know and we'll talk.");
-    quest::summonitem(1727);
+    quest::summonitem(1727); # Item: Bracer of Hammerfal
     quest::exp(12500);
     quest::givecash(0,0,10,10);
     quest::faction(436,10); #Yelinak
@@ -58,7 +58,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 29065 => 1) && ($friendofthekin == 1)) {
     quest::say("You have shown us yet again your loyalty to our people. Please accept this token of our gratitude.");
-    quest::summonitem(29050);
+    quest::summonitem(29050); # Item: Dragon Tooth Choker
     quest::exp(32500);
     quest::givecash(0,0,10,10);
     quest::faction(436,10); #Yelinak

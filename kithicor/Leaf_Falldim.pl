@@ -15,7 +15,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::takeItems(12321 => 1, 12320 => 1)) {
-		quest::summonitem(3190);
+		quest::summonitem(3190); # Item: Ivy Etched Gauntlets
 		quest::say("Very good, you have brought justice to these lands.");
 		quest::faction(269,+30); # kithicor residence
 		quest::faction(302,+30); # protectors of the pine
@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     }
 	elsif(plugin::takeItemsCoin(0,0,2000,0, 12305 => 1, 12306 => 1)) {
 		quest::say("Here are your boots.");
-		quest::summonitem(3192);
+		quest::summonitem(3192); # Item: Ivy Etched Boots
 		quest::say("Very good, you have brought justice to these lands.");
 		quest::faction(269,+30); # kithicor residence
 		quest::faction(302,+30); # protectors of the pine
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     }
     elsif(plugin::takeItems(10059 => 1, 12328 => 1)) {
 		quest::say("Here are your leggings.");
-		quest::summonitem(3191);
+		quest::summonitem(3191); # Item: Ivy Etched Leggings
 		quest::say("Very good, you have brought justice to these lands.");
 		quest::faction(269,+30); # kithicor residence
 		quest::faction(302,+30); # protectors of the pine

@@ -39,7 +39,7 @@ sub EVENT_ITEM
             {
                my $char_id = $ent->CharacterID();
                $ent->KeyRingAdd(29213);
-               $ent->SummonItem(29213);
+               $ent->SummonItem(29213); # Item: Symbol of Torment
                quest::targlobal("pop_alt_access_potorment", "1", "F", 0, $char_id, 0);
             }
          }

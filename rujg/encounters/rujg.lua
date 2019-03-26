@@ -22,16 +22,16 @@ function Researcher_Death(e)
     eq.spawn2(260062, 0, 0, 1375, -2, 145, 0):SetAppearance(3); 
 
     -- Flawless Experimental Battlelord
-    eq.spawn2(260069, 0, 0, 1512, -65, 146, 376);
+    eq.spawn2(260069, 0, 0, 1512, -65, 146, 376); -- NPC: Flawless_Experimental_Battlelord
 
     -- Steeslave Researcher
-    eq.spawn2(260070, 0, 0, 1525, -105, 144, 430);
-    eq.spawn2(260070, 0, 0, 1534, -25, 143, 310);
+    eq.spawn2(260070, 0, 0, 1525, -105, 144, 430); -- NPC: Steelslave_Researcher_
+    eq.spawn2(260070, 0, 0, 1534, -25, 143, 310); -- NPC: Steelslave_Researcher_
 
     -- Flawless Experimental Brute
-    eq.spawn2(260063, 0, 0, 1344, -71, 143, 368);
-    eq.spawn2(260063, 0, 0, 1422, -35, 143, 340);
-    eq.spawn2(260063, 0, 0, 1427, -84, 143, 392);
+    eq.spawn2(260063, 0, 0, 1344, -71, 143, 368); -- NPC: Flawless_Experimental_Brute
+    eq.spawn2(260063, 0, 0, 1422, -35, 143, 340); -- NPC: Flawless_Experimental_Brute
+    eq.spawn2(260063, 0, 0, 1427, -84, 143, 392); -- NPC: Flawless_Experimental_Brute
   end
 end
 
@@ -42,9 +42,9 @@ function Subject_Death(e)
   local el = eq.get_entity_list();
   if ( el:IsMobSpawnedByNpcTypeID(260021) == false and el:IsMobSpawnedByNpcTypeID(260038) == false and el:IsMobSpawnedByNpcTypeID(260044) == false and el:IsMobSpawnedByNpcTypeID(260060) == false ) then 
     -- Steelslave Researcher
-    eq.spawn2(260061, 0, 0, 14, 334, 140, 0); 
-    eq.spawn2(260061, 0, 0, -41, 326, 140, 0);
-    eq.spawn2(260061, 0, 0, -20, 340, 140, 0);
+    eq.spawn2(260061, 0, 0, 14, 334, 140, 0); -- NPC: Steelslave_Researcher 
+    eq.spawn2(260061, 0, 0, -41, 326, 140, 0); -- NPC: Steelslave_Researcher
+    eq.spawn2(260061, 0, 0, -20, 340, 140, 0); -- NPC: Steelslave_Researcher
   end
 end
 
@@ -61,8 +61,8 @@ end
 function Battlelord_Timer(e)
   if (e.timer == "swarm") then
     eq.zone_emote(15, "Flawless Experimental Battlelord roars as his muscles bulge to gargantuan proportions!");
-    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262);
-    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456);
+    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262); -- NPC: Flawed_Mutation_
+    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456); -- NPC: Flawed_Mutation_
   end
 end
 
@@ -83,11 +83,11 @@ function Battlelord_Death(e)
 
   -- Event Loot
   -- #Researcher`s Box of Supplies
-  eq.spawn2(260066, 0, 0, 1499, -168, 140, 0);
+  eq.spawn2(260066, 0, 0, 1499, -168, 140, 0); -- NPC: #Researcher`s_Box_of_Supplies
   -- #The Bloody Barrel
-  eq.spawn2(260064, 0, 0, 1497, -185, 145, 0);
+  eq.spawn2(260064, 0, 0, 1497, -185, 145, 0); -- NPC: #The_Bloody_Barrel
   -- #The Splintering Barrel
-  eq.spawn2(260065, 0, 0, 1496, -179, 145, 0);
+  eq.spawn2(260065, 0, 0, 1496, -179, 145, 0); -- NPC: #The_Splintering_Barrel
 end
 
 function event_encounter_load(e)

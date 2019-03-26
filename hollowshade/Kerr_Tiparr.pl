@@ -26,7 +26,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,5566 => 1)) {
     quest::say("Thanks $name! That was delicious. Here is the empty bowl.");
-    quest::summonitem(5567);
+    quest::summonitem(5567); # Item: Empty Stew Bowl
   }
   plugin::return_items(\%itemcount);
 }

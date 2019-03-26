@@ -7,28 +7,28 @@ function event_say(e)
 		e.self:Say("Excellent! I will give you a variety of items to collect and combine in this magical assembly kit to create a material that you will use to craft armor. My hope is that as you gather these items you will learn about your home and how to navigate around the surrounding areas of the Vale. If you are ready to begin your adventure I will present you with your Magical Mail Assembly Kit and the instructions for collecting the necessary items to craft your armor. Are you [ready to receive your Magical Mail Assembly Kit]?");
 	elseif(e.message:findi("ready to receive my magical mail assembly kit")) then
 		e.self:Say("Here you are " .. e.other:GetName() .. ". Take this mail assembly kit. it is what you will use to combine the different items necessary to craft your own Platemail of the Stoutdeacon. Different combinations of items will be required from both our town and the hunting grounds in the thicket to create materials for specific armor pieces with Crude Iron Ore being the basis for all of your armor materials. When you are ready to receive a recipe for a specific material simply tell me what armor piece you [want] to craft. I will then supply you with the mold and recipe for Stoutdeacon Platemail [Helms]. [Bracers]. [Boots].  [Armguards]. [Greaves]. [Gauntlets] and [Breastplates].");
-		e.other:SummonItem(17249);
+		e.other:SummonItem(17249); -- Item: Magical Mail Assembly Kit
 	elseif(e.message:findi("helm")) then
 		e.self:Say("Your Helm of the Stoutdeacon will indeed be one of the most important pieces of your armor set. It is very important that you are well protected from any blows to the head while you are on the battlefield. To fashion together the material necessary for making your helm gather 2 Bricks of Crude Iron Ore. 1 Low Quality Wolf Skin. 1 Chunk of Meat and 2 Water Flasks then combine them in your assembly kit. Once you have the correct Helm material take it to the closest forge. along with this pattern and combine them to create your Helm of the Stoutdeacon.");
-		e.other:SummonItem(22610);
+		e.other:SummonItem(22610); -- Item: Enchanted Helm Mold
 	elseif(e.message:findi("bracer")) then
 		e.self:Say("You will be required to gather most of the items for your bracer material from the Misty Thicket. You will need to collect 2 Bricks of Crude Iron Ore. 1 Bixie Stinger. 1 Runnyeye Warbeads and 1 Turnip then combine them in your kit to create the material necessary for crafting a Bracer of the Stoutdeacon. After you have done this take the material to a forge along with the mold I have given you to fashion together a Bracer of the Stoutdeacon.");
-		e.other:SummonItem(22611);
+		e.other:SummonItem(22611); -- Item: Enchanted Bracer Mold
 	elseif(e.message:findi("boot")) then
 		e.self:Say("Well boots would be quite a good idea if I do say so myself " .. e.other:GetName() .. ". for certain situations only though! You should be proud of your feet and all the lovely hairs that they have been blessed with by Bristlebane! However if you wish to create a material that you will use along with this mold to create your boots you will need 2 Bricks of Crude Iron Ore. 2 Dark Elf Skins. 2 Bixie Wings and 1 Rat Foot.");
-		e.other:SummonItem(22612);
+		e.other:SummonItem(22612); -- Item: Enchanted Boot Mold
 	elseif(e.message:findi("armguard")) then
 		e.self:Say("It is important that your arms are protected while you are on the battlefield " .. e.other:GetName() .. ". To create your Armguards material make sure you collect 3 Bricks of Crude Iron Ore. 1 Giant Wood Spider Hairs. 2 Thorn Drakeling Scales and 2 Lettuce then combine them in your kit. After you have your material ready take it to the forge and combine it along with this mold to create your very own Armguards of the Stoutdeacon.");
-		e.other:SummonItem(22613);
+		e.other:SummonItem(22613); -- Item: Enchanted Armguard Mold
 	elseif(e.message:findi("greave")) then
 		e.self:Say("Not a bad idea to get some pants on " .. e.other:GetName() .. ". Although we are halflings and we have no real need for shoes. pants on the other hand are a definite must. To create the material necessary to craft your greaves gather 4 Bricks of Crude Iron Ore. 2 Large Yellowjacket Tergites. 2 Deathfist Slashed Belt and 1 Bottle of Kalish then combine the finished product in a forge with this mold to fashion your Legplates of the Stoutdeacon.");
-		e.other:SummonItem(22614);
+		e.other:SummonItem(22614); -- Item: Enchanted Greaves Mold
 	elseif(e.message:findi("gauntlet")) then
 		e.self:Say("To create the necessary material for your gauntlets you will need to collect 3 Bricks of Crude Iron Ore. 1 Dark Elf Skin. 2 Bone Chips and 1 Vegetables then combine them in your Kit. Once you have done this place the gauntlet material in a forge along with this mold to fashion your Gauntlets of the Stoutdeacon.");
-		e.other:SummonItem(22615);
+		e.other:SummonItem(22615); -- Item: Enchanted Gauntlet Mold
 	elseif(e.message:findi("breastplate")) then
 		e.self:Say("So the time has finally come for you to create your final piece of armor I see " .. e.other:GetName() .. ". Seek out 5 Bricks of Crude Iron Ore. 1 Deathfist Slashed Belt. 1 Giant Yellowjacket Sternites. 2 Dark Elf Skins and 1 Undamaged Mossy Rat Pelt then combine them in your kit. Take that material along with this mold to the nearest forge and reap the rewards of your hard work. Come back to see me when you are finished because I have a [special task] for you.");
-		e.other:SummonItem(22616);
+		e.other:SummonItem(22616); -- Item: Enchanted Breastplate Mold
 	elseif(e.message:findi("special task")) then
 		e.self:Say("If you are asking me about this special task that I need completed then you surely must have completed all the steps necessary to prove yourself as a worthy servant of Bristlebane. Going forward I will need you to gather some [research annals] from a Muddite in the Gorge of King Xorbb that stole them from me.");
 	elseif(e.message:findi("research annal")) then
@@ -42,7 +42,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 22668,item2 = 22696,item3 = 22696,item4 = 22696})) then
-		e.other:SummonItem(22697);
+		e.other:SummonItem(22697); -- Item: Mace of the Stoutdeacon
 		e.other:Ding();
 		e.other:AddEXP(500);
 	end

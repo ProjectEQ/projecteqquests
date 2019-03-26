@@ -21,7 +21,7 @@ function event_say(e)
 	end
 	if(e.message:findi("assistance")) then
 		e.self:Say("Hooray! Fill this crate with either four small bricks of unrefined ore or four large Bricks of unrefined ore from Norrath and I will pay you for your assistance in keeping me in business.");
-		e.other:SummonItem(17814);
+		e.other:SummonItem(17814); -- Item: Empty Ore Crate
 	end
 end
 
@@ -30,30 +30,30 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 10953})) then
 		e.self:Say("Thank you " .. e.other:GetName() .. "! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
 		e.other:AddEXP(250);
-		e.other:Faction(1510, 10);
-		e.other:Faction(1511, 10);
-		e.other:Faction(1512, 10);
-		e.other:Faction(1508, 10);
+		e.other:Faction(1510, 10); -- Faction: House of Fordel
+		e.other:Faction(1511, 10); -- Faction: House of Midst
+		e.other:Faction(1512, 10); -- Faction: House of Stout
+		e.other:Faction(1508, 10); -- Faction: Traders of the Haven
 		e.other:GiveCash(0, 0, 0, 44);
 		x = e.self:GetX();
 		y = e.self:GetY();
 		z = e.self:GetZ();
 		h = e.self:GetHeading();
-		eq.spawn2(151057, 0, 0, x, y, z, h);
+		eq.spawn2(151057, 0, 0, x, y, z, h); -- NPC: Gliblixl_Rocktok
 		eq.depop_with_timer();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10952})) then
 		e.self:Say("Thank you " .. e.other:GetName() .. "! I will prepare the ore for sale and be open for business again momentarily. Here is your payment for your services.");
 		e.other:AddEXP(250);
-		e.other:Faction(1510, 10);
-		e.other:Faction(1511, 10);
-		e.other:Faction(1512, 10);
-		e.other:Faction(1508, 10);
+		e.other:Faction(1510, 10); -- Faction: House of Fordel
+		e.other:Faction(1511, 10); -- Faction: House of Midst
+		e.other:Faction(1512, 10); -- Faction: House of Stout
+		e.other:Faction(1508, 10); -- Faction: Traders of the Haven
 		e.other:GiveCash(0, 0, 0, 14);
 		x = e.self:GetX();
 		y = e.self:GetY();
 		z = e.self:GetZ();
 		h = e.self:GetHeading();
-		eq.spawn2(151057, 0, 0, x, y, z, h);
+		eq.spawn2(151057, 0, 0, x, y, z, h); -- NPC: Gliblixl_Rocktok
 		eq.depop_with_timer();
 	end
 end

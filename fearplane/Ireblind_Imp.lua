@@ -13,25 +13,25 @@ function event_hp(e)
 	
 	if(e.hp_event == 76) then
 		
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
 		eq.set_next_hp_event(51);
 	end
 	
 	if(e.hp_event == 51) then
 		
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
 		eq.set_next_hp_event(26);
 	end
 	
 	if(e.hp_event == 26) then
 		
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
-		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0);
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
+		eq.spawn2(72068, 0, 0, x_loc, y_loc, z_loc, 0); -- NPC: Essence_of_Rage
 	end
 end
 -------------------------------------------------------------------------------------------------

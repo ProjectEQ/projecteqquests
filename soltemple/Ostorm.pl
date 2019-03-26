@@ -42,7 +42,7 @@ sub EVENT_ITEM {
   #Lambent Fire Opal
   if(($itemcount{10031} == 2) && ($itemcount{10000} == 1)) {
     quest::say("Ahh, Genni must have sent you to me.  Very well, here is your Lambent Fire Opal.");
-    quest::summonitem(10128);
+    quest::summonitem(10128); # Item: Lambent Fire Opal
     quest::faction("415","15");
     quest::faction("416","-15");
   }
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
   #magnetized platinum
   if($itemcount{16507} == 1) {
     quest::say("I see that Gavel has sent you to me.  Very well, I have magnetized your platinum bar - take it.");
-    quest::summonitem(19049);
+    quest::summonitem(19049); # Item: Magnetized Platinum Bar
   }
 }
 

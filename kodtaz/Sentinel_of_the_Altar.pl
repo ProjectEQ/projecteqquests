@@ -24,7 +24,7 @@ sub EVENT_ITEM {
         $client->Message(13, "You are not in a raid!");
       }
     }
-    quest::summonitem(60173);
+    quest::summonitem(60173); # Item: Icon of the Altar
   }
   plugin::return_items(\%itemcount);
 }   

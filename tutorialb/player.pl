@@ -1,7 +1,7 @@
 sub EVENT_ENTERZONE 
 {
 
-	quest::movepc(189,18, -147, 19.6, 0);
+	quest::movepc(189,18, -147, 19.6, 0); # Zone: kaladimb
 
 	if(!defined $qglobals{tutbind} && $ulevel == 1) 
 	{
@@ -46,83 +46,83 @@ sub EVENT_CLICKDOOR {
 		my $s_zone = $client->GetStartZone();
 		if($s_zone == 9)
 		{
-			quest::movepc(9,-60.9,-61.5,-24.9);
+			quest::movepc(9,-60.9,-61.5,-24.9); # Zone: arena
 		}
 		elsif($s_zone == 19)
 		{
-			quest::movepc(19,-98.4,11.5,3.1);
+			quest::movepc(19,-98.4,11.5,3.1); # Zone: befallen
 		}
 		elsif($s_zone == 24)
 		{
-			quest::movepc(24,-309.8,109.6,23.1);
+			quest::movepc(24,-309.8,109.6,23.1); # Zone: blacksail
 		}
 		elsif($s_zone == 25)
 		{
-			quest::movepc(25,-965.3,2434.5,5.6);
+			quest::movepc(25,-965.3,2434.5,5.6); # Zone: bloodfields
 		}
 		elsif($s_zone == 29)
 		{
-			quest::movepc(29,12.2,-32.9,3.1);
+			quest::movepc(29,12.2,-32.9,3.1); # Zone: buriedsea
 		}
                 elsif($s_zone == 40)
 		{
-			quest::movepc(40,156.9,-2.9,31.1);
+			quest::movepc(40,156.9,-2.9,31.1); # Zone: chambersd
 		}
                 elsif($s_zone == 41)
 		{
-			quest::movepc(41,-499,2.9,-10.9);
+			quest::movepc(41,-499,2.9,-10.9); # Zone: chamberse
 		}
                 elsif($s_zone == 42)
 		{
-			quest::movepc(42,-968.9,891.9,-52.8);
+			quest::movepc(42,-968.9,891.9,-52.8); # Zone: chambersf
 		}
 		elsif($s_zone == 45)
 		{
-			quest::movepc(45,-343,189,-38.22);
+			quest::movepc(45,-343,189,-38.22); # Zone: chardokb
 		}
 		elsif($s_zone == 49)
 		{
-			quest::movepc(49,520.1,235.4,59.1);
+			quest::movepc(49,520.1,235.4,59.1); # Zone: codecay
 		}
 		elsif($s_zone == 50)
 		{
-			quest::movepc(50,560,-2234,3);
+			quest::movepc(50,560,-2234,3); # Zone: commonlands
 		}
 		elsif($s_zone == 52)
 		{
-			quest::movepc(52,1.1,14.5,3.1);
+			quest::movepc(52,1.1,14.5,3.1); # Zone: corathus
 		}
 		elsif($s_zone == 54)
 		{
-			quest::movepc(54,-197,27,-0.7);
+			quest::movepc(54,-197,27,-0.7); # Zone: corathusb
 		}
 		elsif($s_zone == 55)
 		{
-			quest::movepc(55,7.6,489.0,-24.9);
+			quest::movepc(55,7.6,489.0,-24.9); # Zone: crescent
 		}
 		elsif($s_zone == 61)
 		{
-			quest::movepc(61,26.3,14.9,3.1);
+			quest::movepc(61,26.3,14.9,3.1); # Zone: dalnir
 		}
 		elsif($s_zone == 68)
 		{
-			quest::movepc(68,-214.5,2940.1,0.1);
+			quest::movepc(68,-214.5,2940.1,0.1); # Zone: direwind
 		}
 		elsif($s_zone == 75)
 		{
-			quest::movepc(75,200,800,3.39);
+			quest::movepc(75,200,800,3.39); # Zone: dragonscale
 		}
 		elsif($s_zone == 106)
 		{
-			quest::movepc(106,-415.7,1276.6,3.1);
+			quest::movepc(106,-415.7,1276.6,3.1); # Zone: elddara
 		}
 		elsif($s_zone == 155)
 		{
-			quest::movepc(155,105.6,-850.8,-190.4);
+			quest::movepc(155,105.6,-850.8,-190.4); # Zone: gukh
 		}
 		else
 		{
-			quest::movepc(202,-55,44,-158.81);
+			quest::movepc(202,-55,44,-158.81); # Zone: lavastorm
 		}
 	}
 }

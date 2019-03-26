@@ -79,7 +79,7 @@ function Mainil_Timer(e)
 	elseif e.timer=="finish_note" then
 		e.self:Emote("finishes scrawling his note, and leans over to listen to the ground. 'It sounds as though the assault on your companions has ended, Grannos should be moving in this direction soon.  We'll be off in just a moment.  I am curious as to what lies ahead.'");
 		eq.stop_timer("finish_note");
-		eq.signal(249001,2);
+		eq.signal(249001,2); -- NPC: Scout_Granos
 	elseif e.timer=="auto_start" then
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
@@ -210,9 +210,9 @@ function Executioner_Timer(e)
 	elseif e.timer=="spawn_adds" then
 		eq.debug("exec spawn add");
 		if e.self:GetHeading()==64 then
-			eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,e.self:GetX()+20,e.self:GetY(),e.self:GetZ(),192);
+			eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,e.self:GetX()+20,e.self:GetY(),e.self:GetZ(),192); -- NPC(s): a_risen_acolyte (249152), a_risen_champion (249154), a_risen_death_knight (249157), a_risen_deceiver (249161), a_risen_fire_caller (249164), a_risen_partisan (249169), a_risen_stalker (249178), a_risen_witch_doctor (249183)
 		else
-			eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,e.self:GetX()-20,e.self:GetY(),e.self:GetZ(),64);
+			eq.spawn2(eq.ChooseRandom(249152,249154,249157,249161,249164,249169,249178,249183),0,0,e.self:GetX()-20,e.self:GetY(),e.self:GetZ(),64); -- NPC(s): a_risen_acolyte (249152), a_risen_champion (249154), a_risen_death_knight (249157), a_risen_deceiver (249161), a_risen_fire_caller (249164), a_risen_partisan (249169), a_risen_stalker (249178), a_risen_witch_doctor (249183)
 		end
 		e.self:DoAnim(42);
 		e.self:Emote("focuses his attention on a new Risen, 'The Cauldron shall feast on your essence!");
@@ -268,7 +268,7 @@ end
 
 function Risen_Timer(e)
 	if e.timer=="depop" then
-		eq.spawn2(249128,58,0,508.73,433.41,-107.87,0);
+		eq.spawn2(249128,58,0,508.73,433.41,-107.87,0); -- NPC: a_malicious_force
 		eq.zone_emote(3,"The Risen before the Executioner explodes, leaving a small bit of dancing energy where it once stood.");
 		eq.depop();
 	elseif e.timer=="aggro_scout" then
@@ -281,7 +281,7 @@ function Wisp_Waypoint_Arrive(e)
 	eq.debug("wisp wp: " .. e.wp);
 	if (e.wp == 35) then		
 		eq.zone_emote(15,"The flames roar with angry heat as the Cauldron consumes the soul.");
-		eq.spawn2(eq.ChooseRandom(249011,249061,249053,249056,249070,249142),0,0,153.2,673.4,-38.87,256);
+		eq.spawn2(eq.ChooseRandom(249011,249061,249053,249056,249070,249142),0,0,153.2,673.4,-38.87,256); -- NPC(s): an_acolyte_of_the_First (249011), an_ice_caller_of_the_First (249061), a_blade_of_the_First (249053), a_caller_of_the_First (249056), a_fist_of_the_First (249070), a_protector_of_the_First_Witness (249142)
 		eq.depop();
 	end
 end
@@ -298,10 +298,10 @@ end
 
 function FocusE_Timer(e)
 	if e.timer=="focus" then
-		e.self:CastSpell(4123,e.self:GetHateRandom():GetID());
+		e.self:CastSpell(4123,e.self:GetHateRandom():GetID()); -- Spell: Blurring Focus
 		eq.set_timer("focus",48*1000);
 	elseif e.timer=="vortex" then
-		e.self:CastSpell(4122,e.self:GetHateRandom():GetID());
+		e.self:CastSpell(4122,e.self:GetHateRandom():GetID()); -- Spell: Life Vortex
 		eq.set_timer("vortex",48*1000);
 	end
 end
@@ -318,10 +318,10 @@ end
 
 function FocusM_Timer(e)
 	if e.timer=="ess" then
-		e.self:CastSpell(4124,e.self:GetHateRandom():GetID());
+		e.self:CastSpell(4124,e.self:GetHateRandom():GetID()); -- Spell: Everlasting Essence
 		eq.set_timer("ess",10*1000);
 	elseif e.timer=="swirl" then
-		e.self:CastSpell(4121,e.self:GetHateRandom():GetID());
+		e.self:CastSpell(4121,e.self:GetHateRandom():GetID()); -- Spell: Swirling Matter
 		eq.set_timer("swirl",48*1000);
 	end
 end
@@ -336,7 +336,7 @@ end
 
 function FocusS_Timer(e)
 	if e.timer=="mass" then
-		e.self:CastSpell(4125,e.self:GetHateRandom():GetID());
+		e.self:CastSpell(4125,e.self:GetHateRandom():GetID()); -- Spell: Infinite Mass
 		eq.set_timer("mass",48*1000);
 	end
 end

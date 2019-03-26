@@ -19,10 +19,10 @@ sub EVENT_SIGNAL {
 		quest::stoptimer("flame_wave3");
 		quest::stoptimer("flame_wave4");
 		quest::stoptimer("flame_boss");
-		quest::signalwith(201420, 1, 5);
-		quest::signalwith(201447, 1, 5);
-		quest::signalwith(201446, 1, 5);
-		quest::signalwith(201434, 0, 5);
+		quest::signalwith(201420, 1, 5); # NPC: #a_fiery_aggressor
+		quest::signalwith(201447, 1, 5); # NPC: A_Burning_Nemesis
+		quest::signalwith(201446, 1, 5); # NPC: Punisher_of_Flame
+		quest::signalwith(201434, 0, 5); # NPC: The_Tribunal Flame Trial
 		quest::depop();
 	}
 }
@@ -31,7 +31,7 @@ sub EVENT_TIMER {
 	if ($timer eq "flame_dd") {
 		quest::stoptimer("flame_dd");
 		#AE Fiery Death
-		$npc->CastSpell(951, 201417);
+		$npc->CastSpell(951, 201417); # Spell: Fiery Death
 		#Timer for next AE
 		quest::settimer("flame_dot", 30);
 	}
@@ -39,7 +39,7 @@ sub EVENT_TIMER {
 	elsif ($timer eq "flame_dot") {
 		quest::stoptimer("flame_dot");
 		#AE Wave of Heat, DoT version
-		$npc->CastSpell(1131, 201417);
+		$npc->CastSpell(1131, 201417); # Spell: Wave of Heat
 		#Timer for next AE
 		quest::settimer("flame_dd", 30);
 	}
@@ -71,7 +71,7 @@ sub EVENT_TIMER {
 	elsif ($timer eq "flame_boss") {
 		quest::stoptimer("flame_boss");
 		#Punisher of Flame, the boss.
-		quest::spawn2(201446,0,0,880,-805,55,0);
+		quest::spawn2(201446,0,0,880,-805,55,0); # NPC: Punisher_of_Flame
 	}
 }
 
@@ -91,12 +91,12 @@ sub SpawnFlameMobs {
 		
 		if ($test < 69) {
 			#Fiery Agressor, common mob
-			quest::spawn2(201420, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+			quest::spawn2(201420, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: #a_fiery_aggressor
 		}
 		
 		else {
 			#Burning nemesis, less common
-			quest::spawn2(201447, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+			quest::spawn2(201447, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: A_Burning_Nemesis
 		}
 	}
 }

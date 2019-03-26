@@ -15,7 +15,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30146 => 1)) {
     quest::say("Well, as promised, here's your Foot of the candlestick.");
-    quest::summonitem(12852);
+    quest::summonitem(12852); # Item: Foot of Candlestick
   }
   if (plugin::check_handin(\%itemcount, 12609 => 4)) {
     quest::emote("swallows the whole bottle in one gulp. 'Here, go buy yourself a brain. What?!! You expecting something? How about this.. <BUUURRRPPPP!!> Thanks for helping me get through my dry spell, croak!! Never mess with a Blue Talon!!");

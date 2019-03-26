@@ -44,25 +44,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25841 => 3, 24968 => 1)) { #cap
-      quest::summonitem(31105);
+      quest::summonitem(31105); # Item: Wolf Caller's Helm
     }
     elsif (plugin::check_handin(\%itemcount, 25805 => 3, 24963 => 1)) { #bp
-      quest::summonitem(31106);
+      quest::summonitem(31106); # Item: Wolf Caller's Breastplate
     }
     elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24965 => 1)) { #arm
-      quest::summonitem(31107);
+      quest::summonitem(31107); # Item: Wolf Caller's Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 25836 => 3,24967  => 1)) { #bracer
-      quest::summonitem(31108);
+      quest::summonitem(31108); # Item: Wolf Caller's Bracer
     }
     elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24969 => 1)) { #glove
-      quest::summonitem(31109);
+      quest::summonitem(31109); # Item: Wolf Caller's Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24964 => 1)) { #leg
-      quest::summonitem(31110);
+      quest::summonitem(31110); # Item: Wolf Caller's Greaves
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24966 => 1)) { #boots
-      quest::summonitem(31111);
+      quest::summonitem(31111); # Item: Wolf Caller's Boots
     }
     else {
       plugin::return_items(\%itemcount);

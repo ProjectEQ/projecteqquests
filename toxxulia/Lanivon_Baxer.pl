@@ -11,7 +11,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6069 => 1)) {
     quest::say("Excellent work! Thank you for delivering this to me. I will get it to the High Council as soon as possible. Take this Ring of the Messenger as an insignia of your service to the city.");
     quest::exp(85000);
-    quest::summonitem(1573);
+    quest::summonitem(1573); # Item: Ring of the Messenger
   }
   plugin::return_items(\%itemcount);
 }

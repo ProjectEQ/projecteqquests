@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24968 => 1)) { #cap
-      quest::summonitem(31126);
+      quest::summonitem(31126); # Item: Shadow Crown
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24963 => 1)) { #bp
-      quest::summonitem(31127);
+      quest::summonitem(31127); # Item: Shadow Chestguard
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24965 => 1)) { #arm
-      quest::summonitem(31128);
+      quest::summonitem(31128); # Item: Shadow Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3,24967  => 1)) { #bracer
-      quest::summonitem(31129);
+      quest::summonitem(31129); # Item: Shadow Bracer
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24969 => 1)) { #glove
-      quest::summonitem(31130);
+      quest::summonitem(31130); # Item: Shadow Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24964 => 1)) { #leg
-      quest::summonitem(31131);
+      quest::summonitem(31131); # Item: Shadow Greaves
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24966 => 1)) { #boots
-      quest::summonitem(31132);
+      quest::summonitem(31132); # Item: Shadow Boots
     }
     else {
       plugin::return_items(\%itemcount);

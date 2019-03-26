@@ -32,16 +32,16 @@ test do you wish to undertake?");
 sub EVENT_ITEM {
   if ($faction == 1) {
     if (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31270 => 1, 31258 => 1)) { # protection
-      quest::summonitem(31472);
+      quest::summonitem(31472); # Item: Pauldrons of the Deep Flame
     }
     elsif (plugin::check_handin(\%itemcount, 31260 => 1, 31253 => 1, 31261 => 1, 31250 => 1)) { # test of the tooth
-      quest::summonitem(31469);
+      quest::summonitem(31469); # Item: Serrated Dragon Tooth
     }
     elsif (plugin::check_handin(\%itemcount, 31262 => 1, 31251 => 1, 31255 => 1, 31254 => 1)) { # test of living flame
-      quest::summonitem(31470);
+      quest::summonitem(31470); # Item: Earring of the Living Flame
     }
     elsif (plugin::check_handin(\%itemcount, 31256 => 1, 31266 => 1, 31265 => 1, 31259 => 1)) { # test of the fire storm
-      quest::summonitem(31471);
+      quest::summonitem(31471); # Item: Cloak of the Fire Storm
     }
     else {
       plugin::return_items(\%itemcount);

@@ -1,6 +1,6 @@
 #spawn Vallon Zek
 sub EVENT_DEATH_COMPLETE {
-        quest::signalwith(214123, 214056, 0);
+        quest::signalwith(214123, 214056, 0); # NPC: #rallos_trigger
 }
 
 sub EVENT_SIGNAL {

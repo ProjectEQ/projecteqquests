@@ -16,7 +16,7 @@ sub EVENT_SIGNAL {
     quest::moveto(-1559.2,-234.9,-266.7);
     quest::doanim(1);
     quest::say("'Shhhhhh!!' He runs over and kicks Rowle in the kneecap and chuckles under his beard in your direction. Speaking under his breath to Rowle, 'Don' be such an idjit, now this lad came all the way from Norrath, why not try some of the fabled ales we'd heard our pappy's talkin' of?'");
-    quest::signalwith(160207,201,0);
+    quest::signalwith(160207,201,0); # NPC: Rowle_Shieldson
   }
   elsif ($signal == 103) {
     quest::say("Ahhh, worthy o' Brell hisself or so they say. Ye know when I was just a pup, back before the exodus, me uncle used te talk about stompin' trolls and then sitting back with a  Boot Beer te celebrate the day's victory. I, ummm, really would be able te get in touch with me heritage were I able to sample some o' that fine stout. Ye'd be a true friend to the Validus Custodus fer helpin' us out friend. My thanks to ye in advance.");

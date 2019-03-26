@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("'The League of Antonican Bards has a courier system made up of travelers, adventurers and [agents]. We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices. Are you [interested]");
 	elseif(e.message:findi("deliver")) then
 		e.self:Say("Take this pouch to Lislia Goldtune in Highpass. You can find her at the entrance to HighKeep. I am sure she will compensate you for your troubles.");
-		e.other:SummonItem(18152);
+		e.other:SummonItem(18152); -- Item: Pouch of Mail (Highpass)
 	end
 end
 
@@ -19,11 +19,11 @@ function event_trade(e)
 		e.self:Say("Incoming mail - very good! Please take this gold for your troubles.");
 		local gp = math.random(15);
 		e.other:Ding();
-		e.other:Faction(284,10,0);
-		e.other:Faction(281,10,0);
-		e.other:Faction(262,10,0);
-		e.other:Faction(304,-30,0);
-		e.other:Faction(285,-30,0);
+		e.other:Faction(284,10,0); -- Faction: League of Antonican Bards
+		e.other:Faction(281,10,0); -- Faction: Knights of Truth
+		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
+		e.other:Faction(304,-30,0); -- Faction: Ring of Scale
+		e.other:Faction(285,-30,0); -- Faction: Mayong Mistmoore
 		e.other:AddEXP(150);
 		e.other:GiveCash(0,0,gp,0);
 	end

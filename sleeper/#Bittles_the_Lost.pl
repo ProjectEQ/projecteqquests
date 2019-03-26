@@ -6,7 +6,7 @@ sub EVENT_SAY {
   }
  elsif($text=~/shiny beast/i){
   quest::say("Ya know that story about how those two dragons got together and made that premzatica dragon?");
-  quest::signalwith(128037,0,0);
+  quest::signalwith(128037,0,0); # NPC: #Ferrin_Q`Nyil
   }
 # elsif($text=~/went crazy/i){
 #  quest::say("No text currently available for this trigger phrase!");

@@ -10,6 +10,6 @@ quest::say("For justice to be brought to them you will need to strike at some of
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62084 => 3, 62085 =>1 )) {
     quest::say("Excellent, my revenge has been exacted.  Take this I no longer have need of it.");
-    quest::summonitem(62198);
+    quest::summonitem(62198); # Item: Black Cord of the Virtuous
   }
 }

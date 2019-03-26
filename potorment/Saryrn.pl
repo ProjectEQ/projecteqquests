@@ -15,33 +15,33 @@ sub EVENT_SPAWN {
 
 sub EVENT_AGGRO {
     if ($npc->GetHPRatio() > 10 && $npc->GetHPRatio() < 20) {
-      quest::signalwith(207052,2,1);
+      quest::signalwith(207052,2,1); # NPC: Sorrowsong
       quest::setnexthpevent(10);
     } elsif ($npc->GetHPRatio() > 20 && !$entity_list->IsMobSpawnedByNpcTypeID(207052) && !$entity_list->IsMobSpawnedByNpcTypeID(207065)) {
-      quest::spawn2(207052,1,0,53.8,-0.7,579.1,257.8);
-      quest::signalwith(207052,1,0);
+      quest::spawn2(207052,1,0,53.8,-0.7,579.1,257.8); # NPC: Sorrowsong
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(20);
     }
     if ($npc->GetHPRatio() > 90) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(90);
     } elsif ($npc->GetHPRatio() > 80) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(80);
     } elsif ($npc->GetHPRatio() > 70) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(70);
     } elsif ($npc->GetHPRatio() > 60) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(60);
     } elsif ($npc->GetHPRatio() > 50) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(50);
     } elsif ($npc->GetHPRatio() > 40) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(40);
     } elsif ($npc->GetHPRatio() > 30) {
-      quest::signalwith(207052,1,0);
+      quest::signalwith(207052,1,0); # NPC: Sorrowsong
       quest::setnexthpevent(30);
     }
 }
@@ -52,7 +52,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(80);
   }
 
@@ -61,7 +61,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(70);
   }
 
@@ -70,7 +70,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(60);
   }
 
@@ -79,7 +79,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(50);
   }
 
@@ -88,7 +88,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(40);
   }
 
@@ -97,7 +97,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(30);
   }  
 
@@ -106,7 +106,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,1,0);
+    quest::signalwith(207052,1,0); # NPC: Sorrowsong
     quest::setnexthpevent(20);
   }
 
@@ -115,7 +115,7 @@ sub EVENT_HP {
     quest::spawn2(207030,0,0,($x -  5),$y,$z,$h);
     quest::spawn2(207030,0,0,$x,($y + 5),$z,$h);
     quest::spawn2(207030,0,0,$x,($y - 5),$z,$h);
-    quest::signalwith(207052,2,1);
+    quest::signalwith(207052,2,1); # NPC: Sorrowsong
     quest::setnexthpevent(10);
   }
   
@@ -128,5 +128,5 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::spawn2(218068,0,0,$x,$y,$z,$h);
+  quest::spawn2(218068,0,0,$x,$y,$z,$h); # NPC: A_Planar_Projection
 }

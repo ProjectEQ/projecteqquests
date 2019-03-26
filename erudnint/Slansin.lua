@@ -13,10 +13,10 @@ function event_trade(e)
 		if(e.self:GetClass() == 41) then
 			e.self:Say("Thank you. I have been expecting this. We require it for mixing.");
 			e.other:Ding();
-			e.other:Faction(231,-5,0);
-			e.other:Faction(266,-5,0);
-			e.other:Faction(265,1,0);
-			e.other:Faction(267,-5,0);
+			e.other:Faction(231,-5,0); -- Faction: Craftkeepers
+			e.other:Faction(266,-5,0); -- Faction: High Council of Erudin
+			e.other:Faction(265,1,0); -- Faction: Heretics
+			e.other:Faction(267,-5,0); -- Faction: High Guard of Erudin
 			e.other:AddEXP(300);
 			eq.depop();
 		elseif(e.self:GetClass() == 14) then

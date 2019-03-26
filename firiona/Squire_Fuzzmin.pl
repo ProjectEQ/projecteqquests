@@ -33,7 +33,7 @@ sub EVENT_ITEM {
     quest::faction(313,-15);  # Pirates of Gunthak worse
     quest::exp(700000);
     quest::ding;
-    quest::summonitem(5057);
+    quest::summonitem(5057); # Item: Wurmslayer
   }
   plugin::return_items(\%itemcount);
 }

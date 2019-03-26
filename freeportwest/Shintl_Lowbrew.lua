@@ -13,7 +13,7 @@ function event_waypoint_arrive(e)
 		eq.create_ground_object(12147,-627,148,-61,0,60000);
 	elseif(e.wp == 7) then
 		e.self:Say("Any mail for room number two?");
-		eq.signal(383084, 1);
+		eq.signal(383084, 1); -- NPC: Swin_Blackeye General Supplies
 	end
 end
 

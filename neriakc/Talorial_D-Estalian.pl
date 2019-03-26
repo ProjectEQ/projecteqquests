@@ -45,7 +45,7 @@ quest::say("The final test that I require one to complete before I am content wi
 }
 if($text=~/i am ready to be tested/i){
 quest::say("Very well child. There is an ancient tome of Necromancy called the Writ of the Fallen. I have kept the binding of this sacred tome for a very long time however I have never searched for the pages that form the writ. If you are able to recover the 4 pages of the writ I have faith that you posses the power to bind them to this empty tome that I carry. Seek out these pages and bind them to this tome. I assure you that you will learn much from this writ shall you construct it once again. I believe the pages were in the hands of spirits that haunt the Ultricle still to this day. Good luck and excellent work."); 
-quest::summonitem(17243);
+quest::summonitem(17243); # Item: Ancient Book Binding
 }
   }
 

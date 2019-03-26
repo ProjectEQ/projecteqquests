@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20477 => 1)) {
     quest::emote("admires the blade and then starts to bang the edge with a hammer. 'Hah, that was a good blade, no doubt. Ain't seen one I couldn't make better though. I'm knowin' yer cause and all I know is ye should take that ancient blade ta yer friend in the woods, he'll know what to do now. With that I'm gonna be takin muh leave. Debt paid and all. If'n yer wantin' another blade, which ye do, ye got enough ore left that Kinlo can do it for ye'");
-    quest::summonitem(20481);
+    quest::summonitem(20481); # Item: Refined Ancient Sword
     quest::depop();
   }
   plugin::return_items(\%itemcount);

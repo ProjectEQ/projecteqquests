@@ -39,8 +39,8 @@ sub EVENT_ITEM {
 		if(plugin::check_handin(\%itemcount, 84096 => 1)) {
 			quest::say("Ah ha! You've found them all! Excellent work, here's a bit of candy for you. Enjoy!");
 			$client->Message(3,"Happy Halloween!");
-			quest::summonitem(85062);
-			quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),20);
+			quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
+			quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),20); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 			quest::setglobal("halloween_draykey",1,0,"D30");
 			quest::updatetaskactivity(220,11);
 		}

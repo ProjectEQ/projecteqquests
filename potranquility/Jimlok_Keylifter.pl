@@ -17,7 +17,7 @@ quest::say("Alright, friend, you need to be on the lookout for a gnome about my 
 }
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 28277 => 1)) {
-  quest::summonitem(28278);
+  quest::summonitem(28278); # Item: Strange Jeweler's Schematic
   quest::emote("sighs deeply as he hands you an intricate schematic of some device. The notation on the document is written in a strange language that is completely foreign to you. 'This doesn't bode well for Gilor. He says he's found a secret tunnel and he's going to go in deeper. I guess I'll go in and find him if he doesn't return soon. Well, a deal is a deal. Here is the document that I mentioned.");
   quest::say("The person that I was supposed to lift it for was a jeweler of sorts, but he mainly dealt in mechanical devices. I wasn't able to track him down to get my coin, so I don't know what you'll do with it. Maybe my cousin Tabben will give you something for it. He's got himself a little tinker's shop in the Jeral section of New Tanaan. Show him the map thingy and see what he says.");
 }  

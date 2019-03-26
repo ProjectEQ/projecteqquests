@@ -16,7 +16,7 @@ sub EVENT_ITEM {
       plugin::check_handin(\%itemcount, 19354 => 1) || # Quiver of marr
       plugin::check_handin(\%itemcount, 19358 => 1)) { # Scars of Sigil
     quest::say("Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!");      
-    quest::summonitem(quest::ChooseRandom(19368,19346,19355,19357));
+    quest::summonitem(quest::ChooseRandom(19368,19346,19355,19357)); # Item(s): Spell: Boon of Immolation (19368), Spell: Scintillation (19346), Spell: Vocarate: Fire (19355), Spell: Vocarate: Air (19357)
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

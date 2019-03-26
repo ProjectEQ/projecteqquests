@@ -18,7 +18,7 @@ sub EVENT_ITEM {
      plugin::check_handin(\%itemcount, 19264 => 1) || # Talisman of Jasinth
      plugin::check_handin(\%itemcount, 19272 => 1)) { # Cannibalize III
     quest::say("Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!");
-    quest::summonitem(quest::ChooseRandom(19267,19271,19274,19266));
+    quest::summonitem(quest::ChooseRandom(19267,19271,19274,19266)); # Item(s): Spell: Talisman of Shadoo (19267), Spell: Shroud of the Spirits (19271), Spell: Torrent of Poison (19274), Spell: Insidious Decay (19266)
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

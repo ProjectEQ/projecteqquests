@@ -10,38 +10,38 @@ sub EVENT_SAY {
   }
   if ($text=~/interested in crafting my own armor/i) {
     quest::say("Fantastic, $name, please take this Assembly Kit. You will use this kit to assemble your armor materials but first there are many [various items] you will need to collect.");
-    quest::summonitem(61092);
+    quest::summonitem(61092); # Item: Divine Protectors Assembly Kit
   }
   if ($text=~/various items/i) {
     quest::say("The many items that you need to locate can be found out in the forest or here in town. When you are ready to attempt a specific piece please let me know what piece you wish to [craft] and I will give you the necessary mold along with the recipe. I have the recipe for Divine Protector [Helms], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets] and [Breastplates].");
   }
   if ($text=~/helm/i) {
     quest::say("To create your helm material you will need to combine 2 Bricks of Crude Bronze, 1 Rat Tooth, 1 Fire Beetle Eye and 1 Water Flask in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Helm.");
-    quest::summonitem(38911);
+    quest::summonitem(38911); # Item: Mold for Erudian Helms
   }
   if ($text=~/bracer/i) {
     quest::say("To create your bracer material you will need to combine 1 Brick of Crude Bronze, 2 Snake Eggs, 1 Spiderling Leg and 1 Raw Bamboo in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Bracer.");
-    quest::summonitem(38907);
+    quest::summonitem(38907); # Item: Mold for Erudian Wristguards
   }
   if ($text=~/armguard/i) {
     quest::say("To create your armguard material you will need to combine 2 Bricks of Crude Bronze, 2 Fish Scales, 1 Fire Beetle Leg and 1 Bottle in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Armguards.");
-    quest::summonitem(38908);
+    quest::summonitem(38908); # Item: Mold for Erudian Sleeves
   }
   if ($text=~/boot/i) {
     quest::say("To create your boot material you will need to combine 3 Bricks of Crude Bronze, 1 Kobold Skull, 1 Rat Eye and 1 Short Ale in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Boots.");
-    quest::summonitem(38910);
+    quest::summonitem(38910); # Item: Mold for Erudian Boots
   }
   if ($text=~/greave/i) {
     quest::say("To create your greaves material you will need to combine 4 Bricks of Crude Bronze, 2 Rat Teeth, 1 Kobold Head and 1 White Wine in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Greaves.");
-    quest::summonitem(38913);
+    quest::summonitem(38913); # Item: Mold for Erudian Leggings
   }
   if ($text=~/gauntlet/i) {
     quest::say("To create your gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Snake Bile, 1 Skunk Scent Gland and 1 Bottle of Kalish in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Gauntlets.");
-    quest::summonitem(38909);
+    quest::summonitem(38909); # Item: Mold for Erudian Gloves
   }
   if ($text=~/breastplate/i) {
     quest::say("To create your breastplate material you will need to combine 5 Bricks of Crude Bronze, 1 Giant Wood Spider Thorax, 1 Spider Venom, 1 Large Briar Snake Skin, 1 Skeleton Tibia, 1 Skunk Tail in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Breastplate. Return to me for one [final task] after you have completed your breastplate.");
-    quest::summonitem(38912);
+    quest::summonitem(38912); # Item: Mold for Erudian Chestplates
   }
   if ($text=~/final task/i) {
     quest::say("We have been seeking someone to carry a weapon that we wish to provide all new clerics with. I do not trust simply anyone to have the first one but you have shown to me that you are willing to assist our house. If you collect a few [specific things] I will present you with the magical staff that I speak of.");
@@ -53,7 +53,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 63125 => 1, 13825 => 1, 9131 => 1, 19864 => 1)) {
-    quest::summonitem(61097);
+    quest::summonitem(61097); # Item: Staff of the Divine Protector
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Cleric');

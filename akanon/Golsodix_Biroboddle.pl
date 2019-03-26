@@ -13,7 +13,7 @@ sub EVENT_SAY {
   }
   elsif($text=~/overtaken/i) {
     quest::say("I do not remember that much from the incident, it happened ever so fast. I do remember how there were many trolls that chanted Glory to the Rok! repeatedly. Perhaps this will aid you in your search. Please return to me with some good news. And please give this clockwork eye to Xoomix should you find him alive, I imagine it will lift his spirits. We used to collect them as children.");
-   quest::summonitem(21979);
+   quest::summonitem(21979); # Item: Clockwork Eye
   }
   else {
     quest::emote("stares at you.");
@@ -23,7 +23,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 219847 => 1)) {
     quest::say("A contraption from Xoomix! I knew he was still alive. This also says that he needs his gearbox to make his compass so he can return home. I must have it here somewhere let me take a look. Ah, here it is. Please take this to Xoomix so he can return home and thank you for all your kind deeds to help a lost gnome. Brell certainly smiles down upon you!");
-    quest::summonitem(21985);
+    quest::summonitem(21985); # Item: Xoomix's Gearbox
   }
   plugin::return_items(\%itemcount);
 }

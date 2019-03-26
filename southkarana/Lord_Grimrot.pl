@@ -16,13 +16,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12137 => 1)) {
     quest::say("The head for my commander. Let us see. I have a body ready for it. There. Hahahaha!! As for your fine work, take this. Also, I believe you can help me find my beloved [Arlena].");
-    quest::faction(221, 15);
-    quest::faction(262, -2);
-    quest::faction(296, 1);
-    quest::faction(341, -3);
-    quest::faction(230, 1);
+    quest::faction(221, 15); # Faction: Bloodsabers
+    quest::faction(262, -2); # Faction: Guards of Qeynos
+    quest::faction(296, 1); # Faction: Opal Darkbriar
+    quest::faction(341, -3); # Faction: Priests of Life
+    quest::faction(230, 1); # Faction: Corrupt Qeynos Guards
     quest::givecash(0, 0, 7, 0);
-    quest::summonitem(plugin::RandomRange(2137, 2148));
+    quest::summonitem(plugin::RandomRange(2137, 2148)); # Item: Raw-hide Skullcap
   }
 }
 #END of FILE Zone:southkarana  ID:3312 -- Lord_Grimrot

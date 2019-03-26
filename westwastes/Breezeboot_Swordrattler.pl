@@ -12,7 +12,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 27264 => 1, 27263 => 1, 27262 => 1)) {
-    quest::summonitem(27310);
+    quest::summonitem(27310); # Item: Breezeboot's Frigid Gnasher
     quest::exp(60000);
   }
   plugin::return_items(\%itemcount);

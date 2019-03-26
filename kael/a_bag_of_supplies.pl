@@ -3,7 +3,7 @@
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24860 => 1, 24861 => 1)) {
-    quest::summonitem(22855);
+    quest::summonitem(22855); # Item: Pile of Rubble
     quest::selfcast(1644); #pillar of fire
     quest::depop_withtimer();
   }

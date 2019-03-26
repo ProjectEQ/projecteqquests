@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     if($itemcount{$i}) {
 	  my $c = $itemcount{$i};
       if (plugin::check_handin(\%itemcount, $i => $c )) {
-        quest::faction( 1770,5 * $c );
+        quest::faction( 1770,5 * $c ); # Faction: Yunjo Slave Resistance
         quest::exp(100000 * $c );
         $counter += $c;
       }

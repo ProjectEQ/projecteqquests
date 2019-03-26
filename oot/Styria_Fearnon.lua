@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("Go and seek them out. They are on a nearby island. You will have to swim if you have no boat. Each pirate wears the pirate earring of the Pirates of Gunthak. I shall reward you for each earring you return to me. They have also stolen the Bracers of Erollisi from us. Their leader may have the pair. Return it to me and I shall be very appreciative.");
 	elseif(e.message:findi("sentry xyrin")) then
 		e.self:Say("What? Why are you so concerned for Sentry Xyrin? She returned to Freeport last night right before.. Oh!! Oh, dear!! Right before the storm hit. If she did not make it back to Freeport. I fear she has drowned or is shipwrecked upon one of the nearby islands!! You must find her!");
-		eq.unique_spawn(69132,0,0,-7332,-612,1,180);
+		eq.unique_spawn(69132,0,0,-7332,-612,1,180); -- NPC: Sentry_Xyrin
 	end
 end
 
@@ -16,7 +16,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13337})) then -- Bracers of Erollisi 
 		e.self:Say("Good work. I see you have removed that retchid pirate from here.");
-		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340));
+		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340)); -- Item(s): Aviak Feather (13339), Conch Shell (13342), Fishing Spear (7017), Kiola Nut (13340)
 		e.other:Ding();
 		e.other:Faction(246,5,0); -- Faydarks Champoins
 		e.other:Faction(279,5,0); -- King Tearis Thex
@@ -27,7 +27,7 @@ function event_trade(e)
 		e.other:GiveCash(0,5,5,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13336})) then -- Pirate Earrings
 		e.self:Say("Good work. I see you have removed that retchid pirate from here.");
-		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340));
+		e.other:SummonItem(eq.ChooseRandom(13339,13342,7017,13340)); -- Item(s): Aviak Feather (13339), Conch Shell (13342), Fishing Spear (7017), Kiola Nut (13340)
 		e.other:Ding();
 		e.other:Faction(246,5,0); -- Faydarks Champoins
 		e.other:Faction(279,5,0); -- King Tearis Thex

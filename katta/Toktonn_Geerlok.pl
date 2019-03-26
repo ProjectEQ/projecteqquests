@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 2695 => 4)) {
     quest::say("Excellent! Soon the grimlings may be coerced into being less stingy with their precious ore!");
-    quest::summonitem(31727);
+    quest::summonitem(31727); # Item: Industria Acrylia War Pick
     quest::exp(10000);
     quest::faction(1561,10); #concillium universus
     quest::faction(1483,-30); #seru

@@ -1,5 +1,5 @@
 sub EVENT_DEATH_COMPLETE {
-	quest::signalwith(162255,1,0);
+	quest::signalwith(162255,1,0); # NPC: #cursed_controller
 	quest::setglobal("glyphed_dead",1,3,"D3");
 }
 

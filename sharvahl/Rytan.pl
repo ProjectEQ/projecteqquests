@@ -52,7 +52,7 @@ quest::say("Here are the three darts I promised you and a seal of mine.
 }
 
 if(plugin::check_handin(\%itemcount,3464=>4)){
-quest::summonitem(3467);
+quest::summonitem(3467); # Item: Xakra Dart Crafting Tool
 quest::exp(1000);
 quest::say("I thank you for your continued assistance, $name. Here is a fletching tool that will enable
  you to fashion xakra tooth darts. You will first need to acquire a grimling skeletal femur and place it
@@ -62,8 +62,8 @@ quest::say("I thank you for your continued assistance, $name. Here is a fletchin
 }
 
 if(plugin::check_handin(\%itemcount,3467=>1)){
-quest::summonitem(3467);
-quest::summonitem(3471);
+quest::summonitem(3467); # Item: Xakra Dart Crafting Tool
+quest::summonitem(3471); # Item: Crafting Tool Shaft Attachment
 quest::say("I assume you are ready to make more challenging darts. Very well, attach this shaft to your
  crafting tool in a fletching kit and you will be able to make grimling fang darts. Keep in mind that
 once this is done you will lose the ability to craft xakra tooth darts. When the grimling fang darts become
@@ -80,8 +80,8 @@ quest::say("Your skill is increasing rapidly, $name. Here is a hook to place on 
 }
 
 if(plugin::check_handin(\%itemcount,3474=>1)){
-quest::summonitem(3474);
-quest::summonitem(3477);
+quest::summonitem(3474); # Item: Rockhopper Dart Crafting Tool
+quest::summonitem(3477); # Item: Crafting Tool Handle Attachment
 quest::say("Here is a special handle to attach to your crafting tool. This is the final improvement
 to your tool and will enable you to craft owlbear feather darts. These darts are superior to even the
  rockhopper darts and are magical. Take your modified tool and combine it with an owlbear feather in your

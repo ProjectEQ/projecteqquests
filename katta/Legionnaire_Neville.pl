@@ -25,15 +25,15 @@ if(plugin::check_handin(\%itemcount,31772=>1)){
    quest::say("Thanks! $name, I hope this does the trick.");
    quest::ding();
    quest::exp(2000);
-   quest::faction(1503, 10);
-   quest::faction(1502, 10);
-   quest::faction(1504, 10);
-   quest::faction(1506, -10);
-   quest::faction(1485, -10);
-   quest::faction(1541, -10);
-   quest::faction(1484, -10);
-   quest::faction(316, -10);
-   quest::faction(1505, -10);
+   quest::faction(1503, 10); # Faction: Validus Custodus
+   quest::faction(1502, 10); # Faction: Katta Castellum Citizens
+   quest::faction(1504, 10); # Faction: Magus Conlegium
+   quest::faction(1506, -10); # Faction: Coterie of the Eternal Night
+   quest::faction(1485, -10); # Faction: Eye of Seru
+   quest::faction(1541, -10); # Faction: Hand Legionnaries
+   quest::faction(1484, -10); # Faction: Hand of Seru
+   quest::faction(316, -10); # Faction: Tunare's Scouts
+   quest::faction(1505, -10); # Faction: Nathyn Illuminious
 }
 }
 

@@ -50,11 +50,11 @@ sub EVENT_ITEM {
 
    if($platinum>=2000) {
      quest::say("Very well, $name. Take this gem to a master jeweler and return it to me with the other three items.");
-     quest::summonitem(10191);
+     quest::summonitem(10191); # Item: Uncut Hyacinth
    }
    elsif(plugin::check_handin(\%itemcount,10192=>1,10147=>1,10218=>1,10196=>1)) {
      quest::say("You are quite cunning. After I fashion this telesm, take it back to Xenyari. She would 'enjoy' another 'gift,' eh?");
-     quest::summonitem(10193);
+     quest::summonitem(10193); # Item: Faceted Hyacinth Telesm
    }
    elsif(plugin::check_handin(\%itemcount,10194=>1)) {
      quest::emote("laughs heartily and whispers to you, 'Well done, worm, your servitude to my will has now expired...'");
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
    }
    elsif(plugin::check_handin(\%itemcount,10197=>1)) {
      quest::say("Oh! Umm... Well, I was just playing with you. Certainly you know I was joking! We had a deal and I will abide by the terms of our agreement. Here is my payment for your services. Bye..");
-     quest::summonitem(15692);
+     quest::summonitem(15692); # Item: Spell: Life Leech
      quest::exp(25000);
    }
    plugin::return_items(\%itemcount);

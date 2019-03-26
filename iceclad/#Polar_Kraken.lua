@@ -17,7 +17,7 @@ function event_timer(e)
 		eq.depop_all(110132);
 		eq.depop();
 	elseif e.timer=="blind" then
-		e.self:CastSpell(5597,e.self:GetHateRandom():GetID());
+		e.self:CastSpell(5597,e.self:GetHateRandom():GetID()); -- Spell: Squid's Ink
 	elseif e.timer=="adds" then
 		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
 		eq.spawn2(110132, 0, 0, e.self:GetX()+30, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);

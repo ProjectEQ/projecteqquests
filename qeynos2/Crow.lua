@@ -13,7 +13,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 17600})) then
 		e.self:Say("What are you? The Rat's new bag man? Peh, he is useless. That bum drinks any gold he gets. Here ya go, kid!");
 		e.other:Ding();
-		e.other:SummonItem(13901);
+		e.other:SummonItem(13901); -- Item: Crow's Special Brew
 		e.other:Faction(223,10,0); -- +Circle of Unseen Hands
 		e.other:Faction(291,-10,0); -- -Merchants of Qeynos
 		e.other:Faction(230,10,0); -- Corrupt Qeynos Guards
@@ -31,10 +31,10 @@ function event_signal(e)
 
 	if(e.signal == 1) then
 		e.self:Say("You ok Sabs?");
-		eq.signal(2083, 2);
+		eq.signal(2083, 2); -- NPC: Sabnie_Blagard General Supplies
 	elseif(e.signal == 2) then
 		e.self:Say("Testing one two three four");
-		eq.signal(2083,5);
+		eq.signal(2083,5); -- NPC: Sabnie_Blagard General Supplies
 	elseif(e.signal == 3) then
 		e.self:Say("Excellent. To think that he thought he could stroll in here from Highpass and take over my action. He will learn the hard way what happens to merchants who think they can operate here without our support and protection.");
 	elseif(e.signal == 4) then

@@ -9,9 +9,9 @@ function event_enter(e)
 		eq.set_global("ranger_epic_natimbi","1",2,"H2");
 		eq.set_timer("ranger_epic_depop",30*60*1000);
 		eq.load_encounter('ranger_1_5');
-		eq.spawn2(280084, 0, 0, 1600,-490,439,431.2);
-		eq.spawn2(280085, 0, 0, 1515,-455,420.2,468);
-		eq.spawn2(280086 ,0, 0, 1482,-478,420.7,494);
+		eq.spawn2(280084, 0, 0, 1600,-490,439,431.2); -- NPC: Spiritbinder_Trenzar
+		eq.spawn2(280085, 0, 0, 1515,-455,420.2,468); -- NPC: a_bound_earth_spirit
+		eq.spawn2(280086 ,0, 0, 1482,-478,420.7,494); -- NPC: a_bound_fire_spirit
 	end
 end
 

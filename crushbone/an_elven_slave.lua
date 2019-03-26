@@ -17,15 +17,15 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20020})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(275,1,0);
-			e.other:Faction(279,1,0);
+			e.other:Faction(275,1,0); -- Faction: Keepers of the Art
+			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
-			e.other:SummonItem(18901);
+			e.other:SummonItem(18901); -- Item: Ragged Cloth Note
 			e.other:AddEXP(1500);
 			eq.depop_with_timer();		
 		end
@@ -35,15 +35,15 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20021})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(275,1,0);
-			e.other:Faction(279,1,0);
+			e.other:Faction(275,1,0); -- Faction: Keepers of the Art
+			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
-			e.other:SummonItem(18902);
+			e.other:SummonItem(18902); -- Item: Torn Drawing
 			e.other:AddEXP(1500);
 			eq.depop_with_timer();		
 		end
@@ -53,16 +53,16 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20018})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(246,1,0);
-			e.other:Faction(276,1,0);
-			e.other:Faction(325,1,0);
+			e.other:Faction(246,1,0); -- Faction: Faydarks Champions
+			e.other:Faction(276,1,0); -- Faction: Kelethin Merchants
+			e.other:Faction(325,1,0); -- Faction: Merchants of Felwithe
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
-			e.other:SummonItem(18903);
+			e.other:SummonItem(18903); -- Item: Tattered Cloth Note
 			e.other:AddEXP(1500);
 			eq.depop_with_timer();		
 		end
@@ -72,16 +72,16 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20019})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(246,1,0);
-			e.other:Faction(276,1,0);
-			e.other:Faction(325,1,0);
+			e.other:Faction(246,1,0); -- Faction: Faydarks Champions
+			e.other:Faction(276,1,0); -- Faction: Kelethin Merchants
+			e.other:Faction(325,1,0); -- Faction: Merchants of Felwithe
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
-			e.other:SummonItem(18904);
+			e.other:SummonItem(18904); -- Item: Faded Wedding Cloth
 			e.other:AddEXP(1500);
 			eq.depop_with_timer();		
 		end

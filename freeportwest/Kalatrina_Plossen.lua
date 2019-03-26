@@ -27,9 +27,9 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18818})) then -- A Tattered Flier
 		e.self:Say("Zimel's Blades?! Hmmmmm. It doesn't ring a bell and the remainder of the writing is too hard to make out. It kind of looks like a list of prices. You know, down at the Office of the People they might be able to tell us if this place exists. Go speak with Rashinda. She knows all about Freeport. If [Zimel's Blades] existed, you must report back to me what happened to it.");
 		e.other:Ding();
-		e.other:Faction(330,-1,0);
-		e.other:Faction(311,1,0);
-		e.other:Faction(281,1,0);
+		e.other:Faction(330,-1,0); -- Faction: The Freeport Militia
+		e.other:Faction(311,1,0); -- Faction: Steel Warriors
+		e.other:Faction(281,1,0); -- Faction: Knights of Truth
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

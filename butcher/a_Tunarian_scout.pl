@@ -19,6 +19,6 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 54018 => 1, 54018 => 1, 54018 => 1, 54018 => 1)) {
     quest::say("Not bad at all, my friend. I believe these will prove most useful in our studies, and four less abominations to contend with.' He scrawls out some symbols that make no sense at all onto a slip of parchment. 'Take this to Tylfon in Kelethin and I believe he may show some gratitude to our cause.");
   }
-    quest::summonitem(54019);
+    quest::summonitem(54019); # Item: Encrypted Scout Note
     quest::exp(100);
 }

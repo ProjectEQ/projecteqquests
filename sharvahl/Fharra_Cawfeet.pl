@@ -17,7 +17,7 @@ sub EVENT_ITEM {
 
 if (plugin::check_handin(\%itemcount, 3495 => 1)) {
 quest::emote("looks like she has been awake for many hours. She looks up and says 'Are you here to assist me with these sick citizens? I was told that a few of our newest Dar Khura recruits might be coming to aid me. I could definitly use the help. Here, take the jar while I explain. Were you told about the [tasks] that I need help with?' The room is filled with the smell of aromatic herbs and the sweat of the feverish.");
-quest::summonitem(3495);
+quest::summonitem(3495); # Item: Treated Hopperhide Buckler
 quest::summonitem(17077); }
 
 if (plugin::check_handin(\%itemcount, 5536 => 1)) {

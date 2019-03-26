@@ -7,9 +7,9 @@ my $move;
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20450 => 1)) {
     quest::say("I see that the time has come. Take the amulet and give it to the third of our kin, Nuien. I will meet you at the gathering.");
-    quest::summonitem(20451);
+    quest::summonitem(20451); # Item: Frayed Braided Grass Amulet
     quest::unique_spawn(15167,0,0,300,-3657,3,366); #spawn nuien
-    quest::signalwith(15044,15178,0);
+    quest::signalwith(15044,15178,0); # NPC: Althele
   }
   plugin::return_items(\%itemcount);
 }
@@ -26,7 +26,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_WAYPOINT_DEPART {
   if ($move == 1) {
-    quest::spawn2(15178,0,0,-1584,-3669,-18,0);
+    quest::spawn2(15178,0,0,-1584,-3669,-18,0); # NPC: Sionae
     quest::depop();
   }
 }

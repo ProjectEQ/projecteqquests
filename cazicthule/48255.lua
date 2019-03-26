@@ -1,7 +1,7 @@
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 8723})) then
-		e.other:SummonItem(eq.ChooseRandom(8730,8728,8727,8726,8729));
+		e.other:SummonItem(eq.ChooseRandom(8730,8728,8727,8726,8729)); -- Item(s): Cogboggle's Clockwork Contraption (8730), Iron Cog Earring (8728), Rough Steel Cog Earring (8727), Tiny Gear Shaped Earring (8726), Shiny Cog Earring (8729)
 		e.self:Emote("begins to cast a spell. Gimlik says, 'Well, you've got a good eye on you for being so daft. Thank you for returning my quill. Take care!' Gimlik gates.");
 		eq.depop();
 	end

@@ -9,16 +9,16 @@ if ($text=~/Hail/i){
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount,59505=> 1)){
-    quest::summonitem(21820);
+    quest::summonitem(21820); # Item: Bag of Platinum Pieces
 }
   elsif(plugin::check_handin(\%itemcount,59506=> 1)){
-    quest::summonitem(21821);
+    quest::summonitem(21821); # Item: Heavy Bag of Platinum
 }
   elsif(plugin::check_handin(\%itemcount,59507=> 1)){
-    quest::summonitem(21822);
+    quest::summonitem(21822); # Item: Big Bag of Platinum
 }
   elsif(plugin::check_handin(\%itemcount,59508=> 1)){
-    quest::summonitem(21823);
+    quest::summonitem(21823); # Item: Huge Bag of Platinum
 }
   plugin::return_items(\%itemcount);
 }

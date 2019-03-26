@@ -6,14 +6,14 @@ sub EVENT_SAY {
   }
   else {
     if (defined($qglobals{amote}) && ($qglobals{amote} == 2)) { #Emote spawnwer "Vast"
-      quest::spawn2(189119,0,0,-126.0,-295.8,3.0,249.6);
+      quest::spawn2(189119,0,0,-126.0,-295.8,3.0,249.6); # NPC: _
     }
     if (defined($qglobals{bmote}) && ($qglobals{bmote} == 2)) { #Emote spawner "Screams"
-      quest::spawn2(189120,0,0,-385.2,-516.3,-39.3,270.2);
+      quest::spawn2(189120,0,0,-385.2,-516.3,-39.3,270.2); # NPC: _
     }
     if ($text=~/hail/i) {
       if(quest::istaskactivityactive(22,2)) {
-        quest::summonitem(54224);
+        quest::summonitem(54224); # Item: Stitched Burlap Sleeves
       }
       quest::say("I'm glad you managed to escape the slave warrens in one piece. There are many [others] who were not as lucky. Here, take this burlap armor. It's not much, but it should keep you safe");
       quest::popup("Equipping Armor", "Vahlara has offered you a piece of burlap armor to keep you safe.

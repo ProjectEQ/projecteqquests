@@ -29,27 +29,27 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4492 => 1, 4850 => 1, 4858 => 1, 4859 => 1)) { #cloak
-     quest::summonitem(3744);
+     quest::summonitem(3744); # Item: Cloak of the Holy Rite
      quest::exp(10000);    
   }
    if (plugin::check_handin(\%itemcount, 4493 => 1, 4860 => 1, 4868 => 1)) { #gaunts
-     quest::summonitem(3745);
+     quest::summonitem(3745); # Item: Gauntlets of the Holy Rite
      quest::exp(10000);    
   }
    if (plugin::check_handin(\%itemcount, 4488 => 1, 4878 => 1, 4879 => 1, 4880 => 1)) { #girdle
-     quest::summonitem(3747);
+     quest::summonitem(3747); # Item: Girdle of the Holy Rite
      quest::exp(10000);    
   }
    if (plugin::check_handin(\%itemcount, 4489 => 1, 4888 => 1, 4889 => 1, 4890 => 1)) { #hammer
-     quest::summonitem(3748);
+     quest::summonitem(3748); # Item: Grand Hammer of the Holy Rite
      quest::exp(10000);    
   }
    if (plugin::check_handin(\%itemcount, 4491 => 1, 4848 => 1, 4849 => 1)) { #mask
-     quest::summonitem(3743);
+     quest::summonitem(3743); # Item: Mask of the Holy Rite
      quest::exp(10000);    
   }
    if (plugin::check_handin(\%itemcount, 4494 => 1, 4869 => 1, 4870 => 1)) { #talisman
-     quest::summonitem(3746);
+     quest::summonitem(3746); # Item: Talisman of the Holy Rite
      quest::exp(10000);    
   }
   plugin::return_items(\%itemcount);

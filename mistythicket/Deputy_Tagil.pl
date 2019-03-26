@@ -11,7 +11,7 @@ sub EVENT_COMBAT {
 sub EVENT_ITEM { 
   if(plugin::check_handin(\%itemcount, 18013 => 1)){
     quest::say("What's this? Oh dear. I am very sorry. Please take this to Uner with my apologies.");
-    quest::summonitem(13240);
+    quest::summonitem(13240); # Item: Deputy Tagil's Payment
   }
   plugin::return_items(\%itemcount);
 }

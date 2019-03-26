@@ -61,74 +61,74 @@ sub EVENT_TIMER {
 		quest::depopall(20258);
 		quest::depopall(20274);
 		quest::depopall(20262);		
-		quest::spawn2(20266,0,0,-151,976,7.5,430);
-		quest::spawn2(20266,0,0,-161,976,7.5,430);
-		quest::spawn2(20266,0,0,-131,976,7.5,430);
-		quest::spawn2(20266,0,0,-121,976,7.5,430);
-		quest::spawn2(20267,0,0,-151,986,7.5,430);
-		quest::spawn2(20267,0,0,-161,986,7.5,430);
-		quest::spawn2(20267,0,0,-131,986,7.5,430);
-		quest::spawn2(20267,0,0,-121,986,7.5,430);
+		quest::spawn2(20266,0,0,-151,976,7.5,430); # NPC: ##a_Ghost
+		quest::spawn2(20266,0,0,-161,976,7.5,430); # NPC: ##a_Ghost
+		quest::spawn2(20266,0,0,-131,976,7.5,430); # NPC: ##a_Ghost
+		quest::spawn2(20266,0,0,-121,976,7.5,430); # NPC: ##a_Ghost
+		quest::spawn2(20267,0,0,-151,986,7.5,430); # NPC: ##a_Spook
+		quest::spawn2(20267,0,0,-161,986,7.5,430); # NPC: ##a_Spook
+		quest::spawn2(20267,0,0,-131,986,7.5,430); # NPC: ##a_Spook
+		quest::spawn2(20267,0,0,-121,986,7.5,430); # NPC: ##a_Spook
 		quest::spawn2(20257,0,0,-141,976,7.5,430); #Casper
 	}
 	if ($timer == 3) {
 		quest::stoptimer(3);
-		quest::spawn2(20269,0,0,-243,1500,-14,379.2);
-		quest::spawn2(20269,0,0,-233,1500,-14,379.2);
-		quest::spawn2(20269,0,0,-263,1500,-14,379.2);
-		quest::spawn2(20269,0,0,-273,1500,-14,379.2);
-		quest::spawn2(20268,0,0,-243,1510,-14,379.2);
-		quest::spawn2(20268,0,0,-233,1510,-14,379.2);
-		quest::spawn2(20268,0,0,-263,1510,-14,379.2);
-		quest::spawn2(20268,0,0,-273,1510,-14,379.2);
+		quest::spawn2(20269,0,0,-243,1500,-14,379.2); # NPC: ##an_Imp
+		quest::spawn2(20269,0,0,-233,1500,-14,379.2); # NPC: ##an_Imp
+		quest::spawn2(20269,0,0,-263,1500,-14,379.2); # NPC: ##an_Imp
+		quest::spawn2(20269,0,0,-273,1500,-14,379.2); # NPC: ##an_Imp
+		quest::spawn2(20268,0,0,-243,1510,-14,379.2); # NPC: ##a_Little_Demon
+		quest::spawn2(20268,0,0,-233,1510,-14,379.2); # NPC: ##a_Little_Demon
+		quest::spawn2(20268,0,0,-263,1510,-14,379.2); # NPC: ##a_Little_Demon
+		quest::spawn2(20268,0,0,-273,1510,-14,379.2); # NPC: ##a_Little_Demon
 		quest::spawn2(20256,0,0,-233,1500,-14,379.2); #Captain_Scareyface
 	}
 	if ($timer == 4) {
 		quest::stoptimer(4);
-		quest::spawn2(20265,0,0,-151,976,7.5,430);
-		quest::spawn2(20265,0,0,-161,976,7.5,430);
-		quest::spawn2(20265,0,0,-131,976,7.5,430);
-		quest::spawn2(20265,0,0,-121,976,7.5,430);
-		quest::spawn2(20264,0,0,-151,986,7.5,430);
-		quest::spawn2(20264,0,0,-161,986,7.5,430);
-		quest::spawn2(20264,0,0,-131,986,7.5,430);
-		quest::spawn2(20264,0,0,-121,986,7.5,430);	
+		quest::spawn2(20265,0,0,-151,976,7.5,430); # NPC: ##a_Werewolf_with_Rabies
+		quest::spawn2(20265,0,0,-161,976,7.5,430); # NPC: ##a_Werewolf_with_Rabies
+		quest::spawn2(20265,0,0,-131,976,7.5,430); # NPC: ##a_Werewolf_with_Rabies
+		quest::spawn2(20265,0,0,-121,976,7.5,430); # NPC: ##a_Werewolf_with_Rabies
+		quest::spawn2(20264,0,0,-151,986,7.5,430); # NPC: ##a_Bat_with_Herpes
+		quest::spawn2(20264,0,0,-161,986,7.5,430); # NPC: ##a_Bat_with_Herpes
+		quest::spawn2(20264,0,0,-131,986,7.5,430); # NPC: ##a_Bat_with_Herpes
+		quest::spawn2(20264,0,0,-121,986,7.5,430); # NPC: ##a_Bat_with_Herpes	
 		quest::spawn2(20255,0,0,-141,976,7.5,430); #Booberella
 	}
 	if ($timer == 5) {
 		quest::stoptimer(5);
-		quest::spawn2(20272,0,0,-151,976,7.5,430);
-		quest::spawn2(20272,0,0,-161,976,7.5,430);
-		quest::spawn2(20272,0,0,-131,976,7.5,430);
-		quest::spawn2(20272,0,0,-121,976,7.5,430);
-		quest::spawn2(20273,0,0,-151,986,7.5,430);
-		quest::spawn2(20273,0,0,-161,986,7.5,430);
-		quest::spawn2(20273,0,0,-131,986,7.5,430);
-		quest::spawn2(20273,0,0,-121,986,7.5,430);
+		quest::spawn2(20272,0,0,-151,976,7.5,430); # NPC: ##a_Zombie
+		quest::spawn2(20272,0,0,-161,976,7.5,430); # NPC: ##a_Zombie
+		quest::spawn2(20272,0,0,-131,976,7.5,430); # NPC: ##a_Zombie
+		quest::spawn2(20272,0,0,-121,976,7.5,430); # NPC: ##a_Zombie
+		quest::spawn2(20273,0,0,-151,986,7.5,430); # NPC: ##a_Xombie
+		quest::spawn2(20273,0,0,-161,986,7.5,430); # NPC: ##a_Xombie
+		quest::spawn2(20273,0,0,-131,986,7.5,430); # NPC: ##a_Xombie
+		quest::spawn2(20273,0,0,-121,986,7.5,430); # NPC: ##a_Xombie
 		quest::spawn2(20261,0,0,-141,976,7.5,430); #Solomon_Grundy
 	}
 	if ($timer == 6) {
 		quest::stoptimer(6);
-		quest::spawn2(20270,0,0,-243,1500,-14,379.2);
-		quest::spawn2(20270,0,0,-233,1500,-14,379.2);
-		quest::spawn2(20270,0,0,-263,1500,-14,379.2);
-		quest::spawn2(20270,0,0,-273,1500,-14,379.2);
-		quest::spawn2(20271,0,0,-243,1510,-14,379.2);
-		quest::spawn2(20271,0,0,-233,1510,-14,379.2);
-		quest::spawn2(20271,0,0,-263,1510,-14,379.2);
-		quest::spawn2(20271,0,0,-273,1510,-14,379.2);
+		quest::spawn2(20270,0,0,-243,1500,-14,379.2); # NPC: ##a_Vampire
+		quest::spawn2(20270,0,0,-233,1500,-14,379.2); # NPC: ##a_Vampire
+		quest::spawn2(20270,0,0,-263,1500,-14,379.2); # NPC: ##a_Vampire
+		quest::spawn2(20270,0,0,-273,1500,-14,379.2); # NPC: ##a_Vampire
+		quest::spawn2(20271,0,0,-243,1510,-14,379.2); # NPC: ##a_Vampire_Bat
+		quest::spawn2(20271,0,0,-233,1510,-14,379.2); # NPC: ##a_Vampire_Bat
+		quest::spawn2(20271,0,0,-263,1510,-14,379.2); # NPC: ##a_Vampire_Bat
+		quest::spawn2(20271,0,0,-273,1510,-14,379.2); # NPC: ##a_Vampire_Bat
 		quest::spawn2(20258,0,0,-233,1500,-14,379.2); #Count_Alucard
 	}
 	if ($timer == 7) {
 		quest::stoptimer(7);
-		quest::spawn2(20274,0,0,-243,1500,-14,379.2);
-		quest::spawn2(20274,0,0,-233,1500,-14,379.2);
-		quest::spawn2(20274,0,0,-263,1500,-14,379.2);
-		quest::spawn2(20274,0,0,-273,1500,-14,379.2);
-		quest::spawn2(20274,0,0,-243,1510,-14,379.2);
-		quest::spawn2(20274,0,0,-233,1510,-14,379.2);
-		quest::spawn2(20274,0,0,-263,1510,-14,379.2);
-		quest::spawn2(20274,0,0,-273,1510,-14,379.2);
+		quest::spawn2(20274,0,0,-243,1500,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-233,1500,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-263,1500,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-273,1500,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-243,1510,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-233,1510,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-263,1510,-14,379.2); # NPC: ##Soldier_of_the_Damned
+		quest::spawn2(20274,0,0,-273,1510,-14,379.2); # NPC: ##Soldier_of_the_Damned
 		quest::spawn2(20262,0,0,-233,1500,-14,379.2); #The_Great_Pumpkin
 	}
 	if ($timer == 8) {

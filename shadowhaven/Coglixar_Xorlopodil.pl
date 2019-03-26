@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/mining operation/i) {
     quest::say("In the Paludal caverns our workers are starting to get very low on rations and are working with very old and tarnished mining utensils. I need you to deliver these rations to Daesorak first and then see what supplies he thinks they need. He is the one overseeing the operation and will be able to tell you what supplies he needs and what quanity is necessary.");
-    quest::summonitem(4747);
+    quest::summonitem(4747); # Item: Bag of Rations
   }
 }
 

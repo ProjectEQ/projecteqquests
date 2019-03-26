@@ -22,7 +22,7 @@ sub EVENT_SAY {
    elsif ($text=~/trades/i) {
       if ($faction <= 7) {
          quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-         quest::summonitem(51121);
+         quest::summonitem(51121); # Item: Tradeskill Basics : Volume I
       }
       else {
          quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
@@ -31,7 +31,7 @@ sub EVENT_SAY {
    elsif ($text=~/second book/i) {
       if ($faction <= 7) {
          quest::say("Here is the second volume of the book you requested, may it serve you well!");
-         quest::summonitem(51122);
+         quest::summonitem(51122); # Item: Tradeskill Basics : Volume II
       }
       else {
          quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
@@ -66,19 +66,19 @@ sub EVENT_ITEM {
    elsif (plugin::check_handin(\%itemcount, 54019 => 1)) {
       quest::emote("scans the note and sizes you up with a look.");
       quest::say("Very well then, I thank you for assisting us. You have shown great bravery in aiding in this mission. Keep this as a symbol of our friendship.");
-      quest::summonitem(54022);
+      quest::summonitem(54022); # Item: Scout's Mask
       quest::exp(100); 
    }
    elsif (($gold >= 2) && (plugin::check_handin(\%itemcount, 7007 => 1))) {
       quest::say("Well, well. I didn't think you could do it. Here's your cut and don't be surprised that it's not much because it's your first lesson. Remember. the smaller the operation. the bigger the share, and the richest rogues have the tightest lips.");
       quest::summonitem("7021");
       quest::givecash("0","5","0","0");
-      quest::faction(316,5);
+      quest::faction(316,5); # Faction: Tunare's Scouts
       quest::exp(100);
    }
    elsif (plugin::check_handin(\%itemcount,  13322=> 1)) {
       quest::say("Excellent job, $name, we will turn you into a rogue of Tunare yet.  Here this is for your trouble.");
-      quest::summonitem(3315);
+      quest::summonitem(3315); # Item: Silvermesh Leggings
    }
    
    #do all other handins first with plugin, then let it do disciplines

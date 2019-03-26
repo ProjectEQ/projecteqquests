@@ -5,14 +5,14 @@ sub EVENT_SAY {
 			quest::say("Hahaha your tracking device should work again now! You want to find my brother, Mortimer next.");
 			quest::updatetaskactivity(222,11);
 			if($qglobals{halloween_ratter_complete} < 11){
-				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),10);
+				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),10); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete",11,5,"D30");
 			}
 			if($qglobals{halloween_ratter_complete} > 10){
 				$client->Message(0, "You have already claimed a reward for this activity or a higher and do not qualify for another.");
 			}
 			if($qglobals{halloween_ratter_complete_pvp} < 11 && $pcpvp == 1){
-				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),10);
+				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),10); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete_pvp",11,5,"D30");
 			}
 			if(qglobals{halloween_ratter_complete_pvp} > 10 && $pcpvp == 1){

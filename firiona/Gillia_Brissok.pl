@@ -8,7 +8,7 @@ quest::say("For justice to be brought to them you will need to strike at some of
  }
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 62093=> 1, 62092=> 3)){
-quest::summonitem(62202);
+quest::summonitem(62202); # Item: Copper Medal of Rapture
 }
 plugin::return_items(\%itemcount); # return unused items
  }

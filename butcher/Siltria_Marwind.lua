@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("The League of Antonican Bards has a courier system made up of travelers, adventurers, and agents.  We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices.  Are you [interested]?");
 	elseif(e.message:findi("deliver kelethin")) then
 		e.self:Say("Take this letter to Jakum Webdancer. You can find him at the bard guild hall. I'm sure he will compensate you for your trouble.");
-		e.other:SummonItem(18160);
+		e.other:SummonItem(18160); -- Item: Bardic Letter (Kelethin)
 	end
 
 end

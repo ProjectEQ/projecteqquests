@@ -21,19 +21,19 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12283 => 1, 12284 => 1, 13921 => 2)) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem(3140);
+    quest::summonitem(3140); # Item: Darkforge Helm
   }
   elsif(plugin::check_handin(\%itemcount, 12285 => 1, 12286 => 1, 16507 => 2)) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem(3141);
+    quest::summonitem(3141); # Item: Darkforge Breastplate
   }
   elsif(plugin::check_handin(\%itemcount, 12288 => 1, 12287 => 1, 9023 => 1)) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem(3142);
+    quest::summonitem(3142); # Item: Darkforge Vambraces
   }
   elsif(plugin::check_handin(\%itemcount, 12290 => 1, 12289 => 1, 19075 => 1)) {
     quest::say("Well done, $name, here is your reward.");
-    quest::summonitem(3143);
+    quest::summonitem(3143); # Item: Darkforge Bracer
   }
   else {
     if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {

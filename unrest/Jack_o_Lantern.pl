@@ -9,6 +9,6 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::shout("GAH! I've been bested! No matter, you will not defeat the next!");
-	quest::spawn2(63100,0,0,206,850,3.1,281);
+	quest::spawn2(63100,0,0,206,850,3.1,281); # NPC: Imp-ossible
         quest::stoptimer(1);
 }

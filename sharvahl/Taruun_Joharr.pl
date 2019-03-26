@@ -16,9 +16,9 @@ if(plugin::check_handin(\%itemcount,3466=>1)){
  anyway. I'll do what I can to train you from here, but I'm going to need to eat first. It's been
  a while since my last meal. Take this meal voucher to Cook Yalkiin. Once they fill the order bring
  it back and we'll start your lesson. Now scoot.");
-   quest::summonitem(5560);
-   quest::summonitem(5561);
-   quest::summonitem(5559);
+   quest::summonitem(5560); # Item: Black Handled Dagger
+   quest::summonitem(5561); # Item: Black Handled Dagger
+   quest::summonitem(5559); # Item: Meal Voucher
 }
 
 if(plugin::check_handin(\%itemcount,5563=>1)){
@@ -29,10 +29,10 @@ if(plugin::check_handin(\%itemcount,5563=>1)){
  you were away. He stated that I, well... you... need to go scout the caves around the thicket.
  Gather the skulls of any Shak Dratha that you may... um... run into while you scout. Once you've
  filled this backpack, return it to me and I'll fill out a report for Ternq.");
-   quest::summonitem(17607);
+   quest::summonitem(17607); # Item: Worn Scoutpack
    quest::ding();
    quest::exp(1250);
-   quest::faction(1530,10);
+   quest::faction(1530,10); # Faction: Taruun
 }
 
 if(plugin::check_handin(\%itemcount,5568=>1)){
@@ -41,10 +41,10 @@ if(plugin::check_handin(\%itemcount,5568=>1)){
  Your skill as a hunter is really starting to show. You can keep the daggers that I gave you. Make
  good use of them. I'm sure that you're going to be too busy to come back this way for a bit. Take
  care.");
-   quest::summonitem(5564);
+   quest::summonitem(5564); # Item: Regional Status Report
    quest::ding();
    quest::exp(1500);
-   quest::faction(1530,10);
+   quest::faction(1530,10); # Faction: Taruun
 }
 plugin::return_items(\%itemcount);
 }

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 29860 => 1, 7810 => 1)) {
     quest::say("This is astounding, I find myself at a loss for words. You have done Katta a great justice, Sanctus Seru will never be the same now that the truth is known. Their leader has fallen.");
-    quest::summonitem(29861);
+    quest::summonitem(29861); # Item: Sigil Earring of Veracity
     quest::faction(1561,50); #concillium universus
     quest::faction(1483,-200); #seru
     quest::faction(1486,-200); #heart of seru

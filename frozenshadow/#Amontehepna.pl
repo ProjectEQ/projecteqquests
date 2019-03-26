@@ -3,7 +3,7 @@
 #Angelox
 
 sub EVENT_DEATH_COMPLETE{
-quest::unique_spawn(111163,0,0,200.0,978.0,186.60);
+quest::unique_spawn(111163,0,0,200.0,978.0,186.60); # NPC: #Cara_Omica
 quest::delglobal("omica");
 quest::setglobal("omica",3,3,"F");
  $omica=undef;

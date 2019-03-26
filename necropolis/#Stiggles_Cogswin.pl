@@ -13,7 +13,7 @@ sub EVENT_HP {
         my $z = $npc->GetZ();
         my $h = $npc->GetHeading();
     if($hpevent == 50) {
-      quest::spawn2(123151,0,0,$x,$y,$z,$h);
+      quest::spawn2(123151,0,0,$x,$y,$z,$h); # NPC: Stiggles_Cogswin
       quest::depop();         
 
 } 

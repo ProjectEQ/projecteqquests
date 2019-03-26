@@ -1,6 +1,6 @@
 function event_death_complete(e)
 	-- send a signal to the #water_trigger that I died
-	eq.signal(223172,1);
+	eq.signal(223172,1); -- NPC: phase_one_water
 end
 
 function event_spawn(e)
@@ -14,12 +14,12 @@ function event_hp(e)
 	local heading = e.self:GetHeading();
 	if (e.hp_event == 91) then
 		-- spawn 2 a_deepwater_triloun
-		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc + 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc - 15,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc + 15,zloc,heading); -- NPC(s): a_deepwater_triloun (223100), a_deepwater_triloun (223115)
+		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_deepwater_triloun (223100), a_deepwater_triloun (223115)
 		eq.set_next_hp_event(51);
 	elseif (e.hp_event == 51) then
 		-- spawn 2 a_deepwater_triloun
-		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc + 15,zloc,heading);
-		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc - 15,zloc,heading);
+		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc + 15,zloc,heading); -- NPC(s): a_deepwater_triloun (223100), a_deepwater_triloun (223115)
+		eq.spawn2(eq.ChooseRandom(223100,223115),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_deepwater_triloun (223100), a_deepwater_triloun (223115)
 	end
 end

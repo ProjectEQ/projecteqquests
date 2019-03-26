@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::spawn2(110118,0,0,$x,$y,$z,$h);
+    quest::spawn2(110118,0,0,$x,$y,$z,$h); # NPC: General_Bragmur_
     quest::depop_withtimer();
   }
   plugin::return_items(\%itemcount);

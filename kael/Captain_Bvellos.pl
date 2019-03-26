@@ -33,7 +33,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 25301 => 4)) {
   	quest::say("Excellent, $name. Here is the bounty as promised.");
     quest::ding();
-    quest::summonitem(quest::ChooseRandom(25077,25084));
+    quest::summonitem(quest::ChooseRandom(25077,25084)); # Item(s): Silvery Mask (25077), Antlered Mask (25084)
     quest::faction(419,30); #kromrif
     quest::faction(448,30); #kromzek
     quest::faction(429,30); #tormax

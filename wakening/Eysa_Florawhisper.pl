@@ -10,22 +10,22 @@ sub EVENT_SAY {
   }
   if ($text=~/gather/i) {
     quest::say("I seek the following fruits and seeds. A misty acorn, emerald orange, bag of caynar nuts, vineclinger berries, ripened heartfruit, rathe berries, marr cherries, and flarefire seeds.");
-    quest::summonitem(17864);
+    quest::summonitem(17864); # Item: Empty Seed Collection Bag
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29067 => 1)) {
     quest::emote("looks over the report you have given her. She glances up at you with a suspicious eye, as though she doesn't fully trust you. 'I was supposed to meet with Dolvak on this matter, as he is the liason between the shrine and the court. Instead he sent you with this report? I guess I have no choice but to trust you are a friend of the shrine, as the seal bears its mark on this parchment. These papers show the Tunarean Court's progress with the giants so far. Do you have any idea why this report is so important?'");
-    quest::summonitem(29623);
+    quest::summonitem(29623); # Item: Eysa's Token
     quest::faction(449,10); #tunarean court
     quest::depop_withtimer();
   }
   if (plugin::check_handin(\%itemcount, 24863 => 1)) {
     quest::say("Ohhhh! You're the sweetest, $name. The nymphs of the Tunarean Court recognize you as a friend of our kind and our botanical brethren.");
-    quest::faction(449, 30);
+    quest::faction(449, 30); # Faction: Tunarean Court
     quest::exp(5000);
-    quest::summonitem(24864);
+    quest::summonitem(24864); # Item: Crest of the Wood Nymphs
   }
   plugin::return_items(\%itemcount);
 }

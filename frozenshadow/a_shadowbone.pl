@@ -5,7 +5,7 @@
 sub EVENT_DEATH_COMPLETE {
   my $gnoll = int(rand(100) + 1);
   if ($gnoll <= 5) {
-    quest::spawn2(111158,0,0,$x,$y,$z,0);
+    quest::spawn2(111158,0,0,$x,$y,$z,0); # NPC: #a_large_undead_gnoll
     my $keyspawn = $entity_list->GetMobByNpcTypeID(111158);
     $keyspawn->AddToHateList($client, 1);
   }

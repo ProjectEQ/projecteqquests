@@ -5,28 +5,28 @@ function event_say(e)
 		e.self:Say("The Circle has many secrets some of which only Hans may know. Our agents are all about, mingling among the common law abiding folk and working in all manner of profession. At one time we had a significant number of the Qeynos Guard allied to our organization but the loyal soldiers of Antonius Bayle IV has discovered and punished many of them. The ones that remain are hesitant at best to continue their association with us. You will need to exercise much caution within this city as you learn the ropes. I will help get you outfitted in some [gear] that you will find useful in our line of work.");
 	elseif(e.message:findi("gear")) then
 		e.self:Say("Take this Curing Kit. With it you can assemble an outfit of light, flexible, and sturdy yet inconspicuous leather clothing to protect you from the perils of your job. The materials required will depend on the piece of clothing you desire to craft. Do you plan on crafting Sturdy Workmans [Gloves], Sturdy Workmans [Boots], a Sturdy Workmans [Bracer], a Sturdy Workmans [Cap], Sturdy Workmans [Leggings], Sturdy Workmans [Sleeves], or a Sturdy Workmans [Tunic]? Once you are suitably outfitted return to me and I will inform you of your [next job].");
-		e.other:SummonItem(17125);  
+		e.other:SummonItem(17125); -- Item: Curing Kit  
 	elseif(e.message:findi("boot")) then
 		e.self:Say("To craft Sturdy Workmans Boots you require two [silk thread], two ruined wolf pelts, two giant field rat whiskers, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
-		e.other:SummonItem(19561);      
+		e.other:SummonItem(19561); -- Item: Tattered Boot Pattern      
 	elseif(e.message:findi("bracer")) then
 		e.self:Say("To craft an Sturdy Workmans Bracer you require a [silk thread], a ruined wolf pelt, and a giant field rat whiskers. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
-		e.other:SummonItem(19558);
+		e.other:SummonItem(19558); -- Item: Tattered Wristband Pattern
 	elseif(e.message:findi("cap")) then
 		e.self:Say("To craft a Sturdy Workmans Cap you require two [silk thread], a ruined wolf pelt, a large myotis bat fur, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Coif Pattern.");
-		e.other:SummonItem(19555);
+		e.other:SummonItem(19555); -- Item: Tattered Cap Pattern
 	elseif(e.message:findi("glove")) then
 		e.self:Say("To craft Sturdy Workmans Gloves you require two [silk thread], a ruined wolf pelt, two giant field rat whiskers, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
-		e.other:SummonItem(19559);
+		e.other:SummonItem(19559); -- Item: Tattered Glove Pattern
 	elseif(e.message:findi("legging")) then
 		e.self:Say("To craft Sturdy Workmans Leggings you require three [silk thread], a low quality wolf pelt, two large myotis bat furs, and a giant king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Pant Pattern.");
-		e.other:SummonItem(19560);
+		e.other:SummonItem(19560); -- Item: Tattered Pant Pattern
 	elseif(e.message:findi("sleeve")) then
 		e.self:Say("To craft Sturdy Workmans Sleeves you require two [silk thread], a low quality wolf pelt, two large myotis bat furs, and a giant king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Sleeves Pattern.");
-		e.other:SummonItem(19557);
+		e.other:SummonItem(19557); -- Item: Tattered Sleeve Pattern
 	elseif(e.message:findi("tunic")) then
 		e.self:Say("To craft a Sturdy Workmans Tunic you require four [silk thread], a medium quality wolf pelt, a giant myotis bat fur, and a giant king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Tunic Pattern.");
-		e.other:SummonItem(19556);
+		e.other:SummonItem(19556); -- Item: Tattered Tunic Pattern
 	elseif(e.message:findi("next job")) then
 		e.self:Say("A message between two of our agents was recently intercepted by a Qeynos Guardsman. The message is encoded in thieves cant but should the guards eventually decode it we would expect trouble. Guard Gregor, the guard who currently is in possession of the message is out patrolling somewhere in the West Karanas. Find this guard and recover the message. Bring it back to me when you have done so.");
 	end

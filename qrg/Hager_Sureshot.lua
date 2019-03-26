@@ -32,7 +32,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18709})) then
 		e.self:Say("Welcome, we are the Protectors of the Pine. Wear this tunic of our guild, and help us defend our great and beautiful woods. Go to Larsk Juton, he will help train you and teach you the power of the woods.");
-		e.other:SummonItem(13509);
+		e.other:SummonItem(13509); -- Item: Mud Stained Tunic*
 		e.other:Ding();
 		e.other:Faction(302,100,0); -- Protectors of Pine
 		e.other:Faction(272,25,0); -- Jaggedpine Treefolk
@@ -41,7 +41,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13913})) then
 		e.self:Say("His days of hunting are over. In the name of the Protectors of the Pine, I offer you this reward. If you are unable to make use of it, you may sell it. I suggest you hold onto it. If you are a ranger it will come in handy.");
-		e.other:SummonItem(17804);
+		e.other:SummonItem(17804); -- Item: Tailored Quiver
 		e.other:Ding();
 		e.other:Faction(302,10,0); -- Protectors of Pine
 		e.other:Faction(272,10,0); -- Jaggedpine Treefolk

@@ -19,7 +19,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6515 => 1)) {
     quest::emote("speaks a small incantation as he pulls a branch from a nearby tree and ties it around the amulet 'I shall mourn him dearly, he was a good friend. This was the amulet that I had given him before he left to explore Grieg's End. I want you to have this for helping to find his lost soul. Go in peace my friend.");
-    quest::summonitem(6516);
+    quest::summonitem(6516); # Item: Nilibik's Yew Affixed Amulet
   }
   plugin::return_items(\%itemcount);
 }

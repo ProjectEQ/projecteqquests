@@ -25,22 +25,22 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 3061 => 1, 10073 => 1, 19031 => 1, 19033 => 1)) {
     quest::exp(200);
-    quest::summonitem(4945);
+    quest::summonitem(4945); # Item: Totemic Bracers
     quest::say("I have crafted your bracer, use it well.");
   }
   elsif (plugin::check_handin(\%itemcount, 3053 => 1, 19051 => 1, 19042 => 1, 19040 => 1)) {
     quest::exp(200);
-    quest::summonitem(4947);
+    quest::summonitem(4947); # Item: Totemic Helm
     quest::say("I have crafted your helm, use it well.");
   }
   elsif (plugin::check_handin(\%itemcount, 3058 => 1, 19052 => 1, 19032 => 1, 19035 => 1)) {
     quest::exp(200);
-    quest::summonitem(4948);
+    quest::summonitem(4948); # Item: Totemic Cloak
     quest::say("I have crafted your cloak, use it well.");
   }
   elsif (plugin::check_handin(\%itemcount, 3056 => 1, 19050 => 1, 19036 => 1, 19044 => 1)) {
     quest::exp(200);
-    quest::summonitem(4946);
+    quest::summonitem(4946); # Item: Totemic Breastplate
     quest::say("I have crafted your breastplate, use it well.");
   }
   plugin::return_items(\%itemcount);

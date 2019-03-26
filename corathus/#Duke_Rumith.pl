@@ -60,7 +60,7 @@ sub EVENT_TIMER
 				{
 					my $ent_name = $h_ent->GetCleanName();
 					quest::shout("$ent_name your will is mine to control.");
-					$npc->CastSpell(7028, $h_ent->GetID(), 10, 0);
+					$npc->CastSpell(7028, $h_ent->GetID(), 10, 0); # Spell: Compelling Glance
 					last;
 				}
 			}

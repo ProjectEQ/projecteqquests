@@ -31,63 +31,63 @@ sub EVENT_SAY {
             quest::say("Very well.  You are now to return from whence you came.");
             if($qglobals{OOW_PoD_Origin} == 202) { # Plane of Knowledge
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(202, 582, 49, 4, 192);
+                quest::movepc(202, 582, 49, 4, 192); # Zone: lavastorm
             }
             elsif($qglobals{OOW_PoD_Origin} == 52) { # Grobb
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(52, 2, 13, 4, 180);
+                quest::movepc(52, 2, 13, 4, 180); # Zone: corathus
             }
             elsif($qglobals{OOW_PoD_Origin} == 24) { # Erudin
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(24, 30, -130, 40, 180);
+                quest::movepc(24, 30, -130, 40, 180); # Zone: blacksail
             }
             elsif($qglobals{OOW_PoD_Origin} == 41) { # Neriak
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(41, -564, -43, -37, 192);
+                quest::movepc(41, -564, -43, -37, 192); # Zone: chamberse
             }
             elsif($qglobals{OOW_PoD_Origin} == 10) { # East Freeport
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(10, -682, 146, -51, 192);
+                quest::movepc(10, -682, 146, -51, 192); # Zone: arena2
             }
             elsif($qglobals{OOW_PoD_Origin} == 61) { # Felwithe
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(61, -289, 10, 4, 192);
+                quest::movepc(61, -289, 10, 4, 192); # Zone: dalnir
             }
             elsif($qglobals{OOW_PoD_Origin} == 54) { # Kelethin(Greater Faydark)
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(54, 215, 232, 2, 192);
+                quest::movepc(54, 215, 232, 2, 192); # Zone: corathusb
             }
             elsif($qglobals{OOW_PoD_Origin} == 29) { # Halas
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(29, 47, 123, 4, 10);
+                quest::movepc(29, 47, 123, 4, 10); # Zone: buriedsea
             }
             elsif($qglobals{OOW_PoD_Origin} == 49) { # Oggok
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(49, 500, 220, 60, 10);
+                quest::movepc(49, 500, 220, 60, 10); # Zone: codecay
             }
             elsif($qglobals{OOW_PoD_Origin} == 2) { # Qeynos
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(2, 227, 22, 3, 10);
+                quest::movepc(2, 227, 22, 3, 10); # Zone: acrylia
             }
             elsif($qglobals{OOW_PoD_Origin} == 19) { # Rivervale
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(19, -110, -16, 4, 192);
+                quest::movepc(19, -110, -16, 4, 192); # Zone: befallen
             }
             elsif($qglobals{OOW_PoD_Origin} == 55) { # Ak`Anon
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(55, -153, 500, -18, 66.1);
+                quest::movepc(55, -153, 500, -18, 66.1); # Zone: crescent
             }
             elsif($qglobals{OOW_PoD_Origin} == 60) { # Kaladim
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(60, 26, 38, 4, 65);
+                quest::movepc(60, 26, 38, 4, 65); # Zone: cshome
             }
             elsif($qglobals{OOW_PoD_Origin} == 155) { # Shar Vahl
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(155, 89, -849, -189, 180);
+                quest::movepc(155, 89, -849, -189, 180); # Zone: gukh
             }
             elsif($qglobals{OOW_PoD_Origin} == 50) { # Gukta(Rathe Mountains)
                 quest::delglobal("OOW_PoD_Origin");
-                quest::movepc(50, 653, -2217, 2, 100);
+                quest::movepc(50, 653, -2217, 2, 100); # Zone: commonlands
             }
         }
         else {

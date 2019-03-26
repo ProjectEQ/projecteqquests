@@ -19,7 +19,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76013);
+			quest::summonitem(76013); # Item: Minor Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76014 => 1)) #Lesser Soulstone
@@ -31,7 +31,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76014);
+			quest::summonitem(76014); # Item: Lesser Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76015 => 1)) #Soulstone
@@ -43,7 +43,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76015);
+			quest::summonitem(76015); # Item: Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76016 => 1)) #Greater Soulstone
@@ -55,7 +55,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76016);
+			quest::summonitem(76016); # Item: Greater Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76017 => 1)) #Faceted Soulstone
@@ -67,7 +67,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76017);
+			quest::summonitem(76017); # Item: Faceted Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76018 => 1)) #Pristine Soulstone
@@ -79,7 +79,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76018);
+			quest::summonitem(76018); # Item: Pristine Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76019 => 1)) #Glowing Soulstone
@@ -91,7 +91,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76019);
+			quest::summonitem(76019); # Item: Glowing Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76048 => 1)) #Prismatic Soulstone
@@ -103,7 +103,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76048);
+			quest::summonitem(76048); # Item: Prismatic Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76065 => 1)) #Iridescent Soulstone
@@ -115,7 +115,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76065);
+			quest::summonitem(76065); # Item: Iridescent Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76274 => 1)) #Phantasmal Soulstone
@@ -127,7 +127,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76274);
+			quest::summonitem(76274); # Item: Phantasmal Soulstone
 		}
 	}
 	elsif(plugin::check_handin(\%itemcount, 76275 => 1)) #Luminous Soulstone
@@ -139,7 +139,7 @@ $failure = "This focus is not powerful enough to summon the remnants of your for
 		else
 		{
 			quest::say($failure);
-			quest::summonitem(76275);
+			quest::summonitem(76275); # Item: Luminous Soulstone
 		}
 	}
 	plugin::return_items(\%itemcount);

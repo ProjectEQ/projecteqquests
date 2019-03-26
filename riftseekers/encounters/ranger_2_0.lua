@@ -67,10 +67,10 @@ end
 
 function ElementalTimer(e)
 	if e.timer=="blameless" then
-		e.self:CastSpell(3230, e.self:GetTarget():GetID());
+		e.self:CastSpell(3230, e.self:GetTarget():GetID()); -- Spell: Balance of the Nameless
 		eq.set_timer("blameless",10*1000);
 	elseif e.timer=="heatwave" then
-		e.self:CastSpell(5816, e.self:GetTarget():GetID());
+		e.self:CastSpell(5816, e.self:GetTarget():GetID()); -- Spell: Heatwave
 		eq.set_timer("heatwave",20*1000);
 	end
 end

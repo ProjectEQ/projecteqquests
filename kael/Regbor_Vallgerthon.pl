@@ -49,7 +49,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if ($faction == 1) { #requires ally Kromzek faction 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24912 => 1)) { # cap 
-      quest::summonitem(55310); 
+      quest::summonitem(55310); # Item: Firebrand's Coif 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 
@@ -59,7 +59,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24907 => 1)) { # bp 
-      quest::summonitem(55311); 
+      quest::summonitem(55311); # Item: Firebrand's Tunic 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 
@@ -69,7 +69,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24909 => 1)) { # sleeves 
-      quest::summonitem(55312); 
+      quest::summonitem(55312); # Item: Firebrand's Sleeves 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 
@@ -79,7 +79,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24911 => 1)) { # wrist 
-      quest::summonitem(55313); 
+      quest::summonitem(55313); # Item: Firebrand's Bracer 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 
@@ -89,7 +89,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24913 => 1)) { # gloves 
-      quest::summonitem(55314); 
+      quest::summonitem(55314); # Item: Firebrand's Gauntlets 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 
@@ -99,7 +99,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24908 => 1)) { # legs 
-      quest::summonitem(55315); 
+      quest::summonitem(55315); # Item: Firebrand's Leggings 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 
@@ -109,7 +109,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24910 => 1)) { # boots 
-      quest::summonitem(55316); 
+      quest::summonitem(55316); # Item: Firebrand's Boots 
       quest::exp(150000); 
       quest::faction(429,20); # King Tormax 
       quest::faction(448,20); # Kromzek 

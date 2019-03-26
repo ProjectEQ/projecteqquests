@@ -50,35 +50,35 @@ function event_waypoint_arrive(e)
 	if(e.wp == 1) then
 		--e.self:PauseWandering(60000);  This does not seems to work properly on existing grid.
 		e.self:Say("Theodore Exanthem by order of the Council of Qeynos and his lordship Antonius Bayle, I order you to come out of there immediately!");
-		eq.unique_spawn(14146,0,0,-2680,-5465,0,384);
+		eq.unique_spawn(14146,0,0,-2680,-5465,0,384); -- NPC: #Theodore_Exanthem
 	elseif(e.wp == 2) then  -- a workaround for waypoint
-		eq.signal(14146,6,5000);
+		eq.signal(14146,6,5000); -- NPC: #Theodore_Exanthem
 	elseif(e.wp == 3) then
-		eq.unique_spawn(14147,0,0,-3287,-6040,0,56);
-		eq.unique_spawn(14127,0,0,-3280,-6050,0,62);
-		eq.spawn2(14140,0,0,-3285,-6075,0,156);
-		eq.spawn2(14140,0,0,-3333,-6055,0,0);
-		eq.spawn2(14148,0,0,-3306,-6056,0,132);
-		eq.signal(14146,7,2000);
+		eq.unique_spawn(14147,0,0,-3287,-6040,0,56); -- NPC: #Morley_Murrain
+		eq.unique_spawn(14127,0,0,-3280,-6050,0,62); -- NPC: #Markus_Cachexia
+		eq.spawn2(14140,0,0,-3285,-6075,0,156); -- NPC: Skeletal_Servant
+		eq.spawn2(14140,0,0,-3333,-6055,0,0); -- NPC: Skeletal_Servant
+		eq.spawn2(14148,0,0,-3306,-6056,0,132); -- NPC: Ghoul
+		eq.signal(14146,7,2000); -- NPC: #Theodore_Exanthem
 	end
 end
 
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Theodore Exanthem, you will [take us to the location] of Marcus Cachexia and Morley Murrain immediately.");
-		eq.signal(14146,1,5000);
+		eq.signal(14146,1,5000); -- NPC: #Theodore_Exanthem
 	elseif(e.signal == 2) then
 		e.self:Say("Vile beast! You are withholding information on two men guilty of terrible atrocities, not the least of which was causing the death of one of Qeynos' most respected and well known citizens, Cros Treewind! As an Interrogator I am authorized to use physical force if necessary.");
-		eq.signal(14146,2,5000);
+		eq.signal(14146,2,5000); -- NPC: #Theodore_Exanthem
 	elseif(e.signal == 3) then
 		e.self:Say("[Take us to the location] of Markus Cachexia and Morley Murrain!");
-		eq.signal(14146,3,5000);
+		eq.signal(14146,3,5000); -- NPC: #Theodore_Exanthem
 	elseif(e.signal == 4) then
 		e.self:Say("Take us to Markus Chachexia and Morley Murrain this instant or I'll turn you over to my friend here who appears to be much stronger than I am!");
-		eq.signal(14146,4,5000);
+		eq.signal(14146,4,5000); -- NPC: #Theodore_Exanthem
 	elseif(e.signal == 5) then
 		e.self:Emote("smiles and says, 'Well, I'm getting tired. Why don't you hit him for a while. Maybe you will be more convincing then I have been.");
-		eq.signal(14146,5,5000);
+		eq.signal(14146,5,5000); -- NPC: #Theodore_Exanthem
 	elseif(e.signal == 6) then
 		e.self:Say("[Take us to the location] of Markus Cachexia and Morley Murrain!");
 		--eq.signal(14146,6,5000); using this for wp 2.

@@ -40,26 +40,26 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4724 => 1, 4491 => 1, 4723 => 1)) { #bracer
-    quest::summonitem(3715);
+    quest::summonitem(3715); # Item: Bracer of Detonation
     quest::say("This doesn't in any way make you a real wizard. Merely an apprentice.");
     quest::exp(50000);
   }
   if (plugin::check_handin(\%itemcount, 4711 => 1, 4709 => 1, 4710 => 1, 4493 => 1)) { #cap
-    quest::summonitem(3710);
+    quest::summonitem(3710); # Item: Cap of Detonation
   }
   if (plugin::check_handin(\%itemcount, 4720 => 1, 4719 => 1, 4718 => 1, 4489 => 1)) { #pants
-    quest::summonitem(3713);
+    quest::summonitem(3713); # Item: Pants of Detonation
   }
   if (plugin::check_handin(\%itemcount, 4494 => 1, 4713 => 1, 4714 => 1, 4712 => 1)) { #robe
-    quest::summonitem(3711);
+    quest::summonitem(3711); # Item: Robe of Detonation
   }
   if (plugin::check_handin(\%itemcount, 4725 => 1, 4492 => 1, 4726 => 1)) { #sandals
-    quest::summonitem(3716);
+    quest::summonitem(3716); # Item: Sandals of Detonation
   }
   if (plugin::check_handin(\%itemcount, 4721 => 1, 4490 => 1, 4722 => 1)) { #shawl
-    quest::summonitem(3714);
+    quest::summonitem(3714); # Item: Shawl of Detonation
   }
   if (plugin::check_handin(\%itemcount, 4717 => 1, 4716 => 1, 4715 => 1, 4488 => 1)) { #sleeves
-    quest::summonitem(3712);
+    quest::summonitem(3712); # Item: Sleeves of Detonation
   }
 }

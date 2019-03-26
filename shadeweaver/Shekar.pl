@@ -11,7 +11,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 7811 => 1, 30579 => 1)) {
     quest::say("You have killed the Claw Beast!  Well done $name, you have shown a great ability to fight. I have not seen the like since the mightly Yalpeelor and Zunaloo!");
     quest::ding();
-    quest::summonitem(7812);
+    quest::summonitem(7812); # Item: Claw Beast Talon Club
   }
   plugin::return_items(\%itemcount);
 }

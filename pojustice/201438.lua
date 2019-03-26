@@ -32,11 +32,11 @@ function event_say(e)
 					client_e = e;
 				else
 					client_e = e;
-					e.other:MovePC(201, 729, -1119, 88, 128);
+					e.other:MovePC(201, 729, -1119, 88, 128); -- Zone: lakerathe
 				end
 
 				-- Spawn the Controller
-				eq.spawn2(201450, 0, 0, 878, -1128, 58, 360);
+				eq.spawn2(201450, 0, 0, 878, -1128, 58, 360); -- NPC: #Event_Torture_Control
 
 				-- Set the Proximity Check Timer; if everyone has left the trial (wipe); then reset things
 				eq.set_timer("proximitycheck", 60000);
@@ -64,7 +64,7 @@ function event_say(e)
 			if (has_six == 1) then 
 				if (not e.other:HasItem(31599)) then 
 					-- give 31599 to e.other
-					e.other:SummonItem(31599);
+					e.other:SummonItem(31599); -- Item: The Mark of Justice
 				end
 			elseif (has_six == 0) then
 				e.self:Say("You have done well, mortal, but there are more trials yet for you to complete.");
@@ -83,7 +83,7 @@ function event_timer(e)
 		if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, 772, -1148, 76, 175, 456, 825, 9, 180, "A mysterious force translocates you."); 
 		else
-			client_e.other:MovePC( 201, 456, 825, 9, 360 );
+			client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: lakerathe
 			client_e.other:Message(3, "A mysterious force translocates you.");
 		end
 		HandleCorpses(772, -1148, 76, 175);
@@ -156,7 +156,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 				-- check the distance and port them up if close enough
 				if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
 					-- port the player up
-					client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h);
+					client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
 
 					if (msg) then
 						client_v:Message(3, msg);

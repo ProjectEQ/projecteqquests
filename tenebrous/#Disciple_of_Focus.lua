@@ -24,11 +24,11 @@ end
 
 function event_timer(e)
     if (e.timer == "startcast") then
-        e.self:CastSpell(3751, e.self:GetID());
+        e.self:CastSpell(3751, e.self:GetID()); -- Spell: Quivering Nightmares
         eq.stop_timer(e.timer);
         eq.set_timer("cast", 24000);
     elseif (e.timer == "cast") then
-        e.self:CastSpell(3751, e.self:GetID());
+        e.self:CastSpell(3751, e.self:GetID()); -- Spell: Quivering Nightmares
     end
 end
 

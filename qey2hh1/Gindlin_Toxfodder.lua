@@ -13,7 +13,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 14017,item2 = 13901, gold = 20})) then
 		e.self:Emote("grins slyly 'Why thank you good sir. One moment please.'");
-		e.other:SummonItem(14015);
+		e.other:SummonItem(14015); -- Item: Spider Venom
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

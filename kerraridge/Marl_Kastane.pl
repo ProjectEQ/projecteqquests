@@ -1,7 +1,7 @@
 # Part of SK Epic 1.0
 
 sub EVENT_SAY {
-  $faction = $client->GetCharacterFactionLevel(404);
+  $faction = $client->GetCharacterFactionLevel(404); # Faction: Truespirit
   if ($text=~/Hail/i) {
     quest::say("Begone!! You do not have the will to do the things I require!");
   }
@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/prophecy/i && $faction >= 42 && $faction < 44) {
     quest::say("My apologies, $name, I have said too much already. Instead, I have an errand to occupy your thoughts. Take this as proof that you are sent from me and find my brother in Paineel. I haven't spoken with him in some time now and his well being is essential to our family's destiny.");
-    quest::summonitem(14375);
+    quest::summonitem(14375); # Item: Seal of Kastane
   }
   if ($text=~/prophecy/i && $faction >= 44) {
     quest::say("I suppose it is time for the secret to be shared. Ages ago, two brothers were born. Glohnor was highly favored by the pompous Lightbringer, whose name we do not utter. Lhranc was chosen by the Prince of Hate to bring destruction and turmoil to the sons of men. The one thing they shared in common was their love of the fair priestess, Kyrenna. Kyrenna fell deeply in love with Glohnor. When Lhranc discovered this, he was overcome with rage and unwisely attacked his brother, who happened to be far more adept in combat. The fight cost Lhranc dearly. He lost his dignity as well as an eye in the struggle. He was ordered to leave Freeport and live his life in exile from the only home he had ever known.");
@@ -36,20 +36,20 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  $faction = $client->GetCharacterFactionLevel(404);
+  $faction = $client->GetCharacterFactionLevel(404); # Faction: Truespirit
   if (($faction >= 43) && plugin::check_handin(\%itemcount, 14376 => 1)) {
     quest::emote("reads the note, eyes widening in panic. He raises his eyes to you and says, 'This is grave news, friend. If the prophecy is allowed to be fulfilled, our strength will vanish into obscurity. Goodness and purity will spread like a plague across the land and the servants of Hate will be powerless to stop it!'");
-    quest::faction(404, 1);
+    quest::faction(404, 1); # Faction: Truespirit
   }
   if (($faction >= 51) && plugin::check_handin(\%itemcount, 14381 => 1)) {
     quest::say("Here, you take this shroud. You must now find the spirit of glohnor and place this item on him. This should force him back into his mummified body and then you must destroy this newly raised form and return to me its wrappings.");
-    quest::faction(404, 7);
-    quest::summonitem(14377);
+    quest::faction(404, 7); # Faction: Truespirit
+    quest::summonitem(14377); # Item: Dark Shroud
   }
   if (($faction >= 58) && plugin::check_handin(\%itemcount, 14379 => 1)) {
     quest::say("You've done it! Your efforts will stand as a tribute to our kind for time eternal, my friend. Although nothing could possibly serve as a just reward for your accomplishments, please accept this as well as my eternal gratitude. It has been fashioned from the wraps of the mummy and shall protect you well.");
-    quest::faction(404, 7);
-    quest::summonitem(14370);
+    quest::faction(404, 7); # Faction: Truespirit
+    quest::summonitem(14370); # Item: Will of Innoruuk
   }
   plugin::return_items(\%itemcount);
 }

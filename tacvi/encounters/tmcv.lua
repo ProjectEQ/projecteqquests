@@ -155,7 +155,7 @@ function Tunat_Second_Spawn()
 end
 
 function Tunat_Second_Death(e)
-  eq.signal(298223, 298055);
+  eq.signal(298223, 298055); -- NPC: zone_status
 end
 
 function Tunat_Second_HP(e)
@@ -170,13 +170,13 @@ function Tunat_Second_HP(e)
     e.self:TempName("Pixtt Xxeric Kex");
 
     -- Spawn Adds
-    eq.spawn2(298044, 0, 0, 334, -117, 21, 280);
-    eq.spawn2(298043, 0, 0, 356, -154, 21, 356);
-    eq.spawn2(298042, 0, 0, 353, -201, 21, 434);
-    eq.spawn2(298041, 0, 0, 322, -215, 21, 496);
+    eq.spawn2(298044, 0, 0, 334, -117, 21, 280); -- NPC: an_ukun_juxtapincer
+    eq.spawn2(298043, 0, 0, 356, -154, 21, 356); -- NPC: an_ukun_lifebleeder
+    eq.spawn2(298042, 0, 0, 353, -201, 21, 434); -- NPC: an_ukun_manasipper
+    eq.spawn2(298041, 0, 0, 322, -215, 21, 496); -- NPC: an_ukun_ragehound
 
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
 
     eq.set_next_hp_event(80);
 
@@ -194,7 +194,7 @@ function Tunat_Second_HP(e)
     eq.set_timer("pkk_adds", 30 * 1000);
 
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
     
     eq.set_next_hp_event(70);
 
@@ -212,7 +212,7 @@ function Tunat_Second_HP(e)
     eq.set_timer("prt_adds", 30 * 1000);
 
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
     
     eq.set_next_hp_event(60);
 
@@ -240,7 +240,7 @@ function Tunat_Second_HP(e)
     e.self:TempName("Zun`Muram Yihst Vor");
 
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
     
     eq.set_next_hp_event(40);
 
@@ -256,11 +256,11 @@ function Tunat_Second_HP(e)
     e.self:SendIllusionPacket({race=400,gender=2,texture=11});
     e.self:TempName("Zun`Muram Mordl Delt");
 
-    eq.spawn2(298050, 0, 0, 334, -117, 21, 280);
-    eq.spawn2(298050, 0, 0, 356, -154, 21, 356);
+    eq.spawn2(298050, 0, 0, 334, -117, 21, 280); -- NPC: Zun`Muram_Mordl_Delt
+    eq.spawn2(298050, 0, 0, 356, -154, 21, 356); -- NPC: Zun`Muram_Mordl_Delt
     
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
     
     eq.set_next_hp_event(30);
 
@@ -275,7 +275,7 @@ function Tunat_Second_HP(e)
     e.self:TempName("Zun`Muram Shaldn Boc");
 
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
     
     eq.set_next_hp_event(20);
 
@@ -290,7 +290,7 @@ function Tunat_Second_HP(e)
     e.self:TempName("Tunat`Muram Cuu Vauax");
 
     -- Rehaste 4740
-    e.self:CastSpell(4740, e.self:GetID());
+    e.self:CastSpell(4740, e.self:GetID()); -- Spell: Haste of the Tunat`Muram
     
     eq.set_timer("ae_timer", 3 * 1000);
 
@@ -298,7 +298,7 @@ function Tunat_Second_HP(e)
 end
 
 function Tunat_First_Death(e)
-	eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8);
+	eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8); -- NPC: #Tunat`Muram_Cuu_Vauax
 
   eq.depop_all(298113);
   eq.depop_all(298209);
@@ -308,43 +308,43 @@ function Tunat_First_Spawn(e)
   eq.set_next_hp_event(40);
 
   -- Spawn the Dogs
-  eq.spawn2(298209, 0, 0, 445, -203, 25, 34);
-  eq.spawn2(298209, 0, 0, 447, -139, 25, 198);
+  eq.spawn2(298209, 0, 0, 445, -203, 25, 34); -- NPC: an_ukun_biledrinker
+  eq.spawn2(298209, 0, 0, 447, -139, 25, 198); -- NPC: an_ukun_biledrinker
 
   -- Spawn the Living
-  lp_list[1] = eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 112);
-  lp_list[2] = eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 112);
-  lp_list[3] = eq.spawn2(298113, 0, 0,498.00, -193.00, 23.75, 112);
-  lp_list[4] = eq.spawn2(298113, 0, 0,476.00, -242.00, 23.75, 246);
-  lp_list[5] = eq.spawn2(298113, 0, 0,428.00, -242.00, 23.75, 246);
-  lp_list[6] = eq.spawn2(298113, 0, 0,454.00, -242.00, 23.75, 246);
-  lp_list[7] = eq.spawn2(298113, 0, 0,478.00, -100.00, 23.75, 28);
-  lp_list[8] = eq.spawn2(298113, 0, 0,454.00, -100.00, 23.75, 28);
-  lp_list[9] = eq.spawn2(298113, 0, 0,431.00, -100.00, 23.75, 28);
+  lp_list[1] = eq.spawn2(298113, 0, 0,500.00, -152.00, 23.75, 112); -- NPC: Living_Phylactery
+  lp_list[2] = eq.spawn2(298113, 0, 0,507.00, -172.00, 23.75, 112); -- NPC: Living_Phylactery
+  lp_list[3] = eq.spawn2(298113, 0, 0,498.00, -193.00, 23.75, 112); -- NPC: Living_Phylactery
+  lp_list[4] = eq.spawn2(298113, 0, 0,476.00, -242.00, 23.75, 246); -- NPC: Living_Phylactery
+  lp_list[5] = eq.spawn2(298113, 0, 0,428.00, -242.00, 23.75, 246); -- NPC: Living_Phylactery
+  lp_list[6] = eq.spawn2(298113, 0, 0,454.00, -242.00, 23.75, 246); -- NPC: Living_Phylactery
+  lp_list[7] = eq.spawn2(298113, 0, 0,478.00, -100.00, 23.75, 28); -- NPC: Living_Phylactery
+  lp_list[8] = eq.spawn2(298113, 0, 0,454.00, -100.00, 23.75, 28); -- NPC: Living_Phylactery
+  lp_list[9] = eq.spawn2(298113, 0, 0,431.00, -100.00, 23.75, 28); -- NPC: Living_Phylactery
 
 end
 
 function Tunat_First_HP(e)
   if (e.hp_event == 40) then
     -- Wake up the dogs.
-    eq.signal(298209, 1);
+    eq.signal(298209, 1); -- NPC: an_ukun_biledrinker
   end
 end
 
 function Tunat_Second_Timer(e)
 
   if (e.timer == "pkk_adds") then
-    eq.spawn2(298048, 0, 0, 334, -117, 21, 280);
-    eq.spawn2(298048, 0, 0, 356, -154, 21, 356);
-    eq.spawn2(298048, 0, 0, 353, -201, 21, 434);
-    eq.spawn2(298048, 0, 0, 322, -215, 21, 496);
+    eq.spawn2(298048, 0, 0, 334, -117, 21, 280); -- NPC: an_ikaav_hatchling
+    eq.spawn2(298048, 0, 0, 356, -154, 21, 356); -- NPC: an_ikaav_hatchling
+    eq.spawn2(298048, 0, 0, 353, -201, 21, 434); -- NPC: an_ikaav_hatchling
+    eq.spawn2(298048, 0, 0, 322, -215, 21, 496); -- NPC: an_ikaav_hatchling
 
   elseif (e.timer == "prt_adds") then
-    eq.spawn2(298045, 0, 0, 334, -117, 21, 280);
-    eq.spawn2(298045, 0, 0, 356, -154, 21, 356);
-    eq.spawn2(298045, 0, 0, 353, -201, 21, 434);
-    eq.spawn2(298045, 0, 0, 322, -215, 21, 496);
-    eq.spawn2(298045, 0, 0, 322, -225, 21, 496);
+    eq.spawn2(298045, 0, 0, 334, -117, 21, 280); -- NPC: an_unstable_construct
+    eq.spawn2(298045, 0, 0, 356, -154, 21, 356); -- NPC: an_unstable_construct
+    eq.spawn2(298045, 0, 0, 353, -201, 21, 434); -- NPC: an_unstable_construct
+    eq.spawn2(298045, 0, 0, 322, -215, 21, 496); -- NPC: an_unstable_construct
+    eq.spawn2(298045, 0, 0, 322, -225, 21, 496); -- NPC: an_unstable_construct
 
   elseif (e.timer == "ae_timer") then
     local cast_ae = eq.ChooseRandom(1,2,3);
@@ -374,7 +374,7 @@ function Tunat_Second_Timer(e)
 
     eq.depop_all(298050);
 
-    eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8);
+    eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8); -- NPC: #Tunat`Muram_Cuu_Vauax
     eq.depop();
 
   end
@@ -408,7 +408,7 @@ function Tunat_First_Timer(e)
     tunat_heal = e.self:GetMaxHP() * 0.10;
 
     e.self:FaceTarget(lp_mob);
-    e.self:CastSpell(4448, lp_mob:GetID(), 1, 2);
+    e.self:CastSpell(4448, lp_mob:GetID(), 1, 2); -- Spell: ShieldSP
 
     eq.set_timer('lp_heal', 30 * 1000 );
   elseif (e.timer == 'lp_heal') then
@@ -419,7 +419,7 @@ function Tunat_First_Timer(e)
     tunat_hp = e.self:GetHP();
 
     lp_mob:FaceTarget(e.self);
-    lp_mob:CastSpell(4448, e.self:GetID(), 1, 3 );
+    lp_mob:CastSpell(4448, e.self:GetID(), 1, 3 ); -- Spell: ShieldSP
     e.self:SetHP( tunat_hp + tunat_heal );
     e.self:Emote("staggers as the portion of his spirit that was stored in the phylactery flows back into him.");
 
@@ -428,7 +428,7 @@ function Tunat_First_Timer(e)
     eq.depop();
     eq.depop_all(298113);
     eq.depop_all(298209);
-    eq.spawn2(298014, 0, 0, 462, -171, 32, 16);
+    eq.spawn2(298014, 0, 0, 462, -171, 32, 16); -- NPC: #Tunat`Muram_Cuu_Vauax
 
   end
 end
@@ -440,12 +440,12 @@ function LP_Combat(e)
 end
 
 function LP_Death(e)
-  e.self:CastSpell(6495, e.self:GetID());
+  e.self:CastSpell(6495, e.self:GetID()); -- Spell: Spiritual Wake
 end
 
 function LP_Timer(e)
   if (e.timer == 'lp_ae') then
-    e.self:CastSpell(5546, e.self:GetTarget():GetID());
+    e.self:CastSpell(5546, e.self:GetTarget():GetID()); -- Spell: Gaze of the Tunat`Muram
   end
 end
 

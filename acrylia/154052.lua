@@ -17,7 +17,7 @@ function event_say(e)
 		e.self:Say("There is one more thing I should mention... While we were perfecting the spell, whenever we would get close the life ward would summon grimlings to disrupt our chants. We are not able to concentrate or focus with them present. You will have to make sure they are not around to stop our magic, and do not forget that the death and spirit wards will resurrect the life ward if one or the other isn't destroyed shortly after it falls. Let me know when you are [ready] for us to [begin our spell.]");
 	elseif(e.message:findi("ready")) then -- ready for you to begin your spell
 		e.self:Emote("begins to chant.");
-		eq.signal(154130,1,0);
+		eq.signal(154130,1,0); -- NPC: WDTrpMn
 		eq.spawn2(154156,0,0,342.75,-232.48,-7.94,374); -- Spawn Spiritist V2
 		eq.depop();
 	end

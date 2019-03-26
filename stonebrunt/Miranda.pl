@@ -26,16 +26,16 @@ sub EVENT_ITEM
   quest::emote("claps her hands with excitement.");
   quest::say("Chocolate cherries!! My favorite!! Here try some of this!!");
   quest::exp(50);
-  quest::summonitem(20115);
-  quest::faction(473,5);
-  quest::faction(398,2);
+  quest::summonitem(20115); # Item: Pouch of Kejek Catnip
+  quest::faction(473,5); # Faction: Kejek Village
+  quest::faction(398,2); # Faction: Riptide Goblins
  }
  if($itemcount{2088} == 1)
  {
-  quest::summonitem(20116);
+  quest::summonitem(20116); # Item: Ball of Burlap Yarn
   quest::say("You found my dice!!! Thank you!!");
   quest::exp(120);
-  quest::faction(473,5);
-  quest::faction(398,2);
+  quest::faction(473,5); # Faction: Kejek Village
+  quest::faction(398,2); # Faction: Riptide Goblins
  }
 } 

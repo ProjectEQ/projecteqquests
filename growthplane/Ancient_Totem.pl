@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31440 => 1, 31442 => 1, 31441 => 1, 31439 => 1)) {
     quest::say("Thank you, friend.  These scrolls will serve us well in the future.  Please take this as a sign of my gratitude."); # Text made up
-    quest::summonitem(1324);
+    quest::summonitem(1324); # Item: Visage of Life
     quest::exp(1000);
   }
 }

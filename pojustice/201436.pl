@@ -15,7 +15,7 @@ sub EVENT_SAY
 		elsif($text=~/begin the trial of hanging/i) {
 			if (!defined $hanging) {
 				quest::say("Then begin.");
-				quest::movepc(201,500,-1045,73.1);
+				quest::movepc(201,500,-1045,73.1); # Zone: lakerathe
 				quest::settimer(301,30);
 				#quest::signal(201076,15000);
 				$hanging=1;
@@ -23,7 +23,7 @@ sub EVENT_SAY
 			
 			else {
 				if (($hanging > 0) && ($hanging < 6)) {
-					quest::movepc(201,500,-1045,73.1);
+					quest::movepc(201,500,-1045,73.1); # Zone: lakerathe
 					quest::say("Then begin.");		
 					$hanging++;
 				}
@@ -85,7 +85,7 @@ sub EVENT_TIMER
 	if($timer == 300) {
 		$hanging=undef;
 		quest::stoptimer(300);
-		quest::signalwith(201078,3,5);
+		quest::signalwith(201078,3,5); # NPC: The_Tribunal Execution Trial
 	}
 	
 	elsif($timer == 301) {
@@ -113,7 +113,7 @@ sub EVENT_ITEM
 			quest::setglobal("pop_poj_tribunal", 1, 5, "F");
 			quest::setglobal("pop_poj_execution", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
-			quest::summonitem(31842);
+			quest::summonitem(31842); # Item: Mark of Execution
 		}
 		
 		elsif(plugin::check_handin(\%itemcount, 31796 => 1)) {
@@ -121,7 +121,7 @@ sub EVENT_ITEM
 			quest::setglobal("pop_poj_tribunal", 1, 5, "F");
 			quest::setglobal("pop_poj_flame", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
-			quest::summonitem(31796);
+			quest::summonitem(31796); # Item: Mark of Flame
 		}
 		
 		elsif(plugin::check_handin(\%itemcount, 31960 => 1)) {
@@ -129,7 +129,7 @@ sub EVENT_ITEM
 			quest::setglobal("pop_poj_tribunal", 1, 5, "F");
 			quest::setglobal("pop_poj_lashing", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
-			quest::summonitem(31960);
+			quest::summonitem(31960); # Item: Mark of Lashing
 		}
 		
 		elsif(plugin::check_handin(\%itemcount, 31845 => 1)) {
@@ -137,7 +137,7 @@ sub EVENT_ITEM
 			quest::setglobal("pop_poj_tribunal", 1, 5, "F");
 			quest::setglobal("pop_poj_stoning", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
-			quest::summonitem(31845);
+			quest::summonitem(31845); # Item: Mark of Stone
 		}
 		
 		elsif(plugin::check_handin(\%itemcount, 31844 => 1)) {
@@ -145,7 +145,7 @@ sub EVENT_ITEM
 			quest::setglobal("pop_poj_tribunal", 1, 5, "F");
 			quest::setglobal("pop_poj_torture", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
-			quest::summonitem(31844);
+			quest::summonitem(31844); # Item: Mark of Torture
 		}
 		
 		elsif(plugin::check_handin(\%itemcount, 31846 => 1)) {
@@ -153,7 +153,7 @@ sub EVENT_ITEM
 			quest::setglobal("pop_poj_tribunal", 1, 5, "F");
 			quest::setglobal("pop_poj_hanging", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
-			quest::summonitem(31846);
+			quest::summonitem(31846); # Item: Mark of Suffocation
 		}
 	}
 		

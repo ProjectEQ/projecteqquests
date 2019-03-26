@@ -18,7 +18,7 @@ sub EVENT_SAY {
   }
   if ($text=~/beetle claws/i) {
     quest::say("Beetle claw stew is quick, easy, and fills stomachs. The main ingredient comes from the Rhino Beetles that can be found in abundance around the city. We use the claws in a variety of dishes, so we can always use a few more. Here, I can give you a bag if you want to go gather some for me. Just fill it up and come back.");
-    quest::summonitem(17074);
+    quest::summonitem(17074); # Item: Stained Mesh Bag
   }
   if ($text=~/broth/i) {
     quest::say("I can make broth from just about anything. Meat, water, and spices can be turned into a base broth for just about and stew or sauce. The current favorite around here comes from the meat of the large worms that come up from the earth around the base of our city. I know that they look horrid, but they really do taste great! If you want to help, I will pay for every four servings that you bring me.");
@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10390 => 4)) {
     quest::emote("looks at each piece of meat before wrapping them in a spiced cloth.");
     quest::emote("says, 'These look like good cuts of meat. I hope that this will suffice as payment,' as he stacks the wrapped meat on the counter.");
-    quest::summonitem(quest::ChooseRandom(30580, 30577));
+    quest::summonitem(quest::ChooseRandom(30580, 30577)); # Item(s): Wooden Practice Dagger (30580)
     quest::givecash(0, 0, 4, 0);
     quest::exp(1000);
     quest::ding();
@@ -43,15 +43,15 @@ sub EVENT_ITEM {
   }
   if (plugin::check_handin(\%itemcount, 5559 => 1)) {
     quest::say("I'd love to fill this order, but we're out of the meat that he likes. We've been very busy today, so I doubt that any of us will be able to get out to gather more of it. If you could go out and grab us a few slabs, we could not only fill the order, I could put some away for anyone else that may come through today. This sounds like a perfect task for a young Taruun recruit. Fill this bag with the fatty meat from a young Owlbear and bring it back to me right away. I'll get Joharr's sandwiches as soon as you return with the meat."); 
-    quest::summonitem(17608);
+    quest::summonitem(17608); # Item: Bloody Cloth Sack
   }
   if (plugin::check_handin(\%itemcount, 5562 => 1)) {
     quest::emote("opens the bag and immediately begins to slice the meat into thin sheets. He throws the meat on a few slices of bread and wraps the whole thing up with a hand full of vegetables.");
     quest::say("Here you go, friend!' He says as he hands you what appears to be a lunch bag. 'Joharr should love these sandwiches! The meat that you brought us was great. If you ever need a job as a butcher, just let us know. Take care and tell Joharr I said hello.");
-    quest::summonitem(5563);
+    quest::summonitem(5563); # Item: Bag of Food
     quest::ding();
     quest::exp(1000);
-    quest::faction(1513,10);
+    quest::faction(1513,10); # Faction: Guardians of Shar Vahl
   }
   plugin::return_items(\%itemcount);
 }

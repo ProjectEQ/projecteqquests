@@ -35,25 +35,25 @@ sub EVENT_ITEM{
   quest::emote("smiles.");
   quest::say("Here is what I promised, $name.");
   quest::exp(25000);
-    quest::summonitem(3958);
+    quest::summonitem(3958); # Item: Woodsman's Axe
   }
   elsif (plugin::check_handin(\%itemcount, 5695 => 1, 5694 => 1, 4490 => 1)) { #boots
-    quest::summonitem(3952);
+    quest::summonitem(3952); # Item: Woodsman's Boots
   }
   elsif (plugin::check_handin(\%itemcount, 5693 => 1, 5692 => 1, 4489 => 1)) { #bracer
-    quest::summonitem(3951);
+    quest::summonitem(3951); # Item: Woodsman's Bracer
   }
   elsif (plugin::check_handin(\%itemcount, 4494 => 1, 5689 => 1, 5687 => 1, 5688 => 1)) { #greaves
-    quest::summonitem(3949);
+    quest::summonitem(3949); # Item: Woodsman's Greaves
   }
   elsif (plugin::check_handin(\%itemcount, 4491 => 1, 5679 => 1, 5678 => 1, 5680 => 1)) { #helm
-    quest::summonitem(3946);
+    quest::summonitem(3946); # Item: Woodsman's Coif
   }
   elsif (plugin::check_handin(\%itemcount, 5682 => 1, 5681 => 1, 4492 => 1, 5683 => 1)) { #bp
-    quest::summonitem(3947);
+    quest::summonitem(3947); # Item: Woodsman's Mail
   }
   elsif (plugin::check_handin(\%itemcount, 5684 => 1, 4493 => 1, 5686 => 1, 5685 => 1)) { #vambs
-    quest::summonitem(3948);
+    quest::summonitem(3948); # Item: Woodsman's Vambraces
   
   
   }

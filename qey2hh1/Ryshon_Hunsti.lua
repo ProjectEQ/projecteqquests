@@ -11,7 +11,7 @@ function event_say(e)
 		e.self:Say("It is an instrument fashioned together by a noble man. It is said to be blessed by the gods themselves. Only a man who comes from nobility may wield it. Do you seek the [sword of nobility]?");
 	elseif(e.message:findi("sword of nobility")) then
 		e.self:Say("I see.  Then take this note to Kanthuk Ogrebane. I've been told he can be found fishing not far from the dwarven city.");
-		e.other:SummonItem(2416);
+		e.other:SummonItem(2416); -- Item: Note to Kanthuk
 	end
 end
 

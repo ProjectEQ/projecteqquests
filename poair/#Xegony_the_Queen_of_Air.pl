@@ -143,7 +143,7 @@ sub EVENT_HP {
 	
 }
 sub EVENT_DEATH_COMPLETE {
-	quest::spawn2(215438,0,0,$x,$y,$z,$h);
+	quest::spawn2(215438,0,0,$x,$y,$z,$h); # NPC: Essence_of_Air
 	quest::stoptimer("xego_wipe");
 }
 
@@ -172,6 +172,6 @@ sub EVENT_TIMER {
 		quest::depop();
 		quest::stoptimer("xego_wipe");
 		
-		quest::spawn2(215056,0,0,64,24.70,1467.4,386.8);			
+		quest::spawn2(215056,0,0,64,24.70,1467.4,386.8); # NPC: #Xegony_the_Queen_of_Air			
 	}
 }	

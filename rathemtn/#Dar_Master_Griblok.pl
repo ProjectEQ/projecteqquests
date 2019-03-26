@@ -13,7 +13,7 @@ sub EVENT_SAY {
    
    if ($text=~/may begin/i) {
      quest::say("Good. Take this Field Armorer Kit. It will allow you to use the [looted valuables] and even bodies of your enemies to form basic armor materials. These basic materials will prove quite valuable. When placed into a forge along with the proper mold, it will allow you to craft your own Armor of the Dar Initiate. ");
-     quest::summonitem(17830);
+     quest::summonitem(17830); # Item: Field Armorer Kit
    }
    
    if ($text=~/looted valuables/i) {
@@ -21,33 +21,33 @@ sub EVENT_SAY {
    }
    if ($text=~/helm/i) {
      quest::say("A warrior's second skull, I always say. You'll need an Alligator Hide, a Ball of Pulpy Fungus, a Cracked Skeleton Skull and a Giant Moccasin Fang. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Helm of the Dar Initiate.");
-     quest::summonitem(63056);
+     quest::summonitem(63056); # Item: Dar Helm Mold
    }
    
    if ($text=~/breastplate/i) {
    quest::say("The final shield. Yes. But its construction will not be easy. Go and seek some Pristine Moccasin Scales, Burly Kobold Ears, a Pristine Bull Alligator Hide and some Moccasin Poison. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Breastplate of the Dar Initiate. Once so armored, you'll be well prepared for a [greater task].");
-   quest::summonitem(63062);
+   quest::summonitem(63062); # Item: Dar Breastplate Mold
         }
     
     if ($text=~/armplates/i) {
       quest::say("To make your armplates, you'll need some Moccassin Eggs, Bleeder Wings, Moccasin Scales and a Kobold Talisman. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Armplates of the Dar Initiate.");
-      quest::summonitem(63060);
+      quest::summonitem(63060); # Item: Dar Armplates Mold
     }
     if ($text=~/bracer/i) {
       quest::say("Ah, the quick defense against bloodthirsty blades. You'll need a Crab Spider's Carapace, two Spiderling Silks and a Malleable Bleeder Skin. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Bracer of the Dar Initiate.");
-      quest::summonitem(63058);
+      quest::summonitem(63058); # Item: Dar Bracer Mold
     }
     if ($text=~/gauntlets/i) {
     quest::say("You'll need a Bleeder's Poison Sack, Blackened Fungus and two Bleeder Carapaces. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Gauntlets of the Dar Initiate.");
-    quest::summonitem(63057);
+    quest::summonitem(63057); # Item: Dar Gauntlets Mold
       }
       if ($text=~/leggings/i) {
         quest::say("Wise. To make the leggings you'll need a Giant Moccasin Eye, two Kobold Livers and a Larval Carapace. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Leggings of the Dar Initiate.");
-        quest::summonitem(63061);
+        quest::summonitem(63061); # Item: Dar Leggings Mold
       }
       if ($text=~/boots/i) {
         quest::say("A soldier's life is a life of travel. For your boots you'll need a Kobold Scalp, two Chunks of Digested Earth, and an Undead Froglok Talisman. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Boots of the Dar Initiate.");
-        quest::summonitem(63059);
+        quest::summonitem(63059); # Item: Dar Boot Mold
       }
       if ($text=~/greater task/i) {
         quest::say("War often brings out the worst, it is said. Sadly one of our very own grew greedy when he saw the trolls' treasure. Sergeant Herptol fell to temptation, ignoring the voice of our Lord that had commanded us to ignore the tainted loot. He fled the city and his rightful punishment. I've learned he's hiding out in the northern reaches of the Innothule. Go. Find him. Slay him and recover what he stole. Bring me a Larvae Skin and some Bull Alligator Spines. When you return the recovered loot and these items, I shall craft you a sword.");
@@ -57,7 +57,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 63088 =>1, 51038 =>1, 51019=>1  )) {
   quest::say("Congratulations $name.  You have done a great service.  Here is your reward");
-  quest::summonitem(63063);
+  quest::summonitem(63063); # Item: Swampblade of the Dar
   quest::exp(1000);
 }
 plugin::return_items(\%itemcount);

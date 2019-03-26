@@ -15,11 +15,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13260,item2 = 13260,item3 = 13260,gold = 30})) then
 		e.self:Say("Take the giant wasp venom. Good or evil it is not. That is up to you.");
-		e.other:SummonItem(14032);
+		e.other:SummonItem(14032); -- Item: Regalis Poison
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18955})) then
 		e.self:Say("So Lon has sworn allegiance to a temple. What a fool, but he is a skilled fool. My word is my bond and if he asks for the gem, then so be it. Unfortunately I traded it for a much-needed axe. It was in the middle of a dungeon and... well, that is a long story. If you want to get the gem, take this axe back to the [one who once owned it].");
-		e.other:SummonItem(12366);
+		e.other:SummonItem(12366); -- Item: Never Stop Chopping
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -25,16 +25,16 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12408 => 4)) { 
     quest::say("Good work, my young apprentice. You will make a fine addition to our ranks. Here is your first apprentice skullcap. Wear it as a sign of our circle. Do not lose it. Someday you shall wear a necromancer skullcap, but next shall come the [second rank skullcap]."); 
     quest::exp(100); 
-    quest::faction(441,20);
-    quest::faction(443,20);
-    quest::summonitem(4260);
+    quest::faction(441,20); # Faction: Legion of Cabilis
+    quest::faction(443,20); # Faction: Brood of Kotiz
+    quest::summonitem(4260); # Item: Apprentice Skullcap - 1st Rank
   }
   elsif (plugin::check_handin(\%itemcount, 4260 => 1, 18208 => 1)) {
     quest::say("A job well done, apprentice. Your fine service shall earn you the second circle apprentice skullcap. I would advise you to forget this tapestry, it is nothing more than an ancient rug of no importance.");
     quest::exp(120); 
-    quest::faction(441,20);
-    quest::faction(443,20);
-    quest::summonitem(4261);
+    quest::faction(441,20); # Faction: Legion of Cabilis
+    quest::faction(443,20); # Faction: Brood of Kotiz
+    quest::summonitem(4261); # Item: Apprentice Skullcap - 2nd Rank
   }
   elsif (plugin::check_handin(\%itemcount, 14793 => 1)) {
     quest::emote("snatches the paper from your hand and hisses in anger. Without even looking at the paper he growls");
@@ -42,7 +42,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 14811 => 1, 10032 => 2)) {
      quest::say("Well done");
-     quest::summonitem(14831);
+     quest::summonitem(14831); # Item: Glosk's Reference: Greaves
      quest::ding();
      quest::exp(10000);
   }

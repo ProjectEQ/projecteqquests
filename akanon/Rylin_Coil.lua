@@ -18,9 +18,9 @@ function event_trade(e)
 	if(e.other:IsTaskActivityActive(272,1)) then
 		if (item_lib.check_turn_in(e.trade, {item1 = 16875})) then
 			e.self:Say("That looks very good! Here are the books you will need to learn Tinkering Mastery.");
-			e.other:SummonItem(98471);
-			e.other:SummonItem(98472);
-			e.other:SummonItem(98473);
+			e.other:SummonItem(98471); -- Item: Mastering Tinkering Mastery I
+			e.other:SummonItem(98472); -- Item: Mastering Tinkering Mastery II
+			e.other:SummonItem(98473); -- Item: Mastering Tinkering Mastery III
 			e.other:UpdateTaskActivity(272, 1, 1);
 		end
 	end

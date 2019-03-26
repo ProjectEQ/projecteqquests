@@ -27,7 +27,7 @@ sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer(2);
 	quest::stoptimer(1);
 	quest::signalwith(214123, 214113);         # let the trigger know RZtW died
-	quest::signalwith(214114,90,1);
+	quest::signalwith(214114,90,1); # NPC: A_Chaos_Wraith
 	foreach my $spawn2 (@spawn2list) {   # Depsawn all the mobs in the pit
 		# Set pit mobs to respawn in 30 minutes. comment this line out to not set the 30 minute timer for testing.
 		quest::updatespawntimer($spawn2,1800000);
@@ -61,15 +61,15 @@ sub EVENT_TIMER {
 
 	if($timer == 1) {
 		if($npc->IsEngaged()) {
-			quest::spawn2(214114,0,0,565,-95,-293,132);
-			quest::spawn2(214114,0,0,815,-100,-293,510);
-			quest::spawn2(214114,0,0,815,-295,-293,136);
-			quest::spawn2(214114,0,0,565,185,-293,0);
-			quest::spawn2(214114,0,0,565,-95,-293,132);
-			quest::spawn2(214114,0,0,565,-95,-293,132);
-			quest::spawn2(214114,0,0,815,-100,-293,510);
-			quest::spawn2(214114,0,0,815,-295,-293,136);
-			quest::spawn2(214114,0,0,565,185,-293,0);
+			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,815,-100,-293,510); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,815,-295,-293,136); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,565,185,-293,0); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,815,-100,-293,510); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,815,-295,-293,136); # NPC: A_Chaos_Wraith
+			quest::spawn2(214114,0,0,565,185,-293,0); # NPC: A_Chaos_Wraith
 			my @npc_list = $entity_list->GetNPCList();
 			foreach $npc (@npc_list) {
 				if($npc->GetNPCTypeID() == 214114) {
@@ -88,7 +88,7 @@ sub EVENT_TIMER {
 			my $h_ent = $ent->GetEnt();
 			if ($h_ent->IsClient()) {
 			  if ($h_ent->GetX() > 950) {
-				$npc->CastSpell(982,$h_ent->GetID());
+				$npc->CastSpell(982,$h_ent->GetID()); # Spell: Cazic Touch
 			  }
 			}
 		  }

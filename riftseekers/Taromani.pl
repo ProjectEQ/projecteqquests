@@ -29,7 +29,7 @@ sub EVENT_SAY
 		}
 	if($text=~/favors/i)
 		{
-		quest::summonitem(52414);
+		quest::summonitem(52414); # Item: Taromani's Insignia Case
 		quest::say("Very good. A life in Mata Muram's army is a dangerous one - often nasty, brutish, and short. He must regularly replenish his ranks, promoting the most talented individuals of the lower tiers to replace those that have fallen. Seek out and eliminate these promising soldiers, the up-and-coming members of his forces. Bring me their insignias in this case to prove completion. This will slow down their progress considerably. When you have done what I have asked, I will follow through with my part of the bargain and provide you with the protection you need to access his citadel.");
 		}
 }

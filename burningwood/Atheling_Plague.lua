@@ -21,7 +21,7 @@ function event_trade(e)
 	
 	if(qglobals["shmskullquest"] ~= nil) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 12764}) and tonumber(qglobals["shmskullquest"]) >= 8) then
-			e.other:SummonItem(12750);
+			e.other:SummonItem(12750); -- Item: Iksar Skull
 			e.self:Shout("Excellent. You show signs of a true Iksar slayer. Too, bad I have already given the skull of the Sister of Scale to another. Perhaps you would like to meet him before he departs. Say hello, Doval.");
 			eq.unique_spawn(87154,0,0,e.self:GetX() + 5,e.self:GetY(),e.self:GetZ());
 			eq.set_timer("heal",20000);
@@ -35,7 +35,7 @@ function event_timer(e)
 		local el = eq.get_entity_list();
 		local doval = el:GetNPCByNPCTypeID(87154);
 		if (doval.valid) then
-			e.self:CastSpell(12, doval:GetID());
+			e.self:CastSpell(12, doval:GetID()); -- Spell: Healing
 		end
 	end
 end

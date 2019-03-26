@@ -5,14 +5,14 @@ sub EVENT_DEATH_COMPLETE {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
-  quest::spawn2(205154,0,0,$x,$y,$z,$h);
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
+  quest::spawn2(205154,0,0,$x,$y,$z,$h); # NPC: An_Arachnae_Maleveler
 }
 
 #Submitted by Jim Mills

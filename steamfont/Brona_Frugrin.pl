@@ -16,7 +16,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10170 => 1)) {
     quest::say("This lens is perfect, $name!  Please, take this staff in return for your services.");  # Couldn't find real text, so I made this up.
-    quest::summonitem(10171);
+    quest::summonitem(10171); # Item: Staff of the Observers
     quest::exp(100);
     quest::faction(333, 15);  # King Ak'Anon
     quest::faction(245, 15);  # Eldrich COllective... I'm not sure about this, but quest text seems to indicate it should be here

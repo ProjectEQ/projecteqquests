@@ -18,7 +18,7 @@ if($text=~/mortal bidding/i){
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 19423 => 1) || plugin::check_handin(\%itemcount, 19296 => 1) || plugin::check_handin(\%itemcount, 19294 => 1) || plugin::check_handin(\%itemcount, 19299 => 1)){
   quest::say("Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell.");
-  quest::summonitem(quest::ChooseRandom(19297,19421,19408,19409));
+  quest::summonitem(quest::ChooseRandom(19297,19421,19408,19409)); # Item(s): Spell: Minion of Shadows (19297), Spell: Sacrifice (19421), Spell: Scent of Terris (19408), Spell: Shadowbond (19409)
   quest::exp(500);
   }
   plugin::return_items(\%itemcount);

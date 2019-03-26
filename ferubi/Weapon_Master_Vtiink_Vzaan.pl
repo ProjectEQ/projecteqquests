@@ -1,12 +1,12 @@
 sub EVENT_SPAWN {
-  quest::spawn2(284093,0,0,1328.82,-608.43,106.23,5.2);
-  quest::spawn2(284094,0,0,1327.06,-375.38,106.13,256);
-  quest::spawn2(284095,0,0,1440.70,-421.54,106.13,386.4);
-  quest::spawn2(284096,0,0,1439.92,-562.61,106.13,386.4);
+  quest::spawn2(284093,0,0,1328.82,-608.43,106.23,5.2); # NPC: Master`s_Apprentice
+  quest::spawn2(284094,0,0,1327.06,-375.38,106.13,256); # NPC: Master`s_Apprentice
+  quest::spawn2(284095,0,0,1440.70,-421.54,106.13,386.4); # NPC: Master`s_Apprentice
+  quest::spawn2(284096,0,0,1439.92,-562.61,106.13,386.4); # NPC: Master`s_Apprentice
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(284074,1,1);
+  quest::signalwith(284074,1,1); # NPC: #Smith_Rondo
 }
 
 sub EVENT_COMBAT {

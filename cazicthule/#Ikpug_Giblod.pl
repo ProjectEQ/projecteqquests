@@ -5,7 +5,7 @@ sub EVENT_SAY {
   }
   if ($text=~/learning/i) {
     quest::say("Oh dear. Dere bad tings brewin. Me gots now and get prepared to help Muada. I sorta signed dat letter for you. Bye beastlord!");
-    quest::summonitem(57008);
+    quest::summonitem(57008); # Item: Letter from Muada
   }
  }
 }

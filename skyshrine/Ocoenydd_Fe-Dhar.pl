@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25837 => 3, 24982 => 1)) { #cap
-      quest::summonitem(31168);
+      quest::summonitem(31168); # Item: Prestidigitator's Headband
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24977 => 1)) { #bp
-      quest::summonitem(31169);
+      quest::summonitem(31169); # Item: Prestidigitator's Robe
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24979 => 1)) { #arm
-      quest::summonitem(31170);
+      quest::summonitem(31170); # Item: Prestidigitator's Sleeves
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24981 => 1)) { #bracer
-      quest::summonitem(31171);
+      quest::summonitem(31171); # Item: Prestidigitator's Wristband
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24983 => 1)) { #glove
-      quest::summonitem(31172);
+      quest::summonitem(31172); # Item: Prestidigitator's Gloves
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24978 => 1)) { #leg
-      quest::summonitem(31173);
+      quest::summonitem(31173); # Item: Prestidigitator's Trousers
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24980 => 1)) { #boots
-      quest::summonitem(31174);
+      quest::summonitem(31174); # Item: Prestidigitator's Boots
     }
     else {
       plugin::return_items(\%itemcount);

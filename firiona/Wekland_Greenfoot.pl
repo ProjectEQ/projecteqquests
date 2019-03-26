@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62083 => 1, 62082 => 3)) {
     quest::say("Thank you for your assistance. Here is the reward that you were promised.");
-    quest::summonitem(62197);
+    quest::summonitem(62197); # Item: Silken Cape of Exploration
   }
   plugin::return_items(\%itemcount);
 }

@@ -5,7 +5,7 @@ function event_say(e)
 		e.self:Say("The Marr Minnow swims in the pond near the Temple of Marr. I wish I had one. Not a dead one. A live one. I need someone to [get the minnow].");
 	elseif(e.message:findi("get the minnow")) then
 		e.self:Say("Please try. Here you are. Take this jar. Offer the jar to the minnows. Maybe they will swim into it.");
-		e.other:SummonItem(13861);
+		e.other:SummonItem(13861); -- Item: Jar of Liquid
 	end
 end
 
@@ -14,7 +14,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13862})) then
 		e.self:Say("");
-		e.other:SummonItem(eq.ChooseRandom(13002,13007));
+		e.other:SummonItem(eq.ChooseRandom(13002,13007)); -- Item(s): Torch (13002), Ration (13007)
 		e.other:Ding();
 		e.other:AddEXP(100);
 	end

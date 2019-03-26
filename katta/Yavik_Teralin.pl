@@ -31,13 +31,13 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	quest::say("You ever communed with a tree?  Most people just walk right past them and don't take the time to stop and really appreciate what that tree means.");
-	quest::signal(160225,150);
+	quest::signal(160225,150); # NPC: Danika_Farcloud
 	quest::settimer(1,1800);
 }
 
 sub EVENT_SIGNAL {
 	quest::say("It translates to 'Gift of the Dark' you fool!");
-	quest::signalwith(160112,3,2500);
+	quest::signalwith(160112,3,2500); # NPC: Arbogast
 }
 
 #END of FILE Zone:katta  ID:160226 -- Yavik_Teralin 

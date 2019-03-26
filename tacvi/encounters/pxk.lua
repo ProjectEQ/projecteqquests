@@ -73,7 +73,7 @@ function PXK_Death(e)
     door:SetLockPick(0);
   end
 
-  eq.signal(298223, 298039);
+  eq.signal(298223, 298039); -- NPC: zone_status
   eq.get_entity_list():FindDoor(2):SetLockPick(0);
 end
 
@@ -87,7 +87,7 @@ function PXK_Combat(e)
     eq.depop_all(298043);
     eq.depop_all(298042);
     eq.depop_all(298041);
-    eq.spawn2(298039,0,0,151,-162,-6,385);
+    eq.spawn2(298039,0,0,151,-162,-6,385); -- NPC: Pixtt_Xxeric_Kex
     eq.depop();
 
     -- reset the pet event counters in case of a wipe.
@@ -118,7 +118,7 @@ function PXK_Hp(e)
    --90pct unroot
    if (e.hp_event == 90) then
       e.self:SetPseudoRoot(false);
-      e.self:CastSpell(4729, e.self:GetTarget():GetID());
+      e.self:CastSpell(4729, e.self:GetTarget():GetID()); -- Spell: Spirit Cleaver
       e.self:AddAISpell(0, 4729, 1, -1, -1, -350);
       eq.modify_npc_stat("ac", "1150");
       eq.set_next_hp_event(70);
@@ -149,10 +149,10 @@ function PXK_Hp(e)
       eq.zone_emote(15,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'");
 
       -- Spawn the Pets
-      eq.spawn2(298044,0,0, 151, -113, -6.87, 314);
-      eq.spawn2(298043,0,0, 151, -218, -6.87, 450);
-      eq.spawn2(298042,0,0,  81, -113, -6.87,  194);
-      eq.spawn2(298041,0,0,  81, -218, -6.87,  40);
+      eq.spawn2(298044,0,0, 151, -113, -6.87, 314); -- NPC: an_ukun_juxtapincer
+      eq.spawn2(298043,0,0, 151, -218, -6.87, 450); -- NPC: an_ukun_lifebleeder
+      eq.spawn2(298042,0,0,  81, -113, -6.87,  194); -- NPC: an_ukun_manasipper
+      eq.spawn2(298041,0,0,  81, -218, -6.87,  40); -- NPC: an_ukun_ragehound
 
       eq.set_next_hp_event(30);
    end
@@ -171,7 +171,7 @@ function PXK_Hp(e)
    if (e.hp_event == 10) then
    --When she hits 10%, she will regenerate to 40% health and strip her debuffs
       -- Balance of the nameless, strip self debuffs
-      e.self:CastSpell(3230,e.self:GetID());
+      e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
       e.self:SetHP(e.self:GetMaxHP()*0.40)
       eq.modify_npc_stat("min_hit", "1315");
       eq.modify_npc_stat("max_hit", "5400");
@@ -183,7 +183,7 @@ end
 function PXK_Juxtapincer_Death(e)
   if ( juxtapincer < 3 ) then
     juxtapincer = juxtapincer + 1;
-    eq.spawn2(298044,0,0, 151, -113, -6.87, 314);
+    eq.spawn2(298044,0,0, 151, -113, -6.87, 314); -- NPC: an_ukun_juxtapincer
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
@@ -191,7 +191,7 @@ end
 function PXK_Lifebleeder_Death(e)
   if (lifebleeder < 3) then
     lifebleeder = lifebleeder + 1;
-    eq.spawn2(298043,0,0, 151, -218, -6.87, 450);
+    eq.spawn2(298043,0,0, 151, -218, -6.87, 450); -- NPC: an_ukun_lifebleeder
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
@@ -199,7 +199,7 @@ end
 function PXK_Manasipper_Death(e)
   if (manasipper < 3) then
     manasipper = manasipper + 1;
-    eq.spawn2(298042,0,0,  81, -113, -6.87,  194);
+    eq.spawn2(298042,0,0,  81, -113, -6.87,  194); -- NPC: an_ukun_manasipper
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end
@@ -207,7 +207,7 @@ end
 function PXK_Ragehound_Death(e)
   if (ragehound < 3) then
     ragehound = ragehound + 1;
-    eq.spawn2(298041,0,0,  81, -218, -6.87,  40);
+    eq.spawn2(298041,0,0,  81, -218, -6.87,  40); -- NPC: an_ukun_ragehound
     e.self:Emote("flesh and bones are reformed by dark magic");
   end
 end

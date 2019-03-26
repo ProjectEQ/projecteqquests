@@ -19,7 +19,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 11567 => 1, 28042 => 1, 6360 => 1, 6361 => 1)) {
     quest::say("Take this Element and keep it with you. I wish you the best in your journey, but I must ask you to leave me now. This frantic pace you set makes me nervous.");
-    quest::summonitem(28032);
+    quest::summonitem(28032); # Item: Element of Earth
     quest::exp(5000);
   }
   plugin::return_items(\%itemcount);

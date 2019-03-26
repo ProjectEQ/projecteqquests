@@ -28,7 +28,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:AddEXP(1000);
   elseif (qglobals['warrior_pre'] ~= nil and qglobals['warrior_pre'] == "3" and item_lib.check_turn_in(e.trade, {item1 = 60287})) then
-    e.other:SummonItem(60288);
+    e.other:SummonItem(60288); -- Item: Emblazoned Champion's Hilt
 		e.other:Ding();
 		e.other:AddEXP(1000);
 	end

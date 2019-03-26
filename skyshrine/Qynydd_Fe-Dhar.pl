@@ -43,25 +43,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25841 => 3, 24975 => 1)) { #cap
-      quest::summonitem(31147);
+      quest::summonitem(31147); # Item: Woven Grass Headband
     }
     elsif (plugin::check_handin(\%itemcount, 25805 => 3, 24970 => 1)) { #bp
-      quest::summonitem(31148);
+      quest::summonitem(31148); # Item: Woven Grass Chestguard
     }
     elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24972 => 1)) { #arm
-      quest::summonitem(31149);
+      quest::summonitem(31149); # Item: Woven Grass Vambraces
     }
     elsif (plugin::check_handin(\%itemcount, 25836 => 3, 24974 => 1)) { #bracer
-      quest::summonitem(31150);
+      quest::summonitem(31150); # Item: Woven Grass Bracelet
     }
     elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24976 => 1)) { #glove
-      quest::summonitem(31151);
+      quest::summonitem(31151); # Item: Woven Grass Gauntlets
     }
     elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24971 => 1)) { #leg
-      quest::summonitem(31152);
+      quest::summonitem(31152); # Item: Woven Grass Greaves
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24973 => 1)) { #boots
-      quest::summonitem(31153);
+      quest::summonitem(31153); # Item: Woven Grass Boots
     }
     else {
       plugin::return_items(\%itemcount);

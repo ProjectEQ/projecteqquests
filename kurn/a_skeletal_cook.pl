@@ -10,7 +10,7 @@ sub EVENT_ITEM {
    #Mirgon Dower's Head (END)
    quest::me("The cook's bone's crack as he reaches out to take the skull from your hand's. A voice in your mind say's, Thank you. Now I can leave this dreadful place. Please take this as I no longer have any use for it. The cook places the skull back in your hand's before collapsing into a lifeless pile of bone's.");
    #Summon: The Skull of Torture
-   quest::summonitem(59526);
+   quest::summonitem(59526); # Item: The Skull of Torture
   }
    plugin::return_items(\%itemcount);
 }

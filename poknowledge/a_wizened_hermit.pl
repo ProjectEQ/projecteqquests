@@ -3,8 +3,8 @@ sub EVENT_SAY {
 		if($text=~/Hail/i) {
 			if(quest::istaskactivityactive(217,1)){
 				quest::emote("hermit pulls out a strange earring as she tucks the toadstools into a fold of her robe.");
-				quest::summonitem(53513);
-				quest::summonitem(85062);
+				quest::summonitem(53513); # Item: Freemind Spore Earring
+				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_mushroom",1,0,"D30");
 				quest::updatetaskactivity(217,1);

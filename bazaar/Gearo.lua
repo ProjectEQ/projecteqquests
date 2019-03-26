@@ -6,7 +6,7 @@ function event_say(e)
 	elseif(qglobals["DeliveredToGearo"] == "1") then
 		if(e.message:findi("take the gem")) then
 			e.self:Say("Good " .. e.other:GetName() .. "! Here they are, please take them back to that gargantuan barbarian and let him know I want a raise for all this hard work!");
-			e.other:SummonItem(4767);
+			e.other:SummonItem(4767); -- Item: Bag of Assorted Gems
 			eq.delete_global("DeliveredToGearo"); --Remove global
 		end
 	end

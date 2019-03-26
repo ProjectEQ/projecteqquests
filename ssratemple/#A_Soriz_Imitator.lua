@@ -18,7 +18,7 @@ function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(item_lib.check_turn_in(e.trade, {item1 = 54313}) and qglobals["EnchPre"] == "1") then	-- crumbling tomb
 		e.self:Say(" 'It is remarkable that you have found it! Unfortunately, it appears to be written in some language so archaic I cannot even begin to decipher it. Please, you must see Rilgor about a translating device. I will stay here and see if I can find anything further that would be of use.' ");
-		e.other:SummonItem(52947);
+		e.other:SummonItem(52947); -- Item: Illegible Tome
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

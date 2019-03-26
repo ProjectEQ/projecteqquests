@@ -19,7 +19,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 16500})) then
 		e.self:Say(string.format("thanks %s heartily. 'Here is the book as promised. I wish you luck with your enchanted weapons. May they slay many lycanthropes before they go dull.'",e.other:GetName()));
-		e.other:SummonItem(18178);
+		e.other:SummonItem(18178); -- Item: Fixxin Followigs Silvery Blades
 		e.other:Ding();
 		e.other:Faction(345,10,0); -- karana residents
 		e.other:Faction(262,10,0); -- guards of qeynos

@@ -11,10 +11,10 @@ function event_trade(e)
 		e.self:Say("This is good work! I know this isn't much, but it is all I can offer you. Thanks for your help!");
 		e.other:SummonItem(0);
 		e.other:Ding();
-		e.other:Faction(336,1,0);
-		e.other:Faction(330,1,0);
-		e.other:Faction(281,-1,0);
-		e.other:Faction(362,-1,0);
+		e.other:Faction(336,1,0); -- Faction: Coalition of Tradefolk Underground
+		e.other:Faction(330,1,0); -- Faction: The Freeport Militia
+		e.other:Faction(281,-1,0); -- Faction: Knights of Truth
+		e.other:Faction(362,-1,0); -- Faction: Priests of Marr
 		e.other:AddEXP(50);
 		e.other:GiveCash(1,2,1,0);
 	end

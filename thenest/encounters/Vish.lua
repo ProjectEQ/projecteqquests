@@ -42,7 +42,7 @@ local hp_lock=25;
 
 
 function Vish_Spawn(e)
-	eq.spawn2(343093,0,0,-4251.54,394.38,130.65,497.8);
+	eq.spawn2(343093,0,0,-4251.54,394.38,130.65,497.8); -- NPC: corrupted_drake
 	eq.spawn2(343165,0,0,-4264.01,538.71,134.53,322.5); -- Control spawns of corrupted drakes upon my spawn.
 	eq.spawn2(343166,0,0,-4320.05,564.41,130.61,335.0);
 	eq.spawn2(343167,0,0,-4337.70,225.69,130.82,506.3);
@@ -173,7 +173,7 @@ function Vish_Hp(e)
 		eq.set_next_hp_event(50); -- Set something to start at 50.
 	elseif (e.hp_event == 50) then
 		eq.spawn2(343162,66,0,-4573.35,137.25,132.04,36.3);  -- add grids -- Spawn Cloud of Concentrated Chaos
-		eq.signal(343093,1);
+		eq.signal(343093,1); -- NPC: corrupted_drake
 		eq.signal(343165,1); -- Signal all 4 drakes to agro.
 		eq.signal(343166,1);
 		eq.signal(343167,1);
@@ -247,7 +247,7 @@ function Vish_Timer(e)
 		eq.set_timer("Eggs_Spawn",105000); --105000
 	elseif (e.timer == "Drakes") then		
 			eq.spawn2(343093,0,0,-4300.29,453.26,130.87,386.0); -- If drakes timer is up - spawn them, and make them agro.
-			eq.signal(343093,1);
+			eq.signal(343093,1); -- NPC: corrupted_drake
 			eq.stop_timer("Drakes");
 	elseif (e.timer == "DrakesOne") then		
 			eq.spawn2(343165,0,0,-4264.01,538.71,134.53,322.5);
@@ -303,7 +303,7 @@ function Vish_Timer(e)
 		eq.stop_timer("Respawn");
 	elseif (e.timer == "Pop" ) then
 		eq.depop(343094); --vish
-		eq.spawn2(343094,65,0,-4550.12,583.67,129.61,244.00);
+		eq.spawn2(343094,65,0,-4550.12,583.67,129.61,244.00); -- NPC: Vishimtar_the_Fallen
 		eq.stop_all_timers();
 	elseif (e.timer == "Incorporeal") and incorporeal_count <  4 then -- if less than 4, keep spawning.
 		eq.spawn2(343159,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
@@ -445,22 +445,22 @@ end
 
 
 function Corrupted_Death(e) -- Signal Vish that I died - and should be respawning soon.
-	eq.signal(343094,1);
+	eq.signal(343094,1); -- NPC: Vishimtar_the_Fallen
 	corrupted_spawn=false;
 end
 
 function Corrupted_Death_One(e)
-	eq.signal(343094,2);
+	eq.signal(343094,2); -- NPC: Vishimtar_the_Fallen
 	corrupted_spawn=false;
 end
 
 function Corrupted_Death_Two(e)
-	eq.signal(343094,3);
+	eq.signal(343094,3); -- NPC: Vishimtar_the_Fallen
 	corrupted_spawn=false;
 end
 
 function Corrupted_Death_Three(e)
-	eq.signal(343094,4);
+	eq.signal(343094,4); -- NPC: Vishimtar_the_Fallen
 	corrupted_spawn=false;
 end
 

@@ -3,7 +3,7 @@ sub EVENT_SAY {
 		if($text=~/Hail/i) {
 			if(quest::istaskactivityactive(211,1)){
 				quest::say("Oh you found her! How can I ever repay you.");
-				quest::summonitem(87311,5);
+				quest::summonitem(87311,5); # Item: Scrumptious Jack-o-Lantern
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_black_cat",1,0,"H3");
 			}

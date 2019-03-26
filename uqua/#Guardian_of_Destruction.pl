@@ -11,14 +11,14 @@ sub EVENT_AGGRO {
 
 sub EVENT_HP {
   if($hpevent == 70) {
-    quest::spawn2(292069,0,0,-869,-16,65,250);
+    quest::spawn2(292069,0,0,-869,-16,65,250); # NPC: #Vrex_Barxt_Qurat
     quest::depop(292068);
   }
 }
 
 sub EVENT_TIMER {
   if($timer == 1) {
-    quest::spawn2(292070,0,0,$x,$y,$z,$h);
+    quest::spawn2(292070,0,0,$x,$y,$z,$h); # NPC: Guardian_of_Destruction
     quest::depop();
   }
   if($timer == 2) {

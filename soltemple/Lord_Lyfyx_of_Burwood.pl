@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::emote("places the gems inside an ornate metal box.  He begins to tug at his skin.  Your vision blurs as he performs his magic. 'This is what you seek.  Now leave and bother me no further.' ");
     quest::faction(415,15);        # Temple of Solusek Ro better
     quest::faction(416,-15);       # Shadow Men worse
-    quest::summonitem(12952);
+    quest::summonitem(12952); # Item: Dragon Scales
     quest::exp(50000);
   }
   plugin::return_items(\%itemcount);    

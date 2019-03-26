@@ -20,9 +20,9 @@ sub EVENT_SAY {
 		$prize = int(rand(100));
 		quest::say("Here you go $name. Enjoy!");
                 quest::setglobal("halloween_candyman",1,0,"D30");
-		quest::summonitem(87312,10);
-		quest::summonitem(85062);
-		quest::summonitem(85067,15);
+		quest::summonitem(87312,10); # Item: Ginormous Jawbreaker
+		quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
+		quest::summonitem(85067,15); # Item: Haunted Candy Apples
 		if($prize == 20){quest::summonitem(124688);}
 	}
         if ($text=~/Hail/i && defined $qglobals{halloween_candyman}) {

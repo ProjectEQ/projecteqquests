@@ -10,11 +10,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 10092 => 1)) {
 		quest::say("Enjoy the exquisite anger, $name, and give my regards to Innoruuk!");
-		quest::movepc(186,-393,656,3);
+		quest::movepc(186,-393,656,3); # Zone: kael
 	}
 	if(plugin::check_handin(\%itemcount, 10094 => 1)) {
 		quest::say("Bah. Off you go.");
-		quest::movepc(71,539,1384,-664);
+		quest::movepc(71,539,1384,-664); # Zone: drachnidhive
 	}
 	plugin::return_items(\%itemcount);
 }

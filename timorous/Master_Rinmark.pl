@@ -11,7 +11,7 @@ sub EVENT_TIMER {
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::emote("stares off into the horizon, lost in his thoughts.");
-  quest::spawn2(96320,0,0,$x,$y,$z,$h);
+  quest::spawn2(96320,0,0,$x,$y,$z,$h); # NPC: Rinmark
   quest::stoptimer("Depop2");
   quest::depop();
  }

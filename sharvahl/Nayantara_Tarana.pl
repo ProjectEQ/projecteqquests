@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16860 =>1 )) {
     quest::say("Here is your moonlight");
-    quest::summonitem(5992);
+    quest::summonitem(5992); # Item: Drop of Moonlight
       }
       plugin::return_items(\%itemcount);
 }

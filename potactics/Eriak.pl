@@ -9,7 +9,7 @@ sub EVENT_SAY {
  }
  elsif($text=~/blood/i && $pop_tactics_tallon == 1 && $pop_tactics_vallon == 1) {
   quest::emote("looks at you silently for a moment. His eyes scan from your feet up to your face and linger there, staring into your eyes. He blinks once, slowly. He then draws a dagger from his waist and throws the iron gauntlet from his left hand to the floor. The dagger drifts across his forearm, and without a sound cuts into his calloused skin. A trickle of dark blood creeps down his arm and drips into a small vial in Eriak's right hand. He hands you the vial, staring through your eyes into your soul without a word.");
-  quest::summonitem(28592);
+  quest::summonitem(28592); # Item: Vial of Black Blood
  }
 else{
   quest::emote("glares at you through blackened eyes of malice. 'Foolish, but brave I suppose. As if that word has any meaning in this place. Prove yourself on the field of blood if you dare.");

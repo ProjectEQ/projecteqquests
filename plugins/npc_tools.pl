@@ -93,10 +93,10 @@ sub SetProx{
 	my $z = $npc->GetZ();
 
 	if($NPCBorder == 1){ 
-		quest::spawn2(614, 0, 0, $x + $Range, $y + $Range, $z, 0);
-		quest::spawn2(614, 0, 0, $x - $Range, $y + $Range, $z, 0);
-		quest::spawn2(614, 0, 0, $x + $Range, $y - $Range, $z, 0);
-		quest::spawn2(614, 0, 0, $x - $Range, $y - $Range, $z, 0);
+		quest::spawn2(614, 0, 0, $x + $Range, $y + $Range, $z, 0); # NPC: skel_pet_1_
+		quest::spawn2(614, 0, 0, $x - $Range, $y + $Range, $z, 0); # NPC: skel_pet_1_
+		quest::spawn2(614, 0, 0, $x + $Range, $y - $Range, $z, 0); # NPC: skel_pet_1_
+		quest::spawn2(614, 0, 0, $x - $Range, $y - $Range, $z, 0); # NPC: skel_pet_1_
 	}
 	quest::set_proximity($x - $Range, $x + $Range, $y - $Range, $y + $Range, $z - $Z, $z + $Z);
 }

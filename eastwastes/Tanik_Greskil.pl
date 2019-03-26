@@ -21,7 +21,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1553 => 1)) {
     quest::say("Thank you, $name. I shall be eternally grateful to you. Should you ever require my assistance I pledge to you my aid. Please deliver this to Borannin, it is imperative that he deliver this to the Dain at once. Farewell for now outlander....");
-    quest::summonitem(1560);
+    quest::summonitem(1560); # Item: Tanik's note
     quest::stoptimer("moveloc");
     quest::depop();
   }

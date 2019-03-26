@@ -12,7 +12,7 @@ sub EVENT_SAY {
   if ($text=~/take the antidote ingredients/i && $research == 1) {
     quest::say("Here you are, $name. Please bring them to him at once so they do not spoil and thank you for your help.");
     $research = 0;
-    quest::summonitem(4759);
+    quest::summonitem(4759); # Item: Antidote Ingredients
   }
 }
 

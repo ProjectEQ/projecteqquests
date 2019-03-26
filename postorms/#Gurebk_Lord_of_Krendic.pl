@@ -16,7 +16,7 @@ sub EVENT_AGGRO {
 sub EVENT_TIMER {
 	if ($timer eq "engage") {	# if he was never engaged, respawns fake lord
 		quest::stoptimer("engage");
-		quest::spawn2(210178,0,0,$x,$y,$z,$h);
+		quest::spawn2(210178,0,0,$x,$y,$z,$h); # NPC: Gurebk_Lord_of_Krendic
 		quest::depop();
 	}
 	
@@ -31,12 +31,12 @@ sub EVENT_TIMER {
 			$y = $npc->GetY();
 			$z = $npc->GetZ();
 			$h = $npc->GetHeading();
-			quest::spawn2(210249,0,0,$x,$y,$z,$h);
-			quest::spawn2(210249,0,0,$x,$y,$z,$h);
-			quest::spawn2(210249,0,0,$x,$y,$z,$h);
-			quest::spawn2(210249,0,0,$x,$y,$z,$h);
-			quest::spawn2(210249,0,0,$x,$y,$z,$h);
-			quest::spawn2(210249,0,0,$x,$y,$z,$h);
+			quest::spawn2(210249,0,0,$x,$y,$z,$h); # NPC: #a_roving_scorpioco
+			quest::spawn2(210249,0,0,$x,$y,$z,$h); # NPC: #a_roving_scorpioco
+			quest::spawn2(210249,0,0,$x,$y,$z,$h); # NPC: #a_roving_scorpioco
+			quest::spawn2(210249,0,0,$x,$y,$z,$h); # NPC: #a_roving_scorpioco
+			quest::spawn2(210249,0,0,$x,$y,$z,$h); # NPC: #a_roving_scorpioco
+			quest::spawn2(210249,0,0,$x,$y,$z,$h); # NPC: #a_roving_scorpioco
 			} else {
 			quest::stoptimer("ScorpAdds");
 			}		

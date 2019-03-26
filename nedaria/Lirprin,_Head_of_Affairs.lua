@@ -54,7 +54,7 @@ function event_trade(e)
 
 	if( qglobals["Fatestealer_bard"] == "1" and qglobals["Fatestealer_page"] == "1" and qglobals["Fatestealer_forge"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 52337}) ) then 
 		e.self:Emote("discusses the process with his assistant. She listens, nodding, then begins work immediately. She takes measurements of your hands and fashions the grip so that it's a perfect fit, then turns to the hot coals of the forge. She selects a brick of fine metal. Her back to you, Dandi hammers away at the metal, sparks flying in all directions. When the job is completed she hands you the blade, still warm. 'Best work I've ever done. I hope it serves you well. Unfortunately the metal I have to work with isn't the recommended 'Velixite'. Based on the description I used the closest thing we have. Also, without an example to work from I had to improvise on a few details that weren't fully described in your documentation.");
-		e.other:SummonItem(52347);
+		e.other:SummonItem(52347); -- Item: Fatestealer
 		e.other:AddAAPoints(5);
 		e.other:Ding();
 		e.other:Message(15,'You have gained 5 ability points!');

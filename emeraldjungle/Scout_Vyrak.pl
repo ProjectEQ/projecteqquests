@@ -13,8 +13,8 @@ quest::emote("You here a massive creature roar as if awakened from a deep sleep.
   }
   if (plugin::check_handin(\%itemcount, 9038 =>1 )) {
     quest::say("Excellent work, $name! Judging by the speed with which it altered that spirit, this totem must be extremely powerful. I've wrapped it, so you should be safe from its magic. Just be sure to keep it in the case. Once you have all of the totems, seal the case and make your way back to Shar Vahl. They will be waiting for you there. I'll continue to look for the person that perpetrated this vile act.");
-    quest::summonitem(9031);
-    quest::summonitem(9039);
+    quest::summonitem(9031); # Item: Official Seal of the Khati Sha
+    quest::summonitem(9039); # Item: Wrapped Gorilla Totem
   }
   plugin::return_items(\%itemcount);
 }

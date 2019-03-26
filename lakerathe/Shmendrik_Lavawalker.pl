@@ -3,7 +3,7 @@
 sub EVENT_DEATH_COMPLETE {
   # he will be killed probably by Natasha Whitewater.
   # eqcastersrealm say that the player can also kill him, not important as long as he dies
-  quest::signalwith(51138,599,2000);
+  quest::signalwith(51138,599,2000); # NPC: #Natasha_Whitewater
 }
 
 
@@ -18,7 +18,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,28044=>1)) {
     quest::emote("shoves the crown into a scorch marked leather satchel and cackles uncontrollably as madness twists his features and flames dance in his eyes. 'You, $name, have reduced the Riptides into chaos! Without a king to keep them in control they will ravage the settlements surrounding this lake! After the slaughter I shall return and easily burn the remainder of the villages and fishing shanties to the ground! None shall escape the fires of the Tyrant!!'");
     quest::summonitem(28045); # 28045  Oil of Fennin Ro
-    quest::spawn2(51138,0,0,111,3627.3,51,384.8);
+    quest::spawn2(51138,0,0,111,3627.3,51,384.8); # NPC: #Natasha_Whitewater
 
     #my $entid=quest::unique_spawn(51138,0,0,111,3627.3,51,384.8); # Natasha Whitewater, spawns in the hut nearby (loc to be adjusted)
     #my $mob=$entity_list->GetMobID($entid);
@@ -32,10 +32,10 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
   if ($signal == 99) {
     quest::say("I'll slay you like I slaughtered your fellow missionaries! The Triumvirate can not decide the fate of a follower of the Tyrant!!");
-    quest::signalwith(51138,199,2000);
+    quest::signalwith(51138,199,2000); # NPC: #Natasha_Whitewater
   }
   if ($signal == 299) {
-    quest::signalwith(51138,399,2000);
+    quest::signalwith(51138,399,2000); # NPC: #Natasha_Whitewater
   }
   if ($signal == 499) {
     $natasha = $entity_list->GetMobByNpcTypeID(51138);

@@ -13,7 +13,7 @@ sub EVENT_ITEM() {
       plugin::check_handin(\%itemcount, 19384 => 1) || # Spell: Dementia
       plugin::check_handin(\%itemcount, 19374 => 1)) { # Spell: Theft of Thought
     quest::say("Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!");      
-    quest::summonitem(quest::ChooseRandom(19386,19379,19381,19215));
+    quest::summonitem(quest::ChooseRandom(19386,19379,19381,19215)); # Item(s): Spell: Boon of the Clear Mind (19386), Spell: Clarity II (19379), Spell: Recant Magic (19381), Spell: Wake of Tranquility (19215)
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

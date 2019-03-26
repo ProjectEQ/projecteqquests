@@ -18,7 +18,7 @@ sub EVENT_SAY {
     # Key to Cobalt Scar
     quest::say("As much I figured you would say that. You must take this request for the information and give it to him, along with 200 platinum pieces. Only then will he part with the information. Once you have it, bring it back to me and your worth to the shrine will be proven.");
     # Summon: Message to Wenglawks
-    quest::summonitem(28600);
+    quest::summonitem(28600); # Item: Message to Wenglawks
   }
 }
 
@@ -29,7 +29,7 @@ sub EVENT_ITEM {
     quest::say("I appear to have mistaken your declaration of worth as a phony attempt at bravado, and do apologize. You have truly proven yourself worthy of the shrine, and in short order as well. For your troubles, and as a token of your worth to the shrine, I grant you this key to traverse into the lands of the Cobalt Scar. Praise be with you and good journeys always, $name.");
     quest::exp(500);
     # Summon: Shrine Key
-    quest::summonitem(28602);
+    quest::summonitem(28602); # Item: Shrine Key
    } 
   plugin::return_items(\%itemcount);
 }

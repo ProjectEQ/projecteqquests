@@ -58,8 +58,8 @@ sub EVENT_SAY {
    elsif ($text=~/small job/i) {
       if ($client->GetGlobal("Fatestealer") ==1) {
          quest::say("Consider this both a favor and a test. I couldn't rest at night knowing that someone carrying around my secrets was anything less than proficient at smithin'. On top of that, relics crafted by the infamous $name will make some fine conversation pieces I think. Ha ha. If that isn't clear enough for ye, I'd like ye to demonstrate your skill with forge and a hammer. Here's a list of items that ye can make for me. Seal them up in this satchel when you're done and bring them back to me, lad.");
-         quest::summonitem(8775);
-         quest::summonitem(52331);  
+         quest::summonitem(8775); # Item: Collection Satchel
+         quest::summonitem(52331); # Item: Test of Smithing  
       }
       else {
          quest::emote("doesn't appear to want to speak with you.");
@@ -77,7 +77,7 @@ sub EVENT_ITEM {
       quest::faction(244, -10); # Ebon Mask
       quest::exp(5000);
       quest::givecash(0, 4, 0, 0);
-      quest::summonitem(quest::ChooseRandom(7007,7008,7009,7010));
+      quest::summonitem(quest::ChooseRandom(7007,7008,7009,7010)); # Item(s): Rusty Dagger (7007), Rusty Rapier (7008), Rusty Spear (7009), Rusty Shortened Spear (7010)
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12170 => 1, 12172 => 1, 12174 => 1, 12178 => 1))) { # Dunfire Tongues
       quest::say("Excellent work!! You are quite an asset to this mining guild. Please accept this Parrying Pick 628 for your great service. If you truly wish to serve our guild. Go and speak with Mater. Tell him you are [ready to earn Mining Pick 628].");

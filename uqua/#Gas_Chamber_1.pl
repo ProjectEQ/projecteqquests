@@ -13,8 +13,8 @@ sub EVENT_ENTER {
 sub EVENT_TIMER {
 	if(defined($qglobals{$instid."_gaschmb1complete"})) {
 		quest::delglobal($instid."_gaschmb1complete");
-		quest::spawn2(292010,0,0,-288,-940,-24,130);
-		quest::spawn2(292007,0,0,-264,-940,-24,386);
+		quest::spawn2(292010,0,0,-288,-940,-24,130); # NPC: a_trusik_ritualist
+		quest::spawn2(292007,0,0,-264,-940,-24,386); # NPC: a_trusik_stalker
 		quest::depop_withtimer();
 	} else {
 		quest::ze(15,"From somewhere behind the walls there is a deep rumbling.");

@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30262 => 4)) {
     quest::say("Oh, yeah. That's strong, very strong. With these, we can make our shipment for this month. I gotta be thankin' ya properly. This be one of our best tools. Here, ya can swing a pick with us anytime, $name.");
-    quest::summonitem(30263);
+    quest::summonitem(30263); # Item: Coldain Velium-Pick
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

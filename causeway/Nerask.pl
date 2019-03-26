@@ -70,19 +70,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70944);
+				quest::summonitem(70944); # Item: Mindreaver's Skullcap of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70930);
+				quest::summonitem(70930); # Item: Academic's Cap of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70937);
+				quest::summonitem(70937); # Item: Glyphwielder's Hat of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70923);
+				quest::summonitem(70923); # Item: Blightbringer's Cap of the Grave
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51479 => 1, 51507 => 2)) #arms
@@ -91,19 +91,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70945);
+				quest::summonitem(70945); # Item: Mindreaver's Armguards of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70931);
+				quest::summonitem(70931); # Item: Academic's Sleeves of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70938);
+				quest::summonitem(70938); # Item: Glyphwielder's Sleeves of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70924);
+				quest::summonitem(70924); # Item: Blightbringer's Armband of the Grave
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51480 => 1, 51508 => 2)) #wrist
@@ -112,19 +112,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70946);
+				quest::summonitem(70946); # Item: Mindreaver's Bracer of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70932);
+				quest::summonitem(70932); # Item: Academic's Wristband of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70939);
+				quest::summonitem(70939); # Item: Glyphwielder's Wristband of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70925);
+				quest::summonitem(70925); # Item: Blightbringer's Bracer of the Grave
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51481 => 1, 51509 => 2)) #hand
@@ -133,19 +133,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70947);
+				quest::summonitem(70947); # Item: Mindreaver's Handguards of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70933);
+				quest::summonitem(70933); # Item: Academic's Gloves of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70940);
+				quest::summonitem(70940); # Item: Glyphwielder's Gloves of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70926);
+				quest::summonitem(70926); # Item: Blightbringer's Handguards of the Grave
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51476 => 1, 51504 => 3)) #chest
@@ -154,19 +154,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70949);
+				quest::summonitem(70949); # Item: Mindreaver's Vest of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70935);
+				quest::summonitem(70935); # Item: Academic's Robe of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70942);
+				quest::summonitem(70942); # Item: Glyphwielder's Tunic of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70928);
+				quest::summonitem(70928); # Item: Blightbringer's Tunic of the Grave
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51477 => 1, 51505 => 3)) #leg
@@ -175,19 +175,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70950);
+				quest::summonitem(70950); # Item: Mindreaver's Leggings of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70936);
+				quest::summonitem(70936); # Item: Academic's Pants of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70943);
+				quest::summonitem(70943); # Item: Glyphwielder's Leggings of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70929);
+				quest::summonitem(70929); # Item: Blightbringer's Pants of the Grave
 				}
 		}
 	if (plugin::check_handin(\%itemcount, 51478 => 1, 51506 => 2)) #feet
@@ -196,19 +196,19 @@ sub EVENT_ITEM
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
-				quest::summonitem(70948);
+				quest::summonitem(70948); # Item: Mindreaver's Shoes of Coercion
 				}
 			if($class eq "Wizard")
 				{
-				quest::summonitem(70934);
+				quest::summonitem(70934); # Item: Academic's Slippers of the Arcanists
 				}
 			if($class eq "Magician")
 				{
-				quest::summonitem(70941);
+				quest::summonitem(70941); # Item: Glyphwielder's Slippers of the Summoner
 				}
 			if($class eq "Necromancer")
 				{
-				quest::summonitem(70927);
+				quest::summonitem(70927); # Item: Blightbringer's Sandals of the Grave
 				}
 		}
 

@@ -4,6 +4,6 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
   quest::say("What a glorious machine the cargo clockwork is!!");
-  quest::signal(56105,1);
+  quest::signal(56105,1); # NPC: Cargo_Clockwork
 }
 

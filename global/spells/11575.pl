@@ -14,13 +14,13 @@ $PRace = $Client_->GetRace();
 			}
 			else {
 				$Client_->Message(0,"Your pie misses, and your target prepares to return fire! A squash pie is flung at you, run away to dodge it!");
-				$npc->CastSpell(11575,$caster_id);
+				$npc->CastSpell(11575,$caster_id); # Spell: Throw Pie
 				$npc->FaceTarget($Client_);
 			}
         	}
 		elsif($NPCTypeID == 202387){
 			$Client_->Message(0,"SPLAT! Your victim is covered in a warm gooey squash pie.");
-			$npc->CastSpell(11575,$caster_id);
+			$npc->CastSpell(11575,$caster_id); # Spell: Throw Pie
 			$npc->FaceTarget($Client_);
 			quest::signal(202387);
 		}

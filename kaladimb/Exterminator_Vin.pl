@@ -7,11 +7,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13071 => 4)){
     quest::say("Ah ya have returned. Nice work. You might consider a career in vermin extermination yourself!");
-    quest::faction(312,5);
-    quest::faction(274,5);
-    quest::faction(293,5);
-    quest::faction(290,5);
-    quest::faction(232,-5);
+    quest::faction(312,5); # Faction: Storm Guard
+    quest::faction(274,5); # Faction: Kazon Stormhammer
+    quest::faction(293,5); # Faction: Miners Guild 249
+    quest::faction(290,5); # Faction: Merchants of Kaladim
+    quest::faction(232,-5); # Faction: Craknek Warriors
     quest::givecash(1,1,1,0);
   }
 }

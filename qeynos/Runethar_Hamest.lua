@@ -27,10 +27,10 @@ function event_say(e)
 		e.self:Say("Well, friend, the Temple of Thunder has recognized and appreciates your past deeds for us. But this matter is of vital importance to us and we need more proof of your devotion to our cause");
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 
@@ -41,10 +41,10 @@ function event_trade(e)
 		e.self:Say("Greetings, fellow knight of Karana, and welcome to the Temple of Thunder! Here, wear this tunic and help our crusade. Wolten Grafe is my assistant, he will get you started and teach you the ways of the Rainkeeper. Once you are ready to begin your hunting training please see Vansted Rohenga, he will assist you in some tasks for your early adventures. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available for you.");
 		e.other:SummonItem(13505); -- Old Gray Tunic*
 		e.other:Ding();
-		e.other:Faction(280,100,0);
-		e.other:Faction(221,-100,0);
-		e.other:Faction(341,75,0);
-		e.other:Faction(262,75,0);
+		e.other:Faction(280,100,0); -- Faction: Knights of Thunder
+		e.other:Faction(221,-100,0); -- Faction: Bloodsabers
+		e.other:Faction(341,75,0); -- Faction: Priests of Life
+		e.other:Faction(262,75,0); -- Faction: Guards of Qeynos
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

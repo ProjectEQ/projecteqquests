@@ -27,8 +27,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","1","0"); 
   quest::exp(100);
   quest::ding();
-  quest::faction(442,20);
-  quest::faction(441,10);
+  quest::faction(442,20); # Faction: Crusaders of Greenmist
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  if(plugin::check_handin(\%itemcount, 12382 => 1, 5121 => 1)) { #Test of Pain (Greenmist Quest 2/8)
   quest::say("You have done as instructed. You are wise to hand this tome to me. It could bring you nothing more than insanity. As your reward, you shall have the squire's khukri. Soon you shall wield the knight's khukri, but that is for another Lord of Pain to decide.");
@@ -36,8 +36,8 @@ sub EVENT_ITEM {
   quest::givecash("0","0","3","0"); 
   quest::exp(300);
   quest::ding();
-  quest::faction(442,20);
-  quest::faction(441,10);
+  quest::faction(442,20); # Faction: Crusaders of Greenmist
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
  plugin::return_items(\%itemcount);

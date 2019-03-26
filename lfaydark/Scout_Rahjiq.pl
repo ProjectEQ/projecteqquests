@@ -13,8 +13,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9034 =>1 )) {
   quest::emote("wraps the totem and returns it with the seal you gave him and says");
   quest::say("That spirit was very powerful. I'm glad that you were able to release it. Please keep this totem safe until you can return to Shar Vahl. Once you collect all of the totems, seal the box and return it to your master. May the spirits watch over you!");
-  quest::summonitem(9031);
-  quest::summonitem(9035);
+  quest::summonitem(9031); # Item: Official Seal of the Khati Sha
+  quest::summonitem(9035); # Item: Wrapped Wolf Totem
     
   }
   plugin::return_items(\%itemcount);

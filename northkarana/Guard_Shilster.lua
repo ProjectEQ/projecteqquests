@@ -29,7 +29,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {gold = 5})) then
 		e.self:Say("There you go, sport. If you get caught with that, you didn't get it from me!");
-		e.other:SummonItem(13107);
+		e.other:SummonItem(13107); -- Item: Black Burrow Stout
 		e.other:Ding();
 		e.other:Faction(262,-10,0); -- Guards of Qeynos
 		e.other:Faction(273,10,0); -- Kane Bayle

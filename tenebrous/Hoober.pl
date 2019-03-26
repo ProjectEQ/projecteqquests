@@ -3,6 +3,6 @@ sub EVENT_DEATH_COMPLETE {
   $y = $npc->GetY();		
   $z = $npc->GetZ();		
   $h = $npc->GetHeading();
-    quest::spawn2(172182, 0, 0, $x, $y, $z, $h);
+    quest::spawn2(172182, 0, 0, $x, $y, $z, $h); # NPC: #Hoober
 
 }

@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if($text=~/retrieve these components/i){
     quest::say("Fantastic, $name! Elefan, my apprentice, is currently studying under my wing. He had been collecting samples in Shadeweaver lately and he probably has the items that I need. If you could go and speak with him and present him with this ingredient list, hopefully he will have what I need. Please bring the components back to me as soon as possible!");
-    quest::summonitem(4758);
+    quest::summonitem(4758); # Item: Zimloro Ingredient List
   }
 }
 sub EVENT_ITEM { 

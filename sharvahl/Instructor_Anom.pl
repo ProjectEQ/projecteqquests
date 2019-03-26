@@ -20,11 +20,11 @@ sub EVENT_TIMER {
 	}
 	if($count==7) {
 		quest::say("Are you two ready to spar?");
-		quest::signalwith(155131,1,5);
+		quest::signalwith(155131,1,5); # NPC: Recruit_Ulra
 		quest::settimer("train",5);
 	}
 	if($count==8) {
-		quest::signalwith(155131,2,5);
+		quest::signalwith(155131,2,5); # NPC: Recruit_Ulra
 		quest::settimer("train",90);
 	}
 	if($count==9) {

@@ -30,7 +30,7 @@ sub EVENT_DEATH_COMPLETE {
 	if ($local_total >= 5)
 		{
 		# Defenders are down - send signal.
-		quest::signalwith(166257, 1, 0);
+		quest::signalwith(166257, 1, 0); # NPC: War_Trigger
 		}
   my $RandomNumber = int(rand(3)) + 1;
   quest::emote("$DeathText{$RandomNumber}");

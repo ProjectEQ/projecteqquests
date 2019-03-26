@@ -15,8 +15,8 @@ sub EVENT_ITEM {
    # Runed Coldain Prayer Shawl (approved)
    if (plugin::check_handin(\%itemcount, 8895 => 1)) {
       quest::emote("holds the shawl up close to one eye to look at the rune sewn into it. He smiles to himself and then drops it to the ground and places one hand on it. A bright blue glow starts to emanate in the snow, then there is a sudden flash! The Avatar has dissipated. All that is left behind is the Shawl lying in the snow, shimmering with a new power. $name slowly bends down to pick it up, and is infused with a blessing from Brell.");
-      quest::summonitem(1200);
-      quest::signalwith(110118, 10, 5);
+      quest::summonitem(1200); # Item: Blessed Coldain Prayer Shawl
+      quest::signalwith(110118, 10, 5); # NPC: General_Bragmur_
       quest::stoptimer("avatarshawl");
       quest::depop();
    }

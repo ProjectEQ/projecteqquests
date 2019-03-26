@@ -13,7 +13,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 8720})) then
 		e.self:Say("Thank You. This is most interesting. I must study it immediatly"); -- text made up
-		e.other:SummonItem(8732);
+		e.other:SummonItem(8732); -- Item: Medallion of the Arcane Scientists
 		e.other:Ding();
 		e.other:AddEXP(100000);
 	end

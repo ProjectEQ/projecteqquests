@@ -33,19 +33,19 @@ sub EVENT_TIMER {
 		#Each time High Priest reaches 50% he absorbs the next Shade and returns to MaxHP
 		if($priest->GetHP() < ($priest->GetMaxHP() / 2)) {
 			if($entity_list->IsMobSpawnedByNpcTypeID(297213)) {
-				quest::signalwith(297213,3);
+				quest::signalwith(297213,3); # NPC: Shade_of_a_Vrex_Invoker
 				$priest->SetHP($priest->GetMaxHP());
 			} elsif ($entity_list->IsMobSpawnedByNpcTypeID(297214)) {
-				quest::signalwith(297214,3);
+				quest::signalwith(297214,3); # NPC: Shade_of_a_Vrex_Invoker_
 				$priest->SetHP($priest->GetMaxHP());
 			} elsif ($entity_list->IsMobSpawnedByNpcTypeID(297215)) {
-				quest::signalwith(297215,3);
+				quest::signalwith(297215,3); # NPC: Shade_of_a_Vrex_Invoker__
 				$priest->SetHP($priest->GetMaxHP());
 			} elsif ($entity_list->IsMobSpawnedByNpcTypeID(297216)) {
-				quest::signalwith(297216,3);
+				quest::signalwith(297216,3); # NPC: Shade_of_a_Vrex_Invoker___
 				$priest->SetHP($priest->GetMaxHP());
 			} elsif ($entity_list->IsMobSpawnedByNpcTypeID(297217)) {
-				quest::signalwith(297217,3);
+				quest::signalwith(297217,3); # NPC: Shade_of_a_Vrex_Invoker____
 				$priest->SetHP($priest->GetMaxHP());
 			} else {
 				quest::stoptimer("hp_check");

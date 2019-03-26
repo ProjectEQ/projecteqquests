@@ -9,10 +9,10 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12143})) then
 		e.self:Say("I am sorry to see you check out. Here is all you had in your box. We hope to serve you again. Have a nice day!! Next!");
-		e.other:SummonItem(18936);
+		e.other:SummonItem(18936); -- Item: Sealed Note
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12193})) then
 		e.self:Say("I am sorry to see you check out. Here is all you had in your box. We hope to serve you again. Have a nice day!! Next!");
-		e.other:SummonItem(13323);
+		e.other:SummonItem(13323); -- Item: Emerald Shard
 		e.other:Ding();
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,4,5,1);

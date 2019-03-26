@@ -7,5 +7,5 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(216107,5,0);
+  quest::signalwith(216107,5,0); # NPC: #coirnav_controller
 }

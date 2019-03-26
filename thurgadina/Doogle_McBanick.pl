@@ -11,14 +11,14 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::say("Hello there Horasug! What brings ya here?");
-		quest::signalwith(115013,3,8000);
+		quest::signalwith(115013,3,8000); # NPC: Horasug
 	}
 	if($signal==2) {
 		quest::say("A vision you say? What exactly was this a vision of?");
-		quest::signalwith(115013,4);
+		quest::signalwith(115013,4); # NPC: Horasug
 	}
 	if($signal==3) {
-		quest::signalwith(115013,5,7000);
+		quest::signalwith(115013,5,7000); # NPC: Horasug
 	}
 	if($signal==4) {
 		quest::say("Well, you came to the right place, Horasug. A few of these ales will fill you with all the visions you can handle.");

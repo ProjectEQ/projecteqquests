@@ -27,13 +27,13 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13953,item2 = 13953,item3 = 13953,gold = 30})) then
 		e.self:Say("You are one lucky bixie buster. I just made a batch of honey jum. Here. No waiting for you.  One jar for your good work. Bye, now!");
-		e.other:SummonItem(13952);
+		e.other:SummonItem(13952); -- Item: Honey Jum
 		e.other:Ding();
-		e.other:Faction(292,5,0);
-		e.other:Faction(241,5,0);
-		e.other:Faction(263,5,0);
-		e.other:Faction(286,5,0);
-		e.other:Faction(336,-5,0);
+		e.other:Faction(292,5,0); -- Faction: Merchants of Rivervale
+		e.other:Faction(241,5,0); -- Faction: Deeppockets
+		e.other:Faction(263,5,0); -- Faction: Guardians of the Vale
+		e.other:Faction(286,5,0); -- Faction: Mayor Gubbin
+		e.other:Faction(336,-5,0); -- Faction: Coalition of Tradefolk Underground
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

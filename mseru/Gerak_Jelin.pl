@@ -11,6 +11,6 @@ sub EVENT_SAY
 	if($text=~/good news/i)
 		{
 		quest::say("Yeah, it looks grim to anyone in this aweful place. I wrote her this letter when i found out that I was being exiled, but did not get a chance to give it to her. If you want to risk it, you can take it to her. Make no mention it is from me. She is loyal to the city and would not want to be cast out because of me.");
-		quest::summonitem(6269);
+		quest::summonitem(6269); # Item: Tattered Letter
 		}
 }

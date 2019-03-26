@@ -5,7 +5,7 @@ function event_spell_effect_translocate_complete(e)
   --if (bit.band(client:GetClientVersionBit(), 4294967264) ~= 0) then
   --  client:MovePC(22, -144, -1543, 2, 244);
   --else
-    client:MovePC(21, 1839, 2, -15, 120);
+    client:MovePC(21, 1839, 2, -15, 120); -- Zone: beholder
   --end
 
   return 1;

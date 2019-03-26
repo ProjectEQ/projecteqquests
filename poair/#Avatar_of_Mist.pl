@@ -11,5 +11,5 @@ if($timer == 37) {
 }
 
 sub EVENT_DEATH_COMPLETE {
-    quest::signalwith(215455,3,1);
+    quest::signalwith(215455,3,1); # NPC: #Mist_Trigger
 }

@@ -7,14 +7,14 @@ function event_timer(e)
 	if(e.timer=="dialog1") then
 		eq.stop_timer("dialog1");
 		e.self:Say("'It doesn't matter if it is any use to you, fathead. It's a matter of being able to do it at all. We've always needed the majority of the body to get it animated properly. The ability to animate parts of the body might lead to some new avenue that we haven't thought of yet.");
-		eq.signal(14189,2);
+		eq.signal(14189,2); -- NPC: #Glenfire_Telzir
 	elseif(e.timer=="dialog2") then
 		eq.stop_timer("dialog2");
 		e.self:Say("That's true!");
-		eq.signal(14190,3);			
+		eq.signal(14190,3); -- NPC: #Finnelzi_Springworthy			
 	elseif(e.timer=="gate") then
 		eq.stop_timer("gate");
-		e.self:CastSpell(36, 0);
+		e.self:CastSpell(36, 0); -- Spell: Gate
 		eq.set_timer("depop",3000);
 	elseif(e.timer=="depop") then
 		eq.stop_timer("depop");

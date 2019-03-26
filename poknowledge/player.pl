@@ -16,11 +16,11 @@ sub EVENT_CLICKDOOR
     		{
       			if(($client->GetClientVersionBit() & 4294967264)!= 0)
       			{
-        			quest::MovePCInstance(344,5,18,-46,6,450);
+        			quest::MovePCInstance(344,5,18,-46,6,450); # Zone: sirens
       			}
       			else
       			{
-        			quest::movepc(344,18,-46,6,492);
+        			quest::movepc(344,18,-46,6,492); # Zone: sirens
       			}
     		}
 	}
@@ -28,7 +28,7 @@ sub EVENT_CLICKDOOR
   	{
     		if($client->CalculateDistance(1452, 347, -113) <= 30)
     		{
-      			quest::movepc(151,-425,0,-25,65);
+      			quest::movepc(151,-425,0,-25,65); # Zone: gukd
     		}
   	}
   	if($doorid == 19)
@@ -46,7 +46,7 @@ sub EVENT_CLICKDOOR
 	  	#{
 	  		#quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",2,1);
 			#quest::settimer(2,5);
-			quest::movepc(46,-34,-721,-27,221.21);
+			quest::movepc(46,-34,-721,-27,221.21); # Zone: citymist
 	  	#}
   	}
   	if($doorid == 22)    #erud
@@ -65,7 +65,7 @@ sub EVENT_CLICKDOOR
 		#       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",3,1);
 		#       quest::settimer(3,5);
 		#}
-		quest::movepc(38,296,-2330,-45.4,127);
+		quest::movepc(38,296,-2330,-45.4,127); # Zone: chambersb
   	}
   	if($doorid == 32)    #paineel
 	{
@@ -83,7 +83,7 @@ sub EVENT_CLICKDOOR
 		#       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",4,1);
 		#       quest::settimer(4,5);
 		#}
-		quest::movepc(38,-569,2325,-43.4,39);
+		quest::movepc(38,-569,2325,-43.4,39); # Zone: chambersb
   	}
   	if($doorid == 24)
 	{
@@ -100,7 +100,7 @@ sub EVENT_CLICKDOOR
 		#{
 		#       quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",5,1);
 		#       quest::settimer(5,5);
-		       quest::movepc(56,933.79,-1358,-109);
+		       quest::movepc(56,933.79,-1358,-109); # Zone: crushbone
 		#}
   	}
   	if($doorid == 25)
@@ -118,7 +118,7 @@ sub EVENT_CLICKDOOR
 		#{
 		#      quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",6,1);
 		#      quest::settimer(6,5);
-		      quest::movepc(9,77.31,-660.57,-30.24);
+		      quest::movepc(9,77.31,-660.57,-30.24); # Zone: arena
 		#}
   	}
 }
@@ -128,23 +128,23 @@ sub EVENT_POPUPRESPONSE
 {
 	if($popupid == 2)
 	{
-		quest::movepc(46,-34,-721,-27,221.21);
+		quest::movepc(46,-34,-721,-27,221.21); # Zone: citymist
 	}
 	if($popupid == 3)
 	{
-		quest::movepc(38,296,-2330,-45.4,127);
+		quest::movepc(38,296,-2330,-45.4,127); # Zone: chambersb
 	}
 	if($popupid == 4)
 	{
-                quest::movepc(38,-569,2325,-43.4,39);
+                quest::movepc(38,-569,2325,-43.4,39); # Zone: chambersb
 	}
 	if($popupid == 5)
 	{
-                quest::movepc(56,933.79,-1358,-109);
+                quest::movepc(56,933.79,-1358,-109); # Zone: crushbone
 	}
 	if($popupid == 6)
 	{
-                quest::movepc(9,77.31,-660.57,-30.24);
+                quest::movepc(9,77.31,-660.57,-30.24); # Zone: arena
 	}
 }
 
@@ -152,22 +152,22 @@ sub EVENT_TIMER
 {
 	if($timer == 2)
 	{
-		quest::movepc(413,-361,-462,5);
+		quest::movepc(413,-361,-462,5); # Zone: tutorial
 	}
 	if($timer == 3)
 	{
-		quest::movepc(414,248,-1684,33,88);
+		quest::movepc(414,248,-1684,33,88); # Zone: tutoriala
 	}
 	if($timer == 4)
 	{
-		quest::movepc(414,-1801,1907,119,195.5);
+		quest::movepc(414,-1801,1907,119,195.5); # Zone: tutoriala
 	}
 	if($timer == 5)
 	{
-                quest::movepc(448,940,-1122,5,98);
+                quest::movepc(448,940,-1122,5,98); # Zone: convorteum
 	}
 	if($timer == 6)
 	{
-                quest::movepc(383,-173,-188,-69,192);
+                quest::movepc(383,-173,-188,-69,192); # Zone: takh
 	}
 }

@@ -26,7 +26,7 @@
 
 sub EVENT_SAY {
    if($text=~/hail/i) {
-      quest::signalwith(151070, 1, 1);
+      quest::signalwith(151070, 1, 1); # NPC: Aediles_Thrall
       my $facemob = $entity_list->GetMobByNpcTypeID(151070);
       $npc->FaceTarget($facemob);
    }

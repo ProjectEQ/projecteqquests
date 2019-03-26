@@ -7,7 +7,7 @@ sub EVENT_SAY {
   }
   if($text=~/suit of armor/i) {
     quest::say("Take this note to Wellis Pestule. He will assist you in obtaining your armor. Once you have been properly outfitted return to me. I will allow you to assist me with a [pressing matter].");
-    quest::summonitem(20206);
+    quest::summonitem(20206); # Item: Note to Wellis Pestule
   }
   if($text=~/pressing matter/i) {
     quest::say("The Knights of Thunder, the order of paladins loyal to Karana, the Storm Lord, have been paying close attention for signs of us Bloodsabers in the streets of Qeynos. By orders of Antonius Bayle known disciples of the Plague Lord are to be executed by the Knights of Thunder. A particular knight, Grennet Stormhands, has recently discovered the loyalties of a Bloodsaber member that held a valuable position among the merchants of Qeynos. Grennet is to be hunted and slain for our loss. Find this Knight of Thunder and bring me his head.");
@@ -20,12 +20,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20186 => 1)) {
     quest::say("Excellent, the Knights of Thunder must learn that by beginning an inquisition of the Bloodsabers they are effectively declaring war. Take this Rusty Scourge Knight Saber to a forge and sharpen it with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done take the Tarnished Scourge Knight Saber and a Giant King Snake Skin to Wellis Pestule and he will put the finsihing touches on the weapon.");
-    quest::summonitem(20187);
-    quest::faction(221,1);
-    quest::faction(262,-1);
-    quest::faction(296,1);
-    quest::faction(341,-1);
-    quest::faction(230,1);
+    quest::summonitem(20187); # Item: Rusty Scourge Knight Saber
+    quest::faction(221,1); # Faction: Bloodsabers
+    quest::faction(262,-1); # Faction: Guards of Qeynos
+    quest::faction(296,1); # Faction: Opal Darkbriar
+    quest::faction(341,-1); # Faction: Priests of Life
+    quest::faction(230,1); # Faction: Corrupt Qeynos Guards
     quest::ding();
     quest::exp(100);
   }

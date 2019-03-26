@@ -11,11 +11,11 @@ find an [apprentice of the third rank].");
   }
   if($text=~/apprentice of the third rank/i) {
     quest::say("If you truly be an apprentice of the third circle, then there is a Dark Binder skullcap to be earned. Take this sack and fill it with a creeper cabbage, a heartsting telson with venom, brutling choppers and a scalebone femur. When they are combined within the sack, you may return it to me with your third rank skullcap and and we shall bid farewell to the title, apprentice.");
-    quest::summonitem(17024);
+    quest::summonitem(17024); # Item: Brood Sack
   }
   if($text=~/true mission/i) {
     quest::say("I have been waiting for a Nihilist to return. His name was Ryx and I fear his love of ale and the high seas has kept him from his mission. All I want you to do is find him. He should be disguised as a worker and he will give you a tome to bring to me. Return it with your Dark Binder Cap. I am sure that is simple enough for one as simple as you. Be sure to give him this.");
-    quest::summonitem(12848);
+    quest::summonitem(12848); # Item: Spectacle
   }
   # missing text
   if($text=~/Kor Sha Candlestick/i) {
@@ -28,16 +28,16 @@ sub EVENT_ITEM {
     quest::say("Well done, here's your fourth rank skull cap. You can now start your [true mission].");
     quest::exp(200);
     quest::summonitem(4263); #dark binder skullcap
-    quest::faction(441,20);
-    quest::faction(443,20);
+    quest::faction(441,20); # Faction: Legion of Cabilis
+    quest::faction(443,20); # Faction: Brood of Kotiz
   }
   if(plugin::check_handin(\%itemcount, 55978 => 1, 4263 => 1)) { #a journal and dark binder skullcap
     quest::say("Well done, here's your fifth rank skull cap. You can now track
 down the [Kor Sha Candlestick].");
     quest::exp(200);
     quest::summonitem(4264); #occultist skullcap
-    quest::faction(441,20);
-    quest::faction(443,20);
+    quest::faction(441,20); # Faction: Legion of Cabilis
+    quest::faction(443,20); # Faction: Brood of Kotiz
   }
   if (plugin::check_handin(\%itemcount, 12853 => 1, 12852 => 1, 4264 => 1 )) { 
 #Stem of Candlestick, Foot of Candlestick, occultist skullcap
@@ -46,8 +46,8 @@ takes your cap which disintegrates in his palm. He hands you another cap.");
     quest::say("Welcome, Revenant $name. You have done well. The Harbinger awaits you. He seeks a [new revenant].");
     quest::exp(200);
     quest::summonitem(4265); #Revenant Skullcap
-    quest::faction(441,20);
-    quest::faction(443,20);
+    quest::faction(441,20); # Faction: Legion of Cabilis
+    quest::faction(443,20); # Faction: Brood of Kotiz
     quest::givecash(0,0,6,0);
   }
     plugin::return_items(\%itemcount);

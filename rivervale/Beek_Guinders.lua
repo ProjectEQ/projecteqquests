@@ -19,10 +19,10 @@ function event_say(e)
 		e.self:Say("Ahhh, excellent! Okay, first, we'll need a couple of wolf pelts. They don't have to be perfect, completely ruined would work just fine, hehe. I'll also need a black wolf skin and a handful of berries. The berries you should be able to find out in the Thicket. I hear they grow in a small canyon near the lone tower. Hurry, hurry!");
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [" .. eq.say_link("second book",false,"second book") .. "], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
+		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 
@@ -39,7 +39,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13045,item2 = 13782,item3 = 13782,item4 = 13758})) then -- Tattered Note
 		e.self:Say("Hey, great! You found the materials! We'll get to work right away. If you find any more, please come by again. Here's a little something for your troubles, friend.");
-		e.other:SummonItem(eq.ChooseRandom(15014,15201,15207,15208,16303));
+		e.other:SummonItem(eq.ChooseRandom(15014,15201,15207,15208,16303)); -- Item(s): Spell: Strike (15014), Spell: Flash of Light (15201), Spell: Divine Aura (15207), Spell: Lull (15208), Spell: Gate (16303)
 		e.other:Ding();
 		e.other:Faction(300,10,0); -- Priest of Mischief
 		e.other:Faction(286,10,0); -- Mayor Gubbin

@@ -12,7 +12,7 @@ sub EVENT_SAY
                 {
                 quest::say("Hail, $name. Run along and give McArik the items he requested.");
                 $handin=undef;
-                quest::summonitem(60196);
+                quest::summonitem(60196); # Item: Image Essence
                 }
 
 }
@@ -22,7 +22,7 @@ sub EVENT_ITEM
 {
 	if(plugin::check_handin(\%itemcount, 60195 => 1))
 		{
-		quest::movepc(78,1065,525,176);
+		quest::movepc(78,1065,525,176); # Zone: dranikcatacombsa
 		quest::settimer(1,15);
 		}
    plugin::return_items(\%itemcount);
@@ -45,7 +45,7 @@ sub EVENT_SIGNAL
 
 	if($signal == 15)
 		{
-		quest::spawn2(78213,0,0,985,520,175,130);
+		quest::spawn2(78213,0,0,985,520,175,130); # NPC: Berserker`s_Image
             $handin=1;
 		}
 }

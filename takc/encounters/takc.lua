@@ -52,13 +52,13 @@ function QOS_Death(e)
 
   if (extra_loot) then
     -- Ritanas_Ornate_Chest
-    eq.spawn2(241075, 0, 0, 379, -797, 8.23, 1);
+    eq.spawn2(241075, 0, 0, 379, -797, 8.23, 1); -- NPC: #Ritanas_Ornate_Chest
   end
   --
   -- The Earthen Chest
-  eq.spawn2(241076, 0, 0, 448, -727, 8.23, 385);
+  eq.spawn2(241076, 0, 0, 448, -727, 8.23, 385); -- NPC: #The_Earthen_Chest
   -- The Gem Encrusted Chest
-  eq.spawn2(241077, 0, 0, 309, -727, 8.23, 130);
+  eq.spawn2(241077, 0, 0, 309, -727, 8.23, 130); -- NPC: #The_Gem_Encrusted_Chest
   
   UpdateLockout();
 end

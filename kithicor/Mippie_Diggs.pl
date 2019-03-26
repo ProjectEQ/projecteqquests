@@ -4,8 +4,8 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 	if(quest::istaskactive(19)){
 		if(quest::istaskactivityactive(19,4)){
-			quest::summonitem(65096);
-			quest::summonitem(85062);
+			quest::summonitem(65096); # Item: 5 Dose Essence of Halfling
+			quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 			$client->AddLevelBasedExp(10, 0);
 			quest::setglobal("halloween_hungry",1,0,"D30");
                         quest::updatetaskactivity(19,4);
@@ -24,7 +24,7 @@ sub EVENT_SAY {
       			}
   			if($text=~/willing/i) {
         			quest::say("Thank you so much. Here is the book, now see what sort of things you can come up with.");
-        			quest::summonitem(84097);
+        			quest::summonitem(84097); # Item: Mippie's Home Remedies
         			quest::assigntask(219);
       			        quest::assigntask(19); #Task: The Hungry Halfling
       			}

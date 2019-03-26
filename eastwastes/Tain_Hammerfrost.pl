@@ -15,11 +15,11 @@ sub EVENT_SAY {
     $flag = 1;
     quest::settimer(3, 600);
     quest::say("Thank Brell! I hear them approaching from just over that hill! Slay the leader, Ghrek, and give me his elixir.");
-    my $mobid1 = quest::spawn2(116560, 0, 0, -2991, -4837, 229, 130);
-    my $mobid2 = quest::spawn2(116030, 0, 0, -2991, -4815, 229, 130);
-    my $mobid3 = quest::spawn2(116030, 0, 0, -2991, -4793, 229, 130);
-    my $mobid4 = quest::spawn2(116030, 0, 0, -2991, -4859, 229, 130);
-    my $mobid5 = quest::spawn2(116030, 0, 0, -2991, -4881, 229, 130);
+    my $mobid1 = quest::spawn2(116560, 0, 0, -2991, -4837, 229, 130); # NPC: Ghrek_Squatnot
+    my $mobid2 = quest::spawn2(116030, 0, 0, -2991, -4815, 229, 130); # NPC: a_frost_giant
+    my $mobid3 = quest::spawn2(116030, 0, 0, -2991, -4793, 229, 130); # NPC: a_frost_giant
+    my $mobid4 = quest::spawn2(116030, 0, 0, -2991, -4859, 229, 130); # NPC: a_frost_giant
+    my $mobid5 = quest::spawn2(116030, 0, 0, -2991, -4881, 229, 130); # NPC: a_frost_giant
 
     my $mob1 = $entity_list->GetMobID($mobid1);
     my $mob2 = $entity_list->GetMobID($mobid2);
@@ -57,14 +57,14 @@ sub EVENT_ITEM {
     quest::stoptimer(1);
     $npc->SetAppearance(0);
     quest::say("I will report your selfless actions when I return to Thurgadin. Take this for your troubles, friend. I hope you find it useful. Fare thee well.");
-    quest::summonitem(30140);
+    quest::summonitem(30140); # Item: Coldain Smithing Hammer
     quest::settimer(2,15);
 
     # Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-    quest::faction(406, 30);
-    quest::faction(405, 30);
-    quest::faction(419, -30);
-    quest::faction(448, -30);
+    quest::faction(406, 30); # Faction: Coldain
+    quest::faction(405, 30); # Faction: Dain Frostreaver IV
+    quest::faction(419, -30); # Faction: Kromrif
+    quest::faction(448, -30); # Faction: Kromzek
     quest::exp(80000);
   }
 }

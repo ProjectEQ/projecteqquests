@@ -7,7 +7,7 @@ sub EVENT_SAY {
 	}
 	if ($text=~/i am interested/i) {
 		quest::say("Very well. Take this pack of supplies to any of the Mercenaries you come across in the field. They will pay you upon delivery. Return here for more supplies to deliver when you are ready.");
-		quest::summonitem(1724);
+		quest::summonitem(1724); # Item: Field Supplies
 	}
 	if ($text=~/plane of growth/i) {
 		quest::say("Our soldiers fell victim to the denizens of that plane and unless we can find some way to stop this from happening, the land of Wakening will never be under our control. Many have suggested just destroying the Nexus but they are short-sighted fools. My vision is not only to control the resources that forest provides, but also to control the very force of Growth itself! You will help me to do this, mercenary.");
@@ -22,20 +22,20 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 1709 => 1)) { # Report of Failure
 		quest::emote("takes the report from you and places it in a pocket without even glancing at it. He says, 'Do not worry, $name. I know of the planar creatures who eliminated my troops. The fault is not yours but of that fool Drioc's. The Savage land is not just a simple forest as those idiots in the field believe. It is a cradle of life and the forces that drive it. Within that forest is a nexus, a gateway to another plane of existence, the Plane of Growth.'");
 		quest::ding();
-		quest::faction(448,10);
-		quest::faction(419,10);
-		quest::faction(429,10);
-		quest::faction(430,-30);
+		quest::faction(448,10); # Faction: Kromzek
+		quest::faction(419,10); # Faction: Kromrif
+		quest::faction(429,10); # Faction: King Tormax
+		quest::faction(430,-30); # Faction: Claws of Veeshan
 		quest::exp(1000);
 		quest::summonitem(1710); # inscribed velium tablet
 	}
 	if(plugin::check_handin(\%itemcount, 1712 => 1, 1714 => 1)) { # Arcanum of Roth, Ancient Rusted Key *NOTE* Petcas no longer drops the key --  This might of changed with the warrior 1.5 epic prequest which involves Petcas.
 		quest::say("Ahhh, you suprise me mercenary. You have found the book as well as the key to open it. I must begin my research as soon as possible. But first, your reward. With this voucher you can receive 1 of the 3 treasures I will offer you. If given to Kellek you will receive an item worthy of a hearty and rugged combatant. If given to Wenglawks you will aquire an item to be worn by only the most pious. And if given to me I will give you a sorcerous trinket of my own design.");
 		quest::ding();
-		quest::faction(448,10);
-		quest::faction(419,10);
-		quest::faction(429,10);
-		quest::faction(430,-30);
+		quest::faction(448,10); # Faction: Kromzek
+		quest::faction(419,10); # Faction: Kromrif
+		quest::faction(429,10); # Faction: King Tormax
+		quest::faction(430,-30); # Faction: Claws of Veeshan
 		quest::exp(2000);
 		quest::summonitem(1722); # Helssen's Voucher
 	}

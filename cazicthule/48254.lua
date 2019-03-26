@@ -46,32 +46,32 @@ if (e.timer == "adds") then
 eq.stop_timer("adds");
 which = math.random(1,6);
 	if  (which == 1) then
-		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
 	elseif (which == 2) then
-		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
 	elseif (which == 3) then
-		  eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+		  eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
     	elseif (which == 4) then
-		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
     	elseif (which == 5) then
-		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
     	elseif (which == 6) then
-		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
+      		eq.spawn2(eq.ChooseRandom(48195, 48234),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): #a_Tae_Ew_hunter (48195)
     	end
 elseif (e.timer == "Named") then
       		eq.stop_timer("Named");

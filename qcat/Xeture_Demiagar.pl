@@ -16,7 +16,7 @@ sub EVENT_SAY {
 	}
 	if ($text=~/serve his will/i) {
 		quest::say("By spreading the disease, decay, and destructive powers of the Plague Lord you will in turn be gifted with great insight and power. First however you must learn to survive in this city, surrounded by those who would see you destroyed for your faith. Take this note to Torin Krentar. He will instruct you on how to acquire a suit of armor to protect you from the weapons of our [enemies].");
-		quest::summonitem(20207);
+		quest::summonitem(20207); # Item: Note to Torin Krentar
 	}
 	if ($text=~/enemies/i) {
 		quest::say("The self-righteous ruler of this city, Antonius Bayle IV, is backed by the Knights of Thunder, paladins and clerics of the Storm Lord Karana, and the Temple Life, paladins and clerics of the Prime-Healer, Rodcet Nife. Be wary when not within the security of our temple here in the Qeynos Catacombs, should the Qeynos Guards discover you allegiances they would have you executed. Once you have been properly armored return to me and I will give you [further instruction].");
@@ -40,7 +40,7 @@ sub EVENT_ITEM {
 	}
 	if(plugin::check_handin(\%itemcount, 20197 => 1)) {
 		quest::say("You have done well, $name. Take this Rusty Bloodsaber Mace to a forge and clean it up with a Sharpening Stone. It may take you several attempts to get all the rust off if you are not familiar with the process. Once that is done take the Refined Bloodsaber Mace to Torin Krentar with a Giant King Snake Skin and he will put the finishing touches on the weapon.");
-		quest::summonitem(20198);
+		quest::summonitem(20198); # Item: Rusty Bloodsaber Mace
 	}
 	plugin::return_items(\%itemcount);
 }

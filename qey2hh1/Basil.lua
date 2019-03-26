@@ -10,7 +10,7 @@ end
 function event_combat(e)
 	if(e.joined == true) then
 		e.self:Say("To the death!!");
-		eq.signal(12082,1);
-		eq.signal(12154,1);
+		eq.signal(12082,1); -- NPC: Frostbite
+		eq.signal(12154,1); -- NPC: Frostbite
 	end
 end

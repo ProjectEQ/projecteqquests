@@ -1,6 +1,6 @@
 function event_signal(e)
 	e.self:Say("Ooh yeah! So would I, honey.");
-	eq.signal(1066,1);
+	eq.signal(1066,1); -- NPC: Danaria_Hollin
 end
 
 function event_say(e)

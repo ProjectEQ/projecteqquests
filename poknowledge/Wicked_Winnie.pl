@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 	if(quest::istaskactive(214)){
 		if(plugin::check_handin(\%itemcount, 54723 => 1)) {
 			quest::emote("whips up a batch of her famous Caramel-Coated Candy Apples! ");
-			quest::summonitem(85064,5);
+			quest::summonitem(85064,5); # Item: Caramel-Coated Candy Apple
 			$client->AddLevelBasedExp(10, 0);
 			quest::setglobal("halloween_winnie",1,0,"H3");
 			quest::updatetaskactivity(214,0);

@@ -10,23 +10,23 @@ sub EVENT_SAY {
 	}
 	if($text=~/ready to begin/i){
 		quest::say("Excellent $name! Here is your Magical Mail Assembly Kit. Once you are ready to collect the items for a specific armor piece simply tell me what piece of Underfoot Defenders Platemail that you want to craft. I can provide you with the material recipe and enchanted armor molds for Underfoot Platemail [Helm], [Bracer], [Armguards], [Boots], [Greaves], [Gauntlets], and [Breastplate].");
-		quest::summonitem(17249);
+		quest::summonitem(17249); # Item: Magical Mail Assembly Kit
 	}
 	if($text=~/armguards/i){
 		quest::say("To create yer armguards material you will need to combine 2 Bricks of Crude Bronze, 2 Scarab Legs, and 1 Spiderling Silk in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Armguards.");
-		quest::summonitem(19635);
+		quest::summonitem(19635); # Item: Crude Vambrace Mold
 	}
 	if($text=~/boots/i){
 		quest::say("To create yer boots material you will need to combine 3 Bricks of Crude Bronze, 1 Aqua Goblin Foot, 2 Ogre Jawbones in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Boots.");
-		quest::summonitem(19634);
+		quest::summonitem(19634); # Item: Crude Boot Mold
 	}
 	if($text=~/bracer/i){
 		quest::say("To create yer bracer material you will need to combine 1 Brick of Crude Bronze, 1 RunnyEye Warbeads, 1 Shattered Warbeads and 1 Gypsy Wine in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Bracer.");
-		quest::summonitem(19632);
+		quest::summonitem(19632); # Item: Crude Bracer Mold
 	}
 	if($text=~/breastplate/i){
 		quest::say("To create yer breastplate material you will need to combine 5 Bricks of Crude Bronze, 1 Scarab Carapace, 1 Golden Bandit Tooth, 1 Pristine Forest Drakeling Scale, 1 Skunk Tail and 1 Enraged Goblin Beads in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Breastplate. When you have finished completing your armor set I would like you to return to me for I have one [final task] for you to complete. Aye.");
-		quest::summonitem(19637);
+		quest::summonitem(19637); # Item: Crude Breastplate Mold
 	}
 	if($text=~/final task/i){
 		quest::say("Da final task is simply dere young $name. I myself likes to collect many trophies as well as beer steins ye see. Well sense my days have been occupied by trainin da newest up and coming lads and lasses I haven't gotten a chance to go prize hunting like I once did. So if`n yer up for da task I would like ye to collect me some [valuable trophies] fer my collection.");
@@ -36,22 +36,22 @@ sub EVENT_SAY {
 	}
 	if($text=~/gauntlets/i){
 		quest::say("To create yer gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Margyls Tongue, 1 Insignia of Greenblood, and 2 Rock Spiderling Legs in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Gauntlets.");
-		quest::summonitem(19633);
+		quest::summonitem(19633); # Item: Crude Gauntlets Mold
 	}
 	if($text=~/greaves/i){
 		quest::say("To create yer greaves material you will need to combine 4 Bricks of Crude Bronze, 1 Basilisk Tongue, 1 Orc Skull , and 1 Scarab Eye in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Greaves.");
-		quest::summonitem(19636);
+		quest::summonitem(19636); # Item: Crude Greaves Mold
 	}
 	if($text=~/helm/i){
 		quest::say("To create yer helm material you will need to combine 2 Bricks of Crude Bronze, 1 Aviak Eye, 1 Goblin Skull and 1 Ration in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Underfoot Defenders Helm.");
-		quest::summonitem(19631);
+		quest::summonitem(19631); # Item: Crude Helm Mold
 	}
 }
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 2396 => 1, 28065 => 1, 28066 =>1)){
 		quest::say("This text needs to be collected from live.");
-		quest::summonitem(26077);
+		quest::summonitem(26077); # Item: Underfoot Defenders Claymore
 	}
 	plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
 	plugin::return_items(\%itemcount);

@@ -38,27 +38,27 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 4488 => 1, 5254 => 1, 5255 => 1)) { #veil
-    quest::summonitem(3782);
+    quest::summonitem(3782); # Item: Steel Threaded Veil
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4489 => 1, 5256 => 1, 5257 => 1, 5258 => 1)) { #cloak
-    quest::summonitem(3783);
+    quest::summonitem(3783); # Item: Steel Threaded Cloak
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4490 => 1, 5529 => 1, 5260 => 1)) { #hand wraps
-    quest::summonitem(3784);
+    quest::summonitem(3784); # Item: Steel Threaded Hand Wraps
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4491 => 1, 5261 => 1, 5262 => 1)) { #choker
-    quest::summonitem(3785);
+    quest::summonitem(3785); # Item: Steel Threaded Choker
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4492 => 1, 5263 => 1, 5264 => 1, 5266 => 1)) { #belt
-    quest::summonitem(3786);
+    quest::summonitem(3786); # Item: Steel Threaded Belt
     quest::exp(10000);
      } 
  if (plugin::check_handin(\%itemcount, 4493 => 1, 5265 => 1, 5267 => 1, 5268 => 1)) { #bo stick
-    quest::summonitem(3787);
+    quest::summonitem(3787); # Item: Steel Tipped Bo Stick
     quest::exp(10000);
      } 
      plugin::return_items(\%itemcount);

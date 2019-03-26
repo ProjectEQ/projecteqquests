@@ -10,23 +10,23 @@ sub EVENT_TIMER {
 	}
 
 	if ($timer == 1 && $x == 50 && $y == 0) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == 50 && $y == -150) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == -50 && $y == -150) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == -50 && $y == 0) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 1 && $x == 50 && $y == 0 ) {
-		$npc->CastSpell(3011,207052);
+		$npc->CastSpell(3011,207052); # Spell: Sorrow Song
 	}
 
 	if ($timer == 2) {
@@ -46,7 +46,7 @@ sub EVENT_SIGNAL {
 	if ($signal == 2) {
 		quest::stoptimer(1);
 		quest::stoptimer(2);
-		quest::spawn2(207065,1,0,$x,$y,$z,$h);
+		quest::spawn2(207065,1,0,$x,$y,$z,$h); # NPC: #Sorrowsong
 		quest::depop();
 	}
 }

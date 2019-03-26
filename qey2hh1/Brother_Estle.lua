@@ -30,13 +30,13 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13910})) then
 		e.self:Say("Thank you. Now I may cleanse the bodies of the new converts and help them enter into a new life. I also have this. It was given to me by a dying gnoll of all things. They belong to Brother Hayle. The gnoll's last words were 'Free him.' Make sure High Priestess Jahnda gets this. Be swift!");
-		e.other:SummonItem(13911);
+		e.other:SummonItem(13911); -- Item: PrayerBeads
 		e.other:Ding();
-		e.other:Faction(341,10,0);
-		e.other:Faction(280,10,0);
-		e.other:Faction(262,10,0);
-		e.other:Faction(221,-10,0);
-		e.other:Faction(219,10,0);
+		e.other:Faction(341,10,0); -- Faction: Priests of Life
+		e.other:Faction(280,10,0); -- Faction: Knights of Thunder
+		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
+		e.other:Faction(221,-10,0); -- Faction: Bloodsabers
+		e.other:Faction(219,10,0); -- Faction: Antonius Bayle
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,1,0,0);
 	end

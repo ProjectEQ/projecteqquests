@@ -20,16 +20,16 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 18246 => 1)) {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
-    quest::summonitem(18246);
+    quest::summonitem(18246); # Item: Legion Order
   }
   elsif (plugin::check_handin(\%itemcount, 12670 => 2)) {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
-    quest::summonitem(12670);
-    quest::summonitem(12670);
+    quest::summonitem(12670); # Item: Sabertooth Kitten Canine
+    quest::summonitem(12670); # Item: Sabertooth Kitten Canine
   }
   elsif (plugin::check_handin(\%itemcount, 12670 => 1)) {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
-    quest::summonitem(12670);
+    quest::summonitem(12670); # Item: Sabertooth Kitten Canine
   }
   plugin::return_items(\%itemcount);
 }

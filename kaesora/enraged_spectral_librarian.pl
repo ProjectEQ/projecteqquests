@@ -20,9 +20,9 @@ sub EVENT_DEATH_COMPLETE {
   $y = $npc->GetY();
   $z = $npc->GetZ();
   $h = $npc->GetHeading();
-  $mob1 = quest::spawn2(88093,0,0,$x,$y,$z,$h);
-  $mob2 = quest::spawn2(88093,0,0,$x+5,$y+5,$z,$h);
-  $mob3 = quest::spawn2(88093,0,0,$x-5,$y-5,$z,$h);
+  $mob1 = quest::spawn2(88093,0,0,$x,$y,$z,$h); # NPC: A_Freed_Soul
+  $mob2 = quest::spawn2(88093,0,0,$x+5,$y+5,$z,$h); # NPC: A_Freed_Soul
+  $mob3 = quest::spawn2(88093,0,0,$x-5,$y-5,$z,$h); # NPC: A_Freed_Soul
   $mobid1 = $entity_list->GetMobID($mob1);
   $mobid2 = $entity_list->GetMobID($mob2);
   $mobid3 = $entity_list->GetMobID($mob3);

@@ -1,7 +1,7 @@
 my $rage = 0;
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(295130,1);
+  quest::signalwith(295130,1); # NPC: Iqthinxa_Karnkvi
 }
 
 =Begin Test Chop - This doesn't error on my server, but going to try on PEQ

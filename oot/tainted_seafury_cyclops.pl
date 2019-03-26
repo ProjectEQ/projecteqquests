@@ -8,5 +8,5 @@ sub EVENT_DEATH_COMPLETE {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(69142,0,0,$x,$y,$z,$h);
+  quest::spawn2(69142,0,0,$x,$y,$z,$h); # NPC: corrupted_seafury_cyclops
 }

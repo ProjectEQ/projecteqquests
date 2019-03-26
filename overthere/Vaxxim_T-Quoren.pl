@@ -9,6 +9,6 @@ quest::say("For justice to be brought to them you will need to strike at some of
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 62095 => 1, 62094 => 3)) {
     quest::say("Excellent $name.  Thank you for your assistance.  Thank this as a token of my.... appreciation.");
-    quest::summonitem(62203);
+    quest::summonitem(62203); # Item: Soft Leather Bracer of Gore
   }
 }

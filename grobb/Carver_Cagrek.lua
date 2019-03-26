@@ -15,12 +15,12 @@ function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 16183, item2 = 16183, item3 = 16183, item4 = 16183})) then
 		e.self:Say("Whut tooks you so long!! Ah, dis please Cagrek as I can grind dese up to make special bread. Me get on that right away. Here is you reward, now out of Cagrek's way.");
-		e.other:SummonItem(28243);
+		e.other:SummonItem(28243); -- Item: Fine Antique Poniard
 		e.other:Ding();
-		e.other:Faction(376,15,0);
+		e.other:Faction(376,15,0); -- Faction: Grobb Merchants
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13368, item2 = 13368, item3 = 13368, item4 = 18940})) then
 		e.self:Say("Finally!! What takes yous so long? Now carver Cagrek try and makes meat and feeds to trolls. Yous getting to be deputy carver. Mes give you Grobb cleaver!! Make strong and smarts on you it will. Just like carver Cagrek.");
-		e.other:SummonItem(5413);
+		e.other:SummonItem(5413); -- Item: Grobb Cleaver
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

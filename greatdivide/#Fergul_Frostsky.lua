@@ -16,6 +16,6 @@ end
 
 function event_death_complete(e)
 	-- upon death, send signal to shardwurm to depop with timer and Gralk to depop.
-	eq.signal(118208,1);
-	eq.signal(118040,1);
+	eq.signal(118208,1); -- NPC: #Gralk_Dwarfkiller
+	eq.signal(118040,1); -- NPC: shardwurm_broodmother
 end

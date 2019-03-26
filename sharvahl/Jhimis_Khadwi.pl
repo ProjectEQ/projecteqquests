@@ -10,8 +10,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 5580 =>1, 6181 =>2 )) {
       quest::say("'These claws are very nice! Don't you think they will make splendid earrings? Of course you do! Well, she'd better like them after all of the trouble I had to go through to get them. Here are your dowels. If you need more, I'll have a new crate of them tomorrow. Take care and enjoy... Thank you for shopping with Jhimis!");
-      quest::summonitem(5580);
-      quest::summonitem(6138);
+      quest::summonitem(5580); # Item: Cloak of the Khati Sha Apprentice
+      quest::summonitem(6138); # Item: Sinew Stretching Dowels
       
     }
   plugin::return_items(\%itemcount);

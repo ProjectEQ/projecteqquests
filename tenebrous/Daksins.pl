@@ -11,7 +11,7 @@ sub EVENT_SAY {
   }
   if ($text=~/return the extract/i && $gaveblood == 1) {
     quest::say("I suppose I could trust you to return it to Zimloro. You have earned my trust by going and slaying this beast for me. This will help me greatly as well as I must rest in Katta for a few days to recover from the wounds I received at the hands of these monsters. Please return this bag that contains the extract along with other components that Zimloro asked me to retrieve to him. Thank you, $name, I am forever in your debt.");
-    quest::summonitem(4765);
+    quest::summonitem(4765); # Item: Antidote Supplies
     $gaveblood = 0;
   }
 }

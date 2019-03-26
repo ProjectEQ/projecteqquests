@@ -14,8 +14,8 @@ sub EVENT_ITEM {
   
   if (plugin::check_handin(\%itemcount, 9042 =>1 )) {
     quest::say("Splendid job, $name. This wrapping should help to shield you from any of the negative properties that may be manifested in the totem. You should be fine if you keep it in the box that you were given. Once you collect all of the totems, please seal the box and return it to Shar Vahl. Be careful to protect the totems during the course of your travels. The balance of power in several realms is reliant on your ability to fulfill this mission. Please do not fail us.");
-    quest::summonitem(9043);
-    quest::summonitem(9031);
+    quest::summonitem(9043); # Item: Wrapped Alligator Totem
+    quest::summonitem(9031); # Item: Official Seal of the Khati Sha
   }
   plugin::return_items(\%itemcount);
 }

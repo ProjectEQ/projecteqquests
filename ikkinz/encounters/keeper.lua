@@ -15,10 +15,10 @@ function KeeperTimer(e)
 	if e.timer=="assail" then
 		e.self:Emote("quakes violently as Adhere assailants form from the ground to join in battle!");
 		eq.set_timer("assail",60*1000);
-		eq.spawn2(294622,0,0,680,59,-73,156);
-		eq.spawn2(294622,0,0,816,125,-73,248);
-		eq.spawn2(294622,0,0,744,46,-73,202);
-		eq.spawn2(294622,0,0,746,125,-73,120);
+		eq.spawn2(294622,0,0,680,59,-73,156); -- NPC: Altar_Assailant
+		eq.spawn2(294622,0,0,816,125,-73,248); -- NPC: Altar_Assailant
+		eq.spawn2(294622,0,0,744,46,-73,202); -- NPC: Altar_Assailant
+		eq.spawn2(294622,0,0,746,125,-73,120); -- NPC: Altar_Assailant
 		--eq.spawn2(294622,0,0,908,111,-73,300);		
 		--eq.spawn2(294622,0,0,852,73,-73,292);		
 		--eq.spawn2(294622,0,0,852,73,-73,292);		
@@ -28,15 +28,15 @@ function KeeperTimer(e)
 		e.self:Emote("slams its fist to the ground which calls forth an adherent to aid it in battle!");
 		eq.set_timer("adhere",100*1000);
 		if num_adhere==0 then
-			eq.spawn2(294615,0,0,803,84,-73,0);
+			eq.spawn2(294615,0,0,803,84,-73,0); -- NPC: #Altar_Adherent
 		elseif num_adhere==1 then
-			eq.spawn2(294637,0,0,803,84,-73,0);
+			eq.spawn2(294637,0,0,803,84,-73,0); -- NPC: #Altar_Adherent_
 		elseif num_adhere==2 then
-			eq.spawn2(294638,0,0,803,84,-73,0);	
+			eq.spawn2(294638,0,0,803,84,-73,0); -- NPC: #Altar_Adherent__	
 		elseif num_adhere==3 then
-			eq.spawn2(294639,0,0,803,84,-73,0);	
+			eq.spawn2(294639,0,0,803,84,-73,0); -- NPC: #Altar_Adherent___	
 		elseif num_adhere==4 then
-			eq.spawn2(294640,0,0,803,84,-73,0);	
+			eq.spawn2(294640,0,0,803,84,-73,0); -- NPC: #Altar_Adherent____	
 		end
 		num_adhere=num_adhere+1;
 		if num_adhere >=5 then
@@ -45,16 +45,16 @@ function KeeperTimer(e)
 	elseif e.timer=="bury" then
 		e.self:Emote("crushes an enemy to the ground in an attempt to bury them!");
 		eq.set_timer("bury", math.random(10,40)  * 1000);
-		e.self:CastSpell(5001, e.self:GetTarget():GetID());
+		e.self:CastSpell(5001, e.self:GetTarget():GetID()); -- Spell: Bury
 	elseif e.timer=="shrap" then		
 		eq.set_timer("bury", 30*1000);
-		e.self:CastSpell(4188, e.self:GetHateRandom():GetID());	
+		e.self:CastSpell(4188, e.self:GetHateRandom():GetID()); -- Spell: Earthen Shrapnel	
 	elseif e.timer=="throw" then
 		eq.set_timer("throw", 40*1000);
 		e.self:Emote("casts its eye upon several enemies and tosses them aggressively away!");
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID());
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID());
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID());
+		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
+		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
+		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
 	elseif e.timer=="reset" then
 		eq.depop_all(294615);
 		eq.depop_all(294622);
@@ -63,7 +63,7 @@ function KeeperTimer(e)
 		eq.depop_all(294639);
 		eq.depop_all(294640);
 		e.self:SetHP(e.self:GetMaxHP());
-		e.self:CastSpell(3791, e.self:GetID());
+		e.self:CastSpell(3791, e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:WipeHateList();
 		eq.stop_timer("reset");
 	end
@@ -87,10 +87,10 @@ function KeeperCombat(e)
 end
 
 function KeeperDeath(e)
-	eq.spawn2(294621,0,0,680,59,-73,156);
-	eq.spawn2(294621,0,0,937,14,-72,400);
-	eq.spawn2(294621,0,0,908,111,-73,300); 
-	eq.spawn2(294621,0,0,685,1,-73,114);
+	eq.spawn2(294621,0,0,680,59,-73,156); -- NPC: a_pile_of_bones
+	eq.spawn2(294621,0,0,937,14,-72,400); -- NPC: a_pile_of_bones
+	eq.spawn2(294621,0,0,908,111,-73,300); -- NPC: a_pile_of_bones 
+	eq.spawn2(294621,0,0,685,1,-73,114); -- NPC: a_pile_of_bones
 	eq.signal(294631,8); --set lockout
 	eq.zone_emote(10,"The Keeper of the Altar has been defeated! You have found a way do what even the trusik priests of old had trouble with." ..
 	"You are well on your way to uncovering the secrets that Txevu has holed up inside its walls. Congratulations!");

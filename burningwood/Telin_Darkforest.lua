@@ -19,7 +19,7 @@ function event_say(e)
 		elseif(e.message:findi("action")) then
 			if(e.other:GetLevel() >= 46) then
 				e.self:Emote("looks at you consideringly and then scribbles something quickly on a small, worn paper. 'You seem powerful enough. Perhaps you can help those who seek to protect nature's peace. Take this note. Deliver it only into the hands of Faelin Bloodbriar. Where you will find her, I cannot say. She is a friend of mine and a wanderer. She has been seen from one end of the lands to the other. Seek her out, and quickly.'");
-				e.other:SummonItem(20472);
+				e.other:SummonItem(20472); -- Item: Worn Note
 			else
 				e.self:Say("You are not yet powerful enough to complete this task. Return when you have gained more experience.");
 			end
@@ -37,17 +37,17 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 20447})) then
 			e.self:Emote("scratches the coin as he looks at it. 'Faelin sent you to Giz? Surprising. This coin speaks to the outcome of your talk. He would hardly give this bit of metal to a stranger, but that's a story for a different time. So, you say Giz did confirm Innoruuk's involvement, and something about undead minions? Here, take this coin back. Find Arch Druid Althele in the Karanas and show her that. Tell her what we have discussed. She will look kindly on an ally in this matter.'");
 			e.other:Ding();
-			e.other:SummonItem(20448);
+			e.other:SummonItem(20448); -- Item: Worn Dark Metal Coin
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20468})) then
 			e.self:Emote("nods as he unbuckles his sword and hands it to you. 'The storm callers are working on containing and fighting against the corruption but they can not hold back the inevitable for long. It is up to us to strike against Innoruuk directly. If we were warriors or paladins we would have a fancy ceremony and plenty of feasting but we're just rangers, without time for pleasantries. The sword you hold in your hands is one of the oldest blades known, even to the eldest. To strike at the darkest heart of evil requires a weapon beyond this, or even ones you may carry at your side. The first task, the first preparation you must make, is the smithing of that blade. Its edge sharpened, its balance made perfect. When you have finished, bring me this sword again.'");
 			e.other:Ding();
 			e.other:AddEXP(1000000);
-			e.other:SummonItem(20477);
+			e.other:SummonItem(20477); -- Item: Ancient Longsword
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20481})) then
 			e.self:Emote("smiles slowly. 'Now that's fine work, " .. e.other:GetName() .. ". Just a moment, we have a friend here who can enchant one of the blades. Give her the blade that the ancient smithed.'");
 			e.other:Ding();
-			e.other:SummonItem(20481);
-			eq.spawn2(54237,0,0,2852,3239,-155,219);
+			e.other:SummonItem(20481); -- Item: Refined Ancient Sword
+			eq.spawn2(54237,0,0,2852,3239,-155,219); -- NPC: Faelin_Bloodbriar
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

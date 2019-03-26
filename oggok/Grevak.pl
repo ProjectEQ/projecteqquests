@@ -66,7 +66,7 @@ elsif(plugin::check_handin(\%itemcount, 13367 => 2))
    # Text created by Diuretic since nothing found on Allakhazam
    quest::say("Grevak rewards you. Grevak now afraid of nothing! Ha ha! Mighty mighty!");
    #Summon Random Rusty Shadowknight-Friendly weapon
-   quest::summonitem(quest::ChooseRandom(13453,5013,5014,5016,5019,5020,5023,5025));
+   quest::summonitem(quest::ChooseRandom(13453,5013,5014,5016,5019,5020,5023,5025)); # Item(s): Pickled Lizard (13453), Rusty Short Sword (5013), Rusty Axe (5014), Rusty Broad Sword (5016), Rusty Long Sword (5019), Rusty Battle Axe (5020), Rusty Two Handed Sword (5023), Rusty Two Handed Battle Axe (5025)
    quest::exp("500");
    # Increase faction -- Greenblood Knights
    quest::faction("261","20");

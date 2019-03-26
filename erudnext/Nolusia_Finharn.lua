@@ -23,7 +23,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13118})) then
 		e.self:Say("Good work! Now, hold the bottle by the label! When you hand Flynn the bottle, the label will slide off. Bring me the label as proof of the deed.");
-		e.other:SummonItem(13122);
+		e.other:SummonItem(13122); -- Item: Erud's Tonic
 		e.other:Ding();
 		e.other:Faction(231,1,0); -- Craftkeepers
 		e.other:Faction(266,1,0); -- High Council of Erudin
@@ -38,7 +38,7 @@ function event_trade(e)
 		e.other:Faction(265,-10); -- Heretics
 		e.other:Faction(267,5,0); -- High Guard of Erudin
 		e.other:AddEXP(100);
-		e.other:SummonItem(eq.ChooseRandom(13122, 5019, 6017));
+		e.other:SummonItem(eq.ChooseRandom(13122, 5019, 6017)); -- Item(s): Erud's Tonic (13122)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

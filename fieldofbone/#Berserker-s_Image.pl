@@ -4,7 +4,7 @@
 
 sub EVENT_DEATH_COMPLETE
 {
-quest::signalwith(78100,15,10);
+quest::signalwith(78100,15,10); # NPC: Mardic_Crimsonsteel
 }
 
 sub EVENT_SPAWN

@@ -22,7 +22,7 @@ end
 
 function event_timer(e)
   if (e.timer == 'guard') then
-	eq.spawn2(eq.ChooseRandom(382255,382256),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(eq.ChooseRandom(382255,382256),0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): a_Freeport_guard (382255), a_seasoned_Freeport_guard (382256)
 		local entity_list = eq.get_entity_list();
 		-- aggro guards
 		local npc_list = entity_list:GetNPCList();

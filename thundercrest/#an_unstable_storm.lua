@@ -17,7 +17,7 @@ end
 
 function event_timer(e)
 	if (e.timer == "Explode") then
-		e.self:CastSpell(6604, e.self:GetID());
+		e.self:CastSpell(6604, e.self:GetID()); -- Spell: Forcequake
 		eq.depop();
 	end
 end

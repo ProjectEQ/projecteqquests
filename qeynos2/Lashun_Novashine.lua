@@ -32,7 +32,7 @@ function event_trade(e)
 
 	if(number_of_bone_chip >= 1) then
 		e.other:Ding();
-		e.self:CastSpell(17,e.other:GetID());
+		e.self:CastSpell(17,e.other:GetID()); -- Spell: Light Healing
 		repeat
 			if(two_gold == 1) then
 				e.self:Say("Thank you for the donation to the Temple of Life. May Rodcet Nife cleanse your body of all ills.");
@@ -40,11 +40,11 @@ function event_trade(e)
 			else
 				e.self:Say("Very well, young one. May the light of the Prime Healer wash away your scars.");
 			end
-			e.other:Faction(341,2,0);
-			e.other:Faction(280,2,0);
-			e.other:Faction(262,2,0);
-			e.other:Faction(221,-2,0);
-			e.other:Faction(219,2,0);
+			e.other:Faction(341,2,0); -- Faction: Priests of Life
+			e.other:Faction(280,2,0); -- Faction: Knights of Thunder
+			e.other:Faction(262,2,0); -- Faction: Guards of Qeynos
+			e.other:Faction(221,-2,0); -- Faction: Bloodsabers
+			e.other:Faction(219,2,0); -- Faction: Antonius Bayle
 			e.other:AddEXP(10);
 			number_of_bone_chip = number_of_bone_chip - 1;
 		until number_of_bone_chip == 0

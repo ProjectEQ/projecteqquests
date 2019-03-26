@@ -46,25 +46,25 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if ($faction == 1) { #req ally CoV 
     if (plugin::check_handin(\%itemcount, 25831 => 3, 24961 => 1)) { #cap
-      quest::summonitem(31182);
+      quest::summonitem(31182); # Item: Crown of the Myrmidon
     }
     elsif (plugin::check_handin(\%itemcount, 25814 => 3, 24956 => 1)) { #bp
-      quest::summonitem(31183);
+      quest::summonitem(31183); # Item: Breastplate of the Myrmidon
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24958 => 1)) { #arm
-      quest::summonitem(31184);
+      quest::summonitem(31184); # Item: Vambraces of the Myrmidon
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24960 => 1)) { #bracer
-      quest::summonitem(31185);
+      quest::summonitem(31185); # Item: Bracer of the Myrmidon
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24962 => 1)) { #glove
-      quest::summonitem(31186);
+      quest::summonitem(31186); # Item: Gauntlets of the Myrmidon
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24957 => 1)) { #leg
-      quest::summonitem(31187);
+      quest::summonitem(31187); # Item: Greaves of the Myrmidon
     }
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24959 => 1)) { #boots
-      quest::summonitem(31188);
+      quest::summonitem(31188); # Item: Boots of the Myrmidon
     }
     else {
       plugin::return_items(\%itemcount);

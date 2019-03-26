@@ -13,8 +13,8 @@ sub EVENT_ITEM {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::spawn2(84319,0,0,$x,$y,$z,$h);
-    quest::spawn2(84311,0,0,-1822,617,142.5,206);
+    quest::spawn2(84319,0,0,$x,$y,$z,$h); # NPC: Hero_Goxnok
+    quest::spawn2(84311,0,0,-1822,617,142.5,206); # NPC: a_drachnid_spy
     quest::depop();
   }
   plugin::return_items(\%itemcount);
@@ -27,7 +27,7 @@ sub EVENT_TIMER {
     quest::settimer("ZoneTime",60);
   }
   if (($timer eq "ZoneTime") && ($zonehour == 6)) {
-    quest::spawn2(84277,0,0,2268,-2828,-74.8,475);
+    quest::spawn2(84277,0,0,2268,-2828,-74.8,475); # NPC: Tracker_Azeal
     quest::stoptimer("ZoneTime");
     quest::depop();
   }

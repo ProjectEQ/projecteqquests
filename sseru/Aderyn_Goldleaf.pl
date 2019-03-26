@@ -13,7 +13,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29892 => 1)) {
     quest::say("You actually did it? You have done an invaluable service ridding us of that wretched little halfing. You deserve to be a soldier in Seru's army. Take this Quiver with my regard, $name.");
-    quest::summonitem(17120);
+    quest::summonitem(17120); # Item: Jeweled Quiver of the Hand
     quest::faction(1485,10); #eye of seru
     quest::faction(1484,10); #hand of seru
     quest::faction(1486,10); #heart of seru

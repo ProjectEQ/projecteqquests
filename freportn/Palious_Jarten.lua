@@ -11,7 +11,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {gold = 10})) then
 		e.self:Say("May the valor of Mithaniel Marr burn brightly in our soul!");
-		e.self:CastSpell(213,e.other:GetID());
+		e.self:CastSpell(213,e.other:GetID()); -- Spell: Cure Disease
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

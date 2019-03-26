@@ -17,18 +17,18 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 3495 => 1)) {
 quest::emote("cuts the cloth big enough to cover your buckler twice over and folds it neatly. She puts the cloth on the buckler and hands it to you. She looks around for a moment...");
 quest::say("Sometimes I feel as if the spirits are playing tricks on me. I'm out of spores. I never seem to run out of spores until the times when I need them most. You'll need to gather them on your own to make the [soaking solution].");
-quest::summonitem(5538);
+quest::summonitem(5538); # Item: Large Folded Cloth
 quest::summonitem(3495); }
 
 if (plugin::check_handin(\%itemcount, 5543 => 1)) {
 quest::say("Quite impressive! Quite impressive, indeed! To be honest it took me a very long time to become that good at imbuing items and enhancing their natural properties. You show a great deal of promise. If you will be willing to help me with another task, I could recommend you for a possible promotion within the ranks of the Dar Khura. I need you to take this bag and fill it with wet fang eyes. Just find a stagnant body of water, spear a wet fang, and pop its eyes out!");
-quest::summonitem(5543);
+quest::summonitem(5543); # Item: Imbued Hopperhide Buckler
 quest::summonitem(17076); }
 
 if (plugin::check_handin(\%itemcount, 5541 => 1)) {
 quest::say("Thank you very much! I was almost out of these eyes and I'm sure you'll agree they aren't easy to come by. Your assistance will not go unnoticed. Here is the blessing I promised you. Take this token to Spiritualist Fehril along with your recruits cloak, and your wonderful new buckler. He'll know that I send you with my blessing. Take care and may the spirits guide you, young Dar Khura.");
-quest::summonitem(5542);
-quest::faction(1533,10);
+quest::summonitem(5542); # Item: Mydi's Token
+quest::faction(1533,10); # Faction: Dar Khura
 quest::exp(3500); }
 
 plugin::return_items(\%itemcount);

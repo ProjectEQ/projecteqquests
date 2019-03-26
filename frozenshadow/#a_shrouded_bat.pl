@@ -10,7 +10,7 @@ sub EVENT_DEATH_COMPLETE{
  my $h = $npc->GetHeading();
  quest::spawn2($a,0,0,$x,$y,$z,$h);
   if($random_result<16){
-  quest::unique_spawn(111154,0,0,21.1,260.7,355.0);
+  quest::unique_spawn(111154,0,0,21.1,260.7,355.0); # NPC: #Tserrina_Syl`Tor
   quest::delglobal("Tserr");
   quest::setglobal("Tserr",3,3,"F");
   $Tserr=undef;

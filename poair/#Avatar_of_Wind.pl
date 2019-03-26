@@ -11,5 +11,5 @@ if($timer == 35) {
 }
 
 sub EVENT_DEATH_COMPLETE {
-    quest::signalwith(215450,4,1);
+    quest::signalwith(215450,4,1); # NPC: #Air_Trigger
 }

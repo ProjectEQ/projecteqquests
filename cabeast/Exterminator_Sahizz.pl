@@ -10,11 +10,11 @@ sub EVENT_SAY {
     quest::say("Thank you, $name.  Here is your reward.");
     quest::exp(50);
     quest::givecash(0,5,0,0);
-    quest::faction( 440,3 );
-    quest::faction( 441,3 );
-    quest::faction( 442,3 );
-    quest::faction( 444,3 );
-    quest::faction( 445,3 );
+    quest::faction( 440,3 ); # Faction: Cabilis Residents
+    quest::faction( 441,3 ); # Faction: Legion of Cabilis
+    quest::faction( 442,3 ); # Faction: Crusaders of Greenmist
+    quest::faction( 444,3 ); # Faction: Swift Tails
+    quest::faction( 445,3 ); # Faction: Scaled Mystics
    
   }
 }

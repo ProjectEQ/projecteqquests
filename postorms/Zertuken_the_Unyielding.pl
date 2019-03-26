@@ -4,7 +4,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signal(210176,0);
+  quest::signal(210176,0); # NPC: Neffiken_Lord_of_Kelek`Vor
   quest::stoptimer("tumadds");
 }
 

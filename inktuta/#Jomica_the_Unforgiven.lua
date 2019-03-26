@@ -7,7 +7,7 @@ function event_say(e)
 		instance_id = eq.get_zone_instance_id();
 		local LockoutBit=tonumber(qglobals[instance_id.."_inktuta_bit"]);
 		if (bit.band(LockoutBit, 32) == 0) then
-			eq.signal(296070,296071);
+			eq.signal(296070,296071); -- NPC: zone_status
 			e.self:Emote("nods solemnly.  A dusty pile of bones materializes on the floor at his feet");
 		else
 			e.self:Say("I'm afraid I have nothing else to offer. See to the sentinel if you have not already.");

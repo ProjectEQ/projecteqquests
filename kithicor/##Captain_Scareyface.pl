@@ -8,5 +8,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
 	quest::say("Church..the AI..its gone");
-	quest::signalwith(20260,2);
+	quest::signalwith(20260,2); # NPC: ##Jack_Lanturn
 }

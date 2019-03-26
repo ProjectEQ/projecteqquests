@@ -15,7 +15,7 @@ sub EVENT_ITEM {
      plugin::check_handin(\%itemcount, 19232 => 1) || # Circle of Winter
      plugin::check_handin(\%itemcount, 19234 => 1)) { # Circle of Summer
     quest::say("Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!");
-    quest::summonitem(quest::ChooseRandom(19235,19233,19236,19240));
+    quest::summonitem(quest::ChooseRandom(19235,19233,19236,19240)); # Item(s): Spell: Call of Karana (19235), Spell: Upheaval (19233), Spell: Egress (19236), Spell: Glamour of Tunare (19240)
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

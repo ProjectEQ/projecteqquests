@@ -3,5 +3,5 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signal(48040,0);
+  quest::signal(48040,0); # NPC: Gimlik_Cogboggle
 }

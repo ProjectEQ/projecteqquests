@@ -23,7 +23,7 @@ sub EVENT_SAY {
 	# Disciple Symbol of Brell Serilis
 		quest::say("Fantastic $name! I knew that ye would be able to help me. Please take this note to Taldrik, whereber he may be and be sure to give him his favorite [drinks] or he may be very grumpy.");
 		# Summon: a note to Taldrik
-		quest::summonitem(2429);
+		quest::summonitem(2429); # Item: Note To Taldrik
 	}
 	if($text=~/drinks/i){ 
 	# Disciple Symbol of Brell Serilis
@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 	# Initiate Symbol of Brell Serilis (End)
 		quest::say("I knew I was able to trust ye to help me rid the land of these nasty goblins! The Bloodforge Brigade salutes ye $name. Ye will be well known in our city for being the young one that helped rid our mountains of these goblins. Please take this as a symbol of your devotion to your faith and your God and return to me when ye are ready for yer next [task].");
 		# Summon: Initiate Symbol of Brell Serilis
-		quest::summonitem(1430);
+		quest::summonitem(1430); # Item: Initiate Symbol of Brell Serilis
 		quest::faction(227,10);   # +Clerics of Underfoot
 		quest::faction(274,10);  # +Kazon Stormhammer
 		quest::faction(293,10);  # +Miners Guild 249

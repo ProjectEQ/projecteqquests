@@ -78,7 +78,7 @@ sub EVENT_ITEM
  #Requires: 1 Charred Dagger, 1 Bloodstone, 2 Dull Bone Chips
    if(plugin::check_handin(\%itemcount, 7036 => 1, 10019 => 1, 10517 => 2)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11835);
+   quest::summonitem(11835); # Item: Words of Detachment
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 
@@ -99,7 +99,7 @@ sub EVENT_ITEM
   #Requires: 1 Festering Cloak, 1 Jasper, 2 Ebon Wands
    elsif(plugin::check_handin(\%itemcount, 1343 => 1, 10020 => 1, 10515 => 2)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11837);
+   quest::summonitem(11837); # Item: Words of Rupturing
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 
@@ -120,7 +120,7 @@ sub EVENT_ITEM
   #Requires: 1 Eye of Fright, 1 Stone of the Wraith, 1 Pearl 
    elsif(plugin::check_handin(\%itemcount, 13151 => 1, 10298 => 1, 10024 => 1)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11865);
+   quest::summonitem(11865); # Item: Words of Requisition
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 
@@ -140,7 +140,7 @@ sub EVENT_ITEM
    #Requires: 1 Globe of Fear, 1 Star Rose Quartz, 2 Iced Boned Chips
    elsif(plugin::check_handin(\%itemcount, 10521 => 1, 10021 => 1, 10519 => 2)){
    quest::say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
-   quest::summonitem(11851);
+   quest::summonitem(11851); # Item: Words of the Suffering
    # The Dead
    quest::faction("239","10");
    # Queen Cristanos Thex 

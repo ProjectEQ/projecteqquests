@@ -27,15 +27,15 @@ sub EVENT_SAY {
   }
   if (($text=~/hail/i) && ($event == 0)) {
     quest::say("Find the aged stonemites. They are causing great trouble, come back and talk to me once you have solved the problem.");
-    quest::spawn2(287021, 0, 0, -96, -1679, -89, 414);
-    quest::spawn2(287021, 0, 0, -41, -1685, -89, 422);
-    quest::spawn2(287021, 0, 0, 2, -1658, -89, 396);
-    quest::spawn2(287021, 0, 0, 18, -1614, -89, 382);
-    quest::spawn2(287021, 0, 0, 5, -1559, -89, 340);
-    quest::spawn2(287021, 0, 0, -12, -1517, -89, 318);
-    quest::spawn2(287021, 0, 0, -56, -1484, -89, 268);
-    quest::spawn2(287021, 0, 0, -53, -1586, -87, 360);
-    quest::spawn2(287021, 0, 0, -120, -1573, -89, 270);
+    quest::spawn2(287021, 0, 0, -96, -1679, -89, 414); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, -41, -1685, -89, 422); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, 2, -1658, -89, 396); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, 18, -1614, -89, 382); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, 5, -1559, -89, 340); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, -12, -1517, -89, 318); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, -56, -1484, -89, 268); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, -53, -1586, -87, 360); # NPC: an_aged_stonemite
+    quest::spawn2(287021, 0, 0, -120, -1573, -89, 270); # NPC: an_aged_stonemite
     $event = 1;    
   }
 }
@@ -48,7 +48,7 @@ sub EVENT_SIGNAL {
     $counter += 1;
   }
   if (($counter == 9) && ($event == 1)) { 
-    quest::spawn2(287145, 0, 0, -45, -1616, -87, 380);
+    quest::spawn2(287145, 0, 0, -45, -1616, -87, 380); # NPC: #Ancient_Kayserops
   }
 }
 

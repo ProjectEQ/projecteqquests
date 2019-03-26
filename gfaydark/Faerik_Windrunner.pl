@@ -16,13 +16,13 @@ sub EVENT_SAY {
   }
   if ($text=~/fortress in the sea/i) {
     quest::say("There are many talks of a fierce and deadly troll pirate clan that calls themselves Broken Skull. They are claiming responsibility for many of these sea hijackings and I believe that if Gandak is alive he might be there. If you wish to travel to attempt to gain knowledge about his disappearance seek out the mystical boat that docks in the Stonebrunt Mountains. If you should find Gandak please give him this medallion that he will know has come from us.");
-    quest::summonitem(21986);
+    quest::summonitem(21986); # Item: Medallion of the Emerald warrior
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 21988 => 1)) {#need correct text
     quest::say("Gandak is alive? That is excellent news, I will get this antidote to his wife right away.  The Emerald Warriors will not forget what you have done $name.  Here is a small token of our appreciation.");
-    quest::summonitem(61004);
+    quest::summonitem(61004); # Item: Charm of the Emerald Warrior
   }
 }

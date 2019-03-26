@@ -64,7 +64,7 @@ end
 
 function Ture_Timer(e)
 	if (e.timer == "wanton") then
-		e.self:CastSpell(1250, e.self:GetTarget():GetID());
+		e.self:CastSpell(1250, e.self:GetTarget():GetID()); -- Spell: Wanton Destruction
 		eq.set_timer("wanton",75*1000); 
 	elseif (e.timer == "breath") then
 		e.self:CastSpell(eq.ChooseRandom(5804,5806,5807), e.self:GetTarget():GetID());
@@ -91,7 +91,7 @@ function Ture_Timer(e)
 end
 
 function Ture_Death(e)
-	eq.signal(317116 , 317003);
+	eq.signal(317116 , 317003); -- NPC: zone_status
 	--set player lockout
 	--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"	
 end

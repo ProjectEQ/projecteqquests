@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   if ($client->GetGlobal("beast_epic") ==12) {
 	  if (plugin::check_handin(\%itemcount, 52902 =>1 )) {
 		quest::say("Thank you. Your actions have earned my trust and gratefulness. The ankh you have returned, that extends the life of my companion, is tainted. Ankhefenmut carries the other piece of the ankh and may need help. You must return to Ankhefenmut as the dark magic grows with each moment. Take this magic silk scarf to Ankhefenmut so that the ankh can be shielded.");
-		quest::summonitem(52904);
+		quest::summonitem(52904); # Item: Sparkling Silk Scarf
 		quest::setglobal("beast_epic",13,5,"F");
 	  }
   }

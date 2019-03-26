@@ -19,36 +19,36 @@ sub EVENT_SAY {
 	}
 	if ($text=~/trade/i) {
 		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		quest::summonitem(51121);
+		quest::summonitem(51121); # Item: Tradeskill Basics : Volume I
 	}
 	if ($text=~/second book/i) {
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
-		quest::summonitem(51122);
+		quest::summonitem(51122); # Item: Tradeskill Basics : Volume II
 	}
 }
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount,18474 =>1)){
 		quest::say("Very interesting, servant of the Queen. This deed has stayed my wrath for this interruption of my business. Where did you find this?");
-		quest::faction(239,1);
-		quest::faction(303,1);
-		quest::faction(278,-3);
-		quest::faction(275,-3);
-		quest::faction(245,-3);
-		quest::faction(1522,-3);
+		quest::faction(239,1); # Faction: The Dead
+		quest::faction(303,1); # Faction: Queen Cristanos Thex
+		quest::faction(278,-3); # Faction: King Naythox Thex
+		quest::faction(275,-3); # Faction: Keepers of the Art
+		quest::faction(245,-3); # Faction: Eldritch Collective
+		quest::faction(1522,-3); # Faction: Primordial Malice
 		quest::exp(6400);
 		quest::ding();
 		quest::givecash(0,8,0,0);
 	}
 	elsif(plugin::check_handin(\%itemcount,31492 => 1)){
 		quest::say("It is true that the return of Marnek could create difficulties for us, especially if this has the blessing of Solusek Ro himself. Therefore, I command you to deliver to me any further information you uncover regarding the plans of the Burning Dead, and likewise I order you to return here at my bidding for further instructions in this matter. Now, begone.");
-		quest::summonitem(31496);
-		quest::faction(239,1);
-		quest::faction(303,1);
-		quest::faction(278,-3);
-		quest::faction(275,-3);
-		quest::faction(245,-3);
-		quest::faction(1522,-3);
+		quest::summonitem(31496); # Item: Bridle of Sir Ariam
+		quest::faction(239,1); # Faction: The Dead
+		quest::faction(303,1); # Faction: Queen Cristanos Thex
+		quest::faction(278,-3); # Faction: King Naythox Thex
+		quest::faction(275,-3); # Faction: Keepers of the Art
+		quest::faction(245,-3); # Faction: Eldritch Collective
+		quest::faction(1522,-3); # Faction: Primordial Malice
 		quest::exp(6400);
 		quest::ding();
 	}

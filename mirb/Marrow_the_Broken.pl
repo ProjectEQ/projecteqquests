@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
   #send signal to Durgin_Skell(237743) that Marrow the Broken has died
-  quest::signalwith(237743,3,1);
+  quest::signalwith(237743,3,1); # NPC: Durgin_Skell
   #quest::ze(15, "Marrow the Broken's corpse crackles as bones shatter under its immense dead weight");
 }
 

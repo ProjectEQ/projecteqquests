@@ -9,7 +9,7 @@ function event_say(e)
 		if(fac < 4) then
 			e.self:Say("Taken from this place she has been.  Seek the Highpass hussy.  Ask of her.  Only she knows where.  Find the Princess.  Give her this.  Show your allegiance.  This and her key. Then return the room key to me with the prize from the princess.  Become a hero!!");
 			e.other:Ding();
-			e.other:SummonItem(13108);
+			e.other:SummonItem(13108); -- Item: Tearon's Bracer
 		else
 			e.self:Say("When you have furthered your service to the Paladins of Tunare, we shall make conversation.");
 		end
@@ -21,11 +21,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12267,item2 = 13109})) then
 		e.self:Say("Peace..  I can rest now.  You now hold my Silent Watch Shield.  Protect Felwithe..");
-		e.other:SummonItem(9312);
+		e.other:SummonItem(9312); -- Item: Silent Watch Shield
 		e.other:Ding();
-		e.other:Faction(5001,10,0);
-		e.other:Faction(226,10,0);
-		e.other:Faction(279,10,0);
+		e.other:Faction(5001,10,0); -- Faction: Anti-mage
+		e.other:Faction(226,10,0); -- Faction: Clerics of Tunare
+		e.other:Faction(279,10,0); -- Faction: King Tearis Thex
 		e.other:AddEXP(2000);
 		eq.depop_with_timer();
 	end

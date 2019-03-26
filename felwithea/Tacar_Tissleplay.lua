@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("I have messages that need to go to - well, right now I have one that needs to go to Kelethin.  Will you [deliver] mail to [Kelethin] for me?"); 
 	elseif(e.message:findi("deliver to kelethin")) then
 		e.self:Say("Take this letter to Jakum Webdancer in Kelethin.  You can find him at the bard guild hall.  I am sure he will compensate you for your troubles.");
-		e.other:SummonItem(18161);
+		e.other:SummonItem(18161); -- Item: Bardic Letter (Kelethin)
 	end
 end
 

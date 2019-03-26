@@ -25,7 +25,7 @@ sub EVENT_ITEM {
  }
  if (plugin::check_handin(\%itemcount, 4199 => 1)){
   quest::say("Ah, a monk of the final rung. You should seek Gandan Tailfist in Charasis. He, too, was seeking for a way to advance even further."); #Made this up, unable to find actual text
-  quest::summonitem(4199);
+  quest::summonitem(4199); # Item: Shackle of Tynnonium
   quest::ding();
  }
  plugin::return_items(\%itemcount);

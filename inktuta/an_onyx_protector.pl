@@ -14,7 +14,7 @@ sub EVENT_TIMER {
 	} elsif ($timer == 2) {
 		if ($y == 36 || $y == -41) {
 			quest::stoptimer(2);
-			quest::spawn2(296004,0,0,$x,$y,$z,$h);
+			quest::spawn2(296004,0,0,$x,$y,$z,$h); # NPC: an_onyx_protector
 			quest::depop();
 		}
 	}

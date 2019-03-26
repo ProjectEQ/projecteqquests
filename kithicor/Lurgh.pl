@@ -1,7 +1,7 @@
 sub EVENT_SAY {
 	if(quest::istaskactivityactive(215,4)){
 		if($text=~/Hail/i) {
-			quest::summonitem(87317,5);
+			quest::summonitem(87317,5); # Item: Candy Corn
 			$client->AddLevelBasedExp(10, 0);
 			quest::setglobal("halloween_monster_mash",1,0,"H3");
 			quest::emote("is pleased with your success, and offers you these dancing skeletons as a token of his appreciation.");

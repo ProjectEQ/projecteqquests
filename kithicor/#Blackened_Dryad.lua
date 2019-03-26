@@ -9,7 +9,7 @@ end
 function event_timer(e)
 	if (e.timer=="withering") then
 		eq.stop_timer("withering");		
-		e.self:CastSpell(5801, e.self:GetHateTop():GetID());
+		e.self:CastSpell(5801, e.self:GetHateTop():GetID()); -- Spell: Withering Glare
 		eq.set_timer("withering",20*1000);
 	end
 end

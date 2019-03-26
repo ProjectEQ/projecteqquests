@@ -30,14 +30,14 @@ end
 function event_hp(e)
 	if(e.hp_event == 75) then
 		eq.set_next_hp_event(50);
-		eq.spawn2(301038,0,0,-1163,-462,-930,362);
-		eq.spawn2(301039,0,0,-1163,-485,-930,362);
+		eq.spawn2(301038,0,0,-1163,-462,-930,362); -- NPC: strength_of_body
+		eq.spawn2(301039,0,0,-1163,-485,-930,362); -- NPC: speed_of_body
 	elseif(e.hp_event == 50) then
 		eq.set_next_hp_event(25);
-		eq.spawn2(301038,0,0,-1163,-462,-930,362);
-		eq.spawn2(301039,0,0,-1163,-485,-930,362);
+		eq.spawn2(301038,0,0,-1163,-462,-930,362); -- NPC: strength_of_body
+		eq.spawn2(301039,0,0,-1163,-485,-930,362); -- NPC: speed_of_body
 	elseif(e.hp_event == 25) then
-		eq.spawn2(301038,0,0,-1163,-462,-930,362);
-		eq.spawn2(301039,0,0,-1163,-485,-930,362);
+		eq.spawn2(301038,0,0,-1163,-462,-930,362); -- NPC: strength_of_body
+		eq.spawn2(301039,0,0,-1163,-485,-930,362); -- NPC: speed_of_body
 	end
 end

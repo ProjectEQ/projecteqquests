@@ -29,7 +29,7 @@ sub EVENT_TIMER {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::spawn2(116573,0,0,$x,$y,$z,$h);
+    quest::spawn2(116573,0,0,$x,$y,$z,$h); # NPC: #Captain_Berradin
     quest::depop_withtimer();
   }
 }

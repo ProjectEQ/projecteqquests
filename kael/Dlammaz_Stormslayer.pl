@@ -39,13 +39,13 @@ sub EVENT_ITEM {
     # Great Dragon's Head
     if (plugin::check_handin(\%itemcount, 25119 => 1)) {
       quest::say("The bards will sing of your greatness, $name. Rage on like the Maelstrom when you wear this cloak. You have done a great service for the city of Kael Drakkel, and we Kromzek do not soon forget great deeds.");
-      quest::summonitem(25023);
+      quest::summonitem(25023); # Item: Cloak of the Maelstrom
     }
 
     # Greater Dragon's Head
     elsif (plugin::check_handin(\%itemcount, 25118 => 1)) {
       quest::say("We shall hang this head from the halls of Dragondeath Keep and sing your praises, $name. Take my axe as a reward for your great deeds. You are a true hero for Kael Drakkel!");
-      quest::summonitem(25022);
+      quest::summonitem(25022); # Item: Frostbringer
     }
 
     else {

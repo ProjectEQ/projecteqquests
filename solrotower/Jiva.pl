@@ -12,19 +12,19 @@ sub EVENT_TIMER {
 		$ranNum = int(rand(5));
 		if($ranNum == 0) {
 			#212067 - an_efreeti_makin
-			quest::spawn2(212067, 0, 0, $x, $y, $z, $h);
+			quest::spawn2(212067, 0, 0, $x, $y, $z, $h); # NPC: an_efreeti_makin
 		} elsif ($ranNum == 1) {
 			#212068 - an_efreeti_adeel
-			quest::spawn2(212068, 0, 0, $x, $y, $z, $h);
+			quest::spawn2(212068, 0, 0, $x, $y, $z, $h); # NPC: an_efreeti_adeel
 		} elsif ($ranNum == 2) {
 			#212069 - an_efreeti_jiri
-			quest::spawn2(212069, 0, 0, $x, $y, $z, $h);
+			quest::spawn2(212069, 0, 0, $x, $y, $z, $h); # NPC: an_efreeti_jiri
 		} elsif ($ranNum == 3) {
 			#212070 - an_efreeti_seif
-			quest::spawn2(212070, 0, 0, $x, $y, $z, $h);
+			quest::spawn2(212070, 0, 0, $x, $y, $z, $h); # NPC: an_efreeti_seif
 		} elsif ($ranNum == 4) {
 			#212071 - an_efreeti_nabil
-			quest::spawn2(212071, 0, 0, $x, $y, $z, $h);
+			quest::spawn2(212071, 0, 0, $x, $y, $z, $h); # NPC: an_efreeti_nabil
 		}
 	}
 }
@@ -32,5 +32,5 @@ sub EVENT_TIMER {
 sub EVENT_DEATH_COMPLETE
 
 {
-quest::spawn2(202365,0,0,$x,$y,$z,$h);
+quest::spawn2(202365,0,0,$x,$y,$z,$h); # NPC: A_Planar_Projection
 }

@@ -3,6 +3,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::signalwith(215450,6,1);
+  quest::signalwith(215450,6,1); # NPC: #Air_Trigger
   quest::stoptimer("wind");
 }

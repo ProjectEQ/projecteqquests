@@ -15,42 +15,42 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 18464 => 1, 22919 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
  if(plugin::check_handin(\%itemcount, 18463 => 1, 22918 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
-  quest::summonitem(7881);
+  quest::summonitem(7881); # Item: Mark of Clarity
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20);
-  quest::faction(441,10);
+  quest::faction(444,20); # Faction: Swift Tails
+  quest::faction(441,10); # Faction: Legion of Cabilis
  }
      if (plugin::check_handin(\%itemcount, 12899 =>1, 12898 =>1, 12896 =>1, 5132 =>1 )) {
   quest::emote("gulps down a wad of phlegm.");
   quest::say("My memory has returned! Boneripper! You are no footman. I grant you the rank of soldier. Go and forge your weapon. Do not return to me until you become a [brave trooper of the empire].");
   quest::say("Find Drill Master Kyg to help you in this task?  [Footman Moglok] needs help.");    #not live text, link to 4th pike beginning
-  quest::summonitem(12476);
-  quest::faction( 440,2);
-   quest::faction( 441,2);
-   quest::faction( 445,2);
-   quest::faction( 444,2);
-   quest::faction( 442,2);
+  quest::summonitem(12476); # Item: Soldier Head Plans
+  quest::faction( 440,2); # Faction: Cabilis Residents
+   quest::faction( 441,2); # Faction: Legion of Cabilis
+   quest::faction( 445,2); # Faction: Scaled Mystics
+   quest::faction( 444,2); # Faction: Swift Tails
+   quest::faction( 442,2); # Faction: Crusaders of Greenmist
    quest::ding();
    quest::exp(800);
 }
 if (plugin::check_handin(\%itemcount, 18073 => 1, 18072 => 1, 18074 => 1, 5134 => 1 )) {
    quest::emote("takes away your pike and hands you plans not for a pike head, but for the crown of another polearm.");
   quest::say("It is time to wield the weapon of a [true warrior of the legion]. You have done well, Legionnaire $name!");
-  quest::summonitem(12478);
-  quest::faction( 440,2);
-   quest::faction( 441,2);
-   quest::faction( 445,2);
-   quest::faction( 444,2);
-   quest::faction( 442,2);
+  quest::summonitem(12478); # Item: Legionnaire Crown Plans
+  quest::faction( 440,2); # Faction: Cabilis Residents
+   quest::faction( 441,2); # Faction: Legion of Cabilis
+   quest::faction( 445,2); # Faction: Scaled Mystics
+   quest::faction( 444,2); # Faction: Swift Tails
+   quest::faction( 442,2); # Faction: Crusaders of Greenmist
    quest::ding();
    quest::exp(4000);
 }

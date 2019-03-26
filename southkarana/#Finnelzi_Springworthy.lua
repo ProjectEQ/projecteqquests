@@ -8,7 +8,7 @@ end
 function event_timer(e)
 	if(e.timer=="gate") then
 		eq.stop_timer("gate");
-		e.self:CastSpell(36, 0);
+		e.self:CastSpell(36, 0); -- Spell: Gate
 		eq.set_timer("depop",3000);
 	elseif(e.timer=="depop") then
 		eq.stop_timer("depop");
@@ -20,11 +20,11 @@ function event_timer(e)
 	elseif(e.timer=="dialog2") then
 		eq.stop_timer("dialog2");
 		e.self:Emote("mutters under his breath");
-		eq.signal(14189,1);		
+		eq.signal(14189,1); -- NPC: #Glenfire_Telzir		
 	elseif(e.timer=="dialog3") then
 		eq.stop_timer("dialog3");
 		e.self:Say("About that. I know it's importaint to all of you, but. . .");
-		eq.signal(14189,3);
+		eq.signal(14189,3); -- NPC: #Glenfire_Telzir
 	end
 end
 

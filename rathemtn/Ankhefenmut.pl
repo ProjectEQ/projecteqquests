@@ -3,8 +3,8 @@ sub EVENT_SAY {
 if ($client->GetGlobal("beast_epic") ==11) {
   if ($text=~/hail/i) {
     quest::emote("eye's you curiously.");
-    quest::faction( 417,5 );
-    quest::faction( 418,5 );
+    quest::faction( 417,5 ); # Faction: Ankhefenmut
+    quest::faction( 418,5 ); # Faction: Zazamoukh
   }
 }
 if ($client->GetGlobal("beast_epic") ==11) {
@@ -70,7 +70,7 @@ if ($client->GetGlobal("beast_epic") ==13) {
 
   if (plugin::check_handin(\%itemcount, 52903 =>1 )) {
     quest::say("Beastlord, I am indeed impressed. We did not know that there was a dark magic on the ankh pieces. It seems the life that flows from the ankh will need to be restored, but I think we are safe now. Take this gift to return to the beastlord elders who aided us.");
-    quest::summonitem(52905);
+    quest::summonitem(52905); # Item: Gift of the Sphinx
 	quest::setglobal("beast_epic",14,5,"F");
   }
 }

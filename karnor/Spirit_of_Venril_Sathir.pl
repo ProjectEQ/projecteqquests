@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     $y = $npc->GetY();
     $z = $npc->GetZ();
     $h = $npc->GetHeading();
-    $entid1 = quest::spawn2(102126,0,0,$x,$y,$z,$h);
+    $entid1 = quest::spawn2(102126,0,0,$x,$y,$z,$h); # NPC: Venril_Sathir
     $mob1 = $entity_list->GetMobID($entid1);
     $mob1attack = $mob1->CastToNPC();
     $mob1attack->AddToHateList($client, 1);

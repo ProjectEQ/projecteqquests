@@ -60,7 +60,7 @@ function event_trade(e)
 		e.other:AddEXP(7000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18815})) then
 		e.self:Say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
-		e.other:SummonItem(13305);
+		e.other:SummonItem(13305); -- Item: Medal of Merit
 		e.other:Ding();
 		e.other:Faction(219,1,0); -- Antonius Bayle
 		e.other:Faction(223,-1,0); -- Circle of Unseen Hands
@@ -69,7 +69,7 @@ function event_trade(e)
 		e.other:Faction(291,1,0); -- Merchants of Qeynos
 		e.other:AddEXP(500);
 		e.other:GiveCash(math.random(10),math.random(10),math.random(10),math.random(10));
-		eq.spawn2(1202,62,0,-412,75,-24,0);
+		eq.spawn2(1202,62,0,-412,75,-24,0); -- NPC: Executioner
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18912})) then
 		e.self:Say("So, an assassin has been sent to Qeynos! I shall have my guards keep an eye out for any suspicious looking visitors. As for you... you should speak with the Surefall Glade ambassador. Ambassador Gash is staying at the Lion's Mane Inn here in South Qeynos. Inform him that [an assassin has been sent to kill] him. Do not let the assassin near him!");
 		e.other:Ding();

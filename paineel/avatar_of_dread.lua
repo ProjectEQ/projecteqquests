@@ -23,13 +23,13 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 14105})) then
 		e.self:Say("Wear this shield imbued with my very essence. Wear it in honor of your great services to our Lord Cazic-Thule!");
-		e.other:SummonItem(14107);
+		e.other:SummonItem(14107); -- Item: Dread Forged Shield
 		e.other:Ding();
-		e.other:Faction(265,50,0);
-		e.other:Faction(242,-50,0);
-		e.other:Faction(254,-50,0);
-		e.other:Faction(231,-50,0);
-		e.other:Faction(233,-50,0);
+		e.other:Faction(265,50,0); -- Faction: Heretics
+		e.other:Faction(242,-50,0); -- Faction: Deepwater Knights
+		e.other:Faction(254,-50,0); -- Faction: Gate Callers
+		e.other:Faction(231,-50,0); -- Faction: Craftkeepers
+		e.other:Faction(233,-50,0); -- Faction: Crimson Hands
 		e.other:AddEXP(1000);
 		eq.depop();
 	end

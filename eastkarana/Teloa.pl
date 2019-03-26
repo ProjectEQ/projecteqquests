@@ -27,7 +27,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_WAYPOINT_DEPART {
   if ($move == 1) {
-    quest::spawn2(15170,0,0,-1597,-3670,-18,0);
+    quest::spawn2(15170,0,0,-1597,-3670,-18,0); # NPC: Teloa
     quest::depop();
   }
 }

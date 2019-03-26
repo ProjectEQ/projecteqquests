@@ -7,7 +7,7 @@ sub EVENT_SAY {
   }
   if ($text=~/bidding of the tower/i) {
     quest::say("Take this glass canopic. Within it you shall place a brain for me. The brain I seek is that of a sarnak crypt raider. Any shall do. The ones we seek should be near the Lake of Ill Omen. When you obtain the brain, you must quickly put it into the glass canopic with [embalming fluid]. When these are combined, the canopic shall seal and if you return it to me with your second rank skullcap, I shall hand you the next and final skullcap."); 
-    quest::summonitem(17023);
+    quest::summonitem(17023); # Item: Brood Canopic
     quest::say("You shall get no skullcap until I have the preserved raider brain and your second circle apprentice skullcap.");
   }
   if ($text=~/embalming fluid/i) {
@@ -20,9 +20,9 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12411 => 1, 4261 => 1)) { 
     quest::say("You have done well. Here is your final apprentice skullcap."); 
     quest::exp(150); 
-    quest::faction(441,20);
-    quest::faction(443,20);
-    quest::summonitem(4262);
+    quest::faction(441,20); # Faction: Legion of Cabilis
+    quest::faction(443,20); # Faction: Brood of Kotiz
+    quest::summonitem(4262); # Item: Apprentice Skullcap - 3rd Rank
     quest::givecash(0,0,10,0);
   }
   elsif (plugin::check_handin(\%itemcount, 14794 =>1 )) {
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 14810 =>1, 10033 =>2 )) {
     quest::say("Well done, here is your reference.");
-    quest::summonitem(14813);
+    quest::summonitem(14813); # Item: Glosk's Reference: Boots
     quest::ding();
     quest::exp(10000);
      

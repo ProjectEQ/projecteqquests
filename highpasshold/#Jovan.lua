@@ -11,7 +11,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12114})) then
 		e.self:Say("<SLURP!!>  Ahh thhhhat'thh betterr. Take thithhh. <BURP!>");
-		e.other:SummonItem(19006);
+		e.other:SummonItem(19006); -- Item: Icon of the Fervent
 		e.other:Ding();
 		e.other:AddEXP(1000);
 		eq.depop_with_timer();

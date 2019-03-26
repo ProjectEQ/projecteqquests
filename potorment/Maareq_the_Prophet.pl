@@ -29,7 +29,7 @@ sub EVENT_HP {
 		#only to allow a failed raid to redo the event without putting in smarter
 		#logic to keep the #a_twisted_crawler up through a zone reset/empty.
 		#quest::updatespawntimer(42165,43200000);
-		quest::spawn2(207070,0,0,$x,$y,$z,$h);
+		quest::spawn2(207070,0,0,$x,$y,$z,$h); # NPC: #a_twisted_crawler
 		quest::stoptimer(3);
 		quest::stoptimer(4);
 	}

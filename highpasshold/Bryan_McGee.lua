@@ -24,7 +24,7 @@ function event_trade(e)
 		e.other:GiveCash(0,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12365})) then
 		e.self:Say("I cannot believe you actually acquired all those drinks!! You do good work, kid. Here is the gem as I promised. And a few plat for good measure. Don't let it be said that the Axe doesn't treat his friends right.");
-		e.other:SummonItem(12348);
+		e.other:SummonItem(12348); -- Item: Gem of Stamina
 		e.other:Ding();
 		e.other:Faction(336,10,0); -- Coalition of Tradefolk Underground
 		e.other:Faction(229,10,0); -- Coalition of Tradefolk

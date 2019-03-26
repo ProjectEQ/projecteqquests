@@ -5,13 +5,13 @@ function event_say(e)
 		e.self:Say("Welcome into our church of rage.  I am Vesagar Nekio. servant of Innoruuk.  If you should need me to [cure poison]. [cure disease]. or if you [require healing]. just let me know.");
 	elseif(e.message:findi("cure poison") and fac <= 4) then
 			e.self:Say("Ally of the Dismal Rage,  Be free of poison!!");
-			e.self:CastSpell(203,e.other:GetID());
+			e.self:CastSpell(203,e.other:GetID()); -- Spell: Cure Poison
 	elseif(e.message:findi("cure disease") and fac <= 4) then
 			e.self:Say("Ally of the Dismal Rage,  Be free of disease!!");
-			e.self:CastSpell(213,e.other:GetID());
+			e.self:CastSpell(213,e.other:GetID()); -- Spell: Cure Disease
 	elseif(e.message:findi("require healing") and fac <= 4) then
 			e.self:Say("Ally of the Dismal Rage,  Be healed of all your wounds!!");
-			e.self:CastSpell(13,e.other:GetID());
+			e.self:CastSpell(13,e.other:GetID()); -- Spell: Complete Heal
 	elseif((e.message:findi("cure poison") or e.message:findi("cure disease") or e.message:findi("require healing")) and fac > 4) then
 		e.self:Say("Blasphemer!!  You are no ally of the Dismal Rage.  Run while you still have legs!!");
 	end

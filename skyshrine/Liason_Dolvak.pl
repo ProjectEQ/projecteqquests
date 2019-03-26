@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/contact/i) {
     quest::say("Her name is Eysa Florawhisper. She is a Countess from the Tunarean Court, of whom we are allied with in this fight against the giants. The court does not want the giants encroaching on the lands of Tunare, for they fear that the giants will cause great harm to the area, should they be allowed to control it. As you can see, this gives us a common enemy, which has forged an even stronger alliance between our two peoples. If you can deliver this report to her in my stead, she will give you the documents we need.");
-    quest::summonitem(29067);
+    quest::summonitem(29067); # Item: Note to Tunare's Court
   }
 }
 

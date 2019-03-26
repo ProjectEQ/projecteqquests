@@ -9,7 +9,7 @@ function event_waypoint_arrive(e)
 		e.self:Say("Whew. I am parched. I will be back in a few minutes.");
 	elseif(e.wp == 15) then
 		e.self:Say("Hey sweetheart, I'll have my usual. Could you bring it upstairs for me?");
-		eq.signal(2083,1);
+		eq.signal(2083,1); -- NPC: Sabnie_Blagard General Supplies
 	elseif(e.wp == 38) then
 		e.self:Say("Hey, hey, hey! Tubal Weaver open for business!");
 	end
@@ -21,10 +21,10 @@ function event_signal(e)
 	
 	if(e.signal == 1 and xloc == 372 and yloc == 37) then
 		e.self:Say("Is he wise to us?");
-		eq.signal(2083,3);
+		eq.signal(2083,3); -- NPC: Sabnie_Blagard General Supplies
 	elseif(e.signal == 2) then
 		e.self:Say("Well, we won't have to worry about him much longer. I have some friends coming into town who owe me the kind of debt you can't repay with gold.");
-		eq.signal(2083,4);
+		eq.signal(2083,4); -- NPC: Sabnie_Blagard General Supplies
 	elseif(e.signal == 3) then
 		e.self:Say("Don't you worry, sugar, his days are numbered. You better get back before he suspects something. We'll be together soon enough.");
 	end

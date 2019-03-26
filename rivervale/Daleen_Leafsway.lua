@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("Deputy Eigon! I forgot! I was supposed to bring him some turnips to eat while he is on patrol! Oh... He asked so nicely, too. I feel bad that I forgot. If only someone would take these [turnips] to the Deputy..");
 	elseif(e.other:GetFaction(e.self) == 1 and e.message:findi("turnips")) then
 		e.self:Say("Oh, thank you so much! You can keep any payment he gives you. Be sure to tell him I'm sorry.");
-		e.other:SummonItem(16165);
+		e.other:SummonItem(16165); -- Item: Sack of Turnips
 	end
 end
 

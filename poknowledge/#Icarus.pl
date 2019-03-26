@@ -43,6 +43,6 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 1002 => 1)) {
 		quest::say("Great! I can use this for my nest! Here take some food in exchange.");
-		quest::summonitem(58239);
+		quest::summonitem(58239); # Item: Small Wedge of Cheese
 	}
 }

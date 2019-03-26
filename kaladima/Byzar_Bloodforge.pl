@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::ding();
     quest::givecash(7,1,2,0);
-    quest::summonitem(quest::ChooseRandom(2113,2114,2115,2117,2119,2121,2122));
+    quest::summonitem(quest::ChooseRandom(2113,2114,2115,2117,2119,2121,2122)); # Item(s): Small Tattered Skullcap (2113), Small Tattered Mask (2114), Small Tattered Gorget (2115), Small Tattered Shoulderpads (2117), Small Tattered Belt (2119), Small Tattered Wristbands (2121), Small Tattered Gloves (2122)
   }
   elsif(plugin::check_handin(\%itemcount, 13741 => 1, 13740 => 1)){
     quest::say("I underestimated you.  You are truly a great warrior.  I reward you with a piece of my own Bloodforge armor.  You would be fine Bloodforge Brigade material!  How would you like to [take a little trip] in the name of the Bloodforge Brigade?");
@@ -38,7 +38,7 @@ sub EVENT_ITEM {
     quest::faction(232,-15);   # CraknekWarriors worse
     quest::exp(10000);
     quest::ding;
-    quest::summonitem(quest::ChooseRandom(3090,3090,3090,3090,3090,3090,3091,3092,3093,3094,3095,3096));  
+    quest::summonitem(quest::ChooseRandom(3090,3090,3090,3090,3090,3090,3091,3092,3093,3094,3095,3096)); # Item(s): Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Mail (3091), Bloodforge Armplates (3092), Bloodforge Bracers (3093), Bloodforge Gauntlets (3094), Bloodforge Legplates (3095), Bloodforge Boots (3096)  
   }
   elsif(plugin::check_handin(\%itemcount, 12136 => 1)){
     quest::say("Ha!! His death brings me great happiness.  I owe you much.  Take this hammer.  It is the hammer of the Bloodforge Brigade.  May it serve you well.  Now go,so I can enjoy this moment of happiness alone.");
@@ -49,7 +49,7 @@ sub EVENT_ITEM {
     quest::faction(232,-15);   # CraknekWarriors worse
     quest::exp(10000);
     quest::ding;
-    quest::summonitem(13314);
+    quest::summonitem(13314); # Item: Bloodforge Hammer
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);

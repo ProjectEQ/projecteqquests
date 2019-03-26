@@ -41,14 +41,14 @@ sub EVENT_ENTER {
       }
     }
     if($close_count >= 3) {
-      quest::spawn2(289034,0,0,-2106,188,250,156);
-      quest::spawn2(289034,0,0,-2075,246,250,240);
-      quest::spawn2(289034,0,0,-2019,247,250,206);
-      quest::spawn2(289034,0,0,-1945,257,250,286);
-      quest::spawn2(289034,0,0,-1895,196,250,334);
-      quest::spawn2(289034,0,0,-1865,140,250,426);
-      quest::spawn2(289034,0,0,-1953,94,250,444);
-      quest::spawn2(289034,0,0,-2047,125,250,44);
+      quest::spawn2(289034,0,0,-2106,188,250,156); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-2075,246,250,240); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-2019,247,250,206); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-1945,257,250,286); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-1895,196,250,334); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-1865,140,250,426); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-1953,94,250,444); # NPC: a_cragbeast_hatchling
+      quest::spawn2(289034,0,0,-2047,125,250,44); # NPC: a_cragbeast_hatchling
       #set zone status to 1.
       quest::setglobal($instid.'_tipt_status',1,7,"H6");
     }

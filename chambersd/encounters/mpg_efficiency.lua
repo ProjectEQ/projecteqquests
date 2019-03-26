@@ -74,7 +74,7 @@ function Efficiency_Say(e)
     eq.zone_emote(14, 'Resetting spawn conditions');
 
   elseif ( e.message:findi("test") and e.other:Admin() > 80) then
-    eq.signal( 307000, 1);
+    eq.signal( 307000, 1); -- NPC: Master_of_Efficiency
   end
 end
 
@@ -131,7 +131,7 @@ function Efficiency_Signal(e)
     eq.spawn_condition(this_zone, instance_id, 2, 0);
     
     eq.stop_all_timers();
-    eq.spawn2(307005, 0, 0, -212, 273, 71, 40);
+    eq.spawn2(307005, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
     eq.depop();
 
     local mpg_helper = require("mpg_helper");
@@ -140,7 +140,7 @@ function Efficiency_Signal(e)
 end
 
 function Enforcer_Death(e)
-  eq.signal(307000, 1);
+  eq.signal(307000, 1); -- NPC: Master_of_Efficiency
 end
 
 function Chest_Spawn(e)

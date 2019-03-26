@@ -27,7 +27,7 @@ sub EVENT_TIMER {
 	
 	elsif($timer eq "kill_me_or_lose") {
 		quest::stoptimer("kill_me_or_lose");
-		quest::signalwith(201417, 2, 5);
+		quest::signalwith(201417, 2, 5); # NPC: #Event_Burning_Control
 	}
 }
 

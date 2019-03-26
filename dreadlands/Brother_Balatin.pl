@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   # ROTWF [Part 4][End]
   quest::emote("holds his arms out and a fine robe materializes before your eyes. You grab it just in time to see the skeleton fade from existence.");
   #Summon: Robe of the Whistling Fist (12970)
-  quest::summonitem(12970);
+  quest::summonitem(12970); # Item: Robe of the Whistling Fists
  }
  elsif(plugin::check_handin(\%itemcount, 12429 => 1)){
   quest::emote("quickly stashes the flute inside of his ribcage, where it joins another. 'If you want the true Flute of Zan-Fi, you'll have to take it from me!'"); #Made this up, no text available
@@ -30,7 +30,7 @@ sub EVENT_ITEM {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(86155,0,0,$x,$y,$z,$h);
+  quest::spawn2(86155,0,0,$x,$y,$z,$h); # NPC: #Brother_Balatin
   quest::depop_withtimer();
  }
  plugin::return_items(\%itemcount); 

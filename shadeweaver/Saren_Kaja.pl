@@ -17,9 +17,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 30619 => 4)){
   quest::say("Oh thank you ever so much! You are truly as sweet as the gift you bring.");
-  quest::summonitem(30625);
+  quest::summonitem(30625); # Item: Sweet Payala Nectar
   quest::exp(2500);
-  quest::faction(1513,10);
+  quest::faction(1513,10); # Faction: Guardians of Shar Vahl
   }
 
 }

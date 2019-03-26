@@ -27,7 +27,7 @@ end
 
 function event_signal(e)
 	e.self:Say("'Oh no!! It is too late!! Run!!");
-	eq.signal(382245,1,5000);
+	eq.signal(382245,1,5000); -- NPC: Krazen_Loosh
 end
 
 -- freeporteast version - Guard_Alayle

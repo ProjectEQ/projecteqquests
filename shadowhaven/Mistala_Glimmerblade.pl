@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/retrieve the daily reports/i) {
     quest::say("Many thanks, $name. The last I heard from Broansas he was heading for the Dawnshroud peaks. Please seek him out there and present him with this notorized letter so that he will know that I have sent you. Return to me with his report as soon as you can. I await your return.");
-    quest::summonitem(4760);
+    quest::summonitem(4760); # Item: Notorized Letter
   }
 }
 

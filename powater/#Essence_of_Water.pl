@@ -8,7 +8,7 @@ sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say("Well done.");
 	quest::setglobal("pop_water_coirnav_projection", 1, 5, "F");
-        quest::summonitem(29163);
+        quest::summonitem(29163); # Item: Sphere of Coalesced Water
 	$client->Message(4,"You receive a character flag!");
 	}
 }

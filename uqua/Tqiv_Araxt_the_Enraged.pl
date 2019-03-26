@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   $check_named = $entity_list->GetMobByNpcTypeID(292015);
   if($check_named == 0) {
-    quest::spawn2(292022,0,0,-537,-620,-5,4);
+    quest::spawn2(292022,0,0,-537,-620,-5,4); # NPC: #Tqiv_Araxt_the_Enraged
     quest::depop_withtimer();
   }
 }

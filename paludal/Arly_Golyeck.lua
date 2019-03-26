@@ -5,8 +5,8 @@ local qglobals = eq.get_qglobals(e.self,e.other);
 		e.self:Say("Ho there, look who stopped by. What can I help you with, ".. e.other:GetName() .."? He smiles, Don't worry. You needn't tell me, friend, as I already know. Seems you've made quite a name for yourself. Stanos has spread the word that you helped him out with his little dilemma. I'll tell you what. In return for what you want, you can help me with my pressing issues. First and foremost, I could use a bit of cash to help run things around here. It's been hard times for me and the boys, and the money from a pouch of gems would keep us well fed, well armed, and our enemies well bribed for quite awhile. That, or I have a [" .. eq.say_link("small job") .. "] you can take care of. Whichever you'd prefer.");
 	elseif(e.message:findi("small job")) then
 		e.self:Say("Right. I've had my eye on a handful of poisons that are difficult to obtain from this dank hole on this secluded rock. Normally I'd ask my assistant to take care of that for me, but he's indisposed at the moment. If you could collect each item from this list, place it in the satchel and bring it back to me, that'd do the trick. When that's all taken care of, I'll explain how to properly poison a blade.");
-		e.other:SummonItem(8775);
-		e.other:SummonItem(52332);
+		e.other:SummonItem(8775); -- Item: Collection Satchel
+		e.other:SummonItem(52332); -- Item: List of Required Toxins
 	end
 end
 

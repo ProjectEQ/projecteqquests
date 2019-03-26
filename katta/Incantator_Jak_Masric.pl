@@ -12,13 +12,13 @@ sub EVENT_ITEM{
    if(plugin::check_handin(\%itemcount, 7373 => 1, 7374 => 3)){
       quest::say("Hopefully these robes still contain enough of a magical imprint from the shades to be useful in successfully warding the Magus Conlegium
       from their kind. Thank you for you assistance. Keep this token as a symbol of your allegiance to the Magus Conlegium.");
-      quest::faction(1504,10);
-      quest::faction(1502,10);
-      quest::faction(1503,10);
-      quest::faction(1483,-30);
-      quest::faction(1484,-30);
-      quest::faction(1485,-30);
-      quest::faction(1541,-30);
+      quest::faction(1504,10); # Faction: Magus Conlegium
+      quest::faction(1502,10); # Faction: Katta Castellum Citizens
+      quest::faction(1503,10); # Faction: Validus Custodus
+      quest::faction(1483,-30); # Faction: Seru
+      quest::faction(1484,-30); # Faction: Hand of Seru
+      quest::faction(1485,-30); # Faction: Eye of Seru
+      quest::faction(1541,-30); # Faction: Hand Legionnaries
       quest::summonitem(7394); #Magus Conlegium Token
    }
 	plugin::return_items(\%itemcount);

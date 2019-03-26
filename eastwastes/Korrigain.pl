@@ -17,7 +17,7 @@ sub EVENT_ITEM {
       $mobnpc->SignalNPC(1161101);
     }
     else {
-      $mobid = quest::spawn2(116110, 0, 0, 3244, -8102, 147, 0);
+      $mobid = quest::spawn2(116110, 0, 0, 3244, -8102, 147, 0); # NPC: Icefang
       $mob = $entity_list->GetMobID($mobid);
       $mobnpc = $mob->CastToNPC();
       $mobnpc->SignalNPC(1161101);
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
   if ($signal == 116567) {
     quest::say("All that remains from that battle is my loyal Icefang. He will not rest until I am avenged. Follow and watch after him. He alone knows where our attackers lie and he cannot overcome them by himself. May Brell bless you with success, farewell.");
-    quest::signalwith(116110, 1161102, 100);
+    quest::signalwith(116110, 1161102, 100); # NPC: Icefang
   }
 }
 

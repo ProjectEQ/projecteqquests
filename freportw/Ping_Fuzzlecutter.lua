@@ -4,7 +4,7 @@ function event_say(e)
 	elseif(e.message:findi("components")) then
 		e.self:Say("I require a diamond, a star ruby, a pearl, a [special fire emerald], a sapphire, a fire opal, and two enchanted platinum bars. Take this bag and combine the items once you have them all and bring it back to me.");
 		-- Empty Gem Bag ID-17512
-		e.other:SummonItem(17512);
+		e.other:SummonItem(17512); -- Item: Empty Gem Bag
 	elseif(e.message:findi("special fire emerald")) then
 		e.self:Say("Now the fire emerald I want is not the normal one you receive from most jewelers. There is one jeweler I know who has the special one I want. Last time I heard, she had traveled to the elven outpost. Just ask her about special fire emeralds.");
 	elseif(e.message:findi("repair the toupee")) then
@@ -28,12 +28,12 @@ function event_trade(e)
 	-- Clumps of Hair ID- 12335 - Lock of Hair ID- 12338 - Tattered Toupee ID- 12337
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12335,item2 = 12335,item3 = 12338,item4 = 12337})) then
 		e.self:Say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guaranteed to lower prices world wide. Guaranteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
-		e.other:SummonItem(12254);
+		e.other:SummonItem(12254); -- Item: Mane Attraction
 		e.other:Ding();
-		e.other:Faction(229,3,0);
-		e.other:Faction(281,3,0);
-		e.other:Faction(291,3,0);
-		e.other:Faction(336,3,0);
+		e.other:Faction(229,3,0); -- Faction: Coalition of Tradefolk
+		e.other:Faction(281,3,0); -- Faction: Knights of Truth
+		e.other:Faction(291,3,0); -- Faction: Merchants of Qeynos
+		e.other:Faction(336,3,0); -- Faction: Coalition of Tradefolk Underground
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

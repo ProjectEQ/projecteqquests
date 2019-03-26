@@ -24,7 +24,7 @@ if($text=~/Hail/i)
 
 if($text=~/return/i)
        {
-       quest::movepc(204,-1520,1104,125);
+       quest::movepc(204,-1520,1104,125); # Zone: lfaydark
        }
 {
 $pop_pon_hedge_jezith=undef;

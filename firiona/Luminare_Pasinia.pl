@@ -26,7 +26,7 @@ sub EVENT_ITEM {
    quest::faction(313,-10); # -Pirates of Gunthak    
    quest::exp(250);
    #Summon: Vision of Sebilite
-   quest::summonitem(12949);
+   quest::summonitem(12949); # Item: Vision of Sebilite
   }
    plugin::return_items(\%itemcount);
 }

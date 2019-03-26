@@ -2,7 +2,7 @@
 
 sub EVENT_SPAWN {
   quest::shout("The Triumvirate of Water has decreed your fate, Shmendrik Lavawalker!! I am here to deliver said fate!!");
-  quest::signalwith(51012,99,2000);
+  quest::signalwith(51012,99,2000); # NPC: Shmendrik_Lavawalker
 }
 
 sub EVENT_SAY {
@@ -24,14 +24,14 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
   if ($signal == 199) {
     quest::say("Enough!! Your existence has come to an end!");
-    quest::signalwith(51012,299,2000);
+    quest::signalwith(51012,299,2000); # NPC: Shmendrik_Lavawalker
   }
   if ($signal == 399) {
     quest::say("This conflict has been destined by the waters of the Triumvirate!");
-    quest::signalwith(51012,499,2000);
+    quest::signalwith(51012,499,2000); # NPC: Shmendrik_Lavawalker
   }
   if ($signal == 599) {
-   quest::spawn2(51145,0,0,33,3619,51,0);
+   quest::spawn2(51145,0,0,33,3619,51,0); # NPC: a_spirit_of_flame
    # $mob = $entity_list->GetMobID($entid);
    # $mobnpc = $mob->CastToNPC();
    # $mobnpc->AddToHateList($npc, 1);

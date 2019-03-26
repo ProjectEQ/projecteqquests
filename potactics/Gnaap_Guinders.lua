@@ -6,7 +6,7 @@ function event_say(e)
 		e.self:Say("Oh! Curious are you? Well I'm not going to tell you unless you get me out of here! And don't think you can just break my chains with some heavy weapons or some fancy hocus-pocus! It's going to take more than that to [" .. eq.say_link("break Tagrin's steel") .. "].");	
 	elseif(e.message:findi("break Tagrin's steel") and  qglobals["mage_epic_fire1"] == "1") then	
 		e.self:Say("If I knew that do you think I'd be here still? I thought you'd at least be half as smart as you look! Well, I have a friend that may be able to help us. Have you ever met Bor Wharhammer? Well if you have, good, go to him. If you haven't, find him. Bring him a hammer made by Tagrin so he can see what he's working with. He's really good at breaking stuff. Bring him this note as well, so he knows I sent you.");
-		e.other:SummonItem(15791);
+		e.other:SummonItem(15791); -- Item: Note from Gnapp
 	end
 end
 

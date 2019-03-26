@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::npctexture(1); #My personal touch - changes the undead frog into a Guktan.
     quest::say("Thank you again $name. Your kindness has allowed my spirit to go home. Please show this to my people so they will have a memory of what you have done.");
     quest::settimer(1,6);
-    quest::summonitem(67018);
+    quest::summonitem(67018); # Item: Spectral Memory
     }
     plugin::return_items(\%itemcount); # return unused items
 }

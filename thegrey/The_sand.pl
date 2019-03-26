@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   quest::emote("at your feet explodes into violent motion!");
-  quest::spawn2(quest::ChooseRandom(171059,171058,171050,171049),0,0,$x,$y,$z,$h);
+  quest::spawn2(quest::ChooseRandom(171059,171058,171050,171049),0,0,$x,$y,$z,$h); # NPC(s): a_Xakra_Shah (171059), a_Xakra_Shah (171058), a_Xakra_Sei (171050), a_Xakra_Sei (171049)
   quest::depop_withtimer();
 }
 

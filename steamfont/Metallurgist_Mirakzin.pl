@@ -10,14 +10,14 @@ sub EVENT_SAY {
   }
   if ($text=~/favor/i) {
     quest::say("Bah! Don't worry. You'll be rewarded well. Take this Sealed Sack and get three samples. Make sure to combine them. I wouldn't want the samples to oxidize like the last ones.");
-    quest::summonitem(17711);
+    quest::summonitem(17711); # Item: Sealed Sack
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 63008 => 1)) {
     quest::say("Hmm. It LOOKS like the samples survived. I will, however, have to test them. But you've done well I suppose. Here. Take this as payment.");
-    quest::summonitem(63049);
+    quest::summonitem(63049); # Item: Encased Mnemonic Vapor
   }
   plugin::return_items(\%itemcount);
 }

@@ -29,16 +29,16 @@ sub EVENT_ITEM {
     quest::say("You are truly a blessing from the gods. I thank you for risking your life to help the brotherhood and want to offer you this token of our appreciation. It is an item of dormant power locked within. The only way to unlock this power is to combine it with the stone Fezbin gave to you. Now that we have solved the mystery of Yxtta, I need assistance in Kod'Taz. If you are willing to help please ask me about this area.");
     quest::setglobal("bic_yxt",16,5,"F");
     $client->Message(15,"You were successful in helping L'Diava complete her report of Yxtta. Fezbin will be pleased, but there are others who need your help.");
-    quest::summonitem(67570);
+    quest::summonitem(67570); # Item: Translucent Gem Shard
   }
   elsif (defined($qglobals{bic}) && ($qglobals{bic} >= 14) && plugin::check_handin(\%itemcount, 67561 => 1)) {
     quest::say("Oh, thank you brave adventurer. We are now one step closer to finding out what happened to Kitren. Now, give me one second to look through the cloak here and . . . here it is, Kitren's notebook. There must be some information here that can help us more. While I read through this, I need you to return to Kevren Nalavat. He believes he may have found more clues to Kitren's whereabouts and since you did such a good job with the trials he believes you may be able to help him. Even though you have proven yourself by defeating the trials, he will not give you what I need unless you help him. When you return to him, show him this letter and it will confirm my trust in you. Hurry now. There no time to waste!");
-    quest::summonitem(67702);
+    quest::summonitem(67702); # Item: Sealed Note
   }
   elsif (defined($qglobals{bic}) && ($qglobals{bic} >= 14) && plugin::check_handin(\%itemcount, 67562 => 1)) {
     quest::say("Once again, a job well done. I hear you accomplished the tasks with flying colors. Now let's see what this says. Hm . . . this changes everything. I never suspected something like this, but now that I know, it all makes sense to me. Oh poor Kitren, why didn't you warn me first? Please leave me be. I must take sometime to think. Take this as proof of your accomplishments in Kod'Taz. It possesses a power that you can unlock when you combine it with the stone from Fezbin. Return to me later if you wish to investigate Yxtta.");
     quest::setglobal("bic_kod",17,5,"F");
-    quest::summonitem(67569);
+    quest::summonitem(67569); # Item: Smoky Gem Shard
     $client->Message(15,"You were successful in helping L`diava complete her report of Kod'Taz. Fezbin will be pleased, but there are others who need your help.");
   }
   plugin::return_items(\%itemcount);

@@ -14,10 +14,10 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12206 => 1, 16506 => 3 )) {
     quest::say("Excellent, now let me get to work. There we go, here is the weapon that I promised you.");
     quest::exp(1500);
-    quest::summonitem(5366);
-    quest::faction( 326, 30);
-    quest::faction( 246, 30);
-    quest::faction( 5001, 30);
-    quest::faction( 276, 30);
+    quest::summonitem(5366); # Item: Brazen Brass Kilij
+    quest::faction( 326, 30); # Faction: Emerald Warriors
+    quest::faction( 246, 30); # Faction: Faydarks Champions
+    quest::faction( 5001, 30); # Faction: Anti-mage
+    quest::faction( 276, 30); # Faction: Kelethin Merchants
   }
 }

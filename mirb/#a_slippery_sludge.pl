@@ -2,5 +2,5 @@
 
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(237743,1,1);
+  quest::signalwith(237743,1,1); # NPC: Durgin_Skell
 }

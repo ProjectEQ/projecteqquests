@@ -1,6 +1,6 @@
 function event_death_complete(e)
 	-- send a signal to the zone_status that I died
-	eq.signal(223097,5);
+	eq.signal(223097,5); -- NPC: zone_status
 	-- get the zone instance id
 	local instance_id = eq.get_zone_instance_id();
 	-- load qglobals and set bit 8
@@ -23,7 +23,7 @@ end
 function event_hp(e)
 	if (e.hp_event == 51) then
 		-- spawn copies
-		eq.spawn2(223164,0,0,286,-182,358,46);
-		eq.spawn2(223164,0,0,305,-201,358,46);
+		eq.spawn2(223164,0,0,286,-182,358,46); -- NPC: #Vallon_Zek
+		eq.spawn2(223164,0,0,305,-201,358,46); -- NPC: #Vallon_Zek
 	end
 end

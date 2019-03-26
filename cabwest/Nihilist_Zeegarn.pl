@@ -9,7 +9,7 @@ sub EVENT_SAY {
   }
  elsif($text=~/no/i){ #The Penance quest
   quest::say("What is this?' the Nihilist barks in disbelief. 'You have lost your drape? This is unacceptable! Take this note and report to the Toilmaster at once. Read it on the way and praise Cazic-Thule for any mercy that you may be granted!");
-  quest::summonitem(18271);
+  quest::summonitem(18271); # Item: Ragged Book
   }
 }
 
@@ -17,7 +17,7 @@ sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 18272 => 1, 24770 => 1)){ #The Penance quest
   quest::emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time.");
   quest::say("Lucky you. You have earned a second chance. Praise Cazic-Thule!");
-  quest::summonitem(12407);
+  quest::summonitem(12407); # Item: Drape of the Brood
   quest::ding();
  }
   plugin::return_items(\%itemcount);

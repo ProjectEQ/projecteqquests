@@ -15,7 +15,7 @@ sub EVENT_SAY {
   }
   if ($text=~/repair order/i) {
     quest::say("Huh? Oh, here is a repair order for the Guards' shields, I will only give you one at a time as I do not want you overworking yourself so early in your education.");
-    quest::summonitem(29803);
+    quest::summonitem(29803); # Item: Shield Repair Order
   }
   if ($text=~/spirit anchor/i) {
     quest::say("Have you not met Tiamon out in the Thicket yet? He is always telling anyone who wants to listen all about spirit anchors. Let me sum it up for you- the shadeweavers hunt the beings of shadow in the thicket to make their special shadow armor called Xakra. Now if you or I were to try to don this armor, it wouldn't last long as the shadows are not bound to this plane. Tiamon developed a method of [binding the spirits] in such a way that they will last. Mind you, he works with needles and threads- I work with the tools of a smith.");
@@ -45,21 +45,21 @@ sub EVENT_ITEM {
   # give 2 Bloodling shields : buy 2 carapace shield frame from Barkhem, fill them with Cht`Thk carapaces, combine
   if (plugin::check_handin(\%itemcount, 30658 => 2)) {
     quest::emote("smiles and nods his head in approval before speaking. 'This is some quality work my friend. Although you could use some practice in your style, I can sense true potential in your smithing skills. This was too large for me to use for a shield, but I think you can craft it into some fairly good armor. Just treat it in a forge with nepeta oil and the proper mold, the oil should soften it up enough to become pliable. Once fired in the forge it will harden to the mold. I'd love to see how It turns out.'");
-    quest::summonitem(30664);
-    quest::summonitem(30664);
+    quest::summonitem(30664); # Item: Bloodling Carapace Plate
+    quest::summonitem(30664); # Item: Bloodling Carapace Plate
   }
   # You can buy Nepeta Oil Extract from a merchant named Chialle in the southern part of Shar Vahl. The mail sectional mold is sold by Apprentice Garr, near Master Barkhem. Combine the oil, mold and two plates in a forge (trivial 32) to create a Bloodling Plate Mail.
   # give Bloodling plate mail
   if (plugin::check_handin(\%itemcount, 30646 => 1) || plugin::check_handin(\%itemcount, 30647 => 1) || plugin::check_handin(\%itemcount, 30648 => 1) || plugin::check_handin(\%itemcount, 30649 => 1) || plugin::check_handin(\%itemcount, 30650 => 1) || plugin::check_handin(\%itemcount, 30651 => 1) || plugin::check_handin(\%itemcount, 30652 => 1) || plugin::check_handin(\%itemcount, 30653 => 1) || plugin::check_handin(\%itemcount, 30654 => 1) || plugin::check_handin(\%itemcount, 30655 => 1) || plugin::check_handin(\%itemcount, 30656 => 1) || plugin::check_handin(\%itemcount, 30657 => 1)) {
     quest::say("I knew that old thing would make a fine bit of armor in the right hands. Talent like yours should not go to waste! Take this, it is the mallet that I used to smith my very first bit, you can learn with it until you earn something better. Here is your first lesson $name, use this mallet to pound out the dents in the guard's shields. The ones guarding the bridges into town will need it most, as they can not leave their posts. Show each guard a [repair order] and have them sign off on it when you are through.");
-    quest::summonitem(29802);
+    quest::summonitem(29802); # Item: Vah Shir Apprentice Mallet
   }
  
   # Give Master Barkhem the four work orders, from the 4 khala dun
   if (plugin::check_handin(\%itemcount, 29806 => 1, 29809 => 1, 29812 => 1, 29815 => 1)) {
     quest::emote("shuffles through the work orders. 'Well they have some lovely things to say about your work!'");
     quest::emote("disappears into the back room for a moment only to return dragging some sort of large iron block in his hands and crashes it down on the counter. 'Do you know what this is? I see you nodding your head, and yes it is an anvil... but it is so much more. This is a specially crafted anvil for only my most promising students as not just anyone has it within them to smith on a [spirit anchor].'");
-    quest::faction(1513,10);
+    quest::faction(1513,10); # Faction: Guardians of Shar Vahl
     quest::exp(500);
     quest::summonitem(29816); # Vah Shir Anvil
   }
@@ -70,7 +70,7 @@ sub EVENT_ITEM {
   # apprentice mallet 29802
   if (plugin::check_handin(\%itemcount, 29802 => 1, 29819 => 1)) {
     quest::say("Well done, $name! I trust you are beginning to see the power that shadow can grant you. Now it is time for you to learn to manipulate sound. Here is your very own mallet, use it to form the substance of sound into tangible matter. Pound yourself out a few humming orbs and I'll know you're ready to combine shadow and sound into a precarious balance of forces.");
-    quest::faction(1513,10);
+    quest::faction(1513,10); # Faction: Guardians of Shar Vahl
     quest::exp(500);
     quest::summonitem(29820); # Luclinite Mallet
   }
@@ -79,7 +79,7 @@ sub EVENT_ITEM {
   # 3 humming orbs 29823 + Luclinite Mallet
   if (plugin::check_handin(\%itemcount, 29820=> 1, 29823 => 3)) {
     quest::emote("looks genuinely pleased with your craftsmanship. He sets down one of the orbs onto a special anvil and swings your mallet high in the air crashing it down on the orb causing it to shatter with a terrible shriek. He repeats this action with each of the remaining orbs and hands you back the now humming mallet. 'Here, $name, this mallet will enable you to combine shadow with sound. Smith wisely and be careful what you create with it,' Barkhem pauses, looking quite serious, 'it is very powerful. You'll be able to make Shadowscream steel with it.'");
-    quest::faction(1513,10);
+    quest::faction(1513,10); # Faction: Guardians of Shar Vahl
     quest::exp(500);
     quest::summonitem(29824); # Humming Luclinite Mallet
   }
@@ -87,7 +87,7 @@ sub EVENT_ITEM {
   # receive Rakutah's Seal
   if (plugin::check_handin(\%itemcount, 29826 => 1)) {
     quest::say("Back already, $name? I've only just sent you out and you've finished your very first professional job, well done! I'm very proud of your progression! My wife and I have made you a pair of greaves that I'm sure you'll love to wear. Take them as a reward on a job well done. I have pressing matters that require my attention right now, or else I'd teach you more about the powers of shadow and sound. Experiment with the Shadowscream steel until I can teach you more.");
-    quest::faction(1513,10);
+    quest::faction(1513,10); # Faction: Guardians of Shar Vahl
     quest::exp(500);
     quest::summonitem(29827); # Barkhem Fancy Pantaloons
   }

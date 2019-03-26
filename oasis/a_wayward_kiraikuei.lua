@@ -17,7 +17,7 @@ function event_trade(e)
 		local request = instance_requests.ValidateRequest('raid', "hateplaneb", 1, 6, 36, 61, nil, nil, e.other, lockout_globals);
 		if (request.valid and request.flags == 1) then
 			instance_requests.DisplayLockouts(e.other, e.other, lockout_globals);
-			e.other:SummonItem(9599);
+			e.other:SummonItem(9599); -- Item: Pulsating Blue Metal Sphere
 		elseif (request.valid and request.flags == 0) then
 		local raid = e.other:GetRaid();
 		local instance_id = eq.create_instance("hateplaneb", 1, 3600);
@@ -27,10 +27,10 @@ function event_trade(e)
 				eq.assign_raid_to_instance(instance_id);
 				set_compass(raid);
 			else
-				e.other:SummonItem(9599);
+				e.other:SummonItem(9599); -- Item: Pulsating Blue Metal Sphere
 			end
 		else
-			e.other:SummonItem(9599);
+			e.other:SummonItem(9599); -- Item: Pulsating Blue Metal Sphere
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

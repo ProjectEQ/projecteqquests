@@ -19,7 +19,7 @@ sub EVENT_ITEM{
       quest::emote("howls in triumph! 'This is just what I needed! Skargus is mine now, wait until he finds out, just wait! His death is close at hand. Follow me and I'll take you to Skargus's chamber, you can wait there while I take this report to the chief!'");
       quest::shout("I have you now Skargus, you traitor! Even now I'm taking this report of slave-trading to the chief! Your days here are at an end!");
       quest::depop_withtimer();
-      quest::unique_spawn(92185,0,0,$x,$y,$z);
+      quest::unique_spawn(92185,0,0,$x,$y,$z); # NPC: Warlord_Skargus
     }
   }
   plugin::return_items(\%itemcount);

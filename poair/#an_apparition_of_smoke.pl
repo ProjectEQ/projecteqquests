@@ -3,6 +3,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::signalwith(215453,5,1);
+  quest::signalwith(215453,5,1); # NPC: #Smoke_Trigger
   quest::stoptimer("smoke");
 }

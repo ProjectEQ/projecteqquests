@@ -205,7 +205,7 @@ function event_timer(e)
 		eq.get_entity_list():MessageClose(e.self, false, 120, 3, "You have been found unworthy and have failed, you should be shamed and publicly flogged.");
 
 		-- Tell the Tribunal we failed
-		eq.signal(201438, 2);
+		eq.signal(201438, 2); -- NPC: The_Tribunal Torture Trial
 
 		despawn_prisoners();
 		eq.depop();
@@ -229,9 +229,9 @@ function spawn_wraith()
 	local location = eq.ChooseRandom(1,2);
 
 	if ( location == 1 ) then
-		eq.spawn2(201452, 51, 0, 723, -1120, 88, 136);
+		eq.spawn2(201452, 51, 0, 723, -1120, 88, 136); -- NPC: wraith_of_agony
 	else 
-		eq.spawn2(201452, 0, 0, 915, -1120, 58, 388);
+		eq.spawn2(201452, 0, 0, 915, -1120, 58, 388); -- NPC: wraith_of_agony
 	end
 	eq.set_timer("wraith_timer", 60000);
 end
@@ -269,16 +269,16 @@ end
 
 function spawn_prisoners()
 	-- a tortured prisoner
-	eq.spawn2(201476, 0, 0, 907, -1157, 58, 444);
-	eq.spawn2(201476, 0, 0, 831, -1157, 58, 62);
-	eq.spawn2(201476, 0, 0, 831, -1084, 58, 180);
-	eq.spawn2(201476, 0, 0, 906, -1084, 58, 312);
+	eq.spawn2(201476, 0, 0, 907, -1157, 58, 444); -- NPC: a tortured prisoner
+	eq.spawn2(201476, 0, 0, 831, -1157, 58, 62); -- NPC: a tortured prisoner
+	eq.spawn2(201476, 0, 0, 831, -1084, 58, 180); -- NPC: a tortured prisoner
+	eq.spawn2(201476, 0, 0, 906, -1084, 58, 312); -- NPC: a tortured prisoner
 
 	-- Pain and Suffering
-	eq.spawn2(201475, 0,0, 912,-1161, 60, 444);
-	eq.spawn2(201475, 0,0, 824,-1161, 60, 70);
-	eq.spawn2(201475, 0,0, 824,-1078, 60, 180);
-	eq.spawn2(201475, 0,0, 910,-1078, 60, 324);
+	eq.spawn2(201475, 0,0, 912,-1161, 60, 444); -- NPC: Pain_and_Suffering
+	eq.spawn2(201475, 0,0, 824,-1161, 60, 70); -- NPC: Pain_and_Suffering
+	eq.spawn2(201475, 0,0, 824,-1078, 60, 180); -- NPC: Pain_and_Suffering
+	eq.spawn2(201475, 0,0, 910,-1078, 60, 324); -- NPC: Pain_and_Suffering
 end
 
 function despawn_prisoners() 

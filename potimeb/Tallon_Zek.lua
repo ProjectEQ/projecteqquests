@@ -1,6 +1,6 @@
 function event_death_complete(e)
 	-- send a signal to the zone_status that I died
-	eq.signal(223097,5);
+	eq.signal(223097,5); -- NPC: zone_status
 	-- get the zone instance id
 	local instance_id = eq.get_zone_instance_id();
 	-- load qglobals and set bit 4

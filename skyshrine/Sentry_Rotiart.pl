@@ -7,7 +7,7 @@ sub EVENT_ITEM {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    my $traitor = quest::spawn2(114437,0,0,$x,$y,$z,$h);
+    my $traitor = quest::spawn2(114437,0,0,$x,$y,$z,$h); # NPC: a_Kromzek_Spy
     my $attack = $entity_list->GetMobID($traitor);
     my $traitorattack = $attack->CastToNPC();
     $traitorattack->AddToHateList($client, 1);

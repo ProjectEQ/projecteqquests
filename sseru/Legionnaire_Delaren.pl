@@ -19,7 +19,7 @@ sub EVENT_SAY
 	if($text=~/peran/i)
 		{
 		quest::say("Centurion Peran is new to the tanks. He gets things done I suppose it just takes him a long, long time. Since you did his job for him, take him these new orders. We will make a soldier out of him yet.");
-		quest::summonitem(6514);
+		quest::summonitem(6514); # Item: Peran's Orders
 		}
 }
 

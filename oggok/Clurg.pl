@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::givecash(0,0,1,5);
   }
   elsif(plugin::check_handin(\%itemcount, 13379 => 1)) {
-    quest::summonitem(13380);
+    quest::summonitem(13380); # Item: Stein of Moggok
     quest::faction(228,10);   #Clurg
     quest::faction(274,-30); #Kazon Stormhammer
     quest::faction(261,10);  #Green Blood Knights

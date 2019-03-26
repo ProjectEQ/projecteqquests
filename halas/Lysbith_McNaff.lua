@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Say("I've placed a bounty on the gnolls o'Blackburrow.  Their whelps have invaded our land and we must carry the fight into their dens.  Join the fight and return three gnoll fangs as proof of yer victory in Blackburrow.  Do so, and earn the respect o' the Wolves o' the North.");
 	elseif(e.message:findi("protect the pass")) then
 		e.self:Say("Then travel to the Everfrost Peaks and take this pack with you.  I want you to return this pack to me when it is filled with the beaded ice necklaces of the Ice Goblins.  When it is filled, combine the items and return it to me and I shall decide if you deserve a reward for your deed.");
-		e.other:SummonItem(17944);
+		e.other:SummonItem(17944); -- Item: Empty Bag
 	end
 end
 
@@ -21,7 +21,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 12223, item2 = 12223, item3 = 12223, item4 = 12223})) then
 		e.self:Say("Well done! You've proved yerself worthy o' this!");
-		e.other:SummonItem(7322);
+		e.other:SummonItem(7322); -- Item: Seax
 		e.other:AddEXP(300);
 		e.other:Ding();
 		e.other:Faction(320,5);			-- Wolves of the North

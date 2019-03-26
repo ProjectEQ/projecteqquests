@@ -18,7 +18,7 @@ sub EVENT_SIGNAL {
       quest::stoptimer("sig_prisoner");
       quest::stoptimer("do_execution");
       #Spawn new executioner
-      quest::spawn2(201439,0,0,232,-1048,74,360);
+      quest::spawn2(201439,0,0,232,-1048,74,360); # NPC: An_Executioner
       #Depop this executioner
       quest::depop();
    }
@@ -98,16 +98,16 @@ sub EVENT_TIMER {
    elsif ($timer eq "sig_prisoner") {
       quest::stoptimer("sig_prisoner");
       #prisoner emote
-      quest::signalwith(201424,1,0);
+      quest::signalwith(201424,1,0); # NPC: a_sentenced_prisoner
       quest::settimer("do_execution", 13);
    }
    elsif ($timer eq "do_execution") {
       quest::stoptimer("do_execution");
       quest::say("Very well.");
       #Signal prisoner death. (depop)
-      quest::signalwith(201424,0,5);
+      quest::signalwith(201424,0,5); # NPC: a_sentenced_prisoner
       #Executed - Let controller know this was a fail
-      quest::signalwith(201425, 3, 5);
+      quest::signalwith(201425, 3, 5); # NPC: #Event_Execution_Control
    }
 }
 

@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/lend him a hand/i) {
     quest::say("That is very nice of you, $name. I'm sure his family will be very grateful. He should not be there alone and we fear the worst for him. If you are to go search for him, please bring him this note from Zimloro that contains further instructions. Please seek him out and do your best to convince him to come home.");
-    quest::summonitem(4764);
+    quest::summonitem(4764); # Item: List of Potion Components
   }
 }
 

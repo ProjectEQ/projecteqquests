@@ -12,10 +12,10 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("You are in luck! I have a fresh batch that just came out of the oven!");
-		eq.signal(9057, 1, 10000);
+		eq.signal(9057, 1, 10000); -- NPC: Pandos_Flintside
 	elseif(e.signal == 2) then
 		e.self:Say("Farewell, then. I will make sure to have them ready for you tomorrow!");
-		eq.signal(9057, 2, 10000);
+		eq.signal(9057, 2, 10000); -- NPC: Pandos_Flintside
 	end
 end
 

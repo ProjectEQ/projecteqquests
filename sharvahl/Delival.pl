@@ -17,7 +17,7 @@ sub EVENT_SAY {
 	if($text=~/tuck/i) {
 		quest::say("Thank you again, have been a great help.  Here is her favorite blanket, just give it to her and she should be fine.  G'night Shainai.");
                 quest::ding();
-		quest::summonitem(4478);
+		quest::summonitem(4478); # Item: Shainai's Blanket
 	}
 }
 
@@ -25,11 +25,11 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 4460 => 1)) {
 		quest::say("Well I wish there was more I could do to repay you. Take this old compass and what change I can spare with my most sincere thanks. Now off to bed Shainai, you have had a busy day.");
                 quest::ding();
-		quest::summonitem(12000);
+		quest::summonitem(12000); # Item: Compass
 		quest::exp(100);
 		quest::givecash(12,9,0,0);
 		quest::faction(1513,5); #Guardian of Shar Vahl
-		quest::signalwith(155339,1,10);
+		quest::signalwith(155339,1,10); # NPC: Shainai
 	}
 	plugin::return_items(\%itemcount);
 }

@@ -7,7 +7,7 @@ quest::say("A footman pike is what you need.  A footman pike is what you get. bu
 }
 if($text=~/I will slay many beasts/i){
 quest::say("Yes.  You will slay or you will be slain.  Take this footman's pack and fill it you will.  Fill it with [weapons of our foes].  When all are combined. the full footman's pack shall be returned to me along with your militia pike.  Do this and earn your footman pike and then we may have a true mission for you.");
-   quest::summonitem(17027);
+   quest::summonitem(17027); # Item: Footmans Pack
 }
 if($text=~/what weapons of our foes?/i){
 quest::say("Yes.  You need to know the weapons required.  Fill the pack with javelins.  Froglok bounder and goblin hunter javelins.  Two of each.");
@@ -17,7 +17,7 @@ quest::say("Yes.  You need to know the weapons required.  Fill the pack with jav
  }
  if ($text=~/assist Warlord Kikyg/i) {
    quest::say("Good. Take this note to Footman Moglok of the swamp garrison. He shall instruct you on your mission.");
-   quest::summonitem(18234);
+   quest::summonitem(18234); # Item: Sealed Note
  }
 }
 
@@ -25,13 +25,13 @@ quest::say("Yes.  You need to know the weapons required.  Fill the pack with jav
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 12430 =>1, 5131 =>1 )) {
      quest::say("Kyg knew you could do it. You will make a fine legionnaire some day but, for now, you shall be a footman. Take the footman pike head plans. Forge the footman's pike. Do so, and then you may have an audience with the War Baron on the subject of his [Memory of Sebilis].");
-     quest::summonitem(12475);
+     quest::summonitem(12475); # Item: Footman Head Plans
      quest::exp(500);
-   quest::faction( 440,2);
-   quest::faction( 441,2);
-   quest::faction( 445,2);
-   quest::faction( 444,2);
-   quest::faction( 442,2);
+   quest::faction( 440,2); # Faction: Cabilis Residents
+   quest::faction( 441,2); # Faction: Legion of Cabilis
+   quest::faction( 445,2); # Faction: Scaled Mystics
+   quest::faction( 444,2); # Faction: Swift Tails
+   quest::faction( 442,2); # Faction: Crusaders of Greenmist
    }
 
  #do all other handins first, then let it do disciplines

@@ -23,8 +23,8 @@ sub EVENT_ITEM {
     quest::say("Arg! By blubberbeards nostril! Ye'v done it!'");
     quest::emote("He braids the beard together into a sturdy rope.");
     quest::say("Now take this here rope and tie yerself up! Come lets go tell the cap'n we've captured us some prisoners!");
-    quest::summonitem(30049);
-    quest::faction(447, 30);
+    quest::summonitem(30049); # Item: Tinkered Rope
+    quest::faction(447, 30); # Faction: Pirates of Iceclad
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);
@@ -45,7 +45,7 @@ sub EVENT_TIMER {
       $mobnpc->SignalNPC(1);
     }
     else {
-      my $ent = quest::spawn2(110052, 0, 0, $x-9, $y-1, $z, $h);
+      my $ent = quest::spawn2(110052, 0, 0, $x-9, $y-1, $z, $h); # NPC: Ratop
       my $mob = $entity_list->GetMobID($ent);
       my $mobnpc = $mob->CastToNPC();
       $mobnpc->SignalNPC(1);
@@ -66,7 +66,7 @@ sub EVENT_TIMER {
       $mobnpc->SignalNPC(2);
     }
     else {
-      my $ent = quest::spawn2(110052, 0, 0, $x-9, $y-1, $z, $h);
+      my $ent = quest::spawn2(110052, 0, 0, $x-9, $y-1, $z, $h); # NPC: Ratop
       my $mob = $entity_list->GetMobID($mobid);
       my $mobnpc = $mob->CastToNPC();
       $mobnpc->SignalNPC(2);

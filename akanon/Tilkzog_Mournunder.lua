@@ -11,28 +11,28 @@ function event_say(e)
 		e.self:Say("The sorcerous servants of Bertoxxulous, the Plague Bringer, are privileged with the sight of the Dark Reflection. This gift enlightens us to the powers of disease, decay, death, and destruction. Forces that are misunderstood and feared by the majority of Norrath, including our fellow gnomes of Ak'Anon. These forces are the catalyst of change, cleansing Norrath of the old and weak, and we are the agents of this catalyst. However, before you will be of much use to the Dark Reflection you must gather the [components] necessary for the outfit that will protect and aid you in your duties.");
 	elseif(e.message:findi("component")) then
 		e.self:Say("You will need this Curing Kit and varying components depending on the piece of clothing you wish to fabricate. Do you desire to craft a [plague sorcerer cap], [plague sorcerer wristband], [plague sorcerer gloves], [plague sorcerer boots], [plague sorcerer sleeves], [plague sorcerer pantaloons], or [plague sorcerer robe]?");
-		e.other:SummonItem(17125);
+		e.other:SummonItem(17125); -- Item: Curing Kit
 	elseif(e.message:findi("plague sorcerer boot")) then
 		e.self:Say("To craft Plague Sorcerer Boots you require two [silk thread], two ebon drakeling bile, and two large rat pelts. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
-		e.other:SummonItem(19561);
+		e.other:SummonItem(19561); -- Item: Tattered Boot Pattern
 	elseif(e.message:findi("plague sorcerer cap")) then
 		e.self:Say("To craft a Plague Sorcerer Cap you will require two [silk thread], ebon drakeling bile, and a grikbar kobold scalp. Once you have the necessary components combine them in your Curing Kit with this Tattered Cap Pattern.");
-		e.other:SummonItem(19555);
+		e.other:SummonItem(19555); -- Item: Tattered Cap Pattern
 	elseif(e.message:findi("plague sorcerer glove")) then
 		e.self:Say("To craft Plague Sorcerer Gloves you require two [silk thread], ebon drakeling bile, and two yellow recluse silks. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
-		e.other:SummonItem(19559);
+		e.other:SummonItem(19559); -- Item: Tattered Glove Pattern
 	elseif(e.message:findi("plague sorcerer pantaloon")) then
 		e.self:Say("To craft Plague Sorcerer Pantaloons you require two [silk thread], young ebon drake bile, and four yellow recluse silks. Once you have the necessary components combine them in your Curing Kit with this Tattered Pant Pattern.");
-		e.other:SummonItem(19560);
+		e.other:SummonItem(19560); -- Item: Tattered Pant Pattern
 	elseif(e.message:findi("plague sorcerer robe")) then
 		e.self:Say("To craft a Plague Sorcerer Robe you will require three [silk thread], ebon drake bile, a giant rat pelt, and two yellow recluse silks. Once you have the necessary components combine them in your Curing Kit with this Tattered Tunic Pattern.");
-		e.other:SummonItem(19556);
+		e.other:SummonItem(19556); -- Item: Tattered Tunic Pattern
 	elseif(e.message:findi("plague sorcerer sleeve")) then
 		e.self:Say("To craft Plague Sorcerer Sleeves you require two [silk thread], young ebon drake bile, and three yellow recluse silks. Once you have the necessary components combine them in your Curing Kit with this Tattered Sleeves Pattern.");
-		e.other:SummonItem(19557);
+		e.other:SummonItem(19557); -- Item: Tattered Sleeve Pattern
 	elseif(e.message:findi("plague sorcerer wristband")) then
 		e.self:Say("To craft a Plague Sorcerer Wristband you require a [silk thread], ebon drakeling bile, and a large rat pelt. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
-		e.other:SummonItem(19558);
+		e.other:SummonItem(19558); -- Item: Tattered Wristband Pattern
 	end
 end
 
@@ -40,7 +40,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 10994})) then
 		e.self:Say("You have done well to bring Winex's staff to me, " .. e.other:GetName() .. ". Here is your reward for dealing with that meddlesome fool.");
-		e.other:SummonItem(11081);
+		e.other:SummonItem(11081); -- Item: Staff of Dark Reflections
 		e.other:Ding();
 		e.other:AddEXP(100);
 	end

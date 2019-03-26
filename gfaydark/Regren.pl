@@ -16,11 +16,11 @@ sub EVENT_SAY {
 	}
 	if($text=~/trades/i) {
 		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		quest::summonitem(51121);
+		quest::summonitem(51121); # Item: Tradeskill Basics : Volume I
 	}
 	if($text=~/second book/i)	{
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
-		quest::summonitem(51122);
+		quest::summonitem(51122); # Item: Tradeskill Basics : Volume II
 	}
 }
 
@@ -40,10 +40,10 @@ sub EVENT_ITEM {
 		@randomGivenItems = (5013,5014,5015,5016,5019,5020,5021,5022,5023,5024,5025,5042,5043,5044,5045,5046,5047,5048,5049,5070,5071,6011,6013,6014,6015,6016,6030,6031,6032,6033,7007,7008,7009,7010,7021,7022,7023,7024);
 		my $a = $randomGivenItems[int(rand(scalar @randomGivenItems))];
 		quest::summonitem($a);
-		quest::faction(326,10);
-		quest::faction(270,-10);
-		quest::faction(276,10);
-		quest::faction(325,10);
+		quest::faction(326,10); # Faction: Emerald Warriors
+		quest::faction(270,-10); # Faction: Indigo Brotherhood
+		quest::faction(276,10); # Faction: Kelethin Merchants
+		quest::faction(325,10); # Faction: Merchants of Felwithe
 		quest::exp(500);
 	}
 	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

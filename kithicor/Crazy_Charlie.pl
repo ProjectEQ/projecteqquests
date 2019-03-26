@@ -26,7 +26,7 @@ $clientver = $client->GetClientVersion();
 					quest::say("Good on ya! Get on out there then and kill some zombies! Bring me some hearts while you're at it. I want to have a look at what's going on in there.");
                     quest::assigntask(219);
 					quest::assigntask(212);
-					quest::summonitem(87309);
+					quest::summonitem(87309); # Item: Fiery Wand of Retribution
 				}
 		}
 		else {
@@ -37,7 +37,7 @@ $clientver = $client->GetClientVersion();
 
 sub EVENT_ITEM {
 	if(!defined $qglobals{halloween_zombie_heart} && plugin::check_handin(\%itemcount, 97289 => 4)){ 
-		quest::summonitem(85062);
+		quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
           quest::setglobal("halloween_zombie_heart",1,0,"D1");
     }
     plugin::return_items(\%itemcount);

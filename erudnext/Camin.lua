@@ -17,7 +17,7 @@ function event_trade(e)
 		e.other:AddEXP(500);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 14330}) and qglobals["wizepic"] == "1") then
 		e.self:Say("Camin says 'Very interesting... I've seen this work before. Yes, yes! It's the work of Arantir Karondor! Give this back to the person you got it from. Maybe he will have a clue to Arantir's location.'");
-		e.other:SummonItem(14331);
+		e.other:SummonItem(14331); -- Item: Ro's Breath
 		e.other:Faction(404,10,0); -- Truespirit
 		e.other:Ding();
 		e.other:AddEXP(10000);

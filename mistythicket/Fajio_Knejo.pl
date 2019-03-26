@@ -16,7 +16,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20532 => 1)) {
     quest::say("Run onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.");
-    quest::summonitem(20533);
+    quest::summonitem(20533); # Item: Torch of Ro
   }
   plugin::return_items(\%itemcount);
 }

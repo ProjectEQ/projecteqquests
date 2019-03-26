@@ -30,7 +30,7 @@ function event_trade(e)
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 5014, item2 = 5014, gold = 2})) then -- correct text needed
 		e.self:Say("Raar.. Ranjor give yous a good weapon...");
 		e.other:Ding();
-		e.other:SummonItem(eq.ChooseRandom(94201,6022,6025,7014,5026));
+		e.other:SummonItem(eq.ChooseRandom(94201,6022,6025,7014,5026)); -- Item(s): Bronze Warhammer (94201), Bronze Warhammer (6022), Bronze Warclub (6025), Bronze Spear (7014), Bronze Short Sword (5026)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

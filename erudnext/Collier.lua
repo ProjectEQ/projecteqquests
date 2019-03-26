@@ -13,7 +13,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 31828,item2 = 22570, item3 = 6949,item4 = 6950})) then
 		e.self:Say("There is the weapon treatment I promised you. Use it in a forge with either a Long Sword or a Scimitar. Choose which weapon you prefer carefully as there is only enough of the substance for a single treatment.");
-		e.other:SummonItem(22571);
+		e.other:SummonItem(22571); -- Item: Thick Caustic Liquid
 		e.other:Ding();
 		e.other:AddEXP(500);
 	end

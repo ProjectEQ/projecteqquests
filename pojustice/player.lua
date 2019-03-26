@@ -8,7 +8,7 @@ function event_click_door(e)
 	local door_id = e.door:GetDoorID();
 
 	if (door_id >= 8 and door_id <= 13) then
-		e.self:MovePC(201, 456, 825, 9, 360);
+		e.self:MovePC(201, 456, 825, 9, 360); -- Zone: lakerathe
 	elseif (door_id >= 1 and door_id <= 6) then
 		if (e.self:GetItemIDAt(Slot.Cursor) == 31599) then
 			-- make sure these are reset
@@ -36,12 +36,12 @@ function event_click_door(e)
 			local qglobals = eq.get_qglobals(e.self);
 			local el = eq.get_entity_list();
 			if (qglobals["monk_epic"] >= "5" and qglobals["monk_7thhammer"] == nil and el:IsMobSpawnedByNpcTypeID(201074) == false) then
-				eq.unique_spawn(201074,0,0,71,1218,9,0);
-				eq.signal(201074, 999);
+				eq.unique_spawn(201074,0,0,71,1218,9,0); -- NPC: The_Seventh_Hammer
+				eq.signal(201074, 999); -- NPC: The_Seventh_Hammer
 				eq.set_global("monk_7thhammer","1",3,"H2");
 			end
 		else
- 			e.self:MovePC(201, 156, 470, -48, 360);
+ 			e.self:MovePC(201, 156, 470, -48, 360); -- Zone: lakerathe
 		end
 	end
 end
@@ -56,7 +56,7 @@ function MoveGroup(src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h)
 					-- check the distance and port them up if close enough
 					if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
 						-- port the player up
-						client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h);
+						client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
 					end
 				end
 			end

@@ -108,12 +108,12 @@ sub EVENT_ITEM
 		if (($class eq "Magician") && ($qglobals{MuramiteMinor} == 0)) {
 			#Summon Calliav's Glowing Bauble, Summon Calliav's Jeweled Bracelet, Summon Calliav's Platinum Choker, Summon Calliav's Runed Mantle, Summon Calliav's Spiked Ring, Summon Calliav's Steel Bracelet
 			quest::say("Hmm, a bit of magic you have discovered! I'll write the meaning of this rune onto a parchment for you. Don't show anyone else. They wouldn't understand!");
-			quest::summonitem(77206);
-			quest::summonitem(77204);
-			quest::summonitem(77211);
-			quest::summonitem(77200);
-			quest::summonitem(77205);
-			quest::summonitem(77207);
+			quest::summonitem(77206); # Item: Spell: Summon Calliav's Glowing Bauble
+			quest::summonitem(77204); # Item: Spell: Summon Calliav's Jeweled Bracelet
+			quest::summonitem(77211); # Item: Spell: Summon Calliav's Platinum Choker
+			quest::summonitem(77200); # Item: Spell: Summon Calliav's Runed Mantle
+			quest::summonitem(77205); # Item: Spell: Summon Calliav's Spiked Ring
+			quest::summonitem(77207); # Item: Spell: Summon Calliav's Steel Bracelet
 		}
 		
 		elsif (!($qglobals{MuramiteMinor} >= $count) && !(@spell_choices[$qglobals{MuramiteMinor}] eq "none")) {
@@ -159,7 +159,7 @@ sub EVENT_ITEM
 			#If the spell progression is complete, set the global to just one more than the number of spells in the progression.
 			$count++;
 			quest::setglobal("MuramiteLesser", $count, 5, "F");
-			quest::summonitem(59984);
+			quest::summonitem(59984); # Item: Lesser Muramite Rune
 		}
 	}
 	
@@ -192,7 +192,7 @@ sub EVENT_ITEM
 			#If the spell progression is complete, set the global to just one more than the number of spells in the progression.
 			$count++;
 			quest::setglobal("MuramiteNormal", $count, 5, "F");
-			quest::summonitem(59985);
+			quest::summonitem(59985); # Item: Muramite Rune
 		}
 	}
 	
@@ -231,7 +231,7 @@ sub EVENT_ITEM
 			#If the spell progression is complete, set the global to just one more than the number of spells in the progression.
 			$count++;
 			quest::setglobal("MuramiteGreater", $count, 5, "F");
-			quest::summonitem(59986);
+			quest::summonitem(59986); # Item: Greater Muramite Rune
 		}
 	}
 	
@@ -264,7 +264,7 @@ sub EVENT_ITEM
 			#If the spell progression is complete, set the global to just one more than the number of spells in the progression.
 			$count++;
 			quest::setglobal("MuramiteGlowing", $count, 5, "F");
-			quest::summonitem(59987);
+			quest::summonitem(59987); # Item: Glowing Muramite Rune
 		}
 	}
 =cut
@@ -299,7 +299,7 @@ sub EVENT_ITEM
 			#If the spell progression is complete, set the global to just one more than the number of spells in the progression.
 			$count++;
 			quest::setglobal("MuramiteAncient", $count, 5, "F");
-			quest::summonitem(59988);
+			quest::summonitem(59988); # Item: Ancient Muramite Rune
 		}
 	}
    

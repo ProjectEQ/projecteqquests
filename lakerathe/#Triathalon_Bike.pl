@@ -10,6 +10,6 @@ sub EVENT_SAY {
   sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16889 => 1)) {
     quest::say("Excellent, congratulations  on completing the swim.  Here is something that will help you cross South Karana.  Don't forget to give this to my friend on the bridge before crossing into North Karana.");
-    quest::summonitem(21800);
+    quest::summonitem(21800); # Item: Tan Rope Bridle
   }  
   }

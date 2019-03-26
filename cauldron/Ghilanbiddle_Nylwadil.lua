@@ -6,7 +6,7 @@ function event_say(e)
 		if(e.message:findi("hail")) then
 			if(random_result <= 50) then
 				e.self:Say("Hail!! You are welcome to rest here.");
-				eq.signal(70007,5);
+				eq.signal(70007,5); -- NPC: Ghilanbiddle_Nylwadil
 			else
 				e.self:Say("What business do you have here?!! Trying to keep safe? Expecting us to fight your battles? Bah!!");
 			end
@@ -28,20 +28,20 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 12280,item2 = 18946,gold = 100})) then
 		e.self:Say("Biggily boo, biggily borc.. Raise that stinky orc!! Bamm!! Okay!! It's done. Now all you have to do is find him in the spot where his soul left him and give him an orc shovel. Oh!! I didn't mention that? Oh, well. I'm sure you can find one.. somewhere. Now, get lost before I turn you into a toad!");
 		e.other:Ding();
-		e.other:Faction(245, 25,0);
-		e.other:Faction(238, -25,0);
-		e.other:Faction(239, -25,0);
-		e.other:Faction(255, 25,0);
-		e.other:Faction(333, 25,0);
+		e.other:Faction(245, 25,0); -- Faction: Eldritch Collective
+		e.other:Faction(238, -25,0); -- Faction: Dark Reflection
+		e.other:Faction(239, -25,0); -- Faction: The Dead
+		e.other:Faction(255, 25,0); -- Faction: Gem Choppers
+		e.other:Faction(333, 25,0); -- Faction: King Ak`Anon
 		e.other:AddEXP(18000);
-		eq.spawn2(70072, 0, 0, -2133.49, -727.05, 154.86, 0);
+		eq.spawn2(70072, 0, 0, -2133.49, -727.05, 154.86, 0); -- NPC: #Captain Klunga
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 function event_signal(e)
 	e.self:Say("Ha!! One like that one stands no chance within this realm. The goblins shall skin him alive!!");
-	eq.signal(70005, 5);
+	eq.signal(70005, 5); -- NPC: Elmion_Hendrys
 end
 
 -- EOF Ghilanbiddle Nylwadil

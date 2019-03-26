@@ -11,7 +11,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30265 => 1)) {
     quest::say("Say! This looks just like the axe my uncle uses. With this I can kill the beast for sure! Now please, be very quiet, I must track my prey. I won't return to Thurgadin without the hide of the rabid tundra kodiak!");
-    $mobid = quest::spawn2(116191, 0, 0, 1547, -2459, 306.5, 0);
+    $mobid = quest::spawn2(116191, 0, 0, 1547, -2459, 306.5, 0); # NPC: Boridain_Glacierbane
     $mob = $entity_list->GetMobID($mobid);
     $mobnpc = $mob->CastToNPC();
     $mobnpc->SignalNPC(1);
@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 30266 => 1) && ($boridain == 18)) {
     quest::say("Yes! I've done it! The vile beast is finally dead. I will at last be revered as the mighty hunter I am. Here is your axe back, I broke it on the killing blow. Take it as proof that you are a friend of the greatest hunter in the history of the Coldain!");
-    quest::summonitem(30267);
+    quest::summonitem(30267); # Item: Broken Axe
     quest::exp(1000);
   }
 }
@@ -122,7 +122,7 @@ sub EVENT_WAYPOINT_DEPART {
   elsif ($boridain == 18) {  #loc 1530 -2491 306
     quest::say("Who am I kidding, I'm no hunter. I'll never be a hunter. I may as well give up and become a miner like dad.");
     $npc->SetAppearance(1);
-    $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 251);
+    $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 251); # NPC: Rabid_Tundra_Kodiak
     $mob = $entity_list->GetMobID($kodiak);
     $mobnpc = $mob->CastToNPC();
     $mobnpc->MoveTo(1530, -2491, 306);

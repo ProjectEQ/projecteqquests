@@ -26,7 +26,8 @@ sub EVENT_SIGNAL {
                 $Berik = 1;
               
                 if ($Grunhork == 1) {   # Spawn Vallon and Tallon
-                    quest::stoptimer("Decorin");
+                    quest::ze(0, "The air of Drunder grows strangely cold as a rumble shakes through the fortress' walls. The Warlord stirs.");
+		    quest::stoptimer("Decorin");
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::spawn2(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
                     quest::spawn2(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek

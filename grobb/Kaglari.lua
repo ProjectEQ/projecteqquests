@@ -1,5 +1,6 @@
 -- Converted to .lua by Speedz
 -- edited and added saylink by robregen
+-- factions corrected by noudess
 
 function event_spawn(e)
 	local xloc = e.self:GetX();

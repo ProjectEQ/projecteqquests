@@ -38,8 +38,8 @@ function event_trade(e)
 		e.other:SummonItem(15272); -- Item: Spell: Spirit Pouch
 		e.other:Ding();
 		e.other:Faction(237,5,0);  -- +Dark Ones
-		e.other:Faction(308,5,0);  -- +Shadowknights of Night Keep
-		e.other:Faction(251,-10,0); -- -Frogloks of Guk
+		e.other:Faction(308,1,0);  -- +Shadowknights of Night Keep
+		e.other:Faction(251,-1,0); -- -Frogloks of Guk
 		e.other:AddEXP(150);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 18791})) then -- Tattered Note
 		e.self:Say("Good.. Kaglari need you help.. Kaglari teach you majik now.  When you ready for task you tell Kaglari!!  Yooz reeturn to mez when yooz ar strongur, mez teech yooz bout da mor advanced tings.");

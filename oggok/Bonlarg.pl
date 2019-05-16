@@ -17,7 +17,7 @@ sub EVENT_SAY
 	}
 
 sub EVENT_ITEM 
-{
+	{
 	if  (plugin::check_handin(\%itemcount, 12198 => 3) &&
 		 plugin::check_handin(\%itemcount, 13527 => 1)) 
 		{
@@ -34,5 +34,5 @@ sub EVENT_ITEM
 	#do all other handins first with plugin, then let it do disciplines
   	plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
   	plugin::return_items(\%itemcount);
-}
+	}
 #END of FILE Zone:oggok  ID:49033 -- Bonlarg 

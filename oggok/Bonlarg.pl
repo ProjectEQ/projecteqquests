@@ -30,5 +30,9 @@ sub EVENT_ITEM
 		quest::faction(308,"-5");# Decrease faction -- Shadowknights of Night
 		quest::faction(312,"-2");# Decrease faction -- Storm Guard
 		} 
+		
+	#do all other handins first with plugin, then let it do disciplines
+  	plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+  	plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:oggok  ID:49033 -- Bonlarg 

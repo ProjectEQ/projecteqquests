@@ -44,7 +44,7 @@ function event_trade(e)
 		e.other:Faction(237,5,0);  -- +Dark Ones
 		e.other:Faction(308,1,0);  -- +Shadowknights of Night Keep
 		e.other:Faction(251,-1,0); -- -Frogloks of Guk
-		e.other:AddEXP(100);
+		e.other:AddEXP(30);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13916})) then -- More Help for Innoruuk
 		e.self:Say("Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.");
 		e.other:SummonItem(15272); -- Item: Spell: Spirit Pouch
@@ -60,7 +60,7 @@ function event_trade(e)
 		e.other:Faction(237,100,0);  -- +Dark Ones
 		e.other:Faction(308,25,0);  -- +Shadowknights of Night Keep
 		e.other:Faction(251,-15,0); -- -Frogloks of Guk
-		e.other:AddEXP(100);
+		e.other:AddEXP(20);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

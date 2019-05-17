@@ -6,7 +6,7 @@ function event_say(e)
 
 	if(e.message:findi("hail")) then
 		e.self:Say("You dare speak to Master Treskar!! You be [sent by Hukulk] or you be hurtin'!! Me have no time to waste with ugly one like you!!");
-	elseif(pfaction > 4)
+	elseif(pfaction > 4) then
 		reject(e, pfaction);
 	elseif(e.message:findi("sent by hukulk")) then
 		e.self:Say("Ha!! Hukulk accept puny troll now?!! Ha!! You join us and you join fight. Nightkeep enemy is " .. e.other:GetName() .. " enemy!! You help smash [other weak shadowknights]. Them weak. We true power!! You bash good and maybe you do [secret mission] for Treskar. Or I has sum other [work] fer you.");

@@ -21,7 +21,7 @@ function event_say(e)
 		e.self:Say("What you want!! You make fun of [" .. eq.say_link("helm of Hukulk",false,"helm of Hukulk") .. "]?!! Me smash you!! Maybe you come learn ways of Hate and Fear! You be dark power. You be Pain. You [" .. eq.say_link("want join Nightkeep",false,"want join Nightkeep") .. "]?");
 	elseif(e.message:findi("helm of Hukulk")) then
 		e.self:Say("Oh!!  Yooz tink you great enough to wear helm of Hukulk?  Me have another just like it. Me make deal with yooz.  If yooz want helm den yooz help Hukulk get revenge.  Youz better be strong or yooz useless!!  So.. Yooz [" .. eq.say_link("make deal with Hukulk",false,"make deal with Hukulk") .. "]?");
-	elseif (pfaction > 5) then
+	elseif (pfaction > 4) then
 		reject(e, pfaction);
 	elseif(e.message:findi("want join Nightkeep")) then
 			e.self:Say("Good. Hate and Pain. Innoruuk teach power, I teach power. Me make you power. You do what me say. You no mess up, I no kill you. We no like dead creature we no own. Go, kill dem. Bring four bone chips. I make you power.");
@@ -44,8 +44,8 @@ function event_trade(e)
 		e.other:Faction(261,-15,0);	-- Green Blood Knights
 		e.other:Faction(222,-25,0);	-- Broken Skull Clan
 		e.other:Faction(235,5,0);	-- Da Bashers
-		e.other:AddEXP(100);
-	elseif (pfaction > 5) then
+		e.other:AddEXP(30);
+	elseif (pfaction > 4) then
 		e.self:Say("You no friend to Hukulk");	
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13073, item2 = 13073, item3 = 13073, item4 = 13073})) then -- Bone Chips
 		e.self:Say("You good. Take dis. Make much pain and hurt. Make tings bleeds. Kill, hurt all. Innoruuk and me say do, now go. You do much, come bak. Teach you how more hurt and pain make. Go.");
@@ -55,6 +55,7 @@ function event_trade(e)
 		e.other:Faction(261,-1,0);	-- Green Blood Knights
 		e.other:Faction(222,-1,0);	-- Broken Skull Clan
 		e.other:Faction(235,-1,0);	-- Da Bashers
+		e.other:AddEXP(140);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 12201, item2 = 12202})) then -- Happy Love Bracers and Troll Head(Lumpin)
 		e.self:Say("Ha!! Ha!! Who have last laugh now!! You do good werk.  Now me give you extra helm of Hukulk. Now go away!!");
 		e.other:SummonItem(3316);	-- Helm of Hukulk

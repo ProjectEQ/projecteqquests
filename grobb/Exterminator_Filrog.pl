@@ -7,8 +7,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 13253 => 4)){
   quest::say("You good at killing spiders. Mebbe me should find anuder job. Here take da coins.");
-  quest::faction(376,10); # Faction: Grobb Merchants  
-  quest::exp(5);
+  quest::faction(376,1); # Faction: Grobb Merchants  
+  quest::exp(100);
   quest::givecash(1,1,1,0);
  }
 }

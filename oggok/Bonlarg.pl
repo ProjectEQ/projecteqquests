@@ -18,8 +18,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM 
 	{
-	if  (plugin::check_handin(\%itemcount, 12198 => 3) &&
-		 plugin::check_handin(\%itemcount, 13527 => 1)) 
+	if  (plugin::check_handin(\%itemcount, 12198 => 3,  13527 => 1))
 		{
 		quest::say("Took you long time! It easy task, but me guess you still earn black shadow tunic. You wear to show all that you young shadowknight. It help you be smarter likes Bonlarg. It only for young Greenblood shadowknight. Maybe later green shadow tunic you earn or maybe dead you be!");
 		quest::summonitem("12199");

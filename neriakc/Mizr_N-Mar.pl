@@ -17,10 +17,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 
-  # Rune of Fortune (Bottom)
+  # Rune of Fortune (Middle)
   if($gold == 50) {
     quest::say("I see that Sultin has sent you to me.  Very well, here is your rune."); # Made this text up
-    quest::summonitem(10532); # Item: Rune of Fortune
+    quest::summonitem(10531); # Item: Rune of Fortune
   }
 
   # Tashania Quest

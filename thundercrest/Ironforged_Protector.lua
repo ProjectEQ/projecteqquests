@@ -1,6 +1,9 @@
 function event_combat(e)
 if (e.joined == true) then
 eq.stop_timer('depop');
+eq.get_entity_list():GetNPCByNPCTypeID(340389):AddToHateList(e.other, 1);
+eq.get_entity_list():GetNPCByNPCTypeID(340386):AddToHateList(e.other, 1);
+eq.get_entity_list():GetNPCByNPCTypeID(340387):AddToHateList(e.other, 1);
 else
 eq.set_timer('depop', 10 * 1000);
 end

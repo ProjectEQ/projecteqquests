@@ -68,6 +68,17 @@ sub EVENT_ITEM {
     quest::faction(278, 15);   #King Naythox Thex
     quest::faction(362, -35);  #Priests of Marr
   }
+  if(plugin::check_handin(\%itemcount, 13113 => 1)) { #Leatherfoot Skullcap
+    quest::say("Fine work $name! You are well on your way to reaping the rewards of the Spires of Innoruuk.");
+    quest::ding();
+    quest::exp(100);
+    quest::faction(340, 10);  #Priests of Innoruuk
+    quest::faction(226, -2);   #Clerics of Tunare
+    quest::faction(341, -1);  #Priests of Life
+    quest::faction(1522, -40); #Primordial Malice
+    quest::faction(278, 1);   #King Naythox Thex
+    quest::faction(362, -3);  #Priests of Marr
+  }
   plugin::return_items(\%itemcount);
 }
 

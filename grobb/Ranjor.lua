@@ -11,8 +11,14 @@ function event_enter(e)
 end
 
 function event_say(e)
+	local pfaction = e.other:GetFaction(e.self);
+
 	if(e.message:findi("hail")) then
 		e.self:Say("Ya wanna be a member a Da Bashers. duz ya?  What making ya tink yooz is good nuff ta be one o' us?  Can ya proves ta me why I shouldn't oughtta just eat yer smelly hide?  I gonna tests ya. ya big. ugly peece o' meet.  Ya [willin ta test] or duz I just eats ya now?");
+	elseif(pfaction > 5) then
+		e.self:Say("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
+	elseif(pfaction > 4) then
+		e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
 	elseif(e.message:findi("willin ta test")) then
 		e.self:Say("Stoopid meat.  I gonna eats ya anyways sumday.  Brings me a froglok meat and two dem li'l froglok tadpole fleshes.  Dey berry good.");
 	end
@@ -20,6 +26,8 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local pfaction = e.other:GetFaction(e.self);
+
 	if (item_lib.check_turn_in(e.trade, {item1 = 18790})) then -- Tattered Note
 		e.self:Say("Arhh.. Ranjor mighty warrior.. Ranjor teach you warrior.. you fight for Ranjor now.");
 		e.other:Ding();
@@ -27,13 +35,17 @@ function event_trade(e)
 		e.other:Faction(235,100,0);  	-- Da Basher
 		e.other:Faction(222,-15,0);  -- Broken Skull Clan
 		e.other:AddEXP(100);
-	elseif (item_lib.check_turn_in(e.trade, {item1 = 5014, item2 = 5014, gold = 2})) then -- correct text needed
-		e.self:Say("Raar.. Ranjor give yous a good weapon...");
+	elseif (pfaction > 4) then
+		e.self:Say("You not friend.  Yuz take back.");
+	elseif (item_lib.check_turn_in(e.trade, {item1 = 13409, item2 = 13187, item3 = 13187})) then 
+		e.self:Say("You is berry slow. Me too hungry. Me shood eats you for being slow. Gib me dat stuff. Here, take dis and git more stuff fer us. You much kllin, come backs sees me. I teeches ya hows ta kill bedder. Now git and kill stuff. We be Da Bashers fer a reesun.");
+		e.other:Faction(235,5,0);  	-- Da Basher
+		e.other:Faction(222,-1,0);  -- Broken Skull Clan
 		e.other:Ding();
-		e.other:SummonItem(eq.ChooseRandom(94201,6022,6025,7014,5026)); -- Item(s): Bronze Warhammer (94201), Bronze Warhammer (6022), Bronze Warclub (6025), Bronze Spear (7014), Bronze Short Sword (5026)
+		e.other:SummonItem(5025); -- Item: Rusty Two Handed Battle Axe (5025)
 	end
+
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -- END of FILE Zone:grobb  ID:40024 -- Ranjor 
-

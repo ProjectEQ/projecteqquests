@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Emote("The Keeper of Strength sniffs the air.  'I smell weakness.  You may think you are strong to have ventured this far, but we shall see. It is my duty to give the Trial of Strength.  Should you find the four scrolls of strength, return them to me and the trial will begin.  We will then see how the 'heroes' fare.");
+		e.self:Emote("sniffs the air.  'I smell weakness.  You may think you are strong to have ventured this far, but we shall see. It is my duty to give the Trial of Strength.  Should you find the four scrolls of strength, return them to me and the trial will begin.  We will then see how the 'heroes' fare.");
 	end
 end
 

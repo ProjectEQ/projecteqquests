@@ -178,11 +178,11 @@ function Spawn_augs()
 	
 	--#a_lightning_warrior_commander (317076) is placeholder
   list_named = {
-    [1] = { 317094, 'Grenlok_the_Converter', 4, 1638, -204, 128},
-    [2] = { 317105, 'Vilria_the_Keeper', 204, 703, -202, 195},
-    [3] = { 317106, 'Damlin_Lingering_Charge', 355, 3815, 141, 193},
-    [4] = { 317078, 'First_Lieutenant_Minas', 345, 4642, 209.4, 126},
-    [5] = { 317077, 'Administrator_Charial', 20.75, 3811.7, 143, 64}
+	[1] = { 317094, 'Grenlok_the_Converter', 4, 1638, -204, 256},
+	[2] = { 317105, 'Vilria_the_Keeper', 204, 703, -202, 384},
+	[3] = { 317106, 'Damlin_Lingering_Charge', 355, 3815, 141, 384},
+	[4] = { 317078, 'First_Lieutenant_Minas', 345, 4642, 209.4, 256},
+	[5] = { 317077, 'Administrator_Charial', 20.75, 3811.7, 143, 128}
 	};
 	
 	local diceroll=math.random(1,100);	

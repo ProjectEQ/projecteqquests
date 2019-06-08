@@ -1,8 +1,6 @@
 function event_signal(e)
-  -- get quest globals
-  local qglobals = eq.get_qglobals();
-
-  if (qglobals["poeb_Galronar"] and qglobals["poeb_Birak"] and qglobals["poeb_Awisano"] ) then
+  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(222020) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(222022) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(222021) == false) then
     eq.spawn2(222019, 0, 0, 415,161,-55,383); -- NPC: #Warlord_Gintolaken
+    eq.depop_with_timer();
   end
 end

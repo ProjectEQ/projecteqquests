@@ -1,21 +1,13 @@
 function event_spawn(e)
-	eq.set_timer("depop", 60000);
+	eq.set_timer("spawn", 6000);
 end
 
 function event_timer(e)
- 
- 	-- get a copy of the quest globals
- 	local qglobals = eq.get_qglobals();
- 
-	local entity_list = eq.get_entity_list();
-	
- 	-- Check to see if any of the myrmadon_of_stone are up
- 	local check_mrymadon = entity_list:GetMobByNpcTypeID(222002);
- 
- 	if (not check_mrymadon.valid and qglobals["poeb_Awisano"] == nil and qglobals["poeb_warlord"] == nil  ) then
- 		eq.spawn2(222016, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
- 		eq.stop_timer("depop");
- 		eq.depop_with_timer();
- 	end
- 
+	if (e.timer == "spawn") then
+			eq.stop_timer("spawn");
+			eq.spawn2(222002, 0, 0, 292, 248, -14.5, 449);
+			eq.spawn2(222002, 0, 0, 290, 312, -14.5, 320);
+			eq.spawn2(222002, 0, 0, 225.5, 245.3, -14.5, 67.75);
+			eq.spawn2(222002, 0, 0, 221, 319, -14.5, 192);
+ 	end 
 end

@@ -1,7 +1,7 @@
 -- Created by noudess
 
 function event_say(e)
-	local pfaction = e.other:GetFaction(e.self)-1;
+	local pfaction = e.other:GetFaction(e.self);
 
 	if(e.message:findi("Hail")) then
 		if (e.self:GetNPCTypeID() == 52056) then

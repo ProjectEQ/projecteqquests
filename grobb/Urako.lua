@@ -29,8 +29,8 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 12213, item2 = 12214, item3 = 12215, item4 = 12216})) then -- all the skeleton heads
 		e.self:Say("Tank you. You saved me neck. Kaglari not learn me mistake now. Me give you a [Kaglari mana doll].");
 		e.other:SummonItem(12212);
-	    e.other:Ding();
-        e.other:AddEXP(145); -- A guess
+		e.other:Ding();
+		e.other:AddEXP(145); -- A guess
 		e.other:Faction(251,-1,0); -- -Frogloks of Guk
 		e.other:Faction(237,10,0);  -- +Dark Ones
 		e.other:Faction(308,2,0);  -- +Shadowknights of Night Keep

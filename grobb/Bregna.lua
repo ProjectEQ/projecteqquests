@@ -5,7 +5,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail, Reveree, are ya a follower ob Innoruuk?  I hopes so.  We needs many ta spread His Hate.  None be as bicious as be dem dat follow Him.  We do brings fear and hate ta all dat does sees us.  Dis is well.  He likes it.  Can ya [help]?");
+		e.self:Say("Hail, " .. e.other:GetName() .. " , are ya a follower ob Innoruuk?  I hopes so.  We needs many ta spread His Hate.  None be as bicious as be dem dat follow Him.  We do brings fear and hate ta all dat does sees us.  Dis is well.  He likes it.  Can ya [help]?");
 	elseif (e.message:findi("help")) then
 		e.self:Say("'Me hears orcs nearby are trubble.  Da werd frum Neriak is dey wants us ta kills dem before dey organize.  Dark elf say ta looks for Deathfist Clan.  Say dey called cen-tu-ri-ons.  Dey try ta gets big orc army.  Shows me ya can strike fear and hate inta dem orcs... dey needs be more scared a us den dem humies.  Brings me a Deathfist slashed belt.");
 	end

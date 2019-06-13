@@ -1,7 +1,6 @@
--- #Melernil_Faal`Armanna  NPCID: 215070
 function event_death_complete(e)
-	-- send a signal to #Mist_Trigger
-	eq.signal(215455, 2, 2000); -- NPC: #Mist_Trigger
+eq.signal(215461,3);
+eq.depop_all(215460);
 end
 
 function event_combat(e)
@@ -19,7 +18,7 @@ function event_timer(e)
 	if (e.timer == 'Hardblur') then
 		e.self:WipeHateList();
 	elseif (e.timer == 'Softblur') then
-		if (math.random(100)<=10) then
+		if (math.random(100)<=5) then
 			e.self:WipeHateList();
 		end
 	end

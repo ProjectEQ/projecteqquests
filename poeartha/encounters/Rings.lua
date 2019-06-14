@@ -1222,7 +1222,7 @@ function Mystical_Timer(e)
 		e.self:WipeHateList();
 	elseif (e.timer == "Softblur") then
 		if(math.random(100)<=25) then
-			e.self:WipeHateList);
+			e.self:WipeHateList();
 		end
 	end
 end

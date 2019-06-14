@@ -16,6 +16,9 @@ function event_timer(e)
 		if (math.random(100)<=5) then
 			e.self:WipeHateList();
 		end
+	elseif (e.timer == "despawn") then
+			eq.stop_timer("despawn");
+			eq.depop();
 	end
 end
 
@@ -23,14 +26,6 @@ end
 function event_spawn(e)
 	eq.set_timer("despawn", 2700 * 1000);
 	e.self:Shout("Leave now foolish mortal you have begun to send events in motion that you cannot possibly understand!");
-end
-
-function event_timer(e)
-	if (e.timer == "despawn") then
-			eq.stop_timer("despawn");
-			eq.depop();
- 	end
- 
 end
 
 function event_death_complete(e)

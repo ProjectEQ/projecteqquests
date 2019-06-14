@@ -1,14 +1,3 @@
--- AAs that are granted on level up (also checked on enter zone)
--- ShadowKnight: Harm Touch (6000) (Only 0 cost ranks)
--- Paladin: Lay On Hands (6001) (Only 0 cost ranks)
--- Ranger: Hunter's Attack Power (6002)
-function AutoLevelUpAAs(player)
-	if (player:GetClass() == Class.SHADOWKNIGHT) then
-	elseif (player:GetClass() == Class.PALADIN) then
-	elseif (player:GetClass() == Class.RANGER) then
-	end
-end
-
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	if(e.self:GetLevel() >= 15 and qglobals['Wayfarer'] == nil) then

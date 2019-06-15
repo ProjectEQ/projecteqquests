@@ -12,7 +12,7 @@ end
 
 function event_signal(e)
 	if (e.signal==1) then
-	kyv= kyv+ 1;
+		kyv + 1;
 	eq.debug("Kyvs Dead : " .. kyv);
 		if kyv == 3 then
 		eq.depop_with_timer();

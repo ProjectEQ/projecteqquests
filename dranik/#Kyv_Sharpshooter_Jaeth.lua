@@ -36,5 +36,5 @@ function event_death(e)
 end
 
 function event_death_complete(e)
-	eq.signal(336256,1);
+	eq.signal(336256,336067);
 end

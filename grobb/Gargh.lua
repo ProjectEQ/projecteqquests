@@ -58,7 +58,7 @@ function event_trade(e)
 		e.self:Say("You did it! You cause lots of fear for them. Dat good. Even da spirits are starting to tremble. Soon you will be able to make dem do what you want. But there is [" .. eq.say_link("one more task",false,"one more task") .. "] meez want you to do.");
 		e.other:SummonItem(7383); -- Item: Dark One's Claw
 		e.other:Ding();
-		e.other:Faction(237,27,0); -- Faction: Dark Ones
+		e.other:Faction(237,28,0); -- Faction: Dark Ones
 		e.other:Faction(308,7,0); -- Faction: Shadowknights of Night Keep
 		e.other:Faction(251,-4,0); -- Faction: Frogloks of Guk
 		e.other:AddEXP(210);

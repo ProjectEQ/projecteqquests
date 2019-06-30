@@ -1,9 +1,11 @@
 -- Circle of Misty
 function event_spell_effect(e)
   local mob = e.target;
-  if ( mob:IsClient() ) then 
-    local client = e.target:CastToClient();
-	client:MovePC(33, -1818, -508.5, 124.3, 10); -- Zone: cabwest
+  if (mob.valid and mob:IsClient()) then 
+    local client = mob:CastToClient();
+    if (client.valid) then
+	  client:MovePC(33, -1818, -508.5, 124.3, 10); -- Zone: cabwest
+    end
   end
 return 1;
 end

@@ -30,9 +30,12 @@ end
 
 function set_compas(raid)
   for i = 0, raid:RaidCount() - 1, 1 do
-    local client_v = raid:GetMember(i):CastToClient();
-    if (client_v.valid) then
-      client_v:MarkSingleCompassLoc(92, -942, -44);
+    local mob_v = raid:GetMember(i);
+    if (mob_v.valid and mob_v:IsClient()) then
+      local client_v = mob_v:CastToClient();
+      if (client_v.valid) then
+        client_v:MarkSingleCompassLoc(92, -942, -44);
+      end
     end
   end
 end

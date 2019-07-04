@@ -22,9 +22,12 @@ function event_click_door(e)
 		if (e.self:Admin() > 80 and e.self:GetGM() and raid.valid and player_list ~= nil) then
 			player_list_count = raid:RaidCount();
 			for i = 0, player_list_count - 1, 1 do
-				local client_v = player_list:GetMember(i):CastToClient();
-				if (client_v.valid) then
-					client_v:MovePC(297, -327, 0, -418, 130); -- Zone: powater
+				local mob_v = player_list:GetMember(i);
+				if (mob_v.valid and mob_v:IsClient()) then
+					local client_v = mob_v:CastToClient();
+					if (client_v.valid) then
+						client_v:MovePC(297, -327, 0, -418, 130); -- Zone: powater
+					end
 				end
 			end
 		end

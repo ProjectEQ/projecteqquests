@@ -92,17 +92,20 @@ end
 
 function set_compass_cave(group)
 	for i = 0, group:GroupCount() - 1, 1 do
-		local client_v = group:GetMember(i):CastToClient();
-		if (client_v.valid) then
-			if (inst_cave==1) then
-				client_v:MarkSingleCompassLoc(-2027,17.6,207);
-				client_v:Message(15,"Dranik's Hollows: Watering Hole is now available to you.");
-			elseif (inst_cave==2) then
-				client_v:MarkSingleCompassLoc(-2066.6,395,147);
-				client_v:Message(15,"Dranik's Hollows: Fire Pit is now available to you");
-			elseif (inst_cave==3) then
-				client_v:MarkSingleCompassLoc(-2050, 581, 211);
-				client_v:Message(15,"Dranik's Hollows: Murkglider Hive is now available to you.");
+		local mob_v = group:GetMember(i);
+		if (mob_v.valid and mob_v:IsClient()) then
+			local client_v = mob_v:CastToClient();
+			if (client_v.valid) then
+				if (inst_cave==1) then
+					client_v:MarkSingleCompassLoc(-2027,17.6,207);
+					client_v:Message(15,"Dranik's Hollows: Watering Hole is now available to you.");
+				elseif (inst_cave==2) then
+					client_v:MarkSingleCompassLoc(-2066.6,395,147);
+					client_v:Message(15,"Dranik's Hollows: Fire Pit is now available to you");
+				elseif (inst_cave==3) then
+					client_v:MarkSingleCompassLoc(-2050, 581, 211);
+					client_v:Message(15,"Dranik's Hollows: Murkglider Hive is now available to you.");
+				end
 			end
 		end
 	end

@@ -88,12 +88,15 @@ function event_timer(e)
 	if (e.timer == "banish_top") then
 			inst_id = eq.get_zone_instance_id();
 			local el = eq.get_entity_list();
-			local top_hate = tir:GetHateTop():CastToClient();
-			if (top_hate.valid) then
-			--tir:Say("Begone " .. top_hate:GetName());
-			tir:SetHate(top_hate, 1, 1);
-			top_hate:MovePCInstance(342, inst_id, -583.00, 2503.00, -87.39, 254.3); -- banish player to this location.
-			el:RemoveFromHateLists(e.self:GetTarget()); -- remove this player from my hate list.
+			local top_hate = tir:GetHateTop();
+			if (top_hate.valid and top_hate:IsClient()) then
+				local top_client = top_hate:CastToClient();
+				if (top_client.valid) then
+				--tir:Say("Begone " .. top_hate:GetName());
+				tir:SetHate(top_client, 1, 1);
+				top_client:MovePCInstance(342, inst_id, -583.00, 2503.00, -87.39, 254.3); -- banish player to this location.
+				el:RemoveFromHateLists(e.self:GetTarget()); -- remove this player from my hate list.
+				end
 			end
 	elseif (e.timer == "Form") then
 	e.self:CastSpell(6540, e.self:GetID()); -- cast form of lava on a timer.

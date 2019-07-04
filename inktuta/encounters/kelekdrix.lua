@@ -36,11 +36,14 @@ end
 
 function KeleTimer(e)
 	-- we only have 1 timer, don't need to check the name
-	local top_hate = kele:GetHateTop():CastToClient()
-	if (top_hate.valid) then
-		kele:Say("Begone " .. top_hate:GetName())
-		kele:SetHate(top_hate, 1, 1)
-		top_hate:MovePCInstance(296, inst_id, 210, -500, -26, 490)
+	local top_hate = kele:GetHateTop()
+	if (top_hate.valid and top_hate:IsClient()) then
+		local top_client = top_hate:CastToClient()
+		if (top_client.valid) then
+			kele:Say("Begone " .. top_client:GetName())
+			kele:SetHate(top_client, 1, 1)
+			top_client:MovePCInstance(296, inst_id, 210, -500, -26, 490)
+		end
 	end
 end
 

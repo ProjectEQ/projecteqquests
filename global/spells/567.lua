@@ -1,9 +1,11 @@
 -- Ro Portal
 function event_spell_effect(e)
   local mob = e.target;
-  if ( mob:IsClient() ) then 
-    local client = e.target:CastToClient();
-    client:MovePC(34, 820, 1374, 10, 80); -- Zone: cauldron
+  if (mob.valid and mob:IsClient()) then 
+    local client = mob:CastToClient();
+    if (client.valid) then
+      client:MovePC(34, 820, 1374, 10, 80); -- Zone: cauldron
+    end
   end
 
   return 1;

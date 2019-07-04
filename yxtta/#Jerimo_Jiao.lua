@@ -19,12 +19,15 @@ function event_say(e)
 				if (player_list ~= nil) then
 					-- cycle through raid and check lockouts
 					for i = 0, player_list_count - 1, 1 do
-						local client_v = player_list:GetMember(i):CastToClient();
-						if (client_v.valid) then
-							qglobals = eq.get_qglobals(client_v);
-							if (e.other:Admin() <= 80 and qglobals["uqualockout"] ~= nil) then
-								e.other:Message(13, client_v:GetCleanName().." has a lockout");
-								HasLockout = HasLockout + 1;
+						local mob_v = player_list:GetMember(i);
+						if (mob_v.valid and mob_v:IsClient()) then
+							local client_v = mob_v:CastToClient();
+							if (client_v.valid) then
+								qglobals = eq.get_qglobals(client_v);
+								if (e.other:Admin() <= 80 and qglobals["uqualockout"] ~= nil) then
+									e.other:Message(13, client_v:GetCleanName().." has a lockout");
+									HasLockout = HasLockout + 1;
+								end
 							end
 						end
 					end

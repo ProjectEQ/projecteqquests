@@ -20,12 +20,15 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
    if ( trial_group ~= nil) then
       local trial_count = trial_group:GroupCount();
       for i = 0, trial_count - 1, 1 do
-         local client_v = trial_group:GetMember(i):CastToClient();
-         if (client_v.valid) then
-            -- check the distance and port them up if close enough
-            if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
-               -- port the player up
-               client_v:MovePC(204, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lfaydark
+         local mob_v = trial_group:GetMember(i);
+         if (mob_v.valid and mob_v:IsClient()) then
+            local client_v = mob_v:CastToClient();
+            if (client_v.valid) then
+               -- check the distance and port them up if close enough
+               if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
+                  -- port the player up
+                  client_v:MovePC(204, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lfaydark
+               end
             end
          end
       end

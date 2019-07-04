@@ -139,18 +139,24 @@ end
 
 function set_compass_cata(group)
 	for i = 0, group:GroupCount() - 1, 1 do
-		local client_v = group:GetMember(i):CastToClient();
-		if (client_v.valid) then
-			client_v:MarkSingleCompassLoc(-292.52,1031.42,-75.75);
+		local mob_v = group:GetMember(i);
+		if (mob_v.valid and mob_v:IsClient()) then
+			local client_v = mob_v:CastToClient();
+			if (client_v.valid) then
+				client_v:MarkSingleCompassLoc(-292.52,1031.42,-75.75);
+			end
 		end
 	end
 end
 
 function set_compass_sewer(group)
 	for i = 0, group:GroupCount() - 1, 1 do
-		local client_v = group:GetMember(i):CastToClient();
-		if (client_v.valid) then
-			client_v:MarkSingleCompassLoc(-140.37,-1243.2,-236.43);
+		local mob_v = group:GetMember(i);
+		if (mob_v.valid and mob_v:IsClient()) then
+			local client_v = mob_v:CastToClient();
+			if (client_v.valid) then
+				client_v:MarkSingleCompassLoc(-140.37,-1243.2,-236.43);
+			end
 		end
 	end
 end

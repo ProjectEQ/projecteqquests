@@ -66,7 +66,7 @@ function event_timer(e)
 			-- Randomly north or south jail
 			if (banished_pc:IsClient()) then
 				local banished_pc_v = banished_pc:CastToClient()
-				if (banished_pc_v.valid)
+				if (banished_pc_v.valid) then
 					banished_pc_v:MovePC(297, 1475, eq.ChooseRandom(205, -205), -327, 384)
 				end
 			end

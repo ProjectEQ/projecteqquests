@@ -1,12 +1,12 @@
 -- CHRMAllResist
 
 function event_scale_calc(e)
-    local posion = e.owner:GetPR();
+    local poison = e.owner:GetPR();
     local disease = e.owner:GetDR();
     local magic = e.owner:GetMR();
     local fire = e.owner:GetFR();
     local cold = e.owner:GetCR();
-    local scale = posion + disease + magic + fire + cold;
+    local scale = poison + disease + magic + fire + cold;
 
     if(scale < 0) then
         scale = 0;

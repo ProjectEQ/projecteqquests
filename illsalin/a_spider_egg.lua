@@ -1,0 +1,7 @@
+function event_signal(e)
+if (e.signal==1) then
+eq.spawn2(347033,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+elseif(e.signal == 2) then
+eq.spawn2(347009,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+end
+end

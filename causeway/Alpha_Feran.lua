@@ -8,8 +8,10 @@ end
 
 function event_timer(e)
 if (e.timer == "howl") then
+eq.stop_timer("howl");
 eq.get_entity_list():GetNPCByNPCTypeID(303071):AddToHateList(e.other, 1);
 eq.get_entity_list():GetNPCByNPCTypeID(303072):AddToHateList(e.other, 1);
 e.self:Emote("howls for assistance!");
+eq.set_timer("howl", 10 * 1000);
 end
 end

@@ -33,8 +33,10 @@ end
 function event_combat(e)
 if (e.joined == true) then
 eq.set_timer("OOBcheck", 6 * 1000);
+eq.set_timer("agro", 5 * 1000);
 else
 eq.stop_timer("OOBcheck");
+eq.stop_timer("agro");
 eq.set_timer("eventreset", 18 * 1000);
 end
 end
@@ -74,5 +76,12 @@ function event_timer(e)
      eq.set_next_hp_event(95);
      eq.get_entity_list():FindDoor(12):SetLockPick(0);
      eq.get_entity_list():FindDoor(13):SetLockPick(0);
+	elseif (e.timer == "agro") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 347033 or npc:GetNPCTypeID() == 347009)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+			end
+		end	
   end
 end

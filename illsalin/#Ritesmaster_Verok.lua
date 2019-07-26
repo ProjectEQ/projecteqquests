@@ -19,7 +19,7 @@ eq.spawn2(347088, 0, 0, 848, -977, 163, 193);
 eq.spawn2(347088, 0, 0, 567, -880, 163, 193);
 eq.set_next_hp_event(85);
 elseif (e.hp_event == 85) then
-eq.signal(347088,1);
+eq.spawn_condition("illsalin",0,1,1);
 eq.set_next_hp_event(55);
 elseif (e.hp_event == 55) then
 e.self:Shout("'Fools! Who are you to challenge I?' as you notice the drachnid eggs erupting on the ledge.");
@@ -47,6 +47,7 @@ eq.get_entity_list():FindDoor(13):SetLockPick(0);
 eq.depop_all(347088);
 eq.depop_all(347033);
 eq.depop_all(347009);
+eq.spawn_condition("illsalin",0,1,0);
 end
 
 function event_timer(e)
@@ -63,6 +64,7 @@ function event_timer(e)
 		    eq.get_entity_list():FindDoor(12):SetLockPick(0);
 		    eq.get_entity_list():FindDoor(13):SetLockPick(0);
 		    eq.get_entity_list():MessageClose(e.self, false, 120, 3, "You see Verok fleeing the battle as he retreats to the confines of his quarters!");
+				eq.spawn_condition("illsalin",0,1,0);
 	    else
 		    eq.set_timer("OOBcheck", 6 * 1000);
 	    end
@@ -76,6 +78,7 @@ function event_timer(e)
      eq.set_next_hp_event(95);
      eq.get_entity_list():FindDoor(12):SetLockPick(0);
      eq.get_entity_list():FindDoor(13):SetLockPick(0);
+		 eq.spawn_condition("illsalin",0,1,0);
 	elseif (e.timer == "agro") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do

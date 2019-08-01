@@ -33,11 +33,11 @@ sub EVENT_SAY {
     my $mobnpc4 = $mob4->CastToNPC();
     my $mobnpc5 = $mob5->CastToNPC();
 
-    $mobnpc1->SaveGuardSpot(0);
-    $mobnpc2->SaveGuardSpot(0);
-    $mobnpc3->SaveGuardSpot(0);
-    $mobnpc4->SaveGuardSpot(0);
-    $mobnpc5->SaveGuardSpot(0);
+    $mobnpc1->SaveGuardSpot($x, $y, $z, $h);
+    $mobnpc2->SaveGuardSpot($x, $y, $z, $h);
+    $mobnpc3->SaveGuardSpot($x, $y, $z, $h);
+    $mobnpc4->SaveGuardSpot($x, $y, $z, $h);
+    $mobnpc5->SaveGuardSpot($x, $y, $z, $h);
 
     $mobnpc1->MoveTo(-2681, -4944, 150);
     $mobnpc2->MoveTo(-2703, -4920, 150);

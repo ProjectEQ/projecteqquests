@@ -153,7 +153,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_WAYPOINT_DEPART {
-  $npc->SaveGuardSpot(0);
+  $npc->SaveGuardSpot($x, $y, $z, $h);
   if ($groo == 1) {
     $groo = 2;
     quest::moveto(-686,467,-261);

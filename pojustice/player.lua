@@ -50,7 +50,7 @@ function MoveGroup(src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h)
 	if (player_list ~= nil) then
 		for i = 0, player_list_count - 1, 1 do
 			local mob_v = player_list:GetMember(i);
-			if (mob_v.valid and mob_v:IsClient()) then
+			if (mob_v ~= nil and mob_v.valid and mob_v:IsClient()) then
 				local client_v = mob_v:CastToClient();
 				if (client_v.valid) then
 					-- so we need to check if their group numbers match in raid need to check the clicker if they are in no group in a raid

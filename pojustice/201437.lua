@@ -163,7 +163,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
       for i = 0, trial_count - 1, 1 do
          local mob_v = trial_group:GetMember(i);
 
-         if (mob_v.valid and mob_v:IsClient()) then
+         if (mob_v ~= nil and mob_v.valid and mob_v:IsClient()) then
             local client_v = mob_v:CastToClient();
 
             if (client_v.valid) then

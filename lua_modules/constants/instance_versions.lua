@@ -4,6 +4,7 @@
 -- Example usage in any quest script: e.self:Say("Version is " .. instance_version.stillmoon_temple_tea_for_thy_master);
 --
 -- Query used to generate list
+--
 -- SELECT
 --   CONCAT(
 --     LOWER(

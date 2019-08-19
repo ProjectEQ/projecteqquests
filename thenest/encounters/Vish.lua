@@ -268,6 +268,7 @@ function Vish_Timer(e)
 		eq.depop_all(343096); --spirit wraith
 		eq.depop_all(343159); --incorporeal
 		eq.depop_all(343162); -- cloud
+		eq.depop_all(343160); -- lifedrain shadows
 		corrupted_spawn=true;
 		corrupted_spawnone=true; -- reset the drake variables so they set their abilities.
 		corrupted_spawntwo=true;

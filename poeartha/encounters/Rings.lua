@@ -560,7 +560,6 @@ function Mudslinger_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer('Hardblur', 180 * 1000);
 		eq.set_timer('Softblur', 6 * 1000);
-		eq.set_next_hp_event(50);
 	else
 		eq.stop_timer('Hardblur');
 		eq.stop_timer('Softblur');
@@ -579,9 +578,20 @@ function Mudslinger_HP(e)
 	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
 	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
 	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
+	eq.set_next_hp_event(40);
+	elseif (e.hp_event == 40) then
+	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
+	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
+	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
+	eq.spawn2(218037,0,0,308.82,57.42,71.75,59.5);
+	eq.spawn2(218037,0,0,313.58,66.62,71.75,52.0);
+	eq.spawn2(218037,0,0,379.98,143.95,71.75,319.8);
+	eq.spawn2(218037,0,0,371.99,147.69,71.75,319.3);
+	eq.spawn2(218037,0,0,386.55,136.56,71.75,316.3);
+	eq.spawn2(218037,0,0,377.39,129.38,71.75,316.3);
+	eq.spawn2(218037,0,0,364.15,131.53,71.75,315.5);
 	eq.set_next_hp_event(10);
-	end
-	if (e.hp_event == 10) then
+	elseif (e.hp_event == 10) then
 	eq.spawn2(218037,0,0,302.07,49.26,71.75,72.3);
 	eq.spawn2(218037,0,0,296.45,54.74,71.75,63.3); -- Spawn 10X ## Muck_Mudling ##
 	eq.spawn2(218037,0,0,302.72,61.04,71.75,64.0);
@@ -641,6 +651,7 @@ end
 
 function Monstrous_Spawn(e)
 	eq.set_timer("mud_box", 6000); -- Set timer for Leash
+	eq.set_next_hp_event(50);
 end
 
 function Monstrous_Timer(e)
@@ -658,6 +669,7 @@ end
 
 function Mudslinger_Spawn(e)
 	eq.set_timer("mud_box", 6000); -- Set timer for Leash
+	eq.set_next_hp_event(50);
 end
 
 function Mudslinger_Timer(e)
@@ -717,7 +729,6 @@ function Monstrous_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer('Hardblur', 180 * 1000);
 		eq.set_timer('Softblur', 6 * 1000);
-		eq.set_next_hp_event(50);
 	else
 		eq.stop_timer('Hardblur');
 		eq.stop_timer('Softblur');

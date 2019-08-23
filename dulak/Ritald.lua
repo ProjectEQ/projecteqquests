@@ -19,7 +19,7 @@ end
 function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 55902, item2 = 21870, item3 = 21782}) and qglobals["shadowknight_pre"] == "1") then --hand in Ancient Flamberge of Hatred (drops from Captain Varns in dulaks), Essence of Hate (Drops from nameds in PoHate), and Stormborn Phylactery (drops from Olidan in PoStorms)
+	if qglobals["shadowknight_pre"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 55902, item2 = 21870, item3 = 21782}) then --hand in Ancient Flamberge of Hatred (drops from Captain Varns in dulaks), Essence of Hate (Drops from nameds in PoHate), and Stormborn Phylactery (drops from Olidan in PoStorms)
 		e.self:Say("You have done well. The flamberge you have brought to me will act as a vessel for the summoning of the sword. The essence of hate will help generate hatred needed to fuel the summoning, and the phylactery should hopefully help contain that hate to be used in the summoning.");
 		e.self:Emote("Ritald holds the flamberge above his head with both hands and begins to chant. Dark storm clouds gather overhead as a flash of lightning momentarily blinds you. When you regain your sight, Ritald holds the summoned sword of Innoruuk's Voice.");
 		e.self:Say("I [have done it]!");
@@ -28,5 +28,3 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
-	
-	

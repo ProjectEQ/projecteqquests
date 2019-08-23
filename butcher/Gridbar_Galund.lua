@@ -16,7 +16,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if qglobals["warrior epic"] >= "11" and item_lib.check_turn_in(e.trade, {item1 = 60312, item2 = 60313, item3 = 60314, item4 = 60315}) then --4x Stone of Eternal Power
+	if qglobals["warrior_epic"] >= "11" and item_lib.check_turn_in(e.trade, {item1 = 60312, item2 = 60313, item3 = 60314, item4 = 60315}) then --4x Stone of Eternal Power
 		e.self:Say("Ah... huh? Oh, Gridbar says he needs a [" .. eq.say_link("gemming tool") .. "]. Who? What do you want? Something about Korbuk? Where's Gridbar? He says you need a [" .. eq.say_link("spell called Fire") .. "]. Huh? Gridbar who? No cookies for me now, thanks. Huh?");
 		eq.set_global("warrior_epic","12",5,"F");
 	end

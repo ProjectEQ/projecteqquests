@@ -7,12 +7,10 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(item_lib.check_turn_in(e.trade, {item1=52349,item2=52350,item3=52351,item4=52352}) and qglobals["Fatestealer"] == "3" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(301033) == false) then 
+	if (qglobals["Fatestealer"] == "3" and item_lib.check_turn_in(e.trade, {item1=52349,item2=52350,item3=52351,item4=52352}) and  eq.get_entity_list():IsMobSpawnedByNpcTypeID(301033) == false) then 
 		eq.set_global("rog_bf_trigger","1",3,"H1");
 		eq.spawn2(301033,0,0,72,1749,-895,70); -- NPC: #a_reclusive_girplan
 		eq.zone_emote(15, "Attracted by the recent commotion, a reclusive Girplan emerges from its hiding spot.");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
-
-

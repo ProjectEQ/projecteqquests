@@ -16,19 +16,19 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if qglobals["warrior_epic"] >= "11" and item_lib.check_turn_in(e.trade, {item1 = 60312, item2 = 60313, item3 = 60314, item4 = 60315}) then --4x Stone of Eternal Power
+	if qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "11" and item_lib.check_turn_in(e.trade, {item1 = 60312, item2 = 60313, item3 = 60314, item4 = 60315}) then --4x Stone of Eternal Power
 		e.self:Say("Ah... huh? Oh, Gridbar says he needs a [" .. eq.say_link("gemming tool") .. "]. Who? What do you want? Something about Korbuk? Where's Gridbar? He says you need a [" .. eq.say_link("spell called Fire") .. "]. Huh? Gridbar who? No cookies for me now, thanks. Huh?");
 		eq.set_global("warrior_epic","12",5,"F");
 	end
-	if qglobals["warrior_epic"] >= "12" and item_lib.check_turn_in(e.trade, {item1 = 60316, item2 = 15433}) then --Gemming Tool and Spell:Fire
+	if qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "12" and item_lib.check_turn_in(e.trade, {item1 = 60316, item2 = 15433}) then --Gemming Tool and Spell:Fire
 		e.self:Say("Oh, a hammer! No? Who are you? Where's Gridbar? I need a bottle of milk! No you don't. Gridbar says to eat some bread. Why? Huh? Give Gridbar the receptacle. What? The eye sockets! Give him the socket piece!");
 		eq.set_global("warrior_epic","13",5,"F");
 	end
-	if qglobals["warrior_epic"] >= "13" and item_lib.check_turn_in(e.trade, {item1 = 60311}) then --Glistening Hilt
+	if qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "13" and item_lib.check_turn_in(e.trade, {item1 = 60311}) then --Glistening Hilt
 		e.self:Say("Ooh, pretty. Huh? Gridbar likes it. Not me though, I think it's too bright. Who are you? What? Fine, I need some time with this. Gridbar does, not me. Who? He'll work on it, but I need you to... no wait, Gridbar needs you to do something for him. For me. For who? My sister is in Shadowhaven and needs a keg stamp. Give this to her for her brother. Who? Gridbar. That's me? Why?");
 		e.other:SummonItem(60318); --Carved Keg Stamp
 	end
-	if qglobals["warrior_epic"] >= "13" and item_lib.check_turn_in(e.trade, {item1 = 60319}) then --Tube of Setting Solution
+	if qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "13" and item_lib.check_turn_in(e.trade, {item1 = 60319}) then --Tube of Setting Solution
 		e.self:Say("Nice, just what Gridbar needed. I needed. No he didn't. I want a sandwich. Gnome sandwich? Which sandwich is which? Aha! Genius! Who? This helps me finish the gem setting. Good good. Here's your socket piece. Gridbar likes it. Huh?");
 		e.other:SummonItem(60320) --Hilt of Eternal Power
 	end

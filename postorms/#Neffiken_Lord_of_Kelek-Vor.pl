@@ -42,6 +42,7 @@ sub EVENT_TIMER {
 sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("battle");
 	quest::stoptimer("TreeAdds");
+	quest::spawn2(210254,0,0,$x,$y,$z,$h); #start dolshak script
 }
 
 # End of File  Zone: PoStorms  ID: 210229 -- #Neffiken_Lord_of_Kelek'Vor

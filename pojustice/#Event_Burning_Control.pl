@@ -89,14 +89,17 @@ sub SpawnFlameMobs {
 	for ($count = 0; $count <= 3; $count++) {
 		my $test = rand(99);
 		
-		if ($test < 69) {
-			#Fiery Agressor, common mob
+		if ($test < 10) {
+			#Fiery Agressor, rare mob
 			quest::spawn2(201420, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: #a_fiery_aggressor
 		}
 		
-		else {
-			#Burning nemesis, less common
+		elsif ($test >= 10) && {$test < 20)
+			#Burning nemesis, rare
 			quest::spawn2(201447, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: A_Burning_Nemesis
+		}
+		elsif ($test >= 20)
+			quest::ChooseRandom(201426,201418); # spirit of flame / fiend of flame common mobs
 		}
 	}
 }

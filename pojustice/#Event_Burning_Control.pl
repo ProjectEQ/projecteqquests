@@ -96,7 +96,7 @@ sub SpawnFlameMobs {
 			quest::spawn2(201420, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: #a_fiery_aggressor
 		}
 		
-		elsif ($test >= 10) && {$test < 20)
+		elsif (($test >= 10) && ($test < 20))
 			#Burning nemesis, rare
 			quest::spawn2(201447, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: A_Burning_Nemesis
 		}

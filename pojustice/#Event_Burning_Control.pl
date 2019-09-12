@@ -101,7 +101,7 @@ sub SpawnFlameMobs {
 			quest::spawn2(201447, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: A_Burning_Nemesis
 		}
 		elsif ($test >= 20)
-			spawn2(quest::ChooseRandom(201426,201418, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # spirit of flame / fiend of flame common mobs
+			quest::spawn2(quest::ChooseRandom(201426,201418), 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # spirit of flame / fiend of flame common mobs
 		}
 	}
 }

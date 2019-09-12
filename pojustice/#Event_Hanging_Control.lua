@@ -175,8 +175,8 @@ function spawn_spirit(spirit_id)
 end
 
 function spawn_mobs()
-	-- Spawn 2 of the 4 mobs randomly at the two spawn points.
-	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 440, -1093, 73, 248 );
+	-- Spawn 2 of the 4 mobs randomly at the two spawn points. add rare chance to 1 spawn
+	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459, 201503),  0, 0, 440, -1093, 73, 248 );
 	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 536, -1093, 73, 248 );
 end
 

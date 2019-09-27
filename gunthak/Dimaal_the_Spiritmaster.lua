@@ -24,7 +24,7 @@ function event_spawn(e)
 end
 
 function event_say(e)
-	if (event_started = 0) then
+	if (event_started == 0) then
 		if(e.message:findi("hail")) then
 		  e.self:Say("'Ahh a visitor, I see? Welcome to the Cave of the Damned. I am the keeper of these caves, and I have been charged with holding the spiritual [manifestations] at bay. Many bloody battles have been fought on the shores of Gunthak, many more battles will be fought here.'");
 		elseif(e.message:findi("manifestations")) then
@@ -39,7 +39,7 @@ end
 
 
 function event_trade(e)
-	if (event_started = 0) then
+	if (event_started == 0) then
 		local item_lib = require("items");
 		if (item_lib.check_turn_in(e.trade, {item1 = 56001,item2 = 56001,item3 = 56001,item4 = 56001})) then
 			e.self:Say("'The spirits shall come. Ready yourselves.'");

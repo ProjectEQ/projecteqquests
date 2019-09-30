@@ -1,24 +1,24 @@
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then
-		eq.spawn2(227003, 0, 0, e.self:GetX(), e.self:GetY()+10,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227003, 0, 0, e.self:GetX(), e.self:GetY()-10,  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(227003, 0, 0, 1257, 675, -88, 126);
+		eq.spawn2(227003, 0, 0, 1257, 665, -88, 126);
 	elseif(e.wp == 6) then
-		eq.spawn2(227003, 0, 0, e.self:GetX()+10, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227003, 0, 0, e.self:GetX()-10, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227002, 0, 0, e.self:GetX()-5, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(227003, 0, 0, 1206, 1000, -74, 254);
+		eq.spawn2(227003, 0, 0, 1216, 1000, -74, 254);
+		eq.spawn2(227002, 0, 0, 1211, 1000, -74, 254);
 	elseif(e.wp == 13) then
-		eq.spawn2(227003, 0, 0, e.self:GetX()+10, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227003, 0, 0, e.self:GetX()-10, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227002, 0, 0, e.self:GetX()-5, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227002, 0, 0, e.self:GetX()+5, e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(227003, 0, 0, 820, 977, -74, 254);
+		eq.spawn2(227003, 0, 0, 825, 977, -74, 254);
+		eq.spawn2(227002, 0, 0, 830, 977, -74, 254);
+		eq.spawn2(227002, 0, 0, 835, 977, -74, 254);
 	elseif(e.wp == 16) then
-		eq.spawn2(227003, 0, 0, e.self:GetX(), e.self:GetY()+10,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227003, 0, 0, e.self:GetX(), e.self:GetY()-10,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227002, 0, 0, e.self:GetX(), e.self:GetY()-5,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227002, 0, 0, e.self:GetX(), e.self:GetY()+5,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(227003, 0, 0, e.self:GetX(), e.self:GetY()+5,  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(227003, 0, 0, 861, 675, -88, 126);
+		eq.spawn2(227003, 0, 0, 861, 665, -88, 126);
+		eq.spawn2(227003, 0, 0, 861, 660, -88, 126);
+		eq.spawn2(227002, 0, 0, 861, 680, -88, 126);
+		eq.spawn2(227002, 0, 0, 861, 685, -88, 126);
 	elseif(e.wp == 18) then
-		eq.spawn2(227321, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(227321, 0, 0, 1060, 549, -88,  0);
 		eq.depop();
 	end
 end

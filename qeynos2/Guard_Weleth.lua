@@ -8,6 +8,10 @@ function event_say(e)
 	elseif(e.message:findi("arrows")) then
 		e.self:Say("Oh, thank you! Here is the crate. Make sure [Nesiff] sends me back a new invoice. [Lieutenant Dagarok] would have my head if he found out this happened again!");
 		e.other:SummonItem(13925); -- Crate of Defective Arrows
+	elseif(e.message:findi("lieutenant dagarok")) then
+		e.self:Say("Lieutenant Dagarok is the officer in charge of all of North Qeynos. He is difficult to get along with and I [do not trust] him.");
+	elseif(e.message:findi("trust")) then
+		e.self:Say("Late one night not long ago, after I was off duty, I witnessed Lieutenant Dagarok and a few others slay someone they claimed was a suspected necromancer. I had met their victim the day before and I know he was an innocent paladin from Freeport. What really shocked me was that Dagarok was bathed in an evil green glow as their victim crumpled to the ground. I don't know who to trust any more!");
 	end
 end
 

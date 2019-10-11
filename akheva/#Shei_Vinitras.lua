@@ -1,5 +1,9 @@
 function event_spawn(e)
   eq.set_timer('Depop', 600 * 1000);
+	eq.spawn2(179044,0,0,-1807,1029,17.85,128); --xaui tatrua
+	eq.spawn2(179045,0,0,-1804,1136,17.85,128); --vius tatrua
+	eq.spawn2(179046,0,0,-1715,1034,19.73,0); --sheleric vis
+	eq.spawn2(179046,0,0,-1714,1128,19.73,256); --sheleric vis
 end
 
 function event_combat(e)

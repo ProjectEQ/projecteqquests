@@ -53,10 +53,10 @@ sub EVENT_ITEM {
       return 1;
     }
   
-    quest::faction(429, 20);  # +King Tormax
-    quest::faction(448, 20);  # +Kromzek
-    quest::faction(436, -60); # -Yelinak
-    quest::faction(405, -60);  # -Dain Frostreaver IV
+    quest::faction(429, 25);  # +King Tormax
+    quest::faction(448, 25);  # +Kromzek
+    quest::faction(436, -12); # -Yelinak
+    quest::faction(405, -12);  # -Dain Frostreaver IV
   
     quest::exp(100);
   }

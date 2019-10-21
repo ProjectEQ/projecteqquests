@@ -9,3 +9,9 @@ function event_combat(e)
     eq.set_timer('Depop', 1800 * 1000);
   end
 end
+
+function event_timer(e)
+	if (e.timer == 'Depop') then
+		eq.depop();
+	end
+end

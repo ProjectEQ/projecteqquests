@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if ($faction==1) {
+  if ($faction<=3) {
     if ($text=~/hail/i) {
       quest::say("Greetings, Traveler. I do not receive many visitors to my quarters here, besides the occasional unfortunate treasure seeker that often will make for a good snack.");
     }
@@ -18,7 +18,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($faction==1) {
+  if ($faction<=3) {
  
     if ($CircletFalinkan=="1") {
 
@@ -27,13 +27,14 @@ sub EVENT_ITEM {
       # 1865 : Head of Staff Sergeant Drioc
       # 1863 : A chipped fang
       if (plugin::check_handin(\%itemcount,1861=>1,1864=>1,1865=>1,1863=>1)) {
-        quest::say("So you finally made it ! Head back to Ralgyn to get your reward.");
+        quest::say("I had faith I would see you again. Your dedication to aiding me in my studies is quite noteworthy. As I promised I would earlier, I have identified this talisman; it belonged once to Faliana. You may have heard of Faliana before, for she was the mate of Ralgyn, a well respected wurm noble of our Lord Yelinak. However it was last carried by Glanitar, the son of Ralgyn, who we have not seen for some time. To see this weathered trinket, I fear the worst for young Glanitar, however, his father must know that this was found. Please take this to him and, again, I thank you for your assistance in our time of need.");
         quest::summonitem(1866); # 1866  Glanitar's Imbued Talisman
-        quest::faction(436,20); # Yelinak
-        quest::faction(430,20); # Claws of Veeshan
-        quest::faction(448,-10); # Kromzek
+        quest::faction(436,12); # Yelinak
+        quest::faction(430,50); # Claws of Veeshan
+        quest::faction(448,-24); # Kromzek
         quest::exp(100000);
         quest::targlobal("CircletFalinkan","2","Y1",114002,$charid,114); # sets the global to 2 for Ralgyn in skyshrine
+        quest::depop_withtimer();
       }
 
       # 1861 : An old worn Talisman (alone, you gave him for identification)

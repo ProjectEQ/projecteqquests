@@ -1,12 +1,18 @@
-# Items of Benevolence, starts in Skyshrine with Commander Leuz 
+# Items of Benevolence, starts in Skyshrine with Commander Leuz
+
+sub EVENT_SAY {
+	if ($text=~/Hail/i) {
+		quest::emote("motions you to be silent.");
+	}
+}
 
 sub EVENT_ITEM { 
   if ($faction <= 2) {
     if (plugin::check_handin(\%itemcount, 29683 => 1)) { #Scout Tools
       quest::say("Great! I was wondering when they would send someone out to give me these. In my haste and excitement of this new assignment I forgot these. This scout business is great I must say. It sure beats setting in Southern Ro studying the ruins. I've been following these Storm Giants for days. They've been wandering up and down the coast looking for something."); 
-      quest::faction(430,30);   #Claws of Veeshan
-      quest::faction(436,30);  #Yelinak
-      quest::faction(448,-20); #Kromzek
+      quest::faction(430,8);   #Claws of Veeshan
+      quest::faction(436,2);  #Yelinak
+      quest::faction(448,-4); #Kromzek
       quest::exp(100000);
       quest::unique_spawn(120115,0,0,-3501,-4868,-108); # a Kromzek Captain
       quest::spawn(120121,0,0,-3507,-4897,-106); # Kromzek Warrior
@@ -23,7 +29,7 @@ sub EVENT_ITEM {
     elsif (plugin::check_handin(\%itemcount, 29684 => 1)) { #Broken Disk
       quest::faction(430,25);   #Claws of Veeshan
       quest::faction(436,6);  #Yelinak
-      quest::faction(448,-20); #Kromzek
+      quest::faction(448,-12); #Kromzek
       quest::summonitem(29688); #Scout Report
       quest::summonitem(29685); #Robe of Benevolence
       quest::exp(100000);

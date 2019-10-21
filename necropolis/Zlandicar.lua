@@ -1,5 +1,5 @@
 function event_say(e)
-	if (e.other:GetFaction(e.self) >= 5) then
+	if (e.other:GetFaction(e.self) <= 5) then
 		if(e.message:findi("hail")) then
 		  e.self:Say("Hmm, I have been watching you. You made it further than I thought you would. I will have to work on my defenses in the future. So, what do you seek of me?");
 		elseif(e.message:findi("Jaled Dar")) then
@@ -13,7 +13,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-	if (e.other:GetFaction(e.self) >= 5) then
+	if (e.other:GetFaction(e.self) <= 5) then
 		local item_lib = require("items");
 		if(item_lib.check_turn_in(e.trade, {item1 = 26010})) then  -- Nebs Head
 	   	e.self:Say("Excellent work! Here is your key, go bother that prattling fool Jaled Dar, and leave me be.");

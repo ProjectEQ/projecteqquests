@@ -21,6 +21,9 @@ sub EVENT_ITEM {
       quest::emote("watches as you drop the colossal head of King Tormax to the ground before him. You sense intense hatred within Yelinak as he stares down at the bloody remains of a descendent of the one who slew his mate. Obviously the death of Tormax has done little to console the ancient snow dragon. Finally Yelinak speaks,");
       quest::say("I look upon this face, and even though he is dead, the hatred burns on. My grief and anger are unchanged even in the face of ultimate fate. His grandfathers act was so despicable and all-encompassing that it instilled an... immortal loathing. Nevertheless, you have completed the task I set before you and, as such, you deserve my gratitude. Please accept this [treasure].");
       quest::summonitem(29647); # Item: Clawed Griffin Sword
+      quest::faction(430,50);  #Claws of Veeshan
+      quest::faction(436,50);  #Yelinak
+      quest::faction(429,-25); #tormax
     }
     elsif(plugin::check_handin(\%itemcount, 29647 => 1)){
       quest::say("I lost the scales that made these boots in a battle with Tormaxs minions. The casters of the shrine gathered these fallen scales up and fashioned a very powerful enchantment into these boots.");

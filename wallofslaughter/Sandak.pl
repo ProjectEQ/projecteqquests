@@ -1,5 +1,5 @@
 ###########################################
-## NAME: Sandrak
+## NAME: Sandak
 ## ID: 300044
 ## ZONE: wallofslaughter
 ###########################################
@@ -32,7 +32,7 @@ sub EVENT_SAY {
     }
   }
   else {
-    quest::emote("does not respond to you."); #made up from memory
+    quest::emote("hisses as you approach but does not attack.");
   }
 }
 
@@ -43,10 +43,7 @@ sub EVENT_ITEM {
       quest::faction(1013,-1); #overlord mata muram
       quest::exp(100000);
       if($class eq "Warrior" || $class eq "Paladin" || $class eq "Shadowknight" || $class eq "Monk" || $class eq "Bard" || $class eq "Rogue" || $class eq "Ranger" || $class eq "Beastlord" || $class eq "Berserker") {
-        quest::summonitem(36504); #at this time was  
-        quest::summonitem(36505); #unable to find 
-        quest::summonitem(36506); #melee reward on
-        quest::summonitem(36507); #lucy or alla
+        quest::summonitem(71135); # glowing enameled visor
       }
       if($class eq "Cleric" || $class eq "Druid" || $class eq "Shaman" || $class eq "Magician" || $class eq "Enchanter" || $class eq "Wizard" || $class eq "Necromancer") {
         quest::summonitem(71136); #Veil of Woven Light

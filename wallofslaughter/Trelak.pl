@@ -41,7 +41,7 @@ sub EVENT_SAY {
     }
   }
   else {
-    quest::emote("does not respond to you."); #made up text
+    quest::emote("hisses as you approach but does not attack.");
   }
 }
 
@@ -124,7 +124,7 @@ sub EVENT_ITEM {
       }
     }
     if (plugin::check_handin(\%itemcount, 51476 => 1, 51483 => 3)) { #breastplate
-      quest::emote("takes the items from you before handing you your reward."); #made up
+      quest::say("Ah, yes, this is the vest I saw Jayruk wear so often when times were brighter. No one knows what happened to him, but this vest confirms my greatest fear -- that he met with an untimely end. I thank you for returning this to me so I may pay my respects to my greatest friend. Here is the breastplate I spoke of earlier. I was crafting this for myself, but in times such as these, it is better that it serve a true fighter such as yourself than a mere smith pretending to be one.");
       quest::exp(100000);
       if($class eq "Warrior") {
         quest::summonitem(70858); # Item: Gladiator's Plate Chestguard of War
@@ -143,7 +143,7 @@ sub EVENT_ITEM {
       }
     }
     if (plugin::check_handin(\%itemcount, 51477 => 1, 51484 => 3)) { #leggings
-      quest::emote("takes the items from you before handing you your reward."); #made up
+      quest::emote("smiles and nods approvingly as you hand him the medal and tails. 'Yes this is the amulet that fiendish Muramite wore. And you managed to slay the discordlings as well? Good. Now at least I may rest easier knowing that the fiends will trouble my people no more. Here are the leggings I spoke of earlier. I crafted them using a new technique I developed after my mentor's passing. Now I feel they are ready to be tested on the field of battle. I am certain they will give you much service.");
       quest::exp(100000);
       if($class eq "Warrior") {
         quest::summonitem(70859); # Item: Gladiator's Plate Legguards of War

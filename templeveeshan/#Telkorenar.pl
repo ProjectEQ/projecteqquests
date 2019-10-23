@@ -2,7 +2,7 @@
 #
 
 sub EVENT_SAY {
-  if ($faction == 1) { #req ally CoV
+  if ($faction <= 3) { #req kindly CoV
     if ($text=~/hail/i) {
       quest::say("The Strong seek me out, for one reason or another. It seems you have come here in peace. Perhaps you wish to prove yourself a mighty $class? I respect only might, $race.");
     }
@@ -30,7 +30,7 @@ test do you wish to undertake?");
 }
 
 sub EVENT_ITEM {
-  if ($faction == 1) {
+  if ($faction <= 3) {
     if (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31270 => 1, 31258 => 1)) { # protection
       quest::summonitem(31472); # Item: Pauldrons of the Deep Flame
     }
@@ -47,10 +47,10 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
       return 1;
     }
-    quest::emote("looks pleased as she hands you the reward.");
+    quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
     quest::faction(430,+75); # claws of veeshan
-    quest::faction(436,+75); # yelinak
-    quest::faction(448,-100); # zek
+    quest::faction(436,+18); # yelinak
+    quest::faction(448,-37); # zek
     quest::exp(200000);
   }
   else {

@@ -2,7 +2,7 @@
 #
 
 sub EVENT_SAY {
-  if ($faction == 1) { #req ally CoV
+  if ($faction <= 3) { #req kindly CoV
     if ($text=~/hail/i) {
       quest::say("The Strong seek me out, for one reason or another. It seems you have come here in peace. Perhaps you wish to prove yourself a mighty $class? I respect only might, $race.");
     }

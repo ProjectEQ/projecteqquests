@@ -30,7 +30,7 @@ test do you wish to undertake?");
 }
 
 sub EVENT_ITEM {
-  if ($faction == 1) {
+  if ($faction <= 3) {
     if (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31270 => 1, 31258 => 1)) { # protection
       quest::summonitem(31472); # Item: Pauldrons of the Deep Flame
     }

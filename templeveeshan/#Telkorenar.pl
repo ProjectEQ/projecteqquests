@@ -47,10 +47,10 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
       return 1;
     }
-    quest::emote("looks pleased as she hands you the reward.");
+    quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
     quest::faction(430,+75); # claws of veeshan
-    quest::faction(436,+75); # yelinak
-    quest::faction(448,-100); # zek
+    quest::faction(436,+18); # yelinak
+    quest::faction(448,-37); # zek
     quest::exp(200000);
   }
   else {

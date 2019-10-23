@@ -56,7 +56,7 @@ sub EVENT_SAY
 		}
 	else
 		{
-		quest::emote("does not respond to you."); #made up text
+		quest::emote("hisses as you approach but does not attack.");
 		}
 		}
 
@@ -108,7 +108,7 @@ sub EVENT_ITEM
 		}
 	if (plugin::check_handin(\%itemcount, 51444 => 1, 51472 => 2)) #arms
 		{
-		quest::say("Thank you $name. Please take this as a reward for your efforts."); #made up text Correct text unavailable
+		quest::say("You've recovered a map of Old Kuua! With this I may yet find the burial grounds of my ancestors. Hopefully before the Muramites get there to pillage what remains of my kins' riches! Thank you, $name. As promised, here are my former arm wraps. I have no more need of them, but I'm sure they will serve you well.");
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{
@@ -171,7 +171,7 @@ sub EVENT_ITEM
 		}
 	if (plugin::check_handin(\%itemcount, 51442 => 1, 51470 => 3)) #legs
 		{
-		quest::say("You've recovered a map of Old Kuua! With this I may yet find the burial grounds of my ancestors. Hopefully before the Muramites get there to pillage what remains of my kins' riches! Thank you, $name. As promised, here are my former arm wraps. I have no more need of them, but I'm sure they will serve you well.");
+		quest::say("You've recovered a Dragorn City Ember! With this I may yet find the burial grounds of my ancestors. Hopefully before the Muramites get there to pillage what remains of my kins' riches! Thank you, $name. As promised, here are my former leggings. I have no more need of them, but I'm sure they will serve you well."); #text made up
 		quest::exp(100000);
 			if($class eq "Enchanter")
 				{

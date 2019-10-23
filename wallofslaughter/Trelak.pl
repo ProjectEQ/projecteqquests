@@ -143,7 +143,7 @@ sub EVENT_ITEM {
       }
     }
     if (plugin::check_handin(\%itemcount, 51477 => 1, 51484 => 3)) { #leggings
-      quest::emote("smiles and nods approvingly as you had him the medal and tails. 'Yes this is the amulet that fiendish Muramite wore. And you managed to slay the discordlings as well? Good. Now at least I may rest easier knowing that the fiends will trouble my people no more. Here are the leggings I spoke of earlier. I crafted them using a new technique I developed after my mentor's passing. Now I feel they are ready to be tested on the field of battle. I am certain they will give you much service.");
+      quest::emote("smiles and nods approvingly as you hand him the medal and tails. 'Yes this is the amulet that fiendish Muramite wore. And you managed to slay the discordlings as well? Good. Now at least I may rest easier knowing that the fiends will trouble my people no more. Here are the leggings I spoke of earlier. I crafted them using a new technique I developed after my mentor's passing. Now I feel they are ready to be tested on the field of battle. I am certain they will give you much service.");
       quest::exp(100000);
       if($class eq "Warrior") {
         quest::summonitem(70859); # Item: Gladiator's Plate Legguards of War

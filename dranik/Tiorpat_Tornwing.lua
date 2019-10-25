@@ -1,8 +1,13 @@
+-- event info by Huffin
+-- a_pensive_Dragorn (336059)
+-- a_sympathetic_Dragorn (336060)
+-- a_Dragorn_realist (336058)
+-- a_Dragorn_heckler (336057)
+
 function event_spawn(e)
   eq.set_timer('flavor', 300 * 1000);
   eq.set_timer('spawnscript', 6 * 1000);
 end
-
 
 function event_timer(e)
   if (e.timer == 'flavor') then

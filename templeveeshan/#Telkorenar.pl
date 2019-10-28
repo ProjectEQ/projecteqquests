@@ -47,7 +47,7 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
       return 1;
     }
-    quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
+    quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
     quest::faction(430,+75); # claws of veeshan
     quest::faction(436,+18); # yelinak
     quest::faction(448,-37); # zek

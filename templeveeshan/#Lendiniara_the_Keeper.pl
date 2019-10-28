@@ -37,7 +37,7 @@ sub EVENT_ITEM {
   if ($faction <= 3) {
     if (plugin::check_handin(\%itemcount, 31262 => 1, 31261 => 1, 31263 => 1, 31260 => 1)) { ## request of the arcane
       quest::summonitem(31463); # Item: Mask of the Silver Eyes
-      quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
       quest::faction(436,+18); # yelinak
       quest::faction(448,-37); # zek
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
     }
     elsif (plugin::check_handin(\%itemcount, 31267 => 1, 31266 => 1, 31265 => 1, 31264 => 1)) { ## request of the strong
       quest::summonitem(31464); # Item: Silver Mask of the Slayer
-      quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
       quest::faction(436,+18); # yelinak
       quest::faction(448,-37); # zek
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
     }
     elsif (plugin::check_handin(\%itemcount, 31259 => 1, 31270 => 1, 31253 => 1, 31250 => 1)) { ## test of the ruby tear
       quest::summonitem(31460); # Item: Silver Charm of Tranquility
-      quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
       quest::faction(436,+18); # yelinak
       quest::faction(448,-37); # zek
@@ -61,7 +61,7 @@ sub EVENT_ITEM {
     }
     elsif (plugin::check_handin(\%itemcount, 31251 => 1, 31269 => 1, 31252 => 1, 31254 => 1)) { ## test of the platinum tear
       quest::summonitem(31461); # Item: Silver Bracelet of Speed
-      quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
       quest::faction(436,+18); # yelinak
       quest::faction(448,-37); # zek
@@ -69,7 +69,7 @@ sub EVENT_ITEM {
     }
     elsif (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31256 => 1, 31255 => 1)) { ## test of the emerald tear
       quest::summonitem(31462); # Item: Buckler of Insight
-      quest::emote("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
       quest::faction(436,+18); # yelinak
       quest::faction(448,-37); # zek

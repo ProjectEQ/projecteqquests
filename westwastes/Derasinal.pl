@@ -1,6 +1,14 @@
 sub EVENT_SAY {
-  if($text=~/hail/i) {
-   quest::say("It is not often that I see strangers in these dangerous lands. Perhaps you are the chosen that Jualicn speaks of that will aid us in our battle against the foul giants. I do not believe you would be here if you were not in need of my sacred rune.");
+  if ($faction <= 5) {
+    if($text=~/hail/i) {
+     quest::say("It is not often that I see strangers in these dangerous lands. Perhaps you are the chosen that Jualicn speaks of that will aid us in our battle against the foul giants. I do not believe you would be here if you were not in need of my sacred rune.");
+    }
+    if($text=~/need your rune/i) {
+     quest::say("Although I can see that you would surely put the rune to use in some way, I can only release it to the one that Jualicn speaks of. I am sorry, but I am quite protective to what ties I still have to the great Relinar.");
+    }
+    if($text=~/aid jualicn/i) {
+     quest::say("I understand that you may know of Jualicn, but I can only deal with those that he would trust with something dear to him.");
+    }
   }
 }
 

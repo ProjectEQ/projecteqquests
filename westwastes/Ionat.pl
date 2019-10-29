@@ -1,6 +1,14 @@
 sub EVENT_SAY {
-  if($text=~/hail/i) {
-   quest::say("Hello $name. It is good to see that you have traveled so far to be in my presence. I do believe that you are the one chosen to aid us in our fight against the giants. If you are then I am sure that you will need my rune for your research.");
+  if ($faction <= 5) {
+    if($text=~/hail/i) {
+     quest::say("Hello $name. It is good to see that you have traveled so far to be in my presence. I do believe that you are the one chosen to aid us in our fight against the giants. If you are then I am sure that you will need my rune for your research.");
+    }
+    if($text=~/need your rune/i) {
+     quest::say("I see. Many seek this rune that I keep for whatever magics they practice, however I can only release it to the one that aids Jualicn.");
+    }
+    if($text=~/aid jualicn/i) {
+     quest::say("You are the one that Jualicn speaks of?  Surely you must have something to symbolize your dediciation to our cause.");
+    }
   }
 }
 

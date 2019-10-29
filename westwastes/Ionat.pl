@@ -13,6 +13,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+  if ($faction <= 5) {
   if(plugin::check_handin(\%itemcount, 1908 => 1)){ #Jualicn's Token
     quest::say("Take this Rune of Revenge, $name. You will need it to extract retribution in remembrance of our dear Hsagra. I thank you for your contributions to our cause. It is good to have you amongst our ranks.");
     quest::faction(430,10);   #Claws of Veeshan
@@ -24,7 +25,8 @@ sub EVENT_ITEM {
       quest::summonitem(1908); #Jualicn's Token
     }
     quest::depop_withtimer();
-  } 
+  }
+  }
   plugin::return_items(\%itemcount);
 }
 

@@ -13,8 +13,8 @@ function event_say(e)
 end
 
 function event_trade(e)
+	local item_lib = require("items");
 	if (e.other:GetFaction(e.self) <= 5) then
-		local item_lib = require("items");
 		if(item_lib.check_turn_in(e.trade, {item1 = 26010})) then  -- Nebs Head
 	   	e.self:Say("Excellent work! Here is your key, go bother that prattling fool Jaled Dar, and leave me be.");
 		  e.other:Ding();

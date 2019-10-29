@@ -13,7 +13,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($faction <= 4) {
+  if ($faction <= 5) {
   if(plugin::check_handin(\%itemcount, 1908 => 1)){ #Jualicn's Token
     quest::say("Ah of course, $name. You will need a Rune of Eradication for your lexicon. We are counting on your loyalty. Remember that you will need to bring the teachings of Relinar to Lawyla for further instructions, as she requires them to pass on the magic to those worthy of it. I bid you farewell, $name.");
     quest::faction(430,10);   #Claws of Veeshan

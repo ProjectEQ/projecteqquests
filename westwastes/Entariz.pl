@@ -1,7 +1,15 @@
 sub EVENT_SAY {
-  if($text=~/hail/i){
-   quest::say("Greetings, $name. I have heard that one is amongst us in the lands which will aid us in our cause. If you are the one that seeks my ancient rune for your studies please make sure it is not used in vain. I do not talk to many that pass through here and I feel in my heart that it is you that shall help us.");
- }
+  if ($faction <= 5) {
+    if($text=~/hail/i) {
+     quest::say("Greetings, $name. I have heard that one is amongst us in the lands which will aid us in our cause. If you are the one that seeks my ancient rune for your studies please make sure it is not used in vain. I do not talk to many that pass through here and I feel in my heart that it is you that shall help us.");
+    }
+    if($text=~/ancient rune/i) {
+     quest::say("This rune is very powerful and I will not release it to just anyone. Are you the one that Jualicn sends?");
+    }
+    if($text=~/jualicn sends/i) {
+     quest::say("That is excellent. Jualicn is very wise indeed however he does not send just anyone on such an important task. If you are the one that he has informed me will come I am sure he must have given you something to present to me.");
+    }
+  }
 }
 
 sub EVENT_ITEM {

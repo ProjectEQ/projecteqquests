@@ -23,7 +23,7 @@ sub EVENT_SAY {
     }
   }
   else {
-     quest::say("I do not know you well enough to entrust you with such a quest, yet.");
+     quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 
@@ -52,7 +52,7 @@ sub EVENT_ITEM {
     quest::exp(200000);
   }
   else {
-    quest::say("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 

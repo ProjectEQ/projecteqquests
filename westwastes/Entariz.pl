@@ -12,6 +12,7 @@ sub EVENT_SAY {
   }
   else {
     quest::say("You seem like a decent sort for a snack food, but there is nothing you can do for me this day.  Come back when you have done more work for the Claws.");
+  }
 }
 
 sub EVENT_ITEM {

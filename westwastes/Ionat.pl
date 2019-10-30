@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if ($faction <= 5) {
+  if ($faction <= 3) {
     if($text=~/hail/i) {
      quest::say("Hello $name. It is good to see that you have traveled so far to be in my presence. I do believe that you are the one chosen to aid us in our fight against the giants. If you are then I am sure that you will need my rune for your research.");
     }
@@ -10,10 +10,12 @@ sub EVENT_SAY {
      quest::say("You are the one that Jualicn speaks of?  Surely you must have something to symbolize your dediciation to our cause.");
     }
   }
+  else {
+    quest::say("You seem like a decent sort for a snack food, but there is nothing you can do for me this day.  Come back when you have done more work for the Claws.");
 }
 
 sub EVENT_ITEM {
-  if ($faction <= 5) {
+  if ($faction <= 3) {
   if(plugin::check_handin(\%itemcount, 1908 => 1)){ #Jualicn's Token
     quest::say("Take this Rune of Revenge, $name. You will need it to extract retribution in remembrance of our dear Hsagra. I thank you for your contributions to our cause. It is good to have you amongst our ranks.");
     quest::faction(430,10);   #Claws of Veeshan

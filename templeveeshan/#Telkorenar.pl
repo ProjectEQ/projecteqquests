@@ -7,9 +7,7 @@ sub EVENT_SAY {
       quest::say("The Strong seek me out, for one reason or another. It seems you have come here in peace. Perhaps you wish to prove yourself a mighty $class? I respect only might, $race.");
     }
     elsif ($text=~/wish to prove/i) {
-      quest::say("For the mighty I have four tests. The test of the tooth, the
-test of the flame, the test of the fire storm, and the test of protection. Which
-test do you wish to undertake?");
+      quest::say("For the mighty I have four tests. The test of the tooth, the test of the flame, the test of the fire storm, and the test of protection. Which test do you wish to undertake?");
     }
     elsif ($text=~/test of the tooth/i) {
       quest::say("With tooth and nail you must fight, deep into the halls of testing. Recover the white tear of power, the white symbol for purity, the silver symbol to calm ones self, and a glowing orb. If you can return these to me I will know you are a mighty fighter indeed.");
@@ -25,7 +23,7 @@ test do you wish to undertake?");
     }
   }
   else {
-     quest::say("I do not know you well enough to entrust you with such a quest, yet.");
+     quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 
@@ -54,7 +52,7 @@ sub EVENT_ITEM {
     quest::exp(200000);
   }
   else {
-    quest::say("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 

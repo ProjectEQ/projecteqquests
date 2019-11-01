@@ -2,7 +2,7 @@
 # Belt of Dwarf Slaying
 
 sub EVENT_SAY {
-  if ($faction < 5) { # Require amiable or better faction
+  if ($faction <= 3) { # Require kindly or better faction
     if ($text=~/hail/i) {
       quest::say("Greetings, $race. You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.");
     }
@@ -13,10 +13,13 @@ sub EVENT_SAY {
       quest::emote("laughs deeply. 'I speak of the foolish old dragon Yelinak and that pitiful Dain Frostreaver.'");
     }
   }
+  else {
+    quest::say("Why do I even suffer such lesser beings in my presence? Remove yourself, $race, else I'll have my guards relieve you of your head.");
+  }
 }
 
 sub EVENT_ITEM {
-  if ($faction < 3) { # Require kindly or better faction
+  if ($faction <= 3) { # Require kindly or better faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head
       quest::summonitem(25858); # Item: Belt of Dwarf Slaying
       quest::faction(436,-250); # -Yelinak

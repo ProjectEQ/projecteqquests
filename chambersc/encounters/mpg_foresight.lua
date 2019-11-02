@@ -323,9 +323,9 @@ function ae_check(e, xmin, xmax, ymin, ymax)
       eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
       eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
       if (x < xmin or x > xmax or y < ymin or y > ymax) then
+        v:Message(14,'The room explodes with chaotic energy.');
         --e.self:CastSpell(5693, v:GetID());
         v:Damage(e.self, 5000, 5693, 1);
-        v:Message(14,'The room explodes with chaotic energy.');
       else
         v:Message(14,'The room explodes with chaotic energy.');
         v:Message(14,'You escape the blast unscathed.');

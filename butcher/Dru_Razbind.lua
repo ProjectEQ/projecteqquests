@@ -27,13 +27,13 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 12281})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 12281})) then -- Item: Cape of Underfoot
 		e.self:Say("I thank you, my friend. You are truly a great paladin and noble addition to our ranks. I now can walk in Kaladim. Take this as a reward. It is the Holy Partisan of Underfoot. It is now yours. I believe it still has a couple of charges. Use it wisely as the only cleric able to recharge it was lost amid the lava filled lands of Antonica.");
 		e.other:Ding();
-		e.other:Faction(297, 25); -- Faction: Paladins of Underfoot
-		e.other:Faction(274, 25); -- Faction: Kazon Stormhammer
-		e.other:Faction(227, 25); -- Faction: Clerics of Underfoot
-		e.other:Faction(216, 25); -- Faction: Veeshan
+		e.other:Faction(297, 10); -- Faction: Paladins of Underfoot
+		e.other:Faction(274, 7); -- Faction: Kazon Stormhammer
+		e.other:Faction(227, 10); -- Faction: Clerics of Underfoot
+		e.other:Faction(216, 1); -- Faction: Veeshan
 		e.other:AddEXP(750);
 		e.other:SummonItem(5376, 5); -- Item: Holy Partisan of Underfoot
 	end

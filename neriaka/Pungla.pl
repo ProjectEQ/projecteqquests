@@ -9,7 +9,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	#:: Match three gold
-	if (plugin::takeCoin(0, 0, 3, 0) {
+	if (plugin::takeCoin(0, 0, 3, 0)) {
 		quest::say("Bottoms up!!");
 		#:: Give a 13382 - Flaming Pungla
 		quest::summonitem(13382);

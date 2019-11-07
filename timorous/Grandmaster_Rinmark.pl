@@ -17,4 +17,11 @@ sub EVENT_TIMER {
  }
 }
 
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::stoptimer("Depop1");
+	} else {
+		quest::settimer("Depop1",90);
+	}
+}
 #Submitted by: Jim Mills

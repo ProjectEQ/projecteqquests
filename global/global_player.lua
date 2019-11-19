@@ -19,6 +19,22 @@ function event_enter_zone(e)
 	end
 end
 
+function event_combine_validate(e)
+	-- e.validate_type values = { "check_zone", "check_tradeskill" }
+	-- criteria exports:
+	--	["check_zone"]			= e.zone_id
+	--	["check_tradeskill"]	= e.tradeskill_id (not active)
+	if (e.recipe_id == 10344) then
+		if (e.validate_type:find("check_zone")) then
+			if (e.zone_id ~= 289 and e.zone_id ~= 290) then
+				return 1;
+			end
+		end
+	end
+
+	return 0;
+end
+
 function event_combine_success(e)
 	if (e.recipe_id == 10904 or e.recipe_id == 10905 or e.recipe_id == 10906 or e.recipe_id == 10907) then
 		e.self:Message(1,

@@ -15,10 +15,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13030 => 1)){#Red Wine
     quest::say("Ah, yes, let me pray to our god.. Yes, Innoruuk has given me wisdom. A Scribe of Dal still exists, disguised as a barkeep in the Blind Fish. This information will not help you though, for she has sworn a [vow] of silence and will not speak of the Dal.");
-    quest::faction(370, 10);#Dreadguard Inner
-    quest::faction(334, 10);#Dreadguard Outer
+    quest::faction(370, 1);#Dreadguard Inner
+    quest::faction(334, 1);#Dreadguard Outer
     quest::faction(236, 10);#Dark Bargainers
-    quest::exp(2000);
+    quest::exp(150);
   }
 	if(($copper == 7000) || ($silver == 700) || ($gold == 70) || ($platinum == 7)){#7pp worth of coins
 		quest::say("Take this note to the Scribe of Dal, and perhaps she will break her vow.");

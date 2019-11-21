@@ -32,6 +32,7 @@ function event_trade(e)
 		e.self:Say("Very good. Very good indeed. Karana does not need the blind obedience that so many deities require. Trust your instincts, they are more often right than not. Here, take this to Blinza. Hurry, she is expecting them. You may keep the donation she gives you in return.");
 		e.other:SummonItem(13957); -- Item: Crate of Fine Carrots
 		e.other:Ding();
+		e.other:AddEXP(5);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13972})) then
 		e.self:Say("These carrots are rotten. They were rotten when I gave them to you. Why would you waste time and energy on such a fool's errand? Because I asked you to? Many, even those you trust will ask you to do things which you should not. Use the common sense that Karana has blessed you with to know which tasks can benefit our people and which could harm them. Learn this lesson well. You will need it if you plan to adventure beyond the vale. Now take these fresh carrots to Blinza and apologize for your error. You may keep the donation she gives you as payment.");
 		e.other:SummonItem(13958); -- Item: Crate of Carrots

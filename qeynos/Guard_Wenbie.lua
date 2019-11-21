@@ -28,12 +28,12 @@ function event_trade(e)
 		repeat
 			e.self:Say("Oh, thank you so much. I do get hungry on patrol. Here, please take this reward for your kindness.");
 			e.other:Ding();
-			e.other:Faction(262,5,0); -- Faction: Guards of Qeynos
-			e.other:Faction(219,5,0); -- Faction: Antonius Bayle
-			e.other:Faction(291,5,0); -- Faction: Merchants of Qeynos
-			e.other:Faction(230,-5,0); -- Faction: Corrupt Qeynos Guards
-			e.other:Faction(223,-10,0); -- Faction: Circle of Unseen Hands
-			e.other:AddEXP(10);
+			e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
+			e.other:Faction(219,1,0); -- Faction: Antonius Bayle
+			e.other:Faction(291,1,0); -- Faction: Merchants of Qeynos
+			e.other:Faction(230,-1,0); -- Faction: Corrupt Qeynos Guards
+			e.other:Faction(223,-1,0); -- Faction: Circle of Unseen Hands
+			e.other:AddEXP(75);
 			muffin = muffin - 1;
 		until muffin == 0
 	end

@@ -19,8 +19,14 @@ sub EVENT_SAY {
 		quest::say("You cannot avoid the toil of peons. We have all spent our time in the lower ranks. There are duties such as [collecting beetle eyes].");
 	}
 	if($text=~/collecting beetle eyes/i){
-		quest::say("Take this chest.  It has been fitted with a mold designed to hold ten beetle eyes.  We require them for further experiments.  Do not return until you fill the chest.");
-		quest::summonitem(17930);#Empty Box
+		#faction must be Amiable or better
+		if ($faction <= 4) {
+			quest::say("Take this chest.  It has been fitted with a mold designed to hold ten beetle eyes.  We require them for further experiments.  Do not return until you fill the chest.");
+			quest::summonitem(17930);#Empty Box
+		}
+		else {
+			quest::say("How dare you enter my presence?! In the name of the Dead I should strike you down!");
+		}
 	}
 	if($text=~/other components/i){
 		quest::say("The other components that are required are two Bull Elephant tusks.  Mammoth tusks would do as well.");#text made up
@@ -29,13 +35,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 13389 => 1)){#Box of Beetle Eyes
 		quest::say("Fantastic work, my child! We shall store these for further experiments. Take this as extra payment for a fine job. You have done so well I believe you can assist in obtaining two [other components].");
-		quest::faction(239, 5); #The Dead
-		quest::faction(303, 5); #Queen Cristanos Thex
-		quest::faction(278,-10); #King Naythox Thex
-		quest::faction(275,-10); #Keepers of Art
-		quest::faction(245,-10); #Eldritch Collective
-		quest::faction(1522,-10); #Primordial Malice
-		quest::exp(17150);#5% level 8 experience, comments on alla's suggest the reward is this much.
+		quest::faction(239, 10); #The Dead
+		quest::faction(303, 1); #Queen Cristanos Thex
+		quest::faction(278,-1); #King Naythox Thex
+		quest::faction(275,-1); #Keepers of Art
+		quest::faction(245,-1); #Eldritch Collective
+		quest::faction(1522,-20); #Primordial Malice
+		quest::exp(6400);#reparsed for accuracy (Huffin)
 		quest::givecash(0,16,0,0);#16 silver
 		quest::summonitem(quest::ChooseRandom(13021, 13022));#Neriak Necter or Rotgrub Rye
 	}

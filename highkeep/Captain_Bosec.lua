@@ -26,11 +26,11 @@ function event_trade(e)
 		repeat
 			e.self:Say("Well done! We could really use the extra help around here.");
 			e.other:Ding();
-			e.other:Faction(332,4,0); -- Faction: Highpass Guards
-			e.other:Faction(329,4,0); -- Faction: Carson McCabe
-			e.other:Faction(331,4,0); -- Faction: Merchants of Highpass
-			e.other:Faction(230,4,0); -- Faction: Corrupt Qeynos Guards
-			e.other:Faction(330,4,0); -- Faction: The Freeport Militia
+			e.other:Faction(332,2,0); -- Faction: Highpass Guards
+			e.other:Faction(329,1,0); -- Faction: Carson McCabe
+			e.other:Faction(331,1,0); -- Faction: Merchants of Highpass
+			e.other:Faction(230,1,0); -- Faction: Corrupt Qeynos Guards
+			e.other:Faction(330,1,0); -- Faction: The Freeport Militia
 			e.other:AddEXP(30);
 			e.other:GiveCash(3,3,4,0);
 			ear = ear - 1;

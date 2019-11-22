@@ -40,7 +40,7 @@ function event_trade(e)
 		e.other:Faction(311,5);			-- Steel Warriors
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13915, item2 = 13915, item3 = 13915})) then	-- Gnoll Bounty - Return 3 Gnoll Fangs
 		e.self:Say("Fine work, fine work!  The gnoll threat must be extinguished before it can ever fully grow.  Ye've done yer part to aid our cause.  Please allow me to repay ye with a few provisions and a wee bit o' coin.  Then, continue with yer good deeds.");
-		e.other:AddEXP(1500);
+		e.other:AddEXP(10750);
 		e.other:GiveCash(0,0,5,0);
 		e.other:Ding();
 		e.other:SummonItem(13005,1);	-- Reward: Iron Ration

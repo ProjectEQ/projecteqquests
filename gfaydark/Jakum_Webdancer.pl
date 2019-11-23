@@ -14,23 +14,23 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18161 => 1)) {
     quest::say("Incoming mail - very good!  Please take this gold for your troubles.");
     quest::givecash(0,0,quest::ChooseRandom(3,4,5,6),0);
-    quest::exp(50);
-    quest::faction(284,10); #league of antonican bards
-    quest::faction(281,10); #knights of truth
-    quest::faction(262,10); #guards of qeynos
-    quest::faction(304,-30); #ring of scale
-    quest::faction(285,-30); #mayong mistmoore
+    quest::exp(1550);
+    quest::faction(284,5); #league of antonican bards
+    quest::faction(281,1); #knights of truth
+    quest::faction(262,1); #guards of qeynos
+    quest::faction(304,-1); #ring of scale
+    quest::faction(285,-1); #mayong mistmoore
   }
   
   if(plugin::check_handin(\%itemcount, 18160 => 1) || plugin::check_handin(\%itemcount, 18162 => 1) || plugin::check_handin(\%itemcount, 18163 => 1)) {
     quest::say("Incoming mail - very good!  Please take this gold for your troubles.");
     quest::givecash(0,0,quest::ChooseRandom(6,7,8,9),0);
-    quest::exp(80);
-    quest::faction(284,10); #league of antonican bards
-    quest::faction(281,10); #knights of truth
-    quest::faction(262,10); #guards of qeynos
-    quest::faction(304,-30); #ring of scale
-    quest::faction(285,-30); #mayong mistmoore
+    quest::exp(1550);
+    quest::faction(284,5); #league of antonican bards
+    quest::faction(281,1); #knights of truth
+    quest::faction(262,1); #guards of qeynos
+    quest::faction(304,-1); #ring of scale
+    quest::faction(285,-1); #mayong mistmoore
   }
   plugin::return_items(\%itemcount);
 }

@@ -34,12 +34,12 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 18167 => 1)) {
     quest::say("More mail - you have done us a noteworthy service!  Please take this gold for your troubles.  If you are interested in more work, just ask me.");
     quest::givecash(0,0,quest::ChooseRandom(8,9,10,11,12),0);
-    quest::exp(100);
-    quest::faction(284,10); #league of antonican bards
-    quest::faction(281,10); #knights of truth
-    quest::faction(262,10); #guards of qeynos
-    quest::faction(304,-30); #ring of scale
-    quest::faction(285,-30); #mayong mistmoore
+    quest::exp(1550);
+    quest::faction(284,5); #league of antonican bards
+    quest::faction(281,1); #knights of truth
+    quest::faction(262,1); #guards of qeynos
+    quest::faction(304,-1); #ring of scale
+    quest::faction(285,-1); #mayong mistmoore
   }
   plugin::return_items(\%itemcount);
 }

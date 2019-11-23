@@ -19,11 +19,11 @@ function event_trade(e)
 		e.self:Say("More mail - you have done us a noteworthy service!  Please take this gold for your troubles.  If you are interested in more work, just ask me.");
 		e.other:Ding();
 		e.other:Faction(284,5,0); -- Faction: League of Antonican Bards
-		e.other:Faction(281,5,0); -- Faction: Knights of Truth
-		e.other:Faction(262,5,0); -- Faction: Guards of Qeynos
-		e.other:Faction(304,-15,0); -- Faction: Ring of Scale
-		e.other:Faction(285,-15,0); -- Faction: Mayong Mistmoore
-		e.other:AddEXP(200);
+		e.other:Faction(281,1,0); -- Faction: Knights of Truth
+		e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
+		e.other:Faction(304,-1,0); -- Faction: Ring of Scale
+		e.other:Faction(285,-1,0); -- Faction: Mayong Mistmoore
+		e.other:AddEXP(1550);
 		e.other:GiveCash(0,0,eq.ChooseRandom(8,9,10,11,12),0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

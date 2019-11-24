@@ -13,10 +13,10 @@ function event_trade(e)
 		e.self:Say("Oh I see.. Phin's always after me about something.  I mean, it's not my fault the order hasn't come in yet.  Hey, since I'm so busy right now, why don't you be a friend and take this back to Phin for me, huh?");
 		e.other:SummonItem(18922); -- Grathin's Invoice
 		e.other:Ding();
-		e.other:Faction(309,2,0); -- Silent Fist Clan
-		e.other:Faction(262,2,0); -- Guards of Qeynos
-		e.other:Faction(361,2,0); -- Ashen Order
-		e.other:AddEXP(200);
+		e.other:Faction(309,5,0); -- Silent Fist Clan
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(361,1,0); -- Ashen Order
+		e.other:AddEXP(1500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

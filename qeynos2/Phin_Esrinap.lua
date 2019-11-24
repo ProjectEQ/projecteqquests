@@ -64,10 +64,10 @@ function event_trade(e)
 		e.self:Say("Oh this is not good. Too many inoccent traders have been getting robbed lately by those vile bandits out in the Karanas. Something must be done soon. Anyway, thank you for delivering the message... you did very well, young " .. e.other:GetName() .. ". Here's a little something to quench your thirst from all that running around.");
 		e.other:SummonItem(13006); -- Water Flask
 		e.other:Ding();
-		e.other:Faction(309,1,0); -- Faction: Silent Fist Clan
+		e.other:Faction(309,5,0); -- Faction: Silent Fist Clan
 		e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
 		e.other:Faction(361,1,0); -- Faction: Ashen Order
-		e.other:AddEXP(100);
+		e.other:AddEXP(1500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

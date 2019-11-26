@@ -1,4 +1,4 @@
-# 1 is no pop , 2 is 1 repop, 3 is 2 repop
+-- 1 is no pop , 2 is 1 repop, 3 is 2 repop
 
 function event_death_complete(e)
   local which = math.random(3);

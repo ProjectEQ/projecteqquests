@@ -37,11 +37,11 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 12246})) then -- Box with Two Heads
 			e.self:Say("Good work!! We will soon catch Opal. I have started to formulate a plan to stop her. When I complete it, I shall notify you. Here. Take this small reward. I am sure killing Shintl was no trouble. She was just a halfling.");
 			e.other:Ding();
-			e.other:Faction(311,5,0); -- Steel Warriors
-			e.other:Faction(262,5,0); -- Guards of Qeynos
-			e.other:Faction(281,5,0); -- Knights of Truth
-			e.other:Faction(230,-10,0); -- Corrupt Qeynos Guards
-			e.other:Faction(330,-10,0); -- Freeport Militia
+			e.other:Faction(311,10,0); -- Steel Warriors
+			e.other:Faction(262,2,0); -- Guards of Qeynos
+			e.other:Faction(281,2,0); -- Knights of Truth
+			e.other:Faction(230,-1,0); -- Corrupt Qeynos Guards
+			e.other:Faction(330,-1,0); -- Freeport Militia
 			e.other:AddEXP(2000);
 			e.other:GiveCash(0,10,2,0);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 13814})) then -- L.S. Pouch

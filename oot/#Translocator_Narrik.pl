@@ -8,6 +8,6 @@ sub EVENT_SAY {
   }
   if ($text=~/travel to butcherblock/i){
     quest::say("Off you go!");
-    quest::selfcast(2281);
+    quest::selfcast(2280);
   }
 }

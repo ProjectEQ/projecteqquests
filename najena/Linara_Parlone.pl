@@ -16,6 +16,10 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12269 => 1)) { #tarnished bronze key
     quest::say("Oh thank you $name! I must make my escape now. Give this note to my father in Felwithe, he will reward you handsomely for your service.");
     quest::summonitem(5573); #Folded note
+    quest::faction( 275, 10); # Faction: Keepers of the Art
+    quest::faction( 246, 1); # Faction: Faydarks Champions
+    quest::faction( 279, 2); # Faction: King Tearis Thex
+    quest::faction( 239, -2); # Faction: The Dead
   }
   plugin::return_items(\%itemcount);
 }

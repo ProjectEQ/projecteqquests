@@ -7,7 +7,9 @@ local qglobals = eq.get_qglobals(e.other);
 			eq.set_global("paladin_epic","3",5,"F");
 		else
 			e.self:Say("How are you? Please excuse my stench. I fish all day and night just to feed my large family. You look like an adventurer. That must be exciting. I am but a humble fisherman. Maybe someday we shall both be rich. You by your treasure and me by my catch.");
-		end	
+		end
+	elseif(e.message:findi("steal from lenka")) then
+		e.self:Say("How dare you accuse me of being a thief!? I labor hour after hour trying to catch one fish which will bring me one copper piece to buy one slice of bread which I will split into five pieces to feed me, my sick wife and three little children, one of whom has the plague!! Poor little Repi. Now please, leave this humble little fisherman alone!");
 	end
 end
 

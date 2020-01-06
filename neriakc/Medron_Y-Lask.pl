@@ -3,7 +3,7 @@ sub EVENT_SAY
 	if($text=~/Hail/i)
 		{
 		quest::say("Welcome to the Furrier Royale. Here you will find the finest skins from a variety of Norraths lesser creatures.");
-		plugin::DoAnim("bow");
+		plugin::DoAnim("salute");
 		}
 	}
 

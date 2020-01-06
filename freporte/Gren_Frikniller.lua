@@ -4,6 +4,9 @@ function event_say(e)
 	elseif(e.message:findi("sister")) then
 		e.self:Say("Ah, my sister Falia has traveled here all the way from Rivervale. I hear that she's been staying up in North Freeport, but I haven't had a chance to find her yet. If you get some spare time, could you take this letter to her for me? Thanks, " .. e.other:GetName() .. ", you're really not so bad after all.");
 		e.other:SummonItem(18925); -- Letter to Falia
+	elseif(e.message:findi("falia")) then
+		e.self:Say("Ah, my sister Falia has traveled here all the way from Rivervale. I hear that she's been staying up in North Freeport, but I haven't had a chance to find her yet. If you get some spare time, could you take this letter to her for me? Thanks, " .. e.other:GetName() .. ", you're really not so bad after all.");
+		e.other:SummonItem(18925); -- Letter to Falia
 	elseif(e.message:findi("rivervale")) then
 		e.self:Say("Rivervale?  Well. it's far from here. thank Fizzlethorpe.  They got more wanted posters with my face on 'em than they got trees there.  I mean. 'tweren't my fault either.  Just a friendly game of cards. and this little weasel catches me with an extra ace up my sleeve.  Can you believe this kid calls ol' Grenny here a cheater. right in front of the whole bar?!!  So. you know. I gave him a quick cut. ear to ear. with me dagger...  just to shut him up. you know.  Suddenly. I'm a murderer?  For simply defending myself?! Go figure!");
 	elseif(e.message:findi("elisi")) then
@@ -14,11 +17,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 13159})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 13159})) then -- Broken Heirloom Necklace
 		e.self:Say(string.format("What's this? Oh, ol' Grandpa Frikniller's lucky necklace, huh? I'll bet this broken piece of junk won't even get me a sip of ale up at the bar. And lucky? How lucky could this thing be? Poor gramps was lonely and copperless his whole life. Bah!! Oh, well. Here's some coin for your efforts, thanks, %s.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(336,1,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(336,10,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,10,0); -- Coalition of Trade Folk
 		e.other:Faction(329,1,0); -- Carson McCabe
 		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
 		e.other:Faction(330,1,0); -- Freeport Militia
@@ -34,5 +37,3 @@ end
 
 
 -- END of FILE Zone:freporte -- Gren_Frikniller
-
-

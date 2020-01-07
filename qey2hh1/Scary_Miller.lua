@@ -1,5 +1,5 @@
 function event_spawn(e)
-  eq.set_timer("shout",45000);
+  eq.set_timer("shout",600000);
 end
 
 function event_say(e)

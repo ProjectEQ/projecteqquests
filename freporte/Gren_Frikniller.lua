@@ -1,10 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Aya. howdy there. %s.  The name's Gren Frikniller.  'Niller the Killer' The only person who can give me a run for my money is my [sister].",e.other:GetName()));
-	elseif(e.message:findi("sister")) then
-		e.self:Say("Ah, my sister Falia has traveled here all the way from Rivervale. I hear that she's been staying up in North Freeport, but I haven't had a chance to find her yet. If you get some spare time, could you take this letter to her for me? Thanks, " .. e.other:GetName() .. ", you're really not so bad after all.");
-		e.other:SummonItem(18925); -- Letter to Falia
-	elseif(e.message:findi("falia")) then
+	elseif(e.message:findi("sister") or e.message:findi("falia")) then
 		e.self:Say("Ah, my sister Falia has traveled here all the way from Rivervale. I hear that she's been staying up in North Freeport, but I haven't had a chance to find her yet. If you get some spare time, could you take this letter to her for me? Thanks, " .. e.other:GetName() .. ", you're really not so bad after all.");
 		e.other:SummonItem(18925); -- Letter to Falia
 	elseif(e.message:findi("rivervale")) then

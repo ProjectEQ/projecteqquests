@@ -52,7 +52,7 @@ sub EVENT_TIMER {
 
 	if ($timer == 2) {
 		quest::stoptimer(2);
-		quest::settimer(2,120);
+		quest::settimer(2,600);
 		quest::shout("Trick or treat! Smell my feet! Give me something good to eat!");
 	}
 }

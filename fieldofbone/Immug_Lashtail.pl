@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-	quest::settimer(2,45);
+	quest::settimer(2,600);
 }
 
 sub EVENT_SAY {

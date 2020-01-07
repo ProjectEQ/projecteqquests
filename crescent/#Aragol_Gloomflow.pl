@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-	quest::settimer(2,180);	  # 3 min between shouts
+	quest::settimer(2,600);
 }
 
 sub EVENT_TIMER {

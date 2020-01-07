@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-	quest::settimer(2,180);	  # 3 min between shouts
+	quest::settimer(2,600);
 }
 sub EVENT_SAY {
 	if(quest::istaskactive(19)){
@@ -36,7 +36,7 @@ sub EVENT_TIMER {
 
 	if ($timer == 2) {
 		quest::stoptimer(2);
-		quest::settimer(2,180);
+		quest::settimer(2,600);
 		quest::shout("Trick or treat! Smell my feet! Give me something good to eat!");
 	}
 }    

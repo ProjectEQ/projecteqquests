@@ -1,6 +1,12 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
+	if(e.message:findi("hail") and e.other:HasItem(52522) == true) then
 		e.self:Emote("sniffs the air as you approach.  His eyes go wide. 'You bring news of my favorite.  What has happened to Redfang?  Please, let me see!");
+	elseif(e.message:findi("hail")) then
+		e.self:Emote("extends his palm, holding a piece of red meat.  A nearby bat alights on his arm.  It quickly swallows the chunk of food, and flaps away.  'Do not worry, Probard.  The bats are quite tame when they grow to trust you.  I know them all by name:  Cedric, Hanna, Ellis, Maximillion, Etrias and... Oh, pardon me.  One of my [children] has gone missing as of late and his disappearance has caused me quite a bit of grief.");
+	elseif(e.message:findi("children")) then
+		e.self:Say("Yes, one of my prized pets has flown the coop, or so to speak.  It's not unusual for him to leave for extended periods of time, but he has been gone longer than usual.  He was the largest of his kind: a thing of beauty covered in vermilion-hued fur.  I fed him by hand, you see.  If you uncover his whereabouts, please let me know.  His name is [Redfang].");
+	elseif(e.message:findi("Redfang")) then
+		e.self:Emote("sighs, 'Such a beautiful creature.  When will Redfang return, I wonder?");
 	elseif(e.message:findi("mere accident")) then
 		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
 		e.self:Emote("pauses to consider your words and shakes his head. 'No, " .. e.other:GetName() .. ".  One does not find their way into the Demi-Plane of Blood by accident.  If you end up in that place, it's for a reason.  I respect your right to your own beliefs, but that's a fallacy, pure and simple.");

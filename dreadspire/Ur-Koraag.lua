@@ -12,7 +12,7 @@ function event_say(e)
 		e.self:Emote("squinches his face tightly, lost in thought, 'Maybe that be true.  You no treat your food with respect and care.  So it be that blood drinkers treat their meals with indifference.");
 	elseif(e.message:findi("angry")) then
 		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
-		e.self:Emote("squinches his face tightly, lost in thought, 'That make no sense, Liches.  Me know angry and blood drinkers no mad.  They malicious.  They selfish.  But they no angry.");
+		e.self:Emote("squinches his face tightly, lost in thought, 'That make no sense, " .. e.other:GetName() .. ".  Me know angry and blood drinkers no mad.  They malicious.  They selfish.  But they no angry.");
 	end
 end
 

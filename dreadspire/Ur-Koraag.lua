@@ -1,6 +1,8 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
+	if(e.message:findi("hail") and e.other:HasItem(52524) == true) then
 		e.self:Say("You have trophy, Shrunken Head.  That from Hatchet I see.  Means you have Ur-Koraag respect.  Strong are " .. e.other:GetName() .. ".  If share with me the trophy, Ur-Koraag share with you tale.");
+	elseif(e.message:findi("hail")) then
+		e.self:Say("Me no want to hurt strangers.  Go away, else you end up like Hatchet's other playthings.");
 	elseif(e.message:findi("forget")) then
 		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
 		e.self:Emote("squinches his face tightly, lost in thought, 'Maybe that be true.  After dozens, hundreds, thousands years, maybe the life of a mortal some distant and forgot memory.");

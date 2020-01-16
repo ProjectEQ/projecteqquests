@@ -15,10 +15,10 @@ function event_say(e)
 		e.self:Say("You see.. Joogl Honeybugger is hurt. He usually collects the [" .. eq.say_link("Honeycombs",false,"Honeycombs") .. "]. Only he knows where to get them. I need the Honeycombs to make the Honey Jum. Go and speak with Joogl. He is at his burrow outside of Rivervale. He says he cannot work. Tell him you need the Honeycombs.");
 	elseif(e.message:findi("honeycombs")) then
 		e.self:Say("If Kizzie knew that, then she would not hire Joogl Honeybugger!  Go talk to him in the Misty Thicket.");
-	elseif(e.message:findi("make honey jum")) then
+	elseif(e.message:findi("make")) then
 		e.self:Say("No, no, no!!  You will not get honey jum until you give Kizzie three honeycombs and thirty gold coins.  Honey jum is valuable.  Kizzie raised the fee!!  That is how it works.");
 	elseif(e.message:findi("honey jum")) then
-		e.self:Say("It's a secret!!  I get the honeycombs and combine them with the secret sauce and..presto.. honey jum!!  It is used by only the wisest as a component.  And you can only get it from Kizzie.  It is also good on batwing crunchies.  If you like.. Kizzie can [" .. eq.say_link("make honey jum",false,"make honey jum") .. "] for you?");
+		e.self:Say("It's a secret!!  I get the honeycombs and combine them with the secret sauce and..presto.. honey jum!!  It is used by only the wisest as a component.  And you can only get it from Kizzie.  It is also good on batwing crunchies.  If you like.. Kizzie can [" .. eq.say_link("make",false,"make") .. "] honey jum for you?");
 	end
 end
 

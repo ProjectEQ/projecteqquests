@@ -12,7 +12,7 @@ local prizes = {
 };
 
 function event_say(e)
-    if (e.message:findi(hail)) then
+    if (e.message:findi("hail")) then
         e.self:Say("Welcome! Welcome to Shandeling's, the gaming hall of chance! The game room is downstairs. If you are lucky enough to get a Gold Ticket, be sure to bring it to me for a spin on the big wheel of prizes! Make sure to tip your waitress well!");
     end
 end

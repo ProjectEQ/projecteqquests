@@ -7,9 +7,15 @@ function event_timer(e)
 		local rand = math.random(1,100);
 		if (rand <= 33) then
 			eq.get_entity_list():MessageClose(e.self, false, 100, 0, "The storm clouds pass harmlessly.");
-		elseif (rand <= 66 and rand > 33) then
-			e.self:SpellFinished(1032,e.self); --hailstorm
+			eq.depop();
+		elseif (rand > 33 and rand <= 66) then
+			e.self:CastSpell(1032,0); --hailstorm
+		elseif (rand > 66 and rand <= 100) then
+			eq.depop();
 		end
-		eq.depop();
 	end
+end
+
+function event_cast(e)
+eq.depop();
 end

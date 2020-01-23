@@ -6,6 +6,7 @@ end
 function event_hp(e)
     if(e.hp_event == 98) then
         eq.signal(207052,1);
+        e.self:Say("Sorrowsong, sing for us. We want these wretches to enjoy their stay, don't we?");
         eq.set_next_hp_event(90);
     elseif (e.hp_event == 90) then
         eq.spawn2(eq.ChooseRandom(207085,207086), 0, 0, -12, -72, 579, 1);

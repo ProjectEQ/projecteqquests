@@ -77,7 +77,7 @@ function event_timer(e)
         eq.set_timer('spawnsorrow', 5 * 1000);
     elseif (e.timer == 'spawnsorrow') then
         eq.stop_timer('spawnsorrow');
-        eq.unique_spawn(207052), 0, 0, 1, 2, 579, 247);
+        eq.unique_spawn(207052, 0, 0, 1, 2, 579, 247);
     end
 end
 

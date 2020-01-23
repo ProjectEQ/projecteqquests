@@ -1,29 +1,29 @@
 function event_say(e)
-	if (e.other:GetFaction(e.self) <= 3) then # require kindly or better
+	if (e.other:GetFaction(e.self) <= 3) then -- require kindly or better
 		if(e.message:findi("hail")) then
 		  e.self:Say("Greetings, " .. e.other:Race() .. ". You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.");
 		elseif(e.message:findi("task")) then
 		  e.self:Say("The tasks are simple, " .. e.other:Race() .. ". I wish the death of the other 'powers' of this frozen waste land. If you are able to destroy either of my mortal foes, bring me proof of your exploits and you will be known as the hero of Kael Drakkel.");
 		elseif(e.message:findi("power")) then
 		  e.self:Emote("laughs deeply. 'I speak of the foolish old dragon Yelinak and that pitiful Dain Frostreaver.");
-    end
+    		end
 	else
 		e.self:Say("Why do I even suffer such lesser beings in my presence? Remove yourself, " .. e.other:Race() .. ", else I'll have my guards relieve you of your head.");
 	end
 end
 
 function event_trade(e)
-	if (e.other:GetFaction(e.self) <= 3) then # require kindly or better
+	if (e.other:GetFaction(e.self) <= 3) then -- require kindly or better
 		local item_lib = require("items");
-		if(item_lib.check_turn_in(e.trade, {item1 = 30501})) then  # dains head
+		if(item_lib.check_turn_in(e.trade, {item1 = 30501})) then  -- dains head
 		e.other:Ding();
-		e.other:SummonItem(25858);	# belt of dwarf slaying
-		e.other:Faction(436,-250,0); 	#yelinak
-		e.other:Faction(405,-250,0); 	#dain
-		e.other:Faction(448,500,0);	#zek
-		e.other:Faction(429,500,0); 	#tormax
+		e.other:SummonItem(25858);	-- belt of dwarf slaying
+		e.other:Faction(436,-250,0); 	--yelinak
+		e.other:Faction(405,-250,0); 	--dain
+		e.other:Faction(448,500,0);	--zek
+		e.other:Faction(429,500,0); 	--tormax
 		e.other:AddEXP(250000);
-		elseif (item_lib.check_turn_in(e.trade, {item1 = 24984})) then # yelinak head
+		elseif (item_lib.check_turn_in(e.trade, {item1 = 24984})) then -- yelinak head
 		e.other:Ding();
 		e.other:SummonItem(25857);	# gauntlets of dragon slaying
 		e.other:Faction(436,-250,0); 	#yelinak

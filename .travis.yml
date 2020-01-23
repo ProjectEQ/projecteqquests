@@ -1,0 +1,13 @@
+language: generic
+
+sudo: required
+
+addons:
+  apt:
+    packages:
+      - lua5.1
+      - perl
+
+script:
+  - ./ci.sh
+

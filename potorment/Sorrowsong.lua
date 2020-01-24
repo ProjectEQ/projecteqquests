@@ -6,21 +6,21 @@ function event_signal(e)
 end
 
 function event_waypoint_arrive(e)
-	if(e.wp == 1) then
+	if(e.wp == 0) then
+		e.self:CastSpell(3011,e.self:GetID());
+	elseif(e.wp == 1) then
 		e.self:CastSpell(3011,e.self:GetID());
 	elseif(e.wp == 2) then
-		e.self:CastSpell(3011,e.self:GetID());
-	elseif(e.wp == 3) then
 		e.self:CastSpell(3011,e.self:GetID());
 	end
 end
 
 function event_waypoint_depart(e)
-	if(e.wp == 1) then
+	if(e.wp == 0) then
+		e.self:CastSpell(3011,e.self:GetID());
+	elseif(e.wp == 1) then
 		e.self:CastSpell(3011,e.self:GetID());
 	elseif(e.wp == 2) then
-		e.self:CastSpell(3011,e.self:GetID());
-	elseif(e.wp == 3) then
 		e.self:CastSpell(3011,e.self:GetID());
 	end
 end

@@ -63,8 +63,10 @@ end
 function event_combat(e)
     if (e.joined == true) then
         eq.stop_timer('reset');
+        eq.set_timer('zcheck', 6 * 1000);
     else
         eq.set_timer('reset', 300 * 1000);
+        eq.stop_timer('zcheck');
     end
 end
 
@@ -78,6 +80,11 @@ function event_timer(e)
     elseif (e.timer == 'spawnsorrow') then
         eq.stop_timer('spawnsorrow');
         eq.unique_spawn(207052, 0, 0, 1, 2, 579, 247);
+    elseif (e.timer == 'zcheck') then
+        if e.self:GetZ() < 520 then
+            e.self:Emote("dissolves into a swirling mist and moves back across the room");
+            e.self:GotoBind()
+        end
     end
 end
 

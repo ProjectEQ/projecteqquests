@@ -16,24 +16,24 @@ function event_trade(e)
 	if (e.other:GetFaction(e.self) <= 3) then -- require kindly or better
 		local item_lib = require("items");
 		if(item_lib.check_turn_in(e.trade, {item1 = 30501})) then  -- dains head
-		e.other:Ding();
-		e.other:SummonItem(25858);	-- belt of dwarf slaying
-		e.other:Faction(436,-250,0); 	--yelinak
-		e.other:Faction(405,-250,0); 	--dain
-		e.other:Faction(448,500,0);	--zek
-		e.other:Faction(429,500,0); 	--tormax
-		e.other:AddEXP(250000);
+			e.other:Ding();
+			e.other:SummonItem(25858);	-- belt of dwarf slaying
+			e.other:Faction(436,-250,0); 	--yelinak
+			e.other:Faction(405,-250,0); 	--dain
+			e.other:Faction(448,500,0);	--zek
+			e.other:Faction(429,500,0); 	--tormax
+			e.other:AddEXP(250000);
 		elseif (item_lib.check_turn_in(e.trade, {item1 = 24984})) then -- yelinak head
-		e.other:Ding();
-		e.other:SummonItem(25857);	-- gauntlets of dragon slaying
-		e.other:Faction(436,-250,0); 	--yelinak
-		e.other:Faction(405,-250,0); 	--dain
-		e.other:Faction(448,500,0);	--zek
-		e.other:Faction(429,500,0); 	--tormax
-		e.other:AddEXP(250000);
+			e.other:Ding();
+			e.other:SummonItem(25857);	-- gauntlets of dragon slaying
+			e.other:Faction(436,-250,0); 	--yelinak
+			e.other:Faction(405,-250,0); 	--dain
+			e.other:Faction(448,500,0);	--zek
+			e.other:Faction(429,500,0); 	--tormax
+			e.other:AddEXP(250000);
 		end
+		item_lib.return_items(e.self, e.other, e.trade)
 	end
-	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 function event_combat(e)

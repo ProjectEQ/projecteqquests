@@ -4,6 +4,7 @@ function event_combat(e)
     eq.set_timer('adds', 50 * 1000);
   else
     eq.set_timer('reset', 300 * 1000);
+	eq.stop_timer('adds');
   end
 end
 

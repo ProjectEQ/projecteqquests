@@ -9,6 +9,7 @@ addons:
       - perl
       - libdbi-perl
       - libswitch-perl
+      - libdbd-mysql-perl
 
 script:
   - ./ci.sh

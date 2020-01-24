@@ -7,6 +7,8 @@ addons:
     packages:
       - lua5.1
       - perl
+      - libdbi-perl
+      - libswitch-perl
 
 script:
   - ./ci.sh

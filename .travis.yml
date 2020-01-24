@@ -10,6 +10,7 @@ addons:
       - libdbi-perl
       - libswitch-perl
       - libdbd-mysql-perl
+      - libjson-perl
 
 script:
   - ./ci.sh

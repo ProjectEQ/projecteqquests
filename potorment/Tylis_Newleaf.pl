@@ -6,6 +6,7 @@ my $count = undef;
 
 sub EVENT_SPAWN {
 	$sphere = undef;
+	quest::settimer(2,1);
 }
 
 sub EVENT_SIGNAL {
@@ -65,10 +66,14 @@ sub EVENT_ITEM {
 
 
 sub EVENT_TIMER {
-	if ($timer == 1) {
-		quest::stoptimer(1);
-		$sphere = undef;
-	}
+    if ($timer == 1) {
+        quest::stoptimer(1);
+        $sphere = undef;
+    }
+    elsif ($timer == 2) {
+        quest::stoptimer(2);
+        $npc->SetAppearance(3);
+    }
 }
 
 # End of File  Zone: PoTorment  ID: 207014 -- Tylis_Newleaf

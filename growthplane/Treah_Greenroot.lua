@@ -1,7 +1,7 @@
 function event_combat(e)
 	if(e.joined) then
 		call_zone_to_assist(e.self,e.other);
-		eq.set_timer("come",1000);
+		eq.set_timer("come",300000);
 	else
 		eq.stop_timer("come");
 	end
@@ -9,7 +9,6 @@ end
 
 function event_timer(e)
 	if(e.timer == "come") then
-    eq.stop_timer("come");
 		e.self:Shout("Sylvan protectors, the glades call for your aid!");
 		call_zone_to_assist(e.self,e.other);
 	end

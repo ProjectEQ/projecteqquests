@@ -13,8 +13,8 @@ function event_say(e)
 end
 
 function event_trade(e)
+	local item_lib = require("items");
 	if (e.other:GetFaction(e.self) <= 3) then -- require kindly or better
-		local item_lib = require("items");
 		if(item_lib.check_turn_in(e.trade, {item1 = 30501})) then  -- dains head
 			e.other:Ding();
 			e.other:SummonItem(25858);	-- belt of dwarf slaying
@@ -32,8 +32,8 @@ function event_trade(e)
 			e.other:Faction(429,500,0); 	--tormax
 			e.other:AddEXP(250000);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 function event_combat(e)

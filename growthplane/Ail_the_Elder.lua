@@ -9,7 +9,6 @@ end
 
 function event_timer(e)
 	if(e.timer == "come") then
-		e.self:Shout("Invaders! Kill and crush, claw and tooth! Drive them back!");
 		call_zone_to_assist(e.self,e.other);
 	end
 end
@@ -20,7 +19,7 @@ function call_zone_to_assist(e_self,e_other)
 	-- grab the entity list
 	local entity_list = eq.get_entity_list();
 	-- move the mobs to the location that is calling to.
-	local include_npc_list = Set {127029}; -- a phase puma
+	local include_npc_list = Set {127062,127063,127048,127049,127050,1270451,127052,127058,127059,127060,127062}; -- plant mobs
 	local npc_list = entity_list:GetNPCList();
 	if (npc_list ~= nil) then
 		for npc in npc_list.entries do
@@ -45,16 +44,4 @@ function Set (list)
   local set = {}
   for _, l in ipairs(list) do set[l] = true end
   return set
-end
-
-function event_signal(e)
-	entity_list = eq.get_entity_list();
-
-	if(e.signal == 1) then
-		local mobtypeID =  entity_list:GetMobByNpcTypeID(127098);
-		local follow_mob = mobtypeID:GetID();
-		eq.follow(follow_mob);
-	elseif(e.signal == 2) then
-		eq.stop_follow();
-	end
 end

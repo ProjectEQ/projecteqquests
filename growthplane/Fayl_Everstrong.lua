@@ -9,7 +9,7 @@ end
 
 function event_timer(e)
 	if(e.timer == "come") then
-		e.self:Shout("Invaders! Kill and crush, claw and tooth! Drive them back!");
+		e.self:Shout("Entoling hordes, come to me now!");
 		call_zone_to_assist(e.self,e.other);
 	end
 end
@@ -20,7 +20,7 @@ function call_zone_to_assist(e_self,e_other)
 	-- grab the entity list
 	local entity_list = eq.get_entity_list();
 	-- move the mobs to the location that is calling to.
-	local include_npc_list = Set {127029}; -- a phase puma
+	local include_npc_list = Set {127027,127103,127026,127028,127102,127057}; -- entoiling mobs
 	local npc_list = entity_list:GetNPCList();
 	if (npc_list ~= nil) then
 		for npc in npc_list.entries do

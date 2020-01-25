@@ -9,7 +9,7 @@ function event_timer(e)
 			eq.get_entity_list():MessageClose(e.self, false, 100, 0, "The storm clouds pass harmlessly.");
 			eq.depop();
 		elseif (rand > 33 and rand <= 66) then
-			e.self:CastSpell(1032,0); --hailstorm
+			e.self:CastSpell(1032, e.self:GetTarget():GetID()); --hailstorm
 		elseif (rand > 66 and rand <= 100) then
 			eq.depop();
 		end

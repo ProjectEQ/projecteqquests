@@ -1,5 +1,6 @@
 function event_spawn(e)
 eq.set_timer('xegoevent', 6 * 1000);
+eq.enable_spawn2(45107); --muzlakh
 end
 
 

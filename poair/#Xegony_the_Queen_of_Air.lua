@@ -85,87 +85,17 @@ end
 end
 
 function help_xegony(e)
-	local arbitor = eq.get_entity_list():GetMobByNpcTypeID(215472);
-	
-	if (arbitor.valid and not arbitor:IsEngaged()) then
-		arbitor:CastToNPC():SetRunning(true);
-		arbitor:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	
-	local defender = eq.get_entity_list():GetMobByNpcTypeID(215465);
-	
-	if (defender.valid and not defender:IsEngaged()) then
-		defender:CastToNPC():SetRunning(true);
-		defender:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	
-	local knight = eq.get_entity_list():GetMobByNpcTypeID(215466);
-	
-	if (knight.valid and not knight:IsEngaged()) then
-		knight:CastToNPC():SetRunning(true);
-		knight:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-
-	local rindaler = eq.get_entity_list():GetMobByNpcTypeID(215434);
-	
-	if (rindaler.valid and not rindaler:IsEngaged()) then
-		rindaler:CastToNPC():SetRunning(true);
-		rindaler:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-
-	local phoenix = eq.get_entity_list():GetMobByNpcTypeID(215464);
-	
-	if (phoenix.valid and not phoenix:IsEngaged()) then
-		phoenix:CastToNPC():SetRunning(true);
-		phoenix:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-
-	local weruis = eq.get_entity_list():GetMobByNpcTypeID(215440);
-	
-	if (weruis.valid and not weruis:IsEngaged()) then
-		weruis:CastToNPC():SetRunning(true);
-		weruis:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-
-	local cloudwalker = eq.get_entity_list():GetMobByNpcTypeID(215463);
-	
-	if (cloudwalker.valid and not cloudwalker:IsEngaged()) then
-		cloudwalker:CastToNPC():SetRunning(true);
-		cloudwalker:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	local huridaf = eq.get_entity_list():GetMobByNpcTypeID(215437);
-	
-	if (huridaf.valid and not huridaf:IsEngaged()) then
-		huridaf:CastToNPC():SetRunning(true);
-		huridaf:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	local djinni = eq.get_entity_list():GetMobByNpcTypeID(215462);
-	
-	if (djinni.valid and not djinni:IsEngaged()) then
-		djinni:CastToNPC():SetRunning(true);
-		djinni:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	local nuquernal = eq.get_entity_list():GetMobByNpcTypeID(215444);
-	
-	if (nuquernal.valid and not nuquernal:IsEngaged()) then
-		nuquernal:CastToNPC():SetRunning(true);
-		nuquernal:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	local servant = eq.get_entity_list():GetMobByNpcTypeID(215479);
-	
-	if (servant.valid and not servant:IsEngaged()) then
-		servant:CastToNPC():SetRunning(true);
-		servant:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
-	local wesreh = eq.get_entity_list():GetMobByNpcTypeID(215445);
-	
-	if (wesreh.valid and not wesreh:IsEngaged()) then
-		wesreh:CastToNPC():SetRunning(true);
-		wesreh:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-	end
+	local npc_list =  eq.get_entity_list():GetNPCList();
+	for npc in npc_list.entries do
+		if (npc.valid and (npc:GetNPCTypeID() == 215465 or npc:GetNPCTypeID() == 215472 or npc:GetNPCTypeID() == 215466 or npc:GetNPCTypeID() == 215434 or npc:GetNPCTypeID() == 215464 or npc:GetNPCTypeID() == 215440 or npc:GetNPCTypeID() == 215479 or npc:GetNPCTypeID() == 215445 or npc:GetNPCTypeID() == 215463 or npc:GetNPCTypeID() == 215437 or npc:GetNPCTypeID() == 215462 or npc:GetNPCTypeID() == 215444)) then
+		npc:CastToNPC():SetRunning(true);
+		npc:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+		end
+	end		
 end
 
 function event_death_complete(e)
 eq.unique_spawn(215438, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); --essence of air
+eq.disable_spawn2(45107); --muzlakh
 eq.depop_with_timer(215486);
 end

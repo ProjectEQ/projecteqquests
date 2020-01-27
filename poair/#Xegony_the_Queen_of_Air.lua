@@ -150,11 +150,13 @@ function help_xegony(e)
 	if (nuquernal.valid and not nuquernal:IsEngaged()) then
 		nuquernal:CastToNPC():SetRunning(true);
 		nuquernal:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+	end
 	local servant = eq.get_entity_list():GetMobByNpcTypeID(215479);
 	
 	if (servant.valid and not servant:IsEngaged()) then
 		servant:CastToNPC():SetRunning(true);
 		servant:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+	end
 	local wesreh = eq.get_entity_list():GetMobByNpcTypeID(215445);
 	
 	if (wesreh.valid and not wesreh:IsEngaged()) then

@@ -14,6 +14,7 @@ end
 
 function event_timer(e)
 if(e.timer == 'reset') then
+e.self:SetHP(e.self:GetMaxHP());
 eq.set_next_hp_event(98);
 eq.stop_timer('reset');
 elseif(e.timer == 'agnarrhelp') then

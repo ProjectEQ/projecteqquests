@@ -15,7 +15,7 @@ sub EVENT_SAY {
 		}
 		
 		if ($text=~/send me on my path/i) {
-			 $npc->CastSpell(797, $ClientID);
+			 $npc->CastSpell(797, $userid);
 		}
 	}
 

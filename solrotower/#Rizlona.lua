@@ -16,7 +16,7 @@ end
 function event_timer(e)
 	if(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-			if (e.self:GetY() < 2276) then
+			if (e.self:GetY() < 2076) then
 				e.self:Say("If you wish to challenge me, you must do it on my terms!");
 				e.self:CastSpell(2830, e.self:GetID())
 				e.self:SetHP(e.self:GetMaxHP());

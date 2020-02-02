@@ -31,12 +31,12 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29125 => 4)) { #4 frost giant toes
     quest::say("Ahh, well done! On behalf of the Dain I thank you for making a dent in the number of our sworn enemy. Please accept this as a token of our appreciation. It is trivial, I know, but if you are as loyal as you claim to be, it will increase in power over time. It just so happens I have a [task] to further demonstrate your loyalty, $name.");
     quest::summonitem(1175); # Item: Burlap Coldain Prayer Shawl
-    quest::exp(50000);
+    quest::exp(10000);
   }
   elsif (plugin::check_handin(\%itemcount, 1175 => 1, 1174 => 1)) { #burlap shawl and preserved kromrif heads
     quest::say("Ahh, some fine specimens indeed, $name. I will have the best of these mounted at once, wish me luck in the contest! Here is the Cloth Prayer Shawl of our people. Before I forget, the council has issued yet another [chore] for you to complete.");
     quest::summonitem(1176); # Item: Cloth Coldain Prayer Shawl
-    quest::exp(100000);
+    quest::exp(20000);
   }
   elsif (plugin::check_handin(\%itemcount, 1176 => 1, 1422 => 1)) { #thoridains seal and cloth shawl
     quest::say("Well done, $name, the council will be impressed with your effort. Here is the woven prayer shawl, wear it with pride. I know there is talk of great plans for you, be sure to come back and ask me what the council has [brewing].");

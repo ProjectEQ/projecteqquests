@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::setglobal("Shar_Vahl_Cit", 1, 5, "F");
     quest::summonitem(2873); # Application for Citizenship
     quest::ding();
-    quest::exp(100);
+    quest::exp(20);
   }
   if (plugin::check_handin(\%itemcount, 2897 => 1)) {
     quest::say("Welcome back, $name! I see that your documents are in order and you are an official citizen of Shar Vahl, which is great news! Let me be the first to welcome you to the ranks of the Dar Khura! Here, take this cloak and wear it with pride.");
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
     quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
     quest::setglobal("Shar_Vahl_Cit", 7, 5, "F");
     quest::ding();
-    quest::exp(100);
+    quest::exp(450);
   }
   plugin::return_items(\%itemcount);
 }

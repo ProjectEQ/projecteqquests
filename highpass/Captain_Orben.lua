@@ -45,7 +45,7 @@ function event_trade(e)
 				e.other:Faction(331,2,0); -- Faction: Merchants of Highpass
 				e.other:Faction(230,2,0); -- Faction: Corrupt Qeynos Guards
 				e.other:Faction(330,2,0); -- Faction: The Freeport Militia
-				e.other:AddEXP(1000);
+				e.other:AddEXP(25);
 				e.other:GiveCash(random_copper,random_silver,random_gold,random_plat);
 				scalp = scalp - 1;
 			until scalp == 0

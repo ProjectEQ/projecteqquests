@@ -44,12 +44,13 @@ sub EVENT_ITEM
             }
          }
       }
-      quest::exp(10000);
+      quest::exp(6250);
    }
    
    elsif(plugin::check_handin(\%itemcount, 29315 => 1)) {#Bubonian Bile
       quest::emote("pours the bile into a small flask, there is a puff of green smoke, which turns white as it floats into the sky. 'This is good news. It appears that this is the cause for her disease, but I have neither the tools, nor the knowledge to create a cure. There is rumor of an indigo orc who may prove useful to us in this area, but he is imprisoned in the Plane of Justice. Ask him about rare diseases. He was known to have cured many, prior to his imprisonment.");#
       quest::summonitem(29302);#Purified Bubonian Bile
+      quest::exp(50000);
    }
    plugin::return_items(\%itemcount); #return items if not the ones required
 }#END of FILE Zone:potranquility ID:203432 --Iramai_Sacredsoul.pl 

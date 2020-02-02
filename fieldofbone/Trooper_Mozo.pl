@@ -22,7 +22,7 @@ sub EVENT_ITEM {
    quest::faction(444,1); # +Swifttails
    my $a = quest::ChooseRandom(1,2,3,4,5,6,7);
    quest::givecash(0,$a,0,0);
-   quest::exp(500);
+   quest::exp(250);
   } 
   plugin::return_items(\%itemcount);
 }

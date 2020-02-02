@@ -38,7 +38,7 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::faction(443,100); #Brood of Kotiz
 		quest::faction(441,25); #Legion of Cabilis		
-		quest::exp(100);
+		quest::exp(500);
 	}
 	elsif(plugin::check_handin(\%itemcount, 12874 => 1, 4265 => 1)){
 		quest::emote("presents to you a glowing skullcap.");

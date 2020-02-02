@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::faction(445,100); #Scaled Mystics
 		quest::faction(441,25); #Legion of Cabilis
-		quest::exp(100);
+		quest::exp(500);
 	}
 	elsif(plugin::check_handin(\%itemcount, 18462 => 1, 22917 => 1)){
 		quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");

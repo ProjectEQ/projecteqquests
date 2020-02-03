@@ -24,7 +24,7 @@ end
 
 function event_death_complete(e)
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(212046) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(212062) == true) then
-		eq.spawn2(212061,0,0,696,1513,-155.38,61); --The_Protector_of_Dresolik
+		eq.spawn2(212061,0,0,607,1585,-162,126); --The_Protector_of_Dresolik
 		eq.depop_with_timer(212062);
 	end
 end

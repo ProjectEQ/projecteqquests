@@ -22,7 +22,9 @@ eq.stop_timer("OOBcheck");
 end
 end
 
-
 function event_death_complete(e)
-eq.signal(212062,1); -- NPC: Dresolik_Trigger
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(212046) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(212062) == true) then
+		eq.spawn2(212061,0,0,696,1513,-155.38,61); --The_Protector_of_Dresolik
+		eq.depop_with_timer(212062);
+	end
 end

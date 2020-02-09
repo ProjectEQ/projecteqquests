@@ -7,5 +7,4 @@ end
 
 function event_enter(e)
 	e.self:CastSpell(2098,e.other:GetID(),0,1); -- Spell: Nulling Void
-	eq.depop_with_timer();
 end

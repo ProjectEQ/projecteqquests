@@ -24,8 +24,9 @@ sub EVENT_ITEM{
       quest::summonitem(5727); # 5727 We get Regal Band of Bathezid back
       quest::summonitem(5723); # 5723  Spirit Wracked Cord, final reward
       quest::exp(100000);
-      quest::faction(307,50); # Faction: Sarnak Collective
-      quest::faction(5022,-30); # Faction: Mountain Death Clan
+      quest::faction(451,3); # Faction: Brood of Di`Zok
+      quest::faction(307,3); # Faction: Sarnak Collective
+      quest::faction(259,-1); # Faction: Goblins of Mountain Death
     }
   } # end faction=1
   

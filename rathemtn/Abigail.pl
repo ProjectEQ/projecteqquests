@@ -28,9 +28,8 @@ sub EVENT_ITEM {
    if($client->GetModCharacterFactionLevel(226) > 24 && plugin::check_handin(\%itemcount,12309=>2)) { # A Dark Cauldron
       quest::say("You have earned the mold.  You will now need go and speak with Thomas about [Lord Searfire].");
       quest::summonitem(12299); # Mold of Ro Breastplate 
-      quest::faction("226","1");  # Clerics of Tunare
-      quest::faction("279","1"); # King Tearis Thex
-      quest::faction("5001","1"); # Anti-Mage
+        quest::faction(226,"20");  # Clerics of Tunare
+        quest::faction(279,"20"); # King Tearis Thex
    } elsif ($client->GetModCharacterFactionLevel(226) > 24 && plugin::check_handin(\%itemcount,12309=>1)) {
       quest::say("I instructed you to return with no less than two dark pots.");
    }

@@ -1,7 +1,7 @@
 function Mob:DirectionalAreaEffectList(angle_start, angle_end, aoe_range, min_range, m_list)
 
-	angle_start = angle_start + (self:GetHeading() * 360.0 / 256.0);
-	angle_end = angle_end + (self:GetHeading() * 360.0 / 256.0);
+	angle_start = angle_start + (self:GetHeading() * 360.0 / 512.0);
+	angle_end = angle_end + (self:GetHeading() * 360.0 / 512.0);
 	
 	while(angle_start > 360.0) do
 		angle_start = angle_start - 360.0;
@@ -24,7 +24,7 @@ function Mob:DirectionalAreaEffectList(angle_start, angle_end, aoe_range, min_ra
 			z_diff = z_diff * z_diff;
 			
 			if(((x_diff + y_diff) <= (aoe_range * aoe_range)) and (z_diff <= ((aoe_range * aoe_range) / 2))) then
-				local heading_to_target = self:CalculateHeadingToTarget(ent:GetX(), ent:GetY()) * 360.0 / 256.0;
+				local heading_to_target = self:CalculateHeadingToTarget(ent:GetX(), ent:GetY()) * 360.0 / 512.0;
 				while(heading_to_target < 0.0) do
 					heading_to_target = heading_to_target + 360.0;
 				end
@@ -51,8 +51,8 @@ end
 
 function NPC:DirectionalAreaEffectList(angle_start, angle_end, aoe_range, min_range, m_list)
 
-	angle_start = angle_start + (self:GetHeading() * 360.0 / 256.0);
-	angle_end = angle_end + (self:GetHeading() * 360.0 / 256.0);
+	angle_start = angle_start + (self:GetHeading() * 360.0 / 512.0);
+	angle_end = angle_end + (self:GetHeading() * 360.0 / 512.0);
 	
 	while(angle_start > 360.0) do
 		angle_start = angle_start - 360.0;
@@ -75,7 +75,7 @@ function NPC:DirectionalAreaEffectList(angle_start, angle_end, aoe_range, min_ra
 			z_diff = z_diff * z_diff;
 			
 			if(((x_diff + y_diff) <= (aoe_range * aoe_range)) and (z_diff <= ((aoe_range * aoe_range) / 2))) then
-				local heading_to_target = self:CalculateHeadingToTarget(ent:GetX(), ent:GetY()) * 360.0 / 256.0;
+				local heading_to_target = self:CalculateHeadingToTarget(ent:GetX(), ent:GetY()) * 360.0 / 512.0;
 				while(heading_to_target < 0.0) do
 					heading_to_target = heading_to_target + 360.0;
 				end
@@ -102,8 +102,8 @@ end
 
 function Client:DirectionalAreaEffectList(angle_start, angle_end, aoe_range, min_range, m_list)
 
-	angle_start = angle_start + (self:GetHeading() * 360.0 / 256.0);
-	angle_end = angle_end + (self:GetHeading() * 360.0 / 256.0);
+	angle_start = angle_start + (self:GetHeading() * 360.0 / 512.0);
+	angle_end = angle_end + (self:GetHeading() * 360.0 / 512.0);
 	
 	while(angle_start > 360.0) do
 		angle_start = angle_start - 360.0;
@@ -126,7 +126,7 @@ function Client:DirectionalAreaEffectList(angle_start, angle_end, aoe_range, min
 			z_diff = z_diff * z_diff;
 			
 			if(((x_diff + y_diff) <= (aoe_range * aoe_range)) and (z_diff <= ((aoe_range * aoe_range) / 2))) then
-				local heading_to_target = self:CalculateHeadingToTarget(ent:GetX(), ent:GetY()) * 360.0 / 256.0;
+				local heading_to_target = self:CalculateHeadingToTarget(ent:GetX(), ent:GetY()) * 360.0 / 512.0;
 				while(heading_to_target < 0.0) do
 					heading_to_target = heading_to_target + 360.0;
 				end

@@ -1,5 +1,4 @@
 sub EVENT_SPAWN {
-  my $talk1=undef;
   quest::say("It is worse than I thought. Not only are they prepared for an attack, but they have the Kromrif here to help them. Our steel will be tested today. Be sure not to show the troops any fear.");
   quest::pause(2);
 }
@@ -19,15 +18,16 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
-sub EVENT_WAYPOINT_DEPART {
-  if ($talk1 == undef) {
-    $talk1=$talk1+1;
+sub EVENT_WAYPOINT_ARRIVE {
+  if ($wp == 1) {
     quest::settimer(30,10);
-    quest::pause(200);
   }
-  elsif ($talk1 == 1) {
-    $talk1=$talk1+1;
+  elsif ($wp == 2) {
+    quest::pause(2);
+    quest::say("For the Glory of Thurgadin! CHARGE!!");
     quest::settimer(27,600);
+    quest::settimer(37,65);
+    quest::pause(30);
   }
 }
 
@@ -40,7 +40,7 @@ sub EVENT_TIMER {
   elsif($timer == 31) {
     quest::stoptimer(31);
     quest::say("Listen up men!");
-    quest::settimer(32,20);
+    quest::settimer(32,5);
   }
   elsif ($timer == 32) {
     quest::stoptimer(32);
@@ -50,18 +50,18 @@ sub EVENT_TIMER {
   elsif($timer == 33) {
     quest::stoptimer(33);
     quest::say("No longer will we tolerate their heathen presence in our lands! Never again will we mourn the loss of a Coldain to these pawns of the Kromrif! Our deeds here today shall make this land safe for Coldain for all time!");
-    quest::settimer(34,20);
+    quest::settimer(34,15);
   }
   elsif($timer == 34) {
     quest::stoptimer(34);
     quest::say("Today the Ry`gorr fall! Tomorrow the Kromrif!!");
     quest::say("Fall out men!!");
-    quest::settimer(35,45);
+    quest::settimer(35,20);
   }
   elsif($timer == 35) {
     quest::stoptimer(35);
     quest::say("Stay back from the initial charge, my friend. We will go directly for the chief once the troops are engaged. Follow me closely!");
-    quest::settimer(36,30);
+    quest::settimer(36,10);
   }
   elsif($timer == 36) {
     quest::stoptimer(36);

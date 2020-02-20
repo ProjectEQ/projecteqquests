@@ -39,7 +39,7 @@ sub EVENT_ITEM {
 		quest::setglobal("Shar_Vahl_Cit",1,5,"F");
 		quest::summonitem(2873); # Application for Citizenship
 		quest::ding();
-		quest::exp(100);
+		quest::exp(20);
 	}
 	elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
 		quest::say("This item. by itself. means nothing to me.");

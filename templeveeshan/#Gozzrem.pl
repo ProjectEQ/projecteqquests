@@ -2,7 +2,7 @@
 #
 
 sub EVENT_SAY {
-  if ($faction == 1) { #req ally CoV
+  if ($faction <= 3) { #req kindly CoV
     if ($text=~/hail/i) {
       quest::say("Greetings, $name. If you seek wisdom or the arcane I have tasks in the halls of testing you may complete to gain what you seek.");
     }  
@@ -23,12 +23,12 @@ sub EVENT_SAY {
     }
   }
   else {
-     quest::say("I do not know you well enough to entrust you with such a quest, yet.");
+     quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 
 sub EVENT_ITEM {
-  if ($faction == 1) {
+  if ($faction <= 3) {
     if (plugin::check_handin(\%itemcount, 31266 => 1, 31255 => 1, 31252 => 1, 31254 => 1)) { # first test of the arcane
       quest::summonitem(31466); # Item: White Dragon Statue
     }
@@ -45,14 +45,14 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
       return 1;
     }
-    quest::emote("looks pleased as she hands you the reward.");
+    quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
     quest::faction(430,+75); # claws of veeshan
-    quest::faction(436,+75); # yelinak
-    quest::faction(448,-100); # zek
+    quest::faction(436,+18); # yelinak
+    quest::faction(448,-37); # zek
     quest::exp(200000);
   }
   else {
-    quest::say("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 

@@ -4,6 +4,14 @@ sub EVENT_SPAWN {
   quest::settimer("Depop2",90);
 }
 
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::stoptimer("Depop2");
+	} else {
+		quest::settimer("Depop2",90);
+	}
+}
+
 sub EVENT_TIMER {
  if ($timer eq "Depop2") {
   my $x = $npc->GetX();

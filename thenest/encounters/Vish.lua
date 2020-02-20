@@ -2,28 +2,6 @@
 
 ##Written by Drogerin##
 
-Notes by ##Huffin##
-
-4day 20hr lockout on win
-- Eggs work as follows: 3 min after agro you get emote, 105 seconds later the egg spawns and emotes, 60 seconds later the egg explodes into drakelings if egg not killed. This is when the whole egg timer resets: 3 minutes after the egg "kill/not kill" timer is met, 105s,60s, rinse repeat until hes dead. Eggs have negative 99% dmg mod on every ability except blunt. Blunt weapons have considerable dmg mod (4 times damage mod)
--Wipe mechanics: everything resets/despawns
--Lifedrain Shadow spawns when any "Incorporeal Shadow" dies
--a spirit wraith spawns when any person dies to anything
--Incorporeal shadow : 4 total are allowed up at any time . They start to spawn starting at 75 . Spawn once per minute ? spawn lifedrain shadow when killed
--Corrupted Drake: (4 )spawn (50%) these respawn in 2.5 mins If killed
--Cloud of concentrated mana: 1 spawns (@ 75,50,25%, con indiff)cast <Spiritual Wake> when killed
--Vishimtar: 
-<Vishimtar's Aura>
-<Withering Corruption>
-<Vishimtar's Shadow>
---to bring him below 25% you need to have a person marked for death + say a phrase to a mournful spirit. Each person to be marked then says the phrase before being DTed can lower his HP by 1 %. DT is called <Creeping Doom> -mournful spirit depops when the phrase "shoulder my burden" is said to them
----the mournful spirits seem to path around north/west behind the rock, seemed like 4 were up at any time, respawn time about 10 seconds. Cannot agro or kill the spirits
-
-
-180000 warn
-105000 spawn
-60000-hatch
-
 --]]
 
 local corrupted_spawn=true;
@@ -290,6 +268,7 @@ function Vish_Timer(e)
 		eq.depop_all(343096); --spirit wraith
 		eq.depop_all(343159); --incorporeal
 		eq.depop_all(343162); -- cloud
+		eq.depop_all(343160); -- lifedrain shadows
 		corrupted_spawn=true;
 		corrupted_spawnone=true; -- reset the drake variables so they set their abilities.
 		corrupted_spawntwo=true;

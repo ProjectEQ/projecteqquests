@@ -34,6 +34,7 @@ sub EVENT_ITEM
 			quest::say("Yes, Brugga work with this.", 19);
 			quest::emote("Brugga chants and makes strange gestures while mixing the objects in his mortar and pestle.");
 			quest::say("Ok, Brugga finished now. You have your cure, give cure with the bile and that will heal. You go now, Brugga done talking.", 19);
+			quest::exp(100000);
 			$client->SummonItem(29295); # Item: Vial of Opaque Fluid
 		}
 	}

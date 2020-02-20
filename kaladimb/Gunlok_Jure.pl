@@ -23,8 +23,8 @@ sub EVENT_ITEM {
     quest::givecash(7,10,0,0); # Cash
     quest::faction(227,10);             # Clerics of Underfoot
     quest::faction(274,10);            # Kazon Stormhammer
-    quest::faction(293,10);            # Miners Guild 249
-    quest::exp(2000);                  # Experience
+    quest::faction(293,7);            # Miners Guild 249
+    quest::exp(250);                  # Experience
   }
   elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 13332 => 1))) { # Dwarf Bones
     quest::say("Many thanks, my friend. Now my brother can rest in peace. Please take this spell. May it serve you well.");

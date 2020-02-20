@@ -118,7 +118,8 @@ sub EVENT_AGGRO {
 sub KICK_ALL_PLAYERS {
   #zone all players back to barindu
   my @pc_list = $entity_list->GetClientList();
-  foreach $pc ($entity_list->GetClientList()) {
+  foreach $pc (@pc_list) {
     $pc->MovePC(283, -1225, 501, -121, 348); # Zone: poearthb
   }
+  @pc_list = ()
 }

@@ -28,7 +28,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	if ($x == $takeover_x)
 		{
 		quest::signalwith(166257, 6, 0); # NPC: War_Trigger
-		$npc->SaveGuardSpot();
+		$npc->SaveGuardSpot($x, $y, $z, $h);
 		quest::stop();
 		}
 	}

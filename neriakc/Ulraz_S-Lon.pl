@@ -39,12 +39,12 @@ if (plugin::check_handin(\%itemcount, 19570 => 4)) {
    quest::emote("fashions the petrified femurs into a shield frame. This will be the frame of your new shield. Return now again to the Nektulos Forest, in the gray ashen region of the forest near the Lavastorm mountains the basilisks often come down from the fiery peaks to lay their eggs in the ashen soil. Basilisk hatchlings can be found there as they make their way towards the warmer interior of the mountains. Hunt these basilisk hatchlings and gather two Basilisk Hatchling Skins. Once this is done take the skins and frame to Medron Y'Lask at the Furrier Royale.");
    quest::summonitem(19571); # Item: Petrified Femur Shield Frame
    quest::exp(1000);
-   quest::faction(239,10); # Faction: The Dead
-   quest::faction(303,10); # Faction: Queen Cristanos Thex
-   quest::faction(278,-20); # Faction: King Naythox Thex
-   quest::faction(275,-20); # Faction: Keepers of the Art
-   quest::faction(245,-20); # Faction: Eldritch Collective
-   quest::faction(1522,-20); # Faction: Primordial Malice
+   quest::faction(239,15); # Faction: The Dead
+   quest::faction(303,2); # Faction: Queen Cristanos Thex
+   quest::faction(278,-2); # Faction: King Naythox Thex
+   quest::faction(275,-2); # Faction: Keepers of the Art
+   quest::faction(245,-2); # Faction: Eldritch Collective
+   quest::faction(1522,-30); # Faction: Primordial Malice
 }
  if ($item1=="18757"){quest::say("Thanks.");
 	quest::summonitem("13586");

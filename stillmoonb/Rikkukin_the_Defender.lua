@@ -1,26 +1,5 @@
 --[[  ##Rikkukin_the_Defender## -- // written by ##Drogerin##
 
-Rikky:
-
-
-<crystal chill fog> always -DB
-<sheen of platinum scales> always-DB
-4 emotes the entire fight deciphering different AEs, he will emote, people have 12 seconds to move then he casts, then 15 seconds later he emotes again, rinse repeat whole fight.
-"twirls his tail"
-<crystal chill vapors>
-<tail sweep>
-"pulls his right arm back" also "pulls his left arm back"
-<crystal chill vapors>
-<clawed swipe>
-"rears back and fills his lungs"
-<crystal chill vapors>
-<rikkukin's cone of cold>
-At 65% and 30% he enters "Frozen Aura" mode. If brought to 60% he heals back to 65%, if brought to 25% he heals back to 30%. This mode lasts 30 seconds each time?
-At 59% he starts casting <Blinding Light> for the rest of the fight on those that are facing him. You do not get blinded if you look away. 
-People have 12 seconds to react once it emotes "shiny scales" and then it emotes again 40 seconds after it fires rinse repeat.
-6555 should be left
-6554 should be right
-
 --]]
 
 local hp = true;

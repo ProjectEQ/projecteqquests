@@ -44,11 +44,11 @@ function event_trade(e)
 				local random_plat = eq.ChooseRandom(0,1);
 				e.self:Say("Great work! Maybe you can help us out again sometime?");
 				e.other:Ding();
-				e.other:Faction(332,5,0); -- Faction: Highpass Guards
-				e.other:Faction(329,2,0); -- Faction: Carson McCabe
-				e.other:Faction(331,2,0); -- Faction: Merchants of Highpass
-				e.other:Faction(230,2,0); -- Faction: Corrupt Qeynos Guards
-				e.other:Faction(330,2,0); -- Faction: The Freeport Militia
+				e.other:Faction(332,2,0); -- Faction: Highpass Guards
+				e.other:Faction(329,1,0); -- Faction: Carson McCabe
+				e.other:Faction(331,1,0); -- Faction: Merchants of Highpass
+				e.other:Faction(230,1,0); -- Faction: Corrupt Qeynos Guards
+				e.other:Faction(330,1,0); -- Faction: The Freeport Militia
 				e.other:AddEXP(30);
 				e.other:GiveCash(random_copper,random_silver,random_gold,random_plat);
 				scalp = scalp - 1;

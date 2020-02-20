@@ -46,7 +46,7 @@ sub EVENT_ITEM {
     quest::summonitem(2873); #Application for Citizenship
 		quest::setglobal("Shar_Vahl_Cit",1,5,"F");
 		quest::ding();
-		quest::exp(100);
+		quest::exp(20);
   }
   elsif (plugin::check_handin(\%itemcount, 29828 => 1)) { #Shadowscream Steel Boots
     quest::say("So you're Barkhem's newest student are you? I may not have taken your word for it, but craftsmanship this fine could only be from a student of our Master Smith. Take this and fill it with Shadowscream steel boots. I need 6 pairs to outfit some of my hunters. When you've finished, return the box to me.");
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
     quest::summonitem(2878); #Initiate's Cloak of Shar Vahl
 		quest::setglobal("Shar_Vahl_Cit",7,5,"F");
 		quest::ding();
-		quest::exp(100);
+		quest::exp(450);
   }
   elsif ($client->GetGlobal("Fatestealer") ==1 and plugin::check_handin(\%itemcount, 9491 => 1)) { #King's Feast
     quest::say("Mmm, that is a delicious aroma. The King will most definitely be pleased, $name. And now it seems I owe you a favor. He pauses momentarily as if gathering his thoughts then speaks. 'Let me ask you, what is the greatest advantage of a Vah Shir's claws?' He retracts a single dark claw and holds it forward, studying it with his amber eyes. The design is simple but beautifully effective. Elegant, sharp, and dangerous. Most importantly, I want you to notice this: our enemies feel the claw's pierce twice, both when penetrated and when the implement of pain is ripped out. That is key to creating the perfect blade. I can describe the topic more fully in writing. There you are, I've scribbled some notes in your journal.");

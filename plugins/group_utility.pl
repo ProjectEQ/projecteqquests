@@ -15,6 +15,7 @@ sub GetGroupMembers{
 			{
 				if($cur->IsClient())
 				{
+					# this is cast-safe..but, does not account for mercenaries/bots (divergent behavior from system code)
 					$cur = $cur->CastToClient();
 					push(@group_array, $cur);
 				}

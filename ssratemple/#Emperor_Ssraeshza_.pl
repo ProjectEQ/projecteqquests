@@ -75,7 +75,9 @@ sub EVENT_SIGNAL {
   my $new_guard = $entity_list->GetNPCByNPCTypeID($signal);
   my $hate_target = $npc->GetHateTop();
 
-  $new_guard->AddToHateList($hate_target->CastToClient(), 1);
+  # no need to cast hate target to client since argument is mob-type already (npc->client is bad)
+  # $new_guard->AddToHateList($hate_target->CastToClient(), 1);
+  $new_guard->AddToHateList($hate_target, 1);
 }
 
 # EOF zone: ssratemple ID: 162227 NPC: #Emperor_Ssraeshza_ (Real)

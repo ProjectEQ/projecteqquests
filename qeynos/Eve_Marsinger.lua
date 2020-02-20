@@ -19,12 +19,12 @@ function event_trade(e)
 		e.self:Say("Incoming mail - very good! Please take this gold for your troubles.");
 		local gp = math.random(15);
 		e.other:Ding();
-		e.other:Faction(284,10,0); -- Faction: League of Antonican Bards
-		e.other:Faction(281,10,0); -- Faction: Knights of Truth
-		e.other:Faction(262,10,0); -- Faction: Guards of Qeynos
-		e.other:Faction(304,-30,0); -- Faction: Ring of Scale
-		e.other:Faction(285,-30,0); -- Faction: Mayong Mistmoore
-		e.other:AddEXP(150);
+		e.other:Faction(284,5,0); -- Faction: League of Antonican Bards
+		e.other:Faction(281,1,0); -- Faction: Knights of Truth
+		e.other:Faction(262,1,0); -- Faction: Guards of Qeynos
+		e.other:Faction(304,-1,0); -- Faction: Ring of Scale
+		e.other:Faction(285,-1,0); -- Faction: Mayong Mistmoore
+		e.other:AddEXP(1550);
 		e.other:GiveCash(0,0,gp,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

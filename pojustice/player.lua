@@ -49,14 +49,17 @@ end
 function MoveGroup(src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h)
 	if (player_list ~= nil) then
 		for i = 0, player_list_count - 1, 1 do
-			local client_v = player_list:GetMember(i):CastToClient();
-			if (client_v.valid) then
-				-- so we need to check if their group numbers match in raid need to check the clicker if they are in no group in a raid
-				if (raid_group == nil or client_v:GetID() == clicker:GetID() or (raid_group ~= -1 and player_list:GetGroupNumber(i) == raid_group)) then
-					-- check the distance and port them up if close enough
-					if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
-						-- port the player up
-						client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+			local mob_v = player_list:GetMember(i);
+			if (mob_v ~= nil and mob_v.valid and mob_v:IsClient()) then
+				local client_v = mob_v:CastToClient();
+				if (client_v.valid) then
+					-- so we need to check if their group numbers match in raid need to check the clicker if they are in no group in a raid
+					if (raid_group == nil or client_v:GetID() == clicker:GetID() or (raid_group ~= -1 and player_list:GetGroupNumber(i) == raid_group)) then
+						-- check the distance and port them up if close enough
+						if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
+							-- port the player up
+							client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+						end
 					end
 				end
 			end

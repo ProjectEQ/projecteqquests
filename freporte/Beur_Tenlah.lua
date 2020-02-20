@@ -17,7 +17,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13036})) then -- Dwarven Ale
 		e.other:Ding();
 		e.self:Say("Well, well, well.. It's about time. Whatta ya got, boots fulla stones? Or maybe yer just part turtle? Bah, anyways, thanks for the ale. Maybe I'll buy you one sometime, eh? Bwahaha!");
-		e.other:AddEXP(100);
+		e.other:AddEXP(15);
 		eq.signal(10107,1); -- Signal to Harkin Duskfoot
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

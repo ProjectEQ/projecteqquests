@@ -31,14 +31,14 @@ sub EVENT_ITEM {
 		quest::summonitem(2873); # Application for Citizenship
 		quest::setglobal("Shar_Vahl_Cit",1,5,"F");
 		quest::ding();
-		quest::exp(100);
+		quest::exp(20);
 	} 
 	elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
 		quest::say("Congratulations $name! Welcome to your new life as an official citizen of Shar Vahl. This cloak symbolizes your commitment to serving this people through continuous self-improvement. For now, you must strenghten yourself until you become worthy to train in the way of the Khala Dun. Show your acylia slate to Guard Hebijeb. He will direct you further. May the spirits of our ancestors be your guide.");
 		quest::setglobal("Shar_Vahl_Cit",7,5,"F");
 		quest::summonitem(2878); # Item: Initiate's Cloak of Shar Vahl
 		quest::ding();
-		quest::exp(100);
+		quest::exp(450);
 	}
 	else {
 		#do all other handins first with plugin, then let it do disciplines

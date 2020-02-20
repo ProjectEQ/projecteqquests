@@ -122,7 +122,7 @@ end
 function PRT_Timer(e)
   if (e.timer == "Delusional") then
     --Delusional Vision single target DD/Drunk whole fight
-    e.self:SpellFinished(889, e.self:GetHateTop()) --CastToClient?
+    e.self:SpellFinished(889, e.self:GetHateTop()) --CastToClient? --no need unless using client-based methods
   elseif (e.timer == "VenomAE") then
     --Ikaav's Venom 751
     e.self:CastSpell(751,e.self:GetID())

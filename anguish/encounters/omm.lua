@@ -2,7 +2,7 @@
 Overlord_Mata_Muram (317109)
 Coerced_Lieutenant  (317114)
 Frenzied_Lasher (317117)
-a_languished_convert (317110)
+a_languished_convert (317122)  new NPC 317122 to prevent double scaling #drogerin
 
 #Vyishe (317118)
 #Anishy (317119)
@@ -118,8 +118,8 @@ function OMM_HP(e)
 	elseif (e.hp_event == 50) then
 		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
-		eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
+		eq.spawn2(317122,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(317122,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
 		e.self:CameraEffect(2000,3);
 		e.self:SetOOCRegen(0);
@@ -236,7 +236,7 @@ function OMM_Timer(e)
 		eq.depop_all(317119);
 		eq.depop_all(317120);
 		eq.depop_all(317121);
-		eq.depop_all(317110);
+		eq.depop_all(317122);
 		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
 		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		local now_clients = eq.get_entity_list():GetClientList();
@@ -266,7 +266,7 @@ function OMM_Timer(e)
 		reenable_summon = false;
 		eq.stop_timer("banish_phase2");
 		eq.stop_timer("enable_summon");
-		eq.depop_all(317110);
+		eq.depop_all(317122);
 		eq.depop_all(317114);
 		eq.depop_all(317117);
 		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
@@ -298,7 +298,7 @@ function OMM_Death(e)
 	eq.zone_emote(13,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
 	e.self:CameraEffect(1000,8);	
 	eq.signal(317116 , 317109); -- NPC: zone_status
-	eq.depop_all(317110);
+	eq.depop_all(317122);
 	eq.depop_all(317114);
 	eq.depop_all(317117);
 end
@@ -374,8 +374,8 @@ function event_encounter_load(e)
 	eq.register_npc_event('omm', Event.signal,			317109, OMM_Signal);	    
 	eq.register_npc_event('omm', Event.death_complete,	317114, Coerced_Death);
 	eq.register_npc_event('omm', Event.timer,			317114, Coerced_Timer);	
-	eq.register_npc_event('omm', Event.spawn, 			317110, Convert_Spawn);
-	eq.register_npc_event('omm', Event.timer, 			317110, Convert_Timer); 	
+	eq.register_npc_event('omm', Event.spawn, 			317122, Convert_Spawn);
+	eq.register_npc_event('omm', Event.timer, 			317122, Convert_Timer); 	
 	eq.register_npc_event('omm', Event.signal,			317118, Riftseeker_Signal);
 	eq.register_npc_event('omm', Event.signal,			317119, Riftseeker_Signal);	
 	eq.register_npc_event('omm', Event.timer,			317119, Riftseeker_Timer);	

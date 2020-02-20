@@ -10,7 +10,7 @@ function event_say(e)
 			e.self:SetSpecialAbility(35, 0);
 			e.self:AddToHateList(e.other,1);
 		else 
-			e.self:Emote("moans sadly but doesn''t seem to notice you.");
+			e.self:Emote("moans sadly but doesn't seem to notice you.");
 		end
 	end
 end

@@ -1,5 +1,6 @@
 sub EVENT_SPAWN { 
-   quest::settimer("avatar",3400); 
+   quest::settimer("avatar",3400);
+   quest::ze(0,"The last of the council collapses, devoid of life. Twelve distinct voices chant, 'Time comes and time passes, for the stone is forever. We call upon our collective power to defend our stronghold!' When the chanting ceases, a deep throated primal scream echoes across Ragrax as the power of twelve is joined as one. The Avatar of Earth has been summoned.");
 } 
 
 sub EVENT_TIMER { 

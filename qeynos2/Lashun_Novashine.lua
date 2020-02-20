@@ -36,6 +36,7 @@ function event_trade(e)
 		repeat
 			if(two_gold == 1) then
 				e.self:Say("Thank you for the donation to the Temple of Life. May Rodcet Nife cleanse your body of all ills.");
+				e.other:AddEXP(1);
 				two_gold = 0;
 			else
 				e.self:Say("Very well, young one. May the light of the Prime Healer wash away your scars.");
@@ -45,7 +46,7 @@ function event_trade(e)
 			e.other:Faction(262,2,0); -- Faction: Guards of Qeynos
 			e.other:Faction(221,-2,0); -- Faction: Bloodsabers
 			e.other:Faction(219,2,0); -- Faction: Antonius Bayle
-			e.other:AddEXP(10);
+			e.other:AddEXP(12);
 			number_of_bone_chip = number_of_bone_chip - 1;
 		until number_of_bone_chip == 0
 	end

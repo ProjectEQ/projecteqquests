@@ -22,6 +22,8 @@ sub EVENT_SIGNAL {
 		quest::signalwith(201420, 1, 5); # NPC: #a_fiery_aggressor
 		quest::signalwith(201447, 1, 5); # NPC: A_Burning_Nemesis
 		quest::signalwith(201446, 1, 5); # NPC: Punisher_of_Flame
+		quest::signalwith(201418, 1, 5); # NPC: spirit of flame
+		quest::signalwith(201426, 1, 5); # NPC: fiend of flame
 		quest::signalwith(201434, 0, 5); # NPC: The_Tribunal Flame Trial
 		quest::depop();
 	}
@@ -89,14 +91,17 @@ sub SpawnFlameMobs {
 	for ($count = 0; $count <= 3; $count++) {
 		my $test = rand(99);
 		
-		if ($test < 69) {
-			#Fiery Agressor, common mob
+		if ($test < 10) {
+			#Fiery Agressor, rare mob
 			quest::spawn2(201420, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: #a_fiery_aggressor
 		}
 		
-		else {
-			#Burning nemesis, less common
+		elsif (($test >= 10) && ($test < 20)) {
+			#Burning nemesis, rare
 			quest::spawn2(201447, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: A_Burning_Nemesis
+		}
+		elsif ($test >= 20) {
+			quest::spawn2(quest::ChooseRandom(201426,201418), 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # spirit of flame / fiend of flame common mobs
 		}
 	}
 }

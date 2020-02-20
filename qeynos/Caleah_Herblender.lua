@@ -20,7 +20,7 @@ function event_trade(e)
     e.other:Faction(262,5,0); -- Faction: Guards of Qeynos
     e.other:Faction(221,-10,0); -- Faction: Bloodsabers
     e.other:Faction(296,-10,0); -- Faction: Opal Darkbriar
-    e.other:AddEXP(200);
+    e.other:AddEXP(300);
 	e.other:GiveCash(8, 0, 0, 0);
   end
   item_lib.return_items(e.self, e.other, e.trade)

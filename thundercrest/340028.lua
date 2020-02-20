@@ -1,38 +1,6 @@
 --[[
 
 ##Yarlir Script by Drogerin##
-
-Huffers notes:
-
--Rotates between 4 forms every 30 seconds when door locks at 96%(cycle is RNG, can choose the same form multiple times in a row)
--Door locks at 96%(also unlocks at 96% if you wipe)
--4d20hr lockout on win
--<Wind Shear> proc on all forms
--9 fangs/1 eye on corpse + chest with 3 loots
-
--YarLir the Living Storm --<YarLir's Cone of Storms> 15s
---<Icicle Blizzard> 25s
-
--YarLir the Hurricanes Eye
---spawns "an unstable storm" every 20 sec and they are non kos and run to a statue to explode immediately after spawning cast <Forcequake> if they reach statue (takes them 6 seconds from spawn to explode time if they arent touched, then they despawn)
---<Icicle Blizzard> 25s
-
--Yar`Lir the Mistress of Winds
---<Wing Buffet> 20s
---<Icicle Blizzard> 25s
-
--Yar`Lir the Matriarch
---spawns "a blizzard seeker" every 20 sec. These despawn after 60 seconds
---<Icicle Blizzard> 25s
-
-
-
-#loc -3480.22,3146.58,302.91,420.0 (Porting purposes)
-
-
-
-
-
 --]]
 
 function event_combat(e)

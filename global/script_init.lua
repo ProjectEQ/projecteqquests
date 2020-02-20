@@ -7,3 +7,4 @@ require("entity_list_ext");
 require("general_ext");
 require("bit");
 require("directional");
+require("constants/instance_versions");

@@ -31,23 +31,23 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29125 => 4)) { #4 frost giant toes
     quest::say("Ahh, well done! On behalf of the Dain I thank you for making a dent in the number of our sworn enemy. Please accept this as a token of our appreciation. It is trivial, I know, but if you are as loyal as you claim to be, it will increase in power over time. It just so happens I have a [task] to further demonstrate your loyalty, $name.");
     quest::summonitem(1175); # Item: Burlap Coldain Prayer Shawl
-    quest::exp(50000);
+    quest::exp(10000);
   }
   elsif (plugin::check_handin(\%itemcount, 1175 => 1, 1174 => 1)) { #burlap shawl and preserved kromrif heads
     quest::say("Ahh, some fine specimens indeed, $name. I will have the best of these mounted at once, wish me luck in the contest! Here is the Cloth Prayer Shawl of our people. Before I forget, the council has issued yet another [chore] for you to complete.");
     quest::summonitem(1176); # Item: Cloth Coldain Prayer Shawl
-    quest::exp(100000);
+    quest::exp(20000);
   }
   elsif (plugin::check_handin(\%itemcount, 1176 => 1, 1422 => 1)) { #thoridains seal and cloth shawl
     quest::say("Well done, $name, the council will be impressed with your effort. Here is the woven prayer shawl, wear it with pride. I know there is talk of great plans for you, be sure to come back and ask me what the council has [brewing].");
     quest::summonitem(1177); # Item: Woven Coldain Prayer Shawl
     quest::summonitem(1422); # Item: Seal of Thoridain
-    quest::exp(200000);
+    quest::exp(50000);
   }
   elsif (plugin::check_handin(\%itemcount, 1560 => 1, 1177 => 1)) { #tanik's note and woven shawl
     quest::say("Words cannot express our gratitude for your deeds outlander, you have saved a hero of our people from certain death. Please accept this, the Fur-lined shawl, as a token of our sincere appreciation. You are indeed among the most highly regarded ${race}s to set foot in Thurgadin. The next time we meet be sure to ask me how to further advance your reputation with the coldain.");
     quest::summonitem(1178); # Item: Fur-Lined Coldain Prayer Shawl
-    quest::exp(300000);
+    quest::exp(100000);
   }
     elsif (plugin::check_handin(\%itemcount, 1199 => 1)) {
     quest::say("Incredible! Never before has an outlander been skilled and determined enough to craft our sacred rune. You are now worthy of the Dain's most perilous task. You should seek an audience with the Dain immediately. Show him your Runed Prayer Shawl; he will give you the task that has been prepared for you. If the Dain is away show your Shawl to Chamberlain Krystorf and he will call for him.");

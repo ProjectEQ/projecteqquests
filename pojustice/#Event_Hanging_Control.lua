@@ -175,8 +175,8 @@ function spawn_spirit(spirit_id)
 end
 
 function spawn_mobs()
-	-- Spawn 2 of the 4 mobs randomly at the two spawn points.
-	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 440, -1093, 73, 248 );
+	-- Spawn 2 of the 4 mobs randomly at the two spawn points. add rare chance to 1 spawn
+	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459, 201503),  0, 0, 440, -1093, 73, 248 );
 	eq.spawn2( eq.ChooseRandom( 201456, 201457, 201458, 201459),  0, 0, 536, -1093, 73, 248 );
 end
 
@@ -213,13 +213,17 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 		local trial_count = trial_group:GroupCount();
 
 		for i = 0, trial_count - 1, 1 do
-			local client_v = trial_group:GetMember(i):CastToClient();
+			local mob_v = trial_group:GetMember(i);
+			
+			if (mob_v ~= nil and mob_v.valid and mob_v:IsClient()) then
+				local client_v = mob_v:CastToClient();
 
-			if (client_v.valid) then
-				-- check the distance and port them up if close enough
-				if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
-					-- port the player up
-					client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+				if (client_v.valid) then
+					-- check the distance and port them up if close enough
+					if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
+						-- port the player up
+						client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+					end
 				end
 			end
 		end

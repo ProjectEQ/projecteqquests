@@ -30,12 +30,15 @@ function event_click_door(e)
 			if (player_list ~= nil) then
 				-- cycle through raid and check lockouts
 				for i = 0, player_list_count - 1, 1 do
-					local client_v = player_list:GetMember(i):CastToClient();
-					if (client_v.valid) then
-						qglobals = eq.get_qglobals(client_v);
-						if (e.self:Admin() <= 80 and qglobals["potimeb_lockout"] ~= nil) then
-							e.self:Message(13, client_v:GetCleanName().." has a lockout");
-							HasLockout = HasLockout + 1;
+					local mob_v = player_list:GetMember(i);
+					if (mob_v.valid and mob_v:IsClient()) then
+						local client_v = mob_v:CastToClient();
+						if (client_v.valid) then
+							qglobals = eq.get_qglobals(client_v);
+							if (e.self:Admin() <= 80 and qglobals["potimeb_lockout"] ~= nil) then
+								e.self:Message(13, client_v:GetCleanName().." has a lockout");
+								HasLockout = HasLockout + 1;
+							end
 						end
 					end
 				end

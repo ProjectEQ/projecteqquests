@@ -16,8 +16,8 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13863})) then -- A Locked Book
 		e.self:Say(string.format("You have done the world of magic a great justice, %s.",e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(220,1,0); -- Arcane Scientists
-		e.other:Faction(281,1,0); -- Knights of Truth
+		e.other:Faction(220,10,0); -- Arcane Scientists
+		e.other:Faction(281,2,0); -- Knights of Truth
 		e.other:Faction(296,-1,0); -- Opal Dark Briar
 		e.other:Faction(330,-1,0); -- Freeport Militia
 		e.other:AddEXP(500);

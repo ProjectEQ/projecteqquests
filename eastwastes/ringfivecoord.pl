@@ -30,27 +30,27 @@ sub EVENT_TIMER {
     quest::stoptimer("move");
     if ($mob1) {
       my $mobnpc1 = $mob1->CastToNPC();
-      $mobnpc1->SaveGuardSpot(0);
+      $mobnpc1->SaveGuardSpot($x, $y, $z, $h);
       $mobnpc1->MoveTo(-369, -2628, 180);
     }
     if ($mob2) {
       my $mobnpc2 = $mob2->CastToNPC();
-      $mobnpc2->SaveGuardSpot(0);
+      $mobnpc2->SaveGuardSpot($x, $y, $z, $h);
       $mobnpc2->MoveTo(-383, -2615, 180);
     }
     if ($mob3) {
       my $mobnpc3 = $mob3->CastToNPC();
-      $mobnpc3->SaveGuardSpot(0);
+      $mobnpc3->SaveGuardSpot($x, $y, $z, $h);
       $mobnpc3->MoveTo(-369, -2652, 180);
     }
     if ($mob4) {
       my $mobnpc4 = $mob4->CastToNPC();
-      $mobnpc4->SaveGuardSpot(0);
+      $mobnpc4->SaveGuardSpot($x, $y, $z, $h);
       $mobnpc4->MoveTo(-400, -2640, 183);
     }
     if ($mob5) {
       my $mobnpc5 = $mob5->CastToNPC();
-      $mobnpc5->SaveGuardSpot(0);
+      $mobnpc5->SaveGuardSpot($x, $y, $z, $h);
       $mobnpc5->MoveTo(-389, -2649, 183);
     }
   }

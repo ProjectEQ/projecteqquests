@@ -1,31 +1,28 @@
--- Bregna's Big Mistake
 -- Aid Garuuk
 -- Converted to .lua by Speedz
 -- added saylink by robregen
+-- removed Bregna's Big Mistake (See Urako) - added More Help for Innoruuk (noudess)
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Me says hi to you. What you want from me? Oh!! Me shaman trainer. You must be shaman. Are you [" .. eq.say_link("shaman Darkone",false,"shaman Darkone") .. "]?");
-	elseif(e.message:findi("shaman darkone")) then
-		e.self:Say("You choose rite if you bes a shaman. We's da best. You remember ta not get in Kaglari way. She get mad berry easy. She gets berry mad at Bregna if she finds out me make [" .. eq.say_link("big mistake",false,"big mistake") .. "].");
-	elseif(e.message:findi("big mistake")) then
-		e.self:Say("Kaglari make me do the tasks for her. She tolds me to take crate of speshal poshuns to sumwun in Nektoolos forust. But I make mistake. I fall asleep under da trees becuz I was so tired. I wake up and poshuns are gone! Sumwun take the poshuns frum me. Dey leave dis note wit me. Me tinks dey play trick on me. Me tinks it be da stinkin' Halflings. Me needs ta gets dem back before Kaglari find out. I need sumwun to help me [" .. eq.say_link("find da poshuns",false,"find da poshuns") .. "].");
-	elseif(e.message:findi("find da poshuns")) then
-		e.self:Say("Take dis as it be all me know.");
-		e.other:Ding();
-		e.other:SummonItem(18651); -- Item: Note to the Troll
+		e.self:Say("Hail, " .. e.other:GetName() .. " , are ya a follower ob Innoruuk?  I hopes so.  We needs many ta spread His Hate.  None be as bicious as be dem dat follow Him.  We do brings fear and hate ta all dat does sees us.  Dis is well.  He likes it.  Can ya [help]?");
+	elseif (e.message:findi("help")) then
+		e.self:Say("'Me hears orcs nearby are trubble.  Da werd frum Neriak is dey wants us ta kills dem before dey organize.  Dark elf say ta looks for Deathfist Clan.  Say dey called cen-tu-ri-ons.  Dey try ta gets big orc army.  Shows me ya can strike fear and hate inta dem orcs... dey needs be more scared a us den dem humies.  Brings me a Deathfist slashed belt.");
 	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if (item_lib.check_turn_in(e.trade, {item1 = 13984})) then -- Bregna's Big Mistake
-		e.self:Say("Now Kaglari won't be mad at Bregna.");
-		e.other:SummonItem(12212); -- Item: Kaglari Mana Doll
+	if (item_lib.check_turn_in(e.trade, {item1 = 13916})) then -- More help for Innoruuk
+		e.self:Say("Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.");
+		e.other:SummonItem(15272); -- Spell: Spirit Pouch
+		e.other:Faction(251,-1,0); -- -Frogloks of Guk
+		e.other:Faction(237,5,0);  -- +Dark Ones
+		e.other:Faction(308,1,0);  -- +Shadowknights of Night Keep
 		e.other:Ding();
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 26632, item2 = 26640, item3 = 29921, item4 = 26662})) then -- Aid Garuuk
-		e.self:Say("Ere. take dis back to Garuuk, K.");
+		e.self:Say("Dis am gud. I see you've been talkin' to Garuuk. Methanks you fer da help. Take dis note back ta Garuuk so he knows you helped me. Tanks again!");
 		e.other:SummonItem(28740); -- Item: Troll Receipt
 		e.other:Ding();
 		e.other:AddEXP(10000);

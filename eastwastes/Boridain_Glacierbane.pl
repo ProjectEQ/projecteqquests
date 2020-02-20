@@ -25,7 +25,7 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_WAYPOINT_DEPART {
-  $npc->SaveGuardSpot(0);
+  $npc->SaveGuardSpot($x, $y, $z, $h);
 
   if ($boridain == 0) {
     $boridain = 1;

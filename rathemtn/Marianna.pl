@@ -23,10 +23,10 @@ sub EVENT_ITEM {
   if (($client->GetModCharacterFactionLevel(341) > 24) && plugin::check_handin(\%itemcount, 12310 => 2)) {
     quest::say("You now own a mold for the Vambracers of Ro. Go and ask Thomas of [Lord Searfire] for the final component.");
     quest::summonitem(12300); # Item: Mold of Ro Vambrace
-    quest::faction(280, 6); # Knights of Thunder
-    quest::faction(221, -5); # Bloodsabers
     quest::faction(341, 20); # Priests of Life
+    quest::faction(280, 6); # Knights of Thunder
     quest::faction(262, 10); # Guards of Qeynos
+    quest::faction(221, -5); # Bloodsabers
     quest::faction(219, 3); # Antonius Bayle
   }
   plugin::return_items(\%itemcount);

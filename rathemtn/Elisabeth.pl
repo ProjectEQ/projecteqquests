@@ -38,8 +38,8 @@ sub EVENT_ITEM {
       quest::faction(281, 20); # KoT
       quest::faction(362, 4); #Priests of Marr
       quest::faction(311, 2); #Steel Warriors
-      quest::faction(271, 2); #Dismal Rage
-      quest::faction(330, 2); #The Freeport Militia
+      quest::faction(271, -3); #Dismal Rage
+      quest::faction(330, -3); #The Freeport Militia
     }
   }
   plugin::return_items(\%itemcount);

@@ -7,5 +7,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.other:CastToClient():Message(0,"The skin around your eyes tightens in reaction to the vacuum.");
+	e.self:Emote("around your eyes tightens in reaction to the vacuum.");
+	eq.depop_with_timer();
 end

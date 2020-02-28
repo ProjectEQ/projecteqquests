@@ -1,3 +1,13 @@
+function event_spawn(e)
+	eq.set_timer("depop",240*1000);
+end
+
+function event_timer(e)
+	if(e.timer == "depop") then
+		eq.depop();
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("'s hollow eyes look up at you. You have the distinct impression that she can see right into the darkest shadows of your soul. She opens her mouth to speak but the sounds you hear come from inside your mind. 'Greetings mortal, thank you for releasing me from my [tormented prison].");

@@ -9,13 +9,13 @@ sub EVENT_TIMER {
 sub EVENT_ITEM{
 	if(plugin::check_handin(\%itemcount, 7779 => 1)){
 		quest::say("Perfect. We shall begin the summoning and questioning. This enchanted scroll will magically scribe all that transpires within its radius of perception. Take it to Magistrate Phenic after the summoning and questioning are completed.");
-		quest::faction(1504,10); # Faction: Magus Conlegium
-		quest::faction(1502,10); # Faction: Katta Castellum Citizens
-		quest::faction(1503,10); # Faction: Validus Custodus
-		quest::faction(1483,-30); # Faction: Seru
-		quest::faction(1484,-30); # Faction: Hand of Seru
-		quest::faction(1485,-30); # Faction: Eye of Seru
-		quest::faction(1541,-30); # Faction: Hand Legionnaries
+		quest::faction(1504,5); # Faction: Magus Conlegium
+		quest::faction(1502,1); # Faction: Katta Castellum Citizens
+		quest::faction(1503,1); # Faction: Validus Custodus
+		quest::faction(1483,-1); # Faction: Seru
+		quest::faction(1484,-1); # Faction: Hand of Seru
+		quest::faction(1485,-1); # Faction: Eye of Seru
+		quest::faction(1541,-1); # Faction: Hand Legionnaries
 		quest::summonitem(7361); #Enchanted Record of Events
 		quest::spawn2(160458,0,0,-97,-822,11,0); #Autarkic Lord Sfarosh
 		quest::signalwith(160458,1,1000); #Start conversation

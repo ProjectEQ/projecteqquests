@@ -11,9 +11,9 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount,7000=>1)) {
       quest::say("Amazing! I had no doubt in your loyalty to Katta but I underestimated your ability to actually acomplish getting the Arx Key. Now that you have this key you must know what I ask of you next. Seru must be defeated, if there will ever be peace in Katta and truth spread among the people of  Sanctus Seru. Destroy this vile betrayer, bring me his head, and your Signet Earring. Go now before they have time to retaliate your previous attacks!");
       quest::summonitem(29860); # 29860  Signet Earring of Veracity
-      quest::faction(1561,20); #concillium universus
-      quest::faction(1483,-60); #seru
-      quest::faction(1486,-60); #heart of seru
+      quest::faction(1561,100); #concillium universus
+      quest::faction(1483,-10); #seru
+      quest::faction(1486,-50); #heart of seru
       quest::exp(1000000);
     }
   }

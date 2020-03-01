@@ -36,42 +36,42 @@ sub EVENT_ITEM{
 	if(plugin::check_handin(\%itemcount, 18330 => 1)){
 		quest::say("I was afraid of this. I do not know how much Halle managed to tell you, but we have had our suspicions about one of the Legionnaires ever since she overheard him talking in his sleep. She was meant to get close to him, I guess she found something out... I should have been more careful!  Take this to Governor Markil, it concerns his men and I've no doubt he can handle it. Thank you much for your help.");
 		quest::ding();
-		quest::faction(1561,50); # Faction: Concilium Universus
-		quest::faction( 1483, -50); # Faction: Seru
-		quest::faction( 1486, -50); # Faction: Heart of Seru
+		quest::faction(1561,2); # Faction: Concilium Universus
+		quest::faction( 1483, -1); # Faction: Seru
+		quest::faction( 1486, -1); # Faction: Heart of Seru
 		quest::summonitem(18331); #Sealed Message
 	}
 	elsif(plugin::check_handin(\%itemcount, 18352 => 1)){
 		quest::say("Most interesting. One of the names on this list I recognize. The alchemist [Valdanov Zevfeer]. Nathyn Illuminious would know more of Valdanov. Present this badge to Nathyn so that he knows you have been sent by the Magistrates to inquire about this issue and question him about the alchemist.");
 		quest::ding();
-		quest::faction(1561,10); # Faction: Concilium Universus
-		quest::faction(1483,-30); # Faction: Seru
-		quest::faction(1486,-30); # Faction: Heart of Seru
+		quest::faction(1561,2); # Faction: Concilium Universus
+		quest::faction(1483,-1); # Faction: Seru
+		quest::faction(1486,-1); # Faction: Heart of Seru
 		quest::exp(1000000);
 		quest::summonitem(31752); #First Badge of Service (Katta Castellum Badge of Service)
 	}
 	elsif(plugin::check_handin(\%itemcount, 31755 => 1)){
 		quest::say("So Valdanov had an interest in a Vah Shir vampyre?!! Perhaps we should seek out this Vah Shir and find more clues. Take these orders to Legionnaire Falion during his next shift at the Tenebrous Mountains Gate, he will question any travelers that pass by about this mysterious Vah Shir.  Should you locate the Vah Shir Vampyre attempt to present him with your Badge of Service for questioning, he just may agree to cooperate rather than anger the Validus Custodus.");
 		quest::ding();
-		quest::faction(1561,10); # Faction: Concilium Universus
-		quest::faction(1483,-30); # Faction: Seru
-		quest::faction(1486,-30); # Faction: Heart of Seru
+		quest::faction(1561,2); # Faction: Concilium Universus
+		quest::faction(1483,-1); # Faction: Seru
+		quest::faction(1486,-1); # Faction: Heart of Seru
 		quest::exp(1000000);
 		quest::summonitem(31756); #Orders for Legionnaire Falion
 	}
 	elsif(plugin::check_handin(\%itemcount, 18449 => 1)){
 		quest::emote(" listens to your account of the events that have occurred since last you spoke and reads through the journal. 'This investigation is getting more and more baffling the further we delve. Among other things, I am wondering if the shade that was imprisoned in the chest is the same that was providing Valdanov with the blood for his research. Take the belt that the shade was wearing with these instructions to Governor Lathin at the Magus Conlegium. In the meantime I will pay a visit to Nathyn Illuminious.");
 		quest::ding();
-		quest::faction(1561,10); # Faction: Concilium Universus
-		quest::faction(1483,-30); # Faction: Seru
-		quest::faction(1486,-30); # Faction: Heart of Seru
+		quest::faction(1561,4); # Faction: Concilium Universus
+		quest::faction(1483,-1); # Faction: Seru
+		quest::faction(1486,-2); # Faction: Heart of Seru
 		quest::summonitem(7270); #Instructions for Lathin Firetree
 	}
 	elsif(plugin::check_handin(\%itemcount, 7361 => 1)){
 		quest::say("There is much that is disturbing about these revelations. I will make sure the Validus Custodus is alert than they already are to the presence of powerful vampyre among our citizens. If you can find this Valdanov Zevfeer slay him and bring me his ashes your Katta Castellum Badge of Service, and your Magus Conlegium Token I will bestow upon you an honorable reward.");
-		quest::faction(1561,10); # Faction: Concilium Universus
-		quest::faction(1483,-30); # Faction: Seru
-		quest::faction(1486,-30); # Faction: Heart of Seru
+		quest::faction(1561,25); # Faction: Concilium Universus
+		quest::faction(1483,-2); # Faction: Seru
+		quest::faction(1486,-12); # Faction: Heart of Seru
 		quest::setglobal("ready_for_ashes", 1, 0, "F");
 	}
 	elsif(plugin::check_handin(\%itemcount, 29899 => 1)){
@@ -82,9 +82,9 @@ sub EVENT_ITEM{
 		if(plugin::check_handin(\%itemcount, 7397 => 1, 31757 => 1, 7394 => 1)) {
 			quest::say("You have done a great service for Katta Castellum and the Loyalist Empire. I award you for your honorable Services. Know that you will be remembered for your deeds.");
 			quest::ding();
-			quest::faction(1561,10); # Faction: Concilium Universus
-			quest::faction(1483,-30); # Faction: Seru
-			quest::faction(1486,-30); # Faction: Heart of Seru
+			quest::faction(1561,50); # Faction: Concilium Universus
+			quest::faction(1483,-5); # Faction: Seru
+			quest::faction(1486,-25); # Faction: Heart of Seru
 			quest::exp(1000000);
 			quest::summonitem(7398); #Loyalist Shield of Honor
 			quest::delglobal("ready_for_ashes");		

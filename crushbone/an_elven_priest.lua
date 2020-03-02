@@ -11,12 +11,12 @@ function event_trade(e)
 		e.self:Say("Erollisi be praised! You slew the orc lord! Well, here is a token of my appreciation! Should you wish to have that mace enchanted, just hand me the mace and my token and I shall uphold my end of the bargain!");
 		e.other:SummonItem(1900); -- Item: Prayer Cloth of Tunare
 		e.other:Ding();
-		e.other:AddEXP(5000);
+		e.other:AddEXP(6000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 6315,item2 = 1900})) then
 		e.self:Say("As promised, here is your mace. Let it not fall into dark hands as its power is hidden until combat when it will reveal its true nature. Fare thee well!");
 		e.other:SummonItem(6305); -- Item: Screaming Mace
 		e.other:Ding();
-		e.other:AddEXP(10000);
+		e.other:AddEXP(6000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

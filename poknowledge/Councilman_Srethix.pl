@@ -21,12 +21,13 @@ sub EVENT_ITEM {
   
   elsif (plugin::check_handin(\%itemcount, 28742 => 1)){#Unlocked Tome of Dark Power
    quest::say("It's good to see my instincts about the Elder were correct.' He opens the book, begins thumbing through the pages, and frowns. 'What's this? Some pages are missing, eight of them to be exact. I'm afraid this book will be of no use to me without those pages. You can have it. I wonder what happened to them, whomever had this book before must have removed them for some reason. If you find the missing pages somewhere, be sure to close them up inside the book and return it to me.");
-   quest::summonitem(17182)#Unfinished Tome of Dark Power
+   quest::summonitem(17182); #Unfinished Tome of Dark Power
   }
   
   elsif (plugin::check_handin(\%itemcount, 28746 => 1)){#Tome of Dark Power
    quest::say("You have done excellently. The tome will now serve my purposes. You may take this as a reward.' He pauses for a moment and continues, 'This task you have performed shows your confidence, patience, and the best of all, determination. Perhaps someday you would consider applying yourself to serve as an aid by my side? I can clearly see you have quite a broad spectrum of usefulness. Much more so than some other attendants I know...");
-   quest::summonitem(15790)#Cloak of the Wise
+   quest::summonitem(15790); #Cloak of the Wise
+   quest::exp(1000000);
   }
     
 }

@@ -17,9 +17,9 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20016})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(274,1,0); -- Faction: Kazon Stormhammer
+			e.other:Faction(274,2,0); -- Faction: Kazon Stormhammer
 			e.other:Faction(293,1,0); -- Miners Guild 249 (293)
-			e.other:Faction(227,1,0); -- Clerics of Underfoot (227)
+			e.other:Faction(227,2,0); -- Clerics of Underfoot (227)
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -36,11 +36,11 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20017})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(275,1,0); -- Faction: Keepers of the Art
-			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
-			e.other:Faction(275,1,0); -- Faction: Keepers of the Art
-			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
-			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
+			e.other:Faction(274,1,0); -- Faction: Kazon Stormhammer
+			e.other:Faction(312,2,0); -- Faction: Storm Guard
+			e.other:Faction(293,1,0); -- Miners Guild 249 (293)
+			e.other:Faction(290,1,0); -- Faction: Merchants of Kaladim
+			e.other:Faction(232,-1,0); -- Faction: Craknek Warriors (232)
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();

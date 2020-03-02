@@ -19,14 +19,14 @@ function event_trade(e)
 			e.other:Ding();
 			e.other:Faction(170,1,0);
 			e.other:Faction(178,1,0);
-			e.other:AddEXP(1000);
+			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
 			e.other:SummonItem(18901);
-			e.other:AddEXP(1500);
+			e.other:AddEXP(5000);
 			eq.depop_with_timer();		
 		end
 	elseif(e.self:GetRace() == 5 and e.self:GetGender() == 1) then -- female high elf slave
@@ -37,14 +37,14 @@ function event_trade(e)
 			e.other:Ding();
 			e.other:Faction(170,1,0);
 			e.other:Faction(178,1,0);
-			e.other:AddEXP(1000);
+			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
 			e.other:SummonItem(18902);
-			e.other:AddEXP(1500);
+			e.other:AddEXP(5000);
 			eq.depop_with_timer();		
 		end
 	elseif(e.self:GetRace() == 4 and e.self:GetGender() == 0) then -- male wood elf slave
@@ -56,14 +56,14 @@ function event_trade(e)
 			e.other:Faction(99,1,0);
 			e.other:Faction(174,1,0);
 			e.other:Faction(212,1,0);
-			e.other:AddEXP(1000);
+			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
 			e.other:SummonItem(18903);
-			e.other:AddEXP(1500);
+			e.other:AddEXP(5000);
 			eq.depop_with_timer();		
 		end
 	elseif(e.self:GetRace() == 4 and e.self:GetGender() == 1) then -- female wood elf slave
@@ -75,14 +75,14 @@ function event_trade(e)
 			e.other:Faction(99,1,0);
 			e.other:Faction(174,1,0);
 			e.other:Faction(212,1,0);
-			e.other:AddEXP(1000);
+			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10351})) then
 			e.self:Say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			e.other:Ding();
 			e.other:SummonItem(18904);
-			e.other:AddEXP(1500);
+			e.other:AddEXP(5000);
 			eq.depop_with_timer();		
 		end
 	end

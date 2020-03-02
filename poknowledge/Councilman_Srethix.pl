@@ -27,6 +27,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 28746 => 1)){#Tome of Dark Power
    quest::say("You have done excellently. The tome will now serve my purposes. You may take this as a reward.' He pauses for a moment and continues, 'This task you have performed shows your confidence, patience, and the best of all, determination. Perhaps someday you would consider applying yourself to serve as an aid by my side? I can clearly see you have quite a broad spectrum of usefulness. Much more so than some other attendants I know...");
    quest::summonitem(15790)#Cloak of the Wise
+   quest::exp(1000000);
   }
     
 }

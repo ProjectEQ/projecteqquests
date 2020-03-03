@@ -24,10 +24,11 @@ quest::summonitem(28284); # Item: Small Clockwork Talisman
 quest::exp(100000);
 }
 if (plugin::check_handin(\%itemcount, 28289 => 1)) {
-  quest::emote("once again opens the case and begins to tinker with the items. Moving ever so swiftly and gently, he changes the talisman.");
+  quest::emote("nods at you and takes the parts box over to the table. He seems to have laid out the extra tools that he needs prior to your return. With only a few twists and clicks, the pieces of the talisman lock together and begin to glow. The gnome turns and hands you the talisman and the design schematic in an exaggeratedly sharp gesture.");
   quest::summonitem(28290); # Item: Powered Clockwork Talisman
-  quest::say("take this schematic to Elder Clinka in the Plane of Tranquility. He should be able to decifer it for you.");
+  quest::say("Please take the schematic to Elder Clinka. I'm afraid that I don't have the courage to spend any more time working on this for you. I wish I had a more adventurous spirit, but I don't. I like it here because it's peaceful. I don't need anyone changing that for you. Take care and be cautious on your way to see her. There's no telling who or what may be after you! When you show her the schematic, you may want to mention that most of that writing wasn't on there when we got it.");
   quest::summonitem(28291); # Item: The Talisman Schematic
+  quest::say("It seems that words are beginning to write themselves onto that schematic of yours. Maybe she'll be able to understand them. I sure don't want to. Take care.");
   quest::exp(125000);
 }
 }

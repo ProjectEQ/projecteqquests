@@ -1,6 +1,9 @@
 function event_combat(e)
 if (e.joined == true) then
-eq.spawn_condition("ssratemple",0,1,1);
+eq.spawn2(162280, 0, 0, 625, -356,  403,  0); --Ssraezsha (162280)
+eq.spawn2(162280, 0, 0, 689, -356,  403,  0); --Ssraezsha (162280)
+eq.spawn2(162280, 0, 0, 689, -293,  403,  0); --Ssraezsha (162280)
+eq.spawn2(162280, 0, 0, 625, -293,  403,  0); --Ssraezsha (162280)
 end
 end
 

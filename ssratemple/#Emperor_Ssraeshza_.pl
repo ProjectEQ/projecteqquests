@@ -11,6 +11,7 @@ sub EVENT_TIMER {
   quest::stoptimer("EmpDepop");
   quest::signalwith(162260,3,0); #EmpCycle
   quest::depop();
+  quest::spawn_condition("ssratemple", 1, 0);
 }
 
 sub EVENT_COMBAT {
@@ -29,55 +30,11 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(162210,0,0,937,-324,403.1,380); # NPC: A_shissar_wraith
   quest::spawn2(162210,0,0,937,-316,403.1,380); # NPC: A_shissar_wraith
   quest::signalwith(162260,2,0); #EmpCycle
+  quest::spawn_condition("ssratemple", 1, 0);
 }
 
 sub EVENT_SLAY {
   quest::say("Your god has found you lacking.");
-}
-
-sub EVENT_AGGRO {
-  my $guard1 = $entity_list->GetNPCByNPCTypeID(162123); #Heriz
-  my $guard2 = $entity_list->GetNPCByNPCTypeID(162124); #Yasiz
-  my $guard3 = $entity_list->GetNPCByNPCTypeID(162125); #Zlakas
-  my $guard4 = $entity_list->GetNPCByNPCTypeID(162126); #Nilasz
-  my $guard5 = $entity_list->GetNPCByNPCTypeID(162127); #Skzik
-  my $guard6 = $entity_list->GetNPCByNPCTypeID(162128); #Grziz
-  my $guard7 = $entity_list->GetNPCByNPCTypeID(162129); #Slakiz
-  my $guard8 = $entity_list->GetNPCByNPCTypeID(162130); #Klazaz
-
-  if ($guard1) {
-    $guard1->AddToHateList($client, 1);
-  }
-  if ($guard2) {
-    $guard2->AddToHateList($client, 1);
-  }
-  if ($guard3) {
-    $guard3->AddToHateList($client, 1);
-  }
-  if ($guard4) {
-    $guard4->AddToHateList($client, 1);
-  }
-  if ($guard5) {
-    $guard5->AddToHateList($client, 1);
-  }
-  if ($guard6) {
-    $guard6->AddToHateList($client, 1);
-  }
-  if ($guard7) {
-    $guard7->AddToHateList($client, 1);
-  }
-  if ($guard8) {
-    $guard8->AddToHateList($client, 1);
-  }
-}
-
-sub EVENT_SIGNAL {
-  my $new_guard = $entity_list->GetNPCByNPCTypeID($signal);
-  my $hate_target = $npc->GetHateTop();
-
-  # no need to cast hate target to client since argument is mob-type already (npc->client is bad)
-  # $new_guard->AddToHateList($hate_target->CastToClient(), 1);
-  $new_guard->AddToHateList($hate_target, 1);
 }
 
 # EOF zone: ssratemple ID: 162227 NPC: #Emperor_Ssraeshza_ (Real)

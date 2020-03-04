@@ -11,6 +11,7 @@ sub EVENT_TIMER {
   quest::stoptimer("EmpDepop");
   quest::signalwith(162260,3,0); #EmpCycle
   quest::depop();
+  quest::spawn_condition("ssratemple", 1, 0);
 }
 
 sub EVENT_COMBAT {
@@ -29,6 +30,7 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(162210,0,0,937,-324,403.1,380); # NPC: A_shissar_wraith
   quest::spawn2(162210,0,0,937,-316,403.1,380); # NPC: A_shissar_wraith
   quest::signalwith(162260,2,0); #EmpCycle
+  quest::spawn_condition("ssratemple", 1, 0);
 }
 
 sub EVENT_SLAY {

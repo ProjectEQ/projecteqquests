@@ -26,6 +26,8 @@ sub EVENT_ITEM {
       quest::say("The time to trade has come!! I am now rich and you are now fast. Take the Journeyman Boots and run like the wind.");
       quest::exp(1250);
       quest::summonitem(2300); # Item: Journeyman's Boots
+    } else { #Both/neither items were not traded, return gold/plat
+      quest::givecash(0, 0, $gold, $platinum); #Return gold/plat
     }
   }
   else {

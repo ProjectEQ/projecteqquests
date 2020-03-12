@@ -1,6 +1,9 @@
 function event_combat(e)
 if (e.joined == true) then
 eq.set_next_hp_event(90);
+eq.set_timer("OOBcheck", 6 * 1000);
+else
+eq.stop_timer("OOBcheck");
 end
 end
 
@@ -37,4 +40,16 @@ function event_death_complete(e)
 eq.get_entity_list():MessageClose(e.self, false, 300, 0, "An eerie silence settles onto the forest as Deyid the Twisted slumps over, defeated.");
 eq.depop_all(204068);
 eq.signal(204047,1); --signal Seilaen to shout/depop
+end
+
+function event_timer(e)
+if(e.timer=="OOBcheck") then
+eq.stop_timer("OOBcheck");
+	if (e.self:GetZ() < 250) then
+		e.self:GotoBind();
+		e.self:WipeHateList();
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
+end
 end

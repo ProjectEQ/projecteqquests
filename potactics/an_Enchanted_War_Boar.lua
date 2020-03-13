@@ -19,6 +19,7 @@ eq.depop();
 elseif (e.timer == 'timetomove') then
 local glykus = eq.get_entity_list():GetMobByNpcTypeID(214053);	--Glykus_Helmir (214053)
 eq.move_to(glykus:GetX(),glykus:GetY(),glykus:GetZ(), glykus:GetHeading(),true);
+e.self:SetRunning(true);
 end
 end
 

@@ -7,7 +7,6 @@ eq.stop_timer("powerup");
 eq.stop_timer("checkadds");
 end
 end
-end
 
 function event_timer(e)
 if (e.timer == "powerup") then

@@ -18,6 +18,7 @@ sub EVENT_SPAWN {
     $Grunhork = 0;
 	$event_vallon = 0;
 	$event_tallon = 0;
+	quest::spawn2(214052,0,0,500.0,20.0,194.1,129.0);
 }
 
 sub EVENT_SIGNAL {

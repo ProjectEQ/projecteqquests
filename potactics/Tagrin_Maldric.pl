@@ -7,15 +7,5 @@ sub EVENT_COMBAT {
     quest::spawn2(214119,0,0,$x-15,$y+10,$z,$h); # NPC: Animated_Decorin_Blade
     quest::spawn2(214119,0,0,$x+15,$y+10,$z,$h); # NPC: Animated_Decorin_Blade
     quest::spawn2(214119,0,0,$x,$y-15,$z,$h); # NPC: Animated_Decorin_Blade
-  } elsif ($combat_state ==0 && $entity_list->IsMobSpawnedByNpcTypeID(214119)) {
-    #adjust to suit for depop
-    quest::settimer(1,900);
-  }
-}
-
-sub EVENT_TIMER {
-  if ($timer == 1) {
-    #depop all blades.
-    quest::depopall(214119);
   }
 }

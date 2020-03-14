@@ -15,6 +15,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 28788 => 1, 29145 => 1)) {#Beginner Combat Manual, Junk Beast Power Source
     quest::say("Very impressive, $name. This proves you have clearly graduated to the next phase of training we have to offer. Keep this book by your side and speak to Gwiraba Gelrid when you are ready for your next lesson.");
     quest::summonitem(28790);#Intermediate Combat Manual
+    quest::exp(500000);
   }
   plugin::return_items(\%itemcount);
 }

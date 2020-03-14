@@ -1,31 +1,35 @@
-#Five Animated Decorin Blades spawn when Tagrin Maldric is aggro'd. This quest file will depop them if they aren't aggro'd for fifteen minutes after spawning.
+function event_spawn(e)
+local tagrin = eq.get_entity_list():GetMobByNpcTypeID(214054);	--Tagrin_Maldric (214054)
+eq.move_to(tagrin:GetX(),tagrin:GetY(),tagrin:GetZ(),tagrin:GetHeading(),true);
+e.self:SetRunning(true);
+eq.set_timer('depop', 120 * 1000);
+end
 
-sub EVENT_SPAWN {
-	my $x = $npc->GetX();
-	my $y = $npc->GetY();
-	my $z = $npc->GetZ();
-	my $h = $npc->GetHeading();
-	quest::settimer("depop",900);
-}
+function event_death_complete(e)
+	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(214054) == true) then
+		local which = math.random(1,2);
+    		if  (which == 1) then
+			eq.spawn2(214119,0,0,1643,1966,-328,387);
+		elseif (which == 2) then
+			eq.spawn2(214119,0,0,1163,1786,-328,131);
+		end
 
-sub EVENT_COMBAT { 
-	if ($combat_state == 1) {
-		quest::stoptimer("depop");
-	} else {
-		quest::settimer("depop",900)
-	}
-}
+	end
+end
 
-sub EVENT_DEATH_COMPLETE {
-	quest::stoptimer("depop");
-	if($entity_list->IsMobSpawnedByNpcTypeID(214054)) {
-		quest::spawn2(214119,0,0,$x,$y,$z,$h); # NPC: Animated_Decorin_Blade
-	}
-}
 
-sub EVENT_TIMER {
-	if ($timer eq "depop") {
-		quest::stoptimer("depop");
-		quest::depop();
-	 }
-}
+function event_combat(e)
+if (e.joined == true) then
+if(not eq.is_paused_timer('depop')) then
+			eq.pause_timer('depop');
+		end
+	else
+		eq.resume_timer('depop');
+	end
+end
+
+function event_timer(e)
+if (e.timer == 'depop') then
+eq.depop();
+end
+end

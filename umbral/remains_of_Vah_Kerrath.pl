@@ -2,14 +2,6 @@ sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Fleshy mortal, can you not see that I am cursed to live in eternal anguish? What is it that you seek from me?");
   }
-  if($text=~/worthy/i) {
-    if($faction <= 2) {
-      quest::say("The squishy mortal has proven itself by releasing Elysian spirits. We greet the Elysian spirits to our realm and rejoice in their freedom. Go on fleshling, ask the bone man to tell you of Vex Thal.");
-    }
-    else {
-      quest::say("Begone from my sight corruptor of spirits. I will only aid my allies.");
-    }
-  }
   if($text=~/vex thal/i) {
     if($faction <= 2) {
       quest::say("The city of shadow is sealed by powerful magic. Only one that wears the talisman of Akelha Ra can pass through the seals on the gate. I have not been beyond the gates but rumors of dark prophets that possess great power have been heard throughout the ages.");

@@ -1,5 +1,6 @@
 function event_combat(e)
 if (e.joined == true) then
+eq.zone_emote(0,"Glykus Helmir blows a carved boar horn. 'My pets! I enfuse you with the power of Zek. Grow and battle with Glykus!");
 eq.set_timer("powerup", 3 * 1000);
 eq.set_timer("checkadds", 1 * 1000);
 else
@@ -47,4 +48,12 @@ local num_alive=0;
 			eq.spawn2(214040,0,0,1386,-926,-296,70);
 		end
      end
+end
+
+function event_death_complete(e)
+eq.zone_emote(0,"Glykus Helmir's corpse shouts, 'My pretties!");
+eq.depop_all(214134);
+eq.depop_all(214133);
+eq.depop_all(214132);
+eq.depop_all(214131);
 end

@@ -16,6 +16,8 @@ function event_timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
 	if (e.self:GetY() < 1697) then
+		e.self:Say("I'll not let you draw me from my forge. Return when you want to fight me like warriors.");
+		e.self:CastSpell(3230, e.self:GetID())
 		e.self:GotoBind();
 		e.self:WipeHateList();
 	else

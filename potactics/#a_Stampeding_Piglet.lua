@@ -1,0 +1,34 @@
+function event_spawn(e)
+eq.zone_emote(0,"You hear the pounding of hooves.");
+e.self:SetRunning(true);
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,195,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,196,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+end

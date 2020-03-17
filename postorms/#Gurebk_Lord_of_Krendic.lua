@@ -16,7 +16,7 @@ end
 
 function event_timer(e)
 	if (e.timer == 'depop') then
-		eq.unique_spawn(210178,0,0,-1971,1267,-439.5,256); --repop untargetable version
+		eq.unique_spawn(210178,0,0,2028,203,-432.88,256); --repop untargetable version
 		eq.depop();
 	elseif (e.timer == 'adds') then
 		local num_alive=0;

@@ -56,6 +56,7 @@ function event_timer(e)
 		if (num_alive ==4) then
 			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
 			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+		end
 		if (num_alive ==5) then
 			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
 		end

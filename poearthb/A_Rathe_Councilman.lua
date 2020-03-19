@@ -11,7 +11,7 @@ end
 
 function event_timer(e)
 	if e.timer == "punt" then
-		e.self:GoToBind();
+		e.self:GotoBind();
 		eq.stop_timer("punt");
 	end
 end

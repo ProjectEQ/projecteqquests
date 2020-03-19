@@ -1,11 +1,7 @@
 function event_combat(e)
 	if not e.joined then
-		local roll = math.random(100)
-		if roll >= 50 then
 			eq.set_timer("punt", 6* 1000);
 		end
-	else
-		eq.stop_timer("punt");
 	end
 end
 

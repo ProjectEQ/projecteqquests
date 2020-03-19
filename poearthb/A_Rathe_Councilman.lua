@@ -1,5 +1,17 @@
 function event_combat(e)
 	if not e.joined then
-		e.self:MoveTo(e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH(),true);	--mobs will instantly path back to spawn if no one on hate list
+	local roll = math.random(100)
+		if roll >= 50 then
+			eq.set_timer("punt", 12 * 1000);
+		else
+			eq.set_timer("punt", 6 * 1000);
+		end
+	end
+end
+
+functione event_timer(e)
+	if e.timer == "punt" then
+		e.self:GoToBind();
+		eq.stop_timer("punt");
 	end
 end

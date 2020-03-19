@@ -1,7 +1,6 @@
 function event_combat(e)
 	if not e.joined then
-			eq.set_timer("punt", 6* 1000);
-		end
+			eq.set_timer("punt", 6 * 1000);
 	end
 end
 

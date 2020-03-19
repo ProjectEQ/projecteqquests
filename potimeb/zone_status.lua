@@ -242,14 +242,6 @@ end
 function ControlPhaseTwo()
 	if (current_phase == "Phase2") then
 		event_counter = event_counter + 1;
-		if (event_counter == 45) then
-			event_counter = 0;
-			current_phase = "Phase2.5";
-			-- spawn them again. this time the named will spawn with them
-			SpawnPhaseTwo();
-		end
-	elseif (current_phase == "Phase2.5") then
-		event_counter = event_counter + 1;
 		if (event_counter == 50) then
 			event_counter = 0;
 			current_phase = "Phase3";
@@ -274,21 +266,10 @@ function SpawnPhaseTwo()
 	if (eq.get_spawn_condition("potimeb",instance_id,10) == 0) then
 		-- if it is not set, set it.
 		eq.spawn_condition("potimeb",instance_id,10,1);
-	else
-		-- turn it off and back on to force a full repop
-		eq.spawn_condition("potimeb",instance_id,10,0);
-		eq.clear_spawn_timers();
-		eq.spawn_condition("potimeb",instance_id,10,1);
-		-- now spawn the named also since this is wave 2.
-		-- Earthen_Overseer
 		eq.spawn2(223134,0,0,262,1644,493,385); -- NPC: Earthen_Overseer
-		-- Windshapen_Warlord_of_Air
 		eq.spawn2(223118,0,0,262,1354,493,385); -- NPC: Windshapen_Warlord_of_Air
-		-- Ralthos_Enrok
 		eq.spawn2(223127,0,0,262,1109,493,385); -- NPC: Ralthos_Enrok
-		-- War_Shapen_Emissary
 		eq.spawn2(223096,0,0,262,869,493,385); -- NPC: War_Shapen_Emissary
-		-- Gutripping_War_Beast
 		eq.spawn2(223146,0,0,262,574,493,385); -- NPC: Gutripping_War_Beast
 	end
 end

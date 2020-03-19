@@ -9,7 +9,7 @@ function event_combat(e)
 	end
 end
 
-functione event_timer(e)
+function event_timer(e)
 	if e.timer == "punt" then
 		e.self:GoToBind();
 		eq.stop_timer("punt");

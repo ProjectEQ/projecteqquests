@@ -9,7 +9,6 @@ if(not eq.is_paused_timer('depop')) then
 		end
 	else
 		eq.resume_timer('depop');
-		e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 	end
 end
 

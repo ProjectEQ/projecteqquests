@@ -41,7 +41,7 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_TIMER {
-	if($timer == 2) {
+	if($timer eq 2) {
 		foreach my $spawn2 (@spawn2list) {   # Depsawn all the mobs in the pit
 			# Set pit mobs to respawn in 30 minutes. comment this line out to not set the 30 minute timer for testing.
 			quest::updatespawntimer($spawn2,1800000);
@@ -52,14 +52,13 @@ sub EVENT_TIMER {
 		quest::updatespawntimer(157400,1800000);
 		#re-enable the spawn2 entry for piglet
 		quest::enable_spawn2(157400);
-		
 		quest::stoptimer(2);
 		quest::stoptimer(1);
 		quest::depopall(214114);
 		quest::depop();
 	}
 
-	if($timer == 1) {
+	if($timer eq 1) {
 		if($npc->IsEngaged()) {
 			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
 			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
@@ -76,7 +75,7 @@ sub EVENT_TIMER {
 			quest::stoptimer(1);
 		}
 	}
-	if($timer == "dt_outofarena") {
+	if($timer eq "dt_outofarena") {
 		my @hate_list = $npc->GetHateList();
 		my $hate_count = @hate_list;
 		if ($hate_count > 0) {

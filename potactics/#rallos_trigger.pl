@@ -86,7 +86,7 @@ sub EVENT_SIGNAL {
 
 		if ($signal == 214052) {	# Mini Rallos done
 			quest::stoptimer("Mini");
-			quest::spawn2(214113,0,0,550,24,-294.9,128.4); # NPC: #Rallos_Zek_the_Warlord
+			quest::spawn2(214113,0,0,702,0,-294.9,0); # NPC: #Rallos_Zek_the_Warlord
 		}
 		
 		if ($signal == 214113) {	#RZtW dead, depop

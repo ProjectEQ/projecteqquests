@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
 	quest::setnexthpevent(60);
-	quest::me("A tremor rumbles through the halls of Drunder. Terror wells up inside you as you struggle to keep your footing.");
+	quest::ze("A tremor rumbles through the halls of Drunder. Terror wells up inside you as you struggle to keep your footing.");
 }
 
 sub EVENT_HP {

@@ -62,21 +62,17 @@ sub EVENT_TIMER {
 
 	if($timer == 1) {
 		if($npc->IsEngaged()) {
-			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-100,-293,510); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-295,-293,136); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,185,-293,0); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-100,-293,510); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-295,-293,136); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,185,-293,0); # NPC: A_Chaos_Wraith
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
 			quest::me("The corpses across the grounds of the arena begin to twitch and spasm as the will of the Warlord brings them to life.");
-			my @npc_list = $entity_list->GetNPCList();
-			foreach $npc (@npc_list) {
-				if($npc->GetNPCTypeID() == 214114) {
-					$npc->AddToHateList($npc->GetHateTop(), 1);
-				}
+			
 			}
 		} else {		
 			quest::stoptimer(1);

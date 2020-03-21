@@ -85,7 +85,7 @@ sub EVENT_TIMER {
 				$npc->CastSpell(982,$h_ent->GetID()); # Spell: Cazic Touch
 			  }
 			}
-		  
+		  }
 		}	
 	}
 }

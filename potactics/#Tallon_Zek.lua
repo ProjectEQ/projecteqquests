@@ -1,6 +1,7 @@
+-- #Tallon_Zek (214108) part of RZTWL script
 function event_spawn(e)
     eq.set_timer("despawn", 2700000) -- 45 mins
-    eq.set_timer("1", 1000)
+    e.self:SetRunning(true);
 end
 
 function event_death_complete(e)
@@ -14,8 +15,6 @@ end
 function event_timer(e)
     if e.timer == "despawn" then
         eq.depop()
-    elseif e.timer == "1" and e.self:GetX() < 340 and e.self:GetY() > -68 then
-        eq.pause(2700)
     end
 end
 

@@ -18,9 +18,14 @@ sub EVENT_SPAWN {
 	quest::disable_spawn2(157400);
 }
 
-sub EVENT_AGGRO {
-        quest::settimer(1,60);
-		quest::settimer("dt_outofarena",5);
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::settimer(1,60); #timer for adds to spawn
+	quest::settimer("dt_outofarena",5);
+  }
+  else {
+	$npc->SaveGuardSpot($x, $y, $z, $h); #doesnt move
+  }
 }
 
 sub EVENT_DEATH_COMPLETE {

@@ -65,15 +65,13 @@ sub EVENT_TIMER {
 
 	if($timer eq 1) {
 		if($npc->IsEngaged()) {
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
-			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,519,216,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,647,346,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,853,220,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,779,-30,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,507,-164,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,847,-327,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,518,-357,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
 			quest::me("The corpses across the grounds of the arena begin to twitch and spasm as the will of the Warlord brings them to life.");
 		} else {		
 			quest::stoptimer(1);

@@ -28,7 +28,6 @@ sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer(2);
 	quest::stoptimer(1);
 	quest::signalwith(214123, 214113);         # let the trigger know RZtW died
-	quest::signalwith(214114,90,1); # NPC: A_Chaos_Wraith
 	foreach my $spawn2 (@spawn2list) {   # Depsawn all the mobs in the pit
 		# Set pit mobs to respawn in 30 minutes. comment this line out to not set the 30 minute timer for testing.
 		quest::updatespawntimer($spawn2,1800000);

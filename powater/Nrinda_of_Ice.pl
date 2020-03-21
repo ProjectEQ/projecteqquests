@@ -6,6 +6,6 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_COMBAT {
     if($combat_state == 0) {
-        quest::stop()
+        $npc->SaveGuardSpot($x, $y, $z, $h);
     }
 }

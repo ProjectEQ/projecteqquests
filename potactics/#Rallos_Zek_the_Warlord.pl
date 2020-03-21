@@ -72,7 +72,7 @@ sub EVENT_TIMER {
 			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
 			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith  A_Chaos_Boar
 			quest::me("The corpses across the grounds of the arena begin to twitch and spasm as the will of the Warlord brings them to life.");
-			
+			}
 			}
 		} else {		
 			quest::stoptimer(1);

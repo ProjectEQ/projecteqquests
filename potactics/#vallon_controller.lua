@@ -3,7 +3,7 @@ local phase = 0;
 function event_spawn(e)
 	phase = 1;
 	--spawn vallon up by the door
-	eq.spawn2(214083,0,0,-822,1980,205,261.8); --Real Vallon
+	eq.spawn2(214083,0,0,-822,1980,205,131); --Real Vallon
 end
 
 function event_signal(e)

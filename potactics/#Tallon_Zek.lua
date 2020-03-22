@@ -6,10 +6,11 @@ end
 
 function event_death_complete(e)
     eq.signal(214123, 214108) -- tell trigger that Tallon is dead
+    eq.signal(214086,1); -- tell the Hendin's to start their timer on depop
 end
 
 function event_signal(e)
-    eq.depop()
+    eq.depop();
 end
 
 function event_combat(e)
@@ -25,7 +26,8 @@ function event_timer(e)
         e.self:CastSpell(eq.ChooseRandom(2449, 2450, 2451, 2452), e.self:GetTarget():GetID())
         eq.set_timer("barb", math.random(2, 6) * 1000)
     elseif (e.timer == "despawn") then
-        eq.depop()
+        eq.depop();
+	eq.depop_all(214068); -- depop all of my Hendin's
     end
 end
 

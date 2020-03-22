@@ -22,6 +22,7 @@ sub EVENT_SIGNAL {
   quest::stoptimer("despawn");
   quest::depop();
   quest::depopall(214084);
+  quest::depopall(214128);
 }
 
 sub EVENT_TIMER {

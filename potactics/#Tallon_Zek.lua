@@ -11,6 +11,7 @@ end
 
 function event_signal(e)
     eq.depop();
+    eq.depop_all(214086);
 end
 
 function event_combat(e)

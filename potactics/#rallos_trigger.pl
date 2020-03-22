@@ -30,8 +30,8 @@ sub EVENT_SIGNAL {
                     quest::ze(0, "The air of Drunder grows strangely cold as a rumble shakes through the fortress' walls. The Warlord stirs.");
 		    quest::stoptimer("Decorin");
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
-                    quest::spawn2(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
-                    quest::spawn2(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek
+                    quest::unique_spawn(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
+                    quest::unique_spawn(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek
 					$entity_list->FindDoor(14)->SetLockPick(0);
 					$entity_list->FindDoor(15)->SetLockPick(0);
 					$entity_list->FindDoor(16)->SetLockPick(0);
@@ -50,8 +50,8 @@ sub EVENT_SIGNAL {
 		quest::ze(0, "The air of Drunder grows strangely cold as a rumble shakes through the fortress' walls. The Warlord stirs.");
                     quest::stoptimer("Decorin");
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
-                    quest::spawn2(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
-                    quest::spawn2(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek
+                    quest::unique_spawn(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
+                    quest::unique_spawn(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek
 					$entity_list->FindDoor(14)->SetLockPick(0);
 					$entity_list->FindDoor(15)->SetLockPick(0);
 					$entity_list->FindDoor(16)->SetLockPick(0);
@@ -88,7 +88,7 @@ sub EVENT_SIGNAL {
 
 		if ($signal == 214052) {	# Mini Rallos done
 			quest::stoptimer("Mini");
-			quest::spawn2(214113,0,0,702,0,-294.9,0); # NPC: #Rallos_Zek_the_Warlord
+			quest::unique_spawn(214113,0,0,702,0,-294.9,0); # NPC: #Rallos_Zek_the_Warlord
 		}
 		
 		if ($signal == 214113) {	#RZtW dead, depop
@@ -121,7 +121,7 @@ sub EVENT_TIMER {
 	}
 	if ($timer eq "rzuntarget") {
 		quest::stoptimer("rzuntarget");
-		quest::spawn2(214052,0,0,500,11,194,129); # #Rallos_Zek_ (214052) untargetable
+		quest::unique_spawn(214052,0,0,500,11,194,129); # #Rallos_Zek_ (214052) untargetable
 	}
 }
 

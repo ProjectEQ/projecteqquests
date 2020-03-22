@@ -20,6 +20,7 @@ sub EVENT_HP {
 sub EVENT_SIGNAL {
   quest::stoptimer("despawn");
   quest::depop();
+  quest::depopall(214084);
 }
 
 sub EVENT_TIMER {

@@ -7,7 +7,8 @@ sub EVENT_SPAWN {
 sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("despawn");
 	quest::signalwith(214123, 214111, 0);	# Tell trigger that Vallon is dead
-  quest::setglobal("vallon",1,3,"H108");
+	quest::signalwith(214084,1);
+  	quest::setglobal("vallon",1,3,"H108");
 }
 
 sub EVENT_HP {

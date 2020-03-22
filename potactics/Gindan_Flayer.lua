@@ -14,8 +14,8 @@ end
 
 function event_hp(e)
 	if e.hp_event == 51 then
-		eq.spawn2(214128,0,0,e.self:GetX()	+ 10, e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-		eq.spawn2(214128,0,0,e.self:GetX()	- 10, e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(214128,0,0,e.self:GetX()+ 10, e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(214128,0,0,e.self:GetX()- 10, e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 		eq.depop();
 	end
 end

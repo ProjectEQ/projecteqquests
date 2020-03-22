@@ -16,7 +16,7 @@ end
 
 function event_timer(e)
   if e.timer == "depop" then
-    eq.depop(214084);
+    eq.depop_all(214084);
     eq.depop_all(214128);
     eq.stop_timer("depop");
   end

@@ -31,10 +31,6 @@ sub EVENT_SIGNAL {
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::spawn2(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
                     quest::spawn2(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek
-		    quest::spawn2(214037,0,0,359,73,169,255); # Gindan_Flayer (214037)
-			quest::spawn2(214037,0,0,383,73,169,255); # Gindan_Flayer (214037)
-			quest::spawn2(214037,0,0,308,73,169,255); # Gindan_Flayer (214037)
-			quest::spawn2(214037,0,0,283,73,169,255); # Gindan_Flayer (214037)
 					$entity_list->FindDoor(14)->SetLockPick(0);
 					$entity_list->FindDoor(15)->SetLockPick(0);
 					$entity_list->FindDoor(16)->SetLockPick(0);
@@ -55,10 +51,6 @@ sub EVENT_SIGNAL {
                     quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::spawn2(214111,188,0,996,580,133.1,385); # NPC: #Vallon_Zek_
                     quest::spawn2(214108,187,0,996,-559,133.1,385); # NPC: #Tallon_Zek
-		    quest::spawn2(214037,0,0,359,73,169,255); # Gindan_Flayer (214037)
-			quest::spawn2(214037,0,0,383,73,169,255); # Gindan_Flayer (214037)
-			quest::spawn2(214037,0,0,308,73,169,255); # Gindan_Flayer (214037)
-			quest::spawn2(214037,0,0,283,73,169,255); # Gindan_Flayer (214037)
 					$entity_list->FindDoor(14)->SetLockPick(0);
 					$entity_list->FindDoor(15)->SetLockPick(0);
 					$entity_list->FindDoor(16)->SetLockPick(0);

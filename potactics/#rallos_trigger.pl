@@ -118,6 +118,7 @@ sub EVENT_TIMER {
 	if ($timer eq "Mini") {		# times up, despawn mini rallos
 		quest::stoptimer("Mini");
 		quest::signal(214109);
+		quest::settimer("rzuntarget", 1); # spawn untargetable rz
 	}
 	if ($timer eq "rzuntarget") {
 		quest::stoptimer("rzuntarget");

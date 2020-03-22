@@ -1,3 +1,7 @@
+function event_spawn(e)
+eq.zone_emote(0,"The spirits of Honor's fallen Heroes begin to coalesce in front of you.");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("echoes in your mind, 'We are the spirits that reside in these halls. Within us are all the great victories we knew while we still resided in our corporeal forms. We have fought great battles throughout these Planes. You may know the Honor of the battles we have fought. Do you wish to [test your skill in battle]?");

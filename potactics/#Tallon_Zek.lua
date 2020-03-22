@@ -12,12 +12,6 @@ function event_signal(e)
     eq.depop()
 end
 
-function event_timer(e)
-    if e.timer == "despawn" then
-        eq.depop()
-    end
-end
-
 function event_combat(e)
     if e.joined == true then
         eq.set_timer("barb", math.random(1, 4) * 1000)
@@ -30,6 +24,16 @@ function event_timer(e)
     if (e.timer == "barb") then
         e.self:CastSpell(eq.ChooseRandom(2449, 2450, 2451, 2452), e.self:GetTarget():GetID())
         eq.set_timer("barb", math.random(2, 6) * 1000)
+    elseif (e.timer == "despawn") then
+        eq.depop()
     end
 end
 
+function event_waypoint_arrive(e)
+	if(e.wp == 9) then
+        eq.spawn2(214086,0,0,301,-57,169,0); --Hendin_Shadow_Master (214086)
+        eq.spawn2(214086,0,0,271,-57,169,0); --Hendin_Shadow_Master (214086)
+        eq.spawn2(214086,0,0,361,-57,169,0); --Hendin_Shadow_Master (214086)
+        eq.spawn2(214086,0,0,391,-57,169,0); --Hendin_Shadow_Master (214086)
+    end
+end

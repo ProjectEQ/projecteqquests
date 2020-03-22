@@ -39,10 +39,10 @@ sub EVENT_TIMER {
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if ($wp == 9) {
-		quest::spawn2(214037,0,0,359,73,169,255); # Gindan_Flayer (214037)
-		quest::spawn2(214037,0,0,383,73,169,255); # Gindan_Flayer (214037)
-		quest::spawn2(214037,0,0,308,73,169,255); # Gindan_Flayer (214037)
-		quest::spawn2(214037,0,0,283,73,169,255); # Gindan_Flayer (214037)
+		quest::spawn2(214084,0,0,359,73,169,255); # Gindan_Flayer 214084
+		quest::spawn2(214084,0,0,383,73,169,255); # Gindan_Flayer 214084
+		quest::spawn2(214084,0,0,308,73,169,255); # Gindan_Flayer 214084
+		quest::spawn2(214084,0,0,283,73,169,255); # Gindan_Flayer 214084
 	}
 }
 

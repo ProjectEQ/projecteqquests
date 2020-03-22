@@ -18,6 +18,7 @@ function event_timer(e)
   if e.timer == "depop" then
     eq.depop_all(214084);
     eq.depop_all(214128);
+    eq.stop_timer("depop");
   end
 end
 
@@ -30,6 +31,6 @@ function event_hp(e)
 	if e.hp_event == 51 then
 		eq.spawn2(214128,0,0,e.self:GetX()+ 10, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); --#Gindan_Flayer
 		eq.spawn2(214128,0,0,e.self:GetX()- 10, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); --#Gindan_Flayer
-		eq.depop();
+		eq.depop_with_timer();
 	end
 end

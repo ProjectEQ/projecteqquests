@@ -30,7 +30,7 @@ function event_timer(e)
 		eq.signal(214123,500); --  tell trigger mob mini Rallos depopped
 		eq.depop();
 	elseif (e.timer == 'adds') then
-		eq.spawn2(214130,0,0,978,-560,133,385); -- 193 grid
-		eq.spawn2(214130,0,0,978,580,133,385); --194 grid
+		eq.spawn2(214130,0,0,978,-560,133,385);
+		eq.spawn2(214130,0,0,978,580,133,385);
 	end
 end

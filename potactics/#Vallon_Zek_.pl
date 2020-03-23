@@ -1,5 +1,4 @@
 sub EVENT_SPAWN {
-  quest::settimer("global", 1);
 	quest::setnexthpevent(51);
 	quest::SetRunning(1);
 }
@@ -8,7 +7,6 @@ sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer("despawn");
 	quest::signalwith(214123, 214111, 0);	# Tell trigger that Vallon is dead
 	quest::signalwith(214084,1);
-  	quest::setglobal("vallon",1,3,"H108");
 }
 
 sub EVENT_HP {
@@ -26,14 +24,6 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_TIMER {
-	if ($timer eq "global" && defined $qglobals{vallon}) { #we place the global depop here because if used under SPAWN the NPC leaves a ghost mob.
-		quest::stoptimer("global");
-		quest::depop();
-	}
-  	if ($timer eq "global" && !defined $qglobals{vallon}) {
-		quest::stoptimer("global");
-		quest::settimer("despawn", 2700);	# 45 min to kill him
-	}
 	if ($timer eq "despawn") {
 		quest::stoptimer("despawn");
 		quest::depop();

@@ -1,5 +1,6 @@
 function event_spawn(e)
 eq.set_timer('depop', 900 * 1000);
+eq.set_timer('timetomove', 50 * 1000);
 e.self:SetRunning(true);
 end
 
@@ -15,7 +16,19 @@ if(not eq.is_paused_timer('depop')) then
 end
 
 function event_timer(e)
-if (e.timer == 'depop') then
-eq.depop();
-end
+	if (e.timer == 'depop') then
+		eq.depop();
+	elseif (e.timer == 'timetomove') then
+		local fakerz = eq.get_entity_list():GetMobByNpcTypeID(214109);	--#Rallos_Zek (214109)
+
+		if (fakerz.valid) then
+		eq.move_to(fakerz:GetX(),fakerz:GetY(),fakerz:GetZ(), fakerz:GetHeading(),true);
+		end
+		
+		local rztwl = eq.get_entity_list():GetMobByNpcTypeID(214113);	--#Rallos_Zek_the_Warlord (214113)
+	
+		if (rztwl.valid) then
+		eq.move_to(rztwl:GetX(),rztwl:GetY(),rztwl:GetZ(),rztwl:GetHeading(),true);
+		end
+	end
 end

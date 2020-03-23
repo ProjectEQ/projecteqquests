@@ -69,7 +69,6 @@ sub EVENT_SIGNAL {
 			if ($event_tallon == 1) {	# check if Event Tallon is dead
 				quest::stoptimer("VTZek");
 				quest::signal(214052,0);	# tell fake Rallos to spawn Mini Rallos
-							quest::settimer("Mini", 1800); # 30min to "kill" mini Rallos
 				$event_vallon = 0;
 				$event_tallon = 0;
 			} 
@@ -80,7 +79,6 @@ sub EVENT_SIGNAL {
 			if ($event_vallon == 1) { # check if event Vallon is dead
 				quest::stoptimer("VTZek");
 				quest::signal(214052,0);	# tell fake Rallos to spawn Mini Rallos
-							quest::settimer("Mini", 1800); # 30min to "kill" mini Rallos
 				$event_vallon = 0;
 				$event_tallon = 0;
 			} 			
@@ -92,8 +90,10 @@ sub EVENT_SIGNAL {
 		}
 		
 		if ($signal == 214113) {	#RZtW dead, depop
-                        quest::updatespawntimer(214123,432000);
 			quest::depop_withtimer();
+		}
+		if ($signal == 500) {	# mini rallos failed, repop sequence
+                       quest::settimer("rzuntarget", 5); # spawn untargetable rz
 		}
 }
 
@@ -113,12 +113,6 @@ sub EVENT_TIMER {
                 quest::signal(214108);
 		$event_vallon = 0;
 		$event_tallon = 0;
-	}
-
-	if ($timer eq "Mini") {		# times up, despawn mini rallos
-		quest::stoptimer("Mini");
-		quest::signal(214109);
-		quest::settimer("rzuntarget", 5); # spawn untargetable rz
 	}
 	if ($timer eq "rzuntarget") {
 		quest::stoptimer("rzuntarget");

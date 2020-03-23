@@ -23,12 +23,14 @@ function event_timer(e)
 
 		if (fakerz.valid) then
 		eq.move_to(fakerz:GetX(),fakerz:GetY(),fakerz:GetZ(), fakerz:GetHeading(),true);
+		eq.stop_timer('timetomove');
 		end
 		
 		local rztwl = eq.get_entity_list():GetMobByNpcTypeID(214113);	--#Rallos_Zek_the_Warlord (214113)
 	
 		if (rztwl.valid) then
 		eq.move_to(rztwl:GetX(),rztwl:GetY(),rztwl:GetZ(),rztwl:GetHeading(),true);
+		eq.stop_timer('timetomove');
 		end
 	end
 end

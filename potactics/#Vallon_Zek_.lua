@@ -31,8 +31,10 @@ function event_combat(e)
 		if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end
+	eq.set_timer("OOBcheck", 6 * 1000);
 	else
 		eq.resume_timer('depop');
+		eq.stop_timer("OOBcheck");
 	end
 end
 
@@ -44,5 +46,14 @@ if (e.timer == 'depop') then
 	eq.depop_all(214086); --Hendin_Shadow_Master (214086)
 	eq.depop_all(214084); --Gindan_Flayer 214084
 	eq.depop();
+elseif(e.timer=="OOBcheck") then
+	eq.stop_timer("OOBcheck");
+	if (e.self:GetX() > 650) then
+		e.self:CastSpell(2441,e.other:GetID(),0,1); -- Spell: Shadowblade on leash
+		e.self:Emote("'s image fades into the shadows of Drunder.");
+		e.self:GMMove(412,11,169,129); -- does not wipe hate list
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
 end
 end

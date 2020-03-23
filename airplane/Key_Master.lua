@@ -9,7 +9,7 @@ function event_signal(e)
 
 	if(e.signal == 1) then -- azarack
 		counter = counter + 1;
-		if(counter == 9) then
+		if(counter == 10) then
 			eq.spawn2(71059,0,0,-602.2,-254.4,-333.5,403); -- NPC: Protector_of_Sky
 			counter = 0;
 		end

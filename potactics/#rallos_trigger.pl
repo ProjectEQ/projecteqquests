@@ -18,7 +18,7 @@ sub EVENT_SPAWN {
     $Grunhork = 0;
 	$event_vallon = 0;
 	$event_tallon = 0;
-	quest::settimer("rzuntarget", 1); # spawn untargetable rz
+	quest::settimer("rzuntarget", 5); # spawn untargetable rz
 }
 
 sub EVENT_SIGNAL {
@@ -118,7 +118,7 @@ sub EVENT_TIMER {
 	if ($timer eq "Mini") {		# times up, despawn mini rallos
 		quest::stoptimer("Mini");
 		quest::signal(214109);
-		quest::settimer("rzuntarget", 1); # spawn untargetable rz
+		quest::settimer("rzuntarget", 5); # spawn untargetable rz
 	}
 	if ($timer eq "rzuntarget") {
 		quest::stoptimer("rzuntarget");

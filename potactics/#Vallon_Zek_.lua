@@ -8,7 +8,7 @@ end
 function event_hp(e)
 	if(e.hp_event == 51) then
 		eq.spawn2(214129,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --VZ split
-		eq.spawn2(214129,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --VZ split
+		eq.spawn2(214129,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --VZ split
 	end
 end
 

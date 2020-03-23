@@ -928,12 +928,14 @@ function Follower_Death(e)
 	end
 end
 
+function Follower_Spawn(e)
+	eq.set_next_hp_event(80);
+end
 
 function Follower_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer('Hardblur', 180 * 1000);
 		eq.set_timer('Softblur', 6 * 1000);
-		eq.set_next_hp_event(80);
 	else
 		eq.stop_timer('Hardblur');
 		eq.stop_timer('Softblur');
@@ -981,11 +983,16 @@ function Follower_HP(e)
 	end
 end
 
+
+function Warder_Spawn(e)
+	eq.set_next_hp_event(80);
+end
+
+
 function Warder_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer('Hardblur', 180 * 1000);
 		eq.set_timer('Softblur', 6 * 1000);
-		eq.set_next_hp_event(80);
 	else
 		eq.stop_timer('Hardblur');
 		eq.stop_timer('Softblur');
@@ -1328,11 +1335,13 @@ function event_encounter_load(e)
 	eq.register_npc_event('Rings', Event.hp,				218096,		Warder_HP);
 	eq.register_npc_event('Rings', Event.death_complete,	218096,		Warder_Death);
 	eq.register_npc_event('Rings', Event.timer,				218096,		Warder_Timer);
+	eq.register_npc_event('Rings', Event.spawn,				218096,		Warder_Spawn);
 	
 	eq.register_npc_event('Rings', Event.death_complete,	218122,		Follower_Death);
 	eq.register_npc_event('Rings', Event.combat,			218122,		Follower_Combat);
 	eq.register_npc_event('Rings', Event.hp,				218122,		Follower_HP);
 	eq.register_npc_event('Rings', Event.timer,				218122,		Follower_Timer);
+	eq.register_npc_event('Rings', Event.spawn,				218122,		Follower_Spawn);
 	
 	eq.register_npc_event('Rings', Event.spawn,				218127,		Deruph_Spawn);
 	eq.register_npc_event('Rings', Event.death_complete,	218019,		Tainted_Death);

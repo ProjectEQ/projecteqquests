@@ -47,7 +47,6 @@ if (e.timer == 'depop') then
 	eq.depop_all(214084); --Gindan_Flayer 214084
 	eq.depop();
 elseif(e.timer=="OOBcheck") then
-	eq.stop_timer("OOBcheck");
 	if (e.self:GetX() > 650) then
 		e.self:CastSpell(2441, e.self:GetTarget():GetID()); -- Spell: Shadowblade on leash
 		e.self:Emote("'s image fades into the shadows of Drunder.");

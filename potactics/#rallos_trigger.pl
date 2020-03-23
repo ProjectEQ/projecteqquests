@@ -29,7 +29,6 @@ sub EVENT_SIGNAL {
                 if ($Grunhork == 1) {   # Spawn Vallon and Tallon
                     quest::ze(0, "The air of Drunder grows strangely cold as a rumble shakes through the fortress' walls. The Warlord stirs.");
 		    quest::stoptimer("Decorin");
-                    quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::unique_spawn(214111,188,0,620,580,145,385); # NPC: #Vallon_Zek_
                     quest::unique_spawn(214108,187,0,620,-560,145,385); # NPC: #Tallon_Zek
 					$entity_list->FindDoor(14)->SetLockPick(0);
@@ -49,7 +48,6 @@ sub EVENT_SIGNAL {
                 if ($Berik == 1) {   # Spawn Vallon and Tallon
 		quest::ze(0, "The air of Drunder grows strangely cold as a rumble shakes through the fortress' walls. The Warlord stirs.");
                     quest::stoptimer("Decorin");
-                    quest::settimer("VTZek", 1800); # 30min to kill the Zek brothers
                     quest::unique_spawn(214111,188,0,620,580,145,385); # NPC: #Vallon_Zek_
                     quest::unique_spawn(214108,187,0,620,-560,145,385); # NPC: #Tallon_Zek
 					$entity_list->FindDoor(14)->SetLockPick(0);
@@ -95,6 +93,10 @@ sub EVENT_SIGNAL {
 		if ($signal == 500) {	# mini rallos failed, repop sequence
                        quest::settimer("rzuntarget", 5); # spawn untargetable rz
 		}
+		if ($signal == 777) {	# vz/tz failed, reset sequence
+			$event_vallon = 0;
+			$event_tallon = 0;
+		}
 }
 
 sub EVENT_TIMER {
@@ -106,14 +108,6 @@ sub EVENT_TIMER {
             $Berik = 0;
             $Grunhork = 0;
     }
-
-	if ($timer eq "VTZek") {	# times up, despawn Zeks
-		quest::stoptimer("VTZek");
-                quest::signal(214111);
-                quest::signal(214108);
-		$event_vallon = 0;
-		$event_tallon = 0;
-	}
 	if ($timer eq "rzuntarget") {
 		quest::stoptimer("rzuntarget");
 		quest::unique_spawn(214052,0,0,500,11,194,129); # #Rallos_Zek_ (214052) untargetable

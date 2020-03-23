@@ -49,7 +49,7 @@ if (e.timer == 'depop') then
 elseif(e.timer=="OOBcheck") then
 	eq.stop_timer("OOBcheck");
 	if (e.self:GetX() > 650) then
-		e.self:CastSpell(2441,e.other:GetID(),0,1); -- Spell: Shadowblade on leash
+		e.self:CastSpell(2441, e.self:GetTarget():GetID()); -- Spell: Shadowblade on leash
 		e.self:Emote("'s image fades into the shadows of Drunder.");
 		e.self:GMMove(412,11,169,129); -- does not wipe hate list
 	else

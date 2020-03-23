@@ -14,10 +14,12 @@ function event_combat(e)
 		if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end
+	eq.set_timer("OOBcheck", 6 * 1000);
 	eq.set_timer("barb", math.random(1, 4) * 1000)
 	else
 		eq.resume_timer('depop');
 		eq.stop_timer("barb");
+		eq.stop_timer("OOBcheck");
 	end
 end
 
@@ -32,6 +34,12 @@ function event_timer(e)
 	eq.depop_all(214086); --Hendin_Shadow_Master (214086)
 	eq.depop_all(214084); --Gindan_Flayer 214084
 	eq.depop();
+elseif(e.timer=="OOBcheck") then
+	if (e.self:GetX() > 650) then
+		e.self:GMMove(365,11,181,129); -- does not wipe hate list
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
     end
 end
 

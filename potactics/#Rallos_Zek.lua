@@ -19,9 +19,11 @@ function event_combat(e)
 			eq.pause_timer('depop');
 		end
 	eq.set_timer('adds', 45 * 1000);
+	eq.set_timer("OOBcheck", 6 * 1000);
 	else
 		eq.resume_timer('depop');
 		eq.stop_timer('adds');
+		eq.stop_timer("OOBcheck");
 	end
 end
 
@@ -32,5 +34,12 @@ function event_timer(e)
 	elseif (e.timer == 'adds') then
 		eq.spawn2(214130,0,0,978,-560,133,385);
 		eq.spawn2(214130,0,0,978,580,133,385);
+	elseif(e.timer=="OOBcheck") then
+		if (e.self:GetZ() < 50) then
+			e.self:GMMove(365,11,181,129); -- does not wipe hate list
+			eq.zone_emote(0, "Rallos begins to laugh, causing the earth to rumble around you. 'Enough of this foolishness! The warlord has better things to do then chase petty mortals all day!");
+		else
+			eq.set_timer("OOBcheck", 6 * 1000);
+		end
 	end
 end

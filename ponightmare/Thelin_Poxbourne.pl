@@ -172,6 +172,7 @@ sub EVENT_ITEM {
        $dagger=1;
        quest::emote("takes the final shard from you and places all of the pieces on the ground. The pieces reassemble and fuse back together into a completed dagger.  Thelin picks the dagger up and hands it to you.");
        quest::summonitem(9259); #Thelin's Dagger
+       quest::exp(100000); #unconfirmed
        quest::spawn2(204065,0,0,-4554,5018,5,260); # NPC: #Terris_Thule
        quest::depop();
        $spawn_mob1=undef;

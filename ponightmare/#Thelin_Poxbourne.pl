@@ -26,6 +26,10 @@ sub EVENT_TIMER
    }
 
 sub EVENT_SAY{
+	if($text=~/Hail/i && !defined $qglobals{pop_pon_hedge_jezith}) { #doesnt have preflag
+	quest::emote("screams loudly, and then falls asleep once again.");
+	}
+
       if($text=~/Hail/i && $entry == undef && $pop_pon_hedge_jezith == 1){
       quest::say("You there! You have talked to Adroha Jezith? Then I assume you are here to help me! ... Tell me when you are [" . quest::saylink("ready") . "] to begin, I will lead you through the maze and we, together, will end this endless torment!");
       }

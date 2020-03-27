@@ -15,6 +15,6 @@ quest::say("'You fool!  You did not earn this prize on your own!  The contract t
 if($signal eq 2) {
 quest::emote("laughs heartily and then vanishes in a swirl of incorporeal mist.");
 quest::emote("begins to cast the gate spell.");
-eq.depop();
+quest::depop();
 }
 }

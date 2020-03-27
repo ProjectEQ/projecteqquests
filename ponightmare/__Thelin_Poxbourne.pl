@@ -17,9 +17,10 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i)
        {
-       quest::say("She lied! She said she would release me if I found my way through the maze! Please, you must defeat her. It is the only way I will ever be free. I can help you escape this maze if you would like to [return]");
-       $client->Message(4,"You receive a character flag!");
+       $client->Message(0,"Thelin Poxbourne tells you, 'Please destroy her for subjecting me to her hideous visions.'  Thelin closes his eyes and is swept away from his nightmare.  The land of pure thought begins to vanish from around you.");
+       $client->Message(15,"You receive a character flag!");
        quest::setglobal("pop_pon_construct", 1, 5, "F");
+       $npc->CastSpell(1195, $userid); #cast Waking Moment on PC
        }
 
 if($text=~/return/i)

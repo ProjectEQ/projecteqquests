@@ -1,6 +1,9 @@
 sub EVENT_SPAWN {
 
 quest::settimer(7,600);
+quest::settimer("emote1",6);
+quest::settimer("emote2",12);
+quest::settimer("emote3",18);
 
 }
 
@@ -9,6 +12,20 @@ sub EVENT_TIMER {
 if($timer == 7) {
 quest::depop();
 quest::stoptimer(7);
+}
+if($timer == "emote1") {
+quest::stoptimer("emote1");
+quest::say("'Terris, hear me now!  I have done as you asked.  My beloved dagger is whole once again!  Now keep up your part of the bargain.");
+quest::signalwith(204065,1,0); # signal #Terris_Thule (204065) emotes
+}
+if($timer == "emote2") {
+quest::stoptimer("emote2");
+quest::say("'Vile wench, I knew in the end it would come to this.  You shall pay dearly for your injustice here.");
+quest::signalwith(204065,2,0); # signal #Terris_Thule (204065) emotes
+}
+if($timer == "emote3") {
+quest::stoptimer("emote3");
+quest::say("'So then my hope is nearly lost.  Take my dagger with you and plunge it deep into her soulless heart.  If I cannot escape from this forsaken plane under her rules, I shall make my own!");
 }
 
 }

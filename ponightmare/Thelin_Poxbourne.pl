@@ -154,7 +154,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
             }
 
    if($x == -4549 && $y ==5155 && $spawn_mob1 == 29 && $flag == undef){
-            quest::spawn2(204064,0,0,-4546,4974,4,0); # NPC: #a_construct_of_nightmares
+            quest::spawn2(204064,0,0,-4550,5107,4,0); # NPC: #a_construct_of_nightmares
             quest::stoptimer(1);
             }
              }

@@ -15,17 +15,17 @@ quest::stoptimer(7);
 }
 if($timer eq "emote1") {
 quest::stoptimer("emote1");
-quest::say("'Terris, hear me now!  I have done as you asked.  My beloved dagger is whole once again!  Now keep up your part of the bargain.");
+quest::say(", 'Terris, hear me now!  I have done as you asked.  My beloved dagger is whole once again!  Now keep up your part of the bargain.");
 quest::signalwith(204065,1,0); # signal #Terris_Thule (204065) emotes
 }
 if($timer eq "emote2") {
 quest::stoptimer("emote2");
-quest::say("'Vile wench, I knew in the end it would come to this.  You shall pay dearly for your injustice here.");
+quest::say(", 'Vile wench, I knew in the end it would come to this.  You shall pay dearly for your injustice here.");
 quest::signalwith(204065,2,0); # signal #Terris_Thule (204065) emotes
 }
 if($timer eq "emote3") {
 quest::stoptimer("emote3");
-quest::say("'So then my hope is nearly lost.  Take my dagger with you and plunge it deep into her soulless heart.  If I cannot escape from this forsaken plane under her rules, I shall make my own!");
+quest::say(", 'So then my hope is nearly lost.  Take my dagger with you and plunge it deep into her soulless heart.  If I cannot escape from this forsaken plane under her rules, I shall make my own!");
 }
 
 }

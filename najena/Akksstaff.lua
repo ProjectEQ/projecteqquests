@@ -21,7 +21,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 28027,item2 = 28028,item3 = 28029,item4 = 28030})) then
-		e.self:Say("Very well. Take these words back to that shriveled old gnome, Rykas, if you wish to complete this quest. Now leave me, $name, it sickens me to be this cordial for so long. And my pet needs exercise. Go!");
+		e.self:Say("Very well. Take these words back to that shriveled old gnome, Rykas, if you wish to complete this quest. Now leave me, " .. e.other:GetName() .. ", it sickens me to be this cordial for so long. And my pet needs exercise. Go!");
 		e.other:Ding();
 		e.other:SummonItem(28004); -- Item: Words of Mastery
 		eq.depop_with_timer();

@@ -5,13 +5,13 @@ sub EVENT_SAY
 	
 	{
 
-	if($text=~/Hail/i && $class == 16 && $level >= 46)
+	if($text=~/Hail/i && $class == 16 && $ulevel >= 46)
 		{
 		quest::say("You berserker, but me have nothing for you!")
 		}
 
 	
-	if($text=~/Hail/i && $class == 16 && $level < 46)
+	if($text=~/Hail/i && $class == 16 && $ulevel < 46)
 		{
 		quest::say("Me has nothing to do with you youngling.")
 		}

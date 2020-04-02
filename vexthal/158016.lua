@@ -19,7 +19,7 @@ end
 
 function help_tvx(e)
 	for _, guard in pairs(spawnpt_list) do
-		local guard_mob = eq.get_entity_list():GetSpawnPointID(guard);
+		local guard_mob = eq.get_entity_list():GetSpawnByID(e.self:GetSpawnPointID(guard));
 		if (guard_mob.valid and not guard_mob:IsEngaged()) then
 			guard_mob:MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
 		end

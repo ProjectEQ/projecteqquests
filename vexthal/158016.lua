@@ -17,7 +17,7 @@ function event_timer(e)
 	end
 end
 
-function help_tvx(mob)
+function help_tvx(e)
 	for _, guard in pairs(spawnpt_list) do
 		local guard_mob = eq.get_entity_list():GetSpawnPointID(guard);
 		if (guard_mob.valid and not guard_mob:IsEngaged()) then

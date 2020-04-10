@@ -3,6 +3,9 @@ sub EVENT_ENTERZONE {
 	{
 		quest::assigntask(138); #Force assign Task: New Beginnings
 	}
+
+	set_current_position();
+	quest::settimer("check_idle", 1200);
 }
 
 sub EVENT_CLICKDOOR {
@@ -161,11 +164,6 @@ sub EVENT_TIMER {
 
 		set_current_position();
 	}
-}
-
-sub EVENT_SAY {
-	quest::settimer("check_idle", 1200);
-	set_current_position();
 }
 
 sub set_current_position() {

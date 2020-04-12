@@ -13,7 +13,7 @@ sub EVENT_SAY {
   if ($text=~/tundrabear sandwich/i) {
     quest::say("Dat's easy, ye just take a slab o' dat Tundra Kodiak meat and a jug o' sauce, put it in da oven, den combine the product with a loaf o' bread in a mixin' bowl an' there ye be.");
   }
-  if ($text=~/snow bunny stew/i) {
+  if ($text=~/frost bunny stew/i) {
     quest::say("Simple enuff, getcherself two hunksa Bunny meat and a jug o' sauces. Stir 'em in a mixin bowl, then put spices and two flasks o' water with it and cook it in a pot. Mmmm, zesty!");
   }
   if ($text=~/ulthork meat pie/i) {
@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::summonitem(1415); # Item: Leif's Napkin
   }
   elsif (plugin::check_handin(\%itemcount, 1419 => 1)) {
-    quest::say("Well don, outlander! We'll make a chef of you before we're through. Next you'll need to whip up some Snow Bunny stew fer Missus Coldheart. Again, give her this napkin with her meal an' lemme know when she's been served.");
+    quest::say("Well don, outlander! We'll make a chef of you before we're through. Next you'll need to whip up some Frost Bunny stew fer Missus Coldheart. Again, give her this napkin with her meal an' lemme know when she's been served.");
     quest::summonitem(1416); # Item: Trita's Napkin
     quest::exp(100000);
     quest::faction(406,10); #coldain

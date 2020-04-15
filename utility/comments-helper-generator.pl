@@ -141,7 +141,9 @@ for my $file (@files) {
             my $item_names = "";
 
             if ($options{"--strip-existing-comments"}) {
-                $line =~ s/\--.*//;
+                if ($file =~ /\.lua/) {
+                    $line =~ s/--.*//;
+                }
             }
 
             #::: This line already has a comment in it - or has other inline garbage

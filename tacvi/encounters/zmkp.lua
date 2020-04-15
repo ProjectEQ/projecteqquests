@@ -181,7 +181,7 @@ function ZMKP_Timer(e)
       eq.depop_all(298127);
       eq.depop_all(298128);
 
-      eq.spawn2(298029, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+      eq.spawn2(298029, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Zun`Muram_Kvxe_Pirik
       eq.depop();
 
       eq.get_entity_list():FindDoor(16):SetLockPick(0);

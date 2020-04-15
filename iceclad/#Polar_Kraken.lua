@@ -19,9 +19,9 @@ function event_timer(e)
 	elseif e.timer=="blind" then
 		e.self:CastSpell(5597,e.self:GetHateRandom():GetID()); -- Spell: Squid's Ink
 	elseif e.timer=="adds" then
-		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(110132, 0, 0, e.self:GetX()+30, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY()-30, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY()+30, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Krakling
+		eq.spawn2(110132, 0, 0, e.self:GetX()+30, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Krakling
+		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY()-30, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Krakling
+		eq.spawn2(110132, 0, 0, e.self:GetX()-30, e.self:GetY()+30, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Krakling
 	end
 end

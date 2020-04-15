@@ -55,10 +55,10 @@ end
  function Kess_Spawn(e)
 	eq.spawn2(339109,0,0,1257.17,6330.92,747.16,462.3); -- Spawn 1 active manashard guardian.
 	eq.spawn2(339108,0,0,1158.62,6328.01,745.01,28.5); -- NPC: inactive_manashard_guardian
-	eq.spawn2(339118,0,0,1128.33,6414.53,744.35,129.5);
+	eq.spawn2(339118,0,0,1128.33,6414.53,744.35,129.5); -- NPC: inactive_manashard_guardian
 	eq.spawn2(339119,0,0,1156.67,6486.17,745.00,196.3); -- Spawn 5 inactive manashard guardians
-	eq.spawn2(339120,0,0,1229.06,6507.49,754.67,235.3);
-	eq.spawn2(339121,0,0,1305.75,6458.83,752.10,329.0);
+	eq.spawn2(339120,0,0,1229.06,6507.49,754.67,235.3); -- NPC: inactive_manashard_guardian
+	eq.spawn2(339121,0,0,1305.75,6458.83,752.10,329.0); -- NPC: inactive_manashard_guardian
 	--eq.zone_emote(15,"I've spawned");
 	eq.set_next_hp_event(90); -- Set something to happen at 90%.
 	unlockone=false;
@@ -339,7 +339,7 @@ function Active_Signal(e)
 		depleted_spawnfive=true; -- Tell Kessdona that I've spawned and not to spawn me again!
 	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==5 and depleted_spawnsix == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109); -- depop current active manashard guardian.
-		eq.spawn2(339116,0,0,1305.75,6458.83,752.10,329.0);
+		eq.spawn2(339116,0,0,1305.75,6458.83,752.10,329.0); -- NPC: depleted_manashard_guardian
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.
 		depleted_spawnsix=true; -- Tell Kessdona that I've spawned and not to spawn me again!
 	elseif (e.signal==1) and times_healed == 5 then

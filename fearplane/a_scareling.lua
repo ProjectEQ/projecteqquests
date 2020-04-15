@@ -18,7 +18,7 @@ function event_death_complete(e)
 	local spawn = math.random(100);
 	if(spawn > 90) then
 		
-		eq.spawn2(72108,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		eq.spawn2(72108,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- NPC: Enraged_Imp
 	end
 end
 

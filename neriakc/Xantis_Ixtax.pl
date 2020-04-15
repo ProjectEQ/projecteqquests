@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 			#:: Ding!
 			quest::ding();
 			#:: Give a 13394 - Ring of the Dead with 1 charge
-			quest::summonitem(13394, 1);
+			quest::summonitem(13394, 1); # Item: Ring of the Dead
 		}
 	}
 	#:: Return unused items

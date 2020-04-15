@@ -9,13 +9,13 @@ end
 
 function event_timer(e)
   if (e.timer == "spider") then
-    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357);
-    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357);
+    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357); -- NPC: A_gargantuan_arachnae
+    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357); -- NPC: A_gargantuan_arachnae
     eq.stop_timer("spider");
     eq.set_timer("spiders", 300 * 1000);
   elseif (e.timer == "spiders") then
-    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357);
-    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357);
+    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357); -- NPC: A_gargantuan_arachnae
+    eq.spawn2(205161, 0, 0, 108, -3384, -220, 357); -- NPC: A_gargantuan_arachnae
     eq.stop_timer("spiders");
     eq.set_timer("spiders", 300 * 1000);
   end

@@ -7,7 +7,7 @@ end
 
 function event_timer(e)
     if (e.timer == 'evolve') then
-      eq.spawn2(302078,108,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+      eq.spawn2(302078,108,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: #Mature_Murkglider_Devourer
       eq.depop();
     end
 end

@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 	if (plugin::takeCoin(0, 0, 70, 0)) {
 		quest::say("Take this note to the Scribe of Dal, and perhaps she will break her vow.");
 		#:: Give a 18200 - Note
-		quest::summonitem(18200);
+		quest::summonitem(18200); # Item: Note
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

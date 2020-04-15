@@ -24,16 +24,16 @@ function event_hp(e)
         eq.set_next_hp_event(60);
     elseif (e.hp_event == 60) then
         e.self:Say("Do not think it will be so easy this time!");
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
         e.self:CastSpell(5554, e.self:GetID()); -- Cloud of Discord
         eq.set_timer("cloudofdiscord", 90000);
         eq.set_next_hp_event(30);
     elseif (e.hp_event == 30) then
         e.self:Say("Fools! My power is more than you can ever imagine!  Fear me!");
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
         e.self:CastSpell(5163, e.self:GetID()); -- Force Breath
         eq.set_timer("forcebreath", 20000);
         e.self:CastSpell(3070, e.self:GetID()); -- Timeless Panic
@@ -43,9 +43,9 @@ function event_hp(e)
         e.self:CastedSpellFinished(4746, e.self); -- Protection of Discord III
         e.self:CastedSpellFinished(1248, e.self); -- Spiritual Echo
         e.self:Say("This will not end here!  I have power left to destroy you all!");
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
+        eq.spawn2(96369, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Zordak`s_Minion
     end
 end
 

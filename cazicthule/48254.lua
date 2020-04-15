@@ -22,7 +22,7 @@ function event_waypoint_arrive(e)
 		tracker = 5;
   	elseif(e.wp == 96 and tracker == 5) then
 		e.self:Say("Well, here we are. See, you didn't even have to break a sweat. I'm all ready to... hmm... wait, I seem to have dropped my favorite quill. Did you pick it up by chance? I'll add a little something to your payment if you did.");
-	  	eq.spawn2(48255,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	  	eq.spawn2(48255,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Gimlik_Cogboggle_
 	  	eq.depop();
 	end
 end
@@ -75,7 +75,7 @@ which = math.random(1,6);
     	end
 elseif (e.timer == "Named") then
       		eq.stop_timer("Named");
-      		eq.spawn2(48209,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
+      		eq.spawn2(48209,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC: #a_Thul_Tae_Ew_Tracker
   end
 end
 

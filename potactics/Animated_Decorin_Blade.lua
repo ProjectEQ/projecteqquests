@@ -9,9 +9,9 @@ function event_death_complete(e)
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(214054) == true) then
 		local which = math.random(1,2);
     		if  (which == 1) then
-			eq.spawn2(214119,0,0,1643,1966,-328,387);
+			eq.spawn2(214119,0,0,1643,1966,-328,387); -- NPC: Animated_Decorin_Blade
 		elseif (which == 2) then
-			eq.spawn2(214119,0,0,1163,1786,-328,131);
+			eq.spawn2(214119,0,0,1163,1786,-328,131); -- NPC: Animated_Decorin_Blade
 		end
 
 	end

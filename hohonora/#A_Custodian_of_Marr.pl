@@ -31,21 +31,21 @@ quest::spawn2(quest::ChooseRandom(211089,211090,211091,211092,211093,211094,2110
 quest::spawn2(211096,0,0,612,1493,-115,260); # NPC: Mirezvakla_Ry`Ten
 quest::spawn2(211097,0,0,609,1250,-115,0); # NPC: Herot_Terkins
 quest::spawn2(211098,0,0,679,1372,-115,382); # NPC: Ruark_Barr
-quest::spawn2(211107,0,0,679,1372,-115,382);
+quest::spawn2(211107,0,0,679,1372,-115,382); # NPC: Merken_Kysonn
 
 #ENEMY ROOM 2
 
 quest::spawn2(211099,0,0,1395,1376,-115,382); # NPC: Shott_Tarbs
 quest::spawn2(211100,0,0,1293,1273,-115,0); # NPC: Trann_Berk
 quest::spawn2(211101,0,0,1293,1471,-115,260); # NPC: Thullias_Rhidron
-quest::spawn2(211108,0,0,1293,1471,-115,260);
+quest::spawn2(211108,0,0,1293,1471,-115,260); # NPC: Granmuck_Reiga
 
 #ENEMY ROOM 3
 
 quest::spawn2(211102,0,0,1405,1969,-115,386); # NPC: Zullkata_Reeps
 quest::spawn2(211103,0,0,1296,2071,-115,260); # NPC: Yarezka_Tri`Lok
 quest::spawn2(211104,0,0,1175,1968,-115,126); # NPC: Fligg_Sterp
-quest::spawn2(211109,0,0,1175,1968,-115,126);
+quest::spawn2(211109,0,0,1175,1968,-115,126); # NPC: Maeryn_Malladry
 
 }
 

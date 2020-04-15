@@ -33,5 +33,5 @@ function event_spawn(e)
 end
 
 function event_death_complete(e)
-eq.signal(215461,4);
+eq.signal(215461,4); -- NPC: #Dust_Trigger
 end

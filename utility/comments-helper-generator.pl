@@ -141,7 +141,7 @@ for my $file (@files) {
             my $item_names = "";
 
             if ($options{"--strip-existing-comments"}) {
-                if ($file =~ /\.lua/) {
+                if ($file =~ /\.lua/ && $line=~/Spell:|NPC:|NPC\(s\):|Faction:|Zone:|Item:|Item\(s\):/i) {
                     $line =~ s/--.*//;
                 }
             }
@@ -204,7 +204,7 @@ for my $file (@files) {
                     my @split            = split('\(', $line);
                     my $split_arg        = $split[1];
                     my @split_2          = split(",", $split_arg);
-                    if (looks_like_number($split_2)) {
+                    if (looks_like_number($split_2[0])) {
                         $spell_id_to_comment = trim($split_2[0]);
                     }
                 }

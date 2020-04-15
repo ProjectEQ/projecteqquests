@@ -23,9 +23,9 @@ sub EVENT_ITEM {
   if (($client->GetModCharacterFactionLevel(242) > 24) && plugin::check_handin(\%itemcount,12311 => 2)) {
     quest::say("You have done well. Take the mold for the bracer. Go forth to speak with Thomas of [Lord Searfire]. Then all components shall be known.");
     quest::summonitem(12301); # Item: Mold of Ro Bracer
-    quest::faction(242, 20);
-    quest::faction(695, 3);
-    quest::faction(265, -3);
+    quest::faction(242, 20); # Faction: Deepwater Knights
+    quest::faction(695, 3); # Faction: Clockwork Gnome (Race)
+    quest::faction(265, -3); # Faction: Heretics
   }
   elsif (($client->GetModCharacterFactionLevel(242) > 24) && plugin::check_handin(\%itemcount, 12311 => 1)) {
     quest::say("Two Deepwater goblin nets are required.");

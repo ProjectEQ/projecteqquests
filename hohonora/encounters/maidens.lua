@@ -129,7 +129,7 @@ function BossDeath(e)
 	boss = boss + 1;
 	if ( boss == 3 ) then
 		eq.update_spawn_timer(44032,25920000000); --Alekson Garn 3 days on win
-		eq.spawn2(202368,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading() );
+		eq.spawn2(202368,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading() ); -- NPC: A_Planar_Projection
 		DespawnEventMobs();
 	end
 end

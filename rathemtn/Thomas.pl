@@ -34,7 +34,7 @@ sub EVENT_ITEM {
   if ($client->GetModCharacterFactionLevel(280) > 24) {  # amiable or better to get mold
     if (plugin::check_handin(\%itemcount, 12308 => 2)) {
       quest::say("You have proven yourself to Karana. I grant you the mold of the Ro Helm. May the winds of Karana blow in your favor. Now you must seek out [Lord Searfire] and ask him for [ronium] to complete the second and only other component needed to be fashioned by a master blacksmith.");
-      quest::summonitem(12298);
+      quest::summonitem(12298); # Item: Mold of Ro Helm
       quest::faction(280, 20); #Knights of Thunder
       quest::faction(221, -20); #Bloodsabers
       quest::faction(341, 15); #Priests of Life
@@ -42,7 +42,7 @@ sub EVENT_ITEM {
     }
     elsif (plugin::check_handin(\%itemcount,12308 => 1)) {
       quest::say("I called for two cyclops skulls.");
-      quest::summonitem(12308);
+      quest::summonitem(12308); # Item: Cyclops skull
     }
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');

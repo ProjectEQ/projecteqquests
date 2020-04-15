@@ -1,8 +1,8 @@
 --#a_spiritbound_chimera (300093)
 function event_spawn(e)
 	eq.set_timer("depop",30*60*1000)
-	eq.spawn2(300092, 0, 0, e.self:GetX(), e.self:GetY()+15, e.self:GetZ(), e.self:GetHeading());
-	eq.spawn2(300092, 0, 0, e.self:GetX(), e.self:GetY()-15, e.self:GetZ(), e.self:GetHeading());	
+	eq.spawn2(300092, 0, 0, e.self:GetX(), e.self:GetY()+15, e.self:GetZ(), e.self:GetHeading()); -- NPC: #a_spiritbound_feran
+	eq.spawn2(300092, 0, 0, e.self:GetX(), e.self:GetY()-15, e.self:GetZ(), e.self:GetHeading()); -- NPC: #a_spiritbound_feran	
 end
 
 function event_combat(e)

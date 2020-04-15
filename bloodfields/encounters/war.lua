@@ -25,7 +25,7 @@ end
 function War_Timer(e)
   if ( e.timer == 'reset' ) then 
     e.self:Depop();
-    eq.spawn2(301042, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading() );
+    eq.spawn2(301042, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading() ); -- NPC: War_Caller_Kaavi
   end
 end
 

@@ -37,7 +37,7 @@ sub EVENT_POPUPRESPONSE {
     quest::movepc(54,-441,-2023,4); # Zone: corathusb
   }
   if ($popupid == 2709) { #dreadlands
-    quest::movepc(86,9658,3047,1052);
+    quest::movepc(86,9658,3047,1052); # Zone: dreadlands
   }
   if ($popupid == 2284) { #iceclad
     quest::movepc(110,385,5321,-17); # Zone: erudsxing

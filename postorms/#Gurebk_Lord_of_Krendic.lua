@@ -28,37 +28,37 @@ function event_timer(e)
 		end
 		
 		if (num_alive ==0) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
 		end
 		if (num_alive ==1) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
 		end
 		if (num_alive ==2) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
 		end
 		if (num_alive ==3) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
 		end
 		if (num_alive ==4) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
 		end
 		if (num_alive ==5) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
 		end
 	end
 end

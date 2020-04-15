@@ -7,10 +7,10 @@ end
 function event_timer(e)
 	if (e.timer == 'spawndrakes') then
 		eq.stop_timer('spawndrakes');
-		eq.spawn2(340391, 0, 0, 1848, 2365, -51.625, 442);
-		eq.spawn2(340391, 0, 0, 1830, 2380, -51.625, 442);
-		eq.spawn2(340391, 0, 0, 1870, 2390, -51.625, 442);
-		eq.spawn2(340391, 0, 0, 1843, 2397, -51.625, 442);
+		eq.spawn2(340391, 0, 0, 1848, 2365, -51.625, 442); -- NPC: Messenger_Drake
+		eq.spawn2(340391, 0, 0, 1830, 2380, -51.625, 442); -- NPC: Messenger_Drake
+		eq.spawn2(340391, 0, 0, 1870, 2390, -51.625, 442); -- NPC: Messenger_Drake
+		eq.spawn2(340391, 0, 0, 1843, 2397, -51.625, 442); -- NPC: Messenger_Drake
 	elseif (e.timer == 'depopevent') then
 			eq.stop_timer('depopevent');
 			eq.depop_all(340391);
@@ -41,9 +41,9 @@ function event_say(e)
 		e.self:Say("'I could have tolerated you as long as you didn't disturb me.  Leave the Hall now and do not return.  I do not want to hear your voice again.'");
 	elseif(e.message:findi("how am i disturbing you") and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340412) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340413) == false) then
 		e.self:Say("'Unbelievable!  Even the intruders are incompetent, unable to follow simple instructions!'  The small drake makes a shrill whistle and three kirin appear. 'Destroy them. Be as messy as you must, but be quick about it and clean up when you are done.'");
-		eq.spawn2(340413, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(340413, 0, 0, e.self:GetX()+5, e.self:GetY()+5,  e.self:GetZ(),  e.self:GetHeading());
-		eq.spawn2(340412, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(340413, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ(),  e.self:GetHeading()); -- NPC: Guardian_of_the_Past
+		eq.spawn2(340413, 0, 0, e.self:GetX()+5, e.self:GetY()+5,  e.self:GetZ(),  e.self:GetHeading()); -- NPC: Guardian_of_the_Past
+		eq.spawn2(340412, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ(),  e.self:GetHeading()); -- NPC: Sentinel_of_Antiquity
 	end
 end
 

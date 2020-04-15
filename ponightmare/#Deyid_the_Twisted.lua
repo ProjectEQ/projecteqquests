@@ -10,12 +10,12 @@ end
 function event_hp(e)
 if(e.hp_event == 90) then
 eq.spawn2(204068,0,0,1125,1162,280,344); --#a_foreboding_tree (204068)
-eq.spawn2(204068,0,0,1191,1033,280,392);
-eq.spawn2(204068,0,0,1071,920,280,474);
-eq.spawn2(204068,0,0,901,939,280,50);
-eq.spawn2(204068,0,0,843,999,283,92);
-eq.spawn2(204068,0,0,786,1160,282,152);
-eq.spawn2(204068,0,0,965,1256,282,262);
+eq.spawn2(204068,0,0,1191,1033,280,392); -- NPC: #a_corrupt_treant
+eq.spawn2(204068,0,0,1071,920,280,474); -- NPC: #a_corrupt_treant
+eq.spawn2(204068,0,0,901,939,280,50); -- NPC: #a_corrupt_treant
+eq.spawn2(204068,0,0,843,999,283,92); -- NPC: #a_corrupt_treant
+eq.spawn2(204068,0,0,786,1160,282,152); -- NPC: #a_corrupt_treant
+eq.spawn2(204068,0,0,965,1256,282,262); -- NPC: #a_corrupt_treant
 eq.spawn2(204085,0,0,990,908,280,512); --#a_foreboding_tree (204085) will spawn a corrupt treant
 eq.spawn2(204085,0,0,808,1074,278,116); --#a_foreboding_tree (204085) will spawn a corrupt treant
 eq.spawn2(204086,0,0,1171,966,280,428); --#a_foreboding_tree (204086) will spawn a blighted treant

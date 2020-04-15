@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(10020 => 1)) {
 		quest::say("Jasper! My one and only love! All right.. That Tayla creature was lost in a game of King's Court with a very important and secret merchant. Belyea will not speak of him but that he was some sort of Baron. He did give me this trinket from his new friend and owner of the half-elf scamp. You keep it. It is worth nothing compared to sweet, beautiful Jasper.");
 		#:: Give a 54026 - Klok's Seal
-		quest::summonitem(54026);
+		quest::summonitem(54026); # Item: Klok's Seal
 	}
 	#:: Match two gold pieces
 	elsif (plugin::takeCoin(0, 0, 2, 0)) {

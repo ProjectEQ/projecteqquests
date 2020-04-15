@@ -22,8 +22,8 @@ local hp_lock=25;
 function Vish_Spawn(e)
 	eq.spawn2(343093,0,0,-4251.54,394.38,130.65,497.8); -- NPC: corrupted_drake
 	eq.spawn2(343165,0,0,-4264.01,538.71,134.53,322.5); -- Control spawns of corrupted drakes upon my spawn.
-	eq.spawn2(343166,0,0,-4320.05,564.41,130.61,335.0);
-	eq.spawn2(343167,0,0,-4337.70,225.69,130.82,506.3);
+	eq.spawn2(343166,0,0,-4320.05,564.41,130.61,335.0); -- NPC: corrupted_drake
+	eq.spawn2(343167,0,0,-4337.70,225.69,130.82,506.3); -- NPC: corrupted_drake
 	--eq.zone_emote(15,"Ive spawned!");	 -- Let the zone know something happened.
 end
 
@@ -153,8 +153,8 @@ function Vish_Hp(e)
 		eq.spawn2(343162,66,0,-4573.35,137.25,132.04,36.3);  -- add grids -- Spawn Cloud of Concentrated Chaos
 		eq.signal(343093,1); -- NPC: corrupted_drake
 		eq.signal(343165,1); -- Signal all 4 drakes to agro.
-		eq.signal(343166,1);
-		eq.signal(343167,1);
+		eq.signal(343166,1); -- NPC: corrupted_drake
+		eq.signal(343167,1); -- NPC: corrupted_drake
 		eq.set_next_hp_event(25); -- Set something to happen at 25%
 	elseif (e.hp_event == 25) then
 		local cl = eq.get_entity_list():GetShuffledClientList(); -- Shuffle the client list and choose 4 targets.
@@ -171,9 +171,9 @@ function Vish_Hp(e)
 		eq.set_timer("AoE",40000); -- Creeping doom aoe timer
 		eq.spawn2(343162,66,0,-4573.35,137.25,132.04,36.3);  -- Spawn Cloud of Concentrated Chaos
 		eq.spawn2(343163,67,0,-4588.09,799.42,133.03,245.0); -- Spawn Mournful Spirits
-		eq.spawn2(343163,68,0,-4446.01,720.14,133.24,236.0);
-		eq.spawn2(343163,69,0,-4578.29,161.82,133.23,35.3);
-		eq.spawn2(343163,70,0,-4457.00,139.62,133.22,461.8);
+		eq.spawn2(343163,68,0,-4446.01,720.14,133.24,236.0); -- NPC: #mournful_spirit
+		eq.spawn2(343163,69,0,-4578.29,161.82,133.23,35.3); -- NPC: #mournful_spirit
+		eq.spawn2(343163,70,0,-4457.00,139.62,133.22,461.8); -- NPC: #mournful_spirit
 		eq.set_timer("Mourning_Respawn",30000); -- Respawn spirits in 30 seconds.
 		eq.set_timer("Lock",1000); -- Lock my HP.
 	elseif (e.hp_event == mourning_count) then
@@ -228,16 +228,16 @@ function Vish_Timer(e)
 			eq.signal(343093,1); -- NPC: corrupted_drake
 			eq.stop_timer("Drakes");
 	elseif (e.timer == "DrakesOne") then		
-			eq.spawn2(343165,0,0,-4264.01,538.71,134.53,322.5);
-			eq.signal(343165,1);
+			eq.spawn2(343165,0,0,-4264.01,538.71,134.53,322.5); -- NPC: corrupted_drake
+			eq.signal(343165,1); -- NPC: corrupted_drake
 			eq.stop_timer("DrakesOne");
 	elseif (e.timer == "DrakesTwo") then		
-			eq.spawn2(343166,0,0,-4320.05,564.41,130.61,335.0);
-			eq.signal(343166,1);
+			eq.spawn2(343166,0,0,-4320.05,564.41,130.61,335.0); -- NPC: corrupted_drake
+			eq.signal(343166,1); -- NPC: corrupted_drake
 			eq.stop_timer("DrakesTwo");
 	elseif (e.timer == "DrakesThree") then		
-			eq.spawn2(343167,0,0,-4337.70,225.69,130.82,506.3);
-			eq.signal(343167,1);
+			eq.spawn2(343167,0,0,-4337.70,225.69,130.82,506.3); -- NPC: corrupted_drake
+			eq.signal(343167,1); -- NPC: corrupted_drake
 			eq.stop_timer("DrakesThree");						
 	elseif (e.timer == "AoE") then
 		local cl = eq.get_entity_list():GetClientList(); -- Creeping doom timer after initial 25% one.
@@ -254,9 +254,9 @@ function Vish_Timer(e)
 	elseif (e.timer == "Mourning_Respawn") then
 		eq.depop_all(343163); -- Despawn all current Mournful
 		eq.spawn2(343163,67,0,-4588.09,799.42,133.03,245.0); -- Respawn them on grids.
-		eq.spawn2(343163,68,0,-4446.01,720.14,133.24,236.0);
-		eq.spawn2(343163,69,0,-4578.29,161.82,133.23,35.3);
-		eq.spawn2(343163,70,0,-4457.00,139.62,133.22,461.8);
+		eq.spawn2(343163,68,0,-4446.01,720.14,133.24,236.0); -- NPC: #mournful_spirit
+		eq.spawn2(343163,69,0,-4578.29,161.82,133.23,35.3); -- NPC: #mournful_spirit
+		eq.spawn2(343163,70,0,-4457.00,139.62,133.22,461.8); -- NPC: #mournful_spirit
 	elseif (e.timer == "Respawn") then -- respawn event.
 		eq.depop_all(343163); -- mournful spirits
 		eq.depop_all(343095); -- eggs
@@ -285,7 +285,7 @@ function Vish_Timer(e)
 		eq.spawn2(343094,65,0,-4550.12,583.67,129.61,244.00); -- NPC: Vishimtar_the_Fallen
 		eq.stop_all_timers();
 	elseif (e.timer == "Incorporeal") and incorporeal_count <  4 then -- if less than 4, keep spawning.
-		eq.spawn2(343159,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(343159,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: #incorporeal_shadow
 	elseif (e.timer == "Eggs_Spawn") then
 		eq.zone_emote(15,"Vishimtar shouts, Your presence has caused the children to awaken. They will be . . . hungry."); -- let the player know something happened.
 		eq.stop_timer("Eggs_Spawn");
@@ -303,26 +303,26 @@ function Vish_Timer(e)
 		eq.set_timer("Eggs",180000); -- reset timer.
 		eq.depop_all(343095);
 		if (which == 1) then
-		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
 		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1); -- if failed summon drakelings/agro player.
-		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4461.28,617.90,131.07,423.0):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
 		elseif (which == 2) then
-		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4513.24,275.87,123.27,467.3):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
 		elseif (which == 3) then
-		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
+		eq.spawn2(343161,0,0,-4510.45,554.25,132.81,320.8):AddToHateList(e.self:GetTarget(),1); -- NPC: #a_corrupted_drakeling
 		end
 	end
 

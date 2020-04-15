@@ -114,7 +114,7 @@ function Boss_Death(e)
   eq.depop_all(307006);
 
   -- Spawn Shell of the Master 
-  eq.spawn2(307008, 0, 0, -212, 270, 66, e.self:GetHeading());
+  eq.spawn2(307008, 0, 0, -212, 270, 66, e.self:GetHeading()); -- NPC: Shell_of_the_Master_
 
   -- Update the Win Lockout
   local mpg_helper = require("mpg_helper");

@@ -11,7 +11,7 @@ end
 function event_timer(e)
 	if(e.timer=="adds" and numadds <10) then
 		numadds=numadds+1;
-		eq.spawn2(44109,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(44109,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Host_of_Akksstaff
 	elseif(e.timer=="depop") then
 		eq.depop();
 	end

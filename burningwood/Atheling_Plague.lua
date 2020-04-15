@@ -23,7 +23,7 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 12764}) and tonumber(qglobals["shmskullquest"]) >= 8) then
 			e.other:SummonItem(12750); -- Item: Iksar Skull
 			e.self:Shout("Excellent. You show signs of a true Iksar slayer. Too, bad I have already given the skull of the Sister of Scale to another. Perhaps you would like to meet him before he departs. Say hello, Doval.");
-			eq.unique_spawn(87154,0,0,e.self:GetX() + 5,e.self:GetY(),e.self:GetZ());
+			eq.unique_spawn(87154,0,0,e.self:GetX() + 5,e.self:GetY(),e.self:GetZ()); -- NPC: Clerk_Doval
 			eq.set_timer("heal",20000);
 		end
 	end

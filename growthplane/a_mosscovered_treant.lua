@@ -35,7 +35,7 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 31435,item2 = 31436,item3 = 31437,item4 = 31438}) and e.other:GetLevel() >= 55) then
 		e.self:Emote("whispers, like wind through the tree tops, as it speaks hushed words to the tree."); -- Not sure if this is the right response
-		e.other:SummonItem(1224);
+		e.other:SummonItem(1224); -- Item: Chord of Vines
 		e.other:AddEXP(2500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

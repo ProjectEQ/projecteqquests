@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   	if (plugin::takeItems(13544 => 1)) {
     		quest::say("Nice material!! I feel the ways of Prexus enlightening my soul. Unngh!! Enough of this fishing. Here take my broken fishing pole and toss it to the sea. All hail Prexus!!");
 		#:: Give a 13922 - Snapped Pole
-		quest::summonitem(13922);
+		quest::summonitem(13922); # Item: Snapped Pole
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

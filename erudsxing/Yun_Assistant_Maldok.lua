@@ -29,7 +29,7 @@ function event_say(e)
 			
 			rescue = 1;
 			
-			eq.signal(98043, e.other:GetID());
+			eq.signal(98043, e.other:GetID()); -- NPC: a_zombie_guardian
 			eq.follow(e.other:GetID());
 			eq.set_timer("docks", 2000)
 			

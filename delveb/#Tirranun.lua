@@ -47,7 +47,7 @@ function event_combat(e)
 	elseif (e.joined == false) and phaseone == false then
 	eq.depop(342066); -- Depop my old self
 	eq.depop_all(342065); -- Repop my new  due to my increased HP pool gain from phase 2.
-	eq.spawn2(342066,0,0,-742.57,2866.09,41.52,9.0);
+	eq.spawn2(342066,0,0,-742.57,2866.09,41.52,9.0); -- NPC: #Tirranun
 	phaseone=true; -- Set my phase back to 1.
 	end
 end
@@ -108,7 +108,7 @@ function event_timer(e)
 	eq.stop_all_timers(); -- Stop all timers
 	e.self:SetHP(e.self:GetMaxHP()); -- if no one is on my hate list... heal to full.
 	elseif (e.timer == "Adds") then
-	eq.spawn2(342065,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+	eq.spawn2(342065,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #whorl_of_searing_ashes
 	e.self:AddToHateList(e.self:GetTarget(),1); -- Spawn adds / add them to hate list.
 	end
 end

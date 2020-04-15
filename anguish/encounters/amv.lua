@@ -98,9 +98,9 @@ function AMV_Timer(e)
 		eq.stop_timer("check_mark");
 	elseif (e.timer == "adds") then
 		if(math.random(2) == 1) then
-			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1); -- NPC: a_languished_convert
 		else
-			eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);
+			eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1); -- NPC: a_languished_convert
 		end
 	elseif (e.timer == "focus30") then
 		eq.stop_timer("focus30");

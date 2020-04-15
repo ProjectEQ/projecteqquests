@@ -33,5 +33,5 @@ function event_spawn(e)
 end
 
 function event_death_complete(e)
-eq.signal(215450,4);
+eq.signal(215450,4); -- NPC: #Air_Trigger
 end

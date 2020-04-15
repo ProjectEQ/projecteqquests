@@ -5,7 +5,7 @@ end
 
 function event_hp(e)
     if(e.hp_event == 98) then
-        eq.signal(207052,1);
+        eq.signal(207052,1); -- NPC: Sorrowsong
         e.self:Say("Sorrowsong, sing for us. We want these wretches to enjoy their stay, don't we?");
         eq.set_next_hp_event(90);
     elseif (e.hp_event == 90) then
@@ -44,7 +44,7 @@ function event_hp(e)
         eq.spawn2(eq.ChooseRandom(207085,207086), 0, 0, 10, -72, 579, 1);
         eq.set_next_hp_event(25);
     elseif (e.hp_event == 25) then
-        eq.spawn2(207065, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+        eq.spawn2(207065, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Sorrowsong
         e.self:Say("This filth is proving to be a challenge!  Sorrowsong, attack these mortals!");
         eq.depop(207052);
         eq.set_next_hp_event(20);
@@ -79,7 +79,7 @@ function event_timer(e)
         eq.set_timer('spawnsorrow', 5 * 1000);
     elseif (e.timer == 'spawnsorrow') then
         eq.stop_timer('spawnsorrow');
-        eq.unique_spawn(207052, 0, 0, 1, 2, 579, 247);
+        eq.unique_spawn(207052, 0, 0, 1, 2, 579, 247); -- NPC: Sorrowsong
     elseif (e.timer == 'zcheck') then
         if e.self:GetZ() < 520 then
             e.self:Emote("dissolves into a swirling mist and moves back across the room");
@@ -89,5 +89,5 @@ function event_timer(e)
 end
 
 function event_death_complete(e)
-    eq.unique_spawn(218068, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+    eq.unique_spawn(218068, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: A_Planar_Projection
 end

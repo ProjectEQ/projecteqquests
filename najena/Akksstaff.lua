@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Say("Then bring me the torn pages of Mastery, there are four pages that can be found upon the women In this keep, though have a care, Najena's followers guard her treasures carefully, and delight in punishing trespassers.");
 	elseif(e.message:findi("bantil sent me") and qglobals["mage_epic"] >= "5") then
 		e.self:Say("My, you are persistant aren't you? Well you have found more trouble than you expected, now haven't you? Prepare to witness the true power of a master of the elements!");
-		eq.spawn2(44108,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());	
+		eq.spawn2(44108,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Akksstaff`s Minion	
 	end
 end
 

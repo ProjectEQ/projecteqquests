@@ -6,7 +6,7 @@ end
 function event_timer(e)
 	if(e.timer == "cast") then
 		eq.stop_timer("cast");
-		e.self:CastSpell(2815,e.self:GetID(),0,1);
+		e.self:CastSpell(2815,e.self:GetID(),0,1); -- Spell: Shower of Blood
 	elseif(e.timer == "depop") then
 		eq.stop_timer("depop");
 		eq.depop();

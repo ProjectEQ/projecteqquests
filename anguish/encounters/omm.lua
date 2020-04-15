@@ -251,7 +251,7 @@ function OMM_Timer(e)
 		banished_raid=1;
 		banished_hp=math.ceil(e.self:GetMaxHP()*e.self:GetHPRatio()/100);
 		e.self:WipeHateList(); -- let's wipe ours too, it should be empty, maybe fix bards being instantly killed for some reason
-		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
+		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH()); -- NPC: Overlord_Mata_Muram
 		eq.depop();
 	elseif (e.timer == "banish_hp_watch") then
 		--if hp is less than 20% then banish after 3 sec
@@ -269,7 +269,7 @@ function OMM_Timer(e)
 		eq.depop_all(317122);
 		eq.depop_all(317114);
 		eq.depop_all(317117);
-		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
+		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH()); -- NPC: Overlord_Mata_Muram
 		eq.depop();
 	elseif (e.timer == "enable_summon") then
 		eq.debug("re-enabling summon: " .. os.date("!%c"));
@@ -345,7 +345,7 @@ end
 
 function Coerced_Timer(e)
 	if (e.timer=="respawn") then
-		eq.spawn2(317114,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
+		eq.spawn2(317114,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH()); -- NPC: Coerced_Lieutenant
 		eq.stop_timer("respawn");
 	end
 end

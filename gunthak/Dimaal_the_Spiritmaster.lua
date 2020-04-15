@@ -62,66 +62,66 @@ end
 
 function event_timer(e)
 	if (e.timer == 'topwave1' and wave_counter < 7) then
-		eq.spawn2(224438, 0, 0, 1107, -2526, -42, 355);
-		eq.spawn2(224438, 0, 0, 1076, -2470, -44, 297);
-		eq.spawn2(224438, 0, 0, 1004, -2458, -40, 237);
-		eq.spawn2(224438, 0, 0, 963, -2526, -42, 161);
-		eq.spawn2(224438, 0, 0, 941, -2582, -47, 104);
-		eq.spawn2(224438, 0, 0, 959, -2640, -44, 55);
-		eq.spawn2(224442, 0, 0, 1034, -2640, -44, 508);
-		eq.spawn2(224443, 0, 0, 1112, -2599, -45, 427);
+		eq.spawn2(224438, 0, 0, 1107, -2526, -42, 355); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 1076, -2470, -44, 297); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 1004, -2458, -40, 237); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 963, -2526, -42, 161); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 941, -2582, -47, 104); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 959, -2640, -44, 55); -- NPC: a_fallen_knight
+		eq.spawn2(224442, 0, 0, 1034, -2640, -44, 508); -- NPC: a_fallen_priest
+		eq.spawn2(224443, 0, 0, 1112, -2599, -45, 427); -- NPC: a_fallen_thaumaturge
 		eq.set_timer('topwave1', 600 * 1000);
 		wave_counter = wave_counter + 1;
 	elseif (e.timer == 'topwave1' and wave_counter == 7) then
-		eq.spawn2(224438, 0, 0, 1107, -2526, -42, 355);
-		eq.spawn2(224438, 0, 0, 1076, -2470, -44, 297);
-		eq.spawn2(224438, 0, 0, 1004, -2458, -40, 237);
-		eq.spawn2(224438, 0, 0, 963, -2526, -42, 161);
-		eq.spawn2(224438, 0, 0, 941, -2582, -47, 104);
-		eq.spawn2(224438, 0, 0, 959, -2640, -44, 55);
-		eq.spawn2(224442, 0, 0, 1034, -2640, -44, 508);
-		eq.spawn2(224443, 0, 0, 1112, -2599, -45, 427);
-		eq.spawn2(224439, 0, 0, 1116, -2545, -43, 384);
+		eq.spawn2(224438, 0, 0, 1107, -2526, -42, 355); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 1076, -2470, -44, 297); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 1004, -2458, -40, 237); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 963, -2526, -42, 161); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 941, -2582, -47, 104); -- NPC: a_fallen_knight
+		eq.spawn2(224438, 0, 0, 959, -2640, -44, 55); -- NPC: a_fallen_knight
+		eq.spawn2(224442, 0, 0, 1034, -2640, -44, 508); -- NPC: a_fallen_priest
+		eq.spawn2(224443, 0, 0, 1112, -2599, -45, 427); -- NPC: a_fallen_thaumaturge
+		eq.spawn2(224439, 0, 0, 1116, -2545, -43, 384); -- NPC: Phizan_Crindo
 		eq.stop_timer('topwave1');
 		e.self:Say("'You seem to have this situation under control. I will depart now. Best of luck.'");
 		eq.depop_with_timer();
 	elseif (e.timer == 'midwave1' and wave_counter < 4) then
-		eq.spawn2(224445, 0, 0, 1107, -2526, -42, 355);
-		eq.spawn2(224445, 0, 0, 1004, -2458, -40, 237);
-		eq.spawn2(224445, 0, 0, 963, -2526, -42, 161);
-		eq.spawn2(224445, 0, 0, 959, -2640, -44, 55);
-		eq.spawn2(224446, 0, 0, 1034, -2640, -44, 508);
-		eq.spawn2(224447, 0, 0, 1112, -2599, -45, 427);
+		eq.spawn2(224445, 0, 0, 1107, -2526, -42, 355); -- NPC: a_doomed_partisan
+		eq.spawn2(224445, 0, 0, 1004, -2458, -40, 237); -- NPC: a_doomed_partisan
+		eq.spawn2(224445, 0, 0, 963, -2526, -42, 161); -- NPC: a_doomed_partisan
+		eq.spawn2(224445, 0, 0, 959, -2640, -44, 55); -- NPC: a_doomed_partisan
+		eq.spawn2(224446, 0, 0, 1034, -2640, -44, 508); -- NPC: a_doomed_sorcerer
+		eq.spawn2(224447, 0, 0, 1112, -2599, -45, 427); -- NPC: a_doomed_curate
 		eq.set_timer('midwave1', 420 * 1000);
 		wave_counter = wave_counter + 1;
 	elseif (e.timer == 'midwave1' and wave_counter == 4) then
-		eq.spawn2(224445, 0, 0, 1107, -2526, -42, 355);
-		eq.spawn2(224445, 0, 0, 1004, -2458, -40, 237);
-		eq.spawn2(224445, 0, 0, 963, -2526, -42, 161);
-		eq.spawn2(224445, 0, 0, 959, -2640, -44, 55);
-		eq.spawn2(224446, 0, 0, 1034, -2640, -44, 508);
-		eq.spawn2(224447, 0, 0, 1112, -2599, -45, 427);
-		eq.spawn2(224448, 0, 0, 1116, -2545, -43, 384);
+		eq.spawn2(224445, 0, 0, 1107, -2526, -42, 355); -- NPC: a_doomed_partisan
+		eq.spawn2(224445, 0, 0, 1004, -2458, -40, 237); -- NPC: a_doomed_partisan
+		eq.spawn2(224445, 0, 0, 963, -2526, -42, 161); -- NPC: a_doomed_partisan
+		eq.spawn2(224445, 0, 0, 959, -2640, -44, 55); -- NPC: a_doomed_partisan
+		eq.spawn2(224446, 0, 0, 1034, -2640, -44, 508); -- NPC: a_doomed_sorcerer
+		eq.spawn2(224447, 0, 0, 1112, -2599, -45, 427); -- NPC: a_doomed_curate
+		eq.spawn2(224448, 0, 0, 1116, -2545, -43, 384); -- NPC: Tagai_Darkheart
 		eq.stop_timer('midwave1');
 		e.self:Say("'You seem to have this situation under control. I will depart now. Best of luck.'");
 		eq.depop_with_timer();
 	elseif (e.timer == 'lowwave1' and wave_counter < 4) then
-		eq.spawn2(224437, 0, 0, 1107, -2526, -42, 355);
-		eq.spawn2(224437, 0, 0, 1004, -2458, -40, 237);
-		eq.spawn2(224437, 0, 0, 963, -2526, -42, 161);
-		eq.spawn2(224437, 0, 0, 959, -2640, -44, 55);
-		eq.spawn2(224440, 0, 0, 1034, -2640, -44, 508);
-		eq.spawn2(224441, 0, 0, 1112, -2599, -45, 427);
+		eq.spawn2(224437, 0, 0, 1107, -2526, -42, 355); -- NPC: a_cursed_conscript
+		eq.spawn2(224437, 0, 0, 1004, -2458, -40, 237); -- NPC: a_cursed_conscript
+		eq.spawn2(224437, 0, 0, 963, -2526, -42, 161); -- NPC: a_cursed_conscript
+		eq.spawn2(224437, 0, 0, 959, -2640, -44, 55); -- NPC: a_cursed_conscript
+		eq.spawn2(224440, 0, 0, 1034, -2640, -44, 508); -- NPC: a_cursed_vicar
+		eq.spawn2(224441, 0, 0, 1112, -2599, -45, 427); -- NPC: a_cursed_magus
 		eq.set_timer('lowwave1', 360 * 1000);
 		wave_counter = wave_counter + 1;
 	elseif (e.timer == 'lowwave1' and wave_counter == 4) then
-		eq.spawn2(224437, 0, 0, 1107, -2526, -42, 355);
-		eq.spawn2(224437, 0, 0, 1004, -2458, -40, 237);
-		eq.spawn2(224437, 0, 0, 963, -2526, -42, 161);
-		eq.spawn2(224437, 0, 0, 959, -2640, -44, 55);
-		eq.spawn2(224440, 0, 0, 1034, -2640, -44, 508);
-		eq.spawn2(224441, 0, 0, 1112, -2599, -45, 427);
-		eq.spawn2(224444, 0, 0, 1116, -2545, -43, 384);
+		eq.spawn2(224437, 0, 0, 1107, -2526, -42, 355); -- NPC: a_cursed_conscript
+		eq.spawn2(224437, 0, 0, 1004, -2458, -40, 237); -- NPC: a_cursed_conscript
+		eq.spawn2(224437, 0, 0, 963, -2526, -42, 161); -- NPC: a_cursed_conscript
+		eq.spawn2(224437, 0, 0, 959, -2640, -44, 55); -- NPC: a_cursed_conscript
+		eq.spawn2(224440, 0, 0, 1034, -2640, -44, 508); -- NPC: a_cursed_vicar
+		eq.spawn2(224441, 0, 0, 1112, -2599, -45, 427); -- NPC: a_cursed_magus
+		eq.spawn2(224444, 0, 0, 1116, -2545, -43, 384); -- NPC: Simati_the_Cursed
 		eq.stop_timer('lowwave1');
 		e.self:Say("'You seem to have this situation under control. I will depart now. Best of luck.'");
 		eq.depop_with_timer();

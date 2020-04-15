@@ -32,7 +32,7 @@ end
 
 function event_timer(e)
 	if (e.timer == "Summonone") then
-	eq.spawn2(357010,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(357010,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Sendaii,_the_Hive_Queen
 	eq.stop_timer("Summonone");
 	eq.set_timer("Uhoh",8000);
 	elseif (e.timer == "Uhoh") then
@@ -45,8 +45,8 @@ function event_timer(e)
 	elseif (e.timer == "Retry") then
 	e.self:Say("Yuck I hate spiders!!  Look over there by the entrance of Rivervale, I think I see someone coming out of the city. Could that be him?");
 	eq.stop_timer("Retry");
-	eq.spawn2(33165,0,0,-2395.99,757.44,-2.00,253.3);
-	eq.spawn2(33161,0,0,-2395.84,496.42,-453,123.3);
+	eq.spawn2(33165,0,0,-2395.99,757.44,-2.00,253.3); -- NPC: Crysta_Tagglefoot
+	eq.spawn2(33161,0,0,-2395.84,496.42,-453,123.3); -- NPC: Deputy?
 	e.self:Shout("Hey over here, thief!! Don't think we can't see you!");
 	e.self:Say("I hope you're ready for this!");
 	eq.depop_with_timer(33164);

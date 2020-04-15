@@ -7,7 +7,7 @@ function event_say(e)
 end
 
 function event_death_complete(e)
-	eq.spawn2(9147, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(9147, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(),e.self:GetHeading()); -- NPC: #Sir_Lucan_D`Lere
 end
 
 function event_trade(e)

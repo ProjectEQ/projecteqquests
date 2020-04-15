@@ -22,7 +22,7 @@ function event_trade(e)
 		e.other:Faction(222,-1,0); -- Broken Skull Clan
 		e.other:Ding();
 		e.other:AddEXP(145); -- seen at level 1
-		e.other:SummonItem(eq.ChooseRandom(2161, 2162, 2163, 2164, 2165, 2167, 2168, 2169, 2170, 2171, 2172));
+		e.other:SummonItem(eq.ChooseRandom(2161, 2162, 2163, 2164, 2165, 2167, 2168, 2169, 2170, 2171, 2172)); -- Item(s): Large Raw-hide Skullcap (2161)
 	end
 
 	item_lib.return_items(e.self, e.other, e.trade)

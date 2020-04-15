@@ -45,7 +45,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18805 => 1)) {
 		quest::say("Good work! You shall rise quickly in our ranks of evil. Let no man stand in your way and never betray the shrine or you to will join our collection of undead. You can also assist me with a [new task].");
 		#:: Give a random reward: 17002 - Belt Pouch, 10018 - Hematite
-		quest::summonitem(quest::ChooseRandom(17002, 10018));
+		quest::summonitem(quest::ChooseRandom(17002, 10018)); # Item(s): Belt Pouch (17002)
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Incredible!! You have slain one of the greatest warriors in Qeynos!! He must have been full of grog. No doubt he drank most of his skill away. Now I shall cast a spell and strip the flesh from his skull and.. Presto!! Take this skull to Lord Grimrot somewhere in the Plains of Karana. He will be in the center of a field of skeletons. If he is not there, wait for his return. He must return eventually.");
 			#:: Give a 12137 - Dwarf Skull
-			quest::summonitem(12137);
+			quest::summonitem(12137); # Item: Dwarf Skull
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -86,7 +86,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("While the Bloodsabers appreciate your past contributions to Bertoxxulous and our cause, we do not feel you can be trusted with vital information yet.");
 			#:: Return a 12136 - Dwarf Head
-			quest::summonitem(12136);
+			quest::summonitem(12136); # Item: Dwarf Head
 		}
 	}
 	#:: Return unused items

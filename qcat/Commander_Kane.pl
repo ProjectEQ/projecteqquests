@@ -26,7 +26,7 @@ sub EVENT_SAY {
 	elsif ($text=~/highpass/i) {
 		quest::say("You will be taking this with you. Give this marked bottle to a man called Barn Bloodstone. He is known to hang around a place called the Golden Rooster. He has a package for me. He will then give you instructions to your next destination. Now, be off! Time is of the essence!");
 		#:: Give a 13130 - Blackburrow Stout
-		quest::summonitem(13130);
+		quest::summonitem(13130); # Item: Blackburrow Stout
 	}
 	elsif ($text=~/home/i) {
 		quest::say("Just as well.  Get the shrine to send me someone of strength.  No more cowards!");

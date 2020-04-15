@@ -19,7 +19,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:AddEXP(250);
 		e.other:GiveCash(0, 0, 0, 44);
-		eq.spawn2(151057, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(151057, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Gliblixl_Rocktok
 		eq.depop_with_timer();
 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10952})) then
@@ -31,7 +31,7 @@ function event_trade(e)
 		e.other:Faction(1508, 10); -- Faction: Traders of the Haven
 		e.other:AddEXP(250);
 		e.other:GiveCash(0, 0, 0, 14);
-		eq.spawn2(151057, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(151057, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Gliblixl_Rocktok
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

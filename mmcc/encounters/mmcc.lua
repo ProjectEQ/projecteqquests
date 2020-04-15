@@ -31,7 +31,7 @@ end
 
 function Fake_Death(e)
   eq.zone_emote(15, "A mighty laugh echoes out into the night from the gargoyle aviary. The sound of Valdoon Kel'Novar's voice is clear, 'Did you fools really believe I would be so careless? You'll not live to regret the mistake of crossing the Trueborn!' ");
-  eq.spawn2(243636, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+  eq.spawn2(243636, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Guardian_of_Kel`Novar
   extra_loot = true;
 end
 

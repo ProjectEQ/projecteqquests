@@ -28,7 +28,7 @@ function event_timer(e)
 		eventcomplete=0;
 		eq.stop_timer("start");
 		e.self:Emote("tightens all the muscles in his body as he exerts his will over his tormentors");
-		eq.spawn2(392104,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(392104,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_haunt
 	elseif (e.timer=="gate") then
 		eventcomplete=0;
 		eq.depop_with_timer();

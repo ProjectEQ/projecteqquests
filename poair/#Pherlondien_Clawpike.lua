@@ -19,5 +19,5 @@ function event_timer(e)
 end
 
 function event_death_complete(e)
-eq.signal(215450,3);
+eq.signal(215450,3); -- NPC: #Air_Trigger
 end

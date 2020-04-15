@@ -78,7 +78,7 @@ function Start_Event(e)
   eq.spawn2(306022, 0, 0, -223, 260, 66, 276); -- a kyv sureshot
   eq.spawn2(306023, 0, 0, -188, 257, 66, 166);  -- a kyv sureshot
 
-  eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
+  eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_hazard
 
   eq.set_timer("emotes", 5 * 1000);
   eq.set_timer("equipment", equipment_timer * 1000);

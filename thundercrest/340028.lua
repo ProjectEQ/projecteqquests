@@ -50,14 +50,14 @@ function event_timer(e)
 				e.self:RemoveAISpell(6605);
 			end
 	elseif (e.timer == "Seekers") then
-		eq.spawn2(340029,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(340029,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #a_blizzard_seeker
 	elseif (e.timer == "Unstable") then
-		eq.spawn2(340030,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(340030,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #an_unstable_storm
 	end
 end
 
 function event_death_complete(e)
 		eq.get_entity_list():FindDoor(30):SetLockPick(0); -- unlock door upon success
 		eq.get_entity_list():FindDoor(31):SetLockPick(0); -- unlock door upon success
-		eq.spawn2(340031,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+		eq.spawn2(340031,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: a_chest
 end

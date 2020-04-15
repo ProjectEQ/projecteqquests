@@ -4,7 +4,7 @@ sub EVENT_SAY {
   }
   if ($text=~/travel to freeport/i){
     quest::say("Off you go!");
-    quest::movepc(10,-1006.66,-14.65,-53.47,64); # Zone: freeporteast
+    quest::movepc(10,-1006.66,-14.65,-53.47,64); # Zone: freporte
   }
   if ($text=~/travel to butcherblock/i){
     quest::say("Off you go!");

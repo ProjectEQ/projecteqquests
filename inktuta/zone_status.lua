@@ -144,7 +144,7 @@ end
 
 function SpawnMites()
 	--exiles
-	eq.spawn2(296030,0,0,-274,-531,-52,250); -- NPC: #a_rambling_exile 
+	eq.spawn2(296030,0,0,-274,-531,-52,250); -- NPC: #a_rambling_exile
 	eq.spawn2(296033,0,0,-557,-237,-2,126); -- NPC: #a_confused_exile
 	eq.spawn2(296035,0,0,-385,-562,-76,305); -- needs_heading_validation
 	eq.spawn2(296036,0,0,-305,-310,-51,380); -- NPC: #an_irrational_exile
@@ -163,8 +163,8 @@ function SpawnGolems()
 	eq.spawn2(296049,0,0,-533,-649,-97,128); -- NPC: a_clay_monolith_
 	eq.spawn2(296049,0,0,-454,-580,-97,384); -- NPC: a_clay_monolith_
 	--third set
-	eq.spawn2(296046,0,0,-494,-776,-120,0); -- NPC: a_loose_tile3 
-	eq.spawn2(296050,0,0,-533,-737,-122,128); -- NPC: a_clay_monolith__ 
+	eq.spawn2(296046,0,0,-494,-776,-120,0); -- NPC: a_loose_tile3
+	eq.spawn2(296050,0,0,-533,-737,-122,128); -- NPC: a_clay_monolith__
 	eq.spawn2(296050,0,0,-533,-798,-122,128); -- NPC: a_clay_monolith__
 	eq.spawn2(296050,0,0,-454,-798,-122,384); -- NPC: a_clay_monolith__
 	eq.spawn2(296050,0,0,-454,-737,-122,384); -- NPC: a_clay_monolith__

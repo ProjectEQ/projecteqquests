@@ -14,7 +14,7 @@ function event_say(e)
 			e.self:CastSpell(4179,e.other:GetID(),0,1); -- Spell: Teleport: Butcherblock
 
 		elseif(e.message:findi("south ro")) then
-			e.self:CastSpell(4178,e.other:GetID(),0,1); -- Spell: Teleport: South Ro		
+			e.self:CastSpell(4178,e.other:GetID(),0,1); -- Spell: Teleport: South Ro
 
 		elseif(e.message:findi("commonlands")) then
 			e.self:CastSpell(4176,e.other:GetID(),0,1); -- Spell: Teleport: East Commons

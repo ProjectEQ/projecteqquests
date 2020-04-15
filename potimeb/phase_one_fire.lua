@@ -34,7 +34,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn Kazrok_of_Fire
 		if (event_counter == 9) then
-			eq.spawn2(223090,0,0,68,573,504,371); -- NPC: Kazrok_of_Fire 
+			eq.spawn2(223090,0,0,68,573,504,371); -- NPC: Kazrok_of_Fire
 			event_counter = 0;
 		end
 	-- signal 2 comes from Kazrok_of_Fire,an_inferno_mephit_, and a_flame_mephit_

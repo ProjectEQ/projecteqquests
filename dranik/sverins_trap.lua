@@ -14,7 +14,7 @@ function event_enter(e)
 		eq.spawn2(336230 ,0, 0, -904,2261,-160,488); -- NPC: #a_fireskin_acolyte
 		eq.spawn2(336230 ,0, 0, -929,2251,-160,494); -- NPC: #a_fireskin_acolyte
 		eq.spawn2(336230 ,0, 0, -972,2251,-160,30); -- NPC: #a_fireskin_acolyte
-		eq.spawn2(336230 ,0, 0, -997,2276,-160,62); -- NPC: #a_fireskin_acolyte	
+		eq.spawn2(336230 ,0, 0, -997,2276,-160,62); -- NPC: #a_fireskin_acolyte
 		eq.spawn2(336230 ,0, 0, -977,2158,-160,0); -- NPC: #a_fireskin_acolyte
 		eq.spawn2(336230 ,0, 0, -941,2251,-160,30); -- NPC: #a_fireskin_acolyte
 		eq.spawn2(336230 ,0, 0, -865,2179,-160,466); -- NPC: #a_fireskin_acolyte

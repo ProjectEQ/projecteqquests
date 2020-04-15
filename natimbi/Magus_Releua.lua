@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:CastSpell(4580,e.other:GetID()); -- Spell: Teleport: Nedaria
 	elseif(e.message:findi("abysmal sea")) then
 		--Translocate Abysmal is unknown
-		e.other:MovePC(279,39,-150,139.05,180); -- Zone: permafrost
+		e.other:MovePC(279,39,-150,139.05,180); -- Zone: abysmal
 	end
 end
 

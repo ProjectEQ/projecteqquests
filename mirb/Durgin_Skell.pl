@@ -82,7 +82,7 @@ sub EVENT_SAY {
 			$x = $client->GetX();
 			$y = $client->GetY();
 			$z = $client->GetZ();
-			quest::spawn2(893,0,0,$x,$y,$z,0); # NPC: a_chest	  
+			quest::spawn2(893,0,0,$x,$y,$z,0); # NPC: a_chest
 	  }
 	}
   }

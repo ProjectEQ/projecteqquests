@@ -8,7 +8,7 @@ function event_click_door(e)
 	local door_id = e.door:GetDoorID();
 
 	if (door_id >= 8 and door_id <= 13) then
-		e.self:MovePC(201, 456, 825, 9, 360); -- Zone: lakerathe
+		e.self:MovePC(201, 456, 825, 9, 360); -- Zone: pojustice
 	elseif (door_id >= 1 and door_id <= 6) then
 		if (e.self:GetItemIDAt(Slot.Cursor) == 31599) then
 			-- make sure these are reset
@@ -41,7 +41,7 @@ function event_click_door(e)
 				eq.set_global("monk_7thhammer","1",3,"H2");
 			end
 		else
- 			e.self:MovePC(201, 156, 470, -48, 360); -- Zone: lakerathe
+ 			e.self:MovePC(201, 156, 470, -48, 360); -- Zone: pojustice
 		end
 	end
 end
@@ -58,7 +58,7 @@ function MoveGroup(src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt_z, tgt_h)
 						-- check the distance and port them up if close enough
 						if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
 							-- port the player up
-							client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+							client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: pojustice
 						end
 					end
 				end

@@ -224,7 +224,7 @@ function event_signal(e)
 		local client_list = entity_list:GetClientList();
 		for c in client_list.entries do
 			if (c.valid) then
-				c:MovePC(202,1015,20,392,264); -- Zone: lavastorm
+				c:MovePC(202,1015,20,392,264); -- Zone: poknowledge
 			end
 		end
 		-- depop the zone nothing else to do here

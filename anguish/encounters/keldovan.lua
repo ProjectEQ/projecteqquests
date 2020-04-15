@@ -107,7 +107,7 @@ function Keldovan_Timer(e)
 		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
 	elseif (e.timer == "Dog_SW") then
 		eq.stop_timer("Dog_SW");
-		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)	
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
 	elseif (e.timer == "Dog_SE") then
 		eq.stop_timer("Dog_SE");
 		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
@@ -210,7 +210,7 @@ function Dog_Death(e)
 	elseif (e.self:GetSpawnPointY() == 643) then --SW
 		eq.signal(317005,3); -- NPC: Keldovan_the_Harrier
 	elseif (e.self:GetSpawnPointY() == 642) then --SE
-		eq.signal(317005,4); -- NPC: Keldovan_the_Harrier    
+		eq.signal(317005,4); -- NPC: Keldovan_the_Harrier
 	end
 	dogs[e.self:GetID()] = nil;
 end

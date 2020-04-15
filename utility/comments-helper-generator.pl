@@ -3,6 +3,7 @@
 # @file        comments-helper-generator.pl
 # @description Script used to generate script comment helpers
 # @example     perl ./utility/comments-helper-generator.pl ~/server
+# @options     --strip-existing-comments Will only over-write comments this script typically generates
 
 #############################################
 # modules
@@ -121,6 +122,7 @@ find(
 );
 for my $file (@files) {
 
+    if ($file =~ /generator/i) { next; }
     if ($file !~ /lua|pl/i) { next; }
     print $file . "\n";
 
@@ -141,7 +143,7 @@ for my $file (@files) {
             my $item_names = "";
 
             if ($options{"--strip-existing-comments"}) {
-                if ($line =~ /Spell:|NPC:|NPC\(s\):|Faction:|Zone:|Item:|Item\(s\):/i) {
+                if ($line=~/;/ && $line =~ /Spell:|NPC:|NPC\(s\):|Faction:|Zone:|Item:|Item\(s\):/ && $line !~/End of File|EOF|then|if|else/i) {
                     if ($file =~ /\.lua/) {
                         print $line . "\n";
                         $line =~ s/--(.*)//;
@@ -150,11 +152,11 @@ for my $file (@files) {
                         print $line . "\n";
                         $line =~ s/#(.*)//;
                     }
+                    $line =~ s/\s+$/\n/g;
                 }
             }
 
-            #::: This line already has a comment in it - or has other inline garbage
-            if ($line !~ /#|}|--|if|else/i) {
+            if ($line !~ /#|}|--|if|else|End of File|EOF/i) {
 
                 my $comment_prefix = "";
                 if ($file =~ /\.pl/) {
@@ -261,7 +263,6 @@ for my $file (@files) {
                         if ($item_id_to_comment > 0) {
                             my $item_name = trim($item_names{$item_id_to_comment});
                             if ($item_name ne "") {
-                                $line =~ s/;(.*)//;
                                 $line =~ s/;/; $comment_prefix Item: $item_name/g;
                             }
                         }

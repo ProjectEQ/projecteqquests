@@ -81,7 +81,7 @@ function HotspotDeath(e)
 	eq.spawn2(334098, 0, 0, e.self:GetX()-5, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Flametop
 	eq.spawn2(334099, 0, 0, e.self:GetX(), e.self:GetY()+5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Cinder
 	eq.spawn2(334100, 0, 0, e.self:GetX(), e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Coal
-	eq.spawn2(334101, 0, 0, e.self:GetX()-5, e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Burnscar	
+	eq.spawn2(334101, 0, 0, e.self:GetX()-5, e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Burnscar
 end
 
 function event_encounter_load(e)

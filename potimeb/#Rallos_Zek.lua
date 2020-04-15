@@ -53,7 +53,7 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 15,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc + 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
-		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)	
+		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,xloc,yloc - 25,zloc,heading); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 	end
 end

@@ -27,7 +27,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
                -- check the distance and port them up if close enough
                if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
                   -- port the player up
-                  client_v:MovePC(204, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lfaydark
+                  client_v:MovePC(204, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: ponightmare
                end
             end
          end

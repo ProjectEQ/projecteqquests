@@ -26,7 +26,7 @@ sub EVENT_CLICKDOOR {
   if ($doorid == 35 || $doorid == 36) { #uqua zone in
     my $InInstanceUqua = quest::GetInstanceID("uqua",0);
       if($InInstanceUqua > 0){
-        quest::MovePCInstance(292,$InInstanceUqua,-17,-7,-24); # Zone: potimeb
+        quest::MovePCInstance(292,$InInstanceUqua,-17,-7,-24); # Zone: uqua
       } else {
         $client->Message(13, "You are not a part of an instance!");
       }

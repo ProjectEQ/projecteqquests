@@ -15,7 +15,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 28445 => 1, 9430 => 1)) {#Spell: Draught of Thunder, Lightning Sphere
     quest::say("Thank you $name!  May this spell serve you well.");#Text made up, no text listed on alla's
-    quest::summonitem(59528);#Spell: Draught of Lightning
+    quest::summonitem(59528); # Item: Spell: Draught of Lightning
   }
   plugin::return_items(\%itemcount);
 }#Done

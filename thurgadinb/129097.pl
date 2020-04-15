@@ -22,5 +22,5 @@ sub EVENT_SPAWN {
 	quest::signalwith(129044,1); # NPC: Councilor_Thubins
 	quest::signalwith(129080,1); # NPC: Councilor_Thubins
 	quest::signalwith(129042,1); # NPC: Councilor_Wintershade
-	quest::signalwith(129079,1); # NPC: Councilor_Wintershade		
+	quest::signalwith(129079,1); # NPC: Councilor_Wintershade
 }

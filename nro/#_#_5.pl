@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(110,-20395.3,3777.7,-34.1); # Zone: erudsxing
+	quest::movepc(110,-20395.3,3777.7,-34.1); # Zone: iceclad
 }

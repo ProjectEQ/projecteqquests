@@ -5,7 +5,7 @@ sub EVENT_SAY {
 		}
 		if ($text=~/yes/i) {
 			quest::say("Compliance.");
-			quest::movepc(206,266,-857,-1853,62); # Zone: load2
+			quest::movepc(206,266,-857,-1853,62); # Zone: poinnovation
                 }
 	}
 }

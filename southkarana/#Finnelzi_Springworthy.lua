@@ -20,7 +20,7 @@ function event_timer(e)
 	elseif(e.timer=="dialog2") then
 		eq.stop_timer("dialog2");
 		e.self:Emote("mutters under his breath");
-		eq.signal(14189,1); -- NPC: #Glenfire_Telzir		
+		eq.signal(14189,1); -- NPC: #Glenfire_Telzir
 	elseif(e.timer=="dialog3") then
 		eq.stop_timer("dialog3");
 		e.self:Say("About that. I know it's importaint to all of you, but. . .");

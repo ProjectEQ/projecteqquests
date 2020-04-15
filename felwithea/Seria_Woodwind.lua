@@ -14,7 +14,7 @@ function event_say(e)
 			e.other:SummonItem(19633); -- Item: Crude Gauntlets Mold
 		elseif(e.message:findi("felwithe defender boots")) then
 			e.self:Say("To assemble felwithe defender boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Large Sylvan Bat Fur and two Giant Wasp Worker Tarsi in the Mail Assembly Kit.");
-			e.other:SummonItem(19634); -- Item: Crude Boot Mold 
+			e.other:SummonItem(19634); -- Item: Crude Boot Mold
 		elseif(e.message:findi("felwithe defender bracer")) then
 			e.self:Say("To assemble a felwithe defender bracer you will need to obtain a brick of crude bronze and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Bronze Bracer with a Large Sylvan Bat Fur and a Giant Wasp Drone Sternite in the Mail Assembly Kit.");
 			e.other:SummonItem(19632); -- Item: Crude Bracer Mold

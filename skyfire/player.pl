@@ -35,7 +35,7 @@ sub EVENT_CLICKDOOR {
       $client->KeyRingAdd(69312);
     }
     if($client->KeyRingCheck(69311) || $client->KeyRingCheck(69312) || ($status > 99)) {
-      quest::movepc(108,1682,41,25.9); # Zone: erudnext
+      quest::movepc(108,1682,41,25.9); # Zone: veeshan
     }
     else {
       $client->Message(13, "You lack the will to use this object!");

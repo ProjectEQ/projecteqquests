@@ -15,7 +15,7 @@ function event_enter_zone(e)
 		eq.unique_spawn(300057,0,0,-1491,2015,51.2,192); --#Herrian_Warfrost
 		eq.spawn2(300058,0,0,-1495,1965,51.2,160); --an_excited_builder (300058)
 		eq.spawn2(300058,0,0,-1447,2014,51.2,220); -- NPC: an_excited_builder
-		eq.spawn2(300058,0,0,-1454,1976,51.2,192); -- NPC: an_excited_builder	
+		eq.spawn2(300058,0,0,-1454,1976,51.2,192); -- NPC: an_excited_builder
 		--eq.set_global("rng_spawn_wos","1",2,"H2");
 	end		
 end
@@ -112,7 +112,7 @@ function event_click_door(e)
     instance_id = eq.get_instance_id('anguish', 0);
     
     if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 510); -- Zone: riwwi
+      e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 510); -- Zone: anguish
 
     -- if GM just give him an instance
     elseif (e.self:Admin() >= 80 and e.self:GetGM()) then

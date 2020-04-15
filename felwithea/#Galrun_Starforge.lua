@@ -10,7 +10,7 @@ function event_say(e)
 			e.self:Say("Yes, about a week ago, I was helping Nora close up for the night at the Shop of All Holos. I left the shop and decided to take a quick stroll around Felwithe before going home to sleep, and I found something odd outside of the cleric's guild. I saw a Vampire! He was walking around and for a second our eyes met. . .I ran to get the guards. By the time I returned he was gone and the guards didn't believe that a Vampire was able to get this far into Felwithe. The next day I went and spoke to Lord Tynkale and [" .. eq.say_link("explained") .. "] to him what I saw.");
 		elseif(e.message:findi("explained")) then
 			e.self:Say("I told him how I saw a Vampire near the cleric's guild and how he wasn't there when the guards returned. Lord Tynkale didn't believe me, however, he did promise to give me a chance to prove what I saw. You will need to assist me in proving what I saw, " .. e.other:GetName() .. ", for I think that Vampire may have been scouting for an invasion of Felwithe. Go to all the cities in Faydwer and investigate any odd occurrences there, for I think there might be other Vampire sightings throughout the continent. Take this bag and fill it with any proof you find. Good luck crusader.");
-			e.other:SummonItem(69975); -- Item: Galrun's bag				
+			e.other:SummonItem(69975); -- Item: Galrun's bag
 		elseif(qglobals["paladin_epic_mmcc"] == "1" and e.message:findi("valdoon")) then
 		  local instance_requests = require("instance_requests");
 		  local lockout_globals = {{'LDON_mmcc', 'LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny'}}

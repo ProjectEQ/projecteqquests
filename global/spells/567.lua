@@ -4,7 +4,7 @@ function event_spell_effect(e)
   if (mob.valid and mob:IsClient()) then 
     local client = mob:CastToClient();
     if (client.valid) then
-      client:MovePC(34, 820, 1374, 10, 80); -- Zone: cauldron
+      client:MovePC(34, 820, 1374, 10, 80); -- Zone: nro
     end
   end
 

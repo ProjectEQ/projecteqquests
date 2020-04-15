@@ -11,7 +11,7 @@ sub EVENT_SIGNAL {
 }
   if ($occounter == 23 ) {
     quest::signalwith(226072,66,0); # NPC: #Taskmaster_Luga
-    quest::spawn2(226207,0,0,-1276,1085,-141.62,0); # NPC: Taskmaster_Luga
+    quest::spawn2(226207,0,0,-1276,1085,-141.62,0); # NPC: Taskmaster_Lugald_Brokenskull
     quest::depop();
     $occounter = 0;
 }

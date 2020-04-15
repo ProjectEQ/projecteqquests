@@ -13,10 +13,10 @@ end
   
 function event_timer(e)
 	if e.timer=="mind" then
-		e.self:CastSpell(5808, e.self:GetTarget():GetID()); -- Spell: Mind Warp	
+		e.self:CastSpell(5808, e.self:GetTarget():GetID()); -- Spell: Mind Warp
 		eq.set_timer("mind", 30 * 1000);		
 	elseif e.timer=="body" then
-		e.self:CastSpell(5809, e.self:GetTarget():GetID()); -- Spell: Body Warp	
+		e.self:CastSpell(5809, e.self:GetTarget():GetID()); -- Spell: Body Warp
 		eq.set_timer("body", 45 * 1000);		
 	end
 end

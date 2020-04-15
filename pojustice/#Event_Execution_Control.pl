@@ -66,7 +66,7 @@ sub EVENT_SIGNAL {
       quest::settimer("execution_wave3", 365);   
       quest::settimer("execution_wave4", 525);                   
       #Spawn the prisoner
-      quest::spawn2(201424, 0, 0, 165, -1156, 80, 122); # NPC: a_sentenced_prisoner      
+      quest::spawn2(201424, 0, 0, 165, -1156, 80, 122); # NPC: a_sentenced_prisoner
    }
    
    elsif ($signal == 2) {
@@ -88,7 +88,7 @@ sub EVENT_SIGNAL {
       quest::signalwith(201429, 0, 5); # NPC: a_fierce_nemesis
       quest::signalwith(201430, 0, 5); # NPC: a_fierce_nemesis
       quest::signalwith(201431, 0, 5); # NPC: priest_of_doom
-      quest::signalwith(201432, 0, 5); # NPC: Herald_of_Destruction
+      quest::signalwith(201432, 0, 5); # NPC: herald_of_destruction
       #Despawn the boss if he's up
       quest::signalwith(201433, 0, 5); # NPC: Prime_Executioner_Vathoch
    }
@@ -196,7 +196,7 @@ sub EVENT_TIMER {
                }
                else {
                   $ent->Message(15, 'You are not a part of this trial.');
-                  $ent->MovePC(201,456,825,9,2); # Zone: lakerathe
+                  $ent->MovePC(201,456,825,9,2); # Zone: pojustice
                }
             }
             
@@ -304,7 +304,7 @@ sub EVENT_TIMER {
          $c = $entity_list->GetClientByName($player);
          
          if ($c) {
-            $c->MovePC(201,456,825,9, 2); # Zone: lakerathe
+            $c->MovePC(201,456,825,9, 2); # Zone: pojustice
             $c->Message(15, "A mysterious force translocates you.");
          }
       }
@@ -398,7 +398,7 @@ sub SpawnExecutionMobs {
       
       else {
          if (!$herald) {
-            quest::spawn2(201432, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: Herald_of_Destruction
+            quest::spawn2(201432, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]); # NPC: herald_of_destruction
             $herald = 1;
          }
          else {

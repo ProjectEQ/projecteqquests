@@ -22,8 +22,8 @@ sub EVENT_SIGNAL {
 		quest::signalwith(201420, 1, 5); # NPC: #a_fiery_aggressor
 		quest::signalwith(201447, 1, 5); # NPC: A_Burning_Nemesis
 		quest::signalwith(201446, 1, 5); # NPC: Punisher_of_Flame
-		quest::signalwith(201418, 1, 5); # NPC: spirit of flame
-		quest::signalwith(201426, 1, 5); # NPC: fiend of flame
+		quest::signalwith(201418, 1, 5); # NPC: spirit_of_flame
+		quest::signalwith(201426, 1, 5); # NPC: fiend_of_flame
 		quest::signalwith(201434, 0, 5); # NPC: The_Tribunal Flame Trial
 		quest::depop();
 	}

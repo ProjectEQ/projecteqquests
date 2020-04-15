@@ -28,7 +28,7 @@ sub EVENT_HP {
 sub EVENT_ENTER {
   if (($ulevel >= 53) && ($status < 80)) {
     quest::echo(0, "I will not fight you, but I will banish you!");
-    $client->MovePC(27,-64,262,-93.96,0); # Zone: bothunder
+    $client->MovePC(27,-64,262,-93.96,0); # Zone: lavastorm
   }
 }
 

@@ -8,7 +8,7 @@ sub EVENT_SAY {
   if ($text=~/what items/i) {
     quest::say("I will need your message, a frost crystal, a sarnak war braid, and some silver oxide. Bring these items back to me and be quick about it.");
     quest::summonitem(48006); # Item: Illegible Message
-    quest::summonitem(48014); # Item: Geot's Pack  
+    quest::summonitem(48014); # Item: Geot's Pack
   }
   }
   

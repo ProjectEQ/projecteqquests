@@ -63,7 +63,7 @@ sub EVENT_SAY {
    			quest::emote("hands you a bridle, 'When you are [ready], you will need to ride with haste and reach the gates of Neriak before the fourth minute has passed.'");
 			quest::assigntask(219);
       			quest::assigntask(216);
-			quest::summonitem(80039); # Item: Bridle of the Cursed	
+			quest::summonitem(80039); # Item: Bridle of the Cursed
 		}
 	}	
 }

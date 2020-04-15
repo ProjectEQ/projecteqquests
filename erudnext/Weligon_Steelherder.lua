@@ -31,10 +31,10 @@ function event_say(e)
 		e.self:Say("In the name of Prexus, we are sworn to protect all ocean creatures.  We have heard reports of a shark carrying a deadly malady.  We believe she is pregnant.  If she delivers her young to the ocean, it will endanger all other creatures.  We need to find a young paladin to [hunt the diseased shark].");  
 	elseif(e.message:findi("hunt the diseased shark")) then
 		e.self:Say("Ah, yes!  Take this bag with you.  When you have collected the remains of the diseased shark and no fewer than three of her young in it, combine them in it and return it to me.  Then, you shall get your reward.");
-		e.other:SummonItem(17938); -- Item: Empty Shark Bag  
+		e.other:SummonItem(17938); -- Item: Empty Shark Bag
 	elseif(e.message:findi("collect the pearls of odus")) then
 		e.self:Say("Then venture to the harbor of Erudin. There, you shall dive into the shark-infested water and search for the Pearls of Odus. They lie upon the grounds of our waters.  Fill the bag I have given you, combine it, and return it to me.  Good luck.");
-		e.other:SummonItem(17939); -- Item: Empty Bag   
+		e.other:SummonItem(17939); -- Item: Empty Bag
 	elseif(e.message:findi("harpoon no more")) then
 		e.self:Say("The Deepwater harpoon's distribution has been restricted by order of the High Council. The last one awarded was to an outsider, the brave and noble paladin, Sentry Xyrin. She hailed from the Temple of Marr.");
 	end

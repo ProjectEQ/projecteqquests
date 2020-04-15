@@ -81,13 +81,13 @@ function event_click_door(e)
 	local dcc0 = eq.get_instance_id('dranikcatacombsc', 0);
 	--MovePCInstance(Integer zone, Integer instance, Real x, Real y, Real z, Real heading);
     if (dca0 > 0) then
-      e.self:MovePCInstance(328, dca0, 0, 0, -10.49, 508); -- Zone: rujj
+      e.self:MovePCInstance(328, dca0, 0, 0, -10.49, 508); -- Zone: dranikcatacombsa
 	elseif (dca1 > 0) then
-	  e.self:MovePCInstance(328, dca1, 0, 0, -10.49, 508); -- Zone: rujj
+	  e.self:MovePCInstance(328, dca1, 0, 0, -10.49, 508); -- Zone: dranikcatacombsa
 	elseif (dcb0 > 0) then
-	  e.self:MovePCInstance(329, dcb0, 212.58, 650.72, -14.78, 288); -- Zone: runnyeye
+	  e.self:MovePCInstance(329, dcb0, 212.58, 650.72, -14.78, 288); -- Zone: dranikcatacombsb
 	elseif (dcc0 > 0) then
-	  e.self:MovePCInstance(330, dcc0, -10.17, -214.3, -3.35, 114); -- Zone: scarlet	  
+	  e.self:MovePCInstance(330, dcc0, -10.17, -214.3, -3.35, 114); -- Zone: dranikcatacombsc
     else		
       e.self:Message(13, "You are not part of an instance.");
     end
@@ -97,11 +97,11 @@ function event_click_door(e)
 	local dsc0 = eq.get_instance_id('draniksewersc', 0);
 	--MovePCInstance(Integer zone, Integer instance, Real x, Real y, Real z, Real heading);
     if (dsa0 > 0) then
-      e.self:MovePCInstance(331, dsa0, 3, 0, -3, 254); -- Zone: sebilis
+      e.self:MovePCInstance(331, dsa0, 3, 0, -3, 254); -- Zone: draniksewersa
 	elseif (dsb0 > 0) then
-	  e.self:MovePCInstance(332, dsb0, 2, 5, -4.8, 260); -- Zone: shadeweaver
+	  e.self:MovePCInstance(332, dsb0, 2, 5, -4.8, 260); -- Zone: draniksewersb
 	elseif (dsc0 > 0) then
-	  e.self:MovePCInstance(333, dsc0, -2.5, 4, -6, 0); -- Zone: shadowhaven	  
+	  e.self:MovePCInstance(333, dsc0, -2.5, 4, -6, 0); -- Zone: draniksewersc
     else		
       e.self:Message(13, "You are not part of an instance.");
     end

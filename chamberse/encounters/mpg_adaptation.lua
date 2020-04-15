@@ -181,7 +181,7 @@ function ShapeShift(e)
   e.self:SetNPCFactionID(79); -- Faction: Gargoyle
 
   -- Cast Balance of the Nameless on self to remove debuffs
-  e.self:CastSpell(3230, e.self:GetID()); -- Spell: Balance of the Nameless  
+  e.self:CastSpell(3230, e.self:GetID()); -- Spell: Balance of the Nameless
 
   -- Spawn Sub-NPCs 
   if ( mob[6] ~= nil ) then 

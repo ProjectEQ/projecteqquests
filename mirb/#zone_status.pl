@@ -33,7 +33,7 @@ sub EVENT_AGGRO {
 sub KICK_ALL_PLAYERS {
   #zone all players back to Everfrost
   foreach $pc ($entity_list->GetClientList()) {
-    $pc->MovePC(30, -5460, -630, 190, 256); # Zone: burningwood
+    $pc->MovePC(30, -5460, -630, 190, 256); # Zone: everfrost
   }
 }
 

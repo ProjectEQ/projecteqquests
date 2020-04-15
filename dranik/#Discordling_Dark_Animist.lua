@@ -11,11 +11,11 @@ function event_timer(e)
 		eq.depop();
 	elseif(e.timer=="discfeed") then
 		eq.stop_timer("discfeed");
-		e.self:CastSpell(4748, e.self:GetTarget():GetID()); -- Spell: Discordant Feedback	
+		e.self:CastSpell(4748, e.self:GetTarget():GetID()); -- Spell: Discordant Feedback
 		eq.set_timer("discfeed", 45 * 1000);
 	elseif(e.timer=="corptor") then
 		eq.stop_timer("corptor");
-		e.self:CastSpell(3954, e.self:GetTarget():GetID()); -- Spell: Corporeal Torment	
+		e.self:CastSpell(3954, e.self:GetTarget():GetID()); -- Spell: Corporeal Torment
 		eq.set_timer("corptor", 60 * 1000);			
 	end
 end

@@ -13,6 +13,6 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
 	if($timer eq "storm_portal_adds") {
 		#spawn #A_storm_guardian
-		quest::spawn2(209103,0,0,$x,$y,$z,$h); # NPC: #A_storm_guardian 
+		quest::spawn2(209103,0,0,$x,$y,$z,$h); # NPC: #A_storm_guardian
 	} 
 }

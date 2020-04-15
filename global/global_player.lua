@@ -130,7 +130,7 @@ function event_combine_success(e)
 		if(eq.get_zone_short_name()=="anguish") then
 			eq.spawn2(317115, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0); -- NPC: #Yuisaha
 			e.self:SummonItem(62883); -- Item: Essence of Rainfall
-			e.self:SummonItem(62876); -- Item: Insulated Container			
+			e.self:SummonItem(62876); -- Item: Insulated Container
 		else
 			e.self:Message(15,"The rain spirit cannot be reached here");
 			e.self:SummonItem(47100); -- Item: Globe of Discordant Energy

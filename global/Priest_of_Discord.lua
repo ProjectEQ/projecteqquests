@@ -56,7 +56,7 @@ function event_say(e)
          --e.self:Say("I am sorry but Discord is closed to me right now.");
          e.self:Say("Prepare yourself to cross into the depths of Discord!");
          eq.set_global("OOW_PoD_Origin",tostring(eq.get_zone_id()),5,"F");
-         e.other:MovePC(302, -1485.52, -1263.29, 222.0,72); -- Zone: qeynos
+         e.other:MovePC(302, -1485.52, -1263.29, 222.0,72); -- Zone: draniksscar
       end
 end
 
@@ -72,12 +72,12 @@ function event_trade(e)
       e.self:Say("You will now be able to teleport into the realm of discord, true power is at your fingertips!");
 
       if(e.other:Class() == "Wizard") then
-         e.other:SummonItem(77659); --Spell: Bloodfields Gate
-         e.other:SummonItem(77660); --Spell: Translocate: Bloodfields
-         e.other:SummonItem(77661); --Spell: Bloodfields Portal
+         e.other:SummonItem(77659); -- Item: Spell: Bloodfields Gate
+         e.other:SummonItem(77660); -- Item: Spell: Translocate: Bloodfields
+         e.other:SummonItem(77661); -- Item: Spell: Bloodfields Portal
       elseif(e.other:Class() == "Druid") then
-         e.other:SummonItem(77662); --Spell: Circle of Bloodfields
-         e.other:SummonItem(77663); --Spell: Ring of Bloodfields
+         e.other:SummonItem(77662); -- Item: Spell: Circle of Bloodfields
+         e.other:SummonItem(77663); -- Item: Spell: Ring of Bloodfields
       end
       e.other:Ding();
    end

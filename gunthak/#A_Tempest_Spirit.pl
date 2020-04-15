@@ -15,7 +15,7 @@ sub EVENT_TIMER{
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 59041 => 1)) {#Cracked Zraxthril Amulet
     quest::emote("takes the amulet from you and holds it in its watery hand. The wind around you rises and the sea begins to swell. The spirit melts into a swirling pool at your feet. You gaze down into the pool and notice it begin to shrink in circumference. It continues to shrink and spin until finally there is nothing left but a small blue amulet on the ground. You reach to pick it up and hear an echo from the sea. 'Call us and we will aid you.'");
-    quest::summonitem(59008);#Spell: Icewind
+    quest::summonitem(59008); # Item: Spell: Icewind
     quest::depop();
   }
   plugin::return_items(\%itemcount);

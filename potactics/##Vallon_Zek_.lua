@@ -10,7 +10,7 @@ end
 function event_timer(e)
 if(e.timer=="OOBcheck") then
 	if (e.self:GetX() > 650) then
-		e.self:CastSpell(2441,e.other:GetID(),0,1); -- Spell: Shadowblade on leash
+		e.self:CastSpell(2441,e.other:GetID(),0,1); -- Spell: Shadowblade
 		e.self:GMMove(412,11,169,129);
 		e.self:Emote("'s image fades into the shadows of Drunder.");
 	else

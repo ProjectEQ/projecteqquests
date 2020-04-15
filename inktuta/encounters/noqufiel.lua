@@ -199,7 +199,7 @@ function Spawn_Noqu(loc)
 		eq.spawn2(296065, 0, 0,20,-633,-126,384); -- NPC: #True_Image_of_Noqufiel
 	else
 		eq.spawn2(296065, 0, 0,20,-706,-126,384); -- NPC: #True_Image_of_Noqufiel
-		eq.spawn2(296066, 0, 0,20,-633,-126,384); -- NPC: #Mirror_Image_of_Noqufiel		
+		eq.spawn2(296066, 0, 0,20,-633,-126,384); -- NPC: #Mirror_Image_of_Noqufiel
 	end
 end
 

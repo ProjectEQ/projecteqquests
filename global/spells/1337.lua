@@ -7,7 +7,7 @@ function event_spell_effect_translocate_complete(e)
   --else
 
   if (client.valid) then
-    client:MovePC(38, -921, -1523, -38, 66); -- Zone: chambersb
+    client:MovePC(38, -921, -1523, -38, 66); -- Zone: tox
   end
 
   --end

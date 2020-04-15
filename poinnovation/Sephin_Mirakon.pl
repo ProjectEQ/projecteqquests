@@ -8,7 +8,7 @@ quest::say("You there! Had enough yet? . . . Aah, never mind, just tell me when 
 
 if($text=~/leave/i) {
 
-quest::movepc(206,221,555,-50,102); # Zone: load2
+quest::movepc(206,221,555,-50,102); # Zone: poinnovation
  
 }
 }

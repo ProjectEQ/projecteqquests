@@ -18,15 +18,15 @@ quest::say("Ah..  Scarab Boots.. hmm.  Well. if you want to convince me to go th
 
 sub EVENT_ITEM { 
     if (plugin::check_handin(\%itemcount, 13849 => 2) && ($gold >= 5)) { # helm 
-      quest::summonitem(2175); # Item: Small Scarab Helm 
+      quest::summonitem(2175); # Item: Small Scarab Helm
       quest::say("Here is your Scarab Helm!"); 
     } 
     if (plugin::check_handin(\%itemcount, 13133 => 1) && ($gold >= 23)) { # breastplate 
-      quest::summonitem(2176); # Item: Small Scarab Breastplate 
+      quest::summonitem(2176); # Item: Small Scarab Breastplate
       quest::say("Here is your Scarab breastplate!"); 
     } 
     if (plugin::check_handin(\%itemcount, 13132 => 1, 13848 => 2) && ($gold >= 17)) { # boots 
-      quest::summonitem(2177); # Item: Small Scarab Boots 
+      quest::summonitem(2177); # Item: Small Scarab Boots
       quest::say("Here is your Scarab boots!"); 
     }
 	plugin::return_items(\%itemcount);

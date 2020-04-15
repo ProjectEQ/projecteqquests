@@ -37,11 +37,11 @@ function event_timer(e)
 		eq.depop_with_timer();
 	elseif(e.timer=="spectrum") then
 		eq.stop_timer("spectrum");
-		e.self:CastSpell(3908, e.self:GetTarget():GetID()); -- Spell: Mana Spectrum	
+		e.self:CastSpell(3908, e.self:GetTarget():GetID()); -- Spell: Mana Spectrum
 		eq.set_timer("spectrum", 15 * 1000);
 	elseif(e.timer=="stun") then
 		eq.stop_timer("stun");
-		e.self:CastSpell(1968, e.self:GetTarget():GetID()); -- Spell: Stunning Strike	
+		e.self:CastSpell(1968, e.self:GetTarget():GetID()); -- Spell: Stunning Strike
 		eq.set_timer("stun", 20 * 1000);
 	end
 end

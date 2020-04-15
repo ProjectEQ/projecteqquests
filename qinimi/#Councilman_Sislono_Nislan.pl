@@ -50,7 +50,7 @@ sub EVENT_SAY {
             $pc = $entity_list->GetClientByName($player);
             if ($pc)
             {
-              $pc->MovePC(281,-521,36,-8,332); # Zone: podisease
+              $pc->MovePC(281,-521,36,-8,332); # Zone: qinimi
             }
            }
           $event_started = 1;
@@ -106,7 +106,7 @@ sub REMOVE_PLAYERS {
     $pc = $entity_list->GetClientByName($player);
     if ($pc)
     {
-      $pc->MovePC(281,-1053,438,-16,2); # Zone: podisease
+      $pc->MovePC(281,-1053,438,-16,2); # Zone: qinimi
     }
   }
   @player_list = ();

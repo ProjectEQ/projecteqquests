@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12435 =>1, 12436 =>1, 12437 =>1, 5133 =>1 )) {
    quest::emote("hands you plans for a trooper's pike head.");
    quest::say("Congratulations. You are now a trooper of the Legion of Cabilis. Now you may fight with honor and a mighty weapon.");
-   quest::summonitem(12477); # Item: Trooper Head Plans 
+   quest::summonitem(12477); # Item: Trooper Head Plans
    quest::faction( 440,2); # Faction: Cabilis Residents
    quest::faction( 441,2); # Faction: Legion of Cabilis
    quest::faction( 445,2); # Faction: Scaled Mystics

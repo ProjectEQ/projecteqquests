@@ -18,7 +18,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 7687 => 1, 12999 => 1)) {#Spell: Words of Tranquility, Seahorse Scales
     quest::emote("takes the scales and the scroll from you. He takes the scales and grinds them with a mortar and pestle into a fine powder. He begins to speak holy words out over the water and allows the powder to fall into the water. The water begins to glow and bubble. Illian takes the scroll and dips one edge into the water. The water then races up across he parchment and forms into holy runes of Prexus. As the seas calm, Illian turns to you and hands you the scroll. 'May the power of the Prexus guard your journeys $name.'");
-    quest::summonitem(59527);#Spell: Force of Akera
+    quest::summonitem(59527); # Item: Spell: Force of Akera
   }
   plugin::return_items(\%itemcount);
 }#Done

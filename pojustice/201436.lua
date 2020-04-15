@@ -36,7 +36,7 @@ function event_say(e)
                MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 490, -1094, 73, 180); 
             else
                client_e = e;
-               e.other:MovePC(201, 490, -1094, 73, 360); -- Zone: lakerathe
+               e.other:MovePC(201, 490, -1094, 73, 360); -- Zone: pojustice
             end
 
             -- Move To: 201, 500, -1045, 73.1
@@ -83,7 +83,7 @@ function event_timer(e)
       if (trial_group.valid) then
 			MoveGroup( trial_group, 490, -1094, 73, 140, 456, 825, 9, 180); 
       else
-         client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: lakerathe
+         client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
 			client_e.other:Message(3, "A mysterious force translocates you.");
       end
 
@@ -169,7 +169,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
                -- check the distance and port them up if close enough
                if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
                   -- port the player up
-                  client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+                  client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: pojustice
 
                   if (msg) then
                      client_v:Message(3, msg);

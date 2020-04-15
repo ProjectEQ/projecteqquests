@@ -92,7 +92,7 @@ sub EVENT_TIMER {
 		quest::spawn2(20264,0,0,-151,986,7.5,430); # NPC: ##a_Bat_with_Herpes
 		quest::spawn2(20264,0,0,-161,986,7.5,430); # NPC: ##a_Bat_with_Herpes
 		quest::spawn2(20264,0,0,-131,986,7.5,430); # NPC: ##a_Bat_with_Herpes
-		quest::spawn2(20264,0,0,-121,986,7.5,430); # NPC: ##a_Bat_with_Herpes	
+		quest::spawn2(20264,0,0,-121,986,7.5,430); # NPC: ##a_Bat_with_Herpes
 		quest::spawn2(20255,0,0,-141,976,7.5,430); #Booberella
 	}
 	if ($timer == 5) {

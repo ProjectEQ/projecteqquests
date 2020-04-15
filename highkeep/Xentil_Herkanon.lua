@@ -16,7 +16,7 @@ end
 function event_timer(e)
 	if(e.timer == "depop") then
 		eq.signal(6186,0); -- NPC: Lartin
-		eq.signal(6187,0); -- NPC: Grex		
+		eq.signal(6187,0); -- NPC: Grex
 		eq.depop();
 	end
 end

@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::faction(441,2); # Faction: Legion of Cabilis
     quest::faction(445,2); # Faction: Scaled Mystics
     quest::faction(444,2); # Faction: Swift Tails
-    quest::faction(442,2); # Faction: Crusaders of Greenmist    
+    quest::faction(442,2); # Faction: Crusaders of Greenmist
   }
   plugin::return_items(\%itemcount);
 }

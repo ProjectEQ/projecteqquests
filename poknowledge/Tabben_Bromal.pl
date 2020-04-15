@@ -4,7 +4,7 @@ sub EVENT_SAY {
  }
  if ($text=~/I am ready/i) {
    quest::say("Very well. You'll need to gather up a dense hammered casing for the outer shell; a crystalline carapace will act to protect the face of the device; and it requires a fiery power source to propel the rotor mechanism. The device is then attached around the neck, much like the one you are wearing. The only difference will be the strands of living chain that will keep it from slipping from around your neck. Place those four items and your talisman in that box and return it to me. We should be able to get this thing built for you without much fuss at all, should all things go well on your end of the task, of course.");
-   quest::summonitem(17278); # Item: Small Parts Container   
+   quest::summonitem(17278); # Item: Small Parts Container
  }
 }
 

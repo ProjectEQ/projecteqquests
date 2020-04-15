@@ -12,5 +12,5 @@ sub EVENT_SPAWN
 sub EVENT_ENTER
 {
 #	quest::selfcast("2279");
-	quest::movepc(98,716.9,-1771.8,3.2); # Zone: dulak
+	quest::movepc(98,716.9,-1771.8,3.2); # Zone: erudsxing
 }

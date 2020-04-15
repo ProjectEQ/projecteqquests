@@ -30,7 +30,7 @@ sub EVENT_ITEM {
  if ($client->GetGlobal("beast_epic") ==8) {
   if (plugin::check_handin(\%itemcount, 57010 =>1 )) {
     quest::say("So, we have lost another. I do try to not worry about this threat, but I do not know how to stop it. Each day we feel more pain and trouble with our feral spiritsss and even our companionsss feel asss though their ferocity is becoming clouded. You must go see Elder Muada. He will want to speak with you, I have no doubt. Give him thisss letter.");  
-    quest::summonitem(52900); # Item: Sealed Note for Muada 
+    quest::summonitem(52900); # Item: Sealed Note for Muada
   }
  }
   plugin::return_items(\%itemcount);

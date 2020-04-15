@@ -9,7 +9,7 @@ function event_say(e)
 		e.self:Say("The hay he requires is difficult to obtain. It must have been harvested from the Plains of Karana, then cursed by a high priest of the Faceless, [" .. eq.say_link("Cazic-Thule",false,"Cazic-Thule") .. "]. Finally, you must cast the hay and a flask of blessed Oil of Life into an armorer's forge. Only then will the hay be ready. We Stormreapers will reward you greatly if you could accomplish this task. Remember, you must give the scarecrow stuffing to Shakey only after it has been properly prepared.");
 	elseif(e.message:findi("trail to karana's wisdom")) then
 		e.self:Say("Good. First you should learn that Karana's work is just that.. work. Karana provides us with the tools but it is by the sweat of our brows that we prosper. Common sense and hard work are two things that are highly prized by our people. Time for you to sweat, young one. Take this crate of carrots over to Blinza Toepopal in the Fool's Gold. They need our finest carrots for Mayor Gubbin's stew. When you return I will teach you a lesson of the Rainkeeper.");
-		e.other:SummonItem(13971); -- Item: Crate of Rotten Carrots 
+		e.other:SummonItem(13971); -- Item: Crate of Rotten Carrots
 	elseif(e.message:findi("karana")) then
 		e.self:Say("Karana is known as the Rainkeeper. It is through His will that our [" .. eq.say_link("crops",false,"crops") .. "] and our children grow big and healthy. He watches over us and protects us. calling down the fury of a tempest on those who wish harm upon His followers.");
 	elseif(e.message:findi("crops")) then

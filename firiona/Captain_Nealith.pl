@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     quest::faction(248,1); # Faction: Inhabitants of Firiona Vie
     quest::faction(312,1); # Faction: Storm Guard
     quest::faction(441,-3); # Faction: Legion of Cabilis
-    quest::faction(313,-3); # Faction: Pirates of Gunthak 
+    quest::faction(313,-3); # Faction: Pirates of Gunthak
   }
   if (plugin::check_handin(\%itemcount,18076 => 1)) { #blood soaked note Captain Nealith's Brother quest
     quest::emote ("nearly faints after reading the letter. 'Dear Marltek!! I shall miss you. There is more evil in this land!! Madness beyond description. Thank you $name. You put my soul at ease and give me new direction. Please accept my brothers blade. He found it in the wilds. May you use it to slay many Drolvarg!!'");

@@ -14,7 +14,7 @@ sub EVENT_ENTERZONE {
 
 	#off the map
 	if ($client->GetX() > 315 || $client->GetX() < -315 || $client->GetY() > 685 || $client->GetY() < -60 || $client->GetZ() < -5 || $client->GetZ() > 15) {
-		$client->MovePC(344, 0, 312, 2, 0); # Zone: sirens
+		$client->MovePC(344, 0, 312, 2, 0); # Zone: guildlobby
 	}
 
 	#if I am idle for more than xx seconds, auto-afk and go invisible/don't draw model
@@ -53,9 +53,9 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
 	if($timer == 1) {
-		quest::MovePCInstance(344,5,$x,$y,$z,450); # Zone: sirens
+		quest::MovePCInstance(344,5,$x,$y,$z,450); # Zone: guildlobby
 	} elsif($timer == 2) {
-		quest::movepc(344,$x,$y,$z,225); # Zone: sirens
+		quest::movepc(344,$x,$y,$z,225); # Zone: guildlobby
 	} elsif($timer eq "afk_check") {
 		#I have been idle, go auto-afk and don't draw model
 		$client->Message(4, "You are idle, Auto-AFK");

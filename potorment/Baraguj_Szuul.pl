@@ -4,7 +4,7 @@ sub EVENT_COMBAT {
 	foreach $ent (@clientlist) {
 		#distance restriction so the members need to be reasonably close.
 		if ($ent->CalculateDistance($npc->GetX(),$npc->GetY(),$npc->GetZ()) <= 100) {
-		$ent->MovePC(207,-1094,910,-746,0); # Zone: lopingplains
+		$ent->MovePC(207,-1094,910,-746,0); # Zone: potorment
 		}
 	}
 	#signal mouth_trigger that spawns all the mobs in stomach

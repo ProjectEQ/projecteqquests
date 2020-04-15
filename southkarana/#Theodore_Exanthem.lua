@@ -39,7 +39,7 @@ function event_timer(e)
 		e.self:Say("Sweet father of rot, alright already! Stop hitting me and tell me what you want me to do!");
 		eq.stop_timer("defeat");
 		e.self:WipeHateList();
-		eq.signal(14050,6,5000); -- NPC: an_interrogator 
+		eq.signal(14050,6,5000); -- NPC: an_interrogator
 	end
 end
 
@@ -52,7 +52,7 @@ function event_trade(e)
 		e.self:Emote("makes a big X at the bottom of the document and hands it back saying, 'A bunch of worthless thugs is all you folks are!'");
 		e.other:SummonItem(2395); -- Theodore's Confession
 		e.other:Ding();
-		eq.signal(14050,9,5000); -- NPC: an_interrogator 
+		eq.signal(14050,9,5000); -- NPC: an_interrogator
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

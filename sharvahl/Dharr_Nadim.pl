@@ -53,7 +53,7 @@ quest::say("The scorpions are at the bottom of the canyon surrounding the city. 
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount,3648=>4)){   
 quest::say("Excellent, hopefully my fishing business can start to thrive once again! As I said before you can have this old lure. You won't be able to catch anything with it but maybe you can pawn it off to a jewelry merchant.");   
-quest::summonitem(30694); # Item: Dharr's Lure   
+quest::summonitem(30694); # Item: Dharr's Lure
 quest::exp(1000);   
 quest::ding(); }
 

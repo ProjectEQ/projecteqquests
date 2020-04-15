@@ -26,7 +26,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12844 => 1, 12845 => 1, 12633 => 1, 48045 => 1)) {
    quest::say("You have returned unharmed with the items I asked for. Here is your reward now. If you wish to [continue training] please let me know.");
-   quest::summonitem(48046); # Item: Claw of the Scout 
+   quest::summonitem(48046); # Item: Claw of the Scout
    quest::exp(1000);
    quest::ding();
   }

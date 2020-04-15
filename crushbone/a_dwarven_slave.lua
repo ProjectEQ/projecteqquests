@@ -40,7 +40,7 @@ function event_trade(e)
 			e.other:Faction(312,2,0); -- Faction: Storm Guard
 			e.other:Faction(293,1,0); -- Miners Guild 249 (293)
 			e.other:Faction(290,1,0); -- Faction: Merchants of Kaladim
-			e.other:Faction(232,-1,0); -- Faction: Craknek Warriors (232)
+			e.other:Faction(232,-1,0); -- Faction: Craknek Warriors
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();

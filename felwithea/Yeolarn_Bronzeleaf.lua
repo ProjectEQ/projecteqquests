@@ -36,7 +36,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13073,item2 = 13073,item3 = 13073,item4 = 13073})) then --Bone Chips x 4
 		e.self:Say("Praise Tunare! I knew you would be victorious. I reward you with this spell, and pray that it will help you in your fight against the unholy forces of Innoruk. When you are ready you will make a fine [Initiate of Tunare].");
-		e.other:SummonItem(15014); --Spell: Strike
+		e.other:SummonItem(15014); -- Item: Spell: Strike
 		e.other:Ding();
 		e.other:Faction(226,2,0);  --Clerics of Tunare
 		e.other:Faction(279,2,0); --King Tearis Thex

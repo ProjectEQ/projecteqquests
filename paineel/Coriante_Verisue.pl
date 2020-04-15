@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 	}
 	elsif(plugin::check_handin(\%itemcount, 13068 => 2, 13067 => 2)) { #Bat Wing x 2, Snake Fang x 2
 		quest::say("Very good, young acolyte. Maintain your diligence in your duties and you will quickly learn the secrets of the Dark Truth.");
-		quest::summonitem(15338); #Spell: Cavorting Bones
+		quest::summonitem(15338); # Item: Spell: Cavorting Bones
 		quest::faction(265,1);  # Heretics
 		quest::faction(231,-1);  # Craftkeepers
 		quest::faction(233,-1);  # Crimson Hands

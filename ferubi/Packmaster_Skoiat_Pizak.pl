@@ -18,10 +18,10 @@ sub EVENT_AGGRO {
 
 sub EVENT_TIMER {
   if($timer == 1) {
-   $entid1 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-170,-884,3,114); # NPC(s): #Rav_Pizak (284098)
-   $entid2 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-167,-792,3,136); # NPC(s): #Rav_Pizak (284098)
-   $entid3 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-170,-884,3,114); # NPC(s): #Rav_Pizak (284098)
-   $entid4 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-167,-792,3,136); # NPC(s): #Rav_Pizak (284098)
+   $entid1 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-170,-884,3,114); # NPC(s): #Rav_Pizak (284098), #Rav_Pizak (284107)
+   $entid2 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-167,-792,3,136); # NPC(s): #Rav_Pizak (284098), #Rav_Pizak (284107)
+   $entid3 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-170,-884,3,114); # NPC(s): #Rav_Pizak (284098), #Rav_Pizak (284107)
+   $entid4 = quest::spawn2(quest::ChooseRandom(284098,284107),0,0,-167,-792,3,136); # NPC(s): #Rav_Pizak (284098), #Rav_Pizak (284107)
 
    $mob1 = $entity_list->GetMobID($entid1);
    $mob2 = $entity_list->GetMobID($entid2);

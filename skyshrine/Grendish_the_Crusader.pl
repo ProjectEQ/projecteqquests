@@ -62,7 +62,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9335 => 1, 9337 => 1, 9336 => 1, 9338 => 1)) {
  quest::say("What you have accomplished cannot be claimed without deception by many. Know that all sacrifices that you and those who have undoubtedly aided you have made in fulfilling this awesome feat shall not go without notice. The Crusaders of Veeshan can express neither the prominent magnitude nor the honor that you have upheld in maintaining your convictions to the Claws of Veeshan. This earring is not one forged of primal metals, but it is ever changing chromatic essence -- the very essence of the first chromatic nobles deposited by Veeshan's great claw. Take it not as a gift nor as restitution for your deeds, but take it as a token of acknowledgement and a symbol of the significance your actions have gained within the boundless realm of our crusade.");  
- quest::summonitem(30391); # Item: Sarthis's Chromatic Hoop 
+ quest::summonitem(30391); # Item: Sarthis's Chromatic Hoop
   }
   if (plugin::check_handin(\%itemcount, 9299 => 1, 9302 => 1)) {
     quest::say("''You have done well $name, and Grendish of the Crusaders is pleased by your success and honorable actions that have bound you to this duty. The Crusaders of Veeshan recognize your efforts and we shall honor our word of just recognition to be delivered in effect of your deeds. These are the Slippers of the Ages, an ancient item forged by the scales of our chromatic elders of the first brood during the elder years of the Age of Scale. It shall serve you well and will act as the token of the Crusader's acknowledgement of your individual efforts to aid us.");

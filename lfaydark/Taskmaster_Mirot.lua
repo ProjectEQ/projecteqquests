@@ -15,7 +15,7 @@ function event_say(e)
 		eq.spawn2(57153,0,0, 3430,-33.5 ,-1.9,0); -- NPC: #a_Wayfarer
 		eq.spawn2(57153,0,0, 3443,-25.5 ,-1.9,360); -- NPC: #a_Wayfarer
 		eq.spawn2(57153,0,0, 3440,-33.5 ,-1.9,270); -- needs_heading_validation
-		eq.spawn2(57153,0,0, 3443,-15.5 ,-1.9,360); -- NPC: #a_Wayfarer					
+		eq.spawn2(57153,0,0, 3443,-15.5 ,-1.9,360); -- NPC: #a_Wayfarer
 	elseif(e.message:findi("hail")) then
 			e.self:Say("I am sorry, we don't currently have any work available. We are still setting up, and cleaning up the orcish filth from this area. Return later, I should have some work available.");
 	end
@@ -34,13 +34,13 @@ end
 function event_signal(e)
 	if (e.signal == 1) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(57153) == false) then
-			eq.spawn2(57151,0,0,3420,-33.5,-1.9,82); -- NPC: #Taskmaster_Mirot	
+			eq.spawn2(57151,0,0,3420,-33.5,-1.9,82); -- NPC: #Taskmaster_Mirot
 			eq.spawn2(57154,0,0,3430,-13.5,-1.9,180); -- NPC: Reanimated_Minion
 			eq.spawn2(57154,0,0, 3425,-25 ,-1.9,330); -- needs_heading_validation
 			eq.spawn2(57154,0,0, 3430,-33.5 ,-1.9,0); -- NPC: Reanimated_Minion
 			eq.spawn2(57155,0,0, 3443,-25.5 ,-1.9,360); -- NPC: Reanimated_Minion
 			eq.spawn2(57155,0,0, 3440,-33.5 ,-1.9,270); -- needs_heading_validation
-			eq.spawn2(57155,0,0, 3443,-15.5 ,-1.9,360); -- NPC: Reanimated_Minion		
+			eq.spawn2(57155,0,0, 3443,-15.5 ,-1.9,360); -- NPC: Reanimated_Minion
 		end
 	end
 	if (e.signal == 2) then

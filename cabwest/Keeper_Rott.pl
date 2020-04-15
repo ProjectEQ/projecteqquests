@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::say("Oh, great necromancer, how can I repay you?!! I know. Here is a spell I recently researched. It should help you increase the strength of a summoned pet. Learn it well.");
     quest::summonitem("16426");
     quest::faction(443, 3); # Faction: Brood of Kotiz
-    quest::faction(441, 3); # Faction: Legion of Cabilis 
+    quest::faction(441, 3); # Faction: Legion of Cabilis
     quest::exp(1000);
   }
   plugin::return_items(\%itemcount);

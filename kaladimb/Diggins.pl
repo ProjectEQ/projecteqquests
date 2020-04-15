@@ -59,7 +59,7 @@ sub EVENT_SAY {
       if ($client->GetGlobal("Fatestealer") ==1) {
          quest::say("Consider this both a favor and a test. I couldn't rest at night knowing that someone carrying around my secrets was anything less than proficient at smithin'. On top of that, relics crafted by the infamous $name will make some fine conversation pieces I think. Ha ha. If that isn't clear enough for ye, I'd like ye to demonstrate your skill with forge and a hammer. Here's a list of items that ye can make for me. Seal them up in this satchel when you're done and bring them back to me, lad.");
          quest::summonitem(8775); # Item: Collection Satchel
-         quest::summonitem(52331); # Item: Test of Smithing  
+         quest::summonitem(52331); # Item: Test of Smithing
       }
       else {
          quest::emote("doesn't appear to want to speak with you.");

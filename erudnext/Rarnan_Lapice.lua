@@ -19,9 +19,9 @@ function event_trade(e)
 			e.self:Say("I sent you after that book ages ago! What took you so long? I have already completed my studies. Luckily I found the original manuscript under my bedroll. I forgot I had kept it there. Take this as a token of my apology. Maybe it will aid you in your next book hunt. I know how cunning those books can be.");
 			e.other:SummonItem(eq.ChooseRandom(15302,6351,89036,16647)); -- Item(s): Spell: Languid Pace (15302), Fine Steel Morning Star (6351), Cracked Eye Stone (89036), Aged Platinum Bloodstone Earring (16647)
 			e.other:Ding();
-			e.other:Faction(298,50,0); 	-- Faction: Peace Keepers
-			e.other:Faction(266,12,0); 	-- Faction: High Council of Erudin			
-			e.other:Faction(265,-12,0); 	-- Faction: Heretics
+			e.other:Faction(298,50,0); -- Faction: Peace Keepers
+			e.other:Faction(266,12,0); -- Faction: High Council of Erudin
+			e.other:Faction(265,-12,0); -- Faction: Heretics
 			e.other:AddEXP(12500);
 			e.other:GiveCash(0,0,20,3);
 		end

@@ -5,5 +5,5 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-	quest::movepc(283,-1258,456,-119,240); # Zone: poearthb
+	quest::movepc(283,-1258,456,-119,240); # Zone: barindu
 }

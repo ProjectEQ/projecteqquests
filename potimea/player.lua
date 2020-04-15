@@ -71,30 +71,30 @@ function event_click_door(e)
 			-- Send them to their instance
 			-- If past Phase 3, move them to their current phase
 			if ( phase == "Phase6" ) then
-				e.self:MovePCInstance(223, instance_id, 337, 1, 8, 128); -- Zone: mischiefplane
+				e.self:MovePCInstance(223, instance_id, 337, 1, 8, 128); -- Zone: potimeb
 			elseif ( phase == "Phase5" ) then
-				e.self:MovePCInstance(223, instance_id, -358, 0, 4, 128); -- Zone: mischiefplane
+				e.self:MovePCInstance(223, instance_id, -358, 0, 4, 128); -- Zone: potimeb
 			elseif ( phase == "Phase4" ) then
-				e.self:MovePCInstance(223, instance_id, -382, -11, 349, 124); -- Zone: mischiefplane
+				e.self:MovePCInstance(223, instance_id, -382, -11, 349, 124); -- Zone: potimeb
 			elseif ( phase == "Phase3" ) then
-				e.self:MovePCInstance(223, instance_id, 681, 1113, 496, 112); -- Zone: mischiefplane
+				e.self:MovePCInstance(223, instance_id, 681, 1113, 496, 112); -- Zone: potimeb
 			-- Not past phase 3, spawn in individual trials
 			else
 				if (door_id == 8) then
 					-- GetDoorID =  8 : Air Trial
-					e.self:MovePCInstance(223, instance_id, -36, 1352, 496, 124); -- Zone: mischiefplane
+					e.self:MovePCInstance(223, instance_id, -36, 1352, 496, 124); -- Zone: potimeb
 				elseif (door_id == 9) then
 					-- GetDoorID =  9 : Water Trial
-					e.self:MovePCInstance(223, instance_id, -51, 857, 496, 124); -- Zone: mischiefplane
+					e.self:MovePCInstance(223, instance_id, -51, 857, 496, 124); -- Zone: potimeb
 				elseif (door_id == 10) then
 					-- GetDoorID = 10 : Earth Trial
-					e.self:MovePCInstance(223, instance_id, -35, 1636, 496, 124); -- Zone: mischiefplane
+					e.self:MovePCInstance(223, instance_id, -35, 1636, 496, 124); -- Zone: potimeb
 				elseif (door_id == 11) then
 					-- GetDoorID = 11 : Fire Trial
-					e.self:MovePCInstance(223, instance_id, -55, 569, 496, 124); -- Zone: mischiefplane
+					e.self:MovePCInstance(223, instance_id, -55, 569, 496, 124); -- Zone: potimeb
 				elseif (door_id == 12) then
 					-- GetDoorID = 12 : Undead Trial
-					e.self:MovePCInstance(223, instance_id, -27, 1103, 496, 124); -- Zone: mischiefplane
+					e.self:MovePCInstance(223, instance_id, -27, 1103, 496, 124); -- Zone: potimeb
 				end
 			end
 		end

@@ -43,7 +43,7 @@ sub EVENT_HP {
 
 sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294593,0,0,530,-261,-50,138); # NPC: Vrex_Xalkak`s_Sentinel
-  quest::spawn2(294598,0,0,531,-157,-50,252); # NPC: #Vrex_Xalkak`s_Sentinel 
+  quest::spawn2(294598,0,0,531,-157,-50,252); # NPC: #Vrex_Xalkak`s_Sentinel
   quest::spawn2(294599,0,0,522,-233,-50,136); # NPC: #Vrex_Xalkak`s_Sentinel_
   quest::spawn2(294600,0,0,516,-182,-50,136); # NPC: Vrex_Xalkak`s_Sentinel_
   quest::signalwith(294631,5); #set lockout

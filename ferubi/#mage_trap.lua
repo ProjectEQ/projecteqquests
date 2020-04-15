@@ -10,7 +10,7 @@ function event_enter(e)
 				e.other:Message(15,"The ground shakes as the manifestation of Body appears before you.");	
 				eq.set_global("mage_epic_ferubi","1",3,"H2");
 				eq.set_timer("mage_epic_depop",30*60*1000);
-				eq.spawn2(284105, 0, 0, 595.4,-810.5,1.2,0); -- NPC: #Body_Elemental				
+				eq.spawn2(284105, 0, 0, 595.4,-810.5,1.2,0); -- NPC: #Body_Elemental
 			else				
 				e.other:Message(15,"The yellow gem on your staff glows.")
 			end

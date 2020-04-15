@@ -61,7 +61,7 @@ function Protector_Timer(e)
 									eq.target_global("berserk_epic_test16779", "1", "F", 0,currclient:CharacterID(),0);
 									currclient:Message(15,"The rigors of battle have had no effect of this axe. Keras should be very pleased with the result of this particular axe.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
-									currclient:SummonItem(18976); -- Item: Taelosian Alloy Blood Axe									
+									currclient:SummonItem(18976); -- Item: Taelosian Alloy Blood Axe
 								end
 							end
 						end
@@ -75,7 +75,7 @@ function Protector_HP(e)
   if (e.hp_event == 75) then
 	e.self:CastSpell(2047, e.self:GetTarget():GetID()); -- Spell: Death Shackles
 	eq.set_timer("nuke", 36*1000);
-	eq.signal(89195,75); -- NPC: A_Sebilite_Guardian		
+	eq.signal(89195,75); -- NPC: A_Sebilite_Guardian
   end 
 end
 
@@ -137,7 +137,7 @@ function Protector_Death(e)
 			end				
 		end
 	);
-	eq.signal(89195,1); -- NPC: A_Sebilite_Guardian			
+	eq.signal(89195,1); -- NPC: A_Sebilite_Guardian
 end
 
 

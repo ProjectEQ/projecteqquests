@@ -4,7 +4,7 @@ quest::say("So you are the next pathetic maggot I have the displeasure of traini
 }
 if($text=~/armor/i){
 quest::say("Seek Krivn S'Tai in the Commoner quarter of Neriak and give him this request parchment. Krivn S'Tai has been paid in advance by the Lodge of the Dead for the requested service. Simply give him the request parchment and he will instruct you further. When you have outfitted yourself in a suit of armor return to the Lodge of the Dead and I will grant you [another task].");
-quest::summonitem(19584); # Item: Request Parchment 
+quest::summonitem(19584); # Item: Request Parchment
 }
 if($text=~/task/i){
 quest::say("Ah. you are eager to advance further within the Lodge of the Dead. Although it is my duty to aid your training. do not allow your arrogance to blind you to your lowly position amongst the Queens most loyal subjects. Your next task is to assist the construction of a [weapon] and [shield] worthy of being wielded by a Shadowknight of the Lodge of the Dead."); 

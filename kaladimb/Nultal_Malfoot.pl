@@ -17,7 +17,7 @@ sub EVENT_ITEM {
   }
   if(plugin::check_handin(\%itemcount, 14030 => 4)) { #Skunk Scent Gland
     quest::say("I thank you for your good deed. I trust it was not a problem. Take this scroll. A cleric of this cathedral will find it useful. May the power of Underfoot be with you.");
-    quest::summonitem(quest::ChooseRandom(15203,15229,15560,15036,15216)); #Random Spell: Cure Poison, Fear, Furor, Gate, Stun
+    quest::summonitem(quest::ChooseRandom(15203,15229,15560,15036,15216)); # Item(s): Spell: Cure Poison (15203), Spell: Fear (15229), Spell: Furor (15560), Spell: Gate (15036), Spell: Stun (15216)
     quest::faction(227,5); #Clerics of Underfoot
     quest::faction(274,5); #Kazon Stormhammer
     quest::faction(293,5); #Miners Guild 249

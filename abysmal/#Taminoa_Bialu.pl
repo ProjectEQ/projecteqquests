@@ -124,7 +124,7 @@ sub EVENT_ITEM {
       quest::summonitem(67653); # Item: Green Hued Gemstone
     }
     elsif (($class eq "Cleric") || ($class eq "Shaman") || ($class eq "Druid")) {
-      quest::summonitem(67655); # Item: Green Hued Gemstone  
+      quest::summonitem(67655); # Item: Green Hued Gemstone
     }
     elsif (($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Enchanter")  || ($class eq "Magician")) {
       quest::summonitem(67656); # Item: Green Hued Gemstone

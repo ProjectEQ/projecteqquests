@@ -11,7 +11,7 @@ function event_timer(e)
 	elseif(e.timer=="dialog2") then
 		eq.stop_timer("dialog2");
 		e.self:Say("That's true!");
-		eq.signal(14190,3); -- NPC: #Finnelzi_Springworthy			
+		eq.signal(14190,3); -- NPC: #Finnelzi_Springworthy
 	elseif(e.timer=="gate") then
 		eq.stop_timer("gate");
 		e.self:CastSpell(36, 0); -- Spell: Gate

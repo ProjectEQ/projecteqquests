@@ -11,7 +11,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18818})) then -- Tattered Flier
 		e.self:Say("It is about time you returned! Innoruuk would be proud of the red you have spread upon the land.");
-		e.other:SummonItem(15343); -- Spell: Siphon Strengh
+		e.other:SummonItem(15343); -- Item: Spell: Siphon Strength
 		e.other:Ding();
 		e.other:Faction(271,1,0); -- Dismal Rage
 		e.other:Faction(281,-5,0); -- Knights of Truth

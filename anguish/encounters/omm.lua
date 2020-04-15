@@ -134,7 +134,7 @@ function OMM_HP(e)
 		eq.spawn2(317120,0,0,393, 4968, 280, 128); --#Piraand (317120) east
 		eq.spawn2(317121,0,0,504, 5081, 280, 256); --#Garishi (317121) north
 		eq.signal(317118,1); -- NPC: #Vyishe
-		eq.signal(317119,2); -- NPC: #Anishy		
+		eq.signal(317119,2); -- NPC: #Anishy
 		eq.depop_all(317114); --Coerced_Lieutenant
 		eq.depop_all(317117); --Frenzied_Lasher
 		eq.stop_timer("torment");
@@ -244,7 +244,7 @@ function OMM_Timer(e)
 		for client in now_clients.entries do
 			if (client.valid) then
 				client:WipeHateList();
-				client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: riwwi
+				client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: anguish
 				client:SetEntityVariable("clicked_up", "0"); -- set to 0, they're no longer up here correctly
 			end
 		end
@@ -287,7 +287,7 @@ function OMM_Timer(e)
 				local var = client:GetEntityVariable("clicked_up");
 				if ((var == nil or var == "0") and room_box:contains(client:GetX(), client:GetY())) then
 					eq.debug(client:GetName() .. " shouldn't be up here yet: " .. os.date("!%c"));
-					client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: riwwi
+					client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: anguish
 				end
 			end
 		end

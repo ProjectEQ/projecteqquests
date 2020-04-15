@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 	# Disciple Symbol of Brell Serilis (End)
 		quest::say("Ye are a true Priest of Brell Serilis! And ye make me both proud and happy to have met ye so that I could enjoy this sweet drink once again! Please take this Disciple Symbol of Brell Serilis which I have crafted to enable tyou to turn water into this blessed ale for you have truly earned it! And when ye are ready for your next step come back and visit!");
 		# Summon: Disciple Symbol of Brell Serilis
-		quest::summonitem(1431); # Item: Disciple Symbol of Brell Serilis 
+		quest::summonitem(1431); # Item: Disciple Symbol of Brell Serilis
 	}
 	plugin::return_items(\%itemcount);
 }

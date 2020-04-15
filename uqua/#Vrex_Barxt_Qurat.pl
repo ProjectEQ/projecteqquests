@@ -12,7 +12,7 @@ sub EVENT_TIMER {
     quest::settimer(2,30);
     quest::spawn2(292072,0,0,-830,-83,59,478); # NPC: an_anchorite_of_destruction
     quest::spawn2(292072,0,0,-822,-77,59,474); # NPC: an_anchorite_of_destruction
-    quest::spawn2(292072,0,0,-813,-74,59,472); # NPC: an_anchorite_of_destruction  
+    quest::spawn2(292072,0,0,-813,-74,59,472); # NPC: an_anchorite_of_destruction
     quest::spawn2(292072,0,0,-921,-76,59,32); # NPC: an_anchorite_of_destruction
     quest::spawn2(292072,0,0,-911,-79,59,22); # NPC: an_anchorite_of_destruction
     quest::spawn2(292072,0,0,-902,-83,59,26); # NPC: an_anchorite_of_destruction

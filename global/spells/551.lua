@@ -9,7 +9,7 @@ function event_spell_effect(e)
     --else
 
     if (client.valid) then
-      client:MovePC(21, 1396, 345, -50, 490); -- Zone: beholder
+      client:MovePC(21, 1396, 345, -50, 490); -- Zone: commons
     end
 
     --end

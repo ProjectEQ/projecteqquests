@@ -23,7 +23,7 @@ sub EVENT_SAY {
       quest::spawn2(294614,0,0,213,-100,20,0); # NPC: #Trigger_Ikkinz_4
 	 }  
      $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
-     quest::MovePCInstance(294,$InInstanceIkky7,195,-86,21,0); # Zone: potranquility
+     quest::MovePCInstance(294,$InInstanceIkky7,195,-86,21,0); # Zone: ikkinz
   }
  } 
  if ($text=~/south/i) {
@@ -32,7 +32,7 @@ sub EVENT_SAY {
       quest::spawn2(294614,0,0,213,-100,20,0); # NPC: #Trigger_Ikkinz_4
 	 }  
     $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
-    quest::MovePCInstance(294,$InInstanceIkky7,206,-154,20,0); # Zone: potranquility
+    quest::MovePCInstance(294,$InInstanceIkky7,206,-154,20,0); # Zone: ikkinz
   }
  } 
 }

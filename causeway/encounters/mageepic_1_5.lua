@@ -40,7 +40,7 @@ function Air_HP(e)
 	eq.set_next_hp_event(40);
 	eq.spawn2(303102,0,0,e.self:GetX()-10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Gust
 	eq.spawn2(303102,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Gust
-	eq.spawn2(303102,0,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Gust	
+	eq.spawn2(303102,0,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Gust
 	e.self:GMMove(-1109,-1880,328,0);
   end 
   if (e.hp_event == 40) then
@@ -86,7 +86,7 @@ function Air_HP(e)
 	eq.spawn2(303105,0,0,e.self:GetX()+10,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Current
 	eq.spawn2(303105,0,0,e.self:GetX(),e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Current
 	eq.spawn2(303105,0,0,e.self:GetX(),e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Current
-	eq.spawn2(303105,0,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Current		
+	eq.spawn2(303105,0,0,e.self:GetX()-10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Current
 	eq.spawn2(303105,0,0,e.self:GetX()+10,e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading()); -- NPC: Elemental_Essence_Current
 	e.self:GMMove(-1109,-1880,328,0);
   end   
@@ -153,23 +153,23 @@ end
 
 
 function Zeph_Death(e)
-	eq.signal(303100,303101); -- NPC: Elemental_Essence_of_Air			
+	eq.signal(303100,303101); -- NPC: Elemental_Essence_of_Air
 end
 
 function Gust_Death(e)
-	eq.signal(303100,303102); -- NPC: Elemental_Essence_of_Air			
+	eq.signal(303100,303102); -- NPC: Elemental_Essence_of_Air
 end
 
 function Breeze_Death(e)
-	eq.signal(303100,303103); -- NPC: Elemental_Essence_of_Air			
+	eq.signal(303100,303103); -- NPC: Elemental_Essence_of_Air
 end
 
 function Wind_Death(e)
-	eq.signal(303100,303104); -- NPC: Elemental_Essence_of_Air			
+	eq.signal(303100,303104); -- NPC: Elemental_Essence_of_Air
 end
 
 function Current_Death(e)
-	eq.signal(303100,303105); -- NPC: Elemental_Essence_of_Air			
+	eq.signal(303100,303105); -- NPC: Elemental_Essence_of_Air
 end
 
 

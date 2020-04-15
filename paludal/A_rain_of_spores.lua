@@ -6,6 +6,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:CastSpell(2770,e.other:GetID(),0,0); -- Spell: Rain of Spore
+	e.self:CastSpell(2770,e.other:GetID(),0,0); -- Spell: Rain of Spores
 	eq.depop_with_timer();
 end

@@ -382,7 +382,7 @@ function Deputy_Timer(e)
 	elseif (e.timer == "Curse") then
 		e.self:CastSpell(7313, e.self:GetTarget():GetID()); -- Spell: Spider's Curse
 	elseif (e.timer == "Cloud") then
-		e.self:CastSpell(7757, e.self:GetTarget():GetID()); -- Spell: Cloud of Viscous Venom	
+		e.self:CastSpell(7757, e.self:GetTarget():GetID()); -- Spell: Cloud of Viscous Venom
 	elseif (e.timer == "Root") then
 		e.self:SetPseudoRoot(true);
 		eq.stop_timer("Root");
@@ -413,7 +413,7 @@ function Deputy_HP(e)
 		e.self:ModifyNPCStat("max_hit", tostring(Generalnew_max_hit));
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 50);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 75);
-		eq.spawn2(33169,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ghoulish_Guardian 
+		eq.spawn2(33169,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ghoulish_Guardian
 		eq.spawn2(33169,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ghoulish_Guardian
 		eq.set_timer("Blind",60000);
 		eq.set_timer("BlindCast",70000);
@@ -428,7 +428,7 @@ function Deputy_HP(e)
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 75);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 		e.self:CameraEffect(2000,5);
-		eq.spawn2(33170,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ravenous_Werewolf 
+		eq.spawn2(33170,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ravenous_Werewolf
 		eq.spawn2(33170,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ravenous_Werewolf
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do

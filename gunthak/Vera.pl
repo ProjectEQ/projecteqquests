@@ -34,7 +34,7 @@ sub EVENT_ITEM {
   }	
   elsif(plugin::check_handin(\%itemcount, 58004 => 1)){#Note to Vera
     quest::say("Thank goodness my sister is feeling better. While you were gone, I was able to figure out the exact healing power of the flicker liquid. I have transcribed it on this piece of parchment. Here, memorize this and may it serve you well. Now, if I can just figure out what sustains the lava elementals of Broken Skull. If you are up to it, I could use some [more assistance].");
-    quest::summonitem(59017);#Spell: Primal Remedy
+    quest::summonitem(59017); # Item: Spell: Primal Remedy
     quest::exp(1750000);#1% of level 51 xp
   }
   elsif(plugin::check_handin(\%itemcount, 58005 => 3)){#Strength of Lava
@@ -44,7 +44,7 @@ sub EVENT_ITEM {
   }	
   elsif(plugin::check_handin(\%itemcount, 58006 => 1)){#Scribed Runes
     quest::emote("makes a copy of your parchment, adding some extra symbols at the end. 'See, I told you it would be useless to you until I translated it. I shall journey home, now, and place this new scroll within the libraries of Solusek. I thank you for your help and wish you hearty adventures.'");
-    quest::summonitem(59018);#Spell: Elemental Empathy
+    quest::summonitem(59018); # Item: Spell: Elemental Empathy
   }	
   plugin::return_items(\%itemcount);
 }#Done

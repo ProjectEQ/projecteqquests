@@ -4,7 +4,7 @@ sub EVENT_SAY {
 	 # If the Player has the Swirling Perl 28059 from Zordak in Sol B.  Then they should be able to 
 	 # get a box from Warder Cecilia
 	 if (plugin::check_hasitem($client,28059) && !plugin::check_hasitem($client,17175)){
-      quest::summonitem(17175); # Item: Zordak's Box of Bindings 
+      quest::summonitem(17175); # Item: Zordak's Box of Bindings
     }
 
   }

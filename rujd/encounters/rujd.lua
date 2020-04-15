@@ -169,7 +169,7 @@ function RPG_Timer(e)
 			--#Yipzma_Tixxlea (245276) saved by #Maziyae_Xanl`Utin (245217)
 			elseif (e.self:GetSpawnPointY()==-1154) then
 				rpg_maziyae=1;
-				eq.spawn2(245217, 0, 0, 1340, -1152.3, -31.4, 368); -- NPC: #Maziyae_Xanl`Utin			
+				eq.spawn2(245217, 0, 0, 1340, -1152.3, -31.4, 368); -- NPC: #Maziyae_Xanl`Utin
 			end
 		end
 		--e.self:Say("rpg_dead: " .. rpg_dead)
@@ -293,7 +293,7 @@ function Prisoner_Timer(e)
 		eq.signal(245276,1); -- NPC: #Yipzma_Tixxlea
 	elseif (e.timer=="245261") then
 		eq.stop_timer("245261");
-		eq.signal(245261,1); -- NPC: #Jealac_Yzinaql		
+		eq.signal(245261,1); -- NPC: #Jealac_Yzinaql
 	end
 end
 

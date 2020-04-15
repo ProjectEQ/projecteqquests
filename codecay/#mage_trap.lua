@@ -10,7 +10,7 @@ function event_enter(e)
 				e.other:Message(15,"The purple gem on your staff emanates a soft breeze.");	
 				eq.set_global("mage_epic_cod","1",3,"H2");
 				eq.set_timer("mage_epic_depop",30*60*1000);
-				eq.spawn2(200060, 0, 0, 483,256,-80,427); -- NPC: #Spirit_Elemental				
+				eq.spawn2(200060, 0, 0, 483,256,-80,427); -- NPC: #Spirit_Elemental
 			else				
 				e.other:Message(15,"The purple gem on your staff glows.")
 			end

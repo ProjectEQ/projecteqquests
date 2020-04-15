@@ -15,7 +15,7 @@ function event_timer(e)
 		eq.stop_timer("depop")
 		eq.depop();
 	elseif e.timer=="drain" then
-		e.self:CastSpell(4457, e.self:GetTarget():GetID()); -- Spell: Cursed Keeper's Drain	
+		e.self:CastSpell(4457, e.self:GetTarget():GetID()); -- Spell: Cursed Keeper's Drain
 		eq.set_timer("drain", 600 * 1000);		
 	end
 end

@@ -9,7 +9,7 @@ function event_spell_effect(e)
     --else
 
     if (client.valid) then
-      client:MovePC(38, -453, 1059, -58, 74); -- Zone: chambersb
+      client:MovePC(38, -453, 1059, -58, 74); -- Zone: tox
     end
 
     --end

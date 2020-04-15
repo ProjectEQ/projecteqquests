@@ -19,7 +19,7 @@ sub EVENT_ITEM {
       
       if (plugin::check_handin(\%itemcount, 6221 =>1 )) {
       quest::say("Thank you very much. I see you got it all filled out. I gathered up all of those molds for you while you were gone. You can even have this old hilt that I found with them. Make sure you keep them in a safe place. You're going to need them and the books that the book fellow Qua sells. He's got a bunch of them and a kit that you'll need. When you get done with makin your dagger, bring it back by here with your cloak and I'll show you a surprise!");
-       quest::summonitem(6141); # Item: Blade Mold 
+       quest::summonitem(6141); # Item: Blade Mold
        quest::summonitem(6142); # Item: Claw Mold
        quest::summonitem(6148); # Item: Khala Dun Hilt Piece
        quest::exp(1000);

@@ -27,7 +27,7 @@ local item_lib = require("items");
 		e.self:Emote("cheers as you hand him the samples of zombie flesh. He says, 'You have them! Excellent! Thank you very much, "..e.other:GetName().."! Now I have much work to do so shoo before you break something else. Oh and here is your reward. It's an anklet that all our acolytes wear. Not only is it functional, but we can show off our beautiful foot hairs at the same time. Us halflings are pretty smart really.");
 		e.other:SummonItem(1731); -- Item: Acolyte's Anklet
 		e.other:Faction(300,20); -- Faction: Priests of Mischief
-		e.other:Faction(286,20); -- Faction: Mayor Gubbin 
+		e.other:Faction(286,20); -- Faction: Mayor Gubbin
 		e.other:Faction(263,20); -- Faction: Guardians of the Vale
 		e.other:GiveCash(18,13,0,0);
 		e.other:AddEXP(100);

@@ -19,7 +19,7 @@ quest::summonitem(19631); # Item: Crude Helm Mold
 }
 if($text=~/boots/i){
 quest::say("To assemble Fell blade Boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Ruined Kobold Pelts. and two Calcified Foot Bones in the Mail Assembly Kit.");
-quest::summonitem(19634); # Item: Crude Boot Mold 
+quest::summonitem(19634); # Item: Crude Boot Mold
  }
 if($text=~/bracer/i){
 quest::say("To assemble a Fell blade Bracer you will need to obtain a brick of crude bronze and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Bronze Bracer with a Ruined Kobold Pelt and a Calcified Ulna Bone in the Mail Assembly Kit.");

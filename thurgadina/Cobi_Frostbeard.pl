@@ -43,7 +43,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if ($faction <= 3) { # Require warmly and greater faction 
 	if (plugin::check_handin(\%itemcount, 25805 => 3, 24942 => 1)) { # tunic - 
-		quest::summonitem(31050); # Item: Rowyl's Chestguard of Nature 
+		quest::summonitem(31050); # Item: Rowyl's Chestguard of Nature
 		quest::exp(100000); 
 		quest::faction(406,20); # coldain 
 		quest::faction(405,20); # Dain Frostreaver IV 
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well."); 
 	} 
 	elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24944 => 1)) { # sleeves 
-		quest::summonitem(31051); # Item: Rowyl's Vambraces of Nature 
+		quest::summonitem(31051); # Item: Rowyl's Vambraces of Nature
 		quest::exp(100000); 
 		quest::faction(406,20); # coldain 
 		quest::faction(405,20); # Dain Frostreaver IV 
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well.");     
 	} 
 	elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24943 => 1)) { # leggings 
-		quest::summonitem(31054); # Item: Rowyl's Greaves of Nature 
+		quest::summonitem(31054); # Item: Rowyl's Greaves of Nature
    		quest::exp(100000); 
   		quest::faction(406,20); # coldain 
 		quest::faction(405,20); # Dain Frostreaver IV 
@@ -73,7 +73,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well."); 
 	} 
 	elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24948 => 1)) { # gloves 
-		quest::summonitem(31053); # Item: Rowyl's Gauntlets of Nature 
+		quest::summonitem(31053); # Item: Rowyl's Gauntlets of Nature
 		quest::exp(100000); 
 		quest::faction(406,20); # coldain 
 		quest::faction(405,20); # Dain Frostreaver IV 
@@ -83,7 +83,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well.");  
 	} 
 	elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24947 => 1)) { # cap 	
-		quest::summonitem(31049); # Item: Rowyl's Circlet of Nature 
+		quest::summonitem(31049); # Item: Rowyl's Circlet of Nature
 		quest::exp(100000); 
 		quest::faction(406,20); # coldain 
 		quest::faction(405,20); # Dain Frostreaver IV 
@@ -93,7 +93,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well."); 
 	} 
 	elsif (plugin::check_handin(\%itemcount, 25836 => 3, 24946 => 1)) { # bracers 
-		quest::summonitem(31052); # Item: Rowyl's Bracer of Nature 
+		quest::summonitem(31052); # Item: Rowyl's Bracer of Nature
 		quest::exp(100000); 
 		quest::faction(406,20); # coldain 
 		quest::faction(405,20); # Dain Frostreaver IV 
@@ -103,7 +103,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well."); 
 	} 
 	elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24945 => 1)) { # boots 
-   		quest::summonitem(31055); # Item: Rowyl's Boots of Nature 
+   		quest::summonitem(31055); # Item: Rowyl's Boots of Nature
    		quest::exp(100000); 
    		quest::faction(406,20); # coldain 
    		quest::faction(405,20); # Dain Frostreaver IV 

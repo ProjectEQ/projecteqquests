@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(93,2736.0,3438.8,-158.6); # Zone: draniksewersc
+	quest::movepc(93,2736.0,3438.8,-158.6); # Zone: overthere
 }

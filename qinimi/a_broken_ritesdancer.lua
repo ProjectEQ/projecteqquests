@@ -6,7 +6,7 @@ function event_say(e)
 		else
 			e.other:Message(1,"The worn Taelosian looks up at you discretely, as if looking at you directly would cause physical pain. She shyly hands you a small, worn bag and what appears to be an animal fang. She then holds up six fingers and points at the fang, then points at herself. She then turns quickly away and proceeds to act as if you are not there.");
 			e.other:SummonItem(62890); -- Item: Threadbare Cloth Bag
-			e.other:SummonItem(62864); -- Item: Undamaged Noc Fang			
+			e.other:SummonItem(62864); -- Item: Undamaged Noc Fang
 		end
 	end
 end

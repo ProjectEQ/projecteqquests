@@ -30,7 +30,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 19628})) then
 		e.self:Say("Pleased to meet you " .. e.other:GetName() .. "! You must be one of Kayas new trainees. Kaya has asked me to help get you outfitted in a suit of armor to protect you from the vile weapons of Rivervales foes. I have assembled a kit for you that will allow you to construct the armor pieces once you have gathered the necessary components. The required components vary according to which piece of Bravefoot Mail armor you are planning on assembling. Do you wish to craft a [" .. eq.say_link("bravefoot helm",false,"bravefoot helm") .. "]. a [" .. eq.say_link("bravefoot mail bracer",false,"bravefoot mail bracer") .. "]. [" .. eq.say_link("bravefoot gauntlets",false,"bravefoot gauntlets") .. "]. [" .. eq.say_link("bravefoot mail boots",false,"bravefoot mail boots") .. "]. [" .. eq.say_link("bravefoot vambraces",false,"bravefoot vambraces") .. "]. [" .. eq.say_link("bravefoot greaves",false,"bravefoot greaves") .. "]. or a [" .. eq.say_link("bravefoot breastplate",false,"bravefoot breastplate") .. "].");
-		e.other:SummonItem(17124); -- Item: Mail Assembly Kit 
+		e.other:SummonItem(17124); -- Item: Mail Assembly Kit
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

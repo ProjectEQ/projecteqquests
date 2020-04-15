@@ -41,7 +41,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 59038 => 1, 59039 => 1)) {#A captured Nifilik, A tiny Nifilik
     quest::emote("takes the small nifilik and places it on the ground at his feet. He then partially unties the larger one causing it to let out some sort of high-pitched wailing. The small niflik on the table immediately begins to run across the ground toward you. You try to jump away but the nifilik still manages to latch onto your boot and crawl up under your armor. You howl in pain as the tiny creature bites repeatedly at your skin. Gaudric rebinds the larger nifilik and it stops wailing. The tiny creature below your armor stops biting at your skin.");
     quest::emote("begins to scrawl several runes on a parchment and then hands it to you. 'I believe I've worked it out now. Unfortunately, our voices won't be able to make the sounds necessary to control these creatures, but with the help of Karana's magic you'll be able to imitate the sounds enough to control the small creatures. Use their power wisely, Ninlawen. As you know their bite is quite painful.");
-    quest::summonitem(59007);#Spell: Swarm of Pain
+    quest::summonitem(59007); # Item: Spell: Swarm of Pain
     quest::exp(1107392);#1% of level 45 xp
   }
   if(plugin::check_handin(\%itemcount, 59040 => 1)) {#Glowing Zraxthril Amulet

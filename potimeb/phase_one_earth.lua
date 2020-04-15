@@ -33,7 +33,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn Terlok_of_Earth
 		if (event_counter == 9) then
-			eq.spawn2(223119,0,0,70.3,1644.5,493.7,371); -- NPC: Terlok_of_Earth 
+			eq.spawn2(223119,0,0,70.3,1644.5,493.7,371); -- NPC: Terlok_of_Earth
 			event_counter = 0;
 		end
 	-- signal 2 comes from Terlok_of_Earth

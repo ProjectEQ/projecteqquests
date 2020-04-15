@@ -12,7 +12,7 @@ sub EVENT_SAY {
     quest::faction( 1525, -50); # Faction: Coterie Elite
     quest::faction( 1483, -50); # Faction: Seru
     quest::faction(1484,-50); # Faction: Hand of Seru
-    quest::faction(1485,-50); # Faction: Eye of Seru 
+    quest::faction(1485,-50); # Faction: Eye of Seru
     quest::faction(1541,-50); # Faction: Hand Legionnaries
   }  
   }

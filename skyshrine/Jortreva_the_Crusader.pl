@@ -34,7 +34,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9343 => 1, 9345 => 1, 9344 => 1, 9346 => 1)) {
  quest::say("You have done well $name, and Susarrak of the Crusaders is pleased by your success and honorable actions in binding yourself to this duty. The Crusaders of Veeshan recognize your efforts and we shall honor our word of just recognition to be delivered in effect of your deeds.");  
- quest::summonitem(30393); # Item: Chromatic Gauntlets of the Ages 
+ quest::summonitem(30393); # Item: Chromatic Gauntlets of the Ages
   }
   if (plugin::check_handin(\%itemcount, 9327 => 1, 9328 => 1)) {
     quest::say("You have done well $name, and Susarrak of the Crusaders is pleased by your success and honorable actions in binding yourself to this duty. The Crusaders of Veeshan recognize your efforts and we shall honor our word of just recognition to be delivered in effect of your deeds.");

@@ -23,7 +23,7 @@ function event_say(e)
 		e.other:SummonItem(51121); -- Item: Tradeskill Basics : Volume I
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II		
+		e.other:SummonItem(51122); -- Item: Tradeskill Basics : Volume II
 	end
 end
 

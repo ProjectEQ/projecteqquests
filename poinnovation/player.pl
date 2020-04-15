@@ -11,7 +11,7 @@ sub EVENT_CLICKDOOR {
       quest::set_zone_flag(223);
       $client->Message(15,"You have received a character flag!");
       $client->Message(15,"The ages begin to tear through your body. You wake to find yourself in another time.");
-      quest::movepc(219,223,140,9,94); # Zone: mirg
+      quest::movepc(219,223,140,9,94); # Zone: potimea
     }
   }
   $qglobals{pop_poi_dragon}=undef;

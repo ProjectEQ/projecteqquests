@@ -17,7 +17,7 @@ sub EVENT_SAY {
 
 	if ($text=~/ready/i) {
 		$client->Message(4,"Your tormented visions have ended");
-		quest::movepc(207,-16,-49,452); # Zone: lopingplains
+		quest::movepc(207,-16,-49,452); # Zone: potorment
 	}
 }
 

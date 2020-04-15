@@ -24,9 +24,9 @@ local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13870})) then 
 		e.self:Say("Whew!! We are sure on the way to saving this village, pal! They're gonna erect a statue in our names.  Fishslayers is what we are!  Let's keep up the good work!");
 		e.other:Faction(292,5); -- Faction: Merchants of Rivervale
-		e.other:Faction(241,5); -- Faction: Deeppockets 
-		e.other:Faction(263,5); -- Faction: Guardians of the Vale  
-		e.other:Faction(286,5); -- Faction: Mayor Gubbin 
+		e.other:Faction(241,5); -- Faction: Deeppockets
+		e.other:Faction(263,5); -- Faction: Guardians of the Vale
+		e.other:Faction(286,5); -- Faction: Mayor Gubbin
 		e.other:Faction(336,-5); -- Faction: Coalition of Tradefolk Underground
 		e.other:GiveCash(0,8,1,0);
 		e.other:AddEXP(15);

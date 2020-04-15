@@ -14,7 +14,7 @@ sub EVENT_SAY {
   }
   if($client->GetGlobal("paladin_epic") ==5 && $text=~/ingredients/i) {
     quest::say("I am looking for the following things: a Potameid seaweed strand, blood from a Mastruq Havocblade, the tail of a Noc Fleshfeaster, and the jawbone of Ra'Tuk Screambringer. Place the items in this enchanted potion bag, and return it to me so that we can attempt to awaken Reiya. Please be dilligent in your search, $name.");
-    quest::summonitem(69922); # Item: Lovine's Potion Bag	
+    quest::summonitem(69922); # Item: Lovine's Potion Bag
   }  
 }
 

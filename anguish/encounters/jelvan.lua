@@ -203,7 +203,7 @@ function Jelvan_Timer(e)
 			tanthu_ae=0;
 			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317099):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan
 			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317100):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan
-			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan	
+			e.self:CastSpell(5674,eq.get_entity_list():GetNPCByNPCTypeID(317101):GetTarget():GetID(),0,1); -- Spell: Blessing of Jelvan
 			e.self:Shout("Here you go! This should help!");
 		end
 	end
@@ -288,7 +288,7 @@ function Tormentor_Signal(e)
 		  function(ent, hate, damage, frenzy)
 			if(ent:IsClient()) then
 			  local currclient=ent:CastToClient();
-			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0); -- Zone: riwwi
+			  currclient:MovePCInstance(317,instance_id, e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),0); -- Zone: anguish
 			end
 		  end
 		);		

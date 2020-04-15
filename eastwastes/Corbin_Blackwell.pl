@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 1046 => 1, 30162 => 1)) {
         quest::say("I thought I was a dwarfskin rug there for a minute! Thank Brell for your help stranger! Now cover me while I make good my escape. I am weakened and cannot endure much more.");
         quest::summonitem(30162); # Item: Mithril Coldain Insignia Ring
-        $corbin2 = quest::spawn2(2000944, 234, 0, $x, $y, $z, $h); # NPC: Corbin_Blackwell
+        $corbin2 = quest::spawn2(2000944, 234, 0, $x, $y, $z, $h);
         $mob = $entity_list->GetMobID($corbin2);
         $mobnpc = $mob->CastToNPC();
         $mobnpc->SetHP( $mobnpc->GetMaxHP() * 0.84 );
@@ -65,9 +65,9 @@ sub EVENT_TIMER {
         quest::stoptimer("down");
 
         # Makes guards emote flavor text
-        quest::signalwith(116114, 116119, 500); # NPC: a_Ry-Gorr_prison_guard
-        quest::signalwith(116527, 116119, 500); # NPC: a_Ry-Gorr_prison_guard
-        quest::signalwith(116102, 116119, 500); # NPC: a_Ry-Gorr_prison_guard
+        quest::signalwith(116114, 116119, 500); # NPC: a_Ry`Gorr_prison_guard
+        quest::signalwith(116527, 116119, 500); # NPC: a_Ry`Gorr_prison_guard
+        quest::signalwith(116102, 116119, 500); # NPC: a_Ry`Gorr_prison_guard
 
         quest::settimer("resethp", 1);
     }
@@ -83,7 +83,7 @@ sub EVENT_TIMER {
 
 sub EVENT_SIGNAL {
     quest::stoptimer("depop");
-    quest::spawn2(2000944, 235, 0, $x, $y, $z, $h); # NPC: Corbin_Blackwell
+    quest::spawn2(2000944, 235, 0, $x, $y, $z, $h);
     quest::depop();
 }
 

@@ -28,14 +28,14 @@ sub EVENT_SAY {
 			$group = $entity_list->GetGroupByClient($client);
 			#move the person who triggered as they may not be in range (z axis) 
 			#of the spot on the floor directly under the cage.
-			$client->MovePC(207,-175,815,-955,0); # Zone: lopingplains
+			$client->MovePC(207,-175,815,-955,0); # Zone: potorment
 			if ($raid) {
 				for ($count = 0; $count < $raid->RaidCount(); $count++) {
 					$pc = $raid->GetMember($count);
 					#using z-15 to calculate from the spot on the floor under Tylis not from Tylis
 					#and only move players within 15 units of the spot directly under Tylis
 					if ($pc && $pc->IsClient() && $pc->CalculateDistance($x,$y,$z-15) <= 50) { 
-						$pc->MovePC(207,-175,815,-955,0); # Zone: lopingplains
+						$pc->MovePC(207,-175,815,-955,0); # Zone: potorment
 					}
 				}
 			}
@@ -45,7 +45,7 @@ sub EVENT_SAY {
 					#using z-15 to calculate from the spot on the floor under Tylis not from Tylis
 					#and only move players within 15 units of the spot directly under Tylis
 					if ($pc && $pc->IsClient() && $pc->CalculateDistance($x,$y,$z-15) <= 50) { 
-						$pc->MovePC(207,-175,815,-955,0); # Zone: lopingplains
+						$pc->MovePC(207,-175,815,-955,0); # Zone: potorment
 					}
 				}
 			}

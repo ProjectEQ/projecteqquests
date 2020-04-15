@@ -181,7 +181,7 @@ function ShapeShift(e)
   e.self:SetNPCFactionID(79); -- Faction: Gargoyle
 
   -- Cast Balance of the Nameless on self to remove debuffs
-  e.self:CastSpell(3230, e.self:GetID()); -- Spell: Balance of the Nameless  
+  e.self:CastSpell(3230, e.self:GetID()); -- Spell: Balance of the Nameless
 
   -- Spawn Sub-NPCs 
   if ( mob[6] ~= nil ) then 
@@ -353,7 +353,7 @@ function Boss_Death(e)
   eq.depop_all(308012);
 
   -- Spawn Shell of the Master
-  eq.spawn2(308015, 0, 0, -212, 270, 66, e.self:GetHeading());
+  eq.spawn2(308015, 0, 0, -212, 270, 66, e.self:GetHeading()); -- NPC: Shell_of_the_Master_
 
   -- Update the Lockouts
   local mpg_helper = require("mpg_helper");

@@ -19,8 +19,8 @@ function event_trade(e)
 			e.other:Ding();
 			e.other:Faction(275,2,0); -- Faction: Keepers of the Art
 			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
-			e.other:Faction(246,1,0); -- Faction: Faydarks Champions (246)
-			e.other:Faction(239,-1,0); -- Faction: The Dead (239)
+			e.other:Faction(246,1,0); -- Faction: Faydarks Champions
+			e.other:Faction(239,-1,0); -- Faction: The Dead
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -39,8 +39,8 @@ function event_trade(e)
 			e.other:Ding();
 			e.other:Faction(275,2,0); -- Faction: Keepers of the Art
 			e.other:Faction(279,1,0); -- Faction: King Tearis Thex
-			e.other:Faction(246,1,0); -- Faction: Faydarks Champions (246)
-			e.other:Faction(239,-1,0); -- Faction: The Dead (239)
+			e.other:Faction(246,1,0); -- Faction: Faydarks Champions
+			e.other:Faction(239,-1,0); -- Faction: The Dead
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -57,10 +57,10 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20018})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(326,2,0); -- Faction: Emerald Warriors (326)
-			e.other:Faction(270,-1,0); -- Faction: Indigo Brotherhood (270)
+			e.other:Faction(326,2,0); -- Faction: Emerald Warriors
+			e.other:Faction(270,-1,0); -- Faction: Indigo Brotherhood
 			e.other:Faction(325,1,0); -- Faction: Merchants of Felwithe
-			e.other:Faction(276,1,0); -- Faction: Kelethin Merchants (276)
+			e.other:Faction(276,1,0); -- Faction: Kelethin Merchants
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();
@@ -77,10 +77,10 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 20019})) then
 			e.self:Say("Good work!! I shall be on my way. Farewell my friend!!");
 			e.other:Ding();
-			e.other:Faction(326,2,0); -- Faction: Emerald Warriors (326)
-			e.other:Faction(270,-1,0); -- Faction: Indigo Brotherhood (270)
+			e.other:Faction(326,2,0); -- Faction: Emerald Warriors
+			e.other:Faction(270,-1,0); -- Faction: Indigo Brotherhood
 			e.other:Faction(325,1,0); -- Faction: Merchants of Felwithe
-			e.other:Faction(276,1,0); -- Faction: Kelethin Merchants (276)
+			e.other:Faction(276,1,0); -- Faction: Kelethin Merchants
 			e.other:AddEXP(800);
 			e.other:GiveCash(0,7,3,0);
 			eq.depop_with_timer();

@@ -7,7 +7,7 @@ function event_spell_effect_translocate_complete(e)
   --else
 
   if (client.valid) then
-    client:MovePC(21, 1839, 2, -15, 120); -- Zone: beholder
+    client:MovePC(21, 1839, 2, -15, 120); -- Zone: commons
   end
 
   --end

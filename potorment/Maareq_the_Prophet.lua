@@ -55,7 +55,7 @@ function event_timer(e)
                     mob:Emote("adheres to Maareq's flesh and is quickly absorbed!");
 					counter = counter + 1;
 					eq.debug("counter " .. counter );
-					eq.signal(207004,1);
+					eq.signal(207004,1); -- NPC: Maareq_the_Prophet
                     mob:Depop();
                 end
             end
@@ -86,6 +86,6 @@ end
 
 function event_death_complete(e)
 	eq.get_entity_list():MessageClose(e.self, false, 200, 10, "A strange female voice drifts from the bloated corpse that lies slumped before you, Maareq, I cannot feel your presence. What has happened? My head feels strange.... what is happening to me?");
-	eq.spawn2(207014,0,0,-0.18,-6.62,466.63,252.3);
+	eq.spawn2(207014,0,0,-0.18,-6.62,466.63,252.3); -- NPC: Tylis_Newleaf
 	eq.depop_all(207069);
 end

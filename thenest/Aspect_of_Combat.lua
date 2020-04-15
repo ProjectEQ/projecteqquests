@@ -6,7 +6,7 @@ local combat_max_hit = 1200;
 local tshara = false;
 
 function event_spawn(e)
-	eq.signal(343358,3);
+	eq.signal(343358,3); -- NPC: #T`Shara
 	combat_min_hit = 250;
 	combat_max_hit = 1200;
 	e.self:ModifyNPCStat("min_hit", tostring(combat_min_hit));
@@ -56,6 +56,6 @@ function event_combat(e)
 end
 
 function event_death_complete(e)
-	eq.signal(343358,8);
+	eq.signal(343358,8); -- NPC: #T`Shara
 	eq.stop_timer("powerup");
 end

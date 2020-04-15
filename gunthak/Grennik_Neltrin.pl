@@ -38,10 +38,10 @@ sub EVENT_ITEM {
     #I raided this function from another quest file(Lanken_Rjarn.pl in erudnint) and modified the message.  I think it will work.
     $client->Message(15, "You are suddenly filled with dark warmth as the potion slides down into your stomach. You can almost sense it invading your body, battling with your defenses. You stomach turns as the venom and blood mixes in your stomach and you fight the urge to pass out. You focus all of your energy on combating the poison inside you and your body begins to turn the venom. Eventually the poison grows silent inside you and only a slight warmth is left in its place. You have conquered the poison.'");
     if ($class eq "Shaman"){
-    	quest::summonitem(59525);#Spell: Blood of Nadox
+    	quest::summonitem(59525); # Item: Spell: Blood of Nadox
     }
     elsif (($class eq "Cleric") || ($class eq "Druid")){
-    	quest::summonitem(59012);#Spell: Pureblood
+    	quest::summonitem(59012); # Item: Spell: Pureblood
     }
     quest::exp(1750000);#1% of level 51 xp
   }

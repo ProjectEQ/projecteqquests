@@ -9,7 +9,7 @@ end
 function event_timer(e)
 	if(e.timer=="tremor") then
 		eq.stop_timer("tremor");
-		e.self:CastSpell(1107, e.self:GetTarget():GetID()); -- Spell: Tremor of Judgment	
+		e.self:CastSpell(1107, e.self:GetTarget():GetID()); -- Spell: Tremor of Judgment
 		local npc = eq.get_entity_list():GetMobByNpcTypeID(201077);	
 		   if (npc.valid) then
 			  if ( npc:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ()) < 200) then			
@@ -19,7 +19,7 @@ function event_timer(e)
 		eq.set_timer("tremor", 150 * 1000);
 	elseif(e.timer=="verdict") then
 		eq.stop_timer("verdict");
-		e.self:CastSpell(1108, e.self:GetTarget():GetID()); -- Spell: Verdict of Eternity	
+		e.self:CastSpell(1108, e.self:GetTarget():GetID()); -- Spell: Verdict of Eternity
 		local npc = eq.get_entity_list():GetMobByNpcTypeID(201077);
 		   if (npc.valid) then
 			  if ( npc:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ()) < 200) then

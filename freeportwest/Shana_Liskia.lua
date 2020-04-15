@@ -60,7 +60,7 @@ function event_trade(e)
 		e.other:SummonItem(62846); -- Item: Mind Crystal
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 62618,item2 = 62619})) then
 		e.self:Say("Ah, well, it seems as though the crystal was attuned to these other crystals. They must have come in contact with a rather large element of the disease, otherwise I just can't see how the Mind Crystal would have noticed them. These crystals were created by someone with more experience than I have in this area. I will examine them further and attempt to learn something from them. I can tell now, though, that they were probably created in a fashion similar to the one I used to create the Mind Crystal. Shana pulls out a piece of parchment and writes a note. She gives you the note and says, Take this note to Corun along with the Mind Crystal. He can use the crystal and my notes to seek out the plague in whatever fashion he thinks is best. I need to get to work investigating these new crystals.");
-		e.other:SummonItem(62655); -- Item: Letter to Corun	
+		e.other:SummonItem(62655); -- Item: Letter to Corun
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

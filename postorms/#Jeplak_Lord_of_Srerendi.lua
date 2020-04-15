@@ -21,47 +21,47 @@ function event_timer(e)
 	elseif (e.timer == 'adds') then
 		local which = math.random(2,8);
     		if  (which == 2) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		elseif (which == 3) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		elseif (which == 4) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		elseif (which == 5) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		elseif (which == 6) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		elseif (which == 7) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		elseif (which == 8) then
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
+			eq.spawn2(eq.ChooseRandom(210233,210234), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_mangled_traveller (210233), a_lost_soul (210234)
 		end
 
 	end

@@ -54,7 +54,7 @@ sub EVENT_TIMER {
         quest::spawn2(289034,0,0,-1895,196,250,334); # NPC: a_cragbeast_hatchling
         quest::spawn2(289034,0,0,-1865,140,250,426); # NPC: a_cragbeast_hatchling
         quest::spawn2(289034,0,0,-1953,94,250,444); # NPC: a_cragbeast_hatchling
-        quest::spawn2(289034,0,0,-2047,125,250,44); # NPC: a_cragbeast_hatchling      
+        quest::spawn2(289034,0,0,-2047,125,250,44); # NPC: a_cragbeast_hatchling
       } elsif($qglobals{$instid.'_tipt_status'} == 2) { #mother spawned
         quest::spawn2(289036,0,0,-2040,196,250,226); #spawn #an_enraged_maternal_cragbeast
         if($entity_list->IsMobSpawnedByNpcTypeID(289045)){ #aemc_trigger
@@ -119,7 +119,7 @@ sub KICK_ALL_PLAYERS {
   #zone all players back to barindu
   my @pc_list = $entity_list->GetClientList();
   foreach $pc (@pc_list) {
-    $pc->MovePC(283, -1225, 501, -121, 348); # Zone: poearthb
+    $pc->MovePC(283, -1225, 501, -121, 348); # Zone: barindu
   }
   @pc_list = ()
 }

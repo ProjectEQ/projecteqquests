@@ -23,29 +23,29 @@ local num_alive=0;
 		end
 		
 		if (num_alive ==0) then
-			eq.spawn2(214040,0,0,1386,-926,-296,70);
-			eq.spawn2(214040,0,0,1420,-968,-280,33);
-			eq.spawn2(214040,0,0,1483,-925,-296,0);
-			eq.spawn2(214040,0,0,1466,-949,-296,511);
-			eq.spawn2(214040,0,0,1510,-921,-296,458);
+			eq.spawn2(214040,0,0,1386,-926,-296,70); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1420,-968,-280,33); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1483,-925,-296,0); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1466,-949,-296,511); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1510,-921,-296,458); -- NPC: a_Fledgling_War_Boar
 		end
 		if (num_alive ==1) then
-			eq.spawn2(214040,0,0,1386,-926,-296,70);
-			eq.spawn2(214040,0,0,1420,-968,-280,33);
-			eq.spawn2(214040,0,0,1483,-925,-296,0);
-			eq.spawn2(214040,0,0,1466,-949,-296,511);
+			eq.spawn2(214040,0,0,1386,-926,-296,70); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1420,-968,-280,33); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1483,-925,-296,0); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1466,-949,-296,511); -- NPC: a_Fledgling_War_Boar
 		end
 		if (num_alive ==2) then
-			eq.spawn2(214040,0,0,1386,-926,-296,70);
-			eq.spawn2(214040,0,0,1483,-925,-296,0);
-			eq.spawn2(214040,0,0,1466,-949,-296,511);
+			eq.spawn2(214040,0,0,1386,-926,-296,70); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1483,-925,-296,0); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1466,-949,-296,511); -- NPC: a_Fledgling_War_Boar
 		end
 		if (num_alive ==3) then
-			eq.spawn2(214040,0,0,1386,-926,-296,70);
-			eq.spawn2(214040,0,0,1466,-949,-296,511);
+			eq.spawn2(214040,0,0,1386,-926,-296,70); -- NPC: a_Fledgling_War_Boar
+			eq.spawn2(214040,0,0,1466,-949,-296,511); -- NPC: a_Fledgling_War_Boar
 		end
 		if (num_alive ==4) then
-			eq.spawn2(214040,0,0,1386,-926,-296,70);
+			eq.spawn2(214040,0,0,1386,-926,-296,70); -- NPC: a_Fledgling_War_Boar
 		end
      end
 end

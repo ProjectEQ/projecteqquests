@@ -3,7 +3,7 @@
 sub EVENT_SPAWN {
    $mob_id = $npc->GetID();
    #Tell the agents I'm alive
-   quest::signalwith(201075,1,2); # NPC: Agent_of_The_Tribunal   
+   quest::signalwith(201075,1,2); # NPC: Agent_of_The_Tribunal
 }
 
 sub EVENT_DEATH_COMPLETE {

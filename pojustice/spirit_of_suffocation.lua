@@ -3,6 +3,6 @@
 function event_death_complete(e)
 	-- On death; send a signal to the controler with
 	-- my ID.
-	eq.signal( 201448, e.self:GetNPCTypeID() );
+	eq.signal( 201448, e.self:GetNPCTypeID() ); -- NPC: #Event_Hanging_Control
 end
 

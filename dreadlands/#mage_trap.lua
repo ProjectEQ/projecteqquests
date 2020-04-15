@@ -10,7 +10,7 @@ function event_enter(e)
 				e.other:Message(15,"You see the burning manifestation of Chaos appear before you.");	
 				eq.set_global("mage_epic_dl","1",3,"H2");
 				eq.set_timer("mage_epic_depop",30*60*1000);
-				eq.spawn2(86174, 0, 0, 8877,363.5,1158,0); -- NPC: #Chaos_Elemental				
+				eq.spawn2(86174, 0, 0, 8877,363.5,1158,0); -- NPC: #Chaos_Elemental
 			else				
 				e.other:Message(15,"The red gem on your staff glows.")
 			end

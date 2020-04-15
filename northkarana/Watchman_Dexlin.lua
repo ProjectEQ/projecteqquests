@@ -30,7 +30,7 @@ end
 
 function event_timer(e)
 	if(e.timer == "spawns") then
-		eq.spawn2(13120,106,0,-1839,829,18,0); -- NPC: a_tiny_skeleton 
+		eq.spawn2(13120,106,0,-1839,829,18,0); -- NPC: a_tiny_skeleton
 		eq.spawn2(13120,106,0,-2149,10351,18,0); -- NPC: a_tiny_skeleton
 		eq.spawn2(13120,106,0,-1713,1075,17,0); -- NPC: a_tiny_skeleton
 		eq.spawn2(13120,106,0,-1690,363,-7,0); -- NPC: a_tiny_skeleton

@@ -101,8 +101,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-1011.34, 1181.00, -796.67,374.0,true);
-		eq.spawn2(301080,0,0,-1011.34,1181.00,-796.67,374.0):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-1185.64,1188.02,-797.20,202.5):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-1011.34,1181.00,-796.67,374.0):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-1185.64,1188.02,-797.20,202.5):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 		eq.set_next_hp_event(80);
 	elseif (e.hp_event == 80) then
 		e.self:WipeHateList();
@@ -113,8 +113,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-741.96,1500.63,-775.38,172.8,true);
-		eq.spawn2(301080,0,0,-818.22,1337.98,-797.53,44.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-608.04,1415.31,-795.92,433.8):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-818.22,1337.98,-797.53,44.3):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-608.04,1415.31,-795.92,433.8):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 		eq.set_next_hp_event(70);
 	elseif (e.hp_event == 70) then
 		e.self:WipeHateList();
@@ -125,8 +125,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-375.58,1392.45,-767.52,379.3,true);
-		eq.spawn2(301080,0,0,-274.36,1393.50,-742.61,377.5):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-493.40,1315.91,-775.38,26.5):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-274.36,1393.50,-742.61,377.5):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-493.40,1315.91,-775.38,26.5):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 		eq.set_next_hp_event(50);
 	elseif (e.hp_event == 50) then
 		e.self:WipeHateList();
@@ -137,8 +137,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-258.53,1173.08,-689.41,390.5,true);
-		eq.spawn2(301080,0,0,-125.30,1126.13,-659.20,501.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-294.53,1312.90,-713.80,329.5):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-125.30,1126.13,-659.20,501.8):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-294.53,1312.90,-713.80,329.5):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 		eq.set_next_hp_event(30);
 	elseif (e.hp_event == 30) then
 		e.self:WipeHateList();
@@ -149,8 +149,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-134.00,892.68,-639.63,3.8,true);
-		eq.spawn2(301080,0,0,-150.46,1194.71,-662.03,197.5):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-163.99,656.34,-585.89,21.5):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-150.46,1194.71,-662.03,197.5):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-163.99,656.34,-585.89,21.5):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
 		e.self:WipeHateList();
@@ -161,8 +161,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-178.16,475.92,-569.78,506.8,true);
-		eq.spawn2(301080,0,0,-169.57,293.36,-611.36,9.3):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-132.06,881.63,-639.63,268.8):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-169.57,293.36,-611.36,9.3):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-132.06,881.63,-639.63,268.8):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 		eq.set_next_hp_event(5);
 	elseif (e.hp_event == 5) then
 		e.self:WipeHateList();
@@ -173,8 +173,8 @@ function event_hp(e)
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-164.66,319.41,-602.64,509.8,true);
-		eq.spawn2(301080,0,0,-180.49,528.32,-568.11,256.8):AddToHateList(e.self:GetTarget(),1);
-		eq.spawn2(301080,0,0,-167.13,281.34,-611.35,5.8):AddToHateList(e.self:GetTarget(),1);
+		eq.spawn2(301080,0,0,-180.49,528.32,-568.11,256.8):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
+		eq.spawn2(301080,0,0,-167.13,281.34,-611.35,5.8):AddToHateList(e.self:GetTarget(),1); -- NPC: A_Dragorn_flunky
 	end
 end
 

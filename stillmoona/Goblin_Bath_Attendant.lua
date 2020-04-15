@@ -8,7 +8,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 55996,item2 = 55997,item3 = 55998,item4 = 55999})) then
 		e.self:Say("'What? You didn't even get the essence of lily pad!  Now get back out there and get the rest...  Oh no!  It is too late!  He is here!  We are all gonna die!'");
-		eq.spawn2(338170,0,0,681,414,16.05,510);
+		eq.spawn2(338170,0,0,681,414,16.05,510); -- NPC: #Akihiro
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

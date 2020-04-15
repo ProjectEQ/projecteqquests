@@ -115,9 +115,9 @@ end
 
 function spawn_prisoners()
    -- an accursed prisoner
-   eq.spawn2(201493, 0, 0, -88, -1046, 73, 250); -- NPC: an_accursed_prisoner
-   eq.spawn2(201493, 0, 0, -129, -1046, 73, 250); -- NPC: an_accursed_prisoner
-   eq.spawn2(201493, 0, 0, -171, -1046, 73, 250); -- NPC: an_accursed_prisoner
+   eq.spawn2(201493, 0, 0, -88, -1046, 73, 250); -- NPC: an_accused_prisoner
+   eq.spawn2(201493, 0, 0, -129, -1046, 73, 250); -- NPC: an_accused_prisoner
+   eq.spawn2(201493, 0, 0, -171, -1046, 73, 250); -- NPC: an_accused_prisoner
 end
 
 function despawn_prisoners() 

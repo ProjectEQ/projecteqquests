@@ -56,7 +56,7 @@ sub EVENT_ITEM
 		# Steel Warriors Factions
 		quest::faction(311,1); # Faction: Steel Warriors
 		# Knights of Truth Faction
-		quest::faction(281,1); # Faction: Knights of Truth 
+		quest::faction(281,1); # Faction: Knights of Truth
 	}
 }
 

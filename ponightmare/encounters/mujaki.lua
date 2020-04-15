@@ -160,8 +160,8 @@ function Mujaki_Timer(e)
 	elseif (wave==9) then
 	--muj + unkilled
 		eq.stop_all_timers();
-		eq.spawn2(204080, 0, 0, -1475, -2555, 179.38, 256); -- NPC: #Mujaki_the_Devourer				
-		eq.signal(204079,1); -- NPC: #a_servant_of_Mujaki	
+		eq.spawn2(204080, 0, 0, -1475, -2555, 179.38, 256); -- NPC: #Mujaki_the_Devourer
+		eq.signal(204079,1); -- NPC: #a_servant_of_Mujaki
 	end
 	wave=wave+1;
   end

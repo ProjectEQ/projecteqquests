@@ -3,7 +3,7 @@ function event_enter_zone(e)
 	local el = eq.get_entity_list();	
 	if(qglobals["mage_epic_air1"] == "1" and qglobals["air_ess_respawn"] == nil and el:IsMobSpawnedByNpcTypeID(303100) == false) then
 		eq.load_encounter('mageepic_1_5');
-		eq.unique_spawn(303100,0,0,-1097,-1732,254,0); -- NPC: Elemental_Essence_of_Air		
+		eq.unique_spawn(303100,0,0,-1097,-1732,254,0); -- NPC: Elemental_Essence_of_Air
 		eq.set_global("air_ess_respawn","1",2,"H2");
 	end	
 end

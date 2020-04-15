@@ -110,7 +110,7 @@ function event_timer(e)
 		eq.spawn2(20264,0,0,-151,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
 		eq.spawn2(20264,0,0,-161,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
 		eq.spawn2(20264,0,0,-131,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
-		eq.spawn2(20264,0,0,-121,986,7.5,430); -- NPC: ##a_Bat_with_Herpes	
+		eq.spawn2(20264,0,0,-121,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
 		eq.spawn2(20255,0,0,-141,976,7.5,430); --#Booberella
 		eq.set_global("halloween_great_pumpkin","1",7,"H1");
 	elseif(e.timer=="wave4") then

@@ -24,7 +24,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(226109,0,0,109,62,2.7,430); # NPC: #Captain_Nago
     quest::spawn2(226203,0,0,109,195,2.7,430); # NPC: #Captain_Lung
     quest::spawn2(226202,0,0,220,195,2.7,430); # NPC: #Captain_Lkai
-    quest::spawn2(226201,0,0,220,62,2.7,430); # NPC: #Captain_Flang 
+    quest::spawn2(226201,0,0,220,62,2.7,430); # NPC: #Captain_Flang
     quest::ze(0, "Overseer Wrank yells, 'Captains, stand at attention. There are invaders in the mines.'");
     $wcounter = 0;
 }

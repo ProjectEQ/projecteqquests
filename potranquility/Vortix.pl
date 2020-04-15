@@ -4,7 +4,7 @@ sub EVENT_SAY {
 	 || plugin::check_hasitem($client, 48124) || plugin::check_hasitem($client, 48125) || plugin::check_hasitem($client, 48126))){ 
 	  # Monk Epic 1.5
 	  quest::say("Ah, I see you have seen a Disciple. The tokens you now possess are used to represent status among the Order. There used to be a tradesman that would fashion them into sashes for us but I'm afraid he has since passed on. I believe there may be another that has learned his trade. His name is Eryke Stremstin, and you should be able to find him peddling his wares across the land. Take this and give it to him. He should be able to tell you of what you will need to fashion your new sash. Once you have fashioned it please bring it to me.");
-	  quest::summonitem(48128); # Item: Letter to Stremstin 
+	  quest::summonitem(48128); # Item: Letter to Stremstin
 	 } 
 	 else {
 	  quest::say("It is good to see you $name, but I have no new information to share with you. If you have anything to show me, please do.");
@@ -82,7 +82,7 @@ sub EVENT_ITEM {
   # Monk Epic 1.5 (END)
   quest::say("I can see that you are truly a great member of the Celestial Order now. You have helped the Order when it was needed and have helped me regain the honor which I had lost. The Order has given me the privilege now to bestow upon you the Fistwraps of the Celestial Disciple. May you enjoy your new ranking within the Order. Kaiaren will be pleased to speak to the person responsible for his saving. You may find him wandering the lands with his newfound well-being. I believe the last place he was seen was travelling in the Ocean of Tears. Be safe $name and thank you again.");
   # Summon: Fistwraps of Celestial Discipline
-  quest::summonitem(61025); # Item: Fistwraps of Celestial Discipline 
+  quest::summonitem(61025); # Item: Fistwraps of Celestial Discipline
   quest::setglobal("monk_epic", "9", 5, "F");
   $client->AddAAPoints(5);
   $client->Message(15,"You have gained 5 ability points!");	

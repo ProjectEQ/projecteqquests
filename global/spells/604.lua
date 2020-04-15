@@ -4,7 +4,7 @@ function event_spell_effect(e)
   if (mob.valid and mob:IsClient()) then 
     local client = mob:CastToClient();
     if (client.valid) then 
-      client:MovePC(35, 120, -1046, 8, 370); -- Zone: causeway
+      client:MovePC(35, 120, -1046, 8, 370); -- Zone: sro
     end
   end
 

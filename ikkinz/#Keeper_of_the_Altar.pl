@@ -58,7 +58,7 @@ sub EVENT_HP {
 sub EVENT_DEATH_COMPLETE {
   quest::spawn2(294621,0,0,680,59,-73,156); # NPC: a_pile_of_bones
   quest::spawn2(294621,0,0,937,14,-72,400); # NPC: a_pile_of_bones
-  quest::spawn2(294621,0,0,908,111,-73,300); # NPC: a_pile_of_bones 
+  quest::spawn2(294621,0,0,908,111,-73,300); # NPC: a_pile_of_bones
   quest::spawn2(294621,0,0,685,1,-73,114); # NPC: a_pile_of_bones
   quest::signalwith(294631,8); #set lockout
 }

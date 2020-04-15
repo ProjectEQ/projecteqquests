@@ -6,7 +6,7 @@ function event_trade(e)
 		eq.depop()
 		e.other:Ding();
 		e.other:Faction(404,100); -- true spirit
-		eq.spawn2(90183,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(90183,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: #Lord_Rak`Ashiir_
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

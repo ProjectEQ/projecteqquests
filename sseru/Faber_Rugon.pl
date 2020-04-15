@@ -1,15 +1,15 @@
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31787 => 2)) {
-    quest::summonitem(29879); # Item: Lightcrawler Breastplate  
+    quest::summonitem(29879); # Item: Lightcrawler Breastplate
   }
   if (plugin::check_handin(\%itemcount, 31788 => 2, 31966 => 2)) {
-    quest::summonitem(29878); # Item: Lightcrawler Greaves 
+    quest::summonitem(29878); # Item: Lightcrawler Greaves
    }
   if (plugin::check_handin(\%itemcount, 31965 => 2)) {
-    quest::summonitem(29876); # Item: Lightcrawler Helm 
+    quest::summonitem(29876); # Item: Lightcrawler Helm
    }
   if (plugin::check_handin(\%itemcount, 31968 => 2)) {
-    quest::summonitem(29880); # Item: Lightcrawler Bracer 
+    quest::summonitem(29880); # Item: Lightcrawler Bracer
    }
   if (plugin::check_handin(\%itemcount, 31967 => 2)) {
     quest::summonitem(29877); # Item: Lightcrawler Vambraces

@@ -10,7 +10,7 @@ function event_say(e)
 		e.self:Say("Me in charge of making torches for basher patrols. But Nanrum is much too mighty for such stupid job and Nanrum get idea. Dem fire bugses in da desert - dem eyes glowed. And dem don't burneded like torches. If " .. e.other:GetName() .. " getted Nanrum three fire beetle eyes me would giveded " .. e.other:GetName() .. " a shiny thingie dat you wanteded. Go ahed, " .. e.other:GetName() .. " , an' get me da eyes.");
 	elseif(e.message:findi("where is the skeleton")) then
 		e.self:Say("Yeah!  Me see dat bone man.  He over by da Cleaver.  He tink he a butcher or sumting!");
-		eq.unique_spawn(52118,0,0,-459,359,10,0);	
+		eq.unique_spawn(52118,0,0,-459,359,10,0); -- NPC: a_skeleton
 	end
 end
 

@@ -32,11 +32,11 @@ function KeeperTimer(e)
 		elseif num_adhere==1 then
 			eq.spawn2(294637,0,0,803,84,-73,0); -- NPC: #Altar_Adherent_
 		elseif num_adhere==2 then
-			eq.spawn2(294638,0,0,803,84,-73,0); -- NPC: #Altar_Adherent__	
+			eq.spawn2(294638,0,0,803,84,-73,0); -- NPC: #Altar_Adherent__
 		elseif num_adhere==3 then
-			eq.spawn2(294639,0,0,803,84,-73,0); -- NPC: #Altar_Adherent___	
+			eq.spawn2(294639,0,0,803,84,-73,0); -- NPC: #Altar_Adherent___
 		elseif num_adhere==4 then
-			eq.spawn2(294640,0,0,803,84,-73,0); -- NPC: #Altar_Adherent____	
+			eq.spawn2(294640,0,0,803,84,-73,0); -- NPC: #Altar_Adherent____
 		end
 		num_adhere=num_adhere+1;
 		if num_adhere >=5 then
@@ -89,7 +89,7 @@ end
 function KeeperDeath(e)
 	eq.spawn2(294621,0,0,680,59,-73,156); -- NPC: a_pile_of_bones
 	eq.spawn2(294621,0,0,937,14,-72,400); -- NPC: a_pile_of_bones
-	eq.spawn2(294621,0,0,908,111,-73,300); -- NPC: a_pile_of_bones 
+	eq.spawn2(294621,0,0,908,111,-73,300); -- NPC: a_pile_of_bones
 	eq.spawn2(294621,0,0,685,1,-73,114); -- NPC: a_pile_of_bones
 	eq.signal(294631,8); --set lockout
 	eq.zone_emote(10,"The Keeper of the Altar has been defeated! You have found a way do what even the trusik priests of old had trouble with." ..

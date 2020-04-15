@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   # Monk Epic 1.5
   quest::say("You have returned with the pages but I am afraid I have nothing to reward you with but my thanks. I am sure Tomekeeper Danl will be able to give you something though if you want to bring them to him. Yes! That is what we will do. Take the pages back and give them to Tomekeeper Danl he will be overjoyed to have them back!");
   # Summon: Danl's Missing Book
-  quest::summonitem(48132); # Item: Danl's Missing Book  
+  quest::summonitem(48132); # Item: Danl's Missing Book
  }
 }
 

@@ -19,7 +19,7 @@ quest::exp(1000);
 
 if (plugin::check_handin(\%itemcount,  2791=>4 )) {
 quest::say("Not bad at all! You definitely have some hidden talent there $name. Keep at it and you may just become a master tailor yourself. Here, take this with you. It will help protect you from the nasty bite of the Xakra worms.");
-quest::summonitem(quest::ChooseRandom(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012)); # Item(s): Cloth Cap (1001) 
+quest::summonitem(quest::ChooseRandom(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012)); # Item(s): Cloth Cap (1001)
 quest::exp(1000);
 }
 plugin::return_items(\%itemcount);

@@ -27,7 +27,7 @@ function event_trade(e)
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10793})) then -- Radiant Coin of Tash
 		e.self:Say("The Coin of Tash - fully enchanted! I am in your debt. Here is the scroll of Tashania that was promised to you.");
-		e.other:SummonItem(15678); -- Spell: Tashania
+		e.other:SummonItem(15678); -- Item: Spell: Tashania
 		e.other:Ding();
 		e.other:Faction(5029,15,0); -- Faction: Temple Of Sol Ro
 		e.other:Faction(416,-15,0); -- Faction: Shadowed Men

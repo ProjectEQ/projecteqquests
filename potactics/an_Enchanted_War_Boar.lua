@@ -26,6 +26,6 @@ end
 function event_death_complete(e)
 local Glykus = eq.get_entity_list():GetMobByNpcTypeID(214053);
 	if (Glykus.valid and Glykus:IsEngaged()) then
-    eq.spawn2(214040,0,0,1386,-926,-296,70);
+    eq.spawn2(214040,0,0,1386,-926,-296,70); -- NPC: a_Fledgling_War_Boar
   end
 end

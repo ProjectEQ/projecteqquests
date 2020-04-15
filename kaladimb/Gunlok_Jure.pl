@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     quest::faction(293, 25); # Miners Guild 249
     quest::exp(10000);
     quest::givecash(0, 0, 2, 0);
-    quest::summonitem(15201); # Spell: Flash of Light
+    quest::summonitem(15201); # Item: Spell: Flash of Light
   } 
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');

@@ -85,7 +85,7 @@ function Uisima_Timer(e)
 	if(e.timer=="depop") then
 		eq.depop();
 	elseif(e.timer=="golem_add") then
-		eq.spawn2(336000,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(336000,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_golembound_spirit
 		eq.stop_timer("golem_add");
 		eq.set_timer("golem_add",60*1000);
 	elseif(e.timer=="checkstatus") then
@@ -116,7 +116,7 @@ end
 
 function Golem_Timer(e)
 	if(e.timer=="wipe") then
-		eq.spawn2(336000,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(336000,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_golembound_spirit
 		eq.depop();
 	end
 end

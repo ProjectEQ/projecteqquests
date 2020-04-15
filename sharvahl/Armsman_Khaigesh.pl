@@ -9,8 +9,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 3452 => 1)) {
     quest::say("I can see by your armaments, that Hebijeb has started you along the path of bravery. That's a very good foundation for a young Khala Dun recruit to build upon. Bravery is an important trait, but you will need to learn discipline and patience. The blacksmithing that we do as Khala Dun helps to reinforce and reflect upon those traits. Take this bag and I will help you with your next [lesson].");
-    quest::summonitem(17604); # Item: Dusty Pouch  
-    quest::summonitem(3452); # Item: Buckler of the Recruit  
+    quest::summonitem(17604); # Item: Dusty Pouch
+    quest::summonitem(3452); # Item: Buckler of the Recruit
   }
   elsif (plugin::check_handin(\%itemcount, 5553 => 1, 3454 => 1)) {
     quest::say("You're scruffy and you smell, but you're a fast enough learner.' He says as he pulls a leather strap out of his waistband and carefully wraps it around the hilt of your sword. He hands the sword back to you hilt first and says, 'Wrapping the hilt in that manners allows you to grip the sword better and hit harder. Take the sword and show it to Noril Galoon. He will instruct you further.");

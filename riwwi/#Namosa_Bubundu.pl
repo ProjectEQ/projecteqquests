@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     quest::setglobal("bic_riw",7,5,"F");
     quest::emote("touches your shoulder and gazes at you with pleading eyes.");
    quest::say("I hope this isn't presumptuous of me. You've already done so much. Before you go, I need to ask you for another favor. Turlini is under heavy guard in one of the nearby towers. The Muramites think he's up to something and I'm concerned they may torture or kill him. Please have a talk with Turlini when you can.");
-   quest::summonitem(52174); # Item: Crescent Stone Amulet  
+   quest::summonitem(52174); # Item: Crescent Stone Amulet
    $client->Message(12,"You have received a character flag!");  
   }
   plugin::return_items(\%itemcount);

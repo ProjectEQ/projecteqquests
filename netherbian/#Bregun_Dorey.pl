@@ -26,7 +26,7 @@ sub EVENT_ITEM{
   if (plugin::check_handin(\%itemcount,13464=>4)) { # 4 bixie crunchies
     quest::say("Ah hum!");
     # returns a bixie charm
-    quest::summonitem(29852); # Item: Bixie Charm 
+    quest::summonitem(29852); # Item: Bixie Charm
     quest::say("Give this charm to Torsten as a present from his old friend.");
   }
   

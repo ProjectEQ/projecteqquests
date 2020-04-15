@@ -39,7 +39,7 @@ sub EVENT_SAY
             $in_progress = 1;
             quest::settimer("delay_start", 30);
             #Tell Event_Execution_Control about it
-            quest::signalwith(201425, 1, 0); # NPC: #Event_Execution_Control            
+            quest::signalwith(201425, 1, 0); # NPC: #Event_Execution_Control
 
             #Cast Penance of Execution
             #quest::selfcast(1127); #required db edit targettype = 41
@@ -48,7 +48,7 @@ sub EVENT_SAY
               for ($count = 0; $count < $group->GroupCount(); $count++) {
                 $pc = $group->GetMember($count);
                 if ($pc && $pc->IsClient() && $pc->CalculateDistance($x,$y,$z) <= 50) {
-                  $pc->MovePC(201,254,-1053, 73, 300); # Zone: lakerathe
+                  $pc->MovePC(201,254,-1053, 73, 300); # Zone: pojustice
                 }
               }
             }

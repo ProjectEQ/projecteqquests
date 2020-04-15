@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 			quest::summonitem(69387); # Item: Dark Cloak of the Whelp
 		} elsif (plugin::check_handin(\%itemcount, 69387 => 1)) {
 			quest::say("How utterly obtuse and arrogant. How about this one then?");
-			quest::summonitem(69388); # Item: Shield of Dark Hues      
+			quest::summonitem(69388); # Item: Shield of Dark Hues
 		}
 	}
 	plugin::return_items(\%itemcount);

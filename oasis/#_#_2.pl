@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(96,3335.5,7121.4,-5.5); # Zone: dreadspire
+	quest::movepc(96,3335.5,7121.4,-5.5); # Zone: timorous
 }

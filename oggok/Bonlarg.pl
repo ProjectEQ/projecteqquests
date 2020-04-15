@@ -1,6 +1,6 @@
 sub EVENT_SAY 
 	{
-	my $sf=$client->GetModCharacterFactionLevel(261);
+	my $sf=$client->GetModCharacterFactionLevel(261); # Faction: Green Blood Knights
 
 	if($text=~/Hail/i)
 		{

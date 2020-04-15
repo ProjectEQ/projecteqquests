@@ -20,7 +20,7 @@ sub EVENT_SAY {
 	elsif ($text=~/deliver grub locker/i) {
 		quest::say("Good. Me wrap order of dwarf pickles in.. HEY!! Me out of special wrapping paper!! Hmm.. Here. Me use dis. Now, <..click.. Locks grub locker> Here. You take to Nerbilik in tearsy ocean and he pay you. No think of opening locker. Only Nerbilik has key.");
 		#:: Give a 12203 - Grub Locker
-		quest::summonitem(12203);
+		quest::summonitem(12203); # Item: Grub Locker
 	}
 }
 
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 		my $RandomChance = quest::ChooseRandom(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 		if ($RandomChance == 10) {
 			#:: Give a 13386 - Ogre Butcher Gloves
-			quest::summonitem(13386);
+			quest::summonitem(13386); # Item: Ogre Butcher Gloves
 			#:: Ding!
 			quest::ding();
 			#:: Set faction
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
 		}
 		elsif ($RandomChance == 9) {
 			#:: Give a 13385 - Ogre Meat Cleaver
-			quest::summonitem(13385);
+			quest::summonitem(13385); # Item: Ogre Meat Cleaver
 			#:: Ding!
 			quest::ding();
 			#:: Set faction
@@ -59,7 +59,7 @@ sub EVENT_ITEM {
 		}
 		elsif (($RandomChance == 8) || ($RandomChance == 7)) {
 			#:: Give a 10021 - Star Rose Quartz
-			quest::summonitem(10021);
+			quest::summonitem(10021); # Item: Star Rose Quartz
 			#:: Ding!
 			quest::ding();
 			#:: Set faction

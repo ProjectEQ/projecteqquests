@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(84,1408.9,-4334.3,-103.6);
+	quest::movepc(84,1408.9,-4334.3,-103.6); # Zone: firiona
 }

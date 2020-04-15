@@ -39,7 +39,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if ($faction <= 3) { # Require warmly and greater faction 
     if (plugin::check_handin(\%itemcount, 25814 => 3, 24928 => 1)) { # tunic 
-      quest::summonitem(31085); # Item: Champion's Breastplate 
+      quest::summonitem(31085); # Item: Champion's Breastplate
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -49,7 +49,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24930 => 1)) { # sleeves 
-      quest::summonitem(31086); # Item: Champion's Vambraces 
+      quest::summonitem(31086); # Item: Champion's Vambraces
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -59,7 +59,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24929 => 1)) { # leggings 
-      quest::summonitem(31089); # Item: Champion's Greaves 
+      quest::summonitem(31089); # Item: Champion's Greaves
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -69,7 +69,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24934 => 1)) { # gauntlets 
-      quest::summonitem(31088); # Item: Champion's Gauntlets 
+      quest::summonitem(31088); # Item: Champion's Gauntlets
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -79,7 +79,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");  
     } 
     elsif (plugin::check_handin(\%itemcount, 25831 => 3, 24933 => 1)) { # cap 	
-      quest::summonitem(31084); # Item: Champion's Crown 
+      quest::summonitem(31084); # Item: Champion's Crown
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -89,7 +89,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24932 => 1)) { # bracers 
-      quest::summonitem(31087); # Item: Champion's Bracer 
+      quest::summonitem(31087); # Item: Champion's Bracer
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -99,7 +99,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24931 => 1)) { # boots 
-      quest::summonitem(31090); # Item: Champion's Boots 
+      quest::summonitem(31090); # Item: Champion's Boots
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 

@@ -34,15 +34,15 @@ function event_trade(e)
 
 	if (e.self:GetNPCTypeID() == 52056 and item_lib.check_turn_in(e.trade, {item1 = 12211})) then -- Mittens
 		e.self:Say("Ahh! Oven mittens! Kinda' large, don't you think?! Oh well, now I can bake all I want without burning my hands. OKAY! Lets go. I overheard some basher named Nanrum saying he spotted my friend, the butcher. You should ask him [where the skeleton] is.");
-		e.other:SummonItem(12213);
+		e.other:SummonItem(12213); -- Item: The Baker
 		eq.depop();
 	elseif (e.self:GetNPCTypeID() == 52118 and item_lib.check_turn_in(e.trade, {item1 = 12217})) then -- butcher arpron
 		e.self:Say("Great! Thanks a lot, pal. Lets get moving. I hear my bonehead roomie called the Captain was spotted by Basher Sklama. Go ask [where the Captain] is.");
-		e.other:SummonItem(12214);
+		e.other:SummonItem(12214); -- Item: The Butcher
 		eq.depop();
 	elseif (e.self:GetNPCTypeID() == 52119 and item_lib.check_turn_in(e.trade, {item1 = 12198, item2 = 12198, item3 = 12198, item4 = 12198})) then -- fifes
 		e.self:Say("All right! I was kinda hoping the lizards would finish you off and I could stay free, but a deal is a deal. Let's go.");
-		e.other:SummonItem(12216);
+		e.other:SummonItem(12216); -- Item: The Minstrel
 		eq.depop();
 	end
 end

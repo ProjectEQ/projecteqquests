@@ -6,7 +6,7 @@ function event_say (e)
 	elseif (e.message:findi("time")) then
 		if (e.other:HasZoneFlag(219) == true) then
 			--Plane of Time A
-			e.other:MovePC(219, 110, 0, 8, 0); -- Zone: mirg
+			e.other:MovePC(219, 110, 0, 8, 0); -- Zone: potimea
 		end
 	end
 end

@@ -1,5 +1,5 @@
 function event_death_complete(e)
-eq.signal(215453,2);
+eq.signal(215453,2); -- NPC: #Smoke_Trigger
 end
 
 function event_combat(e)

@@ -33,5 +33,5 @@ function event_spawn(e)
 end
 
 function event_death_complete(e)
-eq.signal(215455,3);
+eq.signal(215455,3); -- NPC: #Mist_Trigger
 end

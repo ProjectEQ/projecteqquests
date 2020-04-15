@@ -11,7 +11,7 @@ function event_say(e)
 			e.other:SummonItem(52339); --Air-Tight Strongbox
 			eq.depop_all(110131); --polar kraken
 			eq.depop_all(110132); --krakling
-			eq.spawn2(110131,0,0,752,2876,-85,0); -- NPC: #Polar_Kraken			
+			eq.spawn2(110131,0,0,752,2876,-85,0); -- NPC: #Polar_Kraken
 		else
 			e.self:Say("Hrm, looks like the tentacled monstrosity has taken its leave of us. Had its fill of hapless sailors I'd wager, but not te worry. The kraken'll be back, and we'll be waitin' for it. Arrr.");
 		end

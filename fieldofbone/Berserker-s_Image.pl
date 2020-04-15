@@ -13,7 +13,7 @@ if($text=~/Hail/i)
 if($text=~/return/i)
 
 	{
-	quest::movepc(78,3603,2088,-155); # Zone: dranikcatacombsa
+	quest::movepc(78,3603,2088,-155); # Zone: fieldofbone
 	quest::depop();
 	}
 

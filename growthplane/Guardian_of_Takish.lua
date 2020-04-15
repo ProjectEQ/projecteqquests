@@ -19,11 +19,11 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 31427,item2 = 31430,item3 = 31429,item4 = 31428}) and e.other:GetLevel() >= 55) then
 		e.self:Say("May Tunare's blessing be upon thee! Here, take this item and use it wisely.");
-		e.other:SummonItem(1209);
+		e.other:SummonItem(1209); -- Item: Natures Defender
     e.other:AddEXP(2500);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 31432,item2 = 31434,item3 = 31431,item4 = 31433}) and e.other:GetLevel() >= 55) then
 		e.self:Say("May Tunare's blessing be upon thee! Here, take this item and use it wisely.");
-		e.other:SummonItem(1223);
+		e.other:SummonItem(1223); -- Item: Symbol of Tunarian Worship
     e.other:AddEXP(2500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

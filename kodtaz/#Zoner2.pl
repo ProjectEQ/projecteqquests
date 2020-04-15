@@ -8,7 +8,7 @@ sub EVENT_ENTER {
 	$InInstanceIkky2 = quest::GetInstanceID("ikkinz",1);
 
     if($InInstanceIkky2 > 0){
-		quest::MovePCInstance(294,$InInstanceIkky2,-157,27,-2); # Zone: potranquility
+		quest::MovePCInstance(294,$InInstanceIkky2,-157,27,-2); # Zone: ikkinz
 	}
         else {
 		$client->Message(13, "You are not a part of an instance!");

@@ -128,7 +128,7 @@ sub EVENT_TIMER
 
 sub EVENT_DEATH_COMPLETE
 {
-	quest::spawn2(365174, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+	quest::spawn2(365174, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading()); # NPC: #Shadow_of_Sporilok
 	quest::spawn_condition("corathus", 9, 0);
 	my $octo = $entity_list->GetMobByNpcTypeID(365035);
 	my $mino = $entity_list->GetMobByNpcTypeID(365004);

@@ -20,7 +20,7 @@ sub EVENT_SAY {
   elsif($text=~/I am ready to receive the lexicon/i){
     quest::say("Combine the four runes in this lexicon and you will then have the teachings of Relinar. After you have done this, you are required to speak again with Lawyla about the [problems] we are having [with Kromzek spies].");
    #Summon: Lexicon of Relinar  
-   quest::summonitem(17061); # Item: Lexicon of Relinar 
+   quest::summonitem(17061); # Item: Lexicon of Relinar
   }
 }
 

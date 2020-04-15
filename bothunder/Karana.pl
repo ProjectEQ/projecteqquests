@@ -15,7 +15,7 @@ sub EVENT_SAY {
 		}
 		
 		if ($text=~/send me on my path/i) {
-			 $npc->CastSpell(797, $userid);
+			 $npc->CastSpell(797, $userid); # Spell: GM Gate
 		}
 	}
 

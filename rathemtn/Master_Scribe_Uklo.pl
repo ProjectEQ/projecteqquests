@@ -73,7 +73,7 @@ sub EVENT_ITEM {
   elsif ($faction => 9 && plugin::check_handin(\%itemcount, 67018 => 1)){ # turn in of spectral memory
     quest::emote("kneels before you as tears of happiness roll down his face."); #Text modified as quest::echo not working
     quest::say("I thank you. Since our creation it has been rare that we have received such kindness. You will always be welcome in our city and future generations will croak the story of your greatness. Please take this as a small token of my gratitude you have truly earned it.");
-    quest::summonitem(67011); # Spell: Illusion: Guktan
+    quest::summonitem(67011); # Item: Spell: Illusion Guktan
     quest::faction(1720, 20); # Guktan Suppliers
     quest::faction(1709, 25); # Protectors of Gukta
     quest::faction(1716, 25); # High Council of Gukta

@@ -27,9 +27,9 @@ function event_timer(e)
 		eq.depop_all(300089);
 		eq.depop_all(300090);
 	elseif (e.timer=="adds") then
-		eq.spawn2(300088, 0, 0, e.self:GetX()-15, e.self:GetY()-15,  e.self:GetZ(),  e.self:GetHeading());	
-		eq.spawn2(300089, 0, 0, e.self:GetX()+15, e.self:GetY()-15,  e.self:GetZ(),  e.self:GetHeading());	
-		eq.spawn2(300090, 0, 0, e.self:GetX()-15, e.self:GetY()+15,  e.self:GetZ(),  e.self:GetHeading());	
+		eq.spawn2(300088, 0, 0, e.self:GetX()-15, e.self:GetY()-15,  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Furious_Lightning_Elemental
+		eq.spawn2(300089, 0, 0, e.self:GetX()+15, e.self:GetY()-15,  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Enraged Lightning Elemental
+		eq.spawn2(300090, 0, 0, e.self:GetX()-15, e.self:GetY()+15,  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Vicious_Lightning_Elemental
 	elseif (e.timer=="epoch") then
 	--3779 Epoch Conviction 60s
 	e.self:CastSpell(3779, e.self:GetTarget():GetID()); -- Spell: Epoch Conviction

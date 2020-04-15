@@ -22,7 +22,7 @@ sub EVENT_ITEM
 {
 	if(plugin::check_handin(\%itemcount, 60195 => 1))
 		{
-		quest::movepc(78,1065,525,176); # Zone: dranikcatacombsa
+		quest::movepc(78,1065,525,176); # Zone: fieldofbone
 		quest::settimer(1,15);
 		}
    plugin::return_items(\%itemcount);

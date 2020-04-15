@@ -24,9 +24,9 @@ eq.stop_timer("OOBcheck");
 		eq.set_timer("OOBcheck", 6 * 1000);
 	end
 elseif(e.timer == "eggs") then
-eq.spawn2(354109, 0, 0, e.self:GetX()+5, e.self:GetY()+5,  e.self:GetZ()+5,  e.self:GetHeading());
-eq.spawn2(354109, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ()+5,  e.self:GetHeading());
-eq.spawn2(354109, 0, 0, e.self:GetX()+7, e.self:GetY()-7,  e.self:GetZ()+5,  e.self:GetHeading());
+eq.spawn2(354109, 0, 0, e.self:GetX()+5, e.self:GetY()+5,  e.self:GetZ()+5,  e.self:GetHeading()); -- NPC: a_drachnid_egg_sac
+eq.spawn2(354109, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ()+5,  e.self:GetHeading()); -- NPC: a_drachnid_egg_sac
+eq.spawn2(354109, 0, 0, e.self:GetX()+7, e.self:GetY()-7,  e.self:GetZ()+5,  e.self:GetHeading()); -- NPC: a_drachnid_egg_sac
 eq.get_entity_list():MessageClose(e.self, false, 200, 15, "The ground begins to tremble as you clutch your throat");
 elseif (e.timer == "agro") then
 		local npc_list =  eq.get_entity_list():GetNPCList();

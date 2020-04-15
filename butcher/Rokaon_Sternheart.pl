@@ -10,6 +10,6 @@ sub EVENT_SAY {
   }
   if($text=~/ready/i) {
     $client->Message(13, "The world stretches and twists around you as you feel yourself being pulled from this world.");
-    quest::movepc(187,-27.3,-245.6,8.1,192); # Zone: kaesora
+    quest::movepc(187,-27.3,-245.6,8.1,192); # Zone: shadowrest
   }
 }

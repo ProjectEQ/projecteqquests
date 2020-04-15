@@ -12,14 +12,14 @@ function event_click_door(e)
 	if(door_id == 10) then --Asylum of Invoked Stone (mmcc) zone in
 		local instance_id = eq.get_instance_id("mmcc",50);       
 		if (instance_id > 0) then                                  
-			e.self:MovePCInstance(243, instance_id, -467.37,-104.22,10.34,0); -- Zone: necropolis   
+			e.self:MovePCInstance(243, instance_id, -467.37,-104.22,10.34,0); -- Zone: mmcc
 		else                                                       
 			e.self:Message(13, "You are not a part of an instance!");
 		end  
 	elseif (door_id == 11) then --Scion Lair of Fury (mmcf) zone in
 		local instance_id = eq.get_instance_id("mmcf",50); 	
 		if (instance_id > 0) then                                  
-			e.self:MovePCInstance(258, instance_id, 607,1503,33,0); -- Zone: nurga   
+			e.self:MovePCInstance(258, instance_id, 607,1503,33,0); -- Zone: mmcf
 		else                                                       
 			e.self:Message(13, "You are not a part of an instance!");
 		end 

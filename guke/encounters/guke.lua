@@ -72,8 +72,8 @@ end
 
 function Mainil_Timer(e)
 	if e.timer=="adds_on_granos" then
-		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,128):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);
-		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,112):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);				
+		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,128):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1); -- NPC: a_blade_of_the_First
+		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,112):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1); -- NPC: a_blade_of_the_First
 	elseif e.timer=="pause_wander" then
 		e.self:PauseWandering(3);
 	elseif e.timer=="finish_note" then

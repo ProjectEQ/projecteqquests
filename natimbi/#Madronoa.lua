@@ -14,7 +14,7 @@ function event_say(e)
 		local qglobals = eq.get_qglobals(e.other);
 		if (gm_bypass or (e.other:HasZoneFlag(295) and tonumber(qglobals["god_qvic_access"]) >= 2)) then
 			-- send to safe spot in Qvic. Confirmed /loc on Live as of 2011/05/31
-			e.other:MovePC(295,-124,-651,-422,0); -- Zone: povalor
+			e.other:MovePC(295,-124,-651,-422,0); -- Zone: qvic
 		end
 	end
 end

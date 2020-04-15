@@ -83,49 +83,49 @@ function Spawn_PXK()
   eq.spawn2(298039, 0, 0, 151.00, -162.00, -0.375, 386); -- NPC: Pixtt_Xxeric_Kex
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 37.0, -165.0, -2.75, 392); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Zajee's remains
-  eq.spawn2(298038, 0, 0, 12, -106, -6.03, 264):SetAppearance(3);
+  eq.spawn2(298038, 0, 0, 12, -106, -6.03, 264):SetAppearance(3); -- NPC: #Zajeer`s_remains
 end
 
 function Spawn_PKK()
   eq.spawn2(298201, 0, 0, 161.0, 242.0, -4.125, 378); -- NPC: Pixtt_Kretv_Krakxt
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 76.0, 246.0, -2.75, 388); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Frizznik's remains
-  eq.spawn2(298036, 0, 0, 49, 251, -6.03, 40):SetAppearance(3);
+  eq.spawn2(298036, 0, 0, 49, 251, -6.03, 40):SetAppearance(3); -- NPC: #Frizznik`s_Remains
 end
 
 function Spawn_PRT()
   eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 380); -- NPC: Pixtt_Riel_Tavas
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 83.0, -586.0, -2.75, 378); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Absor's Remains
-  eq.spawn2(298037, 0, 0, 66, -448, -6.03, 208):SetAppearance(3);
+  eq.spawn2(298037, 0, 0, 66, -448, -6.03, 208):SetAppearance(3); -- NPC: #Absor`s_Remains
 end
 
 function Spawn_ZMKP()
   eq.spawn2(298029, 0, 0, 373.0, -686.0, -0.375, 352); -- NPC: Zun`Muram_Kvxe_Pirik
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 276.0, -685.0, -2.75, 366); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Wijdan's Remains
-  eq.spawn2(298030, 0, 0, 211, -683, -6.03, 496):SetAppearance(3);
+  eq.spawn2(298030, 0, 0, 211, -683, -6.03, 496):SetAppearance(3); -- NPC: #Wijdan`s_Remains
 end
 
 function Spawn_ZMSB()
   eq.spawn2(298018, 0, 0, 366.0, 342.0, -0.375, 360); -- NPC: Zun`Muram_Shaldn_Boc
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 274.0, 345.0, -2.75, 364); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Xenaida's remains
-  eq.spawn2(298033, 0, 0, 230, 335, -6.03, 296):SetAppearance(3);
+  eq.spawn2(298033, 0, 0, 230, 335, -6.03, 296):SetAppearance(3); -- NPC: #Xenaida`s_Remains
 end
 
 function Spawn_ZMMD()
   eq.spawn2(298020, 0, 0, 369.0, 144.0, -0.375, 352); -- NPC: Zun`Muram_Mordl_Delt
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 270.0, 146.0, -2.75, 370); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Rytan's remains
-  eq.spawn2(298034, 0, 0, 229, 149, -6.03, 504):SetAppearance(3);
+  eq.spawn2(298034, 0, 0, 229, 149, -6.03, 504):SetAppearance(3); -- NPC: #Rytan`s_Remains
 end
 
 function Spawn_ZMYV()
   eq.spawn2(298023, 0, 0, 366.0, -488.0, -0.375, 352); -- NPC: Zun`Muram_Yihst_Vor
   eq.spawn2(eq.ChooseRandom(298015,298016,298021), 0, 0, 272.0, -487.0, -2.75, 354); -- NPC(s): an_elite_mastruq_berserker (298015), an_elite_mastruq_crusher (298016), an_elite_mastruq_destroyer (298021)
   -- Prathun's Remains
-  eq.spawn2(298022, 0, 0, 197, -493, -6.77, 121.2):SetAppearance(3);
+  eq.spawn2(298022, 0, 0, 197, -493, -6.77, 121.2):SetAppearance(3); -- NPC: #Prathun`s_Remains
 end
 
 function Spawn_TMCV()
@@ -149,19 +149,19 @@ function Spawn_TMCV()
   eq.spawn2(298014, 0, 0, 462, -171, 32, 128.2); -- NPC: #Tunat`Muram_Cuu_Vauax
 
   -- Rashere's remains
-  eq.spawn2(298031, 0, 0, 506, 147, -6.03, 480):SetAppearance(3);
+  eq.spawn2(298031, 0, 0, 506, 147, -6.03, 480):SetAppearance(3); -- NPC: #Rashere`s_Remains
   -- Kaikachi`s remains
-  eq.spawn2(298017, 0, 0, 592, 313, -6.03, 440):SetAppearance(3);
+  eq.spawn2(298017, 0, 0, 592, 313, -6.03, 440):SetAppearance(3); -- NPC: #Kaikachi`s_Remains
   -- Lyndroh's remains
-  eq.spawn2(298010, 0, 0, 320, -144, 21.85, 96):SetAppearance(3);
+  eq.spawn2(298010, 0, 0, 320, -144, 21.85, 96):SetAppearance(3); -- NPC: #Lyndroh`s_Remains
   -- Silius's remains
-  eq.spawn2(298009, 0, 0, 322, -199, 21.85, 168):SetAppearance(3);
+  eq.spawn2(298009, 0, 0, 322, -199, 21.85, 168):SetAppearance(3); -- NPC: #Silius`_Remains
   -- Maddoc's remains
-  eq.spawn2(298011, 0, 0, 483, -171, 25.85, 496):SetAppearance(3);
+  eq.spawn2(298011, 0, 0, 483, -171, 25.85, 496):SetAppearance(3); -- NPC: #Maddoc`s_Remains
   -- Vahlara's remains
-  eq.spawn2(298024, 0, 0, 600, -588, -6.03, 0.0):SetAppearance(3);
+  eq.spawn2(298024, 0, 0, 600, -588, -6.03, 0.0):SetAppearance(3); -- NPC: #Vahlara`s_Remains
   -- Valtron's remains
-  eq.spawn2(298019, 0, 0, 494, -494, -6.125, 312):SetAppearance(3);
+  eq.spawn2(298019, 0, 0, 494, -494, -6.125, 312):SetAppearance(3); -- NPC: #Valtron`s_Remains
 
 end
 

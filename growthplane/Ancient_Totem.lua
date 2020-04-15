@@ -15,7 +15,7 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 31440,item2 = 31442,item3 = 31441,item4 = 31439}) and e.other:GetLevel() >= 55) then
 		e.self:Say("Thank you, friend.  These scrolls will serve us well in the future.  Please take this as a sign of my gratitude."); -- Text made up
-		e.other:SummonItem(1324);
+		e.other:SummonItem(1324); -- Item: Visage of Life
     e.other:AddEXP(2500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

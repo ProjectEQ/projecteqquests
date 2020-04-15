@@ -16,7 +16,7 @@ sub EVENT_SAY {
   if($text=~/boots/i){
     quest::say("To create your boots material you will need to combine 3 Bricks of Crude Bronze, 1 Cracked Giant Scarab Carapace, 2 Runny Eye Warbeads and 1 Snake Scale and 1 Spiderling Silk in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Boots.");
     #Summon: Crude Boots Mold
-    quest::summonitem(19634); # Item: Crude Boot Mold   
+    quest::summonitem(19634); # Item: Crude Boot Mold
   }
   if($text=~/bracers/i){
     quest::say("To create your bracer material you will need to combine 1 Bricks of Crude Bronze, 1 Orc Scoutsmans Wrist Pouch, 1 Towering Brute War Helm and 1 Bandage in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Apprentice Miners Bracer.");

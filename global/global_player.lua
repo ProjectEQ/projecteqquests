@@ -68,7 +68,7 @@ function event_combine_success(e)
 		eq.set_global("ranger_epic","3",5,"F");
 		if(eq.get_zone_short_name()=="jaggedpine") then
 			e.self:Message(15,"The seed grows rapidly the moment you push it beneath the soil. It appears at first as a mere shoot, but within moments grows into a stout sapling and then into a gigantic tree. The tree is one you've never seen before. It is the coloration and thick bark of a redwood with the thick bole indicative of the species. The tree is, however, far too short and has spindly branches sprouting from it with beautiful flowers that you would expect on a dogwood. You take all of this in at a glance. It takes you a moment longer to realize that the tree is moving.");			
-			eq.spawn2(181222, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0);
+			eq.spawn2(181222, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0); -- NPC: Red_Dogwood_Treant
 		else
 			e.self:Message(15,"The soil conditions prohibit the seed from taking hold");
 			e.self:SummonItem(72091); -- Item: Fertile Earth
@@ -91,7 +91,7 @@ function event_combine_success(e)
 		e.self:Message(15,"The Red Dogwood Treant speaks to you from within your sword. 'Well done. This should allow me to free a spirit with power over cold and ice. Now you need to find the power that binds the spirit and unleash it where that spirit is bound.'");	
 	elseif(e.recipe_id ==19917) then
 		if(eq.get_zone_short_name()=="anguish") then
-			eq.spawn2(317113, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+			eq.spawn2(317113, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- NPC: #Oshimai_Spirit_of_the_High_Air
 		end
 	-- paladin 1.5 final
 	elseif(e.recipe_id ==19880) then
@@ -111,7 +111,7 @@ function event_combine_success(e)
 	--druid 1.5 feerrott
 	elseif(e.recipe_id == 19888) then
 		if(eq.get_zone_short_name()=="feerrott") then
-			eq.spawn2(47209, 0, 0, e.self:GetX()+10,e.self:GetY()+10,e.self:GetZ(),0);
+			eq.spawn2(47209, 0, 0, e.self:GetX()+10,e.self:GetY()+10,e.self:GetZ(),0); -- NPC: corrupted_spirit
 			e.self:Message(0,"compelled spirit screams as his essences is forced back into the world of the living. 'What is this? Where am I? Who are you? What do you want from me?");
 		else
 			e.self:SummonItem(62827); -- Item: Mangled Head
@@ -128,9 +128,9 @@ function event_combine_success(e)
 	--druid 2.0 sub final
 	elseif(e.recipe_id ==19908) then
 		if(eq.get_zone_short_name()=="anguish") then
-			eq.spawn2(317115, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0);
+			eq.spawn2(317115, 0, 0, e.self:GetX()+3,e.self:GetY()+3,e.self:GetZ(),0); -- NPC: #Yuisaha
 			e.self:SummonItem(62883); -- Item: Essence of Rainfall
-			e.self:SummonItem(62876); -- Item: Insulated Container			
+			e.self:SummonItem(62876); -- Item: Insulated Container
 		else
 			e.self:Message(15,"The rain spirit cannot be reached here");
 			e.self:SummonItem(47100); -- Item: Globe of Discordant Energy

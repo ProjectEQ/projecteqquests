@@ -1,5 +1,5 @@
 function event_death_complete(e)
-	eq.spawn2(68251,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(68251,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_lesser_spirit
 end
 
 --Submitted by: Jim Mills

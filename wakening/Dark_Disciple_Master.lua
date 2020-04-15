@@ -25,7 +25,7 @@ function event_hp(e)
 		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());		
 		eq.spawn2(119178,0,0,e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),e.self:GetHeading());
 		e.self:Say("You have underestimated me! I will not fall this day!");
-		e.self:CastSpell(1248, e.self:GetID()); -- Spell: Spiritual Echo	
+		e.self:CastSpell(1248, e.self:GetID()); -- Spell: Spiritual Echo
 		eq.set_next_hp_event(19);
 	elseif(e.hp_event == 19) then
 		e.self:CastSpell(4746, e.self:GetID()); -- Spell: Protection of Discord III

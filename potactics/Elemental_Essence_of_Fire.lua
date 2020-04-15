@@ -25,11 +25,11 @@ function event_timer(e)
 	if (e.timer=="depop") then
 		eq.depop();
 	elseif(e.timer=="flamewall") then
-		e.self:CastSpell(1038, e.self:GetTarget():GetID()); -- Spell: Flamewall 		
+		e.self:CastSpell(1038, e.self:GetTarget():GetID()); -- Spell: Flamewall
 	elseif (e.timer=="pyro") then
-		e.self:CastSpell(2812, e.self:GetTarget():GetID()); -- Spell: Pyrokinetic Hallucinations 		
+		e.self:CastSpell(2812, e.self:GetTarget():GetID()); -- Spell: Pyrokinetic Hallucinations
 	elseif (e.timer=="feattack") then
-		e.self:CastSpell(893, e.self:GetTarget():GetID()); -- Spell: Fire Elemental Attack II		
+		e.self:CastSpell(893, e.self:GetTarget():GetID()); -- Spell: Fire Elemental Attack II
 	end
 	
 end

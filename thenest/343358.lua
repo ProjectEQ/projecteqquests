@@ -98,29 +98,29 @@ end
 function event_timer(e)
 	local el = eq.get_entity_list();
 	if (e.timer == "magic") then
-		eq.spawn2(343359,0,0,-1539.36,-368.39,-176.32,393.5);
-		eq.signal(343359,2);
+		eq.spawn2(343359,0,0,-1539.36,-368.39,-176.32,393.5); -- NPC: Aspect_of_Magic
+		eq.signal(343359,2); -- NPC: Aspect_of_Magic
 		eq.stop_timer("magic");
 	elseif (e.timer == "protection") then
-		eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3);
-		eq.signal(343360,2);
+		eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3); -- NPC: Aspect_of_Protection
+		eq.signal(343360,2); -- NPC: Aspect_of_Protection
 		eq.stop_timer("protection");
 	elseif (e.timer == "combat") then
-		eq.spawn2(343363,0,0,-1482.40,-670.43,-176.52,463.0);
-		eq.signal(343363,2);
+		eq.spawn2(343363,0,0,-1482.40,-670.43,-176.52,463.0); -- NPC: Aspect_of_Combat
+		eq.signal(343363,2); -- NPC: Aspect_of_Combat
 		eq.stop_timer("combat");
 	elseif (e.timer == "power") then
-		eq.spawn2(343362,0,0,-1694.66,-551.08,-178.08,57.0);
-		eq.signal(343362,2);
+		eq.spawn2(343362,0,0,-1694.66,-551.08,-178.08,57.0); -- NPC: Aspect_of_Power
+		eq.signal(343362,2); -- NPC: Aspect_of_Power
 		eq.stop_timer("power");
 	elseif (e.timer == "armor") then
-		eq.spawn2(343361,0,0,-1711.16,-421.83,-176.46,121.5);
-		eq.signal(343361,2);
+		eq.spawn2(343361,0,0,-1711.16,-421.83,-176.46,121.5); -- NPC: Aspect_of_Armor
+		eq.signal(343361,2); -- NPC: Aspect_of_Armor
 		eq.stop_timer("armor");
 	elseif (e.timer == "check") and add == 0 then
 		e.self:Emote(" focuses for a moment and imbues a new Aspect of Protection.");
-		eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3);
-		eq.signal(343360,2);
+		eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3); -- NPC: Aspect_of_Protection
+		eq.signal(343360,2); -- NPC: Aspect_of_Protection
 		eq.stop_timer("protection");
 	elseif (e.timer == "agro") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
@@ -139,22 +139,22 @@ function event_spawn(e)
 	eq.depop(343361);
 	eq.depop(343359);
 	add=0;
-	eq.spawn2(343362,0,0,-1694.66,-551.08,-178.08,57.0);
-	eq.signal(343362,2);
-	eq.spawn2(343363,0,0,-1482.40,-670.43,-176.52,463.0);
-	eq.signal(343363,2);
-	eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3);
-	eq.signal(343360,2);
-	eq.spawn2(343361,0,0,-1711.16,-421.83,-176.46,121.5);
-	eq.signal(343361,2);
-	eq.spawn2(343359,0,0,-1539.36,-368.39,-176.32,393.5);
-	eq.signal(343359,2);
+	eq.spawn2(343362,0,0,-1694.66,-551.08,-178.08,57.0); -- NPC: Aspect_of_Power
+	eq.signal(343362,2); -- NPC: Aspect_of_Power
+	eq.spawn2(343363,0,0,-1482.40,-670.43,-176.52,463.0); -- NPC: Aspect_of_Combat
+	eq.signal(343363,2); -- NPC: Aspect_of_Combat
+	eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3); -- NPC: Aspect_of_Protection
+	eq.signal(343360,2); -- NPC: Aspect_of_Protection
+	eq.spawn2(343361,0,0,-1711.16,-421.83,-176.46,121.5); -- NPC: Aspect_of_Armor
+	eq.signal(343361,2); -- NPC: Aspect_of_Armor
+	eq.spawn2(343359,0,0,-1539.36,-368.39,-176.32,393.5); -- NPC: Aspect_of_Magic
+	eq.signal(343359,2); -- NPC: Aspect_of_Magic
 end
 
 function event_death_complete(e)
-	eq.signal(343362,1);
-	eq.signal(343361,1);
-	eq.signal(343359,1);
-	eq.signal(343363,1);
-	eq.signal(343360,1);
+	eq.signal(343362,1); -- NPC: Aspect_of_Power
+	eq.signal(343361,1); -- NPC: Aspect_of_Armor
+	eq.signal(343359,1); -- NPC: Aspect_of_Magic
+	eq.signal(343363,1); -- NPC: Aspect_of_Combat
+	eq.signal(343360,1); -- NPC: Aspect_of_Protection
 end

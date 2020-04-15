@@ -34,7 +34,7 @@ function ZMSB_Combat(e)
   else
     -- Wipe Mechanics
     eq.get_entity_list():FindDoor(8):SetLockPick(0);
-    eq.spawn2(298018, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+    eq.spawn2(298018, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Zun`Muram_Shaldn_Boc
     eq.depop();
   end
 end

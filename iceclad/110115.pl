@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(34,-949.81,801,-5.55); # Zone: cauldron
+	quest::movepc(34,-949.81,801,-5.55); # Zone: nro
 }

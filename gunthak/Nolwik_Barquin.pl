@@ -30,7 +30,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 59061 => 1, 59062 => 1)) {#A Golden Emblem (Tunare), A Golden Emblem(Karana)
     quest::emote("gasps as you hand him the two symbols. 'I am in your debt, $name. There is nothing I can ever do to repay you, but I can at least teach you of the healing water that Tunare has shown me how to control. Take this scroll, I pray to Tunare that it will serve you well.' ");
-    quest::summonitem(59014);#Spell: Healing Water
+    quest::summonitem(59014); # Item: Spell: Healing Water
   }
   plugin::return_items(\%itemcount);
 }#Done

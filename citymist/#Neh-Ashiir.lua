@@ -6,7 +6,7 @@ function event_trade(e)
 		eq.depop()
 		e.other:Ding();
 		e.other:Faction(404,50); -- Faction: Truespirit
-		eq.spawn2(90181,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(90181,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: #Neh`Ashiir_
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -196,7 +196,7 @@ function event_timer(e)
 		-- If all the Wraiths are dead; spawn the Boss
 		if ( not eq.get_entity_list():IsMobSpawnedByNpcTypeID(201452) ) then
 			eq.stop_timer("boss_timer");
-			eq.spawn2(201455, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+			eq.spawn2(201455, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Punisher_Veshtaq
 		end
 
 	elseif (e.timer == "wraith_timer" or e.timer == "has_trial_started") then 

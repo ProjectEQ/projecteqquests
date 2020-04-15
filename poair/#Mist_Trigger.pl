@@ -28,7 +28,7 @@ sub EVENT_SIGNAL
 		#A_Phoenix_Breezewing, A_Wind_Pheonix X2, Servitor_of_Xegony, Spiritfrenzied_Phoenix, Ardent_Phoenix_of_Xegony, A_Phoenix_Searedwing, Calebgrothiel
 		if(!$entity_list->IsMobSpawnedByNpcTypeID(215058) && !$entity_list->IsMobSpawnedByNpcTypeID(215026) && !$entity_list->IsMobSpawnedByNpcTypeID(215025) && !$entity_list->IsMobSpawnedByNpcTypeID(215027) && !$entity_list->IsMobSpawnedByNpcTypeID(215062) && !$entity_list->IsMobSpawnedByNpcTypeID(215059) && !$entity_list->IsMobSpawnedByNpcTypeID(215028) && !$entity_list->IsMobSpawnedByNpcTypeID(215061)) 
 		{
-			quest::spawn2(215069,0,0,304.2,-792.2,441.6,30.4); # NPC: A_Phoenix_Windsurger 
+			quest::spawn2(215069,0,0,304.2,-792.2,441.6,30.4); # NPC: A_Phoenix_Windsurger
 			quest::spawn2(215069,0,0,348.4,-632.2,442.3,280.2); # NPC: A_Phoenix_Windsurger
 			quest::spawn2(215069,0,0,391.7,-736.2,438.1,406.8); # NPC: A_Phoenix_Windsurger
 			quest::spawn2(215069,0,0,260,-699.8,444.5,151); # NPC: A_Phoenix_Windsurger

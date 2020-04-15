@@ -37,7 +37,7 @@ sub EVENT_SAY
 		}
 	elsif($text=~/appointed tasks/i)
 		{
-		my $deadfaction = $client->GetModCharacterFactionLevel(239);
+		my $deadfaction = $client->GetModCharacterFactionLevel(239); # Faction: The Dead
 		if ($deadfaction < 150)
 			{
 			quest::say("When you learn to serve the Dead, then I will find the time to speak of such things.");
@@ -51,7 +51,7 @@ sub EVENT_SAY
 
 sub EVENT_ITEM 
 	{
-	my $deadfaction = $client->GetModCharacterFactionLevel(239);
+	my $deadfaction = $client->GetModCharacterFactionLevel(239); # Faction: The Dead
 
 	if ($faction < 5)
 		{

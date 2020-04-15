@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 		if ($faction <= 5) {
 			quest::say("Ha! You must have slain a member of the Knights of Thunder. These pitiful knights have been a thorn in our side for far too long. Take this reward and continue the work of Bertoxxulous.");
 			#:: Give a random reward: 5013 - Rusty Short Sword, 5016 - Rusty Broad Sword, 7007 - Rusty Dagger, 1050 - Rat Fur Cap, 13301 - Rat Shaped Ring
-			quest::summonitem(quest::ChooseRandom(5013, 5016, 7007, 1050, 13301));
+			quest::summonitem(quest::ChooseRandom(5013, 5016, 7007, 1050, 13301)); # Item(s): Rusty Short Sword (5013)
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -44,7 +44,7 @@ sub EVENT_ITEM {
 		else {
 			#:: There is some evidence that nothing is said.
 			#:: Return a 13287 - Order of Thunder
-			quest::summonitem(13287);
+			quest::summonitem(13287); # Item: Order of Thunder
 		}
 	}
 	#:: Match a 13296 - Prayer Beads
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
 		if ($faction <= 5) {
 			quest::say("Fine work! One less threat to our shrine. Take this. It shall help you become a great asset to our shrine. Go forth and spread the disease."); 
 			#:: Give a random reward: 5013 - Rusty Short Sword, 5016 - Rusty Broad Sword, 7007 - Rusty Dagger, 1050 - Rat Fur Cap, 13301 - Rat Shaped Ring
-			quest::summonitem(quest::ChooseRandom(5013, 5016, 7007, 1050, 13301));
+			quest::summonitem(quest::ChooseRandom(5013, 5016, 7007, 1050, 13301)); # Item(s): Rusty Short Sword (5013)
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -68,7 +68,7 @@ sub EVENT_ITEM {
 		else {
 			#:: There is some evidence that nothing is said.
 			#:: Return a 13296 - Prayer Beads with no charges
-			quest::summonitem(13287,0);
+			quest::summonitem(13287,0); # Item: Order of Thunder
 		}
 	}
 	#:: Match a 13908 - Busted Prayer Beads
@@ -89,7 +89,7 @@ sub EVENT_ITEM {
 		if ($faction <= 5) {
 			quest::say("Hahaha.. I see you actually killed a respected, well-known citizen of Qeynos. No loss for them, but you are certainly a gain for our shrine. Maybe this shall do you some good. If not now, then surely later. You may need it when the Qeynos Guards hunt you down.");
 			#:: Give a random reward: 9006 - Wooden Shield, 17002 - Belt Pouch, 2104 - Patchwork Tunic, 7009 - Rusty Spear, 13301 - Rat Shaped Ring, 15235 - Spell: Invisibility vs Undead
-			quest::summonitem(quest::ChooseRandom(9006, 17002, 2104, 7009, 13301, 15235));
+			quest::summonitem(quest::ChooseRandom(9006, 17002, 2104, 7009, 13301, 15235)); # Item(s): Wooden Shield (9006)
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -104,7 +104,7 @@ sub EVENT_ITEM {
 		else {
 			#:: There is some evidence that nothing is said.
 			#:: Return a 13134 - Hurrieta's Bloody Dress
-			quest::summonitem(13134,0);
+			quest::summonitem(13134,0); # Item: Hurrieta's Bloody Dress
 		}
 	}
 	#:: Return unused items

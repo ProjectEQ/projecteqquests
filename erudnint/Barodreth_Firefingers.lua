@@ -43,7 +43,7 @@ end
 function event_item(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 19552, item2 = 19659, item3 = 13424, item4 = 63125})) then -- Dagger of the Craft Keeper
-		e.other:QuestReward(e.self, {itemid = 61099}); -- Item: Dagger of the Craft Keeper
+		e.other:QuestReward(e.self, {itemid = 61099});
 		e.self:Say(string.format("Very good, %s, and here is your reward as promised.", e.other:GetCleanName()));
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

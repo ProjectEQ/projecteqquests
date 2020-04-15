@@ -22,7 +22,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 		quest::signalwith(93088,3); # NPC: Dragoon_T`Vem
 		quest::signalwith(93084,3); # NPC: Dragoon_T`Vex
 		quest::signalwith(93125,3); # NPC: Dragoon_V`Lask
-		quest::signalwith(93086,3); # NPC: Dragoon_V`Resh	
+		quest::signalwith(93086,3); # NPC: Dragoon_V`Resh
 	}
 }
 

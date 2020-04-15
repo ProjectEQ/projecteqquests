@@ -32,8 +32,8 @@ function event_timer(e)
 		eq.signal(214123,500); --  tell trigger mob mini Rallos depopped
 		eq.depop();
 	elseif (e.timer == 'adds') then
-		eq.spawn2(214130,0,0,978,-560,133,385);
-		eq.spawn2(214130,0,0,978,580,133,385);
+		eq.spawn2(214130,0,0,978,-560,133,385); -- NPC: A_Decorin_Elite
+		eq.spawn2(214130,0,0,978,580,133,385); -- NPC: A_Decorin_Elite
 	elseif(e.timer=="OOBcheck") then
 		if (e.self:GetZ() < 50) then
 			e.self:GMMove(365,11,181,129); -- does not wipe hate list

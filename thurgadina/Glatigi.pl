@@ -38,7 +38,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if ($faction <= 3) { # Require warmly and greater faction 
     if (plugin::check_handin(\%itemcount, 25814 => 3, 24935 => 1)) { # tunic 
-      quest::summonitem(55318); # Item: Icefury Tunic 
+      quest::summonitem(55318); # Item: Icefury Tunic
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -48,7 +48,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24937 => 1)) { # sleeves 
-      quest::summonitem(55319); # Item: Icefury Sleeves 
+      quest::summonitem(55319); # Item: Icefury Sleeves
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -58,7 +58,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24936 => 1)) { # leggings 
-      quest::summonitem(55322); # Item: Icefury Greaves 
+      quest::summonitem(55322); # Item: Icefury Greaves
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -68,7 +68,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24941 => 1)) { # gauntlets 
-      quest::summonitem(55321); # Item: Icefury Gauntlets 
+      quest::summonitem(55321); # Item: Icefury Gauntlets
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -88,7 +88,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24939 => 1)) { # bracers 
-      quest::summonitem(55320); # Item: Icefury Bracer 
+      quest::summonitem(55320); # Item: Icefury Bracer
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -98,7 +98,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24938 => 1)) { # boots 
-      quest::summonitem(55323); # Item: Icefury Boots 
+      quest::summonitem(55323); # Item: Icefury Boots
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 

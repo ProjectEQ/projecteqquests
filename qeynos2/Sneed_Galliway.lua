@@ -11,7 +11,7 @@ function event_say(e)
 	elseif(e.message:findi("tax collection")and tax.tax_collection ~= nil) then
 		e.self:Say(string.format("Hey, %s, how the heck did Vicus convince you to do his job? He better be paying you well. Here you go.",e.other:GetName()));
 		e.other:SummonItem(13172); -- Item: Galliway's Tax Payment
-		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos		
+		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos
 	end
 	
 end

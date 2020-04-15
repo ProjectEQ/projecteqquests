@@ -19,7 +19,7 @@ function Trenz_Timer(e)
 		eq.set_timer("wave",20*1000);
 		e.self:CastSpell(5812, e.self:GetHateTop():GetID()); -- Wave of Flame	
 	elseif (e.timer=="senvial") then
-		eq.spawn2(280089,0,0,e.self:GetX()+15,e.self:GetY()+15,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(280089,0,0,e.self:GetX()+15,e.self:GetY()+15,e.self:GetZ(),e.self:GetHeading()); -- NPC: Senvial_of_the_Mist
 		eq.stop_timer("senvial");
 	elseif (e.timer=="adds") then
 		eq.spawn2(eq.ChooseRandom(280085,280086,280087,280088),0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ(),e.self:GetHeading()); -- NPC(s): a_bound_earth_spirit (280085), a_bound_fire_spirit (280086), a_bound_water_spirit (280087), a_bound_air_spirit (280088)

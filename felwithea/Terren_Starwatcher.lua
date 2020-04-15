@@ -24,7 +24,7 @@ function event_say(e)
 		e.other:SummonItem(19631); -- Item: Crude Helm Mold
 	elseif(e.message:findi("greaves")) then
 		e.self:Say("To assemble sylvan initiate greaves you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Greaves Mold. Once that is done combine the Crude Bronze Greaves with two Giant Sylvan Bat Furs and two Arborean Sapling Barks in the Mail Assembly Kit.");
-		e.other:SummonItem(19636); -- Item: Crude Greaves Mold 
+		e.other:SummonItem(19636); -- Item: Crude Greaves Mold
 	elseif(e.message:findi("vambraces")) then
 		e.self:Say("To assemble sylvan initiate vambraces you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Bronze Vambraces with a Giant Sylvan Bat Fur and two Arborean Sapling Barks in the Mail Assembly Kit.");
 		e.other:SummonItem(19635); -- Item: Crude Vambrace Mold

@@ -4,6 +4,6 @@ end
 
 function event_enter(e)
 e.self:Emote("at your feet erupts.");
-eq.spawn2(103093, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+eq.spawn2(103093, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- NPC: a_Reanimated_Berserker
 eq.depop_with_timer();
 end

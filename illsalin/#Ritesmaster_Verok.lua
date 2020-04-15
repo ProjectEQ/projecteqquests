@@ -10,13 +10,13 @@ eq.get_entity_list():MessageClose(e.self, false, 200, 15, "The room begins to tr
 eq.set_next_hp_event(90);
 elseif (e.hp_event == 90) then
 eq.get_entity_list():MessageClose(e.self, false, 200, 15, "You look upward as an unfamiliar smell fills the now sealed room.");
-eq.spawn2(347088, 0, 0, 929, -826, 163, 193);
-eq.spawn2(347088, 0, 0, 826, -691, 163, 193);
-eq.spawn2(347088, 0, 0, 645, -744, 163, 193);
-eq.spawn2(347088, 0, 0, 656, -952, 163, 193);
-eq.spawn2(347088, 0, 0, 770, -1045, 163, 193);
-eq.spawn2(347088, 0, 0, 848, -977, 163, 193);
-eq.spawn2(347088, 0, 0, 567, -880, 163, 193);
+eq.spawn2(347088, 0, 0, 929, -826, 163, 193); -- NPC: a_spider_egg
+eq.spawn2(347088, 0, 0, 826, -691, 163, 193); -- NPC: a_spider_egg
+eq.spawn2(347088, 0, 0, 645, -744, 163, 193); -- NPC: a_spider_egg
+eq.spawn2(347088, 0, 0, 656, -952, 163, 193); -- NPC: a_spider_egg
+eq.spawn2(347088, 0, 0, 770, -1045, 163, 193); -- NPC: a_spider_egg
+eq.spawn2(347088, 0, 0, 848, -977, 163, 193); -- NPC: a_spider_egg
+eq.spawn2(347088, 0, 0, 567, -880, 163, 193); -- NPC: a_spider_egg
 eq.set_next_hp_event(85);
 elseif (e.hp_event == 85) then
 eq.spawn_condition("illsalin",0,1,1);
@@ -26,7 +26,7 @@ e.self:Shout("'Fools! Who are you to challenge I?' as you notice the drachnid eg
 eq.set_next_hp_event(20);
 elseif (e.hp_event == 20) then
 eq.get_entity_list():MessageClose(e.self, false, 200, 15, "Ritesmaster Verok realizes that the enemy force is stronger than he had ever anticipated. 'I will destroy you yet, foul creatures. This is only the beginning.'");
-eq.signal(347088,2);
+eq.signal(347088,2); -- NPC: a_spider_egg
 end
 end
 

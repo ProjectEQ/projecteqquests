@@ -16,7 +16,7 @@ function event_enter(e)
 		eq.spawn2(301066, 0, 0, 740,436,-924.8,394); -- NPC: #Grinbik_the_Fertile
 		eq.spawn2(301067 ,0, 0, 729,457,-924.8,190); -- NPC: #an_enslaved_earthmover
 		eq.spawn2(301068 ,0, 0, 762.7,457,-925.7,382); -- NPC: #an_eager_student
-		eq.spawn2(301068 ,0, 0, 762.7,435,-924.8,260); -- NPC: #an_eager_student		
+		eq.spawn2(301068 ,0, 0, 762.7,435,-924.8,260); -- NPC: #an_eager_student
 	end
 end
 

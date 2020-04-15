@@ -49,7 +49,7 @@ sub EVENT_SAY {
 	if(plugin::check_hasitem($client, 57007)) {
 	  if ($text=~/i am done/i) {
 		quest::say("Ah, I see you were successful! You become more like one of the elders each day -- elders which may now become known to you. I would like you to become familiar with some of the greater animists of Norrath, so I will have you make some deliveries on my behalf. These elder animists are very busy and you must find them on your own in our lands. Show this letter to the elders as you find them.");
-		quest::summonitem(57008); # Item: Letter from Muada  
+		quest::summonitem(57008); # Item: Letter from Muada
 	  }
 	}
 	if ($client->GetGlobal("beast_epic") ==6) {
@@ -165,7 +165,7 @@ sub EVENT_ITEM {
   }
   
   if (plugin::check_handin(\%itemcount, 57001 =>1, 57002 =>1, 57003 =>1, 57004 =>1 )) {
-   quest::summonitem(57005); # Item: Plain Animist Helm 
+   quest::summonitem(57005); # Item: Plain Animist Helm
    quest::summonitem(57006); # Item: Shiny Sewing Needle
   }
   if ($client->GetGlobal("beast_epic") ==6) {

@@ -12,7 +12,7 @@ sub EVENT_SAY {
 if ($text=~/ready/i) { 
   if ($faction == 1) { 
    quest::say("Very well."); 
-   quest::movepc(108,-1163.2,-1047.9,283.0,127.8); # Zone: erudnext 
+   quest::movepc(108,-1163.2,-1047.9,283.0,127.8); # Zone: veeshan
    } 
   else { # less than ally faction 
    quest::say("You still need to prove your loyalty to us. I do not feel we can trust you yet, outlander."); 

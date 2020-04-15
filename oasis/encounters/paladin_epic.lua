@@ -63,7 +63,7 @@ function Keelee_Timer(e)
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=300 and client:GetID()~=event_starter:GetID()) then	
-				client:MovePC(37, -956,725,50,120); -- Zone: chambersa
+				client:MovePC(37, -956,725,50,120); -- Zone: oasis
 				client:Message(15,"Foolish adventurer, do not interfere with this ritual!");
 			end
 		end

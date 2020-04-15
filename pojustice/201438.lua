@@ -32,7 +32,7 @@ function event_say(e)
 					client_e = e;
 				else
 					client_e = e;
-					e.other:MovePC(201, 729, -1119, 88, 128); -- Zone: lakerathe
+					e.other:MovePC(201, 729, -1119, 88, 128); -- Zone: pojustice
 				end
 
 				-- Spawn the Controller
@@ -83,7 +83,7 @@ function event_timer(e)
 		if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, 772, -1148, 76, 175, 456, 825, 9, 180, "A mysterious force translocates you."); 
 		else
-			client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: lakerathe
+			client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
 			client_e.other:Message(3, "A mysterious force translocates you.");
 		end
 		HandleCorpses(772, -1148, 76, 175);
@@ -159,7 +159,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 					-- check the distance and port them up if close enough
 					if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
 						-- port the player up
-						client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+						client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: pojustice
 
 						if (msg) then
 							client_v:Message(3, msg);

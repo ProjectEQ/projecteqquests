@@ -239,7 +239,7 @@ function Huhn_Signal(e)
     eq.spawn_condition(this_zone, instance_id, 2, 0);
 
     -- Spawn a Shell of the Corrupted
-    eq.spawn2(309034, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+    eq.spawn2(309034, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Shell_of_the_Corrupted
 
     -- depop the mob
     eq.depop_with_timer();

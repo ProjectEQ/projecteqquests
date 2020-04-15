@@ -19,6 +19,6 @@ sub EVENT_SAY {
 }
   if ($text=~/leave/i || $text=~/escape/i) {
     quest::say("Here I'll show you how to get out. Come and help us again!");
-    quest::movepc(202,-55,44,-158.81); # Zone: lavastorm
+    quest::movepc(202,-55,44,-158.81); # Zone: poknowledge
  }
 }

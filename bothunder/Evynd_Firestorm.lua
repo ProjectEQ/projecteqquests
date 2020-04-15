@@ -14,5 +14,5 @@ function event_timer(e)
 end
 
 function event_death_complete(e)
-	eq.spawn2(209101,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(209101,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: #Askr_the_Lost
 end

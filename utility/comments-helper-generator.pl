@@ -27,10 +27,10 @@ my $json = new JSON();
 my $server_path = $ARGV[0];
 my $config_path = $server_path . "/eqemu_config.json";
 
-my $i = 0;
+my $i       = 0;
 my %options = ();
 while ($ARGV[$i]) {
-    $options{$ARGV[$i]} = $ARGV[$i + 1];
+    $options{$ARGV[$i]} = ($ARGV[$i + 1] ? $ARGV[$i + 1] : 1);
     $i++;
 }
 
@@ -71,7 +71,7 @@ my $query_handle;
 $query_handle = $connect->prepare("SELECT `id`, `name`, `lastname` FROM `npc_types`");
 $query_handle->execute();
 
-while (@row = $query_handle->fetchrow_array()) {
+while (@row             = $query_handle->fetchrow_array()) {
     $npc_names{$row[0]} = ($row[1] . ($row[2] ? ' ' . $row[2] : ''));
 }
 
@@ -141,8 +141,15 @@ for my $file (@files) {
             my $item_names = "";
 
             if ($options{"--strip-existing-comments"}) {
-                if ($file =~ /\.lua/ && $line=~/Spell:|NPC:|NPC\(s\):|Faction:|Zone:|Item:|Item\(s\):/i) {
-                    $line =~ s/--.*//;
+                if ($line =~ /Spell:|NPC:|NPC\(s\):|Faction:|Zone:|Item:|Item\(s\):/i) {
+                    if ($file =~ /\.lua/) {
+                        print $line . "\n";
+                        $line =~ s/--(.*)//;
+                    }
+                    if ($file =~ /\.pl/) {
+                        print $line . "\n";
+                        $line =~ s/#(.*)//;
+                    }
                 }
             }
 
@@ -182,7 +189,7 @@ for my $file (@files) {
                     else {
                         my @split = split('\(', $line);
                         foreach my $split_arg (@split) {
-                            my @split_2        = split(",", $split_arg);
+                            my @split_2 = split(",", $split_arg);
                             if (looks_like_number($split_2[0])) {
                                 $npc_id_to_comment = trim($split_2[0]);
                             }
@@ -201,9 +208,9 @@ for my $file (@files) {
                 ##########################
 
                 if ($line =~ /AddAISpell|RemoveAISpell|CastSpell/i) {
-                    my @split            = split('\(', $line);
-                    my $split_arg        = $split[1];
-                    my @split_2          = split(",", $split_arg);
+                    my @split     = split('\(', $line);
+                    my $split_arg = $split[1];
+                    my @split_2   = split(",", $split_arg);
                     if (looks_like_number($split_2[0])) {
                         $spell_id_to_comment = trim($split_2[0]);
                     }
@@ -254,6 +261,7 @@ for my $file (@files) {
                         if ($item_id_to_comment > 0) {
                             my $item_name = trim($item_names{$item_id_to_comment});
                             if ($item_name ne "") {
+                                $line =~ s/;(.*)//;
                                 $line =~ s/;/; $comment_prefix Item: $item_name/g;
                             }
                         }

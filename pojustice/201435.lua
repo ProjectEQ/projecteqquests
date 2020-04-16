@@ -3,7 +3,7 @@
 --
 
 local lashing_flag      = 0;
-local trail_group       = nil;
+local trial_group       = nil;
 local trial_count       = nil;
 local client_e          = nil;
 local trial_x           = 1373;

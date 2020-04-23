@@ -141,14 +141,18 @@ function event_click_door(e)
         -- elseif (request.valid and request.flags == 0) then
         if (request.valid) then
           instance_id = eq.create_instance('anguish', 0, 21600);
-          eq.assign_raid_to_instance(instance_id);
+          if (instance_id == 0) then
+            e.self:Message(13, "Instance failed to be created, yell at a GM");
+          else
+            eq.assign_raid_to_instance(instance_id);
 
-          -- Set the lockout for the instance with the bits that represent the mobs that 
-          -- will be spawned by the zone_status upon entry
-          eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
+            -- Set the lockout for the instance with the bits that represent the mobs that 
+            -- will be spawned by the zone_status upon entry
+            eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
 
-          eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
-          e.self:Message(14, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
+            eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
+            e.self:Message(14, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
+          end
         end
       end
     end

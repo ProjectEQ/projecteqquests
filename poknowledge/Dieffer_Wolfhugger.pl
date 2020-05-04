@@ -1,7 +1,21 @@
 sub EVENT_SAY {
-    if($text=~/hail/i){
-        $npc->SetAppearance(0);
-        quest::say("Happy Halloween! If you can find a Bristlebane's Ticket of Admission, then I can give you a trick, treat, or possibly a special prize for it!");
+    #Halloween Event
+    #if($text=~/hail/i){
+    #    $npc->SetAppearance(0);
+    #    quest::say("Happy Halloween! If you can find a Bristlebane's Ticket of Admission, then I can give you a trick, treat, or possibly a special prize for it!");
+    #}
+
+    #Custom for PVP on PEQ only
+    if ($text=~/hail/i) {
+      if ($client->GetPVP()) {
+        quest::say("You follow the ways of Discord. Let me know if you would like to turn [PVP off].");
+      }
+      else {
+        quest::say("Sorry, I am busy. Come back again later.");
+      }
+    }
+    if (($text=~/pvp off/i) && $client->GetPVP()) {
+      quest::pvp(off);
     }
 }
 

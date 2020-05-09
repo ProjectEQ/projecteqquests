@@ -18,8 +18,6 @@ sub EVENT_COMBINE_VALIDATE {
 			}
 		}
 	}
-	
-	return 1;
 }
 
 sub EVENT_COMBINE_SUCCESS {

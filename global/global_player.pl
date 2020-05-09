@@ -13,13 +13,13 @@ sub EVENT_COMBINE_VALIDATE {
 	#	"check_tradeskill"	=> tradeskill_id (not active)
 	if ($recipe_id == 10344) {
 		if ($validate_type =~/check_zone/i) {
-			if ($zone_id != 289 && $zone_id != 290) {
-				return 1;
+			if ($zone_id !~ [289, 290]) {
+				return 0;
 			}
 		}
 	}
 	
-	return 0;
+	return 1;
 }
 
 sub EVENT_COMBINE_SUCCESS {

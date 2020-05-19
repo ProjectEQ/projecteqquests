@@ -2,6 +2,7 @@ local wave_counter = 0;
 
 function event_spawn(e)
   wave_counter = 0;
+e.self:SetAppearance(3);
 end
 
 function event_signal(e)

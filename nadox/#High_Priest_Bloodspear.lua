@@ -16,7 +16,8 @@ end
 function event_death_complete(e)
 	eq.spawn2(227099,0,0,-543,-103,51,0); --#Grand_Spiritist_Lokfan (227099)
 	eq.spawn2(227098,0,0,-527,-95,51,385); --#Bloodspear_the_Fallen (227098)
-	eq.spawn2(227098,0,0,-527,-95,51,385); --a_Broken_Skull_Spiritist (227097)
-	eq.spawn2(227098,0,0,-527,-95,51,385); --a_Cathedral_Protector (227095)
-	eq.spawn2(227098,0,0,-527,-95,51,385); --a_Cathedral_Protector (227095)
+	eq.spawn2(227097,0,0,-527,-95,51,385); --a_Broken_Skull_Spiritist (227097)
+	eq.spawn2(227095,0,0,-527,-95,51,385); --a_Cathedral_Protector (227095)
+	eq.spawn2(227095,0,0,-527,-95,51,385); --a_Cathedral_Protector (227095)
+	eq.depop_all(227006);
 end

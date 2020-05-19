@@ -8,7 +8,7 @@ eq.stop_timer('popguards');
 eq.spawn2(227006,0,0,-528,-139,51,0); --a_Blackblood_Prophet (227006)
 eq.spawn2(227006,0,0,-557,-126,51,68); --a_Blackblood_Prophet (227006)
 eq.spawn2(227006,0,0,-573,-95,51,130); --a_Blackblood_Prophet (227006)
-eq.spawn2(227006,0,0,-557,-126,51,68); --a_Blackblood_Prophet (227006)
+eq.spawn2(227006,0,0,-557,-66,51,190); --a_Blackblood_Prophet (227006)
 eq.spawn2(227006,0,0,-528,-50,51,254); --a_Blackblood_Prophet (227006)
 end
 end

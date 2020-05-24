@@ -22,6 +22,6 @@ function help_tvx(e)
 		local guard_mob = eq.get_entity_list():GetNPCBySpawnID(guard);
 --		if (guard_mob.valid and not guard_mob:IsEngaged()) then
 			guard_mob:MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
-		end
+--		end
 	end
 end

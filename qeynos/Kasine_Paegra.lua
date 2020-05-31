@@ -20,6 +20,7 @@ function event_trade(e)
 
 	--Order of Thunder
     if(standing > -1 and item_lib.check_turn_in(e.trade, {item1 = 13288})) then
+	e.self:Say("You have returned an Order of Thunder which has been drained of all its power.  I wonder how this could have happened.  No doubt evil is behind this.  Thank you for its return.  I give you the blessings of Karana.  Go and serve the Rainkeeper.");
 	e.self:CastSpell(200,e.other:GetID()); -- minor healing
         e.other:Faction(280,20);	--KoT
         e.other:Faction(221,-20);	--BloodSabers

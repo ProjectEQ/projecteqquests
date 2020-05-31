@@ -21,7 +21,7 @@ function event_trade(e)
 	--Order of Thunder
     if(standing > -1 and item_lib.check_turn_in(e.trade, {item1 = 13288})) then
 	e.self:CastSpell(200,e.other:GetID()); -- minor healing
-        e.other:Faction(280,20);	--KoT (actual)
+        e.other:Faction(280,20);	--KoT
         e.other:Faction(221,-20);	--BloodSabers
         e.other:Faction(341,15);	--Priest of Life
         e.other:Faction(262,15);	--Guards of Qeynos

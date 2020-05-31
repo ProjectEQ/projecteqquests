@@ -1,6 +1,7 @@
 local wave_counter = 0;
 
 function event_spawn(e)
+	e.self:Emote("shakes n stuff.");
   wave_counter = 0;
 end
 

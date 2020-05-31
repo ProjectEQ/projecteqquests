@@ -1,14 +1,12 @@
 local wave_counter = 0;
 
 function event_spawn(e)
-	e.self:Emote("shakes n stuff.");
   wave_counter = 0;
 end
 
 function event_signal(e)
   if (e.signal == 1) then
     wave_counter = wave_counter + 1;
-		e.self:Emote("shakes n stuff.");
 	end
 	if (wave_counter == 25) then
      e.self:Emote("is filled with the grunts of trolls hard at work.");

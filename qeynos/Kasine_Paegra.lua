@@ -17,15 +17,26 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	local standing = e.other.GetModCharacterFactionLevel(e.other, 280);
-
-	--Order of Thunder
+		
+	--Order of Thunder (WK Paladin)
+    if(standing > -1 and item_lib.check_turn_in(e.trade, {item1 = 13287})) then
+	e.self:Say("You are a very honorable person. You have returned an Order of Thunder which you truly do not need. I give you the protection of the Rainkeeper to watch over you. May it keep you from harm. Go and serve.");
+	e.self:CastSpell(11,e.other:GetID()); -- holy armor
+        e.other:Faction(280,10);	--KoT (actual)
+        e.other:Faction(221,-10);	--BloodSabers
+        e.other:Faction(341,7);		--Priest of Life
+        e.other:Faction(262,7);		--Guards of Qeynos
+	e.other:AddLevelBasedExp(14.2, 3); -- Guessed max level - data from lvl1
+	end
+	--Order of Thunder (Drosco)
     if(standing > -1 and item_lib.check_turn_in(e.trade, {item1 = 13288})) then
 	e.self:Say("You have returned an Order of Thunder which has been drained of all its power.  I wonder how this could have happened.  No doubt evil is behind this.  Thank you for its return.  I give you the blessings of Karana.  Go and serve the Rainkeeper.");
 	e.self:CastSpell(200,e.other:GetID()); -- minor healing
-        e.other:Faction(280,20);	--KoT
+        e.other:Faction(280,20);	--KoT (actual)
         e.other:Faction(221,-20);	--BloodSabers
         e.other:Faction(341,15);	--Priest of Life
         e.other:Faction(262,15);	--Guards of Qeynos
+	e.other:AddLevelBasedExp(14.2, 3); -- Guessed max level - data from lvl1
 	end
 
 	item_lib.return_items(e.self, e.other, e.trade)

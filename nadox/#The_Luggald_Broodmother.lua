@@ -14,6 +14,8 @@ end
 
 function event_timer(e)
 if (e.timer == 'depop') then
+eq.depop_all(227002); -- NPC: a_Luggald_Archseeker
+eq.depop_all(227003); -- NPC: Defender_of_the_Broodmother
 eq.depop();
 end
 end

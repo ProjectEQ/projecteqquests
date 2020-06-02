@@ -25,8 +25,8 @@ function event_say(e)
 	eq.unique_spawn(226216, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); --a_furious_luggald_abomination (226216)
     eq.depop();
 	elseif(e.message:findi("rage")) then
-    e.self:Emote("poofs away to nothing as a rage creature is summoned forth from the glowing magical pool.");
-	eq.unique_spawn(226217, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); --a_rage_luggald_abomination (226217)
+    e.self:Emote("poofs away to nothing as an enraged creature is summoned forth from the glowing magical pool.");
+	eq.unique_spawn(226217, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); --an_enraged_luggald_abomination (226217)
     eq.depop();
   end
 end

@@ -1,7 +1,7 @@
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then
-		eq.spawn2(227003, 0, 0, 1257, 675, -88, 126); -- NPC: Defender_of_the_Broodmother
-		eq.spawn2(227003, 0, 0, 1257, 665, -88, 126); -- NPC: Defender_of_the_Broodmother
+		eq.spawn2(227003, 51, 0, 1257, 675, -88, 126); -- NPC: Defender_of_the_Broodmother
+		eq.spawn2(227003, 51, 0, 1257, 665, -88, 126); -- NPC: Defender_of_the_Broodmother
 	elseif(e.wp == 6) then
 		eq.spawn2(227003, 0, 0, 1206, 1000, -74, 254); -- NPC: Defender_of_the_Broodmother
 		eq.spawn2(227003, 0, 0, 1216, 1000, -74, 254); -- NPC: Defender_of_the_Broodmother

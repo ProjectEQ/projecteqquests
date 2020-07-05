@@ -1,4 +1,5 @@
 # Rarundel's Memory
+# items: 67410, 67411
 
 # Created by Gonner
 

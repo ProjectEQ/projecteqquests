@@ -1,3 +1,4 @@
+-- items: 14331, 14335, 18168
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hello there, " .. e.other:GetName() .. ".  Can I interest you in any components to help you in your research?");

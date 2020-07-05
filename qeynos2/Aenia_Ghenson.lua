@@ -1,3 +1,4 @@
+-- items: 18027
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Why, hello there!  I'm Aenia, daughter of Dranom.  It's such a bore just sitting around here all day and night.  My father is soooooo overprotective! He never lets me go out and have any fun at all.  And he's so mean to my poor [boyfriend]!");

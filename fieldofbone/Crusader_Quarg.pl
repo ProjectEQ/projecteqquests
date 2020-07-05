@@ -1,6 +1,7 @@
 #Quests covered in this file:
 #Shaman Skull Quest 3
 #Shaman Skull Quest 4
+# items: 18054, 17034, 12735, 5142, 5143, 17035
 
 sub EVENT_SAY
 {

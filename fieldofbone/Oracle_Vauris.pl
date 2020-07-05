@@ -1,5 +1,6 @@
 #Quests covered in this file:
 #Shaman Skull Quest 8
+# items: 30989, 30990, 30991, 30993, 30992, 30994
 
 sub EVENT_SAY
 {

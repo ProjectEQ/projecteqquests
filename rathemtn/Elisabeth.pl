@@ -3,6 +3,7 @@
 #  Zone:  Rathe Mountains
 #  Quest:  Greaves of Ro
 #########################################################
+# items: 12313, 12303
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

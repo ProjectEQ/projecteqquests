@@ -7,6 +7,7 @@
 --local minutes_remaining;
 --local player_list;
 --local instance_requests;
+-- items: 59571
   
 local prisoners_freed=0; --3 to spawn #Prison_Guard_Talkor
 local pg_chest=0; --killed #Prison_Guard_Talkor

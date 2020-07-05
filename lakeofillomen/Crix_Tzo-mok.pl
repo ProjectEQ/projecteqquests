@@ -1,5 +1,6 @@
 #BeginFile: Crix_Tzo-mok.pl
 #Quest for Lake of Ill Omen - Crix Tzo`mok: Vengeance of Crix
+# items: 62080, 62081, 62196
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

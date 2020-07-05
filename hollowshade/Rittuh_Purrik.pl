@@ -1,3 +1,4 @@
+# items: 5573, 17609, 5582, 5577
 sub EVENT_SIGNAL
     {
 	# Run from zone takeover

@@ -1,5 +1,6 @@
 # Hynid boots
 # Created by Gonner
+# items: 13812, 55568, 55569
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

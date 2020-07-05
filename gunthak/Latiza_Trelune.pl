@@ -1,5 +1,6 @@
 #Latiza_Trelune.pl
 #Part of Leviathan Eyes
+# items: 54005, 54004
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

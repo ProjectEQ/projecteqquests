@@ -1,4 +1,5 @@
 #Edited by anubisrwml - Shar Vahl
+# items: 3495, 5538, 5543, 17076, 5541, 5542
 
 sub EVENT_SAY { 
 

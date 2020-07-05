@@ -1,4 +1,5 @@
 #Squire Gristle starts and ends The Penance quest. This allows a young iksar to replace their guild's starting item if they've lost it.
+# items: 18271, 18272, 24770, 5120
 
 sub EVENT_SAY {
  if($text=~/hail/i){

@@ -1,5 +1,6 @@
 # Poisoning Brendar
 #
+# items: 14058, 67010, 29863, 29864
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

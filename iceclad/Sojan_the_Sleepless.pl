@@ -1,3 +1,4 @@
+# items: 25104, 20474
 sub EVENT_ITEM {
   # Handin: Coldain Toolset
   if(plugin::check_handin(\%itemcount, 25104 => 1)){

@@ -1,3 +1,4 @@
+-- items: 57012, 57051
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail") and qglobals["beast_epic"] == "18" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(303092) == false) then

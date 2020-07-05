@@ -1,3 +1,4 @@
+-- items: 10530
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	if(e.message:findi("follow")) then

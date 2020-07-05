@@ -1,3 +1,4 @@
+# items: 25112, 25113, 25056
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What brings you to the hall of the frost giants, little one? Have you come to serve our lord and master? Or are you simply a scout for a raiding party? I warn you, do not make war on my kin. I will twist the elements to my will and destroy you if that is your intent.");

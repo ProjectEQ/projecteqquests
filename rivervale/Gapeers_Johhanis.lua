@@ -4,6 +4,7 @@
 --NPCs Involved:Gapeers Johhanis
 --Items Involved:Algae Covered Flesh, Swollen Flesh, Waterlogged Flesh
 ----------------------------------
+-- items: 1736, 1737, 1735, 1731
 
 function event_say(e) 
 	if(e.message:findi("Hail")) then

@@ -1,3 +1,4 @@
+# items: 17026, 12427, 4191, 4190, 12428, 4192, 18469, 12822, 7881, 18470, 22924, 18232, 18233, 12429
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hmmph!! Expect to be a great master such as I? Maybe. You still appear to be a [whiff].");

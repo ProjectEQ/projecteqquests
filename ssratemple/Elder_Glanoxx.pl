@@ -1,3 +1,4 @@
+# items: 13006
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("looks like he's been sick for some time. He looks at you for a moment and motions for something to drink.");

@@ -1,5 +1,6 @@
 --dranik/#Filligno_the_Slayer.lua NPCID 336098
 --ShadowKnight Epic 2.0
+-- items: 24584, 47100, 55903, 50003
 local count
 
 function event_say(e)

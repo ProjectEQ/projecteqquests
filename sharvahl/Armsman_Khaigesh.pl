@@ -1,4 +1,5 @@
 #Armsman_Khaigesh  ID 155058
+# items: 3452, 17604, 5553, 3454, 5545, 5550, 3453, 5557
 
 sub EVENT_SAY {
   if ($text=~/lesson/i) {

@@ -1,3 +1,4 @@
+-- items: 31828, 22570, 6949, 6950, 22571
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Make it a habit of walking into peoples rooms now do ya? Well seeing as I'm here on business I may have a [proposition] for you.");

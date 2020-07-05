@@ -1,5 +1,6 @@
 # Beer for the guards
 #
+# items: 19967
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

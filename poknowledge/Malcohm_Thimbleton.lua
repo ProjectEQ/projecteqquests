@@ -1,4 +1,5 @@
 -- poknowledge\Malcohm_Thimbleton.lua NPCID 202341 
+-- items: 26528, 77503, 6073, 77501, 29084, 77504, 10845, 77502, 2798, 77500, 30858, 77505
  
 function event_say(e)
 		if(e.message:findi("hail")) then

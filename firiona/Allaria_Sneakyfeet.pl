@@ -1,5 +1,6 @@
 # Rozzut's Whistler
 #
+# items: 18347
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

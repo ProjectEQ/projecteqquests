@@ -1,3 +1,4 @@
+# items: 1675, 1669
 sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0
   quest::say("Are you the one they sent to help our cause? I should have known they would send a green witch doctor to serve Bertoxxulous and myself. Very well, you will have to suffice. I have a [" . quest::saylink("task") . "] you must fulfill if you wish to know the blessing of my god and impress your masters.");

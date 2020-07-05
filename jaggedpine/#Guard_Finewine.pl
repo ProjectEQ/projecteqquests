@@ -2,6 +2,7 @@
 #
 #Quest: Qeynos Badge of Nobility (Badge #5) (Incomplete)
 #
+# items: 8283, 8199, 8198, 8284, 8278, 8279
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

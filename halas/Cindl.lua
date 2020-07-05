@@ -1,3 +1,4 @@
+-- items: 12621, 13761, 2131, 2134, 2127, 2126, 2129, 2125, 2133, 12223, 2034, 2171, 2164
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome to my humble shop. I offer fine items fashioned from the skins of the beasts of Everfrost. Leather is my specialty and I can always use [extra hides].");

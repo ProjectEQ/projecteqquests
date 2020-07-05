@@ -1,3 +1,4 @@
+-- items: 12105, 12104
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. Nice to make your acquaintance. Be careful in the plains. There are many creatures. Just stay close to the guard towers.");

@@ -1,5 +1,6 @@
 ##A_Tempest_Spirit.pl
 #Icewind
+# items: 59041, 59008
 
 #This guy does not need to be hanging around, depopping him after 20 minutes of doing nothing, if there was no turn-in.
 #Probably not needed, but I like to be tidy.

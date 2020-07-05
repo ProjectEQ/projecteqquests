@@ -1,3 +1,4 @@
+-- items: 12774, 20475
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yes Niera! Oh. Erm. Hi. I mean, uh. How are you?");

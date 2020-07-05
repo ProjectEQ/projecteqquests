@@ -1,3 +1,4 @@
+# items: 18240, 18241
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Mind yourself in these parts! There are many dangers. Stay away from the water, if you know whats good for you.");

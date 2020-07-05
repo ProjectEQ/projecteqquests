@@ -1,3 +1,4 @@
+# items: 2690, 2689
 sub EVENT_SPAWN {
 	quest::say("Who is the most fearless [vampyre slayer] of your fellowship?");
 	quest::settimer(1,300);

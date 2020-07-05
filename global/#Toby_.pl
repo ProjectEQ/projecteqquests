@@ -1,3 +1,4 @@
+# items: 85062, 1002, 85064, 85068, 85065, 85063, 85066, 85067
 sub EVENT_SPAWN {
 	quest::say("I am not easily killed!");
 	quest::settimer(1,300);

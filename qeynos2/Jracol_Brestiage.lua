@@ -1,3 +1,4 @@
+-- items: 13903, 18722
 local proof = 0;
 
 function event_say(e)

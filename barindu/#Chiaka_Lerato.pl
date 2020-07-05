@@ -1,3 +1,4 @@
+# items: 64010, 64008, 64009
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("ignores your attempts to talk to her.");

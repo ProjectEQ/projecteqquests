@@ -1,3 +1,4 @@
+-- items: 14321, 13980, 14031, 11139, 52355
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("rustles and looks up at you in acknowledgment.");

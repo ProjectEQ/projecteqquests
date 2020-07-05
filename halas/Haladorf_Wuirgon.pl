@@ -1,3 +1,4 @@
+# items: 55352, 55347, 55345, 55344, 55349, 55346, 55348, 55350, 20184, 27409, 20179, 13058, 55353
 sub EVENT_SAY {
  if($text=~/hail/i){ 
   quest::say("Welcome. If you are a young [berserker] wishing to begin your training, I can perhaps be of assistance.");

@@ -1,3 +1,4 @@
+# items: 17027, 18234, 12430, 5131, 12475
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Welcome. Welcome!!  Time to train.  Time to fight.  Time to serve the Iksar Empire.  You will need weapons.  I have the [footman pike] for all new recruits to earn.");

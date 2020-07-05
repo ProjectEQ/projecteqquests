@@ -1,3 +1,4 @@
+# items: 12319, 10343, 12438, 3147
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Rrrr..I am  Asad. Shazda of the Kerran [Sejah]. It is my duty to ensure the safety of what lands have not been taken from us by the Erudites, and to train my soldiers in the fighting styles of our heritage.");

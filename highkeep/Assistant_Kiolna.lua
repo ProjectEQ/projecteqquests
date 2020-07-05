@@ -1,3 +1,4 @@
+-- items: 12143, 18936, 12193, 13323
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello! I am Jaylin's new assistant, Kiolna. If you wish to hand in your keys, please give them to me and I will be happy to assist you! It is a pleasure doing business with you.");

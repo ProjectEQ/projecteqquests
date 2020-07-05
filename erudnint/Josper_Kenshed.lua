@@ -1,3 +1,4 @@
+-- items: 17944, 13898, 12208, 12207, 15380
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Come forward and speak.  What is it you seek within these walls?  Let it be the knowledge of wizardry. for that is what we are.  Only a [servant of wizardry] should be within these walls.");

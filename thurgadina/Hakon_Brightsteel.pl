@@ -1,5 +1,6 @@
 # The Velium Focus
 # Created by Gonner
+# items: 1690, 22569, 1691
 
 
 sub EVENT_SAY {

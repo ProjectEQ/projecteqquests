@@ -1,3 +1,4 @@
+# items: 18271, 12829, 12797, 12798, 12799, 4193, 12821, 4192, 4194, 18466, 22921, 7881, 18465, 22920, 18272, 24770, 4190
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::emote("bows with elegance and grace. You can see her arms rippling with muscles.");

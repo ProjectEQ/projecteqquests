@@ -1,3 +1,4 @@
+-- items: 21699, 21971, 21969
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yes? What do you want I am very busy with my studies. I have laready paid my taxes this month so do not even tell me that Sneed sent you. That will not work anymore.");

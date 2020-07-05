@@ -1,4 +1,5 @@
 #Velter gives us the last shackle in the line, the Shackle of Tynonnium. Since players must turn in their Shackle of Steel to the tome keeper in Kaesora to complete Veltar's quest, there is no requirement to check for it here.
+# items: 7879, 7880, 7881, 4199
 
 sub EVENT_SAY {
  if($text=~/hail/i){

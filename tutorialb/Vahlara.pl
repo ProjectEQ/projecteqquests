@@ -1,5 +1,6 @@
 #BeginFile Vahlara.pl
 #Quests for The Mines of Gloomingdeep - Vahlara: Gloomingdeep Silk Collecting
+# items: 54224, 54234, 54217, 54218, 54219, 54220, 54221, 54222, 54223, 54225, 54226, 54227, 54228, 86010
 sub EVENT_SAY {
   if (quest::istaskactivityactive(17,3)) {
     quest::say("Well done. The revolt's food supply is safe for the time being. Report back to the guards when you're rested.");

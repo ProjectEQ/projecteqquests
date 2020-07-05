@@ -1,3 +1,4 @@
+-- items: 20016, 10351, 18905, 20017, 18906
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Slavedrivers are just lackeys for the [taskmaster]. He is the real orc in charge.");

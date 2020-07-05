@@ -1,5 +1,6 @@
 # final task in quest for the spell: divine might
 #
+# items: 6708, 6709, 15693
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

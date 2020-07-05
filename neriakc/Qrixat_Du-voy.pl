@@ -1,5 +1,6 @@
 # Phylactory will get you nowhere
 # Created by Gonner
+# items: 55274
 
 
 sub EVENT_SAY {

@@ -1,5 +1,6 @@
 # #20451 -> nuien -> gives 20451 & spawns Teola
 #
+# items: 20451
 
 my $move;
 

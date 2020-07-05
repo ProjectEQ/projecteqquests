@@ -1,3 +1,4 @@
+-- items: 16165
 function event_spawn(e)
 	eq.set_timer("blurt",600000);
 end

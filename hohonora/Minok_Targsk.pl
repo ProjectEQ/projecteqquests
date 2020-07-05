@@ -1,5 +1,6 @@
 #Minok_Targsk.pl
 #Found the missing pieces in the db, no reason for this not to be finished afaik. -Kilelen
+# items: 51628, 51629, 51626, 51627
 sub EVENT_SAY {
    if($text=~/Hail/i)   {
 	quest::say("Who defines the lines of being right or wrong? When a good man is under pressure he sometimes makes bad choices. Should this man not be forgiven or should he be judged to be wrong for the rest of his life? It's just not right. [Grenic] should be allowed back into the halls as he once was.");

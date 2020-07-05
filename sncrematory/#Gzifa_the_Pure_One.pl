@@ -1,3 +1,4 @@
+# items: 55608, 55609, 55610, 55611
 sub EVENT_SPAWN {
   quest::ze(15, "My time here is short! Come find me for your reward!");
   quest::settimer(1, 900);

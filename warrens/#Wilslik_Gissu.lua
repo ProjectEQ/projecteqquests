@@ -1,5 +1,6 @@
 --warrems/Wilslik_Gissu.lua NPCID 101133
 --Shaman Epic 1.5
+-- items: 57550, 57369, 52921
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("elder spirit sent me") and qglobals["shaman_epic"] == "1") then

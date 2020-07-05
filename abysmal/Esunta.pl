@@ -1,3 +1,4 @@
+# items: 58019, 58078, 58119, 58123, 58043, 58096, 58105, 58080, 58020, 58084, 58085, 58082, 58083
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("We is workin all day and night to make tings for da Wayfarers. Can you help us wit all dis [work]? We wants time to play wit da new ore.");

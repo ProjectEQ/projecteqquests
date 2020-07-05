@@ -1,3 +1,4 @@
+# items: 29281, 29294
 sub EVENT_SPAWN
 {
 	quest::settimer("depop", 120);

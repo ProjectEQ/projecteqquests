@@ -1,5 +1,6 @@
 # Nioti's Predicament
 # Created by Gonner
+# items: 19140, 55560, 55566, 55561, 55557, 55564, 55556, 55565, 10503, 55567, 9747, 9654, 55559
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

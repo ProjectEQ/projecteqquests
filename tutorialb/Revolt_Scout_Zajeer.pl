@@ -3,6 +3,7 @@
 # quests:
 # - Scouting Gloomingdeep - taskid:32 - starts/completes
 # - Sabotage - taskid:31 - Starts
+# items: 86011
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {

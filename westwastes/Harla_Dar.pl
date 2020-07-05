@@ -1,4 +1,5 @@
 # Shroud of the Dar Brood
+# items: 27260, 27261
 
 sub EVENT_SAY {
   if ($faction <= 4) {

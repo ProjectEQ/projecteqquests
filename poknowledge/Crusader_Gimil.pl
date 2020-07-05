@@ -1,5 +1,6 @@
 #Crusader_Gimil.pl
 #Paladin Tomes/Planar Armor Exchange
+# items: 4851, 4852, 4853, 4854, 4855, 4856, 4857, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

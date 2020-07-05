@@ -1,3 +1,4 @@
+-- items: 1797, 1793
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail! %s, You best not be associating yourself with the likes of Najena.",e.other:GetName()));

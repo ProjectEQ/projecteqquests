@@ -1,5 +1,6 @@
 #BeginFile: felwithea\Chenori_Berinal.pl
 #Quest for Northern Felwithe - Chenori Berinal: LoY Cultural Robes
+# items: 65212
 
 sub EVENT_SAY {
   my $TrueRace = $client->GetBaseRace();

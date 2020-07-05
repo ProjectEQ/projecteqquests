@@ -6,6 +6,7 @@
 -- # Author:  Andrew80k
 -- # Converted to Lua:  robregen
 -- ####################################
+-- items: 13945
 
 function event_say(e)
 	if(e.message:findi("hail")) then

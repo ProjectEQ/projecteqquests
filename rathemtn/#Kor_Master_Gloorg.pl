@@ -1,3 +1,4 @@
+# items: 17393, 51057, 51055, 51059, 51058, 51061, 51056, 51060, 51094, 51096
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome back, young Kor. I hope your training is going well. Unfortunately I have been unable to keep up to date on your progress, but should you need advanced training in any individual skills, I am here to help you with that. As well, I am here to guide you through your growth as a Cleric in the Guktan Army. With the skills that you learn here, you will be better prepared to serve the Army. If you do indeed plan on following the path of a [Cleric], I have some tasks that you will need to complete, if it suits your interest.");

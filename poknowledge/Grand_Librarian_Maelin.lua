@@ -1,4 +1,5 @@
 --poknowledge/Grand_Librarian_Maelin.lua NPCID 202125
+-- items: 84091, 84092, 84093, 84087, 52950, 55900, 20520
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(eq.is_task_active(220)) then

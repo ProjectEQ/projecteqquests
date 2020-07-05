@@ -1,3 +1,4 @@
+# items: 3000
 sub EVENT_DEATH_COMPLETE{
 #quest::summonitem("3000");	
 }

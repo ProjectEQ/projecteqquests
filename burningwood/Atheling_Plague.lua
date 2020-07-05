@@ -1,4 +1,5 @@
 --Shaman Skull Quest 6
+-- items: 12764, 12750
 
 
 function event_say(e)

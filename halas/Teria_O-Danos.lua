@@ -1,3 +1,4 @@
+-- items: 13961, 12221
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good day to ye! Ye look a wee bit hungrry. I sell many fine foods. Please have a look. Might I suggest the [lion roast]? It is a wee bit expensive, but well worth it.");

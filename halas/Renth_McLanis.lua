@@ -1,3 +1,4 @@
+-- items: 13246, 17009, 17001, 13249, 13248, 13247, 13233, 12227, 5367, 12225, 5368
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 6) then
 		if(e.message:findi("assist")) then

@@ -1,3 +1,4 @@
+-- items: 18740, 13559, 13951, 5353
 function event_trade(e)
 	local item_lib = require("items");
 

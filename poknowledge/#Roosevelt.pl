@@ -1,3 +1,4 @@
+# items: 111901, 124688
 sub EVENT_SAY {
 	if($text=~/interested/i) { 
 		quest::say("Great! Take this tool. It'll help you track down your targets. Be warned, however! Your tool is not protected from sabatoge, and does not work well if your target roams about, instead of staying in a single spot. My boys know this, and will take advantage! If you have trouble finding a particular target, Icarus may be able to help. Let me know when you are [" . quest::saylink("ready") . "].");

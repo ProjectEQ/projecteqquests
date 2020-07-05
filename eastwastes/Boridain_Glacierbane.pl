@@ -1,4 +1,5 @@
 # Coldain Ring: Quest 2
+# items: 30265, 30266, 30267
 
 my $boridain = 0;
 

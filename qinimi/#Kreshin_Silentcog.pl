@@ -1,3 +1,4 @@
+# items: 67415, 67401
 sub EVENT_SPAWN {
   quest::settimer("KreshinDepop",240); #Depop after 4 minutes
   quest::say("Thank you for rescuing me. I sense that one of you holds a stone key which allowed you entrance into the courts. Please show it to me.");

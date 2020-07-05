@@ -1,4 +1,5 @@
 -- Quest for Raskena Djor in erudnint - Wizards first assignment 
+-- items: 10307, 13250, 15373, 15054, 15205, 15288, 15372, 15374
 
 function event_say(e)
 	if(e.message:findi("hail")) then

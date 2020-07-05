@@ -1,4 +1,5 @@
 -- Part of Ghoulbane quest
+-- items: 2416
 
 function event_say(e)
 	if(e.message:findi("hail")) then

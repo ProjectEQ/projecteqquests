@@ -1,3 +1,4 @@
+-- items: 13006
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say("I wish it wasn't so blasted hot, I could really use some water.");

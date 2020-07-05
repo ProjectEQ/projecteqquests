@@ -1,4 +1,5 @@
 # Gustave
+# items: 85064, 85068, 85065, 85063, 85066, 85067
 
 sub EVENT_SAY {
 	if(quest::istaskactivityactive(222,9)) {

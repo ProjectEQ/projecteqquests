@@ -1,3 +1,4 @@
+# items: 84091, 84092, 84093, 84088
 sub EVENT_SPAWN {
   quest::settimer("ec_Ragus", 600);
 }

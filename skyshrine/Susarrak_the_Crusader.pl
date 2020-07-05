@@ -1,3 +1,4 @@
+# items: 9342, 9341, 9340, 9339, 30390, 9331, 9333, 9332, 9334, 30389, 9298, 9297, 30394, 9317, 9326, 30395
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I am the talon that justly strikes down our enemies and shall fulfill our destiny in the trials of blood and vengeance. I sense that the loyalty you bear toward the children of scale is strong but the siren voice that has called you to us is still a whisper upon your mind, and it is a song of curiosity and greed that fuels you yet. Since the dawn of your creation, all of your kind has proven that without tangible reward to do otherwise, your blades would be aimed for our hearts. But do not think we fault you for merely this -- such shallow lusts have become a definition of your kind, and we do not bear you ill will for it. However, the [champions] are not as the others of Veeshan's brood and your past deeds shall [not bear fruitful] in your dealings with us.");

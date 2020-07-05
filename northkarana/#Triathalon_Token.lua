@@ -1,4 +1,5 @@
 -- Custom script  for GM event, created by Shadowblade
+-- items: 2300, 20695
 
 function event_say(e)
 	if(e.message:findi("hail")) then

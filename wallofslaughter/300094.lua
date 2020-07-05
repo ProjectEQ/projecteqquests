@@ -1,3 +1,4 @@
+-- items: 52413
 function event_say(e)
 	-- this is a hack/work around until the expedition system is implemented.
 	if (e.message:findi("hail")) then

@@ -1,5 +1,6 @@
 #BeginFile lakerathe\Kazen_Fecae.pl
 #Quest for Lake Rathetear - Kazen Fecae: Necromancer Epics (1.0, Pre & 1.5)
+# items: 9831, 20641, 20642, 20647, 20653, 18087, 20652, 20544, 20612, 21799, 22691
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

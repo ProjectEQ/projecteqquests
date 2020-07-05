@@ -1,3 +1,4 @@
+-- items: 17814, 10952, 10953
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Greetings friend %s! I am a provider of the highest quality steel ore known to Norrath! This ore is in such demand that I often run low and find it difficult to restock my supplies. If you're [looking for a job] I will gladly pay you for some of your time.",e.other:GetName()));

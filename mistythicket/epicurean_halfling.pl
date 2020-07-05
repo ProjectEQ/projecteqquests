@@ -1,5 +1,6 @@
 # Phylactery Will Get You Nowhere
 # Created by Gonner
+# items: 16904, 55276
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

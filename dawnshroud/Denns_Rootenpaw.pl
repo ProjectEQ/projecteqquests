@@ -1,3 +1,4 @@
+# items: 69946, 69947, 69948, 69949
 sub EVENT_SAY { 
  if($text=~/Hail/i){
   quest::say("Can I help you? Can't you see that I'm busy right now."); 

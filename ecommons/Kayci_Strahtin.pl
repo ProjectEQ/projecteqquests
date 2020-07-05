@@ -1,3 +1,4 @@
+# items: 55268, 55269, 55265
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 55268 => 1)) { #Kizpi's Note
     quest::say("Incessant fleas! Ever since I arrived in the Commonlands, they have plagued me! Oh, sorry. What's this? A note from Kizpi? Let me see. So the ol' bugger finally found a way to upgrade the Satchel of Abu-Kar, eh? It says here that you will need a Rujarkian Orc Hide. You are in luck, I just happen to have one that a previous adventure gave to me from his recent excursion to the Rujarkian Hills. You may have it. You will need some other items though. Kizpi didn't know about that?! His brain must be freezing out there in Everfrost!");

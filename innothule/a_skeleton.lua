@@ -1,4 +1,5 @@
 -- Created by noudess
+-- items: 12218, 12215
 
 function event_say(e)
 	local pfaction = e.other:GetFaction(e.self)-1;

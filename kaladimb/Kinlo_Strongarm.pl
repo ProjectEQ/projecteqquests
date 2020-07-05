@@ -1,5 +1,6 @@
 # enchanted clay quest/refined mithril blade -- ranger epic
 #
+# items: 5664, 20455, 20478, 20485, 20482, 20483
 
 sub EVENT_SPAWN {
 	quest::settimer(1,2700);

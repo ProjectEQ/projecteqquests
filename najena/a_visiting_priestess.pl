@@ -3,6 +3,7 @@
 #
 # Not sure on Faction (Alla posts say dubious does not work I'm not sure on indiff)
 #
+# items: 6323, 6324, 6335, 6336, 18401
 
 # Faction value using function.  The $faction DOES NOT WORK for Priests of Innoruuk (ID 256) in the release on 08/28/2009
 my $facval;

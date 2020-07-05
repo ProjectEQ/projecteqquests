@@ -1,3 +1,4 @@
+# items: 54062, 10053, 54048, 54033, 54050, 54049, 54034, 54051, 54035, 54040, 16537, 10037, 54027, 54042, 54041, 54028, 54043, 54029, 54058, 54060, 54056, 54039, 54059, 54061, 54057, 9590
 sub EVENT_SAY {
  if($text=~/Hail/i) {
    quest::say("Hello, my name is Seana Marsinger. I am here representing my loyalty to the League of Antonican Bards. It matters not to me whether you support the League or loathe it; propaganda is not my objective. Everyone must find their own truths in this life path. So says Quellious. To business then, are you [familiar with the Plane of Hate?]");

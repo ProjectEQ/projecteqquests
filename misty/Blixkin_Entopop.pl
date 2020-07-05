@@ -6,6 +6,7 @@
 #Giant Fire Beetle Leg, Giant Scarab Egg Sack, Giant Wasp Wing, 
 #Spiderling Eye, Spiderling Silk
 #################
+# items: 17922, 18011, 13268, 14010, 13281, 13280, 14015, 16875
 
 sub EVENT_WAYPOINT_ARRIVE{
 	if(($wp eq 2) || ($wp eq 9) || ($wp eq 14) || ($wp eq 21) || ($wp eq 24)){

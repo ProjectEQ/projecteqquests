@@ -1,4 +1,5 @@
 # Quests for Bard Lambent Stones
+# items: 10032, 10000, 10117, 16507, 19047
 
 sub EVENT_SAY { 
   if($text=~/hail/i) {

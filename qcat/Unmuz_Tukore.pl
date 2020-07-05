@@ -1,3 +1,4 @@
+# items: 20206, 20186, 20187
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Your eyes betray your eagerness and your naivety young one. I am Unmuz Tukore. Scourge Knight of the Bloodsabers. If you have come seeking the [training as a Shadowknight] then I will offer you guidance.");

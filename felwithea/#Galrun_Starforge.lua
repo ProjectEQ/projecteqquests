@@ -1,3 +1,4 @@
+-- items: 69975, 69976, 69981, 69956
 function event_say(e)
 	--local raid = e.other:GetRaid();
 	--local instance_id = eq.get_instance_id("mmcc", 50);

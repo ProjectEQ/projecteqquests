@@ -1,3 +1,4 @@
+-- items: 13241, 13245, 2012, 17001, 10004, 10017, 1038, 10016, 13877, 2135, 7007, 8008, 10009, 13007, 5014, 13003
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail, mighty " .. e.other:GetName() .. "! I assume ye must be a [warrior o' the Wolves]. Why else would ye approach a trainer such as meself, then?");

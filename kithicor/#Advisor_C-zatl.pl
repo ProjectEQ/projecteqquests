@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- #Advisor_C`zatl
+# items: 28057
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

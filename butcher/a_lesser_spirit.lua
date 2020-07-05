@@ -1,4 +1,5 @@
 --This will start Shaman Epic 1.0
+-- items: 1665
 function event_spawn(e)
   eq.set_timer("depop",600000);
 end

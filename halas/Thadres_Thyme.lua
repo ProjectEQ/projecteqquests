@@ -1,3 +1,4 @@
+-- items: 18136, 18137, 18138, 18139
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. " .. e.other:GetName() .. "!  It's hard to believe just how cold it gets here!  It really has been wearing me down. Especially after the [journey] from Qeynos.");

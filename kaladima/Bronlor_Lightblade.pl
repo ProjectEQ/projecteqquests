@@ -1,3 +1,4 @@
+# items: 2429, 2396, 1430
 sub EVENT_SAY {
 	if($text=~/hail/i){ 
 		# Initiate Symbol of Brell Serilis (Start)

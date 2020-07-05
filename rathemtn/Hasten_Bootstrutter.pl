@@ -1,4 +1,5 @@
 # Journeyman Boots
+# items: 12268, 7100, 2300
 
 sub EVENT_SAY {
   if ($text=~ /Hail/i) {

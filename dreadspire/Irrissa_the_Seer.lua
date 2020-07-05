@@ -1,3 +1,4 @@
+-- items: 52523
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Ah, " .. e.other:GetName() .. ". You have returned.  I have watched as you walked your path.  The reflecting pool has shown me of your feats.  You were introduced to the cruel and unpredictable malice of Graniteclaw and lived to tell about it.  Now I sense that you wish to understand more.  Allow me to hold the Rune-Etched Stone and I will grant you the understanding you seek.");

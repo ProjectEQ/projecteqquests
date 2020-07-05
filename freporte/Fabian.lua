@@ -1,3 +1,4 @@
+-- items: 13709, 13710, 13708
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, merry gentlefolk! If you enjoy the music, please feel free to cross my palm with gold.");

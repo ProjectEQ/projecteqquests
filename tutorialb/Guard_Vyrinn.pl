@@ -4,6 +4,7 @@
 # - Spider Caves - taskid:28 - starts
 # - Spider Tamer Gugan - taskid:29 - starts/completes
 # - Arachnophobia (Group) - taskid:33 - starts
+# items: 54604
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {

@@ -1,3 +1,4 @@
+# items: 9464, 20877, 20878
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello Traveler, I do not see many this deep into the woods.");

@@ -1,4 +1,5 @@
 -- Quest for Akbaq_Salid in erudnint - Titan Samples (good) 
+-- items: 6960, 6946, 2573, 6958, 6964, 2575, 6947, 12097, 2574
 
 
 function event_say(e)

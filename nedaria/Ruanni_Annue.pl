@@ -1,5 +1,6 @@
 # Gather shells
 # created by Gonner
+# items: 66181
 
 sub EVENT_SAY {
 

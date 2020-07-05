@@ -1,5 +1,6 @@
 # Kwinn's Quest - subquest of shackle of tynnonium
 #
+# items: 17038, 12828, 12822
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

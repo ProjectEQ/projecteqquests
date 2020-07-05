@@ -1,5 +1,6 @@
 #Quests covered in this file:
 #Shaman Skull Quest 6
+# items: 12761
 
 sub EVENT_SAY
 {

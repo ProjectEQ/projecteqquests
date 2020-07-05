@@ -1,3 +1,4 @@
+# items: 17253, 19635, 19634, 19632, 19637, 19633, 19636, 19631, 28062, 28061, 26075
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hail dere me friend. I be Haldorak Foamymugs High Priest of Clerics dat heed the call of Brell. I am a very busy Dwarf for I have many new house recruits to train. Ye see I am in charge of all the young ones that pass through our halls. They must all undergo and pass me [tests] before they are truly ready to travel the dangerous world of Norrath.");

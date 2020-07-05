@@ -1,5 +1,6 @@
 #riwwiarena global to determine if event is active
 #bic_riw global to determine if event can be started
+# items: 52223, 52085, 52224, 52086, 52225, 52087, 52226, 52088, 52227, 52089, 52228, 52090, 52229, 52091, 52230, 52092, 52231, 52093, 52232
 
 
 sub EVENT_SAY {

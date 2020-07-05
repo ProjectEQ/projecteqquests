@@ -1,3 +1,4 @@
+# items: 12752, 12750
 
 #Quests covered in this file:
 #Shaman Skull Quest 6

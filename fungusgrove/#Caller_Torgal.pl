@@ -1,5 +1,6 @@
 # east cavern event caller
 #
+# items: 28700, 28701, 28702, 28705
 
 srand;
 

@@ -4,6 +4,7 @@
 # - Arachnophobia (Group) - taskid:33 - completes
 # - The Battle of Gloomingdeep - taskid:27 - starts/completes
 # - Freedom's Stand (Group) - taskid:30 - starts/completes
+# items: 82930, 82937, 82944, 82951, 77780, 82929, 82936, 82943, 82950
 
 
 sub EVENT_SAY {

@@ -1,3 +1,4 @@
+# items: 18234, 12435
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("looks at you with sorrowful eyes and wipes his dripping nose.");

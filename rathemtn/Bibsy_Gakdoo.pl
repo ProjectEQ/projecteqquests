@@ -1,3 +1,4 @@
+# items: 55031, 55033, 55034
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("Bibsy Gakdoo stares at you, it is obvious he is ignoring you.");

@@ -4,6 +4,7 @@
 #
 #NPC Name: Dagron Stonecutter
 #NPC ID: 113188
+# items: 25831, 24919, 25440, 25814, 24914, 25441, 25821, 24916, 25442, 25838, 24918, 25443, 25832, 24920, 25444, 25825, 24915, 25445, 25833, 24917, 25446
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

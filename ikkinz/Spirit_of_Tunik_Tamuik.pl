@@ -1,3 +1,4 @@
+# items: 60220
 sub EVENT_SPAWN {
   $ikky1_event = 0;
 }

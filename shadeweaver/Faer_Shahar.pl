@@ -1,4 +1,5 @@
 #Quest: Garbage Collecting
+# items: 30618, 17890
 
 #NPC: Faer Shahar
 #Zone: Shadeweaver's Thicket

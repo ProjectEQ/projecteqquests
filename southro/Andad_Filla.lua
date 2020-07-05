@@ -1,6 +1,7 @@
 -- Zone: Southern Ro
 -- Short Name: sro
 -- Zone ID: 35
+-- items: 20533, 20534
 
 -- NPC Name: Andad Filla
 -- NPC ID: 35030

@@ -1,5 +1,6 @@
 --abysmal/Rewina_Jalmoy.lua NPCID 279199 or 279271
 --Warrior Epic 1.5
+-- items: 60295, 60296, 60297, 60298, 60299
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then

@@ -1,3 +1,4 @@
+# items: 18332, 17515
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Oh yes. hello there. I am sorry to be so short, but Governor Erikal had asked me to investigate the [Recuso] and... well, the going has been slow as of yet.");

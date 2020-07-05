@@ -1,3 +1,4 @@
+# items: 67054
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say("Please leave me be if they catch me talking to you I will be punished again.");

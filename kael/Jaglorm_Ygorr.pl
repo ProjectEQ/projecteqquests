@@ -4,6 +4,7 @@
 #
 #NPC Name: Jaglorm Ygorr
 #NPC ID: 113160
+# items: 25841, 24919, 25398, 25805, 24914, 25399, 25815, 24916, 25400, 25836, 24918, 25401, 25840, 24920, 25402, 25827, 24915, 25403, 25838, 24917, 25404
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

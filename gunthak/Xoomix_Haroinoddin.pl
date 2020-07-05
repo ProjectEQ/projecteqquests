@@ -1,5 +1,6 @@
 #zone: gunthak NPC: Xoomix_Haroinoddin
 #Angelox
+# items: 21979, 21981, 21982, 21980, 21983, 21984, 21985, 61003
 
 sub EVENT_SAY { 
  if ($text=~/Hail/i){

@@ -1,6 +1,7 @@
 -- Edit on April 19, 2007 by Kilelen
 -- Edit by spre
 -- Converted to .lua by Speedz
+-- items: 17979, 13198, 5013, 5014, 5015, 5016, 5019, 5020, 12340, 17033, 9426, 28618, 29906, 28165, 15980, 12336, 12337, 12254, 12339, 13216, 13217, 17981, 6027
 
 function event_say(e)
 	if(e.message:findi("hail")) then

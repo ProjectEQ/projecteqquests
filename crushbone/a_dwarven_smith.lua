@@ -1,3 +1,4 @@
+-- items: 10351, 13850, 9307, 13851, 3301, 6315
 function event_say(e)
 	if(e.message:findi("ringmail")) then
 		e.self:Say("The king was the last person I heard of who was wearing what sounded like my ringmail. Return it to me and I will reward you with a fine weapon I forged myself.");

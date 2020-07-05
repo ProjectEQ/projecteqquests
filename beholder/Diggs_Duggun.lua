@@ -3,6 +3,7 @@
 -- small dialogue addition to key the player to hand the leg bone to valeron.
 -- more details in valeron's .pl file in freportn.
 --
+-- items: 5018, 13036, 6701
 
 function event_say(e)
 	if(e.message:findi("hail")) then

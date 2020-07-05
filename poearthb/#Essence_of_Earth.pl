@@ -1,3 +1,4 @@
+# items: 29146
 sub EVENT_SPAWN {
 quest::settimer("essence",1200);
 }

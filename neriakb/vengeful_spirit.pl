@@ -1,3 +1,4 @@
+# items: 18401, 6403
 
 # vengeful spirit - The Visiting Priestess
 #

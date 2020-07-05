@@ -1,3 +1,4 @@
+-- items: 62884, 62868, 62885
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("plan to find") and qglobals["druid_epic"] == "10") then

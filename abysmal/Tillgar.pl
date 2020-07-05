@@ -1,5 +1,6 @@
 # Freeport Stout for Tillgar
 # Created by Gonner
+# items: 13943, 55579
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

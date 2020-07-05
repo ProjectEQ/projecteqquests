@@ -4,6 +4,7 @@
   --NPCs Involved:Fiddy Bobick, Marshall Lanena
   --Items Involved:Bag of Piranha Teeth, Piranha Bag, Piranha Tooth
   ----------------------------------
+-- items: 13870
 function event_waypoint_arrive(e)
 	if(wp == 6) then
 		e.self:Say("When will Wickystick send help?!");

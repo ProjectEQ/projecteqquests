@@ -8,6 +8,7 @@
 #
 #
 # Turn in Stanos' head for the Guise of the Coercer
+# items: 28058, 2475
 
 
 sub EVENT_SAY {

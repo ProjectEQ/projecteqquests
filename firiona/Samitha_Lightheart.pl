@@ -1,3 +1,4 @@
+# items: 19238, 19244, 19232, 19234, 19235, 19233, 19236, 19240
 sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("And a good day to you, too! I have traveled here in the name of the Jaggedpine Treefolk to search out any new and [wonderful powers] that would aid us in preserving the wildlife back home. I have not been able to venture far from this outpost as the inhabitants of the nearby woods pose a great danger. I have decided to wait for more of my Treefolk to arrive before adventuring further.  There's safety in numbers, they always say.");

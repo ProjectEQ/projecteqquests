@@ -1,4 +1,5 @@
 #Zone Katta   Legionnaire_Neville  ID  160263
+# items: 31772
 
 sub EVENT_SAY  {
 

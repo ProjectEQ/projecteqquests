@@ -1,3 +1,4 @@
+# items: 17002, 10018, 12137, 12136
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Welcome to the new order of life, the life of service to our diseased Lord, Bertoxxulous. Did you encounter any of my [pets] on the way here? I hope not.");

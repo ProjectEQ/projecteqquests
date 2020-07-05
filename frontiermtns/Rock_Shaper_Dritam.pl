@@ -1,5 +1,6 @@
 ##Text is adapted from another completed quest file for the freed slaves
 ## could find no text on allas
+# items: 62078, 62079, 62195
 
 sub EVENT_SAY {
   if($text=~/hail/i){

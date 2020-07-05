@@ -1,3 +1,4 @@
+-- items: 52965, 52952, 119184, 52956
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);	
 	if(e.message:findi("hail") and e.other:Class()=="Enchanter") then 

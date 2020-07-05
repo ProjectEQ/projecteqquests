@@ -1,3 +1,4 @@
+-- items: 13983, 12125, 15016, 16581, 13009, 13067
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. child.  Welcome to the Temple of Life. Here. you may pay homage to the [Prime Healer]. [Rodcet Nife].  If you are in need of [healing] or require me to [cure disease] or [cure poison]. please inform me.  I am the resident healer of all Qeynos citizens.");

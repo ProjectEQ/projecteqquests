@@ -1,5 +1,6 @@
 #Hrelic_Reista.pl
 #Draught of Thunder
+# items: 28445, 9430, 59528
 
 
 sub EVENT_SAY {

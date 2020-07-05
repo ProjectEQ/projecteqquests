@@ -1,3 +1,4 @@
+-- items: 13752, 2902, 13751, 2903, 13750, 2904
 function event_waypoint_arrive(e)
 	if(e.wp == 1 or e.wp == 12) then
 		eq.set_anim(4052,1);

@@ -1,4 +1,5 @@
 # Part of quest for Rod of Insidious Glamour
+# items: 10085, 10086
 
 sub EVENT_SAY { 
   if($text=~/Hail/i){

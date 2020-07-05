@@ -1,3 +1,4 @@
+# items: 67700, 67398, 67399, 67400, 67415, 67403
 my @player_list = ();
 my $event_started = 0;
 my $counter = 0;

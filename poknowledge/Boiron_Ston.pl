@@ -1,5 +1,6 @@
 #Boiron_Ston.pl
 #Willamina's Needles
+# items: 28085, 28086
 
 
 sub EVENT_SAY {

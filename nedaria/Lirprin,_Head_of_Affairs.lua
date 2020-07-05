@@ -1,3 +1,4 @@
+-- items: 52337, 52347, 47100, 52342, 21346
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(qglobals["Fatestealer"] == "1" and qglobals["Fatestealer_bard"] == "1" and e.message:findi("hail")) then

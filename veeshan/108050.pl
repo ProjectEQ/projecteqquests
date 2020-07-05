@@ -1,4 +1,5 @@
 #Silverwing NPCID: 108050
+# items: 69347, 69323, 69324, 69381, 69382
 
 sub EVENT_SAY {
 	if ($text=~/Hail/i) {

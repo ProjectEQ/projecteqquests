@@ -1,3 +1,4 @@
+# items: 48041, 48044, 4267, 48043, 48042
 sub EVENT_SAY {
 
 if($text=~/hail/i) {

@@ -1,3 +1,4 @@
+-- items: 19917, 19931, 19929, 19930
 function event_say(e)
 	if(e.message:findi("crate of pickhead")) then
 		e.self:Say("I've heard that a dwarf who calls himself Grendig and has not registered with the Coalition of Tradefolk has recently arrived in Freeport and is staying at the Freeport Inn just inside the South Gate. He has brought to Freeport pick heads from his home city of Kaladim. Find Grendig and 'convince' him to 'donate' a crate of pick heads to the Coalition of Tradefolk as tax for peddling his wares in our city.");

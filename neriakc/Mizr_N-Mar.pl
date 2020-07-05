@@ -5,6 +5,7 @@
 # Quests:
 #    Part of quest for Incandescent Mask by Mystic414
 #    Part of quest for Spell: Tashania   by darkonig
+# items: 10531, 10791, 10792
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

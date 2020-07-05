@@ -1,5 +1,6 @@
 -- Gives Ikkinz Group 1 Expedition
 -- Gazak_Klelkek NPCID: 293117
+-- items: 60152
 function event_say(e)
   -- load the current qglobals
   local qglobals = eq.get_qglobals(e.other);

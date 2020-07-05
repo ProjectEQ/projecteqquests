@@ -1,4 +1,5 @@
 #Heirophant Zand starts and ends The Penance quest. This allows a young iksar to replace their guild's starting item if they've lost it. She is also for the 3rd and 5th shaman skullcap quests.
+# items: 18271, 18272, 24770, 5140, 12734, 18054, 12741, 5144, 12740, 5145
 
 sub EVENT_SAY {
   if(($text=~/chosen savior/i) && ($faction <= 5) && ($shmskullquest >= 3)){

@@ -1,4 +1,5 @@
 -- beginning of the main portion of the enchanter epic quest - staff of the serpent
+-- items: 57918, 52960, 10603, 10604, 10639, 10650, 54267, 52959, 54286, 52966, 52952, 52947, 52945
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);  

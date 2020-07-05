@@ -1,3 +1,4 @@
+# items: 18331, 29844
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings, $name. I am Governor Markil Jurbac. It is my primary duty to uphold the law in Katta Castellum. How may I be of assistance to you?");

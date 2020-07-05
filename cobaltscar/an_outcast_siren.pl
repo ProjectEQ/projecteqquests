@@ -1,3 +1,4 @@
+# items: 25107, 25108, 25109, 25110
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Leave me alone, beast! Or I will cut your belly open and feed your entrails to the sharks.");

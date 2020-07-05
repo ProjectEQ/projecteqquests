@@ -1,5 +1,6 @@
 # Gleed's Bow
 #
+# items: 25137, 25033
 
 sub EVENT_SAY {
   if ($faction <= 4) {

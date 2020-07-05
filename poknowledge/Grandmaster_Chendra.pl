@@ -1,5 +1,6 @@
 #Grandmaster_Chendra.pl
 #Monk Tomes/Planar Armor Exchange
+# items: 1201, 1202, 1203, 1204, 1205, 1206, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

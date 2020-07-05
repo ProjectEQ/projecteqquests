@@ -3,6 +3,7 @@
 # Regal Band of Bathezid
 # global RegalBandBathezid, needed to be sure players won't jump to the last part of the quest
 #   at 1 : you gave the Signet of Service to the goblin traitor
+# items: 6475, 6471, 6474
 
 sub EVENT_SAY{
   if (defined($qglobals{RegalBandBathezid}) && ($qglobals{RegalBandBathezid} == 1)) { # we handed the Signet of Service yet

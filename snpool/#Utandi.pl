@@ -1,3 +1,4 @@
+# items: 55617, 55618, 55619, 55620
 my $event;
 
 sub EVENT_SPAWN {

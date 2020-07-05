@@ -1,3 +1,4 @@
+# items: 52156
 sub EVENT_SAY {
    if($client->GetSkill(67) >= 151) {
      if ($text=~/please/i) {

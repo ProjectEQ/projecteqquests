@@ -1,3 +1,4 @@
+# items: 12360, 14914, 14915, 17969, 17032
 sub EVENT_SAY {
   if($text=~/Hail/i) {
     quest::say("Erh?  If you not be here to help Feskr with his [problem] then Feskr want you to leave.");

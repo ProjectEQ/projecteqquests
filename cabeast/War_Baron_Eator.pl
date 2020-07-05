@@ -1,3 +1,4 @@
+# items: 18464, 22919, 7881, 18463, 22918, 12899, 12898, 12896, 5132, 12476, 18073, 18072, 18074, 5134, 12478
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::emote("turns to you and snorts in anger. Some mucus lands on your cheek.");

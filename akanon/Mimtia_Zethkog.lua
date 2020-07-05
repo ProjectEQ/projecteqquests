@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 19634, 19632, 19637, 19633, 19636, 19631, 19635, 10987, 17124
 
 function event_say(e)
 	if (e.message:findi("plague knight boot")) then

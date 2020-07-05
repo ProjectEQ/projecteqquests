@@ -1,3 +1,4 @@
+-- items: 16875, 98471, 98472, 98473
 function event_say(e)
 	if (e.message:findi("hail")) then
 		e.self:Say("Yikes! Don't startle a fellow like that! Have you come to peruse my fine wares or are you looking to be taught the arts of [".. eq.say_link("tinkering mastery",false,"tinkering mastery") .. "]?");

@@ -1,3 +1,4 @@
+-- items: 28054, 17175, 28059
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("stares at you with unblinking eyes. A wide grin crosses Zordak's face and flames flicker in the depths of his eyes, 'Welcome to the new fortress of the Plasmatic Priesthood! It's a shame about Lord Nagafen's untimely death, really it is! Such a powerful and noble creature should not perish at the hands of mortals.'");

@@ -1,3 +1,4 @@
+-- items: 55006, 55026
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello stranger. Welcome to Galliway's. Please excuse me. I am very [tired] right now.");

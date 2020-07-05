@@ -1,3 +1,4 @@
+# items: 3647, 17106, 3644, 3643
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome to the royal court of King Raja Kerrath, King of Shar Vahl City, Descendant of the Great Vah Kerrath, Leader of all Vah Shir! Please be respectful when you enter the royal throne room.");

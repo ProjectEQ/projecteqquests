@@ -1,5 +1,6 @@
 #Narex_T-Vem.pl
 #Fire Goblin Runner/Halfling Raider Helms
+# items: 13886, 17972, 13113, 12257
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

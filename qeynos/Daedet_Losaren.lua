@@ -1,3 +1,4 @@
+-- items: 17925, 17934, 13395, 15011, 13289, 15218
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	if(e.message:findi("hail")) then

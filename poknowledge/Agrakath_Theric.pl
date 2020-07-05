@@ -1,5 +1,6 @@
 #Agrakath_Theric.pl
 #Willamina's Needles
+# items: 28188, 28084
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

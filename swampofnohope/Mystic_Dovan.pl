@@ -3,6 +3,7 @@
 #Shaman Skull Quest 5
 #Cures - Apparently on live this guy does some neat emotes when curing or healing you.  When I can find a log, I'll add them.  In the meantime, might be nice for the newbies
 #to be able to use his healing/curing quest even without the proper responses. -Kilelen
+# items: 12736, 5143, 5144, 12671, 12739, 12441
 
 sub EVENT_SAY
 {

@@ -1,5 +1,6 @@
 --freeportwest/Elder_Spirit_of_Enlightenment.lua NPCID 383145
 --Shaman Epic 1.5, 2.0 and Prequest
+-- items: 57081, 57088, 57400, 57710, 52921, 57083, 57084, 57614, 57551, 57987, 57404, 47100
 local count = 0;
 local char_id;
 local client;

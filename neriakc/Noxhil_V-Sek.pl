@@ -10,6 +10,7 @@
 #dialog, but a well known never fixed screw up on VI's part) for the second.
 #I did this quest on live numerous times, though it has been years.  It was
 #excellent xp for a new character. -Kilelen
+# items: 17930, 13389, 13021, 13022, 10124, 15035, 15362, 15445, 28216
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

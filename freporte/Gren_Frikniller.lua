@@ -1,3 +1,4 @@
+-- items: 18925, 13159
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Aya. howdy there. %s.  The name's Gren Frikniller.  'Niller the Killer' The only person who can give me a run for my money is my [sister].",e.other:GetName()));

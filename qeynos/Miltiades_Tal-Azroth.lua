@@ -1,3 +1,4 @@
+-- items: 17264, 22613, 22612, 22611, 22616, 22615, 22614, 22610, 27414, 27415, 27488
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings and salutations "..e.other:GetName()..". I am Miltiades Tal`Azroth Crusader of Karana. I have spent all of my years here in Qeynos and gathered infinite knowledge from my teachers on my path to enlightenment. I have also started training new recruits to help them find their calling as a Holy Warrior of Karana. If you are a [Paladin of Karana] I might have some tasks for you to complete.");

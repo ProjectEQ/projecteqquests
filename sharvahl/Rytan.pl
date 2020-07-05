@@ -1,5 +1,6 @@
 #Rytan's Progressive Fletching Quest
 #Zone Shar Vahl  ID:155173 -- Rytan
+# items: 2877, 17231, 3461, 3463, 3464, 3467, 3471, 3472, 3473, 3474, 3477
 
 sub EVENT_SAY {
 

@@ -2,6 +2,7 @@
 # Cragbeast Queen: Visage of the Brute
 # created by Gonner
 # beat the taskmistress added by Jaekob
+# items: 52113, 52120, 52119, 52137
 
 sub EVENT_SPAWN {
 	quest::ze(15,"A haunting song echoes in the dank caverns.");

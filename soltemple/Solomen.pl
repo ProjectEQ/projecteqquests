@@ -1,3 +1,4 @@
+# items: 18088, 14341
 sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Ah, I see you have found my study.  This is where I study and scribe the history of magic in Norrath.");

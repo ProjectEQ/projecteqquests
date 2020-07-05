@@ -1,3 +1,4 @@
+-- items: 18817, 18818
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, citizen! You should not be in the Militia House. These are restricted grounds. Please leave at once unless you have business here.");

@@ -1,5 +1,6 @@
 # Duke Norfin's Delivery
 #
+# items: 19840, 19841
 
 my $shipment;
 

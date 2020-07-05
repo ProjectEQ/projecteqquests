@@ -2,6 +2,7 @@
 # NPC ID: 110118
 # Armored version of the General for the 8th coldain prayer shawl quest.
 #
+# items: 8897
 
 sub EVENT_SAY {
 }

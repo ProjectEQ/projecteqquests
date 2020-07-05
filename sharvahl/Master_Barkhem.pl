@@ -2,6 +2,7 @@
 # Master Barkhem in Shar Vahl
 # other npcs, repair orders : Khala_Dun_Jasir, Khala_Dun_Aihjin, Khala_Dun_Bokh, Khala_Dun_Koby
 # other npcs, end of the quest : Master_Taruun_Rakutah
+# items: 29803, 17498, 30658, 30664, 30646, 30647, 30648, 30649, 30650, 30651, 30652, 30653, 30654, 30655, 30656, 30657, 29802, 29806, 29809, 29812, 29815, 29816, 29819, 29820, 29823, 29824, 29826, 29827
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {

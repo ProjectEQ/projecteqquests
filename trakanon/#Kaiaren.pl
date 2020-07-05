@@ -1,5 +1,6 @@
 #BeginFile trakanon\#Kaiaren.pl
 #Quest for Trakanon's Teeth - Kaiaren (True): Monk Epic 1.0
+# items: 1683, 1689, 1684, 1688, 10652
 
 sub EVENT_SPAWN {
   quest::settimer(1,3600); #Depop in 1 hour

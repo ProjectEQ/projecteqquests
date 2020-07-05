@@ -1,3 +1,4 @@
+-- items: 52911, 57053
 local finished_event=0;
 local started_event=0;
 

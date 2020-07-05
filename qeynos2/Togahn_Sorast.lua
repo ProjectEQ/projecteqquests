@@ -1,3 +1,4 @@
+-- items: 10112, 13165, 13166, 13167, 10113, 13168, 13169, 3000, 10114
 function event_waypoint_arrive(e)
 	if(e.wp == 16) then
 		eq.set_anim(2087,1);

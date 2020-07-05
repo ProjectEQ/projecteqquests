@@ -1,5 +1,6 @@
 # Help Kayin Escape
 # Breakdown in communication 2
+# items: 64001, 64016, 64017, 64006, 64007, 64012, 64013
 
 # Created by gonner
 # Modified by Jaekob

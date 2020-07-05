@@ -1,3 +1,4 @@
+-- items: 62637
 function event_say(e)
   if (e.other:Class() == "Ranger") then
     local qglobals = eq.get_qglobals(e.other);

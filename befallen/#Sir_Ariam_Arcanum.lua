@@ -1,3 +1,4 @@
+-- items: 31492, 18474, 31493
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("My thanks for destroying these minions of Befallen's masters. This accursed place rends my soul trying to twist me to its purposes. My time here is short, so i must get this [task] done quikly.");

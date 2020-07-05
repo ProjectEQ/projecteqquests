@@ -1,5 +1,6 @@
 -- Gives Ikkinz Group 2 Expedition
 -- Maroley_Nazuey NPCID: 293116
+-- items: 60153
 function event_say(e)
 	-- load the current qglobals
 	local qglobals = eq.get_qglobals(e.other);

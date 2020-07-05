@@ -1,3 +1,4 @@
+# items: 30872, 30879, 30873, 30877
 my $count = 0;
 
 sub EVENT_SPAWN {

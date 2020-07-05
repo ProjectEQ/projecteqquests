@@ -1,5 +1,6 @@
 #Quests covered in this file:
 #Shaman Skull Quest 8
+# items: 30995, 5148, 5149
 
 sub EVENT_ITEM {
   if((defined($qglobals{shmskullquest}) && ($qglobals{shmskullquest} >= 13)) && plugin::check_handin(\%itemcount, 30995 => 1, 5148 => 1)) { #Skull of Rile, Skyiron Cudgel of the Arison

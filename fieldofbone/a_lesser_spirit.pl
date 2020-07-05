@@ -1,4 +1,5 @@
 #This will start Shaman Epic 1.0
+# items: 1665
 
 sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0

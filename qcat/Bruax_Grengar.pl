@@ -1,3 +1,4 @@
+# items: 17125, 19555, 19558, 19559, 19561, 19557, 19560, 11395, 20204, 20203, 13915, 19946, 13251, 20264
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hail $name. I am Bruax Grengar, master necromancer of the Bloodsabers. I assist not only young necromancers with their training but also aid all those Bloodsabers who have chosen to practice the [sorcerous arts]. If you a practitioner of a sorcerous art I can give you instructions to obtain an [outfit and robe] that will assist you in your work. Once you have been properly outfitted I will also assist you in acquiring a [Staff of the Bloodsabers].");

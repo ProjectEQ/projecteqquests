@@ -1,3 +1,4 @@
+# items: 67528, 67547, 67576, 67538, 67577, 67539, 67533, 67534, 67535, 67554, 67568, 67537, 67553, 67536
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (defined($qglobals{bic}) && ($qglobals{bic} >= 11)) {

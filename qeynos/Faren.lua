@@ -1,3 +1,4 @@
+-- items: 13702, 13129
 function event_spawn(e)
 	eq.set_timer("fishing",300000);
 end

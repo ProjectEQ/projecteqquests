@@ -1,3 +1,4 @@
+-- items: 9599
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I will scour this desert until the one with the orb arrives. Leave me to my wandering, weakling!");

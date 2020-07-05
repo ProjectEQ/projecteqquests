@@ -3,6 +3,7 @@
 #Quest: Gnoll Canines (Complete)
 #Quest: Qeynos Badge of Nobility (Badge #5) (Incomplete)
 #
+# items: 8264, 2388, 8285, 8283
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

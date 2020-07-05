@@ -1,3 +1,4 @@
+-- items: 69970, 69967
 function event_say(e)
 	if(e.message:findi("nice hat")) then
 		e.self:Say(string.format("Thank you, It is worn with pride and is the symbol of the Rivervale Militia"));

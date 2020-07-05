@@ -1,3 +1,4 @@
+# items: 1459
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1459 => 1)) { #tainted avalanche ale

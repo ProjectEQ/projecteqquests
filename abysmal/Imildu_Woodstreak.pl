@@ -1,3 +1,4 @@
+# items: 58173, 58207, 58186, 58179, 58178, 58077, 58191, 58072, 58030, 58151, 58170, 58177
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(159,4)) { #Fletching Freebie Step 5

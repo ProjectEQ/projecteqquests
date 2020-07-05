@@ -1,3 +1,4 @@
+-- items: 17941, 18804, 13882, 13006, 18805, 6537, 13396, 2112, 2106, 2111, 2104, 2108
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, noble " .. e.other:GetName() .. ". Remember to spread the words of Karana throughout the faraway lands on which you shall tread. We of the Temple of Thunder are looking for new members - good people who [wish to join our cause]. Let the call go out!");

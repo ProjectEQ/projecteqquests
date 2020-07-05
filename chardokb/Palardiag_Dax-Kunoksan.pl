@@ -1,5 +1,6 @@
 #Palardiag_Dax-Kunoksan.pl
 #Forge Shai`Din Ceremonial Blade
+# items: 61182, 61181, 61183, 61184, 61194, 61196, 61193, 61195
 
 sub EVENT_SAY
 {

@@ -1,3 +1,4 @@
+# items: 60154
 sub EVENT_SAY {
  $InInstanceIkky1 = quest::GetInstanceID("ikkinz",0);
  $InInstanceIkky2 = quest::GetInstanceID("ikkinz",1);

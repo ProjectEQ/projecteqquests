@@ -1,3 +1,4 @@
+# items: 58242, 58235, 58236, 58237, 58238, 58234, 58240, 58239, 58243, 58244, 58249, 58250, 58251, 58252
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello there. I have only the best supplies for the eager young tinkerer. I also have work for an eager tinkerer of any age, if you are [willing].");

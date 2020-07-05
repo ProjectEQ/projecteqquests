@@ -1,3 +1,4 @@
+# items: 12270, 3040, 3042, 3043, 3044, 3046, 3047, 3048, 3049, 3050, 3051
 sub EVENT_SAY { 
 	if($text=~/hail/i){
 		quest::say("Unless you intend to [make yourself useful], do not bother me.  I await the return of our Lord, Cazic-Thule.  He comes, and I shall be the first to greet Him.  I will train you, if need be, for He looks upon those who aid Him kindly.  If you are not here for training, return to your meditations or bother someone else.");

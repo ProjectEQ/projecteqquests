@@ -1,3 +1,4 @@
+-- items: 17012, 18009, 13181
 function event_spawn(e)
 	eq.set_timer("cough",350000);
 end

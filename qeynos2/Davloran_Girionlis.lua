@@ -1,3 +1,4 @@
+-- items: 17266, 22610, 22611, 22613, 22612, 22614, 22615, 22616, 27399, 27417, 27490
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good day " .. e.other:GetName() .. ". I am Davloran Girionlis Holy Knight in service to the Prime Healer Rodcet Nife. I pride myself on being responsible for ridding my homeland of unimaginable evil during my fighting days. Nowadays I just like to train new Temple of Life paladin [recruits].");

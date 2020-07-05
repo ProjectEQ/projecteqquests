@@ -1,3 +1,4 @@
+-- items: 18504, 18505, 18506, 18507, 12076
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Greetings, %s. Thank you for stopping by. Had you heard I was looking for any and all information regarding the Tesch Val incursion? Perhaps you have come to help me gather knowledge? I seek the [Tesch Val scrolls]!",e.other:GetName()));

@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- #Ioltos_V'ghera
+# items: 28057
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

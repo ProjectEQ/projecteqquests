@@ -1,3 +1,4 @@
+# items: 2692, 2693, 10015
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Greetings $name. I am Avir Sterbla, Governor of Magician Studies here at the Magus Conlegium of Katta Castellum. I am currently in the middle of researching more effective magical methods of combating the [vampyres] of the Coterie of the Eternal Night. Governor Drenic Garrison has been assisting me with the scientific side of the research, that having to do with physical materials that have detrimental effects on the vampyres while my research is more with magical elements.");

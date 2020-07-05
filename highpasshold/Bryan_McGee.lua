@@ -1,3 +1,4 @@
+-- items: 12366, 17984, 12365, 12348
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I do not know what you are doing up here, but I am a busy man. Please return to the bar downstairs and enjoy the atmosphere.");

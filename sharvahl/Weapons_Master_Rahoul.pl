@@ -1,3 +1,4 @@
+# items: 57056, 9050, 17363, 9051, 9055, 9056, 9053, 9054, 9052, 52931
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail friend, are you a new recruit or have you been at it for a bit?");

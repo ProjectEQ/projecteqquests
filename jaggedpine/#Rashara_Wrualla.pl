@@ -1,3 +1,4 @@
+# items: 57008, 52906, 52907, 52908
 sub EVENT_SAY {
 if ($client->GetGlobal("beast_epic") ==4) {
   if ($text=~/wait/i) {

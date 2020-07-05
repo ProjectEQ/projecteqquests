@@ -1,5 +1,6 @@
 #Quests covered in this file:
 #Shaman Skull Quest 8
+# items: 30994
 
 sub EVENT_ITEM {
   if((defined($qglobals{shmskullquest}) && ($qglobals{shmskullquest} >= 13)) && plugin::check_handin(\%itemcount, 30994 => 1)) { #Iksar Relics

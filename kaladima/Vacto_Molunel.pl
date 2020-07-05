@@ -1,3 +1,4 @@
+# items: 13849, 2175, 13133, 2176, 13132, 13848, 2177
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Well met. $name!  I am Vacto Molunel.  If you are seeking to outfit yourself with the finest weapons in all of Kaladim. I am the one to see.  I also posses a [rare talent] you might find useful.");

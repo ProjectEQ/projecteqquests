@@ -1,3 +1,4 @@
+# items: 58158, 58141, 58023, 58140, 58157, 58067, 58064, 58092, 58094, 58089, 58116
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(169,4)) { #Jewelcraft Collect Step 5

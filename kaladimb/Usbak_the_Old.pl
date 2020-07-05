@@ -1,5 +1,6 @@
 # refined ancient sword - ranger epic
 #
+# items: 20477, 20481
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,3 +1,4 @@
+# items: 12317, 10133, 12315, 12256
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings. I am one with the [Lost Circle]. You have found me. What is it you desire?");

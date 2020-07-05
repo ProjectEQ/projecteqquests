@@ -1,3 +1,4 @@
+# items: 19315, 19322, 19318, 19319, 19329, 19320, 19324, 19317
 sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say(" It is good to see our numbers growing on this land.

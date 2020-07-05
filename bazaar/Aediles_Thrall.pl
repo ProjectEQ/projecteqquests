@@ -34,6 +34,7 @@
 #
 #
 ############################################
+# items: 13475, 13037, 16939, 2204, 3061, 8689
 
 # Some global settings for the quest.  Set them to your preferred levels and plat costs
 # Level options for when a character can acquire more slaves(bots)

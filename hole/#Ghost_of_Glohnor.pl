@@ -1,4 +1,5 @@
 # Part of SK Epic 1.0
+# items: 14377
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 14377 => 1)) {

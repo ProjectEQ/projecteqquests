@@ -1,3 +1,4 @@
+# items: 5996, 5995
 
 
 sub EVENT_SAY { 

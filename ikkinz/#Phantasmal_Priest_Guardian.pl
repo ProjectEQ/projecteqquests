@@ -1,5 +1,6 @@
 #     #Phantasmal_Priest_Guardian.pl
 #     294611
+# items: 60246
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60246 =>1 )) {
 	 if ($qglobals{$instanceid.ikkymove} == 1) {

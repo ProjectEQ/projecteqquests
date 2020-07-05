@@ -1,3 +1,4 @@
+-- items: 18842, 18843
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Get your wretched hide away from me! Who knows what vile stench you have been rolling around in?! Do not speak with me unless you have some glimmer of intelligence!");

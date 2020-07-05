@@ -1,3 +1,4 @@
+# items: 18248, 18249
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Good evening, citizen! It is a fine night for a stroll, but not in the woods. No, no! That would be far too dangerous!");

@@ -1,6 +1,7 @@
 #zone - tutorialb
 #quest - Poxan's Sword
 #Angelox - updated by site3op
+# items: 59968, 59969
 
 sub EVENT_SAY {
   if ($text=~/hail/i){

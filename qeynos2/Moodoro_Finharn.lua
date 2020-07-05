@@ -1,3 +1,4 @@
+-- items: 13118, 13994, 13836, 17918
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, fellow traveler! I gotta tell ya. I love this town. Especially Crow's. Although the crowd seems a bit shadier than other places of the sort.");

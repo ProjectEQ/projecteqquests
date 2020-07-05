@@ -1,4 +1,5 @@
 #The mortician serves as a vendor and also as part of a few quests. I'm creating him for use in The Penance quest, which allows an iksar to replace their starting weapon if they've lost it.
+# items: 17092
 
 sub EVENT_SAY {
  if($text=~/hail/i){

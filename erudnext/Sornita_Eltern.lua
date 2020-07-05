@@ -1,3 +1,4 @@
+-- items: 18030, 12590, 12591
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, " .. e.other:GetName() .. "! Please be do not speak too loudly while inside the library. If you need anything special, feel free to ask me. I am a member of the Crimson ands and my specialty is divination. In my research I have stumbled across many [rare tomes].");

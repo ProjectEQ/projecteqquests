@@ -1,4 +1,5 @@
 #Hierophant Oxyn is for the Greenmist quest and is part of the eighth and final quest in the series. He also gives out the Cursed Wafer quest and shaman skullcaps 1 and 2.
+# items: 17020, 3895, 3892, 3886, 3893, 12403, 12406, 12721, 12722, 12723, 5140, 5141, 12724, 12725, 5142
 
 #Please note a bare minimum has been done for the shaman quests that Hierophant Oxyn gives, as I was only concerned with the Greenmist quest.
 

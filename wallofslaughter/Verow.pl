@@ -8,6 +8,7 @@
 ## ZONE: wallofslaughter
 ##
 ############################################
+# items: 36560
 
 sub EVENT_SAY
 {

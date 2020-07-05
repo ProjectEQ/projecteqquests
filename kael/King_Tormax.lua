@@ -1,3 +1,4 @@
+-- items: 30501, 25858, 24984, 25857
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 3) then -- require kindly or better
 		if(e.message:findi("hail")) then

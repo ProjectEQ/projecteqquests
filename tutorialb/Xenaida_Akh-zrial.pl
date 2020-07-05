@@ -1,3 +1,4 @@
+# items: 59955, 59765
 sub EVENT_SPAWN
 {
 	quest::settimer("try_sit", 5);

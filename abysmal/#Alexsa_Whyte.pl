@@ -1,5 +1,6 @@
 # Discord Skin Samples
 # http://everquest.allakhazam.com/db/quest.html?quest=2839
+# items: 67594, 67596, 67597, 67598, 67599, 67600, 67601, 67602, 67605, 67604, 67603, 67624, 67625
 
 sub EVENT_SAY {
     #backdoor to reacquire Vaifan's Pocket Sampling Device

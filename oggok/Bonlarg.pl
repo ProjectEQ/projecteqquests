@@ -1,3 +1,4 @@
+# items: 12198, 13527, 12199
 sub EVENT_SAY 
 	{
 	my $sf=$client->GetModCharacterFactionLevel(261); # Faction: Green Blood Knights

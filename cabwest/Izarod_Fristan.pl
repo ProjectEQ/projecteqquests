@@ -1,3 +1,4 @@
+# items: 19423, 19296, 19294, 19299, 19297, 19421, 19408, 19409
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hail there. $name. So you are ready to learn more about our ways? Do you wish to try and expand your knowledge of our arcane arts? Then venture far from here to the darkest depths of our once great empire and seek the minions that inhabit the ruins. The arcane powers will come in the form of [scrolls].");

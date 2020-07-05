@@ -1,5 +1,6 @@
 # Cleric Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54114, 68220, 54112, 68223, 54115, 68225, 54117, 68226, 54118, 68224, 54116, 68221, 54113
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

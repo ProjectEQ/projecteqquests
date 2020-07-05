@@ -1,4 +1,5 @@
 -- Cleric 1.5 Pre-quest // Cleric 1.5 Epic // Cleric 2.0 Epic --Drogerin
+-- items: 9585, 9591, 9954
 							
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);

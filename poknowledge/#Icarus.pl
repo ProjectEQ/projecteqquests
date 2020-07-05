@@ -1,3 +1,4 @@
+# items: 1002, 58239
 sub EVENT_SAY {
 	if($text=~/Hail/i) {
 		quest::say("Hello! I like to collect things for my nest! If one of my brothers give you something during the hunt you don't want, I'll take it off your hands!");

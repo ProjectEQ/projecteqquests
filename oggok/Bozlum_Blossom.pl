@@ -1,5 +1,6 @@
 # Test of Illusion - enchanter epic - Snow Blossoms
 # 
+# items: 10628, 10629, 10630, 10609
 
 
 sub EVENT_SAY {

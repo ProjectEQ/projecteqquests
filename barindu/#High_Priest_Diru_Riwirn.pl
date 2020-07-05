@@ -1,3 +1,4 @@
+# items: 68298
 sub EVENT_SAY {
 	$InInstancePlant = quest::GetInstanceID("snplant",1);
 	$InInstanceCrem = quest::GetInstanceID("sncrematory",0);

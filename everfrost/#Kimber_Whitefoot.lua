@@ -1,5 +1,6 @@
 --everfrost/Kimber_Whitefoot.lua NPCID 30104
 --Warrior Epic 1.5
+-- items: 60306, 60305
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail") and qglobals["warrior_epic"] >= "4") then

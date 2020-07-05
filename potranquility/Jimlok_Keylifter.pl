@@ -1,3 +1,4 @@
+# items: 28277, 28278
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Well met. traveler.  Can I be of assistance to you?  Can't say as I got much to do at the moment.  I'm just attending to a little fishing while I wait on my [" . quest::saylink("friend") . "] to get back to me.  Hopefully he doesn't keep me waiting for too much longer.  I can only stand so much of this place.");

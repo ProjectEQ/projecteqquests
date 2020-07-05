@@ -1,5 +1,6 @@
 --BeginFile: rivervale\Ace_Slighthand.pl
 --Quest file for Rivervale - Ace Slighthand: Kevlin Diggs' Debt & Extraordinary Rodents
+-- items: 13182
 
 function event_say(e)
 	local level = e.other:GetLevel();

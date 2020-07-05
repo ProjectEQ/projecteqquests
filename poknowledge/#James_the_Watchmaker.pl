@@ -1,5 +1,6 @@
 #James_the_Watchmaker.pl
 #Start basic Say Script
+# items: 80026, 80027, 80028, 80029
 sub EVENT_SPAWN {
          quest::settimer(2,900);#15 minute timer
       }   

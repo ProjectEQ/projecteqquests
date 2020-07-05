@@ -1,3 +1,4 @@
+-- items: 31435, 31436, 31437, 31438, 1224
 function event_signal(e)
 	entity_list = eq.get_entity_list();
 

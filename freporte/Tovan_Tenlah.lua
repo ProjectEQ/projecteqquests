@@ -1,3 +1,4 @@
+-- items: 19846, 19917, 19918, 19919, 19920
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I suppose you're one of Nestrals new employees, eh? Well if that's the case I can help get you outfitted with some [gear] necessary for people in this [line of work].");

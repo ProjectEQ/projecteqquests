@@ -1,4 +1,5 @@
 #Before quest works, must add tradeskills:  Shestar's Scaled Coif (3 Loose Scales (Item 12466), 1 Unfinished Coif (Item 12468)), blacksmithing, I believe trivial in teens, does not always work, yields Shestar's Scaled Coif (Item 12467), yields unfinished coif on failure (Item 12468).
+# items: 12466, 12468
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

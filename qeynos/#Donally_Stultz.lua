@@ -1,3 +1,4 @@
+-- items: 2344
 function event_spawn(e)
 	eq.set_timer("depop",1800000);
 end

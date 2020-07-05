@@ -1,4 +1,4 @@
-#an_interrogator in south karana
+-- an_interrogator in south karana
 local brief;
 local name;
 

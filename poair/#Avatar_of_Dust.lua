@@ -9,6 +9,7 @@ function event_combat(e)
 		eq.stop_timer('Hardblur');
 		eq.stop_timer('Softblur');
 		eq.resume_timer("despawn");
+		e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); 
 	end
 end
 

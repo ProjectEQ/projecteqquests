@@ -33,4 +33,7 @@ end
 
 function event_death_complete(e)
 eq.unique_spawn(202366, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: A_Planar_Projection
+eq.spawn2(212075,0,0,972,1918,-164,126); --a_warder_of_Dresolik (212075)
+eq.spawn2(212075,0,0,1043,1918,-164,382); --a_warder_of_Dresolik (212075)
+eq.spawn2(212075,0,0,1007,1980,-164,0); --a_warder_of_Dresolik (212075)
 end

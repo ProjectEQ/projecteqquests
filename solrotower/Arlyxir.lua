@@ -22,4 +22,7 @@ end
 
 function event_death_complete(e)
 eq.unique_spawn(202367, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: A_Planar_Projection
+eq.spawn2(212074,0,0,1713,1206,627,264); -- a_warder_of_Arlyxir (212074)
+eq.spawn2(212074,0,0,1738,1206,627,264); -- a_warder_of_Arlyxir (212074)
+eq.spawn2(212074,0,0,1726,1146,612,264); -- a_warder_of_Arlyxir (212074)
 end

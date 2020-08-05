@@ -38,11 +38,11 @@ sub EVENT_ITEM {
     quest::summonitem(9056); # Item: Jagged Claw of Rending
     quest::say("Take the claws back to Animist Dumul and show him their design. Use them well, $name. May the spirits guide you in your attack.");
   }
-  if (plugin::check_handin(\%itemcount, 9053 => 2, 9054 => 1, 9052 => 1)) {
-    quest::say("Ah, I see you have been so kind as to help us. Muada would like you take your assistance one step further. If you are [" . quest::saylink("willing") . "], of course.");
-    if($client->GetGlobal("beast_turnin") ==undef) {
+  if($client->GetGlobal("beast_turnin") ==undef) {
+  		if (plugin::check_handin(\%itemcount, 9053 => 2, 9054 => 1, 9052 => 1)) {
+    			quest::say("Ah, I see you have been so kind as to help us. Muada would like you take your assistance one step further. If you are [" . quest::saylink("willing") . "], of course.");
 			quest::setglobal("beast_turnin", "1", 5, "F");
-    }
+		}
   }
   if ($platinum >= 2000) {
     quest::say("I wasn't sure you would part with such a great amount of coin. I am impressed. Here is your statuette to work with. You will need to tailor the leather adornments you create and work with them into the statue itself, making it your own.");

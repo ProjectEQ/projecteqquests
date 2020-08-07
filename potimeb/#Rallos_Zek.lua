@@ -12,6 +12,8 @@ end
 function event_combat(e)
 	if (e.joined == false) then
 		e.self:SetHP(e.self:GetMaxHP());
+		e.self:SetSpecialAbility(SpecialAbility.flurry,0);
+		e.self:SetSpecialAbility(SpecialAbility.area_rampage,0);
 		eq.set_next_hp_event(91);
 	end
 end
@@ -39,6 +41,8 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,262,-280,5,449); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,262,-280,5,449); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,262,-280,5,449); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		e.self:SetSpecialAbility(SpecialAbility.area_rampage,1);--enable AE Rampage
+		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage,0,10);--5 percent chance to ae rampage
 		eq.set_next_hp_event(51);
 	elseif (e.hp_event == 51) then
 		-- spawn a_summoned_boar and a_summoned_minion
@@ -46,6 +50,8 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,262,-280,5,449); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,262,-280,5,449); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
 		eq.spawn2(eq.ChooseRandom(223229,223230),0,0,262,-280,5,449); -- NPC(s): a_summoned_minion_ (223229), a_summoned_boar_ (223230)
+		e.self:SetSpecialAbility(SpecialAbility.flurry,1);--enable flurry
+		e.self:SetSpecialAbilityParam(SpecialAbility.flurry,0,5);--5 percent chance to flurry
 		eq.set_next_hp_event(26);
 	elseif (e.hp_event == 26) then
 		-- spawn a_summoned_boar and a_summoned_minion

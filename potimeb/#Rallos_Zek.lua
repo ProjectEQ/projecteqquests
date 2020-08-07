@@ -17,6 +17,8 @@ function event_combat(e)
 		e.self:SetSpecialAbility(SpecialAbility.rampage,1); --turn rampage back on
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage,0,5);--5 percent chance to rampage
 		eq.set_next_hp_event(91);
+		eq.depop_all(223229); -- a summoned minion
+		eq.depop_all(223230); -- a summoned boar
 	end
 end
 

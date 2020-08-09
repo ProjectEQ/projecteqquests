@@ -11,8 +11,7 @@ end
 
 function event_combat(e)
 	if (e.joined == false) then
-		e.self:SetHP(e.self:GetMaxHP());
-		eq.set_next_hp_event(91);
+		eq.set_timer('reset', 6 * 1000);
 	end
 end
 
@@ -54,6 +53,14 @@ function event_timer(e)
 	if(e.timer == 'terrishelp') then
 		help_terris(e);
 		eq.stop_timer('terrishelp');
+	elseif(e.timer == 'reset') then
+		e.self:SetHP(e.self:GetMaxHP());
+		eq.set_next_hp_event(91);
+		eq.depop_all(223079); -- depop adds
+		eq.depop_all(223080);
+		eq.depop_all(223081);
+		eq.depop_all(223082);
+		eq.stop_timer('reset');
 	end
 end
 

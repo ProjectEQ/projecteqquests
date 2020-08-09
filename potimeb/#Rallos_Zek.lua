@@ -27,10 +27,6 @@ function event_spawn(e)
 end
 
 function event_hp(e)
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	local zloc = e.self:GetZ();
-	local heading = e.self:GetHeading();
 	e.self:Emote("Rallos Zek roars a mighty war cry and swings his axe in vengeance.");
 	if (e.hp_event == 91) then
 		-- spawn a_summoned_boar and a_summoned_minion

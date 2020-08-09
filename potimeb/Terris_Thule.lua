@@ -28,6 +28,7 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-219,277,348,256); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-347,210,348,128); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-296,210,348,128); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
+		eq.set_timer('terrishelp', 1 * 1000);
 		eq.set_next_hp_event(51);
 	elseif (e.hp_event == 51) then
 		-- spawn Terris 4 random mobs from  A_Summoned_Guardian_of_Terris,
@@ -36,6 +37,7 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-219,277,348,256); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-347,210,348,128); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-296,210,348,128); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
+		eq.set_timer('terrishelp', 1 * 1000);
 		eq.set_next_hp_event(11);
 	elseif (e.hp_event == 11) then
 		-- spawn Terris 4 random mobs from  A_Summoned_Guardian_of_Terris,
@@ -44,5 +46,22 @@ function event_hp(e)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-219,277,348,256); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-347,210,348,128); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
 		eq.spawn2(eq.ChooseRandom(223079,223081,223080,223082),0,0,-296,210,348,128); -- NPC(s): A_Summoned_Guardian_of_Terris (223079), A_Summoned_Knight_of_Terris (223081), A_Phantasm_of_Terris (223080), A_Nightmare_Knight_of_Terris (223082)
+		eq.set_timer('terrishelp', 1 * 1000);
 	end
+end
+
+function event_timer(e)
+	if(e.timer == 'terrishelp') then
+		help_terris(e);
+		eq.stop_timer('terrishelp');
+	end
+end
+
+function help_terris(e)
+	local npc_list =  eq.get_entity_list():GetNPCList();
+	for npc in npc_list.entries do
+		if (npc.valid and (npc:GetNPCTypeID() == 223079 or npc:GetNPCTypeID() == 223080 or npc:GetNPCTypeID() == 223081 or npc:GetNPCTypeID() == 223082)) then
+		npc:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+		end
+	end		
 end

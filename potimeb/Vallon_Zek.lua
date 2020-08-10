@@ -23,7 +23,7 @@ end
 function event_timer(e)
 	if(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-			if (e.self:Getx() < 250) then
+			if (e.self:GetX() < 250) then
 			e.self:GotoBind();
 			e.self:WipeHateList();
 			e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
@@ -45,7 +45,7 @@ end
 function event_hp(e)
 	if (e.hp_event == 51) then
 		-- spawn copies
-		eq.spawn2(223164,0,0,286,-182,358,46); -- NPC: #Vallon_Zek
-		eq.spawn2(223164,0,0,305,-201,358,46); -- NPC: #Vallon_Zek
+		eq.spawn2(223164,0,0,353,-18,358,383); -- NPC: #Vallon_Zek
+		eq.spawn2(223164,0,0,353,17,358,383); -- NPC: #Vallon_Zek
 	end
 end

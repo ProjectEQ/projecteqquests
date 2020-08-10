@@ -10,9 +10,29 @@ function event_death_complete(e)
 end
 
 function event_combat(e)
-	if (e.joined == false) then
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+	else
+		eq.stop_timer("OOBcheck");
+		eq.set_timer("reset", 6 * 1000);
+	end
+end
+
+
+function event_timer(e)
+	if(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:Getx() < 250) then
+			e.self:GotoBind();
+			e.self:WipeHateList();
+			e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+			else
+			eq.set_timer("OOBcheck", 6 * 1000);
+			end
+	elseif(e.timer=="reset") then
 		e.self:SetHP(e.self:GetMaxHP());
 		eq.set_next_hp_event(51);
+		eq.depop_all(223164); -- depop fake VZ
 	end
 end
 

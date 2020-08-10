@@ -30,6 +30,7 @@ function event_timer(e)
 			eq.set_timer("OOBcheck", 6 * 1000);
 			end
 	elseif(e.timer=="reset") then
+		eq.stop_timer("reset");
 		e.self:SetHP(e.self:GetMaxHP());
 		eq.set_next_hp_event(51);
 		eq.depop_all(223164); -- depop fake VZ

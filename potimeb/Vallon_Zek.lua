@@ -12,6 +12,7 @@ end
 function event_combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 6 * 1000);
+		eq.stop_timer("reset");
 	else
 		eq.stop_timer("OOBcheck");
 		eq.set_timer("reset", 6 * 1000);

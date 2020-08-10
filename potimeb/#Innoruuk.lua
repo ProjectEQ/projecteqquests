@@ -1,7 +1,29 @@
 function event_combat(e)
 	if (e.joined == true) then
-		eq.set_next_hp_event(80);
+		eq.set_timer("OOBcheck", 6 * 1000);
+	else
+		eq.stop_timer("OOBcheck");
+		eq.set_timer("reset", 6 * 1000);
 	end
+end
+
+
+function event_timer(e)
+if(e.timer=="OOBcheck") then
+eq.stop_timer("OOBcheck");
+	if (e.self:GetX() < 157 or e.self:GetY() < 180) then
+		e.self:GotoBind();
+		e.self:WipeHateList();
+		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
+elseif(e.timer=="reset") then
+		e.self:SetHP(e.self:GetMaxHP());
+		eq.set_next_hp_event(80);
+		eq.depop_all(223231); --guardian_of_the_dark_prince (223231)
+		eq.depop_all(223232); --A_hatebringer_of_Innoruuk (223232)
+end
 end
 
 function event_hp(e)

@@ -1,3 +1,4 @@
+-- a_summoned_minion_ (223229) part of Rallos Zek p5 adds
 function event_combat(e)
   if (e.joined == true) then
     eq.set_timer("OOBcheck", 6 * 1000);

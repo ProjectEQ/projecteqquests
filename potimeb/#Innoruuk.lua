@@ -28,20 +28,16 @@ end
 end
 
 function event_hp(e)
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	local zloc = e.self:GetZ();
-	local heading = e.self:GetHeading();
 	if(e.hp_event == 80) then
 		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,320,216,3,386); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
 		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,226,230,3,312); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
 		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,212,327,3,255); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,xloc,yloc,zloc,heading); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,293,301,13,317); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,305,221,3,389); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,214,309,3,251); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,238,239,3,319); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
 	end
 end
 

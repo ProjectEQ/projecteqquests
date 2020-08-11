@@ -10,16 +10,37 @@ function event_death_complete(e)
 end
 
 function event_combat(e)
-	if (e.joined == false) then
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		eq.stop_timer("reset");
+	else
+		eq.stop_timer("OOBcheck");
+		eq.set_timer("reset", 6 * 1000);
+	end
+end
+
+
+function event_timer(e)
+if(e.timer=="OOBcheck") then
+eq.stop_timer("OOBcheck");
+	if (e.self:GetX() < 169 or e.self:GetY() > -179) then
+		e.self:GotoBind();
+		e.self:WipeHateList();
+		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
+elseif(e.timer=="reset") then
 		e.self:SetHP(e.self:GetMaxHP());
+		eq.set_next_hp_event(91);
 		e.self:SetSpecialAbility(SpecialAbility.flurry,0);
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage,0);
 		e.self:SetSpecialAbility(SpecialAbility.rampage,1); --turn rampage back on
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage,0,5);--5 percent chance to rampage
-		eq.set_next_hp_event(91);
-		eq.depop_all(223229); -- a summoned minion
-		eq.depop_all(223230); -- a summoned boar
-	end
+		eq.depop_all(223229); -- a_summoned_minion_ (223229)
+		eq.depop_all(223230); -- a_summoned_boar_ (223230)
+		eq.stop_timer("reset");
+end
 end
 
 function event_spawn(e)

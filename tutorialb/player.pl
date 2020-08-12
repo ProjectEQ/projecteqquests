@@ -28,6 +28,17 @@ sub EVENT_ENTERZONE
 	}  
 }
 
+
+sub EVENT_POPUPRESPONSE {
+     if ($popupid == 111) {
+		quest::popup("Maps", "<br><br> <c \"#94f000\"> Additional Map Features </c> 
+		<br><br> If you want to show or hide the visibility of floors above or below your current position, you can toggle the <c \"#00c8f0\"> Height Filter </c> button. When this button is activated, locations and items below a distance specified in the \"Low\" field won't be drawn. Likewise, anything above the \"High\" distance won't be drawn.
+		<br><br> To show or hide labels on the map, toggle the <c \"#00c8f0\"> Labels </c> button.
+		<br><br> If you are in a group and wish to find  members of your group on the map, activate the <c \"#00c8f0\"> Group </c> button. Group members will appear on the map as green <c \"#54f000\"> X</c>'s.");
+	 }
+}	
+
+
 sub EVENT_TASK_STAGE_COMPLETE 
 {
 	if ($task_id == 34)

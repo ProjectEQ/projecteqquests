@@ -14,7 +14,16 @@ sub EVENT_SAY {
     if ($text=~/hail/i) {
       if(quest::istaskactivityactive(22,2)) {
 		if ($class eq "Berserker" || $class eq "Rogue" || $class eq "Shaman" || $class eq "Ranger"){
-        quest::summonitem(67111); # Item: Gloomingdeep Kobold Chain Sleeves
+        	quest::summonitem(67111); # Item: Gloomingdeep Kobold Chain Sleeves
+		}
+		elsif ($class eq "Enchanter" || $class eq "Necromancer" || $class eq "Wizard" || $class eq "Magician"){
+		quest::summonitem(67125); # Item: Gloomingdeep Kobold Cloth Sleeves
+		}
+		elsif ($class eq "Warrior" || $class eq "Bard" || $class eq "Shadowknight" || $class eq "Paladin" || $class eq "Cleric"){
+		quest::summonitem(67104); # Item: Gloomingdeep Kobold Plate Vambraces
+		}
+		elsif ($class eq "Druid" || $class eq "Monk" || $class eq "Beastlord"){
+		quest::summonitem(67118); # Item: Gloomingdeep Kobold Leather Sleeves
 		}
       }
       quest::say("I'm glad you managed to escape the slave warrens in one piece. There are many [others] who were not as lucky. Here, take this armor we found on a kobold. It's not much, but it should keep you safe");

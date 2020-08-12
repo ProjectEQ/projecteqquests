@@ -20,7 +20,7 @@ sub EVENT_SAY {
       quest::say("I'm glad you managed to escape the slave warrens in one piece. There are many [others] who were not as lucky. Here, take this armor we found on a kobold. It's not much, but it should keep you safe");
       quest::popup("Equipping Armor", "Vahlara has offered you a piece of kobold armor to keep you safe.
                     <br><br>Equip the armor by dropping it into the large rectangular icon in the center of your inventory
-                    (<c \"#00c8f0\" i</c> ) window.  Notice that your armor automatically moves to its proper armor slot on your body.<br><br> Also note that some armor you will later obtain can only be equipped by placing it directly in its corresponding slot, e.g. dropping a breastplate onto the \"chest\" icon in your inventory. When you do this, the armor will become \"attuned\" to your character, and you will no longer be able to trade it with other players.
+                    (<c \"#00c8f0\"> i</c> ) window.  Notice that your armor automatically moves to its proper armor slot on your body.<br><br> Also note that some armor you will later obtain can only be equipped by placing it directly in its corresponding slot, e.g. dropping a breastplate onto the \"chest\" icon in your inventory. When you do this, the armor will become \"attuned\" to your character, and you will no longer be able to trade it with other players.
 					<br><br> <c \"#F07F00\">Once you have equipped the armor, respond to Vahlara's dialogue in your Main Chat window to continue.</c>");
     }
     if ($text=~/others/i) {

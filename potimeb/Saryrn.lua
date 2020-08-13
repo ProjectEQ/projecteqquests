@@ -10,7 +10,11 @@ function event_death_complete(e)
 end
 
 function event_combat(e)
-	if (e.joined == false) then
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		eq.stop_timer('reset');
+	else
+		eq.stop_timer("OOBcheck");
 		eq.set_timer('reset', 6 * 1000);
 	end
 end
@@ -58,6 +62,15 @@ function event_timer(e)
 		eq.depop_all(223085);
 		eq.depop_all(223086);
 		eq.stop_timer('reset');
+	elseif(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() > -177 or e.self:GetY() > -182) then
+				e.self:GotoBind();
+				e.self:WipeHateList();
+				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+			else
+				eq.set_timer("OOBcheck", 6 * 1000);
+			end
 	end
 end
 

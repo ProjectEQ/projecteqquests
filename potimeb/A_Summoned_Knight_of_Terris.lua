@@ -10,7 +10,7 @@ end
 function event_timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
-	if (e.self:GetX() > -183 or e.self:GetY() < 178) then
+	if (e.self:GetX() > -110 or e.self:GetY() < 103) then
 		e.self:GotoBind();
 		e.self:WipeHateList();
 		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless

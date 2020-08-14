@@ -27,7 +27,7 @@ function event_trade(e)
 		e.other:Faction(330,2,0); -- Faction: The Freeport Militia
 		e.other:AddEXP(500);
 		e.other:Message(15,"You receive 35 platinum from Anson McBale.")
-		e.other:AddMoneyToPP(0, 0, 100, 35, true);
+		e.other:AddMoneyToPP(0, 0, 0, 35, true);
 		eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -20,15 +20,14 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 28014}) and e.other:Class() == "Rogue" and e.other:GetLevel() >= 50) then
 		e.self:Say("Ah, we have been expecting this. Let me get Stanos, he will want to inspect it first, but here are your coins.");
 		e.other:Ding();
-		e.other:Faction(332,5,0); -- Faction: Highpass Guards
-		e.other:Faction(329,10,0); -- Faction: Carson McCabe
-		e.other:Faction(331,5,0); -- Faction: Merchants of Highpass
-		e.other:Faction(230,5,0); -- Faction: Corrupt Qeynos Guards
-		e.other:Faction(330,5,0); -- Faction: The Freeport Militia
+		e.other:Faction(332,50,0); -- Faction: Highpass Guards
+		e.other:Faction(329,7,0); -- Faction: Carson McCabe
+		e.other:Faction(331,7,0); -- Faction: Merchants of Highpass
+		e.other:Faction(230,2,0); -- Faction: Corrupt Qeynos Guards
+		e.other:Faction(330,2,0); -- Faction: The Freeport Militia
 		e.other:AddEXP(500);
-		e.other:Message(15,"You receive 100 gold from Anson McBale.");
-		e.other:Message(15,"You receive 25 platinum from Anson McBale.")
-		e.other:AddMoneyToPP(0, 0, 100, 25, true);
+		e.other:Message(15,"You receive 35 platinum from Anson McBale.")
+		e.other:AddMoneyToPP(0, 0, 0, 35, true);
 		eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

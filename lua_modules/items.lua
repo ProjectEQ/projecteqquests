@@ -131,5 +131,36 @@ function items.return_items(npc, client, trade, text)
 	
 	return returned;
 end
+
+function items.random_cash(min_cash, max_cash)
+	local cash = {};
+	local reward = Random.Int(min_cash, max_cash);
+  
+	if (reward > 999) then
+		cash.platinum = math.floor(reward / 1000);
+		reward = (reward % 1000);
+	else
+		cash.platinum = 0
+	end
+	if (reward > 99) then
+		cash.gold = math.floor(reward / 100);
+		reward = (reward % 100);
+	else
+		cash.gold = 0
+	end
+	if (reward > 9) then
+		cash.silver =  math.floor(reward / 10);
+		reward = (reward % 10);
+	else
+		cash.silver = 0
+	end
+	if (reward > 0) then
+		cash.copper = reward;
+	else
+		cash.copper = 0
+	end
+  
+	return cash;
+end
 	
 return items;

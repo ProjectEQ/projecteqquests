@@ -53,6 +53,32 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 		manner of items using these skills.<br><br> To perform the various types of tradeskills, you must use the correct types of tradeskill containers. For example, to perform baking, you need an oven.
 		Blacksmithing requires a forge. Pottery requires a kiln. Be on the lookout for different types of tradeskill containers located in the cities throughout Norrath.");
 	}
+	if ($popupid == 6) {
+		quest::popup("Managing Hotbars", "<br> There are multiple ways to adjust and manage your <c \"#83f07a\"> Hotbars:</c><br><br>
+		<c \"#1b6e14\">Cycling</c><br>You switch which particular page of the hotbar you are on by using the up and down arrows on the right-side of the bar.<br><br><c \"#1b6e14\">New Hotbars</c><br>
+		You can add new Hotbars by using your <c \"#83f07a\"> EQ Menu</c> button, selecting <c \"#83f07a\"> Actions,</c> a nd then choosing option <c \"#83f07a\"> Hotkeys </c> 1-10.<br><br>
+		<c \"#F07F00\"> Click 'OK' to learn managing your Hotbars.</c>",7);
+	}
+	if ($popupid == 7) {
+		quest::popup("Assigning Hotkeys", "<br><c \"#83f07a\">Hotkeys</c> are abilities, actions, and macros th at can be activated with a simple click. There are multiple ways to customize your
+		<c \"#83f07a\">Hotbar</c> using these buttons:<br><br><c \"#1b6e14\">Drag and Drop</c><br>You can move and set <c \"#83f07a\"> Hotkeys</c> by holding down the left mouse button for a moment, and then
+		dragging the icon to the<c \"#83f07a\"> Hotbar.</c> This is especially useful for dragging from your <c \"#83f07a\">Action,</c><c \"#83f07a\">Alternative Advancement,</c> and <c \"#83f07a\">Spell Gem</c> menus.
+		<br><br><c \"#1b6e14\">Right-Click</c><br>You can right-click an empty<c \"#83f07a\"> Hotbar</c> slot and use <c \"#83f07a\">Assigning Social</c> to assign custom made actions. More about those will
+		be presented in the next section.<br><br><c \"#F07F00\"> Click 'OK' to learn about custom functions for your Hotbars.</c>",8);
+	}
+	if ($popupid == 8) {
+		quest::popup("Custom Hotkeys", "<br>Dragging existing abilities and assigning default actions is only the first step. You can also create your own <c \"#83f07a\">Hotkeys</c>! You can use
+		your <c \"#83f07a\">Action</c> menu to access the <c \"#83f07a\">Socials Page</c>.<br><br><c \"#F07F00\"> Click 'OK' to learn about personalizing your Hotbars.</c>",9);
+	}
+	if ($popupid == 9) {
+		quest::popup("Personalizing the Hotbar", "<br>You can personalize your <c \"#83f07a\">Hotkeys</c> by using the extended right-click menu. Hold down the right mouse button over an
+		existing <c \"#83f07a\">Hotkey</c> to see the options:<br><br><c \"#1b6e14\">Activate</c><br>This uses the key as if you had left-clicked on it.<br><br><c \"#1b6e14\">Clear</c><br>This removes the key.
+		<br><br><c \"#1b6e14\">Assign Icon</c><br>Select an icon you want from the entire library of Icons.<br><br><c \"#1b6e14\">Clear Icon</c><br>This removes the custom icon.<br><br><c \"#1b6e14\">Assign Label</c><br>
+		This changes the text on the key.<br><br><c \"#1b6e14\">Assign Social</c><br>This lets you put a custom ability created on the <c \"#83f07a\">Socials Page</c> into the <c \"#83f07a\">Hotbar</c> directly.<br><br>
+		<c \"#1b6e14\">Change Size</c><br>This lets you resize and scale the entire<c \"#83f07a\"> Hotbar.</c><br><br><c \"#1b6e14\">Unmemorize</c><br>This lets you forget a memorized spell. Only works
+		on spell gem <c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Click 'OK' to complete the tutorial on  Hotbars.</c>");
+		quest::updatetaskactivity(290,2);
+	}	
 }	
 
 

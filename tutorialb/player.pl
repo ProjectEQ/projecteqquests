@@ -29,13 +29,30 @@ sub EVENT_ENTERZONE
 }
 
 
-sub EVENT_POPUPRESPONSE {
-     if ($popupid == 111) {
-		quest::popup("Maps", "<br><br> <c \"#94f000\"> Additional Map Features </c> 
+sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjusted at later time, I just browsed greens -Drogerin
+	if ($popupid == 111) { 
+		quest::popup("Maps", "<br><br> <c \"#94f000\"> Additional Map Features </c>  
 		<br><br> If you want to show or hide the visibility of floors above or below your current position, you can toggle the <c \"#00c8f0\"> Height Filter </c> button. When this button is activated, locations and items below a distance specified in the \"Low\" field won't be drawn. Likewise, anything above the \"High\" distance won't be drawn.
 		<br><br> To show or hide labels on the map, toggle the <c \"#00c8f0\"> Labels </c> button.
 		<br><br> If you are in a group and wish to find  members of your group on the map, activate the <c \"#00c8f0\"> Group </c> button. Group members will appear on the map as green <c \"#54f000\"> X</c>'s.");
-	 }
+	}
+	if ($popupid == 1) {
+		quest::popup("Tradeskills", "<br> If the recipe you wish to create is not already in your list of known recipes, you can <c \"#83f07a\"> Experiment</c>.<br><br>
+		When you have open the  <c \"#1b6e14\"> Tradeskill </c> window, click on the <c \"#00c8f0\"> Experiment </c> button. This opens a  new window labeled with the name of the tradeskill container
+		in which you are experimenting -- Oven, in this case.<br><br> You can then place your ingredients intot he slots of the <c \"#1b6e14\"> Oven </c> window. For rat steaks, this requires the rat meat
+		and the cooking sauce.<br><br> When the ingredients are in the oven, click the <c \"#00c8f0\"> Combine </c> button. The ingredients will be consumed, and you will have a cooked rat steak.
+		<br><br><c \"#F07F00\"> Click 'OK' to learn about recipes and skill levels.",2);
+	}
+	if ($popupid == 2) {
+		quest::popup("Tradeskills", "<br> Some tradeskill recipes are more complicated than others, and require you to possess a higher tradeskill level in the tradeskill you are attempting
+		to practice.<br><br> If your level is not high enough to attempt a particular recipes, you will likely fail the combine. When this happens, you will often lose some or all of the ingredients
+		you used for the combine.<br><br><c \"#F07F00\"> Click 'OK' to learn about different types of tradeskills.",3);
+	}
+	if ($popupid == 3) {
+		quest::popup("Tradeskills", "<br> There are many different type of tradeskills that you can practice, including baking, pottery, fletching, blacksmithing, and weaving. You can create all
+		manner of items using these skills.<br><br> To perform the various types of tradeskills, you must use the correct types of tradeskill containers. For example, to perform baking, you need an oven.
+		Blacksmithing requires a forge. Pottery requires a kiln. Be on the lookout for different types of tradeskill containers located in the cities throughout Norrath.");
+	}
 }	
 
 

@@ -62,7 +62,7 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 	if ($popupid == 7) {
 		quest::popup("Assigning Hotkeys", "<br><c \"#83f07a\">Hotkeys</c> are abilities, actions, and macros th at can be activated with a simple click. There are multiple ways to customize your
 		<c \"#83f07a\">Hotbar</c> using these buttons:<br><br><c \"#1b6e14\">Drag and Drop</c><br>You can move and set <c \"#83f07a\"> Hotkeys</c> by holding down the left mouse button for a moment, and then
-		dragging the icon to the<c \"#83f07a\"> Hotbar.</c> This is especially useful for dragging from your <c \"#83f07a\">Action,</c><c \"#83f07a\">Alternative Advancement,</c> and <c \"#83f07a\">Spell Gem</c> menus.
+		dragging the icon to the<c \"#83f07a\"> Hotbar.</c> This is especially useful for dragging from your <c \"#83f07a\">Action,</c><c \"#83f07a\"> Alternative Advancement,</c> and <c \"#83f07a\">Spell Gem</c> menus.
 		<br><br><c \"#1b6e14\">Right-Click</c><br>You can right-click an empty<c \"#83f07a\"> Hotbar</c> slot and use <c \"#83f07a\">Assigning Social</c> to assign custom made actions. More about those will
 		be presented in the next section.<br><br><c \"#F07F00\"> Click 'OK' to learn about custom functions for your Hotbars.</c>",8);
 	}

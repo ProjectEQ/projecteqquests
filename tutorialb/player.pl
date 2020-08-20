@@ -78,7 +78,11 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 		<c \"#1b6e14\">Change Size</c><br>This lets you resize and scale the entire<c \"#83f07a\"> Hotbar.</c><br><br><c \"#1b6e14\">Unmemorize</c><br>This lets you forget a memorized spell. Only works
 		on spell gem <c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Click 'OK' to complete the tutorial on  Hotbars.</c>");
 		quest::updatetaskactivity(290,1);
-	}	
+	}
+	if ($popupid == 10) {
+		quest::popup("Swimming", "<br>When underwater, your remaining air is shown in the <c \"#1b6e14\">Air Remaining</c> window. If your air supply runs out, you will begin taking damage.<br><br>
+		As your swimming skill increases, so will your air supply and swimming speed. The more time you spend in the water, the better swimmer you will become!");
+	}
 }	
 
 

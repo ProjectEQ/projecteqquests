@@ -52,7 +52,6 @@ function cleric_buffs(e)
             e.self:Say("I'm sorry, i cannot buff you unless you have sufficient money.")
             return
         end
-
         -- HP
         --  1 - Courage [202]
         --  9 - Center [219]
@@ -64,7 +63,6 @@ function cleric_buffs(e)
         --  60 - Aegolism [1447]
         if (eq.is_the_scars_of_velious_enabled() and e.other:GetLevel() >= 60) then -- Velious only
             eq.SelfCast(1447);
-            return
         elseif e.other:GetLevel() >= 52 then
             eq.SelfCast(1533);
         elseif e.other:GetLevel() >= 44 then
@@ -202,7 +200,6 @@ function druid_ports_and_buffs(e)
             e.self:Say("I'm sorry, i cannot buff you unless you have sufficient money.")
             return
         end
-
         -- HP Type 1
         --  1 - Skin Like Wood  [26]
         --  14 - Skin Like Rock [263]
@@ -367,42 +364,42 @@ function enchanter_buffs(e)
         --  56 - Augment [1729]
         --  57 - Wonderous Rapidity [1709] (skip)
         --  60 - Visions of Grandeur [1710]
-            if e.other:GetLevel() >= 60 then
-                eq.SelfCast(1710);
-            elseif e.other:GetLevel() >= 56 then
-                eq.SelfCast(1729);
-            elseif e.other:GetLevel() >= 29 then
-                eq.SelfCast(10);
-            elseif e.other:GetLevel() >= 24 then
-                eq.SelfCast(170);
-            elseif e.other:GetLevel() >= 16 then
-                eq.SelfCast(39);
-            end
+        if e.other:GetLevel() >= 60 then
+            eq.SelfCast(1710);
+        elseif e.other:GetLevel() >= 56 then
+            eq.SelfCast(1729);
+        elseif e.other:GetLevel() >= 29 then
+            eq.SelfCast(10);
+        elseif e.other:GetLevel() >= 24 then
+            eq.SelfCast(170);
+        elseif e.other:GetLevel() >= 16 then
+            eq.SelfCast(39);
+        end
         -- Clarity
         --  16 - Breeze [697] -- Kunark Only
         --  29 - Clarity [174]
         --  54 - Clarity II [1693]
-            if e.other:GetLevel() >= 54 then
-                eq.SelfCast(1557);
-            elseif e.other:GetLevel() >= 29 then
-                eq.SelfCast(430);
-            elseif (e.other:GetLevel() >= 16 and eq.is_the_ruins_of_kunark_enabled()) then -- Kunark Only
-                eq.SelfCast(697);
-            end
+        if e.other:GetLevel() >= 54 then
+            eq.SelfCast(1693);
+        elseif e.other:GetLevel() >= 29 then
+            eq.SelfCast(174);
+        elseif (e.other:GetLevel() >= 16 and eq.is_the_ruins_of_kunark_enabled()) then -- Kunark Only
+            eq.SelfCast(697);
+        end
         -- INT/WIS
         --  39 - Insight [175]
         --  44 - Brilliance [33]
         --  57 - Enlightenment [1688]
-            if e.other:GetLevel() >= 57 then
-                eq.SelfCast(1688);
-            else
-                if e.other:GetLevel() >= 44 then
-                    eq.SelfCast(33);
-                end
-                if e.other:GetLevel() >= 39 then
-                    eq.SelfCast(175);
-                end
+        if e.other:GetLevel() >= 57 then
+            eq.SelfCast(1688);
+        else
+            if e.other:GetLevel() >= 44 then
+                eq.SelfCast(33);
             end
+            if e.other:GetLevel() >= 39 then
+                eq.SelfCast(175);
+            end
+        end
         -- Mana
         --  34 - Gift of Magic [1408] -- Velious Only
         --  55 - Gift of Insight [1409] -- Velious Only
@@ -432,7 +429,6 @@ function shaman_buffs(e)
             e.self:Say("I'm sorry, i cannot buff you unless you have sufficient money.")
             return
         end
-
         -- Talisman
         --  34 - Talisman of Tnarg [167]
         --  44 - Talisman of Altuna [168]

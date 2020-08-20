@@ -23,7 +23,7 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 59968})) then -- Poxan's Sword.
 		e.self:QuestSay(e.other, "Excellent! Now I can fight along side the revolt against the kobolds. Here take this. I found it in the tunnels earlier. You might need it.");
 		e.other:QuestReward(e.self,{itemid=59969}); --Kobold Leather Mask.
-		eq.update_task_activity(22,6); --Basic Training(22)
+		eq.update_task_activity(22,6,1); --Basic Training(22)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

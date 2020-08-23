@@ -10,7 +10,7 @@ sub EVENT_SAY {
 		and lead you to that NPC.</c>");    	
 	quest::updatetaskactivity(22,0); 
 }
-  elsif ($text=~/hail/i && quest::istaskactivityactive(22,6)){
+  elsif ($text=~/hail/i && quest::istaskactivityactive(22,7)){
     quest::say("Well done, my friend. Take this kobold skull charm. You are now ready to join ranks with the slaves and fight against the Gloomingdeep kobolds. Speak with Guard Rahtiz for your next assignment.");
     quest::updatetaskactivity(22,7); 
 }

@@ -1,7 +1,12 @@
 #banish random PC every 60 seconds
 
-sub EVENT_AGGRO {
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
     quest::settimer("banish_random_client", 60);
+  }
+  else {
+    quest::stoptimer("banish_random_client");
+  }
 }
 
 sub EVENT_DEATH_COMPLETE {

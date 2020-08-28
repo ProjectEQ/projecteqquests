@@ -14,7 +14,7 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_TIMER {
-    if($timer eq "banish_random_client" && !$mob->IsMezzed()) {
+    if($timer eq "banish_random_client" && !$mob->Mesmerize()) {
 		my $hate_target = $npc->GetHateRandom();
 		if ($hate_target->IsClient())
 		{

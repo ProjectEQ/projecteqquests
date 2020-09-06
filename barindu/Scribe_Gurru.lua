@@ -1,102 +1,70 @@
--- Completes the sewer flags for GoD progression. Also will remove players from instance.
 -- Scribe_Gurru NPCID:283052
-function event_say(e)
-	-- load the current qglobals
-	local qglobals = eq.get_qglobals(e.self,e.other);
-	
-	-- determine which instances the player is in already
-	-- Lua table contains zone short name and instance version as the key/pair values initially
-	local instance_id_list = {["snpool"] = 0, ["snlair"] = 0, ["sncrematory"] = 0, ["vxed"] = 0, ["tipt"] = 0};
+local function convert_temp_flag(client, flag_name, flag_msg)
+  -- Note: characters on live that received a temporary flag will forever receive
+  -- "temporary" messages when repeating expeditions even after made permanent.
+  -- Just a quirk in their priority flag checks (they probably use a separate flag)
+  client:Message(MT.NPCQuestSay, string.format("Gurru tells you, 'I see that you have helped your friends accomplish things in %s.  I will tell the High Priest of your deeds.  You should seek an audience with him and see if there is anything else that you can help us with.'", flag_msg))
+  eq.set_data(string.format("%s-%s", client:CharacterID(), flag_name), "1")
+  client:Message(15, "Your temporary character flag has been converted into a permanent flag!")
+  eq.debug(string.format("Converted character [%s] temporary flag [%s] to permanent", client:GetName(), flag_name))
+end
 
-	-- handles snplant version 1 by apprenteice udrana(prog) or version 0 by gammesh(exp)
-	local inplan0 = eq.get_instance_id("snplant",0);	
-	if(inplan0 > 0) then
-		instance_id_list["snplant"]=0;
-	else
-		instance_id_list["snplant"]=1;
-	end
-	
-	local invxed0 = eq.get_instance_id("vxed",0);
-	if(invxed0 > 0) then
-		instance_id_list["vxed"]=0;
-	else
-		instance_id_list["vxed"]=1;
-	end	
-	
-	if(e.message:findi("hail")) then
-		if (qglobals["temp_sewers"] ~= nil) then
-			-- if the player is working on sewer instance, update appropriately.
-			if (tonumber(qglobals["temp_sewers"]) == 1 and (qglobals["sewers"] == nil or tonumber(qglobals["sewers"]) < 2)) then
-				e.self:Say("Nice work, speak to the High Priest to continue.");
-				eq.set_global("sewers","2",5,"F");
-				e.other:Message(4,"You receive a character flag!");
-			elseif (tonumber(qglobals["temp_sewers"]) == 2 and tonumber(qglobals["sewers"]) == 2) then
-				e.self:Say("Nice work, speak to the High Priest to continue.");
-				eq.set_global("sewers","3",5,"F");
-				e.other:Message(4,"You receive a character flag!");
-			elseif (tonumber(qglobals["temp_sewers"]) == 3 and tonumber(qglobals["sewers"]) == 3) then
-				e.self:Say("Nice work, speak to the High Priest to continue.");
-				eq.set_global("sewers","4",5,"F");
-				e.other:Message(4,"You receive a character flag!");
-			elseif (tonumber(qglobals["temp_sewers"]) == 4 and (tonumber(qglobals["sewers"]) == 4 or tonumber(qglobals["sewers"]) == 5)) then
-				e.self:Say("Nice work, the path to Vxed is open, speak with Apprentice Udranda.");
-				eq.set_global("god_vxed_access","1",5,"F");
-				e.other:Message(4,"You receive a character flag!");
-			elseif (tonumber(qglobals["temp_sewers"]) == 3 and tonumber(qglobals["sewers"]) == 2) then
-				e.self:Say("Thank you for assisting in the Lair, please visit the Crematory to advance.");
-			elseif (tonumber(qglobals["temp_sewers"]) == 4) then
-				e.self:Say("Thank you for assisting in the Pool, please visit the Plant to advance.");
-			elseif (tonumber(qglobals["temp_sewers"]) == 4 and tonumber(qglobals["sewers"]) == 2) then
-				e.self:Say("Thank you for assisting in the Pool, please visit the Crematory to advance.");
-			elseif (tonumber(qglobals["temp_sewers"]) == 4 and tonumber(qglobals["sewers"]) == 3) then
-				e.self:Say("Thank you for assisting in the Pool, please visit the Crematory to advance.");
-			elseif (tonumber(qglobals["sewers"]) == 2) then
-				e.self:Say("Thank you for assisting in the Crematory, please visit the Plant to advance.");
-			elseif (tonumber(qglobals["sewers"]) == 3) then
-				e.self:Say("Thank you for assisting in the Lair, please visit the Plant to advance.");
-			end
-		else
-			e.self:Say("Please speak with the High Priest if you desire to assist");
-		end
-		-- this is a hack/work around until the expedition system is implemented.
-		e.self:Say("Do you need to leave an [" .. eq.say_link("expedition",false,"expedition") .. "]?");
-	elseif(e.message:findi("expedition")) then
-		-- go through the table and update the values to the instance ID returned
-		for k,v in pairs(instance_id_list) do
-			instance_id_list[k] = eq.get_instance_id(k,v);
-		end
-		-- go through the table create a message to ask the player which instances to leave
-		local in_an_instance = false;
-		for k,v in pairs(instance_id_list) do
-			if (v > 0) then
-				if (in_an_instance == false) then
-					-- note that we are in at least one instance
-					in_an_instance = true;
-				end
-				e.other:Message(0,"Click the link if you wish to leave: " .. eq.say_link("leave " .. v,false,k));
-			end
-		end
-		if (in_an_instance == false) then
-			e.self:Say("You are not a member of an expedition!");
-		end
-	elseif(e.message:findi("leave")) then
-		-- get the instance_id the player requested to leave
-		local instance_id;
- 		for i in string.gmatch(e.message, "%S+") do
- 			if (tonumber(i)) then
- 				instance_id = tonumber(i);
- 			end
- 		end
-		--
-		-- go through the table and update the values to the instance ID returned
-		for k,v in pairs(instance_id_list) do
-			instance_id_list[k] = eq.get_instance_id(k,v);
-		end
-		-- go through the table and verify the instance id they requested to leave is a valid vxed,tipt or sewers instance
-		for k,v in pairs(instance_id_list) do
-			if (v == instance_id) then
-					eq.remove_all_from_instance(tonumber(v));
-			end
-		end
-	end
+local function update_sewers_flag(char_id, minimum_flag)
+  local sewer_flag_key = string.format("%s-god_sewers", char_id)
+  local sewers_flag = tonumber(eq.get_data(sewer_flag_key)) or 0
+
+  if sewers_flag < minimum_flag then
+    eq.set_data(sewer_flag_key, tostring(minimum_flag))
+  end
+end
+
+function event_say(e)
+  if e.message:findi("hail") then
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Scribe Gurru says, 'Please do not bother the High Priest with petty issues, he has enough on his mind.  If you have other [" .. eq.say_link("issues") .. "] to discuss let me know.'")
+  elseif e.message:findi("issues") then
+    -- converts temporary flags into permanent flags if at right point in progression
+    -- temporary flags are from completing expeditions with others outside progression
+    local qglobals = eq.get_qglobals(e.other)
+    local has_vxed_access = (qglobals.god_vxed_access and qglobals.god_vxed_access == "1") -- sewers or rondo complete
+    local has_tipt_access = (qglobals.god_tipt_access and qglobals.god_tipt_access == "1") -- has_permanent_vxed
+
+    local char_id = e.other:CharacterID()
+
+    local snplant     = eq.get_data(("%s-god_snplant"):format(char_id))
+    local sncrematory = eq.get_data(("%s-god_sncrematory"):format(char_id))
+    local snlair      = eq.get_data(("%s-god_snlair"):format(char_id))
+    local snpool      = eq.get_data(("%s-god_snpool"):format(char_id))
+    local vxed        = eq.get_data(("%s-god_vxed"):format(char_id))
+    local tipt        = eq.get_data(("%s-god_tipt"):format(char_id))
+
+    -- permanent flag for previous sewer indicates character is on that step
+    -- update main sewers flag for accurate dialogue (high priest hails not required)
+
+    if snplant == "T" then
+      convert_temp_flag(e.other, "god_snplant", "the Purifying Plant")
+      update_sewers_flag(char_id, 1)
+    elseif sncrematory == "T" and snplant == "1" then
+      convert_temp_flag(e.other, "god_sncrematory", "the Crematory")
+      update_sewers_flag(char_id, 2)
+    elseif snlair == "T" and sncrematory == "1" then
+      convert_temp_flag(e.other, "god_snlair", "the Lair of Trapped Ones")
+      update_sewers_flag(char_id, 3)
+    elseif snpool == "T" and snlair == "1" then
+      convert_temp_flag(e.other, "god_snpool", "the Pool of Sludge")
+      update_sewers_flag(char_id, 4)
+    elseif vxed == "T" and (snpool == "1" or has_vxed_access) then -- finished sewers or has rondo skip
+      convert_temp_flag(e.other, "god_vxed", "Vxed")
+      eq.set_global("god_tipt_access", "1", 5, "F")
+    elseif tipt == "T" and has_tipt_access then -- must have completed permanent vxed
+      convert_temp_flag(e.other, "god_tipt", "Tipt")
+      eq.set_global("god_kodtaz_access", "1", 5, "F")
+    else
+      e.other:Message(MT.NPCQuestSay, "Gurru tells you, 'I see that you have completed some deeds for our people and we appreciate it.  Before I can tell the High Priest of your work though, you will need to talk to him and finish some other tasks.'")
+    end
+  end
+end
+
+function event_trade(e)
+  local item_lib = require("items")
+  item_lib.return_items(e.self, e.other, e.trade)
 end

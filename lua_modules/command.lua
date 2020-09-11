@@ -10,9 +10,9 @@ commands["timeleft"]  = { 0,   require(commands_path .. "time_left") };
 function eq.DispatchCommands(e)
 	local command = commands[e.command];
 
-	for k,v in pairs(e.args) do
-		eq.debug("[command.lua] key " .. k .. ' value ' .. v);
-	end
+	-- for k,v in pairs(e.args) do
+		-- eq.debug("[command.lua] key " .. k .. ' value ' .. v);
+	-- end
 
 	if(command) then
 		local access = command[1];

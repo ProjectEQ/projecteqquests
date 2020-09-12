@@ -18,6 +18,7 @@ function event_combat(e)
 		eq.modify_npc_stat("fr", "300")
 		eq.modify_npc_stat("dr", "300")
 		eq.modify_npc_stat("pr", "300")
+		eq.modify_npc_stat("ac", "200")
 	end
 end
 
@@ -26,7 +27,6 @@ function event_spawn(e)
 end
 
 function event_hp(e)
-    -- His resists are suppose to change?
     if (e.hp_event == 85) then
         eq.modify_npc_stat("min_hit", "1040")
         eq.modify_npc_stat("max_hit", "1800")
@@ -35,6 +35,7 @@ function event_hp(e)
 	eq.modify_npc_stat("fr", "250")
 	eq.modify_npc_stat("dr", "250")
 	eq.modify_npc_stat("pr", "250")
+	eq.modify_npc_stat("ac", "300")
         eq.zone_emote(15, "Blisters and festering sores covering Bertoxxulous's hide burst. A noxious ooze bleeds down his scarred flesh, strengthening his physical body.")
         eq.set_next_hp_event(70)
     elseif (e.hp_event == 70) then
@@ -45,6 +46,7 @@ function event_hp(e)
 	eq.modify_npc_stat("fr", "200")
 	eq.modify_npc_stat("dr", "200")
 	eq.modify_npc_stat("pr", "200")
+	eq.modify_npc_stat("ac", "400")
         eq.zone_emote(15, "Blisters and festering sores covering Bertoxxulous's hide burst. A noxious ooze bleeds down his scarred flesh, strengthening his physical body.")
         eq.set_next_hp_event(55)
     elseif (e.hp_event == 55) then
@@ -55,6 +57,7 @@ function event_hp(e)
 	eq.modify_npc_stat("fr", "150")
 	eq.modify_npc_stat("dr", "150")
 	eq.modify_npc_stat("pr", "150")
+	eq.modify_npc_stat("ac", "500")
         eq.zone_emote(15, "Blisters and festering sores covering Bertoxxulous's hide burst. A noxious ooze bleeds down his scarred flesh, strengthening his physical body.")
         eq.set_next_hp_event(40)
     elseif (e.hp_event == 40) then
@@ -65,6 +68,7 @@ function event_hp(e)
 	eq.modify_npc_stat("fr", "200")
 	eq.modify_npc_stat("dr", "200")
 	eq.modify_npc_stat("pr", "200")
+	eq.modify_npc_stat("ac", "450")
         eq.zone_emote(15, "Bertoxxulous falters, nearly imperceptibly.")
         eq.set_next_hp_event(25)
     elseif (e.hp_event == 25) then
@@ -75,6 +79,7 @@ function event_hp(e)
 	eq.modify_npc_stat("fr", "250")
 	eq.modify_npc_stat("dr", "250")
 	eq.modify_npc_stat("pr", "250")
+	eq.modify_npc_stat("ac", "400")
         eq.zone_emote(15, "Bertoxxulous falters, nearly imperceptibly.")
         eq.set_next_hp_event(10)
     elseif (e.hp_event == 10) then
@@ -85,6 +90,7 @@ function event_hp(e)
 	eq.modify_npc_stat("fr", "300")
 	eq.modify_npc_stat("dr", "300")
 	eq.modify_npc_stat("pr", "300")
+	eq.modify_npc_stat("ac", "350")
         eq.zone_emote(15, "Bertoxxulous falters, nearly imperceptibly.")
     end
 end

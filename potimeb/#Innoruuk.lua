@@ -1,3 +1,7 @@
+function event_spawn(e)
+	eq.set_next_hp_event(80);
+end
+
 function event_combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 6 * 1000);

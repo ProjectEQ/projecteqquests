@@ -1,4 +1,9 @@
+# newbie armor quest
+
 sub EVENT_SAY {
+  if (!quest::is_the_legacy_of_ykesha_enabled()) {
+		return;
+	}
   if($text=~/Hail/i) {
     quest::say("Who dares to address me while I am clearly busy reviewing my daily research. I sure hope this is important $name, I do not have time to waste on just any initate of House Spurned. Not a single day goes by that I do not come face to face with cannon fodder that is not even worthy of a headstone in our burial grounds. If you wish to [prove yourself] then I might be in a generous mood.");
   }
@@ -14,7 +19,7 @@ sub EVENT_SAY {
   if($text=~/understand/i) {
      if ((($class == 'wizard') ||($class == 'magician') || ($class == 'enchanter')) && ($race == 'dark elf')){
     quest::say("'Very well $name, here is your Mystical sewing kit. I have the patterns and recipes necessary to craft Spurned Initiate [Skullcaps], [Bracers], [Sandals], [Sleeves], [Trousers], [Gloves} and [Robes]. When you feel you are ready to gather the items necessary to craft your armor simply tell me which piece you want to craft. The items that you will need to collect will mostly be found in the Forest but some will be here in town. As I said before seek out the Arcane Lightwalkers to collect the cloaks that you will need to make the armor materials. I look forward to seeing what you will make of this opportunity.");
-    quest::summonitem(17246);#Mystical Sewing Kit
+    quest::summonitem(17246); #Item: Mystical Sewing Kit
      }
      else {
      quest::say("You are no member of House Spurned.  Begone!"); #text made up, I have no record of what's said if you're not an inkie chanter/wizzy/mag
@@ -54,11 +59,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 22642 => 1, 22643 => 1, 22644 => 1)) {
+  if (quest::is_the_legacy_of_ykesha_enabled() && plugin::check_handin(\%itemcount, 22642 => 1, 22643 => 1, 22644 => 1)) {
     quest::say("Your prowess both in the classroom and on the battlefield has certainly amazed me. Please take this relic that is only presented to the most dedicated initiates and carry it with pride. You have made your house very proud on this day.");
     quest::summonitem(22647); #Ceremonial Dagger of the Spurned
   }
   plugin::return_items(\%itemcount);
 }
-
-# Quest by Kilelen, based on a quest by mystic414 

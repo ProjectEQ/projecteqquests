@@ -1,8 +1,9 @@
--- Quest edited by mrsmystic
--- Quest further edited by Qadar for compatibility with Watchman Boots quest (Watchman_Dexlin in northkarana)
--- Converted to .lua by Speedz
+-- newbie armor quest
 
 function event_say(e)
+	if (not eq.is_the_planes_of_power_enabled()) then
+		return;
+	end
 	if(e.message:findi("hail")) then
 		e.self:Say("Pleased to meet you, " .. e.other:GetName() .. "! I am Narron Jenork, High Watchman of Ak'anon. I am one of the most skilled Watchmans in all of Ak'anon, and I pride myself on training the most promising young warriors that Ak'anon has to offer. Are you a young gnome warrior?");
 	elseif(e.message:findi("young gnome warrior")) then

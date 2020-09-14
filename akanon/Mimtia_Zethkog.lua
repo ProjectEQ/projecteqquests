@@ -1,4 +1,4 @@
--- Converted to .lua by Speedz
+-- newbie armor quest - doesn't spawn until LoY
 
 function event_say(e)
 	if (e.message:findi("plague knight boot")) then

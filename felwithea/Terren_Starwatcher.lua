@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome friend! Have you come to the Temple of Tunare to give praise or are you a young Cleric seeking [guidance] from your elders?");

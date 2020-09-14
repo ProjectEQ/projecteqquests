@@ -1,6 +1,9 @@
--- Converted to .lua by Speedz
+-- newbie armor quest doesn't spawn until pop
 
 function event_say(e)
+	if (not eq.is_the_planes_of_power_enabled()) then
+		return;
+	end
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail " .. e.other:GetName() .. "!");
 	elseif(e.message:findi("silk thread")) then

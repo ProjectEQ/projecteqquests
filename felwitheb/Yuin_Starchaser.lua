@@ -1,4 +1,4 @@
--- Quest: Art Keepers  NPC: Yuin Starchaser  Zone: Felwithe B
+-- newbie armor quest doesn't spawn until pop
 
 function event_say(e)
 	if(e.message:findi("hail")) then

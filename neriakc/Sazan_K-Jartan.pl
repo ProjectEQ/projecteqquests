@@ -1,4 +1,9 @@
+# illusion guktan - evil quest not enabled until loy
+
 sub EVENT_SAY {
+  if (!quest::is_the_legacy_of_ykesha_enabled()) {
+    return;
+  }
   if ($text=~/hail/i) {
      quest::emote("glances at you from the corner of his eye.");
     quest::say("You'd better speak more swiftly than my blades or you won't walk out of here $name.");
@@ -28,7 +33,7 @@ if ($text=~/need new note/i) {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 67007 =>1 )) {
+  if (quest::is_the_legacy_of_ykesha_enabled() && plugin::check_handin(\%itemcount, 67007 =>1 )) {
     quest::emote("takes the materials from you. Sniffing the sickly smell coming from the container, he nods and grabs a small vial from a pouch on his belt. He begins to mix the vial into the jar gently as beads of sweat begin to form on his forehead. Then, he smiles in triumph.");
     quest::say("I did it! I didn't think I would be able to but here I stand triumphant. I got the recipe from an associate of mine named Tisumie, beautiful lass, deadly with a blade. It took a fortune to get that recipe from her but it will be well worth it if we can accomplish our goal. Well now, all that remains is the delivery. Take this to Ryoz and he will give you further instructions. It will kill any Froglok in Norrath. That I guarantee!");
     quest::summonitem(67001); # Item: Vial of Froglok's Bane

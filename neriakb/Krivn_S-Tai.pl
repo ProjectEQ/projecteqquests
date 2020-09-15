@@ -1,9 +1,6 @@
 # newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
-  if (!quest::is_the_legacy_of_ykesha_enabled()) {
-		return;
-	}
   if ($text=~/materials/i) {
     quest::say("Many species of dangerous creatures and even the walking remains of the dead inhabit the Nektulos Forest. You must defeat these creatures and undead in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft [gloves], [boots], a [bracer], a [coif], [leggings], [sleeves], or a [tunic]?");
   }

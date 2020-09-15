@@ -1,9 +1,6 @@
 # newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
-  if (!quest::is_the_legacy_of_ykesha_enabled()) {
-		return;
-	}
   if($text=~/Hail/i) {
     quest::say("Who dares to address me while I am clearly busy reviewing my daily research. I sure hope this is important $name, I do not have time to waste on just any initate of House Spurned. Not a single day goes by that I do not come face to face with cannon fodder that is not even worthy of a headstone in our burial grounds. If you wish to [prove yourself] then I might be in a generous mood.");
   }

@@ -11,9 +11,6 @@ function event_enter(e)
 end
 
 function event_say(e)
-	if (not eq.is_the_planes_of_power_enabled()) then
-		return;
-	end
 	if(e.message:findi("hail")) then
 		e.self:Say("It is very nice to meet you " .. e.other:GetName() .. ". I am Iony Gredlong Priestess of the Underfoot. I coordinate all the training for new clerics here in the Deep Musing. If you are a [cleric] then I might just have some tests for you that will challenge your wisdom as well as your fighting abilities.");
 	elseif(e.message:findi("cleric")) then

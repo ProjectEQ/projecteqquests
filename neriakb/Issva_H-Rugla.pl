@@ -1,9 +1,6 @@
 # newbie armor quest doesn't spawn until pop
 
-sub EVENT_SAY { 
-	if (!quest::is_the_legacy_of_ykesha_enabled()) {
-		return;
-	}
+sub EVENT_SAY {
 	if($text=~/Hail/i){
 		quest::say("If you're looking for chit chat you can bugger off. I'm here to sell supplies not company.");
 	}

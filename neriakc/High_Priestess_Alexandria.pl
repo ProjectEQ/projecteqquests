@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings child, what business do you have here? I'm sorry but I will only deal with Clerics that are willing to prove their loyalty to Innoruuk. I cannot deal with every single heathen that feels it is necessary to bid me a good day. If you are a [Cleric of Innoruuk] I might be able to aid you in your training.");
@@ -63,4 +65,3 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-# Quest by Blaz - Dark Elf Cleric Newbie Armor quests

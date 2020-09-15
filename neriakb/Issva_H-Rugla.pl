@@ -1,4 +1,4 @@
-# newbie armor quest
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY { 
 	if (!quest::is_the_legacy_of_ykesha_enabled()) {

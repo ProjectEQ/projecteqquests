@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Whats do yuz wants? Yuz come to mez to lern bout speshul armorz? If'n yuz ar a Beastlord, yuz kan lern to kraft yur own armor, yuz just needz da recipe. Ar yuz a [Beastlord]?");

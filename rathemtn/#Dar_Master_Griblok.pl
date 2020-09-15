@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
   quest::say("Welcome back, young Dar. I hope your training is going well. Unfortunately, I have been unable to keep up to date on your progress, but should you need advanced training in any individual skills, I am here to help you with that. Also, though you've chosen a life of adventure, remember that you may still be called upon to defend your homeland. To do this, you must be well prepared for war. Let me tell you what little I know of this land and aid you in your [first steps].");

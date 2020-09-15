@@ -1,4 +1,4 @@
-# newbie armor quest
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
   if (!quest::is_the_legacy_of_ykesha_enabled()) {
@@ -59,7 +59,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (quest::is_the_legacy_of_ykesha_enabled() && plugin::check_handin(\%itemcount, 22642 => 1, 22643 => 1, 22644 => 1)) {
+  if (plugin::check_handin(\%itemcount, 22642 => 1, 22643 => 1, 22644 => 1)) {
     quest::say("Your prowess both in the classroom and on the battlefield has certainly amazed me. Please take this relic that is only presented to the most dedicated initiates and carry it with pride. You have made your house very proud on this day.");
     quest::summonitem(22647); #Ceremonial Dagger of the Spurned
   }

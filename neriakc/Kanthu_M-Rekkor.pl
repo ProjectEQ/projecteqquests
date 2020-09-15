@@ -1,9 +1,6 @@
-# newbie armor quest
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
-  if (!quest::is_the_legacy_of_ykesha_enabled()) {
-    return;
-  }
   if($text=~/hail/i) {
     quest::say("Greetings, $name. So you are one of Selzar's new recruits. You are to assist in the construction of the armor you will don as a new Rogue of the House of the Ebon Mask. I have assembled a kit that is used in the crafting of Ashen Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the [materials] that compose the armor.");
   }

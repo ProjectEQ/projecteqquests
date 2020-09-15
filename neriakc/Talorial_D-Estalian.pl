@@ -1,9 +1,6 @@
-# newbie armor quest
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY { 
-  if (!quest::is_the_legacy_of_ykesha_enabled()) {
-    return;
-  }
 
   if($text=~/Hail/i){
     quest::say("On what grounds do you think you are welcome to address me like that vermin? I am afraid you will have to prove yourself to me before I can treat you with any respect. Do you feel that you are [worthy] to stand before me?");

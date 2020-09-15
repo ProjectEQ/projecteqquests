@@ -6,6 +6,7 @@
 # Quests: Spiritcharmers Armor, Spiritcharmer Final Job (Staff)
 #
 # Revised by RealityIncarnate 2-29-08; restored to Grobb quests
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
 

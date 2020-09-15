@@ -1,7 +1,4 @@
-#Berzerker Newbie Armor
-#Zone:sharvahl  ID:155089 -- Pashir_Vollemon
-
-
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
 

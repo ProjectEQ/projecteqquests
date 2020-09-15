@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome to Surefall Glade friend. I am Errin Pinewhisper, Ranger of Karana the Storm Lord. You will find worshipers of both Karana and Tunare residing here in harmony. I train young rangers of both faiths and assist them in getting prepared for work in the often dangerous lands beyond the glade. If you are in need of a [sturdy outfit] suitable for work as a young ranger then I will gladly instruct you on the means to obtain one.");

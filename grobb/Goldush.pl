@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hi dere, yuz look like a warrior dat cud use some decent armor, is you a [warrior]?");

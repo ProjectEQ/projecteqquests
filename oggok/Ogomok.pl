@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Who you be? You fight with anger in your veins? You think you strong [berserker]?");

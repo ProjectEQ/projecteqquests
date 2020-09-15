@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Pleased to meet you " .. e.other:GetName() .. ". I am Filian Weagleross High Priest of the glorious Rodcet Nife! I have recently taken upon some very [important duties] here in our temple so if your business is not urgent please excuse me.");

@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yes? I am a very busy man. I assist new necromancers, wizards, magicians, and enchanters that have joined the Dismal Rage. Are you a sorcerer that has [recently joined] us? ");

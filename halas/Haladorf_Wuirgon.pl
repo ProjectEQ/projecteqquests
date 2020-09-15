@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
  if($text=~/hail/i){ 
   quest::say("Welcome. If you are a young [berserker] wishing to begin your training, I can perhaps be of assistance.");

@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail " .. e.other:GetName() .. ". Know that only within these few passageways and rooms whose borders are marked by the symbol of the Circle of Unseen Hands can we speak freely of our organization and its undertakings. Neither the streets of the city above nor the sewers and catacombs are free of ears that would harm the Circle of Unseen Hands should they hear of our [secrets].");

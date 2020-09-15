@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();

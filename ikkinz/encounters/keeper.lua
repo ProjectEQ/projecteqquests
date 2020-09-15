@@ -97,6 +97,11 @@ function KeeperDeath(e)
 	"You are well on your way to uncovering the secrets that Txevu has holed up inside its walls. Congratulations!");
 	eq.ZoneMarquee(10,510,1,1,6000,"The Keeper of the Altar has been defeated! Congratulations!");
 	eq.depop_all(294622);
+	eq.depop_all(294615);
+	eq.depop_all(294637);
+	eq.depop_all(294638);
+	eq.depop_all(294639);
+	eq.depop_all(294640);
 	eq.stop_timer("adhere");
 	eq.debug("Altar Adherent Alive: " .. num_adhere);
 end

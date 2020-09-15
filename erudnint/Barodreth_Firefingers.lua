@@ -1,6 +1,4 @@
--- NPC ID: 23076
--- NPC Name: Barodreth Firefingers
--- Zone: erudnint
+-- newbie armor quest doesn't spawn until pop
 
 function event_say(e)
 	if (e.message:findi("hail")) then

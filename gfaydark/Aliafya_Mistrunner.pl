@@ -1,4 +1,4 @@
-#leafrunners quest 
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {

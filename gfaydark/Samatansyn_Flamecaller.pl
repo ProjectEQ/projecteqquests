@@ -1,10 +1,4 @@
-#############
-#Quest Name: Samatansyn Flamecaller's Faydark Ranger Armor Quest
-#Author: CrabClaw and PEQ(?)
-#NPCs Involved: Samatansyn Flamecaller
-#Items Involved:
-#zone: gfaydark
-#Revised CrabClaw v1.12
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

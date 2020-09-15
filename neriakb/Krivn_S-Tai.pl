@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if ($text=~/materials/i) {
     quest::say("Many species of dangerous creatures and even the walking remains of the dead inhabit the Nektulos Forest. You must defeat these creatures and undead in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft [gloves], [boots], a [bracer], a [coif], [leggings], [sleeves], or a [tunic]?");
@@ -45,4 +47,3 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-#END of FILE Zone:neriakb  ID:41046 -- Krivn_S`Tai

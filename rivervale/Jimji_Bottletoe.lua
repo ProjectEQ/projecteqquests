@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("bravefoot helm")) then
 		e.self:Say("To assemble a Bravefoot Helm you will need to obtain two bricks of crude iron ore and smelt them in a [" .. eq.say_link("forge",false,"forge") .. "] with a Water Flask and this Crude Helm Mold. Once that is done combine the Crude Iron Helm with a Ruined Wolf Pelt and a Large Yellowjacket Tergite in the Mail Assembly Kit.");

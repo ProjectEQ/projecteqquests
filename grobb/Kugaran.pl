@@ -1,3 +1,5 @@
+# newbie armor quest doesn't spawn until pop
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Whut yoo want from Kugaran! Unless yoo [Shadowknight] yoo leave me alone.");

@@ -1,5 +1,4 @@
-# Halas shaman quest armor
-#
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

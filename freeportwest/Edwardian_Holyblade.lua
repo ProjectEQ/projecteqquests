@@ -1,3 +1,5 @@
+-- newbie armor quest doesn't spawn until pop
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings and well met " .. e.other:GetName() .. ". I am Edwardian Holyblade, noble paladin of Marr. I have devoted my life and my blade to the glory of Mithaniel Marr. I am also in charge of training all new paladins of Marr to make sure that they have the best training necessary. If you are a paladin of Marr I may have some [training] for you.");
@@ -30,7 +32,7 @@ function event_say(e)
 		e.self:Say("Boots are a wise armor choice because you never know what you will have to walk across and knowing your feet are protected is one less thing to worry about. To create your boot material you will need to combine 3 Bricks of Crude Iron Ore, 1 Lion Mane and 2 Wolf Meats in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Truthbringers Boots.");
 		e.other:SummonItem(22612); -- An Enchanted Boots Mold
 	elseif(e.message:findi("final test")) then
-		e.self:Say("Well for quite sometime the Freeport Militia has become more and more corrupt. They have been known to do any dastardly deed you can imagine which includes harming and sometimes killing followers of Marr. There is a group of Militia Soldiers in the commonlands that have been recently harassing a good friend of mine. His name is Pardor and he is a shopkeeper in the commonlands. As if it wasn’t dangerous enough in the commonlands he know has these Militia soldiers demanding he pay them a tax that does not exist.  Will you travel to the commonlands to kill one of these militia soldiers? I fear for my friend's life.");
+		e.self:Say("Well for quite sometime the Freeport Militia has become more and more corrupt. They have been known to do any dastardly deed you can imagine which includes harming and sometimes killing followers of Marr. There is a group of Militia Soldiers in the commonlands that have been recently harassing a good friend of mine. His name is Pardor and he is a shopkeeper in the commonlands. As if it wasnï¿½t dangerous enough in the commonlands he know has these Militia soldiers demanding he pay them a tax that does not exist.  Will you travel to the commonlands to kill one of these militia soldiers? I fear for my friend's life.");
 	end
 end
 

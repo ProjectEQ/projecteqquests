@@ -1,5 +1,4 @@
-# halas warrior noobie armor quests
-#
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

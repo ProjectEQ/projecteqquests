@@ -1,4 +1,4 @@
--- Quests for North Freeport - Salinsa Delfdosan: Ordained Armor Quests (Cleric Newbie Armor)
+-- newbie armor quest doesn't spawn until pop
 
 function event_say(e)
 	if(e.message:findi("hail")) then

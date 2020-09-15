@@ -1,6 +1,4 @@
-# Bertoxxulous cleric quest armor
-#
-# correct reward dialogue missing for pestilence priest mace hand in
+# newbie armor quest doesn't spawn until pop
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

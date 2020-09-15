@@ -1,6 +1,4 @@
--- Quest edited by mrsmystic
--- Quest further edited by Qadar for compatibility with Watchman Boots quest (Watchman_Dexlin in northkarana)
--- Converted to .lua by Speedz
+-- newbie armor quest
 
 function event_say(e)
 	if(e.message:findi("hail")) then

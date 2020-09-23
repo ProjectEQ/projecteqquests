@@ -22,7 +22,7 @@ sub EVENT_CLICKDOOR {
 		if($doorid == 25) {
 			#check if Glykus_Helmir is up
 			if(!$entity_list->IsMobSpawnedByNpcTypeID(214053)) {
-				quest::movepc(203,-4,191,-628); # Zone: potranquility
+				quest::movepc(203,-4,-191,-628); # Zone: potranquility
 			}
 		}
 	}

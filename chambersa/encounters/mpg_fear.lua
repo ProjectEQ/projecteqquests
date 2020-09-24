@@ -18,7 +18,6 @@ local mobs_died;
 local mobs_must_die;
 local minutes_remaining;
 local this_bit = 1;
-local lockout_name = 'MPG_fear';
 local lockout_win = 72;
 local lockout_loss = 2;
 local warnings = 0;
@@ -42,6 +41,11 @@ function Fear_Say(e)
   if ( e.message:findi("hail") ) then
     e.self:Say("This is the Mastery of Fear trial.  You must demonstrate your ability to inflict terror in the hearts of your enemies, and defend yourself when this tactic fails.  Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
   elseif ( e.message:findi("begin") ) then
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+    end
+
     eq.spawn_condition('chambersa', instance_id, 2, 1 );
 
     e.self:Say("Very well!  Let the battle commence!");
@@ -51,7 +55,7 @@ function Fear_Say(e)
 
   elseif ( e.message:findi('test') and e.other:Admin() > 80 ) then
     local mpg_helper = require("mpg_helper");
-    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
+    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, nil);
   end
 end
 
@@ -64,7 +68,6 @@ function Fear_Timer(e)
     minutes_remaining = minutes_remaining - 1;
     
     if (minutes_remaining == 0) then
-      local instance_requests = require("instance_requests");
       local player_list = eq.get_characters_in_instance(instance_id);
       
       eq.stop_timer('minutes');
@@ -76,15 +79,22 @@ function Fear_Timer(e)
         eq.spawn2(304013, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
         eq.depop();
 
+        local dz = eq.get_expedition()
+        if dz.valid then
+          dz:AddReplayLockout(eq.seconds("3d"))
+        end
+
         local mpg_helper = require("mpg_helper");
-        mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
+        mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, nil);
 
       else
         eq.zone_emote(13, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
         eq.depop();
 
-        for k,v in pairs(player_list) do
-          eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
+        -- no lockout added on failure, the dz shuts down in 5 minutes
+        local dz = eq.get_expedition()
+        if dz.valid then
+          dz:SetSecondsRemaining(eq.seconds("5m"))
         end
       end
     else 

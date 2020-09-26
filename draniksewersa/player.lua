@@ -4,7 +4,3 @@ function event_click_door(e)
       e.self:MovePC(336, -129, -1236,-237.6,70); -- Zone: dranik
   end
 end
-
-function event_enter_zone(e)
-  e.self:ClearCompassMark(); 
-end

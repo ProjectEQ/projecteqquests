@@ -25,7 +25,6 @@
 
 local event_started = false;
 local instance_id;
-local lockout_name = 'MPG_endurance';
 local lockout_win = 108;
 local this_bit = 2;
 local player_list;
@@ -37,7 +36,6 @@ function Boss_Spawn(e)
   event_started = false;
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
-  lockout_name = 'MPG_endurance';
   lockout_win = 108;
   this_bit = 2;
   boss_hp = 100;
@@ -78,6 +76,12 @@ function Boss_Say(e)
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Endurance trial. You must survive an endless onslaught of enemies for as long as necessary. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
+      local dz = eq.get_expedition()
+      if dz.valid then
+        dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+        dz:AddReplayLockout(eq.seconds("3h"))
+      end
+
       e.self:Say("Very well!  Let the battle commence!");
       Start_Event(e);
       Spawn_Adds();
@@ -208,8 +212,13 @@ function Event_Win(e)
   eq.unique_spawn(305014, 0, 0, -204, 274, 66, 144); -- NPC: Shell_of_the_Ancients
 
   -- Update the Lockouts
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddLockoutDuration("Replay Timer", eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+  end
+
   local mpg_helper = require("mpg_helper");
-  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
 end
 
 function event_encounter_load(e)

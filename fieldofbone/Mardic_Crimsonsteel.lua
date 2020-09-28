@@ -36,7 +36,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 60195})) then -- Sealed Note for Mardic
-		e.other:MovePC(78,1065,525,176); -- Field of Bone test area.
+		e.other:MovePC(78,1065,525,176,388); -- Field of Bone test area.
 		eq.set_timer("spawn",15000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

@@ -1,3 +1,8 @@
+local paladin_dz = { "dranikhollowsc", 0, eq.seconds("6h") }
+paladin_dz.compass = { "draniksscar", -2059.05, 574.10, 209.51 }
+paladin_dz.safereturn = { "draniksscar", -2038.5, 589.25, 201.875, 0 }
+paladin_dz.zonein = { 3944.0, -252.0, 138.0, 380.0 }
+
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(qglobals["paladin_epic"] == "9") then
@@ -11,16 +16,7 @@ function event_say(e)
 				e.self:Say("Cough, cough, hello " .. e.other:GetName() .. ". I apologize for my cough, my sister and I were injured badly by Muramites in Discord when some of the initial Wayfarers ventured there to explore. I luckily escaped before being mortally injured, but I lost my sister in the exodus. I have been stricken with some odd disease that appears to be eating away at me everyday, and I fear there might not be anything that can cure me. However, maybe you can try to find a cure for me. I have heard a set of prayer beads might cleanse my body of this illness, which can be found in various holy temples throughout Norrath. Curing me might be hard to do, but someone in one of those temples might be willing to help.")
 			end
 		elseif(e.message:findi("ready")) then
-			local instance_requests = require("instance_requests");
-			local lockouts = { { 'dranikhollowsc','dranikhollowsc'} } 																			
-			local requests = instance_requests.ValidateRequest('group',inst_name, 0, 2, 6, 65, nil, nil, e.other, lockouts);
-			if (requests.valid and requests.flags == 1) then
-			  instance_requests.DisplayLockouts(e.other, e.other, lockouts);
-			elseif (requests.valid and requests.flags == 0) then		 
-			  local instance_id = eq.create_instance("dranikhollowsc",0, 21600);
-			  eq.assign_group_to_instance(instance_id);
-			  e.other:Message(15,"Dranik's Hollows: Murkglider Hive is now available to you.");
-			end
+			e.other:CreateExpedition(paladin_dz, { "Dranik's Hollows: Murkglider Hive", 3, 6 })
 		end
 	end
 end

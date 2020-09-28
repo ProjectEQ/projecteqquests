@@ -4,7 +4,7 @@ Drogerin
 --]]
 
 function event_say(e)
-	local qglobals = eq.get_qglobals(e.self);
+	local qglobals = eq.get_qglobals(e.other);
 		if(e.message:findi("hail")) then
 			if(qglobals["bersolo"] == "1") then
 				e.self:QuestSay(e.other, "Hail, " .. e.other:GetName() .. ", Run along and give McArik the items he requested.");

@@ -4,10 +4,9 @@ Drogerin
 --]]
 
 function event_say(e)
-	local level = e.other:GetLevel();
 	local qglobals = eq.get_qglobals(e.self);
 		if(e.message:findi("hail")) then
-			if(level >= 45 and e.other:Class() == "Berserker" and qglobals["bersolo"] == "1") then
+			if(e.other:GetLevel() >= 45 and e.other:Class() == "Berserker" and qglobals["bersolo"] == "1") then
 				e.self:QuestSay(e.other, "Hail, " .. e.other:GetName() .. ", Run along and give McArik the items he requested.");
 				e.other:SummonItem(60196); --Item: Image Essence
 				eq.delete_global("bersolo");

@@ -4,7 +4,7 @@ Drogerin
 --]]
 
 function event_say(e)
-	local level = e.self:GetLevel();
+	local level = e.other:GetLevel();
 	local qglobals = eq.get_qglobals(e.self);
 		if(e.message:findi("hail")) then
 			if(level >= 45 and e.other:Class() == "Berserker" and qglobals["bersolo"] == "1") then

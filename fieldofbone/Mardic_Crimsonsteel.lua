@@ -11,10 +11,9 @@ function event_say(e)
 				e.self:QuestSay(e.other, "Hail, " .. e.other:GetName() .. ", Run along and give McArik the items he requested.");
 				e.other:SummonItem(60196); --Item: Image Essence
 				eq.delete_global("bersolo");
-			end		
-		else
-			e.self:QuestSay(e.other, "Hail to you, feared one. I see the glint of rage in them eyes of yours there. One day you'll be able to recognize the same in others. I suppose now is the time to talk to you about the mirage around here. Tell you the truth, I wasn't able to beat it myself... that's why I'm out here and not establishing myself as a berserker.");
-			e.self:QuestSay(e.other, "I wasn't meant for that path. I'm here to guide folk like yourself and help you gain control of the insane beast that lurks inside you. You must be prepared to fight one like yourself. All ye need are your wits, brawn, and skill, nought else. When you are ready give me the note McArik gave you and I'll send you to the training grounds.");
+			else		
+				e.self:QuestSay(e.other, "Hail to you, feared one. I see the glint of rage in them eyes of yours there. One day you'll be able to recognize the same in others. I suppose now is the time to talk to you about the mirage around here. Tell you the truth, I wasn't able to beat it myself... that's why I'm out here and not establishing myself as a berserker.");
+				e.self:QuestSay(e.other, "I wasn't meant for that path. I'm here to guide folk like yourself and help you gain control of the insane beast that lurks inside you. You must be prepared to fight one like yourself. All ye need are your wits, brawn, and skill, nought else. When you are ready give me the note McArik gave you and I'll send you to the training grounds.");
 		end
 end	
 

@@ -72,7 +72,12 @@ function event_say(e)
       if dz.valid then
         dz:SetLocked(true, ExpeditionLockMessage.Close)
         eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Durgin Skell says, 'Fantastic work, friends.  I'm not sure how, but you have accomplished the impossible by ridding the Menagerie of the most horrible abominations imaginable.  You've done a great service for the brotherhood.  I'm sure Morden will reward you handsomely for... Wait, what was that noise?'  The caverns tremble and fragments of ice rain down like hail.  A deep, thundering roar rumbles from the northeast.  'Oh dear.  It sounds like our work is not quite finished.  I'll just... wait here if you don't mind.'")
-        eq.spawn2(237797, 0, 0, 216.00, 397.00, -9.75, 256) -- #Laskuth_the_Colossus
+        eq.spawn2(237797, 0, 0, 216, 397, -9.75, 256) -- #Laskuth_the_Colossus
+        eq.spawn2(237740, 0, 0, 162, 560, -42, 169)   -- a_sleet_flurry
+        eq.spawn2(237740, 0, 0, 207, 604, -101, 162)  -- a_sleet_flurry
+        eq.spawn2(237740, 0, 0, 248, 614, -101, 313)  -- a_sleet_flurry
+        eq.spawn2(237740, 0, 0, 280, 617, -121, 280)  -- a_sleet_flurry
+        eq.spawn2(237740, 0, 0, 205, 505, -77, 46)    -- a_sleet_flurry
         laskuth_spawned = true
       end
     elseif events_completed == 4 then

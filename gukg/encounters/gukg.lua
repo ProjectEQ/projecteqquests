@@ -1,10 +1,7 @@
 -- Encounter: LDoN Raid: Deepest Guk: Ritualist of Hate
 -- Zone: gukg / 259
 --
-local instance_requests = require("instance_requests"); 
 local instance_id;
-local lockout_name = 'LDON_gukg';
-local lockout_length = 108;
 local lockout_bit;
 local lockouts;
 local raid;
@@ -123,8 +120,9 @@ function Keeper_Death(e)
   -- Leklos` Bonepile
   eq.spawn2(259157, 0, 0, -674, 814, -27, 328); -- NPC: #Leklos`_Bonepile
 
-  for k,v in pairs(raid) do
-    eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(lockout_length)), "H" .. lockout_length, 0, v, 0);
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockout(eq.seconds("4d12h"))
   end
 
 end

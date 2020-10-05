@@ -4,7 +4,6 @@ local QOS_Active = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^4
 local instance_id;
 local raid_list;
 local QOS;
-local instance_requests = require("instance_requests"); 
 
 function QOS_Spawn(e)
   instance_id = eq.get_zone_instance_id();
@@ -42,10 +41,10 @@ function Mini_Death(e)
 end
 
 function UpdateLockout()
-  local lockout_name = 'LDON_takc';
-  for k,v in pairs(raid_list) do                                                                             
-    eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
-  end                                                                                                          
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockout(eq.seconds("4d12h"))
+  end
 end
 
 function QOS_Death(e)

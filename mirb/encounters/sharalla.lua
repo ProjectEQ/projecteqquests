@@ -79,12 +79,18 @@ function animal_spawn(e)
   local loc = animals[e.self:GetNPCTypeID()]
   e.self:SetRunning(true)
   e.self:MoveTo(loc[1], loc[2], loc[3], loc[4], true)
+
+   -- reduce aggro and assist range, they prioritize the corpse
+  e.self:CastToNPC():ModifyNPCStat("aggro", "10")
+  e.self:CastToNPC():ModifyNPCStat("assist", "10")
+
   eq.set_timer("process", 5000)
 end
 
 function animal_combat(e)
   if e.joined then
     e.self:SetEntityVariable("combat", "1")
+    eq.stop_timer("combat_animation")
   else
     e.self:SetEntityVariable("combat", "0")
   end
@@ -111,11 +117,13 @@ function animal_timer(e)
       end
 
       -- simulate attack on Sharalla's corpse (assume we'd be stopped at destination)
-      -- todo: live looks like actual combat (fast attacks)
       if not e.self:IsMoving() then
-        e.self:DoAnim(8) -- animHand2Hand
+        eq.set_timer("combat_animation", 1000) -- live looks like actual combat (fast attacks)
       end
     end
+  elseif e.timer == "combat_animation" then
+    local animations = { 6, 8 } -- animDualWield and animHand2Hand (from packets)
+    e.self:DoAnim(animations[math.random(#animations)])
   end
 end
 

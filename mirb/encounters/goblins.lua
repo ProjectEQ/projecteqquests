@@ -28,7 +28,7 @@ local function reset_event()
 
   event_started = false
   use_raidleader_emote = false
-  use_taskmaster_emote  = false
+  use_taskmaster_emote = false
   goblins_arrived = 0
   goblin_count = 0
   next_emote = 0

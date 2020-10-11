@@ -10,7 +10,7 @@ function event_signal(e)
     local dz = eq.get_expedition()
     if dz.valid then
       dz:SetLocked(true, ExpeditionLockMessage.Close)
-      dz:AddLockoutDuration("Replay Timer", eq.seconds("16h"))
+      dz:AddReplayLockoutDuration(eq.seconds("16h"))
 
       eq.spawn2(294143, 0, 0, 477, -593, -50, 256) -- NPC: a_pile_of_bones
       eq.spawn2(294144, 0, 0, 477, -638, -50, 256) -- NPC: a_pile_of_bones

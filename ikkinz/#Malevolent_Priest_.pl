@@ -74,7 +74,7 @@ sub INSTANCE_WIN {
   $expedition = quest::get_expedition();
   if ($expedition) {
     $expedition->SetLocked(true, 1); # closing lock message
-    $expedition->AddLockoutDuration("Replay Timer", 57600); # add 16 hours to lockout
+    $expedition->AddReplayLockoutDuration(57600); # add 16 hours to lockout
     quest::spawn2(294140,0,0,-18,-139,-2,384); # NPC: a_pile_of_bones
     quest::spawn2(294139,0,0,-18,-271,-2,128); # NPC: a_pile_of_bones
     quest::ze(0,"The Malevolent Priests have been defeated! Though the legion may send replacements, you have finished what you sought out to do and delayed their progress for a time! Congratulations!");

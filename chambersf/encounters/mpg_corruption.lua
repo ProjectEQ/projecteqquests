@@ -252,7 +252,7 @@ function Huhn_Signal(e)
     -- Set a Lockout 
     local dz = eq.get_expedition()
     if dz.valid then
-      dz:AddLockoutDuration("Replay Timer", eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+      dz:AddReplayLockoutDuration(eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
     end
 
     local mpg_helper = require("mpg_helper");

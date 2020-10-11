@@ -44,7 +44,7 @@ function event_death_complete(e)
   --set lockout
   local dz = eq.get_expedition()
   if dz.valid then
-    dz:AddLockoutDuration("Replay Timer", eq.seconds("16h")) -- add 16 hours to lockout
+    dz:AddReplayLockoutDuration(eq.seconds("16h")) -- add 16 hours to lockout
     dz:SetLocked(true, ExpeditionLockMessage.Close)
   end
 

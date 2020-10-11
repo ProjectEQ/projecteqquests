@@ -1,8 +1,9 @@
 local expeditions = { mmcc = true, mmcf = true }
+local mmcc_mmcf_door_id = 10 -- ldon raid entrance door
 
 function event_click_door(e)
-  local door_id = e.door:GetDoorID();
-	if(door_id == 10) then --Asylum of Invoked Stone (mmcc) and Scion Lair of Fury (mmcf) zone in
+	local door_id = e.door:GetDoorID()
+	if door_id == mmcc_mmcf_door_id then
 		local dz = e.self:GetExpedition()
 		if dz.valid and expeditions[dz:GetZoneName()] then
 			e.self:MovePCDynamicZone(dz:GetZoneID())

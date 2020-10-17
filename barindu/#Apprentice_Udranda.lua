@@ -1,26 +1,35 @@
 -- same for vxed and tipt
-local compass = { "barindu", -1249.24, 575.142, -148.257 }
-local safereturn = { "barindu", -1242.00, 456.00, -121.76, 0.0 }
-local vxed_zonein = { -427.0, -3552.0, 14.99, 463.0 }
-local tipt_zonein = { -448.0, -2374.0, 13.16, 395.0 }
+local compass     = { zone="barindu", x=-1249.24, y=575.142, z=-148.257 }
+local safereturn  = { zone="barindu", x=-1242.00, y=456.00, z=-121.76, h=0.0 }
+local vxed_zonein = { x=-427.0, y=-3552.0, z=14.99, h=463.0 }
+local tipt_zonein = { x=-448.0, y=-2374.0, z=13.16, h=395.0 }
 
 local vxed = {
-  expedition_info = { "Vxed, The Crumbling Caverns", 1, 6 },
-  dz_info = { "vxed", 0, eq.seconds("6h"), compass = compass, safereturn = safereturn, zonein = vxed_zonein }
+  expedition = { name="Vxed, The Crumbling Caverns", min_players=1, max_players=6 },
+  instance   = { zone="vxed", version=0, duration=eq.seconds("6h") },
+  compass    = compass,
+  safereturn = safereturn,
+  zonein     = vxed_zonein
 }
 
 local tipt = {
-  expedition_info = { "Tipt, Treacherous Crags", 1, 6 },
-  dz_info = { "tipt", 0, eq.seconds("6h"), compass = compass, safereturn = safereturn, zonein = tipt_zonein }
+  expedition = { name="Tipt, Treacherous Crags", min_players=1, max_players=6 },
+  instance   = { zone="tipt", version=0, duration=eq.seconds("6h") },
+  compass    = compass,
+  safereturn = safereturn,
+  zonein     = tipt_zonein
 }
 
 local paladin_epic = {
-  expedition_info = { "Vxed, The Crumbling Caverns", 6, 24 },
-  dz_info = { "vxed", 1, eq.seconds("6h"), compass = compass, safereturn = safereturn, zonein = vxed_zonein }
+  expedition = { name="Vxed, The Crumbling Caverns", min_players=6, max_players=24 },
+  instance   = { zone="vxed", version=1, duration=eq.seconds("6h") },
+  compass    = compass,
+  safereturn = safereturn,
+  zonein     = vxed_zonein
 }
 
-local function create_expedition(client, expedition)
-  local dz = client:CreateExpedition(expedition.dz_info, expedition.expedition_info)
+local function create_expedition(client, expedition_info)
+  local dz = client:CreateExpedition(expedition_info)
   if dz.valid then
     dz:AddReplayLockout(eq.seconds("5m"))
   end

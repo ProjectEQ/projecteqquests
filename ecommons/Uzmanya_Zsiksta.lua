@@ -1,10 +1,12 @@
-local rujj_info = { "The Rujarkian Hills: War March of Imal Ojun", 6, 54 }
-local rujj_dz = { "rujj", 50, eq.seconds("3h") }
-rujj_dz.zonein = { 750, -134, 27.125, 0 }
-rujj_dz.compass = { "sro", 1346.18, -2099.33, -88.0377 }
-rujj_dz.safereturn = { "sro", 1349, -2161, -87, 0 } -- made up, live uses southro
--- rujd_dz.compass = { "southro", -157.091, 19.310, 132.856 }
--- rujd_dz.safereturn = { "southro", -1, -221, 134, 0 }
+local rujj = {
+  expedition = { name="The Rujarkian Hills: War March of Imal Ojun", min_players=6, max_players=54 },
+  instance   = { zone="rujj", version=50, duration=eq.seconds("3h") },
+  zonein     = { x=750, y=-134, z=27.125, h=0 },
+  compass    = { zone="sro", x=1346.18, y=-2099.33, z=-88.0377 },
+  safereturn = { zone="sro", x=1349, y=-2161, z=-87, h=0 } -- made up, live uses southro
+  -- compass    = { zone="southro", x=-157.091, y=19.310, z=132.856 },
+  -- safereturn = { zone="southro", x=-1, y=-221, z=134, h=0 }
+}
 
 -- not implemented
 -- function event_say(e)
@@ -14,6 +16,6 @@ rujj_dz.safereturn = { "sro", 1349, -2161, -87, 0 } -- made up, live uses southr
 --     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Uzmanya Zsiksta says, 'We have learned that Warlord Imal Ojun is organizing a great army in the Rujarkian Hills. Should he complete his army, the orcs will prove to be an even greater threat. The Warlord must be stopped. We need you to disrupt his activities. Our scouts report that the Warlord has appointed three captains. If you slay them, much of the army will crumble.  Are you [" .. eq.say_link("interested") .. "]?'")
 --   elseif e.message:findi("interested") then
 --     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, ("Uzmanya Zsiksta says, 'The captains will not lay down without a fight, %s.  Be ready for anything.'"):format(e.other:GetCleanName()))
---     e.other:CreateExpedition(rujj_dz, rujj_info)
+--     e.other:CreateExpedition(rujj)
 --   end
 -- end

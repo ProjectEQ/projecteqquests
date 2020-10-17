@@ -1,10 +1,12 @@
-local guke_info = { "Deepest Guk: The Curse Reborn", 6, 54 }
-local guke_dz = { "guke", 50, eq.seconds("3h") }
-guke_dz.zonein = { 680, -1031, 59.125, 0 }
-guke_dz.compass = { "innothule", 1194, 1322, -12 }
-guke_dz.safereturn = { "innothule", 1181, 1163, -12, 0 } -- made up, live uses innothuleb
--- guke_dz.compass = { "innothuleb", 572.351, 934.646, 19.018 }
--- guke_dz.safereturn = { "innothuleb", 540, 961, 15.125, 0 }
+local guke = {
+  expedition = { name="Deepest Guk: The Curse Reborn", min_players=6, max_players=54 },
+  instance   = { zone="guke", version=50, duration=eq.seconds("3h") },
+  zonein     = { x=680, y=-1031, z=59.125, h=0 },
+  compass    = { zone="innothule", x=1194, y=1322, z=-12 },
+  safereturn = { zone="innothule", x=1181, y=1363, z=-12, h=0 } -- made up, live uses innothuleb
+  -- compass    = { zone="innothuleb", x=572.351, y=934.646, z=19.018 },
+  -- safereturn = { zone="innothuleb", x=540, y=961, z=15.125, h=0 }
+}
 
 function event_say(e)
   if e.message:findi("hail") then
@@ -13,6 +15,6 @@ function event_say(e)
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Ruwakka says, 'We  learned from de scouts that de First Witness of de Cauldron of Hate found a way to harness de foul curse in Deepest Guk.  De First Witness is de strongest of them all. He amassing a group of followers large enough to make him deity!  We needs you to stop de First Witness 'fore he unleash fury on us all.  Are you [" .. eq.say_link("interested") .. "]?'")
   elseif e.message:findi("interested") then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Ruwakka smashes his left fist into his right palm, for effect. 'Crush de First Witness and all of dem followers!'")
-    e.other:CreateExpedition(guke_dz, guke_info)
+    e.other:CreateExpedition(guke)
   end
 end

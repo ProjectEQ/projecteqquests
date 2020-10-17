@@ -1,8 +1,10 @@
-local mmcf_info = { "Mistmoore's Catacombs: Scion Lair of Fury", 6, 54 }
-local mmcf_dz = { "mmcf", 50, eq.seconds("3h") }
-mmcf_dz.compass = { "lfaydark", 3877.23, -127.446, -53.598 }
-mmcf_dz.safereturn = { "lfaydark", 3847, -56, -50, 0 }
-mmcf_dz.zonein = { -184, 399, -12, 0 }
+local mmcf = {
+  expedition = { name="Mistmoore's Catacombs: Scion Lair of Fury", min_players=6, max_players=54 },
+  instance   = { zone="mmcf", version=50, duration=eq.seconds("3h") },
+  compass    = { zone="lfaydark", x=3877.23, y=-127.446, z=-53.598 },
+  safereturn = { zone="lfaydark", x=3847, y=-56, z=-50, h=0 },
+  zonein     = { x=-184, y=399, z=-12, h=0 }
+}
 
 -- not implemented
 -- function event_say(e)
@@ -12,6 +14,6 @@ mmcf_dz.zonein = { -184, 399, -12, 0 }
 --     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Glopruk Tigglum says, 'One of de rogues heard dat Valdoon Kel'Novar, a Trueborn, was on his way to de rocky summoning place to make an army of gargoyles to do de Trueborn's biddin'. If he make dat stony army, de Trueborn can rule over de rest of Mayong Mistmoore's Progeny. We can't let dat happen, see? You gonna need lots of help. Are youz [" .. eq.say_link("interested") .. "]?'")
 --   elseif e.message:findi("interested") then
 --     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Glopruk Tigglum says, 'Bring back de shiny tings for me!'")
---     e.other:CreateExpedition(mmcf_dz, mmcf_info)
+--     e.other:CreateExpedition(mmcf)
 --   end
 -- end

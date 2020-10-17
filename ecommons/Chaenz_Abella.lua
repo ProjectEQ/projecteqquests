@@ -1,10 +1,12 @@
-local rujg_info = { "The Rujarkian Hills: Hidden Vale of Deceit", 6, 54 }
-local rujg_dz = { "rujg", 50, eq.seconds("3h") }
-rujg_dz.zonein = { 238, -1163, 128.375, 0 }
-rujg_dz.compass = { "sro", 1346.18, -2099.33, -88.0377 }
-rujg_dz.safereturn = { "sro", 1349, -2161, -87, 0 } -- made up, live uses southro
--- rujg_dz.compass = { "southro", -157.091, 19.310, 132.856 }
--- rujg_dz.safereturn = { "southro", -1, -221, 134, 0 }
+local rujg = {
+  expedition = { name="The Rujarkian Hills: Hidden Vale of Deceit", min_players=6, max_players=54 },
+  instance   = { zone="rujg", version=50, duration=eq.seconds("3h") },
+  zonein     = { x=238, y=-1163, z=128.375, h=0 },
+  compass    = { zone="sro", x=1346.18, y=-2099.33, z=-88.0377 },
+  safereturn = { zone="sro", x=1349, y=-2161, z=-87, h=0 } -- made up, live uses southro
+  -- compass    = { zone="southro", x=-157.091, y=19.310, z=132.856 },
+  -- safereturn = { zone="southro", x=-1, y=-221, z=134, h=0 }
+}
 
 function event_say(e)
   if e.message:findi("hail") then
@@ -13,7 +15,7 @@ function event_say(e)
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Chaenz Abella says, 'Our scout, Nevlen, just got back from the Rujarkian Hills after looking into a rumor of a huge stockpile of ill-gotten orcish treasure. He and his companion Crispen discovered that the rumor was true! We want to go back in and search for more of the treasure, but we have been told the orcs may be waiting for our arrival. We need to you get down there quickly to gather more samples from their stores before they move them!  Are you [" .. eq.say_link("interested") .. "]?'")
   elseif e.message:findi("interested") then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Chaenz Abella says, 'Splendid!  You should begin right away, but keep on your guard while searching for the treasure.  They may be waiting for you.'")
-    e.other:CreateExpedition(rujg_dz, rujg_info)
+    e.other:CreateExpedition(rujg)
   end
 end
 

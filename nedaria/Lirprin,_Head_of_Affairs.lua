@@ -1,8 +1,10 @@
-local mirb_info = { "Miragul's Menagerie: Frozen Nightmare", 6, 54 }
-local mirb_dz = { "mirb", 50, eq.seconds("3h") }
-mirb_dz.compass = { "everfrost", -5457.705, -827.538, 187.38 }
-mirb_dz.safereturn = { "everfrost", -5461.0, -848.0, 190.0, 0 }
-mirb_dz.zonein = { 607.0, 1504.0, 28.0, 156.0 }
+local mirb = {
+	expedition = { name="Miragul's Menagerie: Frozen Nightmare", min_players=6, max_players=54 },
+	instance   = { zone="mirb", version=50, duration=eq.seconds("3h") },
+	compass    = { zone="everfrost", x=-5457.705, y=-827.538, z=187.38 },
+	safereturn = { zone="everfrost", x=-5461.0, y=-848.0, z=190.0, h=0 },
+	zonein     = { x=607.0, y=1504.0, z=28.0, h=156.0 }
+}
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
@@ -25,7 +27,7 @@ function event_say(e)
 			e.self:Say("I've had the pleasure of serving with a beastlord named Sharalla for quite awhile. For years, she was a reliable friend and companion. At one point I nearly asked her to become my betrothed - we were that close. However, things changed the moment she met that scoundrel Durgin Skell. Her dedication to the Wayfarer's cause wavered noticably whenever he was about. Last time I saw them, Durgin and Sharalla were preparing for [some foolish expedition]. They took a cadre of my best people, ventured off in search a 'great threat' to Norrath and haven't been seen since. I trust Durgin about as far as I can pitch an orc. There's a good chance he's used his silver tongue and charismatic appearance to misguide his group into doing something foolish. If you find him, drop my name. Let him know Lirprin sent you and see if he can explain what he's been up to.");
 		elseif(e.message:findi("foolish")) then
 			e.self:Say("Yes, foolish indeed. He kept mentioning something about a frozen underground cavern below Everfrost and the nightmarish creatures that resided within. We had heard rumors of such a place, but I wouldn't give them much credibility. They're only rumors, after all.");
-			e.other:CreateExpedition(mirb_dz, mirb_info)
+			e.other:CreateExpedition(mirb)
 		elseif(e.message:findi("Keetra")) then
 			e.self:Say("'Keetra the Lost' is right. She was simply 'Keetra' until we discovered her uncanny knack for straying off the beaten path. We couldn't travel half a mile without having to double back to find Keetra. You don't want to know how many times we sent a search team to locate her sorry hide. What I need to know is, was this simply absent-minded disorientation or was she feigning ignorance, trying to escape? I'm inclined to say it was the former, but with this war on the horizon we can't be too careful. Having another thief slip out of sight is not something we can afford to ignore. If you find her, drop my name. Let her know Lirprin sent you and see if she can explain where she's been.");
 		elseif(e.message:findi("bronze breastplate")) then

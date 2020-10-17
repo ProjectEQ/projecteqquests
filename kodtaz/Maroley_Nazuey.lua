@@ -2,14 +2,16 @@
 -- Maroley_Nazuey NPCID: 293116
 local expedition_name = "Ikkinz, Chambers of Twin Struggles"
 
-local expedition_info = { expedition_name, 1, 6 }
-local dz_info = { "ikkinz", 1, eq.seconds("3h") }
-dz_info.compass = { "kodtaz", -871.0, -1480.0, -430.5 }
-dz_info.safereturn = { "kodtaz", -893, -1473, -427.0, 0 }
-dz_info.zonein = { -157.0, 23.0, -2.0, 256.0 }
--- live compass and safereturn (emu entrance is different)
--- dz_info.compass = { "kodtaz", -701.0, -1717.0, -430.5 }
--- dz_info.safereturn = { "kodtaz", -693.0, -1744.0, -427.0, 0 }
+local expedition_info = {
+  expedition = { name=expedition_name, min_players=1, max_players=6 },
+  instance   = { zone="ikkinz", version=1, duration=eq.seconds("3h") },
+  compass    = { zone="kodtaz", x=-871.0, y=-1480.0, z=-430.5 },
+  safereturn = { zone="kodtaz", x=-893, y=-1473, z=-427.0, h=0.0 },
+  zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }
+  -- live compass and safereturn (emu entrance is different)
+  -- compass    = { zone="kodtaz", x=-701.0, y=-1717.0, z=-430.5 },
+  -- safereturn = { zone="kodtaz", x=-693.0, y=-1744.0, z=-427.0, h=0.0 }
+}
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);
@@ -77,7 +79,7 @@ function event_say(e)
       e.other:Message(MT.NPCQuestSay, "Maroley Nazuey says, 'I'm afraid I cannot allow you to begin, someone in your party has been on this expedition too recently and cannot yet go again.'")
     else
       e.other:Message(MT.NPCQuestSay, ("Maroley Nazuey says, 'Good luck then, %s. Perhaps I will see you again soon and, by that time, I hope you have the artifact in your possession.'"):format(e.other:GetCleanName()))
-      local dz = e.other:CreateExpedition(dz_info, expedition_info)
+      local dz = e.other:CreateExpedition(expedition_info)
       if dz.valid then
         dz:AddReplayLockout(eq.seconds("1h"))
       end

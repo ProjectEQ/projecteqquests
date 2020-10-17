@@ -2,18 +2,24 @@
 -- NPC.: Projection_of_Arcana
 --
 
-local compass = { "provinggrounds", 1792.02, -1031.02, -310.217 }
-local safereturn = { "provinggrounds", 1793.75, -1016.125, -308.25, 0.0 }
-local zonein = { 0.0, -37.0, -0.875, 0 }
+local compass    = { zone="provinggrounds", x=1792.02, y=-1031.02, z=-310.217  }
+local safereturn = { zone="provinggrounds", x=1793.75, y=-1016.125, z=-308.25, h=0 }
+local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 
 local efficiency = {
-  info = { "Proving Grounds: The Mastery of Efficiency", 2, 6 },
-  dz = { "chambersd", 1, eq.seconds("1h"), compass = compass, safereturn = safereturn, zonein = zonein }
+  expedition = { name="Proving Grounds: The Mastery of Efficiency", min_players=2, max_players=6 },
+  instance   = { zone="chambersd", version=1, duration=eq.seconds("1h") },
+  compass    = compass,
+  safereturn = safereturn,
+  zonein     = zonein
 }
 
 local specialization = {
-  info = { "Proving Grounds: The Mastery of Specialization", 6, 54 },
-  dz = { "chambersd", 2, eq.seconds("3h"), compass = compass, safereturn = safereturn, zonein = zonein }
+  expedition = { name="Proving Grounds: The Mastery of Specialization", min_players=6, max_players=54 },
+  instance   = { zone="chambersd", version=2, duration=eq.seconds("3h") },
+  compass    = compass,
+  safereturn = safereturn,
+  zonein     = zonein
 }
 
 function event_say(e)
@@ -25,10 +31,10 @@ function event_say(e)
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Arcana says, 'Every test has its rules and these trials are no exception.  The following guidelines must be followed to the letter, or else you stand to forfeit or perish.  You are allowed no more than fifty-four participants in the battle.  Once the trial has begun, you must remain in the combat area.  Violators of this rule will be warned and then destroyed.  Your progress will be monitored.  The longer you tarry in completing your task, the more difficult your task will become.  These are the rules and they are not negotiable.'")
   elseif (e.message:findi("efficiency")) then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Arcana says, 'While it can be admirable to defeat the opposition while in prime condition, a more accurate test of one's mettle is to tackle an opponent while fatigued and weary - yet still walk away victorious.  If you have this ability, now is the opportunity to prove your worth!'")
-    e.other:CreateExpedition(efficiency.dz, efficiency.info)
+    e.other:CreateExpedition(efficiency)
   elseif (e.message:findi("specialization")) then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Arcana says, 'At times it pays to be focused in your abilities, and at times it does not.  This trial will test your skill at using your strengths when they are most effective, and otherwise relying on your companions.  If you have this ability, now is the opportunity to prove your worth!'")
-    e.other:CreateExpedition(specialization.dz, specialization.info)
+    e.other:CreateExpedition(specialization)
   elseif (e.message:findi("progress")) then
     local mpg_helper = require("mpg_helper");
     mpg_helper.Display_Completed_Trials(e.other);

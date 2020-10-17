@@ -91,10 +91,13 @@ function event_loot(e)
 	end	
 end
 
-local anguish_dz = { "anguish", 0, 21600 }
-anguish_dz.compass = { "wallofslaughter", 1353.15, 1712.19, 109.001 }
-anguish_dz.safereturn = { "wallofslaughter", 1349.13, 1715.00, 123.81, 0 }
-anguish_dz.zonein = { -9, -2466, -79, 0 }
+local expedition_info = {
+	expedition = { name="Anguish, the Fallen Palace", min_players=6, max_players=54 },
+	instance   = { zone="anguish", version=0, duration=eq.seconds("6h") },
+	compass    = { zone="wallofslaughter", x=1353.15, y=1712.19, z=109.001 },
+	safereturn = { zone="wallofslaughter", x=1349.13, y=1715.00, z=123.81, h=0.0 },
+	zonein     = { x=-9, y=-2466, z=-79, h=0 }
+}
 
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
@@ -120,7 +123,7 @@ function event_click_door(e)
       if dz.valid and dz:GetZoneName() == "anguish" then
         e.self:MovePCDynamicZone("anguish")
       elseif not anguish_door_open then
-        dz = e.self:CreateExpedition(anguish_dz, { "Anguish, the Fallen Palace", 6, 54 })
+        dz = e.self:CreateExpedition(expedition_info)
         if dz.valid then
           -- live doesn't add "Replay Timer" to new members after aug droppers (maybe a bug?)
           dz:SetReplayLockoutOnMemberJoin(false)

@@ -2,11 +2,14 @@
 -- Game Update Notes: April 19, 2017
 -- Valdoon Paladin Epic 2.0 (Raid) - Lowered the minimum number of players necessary to request this raid from 10 to 6.
 local paladin_minimum_players = 10
-local paladin_expedition = { "The Asylum of Invoked Stone", paladin_minimum_players, 54 }
-local mmcc_dz = { "mmcc", 50, eq.seconds("3h") }
-mmcc_dz.compass = { "lfaydark", 3877.23, -127.446, -53.598 }
-mmcc_dz.safereturn = { "lfaydark", 3847, -56, -50, 0 }
-mmcc_dz.zonein = { -424.0, -108.0, 1.25, 0 }
+
+local paladin_mmcc = {
+  expedition = { name="The Asylum of Invoked Stone", min_players=paladin_minimum_players, max_players=54 },
+  instance   = { zone="mmcc", version=50, duration=eq.seconds("3h") },
+  compass    = { zone="lfaydark", x=3877.23, y=-127.446, z=-53.598 },
+  safereturn = { zone="lfaydark", x=3847, y=-56, z=-50, h=0 },
+  zonein     = { x=-424.0, y=-108.0, z=1.25, h=0 }
+}
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
@@ -25,7 +28,7 @@ function event_say(e)
 				e.self:Say("I'm sorry, " .. e.other:GetCleanName() .. ", but you need more people before we can begin this.")
 			else
 				e.self:Say("Very well, " .. e.other:GetName() .. ". The fate of all of the residents of this continent are now in your hands. Cleanse the Mistmoore Catacombs of the Vampire infestation and put an end to Valdoon Kel`Novar. Bring me his heart when you are finished, for I need proof to show Lord Tynkale that Vampire invasion has been stopped.");
-				e.other:CreateExpedition(mmcc_dz, paladin_expedition)
+				e.other:CreateExpedition(paladin_mmcc)
 			end
 		end
 	end

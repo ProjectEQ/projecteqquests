@@ -1,8 +1,10 @@
-local mirg_info = { "Miragul's Menagerie: Folly of Miragul's Ambition", 6, 54 }
-local mirg_dz = { "mirg", 0, eq.seconds("3h") }
-mirg_dz.compass = { "everfrost", -5457.705, -827.538, 187.38 }
-mirg_dz.safereturn = { "everfrost", -5461.0, -848.0, 190.0, 0 }
-mirg_dz.zonein = { 482, 28, 76.125, 218 }
+local mirg = {
+  expedition = { name="Miragul's Menagerie: Folly of Miragul's Ambition", min_players=6, max_players=54 },
+  instance   = { zone="mirg", version=0, duration=eq.seconds("3h") },
+  compass    = { zone="everfrost", x=-5457.705, y=-827.538, z=187.38 },
+  safereturn = { zone="everfrost", x=-5461.0, y=-848.0, z=190.0, h=0 },
+  zonein     = { x=482, y=28, z=76.125, h=218 }
+}
 
 -- not implemented
 -- function event_say(e)
@@ -12,6 +14,6 @@ mirg_dz.zonein = { 482, 28, 76.125, 218 }
 --     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Trelsa McKindle says, 'Ere's the long and short o' it.  We have pinpointed the location o' the strongest magical emanations coming from the 'eart of Miragul's Menagerie. Rumor 'as it that the magic is sentient and has created a form for itself.  We've named it the Synarcana.  There's a better than good chance that the creature is part of Miragul 'imself, and possibly the force that keeps the menagerie alive. We are in desperate need o' your help to control the growing strength o' this presence. Are ye [" .. eq.say_link("interested") .. "]?'")
 --   elseif e.message:findi("interested") then
 --     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, ("Trelsa McKindle says, 'Aye, that's the spirit, %s.  The Wayfarer's Brotherhood is counting on ye.  Beware the Synarcana!'"):format(e.other:GetCleanName()))
---     e.other:CreateExpedition(mirg_dz, mirg_info)
+--     e.other:CreateExpedition(mirg)
 --   end
 -- end

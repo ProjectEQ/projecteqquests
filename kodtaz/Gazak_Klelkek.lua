@@ -10,14 +10,16 @@ local expedition_name = "Ikkinz, Chambers of Singular Might"
 
 -- live uses min players 1 but checks for a group manually (confirmed via a
 -- player count conflict message using a raid prior to September 16, 2020 changes)
-local expedition_info = { expedition_name, 1, 6 }
-local dz_info = { "ikkinz", 0, eq.seconds("3h") }
-dz_info.compass = { "kodtaz", -500.0, -1340.0, -384.5 }
-dz_info.safereturn = { "kodtaz", -504.0, -1310.0, -381.0, 0.0 }
-dz_info.zonein = { -157.0, 23.0, -2.0, 256.0 }
--- live compass and safereturn (emu entrance is different)
--- dz_info.compass = { "kodtaz", -500.0, -1145.0, -384.5 }
--- dz_info.safereturn = { "kodtaz", -504.0, -1165.0, -381.0, 0.0 }
+local expedition_info = {
+  expedition = { name=expedition_name, min_players=1, max_players=6 },
+  instance   = { zone="ikkinz", version=0, duration=eq.seconds("3h") },
+  compass    = { zone="kodtaz", x=-500.0, y=-1340.0, z=-384.5 },
+  safereturn = { zone="kodtaz", x=-504.0, y=-1310.0, z=-381.0, h=0.0 },
+  zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0  }
+  -- live compass and safereturn (emu entrance is different)
+  -- compass    = { zone="kodtaz", x=-500.0, y=-1145.0, z=-384.5 },
+  -- safereturn = { zone="kodtaz", x=-504.0, y=-1165.0, z=-381.0, h=0.0 }
+}
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);
@@ -66,7 +68,7 @@ function event_say(e)
       e.other:Message(MT.NPCQuestSay, "Gazak Klelkek says, 'I'm afraid I cannot allow you to begin, someone in your party has been on this expedition too recently and cannot yet go again.'")
     else
       e.other:Message(MT.NPCQuestSay, ("Gazak Klelkek says, 'Very well then, %s. Good luck on your journey through the temple and may you prove to the brotherhood that you are more than meets the eye. The temple awaits...'"):format(e.other:GetCleanName()))
-      local dz = e.other:CreateExpedition(dz_info, expedition_info)
+      local dz = e.other:CreateExpedition(expedition_info)
       if dz.valid then
         dz:AddReplayLockout(eq.seconds("1h"))
       end

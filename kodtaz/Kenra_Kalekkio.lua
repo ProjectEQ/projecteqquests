@@ -2,14 +2,16 @@
 -- npc id: 293118
 local expedition_name = "Ikkinz, Chambers of the Tri-Fates"
 
-local expedition_info = { expedition_name, 1, 6 }
-local dz_info = { "ikkinz", 2, eq.seconds("3h") }
-dz_info.compass = { "kodtaz", -728.0, -1180.0, -435.5 }
-dz_info.safereturn = { "kodtaz", -700.0, -1185.0, -430.75, 0 }
-dz_info.zonein = { -157.0, 23.0, -2.0, 256.0 }
--- live compass and safereturn (emu entrance is different)
--- dz_info.compass = { "kodtaz", -1140.0, -1038.5, -421.5 }
--- dz_info.safereturn = { "kodtaz", -1018.0, -1131.0, -418.0, 0 }
+local expedition_info = {
+  expedition = { name=expedition_name, min_players=1, max_players=6 },
+  instance   = { zone="ikkinz", version=2, duration=eq.seconds("3h") },
+  compass    = { zone="kodtaz", x=-728.0, y=-1180.0, z=-435.5 },
+  safereturn = { zone="kodtaz", x=-700.0, y=-1185.0, z=-430.75, h=0.0 },
+  zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }
+  -- live compass and safereturn (emu entrance is different)
+  -- compass    = { zone="kodtaz", x=-1140.0, y=-1038.5, z=-421.5 }
+  -- safereturn = { zone="kodtaz", x=-1018.0, y=-1131.0, z=-418.0, h=0.0 }
+}
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other)
@@ -90,7 +92,7 @@ function event_say(e)
       e.other:Message(MT.NPCQuestSay, "Kenra Kalekkio says, 'I'm afraid I cannot allow you to begin, someone in your party has been on this expedition too recently and cannot yet go again.'")
     else
       e.other:Message(MT.NPCQuestSay, ("Kenra Kalekkio says, 'Then I bid you good luck on your journeys, %s. Make haste into the temple and, hopefully, by the time we meet again you'll have recovered the relics and passed the final test.'"):format(e.other:GetCleanName()))
-      local dz = e.other:CreateExpedition(dz_info, expedition_info)
+      local dz = e.other:CreateExpedition(expedition_info)
       if dz.valid then
         dz:AddReplayLockout(eq.seconds("1h"))
       end

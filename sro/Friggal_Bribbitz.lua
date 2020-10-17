@@ -1,10 +1,12 @@
-local gukg_info = { "Deepest Guk: Ritualist of Hate", 6, 54 }
-local gukg_dz = { "gukg", 50, eq.seconds("3h") }
-gukg_dz.zonein = { 151, -260, 51.125, 0 }
-gukg_dz.compass = { "innothule", 1194, 1322, -12 }
-gukg_dz.safereturn = { "innothule", 1181, 1163, -12, 0 } -- made up, live uses innothuleb
--- gukg_dz.compass = { "innothuleb", 572.351, 934.646, 19.018 }
--- gukg_dz.safereturn = { "innothuleb", 540, 961, 15.125, 0 }
+local gukg = {
+  expedition = { name="Deepest Guk: Ritualist of Hate", min_players=6, max_players=54 },
+  instance   = { zone="gukg", version=50, duration=eq.seconds("3h") },
+  zonein     = { x=151, y=-260, z=51.125, h=0 },
+  compass    = { zone="innothule", x=1194, y=1322, z=-12 },
+  safereturn = { zone="innothule", x=1181, y=1363, z=-12, h=0 } -- made up, live uses innothuleb
+  -- compass    = { zone="innothuleb", x=572.351, y=934.646, z=19.018 },
+  -- safereturn = { zone="innothuleb", x=540, y=961, z=15.125, h=0 }
+}
 
 function event_say(e)
   if e.message:findi("hail") then
@@ -13,6 +15,6 @@ function event_say(e)
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Friggal Bribbitz says, 'We have been hearing reports that the Witnesses of Hate are amassing sacrifices for a dark ritual.  Lich Rtrangi appears to be behind the sacrifices with the intent to afflict the living Frogloks with a disfiguring curse.  We have a scout who can assist you in Deepest Guk with infiltrating Rtangi's domain and putting a stop to his plans.  Are you [" .. eq.say_link("interested") .. "]?'")
   elseif e.message:findi("interested") then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, ("Friggal Bribbitz says, 'The scout will meet you inside Deepest Guk.  Be safe, %s.'"):format(e.other:GetCleanName()))
-    e.other:CreateExpedition(gukg_dz, gukg_info)
+    e.other:CreateExpedition(gukg)
   end
 end

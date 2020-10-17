@@ -1,7 +1,10 @@
-local paladin_dz = { "dranikhollowsc", 0, eq.seconds("6h") }
-paladin_dz.compass = { "draniksscar", -2059.05, 574.10, 209.51 }
-paladin_dz.safereturn = { "draniksscar", -2038.5, 589.25, 201.875, 0 }
-paladin_dz.zonein = { 3944.0, -252.0, 138.0, 380.0 }
+local paladin_dz = {
+	expedition = { name="Dranik's Hollows: Murkglider Hive", min_players=3, max_players=6 },
+	instance   = { zone="dranikhollowsc", version=0, duration=eq.seconds("6h") },
+	compass    = { zone="draniksscar", x=-2059.05, y=574.10, z=209.51 },
+	safereturn = { zone="draniksscar", x=-2038.5, y=589.25, z=201.875, h=0 },
+	zonein     = { x=3944.0, y=-252.0, z=138.0, h=380.0 }
+}
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
@@ -16,7 +19,7 @@ function event_say(e)
 				e.self:Say("Cough, cough, hello " .. e.other:GetName() .. ". I apologize for my cough, my sister and I were injured badly by Muramites in Discord when some of the initial Wayfarers ventured there to explore. I luckily escaped before being mortally injured, but I lost my sister in the exodus. I have been stricken with some odd disease that appears to be eating away at me everyday, and I fear there might not be anything that can cure me. However, maybe you can try to find a cure for me. I have heard a set of prayer beads might cleanse my body of this illness, which can be found in various holy temples throughout Norrath. Curing me might be hard to do, but someone in one of those temples might be willing to help.")
 			end
 		elseif(e.message:findi("ready")) then
-			e.other:CreateExpedition(paladin_dz, { "Dranik's Hollows: Murkglider Hive", 3, 6 })
+			e.other:CreateExpedition(paladin_dz)
 		end
 	end
 end

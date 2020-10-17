@@ -1,31 +1,35 @@
 -- Players may receive temporary flags from expeditions requested through Gamesh (live-like)
 local sewers = {
   snplant = {
-    expedition_info = { "Sewers of Nihilia, The Purifying Plant", 1, 6 },
-    dz_info = { "snplant", 0, eq.seconds("6h"), zonein = { 150.00, 127.00, -6.87, 126.00 } }
+    expedition = { name="Sewers of Nihilia, The Purifying Plant", min_players=1, max_players=6 },
+    instance   = { zone="snplant", version=0, duration=eq.seconds("6h") },
+    zonein     = { x=150.00, y=127.00, z=-6.87, h=126.00 }
   },
   sncrematory = {
-    expedition_info = { "Sewers of Nihilia, The Crematory", 1, 6 },
-    dz_info = { "sncrematory", 0, eq.seconds("6h"), zonein = { 31.00, 175.00, -17.87, 254.00 } }
+    expedition = { name="Sewers of Nihilia, The Crematory", min_players=1, max_players=6 },
+    instance   = { zone="sncrematory", version=0, duration=eq.seconds("6h") },
+    zonein     = { x=31.00, y=175.00, z=-17.87, h=254.00 }
   },
   snlair = {
-    expedition_info = { "Sewers of Nihilia, Lair of the Trapped Ones", 1, 6 },
-    dz_info = { "snlair", 0, eq.seconds("6h"), zonein = { 234.00, -70.00, -14.87, 508.00 } }
+    expedition = { name="Sewers of Nihilia, Lair of the Trapped Ones", min_players=1, max_players=6 },
+    instance   = { zone="snlair", version=0, duration=eq.seconds("6h") },
+    zonein     = { x=234.00, y=-70.00, z=-14.87, h=508.00 }
   },
   snpool = {
-    expedition_info = { "Sewers of Nihilia, The Pool of Sludge", 1, 6 },
-    dz_info = { "snpool", 0, eq.seconds("6h"), zonein = { 137.00, -5.00, -19.87, 378.00 } }
+    expedition = { name="Sewers of Nihilia, The Pool of Sludge", min_players=1, max_players=6 },
+    instance   = { zone="snpool", version=0, duration=eq.seconds("6h") },
+    zonein     = { x=137.00, y=-5.00, z=-19.87, h=378.00 }
   }
 }
 
 for _, sewer in pairs(sewers) do
-  sewer.dz_info.compass = { "barindu", -645.859, -338.502, -118.309 }
-  sewer.dz_info.safereturn = { "barindu", -605.0, -337.0, -123.84, 0.0 }
+  sewer.compass    = { zone="barindu", x=-645.859, y=-338.502, z=-118.309  }
+  sewer.safereturn = { zone="barindu", x=-605.0, y=-337.0, z=-123.84, h=0.0 }
 end
 
 local function create_sewer_expedition(e, sewer)
   eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Gamesh leans in closely to whisper, 'Okay, listen closely...'")
-  local dz = e.other:CreateExpedition(sewer.dz_info, sewer.expedition_info)
+  local dz = e.other:CreateExpedition(sewer)
   if dz.valid then
     dz:AddReplayLockout(eq.seconds("5m"))
   end

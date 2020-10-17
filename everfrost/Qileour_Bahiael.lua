@@ -1,8 +1,10 @@
-local mirb_info = { "Miragul's Menagerie: Frozen Nightmare", 6, 54 }
-local mirb_dz = { "mirb", 50, eq.seconds("3h") }
-mirb_dz.compass = { "everfrost", -5457.705, -827.538, 187.38 }
-mirb_dz.safereturn = { "everfrost", -5461.0, -848.0, 190.0, 0 } -- { "everfrost", -5477.0, -846.0, 189.44, 0 }
-mirb_dz.zonein = { 607.0, 1504.0, 28.0, 156.0 }
+local mirb = {
+  expedition = { name="Miragul's Menagerie: Frozen Nightmare", min_players=6, max_players=54 },
+  instance   = { zone="mirb", version=50, duration=eq.seconds("3h") },
+  compass    = { zone="everfrost", x=-5457.705, y=-827.538, z=187.38 },
+  safereturn = { zone="everfrost", x=-5461.0, y=-848.0, z=190.0, h=0 },
+  zonein     = { x=607.0, y=1504.0, z=28.0, h=156.0 }
+}
 
 function event_say(e)
   if e.message:findi("hail") then
@@ -12,6 +14,6 @@ function event_say(e)
   elseif e.message:findi("interested") then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Qileour Bahiael says, 'Keep an eye out for the lost members while you're there, and always be on your toes.  Miragul's oddities are as strange as they are deadly.  These caves are not called the Frozen Nightmare for nothing.'")
     -- ldon raids have no requirements, level 1 without adventurer's stone can request
-    e.other:CreateExpedition(mirb_dz, mirb_info)
+    e.other:CreateExpedition(mirb)
   end
 end

@@ -15,7 +15,7 @@ local expedition_info = {
   instance   = { zone="ikkinz", version=0, duration=eq.seconds("3h") },
   compass    = { zone="kodtaz", x=-500.0, y=-1340.0, z=-384.5 },
   safereturn = { zone="kodtaz", x=-504.0, y=-1310.0, z=-381.0, h=0.0 },
-  zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0  }
+  zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }
   -- live compass and safereturn (emu entrance is different)
   -- compass    = { zone="kodtaz", x=-500.0, y=-1145.0, z=-384.5 },
   -- safereturn = { zone="kodtaz", x=-504.0, y=-1165.0, z=-381.0, h=0.0 }

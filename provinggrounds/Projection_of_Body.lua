@@ -2,7 +2,7 @@
 -- NPC.: Projection_of_Body
 --
 
-local compass    = { zone="provinggrounds", x=1090.82, y=-4861.0, z=-309.726  }
+local compass    = { zone="provinggrounds", x=1090.82, y=-4861.0, z=-309.726 }
 local safereturn = { zone="provinggrounds", x=1094.75, y=-4879.25, z=-306.75, h=0 }
 local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 

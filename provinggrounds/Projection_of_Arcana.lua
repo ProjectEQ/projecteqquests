@@ -2,7 +2,7 @@
 -- NPC.: Projection_of_Arcana
 --
 
-local compass    = { zone="provinggrounds", x=1792.02, y=-1031.02, z=-310.217  }
+local compass    = { zone="provinggrounds", x=1792.02, y=-1031.02, z=-310.217 }
 local safereturn = { zone="provinggrounds", x=1793.75, y=-1016.125, z=-308.25, h=0 }
 local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 

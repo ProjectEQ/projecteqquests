@@ -2,7 +2,7 @@
 -- NPC.: Projection_of_Power
 --
 
-local compass    = { zone="provinggrounds", x=-3053.37, y=-1030.69, z=310.11  }
+local compass    = { zone="provinggrounds", x=-3053.37, y=-1030.69, z=310.11 }
 local safereturn = { zone="provinggrounds", x=-3057, y=-1042.375, z=-307.75, h=0 }
 local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 

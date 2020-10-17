@@ -1,7 +1,7 @@
 -- Zone: provinggrounds
 -- NCP.: Projection_of_Mind
 --
-local compass    = { zone="provinggrounds", x=-930.948, y=390.328, z=-309.377  }
+local compass    = { zone="provinggrounds", x=-930.948, y=390.328, z=-309.377 }
 local safereturn = { zone="provinggrounds", x=-942.625, y=400.5, z=-307.25, h=0 }
 local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 

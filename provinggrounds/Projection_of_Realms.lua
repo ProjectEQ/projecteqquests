@@ -2,7 +2,7 @@
 -- NPC.: Projection_of_Realms
 --
 
-local compass    = { zone="provinggrounds", x=-2098.05, y=-4342.75, z=-310.127  }
+local compass    = { zone="provinggrounds", x=-2098.05, y=-4342.75, z=-310.127 }
 local safereturn = { zone="provinggrounds", x=-2092.0, y=-4346.625, z=-307.75, h=0 }
 local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 

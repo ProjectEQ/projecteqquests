@@ -2,7 +2,7 @@
 -- NCP.: Projection_Of_Tactics (316038)
 --
 
-local compass    = { zone="provinggrounds", x=-1576.28, y=-5567.32, z=-310.127  }
+local compass    = { zone="provinggrounds", x=-1576.28, y=-5567.32, z=-310.127 }
 local safereturn = { zone="provinggrounds", x=-1577.75, y=-5561.125, z=-307.75, h=0 }
 local zonein     = { x=0.0, y=-37.0, z=-0.875, h=0 }
 
@@ -15,11 +15,11 @@ local subversion = {
 }
 
 local foresight = {
-  expedition    = { name="Proving Grounds: The Mastery of Foresight", min_players=6, max_players=54 },
-  instance      = { zone="chambersc", version=2, duration=eq.seconds("3h") },
-  compass       = compass,
-  safereturn    = safereturn,
-  zonein        = zonein
+  expedition = { name="Proving Grounds: The Mastery of Foresight", min_players=6, max_players=54 },
+  instance   = { zone="chambersc", version=2, duration=eq.seconds("3h") },
+  compass    = compass,
+  safereturn = safereturn,
+  zonein     = zonein
 }
 
 function event_say(e)

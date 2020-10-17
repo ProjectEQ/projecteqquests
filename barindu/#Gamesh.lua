@@ -23,7 +23,7 @@ local sewers = {
 }
 
 for _, sewer in pairs(sewers) do
-  sewer.compass    = { zone="barindu", x=-645.859, y=-338.502, z=-118.309  }
+  sewer.compass    = { zone="barindu", x=-645.859, y=-338.502, z=-118.309 }
   sewer.safereturn = { zone="barindu", x=-605.0, y=-337.0, z=-123.84, h=0.0 }
 end
 

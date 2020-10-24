@@ -27,6 +27,9 @@
 --   version;
 
 instance_version = {
+    ikkinz_chambers_of_singular_might = 0,
+    ikkinz_chambers_of_twin_struggles = 1,
+    ikkinz_chambers_of_the_tri_fates = 2,
     the_nektulos_forest = 1,
     the_bazaar = 1,
     stillmoon_temple_sickness_of_the_spirit = 1,

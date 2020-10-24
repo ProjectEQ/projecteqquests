@@ -1,10 +1,11 @@
 -- Ikkinz Group 3 Expedition
 -- npc id: 293118
 local expedition_name = "Ikkinz, Chambers of the Tri-Fates"
+local dz_version = instance_version.ikkinz_chambers_of_the_tri_fates
 
 local expedition_info = {
   expedition = { name=expedition_name, min_players=1, max_players=6 },
-  instance   = { zone="ikkinz", version=2, duration=eq.seconds("3h") },
+  instance   = { zone="ikkinz", version=dz_version, duration=eq.seconds("3h") },
   compass    = { zone="kodtaz", x=-728.0, y=-1180.0, z=-435.5 },
   safereturn = { zone="kodtaz", x=-700.0, y=-1185.0, z=-430.75, h=0.0 },
   zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }

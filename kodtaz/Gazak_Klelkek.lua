@@ -7,12 +7,13 @@
 -- requester is required to be in group with at least 1 person (group can be in a raid)
 -- the real minimum is 2 due to the group requirement even though expedition is set to 1
 local expedition_name = "Ikkinz, Chambers of Singular Might"
+local dz_version = instance_version.ikkinz_chambers_of_singular_might
 
 -- live uses min players 1 but checks for a group manually (confirmed via a
 -- player count conflict message using a raid prior to September 16, 2020 changes)
 local expedition_info = {
   expedition = { name=expedition_name, min_players=1, max_players=6 },
-  instance   = { zone="ikkinz", version=0, duration=eq.seconds("3h") },
+  instance   = { zone="ikkinz", version=dz_version, duration=eq.seconds("3h") },
   compass    = { zone="kodtaz", x=-500.0, y=-1340.0, z=-384.5 },
   safereturn = { zone="kodtaz", x=-504.0, y=-1310.0, z=-381.0, h=0.0 },
   zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }

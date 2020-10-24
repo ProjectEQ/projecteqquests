@@ -5,5 +5,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-  e.other:MovePCDynamicZone("ikkinz", 1, false) -- Zone: ikkinz group 2 version
+  local dz_version = instance_version.ikkinz_chambers_of_twin_struggles
+  e.other:MovePCDynamicZone("ikkinz", dz_version, false) -- Zone: ikkinz group 2 version
 end

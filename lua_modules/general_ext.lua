@@ -6,11 +6,11 @@ end
 function eq.SelfCast(spell_id)
 	local init = eq.get_initiator();
 	local sp = Spell(spell_id);
-	
+
 	if(init.null or sp.null) then
 		return;
 	end
-	
+
 	init:SpellFinished(spell_id, init, 10, 0, -1, sp:ResistDiff());
 end
 
@@ -24,7 +24,7 @@ function eq.ClassType(class)
 	elseif(class == 2 or class == 10 or class == 6) then
 		return "priest";
 	end
-	
+
 	return "other";
 end
 
@@ -200,4 +200,11 @@ function eq.ExpHelper(level, percent, range)
 	-- return random between upper bound and lower bound
 	return (math.random(exp[level] * (percent - range), exp[level] * (percent + range)) * .01)
 
+end
+
+-- https://stackoverflow.com/questions/656199/search-for-an-item-in-a-lua-list
+function eq.Set (list)
+	local set = {}
+	for _, l in ipairs(list) do set[l] = true end
+	return set
 end

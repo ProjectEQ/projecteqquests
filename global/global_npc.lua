@@ -1,6 +1,10 @@
 function event_spawn(e)
     -- peq_halloween
     if (eq.is_content_flag_enabled("peq_halloween")) then
+        -- exclude mounts and pets
+        if (e.self:GetCleanName():findi("mount") or e.self:IsPet()) then
+            return;
+        end
 
         -- soulbinders
         -- priest of discord

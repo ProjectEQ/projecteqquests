@@ -71,9 +71,9 @@ sub EVENT_DEATH_COMPLETE {
 
 sub INSTANCE_WIN {
   #loot & advancement pieces
-  $expedition = quest::get_expedition();
+  my $expedition = quest::get_expedition();
   if ($expedition) {
-    $expedition->SetLocked(true, 1); # closing lock message
+    $expedition->SetLocked(true, ExpeditionLockMessage::Close);
     $expedition->AddReplayLockoutDuration(57600); # add 16 hours to lockout
     quest::spawn2(294140,0,0,-18,-139,-2,384); # NPC: a_pile_of_bones
     quest::spawn2(294139,0,0,-18,-271,-2,128); # NPC: a_pile_of_bones

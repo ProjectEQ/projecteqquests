@@ -46,7 +46,7 @@ function event_say(e)
   local snpool_complete      = (eq.get_data(string.format("%s-god_snpool", char_id)) == "1")
 
   eq.debug(string.format("god_sewers[%s] snplant[%s] sncrematory[%s] snlair[%s] snpool[%s]",
-           sewers_flag, snplant_complete, sncrematory_complete, snlair_complete, snpool_complete))
+           sewers_flag, tostring(snplant_complete), tostring(sncrematory_complete), tostring(snlair_complete), tostring(snpool_complete)))
 
   if e.message:findi("hail") then
     if sewers_flag == 0 then

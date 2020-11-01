@@ -41,7 +41,7 @@ function event_say(e)
   local has_tipt_access = (qglobals.god_tipt_access and qglobals.god_tipt_access == "1") -- has_permanent_vxed
 
   local sewers_flag = tonumber(eq.get_data(e.other:CharacterID() .. "-god_sewers")) or 0
-  eq.debug(string.format("sewers[%s] vxed_access[%s] tipt_access[%s]", sewers_flag, has_vxed_access, has_tipt_access))
+  eq.debug(string.format("sewers[%s] vxed_access[%s] tipt_access[%s]", sewers_flag, tostring(has_vxed_access), tostring(has_tipt_access)))
 
   local is_gm = (e.other:Admin() > 80 and e.other:GetGM())
 

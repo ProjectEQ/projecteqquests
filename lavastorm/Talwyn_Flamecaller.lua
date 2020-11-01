@@ -20,7 +20,7 @@ function event_say(e)
     elseif (qglobals["wiz_epic_pre"] == "5") then -- Test of Subtlety complete
       e.self:Say("You have completed the four tests of your abilities, but your journey to joining Solusek's legion is far from complete. You must now assemble a wand to help further focus your energies. In the lands of Discord, power surges and fades in an awesome display, the fluxing power flows through all things on the landscape. Go, investigate the lands of Discord; return to me with a [" .. eq.say_link("fluxing rod") .. "], [" .. eq.say_link("gem") .. "], [" .. eq.say_link("rune") .. "], and [" .. eq.say_link("ore") .. "]. With them you will be ready to take your first steps as a new soldier.");
       eq.delete_global("wiz_epic_pre"); -- Finished pre 1.5
-      eq.set_global("wiz_epic","1",5,"F"); -- Start epic 1.5, Steop 1 of 5
+      eq.set_global("wiz_epic","1",5,"F"); -- Start epic 1.5, Step 1 of 5
     else
       e.self:Say("The fire of destruction burns within you, does it not? I can see that your affinity for destructive magic has served you well in your travels. It has served you so well that it has caught the eye of Solusek Ro. He has created and sent me here to discuss the matter of joining his legions. If you do, you will be granted power unheard of on mortal lands. Will you [" .. eq.say_link("agree") .. "]?");
     end

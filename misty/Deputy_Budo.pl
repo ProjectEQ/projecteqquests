@@ -25,11 +25,11 @@ if(plugin::check_handin(\%itemcount, 13916 => 1)){
 quest::say("Grand work. Deputy $name! You will become a full-fledged deputy in no time. You should check in with Marshal Ghobber from time to time to see if you have earned your squad ring. Just go up to him and ask. 'Am I one with the Wall?' He will know. but you must first show your bravery in many battles against the goblins.");
 quest::givecash("0","0","9","0");
 quest::summonitem(13024); # Item: Tagglefoot Tingle Drink
-quest::faction(263, 4); # Faction: Guardians of the Vale
-quest::faction(286, 4); # Faction: Mayor Gubbin
-quest::faction(355, 4); # Faction: Storm Reapers
-quest::faction(292, 4); # Faction: Merchants of Rivervale
-quest::faction(334, -10); # Faction: Dreadguard Outer
+quest::faction(263, 5); # Faction: Guardians of the Vale
+quest::faction(286, 1); # Faction: Mayor Gubbin
+quest::faction(355, 1); # Faction: Storm Reapers
+quest::faction(292, 1); # Faction: Merchants of Rivervale
+quest::faction(334, -1); # Faction: Dreadguard Outer
 quest::exp(100);
  }
 plugin::return_items(\%itemcount);

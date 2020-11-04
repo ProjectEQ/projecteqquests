@@ -21,13 +21,13 @@ function event_trade(e)
 	local belt = 0;
 	
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13916, item2 = 13916, item3 = 13916, item4 = 13916})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 13916, item2 = 13916, item3 = 13916, item4 = 13916})) then
 		belt = 4;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13916, item2 = 13916, item3 = 13916})) then	
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13916, item2 = 13916, item3 = 13916})) then	
 		belt = 3;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13916, item2 = 13916})) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13916, item2 = 13916})) then
 		belt = 2;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13916})) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13916})) then
 		belt = 1;
 	end
 

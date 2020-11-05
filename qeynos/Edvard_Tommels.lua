@@ -12,10 +12,10 @@ function event_trade(e)
 	
 	-- Verified Live faction and experience.  questsay and item reward seems to be random with each item turn in.
 	local scroll = 0;
-	local Volone = item_lib.count_handed_item(e.trade, {18504});
-	local Voltwo = item_lib.count_handed_item(e.trade, {18505});
-	local Volthree = item_lib.count_handed_item(e.trade, {18506});
-	local Volfour = item_lib.count_handed_item(e.trade, {18507});
+	local Volone = item_lib.count_handed_item(e.self,e.trade, {18504});
+	local Voltwo = item_lib.count_handed_item(e.self,e.trade, {18505});
+	local Volthree = item_lib.count_handed_item(e.self,e.trade, {18506});
+	local Volfour = item_lib.count_handed_item(e.self,e.trade, {18507});
 	
 	if(Volone == 1) then
 		scroll = scroll + 1;

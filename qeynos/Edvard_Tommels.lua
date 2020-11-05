@@ -8,7 +8,7 @@ end
 
 function event_trade(e)
 	local item_lib =require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18504,item2 = 18505,item3 = 18506,item4 = 18507})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 18504,item2 = 18505,item3 = 18506,item4 = 18507})) then
 		local pp = math.random(6);
 		local gp = math.random(20);
 		local sp = math.random(60);
@@ -19,7 +19,7 @@ function event_trade(e)
 		e.other:Faction(434,30,0);
 		e.other:AddEXP(5000);
 		e.other:GiveCash(cp,sp,gp,pp);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18504}) or item_lib.check_turn_in(e.self, e.trade, {item1 = 18505}) or item_lib.check_turn_in(e.self, e.trade, {item1 = 18506}) or item_lib.check_turn_in(e.self, e.trade, {item1 = 18507})) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 18504}) or item_lib.check_turn_in(e.trade, {item1 = 18505}) or item_lib.check_turn_in(e.trade, {item1 = 18506}) or item_lib.check_turn_in(e.trade, {item1 = 18507})) then
 		local pp = math.random(2);
 		local gp = math.random(6);
 		local sp = math.random(15);

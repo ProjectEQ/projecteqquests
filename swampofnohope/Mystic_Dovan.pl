@@ -23,11 +23,11 @@ sub EVENT_SAY
 	}
 	
 	#Shaman Skull Quest No.4 Event_Say
-	if($text=~/I come to inquire about the Crusaders of Rok Nikol/i && $faction <= 5 && $shmskullquest >= 6) {
+	if($text=~/rok nilok/i && $faction <= 5 && $shmskullquest >= 6) {
 		quest::say("Mystic Dovan lowers his head in sorrow let us have a moment of peace. I cannot find the words to speak of the unspeakable act of the gods which took the lives of the legendary Crusaders of Rok Nolok. You must find the answers for yourself. All I can do is wait for their return. ");
 	}
 	
-	if($text=~/Who is Galdon Vok Nir?/i && $faction <= 7 && $shmskullquest >= 6) {
+	if($text=~/galdon vok nir?/i && $faction <= 7 && $shmskullquest >= 6) {
 		quest::say("He is a merchant hiding in The Overthere. He is greedy and will not give the skull up easily. Seek him out and ask him what he would [trade] for the skull.");
 	}
 }

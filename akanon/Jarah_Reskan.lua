@@ -17,7 +17,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 85055, item2 = 85056, item3 = 85057})) then -- Renaldo's Severed Head, Hector's Severed Head, Jerald's Severed Head
 		e.self:Say("I heard our shipment made it back safely. These heads will send a message to any other thief that plans on robbing our cargo shipments. Thank you " .. e.other:GetName() .. ", take this mask and this coin as your reward.");
-		--e.other:SummonItem(85058); -- Highway Protectors Mask this quest reward was not issued until a patch in 2005, and is enabled in Luclin content on TLPs
+		e.other:SummonItem(85058); -- Highway Protectors Mask this quest reward is enabled in Luclin content on TLPs
 		e.other:Ding();
 		e.other:Faction(255,15,0); -- Gem Choppers
 		e.other:Faction(288,15,0); -- Merchants of Ak'Anon

@@ -24,8 +24,8 @@
 -- [9:29 PM] huffin: so no excuses now. every1 knows =p
 
 local event_started = false;
+local event_finished = false
 local instance_id;
-local lockout_win = 108;
 local this_bit = 2;
 local player_list;
 local boss_hp;
@@ -34,9 +34,9 @@ local minute;
 
 function Boss_Spawn(e)
   event_started = false;
+  event_finished = false
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
-  lockout_win = 108;
   this_bit = 2;
   boss_hp = 100;
   wave = 0;
@@ -196,6 +196,12 @@ function Add_Death(e)
 end
 
 function Event_Win(e)
+  if event_finished then
+    return
+  end
+
+  event_finished = true
+
   eq.depop_all(305007);
   eq.depop_all(305008);
   eq.depop_all(305009);

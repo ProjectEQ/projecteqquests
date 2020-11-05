@@ -1,38 +1,54 @@
-# spawn 3 A Freed Soul on death
-# enchanter epic - Test of Charm
+-- spawn 3 A Freed Soul on death
+-- enchanter epic - Test of Charm
 
-my $x;
-my $y;
-my $z;
-my $h;
-my $mob1;
-my $mob2;
-my $mob3;
-my $mobid1;
-my $mobid2;
-my $mobid3;
-my $mobattack1;
-my $mobattack2;
-my $mobattack3;
+function event_spawn(e)
+	eq.set_timer("depop",300000);
+end
 
-sub EVENT_DEATH_COMPLETE {
-  $x = $npc->GetX();
-  $y = $npc->GetY();
-  $z = $npc->GetZ();
-  $h = $npc->GetHeading();
-  $mob1 = quest::spawn2(88093,0,0,$x,$y,$z,$h); # NPC: A_Freed_Soul
-  $mob2 = quest::spawn2(88093,0,0,$x+5,$y+5,$z,$h); # NPC: A_Freed_Soul
-  $mob3 = quest::spawn2(88093,0,0,$x-5,$y-5,$z,$h); # NPC: A_Freed_Soul
-  $mobid1 = $entity_list->GetMobID($mob1);
-  $mobid2 = $entity_list->GetMobID($mob2);
-  $mobid3 = $entity_list->GetMobID($mob3);
-  $mobattack1 = $mobid1->CastToNPC();
-  $mobattack2 = $mobid2->CastToNPC();
-  $mobattack3 = $mobid3->CastToNPC();
-  $mobattack1->AddToHateList($npc->GetHateTop(),1);
-  $mobattack2->AddToHateList($npc->GetHateTop(),1);
-  $mobattack3->AddToHateList($npc->GetHateTop(),1);
-}
+function event_death_complete(e)
+	free_spawn = math.random(2,6)
+	if(free_spawn < 3) then
+		eq.spawn2(88093,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	elseif(free_spawn == 3) then
+		eq.spawn2(88093,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	elseif(free_spawn == 4) then
+		eq.spawn2(88093,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	elseif(free_spawn == 5) then
+		eq.spawn2(88093,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	elseif(free_spawn > 5) then
+		eq.spawn2(88093,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		eq.spawn2(88093,0,0,e.self:GetX(),e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+	end
+end
 
-# EOF zone: kaesora ID: 88087 NPC: enraged_spectral_librarian
+function event_combat(e)
+	if(e.joined) then
+		eq.stop_timer("depop");
+	else
+		eq.set_timer("depop",300000);
+	end
+end
 
+function event_trade(e)
+	local item_lib = require("items");
+	item_lib.return_items(e.self, e.other, e.trade)
+end
+
+function event_timer(e)
+	eq.stop_timer("depop");
+	eq.depop();
+end

@@ -13,11 +13,13 @@ function event_trade(e)
 	if(e.other:GetFaction(e.self) <= 5 and item_lib.check_turn_in(e.trade, {item1 = 12761})) then
 		e.self:Say("Uhh. Thanks. I sort of told the lizard who bought the skull that you were asking for him, and, well, he was kinda mad, and... " .. e.other:GetCleanName() .. ", meet Bruiser.");
 		eq.unique_spawn(85226,0,0,e.self:GetX() + 5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- Bruiser Noz
+		eq.set_timer("emote", 60000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade) --return items if not the ones required
 end
 
-function event_signal(e)
-	e.self:Say("Ye.. Ye.. Yes.. Yes, Bruiser.");
+function event_timer(e)
+	eq.stop_timer("emote")
+	e.self:Emote("shakes with fear. A dark stain begins to spread across the front of his trousers. 'Ye.. Ye.. Yes.. Yes, Bruiser.");
 	eq.signal(85226,51); -- NPC: Bruiser_Noz
 end

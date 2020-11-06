@@ -27,8 +27,8 @@ sub EVENT_ITEM {
   quest::summonitem(4199); # Item: Shackle of Tynnonium
   quest::exp(60000);
   quest::ding();
-  quest::faction(444,20); # Faction: Swift Tails
-  quest::faction(441,10); # Faction: Legion of Cabilis
+  quest::faction(444,100); # Faction: Swift Tails
+  quest::faction(441,25); # Faction: Legion of Cabilis
  }
   plugin::return_items(\%itemcount);
 }

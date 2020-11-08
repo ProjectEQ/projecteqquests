@@ -122,7 +122,9 @@ local function spawn_devastating_pookas()
       spawns[i]:CastToNPC():ModifyNPCStat("max_hit", "100000") -- real npcs insta kill on hit
       spawns[i]:CastToNPC():ModifyNPCStat("see_invis", "1")
       spawns[i]:CastToNPC():ModifyNPCStat("aggro", "150")
-      spawns[i]:CastToNPC():NPCSpecialAttacks("S", 0, true, true) -- disable summon
+      spawns[i]:CastToNPC():NPCSpecialAttacks("S", 0, false, true) -- disable summon
+      spawns[i]:CastToNPC():NPCSpecialAttacks("C", 0, false, false) -- false sets uncharmable
+      spawns[i]:CastToNPC():NPCSpecialAttacks("M", 0, false, false) -- false sets unmezable
     end
   end
 end

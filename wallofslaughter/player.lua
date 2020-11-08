@@ -99,43 +99,48 @@ local expedition_info = {
 	zonein     = { x=-9, y=-2466, z=-79, h=0 }
 }
 
+local anguish_door_cooldown_key = "anguish_door_cooldown"
+
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
   eq.debug("Door: " .. door_id .. " clicked");
 
   if (door_id == 3) then
+    -- zone entry is gated via flag checks but expedition can be created if only requester is eligible
     local qglobals = eq.get_qglobals(e.self);
     local has_signets = qglobals["oow_rss_taromani_insignias"]
     local has_trials = qglobals["oow_mpg_raids_complete"]
+    local is_gm = (e.self:Admin() >= 80 and e.self:GetGM())
 
-    -- zone entry gated via flag checks but expedition can be created if only requester is eligible
-    if (e.self:Admin() >= 80 and e.self:GetGM()) or (has_signets and has_trials) then
-      local anguish_door_open = (eq.get_data("anguish_door_open") ~= "")
-      if not anguish_door_open then
-        eq.set_data("anguish_door_open", "1", "60s")
-        e.self:Message(15, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
-      else
-        -- live throttles all creation requests during this message, not just messages
-        e.self:Message(13, "You can feel the door to Anguish opening underneath your hand.");
-      end
+    -- the anguish door goes on a 60s cooldown after an expedition request
+    -- while on cooldown clicking the door results in "feel the door" message and nothing happens
+    -- if requester is in a non-anguish expedition then nothing happens
+    -- if requester is in an anguish expedition it zones in without any message
+    -- if a creation request fails, the door goes on cooldown
+    -- (unnecessary) looks like live also adds a cooldown on success to compensate for their instance startup time
+    local is_anguish_door_on_cooldown = (eq.get_data(anguish_door_cooldown_key) ~= "")
 
+    if not is_gm and is_anguish_door_on_cooldown then
+      e.self:Message(13, "You can feel the door to Anguish opening underneath your hand.")
+    elseif not is_gm and not has_trials then -- unknown original live message
+      e.self:Message(13, "You must complete the Muramite Proving Grounds raid trials.")
+    elseif not is_gm and not has_signets then
+      e.self:Message(13, "Though you carry the seal to enter Anguish, the Fallen Palace, you would be torn asunder by the harsh environment were you to venture within.  You will need to find a way to protect yourself from the powers of Discord.")
+    else
       local dz = e.self:GetExpedition()
       if dz.valid and dz:GetZoneName() == "anguish" then
         e.self:MovePCDynamicZone("anguish")
-      elseif not anguish_door_open then
+      elseif not dz.valid then
+        e.self:Message(15, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.")
+
         dz = e.self:CreateExpedition(expedition_info)
         if dz.valid then
-          -- live doesn't add "Replay Timer" to new members after aug droppers (maybe a bug?)
-          dz:SetReplayLockoutOnMemberJoin(false)
-
+          dz:SetReplayLockoutOnMemberJoin(false) -- live doesn't add "Replay Timer" to new members after spawning aug droppers (bug or intentional?)
           eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. dz:GetInstanceID());
+        else
+          eq.set_data(anguish_door_cooldown_key, "1", "60s")
+          eq.debug("Anguish door placed on 60s cooldown")
         end
-      end
-    else
-      if not has_trials then -- unknown original live message
-        e.self:Message(13, "You must complete the Muramite Proving Grounds raid trials.")
-      elseif not has_signets then
-        e.self:Message(13, "Though you carry the seal to enter Anguish, the Fallen Palace, you would be torn asunder by the harsh environment were you to venture within.  You will need to find a way to protect yourself from the powers of Discord.")
       end
     end
   end

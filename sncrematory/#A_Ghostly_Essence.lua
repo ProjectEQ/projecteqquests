@@ -42,10 +42,9 @@ function event_waypoint_arrive(e)
 end
 
 function event_signal(e)
-  if e.signal == 1 then
+  if e.signal == 1 then -- from #Gzifa_the_Pure_One depop timer
     -- time ran out, turn kos (live despawns these and spawns evil essence that hits for 500+)
     e.self:SetTexture(3) -- red
-    e.self:ChangeTexture(3) -- red if zoned
     e.self:TempName("an_evil_ghostly_essence")
     make_attackable(e.self, true)
     e.self:SetNPCFactionID(79) -- gargoyle

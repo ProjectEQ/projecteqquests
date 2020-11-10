@@ -34,7 +34,7 @@ function event_timer(e)
 		local xloc = e.self:GetX();
 		local yloc = e.self:GetY();
 		local zloc = e.self:GetZ();
-		eq.set_proximity(xloc - 25, xloc + 25, yloc - 25, yloc + 25);
+		eq.set_proximity(e.self:GetX()-30, e.self:GetX()+30, e.self:GetY()-30, e.self:GetY()+30, -999999, 999999, true);
 		eq.enable_proximity_say();
 		eq.stop_timer("proxsay");
 	elseif(e.timer == "help") then

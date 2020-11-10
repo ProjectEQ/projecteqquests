@@ -20,7 +20,7 @@ function event_proximity_say(e)
 		eq.disable_proximity_say();
 		eq.set_timer("pause",60000);
 	elseif(e.message:findi("you are one but two")) then
-		-- eq.unique_spawn(123000,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		eq.unique_spawn(123193,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --#a_ghostly_presence (123193)
 		eq.depop_with_timer();
 	end
 end

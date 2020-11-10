@@ -6,7 +6,7 @@ function event_say(e)
 			e.self:Say("You must be the one to forge the weapon, " .. e.other:GetCleanName() .. ". Go and learn the art of the smith. Return only when you are a master and tell me you are ready. I will then tell you what must be done.");
 		elseif(e.message:findi("am a master smith")) then
 			e.self:Say("Good. The weapon is extremely complicated to construct, your skills will be tested perhaps beyond your abilities. The weapon is known as a Naginata. You need not be proficient in its use to build it. The Naginata is constructed of four major parts. The shaft, the blade, the fittings, and the hilt, or tsuba. No ordinary materials can hope to bind the dragons spirit. Special materials must be found.");
-			e.other:SummonCursorItem(18282); -- The Blade
+			e.other:SummonItem(18282); -- The Blade
 		elseif(e.message:findi("make the shaft")) then
 			e.self:Say("The shaft must be strong enough to withstand the effects of the spirit’s presence, yet flexible enough to be wielded properly. Of the few dragons that returned to us from the Ring of Scale, some brough back knowledge of a type of wood that may be sufficient. It is known as bronzewood. One can find it amidst one of the forests on the continent of Kunark. I am sure it is being used by one of the sentient races there.");
 		elseif(e.message:findi("make the fitting")) then

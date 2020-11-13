@@ -12,7 +12,7 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 2694}, 0)) then
 		e.self:Say("Vegalys sent you. I'm done for. Guard Helminth found a false wall. We stepped through it. We were ambushed. I didn't see where Helminth went. He disappeared. I knew we were overwhelmed. I ran and feigned death but I knew [it was too late].");
-		eq.unique_spawn(46000,0,0,-49,378,-39,128); --Guard_Helminth (46000)
+		eq.unique_spawn(45131,0,0,-49,378,-39,128); --Guard_Helminth (45131)
 		e.other:QuestReward(e.self,0,0,0,0,2694);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

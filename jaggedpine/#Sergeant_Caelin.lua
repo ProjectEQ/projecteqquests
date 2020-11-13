@@ -24,6 +24,7 @@ function event_say(e)
 end
 
 function event_trade(e)
+	local canine = 0;
 	local item_lib = require("items");
 	
 	if(item_lib.check_turn_in(e.trade, {item1 = 2388}, 0)) then -- Qeynos Badge of Honor
@@ -40,8 +41,16 @@ function event_trade(e)
 	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8286,item2 = 8285})) then -- Closed Black Satchel and Marked Qeynos Badge of Honor
 		e.self:Say("A job well done! Perhaps now that will throw the gnolls into disarray and show them that we are not to be trifled with! The people of Qeynos and it's surrounding territories are in a great debt to you. You have prove time and again your willingness to take great risks to protect those who can't protect themselves. I am hereby empowered to grant to you an honorary rank of nobility. Take this badge and wear it proudly.");
 		e.other:QuestReward(e.self,0,0,0,0,8968); -- Qeynos Badge of Nobility
-	else
-		local canine = item_lib.check_turn_in(e.trade, {8264});
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 8264,item2 = 8264,item3 = 8264,item4 = 8264})) then
+		canine = 4;
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 8264,item2 = 8264,item3 = 8264})) then
+		canine = 3;
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 8264,item2 = 8264})) then
+		canine = 2;
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 8264})) then
+		canine = 1;
+	end
+
 		if(canine > 0) then
 			repeat
 				e.self:Say("Good work, that is one less gnoll we need to worry about");
@@ -53,6 +62,5 @@ function event_trade(e)
 				canine = canine - 1;
 			until canine == 0;
 		end
-	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

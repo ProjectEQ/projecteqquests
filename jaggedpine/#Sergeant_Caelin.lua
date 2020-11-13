@@ -41,7 +41,7 @@ function event_trade(e)
 		e.self:Say("A job well done! Perhaps now that will throw the gnolls into disarray and show them that we are not to be trifled with! The people of Qeynos and it's surrounding territories are in a great debt to you. You have prove time and again your willingness to take great risks to protect those who can't protect themselves. I am hereby empowered to grant to you an honorary rank of nobility. Take this badge and wear it proudly.");
 		e.other:QuestReward(e.self,0,0,0,0,8968); -- Qeynos Badge of Nobility
 	else
-		local canine = item_lib.count_handed_item(e.trade, {8264});
+		local canine = item_lib.check_turn_in(e.trade, {8264});
 		if(canine > 0) then
 			repeat
 				e.self:Say("Good work, that is one less gnoll we need to worry about");

@@ -6,9 +6,9 @@ function event_say(e)
 	elseif(e.message:findi("vegalys sent me")) then
 		e.self:Say("So Vegalys sent you to check on our progress then? I don't believe you. Prove it!");
 	elseif(e.message:findi("ready to complete the mission")) then
-		--eq.unique_spawn(45006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		--eq.unique_spawn(45007,0,0,-49,410,-38,128);
-		--eq.unique_spawn(45008,0,0,-49,330,-38,0);
+		eq.unique_spawn(45130,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Corrupt_Guard_Helminth (45130)
+		eq.unique_spawn(45106,0,0,-49,410,-38,128); --a_necromancer (45106)
+		eq.unique_spawn(45118,0,0,-49,330,-38,0); --a_rotting_sentry (45118)
 		eq.depop();
 	end
 end

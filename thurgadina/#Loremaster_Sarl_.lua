@@ -1,9 +1,9 @@
---function event_waypoint_arrive(e)
---	if(e.wp == 2) then
---		e.self:SetAppearance(4);
---		e.self:Say("Ah hah! Here it is! Let's see here... Yes, I remember now. This here has a recordin' o Burdael's tale. I'll lend ya the book, but it'll cost ya 50 platinum.");
---	end
---end
+function event_waypoint_arrive(e)
+	if(e.wp == 2) then
+		e.self:SetAppearance(4);
+		e.self:Say("Ah hah! Here it is! Let's see here... Yes, I remember now. This here has a recordin' o Burdael's tale. I'll lend ya the book, but it'll cost ya 50 platinum.");
+	end
+end
 
 function event_trade(e)
 	local item_lib = require("items");

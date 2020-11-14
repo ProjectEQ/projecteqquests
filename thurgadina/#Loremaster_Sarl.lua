@@ -1,6 +1,9 @@
+local escort = 0;
+
 function event_spawn(e)
-	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(115000)) then
-		eq.depop(115000);
+	escort = 0;
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(115148)) then
+		eq.depop(115148); --#Loremaster_Sarl_ (115148)
 	end
 end
 
@@ -13,9 +16,9 @@ function event_say(e)
 		eq.start(32);
 	elseif(e.message:findi("dragon")) then
 		e.self:Say("Dragons, ye say? Well, you might just be in luck. I'm the resident Lore Keeper on the subject of dragons, though we don't know very much about them as a community. We've had very little contact with the majestic beasts. Only the Bravest of our kin have ever found the guts to stand their ground when facing a Dragon, let alone speak with them. What are you looking for exactly?");
-	elseif(e.message:findi("black") and e.self:GetX() == 750 and e.self:GetY() == -225) then
+	elseif(e.message:findi("black") and escort == 1) then
 		e.self:Say("Excellent, I know what we're lookin fer now.");
-		--eq.spawn2(115000,32,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(115148,32,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --#Loremaster_Sarl_ (115148)
 		eq.depop_with_timer();
 	end	
 end
@@ -32,10 +35,11 @@ function event_waypoint_arrive(e)
 			e.self:Say("If we Coldain just work together, obeying Brell's teachings, nothing can stop us from overcoming our enemies. Even the Kromrif will fall before us if we are undivided. It is only when we stray from our fundamental knowledge that we are vulnerable.");
 		elseif(e.wp == 19) then
 			e.self:SetAppearance(4);
-		elseif(e.wp == 23) then
+		elseif(e.wp == 22) then
 			e.self:Say("Ok, here we are. Let me see.' Sarl runs a finger along the book labels searching for a particular volume...");
-		elseif(e.wp == 24) then
+		elseif(e.wp == 23) then
 			e.self:Say("Do ye know anythin about this dragon? Ye need his name right? Some o these older ones are organized in strange ways. I love me fore fathers, but they made some funny kinda rules. Do you know what color this dragon was?");
+			escort = 1;
 		end
 	end
 end

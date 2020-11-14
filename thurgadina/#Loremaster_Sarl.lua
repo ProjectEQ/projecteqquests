@@ -9,8 +9,7 @@ function event_say(e)
 		e.self:Say("Ahhh, hello there. What can I do for you, " .. e.other:GetCleanName() .. "");
 	elseif((e.message:findi("name of the slain") or e.message:findi("name of a slain")) and e.self:GetGrid() == 22) then
 		e.self:Say("The name of Dragon, you say? One that was slain? Hmmm, sounds interesting. Like I said, we've had little contact with Dragons, but I vaguely recall an ancient legend about a slain dragon and one of our people meeting. Follow me to the Library and we'll talk along the way.");
-		e.self:CastToNPC():AssignWaypoints(32);
-		e.self:SetCurrentWP(0);
+		e.self:AssignWaypoints(32);
 	elseif(e.message:findi("dragon")) then
 		e.self:Say("Dragons, ye say? Well, you might just be in luck. I'm the resident Lore Keeper on the subject of dragons, though we don't know very much about them as a community. We've had very little contact with the majestic beasts. Only the Bravest of our kin have ever found the guts to stand their ground when facing a Dragon, let alone speak with them. What are you looking for exactly?");
 	elseif(e.message:findi("black") and e.self:GetX() == 751 and e.self:GetY() == -225) then

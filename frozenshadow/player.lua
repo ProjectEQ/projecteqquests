@@ -61,7 +61,7 @@ function event_click_door(e)
                 dest_z = 12;
             end
         elseif (door_id == 1) then -- Sixth Floor Door
-            if (e.self:KeyRingCheck(20039) or e.self:HasItem(20039)) then
+            if (e.self:KeyRingCheck(20038) or e.self:HasItem(20038)) then
                 dest_x = 20;
                 dest_y = 250;
                 dest_z = 355;

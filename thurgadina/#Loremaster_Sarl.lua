@@ -13,7 +13,7 @@ function event_say(e)
 		eq.start(32);
 	elseif(e.message:findi("dragon")) then
 		e.self:Say("Dragons, ye say? Well, you might just be in luck. I'm the resident Lore Keeper on the subject of dragons, though we don't know very much about them as a community. We've had very little contact with the majestic beasts. Only the Bravest of our kin have ever found the guts to stand their ground when facing a Dragon, let alone speak with them. What are you looking for exactly?");
-	elseif(e.message:findi("black") and e.self:GetX() == 749 and e.self:GetY() == -224) then
+	elseif(e.message:findi("black") and e.self:GetX() == 750 and e.self:GetY() == -225) then
 		e.self:Say("Excellent, I know what we're lookin fer now.");
 		--eq.spawn2(115000,32,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 		eq.depop_with_timer();

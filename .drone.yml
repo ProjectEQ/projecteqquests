@@ -3,7 +3,7 @@ kind: pipeline
 type: docker
 name: ProjectEQ Quests CI
 
-steps:
+steps: 
   - name: project-eq-script-ci-run
     image: debian:stretch-slim
     commands:

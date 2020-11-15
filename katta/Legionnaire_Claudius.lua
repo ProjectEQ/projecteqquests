@@ -19,7 +19,7 @@ function event_trade(e)
 		e.other:Faction(1485,-1);  -- -Eye of Seru
 		e.other:Faction(1541,-1); -- -Hand Legionnaries
 		e.other:QuestReward(e.self,0,0,0,0,0,1000);
-		--eq.spawn2(160136,30,0,-2107,99,33,0);
+		eq.spawn2(160433,30,0,-2107,99,33,0); --#Legionnaire_Claudius (160433)
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

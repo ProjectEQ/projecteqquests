@@ -115,6 +115,9 @@ function event_say(e)
       if sharalla_failed then
         eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Your failure to protect the body of my beloved Sharalla is disconcerting.  I'm sure you tried your best, but in this case it wasn't good enough.")
       end
+      if laskuth_complete then
+        eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "I heard the unmistakable sound of that behemoth crashing to the ground all the way from here.  Fantastic job.  A most commendable effort!")
+      end
     end
   elseif e.message:findi("lirprin sent me") and laskuth_complete then
     local qglobals = eq.get_qglobals(e.other)

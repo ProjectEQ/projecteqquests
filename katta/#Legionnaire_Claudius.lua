@@ -2,7 +2,7 @@ function event_say(e)
 	local vahn = eq.get_entity_list():GetMobByNpcTypeID(160469);
 	if(e.message:findi("traitor to the Validus Custodus")) then
 		if(vahn.valid) then
-			eq.unique_spawn(160468,0,0,vahn:CastToNPC():GetX(),vahn:CastToNPC():GetY(),vahn:CastToNPC():GetZ(),vahn:CastToNPC():GetHeading()); --#Condor (160468)
+			eq.unique_spawn(160468,0,0,-1088,42,-266,377); --#Condor (160468)
 			--eq.depop(160469);
 			eq.unique_spawn(160448,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --#Legionnaire_Claudius_ (160448)
 			eq.depop();

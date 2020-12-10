@@ -63,27 +63,6 @@ function event_timer(e)
 	end
 end
 
-function Spawn_Elements()
-	eq.unique_spawn(340426,12,0,0.00,-222.00,248.89,380.0);
-	eq.unique_spawn(340427,13,0,0.00,-214.00,248.89,380.0);
-	eq.unique_spawn(340428,14,0,0.00,-206.00,248.89,380.0);
-	eq.unique_spawn(340430,15,0,0.00,-190.00,248.89,380.0);
-	eq.unique_spawn(340429,16,0,0.00,-198.00,249.41,380.0);
-end
-
-function Spawn_Emotions()
-	eq.unique_spawn(340425,22,0,-190.00,-198.00,248.90,128.0);
-	eq.unique_spawn(340424,23,0,-190.00,-206.00,248.90,128.0);
-	eq.unique_spawn(340423,24,0,-190.00,-214.00,248.90,128.0);
-	eq.unique_spawn(340422,25,0,-190.00,-222.00,248.90,128.0);
-end
-
-function Depop_Elements()
-	local mob_list= {340426,340427,340428,340429,340430}
-	for _,mob in pairs(mob_list) do
-		eq.depop_all(mob);
-	end
-end
 
 function Signal_Elements()
 	local mob_list = {340426,340427,340428,340429,340430}

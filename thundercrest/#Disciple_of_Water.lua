@@ -20,6 +20,8 @@ end
 function event_signal(e)
 	if (e.signal == 1) then
 		eq.set_timer("chat", 40000);
+		e.self:SetGrid(14);
+		eq.start(14);
 	elseif (e.signal == 2) then
 		e.self:SetSpecialAbility(19, 0);
 		e.self:SetSpecialAbility(20, 0);

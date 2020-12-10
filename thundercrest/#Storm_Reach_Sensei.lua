@@ -79,14 +79,14 @@ function Spawn_Emotions()
 end
 
 function Depop_Elements()
-	local mob_list{340426,340427,340428,340429,340430}
+	local mob_list= {340426,340427,340428,340429,340430}
 	for _,mob in pairs(mob_list) do
 		eq.depop_all(mob);
 	end
 end
 
 function Signal_Elements()
-	local mob_list{340426,340427,340428,340429,340430}
+	local mob_list = {340426,340427,340428,340429,340430}
 	for _mob in pairs(mob_list) do
 		eq.signal(mob,1);
 	end

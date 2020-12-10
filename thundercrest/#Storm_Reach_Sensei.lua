@@ -76,7 +76,11 @@ function event_signal(e)
 	if e.signal==1 then
 		e.self:Say("Good, you have decided to meet the challenge. I will not bore you with unworthy tales of our training methods or our meager accomplishments, certainly your own deeds far outshine our own. We are but meager servants to the Strom Mistress, Yar`Lir, and are of little consequence. We have been asked to test you and, certainly, ourselves in a battle to the death. The residents of this place are away at tasks beyond those such as we, and for a short while we have this room to ourselves. We must finish our contest before they return, and so there is little time for pleasantries.");
 		e.self:Say("A winner will be declared if they are the only combatants alive in this room. Your first challenge will be to defeat the Disciples of The Five Elements. Certainly they will be easily defeated by such mighty beings, but it is within their hearts to try. Your battle will begin in one minute. Prepare yourselves.");
-		Signal_Elements();
+		eq.signal(340426,1);
+		eq.signal(340427,1);
+		eq.signal(340428,1);
+		eq.signal(340430,1);
+		eq.signal(340429,1);
 		eq.set_timer("wave_1", 60 * 1000);
 	elseif (e.signal == 340426) then
 		metal = true;

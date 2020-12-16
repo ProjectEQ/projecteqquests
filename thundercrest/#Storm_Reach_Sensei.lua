@@ -63,15 +63,6 @@ function event_timer(e)
 	end
 end
 
-
-function Signal_Elements()
-	local mob_list = {340426,340427,340428,340429,340430}
-	for _mob in pairs(mob_list) do
-		eq.signal(mob,1);
-	end
-end
-
-
 function event_signal(e)
 	if e.signal==1 then
 		e.self:Say("Good, you have decided to meet the challenge. I will not bore you with unworthy tales of our training methods or our meager accomplishments, certainly your own deeds far outshine our own. We are but meager servants to the Strom Mistress, Yar`Lir, and are of little consequence. We have been asked to test you and, certainly, ourselves in a battle to the death. The residents of this place are away at tasks beyond those such as we, and for a short while we have this room to ourselves. We must finish our contest before they return, and so there is little time for pleasantries.");

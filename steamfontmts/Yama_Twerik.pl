@@ -16,7 +16,6 @@ sub EVENT_SAY {
       if ($text =~ /hail/i) {
         quest::say("Just in time! Talwyn said he might be sending me someone to help me with this particular predicament. You see, I need help with this guy here. His battery has gone dry and we can't find a way to recharge it. We think the clockworks of Innovation are powered through some kind of magical energy, different from what is stored in normal batteries. I would like you to use your best electrical magics to try and [resurrect his battery].");
       }
-
       if ($text =~ /resurrect his battery/i) {
         quest::say("Ok good, but here is the thing, we have to be really careful. I don't want to overcharge the battery, and you will have to cast on it while I am holding the correct wires together. If you don't do it at the right time you will either fry me, or it will be a waste and we will have to start completely over. Let me know when you have cleared your mind, regained your magical strength, and are [ready to start].");
       }
@@ -31,7 +30,6 @@ sub EVENT_SAY {
     }
     else {
       quest::emote("seems to ignore you."); #Text made up
-
     }
   }
   else {
@@ -88,12 +86,12 @@ sub EVENT_SIGNAL {
 
 sub EVENT_WAYPOINT_ARRIVE {
   if (($event == 1) && ($wp == 1)) {
-      quest::stop();
-      quest::moveto(-1581, 1285, -108, 114, 1); #Clockwork location (steamfontmts)
-      quest::settimer("kneel", 1);
-      quest::say("Stay sharp, young wizard, I will give you cue to begin to infuse this creation with your magics. Take care to put just the right amount of effort into the spell, otherwise we may overcharge the battery, or you might cause me harm. If you miss your cue, it will be a waste and we'll have to start over.");
-      quest::settimer("stage_1", rand(15) * 1 + 5);
-      $stage = 1;
+    quest::stop();
+    quest::moveto(-1581, 1285, -108, 114, 1); #Clockwork location (steamfontmts)
+    quest::settimer("kneel", 1);
+    quest::say("Stay sharp, young wizard, I will give you cue to begin to infuse this creation with your magics. Take care to put just the right amount of effort into the spell, otherwise we may overcharge the battery, or you might cause me harm. If you miss your cue, it will be a waste and we'll have to start over.");
+    quest::settimer("stage_1", rand(15) * 1 + 5);
+    $stage = 1;
   }
 }
 

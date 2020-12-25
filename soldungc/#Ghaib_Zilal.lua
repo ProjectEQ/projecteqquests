@@ -23,10 +23,10 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 55253, item2 = 55254, item3 = 55255, item4 = 55256})) then -- A Smoldering Tentacle, Seared Imp's Blood, Seared Ooze, Crystallized Soul of Fire
+	if(item_lib.check_turn_in(e.trade, {item1 = 55253, item2 = 55254, item3 = 55255, item4 = 55256})) then -- A Smoldering Tentacle, Seared Imp's Blood, Seared Ooze, Crystallized Soul of Fire
 		e.self:Say("Yes, this will do nicely. Here is the temper, but you'll need a [" .. eq.say_link("weapon") .. "] to infuse");
 		eq.set_global("HelpGhaib","1",0,"F");
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 55257, item2 = 55258, item3 = 55259, item4 = 55260})) then -- Flame-Forged Vial, Melted Hilt, Shattered Blade (Top), Shattered Blade (Bottom)
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 55257, item2 = 55258, item3 = 55259, item4 = 55260})) then -- Flame-Forged Vial, Melted Hilt, Shattered Blade (Top), Shattered Blade (Bottom)
 		e.self:Say("Ah, you have returned. I was beginning to worry that the kobolds had grown more powerful than anticipated. I will now forge the blade. May it see the demise of many servants of Solusek Ro. Our pact is complete.");
 		e.self:Emote("places the broken pieces of the sword upon the hard ground and pours the vial of radiant liquid over them. The liquid glows fiercely, infusing itself into the broken pieces of the sword and making the sword whole once more.");
 		e.other:QuestReward(e.self,0,0,0,0,55261,100000); -- Ghaib's Flame-Forged Longsword

@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:QuestSay(e.other, "Sorry, I am a bit tired. Been working all night.");
 	end
 	if e.other:Class() == "Paladin" then
-		if(e.message:findi("hail") and e.other:Class() == "Paladin" or e.other:Admin() > 80) then
+		if(e.message:findi("hail")) then
 			e.self:QuestSay(e.other, "Hello, " .. e.other:GetName() .. ", I do believe we've spoken before and I told you I was very [" .. eq.say_link("tired") .. "]. ")
 		elseif(e.message:findi("tired")) then
 			e.self:QuestSay(e.other, "Yes, I've been very tired lately. I've been busy creating weaponry for the [" .. eq.say_link("Soldiers of Marr") .. "] and many [" .. eq.say_link("other followers") .. "] of Marr.");

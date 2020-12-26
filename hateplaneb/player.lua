@@ -8,7 +8,6 @@ function event_enter_zone(e)
 		eq.set_global("hpb_zone_emote","1",3,"1H");
 	elseif qglobals["pre_pal"] == "2" then
 			 e.self:Message(15,"Your sword piece reverberates with a low hum. An attraction is felt within it. To the center of this plane you are drawn, towards the direction of that attraction.");
-			 e.self:MarkSingleCompassLoc(-130.00,-480.00,31.73);
 	end  
 end
 

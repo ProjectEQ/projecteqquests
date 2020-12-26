@@ -43,7 +43,7 @@ function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
 
-	if qglobals["pre_pal"] == "2" and item_lib.check_turn_in(e.trade, {item1 = 69909, item2 = 69908, item3 =69907, item 4 =69910}) then --Xor,Zota,Wilun,Yirno
+	if qglobals["pre_pal"] == "2" and item_lib.check_turn_in(e.trade, {item1 = 69909, item2 = 69908, item3 =69907, item4 =69910}) then --Xor,Zota,Wilun,Yirno
 		e.self:QuestSay(e.other, "Okay, let's give this one more try. Hopefully your luck will rub off on me and I'll be able to successfully create this spell. Well here goes...");
 		e.self:QuestSay(e.other, "eyes glow with a bright yellow color. He looks at you for a second, searching for something. He then looks down his lexicon and whispers a chant.",{speak_mode = SpeakMode.Emote});
 		e.self:QuestSay(e.other, "'Excellent! I knew with your help I could create this spell. Thank you " .. e.other:GetName() .. ", here is your reward. Now, to try out this new teleport.");

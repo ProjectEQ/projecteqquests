@@ -1,7 +1,7 @@
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self)
 		if qglobals["pre_pal"] == "2" then
-			 e.self:MarkCompassLoc(9.00,-1107.00,-24.28);
+			 e.self:MarkSingleCompassLoc(9.00,-1107.00,-24.28);
 		end
 end
 

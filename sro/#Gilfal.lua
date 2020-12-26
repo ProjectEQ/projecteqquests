@@ -13,7 +13,7 @@ function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
 		if qglobals["pre_pal"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 69901}) then -- Solvent
-			e.self:QuestSay(e.other, "Amazing, "..e.other:GetRace()..", you must have visited the Plane of Valor and spoke to Master Baltron. You will need to gather the four pieces of the sword to be able to reconstruct it. I only have the whereabouts of one of the four pieces, but I imagine that piece can lead you to the others. Go to the Plane of Storms and investigate there, I have a feeling you may find the first piece there. Here is the sword's scabbard to place the solvent and the four sword pieces in.");
+			e.self:QuestSay(e.other, "Amazing, "..e.other:Race()..", you must have visited the Plane of Valor and spoke to Master Baltron. You will need to gather the four pieces of the sword to be able to reconstruct it. I only have the whereabouts of one of the four pieces, but I imagine that piece can lead you to the others. Go to the Plane of Storms and investigate there, I have a feeling you may find the first piece there. Here is the sword's scabbard to place the solvent and the four sword pieces in.");
 			eq.set_global("pre_pal","2",5,"F");
 			e.other:SummonItem(69902); -- scabbard
 		end		

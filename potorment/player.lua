@@ -1,3 +1,11 @@
+function event_enter_zone(e)
+	local qglobals = eq.get_qglobals(e.self)
+		if qglobals["pre_pal"] == "2" then
+			 e.self:MarkCompassLoc(9.00,-1107.00,-24.28);
+		end
+	end
+end
+
 function event_loot(e)
     -- bard 1.5 Metala chest
     if e.self:GetClass() == 8 and e.item:GetID() == 77630 then

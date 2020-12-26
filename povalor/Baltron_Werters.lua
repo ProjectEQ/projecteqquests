@@ -2,7 +2,7 @@
 
 
 function event_say(e)
-	local qglobal = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then
 		e.self:QuestSay(e.other, "Sorry, I am a bit tired. Been working all night.");
 	end

@@ -4,7 +4,7 @@
 function event_say(e)
 	local qglobal = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then
-		e.self:QuestSay("Sorry, I am a bit tired. Been working all night.");
+		e.self:QuestSay(e.other, "Sorry, I am a bit tired. Been working all night.");
 	end
 	if e.other:Class() == "Paladin" then
 		if(e.message:findi("hail") and e.other:Class() == "Paladin" or e.other:Admin() > 80) then

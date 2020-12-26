@@ -1,9 +1,8 @@
 --Epic Pre-quest (Paladin) ##Drogerin 208059
 
 
-local qglobal = eq.get_qglobals(e.other);
-
 function event_say(e)
+	local qglobal = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then
 		e.self:QuestSay("Sorry, I am a bit tired. Been working all night.");
 	end

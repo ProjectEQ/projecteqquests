@@ -20,12 +20,12 @@ function event_say(e)
 end
 
 function event_timer(e)
-	if (e.timer == "spell") then
+	if e.timer == "spell" then
 		eq.stop_timer("spell");
 		e.self:Emote(" begins to cast a spell");
 		e.self:Emote("'s gate collapses");
 		eq.set_timer("spell2",1000);
-	elseif e.timer == "spell2") then
+	elseif e.timer == "spell2" then
 		eq.stop_timer("spell2");
 		e.self:Say("Argh! Stupid Spell!!!");
 		e.self:Emote(" begins to cast the gate spell");

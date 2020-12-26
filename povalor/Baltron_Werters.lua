@@ -34,7 +34,7 @@ end
 function event_timer(e)
 	if e.timer == "spawn" then
 		eq.stop_timer("spawn");
-		eq.spawn2(220017, 189.58, 624.05, 193.88, 388.2);
+		eq.spawn2(220017,0,0,189.58,624.05,193.88,388.2);
 	end
 end
 	

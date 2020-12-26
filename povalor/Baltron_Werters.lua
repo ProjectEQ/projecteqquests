@@ -31,8 +31,23 @@ function event_say(e)
 	end
 end
 
-
+function event_timer(e)
+	if e.timer == "spawn" then
+		eq.stop_timer("spawn");
+		eq.spawn2(220017, 189.58, 624.05, 193.88, 388.2);
+	end
+end
+	
 function event_trade(e)
+	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
+	
+	if qglobals["pre_pal"] == "4" and item_lib.check_turn_in(e.trade, {item1 = 69912}) then -- blade from Gifal
+		e.self:Say("Ah, I see you have returned to me with the blade Helmetthane. It is indeed fractured...perhaps Sir Rathalzor can guide us.");
+		e.self:Emote("begins to chant in a foreign, yet beautiful language.");
+		eq.set_timer("spawn",2000);
+		eq.set_global("pre_pal","5",5,"F");
+		e.other:SummonItem(69913);
+	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

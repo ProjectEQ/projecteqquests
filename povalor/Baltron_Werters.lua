@@ -1,7 +1,7 @@
 --Epic Pre-quest (Paladin) ##Drogerin 208059
 
 
-local global = eq.get_qglobals(e.other);
+local qglobal = eq.get_qglobals(e.other);
 
 function event_say(e)
 	if(e.message:findi("hail")) then

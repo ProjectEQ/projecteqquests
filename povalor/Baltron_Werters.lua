@@ -24,8 +24,9 @@ function event_say(e)
 			e.self:QuestSay(e.other, "Yes, many Guktans perished during this battle. [" .. eq.say_link("Couragebringer") .. "], the sword I created that was blessed by Sir Rathalzor himself, was shattered by a powerful troll shaman named Broog. The Battle did not come without casualties indeed.");
 		elseif(e.message:findi("Couragebringer") then
 			e.self:QuestSay(e.other, "Perhaps you can assist Gilfal with recovering his sword. Take this solvent, which was blessed by the priests in the Halls of Honor, as it will bond with the sword and allow you to rebuild the great blade. Find Gilfal and give him the solvent and tell him you are [" .. eq.say_link("willing to help him rebuild Couragebringer") .. "]. Go now and find this knight.
-			if qglobals["pre_pal"] == nil then
-				eq.set_global("pre_pal","1",5,"F"); -- set this so another rogue cannot come up and steal flag during event
+				if qglobals["pre_pal"] == nil then
+				eq.set_global("pre_pal","1",5,"F"); -- 
+				end
 		end
 	end
 end

@@ -1,25 +1,4 @@
 -- NPCID: 289044 #zone_status
-local function remove_key_from_npcs()
-  -- this function can be removed when key drop is disabled in database
-  eq.debug("Removing Harshly Spiked Key from npc loot (Remove this when database updated)")
-  local npcs_with_key = {
-    [289038] = true, -- NPC: an_aneuk_fleshweaver
-    [289039] = true, -- NPC: an_ikaav_psychagonist
-    [289001] = true, -- NPC: an_ikaav_irelette
-    [289012] = true, -- NPC: an_ikaav_irelette
-    [289004] = true, -- NPC: a_ra`tuk_decimator
-    [289017] = true, -- NPC: a_ra`tuk_decimator
-    [289016] = true, -- NPC: an_ikaav_fleshflare
-  }
-
-  local npc_list = eq.get_entity_list():GetNPCList()
-  for npc in npc_list.entries do
-    if npc.valid and npcs_with_key[npc:GetNPCTypeID()] then
-      npc:RemoveItem(54083) -- Item: Harshly Spiked Key
-    end
-  end
-end
-
 local function spawn_keyroom()
   local spawns = {}
   spawns[#spawns+1] = eq.spawn2(289042, 0, 0, -747.00, 1515.00, 541.27, 284.00) -- NPC: a_mastruq_decapitator
@@ -32,9 +11,6 @@ local function spawn_keyroom()
   spawns[#spawns+1] = eq.spawn2(289016, 0, 0, -845.00, 1596.00, 541.17, 276.00) -- NPC: an_ikaav_fleshflare
   spawns[#spawns+1] = eq.spawn2(289016, 0, 0, -750.00, 1598.00, 541.06, 34.00)  -- NPC: an_ikaav_fleshflare
   spawns[#spawns+1] = eq.spawn2(289002, 0, 0, -804.00, 1577.00, 542.56, 263.00) -- NPC: an_aneuk_ebonspirit
-
-  -- todo: database remove as a normal drop (quest dynamically assigns it)
-  remove_key_from_npcs()
 
   -- randomly choose one of the spawned npcs to give the key to
   local index = math.random(#spawns)
@@ -63,6 +39,5 @@ function event_timer(e)
     eq.debug("Depopping aneuk ebonspirits from key room (Remove this when database updated)")
     eq.stop_timer("depop_ebonspirits")
     eq.depop_all(289002) -- NPC: an_aneuk_ebonspirit
-    remove_key_from_npcs()
   end
 end

@@ -334,10 +334,10 @@ end
 function Tunat_Second_Timer(e)
 
   if (e.timer == "pkk_adds") then
-    eq.spawn2(298048, 0, 0, 334, -117, 21, 280); -- NPC: an_ikaav_hatchling
-    eq.spawn2(298048, 0, 0, 356, -154, 21, 356); -- NPC: an_ikaav_hatchling
-    eq.spawn2(298048, 0, 0, 353, -201, 21, 434); -- NPC: an_ikaav_hatchling
-    eq.spawn2(298048, 0, 0, 322, -215, 21, 496); -- NPC: an_ikaav_hatchling
+    eq.spawn2(298013, 0, 0, 334, -117, 21, 280); -- NPC: an_ikaav_hatchling --change these so they dont trigger PKK Script.
+    eq.spawn2(298013, 0, 0, 356, -154, 21, 356); -- NPC: an_ikaav_hatchling
+    eq.spawn2(298013, 0, 0, 353, -201, 21, 434); -- NPC: an_ikaav_hatchling
+    eq.spawn2(298013, 0, 0, 322, -215, 21, 496); -- NPC: an_ikaav_hatchling
 
   elseif (e.timer == "prt_adds") then
     eq.spawn2(298045, 0, 0, 334, -117, 21, 280); -- NPC: an_unstable_construct

@@ -103,30 +103,14 @@ local function spawn_riddle_items()
 end
 
 local function spawn_devastating_pookas()
-  -- todo: add devastating pookas to database and script their insta kill on hit
-  local spawns = {}
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -264, 2105, 635, 336) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -243, 2089, 634, 371) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -249, 2075, 635, 387) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -254, 2053, 635, 434) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -230, 2053, 634, 419) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -213, 2080, 635, 379) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -215, 2104, 634, 355) -- a_mountain_pooka
-  spawns[#spawns+1] = eq.spawn2(289021, 0, 0, -233, 2112, 634, 341) -- a_mountain_pooka
-
-  -- fake them for now, remove this when devastating pookas are added to database
-  for i=1,#spawns do
-    if spawns[i].valid then
-      spawns[i]:TempName("a_devastating_pooka")
-      spawns[i]:ChangeSize(13)
-      spawns[i]:CastToNPC():ModifyNPCStat("max_hit", "100000") -- real npcs insta kill on hit
-      spawns[i]:CastToNPC():ModifyNPCStat("see_invis", "1")
-      spawns[i]:CastToNPC():ModifyNPCStat("aggro", "150")
-      spawns[i]:CastToNPC():NPCSpecialAttacks("S", 0, false, true) -- disable summon
-      spawns[i]:CastToNPC():NPCSpecialAttacks("C", 0, false, false) -- false sets uncharmable
-      spawns[i]:CastToNPC():NPCSpecialAttacks("M", 0, false, false) -- false sets unmezable
-    end
-  end
+  eq.spawn2(289037, 0, 0, -264, 2105, 635, 336) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -243, 2089, 634, 371) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -249, 2075, 635, 387) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -254, 2053, 635, 434) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -230, 2053, 634, 419) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -213, 2080, 635, 379) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -215, 2104, 634, 355) -- a_devastating_pooka
+  eq.spawn2(289037, 0, 0, -233, 2112, 634, 341) -- a_devastating_pooka
 end
 
 local function get_riddle_items_turned_in(trade)

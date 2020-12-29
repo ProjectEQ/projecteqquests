@@ -14,7 +14,6 @@ sub EVENT_COMBAT {
     quest::depopall(284093);
     quest::depopall(284094);
     quest::depopall(284095);
-    quest::depopall(284096);
     quest::depop();
   }
 }

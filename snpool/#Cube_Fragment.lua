@@ -28,14 +28,6 @@ function event_spawn(e)
     e.self:MoveTo(cube.dest[1], cube.dest[2], cube.dest[3], cube.dest[4], true)
   end
 
-  -- remove any map drops from the 2 extra cube fragments that should never drop it
-  if e.self:GetNPCTypeID() == 285086 or e.self:GetNPCTypeID() == 285087 then
-    e.self:RemoveItem(55617) -- First Fragment of Utandi's Map
-    e.self:RemoveItem(55618) -- Second Fragment of Utandi's Map
-    e.self:RemoveItem(55619) -- Third Fragment of Utandi's Map
-    e.self:RemoveItem(55620) -- Fourth Fragment of Utandi's Map
-  end
-
   if debugging then
     e.self:SetRunning(true)
     e.self:SpellFinished(1554, e.self) -- spirit of scale

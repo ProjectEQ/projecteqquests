@@ -17,10 +17,10 @@ function event_timer(e)
 	if e.timer == 'aggro_guards' then
 		aggro_guards(e.self:GetHateTop());
 	elseif e.timer == 'spawnadds' then
-		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-170,-884,3,114):AddToHateList(e.other,1);
-		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-167,-792,3,136):AddToHateList(e.other,1);
-		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-170,-884,3,114):AddToHateList(e.other,1);
-		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-167,-792,3,136):AddToHateList(e.other,1);
+		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-170,-884,3,114):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-167,-792,3,136):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-170,-884,3,114):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(eq.ChooseRandom(284098,284107),0,0,-167,-792,3,136):AddToHateList(e.self:GetHateRandom(),1);
 	end
 end
 

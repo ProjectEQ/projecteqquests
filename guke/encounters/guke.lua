@@ -359,14 +359,10 @@ function First_Death(e)
 		end
 		eq.spawn2(249075,0,0,138.56,681.64,-16.87,128); --#Chest_of_the_Foci (249075)
 		eq.spawn2(249076,0,0,153.5,660.5,-38.87,256); --#The_Slimy_Chest_of_the_Witness (249076)
-		
-		local instance_requests = require("instance_requests");
-		local lockout_name = 'LDON_guke';
-		local instance_id = eq.get_zone_instance_id();
-		local raid_list = eq.get_characters_in_instance(instance_id);
 
-		for k,v in pairs(raid_list) do
-			eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0, v, 0);
+		local dz = eq.get_expedition()
+		if dz.valid then
+			dz:AddReplayLockout(eq.seconds("4d12h"))
 		end
 	end
 end

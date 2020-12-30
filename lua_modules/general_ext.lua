@@ -208,3 +208,12 @@ function eq.Set (list)
 	for _, l in ipairs(list) do set[l] = true end
 	return set
 end
+
+function eq.seconds(duration_str)
+	local w = duration_str:match("(%d+)w") or 0
+	local d = duration_str:match("(%d+)d") or 0
+	local h = duration_str:match("(%d+)h") or 0
+	local m = duration_str:match("(%d+)m") or 0
+	local s = duration_str:match("(%d+)s") or 0
+	return s + (m * 60) + (h * 3600) + (d * 86400) + (w * 604800)
+end

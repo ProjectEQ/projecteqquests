@@ -62,3 +62,13 @@ function NPC:CastedSpellFinished(spell_id, target) -- note, we do have a server 
 	self:SpellFinished(spell_id, target);
 end
 
+function NPC:GetClientsInProximity(distance)
+	local clients = {}
+	local client_list = eq.get_entity_list():GetClientList()
+	for client in client_list.entries do
+		if client.valid and self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <= distance then
+			clients[#clients+1] = client
+		end
+	end
+	return clients
+end

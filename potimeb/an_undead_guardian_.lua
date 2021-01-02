@@ -1,4 +1,8 @@
+--an_undead_guardian
+--Phase 2 Undead
+--potimeb
+
 function event_death_complete(e)
-	-- send a signal to the zone_status that I died
-	eq.signal(223097,3); -- NPC: zone_status
+	--signal phase_two_controller
+	eq.signal(223242,2);
 end

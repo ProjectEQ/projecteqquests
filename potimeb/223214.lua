@@ -1,4 +1,7 @@
+--NPCID: 223214 (Zeb's cage)
+--potimeb
+
 function event_death_complete(e)
 	-- spawn Zebuxoruk
-   eq.spawn2(223212,1,0,-635.485,-1109.51,-2.8105,120); -- NPC: Zebuxoruk
+   eq.spawn2(223212,0,0,-582,-1100,0,127);
 end

@@ -1,11 +1,16 @@
+--#a_flame_mephit (223088)
+--Phase 1 - Kazrok of Fire Trial
+--potimeb
+
+--add spawn boundary
+local min_x = -50;
+local max_x = 65;
+local min_y = 540;
+local max_y = 610;
+
 function event_death_complete(e)
-	-- send a signal to the #fire_trigger that I died
-	eq.signal(223173,1); -- NPC: phase_one_fire
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	local zloc = e.self:GetZ();
-	local heading = e.self:GetHeading();
-	-- spawn both a_flame_mephit and an_inferno_mephit
-	eq.spawn2(223089,0,0,xloc,yloc+5,zloc,heading); -- NPC: a_flame_mephit
-	eq.spawn2(223095,0,0,xloc,yloc-5,zloc,heading); -- NPC: an_inferno_mephit
+
+	-- spawn 2x an_inferno_mephit
+	eq.spawn2(eq.ChooseRandom(223095,223234,223235,223236,223237),0,0,math.random(min_x,max_x),math.random(min_y,max_y),495,e.self:GetHeading());
+	eq.spawn2(eq.ChooseRandom(223095,223234,223235,223236,223237),0,0,math.random(min_x,max_x),math.random(min_y,max_y),495,e.self:GetHeading());
 end

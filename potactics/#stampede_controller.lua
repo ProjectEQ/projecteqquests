@@ -43,5 +43,6 @@ eq.spawn2(214097,197,0,e.self:GetX()+10,e.self:GetY()-10,e.self:GetZ(),e.self:Ge
 eq.spawn2(214097,197,0,e.self:GetX()+10,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_Stampeding_Boar
 eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_Stampeding_Boar
 eq.spawn2(214097,197,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_Stampeding_Boar
+eq.depop_with_timer();
 end
 end

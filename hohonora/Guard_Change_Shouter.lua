@@ -11,9 +11,9 @@ function event_timer(e)
 			eq.zone_emote(0, "You hear a chime in the distance, and a voice booms in your ears, 'It is now the time for the changing of the guard!'");
 			eq.stop_timer("timecheck");
 			eq.set_timer("pause", 5 * 60 * 1000);
+		end
 	elseif ( e.timer == "pause" ) then
 			eq.stop_timer("pause");
 			eq.set_timer("timecheck", 10 * 1000);
-		end
 	end
 end

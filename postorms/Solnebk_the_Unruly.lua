@@ -13,7 +13,7 @@ function event_timer(e)
 	if e.timer == "storms" and e.self:IsEngaged() then
 		rand = math.random(5,10);
 		for n = 1,rand do
-			storm = eq.spawn2(210467,0,0,e.self:GetX() + math.random(-5,5), e.self:GetY() + math.random(-5,5), e.self:GetZ(), e.self:GetHeading());	--a_tumultuous_storm (210467)
+			storm = eq.spawn2(210247,0,0,e.self:GetX() + math.random(-5,5), e.self:GetY() + math.random(-5,5), e.self:GetZ(), e.self:GetHeading());	--a_tumultuous_storm (210247)
 			storm:AddToHateList(e.self:GetHateRandom(),1);
 		end
 	end

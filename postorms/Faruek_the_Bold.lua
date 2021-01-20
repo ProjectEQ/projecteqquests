@@ -1,4 +1,4 @@
-#Notifies Jeplak_Lord_of_Srerendi that npc was killed in the camp
+--Notifies Jeplak_Lord_of_Srerendi that npc was killed in the camp
 
 function event_combat(e)
 	if e.joined then

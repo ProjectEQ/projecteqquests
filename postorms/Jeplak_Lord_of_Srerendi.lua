@@ -52,10 +52,10 @@ function activate(mob)
 end
 
 function trash_check()	--iterate through related spawnpoints for both Jeplak camps
-	local spawn_table = {346712,346713,346714,346715,346716,346717,346718,346719,346720,346721,346722,346730,346376,346377,346379,346378,346380,346381,346382,346383,346384,346385};
+	local spawn_table = {35744,35742,35783,35740,35739,35741,35737,35736,35771,35756,35755,35773,35772,35425,35753,35749,35750,35751,35748,35745,35747,35424};
 
 	for _,spawns in pairs(spawn_table) do
-		local giant = eq.get_entity_list():GetSpawnByID(spawns);
+		local giant = eq.get_entity_list():GetNPCBySpawnID(spawns);
 		
 		if giant:NPCPointerValid() then
 			return true;

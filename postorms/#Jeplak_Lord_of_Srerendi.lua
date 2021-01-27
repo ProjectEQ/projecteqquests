@@ -88,7 +88,7 @@ function trash_check()	--iterate through related spawnpoints for both Jeplak cam
 	local spawn_table = {35744,35742,35783,35740,35739,35741,35737,35736,35771,35756,35755,35773,35772,35425,35753,35749,35750,35751,35748,35745,35747,35424,35752,35512,35505,35514,35513,35897,35507,35506,35509,35511,35508,35510};
 
 	for _,spawns in pairs(spawn_table) do
-		local giant = eq.get_entity_list():GetSpawnByID(spawns);
+		local giant = eq.get_entity_list():GetNPCBySpawnID(spawns);
 		
 		if giant.valid then
 			return true;

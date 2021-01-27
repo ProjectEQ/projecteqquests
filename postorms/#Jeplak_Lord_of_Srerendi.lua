@@ -8,7 +8,6 @@ function event_spawn(e)
 	guards[1] = eq.spawn2(eq.ChooseRandom(210056,210099,210058),0,0,390,-2921,-455,254);
 	guards[2] = eq.spawn2(eq.ChooseRandom(210056,210099,210058),0,0,310,-2921,-455,254);
 	eq.set_timer("depop", 3600 * 1000);
-	eq.set_timer("monitor", 10 * 1000); -- check for npcs respawning
 end
 
 function event_combat(e)
@@ -73,6 +72,7 @@ function activate(mob)
 	mob:SetBodyType(1, true);		--humanoid
 	mob:SetSpecialAbility(24, 0);	--will not aggro
 	mob:SetSpecialAbility(35, 0);	--no harm from players
+	eq.set_timer("monitor", 10 * 1000); -- check for mob respawns
 
 end
 

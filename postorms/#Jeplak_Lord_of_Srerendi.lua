@@ -90,7 +90,7 @@ function trash_check()	--iterate through related spawnpoints for both Jeplak cam
 	for _,spawns in pairs(spawn_table) do
 		local giant = eq.get_entity_list():GetSpawnByID(spawns);
 		
-		if giant:npc.valid() then
+		if giant.valid then
 			return true;
 		end
 	end

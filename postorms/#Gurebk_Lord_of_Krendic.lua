@@ -4,7 +4,7 @@ local ADDS_TYPES = { -- these are level 56 versions; not the same as zone wander
 	210255, -- a_roving_cactore
 	210257, -- a_spined_cactoric
 };
-
+local adds = 0;
 
 
 function event_spawn(e)

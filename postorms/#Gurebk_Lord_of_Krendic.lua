@@ -48,3 +48,7 @@ function event_timer(e)
 	
 	end
 end
+
+function event_signal(e)
+adds = adds - 1;
+end

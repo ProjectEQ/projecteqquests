@@ -35,7 +35,7 @@ function event_timer(e)
 			local spawned = 0;
 			
 			for i = adds+1, 6 do
-				eq.spawn2(eq.ChooseRandom(ADDS_TYPES[1], ADDS_TYPES[2], ADDS_TYPES[3], 0, 0, x + math.random(-100, 100), y + math.random(-100, -50), z, 0);				
+				eq.spawn2(eq.ChooseRandom(ADDS_TYPES[1], ADDS_TYPES[2], ADDS_TYPES[3]), 0, 0, x + math.random(-100, 100), y + math.random(-100, -50), z, 0);				
 				spawned = spawned + 1;
 				if ( spawned == rng ) then
 					break;

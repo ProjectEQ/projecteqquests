@@ -1,5 +1,5 @@
 function event_death_complete(e)
-	eq.spawn2(218068,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ() - 15, e.self:GetHeading());	--A_Planar_Projection
+	eq.spawn2(218068,0,0, 0, -823, 243, 255);	--A_Planar_Projection
 end
 
 function event_combat(e)

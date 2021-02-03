@@ -1,5 +1,7 @@
 function event_death_complete(e)
 	eq.spawn2(218068,0,0, 0, -823, 243, 255);	--A_Planar_Projection
+	eq.get_entity_list():FindDoor(38):SetLockPick(0); --unlock fire chute
+	eq.get_entity_list():FindDoor(39):SetLockPick(0); --unlock fire chute
 end
 
 function event_combat(e)

@@ -59,7 +59,7 @@ sub return_items {
 	}
 	
 	if ($items_returned) {
-		quest::whisper("I have no need for this $name, you can have it back.");
+		quest::say("I have no need for this $name, you can have it back.");
 	}
 	return $items_returned;
 }

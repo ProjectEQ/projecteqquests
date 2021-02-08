@@ -1,9 +1,9 @@
 # plugin::check_handin($item1 => #required_amount,...);
 # Automatically returns unused items on success
 sub check_handin {
-    my $itemcount = shift;
+	my $itemcount = shift;
 	my %required_items = @_;
-    foreach $item_id (keys %required_items) {
+	foreach $item_id (keys %required_items) {
 		if (!defined $itemcount->{$item_id} || $itemcount->{$item_id} != $required_items{$item_id}) {
 			return 0;
 		}

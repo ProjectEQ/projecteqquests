@@ -1,15 +1,15 @@
 #plugin::check_hasitem($client, $item_id);
 sub check_hasitem {
-    my $client = shift;
-    my $item_id = shift;
-    my $body_count = $client->GetCorpseCount();
-    my @augment_slots = (
+	my $client = shift;
+	my $item_id = shift;
+	#my $body_count = $client->GetCorpseCount();
+	my @augment_slots = (
 		quest::getinventoryslotid("augsocket.begin")..quest::getinventoryslotid("augsocket.end")
 	);
-	my @corpse_slots = (
-		quest::getinventoryslotid("possessions.begin")..quest::getinventoryslotid("possessions.end"),
-		quest::getinventoryslotid("generalbags.begin")..quest::getinventoryslotid("generalbags.end"),
-	);
+	#my @corpse_slots = (
+	#	quest::getinventoryslotid("possessions.begin")..quest::getinventoryslotid("possessions.end"),
+	#	quest::getinventoryslotid("generalbags.begin")..quest::getinventoryslotid("generalbags.end"),
+	#);
 	my @inventory_slots = (
 		quest::getinventoryslotid("possessions.begin")..quest::getinventoryslotid("possessions.end"),
 		quest::getinventoryslotid("generalbags.begin")..quest::getinventoryslotid("generalbags.end"),
@@ -32,18 +32,18 @@ sub check_hasitem {
 		}
 	}
   	
-	if ($body_count > 0) {
-		foreach $corpse_index (1..$body_count) {
-			$body_id = $client->GetCorpseID($corpse_index);
-			if ($body_id > 0) {
-				foreach $slot_id (@corpse_slots) {
-					if ($client->GetCorpseItemAt($body_id, $slot_id) == $item_id) {
-						return 1;
-					}
-				}
-			}
-		}
-  	}
+	#if ($body_count > 0) {
+	#	foreach $corpse_index (1..$body_count) {
+	#		$body_id = $client->GetCorpseID($corpse_index);
+	#		if ($body_id > 0) {
+	#			foreach $slot_id (@corpse_slots) {
+	#				if ($client->GetCorpseItemAt($body_id, $slot_id) == $item_id) {
+	#					return 1;
+	#				}
+	#			}
+	#		}
+	#	}
+  	#}
   	return 0;
 }
 

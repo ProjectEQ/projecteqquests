@@ -26,21 +26,21 @@ end
 
 function event_hp(e)
 	if (e.hp_event == 75) then
-		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(81166,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); 
+		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
+		eq.spawn2(81166,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
+		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
 		eq.set_next_hp_event(55);
 	end
 	if (e.hp_event == 55) then
-		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(81166,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); 
+		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
+		eq.spawn2(81166,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
+		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
 		eq.set_next_hp_event(30);
 	end
 	if (e.hp_event == 30) then
-		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(81166,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); 
+		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
+		eq.spawn2(81166,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
+		eq.spawn2(81166,0,0,e.self:GetX()+5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_diseased_baby_spider
 		eq.set_next_hp_event(25);
 	end	
 	if (e.hp_event == 25) then

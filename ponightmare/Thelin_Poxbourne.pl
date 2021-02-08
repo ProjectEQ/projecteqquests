@@ -86,7 +86,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
       if($x == -4827 && $y == 4823 && $spawn_mob1 == 2 && $flag == undef){
 
          
-            
+            quest::emote("kneels down and picks up a dagger hilt.");
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4810.1,4750.7,4,490); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4750,4827.9,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::stoptimer(1);
@@ -95,7 +95,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
    if($x == -4942 && $y == 4725 && $spawn_mob1 == 4 && $flag == undef){
 
          
-            
+            quest::emote("slowly picks up a shard of a dagger blade.");
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4899.1,4718.7,4,384); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4904,4759,4,330); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4912,4667,4,470); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
@@ -105,7 +105,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
    if($x == -4416 && $y == 4592 && $spawn_mob1 == 7 && $flag == undef){
 
          
-            
+            quest::emote("picks up a the top half of a dagger blade.");
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4416,4653,4,490); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4484,4658,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4487,4588,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
@@ -116,7 +116,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
    if($x == -4150 && $y == 4664 && $spawn_mob1 == 11 && $flag == undef){
 
          
-            
+            quest::emote("picks up a dagger handle with a small hole in it.");
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4208,4656,4,490); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4208,4595,4,490); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4145,4592,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
@@ -128,7 +128,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
    if($x == -4125 && $y == 5145 && $spawn_mob1 == 16 && $flag == undef){
 
          
-            
+            quest::emote("picks up a small gem to place inside the handle.");
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4162,5162,4,490); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4088,5192,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4089,5234,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
@@ -141,7 +141,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
    if($x == -4478 && $y ==5407 && $spawn_mob1 == 22 && $flag == undef){
 
          
-            
+            quest::emote("kneels down and picks up a dagger blade tip.");
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4386,5408,4,490); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4390,5341,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
             quest::spawn2(quest::ChooseRandom(204059,204066,204060,204061,204062,204063),0,0,-4431,5337,4,380); # NPC(s): a_bloodthirsty_raven (204059), a_dark_visage (204066), a_sinister_nightstalker (204060), a_thulian_nightstalker (204061), an_abhorent_nightstalker (204062), an_agressor_arachnid (204063)
@@ -154,7 +154,7 @@ if($x == -4800 && $y == 5050  && $spawn_mob1 == undef && $flag == undef){
             }
 
    if($x == -4549 && $y ==5155 && $spawn_mob1 == 29 && $flag == undef){
-            quest::spawn2(204064,0,0,-4546,4974,4,0); # NPC: #a_construct_of_nightmares
+            quest::spawn2(204064,0,0,-4550,5107,4,0); # NPC: #a_construct_of_nightmares
             quest::stoptimer(1);
             }
              }
@@ -170,6 +170,9 @@ sub EVENT_ITEM {
 
   if (plugin::check_handin(\%itemcount, 9258 => 1)) {
        $dagger=1;
+       quest::emote("takes the final shard from you and places all of the pieces on the ground. The pieces reassemble and fuse back together into a completed dagger.  Thelin picks the dagger up and hands it to you.");
+       quest::summonitem(9259); #Thelin's Dagger
+       quest::exp(100000); #unconfirmed
        quest::spawn2(204065,0,0,-4554,5018,5,260); # NPC: #Terris_Thule
        quest::depop();
        $spawn_mob1=undef;

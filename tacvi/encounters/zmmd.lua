@@ -89,7 +89,7 @@ function ZMMD_Timer(e)
       eq.depop_all(298051);
       eq.depop_all(298052);
       eq.depop_all(298053);
-      eq.spawn2(298020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+      eq.spawn2(298020, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Zun`Muram_Mordl_Delt
       eq.depop();
     end
   end

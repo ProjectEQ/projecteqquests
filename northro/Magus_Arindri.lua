@@ -15,7 +15,7 @@ function event_say(e)
 
 		elseif(e.message:findi("south ro")) then
 			--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-			e.other:MovePC(35, 1033, -1447, -23, 166); -- Zone: causeway
+			e.other:MovePC(35, 1033, -1447, -23, 166); -- Zone: sro
 
 		elseif(e.message:findi("commonlands")) then
 			--e.self:CastSpell(4176,e.other:GetID(),0,1);

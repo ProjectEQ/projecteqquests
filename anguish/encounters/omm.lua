@@ -2,7 +2,7 @@
 Overlord_Mata_Muram (317109)
 Coerced_Lieutenant  (317114)
 Frenzied_Lasher (317117)
-a_languished_convert (317110)
+a_languished_convert (317122)  new NPC 317122 to prevent double scaling #drogerin
 
 #Vyishe (317118)
 #Anishy (317119)
@@ -88,6 +88,11 @@ function OMM_Say(e)
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 			e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
 			e.self:AddToHateList(e.other,1);
+			local dz = eq.get_expedition()
+			if dz.valid then
+				dz:SetLocked(true)
+				eq.debug("Locked expedition")
+			end
 		end
 	end
   end
@@ -118,8 +123,8 @@ function OMM_HP(e)
 	elseif (e.hp_event == 50) then
 		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
-		eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
+		eq.spawn2(317122,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(317122,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
 	elseif (e.hp_event == 30) then
 		e.self:CameraEffect(2000,3);
 		e.self:SetOOCRegen(0);
@@ -134,7 +139,7 @@ function OMM_HP(e)
 		eq.spawn2(317120,0,0,393, 4968, 280, 128); --#Piraand (317120) east
 		eq.spawn2(317121,0,0,504, 5081, 280, 256); --#Garishi (317121) north
 		eq.signal(317118,1); -- NPC: #Vyishe
-		eq.signal(317119,2); -- NPC: #Anishy		
+		eq.signal(317119,2); -- NPC: #Anishy
 		eq.depop_all(317114); --Coerced_Lieutenant
 		eq.depop_all(317117); --Frenzied_Lasher
 		eq.stop_timer("torment");
@@ -236,7 +241,7 @@ function OMM_Timer(e)
 		eq.depop_all(317119);
 		eq.depop_all(317120);
 		eq.depop_all(317121);
-		eq.depop_all(317110);
+		eq.depop_all(317122);
 		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
 		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		local now_clients = eq.get_entity_list():GetClientList();
@@ -244,14 +249,14 @@ function OMM_Timer(e)
 		for client in now_clients.entries do
 			if (client.valid) then
 				client:WipeHateList();
-				client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: riwwi
+				client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: anguish
 				client:SetEntityVariable("clicked_up", "0"); -- set to 0, they're no longer up here correctly
 			end
 		end
 		banished_raid=1;
 		banished_hp=math.ceil(e.self:GetMaxHP()*e.self:GetHPRatio()/100);
 		e.self:WipeHateList(); -- let's wipe ours too, it should be empty, maybe fix bards being instantly killed for some reason
-		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
+		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH()); -- NPC: Overlord_Mata_Muram
 		eq.depop();
 	elseif (e.timer == "banish_hp_watch") then
 		--if hp is less than 20% then banish after 3 sec
@@ -266,10 +271,10 @@ function OMM_Timer(e)
 		reenable_summon = false;
 		eq.stop_timer("banish_phase2");
 		eq.stop_timer("enable_summon");
-		eq.depop_all(317110);
+		eq.depop_all(317122);
 		eq.depop_all(317114);
 		eq.depop_all(317117);
-		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
+		eq.spawn2(317109,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH()); -- NPC: Overlord_Mata_Muram
 		eq.depop();
 	elseif (e.timer == "enable_summon") then
 		eq.debug("re-enabling summon: " .. os.date("!%c"));
@@ -287,7 +292,7 @@ function OMM_Timer(e)
 				local var = client:GetEntityVariable("clicked_up");
 				if ((var == nil or var == "0") and room_box:contains(client:GetX(), client:GetY())) then
 					eq.debug(client:GetName() .. " shouldn't be up here yet: " .. os.date("!%c"));
-					client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: riwwi
+					client:MovePCInstance(317,instance_id, 641,3285,-10,0); -- Zone: anguish
 				end
 			end
 		end
@@ -298,7 +303,7 @@ function OMM_Death(e)
 	eq.zone_emote(13,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
 	e.self:CameraEffect(1000,8);	
 	eq.signal(317116 , 317109); -- NPC: zone_status
-	eq.depop_all(317110);
+	eq.depop_all(317122);
 	eq.depop_all(317114);
 	eq.depop_all(317117);
 end
@@ -345,7 +350,7 @@ end
 
 function Coerced_Timer(e)
 	if (e.timer=="respawn") then
-		eq.spawn2(317114,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH());
+		eq.spawn2(317114,0,0,e.self:GetSpawnPointX(),e.self:GetSpawnPointY(),e.self:GetSpawnPointZ(),e.self:GetSpawnPointH()); -- NPC: Coerced_Lieutenant
 		eq.stop_timer("respawn");
 	end
 end
@@ -374,8 +379,8 @@ function event_encounter_load(e)
 	eq.register_npc_event('omm', Event.signal,			317109, OMM_Signal);	    
 	eq.register_npc_event('omm', Event.death_complete,	317114, Coerced_Death);
 	eq.register_npc_event('omm', Event.timer,			317114, Coerced_Timer);	
-	eq.register_npc_event('omm', Event.spawn, 			317110, Convert_Spawn);
-	eq.register_npc_event('omm', Event.timer, 			317110, Convert_Timer); 	
+	eq.register_npc_event('omm', Event.spawn, 			317122, Convert_Spawn);
+	eq.register_npc_event('omm', Event.timer, 			317122, Convert_Timer); 	
 	eq.register_npc_event('omm', Event.signal,			317118, Riftseeker_Signal);
 	eq.register_npc_event('omm', Event.signal,			317119, Riftseeker_Signal);	
 	eq.register_npc_event('omm', Event.timer,			317119, Riftseeker_Timer);	

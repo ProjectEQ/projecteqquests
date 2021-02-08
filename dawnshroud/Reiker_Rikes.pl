@@ -10,7 +10,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31479 => 1)) {
     quest::emote("grins. 'These should go nicely in my stew.'");
-    quest::exp(12500);
+    quest::exp(15000);
   }
   plugin::return_items(\%itemcount);
 }

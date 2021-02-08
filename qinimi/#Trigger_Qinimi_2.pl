@@ -57,7 +57,7 @@ sub EVENT_SIGNAL {
    }
    
    if($counter == 26) {
-      quest::spawn2(281126,0,0,-556,0,-3,508); # NPC: Pixtt_Xictic_Krvne   
+      quest::spawn2(281126,0,0,-556,0,-3,508); # NPC: Pixtt_Xictic_Krvne
    }
 
    if($counter == 27) { #from death of Xictic

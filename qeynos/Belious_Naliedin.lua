@@ -61,9 +61,14 @@ function event_trade(e)
 		e.other:SummonItem(20373); -- Item: Letter of Introduction
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13775, item2 = 13776, item3 = 13777, item4 = 13778})) then
-		e.self:Say("Here is your custom lute, use it well " .. e.other:GetName() .. ".");
+		e.self:Say("Ok, great. See, assembling these isn't that hard. Add a few special touches, and there you go. Another beautiful Naliedin lute is born, and ears everywhere rejoice.");
 		e.other:Ding();
 		e.other:SummonItem(13105); -- Item: Custom Naliedin Lute
+		e.other:Faction(284,250,0); -- League of Antonican Bards
+		e.other:Faction(281,37,0); -- Knights of Truth
+		e.other:Faction(262,37,0); -- Guards of Qeynos
+		e.other:Faction(304,-12,0); -- Ring of Scale
+		e.other:Faction(285,-12,0); -- Mayong Mistmoore
 		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

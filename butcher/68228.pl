@@ -13,5 +13,5 @@ sub EVENT_ENTER
 {
 #	quest::selfcast("2279");
 	quest::emote ("'s spirit moves you to another land ...");
-	quest::movepc(69,-9193.3,386.7,5.2); # Zone: discord
+	quest::movepc(69,-9193.3,386.7,5.2); # Zone: oot
 }

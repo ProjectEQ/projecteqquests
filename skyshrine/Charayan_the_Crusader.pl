@@ -39,7 +39,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9347 => 1, 9349 => 1, 9348 => 1, 9409 => 1)) {
  quest::say("You cannot fathom the importance of your actions, $name. What you have accomplished cannot be claimed in truth by many and know that all sacrifices that you and those who have undoubtedly aided you have made in fulfilling this awesome feat shall not go without notice. The Crusaders of Veeshan can express neither the prominent magnitude of the honor that you have upheld in maintaining your convictions to the Claws of Veeshan. We, the Crusaders of Veeshan, honor you, $name of the second generation. Within this ring you shall find a single stone of ever changing chromatic essence -- the very essence of the first chromatic nobles deposited by Veeshan's great claw. Take it not as a gift nor as restitution for your deeds, but take it as a token of acknowledgement and a symbol of your proven significance within the boundless realm of our crusade."); 
- quest::summonitem(30388); # Item: Rluas's Chromatic Ring  
+ quest::summonitem(30388); # Item: Rluas's Chromatic Ring
   }
 }
 

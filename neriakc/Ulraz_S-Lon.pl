@@ -4,7 +4,7 @@ quest::say("So you are the next pathetic maggot I have the displeasure of traini
 }
 if($text=~/armor/i){
 quest::say("Seek Krivn S'Tai in the Commoner quarter of Neriak and give him this request parchment. Krivn S'Tai has been paid in advance by the Lodge of the Dead for the requested service. Simply give him the request parchment and he will instruct you further. When you have outfitted yourself in a suit of armor return to the Lodge of the Dead and I will grant you [another task].");
-quest::summonitem(19584); # Item: Request Parchment 
+quest::summonitem(19584); # Item: Request Parchment
 }
 if($text=~/task/i){
 quest::say("Ah. you are eager to advance further within the Lodge of the Dead. Although it is my duty to aid your training. do not allow your arrogance to blind you to your lowly position amongst the Queens most loyal subjects. Your next task is to assist the construction of a [weapon] and [shield] worthy of being wielded by a Shadowknight of the Lodge of the Dead."); 
@@ -39,12 +39,12 @@ if (plugin::check_handin(\%itemcount, 19570 => 4)) {
    quest::emote("fashions the petrified femurs into a shield frame. This will be the frame of your new shield. Return now again to the Nektulos Forest, in the gray ashen region of the forest near the Lavastorm mountains the basilisks often come down from the fiery peaks to lay their eggs in the ashen soil. Basilisk hatchlings can be found there as they make their way towards the warmer interior of the mountains. Hunt these basilisk hatchlings and gather two Basilisk Hatchling Skins. Once this is done take the skins and frame to Medron Y'Lask at the Furrier Royale.");
    quest::summonitem(19571); # Item: Petrified Femur Shield Frame
    quest::exp(1000);
-   quest::faction(239,10); # Faction: The Dead
-   quest::faction(303,10); # Faction: Queen Cristanos Thex
-   quest::faction(278,-20); # Faction: King Naythox Thex
-   quest::faction(275,-20); # Faction: Keepers of the Art
-   quest::faction(245,-20); # Faction: Eldritch Collective
-   quest::faction(1522,-20); # Faction: Primordial Malice
+   quest::faction(239,15); # Faction: The Dead
+   quest::faction(303,2); # Faction: Queen Cristanos Thex
+   quest::faction(278,-2); # Faction: King Naythox Thex
+   quest::faction(275,-2); # Faction: Keepers of the Art
+   quest::faction(245,-2); # Faction: Eldritch Collective
+   quest::faction(1522,-30); # Faction: Primordial Malice
 }
  if ($item1=="18757"){quest::say("Thanks.");
 	quest::summonitem("13586");

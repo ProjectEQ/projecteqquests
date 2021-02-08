@@ -61,7 +61,7 @@ end
 function event_signal(e)
 	if e.signal==1 then
 		e.self:Say("Oh no . . . I'd recognize the echo of those footfalls anywhere. That sounds like Krill . . .'");
-		eq.spawn2(224436,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ()+3,e.self:GetHeading()):AddToHateList(e.self,500);
+		eq.spawn2(224436,0,0,e.self:GetX()-15,e.self:GetY()-15,e.self:GetZ()+3,e.self:GetHeading()):AddToHateList(e.self,500); -- NPC: Krill_the_Backbleeder
 	else
 		e.self:Say("For my own knowledge and to bring some closure to this terror, can you bring me his head? I want to see with my own eyes. I need to know if it was him.");
 	end

@@ -16,7 +16,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 6957 => 1, 6943 => 1, 6959 => 1, 6948 => 1)) { 
-		quest::summonitem(2568); # Item: Staff of the Moribund Spirits 
+		quest::summonitem(2568); # Item: Staff of the Moribund Spirits
 		quest::exp(150);
 		quest::say("Excellent!! These shall provide valuable information to my research on the spirit realm."); 
     }

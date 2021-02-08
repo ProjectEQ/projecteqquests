@@ -15,6 +15,6 @@ sub EVENT_TIMER
 	if($timer eq "spark_spawn")
 	{
 		quest::emote("begins to give off sparks.");
-		quest::spawn2(365028, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+		quest::spawn2(365028, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading()); # NPC: an_unstable_spark
 	}
 }

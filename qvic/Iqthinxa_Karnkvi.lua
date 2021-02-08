@@ -105,28 +105,37 @@ function CheckRavs()
      if (rav1 ~= nil) then
      	if (rav1:CalculateDistance(171,342,-418) > 250) then
      		rav1:GMMove(171,342,-418,336)
-     		local r1ht = rav1:GetHateTop():CastToClient()
-     		if (r1ht.valid) then
-     			r1ht:MovePC(295,171,342,-418,336)
-     		end
+			local r1mob = rav1:GetHateTop()
+			if (r1mob.valid and r1mob:IsClient()) then
+				local r1ht = r1mob:CastToClient()
+				if (r1ht.valid) then
+					r1ht:MovePC(295,171,342,-418,336)
+				end
+			end
      	end
      end
      if (rav2 ~= nil) then
      	if (rav2:CalculateDistance(171,342,-418) > 250) then
      		rav2:GMMove(171,342,-418,336)
-     		local r2ht = rav2:GetHateTop():CastToClient()
-     		if (r2ht.valid) then
-     			r2ht:MovePC(295,171,342,-418,336)
-     		end
+			local r2mob = rav2:GetHateTop()
+			if (r2mob.valid and r2mob:IsClient()) then
+				local r2ht = r2mob:CastToClient()
+				if (r2ht.valid) then
+					r2ht:MovePC(295,171,342,-418,336)
+				end
+			end
      	end
      end
      if (rav3 ~= nil) then
      	if (rav3:CalculateDistance(171,342,-418) > 250) then
      		rav3:GMMove(171,342,-418,336)
-     		local r3ht = rav3:GetHateTop():CastToClient()
-     		if (r3ht.valid) then
-     			r3ht:MovePC(295,171,342,-418,336)
-     		end
+			local r3mob = rav3:GetHateTop()
+			if (r3mob.valid and r3mob:IsClient()) then
+				local r3ht = r3mob:CastToClient()
+				if (r3ht.valid) then
+					r3ht:MovePC(295,171,342,-418,336)
+				end
+			end
      	end
      end
      

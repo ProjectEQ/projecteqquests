@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("I have put together a series of tests that will enable our new recruits to create their own armor. You will use a Rainkeepers Assembly Kit to combine assorted items that you will collect from both the hunting areas surround Qeynos and the city itself. Combining these magical items in your kit will create a material that you will place in a forge along with molds that I will present to you to create your armor. Are you ready to start [fashioning your materials]?");
 	elseif(e.message:findi("fashioning your materials")) then
 		e.self:Say("Excellent "..e.other:GetName()..". Please take this Rainkeepers Assembly Kit. Now for your materials you will fashion you will obviously need to know what items are used for what armor materials. Simply tell me what armor piece you [want] to create and I will present you with the recipe for that specific armor material. I can present you with the molds and recipes necessary for creating Rainkeeper [Helm], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets] and [Breastplate].");
-		e.other:SummonItem(17264); -- Item: Rainkeepers Assembly Kit 
+		e.other:SummonItem(17264); -- Item: Rainkeepers Assembly Kit
 	elseif(e.message:findi("armguard")) then
 		e.self:Say("Here is your Rainkeepers Armguards Mold. To create your armguard material you will need to combine 2 Bricks of Crude Iron, 1 Snake Fang and 1 Burned Out Lightstone and 1 Fishing Bait in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Armguards of the Rainkeeper.");
 		e.other:SummonItem(22613); -- Item: Enchanted Armguard Mold

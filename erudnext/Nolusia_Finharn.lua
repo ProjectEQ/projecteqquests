@@ -1,8 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, " .. e.other:GetName() .. "! Has Lanken sent you to see me? Are you a [visitor or citizen of Erudin]?");
-	elseif(e.message:findi("visitor of erudin")) then
-		e.self:Say("Then, remember, inside the palace walls, never speak the names of those defilers who have passed on. I shall be at the Vasty Inn later tonight. I can answer your questions there.");
+		e.self:Say("Good evening. Are not the stars beautiful. Somewhere out there I imagine there is another world and another person staring right back at me. If you have business with me please save it for the morning in the palace.");
 	elseif(e.message:findi("moodoro")) then
 		e.self:Say("Moodoro Finharn is my brother. He was a good boy up until he met that accursed halfling named [Flynn] Merrington.");
 	elseif(e.message:findi("flynn")) then
@@ -21,24 +19,27 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 13118})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 13118})) then 	-- Item: Erud's Tonic
 		e.self:Say("Good work! Now, hold the bottle by the label! When you hand Flynn the bottle, the label will slide off. Bring me the label as proof of the deed.");
 		e.other:SummonItem(13122); -- Item: Erud's Tonic
 		e.other:Ding();
-		e.other:Faction(231,1,0); -- Craftkeepers
-		e.other:Faction(266,1,0); -- High Council of Erudin
-		e.other:Faction(265,-1,0); -- Heretics 
-		e.other:Faction(267,1,1); -- High Guard of Erudin
+		e.other:Faction(231,20,0); 	-- Craftkeepers
+		e.other:Faction(266,2,0); 	-- High Council of Erudin
+		e.other:Faction(265,-3,0); 	-- Heretics 
+		e.other:Faction(267,3,0); 	-- High Guard of Erudin
 		e.other:AddEXP(500);
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 13123})) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13123})) then	-- Item: Label of Erud's Tonic
+		local random_copper = math.random(9);
+		local random_silver = math.random(4);
 		e.self:Say("Fantastic. Now I can rest assured that my brother stands a better chance of finding the right path without that manipulating little man around. Master Lanken can rest assured that the waters are safe from abuse.");
 		e.other:Ding();
-		e.other:Faction(231,5,0); -- Craftkeepers
-		e.other:Faction(266,5,0); -- High Council of Erudin
-		e.other:Faction(265,-10); -- Heretics
-		e.other:Faction(267,5,0); -- High Guard of Erudin
-		e.other:AddEXP(100);
+		e.other:Faction(231,30,0); 	-- Craftkeepers
+		e.other:Faction(266,3,0); 	-- High Council of Erudin
+		e.other:Faction(265,-4,0); 	-- Heretics
+		e.other:Faction(267,4,0); 	-- High Guard of Erudin
+		e.other:AddEXP(500);
 		e.other:SummonItem(eq.ChooseRandom(13122, 5019, 6017)); -- Item(s): Erud's Tonic (13122)
+		e.other:GiveCash(random_copper,random_silver,0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

@@ -40,7 +40,15 @@ sub EVENT_SIGNAL
 		#A_Mischievous_Stormrider, A_Fearsome_Stormrider, A_Stormrider_Lightningclaw, A_Marauding_Stormrider
 		if(!$entity_list->IsMobSpawnedByNpcTypeID(215002) && !$entity_list->IsMobSpawnedByNpcTypeID(215014) && !$entity_list->IsMobSpawnedByNpcTypeID(215013) && !$entity_list->IsMobSpawnedByNpcTypeID(215065)) 
 		{ 
-			quest::spawn2(215447,0,0,-376,-628,105,0); # NPC: Stormrider_Priest_of_Destruction 
+			quest::spawn2(215447,0,0,-260,-724,111,447); # NPC: Stormrider_Priest_of_Destruction
+			quest::spawn2(215487,0,0,-261,-700,113,442);
+			quest::spawn2(215487,0,0,-265,-705,112,446);
+			quest::spawn2(215487,0,0,-271,-709,111,440);
+			quest::spawn2(215487,0,0,-275,-713,110,443);
+			quest::spawn2(215487,0,0,-269,-692,113,446);
+			quest::spawn2(215487,0,0,-272,-695,112,441);
+			quest::spawn2(215487,0,0,-278,-699,111,438);
+			quest::spawn2(215487,0,0,-284,-702,111,440);
 			quest::setglobal("event_start",1,3,"H2");
 		}
 	}

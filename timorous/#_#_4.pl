@@ -12,5 +12,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(37,-847.8,883.6,-0.5); # Zone: chambersa
+	quest::movepc(37,-847.8,883.6,-0.5); # Zone: oasis
 }

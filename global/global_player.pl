@@ -6,6 +6,22 @@ sub EVENT_ENTERZONE { #message only appears in Cities / Pok and wherever the Way
   }
 }
 
+sub EVENT_COMBINE_VALIDATE {
+	# $validate_type values = { "check_zone", "check_tradeskill" }
+	# criteria exports:
+	#	"check_zone"		=> zone_id
+	#	"check_tradeskill"	=> tradeskill_id (not active)
+	if ($recipe_id == 10344) {
+		if ($validate_type =~/check_zone/i) {
+			if ($zone_id != 289 && $zone_id != 290) {
+				return 1;
+			}
+		}
+	}
+	
+	return 0;
+}
+
 sub EVENT_COMBINE_SUCCESS {
     if ($recipe_id =~ /^1090[4-7]$/) {
         $client->Message(1,

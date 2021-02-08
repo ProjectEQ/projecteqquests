@@ -24,6 +24,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 29751 => 1, 28745 => 1)) {#Hobgoblin Surprise, Planar Traveler's Manual
     quest::say("How delicious! You have done well here, I can't remember how long it's been since I've tasted a meal so fine. Take this book, it will certainly help you in your use of the magical arts. When you are ready, Cadelid Etord will give you your next lesson, so be sure to speak to him. Do not lose your book or else he may not appreciate you coming to class unprepared.");
     quest::summonitem(28795); #Beginner Magic Manual
+    quest::exp(500000);
   }
   plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202039 -- Acomar_Lothwol 

@@ -61,7 +61,7 @@ function event_click_door(e)
                 dest_z = 12;
             end
         elseif (door_id == 1) then -- Sixth Floor Door
-            if (e.self:KeyRingCheck(20039) or e.self:HasItem(20039)) then
+            if (e.self:KeyRingCheck(20038) or e.self:HasItem(20038)) then
                 dest_x = 20;
                 dest_y = 250;
                 dest_z = 355;
@@ -71,19 +71,22 @@ function event_click_door(e)
         -- okay, we have destination now, maybe. If we do, we need to port our group members (but not us)
         if (dest_x ~= 0) then
             for i = 0, player_list_count - 1, 1 do
-                -- group:GetMember returns mob, so we need to cast it (this may be a group or raid)
-                local pc = player_list:GetMember(i):CastToClient();
-                if (pc.valid) then
-                    -- don't move the initiator of this event
-                    if (pc:CharacterID() ~= e.self:CharacterID()) then
-                        -- if we're in a normal group (raid_group == nil) we don't need to verify the Group Number
-                        if (raid_group == nil or player_list:GetGroupNumber(i) == raid_group) then
-                            if (pc:CalculateDistance(cur_x, cur_y, cur_z) <= 40) then
-                                pc:MovePC(111, dest_x, dest_y, dest_z, 0); -- Zone: erudsxing2
+			    local mob_v = player_list:GetMember(i);
+                if (mob_v.valid and mob_v:IsClient()) then
+                    -- group:GetMember returns mob, so we need to cast it (this may be a group or raid)
+                    local pc = mob_v:CastToClient();
+                    if (pc.valid) then
+                        -- don't move the initiator of this event
+                        if (pc:CharacterID() ~= e.self:CharacterID()) then
+                            -- if we're in a normal group (raid_group == nil) we don't need to verify the Group Number
+                            if (raid_group == nil or player_list:GetGroupNumber(i) == raid_group) then
+                                if (pc:CalculateDistance(cur_x, cur_y, cur_z) <= 40) then
+                                    pc:MovePC(111, dest_x, dest_y, dest_z, 0); -- Zone: frozenshadow
+                                end
                             end
                         end
                     end
-                end
+				end
             end
         end
     end

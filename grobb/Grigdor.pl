@@ -2,7 +2,7 @@ sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say("Wot you want, weakling? You tink you be strong [berserker]? You fight with da anger in yer heart? Me give you test. If you can do, mebbe me thinkz you be strong.");
  }
- if($text =~ /berserker./i) {
+ if($text =~ /berserker/i) {
 	quest::say("Dis test be to make [armor]. Grigdor be strong. Me pass test after three timez.");
  }
  if($text =~ /armor/i) {

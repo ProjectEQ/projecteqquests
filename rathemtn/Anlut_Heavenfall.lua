@@ -18,11 +18,11 @@ function event_say(e)
 			-- Teleport non-Guktan Clients to random Rathe Mountains locations
 			rand = math.random(99);
 			if (rand <= 33) then
-				e.other:MovePC(50, 1756.00, 1517.00, 200.00, e.self:GetHeading()); -- Zone: commonlands
+				e.other:MovePC(50, 1756.00, 1517.00, 200.00, e.self:GetHeading()); -- Zone: rathemtn
 			elseif (rand <= 66) then
-				e.other:MovePC(50, 1226.00, 160.00, 183.21, e.self:GetHeading()); -- Zone: commonlands
+				e.other:MovePC(50, 1226.00, 160.00, 183.21, e.self:GetHeading()); -- Zone: rathemtn
 			else
-				e.other:MovePC(50, 371.00, -1024.00, 28.34, e.self:GetHeading()); -- Zone: commonlands
+				e.other:MovePC(50, 371.00, -1024.00, 28.34, e.self:GetHeading()); -- Zone: rathemtn
 			end
 		end
 	elseif (e.message:findi("own choice")) then
@@ -56,7 +56,7 @@ function event_trade(e)
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 63116, item2 = 63124})) then
 		e.self:Say("Well, at least you are honest. And that deserves some reward. Here is your prism. Your lessons have changed it, see? Keep it. And take this spell. Study the scroll more carefully than you did the stone. When you've grown some in ability, return and we will continue your lessons.");
 		e.other:SummonItem(63117); -- Purged Portal Prism
-		e.other:SummonItem(15562); -- Spell: North Portal
+		e.other:SummonItem(15562); -- Item: Spell: North Portal
 	-- Purged Portal Prism
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 63117})) then
 		e.self:Say("Yes. It grows in power. As do you. Now, I've started a spell within it. Let's have you experiment a bit. Use Igok. He's daft and nearly useless. A perfect test subject. Take the prism and focus your energies on it, but keep me as your target. You must split your concentration. Good. Now, slowly, allow those energies to extend towards Igok there. Do you feel the [growing power]?");

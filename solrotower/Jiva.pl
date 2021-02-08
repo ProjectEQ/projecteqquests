@@ -33,4 +33,7 @@ sub EVENT_DEATH_COMPLETE
 
 {
 quest::spawn2(202365,0,0,$x,$y,$z,$h); # NPC: A_Planar_Projection
+quest::spawn2(212077,0,0,-2301,-787,-1100,257); # a warder of jiva
+quest::spawn2(212077,0,0,-2255,-787,-1100,257); # a warder of jiva
+quest::spawn2(212077,0,0,-2210,-787,-1100,257); # a warder of jiva
 }

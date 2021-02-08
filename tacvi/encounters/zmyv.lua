@@ -55,7 +55,7 @@ function ZMYV_Timer(e)
     if (client:IsClient() == false) then
       -- Wipe Mechanics
       eq.get_entity_list():FindDoor(21):SetLockPick(0);
-      eq.spawn2(298023, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+      eq.spawn2(298023, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Zun`Muram_Yihst_Vor
       eq.depop();
     end
   end

@@ -26,29 +26,29 @@ local item_lib = require("items");
 		e.other:GiveCash(1,0,0,0);
 		e.other:Faction(241, 1); -- Faction: Deeppockets
 		e.other:Faction(292, 1); -- Faction: Merchants of Rivervale
-		e.other:Faction(329, -2); -- Faction: Carson McCabe
-		e.other:Faction(223, -2); -- Faction: Circle of Unseen Hands
-		e.other:Faction(336, -2); -- Faction: Coalition of Tradefolk Underground
-		e.other:AddEXP(100);
+		e.other:Faction(329, -1); -- Faction: Carson McCabe
+		e.other:Faction(223, -1); -- Faction: Circle of Unseen Hands
+		e.other:Faction(336, -1); -- Faction: Coalition of Tradefolk Underground
+		e.other:AddEXP(10);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade,  {item1 = 13957})) then
 		e.self:Say("Oh excellent! These carrots are perfect! The finest Reebo has ever sent us. The mayor will be so pleased. Here is the payment for the carrots. Excuse me, but I must finish preparing the stew. Hmm. Where the heck did [Jillin] go?");
 		e.other:GiveCash(10,0,0,0);
 		e.other:Faction(241, 5); -- Faction: Deeppockets
-		e.other:Faction(292, 5); -- Faction: Merchants of Rivervale
-		e.other:Faction(329, -10); -- Faction: Carson McCabe
-		e.other:Faction(223, -10); -- Faction: Circle of Unseen Hands
-		e.other:Faction(336, -10); -- Faction: Coalition of Tradefolk Underground
-		e.other:AddEXP(200);
+		e.other:Faction(292, -1); -- Faction: Merchants of Rivervale
+		e.other:Faction(329, 1); -- Faction: Carson McCabe
+		e.other:Faction(223, 1); -- Faction: Circle of Unseen Hands
+		e.other:Faction(336, 1); -- Faction: Coalition of Tradefolk Underground
+		e.other:AddEXP(20);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade,  {item1 = 13971})) then
 		e.self:Say("What are these?!  I am trying to make stew for the mayor and you bring me ROTTEN CARROTS?!  Have you no sense??  Take these back to Reebo.");
 		e.other:SummonItem(13972); -- Item: Crate of Rotten Carrots
-		e.other:Faction(241, -4); -- Faction: Deeppockets
-		e.other:Faction(292, -4); -- Faction: Merchants of Rivervale
-		e.other:Faction(329, 2); -- Faction: Carson McCabe
-		e.other:Faction(223, 2); -- Faction: Circle of Unseen Hands
-		e.other:Faction(336, 2); -- Faction: Coalition of Tradefolk Underground
+		e.other:Faction(241, -5); -- Faction: Deeppockets
+		e.other:Faction(292, 1); -- Faction: Merchants of Rivervale
+		e.other:Faction(329, -1); -- Faction: Carson McCabe
+		e.other:Faction(223, -1); -- Faction: Circle of Unseen Hands
+		e.other:Faction(336, -1); -- Faction: Coalition of Tradefolk Underground
 	else
 		item_lib.return_items(e.self, e.other, e.trade);
 	end

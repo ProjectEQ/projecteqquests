@@ -8,6 +8,6 @@ sub EVENT_SAY {
   if ($text=~/trek/i) {quest::say("'It took me years to find this tomb, searchin' all over Norrath for hints as to where it might be. No one I talked to really had any idea of its whereabouts though. I kept on searchin' though, and then one day I found this shrine sitting out in the middle of the frostbitten ice caps. It looked like a sleepin' dragon, so I figured it had to be related. I walked up to it and looked over it, and what did my eyes spy, but an inscription telling the way to this very tomb! I knew that I would have to keep going, despite my tired legs, my hungry belly, and my aching body. When I finally found the entrance to the tomb, I couldn't believe [what I saw].'");}
   if ($text=~/here to find the ancients/i) {quest::say("'It figures you'd be here to go and foul up what doesn't need fouling up! It's reckless adventurers like you that caused the sleeper to be awakened in the first place, and for all I know, it could have been you that caused the death of my friends, Paldar and Ulessa. How careless do you think you can be?! RAWW! I've had enough, and I'll not let you go further and muck anything else up!'");
     quest::depop_withtimer();
-    quest::spawn2(128139,0,0,$x,$y,$z,$h);
+    quest::spawn2(128139,0,0,$x,$y,$z,$h); # NPC: Milas_An`Rev
   }
 }

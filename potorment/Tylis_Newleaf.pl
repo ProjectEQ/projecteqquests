@@ -6,6 +6,7 @@ my $count = undef;
 
 sub EVENT_SPAWN {
 	$sphere = undef;
+	quest::settimer(2,1);
 }
 
 sub EVENT_SIGNAL {
@@ -27,14 +28,14 @@ sub EVENT_SAY {
 			$group = $entity_list->GetGroupByClient($client);
 			#move the person who triggered as they may not be in range (z axis) 
 			#of the spot on the floor directly under the cage.
-			$client->MovePC(207,-175,815,-955,0); # Zone: lopingplains
+			$client->MovePC(207,-175,815,-955,0); # Zone: potorment
 			if ($raid) {
 				for ($count = 0; $count < $raid->RaidCount(); $count++) {
 					$pc = $raid->GetMember($count);
 					#using z-15 to calculate from the spot on the floor under Tylis not from Tylis
 					#and only move players within 15 units of the spot directly under Tylis
-					if ($pc->CalculateDistance($x,$y,$z-15) <= 50) { 
-						$pc->MovePC(207,-175,815,-955,0); # Zone: lopingplains
+					if ($pc && $pc->IsClient() && $pc->CalculateDistance($x,$y,$z-15) <= 50) { 
+						$pc->MovePC(207,-175,815,-955,0); # Zone: potorment
 					}
 				}
 			}
@@ -43,8 +44,8 @@ sub EVENT_SAY {
 					$pc = $group->GetMember($count);
 					#using z-15 to calculate from the spot on the floor under Tylis not from Tylis
 					#and only move players within 15 units of the spot directly under Tylis
-					if ($pc->CalculateDistance($x,$y,$z-15) <= 50) { 
-						$pc->MovePC(207,-175,815,-955,0); # Zone: lopingplains
+					if ($pc && $pc->IsClient() && $pc->CalculateDistance($x,$y,$z-15) <= 50) { 
+						$pc->MovePC(207,-175,815,-955,0); # Zone: potorment
 					}
 				}
 			}
@@ -65,10 +66,14 @@ sub EVENT_ITEM {
 
 
 sub EVENT_TIMER {
-	if ($timer == 1) {
-		quest::stoptimer(1);
-		$sphere = undef;
-	}
+    if ($timer == 1) {
+        quest::stoptimer(1);
+        $sphere = undef;
+    }
+    elsif ($timer == 2) {
+        quest::stoptimer(2);
+        $npc->SetAppearance(3);
+    }
 }
 
 # End of File  Zone: PoTorment  ID: 207014 -- Tylis_Newleaf

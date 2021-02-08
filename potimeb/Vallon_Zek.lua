@@ -10,9 +10,31 @@ function event_death_complete(e)
 end
 
 function event_combat(e)
-	if (e.joined == false) then
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		eq.stop_timer("reset");
+	else
+		eq.stop_timer("OOBcheck");
+		eq.set_timer("reset", 6 * 1000);
+	end
+end
+
+
+function event_timer(e)
+	if(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() < 250) then
+			e.self:GotoBind();
+			e.self:WipeHateList();
+			e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+			else
+			eq.set_timer("OOBcheck", 6 * 1000);
+			end
+	elseif(e.timer=="reset") then
+		eq.stop_timer("reset");
 		e.self:SetHP(e.self:GetMaxHP());
 		eq.set_next_hp_event(51);
+		eq.depop_all(223164); -- depop fake VZ
 	end
 end
 
@@ -23,7 +45,7 @@ end
 function event_hp(e)
 	if (e.hp_event == 51) then
 		-- spawn copies
-		eq.spawn2(223164,0,0,286,-182,358,46); -- NPC: #Vallon_Zek
-		eq.spawn2(223164,0,0,305,-201,358,46); -- NPC: #Vallon_Zek
+		eq.spawn2(223164,0,0,353,-18,358,383); -- NPC: #Vallon_Zek
+		eq.spawn2(223164,0,0,353,17,358,383); -- NPC: #Vallon_Zek
 	end
 end

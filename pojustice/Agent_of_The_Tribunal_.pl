@@ -92,7 +92,7 @@ sub EVENT_TIMER
    
    {   if($timer == 4 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -106,28 +106,28 @@ sub EVENT_TIMER
 
          {   if($timer == 4 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 4 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 4 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 4 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201427,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -138,7 +138,7 @@ sub EVENT_TIMER
 
    {   if($timer == 4 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -152,28 +152,28 @@ sub EVENT_TIMER
 
          {   if($timer == 4 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 4 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 4 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 4 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -184,7 +184,7 @@ sub EVENT_TIMER
 
 {   if($timer == 4 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -198,28 +198,28 @@ sub EVENT_TIMER
 
          {   if($timer == 4 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 4 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 4 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 4 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -230,7 +230,7 @@ sub EVENT_TIMER
 
 {   if($timer == 4 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: herald_of_destruction
             quest::stoptimer(4);
             }
       else
@@ -282,7 +282,7 @@ sub EVENT_TIMER
 
 {   if($timer == 5 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -296,28 +296,28 @@ sub EVENT_TIMER
 
          {   if($timer == 5 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 5 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 5 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 5 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201427,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -328,7 +328,7 @@ sub EVENT_TIMER
 
    {   if($timer == 5 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -342,28 +342,28 @@ sub EVENT_TIMER
 
          {   if($timer == 5 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 5 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 5 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 5 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -374,7 +374,7 @@ sub EVENT_TIMER
 
 {   if($timer == 5 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -388,28 +388,28 @@ sub EVENT_TIMER
 
          {   if($timer == 5 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 5 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 5 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 5 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -420,7 +420,7 @@ sub EVENT_TIMER
 
 {   if($timer == 5 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: herald_of_destruction
             quest::stoptimer(5);
             }
       else
@@ -472,7 +472,7 @@ sub EVENT_TIMER
 
 {   if($timer == 7 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -486,28 +486,28 @@ sub EVENT_TIMER
 
          {   if($timer == 7 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 7 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 7 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 7 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                           quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                            }
    }
       }   
@@ -518,7 +518,7 @@ sub EVENT_TIMER
 
    {   if($timer == 7 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -532,28 +532,28 @@ sub EVENT_TIMER
 
          {   if($timer == 7 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 7 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 7 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 7 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -564,7 +564,7 @@ sub EVENT_TIMER
 
 {   if($timer == 7 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -578,28 +578,28 @@ sub EVENT_TIMER
 
          {   if($timer == 7 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 7 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 7 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 7 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -610,7 +610,7 @@ sub EVENT_TIMER
 
 {   if($timer == 7 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: herald_of_destruction
             quest::stoptimer(7);
             }
       else
@@ -662,7 +662,7 @@ sub EVENT_TIMER
 
 {   if($timer == 11 && $random_number > 96)
             {
-            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -676,28 +676,28 @@ sub EVENT_TIMER
 
          {   if($timer == 11 && ($random_number <= 91 && $random_number > 65))
                   {
-                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 11 && ($random_number <= 65 && $random_number > 40))
                      {
-                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 11 && ($random_number <= 40 && $random_number > 20))
                         {
-                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,224,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 11 && ($random_number <= 20 && $random_number >= 0))
                            {
-                           quest::spawn2(201427,0,0,224,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,224,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -708,7 +708,7 @@ sub EVENT_TIMER
 
    {   if($timer == 11 && $random_number2 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1071,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -722,28 +722,28 @@ sub EVENT_TIMER
 
          {   if($timer == 11 && ($random_number2 <= 91 && $random_number2 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 11 && ($random_number2 <= 65 && $random_number2 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 11 && ($random_number2 <= 40 && $random_number2 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1071,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 11 && ($random_number2 <= 20 && $random_number2 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1071,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -754,7 +754,7 @@ sub EVENT_TIMER
 
 {   if($timer == 11 && $random_number3 > 96)
             {
-            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,168,-1121,73,360); # NPC: herald_of_destruction
             }
       else
 
@@ -768,28 +768,28 @@ sub EVENT_TIMER
 
          {   if($timer == 11 && ($random_number3 <= 90 && $random_number3 > 65))
                   {
-                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                  quest::spawn2(201428,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                   }
 
             else
 
             {   if($timer == 11 && ($random_number3 <= 65 && $random_number3 > 40))
                      {
-                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                     quest::spawn2(201430,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                      }
 
                else
 
                {   if($timer == 11 && ($random_number3 <= 40 && $random_number3 > 20))
                         {
-                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis      
+                        quest::spawn2(201429,0,0,168,-1121,73,360); # NPC: a_fierce_nemesis
                         }   
 
                   else
 
                   {   if($timer == 11 && ($random_number3 <= 20 && $random_number3 >= 0))
                            {
-                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis      
+                           quest::spawn2(201427,0,0,168,-1121,73,360); # NPC: a_dark_nemesis
                            }
    }
       }   
@@ -800,7 +800,7 @@ sub EVENT_TIMER
 
 {   if($timer == 11 && $random_number4 > 96)
             {
-            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: Herald_of_Destruction
+            quest::spawn2(201432,0,0,224,-1121,73,360); # NPC: herald_of_destruction
             quest::stoptimer(11);
             }
       else
@@ -899,6 +899,6 @@ sub EVENT_SAY {
    {if($text=~/return/i && !defined $pumpkin)
       {
       quest::say("Very well.");
-      quest::movepc(201,456,825,9); # Zone: lakerathe
+      quest::movepc(201,456,825,9); # Zone: pojustice
       }
    }}} 

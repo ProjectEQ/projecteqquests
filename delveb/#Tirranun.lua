@@ -47,7 +47,7 @@ function event_combat(e)
 	elseif (e.joined == false) and phaseone == false then
 	eq.depop(342066); -- Depop my old self
 	eq.depop_all(342065); -- Repop my new  due to my increased HP pool gain from phase 2.
-	eq.spawn2(342066,0,0,-742.57,2866.09,41.52,9.0);
+	eq.spawn2(342066,0,0,-742.57,2866.09,41.52,9.0); -- NPC: #Tirranun
 	phaseone=true; -- Set my phase back to 1.
 	end
 end
@@ -88,12 +88,15 @@ function event_timer(e)
 	if (e.timer == "banish_top") then
 			inst_id = eq.get_zone_instance_id();
 			local el = eq.get_entity_list();
-			local top_hate = tir:GetHateTop():CastToClient();
-			if (top_hate.valid) then
-			--tir:Say("Begone " .. top_hate:GetName());
-			tir:SetHate(top_hate, 1, 1);
-			top_hate:MovePCInstance(342, inst_id, -583.00, 2503.00, -87.39, 254.3); -- banish player to this location.
-			el:RemoveFromHateLists(e.self:GetTarget()); -- remove this player from my hate list.
+			local top_hate = tir:GetHateTop();
+			if (top_hate.valid and top_hate:IsClient()) then
+				local top_client = top_hate:CastToClient();
+				if (top_client.valid) then
+				--tir:Say("Begone " .. top_hate:GetName());
+				tir:SetHate(top_client, 1, 1);
+				top_client:MovePCInstance(342, inst_id, -583.00, 2503.00, -87.39, 254.3); -- banish player to this location.
+				el:RemoveFromHateLists(e.self:GetTarget()); -- remove this player from my hate list.
+				end
 			end
 	elseif (e.timer == "Form") then
 	e.self:CastSpell(6540, e.self:GetID()); -- cast form of lava on a timer.
@@ -105,7 +108,7 @@ function event_timer(e)
 	eq.stop_all_timers(); -- Stop all timers
 	e.self:SetHP(e.self:GetMaxHP()); -- if no one is on my hate list... heal to full.
 	elseif (e.timer == "Adds") then
-	eq.spawn2(342065,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+	eq.spawn2(342065,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #whorl_of_searing_ashes
 	e.self:AddToHateList(e.self:GetTarget(),1); -- Spawn adds / add them to hate list.
 	end
 end

@@ -1,3 +1,10 @@
+function event_enter_zone(e)
+	local qglobals = eq.get_qglobals(e.self)
+		if qglobals["pre_pal"] == "2" then
+			 e.self:Message(15,"Your sword piece reverberates with a low hum. An attraction is felt within it. To the south you are pointed, towards the direction of that attraction.");
+		end
+end
+
 function event_loot(e)
     -- bard 1.5 Metala chest
     if e.self:GetClass() == 8 and e.item:GetID() == 77630 then

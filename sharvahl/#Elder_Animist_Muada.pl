@@ -20,11 +20,11 @@ sub EVENT_SAY {
 		quest::say("Very well then $name. You must collect fungal padding, a rare piece of acrylia ore, and two gems of the void. Many of you have completed this task with little difficulty if you should need further direction. Give these items to Weapons Master Rahoul when you are done.");
 	}
 
-	if ($client->GetGlobal("beast_epic") ==1 && $text=~/business/i) {
+	if ($client->GetGlobal("beast_epic") ==1 && $text=~/business/i) { # epic route
 		quest::say("We can only talk in generalities for now as we are still investigating the strange disturbance with the feral spirits. I can tell you that the opening of a way to Discord and that dark realm itself have something to do with all of this. The spirit world has been [" . quest::saylink("infected") . "] by Discord somehow -- we are certain of that.");
 	}
 
-	if ($text=~/wild/i) {
+	if ($client->GetGlobal("beast_epic") ==1 && $text=~/wild/i) { # prequest route
 		quest::say("We can only talk in generalities for now as we are still investigating the strange disturbance with the feral spirits. I can tell you that the opening of a way to Discord and that dark realm itself have something to do with all of this. The spirit world has been [" . quest::saylink("infected") . "] by Discord somehow -- we are certain of that.");
 	}
 	  
@@ -49,7 +49,7 @@ sub EVENT_SAY {
 	if(plugin::check_hasitem($client, 57007)) {
 	  if ($text=~/i am done/i) {
 		quest::say("Ah, I see you were successful! You become more like one of the elders each day -- elders which may now become known to you. I would like you to become familiar with some of the greater animists of Norrath, so I will have you make some deliveries on my behalf. These elder animists are very busy and you must find them on your own in our lands. Show this letter to the elders as you find them.");
-		quest::summonitem(57008); # Item: Letter from Muada  
+		quest::summonitem(57008); # Item: Letter from Muada
 	  }
 	}
 	if ($client->GetGlobal("beast_epic") ==6) {
@@ -157,12 +157,15 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 57059 =>1 )) {
+  if (plugin::check_handin(\%itemcount, 57059 =>1 )) { # prequest turn-in
     quest::say("You seem to have created a reputation for yourself. I have heard of you from Dumul himself as he keeps a watch on most beastlords in the lands. I trained him when he was much younger and look how magnificent he has become. Like some others, I do see that you also have used your knowledge and skills well. The command of wild spirits is very strong with you. If you are truly in tune with the airs of spirits, you will likely know that all is not right with the [" . quest::saylink("wild") . "], no matter which path of the beastlord you follow.");
+		if($client->GetGlobal("beast_epic") ==undef) { 
+			quest::setglobal("beast_epic", "1", 5, "F"); # set to 1 to allow player to continue 1.5
+		}
   }
   
   if (plugin::check_handin(\%itemcount, 57001 =>1, 57002 =>1, 57003 =>1, 57004 =>1 )) {
-   quest::summonitem(57005); # Item: Plain Animist Helm 
+   quest::summonitem(57005); # Item: Plain Animist Helm
    quest::summonitem(57006); # Item: Shiny Sewing Needle
   }
   if ($client->GetGlobal("beast_epic") ==6) {

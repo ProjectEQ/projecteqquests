@@ -106,7 +106,7 @@ function TrueTimer(e)
 				local mZ=mirrnoq:GetZ();
 				eq.depop_all(296066);
 				eq.spawn2(296066, 0, 0,mX,mY,mZ,384); -- NPC: #Mirror_Image_of_Noqufiel
-				eq.spawn2(296065, 0, 0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),192);
+				eq.spawn2(296065, 0, 0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),192); -- NPC: #True_Image_of_Noqufiel
 				eq.depop();
 			end
 		end
@@ -122,13 +122,13 @@ function TrueSignal(e)
 	if e.signal==1 then
 		local rand_hate = e.self:GetHateRandom()
 		eq.debug("banish selected: " ..rand_hate:GetName());
-		if (rand_hate ~= nil and rand_hate.valid) then
-			local MoveName = eq.get_entity_list():GetClientByName(rand_hate:GetName())
-			if (MoveName ~= nil  and MoveName.valid) then
-				eq.debug(MoveName:GetName());
-				e.self:Say("begone " .. MoveName:GetName())
-				e.self:SetHate(MoveName, 1, 1)
-				MoveName:MovePCInstance(296, inst_id, -117, -912, -127, 128)
+		if (rand_hate.valid and rand_hate:IsClient()) then
+			local rand_hate_v = rand_hate:CastToClient()
+			if (rand_hate_v.valid) then
+				eq.debug(rand_hate_v:GetName());
+				e.self:Say("begone " .. rand_hate_v:GetName())
+				e.self:SetHate(rand_hate_v, 1, 1)
+				rand_hate_v:MovePCInstance(296, inst_id, -117, -912, -127, 128)
 			end
 		end
 	end
@@ -199,7 +199,7 @@ function Spawn_Noqu(loc)
 		eq.spawn2(296065, 0, 0,20,-633,-126,384); -- NPC: #True_Image_of_Noqufiel
 	else
 		eq.spawn2(296065, 0, 0,20,-706,-126,384); -- NPC: #True_Image_of_Noqufiel
-		eq.spawn2(296066, 0, 0,20,-633,-126,384); -- NPC: #Mirror_Image_of_Noqufiel		
+		eq.spawn2(296066, 0, 0,20,-633,-126,384); -- NPC: #Mirror_Image_of_Noqufiel
 	end
 end
 

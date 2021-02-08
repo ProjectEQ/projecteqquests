@@ -43,7 +43,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if ($faction <= 3) { # Require warmly and greater faction 
     if (plugin::check_handin(\%itemcount, 25805 => 3, 24935 => 1)) { # tunic 
-      quest::summonitem(31008); # Item: Rune Crafter's Breastplate 
+      quest::summonitem(31008); # Item: Rune Crafter's Breastplate
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24937 => 1)) { # sleeves 
-      quest::summonitem(31009); # Item: Rune Crafter's Vambraces 
+      quest::summonitem(31009); # Item: Rune Crafter's Vambraces
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");     
     } 
     elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24936 => 1)) { # leggings 
-      quest::summonitem(31012); # Item: Rune Crafter's Greaves 
+      quest::summonitem(31012); # Item: Rune Crafter's Greaves
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -73,7 +73,7 @@ sub EVENT_ITEM {
       quest::say("You have done well.");
     } 
     elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24941 => 1)) { # gauntlets 
-      quest::summonitem(31011); # Item: Rune Crafter's Gauntlets 
+      quest::summonitem(31011); # Item: Rune Crafter's Gauntlets
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -83,7 +83,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24940 => 1)) { # cap 	
-      quest::summonitem(31007); # Item: Rune Crafter's Helm 
+      quest::summonitem(31007); # Item: Rune Crafter's Helm
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -93,7 +93,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25836 => 3, 24939 => 1)) { # bracers 
-      quest::summonitem(31010); # Item: Rune Crafter's Bracer 
+      quest::summonitem(31010); # Item: Rune Crafter's Bracer
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 
@@ -103,7 +103,7 @@ sub EVENT_ITEM {
       quest::say("You have done well."); 
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24938 => 1)) { # boots 
-      quest::summonitem(31013); # Item: Rune Crafter's Boots 
+      quest::summonitem(31013); # Item: Rune Crafter's Boots
       quest::exp(100000); 
       quest::faction(406,20); # coldain 
       quest::faction(405,20); # Dain Frostreaver IV 

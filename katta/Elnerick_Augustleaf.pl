@@ -20,9 +20,9 @@ sub EVENT_ITEM {
       quest::summonitem(7096); # 7096  Seal of Katta
       quest::emote("takes the four shards and places them on the table. Slow incantations and streams of mana flow from him. The shards begin to move across the table towards each other until they fuse into one.");
       quest::say("I have focused each shard into one single key. The magic holding it together is strong but the enchantment will fade over time. You will must use it wisely for it will deteriorate with use. Lcea has requested I give you this seal to prove your service to this city. Take the seal and the Arx Key, I hope that you can accomplish what you are about to be asked. May your service to this town never be forgotten.");
-      quest::faction(1561,10); #concillium universus
-      quest::faction(1483,-30); #seru
-      quest::faction(1486,-30); #heart of seru
+      quest::faction(1561,50); #concillium universus
+      quest::faction(1483,-5); #seru
+      quest::faction(1486,-25); #heart of seru
       quest::exp(600000);
     }
   }

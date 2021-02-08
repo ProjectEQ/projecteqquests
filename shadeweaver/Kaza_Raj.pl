@@ -31,6 +31,9 @@ sub EVENT_SAY {
 	if($text=~/tunic/i) {
 		quest::say("A breastplate shall complete your set! Bring me four carapaces from Cht'Thk Bloodbulks and I will give you a wonderful tunic!");
 	}
+	if($text=~/pant/i) {
+		quest::say("Hmm, you are growing more mighty as time passes - Kill Saurek Claw Beasts and bring me four fangs, I have most excellent pants if you succeed.");
+	}
 }
 
 sub EVENT_ITEM {

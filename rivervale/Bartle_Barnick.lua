@@ -10,11 +10,11 @@ function event_say(e)
 	elseif(e.message:findi("moss toe gloves")) then
 		e.self:Say("To assemble Moss Toe Gloves you will require two [silk thread], a ruined mossy rat pelt, and two large wood spider tarsus. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Glove Pattern.");
 		-- Summon: Tattered Glove Pattern
-		e.other:SummonItem(19559); -- Item: Tattered Glove Pattern 
+		e.other:SummonItem(19559); -- Item: Tattered Glove Pattern
 	elseif(e.message:findi("moss toe boots")) then
 		e.self:Say("To assemble Moss Toe Boots you will require two [silk thread], two ruined mossy rat pelts, and two giant wood spider hairs. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Boot Pattern.");
 		-- Summon: Tattered Boot Pattern
-		e.other:SummonItem(19561); -- Item: Tattered Boot Pattern 
+		e.other:SummonItem(19561); -- Item: Tattered Boot Pattern
 	elseif(e.message:findi("moss toe sleeves")) then
 		e.self:Say("To assemble Moss Toe Sleeves you will require two [silk thread], a mossy rat pelt, and two giant wood spider patella. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Sleeves Pattern.");
 		-- Summon: Tattered Sleeves Pattern

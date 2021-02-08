@@ -245,9 +245,9 @@ function Deputy_Timer(e)
 	elseif (e.timer == "Agro") then
 		e.self:TempName("General_Huffin");
 		e.self:Shout("Boys? Get them!");
-		eq.signal(33162,2);
-		eq.signal(33163,2);
-		eq.spawn2(33161,0,0,-2358.64,736.61,3.90,429.3);
+		eq.signal(33162,2); -- NPC: Deputy??
+		eq.signal(33163,2); -- NPC: Deputy???
+		eq.spawn2(33161,0,0,-2358.64,736.61,3.90,429.3); -- NPC: Deputy?
 		eq.depop();
 		eq.stop_timer("Agro");
 	elseif (e.timer == "Fear") then
@@ -255,10 +255,10 @@ function Deputy_Timer(e)
 	elseif (e.timer == "Convo_") then
 		e.self:Say("Funny Crysta, like I would give up those precious goods!");
 		e.self:Shout("GUARDS!");
-		eq.spawn2(33162,0,0,-2253.81,737.77,-453,411.3);
-		eq.spawn2(33163,0,0,-2411.18,645.80,-328,3.8);
-		eq.signal(33162,1);
-		eq.signal(33163,1);
+		eq.spawn2(33162,0,0,-2253.81,737.77,-453,411.3); -- NPC: Deputy??
+		eq.spawn2(33163,0,0,-2411.18,645.80,-328,3.8); -- NPC: Deputy???
+		eq.signal(33162,1); -- NPC: Deputy??
+		eq.signal(33163,1); -- NPC: Deputy???
 		eq.set_timer("Guards",8000);
 		eq.stop_timer("Convo_");
 	elseif (e.timer == "Convo_2") then
@@ -269,23 +269,23 @@ function Deputy_Timer(e)
 		eq.stop_timer("Check");
 		eq.zone_emote(15,"General Huffin yells, It's about time I take this into my own hands! Prepare yourselves weaklings!")
 		phase1=false;
-		eq.signal(33165,1);
+		eq.signal(33165,1); -- NPC: Crysta_Tagglefoot
 	elseif (e.timer == "Rez1") then
-		eq.spawn2(33162,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(33162,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy??
 		eq.zone_emote(15,"General Huffin laughs as his comrades are brought back to life.");
 		eq.stop_timer("Rez1");
-		eq.signal(33162,3);
+		eq.signal(33162,3); -- NPC: Deputy??
 	elseif (e.timer == "Rez2") then
-		eq.spawn2(33163,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(33163,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy???
 		eq.zone_emote(15,"General Huffin laughs as his comrades are brought back to life.");
-		eq.signal(33163,3);
+		eq.signal(33163,3); -- NPC: Deputy???
 		eq.stop_timer("Rez2");
 	elseif (e.timer == "Laugh") then
 		eq.zone_emote(15,"Your damage is pathetic!! You can't even hit me!");
 		eq.set_timer("Laugh2",15000);
 		eq.stop_timer("Laugh");
 	elseif (e.timer == "Laugh2") then
-		eq.signal(33165,2);
+		eq.signal(33165,2); -- NPC: Crysta_Tagglefoot
 		eq.stop_timer("Laugh2");
 	elseif (e.timer == "Bags") then
 		eq.zone_emote(15,"bags of goodies fly out of General Huffin's pockets scattered onto the ground!");
@@ -298,21 +298,21 @@ function Deputy_Timer(e)
 		eq.create_ground_object(84090,-2351.80,725.91,-2.91,410.0,60000);
 		eq.create_ground_object(84090,-2363.91,747.98,-2.94,443.0,60000);
 		eq.create_ground_object(84090,-2363.16,782.24,-2.90,403.0,60000);
-		eq.signal(33165,3);
+		eq.signal(33165,3); -- NPC: Crysta_Tagglefoot
 		elseif (which == 2) then
 		eq.create_ground_object(84090,-2336.57,738.01,-2.91,281.3,60000);
 		eq.create_ground_object(84090,-2329.69,715.01,-2.92,310.5,60000);
 		eq.create_ground_object(26648,-2351.80,725.91,-2.91,410.0,60000);
 		eq.create_ground_object(84090,-2363.91,747.98,-2.94,443.0,60000);
 		eq.create_ground_object(84090,-2363.16,782.24,-2.90,403.0,60000);
-		eq.signal(33165,3);
+		eq.signal(33165,3); -- NPC: Crysta_Tagglefoot
 		elseif (which == 3) then
 		eq.create_ground_object(84090,-2336.57,738.01,-2.91,281.3,60000);
 		eq.create_ground_object(84090,-2329.69,715.01,-2.92,310.5,60000);
 		eq.create_ground_object(84090,-2351.80,725.91,-2.91,410.0,60000);
 		eq.create_ground_object(84090,-2363.91,747.98,-2.94,443.0,60000);
 		eq.create_ground_object(26648,-2363.16,782.24,-2.90,403.0,60000);
-		eq.signal(33165,3);
+		eq.signal(33165,3); -- NPC: Crysta_Tagglefoot
 		end
 	elseif (e.timer == "Sugar_Rush2") then
 		eq.zone_emote(15,"General Huffin picks up some of the remaining candy on the ground and goes into a SUGAR FRENZY!");
@@ -333,7 +333,7 @@ function Deputy_Timer(e)
 		e.self:ModifyNPCStat("max_hit", tostring(General_max_hit));
 		e.self:Stun(30*1000);
 		eq.stop_timer("Stun");
-		eq.signal(33165,5);
+		eq.signal(33165,5); -- NPC: Crysta_Tagglefoot
 	elseif (e.timer == "Blind") then
 		eq.zone_emote(15,"General Huffin raises up his weapon and the light begins to shines into your eyes. Look away quickly!");
 	elseif (e.timer == "BlindCast") then
@@ -361,33 +361,33 @@ function Deputy_Timer(e)
 	elseif (e.timer == "Hatch") then
 		eq.depop_with_timer(33166);
 		eq.depop_with_timer(33171);
-		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5);
-		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5);
-		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5);
-		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5);
-		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5);
-		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3);
-		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3);
-		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3);
-		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3);
-		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3);
+		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3); -- NPC: #a_vicious_spider
+		eq.spawn2(33167,0,0,-2402.93,754.38,-3.91,140.3); -- NPC: #a_vicious_spider
 		eq.stop_timer("Hatch");
 	elseif (e.timer == "Adds") then
-		eq.spawn2(33168,0,0,e.self:GetX()+20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(33168,0,0,e.self:GetX()+20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Scarecrow
 		eq.spawn2(33168,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); --  new npc 100khp
-		eq.spawn2(33168,0,0,e.self:GetX()+30, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(33168,0,0,e.self:GetX()+30, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Scarecrow
 		e.self:Shout("Come forth Minions!");
 	elseif (e.timer == "Fog") then
 		e.self:CastSpell(7316, e.self:GetTarget():GetID()); -- Spell: Venomous Fog
 	elseif (e.timer == "Curse") then
 		e.self:CastSpell(7313, e.self:GetTarget():GetID()); -- Spell: Spider's Curse
 	elseif (e.timer == "Cloud") then
-		e.self:CastSpell(7757, e.self:GetTarget():GetID()); -- Spell: Cloud of Viscous Venom	
+		e.self:CastSpell(7757, e.self:GetTarget():GetID()); -- Spell: Cloud of Viscous Venom
 	elseif (e.timer == "Root") then
 		e.self:SetPseudoRoot(true);
 		eq.stop_timer("Root");
 	elseif (e.timer == "Fail") then
-		eq.signal(33165,6);
+		eq.signal(33165,6); -- NPC: Crysta_Tagglefoot
 		eq.depop_all(33168);
 		eq.depop_all(33167);
 		eq.depop_all(33169);
@@ -413,8 +413,8 @@ function Deputy_HP(e)
 		e.self:ModifyNPCStat("max_hit", tostring(Generalnew_max_hit));
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 50);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 75);
-		eq.spawn2(33169,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); 
-		eq.spawn2(33169,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(33169,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ghoulish_Guardian
+		eq.spawn2(33169,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ghoulish_Guardian
 		eq.set_timer("Blind",60000);
 		eq.set_timer("BlindCast",70000);
 		eq.set_next_hp_event(50);
@@ -428,8 +428,8 @@ function Deputy_HP(e)
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 75);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 		e.self:CameraEffect(2000,5);
-		eq.spawn2(33170,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); 
-		eq.spawn2(33170,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(33170,0,0,e.self:GetX()+20, e.self:GetY()+10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ravenous_Werewolf
+		eq.spawn2(33170,0,0,e.self:GetX()-20, e.self:GetY()-10, e.self:GetZ(),e.self:GetHeading()); -- NPC: #A_Ravenous_Werewolf
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then	
@@ -465,7 +465,7 @@ function Deputy_Death(e)
 	e.self:Shout("My reign isnt over!");
 	eq.stop_all_timers();
 	eq.depop_all(33167);
-	eq.signal(33165,4);
+	eq.signal(33165,4); -- NPC: Crysta_Tagglefoot
 end
 
 function Deputy1_Combat(e)
@@ -570,7 +570,7 @@ end
 function Deputy1_Death(e)
 	local el = eq.get_entity_list();
 	if ( el:IsMobSpawnedByNpcTypeID(33163) == true) then
-	eq.signal(33161,2);
+	eq.signal(33161,2); -- NPC: Deputy?
 	elseif ( el:IsMobSpawnedByNpcTypeID(33163) == false) then
 	deputydeath=true;
 	end
@@ -579,7 +579,7 @@ end
 function Deputy2_Death(e)
 	local el = eq.get_entity_list();
 	if ( el:IsMobSpawnedByNpcTypeID(33162) == true) then
-	eq.signal(33161,3);
+	eq.signal(33161,3); -- NPC: Deputy?
 	elseif ( el:IsMobSpawnedByNpcTypeID(33163) == false) then
 	deputydeath=true;
 	end
@@ -652,7 +652,7 @@ end
 
 	
 function Crysta_Spawn(e)
-	eq.signal(33161,1);
+	eq.signal(33161,1); -- NPC: Deputy?
 	eq.set_timer("Talk",21000);
 	
 end
@@ -662,10 +662,10 @@ function Crysta_Signal(e)
 	e.self:Shout("Comrades, gather closely and give me a moment to channel the spell, This spell is only good enough for one use! So use it wisely!!");
 	eq.set_timer("Heal",10000);
 	eq.depop(33161);
-	eq.spawn2(33161,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(33161,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy?
 	elseif (e.signal == 2) then
 	eq.zone_emote(15, "Crysta says, Uh your damage is just as pathetic!");
-	eq.signal(33161,4);
+	eq.signal(33161,4); -- NPC: Deputy?
 	elseif (e.signal == 3) then
 	e.self:Shout("Quickly comrades, pick up the candy before HE gets it!! See if theres something in there that would be useful for weakening him! Return it to me if so.");
 	elseif (e.signal == 4) then
@@ -675,7 +675,7 @@ function Crysta_Signal(e)
 	e.self:Shout("His damage reduction is weakening. Keep it up!");
 	elseif (e.signal == 6) then
 	eq.stop_all_timers();
-	eq.spawn2(33164,0,0,-2401.77,786.17,-4.53,252.00);
+	eq.spawn2(33164,0,0,-2401.77,786.17,-4.53,252.00); -- NPC: Crysta_Tagglefoot
 	eq.depop();
 	end
 end
@@ -698,7 +698,7 @@ function Crysta_Trade(e)
 		stunned=stunned+1;
 		General_min_hit=General_min_hit+300;
 		General_max_hit=General_max_hit+650;
-		eq.signal(33161,5);
+		eq.signal(33161,5); -- NPC: Deputy?
 	end
 end
 

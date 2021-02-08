@@ -24,7 +24,8 @@ sub EVENT_SIGNAL {
     quest::spawn2(226109,0,0,109,62,2.7,430); # NPC: #Captain_Nago
     quest::spawn2(226203,0,0,109,195,2.7,430); # NPC: #Captain_Lung
     quest::spawn2(226202,0,0,220,195,2.7,430); # NPC: #Captain_Lkai
-    quest::spawn2(226201,0,0,220,62,2.7,430); # NPC: #Captain_Flang 
+    quest::spawn2(226201,0,0,220,62,2.7,430); # NPC: #Captain_Flang
+    quest::ze(0, "Overseer Wrank yells, 'Captains, stand at attention. There are invaders in the mines.'");
     $wcounter = 0;
 }
   if ($signal == 33) {
@@ -34,6 +35,7 @@ sub EVENT_SIGNAL {
     quest::signalwith(226066,66,0); # NPC: #Overseer_Wrank
     quest::spawn2(226095,0,0,479,197,3,382); # NPC: Overseer_Wrank
     quest::depop_withtimer();
+    quest::ze(0, "The ground trembles as the magic protecting Overseer Wrank fails.");
     $ocounter = 0;
 }
  }

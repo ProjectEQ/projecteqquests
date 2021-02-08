@@ -53,7 +53,8 @@ sub EVENT_ITEM
 		}
 		
 		quest::faction(1609, 10); # Faction: Askr the Lost
-		quest::faction(1618, 10); # Faction: Storm Guardians		
+		quest::faction(1618, 10); # Faction: Storm Guardians
+		quest::exp(150000);
 	}
   plugin::return_items(\%itemcount);
 }#END of FILE Zone:postorms ID:210060 --Wembly_the_Forlorn.pl

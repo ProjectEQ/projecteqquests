@@ -26,10 +26,10 @@ sub EVENT_SAY {
       elsif ($class eq "Paladin" || $class eq "Shadowknight" || $class eq "Bard" || $class eq "Beastlord" || $class eq "Ranger") { #Hybrid
         quest::say("You seem to be a bit of a caster yourself. You will find that spells and songs can greatly enhance your power. Being a hybrid of sorts, you will have access to both magic and, later, skill tomes. For now, take this scroll. It may prove to be useful to you as you combat the kobolds. As you earn money and gain experience you will find other powerful spells. Some spells can be purchased from vendors, some can be made by players with tradeskills, and some must be obtained via quest. Good luck out there!");
         if ($class eq "Paladin" || $class eq "Beastlord" || $class eq "Ranger") {
-          quest::summonitem(59971); #Spell: Salve
+          quest::summonitem(59971); # Item: Spell: Salve
         }
         elsif ($class eq "Shadowknight") {
-          quest::summonitem(59972); #Spell: Spike of Disease
+          quest::summonitem(59972); # Item: Spell: Spike of Disease
         }
         elsif ($class eq "Bard") {
           quest::summonitem(59963); #Song: Chords of Dissonance
@@ -40,25 +40,25 @@ sub EVENT_SAY {
       elsif ($class eq "Necromancer" || $class eq "Druid" || $class eq "Cleric" || $class eq "Shaman" || $class eq "Enchanter" || $class eq "Wizard") { #Caster
         quest::say("You seem to be a bit of a caster yourself. You will find that spells and songs can greatly enhance your power. Take this and scribe it in your spell book. I can only hope it helps you against the kobold horde. As you earn money and gain experience you will find other powerful spells. Some spells can be purchased from vendors, some can be made by players with tradeskills, and some must be obtained via quest. Good luck out there!");
         if ($class eq "Necromancer") {
-          quest::summonitem(59962); #Spell: Siphon Strength
+          quest::summonitem(59962); # Item: Spell: Siphon Strength
         }
         elsif ($class eq "Druid") {
-          quest::summonitem(59965); #Spell: Snare
+          quest::summonitem(59965); # Item: Spell: Snare
         }
         elsif ($class eq "Cleric") {
-          quest::summonitem(59966); #Spell: Yaulp
+          quest::summonitem(59966); # Item: Spell: Yaulp
         }
         elsif ($class eq "Shaman") {
           quest::summonitem(59959); #Spell: Strengthen
         }
         elsif ($class eq "Enchanter") {
-          quest::summonitem(59961); #Spell: Minor Illusion
+          quest::summonitem(59961); # Item: Spell: Minor Illusion
         }
         elsif ($class eq "Magician") {
-          quest::summonitem(59960); #Spell: Summon Food
+          quest::summonitem(59960); # Item: Spell: Summon Food
         }
         elsif ($class eq "Wizard") {
-          quest::summonitem(59964); #Spell: Numbing Cold
+          quest::summonitem(59964); # Item: Spell: Numbing Cold
         }
         quest::popup("Scribing and Memorizing", "Rytan has given you a spell scroll!<br><br>To use a spell, you must first <c \"#00FF00\">scribe</c> a spell in your spellbook, and then <c \"#00FF00\">memorize</c> the spell in your <c \"#00FF00\">Spell Bar</c>. There are a limited number of slots available in your spell bar, so choosing which spells you have memorized will be an important strategy as you scribe more spells.<br><br>To scribe this spell, first open your <c \"#00FF00\">Spellbook</c> by using <c \"#00FFFF\">[Ctrl+B]</c> and transfer the spell scroll to an empty spell box on a page and left click. This will start scribing the spell. This process takes a little bit of time. A thin purple progress bar will appear on teh bottom of the spellbook window while you are scribing.<br><br>Once the spell has finished scribing, the spell's icon and name will appear in your spellbook. <c \"#00FFFF\">Left click</c> on this newly added icon in your spellbook to join the icon with your cursor. Then <c \"#00FFFF\">left click</c> on an empty spell slot on your <c \"#00FF00\">Spell Bar</c>. Dragging the spell will not do anything; simply <c \"#00FFFF\">left click</c> once in your spellbook and once on your <c \"#00FF00\">Spell Bar</c>. The <c \"#00FF00\">Spell Bar</c> will begin flashing briefly once you close this message.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
         REVIEW();

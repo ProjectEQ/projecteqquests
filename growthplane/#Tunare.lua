@@ -2,18 +2,18 @@
 -- This is Tunare out in the middle of the zone
 function event_death_complete(e)
 	-- do not aggro these mobs #_Tunare (127001), #Tunare (127098), a_warm_light (127004)
-	-- #BouncerMan (127097), Flighty_Viridian_Wisp (127105)
-	send_signal_to_all_npc_in_zone(2, {127001,127004,127097,127098,127105});
+	-- #BouncerMan (127097), Flighty_Viridian_Wisp (127105), a_thifling_focuser (127006 and 127005)
+	send_signal_to_all_npc_in_zone(2, {127001,127004,127097,127098,127105,127005,127006});
 end
 
 function event_combat(e)
 	if (e.joined) then
 		-- call all mobs to assist
 		-- do not aggro these mobs #_Tunare (127001), #Tunare (127098), a_warm_light (127004)
-		-- #BouncerMan (127097), Flighty_Viridian_Wisp (127105)
-		send_signal_to_all_npc_in_zone(1, {127001,127004,127097,127098,127105});
+		-- #BouncerMan (127097), Flighty_Viridian_Wisp (127105), a_thifling_focuser (127006 and 127005)
+		send_signal_to_all_npc_in_zone(1, {127001,127004,127097,127098,127105,127005,127006});
 	else
-		send_signal_to_all_npc_in_zone(2, {127001,127004,127097,127098,127105});
+		send_signal_to_all_npc_in_zone(2, {127001,127004,127097,127098,127105,127005,127006});
 	end
 end
 

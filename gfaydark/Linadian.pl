@@ -10,7 +10,7 @@ quest::say("Glad you are interested!  I can create a leather vest I call a bande
 sub EVENT_ITEM { 
    if(plugin::check_handin(\%itemcount,13319 => 2,13318 => 1,16482 => 1)){ 
    quest::say("Grand doing business with you. Hold your nose. I can never get rid of the orc stench of the vests. That is why the other merchants do not pay me much for them."); 
-  quest::summonitem(12187); # Item: Banded Orc Vest 
+  quest::summonitem(12187); # Item: Banded Orc Vest
   quest::exp(100); 
   quest::faction(5001,10); # Faction: Anti-mage
   quest::faction(276,10); # Faction: Kelethin Merchants

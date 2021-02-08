@@ -18,7 +18,7 @@ function event_proximity_say(e)
     
   if (mnk_pre == 2) then
     if (e.message:findi("I am ready to be tested")) then
-      eq.spawn2(111190, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+      eq.spawn2(111190, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Mirror_Reflection
       eq.depop_with_timer();
     end
   end

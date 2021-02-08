@@ -14,7 +14,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 10307,item2 = 10307,item3 = 13250,item4 = 13250})) then -- random level 1 spell and experience 
-		e.other:SummonItem(eq.ChooseRandom(15373, 15054, 15205, 15288, 15372, 15374)); -- Item(s): Spell: Sphere of Light (15373) 
+		e.other:SummonItem(eq.ChooseRandom(15373, 15054, 15205, 15288, 15372, 15374)); -- Item(s): Spell: Sphere of Light (15373)
 		e.self:Say("You have passed your first task. Nice work. Take this spell as your payment."); 
 		e.other:Ding();
 		e.other:AddEXP(150);

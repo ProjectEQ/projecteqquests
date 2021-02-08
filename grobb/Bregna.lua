@@ -15,7 +15,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 13916})) then -- More help for Innoruuk
 		e.self:Say("Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.");
-		e.other:SummonItem(15272); -- Spell: Spirit Pouch
+		e.other:SummonItem(15272); -- Item: Spell: Spirit Pouch
 		e.other:Faction(251,-1,0); -- -Frogloks of Guk
 		e.other:Faction(237,5,0);  -- +Dark Ones
 		e.other:Faction(308,1,0);  -- +Shadowknights of Night Keep

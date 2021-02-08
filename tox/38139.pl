@@ -23,15 +23,15 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
      if (plugin::check_handin(\%itemcount, 13894 => 1)){
           quest::say("Good work, you should be running this operation instead of that Talrigar fellow. Have a small reward. A little bit of the gems I found while tunneling through this rock.");
-          quest::summonitem(quest::ChooseRandom(10015,10016,10017,10018)); # Item(s): Malachite (10015), Lapis Lazuli (10016), Turquoise (10017), Hematite (10018) 
+          quest::summonitem(quest::ChooseRandom(10015,10016,10017,10018)); # Item(s): Malachite (10015), Lapis Lazuli (10016), Turquoise (10017), Hematite (10018)
       }
   plugin::return_items(\%itemcount);
 }
 	 
 sub EVENT_WAYPOINT_ARRIVE {
-	if ($wp == 6) {
-		quest::say("Speed up the digging my pets!!");
+	if ($wp == 5) {
 		if ($eventstart==0) {
+			quest::say("Speed up the digging my pets!!");
 			$skelent = $entity_list->GetMobByNpcTypeID(38016);
 			$skelnpc = $skelent->CastToNPC();
 			$skelnpc->SignalNPC(9);				

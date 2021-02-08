@@ -26,6 +26,10 @@ sub EVENT_TIMER
    }
 
 sub EVENT_SAY{
+	if($text=~/Hail/i && !defined $qglobals{pop_pon_hedge_jezith}) { #doesnt have preflag
+	quest::emote("screams loudly, and then falls asleep once again.");
+	}
+
       if($text=~/Hail/i && $entry == undef && $pop_pon_hedge_jezith == 1){
       quest::say("You there! You have talked to Adroha Jezith? Then I assume you are here to help me! ... Tell me when you are [" . quest::saylink("ready") . "] to begin, I will lead you through the maze and we, together, will end this endless torment!");
       }
@@ -43,14 +47,14 @@ sub EVENT_SAY{
    
 
       if($text=~/ready/i && ($entry == 1 || $entry == 2 || $entry == 3 || $entry == 4 || $entry == 5 || $entry == 6 || $entry == 7 || $entry == 8 || $entry == 9 || $entry == 10 || $entry == 11|| $entry == 12 || $entry == 13 || $entry == 14 || $entry == 15 || $entry == 16 || $entry == 17 || $entry == 18) && $pop_pon_hedge_jezith == 1){
-      	quest::say("Ok moving you in !");
-      	quest::movepc(204,-4774,5198,4); # Zone: lfaydark
+      	quest::emote("closes his eyes and falls asleep immediately.  He looks peaceful for a moment and then screams in agony!");
+      	quest::movepc(204,-4774,5198,4); # Zone: ponightmare
       	$entry=$entry+1
       	}   
 
       if($text=~/ready/i && $entry == undef && $pop_pon_hedge_jezith == 1){
-      	quest::say("Ok moving you in !");
-      	quest::movepc(204,-4774,5198,4); # Zone: lfaydark
+      	quest::emote("closes his eyes and falls asleep immediately.  He looks peaceful for a moment and then screams in agony!");
+      	quest::movepc(204,-4774,5198,4); # Zone: ponightmare
       	quest::signalwith(204058,5,3000); # NPC: Hedge_Trigger
 	quest::settimer(2,600);
       	$entry=$entry+1

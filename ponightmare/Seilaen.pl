@@ -10,10 +10,12 @@ if($text=~/What locket of escape/i) {
   quest::say("My mother always carried this with her. I have no idea why I suddenly have it. Perhaps I can make it work for you, if you want me to?");
 }
 if($text=~/I want you to/i) {
-  quest::say("Hmm.. It doesn't seem to want to work. Do you see Deyid?'");
+  quest::say("Hmm.. It doesn't seem to want to work. Do you see Deyid?");
+  
 }
-if($text=~/I see Deyid/i) {
+if($text=~/I see Deyid/i) {  #this line spawns Deyid on live for whatever reason
   quest::say("Ohh, that must be what is causing all this trouble! You all seem so brave. Maybe if you chop down Deyid the Twisted I will be able to go home? Will you please? If you have gathered together and are prepared, have your leaders step forward and tell me their readiness. Mother's Locket doesn't seem as bright as it was before. I fear I can only use it but a couple more times.");
+  quest::unique_spawn(204051, 0, 0, 1011, 1081, 274, 92); # Deyid_the_Twisted (204051)
 }
 if($text=~/We are ready/i) {
   quest::movegrp(204,1194,1121,280); 

@@ -5,7 +5,6 @@ local commands      = { };
 
 commands["endurance"] = { 50,  require(commands_path .. "endurance") };
 commands["lockouts"]  = { 0,   require(commands_path .. "lockouts") };
-commands["findnpcs"]  = { 200, require(commands_path .. "find_npcs") };
 commands["timeleft"]  = { 0,   require(commands_path .. "time_left") };
 
 function eq.DispatchCommands(e)
@@ -21,10 +20,10 @@ function eq.DispatchCommands(e)
 			e.self:Message(13, "Access level not high enough.");
 			return 1;
 		end
-		
+
 		local func = command[2];
 		func(e);
 		return 1;
-	end	
+	end
 	return 0;
 end

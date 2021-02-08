@@ -18,14 +18,15 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12977 => 4)){
-    quest::emote("Captain Nealith tosses the teeth into a very large cask full of similar teeth.");
+    quest::emote("tosses the teeth into a very large cask full of similar teeth.");
     quest::say("Fine work, $name. I wish all my own troops showed the same tenacity. I salute you. This will keep you well fed during your long patrols. Use your wages to better equip yourself. Continue the fight!! The General is pleased.");
     quest::summonitem(13155,7); # Item: Elven Trail Mix
+    quest::exp(10000);
     quest::givecash(7,12,3,0);
     quest::faction(248,1); # Faction: Inhabitants of Firiona Vie
     quest::faction(312,1); # Faction: Storm Guard
     quest::faction(441,-3); # Faction: Legion of Cabilis
-    quest::faction(313,-3); # Faction: Pirates of Gunthak 
+    quest::faction(313,-3); # Faction: Pirates of Gunthak
   }
   if (plugin::check_handin(\%itemcount,18076 => 1)) { #blood soaked note Captain Nealith's Brother quest
     quest::emote ("nearly faints after reading the letter. 'Dear Marltek!! I shall miss you. There is more evil in this land!! Madness beyond description. Thank you $name. You put my soul at ease and give me new direction. Please accept my brothers blade. He found it in the wilds. May you use it to slay many Drolvarg!!'");
@@ -38,7 +39,7 @@ sub EVENT_ITEM {
     quest::faction(313,-50); # -Pirates of Gunthak
     quest::faction(441,-50); # -Legion of Cabilis
   }
-  quest::emote("Captain Nealith holds the canine in his palm."); #These next two lines are most likely if you don't turn in enough teeth.
+  quest::emote("holds the canine in his palm."); #These next two lines are most likely if you don't turn in enough teeth.
   quest::say("Good work, but you will have to slay more than this to earn your wages.");
   plugin::return_items(\%itemcount)
 } 

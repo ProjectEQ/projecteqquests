@@ -15,7 +15,7 @@ sub EVENT_SAY
 		elsif($text=~/begin the trial of hanging/i) {
 			if (!defined $hanging) {
 				quest::say("Then begin.");
-				quest::movepc(201,500,-1045,73.1); # Zone: lakerathe
+				quest::movepc(201,500,-1045,73.1); # Zone: pojustice
 				quest::settimer(301,30);
 				#quest::signal(201076,15000);
 				$hanging=1;
@@ -23,7 +23,7 @@ sub EVENT_SAY
 			
 			else {
 				if (($hanging > 0) && ($hanging < 6)) {
-					quest::movepc(201,500,-1045,73.1); # Zone: lakerathe
+					quest::movepc(201,500,-1045,73.1); # Zone: pojustice
 					quest::say("Then begin.");		
 					$hanging++;
 				}

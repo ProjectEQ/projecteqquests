@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-quest::settimer(55,1200);
+quest::settimer(55,600); #10 min timer parsed from live
  }
 
 sub EVENT_SAY {

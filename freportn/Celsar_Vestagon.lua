@@ -15,11 +15,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13872})) then
 		e.self:Say("You have done well. The Marr Minnow shall have a greater chance of flourishing. Please take this as a reward.");
 		e.other:Ding();
-		e.other:Faction(281,1,0); -- Faction: Knights of Truth
-		e.other:Faction(362,-1,0); -- Faction: Priests of Marr
-		e.other:Faction(330,-1,0); -- Faction: The Freeport Militia
-		e.other:Faction(271,1,0); -- Faction: Dismal Rage
-		e.other:Faction(311,1,0); -- Faction: Steel Warriors
+		e.other:Faction(281,20,0); -- Faction: Knights of Truth
+		e.other:Faction(362,4,0); -- Faction: Priests of Marr
+		e.other:Faction(330,-3,0); -- Faction: The Freeport Militia
+		e.other:Faction(271,-3,0); -- Faction: Dismal Rage
+		e.other:Faction(311,2,0); -- Faction: Steel Warriors
 		e.other:AddEXP(200);
 		e.other:GiveCash(23,0,0,0);
 	end

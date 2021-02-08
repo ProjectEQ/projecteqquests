@@ -29,12 +29,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 59033 => 1)) { #A glowing collar
     quest::emote("looks at you in amazement as you hand the glowing collar to him. He looks as if he might weep for joy at any moment. He holds the collar firmly by the clasp and brings it down to his side. He mumbles some words and the wolf immediately appears beside him. He reaches into his bags and grabs a small stone similar to the one fit into the collar. You reach forward and take it from him. He points at the dirt once more as if he wishes to [draw] something for you.");
-    quest::summonitem(59010);#Spell: Bond of the Wild
+    quest::summonitem(59010); # Item: Spell: Bond of the Wild
     quest::setglobal("CraeginA",1,0,"F");
   }	
   if(plugin::check_handin(\%itemcount, 59034 => 1) && defined($qglobals{CraeginA}) && ($qglobals{CraeginA} == 1)) { #A strange dark powder
     quest::emote("looks over the dark powder carefully for a moment and then nods at you. He grabs a small bag from his waist and places the dust inside of it. He then takes a second bag and empties another odd powder into the bag. He closes and shakes the bag vehemently and then looks at you expectantly. You nod. He reaches into the bag and pulls a bit of the mixtures out. Unexpectedly he blows the mixture into your face, causing your eyes to burn and your lungs to uncontrollably cough in pain. You fall to the ground for a moment, but the burning subsides. You rise back to your feet and Craegin hands you the rest of the bag of powder.");
-    quest::summonitem(59009);#Spell: Malaria
+    quest::summonitem(59009); # Item: Spell: Malaria
     quest::delglobal("CraeginA");
   }	
   plugin::return_items(\%itemcount);

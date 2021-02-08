@@ -4,7 +4,7 @@ sub EVENT_SAY {
   }
   if($text=~/erudin/i) {
     quest::say("I have managed to prepare a message on this scrap of cloth for the priestess Laraena. It is a matter of great importance to the High Council of Erudin. Please deliver this message to her promptly. I must stay here for a while longer and converse further with my Kejekan friends.");
-    quest::summonitem(2049); # Item: Rolled Up Strip of Cloth 
+    quest::summonitem(2049); # Item: Rolled Up Strip of Cloth
   }
 }
 #END of FILE Zone:warrens  ID:101087 -- Aderius_Rhenar

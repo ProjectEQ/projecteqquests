@@ -22,6 +22,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 28787 => 1, 28745 => 1)) { #Planar Blood Brew, Planar Traveler's Manual
     quest::say("Wow, this is great! Wow! This is may be the best Planar Blood Brew I have ever tasted! You have passed the first test with flying colors. Here, you take this book and learn well from it. When you are ready for your next lesson, speak to Xasri Virek.");
     quest::summonitem(28788); #Beginner Combat Manual
+    quest::exp(500000);
   }
   plugin::return_items(\%itemcount);
 }

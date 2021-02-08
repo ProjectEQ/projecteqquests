@@ -5,7 +5,7 @@ function event_say(e)
 		e.self:Say("Greetings. I am Astaed Wemor of the Paladins of the Temple of Life. We are the defenders of the all-giving Prime Healer.  Are you [here to pray] or are you [here to assist the temple]?");
 	elseif(e.message:findi("here to pray")) then
 		e.self:Say("Then pray long and silently, " .. e.other:GetName() .. ".  Fill your soul with the breath of life.");
-	elseif(e.message:findi("hassist the temple")) then
+	elseif(e.message:findi("assist the temple")) then
 		e.self:Say("Good.  There are a few in the congregation who require assistance.  Will you be [traveling afar] or are you [staying close to Qeynos]?");
 	elseif(e.message:findi("traveling afar")) then
 		if (fac <= 3) then

@@ -19,7 +19,7 @@ sub EVENT_SAY {
 	}
 	if($text=~/ready/i){
 		quest::say('We shall spar then, I hope you are as prepared as you think you are.');
-		quest::movepc(106,-190.9,1089.8,-25.2); # Zone: elddara
+		quest::movepc(106,-190.9,1089.8,-25.2); # Zone: cabeast
 	}
 }
 

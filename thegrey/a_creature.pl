@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER {
   quest::emote("of living stone leaps out at you from amongst the rocks!");
-  quest::spawn2(quest::ChooseRandom(171063,171060,171055,171054,171053,171051,171064,171069),0,0,$x,$y,$z,$h); # NPC(s): a_boulder_fiend (171063), a_boulderling (171060), a_boulderling (171055), a_boulderling (171054), a_boulderling (171053), a_stone_beast (171051), #Stonehand (171064), #Boulder (171069)
+  quest::spawn2(quest::ChooseRandom(171063,171060,171055,171054,171053,171051,171063,171060,171064,171069),0,0,$x,$y,$z,$h); # NPC(s): a_boulder_fiend (171063), a_boulderling (171060), a_boulderling (171055), a_boulderling (171054), a_boulderling (171053), a_stone_beast (171051), a_boulder_fiend (171063), a_boulderling (171060), #Stonehand (171064), #Boulder (171069)
   quest::depop_withtimer();
 }
 

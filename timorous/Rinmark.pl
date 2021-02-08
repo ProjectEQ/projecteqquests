@@ -4,8 +4,13 @@ sub EVENT_SPAWN {
   quest::settimer("Depop3",90);
 }
 
-sub EVENT_AGGRO {
-  quest::say("Good, your sense of timing is correct. Now begin! Show me that your training has not been wasted.");
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::stoptimer("Depop3");
+		quest::say("Good, your sense of timing is correct. Now begin! Show me that your training has not been wasted.");
+	} else {
+		quest::settimer("Depop3",90);
+	}
 }
 
 sub EVENT_TIMER {

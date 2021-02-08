@@ -3,6 +3,6 @@ function event_spawn(e)
 end
  
 function event_enter(e)
-	eq.spawn2(164122, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+	eq.spawn2(164122, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- NPC: an_ancient_thought_horror
 	eq.depop();
 end

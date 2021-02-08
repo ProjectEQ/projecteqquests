@@ -23,6 +23,10 @@ sub EVENT_ITEM {
     quest::summonitem(10531); # Item: Rune of Fortune
   }
 
+ if($platinum == 5) {
+    quest::say("I see that Sultin has sent you to me.  Very well, here is your rune."); # Made this text up
+    quest::summonitem(10531); # Item: Rune of Fortune
+  }
   # Tashania Quest
   # items needed:
   #     10791 Glowing Coin of Tash

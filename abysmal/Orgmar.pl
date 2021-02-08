@@ -16,7 +16,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 55621 => 1)) { # A rotting Satchel
     quest::say("Ye done a good deed this day, me friend. Not that I am scared of ghosts or anything. Take this as your reward. I found it on one of me adventures in the new land. I know it be a bit gruesome lookin', but it has some magic power. Now to see if I can get rid o' this ghost. Farewell.");
-    quest::summonitem(55622); # Item: Gouged Out Ukun Eye 
+    quest::summonitem(55622); # Item: Gouged Out Ukun Eye
     quest::exp(50000);
   }
   plugin::return_items(\%itemcount);

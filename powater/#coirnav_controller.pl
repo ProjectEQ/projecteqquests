@@ -122,7 +122,7 @@ sub EVENT_TIMER {
 sub KICK_ALL_PLAYERS {
   #zone all players back to PoKnowledge
   foreach $pc ($entity_list->GetClientList()) {
-    $pc->MovePC(202, 1456, -1, -100, 0); # Zone: lavastorm
+    $pc->MovePC(202, 1456, -1, -100, 0); # Zone: poknowledge
   }
 }
 

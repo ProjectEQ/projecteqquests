@@ -48,7 +48,10 @@ sub EVENT_SAY {
           }
           foreach $player (@player_list) {
             $pc = $entity_list->GetClientByName($player);
-            $pc->MovePC(281,-521,36,-8,332); # Zone: podisease
+            if ($pc)
+            {
+              $pc->MovePC(281,-521,36,-8,332); # Zone: qinimi
+            }
            }
           $event_started = 1;
           quest::spawn2(281127,0,0,0,0,0,188); #Trigger_Qinimi_2
@@ -101,7 +104,10 @@ sub EVENT_SIGNAL {
 sub REMOVE_PLAYERS {
   foreach $player (@player_list) {
     $pc = $entity_list->GetClientByName($player);
-    $pc->MovePC(281,-1053,438,-16,2); # Zone: podisease
+    if ($pc)
+    {
+      $pc->MovePC(281,-1053,438,-16,2); # Zone: qinimi
+    }
   }
   @player_list = ();
 }

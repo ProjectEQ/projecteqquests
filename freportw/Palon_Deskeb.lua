@@ -16,6 +16,10 @@ function event_trade(e)
 		e.self:Say("");
 		e.other:SummonItem(eq.ChooseRandom(13002,13007)); -- Item(s): Torch (13002), Ration (13007)
 		e.other:Ding();
+		e.other:Faction(220,5,0); -- Arcane Scientists
+		e.other:Faction(281,1,0); -- Knights of Truth
+		e.other:Faction(296,-1,0); -- Opal Dark Briar
+		e.other:Faction(330,-1,0); -- Freeport Militia
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

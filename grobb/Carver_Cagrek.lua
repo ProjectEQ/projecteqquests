@@ -29,7 +29,7 @@ function event_trade(e)
 		e.other:Faction(235,5,0); -- Faction: DaBashers
 		e.other:Faction(222,-1,0); -- Faction: Broken Skull Clan
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 13409, item2 = 13409, item3 = 13409, gold = 10})) then
-		e.other:SummonItem(12211); -- Item: Ogre Oven Mittens
+		e.other:SummonItem(12211); -- Item: Grobb Oven Mittens
 		e.other:Ding();
 		e.other:AddEXP(145); -- seen at level 1
 		e.other:Faction(235,2,0); -- Faction: DaBashers

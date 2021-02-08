@@ -16,17 +16,17 @@ function Craftmaster_HP(e)
 		e.self:Emote("produces a bright red crystal and tosses it to the ground near her feet. The crystal shatters and a fire elemental surges forth and attacks.");
 		e.self:Shout("Meet Flamegore the Destroyer! Eliminate them, my servant.");
 		eq.set_next_hp_event(45);
-		eq.spawn2(334089, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(334089, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Flamegore
 	elseif (e.hp_event == 45) then
 		e.self:Emote("produces a bright red crystal and tosses it to the ground near her feet. The crystal shatters and a fire elemental surges forth and attacks.");
 		e.self:Shout("If Flamegore was not enough to destroy you, then I shall unleash Sizzle! His heat is extravagant and even he can barely control it!");	
 		eq.set_next_hp_event(20);
-		eq.spawn2(334090, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(334090, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Sizzle
 	elseif (e.hp_event == 20) then
 		e.self:Emote("produces a bright red crystal and tosses it to the ground near her feet. The crystal shatters and a fire elemental surges forth and attacks.");
 		e.self:Shout("You leave me no choice! Come forth, Hotspot!");
 		eq.set_next_hp_event(10);
-		eq.spawn2(334091, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(334091, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Hotspot
 	elseif (e.hp_event == 10) then
 		local npc_list = eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
@@ -77,11 +77,11 @@ end
 
 function HotspotDeath(e)
 	e.self:Emote("flares up and then dies out completely. Where he was there are five small elementals.");
-	eq.spawn2(334097, 0, 0, e.self:GetX()+5, e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-	eq.spawn2(334098, 0, 0, e.self:GetX()-5, e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
-	eq.spawn2(334099, 0, 0, e.self:GetX(), e.self:GetY()+5, e.self:GetZ(), e.self:GetHeading());
-	eq.spawn2(334100, 0, 0, e.self:GetX(), e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading());
-	eq.spawn2(334101, 0, 0, e.self:GetX()-5, e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading());	
+	eq.spawn2(334097, 0, 0, e.self:GetX()+5, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Flareup
+	eq.spawn2(334098, 0, 0, e.self:GetX()-5, e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: #Flametop
+	eq.spawn2(334099, 0, 0, e.self:GetX(), e.self:GetY()+5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Cinder
+	eq.spawn2(334100, 0, 0, e.self:GetX(), e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Coal
+	eq.spawn2(334101, 0, 0, e.self:GetX()-5, e.self:GetY()-5, e.self:GetZ(), e.self:GetHeading()); -- NPC: #Burnscar
 end
 
 function event_encounter_load(e)

@@ -9,7 +9,7 @@ function event_signal(e)
 
 	if(e.signal == 1) then -- azarack
 		counter = counter + 1;
-		if(counter == 9) then
+		if(counter == 10) then
 			eq.spawn2(71059,0,0,-602.2,-254.4,-333.5,403); -- NPC: Protector_of_Sky
 			counter = 0;
 		end
@@ -30,6 +30,7 @@ end
 function event_timer(e)
 	if(e.timer == "87") then
 		eq.spawn2(71075,0,0,-996.3,910.5,192.3,36); -- NPC: Keeper_of_Souls
+		eq.stop_timer("87");
 	end
 end
 

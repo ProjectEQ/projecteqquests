@@ -72,8 +72,8 @@ end
 
 function Mainil_Timer(e)
 	if e.timer=="adds_on_granos" then
-		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,128):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);
-		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,112):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1);				
+		eq.spawn2(249053,0,0,620.24,-1027.12,75.66,128):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1); -- NPC: a_blade_of_the_First
+		eq.spawn2(249090,0,0,620.54,-1039.19,74.15,112):AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249001),1); -- NPC: a_blade_of_the_First
 	elseif e.timer=="pause_wander" then
 		e.self:PauseWandering(3);
 	elseif e.timer=="finish_note" then
@@ -359,14 +359,10 @@ function First_Death(e)
 		end
 		eq.spawn2(249075,0,0,138.56,681.64,-16.87,128); --#Chest_of_the_Foci (249075)
 		eq.spawn2(249076,0,0,153.5,660.5,-38.87,256); --#The_Slimy_Chest_of_the_Witness (249076)
-		
-		local instance_requests = require("instance_requests");
-		local lockout_name = 'LDON_guke';
-		local instance_id = eq.get_zone_instance_id();
-		local raid_list = eq.get_characters_in_instance(instance_id);
 
-		for k,v in pairs(raid_list) do
-			eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0, v, 0);
+		local dz = eq.get_expedition()
+		if dz.valid then
+			dz:AddReplayLockout(eq.seconds("4d12h"))
 		end
 	end
 end

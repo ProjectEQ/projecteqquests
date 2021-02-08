@@ -22,8 +22,8 @@ sub EVENT_SAY
         if ($group) { 
           for ($count = 0; $count < $group->GroupCount(); $count++) {
             $pc = $group->GetMember($count);
-            if ($pc->CalculateDistance($x,$y,$z) <= 50) {
-              $pc->MovePC(201,937,-703, 53, 300); # Zone: lakerathe
+            if ($pc && $pc->IsClient() && $pc->CalculateDistance($x,$y,$z) <= 50) {
+              $pc->MovePC(201,937,-703, 53, 300); # Zone: pojustice
             }
           }
         }

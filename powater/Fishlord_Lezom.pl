@@ -4,6 +4,7 @@ my $spawnNpcID;
 my $trashCount;
 my $numSpawned;
 my $miniNamedCount = 0;
+my $eventstarted = 0;
 
 sub EVENT_SPAWN {
 	$spawnLoc = 0;
@@ -12,6 +13,7 @@ sub EVENT_SPAWN {
 	$trashCount = 0;
 	$numSpawned = 0;
 	$miniNamedCount = 1;
+	$eventstarted = 0;
 }
 
 sub EVENT_SAY {
@@ -24,7 +26,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-	if($platinum == 100 && !defined$qglobals{fishlord}) {
+	if($platinum == 100 && $eventstarted == 0) {
 		quest::say("Very well, I will summon forth the creatures of the deep. They do not like being disturbed so you must protect me from harm. I am very vulnerable when summoning the dwellers of the deep. If death claims me the summoning will be finished. During the course of the summoning many powerful dwellers will appear. You must watch for them.");
 		
 		quest::settimer("Trash", 30);
@@ -33,7 +35,7 @@ sub EVENT_ITEM {
 		
 		quest::settimer("FinalNamed", 1200);
 		
-		quest::setglobal("fishlord", 1, 3, "H4");
+		$eventstarted = $eventstarted + 1;
 		
 		quest::moveto(143.8, 131.5, -377.9, 0, 1);
 	}

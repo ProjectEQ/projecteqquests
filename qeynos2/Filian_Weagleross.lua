@@ -25,7 +25,7 @@ function event_say(e)
 		e.other:SummonItem(22614); -- Item: Enchanted Greaves Mold
 	elseif(e.message:findi("gauntlet")) then
 		e.self:Say("To create your gauntlet material you will need to combine 3 Bricks of Crude of Iron Ore. 1 Spider Legs. 1 Lion Tooth. 1 Wolf Meat and 1 Bandit Sash in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Gauntlets of the Prime Healer Initiate .");
-		e.other:SummonItem(22615); -- Item: Enchanted Gauntlet Mold  
+		e.other:SummonItem(22615); -- Item: Enchanted Gauntlet Mold
 	elseif(e.message:findi("breastplate")) then
 		e.self:Say("To create your breastplate material you will need to combine 5 Bricks of Crude of Iron Ore. 1 High Quality Cat Pelt. 1 Golden Bandit Tooth. 1 Shadow Wolf Paw. 1 Matted Lion Pelt and 1 Lock of Scarecrow Straw in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Breastplate of the Prime Healer Initiate. When you have completed your armor I have a [delivery] for you to make.");
 		e.other:SummonItem(22616); -- Item: Enchanted Breastplate Mold

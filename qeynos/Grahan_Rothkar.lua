@@ -19,33 +19,33 @@ function event_trade(e)
 		e.self:Say("I thank you. I must admit I had my doubts, but you have proven yourself a true warrior. I salute you. You can be of some assistance to me.It see ms as though there has been a [second escaped gladiator] and I have a reward waiting for a human warrior.");
 		e.other:SummonItem(5033); -- Item: Bronze Broad Sword
 		e.other:Ding();
-		e.other:Faction(311,1,0); -- Steel Warriors
-		e.other:Faction(262,1,0); -- Guards of Qeynos
-		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(330,-5,0); -- Freeport Militia
-		e.other:Faction(281,1,0); -- Knights of Truth
-		e.other:AddEXP(10000);
+		e.other:Faction(311,10,0); -- Steel Warriors
+		e.other:Faction(262,2,0); -- Guards of Qeynos
+		e.other:Faction(230,-1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-1,0); -- Freeport Militia
+		e.other:Faction(281,2,0); -- Knights of Truth
+		e.other:AddEXP(2550);
 		e.other:GiveCash(0,0,0,2);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12188})) then
 		e.self:Say("You are a true Steel Warrior!! Now you shall wear my hero bracers. I designed them for my greatest gladiators and you have shown yourself mighty enough to wear them.");
 		e.other:SummonItem(12189); -- Item: Hero Bracers
 		e.other:Ding();
-		e.other:Faction(311,1,0); -- Steel Warriors
-		e.other:Faction(262,1,0); -- Guards of Qeynos
-		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(330,-5,0); -- Freeport Militia
-		e.other:Faction(281,1,0); -- Knights of Truth
-		e.other:AddEXP(10000);
+		e.other:Faction(311,75,0); -- Steel Warriors
+		e.other:Faction(262,15,0); -- Guards of Qeynos
+		e.other:Faction(230,-11,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-11,0); -- Freeport Militia
+		e.other:Faction(281,15,0); -- Knights of Truth
+		e.other:AddEXP(640800);
 		e.other:GiveCash(0,0,0,2);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13398})) then
 		e.self:Say("I salute you. You have done well and crossed into the brotherhood of the Steel Warriors. Welcome. Take this. It is the mark of a Steel Warrior. Live the way of the warrior.");
 		e.other:SummonItem(13229); -- Item: Steel Warrior Bracer
 		e.other:Ding();
-		e.other:Faction(311,15,0); -- Steel Warriors
-		e.other:Faction(262,1,0); -- Guards of Qeynos
-		e.other:Faction(230,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(330,-5,0); -- Freeport Militia
-		e.other:Faction(281,1,0); -- Knights of Truth
+		e.other:Faction(311,25,0); -- Steel Warriors
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(230,-3,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-3,0); -- Freeport Militia
+		e.other:Faction(281,5,0); -- Knights of Truth
 		e.other:AddEXP(8000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18894})) then
 		e.self:Say("So you are ready to encounter your final test. I wish you well, young warrior. Take this key to the pen on the left along the wall with three doors. There you shall meet your final challenge. Return with proof of victory. Exit before it is at an end and I shall not help you.");
@@ -53,6 +53,11 @@ function event_trade(e)
 		eq.unique_spawn(1303,0,0,-520,-120,-24.5); -- NPC: a_young_lion
 		eq.set_timer("goaway",600000);
 		e.other:Ding();
+		e.other:Faction(311,5,0); -- Steel Warriors
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(230,-1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,-1,0); -- Freeport Militia
+		e.other:Faction(281,1,0); -- Knights of Truth
 		e.other:AddEXP(2000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

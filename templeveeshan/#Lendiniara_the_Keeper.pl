@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if ($faction == 1) {
+  if ($faction <= 3) {
     if ($text=~/hail/i) {
       quest::say("Greetings, $name. I am the keeper of relics. If you are brave I have tasks to test your might and perhaps rewards.");
     }
@@ -29,50 +29,50 @@ sub EVENT_SAY {
     }
   }
   else {
-    quest::say("I do not know you well enough to entrust you with such a quest, yet.");
+    quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 
 sub EVENT_ITEM {
-  if ($faction == 1) {
+  if ($faction <= 3) {
     if (plugin::check_handin(\%itemcount, 31262 => 1, 31261 => 1, 31263 => 1, 31260 => 1)) { ## request of the arcane
       quest::summonitem(31463); # Item: Mask of the Silver Eyes
-      quest::emote("looks happy as she hands you the reward.");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
-      quest::faction(436,+75); # yelinak
-      quest::faction(448,-100); # zek
+      quest::faction(436,+18); # yelinak
+      quest::faction(448,-37); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31267 => 1, 31266 => 1, 31265 => 1, 31264 => 1)) { ## request of the strong
       quest::summonitem(31464); # Item: Silver Mask of the Slayer
-      quest::emote("looks happy as she hands you the reward.");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
-      quest::faction(436,+75); # yelinak
-      quest::faction(448,-100); # zek
+      quest::faction(436,+18); # yelinak
+      quest::faction(448,-37); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31259 => 1, 31270 => 1, 31253 => 1, 31250 => 1)) { ## test of the ruby tear
       quest::summonitem(31460); # Item: Silver Charm of Tranquility
-      quest::emote("looks happy as she hands you the reward.");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
-      quest::faction(436,+75); # yelinak
-      quest::faction(448,-100); # zek
+      quest::faction(436,+18); # yelinak
+      quest::faction(448,-37); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31251 => 1, 31269 => 1, 31252 => 1, 31254 => 1)) { ## test of the platinum tear
       quest::summonitem(31461); # Item: Silver Bracelet of Speed
-      quest::emote("looks happy as she hands you the reward.");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
-      quest::faction(436,+75); # yelinak
-      quest::faction(448,-100); # zek
+      quest::faction(436,+18); # yelinak
+      quest::faction(448,-37); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31256 => 1, 31255 => 1)) { ## test of the emerald tear
       quest::summonitem(31462); # Item: Buckler of Insight
-      quest::emote("looks happy as she hands you the reward.");
+      quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");
       quest::faction(430,+75); # claws of veeshan
-      quest::faction(436,+75); # yelinak
-      quest::faction(448,-100); # zek
+      quest::faction(436,+18); # yelinak
+      quest::faction(448,-37); # zek
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 69333 => 1)) { ## Note from Xygoz

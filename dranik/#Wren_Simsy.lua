@@ -25,7 +25,7 @@ function event_timer(e)
 				num_players=num_players+1;
 				eq.debug("num_players: " .. num_players);
 				if num_players > 4 then
-					eq.spawn2(336255, 0, 0, e.self:GetX()-10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
+					eq.spawn2(336255, 0, 0, e.self:GetX()-10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #a_shadowed_assassin
 				end
 			end
 		end	
@@ -35,8 +35,8 @@ end
 function event_combat(e)
 	if e.joined==true then
 		eq.set_timer("check_players",1000);
-		eq.spawn2(336255, 0, 0, e.self:GetX()+10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(336255, 0, 0, e.self:GetX()-10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
+		eq.spawn2(336255, 0, 0, e.self:GetX()+10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #a_shadowed_assassin
+		eq.spawn2(336255, 0, 0, e.self:GetX()-10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #a_shadowed_assassin
 	else
 		eq.stop_timer("check_players");
 	end

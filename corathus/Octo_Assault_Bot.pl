@@ -63,7 +63,7 @@ sub EVENT_TIMER
 	}
 	elsif($timer eq "bot_spawn")
 	{
-		quest::spawn2(365026, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+		quest::spawn2(365026, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading()); # NPC: Suppression_Bot
 	}
 	elsif($timer eq "anni_start")
 	{
@@ -211,7 +211,7 @@ sub EVENT_TIMER
 
 sub EVENT_DEATH_COMPLETE
 {
-	quest::spawn2(365173, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+	quest::spawn2(365173, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading()); # NPC: #Shadow_of_the_Octo_Assault_Bot
 	quest::depopall(365026);
 	quest::emote("sputters and starts to give off sparks before collapsing into a pile of broken machinery.");
 	quest::spawn_condition("corathus", 11, 0);

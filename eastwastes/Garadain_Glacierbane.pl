@@ -35,9 +35,10 @@ sub EVENT_SAY {
   if ($text=~/beast/i) {
     quest::say("A rabid tundra kodiak has been feeding on our people for weeks now. If Boridain ever stumbled across the critter I doubt he'd stand a chance. I have a solution, but it would require the [assistance] of an outsider.");
   }
-  if ($text=~/assistance/i) {
+  if ($text=~/assistance/i && !plugin::check_hasitem($client, 30265)) {
     quest::say("I'm taking a liking to you, stranger. Your eagerness to help us will not go unnoticed. Find my nephew and give him this axe. It should keep him from hurting himself. Return to me with the ring and proof that he is safe.");
     quest::summonitem(30265); # Item: Dull Bladed Axe
+    quest::settimer(4, 20);
   }
 
 ###########################
@@ -241,44 +242,29 @@ sub EVENT_ITEM {
     quest::exp(120000);
   }
 
-# Ring 8 reward moved to #Garadain_Glacierbane to emulate Live's timing of head turn-in
-#  if (plugin::check_handin(\%itemcount, 1092 => 1)) {
-#    quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your #help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you #ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
-#    quest::summonitem(30164);
-#
-#   Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
-#    quest::faction(406,30);
-#    quest::faction(405,30);
-#    quest::faction(419,-30);
-#    quest::faction(448,-30);
-#
-#    quest::exp(2000000);
-#  }
-   plugin::return_items(\%itemcount);
+  # Ring 8 reward moved to #Garadain_Glacierbane to emulate Live's timing of head turn-in
+  # Uncomment this block to allow turn-ins at any time
+  # if (plugin::check_handin(\%itemcount, 1092 => 1)) {
+  #   quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your #help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you #ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
+  #   quest::summonitem(30164);
+
+  #   # Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
+  #   quest::faction(406,30);
+  #   quest::faction(405,30);
+  #   quest::faction(419,-30);
+  #   quest::faction(448,-30);
+
+  #   quest::exp(2000000);
+  # }
+
+  plugin::return_items(\%itemcount);
 }
 
-sub EVENT_WAYPOINT_DEPART {
-  if ($walk1 == undef) {
-    $walk1=$walk1+1;
-    $walk2=undef;
+sub EVENT_WAYPOINT_ARRIVE {
+  if ($wp == 1) {
     quest::settimer(11,20);
   }
-  elsif ($walk2 == undef) {
-    $walk2=$walk2+1;
-    $walk3=undef;
-  }
-  elsif ($walk3 == undef) {
-    quest::pause(200);
-    quest::settimer(12,10);
-    $walk3=$walk+1;
-    $walk4=undef;
-  }
-  elsif ($walk4 == undef) {
-    $walk4=$walk4+1;
-    $walk5 = undef
-  }
-  elsif ($walk5 == undef) {
-    $walk5=$walk5+1;
+  elsif ($wp == 4) {
     quest::spawn2(116576,237,0,521.2,-3140,195.6,261); # NPC: #Garadain_Glacierbane
     quest::depop_withtimer();
   }
@@ -288,15 +274,23 @@ sub EVENT_TIMER {
   if($timer == 11) {
     quest::stoptimer(11);
     quest::say("Follow me closely, friend, time is of the essence. I will describe our situation as we walk.");
+    quest::settimer(12,25);
   }
   elsif($timer == 12) {
     quest::stoptimer(12);
     quest::say("The Dain's own royal troops will be at our disposal for the battle. This is good news, they are hardened, experienced soldiers. The bad news is that our sources indicate that the Ry`gorr have been alerted to our presence and will be ready for an attack. This is most unfortunate... They will not go down without a fierce fight.");
-    quest::settimer(3,120);
+    quest::settimer(3,25);
   }
   elsif($timer == 3) {
     quest::stoptimer(3);
     quest::say("It is of utmost importance that you stay with me throughout the fight. Your focus must be on killing Chief Rygorr and keeping me alive, mind that you do not become distracted. If I fall the Dain's men will retreat and you'll definitely be cut down.");
+  }
+  elsif($timer == 4) {
+    quest::stoptimer(4);
+    # Spawn Boridain if not up
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(116149) && !$entity_list->IsMobSpawnedByNpcTypeID(116191)) {
+      quest::spawn_from_spawn2(22165);
+    }
   }
 }
 

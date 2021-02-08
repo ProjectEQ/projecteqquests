@@ -12,11 +12,11 @@ function event_say(e)
 			e.self:CastSpell(4580,e.other:GetID(),0,1); -- Spell: Teleport: Nedaria
 		elseif(e.message:findi("north ro")) then
 		--e.self:CastSpell(4177,e.other:GetID(),0,1);		 
-		e.other:MovePC(34, -914, 2679, -25, 20); -- Zone: cauldron		 
+		e.other:MovePC(34, -914, 2679, -25, 20); -- Zone: nro
 
 		elseif(e.message:findi("south ro")) then
 		--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-		e.other:MovePC(35, 1033, -1447, -23, 166); -- Zone: causeway
+		e.other:MovePC(35, 1033, -1447, -23, 166); -- Zone: sro
 
 		end
 	else -- No Adventurers Stone

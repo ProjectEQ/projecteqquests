@@ -47,7 +47,7 @@ function event_signal(e)
 	elseif (e.signal == 2) then
 		-- If all the Deranged Lesser Summoners are dead - spawn the Hexxt Chaos Provoker
 		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(293215) == false ) then
-			eq.spawn2(293214,0,0,684,719,-460,450); -- NPC: #Hexxt_Chaos_Provoker   
+			eq.spawn2(293214,0,0,684,719,-460,450); -- NPC: #Hexxt_Chaos_Provoker
 		end
 
 	elseif (e.signal == 3) then

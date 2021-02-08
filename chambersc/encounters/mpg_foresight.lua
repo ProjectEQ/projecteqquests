@@ -7,7 +7,6 @@
 -- Raid Trial Version 2 of zone
 local event_started = false;
 local instance_id;
-local lockout_name = 'MPG_foresight';
 local lockout_win = 108;
 local this_bit = 4;
 local player_list;
@@ -78,7 +77,7 @@ function Start_Event(e)
   eq.spawn2(306022, 0, 0, -223, 260, 66, 276); -- a kyv sureshot
   eq.spawn2(306023, 0, 0, -188, 257, 66, 166);  -- a kyv sureshot
 
-  eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
+  eq.spawn2(306011, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_hazard
 
   eq.set_timer("emotes", 5 * 1000);
   eq.set_timer("equipment", equipment_timer * 1000);
@@ -90,7 +89,6 @@ function Boss_Spawn(e)
   event_started = false;
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
-  lockout_name = 'MPG_foresight';
   lockout_win = 108;
   this_bit = 4;
   emote_grace = 8;
@@ -102,6 +100,12 @@ function Boss_Say(e)
       if ( e.message:findi("hail") ) then
         e.self:Say("This is the Mastery of Foresight Trial. You must react quickly to deadly and unforgiving hazards. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
       elseif ( e.message:findi("begin") ) then
+        local dz = eq.get_expedition()
+        if dz.valid then
+          dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+          dz:AddReplayLockout(eq.seconds("3h"))
+        end
+
         e.self:Say("Very well!  Let the battle commence!");
         Start_Event(e);
       end
@@ -143,12 +147,12 @@ function Boss_Timer(e)
     client = eq.get_entity_list():GetRandomClient(-204,270,65,150000);
     if (client.valid) then
       num = math.random(1,table.getn(equipment));
-      equipment_client = {client, num};
+      equipment_client = {client:GetID(), num};
       client:Message(14, equipment[num][1]);
       eq.set_timer("equipment_action", 3 * 1000);
     end
   elseif (e.timer == "equipment_action") then
-    client = equipment_client[1];
+    client = eq.get_entity_list():GetClientByID(equipment_client[1]);
     if (client.valid) then 
       num = equipment_client[2];
       equipment[num][2](e.self,client);
@@ -198,12 +202,11 @@ function Kyv_Timer(e)
   local i;
   if (e.timer == 'kyv') then
     eq.stop_timer(e.timer);
-
     i = e.self:GetNPCTypeID();
     client = eq.get_entity_list():GetRandomClient(-204, 270, 65, 150000);
     if (client.valid) then
       num = math.random(1,table.getn(kyvs));
-      kyv_targets[i] = { client, num, {client:GetX(), client:GetY() }};
+      kyv_targets[i] = { client:GetID(), num, {client:GetX(), client:GetY() }};
       client:Message(14, kyvs[num][1]);
       
       eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
@@ -212,7 +215,7 @@ function Kyv_Timer(e)
   elseif (e.timer == 'kyv_action') then
     eq.stop_timer(e.timer);
     i = e.self:GetNPCTypeID();
-    client = kyv_targets[i][1];
+	client = eq.get_entity_list():GetClientByID(kyv_targets[i][1]);
     if (client.valid) then 
       loc = kyv_targets[i][3];
       if ( kyvs[kyv_targets[i][2]][2](e, client, loc) == false ) then
@@ -323,9 +326,9 @@ function ae_check(e, xmin, xmax, ymin, ymax)
       eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
       eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
       if (x < xmin or x > xmax or y < ymin or y > ymax) then
+        v:Message(14,'The room explodes with chaotic energy.');
         --e.self:CastSpell(5693, v:GetID());
         v:Damage(e.self, 5000, 5693, 1);
-        v:Message(14,'The room explodes with chaotic energy.');
       else
         v:Message(14,'The room explodes with chaotic energy.');
         v:Message(14,'You escape the blast unscathed.');
@@ -433,8 +436,13 @@ function Event_Win(e)
   eq.spawn2(306024, 0, 0, -204, 274, 66, 144); -- NPC: Shell_of_the_Master_
 
   -- Update the Lockouts
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockoutDuration(eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+  end
+
   local mpg_helper = require("mpg_helper");
-  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
 
   eq.depop_with_timer();
 end

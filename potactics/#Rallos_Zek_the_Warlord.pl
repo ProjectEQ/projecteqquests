@@ -18,9 +18,14 @@ sub EVENT_SPAWN {
 	quest::disable_spawn2(157400);
 }
 
-sub EVENT_AGGRO {
-        quest::settimer(1,60);
-		quest::settimer("dt_outofarena",5);
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::settimer(1,60); #timer for adds to spawn
+	quest::settimer("dt_outofarena",5);
+  }
+  else {
+	$npc->SaveGuardSpot($x, $y, $z, $h); #doesnt move
+  }
 }
 
 sub EVENT_DEATH_COMPLETE {
@@ -28,7 +33,6 @@ sub EVENT_DEATH_COMPLETE {
 	quest::stoptimer(2);
 	quest::stoptimer(1);
 	quest::signalwith(214123, 214113);         # let the trigger know RZtW died
-	quest::signalwith(214114,90,1); # NPC: A_Chaos_Wraith
 	foreach my $spawn2 (@spawn2list) {   # Depsawn all the mobs in the pit
 		# Set pit mobs to respawn in 30 minutes. comment this line out to not set the 30 minute timer for testing.
 		quest::updatespawntimer($spawn2,1800000);
@@ -42,7 +46,7 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_TIMER {
-	if($timer == 2) {
+	if($timer eq 2) {
 		foreach my $spawn2 (@spawn2list) {   # Depsawn all the mobs in the pit
 			# Set pit mobs to respawn in 30 minutes. comment this line out to not set the 30 minute timer for testing.
 			quest::updatespawntimer($spawn2,1800000);
@@ -53,36 +57,27 @@ sub EVENT_TIMER {
 		quest::updatespawntimer(157400,1800000);
 		#re-enable the spawn2 entry for piglet
 		quest::enable_spawn2(157400);
-		
 		quest::stoptimer(2);
 		quest::stoptimer(1);
 		quest::depopall(214114);
 		quest::depop();
 	}
 
-	if($timer == 1) {
+	if($timer eq 1) {
 		if($npc->IsEngaged()) {
-			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-100,-293,510); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-295,-293,136); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,185,-293,0); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,-95,-293,132); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-100,-293,510); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,815,-295,-293,136); # NPC: A_Chaos_Wraith
-			quest::spawn2(214114,0,0,565,185,-293,0); # NPC: A_Chaos_Wraith
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,519,216,-293,132); # NPC(s): A_Chaos_Wraith (214114)
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,647,346,-293,132); # NPC(s): A_Chaos_Wraith (214114)
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,853,220,-293,132); # NPC(s): A_Chaos_Wraith (214114)
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,779,-30,-293,132); # NPC(s): A_Chaos_Wraith (214114)
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,507,-164,-293,132); # NPC(s): A_Chaos_Wraith (214114)
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,847,-327,-293,132); # NPC(s): A_Chaos_Wraith (214114)
+			quest::spawn2(quest::ChooseRandom(214114,214136),0,0,518,-357,-293,132); # NPC(s): A_Chaos_Wraith (214114)
 			quest::me("The corpses across the grounds of the arena begin to twitch and spasm as the will of the Warlord brings them to life.");
-			my @npc_list = $entity_list->GetNPCList();
-			foreach $npc (@npc_list) {
-				if($npc->GetNPCTypeID() == 214114) {
-					$npc->AddToHateList($npc->GetHateTop(), 1);
-				}
-			}
 		} else {		
 			quest::stoptimer(1);
 		}
 	}
-	if($timer == "dt_outofarena") {
+	if($timer eq "dt_outofarena") {
 		my @hate_list = $npc->GetHateList();
 		my $hate_count = @hate_list;
 		if ($hate_count > 0) {

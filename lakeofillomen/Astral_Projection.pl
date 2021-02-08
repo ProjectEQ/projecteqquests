@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   # Spawn: Vorash
   quest::spawn2(85211,0,0,$x,$y,$z,$h); # NPC: Vorash
   # Spawn: Deep
-  quest::spawn2(85223,0,0,$x,$y,$z,$h); # NPC: Deep  
+  quest::spawn2(85223,0,0,$x,$y,$z,$h); # NPC: Deep
  }
   else {
     quest::say("I have no use for this, $name.");

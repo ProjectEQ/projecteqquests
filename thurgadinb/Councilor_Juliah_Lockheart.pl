@@ -13,7 +13,7 @@ sub EVENT_ITEM {
     my $x = $npc->GetX(); 
     my $y = $npc->GetY(); 
     my $z = $npc->GetZ(); 
-    quest::spawn2(129063,0,0,$x,$y,$z,$h); # NPC: #Councilor_Juliah_Lockheart 
+    quest::spawn2(129063,0,0,$x,$y,$z,$h); # NPC: #Councilor_Juliah_Lockheart
     quest::depop_withtimer(); 
   } 
   plugin::return_items(\%itemcount); 

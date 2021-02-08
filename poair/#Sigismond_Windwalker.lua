@@ -1,5 +1,5 @@
 function event_death_complete(e)
-eq.signal(215461,3);
+eq.signal(215461,3); -- NPC: #Dust_Trigger
 eq.depop_all(215460);
 end
 

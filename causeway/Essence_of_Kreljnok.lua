@@ -24,8 +24,8 @@ function event_timer(e)
 		eq.depop();
 	elseif e.timer=="spawn_adds" then
 		e.self:Emote("calls forth to the brood for two new souls to harvest!");
-		eq.spawn2(303131, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);
-		eq.spawn2(303130, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1);	
+		eq.spawn2(303131, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Kreljnok`s_Power
+		eq.spawn2(303130, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Kreljnok`s_Rage
 	elseif e.timer=="check_adds_alive" then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(303130) == true or eq.get_entity_list():IsMobSpawnedByNpcTypeID(303131) == true) then
 			e.self:ModifyNPCStat("hp_regen", "7000");

@@ -29,10 +29,10 @@ function event_trade(e)
 		e.self:Say("Oh my lord Tunare! I did not know my daughter was in trouble. I thank you for saving her. Here, I have returned the once lost power to this cloak. Wear it with my humblest gratitude.");
 		e.other:SummonItem(1057); --Mystic Cloak
 		e.other:Ding();
-		e.other:Faction(246,10,0); -- Faction: Faydarks Champions
-		e.other:Faction(275,10,0); -- Faction: Keepers of the Art
-		e.other:Faction(279,10,0); -- Faction: King Tearis Thex
-		e.other:Faction(239,-30,0); -- Faction: The Dead
+		e.other:Faction(246,2,0); -- Faction: Faydarks Champions
+		e.other:Faction(275,15,0); -- Faction: Keepers of the Art
+		e.other:Faction(279,3,0); -- Faction: King Tearis Thex
+		e.other:Faction(239,-3,0); -- Faction: The Dead
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

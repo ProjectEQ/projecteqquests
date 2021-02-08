@@ -59,22 +59,22 @@ function Carp_Death(e)
 	eq.spawn2(200035,0,0,402.43,141.60,-60.25,259.8); -- Spawn Avhi
 	eq.spawn2(200066,0,0,401.79,125.19,-60.25,259.8):AddToHateList(e.self:GetHateRandom(),1); -- spawn 4 initial skeletons with Avhi
 	eq.spawn2(200066,0,0,413.41,142.57,-60.25,259.0):AddToHateList(e.self:GetHateRandom(),1); -- Reanimated_Reaver x4.
-	eq.spawn2(200066,0,0,403.46,157.51,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1);
-	eq.spawn2(200066,0,0,392.19,142.16,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1);
+	eq.spawn2(200066,0,0,403.46,157.51,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Reanimated_Reaver
+	eq.spawn2(200066,0,0,392.19,142.16,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Reanimated_Reaver
 end
 
 function Avhi_Slay(e)
 	eq.spawn2(200066,0,0,401.79,125.19,-60.25,259.8):AddToHateList(e.self:GetHateRandom(),1); -- if Avhi kills any player
 	eq.spawn2(200066,0,0,413.41,142.57,-60.25,259.0):AddToHateList(e.self:GetHateRandom(),1); -- spawn 4 more skeletons
-	eq.spawn2(200066,0,0,403.46,157.51,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1);
-	eq.spawn2(200066,0,0,392.19,142.16,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1);
+	eq.spawn2(200066,0,0,403.46,157.51,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Reanimated_Reaver
+	eq.spawn2(200066,0,0,392.19,142.16,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Reanimated_Reaver
 end
 
 function Add_Slay(e)
 	eq.spawn2(200066,0,0,401.79,125.19,-60.25,259.8):AddToHateList(e.self:GetHateRandom(),1); -- if any adds kill a player character
 	eq.spawn2(200066,0,0,413.41,142.57,-60.25,259.0):AddToHateList(e.self:GetHateRandom(),1); -- spawn 4 more skeletons
-	eq.spawn2(200066,0,0,403.46,157.51,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1);
-	eq.spawn2(200066,0,0,392.19,142.16,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1);
+	eq.spawn2(200066,0,0,403.46,157.51,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Reanimated_Reaver
+	eq.spawn2(200066,0,0,392.19,142.16,-60.25,260.5):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Reanimated_Reaver
 end
 
 function Avhi_Spawn(e)

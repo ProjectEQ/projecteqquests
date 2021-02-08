@@ -800,7 +800,7 @@ if($text=~/unlock memories/i) {
 
 
 
-			$client->Message(12,"You have defeated Jiva within the Tower of Soluesk Ro.");
+			$client->Message(12,"You have defeated Jiva within the Tower of Solusek Ro.");
 
 
 

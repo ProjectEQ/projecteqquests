@@ -17,7 +17,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 10294})) then
 		e.self:Emote(" begins to quiver and shake. The formless entity appears to grow and shrink in complete disregard to natural laws. The light in the temple around you appears to slowly dim until you are surrounded by an impenetrable cloak of shadows. Fear grips your heart as your vision slowly adapts to accommodate the low light. When you can finally make out the figure before you, you find yourself silently praying for the darkness to return.");
-		eq.spawn2(179144,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		eq.spawn2(179144,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- NPC: #The_Spirit_of_Akelha`Ra
 		e.other:AddEXP(10000);
 		e.other:Ding();
 		eq.depop();

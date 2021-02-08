@@ -1,9 +1,6 @@
-function event_spawn(e)
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	eq.set_proximity(xloc - 50, xloc + 50, yloc - 50, yloc + 50);
+function event_combat(e)
+if (e.joined == true) then
+e.self:Emote("of foul smelling slime coats the floors here, as well as your feet.");
+eq.depop_with_timer();
 end
-
-function event_enter(e)
-	e.self:Emote("of foul smelling slime coats the floors here, as well as your feet.");
 end

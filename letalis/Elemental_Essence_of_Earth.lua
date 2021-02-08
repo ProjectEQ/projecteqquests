@@ -14,11 +14,11 @@ function event_timer(e)
 	if (e.timer=="depop") then
 		eq.depop();
 	elseif(e.timer=="avapower") then
-		e.self:CastSpell(808, e.self:GetTarget():GetID()); -- Spell: Avatar Power 		
+		e.self:CastSpell(808, e.self:GetTarget():GetID()); -- Spell: Avatar Power
 	elseif (e.timer=="bury") then
-		e.self:CastSpell(5001, e.self:GetTarget():GetID()); -- Spell: Bury 		
+		e.self:CastSpell(5001, e.self:GetTarget():GetID()); -- Spell: Bury
 	elseif (e.timer=="wave") then
-		e.self:CastSpell(4493, e.self:GetTarget():GetID()); -- Spell: Earth Wave		
+		e.self:CastSpell(4493, e.self:GetTarget():GetID()); -- Spell: Earth Wave
 	end
 	
 end

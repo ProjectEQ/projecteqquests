@@ -40,11 +40,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9342 => 1, 9341 => 1, 9340 => 1, 9339 => 1)) {
   quest::say("You cannot fathom the importance of your actions, $name. What you have accomplished cannot be claimed in truth by many and know that all sacrifices that you and those who have undoubtedly aided you have made in fulfilling this awesome feat shall not go without notice. The Crusaders of Veeshan can express neither the prominent magnitude of the honor that you have upheld in maintaining your convictions to the Claws of Veeshan.");
- quest::summonitem(30390); # Item: Scornful's Chromatic Talisman   
+ quest::summonitem(30390); # Item: Scornful's Chromatic Talisman
   }
   if (plugin::check_handin(\%itemcount, 9331 => 1, 9333 => 1, 9332 => 1, 9334 => 1)) {
  quest::say("You cannot fathom the importance of your actions, $name. What you have accomplished cannot be claimed in truth by many and know that all sacrifices that you and those who have undoubtedly aided you have made in fulfilling this awesome feat shall not go without notice. The Crusaders of Veeshan can express neither the prominent magnitude of the honor that you have upheld in maintaining your convictions to the Claws of Veeshan.");  
- quest::summonitem(30389); # Item: Ilsi's Chromatic Amulet 
+ quest::summonitem(30389); # Item: Ilsi's Chromatic Amulet
   }
   if (plugin::check_handin(\%itemcount, 9298 => 1, 9297 => 1)) {
      quest::say("You cannot fathom the importance of your actions, $name. What you have accomplished cannot be claimed in truth by many and know that all sacrifices that you and those who have undoubtedly aided you have made in fulfilling this awesome feat shall not go without notice. The Crusaders of Veeshan can express neither the prominent magnitude of the honor that you have upheld in maintaining your convictions to the Claws of Veeshan.");

@@ -8,6 +8,6 @@ local num_alive=0;
 		end
 		
 		if (num_alive ==0) then
-			eq.spawn2(20301,0,0, e.self:GetX()+7,e.self:GetY()+7,e.self:GetZ(),0);
+			eq.spawn2(20301,0,0, e.self:GetX()+7,e.self:GetY()+7,e.self:GetZ(),0); -- NPC: #Blackened_Dryad
 		end
 end

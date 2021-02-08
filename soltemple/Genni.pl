@@ -31,14 +31,14 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10032 => 2, 10000 => 1)) {
     quest::say("Here is your prize - a lambent star ruby.");
     quest::summonitem(10117); # Item: Lambent Star Ruby
-    quest::faction(415,15); # Faction: Temple of Solusek Ro
-    quest::faction(416,-15); # Faction: Shadowed Men
+    quest::faction(415,1); # Faction: Temple of Solusek Ro
+    quest::faction(416,-1); # Faction: Shadowed Men
   }
   elsif($gold == 550) {
     quest::say("Here is your prize - a lambent star ruby.");
-    quest::summonitem(10117); # Item: Lambent Star Ruby
-    quest::faction(415,15); # Faction: Temple of Solusek Ro
-    quest::faction(416,-15); # Faction: Shadowed Men
+    quest::summonitem(10031); # Item: Fire Opal
+    quest::faction(415,1); # Faction: Temple of Solusek Ro
+    quest::faction(416,-1); # Faction: Shadowed Men
   }
   elsif(plugin::check_handin(\%itemcount, 16507 => 1)) {
     quest::say("I see that Gavel has sent you to me. Very well, I have galvanized your platinum bar - take it.");

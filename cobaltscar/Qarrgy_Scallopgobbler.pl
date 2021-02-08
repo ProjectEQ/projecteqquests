@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::faction(431, -60); # Faction: Ulthork
     quest::exp(10000);
   }
-  elsif (plugin::check_handin(\%itemcount, 22814 => 1, 28515 => 1, 3509 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 22814 => 1, 28515 => 1, 21009 => 1)) {
     quest::emote("skillfully crafts the Sea Dragon Scales into a bracer, hands it to $name, and claps enthusiastically.");
     quest::summonitem(11589); # Item: Sea Dragonscale Bracer
     quest::faction(432, 30); # Faction: Othmir

@@ -28,7 +28,7 @@ sub EVENT_SIGNAL
 		#A_Confused_Air_Elemental
 		if(!$entity_list->IsMobSpawnedByNpcTypeID(215012)) 
 		{
-			quest::spawn2(215066,0,0,-403.1,-1375.5,320.8,469.8); # NPC: An_Elemental_Champion 
+			quest::spawn2(215066,0,0,-403.1,-1375.5,320.8,469.8); # NPC: An_Elemental_Champion
 			quest::spawn2(215066,0,0,-501.9,-1205.9,318.6,198); # NPC: An_Elemental_Champion
 			quest::spawn2(215066,0,0,-341.1,-1245.2,317.6,365.6); # NPC: An_Elemental_Champion
 			quest::spawn2(215066,0,0,-523.3,-1288.2,321.7,126); # NPC: An_Elemental_Champion

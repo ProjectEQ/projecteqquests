@@ -4,22 +4,22 @@ function Researcher_Death(e)
   if ( el:IsMobSpawnedByNpcTypeID(260061) == false ) then 
 
     -- Flawed Mutation
-    eq.spawn2(260062, 0, 0, 1382, -128, 140, 0):SetAppearance(3);
-    eq.spawn2(260062, 0, 0, 1406, -119, 145, 0):SetAppearance(3);
-    eq.spawn2(260062, 0, 0, 1419, -117, 145, 0):SetAppearance(3);
-    eq.spawn2(260062, 0, 0, 1398, -104, 145, 0):SetAppearance(3);
-    eq.spawn2(260062, 0, 0, 1354, -17, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1359, -26, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1367, -31, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1363, -27, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1372, -10, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1377, -18, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1375, -31, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1383, -24, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1393, -12, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1403, -7, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1381, -18, 145, 0):SetAppearance(3); 
-    eq.spawn2(260062, 0, 0, 1375, -2, 145, 0):SetAppearance(3); 
+    eq.spawn2(260062, 0, 0, 1382, -128, 140, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1406, -119, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1419, -117, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1398, -104, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1354, -17, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1359, -26, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1367, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1363, -27, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1372, -10, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1377, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1375, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1383, -24, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1393, -12, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1403, -7, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1381, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1375, -2, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
 
     -- Flawless Experimental Battlelord
     eq.spawn2(260069, 0, 0, 1512, -65, 146, 376); -- NPC: Flawless_Experimental_Battlelord
@@ -42,7 +42,7 @@ function Subject_Death(e)
   local el = eq.get_entity_list();
   if ( el:IsMobSpawnedByNpcTypeID(260021) == false and el:IsMobSpawnedByNpcTypeID(260038) == false and el:IsMobSpawnedByNpcTypeID(260044) == false and el:IsMobSpawnedByNpcTypeID(260060) == false ) then 
     -- Steelslave Researcher
-    eq.spawn2(260061, 0, 0, 14, 334, 140, 0); -- NPC: Steelslave_Researcher 
+    eq.spawn2(260061, 0, 0, 14, 334, 140, 0); -- NPC: Steelslave_Researcher
     eq.spawn2(260061, 0, 0, -41, 326, 140, 0); -- NPC: Steelslave_Researcher
     eq.spawn2(260061, 0, 0, -20, 340, 140, 0); -- NPC: Steelslave_Researcher
   end
@@ -68,13 +68,9 @@ end
 
 -- Flawless Experimental Battlelord
 function Battlelord_Death(e)
-  local instance_requests = require("instance_requests");
-  local lockout_name = 'LDON_rujg';
-  local instance_id = eq.get_zone_instance_id();
-  local raid_list = eq.get_characters_in_instance(instance_id);
-
-  for k,v in pairs(raid_list) do
-    eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0, v, 0);
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockout(eq.seconds("4d12h"))
   end
 
   -- Flawed Mutations

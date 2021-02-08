@@ -5,7 +5,11 @@ function event_spell_effect(e)
   --if (bit.band(client:GetClientVersionBit(), 4294967264) ~= 0) then
   --  client:MovePC(414, -1657, -1508, 72, 494);
   --else
-    client:MovePC(38, -921, -1523, -38, 66); -- Zone: chambersb
+
+  if (client.valid) then
+    client:MovePC(38, -921, -1523, -38, 66); -- Zone: tox
+  end
+
   --end
 
   return 1;

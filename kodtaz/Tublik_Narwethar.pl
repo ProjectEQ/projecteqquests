@@ -246,7 +246,7 @@ sub EVENT_ITEM {
   }
   if (defined($qglobals{ikky}) && ($qglobals{ikky} >= 10)) {
     if (plugin::check_handin(\%itemcount, 60160 => 1)) {
-      quest::say("You're done already? I wasn't expecting such a prompt response, but nicely done %name! Give me a while to examine these artifacts. I should have some additional information for you once you return.");
+      quest::say("You're done already? I wasn't expecting such a prompt response, but nicely done $name! Give me a while to examine these artifacts. I should have some additional information for you once you return.");
       quest::setglobal("ikkypit",1,5,"F");
     }  
     if (plugin::check_handin(\%itemcount, 60170 => 1)) {

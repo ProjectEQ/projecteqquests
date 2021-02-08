@@ -32,13 +32,14 @@ function KeeperTimer(e)
 		elseif num_adhere==1 then
 			eq.spawn2(294637,0,0,803,84,-73,0); -- NPC: #Altar_Adherent_
 		elseif num_adhere==2 then
-			eq.spawn2(294638,0,0,803,84,-73,0); -- NPC: #Altar_Adherent__	
+			eq.spawn2(294638,0,0,803,84,-73,0); -- NPC: #Altar_Adherent__
 		elseif num_adhere==3 then
-			eq.spawn2(294639,0,0,803,84,-73,0); -- NPC: #Altar_Adherent___	
+			eq.spawn2(294639,0,0,803,84,-73,0); -- NPC: #Altar_Adherent___
 		elseif num_adhere==4 then
-			eq.spawn2(294640,0,0,803,84,-73,0); -- NPC: #Altar_Adherent____	
+			eq.spawn2(294640,0,0,803,84,-73,0); -- NPC: #Altar_Adherent____
 		end
 		num_adhere=num_adhere+1;
+		eq.debug("Altar Adherent Alive: " .. num_adhere);
 		if num_adhere >=5 then
 			eq.stop_timer("adhere");
 		end
@@ -89,14 +90,20 @@ end
 function KeeperDeath(e)
 	eq.spawn2(294621,0,0,680,59,-73,156); -- NPC: a_pile_of_bones
 	eq.spawn2(294621,0,0,937,14,-72,400); -- NPC: a_pile_of_bones
-	eq.spawn2(294621,0,0,908,111,-73,300); -- NPC: a_pile_of_bones 
+	eq.spawn2(294621,0,0,908,111,-73,300); -- NPC: a_pile_of_bones
 	eq.spawn2(294621,0,0,685,1,-73,114); -- NPC: a_pile_of_bones
 	eq.signal(294631,8); --set lockout
 	eq.zone_emote(10,"The Keeper of the Altar has been defeated! You have found a way do what even the trusik priests of old had trouble with." ..
 	"You are well on your way to uncovering the secrets that Txevu has holed up inside its walls. Congratulations!");
 	eq.ZoneMarquee(10,510,1,1,6000,"The Keeper of the Altar has been defeated! Congratulations!");
 	eq.depop_all(294622);
+	eq.depop_all(294615);
+	eq.depop_all(294637);
+	eq.depop_all(294638);
+	eq.depop_all(294639);
+	eq.depop_all(294640);
 	eq.stop_timer("adhere");
+	eq.debug("Altar Adherent Alive: " .. num_adhere);
 end
 
 function AssailSpawn(e)

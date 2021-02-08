@@ -15,6 +15,6 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-    quest::signal(207014,0); # NPC: Tylis_Newleaf          
-    quest::spawn2(207066,0,0,$x,$y,$z,$h); # NPC: #Tylis_Newleaf           
+    quest::signal(207014,0); # NPC: Tylis_Newleaf
+    quest::spawn2(207066,0,0,$x,$y,$z,$h); # NPC: #Tylis_Newleaf
 }

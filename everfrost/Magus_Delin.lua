@@ -12,10 +12,10 @@ function event_say(e)
 			e.self:CastSpell(4580,e.other:GetID(),0,1); -- Spell: Teleport: Nedaria
 
 		elseif(e.message:findi("north ro")) then
-		  e.self:CastSpell(4177,e.other:GetID(),0,1); -- Spell: Teleport: North Ro		 
+		  e.self:CastSpell(4177,e.other:GetID(),0,1); -- Spell: Teleport: North Ro
 
 		elseif(e.message:findi("south ro")) then
-			e.self:CastSpell(4178,e.other:GetID(),0,1); -- Spell: Teleport: South Ro		
+			e.self:CastSpell(4178,e.other:GetID(),0,1); -- Spell: Teleport: South Ro
 
 		elseif(e.message:findi("commonlands")) then
 			e.self:CastSpell(4176,e.other:GetID(),0,1); -- Spell: Teleport: East Commons

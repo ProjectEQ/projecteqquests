@@ -34,7 +34,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 54025 => 1)) {#Swirling Vial
     quest::emote("takes the vial gently from your hands and begins murmuring quietly. Thick incense smoke moves lazily through the air as she works, curling about and hanging onto your clothing. The strange liquid inside the vial begins to glow a deep red and seemingly moves of its own volition. Ofala quickly smears a bit of the substance about her eyes and looks up at you. 'We have solved it! I believe I can recall this again, let me get this down for you now before the spell wears. Use it well.' Withdrawing a fine quill from a pouch at her waist, she dips the tip into the swirling potion and scrawls out the words of a spell onto parchment.");
-    quest::summonitem(59015);#Spell: Leviathan Eyes
+    quest::summonitem(59015); # Item: Spell: Leviathan Eyes
     quest::exp(1107392);#1% of level 45 xp
   }
   elsif(plugin::check_handin(\%itemcount, 16506 => 1, 54006 => 2)) {#Enchanted Gold Bar, 2 Gleaming Zraxthril Ores

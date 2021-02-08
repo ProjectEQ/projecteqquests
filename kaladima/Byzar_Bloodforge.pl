@@ -38,7 +38,7 @@ sub EVENT_ITEM {
     quest::faction(232,-15);   # CraknekWarriors worse
     quest::exp(10000);
     quest::ding;
-    quest::summonitem(quest::ChooseRandom(3090,3090,3090,3090,3090,3090,3091,3092,3093,3094,3095,3096)); # Item(s): Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Mail (3091), Bloodforge Armplates (3092), Bloodforge Bracers (3093), Bloodforge Gauntlets (3094), Bloodforge Legplates (3095), Bloodforge Boots (3096)  
+    quest::summonitem(quest::ChooseRandom(3090,3090,3090,3090,3090,3090,3091,3092,3093,3094,3095,3096)); # Item(s): Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Helm (3090), Bloodforge Mail (3091), Bloodforge Armplates (3092), Bloodforge Bracers (3093), Bloodforge Gauntlets (3094), Bloodforge Legplates (3095), Bloodforge Boots (3096)
   }
   elsif(plugin::check_handin(\%itemcount, 12136 => 1)){
     quest::say("Ha!! His death brings me great happiness.  I owe you much.  Take this hammer.  It is the hammer of the Bloodforge Brigade.  May it serve you well.  Now go,so I can enjoy this moment of happiness alone.");

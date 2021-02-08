@@ -22,10 +22,10 @@ function event_timer(e)
 	if(e.timer=="adds") then
 		eq.stop_timer("adds");
 		e.self:Say("You sorry sacks of vermin come aid me now!");
-		eq.spawn2(225380,0,0,e.self:GetX()-20,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(225381,0,0,e.self:GetX()-20,e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(225381,0,0,e.self:GetX()-20,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading());
-		eq.spawn2(225382,0,0,e.self:GetX()-20,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(225380,0,0,e.self:GetX()-20,e.self:GetY()+5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_lackey_of_Quigli
+		eq.spawn2(225381,0,0,e.self:GetX()-20,e.self:GetY()+10,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_swabby_of_Quigli
+		eq.spawn2(225381,0,0,e.self:GetX()-20,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_swabby_of_Quigli
+		eq.spawn2(225382,0,0,e.self:GetX()-20,e.self:GetY()-10,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_scallywag_of_Quigli
 		
 	elseif(e.timer=="depop") then
 		eq.depop_with_timer();

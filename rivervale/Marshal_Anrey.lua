@@ -23,12 +23,22 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:AddEXP(1000);
 		e.other:GiveCash(8,1,0,0);
+		e.other:Faction(263,25,0); -- Faction: Guardians of the Vale
+		e.other:Faction(286,3,0); -- Faction: Mayor Gubbin
+		e.other:Faction(355,2,0); -- Faction: Storm Reapers
+		e.other:Faction(292,3,0); -- Faction: Merchants of Rivervale
+		e.other:Faction(334,-3,0); -- Faction: Dreadguard Outer
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13941,item2 = 13942})) then -- Leatherfoot Skullcap, Dragoon Dirk
 		e.self:Say("Wonderful, "..e.other:GetName()..". You have proven yourself to the Leatherfoot Squad. Take this and wear it with honor.");
 		e.other:SummonItem(12259); -- Leatherfoot Raider Skullcap
 		e.other:Ding();
 		e.other:AddEXP(5000);
 		e.other:GiveCash(7,3,2,1);
+		e.other:Faction(263,50,0); -- Faction: Guardians of the Vale
+		e.other:Faction(286,7,0); -- Faction: Mayor Gubbin
+		e.other:Faction(355,5,0); -- Faction: Storm Reapers
+		e.other:Faction(292,7,0); -- Faction: Merchants of Rivervale
+		e.other:Faction(334,-7,0); -- Faction: Dreadguard Outer
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

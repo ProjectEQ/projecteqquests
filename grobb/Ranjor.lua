@@ -42,7 +42,7 @@ function event_trade(e)
 		e.other:Faction(235,5,0);  	-- Da Basher
 		e.other:Faction(222,-1,0);  -- Broken Skull Clan
 		e.other:Ding();
-		e.other:SummonItem(5025); -- Item: Rusty Two Handed Battle Axe (5025)
+		e.other:SummonItem(5025); -- Item: Rusty Two Handed Battle Axe
 	end
 
 	item_lib.return_items(e.self, e.other, e.trade)

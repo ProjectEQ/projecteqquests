@@ -7,7 +7,7 @@ function event_timer(e)
 	if(e.timer=="dialog1") then
 		eq.stop_timer("dialog1");
 		e.self:Emote("glares at Finnelzi.");
-		eq.signal(14188,1); -- NPC: #Rendolf_Deathbringer		
+		eq.signal(14188,1); -- NPC: #Rendolf_Deathbringer
 	elseif(e.timer=="dialog2") then
 		eq.stop_timer("dialog2");
 		e.self:Say("In a few weeks none of that will matter.");
@@ -15,7 +15,7 @@ function event_timer(e)
 	elseif(e.timer=="dialog3") then
 		eq.stop_timer("dialog3");
 		e.self:Say("Shut up, Fin.");
-		eq.signal(14196,1); -- NPC: #Azibelle_Spavin		
+		eq.signal(14196,1); -- NPC: #Azibelle_Spavin
 	elseif(e.timer=="gate") then
 		eq.stop_timer("gate");
 		e.self:CastSpell(36, 0); -- Spell: Gate

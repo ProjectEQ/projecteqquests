@@ -11,7 +11,7 @@ function event_say(e)
 	elseif(pfaction > 4) then
 		reject(e, pfaction);
 	elseif(e.message:findi("sent by hukulk")) then
-		e.self:Say("Ha!! Hukulk accept puny troll now?!! Ha!! You join us and you join fight. Nightkeep enemy is " .. e.other:GetName() .. " enemy!! You help smash [other weak shadowknights]. Them weak. We true power!! You bash good and maybe you do [secret mission] for Treskar. Or I has sum other [work] fer you.");
+		e.self:Say("Ha!! Hukulk accept puny troll now?!! Ha!! You join us and you join fight. Nightkeep enemy is " .. e.other:GetName() .. " enemy!! You help smash [other weak shadowknights]. Them weak. We true power!! You bash good and maybe you do [secret mission] for Treskar.");
 	elseif(e.message:findi("other weak shadowknights")) then
 		e.self:Say("Other shadowknights is ogre shadowknights!  They name is Greenbloods.  They no match for Nightkeep!  We tear arms from ogre bodies.  You not as powerful as Treskar so you smash young Greenbloods.  You hunt YOUNG members of Greenblood shadowknights.  You bring me black shadow tunic and me share treasures from Nightkeep vault with puny " .. e.other:GetName() .. ". Go!");
 	elseif(e.message:findi("secret mission")) then

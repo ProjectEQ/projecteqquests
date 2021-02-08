@@ -1,34 +1,43 @@
---This is the true version of Shei. When aggro'd, 4 adds will spawn. If anyone is killed by this mob, a random mob (of 4 possible) will spawn.
-local adds;
-
 function event_spawn(e)
-	adds = 0;
+  eq.set_timer('Depop', 600 * 1000);
+	eq.spawn2(179044,0,0,-1807,1029,17.85,128); --xaui tatrua
+	eq.spawn2(179045,0,0,-1804,1136,17.85,128); --vius tatrua
+	eq.spawn2(179046,0,0,-1715,1034,19.73,0); --sheleric vis
+	eq.spawn2(179046,0,0,-1714,1128,19.73,256); --sheleric vis
 end
 
 function event_combat(e)
-	if(e.joined == true) then
-		if(adds == 0) then
-			eq.spawn2(179161,0,0,-1714,1128,19.7,256); -- NPC: Xin`Xakra
-			eq.spawn2(179147,0,0,-1715,1034,19.7,0); -- NPC: Xin`Xakre
-			eq.spawn2(179160,0,0,-1771,1126,18.2,164); -- NPC: Xin`Xakri
-			eq.spawn2(179142,0,0,-1769,1035,18.2,90); -- NPC: Xin`Xakru
-			adds = 1;
-		end
+  if (e.joined == true) then
+    eq.stop_timer('Depop');
+	eq.set_timer('repopadds', 300 * 1000);
+  else
+    eq.set_timer('Depop', 600 * 1000);
+	eq.stop_timer('repopadds');
+  end
+end
+
+function event_timer(e)
+	if (e.timer == 'Depop') then
+		eq.depop();
+	elseif (e.timer == 'repopadds') then
+		e.self:Say("Sivuelaeus Rulour ans Rashan!");
+			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179174) == false) then -- NPC: #Diabo_Tatrua
+				eq.spawn2(179174,0,0,-1769,1038,17.13,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Diabo_Tatrua
+			end
+			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179181) == false) then -- NPC: #Tavuel_Tatrua
+				eq.spawn2(179181,0,0,-1769,1056,17.13,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Tavuel_Tatrua
+			end
+			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179164) == false) then -- NPC: #Thall_Tatrua
+				eq.spawn2(179164,0,0,-1769,1084,17.42,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Thall_Tatrua
+			end
+			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179173) == false) then -- NPC: #Va_Tatrua
+				eq.spawn2(179173,0,0,-1769,1116,17.13,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Va_Tatrua
+			end
 	end
 end
 
 function event_slay(e)
 	local a = eq.ChooseRandom(179161,179147,179160,179142);
-	-- local x = e.self:GetX();
-	-- local y = e.self:GetY();
-	-- local z = e.self:GetZ();
-	-- local h = e.self:GetHeading();
+
 	eq.spawn2(a,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 end
-
---Submitted by Jim Mills
---modified by Reno
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------

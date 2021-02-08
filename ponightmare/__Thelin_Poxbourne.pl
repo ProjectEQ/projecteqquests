@@ -1,14 +1,31 @@
 sub EVENT_SPAWN {
 
 quest::settimer(7,600);
+quest::settimer("emote1",6);
+quest::settimer("emote2",12);
+quest::settimer("emote3",18);
 
 }
 
 sub EVENT_TIMER {
 
-if($timer == 7) {
+if($timer eq 7) {
 quest::depop();
 quest::stoptimer(7);
+}
+if($timer eq "emote1") {
+quest::stoptimer("emote1");
+quest::say("Terris, hear me now!  I have done as you asked.  My beloved dagger is whole once again!  Now keep up your part of the bargain.");
+quest::signalwith(204065,1,0); # signal #Terris_Thule (204065) emotes
+}
+if($timer eq "emote2") {
+quest::stoptimer("emote2");
+quest::say("Vile wench, I knew in the end it would come to this.  You shall pay dearly for your injustice here.");
+quest::signalwith(204065,2,0); # signal #Terris_Thule (204065) emotes
+}
+if($timer eq "emote3") {
+quest::stoptimer("emote3");
+quest::say("So then my hope is nearly lost.  Take my dagger with you and plunge it deep into her soulless heart.  If I cannot escape from this forsaken plane under her rules, I shall make my own!");
 }
 
 }
@@ -17,14 +34,15 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i)
        {
-       quest::say("She lied! She said she would release me if I found my way through the maze! Please, you must defeat her. It is the only way I will ever be free. I can help you escape this maze if you would like to [return]");
-       $client->Message(4,"You receive a character flag!");
+       $client->Message(0,"Thelin Poxbourne tells you, 'Please destroy her for subjecting me to her hideous visions.'  Thelin closes his eyes and is swept away from his nightmare.  The land of pure thought begins to vanish from around you.");
+       $client->Message(15,"You receive a character flag!");
        quest::setglobal("pop_pon_construct", 1, 5, "F");
+       $npc->CastSpell(1195, $userid); #cast Waking Moment on PC
        }
 
 if($text=~/return/i)
        {
-       quest::movepc(204,-1520,1104,125); # Zone: lfaydark
+       quest::movepc(204,-1520,1104,125); # Zone: ponightmare
        }
 {
 $pop_pon_hedge_jezith=undef;

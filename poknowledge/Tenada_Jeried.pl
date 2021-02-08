@@ -19,6 +19,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 16258 => 1, 28791 => 1, 	28797 => 1, 28794 => 1)) {#Hope Stone, Advanced Combat Manual, Advanced Magic Manual, Advanced Stealth Manual
     quest::emote("'s eyes go wide. 'This is incredible! You have proven yourself to be truly worthy of these planar secrets, $name. May its knowledge contained within guide you safely wherever you travel.'");
     quest::summonitem(28798);#Secrets of the Planes
+    quest::exp(1000000);
   }
   plugin::return_items(\%itemcount);
 }

@@ -3,16 +3,7 @@ my $Pet_ENT;
 sub EVENT_CLICKDOOR {
 	if($doorid == 2 || $doorid == 4 || $doorid == 40 || $doorid == 42) {
 		if($uguild_id > 0) {
-			if (defined($qglobals{"ginstance$uguild_id"})) {
-				$guildinstance = $qglobals{"ginstance$uguild_id"};
-				quest::AssignToInstance($guildinstance);
-				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34); # Zone: skyfire
-			} else {
-				$guildinstance = quest::CreateInstance("guildhall", 1, 86400);
-				quest::AssignToInstance($guildinstance); 
-				quest::setglobal("ginstance$uguild_id",$guildinstance,7,"H25");
-				quest::MovePCInstance(345, $guildinstance, -1.00, -1.00, 3.34); # Zone: skyfire
-			}
+			$client->SendToGuildHall();
 		}
   	} elsif((($doorid >= 5) && ($doorid <= 38)) ||  (($doorid >= 43) && ($doorid <= 76))) {
 		$client->OpenLFGuildWindow();
@@ -23,12 +14,12 @@ sub EVENT_ENTERZONE {
 
 	#off the map
 	if ($client->GetX() > 315 || $client->GetX() < -315 || $client->GetY() > 685 || $client->GetY() < -60 || $client->GetZ() < -5 || $client->GetZ() > 15) {
-		$client->MovePC(344, 0, 312, 2, 0); # Zone: sirens
+		$client->MovePC(344, 0, 312, 2, 0); # Zone: guildlobby
 	}
 
 	#if I am idle for more than xx seconds, auto-afk and go invisible/don't draw model
 	quest::settimer("afk_check", 1200); #20 minutes
-	
+
 	if(($client->GetClientVersionBit() & 4294967264)!= 0) {
 		if($client->GetInstanceID() != 5) {
 			quest::settimer(1,10);
@@ -57,14 +48,14 @@ sub EVENT_SIGNAL {
 		#}
 		#$client->Message(4, "You are no longer idle.");
 		#quest::settimer("afk_check", 1200);
-	#}	
+	#}
 }
-	
+
 sub EVENT_TIMER {
 	if($timer == 1) {
-		quest::MovePCInstance(344,5,$x,$y,$z,450); # Zone: sirens
+		quest::MovePCInstance(344,5,$x,$y,$z,450); # Zone: guildlobby
 	} elsif($timer == 2) {
-		quest::movepc(344,$x,$y,$z,225); # Zone: sirens
+		quest::movepc(344,$x,$y,$z,225); # Zone: guildlobby
 	} elsif($timer eq "afk_check") {
 		#I have been idle, go auto-afk and don't draw model
 		$client->Message(4, "You are idle, Auto-AFK");

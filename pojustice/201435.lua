@@ -3,7 +3,7 @@
 --
 
 local lashing_flag      = 0;
-local trail_group       = nil;
+local trial_group       = nil;
 local trial_count       = nil;
 local client_e          = nil;
 local trial_x           = 1373;
@@ -36,7 +36,7 @@ function event_say(e)
                MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, trial_x, trial_y, trial_z, trial_h); 
             else
                client_e = e;
-               e.other:MovePC(201, trial_x, trial_y, trial_z, trial_h); -- Zone: lakerathe
+               e.other:MovePC(201, trial_x, trial_y, trial_z, trial_h); -- Zone: pojustice
             end
 
             -- Spawn the Controller
@@ -87,7 +87,7 @@ function event_timer(e)
       if (trial_group ~= nil and trial_group.valid) then
          MoveGroup( trial_group, trial_x, trial_y, trial_z, 250, 456, 825, 9, 180, "A mysterious force translocates you."); 
       else
-         client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: lakerathe
+         client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
 			client_e.other:Message( 3, "A mysterious force translocates you.");
       end
       HandleCorpses(trial_x, trial_y, trial_z, 200);
@@ -157,17 +157,21 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
       local trial_count = trial_group:GroupCount();
 
       for i = 0, trial_count - 1, 1 do
-         local client_v = trial_group:GetMember(i):CastToClient();
+         local mob_v = trial_group:GetMember(i);
 
-         if (client_v.valid) then
-            -- check the distance and port them up if close enough
-            if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
-               -- port the player up
-               client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: lakerathe
+         if (mob_v ~= nil and mob_v.valid and mob_v:IsClient()) then
+            local client_v = mob_v:CastToClient();
 
-					if (msg) then
-						client_v:Message(3, msg);
-					end
+            if (client_v.valid) then
+               -- check the distance and port them up if close enough
+               if (client_v:CalculateDistance(src_x, src_y, src_z) <= distance) then
+                  -- port the player up
+                  client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: pojustice
+
+                  if (msg) then
+                     client_v:Message(3, msg);
+                  end
+               end
             end
          end
       end

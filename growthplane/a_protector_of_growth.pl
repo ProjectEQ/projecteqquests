@@ -1,10 +1,6 @@
 # a_protector_of_growth #127003 
 
 sub ScanForKOS() {
-    # Wait until there are at least 8 PCs in zone
-    my @clist = $entity_list->GetClientList();
-    return if (scalar(@clist) < 8);
-
     # Find visible non-GM enemies
     my @cenemies;
     foreach $pc (@clist) {

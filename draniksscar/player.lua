@@ -33,32 +33,20 @@ function event_loot(e)
 	end	
 end
 
+local door_ids = {
+  [2] = "dranikhollowsa", -- watering hole
+  [3] = "dranikhollowsb", -- firepit
+  [4] = "dranikhollowsc"  -- murkglider
+}
+
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
-  local inst_id;
-  --watering hole
-  if (door_id == 2) then 
-	inst_id=eq.get_instance_id('dranikhollowsa', 0);
-	if (inst_id > 0 ) then
-		e.self:MovePCInstance(318, inst_id, 3522.5, 1584.2, 2.8, 140); -- Zone: dranikhollowsa
-    else		
-      e.self:Message(13, "You are not part of an instance.");		
-	end
-  --firepit
-  elseif (door_id == 3) then  
-	inst_id=eq.get_instance_id('dranikhollowsb', 0);
-	if (inst_id > 0 ) then
-		e.self:MovePCInstance(319, inst_id, 0, -447 , -38.5, 508); -- Zone: dranikhollowsb
-    else		
-      e.self:Message(13, "You are not part of an instance.");		
-	end
-	--murkglider
-  elseif (door_id==4) then
-	inst_id=eq.get_instance_id('dranikhollowsc', 0);
-	if (inst_id > 0 ) then
-		e.self:MovePCInstance(320, inst_id, 3944, -252, 139, 508); -- Zone: dranikhollowsc
-    else		
-      e.self:Message(13, "You are not part of an instance.");		
-	end
+
+  local zone_name = door_ids[door_id]
+  if zone_name then
+    local dz = e.self:GetExpedition()
+    if dz.valid and dz:GetZoneName() == zone_name then
+      e.self:MovePCDynamicZone(dz:GetZoneID())
+    end
   end
 end

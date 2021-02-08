@@ -1,6 +1,8 @@
 function event_say(e)
 	if(e.message:findi("ringmail")) then
 		e.self:Say("The king was the last person I heard of who was wearing what sounded like my ringmail. Return it to me and I will reward you with a fine weapon I forged myself.");
+	elseif(e.message:findi("interest")) then
+		e.self:Say("Okay, then! The first item you can get back for me is my brass shield. Up on that hill, over where the trainees practice, there is usually an instructor. Last time I saw my shield, it was in the hands of one of those blasted lackeys. Bring it back to me!");
 	end
 end
 

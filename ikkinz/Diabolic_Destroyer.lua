@@ -42,14 +42,13 @@ function event_death_complete(e)
   eq.spawn2(294136,0,0,442,-141,11,384); -- NPC: Cruel_Illusion
 
   --set lockout
-  local instance_id = eq.get_zone_instance_id();
-  local charid_list = eq.get_characters_in_instance(instance_id);
-  local instance_requests = require("instance_requests")
-  
-  for k,v in pairs(charid_list) do
-    eq.target_global("lockout_ikky_g1", tostring(instance_requests.GetLockoutEndTimeForHours(17)), "H17", 0,v, 0);
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockoutDuration(eq.seconds("16h")) -- add 16 hours to lockout
+    dz:SetLocked(true, ExpeditionLockMessage.Close)
   end
-  q.zone_emote(0,"The Diabolic Destroyer has been defeated! Though the legion may send a replacement, you have finished what you sought out to do and delayed their progress for a time! Congratulations!");
+
+  eq.zone_emote(0, "The Diabolic Destroyer has been defeated! Though the legion may send a replacement, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
   eq.ZoneMarquee(10,510,1,1,6000,"The Diabolic Destroyer has been defeated! Congratulations!");
 end
 

@@ -18,45 +18,56 @@
 -- Zone Trash:
 --
 --]]
-local lockout_bit;
 local instance_id = 0;
-local qglobals = {};
-local charid_list;
-local current_bit = 0;
-local entity_list;
-local spawn_orb=false;
-local instance_requests = require("instance_requests");
 local Anguish_Lockouts = {};
 
-function setup_lockouts()
+local KELDOVAN_EVENT    = "Keldovan the Harrier"
+local JELVAN_EVENT      = "Rescuing Jelvan"
+local TURE_EVENT        = "Ture"
+local HANVAR_EVENT      = "Warden Hanvar"
+local AMV_EVENT         = "Arch Magus Vangl"
+local OMM_EVENT         = "Overlord Mata Muram"
+local LOWER_GLOBE_EVENT = "Lower Globe of Discordant Energy"
+local UPPER_GLOBE_EVENT = "Upper Globe of Discordant Energy"
+local REPLAY_EVENT      = "Replay Timer"
+
+function setup_lockouts(expedition)
 	Anguish_Lockouts = {
-		[317005] = {'Anguish_keldovan', 1,   Spawn_keldovan},
-		[317004] = {'Anguish_jelvan',   2,   Spawn_jelvan},
-		[317003] = {'Anguish_ture',     4,   Spawn_ture},
-		[317002] = {'Anguish_hanvar',   8,   Spawn_hanvar},
-		[317107] = {'Anguish_amv',      16,  PH_amv},
-		[317109] = {'Anguish_omm',      32,  Spawn_omm},
-		[1]		 = {'Anguish_lower_orb',64,  PH_lorb},
-		[2]		 = {'Anguish_upper_orb',128, PH_uorb},
-		[3]		 = {'Anguish_augs'	   ,256, PH_augs}
+		[317005] = {KELDOVAN_EVENT,    eq.seconds("4d12h"), Spawn_keldovan},
+		[317004] = {JELVAN_EVENT,      eq.seconds("4d12h"), Spawn_jelvan},
+		[317003] = {TURE_EVENT,        eq.seconds("4d12h"), Spawn_ture},
+		[317002] = {HANVAR_EVENT,      eq.seconds("4d12h"), Spawn_hanvar},
+		[317107] = {AMV_EVENT,         eq.seconds("4d12h"), PH_amv},
+		[317109] = {OMM_EVENT,         eq.seconds("4d12h"), Spawn_omm},
+		[1]      = {LOWER_GLOBE_EVENT, eq.seconds("4d12h"), PH_lorb},
+		[2]      = {UPPER_GLOBE_EVENT, eq.seconds("4d12h"), PH_uorb},
+		[3]      = {REPLAY_EVENT,      eq.seconds("2h"),    PH_augs}
 	};
+
+	-- this associates events with npcs to prevent looting by characters that have
+	-- the event lockout from another expedition. this is to prevent exploiting
+	-- to gain additional loot by characters added after an event is completed
+	expedition:SetLootEventByNPCTypeID(317005, KELDOVAN_EVENT) -- keldovan's body
+	expedition:SetLootEventByNPCTypeID(317111, JELVAN_EVENT)   -- jelvan's keepsake chest
+	expedition:SetLootEventByNPCTypeID(317003, TURE_EVENT)     -- ture's body
+	expedition:SetLootEventByNPCTypeID(317002, HANVAR_EVENT)   -- hanvar's body
+	expedition:SetLootEventByNPCTypeID(317112, AMV_EVENT)      -- amv ornate chest
+	expedition:SetLootEventByNPCTypeID(317109, OMM_EVENT)      -- omm's body
+
+	-- the lower and upper orb events use the same npc type id (chest). these use
+	-- the more specific SetLootEventBySpawnID api after spawning the chests
 end
 
 function event_spawn(e)
-  qglobals = eq.get_qglobals();
-  instance_id = eq.get_zone_instance_id();
-  charid_list = eq.get_characters_in_instance(instance_id);
-  entity_list = eq.get_entity_list();
-  lockout_bit = tonumber(qglobals[instance_id .. "_anguish_bit"]);
-  if (lockout_bit == nil) then lockout_bit = 0 end
-  setup_lockouts();
-  eq.debug("Lockout Bit: " ..  lockout_bit);
-  for k,v in pairs(Anguish_Lockouts) do
-    if (bit.band(lockout_bit, v[2]) == 0 and v[3] ~= nil ) then
-      v[3]();
-    end
-  end
-
+	local expedition = eq.get_expedition()
+	if expedition.valid then
+		setup_lockouts(expedition);
+		for k,v in pairs(Anguish_Lockouts) do
+			if v[3] and not expedition:HasLockout(v[1]) then
+				v[3]() -- boss spawning function
+			end
+		end
+	end
 end
 
 function Spawn_keldovan()
@@ -91,82 +102,63 @@ end
 function PH_augs()
 end
 
-function Check_lorb(lockout_name)
-	qglobals = eq.get_qglobals()
-	spawn_orb=false;
-	current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
-	--if lower orb bit(64) is not set
-	if (bit.band(current_bit,64)==0) then
+function Check_lorb(expedition, lockout_name)
+	local spawned_orb = false
+	if not expedition:HasLockout(LOWER_GLOBE_EVENT) then
 		--if keldovan (1) and jelvan(2) dead spawn orb 
-		if (bit.band(current_bit,1)==1 and bit.band(current_bit,2)==2) then
-			spawn_orb=true
-		--if only keldovan or jelvan are dead, 50% chance to spawn orb
-		--elseif (math.random(1,2)==1) then
-		--	spawn_orb=true
-		end
-		
-		if(spawn_orb==true) then
+		if expedition:HasLockout(KELDOVAN_EVENT) and expedition:HasLockout(JELVAN_EVENT) then
 			AddLockout(Anguish_Lockouts[1]);
-			
-			if lockout_name =="Anguish_keldovan" then
-				eq.spawn2(317087,0,0, -301 ,702, -201, 0); -- NPC: Orb_of_Discordant_Energy
-			elseif lockout_name == "Anguish_jelvan" then
+
+			if lockout_name == KELDOVAN_EVENT then
+				local chest = eq.spawn2(317087,0,0, -301 ,702, -201, 0); -- NPC: Orb_of_Discordant_Energy
+				expedition:SetLootEventBySpawnID(chest:GetID(), LOWER_GLOBE_EVENT)
+			elseif lockout_name == JELVAN_EVENT then
 				eq.get_entity_list():GetNPCByNPCTypeID(317111):AddItem(47100,1); -- NPC: a_minor_scarab
-			end	
+			end
+
+			spawned_orb = true
 			eq.debug("Check_lorb: Spawn Lower Orb");
-		else
-			eq.debug("Check_lorb: No Lower Orb");
 		end
+	end
+	if not spawned_orb then
+		eq.debug("Check_lorb: No Lower Orb");
 	end
 end
 
-function Check_uorb(lockout_name)
-	qglobals = eq.get_qglobals()
-	--eq.debug("checking urb"):
-	spawn_orb=false;
-	current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
-	--eq.zone_emote(13,"in uorb bit: " .. bit.band(current_bit,128));
-	--if upper orb bit(128) is not set
-	if (bit.band(current_bit,128)==0) then
-		--eq.debug("urb bit not set: ".. current_bit .. " :  bitand: " .. bit.band(current_bit,128)):
+function Check_uorb(expedition, lockout_name)
+	local spawned_orb = false
+	if not expedition:HasLockout(UPPER_GLOBE_EVENT) then
 		--if ture (4) and hanvar(8) dead spawn orb 
-		if (bit.band(current_bit,4)==4 and bit.band(current_bit,8)==8) then
-			spawn_orb=true
-		--if only ture or hanvar are dead, 50% chance to spawn orb
-		--elseif (math.random(1,2)==1) then
-		--	spawn_orb=true
-		end
-		
-		if(spawn_orb==true) then
+		if expedition:HasLockout(TURE_EVENT) and expedition:HasLockout(HANVAR_EVENT) then
 			AddLockout(Anguish_Lockouts[2]);
-			
-			if lockout_name =="Anguish_ture" then
-				eq.spawn2(317087,0,0, 610, 3381, -12, 0); -- NPC: Orb_of_Discordant_Energy
-			elseif lockout_name == "Anguish_hanvar" then
-				eq.spawn2(317087,0,0, 478, 4390, 209, 0); -- NPC: Orb_of_Discordant_Energy
-			end				
+
+			if lockout_name == TURE_EVENT then
+				local chest = eq.spawn2(317087,0,0, 610, 3381, -12, 0); -- NPC: Orb_of_Discordant_Energy
+				expedition:SetLootEventBySpawnID(chest:GetID(), UPPER_GLOBE_EVENT)
+			elseif lockout_name == HANVAR_EVENT then
+				local chest = eq.spawn2(317087,0,0, 478, 4390, 209, 0); -- NPC: Orb_of_Discordant_Energy
+				expedition:SetLootEventBySpawnID(chest:GetID(), UPPER_GLOBE_EVENT)
+			end
+
+			spawned_orb = true
 			eq.debug("Check_uorb: Spawn Upper Orb");
-		else
-			eq.debug("Check_uorb: No Upper Orb");
 		end
+	end
+	if not spawned_orb then
+		eq.debug("Check_uorb: No Upper Orb");
 	end
 end
 
-function Check_amv_chest()
-	qglobals = eq.get_qglobals()
+function Check_amv_chest(expedition, lockout_duration)
 --spawn ornate chest only if amv lockout is not already set
 --do not set AMV lockout if it already exists
-	current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
-	if (bit.band(current_bit,16)==0) then
-		eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,16)),7,"H6"); 
-		for k,v in pairs(charid_list) do
-			eq.target_global('Anguish_amv', tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
-		end
-		eq.unique_spawn(317112,0,0, 366, 4886, 278, 0); --Ornate_Chest
-		eq.debug("Check_amv_chest: Spawn Chest");
-	else
+	if expedition:HasLockout(AMV_EVENT) then
 		eq.debug("Check_amv_chest: No Chest");
-	end	
+	else
+		eq.debug("Check_amv_chest: Spawn Chest");
+		expedition:AddLockout(AMV_EVENT, lockout_duration)
+		eq.unique_spawn(317112,0,0, 366, 4886, 278, 0); --Ornate_Chest
+	end
 end
 
 function Spawn_augs()
@@ -232,40 +224,30 @@ function Spawn_augs()
 end
 
 function AddLockout(lockout)
-	qglobals = eq.get_qglobals()
-	local lockout_name = lockout[1]; 
-	local lockout_bit = lockout[2];
-	local lockout_duration;
-	local lockout_end_time;
-	if (lockout_name=="Anguish_augs") then
-		lockout_duration="H2";
-		lockout_end_time=tostring(instance_requests.GetLockoutEndTimeForHours(2));
-	else
-		lockout_duration="H108";
-		lockout_end_time=tostring(instance_requests.GetLockoutEndTimeForHours(108));
-	end	
-	--you cant blanket assign a lockout to AMV
-	if (lockout_name=="Anguish_amv") then	
-		Check_amv_chest();
-	else		
-		current_bit = tonumber(qglobals[instance_id.."_anguish_bit"]);
-		--if (lockout_bit == nil) then lockout_bit = 0 end
-		--if (current_bit ~= nil and current_bit > 0 and bit.bor(current_bit,lockout_bit)==0) then
-		eq.set_global(instance_id.."_anguish_bit",tostring(bit.bor(current_bit,lockout_bit)),7,"H6"); 
+	local lockout_name = lockout[1];
+	local lockout_duration = lockout[2];
 
-		for k,v in pairs(charid_list) do
-			eq.target_global(lockout_name, lockout_end_time, lockout_duration, 0,v, 0);
-		end
+	local expedition = eq.get_expedition()
+	if expedition.valid then
+		--you cant blanket assign a lockout to AMV
+		if lockout_name == AMV_EVENT then
+			Check_amv_chest(expedition, lockout_duration);
+		else
+			-- this should add the lockout to:
+			-- 1) the expedition internally, so anyone that gets added after and zones in will receive it
+			-- 2) all current members of the expedition, even if they're in another zone
+			-- 3) all clients currently inside the dz instance in case members were removed but haven't been teleported out yet
+			expedition:AddLockout(lockout_name, lockout_duration)
 
-		--wait til after lockouts set to spawn in case of crash, etc
-		if (lockout_name=="Anguish_augs") then
-			Spawn_augs();
-		elseif (lockout_name=="Anguish_keldovan" or lockout_name=="Anguish_jelvan") then
-			Check_lorb(lockout_name);
-		elseif (lockout_name=="Anguish_ture" or lockout_name=="Anguish_hanvar") then
-			Check_uorb(lockout_name);			
+			--wait til after lockouts set to spawn in case of crash, etc
+			if lockout_name == REPLAY_EVENT then
+				Spawn_augs();
+			elseif lockout_name == KELDOVAN_EVENT or lockout_name == JELVAN_EVENT then
+				Check_lorb(expedition, lockout_name);
+			elseif lockout_name == TURE_EVENT or lockout_name == HANVAR_EVENT then
+				Check_uorb(expedition, lockout_name);
+			end
 		end
-		--end
 	end
 end
 
@@ -275,4 +257,3 @@ function event_signal(e)
     AddLockout(Anguish_Lockouts[e.signal]);
   end
 end
-

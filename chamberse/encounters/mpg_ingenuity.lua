@@ -17,14 +17,11 @@ local instance_id;
 local this_bit = 2;
 local lockout_win = 72;
 local lockout_loss = 2;
-local lockout_name = 'MPG_ingenuity';
 local warnings;
 local minutes_remaining;
 local player_list;
-local instance_requests;
 
 function Ingenuity_Spawn(e)
-  instance_requests = require("instance_requests");
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
   minutes_remaining = 15;
@@ -38,6 +35,11 @@ function Ingenuity_Say(e)
     e.self:Say("This is the Mastery of Ingenuity trial. You must demonstrate your ability to think on your feet, to defeat an unbeatable opponent. Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
 
   elseif (e.message:findi("begin")) then
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+    end
+
     eq.spawn_condition('chamberse', instance_id, 1, 1);
 
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
@@ -64,8 +66,10 @@ function Ingenuity_Timer(e)
       eq.zone_emote(13, "You have been found unworthy.");
       eq.depop();
 
-      for k,v in pairs(player_list) do
-        eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
+      -- no lockout added on failure, the dz shuts down in 5 minutes
+      local dz = eq.get_expedition()
+      if dz.valid then
+        dz:SetSecondsRemaining(eq.seconds("5m"))
       end
     else 
       eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
@@ -82,8 +86,13 @@ function Ingenuity_Death(e)
   eq.stop_all_timers();
   eq.spawn2(308004, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
 
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockout(eq.seconds("3d"))
+  end
+
   local mpg_helper = require("mpg_helper");
-  mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
+  mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, nil); -- update aa flag (not lockout)
 end
 
 function Chest_Spawn(e)

@@ -10,10 +10,9 @@ local extra_loot = false;
 local guardians = 0;
 local instance_id;
 local raid_list;
-local instance_requests = require("instance_requests"); 
 
 function Guardian_Death(e)
-  eq.zone_emote(15, "The massive stone beast shudders violently as it transforms into a lifeless statue. The power of its master wanes slightly by the loss of its soul-bound guardian.");
+  eq.get_entity_list():MessageClose(e.self, true, 100, 15, "The massive stone beast shudders violently as it transforms into a lifeless statue. The power of its master wanes slightly by the loss of its soul-bound guardian.")
   local valdoon = eq.get_entity_list():GetMobByNpcTypeID(243672);
   local valdoon_hp = valdoon:GetHP() - valdoon_hp_5;
   valdoon:SetOOCRegen(0);
@@ -48,10 +47,10 @@ function Real_Death(e)
     eq.spawn2(243679, 0, 0, 1241, 510, -3.90, 380); -- NPC: Valdoon`s_gilded_coffin
   end
 
-  local lockout_name = 'LDON_mmcc';
-  for k,v in pairs(raid_list) do                                                                             
-    eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
-  end                                                                                                          
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockout(eq.seconds("4d12h"))
+  end
 end
 
 function Real_Combat(e)

@@ -1,41 +1,22 @@
 -- Efrelle_Treiui
 -- 034146
-function event_say(e)
-  if (e.other:HasItem(41000) or e.other:HasItem(40999)) then 
-    if (e.message:findi("hail")) then
-      e.self:Say("To have seen shades of my former ancestors in the broken city of Takish-Hiz has brought a darkness to my heart that I've never known. If I knew a way to restore the sand elves to their former beauty I would. For now though, there is much to learn from them. You look to be well-versed in the ways of the sand elves and Takish-Hiz. If you can rally the call of your friends perhaps you can help us with a serious [" .. eq.say_link('problem', false, 'problem') .. "].");
-    elseif (e.message:findi("problem")) then
-      e.self:Say("Our presence in Takish-Hiz has given the aimless Jeweled Guard a purpose after so many years. Each day, more of them recall how to organize themselves in battle and they are forming armies with one purpose, to put an end to any intruder. That's us, friend. You will need your own army to put a stop to that growing force so it is safer for the rest of us. Are you [" .. eq.say_link('interested', false, 'interested') .."] ?");
-    elseif (e.message:findi("interested")) then
-      local instance_requests = require("instance_requests");
-      local lockout_globals = {
-        {'LDON_takc', 'LDoN Raid: Takish-Hiz: Within the Compact'}
-      }
-      local request = instance_requests.ValidateRequest('raid', "takc", 0, 6, 54, 61, {any = {41000, 40999}}, nil, e.other, lockout_globals);
-      if (request.valid and request.flags == 1) then
-        instance_requests.DisplayLockouts(e.other, e.other, lockout_globals);
-      elseif (request.valid and request.flags == 0) then
-        local raid = e.other:GetRaid();
-        local instance_id = eq.create_instance("takc", 0, 21600);
-        eq.set_global(instance_id.."_takc_bit",tostring(request.flags),7,"H6");
-        if (raid.valid) then
-          eq.assign_raid_to_instance(instance_id);
-          set_compas(raid);
-        end
-        e.self:Say("Do what is necessary, " .. e.other:GetName() .. ". We cannot afford to allow the Jeweled Guard to impede our progress.");
-      end
-    end
-  end
-end
+local takc = {
+  expedition = { name="Takish-Hiz: Within the Compact", min_players=6, max_players=54 },
+  instance   = { zone="takc", version=0, duration=eq.seconds("3h") },
+  zonein     = { x=251, y=33, z=4.375, h=0 },
+  compass    = { zone="nro", x=92, y=-942, z=-44 },
+  safereturn = { zone="nro", x=94, y=-1002, z=-33, h=0 } -- made up, live uses northro
+  -- compass    = { zone="northro", x=-1187.608, y=5567.216, z=12.897 },
+  -- safereturn = { zone="northro", x=-1252, y=5548, z=28.25, h=0 }
+}
 
-function set_compas(raid)
-  for i = 0, raid:RaidCount() - 1, 1 do
-    local mob_v = raid:GetMember(i);
-    if (mob_v.valid and mob_v:IsClient()) then
-      local client_v = mob_v:CastToClient();
-      if (client_v.valid) then
-        client_v:MarkSingleCompassLoc(92, -942, -44);
-      end
-    end
+function event_say(e)
+  if e.message:findi("hail") then
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Efrelle Treiui says, 'To have seen shades of my former ancestors in the broken city of Takish-Hiz has brought a darkness to my heart that I've never known. If I knew a way to restore the sand elves to their former beauty I would. For now though, there is much to learn from them. You look to be well-versed in the ways of the sand elves and Takish-Hiz.  If you can rally the call of your friends perhaps you can help us with a serious [" .. eq.say_link("problem") .. "].'")
+  elseif e.message:findi("problem") then
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Efrelle Treiui says, 'Our presence in Takish-Hiz has given the aimless Jeweled Guard a purpose after so many years. Each day, more of them recall how to organize themselves in battle and they are forming armies with one purpose, to put an end to any intruder. That's us, friend. You will need your own army to put a stop to that growing force so it is safer for the rest of the us.  Are you [" .. eq.say_link("interested") .. "]?'")
+  elseif e.message:findi("interested") then
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, ("Efrelle Treiui says, 'Do what is necessary, %s.  We cannot afford to allow the Jeweled Guard to impede our progress.'"):format(e.other:GetCleanName()))
+    e.other:CreateExpedition(takc)
   end
 end

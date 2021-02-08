@@ -67,7 +67,6 @@
 
 local event_started = false;
 local instance_id;
-local lockout_name = 'MPG_adaptation';
 local lockout_win = 108;
 local this_bit = 16;
 local player_list;
@@ -257,7 +256,7 @@ function CastBuffs()
 end
 
 function CastSpells()
-  if (cast_spells ~= null) then
+  if (cast_spells ~= nil) then
    for _,v in pairs(cast_spells) do
      --self:CastSpell(v, self:GetTarget():GetID());
      --ThreadManager:Wait(2.5);
@@ -270,7 +269,6 @@ function Boss_Spawn(e)
   event_started = false;
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
-  lockout_name = 'MPG_adaptation';
   lockout_win = 108;
   this_bit = 16;
   setup();
@@ -290,6 +288,12 @@ function Boss_Say(e)
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
+      local dz = eq.get_expedition()
+      if dz.valid then
+        dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+        dz:AddReplayLockout(eq.seconds("3h"))
+      end
+
       local shifttime = math.random(90, 150);
       e.self:SetSpecialAbility(SpecialAbility.immune_melee, 0)
       e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0)
@@ -356,8 +360,13 @@ function Boss_Death(e)
   eq.spawn2(308015, 0, 0, -212, 270, 66, e.self:GetHeading()); -- NPC: Shell_of_the_Master_
 
   -- Update the Lockouts
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockoutDuration(eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+  end
+
   local mpg_helper = require("mpg_helper");
-  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
 end
 
 function Boss_Combat(e)

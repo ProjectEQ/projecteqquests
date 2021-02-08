@@ -22,7 +22,7 @@ function event_say(e)
 	elseif(e.message:findi("boot")) then
 		e.self:Say("Boots are a very important armor piece and I am glad to hear you wish to craft them. To create your boot material you will need to combine 3 Bricks of Crude Iron Ore, 1 Ruined Bear Pelt  and 1 Severed Orc Foot in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Songweavers Platemail Boots.");
 		e.other:SummonItem(22612); -- Item: Enchanted Boot Mold
-	elseif(e.message:findi("a helm")) then
+	elseif(e.message:findi("helm")) then
 		e.self:Say("A very important armor piece indeed " .. e.other:GetName() .. ". one well placed attack to the head by an adversary could leave you in very poor condition. To create your helm material you will need to combine 2 Bricks of Crude Iron Ore, 1 Ruined Wolf Pelt, 1 Deathfist Pawn Scalp and 1 Barley in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Songweavers Platemail Helm.");
 		e.other:SummonItem(22610); -- Item: Enchanted Helm Mold
 	elseif(e.message:findi("greave")) then

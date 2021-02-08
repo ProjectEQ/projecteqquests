@@ -92,7 +92,6 @@
 -- 32 MPG_corruption     - The Mastery of Corruption (Raid)  
 
 local instance_id;
-local lockout_name = 'MPG_hatred';
 local lockout_win = 108;
 local this_bit = 1;
 local player_list;
@@ -106,7 +105,6 @@ local hate_scale_seconds = 1;
 
 function Hate_Spawn(e)
   instance_id = eq.get_zone_instance_id();
-  lockout_name = 'MPG_hatred';
   lockout_win = 108;
   this_bit = 1;
   player_list = eq.get_characters_in_instance(instance_id);
@@ -128,6 +126,12 @@ function Hate_Say(e)
   if ( e.message:findi("hail") ) then
     e.self:Say("This is the Mastery of Hate trial. You must incite your enemies to focus their rage on those who are best equpped to handle it. Should your force exhaust your defensive members at any point in time, you will fail. Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
   elseif ( e.message:findi("begin") ) then
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+      dz:AddReplayLockout(eq.seconds("3h"))
+    end
+
     e.self:Say("Very well!  Let the battle commence!");
 
     -- Enable the Death Toucher
@@ -166,8 +170,13 @@ function Hate_Death(e)
   eq.spawn2(304020, 0, 0, -212, 270, 66, e.self:GetHeading()); -- NPC: Shell_of_the_Master_
 
   -- Update the Win Lockout
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockoutDuration(eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+  end
+
   local mpg_helper = require("mpg_helper");
-  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
 end
 
 function Hate_Signal(e)

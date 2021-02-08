@@ -6,7 +6,6 @@
 --local warnings;
 --local minutes_remaining;
 --local player_list;
---local instance_requests;
   
 local prisoners_freed=0; --3 to spawn #Prison_Guard_Talkor
 local pg_chest=0; --killed #Prison_Guard_Talkor
@@ -346,14 +345,10 @@ function check_chests()
 		if (pg_chest==1) then
 			eq.spawn2(245287,0,0,877,-1093,21.50, 70) --#Talkor`s_Bloody_Chest
 		end;
-		
-		local instance_requests = require("instance_requests");
-		local lockout_name = 'LDON_rujd';
-		local instance_id = eq.get_zone_instance_id();
-		local raid_list = eq.get_characters_in_instance(instance_id);
 
-		for k,v in pairs(raid_list) do
-			eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0, v, 0);
+		local dz = eq.get_expedition()
+		if dz.valid then
+			dz:AddReplayLockout(eq.seconds("4d12h"))
 		end
 	end;
 end

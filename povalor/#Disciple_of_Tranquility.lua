@@ -13,37 +13,3 @@ function event_say(e)
         end
     end
 end
-
-function event_combat(e)
-    if (e.joined == true) then
-        eq.set_timer("start_strike", 1000);
-        eq.set_timer("start_blinding", 2000);
-    else
-        eq.stop_all_timers();
-    end
-end
-
-function event_timer(e)
-    if (e.timer == "start_strike") then
-        if (e.self:GetTarget().valid) then
-            e.self:CastSpell(3168, e.self:GetTarget():GetID()); -- Spell: Strike of the Champion
-        end
-        eq.stop_timer(e.timer);
-        eq.set_timer("cast_strike", 45000);
-    elseif (e.timer == "start_blinding") then
-        if (e.self:GetTarget().valid) then
-            e.self:CastSpell(3166, e.self:GetTarget():GetID()); -- Spell: Blinding Essence of Purity
-        end
-        eq.stop_timer(e.timer);
-        eq.set_timer("cast_blinding", 60000);
-    elseif (e.timer == "cast_strike") then
-        if (e.self:GetTarget().valid) then
-            e.self:CastSpell(3168, e.self:GetTarget():GetID()); -- Spell: Strike of the Champion
-        end
-    elseif (e.timer == "cast_blinding") then
-        if (e.self:GetTarget().valid) then
-            e.self:CastSpell(3166, e.self:GetTarget():GetID()); -- Spell: Blinding Essence of Purity
-        end
-    end
-end
-

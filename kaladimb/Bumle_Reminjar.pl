@@ -1,3 +1,4 @@
+# items: 12157, 2116, 2118, 2120, 2123, 2124, 12158
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Welcome, $name. The Cathedral of Underfoot welcomes all good persons. May you find peace from the dangers of Butcherblock within these walls. The paladins of this holy place are very much aware of the evils outside Kaladim. The threat of goblins and [birdmen] has increased.");

@@ -1,3 +1,4 @@
+# items: 57008
 sub EVENT_SAY {
  if ($client->GetGlobal("beast_epic") ==5) {
   if ($text=~/survive/i) {

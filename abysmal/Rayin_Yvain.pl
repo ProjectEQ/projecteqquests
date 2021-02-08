@@ -1,5 +1,6 @@
 # Shadowknight Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54198, 68220, 54196, 68223, 54199, 68225, 54201, 68226, 54202, 68224, 54200, 68221, 54197
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

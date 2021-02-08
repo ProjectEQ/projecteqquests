@@ -1,4 +1,5 @@
 -- Necromancer Epic NPC -- Jzil_GSix
+-- items: 20932, 20780, 20781, 27712, 20938, 20782, 20783, 1278, 20945, 20784, 20785, 1279
 
 function event_spawn(e)
 	eq.set_timer("depop",300000);

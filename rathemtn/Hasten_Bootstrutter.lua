@@ -1,3 +1,4 @@
+-- items: 12268, 7100
 function event_spawn(e)
 	e.self:SetRunning(true);
 end

@@ -1,3 +1,4 @@
+# items: 13740, 13379, 13380, 13378
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello, friend. Have a drink. I have some [unique drinks]. Try one. And remember. You get rowdy, the [Bouncers] crush you.");

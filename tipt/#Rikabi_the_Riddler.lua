@@ -1,3 +1,4 @@
+-- items: 67551
 local riddles = {
   {
     item = 54068, -- Coffin

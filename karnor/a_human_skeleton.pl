@@ -4,6 +4,7 @@
 # NPC Name: a_human_skeleton
 # NPC ID: 102097
 #
+# items: 12964, 12967
 
 # Quest: Brain Bite (Concussion)
 # NPC's Involved: Despondo (Firiona Vie), a_human_skeleton (x3, Trakanon's Teeth, Karnor's Castle, City of Mist)

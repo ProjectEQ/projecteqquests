@@ -1,3 +1,4 @@
+-- items: 62647, 47100, 62627
 function event_spawn(e)
 	e.self:Say("So you are the one that I have been sensing all this time. I had hoped that you would come to rescue me. I am Oshimai of the High Air. I owe you and your guardian spirit my thanks. I think I know how I can repay you. Give me the Heartwood Blade, the Globe of Discordant Energy and that device you used to free me.");
 	eq.set_timer("depop",30*60*1000);

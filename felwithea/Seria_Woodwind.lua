@@ -1,3 +1,4 @@
+-- items: 17124, 19633, 19634, 19632, 19631, 19636, 19635, 19637, 20288, 20289, 20295, 20299, 20271, 20274, 20329
 function event_say(e)
 	if(e.other:Class()== "Paladin" and (e.other:Race() == "High Elf" or e.other:Race() == "Half Elf")) then
 		if(e.message:findi("hail")) then

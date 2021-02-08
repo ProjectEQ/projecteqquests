@@ -1,3 +1,4 @@
+-- items: 52337, 52347, 47100, 52342, 21346
 local mirb = {
 	expedition = { name="Miragul's Menagerie: Frozen Nightmare", min_players=6, max_players=54 },
 	instance   = { zone="mirb", version=50, duration=eq.seconds("3h") },

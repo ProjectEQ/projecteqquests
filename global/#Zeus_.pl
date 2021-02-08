@@ -1,3 +1,4 @@
+# items: 85062, 85064, 85068, 85065, 85063, 85066, 85067
 sub EVENT_SPAWN {
 	quest::say("Enough! You are a worthy warrior.");
 	quest::settimer(1,300);

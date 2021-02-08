@@ -1,3 +1,4 @@
+-- items: 12131, 12132
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please speak no further.  I am nothing more than a defender of this temple.  The words of Marr lie with the masters and clerics of this temple.  They await you.");

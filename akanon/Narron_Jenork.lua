@@ -1,6 +1,7 @@
 -- Quest edited by mrsmystic
 -- Quest further edited by Qadar for compatibility with Watchman Boots quest (Watchman_Dexlin in northkarana)
 -- Converted to .lua by Speedz
+-- items: 17255, 22610, 22611, 22613, 22612, 22614, 22615, 22616, 9111, 9112, 9113, 9114, 9115, 12378, 12379
 
 function event_say(e)
 	if(e.message:findi("hail")) then

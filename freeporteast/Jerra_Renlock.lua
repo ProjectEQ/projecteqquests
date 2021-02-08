@@ -1,3 +1,4 @@
+-- items: 19634, 19632, 19637, 19633, 19636, 19631, 19635, 19844, 17124
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yes? What is it you want from me? I have nothing that you would be interested in. Not even money to pay the ridiculous taxes imposed by the Freeport Militia.");

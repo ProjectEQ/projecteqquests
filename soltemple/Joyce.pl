@@ -1,4 +1,5 @@
 # Magician Quests
+# items: 2358, 2359, 2357, 1356
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

@@ -1,5 +1,6 @@
 #zone: gunthak - NPC: Vailin (224201)
 #Angelox
+# items: 59505, 21820, 59506, 21821, 59507, 21822, 59508, 21823
 
 sub EVENT_SAY { 
 if ($text=~/Hail/i){

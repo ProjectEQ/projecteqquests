@@ -1,4 +1,5 @@
 ##Text adapted from another completed freed slave quest
+# items: 62088, 62089, 62200
 
 sub EVENT_SAY {
   if($text=~/hail/i){

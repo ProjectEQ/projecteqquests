@@ -1,3 +1,4 @@
+# items: 67562, 60141, 60142, 60143, 60144, 60145, 60146, 60147, 60148, 60149, 60150, 60151, 67702
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (defined($qglobals{ikky}) && ($qglobals{ikky} == 2)) {

@@ -1,3 +1,4 @@
+# items: 64011, 64012
 sub EVENT_SAY {
   if (($text=~/hail/i) && ($faction <= 2)) {
     quest::emote("stares at you intently as though judging you on the spot. Making up her mind, she leans in close and says, I need your [help]");

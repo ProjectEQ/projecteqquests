@@ -1,4 +1,5 @@
 #Bertoxxulous Initiate quest npc
+# items: 10262, 10263
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10262 => 1)) {

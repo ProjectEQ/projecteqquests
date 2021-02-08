@@ -1,6 +1,7 @@
 #Kael Custom Crown Quest
 #NPC: Grand_Armsmith_Korin (113163)
 #Credit: Primal - VZTZ (Submitted by Cottus)
+# items: 25349, 31520, 25433, 31524, 25370, 31521, 25391, 31523, 25384, 31522, 30507, 2610, 25194, 2611, 26025, 2612
 
 sub EVENT_SAY {
   if ($faction <= 3) {

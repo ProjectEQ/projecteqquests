@@ -4,6 +4,7 @@
 --#NPCs Involved: 1
 --#Items Involved: 5 Gold for a random reward
 --#################
+-- items: 2106, 2112, 2041, 13944, 2307, 3829, 1331, 17002, 7012, 8306, 10006, 10019, 5013, 5019, 5021, 5022, 6011, 5023, 7007, 7008
 
 function event_waypoint_arrive(e)
 	if(e.wp == 1) then

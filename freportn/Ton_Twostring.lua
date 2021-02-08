@@ -1,3 +1,4 @@
+-- items: 18167, 18156, 18165, 18164, 18166
 function event_say(e) 
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail. " .. e.other:GetName() .. " - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");

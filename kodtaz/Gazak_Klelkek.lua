@@ -1,5 +1,6 @@
 -- Gives Ikkinz Group 1 Expedition
 -- Gazak_Klelkek NPCID: 293117
+-- items: 60152
 
 -- ikkinz group expeditions are repeatable without completing all 3 (ikkyredo not required)
 -- expedition requests have custom dialogue for some expedition requirements

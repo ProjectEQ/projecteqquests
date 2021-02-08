@@ -1,4 +1,5 @@
 -- Quest: Art Keepers  NPC: Yuin Starchaser  Zone: Felwithe B
+-- items: 17125, 19561, 19555, 19559, 19560, 11395, 19557, 19558, 20293, 20296, 20271, 20274, 20332
 
 function event_say(e)
 	if(e.message:findi("hail")) then

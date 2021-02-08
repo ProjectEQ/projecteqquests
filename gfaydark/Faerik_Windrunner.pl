@@ -1,3 +1,4 @@
+# items: 21986, 21988, 61004
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello. I am afraid I do not have time for small talk I have a very important job to do here and unless you are [interested in helping] me please leave me alone.");

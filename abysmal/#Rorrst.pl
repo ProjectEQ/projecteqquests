@@ -1,3 +1,4 @@
+# items: 52181
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("smirks and nods politely your way. The glint of a silvery key hanging from a chain around his neck catches your eye.");

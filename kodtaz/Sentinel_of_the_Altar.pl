@@ -1,3 +1,4 @@
+# items: 60173
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60173 =>1)) {
     quest::emote("motions for you to enter the altar through the entrance behind him.");

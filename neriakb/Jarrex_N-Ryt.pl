@@ -1,5 +1,6 @@
 #Jarrex N-Ryt.pl
 #Orc Slayer Armor/Orc Slayer Weapon/Orc Slayer Shield
+# items: 31753, 16173, 19565, 19564, 19606, 19562, 19609
 
 
 sub EVENT_SAY{

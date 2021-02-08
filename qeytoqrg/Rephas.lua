@@ -1,3 +1,4 @@
+-- items: 13072, 13719, 13076, 13050, 18103, 27428, 27429, 27430, 27431
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Aagggh..  Get away from here..  Go, run..  Far away..  Or I shall call [Karana's] wrath upon you!");

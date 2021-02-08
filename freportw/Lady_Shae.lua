@@ -1,3 +1,4 @@
+-- items: 13031, 13030
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. It is always good to meet someone new. I am Lady Shae of the House of Dumas. And what [house] are you from?");

@@ -1,4 +1,5 @@
 #Giang Yin
+# items: 6981, 6979
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

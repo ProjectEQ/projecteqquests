@@ -1,3 +1,4 @@
+-- items: 13700, 13231, 13232, 13230, 62811, 62605, 62657, 62615, 62611, 62612, 62613, 62614, 62616, 62617, 62846, 62655, 62844, 62624, 62625
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. My name is Corun Finisc and I am one of the Jaggedpine Treefolk. It is our divine responsibility to watch over and protect Surefall Glade and its [" .. eq.say_link("inhabitants") .. "] from those who seek to [" .. eq.say_link("destroy") .. "] them.");

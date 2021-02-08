@@ -1,5 +1,6 @@
 --Shaman Skull Quest 4
 --Shaman Skull Quest 5
+-- items: 12736, 5143, 12671, 12739, 12441
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Emote("shows the signs of a great mystic. You can feel the power resonating from his aura. 'Greetings and may the cursed blessings of Cazic-Thule be yours. What may I do for you this fine evening? Perhaps I can [cure disease] or [heal] you, perhaps even [purge toxins] from your system?");

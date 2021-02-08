@@ -1,3 +1,4 @@
+-- items: 17600, 13901
 function event_say(e)
 
 	if(e.message:findi("hail")) then

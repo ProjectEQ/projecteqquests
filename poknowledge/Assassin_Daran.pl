@@ -1,5 +1,6 @@
 #Assassin_Rysarieul.pl
 #Rogue Tomes/Planar Armor Exchange
+# items: 4901, 4902, 4903, 4904, 4905, 4906, 4907, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

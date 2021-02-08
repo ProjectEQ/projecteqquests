@@ -1,6 +1,7 @@
 -- Chef Chowderly's Award-Winning Recipes
 -- created by Gonner
 -- converted to lua by robregen
+-- items: 55523, 55524
 
 function event_say(e)
 	if(e.message:findi("hail")) then

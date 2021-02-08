@@ -3,6 +3,7 @@
 # fixed an incorrect talisman being accepted for a hand, corrected a typo that 
 # was causing one talisman not to be accepted, corrected the
 # plugin::return_items command
+# items: 9296, 27255, 27256, 27258, 27259, 27266, 27265
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

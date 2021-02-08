@@ -1,3 +1,4 @@
+# items: 6514, 10692
 sub EVENT_SAY
 {
 	if($text=~/hail/i)

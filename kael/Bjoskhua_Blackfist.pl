@@ -1,3 +1,4 @@
+# items: 20524, 25053
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What is it you want, mortal? I have little patience for those who do not come here to study.'");

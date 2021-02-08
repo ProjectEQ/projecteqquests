@@ -1,3 +1,4 @@
+# items: 19378, 19269, 19384, 19374, 19386, 19379, 19381, 19215
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("It's so good to see new faces, not to mention more adventurers in this area. On some nights, the sounds that come from the nearby hills will scare even the hardiest of travelers. I volunteered in the name of the Keepers of the Art to help locate any [new spell scrolls] that might surface. Maybe you will have a successful journey and find some of these scrolls yourself.");

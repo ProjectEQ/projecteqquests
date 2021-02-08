@@ -1,3 +1,4 @@
+# items: 2877, 3443, 3445, 3449, 3450, 3451, 2878, 3453, 3452, 3454
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Well met. friend.  May I be of assistance?"); }

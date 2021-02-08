@@ -1,4 +1,5 @@
 # Enchanter quests
+# items: 6329, 6334, 2351, 2350
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

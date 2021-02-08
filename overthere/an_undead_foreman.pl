@@ -1,3 +1,4 @@
+# items: 10023, 12863
 sub EVENT_SAY {
  if($text=~/hail/i){
   # The New Worker [Part 1]

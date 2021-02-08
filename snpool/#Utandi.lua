@@ -1,3 +1,4 @@
+-- items: 55617, 55618, 55619, 55620
 local event_started = false
 
 local function update_flag(client)

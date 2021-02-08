@@ -4,6 +4,7 @@
 #
 #NPC Name: Kelenek Bluadfeth
 #NPC ID: 113157
+# items: 25831, 24912, 25377, 25814, 24907, 25378, 25821, 24909, 25379, 25838, 24911, 25380, 25832, 24913, 25381, 25825, 24908, 25382, 25833, 24910, 25383
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

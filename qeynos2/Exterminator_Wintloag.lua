@@ -1,3 +1,4 @@
+-- items: 13071
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("I really can't believe it, %s. I have seen Qeynos in bad shape but this is unbelievable! The rodents have practically taken over our city. If you see some of them running around, keep the rat whiskers, and I will reward you for every four you bring me.",e.other:GetName()));

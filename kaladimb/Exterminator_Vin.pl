@@ -1,3 +1,4 @@
+# items: 13071
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hello, I be Vin the Exterminator. I am here to get rid of these darn rodents that are plaguing our town. If ya would like to make a small bit of coin, perhaps you could help me. Hunt down some rodents and bring me four of their whiskers.  If yer not too busy, that is.");

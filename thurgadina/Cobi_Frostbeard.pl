@@ -1,5 +1,6 @@
 # Quest for Cobi Frostbeard in Thurgadin - Druid Velious Armor (Rowyls) 
 # Kiladiveus - copied text from website. created Sub EVENT_SAY and Sub EVENT_ITEM for quest. Used Faction requirement method.
+# items: 25805, 24942, 31050, 25815, 24944, 31051, 25827, 24943, 31054, 25840, 24948, 31053, 25841, 24947, 31049, 25836, 24946, 31052, 25838, 24945, 31055
 
 
 sub EVENT_SAY { 

@@ -1,3 +1,4 @@
+# items: 5994, 5996
 sub EVENT_SPAWN {
  quest::settimer("Feign",1);
 }

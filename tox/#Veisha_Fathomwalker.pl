@@ -1,5 +1,6 @@
 #BeginFile: #Veisha_Fathomwalker.pl
 #Quest for Toxullia Forest - Veisha Fathomwalker: Experienced Courier
+# items: 12998, 12997, 12995
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello, $name. I fear I do not have time to speak with you as I am working my shift. Please contact me at a later time.");

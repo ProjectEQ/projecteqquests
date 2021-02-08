@@ -1,5 +1,6 @@
 #Zone: Soltemple  NPC: Lord_Lyfyx_of_Burwood (80038)
 #Qadar
+# items: 10028, 12831, 12952
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

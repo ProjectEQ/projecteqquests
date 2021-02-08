@@ -1,3 +1,4 @@
+-- items: 66615
 local prizes = {
     11668,      -- Vibrating Gauntlets of Infuse
     59509,      -- Glowing Black Drum

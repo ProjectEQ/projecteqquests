@@ -1,5 +1,6 @@
 # Bloody Shak Dratha Hearts
 #
+# items: 30616, 13009
 
 my $count = 0;
 

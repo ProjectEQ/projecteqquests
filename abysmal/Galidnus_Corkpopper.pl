@@ -1,3 +1,4 @@
+# items: 58152, 58065, 58136, 58211, 58223, 58061, 58148, 58147, 58159, 58212, 58022, 58071
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome! Welcome! Hey, I don't suppose you'd like to learn how to brew? Or maybe you already know the trade and you just want to help me out? I've got some busywork to do, and I'd like to get someone else to do it for me. I'd rather spend my time making tea from those wonderful local tea leaves. There's a wild variety that somehow grows in the mountains that I really would like to spend some time working with. Can you help me with my [busywork]?");

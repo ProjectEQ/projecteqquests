@@ -4,6 +4,7 @@
 #
 #NPC Name: Veldern Blackhammer
 #NPC ID: 113162
+# items: 25831, 24905, 25349, 25814, 24900, 25350, 25821, 24902, 25351, 25838, 24904, 25352, 25832, 24906, 25353, 25825, 24901, 25354, 25833, 24903, 25355
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

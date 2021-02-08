@@ -1,3 +1,4 @@
+# items: 55189, 55187, 55190, 55188, 55191, 55192
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What is it, mortal? Can you not leave me alone to mourn my [loss]?")

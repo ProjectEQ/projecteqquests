@@ -1,6 +1,7 @@
 -- 201435 Trial of Lashing
 -- Trial of Lashing
 --
+-- items: 31599
 
 local lashing_flag      = 0;
 local trial_group       = nil;

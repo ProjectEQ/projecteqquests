@@ -1,4 +1,5 @@
 -- Part of Ghoulbane quest
+-- items: 2414, 2416
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);

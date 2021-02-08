@@ -1,4 +1,5 @@
 -- no response to hail
+-- items: 29008, 29009
 
 function event_trade(e)
 	local item_lib = require("items");

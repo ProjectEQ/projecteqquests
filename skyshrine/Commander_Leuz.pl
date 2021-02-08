@@ -1,3 +1,4 @@
+# items: 29683, 29688
 sub EVENT_SAY {
   if ($faction<=2) {
     if ($text=~/hail/i) {

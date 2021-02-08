@@ -1,3 +1,4 @@
+# items: 60155, 60174, 60176, 60146, 60147, 60148, 60149, 60162, 60163, 60164, 60165, 60166, 60167, 60168, 60169, 60161, 60173, 60160, 60170, 60171, 60172, 60175
 sub EVENT_SAY {
   $InIkkyV3 = quest::GetInstanceID("ikkinz",3);
   $InIkkyV4 = quest::GetInstanceID("ikkinz",4);

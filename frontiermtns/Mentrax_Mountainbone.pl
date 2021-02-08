@@ -1,3 +1,4 @@
+# items: 20678, 20666
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What be it you want! Go away before I eat you for dinner!");

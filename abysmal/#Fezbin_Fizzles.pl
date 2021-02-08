@@ -1,3 +1,4 @@
+# items: 67512, 67659, 67571
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if($ulevel <= 64) {

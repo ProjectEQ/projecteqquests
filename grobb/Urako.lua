@@ -1,6 +1,7 @@
 -- Converted to .lua by Speedz
 -- added saylink by robregen
 -- added faction checks as well as the turnin for Urako's Big Mistake
+-- items: 12213, 12214, 12215, 12216, 12212
 
 function event_say(e)
 	local pfaction = e.other:GetFaction(e.self);

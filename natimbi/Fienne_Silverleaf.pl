@@ -1,4 +1,5 @@
 # Fienne's Wildlife Specimens
+# items: 54085, 54084, 54087, 54086, 54092
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

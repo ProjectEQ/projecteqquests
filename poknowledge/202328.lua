@@ -1,3 +1,4 @@
+-- items: 11304, 15005, 15639, 15769, 15772, 15775, 15778, 19086, 16807, 16773, 19087, 19438, 19149, 19441, 47100, 19092, 14960, 11998, 14941, 14966
 function event_say(e)
    local qglobals = eq.get_qglobals(e.other);   
    if(e.message:findi("hail") and e.other:HasItem(28034) ) then --has 1.0

@@ -1,3 +1,4 @@
+# items: 17125, 19555, 19559, 19558, 19557, 19561, 19560, 11395, 20420, 20358, 20356, 20402, 20418
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Welcome to The Abattoir fellow Cazicite. I am Shwara Volerno. Mistress of Necromancy. If you have just begun to study the Necromantic arts I will assist you with obtaining some [clothing] and a robe that will be most useful when conducting research outside of The Abattoirs walls. We members of the Abattoir are the most feared of the residents of Paineel by the citizens of Erudin. to venture too far beyond the safety of our city unprepared would be foolish.");

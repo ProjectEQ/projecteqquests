@@ -1,3 +1,4 @@
+-- items: 13755, 2905, 13754, 2906, 13753, 2907
 function event_waypoint_arrive(e)
 	if(e.wp == 3) then
 		e.self:Say("Greetings, sister! I just wanted to make sure no harm had befallen you.");

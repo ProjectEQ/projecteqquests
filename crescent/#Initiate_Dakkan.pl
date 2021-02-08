@@ -6,6 +6,7 @@
 ##         Diseased Spiders   
 ##         Snake Sacs
 ##         Welcome to Crescent Reach
+# items: 53483, 54653, 54652
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

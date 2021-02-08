@@ -1,5 +1,6 @@
 #BeginFile: warslikswood\Lurking_Hopeful.pl
 #Quest for Warsliks Wood - Lurking Hopeful: Berserker Epic 1.0 (Trial of Mastery)
+# items: 60210
 
 my $medal;
 

@@ -1,3 +1,4 @@
+-- items: 18021, 18022
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say(string.format("Ah.. Hello there..  %s, was it?  Yes, right, %s.  Anyhow, my name's Anehan Treol, member of the League of Antonican Bards.  Feel free to visit our humble guild house here in South Qeynos.  It's called the Wind Spirit's Song and we often put on free shows there.  I think you'd enjoy it.  Anyway, nice chatting with you, and I hope to see you again soon.",e.other:GetName(),e.other:GetName()));

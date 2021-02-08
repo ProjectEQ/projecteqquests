@@ -1,3 +1,4 @@
+-- items: 13925, 18824
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail, %s. My name is Weleth Nagoh. In addition to my patrol, I am in charge of keeping the guardhouse stocked with supplies. I must get back to my duties. Farewell.",e.other:GetName()));

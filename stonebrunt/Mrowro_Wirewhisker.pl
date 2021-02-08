@@ -1,3 +1,4 @@
+# items: 6980, 6978, 2577
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 6980 => 1, 6978 => 1)) { #Kejek Spirit Powder, Fading Soul Orb
     quest::say("I require a Fading Soul Orb and Kejek Spirit Dust in order to perform the ritual that will free the imprisoned souls.");

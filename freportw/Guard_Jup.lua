@@ -1,3 +1,4 @@
+-- items: 17174, 54010, 54024
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, Citizen. In this time of piracy on the high seas, your [duty] is clear, is it not?");

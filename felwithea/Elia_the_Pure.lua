@@ -1,4 +1,5 @@
 -- Paladin Epic 1.0
+-- items: 29002, 29005
 
 function event_say(e)
 	if(e.message:findi("hail")) then

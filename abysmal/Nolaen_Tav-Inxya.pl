@@ -1,5 +1,6 @@
 # Necromancer Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54184, 68220, 54182, 68223, 54185, 68225, 54187, 68226, 54188, 68224, 54186, 68221, 54183
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

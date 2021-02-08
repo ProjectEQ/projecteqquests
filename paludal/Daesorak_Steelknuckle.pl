@@ -1,5 +1,6 @@
 # Mining Operation
 #
+# items: 4754, 4756, 4747, 4755
 
 sub EVENT_SPAWN {
   $picks = 0;

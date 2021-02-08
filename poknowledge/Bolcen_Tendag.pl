@@ -1,5 +1,6 @@
 #Bolcen_Tendag.pl
 #Willamina's Needles
+# items: 28091, 28092
 
 
 sub EVENT_SAY {

@@ -1,3 +1,4 @@
+# items: 12970, 1682, 1683
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("jumps at your voice and begins laughing at his skittishness.");

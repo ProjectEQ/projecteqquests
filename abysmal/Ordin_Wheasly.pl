@@ -1,3 +1,4 @@
+# items: 58045, 58056, 58214, 58046, 58199, 58035, 58154, 58155, 58059, 58193, 58198, 58196
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(167,4)) { #Baking Collect Step 5

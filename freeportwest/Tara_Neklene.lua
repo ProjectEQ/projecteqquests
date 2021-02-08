@@ -1,3 +1,4 @@
+-- items: 13845
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("It is always a pleasure to meet a new face. We have many who travel far and wide to visit our great academy. Many who brave the long trip by boat. Many who dare to cross the territory of the [Deathfist orcs].");

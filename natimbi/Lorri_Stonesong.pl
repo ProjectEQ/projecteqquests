@@ -1,5 +1,6 @@
 # Siren Hunting
 # Created by Gonner
+# items: 54090, 54089, 54088, 54091
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,5 +1,6 @@
 #Gwiraba_Gelrid.pl
 #Advanced Combat Manual
+# items: 22503, 26697, 9421, 28790, 28791
 
 
 sub EVENT_SAY {

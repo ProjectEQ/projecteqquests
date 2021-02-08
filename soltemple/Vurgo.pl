@@ -1,3 +1,4 @@
+# items: 5316, 10527
 sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Welcome! I am Vurgo, follower of Solusek Ro and holder of the [harvester] and the [Words of Darkness].");

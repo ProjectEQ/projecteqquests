@@ -1,3 +1,4 @@
+# items: 31754, 31757
 sub EVENT_SAY{
 	if($text=~/hail/i){
 		quest::emote("glares with eyes that seem to pierce through you like fiery daggers.  'Run while you can weakling!  My appetite grows stronger with the presence of your mortal scent!'");

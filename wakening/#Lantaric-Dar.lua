@@ -1,5 +1,6 @@
 -- bard 1.5
 -- also used in prequest
+-- items: 77608, 77612, 77613, 77600, 77601, 77602, 77604, 77605, 77606, 77607
 
 function event_say(e)
     if e.other:Class() == "Bard" then

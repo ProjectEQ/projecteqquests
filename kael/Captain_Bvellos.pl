@@ -1,5 +1,6 @@
 #Captain_Bvellos.pl
 #Bvellos' Bounty, Mask of War
+# items: 30081, 25301, 25077, 25084, 1718, 25024
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

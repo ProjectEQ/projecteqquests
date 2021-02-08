@@ -4,6 +4,7 @@
 #
 #NPC Name: Nerik Wolfsoul
 #NPC ID: 113146
+# items: 25831, 24919, 5439, 25814, 24914, 5440, 25821, 24916, 5441, 25838, 24918, 5442, 25832, 24920, 5443, 25825, 24915, 5444, 25833, 24917, 5445
 
 # allas only has 4 dialogue messages but the monk quest dialogue matches
 # exactly on the same pieces; using monk quest dialogue for unknowns

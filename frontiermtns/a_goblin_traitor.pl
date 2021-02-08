@@ -3,6 +3,7 @@
 # Regal Band of Bathezid
 # global RegalBandBathezid, needed to be sure players won't jump to the last part of the quest
 #   at 1 : you gave the Signet of Service to the goblin traitor
+# items: 6472, 5728
 
 sub EVENT_SAY {
   if  ($faction<=2) {  # need to be warmly or better

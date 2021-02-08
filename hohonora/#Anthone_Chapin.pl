@@ -1,3 +1,4 @@
+# items: 52963, 52953
 sub EVENT_SAY {
   if(plugin::check_hasitem($client, 54286) && ($text=~/hail/i)) { #Assembling the Staff
     quest::say("Mithaniel Marr himself has entrusted me with the power to purge taint from the most desecrated of objects.");

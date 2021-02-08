@@ -1,3 +1,4 @@
+-- items: 12133, 12134
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("May the words of Marr be passed on to you.  Please seek knowledge from the masters of this temple.");

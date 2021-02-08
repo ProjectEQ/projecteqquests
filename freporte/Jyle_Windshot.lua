@@ -1,3 +1,4 @@
+-- items: 13536, 13824, 12334
 function event_say(e)
 	if(e.message:findi("hail")) then
 	e.self:Say("Greetings, friend!! Nice to meet you. I see you enjoy barging into other people's rooms. No problem. I enjoy the company. What are you looking for?");

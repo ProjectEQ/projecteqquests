@@ -1,4 +1,5 @@
 # Quest for Glatigi in Thurgadina - Berserker Velious Armor (Icefury) 
+# items: 25814, 24935, 55318, 25821, 24937, 55319, 25825, 24936, 55322, 25832, 24941, 55321, 25831, 24940, 55317, 25838, 24939, 55320, 25833, 24938, 55323
 
 sub EVENT_SAY { 
   if ($faction <= 3) { # Require Warmly and greater faction    

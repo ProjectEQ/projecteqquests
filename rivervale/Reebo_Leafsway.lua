@@ -1,3 +1,4 @@
+-- items: 13971, 13957, 13972, 13958, 13974, 10308, 8303, 8304, 10302, 10303, 10304, 10305, 10306, 10309, 17302, 12001, 10301, 17301, 17300, 12002
 function event_say(e)
 	if(e.message:findi("hail") and e.other:HasItem(52355) == true) then
 		e.self:Say("You took care of our problem, " .. e.other:GetName() .. ", and for that you have my eternal thanks. With the new head you supplied, we should be able to squeeze a few more years out of Shakey. Not sure what you'd want to do with the old one. That dilapidated pumpkin is worthless. Moldy, dried out . . . doesnt hold a light. He shrugs empahtically. Go ahead and hold onto the thing if that tickles your fancy, though. May Karana watch over you in your travels!");

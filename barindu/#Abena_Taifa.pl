@@ -1,3 +1,4 @@
+# items: 64007, 64010, 64009, 64018
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 64007 =>1 )) {
     quest::say("Proteri sent word that you would be coming. I have bad news. It seems Ixvet has gotten wind of a plot on his life and has grown paranoid. He has started changing his personal servants on a regular basis and I was replaced by Chiaka Lerato yesterday. I'm afraid that I'm not going to be able to help you anymore. Please, keep the fruit for now.");

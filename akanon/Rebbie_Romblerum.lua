@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 19561, 19558, 19559, 19560, 19557, 19556, 19555, 10988, 17124
 
 function event_say(e)
 	if(e.message:findi("hail")) then

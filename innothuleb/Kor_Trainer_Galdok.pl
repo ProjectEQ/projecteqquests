@@ -1,3 +1,4 @@
+# items: 27427, 16542, 5017, 51116, 1594, 2283, 51119, 51117
 sub EVENT_SAY {
   if(plugin::check_hasitem($client, 51116)) {
  if($text=~/hail/i) {

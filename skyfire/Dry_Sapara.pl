@@ -1,4 +1,5 @@
 #ID91092
+# items: 69313, 69309, 69935, 69936
 sub EVENT_SAY {
   if($text=~/hail/i) {
 	if($client->GetGlobal("paladin_epic") ==4 && plugin::check_hasitem($client, 69933)) {

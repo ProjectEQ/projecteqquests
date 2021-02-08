@@ -1,3 +1,4 @@
+-- items: 48127, 48119, 48120, 48129, 48130
 local char_id = 0;
 local spawn_chest = false;
 local update_global = false;

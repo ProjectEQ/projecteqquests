@@ -1,5 +1,6 @@
 # Magician Quests for Torch of Alna, Stein of Ulissa, Broom of Trilon, Shovel of Ponz
 #Modified by Kilelen for the magician spell: primal rememdy, LoY era
+# items: 16544, 16543, 16538, 10032, 6360, 10035, 10014, 16545, 16539, 6361, 16540, 16542, 10034, 16547, 6363, 16546, 16534, 10033, 16541, 6362, 58003, 58004
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

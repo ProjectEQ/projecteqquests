@@ -1,3 +1,4 @@
+# items: 9343, 9345, 9344, 9346, 30393, 9327, 9328, 30392
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I am Jortreva, Crusader of Veeshan. I am the ear to the whispers upon the shadows and the eyes to witness the tainted footsteps of our enemies that corrupt our path. Your kind, the second generation of the lesser gods' creation, have brought us into being as we are now -- for that, we hold neither gratitude nor contempt. It is your actions that have sent us spiraling through an umbra of immeasurable danger that could secure the destruction of all upon this world, but it shall be through the undying efforts of the [champions] that we may have some chance to ward this darkness back into the oblivion it strives to create.");

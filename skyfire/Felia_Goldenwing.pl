@@ -1,5 +1,6 @@
 # Test of Charm - enchanter epic - Enchanted Sapphire
 # 
+# items: 10632, 10619
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10632 => 1)) {

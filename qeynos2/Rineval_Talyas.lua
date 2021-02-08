@@ -1,3 +1,4 @@
+-- items: 19071, 19070, 1000, 18302
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("hello, %s",e.other:GetName()));

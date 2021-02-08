@@ -1,3 +1,4 @@
+-- items: 2694
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("coughs and struggles to move. 'There were... too many... too strong.'");

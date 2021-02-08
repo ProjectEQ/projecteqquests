@@ -1,3 +1,4 @@
+-- items: 13916
 function event_combat(e)
 	if(e.joined) then
 		local cur_target = e.self:GetHateTop();

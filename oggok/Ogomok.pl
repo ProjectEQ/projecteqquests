@@ -1,3 +1,4 @@
+# items: 55398, 55394, 55392, 55391, 55396, 55393, 55395, 55397, 12160, 55399
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Who you be? You fight with anger in your veins? You think you strong [berserker]?");

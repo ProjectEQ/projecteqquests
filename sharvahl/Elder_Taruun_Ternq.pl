@@ -1,5 +1,6 @@
 #Rogue #3
 #Zone:sharvahl  ID:155057 -- Elder_Taruun_Ternq
+# items: 5564, 5570, 5566, 3465, 5558, 6158, 6275
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5564 => 1)) {

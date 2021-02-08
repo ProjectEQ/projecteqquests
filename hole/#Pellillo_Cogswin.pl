@@ -1,3 +1,4 @@
+# items: 67053, 67054
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say("What how did you see me? Never mind I guess it doesn't matter at this point. Our [goal] has become unattainable.");

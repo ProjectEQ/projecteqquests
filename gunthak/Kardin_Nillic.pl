@@ -2,6 +2,7 @@
 #site3op & Angelox :)
 #Aria of Asceticism (bard quest)
 #quest is Titanium version
+# items: 59022, 59023, 59024, 59002
 
 sub EVENT_SAY { 
 if ($text=~/Hail/i){

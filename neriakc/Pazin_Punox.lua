@@ -1,5 +1,6 @@
 --Pazin_Punox.pl
 --Rogue Tome Handin/Rogue Master Sketch
+-- items: 7041, 9438
 
 function event_say(e)
 local qglobals = eq.get_qglobals(e.self,e.other);

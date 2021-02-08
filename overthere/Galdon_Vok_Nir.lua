@@ -1,3 +1,4 @@
+-- items: 12743, 12744, 12742
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Please do not harm me.  I am not the one who brought the outsiders to our land.  I am innocent and deserve to return to my people.");

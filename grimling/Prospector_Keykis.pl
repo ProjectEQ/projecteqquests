@@ -1,3 +1,4 @@
+# items: 63160, 63157, 63145, 63135
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Oh, hello! Are you busy at the moment...I need a [quick favor].");

@@ -1,3 +1,4 @@
+-- items: 18801, 13302, 18862
 function event_waypoint_arrive(e)
 	if(e.wp == 17) then
 		e.self:Say("When will my sister show up? I need her!");

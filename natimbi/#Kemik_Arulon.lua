@@ -1,3 +1,4 @@
+-- items: 69953, 69969
 local paladin_dz = {
 	expedition = { name="Dranik's Hollows: Murkglider Hive", min_players=3, max_players=6 },
 	instance   = { zone="dranikhollowsc", version=0, duration=eq.seconds("6h") },

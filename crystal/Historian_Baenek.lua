@@ -1,3 +1,4 @@
+-- items: 18237
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("As I am the remaining priest of Brell in Froststone, it is my humble duty to preserve the history of the Coldain.  Do you wish to listen to our history?");

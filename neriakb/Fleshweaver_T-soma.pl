@@ -1,3 +1,4 @@
+# items: 17592, 17593, 63012, 63013, 63015, 63052, 63053
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Ah you must be the one sent to assist me. Good. I have need of flesh for my spellwork. I wish to summon them myself! Get me three samples of flesh from these new Luggald beings. Put the samples in this Fleshthread Satchel so that they don't decay.");

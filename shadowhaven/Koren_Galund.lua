@@ -1,5 +1,6 @@
 --shadowhaven/Koren_Galund.lua NPCID 150313
 --Warrior Epic 1.5
+-- items: 60318, 60319
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);

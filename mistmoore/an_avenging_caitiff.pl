@@ -6,6 +6,7 @@
 #NPC ID: 59020
 #Quest items needed: Maid Issis fang (10179) and Butler Syncall fang (10178)
 ###########
+# items: 10179, 10178, 5408
 
 
 sub EVENT_SAY {

@@ -1,3 +1,4 @@
+# items: 12185
 sub EVENT_SPAWN {
   quest::settimer("depop", 1800); #Despawn after 30 minutes
 }

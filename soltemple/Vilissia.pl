@@ -1,5 +1,6 @@
 # Quest for Wizard Acumen Mask, Runescale Cloak, Tishan's Kilt
 # Quest for Bard Lambent Ruby
+# items: 2366, 2364, 10118, 19048
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

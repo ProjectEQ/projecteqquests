@@ -1,3 +1,4 @@
+-- items: 51120
 rescue = 0;
 x_dest = 785;
 y_dest = -1775;

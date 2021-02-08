@@ -1,6 +1,7 @@
 # Yun Master Arglug
 # Froglok Newbie Shaman armor
 #by Realityincarnate
+# items: 17392, 51064, 51062, 51066, 51065, 51068, 51063, 51067, 51093, 51095
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

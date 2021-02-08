@@ -1,5 +1,6 @@
 -- Turnin of Order of Thuder researched/discovered by @nilbog
 -- Faction levels researched/coded by @noudess
+-- items: 13287, 13288
 
 function event_say(e)
 	local standing = e.other.GetModCharacterFactionLevel(e.other, 280);

@@ -1,3 +1,4 @@
+-- items: 31424, 31425, 31426, 31423, 1208, 31419, 31420, 31421, 31422, 1207
 function event_spawn(e)
 	eq.set_timer("hum",90000);
 end

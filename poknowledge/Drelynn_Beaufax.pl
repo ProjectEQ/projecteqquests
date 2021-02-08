@@ -1,5 +1,6 @@
 #Drelynn_Beaufax.pl
 #Drelynn's Gem Collection
+# items: 28077, 28242
 
 
 sub EVENT_SAY {

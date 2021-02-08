@@ -1,3 +1,4 @@
+# items: 55164, 55172, 55173, 55174, 55175, 55176, 55177, 55178, 51038, 13372, 55186
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hi dere, yuz look like a warrior dat cud use some decent armor, is you a [warrior]?");

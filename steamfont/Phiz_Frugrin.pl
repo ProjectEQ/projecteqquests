@@ -4,6 +4,7 @@
 # Quest:  Telescope Lenses
 # Author: a_sewer_rat
 #########################################################
+# items: 18867
 
 sub EVENT_SAY {
    if($text=~/Hail/i){

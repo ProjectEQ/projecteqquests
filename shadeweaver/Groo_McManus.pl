@@ -1,3 +1,4 @@
+# items: 30601, 15093
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings adventure seeker. I have come from afar to study this strange thicket. The spirits are strong within this region, but they are secretive as well.  I am willing to impart my wisdom to those who will aid me in my exploration. Are you [interested?]");

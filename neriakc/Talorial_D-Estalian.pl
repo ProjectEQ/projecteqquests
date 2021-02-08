@@ -1,3 +1,4 @@
+# items: 17244, 22588, 22584, 22587, 22630, 22586, 22583, 22589, 17243
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("On what grounds do you think you are welcome to address me like that vermin? I am afraid you will have to prove yourself to me before I can treat you with any respect. Do you feel that you are [worthy] to stand before me?");

@@ -1,5 +1,6 @@
 -- earthcaller - ranger epic
 -- naturewalker's scimitar - druid epic
+-- items: 62603, 20483, 20484, 20488, 20699, 20697, 20698, 20440, 20490, 13411, 13977, 84004, 13083, 62632, 62604
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);

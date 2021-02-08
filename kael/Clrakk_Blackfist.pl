@@ -1,5 +1,6 @@
 #113020.pl (Clrakk_Blackfist)
 #Strife to the Coldain
+# items: 25115, 25054, 25114, 25051
 
 sub EVENT_SAY
 {

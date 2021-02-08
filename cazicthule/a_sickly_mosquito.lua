@@ -1,3 +1,4 @@
+-- items: 62642
 function event_combat(e)
   if (e.joined == true) then
 	eq.set_next_hp_event(25);

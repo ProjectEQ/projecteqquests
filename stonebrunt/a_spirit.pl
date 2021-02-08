@@ -1,3 +1,4 @@
+# items: 2100, 2297
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("flares brightly as you attempt to speak with it. By listening very closely you're brely able to make out it's frantic whispering. It keep refering to one of the Kejekans, one that apparently slew him as he attempted to cleanse the land of them. It wants nothing more than to destroy who killed him, but it cannot in this [form].");

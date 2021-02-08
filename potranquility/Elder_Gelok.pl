@@ -1,5 +1,6 @@
 #Elder_Gelok.pl
 #Elder Gelok's Supplies
+# items: 10028, 10037, 22503, 15981, 28164, 28165, 28162, 28163
 
 
 #This sub give a 20% chance of recieving a random gem.  Percentage is a guess and easily changed.

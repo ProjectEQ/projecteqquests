@@ -1,3 +1,4 @@
+# items: 19195
 sub EVENT_SAY {
   if($text=~/Hail/i){ #Start of Exterminate the Vermin Quest (Scripted By: Fatty Beerbelly)
     quest::say("Hello dere. Do you see all dese darn critters running around here? Dere are little armadillos everywhere! We need to git rid of dem. If you bring me four of dere husks, I pay you money. Too many for me to smash alone.");

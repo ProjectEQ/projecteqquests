@@ -1,5 +1,6 @@
 ##Yeril_Imsin.pl
 #Restock High Quality Ore (PoK)
+# items: 17814, 10953, 10952
 
 #Some variables, declared up here instead of when used per Cavedude
 my $x;

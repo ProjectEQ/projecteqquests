@@ -1,5 +1,6 @@
 # Daksins' Vampyre Antidote
 #
+# items: 4765, 4764, 2693
 
 sub EVENT_SPAWN {
   $gaveblood = 0;

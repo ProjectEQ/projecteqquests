@@ -1,5 +1,6 @@
 # Cragbeast Queen: Lizardscale Plated Girdle
 # Created by Gonner
+# items: 52130, 52132, 52123
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

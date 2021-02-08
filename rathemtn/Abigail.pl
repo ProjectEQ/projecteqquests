@@ -3,6 +3,7 @@
 #  Zone:  Rathe Mtns
 #  Quest:  Breastplate of Ro
 ###############################################################
+# items: 12309, 12299
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

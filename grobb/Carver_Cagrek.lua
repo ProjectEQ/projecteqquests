@@ -1,6 +1,7 @@
 -- Converted to .lua by Speedz
 -- added saylink by robregen
 -- Added quest for mushroom spores, removed Neriak era stuff and fixed faction.
+-- items: 13368, 18940, 5413, 12191, 12210, 13409, 12211
 
 function event_say(e)
 	if(e.message:findi("hail")) then

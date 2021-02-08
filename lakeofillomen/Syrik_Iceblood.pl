@@ -1,5 +1,6 @@
 # bloodgill steel weapons quest
 # intro to release garudon quest
+# items: 65506, 65507, 65508, 65509, 65510, 65511
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

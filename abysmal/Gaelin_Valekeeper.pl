@@ -1,5 +1,6 @@
 # Druid Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54121, 68220, 54119, 68223, 54122, 68225, 54124, 68226, 54125, 68224, 54123, 68221, 54120
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

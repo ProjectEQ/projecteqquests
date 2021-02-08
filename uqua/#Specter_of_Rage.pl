@@ -1,3 +1,4 @@
+# items: 67705
 my $instid = 0;
 
 sub EVENT_ITEM {

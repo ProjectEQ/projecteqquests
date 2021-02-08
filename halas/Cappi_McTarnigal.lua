@@ -1,3 +1,4 @@
+-- items: 5243, 5238, 5239, 5242, 5236, 5233, 5231, 5240, 5241, 5234, 5232, 5235, 5237
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail there, " .. e.other:GetName() .. "! If you are not a [member of the White Rose], then it be best that you stay on the lower level. This here floor is for honest ...ermm respectable rogues only.");

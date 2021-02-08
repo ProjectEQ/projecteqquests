@@ -1,3 +1,4 @@
+-- items: 69945, 69946, 69949
 function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");

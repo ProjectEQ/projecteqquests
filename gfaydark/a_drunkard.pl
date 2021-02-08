@@ -1,3 +1,4 @@
+# items: 13035, 13347, 13349, 13348, 13350, 2314, 2007, 2005, 23359
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Can you -hic- . . . spare some copper or -hic- . . . silver? I just . . . -Hic- . . . need some change to buy something to drin . . Er . . Eat . -Hic-");

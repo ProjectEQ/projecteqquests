@@ -2,6 +2,7 @@
 #NPC ID: #100129
 #Zone: stonebrunt
 #Quest by Dave
+# items: 59035, 59019, 59006, 59050, 59036, 59051, 59037
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

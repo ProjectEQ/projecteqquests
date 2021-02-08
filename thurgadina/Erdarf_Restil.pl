@@ -1,5 +1,6 @@
 # Crystal Caverns' Ancient Artifacts
 #
+# items: 30269, 30270, 30271
 
 sub EVENT_SAY {
   if ($faction <= 3) {

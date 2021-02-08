@@ -1,3 +1,4 @@
+-- items: 13903, 18722
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then
 		e.self:Say("Hey Pelshia, how's business?");

@@ -1,3 +1,4 @@
+# items: 31756
 sub EVENT_SAY{
 	if($text=~/hail/i){
 		quest::say("Greetings traveler! You look like you're still breathing and have your blood running through your veins so I suppose you may seek shelter behind the mighty walls of Katta Castellum.");

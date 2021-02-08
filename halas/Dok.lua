@@ -1,3 +1,4 @@
+-- items: 17958, 12222, 12220, 12275, 12276, 12282, 13953, 12277
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Fine day to ye, " .. e.other:GetName() .. ".  Welcome to me shop.  If ye're searchin' fer a [cigar], ye won't be findin' any, more's th' pity.");

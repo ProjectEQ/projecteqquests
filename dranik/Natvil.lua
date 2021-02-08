@@ -1,4 +1,5 @@
 -- Cleric 1.5 // Cleric 2.0 Epic // Harmony of the Soul // Aegis of Superior Divinity  --Drogerin
+-- items: 56014, 47100, 9955, 20076
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);

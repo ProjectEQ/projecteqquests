@@ -1,5 +1,6 @@
 # Test of Charm - enchanter epic - Enchanted Emerald
 # 
+# items: 10634, 10621
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10634 => 1)) {

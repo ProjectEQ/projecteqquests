@@ -1,4 +1,5 @@
 # Monk Epic 1.0
+# items: 1686, 1687
 
 sub EVENT_SAY {
   if(plugin::check_hasitem($client, 1687)) { #Eye of Kaiaren

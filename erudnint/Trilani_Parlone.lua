@@ -1,5 +1,6 @@
 -- Tunare Warden
 -- Missing The Mystic Cloak
+-- items: 1598, 1596, 1597, 1599, 1056, 1057
 
 function event_say(e)
 	if(e.message:findi("hail")) then

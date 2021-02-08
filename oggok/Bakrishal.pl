@@ -1,3 +1,4 @@
+# items: 51379, 51357, 51360, 51358, 51362, 51359, 51356, 51361, 55212, 55213
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Whats do yuz wants? Yuz come to mez to lern bout speshul armorz? If'n yuz ar a Beastlord, yuz kan lern to kraft yur own armor, yuz just needz da recipe. Ar yuz a [Beastlord]?");

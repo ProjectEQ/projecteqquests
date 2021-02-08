@@ -1,4 +1,5 @@
 # Gemmed Sword Hilt
+# items: 4762
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

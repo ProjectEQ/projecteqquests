@@ -1,3 +1,4 @@
+-- items: 13295, 18839
 local chrono = 13906;
 local diamond = 13907;
 local ebon = 13904;

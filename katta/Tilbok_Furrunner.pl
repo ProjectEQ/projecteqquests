@@ -1,5 +1,6 @@
 #BeginFile: katta\Tilbok_Furrunner.pl
 #Quests for Katta Castellum - Tilbok Furrunner: Runed Earring of Veracity, Signet Earring of Veracity and Traitor to the Validus Custodus
+# items: 29846, 29891, 17121, 29858, 29889, 29859, 29844, 3463827, 29845
 
 sub EVENT_SAY {
   if($text =~ /hail/i) {

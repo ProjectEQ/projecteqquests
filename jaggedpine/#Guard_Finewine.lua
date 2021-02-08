@@ -1,4 +1,5 @@
 -- Quest: Qeynos Badge of Nobility (Badge #5)
+-- items: 8283, 8199, 8198, 8278
 
 function event_say(e)
 	if(e.message:findi("hail")) then

@@ -1,5 +1,6 @@
 #Tymoz.pl
 #Custodus Helms
+# items: 31748, 31749, 31750
 
 
 sub EVENT_SAY { 

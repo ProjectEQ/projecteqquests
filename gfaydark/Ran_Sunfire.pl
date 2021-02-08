@@ -1,4 +1,5 @@
 #sub written by Kilelean
+# items: 2104, 2106, 2108, 2111, 2112, 12109
 sub DoRandomPatchwork {
 	my $a;
 	$a = int(rand(100)); 

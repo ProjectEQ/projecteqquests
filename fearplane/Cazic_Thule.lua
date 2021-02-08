@@ -1,4 +1,5 @@
 -- Call All mobs to aid Cazic Thule if they're still alive
+-- items: 18898, 8226, 18899, 7836
 
 function event_spawn(e)
 	eq.set_timer("Shout",600000);

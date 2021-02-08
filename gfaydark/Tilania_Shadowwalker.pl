@@ -1,3 +1,4 @@
+# items: 17365, 22671, 22672, 22673, 22674, 22675, 22676, 22677
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings to you $name. I welcome you to the Scouts of Tunare training halls. I have seen many scouts pass through my halls with unimaginable abilities and daggers guided by Tunare herself. I cannot say for certain what the future has in store for you. But I can say that wherever your adventures may take you it is always wise to have the proper [training].");

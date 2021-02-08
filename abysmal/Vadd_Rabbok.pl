@@ -1,5 +1,6 @@
 # Warrior Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54107, 68220, 54105, 68223, 54108, 68225, 54110, 68226, 54111, 68224, 54109, 68221, 54106
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

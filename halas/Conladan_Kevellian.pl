@@ -1,5 +1,6 @@
 # Halas rogue quest armor
 #
+# items: 12621, 55163, 55156, 55157, 55158, 55159, 55160, 55161, 55162, 20181, 27424, 27409, 27427, 55148
 
 sub EVENT_SAY {
   if (($text=~/hail/i) && ($class eq "Rogue")) {

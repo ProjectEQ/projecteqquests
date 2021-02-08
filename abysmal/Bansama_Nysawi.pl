@@ -1,3 +1,4 @@
+# items: 58151, 58103, 58142, 58102, 58129, 58021, 58028, 58036, 58127, 58125, 58104, 58131
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("smiles at you and says, 'Hello. It's always nice to have visitors, especially with all the work we have to do around here. I'm grateful for the chance to take a break and talk. Of course the work we do is important, so I can't spend too much time talking.'");

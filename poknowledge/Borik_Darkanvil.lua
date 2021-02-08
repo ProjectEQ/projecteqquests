@@ -1,4 +1,5 @@
 -- Alternate Access to Halls of Honor // Cleric 1.5 Harmony of the Soul Epic //  NPC -- Drogerin
+-- items: 29230, 29229, 29228, 3000, 29281, 9954
 
 function event_say(e)
 	if(e.message:findi("hail")) then

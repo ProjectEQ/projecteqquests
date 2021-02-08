@@ -1,5 +1,6 @@
 -- Author: RealityIncarnate
 -- Converted to .lua by Speedz
+-- items: 18163
 
 function event_say(e)
 	if(e.message:findi("hail")) then

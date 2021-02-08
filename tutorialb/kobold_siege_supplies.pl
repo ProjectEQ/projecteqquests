@@ -4,6 +4,7 @@
 #Quest turn in for 'Sabotage' - taskid:31
 #- makeshift lantern bomb (id:86011)
 #
+# items: 86011
 
 sub EVENT_TIMER
 {

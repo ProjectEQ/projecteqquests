@@ -1,4 +1,5 @@
 #Note: All text contained herein is non-Live. Need to acquire original
+# items: 3064, 10033, 14767, 14768, 4984, 3061, 10035, 14769, 14770, 4988, 3058, 10032, 14765, 14766, 4991, 3060, 10034, 14763, 14764, 4986
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

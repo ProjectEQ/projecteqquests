@@ -1,5 +1,6 @@
 # Quest for Pearce_Icefang in Thurgadina - Beastlord Velious Armor  
 # Thanks to Kiladiveus for most of this .pl - NPC ID 115063 -- Pearce_Icefang 
+# items: 25814, 24942, 5454, 25821, 24944, 5455, 25825, 24943, 5458, 25832, 24948, 5457, 25831, 24947, 5453, 25838, 24946, 5456, 25833, 24945, 5459
 
 
 sub EVENT_SAY { 

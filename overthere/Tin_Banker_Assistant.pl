@@ -1,4 +1,5 @@
 # Tin Banker Assistant
+# items: 12849, 55978
 
 # receives A Metal Key for Necro Skull Cap 5
 

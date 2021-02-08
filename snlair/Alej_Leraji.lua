@@ -1,3 +1,4 @@
+-- items: 68298
 local turned_in_seal = false
 local tool_count = 0
 

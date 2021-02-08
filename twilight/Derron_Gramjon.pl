@@ -1,3 +1,4 @@
+# items: 4490, 4839, 4840, 3742, 4838, 4829, 4489, 3741, 4798, 4797, 4796, 4492, 3737, 4494, 4818, 4810, 4809, 3739, 4491, 4795, 4793, 4794, 3736, 4820, 4819, 4488, 3740, 4799, 4493, 4808, 4800, 3738
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::emote("piercing eyes meets yours. ''Are ye a guest of Vornol's too? Have faith my friend but don't let that durn mage fool you, I know him better than anyone else. Well except for Valana of course.''");

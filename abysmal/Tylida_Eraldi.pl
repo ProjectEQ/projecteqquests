@@ -1,3 +1,4 @@
+# items: 58155, 58138, 58211, 58034, 58065, 58044, 58149, 58150, 58219, 58192, 58182, 58187
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("squints and looks at you with a slight grin on her face.");

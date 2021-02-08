@@ -1,3 +1,4 @@
+-- items: 18742, 13562
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings! You will have to excuse me. I have no time to talk right now and I prefer to be left alone. Please leave.");

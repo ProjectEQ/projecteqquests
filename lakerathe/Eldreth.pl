@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- Eldreth
+# items: 13087, 28012, 28053
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

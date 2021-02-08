@@ -1,4 +1,5 @@
 #Dharr's Lure Quests	#Zone:sharvahl  ID:155097 -- Dharr_Nadim
+# items: 3648, 30694
 sub EVENT_SPAWN {
 	quest::settimer(1,95);
 }

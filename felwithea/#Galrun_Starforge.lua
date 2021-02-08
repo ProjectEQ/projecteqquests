@@ -1,6 +1,7 @@
 -- epic expedition version of Struggles within the Progeny
 -- Game Update Notes: April 19, 2017
 -- Valdoon Paladin Epic 2.0 (Raid) - Lowered the minimum number of players necessary to request this raid from 10 to 6.
+-- items: 69975, 69976, 69981, 69956
 local paladin_minimum_players = 10
 
 local paladin_mmcc = {

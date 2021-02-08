@@ -1,3 +1,4 @@
+# items: 3190, 3192, 3191
 sub EVENT_SAY { 
     if($text=~/Hail/i){
 	quest::say("Greetings. $name!  Respect the woods and all its inhabitants or face the wrath of the rangers.  Do not end up like [Maldyn Greenburn].");

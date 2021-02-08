@@ -1,3 +1,4 @@
+# items: 18244, 12465, 18245
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail, citizen! Keep clear of the waterways which run through this grand city. For swimming they are not. Many times have playful broodlings fallen prey to the sharp teeth of barracudas.");

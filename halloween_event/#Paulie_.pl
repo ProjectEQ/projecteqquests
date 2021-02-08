@@ -1,3 +1,4 @@
+# items: 85062, 124688
 sub EVENT_SPAWN {
 	quest::say("*Huff Huff* Okay, I'm done.");
 	quest::settimer(1,300);

@@ -35,6 +35,7 @@
 -- Bloodfields Port Spells - Wizards and Druids
 --
 --------------------------------------------------
+-- items: 18700, 77765, 77766, 77659, 77660, 77661, 77662, 77663
 
 function event_say(e)
       if(e.message:findi("hail")) then

@@ -1,3 +1,4 @@
+# items: 5954, 5955
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Oh. hello there $name.  Thank you for stopping by. but this is just not a very good time for visitors.  My daughter is very upset over what has happened."); }

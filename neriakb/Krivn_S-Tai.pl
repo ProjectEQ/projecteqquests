@@ -1,3 +1,4 @@
+# items: 19561, 19558, 19555, 19559, 19560, 19557, 19556, 19584, 17124
 sub EVENT_SAY {
   if ($text=~/materials/i) {
     quest::say("Many species of dangerous creatures and even the walking remains of the dead inhabit the Nektulos Forest. You must defeat these creatures and undead in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft [gloves], [boots], a [bracer], a [coif], [leggings], [sleeves], or a [tunic]?");

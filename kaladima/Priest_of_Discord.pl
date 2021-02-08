@@ -1,3 +1,4 @@
+# items: 18700
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){
 		quest::say("Greetings. $name .  Are you a child of Order?  If you have come seeking the path of Discord. I require only that you give me your [Tome of Order and Discord] and I shall show you the way.  Only then will you be freed from Order's confining restraints.");

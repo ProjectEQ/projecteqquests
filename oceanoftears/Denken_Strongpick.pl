@@ -1,3 +1,4 @@
+# items: 16889, 20665, 20664, 20667
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello, $name. I am Denken Strongpick. I wish I could get off this rock, silly clan honor. My boss broke our rebreathers and we can not go back to the mainland before wegather some [goblin relics].");

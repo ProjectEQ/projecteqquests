@@ -1,3 +1,4 @@
+# items: 25117, 25049, 25116, 25048
 sub EVENT_SAY {
   if ($faction == 1) { #Require Ally faction
     if ($text=~/hail/i) {

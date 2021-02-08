@@ -1,4 +1,5 @@
 #Guard_Rawkkun  Hollowshade  ID  166079
+# items: 6220, 6221
 
 
 sub EVENT_SIGNAL

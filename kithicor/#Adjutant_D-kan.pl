@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- #Adjutant_D'kan
+# items: 28057
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

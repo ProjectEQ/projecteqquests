@@ -1,3 +1,4 @@
+-- items: 69909, 69908, 69907, 69910, 69906
 
 -- pal prequest #Drogerin
 

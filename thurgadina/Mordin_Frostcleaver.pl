@@ -2,6 +2,7 @@
 # the prayer shawl quests
 # 
 # involved in 3rd prayer shawl quest
+# items: 1420, 1415, 1419, 1416, 1423, 1417, 1424, 1418
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,3 +1,4 @@
+-- items: 19555, 19558, 19559, 19561, 19557, 19560, 19556, 19629, 17124
 function event_say(e)
 	if(e.message:findi("moss toe cap")) then
 		e.self:Say("To assemble a Moss Toe Cap you will require two [silk thread], a ruined mossy rat pelt, and a giant thicket rat skull. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Cap Pattern.");

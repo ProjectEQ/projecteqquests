@@ -1,5 +1,6 @@
 # Lady Deira
 # Crown of the Tempest Guard Quest
+# items: 8918, 8917, 8919, 8952, 8954
 
 sub EVENT_SAY {
   if ($faction <= 2) {   

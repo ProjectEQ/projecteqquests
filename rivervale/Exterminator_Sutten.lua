@@ -1,3 +1,4 @@
+-- items: 13071
 function event_say(e)
 	if(e.message:findi("hail")) then --Start of Exterminate the Vermin Quest (Scripted By: Fatty Beerbelly)
 		e.self:Say(string.format("Hi there %s. Think you could help me out a bit? I was hired to get rid of all these pesky rodents running around town but there seems to be no end to them! They are ruining the jumjum field and worse yet, if I dont get rid of them all, my boss wont give me the muffins he promised me! Think you could hunt some of the rodents down and bring me back four rat whiskers? I would pay you of course!", e.other:GetCleanName()));

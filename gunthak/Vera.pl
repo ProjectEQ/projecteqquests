@@ -1,6 +1,7 @@
 #zone: gunthak - NPC Vera (224192)
 #Started by Angelox, finished by Kilelen
 #Primal Remedy/Elemental Empathy
+# items: 58001, 58002, 58003, 58004, 59017, 58005, 58006, 59018
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

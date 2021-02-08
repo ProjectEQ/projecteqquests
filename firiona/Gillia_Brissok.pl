@@ -1,3 +1,4 @@
+# items: 62093, 62092, 62202
 sub EVENT_SAY {
 if($text=~/hail/i){
 quest::say("Greetings friend, it is good to be freed from the clutches of those evil creatures. Tell me are you willing to help me bring some [justice] to them?");

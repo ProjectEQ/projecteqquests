@@ -1,3 +1,4 @@
+-- items: 55608, 55609, 55610, 55611
 local function update_flag(client)
   local sewers_flag = tonumber(eq.get_data(client:CharacterID() .. "-god_sewers")) or 0
   local sncrematory_key = string.format("%s-god_sncrematory", client:CharacterID())

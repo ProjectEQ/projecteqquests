@@ -1,3 +1,4 @@
+-- items: 1680
 local counting;
 
 function event_spawn(e)

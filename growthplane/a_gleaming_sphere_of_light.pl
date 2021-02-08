@@ -1,3 +1,4 @@
+# items: 31445, 31446, 31443, 31444, 1325
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I greet thee, $name. You will have to pardon my demeanour; I am afraid that I am not in the best of spirits. Recently yet another brother was taken from us by an evil unknown through the dark art of mind rending.");

@@ -1,4 +1,5 @@
 --Epic Pre-quest (Paladin) ##Drogerin 208059
+-- items: 69901, 69912, 69913
 
 
 function event_say(e)

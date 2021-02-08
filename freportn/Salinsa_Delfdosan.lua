@@ -1,4 +1,5 @@
 -- Quests for North Freeport - Salinsa Delfdosan: Ordained Armor Quests (Cleric Newbie Armor)
+-- items: 17259, 22610, 22611, 22613, 22612, 22614, 22615, 22616, 9931, 9932, 9937
 
 function event_say(e)
 	if(e.message:findi("hail")) then

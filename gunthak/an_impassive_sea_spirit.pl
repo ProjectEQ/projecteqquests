@@ -1,5 +1,6 @@
 #zone: gunthak
 #quest: Shammy LoY Spells
+# items: 58010, 58013, 58014, 58015, 59013
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

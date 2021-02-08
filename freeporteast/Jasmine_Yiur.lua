@@ -1,3 +1,4 @@
+-- items: 55003, 55002, 55027
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Oh, hello.' Jasmine lowers her head. 'Sorry, I am not really in best form today. I am in a bit of a [big predicament].");

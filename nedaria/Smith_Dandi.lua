@@ -1,3 +1,4 @@
+-- items: 52346
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if( qglobals["Fatestealer_bard"] == "1" and e.message:findi("hail")) then

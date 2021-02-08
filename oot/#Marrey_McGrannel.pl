@@ -1,3 +1,4 @@
+# items: 57008, 52901
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		#:: Set by /....someone!

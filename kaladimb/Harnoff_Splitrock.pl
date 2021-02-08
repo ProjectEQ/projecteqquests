@@ -5,6 +5,7 @@
 #To Do:
 #Allow NPC to "run out" of ore
 #Restock NPC with ore
+# items: 17814, 10952, 10953
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

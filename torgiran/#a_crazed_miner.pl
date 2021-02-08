@@ -1,5 +1,6 @@
 #BeginFile: torgiran\#a_crazed_miner.pl
 #Quest for Torgiran Mines - a crazed miner (QUEST)
+# items: 59025, 59042
 
 sub EVENT_SPAWN {
   my $x = $npc->GetX(); 

@@ -1,3 +1,4 @@
+-- items: 18893, 13397, 18895
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. The fishing is sparse here. You would fare better at [Lake Rathe].");

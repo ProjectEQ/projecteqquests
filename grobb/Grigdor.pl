@@ -1,3 +1,4 @@
+# items: 55375, 55371, 55372, 55369, 55373, 55368, 55370, 55374, 13372, 51038, 55376
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say("Wot you want, weakling? You tink you be strong [berserker]? You fight with da anger in yer heart? Me give you test. If you can do, mebbe me thinkz you be strong.");

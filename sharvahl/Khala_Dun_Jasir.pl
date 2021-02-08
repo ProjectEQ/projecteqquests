@@ -1,4 +1,5 @@
 # Quest for luclin smithing
+# items: 29803, 29807, 29808, 29809
 
 
 sub EVENT_SAY { 

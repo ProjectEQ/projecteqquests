@@ -1,3 +1,4 @@
+# items: 1861, 1862
 sub EVENT_SAY {
   if ($faction==1) { # CoV mob
     if ($text=~/hail/i) {

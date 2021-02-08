@@ -1,4 +1,5 @@
 #Shar Vahl - Fharra Cawfeet - created by anubisrwml
+# items: 3495, 17077, 5536, 5537
 
 
 sub EVENT_SAY {

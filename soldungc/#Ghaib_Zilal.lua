@@ -1,4 +1,5 @@
 -- Quest: Aid Ghaib Against the Kobolds  
+-- items: 55260, 55253, 55254, 55255, 55256, 55257, 55258, 55259
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self, e.other);

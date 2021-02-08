@@ -1,3 +1,4 @@
+-- items: 13718, 18970, 13722
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail. " .. e.other:GetName() .. ".  I am Niclaus Ressinn. loyal Paladin of Life. I am scouting the Qeynos Hills on orders from High Priestess Jahnda.  We have received reports of undead prowling these hills of late.");

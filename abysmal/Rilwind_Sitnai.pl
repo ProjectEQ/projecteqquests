@@ -1,3 +1,4 @@
+# items: 58064, 58137, 58156, 58118, 58117, 58208, 58068, 58081, 58107, 58108, 58106, 58209, 63838, 62481, 17912, 62480
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings. We are busy here, and I have little time for pleasantries. I can sell you supplies, if you have need. I can even help you fix up that old Jeweler's [Kit] of yours. Or perhaps you are here to [assist] me with my work?");

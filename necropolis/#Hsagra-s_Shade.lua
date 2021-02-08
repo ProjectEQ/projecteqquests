@@ -10,6 +10,7 @@
 -- a_mercenary_guard (123168)
 -- a_Marijakin_acolyte (123169)
 -- a_lumbering_zombie (123170)
+-- items: 77608, 77609, 77610, 77611
 function event_say(e)
     local qglobals = eq.get_qglobals(e.other)
     -- text implies you have collected stuff and only seen by the bard, neither of those assumptions are true though

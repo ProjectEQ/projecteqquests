@@ -1,4 +1,5 @@
 	-- Cleric 1.5 Epic Quest // Harmony of the Soul // --Drogerin	
+-- items: 9591, 9945, 9948, 9597
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);	
 	if(qglobals["cleric_epic"] >= "5" and e.message:findi("aid")) then

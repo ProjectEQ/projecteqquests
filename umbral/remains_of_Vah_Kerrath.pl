@@ -1,3 +1,4 @@
+# items: 8365, 8364, 28102
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Fleshy mortal, can you not see that I am cursed to live in eternal anguish? What is it that you seek from me?");

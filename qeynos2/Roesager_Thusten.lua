@@ -1,3 +1,4 @@
+-- items: 18970
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail. " .. e.other:GetCleanName() .. "!  My name is Roesager Thusten. Paladin of Life.  I am a loyal servant of the Prime Healer and I seek to destroy all who wish to bring death and disease to the land of Norrath.");

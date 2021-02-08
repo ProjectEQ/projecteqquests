@@ -1,5 +1,6 @@
 # Beer for the guards
 #
+# items: 19188
 
 sub EVENT_SAY {
   

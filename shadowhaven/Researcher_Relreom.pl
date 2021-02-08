@@ -1,3 +1,4 @@
+# items: 48104, 48105, 48106, 48107, 48132
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Hello there. Im afraid I really dont have time to have a conversation though. I have been sent on a very important task to retrieve some lost pages to a very  [" . quest::saylink("important book") . "].");

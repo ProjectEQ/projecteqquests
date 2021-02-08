@@ -1,5 +1,6 @@
 #High_Priest_Eliwan.pl
 #Planar Armor Exchange
+# items: 4881, 4882, 4883, 4884, 4885, 4886, 4887, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

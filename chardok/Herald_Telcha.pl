@@ -2,6 +2,7 @@
 # quest for sarnak faction (give salts or gobling skins)
 # quest for Di'zok Signet of Service
 # which is the beginning of Regal Band of Bathezid
+# items: 5728, 16972, 22135, 6476, 5727
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

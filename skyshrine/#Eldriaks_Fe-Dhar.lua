@@ -1,3 +1,4 @@
+-- items: 18282, 2053, 2055, 1868, 2056, 1728, 2097, 2065, 2064
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 2) then
 		if(e.message:findi("hail")) then

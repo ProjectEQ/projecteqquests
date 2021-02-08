@@ -1,4 +1,5 @@
 -- Necromancer Epic NPC -- Gkzzallk
+-- items: 18087, 20652
 
 function event_say(e)
 	if(e.message:findi("hail")) then

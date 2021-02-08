@@ -1,3 +1,4 @@
+# items: 12137, 2137, 2148
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Welcome to my field of decay. Won't you be so kind as to attack me? I have need of more bodies to join my diseased legion. Try it, maybe you shall win and gain my trusty [Pestilence].");

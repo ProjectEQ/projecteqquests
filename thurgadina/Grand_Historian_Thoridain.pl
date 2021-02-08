@@ -5,6 +5,7 @@
 # (prayer to brell) said by the player the quest needs to be changed slightly.
 # the player will recite the prayer to the grand historian a certain number
 # of times to receive the etched rune pattern.
+# items: 1855, 1418, 1428, 1422
 
 my $counter;
 my $count = 0;

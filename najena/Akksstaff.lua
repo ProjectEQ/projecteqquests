@@ -1,3 +1,4 @@
+-- items: 15778, 28027, 28028, 28029, 28030, 28004
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(qglobals["ask_minion_dead"] ~= nil and e.message:findi("hail") ) then

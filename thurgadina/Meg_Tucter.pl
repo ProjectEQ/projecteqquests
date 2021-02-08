@@ -1,3 +1,4 @@
+# items: 8893
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("The gems I carry were actually collected by geonids, a race of rock and gem people that communicate with their minds alone. If'n ye haven't had the chance to see one yet I suggest ye journey to the Wakenin' Lands; they've reportedly got a colony somewhere in that area.");

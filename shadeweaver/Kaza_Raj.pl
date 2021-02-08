@@ -2,6 +2,7 @@
 #Ghulam Armor
 #I saw no mention of experience or faction hits in the quest on Alla's.
 #After writing this, I saw that someone else already had.  I merged my work and theirs, whoever it was.  They had better dialogue information than I did.  -Kilelen
+# items: 2476, 2453, 2460, 2452, 2477, 2454, 2478, 2455, 2479, 2456, 2480, 2457, 2481, 2459
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i) {

@@ -1,3 +1,4 @@
+-- items: 15931, 15932, 15933, 15934, 15935
 function event_spawn(e)
 	eq.set_timer("depop",math.random(1200000,3600000));
 end

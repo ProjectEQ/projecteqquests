@@ -1,4 +1,5 @@
 # Part of Coldain Ring 5 Quest
+# items: 30136
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30136 => 1)) {

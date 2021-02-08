@@ -1,3 +1,4 @@
+-- items: 9590, 10243, 10239, 52416, 10246
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);
 	if (qglobals["Fatestealer"] == "1" ) then

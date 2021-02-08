@@ -1,5 +1,6 @@
 #Code by Kagehi - edited by anubisrwml
 #Shar_Val_Cit is used to track you up to when you get your initiate cloak and beyond.#We use it once here, to determine that you should get back your Dar Khura recruit cloak instead,#if you lose it somehow.
+# items: 2877, 3488, 3489, 17232, 3493, 3494, 3499, 2878, 3495, 3496, 15275, 5542, 5543, 5544, 15282
 
 sub EVENT_SAY { 
 

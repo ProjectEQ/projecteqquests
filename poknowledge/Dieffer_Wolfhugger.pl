@@ -1,3 +1,4 @@
+# items: 124688
 sub EVENT_SAY {
     #Halloween Event
     #if($text=~/hail/i){

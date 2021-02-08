@@ -1,6 +1,7 @@
 --Quests covered in this file:
 --Shaman Skull Quest 3
 --Shaman Skull Quest 4
+-- items: 18054, 12735, 5142
 function event_say(e)
 	--Shaman Skull Quest No.3 Event_Say
 	if(e.message:findi("collect the Crusaders of Rok Nilok?") and e.other:GetFaction(e.self) < 6) then

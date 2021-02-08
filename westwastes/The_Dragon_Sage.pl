@@ -1,3 +1,4 @@
+# items: 1782, 1783, 17059, 1786, 19469
 sub EVENT_SAY {
   if($text=~/hail/i) {
    quest::emote("appears to fade in and out. The ghostly figure seems to stare through you, as though he is not aware of your presence.");

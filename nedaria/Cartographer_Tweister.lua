@@ -1,4 +1,5 @@
 -- Harmony of the Soul // Cleric 1.5 Epic Quest NPC -- Drogerin
+-- items: 56015
 
 function event_say(e)
 	if(e.message:findi("hail")) then

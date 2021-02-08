@@ -1,5 +1,6 @@
 # Test of Charm - enchanter epic - Enchanted Ruby
 # 
+# items: 10633, 10620
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10633 => 1)) {

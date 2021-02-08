@@ -4,6 +4,7 @@
 #
 #NPC Name: Ulkar Jollkarek
 #NPC ID: 113159
+# items: 25837, 24926, 25405, 25807, 24921, 25406, 25818, 24923, 25407, 25841, 24925, 25408, 25832, 24927, 25409, 25816, 24922, 25410, 25829, 24924, 25411
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

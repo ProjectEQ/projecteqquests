@@ -3,6 +3,7 @@
 #Items Involved: A Canine( ItemID#12977)
 #Zone: Firiona Vie
 ##############
+# items: 12977, 13155, 18076, 12978
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

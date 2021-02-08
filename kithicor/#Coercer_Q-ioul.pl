@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- #Coercer_Q'ioul
+# items: 28057
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

@@ -1,3 +1,4 @@
+# items: 12854, 12855, 12856, 12857, 16426
 sub EVENT_SAY {
       if($text =~ /Hail/i) {
 	quest::emote("bows before you. His eyes are kept wide by the pins which distort his eyelids.");

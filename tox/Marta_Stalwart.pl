@@ -1,3 +1,4 @@
+# items: 80044, 80038
 sub EVENT_SAY {
 $clientver = $client->GetClientVersion();
 	if(quest::istaskactive(218)) {

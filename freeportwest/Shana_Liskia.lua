@@ -1,3 +1,4 @@
+-- items: 17260, 22586, 22584, 22583, 22588, 22585, 22587, 22589, 9917, 9933, 9938, 62617, 62654, 40420, 62846, 62618, 62619, 62655
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail and well met "..e.other:GetName()..". I am Shana Liskia. Enchantress of Freeport. I have studied my art for years here in our wonderful academy. I am also delighted to meet and teach those that come here to gain knowledge. My specialty however lies in Beguiling so I like to train young newcomers to our academy. Are you studying the ways of a [" .. eq.say_link("Magician") .. "] an [" .. eq.say_link("Enchanter") .. "] or a [" .. eq.say_link("Wizard") .. "]??");

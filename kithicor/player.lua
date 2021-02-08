@@ -1,3 +1,4 @@
+-- items: 87319
 function event_task_stage_complete(e)
     if e.task_id == 212 then
         e.self:SummonItem(87319, 5)

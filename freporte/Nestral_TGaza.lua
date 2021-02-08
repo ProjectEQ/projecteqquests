@@ -1,3 +1,4 @@
+-- items: 18923, 13158
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hey, hello there, " .. e.other:GetName() .. ". It's been so busy around here lately! Barely time to eat and sleep, let alone have any fun. Oh well, it keeps me employed. But, I really could use someone to [help] me out around here.");

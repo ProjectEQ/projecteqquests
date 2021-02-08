@@ -1,5 +1,6 @@
 #Aid_Grimel.pl
 #PoP Crafting quests/Signets of the Councilmen/Planar Progression
+# items: 15984, 17179, 15992, 15988, 16243, 17180, 15985, 16249, 15993, 16250, 15991, 16251, 16246, 16252, 15986, 32800, 16247, 16254, 16248, 16256
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

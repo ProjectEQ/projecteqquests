@@ -2,6 +2,7 @@
 #Rogue Master Sketch/Rogue Trainer/Pixie Dust #2
 #Much rewritten by Kilelen.  I triple checked the Pixie Dust #2
 #description at alla's before I changed the way most everything worked in here.
+# items: 2104, 2106, 2108, 2111, 2112, 17957, 12109, 16390, 24098
 
 
 #I'm interpreting occasionally to be 20% chance.  This is easily changed.

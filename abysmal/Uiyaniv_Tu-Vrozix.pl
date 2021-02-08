@@ -1,3 +1,4 @@
+# items: 58128, 58167, 58060, 58169, 58063, 58168, 58062, 58049, 58050, 58130, 58122, 58093, 58097
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(162,4)) { #Poisonmaking Freebie Step 5

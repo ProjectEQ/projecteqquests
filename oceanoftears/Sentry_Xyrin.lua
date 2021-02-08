@@ -1,4 +1,5 @@
 -- revamped version of Ocean of Tear "Sentry Xyrin" script.
+-- items: 12134, 12135
 
 function event_say(e)
 	if(e.message:findi("hail")) then

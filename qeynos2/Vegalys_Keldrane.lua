@@ -1,5 +1,6 @@
 -- BeginFile qeynos2\Vegalys_Keldrane.lua (2051)
 -- Quest file for North Qeynos - Vegalys Keldrane: Investigators Badge (Badge #1)
+-- items: 2173, 18289, 2386, 18292, 2583, 2694, 2392
 
 function event_say(e)
 	if(e.message:findi("hail")) then

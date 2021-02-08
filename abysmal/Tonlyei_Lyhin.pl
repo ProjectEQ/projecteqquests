@@ -1,3 +1,4 @@
+# items: 58221, 58087, 58120, 58110, 58115, 58052, 58053, 58086, 58121, 58109, 58114
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if(quest::istaskactivityactive(164,4)) { #Tailoring Freebie Step 5

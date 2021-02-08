@@ -1,3 +1,4 @@
+# items: 4759, 4758
 sub EVENT_SPAWN {
   $research = 0;
 }

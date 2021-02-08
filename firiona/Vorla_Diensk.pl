@@ -1,3 +1,4 @@
+# items: 52009
 sub EVENT_SAY {
  if ($client->GetGlobal("Fatestealer") ==1) {
   if ($text=~/hail/i) {

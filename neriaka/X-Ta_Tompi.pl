@@ -4,6 +4,7 @@
 #NPCs Involved: 1
 #Items Involved: 16 = (12 quest turn in items, 4 rewards)
 #################
+# items: 10083, 10035, 14160, 10019, 11829, 10520, 10523, 10021, 11850, 13150, 13152, 8331, 10024, 11866, 10521, 10525, 10023, 11863
 sub EVENT_SAY { 
 if($text=~/hail/i){
 quest::say("We three are the [Sisters Dark] - [Necromancy] is our Art - Bonded dead, they serve our will - No beat of heart, yet faithful still.");

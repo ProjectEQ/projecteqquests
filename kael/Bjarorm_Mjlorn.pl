@@ -4,6 +4,7 @@
 #
 #NPC Name: Bjarorm Mjlorn
 #NPC ID: 113186
+# items: 25837, 24926, 25412, 25807, 24921, 25413, 25818, 24923, 25414, 25841, 24925, 25415, 25832, 24927, 25416, 25816, 24922, 25417, 25829, 24924, 25418
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

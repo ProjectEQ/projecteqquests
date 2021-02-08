@@ -1,5 +1,6 @@
 #Renaldok_Masric.pl
 #Coterie Mask of the Dead
+# items: 17096, 10799, 7778
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

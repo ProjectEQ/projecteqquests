@@ -1,5 +1,6 @@
 # Paranormal Research
 # Created by Gonner
+# items: 54064, 54065
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

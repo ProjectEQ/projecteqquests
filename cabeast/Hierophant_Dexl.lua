@@ -1,4 +1,5 @@
 --Shaman Skull Quest 6
+-- items: 5145, 12748, 12750, 12749
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

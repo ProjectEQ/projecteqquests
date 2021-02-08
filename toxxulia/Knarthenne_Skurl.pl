@@ -1,4 +1,5 @@
 # Part of SK Epic 1.0
+# items: 17051
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

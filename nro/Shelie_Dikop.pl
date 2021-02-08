@@ -1,3 +1,4 @@
+# items: 55269, 55270, 55266
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 55269 => 1)) { #Kayci's Note
     quest::say("Dis note covered in cat hair! Oh, Kayci give to you. Make sense now. You want upgrade your satchel? You need a Stone Frog Skin from Takish'Hiz. I have one. I guess I don't need it anymore. You can have. You need other things though if you want upgrade bag.");

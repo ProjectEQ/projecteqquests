@@ -1,3 +1,4 @@
+# items: 13369, 13370, 17928, 13371
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Gloop.. Are you the one? Who sent you?");

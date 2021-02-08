@@ -1,3 +1,4 @@
+-- items: 52349, 52350, 52351, 52352, 301033
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("So patronizing you are. Shoo! I have no need of your help and likewise - you have no need of mine.");

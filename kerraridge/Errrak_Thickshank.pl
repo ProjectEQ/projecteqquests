@@ -1,3 +1,4 @@
+# items: 7005, 13737, 13762, 10139
 sub EVENT_SAY {
   if($text=~/Hail/i) {
     quest::say("What?  What do you want. furless?  My tseq. Graalf. lies sick and you waste time with talk when you [cannot help].");

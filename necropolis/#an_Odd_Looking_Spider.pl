@@ -1,3 +1,4 @@
+# items: 67053
 my $x;
 my $y;
 my $z;

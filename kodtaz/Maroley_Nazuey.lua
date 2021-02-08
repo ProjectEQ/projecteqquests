@@ -1,5 +1,6 @@
 -- Gives Ikkinz Group 2 Expedition
 -- Maroley_Nazuey NPCID: 293116
+-- items: 60153
 local expedition_name = "Ikkinz, Chambers of Twin Struggles"
 local dz_version = instance_version.ikkinz_chambers_of_twin_struggles
 

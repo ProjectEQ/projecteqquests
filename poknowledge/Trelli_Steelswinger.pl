@@ -1,5 +1,6 @@
 #Trelli_Steelswinger.pl
 #Berserkter Tomes/Planar Armor Exchange
+# items: 55601, 55602, 55603, 55604, 55605, 55606, 55607, 10028, 10037, 22503, 15981
 
 sub EVENT_ITEM {
 	if((plugin::check_handin(\%itemcount, 55601 => 1)) ||

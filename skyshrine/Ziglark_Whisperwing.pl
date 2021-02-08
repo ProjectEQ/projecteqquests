@@ -1,3 +1,4 @@
+# items: 28600, 28601, 28602
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Welcome to the greatness that is Skyshrine, $name. I am Herald to our great leader, Lord Yelinak. It is my position to make sure that all is running in an orderly and functional matter in the mighty shrine before you. I handle the guard assignments as well as granting [access] to pass through the shrine. If you'd like to find out about either of these, please just ask.");

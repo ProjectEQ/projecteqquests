@@ -1,5 +1,6 @@
 # The Pulsating Rock
 #
+# items: 4768
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

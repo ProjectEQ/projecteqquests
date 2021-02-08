@@ -1,5 +1,6 @@
 #Welnik's Picks and Ore
 # #Smith_Numden.pl for Welnik's Picks and Ore Quest.
+# items: 54431, 54434, 54432, 54433, 54435
 
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 54431 => 1, 54434 => 1, 54432 => 1, 54433 => 1)) { # Chipped Cracked, Rusted and Wobbly Pick 

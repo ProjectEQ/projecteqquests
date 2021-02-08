@@ -1,5 +1,6 @@
 # Dolvak's Report
 #
+# items: 29067, 29623
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

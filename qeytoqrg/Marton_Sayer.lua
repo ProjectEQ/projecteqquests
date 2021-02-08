@@ -1,3 +1,4 @@
+-- items: 12204, 5416, 8357, 8356, 5417
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome. Please stock up on provisions, especially if you are headed toward the lair of the vile gnolls. If so, I wish you much luck and many gnoll pelts!! I also have knowledge of a [powerful dog]. I pray you do not encounter him.");

@@ -1,5 +1,6 @@
 # Cragbeast Queen: Lizardscale Woven Sash
 # Created by Gonner
+# items: 52129, 52131, 52124
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

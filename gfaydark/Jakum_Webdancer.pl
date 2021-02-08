@@ -4,6 +4,7 @@
 #NPCs Involved: Tralyn Marsinger, Eve Marsinger, Lislia Goldtune, Felisity Starbright, Jakum Webdancer, Ton Twostring, Idia, Sivina Lutewhisper, Ticar Lorestring, Marton Stringsinger, Drizda Tunesinger, Travis Two Tone, Silna Songsmith, Siltria Marwind, Tacar Tissleplay, Kilam Oresinger, Lyra Lyrestringer 
 #Items Involved: Bardic letters: 18150-18167
 #################
+# items: 18161, 18160, 18162, 18163
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

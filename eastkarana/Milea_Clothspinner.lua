@@ -1,3 +1,4 @@
+-- items: 18801, 13302, 18934, 3040, 5231, 1037, 17005, 13003, 10008, 1005, 8791, 1336, 2910
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, fellow adventurer. Are you from Qeynos?");

@@ -1,3 +1,4 @@
+# items: 84091, 84092, 84093, 84087
 sub EVENT_SAY {
 	if(quest::istaskactive(220)){
        	if ($text=~/trick or treat/i) {

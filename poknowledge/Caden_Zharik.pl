@@ -1,5 +1,6 @@
 #Caden_Zharik.pl
 #Willamina's Needles
+# items: 28084, 28085
 
 
 sub EVENT_SAY {

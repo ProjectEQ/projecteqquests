@@ -1,5 +1,6 @@
 --firiona/Corfia_Nultethen.lua NPCID 84318
 --Warrior Epic 1.5
+-- items: 16503, 60309, 60307, 60310, 60311
 function event_say(e)
 	if(e.language == 12) then
 		local qglobals = eq.get_qglobals(e.other);

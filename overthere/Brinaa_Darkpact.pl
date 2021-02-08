@@ -1,3 +1,4 @@
+# items: 19203, 19205, 19209, 19212, 19210, 19224, 19420, 19206
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Hello, $name. It's nice to see more able bodies around this part of the outland. We came here in search of the magical powers that are supposed to exist in the ruins and dungeons of this area. We need you to bring back evidence of this power in the form of scrolls. I can't offer much coin in payment, but I do have some rare scrolls I already brought back that may interest you, if you wish to [help in the search].");

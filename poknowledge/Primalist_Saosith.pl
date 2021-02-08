@@ -1,5 +1,6 @@
 #Primalist Saosith.pl
 #Beastlord PoP Spells
+# items: 29112, 28544, 28545, 21629, 28547, 28548, 29131, 28549, 28550, 21630, 28551, 28552, 29132, 28553, 28554
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

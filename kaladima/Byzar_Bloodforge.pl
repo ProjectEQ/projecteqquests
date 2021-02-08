@@ -1,5 +1,6 @@
 #NPC: Byzar_Bloodforge  #Zone: kaladima
 #modified by Qadar
+# items: 13931, 2113, 2114, 2115, 2117, 2119, 2121, 2122, 13741, 13740, 3090, 3091, 3092, 3093, 3094, 3095, 3096, 12136, 13314
 
 sub EVENT_SAY { 
   if($text=~/hail/i){

@@ -1,3 +1,4 @@
+# items: 1678, 57988, 57991, 57990, 57989
 sub EVENT_SAY {
  if (defined $qglobals{shaman_pre} && $qglobals{shaman_pre} == 1) {
   if ($text=~/hail/i) {

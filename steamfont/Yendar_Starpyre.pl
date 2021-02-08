@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- Yendar_Starpyre
+# items: 28053, 28055, 28016, 52335
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

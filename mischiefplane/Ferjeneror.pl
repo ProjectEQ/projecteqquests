@@ -1,3 +1,4 @@
+# items: 17054
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 125 => 4)) {
     quest::say("Thank you."); #made up

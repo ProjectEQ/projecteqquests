@@ -1,3 +1,4 @@
+# items: 58074, 58079, 58039, 58222, 58139, 58058, 58029, 58146, 58075, 58073, 58017, 58126, 58054, 58210
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Have you any skill at alchemy? I certainly could use some [assistance] providing the unusual items that the Wayfarers are always in need of.");

@@ -1,3 +1,4 @@
+-- items: 17125, 19561, 19558, 19555, 19559, 19560, 19557, 19556, 19942, 19943, 19944, 13915, 19945, 20266
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail " .. e.other:GetName() .. ". Know that only within these few passageways and rooms whose borders are marked by the symbol of the Circle of Unseen Hands can we speak freely of our organization and its undertakings. Neither the streets of the city above nor the sewers and catacombs are free of ears that would harm the Circle of Unseen Hands should they hear of our [secrets].");

@@ -1,3 +1,4 @@
+-- items: 41000, 40999
 local rujg = {
   expedition = { name="The Rujarkian Hills: Hidden Vale of Deceit", min_players=6, max_players=54 },
   instance   = { zone="rujg", version=50, duration=eq.seconds("3h") },

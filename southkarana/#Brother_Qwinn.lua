@@ -1,3 +1,4 @@
+-- items: 12316, 10114, 12314, 12256
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("In the name of the [Brotherhood of the Lost Circle], I greet you.");

@@ -1,6 +1,7 @@
 # Kutin's Key
 # created by Gonner
 # live text added by Jaekob
+# items: 55612, 59794
 
 sub EVENT_SAY {
   if ($text=~/hail/i){

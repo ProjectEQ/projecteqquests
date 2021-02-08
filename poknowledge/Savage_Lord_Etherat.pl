@@ -1,6 +1,7 @@
 #Savage_Lord_Etherat.pl
 #Beastlord Tomes/Planar Armor Exchange
 #I added the tome handin, it didn't exist previously - Kilelen
+# items: 7817, 7818, 7819, 7832, 7833, 7834, 7835, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

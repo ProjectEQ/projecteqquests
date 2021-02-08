@@ -1,3 +1,4 @@
+# items: 12339, 12333
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I am the Fairie Princess, Joleena. You may stay amongst my people, but do not nibble from our homes.");

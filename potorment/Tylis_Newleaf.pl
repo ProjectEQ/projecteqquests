@@ -1,3 +1,4 @@
+# items: 22954
 my $sphere = undef;
 my $raid = undef;
 my $group = undef;

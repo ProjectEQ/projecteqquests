@@ -1,5 +1,6 @@
 #:: Lokar_To-Biath.pl
 #:: Red Wine (Part of Tome of Ages)
+# items: 18200
 
 sub EVENT_COMBAT {
 	#:: Match combat state 1 - entered combat

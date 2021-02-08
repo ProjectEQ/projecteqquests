@@ -1,3 +1,4 @@
+-- items: 12369, 18746, 13507, 28055, 12344
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();

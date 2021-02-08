@@ -1,3 +1,4 @@
+# items: 14707, 14703, 9240, 11603, 11622, 14402, 1000, 11623
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::say("Welcome. I have a number of platemail items, if you are interested. I am also a master [smith] of exotic materials such as dragon scales.");

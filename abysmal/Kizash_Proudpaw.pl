@@ -1,5 +1,6 @@
 # Beastlord Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54149, 68220, 54147, 68223, 54150, 68225, 54152, 68226, 54153, 68224, 54151, 68221, 54148
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

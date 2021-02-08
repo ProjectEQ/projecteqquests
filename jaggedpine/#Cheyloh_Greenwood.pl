@@ -1,6 +1,7 @@
 # Cheyloh Greenwood
 # Jaggedpine druid armor quest
 # by RealityIncarnate
+# items: 8790, 8769, 8442, 8796, 8795, 8445, 8877, 8876, 8758, 8865, 8864, 8499, 8871, 8870, 8757, 8883, 8882, 8759
 
 sub EVENT_SAY {
 if($text=~/Hail/i) {

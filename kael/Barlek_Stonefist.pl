@@ -4,6 +4,7 @@
 #
 #NPC Name: Barlek Stonefist
 #NPC ID: 113189
+# items: 25831, 24905, 25370, 25814, 24900, 25371, 25821, 24902, 25372, 25838, 24904, 25373, 25832, 24906, 25374, 25825, 24901, 25375, 25833, 24903, 25376
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

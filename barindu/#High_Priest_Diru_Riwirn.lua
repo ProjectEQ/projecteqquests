@@ -1,4 +1,5 @@
 -- sewer trials all share the same compass
+-- items: 68298
 local sewers = {
   snplant = { -- should be version 0 of zone, named can spawn in progression version
     expedition = { name="Sewers of Nihilia, The Purifying Plant", min_players=1, max_players=6 },

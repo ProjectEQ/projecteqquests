@@ -1,3 +1,4 @@
+-- items: 1673
 function event_trade(e)
 	local item_lib = require("items");
 	if e.other:GetFactionLevel(e.other:CharacterID(), e.self:GetID(), e.other:GetRace(), e.other:GetClass(), e.other:GetDeity(), 404, e.self) == 1 then

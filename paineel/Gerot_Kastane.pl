@@ -1,4 +1,5 @@
 # Part of SK Epic 1.0
+# items: 14375, 14376, 14378, 14369
 
 sub EVENT_SAY {
   $faction = $client->GetCharacterFactionLevel(404); # Faction: Truespirit

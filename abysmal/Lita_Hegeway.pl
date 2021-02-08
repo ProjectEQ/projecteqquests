@@ -1,3 +1,4 @@
+# items: 58145, 58204, 58042, 58088, 58066, 58076, 58074, 58175, 58190, 58176, 58203
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(171,4)) { #Alchemy Collect Step 5

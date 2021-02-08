@@ -1,3 +1,4 @@
+# items: 31758
 sub EVENT_ITEM{
 	my $sentinel1 = $entity_list->GetNPCByNPCTypeID(160129); #Frieza
 	my $sentinel2 = $entity_list->GetNPCByNPCTypeID(160130); #Tozza

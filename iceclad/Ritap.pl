@@ -1,3 +1,4 @@
+# items: 30048, 30049
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Avast you! Ya best be shoving off if ye knows whats good for you. We be pirate raiders and ya best not be messing with the likes of us!");

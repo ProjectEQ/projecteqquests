@@ -1,4 +1,5 @@
 # Necromancer Epic NPC -- Venenzi_Oberzendi
+# items: 20642, 20643, 1320, 20649
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

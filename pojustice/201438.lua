@@ -1,6 +1,7 @@
 -- 201438 The Tribunal
 -- Trial of Torture
 --
+-- items: 31599
 
 local torture_flag	= 0;
 local trial_group		= nil;

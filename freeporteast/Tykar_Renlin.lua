@@ -1,3 +1,4 @@
+-- items: 13829, 12196
 function event_say(e)
 	if(e.message:findi("lucan")) then
 		e.self:Say("That man is no just ruler. He has jailed me and my friend Zimel for merely begging.");

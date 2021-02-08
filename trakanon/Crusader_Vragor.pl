@@ -1,4 +1,5 @@
 #Crusader Vragor is used for spawning Zhaoku, a Trakasaur who drops one of the pieces for the Whistling Fists quest.
+# items: 18051, 17031
 
 sub EVENT_SAY {
  if($text=~/hail/i){

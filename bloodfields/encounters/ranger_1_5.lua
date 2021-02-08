@@ -2,6 +2,7 @@
 --301066 Grinbik_the_Fertile
 --301067 an_enslaved_earthmover
 --301068 an_eager_student
+-- items: 62622
 
 function Marshall_Combat(e)
 	if (e.joined == true) then		

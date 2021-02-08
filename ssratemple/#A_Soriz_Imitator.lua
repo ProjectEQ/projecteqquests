@@ -1,3 +1,4 @@
+-- items: 54313, 52947
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:Class() == "Enchanter") then 

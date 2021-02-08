@@ -1,3 +1,4 @@
+-- items: 29846
 function event_spawn(e)
 	eq.set_timer("attack",1000);
 end

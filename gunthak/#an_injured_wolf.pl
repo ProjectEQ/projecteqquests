@@ -1,5 +1,6 @@
 ##an_injured_wolf.pl
 #Beastlord Spells (LoY)
+# items: 59032, 59033
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 59032 => 1)) {#A stone emblem

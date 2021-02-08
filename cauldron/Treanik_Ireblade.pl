@@ -1,5 +1,6 @@
 #zone Cauldron
 #by Angelox -- rewritten for berserker epic: wizardanim
+# items: 60199, 60200, 60201
 
 sub EVENT_SAY
 	

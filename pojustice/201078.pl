@@ -9,6 +9,7 @@
 # - Modified by Kilelen
 # - Modified by greenbean 03/23/2010
 ###################################
+# items: 31599, 31842, 31796, 31960, 31845, 31844, 31846
 
 my $hold_event = 0;
 my $group = undef;

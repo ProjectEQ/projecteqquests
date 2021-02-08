@@ -1,3 +1,4 @@
+-- items: 20673, 20684, 20679, 17859, 20674, 18083, 60287, 60288
 function event_say(e)
   if(e.other:Class() == "Warrior") then
     if(e.message:findi("hail")) then

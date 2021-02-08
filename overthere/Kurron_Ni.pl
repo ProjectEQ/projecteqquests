@@ -1,4 +1,5 @@
 # Part of SK Epic 1.0
+# items: 3141, 3145, 3140
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {

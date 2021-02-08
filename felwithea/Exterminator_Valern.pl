@@ -1,3 +1,4 @@
+# items: 13071
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hello. Nice day, isn't it? It would be nicer if I didnt have to spend it killing these disgusting rodents that have infested town. Hey, I have an idea! How about you go kill some of them for me and collect four of their whiskers? I will reward you, of course.");

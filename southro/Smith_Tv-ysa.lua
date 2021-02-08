@@ -1,6 +1,7 @@
 -- Evil Research
 -- The xp from this quest was what made it worthwhile, more than the concordance. -Kilelen
 -- Converted to .lua by Speedz
+-- items: 10300, 18175, 18176, 10400, 17504
 
 function event_say(e)
 	if(e.message:findi("hail")) then

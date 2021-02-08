@@ -2,6 +2,7 @@
 #Part of Rescue a Shipwrecked Sailor
 #I found other text on Alla's for this guy that I have no clue what it's for.
 #I'm adding it because it belongs to him.
+# items: 55007
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

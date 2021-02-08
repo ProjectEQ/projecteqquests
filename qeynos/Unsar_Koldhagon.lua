@@ -1,3 +1,4 @@
+-- items: 13071, 13070, 13068
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hello, %s, I am Unsar, student of Mespha. I am working on a spell. . . I call it [Unsar's Glory]. Great name, huh?",e.other:GetName()));

@@ -1,5 +1,6 @@
 # halas warrior noobie armor quests
 #
+# items: 55095, 55111, 55112, 55113, 55114, 55115, 55116, 55117, 27421, 13058, 55103
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

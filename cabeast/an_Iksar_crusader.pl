@@ -1,4 +1,5 @@
 #This iksar crusader is actually Hero Goxnok, for the fifth leg of the Greenmist quest. He gives you a coin that you give back to him in Firiona Vie, to get him out of his disguise and speaking to you.
+# items: 12691
 
 sub EVENT_SAY {
  if($text=~/hail/i){ #Test of Betrayal (Greenmist Quest 5/8)

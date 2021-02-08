@@ -1,4 +1,5 @@
 #Need to add the curscale pack recipe.  Container:17992*1. Components:12654*8  Yield:12655*1.  Always succeeds.  Container is consumed in recipe.
+# items: 17992, 12655, 12685, 12687
 
 sub EVENT_SAY { 
   if($text=~/Hail/i){

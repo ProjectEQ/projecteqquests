@@ -1,3 +1,4 @@
+-- items: 13959, 13958, 13957, 13971, 13972
 function event_spawn(e)
 	eq.set_timer("jillin",550000);
 end

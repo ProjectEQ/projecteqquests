@@ -1,3 +1,4 @@
+# items: 13410
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("You be tinking you be [real tuff Craknek]?");

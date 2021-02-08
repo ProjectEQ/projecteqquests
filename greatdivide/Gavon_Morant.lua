@@ -6,6 +6,7 @@
 -- High Priest Maltan (118211)
 -- A_Plasmatic_Priest x2 (27129)
 -- A_Plasmatic_Priestess x3 (27130)
+-- items: 56010
 
 function event_trade(e)
     local item_lib = require("items");

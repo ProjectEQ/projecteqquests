@@ -1,3 +1,4 @@
+-- items: 17261, 22583, 22584, 22586, 22585, 22587, 22588, 22589, 9934, 9920, 9939
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Pleasure to meet you "..e.other:GetName()..". I am Klom Jysun, Grandmaster of the Ashen Order. I have lived in the great city of Freeport for quite sometime now and have watched the city evolve and change. Nowadays though I am in charge of training new members of the Ashen Fist. If you are a young monk and are in need of some armor I might have some work for you. Are you a [monk]?");

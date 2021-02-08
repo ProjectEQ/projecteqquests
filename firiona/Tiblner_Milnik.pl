@@ -6,6 +6,7 @@
 #NPC ID: 84160
 #Quest Status: finished
 #
+# items: 11567, 28042, 6360, 6361, 28032
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

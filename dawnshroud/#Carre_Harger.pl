@@ -1,3 +1,4 @@
+# items: 31781, 31783, 31784, 31785, 31786, 31782
 sub EVENT_ITEM {
     my $x = $npc->GetX();
     my $y = $npc->GetY();

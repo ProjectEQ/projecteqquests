@@ -1,6 +1,7 @@
 #Ghost_Of_Ridossan
 #NPC ID: 100222
 #Stonebrunt
+# items: 2297, 2099
 
 sub EVENT_SPAWN {
   quest::settimer(1,300);

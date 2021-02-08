@@ -1,6 +1,7 @@
 #zone - tutorialb
 #quest - Spider Tamer Gugan
 #site3op
+# items: 54604, 8500
 
 sub EVENT_SAY {
    if (quest::istaskactivityactive(16,2)){

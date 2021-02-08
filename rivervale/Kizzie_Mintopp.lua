@@ -5,6 +5,7 @@
 --#NPCs Involved:Lil Honeybugger, Kizzie_Mintopp 
 --#Items Involved:3 Honeycombs, 30 gold
 --#################
+-- items: 13953, 13952
 
 function event_say(e)
 	if(e.message:findi("hail")) then

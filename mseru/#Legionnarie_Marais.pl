@@ -1,3 +1,4 @@
+# items: 18332, 18333, 18334
 sub EVENT_SPAWN {
   quest::settimer("appearance", 1);
 }

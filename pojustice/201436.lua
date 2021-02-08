@@ -1,5 +1,6 @@
 -- 201436.lua
 -- Trial of Hanging Tribunal
+-- items: 31599, 31846
 
 -- @variable hanging_flag
 --  0 - Trial is available

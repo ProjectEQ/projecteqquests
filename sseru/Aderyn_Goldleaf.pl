@@ -1,5 +1,6 @@
 # Jeweled Quiver of the Hand
 #
+# items: 29892, 17120
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

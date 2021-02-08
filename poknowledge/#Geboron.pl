@@ -1,5 +1,6 @@
 #BeginFile poknowledge\#Geboron.pl
 #Quest for Plane of Knowledge - Geboron: Necromancer Epic 1.5 (Pre)
+# items: 15809, 20612
 
 sub EVENT_SAY {
   if(($text=~/hail/i) && $class eq "Necromancer" && !defined($qglobals{NecroPre}) && !defined($qglobals{SoulWhisper})) {

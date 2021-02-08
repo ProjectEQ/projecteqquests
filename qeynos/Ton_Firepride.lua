@@ -1,3 +1,4 @@
+-- items: 13170, 13129, 13134
 function event_say(e)
 
 	local tax = eq.get_qglobals(e.other);

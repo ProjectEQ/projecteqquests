@@ -1,3 +1,4 @@
+# items: 69310
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Thank you for coming to my aid, though I'm sure I could have made it alive. I'm smarter than most would admit. I even committed a crime against my master by questioning one of his motives and the punishment for that is death. Yet, here I stand! Those wyverns have kept me asleep and were trying to turn me to ash. Since you are here, I will finish what I started. I have a secret so magnificent and so powerful that the Ring of Scale will be extremely angry with me. I will exact my revenge! Now, would you [like to know] how to overcome the wards on the passage to Veeshan's Peak?");

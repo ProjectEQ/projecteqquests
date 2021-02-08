@@ -1,3 +1,4 @@
+# items: 56004, 56005, 56006, 56007
 sub EVENT_SPAWN {
   quest::spawn2(228120,0,0,-1061,-47.1,-285.8,0); #door exit
   quest::spawn2(228119,0,0,-1363,-290.5,73.5,0); #door enter

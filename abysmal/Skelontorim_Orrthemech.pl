@@ -1,3 +1,4 @@
+# items: 58158, 58226, 58227, 58228, 58229, 58231, 58230, 58232, 58234, 58233, 58241, 58242, 58245, 58246, 58247, 58248
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(165,4)) { #Tinkering Freebie Step 5

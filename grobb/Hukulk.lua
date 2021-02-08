@@ -1,6 +1,7 @@
 -- Converted to .lua by Speedz
 -- edited and added saylink by robregen
 -- factions values, required faction and rejection text by noudess
+-- items: 18792, 13530, 13073, 5023, 12201, 12202, 3316
 
 function event_spawn(e)
 	local xloc = e.self:GetX();

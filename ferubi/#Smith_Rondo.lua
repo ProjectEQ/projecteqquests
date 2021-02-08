@@ -1,3 +1,4 @@
+-- items: 67519, 67520, 67521, 67522, 67523, 67524
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, " .. e.other:GetName() .. ". You have fought long and hard to make it into this secret chamber. What is it you [seek]?");

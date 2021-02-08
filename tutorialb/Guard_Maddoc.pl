@@ -1,6 +1,7 @@
 #zone - tutorialb
 #quest - Queen Gloomfang
 #site3op
+# items: 14018, 77780
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {

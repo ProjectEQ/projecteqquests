@@ -1,3 +1,4 @@
+-- items: 13863
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("How are you? Welcome to the Academy of Arcane Science. Please feel free to roam. May knowledge be your goal. Be you a [fellow scientist] or visitor, I am sure you will find whatever you seek.");

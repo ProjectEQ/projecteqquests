@@ -1,3 +1,4 @@
+# items: 2012, 2004, 2006, 2005, 2011
 sub EVENT_ITEM{
   if($item1 == 18904){
     quest::say("The slaves...thank you! Here, this will help defend you against those vile orcs.");

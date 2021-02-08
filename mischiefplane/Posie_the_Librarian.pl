@@ -4,6 +4,7 @@
 #
 #NPC Name: Posie the Librarian
 #NPC ID: 126215
+# items: 9510, 17325
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

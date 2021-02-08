@@ -1,4 +1,5 @@
 -- Derick Goodroot  1.5 Druid Prequest starting NPC. Jagged Pine Forest @ Loc 1331.02, 1953.43, -11.45 Facing South --Drogerin
+-- items: 62800, 62801, 62802, 62805, 62807, 62809
 function event_say(e)
 		local qglobals = eq.get_qglobals(e.other);
 		if (e.other:Class() == "Druid") then

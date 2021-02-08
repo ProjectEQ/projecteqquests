@@ -1,3 +1,4 @@
+-- items: 20691, 20692, 20693, 20694
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("snorts and stamps at the ground. An unusual angry glimmer enters the eyes of what should be one of Tunare's most peaceful creatures. Its coat seems slickened and filthy in places.");

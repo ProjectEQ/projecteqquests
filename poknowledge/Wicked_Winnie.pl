@@ -1,3 +1,4 @@
+# items: 54723, 85064
 sub EVENT_SAY {
   	if(!quest::istaskactive(214)){
 		if(!defined $qglobals{halloween_winnie}){

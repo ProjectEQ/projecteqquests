@@ -1,3 +1,4 @@
+-- items: 13713, 13188
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. I am sorry but I can't concentrate on my post and talk to you at the same time. Especially when I should be out searching for [Lucie]..  Please excuse me.");

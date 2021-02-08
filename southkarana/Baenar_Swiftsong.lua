@@ -6,6 +6,7 @@
 --NPC ID: 14046
 --Quest Status: finished
 -- Updated by Kilelen
+-- items: 20372, 20373, 20371, 20368, 20367, 20366
 
 function event_say(e)
 	if(e.message:findi("hail")) then

@@ -10,6 +10,7 @@
 #quest::summonitem("29068"); }
 #}
 #END of FILE Zone:skyshrine  ID:114093 -- Sentry_Kale 
+# items: 29068, 1725, 29064, 1727, 29065, 29050
 
 # Velium Retreival - Friend of the Kin
 #

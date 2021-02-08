@@ -1,5 +1,6 @@
 # Gather skins
 # created by Gonner
+# items: 66188
 
 sub EVENT_SAY {
 

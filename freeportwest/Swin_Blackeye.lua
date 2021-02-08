@@ -1,3 +1,4 @@
+-- items: 12147, 18814
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, friend! Welcome to the Hog Caller's Inn! Don't let the name fool you.  We are the finest establishment in Freeport. Please feel free to relax in our lounge. There is usually music to soothe your blues away.");

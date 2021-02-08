@@ -1,5 +1,6 @@
 --nedaria/Korezna_Orecleaver.lua NPCID 
 --Warrior Epic 1.5
+-- items: 13006, 60301, 60302, 60303
 function event_spawn(e)
 	e.self:Say("Ugh, too hot in here. I can't really... ... talk until I've gotten cooled down a bit. Do you have anything that I can cool down with, maybe some water?");
 end	

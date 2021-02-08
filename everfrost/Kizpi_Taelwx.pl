@@ -1,3 +1,4 @@
+# items: 55268
 sub EVENT_SAY {
   if(plugin::check_hasitem($client, 40900)) { #Satchel of Abu-Kar
     if($text=~/hail/i) {

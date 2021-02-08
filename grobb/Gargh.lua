@@ -1,6 +1,7 @@
 -- Converted to .lua by Speedz
 -- added saylink by robregen
 -- faction and converting to grobb version of quests by noudess
+-- items: 13187, 7380, 13050, 13054, 7381, 13725, 7382, 22524, 7383, 13354, 7384
 
 function event_say(e)
 	local pfaction = e.other:GetFaction(e.self);

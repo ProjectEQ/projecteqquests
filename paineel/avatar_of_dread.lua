@@ -1,3 +1,4 @@
+-- items: 14105, 14107
 count = 0;
 
 function event_spawn(e)

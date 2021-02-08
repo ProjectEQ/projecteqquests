@@ -1,5 +1,6 @@
 # Deck of Spontaneous Generation
 #
+# items: 13106, 17054
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

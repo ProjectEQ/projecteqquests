@@ -1,3 +1,4 @@
+# items: 5544, 17116, 6264, 6265, 6140
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hello Citizen. I am in need of an apprentice.  If you feel that you are capable of assisting me. please show me your Dar Khura Apprentice Cloak and I'll explain the task to you.");

@@ -1,4 +1,5 @@
 # Help Kayin Escape
+# items: 64014, 64015
 
 # Created by Gonner
 

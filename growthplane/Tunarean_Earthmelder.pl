@@ -1,3 +1,4 @@
+# items: 31424, 31425, 31426, 31423, 1208, 31419, 31420, 31421, 31422, 1207
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail, my friend. Unfortunately I cannot talk right now. The giants must be dealt with.");

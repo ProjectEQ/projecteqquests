@@ -1,5 +1,6 @@
 #BeginFile: erudnext\Valani_Gadriek.pl
 #Quest for Erudin - Valani Gadriek: LoY Cultural Robes
+# items: 65168
 
 sub EVENT_SAY {
   my $TrueRace = $client->GetBaseRace();

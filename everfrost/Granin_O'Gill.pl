@@ -1,4 +1,5 @@
 #nilbog
+# items: 13005
 
 sub EVENT_SAY 
 {

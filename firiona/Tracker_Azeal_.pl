@@ -1,4 +1,5 @@
 #Tracker Azeal is actually Hero Goxnok in disguise. This version of him has been triggered to spawn at 9 PM game time, and will then path out of the outpost. After a time, he will pause on his normal pathing and kneel and we can give him an item to spawn Hero Goxnok. All of this is for the fifth Greenmist quest.
+# items: 12691
 
 sub EVENT_SPAWN {
  quest::say("I'm going to start my patrol. I'll report back by morning.");

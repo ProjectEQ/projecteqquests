@@ -1,3 +1,4 @@
+-- items: 21339, 21342, 21340, 21341
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("The gate is sealed, you see. But I know the way to reopen it. Wouldn't it be fun to call the Gatekeeper? Do you wish to help me [" .. eq.say_link("open the portal") .. "]?' ");

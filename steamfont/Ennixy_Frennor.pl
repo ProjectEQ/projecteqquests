@@ -1,5 +1,6 @@
 #Ennixy_Frennor.pl
 #Part of Innoruuk Regent
+# items: 10265
 
 sub EVENT_SAY {
   if($text=~/hail/i){

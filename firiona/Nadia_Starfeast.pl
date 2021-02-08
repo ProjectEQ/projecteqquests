@@ -1,5 +1,6 @@
 # Test of Charm - enchanter epic - start of quest
 # 
+# items: 17861, 10631, 10632, 10633, 10634, 10604, 10637, 10612
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

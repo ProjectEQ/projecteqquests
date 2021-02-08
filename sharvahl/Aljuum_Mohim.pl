@@ -1,4 +1,5 @@
 #Aljuum_Mohim Shar Vhal  ID 155052
+# items: 5967, 17112, 22154, 6157, 6144, 6158, 5966, 6159
 
 sub EVENT_SAY {
 if ($text=~/wolves/i) {

@@ -1,3 +1,4 @@
+-- items: 17058, 31825
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good day. " .. e.other:GetName() .. ". I assist in maintaining an accurate collection of historical tomes here in the great library of Erudin. One of our citizens recently escaped the dungeons of the Kobold warrens and tells of a Kobold lore keeper who keeps a collection of scrolls detailing the history of their kind. Are you capable of obtaining those scrolls for our library?");

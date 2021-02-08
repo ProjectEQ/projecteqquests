@@ -1,5 +1,6 @@
 #Iksar low- to mid-level armor quests.  This is for the Shadowknight.  
 #In order for this to work, must add:  Drixie Wings (Item 14827) to Lady Chromoire (both instances) in Firiona Vie as a 50% probability 100% drop on it's own LootDrop.  
+# items: 14824, 3061, 10034, 4971, 14829, 14820, 3063, 10032, 4973, 14827, 3054, 10033, 4975, 12982, 14821, 3056, 10035, 4969
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

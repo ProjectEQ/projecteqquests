@@ -1,3 +1,4 @@
+# items: 9031, 9036, 9037
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("It is a comfort to meet you, $name. I was afraid that you might not be able to track me with weather out there being what it is. I must admit that my fondness of the snow is at an all time low right now. The sooner you release the spirit that resides in here, the sooner we can make a way back to a warmer climate.");

@@ -1,6 +1,7 @@
 # The Supply Run
 # author - robregen
 # date - 4/10/12
+# items: 25266, 25270, 25269
 
 sub EVENT_SAY { 
 	if((($text=~/hail/i) || ($text=~/supplies/i) || ($text=~/giants/i) || ($text=~/eastern wastes/i) || ($text=~/wakening land/i) || ($text=~/great divide/i) || ($text=~/klezendian/i)) && ($faction > 5)) {

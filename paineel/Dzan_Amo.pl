@@ -1,3 +1,4 @@
+# items: 13069, 13250
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Welcome to the Tabernacle of Terror. Perhaps you can control your fear long enough to be of [service] to us.");

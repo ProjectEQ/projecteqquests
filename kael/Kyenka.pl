@@ -1,4 +1,5 @@
 # Living Dragons quests
+# items: 25119, 25029, 25118, 25028
 
 sub EVENT_SAY {
   # Require Warmly or better faction

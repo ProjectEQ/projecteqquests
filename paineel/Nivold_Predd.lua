@@ -1,3 +1,4 @@
+-- items: 16540, 13739, 14111, 14112, 14105
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("What do you want? Do not disturb me lest you plan to assist in my [summoning of Dread].");

@@ -227,7 +227,7 @@ func findItems(line string, language string) []string {
 
 func findItemIDs(index int, line string) []string {
 	items := []string{}
-	itemMatches := regNumbers.FindAllStringSubmatch(line[index:len(line)], -1)
+	itemMatches := regNumbers.FindAllStringSubmatch(line[index:], -1)
 	for _, groups := range itemMatches {
 		for _, match := range groups {
 			id, err := strconv.Atoi(match)

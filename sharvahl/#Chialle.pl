@@ -1,3 +1,4 @@
+# items: 30625, 30609
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello there traveler. Please take a moment to look at my goods. I have delicious meals perfect for traveling conditions.");

@@ -1,3 +1,4 @@
+# items: 20523, 16547, 1717, 13227, 13355, 13356, 13357, 18840, 5030, 13358
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("You $name. We hear of you. We need help. You [help Crakneks] or you [help self]?");

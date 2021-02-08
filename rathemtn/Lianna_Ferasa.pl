@@ -1,4 +1,5 @@
 # Part of quest for Bracer of the Reverent
+# items: 13899, 19010
 
 sub EVENT_SAY {
   if($text=~/Regis/i){

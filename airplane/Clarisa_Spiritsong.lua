@@ -1,4 +1,5 @@
 --Clarisa Spiritsong. Bard Quest NPC
+-- items: 20830, 20961, 20828, 20829, 27724, 20953, 20826, 20827, 14565, 20831, 20968, 20832, 20833, 10852
 function event_spawn(e)
 	eq.set_timer("depop",300000);
 end

@@ -5,6 +5,7 @@
 # Author: Unknown
 # Updated:  Andrew80k
 #########################################################
+# items: 12312, 12302
 sub EVENT_SAY { 
    if($text=~/Hail/i){
       quest::say("Love and passion to you. my friend.  Seek you the [Gauntlets of Ro]?  If not. then I offer you the safety of this camp.");

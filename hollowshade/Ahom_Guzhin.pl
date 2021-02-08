@@ -1,3 +1,4 @@
+# items: 6267, 6159, 6222, 6184, 6275, 8466
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Please do not think poorly of me, but I must see your Journeyman's Cloak if you wish to converse. Be quick about it. This place is not completely safe.");

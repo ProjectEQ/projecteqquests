@@ -1,5 +1,6 @@
 # Test of Phanatsm - enchanter epic - start of quest
 # 
+# items: 10604, 17861, 10638, 10613
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

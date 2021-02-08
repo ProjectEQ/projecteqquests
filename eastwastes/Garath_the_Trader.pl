@@ -1,3 +1,4 @@
+# items: 27301, 5833, 27321, 27320, 27300, 5834, 27328, 5835
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail to ya, Traveller, and well met! My Name's Garath, a warrior by trade, though I do dabble in some merchanting on the side. My exploring brought me here, and I saw some wonderous things. I ventured inside this ancient tomb with some friends, and oh! The horrors we encountered! I barely made it out alive, but I did manage to pick up some [weapons to trade].");

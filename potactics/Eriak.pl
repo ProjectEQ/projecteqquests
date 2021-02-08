@@ -1,4 +1,5 @@
 #Eriak is for Black Insanity (Rallos Zek bane) weapons. They were originally going to be the only way to harm Rallos, but he was changed to where he could be hit with normal weapons. Eriak is also used for the 'Proof for Phara Dar' quest.
+# items: 28592
 
 sub EVENT_SAY {
  if($text=~/hail/i && $pop_tactics_tallon == 1 && $pop_tactics_vallon == 1) {

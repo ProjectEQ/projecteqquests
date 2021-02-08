@@ -1,3 +1,4 @@
+# items: 29849, 29850
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::emote("glowers at you dubiously as though wondering what it is your tombstone might say.");

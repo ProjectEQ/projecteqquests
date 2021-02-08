@@ -1,4 +1,5 @@
 #Nexona NPCID 108047
+# items: 69340, 69348, 69344, 69387, 69388
 
 sub EVENT_SAY {
 	if ($text=~/Hail/i) {

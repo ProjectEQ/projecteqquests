@@ -1,6 +1,7 @@
 # Berserker Abysmal Sea armor
 # Created by Gonner
 # quest text was missing so used Shaman text.
+# items: 68222, 54128, 68220, 54126, 68223, 54129, 68225, 54131, 68226, 54132, 68224, 54130, 68221, 54127
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

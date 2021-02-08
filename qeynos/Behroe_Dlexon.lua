@@ -1,3 +1,4 @@
+-- items: 18026, 18027, 18021, 18023
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:QuestSay(e.other,string.format("Ah, greetings, %s!  How are you this evening?  Hopefully, you are faring much better than I..  I'm stuck on the night watch here, and never get to see my lovely [Aenia].  Ah..  she is so sweet..  I wrote her this beautiful [ballad], but I fear she may never hear it.",e.other:GetName()));

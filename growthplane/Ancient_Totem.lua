@@ -1,3 +1,4 @@
+-- items: 31440, 31442, 31441, 31439, 1324
 function event_say(e)
 	if(e.other:GetLevel() >= 55) then
 		if(e.message:findi("hail")) then

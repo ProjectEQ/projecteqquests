@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 13844, 13214
 
 function event_trade(e)
 	local item_lib = require("items");

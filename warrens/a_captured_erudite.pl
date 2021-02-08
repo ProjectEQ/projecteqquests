@@ -8,6 +8,7 @@
 #Quest Status: completed
 #Modified by: Realityincarnate
 ###############################
+# items: 6923
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

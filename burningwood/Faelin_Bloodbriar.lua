@@ -1,3 +1,4 @@
+-- items: 20481, 20487
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Didn't think I was gone for good, did you? We're that much closer to finishing this trial of our strength, thanks to you.");

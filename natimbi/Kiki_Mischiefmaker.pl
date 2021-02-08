@@ -1,5 +1,6 @@
 # Kiki's Turtle Soup
 # Created by Gonner
+# items: 54066, 54067
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

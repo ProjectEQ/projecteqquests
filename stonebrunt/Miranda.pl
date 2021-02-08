@@ -2,6 +2,7 @@
 #NPC ID: #100143
 #Zone: Stonebrunt
 #Quest by Dave
+# items: 20115, 20116
 
 sub EVENT_SAY
 {

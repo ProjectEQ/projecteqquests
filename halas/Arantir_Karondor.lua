@@ -1,3 +1,4 @@
+-- items: 14334, 18169, 14335, 18168, 14337, 14338, 14339, 14340
 function event_spawn(e)
 	eq.set_timer("ArantirDepop",640000);
 end

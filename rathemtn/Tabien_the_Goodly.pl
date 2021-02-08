@@ -1,3 +1,4 @@
+# items: 1676, 1677, 1670
 sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0
   quest::say("Oh thank Marr you are here, $name. I was beginning to think I would be abandoned in my time of need. I have a [" . quest::saylink("task") . "] for you to complete in the name of my patron Mithaniel Marr.");

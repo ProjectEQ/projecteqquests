@@ -2,6 +2,7 @@
 #Angelox
 #note; I did this quest as per the original, "Titanium" version
 #Male erudite spirit for Quest: Ethereal Cleansing
+# items: 59027, 59003, 59028
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,59027 => 1)) { #Black Skull Necklace

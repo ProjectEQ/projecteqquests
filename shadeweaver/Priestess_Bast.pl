@@ -1,5 +1,6 @@
 #Priestess_Bast.pl
 #Champion of the Vah Shir
+# items: 30856, 30853, 30857
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

@@ -1,5 +1,6 @@
 --Quests covered in this file:
 --Shaman Skull Quest 7
+-- items: 30984, 30986, 30988, 5146
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

@@ -1,3 +1,4 @@
+# items: 29007
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("Nella Stonebraids glances your direction, then returns to what she was doing.");

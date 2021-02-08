@@ -1,3 +1,4 @@
+# items: 10412, 10413, 10414, 10415, 31743, 10416, 31744
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Greetings! I am Drenic Garrison, Governor of Science here in Katta Castellum. I am currently involved in several scientific endeavors with the other governors and am in need of assistance supplying my researchers with the proper [materials and samples] for their studies.");

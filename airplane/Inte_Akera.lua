@@ -1,4 +1,5 @@
 --Inte Akera, paladin Epic quest turn-in NPC
+-- items: 5504, 18033, 5403, 18034, 19073, 1254, 11050, 47100, 69957, 69958, 69959
 
 function event_spawn(e)
 	eq.set_timer("depop",300000);

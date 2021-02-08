@@ -1,3 +1,4 @@
+-- items: 13411
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Oh hello. " .. e.other:GetName() .. ".  My name is Ilscent.   I am glad to see you. but I am in a bit of a [" .. eq.say_link("bind",false,"bind") .. "] right now.");

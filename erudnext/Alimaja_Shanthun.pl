@@ -1,5 +1,6 @@
 # erudnext divine protectors armor
 #
+# items: 61092, 38911, 38907, 38908, 38910, 38913, 38909, 38912, 63125, 13825, 9131, 19864, 61097
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,3 +1,4 @@
+-- items: 8720, 8732
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail traveler. may I assist you with something. or are you just passing through?");

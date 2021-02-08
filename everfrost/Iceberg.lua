@@ -1,3 +1,4 @@
+-- items: 12221, 12226
 function event_spawn(e)
 	eq.set_timer("follow",1000);
 end

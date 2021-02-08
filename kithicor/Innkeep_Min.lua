@@ -1,3 +1,4 @@
+-- items: 21699, 2018, 46200
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if (e.message:findi("I have returned") and qglobals["Halloween2018"] == "3") then

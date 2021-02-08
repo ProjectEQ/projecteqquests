@@ -1,3 +1,4 @@
+-- items: 28010, 28011, 28012, 28013, 7506, 7505, 11057, 18961, 28057
 function event_say(e)
 	local rogue_epic = eq.get_qglobals(e.other);
 	

@@ -1,5 +1,6 @@
 # Daksins' Vampyre Antidote
 #
+# items: 4764
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

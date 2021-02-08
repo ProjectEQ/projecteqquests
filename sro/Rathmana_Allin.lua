@@ -1,4 +1,5 @@
 -- NPC: Rathmana Allin.  Location: South Ro
+-- items: 15022, 15035, 15038, 15039, 15303, 15328, 15355, 15364, 15445, 16425, 13360, 18808, 18809, 18810, 18961
 
 --  Qazzaz - 04/01/10 - Added minimal support for The Bayle List quest.  Couldn't find any text.
 -- Converted to .lua by Speedz

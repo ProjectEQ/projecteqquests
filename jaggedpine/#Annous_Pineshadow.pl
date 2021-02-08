@@ -1,5 +1,6 @@
 #gale weaver Quest
 #Written by Spre, cleaned up by Cavedude
+# items: 8962, 8956, 8964, 8963, 17135, 8966, 8967
 
 sub EVENT_SAY {
   if ($text=~/hail/i && $faction == 1) {

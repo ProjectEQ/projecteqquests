@@ -1,3 +1,4 @@
+-- items: 17056, 1766, 1762
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Breya Nostulia stares off into the distance in meditation. Her eyes are a light blue, much like the tropical waters of the ocean between Odus and the mainland. She ignores your greeting.");

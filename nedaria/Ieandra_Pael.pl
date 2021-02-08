@@ -1,5 +1,6 @@
 # Gather Beaks
 # created by Gonner
+# items: 66183
 
 sub EVENT_SAY {
 

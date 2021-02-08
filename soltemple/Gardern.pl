@@ -1,5 +1,6 @@
 # Quest for Staff of Temperate Flux and Weeping Wand
 # Quest for Bard Lambent Sapphire
+# items: 6342, 6341, 10119
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

@@ -1,5 +1,6 @@
 # Duke Norfin's Delivery
 #
+# items: 19841, 19840
 
 sub EVENT_SAY {
   if ($faction <= 5) {

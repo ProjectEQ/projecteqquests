@@ -1,3 +1,4 @@
+-- items: 1837, 1887
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 2) then
 		if(e.message:findi("hail")) then

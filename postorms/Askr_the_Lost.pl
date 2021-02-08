@@ -1,3 +1,4 @@
+# items: 17192, 11486, 28749, 28781, 28782, 11488, 11487
 sub EVENT_SAY {
 
 	if(defined $qglobals{pop_poj_valor_storms}) { 

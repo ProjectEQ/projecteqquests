@@ -1,3 +1,4 @@
+# items: 54026
 my $count = 0;
 
 sub EVENT_COMBAT {

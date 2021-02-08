@@ -1,3 +1,4 @@
+-- items: 8919, 8951, 8955
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	if(fac < 3) then

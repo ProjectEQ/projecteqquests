@@ -1,5 +1,6 @@
 -- Ikkinz Group 3 Expedition
 -- npc id: 293118
+-- items: 60154
 local expedition_name = "Ikkinz, Chambers of the Tri-Fates"
 local dz_version = instance_version.ikkinz_chambers_of_the_tri_fates
 

@@ -1,5 +1,6 @@
 # Mistala's Report
 #
+# items: 4760, 4761
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

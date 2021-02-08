@@ -1,5 +1,6 @@
 #Arch_Mage_Deidus.pl
 #Planar Armor Exchange/Magician Tomes/Some other text, preserved but cleaned
+# items: 1239, 1240, 1241, 1242, 1243, 1244, 1245, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

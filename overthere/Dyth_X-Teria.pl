@@ -1,5 +1,6 @@
 #Dyth_X-Teria.pl
 #Brain Bite (The Overthere)
+# items: 10027, 10028, 10021, 12962, 12963, 12964, 12965, 12966, 12967, 12968
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

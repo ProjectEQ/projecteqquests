@@ -2,6 +2,7 @@
 #ToDo:
 # Force succession of popup windows
 # Flash spellbar
+# items: 59973, 17708, 59971, 59972, 59963, 59962, 59965, 59966, 59959, 59961, 59960, 59964
 
 sub EVENT_SAY {
   if ($text=~/hail/i)  {

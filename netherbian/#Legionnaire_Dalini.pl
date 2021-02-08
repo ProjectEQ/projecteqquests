@@ -2,6 +2,7 @@
 # Sanctus Seru : torsten reidan
 # Marus Seru : reothe
 # Netherbian Lair : Legionnaire Dalini, spawned Bregun Dorey
+# items: 29851
 
 sub EVENT_SAY{
   if ($text=~/Bregun Dorey/i){

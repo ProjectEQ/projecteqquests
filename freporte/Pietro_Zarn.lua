@@ -1,3 +1,4 @@
+-- items: 18743, 13561, 18961, 12153
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Who are you that you dare to speak with the great Pietro Zarn!! I see nothing more than a whelp in front of me. Innoruuk himself speaks with me. And now you expect me to waste words on you, a common. Begone " .. e.other:GetName() .. " . You have nothing to peak my interest, only my rage.");

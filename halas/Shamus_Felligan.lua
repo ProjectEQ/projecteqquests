@@ -1,4 +1,5 @@
 -- : Drowsy : Frost Rift : Sicken : Fleting Fury : Spirit of Bear : Cure Blindness : Spirit Sight : In that order
+-- items: 13968, 15270, 15275, 15075, 15271, 15279, 15212, 15079, 13969, 6028
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

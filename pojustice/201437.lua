@@ -1,6 +1,7 @@
 -- 201435 The Tribunal
 -- Trial of Stoning
 --
+-- items: 31599
 
 local stoning_flag      = 0;
 local trial_group       = nil;

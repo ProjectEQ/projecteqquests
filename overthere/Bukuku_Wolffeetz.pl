@@ -1,4 +1,5 @@
 #Bukuku_Wolffeetz, Overthere
+# items: 19269, 19238, 19264, 19272, 19267, 19271, 19274, 19266
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

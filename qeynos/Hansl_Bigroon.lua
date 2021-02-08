@@ -1,3 +1,4 @@
+-- items: 13290, 18835
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Greetings, %s! Are you a [citizen of Qeynos] or are you a [traveler of sorts]?",e.other:GetName()));

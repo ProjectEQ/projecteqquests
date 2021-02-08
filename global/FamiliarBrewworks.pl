@@ -1,4 +1,5 @@
 ##Brewworks familiar from Station Store. Converts water flasks to ale.##
+# items: 13006, 13039
 
 sub EVENT_SPAWN{
    quest::say("Brewworks Unit ready to convert Water Flasks to Ale, Master.");

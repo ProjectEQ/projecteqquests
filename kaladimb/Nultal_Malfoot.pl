@@ -1,3 +1,4 @@
+# items: 14030, 15203, 15229, 15560, 15036, 15216
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("May the power of Underfoot be with you. Welcome. I am here to serve the will of the king as should you. If you [need healing], then speak. Or perhaps you are here to [return skunk glands]?");

@@ -1,3 +1,4 @@
+-- items: 18735, 13556
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Welcome %s! This is the Temple of Marr and you must be another seeker of passion and valor. That is good. Become one with us and help us to defeat the [fallen knight]. It is he who has caused the demise of this city.",e.other:GetName()));

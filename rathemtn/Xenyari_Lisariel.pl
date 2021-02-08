@@ -4,6 +4,7 @@
 # Quest:  The Etched Stone
 # Author: a_sewer_rat
 #########################################################
+# items: 10195, 10196, 10193, 10194
 
 sub EVENT_SAY {
    if($text=~/Hail/i){

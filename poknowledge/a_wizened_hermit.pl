@@ -1,3 +1,4 @@
+# items: 53513, 85062
 sub EVENT_SAY {
 	if(quest::istaskactive(217)){
 		if($text=~/Hail/i) {

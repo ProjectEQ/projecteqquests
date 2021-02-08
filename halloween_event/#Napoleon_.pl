@@ -1,3 +1,4 @@
+# items: 85064, 85068, 85065, 85063, 85066, 85067
 sub EVENT_SPAWN {
 	quest::say("Alright already!");
 	quest::settimer(1,300);

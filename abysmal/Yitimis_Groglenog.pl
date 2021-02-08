@@ -1,3 +1,4 @@
+# items: 58211, 58057, 58033, 58164, 58040, 58070, 58133, 58153, 58152, 58144, 58165, 58041, 58213
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(168,4)) { #Brewing Collect Step 5

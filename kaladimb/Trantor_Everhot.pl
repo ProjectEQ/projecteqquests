@@ -1,5 +1,6 @@
 #BeginFile: Trantor_Everhot.pl
 #Quest for North Kaladim - Trantor Everhot: Tumpy Tonics
+# items: 12114, 12111
 
 my $ItemCount; #Tumpy Tonic Counter
 

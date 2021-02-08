@@ -1,3 +1,4 @@
+-- items: 20764, 28043, 2463, 28033
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("So, you have made it this far. I am Kihun Solstin, the Master of Wind. I control the unfettered Element like none other. As you should have learned, Air is the most potent of Elements. It fuels Fire, Water is comprised of it, and Earth cannot restrain it. Knowing this, do you seek the Element of Wind?");

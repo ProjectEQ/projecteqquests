@@ -22,6 +22,7 @@
 --
 -- Lockout on Win: 5 days
 -- Lockout on Loss: 2 hours (think the instance lives for 3 hours now so its really 3 hours)
+-- items: 52413
 local mpg_helper = {};
 
 -- Function: UpdateGroupTrialLockout

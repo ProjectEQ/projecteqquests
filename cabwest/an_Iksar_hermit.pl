@@ -1,3 +1,4 @@
+# items: 17195, 12886, 4266, 4267
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I am looking for a [great sorcerer]. Are you such a person?");

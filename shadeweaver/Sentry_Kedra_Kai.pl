@@ -1,3 +1,4 @@
+# items: 10644, 10645, 10646, 10647, 85054
 sub EVENT_SAY { 
   if($text=~/hail/i){
     quest::say("Well met wanderer. Pay heed to the road you chose to travel on, for there are many [hazards] you may come across no matter which direction you chose.");

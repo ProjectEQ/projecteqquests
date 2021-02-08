@@ -1,3 +1,4 @@
+-- items: 4757, 5985, 5986
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hi there " .. e.other:GetName() .. ". It's nice to meet ye. Many great deals here today if I don't say so myself.");

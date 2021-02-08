@@ -1,3 +1,4 @@
+# items: 5852, 5853, 5851, 4488, 3958, 5695, 5694, 4490, 3952, 5693, 5692, 4489, 3951, 4494, 5689, 5687, 5688, 3949, 4491, 5679, 5678, 5680, 3946, 5682, 5681, 4492, 5683, 3947, 5684, 4493, 5686, 5685, 3948
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Welcome to Jern's Rest!  I'm the owner and proprietor of this inn. its been in my family for generations.  My great grandaddy. Jern. built it back when Katta Castellum was first being built.  If ya be wantin' of anything don't hesitate to ask.'"); 

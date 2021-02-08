@@ -4,6 +4,7 @@
 #
 #NPC Name: Mjeldor Felstorm
 #NPC ID: 113161
+# items: 25837, 24926, 25419, 25807, 24921, 25420, 25818, 24923, 25421, 25841, 24925, 25422, 25832, 24927, 25423, 25816, 24922, 25424, 25829, 24924, 25425
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

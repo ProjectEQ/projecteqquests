@@ -3,6 +3,7 @@
 #  Zone: North Kaladim
 #  Quests: Multiple --> Soil of Underfoot
 #####################################################################
+# items: 51121, 51122, 18765, 13514, 12106, 12282
 sub EVENT_SPAWN {
   $x = $npc->GetX();
   $y = $npc->GetY();

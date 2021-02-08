@@ -1,3 +1,4 @@
+# items: 51380, 51370, 51372, 51371, 51374, 51375, 51373, 51376, 55210, 55211
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Yuz come lookeeng to make sum armorz? Yuz come to da right place, if'n yuz be a shadowknight. Is you a [shadowknight]?");

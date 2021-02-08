@@ -1,3 +1,4 @@
+# items: 57008, 57996, 57010, 52900
 sub EVENT_SAY {
 if ($client->GetGlobal("beast_epic") ==3) {
   if ($text=~/lands/i) {

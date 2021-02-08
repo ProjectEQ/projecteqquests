@@ -1,3 +1,4 @@
+-- items: 28710, 28709, 28724, 28725, 28730, 32064, 32065
 function event_spawn(e)
 eq.zone_emote(0,"The spirits of Honor's fallen Heroes begin to coalesce in front of you.");
 end

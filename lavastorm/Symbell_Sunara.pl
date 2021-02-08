@@ -1,3 +1,4 @@
+# items: 13418
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello, $name.");

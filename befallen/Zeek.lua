@@ -1,3 +1,4 @@
+-- items: 18651, 18652, 18653, 18654, 13984
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Ah, so many dead to destroy, so little time. What is it you want? You seek the [potions] perhaps?");

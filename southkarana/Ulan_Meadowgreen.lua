@@ -1,6 +1,7 @@
 -- warrior crafted armor
 -- generic reward text - could only find the correct text for the bracer
 -- updated the original file with correct text and used the handin plugin
+-- items: 14019, 10034, 4177, 13742, 10032, 4179, 13698, 13699, 13738, 10033, 4175, 13746, 10035, 4174
 
 function event_say(e)
 	if(e.message:findi("hail")) then

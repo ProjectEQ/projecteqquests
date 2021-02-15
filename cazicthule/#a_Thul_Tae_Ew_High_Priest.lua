@@ -3,7 +3,7 @@ function event_death_complete(e)
 end
 
 function event_spawn(e)
-   eq.unique_spawn(48057, 0, 0, 595, 960, -84, 0); -- tahia_felwah
+   eq.unique_spawn(48057, 0, 0, 587, 1091, -98, 0); -- tahia_felwah
    eq.spawn2(48029, 0, 0, 587, 1055, -94, 0); -- #a_Tae_Ew_Justicar (48029)
    eq.spawn2(48029, 0, 0, 550, 1090, -94, 130);
    eq.spawn2(48029, 0, 0, 587, 1128, -94, 254);

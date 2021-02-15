@@ -30,22 +30,18 @@ function spawn_guards(e)
 	local Khataruss = eq.get_entity_list():GetMobByNpcTypeID(48250);
 	
 	if (not Khataruss.valid) then
-		eq.unique_spawn(48250, 0, 0, 595, 960, -84, 0);
-		Khataruss:CastToNPC():SetRunning(true);
-		Khataruss:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+		eq.unique_spawn(48250, 0, 0, 595, 960, -84, 0):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true);
 	end
 	
 	local Thrasciss = eq.get_entity_list():GetMobByNpcTypeID(48249);
 	
 	if (not Thrasciss.valid) then
-		eq.unique_spawn(48249, 0, 0, 595, 932, -65, 0);
-		Thrasciss:CastToNPC():SetRunning(true);
-		Thrasciss:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+		eq.unique_spawn(48249, 0, 0, 595, 932, -65, 0):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true);
 	end
 	
 	local Scithiss = eq.get_entity_list():GetMobByNpcTypeID(48251);
 	
 	if (not Scithiss.valid) then
-		eq.unique_spawn(48251, 0, 0, 595, 916, -60, 0):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+		eq.unique_spawn(48251, 0, 0, 595, 916, -60, 0):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true);
 	end
 end

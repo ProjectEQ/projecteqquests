@@ -22,26 +22,26 @@ function event_waypoint_arrive(e)
                 eq.unique_spawn(48237, 0,0, 625, 1090, -94, 388);
                 SpawnWave();
                 e.self:SpellFinished(2128, e.self); -- Avatar of Fear
-            elseif wave = 10 then
+            elseif wave == 10 then
                 eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... FRIGHT!");
                 eq.unique_spawn(48239, 0,0, 587, 1128, -94, 254);
                 SpawnWave();
                 e.self:SpellFinished(2128, e.self); -- Avatar of Fear
-            elseif wave = 15 then
+            elseif wave == 15 then
                 eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... TERROR!");
                 eq.unique_spawn(48240, 0,0, 550, 1090, -94, 126);
                 SpawnWave();
                 e.self:SpellFinished(2128, e.self); -- Avatar of Fear
-            elseif wave = 20 then
+            elseif wave == 20 then
                 eq.signal(48237,1);  --dread
                 SpawnWave();            
-            elseif wave = 22 then
+            elseif wave == 22 then
                 eq.signal(48239,1); --fright
                 SpawnWave();
-            elseif wave = 24 then
+            elseif wave == 24 then
                 eq.signal(48240,1); --terror
                 SpawnWave();
-            elseif wave = 25 then
+            elseif wave == 25 then
                 e.self:SetSpecialAbility(24, 0); -- Will Not Aggro off
                 e.self:SetSpecialAbility(25, 0); -- Immune to Aggro off 
                 e.self:SetSpecialAbility(35, 0); -- No Harm from Players off

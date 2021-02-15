@@ -15,7 +15,7 @@ end
 
 function event_waypoint_arrive(e)
 
-    if (e.wp == 6) then
+    if (e.wp == 5) then
         wave = wave +1;
             if wave == 5 then
                 eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... DREAD!");

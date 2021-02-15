@@ -7,7 +7,7 @@ local SPINECHILLER_TYPE = 48245;
 local TENTACLE_TYPE = 48252;
 local wave = 0;
 
-function event_spawn
+function event_spawn(e)
     wave = 0;
     eq.zone_emote(0,"Avatar of Fear shouts, 'Minions of fear hear me now! The temple of the great Cazic Thule has been defiled. I summon you to assist me in its cleansing!");
     e.self:SpellFinished(2128, e.self); -- Avatar of Fear

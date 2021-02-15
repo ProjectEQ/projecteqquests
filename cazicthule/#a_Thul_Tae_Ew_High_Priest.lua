@@ -46,8 +46,6 @@ function spawn_guards(e)
 	local Scithiss = eq.get_entity_list():GetMobByNpcTypeID(48251);
 	
 	if (not Scithiss.valid) then
-		eq.unique_spawn(48251, 0, 0, 595, 916, -60, 0);
-		Scithiss:CastToNPC():SetRunning(true);
-		Scithiss:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+		eq.unique_spawn(48251, 0, 0, 595, 916, -60, 0):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
 	end
 end

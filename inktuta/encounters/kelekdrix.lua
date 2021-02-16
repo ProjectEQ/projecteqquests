@@ -72,5 +72,6 @@ function event_encounter_unload(e)
 	eq.depop_all(296025)
 	eq.depop_all(296026)
 	eq.signal(296070, 296024) -- setting lockout
+    eq.stop_all_timers();
 end
 

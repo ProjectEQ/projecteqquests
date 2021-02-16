@@ -24,6 +24,7 @@ sub EVENT_TIMER {
 	$new_speed = ($new_speed * 1.1);
 	quest::modifynpcstat("runspeed", $new_speed);
 	if (!$npc->GetTarget()) {
+        quest::stopalltimers();
 		quest::depop();
 	}
   } elsif ($timer eq "checkdist") {
@@ -43,9 +44,11 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_SLAY {
+  quest::stopalltimers();
   quest::depop();
 }
 
 sub EVENT_NPC_SLAY {
-	quest::depop();
+  quest::stopalltimers();
+  quest::depop();
 }

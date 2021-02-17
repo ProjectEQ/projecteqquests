@@ -8,6 +8,10 @@ function event_spawn(e)
    eq.spawn2(48029, 0, 0, 550, 1090, -94, 130);
    eq.spawn2(48029, 0, 0, 587, 1128, -94, 254);
    eq.spawn2(48029, 0, 0, 625, 1090, -94, 388);
+   eq.spawn2(48099, 0, 0, 539, 972, -38, 390); --a_Thul_Tae_Ew_Warder
+   eq.spawn2(48099, 0, 0, 483, 904, -10, 257); --a_Thul_Tae_Ew_Warder
+   eq.spawn2(48099, 0, 0, 484, 927, -10, 257); --a_Thul_Tae_Ew_Warder
+   eq.spawn2(48099, 0, 0, 539, 1024, -38, 259); --a_Thul_Tae_Ew_Warder
 end
 
 function event_combat(e)

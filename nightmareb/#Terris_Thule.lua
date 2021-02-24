@@ -12,6 +12,7 @@ function event_combat(e)
 		eq.set_timer("oobcheck", 6000);
 	else
 		eq.stop_timer("oobcheck");
+		eq.set_timer("wipereset", 60000);
 	end
 end
         
@@ -75,6 +76,13 @@ function event_hp(e)
 		end
 	elseif ( e.timer == "gargs" ) then
 		eq.stop_timer("gargs");
+		eq.spawn2(221013,0,0,-1954,99,202,191):SetAppearance(4);  --untargettable statue
+		eq.spawn2(221013,0,0,-1748,91,202,330):SetAppearance(4);  --untargettable statue
+		eq.spawn2(221013,0,0,-1736,-125,202,454):SetAppearance(4);  --untargettable statue
+		eq.spawn2(221013,0,0,-1958,-104,202,67):SetAppearance(4);  --untargettable statue
+	elseif ( e.timer == "wipereset" ) then
+		eq.stop_timer("wipereset");
+		eq.depop_all(221007); -- depop active gargs
 		eq.spawn2(221013,0,0,-1954,99,202,191):SetAppearance(4);  --untargettable statue
 		eq.spawn2(221013,0,0,-1748,91,202,330):SetAppearance(4);  --untargettable statue
 		eq.spawn2(221013,0,0,-1736,-125,202,454):SetAppearance(4);  --untargettable statue

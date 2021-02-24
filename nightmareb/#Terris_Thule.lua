@@ -42,7 +42,7 @@ function event_hp(e)
 	if ( e.hp_event == 95 ) then
 		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "The sound of a thousand terrified screams fills your head.  You feel yourself becoming a part of the fabric of this nightmare realm.");
 		eq.set_next_hp_event(79);
-		eq.set_next_inc_hp_event(95); --reset on wipe
+		eq.set_next_inc_hp_event(96); --reset on wipe
 		
 	elseif ( e.hp_event == 79 ) then
 		eq.set_next_hp_event(69);
@@ -61,6 +61,8 @@ function event_hp(e)
 		e.self:Shout("You will not escape my realm so easily!");
 		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "The air grows thick with the smell of burning mana.  A rumbling sound draws your attention to the massive statues that rest above the ancient monoliths.  The statues begin to crumble, as they shift their attention from the heavens to you!");
 		eq.signal(221013, 1); --signal untargettable statues to wake up
+	elseif (e.inc_hp_event == 96) then
+		eq.set_next_hp_event(95);
 	end
  end
         

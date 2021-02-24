@@ -70,7 +70,7 @@ function event_hp(e)
  function event_timer(e)
 	if ( e.timer == "oobcheck" ) then
             	if ( e.self:GetX() > -1580 or e.self:GetX() < -2090 or e.self:GetY() > 250 or e.self:GetY() < -280 ) then
-			eq.get_entity_list():MessageClose(e.self, true, 200, 0, "disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
+			eq.get_entity_list():MessageClose(e.self, true, 200, 0, "Terris Thule disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
 			e.self:GMMove(e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
 			e.self:CastSpell(3230, e.self:GetID()); -- Balance of the Nameless
 		end

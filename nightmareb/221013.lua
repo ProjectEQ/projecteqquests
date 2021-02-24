@@ -4,5 +4,5 @@ end
 
 function event_timer(e)
   eq.stop_timer("animation");
-  e.self:SetAppearance(3); -- lying
+  e.self:SetAppearance(1); -- sitting
 end

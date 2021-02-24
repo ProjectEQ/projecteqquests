@@ -1,6 +1,6 @@
 
 function event_spawn(e)
-	mob:SetFlyMode(1);
+	e.self:SetFlyMode(1);
 	eq.set_next_hp_event(80);
 	eq.set_timer("respawn", 2 * 1000);
 end

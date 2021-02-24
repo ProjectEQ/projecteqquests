@@ -12,7 +12,6 @@ function event_combat(e)
 		eq.set_timer("oobcheck", 6000);
 	else
 		eq.stop_timer("oobcheck");
-		eq.set_next_inc_hp_event(95); --reset on wipe
 	end
 end
         
@@ -43,6 +42,7 @@ function event_hp(e)
 	if ( e.hp_event == 95 ) then
 		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "The sound of a thousand terrified screams fills your head.  You feel yourself becoming a part of the fabric of this nightmare realm.");
 		eq.set_next_hp_event(79);
+		eq.set_next_inc_hp_event(95); --reset on wipe
 		
 	elseif ( e.hp_event == 79 ) then
 		eq.set_next_hp_event(69);

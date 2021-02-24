@@ -75,10 +75,10 @@ function event_hp(e)
 		end
 	elseif ( e.timer == "gargs" ) then
 		eq.stop_timer("gargs");
-		eq.spawn2(221013,0,0,-1954,99,202,191):SetAppearance(2);  --untargettable statue
-		eq.spawn2(221013,0,0,-1748,91,202,330):SetAppearance(2);  --untargettable statue
-		eq.spawn2(221013,0,0,-1736,-125,202,454):SetAppearance(2);  --untargettable statue
-		eq.spawn2(221013,0,0,-1958,-104,202,67):SetAppearance(2);  --untargettable statue
+		eq.spawn2(221013,0,0,-1954,99,202,191):SetAppearance(4);  --untargettable statue
+		eq.spawn2(221013,0,0,-1748,91,202,330):SetAppearance(4);  --untargettable statue
+		eq.spawn2(221013,0,0,-1736,-125,202,454):SetAppearance(4);  --untargettable statue
+		eq.spawn2(221013,0,0,-1958,-104,202,67):SetAppearance(4);  --untargettable statue
 	end
 end
         

@@ -12,6 +12,7 @@ function event_combat(e)
 		eq.set_timer("oobcheck", 6000);
 	else
 		eq.stop_timer("oobcheck");
+		eq.set_next_inc_hp_event(95); --reset on wipe
 	end
 end
         
@@ -59,10 +60,7 @@ function event_hp(e)
 	elseif ( e.hp_event == 40 ) then
 		e.self:Shout("You will not escape my realm so easily!");
 		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "The air grows thick with the smell of burning mana.  A rumbling sound draws your attention to the massive statues that rest above the ancient monoliths.  The statues begin to crumble, as they shift their attention from the heavens to you!");
-		eq.spawn2(221007,0,0,-1993,-102,134,478); --a grotesque statue
-		eq.spawn2(221007,0,0,-1798,-102,134,402); --a grotesque statue
-		eq.spawn2(221007,0,0,-1993,78,134,318); --a grotesque statue
-		eq.spawn2(221007,0,0,-1798,78,134,382); --a grotesque statue
+		eq.signal(221013, 1); --signal untargettable statues to wake up
 	end
  end
         

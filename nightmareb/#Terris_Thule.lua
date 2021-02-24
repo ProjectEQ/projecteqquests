@@ -34,7 +34,7 @@ function SpawnDefilers(mob)
 		else
 			t = DEFILER_LARGE_TYPE;
 		end
-		eq.spawn2(t, 0, 0, -1634, -192, 267, 0); -- defilers seem to all spawn from this single point
+		eq.spawn2(t, 0, 0, -1639, -138, 133, 0); -- defilers seem to all spawn from this single point
 	end
 end
         
@@ -83,6 +83,8 @@ function event_hp(e)
 	elseif ( e.timer == "wipereset" ) then
 		eq.stop_timer("wipereset");
 		eq.depop_all(221007); -- depop active gargs
+		eq.depop_all(221013); -- depop inactive gargs
+		
 		eq.spawn2(221013,0,0,-1954,99,202,191):SetAppearance(4);  --untargettable statue
 		eq.spawn2(221013,0,0,-1748,91,202,330):SetAppearance(4);  --untargettable statue
 		eq.spawn2(221013,0,0,-1736,-125,202,454):SetAppearance(4);  --untargettable statue

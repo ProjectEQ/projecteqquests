@@ -78,7 +78,7 @@ end
 function event_timer(e)
     if (e.timer == 'reset') then
         eq.stop_timer('reset');
-        eq.set_next_hp_event(98);
+        eq.set_next_inc_hp_event(99); --to reset on event failure
         eq.depop(207052);
         eq.depop(207065);
         eq.set_timer('spawnsorrow', 5 * 1000);

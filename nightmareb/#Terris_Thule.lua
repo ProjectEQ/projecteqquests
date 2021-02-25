@@ -10,6 +10,7 @@ end
 function event_combat(e)
 	if ( e.joined ) then
 		eq.set_timer("oobcheck", 6000);
+		eq.stop_timer("wipereset");
 	else
 		eq.stop_timer("oobcheck");
 		eq.set_timer("wipereset", 60000);

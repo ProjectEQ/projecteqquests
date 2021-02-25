@@ -50,6 +50,12 @@ function event_timer(e)
 		eq.stop_timer("respawn");
 		eq.depop_all(208170); --depop active adds A_Mindless_Minion
 		eq.depop_all(208176); --depop active adds rahlgon
+		eq.depop_all(208172); --depop inactive adds A_Mindless_Minion
+		eq.depop_all(208169); --depop inactive adds A_Mindless_Minion
+		eq.depop_all(208174); --depop inactive adds A_Mindless_Minion
+		eq.depop_all(208171); --depop inactive adds A_Mindless_Minion
+		eq.depop_all(208022); --depop inactive adds rahlgon
+		
 		eq.spawn2(208172,0,0,485,2744,39,257); --A_Mindless_Minion
 		eq.spawn2(208172,0,0,234,2744,39,257); --A_Mindless_Minion
 		eq.spawn2(208169,0,0,212,2668,39,257); --A_Mindless_Minion

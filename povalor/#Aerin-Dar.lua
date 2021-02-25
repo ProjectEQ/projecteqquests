@@ -5,6 +5,14 @@ function event_spawn(e)
 	eq.set_timer("respawn", 2 * 1000);
 end
 
+function event_combat(e)
+	if ( e.joined ) then
+		eq.stop_timer("respawn");
+	else
+		eq.set_timer("respawn", 90000);
+	end
+end
+
 function event_hp(e)
 	if e.hp_event == 80 then
 		eq.signal(208172,1);
@@ -38,20 +46,20 @@ end
 
 
 function event_timer(e)
-if (e.timer == "respawn") then
-eq.stop_timer("respawn");
-eq.depop_all(208170); --depop active adds A_Mindless_Minion
-eq.depop_all(208176); --depop active adds rahlgon
-eq.spawn2(208172,0,0,485,2744,39,257); --A_Mindless_Minion
-eq.spawn2(208172,0,0,234,2744,39,257); --A_Mindless_Minion
-eq.spawn2(208169,0,0,212,2668,39,257); --A_Mindless_Minion
-eq.spawn2(208169,0,0,511,2668,39,257); --A_Mindless_Minion
-eq.spawn2(208174,0,0,481,2581,39,257); --A_Mindless_Minion
-eq.spawn2(208174,0,0,239,2581,39,257); --A_Mindless_Minion
-eq.spawn2(208171,0,0,291,2518,39,257); --A_Mindless_Minion
-eq.spawn2(208171,0,0,427,2518,39,257); --A_Mindless_Minion
-eq.spawn2(208022,0,0,359,2500,39,257); --rahlgon
-end
+	if (e.timer == "respawn") then
+		eq.stop_timer("respawn");
+		eq.depop_all(208170); --depop active adds A_Mindless_Minion
+		eq.depop_all(208176); --depop active adds rahlgon
+		eq.spawn2(208172,0,0,485,2744,39,257); --A_Mindless_Minion
+		eq.spawn2(208172,0,0,234,2744,39,257); --A_Mindless_Minion
+		eq.spawn2(208169,0,0,212,2668,39,257); --A_Mindless_Minion
+		eq.spawn2(208169,0,0,511,2668,39,257); --A_Mindless_Minion
+		eq.spawn2(208174,0,0,481,2581,39,257); --A_Mindless_Minion
+		eq.spawn2(208174,0,0,239,2581,39,257); --A_Mindless_Minion
+		eq.spawn2(208171,0,0,291,2518,39,257); --A_Mindless_Minion
+		eq.spawn2(208171,0,0,427,2518,39,257); --A_Mindless_Minion
+		eq.spawn2(208022,0,0,359,2500,39,257); --rahlgon
+	end
 end
 
         

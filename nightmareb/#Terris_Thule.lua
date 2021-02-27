@@ -55,9 +55,13 @@ function event_hp(e)
 		SpawnDefilers(e.self);
 	
 	elseif ( e.hp_event == 50 ) then
-		eq.set_next_hp_event(40);
+		eq.set_next_hp_event(45);
 		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "As if in a waking nightmare, you feel your movements slow and your arms begin to fail you.  Each swing of your weapon feels as if it will miss its mark.   Even your legs begin to fail you, as you fall deeper into the dreamlike state!");
 		e.self:CastSpell(3150, e.self:GetID()); -- Direption of Dreams
+		
+	elseif ( e.hp_event == 45 ) then
+		e.self:SpellFinished(1139, e.self:GetHateTop()); --Defilement of Hope
+		eq.set_next_hp_event(40);
 	
 	elseif ( e.hp_event == 40 ) then
 		e.self:Shout("You will not escape my realm so easily!");

@@ -147,5 +147,6 @@ sub EVENT_ITEM {
 }
    else {
     quest::say("I do not know you well enough to entrust you with such an item, yet."); #Made up text
+    plugin::return_items(\%itemcount);
   }
 }

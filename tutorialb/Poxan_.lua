@@ -10,7 +10,7 @@ Tutorial Revamp by Drogerin
 --]]
 
 function event_say(e)
-	if (e.message:findi("hail") and eq.is_task_active(22)) then -- Basic Training(22)
+	if (e.message:findi("hail") and eq.is_task_activity_active(22,6)) then -- Basic Training(22)
 		e.self:QuestSay(e.other," sighs heavily as he peers into the murky water. 'This is terrible, I've dropped my sword into the water and I can't swim! I don't suppose you could get it back for me $name? I can't very well fight kobolds without a sword.'",{speak_mode = SpeakMode.Emote});
 		eq.popup("Swimming","<br>When swimming, you can use the<c \"#00c8f0\"> PgUp</c> or <c \"#00c8f0\">PgDn</c> keys to point your character up or down. You can then swim normally using the <c \"#00c8f0\">arrow keys</c>.<br><br><c \"#F07F00\">Jump in the water and grab Poxan's sword below the bridge. Then click 'OK' to continue.</c>",10,0,0);
 	end

@@ -27,7 +27,7 @@ sub EVENT_SAY {
 		quest::summonitem(67118); # Item: Gloomingdeep Kobold Leather Sleeves
 		}
       }
-      quest::say("I'm glad you managed to escape the slave warrens in one piece. There are many [others] who were not as lucky. Here, take this armor we found on a kobold. It's not much, but it should keep you safe");
+      quest::say("I'm glad you managed to escape the slave warrens in one piece. There are many [" . quest::saylink("others") . "] who were not as lucky. Here, take this armor we found on a kobold. It's not much, but it should keep you safe");
       quest::popup("Equipping Armor", "Vahlara has offered you a piece of kobold armor to keep you safe.
                     <br><br>Equip the armor by dropping it into the large rectangular icon in the center of your inventory
                     (<c \"#00c8f0\"> i</c> ) window.  Notice that your armor automatically moves to its proper armor slot on your body.<br><br> Also note that some armor you will later obtain can only be equipped by placing it directly in its corresponding slot, e.g. dropping a breastplate onto the \"chest\" icon in your inventory. When you do this, the armor will become \"attuned\" to your character, and you will no longer be able to trade it with other players.
@@ -37,7 +37,7 @@ sub EVENT_SAY {
       if(quest::istaskactivityactive(22,2)) {
         quest::updatetaskactivity(22,2);
       }
-      quest::say("These few here. They were injured when the revolt broke out. I'm trying to help, but we have a short supply of [bandages], and more wounded keep coming. I fear many will not survive the hour.");
+      quest::say("These few here. They were injured when the revolt broke out. I'm trying to help, but we have a short supply of [" . quest::saylink("bandages") . "], and more wounded keep coming. I fear many will not survive the hour.");
       quest::popup("Equipping Armor", "Now that you have your sleeves equiped notice in your inventory window 
                     that your Armor Class or \"AC\" went up.  The higher your Armor Class the harder it will be for your 
                     enemies to hit you.<br><br>Vahlara can make you more armor if you are able to bring her pieces of 

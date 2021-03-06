@@ -19,4 +19,5 @@ function HelpMe(e)
 		if (npc.valid and (npc:GetNPCTypeID() == 64092)) then
 		npc:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true);
 		end
+	end
 end

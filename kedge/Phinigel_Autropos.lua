@@ -14,9 +14,9 @@ function event_timer(e)
 end
 
 function HelpMe(e)
-	local swirlspine = eq.get_entity_list():GetMobByNpcTypeID(64092);
-	
-	if (swirlspine.valid) then
-		swirlspine:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true);
-	end
+	local npc_list =  eq.get_entity_list():GetNPCList();
+	for npc in npc_list.entries do
+		if (npc.valid and (npc:GetNPCTypeID() == 64092)) then
+		npc:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true);
+		end
 end

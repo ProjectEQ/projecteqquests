@@ -16,7 +16,7 @@ end
 function event_timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
-	if (e.self:GetY() > 400) then
+	if (e.self:GetY() > -400) then
 		e.self:GotoBind();
 		e.self:WipeHateList();
 	else

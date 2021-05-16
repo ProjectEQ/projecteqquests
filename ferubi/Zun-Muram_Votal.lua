@@ -13,6 +13,7 @@ function event_combat(e)
 		end
 	else
 		eq.stop_timer("OOBcheck");
+		eq.set_timer('popadds', 5 * 60 * 1000);
 	end
 end
 

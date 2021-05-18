@@ -108,7 +108,7 @@ function Kamoj_Combat(e)
 						end
 					end
 			end	
-
+		end
 	end
 end
 

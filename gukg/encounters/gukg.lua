@@ -73,6 +73,29 @@ function Leklos_Hp(e)
   	end
 end
 
+function Leklos_Combat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		
+	else
+		eq.stop_timer("OOBcheck");
+	end
+end
+
+
+function Mini_Timer(e)
+	if(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() < 530) then
+				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+				e.self:GotoBind();
+				e.self:WipeHateList();
+			else
+				eq.set_timer("OOBcheck", 6 * 1000);
+			end
+	end
+end
+
 function Spawn_Creeper()
   eq.spawn2(259129, 0, 0, -97, 328, -23, 260); -- NPC: #The_Cavern_Creeper
 end
@@ -146,6 +169,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.combat,         259047, Leklos_Combat);
+  eq.register_npc_event('gukg', Event.timer,         259047, Mini_Timer);
   eq.register_npc_event('gukg', Event.spawn, 259047, Pop_Leklos);
   eq.register_npc_event('gukg', Event.hp, 259047, Leklos_Hp);
   eq.register_npc_event('gukg', Event.death_complete, 259047, Leklos_Death);

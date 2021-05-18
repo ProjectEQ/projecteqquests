@@ -126,6 +126,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.combat,         241058, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241051, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241069, Kamoj_Combat);
+  eq.register_npc_event('takc', Event.combat,         241071, Kamoj_Combat);
   eq.register_npc_event('takc', Event.timer,         241046, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241053, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241058, Mini_Timer);

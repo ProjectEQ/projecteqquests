@@ -98,7 +98,7 @@ function Kamoj_Combat(e)
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 241052)) then
-				local top_hate = kamoj:GetHateTop()
+				local top_hate = e.self:GetHateTop()
 					if (top_hate.valid and top_hate:IsClient()) then
 					local top_client = top_hate:CastToClient()
 						if (top_client.valid) then

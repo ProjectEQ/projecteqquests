@@ -67,6 +67,9 @@ function Leklos_Hp(e)
 		e.self:SendIllusionPacket({race=349});
 		eq.set_next_inc_hp_event(27); --to reset on event failure
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 150,"Chunks of decaying flesh pelt your armor as the decayed froglok reveals his skeletal innards.");
+	elseif (e.inc_hp_event == 27) then
+		e.self:SendIllusionPacket({race=350});
+		eq.set_next_hp_event(25);
   	end
 end
 

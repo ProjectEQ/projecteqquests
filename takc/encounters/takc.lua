@@ -95,7 +95,7 @@ end
 
 function Kamoj_Combat(e)
 	if (e.joined == true) then
-		inst_id = eq.get_zone_instance_id();
+		instance_id = eq.get_zone_instance_id();
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 241052)) then

@@ -111,7 +111,7 @@ function Spawn_Spore()
   eq.spawn2(259135, 0, 0, -160, 1034, -97, 272); -- NPC: #The_Cursed_Spore
 end
 
-function PoP_Cursed()
+function Pop_Cursed()
 eq.set_next_hp_event(90);
 end
 

@@ -103,7 +103,7 @@ function Kamoj_Combat(e)
 					local top_client = top_hate:CastToClient()
 						if (top_client.valid) then
 
-							kamoj:SetHate(top_client, 1, 1)
+							e.self:SetHate(top_client, 1, 1)
 							top_client:MovePCInstance(241, instance_id, 380, -726, 27, 1);
 						end
 					end

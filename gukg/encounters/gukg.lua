@@ -111,6 +111,63 @@ function Spawn_Spore()
   eq.spawn2(259135, 0, 0, -160, 1034, -97, 272); -- NPC: #The_Cursed_Spore
 end
 
+function PoP_Cursed()
+eq.set_next_hp_event(90);
+end
+
+function Cursed_Hp(e)
+	if (e.hp_event == 90) then
+eq.set_next_inc_hp_event(92); --to reset on event failure
+eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel reducing the Cursed Spore's inherent resistance to changes in its attack speed. Prophet of Gukta says, 'The ritual has been a a slight success. We have broken through one of this cursed beings immunities. Try reducing its attack speed while we prepare for the next part of the ritual.");
+e.self:SetSpecialAbility(12, 0);
+	elseif (e.hp_event == 75) then
+eq.set_next_inc_hp_event(77); --to reset on event failure
+eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel reducing all of the Cursed Spore's inherent resistances slightly. Prophet of Gukta says, 'Keep it up everyone, because of the damage you have done we were able to force another weakness upon it. You should be able to cast a little more effectively now but we will need more time before we can increase your effectiveness.");
+e.self:ModifyNPCStat("mr", "400");
+e.self:ModifyNPCStat("fr", "400");
+e.self:ModifyNPCStat("cr", "400");
+e.self:ModifyNPCStat("pr", "400");
+e.self:ModifyNPCStat("dr", "400");
+	elseif (e.hp_event == 50) then
+eq.set_next_inc_hp_event(52); --to reset on event failure
+eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel significantly reducing all of the Cursed Spore's inherent resistances. Prophet of Gukta says, 'Excellent, we have reduced his resistance to all magical abilities even more, keep distracting him while we prepare for the final part of the ritual.");
+e.self:ModifyNPCStat("mr", "100");
+e.self:ModifyNPCStat("fr", "100");
+e.self:ModifyNPCStat("cr", "100");
+e.self:ModifyNPCStat("pr", "100");
+e.self:ModifyNPCStat("dr", "100");
+	elseif (e.hp_event == 25) then
+eq.set_next_inc_hp_event(27); --to reset on event failure
+eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel completely removing all of the Cursed Spore's inherent resistances. Prophet of Gukta says, 'The ritual is complete and we have been very successful. His ability to resist your magic should be almost non-existent.");
+e.self:ModifyNPCStat("mr", "50");
+e.self:ModifyNPCStat("fr", "50");
+e.self:ModifyNPCStat("cr", "50");
+e.self:ModifyNPCStat("pr", "50");
+e.self:ModifyNPCStat("dr", "50");
+elseif (e.inc_hp_event == 27) then
+e.self:ModifyNPCStat("mr", "100");
+e.self:ModifyNPCStat("fr", "100");
+e.self:ModifyNPCStat("cr", "100");
+e.self:ModifyNPCStat("pr", "100");
+e.self:ModifyNPCStat("dr", "100");
+elseif (e.inc_hp_event == 52) then
+e.self:ModifyNPCStat("mr", "400");
+e.self:ModifyNPCStat("fr", "400");
+e.self:ModifyNPCStat("cr", "400");
+e.self:ModifyNPCStat("pr", "400");
+e.self:ModifyNPCStat("dr", "400");
+elseif (e.inc_hp_event == 77) then
+e.self:ModifyNPCStat("mr", "500");
+e.self:ModifyNPCStat("fr", "500");
+e.self:ModifyNPCStat("cr", "500");
+e.self:ModifyNPCStat("pr", "500");
+e.self:ModifyNPCStat("dr", "500");
+elseif (e.inc_hp_event == 92) then
+e.self:SetSpecialAbility(12, 1);
+end
+end
+
+
 function Creeper_Death(e)
   eq.signal(259159, 259129); -- NPC: zone_status
   eq.spawn2(259136, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
@@ -170,12 +227,14 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.hp, 259135, Cursed_Hp);
+  eq.register_npc_event('gukg', Event.spawn, 259135, Pop_Cursed);
   eq.register_npc_event('gukg', Event.combat,         259047, Leklos_Combat);
   eq.register_npc_event('gukg', Event.timer,         259047, Mini_Timer);
   eq.register_npc_event('gukg', Event.spawn, 259047, Pop_Leklos);
   eq.register_npc_event('gukg', Event.hp, 259047, Leklos_Hp);
   eq.register_npc_event('gukg', Event.death_complete, 259047, Leklos_Death);
-  eq.register_npc_event('gukg', Event.death_complete, 259129, Creeper_Death)
+  eq.register_npc_event('gukg', Event.death_complete, 259129, Creeper_Death);
   eq.register_npc_event('gukg', Event.death_complete, 259135, Spore_Death);
   eq.register_npc_event('gukg', Event.death_complete, 259151, Gragna_Death);
   eq.register_npc_event('gukg', Event.death_complete, 259154, Keeper_Death);

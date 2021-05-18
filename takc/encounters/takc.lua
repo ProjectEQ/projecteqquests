@@ -62,12 +62,48 @@ function QOS_Death(e)
   UpdateLockout();
 end
 
+function Mini_Combat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 241046 or npc:GetNPCTypeID() == 241053 or npc:GetNPCTypeID() == 241058 or npc:GetNPCTypeID() == 241051)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+			end
+		end
+	else
+		eq.stop_timer("OOBcheck");
+	end
+end
+
+
+function Mini_Timer(e)
+if(e.timer=="OOBcheck") then
+eq.stop_timer("OOBcheck");
+	if (e.self:GetY() > -560) then
+		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+		e.self:GotoBind();
+		e.self:WipeHateList();
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
+end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241053, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241046, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241052, QOS_Death);
+  eq.register_npc_event('takc', Event.combat,         241046, Mini_Combat);
+  eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);
+  eq.register_npc_event('takc', Event.combat,         241058, Mini_Combat);
+  eq.register_npc_event('takc', Event.combat,         241051, Mini_Combat);
+  eq.register_npc_event('takc', Event.timer,         241046, Mini_Timer);
+  eq.register_npc_event('takc', Event.timer,         241053, Mini_Timer);
+  eq.register_npc_event('takc', Event.timer,         241058, Mini_Timer);
+  eq.register_npc_event('takc', Event.timer,         241051, Mini_Timer);
 
   eq.register_npc_event('takc', Event.hp,             241052, QOS_HP);
   eq.register_npc_event('takc', Event.spawn,          241052, QOS_Spawn);

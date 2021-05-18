@@ -38,6 +38,8 @@ function Mini_Death(e)
     --QOS = entity_list:GetNPCByNPCTypeID(241052);
     QOS:ProcessSpecialAbilities(QOS_Active); 
   end
+eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
 end
 
 function UpdateLockout()

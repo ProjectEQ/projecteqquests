@@ -20,6 +20,7 @@ function QOS_HP(e)
     -- if the 4 mini's are stillup then disable the QOS till they are dead
     local entity_list = eq.get_entity_list();
     if (entity_list:IsMobSpawnedByNpcTypeID(241058)) then
+	-- ritana must be kept alive until 20% to receive extra loot
       extra_loot = true;
     end
 

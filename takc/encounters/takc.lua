@@ -93,6 +93,18 @@ eq.stop_timer("OOBcheck");
 end
 end
 
+function Kamoj_Combat(e)
+	if (e.joined == true) then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 241052)) then
+			e.other:MovePCInstance(241, instance_id, 380, -726, 27, 1);
+			end
+		end	
+
+	end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241053, Mini_Death);
@@ -103,6 +115,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241058, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241051, Mini_Combat);
+  eq.register_npc_event('takc', Event.combat,         241069, Kamoj_Combat);
   eq.register_npc_event('takc', Event.timer,         241046, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241053, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241058, Mini_Timer);

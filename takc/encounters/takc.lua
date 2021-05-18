@@ -106,7 +106,8 @@ function Kamoj_Combat(e)
 
 							e.self:SetHate(top_client, 1, 1)
 							top_client:MovePCInstance(241, instance_id, 380, -726, 27, 1);
-							--e.self:WipeHateList();
+						
+							e.self:WipeHateList();
 						end
 					end
 			end	

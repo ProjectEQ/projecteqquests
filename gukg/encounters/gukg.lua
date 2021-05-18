@@ -56,7 +56,10 @@ end
 
 function Spawn_Leklos()
   eq.spawn2(259047, 0, 0, 583, -70, 2.13, 368); -- NPC: #Leklos_the_Bonekeeper
-  eq.set_next_hp_event(25);
+end
+
+function Pop_Leklos()
+eq.set_next_hp_event(25);
 end
 
 function Leklos_Hp(e)
@@ -64,7 +67,7 @@ function Leklos_Hp(e)
 		e.self:SendIllusionPacket({race=mob[349]});
 		eq.set_next_inc_hp_event(27); --to reset on event failure
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 150,"Chunks of decaying flesh pelt your armor as the decayed froglok reveals his skeletal innards.");
-  end
+  	end
 end
 
 function Spawn_Creeper()
@@ -140,6 +143,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.spawn, 259047, Pop_Leklos);
   eq.register_npc_event('gukg', Event.hp, 259047, Leklos_Hp);
   eq.register_npc_event('gukg', Event.death_complete, 259047, Leklos_Death);
   eq.register_npc_event('gukg', Event.death_complete, 259129, Creeper_Death)

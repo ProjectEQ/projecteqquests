@@ -112,6 +112,7 @@ function Leklos_Death(e)
   e.self:Emote(" falls to the ground a lifeless pile of bones.");
   eq.zone_emote(10,"A Warrior of Gukta says, 'Thank you for the help adventurers, but you must hurry deeper into the cavern. Some of our resident Evokers are trying to take care of a cursed creature that ambushed some of us on the way down. I am sure they could use your help. Please listen for chanting and you should find them easily. We shall make our way back to Gukta and report to the others what is going on.");
   eq.signal(259040,1); --signal npcs to path to zi and depop
+  eq.signal(259039,1); --signal npcs to path to zi and depop
 end
 
 function Spawn_Spore()

@@ -193,6 +193,29 @@ function Spawn_Gragna()
   eq.spawn2(259151, 0, 0, -339, 497, -2, 0); -- NPC: #Gragna_the_Cursed
 end
 
+function Gragna_Combat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		
+	else
+		eq.stop_timer("OOBcheck");
+	end
+end
+
+
+function Gragna_Timer(e)
+	if(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() < -380) then
+				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+				e.self:GotoBind();
+				e.self:WipeHateList();
+			else
+				eq.set_timer("OOBcheck", 6 * 1000);
+			end
+	end
+end
+
 function Spore_Death(e)
   eq.signal(259159, 259135); -- NPC: zone_status
   Spawn_Gragna();
@@ -235,6 +258,8 @@ function event_encounter_load(e)
   
   eq.register_npc_event('gukg', Event.hp, 259135, Cursed_Hp);
   eq.register_npc_event('gukg', Event.spawn, 259135, Pop_Cursed);
+  eq.register_npc_event('gukg', Event.combat,         259151, Gragna_Combat);
+  eq.register_npc_event('gukg', Event.timer,         259151, Gragna_Timer);
   eq.register_npc_event('gukg', Event.combat,         259047, Leklos_Combat);
   eq.register_npc_event('gukg', Event.timer,         259047, Mini_Timer);
   eq.register_npc_event('gukg', Event.spawn, 259047, Pop_Leklos);

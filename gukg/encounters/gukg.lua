@@ -263,6 +263,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.signal, 259039, Warrior_Signal);
   eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Signal);
   eq.register_npc_event('gukg', Event.hp, 259135, Cursed_Hp);
   eq.register_npc_event('gukg', Event.spawn, 259135, Pop_Cursed);

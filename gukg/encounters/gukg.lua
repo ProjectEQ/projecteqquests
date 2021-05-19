@@ -102,6 +102,13 @@ function Warrior_Signal(e)
   end
 end
 
+function Evoker_Signal(e)
+  if (e.signal == 1) then
+ 	eq.start(2); -- start the grid (one way depop)
+  end
+end
+
+
 function Spawn_Creeper()
   eq.spawn2(259129, 0, 0, -97, 328, -23, 260); -- NPC: #The_Cavern_Creeper
 end
@@ -184,6 +191,7 @@ end
 
 function Creeper_Death(e)
   eq.signal(259159, 259129); -- NPC: zone_status
+  eq.signal(259128,1); --signal npcs to path to zi and depop
   eq.spawn2(259136, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()+5, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()+10, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
@@ -264,6 +272,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.signal, 259128, Evoker_Signal);
   eq.register_npc_event('gukg', Event.signal, 259039, Warrior_Signal);
   eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Signal);
   eq.register_npc_event('gukg', Event.hp, 259135, Cursed_Hp);

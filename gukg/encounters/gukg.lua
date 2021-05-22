@@ -101,15 +101,15 @@ eq.set_timer("emotes", 5 * 1000);
 end
 
 function Warrior_Timer(e)
-	if(e.timer=="emotes") then
+	if(e.timer == "emotes") then
 		eq.stop_timer("emotes");
 			local rand = math.random(1,100);
 			if (rand <= 33) then
-				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 70,"Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
 			elseif (rand <= 66 and rand > 33) then
-				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 70,"Warrior of Gukta shouts, 'Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
-			elseif rand > 66 then
-				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 70,"Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
+			elseif (rand > 66) then
+				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
 			end
 		eq.set_timer("emotes", math.random(30,45) * 1000);
 	end
@@ -136,7 +136,7 @@ function Leklos_Death(e)
   eq.signal(259159, 259047); -- NPC: zone_status
   Spawn_Creeper();
   e.self:Emote(" falls to the ground a lifeless pile of bones.");
-  eq.zone_emote(10,"A Warrior of Gukta says, 'Thank you for the help adventurers, but you must hurry deeper into the cavern. Some of our resident Evokers are trying to take care of a cursed creature that ambushed some of us on the way down. I am sure they could use your help. Please listen for chanting and you should find them easily. We shall make our way back to Gukta and report to the others what is going on.");
+  eq.zone_emote(15,"A Warrior of Gukta says, 'Thank you for the help adventurers, but you must hurry deeper into the cavern. Some of our resident Evokers are trying to take care of a cursed creature that ambushed some of us on the way down. I am sure they could use your help. Please listen for chanting and you should find them easily. We shall make our way back to Gukta and report to the others what is going on.");
   eq.signal(259040,1); --signal npcs to path to zi and depop
   eq.signal(259039,1); --signal npcs to path to zi and depop
 end

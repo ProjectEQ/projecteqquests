@@ -132,7 +132,7 @@ function Spawn_Creeper()
   eq.spawn2(259129, 0, 0, -97, 328, -23, 260); -- NPC: #The_Cavern_Creeper
 end
 
-function Pop_Creeper()
+function Pop_Creeper(e)
 eq.set_next_hp_event(85);
 end
 
@@ -161,7 +161,7 @@ function Spawn_Spore()
   eq.spawn2(259135, 0, 0, -160, 1034, -97, 272); -- NPC: #The_Cursed_Spore
 end
 
-function Pop_Cursed()
+function Pop_Cursed(e)
 eq.set_next_hp_event(90);
 end
 
@@ -280,6 +280,21 @@ function Spawn_Keeper()
   eq.spawn2(259154, 0, 0, -723, 766, -27, 114); -- NPC: #The_Cursed_Keeper
 end
 
+function Pop_Keeper(e)
+eq.set_next_hp_event(50);
+end
+
+
+function Keeper_Hp(e)
+	if (e.hp_event == 50) then
+		e.self:SetSpecialAbility(5, 0);
+		e.self:SetSpecialAbility(4, 1);
+		eq.set_next_hp_event(20);
+	elseif (e.hp_event == 20) then
+		e.self:SetSpecialAbility(4, 0);
+	end
+end
+
 function Gragna_Death(e)
   eq.signal(259159, 259151); -- NPC: zone_status
   eq.signal(259149,1); --signal npcs to path to zi and depop
@@ -295,6 +310,8 @@ end
 
 function Keeper_Death(e)
   eq.signal(259159, 259154); -- NPC: zone_status
+	
+  eq.zone_emote(15,"Bidip Moktu stands up and shakes his head in an effort to regain his senses. Realizing that he has been saved he cheers looks at you all and salutes. Bidip Moktu says, 'Thank you so much for saving me. Please take this chest as a token of my gratitude.");
 
   -- Bidip`s Ornate Chest
   eq.spawn2(259158, 0, 0, -725, 786, -27, 114); -- NPC: #Bidip`s_Ornate_Chest

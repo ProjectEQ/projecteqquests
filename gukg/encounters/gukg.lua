@@ -271,6 +271,8 @@ end
 
 function Spore_Death(e)
   eq.signal(259159, 259135); -- NPC: zone_status
+  eq.zone_emote(15,"Prophet of Gukta says, 'Your assistance has helped turn the tide of battle, but it is not over yet.  The Cursed Keeper knows you are here and he has sent more minions to hinder your progress.  You must continue on as time is running short. Four of our clerics and a paladin have run ahead to take care of the kidnapper Gragna but they will need your help. Listen for his voice and you should be able to find him. We will return to Gukta and make a report on your progress.");
+  eq.zone_emote(15,"You hear a voice from the south. Knight of Gukta shouts, 'Please noble adventurers hurry to me, our time is running short.");
   Spawn_Gragna();
 end
 

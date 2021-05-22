@@ -141,10 +141,10 @@ function Creeper_Hp(e)
 		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
 		eq.set_next_hp_event(75);
 	elseif (e.hp_event == 75) then -- is anything supposed to change?
-		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area is severed completely. The Master Evoker of Gukta says, 'Excellent, we were able to complete the spell, he should no longer be able to draw on the evil energy within the area. Kill him quickly we can only keep this up for so long.");
+		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
 		eq.set_next_hp_event(60);
 	elseif (e.hp_event == 60) then -- is anything supposed to change?
-		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
+		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area is severed completely. The Master Evoker of Gukta says, 'Excellent, we were able to complete the spell, he should no longer be able to draw on the evil energy within the area. Kill him quickly we can only keep this up for so long.");
 	end
 end
 

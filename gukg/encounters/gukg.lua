@@ -292,6 +292,14 @@ function Keeper_Hp(e)
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
 		e.self:SetSpecialAbility(4, 0);
+		eq.set_next_inc_hp_event(22); --to reset on event failure
+	elseif (e.inc_hp_event == 22) then
+		e.self:SetSpecialAbility(4, 1);
+		eq.set_next_inc_hp_event(52); --to reset on event failure
+	elseif (e.inc_hp_event == 52) then
+		e.self:SetSpecialAbility(5, 1);
+		e.self:SetSpecialAbility(4, 0);
+		eq.set_next_hp_event(50);
 	end
 end
 

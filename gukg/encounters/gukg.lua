@@ -243,7 +243,15 @@ end
 
 function Gragna_Death(e)
   eq.signal(259159, 259151); -- NPC: zone_status
+  eq.signal(259149,1); --signal npcs to path to zi and depop
+  eq.signal(259150,1); --signal npcs to path to zi and depop
   Spawn_Keeper();
+end
+
+function Knight_Signal(e)
+  if (e.signal == 1) then
+ 	eq.start(3); -- start the grid (one way depop)
+  end
 end
 
 function Keeper_Death(e)
@@ -272,6 +280,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);
+  eq.register_npc_event('gukg', Event.signal, 259150, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259128, Evoker_Signal);
   eq.register_npc_event('gukg', Event.signal, 259039, Warrior_Signal);
   eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Signal);

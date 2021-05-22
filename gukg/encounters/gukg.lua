@@ -299,8 +299,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
-  eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Spawn);
-  eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Timer);
+  eq.register_npc_event('gukg', Event.spawn, 259040, Warrior_Spawn);
+  eq.register_npc_event('gukg', Event.timer, 259040, Warrior_Timer);
   eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259150, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259128, Evoker_Signal);

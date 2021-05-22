@@ -132,6 +132,22 @@ function Spawn_Creeper()
   eq.spawn2(259129, 0, 0, -97, 328, -23, 260); -- NPC: #The_Cavern_Creeper
 end
 
+function Pop_Creeper()
+eq.set_next_hp_event(85);
+end
+
+function Creeper_Hp(e)
+	if (e.hp_event == 85) then -- is anything supposed to change?
+		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
+		eq.set_next_hp_event(75);
+	elseif (e.hp_event == 75) then -- is anything supposed to change?
+		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area is severed completely. The Master Evoker of Gukta says, 'Excellent, we were able to complete the spell, he should no longer be able to draw on the evil energy within the area. Kill him quickly we can only keep this up for so long.");
+		eq.set_next_hp_event(60);
+	elseif (e.hp_event == 60) then -- is anything supposed to change?
+		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
+	end
+end
+
 function Leklos_Death(e)
   eq.signal(259159, 259047); -- NPC: zone_status
   Spawn_Creeper();
@@ -211,6 +227,8 @@ end
 function Creeper_Death(e)
   eq.signal(259159, 259129); -- NPC: zone_status
   eq.signal(259128,1); --signal npcs to path to zi and depop
+  eq.zone_emote(15,"One of the Evoker's shakes his head once and then says, 'Thank you for your assistance my friends. Some of our Shamans have made their way to the north in an effort to contain another of the Keeper's evil minions. Please head to the north and listen for voices this should help you find them.  We will head back to Gukta and report on your progress. The Master Evoker will stay and help when he can.");
+  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
   eq.spawn2(259136, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()+5, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()+10, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
@@ -299,6 +317,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.hp, 259129, Creeper_Hp);
+  eq.register_npc_event('gukg', Event.spawn, 259129, Pop_Creeper);
   eq.register_npc_event('gukg', Event.spawn, 259040, Warrior_Spawn);
   eq.register_npc_event('gukg', Event.timer, 259040, Warrior_Timer);
   eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);

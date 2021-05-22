@@ -96,6 +96,25 @@ function Mini_Timer(e)
 	end
 end
 
+function Warrior_Spawn(e)
+eq.set_timer("emotes", 5 * 1000);
+end
+
+function Warrior_Timer(e)
+	if(e.timer=="emotes") then
+		eq.stop_timer("emotes");
+			local rand = math.random(1,100);
+			if (rand <= 33) then
+				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 70,"Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
+			elseif (rand <= 66 and rand > 33) then
+				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 70,"Warrior of Gukta shouts, 'Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
+			elseif rand > 66 then
+				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 70,"Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
+			end
+		eq.set_timer("emotes", math.random(30,45) * 1000);
+	end
+end
+
 function Warrior_Signal(e)
   if (e.signal == 1) then
  	eq.start(1); -- start the grid (one way depop)
@@ -280,6 +299,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn,  259159, Zone_Spawn);
   eq.register_npc_event('gukg', Event.signal, 259159, Zone_Signal);
   
+  eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Spawn);
+  eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Timer);
   eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259150, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259128, Evoker_Signal);

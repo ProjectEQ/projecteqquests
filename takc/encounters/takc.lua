@@ -22,6 +22,7 @@ function QOS_HP(e)
     if (entity_list:IsMobSpawnedByNpcTypeID(241058)) then
 	-- ritana must be kept alive until 20% to receive extra loot
       extra_loot = true;
+	eq.zone_emote(13,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");
     end
 
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then
@@ -41,6 +42,7 @@ function Mini_Death(e)
   end
 eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
 eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
 end
 
 function UpdateLockout()

@@ -59,6 +59,7 @@ function QOS_Death(e)
     eq.spawn2(241075, 0, 0, 379, -797, 8.23, 1); -- NPC: #Ritanas_Ornate_Chest
   end
   --
+  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
   -- The Earthen Chest
   eq.spawn2(241076, 0, 0, 448, -727, 8.23, 385); -- NPC: #The_Earthen_Chest
   -- The Gem Encrusted Chest

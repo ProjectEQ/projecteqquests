@@ -115,6 +115,20 @@ function Kamoj_Combat(e)
 	end
 end
 
+function Split_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"A strange current of energy passes through you, cold and fast-moving. From the south comes the sound of two clear voices, blending together in a soothing melody. Ahead to the west, the sound of stamping feet and heavy chanting originates, echoing through the passageways. A strange sense of urgency tugs you towards the west.");
+		eq.depop_with_timer();
+	end
+end
+
+function Golem_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"The chanting and stamping sounds grow louder, closer, with a more feverish pitch. Along with them comes the deafening crash of stone against stone as something very large moves before you. The energy is flying all around you, a vortex of sand and light.");
+		eq.depop_with_timer();
+	end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241053, Mini_Death);
@@ -131,7 +145,9 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.timer,         241053, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241058, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241051, Mini_Timer);
-
+  eq.register_npc_event('takc', Event.combat,        241079, Split_Combat);
+  eq.register_npc_event('takc', Event.combat,        241080, Golem_Combat);
+	
   eq.register_npc_event('takc', Event.hp,             241052, QOS_HP);
   eq.register_npc_event('takc', Event.spawn,          241052, QOS_Spawn);
   eq.register_npc_event('takc', Event.signal,         241052, QOS_Signal);

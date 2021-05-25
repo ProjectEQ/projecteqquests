@@ -23,7 +23,7 @@ function QOS_HP(e)
 	-- ritana must be kept alive until 20% to receive extra loot
       extra_loot = true;
 	eq.zone_emote(13,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");
-	eq.modify_npc_stat("runspeed","1.5"); --becomes unrooted
+	e.self:ModifyNPCStat("runspeed","1.5"); --becomes unrooted
     end
 
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then

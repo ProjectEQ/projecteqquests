@@ -18,7 +18,7 @@ end
 function QOS_HP(e)
   if (e.hp_event == 20) then
     -- if the 4 mini's are stillup then disable the QOS till they are dead
-    e.self:ModifyNPCStat("runspeed","1.5"); --becomes unrooted
+    e.self:ModifyNPCStat("runspeed", "1.5"); --becomes unrooted
     local entity_list = eq.get_entity_list();
     if (entity_list:IsMobSpawnedByNpcTypeID(241058)) then
 	-- ritana must be kept alive until 20% to receive extra loot

@@ -1,6 +1,6 @@
 local extra_loot;
 local QOS_Inactive = "18,1^19,1^20,1^21,1^24,1^25,1";
-local QOS_Active = "1,1,100,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
+local QOS_Active = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
 local instance_id;
 local raid_list;
 local QOS;

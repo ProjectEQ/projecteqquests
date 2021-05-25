@@ -42,7 +42,7 @@ function Gaz_Timer(e)
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 200);
     
-    e.self:ModifyNPCStat("runspeed", 1);
+    e.self:ModifyNPCStat("runspeed", "1");
   elseif(e.timer=='reflect') then
     eq.stop_timer('reflect');
     eq.stop_timer('detonate');
@@ -57,7 +57,7 @@ function Gaz_Timer(e)
     e.self:SetSpecialAbility(SpecialAbility.immune_ranged_attacks, 1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
     
-    e.self:ModifyNPCStat("runspeed", 2);
+    e.self:ModifyNPCStat("runspeed", "2");
   elseif(e.timer=='detonate') then
     e.self:CastSpell(2490, 0); -- Spell: Detonation
   end

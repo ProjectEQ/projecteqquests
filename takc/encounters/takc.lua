@@ -18,13 +18,14 @@ end
 function QOS_HP(e)
   if (e.hp_event == 20) then
     -- if the 4 mini's are stillup then disable the QOS till they are dead
+    e.self:ModifyNPCStat("runspeed","1.5"); --becomes unrooted
     local entity_list = eq.get_entity_list();
     if (entity_list:IsMobSpawnedByNpcTypeID(241058)) then
 	-- ritana must be kept alive until 20% to receive extra loot
       extra_loot = true;
 	eq.zone_emote(13,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");
 			
-	e.self:ModifyNPCStat("runspeed","1.5"); --becomes unrooted
+	
 			
     end
 

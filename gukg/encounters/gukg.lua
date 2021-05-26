@@ -98,6 +98,7 @@ end
 
 function Warrior_Spawn(e)
 eq.set_timer("emotes", 5 * 1000);
+eq.set_timer("animation", 2 * 1000);
 end
 
 function Warrior_Timer(e)
@@ -112,12 +113,16 @@ function Warrior_Timer(e)
 				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
 			end
 		eq.set_timer("emotes", math.random(30,45) * 1000);
+	elseif(e.timer == "animation") then
+		e.self:DoAnim(8); -- mainhand slash
 	end
 end
 
 function Warrior_Signal(e)
   if (e.signal == 1) then
  	eq.start(1); -- start the grid (one way depop)
+	eq.stop_timer("emotes");
+	eq.stop_timer("animation");
   end
 end
 

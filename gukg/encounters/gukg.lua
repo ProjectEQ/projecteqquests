@@ -329,6 +329,8 @@ function Gragna_Death(e)
   eq.signal(259159, 259151); -- NPC: zone_status
   eq.signal(259149,1); --signal npcs to path to zi and depop
   eq.signal(259150,1); --signal npcs to path to zi and depop
+  eq.zone_emote(13,"As the final blow is struck an angry voice fills the halls. The Cursed Keeper says, 'You meddlesome fools, you have ruined my plans, but I shall have my retribution. Come to me if you dare and I will show you the glory of everlasting pain.");
+  eq.zone_emote(5,"You hear the voice of the master evoker in your mind, 'Your efforts have paid off, we have stopped him from accomplishing his plans and now we must ask that you destroy him while he is weak. Please make haste to the back of the dungeon and rescue our brethren.");
   Spawn_Keeper();
 end
 

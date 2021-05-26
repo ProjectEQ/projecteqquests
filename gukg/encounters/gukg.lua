@@ -101,6 +101,10 @@ eq.set_timer("emotes", 5 * 1000);
 eq.set_timer("animation", 2 * 1000);
 end
 
+function Minion_Spawn(e)
+eq.set_timer("animation", 2 * 1000);
+end
+
 function Warrior_Timer(e)
 	if(e.timer == "emotes") then
 		eq.stop_timer("emotes");
@@ -353,6 +357,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.spawn, 259154, Pop_Keeper);
   eq.register_npc_event('gukg', Event.hp, 259129, Creeper_Hp);
   eq.register_npc_event('gukg', Event.spawn, 259129, Pop_Creeper);
+  eq.register_npc_event('gukg', Event.spawn, 259039, Minion_Spawn);
   eq.register_npc_event('gukg', Event.spawn, 259040, Warrior_Spawn);
   eq.register_npc_event('gukg', Event.timer, 259040, Warrior_Timer);
   eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);

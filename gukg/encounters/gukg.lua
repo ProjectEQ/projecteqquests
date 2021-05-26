@@ -136,6 +136,12 @@ function Evoker_Signal(e)
   end
 end
 
+function Prophet_Signal(e)
+  if (e.signal == 1) then
+ 	eq.start(4); -- start the grid (one way depop)
+  end
+end
+
 function Flavor_Combat(e)
 	if (e.joined == true) then
 		eq.zone_emote(15,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.'");
@@ -288,6 +294,7 @@ function Spore_Death(e)
   eq.signal(259159, 259135); -- NPC: zone_status
   eq.zone_emote(15,"Prophet of Gukta says, 'Your assistance has helped turn the tide of battle, but it is not over yet.  The Cursed Keeper knows you are here and he has sent more minions to hinder your progress.  You must continue on as time is running short. Four of our clerics and a paladin have run ahead to take care of the kidnapper Gragna but they will need your help. Listen for his voice and you should be able to find him. We will return to Gukta and make a report on your progress.");
   eq.zone_emote(15,"You hear a voice from the south. Knight of Gukta shouts, 'Please noble adventurers hurry to me, our time is running short.");
+  eq.signal(259134,1); --signal npcs to path to zi and depop
   Spawn_Gragna();
 end
 
@@ -368,6 +375,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.timer, 259040, Warrior_Timer);
   eq.register_npc_event('gukg', Event.timer, 259039, Warrior_Timer);
   eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);
+  eq.register_npc_event('gukg', Event.signal, 259134, Prophet_Signal);
   eq.register_npc_event('gukg', Event.signal, 259150, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259128, Evoker_Signal);
   eq.register_npc_event('gukg', Event.signal, 259039, Warrior_Signal);

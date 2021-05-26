@@ -340,8 +340,13 @@ function Knight_Signal(e)
   end
 end
 
+function Bidip_Signal(e)
+	e.self:SetAppearance(0); --standing
+end
+
 function Keeper_Death(e)
   eq.signal(259159, 259154); -- NPC: zone_status
+  eq.signal(259124,1); --signal Bidip stand up
 	
   eq.zone_emote(15,"Bidip Moktu stands up and shakes his head in an effort to regain his senses. Realizing that he has been saved he cheers looks at you all and salutes. Bidip Moktu says, 'Thank you so much for saving me. Please take this chest as a token of my gratitude.");
 
@@ -379,6 +384,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.signal, 259149, Knight_Signal);
   eq.register_npc_event('gukg', Event.signal, 259134, Prophet_Signal);
   eq.register_npc_event('gukg', Event.signal, 259150, Knight_Signal);
+  eq.register_npc_event('gukg', Event.signal, 259124, Bidip_Signal);
   eq.register_npc_event('gukg', Event.signal, 259128, Evoker_Signal);
   eq.register_npc_event('gukg', Event.signal, 259039, Warrior_Signal);
   eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Signal);

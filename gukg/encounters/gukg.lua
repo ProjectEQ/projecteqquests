@@ -98,11 +98,11 @@ end
 
 function Warrior_Spawn(e)
 eq.set_timer("emotes", 5 * 1000);
-eq.set_timer("animation", 2 * 1000);
+eq.set_timer("animation", math.random(2,3) * 1000);
 end
 
 function Minion_Spawn(e)
-eq.set_timer("animation", 2 * 1000);
+eq.set_timer("animation", math.random(2,3) * 1000);
 end
 
 function Warrior_Timer(e)

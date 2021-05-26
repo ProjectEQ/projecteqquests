@@ -136,6 +136,12 @@ function Evoker_Signal(e)
   end
 end
 
+function Flavor_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.'");
+		eq.depop_with_timer();
+	end
+end
 
 function Spawn_Creeper()
   eq.spawn2(259129, 0, 0, -97, 328, -23, 260); -- NPC: #The_Cavern_Creeper
@@ -368,6 +374,7 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.signal, 259040, Warrior_Signal);
   eq.register_npc_event('gukg', Event.hp, 259135, Cursed_Hp);
   eq.register_npc_event('gukg', Event.spawn, 259135, Pop_Cursed);
+  eq.register_npc_event('gukg', Event.combat,         259054, Flavor_Combat);
   eq.register_npc_event('gukg', Event.combat,         259151, Gragna_Combat);
   eq.register_npc_event('gukg', Event.timer,         259151, Gragna_Timer);
   eq.register_npc_event('gukg', Event.combat,         259047, Leklos_Combat);

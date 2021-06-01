@@ -1,5 +1,5 @@
 local extra_loot;
-local QOS_Inactive = "18,1^19,1^20,1^21,1^24,1^25,1";
+local QOS_Inactive = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^21,1^31,1^35,1^42,1";
 local QOS_Active = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
 local instance_id;
 local raid_list;
@@ -30,8 +30,8 @@ function QOS_HP(e)
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then
       -- disable the QOS till the minis are dead
       e.self:ProcessSpecialAbilities(QOS_Inactive); 
-      e.self:WipeHateList();  
-      e.self:SetOOCRegen(0);  
+      --e.self:WipeHateList();  
+      --e.self:SetOOCRegen(0);  
     end
   end
 end

@@ -163,6 +163,30 @@ function Trash_Combat(e)
 end
 
 function event_encounter_load(e)
+  eq.register_npc_event('takc', Event.timer, 241001, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241001, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241003, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241003, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241036, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241036, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241013, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241013, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241035, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241035, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241015, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241015, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241007, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241007, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241008, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241008, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241012, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241012, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241004, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241004, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241000, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241000, Trash_Combat);
+  eq.register_npc_event('takc', Event.timer, 241006, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241006, Trash_Combat);
   eq.register_npc_event('takc', Event.timer, 241019, Trash_Timer);
   eq.register_npc_event('takc', Event.combat, 241019, Trash_Combat);
   eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);

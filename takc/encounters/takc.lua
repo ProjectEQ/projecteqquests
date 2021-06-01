@@ -151,7 +151,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241046, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241052, QOS_Death);
-  eq.register_npc_event('takc', Event.death_complete, 241018, Tree_Death);
+  eq.register_npc_event('takc', Event.death, 241018, Tree_Death);
   eq.register_npc_event('takc', Event.combat,         241046, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241058, Mini_Combat);

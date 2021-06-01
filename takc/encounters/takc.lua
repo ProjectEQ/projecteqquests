@@ -134,12 +134,24 @@ function Golem_Combat(e)
 	end
 end
 
+function Tree_Death(e)
+		local rand = math.random(1,100);
+		if (rand <= 50) then
+			e.self:CastSpell(4173,e.self:GetID()); --mental renewal
+		else
+			eq.spawn2(241081,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+			eq.spawn2(241081,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+			eq.spawn2(241081,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+		end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241053, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241046, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241052, QOS_Death);
+  eq.register_npc_event('takc', Event.death_complete, 241018, Tree_Death);
   eq.register_npc_event('takc', Event.combat,         241046, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241058, Mini_Combat);

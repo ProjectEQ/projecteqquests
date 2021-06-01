@@ -145,7 +145,26 @@ function Tree_Death(e)
 		end
 end
 
+function Trash_Timer(e)
+    if (e.self:CalculateDistance(e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ()) >200) then
+	eq.zone_emote(13, e.self:GetName() .. " gathers power from the sand at its feet as it moves across the ground "); --mob powers up permanently even after returning to bind
+        eq.modify_npc_stat("min_hit", "300")
+        eq.modify_npc_stat("max_hit", "1250")
+	eq.stop_timer("distcheck");
+	end
+end
+
+function Trash_Combat(e)
+	if (e.joined == true) then  
+		eq.set_timer("distcheck", 6000);
+	else
+		eq.stop_timer("distcheck");
+	end
+end
+
 function event_encounter_load(e)
+  eq.register_npc_event('takc', Event.timer, 241019, Trash_Timer);
+  eq.register_npc_event('takc', Event.combat, 241019, Trash_Combat);
   eq.register_npc_event('takc', Event.death_complete, 241058, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241053, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241046, Mini_Death);

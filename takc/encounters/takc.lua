@@ -144,13 +144,15 @@ function Golem_Combat(e)
 end
 
 function Tree_Death(e)
-		local rand = math.random(1,100);
-		if (rand <= 50) then
+		local rand = math.random(1,4); -- rand 4 does nothing
+		if (rand = 1) then
 			e.self:CastSpell(4173,e.self:GetID()); --mental renewal
-		else
+		elseif (rand = 2) then
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		elseif (rand = 3) then
+			e.self:CastSpell(4174,e.self:GetID()); --physical renewal
 		end
 end
 

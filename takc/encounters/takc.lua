@@ -1,6 +1,6 @@
 local extra_loot;
-local QOS_Inactive = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^21,1^31,1^35,1^42,1";
-local QOS_Active = "1,1,6000,100^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
+local QOS_Inactive = "1,1^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^21,1^31,1^35,1^42,1";
+local QOS_Active = "1,1^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
 local instance_id;
 local raid_list;
 local QOS;
@@ -18,7 +18,7 @@ end
 
 function QOS_HP(e)
   if (e.hp_event == 20) then
-    -- if the 4 mini's are stillup then disable the QOS till they are dead
+    -- if the 4 mini's are stillup then no damage can be done to QOS till they are dead
     e.self:SetPseudoRoot(false); --becomes unrooted
     local entity_list = eq.get_entity_list();
     if (entity_list:IsMobSpawnedByNpcTypeID(241058)) then
@@ -28,7 +28,7 @@ function QOS_HP(e)
     end
 
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then
-      -- disable the QOS till the minis are dead
+      -- disable damage to the QOS till the minis are dead
       e.self:ProcessSpecialAbilities(QOS_Inactive); 
       --e.self:WipeHateList();  
       --e.self:SetOOCRegen(0);  

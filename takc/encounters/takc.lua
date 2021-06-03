@@ -147,12 +147,15 @@ function Tree_Death(e)
 		local rand = math.random(1,4); -- rand 4 does nothing
 		if (rand == 1) then
 			e.self:CastSpell(4173,e.self:GetID()); --mental renewal
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
 		elseif (rand == 2) then
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"Angry saplings break through the splintered tree and rush toward you!");
 		elseif (rand == 3) then
 			e.self:CastSpell(4174,e.self:GetID()); --physical renewal
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
 		end
 end
 

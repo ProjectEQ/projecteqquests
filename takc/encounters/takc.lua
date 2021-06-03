@@ -70,6 +70,15 @@ function QOS_Death(e)
   UpdateLockout();
 end
 
+function Qos_Combat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		
+	else
+		eq.stop_timer("OOBcheck");
+	end
+end
+
 function Mini_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 6 * 1000);
@@ -199,6 +208,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241046, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241052, QOS_Death);
+  eq.register_npc_event('takc', Event.combat, 241052, Qos_Combat);
   eq.register_npc_event('takc', Event.death, 241018, Tree_Death);
   eq.register_npc_event('takc', Event.combat,         241046, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);
@@ -207,6 +217,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.combat,         241069, Kamoj_Combat);
   eq.register_npc_event('takc', Event.combat,         241071, Kamoj_Combat);
   eq.register_npc_event('takc', Event.timer,         241046, Mini_Timer);
+  eq.register_npc_event('takc', Event.timer,         241052, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241053, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241058, Mini_Timer);
   eq.register_npc_event('takc', Event.timer,         241051, Mini_Timer);

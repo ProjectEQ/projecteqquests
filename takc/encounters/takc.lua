@@ -148,8 +148,13 @@ end
 function Trash_Timer(e)
     if (e.self:CalculateDistance(e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ()) >200) then
 	eq.zone_emote(13, e.self:GetCleanName() .. " gathers power from the sand at its feet as it moves across the ground "); --mob powers up permanently even after returning to bind
-        eq.modify_npc_stat("min_hit", "300")
-        eq.modify_npc_stat("max_hit", "1250")
+        eq.modify_npc_stat("min_hit", "361");
+        eq.modify_npc_stat("max_hit", "1235");
+		
+	e.self:ModifyNPCStat("attack_delay","15");
+		
+	e.self:SetSpecialAbility(12, 1);
+		
 	eq.stop_timer("distcheck");
 	end
 end

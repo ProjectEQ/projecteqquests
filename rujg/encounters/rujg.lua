@@ -22,16 +22,16 @@ function Researcher_Death(e)
     eq.spawn2(260062, 0, 0, 1375, -2, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
 
     -- Flawless Experimental Battlelord
-    eq.spawn2(260069, 0, 0, 1512, -65, 146, 376); -- NPC: Flawless_Experimental_Battlelord
+    eq.spawn2(260069, 0, 0, 1538, -61, 146, 376); -- NPC: Flawless_Experimental_Battlelord
 
     -- Steeslave Researcher
-    eq.spawn2(260070, 0, 0, 1525, -105, 144, 430); -- NPC: Steelslave_Researcher_
-    eq.spawn2(260070, 0, 0, 1534, -25, 143, 310); -- NPC: Steelslave_Researcher_
+    eq.spawn2(260070, 0, 0, 1541, -80, 144, 504); -- NPC: Steelslave_Researcher_
+    eq.spawn2(260070, 0, 0, 1534, -44, 143, 242); -- NPC: Steelslave_Researcher_
 
     -- Flawless Experimental Brute
-    eq.spawn2(260063, 0, 0, 1344, -71, 143, 368); -- NPC: Flawless_Experimental_Brute
-    eq.spawn2(260063, 0, 0, 1422, -35, 143, 340); -- NPC: Flawless_Experimental_Brute
-    eq.spawn2(260063, 0, 0, 1427, -84, 143, 392); -- NPC: Flawless_Experimental_Brute
+    eq.spawn2(eq.ChooseRandom(260063,260072), 0, 0, 1344, -71, 143, 368); -- NPC: Flawless_Experimental_Brute war or rog
+    eq.spawn2(eq.ChooseRandom(260063,260072), 0, 0, 1422, -35, 143, 340); -- NPC: Flawless_Experimental_Brute war or rog
+    eq.spawn2(eq.ChooseRandom(260063,260072), 0, 0, 1427, -84, 143, 392); -- NPC: Flawless_Experimental_Brute war or rog
   end
 end
 

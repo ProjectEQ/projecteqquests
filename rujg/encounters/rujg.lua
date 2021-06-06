@@ -54,15 +54,41 @@ function Battlelord_Combat(e)
     eq.set_timer("swarm", 120 * 1000);
   else
     eq.stop_timer("swarm");
-    eq.depop_all(260071);
   end
 end
 
 function Battlelord_Timer(e)
   if (e.timer == "swarm") then
-    eq.zone_emote(15, "Flawless Experimental Battlelord roars as his muscles bulge to gargantuan proportions!");
-    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262); -- NPC: Flawed_Mutation_
-    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456); -- NPC: Flawed_Mutation_
+    e.self:Emote("roars as his muscles bulge to gargantuan proportions!");
+    eq.modify_npc_stat("min_hit", "1500");
+    eq.modify_npc_stat("max_hit", "5000");
+    e.self:ChangeSize(23);
+    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
+    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
+    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
+    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
+    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
+    eq.set_timer("weaken", 6 * 1000);
+  elseif (e.timer == "weaken") then
+    e.self:Emote("calms down slightly");
+    e.self:ChangeSize(22);
+    eq.modify_npc_stat("min_hit", "1400");
+    eq.modify_npc_stat("max_hit", "4800");
+    eq.stop_timer("weaken");
+    eq.set_timer("weakentwo", 6 * 1000);
+  elseif (e.timer == "weakentwo") then
+    e.self:Emote("calms down slightly");
+    e.self:ChangeSize(21);
+    eq.modify_npc_stat("min_hit", "1300");
+    eq.modify_npc_stat("max_hit", "4600");
+    eq.stop_timer("weakentwo");
+    eq.set_timer("weakenthree", 6 * 1000);
+  elseif (e.timer == "weakenthree") then
+    e.self:Emote("calms down slightly");
+    e.self:ChangeSize(20);
+    eq.modify_npc_stat("min_hit", "1150");
+    eq.modify_npc_stat("max_hit", "4000");
+    eq.stop_timer("weakenthree");
   end
 end
 

@@ -128,7 +128,8 @@ function Battlelord_Death(e)
   -- Flawed Mutations
   eq.depop_all(260062);
   eq.depop_all(260071);
-  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+  eq.zone_emote(15,"You have put a stop to an imminent danger to Norrath. The orc responsible for the creation of these gargantuan beasts has fled to continue his plots of orcish superiority. You have helped the Wayfarer's Brotherhood to eliminate a threat the the world was not yet ready for.");
+  eq.zone_emote(15,"Your victory has shattered the shroud of magic cloaking the dungeon's treasure.");
 
   -- Event Loot
   -- #Researcher`s Box of Supplies
@@ -146,14 +147,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text2_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"It would seem that war provisions are being readied and weapons are stacked neatly.  The low hum of distant murmurs catches your ears, and though you can't make out what they say, there is an urgency in the tone.");
 eq.depop_with_timer();
 end
 end
-
 
 function Text3_Combat(e)
 if (e.joined == true) then
@@ -162,14 +161,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text4_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"The wails of anger and agony rise to a fever pitch.  The stench of panic, fear, and hate creeps down the cavern.  Is this a beast you want to rescue from whatever foul fate has befallen it?");
 eq.depop_with_timer();
 end
 end
-
 
 function Text5_Combat(e)
 if (e.joined == true) then
@@ -178,14 +175,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text6_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"The sounds of crumbling stone, digging miners, and the bellows of slave masters don't mask the cries of tortured slaves and beasts.  The orcs take great pleasure in causing as much pain to these creatures as possible.  Be careful, or you shall become a victim of their sadistic games.");
 eq.depop_with_timer();
 end
 end
-
 
 function Text7_Combat(e)
 if (e.joined == true) then
@@ -194,14 +189,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text8_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"The fire dances across the bleeding wounds of an odd-looking boar that is being tortured.  The boar's torturer ignores your presence and methodically goes about the business of removing a sample from the boar's trembling body.  This must be one of the beasts you need to destroy to stop the serum from being completed.");
 eq.depop_with_timer();
 end
 end
-
 
 function Text9_Combat(e)
 if (e.joined == true) then
@@ -210,14 +203,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text10_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"Back in the days of Rujark and since then, this twisting cavern was used to ambush the unsuspecting. Today, the orcs will likely use it in the same way to prevent you from stopping the sample collection.");
 eq.depop_with_timer();
 end
 end
-
 
 function Text11_Combat(e)
 if (e.joined == true) then
@@ -226,14 +217,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text12_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"The boxes in the area are newly made.  Strange.  To the west, the whining of an animal has gotten more intense.  Whatever is making that sound is begging for your empathy.  To the east, there is an eerie stillness.  A deceptive silence.");
 eq.depop_with_timer();
 end
 end
-
 
 function Text13_Combat(e)
 if (e.joined == true) then
@@ -242,14 +231,12 @@ eq.depop_with_timer();
 end
 end
 
-
 function Text14_Combat(e)
 if (e.joined == true) then
 eq.zone_emote(15,"This is clearly not a typical lair for mad research scientists, especially orcish ones.  It is far too insipid a place for such foul experiments.  Perhaps these aren't the primary researchers after all.  You'll have to confront them to find out for sure.");
 eq.depop_with_timer();
 end
 end
-
 
 function Text15_Combat(e)
 if (e.joined == true) then

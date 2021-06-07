@@ -92,10 +92,10 @@ function Battlelord_Timer(e)
     eq.modify_npc_stat("max_hit", "4000");
     eq.stop_timer("weakenthree");
   elseif (e.timer == "throw") then
-	e.self:CastedSpellFinished(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-	e.self:CastedSpellFinished(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-	e.self:CastedSpellFinished(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-	e.self:CastedSpellFinished(4185, e.self:GetHateTop():GetID()); -- Spell: Throw
+	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+	e.self:CastedSpellFinished(4185, e.self:GetHateTop()); -- Spell: Throw
   end
 end
 

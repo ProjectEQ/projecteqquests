@@ -59,9 +59,9 @@ end
   local el = eq.get_entity_list();
   if ( el:IsMobSpawnedByNpcTypeID(260021) == false and el:IsMobSpawnedByNpcTypeID(260038) == false and el:IsMobSpawnedByNpcTypeID(260044) == false and el:IsMobSpawnedByNpcTypeID(260060) == false ) then 
     -- Steelslave Researcher
-    eq.spawn2(260061, 0, 0, 14, 334, 374, 0); -- NPC: Steelslave_Researcher
-    eq.spawn2(260061, 0, 0, -41, 326, 120, 0); -- NPC: Steelslave_Researcher
-    eq.spawn2(260061, 0, 0, -20, 340, 174, 0); -- NPC: Steelslave_Researcher
+    eq.spawn2(260061, 0, 0, 14, 334, 138, 0); -- NPC: Steelslave_Researcher
+    eq.spawn2(260061, 0, 0, -41, 326, 140, 0); -- NPC: Steelslave_Researcher
+    eq.spawn2(260061, 0, 0, -20, 340, 141, 0); -- NPC: Steelslave_Researcher
   end
 end
 

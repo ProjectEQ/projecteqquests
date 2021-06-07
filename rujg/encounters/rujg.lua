@@ -1,8 +1,10 @@
 -- Steelslave Researcher
 function Researcher_Death(e)
+
   local el = eq.get_entity_list();
   if ( el:IsMobSpawnedByNpcTypeID(260061) == false ) then 
-
+     eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+     eq.zone_emote(15,"Our master be warned, the Wayfarers are on their way!");
     -- Flawed Mutation
     eq.spawn2(260062, 0, 0, 1382, -128, 140, 0):SetAppearance(3); -- NPC: Flawed_Mutation
     eq.spawn2(260062, 0, 0, 1406, -119, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
@@ -126,6 +128,7 @@ function Battlelord_Death(e)
   -- Flawed Mutations
   eq.depop_all(260062);
   eq.depop_all(260071);
+  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 
   -- Event Loot
   -- #Researcher`s Box of Supplies

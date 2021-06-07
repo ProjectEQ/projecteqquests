@@ -37,6 +37,23 @@ end
 
 -- Violent Research Subject
 function Subject_Death(e)
+	
+if (e.self:GetNPCTypeID() == 260060) then --goblin
+eq.signal(260019,4); --Steelslave_Research_Assistant (260019)
+end
+
+if (e.self:GetNPCTypeID() == 260044) then --bear
+eq.signal(260019,3); --Steelslave_Research_Assistant (260019)
+end
+
+if (e.self:GetNPCTypeID() == 260021) then --boar
+eq.signal(260019,2); --Steelslave_Research_Assistant (260019)
+end
+
+if (e.self:GetNPCTypeID() == 260038) then --boar
+eq.signal(260019,1); --Steelslave_Research_Assistant (260019)
+end
+	
   eq.zone_emote(15, "The sounds of crumbling stone, digging miners, and the bellows of slave masters don't mask the cries of tortured slaves and beasts.  The orcs take great pleasure in causing as much pain to these creatures as possible.  Be careful, or you shall become a victim of their sadistic games.");
 
   local el = eq.get_entity_list();
@@ -262,8 +279,33 @@ eq.depop_with_timer();
 end
 end
 
+function Assistant_Signal(e)
+	if (e.signal == 1) then
+		if(e.self:GetSp2() == 103707) then 
+			eq.start(67); -- start the grid (one way depop)
+			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
+		end
+	elseif (e.signal == 2) then
+		if(e.self:GetSp2() == 103593) then 
+			eq.start(67); -- start the grid (one way depop)
+			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
+		end
+	elseif (e.signal == 3) then
+		if(e.self:GetSp2() == 103791) then 
+			eq.start(67); -- start the grid (one way depop)
+			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
+		end
+	elseif (e.signal == 4) then
+		if(e.self:GetSp2() == 103930) then 
+			eq.start(67); -- start the grid (one way depop)
+			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
+		end
+	end
+end
+
 
 function event_encounter_load(e)
+  eq.register_npc_event('rujg', Event.signal,         260019, Assistant_Signal);
   eq.register_npc_event('rujg', Event.combat,         260090, Trap3_Combat);
   eq.register_npc_event('rujg', Event.combat,         260089, Trap2_Combat);
   eq.register_npc_event('rujg', Event.combat,         260088, Trap_Combat);

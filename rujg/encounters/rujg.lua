@@ -231,7 +231,15 @@ eq.depop_with_timer();
 end
 end
 
+function Trap_Combat(e)
+if (e.joined == true) then
+e.self:CastSpell(3927,e.other:GetID(),0,1); -- Spell:Dark Infection
+eq.depop_with_timer();
+end
+end
+
 function event_encounter_load(e)
+  eq.register_npc_event('rujg', Event.combat,         260088, Trap_Combat);
   eq.register_npc_event('rujg', Event.combat,         260073, Text1_Combat);
   eq.register_npc_event('rujg', Event.combat,         260074, Text2_Combat);
   eq.register_npc_event('rujg', Event.combat,         260075, Text3_Combat);

@@ -233,7 +233,7 @@ end
 
 function Trap_Combat(e)
 if (e.joined == true) then
-e.self:CastSpell(3927,e.other:GetID(),0,1); -- Spell:Dark Infection
+e.self:CastSpell(3927,e.other:GetID(),0,0); -- Spell:Dark Infection
 eq.depop_with_timer();
 end
 end

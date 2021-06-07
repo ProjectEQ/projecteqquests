@@ -50,7 +50,7 @@ if (e.self:GetNPCTypeID() == 260021) then --boar
 eq.signal(260019,2); --Steelslave_Research_Assistant (260019)
 end
 
-if (e.self:GetNPCTypeID() == 260038) then --boar
+if (e.self:GetNPCTypeID() == 260038) then --wolf
 eq.signal(260019,1); --Steelslave_Research_Assistant (260019)
 end
 	
@@ -283,21 +283,25 @@ function Assistant_Signal(e)
 	if (e.signal == 1) then
 		if(e.self:GetSp2() == 103707) then 
 			eq.start(67); -- start the grid (one way depop)
+			e.self:SetRunning(true);
 			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
 		end
 	elseif (e.signal == 2) then
 		if(e.self:GetSp2() == 103593) then 
 			eq.start(67); -- start the grid (one way depop)
+			e.self:SetRunning(true);
 			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
 		end
 	elseif (e.signal == 3) then
 		if(e.self:GetSp2() == 103791) then 
 			eq.start(67); -- start the grid (one way depop)
+			e.self:SetRunning(true);
 			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
 		end
 	elseif (e.signal == 4) then
 		if(e.self:GetSp2() == 103930) then 
 			eq.start(67); -- start the grid (one way depop)
+			e.self:SetRunning(true);
 			e.self:Emote("Blast! No matter, I've already gotten one sample for the serum! The researchers will be most pleased to have this back in their possession! Fools!");
 		end
 	end

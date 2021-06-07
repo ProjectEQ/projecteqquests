@@ -92,23 +92,10 @@ function Battlelord_Timer(e)
     eq.modify_npc_stat("max_hit", "4000");
     eq.stop_timer("weakenthree");
   elseif (e.timer == "throw") then
-		
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-		e.self:CastSpell(4185, e.self:GetHateTop():GetID()); -- Spell: Throw
-
-		inst_id = eq.get_zone_instance_id();
-		local el = eq.get_entity_list();
-		local top_hate = e.self:GetHateTop()
-		if (top_hate.valid and top_hate:IsClient()) then
-			local top_client = top_hate:CastToClient()
-			if (top_client.valid) then
-			e.self:SetHate(top_client, 1, 1)
-
-			el:RemoveFromHateLists(e.self:GetTarget()); -- remove this player from my hate list.
-      end
-    end
+	e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
+	e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
+	e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
+	e.self:CastSpell(4185, e.self:GetHateTop():GetID()); -- Spell: Throw
   end
 end
 

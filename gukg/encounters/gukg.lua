@@ -222,7 +222,7 @@ function Leklos_Death(e)
   eq.signal(259040,1); --signal npcs to path to zi and depop
   eq.signal(259039,1); --signal npcs to path to zi and depop
   eq.spawn2(259126, 0, 0, 364, -70, -3, 272); -- NPC: Text1 (259126)
-  eq.spawn2(259127, 0, 0, -50, 28, -3, 272); -- NPC: Text2 (259127)
+  eq.spawn2(259127, 0, 0, -50, 28, 4, 272); -- NPC: Text2 (259127)
 end
 
 function Spawn_Spore()

@@ -367,7 +367,7 @@ end
 function Keeper_Timer(e)
 	if(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-			if (e.self:GetX() > -665) then
+			if (e.self:GetX() > -640) then
 				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
 				e.self:GotoBind();
 				e.self:WipeHateList();

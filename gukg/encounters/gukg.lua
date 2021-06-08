@@ -354,6 +354,29 @@ function Bidip_Signal(e)
 	e.self:SetAppearance(0); --standing
 end
 
+function Keeper_Combat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		
+	else
+		eq.stop_timer("OOBcheck");
+	end
+end
+
+
+function Keeper_Timer(e)
+	if(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() > -665) then
+				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+				e.self:GotoBind();
+				e.self:WipeHateList();
+			else
+				eq.set_timer("OOBcheck", 6 * 1000);
+			end
+	end
+end
+
 function Keeper_Death(e)
   eq.signal(259159, 259154); -- NPC: zone_status
   eq.signal(259124,1); --signal Bidip stand up
@@ -404,6 +427,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.combat,         259054, Flavor_Combat);
   eq.register_npc_event('gukg', Event.combat,         259151, Gragna_Combat);
   eq.register_npc_event('gukg', Event.timer,         259151, Gragna_Timer);
+  eq.register_npc_event('gukg', Event.combat,         259154, Keeper_Combat);
+  eq.register_npc_event('gukg', Event.timer,         259154, Keeper_Timer);
   eq.register_npc_event('gukg', Event.combat,         259047, Leklos_Combat);
   eq.register_npc_event('gukg', Event.timer,         259047, Mini_Timer);
   eq.register_npc_event('gukg', Event.spawn, 259047, Pop_Leklos);

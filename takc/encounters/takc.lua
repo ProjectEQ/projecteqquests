@@ -187,6 +187,14 @@ function Trash_Combat(e)
 	end
 end
 
+function Trap1_Combat(e)
+	if (e.joined == true) then
+		e.self:CastSpell(4163,e.other:GetID(),0,0); -- Spell:Curse of the Desert should fire 5 times consecutively on every person in range
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"Stinging sand assaults you from every direction.");
+		eq.depop_with_timer();
+	end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('takc', Event.timer, 241001, Trash_Timer);
   eq.register_npc_event('takc', Event.combat, 241001, Trash_Combat);
@@ -235,6 +243,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.combat,        241079, Split_Combat);
   eq.register_npc_event('takc', Event.combat,        241080, Golem_Combat);
   eq.register_npc_event('takc', Event.combat,        241084, Priest_Combat);
+  eq.register_npc_event('takc', Event.combat,        241082, Trap1_Combat);
 	
   eq.register_npc_event('takc', Event.hp,             241052, QOS_HP);
   eq.register_npc_event('takc', Event.spawn,          241052, QOS_Spawn);

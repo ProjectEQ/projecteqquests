@@ -318,9 +318,11 @@ end
 function Gragna_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 6 * 1000);
+		eq.set_timer("heal", 65 * 1000);
 		
 	else
 		eq.stop_timer("OOBcheck");
+		eq.stop_timer("heal");
 	end
 end
 
@@ -335,6 +337,9 @@ function Gragna_Timer(e)
 			else
 				eq.set_timer("OOBcheck", 6 * 1000);
 			end
+	elseif (e.timer == "heal") then
+		eq.zone_emote(15,"The four healers begin to glow increasing the power of the Paladin. Knight of Gukta says, 'Oh great Mithaniel please bless these great fighters with your healing touch.");
+		e.self:CastedSpellFinished(4458, e.self:GetHateTop()); -- Spell: Mithaniel's Blessing
 	end
 end
 

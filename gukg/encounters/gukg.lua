@@ -391,7 +391,7 @@ function Keeper_Death(e)
   eq.spawn2(259155, 0, 0, -722, 756, -27, 114); -- NPC: #Cursed_Keepers`_Slimy_Chest
 
   -- Gragna`s Worn Chest
-  eq.spawn2(259156, 0, 0, -689, 734, -27, 114); -- NPC: #Gragna`s_Worn_Chest
+  eq.spawn2(259156, 0, 0, -689, 734, -27, 473); -- NPC: #Gragna`s_Worn_Chest
 
   -- Leklos` Bonepile
   eq.spawn2(259157, 0, 0, -674, 814, -27, 328); -- NPC: #Leklos`_Bonepile

@@ -127,18 +127,21 @@ function Warrior_Signal(e)
  	eq.start(1); -- start the grid (one way depop)
 	eq.stop_timer("emotes");
 	eq.stop_timer("animation");
+	e.self:SetRunning(true);
   end
 end
 
 function Evoker_Signal(e)
   if (e.signal == 1) then
  	eq.start(2); -- start the grid (one way depop)
+	e.self:SetRunning(true);
   end
 end
 
 function Prophet_Signal(e)
   if (e.signal == 1) then
  	eq.start(4); -- start the grid (one way depop)
+	e.self:SetRunning(true);
   end
 end
 
@@ -295,6 +298,11 @@ function Spore_Death(e)
   eq.zone_emote(15,"Prophet of Gukta says, 'Your assistance has helped turn the tide of battle, but it is not over yet.  The Cursed Keeper knows you are here and he has sent more minions to hinder your progress.  You must continue on as time is running short. Four of our clerics and a paladin have run ahead to take care of the kidnapper Gragna but they will need your help. Listen for his voice and you should be able to find him. We will return to Gukta and make a report on your progress.");
   eq.zone_emote(15,"You hear a voice from the south. Knight of Gukta shouts, 'Please noble adventurers hurry to me, our time is running short.");
   eq.signal(259134,1); --signal npcs to path to zi and depop
+  eq.spawn2(259075, 0, 0, -193, 699, -61, 17); -- a_blighted_Jin_master (259075)
+  eq.spawn2(259104, 0, 0, -179, 699, -61, 17); -- a_cackling_Dar_assassin (259104)
+  eq.spawn2(259107, 0, 0, -169, 699, -61, 17); -- a_cursed_recluse (259107)
+  eq.spawn2(259119, 0, 0, -147, 699, -61, 17); -- a_doomed_Yunta_witchdoctor (259119)
+  eq.spawn2(259119, 0, 0, -132, 699, -61, 17); -- a_doomed_Yunta_witchdoctor (259119)
   Spawn_Gragna();
 end
 
@@ -337,6 +345,7 @@ end
 function Knight_Signal(e)
   if (e.signal == 1) then
  	eq.start(3); -- start the grid (one way depop)
+	e.self:SetRunning(true);
   end
 end
 

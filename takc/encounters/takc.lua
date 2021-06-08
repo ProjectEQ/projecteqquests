@@ -61,7 +61,7 @@ function QOS_Death(e)
     eq.spawn2(241075, 0, 0, 379, -797, 8.23, 1); -- NPC: #Ritanas_Ornate_Chest
   end
   --
-  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+  eq.zone_emote(15,"Your victory has shattered the shroud of magic cloaking the dungeon's treasure.");
   -- The Earthen Chest
   eq.spawn2(241076, 0, 0, 448, -727, 8.23, 385); -- NPC: #The_Earthen_Chest
   -- The Gem Encrusted Chest
@@ -121,7 +121,6 @@ function Kamoj_Combat(e)
 							e.self:SetHate(top_client, 1, 1)
 							top_client:MovePCInstance(241, instance_id, 380, -726, 27, 1);
 						
-							e.self:WipeHateList();
 						end
 					end
 			end	
@@ -139,6 +138,13 @@ end
 function Golem_Combat(e)
 	if (e.joined == true) then
 		eq.zone_emote(15,"The chanting and stamping sounds grow louder, closer, with a more feverish pitch. Along with them comes the deafening crash of stone against stone as something very large moves before you. The energy is flying all around you, a vortex of sand and light.");
+		eq.depop_with_timer();
+	end
+end
+
+function Priest_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"The ethereal voices wind together, climbing over each other in a beautiful duet. The sound is filled with pure beauty, and the owners of these voices semm enraptured and unaware of your existence.");
 		eq.depop_with_timer();
 	end
 end
@@ -228,6 +234,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.timer,         241051, Mini_Timer);
   eq.register_npc_event('takc', Event.combat,        241079, Split_Combat);
   eq.register_npc_event('takc', Event.combat,        241080, Golem_Combat);
+  eq.register_npc_event('takc', Event.combat,        241084, Priest_Combat);
 	
   eq.register_npc_event('takc', Event.hp,             241052, QOS_HP);
   eq.register_npc_event('takc', Event.spawn,          241052, QOS_Spawn);

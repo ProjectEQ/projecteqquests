@@ -147,7 +147,49 @@ end
 
 function Flavor_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.'");
+		eq.zone_emote(15,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.");
+		eq.depop_with_timer();
+	end
+end
+
+function Text1_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"You hear the sound of chanting coming from deeper within the dungeon, an invisible force seems to be pulling you east.");
+		eq.depop_with_timer();
+	end
+end
+
+function Text2_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"You hear chanting coming from below you to the north.");
+		eq.depop_with_timer();
+	end
+end
+
+function Text3_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"Whispers of several voices can be heard from straight ahead.");
+		eq.depop_with_timer();
+	end
+end
+
+function Text4_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"The sound of chanting echoes from the left.");
+		eq.depop_with_timer();
+	end
+end
+
+function Text5_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"An evil aura calls to you from the left.");
+		eq.depop_with_timer();
+	end
+end
+
+function Text6_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"An evil aura calls to you from the right.");
 		eq.depop_with_timer();
 	end
 end
@@ -179,6 +221,8 @@ function Leklos_Death(e)
   eq.zone_emote(15,"A Warrior of Gukta says, 'Thank you for the help adventurers, but you must hurry deeper into the cavern. Some of our resident Evokers are trying to take care of a cursed creature that ambushed some of us on the way down. I am sure they could use your help. Please listen for chanting and you should find them easily. We shall make our way back to Gukta and report to the others what is going on.");
   eq.signal(259040,1); --signal npcs to path to zi and depop
   eq.signal(259039,1); --signal npcs to path to zi and depop
+  eq.spawn2(259126, 0, 0, 364, -70, -3, 272); -- NPC: Text1 (259126)
+  eq.spawn2(259127, 0, 0, -50, 28, -3, 272); -- NPC: Text2 (259127)
 end
 
 function Spawn_Spore()
@@ -263,6 +307,7 @@ function Creeper_Death(e)
   eq.spawn2(259136, 0, 0, e.self:GetX()-10, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()-15, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()-20, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
+  eq.spawn2(259130, 0, 0, -153, 754, -60, 272); -- NPC: Text3 (259130)
   Spawn_Spore();
 end
 
@@ -303,6 +348,8 @@ function Spore_Death(e)
   eq.spawn2(259107, 0, 0, -169, 699, -61, 17); -- a_cursed_recluse (259107)
   eq.spawn2(259119, 0, 0, -147, 699, -61, 17); -- a_doomed_Yunta_witchdoctor (259119)
   eq.spawn2(259119, 0, 0, -132, 699, -61, 17); -- a_doomed_Yunta_witchdoctor (259119)
+  eq.spawn2(259131, 0, 0, -134, 442, -21, 272); -- NPC: Text4 (259131)
+  eq.spawn2(259131, 0, 0, -456, 450, -39, 272); -- NPC: Text4 (259131)
   Spawn_Gragna();
 end
 
@@ -340,6 +387,8 @@ function Gragna_Death(e)
   eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
   eq.zone_emote(13,"As the final blow is struck an angry voice fills the halls. The Cursed Keeper says, 'You meddlesome fools, you have ruined my plans, but I shall have my retribution. Come to me if you dare and I will show you the glory of everlasting pain.");
   eq.zone_emote(5,"You hear the voice of the master evoker in your mind, 'Your efforts have paid off, we have stopped him from accomplishing his plans and now we must ask that you destroy him while he is weak. Please make haste to the back of the dungeon and rescue our brethren.");
+  eq.spawn2(259132, 0, 0, -454, 578, -23, 272); -- NPC: Text5 (259132)
+  eq.spawn2(259133, 0, 0, -462, 738, -26, 272); -- NPC: Text6 (259133)
   Spawn_Keeper();
 end
 
@@ -425,6 +474,12 @@ function event_encounter_load(e)
   eq.register_npc_event('gukg', Event.hp, 259135, Cursed_Hp);
   eq.register_npc_event('gukg', Event.spawn, 259135, Pop_Cursed);
   eq.register_npc_event('gukg', Event.combat,         259054, Flavor_Combat);
+  eq.register_npc_event('gukg', Event.combat,         259126, Text1_Combat);
+  eq.register_npc_event('gukg', Event.combat,         259127, Text2_Combat);
+  eq.register_npc_event('gukg', Event.combat,         259130, Text3_Combat);
+  eq.register_npc_event('gukg', Event.combat,         259131, Text4_Combat);
+  eq.register_npc_event('gukg', Event.combat,         259132, Text5_Combat);
+  eq.register_npc_event('gukg', Event.combat,         259133, Text6_Combat);
   eq.register_npc_event('gukg', Event.combat,         259151, Gragna_Combat);
   eq.register_npc_event('gukg', Event.timer,         259151, Gragna_Timer);
   eq.register_npc_event('gukg', Event.combat,         259154, Keeper_Combat);

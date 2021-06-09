@@ -71,7 +71,34 @@ function Real_Timer(e)
   end
 end
 
+function Agent_Hp(e)
+	if (e.hp_event == 20) then
+		eq.zone_emote(13,"A Trueborn night agent begins to jerk violently as a second pair of eyes grows from its head.");
+		eq.set_timer("split", 6 * 1000);
+	end
+end
+
+function Agent_Combat(e)
+	if (e.joined == true) then
+		eq.set_next_hp_event(20);
+	end
+end
+
+function Agent_Timer(e)
+	if (e.timer == "split") then
+		eq.zone_emote(13,"A Trueborn night agent screams as it is torn in two!");
+		eq.stop_timer("split");
+		eq.spawn2(243622, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+		eq.spawn2(243622, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
+		eq.depop();
+	end
+end
+
 function event_encounter_load(e)
+  eq.register_npc_event('mmcc', Event.timer,          243622, Agent_Timer);
+  eq.register_npc_event('mmcc', Event.combat,         243622, Agent_Combat);
+  eq.register_npc_event('mmcc', Event.hp,         243622, Agent_Hp);
+  
   eq.register_npc_event('mmcc', Event.death_complete, 243636, Guardian_Death);
   eq.register_npc_event('mmcc', Event.death_complete, 243677, Fake_Death);
   eq.register_npc_event('mmcc', Event.spawn,          243677, Fake_Spawn);

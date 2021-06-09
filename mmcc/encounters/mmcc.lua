@@ -72,7 +72,7 @@ function Real_Timer(e)
 end
 
 function Agent_Hp(e)
-	if (e.hp_event == 20) then
+	if (e.hp_event == 25) then
 		eq.zone_emote(13,"A Trueborn night agent begins to jerk violently as a second pair of eyes grows from its head.");
 		eq.set_timer("split", 6 * 1000);
 	end
@@ -80,7 +80,7 @@ end
 
 function Agent_Combat(e)
 	if (e.joined == true) then
-		eq.set_next_hp_event(20);
+		eq.set_next_hp_event(25);
 	end
 end
 

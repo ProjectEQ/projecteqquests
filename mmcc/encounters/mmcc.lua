@@ -28,6 +28,22 @@ function Fake_Spawn(e)
   extra_loot = false;
 end
 
+function Fake_Combat(e)
+  if (e.joined) then
+    eq.set_timer("OOBcheck", 6 * 1000);
+  else 
+    eq.stop_timer("OOBcheck");
+  end
+end
+
+function Fake_Timer(e)
+  if (e.timer == "OOBcheck") then
+		if (e.self:GetY() < 870) then
+			e.self:GotoBind(); --doesnt wipe hate list only returns to bind and stays on aggro
+		end
+  end
+end
+
 function Fake_Death(e)
   eq.zone_emote(15, "A mighty laugh echoes out into the night from the gargoyle aviary. The sound of Valdoon Kel'Novar's voice is clear, 'Did you fools really believe I would be so careless? You'll not live to regret the mistake of crossing the Trueborn!' ");
   eq.spawn2(243636, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Guardian_of_Kel`Novar
@@ -132,14 +148,32 @@ function Agent_Timer(e)
 	end
 end
 
+function Text1_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"Your footsteps break the silence in the caverns. Your activity has alarmed nearby scouts looking to please their master with information of an intruder.  Perhaps it wasn't so wise of you to come here...");
+		eq.depop_with_timer();
+	end
+end
+
+function Text2_Combat(e)
+	if (e.joined == true) then
+		eq.zone_emote(15,"Something large and menacing claws at the rocks just ahead. The scrapes grind with the anticipation of the slaughter soon to come. Whatever beast lingers ahead knows that it is almost time to unleash its fury and serve the master that put it here.");
+		eq.depop_with_timer();
+	end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('mmcc', Event.timer,          243622, Agent_Timer);
   eq.register_npc_event('mmcc', Event.combat,         243622, Agent_Combat);
   eq.register_npc_event('mmcc', Event.hp,         243622, Agent_Hp);
+  eq.register_npc_event('mmcc', Event.combat,         243682, Text1_Combat);
+  eq.register_npc_event('mmcc', Event.combat,         243683, Text2_Combat);
   
   eq.register_npc_event('mmcc', Event.death_complete, 243636, Guardian_Death);
   eq.register_npc_event('mmcc', Event.death_complete, 243677, Fake_Death);
   eq.register_npc_event('mmcc', Event.spawn,          243677, Fake_Spawn);
+  eq.register_npc_event('mmcc', Event.timer,          243677, Fake_Timer);
+  eq.register_npc_event('mmcc', Event.combat,         243677, Fake_Combat);
 
   eq.register_npc_event('mmcc', Event.death_complete, 243672, Real_Death);
   eq.register_npc_event('mmcc', Event.spawn,          243672, Real_Spawn);

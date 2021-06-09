@@ -69,6 +69,23 @@ function Real_Death(e)
   end
 end
 
+
+function Lookout_Combat(e)
+	if (e.joined == true) then
+		eq.stop_timer("depop");
+	else
+		eq.set_timer("depop", 120 * 1000);
+	end
+end
+
+function Lookout_Spawn(e)
+	eq.set_timer("depop", 120 * 1000);
+end
+
+function Lookout_Timer(e)
+	eq.depop();
+end
+
 function Real_Combat(e)
   if (e.joined) then
     eq.set_timer("mez", math.random(90,120) * 1000);
@@ -174,6 +191,12 @@ function event_encounter_load(e)
   eq.register_npc_event('mmcc', Event.hp,         243622, Agent_Hp);
   eq.register_npc_event('mmcc', Event.combat,         243682, Text1_Combat);
   eq.register_npc_event('mmcc', Event.combat,         243683, Text2_Combat);
+  eq.register_npc_event('mmcc', Event.combat,         243678, Lookout_Combat);
+  eq.register_npc_event('mmcc', Event.spawn,         243678, Lookout_Spawn);
+  eq.register_npc_event('mmcc', Event.timer,         243678, Lookout_Timer);
+  eq.register_npc_event('mmcc', Event.combat,         243000, Lookout_Combat);
+  eq.register_npc_event('mmcc', Event.spawn,         243000, Lookout_Spawn);
+  eq.register_npc_event('mmcc', Event.timer,         243000, Lookout_Timer);
   
   eq.register_npc_event('mmcc', Event.death_complete, 243636, Guardian_Death);
   eq.register_npc_event('mmcc', Event.death_complete, 243677, Fake_Death);

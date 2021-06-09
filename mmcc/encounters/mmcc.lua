@@ -69,8 +69,6 @@ function Real_Timer(e)
   if (e.timer == "OOBcheck") then
 		if (e.self:GetX() < 960) then
 			e.self:GotoBind(); --doesnt wipe hate list only returns to bind and stays on aggro
-		else
-			eq.set_timer("OOBcheck", 6 * 1000);
 		end
   elseif (e.timer == "mez") then
 	e.self:Emote("calls out to the lost soldiers of his alluvium army.  His battle cry summons their essence and heals his battle wounds!");

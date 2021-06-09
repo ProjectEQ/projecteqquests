@@ -92,9 +92,11 @@ function Real_Timer(e)
   elseif (e.timer == "choose") then
 	local rand = math.random(1,100);
 		if (rand > 90) then
+			eq.stop_timer("powerdown");
 			e.self:Emote("lets loose a terrifying scream as he unleashes a maniacal inner power. His muscles bulge and he snarls as a newly found strength surges throughout his body.");
 			eq.modify_npc_stat("min_hit", "1310");
 			eq.modify_npc_stat("max_hit", "4160");
+			eq.set_timer("powerdown", 30 * 1000);
 		elseif (rand > 80) and (rand <= 90) then
 			e.self:Emote("cries out in the stone tongue of battle to his soldiers to rush to his aid.  The ground rumbles with the creation of soldiers to add to the fray.");
 
@@ -122,6 +124,10 @@ function Real_Timer(e)
 			e.self:Say("Your blood is forfeit!");
 			e.self:CastedSpellFinished(4133, e.self:GetHateTop()); -- Spell: Claw of Kel'Novar
 		end
+   elseif (e.timer == "powerdown") then
+	eq.modify_npc_stat("min_hit", "800");
+	eq.modify_npc_stat("max_hit", "2800");
+	eq.stop_timer("powerdown");
   end
 end
 

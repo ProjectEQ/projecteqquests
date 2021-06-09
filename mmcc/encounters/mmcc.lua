@@ -55,19 +55,60 @@ end
 
 function Real_Combat(e)
   if (e.joined) then
-    eq.set_timer('valdoon', 30 * 1000);
+    eq.set_timer("mez", math.random(90,120) * 1000);
+    eq.set_timer("OOBcheck", 6 * 1000);
+    eq.set_timer("choose", 5 * 1000);
   else 
-    eq.stop_timer('valdoon');
-    eq.depop_all(243678);
+    eq.stop_timer("mez");
+    eq.stop_timer("OOBcheck");
+    eq.stop_timer("choose");
   end
 end
 
 function Real_Timer(e)
-  if (e.timer == 'valdoon') then
-    eq.spawn2(243678, 0, 0, 1060, 480, 11.73, 506); -- NPC: Kel`Novar_Lookout
-    eq.spawn2(243678, 0, 0, 1030, 480, 11.73, 506); -- NPC: Kel`Novar_Lookout
-    eq.spawn2(243678, 0, 0, 1060, 564, 11.73, 242); -- NPC: Kel`Novar_Lookout
-    eq.spawn2(243678, 0, 0, 1030, 564, 11.73, 242); -- NPC: Kel`Novar_Lookout
+  if (e.timer == "OOBcheck") then
+	eq.stop_timer("OOBcheck");
+		if (e.self:GetX() < 960) then
+			e.self:GotoBind(); --doesnt wipe hate list only returns to bind and stays on aggro
+		else
+			eq.set_timer("OOBcheck", 6 * 1000);
+		end
+  elseif (e.timer == "mez") then
+	e.self:Emote("calls out to the lost soldiers of his alluvium army.  His battle cry summons their essence and heals his battle wounds!");
+	e.self:CastSpell(4134, e.self:GetHateTop()); -- Spell: Seneschal's Petrification.
+  elseif (e.timer == "choose") then
+	local rand = math.random(1,100);
+		if (rand > 90) then
+			e.self:Emote("lets loose a terrifying scream as he unleashes a maniacal inner power. His muscles bulge and he snarls as a newly found strength surges throughout his body.");
+			eq.modify_npc_stat("min_hit", "1310");
+			eq.modify_npc_stat("max_hit", "4160");
+		elseif (rand > 80 and rand <= 90) then
+			e.self:Emote("cries out in the stone tongue of battle to his soldiers to rush to his aid.  The ground rumbles with the creation of soldiers to add to the fray.");
+
+			local rand = math.random(3,5);
+				if (rand == 3) then
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+				elseif (rand == 4) then
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+				elseif (rand == 5) then
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+   					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
+				end
+		elseif (rand <= 80 and rand >= 50) then
+			e.self:Emote("replenishes himself with the very life energy he siphons from you and your comrades!");
+			e.self:CastSpell(4199, e.self:GetHateTop()); -- Spell: Curse of Kel'Novar
+		elseif (rand < 50 and rand >= 20) then
+			e.self:Say("Your blood is forfeit!");
+			e.self:CastSpell(4133, e.self:GetHateTop()); -- Spell: Claw of Kel'Novar
+		end
   end
 end
 

@@ -75,14 +75,14 @@ function Real_Timer(e)
 		end
   elseif (e.timer == "mez") then
 	e.self:Emote("calls out to the lost soldiers of his alluvium army.  His battle cry summons their essence and heals his battle wounds!");
-	e.self:CastSpell(4134, e.self:GetHateTop()); -- Spell: Seneschal's Petrification.
+	e.self:CastedSpellFinished(4134, e.self:GetHateTop()); -- Spell: Seneschal's Petrification.
   elseif (e.timer == "choose") then
 	local rand = math.random(1,100);
 		if (rand > 90) then
 			e.self:Emote("lets loose a terrifying scream as he unleashes a maniacal inner power. His muscles bulge and he snarls as a newly found strength surges throughout his body.");
 			eq.modify_npc_stat("min_hit", "1310");
 			eq.modify_npc_stat("max_hit", "4160");
-		elseif (rand > 80 and rand <= 90) then
+		elseif (rand > 80) and (rand <= 90) then
 			e.self:Emote("cries out in the stone tongue of battle to his soldiers to rush to his aid.  The ground rumbles with the creation of soldiers to add to the fray.");
 
 			local rand = math.random(3,5);
@@ -102,12 +102,12 @@ function Real_Timer(e)
    					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
    					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
 				end
-		elseif (rand <= 80 and rand >= 50) then
+		elseif (rand <= 80) and (rand >= 50) then
 			e.self:Emote("replenishes himself with the very life energy he siphons from you and your comrades!");
-			e.self:CastSpell(4199, e.self:GetHateTop()); -- Spell: Curse of Kel'Novar
-		elseif (rand < 50 and rand >= 20) then
+			e.self:CastedSpellFinished(4199, e.self:GetHateTop()); -- Spell: Curse of Kel'Novar
+		elseif (rand < 50) and (rand >= 20) then
 			e.self:Say("Your blood is forfeit!");
-			e.self:CastSpell(4133, e.self:GetHateTop()); -- Spell: Claw of Kel'Novar
+			e.self:CastedSpellFinished(4133, e.self:GetHateTop()); -- Spell: Claw of Kel'Novar
 		end
   end
 end

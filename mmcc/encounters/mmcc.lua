@@ -67,7 +67,6 @@ end
 
 function Real_Timer(e)
   if (e.timer == "OOBcheck") then
-	eq.stop_timer("OOBcheck");
 		if (e.self:GetX() < 960) then
 			e.self:GotoBind(); --doesnt wipe hate list only returns to bind and stays on aggro
 		else

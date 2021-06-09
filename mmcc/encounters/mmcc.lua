@@ -134,10 +134,10 @@ function Real_Timer(e)
    					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
    					eq.spawn2(eq.ChooseRandom(243678,243000), 0, 0, 810, 396, 10, 10):CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, true); -- NPC: Kel`Novar_Lookout clr or rog
 				end
-		elseif (rand <= 80) and (rand >= 50) then
+		elseif (rand <= 80) and (rand >= 60) then
 			e.self:Emote("replenishes himself with the very life energy he siphons from you and your comrades!");
 			e.self:CastedSpellFinished(4199, e.self:GetHateTop()); -- Spell: Curse of Kel'Novar
-		elseif (rand < 50) and (rand >= 20) then
+		elseif (rand < 60) and (rand >= 40) then
 			e.self:Say("Your blood is forfeit!");
 			e.self:CastedSpellFinished(4133, e.self:GetHateTop()); -- Spell: Claw of Kel'Novar
 		end

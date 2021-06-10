@@ -218,11 +218,11 @@ function event_encounter_load(e)
   eq.register_npc_event('mmcc', Event.combat,         243000, Lookout_Combat);
   eq.register_npc_event('mmcc', Event.spawn,         243000, Lookout_Spawn);
   eq.register_npc_event('mmcc', Event.timer,         243000, Lookout_Timer);
-  eq.register_npc_event('mmcc', Event.death_complete, 243642, Victim_Death);
-  eq.register_npc_event('mmcc', Event.death_complete, 243648, Victim_Death);
-  eq.register_npc_event('mmcc', Event.death_complete, 243650, Victim_Death);
-  eq.register_npc_event('mmcc', Event.death_complete, 243657, Victim_Death);
-  eq.register_npc_event('mmcc', Event.death_complete, 243674, Victim_Death);
+  eq.register_npc_event('mmcc', Event.death, 243642, Victim_Death);
+  eq.register_npc_event('mmcc', Event.death, 243648, Victim_Death);
+  eq.register_npc_event('mmcc', Event.death, 243650, Victim_Death);
+  eq.register_npc_event('mmcc', Event.death, 243657, Victim_Death);
+  eq.register_npc_event('mmcc', Event.death, 243674, Victim_Death);
   
   eq.register_npc_event('mmcc', Event.death_complete, 243636, Guardian_Death);
   eq.register_npc_event('mmcc', Event.death_complete, 243677, Fake_Death);

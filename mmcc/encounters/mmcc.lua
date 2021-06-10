@@ -19,7 +19,7 @@ function Guardian_Death(e)
   valdoon:SetHP(valdoon_hp);
   guardians = guardians + 1;
   if ( guardians == 3 ) then
-    eq.zone_emote(14, "Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+    eq.zone_emote(15, "Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
   end
 
 end
@@ -57,6 +57,7 @@ end
 
 function Real_Death(e)
   eq.stop_timer('valdoon');
+  eq.zone_emote(15, "Your victory has shattered the shroud of magic surrounding the dungeon's treasure.");
   eq.spawn2(243680, 0, 0, 1129, 560, 10.13, 372); -- NPC: Guardian`s_Stone_Chest
   eq.spawn2(243681, 0, 0, 1129, 477, 10.13, 372); -- NPC: Guardian`s_Granite_Chest
   if (extra_loot == true) then

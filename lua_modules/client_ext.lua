@@ -319,3 +319,24 @@ function Client:GetRaidMemberCountInZone()
 	end
 	return count
 end
+
+function Client:IsClass(...)
+    local class = self:GetClass();
+    if class == 17 then return true end;
+    for i,v in ipairs(arg) do
+        if class == v then
+            return true;
+        end
+    end
+    return false;
+end
+
+function Client:IsRace(...)
+    local race = self:GetBaseRace();
+    for i,v in ipairs(arg) do
+        if race == v then
+            return true;
+        end
+    end
+    return false;
+end

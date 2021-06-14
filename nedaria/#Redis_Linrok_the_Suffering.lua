@@ -14,5 +14,7 @@ function event_say(e)
     e.other:Message(MT.Emote, "A flash of light occurs as Redis disappears. An entrance to an unfamiliar place has been opened for you. Perhaps you should investigate there.")
     e.other:CreateExpedition(paladin_dz)
     eq.depop_with_timer();
+  else 
+    e.self:Say("I have nothing to say to you, be on about your business.");	
   end
 end

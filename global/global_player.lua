@@ -324,3 +324,37 @@ function event_level_up(e)
       
   end
 end
+
+test_items = {
+    [1]  = {38000, 38020}, -- Warrior
+    [2] = {38168, 38188}, -- Cleric
+    [3]  = {38084, 38104}, -- Paladin
+    [4]  = {38105, 38125}, -- Ranger
+    [5]  = {38063, 38083}, -- Shadowknight
+    [6] = {38189, 38209}, -- Druid
+    [7]  = {38021, 38041}, -- Monk
+    [8]  = {38147, 38167}, -- Bard
+    [9]  = {38042, 38062}, -- Rogue
+    [10] = {38210, 38230}, -- Shaman
+    [11]  = {38294, 38314}, -- Necromancer
+    [12]  = {38231, 38251}, -- Wizard
+    [13]  = {38252, 38272}, -- Magician
+    [14]  = {38273, 38293}, -- Enchanter
+    [15]  = {38126, 38146}, -- Beastlord
+    [16]  = {38315, 38332}, -- Berserker
+}
+ 
+function event_test_buff(e)
+    if (e.self:GetLevel() < 25) then
+        e.self:SetLevel(25)
+        eq.scribe_spells(25,1)
+        eq.train_discs(25,1)
+        for class_id, v in pairs(test_items) do
+            if e.self:GetClass() == class_id then
+                for item_id = v[1], v[2] do
+                    e.self:SummonItem(item_id);
+                end
+            end
+        end
+    end
+end

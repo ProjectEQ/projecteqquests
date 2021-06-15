@@ -142,6 +142,7 @@ function Battlelord_Timer(e)
 		if (npc.valid and (npc:GetNPCTypeID() == 260070)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Steelslave_Researcher_ to aggro list if alive
 		end
+		end
   end
 end
 

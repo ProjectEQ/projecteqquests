@@ -67,14 +67,35 @@ end
   end
 end
 
+-- Steelslave_Researcher_
+function Researcher_Combat(e)
+  if (e.joined == true) then
+    eq.set_timer("aggrolink", 3 * 1000);
+  else
+    eq.stop_timer("aggrolink");
+  end
+end
+
+function Researcher_Timer(e)
+  if (e.timer == "aggrolink") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and (npc:GetNPCTypeID() == 260069)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Flawless_Experimental_Battlelord (260069) to aggro list if alive
+		end
+  end
+end
+
 -- Flawless Experimental Battlelord
 function Battlelord_Combat(e)
   if (e.joined == true) then
     eq.set_timer("swarm", 120 * 1000);
     eq.set_timer("throw", 60 * 1000);
+    eq.set_timer("aggrolink", 3 * 1000);
   else
     eq.stop_timer("swarm");
     eq.stop_timer("throw");
+    eq.stop_timer("aggrolink");
   end
 end
 
@@ -115,6 +136,12 @@ function Battlelord_Timer(e)
 	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
 	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
 	e.self:CastedSpellFinished(4185, e.self:GetHateTop()); -- Spell: Throw
+  elseif (e.timer == "aggrolink") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and (npc:GetNPCTypeID() == 260070)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Steelslave_Researcher_ to aggro list if alive
+		end
   end
 end
 
@@ -320,6 +347,9 @@ function event_encounter_load(e)
   eq.register_npc_event('rujg', Event.combat,         260087, Text15_Combat);
   
   eq.register_npc_event('rujg', Event.death_complete, 260061, Researcher_Death);
+			
+  eq.register_npc_event('rujg', Event.combat,         260070, Researcher_Combat);
+  eq.register_npc_event('rujg', Event.timer,          260070, Researcher_Timer);
 
   eq.register_npc_event('rujg', Event.death_complete, 260038, Subject_Death);
   eq.register_npc_event('rujg', Event.death_complete, 260044, Subject_Death);

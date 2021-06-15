@@ -10,7 +10,7 @@
 
 function event_fish_success(e)
 	if(e.item:GetID() == 69914) then
-		local qglobals = eq.get_qglobals(e.self, e.other);
+		local qglobals = eq.get_qglobals(e.self);
 		if (qglobals["paladin_epic"] == "3") then
 				e.other:Message(MT.Emote, "As you reel in the dark fish's scale, you notice a large fish in the water");
 				eq.depop_all(182150);

@@ -83,6 +83,7 @@ function Researcher_Timer(e)
 		if (npc.valid and (npc:GetNPCTypeID() == 260069)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Flawless_Experimental_Battlelord (260069) to aggro list if alive
 		end
+		end
   end
 end
 

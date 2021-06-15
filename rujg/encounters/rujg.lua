@@ -1,4 +1,7 @@
--- Steelslave Researcher
+local extra_loot = false;
+local researchers = 0;
+
+-- Steelslave Researcher (not from final encounter)
 function Researcher_Death(e)
 
   local el = eq.get_entity_list();
@@ -88,7 +91,7 @@ end
   end
 end
 
--- Steelslave_Researcher_
+-- Steelslave_Researcher_ (final encounter)
 function Researcher_Combat(e)
   if (e.joined == true) then
     eq.set_timer("aggrolink", 3 * 1000);
@@ -106,6 +109,14 @@ function Researcher_Timer(e)
 		end
 		end
   end
+end
+
+function Researchers_Death(e)
+	researchers = researchers + 1;
+  		if ( researchers == 2 ) then
+    			eq.zone_emote(15, "Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+			extra_loot = true;
+  		end
 end
 
 -- Flawless Experimental Battlelord
@@ -186,8 +197,10 @@ function Battlelord_Death(e)
   eq.spawn2(260066, 0, 0, 1499, -168, 140, 0); -- NPC: #Researcher`s_Box_of_Supplies
   -- #The Bloody Barrel
   eq.spawn2(260064, 0, 0, 1497, -185, 145, 0); -- NPC: #The_Bloody_Barrel
-  -- #The Splintering Barrel
-  eq.spawn2(260065, 0, 0, 1496, -179, 145, 0); -- NPC: #The_Splintering_Barrel
+	  if (extra_loot == true) then
+  		-- #The Splintering Barrel
+  		eq.spawn2(260065, 0, 0, 1496, -179, 145, 0); -- NPC: #The_Splintering_Barrel
+	  end
 end
 
 function Text1_Combat(e)
@@ -373,6 +386,7 @@ function event_encounter_load(e)
 			
   eq.register_npc_event('rujg', Event.combat,         260070, Researcher_Combat);
   eq.register_npc_event('rujg', Event.timer,          260070, Researcher_Timer);
+  eq.register_npc_event('rujg', Event.death_complete, 260070, Researchers_Death);
 
   eq.register_npc_event('rujg', Event.death_complete, 260038, Subject_Death);
   eq.register_npc_event('rujg', Event.death_complete, 260044, Subject_Death);

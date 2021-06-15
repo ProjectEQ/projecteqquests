@@ -34,6 +34,27 @@ function Researcher_Death(e)
     eq.spawn2(eq.ChooseRandom(260063,260072), 0, 0, 1344, -71, 143, 368); -- NPC: Flawless_Experimental_Brute war or rog
     eq.spawn2(eq.ChooseRandom(260063,260072), 0, 0, 1422, -35, 143, 340); -- NPC: Flawless_Experimental_Brute war or rog
     eq.spawn2(eq.ChooseRandom(260063,260072), 0, 0, 1427, -84, 143, 392); -- NPC: Flawless_Experimental_Brute war or rog
+	
+    --a barrel
+    eq.spawn2(260015, 0, 0, 1453.42, -41.34, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1444.42, -1.33, 145.11, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1451.88, -11.19, 144.53, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1451.35, -25.59, 143.57, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1450.98, -35.55, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1440.05, -17.74, 144.07, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1439.32, -10.40, 145.11, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1422.83, 4.03, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1353.75, -3.58, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1344.28, -19.37, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1360.22, -9.19, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1370.50, -133.16, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1365.93, -122.87, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1422.14, -186.57, 147.88, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1491.39, -192.75, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1502.46, -193.21, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1510.66, -186.56, 143.77, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1506.50, -179.12, 143.38, 242); -- a_barrel
+    eq.spawn2(260015, 0, 0, 1540.89, -169.25, 143.38, 242); -- a_barrel
   end
 end
 

@@ -37,7 +37,7 @@ sub Skill {
 # plugin::SlotName($slot_id) - Returns Slot Name
 sub SlotName {
 	my $slot_id = shift;
-	return quest::getslotname($slot_id);
+	return quest::getinventoryslotname($slot_id);
 }
 
 # plugin::Zone($name_type, $zone_data);

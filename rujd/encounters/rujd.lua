@@ -33,6 +33,21 @@ function TM_Timer(e)
 	end
 end
 
+function TMDevrak_Combat(e)
+	if e.joined then
+		eq.set_timer("ojunroar",7*1000)
+	else
+		eq.stop_timer("ojunroar");	
+	end
+end
+function TMDevrak_Timer(e)
+	if (e.timer == "ojunroar") then
+		eq.stop_timer("ojunroar");		
+		e.self:CastSpell(4140, e.self:GetHateTop():GetID()); -- Spell: Ojun Roar
+		eq.set_timer("ojunroar",45*1000)	
+	end
+end
+
 function TM_Devrak_Death(e)
 	e.self:Emote("corpse crumples to the ground lifeless.  You search his lifeless body for some sign of a key, but are unable to find anything.  You do however notice a treasure chest out of the corner of your eye that you could have sworn wasn't there a minute ago.");
 	eq.spawn2(245241,0,0,-487,1002,-34.75,288); --spawn chest with Heavy Orcish Prison Key
@@ -293,23 +308,34 @@ end
 
 function Warden_Combat(e)
 	if e.joined then
-		eq.set_timer("roar",6.5*1000)
+		eq.set_timer("roar",6.5*1000);
+		eq.set_timer("aggrolink", 3 * 1000);
 	else
-		eq.stop_timer("roar");	
+		eq.stop_timer("roar");
+		eq.stop_timer("aggrolink");
 	end
 end
 
 function Warden_Timer(e)
 	if (e.timer == "roar") then
 		e.self:CastSpell(4417, e.self:GetHateTop():GetID()); -- Spell: Warden's Roar
+	  elseif (e.timer == "aggrolink") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 245284)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add #High_Shaman_Yenner (245284) to aggro list if alive
+		end
+		end
 	end
 end
 
 function Shaman_Combat(e)
 	if e.joined then
-		eq.set_timer("orcbreath",7*1000)
+		eq.set_timer("orcbreath",7*1000);
+		eq.set_timer("aggrolink", 3 * 1000);
 	else
-		eq.stop_timer("orcbreath");	
+		eq.stop_timer("orcbreath");
+		eq.stop_timer("aggrolink");
 	end
 end
 
@@ -317,7 +343,14 @@ function Shaman_Timer(e)
 	if (e.timer == "orcbreath") then
 		eq.stop_timer("orcbreath");		
 		e.self:CastSpell(4192, e.self:GetHateTop():GetID()); -- Spell: Orc Breath
-		eq.set_timer("orcbreath",45*1000)	
+		eq.set_timer("orcbreath",45*1000);
+	  elseif (e.timer == "aggrolink") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 245296)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add #Warden_Neyremal (245296) to aggro list if alive
+		end
+		end
 	end
 end
 
@@ -349,17 +382,15 @@ function check_chests()
 end
 
 function event_encounter_load(e)
---Taskmaster * begins to cast a spell. <Orc Breath>
---Taskmaster Dokorel-FLURRY
---Taskmaster Velrek-WILD RAMPAGE!
---Taskmaster Devrak-RAMPAGE!
+
   eq.register_npc_event('rujd', Event.death_complete, 245199, TM_Devrak_Death); --#Taskmaster_Devrak 
   eq.register_npc_event('rujd', Event.death_complete, 245220, TM_Dokorel_Death); --#Taskmaster_Dokorel 
   eq.register_npc_event('rujd', Event.death_complete, 245200, TM_Velrek_Death); --#Taskmaster_Velrek
-  eq.register_npc_event('rujd', Event.timer, 245199, TM_Timer); --#Taskmaster_Devrak 
+ 
   eq.register_npc_event('rujd', Event.timer, 245220, TM_Timer); --#Taskmaster_Dokorel 
   eq.register_npc_event('rujd', Event.timer, 245200, TM_Timer); --#Taskmaster_Velrek
-  eq.register_npc_event('rujd', Event.combat, 245199, TM_Combat); --#Taskmaster_Devrak 
+  eq.register_npc_event('rujd', Event.combat, 245199, TMDevrak_Combat); --#Taskmaster_Devrak 
+  eq.register_npc_event('rujd', Event.timer, 245199, TMDevrak_Timer); --#Taskmaster_Devrak 
   eq.register_npc_event('rujd', Event.combat, 245220, TM_Combat); --#Taskmaster_Dokorel 
   eq.register_npc_event('rujd', Event.combat, 245200, TM_Combat); --#Taskmaster_Velrek  
   
@@ -369,7 +400,7 @@ function event_encounter_load(e)
   eq.register_npc_event('rujd', Event.timer,	245284, Shaman_Timer); --#High_Shaman_Yenner  
   eq.register_npc_event('rujd', Event.death_complete,	245296, Warden_Death); --#Warden_Neyremal 
   eq.register_npc_event('rujd', Event.death_complete,	245284, Shaman_Death); --#High_Shaman_Yenner
---#Prison_Guard_Talkor: Orc Breath, RAMPAGE
+
   eq.register_npc_event('rujd', Event.death_complete,	245290, PG_Talkor_Death);  
   eq.register_npc_event('rujd', Event.spawn,			245290, PG_Talkor_Spawn);
   eq.register_npc_event('rujd', Event.timer,			245290, PG_Talkor_Timer);
@@ -412,33 +443,3 @@ function event_encounter_load(e)
   eq.register_npc_event('rujd', Event.timer,			245275, RPG_Pris_Timer); --#Leannra_Nuadr (245275)  
 end
 
- 
---[[
-
-a tired slave cackles maniacally. 'Fast as fast can be, you'll never catch me!' He turns and runs away looking for more of his cohorts.
-SetRunning(Boolean running);
-WipeHateList();
-MoveTo(Real x, Real y, Real z, Real h, Boolean save);
-
-
-set faction on all to Steelslavers
-
-
-[Fri Jan 13 09:23:52 2017] a Rujarkian shaman says, 'You will steal no more!  All of this is ours!'
-[Fri Jan 13 09:23:52 2017] a Rujarkian warrior says, 'You dare confront me?!  All attack!'
-[Fri Jan 13 09:20:22 2017] a Rujarkian blackhand says, 'You dare confront me?!  All attack!'
-[Fri Jan 13 09:22:37 2017] a Rujarkian healer says, 'You will steal no more!  All of this is ours!'
-
-[Fri Jan 13 09:18:35 2017] a Rujarkian blackhand goes on a WILD RAMPAGE!
-[Fri Jan 13 09:16:17 2017] a Rujarkian blackhand goes into a berserker frenzy!
-[Fri Jan 13 09:20:17 2017] a Rujarkian blackhand executes a FLURRY of attacks on Barrymanilow!
-[Fri Jan 13 09:22:04 2017] a Rujarkian blackhand's corpse draws a final breath while clawing at its fatal wounds.
-[Fri Jan 13 09:21:52 2017] a Rujarkian warrior's corpse draws a final breath while clawing at its fatal wounds.
-[Fri Jan 13 09:28:59 2017] a Rujarkian warrior goes on a WILD RAMPAGE!
-[Fri Jan 13 09:21:38 2017] a Rujarkian shaman's corpse mumbles a fading, final prayer.
-[Fri Jan 13 09:22:39 2017] a Rujarkian healer's corpse mumbles a fading, final prayer.
-
-
-[Fri Jan 13 09:30:28 2017] Warden Neyremal goes on a WILD RAMPAGE!
-
---]]

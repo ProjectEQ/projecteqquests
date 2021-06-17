@@ -201,46 +201,40 @@ function check_RPG()
 end
 
 function treasure_shroud()
---  local my_id = eq.get_zone_instance_id();
---  local my_list = eq.get_characters_in_instance(my_id);
---  for k,v in pairs(my_list) do
---    local client = eq.get_entity_list():GetClientByCharID(v);
---   if (client.valid) then 
---		client:Message(15, "Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
---    end
---  end
+
   eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure."); 
 end
 
 function PG_Talkor_Spawn(e)
 	eq.set_timer("path1",10*1000);
-	eq.set_timer("path2",60*1000);
-	eq.set_timer("depop",120*1000);
+	eq.set_timer("path2",20*1000);
+	eq.set_timer("depop",30*1000);
 end
 function PG_Talkor_Combat(e)
 	if e.joined then
 		eq.stop_timer("depop");
-		eq.set_timer("orcbreath",7*1000)
-		e.self:Emote("sniffs the air around him. 'I smell softskins!  Where are my taskmasters!");
+		eq.set_timer("gaze",7*1000)
 	else
-		eq.set_timer("depop",120*1000);
-		eq.stop_timer("orcbreath");		
+		eq.set_timer("depop",30*1000);
+		eq.stop_timer("gaze");		
 	end
 end
 function PG_Talkor_Timer(e)
 	if (e.timer == "path1") then
 		eq.stop_timer("path1");
 		e.self:MoveTo(-666, 316, -23, 192,true);
+		e.self:Emote("sniffs the air around him. 'I smell softskins!  Where are my taskmasters!");
 	elseif (e.timer == "path2") then
 		eq.stop_timer("path2");
 		e.self:MoveTo(-290, 304, -23, 192,true);
+		e.self:Emote("s grow narrow as he begins to suspect something is amiss.  He bolts from the room roaring an alert that echoes through the caverns.");
 	elseif (e.timer == "depop") then
 		eq.stop_timer("depop");
 		eq.depop();
-	elseif (e.timer=="orcbreath") then
-		eq.stop_timer("orcbreath");		
-		e.self:CastSpell(4192, e.self:GetHateTop():GetID()); -- Spell: Orc Breath
-		eq.set_timer("orcbreath",45*1000)
+	elseif (e.timer=="gaze") then
+		eq.stop_timer("gaze");		
+		e.self:CastSpell(4416, e.self:GetHateTop():GetID()); -- Spell: Gaze of Talkor
+		eq.set_timer("gaze",30*1000)
 	end
 end
 function PG_Talkor_Death(e)

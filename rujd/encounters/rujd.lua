@@ -439,6 +439,9 @@ function event_encounter_load(e)
   eq.register_npc_event('rujd', Event.combat,	245193, Trash_Combat); --a_Rujarkian_sentry (245193)(rog)
   eq.register_npc_event('rujd', Event.timer,	245193, Trash_Timer);--a_Rujarkian_sentry (245193)(rog)
   eq.register_npc_event('rujd', Event.hp,	245193, Trash_Hp);--a_Rujarkian_sentry (245193)(rog)
+  eq.register_npc_event('rujd', Event.combat,	245227, Trash_Combat); --a_Rujarkian_warrior (245227)
+  eq.register_npc_event('rujd', Event.timer,	245227, Trash_Timer);--a_Rujarkian_warrior (245227)
+  eq.register_npc_event('rujd', Event.hp,	245227, Trash_Hp);--a_Rujarkian_warrior (245227)
 	
   eq.register_npc_event('rujd', Event.death_complete, 245199, TM_Devrak_Death); --#Taskmaster_Devrak 
   eq.register_npc_event('rujd', Event.death_complete, 245220, TM_Dokorel_Death); --#Taskmaster_Dokorel 

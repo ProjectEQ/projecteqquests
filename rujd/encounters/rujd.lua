@@ -209,8 +209,8 @@ function check_RPG()
 	eq.debug("check_RPG(): rpg_dead = " .. rpg_dead .. " boss_spawn = " .. boss_spawn);
 	if (rpg_dead>=5 and boss_spawn==0) then
 		eq.zone_emote(15, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
-		eq.spawn2(245296, 0, 0, 898, -1023, -16, 256);  --warden
-		eq.spawn2(245284, 0, 0, 896, -1107, -17.8, 0);  --shaman
+		eq.spawn2(245296, 0, 0, 898, -1075, -18, 382);  --warden
+		eq.spawn2(245284, 0, 0, 917, -1094, -20, 315);  --shaman
 		boss_spawn=1;
 	end
 end
@@ -221,14 +221,15 @@ function treasure_shroud()
 end
 
 function PG_Talkor_Spawn(e)
-	eq.set_timer("path1",10*1000);
-	eq.set_timer("path2",20*1000);
+	eq.set_timer("path1",5*1000);
+	eq.set_timer("path2",15*1000);
 	eq.set_timer("depop",30*1000);
+	e.self:SetRunning(true);
 end
 function PG_Talkor_Combat(e)
 	if e.joined then
 		eq.stop_timer("depop");
-		eq.set_timer("gaze",7*1000)
+		eq.set_timer("gaze",7*1000);
 	else
 		eq.set_timer("depop",30*1000);
 		eq.stop_timer("gaze");		
@@ -237,11 +238,11 @@ end
 function PG_Talkor_Timer(e)
 	if (e.timer == "path1") then
 		eq.stop_timer("path1");
-		e.self:MoveTo(-666, 316, -23, 192,true);
+		e.self:MoveTo(-491, 304, -26, 385,true);
 		e.self:Emote("sniffs the air around him. 'I smell softskins!  Where are my taskmasters!");
 	elseif (e.timer == "path2") then
 		eq.stop_timer("path2");
-		e.self:MoveTo(-290, 304, -23, 192,true);
+		e.self:MoveTo(-666, 316, -23, 192,true);
 		e.self:Emote("'s eyes grow narrow as he begins to suspect something is amiss.  He bolts from the room roaring an alert that echoes through the caverns.");
 	elseif (e.timer == "depop") then
 		eq.stop_timer("depop");
@@ -249,7 +250,7 @@ function PG_Talkor_Timer(e)
 	elseif (e.timer=="gaze") then
 		eq.stop_timer("gaze");		
 		e.self:CastSpell(4416, e.self:GetHateTop():GetID()); -- Spell: Gaze of Talkor
-		eq.set_timer("gaze",30*1000)
+		eq.set_timer("gaze",30*1000);
 	end
 end
 function PG_Talkor_Death(e)
@@ -310,6 +311,7 @@ function Warden_Combat(e)
 	if e.joined then
 		eq.set_timer("roar",6.5*1000);
 		eq.set_timer("aggrolink", 3 * 1000);
+		eq.set_next_hp_event(20);
 	else
 		eq.stop_timer("roar");
 		eq.stop_timer("aggrolink");
@@ -319,7 +321,7 @@ end
 function Warden_Timer(e)
 	if (e.timer == "roar") then
 		e.self:CastSpell(4417, e.self:GetHateTop():GetID()); -- Spell: Warden's Roar
-	  elseif (e.timer == "aggrolink") then
+	elseif (e.timer == "aggrolink") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 245284)) then
@@ -333,6 +335,7 @@ function Shaman_Combat(e)
 	if e.joined then
 		eq.set_timer("orcbreath",7*1000);
 		eq.set_timer("aggrolink", 3 * 1000);
+		eq.set_next_hp_event(20);
 	else
 		eq.stop_timer("orcbreath");
 		eq.stop_timer("aggrolink");
@@ -344,13 +347,22 @@ function Shaman_Timer(e)
 		eq.stop_timer("orcbreath");		
 		e.self:CastSpell(4192, e.self:GetHateTop():GetID()); -- Spell: Orc Breath
 		eq.set_timer("orcbreath",45*1000);
-	  elseif (e.timer == "aggrolink") then
+	elseif (e.timer == "aggrolink") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 245296)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1); -- add #Warden_Neyremal (245296) to aggro list if alive
 		end
 		end
+	end
+end
+
+function Named_Hp(e)
+	if (e.hp_event == 20) then
+		e.self:Emote("goes into a berserker frenzy!");
+		e.self:HealDamage(100000);
+        	eq.modify_npc_stat("min_hit", "1040");
+        	eq.modify_npc_stat("max_hit", "2370");
 	end
 end
 
@@ -445,6 +457,8 @@ function event_encounter_load(e)
   eq.register_npc_event('rujd', Event.timer,	245284, Shaman_Timer); --#High_Shaman_Yenner  
   eq.register_npc_event('rujd', Event.death_complete,	245296, Warden_Death); --#Warden_Neyremal 
   eq.register_npc_event('rujd', Event.death_complete,	245284, Shaman_Death); --#High_Shaman_Yenner
+  eq.register_npc_event('rujd', Event.hp,	245296, Named_Hp); --#Warden_Neyremal 
+  eq.register_npc_event('rujd', Event.hp,	245284, Named_Hp); --#High_Shaman_Yenner  
 
   eq.register_npc_event('rujd', Event.death_complete,	245290, PG_Talkor_Death);  
   eq.register_npc_event('rujd', Event.spawn,			245290, PG_Talkor_Spawn);

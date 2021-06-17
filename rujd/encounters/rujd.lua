@@ -242,7 +242,7 @@ function PG_Talkor_Timer(e)
 	elseif (e.timer == "path2") then
 		eq.stop_timer("path2");
 		e.self:MoveTo(-290, 304, -23, 192,true);
-		e.self:Emote("s grow narrow as he begins to suspect something is amiss.  He bolts from the room roaring an alert that echoes through the caverns.");
+		e.self:Emote("'s eyes grow narrow as he begins to suspect something is amiss.  He bolts from the room roaring an alert that echoes through the caverns.");
 	elseif (e.timer == "depop") then
 		eq.stop_timer("depop");
 		eq.depop();
@@ -381,8 +381,53 @@ function check_chests()
 	end;
 end
 
+function Trash_Hp(e)
+	if (e.hp_event == 40) then
+		eq.set_timer("frenzy", math.random(1,3) * 1000);
+	end
+end
+
+function Trash_Combat(e)
+	if (e.joined == true) then
+		eq.set_next_hp_event(40);
+	end
+end
+
+function Trash_Timer(e)
+	if (e.timer == "frenzy") then
+		e.self:Emote("goes into a berserker frenzy!");
+		e.self:HealDamage(7000);
+		e.self:SetSpecialAbility(4, 1);
+		eq.stop_timer("frenzy");
+		eq.set_timer("down", 30 * 1000);
+			local rand = math.random(1,2); 
+			if (rand == 1) then
+        			eq.modify_npc_stat("min_hit", "220");
+        			eq.modify_npc_stat("max_hit", "1295");
+			elseif (rand == 2) then
+        			eq.modify_npc_stat("min_hit", "1578");
+        			eq.modify_npc_stat("max_hit", "2053");
+			end
+	elseif (e.timer == "down") then
+		e.self:Emote("slows as his frenzy ends.");
+        	eq.modify_npc_stat("min_hit", "205");
+        	eq.modify_npc_stat("max_hit", "660");
+		e.self:SetSpecialAbility(4, 0);
+		eq.stop_timer("down");
+		eq.set_next_hp_event(40);
+
+	end
+end
+
 function event_encounter_load(e)
 
+  eq.register_npc_event('rujd', Event.combat,	245206, Trash_Combat); --a_Rujarkian_sentry (245206)(war)
+  eq.register_npc_event('rujd', Event.timer,	245206, Trash_Timer);--a_Rujarkian_sentry (245206)(war)
+  eq.register_npc_event('rujd', Event.hp,	245206, Trash_Hp);--a_Rujarkian_sentry (245206)(war)
+  eq.register_npc_event('rujd', Event.combat,	245193, Trash_Combat); --a_Rujarkian_sentry (245193)(rog)
+  eq.register_npc_event('rujd', Event.timer,	245193, Trash_Timer);--a_Rujarkian_sentry (245193)(rog)
+  eq.register_npc_event('rujd', Event.hp,	245193, Trash_Hp);--a_Rujarkian_sentry (245193)(rog)
+	
   eq.register_npc_event('rujd', Event.death_complete, 245199, TM_Devrak_Death); --#Taskmaster_Devrak 
   eq.register_npc_event('rujd', Event.death_complete, 245220, TM_Dokorel_Death); --#Taskmaster_Dokorel 
   eq.register_npc_event('rujd', Event.death_complete, 245200, TM_Velrek_Death); --#Taskmaster_Velrek

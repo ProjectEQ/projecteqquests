@@ -113,7 +113,8 @@ end
 
 function Researchers_Death(e)
 	researchers = researchers + 1;
-  		if ( researchers == 2 ) then
+		local el = eq.get_entity_list();
+  		if ( researchers == 2 and el:IsMobSpawnedByNpcTypeID(260069) == true) then --check if boss is alive still when 2 researchers die , give bonus loot
     			eq.zone_emote(15, "Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 			extra_loot = true;
   		end

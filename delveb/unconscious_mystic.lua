@@ -9,9 +9,11 @@ function event_timer(e)
         local el = eq.get_entity_list();
         if ( el:IsMobSpawnedByNpcTypeID(342054) == false) then
             eq.spawn2(342054,0,0,-161,2064,-11,149); -- NPC: #Mystic_Shiflor
-        elseif ( el:IsMobSpawnedByNpcTypeID(342053) == false) then
+        end
+        if ( el:IsMobSpawnedByNpcTypeID(342053) == false) then
             eq.spawn2(342053,0,0,23,2025,2,401); -- NPC: #Mystic_Braggle
-        elseif ( el:IsMobSpawnedByNpcTypeID(342055) == false) then
+        end
+        if ( el:IsMobSpawnedByNpcTypeID(342055) == false) then
             eq.spawn2(342055,0,0,-85,1961,-.23,35); -- NPC: #Mystic_Griknok
         end
         eq.signal(342052,2); --emoush goes back to sleep

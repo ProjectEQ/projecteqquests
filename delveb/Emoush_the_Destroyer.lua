@@ -12,5 +12,5 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-  eq.signal(342060,1); --signal fd npc event is won
+ eq.depop_all(342060);
 end

@@ -10,11 +10,11 @@ function event_timer(e)
         eq.depop_all(342060); --depop unconscious mystics
         local el = eq.get_entity_list();
         if ( el:IsMobSpawnedByNpcTypeID(342054) == false) then
-            eq.spawn2(342054,0,0,-161,2064,-11,149); -- NPC: #Mystic_Shiflor
+           eq.unique_spawn(342054,0,0,-165,1946,-3,45); -- NPC: #Mystic_Shiflor
         elseif ( el:IsMobSpawnedByNpcTypeID(342053) == false) then
-            eq.spawn2(342053,0,0,23,2025,2,401); -- NPC: #Mystic_Braggle
+            eq.unique_spawn(342053,0,0,-68,1965,0,427); -- NPC: #Mystic_Braggle
         elseif ( el:IsMobSpawnedByNpcTypeID(342055) == false) then
-            eq.spawn2(342055,0,0,-85,1961,-.23,35); -- NPC: #Mystic_Griknok
+            eq.unique_spawn(342055,0,0,-141,2040,-8.15,244); -- NPC: #Mystic_Griknok
         end
 
     elseif (e.timer == "liedown") then

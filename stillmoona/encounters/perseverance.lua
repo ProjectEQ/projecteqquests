@@ -14,9 +14,9 @@ if(e.message:findi("hail")) then
 elseif(e.message:findi("ready")) then
 		eq.spawn2(338412, 0, 0, -23, 50, -30, 128);
 		eq.spawn2(338415, 0, 0, -9, 32, -30, 2);
-    eq.spawn2(338416, 0, 0, 8, 50, -30, 385);
-    eq.spawn2(338417, 0, 0, -8, 67, -30, 257);
-    eq.depop();
+    		eq.spawn2(338416, 0, 0, 8, 50, -30, 385);
+    		eq.spawn2(338417, 0, 0, -8, 67, -30, 257);
+    		eq.depop();
 	end
 end
 
@@ -46,28 +46,60 @@ function Goblin_Combat(e)
   end
 end
 
-function Goblin_Death(e)
+function Goblin_Death1(e)
   addsdead = addsdead +1;
   if ( addsdead == 8 and failure == 0) then
     eq.unique_spawn(338413, 0, 0, -9, 83, -30, 257);
   end
+  if (addsdead < 8 and failure == 0 ) then
+    eq.spawn2(338412, 0, 0, -23, 50, -30, 128);
+  end
 end
-    
+
+function Goblin_Death2(e)
+  addsdead = addsdead +1;
+  if ( addsdead == 8 and failure == 0) then
+    eq.unique_spawn(338413, 0, 0, -9, 83, -30, 257);
+  end
+  if (addsdead < 8 and failure == 0 ) then
+    eq.spawn2(338415, 0, 0, -9, 32, -30, 2);
+  end
+end
+
+function Goblin_Death3(e)
+  addsdead = addsdead +1;
+  if ( addsdead == 8 and failure == 0) then
+    eq.unique_spawn(338413, 0, 0, -9, 83, -30, 257);
+  end
+  if (addsdead < 8 and failure == 0 ) then
+    eq.spawn2(338416, 0, 0, 8, 50, -30, 385);
+  end
+end
+
+function Goblin_Death4(e)
+  addsdead = addsdead +1;
+  if ( addsdead == 8 and failure == 0) then
+    eq.unique_spawn(338413, 0, 0, -9, 83, -30, 257);
+  end
+  if (addsdead < 8 and failure == 0 ) then
+    eq.spawn2(338417, 0, 0, -8, 67, -30, 257);
+  end
+end
 
 function event_encounter_load(e)
-  eq.register_npc_event('perseverance', Event.death_complete, 338412, Goblin_Death);
+  eq.register_npc_event('perseverance', Event.death_complete, 338412, Goblin_Death1);
   eq.register_npc_event('perseverance', Event.combat,         338412, Goblin_Combat);
   eq.register_npc_event('perseverance', Event.timer,          338412, Goblin_Timer);
   eq.register_npc_event('perseverance', Event.spawn,          338412, Goblin_Spawn);
-  eq.register_npc_event('perseverance', Event.death_complete, 338415, Goblin_Death);
+  eq.register_npc_event('perseverance', Event.death_complete, 338415, Goblin_Death2);
   eq.register_npc_event('perseverance', Event.combat,         338415, Goblin_Combat);
   eq.register_npc_event('perseverance', Event.timer,          338415, Goblin_Timer);
   eq.register_npc_event('perseverance', Event.spawn,          338415, Goblin_Spawn);
-  eq.register_npc_event('perseverance', Event.death_complete, 338416, Goblin_Death);
+  eq.register_npc_event('perseverance', Event.death_complete, 338416, Goblin_Death3);
   eq.register_npc_event('perseverance', Event.combat,         338416, Goblin_Combat);
   eq.register_npc_event('perseverance', Event.timer,          338416, Goblin_Timer);
   eq.register_npc_event('perseverance', Event.spawn,          338416, Goblin_Spawn);
-  eq.register_npc_event('perseverance', Event.death_complete, 338417, Goblin_Death);
+  eq.register_npc_event('perseverance', Event.death_complete, 338417, Goblin_Death4);
   eq.register_npc_event('perseverance', Event.combat,         338417, Goblin_Combat);
   eq.register_npc_event('perseverance', Event.timer,          338417, Goblin_Timer);
   eq.register_npc_event('perseverance', Event.spawn,          338417, Goblin_Spawn);

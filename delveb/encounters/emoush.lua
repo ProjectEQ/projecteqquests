@@ -39,19 +39,22 @@ end
 
 function Unconscious_timer(e)
     if (e.timer == "reset") then
-        local el = eq.get_entity_list();
-        if ( el:IsMobSpawnedByNpcTypeID(342054) == false) then
+
+        if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) == false) then
            eq.unique_spawn(342054,0,0,-165,1946,-3,45); -- NPC: #Mystic_Shiflor
         end
-        if ( el:IsMobSpawnedByNpcTypeID(342053) == false) then
+        if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) == false) then
             eq.unique_spawn(342053,0,0,-68,1965,0,427); -- NPC: #Mystic_Braggle
         end
-        if ( el:IsMobSpawnedByNpcTypeID(342055) == false) then
+        if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) == false) then
             eq.unique_spawn(342055,0,0,-141,2040,-8.15,244); -- NPC: #Mystic_Griknok
         end
-        eq.stop_timer("reset");
-        eq.signal(342052,2); --emoush goes back to sleep
-        eq.depop_all(342060); --depop unconscious mystics
+    
+    eq.stop_timer("reset");
+    
+    eq.depop_all(342060); --depop unconscious mystics
+    
+    eq.signal(342052,2); --emoush goes back to sleep
     elseif (e.timer == "liedown") then
         e.self:SetAppearance(3);
         eq.stop_timer("liedown");

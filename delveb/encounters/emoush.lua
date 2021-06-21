@@ -5,6 +5,11 @@
 --unconscious_mystic (342060)
 
 --Emoush_the_Destroyer (342052)
+function Emoush_spawn(e)
+    eq.set_timer("spawn", 1 * 1000);
+end
+
+
 function Emoush_signal(e)
   if(e.signal == 1) then
     e.self:SetSpecialAbility(24, 0);
@@ -16,6 +21,15 @@ function Emoush_signal(e)
     e.self:WipeHateList();
     e.self:ModifyNPCStat("hp_regen", "3200");
   end
+end
+
+function Emoush_timer(e)
+    if (e.timer == "spawn") then
+           eq.unique_spawn(342054,0,0,-165,1946,-3,45); -- NPC: #Mystic_Shiflor
+           eq.unique_spawn(342053,0,0,-68,1965,0,427); -- NPC: #Mystic_Braggle
+           eq.unique_spawn(342055,0,0,-141,2040,-8.15,244); -- NPC: #Mystic_Griknok
+           eq.stop_timer("spawn");
+    end
 end
 
 function Emoush_death(e)

@@ -72,7 +72,7 @@ function event_encounter_load(e)
   eq.register_npc_event('perseverance', Event.timer,          338417, Goblin_Timer);
   eq.register_npc_event('perseverance', Event.spawn,          338417, Goblin_Spawn);
   
-  eq.register_npc_event('perseverance', Event.hail,          338403, Hail_Osashi);
+  eq.register_npc_event('perseverance', Event.say,          338403, Hail_Osashi);
 end
 
 -- do adds stop spawning after warlod spawns?

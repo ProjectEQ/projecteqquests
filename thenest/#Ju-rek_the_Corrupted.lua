@@ -3,7 +3,7 @@ function event_combat(e)
 		eq.set_next_hp_event(95);
 		eq.stop_timer("depopadds");
 	else
-		eq.set_timer("depopadds" 120 * 1000);
+		eq.set_timer("depopadds", 120 * 1000);
   	end
 end
 

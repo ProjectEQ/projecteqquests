@@ -77,6 +77,8 @@ end
 
 
 function event_encounter_load(e)
+  eq.register_npc_event('emoush', Event.timer,         342052, Emoush_timer);
+  eq.register_npc_event('emoush', Event.spawn,         342052, Emoush_spawn);
   eq.register_npc_event('emoush', Event.signal,         342052, Emoush_signal);
   eq.register_npc_event('emoush', Event.death_complete,         342052, Emoush_death);
   eq.register_npc_event('emoush', Event.death_complete,         342053, Braggle_death);

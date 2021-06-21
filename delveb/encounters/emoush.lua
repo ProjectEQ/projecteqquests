@@ -7,6 +7,8 @@
 --Emoush_the_Destroyer (342052)
 function Emoush_spawn(e)
     eq.set_timer("spawn", 1 * 1000);
+    eq.set_timer("aoe", 60 * 1000);
+    eq.set_timer("powerup", 180 * 1000);
 end
 
 
@@ -15,11 +17,14 @@ function Emoush_signal(e)
     e.self:SetSpecialAbility(24, 0);
     e.self:SetSpecialAbility(35, 0);
     e.self:ModifyNPCStat("hp_regen", "220");
+    eq.stop_timer("powerup");
   elseif(e.signal == 2) then
     e.self:SetSpecialAbility(24, 1);
     e.self:SetSpecialAbility(35, 1);
     e.self:WipeHateList();
     e.self:ModifyNPCStat("hp_regen", "3200");
+    eq.set_timer("powerup", 120 * 1000);
+    eq.zone_emote(15, "The fallen mystics awaken.");
   end
 end
 
@@ -29,6 +34,13 @@ function Emoush_timer(e)
            eq.unique_spawn(342053,0,0,-68,1965,0,427); -- NPC: #Mystic_Braggle
            eq.unique_spawn(342055,0,0,-141,2040,-8.15,244); -- NPC: #Mystic_Griknok
            eq.stop_timer("spawn");
+    elseif (e.timer == "aoe") then
+           e.self:CastSpell(5715,e.self:GetID()); -- Spell: Rumbling Stone
+    elseif (e.timer == "powerup") then
+            --gains 14 min dmg  283 max dmg per power up and hp(?)
+            eq.stop_timer("powerup");
+            eq.set_timer("powerup", 120 * 1000);
+            eq.zone_emote(15, "Emoush trembles as his power increases.");
     end
 end
 
@@ -39,6 +51,7 @@ end
 --#Mystic_Braggle Mystic_Griknok Mystic_Shiflor
 function Braggle_death(e)
 eq.spawn2(342060,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: unconscious_mystic
+eq.zone_emote(15, "The goblin mystic falls to the ground unconscious.");
   if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) == false) then
     eq.signal(342052,1); --signal emoush to wake up
   end

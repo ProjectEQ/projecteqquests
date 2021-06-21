@@ -3,6 +3,7 @@
 --#Mystic_Griknok (342055)
 --#Mystic_Shiflor (342054)
 --unconscious_mystic (342060)
+local addtimer = 0;
 
 --Emoush_the_Destroyer (342052)
 function Emoush_spawn(e)
@@ -25,6 +26,7 @@ function Emoush_signal(e)
     e.self:ModifyNPCStat("hp_regen", "3200");
     eq.set_timer("powerup", 120 * 1000);
     eq.zone_emote(15, "The fallen mystics awaken.");
+    addtimer = 0;
   end
 end
 
@@ -50,6 +52,7 @@ end
 
 --#Mystic_Braggle Mystic_Griknok Mystic_Shiflor
 function Braggle_death(e)
+addtimer = addtimer + 1;
 eq.spawn2(342060,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: unconscious_mystic
 eq.zone_emote(15, "The goblin mystic falls to the ground unconscious.");
   if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) == false) then
@@ -60,8 +63,10 @@ end
 --unconscious_mystic (342060)
 
 function Unconscious_spawn(e)
-    eq.set_timer("reset", 120 * 1000);
     eq.set_timer("liedown", 1 * 1000);
+        if ( addtimer == 1 ) then
+            eq.set_timer("reset", 120 * 1000);
+        end
 end
 
 function Unconscious_timer(e)

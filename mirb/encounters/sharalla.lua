@@ -60,7 +60,7 @@ function corpse_timer(e)
   for npc in npc_list.entries do
     if npc.valid and animals[npc:GetNPCTypeID()] then
       local dist = npc:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ())
-      if dist <= 30 then
+      if dist <= 20 then
         eq.get_entity_list():MessageClose(e.self, true, 100, 15, "One of the feral animals gnaws the remains of Sharalla, tearing at her clothes and skin.  Her warder utters a pitiful whine.")
         total_bites = total_bites + 1
         break

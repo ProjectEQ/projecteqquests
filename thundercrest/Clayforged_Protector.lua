@@ -18,7 +18,7 @@ end
 
 function event_death_complete(e)
 if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(340389) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340388) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340387) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340386) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340390) == true) then
-eq.spawn2(340032, 0, 0, -2844, 3143, 307, 0); -- NPC: a_chest
+eq.spawn2(340032, 0, 0, -2844, 3143, 307, 385); -- NPC: a_chest
 eq.depop_with_timer(340390);
 end
 end

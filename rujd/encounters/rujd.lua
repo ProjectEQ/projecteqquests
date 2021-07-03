@@ -427,8 +427,18 @@ function Trash_Timer(e)
 		e.self:SetSpecialAbility(4, 0);
 		eq.stop_timer("down");
 		eq.set_next_hp_event(40);
+	elseif (e.timer == "check") then
+		eq.stop_timer("check");
+		local level = e.self:GetLevel();
+			if(level <= 64) then
+			e.self:SetSpecialAbility(14, 0);
+			end
 
 	end
+end
+
+function Charmable_Trash_Spawn(e)
+	eq.set_timer("check", 3 * 1000);
 end
 
 function event_encounter_load(e)
@@ -442,6 +452,7 @@ function event_encounter_load(e)
   eq.register_npc_event('rujd', Event.combat,	245227, Trash_Combat); --a_Rujarkian_warrior (245227)
   eq.register_npc_event('rujd', Event.timer,	245227, Trash_Timer);--a_Rujarkian_warrior (245227)
   eq.register_npc_event('rujd', Event.hp,	245227, Trash_Hp);--a_Rujarkian_warrior (245227)
+  eq.register_npc_event('rujd', Event.spawn,	245227, Charmable_Trash_Spawn);--a_Rujarkian_warrior (245227)
 	
   eq.register_npc_event('rujd', Event.death_complete, 245199, TM_Devrak_Death); --#Taskmaster_Devrak 
   eq.register_npc_event('rujd', Event.death_complete, 245220, TM_Dokorel_Death); --#Taskmaster_Dokorel 

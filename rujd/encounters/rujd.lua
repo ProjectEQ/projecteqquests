@@ -395,7 +395,7 @@ end
 
 function Trash_Hp(e)
 	if (e.hp_event == 40) then
-		eq.set_timer("frenzy", math.random(1,3) * 1000);
+		eq.set_timer("frenzy", math.random(1,5) * 1000);
 	end
 end
 

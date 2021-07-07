@@ -1,3 +1,11 @@
+-- Wayfarers_Mercenary_Bitral (27081)
+-- Alliance Tasks
+
+--[[
+Gathering Silk 	<= indifferent	Solo
+Population Control	<= indifferent	Solo
+]]
+
 --only get quest if faction <= indifferent
 --1	Ally
 --2	Warmly

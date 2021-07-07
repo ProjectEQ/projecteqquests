@@ -1,3 +1,11 @@
+-- Wayfarers_Mercenary_Varein (27084)
+-- Alliance Tasks
+
+--[[
+Spider's Webs	<= indifferent	Solo
+Blood Money	<= indifferent	Solo
+]]
+
 --only get quest if faction <= indifferent
 --1	Ally
 --2	Warmly

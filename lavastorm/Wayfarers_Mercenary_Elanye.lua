@@ -1,3 +1,10 @@
+-- Wayfarers_Mercenary_Elanye (27082)
+-- Alliance Tasks
+
+--[[
+Blood of the Winged 	<= indifferent	Solo
+Goblin Broth	<= indifferent	Solo
+]]
 
 function event_say(e)
 	if(e.message:findi("hail")) then

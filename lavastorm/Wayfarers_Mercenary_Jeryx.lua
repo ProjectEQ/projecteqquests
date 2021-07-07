@@ -1,3 +1,11 @@
+-- Wayfarers_Mercenary_Jeryx (27083)
+-- Alliance Tasks
+
+--[[
+Meat for Stew	<= indifferent	Solo
+Taunting the Brood	<= indifferent	Solo
+]]
+
 --only get quest if faction <= indifferent
 --1	Ally
 --2	Warmly

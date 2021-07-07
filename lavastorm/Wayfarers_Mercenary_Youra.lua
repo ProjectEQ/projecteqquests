@@ -1,3 +1,7 @@
+-- Wayfarers_Mercenary_Youra (27080)
+-- Norrath Keepers Token Turnin
+
+
 function event_say(e)
 	if (e.message:findi("hail")) then
 		e.self:Say("You might say me and my brother are adept at, uhm, convincing those we chose. Norrath's Keepers are quite fond of me in particular and have been searching for their tokens and they pay me well for them.  Should you find one, give one to me and I will sing your praises to the followers of Firiona Vie.");

@@ -98,7 +98,7 @@ function event_signal(e)
 		eq.spawn2(296068,0,0,-127,-652,-127, 242); --bones (loot)
 		AddLockout(5);
 	elseif (e.signal == 296071) then
-		eq.spawn2(296072,0,0,5,-654,-127,350);  --pile of bones
+		eq.unique_spawn(296029,0,0,5,-654,-127,350);  --pile of bones
 		AddLockout(6);
 	end
 end

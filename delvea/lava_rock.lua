@@ -1,6 +1,7 @@
 local added_loot = false;
 
-function event_death(e) 
+function event_death(e)
+	added_loot = false;
 	local roll = math.random(100)
 	
 	if (roll >= 50) then

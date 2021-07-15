@@ -1,14 +1,7 @@
-#::: Author: Akkadius
-#::: Description: Used to commify strings
-#::: Usage: plugin::commify(12302302); Would output value 12,302,302
 sub commify {
-   local $_  = shift;
-   s{(?<!\d|\.)(\d{4,})}
-    {my $n = $1;
-     $n=~s/(?<=.)(?=(?:.{3})+$)/,/g;
-     $n;
-    }eg;
-   return $_;
+	my $number = reverse shift;
+	$number =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
+	return scalar reverse $number;
 }
 
 return 1;

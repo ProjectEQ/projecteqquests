@@ -34,7 +34,7 @@ function Champ_Event_Timer(e)
     eq.spawn2(eq.ChooseRandom(297038,297033,297036), 0, 0, -28, 119, -434, 190);
     eq.spawn2(eq.ChooseRandom(297038,297033,297036), 0, 0, -84, 145, -434, 297);
     eq.spawn2(eq.ChooseRandom(297038,297033,297036), 0, 0, -92, 133, -434, 76);
-    eq.unique_spawn(297034), 0, 0, -39, -8, -434, 64); --#Mastruq_Champion (297034)
+    eq.unique_spawn(297034, 0, 0, -39, -8, -434, 64); --#Mastruq_Champion (297034)
   end
 end
 

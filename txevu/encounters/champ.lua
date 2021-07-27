@@ -7,6 +7,7 @@ local event_triggered = 0;
 
 function Champ_Event_Spawn(e)
   eq.set_timer("spawnevent", 3 * 1000);
+	e.self:Say("Check");
 end
 
 function Champ_Event_Timer(e)

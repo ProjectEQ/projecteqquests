@@ -46,6 +46,10 @@ function ChampEvent_Enter(e)
   end
 end
 
+function ChampEvent_Signal(e)
+	eq.set_timer("spawnevent", 1800 * 1000); -- 30 minutes to respawn the event
+end
+
 function MastruqChampion_Signal(e)
   if (e.signal == 1) then
     e.self:MoveTo(0, 0, -430, 130,true);
@@ -109,6 +113,13 @@ end
 function IxtHsek_Combat(e)
 	if (e.joined == true) then
 		eq.set_next_hp_event(90);
+		eq.set_timer("OOBcheck", 6 * 1000);
+			if(not eq.is_paused_timer("depop")) then
+				eq.pause_timer("depop");
+			end
+	else
+		eq.stop_timer("OOBcheck");
+		eq.resume_timer("depop");
 	end
 end
 
@@ -232,18 +243,64 @@ eq.stop_timer("OOBcheck");
 end
 end
 
+function IxtHsek_Timer(e)
+	if(e.timer=="OOBcheck") then
+	eq.stop_timer("OOBcheck");
+		if (e.self:GetX() > 96) then
+			e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+			e.self:GotoBind();
+			e.self:WipeHateList();
+		else
+			eq.set_timer("OOBcheck", 6 * 1000);
+		end
+	elseif(e.timer=="depop") then
+		eq.depop(297211); -- hsek
+		eq.depop(297034); -- champ
+		eq.depop_all(297038); -- arena mob
+		eq.depop_all(297036); -- arena mob
+		eq.depop_all(297033); -- arena mob
+		eq.depop_all(297035); -- arena mob
+		eq.depop_all(297037); -- arena mob
+		eq.depop_all(297040); -- arena mob
+		eq.signal(297001,1); --signal champ_event to begin timer to respawn event
+	end
+end
+
+function IxtHsek_Spawn(e)
+eq.set_timer("depop", 1800 * 1000);
+end
+
+function IxtHsek_Death(e)
+ local el = eq.get_entity_list();
+  if ( el:IsMobSpawnedByNpcTypeID(297034) == false and el:IsMobSpawnedByNpcTypeID(297211) == false and el:IsMobSpawnedByNpcTypeID(297001) == true ) then 
+ 	eq.depop_with_timer(297001); -- event is successful, initiate respawn 
+	end
+end
+
+function MastruqChampion_Death(e)
+ local el = eq.get_entity_list();
+  if ( el:IsMobSpawnedByNpcTypeID(297034) == false and el:IsMobSpawnedByNpcTypeID(297211) == false and el:IsMobSpawnedByNpcTypeID(297001) == true ) then 
+ 	eq.depop_with_timer(297001); -- event is successful, initiate respawn 
+	end
+end
+
 function event_encounter_load(e)
     eq.register_npc_event('champ', Event.spawn, 297001, ChampEvent_Spawn);
     eq.register_npc_event('champ', Event.enter, 297001, ChampEvent_Enter);
     eq.register_npc_event('champ', Event.timer, 297001, ChampEvent_Timer);
+    eq.register_npc_event('champ', Event.signal, 297001, ChampEvent_Signal);
 
     eq.register_npc_event('champ', Event.timer, 297034, MastruqChampion_Timer);
     eq.register_npc_event('champ', Event.combat, 297034, MastruqChampion_Combat);
     eq.register_npc_event('champ', Event.signal, 297034, MastruqChampion_Signal);
     eq.register_npc_event('champ', Event.hp, 297034, MastruqChampion_HP);
+   eq.register_npc_event('champ', Event.death_complete, 297034, MastruqChampion_Death);
 
     eq.register_npc_event('champ', Event.hp, 297211, IxtHsek_HP);
     eq.register_npc_event('champ', Event.combat, 297211, IxtHsek_Combat);
+    eq.register_npc_event('champ', Event.timer, 297211, IxtHsek_Timer);
+    eq.register_npc_event('champ', Event.spawn, 297211, IxtHsek_Spawn);
+    eq.register_npc_event('champ', Event.death_complete, 297211, IxtHsek_Death);
 
     eq.register_npc_event('champ', Event.combat, 297209, TheRunt_Combat);
     eq.register_npc_event('champ', Event.spawn, 297209, TheRunt_Spawn);

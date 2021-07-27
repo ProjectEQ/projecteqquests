@@ -119,7 +119,7 @@ local npc_list =  eq.get_entity_list():GetNPCList();
 			npc:AddToHateList(e.self:GetHateRandom(),1);
       			e.self:Say("Don't just stand there you fools! Come help me kill them!");
      	 		end
-
+end
 end
 
 function MastruqChampion_Combat(e)

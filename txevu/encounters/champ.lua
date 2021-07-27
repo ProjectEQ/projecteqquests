@@ -6,12 +6,13 @@
 local event_triggered = 0;
 
 function ChampEvent_Spawn(e)
-  eq.set_timer("spawnevent", 3 * 1000);
-	e.self:Say("Check");
+	event_triggered = 0;
+ 	eq.set_timer("spawnevent", 3 * 1000);
 end
 
 function ChampEvent_Timer(e)
   if (e.timer == "spawnevent") then
+    event_triggered = 0;
     eq.stop_timer("spawnevent");
     local ex = e.self:GetX();
     local ey = e.self:GetY();

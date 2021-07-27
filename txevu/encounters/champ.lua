@@ -5,12 +5,12 @@
 
 local event_triggered = 0;
 
-function Champ_Event_Spawn(e)
+function ChampEvent_Spawn(e)
   eq.set_timer("spawnevent", 3 * 1000);
 	e.self:Say("Check");
 end
 
-function Champ_Event_Timer(e)
+function ChampEvent_Timer(e)
   if (e.timer == "spawnevent") then
     eq.stop_timer("spawnevent");
     local ex = e.self:GetX();
@@ -39,7 +39,7 @@ function Champ_Event_Timer(e)
   end
 end
 
-function Champ_Event_Enter(e)
+function ChampEvent_Enter(e)
   if (event_triggered == 0) then
     event_triggered = 1;
     eq.signal(297034,1); --signal mastruq champion to begin emoting
@@ -233,9 +233,9 @@ end
 end
 
 function event_encounter_load(e)
-    eq.register_npc_event("champ", Event.spawn, 297001, Champ_Event_Spawn)
-    eq.register_npc_event("champ", Event.enter, 297001, Champ_Event_Enter)
-    eq.register_npc_event("champ", Event.timer, 297001, Champ_Event_Timer)
+    eq.register_npc_event("champ", Event.spawn, 297001, ChampEvent_Spawn)
+    eq.register_npc_event("champ", Event.enter, 297001, ChampEvent_Enter)
+    eq.register_npc_event("champ", Event.timer, 297001, ChampEvent_Timer)
 
     eq.register_npc_event("champ", Event.timer, 297034, Mastruq_Champion_Timer)
     eq.register_npc_event("champ", Event.combat, 297034, Mastruq_Champion_Combat)

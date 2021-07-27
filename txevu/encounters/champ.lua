@@ -101,7 +101,7 @@ function MastruqChampion_Timer(e)
     e.self:Say("Go on, show us what you're made of! Just you and the runt. No pets, no friends, no healing, no nuttin! You win and you can walk away with your head still on your shoulder. But I warn you, we don't take kindly to cheaters.");
   elseif(e.timer=="OOBcheck") then
     eq.stop_timer("OOBcheck");
-	    if (e.self:GetX() > 96) then
+	    if (e.self:GetX() > 96 or e.self:GetX() < -120) then
 		    e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 		    e.self:GotoBind();
 		    e.self:WipeHateList();
@@ -234,7 +234,7 @@ end
 function KillableArena_Timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
-	if (e.self:GetX() > 96) then
+	if (e.self:GetX() > 96 or e.self:GetX() < -120) then
 		e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:GotoBind();
 		e.self:WipeHateList();
@@ -247,7 +247,7 @@ end
 function IxtHsek_Timer(e)
 	if(e.timer=="OOBcheck") then
 	eq.stop_timer("OOBcheck");
-		if (e.self:GetX() > 96) then
+		if (e.self:GetX() > 96 or e.self:GetX() < -120) then
 			e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 			e.self:GotoBind();
 			e.self:WipeHateList();

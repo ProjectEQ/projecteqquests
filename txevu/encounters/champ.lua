@@ -251,13 +251,13 @@ function event_encounter_load(e)
     eq.register_npc_event('champ', Event.death_complete, 297209, TheRunt_Death);
 
     eq.register_npc_event('champ', Event.spawn, 297038, ArenaMobs_Spawn);
-    --eq.register_npc_event('champ', Event.timer, 297038, ArenaMobs_Timer);
+    eq.register_npc_event('champ', Event.timer, 297038, ArenaMobs_Timer);
     eq.register_npc_event('champ', Event.signal, 297038, ArenaMobs_Signal);
     eq.register_npc_event('champ', Event.spawn, 297033, ArenaMobs_Spawn);
-    --eq.register_npc_event('champ', Event.timer, 297033, ArenaMobs_Timer);
+    eq.register_npc_event('champ', Event.timer, 297033, ArenaMobs_Timer);
     eq.register_npc_event('champ', Event.signal, 297033, ArenaMobs_Signal);
     eq.register_npc_event('champ', Event.spawn, 297036, ArenaMobs_Spawn);
-    --eq.register_npc_event('champ', Event.timer, 297036, ArenaMobs_Timer);
+    eq.register_npc_event('champ', Event.timer, 297036, ArenaMobs_Timer);
     eq.register_npc_event('champ', Event.signal, 297036, ArenaMobs_Signal);
 
     eq.register_npc_event('champ', Event.combat, 297035, KillableArena_Combat);

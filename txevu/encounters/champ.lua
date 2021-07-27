@@ -46,7 +46,7 @@ function ChampEvent_Enter(e)
   end
 end
 
-function Mastruq_Champion_Signal(e)
+function MastruqChampion_Signal(e)
   if (e.signal == 1) then
     e.self:MoveTo(0, 0, -430, 130,true);
     eq.set_timer("emote1", 3 * 1000);
@@ -57,7 +57,7 @@ function Mastruq_Champion_Signal(e)
   end
 end
 
-function Mastruq_Champion_Timer(e)
+function MastruqChampion_Timer(e)
   if (e.timer == "emote1") then
     eq.stop_timer("emote1");
     e.self:Say("Look what we have here, boys? One of them softies found its way into our pit. What is it that we do with softies again?");
@@ -106,23 +106,23 @@ function Mastruq_Champion_Timer(e)
   end
 end
 
-function Ixt_Hsek_Combat(e)
+function IxtHsek_Combat(e)
 	if (e.joined == true) then
 		eq.set_next_hp_event(90);
 	end
 end
 
-function Ixt_Hsek_HP(e)
+function IxtHsek_HP(e)
 local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 297035 or npc:GetNPCTypeID() == 297037 or npc:GetNPCTypeID() == 297040)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1);
-      e.self:Say("Don't just stand there you fools! Come help me kill them!");
-      end
+      			e.self:Say("Don't just stand there you fools! Come help me kill them!");
+     	 		end
   end
 end
 
-function Mastruq_Champion_Combat(e)
+function MastruqChampion_Combat(e)
 	if (e.joined == true) then
 		eq.set_next_hp_event(15);
 		eq.set_timer("OOBcheck", 6 * 1000);
@@ -131,7 +131,7 @@ function Mastruq_Champion_Combat(e)
 	end
 end
 
-function Mastruq_Champion_HP(e)
+function MastruqChampion_HP(e)
 local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 297211)) then
@@ -142,12 +142,12 @@ local npc_list =  eq.get_entity_list():GetNPCList();
   end
 end
 
-function The_Runt_Spawn(e)
+function TheRunt_Spawn(e)
   e.self:MoveTo(25, 0, -437, 130,true);
   local hate_list;
 end
 
-function The_Runt_Combat(e)
+function TheRunt_Combat(e)
   if (e.joined == true) then
     eq.set_timer("checklist", 1 * 1000);
   else
@@ -155,7 +155,7 @@ function The_Runt_Combat(e)
   end
 end
 
-function The_Runt_Timer(e)
+function TheRunt_Timer(e)
 if (e.timer == "checklist") then
  hate_list = e.self:CountHateList();
     if (hate_list ~= nil and tonumber(hate_list) > 1) then
@@ -175,19 +175,19 @@ if (e.timer == "checklist") then
 end
 end
 
-function The_Runt_Death(e)
-		-- signal arena mobs to path out
-		eq.signal(297038,2);
-		eq.signal(297033,2);
-		eq.signal(297036,2);
-		eq.unique_spawn(297211,0,0,20,-2,-435,224); -- #Ixt_Hsek_Syat
-		eq.signal(297034,2); -- signal #Mastruq_Champion (297034) to remove immunities
-		eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -37, 10, -437, 258);
-    eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -69, -97, -433, 112);
-    eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -57, -95, -434, 392);
+function TheRunt_Death(e)
+	-- signal arena mobs to path out
+	eq.signal(297038,2);
+	eq.signal(297033,2);
+	eq.signal(297036,2);
+	eq.unique_spawn(297211,0,0,20,-2,-435,224); -- #Ixt_Hsek_Syat
+	eq.signal(297034,2); -- signal #Mastruq_Champion (297034) to remove immunities
+	eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -37, 10, -437, 258);
+        eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -69, -97, -433, 112);
+        eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -57, -95, -434, 392);
 end
 
-function Arena_Mobs_Signal(e)
+function ArenaMobs_Signal(e)
   if (e.signal == 1) then
     e.self:SetSpecialAbility(24, 0);
     e.self:SetSpecialAbility(25, 0);
@@ -198,11 +198,11 @@ function Arena_Mobs_Signal(e)
   end
 end
 
-function Arena_Mobs_Spawn(e)
+function ArenaMobs_Spawn(e)
   eq.set_timer("animation", 10 * 1000);
 end
 
-function Arena_Mobs_Timer(e)
+function ArenaMobs_Timer(e)
 if (e.timer == "animation") then
     local animations = { 1,2,5,6,8,84,85 }
     e.self:DoAnim(animations[math.random(#animations)])
@@ -210,7 +210,7 @@ end
 end
 
 
-function Killable_Arena_Combat(e)
+function KillableArena_Combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 6 * 1000);
 	else
@@ -219,7 +219,7 @@ function Killable_Arena_Combat(e)
 end
 
 
-function Killable_Arena_Timer(e)
+function KillableArena_Timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
 	if (e.self:GetX() > 96) then
@@ -233,38 +233,37 @@ end
 end
 
 function event_encounter_load(e)
-    eq.register_npc_event("champ", Event.spawn, 297001, ChampEvent_Spawn)
-    eq.register_npc_event("champ", Event.enter, 297001, ChampEvent_Enter)
-    eq.register_npc_event("champ", Event.timer, 297001, ChampEvent_Timer)
+    eq.register_npc_event('champ', Event.spawn, 297001, ChampEvent_Spawn);
+    eq.register_npc_event('champ', Event.enter, 297001, ChampEvent_Enter);
+    eq.register_npc_event('champ', Event.timer, 297001, ChampEvent_Timer);
 
-    eq.register_npc_event("champ", Event.timer, 297034, Mastruq_Champion_Timer)
-    eq.register_npc_event("champ", Event.combat, 297034, Mastruq_Champion_Combat)
-    eq.register_npc_event("champ", Event.signal, 297034, Mastruq_Champion_Signal)
-    eq.register_npc_event("champ", Event.hp, 297034, Mastruq_Champion_HP)
+    eq.register_npc_event('champ', Event.timer, 297034, MastruqChampion_Timer);
+    eq.register_npc_event('champ', Event.combat, 297034, MastruqChampion_Combat);
+    eq.register_npc_event('champ', Event.signal, 297034, MastruqChampion_Signal);
+    eq.register_npc_event('champ', Event.hp, 297034, MastruqChampion_HP);
 
-    eq.register_npc_event("champ", Event.hp, 297211, Ixt_Hsek_HP)
-    eq.register_npc_event("champ", Event.combat, 297211, Ixt_Hsek_Combat)
+    eq.register_npc_event('champ', Event.hp, 297211, IxtHsek_HP);
+    eq.register_npc_event('champ', Event.combat, 297211, IxtHsek_Combat);
 
-    eq.register_npc_event("champ", Event.combat, 297209, The_Runt_Combat)
-    eq.register_npc_event("champ", Event.spawn, 297209, The_Runt_Spawn)
-    eq.register_npc_event("champ", Event.timer, 297209, The_Runt_Timer)
-    eq.register_npc_event("champ", Event.death_complete, 297209, The_Runt_Death)
+    eq.register_npc_event('champ', Event.combat, 297209, TheRunt_Combat);
+    eq.register_npc_event('champ', Event.spawn, 297209, TheRunt_Spawn);
+    eq.register_npc_event('champ', Event.timer, 297209, TheRunt_Timer);
+    eq.register_npc_event('champ', Event.death_complete, 297209, TheRunt_Death);
 
-    eq.register_npc_event("champ", Event.spawn, 297038, Arena_Mobs_Spawn)
-    eq.register_npc_event("champ", Event.timer, 297038, Arena_Mobs_Timer)
-    eq.register_npc_event("champ", Event.signal, 297038, Arena_Mobs_Signal)
-    eq.register_npc_event("champ", Event.spawn, 297033, Arena_Mobs_Spawn)
-    eq.register_npc_event("champ", Event.timer, 297033, Arena_Mobs_Timer)
-    eq.register_npc_event("champ", Event.signal, 297033, Arena_Mobs_Signal)
-    eq.register_npc_event("champ", Event.spawn, 297036, Arena_Mobs_Spawn)
-    eq.register_npc_event("champ", Event.timer, 297036, Arena_Mobs_Timer)
-    eq.register_npc_event("champ", Event.signal, 297036, Arena_Mobs_Signal)
+    eq.register_npc_event('champ', Event.spawn, 297038, ArenaMobs_Spawn);
+    eq.register_npc_event('champ', Event.timer, 297038, ArenaMobs_Timer);
+    eq.register_npc_event('champ', Event.signal, 297038, ArenaMobs_Signal);
+    eq.register_npc_event('champ', Event.spawn, 297033, ArenaMobs_Spawn);
+    eq.register_npc_event('champ', Event.timer, 297033, ArenaMobs_Timer);
+    eq.register_npc_event('champ', Event.signal, 297033, ArenaMobs_Signal);
+    eq.register_npc_event('champ', Event.spawn, 297036, ArenaMobs_Spawn);
+    eq.register_npc_event('champ', Event.timer, 297036, ArenaMobs_Timer);
+    eq.register_npc_event('champ', Event.signal, 297036, ArenaMobs_Signal);
 
-    eq.register_npc_event("champ", Event.combat, 297035, Killable_Arena_Combat)
-    eq.register_npc_event("champ", Event.timer, 297035, Killable_Arena_Timer)
-    eq.register_npc_event("champ", Event.combat, 297037, Killable_Arena_Combat)
-    eq.register_npc_event("champ", Event.timer, 297037, Killable_Arena_Timer)
-    eq.register_npc_event("champ", Event.combat, 297040, Killable_Arena_Combat)
-    eq.register_npc_event("champ", Event.timer, 297040, Killable_Arena_Timer)
-
+    eq.register_npc_event('champ', Event.combat, 297035, KillableArena_Combat);
+    eq.register_npc_event('champ', Event.timer, 297035, KillableArena_Timer);
+    eq.register_npc_event('champ', Event.combat, 297037, KillableArena_Combat);
+    eq.register_npc_event('champ', Event.timer, 297037, KillableArena_Timer);
+    eq.register_npc_event('champ', Event.combat, 297040, KillableArena_Combat);
+    eq.register_npc_event('champ', Event.timer, 297040, KillableArena_Timer);
 end

@@ -236,11 +236,18 @@ end
 
 function ArenaMobs_Timer(e)
 if (e.timer == "animation") then
-    local animations = { 1,2,5,6,8,84,85 }
-    e.self:DoAnim(animations[math.random(#animations)])
+e.self:DoAnim(eq.ChooseRandom(1,2,5,6,8,84,85));
+elseif(e.timer=="OOBcheck") then
+eq.stop_timer("OOBcheck");
+	if (e.self:GetX() > 96 or e.self:GetX() < -120 or e.self:GetY() < -190 or e.self:GetY() > 190) then
+		e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+		e.self:GMMove(8, 0, -436, 254);
+		e.self:WipeHateList();
+	else
+		eq.set_timer("OOBcheck", 6 * 1000);
+	end
 end
 end
-
 
 function KillableArena_Combat(e)
 	if (e.joined == true) then
@@ -339,6 +346,9 @@ function event_encounter_load(e)
     eq.register_npc_event('champ', Event.timer, 297036, ArenaMobs_Timer);
     eq.register_npc_event('champ', Event.signal, 297036, ArenaMobs_Signal);
 
+    eq.register_npc_event('champ', Event.combat, 297038, KillableArena_Combat);
+    eq.register_npc_event('champ', Event.combat, 297033, KillableArena_Combat);
+    eq.register_npc_event('champ', Event.combat, 297036, KillableArena_Combat);
     eq.register_npc_event('champ', Event.combat, 297035, KillableArena_Combat);
     eq.register_npc_event('champ', Event.timer, 297035, KillableArena_Timer);
     eq.register_npc_event('champ', Event.combat, 297037, KillableArena_Combat);

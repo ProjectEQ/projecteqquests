@@ -44,6 +44,7 @@ function ChampEvent_Enter(e)
   if (event_triggered == 0) then
     event_triggered = 1;
     eq.signal(297034,1); --signal mastruq champion to begin emoting
+    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 200,"As you step into the room, all combat stops and every eye turns to you. The champion in the center finishes his opponent and yells 'HOLD!' stopping the Muramites before they can charge.");
   end
 end
 

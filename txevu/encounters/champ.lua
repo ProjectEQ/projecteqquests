@@ -108,7 +108,7 @@ function MastruqChampion_Timer(e)
     eq.stop_timer("OOBcheck");
 	    if (e.self:GetX() > 96 or e.self:GetX() < -120) then
 		    e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
-		    e.self:GotoBind();
+		    e.self:GMMove(8, 0, -436, 254);
 		    e.self:WipeHateList();
 	    else
 		    eq.set_timer("OOBcheck", 6 * 1000);
@@ -244,7 +244,7 @@ if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
 	if (e.self:GetX() > 96 or e.self:GetX() < -120) then
 		e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
-		e.self:GotoBind();
+		e.self:GMMove(8, 0, -436, 254);
 		e.self:WipeHateList();
 	else
 		eq.set_timer("OOBcheck", 6 * 1000);
@@ -257,7 +257,7 @@ function IxtHsek_Timer(e)
 	eq.stop_timer("OOBcheck");
 		if (e.self:GetX() > 96 or e.self:GetX() < -120) then
 			e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
-			e.self:GotoBind();
+			e.self:GMMove(8, 0, -436, 254);
 			e.self:WipeHateList();
 		else
 			eq.set_timer("OOBcheck", 6 * 1000);

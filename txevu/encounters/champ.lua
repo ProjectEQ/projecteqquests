@@ -59,6 +59,11 @@ function MastruqChampion_Signal(e)
     e.self:SetSpecialAbility(24, 0);
     e.self:SetSpecialAbility(25, 0);
     e.self:SetSpecialAbility(35, 0);
+  elseif (e.signal == 3) then
+    e.self:SetSpecialAbility(24, 0);
+    e.self:SetSpecialAbility(25, 0);
+    e.self:SetSpecialAbility(35, 0);
+    e.self:Say("I told ya we don't take kindly to cheaters! Boys, kill these fools starting with the one who broke the rules!");
   end
 end
 
@@ -148,6 +153,7 @@ local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 297211)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1);
+			e.self:Say("Ugh. These fools are stronger than they look. Hsek, come help me with them!");
 -- add #Ixt_Hsek_Syat (297211) to hate list
 --should he emote?
       end
@@ -176,10 +182,12 @@ if (e.timer == "checklist") then
 		eq.signal(297038,1);
 		eq.signal(297033,1);
 		eq.signal(297036,1);
+		-- champion also wakes up and attacks
+		eq.signal(297034,3); -- signal #Mastruq_Champion (297034) to remove immunities
 		-- add arena mobs to hate list 
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
-			if (npc.valid and (npc:GetNPCTypeID() == 297038 or npc:GetNPCTypeID() == 297033 or npc:GetNPCTypeID() == 297036)) then
+			if (npc.valid and (npc:GetNPCTypeID() == 297038 or npc:GetNPCTypeID() == 297033 or npc:GetNPCTypeID() == 297036 or npc:GetNPCTypeID() == 297034)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1);
 			end
 		end	
@@ -192,7 +200,7 @@ function TheRunt_Death(e)
 	eq.signal(297038,2);
 	eq.signal(297033,2);
 	eq.signal(297036,2);
-	eq.unique_spawn(297211,0,0,20,-2,-435,224); -- #Ixt_Hsek_Syat
+	eq.unique_spawn(297211,0,0,-93,121,-435,194); -- #Ixt_Hsek_Syat
 	eq.signal(297034,2); -- signal #Mastruq_Champion (297034) to remove immunities
 	eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -37, 10, -437, 258);
         eq.spawn2(eq.ChooseRandom(297040,297035,297037), 0, 0, -69, -97, -433, 112);
@@ -269,6 +277,7 @@ end
 
 function IxtHsek_Spawn(e)
 eq.set_timer("depop", 1800 * 1000);
+e.self:MoveTo(25, 0, -437, 195,true);
 end
 
 function IxtHsek_Death(e)

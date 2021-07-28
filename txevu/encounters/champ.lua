@@ -107,7 +107,7 @@ function MastruqChampion_Timer(e)
     e.self:Say("Go on, show us what you're made of! Just you and the runt. No pets, no friends, no healing, no nuttin! You win and you can walk away with your head still on your shoulder. But I warn you, we don't take kindly to cheaters.");
   elseif(e.timer=="OOBcheck") then
     eq.stop_timer("OOBcheck");
-	    if (e.self:GetX() > 96 or e.self:GetX() < -120) then
+	    if (e.self:GetX() > 96 or e.self:GetX() < -120 or e.self:GetY() < -190 or e.self:GetY() > 190) then
 		    e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 		    e.self:GMMove(8, 0, -436, 254);
 		    e.self:WipeHateList();
@@ -169,8 +169,10 @@ end
 function TheRunt_Combat(e)
   if (e.joined == true) then
     eq.set_timer("checklist", 1 * 1000);
+    eq.set_timer("OOBcheck", 6 * 1000);
   else
     eq.stop_timer("checklist");
+    eq.stop_timer("OOBcheck");
   end
 end
 
@@ -193,6 +195,15 @@ if (e.timer == "checklist") then
 			end
 		end	
 	end
+elseif(e.timer=="OOBcheck") then
+	eq.stop_timer("OOBcheck");
+		if (e.self:GetX() > 96 or e.self:GetX() < -120 or e.self:GetY() < -190 or e.self:GetY() > 190) then
+			e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+			e.self:GMMove(8, 0, -436, 254);
+			e.self:WipeHateList();
+		else
+			eq.set_timer("OOBcheck", 6 * 1000);
+		end
 end
 end
 
@@ -243,7 +254,7 @@ end
 function KillableArena_Timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
-	if (e.self:GetX() > 96 or e.self:GetX() < -120) then
+	if (e.self:GetX() > 96 or e.self:GetX() < -120 or e.self:GetY() < -190 or e.self:GetY() > 190) then
 		e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:GMMove(8, 0, -436, 254);
 		e.self:WipeHateList();
@@ -256,7 +267,7 @@ end
 function IxtHsek_Timer(e)
 	if(e.timer=="OOBcheck") then
 	eq.stop_timer("OOBcheck");
-		if (e.self:GetX() > 96 or e.self:GetX() < -120) then
+		if (e.self:GetX() > 96 or e.self:GetX() < -120 or e.self:GetY() < -190 or e.self:GetY() > 190) then
 			e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 			e.self:GMMove(8, 0, -436, 254);
 			e.self:WipeHateList();

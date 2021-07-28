@@ -49,7 +49,11 @@ function ChampEvent_Enter(e)
 end
 
 function ChampEvent_Signal(e)
-	eq.set_timer("spawnevent", 1800 * 1000); -- 30 minutes to respawn the event
+	if (e.signal == 1) then
+		eq.set_timer("spawnevent", 1800 * 1000); -- 30 minutes to respawn the event
+	elseif (e.signal == 2) then
+		eq.set_timer("spawnevent", 60 * 1000); -- 1 minutes to respawn the event from runt failure
+	end
 end
 
 function MastruqChampion_Signal(e)
@@ -163,6 +167,7 @@ end
 
 function TheRunt_Spawn(e)
   e.self:MoveTo(25, 0, -437, 130,true);
+  eq.set_timer("depop", 600 * 1000); -- 10 min reset if runt isnt killed
   local hate_list;
 end
 
@@ -204,6 +209,17 @@ elseif(e.timer=="OOBcheck") then
 		else
 			eq.set_timer("OOBcheck", 6 * 1000);
 		end
+elseif(e.timer=="depop") then
+		eq.depop(297211); -- hsek
+		eq.depop(297034); -- champ
+		eq.depop_all(297038); -- arena mob
+		eq.depop_all(297036); -- arena mob
+		eq.depop_all(297033); -- arena mob
+		eq.depop_all(297035); -- arena mob
+		eq.depop_all(297037); -- arena mob
+		eq.depop_all(297040); -- arena mob
+		eq.signal(297001,2); --signal champ_event to begin timer to respawn event
+		eq.depop_all(297209); -- the runt
 end
 end
 

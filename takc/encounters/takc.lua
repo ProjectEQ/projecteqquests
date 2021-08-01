@@ -34,7 +34,7 @@ end
 function Qos_Signal(e)
 	if(e.signal == 1) then
 		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
-		e.self:SetSpecialAbility(35, ); -- remove Immune to Damage
+		e.self:SetSpecialAbility(35,0); -- remove Immune to Damage
 	elseif(e.signal == 2) then
 		e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
 	end

@@ -9,7 +9,6 @@ function QOS_Spawn(e)
   extra_loot = false;
   eq.set_next_hp_event(20);
   e.self:SetPseudoRoot(true);
-  e.self:SetSpecialAbilityParam(SpecialAbility.summon, 6000, 100); --summons at 100% health
 end
 
 function QOS_HP(e)
@@ -37,7 +36,7 @@ function Qos_Signal(e)
 		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
 		e.self:SetSpecialAbility(35,0); -- remove Immune to Damage
 	elseif(e.signal == 2) then
-		e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
+		--e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
 	end
 end
 

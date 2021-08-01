@@ -9,6 +9,7 @@ function QOS_Spawn(e)
   extra_loot = false;
   eq.set_next_hp_event(20);
   e.self:SetPseudoRoot(true);
+  e.self:SetSpecialAbilityParam(SpecialAbility.summon, 0, 100); --summons at 100% health
 end
 
 function QOS_HP(e)

@@ -24,27 +24,41 @@ function QOS_HP(e)
     if (entity_list:IsMobSpawnedByNpcTypeID(241058)) then
 	-- ritana must be kept alive until 20% to receive extra loot
       extra_loot = true;
-	eq.zone_emote(13,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");		
+      eq.signal(241058,1); --Ritana: -- Heal Rit to full and add spell and remove immunities
+      eq.zone_emote(13,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");		
     end
 
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then
       -- disable damage to the QOS till the minis are dead
       e.self:ProcessSpecialAbilities(QOS_Inactive); 
-      --e.self:WipeHateList();  
-      --e.self:SetOOCRegen(0);  
+	e.self:ModifyNPCStat("hp_regen", "1"); -- remove combat regen
     end
   end
 end
+
+function Qos_Signal(e)
+	if(e.signal == 1) then
+		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
+	elseif(e.signal == 2) then
+		e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
+	end
+end
+
 
 function Mini_Death(e)
   local entity_list = eq.get_entity_list();
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == false and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
     --QOS = entity_list:GetNPCByNPCTypeID(241052);
-    QOS:ProcessSpecialAbilities(QOS_Active); 
+    QOS:ProcessSpecialAbilities(QOS_Active);
+    eq.signal(241052,1); --signal qos remove immunity
   end
-eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
-eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
-eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
+  eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+  eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
+  eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
+  if (entity_list:IsMobSpawnedByNpcTypeID(241058) == true and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
+		--QOS = entity_list:GetNPCByNPCTypeID(241152);
+		eq.signal(241052,2); --signal qos start summoning at 100% health when the 3 other nameds are dead and ritana is alive
+	end
 end
 
 function UpdateLockout()
@@ -176,6 +190,12 @@ function Trash_Timer(e)
 	e.self:SetSpecialAbility(12, 1);
 		
 	eq.stop_timer("distcheck");
+    elseif (e.timer == "check") then
+		eq.stop_timer("check");
+		local level = e.self:GetLevel();
+			if(level <= 64) then
+			e.self:SetSpecialAbility(14, 0);
+			end
 	end
 end
 
@@ -195,7 +215,20 @@ function Trap1_Combat(e)
 	end
 end
 
+function Charmable_Trash_Spawn(e)
+	eq.set_timer("check", 10 * 1000);
+end
+
+function Ritana_Signal(e)
+	e.self:SetHP(e.self:GetMaxHP());
+	e.self:SetSpecialAbility(20, 0); -- remove Immune to spells
+	e.self:SetSpecialAbility(22, 0); -- remove Immune to non-Bane Melee
+	e.self:AddAISpell(0, 4288, 1, -1, -1, -200); --add spell Curse of Takish-Hiz
+end
+
 function event_encounter_load(e)
+  eq.register_npc_event('takc', Event.signal,          241058, Ritana_Signal);
+  eq.register_npc_event('takc', Event.spawn, 241013, Charmable_Trash_Spawn);
   eq.register_npc_event('takc', Event.timer, 241001, Trash_Timer);
   eq.register_npc_event('takc', Event.combat, 241001, Trash_Combat);
   eq.register_npc_event('takc', Event.timer, 241003, Trash_Timer);
@@ -228,6 +261,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241052, QOS_Death);
   eq.register_npc_event('takc', Event.combat, 241052, Qos_Combat);
+  eq.register_npc_event('takc', Event.combat, 241052, Qos_Signal);
   eq.register_npc_event('takc', Event.death, 241018, Tree_Death);
   eq.register_npc_event('takc', Event.combat,         241046, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);

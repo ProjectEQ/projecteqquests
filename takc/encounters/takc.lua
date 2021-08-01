@@ -35,10 +35,8 @@ function Qos_Signal(e)
 	if(e.signal == 1) then
 		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
 		e.self:SetSpecialAbility(35,0); -- remove Immune to Damage
-		 eq.zone_emote(15,"Signal 1");
 	elseif(e.signal == 2) then
-		--e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
-		eq.zone_emote(15,"Signal 2");
+		e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
 	end
 end
 
@@ -262,7 +260,7 @@ function event_encounter_load(e)
   eq.register_npc_event('takc', Event.death_complete, 241051, Mini_Death);
   eq.register_npc_event('takc', Event.death_complete, 241052, QOS_Death);
   eq.register_npc_event('takc', Event.combat, 241052, Qos_Combat);
-  eq.register_npc_event('takc', Event.combat, 241052, Qos_Signal);
+  eq.register_npc_event('takc', Event.signal, 241052, Qos_Signal);
   eq.register_npc_event('takc', Event.death, 241018, Tree_Death);
   eq.register_npc_event('takc', Event.combat,         241046, Mini_Combat);
   eq.register_npc_event('takc', Event.combat,         241053, Mini_Combat);

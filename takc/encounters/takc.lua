@@ -44,8 +44,8 @@ end
 function Mini_Death(e)
   local entity_list = eq.get_entity_list();
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == false and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
-
-    eq.signal(241052,1); --signal qos remove immunity
+	 --signal qos remove immunity
+    eq.signal(241052,1);
 	
   end
 	
@@ -54,8 +54,8 @@ function Mini_Death(e)
   eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
 	
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == true and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
-
-	eq.signal(241052,2); --signal qos start summoning at 100% health when the 3 other nameds are dead and ritana is alive
+	--signal qos start summoning at 100% health when the 3 other nameds are dead and ritana is alive
+	eq.signal(241052,2); 
 
   end
 end

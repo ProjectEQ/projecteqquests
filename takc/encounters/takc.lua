@@ -1,9 +1,6 @@
 local extra_loot;
-local QOS_Inactive = "1,1^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^21,1^31,1^35,1^42,1";
-local QOS_Active = "1,1^4,1,20,0,25^7,1^13,1^14,1^15,1^17,1^31,1^21,1^42,1";
 local instance_id;
 local raid_list;
-local QOS;
 
 function QOS_Spawn(e)
   instance_id = eq.get_zone_instance_id();
@@ -12,8 +9,6 @@ function QOS_Spawn(e)
   extra_loot = false;
   eq.set_next_hp_event(20);
   e.self:SetPseudoRoot(true);
-
-  QOS = e.self;
 end
 
 function QOS_HP(e)
@@ -30,7 +25,7 @@ function QOS_HP(e)
 
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then
       -- disable damage to the QOS till the minis are dead
-      e.self:ProcessSpecialAbilities(QOS_Inactive); 
+      e.self:SetSpecialAbility(35, 1); -- Immune to Damage
 	e.self:ModifyNPCStat("hp_regen", "1"); -- remove combat regen
     end
   end
@@ -39,6 +34,7 @@ end
 function Qos_Signal(e)
 	if(e.signal == 1) then
 		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
+		e.self:SetSpecialAbility(35, ); -- remove Immune to Damage
 	elseif(e.signal == 2) then
 		e.self:SetSpecialAbilityParam(SpecialAbility.summon, 1, 100); --summons at 100% health
 	end
@@ -48,15 +44,13 @@ end
 function Mini_Death(e)
   local entity_list = eq.get_entity_list();
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == false and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
-    --QOS = entity_list:GetNPCByNPCTypeID(241052);
-    QOS:ProcessSpecialAbilities(QOS_Active);
     eq.signal(241052,1); --signal qos remove immunity
   end
   eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
   eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
   eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == true and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
-		--QOS = entity_list:GetNPCByNPCTypeID(241152);
+
 		eq.signal(241052,2); --signal qos start summoning at 100% health when the 3 other nameds are dead and ritana is alive
 	end
 end

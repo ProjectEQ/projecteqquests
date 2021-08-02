@@ -7,16 +7,20 @@
 --an_Ancient_Stillmoon_Guardian (338414)
 local addsdead = 0;
 local failure = 0;
+local event_started = 0;
 
 function Hail_Osashi(e)
 if(e.message:findi("hail")) then
 		e.self:Say("You have come at the goblins' behest? Very well. Perseverance is important to all, regardless of what you seek, be it wealth, knowledge, or power. This trial will show me just how committed you are to obtain your desires. When you being this trial, several goblins will wait near the gong and attempt to ring it after one minute. Do not let this happen and you shall prove yourself in this trial. Are you [ready] to begin?");
 elseif(e.message:findi("ready")) then
-		eq.spawn2(338412, 0, 0, -23, 50, -30, 128);
-		eq.spawn2(338415, 0, 0, -9, 32, -30, 2);
-    		eq.spawn2(338416, 0, 0, 8, 50, -30, 385);
-    		eq.spawn2(338417, 0, 0, -8, 67, -30, 257);
-    		eq.depop();
+		if (event_started == 0) then
+			event_started = 1;
+			eq.unique_spawn(338412, 0, 0, -23, 50, -30, 128);
+			eq.unique_spawn(338415, 0, 0, -9, 32, -30, 2);
+    			eq.unique_spawn(338416, 0, 0, 8, 50, -30, 385);
+    			eq.unique_spawn(338417, 0, 0, -8, 67, -30, 257);
+    			eq.depop();
+		end
 	end
 end
 

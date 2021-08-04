@@ -1,6 +1,5 @@
 local TM_minimum_players = 18; --changed to 6 much later (2017)
 
-if e.other:GetRaidMemberCountInZone() >= TM_minimum_players then
 
 function event_say(e)
 	if(e.message:findi("hail")) then

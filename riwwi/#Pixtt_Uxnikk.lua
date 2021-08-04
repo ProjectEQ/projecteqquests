@@ -15,4 +15,4 @@ function event_say(e)
 	end
 end
 
---need to add 3 group raid minimum check to spawn her, also random emotes
+--need to add random emotes

@@ -34,7 +34,7 @@ function event_say(e)
 				e.self:Say("Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu`Ta.");
 			end
 		else
-			e.other:Message(13, "The Cynosure's magic prevents me from allowing passage into Inku'ta. We shall speak more after his demise.");
+			e.other:Message(13, "The Cynosure's magic prevents me from allowing passage into Inktu'ta. We shall speak more after his demise.");
 		end
 	end
 end

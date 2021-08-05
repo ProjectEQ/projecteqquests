@@ -28,7 +28,7 @@ end
 
 function KeleCombat(e)
 	if (e.joined) then
-		eq.set_timer("banish_top", 45000)
+		eq.set_timer("banish_top", 35000)
 	else
 		eq.stop_timer("banish_top")
 	end

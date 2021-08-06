@@ -5,7 +5,7 @@ function event_click_door(e)
 	-- if the door to the stonemites is clicked aggro the monoliths guarding it. 
 	if (door_id == 41) then
 		-- get all the npcs 
-		e.self:Message(1,"When you click the stone slab it slides away.");
+		e.self:Message(13,"When you click the stone slab it slides away.");
 		local npc_list = eq.get_entity_list():GetNPCList();
 		-- make sure we actually have a list, would on be nil if a GM used #depopzone
 		if (npc_list ~= nil) then
@@ -14,6 +14,7 @@ function event_click_door(e)
 				-- check for the npcid of a_clay_monolith (296069)
 				if (npc:GetNPCTypeID() == 296069 and not e.self:GetGM()) then
 					-- set aggro on person who clicked
+					e.self:Message(13,"The door mechanism awakens the guardians standing nearby! They stumble forth to attack, dried flakes of clay raining from their ancient bodies.");
 					npc:AddToHateList(e.self,1);
 				end
 			end

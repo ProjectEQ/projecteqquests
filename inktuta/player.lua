@@ -15,6 +15,8 @@ function event_click_door(e)
 				if (npc:GetNPCTypeID() == 296069 and not e.self:GetGM()) then
 					-- set aggro on person who clicked
 					e.self:Message(13,"The door mechanism awakens the guardians standing nearby! They stumble forth to attack, dried flakes of clay raining from their ancient bodies.");
+					npc:SetSpecialAbility(24, 0);
+					npc:SetSpecialAbility(35, 0);
 					npc:AddToHateList(e.self,1);
 				end
 			end

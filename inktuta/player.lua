@@ -43,5 +43,12 @@ function event_click_door(e)
 			e.self:Message(13,"The stone is scalding hot!");		
 			e.self:CastSpell(2315,e.self:GetID()); --searing heat 2315
 		end
+	elseif (door_id == 20) then
+		-- mites door leading to stairs down, starts out locked before event is won		
+		if (entity_list:FindDoor(20):GetLockPick() == -1) then
+			e.self:Message(13,"This way is closed"); --need live emote		
+		else
+			e.self:Message(13,"When you click the stone slab it slides away.");		
+		end
 	end
 end

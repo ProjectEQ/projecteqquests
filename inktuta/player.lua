@@ -5,6 +5,7 @@ function event_click_door(e)
 	-- if the door to the stonemites is clicked aggro the monoliths guarding it. 
 	if (door_id == 41) then
 		-- get all the npcs 
+		e.self:Message(1,"When you click the stone slab it slides away.");
 		local npc_list = eq.get_entity_list():GetNPCList();
 		-- make sure we actually have a list, would on be nil if a GM used #depopzone
 		if (npc_list ~= nil) then

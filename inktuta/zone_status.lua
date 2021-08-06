@@ -59,7 +59,7 @@ function event_signal(e)
 	--stonemite event
 	if (e.signal == 296033 or e.signal == 296030 or e.signal == 296035 or e.signal == 296036) then
 		if(confused_say == 0 and rambling_say == 0 and incoherent_say == 0 and irrational_say == 0) then
-			eq.set_timer("stonemite",3000);
+			eq.set_timer("stonemite",6000); --6 sec timer to get all the phrases said
 		end
 		if (e.signal == 296033) then --confused
 			confused_say = 1;

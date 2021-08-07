@@ -6,9 +6,9 @@ local spell_settwo = false;
 
 function event_spawn(e)
    local rand = math.random(1,2);
-   if (rand == 1)
+   if (rand == 1) then
       spell_setone = true;
-   elseif (rand == 2)
+   elseif (rand == 2) then
       spell_settwo = true;
    end
 end

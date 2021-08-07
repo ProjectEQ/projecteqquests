@@ -1,3 +1,4 @@
+--Ikkinz Raid #1: Chambers of Righteousness  
 function event_spawn(e)
 	eq.set_next_hp_event(50);
 end

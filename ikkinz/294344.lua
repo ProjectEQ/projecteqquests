@@ -1,4 +1,5 @@
---spawn group 98734-98741 crumbling monument adds
+--Ikkinz Raid #1: Chambers of Righteousness  
+--spawn group 98734-98741 Crumbling_Monument (294344) adds
 
 function event_signal(e)
 if (e.signal == 1) then

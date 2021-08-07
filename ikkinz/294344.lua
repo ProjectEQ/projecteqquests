@@ -109,5 +109,5 @@ function event_timer(e)
 		e.self:WipeHateList();
 		eq.stop_timer("deactivate8");
 		end
-    
+    	end
 end

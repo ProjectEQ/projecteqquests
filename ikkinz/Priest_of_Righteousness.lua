@@ -30,7 +30,7 @@ end
 function event_timer(e)
 if(e.timer=="OOBcheck") then
 eq.stop_timer("OOBcheck");
-	if (e.self:GetX() < 35 or e.self:GetX() > 120 or e.self:GetY() > -100 or e.self:GetY() < -310) then --($x > 120 || $x < 35 || $y > -100 || $y < -310) {
+	if (e.self:GetX() < -35 or e.self:GetX() > 120 or e.self:GetY() > -100 or e.self:GetY() < -310) then --($x > 120 || $x < 35 || $y > -100 || $y < -310) {
 		e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:GotoBind();
 		e.self:WipeHateList();

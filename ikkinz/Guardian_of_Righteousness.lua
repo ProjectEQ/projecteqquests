@@ -1,3 +1,5 @@
+--Ikkinz Raid #1: Chambers of Righteousness  
+
 function event_combat(e)
 	if(e.joined) then
 		eq.set_timer("random", 5 * 1000);

@@ -1,3 +1,4 @@
+--Ikkinz Raid #1: Chambers of Righteousness  
 function event_combat(e)
 if (e.joined == true) then
 eq.set_timer("OOBcheck", 6 * 1000);

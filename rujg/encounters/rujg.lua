@@ -1,5 +1,6 @@
 local extra_loot = false;
 local researchers = 0;
+local swarm_number = 0;
 
 -- Steelslave Researcher (not from final encounter)
 function Researcher_Death(e)
@@ -14,17 +15,17 @@ function Researcher_Death(e)
     eq.spawn2(260062, 0, 0, 1419, -117, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
     eq.spawn2(260062, 0, 0, 1398, -104, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
     eq.spawn2(260062, 0, 0, 1354, -17, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1359, -26, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1367, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1363, -27, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1372, -10, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1377, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1375, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1383, -24, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1393, -12, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1403, -7, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1381, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
-    eq.spawn2(260062, 0, 0, 1375, -2, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1359, -26, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1367, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1363, -27, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1372, -10, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1377, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1375, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1383, -24, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1393, -12, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1403, -7, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1381, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1375, -2, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
 
     -- Flawless Experimental Battlelord
     eq.spawn2(260069, 0, 0, 1538, -61, 146, 376); -- NPC: Flawless_Experimental_Battlelord
@@ -126,10 +127,12 @@ function Battlelord_Combat(e)
     eq.set_timer("swarm", 120 * 1000);
     eq.set_timer("throw", 60 * 1000);
     eq.set_timer("aggrolink", 3 * 1000);
+    eq.stop_timer("resetadds");
   else
     eq.stop_timer("swarm");
     eq.stop_timer("throw");
     eq.stop_timer("aggrolink");
+		eq.set_timer("resetadds", 30 * 1000);
   end
 end
 
@@ -139,12 +142,21 @@ function Battlelord_Timer(e)
     eq.modify_npc_stat("min_hit", "1500");
     eq.modify_npc_stat("max_hit", "5000");
     e.self:ChangeSize(23);
-    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
-    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
-    eq.spawn2(260071, 0, 0, 1389, -7, 143, 262):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
-    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
-    eq.spawn2(260071, 0, 0, 1375, -99, 144, 456):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Flawed_Mutation_
+    if (swarm_number == 0) then
+				swarm_number = swarm_number +1;
+				eq.signal(260062,1); --signal first set of flawed mutation to wake up
+				--add flawed mutations to hate list
+			elseif (swarm_number == 1) then
+				swarm_number = swarm_number +1;
+				eq.signal(260091,1); --signal second set of flawed mutation to wake up
+				--add flawed mutations to hate list
+			elseif (swarm_number == 2) then
+				swarm_number = swarm_number +1;
+				eq.signal(260092,1); --signal second set of flawed mutation to wake up
+				--add flawed mutations to hate list
+			end
     eq.set_timer("weaken", 6 * 1000);
+		eq.set_timer("linkmutation", 1 * 1000);
   elseif (e.timer == "weaken") then
     e.self:Emote("calms down slightly");
     e.self:ChangeSize(22);
@@ -222,6 +234,39 @@ function Battlelord_Timer(e)
 			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Steelslave_Researcher_ to aggro list if alive
 		end
 		end
+	elseif (e.timer == "resetadds") then
+		eq.stop_timer("resetadds");
+		
+		eq.depop_all(260091); -- NPC: Flawed_Mutation
+		eq.depop_all(260092); -- NPC: Flawed_Mutation
+		eq.depop_all(260062); -- NPC: Flawed_Mutation
+		
+		eq.spawn2(260062, 0, 0, 1382, -128, 140, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1406, -119, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1419, -117, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1398, -104, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260062, 0, 0, 1354, -17, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1359, -26, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1367, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1363, -27, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1372, -10, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260091, 0, 0, 1377, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1375, -31, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1383, -24, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1393, -12, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1403, -7, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1381, -18, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+    eq.spawn2(260092, 0, 0, 1375, -2, 145, 0):SetAppearance(3); -- NPC: Flawed_Mutation
+		
+		swarm_number = 0;
+	elseif (e.timer == "linkmutation") then
+		eq.stop_timer("linkmutation");
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 260062 or npc:GetNPCTypeID() == 260091 or npc:GetNPCTypeID() == 260092)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Flawed Mutations to aggro list if alive
+		end
+		end
   end
 end
 
@@ -234,7 +279,8 @@ function Battlelord_Death(e)
 
   -- Flawed Mutations
   eq.depop_all(260062);
-  eq.depop_all(260071);
+	eq.depop_all(260092);
+	eq.depop_all(260091);
   eq.zone_emote(15,"You have put a stop to an imminent danger to Norrath. The orc responsible for the creation of these gargantuan beasts has fled to continue his plots of orcish superiority. You have helped the Wayfarer's Brotherhood to eliminate a threat the the world was not yet ready for.");
   eq.zone_emote(15,"Your victory has shattered the shroud of magic cloaking the dungeon's treasure.");
 
@@ -406,8 +452,18 @@ function Assistant_Signal(e)
 	end
 end
 
+function Mutation_Signal(e)
+	e.self:SetSpecialAbility(24, 0);
+	e.self:SetSpecialAbility(35, 0);
+	
+	e.self:SetAppearance(0);
+end
 
 function event_encounter_load(e)
+	eq.register_npc_event('rujg', Event.signal,         260062, Mutation_Signal);
+	eq.register_npc_event('rujg', Event.signal,         260091, Mutation_Signal);
+	eq.register_npc_event('rujg', Event.signal,         260092, Mutation_Signal);
+	
   eq.register_npc_event('rujg', Event.signal,         260019, Assistant_Signal);
   eq.register_npc_event('rujg', Event.combat,         260090, Trap3_Combat);
   eq.register_npc_event('rujg', Event.combat,         260089, Trap2_Combat);

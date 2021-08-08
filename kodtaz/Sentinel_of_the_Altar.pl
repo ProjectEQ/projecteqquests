@@ -12,6 +12,7 @@ sub EVENT_ITEM {
 				$Instance = quest::CreateInstance("ikkinz", 6, 21600);
 				quest::AssignRaidToInstance($Instance);	
 				quest::say("Instance added.");
+				$client->MarkCompassLoc(1860, 660, -447);
 			  } else {
 				$client->Message(13, "You are already in an instance!");
 			  }

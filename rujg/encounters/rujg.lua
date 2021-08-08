@@ -166,10 +166,55 @@ function Battlelord_Timer(e)
     eq.modify_npc_stat("max_hit", "4000");
     eq.stop_timer("weakenthree");
   elseif (e.timer == "throw") then
-	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
-	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
-	e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
-	e.self:CastedSpellFinished(4185, e.self:GetHateTop()); -- Spell: Throw
+	hate_list = e.self:CountHateList();
+    		if (hate_list ~= nil and tonumber(hate_list) == 1) then
+			e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+		elseif (hate_list ~= nil and tonumber(hate_list) == 2) then
+			e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			local target = e.self:GetHateTop()
+      			if target.valid then
+        			eq.get_entity_list():RemoveFromHateLists(target)
+			end
+		elseif (hate_list ~= nil and tonumber(hate_list) == 3) then
+			e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			local target = e.self:GetHateTop()
+      			if target.valid then
+        			eq.get_entity_list():RemoveFromHateLists(target)
+			end
+		elseif (hate_list ~= nil and tonumber(hate_list) == 4) then
+			e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			local target = e.self:GetHateTop()
+      			if target.valid then
+        			eq.get_entity_list():RemoveFromHateLists(target)
+			end
+		elseif (hate_list ~= nil and tonumber(hate_list) == 5) then
+			e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			local target = e.self:GetHateTop()
+      			if target.valid then
+        			eq.get_entity_list():RemoveFromHateLists(target)
+			end
+		elseif (hate_list ~= nil and tonumber(hate_list) >= 6) then
+			e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			local target = e.self:GetHateTop()
+      			if target.valid then
+        			eq.get_entity_list():RemoveFromHateLists(target)
+			end
+		end
   elseif (e.timer == "aggrolink") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do

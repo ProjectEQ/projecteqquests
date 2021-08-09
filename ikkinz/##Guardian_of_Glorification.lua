@@ -18,8 +18,10 @@ end
 function event_combat(e)
 	if(e.joined) then
 		eq.set_timer("random", 5 * 1000);
+		eq.set_timer("OOBcheck", 3 * 1000);
 	else
 		eq.stop_timer("random");
+		eq.stop_timer("OOBcheck");
 	end
 end
 
@@ -35,5 +37,14 @@ function event_timer(e)
 			e.self:Emote("lets loose a bolt of energy toward his enemy!");
 				e.self:CastedSpellFinished(1046, e.self:GetHateRandom());	-- Spell: Manabolt
 		end
+	elseif(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() < 845) then
+				e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+				e.self:GotoBind();
+				e.self:WipeHateList();
+			else
+				eq.set_timer("OOBcheck", 3 * 1000);
+			end
 	end
 end

@@ -1,3 +1,4 @@
+--Ikkinz Raid #2: Chambers of Glorification
 --Glorified_Bolsterer (294475)
 --(house right)(damage)
 function event_signal(e)

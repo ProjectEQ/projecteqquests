@@ -1,3 +1,4 @@
+--Ikkinz Raid #2: Chambers of Glorification
 function event_spawn(e)
 	eq.set_next_hp_event(50);
 end

@@ -111,7 +111,7 @@ sub EVENT_SAY {
 				$Instance = quest::CreateInstance("ikkinz",4,21600);
 				quest::AssignRaidToInstance($Instance);   
 				quest::say("Instance added.");
-				$client->MarkCompassLoc(2667, 723, -396);
+				$client->MarkCompassLoc(2656, 442, -396);
 				quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
 			  }
 			  else {

@@ -5,17 +5,22 @@ local reduce_dmg = 0;
 local reduce_hp = 0;
 
 function event_spawn(e)
-	eq.set_next_hp_event(55);
+	eq.set_next_hp_event(90);
 	reduce_regen = 0;
 	reduce_dmg = 0;
 	reduce_hp = 0;
 end
 
 function event_hp(e)
-	if(e.hp_event == 55) then
+	if(e.hp_event == 90) then
+		eq.signal(294474,1); --Glorified_Bolsterer remove immunity
+		eq.signal(294475,1); --Glorified_Bolsterer remove immunity
+		eq.signal(294478,1); --Glorified_Bolsterer remove immunity
+		eq.set_next_hp_event(50);
+	elseif(e.hp_event == 50) then
 		eq.zone_emote(0, "Guardian of Glorification splits into two smaller stone workers!");
-		eq.spawn2(294583,0,0,1038,-484,-68,384); -- NPC: ##Guardian_of_Glorification
-		eq.spawn2(294583,0,0,1039,-431,-68,384); -- NPC: ##Guardian_of_Glorification
+		eq.spawn2(294583,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: ##Guardian_of_Glorification
+		eq.spawn2(294583,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: ##Guardian_of_Glorification
 		eq.depop();
 	end
 end
@@ -34,12 +39,12 @@ function event_signal(e)
 	elseif (e.signal == 3) then
 		 if (reduce_dmg == 0) then
 			reduce_dmg = reduce_dmg + 1;
-			e.self:ModifyNPCStat("max_hit", "2912")
-  			e.self:ModifyNPCStat("min_hit", "1126")
+			e.self:ModifyNPCStat("max_hit", "2912");
+  			e.self:ModifyNPCStat("min_hit", "1126");
 		elseif (reduce_dmg == 1) then
 			reduce_dmg = reduce_dmg + 1;
-			e.self:ModifyNPCStat("max_hit", "2538")
-   			e.self:ModifyNPCStat("min_hit", "980")
+			e.self:ModifyNPCStat("max_hit", "2538");
+   			e.self:ModifyNPCStat("min_hit", "980");
 		end
 	end
 end

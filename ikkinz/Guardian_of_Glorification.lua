@@ -12,9 +12,6 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 60227})) then
 		eq.zone_emote(0,"Guardian of Glorification comes alive with the power of Kruxilitek!");
 		eq.unique_spawn(294582, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); --##Guardian_of_Glorification
-		eq.signal(294474,1); --Glorified_Bolsterer remove immunity
-		eq.signal(294475,1); --Glorified_Bolsterer remove immunity
-		eq.signal(294478,1); --Glorified_Bolsterer remove immunity
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -2,15 +2,15 @@
 --2nd form of split mobs that will split into their final form
 
 function event_spawn(e)
-	eq.set_next_hp_event(55);
+	eq.set_next_hp_event(50);
 
 end
 
 function event_hp(e)
-	if(e.hp_event == 55) then
+	if(e.hp_event == 50) then
 		eq.zone_emote(0, "Guardian of Glorification splits into two smaller stone workers!");
-		eq.spawn2(294584,0,0,1038,-484,-68,384); -- NPC: #Guardian_of_Glorification_
-		eq.spawn2(294584,0,0,1039,-431,-68,384); -- NPC: #Guardian_of_Glorification_
+		eq.spawn2(294584,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Guardian_of_Glorification_
+		eq.spawn2(294584,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Guardian_of_Glorification_
 		eq.depop();
 	end
 end

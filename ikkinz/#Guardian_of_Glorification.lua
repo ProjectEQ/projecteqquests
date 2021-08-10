@@ -68,6 +68,8 @@ function event_timer(e)
 		elseif (rand < 85) and (rand >= 70) then -- 15 % to cast manabolt
 			e.self:Emote("lets loose a bolt of energy toward his enemy!");
 				e.self:CastedSpellFinished(1046, e.self:GetHateRandom());	-- Spell: Manabolt
+		elseif (rand < 70) and (rand >= 55) then -- 15 % to cast Fling
+			-- compare distance to the 2 npcs to determine who casts Fling
 		end
 	end
 end

@@ -69,15 +69,15 @@ function event_timer(e)
 			-- loop through the list entries
 			for npc in npc_list.entries do
 			
-				if (npc:GetNPCTypeID() == 294474) then
+				if (npc:GetNPCTypeID() == 294478) then
 					-- if any Glorified_Bolsterer is alive, add hp
 					eq.modify_npc_stat("max_hp", tostring(e.self:GetMaxHP() + 70000)); --increase max hp by 70k per npc (2 total)
 				end
-				if (npc:GetNPCTypeID() == 294475) then
+				if (npc:GetNPCTypeID() == 294474) then
 					-- if any Glorified_Bolsterer is alive, add regen
 					eq.modify_npc_stat("hp_regen", tostring(hp_regen + 1100)); --increase hp regen by 1100 per npc (2 total)
 				end
-				if (npc:GetNPCTypeID() == 294478) then
+				if (npc:GetNPCTypeID() == 294475) then
 					-- if any Glorified_Bolsterer is alive, add min and max dmg
 					eq.modify_npc_stat("min_hit", tostring(e.self:GetMinDMG() + 85)); --increase min dmg by 70 per npc (2 total)
 					eq.modify_npc_stat("max_hit", tostring(e.self:GetMaxDMG() + 283)); --increase max dmg by 241 per npc (2 total)
@@ -89,7 +89,7 @@ end
 
 function event_signal(e)
 	if (e.signal == 1) then
- 		eq.modify_npc_stat("hp_regen", tostring(hp_regen - 1100)); --decrease max hp by 1100 per npc signal(2 total)
+ 		eq.modify_npc_stat("hp_regen", tostring(hp_regen - 1100)); --decrease regen by 1100 per npc signal(2 total)
 	elseif (e.signal == 2) then
 		eq.modify_npc_stat("max_hp", tostring(e.self:GetMaxHP() - 70000)); --reduce max hp by 70k per npc signal (2 total)
 	elseif (e.signal == 3) then

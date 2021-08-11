@@ -79,8 +79,8 @@ function event_timer(e)
 				end
 				if (npc:GetNPCTypeID() == 294478) then
 					-- if any Glorified_Bolsterer is alive, add min and max dmg
-					eq.modify_npc_stat("min_hit", tostring(e.self:GetMinDMG() + 70)); --increase min dmg by 70 per npc (2 total)
-					eq.modify_npc_stat("max_hit", tostring(e.self:GetMaxDMG() + 241)); --increase max dmg by 241 per npc (2 total)
+					eq.modify_npc_stat("min_hit", tostring(e.self:GetMinDMG() + 85)); --increase min dmg by 70 per npc (2 total)
+					eq.modify_npc_stat("max_hit", tostring(e.self:GetMaxDMG() + 283)); --increase max dmg by 241 per npc (2 total)
 				end
 			end
 		end

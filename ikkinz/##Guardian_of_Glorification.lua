@@ -75,7 +75,7 @@ function event_timer(e)
 				end
 				if (npc:GetNPCTypeID() == 294475) then
 					-- if any Glorified_Bolsterer is alive, add regen
-					eq.modify_npc_stat("hp_regen", tostring(hp_regen + 1100)); --increase hp regen by 1100 per npc (2 total)
+					eq.modify_npc_stat("hp_regen", tostring(hp_regen + 5100)); --increase hp regen by 1100 per npc (2 total)
 				end
 				if (npc:GetNPCTypeID() == 294478) then
 					-- if any Glorified_Bolsterer is alive, add min and max dmg

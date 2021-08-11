@@ -69,7 +69,19 @@ function event_timer(e)
 			e.self:Emote("lets loose a bolt of energy toward his enemy!");
 				e.self:CastedSpellFinished(1046, e.self:GetHateRandom());	-- Spell: Manabolt
 		elseif (rand < 70) and (rand >= 55) then -- 15 % to cast Fling
-			-- compare distance to the 2 npcs to determine who casts Fling
+			local npc1 = eq.get_entity_list():GetMobByNpcTypeID(294466));
+			local npc2 = eq.get_entity_list():GetMobByNpcTypeID(294469));
+
+				if (npc1.valid and npc2.valid) then
+
+					if ( npc1:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ()) < npc2:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ())) then
+						eq.signal(294466,1);
+						e.self:Emote("signal 66!");
+					else
+						eq.signal(294469,1);
+						e.self:Emote("signal 69!");
+					end
+				end
 		end
 	end
 end

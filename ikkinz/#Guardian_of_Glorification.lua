@@ -76,10 +76,10 @@ function event_timer(e)
 
 					if ( npc1:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ()) < npc2:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ())) then
 						eq.signal(294466,1);
-						e.self:Emote("signal 66!");
+					
 					else
 						eq.signal(294469,1);
-						e.self:Emote("signal 69!");
+					
 					end
 				end
 		end

@@ -3,7 +3,7 @@
 
 function event_spawn(e)
 	eq.set_next_hp_event(50);
-
+	eq.set_timer("checknpc", 1 * 1000);
 end
 
 function event_hp(e)
@@ -60,5 +60,28 @@ function event_timer(e)
 			else
 				eq.set_timer("OOBcheck", 3 * 1000);
 			end
+	elseif(e.timer=="checknpc") then
+		eq.stop_timer("checknpc");
+		local npc_list = eq.get_entity_list():GetNPCList();
+
+		if (npc_list ~= nil) then
+			-- loop through the list entries
+			for npc in npc_list.entries do
+			
+				if (npc:GetNPCTypeID() == 294474) then
+					-- if any Glorified_Bolsterer is alive, add hp
+					eq.modify_npc_stat("max_hp", tostring(e.self:GetMaxHP() + 70000)); --increase max hp by 70k per npc (2 total)
+				end
+				if (npc:GetNPCTypeID() == 294475) then
+					-- if any Glorified_Bolsterer is alive, add regen
+					eq.modify_npc_stat("hp_regen", tostring(e.self:GetHPRegen() + 1100)); --increase max hp by 1100 per npc (2 total)
+				end
+				if (npc:GetNPCTypeID() == 294478) then
+					-- if any Glorified_Bolsterer is alive, add min and max dmg
+					eq.modify_npc_stat("min_hit", tostring(e.self:GetMinDMG() + 70)); --increase min dmg by 70 per npc (2 total)
+					eq.modify_npc_stat("max_hit", tostring(e.self:GetMaxDMG() + 241)); --increase max dmg by 241 per npc (2 total)
+				end
+			end
+		end
 	end
 end

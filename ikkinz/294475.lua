@@ -9,4 +9,6 @@ end
 
 function event_death_complete(e)
 eq.signal(294582,3); -- #Guardian_of_Glorification (294582) signal to reduce dmg
+eq.signal(294583,3); -- ##Guardian_of_Glorification (294583) signal to reduce dmg
+eq.signal(294584,3); -- #Guardian_of_Glorification_ (294584) signal to reduce dmg
 end

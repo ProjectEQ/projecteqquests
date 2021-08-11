@@ -69,8 +69,8 @@ function event_timer(e)
 			e.self:Emote("lets loose a bolt of energy toward his enemy!");
 				e.self:CastedSpellFinished(1046, e.self:GetHateRandom());	-- Spell: Manabolt
 		elseif (rand < 70) and (rand >= 55) then -- 15 % to cast Fling
-			local npc1 = eq.get_entity_list():GetMobByNpcTypeID(294466));
-			local npc2 = eq.get_entity_list():GetMobByNpcTypeID(294469));
+			local npc1 = eq.get_entity_list():GetMobByNpcTypeID(294466);
+			local npc2 = eq.get_entity_list():GetMobByNpcTypeID(294469);
 
 				if (npc1.valid and npc2.valid) then
 

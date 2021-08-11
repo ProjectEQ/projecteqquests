@@ -1,5 +1,6 @@
 --Ikkinz Raid #2: Chambers of Glorification
 --2nd form of split mobs that will split into their final form
+local hp_regen = 15;
 
 function event_spawn(e)
 	eq.set_next_hp_event(50);
@@ -74,7 +75,7 @@ function event_timer(e)
 				end
 				if (npc:GetNPCTypeID() == 294475) then
 					-- if any Glorified_Bolsterer is alive, add regen
-					eq.modify_npc_stat("hp_regen", tostring(e.self:GetHPRegen() + 1100)); --increase regen by 1100 per npc (2 total)
+					eq.modify_npc_stat("hp_regen", tostring(hp_regen + 1100)); --increase hp regen by 1100 per npc (2 total)
 				end
 				if (npc:GetNPCTypeID() == 294478) then
 					-- if any Glorified_Bolsterer is alive, add min and max dmg

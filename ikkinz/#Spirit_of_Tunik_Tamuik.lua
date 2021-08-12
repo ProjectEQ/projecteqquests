@@ -1,5 +1,5 @@
 -- Ikkinz Raid #1: Chambers of Righteousness   
--- more parse data needed for what spells he chooses to use, is it 3 each time? I got 3 on my parse run
+-- more parse data needed for what spells he chooses to use, is it 3 each time? I got 3 on my parse run (confirmed again on 2nd run)
 -- he should change into the race of whomever is on top aggro
 local spell_setone = false;
 local spell_settwo = false;
@@ -14,6 +14,7 @@ function event_spawn(e)
 end
      
 function event_death_complete(e)
+   -- he should only reward as many artifacts as there are people in the zone, not dz, not raid. Only the # of PCs in the zone at time of death
    eq.spawn2(294579,0,0,-126,-919,-3,508); -- NPC: a_pile_of_bones
    eq.spawn2(294579,0,0,-124,-855,-3,260); -- NPC: a_pile_of_bones
    eq.spawn2(294579,0,0,-187,-853,-3,254); -- NPC: a_pile_of_bones

@@ -140,19 +140,47 @@ function KeeperDeath(e)
 	eq.debug("Altar Adherent Alive: " .. num_adhere);
 end
 
+
+
 function AssailSpawn(e)
-	eq.set_timer("depop",30*60*1000);
+	eq.set_timer("deactivate", 15 * 1000);
 end
 
 function AssailTimer(e)
-	if e.timer=="depop" then
-		eq.zone_emote(0,"The assailant runs out of energy and crumbles to the ground.");
+	if (e.timer == "deactivate") then
+    		e.self:SetSpecialAbility(24, 1); --turn on immunity
+    		e.self:SetSpecialAbility(35, 1); --turn turn on immunity
+		e.self:WipeHateList();
+		eq.stop_timer("deactivate");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The assailant runs out of energy and crumbles to the ground.");
+		e.self:SetAppearance(3);
+		eq.set_timer("depop", 5 * 1000); -- guessing 5 sec until depop at this point
+	elseif (e.timer == "depop") then
 		eq.depop();
+	elseif(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetY() < -70) then
+				e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+				e.self:GotoBind();
+				e.self:WipeHateList();
+			else
+				eq.set_timer("OOBcheck", 3 * 1000);
+			end
+	end
+end
+
+function AssailCombat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 3 * 1000);
+		
+	else
+		eq.stop_timer("OOBcheck");
 	end
 end
 
 function event_encounter_load(e)
 	inst_id = eq.get_zone_instance_id()
+	eq.register_npc_event("keeper", Event.combat, 294622, AssailCombat)
 	eq.register_npc_event("keeper", Event.spawn, 294622, AssailSpawn)
 	eq.register_npc_event("keeper", Event.timer, 294622, AssailTimer)	
 	eq.register_npc_event("keeper", Event.timer, 294620, KeeperTimer)

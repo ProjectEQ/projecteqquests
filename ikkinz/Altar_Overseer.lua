@@ -14,7 +14,7 @@ end
 function event_timer(e)
 if (e.timer == "random") then
 local rand = math.random(1,100);
-		if (rand >= 85) then -- 15 % to cast throw
+		if (rand >= 70) then -- 30 % to cast throw
 		e.self:Emote("motions toward three attackers and throws them wildly around!");
 			hate_list = e.self:CountHateList();
     			if (hate_list ~= nil and tonumber(hate_list) == 1) then
@@ -28,7 +28,7 @@ local rand = math.random(1,100);
 				e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
 				e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
 			end
-		elseif (rand > 55) and (rand < 85) then -- 30 % to wake an add
+		elseif (rand > 40) and (rand < 70) then -- 30 % to wake an add
 		e.self:Emote("motions for one of the altar monuments to come to its aid.");
 			local rand = math.random(1,8);
 				if (rand == 1) then

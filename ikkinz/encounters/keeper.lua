@@ -66,10 +66,10 @@ function KeeperTimer(e)
 	elseif e.timer=="bury" then
 		e.self:Emote("crushes an enemy to the ground in an attempt to bury them!");
 		eq.set_timer("bury", math.random(10,40)  * 1000);
-		e.self:CastSpell(5001, e.self:GetTarget():GetID()); -- Spell: Bury
+		e.self:CastedSpellFinished(5001, e.self:GetHateRandom()); -- Spell: Bury
 	elseif e.timer=="shrap" then		
-		eq.set_timer("bury", 30*1000);
-		e.self:CastSpell(4188, e.self:GetHateRandom():GetID()); -- Spell: Earthen Shrapnel	
+		eq.set_timer("shrap", 30*1000);
+		e.self:CastedSpellFinished(4188, e.self:GetHateRandom()); --  Spell: Earthen Shrapnel
 	elseif e.timer=="throw" then
 		eq.set_timer("throw", 40*1000);
 		e.self:Emote("casts its eye upon several enemies and tosses them aggressively away!");
@@ -117,7 +117,7 @@ function KeeperCombat(e)
 		eq.stop_timer("bury");
 		eq.stop_timer("adhere");
 		eq.stop_timer("throw");
-		eq.set_timer("reset",60*1000);
+		eq.set_timer("reset",180*1000);
 	end
 end
 

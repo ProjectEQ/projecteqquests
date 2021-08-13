@@ -83,6 +83,7 @@ function KeeperCombat(e)
 		eq.stop_timer("shrap");
 		eq.stop_timer("bury");
 		eq.stop_timer("adhere");
+		eq.stop_timer("throw");
 		eq.set_timer("reset",60*1000);
 	end
 end

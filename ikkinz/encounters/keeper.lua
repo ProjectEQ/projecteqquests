@@ -22,7 +22,7 @@ if(e.hp_event == 50) then
     eq.set_timer("aerampoff", 5 * 1000);
     eq.set_next_inc_hp_event(52); --to reset on event failure
 	eq.set_next_hp_event(10);
-elseif(e.hp_event == 10)
+elseif(e.hp_event == 10) then
     e.self:SetSpecialAbility(4, 1); --turn aoe ramp on
     eq.zone_emote(13,"Keeper of the Altar is infuriated!");
     eq.set_timer("aerampoff", 5 * 1000);
@@ -156,6 +156,8 @@ function event_encounter_load(e)
 	eq.register_npc_event("keeper", Event.spawn, 294622, AssailSpawn)
 	eq.register_npc_event("keeper", Event.timer, 294622, AssailTimer)	
 	eq.register_npc_event("keeper", Event.timer, 294620, KeeperTimer)
-	eq.register_npc_event("keeper", Event.combat, 294620, KeeperCombat)	
+	eq.register_npc_event("keeper", Event.combat, 294620, KeeperCombat)
+	eq.register_npc_event("keeper", Event.spawn, 294620, KeeperSpawn)
+	eq.register_npc_event("keeper", Event.hp, 294620, KeeperHp)
 	eq.register_npc_event("keeper", Event.death_complete, 294620, KeeperDeath)
 end

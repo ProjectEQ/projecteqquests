@@ -11,6 +11,26 @@ Altar_Assailant (294622)
 
 local num_adhere=0;
 
+function KeeperSpawn(e)
+	eq.set_next_hp_event(50);
+end
+
+function KeeperHp(e)
+if(e.hp_event == 50) then
+    e.self:SetSpecialAbility(4, 1); --turn aoe ramp on
+    eq.zone_emote(13,"Keeper of the Altar is infuriated!");
+    eq.set_timer("aerampoff", 5 * 1000);
+    eq.set_next_inc_hp_event(52); --to reset on event failure
+	eq.set_next_hp_event(10);
+elseif(e.hp_event == 10)
+    e.self:SetSpecialAbility(4, 1); --turn aoe ramp on
+    eq.zone_emote(13,"Keeper of the Altar is infuriated!");
+    eq.set_timer("aerampoff", 5 * 1000);
+elseif (e.inc_hp_event == 52) then
+	eq.set_next_hp_event(50);
+end
+end
+		
 function KeeperTimer(e)
 	if e.timer=="assail" then
 		e.self:Emote("quakes violently as Adhere assailants form from the ground to join in battle!");
@@ -19,11 +39,11 @@ function KeeperTimer(e)
 		eq.spawn2(294622,0,0,816,125,-73,248); -- NPC: Altar_Assailant
 		eq.spawn2(294622,0,0,744,46,-73,202); -- NPC: Altar_Assailant
 		eq.spawn2(294622,0,0,746,125,-73,120); -- NPC: Altar_Assailant
-		--eq.spawn2(294622,0,0,908,111,-73,300);		
-		--eq.spawn2(294622,0,0,852,73,-73,292);		
-		--eq.spawn2(294622,0,0,852,73,-73,292);		
-		--eq.spawn2(294622,0,0,803,84,-73,0);
-		--eq.spawn2(294622,0,0,888,123,-73,410);
+		eq.spawn2(294622,0,0,908,111,-73,300);		
+		eq.spawn2(294622,0,0,852,73,-73,292);		
+		eq.spawn2(294622,0,0,852,73,-73,292);		
+		eq.spawn2(294622,0,0,803,84,-73,0);
+		eq.spawn2(294622,0,0,888,123,-73,410);
 	elseif e.timer=="adhere" then
 		e.self:Emote("slams its fist to the ground which calls forth an adherent to aid it in battle!");
 		eq.set_timer("adhere",100*1000);
@@ -53,9 +73,18 @@ function KeeperTimer(e)
 	elseif e.timer=="throw" then
 		eq.set_timer("throw", 40*1000);
 		e.self:Emote("casts its eye upon several enemies and tosses them aggressively away!");
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
-		e.self:CastSpell(4185, e.self:GetHateRandom():GetID()); -- Spell: Throw
+		hate_list = e.self:CountHateList();
+    		if (hate_list ~= nil and tonumber(hate_list) == 1) then
+				e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+			elseif (hate_list ~= nil and tonumber(hate_list) == 2) then
+				e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+				e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+
+			elseif (hate_list ~= nil and tonumber(hate_list) >= 3) then
+				e.self:CastedSpellFinished(4185, e.self:GetHateTop());	-- Spell: Throw
+				e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+				e.self:CastedSpellFinished(4185, e.self:GetHateRandom()); -- Spell: Throw
+			end
 	elseif e.timer=="reset" then
 		eq.depop_all(294615);
 		eq.depop_all(294622);
@@ -67,6 +96,10 @@ function KeeperTimer(e)
 		e.self:CastSpell(3791, e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:WipeHateList();
 		eq.stop_timer("reset");
+	elseif e.timer=="aerampoff" then
+		eq.stop_timer("aerampoff");
+		e.self:SetSpecialAbility(4, 0); --turn aoe ramp off
+    	eq.zone_emote(13,"Keeper of the Altar is no longer infuriated.");
 	end
 end
 

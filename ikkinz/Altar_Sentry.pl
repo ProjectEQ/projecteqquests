@@ -1,4 +1,4 @@
---Ikkinz Raid #4: Chambers of Destruction 
+#Ikkinz Raid #4: Chambers of Destruction 
 sub EVENT_SPAWN {
   quest::setnexthpevent(80);
   if(!defined($qglobals{$instanceid.asentkill2})) {

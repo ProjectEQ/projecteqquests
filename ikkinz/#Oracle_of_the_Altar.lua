@@ -1,3 +1,4 @@
+--Ikkinz Raid #4: Chambers of Destruction 
 local reduce_regen = 0;
 
 function event_spawn(e)

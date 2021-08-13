@@ -1,3 +1,4 @@
+--Ikkinz Raid #4: Chambers of Destruction 
 function event_combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 3 * 1000);

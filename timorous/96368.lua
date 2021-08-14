@@ -6,7 +6,7 @@ function event_combat(e)
     if (e.joined == true) then
         eq.stop_timer("depop");
     else
-        eq.start_timer("depop", 1800000) -- 30 mins
+        eq.set_timer("depop", 1800000) -- 30 mins
     end
 end
 

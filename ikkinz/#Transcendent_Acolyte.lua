@@ -6,7 +6,7 @@ end
 
 function event_combat(e)
   if (e.joined == true) then
-    eq.set_timer('leash', 1 * 1000);
+    eq.set_timer('leash', 3 * 1000);
   else 
     eq.stop_timer('leash');
   end
@@ -16,13 +16,13 @@ function event_hp(e)
   if (e.hp_event == 50) then
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 70);
-    eq.set_timer('infurate', 2 * 1000);
-    eq.zone_emote(13, e.self:GetName() .. " is infuriated!");
+    eq.set_timer('infurate', 5 * 1000);
+    eq.zone_emote(13, e.self:GetCleanName() .. " is infuriated!");
   elseif (e.hp_event == 10) then 
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
     e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 70);
-    eq.set_timer('infurate', 2 * 1000);
-    eq.zone_emote(13, e.self:GetName() .. " is infuriated!");
+    eq.set_timer('infurate', 5 * 1000);
+    eq.zone_emote(13, e.self:GetCleanName() .. " is infuriated!");
   end
 end
 
@@ -32,8 +32,11 @@ function event_timer(e)
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
     eq.zone_emote(13, e.self:GetName() .. " is no longer infuriated.");
   elseif (e.timer == 'leash') then
-    if (e.self:GetX() < 500 or e.self:GetX() > 200 or e.self:GetY() < -30 or e.self:GetY() > -250) then
-      e.self:GotoBind();
+    if (e.self:GetX() < 200 or e.self:GetX() > 500 or e.self:GetY() > -30 or e.self:GetY() < -250) then
+      e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+		  e.self:GotoBind();
+		  e.self:WipeHateList();
+		  e.self:SetHP(e.self:GetMaxHP());
     end
   end
 end

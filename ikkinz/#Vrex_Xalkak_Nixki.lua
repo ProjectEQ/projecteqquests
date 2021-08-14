@@ -37,7 +37,7 @@ end
 function event_death_complete(e)
 	eq.spawn2(294596,0,0,519,-247,-50,70); -- NPC: a_pile_of_bones
 	eq.spawn2(294596,0,0,521,-156,-50,170); -- NPC: a_pile_of_bones
-	eq.spawn2((294596,0,0,556,-266,-50,486); -- NPC: a_pile_of_bones
+	eq.spawn2(294596,0,0,556,-266,-50,486); -- NPC: a_pile_of_bones
 	eq.spawn2(294596,0,0,618,-232,-50,4); -- NPC: a_pile_of_bones
 	--should be based on number of players in zone
 	eq.signal(294631,6); --set lockout

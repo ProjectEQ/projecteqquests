@@ -31,7 +31,7 @@ function event_timer(e)
   if (e.timer == 'infurate') then
     eq.stop_timer(e.timer);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
-    eq.zone_emote(13, e.self:GetName() .. " is no longer infuriated.");
+    eq.zone_emote(13, e.self:GetCleanName() .. " is no longer infuriated.");
   elseif (e.timer == 'leash') then
     if (e.self:GetX() < 200 or e.self:GetX() > 500 or e.self:GetY() > -30 or e.self:GetY() < -250) then
       e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing

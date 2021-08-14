@@ -37,6 +37,7 @@ function event_timer(e)
 		e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:GotoBind();
 		e.self:WipeHateList();
+		e.self:SetHP(e.self:GetMaxHP());
     end
   end
 end

@@ -2,8 +2,17 @@
 --at a much later point in the timeline, nixki does not HP flux
 function event_spawn(e)
 	eq.set_timer("hpflux", 5 * 1000);
+	eq.set_next_hp_event(4);
 end
-			
+
+function event_hp(e)
+  if(e.hp_event == 4) then
+    e.self:SetSpecialAbility(4, 1); --turn aoe ramp on
+    eq.zone_emote(13, e.self:GetCleanName() .. " is infuriated!");
+	eq.set_timer("removeae", 5 * 1000);
+  end
+end
+
 function event_combat(e)
 	if (e.joined == true) then
 		eq.set_timer("OOBcheck", 3 * 1000);
@@ -31,6 +40,10 @@ elseif(e.timer=="hpflux") then
 	else
 	e.self:SetHP(165000);
 	end
+elseif(e.timer=="removeae") then
+	eq.stop_timer("removeae");
+	eq.zone_emote(13, e.self:GetCleanName() .. " is no longer infuriated.");
+	e.self:SetSpecialAbility(4, 0); --turn aoe ramp off
 end
 end
 

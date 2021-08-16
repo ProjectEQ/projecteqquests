@@ -60,7 +60,7 @@ function event_signal(e)
     if ( (e.self:GetHP() - hp ) > 0 ) then 
       e.self:SetHP( e.self:GetHP() - hp );
 	local el = eq.get_entity_list();
-  	if (el:IsMobSpawnedByNpcTypeID(294086) == false or el:IsMobSpawnedByNpcTypeID(294087) == false or el:IsMobSpawnedByNpcTypeID(294088) == false or el:IsMobSpawnedByNpcTypeID(294089) == false or el:IsMobSpawnedByNpcTypeID(294090) == false) then --all servitors are down
+  	if (el:IsMobSpawnedByNpcTypeID(294086) == false and el:IsMobSpawnedByNpcTypeID(294087) == false and el:IsMobSpawnedByNpcTypeID(294088) == false and el:IsMobSpawnedByNpcTypeID(294089) == false and el:IsMobSpawnedByNpcTypeID(294090) == false) then --all servitors are down
 	e.self:SetSpecialAbility(24, 0); --turn off immunity
         e.self:SetSpecialAbility(35, 0); --turn off immunity
 	end

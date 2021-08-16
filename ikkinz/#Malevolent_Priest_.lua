@@ -59,7 +59,8 @@ function event_signal(e)
  local hp = e.self:GetMaxHP() * .10;
     if ( (e.self:GetHP() - hp ) > 0 ) then 
       e.self:SetHP( e.self:GetHP() - hp );
-	if(eq.get_entity_list():GetNPCBySpawnID(294086) == false and eq.get_entity_list():GetNPCBySpawnID(294087) == false and eq.get_entity_list():GetNPCBySpawnID(294088) == false and eq.get_entity_list():GetNPCBySpawnID(294089) == false and eq.get_entity_list():GetNPCBySpawnID(294090) == false) then --all servitors are down
+	local el = eq.get_entity_list();
+  	if (el:IsMobSpawnedByNpcTypeID(294086) == false and el:IsMobSpawnedByNpcTypeID(294087) == false and el:IsMobSpawnedByNpcTypeID(294088) == false and el:IsMobSpawnedByNpcTypeID(294089) == false and el:IsMobSpawnedByNpcTypeID(294090) == false) then --all servitors are down
 	e.self:SetSpecialAbility(24, 0); --turn off immunity
         e.self:SetSpecialAbility(35, 0); --turn off immunity
 	end

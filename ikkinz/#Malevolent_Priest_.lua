@@ -28,7 +28,7 @@ if(e.timer=="OOBcheck") then
 elseif(e.timer=="regen") then
 	eq.stop_timer("regen");
 	e.self:ModifyNPCStat("hp_regen", "1");
-	e.self:ModifyNPCStat("ooc_regen", "1");
+	e.self:SetOOCRegen(0);
 	local ex = e.self:GetX();
 	local ey = e.self:GetY();
 	local ez = e.self:GetZ();

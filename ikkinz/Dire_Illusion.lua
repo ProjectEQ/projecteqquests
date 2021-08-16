@@ -25,8 +25,10 @@ elseif(e.timer=="mezcheck") then
   if (e.self:IsMezzed()) then
     if ( (e.self:GetHP() - hp ) > 0 ) then 
       e.self:SetHP( e.self:GetHP() - hp );
+	e.self:Emote("groans as the incapacitation siphons energy from it.");
     else
       eq.spawn2(294137,0,0,418.5914,-179.3205,10.502,384); -- NPC: Dire_Illusion
+	eq.depop();
     end
   end
 end

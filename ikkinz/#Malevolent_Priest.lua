@@ -71,7 +71,7 @@ end
 function event_death_complete(e)
 	local el = eq.get_entity_list();
   	
-	if (el:IsMobSpawnedByNpcTypeID(294086) == false) then --#Malevolent_Priest_ (294629)
+	if (el:IsMobSpawnedByNpcTypeID(294629) == false) then --#Malevolent_Priest_ (294629)
 		Instance_Win();
 		--check for other malevolent priest, if both are down, instance is won
 	end

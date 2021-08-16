@@ -35,7 +35,7 @@ elseif(e.timer=="regen") then
 	eq.set_proximity(ex - 60, ex + 60, ey - 60, ey + 60, ez - 10, ez + 20);
 elseif(e.timer=="nukes") then
 
-	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1500);
+	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),2500);
 
 	--get client within 60 radius			
 		if (get_client.valid) then

@@ -7,12 +7,9 @@ local dz_version = instance_version.ikkinz_chambers_of_twin_struggles
 local expedition_info = {
   expedition = { name=expedition_name, min_players=1, max_players=6 },
   instance   = { zone="ikkinz", version=dz_version, duration=eq.seconds("3h") },
-  compass    = { zone="kodtaz", x=-871.0, y=-1480.0, z=-430.5 },
-  safereturn = { zone="kodtaz", x=-893, y=-1473, z=-427.0, h=0.0 },
+  compass    = { zone="kodtaz", x=-701.0, y=-1717.0, z=-430.5 },
+  safereturn = { zone="kodtaz", x=-693.0, y=-1744.0, z=-427.0, h=0.0 },
   zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }
-  -- live compass and safereturn (emu entrance is different)
-  -- compass    = { zone="kodtaz", x=-701.0, y=-1717.0, z=-430.5 },
-  -- safereturn = { zone="kodtaz", x=-693.0, y=-1744.0, z=-427.0, h=0.0 }
 }
 
 function event_say(e)

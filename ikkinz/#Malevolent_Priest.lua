@@ -60,6 +60,7 @@ function event_signal(e)
         e.self:SetSpecialAbility(35, 0); --turn off immunity
 	end
 end
+end
 
 
 function event_death_complete(e)

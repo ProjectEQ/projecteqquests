@@ -63,7 +63,6 @@ function event_signal(e)
   	if (el:IsMobSpawnedByNpcTypeID(294086) == false and el:IsMobSpawnedByNpcTypeID(294087) == false and el:IsMobSpawnedByNpcTypeID(294088) == false and el:IsMobSpawnedByNpcTypeID(294089) == false and el:IsMobSpawnedByNpcTypeID(294090) == false) then --all servitors are down
 	e.self:SetSpecialAbility(24, 0); --turn off immunity
         e.self:SetSpecialAbility(35, 0); --turn off immunity
-	eq.stop_timer("nukes"); --database spell set takes over for now
 	end
 end
 end

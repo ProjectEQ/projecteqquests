@@ -35,17 +35,20 @@ elseif(e.timer=="regen") then
 	eq.set_proximity(ex - 60, ex + 60, ey - 60, ey + 60, ez - 10, ez + 20);
 elseif(e.timer=="nukes") then
 
-	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),600);
+	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1500);
 
 	--get client within 60 radius			
 		if (get_client.valid) then
 			local rand = math.random(1,3);
 				if (rand == 1) then
 					e.self:CastSpell(4992,get_client:GetID()); --Malevolent Assault (4992)
+					e.self:Say("I can feel your distress as you defend against this malevolent assault!");
 				elseif (rand == 2) then
-					e.self:CastSpell(4991,get_client:GetID()); --Coordinated Strike (4991) 
+					e.self:CastSpell(4991,get_client:GetID()); --Coordinated Strike (4991)
+					e.self:Say("Our combined powers shall destroy you!");
 				elseif (rand == 3) then
 					e.self:CastSpell(4993,get_client:GetID()); --Malevolent Vex (4993)
+					e.self:Say("May your soul be torn by this spiteful vexer!");
 
 				end
 		end

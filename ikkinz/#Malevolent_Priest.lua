@@ -1,3 +1,4 @@
+--Ikkinz Group Trial #2: Twin Struggles  
 function event_enter(e)
 	eq.set_timer("nukes", 5 * 1000);
 end
@@ -34,7 +35,7 @@ elseif(e.timer=="regen") then
 	eq.set_proximity(ex - 60, ex + 60, ey - 60, ey + 60, ez - 10, ez + 20);
 elseif(e.timer=="nukes") then
 
-	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),60);
+	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),600);
 
 	--get client within 60 radius			
 		if (get_client.valid) then

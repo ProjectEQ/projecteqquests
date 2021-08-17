@@ -43,6 +43,7 @@ elseif(e.timer=="checkdisc") then
 				end
 		end
 elseif(e.timer=="checkhate") then
+		local instance_id = eq.get_zone_instance_id();
 		e.self:ForeachHateList(
 		  function(ent, hate, damage, frenzy)
 			if(ent:IsClient() and ent:GetX() < 218) then

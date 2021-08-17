@@ -39,7 +39,9 @@ end
 
 
 function event_death_complete(e)
-	if(eq.get_entity_list():GetNPCBySpawnID(294043) == true) then --Diabolic_Destroyer (294043)
+	local el = eq.get_entity_list();
+	
+	if (el:IsMobSpawnedByNpcTypeID(294043) == true) then --Diabolic_Destroyer (294043)
 		eq.spawn2(294137,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
 		--check for DD, respawn if DD up 
 	end

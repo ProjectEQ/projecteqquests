@@ -48,6 +48,7 @@ elseif(e.timer=="checkhate") then
 		  function(ent, hate, damage, frenzy)
 			if(ent:IsClient() and ent:GetX() < 218) then
 			  local currclient=ent:CastToClient();
+				e.self:Shout("You will not evade me " .. currclient:GetName())
 				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
 			end
 		  end

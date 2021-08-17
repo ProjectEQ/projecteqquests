@@ -34,7 +34,7 @@ elseif(e.timer=="checkdisc") then
 				if (rand_hate:FindBuff(4499) or rand_hate:FindBuff(4503) or rand_hate:FindBuff(4688)) then
 					local rand_hate_v = rand_hate:CastToClient()
 					if (rand_hate_v.valid) then
-						e.self:Say("You think me stupid? I will feast on your friends instead!");
+						e.self:Say("You think me stupid? I won't waste my time trying to batter down your defenses... I will feast on your friends instead!");
 						e.self:SetHate(rand_hate_v, 1, 1)
 						
 					end

@@ -7,12 +7,9 @@ local dz_version = instance_version.ikkinz_chambers_of_the_tri_fates
 local expedition_info = {
   expedition = { name=expedition_name, min_players=1, max_players=6 },
   instance   = { zone="ikkinz", version=dz_version, duration=eq.seconds("3h") },
-  compass    = { zone="kodtaz", x=-728.0, y=-1180.0, z=-435.5 },
-  safereturn = { zone="kodtaz", x=-700.0, y=-1185.0, z=-430.75, h=0.0 },
+  compass    = { zone="kodtaz", x=-1054.0, y=-1138.0, z=-417 },
+  safereturn = { zone="kodtaz", x=-1018.0, y=-1131.0, z=-418.0, h=0.0 },
   zonein     = { x=-157.0, y=23.0, z=-2.0, h=256.0 }
-  -- live compass and safereturn (emu entrance is different)
-  -- compass    = { zone="kodtaz", x=-1140.0, y=-1038.5, z=-421.5 }
-  -- safereturn = { zone="kodtaz", x=-1018.0, y=-1131.0, z=-418.0, h=0.0 }
 }
 
 function event_say(e)

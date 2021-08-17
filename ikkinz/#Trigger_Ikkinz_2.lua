@@ -32,6 +32,7 @@ function event_signal(e)
 end
 
 function event_timer(e)
+  eq.zone_emote(0, "Sensing an opportunity, a Flesh Hunter calls forth a reinforcement from some unseen location.")
   if(e.timer=="kyv1") then
     eq.stop_timer("kyv1");
     counter = counter - 1

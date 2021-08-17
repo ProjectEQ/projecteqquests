@@ -10,10 +10,12 @@ function event_combat(e)
     eq.spawn2(294137,0,0,379.2154,-186.3592,1.502002,512); -- NPC: Dire_Illusion
     eq.set_timer("OOBcheck", 3 * 1000);
     eq.set_timer("checkdisc", 5 * 1000);
+	eq.set_timer("checkhate", 3 * 1000);
   else
     eq.depop_all(294137);
     eq.stop_timer("OOBcheck");
     eq.stop_timer("checkdisc");
+	eq.stop_timer("checkhate");
   end
 end
 
@@ -40,6 +42,15 @@ elseif(e.timer=="checkdisc") then
 					end
 				end
 		end
+elseif(e.timer=="checkhate") then
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < 218) then
+			  local currclient=ent:CastToClient();
+				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
+			end
+		  end
+		);
 end
 end
 

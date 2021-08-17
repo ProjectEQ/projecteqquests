@@ -1,3 +1,4 @@
+#Ikkinz Raid #2: Chambers of Glorification  
 sub EVENT_SPAWN {
   	$x = $npc->GetX();
    	$y = $npc->GetY();

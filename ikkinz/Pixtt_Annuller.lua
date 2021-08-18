@@ -2,7 +2,7 @@
 function event_spawn(e)
     eq.set_timer("nuke", 5 * 1000);
     eq.set_timer("depop", 22 * 1000);
-else
+end
 
 function event_timer(e)
     if(e.timer=="nuke") then

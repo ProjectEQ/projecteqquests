@@ -6,16 +6,7 @@ local spell_settwo = false; --priest
 local spell_setthree = false; --int
 local spell_setfour = false; --pure melee
 
-function event_spawn(e)
-   local rand = math.random(1,3);
-   if (rand == 1) then
-      spell_setone = true;
-   elseif (rand == 2) then
-      spell_settwo = true;
-   elseif (rand == 3) then
-      spell_setthree = true;
-   end
-end
+
      
 function event_death_complete(e)
    -- he should only reward as many artifacts as there are people in the zone, not dz, not raid. Only the # of PCs in the zone at time of death
@@ -38,6 +29,32 @@ end
 
 function event_timer(e)
    if (e.timer == "random") then
+	local check_type = e.self:GetHateTop()
+
+	if (check_type.valid and check_type:IsClient() and not check_type:IsPet()) then
+				
+	if check_type:GetClass() == 15 or check_type:GetClass() == 8  or check_type:GetClass() == 5  or check_type:GetClass() == 4  or check_type:GetClass() == 3 then
+		spell_setone = true; --hybrid
+		spell_settwo = false;
+		spell_setthree = false;
+		spell_setfour = false;
+	elseif check_type:GetClass() == 2  or check_type:GetClass() == 6  or check_type:GetClass() == 10
+		spell_settwo = true; --priest
+		spell_setthree = false;
+		spell_setfour = false;
+		spell_setone = false;
+	elseif check_type:GetClass() == 11  or check_type:GetClass() == 12  or check_type:GetClass() == 13  or check_type:GetClass() == 14
+		spell_setthree = true; --int
+		spell_setone = false;
+		spell_settwo = false;
+		spell_setfour = false;
+	elseif check_type:GetClass() == 1  or check_type:GetClass() == 7  or check_type:GetClass() == 9  or check_type:GetClass() == 16
+		spell_setfour = true; --pure melee
+		spell_setone = false;
+		spell_settwo = false;
+		spell_setthree = false;
+	end
+	end
       if (spell_setone == true) then
           local rand = math.random(1,100);
           if (rand >= 85) then -- 15 % to cast
@@ -74,6 +91,8 @@ function event_timer(e)
             e.self:CastedSpellFinished(5004, e.self:GetHateRandom()); -- Tamuik's Suggestion (5004)
             e.self:Say("Now you will suffer the baleful existence I know!"); --need text
           end
+		elseif (spell_setfour == true) then
+			-- does nothing
        end
 	elseif (e.timer == "memwipe") then
 		local rand_hate = e.self:GetHateTop()

@@ -33,9 +33,8 @@ function event_timer(e)
 
 	if (check_type.valid and check_type:IsClient() and not check_type:IsPet()) then
 		local check_type_v = check_type:GetBaseRace();
-			if (check_type_v.valid) then
-				e.self:SetRace(check_type_v);	
-			end
+			--if (check_type_v.valid) then
+				e.self:SetRace(check_type_v);
 	if check_type:GetClass() == 15 or check_type:GetClass() == 8  or check_type:GetClass() == 5  or check_type:GetClass() == 4  or check_type:GetClass() == 3 then
 		spell_set = 1; --hybrid
 	elseif check_type:GetClass() == 2  or check_type:GetClass() == 6  or check_type:GetClass() == 10 then

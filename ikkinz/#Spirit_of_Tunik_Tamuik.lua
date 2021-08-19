@@ -1,12 +1,12 @@
 -- Ikkinz Raid #1: Chambers of Righteousness   
 
 -- he should change into the race of whomever is on top aggro
-local spell_setone = false; --hybrid
-local spell_settwo = false; --priest
-local spell_setthree = false; --int
-local spell_setfour = false; --pure melee
+--local spell_setone = false; --hybrid
+--local spell_settwo = false; --priest
+--local spell_setthree = false; --int
+--local spell_setfour = false; --pure melee
 
-
+spell_set = 0;
      
 function event_death_complete(e)
    -- he should only reward as many artifacts as there are people in the zone, not dz, not raid. Only the # of PCs in the zone at time of death
@@ -34,28 +34,16 @@ function event_timer(e)
 	if (check_type.valid and check_type:IsClient() and not check_type:IsPet()) then
 				
 	if check_type:GetClass() == 15 or check_type:GetClass() == 8  or check_type:GetClass() == 5  or check_type:GetClass() == 4  or check_type:GetClass() == 3 then
-		spell_setone = true; --hybrid
-		spell_settwo = false;
-		spell_setthree = false;
-		spell_setfour = false;
+		spell_set = 1; --hybrid
 	elseif check_type:GetClass() == 2  or check_type:GetClass() == 6  or check_type:GetClass() == 10 then
-		spell_settwo = true; --priest
-		spell_setthree = false;
-		spell_setfour = false;
-		spell_setone = false;
+		spell_set = 2; --priest
 	elseif check_type:GetClass() == 11  or check_type:GetClass() == 12  or check_type:GetClass() == 13  or check_type:GetClass() == 14 then
-		spell_setthree = true; --int
-		spell_setone = false;
-		spell_settwo = false;
-		spell_setfour = false;
+		spell_set = 3; --int
 	elseif check_type:GetClass() == 1  or check_type:GetClass() == 7  or check_type:GetClass() == 9  or check_type:GetClass() == 16 then
-		spell_setfour = true; --pure melee
-		spell_setone = false;
-		spell_settwo = false;
-		spell_setthree = false;
+		spell_set = 4; --pure melee
 	end
 	end
-      if (spell_setone == true) then
+      if (spell_set == 1) then
           local rand = math.random(1,100);
           if (rand >= 85) then -- 15 % to cast
             e.self:CastedSpellFinished(993, e.self:GetHateRandom()); -- Spell: Deadly Lifetap
@@ -67,7 +55,7 @@ function event_timer(e)
             e.self:CastedSpellFinished(5006, e.self:GetHateRandom()); -- Tamuik's Spectral Step (5006)
             e.self:Say("Time has no meaning when you live as a ghost does!");
           end
-      elseif (spell_settwo == true) then
+      elseif (spell_set == 2) then
           local rand = math.random(1,100);
           if (rand >= 85) then -- 15 % to cast
             e.self:CastedSpellFinished(5009, e.self:GetHateRandom()); -- Unholy Barrage (5009)
@@ -79,7 +67,7 @@ function event_timer(e)
             e.self:CastedSpellFinished(5008, e.self:GetHateRandom()); -- Bane of Tunik Tamuik (5008)
             e.self:Say("Now you will suffer the baleful existence I know!");
           end
-	  elseif (spell_setthree == true) then
+	elseif (spell_set == 3) then
           local rand = math.random(1,100);
           if (rand >= 85) then -- 15 % to cast
             e.self:CastedSpellFinished(5003, e.self:GetHateRandom()); -- Impoverished Lifeblood (5003)
@@ -91,10 +79,10 @@ function event_timer(e)
             e.self:CastedSpellFinished(5004, e.self:GetHateRandom()); -- Tamuik's Suggestion (5004)
             e.self:Say("Now you will suffer the baleful existence I know!"); --need text
           end
-		elseif (spell_setfour == true) then
+	elseif (spell_set == 4) then
 			-- does nothing
-       end
-	elseif (e.timer == "memwipe") then
+    end
+  elseif (e.timer == "memwipe") then
 		local rand_hate = e.self:GetHateTop()
 
 		if (rand_hate.valid and rand_hate:IsClient() and not rand_hate:IsPet()) then

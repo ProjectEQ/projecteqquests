@@ -38,17 +38,17 @@ function event_timer(e)
 		spell_settwo = false;
 		spell_setthree = false;
 		spell_setfour = false;
-	elseif check_type:GetClass() == 2  or check_type:GetClass() == 6  or check_type:GetClass() == 10
+	elseif check_type:GetClass() == 2  or check_type:GetClass() == 6  or check_type:GetClass() == 10 then
 		spell_settwo = true; --priest
 		spell_setthree = false;
 		spell_setfour = false;
 		spell_setone = false;
-	elseif check_type:GetClass() == 11  or check_type:GetClass() == 12  or check_type:GetClass() == 13  or check_type:GetClass() == 14
+	elseif check_type:GetClass() == 11  or check_type:GetClass() == 12  or check_type:GetClass() == 13  or check_type:GetClass() == 14 then
 		spell_setthree = true; --int
 		spell_setone = false;
 		spell_settwo = false;
 		spell_setfour = false;
-	elseif check_type:GetClass() == 1  or check_type:GetClass() == 7  or check_type:GetClass() == 9  or check_type:GetClass() == 16
+	elseif check_type:GetClass() == 1  or check_type:GetClass() == 7  or check_type:GetClass() == 9  or check_type:GetClass() == 16 then
 		spell_setfour = true; --pure melee
 		spell_setone = false;
 		spell_settwo = false;

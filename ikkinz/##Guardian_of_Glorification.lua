@@ -54,7 +54,17 @@ function event_timer(e)
 		end
 	elseif(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-			if (e.self:GetX() < 845) then
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < 868) then
+			  local currclient=ent:CastToClient();
+				e.self:Shout("You will not evade me " .. currclient:GetName())
+				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
+			end
+		  end
+		);
+			if (e.self:GetX() < 868) then
 				e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 				e.self:GotoBind();
 				e.self:WipeHateList();

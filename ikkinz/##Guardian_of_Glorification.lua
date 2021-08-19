@@ -30,6 +30,16 @@ function event_timer(e)
 	if (e.timer == "random") then
 		local rand = math.random(1,100);
 		if (rand >= 85) then -- 15 % to cast throw
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < 868) then
+			  local currclient=ent:CastToClient();
+				e.self:Shout("You will not evade me " .. currclient:GetName())
+				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
+			end
+		  end
+		);
 		e.self:Emote("tosses its foes away wildly!");
 				e.self:CastedSpellFinished(4185, e.self:GetHateRandom());	-- Spell: Throw
 				e.self:CastedSpellFinished(4185, e.self:GetHateRandom());	-- Spell: Throw
@@ -54,16 +64,6 @@ function event_timer(e)
 		end
 	elseif(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-		local instance_id = eq.get_zone_instance_id();
-		e.self:ForeachHateList(
-		  function(ent, hate, damage, frenzy)
-			if(ent:IsClient() and ent:GetX() < 868) then
-			  local currclient=ent:CastToClient();
-				e.self:Shout("You will not evade me " .. currclient:GetName())
-				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
-			end
-		  end
-		);
 			if (e.self:GetX() < 868) then
 				e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
 				e.self:GotoBind();

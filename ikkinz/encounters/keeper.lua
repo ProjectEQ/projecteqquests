@@ -74,9 +74,9 @@ function KeeperTimer(e)
 		local instance_id = eq.get_zone_instance_id();
 		e.self:ForeachHateList(
 		  function(ent, hate, damage, frenzy)
-			if(ent:IsClient() and e.self:CalculateDistance(ent:GetX(), ent:GetY(), ent:GetZ()) >= 150) then
+			if(ent:IsClient() and e.self:CalculateDistance(ent:GetX(), ent:GetY(), ent:GetZ()) >= 100) then
 			  local currclient=ent:CastToClient();
-				e.self:Shout("You will not evade me " .. currclient:GetName())
+				--e.self:Shout("You will not evade me " .. currclient:GetName()) keeper doesnt shout
 				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
 			end
 		  end

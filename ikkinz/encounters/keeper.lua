@@ -71,6 +71,16 @@ function KeeperTimer(e)
 		eq.set_timer("shrap", 30*1000);
 		e.self:CastedSpellFinished(4188, e.self:GetHateRandom()); --  Spell: Earthen Shrapnel
 	elseif e.timer=="throw" then
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and e.self:CalculateDistance(ent:GetX(), ent:GetY(), ent:GetZ()) >= 150) then
+			  local currclient=ent:CastToClient();
+				e.self:Shout("You will not evade me " .. currclient:GetName())
+				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
+			end
+		  end
+		);
 		eq.set_timer("throw", 40*1000);
 		e.self:Emote("casts its eye upon several enemies and tosses them aggressively away!");
 		hate_list = e.self:CountHateList();

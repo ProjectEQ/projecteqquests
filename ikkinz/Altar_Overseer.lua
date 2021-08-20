@@ -18,7 +18,7 @@ local rand = math.random(1,100);
 		local instance_id = eq.get_zone_instance_id();
 		e.self:ForeachHateList(
 		  function(ent, hate, damage, frenzy)
-			if(ent:IsClient() and ent:GetX() < 868) then
+			if(ent:IsClient() and ent:GetY() > -466 or ent:GetY() < -825) then
 			  local currclient=ent:CastToClient();
 				e.self:Shout("You will not evade me " .. currclient:GetName())
 				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz

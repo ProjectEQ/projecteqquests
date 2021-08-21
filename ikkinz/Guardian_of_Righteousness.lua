@@ -14,6 +14,15 @@ function event_timer(e)
 if (e.timer == "random") then
 local rand = math.random(1,100);
 		if (rand >= 85) then -- 15 % to cast throw
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and e.self:CalculateDistance(ent:GetX(), ent:GetY(), ent:GetZ()) >= 150) then
+			  local currclient=ent:CastToClient();
+				currclient:MovePCInstance(294,instance_id, e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),0); -- Zone: ikkinz
+			end
+		  end
+		);
 		e.self:Emote("motions toward three attackers and throws them wildly around!");
 			hate_list = e.self:CountHateList();
     			if (hate_list ~= nil and tonumber(hate_list) == 1) then

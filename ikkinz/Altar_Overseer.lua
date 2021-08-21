@@ -21,7 +21,7 @@ local rand = math.random(1,100);
 			if(ent:IsClient() and ent:GetY() > -466 or ent:GetY() < -825) then
 			  local currclient=ent:CastToClient();
 				e.self:Shout("You will not evade me " .. currclient:GetName())
-				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
+				currclient:MovePCInstance(294,instance_id, e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),0); -- Zone: ikkinz
 			end
 		  end
 		);

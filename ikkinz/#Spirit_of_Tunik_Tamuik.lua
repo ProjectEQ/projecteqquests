@@ -32,7 +32,7 @@ function event_timer(e)
 	local check_type = e.self:GetHateTop()
 
 	if (check_type.valid and check_type:IsClient() and not check_type:IsPet()) then
-		local check_type_v = check_type:GetBaseRace();
+		local check_type_v = check_type:GetRace();
 			--if (check_type_v.valid) then
 				e.self:SetRace(check_type_v);
 	if check_type:GetClass() == 15 or check_type:GetClass() == 8  or check_type:GetClass() == 5  or check_type:GetClass() == 4  or check_type:GetClass() == 3 then
@@ -73,13 +73,13 @@ function event_timer(e)
           local rand = math.random(1,100);
           if (rand >= 85) then -- 15 % to cast
             e.self:CastedSpellFinished(5003, e.self:GetHateRandom()); -- Impoverished Lifeblood (5003)
-            e.self:Say("Your life force is mine!"); --need text
+            e.self:Emote("Assaults his foe with a blood-reaping blast of magic!");
           elseif (rand < 85) and (rand >= 70) then -- 15 % to cast
             e.self:CastedSpellFinished(5002, e.self:GetHateRandom()); -- Manablast (5002)
-            e.self:Emote("Now you will suffer the baleful existence I know!"); --need text
+            e.self:Emote("Assaults his foe with a blast of tainted mana!");
           elseif (rand < 70) and (rand >= 55) then -- 15 % to cast
             e.self:CastedSpellFinished(5004, e.self:GetHateRandom()); -- Tamuik's Suggestion (5004)
-            e.self:Say("Now you will suffer the baleful existence I know!"); --need text
+            e.self:Say("You! You're mine to control now!");
           end
 	elseif (spell_set == 4) then
 			-- does nothing

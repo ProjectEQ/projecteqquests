@@ -77,7 +77,7 @@ function KeeperTimer(e)
 			if(ent:IsClient() and e.self:CalculateDistance(ent:GetX(), ent:GetY(), ent:GetZ()) >= 100) then
 			  local currclient=ent:CastToClient();
 				--e.self:Shout("You will not evade me " .. currclient:GetName()) keeper doesnt shout
-				currclient:MovePCInstance(294,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: ikkinz
+				currclient:MovePCInstance(294,instance_id, e.self:GetX() + math.random(-15,15),e.self:GetY() + math.random(-15,15),e.self:GetZ(),0); -- Zone: ikkinz
 			end
 		  end
 		);

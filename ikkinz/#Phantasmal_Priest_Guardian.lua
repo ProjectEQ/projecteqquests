@@ -14,6 +14,7 @@ function event_trade(e)
 		eq.zone_emote(0, "The two guardians come alive as the priest disperses! Your attempt at commanding them has failed!")
 		eq.signal(294609,2); -- NPC: #Phantasmal_Priest
 		eq.signal(294609,1); -- NPC: #Phantasmal_Priest
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

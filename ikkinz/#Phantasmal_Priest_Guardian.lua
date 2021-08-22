@@ -4,7 +4,7 @@
 
 function event_trade(e)
 	local item_lib = require("items");
-	local qglobals = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.self);
 	local instance_id = eq.get_zone_instance_id();
 	if(item_lib.check_turn_in(e.trade, {item1 = 60246}))  then
 		if (qglobals[instance_id .. "ikkymove"] ==1) then

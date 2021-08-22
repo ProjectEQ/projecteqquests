@@ -6,7 +6,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
 	local instance_id = eq.get_zone_instance_id();
-	if(item_lib.check_turn_in(e.trade, {item1 = 60246})  then
+	if(item_lib.check_turn_in(e.trade, {item1 = 60246}))  then
 		if (qglobals[instance_id .. "ikkymove"] ==1) then
 		eq.set_global("ikkymove","2",5,"H6");
 		eq.zone_emote(0, "The guardian stirs slightly before settling down.")

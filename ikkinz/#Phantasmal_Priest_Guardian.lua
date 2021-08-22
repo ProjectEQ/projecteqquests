@@ -8,7 +8,7 @@ function event_trade(e)
 	local instance_id = eq.get_zone_instance_id();
 	if(item_lib.check_turn_in(e.trade, {item1 = 60246}))  then
 		if (qglobals[instance_id .. "ikkymove"] ==1) then
-		eq.set_global("ikkymove","2",5,"H6");
+		eq.set_global(instance_id .. "ikkymove","2",5,"H6");
 		eq.zone_emote(0, "The guardian stirs slightly before settling down.")
 		elseif (qglobals[instance_id .. "ikkymove"] ==2) then
 		eq.zone_emote(0, "The two guardians come alive as the priest disperses! Your attempt at commanding them has failed!")

@@ -90,6 +90,10 @@ function Maestro_Signal(e)
     end
 end
 
+function Maestro_Death(e)
+	eq.depop_with_timer(186196);
+end
+
 function Accompanist_Death(e)
   if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(186191) == false) then
     eq.signal(186111,1); -- NPC: #Maestro_of_Rancor
@@ -134,6 +138,7 @@ function event_encounter_load(e)
     eq.register_npc_event('maestro', Event.signal, 186111, Maestro_Signal);
     eq.register_npc_event('maestro', Event.hp, 186111, Maestro_Hp);
     eq.register_npc_event('maestro', Event.spawn, 186111, Maestro_Spawn);
+    eq.register_npc_event('maestro', Event.death_complete, 186111, Maestro_Death);
     
     eq.register_npc_event('maestro', Event.death_complete, 186191, Accompanist_Death);
     

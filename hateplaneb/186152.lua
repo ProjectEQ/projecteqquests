@@ -9,9 +9,9 @@ function event_timer(e)
     if (rand ==1) then
       eq.zone_emote(0, "A blood chilling cry echoes through the darkened streets");
     elseif (rand == 2) then
-      eq.zone_emote(0, "A wise man would not find himself invading the realm of Innoruuk.");
+      eq.zone_emote(0, "An unseen presence whispers in your ear, 'Only the bravest or most foolish would find themselves invading the realm of Innoruuk.");
     elseif (rand == 3) then
-      eq.zone_emote(0, "Filled with rage, you can hardly wait until you are able to spill blood again.  In fact, you might not wait!  You never did like the way that person over there looked at you!");
+      eq.zone_emote(0, "Brimming with rage, you can hardly wait until you are able to spill blood again.  In fact, you might not wait!  You never did like the way that person over there looked at you!");
     elseif (rand == 4) then
       eq.zone_emote(0, "Suddenly paranoid,  you look at each of your party members.  Which one will be corrupted first?  Who will die next?  Will one of them fail me?");
     elseif (rand == 5) then

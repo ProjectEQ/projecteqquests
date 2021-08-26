@@ -36,7 +36,7 @@ end
 function Maestro_Timer(e)
 if(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-			if (e.self:GetY() < -560 or e.self:GetY() > -358) then
+			if (e.self:GetY() < -560 or e.self:GetY() > -358 or e.self:GetX() > -94 or e.self:GetX() < -351) then
 				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
 				e.self:GotoBind();
 				e.self:WipeHateList();

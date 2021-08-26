@@ -15,7 +15,7 @@ function event_timer(e)
     elseif (rand == 4) then
       eq.zone_emote(0, "Suddenly paranoid,  you look at each of your party members.  Which one will be corrupted first?  Who will die next?  Will one of them fail me?");
     elseif (rand == 5) then
-      eq.zone_emote(0, "The stench of decay is overpowering");
+      eq.zone_emote(0, "The stench of rotting flesh is nauseating.");
     elseif (rand == 6) then
       eq.zone_emote(0, "You really hate this place.");
     elseif (rand == 7) then

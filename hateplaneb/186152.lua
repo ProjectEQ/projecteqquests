@@ -20,5 +20,6 @@ function event_timer(e)
       eq.zone_emote(0, "You really hate this place.");
     elseif (rand == 7) then
       eq.zone_emote(0, "You would much rather be in a safe and warm inn than this hellish dimension.");
+    end
   end
 end

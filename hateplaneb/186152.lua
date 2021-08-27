@@ -13,7 +13,7 @@ function event_timer(e)
     elseif (rand == 3) then
       eq.zone_emote(0, "Brimming with rage, you can hardly wait until you are able to spill blood again.  In fact, you might not wait!  You never did like the way that person over there looked at you!");
     elseif (rand == 4) then
-      eq.zone_emote(0, "Suddenly paranoid,  you look at each of your party members.  Which one will be corrupted first?  Who will die next?  Will one of them fail me?");
+      eq.zone_emote(0, "Becoming paranoid, you glance at each of your party members in turn. Will one of them fail you? Who can you truly count on?");
     elseif (rand == 5) then
       eq.zone_emote(0, "The stench of rotting flesh is nauseating.");
     elseif (rand == 6) then

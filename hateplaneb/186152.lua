@@ -5,7 +5,7 @@ end
 
 function event_timer(e)
   if(e.timer=="emote") then
-  local rand = math.random(1,9);
+  local rand = math.random(1,10);
     if (rand ==1) then
       eq.zone_emote(0, "A blood chilling cry echoes through the darkened streets");
     elseif (rand == 2) then
@@ -24,6 +24,8 @@ function event_timer(e)
       eq.zone_emote(0, "Peals of sinister laughter seem to come from all directions at once.");
     elseif (rand == 9) then
       eq.zone_emote(0, "You are overwhelmed with an unsettling sensation that eyes are peering at you from every shadow.");
+    elseif (rand == 10) then
+      eq.zone_emote(0, "An involuntary shiver ripples down your spine.");
     end
   end
 end

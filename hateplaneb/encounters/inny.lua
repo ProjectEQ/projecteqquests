@@ -125,7 +125,7 @@ function Evangelist_Timer(e)
         eq.set_timer("checkadds", 2 * 1000);
     elseif(e.timer=="checkadds") then
         eq.stop_timer("checkadds");
-        eq.set_timer("checkadds", 5 * 1000);
+  
             if ( imps < 6 ) then
                 e.self:Say("Join us, my hateful brethren!");
 	            local rng = math.random(2, 3);
@@ -155,6 +155,7 @@ function Evangelist_Timer(e)
 			end
 			addset = addset + spawned;
 		end
+	eq.set_timer("checkadds", 5 * 1000);
 end
 end
 

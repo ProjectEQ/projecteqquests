@@ -104,9 +104,15 @@ function Evangelist_Signal(e)
     end
 end
 
+function Evangelist_Death(e)
+	eq.signal(186107,1); --signal #Evangelist_of_Hate (186198) reduce mob count
+end
+
 function Evangelist_Spawn(e)
     e.self:Say("Fools... All of you.");
     eq.set_timer("text", 3 * 1000);
+	imps = 0;
+	addset = 0;
 end
 
 function Evangelist_Timer(e)
@@ -186,6 +192,7 @@ function event_encounter_load(e)
     eq.register_npc_event('inny', Event.spawn, 186198, Evangelist_Spawn);
     eq.register_npc_event('inny', Event.signal, 186198, Evangelist_Signal);
     eq.register_npc_event('inny', Event.timer, 186198, Evangelist_Timer);
+    eq.register_npc_event('inny', Event.death_complete, 186198, Evangelist_Death);
 
     eq.register_npc_event('inny', Event.death_complete, 186158, Fake_Death);
 

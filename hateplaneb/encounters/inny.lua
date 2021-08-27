@@ -19,7 +19,7 @@ function Control_Spawn(e)
 end
 
 function Control_Signal(e)
-  eq.set_timer("popinny", 60 * 1000); --4-6 hrs 14400 -21600s reset
+  eq.set_timer("popinny", math.random(14400,21600) * 1000); --4-6 hrs (14400 -21600s) reset if event failed
 end
 
 function Control_Timer(e)

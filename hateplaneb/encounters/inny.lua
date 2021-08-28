@@ -74,6 +74,7 @@ end
 end
 
 function Real_Spawn(e)
+	eq.set_timer("resetevent", 300 * 1000);
     eq.set_next_hp_event(30);
 end
 

@@ -132,7 +132,7 @@ function Evangelist_Timer(e)
     elseif(e.timer=="checkadds") then
         eq.stop_timer("checkadds");
   
-            if ( imps < 6 ) then
+            if ( imps < 9 ) then
                 e.self:Say("Join us, my hateful brethren!");
 	            local rng = math.random(2, 3);
 	            local spawned = 0;

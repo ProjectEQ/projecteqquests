@@ -76,7 +76,9 @@ function event_say(e)
 end
 
 function event_task_accepted(e)
-  e.other:SummonItem(86006) -- item: Lens of Truth
+  if e.task_id == 4793 or e.task_id == 4794 or e.task_id == 4795 then -- The Creator
+    e.other:SummonItem(86006) -- item: Lens of Truth
+  end
 
   local mission = missions[e.task_id]
   if mission and mission.version ~= nil then

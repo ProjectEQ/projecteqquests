@@ -91,6 +91,10 @@ function event_encounter_load(e)
     return
   end
 
+  -- hack to make the doors behind Creator Kro`val unopenable (door system needs refactored)
+  eq.get_entity_list():FindDoor(31):SetOpenType(58)
+  eq.get_entity_list():FindDoor(32):SetOpenType(58)
+
   eq.add_area(garden_area_id, 0, garden.min_x, garden.max_x, garden.min_y, garden.max_y, garden.min_z, garden.max_z)
 
   eq.register_player_event("the_creator_norraths_keepers", Event.enter_area, player_enter_area)

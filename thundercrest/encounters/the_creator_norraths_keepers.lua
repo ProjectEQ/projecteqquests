@@ -18,10 +18,13 @@ local task_elements = {
   cast_identify         = 5,
 }
 
+local has_spawned_furious_sentry = false
+
 function player_enter_area(e)
   if e.area_id == garden_area_id then
     eq.remove_area(garden_area_id)
 
+    eq.debug("player_enter_area: " .. e.self:GetName())
     for _, task_id in pairs(the_creator_task_ids) do
       if eq.is_task_activity_active(task_id, task_elements.explore_garden) then
         eq.update_task_activity(task_id, task_elements.explore_garden, 1)
@@ -37,11 +40,16 @@ function player_task_stage_complete(e)
   -- it's either bugged or they do this so the zone marquee from furious sentry
   -- spawn doesn't overlap the task update marquee
 
+  if has_spawned_furious_sentry then
+    return
+  end
+
   -- these two task elements can be completed in any order, check if furious sentry needs spawned
   if e.activity_id == task_elements.explore_garden or e.activity_id == task_elements.kill_defunct_sentries then
     if eq.is_task_activity_active(e.task_id, task_elements.kill_furious_sentry) then
       local loc = furious_sentry_locs[math.random(#furious_sentry_locs)] -- can spawn in either room
-      eq.spawn2(furious_sentry_npc_type_id, 0, 0, loc.x, loc.y, loc.z, loc.w)
+      eq.unique_spawn(furious_sentry_npc_type_id, 0, 0, loc.x, loc.y, loc.z, loc.w)
+      has_spawned_furious_sentry = true
     end
   end
 end

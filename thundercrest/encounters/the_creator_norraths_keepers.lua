@@ -55,6 +55,7 @@ function player_task_stage_complete(e)
 end
 
 function furious_sentry_spawn(e)
+  e.self:CameraEffect(1000, 6) -- 1000 ms and 1.0f intensity in packet (source api for this is wtf, change this if it's ever fixed for floats)
   eq.ZoneMarquee(10, 255, 1000, 2000, 6000, "Something has just come alive in a nearby room! Be warned!") -- live packet values
 end
 

@@ -67,7 +67,7 @@ sub EVENT_ITEM {
     quest::summonitem(54039); #glimmering gem
     quest::exp(60000);
   }
-  if (plugin::check_handin(\%itemcount, 54038 => 1, 54059 => 1, 54057 => 1, 54061 => 1, 54038 => 1)) { #caster 4
+  if (plugin::check_handin(\%itemcount, 54038 => 1, 54059 => 1, 54057 => 1, 54061 => 1)) { #caster 4
     quest::summonitem(54039); #glimmering gem
     quest::exp(60000);
   }

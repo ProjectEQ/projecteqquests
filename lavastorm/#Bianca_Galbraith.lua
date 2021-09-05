@@ -2,7 +2,7 @@
 --       best way to approach this is probably different zone versions per difficulty level (or scaling?)
 --       thundercrest_isles_the_creator_60, thundercrest_isles_the_creator_65, thundercrest_isles_the_creator_70
 
-local testing_faction_bypass = true -- for testing, not intended for production
+local testing_faction_bypass = false -- for testing, not intended for production
 
 -- all Bianca missions use the same dz entrance
 local thundercrest_compass    = { zone="broodlands", x=1241.88, y=511.147, z=23.4192 } -- switch id 5

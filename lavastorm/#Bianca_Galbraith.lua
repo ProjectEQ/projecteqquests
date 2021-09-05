@@ -59,9 +59,13 @@ local function get_missions(faction, is_gm)
 end
 
 function event_say(e)
-  if e.message:findi("hail") then
-    local is_gm = (e.other:Admin() >= 80 and e.other:GetGM())
+  local is_gm = (e.other:Admin() >= 80 and e.other:GetGM())
+  if not is_gm and not eq.is_dragons_of_norrath_enabled() then
+    eq.debug("Dragons of Norrath not enabled, turn #gm on to bypass")
+    return
+  end
 
+  if e.message:findi("hail") then
     local faction = e.other:GetFaction(e.self)
     if not is_gm and not testing_faction_bypass and faction > Faction.Apprehensive then
       e.other:Message(MT.NPCQuestSay, ("Bianca Galbraith says, 'Greetings, %s. I'm afraid I am not empowered to speak to you.  You are not as kindly to us as you ought to be to gain my full attention.'"):format(e.other:GetCleanName()))

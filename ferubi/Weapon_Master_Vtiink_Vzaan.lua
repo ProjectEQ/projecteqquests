@@ -14,6 +14,18 @@ end
 function event_timer(e)
 	if e.timer == 'aggro_guards' then
 		aggro_guards(e.self:GetHateTop());
+	elseif e.timer == 'repop1' then
+		eq.stop_timer('repop1');
+		eq.unique_spawn(284093,0,0,1328.82,-608.43,106.23,5.2); -- NPC: Master`s_Apprentice
+	elseif e.timer == 'repop2' then
+		eq.stop_timer('repop2');
+		eq.unique_spawn(284094,0,0,1327.06,-375.38,106.13,256); -- NPC: Master`s_Apprentice
+	elseif e.timer == 'repop3' then
+		eq.stop_timer('repop3');
+		eq.unique_spawn(284095,0,0,1440.70,-421.54,106.13,386.4); -- NPC: Master`s_Apprentice
+	elseif e.timer == 'repop4' then
+		eq.stop_timer('repop4');
+		eq.unique_spawn(284096,0,0,1439.92,-562.61,106.13,386.4); -- NPC: Master`s_Apprentice
 	end
 end
 
@@ -29,4 +41,16 @@ end
 function event_death_complete(e)
   eq.unique_spawn(284097,0,0,1447,-586,106,0); -- NPC: Smith_Rondo
   eq.depop_with_timer(284074); -- #Smith_Rondo (284074)
+end
+
+function event_signal(e)
+	if (e.signal == 1) then
+		eq.set_timer('repop1', 60 * 1000);
+	elseif (e.signal == 2) then
+		eq.set_timer('repop2', 60 * 1000);
+	elseif (e.signal == 3) then
+		eq.set_timer('repop3', 60 * 1000);
+	elseif (e.signal == 4) then
+		eq.set_timer('repop4', 60 * 1000);
+	end
 end

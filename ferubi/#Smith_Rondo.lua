@@ -16,12 +16,13 @@ function event_trade(e)
 		e.other:SummonItem(67520); --Item: Sealed Report
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 67521,item2 = 67522,item3 = 67523,item4 = 67524})) then 
 		e.self:Emote("takes each weapon piece from you one by one and places them on the ground. He looks to the ceiling and says, 'Vtiink, there are some weapons here that need to be replaced and some intruders who need to be destroyed.' Suddenly the dank air in the room becomes ominous as a twisted monstrosity appears before you. Smith turns to you all and says, 'There is no more time. Your gods cannot save you now.' Vtiink sends out a wave of energy that forces Smith to crumple.");
-	  eq.unique_spawn(284092,0,0,1413.38,-491.76,106.13,384); -- NPC: Weapon_Master_Vtiink_Vzaan
-  	eq.unique_spawn(284093,0,0,1328.82,-608.43,106.23,5.2); -- NPC: Master`s_Apprentice
-  	eq.unique_spawn(284094,0,0,1327.06,-375.38,106.13,256); -- NPC: Master`s_Apprentice
-  	eq.unique_spawn(284095,0,0,1440.70,-421.54,106.13,386.4); -- NPC: Master`s_Apprentice
-  	eq.unique_spawn(284096,0,0,1439.92,-562.61,106.13,386.4); -- NPC: Master`s_Apprentice
-	  e.self:SetAppearance(3);
+		eq.unique_spawn(284092,0,0,1413.38,-491.76,106.13,384); -- NPC: Weapon_Master_Vtiink_Vzaan
+  		eq.unique_spawn(284093,0,0,1328.82,-608.43,106.23,5.2); -- NPC: Master`s_Apprentice
+  		eq.unique_spawn(284094,0,0,1327.06,-375.38,106.13,256); -- NPC: Master`s_Apprentice
+  		eq.unique_spawn(284095,0,0,1440.70,-421.54,106.13,386.4); -- NPC: Master`s_Apprentice
+  		eq.unique_spawn(284096,0,0,1439.92,-562.61,106.13,386.4); -- NPC: Master`s_Apprentice
+		e.self:SetAppearance(3); --lie down
+		eq.stop(); --stop grid
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

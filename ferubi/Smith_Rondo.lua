@@ -19,6 +19,7 @@ end
 function event_hp(e)
 	if(e.hp_event == 65) then
 		e.self:SendIllusionPacket({race=392,gender=2,texture=0,helmtexture=0});
+		e.self:Emote("'s face begins to contort and change. His skin turns gray and spikes shoot out of his back. 'I can hold it back no longer. The beast has taken control. Prepare yourselves for the...");
 	end
 end
 

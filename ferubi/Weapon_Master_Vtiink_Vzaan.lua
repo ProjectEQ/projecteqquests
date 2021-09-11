@@ -2,10 +2,10 @@
 guard_list = { 284093, 284094, 284095, 284096 };
 
 function event_combat(e)
-	-- during combat, reaggro the guards on current target every 30 seconds (ensures no idle guards)
+	-- during combat, reaggro the guards on current target every 6 seconds (ensures no idle guards)
 	if e.joined then
 		aggro_guards(e.self:GetHateTop());
-		eq.set_timer('aggro_guards', 30 * 1000);
+		eq.set_timer('aggro_guards', 6 * 1000);
 	else
 		eq.stop_timer('aggro_guards');
 	end

@@ -39,8 +39,7 @@ function aggro_guards(mob)
 end
 
 function event_death_complete(e)
-  eq.unique_spawn(284097,0,0,1447,-586,106,0); -- NPC: Smith_Rondo
-  eq.depop_with_timer(284074); -- #Smith_Rondo (284074)
+  eq.signal(284074,1); -- #Smith_Rondo (284074)
 end
 
 function event_signal(e)

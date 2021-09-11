@@ -32,7 +32,7 @@ end
 function aggro_guards(mob)
 	for _, guard in pairs(guard_list) do
 		local guard_mob = eq.get_entity_list():GetNPCByNPCTypeID(guard);
-		if guard_mob ~= nil then
+		if guard_mob ~= nil and not guard_mob:IsEngaged() then
 			guard_mob:AddToHateList(mob);
 		end
 	end

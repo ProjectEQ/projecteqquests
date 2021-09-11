@@ -26,3 +26,41 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_signal(e)
+	e.self:Emote("stands and shakes off the effects of the spell that knocked him unconscious. Seeing Vtiink's corpse he smiles and begins to reach into his pocket when suddenly his face becomes filled with anger letting out a maniacal laugh. 'You have destroyed him, my master Vtiink he who helped show me the way of the Mata Muram, the true joy of pain. Now I shall share that gift with you prepare to suffer the wrath of Smith Rondo.");
+	eq.set_timer("eventlocks", 2700 * 1000); --45 min
+	eq.set_next_hp_event(65);
+	e.self:SetAppearance(0); --stand up
+	e.self:SetSpecialAbility(35, 0); --turn off immunity
+	e.self:SetSpecialAbility(24, 0); --turn off anti aggro
+end
+
+function event_timer(e)
+	if(e.timer=="eventlocks") then
+		eq.stop_timer("eventlocks");
+		e.self:GotoBind();
+		e.self:WipeHateList();
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
+		e.self:SetSpecialAbility(24, 1); --turn on anti aggro
+		eq.start(33); -- re start grid
+	end
+end
+
+function event_death_complete(e)
+	eq.spawn2(284084,0,0,1447,-586,106,0); -- NPC: #Smith`s_Spectral_Memory
+end
+
+function event_hp(e)
+	if(e.hp_event == 65) then
+		e.self:SendIllusionPacket({race=392,gender=2,texture=0,helmtexture=0});
+		e.self:ChangeSize(12);
+		e.self:Emote("'s face begins to contort and change. His skin turns gray and spikes shoot out of his back. 'I can hold it back no longer. The beast has taken control. Prepare yourselves for the...");
+	end
+end
+
+function event_combat(e)
+	if (e.joined == false) then
+		e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+	end
+end

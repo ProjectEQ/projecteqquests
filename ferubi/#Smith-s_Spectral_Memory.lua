@@ -8,9 +8,9 @@ local qglobals = eq.get_qglobals(e.other);
 		if qglobals["bic_fer"] ~= nil and qglobals["bic_fer"] == "10" then
 			client:Message(4, "You feel a chill surround your body as a voice enters your mind. 'Thank you for releasing me from an eternity of suffering. Now you must help the others on this continent whose fate I fear is much worse than mine. You must seek out Apprentice Udranda in Barindu. She can help you gain access to the temples beyond the mountain passes.");
 			e.other:SummonItem(67526); -- Item: Rondo's Report
-			eq.set_global("bic_fer", 11, 5, "F");
+			eq.set_global("bic_fer", "11", 5, "F");
 		end
-		eq.set_global("god_vxed_access", 1, 5, "F");
+		eq.set_global("god_vxed_access", "1", 5, "F");
 		client:Message(4, "You receive a character flag!");
 	end
 end

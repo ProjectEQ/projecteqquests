@@ -61,7 +61,7 @@ if(e.timer=="aggro") then
 	local get_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1440000);
 
 	--get client within 1200 radius			
-		if (get_client.valid) then
+		if (get_client.valid and not get_client:GetFeigned()) then --need to add check for hide and improved hide (shroud of stealth)
 			
 			e.self:AddToHateList(get_client,1);
 		end

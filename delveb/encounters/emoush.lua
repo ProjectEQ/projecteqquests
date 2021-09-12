@@ -3,7 +3,11 @@
 --#Mystic_Griknok (342055)
 --#Mystic_Shiflor (342054)
 --unconscious_mystic (342060)
+--MinDmg: 339	MaxDmg: 1061
 local addtimer = 0;
+
+local combat_min_hit = 339;
+local combat_max_hit = 1061;
 
 --Emoush_the_Destroyer (342052)
 function Emoush_spawn(e)
@@ -41,6 +45,12 @@ function Emoush_timer(e)
     elseif (e.timer == "powerup") then
             --gains 14 min dmg  283 max dmg per power up and hp(?)
             eq.stop_timer("powerup");
+		    combat_min_hit=math.ceil(combat_min_hit+14);
+		    combat_max_hit=math.ceil(combat_max_hit+283); 
+		    e.self:ModifyNPCStat("min_hit", tostring(combat_min_hit));
+		    e.self:ModifyNPCStat("max_hit", tostring(combat_max_hit));
+		    eq.debug("My new min hit is: " .. combat_min_hit);
+		    eq.debug("My new max hit is : " .. combat_max_hit);
             eq.set_timer("powerup", 120 * 1000);
             eq.zone_emote(15, "Emoush trembles as his power increases.");
     end

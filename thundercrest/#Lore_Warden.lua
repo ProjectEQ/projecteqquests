@@ -35,7 +35,7 @@ function event_timer(e)
 		end
 	elseif(e.timer=="OOBcheck") then
 		eq.stop_timer("OOBcheck");
-			if (e.self:GetX() < 1712 or e.self:GetY() < 2433) then
+			if (e.self:GetX() < 1712 and e.self:GetY() < 2433) then
 				e.self:GotoBind();
 				e.self:WipeHateList();
 				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
@@ -57,12 +57,12 @@ function event_say(e)
 end
 
 function event_signal(e)
-if (e.signal==1) then
-e.self:SetSpecialAbility(24, 0);
-e.self:SetSpecialAbility(35, 0);
-e.self:Say("You just can't find good servants these days.  I shall remove you myself.  If your goal was to disturb my work you may account yourself successful.'  As it speaks you sense tremendous anger building in the tiny creature like a great storm.  Its anger fills its body and it grows larger.");
-e.self:ChangeSize(35);
-end
+	if (e.signal==1) then
+		e.self:SetSpecialAbility(24, 0);
+		e.self:SetSpecialAbility(35, 0);
+		e.self:Say("You just can't find good servants these days.  I shall remove you myself.  If your goal was to disturb my work you may account yourself successful.'  As it speaks you sense tremendous anger building in the tiny creature like a great storm.  Its anger fills its body and it grows larger.");
+		e.self:ChangeSize(35);
+	end
 end
 
 function event_combat(e)

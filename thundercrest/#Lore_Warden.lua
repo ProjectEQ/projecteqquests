@@ -33,6 +33,15 @@ function event_timer(e)
 		elseif (math.random(100)>84 and math.random(100)<=100) then
 			e.self:Emote("spits, 'Worthless!'");
 		end
+	elseif(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() < 1712 or e.self:GetY() < 2433) then
+				e.self:GotoBind();
+				e.self:WipeHateList();
+				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+			else
+				eq.set_timer("OOBcheck", 3 * 1000);
+			end
 	end
 end
 
@@ -55,3 +64,12 @@ e.self:Say("You just can't find good servants these days.  I shall remove you my
 e.self:ChangeSize(35);
 end
 end
+
+function event_combat(e)
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 3 * 1000);
+	else
+		eq.stop_timer("OOBcheck");
+	end
+end
+

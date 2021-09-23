@@ -111,8 +111,8 @@ function Controller_Timer(e)
   if (e.timer == "aggrolink") then
 local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
-		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 283046)) then
-			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Construct of War (283046) to aggro list if alive
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 283046 or  npc:GetNPCTypeID() == 283049)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Construct of War (283046) and Colossus of War 283049 to aggro list if alive
 		end
 		end
 end

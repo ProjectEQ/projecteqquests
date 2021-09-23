@@ -53,7 +53,7 @@ function Ixvet_Signal(e)
     if (e.signal==1) then --signal from #Abena_Taifa
         e.self:Say("Be gone. I've no interest in your fruits today.");
 
-        eq.signal(283047,1,); -- NPC: Aneuk_Controller
+        eq.signal(283047,1); -- NPC: Aneuk_Controller
     elseif (e.signal==2) then --signal from Aneuk_Controller
         e.self:Say("What have you done, slave! Try to poison me? You will pay for your insolence!");
         eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.other, 1); --attack Abena Taifa

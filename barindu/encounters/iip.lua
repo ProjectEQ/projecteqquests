@@ -56,7 +56,7 @@ function Ixvet_Signal(e)
         eq.signal(283047,1); -- NPC: Aneuk_Controller
     elseif (e.signal==2) then --signal from Aneuk_Controller
         e.self:Say("What have you done, slave! Try to poison me? You will pay for your insolence!");
-        eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.other, 1); --attack Abena Taifa
+        eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); --attack Abena Taifa
         eq.signal(283047,3); -- NPC: Aneuk_Controller
     end
 end

@@ -130,7 +130,24 @@ function Controller_Signal(e)
     end
 end
 
+function Talwin_Spawn(e)
+	eq.set_timer("liedown", 500);
+end
+
+function Talwin_Timer(e)
+	if (e.timer == "liedown") then
+        	e.self:SetAppearance(3);
+        	eq.stop_timer("liedown");
+	end
+end
+
 function event_encounter_load(e)
+eq.register_npc_event('iip', Event.spawn, 283153, Talwin_Spawn);
+eq.register_npc_event('iip', Event.spawn, 283153, Talwin_Timer);
+
+eq.register_npc_event('iip', Event.spawn, 283048, Talwin_Spawn);
+eq.register_npc_event('iip', Event.spawn, 283048, Talwin_Timer);
+	
 eq.register_npc_event('iip', Event.combat, 283047, Controller_Combat);
 eq.register_npc_event('iip', Event.timer, 283047, Controller_Timer);
 eq.register_npc_event('iip', Event.death_complete, 283047, Controller_Death);

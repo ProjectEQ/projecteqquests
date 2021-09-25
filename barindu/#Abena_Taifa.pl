@@ -22,5 +22,8 @@ sub EVENT_WAYPOINT_ARRIVE {
   }
 } 
     
+sub EVENT_SIGNAL {
+  $npc->SetAppearance(3);
+}
   
   

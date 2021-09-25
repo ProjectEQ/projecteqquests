@@ -1,4 +1,5 @@
 --iip rewrite by Huffin
+--colussus of war will still activate after poison script executes, confirmed on live. You can avoid killing the controllers to avoid this
 local poison = 0;
 local box = require("aa_box");
 
@@ -44,6 +45,7 @@ function Ixvet_Timer(e)
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The Aneuk Controllers quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Ikaav Ixvet Pox says 'What have you done, slave! Try to poison me? You will pay for your insolence!");
 		poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned
+		eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); --attack Abena Taifa
     end
 end
 
@@ -59,15 +61,12 @@ function Ixvet_Death(e)
     eq.depop(283153); --Talwin`s_remains (283153) untargettable
     eq.spawn2(283048,0,0,-574,568,-98,336); -- NPC: #Talwin`s_remains loot
 end
---killing ixvet should signal the ratuk to kill Vasha Firaji, any more? Chiako? Seems to target random mobs
+--killing ixvet should signal the ratuk to kill Vasha Firaji, any more? Chiako? Seems to target random Nihil mobs
 
 function Ixvet_Signal(e)
     if (e.signal==1) then --signal from #Abena_Taifa
         e.self:Say("Be gone. I've no interest in your fruits today.");
-		eq.set_timer("flavor1", 6 * 1000);
-    elseif (e.signal==2) then --signal from Aneuk_Controller
-        e.self:Say("What have you done, slave! Try to poison me? You will pay for your insolence!");
-        eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); --attack Abena Taifa
+		eq.set_timer("flavor1", 6 * 1000); 
     end
 end
 

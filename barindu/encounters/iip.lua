@@ -46,7 +46,8 @@ function Ixvet_Timer(e)
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The Aneuk Controllers quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Ikaav Ixvet Pox says 'What have you done, slave! Try to poison me? You will pay for your insolence!");
 		poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned
-		eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); --attack Abena Taifa
+		--eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); -- on live abena was 'struck down' but didnt die right away
+		eq.signal(283081,1); -- signal abena to lie down
     end
 end
 
@@ -61,8 +62,9 @@ end
 function Ixvet_Death(e)
     eq.depop(283153); --Talwin`s_remains (283153) untargettable
     eq.spawn2(283048,0,0,-574,568,-98,336); -- NPC: #Talwin`s_remains loot
+	eq.zone_emote(15,"As the dying cries of Ikaav Ixvet Pox echo off the city walls, the ranks of the Muramites are thrown into chaos. Seizing the opportunity, the many slaves of Barindu rise up and fight for their freedom.");
 end
---killing ixvet should signal the ratuk to kill Vasha Firaji, any more? Chiako? Seems to target random Nihil mobs
+--killing ixvet should signal the Nihil to aggro nearby mobs, which Nihil still needs to be parsed: It seems to be random each time
 
 function Ixvet_Signal(e)
     if (e.signal==1) then --signal from #Abena_Taifa

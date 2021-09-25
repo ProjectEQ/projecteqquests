@@ -24,5 +24,7 @@ function event_signal(e)
 end
 
 function event_say(e)
-	e.self:Emote("stares at her feet and mutters, 'Please leave Britney Spears alone.");
+	if(e.message:findi("hail")) then
+		e.self:Emote("stares at her feet and mutters, 'Please leave Britney Spears alone.");
+	end
 end

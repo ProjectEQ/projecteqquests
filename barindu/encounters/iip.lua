@@ -1,4 +1,5 @@
 --iip rewrite by Huffin
+local poison = 0;
 local box = require("aa_box");
 
 local room_box = box();
@@ -9,6 +10,7 @@ room_box:add(-599, 395);
 
 function Ixvet_Spawn(e)
     eq.set_timer("popevent", 6 * 1000);
+	poison = 0;
 end
 
 function Ixvet_Timer(e)
@@ -65,6 +67,10 @@ function Construct_Signal(e)
     if (e.signal==1) then --signal to remove immunity
         e.self:SetSpecialAbility(35, 0); --turn off immunity
         e.self:SetSpecialAbility(24, 0); --turn off anti aggro
+	elseif (e.signal==2) then --signal to remove immunity
+        e.self:SetSpecialAbility(35, 1); --turn on immunity
+        e.self:SetSpecialAbility(24, 1); --turn on anti aggro
+		e.self:WipeHateList();
     end
 end
 
@@ -97,7 +103,9 @@ function Controller_Combat(e)
         eq.set_timer("aggrolink", 3 * 1000);
         eq.get_entity_list():GetNPCByNPCTypeID(283047):AddToHateList(e.other, 1);
         eq.get_entity_list():GetNPCByNPCTypeID(283050):AddToHateList(e.other, 1);
-        eq.signal(283046,1); -- NPC: Construct of War wake up
+			if (poison == 0) then
+        		eq.signal(283046,1); -- NPC: Construct of War wake up
+			end
     else
         eq.stop_timer("aggrolink");
     end
@@ -108,14 +116,20 @@ function Controller_Death(e)
 end
 
 function Controller_Timer(e)
-  if (e.timer == "aggrolink") then
-local npc_list =  eq.get_entity_list():GetNPCList();
-		for npc in npc_list.entries do
-		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 283046 or  npc:GetNPCTypeID() == 283049)) then
-			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Construct of War (283046) and Colossus of War 283049 to aggro list if alive
+	if (poison == 0) then
+		if (e.timer == "aggrolink") then
+			local npc_list =  eq.get_entity_list():GetNPCList();
+			for npc in npc_list.entries do
+			if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 283046 or  npc:GetNPCTypeID() == 283049)) then
+				npc:AddToHateList(e.self:GetHateRandom(),1); -- add Construct of War (283046) and Colossus of War 283049 to aggro list if alive
+			end
+			end
 		end
-		end
-end
+	else
+		e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
+		-- aneuk controllers will not call the construct of wars to battle if poisoned
+		eq.signal(283046,2); -- NPC: Construct of War go to sleep in case aggro happened before script finalizes
+	end
 end
 
 function Controller_Signal(e)
@@ -126,7 +140,7 @@ function Controller_Signal(e)
         eq.signal(283050,2);
     elseif (e.signal==3) then
         e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
-        --should controllers depop or go non-aggro here?
+        poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned
     end
 end
 

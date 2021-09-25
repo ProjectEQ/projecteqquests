@@ -22,3 +22,7 @@ function event_waypoint_arrive(e)
 function event_signal(e)
         e.Self:SetAppearance(3);
 end
+
+function event_say(e)
+	e.self:Emote("stares at her feet and mutters, 'Please leave Britney Spears alone.");
+end

@@ -20,7 +20,9 @@ function event_waypoint_arrive(e)
  end
       
 function event_signal(e)
-        e.Self:SetAppearance(3);
+	if(e.signal == 1) then
+        	e.self:SetAppearance(3);
+	end
 end
 
 function event_say(e)

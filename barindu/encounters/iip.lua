@@ -1,5 +1,6 @@
 --iip rewrite by Huffin
 --colussus of war will still activate after poison script executes, confirmed on live. You can avoid killing the controllers to avoid this
+local aneuk_emote = 0;
 local poison = 0;
 local box = require("aa_box");
 
@@ -115,6 +116,7 @@ function Controller_Combat(e)
 			end
     else
         eq.stop_timer("aggrolink");
+	aneuk_emote = 0;
     end
 end
 
@@ -134,12 +136,12 @@ function Controller_Timer(e)
 		end
 	else
 		eq.signal(283046,2); -- NPC: Construct of War go to sleep in case aggro happened before script finalizes
-		if (poison == 1) then
-		e.self:Emote("raises its scepter and calls out, 'Constructs, protect us from these intruders!");
-		e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
-		-- aneuk controllers will not call the construct of wars to battle if poisoned
-		poison = poison + 1; --reduce emote spam
-		end
+			if (poison == 1 and aneuk_emote == 0) then
+				e.self:Emote("raises its scepter and calls out, 'Constructs, protect us from these intruders!");
+				e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
+		
+				aneuk_emote = 1; --reduce emote spam
+			end
 	end
 end
 

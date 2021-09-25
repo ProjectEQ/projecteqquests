@@ -8,12 +8,15 @@ sub EVENT_ITEM {
     quest::say("Just in time! Ixvet is due for his next meal in a few minutes. With Chiaka out of the way, I'll be able to serve him. I hope this poison isn't noticeable. Here, I've managed to secret this away from the guards up until now and I hate to think about those beasts getting their hands on it. Please hold onto it for me. If this goes well, I won't need it anymore.");
     quest::summonitem(64018); # Item: Abena's Collar of Liberation
     quest::start(57);
+    quest::faction(1761, 50); # Faction: Nihil
+    quest::exp(50000); #made up amount
+    quest::ding();
   }
   plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-   if($wp == 8) {
+   if($wp == 9) {
     quest::say("Ikaav Ixvet Pox, I humbly present you with your meal.");
     quest::signalwith(283050,1,10); # NPC: #Ikaav_Ixvet_Pox
   }

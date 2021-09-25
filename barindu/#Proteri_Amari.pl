@@ -54,6 +54,8 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 64006 => 1)) { # Poisoned Fruid V1
     quest::say("I knew Kunimi would come through! Our day of escape is almost here. Take this to Abena Taifa. She is the servant who brings Ixvet his meals and is loyal to our cause.");
     quest::summonitem(64007); # Poisoned Fruit V2	
+    quest::exp(5000); --made up amount
+    quest::ding();
   }
   if (plugin::check_handin(\%itemcount, 64012 =>1 )) {
     quest::say("Vasha told me what you did for her and I extend you my thanks as well. The bracelet she gave you is special beyond its emotional value. I sensed some magic locked away within the stone ages ago.");

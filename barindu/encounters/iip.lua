@@ -55,11 +55,11 @@ function Ixvet_Signal(e)
     if (e.signal==1) then --signal from #Abena_Taifa
         e.self:Say("Be gone. I've no interest in your fruits today.");
 
-        eq.signal(283047,1); -- NPC: Aneuk_Controller
+        eq.signal(283047,1,600); -- NPC: Aneuk_Controller
     elseif (e.signal==2) then --signal from Aneuk_Controller
         e.self:Say("What have you done, slave! Try to poison me? You will pay for your insolence!");
         eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); --attack Abena Taifa
-        eq.signal(283047,3); -- NPC: Aneuk_Controller
+        eq.signal(283047,3,600); -- NPC: Aneuk_Controller
     end
 end
 
@@ -100,7 +100,7 @@ end
 
 function Controller_Combat(e)
     if (e.joined == true) then
-        eq.set_timer("aggrolink", 3 * 1000);
+        eq.set_timer("aggrolink", 6 * 1000);
         eq.get_entity_list():GetNPCByNPCTypeID(283047):AddToHateList(e.other, 1);
         eq.get_entity_list():GetNPCByNPCTypeID(283050):AddToHateList(e.other, 1);
 			if (poison == 0) then
@@ -137,7 +137,7 @@ function Controller_Signal(e)
         e.self:Say("Bring that tray here, girl! I'm famished.");
         e.self:Say("Don't keep that all to yourself. Bring some of that fruit over here too!");
         e.self:Emote("quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
-        eq.signal(283050,2);
+        eq.signal(283050,2,600);
     elseif (e.signal==3) then
         e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
         poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned

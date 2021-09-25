@@ -140,6 +140,7 @@ function Controller_Timer(e)
 		e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
 		-- aneuk controllers will not call the construct of wars to battle if poisoned
 		poison = poison + 1; --reduce emote spam
+		end
 	end
 end
 

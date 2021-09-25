@@ -34,6 +34,16 @@ function Ixvet_Timer(e)
 
         eq.spawn2(283047,0,0,-530,533,-97,254); --Aneuk_Controller (283047)
         eq.spawn2(283047,0,0,-488,633,-97,436); --Aneuk_Controller (283047)
+	elseif(e.timer=="flavor1") then
+		eq.stop_timer("flavor1");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Aneuk Controller says 'Bring that tray here, girl! I'm famished.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Aneuk Controller says 'Don't keep that all to yourself. Bring some of that fruit over here too!");
+		eq.set_timer("flavor2", 6 * 1000);
+	elseif(e.timer=="flavor2") then
+		eq.stop_timer("flavor2");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The Aneuk Controllers quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Ikaav Ixvet Pox says 'What have you done, slave! Try to poison me? You will pay for your insolence!");
+		poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned
     end
 end
 
@@ -54,12 +64,10 @@ end
 function Ixvet_Signal(e)
     if (e.signal==1) then --signal from #Abena_Taifa
         e.self:Say("Be gone. I've no interest in your fruits today.");
-
-        eq.signal(283047,1,6000); -- NPC: Aneuk_Controller
+		eq.set_timer("flavor1", 6 * 1000);
     elseif (e.signal==2) then --signal from Aneuk_Controller
         e.self:Say("What have you done, slave! Try to poison me? You will pay for your insolence!");
         eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); --attack Abena Taifa
-        eq.signal(283047,3,6000); -- NPC: Aneuk_Controller
     end
 end
 
@@ -126,22 +134,13 @@ function Controller_Timer(e)
 			end
 		end
 	else
-		--e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body."); too spammy
-		-- aneuk controllers will not call the construct of wars to battle if poisoned
 		eq.signal(283046,2); -- NPC: Construct of War go to sleep in case aggro happened before script finalizes
+		if (poison == 1) then
+		e.self:Emote("raises its scepter and calls out, 'Constructs, protect us from these intruders!");
+		e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
+		-- aneuk controllers will not call the construct of wars to battle if poisoned
+		poison = poison + 1; --reduce emote spam
 	end
-end
-
-function Controller_Signal(e)
-    if (e.signal==1) then
-        e.self:Say("Bring that tray here, girl! I'm famished.");
-        e.self:Say("Don't keep that all to yourself. Bring some of that fruit over here too!");
-        e.self:Emote("quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
-        eq.signal(283050,2,6000);
-    elseif (e.signal==3) then
-        e.self:Emote("doubles over in pain, losing its concentration as the poison burns through its body.");
-        poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned
-    end
 end
 
 function Talwin_Spawn(e)

@@ -17,7 +17,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 52132})) then --Larsaki's Box of Raw Materials
-		e.self:Say("This is my finest work, ".. e.other:GetCleanName() ..". Wear it with pride and know that it was my distinct honor to assist you in this fashion.");
+		e.self:Emote("bows slightly and hands you a hefty belt. 'This is my finest work, ".. e.other:GetCleanName() ..". Wear it with pride and know that it was my distinct honor to assist you in this fashion.");
 		e.other:QuestReward(e.self,0,0,0,0,52123,200000); --Item: Lizardscale Plated Girdle
         end
   item_lib.return_items(e.self, e.other, e.trade)

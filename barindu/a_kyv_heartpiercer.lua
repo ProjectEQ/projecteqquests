@@ -17,7 +17,36 @@ function event_timer(e)
         local roll = math.random(100)
         if (roll >= 50) then
         e.self:Emote("releases a volley of arrows.");
-        e.self:CastSpell(eq.ChooseRandom(4850, 4849, 4851), e.self:GetTarget():GetID())
+        hate_list = e.self:CountHateList();
+    		if (hate_list ~= nil and tonumber(hate_list) == 1) then
+				e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+			elseif (hate_list ~= nil and tonumber(hate_list) == 2) then
+				e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+			elseif (hate_list ~= nil and tonumber(hate_list) == 3) then
+				e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+            elseif (hate_list ~= nil and tonumber(hate_list) == 4) then
+				e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+            elseif (hate_list ~= nil and tonumber(hate_list) == 5) then
+				e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+            elseif (hate_list ~= nil and tonumber(hate_list) == 6) then
+				e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+                e.self:CastedSpellFinished(eq.ChooseRandom(4850, 4849, 4851), e.self:GetHateRandom())
+			end
+        
         eq.set_timer("casting", 20  * 1000)
         end
     end

@@ -11,6 +11,7 @@ function event_say(e)
 		e.self:Emote("sighs with discontent. 'I am not a warrior, and that's what is truly needed in these dark times. There's nothing I can do except weave. In our tribe I was an expert seamstress. I can work with nearly any material, but my specialty is decorative clothing woven from scales of the cragbeast.");
 	elseif(e.message:findi("materials")) then
 		e.self:Emote("hands you a compact box. 'This shouldn't be too difficult for someone like yourself. I will need you to bring me the raw materials to weave the sash. Combine them in this box and then return the box to me. The work will require three Pristine Hynid Manes, a pair of Untainted Spectral Essences, and the Cragbeast Queen's Scales.");
+		e.other:SummonItem(52129); --Lienni's empty box
 	end
 end
 

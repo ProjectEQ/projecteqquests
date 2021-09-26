@@ -3,11 +3,10 @@ function event_say(e)
     if(e.message:findi("hail") and e.other:HasItem(52125) == true) then --scale of the cragbeast queen
         e.self:Emote("yelps with surprise as she notices the bundle of scales you carry.");
         e.self:Say("How? Where did you acquire those ancient cragbeast scales? As long as I've lived in Taelosia I've never seen any so enormous. The beast must have been several centuries old!' She pauses a moment to regain her composure, 'It would be my honor to fashion those scales into something more practical for you. They are intact enough to create a scale plated belt. All I need are the remaining raw [materials].");
-    else
+    elseif(e.message:findi("hail")) and e.other:HasItem(52125) == false) then
         e.self:Emote("smiles and extends her arm to welcome you.");
         e.self:Say("Pleased to have you in our quaint makeshift camp, ".. e.other:GetCleanName() ..". Stay as long as you like. The Wayfarers always seem busy, but there's not much for me to do here other than work on my [weaving].");
-    end
-   if(e.message:findi("materials")) then
+   elseif(e.message:findi("materials")) then
         e.self:Say("Splendid. This is what will be required of you, ".. e.other:GetCleanName() ..". Bring me the raw materials necessary to forge the belt. Combine them in this container and then return the box to me. The work will require three Polished Stonemite Shells, a pair of Untainted Spectral Essences, and the Cragbeast Queen's Scales.");
         e.other:SummonItem(52130); --Larsaki's empty box
     elseif(e.message:findi("weaving")) then

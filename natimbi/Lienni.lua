@@ -5,7 +5,7 @@ function event_say(e)
 		if(e.other:HasItem(52125)) then --scale of the cragbeast queen
 			e.self:Emote("gasps when she catches a glance at the scales you carry. 'Unbelievable! Those are authentic ancient cragbeast scales. Why, they're absolutely humongous. Some of the scales are a bit charred or damaged in places, hmm. She chuckles, The beast didn't go down without a fight, I take it? There are enough scales in good shape to fashion a sash. I could do so with the right [materials], if you wish.");
 		else
-			e.self:Emote("nods in your direction.'Greetings. This is a place of peace and safety. Feel free to have a seat in our camp and relax. The Wayfarers have rescued me from the clutches of the Legion of Mata Muram. We owe them so much. I wish there were some way I could [repay] them.");
+			e.self:Emote("nods in your direction. 'Greetings. This is a place of peace and safety. Feel free to have a seat in our camp and relax. The Wayfarers have rescued me from the clutches of the Legion of Mata Muram. We owe them so much. I wish there were some way I could [repay] them.");
 		end
 	elseif(e.message:findi("repay")) then
 		e.self:Emote("sighs with discontent. 'I am not a warrior, and that's what is truly needed in these dark times. There's nothing I can do except weave. In our tribe I was an expert seamstress. I can work with nearly any material, but my specialty is decorative clothing woven from scales of the cragbeast.");

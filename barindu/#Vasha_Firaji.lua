@@ -21,6 +21,6 @@ function event_say(e)
 		  e.self:Say("I wish death for every last one of these creatures, but I realize that simply isn't possible. The Aneuk Overseer is the one who ordered the deaths. Bring me his head so my heart can start to mend.");
 	  end
   else
-    -- what is text if faction not high enough?
+    e.self:Emote("pointedly ignores you and continues what she was doing.");
   end
 end

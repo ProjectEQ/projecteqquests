@@ -13,6 +13,7 @@ end
 function event_signal(e)
   if (e.signal == 1) then
     blademaster_counter = blademaster_counter + 1;
+	eq.debug("blademaster spawn count: " ..  blademaster_counter);
 	end
 	if (blademaster_counter == 100) then
      	eq.unique_spawn(284039,0,0,443,428,102.5,0); -- Pxet_Elite_Blademaster (284039)

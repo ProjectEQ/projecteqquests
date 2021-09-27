@@ -2,7 +2,7 @@
 
 function event_say(e)
     if(e.message:findi("hail")) then
-		e.self:Emote("spits out a mouthful of brew. 'Blast ye,".. e.other:GetCleanName() .."! For the love of Brell what possessed ye to sneak up on a dwarf when he's drinkin'? I thought ye were the [Cragbeast Queen] come to have me for a light snack");
+		e.self:Emote("spits out a mouthful of brew. 'Blast ye, ".. e.other:GetCleanName() .."! For the love of Brell what possessed ye to sneak up on a dwarf when he's drinkin'? I thought ye were the [Cragbeast Queen] come to have me for a light snack");
     elseif(e.message:findi("Cragbeast Queen")) then
 		e.self:Emote("nods knowingly and leans in close. 'Listen to me carefully, ".. e.other:Race() ..". Keep a wide berth if ye value yer skin. She's got a jaw as wide as an ogre's backside and as strong as a steel trap. From what I gather from the natives, she made an appearance after the great explosion rocked this island. They say she crawled right out of the ocean if ye can believe that. Rumor has it that she's been sleepin' for ages and the blast woke her up. Now she roams the beaches at midnight. She's not angry so much as plain famished. We've been lookin' for bands of adventurers like yerself strong enough to take her down. If ye have the skills and ye manage to best the blasted lizard, come back and speak to me. There are [rewards] to be had for such bravery");
     elseif(e.message:findi("remind")) then
@@ -20,3 +20,6 @@ function event_say(e)
     end
 end
 
+function event_trade(e)
+  item_lib.return_items(e.self, e.other, e.trade)
+end

@@ -57,11 +57,13 @@ elseif (e.timer == "ejecttimer") then
 		if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, trial_x, trial_y, trial_z, 250, -1515, -289, -14, 60, "A mysterious force translocates you."); 
 		else
-            local client_e = eq.get_entity_list():GetClientByCharID(client_id);
-            if (client_e ~= nil and client_e.valid) then
-                client_e.other:MovePC( 281, -1515, -289, -14, 60 ); -- Zone: qinimi
-                client_e.other:Message(3, "A mysterious force translocates you.");
-            end
+            		local client_e = eq.get_entity_list():GetClientByCharID(client_id);
+            		if (client_e ~= nil and client_e.valid) then
+				if (client_e.other:CalculateDistance(trial_x, trial_y, trial_z) <= 180) then
+                		client_e.other:MovePC( 281, -1515, -289, -14, 60 ); -- Zone: qinimi
+                		client_e.other:Message(3, "A mysterious force translocates you.");
+				end
+            		end
 		end
 elseif (e.timer == "startevent") then
 		eq.stop_timer("startevent");

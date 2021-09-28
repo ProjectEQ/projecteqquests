@@ -13,6 +13,11 @@
 local event_flag   = 0;
 local trial_group_id = 0;
 local client_id      = 0; -- character ID, not entity ID
+local event_success   = 0;
+local trial_x           = -480;
+local trial_y           = -1789;
+local trial_z           = 78;
+local trial_h           = 256;
 
 function Trigger_Spawn(e)
 	eq.set_timer("delay",2000);
@@ -51,7 +56,7 @@ elseif (e.timer == "ejecttimer") then
 
         local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
 		if (trial_group ~= nil and trial_group.valid) then
-			MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, -1515, -289, -14, 60, "A mysterious force translocates you."); 
+			MoveGroup( trial_group, trial_x, trial_y, trial_z, trial_h, -1515, -289, -14, 60, "A mysterious force translocates you."); 
 		else
             local client_e = eq.get_entity_list():GetClientByCharID(client_id);
             if (client_e ~= nil and client_e.valid) then
@@ -107,9 +112,9 @@ end
 
 
 function Trigger_proximity_say(e)
-if (e.message:findi("ready to begin the trial")) then
+if (e.message:findi("i wish to enter")) then
+		if (e.self:GetItemIDAt(Slot.Cursor) == 67415) then --stone of entry
 			if ( event_flag == 0 ) then 
-				e.self:Say("Then begin.");
 
 				-- Move the Player and their Group to the trial room.
 				local trial_group = e.other:GetGroup();
@@ -123,10 +128,12 @@ if (e.message:findi("ready to begin the trial")) then
 
 				-- Set a variable to indicate the Trial is unavailable.
 				event_flag = 1;
-        eq.set_timer("startevent", 500); --popevent
+		
+        			eq.set_timer("startevent", 500); --popevent
 			else
 				e.self:Say("I'm sorry, the Trial is currently unavilable to you.");
 			end
+		end
 end
 end
 
@@ -182,12 +189,16 @@ e.self:Say("As you wish Tixxrt. I shall slay the spy no matter what the cost.");
    elseif (e.signal==2) then
     eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"As the executioner swings his axe forward, Kreshin cries out one last time before the flame of his life is extinguished.");
     e.self:Emote("laughs as innocent blood is spread all over the platform. 'Return to your friends and let them know that the might of the Muramites cannot be stopped!");
+elseif (e.signal==3) then
+	e.self:SetSpecialAbility(35, 0); --turn off immunity
+e.self:SetSpecialAbility(24, 0); --turn off anti aggro
 end
 end
 
 function Kreshin_Signal(e)
 if (e.signal==1) then
   e.self:Say("Thank you for rescuing me. I sense that one of you holds a stone key which allowed you entrance into the courts. Please show it to me.");
+		event_success  = 1;
 elseif (e.signal==2) then
     e.self:Say("If you have not shown me your key, please hurry and do so. We must leave here soon.");
 end
@@ -195,11 +206,15 @@ end
 
 function Kreshin_Trade(e)
 	local item_lib = require("items");
+	if (event_success  == 1) then
 		if (item_lib.check_turn_in(e.trade, {item1 = 67415})) then --Stone of Entry
 			e.self:Say("You have done well to get this far. Please, take this to Taminoa and tell him it is vital that he decipher it. I must stay here to investigate more. Let him know I am safe and thank you again.");
-      e.other:SummonItem(67415);--Stone of Entry
-      e.other:SummonItem(67401);--Writ of the Magi
-    end
+      			e.other:SummonItem(67415);--Stone of Entry
+      			e.other:SummonItem(67401);--Writ of the Magi
+    		end
+	else
+		e.self:Say("You have not freed me yet you imbocile!");
+	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
@@ -207,6 +222,11 @@ function Executioner_Death(e)
 eq.signal(281138,1); -- signal Trigger_Qinimi_1 (281138) that event was won
 eq.signal(281124,1); -- signal Kreshin to emote
 end
+
+function Pixtt_Death(e)
+	eq.signal(281119,3); -- signal executioner to remove immunities
+end
+
 
 function event_encounter_load(e)
 eq.register_npc_event('execution', Event.spawn, 281138, Trigger_Spawn); --Trigger_Qinimi_1 (281138)
@@ -227,6 +247,8 @@ eq.register_npc_event('execution', Event.signal, 281138, Trigger_Signal); --Trig
     
   eq.register_npc_event('execution', Event.signal, 281119, Executioner_Signal);
   eq.register_npc_event('execution', Event.death_complete, 281119, Executioner_Death);
+	
+eq.register_npc_event('execution', Event.death_complete, 281123, Pixtt_Death);
   
   eq.register_npc_event('execution', Event.signal, 281124, Kreshin_Signal);
   eq.register_npc_event('execution', Event.trade, 281124, Kreshin_Trade);

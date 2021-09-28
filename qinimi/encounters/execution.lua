@@ -13,7 +13,6 @@
 local event_flag   = 0;
 local trial_group_id = 0;
 local client_id      = 0; -- character ID, not entity ID
-local trial_mobs = {281139,281140,281141,281142,281143,281144,281119,281124,281123,281117};
 
 function Trigger_Spawn(e)
 	eq.set_timer("delay",2000);
@@ -35,11 +34,20 @@ if (e.timer == "delay") then
 elseif (e.timer == "ejecttimer") then
 		eq.stop_timer("ejecttimer");
     
-		despawn_trial_mobs()
+		eq.depop_all(281139);
+		eq.depop_all(281140);
+		eq.depop_all(281141);
+		eq.depop_all(281142);
+		eq.depop_all(281143);
+		eq.depop_all(281144);
+		eq.depop_all(281119);
+		eq.depop_all(281117);
+		eq.depop_all(281123);
+		eq.depop_all(281124);
     
-    event_flag   = 0;
-    client_id      = 0;
-    trial_group_id = 0;
+    		event_flag   = 0;
+    		client_id      = 0;
+    		trial_group_id = 0;
 
         local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
 		if (trial_group ~= nil and trial_group.valid) then
@@ -145,11 +153,6 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 	end
 end
 
-function despawn_trial_mobs(e)
-	for k,v in pairs(trial_mobs) do
-		eq.depop_all(v);
-	end
-end
 
 function Waveone_Signal(e)
 e.self:SetSpecialAbility(35, 0); --turn off immunity

@@ -49,11 +49,9 @@ elseif (e.timer == "ejecttimer") then
 		eq.depop_all(281123);
 		eq.depop_all(281124);
     
-    		event_flag   = 0;
-    		client_id      = 0;
-    		trial_group_id = 0;
+    		
 
-        local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
+       		local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
 		if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, trial_x, trial_y, trial_z, 250, -1515, -289, -14, 60, "A mysterious force translocates you."); 
 		else
@@ -65,6 +63,10 @@ elseif (e.timer == "ejecttimer") then
 				end
             		end
 		end
+		
+		event_flag   = 0;
+    		client_id      = 0;
+    		trial_group_id = 0;
 elseif (e.timer == "startevent") then
 		eq.stop_timer("startevent");
     eq.unique_spawn(281123,0,0,-490,-1944,90,1); -- Pixtt_Tixxrt_Kvrok

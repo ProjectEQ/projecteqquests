@@ -113,7 +113,9 @@ end
 
 function Trigger_proximity_say(e)
 if (e.message:findi("i wish to enter")) then
-		if (e.self:GetItemIDAt(Slot.Cursor) == 67415) then --stone of entry
+		local currclient=ent:CastToClient();
+		if(currclient:GetItemIDAt(Slot.Cursor) == 67415) then --stone of entry
+		
 			if ( event_flag == 0 ) then 
 
 				-- Move the Player and their Group to the trial room.

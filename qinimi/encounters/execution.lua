@@ -113,8 +113,8 @@ end
 
 function Trigger_proximity_say(e)
 if (e.message:findi("i wish to enter")) then
-		local currclient=ent:CastToClient();
-		if(currclient:GetItemIDAt(Slot.Cursor) == 67415) then --stone of entry
+		local client = e.other;
+		if(client:GetItemIDAt(Slot.Cursor) == 67415) then --stone of entry
 		
 			if ( event_flag == 0 ) then 
 

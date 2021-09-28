@@ -69,7 +69,7 @@ elseif (e.timer == "startevent") then
     eq.spawn2(281141,0,0,-406,-1969,78,450); -- a_kyv_bloodhunter (281141) Wave3
     eq.set_timer("wave1", 10 * 1000); --10 sec before 1st wave activates
 elseif (e.timer == "wave1") then
-		eq.stop_timer("startevent");
+		eq.stop_timer("wave1");
     eq.signal(281139,1); -- signal first wave NPCs to go active
     eq.signal(281142,1); -- signal first wave NPCs to go active
     eq.set_timer("wave2", 120 * 1000); --2 min in between waves

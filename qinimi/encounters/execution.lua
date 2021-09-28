@@ -17,7 +17,6 @@ local event_success   = 0;
 local trial_x           = -480;
 local trial_y           = -1789;
 local trial_z           = 78;
-local trial_h           = 256;
 
 function Trigger_Spawn(e)
 	eq.set_timer("delay",2000);
@@ -56,7 +55,7 @@ elseif (e.timer == "ejecttimer") then
 
         local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
 		if (trial_group ~= nil and trial_group.valid) then
-			MoveGroup( trial_group, trial_x, trial_y, trial_z, trial_h, -1515, -289, -14, 60, "A mysterious force translocates you."); 
+			MoveGroup( trial_group, trial_x, trial_y, trial_z, 250, -1515, -289, -14, 60, "A mysterious force translocates you."); 
 		else
             local client_e = eq.get_entity_list():GetClientByCharID(client_id);
             if (client_e ~= nil and client_e.valid) then

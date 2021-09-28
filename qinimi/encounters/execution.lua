@@ -207,26 +207,26 @@ eq.signal(281124,1); -- signal Kreshin to emote
 end
 
 function event_encounter_load(e)
-eq.register_npc_event('exection', Event.spawn, 281138, Trigger_Spawn); --Trigger_Qinimi_1 (281138)
-eq.register_npc_event('exection', Event.timer, 281138, Trigger_Timer); --Trigger_Qinimi_1 (281138)
-eq.register_npc_event('exection', Event.proximity_say, 281138, Trigger_proximity_say); --Trigger_Qinimi_1 (281138)
-eq.register_npc_event('exection', Event.signal, 281138, Trigger_Signal); --Trigger_Qinimi_1 (281138)
+eq.register_npc_event('execution', Event.spawn, 281138, Trigger_Spawn); --Trigger_Qinimi_1 (281138)
+eq.register_npc_event('execution', Event.timer, 281138, Trigger_Timer); --Trigger_Qinimi_1 (281138)
+eq.register_npc_event('execution', Event.proximity_say, 281138, Trigger_proximity_say); --Trigger_Qinimi_1 (281138)
+eq.register_npc_event('execution', Event.signal, 281138, Trigger_Signal); --Trigger_Qinimi_1 (281138)
   
-  eq.register_npc_event('exection', Event.signal, 281139, Waveone_Signal);
-  eq.register_npc_event('exection', Event.signal, 281142, Waveone_Signal);
+  eq.register_npc_event('execution', Event.signal, 281139, Waveone_Signal);
+  eq.register_npc_event('execution', Event.signal, 281142, Waveone_Signal);
   
-  eq.register_npc_event('exection', Event.signal, 281140, Wavetwo_Signal);
-  eq.register_npc_event('exection', Event.signal, 281143, Wavetwo_Signal);
+  eq.register_npc_event('execution', Event.signal, 281140, Wavetwo_Signal);
+  eq.register_npc_event('execution', Event.signal, 281143, Wavetwo_Signal);
   
-  eq.register_npc_event('exection', Event.signal, 281141, Wavethree_Signal);
-  eq.register_npc_event('exection', Event.signal, 281144, Wavethree_Signal);
+  eq.register_npc_event('execution', Event.signal, 281141, Wavethree_Signal);
+  eq.register_npc_event('execution', Event.signal, 281144, Wavethree_Signal);
   
-  eq.register_npc_event('exection', Event.signal, 281123, Wavefour_Signal);
+  eq.register_npc_event('execution', Event.signal, 281123, Wavefour_Signal);
     
-  eq.register_npc_event('exection', Event.signal, 281119, Executioner_Signal);
-  eq.register_npc_event('exection', Event.death_complete, 281119, Executioner_Death);
+  eq.register_npc_event('execution', Event.signal, 281119, Executioner_Signal);
+  eq.register_npc_event('execution', Event.death_complete, 281119, Executioner_Death);
   
-  eq.register_npc_event('exection', Event.signal, 281124, Kreshin_Signal);
-  eq.register_npc_event('exection', Event.trade, 281124, Kreshin_Trade);
+  eq.register_npc_event('execution', Event.signal, 281124, Kreshin_Signal);
+  eq.register_npc_event('execution', Event.trade, 281124, Kreshin_Trade);
  
 end

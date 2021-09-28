@@ -13,7 +13,7 @@
 local event_flag   = 0;
 local trial_group_id = 0;
 local client_id      = 0; -- character ID, not entity ID
-local mob_list       = { };
+local trial_mobs = {281139,281140,281141,281142,281143,281144,281119,281124,281123,281117};
 
 function Trigger_Spawn(e)
 	eq.set_timer("delay",2000);
@@ -146,7 +146,6 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 end
 
 function despawn_trial_mobs()
-local trial_mobs	= {281139,281140,281141,281142,281143,281144,281119,281124,281123,281117};
 	for k,v in pairs(trial_mobs) do
 		eq.depop_all(v);
 	end

@@ -145,7 +145,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
 	end
 end
 
-function despawn_trial_mobs()
+function despawn_trial_mobs(e)
 	for k,v in pairs(trial_mobs) do
 		eq.depop_all(v);
 	end

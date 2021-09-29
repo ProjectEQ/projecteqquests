@@ -113,6 +113,7 @@ elseif (e.timer == "ejectemote") then
 elseif (e.timer == "failtimer") then
 	eq.stop_timer("failtimer");
 	eq.signal(281119,2); -- signal executioner event failed
+	eq.signal(281124,3); -- signal kreshin lie down
 	eq.set_timer("ejecttimer", 20 * 1000); --20 sec left until everyone is ejected after event failure
 end
 end
@@ -210,6 +211,8 @@ if (e.signal==1) then
 	event_success  = 1;
 elseif (e.signal==2) then
     e.self:Say("If you have not shown me your key, please hurry and do so. We must leave here soon.");
+elseif (e.signal==3) then
+    e.Self:SetAppearance(3);
 end
 end
 

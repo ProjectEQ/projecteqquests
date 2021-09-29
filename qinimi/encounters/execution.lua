@@ -141,7 +141,7 @@ if (e.message:findi("i wish to enter")) then
 		
         			eq.set_timer("startevent", 500); --popevent
 			else
-				e.self:Say("I'm sorry, the Trial is currently unavilable to you.");
+				e.self:Say("The device appears to be in use. Maybe you should try again once it has been reset.");
 			end
 		end
 end
@@ -223,9 +223,9 @@ function Kreshin_Trade(e)
 			e.self:Say("You have done well to get this far. Please, take this to Taminoa and tell him it is vital that he decipher it. I must stay here to investigate more. Let him know I am safe and thank you again.");
       		e.other:SummonItem(67415);--Stone of Entry
       		e.other:SummonItem(67401);--Writ of the Magi
-    	end
+    		end
 	else
-		e.self:Say("You have not freed me yet you imbocile!");
+		e.self:Emote("looks at you with pleading eyes. 'You've come just in time. Help me!"); --cannot turn in item until event won
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

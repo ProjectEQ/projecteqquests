@@ -141,8 +141,10 @@ if (e.message:findi("i wish to enter")) then
 		
         			eq.set_timer("startevent", 500); --popevent
 			else
-				e.self:Say("The device appears to be in use. Maybe you should try again once it has been reset.");
+				e.other:Message(15,"The device appears to be in use. Maybe you should try again once it has been reset.");
 			end
+		else
+			e.other:Message(15,"Nothing happens. You must be missing the key required.");
 		end
 end
 end

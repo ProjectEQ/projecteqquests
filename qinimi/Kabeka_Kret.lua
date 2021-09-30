@@ -5,9 +5,10 @@ end
 
 function event_combat(e)
 	if (e.joined == true) then
-    	eq.set_timer("casting", 20 * 1000)
+		eq.set_timer("casting", 20 * 1000)
 	else
 		eq.stop_timer("casting")
+	end
 end
 
 function event_spawn(e)

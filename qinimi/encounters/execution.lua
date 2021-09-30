@@ -24,7 +24,7 @@ end
 
 function Trigger_Signal(e)
 	if (e.signal == 1) then
-    	eq.stop_timer("ejecttimer");
+    	eq.stop_timer("failtimer");
     
     	eq.set_timer("ejectemote", 425 * 1000); --425 sec after win, let people know that event is about to port them out
 	end

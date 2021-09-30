@@ -3,17 +3,24 @@ function event_death_complete(e)
   eq.signal(281127,2,5); -- NPC: #Trigger_Qinimi_2
 end
 
-function event_spawn(e)
-    eq.set_next_hp_event(98)
+function event_combat(e)
+	if (e.joined == true) then
+    	eq.set_timer("casting", 20 * 1000)
+	else
+		eq.stop_timer("casting")
 end
 
+function event_spawn(e)
+	eq.set_next_hp_event(5)
+end
+	
 function event_hp(e)
-    if (e.hp_event == 98) then
-        eq.set_timer("casting", 20 * 1000) -- chance to fire every 20 sec
-        eq.set_next_inc_hp_event(98)
-    elseif (e.inc_hp_event == 98) then
-        eq.stop_timer("casting")
-        eq.set_next_hp_event(98)
+    if (e.hp_event == 5) then
+		e.self:CastSpell(4663,e.self:GetID()); -- Spell: Aura of the Hunter (4663)
+		e.self:Emote("grins as its muscles twitch with power.")
+        eq.set_next_inc_hp_event(5)
+    elseif (e.inc_hp_event == 5) then
+        eq.set_next_hp_event(5)
     end
 end
 

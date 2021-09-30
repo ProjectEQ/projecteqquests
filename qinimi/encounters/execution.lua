@@ -214,7 +214,7 @@ if (e.signal==1) then
 elseif (e.signal==2) then
     e.self:Say("If you have not shown me your key, please hurry and do so. We must leave here soon.");
 elseif (e.signal==3) then
-    e.Self:SetAppearance(3);
+    e.self:SetAppearance(3);
 end
 end
 

@@ -57,9 +57,9 @@ elseif (e.timer == "ejecttimer") then
 			else
             		local client_e = eq.get_entity_list():GetClientByCharID(client_id);
             		if (client_e ~= nil and client_e.valid) then
-						if (client_e.other:CalculateDistance(trial_x, trial_y, trial_z) <= 180) then
-                		client_e.other:MovePC( 281, -1515, -289, -14, 60 ); -- Zone: qinimi
-                		client_e.other:Message(3, "A mysterious force translocates you.");
+						if (client_e:CalculateDistance(trial_x, trial_y, trial_z) <= 180) then
+                		client_e:MovePC( 281, -1515, -289, -14, 60 ); -- Zone: qinimi
+                		client_e:Message(3, "A mysterious force translocates you.");
 						end
             		end
 			end

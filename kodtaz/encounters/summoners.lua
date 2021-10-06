@@ -148,6 +148,26 @@ function Greater_Timer(e)
     end
 end
 
+function Deranged_Combat(e)
+    if (e.joined == true) then
+        eq.set_timer("oobcheck", 5 * 1000);
+    else
+        eq.stop_timer("oobcheck");
+    end
+end
+
+function Deranged_Timer(e)
+    if (e.timer == "oobcheck") then
+    local npc1 = eq.get_entity_list():GetMobByNpcTypeID(293001);
+        -- calc distance to leash npc in center of ring
+        if ( npc1:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ()) > 150) then
+            e.self:SetHP(e.self:GetMaxHP())
+            e.self:CastSpell(3791, e.self:GetID())
+            e.self:WipeHateList()
+        end
+    end
+end
+
 
 
 function Lesser_Death(e)

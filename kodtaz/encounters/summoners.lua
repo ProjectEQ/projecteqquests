@@ -52,7 +52,7 @@ function Grand_Signal(e)
     elseif (e.signal == 2) then
     --reduce hp by 8 %
         if (e.self:GetHPRatio() > 10) then
-            local hp = e.self:GetMaxHP() * .8;
+            local hp = e.self:GetMaxHP() * .08;
             e.self:SetHP( e.self:GetHP() - hp );eq.spawn2(eq.ChooseRandom(293215,293216),0,0,657 + math.random(-20,20),737 + math.random(-20,20),-455,276); -- choose random golem
         else
             respawn = 1; --stop respawning adds
@@ -60,7 +60,7 @@ function Grand_Signal(e)
     elseif (e.signal == 3) then
     --reduce hp by 2 %
         if (e.self:GetHPRatio() > 10) then
-            local hp = e.self:GetMaxHP() * .2;
+            local hp = e.self:GetMaxHP() * .02;
             e.self:SetHP( e.self:GetHP() - hp );
             eq.spawn2(eq.ChooseRandom(293215,293216),0,0,657 + math.random(-20,20),737 + math.random(-20,20),-455,276); -- choose random golem
         else
@@ -191,5 +191,8 @@ eq.register_npc_event('summoners', Event.death_complete, 293213, Priest_Death);
     eq.register_npc_event('summoners', Event.death_complete, 293216, Greater_Death);
     eq.register_npc_event('summoners', Event.combat, 293216, Greater_Combat);
     eq.register_npc_event('summoners', Event.timer, 293216, Greater_Timer);
+    
+    eq.register_npc_event('summoners', Event.combat, 293217, Deranged_Combat);
+    eq.register_npc_event('summoners', Event.timer, 293217, Deranged_Timer);
     
 end

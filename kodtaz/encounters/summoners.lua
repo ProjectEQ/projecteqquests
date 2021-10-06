@@ -33,7 +33,7 @@ function Trigger_Timer(e)
 end
 
 function Priest_Death(e)
-    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293122) == true) then
+    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293212) == true) then
     --if all 9 priest summoners dead and grand summoner alive, start next phase
         eq.signal(293212,1); --signal to start next phase
     end

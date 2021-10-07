@@ -18,10 +18,10 @@ function Bones_Death(e)
 if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293112) == true) then
 --loot version is able to be spawned
 eq.unique_spawn(293220,0,0,-1414,656,-453,385);-- # NPC: ##Pixtt_Priest_Summoner
-eq.unique_spawn(293177,0,0,-1423, 705, -453,-- 385); # NPC: Pixtt_Priest_Guardian
-eq.unique_spawn(293179,0,0,-1409, 683, -453,-- 385); # NPC: Pixtt_Priest_Guardian
-eq.unique_spawn(293186,0,0,-1423, 611, -453,-- 385); # NPC: Pixtt_Priest_Guardian
-eq.unique_spawn(293187,0,0,-1409, 619, -453,-- 385); # NPC: Pixtt_Priest_Guardian
+eq.unique_spawn(293177,0,0,-1423, 705, -453,385); # NPC: Pixtt_Priest_Guardian
+eq.unique_spawn(293179,0,0,-1409, 683, -453,385); # NPC: Pixtt_Priest_Guardian
+eq.unique_spawn(293186,0,0,-1423, 611, -453,385); # NPC: Pixtt_Priest_Guardian
+eq.unique_spawn(293187,0,0,-1409, 619, -453,385); # NPC: Pixtt_Priest_Guardian
 eq.depop_with_timer(293112); --need to confirm respawn (3day?)
 else
 --spawn no loot version

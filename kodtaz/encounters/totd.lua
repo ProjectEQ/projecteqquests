@@ -4,7 +4,6 @@
 --depop totd (293112) when event is spawned
 --##Pixtt_Dire_Summoner (293153) no loot version
 
-
 --check if npc is up to spawn loot version or placehold version
 --The bone pile crumbles and alerts the nearby Muramites that rush to ambush you!
 -- 293179 -1409, 683, -453, 385
@@ -22,7 +21,7 @@ eq.unique_spawn(293177,0,0,-1423, 705, -453,385);-- # NPC: Pixtt_Priest_Guardian
 eq.unique_spawn(293179,0,0,-1409, 683, -453,385);-- # NPC: Pixtt_Priest_Guardian
 eq.unique_spawn(293186,0,0,-1423, 611, -453,385);-- # NPC: Pixtt_Priest_Guardian
 eq.unique_spawn(293187,0,0,-1409, 619, -453,385);-- # NPC: Pixtt_Priest_Guardian
-eq.depop_with_timer(293112); --need to confirm respawn (3day?)
+
 else
 --spawn no loot version
 eq.unique_spawn(293153,0,0,-1414,656,-453,385);-- # NPC: ##Pixtt_Dire_Summoner
@@ -65,6 +64,11 @@ e.self:SetSpecialAbility(35, 0); --turn off immunity
 e.self:SetSpecialAbility(24, 0); --turn off anti aggro
 end
 
+function Priest_Death(e)
+eq.depop_with_timer(293112); --need to confirm respawn (3day?)
+--only loot dropping priest will force this npc to start its respawn cycle
+end
+
 function Trash_Death(e)
 if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293177) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293179) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293186) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293187) == false) then
 --all adds are dead, signal named to become active
@@ -78,6 +82,7 @@ eq.register_npc_event('totd', Event.spawn, 293220, Priest_Spawn);
 eq.register_npc_event('totd', Event.timer, 293220, Priest_Timer);
 eq.register_npc_event('totd', Event.combat, 293220, Priest_Combat);
 eq.register_npc_event('totd', Event.signal, 293220, Priest_Signal);
+eq.register_npc_event('totd', Event.death_complete, 293220, Priest_Death);
 
 eq.register_npc_event('totd', Event.spawn, 293153, Priest_Spawn);
 eq.register_npc_event('totd', Event.timer, 293153, Priest_Timer);

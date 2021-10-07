@@ -79,6 +79,14 @@ eq.unique_spawn(293214,0,0,684,719,-460,450); -- NPC: #Hexxt_Chaos_Provoker
 eq.depop_with_timer(293218); -- #Trigger_Kodtaz_1 (293218) assuming event doesnt reset, use this npc to control respawn of event
 end
 
+function Grand_Spawn(e)
+eq.set_timer("energysiphon", 60 * 1000);
+end
+
+function Grand_Timer(e)
+e.self:CastSpell(5071,e.self:GetID()); --energy siphon
+end
+
 function Provoker_Death(e)
 eq.spawn2(293217,0,0,611,683,-460,64); -- NPC: #Deranged_Supreme_Stoneservant
 eq.spawn2(293217,0,0,589,771,-459,176); -- NPC: #Deranged_Supreme_Stoneservant
@@ -199,6 +207,8 @@ eq.register_npc_event('summoners', Event.timer, 293218, Trigger_Timer);
 eq.register_npc_event('summoners', Event.death_complete, 293213, Priest_Death);
     
     eq.register_npc_event('summoners', Event.signal, 293212, Grand_Signal);
+    eq.register_npc_event('summoners', Event.spawn, 293212, Grand_Spawn);
+    eq.register_npc_event('summoners', Event.timer, 293212, Grand_Timer);
     eq.register_npc_event('summoners', Event.death_complete, 293212, Grand_Death);
     
     eq.register_npc_event('summoners', Event.death_complete, 293214, Provoker_Death);

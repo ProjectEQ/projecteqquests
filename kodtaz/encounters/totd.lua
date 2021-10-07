@@ -33,7 +33,7 @@ eq.unique_spawn(293187,0,0,-1409, 619, -453,385);-- # NPC: Pixtt_Priest_Guardian
 end
 end
 
-function Priest_Spawn
+function Priest_Spawn(e)
 --both versions will share this
 eq.set_timer("depop", 15 * 60 * 1000); --15 min until event depops (needs confirmation)
 end

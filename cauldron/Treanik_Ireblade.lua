@@ -11,7 +11,6 @@ function event_say(e)
 					e.self:Say("It do have sense of stragegy. It a creature dat has got smartz wit da magic too. Da way it mixes its abilities is good stuffs. You gots to try to catch it when it eats. It usually comes out when it dark out. And when you kill it, can you get my axe back? Me lost it to dat beast. Plus me needs proof you killed it so me can give you sumtin to give to McArik.");
 				end
 				e.self:Say("You berserker, but me have nothing for you!");	
-			end
 		else
 			e.self:Say("Me has nothing to do with you youngling.");
 		end

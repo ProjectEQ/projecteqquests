@@ -31,3 +31,27 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_spawn(e)
+	eq.set_timer("timecheck", 30 * 1000);
+end
+
+function event_timer(e)
+	local zone_time = eq.get_zone_time();
+
+	if(zone_time["zone_hour"] <= 13 or zone_time["zone_hour"] >= 23) then
+		--check between 11pm - 1pm
+
+		if (eq.get_spawn_condition("cauldron", 0, 1) == 1) then
+			--if spawn condition is already on, do nothing
+
+		else
+			eq.spawn_condition("cauldron", 0, 1, 1);
+			--set praklion spawn condition to on
+		end
+
+	else
+		-- if time is between 2pm-10pm turn off spawn condition
+		eq.spawn_condition("cauldron", 0, 1, 0);
+	end
+end

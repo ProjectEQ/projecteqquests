@@ -8,22 +8,22 @@ end
 
 function event_hp(e)
   if(e.hp_event == 70) then
+    e.self:Emote("flees to a more secure location in an attempt to defend itself!");
     e.self:SetRunning(true);
-    e.self:CastSpell(3791, e.self:GetID());
     e.self:WipeHateList();
     e.self:SetSpecialAbility(35, 1); --turn on immunity
     e.self:SetSpecialAbility(24, 1); --turn on anti aggro
     eq.set_next_hp_event(30);
     eq.set_timer("activate", 6 * 1000);
-    e.self:MoveTo(-1359, 341, -337, 130,true);
+    e.self:MoveTo(-1475, 372, -336, 130,true);
   elseif(e.hp_event == 30) then
+    e.self:Emote("flees to a more secure location in an attempt to defend itself!");
     e.self:SetRunning(true);
-    e.self:CastSpell(3791, e.self:GetID());
     e.self:WipeHateList();
     e.self:SetSpecialAbility(35, 1); --turn on immunity
     e.self:SetSpecialAbility(24, 1); --turn on anti aggro
     eq.set_timer("activate", 6 * 1000);
-    e.self:MoveTo(-642, 318, -326, 130,true);
+    e.self:MoveTo(-437, 279, -337, 130,true);
     e.self:AddItem(60200,1); -- Treanik's Tarnished Axe
   end
 end

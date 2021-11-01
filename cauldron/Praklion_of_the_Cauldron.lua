@@ -8,6 +8,7 @@ end
 
 function event_hp(e)
   if(e.hp_event == 70) then
+    e.self:SetRunning(true);
     e.self:CastSpell(3791, e.self:GetID());
     e.self:WipeHateList();
     e.self:SetSpecialAbility(35, 1); --turn on immunity
@@ -16,6 +17,7 @@ function event_hp(e)
     eq.set_timer("activate", 6 * 1000);
     e.self:MoveTo(-1359, 341, -337, 130,true);
   elseif(e.hp_event == 30) then
+    e.self:SetRunning(true);
     e.self:CastSpell(3791, e.self:GetID());
     e.self:WipeHateList();
     e.self:SetSpecialAbility(35, 1); --turn on immunity

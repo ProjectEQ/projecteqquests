@@ -8,6 +8,7 @@ local event_triggered = 0;
 function ChampEvent_Spawn(e)
 	event_triggered = 0;
  	eq.set_timer("spawnevent", 3 * 1000);
+	eq.spawn_condition("txevu", 0, 6, 0); --off arena trash
 end
 
 function ChampEvent_Timer(e)

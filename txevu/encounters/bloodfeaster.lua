@@ -135,6 +135,10 @@ function Bloodfeaster_Timer(e)
     eq.signal(297200,3); --event resetting add immunities
     eq.signal(297073,3); --event resetting add immunities
     eq.depop_all(297207); --depop stonemites
+		
+		eq.stop_timer("reset");
+		eq.stop_timer("adds");
+		
     eq.pause(78); --stop grid
     adds = 0;
     event_started = 0;

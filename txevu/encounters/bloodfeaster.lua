@@ -77,7 +77,7 @@ function Mauler_Signal(e)
     e.self:SetSpecialAbility(35, 0); --turn off immunity
     eq.start(78); --start grid
   elseif (e.signal == 3) then
-    eq.pause(78); --stop grid
+    eq.stop(); --stop grid
     e.self:SetSpecialAbility(24, 1); --turn on anti aggro
     e.self:SetSpecialAbility(35, 1); --turn on immunity
   end
@@ -139,7 +139,7 @@ function Bloodfeaster_Timer(e)
 		eq.stop_timer("reset");
 		eq.stop_timer("adds");
 		
-    eq.pause(78); --stop grid
+    eq.stop(); --stop grid
     adds = 0;
     event_started = 0;
   elseif (e.timer == "adds") then

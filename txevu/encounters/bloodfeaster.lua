@@ -32,6 +32,9 @@ function Bloodfeaster_Signal(e)
   elseif (e.signal == 3) then
     adds = adds + 1;
 	eq.debug("stonemite adds spawned: " ..  adds);
+  elseif (e.signal == 4) then
+    adds = adds - 1;
+	eq.debug("stonemite adds spawned: " ..  adds);
   end
 end
 
@@ -63,7 +66,7 @@ if(e.timer=="OOBcheck") then
 		    e.self:GMMove(239, 316, -420, 0);
 		    e.self:WipeHateList();
 	    else
-		    eq.set_timer("OOBcheck", 6 * 1000);
+		    eq.set_timer("OOBcheck", 3 * 1000);
   	  end
 end
 end
@@ -74,7 +77,7 @@ function Mauler_Signal(e)
     e.self:SetSpecialAbility(35, 0); --turn off immunity
     eq.start(78); --start grid
   elseif (e.signal == 3) then
-    eq.stop(78); --stop grid
+    eq.pause(78); --stop grid
     e.self:SetSpecialAbility(24, 1); --turn on anti aggro
     e.self:SetSpecialAbility(35, 1); --turn on immunity
   end
@@ -96,13 +99,17 @@ if(e.timer=="OOBcheck") then
 		    e.self:GMMove(239, 316, -420, 0);
 		    e.self:WipeHateList();
 	    else
-		    eq.set_timer("OOBcheck", 6 * 1000);
+		    eq.set_timer("OOBcheck", 3 * 1000);
   	  end
 end
 end
 
 function Stonemite_Spawn(e)
 eq.signal(297082,3); -- signal BF add to add counter
+end
+
+function Stonemite_Death(e)
+eq.signal(297082,4); -- signal BF subtract from add counter
 end
 
 function Bloodfeaster_Combat(e)
@@ -128,7 +135,7 @@ function Bloodfeaster_Timer(e)
     eq.signal(297200,3); --event resetting add immunities
     eq.signal(297073,3); --event resetting add immunities
     eq.depop_all(297207); --depop stonemites
-    eq.stop(78); --stop grid
+    eq.pause(78); --stop grid
     adds = 0;
     event_started = 0;
   elseif (e.timer == "adds") then
@@ -142,7 +149,7 @@ function Bloodfeaster_Timer(e)
 		    e.self:GMMove(239, 316, -420, 0);
 		    e.self:WipeHateList();
 	    else
-		    eq.set_timer("OOBcheck", 6 * 1000);
+		    eq.set_timer("OOBcheck", 3 * 1000);
   	  end
 end
 end
@@ -161,6 +168,7 @@ eq.register_npc_event('bloodfeaster', Event.combat, 297200, Mauler_Combat);
 eq.register_npc_event('bloodfeaster', Event.timer, 297207, Stonemite_Timer);
 eq.register_npc_event('bloodfeaster', Event.combat, 297207, Stonemite_Combat);
 eq.register_npc_event('bloodfeaster', Event.spawn, 297207, Stonemite_Spawn);
+eq.register_npc_event('bloodfeaster', Event.death_complete, 297207, Stonemite_Death);
 
 eq.register_npc_event('bloodfeaster', Event.signal, 297073, Corpse_Signal);
 end

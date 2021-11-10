@@ -158,8 +158,8 @@ eq.register_npc_event('bloodfeaster', Event.signal, 297200, Mauler_Signal);
 eq.register_npc_event('bloodfeaster', Event.combat, 297200, Mauler_Combat);
 
 eq.register_npc_event('bloodfeaster', Event.timer, 297207, Stonemite_Timer);
-eq.register_npc_event('bloodfeaster', Event.combat, 297207, Stonmite_Combat);
-eq.register_npc_event('bloodfeaster', Event.spawn, 297207, Stonmite_Spawn);
+eq.register_npc_event('bloodfeaster', Event.combat, 297207, Stonemite_Combat);
+eq.register_npc_event('bloodfeaster', Event.spawn, 297207, Stonemite_Spawn);
 
 eq.register_npc_event('bloodfeaster', Event.signal, 297073, Corpse_Signal);
 end

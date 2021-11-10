@@ -18,8 +18,7 @@ function event_click_door(e)
   local entity_list = eq.get_entity_list();
   if (door_id == 55) then --Bloodfeaster
     if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297082)) then
-      npcBF = eq.get_entity_list():GetNPCByNPCTypeID(297082)
-      npcBF:AddToHateList(e.self,1);
+      eq.signal(297082,1); --signal Bloodfeaster to initiate sequence
     end
   elseif (door_id == 25 or door_id == 23) then 
     local instance_id = eq.get_instance_id("tacvi",0);       

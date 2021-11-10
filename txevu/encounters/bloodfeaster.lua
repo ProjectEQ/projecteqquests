@@ -31,6 +31,7 @@ function Bloodfeaster_Signal(e)
     e.self:SetSpecialAbility(24, 0); --turn off anti aggro
   elseif (e.signal == 3) then
     adds = adds + 1;
+	eq.debug("stonemite adds spawned: " ..  adds);
   end
 end
 

@@ -125,7 +125,17 @@ function Bloodfeaster_Combat(e)
 end
 
 function Bloodfeaster_Death(e)
-eq.spawn_condition("txevu", 0, 2, 0); --turn off decaying corpse and ukun maulers 
+	eq.spawn2(297042, 0, 0, 209, 456,  -420,  0); --feaster (297042) will flip spawn condition off and depop adds
+end
+
+function Controller_Spawn(e)
+	eq.set_timer("condition", 60 * 45 * 1000); --45 min til spawn condition turns off and adds depop
+end
+
+function Controller_Timer(e)
+	eq.spawn_condition("txevu", 0, 2, 0); --turn off decaying corpse and ukun maulers
+	eq.depop_all(297207); --#a_stonemite_corpseburrower (297207)
+	eq.stop_timer("condition");
 end
 
 function Bloodfeaster_Timer(e)
@@ -175,4 +185,7 @@ eq.register_npc_event('bloodfeaster', Event.spawn, 297207, Stonemite_Spawn);
 eq.register_npc_event('bloodfeaster', Event.death_complete, 297207, Stonemite_Death);
 
 eq.register_npc_event('bloodfeaster', Event.signal, 297073, Corpse_Signal);
+	
+eq.register_npc_event('bloodfeaster', Event.spawn, 297042, Controller_Spawn);
+eq.register_npc_event('bloodfeaster', Event.timer, 297042, Controller_Timer);
 end

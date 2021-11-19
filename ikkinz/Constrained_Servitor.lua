@@ -14,7 +14,7 @@ end
 
 function event_timer(e)
   if saved_hp > e.self:GetHP() then
-    e.self:SetOOCRegen(0); --turn off OOC regen since damage is being done
+    e.self:SetOOCRegen(1); --turn off OOC regen since damage is being done
   elseif saved_hp == e.self:GetHP() then
     --no damage was done since last hp check, turn regen back on
     e.self:SetOOCRegen(2500);

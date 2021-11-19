@@ -20,4 +20,5 @@ function event_timer(e)
     e.self:SetOOCRegen(2500);
   end
 saved_hp = e.self:GetHP();
+  eq.debug("saved hp is now: " .. saved_hp);
 end

@@ -70,11 +70,11 @@ end
 -- #Vrex_Invoker_Malik (297057)
 function Malik_Spawn(e)
 eq.depop_all(297065); --cleanup old event
-eq.spawn2(297065,0,0,-801,-497,-511,104); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297065,0,0,-790,-511,-515,34); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297065,0,0,-772,-513,-516,490); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297065,0,0,-755,-501,-507,416); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297065,0,0,-754,-484,-511,360); # NPC: Tiv_Prayer_Chanter
+eq.spawn2(297065,0,0,-801,-497,-511,104); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297065,0,0,-790,-511,-515,34); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297065,0,0,-772,-513,-516,490); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297065,0,0,-755,-501,-507,416); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297065,0,0,-754,-484,-511,360); -- NPC: Tiv_Prayer_Chanter
 end
 
 function Malik_Death(e)
@@ -84,11 +84,11 @@ end
 --#Vrex_Invoker_Raziya (297199)
 function Raziya_Spawn(e)
 eq.depop_all(297066); --cleanup old event
-eq.spawn2(297066,0,0,-266,-906,-508,394); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297066,0,0,-267,-893,-513,334); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297066,0,0,-277,-885,-515,274); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297066,0,0,-293,-887,-511,208); # NPC: Tiv_Prayer_Chanter
-eq.spawn2(297066,0,0,-302,-896,-513,162); # NPC: Tiv_Prayer_Chanter
+eq.spawn2(297066,0,0,-266,-906,-508,394); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297066,0,0,-267,-893,-513,334); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297066,0,0,-277,-885,-515,274); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297066,0,0,-293,-887,-511,208); -- NPC: Tiv_Prayer_Chanter
+eq.spawn2(297066,0,0,-302,-896,-513,162); -- NPC: Tiv_Prayer_Chanter
 end
 
 function Raziya_Death(e)

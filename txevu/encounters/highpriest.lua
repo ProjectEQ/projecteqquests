@@ -215,7 +215,7 @@ e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Posses
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
 eq.stop_timer("checkcharm")
-if e.self:HasPet(); then
+if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
@@ -280,7 +280,7 @@ e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Posses
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
 eq.stop_timer("checkcharm")
-if e.self:HasPet(); then
+if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
@@ -345,7 +345,7 @@ e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Posses
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
 eq.stop_timer("checkcharm")
-if e.self:HasPet(); then
+if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
@@ -409,7 +409,7 @@ e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Posses
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
 eq.stop_timer("checkcharm")
-if e.self:HasPet(); then
+if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  

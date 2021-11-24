@@ -2,7 +2,7 @@ local counter = 0;
 local absorbed = 0;
 
 function Trigger_Spawn(e)
-eq.spawn_condition("txevu", 1, 1); --enable Vrex_Invoker Spawns
+eq.spawn_condition("txevu", 0, 1, 1); --enable Vrex_Invoker Spawns
 eq.unique_spawn(297072,0,0,-720, 346, -475.8, 266); --restless_wraith
 counter = 0;
 absorbed = 0;
@@ -14,7 +14,7 @@ counter = counter + 1;
 if counter == 5 then
 eq.depop(297072); --restless_wraith
 eq.unique_spawn(297218,0,0,-720, 346, -475.8, 266); --High_Priest_Nkosi_Bakari
-eq.spawn_condition("txevu", 1, 0); --disable Vrex_Invoker Spawns
+eq.spawn_condition("txevu",0, 1, 0); --disable Vrex_Invoker Spawns
 eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"As the final shade lends its voice to the chanting, the prayers reach a crescendo then abruptly fall silent.  A thick mist seeps up from the ground and envelopes the restless wraith.  When the mists fade, an elderly priest stands where the wraith used to be.");
 eq.signal(297213,2); --awaken
 eq.signal(297214,2); --awaken

@@ -572,8 +572,8 @@ eq.register_npc_event("highpriest", Event.combat, 297213, Shadeone_Combat)
     eq.register_npc_event("highpriest", Event.signal, 297212, Trigger_Signal)
     eq.register_npc_event("highpriest", Event.spawn, 297212, Trigger_Spawn)
 
-eq.register_npc_event("highpriest", Event.spawn, 297218, Raziya_Spawn)
-    eq.register_npc_event("highpriest", Event.death_complete, 297218, Raziya_Death)
+eq.register_npc_event("highpriest", Event.spawn, 297199, Raziya_Spawn)
+    eq.register_npc_event("highpriest", Event.death_complete, 297199, Raziya_Death)
 
 eq.register_npc_event("highpriest", Event.spawn, 297061, Akello_Spawn)
     eq.register_npc_event("highpriest", Event.death_complete, 297061, Akello_Death)

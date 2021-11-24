@@ -412,9 +412,7 @@ eq.stop_timer("checkcharm")
 if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
-eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  
-
-e.self:GetHeading());
+eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
 eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
 eq.depop();
 end

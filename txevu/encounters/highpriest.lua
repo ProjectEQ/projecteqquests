@@ -454,74 +454,98 @@ e.self:SetHP(e.self:GetMaxHP())
 eq.set_next_hp_event(50);
   elseif absorbed == 1 then
     absorbed = absorbed + 1;
-e.self:SetHP(e.self:GetMaxHP())
-eq.set_next_hp_event(50);
+
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false) then
         eq.signal(297214,1); --absorb 2nd add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       else
         eq.signal(297213,1); --absorb first add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
   elseif absorbed == 2 then
     absorbed = absorbed + 1;
-e.self:SetHP(e.self:GetMaxHP())
-	eq.set_next_hp_event(50);
+
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == true) then
         eq.signal(297213,1); --absorb first add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == true) then
         eq.signal(297214,1); --absorb second add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false and 
         eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and 
         eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == true) then
         eq.signal(297215,1); --absorb third add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
   elseif absorbed == 3 then
     absorbed = absorbed + 1;
-e.self:SetHP(e.self:GetMaxHP())
-eq.set_next_hp_event(50);
+
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == true) then
         eq.signal(297213,1); --absorb first add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == true) then
         eq.signal(297214,1); --absorb second add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == true) then
         eq.signal(297214,1); --absorb third add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297216) == true) then
         eq.signal(297216,1); --absorb fourth add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
   elseif absorbed == 4 then
     absorbed = absorbed + 1;
-e.self:SetHP(e.self:GetMaxHP())
-eq.set_next_hp_event(50);
+
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == true) then
         eq.signal(297213,1); --absorb first add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == true) then
         eq.signal(297214,1); --absorb second add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == true) then
         eq.signal(297214,1); --absorb third add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297216) == true) then
         eq.signal(297216,1); --absorb fourth add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
       if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297216) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297217) == true) then
-      eq.signal(297217,1); --absorb fifth add
+      	eq.signal(297217,1); --absorb fifth add
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.set_next_hp_event(50);
       end
 
   end

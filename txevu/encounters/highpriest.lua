@@ -448,13 +448,13 @@ end
 function HP_Health(e)
 if(e.hp_event == 50) then
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == true) then
-		eq.signal(297213,1); --absorb first add
+		eq.signal(297213,1,10); --absorb first add
 		e.self:SetHP(e.self:GetMaxHP())
 		eq.set_next_hp_event(50);
 	end
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == true) then
-			eq.signal(297214,1); --absorb second add
+			eq.signal(297214,1,10); --absorb second add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
 		end
@@ -462,7 +462,7 @@ if(e.hp_event == 50) then
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false) then
 		
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == true) then
-			eq.signal(297215,1); --absorb third add
+			eq.signal(297215,1,10); --absorb third add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
 		end
@@ -470,7 +470,7 @@ if(e.hp_event == 50) then
 		
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == false) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297216) == true) then
-			eq.signal(297216,1); --absorb fourth add
+			eq.signal(297216,1,10); --absorb fourth add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
 		end
@@ -479,7 +479,7 @@ if(e.hp_event == 50) then
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297215) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297216) == false) then
 				
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297217) == true) then
-			eq.signal(297217,1); --absorb fifth add
+			eq.signal(297217,1,10); --absorb fifth add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
 		end

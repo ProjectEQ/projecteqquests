@@ -451,12 +451,14 @@ if(e.hp_event == 50) then
 		eq.signal(297213,1,10); --absorb first add
 		e.self:SetHP(e.self:GetMaxHP())
 		eq.set_next_hp_event(50);
+		eq.debug("absorb first add");
 	end
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false) then
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == true) then
 			eq.signal(297214,1,10); --absorb second add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
+			eq.debug("absorb second add");
 		end
 	end
 	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(297214) == false) then
@@ -465,6 +467,7 @@ if(e.hp_event == 50) then
 			eq.signal(297215,1,10); --absorb third add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
+			eq.debug("absorb third add");
 		end
 	end
 		
@@ -473,6 +476,7 @@ if(e.hp_event == 50) then
 			eq.signal(297216,1,10); --absorb fourth add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
+			eq.debug("absorb fourth add");
 		end
 	end
 	
@@ -482,6 +486,7 @@ if(e.hp_event == 50) then
 			eq.signal(297217,1,10); --absorb fifth add
 			e.self:SetHP(e.self:GetMaxHP())
 			eq.set_next_hp_event(50);
+			eq.debug("absorb fifth add");
 		end
 	end
 	

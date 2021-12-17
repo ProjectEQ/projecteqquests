@@ -57,6 +57,10 @@ function event_timer(e)
 		eq.update_spawn_timer(51573,1000);
 		eq.update_spawn_timer(51572,1000);
 		eq.update_spawn_timer(51574,1000);
+		
+		eq.signal(51573,2);
+		eq.signal(51572,2);
+		eq.signal(51574,2);
 
 		--apprentice
 		eq.update_spawn_timer(51571,1000);

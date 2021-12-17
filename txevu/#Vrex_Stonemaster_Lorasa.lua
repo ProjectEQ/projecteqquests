@@ -16,8 +16,8 @@ end
 function event_signal(e)
 	if (e.signal == 1) then
 		--Active and able to kill, but won't fight back
-		e.self:ModifyNPCStat("special_attacks","12,13,14,15,16,17,24")
-		e.self:SetDisableMelee(true)
+		e.self:SetSpecialAbility(25, 0);
+		e.self:SetSpecialAbility(35, 0);
 	end
 end
 

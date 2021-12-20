@@ -7,11 +7,11 @@ if (e.timer == "replenish") then
 eq.stop_timer("replenish");
 	local rand = math.random(1,4);
 		if (rand == 1) then
-      eq.create_ground_object(52154,-1,-201,4.7,0);
+      eq.create_ground_object(52154,-1,-201,1,0);
 		elseif (rand == 2) then
-      eq.create_ground_object(52154,-129,625,73,0);
+      eq.create_ground_object(52154,-129,625,71,0);
 		elseif (rand == 3) then
-      eq.create_ground_object(52154,-736,-327,3,0);
+      eq.create_ground_object(52154,-736,-327,1,0);
 		elseif (rand == 4) then
       eq.create_ground_object(52154,-172,-233,18,0);
 		end

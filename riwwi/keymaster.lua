@@ -11,7 +11,7 @@ eq.stop_timer("replenish");
 		elseif (rand == 2) then
       eq.create_ground_object(52154,-129,625,71,0);
 		elseif (rand == 3) then
-      eq.create_ground_object(52154,-736,-327,1,0);
+      eq.create_ground_object(52154,-736,-327,0,0);
 		elseif (rand == 4) then
       eq.create_ground_object(52154,-172,-233,18,0);
 		end

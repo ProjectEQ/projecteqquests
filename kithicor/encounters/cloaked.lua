@@ -32,10 +32,10 @@ function CloakedTimer(e)
     entity_list:MessageClose(e.self, true, 100, 15, "The figure begins to fade into the shadows before your very eyes.  You notice movement out of the corner of your left eye.")
     local bard_client = entity_list:GetClientByID(bard)
     if bard_client.valid and bard_client:GetClass() == Class.BARD then
-        eq.spawn2(20291, 0, 0, bard:GetX() + 100, bard:GetY(), bard:FindGroundZ(bard:GetX() + 100, bard:GetY(), bard:GetZ()) + 5, bard:GetHeading())
-        eq.spawn2(20291, 0, 0, bard:GetX() - 100, bard:GetY(), bard:FindGroundZ(bard:GetX() - 100, bard:GetY(), bard:GetZ()) + 5, bard:GetHeading())
-        eq.spawn2(20291, 0, 0, bard:GetX(), bard:GetY() + 100, bard:FindGroundZ(bard:GetX(), bard:GetY(), bard:GetZ() + 100) + 5, bard:GetHeading())
-        eq.spawn2(20291, 0, 0, bard:GetX(), bard:GetY() - 100, bard:FindGroundZ(bard:GetX(), bard:GetY(), bard:GetZ() - 100) + 5, bard:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX() + 100, bard_client:GetY(), bard_client:FindGroundZ(bard_client:GetX() + 100, bard_client:GetY(), bard_client:GetZ()) + 5, bard_client:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX() - 100, bard_client:GetY(), bard_client:FindGroundZ(bard_client:GetX() - 100, bard_client:GetY(), bard_client:GetZ()) + 5, bard_client:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX(), bard_client:GetY() + 100, bard_client:FindGroundZ(bard_client:GetX(), bard_client:GetY(), bard_client:GetZ() + 100) + 5, bard_client:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX(), bard_client:GetY() - 100, bard_client:FindGroundZ(bard_client:GetX(), bard_client:GetY(), bard_client:GetZ() - 100) + 5, bard_client:GetHeading())
     else
         bard = -1
     end

@@ -96,8 +96,9 @@ local priest = eq.get_entity_list():GetMobByNpcTypeID(293213);
         eq.debug("priest adds spawned: " ..  spawnadds);
     elseif (e.signal == 6) then --priest drop combat or died
         if init_aggro == 1 and not priest:IsEngaged() then
-        eq.stop_timer("spawnadd");
-        eq.debug("stop spawning adds");
+        	eq.stop_timer("spawnadd");
+        	eq.debug("stop spawning adds");
+		init_aggro = 0;
         end
     elseif (e.signal == 7) then
         spawnadds = spawnadds - 1;

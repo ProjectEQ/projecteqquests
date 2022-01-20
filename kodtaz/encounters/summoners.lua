@@ -8,10 +8,14 @@
 --#Hexxt_Chaos_Provoker (293214)
 
 local respawn = 0;
+local spawnadds = 0;
+local init_aggro = 0;
 
 function Trigger_Spawn(e)
 eq.set_timer("popevent",3000);
 respawn = 0;
+    init_aggro = 0;
+    spawnadds = 0;
 end
 
 function Trigger_Timer(e)
@@ -36,10 +40,28 @@ function Priest_Death(e)
     if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293212) == true) then
     --if all 9 priest summoners dead and grand summoner alive, start next phase
         eq.signal(293212,1); --signal to start next phase
+        eq.signal(293212,6); --signal Grand Summoner a priest died
+    end
+end
+
+function Priest_Spawn(e)
+    --signal to Grand Summoner to add to a counter
+        eq.signal(293212,5); --signal Grand Summoner to add to the add counter
+    end
+end
+
+function Priest_Combat(e)
+    --signal to Grand Summoner i joined combat
+    if (e.joined == true) then
+        eq.signal(293212,8);
+    else
+        eq.signal(293212,6);
     end
 end
 
 function Grand_Signal(e)
+local priest = eq.get_entity_list():GetMobByNpcTypeID(293213);
+	
     if (e.signal == 1) then
     -- Spawn Deranged Lesser Stoneservants
         eq.spawn2(293215,0,0,611,683,-460,64); -- NPC: #Deranged_Lesser_Stoneservant
@@ -70,6 +92,22 @@ function Grand_Signal(e)
     elseif (e.signal == 4) then
         e.self:SetSpecialAbility(35, 0); --turn off immunity
         e.self:SetSpecialAbility(24, 0); --turn off anti aggro
+    elseif (e.signal == 5) then
+        spawnadds = spawnadds + 1;
+        eq.debug("priest adds spawned: " ..  spawnadds);
+    elseif (e.signal == 6) then --priest drop combat or died
+        if init_aggro == 1 and not priest:IsEngaged() then
+        eq.stop_timer("spawnadd");
+        eq.debug("stop spawning adds");
+        end
+    elseif (e.signal == 7) then
+        spawnadds = spawnadds - 1;
+    elseif (e.signal == 8) then
+        if init_aggro == 0 then
+            init_aggro = 1;
+            eq.set_timer("spawnadd",30000);
+            eq.debug("start spawning adds every 30 sec");
+        end
     end
 end
 
@@ -84,7 +122,15 @@ eq.set_timer("energysiphon", 60 * 1000);
 end
 
 function Grand_Timer(e)
+if(e.timer=="energysiphon") then
 e.self:CastSpell(5071,e.self:GetID()); --energy siphon
+elseif(e.timer=="spawnadd") then
+    e.self:Say("Minions of the shadows, come forth and aid your masters in their plight!");
+    if spawnadds > 0 then
+        eq.spawn2(293219,0,0,611,683,-460,64); -- NPC: #Rav_Priest_Guardian (293219)
+        spawnadds = spawnadds - 1;
+    end
+end
 end
 
 function Provoker_Death(e)
@@ -205,6 +251,8 @@ eq.register_npc_event('summoners', Event.spawn, 293218, Trigger_Spawn);
 eq.register_npc_event('summoners', Event.timer, 293218, Trigger_Timer);
     
 eq.register_npc_event('summoners', Event.death_complete, 293213, Priest_Death);
+eq.register_npc_event('summoners', Event.spawn, 293213, Priest_Spawn);
+eq.register_npc_event('summoners', Event.combat, 293213, Priest_Combat);
     
     eq.register_npc_event('summoners', Event.signal, 293212, Grand_Signal);
     eq.register_npc_event('summoners', Event.spawn, 293212, Grand_Spawn);

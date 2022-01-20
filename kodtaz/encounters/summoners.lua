@@ -47,7 +47,6 @@ end
 function Priest_Spawn(e)
     --signal to Grand Summoner to add to a counter
         eq.signal(293212,5); --signal Grand Summoner to add to the add counter
-    end
 end
 
 function Priest_Combat(e)

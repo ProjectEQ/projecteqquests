@@ -28,6 +28,7 @@ local qglobals = eq.get_qglobals(e.other)
 end
 
 function event_say(e)
+	local qglobals = eq.get_qglobals(e.other)
   if(e.other:Class() == "Rogue" or e.other:GetGM()) then
 
     if(e.message:findi("hail")) then
@@ -55,13 +56,17 @@ function event_say(e)
 		eq.set_timer("busy", 10 * 1000); --10 sec cd on dealing hands
 		elseif(e.message:findi("deal") and urn == 1 and busy == 1) then
 		  e.self:Emote("deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.");
-		elseif(e.message:findi("cash out") and urn == 1) then
+		elseif(e.message:findi("cash out") and urn == 1 and qglobals["roguepre"] == nil) then
+			if prize_money >= 2000 then
+		  		e.other:Message(15, "You have unloaded the stolen urn, completing the first task for the Smuggler's Camp.")
+		  		eq.set_global("roguepre", "1", 5 , "F")
+			end
 		  urn = 0;
 		  e.self:Say(" Thanks for playing, " .. e.other:GetName() .. ". Here are your winnings. Come back to our establishment again anytime.");
       e.other:GiveCash(prize_money,0,0,0);
+			
+			
 		  prize_money = 0;
-		  e.other:Message(15, "You have unloaded the stolen urn, completing the first task for the Smuggler's Camp.")
-		  eq.set_global("roguepre", "1", 5 , "F")
 		elseif(e.message:findi("cash out") and urn == 0) then
 		  e.self:Say("You have no winnings to cash in.");
     end

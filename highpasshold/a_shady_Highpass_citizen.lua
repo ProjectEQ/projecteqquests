@@ -14,3 +14,7 @@ function event_say(e)
 		end
 	end
 end
+
+function event_spawn(e)
+	eq.merchant_set_item(407074, 9446, 1); --add 1 gold urn
+end

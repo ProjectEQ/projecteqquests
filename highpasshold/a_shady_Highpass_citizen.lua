@@ -16,15 +16,20 @@ function event_say(e)
 end
 
 function event_spawn(e)
-	eq.merchant_set_item(407074, 9446, 1); --add 1 gold urn
 	eq.set_timer("timecheck", 30 * 1000);
+	eq.set_timer("additem", 1 * 1000);
 end
 
 function event_timer(e)
-	local zone_time = eq.get_zone_time();
+	if (e.timer == "timecheck") then
+		local zone_time = eq.get_zone_time();
 
-	if(zone_time["zone_hour"] == 19) then
-		--despawn at 7 pm
-		eq.depop_with_timer();
+		if(zone_time["zone_hour"] == 19) then
+			--despawn at 7 pm
+			eq.depop_with_timer();
+		end
+	elseif (e.timer == "additem") then
+		eq.stop_timer("additem");
+		eq.merchant_set_item(407074, 9446, 1); --add 1 gold urn
 	end
 end

@@ -31,5 +31,6 @@ function event_timer(e)
 	elseif (e.timer == "additem") then
 		eq.stop_timer("additem");
 		eq.merchant_set_item(407074, 9446, 1); --add 1 gold urn
+		eq.merchant_set_item(407074, 52353, 1); --add 1 pouch of gems
 	end
 end

@@ -82,3 +82,37 @@ end
 function event_signal(e)
 	e.self:Say("I tend to agree Anson. We could make a [" .. eq.say_link("deal") .. "]. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [" .. eq.say_link("story") .. "], then you decide.");
 end
+
+function event_spawn(e)
+	eq.set_timer("depop", 10 * 60 * 1000); --10 min
+end
+
+function event_timer(e)
+	if ( e.timer == "depop" ) then
+		eq.depop();
+		
+	elseif ( e.timer == "call_help" ) then
+		CallHelp();
+	end
+end
+
+function CallHelp()
+	-- a_smuggler, a_smuggler, Cyrla_Shadowstepper, Bryan_McGee, Beef, Kaden_Gron, Breck_Damison, Anson_McBale, Dalishea, Crenn_Salbet
+	-- Mardon_Smith, Dovik_Greenbane, Prak, Bartender, Scar, Wres_Corber
+	local StanosFriends ={5019,5038,5107,5056,5055,5050,5051,5037,5009,5053,5060,5061,5054,5069,5134,5052};
+	for i = 1, #StanosFriends do
+		eq.signal(StanosFriends[i],1);
+	end
+end
+
+function event_combat(e)
+	
+	if ( e.joined ) then
+		CallHelp();
+		eq.pause_timer("depop");
+		eq.set_timer("call_help", 330000);
+	else
+		eq.resume_timer("depop");
+		eq.stop_timer("call_help");
+	end
+end

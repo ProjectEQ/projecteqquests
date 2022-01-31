@@ -11,7 +11,7 @@ function event_say(e)
 			e.self:Say(string.format("We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, %s. You are a member of this circle and nothing will ever break that.",e.other:GetName()));
 		else
 			e.self:Say("Ah, the pouch. This is the first step. The Circle has to be upset having this taken right out from under them. That speaks well of the person who did the taking. Hanns must be even more furious now. I think I might be able to trust you. We could make a deal. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my story, then you decide.");
-			eq.signal(407060, 0); --anson
+			eq.signal(407060, 2); --anson
 		end
 	elseif(e.message:findi("who are you")) then
 		e.self:Say("(chuckle) You are young, aren't you? I ran [" .. eq.say_link("the Circle") .. "] out of Qeynos for well over 30 years, and did a right fine job of it. It's a long story, and isn't over yet. I have much to answer for.");	
@@ -80,7 +80,9 @@ function event_trade(e)
 end
 
 function event_signal(e)
-	e.self:Say("I tend to agree Anson. We could make a [" .. eq.say_link("deal") .. "]. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [" .. eq.say_link("story") .. "], then you decide.");
+	if(e.signal == 1) then
+		e.self:Say("I tend to agree Anson. We could make a [" .. eq.say_link("deal") .. "]. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [" .. eq.say_link("story") .. "], then you decide.");
+	end
 end
 
 function event_spawn(e)

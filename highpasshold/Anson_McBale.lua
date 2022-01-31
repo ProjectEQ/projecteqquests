@@ -35,6 +35,14 @@ function event_trade(e)
 end
 
 function event_signal(e)
-	e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows who we are...");
-	eq.signal(5088, 0); --stanos
+	if(e.signal == 1) then
+		e.self:Say("The boss might need some help!");
+		local stanos = eq.get_entity_list():GetMobByNpcTypeID(5088); -- Stanos_Herkanor
+		if ( stanos.valid ) then
+			e.self:MoveTo(stanos:GetX(), stanos:GetY(), stanos:GetZ(), -1, false);
+		end
+	elseif(e.signal == 2) then
+		e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows who we are...");
+		eq.signal(5088, 1); --stanos
+	end
 end

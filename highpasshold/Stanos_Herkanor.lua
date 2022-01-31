@@ -101,7 +101,7 @@ end
 function CallHelp()
 	-- a_smuggler, a_smuggler (407007) highpasshold version, Cyrla_Shadowstepper, Bryan_McGee, Beef, Kaden_Gron, Breck_Damison, Anson_McBale, Dalishea, Crenn_Salbet
 	-- Mardon_Smith, Dovik_Greenbane, Prak, Bartender, Scar, Wres_Corber
-	local StanosFriends ={5019,5038,5107,5056,5055,5050,5051,5037,5009,5053,5060,5061,5054,5069,5134,5052,407007};
+	local StanosFriends ={5019,5038,5107,5056,5055,5050,5051,5037,5009,5053,5060,5061,5054,5069,5134,5052,407007,407063,407052,407025,407027,407048,407056,407060,407032,407051,407058,407057,407049,407040};
 	for i = 1, #StanosFriends do
 		eq.signal(StanosFriends[i],1);
 	end

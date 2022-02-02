@@ -9,7 +9,7 @@ function event_say(e)
 			e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
 		elseif(e.message:findi("see stanos") and class == "Rogue" and level >= 50) then
 			e.self:Say("This better be important.");
-			eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
+			eq.unique_spawn(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
 		end
 	else
 		e.self:Say("Go away! We don't have time for the likes of you.");

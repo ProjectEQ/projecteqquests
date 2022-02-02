@@ -35,7 +35,10 @@ function event_say(e)
 		e.self:Say("To allow the assassin to slay a prince, and fight his way back out, a fell blade was crafted. It was small enough to conceal under a garment and yet large enough to strike a mortal blow through armor. Aided by vile Teir'Dal enchantments, it is much more fearsome than it appears. I would gladly rid myself of it, but I fear I can not until I [" .. eq.say_link("clear your name",false,"clear my name") .. "] with Hanns.");
 	elseif(e.message:findi("clear your name")) then
 		e.self:Say("I need proof that what I say about Johann is truth, so that Hanns may forgive me. YOU can gather that proof for me. First, travel to Kaladim and Neriak, and there, upon the persons of the rogue guildmasters, you should find that which I seek, two parts of a document I recovered from the dead agent. I entrusted one to Founy, but that trust is gone, and Founy would betray me to Hanns were I to attempt to reclaim it. Tani N'mar has the other, which he should not possess, and keeps it only to spite me, not knowing its real importance. Steal them both, and bring them back to me. And don't let anyone follow you! If I am not around, tell Anson you want to see me.");
-		eq.depop();
+		e.self:DoAnim(64); -- points
+	elseif(e.message:findi("I killed Renux")) then
+		e.self:Say("You killed Renux?  You stupid git of a dog!  Renux was my best work, a killer without peer, without remorse.  All I did to her, I did for a reason, and it made her matchless.  Ravens take your eyes!  All you needed to do was gather evidence.  When Hanns' believed me, Renux would follow.  A hollow victory, it seems.  I suppose you had to do it, but I imagine it cost you in the process.  When this is over, perhaps you and I shall have a reckoning.");
+		e.other:Faction(332,-500,0); -- Faction: Highpass Guards
 	end
 end
 

@@ -24,6 +24,8 @@ function event_trade(e)
 		e.other:Faction(330,1,0); -- The Freeport Militia
 		e.other:AddEXP(15000);
 		e.other:GiveCash(0,0,0,0);
+		
+		eq.signal(5055,3) -- NPC: Beef
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12365})) then
 		e.self:Say("I cannot believe you actually acquired all those drinks!! You do good work, kid. Here is the gem as I promised. And a few plat for good measure. Don't let it be said that the Axe doesn't treat his friends right.");
 		e.other:SummonItem(12348); -- Item: Gem of Stamina

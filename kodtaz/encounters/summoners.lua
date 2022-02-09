@@ -6,6 +6,7 @@
 -- NPC: #Deranged_Greater_Stoneservant 293216
 --#leash (293001)
 --#Hexxt_Chaos_Provoker (293214)
+-- NPC: #Rav_Priest_Guardian (293219)
 
 local respawn = 0;
 local spawnadds = 0;
@@ -245,6 +246,36 @@ function Greater_Death(e)
     end
 end
 
+function Rav_Combat(e)
+    if (e.joined == true) then
+        eq.set_timer("oobcheck", 5 * 1000);
+		if(not eq.is_paused_timer("depop")) then
+			eq.pause_timer("depop");
+		end
+    else
+	eq.resume_timer("depop");
+        eq.stop_timer("oobcheck");
+    end
+end
+
+function Rav_Timer(e)
+    if (e.timer == "oobcheck") then
+    local npc1 = eq.get_entity_list():GetMobByNpcTypeID(293001);
+        -- calc distance to leash npc in center of ring
+        if ( npc1:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ()) > 150) then
+            e.self:SetHP(e.self:GetMaxHP())
+            e.self:CastSpell(3791, e.self:GetID())
+            e.self:WipeHateList()
+        end
+	elseif (e.timer == "depop") then
+		eq.depop();
+    end
+end
+
+function Rav_Spawn(e)
+eq.set_timer("depop", 60 * 1000);
+end
+
 
 function event_encounter_load(e)
 eq.register_npc_event('summoners', Event.spawn, 293218, Trigger_Spawn);
@@ -273,5 +304,8 @@ eq.register_npc_event('summoners', Event.combat, 293213, Priest_Combat);
     
     eq.register_npc_event('summoners', Event.combat, 293217, Deranged_Combat);
     eq.register_npc_event('summoners', Event.timer, 293217, Deranged_Timer);
+	
+eq.register_npc_event('summoners', Event.combat, 293219, Rav_Combat);
+eq.register_npc_event('summoners', Event.timer, 293219, Rav_Timer);
     
 end

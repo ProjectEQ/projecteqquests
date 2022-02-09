@@ -317,20 +317,11 @@ e.self:MoveTo(25, 0, -437, 195,true);
 end
 
 function IxtHsek_Death(e)
- local el = eq.get_entity_list();
-  if ( el:IsMobSpawnedByNpcTypeID(297034) == false and el:IsMobSpawnedByNpcTypeID(297211) == false and el:IsMobSpawnedByNpcTypeID(297001) == true ) then 
+	--ixt death controls respawn of event
  	eq.depop_with_timer(297001); -- event is successful, initiate respawn
 	eq.unique_spawn(297041,0,0,-108, -30, -439,385); --arena (297041) will turn on arena spawn condition in 1 hour
-	end
 end
 
-function MastruqChampion_Death(e)
- local el = eq.get_entity_list();
-  if ( el:IsMobSpawnedByNpcTypeID(297034) == false and el:IsMobSpawnedByNpcTypeID(297211) == false and el:IsMobSpawnedByNpcTypeID(297001) == true ) then 
- 	eq.depop_with_timer(297001); -- event is successful, initiate respawn
-	eq.unique_spawn(297041,0,0,-108, -30, -439,385); --arena (297041) will turn on arena spawn condition in 1 hour
-	end
-end
 
 function event_encounter_load(e)
     eq.register_npc_event('champ', Event.spawn, 297001, ChampEvent_Spawn);

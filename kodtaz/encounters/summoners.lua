@@ -123,15 +123,24 @@ eq.set_timer("energysiphon", 60 * 1000);
 end
 
 function Grand_Timer(e)
-if(e.timer=="energysiphon") then
-e.self:CastSpell(5071,e.self:GetID()); --energy siphon
-elseif(e.timer=="spawnadd") then
-    e.self:Say("Minions of the shadows, come forth and aid your masters in their plight!");
-    if spawnadds > 0 then
-        eq.spawn2(293219,0,0,611,683,-460,64); -- NPC: #Rav_Priest_Guardian (293219)
-        spawnadds = spawnadds - 1;
-    end
-end
+local priest = eq.get_entity_list():GetMobByNpcTypeID(293213);
+	if(e.timer=="energysiphon") then
+		e.self:CastSpell(5071,e.self:GetID()); --energy siphon
+	elseif(e.timer=="spawnadd") then
+		if init_aggro == 1 and priest:IsEngaged() then
+        	
+    		e.self:Say("Minions of the shadows, come forth and aid your masters in their plight!");
+    			if spawnadds > 0 then
+        			eq.spawn2(293219,0,0,611,683,-460,64); -- NPC: #Rav_Priest_Guardian (293219)
+        			spawnadds = spawnadds - 1;
+    			end
+		else
+			eq.stop_timer("spawnadd");
+			--eq.GM_Message(4, "[DEBUG] stop spawning adds");
+        		eq.debug("stop spawning adds");
+			init_aggro = 0;
+		end
+	end
 end
 
 function Provoker_Death(e)

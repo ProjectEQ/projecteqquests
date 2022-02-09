@@ -307,5 +307,6 @@ eq.register_npc_event('summoners', Event.combat, 293213, Priest_Combat);
 	
 eq.register_npc_event('summoners', Event.combat, 293219, Rav_Combat);
 eq.register_npc_event('summoners', Event.timer, 293219, Rav_Timer);
+eq.register_npc_event('summoners', Event.spawn, 293219, Rav_Spawn);
     
 end

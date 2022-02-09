@@ -273,7 +273,7 @@ function Rav_Timer(e)
 end
 
 function Rav_Spawn(e)
-eq.set_timer("depop", 60 * 1000);
+eq.set_timer("depop", 180 * 1000);
 end
 
 

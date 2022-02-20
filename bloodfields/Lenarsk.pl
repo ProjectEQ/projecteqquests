@@ -60,7 +60,7 @@ sub EVENT_ITEM {
   my $ilegs = $rlegs{$class};
   my $ifeet = $rfeet{$class};
 
-  if ($class eq "Druid" || $class eq "Monk" || $class eq "Beastlord") {
+  if ($class eq "Druid" || $class = "Monk" || $class = "Beastlord") {
     if ($faction <= 1) { #must be ally to do this quest
       if (plugin::check_handin(\%itemcount, 51481 => 1, 51502 => 2)) {
         quest::say("Makyah's Axe! Now that this is returned to us, I hold hope that it may be wielded in our stuggle, to bolster our people's hope once more. Thank you $name."); #made up

@@ -45,18 +45,6 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_DEATH_COMPLETE {
-  my $killer = GetClientByID($killer_id);
-  if (defined($qglobals{berserk_epic_pre}) && ($qglobals{berserk_epic_pre} == 3)) { #First kill
-    $killer->Message(15, "You feel the rage well up deep inside you. Within moments, your mind becomes cloudy, your judgment impaired, and your actions more fierce with each swing.");
-    quest::setglobal("berserker_epic_pre", 4, 5, "F");
-  }
-  elsif (defined($qglobals{berserk_epic_pre}) && ($qglobals{berserk_epic_pre} == 4)) { #Second kill
-    $killer->Message(15, "The rage begins to subside, your thoughts returning to you, and the realization of your actions sets in.");
-    quest::setglobal("berserker_epic_pre", 5, 5, "F");
-  }
-}
-
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12160 => 4)){ #Basilisk Tongue x 4
     quest::say("You good! You help me much. Me give you dis! Me heart still hurt for Hooly be me rage comfortz me.");

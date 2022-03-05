@@ -7,7 +7,7 @@ function ProximityCheck(chk_x, chk_y, chk_z, dist)
    if ( clist ~= nil ) then
       for client in clist.entries do
          if (client:CalculateDistance(chk_x, chk_y, chk_z) < dist) then
-            if (client:GetX() > 177) then
+            if (client:GetY() > 177) then
                players_in_prox = true;
             end
          end

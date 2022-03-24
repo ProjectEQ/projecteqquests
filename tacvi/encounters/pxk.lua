@@ -39,6 +39,7 @@ function PXK_Combat(e)
     -- Depop adds, repop myself
     eq.stop_timer("cleaver");
     eq.stop_timer("rage");
+    eq.stop_timer("check");
     eq.depop_all(298044);
     eq.depop_all(298043);
     eq.depop_all(298042);
@@ -70,6 +71,8 @@ function PXK_Hp(e)
     
       eq.set_timer("cleaver", 120 * 1000);
       
+      eq.set_timer("check", 3 * 1000);
+    
       eq.modify_npc_stat("ac", "1150");
       eq.modify_npc_stat("min_hit", "595");
       eq.modify_npc_stat("max_hit", "4500");
@@ -148,6 +151,19 @@ function PXK_Timer(e)
     e.self:CastedSpellFinished(4729, e.self:GetHateRandom()); -- Spell: Spirit Cleaver
   elseif (e.timer == "rage") then
     e.self:CastedSpellFinished(4728, e.self:GetHateRandom()); -- Spell: Wave of Rage
+  elseif (e.timer == "check") then
+		--local rand = math.random(1,100);
+		--if (rand >= 85) then -- 15 % to cast throw
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < 49 or ent:GetY() < -243 or ent:GetY() > -86) then
+			  local currclient=ent:CastToClient();
+				--e.self:Shout("You will not evade me " .. currclient:GetName())
+				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
+			end
+		  --end
+		);
   end
 end
     

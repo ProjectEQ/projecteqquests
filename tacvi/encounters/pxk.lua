@@ -162,7 +162,7 @@ function PXK_Timer(e)
 				--e.self:Shout("You will not evade me " .. currclient:GetName())
 				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
 			end
-		  --end
+		  end
 		);
   end
 end

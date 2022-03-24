@@ -71,7 +71,7 @@ function PXK_Hp(e)
     
       eq.set_timer("cleaver", 120 * 1000);
       
-      eq.set_timer("check", 3 * 1000);
+      eq.set_timer("check", 1 * 1000);
     
       eq.modify_npc_stat("ac", "1150");
       eq.modify_npc_stat("min_hit", "595");

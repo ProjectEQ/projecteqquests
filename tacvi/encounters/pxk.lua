@@ -161,7 +161,7 @@ function PXK_Timer(e)
 			  local currclient=ent:CastToClient();
 				--e.self:Shout("You will not evade me " .. currclient:GetName())
 				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-				currclient:Message(5,"Pixtt Xxeric says, 'Did you think I would let you enter these halls without consequence?");
+				currclient:Message(5,"Pixtt Xxeric Kex says, 'Did you think I would let you enter these halls without consequence?");
 			end
 		  end
 		);

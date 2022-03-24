@@ -157,7 +157,7 @@ function PXK_Timer(e)
 		local instance_id = eq.get_zone_instance_id();
 		e.self:ForeachHateList(
 		  function(ent, hate, damage, frenzy)
-			if(ent:IsClient() and ent:GetX() < 49 or ent:GetY() < -243 or ent:GetY() > -86) then
+			if(ent:IsClient() and ent:GetX() < 49 or ent:GetY() < -243 or ent:GetY() > -86 or ent:GetX() > 195) then
 			  local currclient=ent:CastToClient();
 				--e.self:Shout("You will not evade me " .. currclient:GetName())
 				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi

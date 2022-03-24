@@ -1,49 +1,3 @@
---[[
--- PXK Event
--- Pixtt Xxeric Kex
--- First event in Tacvi
--- http://everquest.allakhazam.com/db/quest.html?quest=4260
---
--- Pixtt Xxeric Kex: 100% to 50%
--- Pixtt Xxeric Kex hits for a max ~5,700; flurries; procs "Trample"; sees invisibility; but does not see Shroud of Stealth:
---
--- Pixtt Xxeric Kex at 50%
---
--- At 50% health, you see:
---
--- Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'
---
--- She begins casting her AEs:
--- Spirit Cleaver: Single Target, Prismatic (-350)
--- Wave of Rage: PB AE 100', Prismatic (-350)
--- She also begins AE rampaging (mitigated to ~1,000 per hit).
---
--- At this time, she also spawns four adds:
---
--- - 1x "an ukun juxtapincer"
--- - 1x "an ukun lifebleeder"
--- - 1x "an ukun manasipper"
--- - 1x "an ukun ragehound"
--- Spawn 298044 an ukun juxtapincer
--- Spawn 298043 an ukun lifebleeder
--- Spawn 298042 an ukun manasipper
--- Spanw 298041 an ukun ragehound
---
--- Each of these adds hits for a max ~3,000 and respawn twice as they are killed (for a total of 12 adds total, four at a time can be up at once).
---
--- Pixtt Xxeric Kex at 30% and Below
---
--- At 30%, she gains some strength:
--- Xxeric says, 'I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.'
---
---
--- When she hits 10%, she will regenerate to 40% health:
---
--- Xxeric says 'You may yet have the strength to defeat me but I am not through with you yet.' Xxeric's eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.
---
--- ...After which she can be killed.
---
---]]
 
 local door = 0;
 local entity_list = eq.get_entity_list();
@@ -57,7 +11,7 @@ local inst_id = 0;
 
 function PXK_Spawn(e)
   e.self:SetPseudoRoot(true);
-  eq.set_next_hp_event(98);
+  eq.set_next_hp_event(90);
   eq.get_entity_list():FindDoor(2):SetLockPick(0);
 end
 
@@ -83,6 +37,8 @@ function PXK_Combat(e)
   else 
     -- Wipe mechanics
     -- Depop adds, repop myself
+    eq.stop_timer("cleaver");
+    eq.stop_timer("rage");
     eq.depop_all(298044);
     eq.depop_all(298043);
     eq.depop_all(298042);
@@ -101,69 +57,76 @@ function PXK_Combat(e)
 end
 
 function PXK_Hp(e)
-   --98pct
-   if (e.hp_event == 98) then
-      --locks door leading into her chamber
+   --90pct unroot
+   if (e.hp_event == 90) then
+    
+    --locks door leading into her chamber
       door = entity_list:FindDoor(2);
       if (door ~= nil) then door:SetLockPick(-1); end
-      e.self:Emote("begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
-      eq.set_next_hp_event(90);
-
+      eq.zone_emote(13,"Xxeric begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
+      
+      e.self:SetPseudoRoot(false);
+      e.self:CastedSpellFinished(4729, e.self:GetHateRandom()); -- Spell: Spirit Cleaver
+    
+      eq.set_timer("cleaver", 120 * 1000);
+      
+      eq.modify_npc_stat("ac", "1150");
+      eq.modify_npc_stat("min_hit", "595");
+      eq.modify_npc_stat("max_hit", "4500");
+      eq.set_next_hp_event(70);
+    
+   
       juxtapincer = 0;
       lifebleeder = 0;
       manasipper  = 0;
       ragehound   = 0;
    end
-
-   --90pct unroot
-   if (e.hp_event == 90) then
-      e.self:SetPseudoRoot(false);
-      e.self:CastSpell(4729, e.self:GetTarget():GetID()); -- Spell: Spirit Cleaver
-      e.self:AddAISpell(0, 4729, 1, -1, -1, -350);
-      eq.modify_npc_stat("ac", "1150");
-      eq.set_next_hp_event(70);
-   end
   
    if (e.hp_event == 70) then
+      eq.zone_emote(13,"The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
       eq.modify_npc_stat("ac", "604");
+      eq.modify_npc_stat("min_hit", "1300");
+      eq.modify_npc_stat("max_hit", "5945");
+      e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
+      e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
+      e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 15); -- 15 % mitigated dmg
+    
+      eq.set_timer("cleaver", 90 * 1000);
       eq.set_next_hp_event(50);
    end
   
    -- At 50% you see
    if (e.hp_event == 50) then
-      e.self:Emote("The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
-      -- she begins casting Spirit Cleaver & Wave of Rage
-      -- void AddAISpell(int priority, int spell_id, int type, int mana_cost, int recast_delay, int resist_adjust);
-      e.self:AddAISpell(0, 4728, 1, -1, -1, -350);
-      -- Begins to AE Ramp (r or 4)
-      -- Ends Flurry (F or 5)
-      e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
-      e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
-      e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 15);
+      eq.zone_emote(13,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.");
+      -- she begins casting  Wave of Rage
+      e.self:CastedSpellFinished(4728, e.self:GetHateRandom()); -- Spell: Wave of Rage
+    
+      eq.set_timer("cleaver", 60 * 1000);
+      eq.set_timer("rage", 60 * 1000);
+
       eq.modify_npc_stat("ac", "900");
     
-      eq.set_next_hp_event(45);
-   end
-
-   if (e.hp_event == 45) then
-      eq.zone_emote(15,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.'");
-
-      -- Spawn the Pets
+    -- Spawn the Pets
       eq.spawn2(298044,0,0, 151, -113, -6.87, 314); -- NPC: an_ukun_juxtapincer
       eq.spawn2(298043,0,0, 151, -218, -6.87, 450); -- NPC: an_ukun_lifebleeder
       eq.spawn2(298042,0,0,  81, -113, -6.87,  194); -- NPC: an_ukun_manasipper
       eq.spawn2(298041,0,0,  81, -218, -6.87,  40); -- NPC: an_ukun_ragehound
 
       eq.set_next_hp_event(30);
+    
    end
+
    --Below 30%
    if (e.hp_event == 30) then
       --At 30%, she gains some strength:
       --Emotes at 30% and DPS picks up.
-      eq.modify_npc_stat("min_hit", "1355");
-      eq.modify_npc_stat("max_hit", "6200");
+      eq.modify_npc_stat("min_hit", "1275");
+      eq.modify_npc_stat("max_hit", "5185");
       eq.modify_npc_stat("ac", "700");
       e.self:Say("I commend you on your tenacity, infidels. However I am through playing games. Witness the true fighting power of an Ixt Berserker.");
+    
+      eq.set_timer("cleaver", 30 * 1000);
+    
       eq.set_next_hp_event(10);
    end
 
@@ -173,13 +136,21 @@ function PXK_Hp(e)
       -- Balance of the nameless, strip self debuffs
       e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
       e.self:SetHP(e.self:GetMaxHP()*0.40)
-      eq.modify_npc_stat("min_hit", "1315");
-      eq.modify_npc_stat("max_hit", "5400");
-      e.self:Say("You may yet have the strength to defeat me but I am not through with you yet.");
-      e.self:Emote("'s eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
+      eq.modify_npc_stat("min_hit", "1245");
+      eq.modify_npc_stat("max_hit", "4665");
+      eq.zone_emote(13,"You may yet have the strength to defeat me but I am not through with you yet. Xxeric's eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
+      
    end
 end
 
+function PXK_Timer(e)
+  if (e.timer == "cleaver") then
+    e.self:CastedSpellFinished(4729, e.self:GetHateRandom()); -- Spell: Spirit Cleaver
+  elseif (e.timer == "rage") then
+    e.self:CastedSpellFinished(4728, e.self:GetHateRandom()); -- Spell: Wave of Rage
+  end
+end
+    
 function PXK_Juxtapincer_Death(e)
   if ( juxtapincer < 3 ) then
     juxtapincer = juxtapincer + 1;
@@ -218,6 +189,7 @@ function event_encounter_load(e)
   eq.register_npc_event('pxk', Event.spawn,  298039, PXK_Spawn);
   eq.register_npc_event('pxk', Event.combat, 298039, PXK_Combat);
   eq.register_npc_event('pxk', Event.hp,     298039, PXK_Hp);
+  eq.register_npc_event('pxk', Event.timer,     298039, PXK_Timer);
 
   eq.register_npc_event('pxk', Event.death_complete, 298044, PXK_Juxtapincer_Death);
   eq.register_npc_event('pxk', Event.death_complete, 298043, PXK_Lifebleeder_Death);

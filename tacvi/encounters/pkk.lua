@@ -201,7 +201,9 @@ function PKK_Hp(e)
   elseif (e.hp_event == 10) then
     eq.zone_emote(13,"The end is inevitable, but if I must be defeated, some of you will join me in the afterlife.");
     Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
+    e.self:SetSpecialAbility(SpecialAbility.rampage, 0); -- turn off single rampage
+		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1); -- turn aoe ramp on
+		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 50); -- 50% mitigated aoe ramp dmg
     e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
     eq.set_timer("tenae", 12 * 1000);
   end

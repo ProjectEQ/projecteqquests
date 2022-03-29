@@ -8,9 +8,9 @@ function event_say(e)
 
   elseif (e.message:findi("ready")) then
     e.self:MoveTo(11.57, -38.06, -6.87, 155.6, true);
-    e.self:Emote("Sesnil begins to recite an incantation in his native tongue. Waving his arms in the air, you see the door light up and go dim just as his arms come to rest at his side. 'There you are. The seal has been removed. Now once again you must destroy the guardian in the doorway and do not venture back until you have destroyed the being within, or you will be destroyed by the wards.'"); 
+    e.self:Emote("begins to recite an incantation in his native tongue. Waving his arms in the air, you see the door light up and go dim just as his arms come to rest at his side. 'There you are. The seal has been removed. Now once again you must destroy the guardian in the doorway and do not venture back until you have destroyed the being within, or you will be destroyed by the wards.'"); 
 
-    e.self:Say("An ancient hallway lies before you. The remains of fallen warriors litter the floor along with discarded slave corpses. ");
+    
 
     local door = 0;
     local entity_list = eq.get_entity_list();
@@ -36,4 +36,8 @@ function event_say(e)
 
   end
 
+end
+
+function event_waypoint_arrive(e)
+  eq.zone_emote(15,"An ancient hallway lies before you. The remains of fallen warriors litter the floor along with discarded slave corpses.");
 end

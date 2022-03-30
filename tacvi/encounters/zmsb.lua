@@ -97,6 +97,10 @@ elseif (e.timer == "reset") then
 	e.self:SetHP(e.self:GetMaxHP());
 		
 	eq.set_next_hp_event(90);
+	
+	e.self:ModifyNPCStat("min_hit", "1470");
+    	e.self:ModifyNPCStat("max_hit", "4700");
+    	e.self:ModifyNPCStat("attack_delay","19");
 		
     	eq.get_entity_list():FindDoor(8):SetLockPick(0); --open door
   end

@@ -107,7 +107,7 @@ function PKK_Combat(e)
 			eq.set_timer("check", 1 * 1000); -- set scorpion timer on future phases
 		end
   elseif (e.joined == false) then
-    eq.set_timer("wipecheck", 1000);
+    eq.set_timer("wipecheck", 5000);
 	eq.stop_timer("check");
   end
 end

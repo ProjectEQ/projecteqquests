@@ -103,7 +103,8 @@ end
 function ZMSB_Death(e)
   eq.signal(298223, 298018); -- NPC: zone_status
   eq.get_entity_list():FindDoor(8):SetLockPick(0);
-
+--should there be a check here to see if zmmd door is already open for this emote?
+eq.zone_emote(15,"The chamber is filled with the sound of grinding stone. The path leading into the final chamber has been opened and it awaits your arrival. You hear a voice that sounds oddly familiar. 'Come now, fools, enter my chamber and learn the meaning of suffering from one bred to destroy and conquer. You have beaten the best of my army, but you have yet to see true power. Step into the abyss and cower at what stares back at you.");
 end
 
 function event_encounter_load(e)

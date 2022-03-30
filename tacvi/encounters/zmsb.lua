@@ -104,7 +104,6 @@ function ZMSB_Death(e)
   eq.signal(298223, 298018); -- NPC: zone_status
   eq.get_entity_list():FindDoor(8):SetLockPick(0);
 
-  e.other:Message(12,"The creature's two heads face each other just before it falls to the floor, shaking the very foundation of the temple. Now there is nothing that stands between you and the being in charge of this invading army. ");
 end
 
 function event_encounter_load(e)

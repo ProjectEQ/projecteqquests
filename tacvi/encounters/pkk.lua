@@ -142,7 +142,7 @@ elseif (e.timer == "check") then
 			  local currclient=ent:CastToClient();
 				--e.self:Shout("You will not evade me " .. currclient:GetName())
 				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-				currclient:Message(5,"Pixtt Xxeric Kex says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
+				currclient:Message(5,"Pixtt Kretv Krakxt says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
 			end
 		  end
 		);

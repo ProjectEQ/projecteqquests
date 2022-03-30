@@ -102,9 +102,13 @@ function PKK_Combat(e)
   if (e.joined == true) then
     e.self:Say("You shall regret trespassing into my chambers. The might of our kind shall smother the flames of life in this world, starting with you.");
 
-    e.self:Say("Do you really think your paltry skills will be enough to best a being as powerful as I? ");
+    e.self:Say("Do you really think your paltry skills will be enough to best a being as powerful as I?");
+		if (e.self:GetHPRatio() < 92) then
+			eq.set_timer("check", 1 * 1000); -- set scorpion timer on future phases
+		end
   elseif (e.joined == false) then
     eq.set_timer("wipecheck", 1000);
+	eq.stop_timer("check");
   end
 end
 
@@ -129,6 +133,19 @@ function PKK_Timer(e)
     end
   elseif (e.timer == "tenae") then
       e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
+elseif (e.timer == "check") then
+		
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < 99 or ent:GetX() > 245 or ent:GetY() < 192 or ent:GetY() > 297) then
+			  local currclient=ent:CastToClient();
+				--e.self:Shout("You will not evade me " .. currclient:GetName())
+				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
+				currclient:Message(5,"Pixtt Xxeric Kex says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
+			end
+		  end
+		);
   end
 end
 
@@ -159,7 +176,7 @@ function PKK_Hp(e)
   PKK_hitpoints = e.hp_event;
   if (e.hp_event == 90) then
     eq.zone_emote(13,"Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones. Kretv's body falls to the ground -- a lifeless husk freeing the hatchlings within.");
-
+eq.set_timer("check", 1 * 1000);
     eq.get_entity_list():FindDoor(5):SetLockPick(-1);
     
     eq.depop();

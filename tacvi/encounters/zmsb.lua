@@ -7,15 +7,19 @@ function ZMSB_Combat(e)
   if (e.joined == true) then
     e.self:Say("Come you fools! Show me your strongest warrior and I will show you my first victim.");
     eq.set_timer("rage", 35 * 1000);
-    
+    eq.stop_timer("reset");
+		if (e.self:GetHPRatio() < 90) then
+			eq.set_timer("check", 1 * 1000); -- set scorpion timer during wipe recovery if someone aggro's
+		end
   else
     -- Wipe Mechanics
 	eq.stop_timer("check");
     eq.stop_timer("rage");
-	-- door should only unlock when he reaches 100%
-    eq.get_entity_list():FindDoor(8):SetLockPick(0);
-    eq.spawn2(298018, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Zun`Muram_Shaldn_Boc
-    eq.depop();
+	eq.stop_timer("rage_stop");
+	eq.set_timer("reset", 30 * 1000);
+	
+    --eq.spawn2(298018, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Zun`Muram_Shaldn_Boc
+    --eq.depop();
   end
 end
 
@@ -88,6 +92,13 @@ elseif (e.timer == "check") then
 			end
 		  end
 		);
+elseif (e.timer == "reset") then
+	eq.stop_timer("reset");
+	e.self:SetHP(e.self:GetMaxHP());
+		
+	eq.set_next_hp_event(90);
+		
+    	eq.get_entity_list():FindDoor(8):SetLockPick(0); --open door
   end
 end
 

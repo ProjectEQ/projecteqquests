@@ -240,6 +240,11 @@ function PKK_Hatchling_Death(e)
   e.self:Emote("black blood spills on the floor");
 end
 
+function PKK_Hatchling_Spawn(e)
+	e.self:ModSkillDmgTaken(3, -20); -- 2h slashing
+	e.self:ModSkillDmgTaken(1, -20); -- 1h slashing
+end
+
 function PKK_Roaming_Caster_One_Spawn(e)
   eq.start(93);
   CastOnRandom(e.self, 889); -- Delusional Visions
@@ -299,6 +304,7 @@ function event_encounter_load(e)
   eq.register_npc_event('pkk', Event.death_complete, 298201, PKK_Death);
 
   eq.register_npc_event('pkk', Event.death_complete, 298048, PKK_Hatchling_Death);
+eq.register_npc_event('pkk', Event.spawn, 298048, PKK_Hatchling_Spawn);
 
   eq.register_npc_event('pkk', Event.spawn,          298047, PKK_Husk_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298047, PKK_Timer); -- Reusing PKK Timer function, should be safe

@@ -233,6 +233,8 @@ function Unstable_Timer(e)
 elseif e.timer == "depop" then
 		eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count
 		
+		e.self:Emote("ceases its struggles as the energy that brought it to life fades away.");
+		
 		eq.depop();
   end
 end

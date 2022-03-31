@@ -1,5 +1,5 @@
 
-
+local construct = 0;
 local golems_spawn = false;
 ---
 -- @param NPC#event_spawn e
@@ -13,13 +13,14 @@ function PRT_Spawn(e)
 
   eq.set_next_hp_event(90)
   golems_spawn = false;
+construct = 0;
 
 end
 
 function PRT_Combat(e)
   if (e.joined == true) then
     e.self:Say("You shall regret trespassing into my chambers. Rise my minions and show them how well I have learned to use the power of this land's creatures. Destroy them all. Leave only enough to feed the hounds")
-    eq.set_timer("Delusional", 30 * 1000)
+    
     eq.stop_timer('wipecheck');
     
     if (spawn_golem == true) then
@@ -48,9 +49,9 @@ function PRT_HP(e)
     --add flurry, reduce atk delay
     e.self:ModifyNPCStat("attack_delay","12");
     e.self:SetSpecialAbility(SpecialAbility.flurry, 1)
-    --e.self:ModifyNPCStat("max_hit",tostring(e.self:GetMaxDMG()*1.1))
+    eq.set_timer("Delusional", 30 * 1000)
     e.self:Say("So it seems you are not so easily defeated after all. I am through toying with you fools. Prepare for the reality of death.' Riel's body begins to speed up as her attacks become increasingly vicious")
-    e.self:Emote("'s body begins to speed up as her attacks become increasingly vicious")
+    
     eq.set_next_hp_event(30)
 
   elseif (e.hp_event == 30) then
@@ -72,8 +73,8 @@ function PRT_HP(e)
   elseif (e.hp_event == 10) then
     -- At approximately 10% health, she increases her attack speed and begins flurrying much more (every round)
     e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100)
-    e.self:ModifyNPCStat("attack_speed",tostring(e.self:GetAttackSpeed()*1.2))
-    e.self:Say("Thats it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end")
+    
+    e.self:Say("That's it!  You have past the point of being bothersome. I grow weary of this encounter. It is time for it to end.")
 
   end
 end
@@ -85,25 +86,24 @@ function PRT_Timer(e)
   elseif (e.timer == "VenomAE") then
     --Ikaav's Venom 751
     e.self:CastSpell(751,e.self:GetID())
-  elseif (e.timer == "SpawnGolem") then
-	eq.stop_timer("SpawnGolem")
-    eq.spawn2(298045,0,0,150, -565, -7,0)
-    eq.spawn2(298045,0,0,157, -622, -7,0)
-    eq.spawn2(298045,0,0,205, -559, -7,0)
-    eq.spawn2(298045,0,0,214, -616, -7,0)
-	if (e.self:GetHPRatio() < 20) then
-		eq.spawn2(298045,0,0,183, -622, -7,0)
-		eq.spawn2(298045,0,0,178, -563, -7,0)
-		eq.spawn2(298045,0,0,172, -627, -7,0)
-		eq.spawn2(298045,0,0,149, -597, -7,0)
-	end
-	if (e.self:GetHPRatio() < 10) then
-		eq.spawn2(298045,0,0,149, -611, -7,0)
-		eq.spawn2(298045,0,0,165, -563, -7,0)
-		eq.spawn2(298045,0,0,196, -570, -7,0)
-		eq.spawn2(298045,0,0,204, -613, -7,0)
-	end	
-	eq.set_timer("SpawnGolem", 15*1000)
+  elseif(e.timer=="SpawnGolem") then
+        --eq.stop_timer("SpawnGolem");
+  
+            if ( construct < 12 ) then
+                
+	            local rng = math.random(4, 4);
+	            local spawned = 0;
+	
+	            for i = construct+1, 12 do
+				    eq.spawn2(298045, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		
+				    spawned = spawned + 1;
+				if ( spawned == rng ) then
+					break;
+				end
+			end
+			construct = construct + spawned;
+		end
   elseif (e.timer == 'wipecheck') then
     eq.depop_all(298045);
     eq.depop_all(298002);
@@ -140,16 +140,21 @@ function PRT_Death(e)
   eq.signal(298223, 298032); -- NPC: zone_status
 end
 
+function PRT_Signal(e)
+	if (e.signal == 1) then
+		construct = construct - 1; --add dead or mez death
+	end
+end
 -- a_corrupted_construct (298002)
 -- Big golem at beginning of Pixtt_Riel_Tavas fight
 
 function Corrupt_Spawn(e)
-  -- Lay down. DoAnim(16)?
   e.self:SetAppearance(3)
 end
 
 function Corrupt_Death(e)
-  e.self:Emote("The ground trembles as the massive construct falls. ")
+  e.self:Emote("The ground trembles as the massive construct falls.")
+
 end
 
 -- an_unstable_construct (298045)
@@ -157,7 +162,10 @@ end
 -- mini golems that cast a AE DD when they die
 
 function Unstable_Death(e)
+eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count	
+	
   e.self:CastSpell(4661, e.self:GetID()); -- Spell: Cataclysm of Stone
+
 end
 
 function event_encounter_load(e)
@@ -166,6 +174,7 @@ function event_encounter_load(e)
   eq.register_npc_event('prt', Event.hp,              298032, PRT_HP);
   eq.register_npc_event('prt', Event.timer,           298032, PRT_Timer);
   eq.register_npc_event('prt', Event.death_complete,  298032, PRT_Death);
+eq.register_npc_event('prt', Event.signal,           298032, PRT_Signal);
 
   eq.register_npc_event('prt', Event.spawn,           298002, Corrupt_Spawn);
   eq.register_npc_event('prt', Event.death_complete,  298002, Corrupt_Death);

@@ -23,7 +23,7 @@ function PRT_Combat(e)
     
     eq.stop_timer('wipecheck');
     
-    if (spawn_golem == true) then
+    if (golems_spawn == true) then
       eq.set_timer("SpawnGolem", 6 * 1000);
     end
   else

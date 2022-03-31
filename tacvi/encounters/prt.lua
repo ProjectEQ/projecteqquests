@@ -252,7 +252,7 @@ eq.register_npc_event('prt', Event.signal,           298032, PRT_Signal);
 eq.register_npc_event('prt', Event.spawn,           298025, Corrupt_Spawn);
   eq.register_npc_event('prt', Event.death_complete,  298025, Corrupt_Death);
   
-  eq.register_npc_event('prt', Event.death_complete,           298045, Unstable_Death);
+  eq.register_npc_event('prt', Event.death,           298045, Unstable_Death);
 eq.register_npc_event('prt', Event.spawn,           298045, Unstable_Spawn);
 	eq.register_npc_event('prt', Event.timer,           298045, Unstable_Timer);
 end

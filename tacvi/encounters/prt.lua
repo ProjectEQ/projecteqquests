@@ -7,8 +7,9 @@ function PRT_Spawn(e)
   e.self:ModSkillDmgTaken(1, -30); -- 1h slashing
   e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
   --spawn the two starting golems
-  --a_corrupted_construct (298002)
+  
   eq.unique_spawn(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3); -- NPC: a_corrupted_construct (ramp)
+	
   eq.unique_spawn(298025, 0, 0, 225.0, -600.0, -3.25, 410):SetAppearance(3); -- NPC: a_corrupted_construct (flurry)
 
   eq.set_next_hp_event(90)
@@ -197,6 +198,8 @@ end
 
 function Corrupt_Spawn(e)
   e.self:SetAppearance(3)
+  e.self:ModSkillDmgTaken(1, -20); -- 1h slashing
+  e.self:ModSkillDmgTaken(3, -20); -- 2h slashing
 end
 
 function Corrupt_Death(e)
@@ -225,6 +228,8 @@ eq.register_npc_event('prt', Event.signal,           298032, PRT_Signal);
 
   eq.register_npc_event('prt', Event.spawn,           298002, Corrupt_Spawn);
   eq.register_npc_event('prt', Event.death_complete,  298002, Corrupt_Death);
+eq.register_npc_event('prt', Event.spawn,           298025, Corrupt_Spawn);
+  eq.register_npc_event('prt', Event.death_complete,  298025, Corrupt_Death);
   
   eq.register_npc_event('prt', Event.death_complete,           298045, Unstable_Death);
 end

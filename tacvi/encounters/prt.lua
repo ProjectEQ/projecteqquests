@@ -31,7 +31,7 @@ function PRT_Combat(e)
     
     eq.set_timer('wipecheck', 30 * 1000);
 
-    eq.stop_timer('SpawnGolem');
+    eq.stop_timer("SpawnGolem");
     eq.stop_timer('VenomAE');
     eq.stop_timer('Delusional');
   end
@@ -120,6 +120,7 @@ function PRT_Timer(e)
 			end
 			construct = construct + spawned;
 		end
+		eq.set_timer("SpawnGolem", 4 * 1000) --speed up timer
 	elseif (e.self:GetHPRatio() < 10) then
 		if ( construct < 12 ) then
                 
@@ -136,6 +137,7 @@ function PRT_Timer(e)
 			end
 			construct = construct + spawned;
 		end
+		eq.set_timer("SpawnGolem", 2 * 1000) --speed up timer
 	end
   elseif (e.timer == 'wipecheck') then
     --eq.depop_all(298045);
@@ -147,7 +149,9 @@ function PRT_Timer(e)
 	e.self:SetHP(e.self:GetMaxHP())
 	eq.unique_spawn(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3); -- NPC: a_corrupted_construct (ramp)
   	eq.unique_spawn(298025, 0, 0, 225.0, -600.0, -3.25, 410):SetAppearance(3); -- NPC: a_corrupted_construct (flurry)
-
+	
+	eq.depop_all(298045);
+		
   	eq.set_next_hp_event(90)
   	golems_spawn = false;
 	construct = 0;

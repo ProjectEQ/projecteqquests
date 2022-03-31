@@ -231,11 +231,16 @@ function Unstable_Timer(e)
     	eq.set_timer("depop", 30 * 1000); -- depop in 30s
     end
 elseif e.timer == "depop" then
-		eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count
+	eq.stop_timer("depop");
 		
-		e.self:Emote("ceases its struggles as the energy that brought it to life fades away.");
+		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(298032) == true) then -- only depops if PRT is alive
+			eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count
 		
-		eq.depop();
+		
+			e.self:Emote("ceases its struggles as the energy that brought it to life fades away.");
+			
+			eq.depop();
+		end
   end
 end
 

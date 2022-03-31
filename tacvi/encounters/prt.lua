@@ -231,6 +231,8 @@ function Unstable_Timer(e)
     	eq.set_timer("depop", 30 * 1000); -- depop in 30s
     end
 elseif e.timer == "depop" then
+		eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count
+		
 		eq.depop();
   end
 end

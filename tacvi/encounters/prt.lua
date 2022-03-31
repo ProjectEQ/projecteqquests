@@ -226,7 +226,7 @@ end
 
 function Unstable_Timer(e)
   if e.timer == "mez_check" then
-    if e.self:IsMezzed then
+    if e.self:IsMezzed() then
       eq.stop_timer("mez_check");
     	eq.set_timer("depop", 30 * 1000); -- depop in 30s
     end

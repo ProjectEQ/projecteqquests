@@ -218,6 +218,23 @@ eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count
 
 end
 
+
+
+function Unstable_Spawn(e)
+  eq.set_timer("mez_check", 1 * 1000); -- 1s check
+end
+
+function Unstable_Timer(e)
+  if e.timer == "mez_check" then
+    if e.self:IsMezzed then
+      eq.stop_timer("mez_check");
+    	eq.set_timer("depop", 30 * 1000); -- depop in 30s
+    end
+elseif e.timer == "depop" then
+		eq.depop();
+  end
+end
+
 function event_encounter_load(e)
   eq.register_npc_event('prt', Event.spawn,           298032, PRT_Spawn);
   eq.register_npc_event('prt', Event.combat,          298032, PRT_Combat);
@@ -232,4 +249,6 @@ eq.register_npc_event('prt', Event.spawn,           298025, Corrupt_Spawn);
   eq.register_npc_event('prt', Event.death_complete,  298025, Corrupt_Death);
   
   eq.register_npc_event('prt', Event.death_complete,           298045, Unstable_Death);
+eq.register_npc_event('prt', Event.spawn,           298045, Unstable_Spawn);
+	eq.register_npc_event('prt', Event.timer,           298045, Unstable_Timer);
 end

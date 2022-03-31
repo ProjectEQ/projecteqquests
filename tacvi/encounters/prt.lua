@@ -8,8 +8,8 @@ function PRT_Spawn(e)
   e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
   --spawn the two starting golems
   --a_corrupted_construct (298002)
-  eq.spawn2(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3); -- NPC: a_corrupted_construct
-  eq.spawn2(298002, 0, 0, 225.0, -600.0, -3.25, 410):SetAppearance(3); -- NPC: a_corrupted_construct
+  eq.unique_spawn(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3); -- NPC: a_corrupted_construct (ramp)
+  eq.unique_spawn(298025, 0, 0, 225.0, -600.0, -3.25, 410):SetAppearance(3); -- NPC: a_corrupted_construct (flurry)
 
   eq.set_next_hp_event(90)
   golems_spawn = false;
@@ -28,8 +28,8 @@ function PRT_Combat(e)
     end
   else
     -- Wipe stuff
-    eq.get_entity_list():FindDoor(23):SetLockPick(0)
-    eq.set_timer('wipecheck', 300 * 1000);
+    
+    eq.set_timer('wipecheck', 30 * 1000);
 
     eq.stop_timer('SpawnGolem');
     eq.stop_timer('VenomAE');
@@ -138,11 +138,21 @@ function PRT_Timer(e)
 		end
 	end
   elseif (e.timer == 'wipecheck') then
-    eq.depop_all(298045);
-    eq.depop_all(298002);
-    eq.depop();
+    --eq.depop_all(298045);
+    --eq.depop_all(298002);
+    --eq.depop();
+    --eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 380); -- NPC: Pixtt_Riel_Tavas
+	eq.stop_timer('wipecheck');
+		
+	e.self:SetHP(e.self:GetMaxHP())
+	eq.unique_spawn(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3); -- NPC: a_corrupted_construct (ramp)
+  	eq.unique_spawn(298025, 0, 0, 225.0, -600.0, -3.25, 410):SetAppearance(3); -- NPC: a_corrupted_construct (flurry)
 
-    eq.spawn2(298032, 0, 0, 202.0, -586.0, -4.125, 380); -- NPC: Pixtt_Riel_Tavas
+  	eq.set_next_hp_event(90)
+  	golems_spawn = false;
+	construct = 0;
+		
+	eq.get_entity_list():FindDoor(23):SetLockPick(0) --only unlock door after wipe reset timer is met
 elseif (e.timer == "check") then
 		
 		local instance_id = eq.get_zone_instance_id();

@@ -88,7 +88,7 @@ function PRT_Timer(e)
     e.self:CastSpell(751,e.self:GetID())
   elseif(e.timer=="SpawnGolem") then
         --eq.stop_timer("SpawnGolem");
-  
+  	if (e.self:GetHPRatio() >= 20) then
             if ( construct < 12 ) then
                 
 	            local rng = math.random(4, 4);
@@ -104,6 +104,39 @@ function PRT_Timer(e)
 			end
 			construct = construct + spawned;
 		end
+	elseif (e.self:GetHPRatio() > 10 and e.self:GetHPRatio() < 20) then
+		if ( construct < 12 ) then
+                
+	            local rng = math.random(8, 8);
+	            local spawned = 0;
+	
+	            for i = construct+1, 12 do
+				    eq.spawn2(298045, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		
+				    spawned = spawned + 1;
+				if ( spawned == rng ) then
+					break;
+				end
+			end
+			construct = construct + spawned;
+		end
+	elseif (e.self:GetHPRatio() < 10) then
+		if ( construct < 12 ) then
+                
+	            local rng = math.random(12, 12);
+	            local spawned = 0;
+	
+	            for i = construct+1, 12 do
+				    eq.spawn2(298045, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		
+				    spawned = spawned + 1;
+				if ( spawned == rng ) then
+					break;
+				end
+			end
+			construct = construct + spawned;
+		end
+	end
   elseif (e.timer == 'wipecheck') then
     eq.depop_all(298045);
     eq.depop_all(298002);

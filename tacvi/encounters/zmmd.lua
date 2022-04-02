@@ -98,8 +98,8 @@ end
 function ZMMD_Hp(e)
   if (e.hp_event == 90) then
     eq.get_entity_list():FindDoor(13):SetLockPick(-1);
-
-    e.self:Emote("skin begins to bulge and split open, releasing a wave of energy. As his body falls to the floor, two smaller images of the massive creature appear before you. ");
+    eq.zone_emote(15,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing a wave of energy. As his body falls to the floor, two smaller images of the massive creature appear before you.");
+    
 
     eq.set_next_hp_event(70);
 
@@ -111,7 +111,9 @@ function ZMMD_Hp(e)
 
   elseif (e.hp_event == 70) then
     eq.set_next_hp_event(50);
-
+    
+    eq.zone_emote(15,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing another wave of energy. Three smaller images of the massive creature appear before you as the previous form fades away.");
+    
     ZMMD_Inactivate(e);
     eq.spawn2(298051,0,0, 367, 130, -6.7, 370); -- NPC: Zun`Muram_Mordl_Delt
     eq.spawn2(298051,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
@@ -121,6 +123,8 @@ function ZMMD_Hp(e)
   elseif (e.hp_event == 50) then
     eq.set_next_hp_event(30);
 
+    eq.zone_emote(15,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing another wave of energy. Four smaller images of the massive creature appear before you as the previous form fades away.");
+    
     ZMMD_Inactivate(e);
     eq.spawn2(298052,0,0, 367, 130, -6.7, 370); -- NPC: Zun`Muram_Mordl_Delt
     eq.spawn2(298052,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt
@@ -129,6 +133,10 @@ function ZMMD_Hp(e)
     eq.set_timer("zmmd_kite", kite_time * 1000);
 
   elseif (e.hp_event == 30) then
+    
+    eq.zone_emote(15,"Zun`Muram Mordl Delt's body begins to glow as the images before you merge back into one. The wounds upon Mordl's body quickly heal as he's infused by the energy, but new wounds appear where his other forms were injured.");
+    eq.zone_emote(15,"In a final act of desperation, Mordl splits two smaller forms off from himself but looks visibly drained from the effort.");
+    
     eq.modify_npc_stat("min_hit", "1670");
     eq.modify_npc_stat("max_hit", "4900");
     eq.spawn2(298053,0,0, 367, 151, -6.7, 394); -- NPC: Zun`Muram_Mordl_Delt

@@ -12,6 +12,15 @@ function Bloodfeaster_Spawn(e)
   eq.spawn_condition("txevu", 0, 2, 1); --turn decaying corpse and ukun maulers on
   event_started = 0;
   adds = 0;
+	
+--ukun mods	
+e.self:ModSkillDmgTaken(0, 10); -- 1h blunt
+e.self:ModSkillDmgTaken(2, 10); -- 2h blunt
+e.self:ModSkillDmgTaken(36,-10); -- piercing
+e.self:ModSkillDmgTaken(77,-10); -- 2h piercing
+e.self:ModSkillDmgTaken(28, 10) -- hand to hand
+e.self:ModSkillDmgTaken(7, 10); -- archery
+	
 end
 
 function Bloodfeaster_Signal(e)
@@ -76,6 +85,15 @@ function Mauler_Signal(e)
     e.self:SetSpecialAbility(24, 0); --turn off anti aggro
     e.self:SetSpecialAbility(35, 0); --turn off immunity
     eq.start(78); --start grid
+		
+--ukun mods	
+e.self:ModSkillDmgTaken(0, 10); -- 1h blunt
+e.self:ModSkillDmgTaken(2, 10); -- 2h blunt
+e.self:ModSkillDmgTaken(36,-10); -- piercing
+e.self:ModSkillDmgTaken(77,-10); -- 2h piercing
+e.self:ModSkillDmgTaken(28, 10) -- hand to hand
+e.self:ModSkillDmgTaken(7, 10); -- archery
+		
   elseif (e.signal == 3) then
     eq.stop(); --stop grid
     e.self:SetSpecialAbility(24, 1); --turn on anti aggro

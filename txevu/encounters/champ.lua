@@ -166,7 +166,24 @@ local npc_list =  eq.get_entity_list():GetNPCList();
   end
 end
 
+--mastruq mods
+
+function MastruqChampion_Spawn(e)
+e.self:ModSkillDmgTaken(0, -25); -- 1h blunt
+e.self:ModSkillDmgTaken(2, -25); -- 2h blunt
+e.self:ModSkillDmgTaken(1, 25); -- 1h slashing
+e.self:ModSkillDmgTaken(3, 25); -- 2h slashing
+e.self:ModSkillDmgTaken(7, 25); -- archery
+end
+
 function TheRunt_Spawn(e)
+-- mods enthralled destroyer/noc bloodluster
+e.self:ModSkillDmgTaken(0, 25); -- 1h blunt
+e.self:ModSkillDmgTaken(2, 25); -- 2h blunt
+e.self:ModSkillDmgTaken(1, -25); -- 1h slashing
+e.self:ModSkillDmgTaken(3, -25); -- 2h slashing
+e.self:ModSkillDmgTaken(7, -25); -- archery
+	
   e.self:MoveTo(25, 0, -437, 130,true);
   eq.set_timer("depop", 600 * 1000); -- 10 min reset if runt isnt killed
   local hate_list;
@@ -334,6 +351,7 @@ function event_encounter_load(e)
     eq.register_npc_event('champ', Event.signal, 297034, MastruqChampion_Signal);
     eq.register_npc_event('champ', Event.hp, 297034, MastruqChampion_HP);
    eq.register_npc_event('champ', Event.death_complete, 297034, MastruqChampion_Death);
+eq.register_npc_event('champ', Event.spawn, 297034, MastruqChampion_Spawn);
 
     eq.register_npc_event('champ', Event.hp, 297211, IxtHsek_HP);
     eq.register_npc_event('champ', Event.combat, 297211, IxtHsek_Combat);

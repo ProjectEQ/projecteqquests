@@ -244,6 +244,7 @@ end
 function PKK_Hatchling_Spawn(e)
 	e.self:ModSkillDmgTaken(3, -20); -- 2h slashing
 	e.self:ModSkillDmgTaken(1, -20); -- 1h slashing
+	e.self:ModSkillDmgTaken(7, 10); -- archery
 end
 
 function PKK_Roaming_Caster_One_Spawn(e)

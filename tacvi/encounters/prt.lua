@@ -6,6 +6,7 @@ local golems_spawn = false;
 function PRT_Spawn(e)
   e.self:ModSkillDmgTaken(1, -30); -- 1h slashing
   e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
+e.self:ModSkillDmgTaken(7, -25); -- archery
   --spawn the two starting golems
   
   eq.unique_spawn(298002, 0, 0, 229.0, -572.0, -3.25, 384):SetAppearance(3); -- NPC: a_corrupted_construct (ramp)

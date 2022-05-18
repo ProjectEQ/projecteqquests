@@ -198,8 +198,11 @@ end
 
 function Corrupt_Spawn(e)
   e.self:SetAppearance(3)
-  e.self:ModSkillDmgTaken(1, -20); -- 1h slashing
-  e.self:ModSkillDmgTaken(3, -20); -- 2h slashing
+  e.self:ModSkillDmgTaken(1, -25); -- 1h slashing
+  e.self:ModSkillDmgTaken(3, -25); -- 2h slashing
+e.self:ModSkillDmgTaken(0, 10); -- 1h blunt
+e.self:ModSkillDmgTaken(2, 10); -- 2h blunt
+e.self:ModSkillDmgTaken(7, -25); -- archery
 end
 
 function Corrupt_Death(e)

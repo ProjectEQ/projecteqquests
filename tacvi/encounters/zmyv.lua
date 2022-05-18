@@ -2,6 +2,8 @@
 function ZMYV_Spawn(e)
   eq.get_entity_list():FindDoor(21):SetLockPick(0);
   eq.set_next_hp_event(90);
+e.self:ModSkillDmgTaken(1, 5); -- 1h slashing
+e.self:ModSkillDmgTaken(3, 5); -- 2h slashing
 end
 
 function ZMYV_Combat(e)

@@ -294,6 +294,13 @@ e.self:ModSkillDmgTaken(7, -25); -- archery
 
 end
 
+function Golem_Spawn(e)
+e.self:ModSkillDmgTaken(0, 25); -- 1h blunt
+e.self:ModSkillDmgTaken(2, 25); -- 2h blunt
+e.self:ModSkillDmgTaken(1, -25); -- 1h slashing
+e.self:ModSkillDmgTaken(3, -25); -- 2h slashing
+e.self:ModSkillDmgTaken(7, -25); -- archery
+end
 
 function event_encounter_load(e)
 eq.register_npc_event('summoners', Event.spawn, 293218, Trigger_Spawn);
@@ -316,6 +323,11 @@ eq.register_npc_event('summoners', Event.combat, 293213, Priest_Combat);
     eq.register_npc_event('summoners', Event.combat, 293215, Lesser_Combat);
     eq.register_npc_event('summoners', Event.timer, 293215, Lesser_Timer);
     
+	-- golem adds all will share same mod taken script
+eq.register_npc_event('summoners', Event.spawn, 293215, Golem_Spawn);
+eq.register_npc_event('summoners', Event.spawn, 293216, Golem_Spawn);
+eq.register_npc_event('summoners', Event.spawn, 293217, Golem_Spawn);
+	
     eq.register_npc_event('summoners', Event.death_complete, 293216, Greater_Death);
     eq.register_npc_event('summoners', Event.combat, 293216, Greater_Combat);
     eq.register_npc_event('summoners', Event.timer, 293216, Greater_Timer);

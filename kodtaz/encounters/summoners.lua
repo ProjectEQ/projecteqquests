@@ -283,6 +283,15 @@ end
 
 function Rav_Spawn(e)
 eq.set_timer("depop", 180 * 1000);
+	
+-- mods enthralled destroyer/noc bloodluster
+
+e.self:ModSkillDmgTaken(0, 25); -- 1h blunt
+e.self:ModSkillDmgTaken(2, 25); -- 2h blunt
+e.self:ModSkillDmgTaken(1, -25); -- 1h slashing
+e.self:ModSkillDmgTaken(3, -25); -- 2h slashing
+e.self:ModSkillDmgTaken(7, -25); -- archery
+
 end
 
 

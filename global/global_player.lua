@@ -1,4 +1,7 @@
 -- items: 67704, 72091, 62621, 62622, 62844, 62827, 62828, 62836, 62883, 62876, 47100, 62878, 62879
+
+local don = require("dragons_of_norrath")
+
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	if(e.self:GetLevel() >= 15 and qglobals['Wayfarer'] == nil) then
@@ -231,6 +234,8 @@ function event_connect(e)
             e.self:GrantAlternateAdvancementAbility(aa, 1)
         end
     end
+
+    don.fix_invalid_faction_state(e.self)
 end
 
 --[[
@@ -357,4 +362,8 @@ function event_test_buff(e)
             end
         end
     end
+end
+
+function event_task_complete(e)
+  don.on_task_complete(e.self, e.task_id)
 end

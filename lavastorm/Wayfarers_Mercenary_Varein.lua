@@ -1,38 +1,30 @@
 -- Wayfarers_Mercenary_Varein (27084)
 -- Alliance Tasks
 
---[[
-Spider's Webs	<= indifferent	Solo
-Blood Money	<= indifferent	Solo
-]]
+local don = require("dragons_of_norrath")
 
---only get quest if faction <= indifferent
---1	Ally
---2	Warmly
---3	Kindly
---4	Amiably
---5	Indifferent
---6	Apprehensive
---7	Dubious
---8 Threateningly
---9	Scowls
-
---404 Dark Reign
---429 Norrath's Keepers
+local tasks = {
+  5065, -- Blood Money
+  5061, -- Spider's Webs
+}
 
 function event_say(e)
-    local is_gm = (e.other:Admin() > 80 and e.other:GetGM());
-	if (eq.is_current_expansion_lost_dungeons_of_norrath() or is_gm) then
+  if not e.other:GetGM() and not eq.is_dragons_of_norrath_enabled() then
+    return
+  end
 
-		if(e.message:findi("hail")) then
-			local DRF=e.other:GetFactionLevel(e.other:GetID(), e.self:GetID(), e.other:GetBaseRace(), e.other:GetClass(), e.other:GetDeity(), 1021, e.self);
-			if (DRF >= 5) then
-				e.self:Say("Feeling a bit like an outsider? I certainly understand that as part of the brotherhood, though I don't envy you. We've been able to make a good bit o' coin off the Dark Reign. Give us a hand and I'll see about helping you get inside.");
-				-- Blood Money, Spider's Webs
-				eq.task_selector({275, 276});
-			else
-				e.self:Say("I managed to have a chat with the Dark Reign and they did mention they are looking for recruits. They might listen to you.");
-			end
-		end
-	end
+  if e.message:findi("hail") then
+    local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+    if not player:has_min_faction(don.faction.Indifferent) then -- only offered up to apprehensive
+      e.other:Message(MT.NPCQuestSay, "Wayfarers Mercenary Varein says, 'Feeling a bit like an outsider? I certainly understand that as part of the brotherhood, though I don't envy you. We've been able to make a good bit o' coin off the Dark Reign.  Give us a hand and I'll see about helping you get inside.'")
+      eq.task_selector(tasks) -- note: unknown condition on live where only one task is offered sometimes
+    else
+      e.other:Message(MT.NPCQuestSay, "Wayfarers Mercenary Varein says, 'I managed to have a chat with the Dark Reign and they did mention they are looking for recruits. They might listen to you.'")
+    end
+  end
+end
+
+function event_trade(e)
+  local item_lib = require("items")
+  item_lib.return_items(e.self, e.other, e.trade)
 end

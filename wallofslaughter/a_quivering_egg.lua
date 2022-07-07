@@ -9,6 +9,8 @@ function event_timer(e)
 		eq.spawn2(300084, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
 		eq.spawn2(300084, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
 		-- 2 a_murk_hatchling per egg
+		eq.spawn2(300104, 0, 0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);
+		-- a_broken_egg (300104)
 		eq.depop();
 	end
 end

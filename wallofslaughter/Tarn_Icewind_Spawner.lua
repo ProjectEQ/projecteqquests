@@ -8,7 +8,7 @@ function event_spawn(e)
 end
 
 function event_signal(e)
-  if (e.signal == 90) then
+  if (e.signal == 1) then
     ice_crystal = ice_crystal + 1;
   end
   if (ice_crystal == 4) then

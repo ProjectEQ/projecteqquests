@@ -1,3 +1,9 @@
 function event_spawn(e)
-e.self:SetAppearance(3);
+  eq.set_timer("depop", 1800 * 1000);
+end
+
+function event_timer(e)
+  if (e.timer == "depop") then
+    eq.depop();
+  end
 end

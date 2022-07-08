@@ -1,6 +1,6 @@
 function event_combat(e)
 if (e.joined == true) then
-eq.set_timer("howl", 10 * 1000);
+eq.set_timer("howl", 5 * 1000);
 else
 eq.stop_timer("howl");
 end
@@ -16,6 +16,6 @@ function event_timer(e)
 			end
 		end	
     e.self:Emote("howls for assistance!");
-    eq.set_timer("howl", 10 * 1000);
+    eq.set_timer("howl", 5 * 1000);
   end
 end

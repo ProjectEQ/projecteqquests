@@ -86,7 +86,8 @@ function event_timer(e)
 		e.self:WipeHateList();
 		e.self:GotoBind();
 		Agro=0;
-		--eq.zone_emote(15,"You Failed");
+		eq.zone_emote(0,"You lose all sight of Jekisia. She must have fled away into the caverns, using her lackyes to cover her escape.");
+		-- should depop and respawn unknown time later
 	end
 end
 

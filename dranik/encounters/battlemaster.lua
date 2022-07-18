@@ -18,7 +18,7 @@ function Controller_Signal(e)
 			eq.depop_all(336118);
 			eq.depop_all(336117);
 			eq.depop_all(336120);
-			eq.set_timer("reset", 1800*1000); -- 30 minute reset
+			eq.set_timer("reset", 120*1000); -- 30 minute reset
 			
 			
 		end
@@ -100,6 +100,7 @@ function GoatIxt_Signal(e)
 		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		eq.set_timer("path", 5 * 1000);
 		e.self:SetRunning(true);
+		eq.set_timer("wipecheck", 60*1000); -- 20 minute reset
 		
 	end
 end

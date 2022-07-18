@@ -18,7 +18,7 @@ function Controller_Signal(e)
 			eq.depop_all(336118);
 			eq.depop_all(336117);
 			eq.depop_all(336120);
-			eq.set_timer("reset", 1800*1000); -- 30 minute reset
+			eq.set_timer("reset", 5400*1000); -- 90 minute reset
 			
 			
 		end

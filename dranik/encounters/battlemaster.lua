@@ -1,4 +1,6 @@
 --battlemaster_controller (336127)
+local reset = 0;
+
 function Controller_Spawn(e)
 	eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, 1); -- NPC: #Ixt_Imnes_the_Ironhoof
 	eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, 1); -- NPC: #Ikaav_Salisa_Mexmielk
@@ -6,15 +8,19 @@ function Controller_Spawn(e)
 	eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
 	eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
 	eq.unique_spawn(336120, 0, 0, 1678, 2778, -25, 261); -- NPC: #Battlemaster_Rhorious (336120)
+	reset = 0;
 end
 
 function Controller_Signal(e)
 	if(e.signal == 1) then
-		eq.depop_all(336119);
-		eq.depop_all(336118);
-		eq.depop_all(336117);
-		eq.depop_all(336120);
-		eq.set_timer("reset", 600*1000); -- 10 minute reset
+		if reset == 0 then
+			reset = 1;
+			eq.depop_all(336119);
+			eq.depop_all(336118);
+			eq.depop_all(336117);
+			eq.depop_all(336120);
+			eq.set_timer("reset", 600*1000); -- 10 minute reset
+		end
 	end
 end
 
@@ -151,7 +157,9 @@ function event_encounter_load(e)
 	eq.register_npc_event('battlemaster', Event.combat,         336117, GoatIxt_Combat);
 		
 	eq.register_npc_event('battlemaster', Event.death_complete, 336120, All_Death);
-	eq.register_npc_event('battlemaster', Event.death_complete,	336120, All_Death);
+	eq.register_npc_event('battlemaster', Event.death_complete, 336119, All_Death);
+	eq.register_npc_event('battlemaster', Event.death_complete, 336118, All_Death);
+	eq.register_npc_event('battlemaster', Event.death_complete, 336117, All_Death);
 
 end
 

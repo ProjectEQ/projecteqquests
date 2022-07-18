@@ -33,6 +33,14 @@ function event_timer(e)
   elseif (e.timer == 'depop') then
     eq.signal(336128,1); --signal controller to do things tiorpat_controller (336128)
     eq.stop_timer('depop');
+	elseif (e.timer == 'link') then
+    
+    local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 336058 or npc:GetNPCTypeID() == 336057)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+			end
+		end	
   end
 end
 
@@ -51,10 +59,12 @@ end
 
 function event_combat(e)
  if (e.joined == true) then
+		 eq.set_timer('link', 5 * 1000); -- cycle aggro link every 5 sec
 		if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end
 	else
 		eq.resume_timer('depop');
+		eq.stop_timer('link');
 	end
 end

@@ -68,3 +68,7 @@ function event_combat(e)
 		eq.stop_timer('link');
 	end
 end
+
+function event_death_complete(e)
+eq.depop_with_timer(336128); --tiorpat_controller (336128)
+end

@@ -9,6 +9,7 @@ end
 function Controller_Signal(e)
 	if(e.signal == 1) then
 		if reset == 0 then
+			reset = 1;
 			
 			eq.depop_all(336119);
 			eq.depop_all(336118);
@@ -16,7 +17,7 @@ function Controller_Signal(e)
 			eq.depop_all(336120);
 			eq.set_timer("reset", 1800*1000); -- 30 minute reset
 			
-			reset = 1;
+			
 		end
 	end
 end
@@ -39,6 +40,7 @@ function Controller_Timer(e)
 		eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
 		eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
 		eq.unique_spawn(336120, 0, 0, 1678, 2778, -25, 261); -- NPC: #Battlemaster_Rhorious (336120)
+		reset = 0;
 	end
 end
 

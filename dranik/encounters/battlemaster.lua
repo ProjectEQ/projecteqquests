@@ -2,12 +2,7 @@
 local reset = 0;
 
 function Controller_Spawn(e)
-	eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, 1); -- NPC: #Ixt_Imnes_the_Ironhoof
-	eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, 1); -- NPC: #Ikaav_Salisa_Mexmielk
-	eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
-	eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
-	eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
-	eq.unique_spawn(336120, 0, 0, 1678, 2778, -25, 261); -- NPC: #Battlemaster_Rhorious (336120)
+	eq.set_timer("spawnevent", 6*1000);
 	reset = 0;
 end
 
@@ -34,6 +29,14 @@ function Controller_Timer(e)
 		eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
 		eq.unique_spawn(336120, 0, 0, 1678, 2778, -25, 261); -- NPC: #Battlemaster_Rhorious (336120)
 		reset = 0;
+	elseif (e.timer == "spawnevent") then
+		eq.stop_timer("spawnevent");
+		eq.spawn2(336119, 0, 0, 1882.69, 2280.94, -24.97, 1); -- NPC: #Ixt_Imnes_the_Ironhoof
+		eq.spawn2(336118, 0, 0, 1462.19, 2280.65, -24.97, 1); -- NPC: #Ikaav_Salisa_Mexmielk
+		eq.spawn2(336117, 0, 0, 1589, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
+		eq.spawn2(336117, 0, 0, 1677, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
+		eq.spawn2(336117, 0, 0, 1765, 2822, -24.97, 253); -- NPC: Frenetic_Groundpounder
+		eq.unique_spawn(336120, 0, 0, 1678, 2778, -25, 261); -- NPC: #Battlemaster_Rhorious (336120)
 	end
 end
 

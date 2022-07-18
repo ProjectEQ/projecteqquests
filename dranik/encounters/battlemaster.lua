@@ -9,12 +9,14 @@ end
 function Controller_Signal(e)
 	if(e.signal == 1) then
 		if reset == 0 then
-			reset = 1;
+			
 			eq.depop_all(336119);
 			eq.depop_all(336118);
 			eq.depop_all(336117);
 			eq.depop_all(336120);
-			eq.set_timer("reset", 600*1000); -- 10 minute reset
+			eq.set_timer("reset", 1800*1000); -- 30 minute reset
+			
+			reset = 1;
 		end
 	end
 end

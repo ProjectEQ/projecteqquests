@@ -1,5 +1,5 @@
 --battlemaster_controller (336127)
-local reset = 0;
+
 
 function Controller_Spawn(e)
 	eq.set_timer("spawnevent", 6*1000);
@@ -7,10 +7,13 @@ function Controller_Spawn(e)
 end
 
 function Controller_Signal(e)
+	local reset = 0;
 	if(e.signal == 1) then
-		if reset == 0 then
-			reset = 1;
+		eq.debug("signal received to reset");
+		if (reset == 0) then
 			
+			reset = 1;
+			eq.debug("reset status " .. reset);
 			eq.depop_all(336119);
 			eq.depop_all(336118);
 			eq.depop_all(336117);

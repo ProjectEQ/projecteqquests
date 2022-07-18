@@ -4,6 +4,7 @@ end
 
 function event_timer(e)
   if (e.timer == 'spawnscript') then
+    eq.unique_spawn(336061, 0, 0, -335, 524, -219, 259); -- Tiorpat_Tornwing (336061)
     eq.spawn2(eq.ChooseRandom(336059,336060), 0, 0, -467, 530, -217.75, 320); -- NPC(s): a_pensive_Dragorn (336059), a_sympathetic_Dragorn (336060)
     eq.spawn2(eq.ChooseRandom(336059,336060), 0, 0, -372, 471, -217.75, 360); -- NPC(s): a_pensive_Dragorn (336059), a_sympathetic_Dragorn (336060)
     eq.spawn2(eq.ChooseRandom(336059,336060), 0, 0, -274, 470, -217.75, 184); -- NPC(s): a_pensive_Dragorn (336059), a_sympathetic_Dragorn (336060)

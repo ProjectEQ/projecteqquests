@@ -46,7 +46,9 @@ function event_signal(e)
 			eq.depop_all(336057);
 			eq.depop_all(336059);
 			eq.depop_all(336060);
-      eq.depop_all(336061);
-			eq.set_timer('reset', 5400*1000); -- 90 minute reset
+      			eq.depop_all(336061);
+		
+			--eq.set_timer('reset', 5400*1000); -- 90 minute reset this doesnt reset it just goes into full respawn mode
+			eq.depop_with_timer(336128); --tiorpat_controller (336128)
 	end
 end

@@ -1,3 +1,59 @@
+function Controller_Spawn(e)
+	eq.set_timer("spawnevent", 3 * 1000);
+	reset = 0;
+end
+
+function Controller_Timer(e)
+	if (e.timer == "spawnevent") then
+		eq.stop_timer("spawnevent");
+		eq.unique_spawn(301034, 0, 0, 677,-419,-816.125,0):SetAppearance(3);
+		--a_slumbering_beast (301034) X: 677.000000	Y: -419.000000	Z: -816.125000	Heading: 0.000000 lying down
+
+		eq.spawn2(301031, 0, 0, 632,-328,-821.125,128);
+		-- Ikaav_Dreamweaver (301031) X: 632.000000	Y: -328.000000	Z: -821.125000	Heading: 128.000000
+
+		eq.spawn2(301031, 0, 0, 748,-352,-819.5,256);
+		-- Ikaav_Dreamweaver (301031)  X: 748.000000	Y: -352.000000	Z: -819.500000	Heading: 256.000000
+
+		eq.spawn2(301031, 0, 0, 681,-476,-827.75,462);
+		-- Ikaav_Dreamweaver (301031)  X: 681.000000	Y: -476.000000	Z: -827.750000	Heading: 462.000000
+		reset = 0;
+		
+	elseif (e.timer == "respawn") then
+		eq.stop_timer("respawn");
+		eq.unique_spawn(301034, 0, 0, 677,-419,-816.125,0):SetAppearance(3);
+		--a_slumbering_beast (301034) X: 677.000000	Y: -419.000000	Z: -816.125000	Heading: 0.000000 lying down
+
+		eq.spawn2(301031, 0, 0, 632,-328,-821.125,128);
+		-- Ikaav_Dreamweaver (301031) X: 632.000000	Y: -328.000000	Z: -821.125000	Heading: 128.000000
+
+		eq.spawn2(301031, 0, 0, 748,-352,-819.5,256);
+		-- Ikaav_Dreamweaver (301031)  X: 748.000000	Y: -352.000000	Z: -819.500000	Heading: 256.000000
+
+		eq.spawn2(301031, 0, 0, 681,-476,-827.75,462);
+		-- Ikaav_Dreamweaver (301031)  X: 681.000000	Y: -476.000000	Z: -827.750000	Heading: 462.000000
+		reset = 0;
+	end
+end
+
+function Controller_Signal(e)
+	local reset = 0;
+	if(e.signal == 1) then
+		--eq.debug("signal received to reset");
+		if (reset == 0) then
+			
+			reset = 1;
+			--eq.debug("reset status " .. reset);
+			eq.depop_all(301031); --ikaav
+			eq.depop_all(301034); --slumbering beast
+			eq.depop_all(301062); --gaz
+		
+			eq.set_timer("respawn", 1800 * 1000); --30 min respawn event
+			
+		end
+	end
+end
+
 function Dream_Combat(e)
   if (e.joined == true) then
     eq.set_timer("aggrolink", 3 * 1000);
@@ -48,8 +104,7 @@ end
 
 function Gaz_Timer(e)
   if (e.timer == 'reset') then
-    eq.spawn2(301034, 0, 0, 677, -419, -816, 0); -- NPC: a_slumbering_beast
-    eq.depop_all(301062);
+    eq.signal(301084,1); --gaz_controller (301084) initiate respawn sequence
   elseif(e.timer=='aeramp') then
     eq.stop_timer('aeramp');
     eq.set_timer('detonate', 5 * 1000);
@@ -91,4 +146,8 @@ function event_encounter_load(e)
   eq.register_npc_event('gaz', Event.death_complete, 301062, Gaz_Death);
   eq.register_npc_event('gaz', Event.combat,         301062, Gaz_Combat);
   eq.register_npc_event('gaz', Event.timer,          301062, Gaz_Timer);
+	
+eq.register_npc_event('gaz', Event.timer,          301084, Controller_Timer);
+eq.register_npc_event('gaz', Event.spawn,          301084, Controller_Spawn);
+eq.register_npc_event('gaz', Event.signal,          301084, Controller_Signal);
 end

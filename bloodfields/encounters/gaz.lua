@@ -66,8 +66,8 @@ function Dream_Timer(e)
   if (e.timer == "aggrolink") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
-		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 301083)) then
-			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Ikaav_Dreamweaver (301083) to aggro list if alive
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 301031)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Ikaav_Dreamweaver (301031) to aggro list if alive
 		end
 		end
   end

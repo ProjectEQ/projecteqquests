@@ -85,9 +85,7 @@ function Dream_Death(e)
 end
 
 function Gaz_Death(e)
-  -- Set the respawn time of the 'a slumbering beast' 301034 to 24 hours
-  -- Spawngroup: 52921
-  eq.update_spawn_timer(52921, 86400 * 1000);
+  eq.depop_with_timer(301084); --gaz_controller (301084)
 end
 
 function Gaz_Combat(e)

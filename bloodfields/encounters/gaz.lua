@@ -1,3 +1,22 @@
+function Dream_Combat(e)
+  if (e.joined == true) then
+    eq.set_timer("aggrolink", 3 * 1000);
+  else
+    eq.stop_timer("aggrolink");
+  end
+end
+
+function Dream_Timer(e)
+  if (e.timer == "aggrolink") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 301083)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add Ikaav_Dreamweaver (301083) to aggro list if alive
+		end
+		end
+  end
+end
+
 function Dream_Death(e)
   local el = eq.get_entity_list();
   if (el:IsMobSpawnedByNpcTypeID(301031) == false and el:IsMobSpawnedByNpcTypeID(301034) == true) then
@@ -65,6 +84,10 @@ end
 
 function event_encounter_load(e)
   eq.register_npc_event('gaz', Event.death_complete, 301031, Dream_Death);
+  eq.register_npc_event('gaz', Event.combat, 301031, Dream_Combat);
+  eq.register_npc_event('gaz', Event.timer, 301031, Dream_Timer);
+  
+  
   eq.register_npc_event('gaz', Event.death_complete, 301062, Gaz_Death);
   eq.register_npc_event('gaz', Event.combat,         301062, Gaz_Combat);
   eq.register_npc_event('gaz', Event.timer,          301062, Gaz_Timer);

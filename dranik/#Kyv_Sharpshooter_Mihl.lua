@@ -9,6 +9,7 @@ end
 function event_hp(e)
 	if (e.hp_event == 45) then
 		e.self:SetPseudoRoot(false);
+		e.self:Say("You think because I'm blind you can defeat me? My senses are boundless. I will hunt you down!");
 	end
 end
 

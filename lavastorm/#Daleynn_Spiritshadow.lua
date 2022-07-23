@@ -51,6 +51,12 @@ function event_say(e)
   end
 end
 
+function event_task_accepted(e)
+  if e.task_id == 4964 or e.task_id == 4965 or e.task_id == 4966 then -- The Creator
+    e.other:SummonItem(86006) -- item: Lens of Truth
+  end
+end
+
 function event_trade(e)
   local item_lib = require("items")
   item_lib.return_items(e.self, e.other, e.trade)

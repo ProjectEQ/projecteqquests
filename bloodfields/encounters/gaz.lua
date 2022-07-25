@@ -81,6 +81,7 @@ function Dream_Death(e)
     
     -- Spawn Gaz the Gargantuan 301062
     eq.spawn2(301062, 0, 0, 677, -419, -816, 0); -- NPC: #Gazz_the_Gargantuan
+eq.zone_emote(0,"The earth beneath your feet shakes as the gargantuan beast awakens.");
   end
 end
 

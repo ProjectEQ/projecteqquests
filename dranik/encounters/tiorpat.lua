@@ -174,12 +174,20 @@ function Add_Signal(e)
 	end
 end
 
+function Tiorpat_Death(e)
+	eq.depop_all(336058);
+	eq.depop_all(336057);
+	eq.depop_all(336059);
+	eq.depop_all(336060);
+end
+
 function event_encounter_load(e)
 eq.register_npc_event('tiorpat', Event.spawn,          336061, Tiorpat_Spawn);
 
 eq.register_npc_event('tiorpat', Event.combat,          336061, Tiorpat_Combat);
 eq.register_npc_event('tiorpat', Event.timer,          336061, Tiorpat_Timer);
 eq.register_npc_event('tiorpat', Event.signal,          336061, Tiorpat_Signal);
+	eq.register_npc_event('tiorpat', Event.death_complete,          336061, Tiorpat_Death);
 	
 eq.register_npc_event('tiorpat', Event.signal,          336058, Add_Signal);
 eq.register_npc_event('tiorpat', Event.signal,          336057, Add_Signal);

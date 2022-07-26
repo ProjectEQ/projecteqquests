@@ -1,12 +1,16 @@
 local crystal_regen = 0;
 
+function event_spawn(e)
+	eq.set_timer('reset', 600 * 1000); --10 minute reset
+end
+
 function event_combat(e)
   if (e.joined == true) then
     eq.set_timer('Tadds', 60 * 1000);
 		eq.stop_timer('reset');
   else
     eq.stop_timer('Tadds');
-		eq.set_timer('reset', 600 * 1000); --10 minute reset
+	eq.set_timer('reset', 600 * 1000); --10 minute reset
   end
 end
 

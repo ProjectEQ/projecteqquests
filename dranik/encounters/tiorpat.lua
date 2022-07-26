@@ -50,7 +50,7 @@ elseif (e.timer == 'link') then
 			end
 		end
 elseif (e.timer == 'adds') then
-	e.self:Emote("calls for reinforcements!"); --made up
+	eq.zone_emote(0,"Tiorpat Tornwing shouts, 'Help me, brother!");
 		eq.signal(336058,1);
 		eq.signal(336057,1);
 		-- a_Dragorn_realist (336058)
@@ -110,7 +110,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	
@@ -119,7 +119,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	
@@ -128,7 +128,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	elseif add_sequence == 3 then
@@ -136,7 +136,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	elseif add_sequence == 4 then
@@ -144,7 +144,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	elseif add_sequence == 5 then
@@ -152,7 +152,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	elseif add_sequence == 6 then
@@ -160,7 +160,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	elseif add_sequence == 7 then
@@ -168,7 +168,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			
+			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug(4, "add sequence = [".. add_sequence .."]");
 		end
 	end

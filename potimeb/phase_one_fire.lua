@@ -3,7 +3,7 @@
 --potimeb
 
 local event_counter = 0;
-local event_mobs = {223088,223089,223233,223095,223234,223235,223236,223237,223090,223094,223163};
+local event_mobs = {223088,223089,223128,223095,223234,223235,223236,223237,223090,223094,223163};
 
 --specify trial boundaries for player check routine
 local min_x = -75;
@@ -48,7 +48,7 @@ function event_signal(e)
 		event_counter = event_counter + 1;
 		-- spawn Kazrok_of_Fire
 		if (event_counter == 6) then
-			eq.depop_all(223233);
+			eq.depop(223128);
 
 			-- Check on which version to spawn
 			local expedition = eq.get_expedition()

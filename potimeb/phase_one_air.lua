@@ -64,15 +64,15 @@ function event_signal(e)
 			
 			--flag 2 out of 4 mobs as mezzable at random
 			if math.random(100) <= 50 then
-				mob1:SetSpecialAbility(13, 0);	
+				mob1:SetSpecialAbility(SpecialAbility.unmezable, 0);	
 			else
-				mob2:SetSpecialAbility(13, 0);	
+				mob2:SetSpecialAbility(SpecialAbility.unmezable, 0);	
 			end
 			
 			if math.random(100) <= 50 then
-				mob3:SetSpecialAbility(13, 0);	
+				mob3:SetSpecialAbility(SpecialAbility.unmezable, 0);	
 			else
-				mob4:SetSpecialAbility(13, 0);	
+				mob4:SetSpecialAbility(SpecialAbility.unmezable, 0);	
 			end			
 				
 			

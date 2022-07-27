@@ -4,7 +4,7 @@
 
 function event_spawn(e)
 	if math.random(100) >= 50 then --50% chance to be unmezzable (default is mezzable)
-		e.self:SetSpecialAbility(13, 1);	--flag as unmezzable
+		e.self:SetSpecialAbility(SpecialAbility.unmezable, 1);	--flag as unmezzable
 	end
 end
 

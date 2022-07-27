@@ -10,8 +10,8 @@ end
 function event_signal(e)
 	--signal from A Windshapen Warlord
 	if e.signal == 1 then
-		e.self:SetSpecialAbility(25, 0);
-		e.self:SetSpecialAbility(24, 0);
-		e.self:SetBodyType(1, true);
+		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
+		e.self:SetBodyType(BT.Monster, true);
 	end
 end

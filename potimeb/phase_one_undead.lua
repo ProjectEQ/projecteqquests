@@ -57,10 +57,10 @@ function event_signal(e)
 		-- spawn third wave consisting of 4 an_undead_guardian (mezzable)
 		elseif (event_counter == 7) then
 			eq.spawn2(223103,0,0,65.2,1139.7,494.8,371);	--undead protector (untargetable)
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,-23,1095,494.8,127):SetSpecialAbility(13, 0);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,-23,1130,494.8,127):SetSpecialAbility(13, 0);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,45,1095,494.8,371):SetSpecialAbility(13, 0);
-			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,45,1130,494.8,371):SetSpecialAbility(13, 0);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,-23,1095,494.8,127):SetSpecialAbility(SpecialAbility.unmezable, 0);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,-23,1130,494.8,127):SetSpecialAbility(SpecialAbility.unmezable, 0);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,45,1095,494.8,371):SetSpecialAbility(SpecialAbility.unmezable, 0);
+			eq.spawn2(eq.ChooseRandom(223105,223116,223121,223122,223149),0,0,45,1130,494.8,371):SetSpecialAbility(SpecialAbility.unmezable, 0);
 		-- spawn boss and grunts
 		elseif (event_counter == 11) then
 			eq.depop_all(223103);	--despawn untargetable undead protectors

@@ -22,11 +22,3 @@ function event_say(e)
 		end
 	end
 end
-
-
-
-
-
-
-
-

@@ -1,84 +1,63 @@
-function event_death_complete(e)
-	-- send a signal to the zone_status that I died
-	eq.signal(223097,5); -- NPC: zone_status
-	-- get the zone instance id
-	local instance_id = eq.get_zone_instance_id();
-	-- load qglobals and set bit 2
-	local qglobals = eq.get_qglobals();
-	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
-	eq.set_global(instance_id.."_potimeb_phase_bit",tostring(bit.bor(phase_bit,2)),7,"H13");
-end
+--Saryrn (223076)
+--Phase 4 Encounter
+--potimeb
 
-function event_combat(e)
-	if (e.joined == true) then
-		eq.set_timer("OOBcheck", 6 * 1000);
-		eq.stop_timer('reset');
-	else
-		eq.stop_timer("OOBcheck");
-		eq.set_timer('reset', 6 * 1000);
-	end
+local event_mobs = {223083,223084,223085,223086};
+
+function event_death_complete(e)
+	eq.signal(223097,223076); -- Add Loot Lockout
+	eq.signal(223097,5); -- send a signal to the zone_status that I died
 end
 
 function event_spawn(e)
-	eq.set_next_hp_event(91);
+	eq.set_next_hp_event(96);
 end
 
-function event_hp(e)
-	if (e.hp_event == 91) then
-		-- spawn Saryrn's 4 random mobs from A_Mouth_of_Insanity, A_Tormentor, A_Mouth_of_Dementia, A_Twisted_Tormentor
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-219,-350,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-350,-230,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-219,-350,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-350,-230,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.set_timer('saryrnhelp', 1 * 1000);
-		eq.set_next_hp_event(51);
-	elseif (e.hp_event == 51) then
-		-- spawn Saryrn's 4 random mobs from A_Mouth_of_Insanity, A_Tormentor, A_Mouth_of_Dementia, A_Twisted_Tormentor
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-219,-350,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-350,-230,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-219,-350,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-350,-230,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.set_timer('saryrnhelp', 1 * 1000);
-		eq.set_next_hp_event(11);
-	elseif (e.hp_event == 11) then
-		-- spawn Saryrn's 4 random mobs from A_Mouth_of_Insanity, A_Tormentor, A_Mouth_of_Dementia, A_Twisted_Tormentor
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-219,-350,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-350,-230,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-219,-350,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.spawn2(eq.ChooseRandom(223083,223084,223085,223086),0,0,-350,-230,348,0); -- NPC(s): A_Mouth_of_Insanity (223083), A_Mouth_of_Dementia (223084), A_Tormentor (223085), A_Twisted_Tormentor (223086)
-		eq.set_timer('saryrnhelp', 1 * 1000);
+function event_combat(e)
+	if e.joined then
+		eq.stop_timer("reset");
+	else
+		eq.set_timer("reset",5 * 60 * 1000);
 	end
 end
 
 function event_timer(e)
-	if(e.timer == 'saryrnhelp') then
-		help_saryrn(e);
-		eq.stop_timer('saryrnhelp');
-	elseif(e.timer == 'reset') then
-		e.self:SetHP(e.self:GetMaxHP());
-		eq.set_next_hp_event(91);
-		eq.depop_all(223083); -- depop adds
-		eq.depop_all(223084);
-		eq.depop_all(223085);
-		eq.depop_all(223086);
-		eq.stop_timer('reset');
-	elseif(e.timer=="OOBcheck") then
-		eq.stop_timer("OOBcheck");
-			if (e.self:GetX() > -177 or e.self:GetY() > -182) then
-				e.self:GotoBind();
-				e.self:WipeHateList();
-				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
-			else
-				eq.set_timer("OOBcheck", 6 * 1000);
-			end
+	if e.timer == "reset" then
+		eq.stop_timer("reset");
+		eq.set_next_hp_event(96);
+		for k,v in pairs(event_mobs) do	--depop adds
+			eq.depop_all(v);
+		end
 	end
 end
 
-function help_saryrn(e)
-	local npc_list =  eq.get_entity_list():GetNPCList();
-	for npc in npc_list.entries do
-		if (npc.valid and (npc:GetNPCTypeID() == 223083 or npc:GetNPCTypeID() == 223084 or npc:GetNPCTypeID() == 223085 or npc:GetNPCTypeID() == 223086)) then
-		npc:CastToNPC():MoveTo(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0, false);
+function event_hp(e)
+	if (e.hp_event == 96) then
+		SpawnAdds();
+		eq.set_next_hp_event(51);
+	elseif (e.hp_event == 51) then
+		SpawnAdds();
+		eq.set_next_hp_event(11);
+	elseif (e.hp_event == 11) then
+		SpawnAdds();
+	end
+end
+
+function SpawnAdds()	--spawns 4 adds (2 sets of same type)  -- A_Mouth_of_Insanity, A_Tormentor, A_Mouth_of_Dementia, A_Twisted_Tormentor
+	local id1 = event_mobs[math.random(#event_mobs)];	
+	local id2 = nil;
+	
+	while id2 == nil do
+		id2 = event_mobs[math.random(#event_mobs)];	--select 2nd add, but must be different than first selection
+		if id2 == id1 then
+			id2 = nil;		--reset to roll again if same mob id
 		end
-	end		
+	end
+	
+	for n = 1,2 do
+		mob = eq.spawn2(id1,0,0,-219,-350,348,0);
+		mob:CastToNPC():MoveTo(-219,-280,348,0,true);
+		mob2 = eq.spawn2(id2,0,0,-350,-230,348,127);
+		mob2:CastToNPC():MoveTo(-270,-230,348,127,true);
+	end
 end

@@ -1,21 +1,17 @@
+--a_pile_of_living_rubble (223106)
+--Phase 1 - Terlok of Earth Trial
+--potimeb
+
+--trial boundary for mob spawns
+local min_x = -50;
+local max_x = 65;
+local min_y = 1598;
+local max_y = 1670;
+		
 function event_death_complete(e)
-	-- send a signal to the #earth_trigger that I died
-	eq.signal(223169,1); -- NPC: phase_one_earth
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	local zloc = e.self:GetZ();
-	local heading = e.self:GetHeading();
-	-- spawn between 2 and 4 a_rock_shaped_assassin
-	local split_count = eq.ChooseRandom(2,3,4);
-	for i = 1, split_count, 1 do
-		if (i == 1) then
-			eq.spawn2(223147,0,0,xloc,yloc+5,zloc,heading); -- NPC: a_rock_shaped_assassin
-		elseif (i == 2) then
-			eq.spawn2(223147,0,0,xloc,yloc-5,zloc,heading); -- NPC: a_rock_shaped_assassin
-		elseif (i == 3) then
-			eq.spawn2(223147,0,0,xloc,yloc+10,zloc,heading); -- NPC: a_rock_shaped_assassin
-		elseif (i == 4) then
-			eq.spawn2(223147,0,0,xloc,yloc-10,zloc,heading); -- NPC: a_rock_shaped_assassin
-		end
+	-- spawn between 2 and 4 a_rock_shaped_assassin (random location within area)
+	local count = math.random(2,4) 
+	for i = 1, count do
+		eq.spawn2(223147,0,0,math.random(min_x,max_x),math.random(min_y,max_y),505,0);
 	end
 end

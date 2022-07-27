@@ -1,57 +1,52 @@
+--#Innoruuk (223167)
+--Phase 5 God
+--potimeb
+
+local event_mobs = {223231,223232};
+
 function event_spawn(e)
-	eq.set_next_hp_event(80);
-end
-
-function event_combat(e)
-	if (e.joined == true) then
-		eq.set_timer("OOBcheck", 6 * 1000);
-		eq.stop_timer("reset");
-	else
-		eq.stop_timer("OOBcheck");
-		eq.set_timer("reset", 6 * 1000);
-	end
-end
-
-
-function event_timer(e)
-if(e.timer=="OOBcheck") then
-eq.stop_timer("OOBcheck");
-	if (e.self:GetX() < 157 or e.self:GetY() < 180) then
-		e.self:GotoBind();
-		e.self:WipeHateList();
-		e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
-	else
-		eq.set_timer("OOBcheck", 6 * 1000);
-	end
-elseif(e.timer=="reset") then
-		e.self:SetHP(e.self:GetMaxHP());
-		eq.set_next_hp_event(80);
-		eq.depop_all(223231); --guardian_of_the_dark_prince (223231)
-		eq.depop_all(223232); --A_hatebringer_of_Innoruuk (223232)
-end
+	eq.set_next_hp_event(75);
 end
 
 function event_hp(e)
-	if(e.hp_event == 80) then
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,320,216,3,386); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,226,230,3,312); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,212,327,3,255); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+	if (e.hp_event == 75) then
+		SpawnAdds(3,4);
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,293,301,13,317); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,305,221,3,389); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,214,309,3,251); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
-		eq.spawn2(eq.ChooseRandom(223231,223232),0,0,238,239,3,319); -- NPC(s): guardian_of_the_dark_prince (223231), A_hatebringer_of_Innoruuk (223232)
+		SpawnAdds(4,5);
 	end
+end
+
+function event_combat(e)
+	if e.joined then
+		eq.stop_timer("reset");
+	else
+		eq.set_timer("reset",5 * 60 * 1000);
+	end
+end
+
+function event_timer(e)
+	if e.timer == "reset" then
+		eq.stop_timer("reset");
+		eq.set_next_hp_event(75);
+		for k,v in pairs(event_mobs) do
+			eq.depop_all(v);
+		end
+	end
+end
+
+function SpawnAdds(min_adds,max_adds)	--spawns 4 adds (2 sets of same type)	
+	local rand = math.random(min_adds,max_adds);
+	eq.spawn2(223231,0,0,210,315,5,257);	--guardian of the dark prince
+	eq.spawn2(223232,0,0,300,215,5,387);	--Hatebringer of Innoruuk
+	
+	if (rand >= 3) then eq.spawn2(223231,0,0,280,330,15,324); end
+	if (rand >= 4) then eq.spawn2(223232,0,0,325,280,15,324); end
+	if (rand == 5) then eq.spawn2(eq.ChooseRandom(223231,223232),0,0,255,255,5,324); end
 end
 
 function event_death_complete(e)
 	-- send a signal to the zone_status that I died
-	eq.signal(223097,6); -- NPC: zone_status
-	-- get the zone instance id
-	local instance_id = eq.get_zone_instance_id();
-	-- load qglobals and set bit 4
-	local qglobals = eq.get_qglobals();
-	local phase_bit = tonumber(qglobals[instance_id.."_potimeb_phase_bit"]);
-	eq.set_global(instance_id.."_potimeb_phase_bit",tostring(bit.bor(phase_bit,4)),7,"H13");
+	eq.signal(223097,223167); -- Add Lockout
+	eq.signal(223097,6);
 end

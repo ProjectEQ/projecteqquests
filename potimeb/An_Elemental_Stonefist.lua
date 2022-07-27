@@ -12,6 +12,6 @@ function event_signal(e)
 	if e.signal == 1 then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
-		e.self:SetBodyType(BT.Monster, true);
+		e.self:SetBodyType(BT.Humanoid, true);
 	end
 end

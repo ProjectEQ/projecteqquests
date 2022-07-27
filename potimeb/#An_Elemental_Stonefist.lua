@@ -1,4 +1,4 @@
---An_Unholy_Rock_Fiend (223125)
+--An_Elemental_Stonefist (223247)
 --Phase 2 
 --potimeb
 
@@ -8,7 +8,7 @@ function event_death_complete(e)
 end
 
 function event_signal(e)
-	--signal from A Windshapen Warlord
+	--signal from An Earthen Overseer
 	if e.signal == 1 then
 		e.self:SetSpecialAbility(25, 0);
 		e.self:SetSpecialAbility(24, 0);

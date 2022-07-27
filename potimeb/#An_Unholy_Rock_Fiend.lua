@@ -1,6 +1,6 @@
---An_Unholy_Rock_Fiend (223125)
---Phase 2 
---potimeb
+--223246 - #An_Unholy_Rock_Fiend
+-- potimeb
+-- earth p2 trial.
 
 function event_death_complete(e)
 	--signal phase_two_controller
@@ -8,7 +8,7 @@ function event_death_complete(e)
 end
 
 function event_signal(e)
-	--signal from A Windshapen Warlord
+	--signal from An Earthen Overseer
 	if e.signal == 1 then
 		e.self:SetSpecialAbility(25, 0);
 		e.self:SetSpecialAbility(24, 0);

@@ -10,18 +10,18 @@ local expedition_info = {
 function event_click_door(e)
 	local door_id = e.door:GetDoorID();
 	if (door_id >= 8 and door_id <=12) then
-		e.self:Message(15, "The portal, dim at first, begins to glow brighter.");
+		e.self:Message(MT.Yellow, "The portal, dim at first, begins to glow brighter.");
 
 		local dz = e.self:GetExpedition()
 		if dz.valid then -- In a valid expedition
 			local instance_id = dz:GetInstanceID(); -- Assign DZ Instance to Variable
 
 			if (instance_id == nil) then -- Found a DZ but did not find an instance
-				e.self:Message(13, "Unable to find an instance but Expedition is valid, yell at a GM");
+				e.self:Message(MT.Red, "Unable to find an instance but Expedition is valid, yell at a GM");
 			end
 
 			-- Expedition and instance are valid - Start the port query
-			e.self:Message(10, "The portal flashes briefly, then glows steadily.");
+			e.self:Message(MT.NPCQuestSay, "The portal flashes briefly, then glows steadily.");
 
 			--handles porting player to specified area if raid is currently in Phase 3 or further
 			if (dz:HasLockout('Phase 1 Complete') and dz:HasLockout('Phase 2 Complete') and not dz:HasLockout('Phase 3 Complete')) then
@@ -59,7 +59,7 @@ function event_click_door(e)
 			dz = e.self:CreateExpedition(expedition_info);
 			if dz.valid then
 				if dz:GetInstanceID() == 0 then
-					e.self:Message(13, "Instance failed to be created, yell at a GM");
+					e.self:Message(MT.Red, "Instance failed to be created, yell at a GM");
 				end
 			end
 		end

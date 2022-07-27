@@ -81,7 +81,7 @@ function CastAE(e,phase)
 	else
 		spell = eq.ChooseRandom(3779,3780);
 	end
-	eq.GM_Message(14,string.format("HP Ratio [%s]  AE Spell Chosen[%s]",tostring(e.self:GetHPRatio()),tostring(spell)));	--debug
+	eq.GM_Message(MT.Lime,string.format("HP Ratio [%s]  AE Spell Chosen[%s]",tostring(e.self:GetHPRatio()),tostring(spell)));	--debug
 	e.self:CastSpell(spell,e.self:GetID());
 end
 		

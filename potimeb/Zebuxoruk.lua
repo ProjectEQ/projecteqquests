@@ -14,7 +14,7 @@ function event_timer(e)
 		eq.set_timer("zeb2",23000);
 	elseif (e.timer == "zeb2") then
 		e.self:Say("If they have taken measures these extreme I must rethink what I have done, and what I will do. If there was this much cause for conc...");
-		eq.zone_emote(7,"Suddenly in a bright flash a feminine figure appears before you. Your ears ring from the loud burst as she slowly materializes.");
+		eq.zone_emote(MT.LightGray,"Suddenly in a bright flash a feminine figure appears before you. Your ears ring from the loud burst as she slowly materializes.");
 		eq.spawn2(223213,0,0,-242,-1105,0,387);
 		eq.set_timer("zeb3",14000);
 		eq.stop_timer("zeb2");

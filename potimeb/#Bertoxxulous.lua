@@ -61,7 +61,7 @@ function SetStats(e,level)
 								[3] = {"200"},
 								[4] = {"150"}
 	};
-	eq.GM_Message(15,string.format("Strength level:[%s/4] min_hit[%s] max_hit[%s] -- Resists [%s]",level,damage_tables[level][1],damage_tables[level][2],resist_tables[level][1]));	--debug
+	eq.GM_Message(MT.Yellow,string.format("Strength level:[%s/4] min_hit[%s] max_hit[%s] -- Resists [%s]",level,damage_tables[level][1],damage_tables[level][2],resist_tables[level][1]));	--debug
 	e.self:ModifyNPCStat("min_hit",damage_tables[level][1]);
 	e.self:ModifyNPCStat("max_hit",damage_tables[level][2]);
 	e.self:ModifyNPCStat("mr",resist_tables[level][1]);

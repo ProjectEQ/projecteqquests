@@ -25,7 +25,7 @@ function event_timer(e)
 		eq.stop_timer("druzzil4");
 	elseif (e.timer == "druzzil5") then	
 		eq.stop_timer("druzzil5");
-		eq.zone_emote(7,"There is a brilliant flash and you find yourself displaced through time and space. For a moment you lose touch with yourself. As you wake, you find yourself back in the Plane of Knowledge, moments after talking to Maelin with the information of retrieving the Quintessence of Elements. Druzzil has preserved the timeline, an restored existence back to its normalcy.");
+		eq.zone_emote(MT.LightGray,"There is a brilliant flash and you find yourself displaced through time and space. For a moment you lose touch with yourself. As you wake, you find yourself back in the Plane of Knowledge, moments after talking to Maelin with the information of retrieving the Quintessence of Elements. Druzzil has preserved the timeline, an restored existence back to its normalcy.");
 		-- tell the zone_status to port everyone out shortly.
 		eq.signal(223097,8,2000);
 		eq.set_timer("druzzil6",4000);

@@ -195,7 +195,7 @@ end
 function event_signal(e)
 	local expedition = eq.get_expedition()
 	instance_id = eq.get_zone_instance_id();
-	eq.GM_Message(13,string.format("signal[%s]!", e.signal));	--debug
+	eq.GM_Message(MT.Red,string.format("signal[%s]!", e.signal));	--debug
 
 	if (Lockouts[e.signal] ~= nil ) then -- Add Lockouts to Expedition
 		AddLockout(Lockouts[e.signal]);
@@ -216,7 +216,7 @@ function event_signal(e)
 		-- check that all 5 phase 1 events are down.
 		event_counter = event_counter +1;
 
-		eq.GM_Message(13,string.format("[Phase 1] Event Counter = [%i]!", event_counter));	--debug
+		eq.GM_Message(MT.Red,string.format("[Phase 1] Event Counter = [%i]!", event_counter));	--debug
 		if event_counter >= 5 then
 			expedition:AddLockout('Phase 1 Complete', 43200);
 			if not expedition:HasLockout('Phase 2 Complete') then -- Moving to Phase 2
@@ -307,18 +307,18 @@ function event_signal(e)
 	elseif (e.signal == 98) then	
 		if timer_echo then
 			timer_echo = false;
-			eq.GM_Message(14,"Event Timer Reports [OFF]")
+			eq.GM_Message(MT.Lime,"Event Timer Reports [OFF]")
 		else
 			timer_echo = true;
-			eq.GM_Message(14,"Event Timer Reports [ON]")
+			eq.GM_Message(MT.Lime,"Event Timer Reports [ON]")
 		end
 	elseif (e.signal == 99) then	
 		if echo then
 			echo = false;
-			eq.GM_Message(14,"Player Count Reports [OFF]")
+			eq.GM_Message(MT.Lime,"Player Count Reports [OFF]")
 		else
 			echo = true;
-			eq.GM_Message(14,"Player Count Reports [ON]")
+			eq.GM_Message(MT.Lime,"Player Count Reports [ON]")
 		end
 	end
 end
@@ -587,7 +587,7 @@ function UpdateFailTimer(minutes_to_add)
 	total_time = (total_time + minutes_to_add);	
 	eq.stop_timer("player_check");
 	eq.set_timer("player_check", 10 * 1000); -- 10 Sec Player Check
-	eq.GM_Message(14,"fail_timer set to " .. (total_time) .. " minutes");	-- debug
+	eq.GM_Message(MT.Lime,"fail_timer set to " .. (total_time) .. " minutes");	-- debug
 	eq.set_timer("event_hb",60 * 1000); -- 60 Sec Timer Check
 end
 
@@ -597,7 +597,7 @@ function event_timer(e)
 		
 		--echo time
 		if timer_echo then
-			eq.GM_Message(15,string.format("Time Left: [%s mins]",total_time));
+			eq.GM_Message(MT.Yellow,string.format("Time Left: [%s mins]",total_time));
 		end
 		
 		--check failure timer
@@ -626,11 +626,11 @@ function event_timer(e)
 			elseif (total_time / 60 == 1) then
 				hours_left = "one hour";
 			end
-			eq.zone_emote(7,string.format("In the distance, an hourglass appears, the grains of sand falling methodically into place.  As quickly as the image was formed, it dissipates.  You have %s left.",hours_left));
+			eq.zone_emote(MT.LightGray,string.format("In the distance, an hourglass appears, the grains of sand falling methodically into place.  As quickly as the image was formed, it dissipates.  You have %s left.",hours_left));
 		end
 
 		if total_time == 10 then
-			eq.zone_emote(7,"In the distance, an hourglass appears, the grains of sand falling methodically into place.  As quickly as the image was formed, it dissipates.  You have ten minutes left.");
+			eq.zone_emote(MT.LightGray,"In the distance, an hourglass appears, the grains of sand falling methodically into place.  As quickly as the image was formed, it dissipates.  You have ten minutes left.");
 		end
 
 	elseif (e.timer == "player_check") then
@@ -654,7 +654,7 @@ function event_timer(e)
 			end
 		end
 		if echo then
-			eq.GM_Message(2,string.format("Current player count: [%s/%s]", tostring(count), tostring(player_limit)));
+			eq.GM_Message(MT.Green,string.format("Current player count: [%s/%s]", tostring(count), tostring(player_limit)));
 		end
 	elseif (e.timer == "lockout") then	--handles instance where Quarm killed but Zeb/Druzzil Ro script not completed
 		eq.stop_timer(e.timer);
@@ -689,15 +689,15 @@ function EventFailed()
 	-- change the qglobal so zone status will not reset things if the zone reboots.
 	SetZoneLockout();
 	current_status = "Lockout";
-	eq.zone_emote(7,"An hourglass appears in the distance, the few remaining sands trickling down.  As the last grain falls, multicolored lights erupt from it, surrounding you in a brilliant flash.")
+	eq.zone_emote(MT.LightGray,"An hourglass appears in the distance, the few remaining sands trickling down.  As the last grain falls, multicolored lights erupt from it, surrounding you in a brilliant flash.")
 
 	if expedition.valid and not expedition:HasLockout('Phase 1 Complete') then
-		eq.GM_Message(13,"Setting Failure Lockout for [3600] eq.seconds!");	--debug
+		eq.GM_Message(MT.Red,"Setting Failure Lockout for [3600] eq.seconds!");	--debug
 		expedition:AddReplayLockout(3600); -- 1 hour for Phase 1 Failure
 	elseif expedition.valid then
 		for id, v in pairs(expedition:GetLockouts()) do -- WORKS
 			if (id == 'Phase 1 Complete') then
-				eq.GM_Message(13,string.format("Setting Failure Lockout for [%i] eq.seconds!", v));	--debug
+				eq.GM_Message(MT.Red,string.format("Setting Failure Lockout for [%i] eq.seconds!", v));	--debug
 				expedition:AddReplayLockout(v);
 			end
 		end

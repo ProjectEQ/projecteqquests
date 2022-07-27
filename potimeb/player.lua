@@ -72,7 +72,7 @@ local phaselockouts = {
 
 function event_enter_zone(e)
 	if(instance_id ~= 0) then
-        e.self:Message(15,"You have entered an Instanced Version of the zone.");
+        e.self:Message(MT.Yellow,"You have entered an Instanced Version of the zone.");
     end
 end
 
@@ -84,7 +84,7 @@ function event_click_door(e)
 	local open_type = entity_list:FindDoor(door_id):GetOpenType();
 	local lock_pick = entity_list:FindDoor(door_id):GetLockPick();
 	local tbl_id = nil;	--identifies slot in p1 & p2 & p3 door tables
-	--e.self:Message(14,"Door ID is: [" .. door_id .. "] Open Type: [" .. e.door:GetOpenType() .. "] Phase: [" .. phase .. "]");   --debug to easily check door IDs
+	--e.self:Message(MT.Lime,"Door ID is: [" .. door_id .. "] Open Type: [" .. e.door:GetOpenType() .. "] Phase: [" .. phase .. "]");   --debug to easily check door IDs
 	if ((door_id >= 5 and door_id <= 8) or (door_id >= 25 and door_id <= 32) or (door_id >= 42 and door_id <= 49)) then
 		local phase1_doors = {	[1] = {5,6,7,8},		--fire
 								[2] = {25,26,27,28},	--water
@@ -97,7 +97,7 @@ function event_click_door(e)
 				OpenDoors(e,door_id,phase1_doors[tbl_id]);	--open 4 door panels
 			end
 		else
-			e.self:Message(10,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
+			e.self:Message(MT.NPCQuestSay,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
 			e.door:ForceClose(e.self);	
 		end
 	elseif ((door_id >= 13 and door_id <= 16) or (door_id >= 33 and door_id <= 41)) then
@@ -110,7 +110,7 @@ function event_click_door(e)
 				OpenDoors(e,door_id,phase2_doors[tbl_id]);	--open 4 door panels
 			end
 		else
-			e.self:Message(10,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
+			e.self:Message(MT.NPCQuestSay,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
 			e.door:ForceClose(e.self);	
 		end	
 
@@ -118,7 +118,7 @@ function event_click_door(e)
 		if (expedition.valid and expedition:HasLockout('Phase 3 Complete')  or e.self:GetGM()) then
 			e.self:MovePCInstance(223,eq.get_zone_instance_id(),-395,0,350,127);
 		else
-			e.self:Message(10,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
+			e.self:Message(MT.NPCQuestSay,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
 		end
 		-- update player lockout to phase 3
 		
@@ -126,21 +126,21 @@ function event_click_door(e)
 		if (expedition.valid and expedition:HasLockout('Phase 4 Complete')  or e.self:GetGM()) then
 			e.self:MovePCInstance(223,eq.get_zone_instance_id(),-410,0,5,127);
 		else
-			e.self:Message(10,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
+			e.self:Message(MT.NPCQuestSay,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
 		end
 		-- update player lockout to phase 4
 	elseif (door_id == 51) then
 		if (expedition.valid and expedition:HasLockout('Phase 5 Complete')  or e.self:GetGM()) then
 			e.self:MovePCInstance(223,eq.get_zone_instance_id(),245,-1115,0,387);
 		else
-			e.self:Message(10,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
+			e.self:Message(MT.NPCQuestSay,"The wall feels both insubstantial and solid at the same time, almost as if you were not in phase with it.");
 		end
 		-- update player lockout to phase 5
 	elseif (door_id == 57 or door_id == 59) then
 		if (expedition.valid and expedition:HasLockout('Phase 5 Complete')  or e.self:GetGM()) then
 			return;
 		else
-			e.self:Message(10,"A mystical force seems to have the lever locked in place.");
+			e.self:Message(MT.NPCQuestSay,"A mystical force seems to have the lever locked in place.");
 			e.door:ForceClose(e.self);
 		end	
 		
@@ -193,46 +193,46 @@ function event_say(e)
 	if e.self:GetGM() then 
 		instance_id = eq.get_zone_instance_id();
 		if e.message:find("help") then
-			e.self:Message(18,"== {Plane of Time B GM controls available}");
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_pcontrols",false,"Toggle Phases (Submenu)")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_addlockout",false,"Add Lockout by Phase (Submenu)")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_remlockout",false,"Remove Lockout by Phase (Submenu)")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_moveraid",false,"Raid Port Options (Submenu)")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_reset",false,"Repop Zone (Stay in Current Phase)")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_debug",false,"Toggle Player Count Reports")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_mins",false,"Toggle Event Timer Reports")));
+			e.self:Message(MT.Cyan,"== {Plane of Time B GM controls available}");
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_pcontrols",false,"Toggle Phases (Submenu)")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_addlockout",false,"Add Lockout by Phase (Submenu)")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_remlockout",false,"Remove Lockout by Phase (Submenu)")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_moveraid",false,"Raid Port Options (Submenu)")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_reset",false,"Repop Zone (Stay in Current Phase)")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_debug",false,"Toggle Player Count Reports")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_mins",false,"Toggle Event Timer Reports")));
 		elseif e.message:find("tb_pcontrols") then -- Select Current Phase (Full Reset of All Lockouts and Timers)
-			e.self:Message(18,"== {Phase Controls Menu}");
-			e.self:Message(18,"== {This option reset all timers and set the expedition lockouts to the specific phase}");
-			e.self:Message(18,"== {Select the desired event phase}");
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_p1",false,"Phase 1")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_p2",false,"Phase 2")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_p3",false,"Phase 3")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_p4",false,"Phase 4")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_p5",false,"Phase 5")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_p6",false,"Phase 6")));
+			e.self:Message(MT.Cyan,"== {Phase Controls Menu}");
+			e.self:Message(MT.Cyan,"== {This option reset all timers and set the expedition lockouts to the specific phase}");
+			e.self:Message(MT.Cyan,"== {Select the desired event phase}");
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_p1",false,"Phase 1")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_p2",false,"Phase 2")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_p3",false,"Phase 3")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_p4",false,"Phase 4")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_p5",false,"Phase 5")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_p6",false,"Phase 6")));
 		elseif e.message:find("tb_p1") then
 			ResetLockouts(99);
 			ZoneReset(e);
-			e.self:Message(14,"[Phase 1 Loading]");
+			e.self:Message(MT.Lime,"[Phase 1 Loading]");
 		elseif e.message:find("tb_p2") then
 			ResetLockouts(99);
 			SetLockouts(1);
 			ZoneReset(e);
-			e.self:Message(14,"[Phase 2 Loading]");
+			e.self:Message(MT.Lime,"[Phase 2 Loading]");
 		elseif e.message:find("tb_p3") then
 			ResetLockouts(99);
 			SetLockouts(1);
 			SetLockouts(2);
 			ZoneReset(e);
-			e.self:Message(14,"[Phase 3 Loading]");
+			e.self:Message(MT.Lime,"[Phase 3 Loading]");
 		elseif e.message:find("tb_p4") then		
 			ResetLockouts(99);
 			SetLockouts(1);
 			SetLockouts(2);
 			SetLockouts(3);
 			ZoneReset(e);
-			e.self:Message(14,"[Phase 4 Loading]");
+			e.self:Message(MT.Lime,"[Phase 4 Loading]");
 		elseif e.message:find("tb_p5") then	
 			ResetLockouts(99);
 			SetLockouts(1);
@@ -240,7 +240,7 @@ function event_say(e)
 			SetLockouts(3);
 			SetLockouts(4);
 			ZoneReset(e);
-			e.self:Message(14,"[Phase 5 Loading]");
+			e.self:Message(MT.Lime,"[Phase 5 Loading]");
 		elseif e.message:find("tb_p6") then
 			ResetLockouts(99);
 			SetLockouts(1);
@@ -249,66 +249,66 @@ function event_say(e)
 			SetLockouts(4);
 			SetLockouts(5);
 			ZoneReset(e);
-			e.self:Message(14,"[Phase 6 Loading]");
+			e.self:Message(MT.Lime,"[Phase 6 Loading]");
 		elseif e.message:find("tb_reset") then
 			ZoneReset(e);
-			e.self:Message(14,"[Zone Repop Complete]");
+			e.self:Message(MT.Lime,"[Zone Repop Complete]");
 		elseif e.message:findi("tb_mins") then
 			eq.signal(223097,98);
 		elseif e.message:findi("tb_debug") then
 			eq.signal(223097,99);
 		elseif e.message:findi("tb_remlockout") then
-			e.self:Message(18,"== {Remove Lockouts by Phase Menu}");
-			e.self:Message(18,"== {Select Phase below to remove phase lockouts}");
-			e.self:Message(18,"== {Use Repop Zone when completed with adjustments of lockouts to force phase start}");
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("rl_p 1",false,"Phase 1")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("rl_p 2",false,"Phase 2")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("rl_p 3",false,"Phase 3")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("rl_p 4",false,"Phase 4")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("rl_p 5",false,"Phase 5")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("rl_p 6",false,"Phase 6")));
+			e.self:Message(MT.Cyan,"== {Remove Lockouts by Phase Menu}");
+			e.self:Message(MT.Cyan,"== {Select Phase below to remove phase lockouts}");
+			e.self:Message(MT.Cyan,"== {Use Repop Zone when completed with adjustments of lockouts to force phase start}");
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("rl_p 1",false,"Phase 1")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("rl_p 2",false,"Phase 2")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("rl_p 3",false,"Phase 3")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("rl_p 4",false,"Phase 4")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("rl_p 5",false,"Phase 5")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("rl_p 6",false,"Phase 6")));
 		elseif e.message:findi("rl_p") then
 			phase = string.match(e.message, "%d+");
 			if (tonumber(phase) <= 6) then 
-				e.self:Message(14,"[Phase " .. phase .. "] lockout removed!");
+				e.self:Message(MT.Lime,"[Phase " .. phase .. "] lockout removed!");
 				ResetLockouts(tonumber(phase));
 			end
 		elseif e.message:findi("tb_addlockout") then
-			e.self:Message(18,"== {Add Lockouts by Phase Menu}");
-			e.self:Message(18,"== {Select Phase below to Add lockout}");
-			e.self:Message(18,"== {Use Repop Zone when completed with adjustments of lockouts to force phase start}");
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("al_p 2",false,"Phase 1")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("al_p 2",false,"Phase 2")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("al_p 3",false,"Phase 3")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("al_p 4",false,"Phase 4")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("al_p 5",false,"Phase 5")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("al_p 6",false,"Phase 6")));
+			e.self:Message(MT.Cyan,"== {Add Lockouts by Phase Menu}");
+			e.self:Message(MT.Cyan,"== {Select Phase below to Add lockout}");
+			e.self:Message(MT.Cyan,"== {Use Repop Zone when completed with adjustments of lockouts to force phase start}");
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 2",false,"Phase 1")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 2",false,"Phase 2")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 3",false,"Phase 3")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 4",false,"Phase 4")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 5",false,"Phase 5")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 6",false,"Phase 6")));
 		elseif e.message:findi("al_p") then
 			phase = string.match(e.message, "%d+");
 			if (tonumber(phase) <= 6) then 
-				e.self:Message(14,"[Phase " .. phase .. "] lockout added!");
+				e.self:Message(MT.Lime,"[Phase " .. phase .. "] lockout added!");
 				SetLockouts(tonumber(phase));
 			end
 		elseif e.message:find("tb_moveraid") then
-			e.self:Message(18,"== {Raid Port Options}");
-			e.self:Message(15,"== {This option will move EVERY non-GM client into the start location for the specified phase.  Phases 1 & 2 are not available for this option}");
-			e.self:Message(18,"== {Select a phase to move the raid}");
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_pr_p3",false,"Phase 3")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_pr_p4",false,"Phase 4")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_pr_p5",false,"Phase 5")));
-			e.self:Message(259,string.format("- [%s] -",eq.say_link("tb_pr_p6",false,"Phase 6")));
+			e.self:Message(MT.Cyan,"== {Raid Port Options}");
+			e.self:Message(MT.Yellow,"== {This option will move EVERY non-GM client into the start location for the specified phase.  Phases 1 & 2 are not available for this option}");
+			e.self:Message(MT.Cyan,"== {Select a phase to move the raid}");
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_pr_p3",false,"Phase 3")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_pr_p4",false,"Phase 4")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_pr_p5",false,"Phase 5")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_pr_p6",false,"Phase 6")));
 		elseif e.message:find("tb_pr_p3") then
 			raidMove(3);
-			e.self:Message(14,"Moving raid to [Phase 3]");
+			e.self:Message(MT.Lime,"Moving raid to [Phase 3]");
 		elseif e.message:find("tb_pr_p4") then
 			raidMove(4);
-			e.self:Message(14,"Moving raid to [Phase 4]");
+			e.self:Message(MT.Lime,"Moving raid to [Phase 4]");
 		elseif e.message:find("tb_pr_p5") then
 			raidMove(5);
-			e.self:Message(14,"Moving raid to [Phase 5]");
+			e.self:Message(MT.Lime,"Moving raid to [Phase 5]");
 		elseif e.message:find("tb_pr_p6") then
 			raidMove(6);
-			e.self:Message(14,"Moving raid to [Phase 6]");	
+			e.self:Message(MT.Lime,"Moving raid to [Phase 6]");	
 		end
 	end
 end
@@ -330,7 +330,7 @@ function ResetLockouts(e)	-- Removes all Lockouts
 			if(phase == e) then
 				for i, eventlockout in pairs(eventtable) do
 					expedition:RemoveLockout(eventlockout);
-					eq.GM_Message(13,string.format("[DEBUG] Removing lockout = [%s]!", eventlockout));
+					eq.GM_Message(MT.Red,string.format("[DEBUG] Removing lockout = [%s]!", eventlockout));
 				end
 			end
 		end
@@ -338,7 +338,7 @@ function ResetLockouts(e)	-- Removes all Lockouts
 		for phase, eventtable in pairs(phaselockouts) do
 			for i, eventlockout in pairs(eventtable) do
 				expedition:RemoveLockout(eventlockout);
-				eq.GM_Message(13,string.format("[DEBUG] Removing lockout = [%s]!", eventlockout));
+				eq.GM_Message(MT.Red,string.format("[DEBUG] Removing lockout = [%s]!", eventlockout));
 			end
 		end
 	end	
@@ -358,7 +358,7 @@ function SetLockouts(e)	--depops zone and reloads controllers
 				end
 
 				expedition:AddLockout(eventlockout, timer);
-				eq.GM_Message(13,string.format("[DEBUG] Adding lockout = [%s] -- Timer = [%i]!", eventlockout, timer));
+				eq.GM_Message(MT.Red,string.format("[DEBUG] Adding lockout = [%s] -- Timer = [%i]!", eventlockout, timer));
 			end
 		end
 	end
@@ -372,7 +372,7 @@ function raidMove(phase)
 			local x = port_locs[phase][1] + math.random(-10,10);
 			local y = port_locs[phase][2] + math.random(-10,10);
 			local z = port_locs[phase][3];
-			c:Message(15,"You can feel time bend around you as an unknown force advances you further into the plane!");
+			c:Message(MT.Yellow,"You can feel time bend around you as an unknown force advances you further into the plane!");
 			c:MovePCInstance(223,instance_id,x,y,z,127);
 		end
 	end	

@@ -35,7 +35,7 @@ function event_timer(e)
 		eq.spawn2(eq.ChooseRandom(223088,223089),0,0,45,573,504,371);
 		eq.spawn2(eq.ChooseRandom(223088,223089),0,0,68,553,504,371);
 		eq.spawn2(eq.ChooseRandom(223088,223089),0,0,68,593,504,371);
-		eq.unique_spawn(223233,0,0,68,573,504,371);	--Kazrok_of_Fire (223233)  untargetable version
+		eq.unique_spawn(223128,0,0,68,573,504,371);	--Kazrok_of_Fire (223128)  untargetable version
 		eq.stop_timer("Phase1Fire");
 	end
 end

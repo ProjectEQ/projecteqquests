@@ -1,3 +1,4 @@
+-- items: 5573, 1056
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail. good adventurer!  I am afraid that my services are not available at the moment.  I am too worried about my [daughter].");

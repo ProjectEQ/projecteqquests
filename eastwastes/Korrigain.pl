@@ -1,4 +1,5 @@
 # Part of Coldain Ring 6 Quest
+# items: 30268
 
 sub EVENT_SAY { 
   if($text=~/Hail/i) {

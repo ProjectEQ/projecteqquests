@@ -1,3 +1,4 @@
+# items: 13016, 13192, 17014, 18103
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Heh?? .. BURRP!.. Leave me be will ya.");

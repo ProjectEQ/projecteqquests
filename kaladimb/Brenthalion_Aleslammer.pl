@@ -1,3 +1,4 @@
+# items: 17249, 19635, 19634, 19632, 19637, 19633, 19636, 19631, 2396, 28065, 28066, 26077
 sub EVENT_SAY {
 	if($text=~/hail/i){
 		quest::say("Lo dere $name! I be Brenthalion Aleslammer Holy Defender of Brell! I can see that ye found my temple of Brell that I have resided over for many years. I have been appointed by da King Kazon himself to make sure dat all our young paladins get da [training] dey need before dey go out to explore da world. Aye.");

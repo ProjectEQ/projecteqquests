@@ -1,3 +1,4 @@
+#Ikkinz Raid #1: Chambers of Righteousness
 sub EVENT_SPAWN {
   	$x = $npc->GetX();
    	$y = $npc->GetY();

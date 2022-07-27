@@ -2,6 +2,7 @@
 -- Converted to .lua by Speedz
 -- added saylink by robregen
 -- removed Bregna's Big Mistake (See Urako) - added More Help for Innoruuk (noudess)
+-- items: 13916, 15272, 26632, 26640, 29921, 26662, 28740
 
 function event_say(e)
 	if(e.message:findi("hail")) then

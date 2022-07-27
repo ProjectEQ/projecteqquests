@@ -1,3 +1,4 @@
+# items: 58151, 58143, 58206, 58111, 58132, 58048, 58047, 58099, 58100, 58101, 58098
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail to you. I don't have a lot of free time. If you're going to stand around here and pretend you have something interesting to say, how about you let me put you to [work] instead. I know my ears would approve of the silence.");
@@ -24,7 +25,7 @@ sub EVENT_ITEM {
     elsif (quest::istaskactivityactive(174,1)) {
       quest::say("There is plenty for you to do. Don't just stand around gawking. Take a small vial of Muramite blood distillate and Wayfarers secret anti-coagulant and combine them in your mortar and pestle. If you aren't a completely incompetent creature, you should be able to produce a reasonable quantity of simple Muramite blood-injected poison. Bring it to me when you're done.");
       quest::summonitem(58143,10); #Small Vial of Muramite Blood Distillate
-      quest::summonitem(58206,10); #Wayfarer Secret Suspension
+      quest::summonitem(58205,10); #Wayfarer Secret Anticoagulant
     }
     elsif (quest::istaskactivityactive(174,2)) {
       quest::say("There is no lack of work for you. Take this small vial of Muramite blood distillate and simple paralytic and combine them in your mortar and pestle. Don't screw it up and you'll be able to make some simple Muramite blood paralytic. Handy stuff when you don't want to kill someone, but you don't want them killing you either. Bring to me whatever you can make.");

@@ -1,5 +1,6 @@
 #zone: gunthak NPC: Osborne (224199)
 #Angelox
+# items: 59515, 21820, 59516, 21821, 59517, 21822, 59518, 21823
 
 sub EVENT_SAY { 
 if ($text=~/Hail/i){

@@ -1,4 +1,5 @@
 # Coldain Heads/Slaggak's Bounty quests
+# items: 30081, 25100, 25071, 25101, 25070
 
 sub EVENT_SAY {
   # Require Indifferent and better faction

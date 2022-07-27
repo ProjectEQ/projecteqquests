@@ -1,3 +1,4 @@
+-- items: 30270, 30249, 30272
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("squints and looks in your direction. 'Who is that? I can't see ya but yer not Coldain and yer voice is too whiny for a giant. We ain't bashin' each other's brains in yet so ya can't be all that bad. Come have a seat by me fire. But quiet yerself down already. The wurms may not be the best at sniffin out people but best not to test em'.");

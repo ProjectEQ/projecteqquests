@@ -1,6 +1,7 @@
 # The Supply Run
 # author - robregen
 # date - 4/10/12
+# items: 25266, 25278
 
 sub EVENT_SAY { 
 	if(($text=~/hail/i) && ($faction < 6)) { 

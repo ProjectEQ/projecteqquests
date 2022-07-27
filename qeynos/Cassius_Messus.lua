@@ -1,3 +1,4 @@
+-- items: 13114, 18803, 15007
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say("Hail!  What do think of [Lisera]?  She aint' much to look at, but soon she will be singing again.");

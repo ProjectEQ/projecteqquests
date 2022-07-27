@@ -26,6 +26,7 @@
 # Anyone flagged by Seta_Bakindo
 #
 ############################################
+# items: 20459
 
 sub EVENT_SAY {
    # You must be flagged by Seta_Bakindo for this quest

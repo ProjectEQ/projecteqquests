@@ -1,3 +1,4 @@
+# items: 61096, 22610, 22611, 22613, 22612, 22614, 22615, 22616, 19578, 10299, 22601, 61101
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Whut yoo want from Kugaran! Unless yoo [Shadowknight] yoo leave me alone.");

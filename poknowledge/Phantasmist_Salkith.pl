@@ -1,5 +1,6 @@
 #Phantasmist_Salkith.pl
 #Planar Armor Exchange
+# items: 1246, 1247, 1248, 1249, 1250, 1251, 1252, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

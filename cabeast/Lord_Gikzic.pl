@@ -1,4 +1,5 @@
 #Lord Gikzic is for the Greenmist quest line and administers the first two quests in the line.
+# items: 17017, 18229, 12381, 5120, 5121, 12382, 5122
 
 sub EVENT_SAY {
  if($text=~/hail/i){

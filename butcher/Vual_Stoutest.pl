@@ -2,6 +2,7 @@
 #Quest: Adventurer's Stone
 #
 #Selephra Giztral, Barstre Songweaver, Vual Stoutest, Teria Grinntli, or Ruanya Windleaf
+# items: 41000, 40999
 
 sub EVENT_SAY {
   if ($ulevel >= 15) {

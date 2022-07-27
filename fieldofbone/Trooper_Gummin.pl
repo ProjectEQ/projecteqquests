@@ -1,3 +1,4 @@
+# items: 18242, 12463, 18243
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Beware the bone field beyond the path. It is said that the bones of a thousand fallen warriors walk its grounds at night.");

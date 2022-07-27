@@ -18,6 +18,7 @@
 --   near Thurgain).
 -- - Seneschal Aldikan dies
 --
+-- items: 1741, 1746, 1745, 1744, 1743, 1742, 18511
 
 local current_wave_number;
 

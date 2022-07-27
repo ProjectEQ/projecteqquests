@@ -1,3 +1,4 @@
+# items: 40999, 41000
 sub EVENT_SAY {
   if($text=~/hail/i) {
     if(defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 4)) { #Player has received Wayfarers Brotherhood Emblem

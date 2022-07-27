@@ -1,3 +1,4 @@
+-- items: 13306, 15126, 15248
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please look around. We have many items exclusively for the members of the Temple of Life. We also have [scroll strongboxes]. If you are unsure of what an item is, feel free to ask me.");

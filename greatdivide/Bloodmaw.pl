@@ -6,6 +6,7 @@
 #NPC ID: 118027
 #Quest Status: finished
 #
+# items: 30264
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 30264 => 4)) {

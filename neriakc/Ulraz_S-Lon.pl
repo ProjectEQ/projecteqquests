@@ -1,3 +1,4 @@
+# items: 19584, 19574, 16197, 19554, 19572, 19573, 19607, 19570, 19571, 13586
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("So you are the next pathetic maggot I have the displeasure of training to be a useful Shadowknight of the Lodge of the Dead. First you must get yourself outfitted in a suit of [armor]. those rags you wear can not even contain the stench of your miserable hide and will do no good protecting it from the edge of an enemy's blade."); 

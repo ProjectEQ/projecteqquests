@@ -1,3 +1,4 @@
+-- items: 85055, 85056, 85057, 85058
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, child. Welcome to Gemchopper Hall. I trust that you are a [warrior], or perhaps you are lost..?");

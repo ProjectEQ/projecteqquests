@@ -1,3 +1,4 @@
+# items: 52904, 52903, 52905
 sub EVENT_SAY {
 
 if ($client->GetGlobal("beast_epic") ==11) {

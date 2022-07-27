@@ -1,4 +1,5 @@
 # Quest for Lorekeeper_Dorinan in Thurgadina - Cleric Velious Armor (Forbidden Rites) 
+# items: 25805, 24928, 31043, 25815, 24930, 31044, 25827, 24929, 31047, 25840, 24934, 31046, 25841, 24933, 31042, 25836, 24932, 31045, 25838, 24931, 31048
 
 # Kiladiveus - created Sub EVENT_ITEM for quest. Used Faction requirement method. 
 

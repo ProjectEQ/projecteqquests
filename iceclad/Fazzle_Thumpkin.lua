@@ -1,5 +1,6 @@
 --iceclad/Fazzle_Thumpkin.lua NPCID 110103
 --Warrior Epic 2.0
+-- items: 60324, 60323
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:Class() == "Warrior") then

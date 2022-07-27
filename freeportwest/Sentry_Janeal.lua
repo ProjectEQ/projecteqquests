@@ -1,3 +1,4 @@
+-- items: 12130, 12131
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome. friend!  Please seek the words of the clerics of Marr.  Their words are the words which will set us free from the tyranny of the Freeport Militia.");

@@ -1,5 +1,6 @@
 # key to jaled dar's tomb - Neb
 #
+# items: 26033, 26009, 26040, 28060, 69341, 69344
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

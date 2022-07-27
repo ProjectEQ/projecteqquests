@@ -1,3 +1,4 @@
+# items: 3056, 10032, 14777, 14778, 4989, 3062, 10035, 14773, 14774, 4985, 3063, 10033, 14775, 14776, 4987, 3053, 10034, 14771, 14772, 4990
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Be careful around here. $name. Injured broodlings are no use to anyone. Many of these structures are yet unstable and could fall at any time. If you're a mystic, I can teach you how to [protect] yourself.");

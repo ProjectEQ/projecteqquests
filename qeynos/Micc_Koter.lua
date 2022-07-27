@@ -1,3 +1,4 @@
+-- items: 13034
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Oh, hello, %s.  Don't mind my associate Klieb over there.  He gets quite grumpy when he drinks.  We are relatively new here ourselves but have made some fast friends in Qeynos.  This is a city of opportunity.",e.other:GetName()));

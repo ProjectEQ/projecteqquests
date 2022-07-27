@@ -1,3 +1,4 @@
+# items: 7809, 30579, 7814
 sub EVENT_SAY { 
   if($text=~/hail/i){
     quest::say("Greetings, young one, what is it that you [seek]?");

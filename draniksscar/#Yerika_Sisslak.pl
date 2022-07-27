@@ -1,3 +1,4 @@
+# items: 52906, 52907, 52908
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("You have the aura of a beastlord I should trust. If Elder Muada hasss sent you, you must prove it to me.");

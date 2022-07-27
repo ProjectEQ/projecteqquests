@@ -4,6 +4,7 @@
 #
 # The GetRandomClient code posted by Kayen on EQEmu forums.
 #
+# items: 64046, 64047, 64044, 64045
 sub GetRandomClient {
 
         my $ListCheck = 0;

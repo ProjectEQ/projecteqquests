@@ -1,3 +1,4 @@
+# items: 2007, 2004, 2006, 2010, 2011
 sub EVENT_ITEM{
   if($item1 == 18903){
     quest::say("My brother still lives? Thank you for this news. Please, take this with my deepest thanks.");

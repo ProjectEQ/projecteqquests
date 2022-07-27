@@ -1,3 +1,4 @@
+-- items: 13854, 13116, 13913, 13310
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Huh!? Leave now before my pets devour you!");

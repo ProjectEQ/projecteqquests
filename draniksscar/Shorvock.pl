@@ -1,6 +1,7 @@
 # Shorvocks Armor (Tier 1)
 #location draniks scar -175, -1055.
 #Appearance: http://eqbeastiary.allakhazam.com/search.shtml?id=16451
+# items: 51460, 51446, 70849, 70800, 70807, 70765, 51459, 51445, 70848, 70799, 70806, 70764, 51458, 51444, 70847, 70798, 70805, 70763, 51454, 51440, 70846, 70797, 70804, 70762, 51455, 51441, 70851, 70802, 70809, 70767, 51456, 51442, 70852, 70803, 70810, 70768, 51457, 51443, 70850, 70801, 70808, 70766
 
 sub EVENT_SAY {
    if($faction < 3) {
@@ -146,5 +147,6 @@ sub EVENT_ITEM {
 }
    else {
     quest::say("I do not know you well enough to entrust you with such an item, yet."); #Made up text
+    plugin::return_items(\%itemcount);
   }
 }

@@ -1,4 +1,5 @@
 -- ## Written by Drogerin ##
+-- items: 13378, 13379, 6359
 
 
 local verified_loot = {

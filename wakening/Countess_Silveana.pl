@@ -1,3 +1,4 @@
+# items: 30221, 24866
 sub EVENT_SAY {
   # Require better than indifferent faction
   if ($faction < 5) {

@@ -1,5 +1,6 @@
 # Gozzrem's WToV tests: 1st & 2nd arcane tests, wisdom long and short battles
 #
+# items: 31266, 31255, 31252, 31254, 31466, 31262, 31270, 31259, 31250, 31468, 31267, 31263, 31251, 31260, 31467, 31253, 31258, 31257, 31269, 31465
 
 sub EVENT_SAY {
   if ($faction <= 3) { #req kindly CoV

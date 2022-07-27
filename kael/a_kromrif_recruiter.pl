@@ -1,5 +1,6 @@
 # Wage War Upon The Coldain
 #
+# items: 30081
 
 sub EVENT_SAY {
   if (($faction != 6) && ($faction != 7)) {

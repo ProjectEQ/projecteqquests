@@ -17,31 +17,31 @@ function event_hp(e)
     if (e.hp_event == 70) then
         eq.modify_npc_stat("min_hit", "533")
         eq.modify_npc_stat("max_hit", "2494")
-	eq.modify_npc_stat("accuracy", "300")
+	eq.modify_npc_stat("accuracy", "370")
         eq.zone_emote(15, "The ground shudders beneath your feet as flecks of dirt and stone fall away from one of the Rathe.")
         eq.set_next_hp_event(40)
     elseif (e.hp_event == 40) then
         eq.modify_npc_stat("min_hit", "443")
         eq.modify_npc_stat("max_hit", "2024")
-	eq.modify_npc_stat("accuracy", "200")
+	eq.modify_npc_stat("accuracy", "340")
         eq.zone_emote(15, "The ground shudders beneath your feet as flecks of dirt and stone fall away from one of the Rathe.")
         eq.set_next_hp_event(20)
     elseif (e.hp_event == 20) then
         eq.modify_npc_stat("min_hit", "353")
         eq.modify_npc_stat("max_hit", "1554")
-	eq.modify_npc_stat("accuracy", "150")
+	eq.modify_npc_stat("accuracy", "310")
         eq.zone_emote(15, "The ground shudders beneath your feet as flecks of dirt and stone fall away from one of the Rathe.")
         eq.set_next_hp_event(15)
     elseif (e.hp_event == 15) then
         eq.modify_npc_stat("min_hit", "263")
         eq.modify_npc_stat("max_hit", "1084")
-	eq.modify_npc_stat("accuracy", "75")
+	eq.modify_npc_stat("accuracy", "280")
         eq.zone_emote(15, "The ground shudders beneath your feet as flecks of dirt and stone fall away from one of the Rathe.")
         eq.set_next_hp_event(8)
     elseif (e.hp_event == 8) then
         eq.modify_npc_stat("min_hit", "185")
         eq.modify_npc_stat("max_hit", "850")
-	eq.modify_npc_stat("accuracy", "10")
+	eq.modify_npc_stat("accuracy", "250")
         eq.zone_emote(15, "The ground shudders beneath your feet as flecks of dirt and stone fall away from one of the Rathe.")
     end
 end

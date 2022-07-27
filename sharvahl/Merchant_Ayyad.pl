@@ -1,3 +1,4 @@
+# items: 2877, 17233, 3497, 3498, 17234, 3499, 3631, 3632, 3641, 3647, 3643, 17107
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello $name. Sorry but I have no time to chitchat. I'm looking for the help of a citizen.");

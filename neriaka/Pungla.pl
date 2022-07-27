@@ -1,3 +1,4 @@
+# items: 13382
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Welcome! Drink you shall, some of de finest drinks of da lands! [Flaming Pungla] I suggest to you. It all me sells.");

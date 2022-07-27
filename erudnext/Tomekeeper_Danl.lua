@@ -1,3 +1,4 @@
+-- items: 18195, 1682, 48132
 function event_say(e)
 	if(e.other:GetLevel() >= 46 and e.other:Class() == "Monk") then
 		local qglobals = eq.get_qglobals(e.other);

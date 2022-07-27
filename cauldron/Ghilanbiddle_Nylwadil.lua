@@ -1,3 +1,4 @@
+-- items: 12280, 18946
 function event_say(e)
 	fac = e.other:GetFaction(e.self);
 	random_result = math.random(100);

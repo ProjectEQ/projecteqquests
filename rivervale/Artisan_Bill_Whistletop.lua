@@ -3,6 +3,7 @@
 --DoN Cultural Armor (Incomplete)
 -- Edited April 20, 2010 by mrhodes
 --To Do:
+-- items: 12372, 12373, 13077, 14019, 38447
 
 --Add 4 task assignments and completion text
 --Create task: Beholder's Maze (30+)				Working on this - mrhodes

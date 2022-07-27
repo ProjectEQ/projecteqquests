@@ -1,4 +1,5 @@
 -- Annaelia Wylassi is a gnome necromancer for the Whistling Fists quest line. By interacting with her, we can get one of the sets of bones that we need to combine in Cazic Thule's pack.
+-- items: 22514, 17355, 10252, 9963, 7984
 
 function event_say(e)
 	if(e.message:findi("hail")) then

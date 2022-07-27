@@ -1,5 +1,6 @@
 -- BeginFile: qey2hh1\#Yuanda.pl
  -- Quest file for West Karana - Yuanda: Necromancer Epic 1.5 (pre)
+-- items: 15809
 
  function event_say(e)
 	if(e.message:findi("hail")) then

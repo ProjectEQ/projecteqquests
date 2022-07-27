@@ -6,6 +6,7 @@
 #NPC ID: 115148 115216
 #
 # used generic reward text found on other npc's already created.
+# items: 25837, 24954, 31056, 25807, 24949, 31057, 25818, 24951, 31058, 25841, 24953, 31059, 25832, 24955, 31060, 25816, 24950, 31061, 25829, 24952, 31062
 
 sub EVENT_SAY {
   if ($faction <= 3) { # Require warmly and greater faction

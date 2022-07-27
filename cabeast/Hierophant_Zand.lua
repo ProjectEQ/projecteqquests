@@ -1,4 +1,5 @@
 --Heirophant Zand starts and ends The Penance quest. This allows a young iksar to replace their guild's starting item if they've lost it. She is also for the 3rd and 5th shaman skullcap quests.
+-- items: 18271, 18272, 24770, 12734, 12741, 5144, 12740
 
 function event_say(e)
 	if((e.message:findi("chosen savior")) and (e.other:GetFaction(e.self) <= 4)) then

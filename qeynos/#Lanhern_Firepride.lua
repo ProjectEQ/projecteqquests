@@ -1,3 +1,4 @@
+-- items: 13038, 13291
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Why, hello there!!  What is a powerful adventurer such as yourself doing in a dive like this?  I hope it is buying little ol' me a drink...?");

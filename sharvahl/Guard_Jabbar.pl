@@ -1,4 +1,5 @@
 #zone Shar Vhal  Guard_Jabbar ID 155085
+# items: 31766, 31775
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

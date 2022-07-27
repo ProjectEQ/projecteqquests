@@ -1,4 +1,5 @@
 --  Hammer of the Ancients - ranger epic
+-- items: 20478, 20479, 20494, 20485, 62638, 62604, 62600
 
 function event_say(e)
 	if(e.message:findi("ancient hammer")) then

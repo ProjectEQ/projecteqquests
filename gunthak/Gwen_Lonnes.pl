@@ -1,6 +1,7 @@
 #Gwen_Lonnes.pl
 #Started by Angelox, finished by Kilelen
 #Relics of the Luggalds
+# items: 59056, 59055, 59057, 59058, 59059, 59060
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

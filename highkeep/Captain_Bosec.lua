@@ -1,3 +1,4 @@
+-- items: 13790
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I'm Captain Bosec. and I am the officer in charge down here. It's my job to patrol the prison and try to keep any [goblins] from getting into Highpass.");

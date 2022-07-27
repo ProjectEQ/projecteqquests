@@ -1,3 +1,4 @@
+# items: 4736, 4735, 4738, 4490, 3721, 4374, 4489, 4737, 3720, 4494, 4731, 4729, 4730, 3718, 4733, 4732, 4488, 3719, 4491, 4739, 4740, 5973, 3722, 4728, 4727, 4493, 3717
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hi there. who are you?  What are you doing here? Oh I'm one of Vornol's four apprentices.  I specialize in the element of earth.'"); }

@@ -1,3 +1,4 @@
+-- items: 18818
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, adventurer! Certainly a person who looks as hardened as yourself deserves a fine blade to match your prowess. Here at Groflah's Forge, we supply you with only the finest quality weapons.");

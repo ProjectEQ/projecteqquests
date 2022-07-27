@@ -1,3 +1,4 @@
+# items: 62098, 62099, 62205
 sub EVENT_SAY {
   if ($text=~/hail/i) {#need correct text
     quest::say("Hello traveler.  Now that I have been freed, I seek [revenge] on those who help me captive, but I am yet to weak to do it myself, so I will need your help.");

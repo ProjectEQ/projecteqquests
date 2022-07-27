@@ -3,6 +3,7 @@
 #Worm Meat Broth
 #Vegetables
 #Also turn in for Taruun Apprentice quest
+# items: 17074, 10390, 30580, 30577, 10391, 5559, 17608, 5562, 5563
 
 #Zone:sharvahl  ID:155207 -- Cook_Yalkiin
 

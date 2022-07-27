@@ -71,8 +71,9 @@ local PKK_hitpoints = 100; -- Also reset to 100 on wipe
 function PKK_Spawn(e)
   e.self:ModSkillDmgTaken(3, -30); -- 2h slashing
   e.self:ModSkillDmgTaken(1, -30); -- 1h slashing
+e.self:ModSkillDmgTaken(7, -25); -- archery
   if (PKK_hitpoints == 100) then -- First spawn/wipe!
-    eq.set_next_hp_event(98);
+    eq.set_next_hp_event(90);
 
     hatchlings_spawned = 0;
     hatchlings_killed = 0;
@@ -102,9 +103,13 @@ function PKK_Combat(e)
   if (e.joined == true) then
     e.self:Say("You shall regret trespassing into my chambers. The might of our kind shall smother the flames of life in this world, starting with you.");
 
-    e.self:Say("Do you really think your paltry skills will be enough to best a being as powerful as I? ");
+    e.self:Say("Do you really think your paltry skills will be enough to best a being as powerful as I?");
+		if (e.self:GetHPRatio() < 92) then
+			eq.set_timer("check", 1 * 1000); -- set scorpion timer on future phases
+		end
   elseif (e.joined == false) then
-    eq.set_timer("wipecheck", 1000);
+    eq.set_timer("wipecheck", 5000);
+	eq.stop_timer("check");
   end
 end
 
@@ -129,6 +134,19 @@ function PKK_Timer(e)
     end
   elseif (e.timer == "tenae") then
       e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
+elseif (e.timer == "check") then
+		
+		local instance_id = eq.get_zone_instance_id();
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < 99 or ent:GetX() > 245 or ent:GetY() < 192 or ent:GetY() > 297) then
+			  local currclient=ent:CastToClient();
+				--e.self:Shout("You will not evade me " .. currclient:GetName())
+				currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
+				currclient:Message(5,"Pixtt Kretv Krakxt says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
+			end
+		  end
+		);
   end
 end
 
@@ -157,21 +175,18 @@ end
 
 function PKK_Hp(e)
   PKK_hitpoints = e.hp_event;
-  if (e.hp_event == 98) then
+  if (e.hp_event == 90) then
+    eq.zone_emote(13,"Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones. Kretv's body falls to the ground -- a lifeless husk freeing the hatchlings within.");
+eq.set_timer("check", 1 * 1000);
     eq.get_entity_list():FindDoor(5):SetLockPick(-1);
-    eq.set_next_hp_event(90);
-  elseif (e.hp_event == 90) then
-    e.self:Say("Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones.");
-    e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
-
+    
     eq.depop();
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
     eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 
     Spawn_Hatchlings(4, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
   elseif (e.hp_event == 70) then
-    e.self:Say("Your efforts shall fail no matter how great. This is a reality you shall soon see as your vile existence ceases and my brood consumes your remains. ");
-    e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
+    eq.zone_emote(13,"Your efforts shall fail no matter how great. This is a reality you shall soon see as your vile existence ceases and my brood consumes your remains.");
 
     eq.depop();
     Spawn_Hatchlings(5, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
@@ -180,8 +195,7 @@ function PKK_Hp(e)
     eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
   elseif (e.hp_event == 50) then
-    e.self:Say("You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
-    e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
+    eq.zone_emote(13,"You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
 
     eq.depop();
     Spawn_Hatchlings(6, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
@@ -191,8 +205,8 @@ function PKK_Hp(e)
     eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162); -- NPC: Reflection_of_Kretv_Krakxt
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
   elseif (e.hp_event == 30) then
-    e.self:Say("My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
-    e.self:Emote("body falls to the ground -- a lifeless husk freeing the hatchlings within.");
+    eq.zone_emote(13,"My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
+
 
     eq.depop();
     Spawn_Hatchlings(7, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
@@ -203,8 +217,11 @@ function PKK_Hp(e)
     eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
     eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0); -- needs_heading_validation
   elseif (e.hp_event == 10) then
+    eq.zone_emote(13,"The end is inevitable, but if I must be defeated, some of you will join me in the afterlife.");
     Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
-    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
+    e.self:SetSpecialAbility(SpecialAbility.rampage, 0); -- turn off single rampage
+		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1); -- turn aoe ramp on
+		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 50); -- 50% mitigated aoe ramp dmg
     e.self:CastSpell(eq.ChooseRandom(889, 887, 751, 888),e.self:GetTarget():GetID());
     eq.set_timer("tenae", 12 * 1000);
   end
@@ -222,6 +239,12 @@ function PKK_Hatchling_Death(e)
     eq.signal(298146, 1); -- NPC: Reflection_of_Kretv_Krakxt
   end
   e.self:Emote("black blood spills on the floor");
+end
+
+function PKK_Hatchling_Spawn(e)
+	e.self:ModSkillDmgTaken(3, -20); -- 2h slashing
+	e.self:ModSkillDmgTaken(1, -20); -- 1h slashing
+	e.self:ModSkillDmgTaken(7, 10); -- archery
 end
 
 function PKK_Roaming_Caster_One_Spawn(e)
@@ -283,6 +306,7 @@ function event_encounter_load(e)
   eq.register_npc_event('pkk', Event.death_complete, 298201, PKK_Death);
 
   eq.register_npc_event('pkk', Event.death_complete, 298048, PKK_Hatchling_Death);
+eq.register_npc_event('pkk', Event.spawn, 298048, PKK_Hatchling_Spawn);
 
   eq.register_npc_event('pkk', Event.spawn,          298047, PKK_Husk_Spawn);
   eq.register_npc_event('pkk', Event.timer,          298047, PKK_Timer); -- Reusing PKK Timer function, should be safe

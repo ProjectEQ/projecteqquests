@@ -1,17 +1,22 @@
 -- 297222 a_mastruq_battlebrute part of ZMTZ event
 
 function event_combat(e)
-	if (e.joined) then
-		eq.set_timer("checks", 1000)	
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 3000)
 	else
-		eq.stop_all_timers();
+		eq.stop_timer("OOBcheck")
 	end
 end
 
-
 function event_timer(e)
-	if (e.self:GetX() < 1218) then
-		e.self:GMMove(1306, 0, -304, 384)
-		e.self:WipeHateList()
+	if(e.timer=="OOBcheck") then
+		eq.stop_timer("OOBcheck");
+			if (e.self:GetX() < 1215 or e.self:GetY() > 106 or e.self:GetY() < -106) then
+				e.self:CastSpell(3791,e.self:GetID()); -- Spell: Ocean's Cleansing
+				e.self:GotoBind();
+				e.self:WipeHateList();
+			else
+				eq.set_timer("OOBcheck", 3 * 1000);
+			end
 	end
 end

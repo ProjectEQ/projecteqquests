@@ -1,3 +1,4 @@
+# items: 51121, 51122, 13537, 5047, 6012
 sub EVENT_SPAWN {
 	#:: Set up a proximity, 100 units across
 	$x = $npc->GetX();

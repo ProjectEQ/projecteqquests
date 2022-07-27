@@ -1,3 +1,4 @@
+-- items: 13036
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Heya. " .. e.other:GetName() .. "!  I've been on watch duty all night.  Kinda makes a man thirsty. ya know?  Why don't you be a good little scamp and run up to the bar and get me a [dwarven ale]?  That sure would hit the spot right about now.");

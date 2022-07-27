@@ -1,3 +1,4 @@
+-- items: 12114, 19006
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Not so loud! My head is spinning so! What I wouldn't give for a Tumpy's Tonic right now! They were always just the thing for the hair of the gnoll that bit me.");

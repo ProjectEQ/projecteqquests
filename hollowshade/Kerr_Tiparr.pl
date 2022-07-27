@@ -1,4 +1,5 @@
 #Zone:hollowshade  ID:166011 -- Kerr_Tiparr
+# items: 5566, 5567
 
 
 sub EVENT_SIGNAL

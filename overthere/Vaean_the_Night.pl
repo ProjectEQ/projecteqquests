@@ -4,6 +4,7 @@
 #NPC Name: Vaean the Night
 #NPC ID: 93113
 #Quest Items Needed: Spell: Convergence (19423), Spell: Defoliation(19296), Spell: Splurt(19294), and Spell: Thrall of Bones(19299)
+# items: 19423, 19296, 19294, 19299, 19297, 19421, 19408, 19409
 
 
 sub EVENT_SAY {

@@ -1,5 +1,6 @@
 -- The Power of the Gatecallers
 -- Rungupp
+-- items: 13078, 7305, 12209, 13895, 15313
 
 function event_say(e)
 	if(e.message:findi("hail")) then

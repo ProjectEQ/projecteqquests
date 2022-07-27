@@ -2,6 +2,7 @@
 # missing text, receives 30146 (The Broken Glacier Souvenir Mug, from halfling sawshbucliker, FV)
 # gives Foot of Candlestick
 # Cabilis Pale Ale by Kovou
+# items: 30146, 12852, 12609
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

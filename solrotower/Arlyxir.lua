@@ -1,23 +1,29 @@
 function event_combat(e)
-if (e.joined == true) then
-eq.set_timer("OOBcheck", 6 * 1000);
-else
-eq.stop_timer("OOBcheck");
-end
+	if (e.joined == true) then
+		eq.set_timer("OOBcheck", 6 * 1000);
+		eq.set_timer("heal", 750000);
+	else
+		eq.stop_timer("OOBcheck");
+		eq.stop_timer("heal");
+	end
 end
 
 function event_timer(e)
-if(e.timer=="OOBcheck") then
-eq.stop_timer("OOBcheck");
-	if (e.self:GetY() < 1240) then
-		e.self:CastSpell(2830, e.self:GetID())
-		e.self:SetHP(e.self:GetMaxHP());
-		e.self:GotoBind();
-		e.self:WipeHateList();
-	else
-		eq.set_timer("OOBcheck", 6 * 1000);
+	if(e.timer=="OOBcheck") then
+	eq.stop_timer("OOBcheck");
+		if (e.self:GetY() < 1240) then
+			e.self:CastSpell(2830, e.self:GetID())
+			e.self:SetHP(e.self:GetMaxHP());
+			e.self:GotoBind();
+			e.self:WipeHateList();
+		else
+			eq.set_timer("OOBcheck", 6 * 1000);
+		end
+	elseif ( e.timer == "heal" ) then
+		e.self:Emote("is immolated in flames, and is reborn!");
+		e.self:Heal();
+		e.self:CastSpell(1281, e.self:GetTarget():GetID()); -- Searing Flames
 	end
-end
 end
 
 function event_death_complete(e)

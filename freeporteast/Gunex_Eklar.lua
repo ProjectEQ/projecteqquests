@@ -1,3 +1,4 @@
+-- items: 19845, 19934, 19923
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Begone lest you seek instruction. I am very busy. I teach those who [follow the path of rage] as a Shadowknight. the leaders of the Dismal Rage.");

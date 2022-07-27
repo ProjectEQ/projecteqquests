@@ -1,5 +1,6 @@
 #Issva_H-Rugla.pl
 #Orc Slayer Armor
+# items: 19559, 19561, 19558, 19555, 19560, 19557, 19556, 31753, 17124
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

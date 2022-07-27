@@ -1,3 +1,4 @@
+-- items: 17859, 10908, 66175, 17869
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("You have heard of the strange stones being recovered from ancient dungeons? It is true. Powerful stones of unknown origins have been discovered as of late in the newly discovered dungeons. I see you wield a warrior's most prized honor. Congratulations on your acquiring such a fine weapon. It holds great power. I worry however if you were to try to augment your new weapon with one of these new stones. I have done some research and it seems the Red Scabbard used to combine and uncombined your weapon, could potentially harm any augmentation you might add. However with the help of Wenden here, we have been able to successfully forge all three versions of your weapon! The scabbard no longer works with them, but we have achieved some nice results by adding various augmentations to them. We could perhaps craft you a new set of weapons if you are [interested].");

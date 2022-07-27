@@ -1,3 +1,4 @@
+# items: 62097, 62096, 62204
 sub EVENT_SAY {
 if($text=~/hail/i){
 quest::say("The feeling of freedom is good indeed, greetings wanderer. Having escaped the clutches of the drogan goblins I desire for them to know the true meaning of fear. Will you help teach them the meaning of [fear]?");

@@ -1,3 +1,4 @@
+-- items: 18148
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say("Salutations, " .. e.other:GetName() .. "! I am here as a favor to my brother, High Priest Perrir. We seek loyal followers of Innoruuk to earn their place among the hierarchy of the Spires. Are you [" .. eq.say_link("devoted to Innoruuk",false,"devoted to Innoruuk") .. "]?");

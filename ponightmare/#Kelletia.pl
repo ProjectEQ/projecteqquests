@@ -1,5 +1,6 @@
 ##Kelletia.pl
 #Alternate PoP Flag: Bypass Hedge & Terris Thule
+# items: 51615, 51616, 51617
 
 sub EVENT_SAY
 {

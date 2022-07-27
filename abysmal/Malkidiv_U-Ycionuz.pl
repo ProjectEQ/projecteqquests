@@ -1,3 +1,4 @@
+# items: 58025, 58024, 58135, 58202, 58039, 58195, 58185, 58172, 58027, 58032, 58200, 58201, 58194, 58171
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(161,4)) { #Pottery Freebie Step 5

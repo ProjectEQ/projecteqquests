@@ -29,6 +29,7 @@
 # Monks with good Ashen Order Faction
 #
 ############################################# 
+# items: 12341, 12342, 12343, 12367
 
 sub EVENT_SAY {
     if(($faction < 4)&&($class eq "Monk")) {

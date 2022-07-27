@@ -1,3 +1,4 @@
+-- items: 13071
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Pleased to meet you! If you are a newcomer to Freeport then you can clearly see we are having quite the rat problem. If you are interested, the militia has granted me some coin to reward those that bring me four rat whiskers.");

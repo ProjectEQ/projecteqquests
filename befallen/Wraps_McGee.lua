@@ -1,3 +1,4 @@
+-- items: 84091, 84092, 84093, 6800
 function event_spawn(e)
 	eq.set_timer("shout",600000);
 end

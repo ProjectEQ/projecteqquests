@@ -1,3 +1,4 @@
+# items: 13766, 2315, 13752, 2314, 13054, 13755, 2313
 sub EVENT_SAY {
   if ($text=~/hail/i) {#need correct text
     quest::say("Hello Traveler.  Don't mind me, I'm just working on some [clothes]");

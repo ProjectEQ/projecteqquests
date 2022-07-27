@@ -1,5 +1,6 @@
 #zone:PoKnowledge
 #Angelox/Cavedude
+# items: 84091, 84092, 84093, 85064, 85068, 85065, 85063, 85066, 85067, 66615, 85062
 
 sub EVENT_SAY 
 { 

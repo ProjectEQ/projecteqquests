@@ -1,3 +1,4 @@
+# items: 58167, 58055, 58103, 58113, 58091, 58039, 58096, 58018, 58019, 58124, 58112, 58090, 58095
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(170,4)) { #Smithing Collect Step 5

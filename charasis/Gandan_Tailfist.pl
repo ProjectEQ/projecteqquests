@@ -1,4 +1,5 @@
 #Gandan Tailfist is part of the quest line for the Whistling Fists
+# items: 18899, 4199, 17364
 
 sub EVENT_SPAWN {
  quest::settimer("Feign",5);

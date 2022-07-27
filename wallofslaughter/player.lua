@@ -99,7 +99,7 @@ local expedition_info = {
 	zonein     = { x=-9, y=-2466, z=-79, h=0 }
 }
 
-local anguish_door_cooldown_key = "anguish_door_cooldown"
+local anguish_door_cooldown_expire_time = 0
 
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
@@ -114,11 +114,14 @@ function event_click_door(e)
 
     -- the anguish door goes on a 60s cooldown after an expedition request
     -- while on cooldown clicking the door results in "feel the door" message and nothing happens
+
+    -- when gate is not already on cooldown:
     -- if requester is in a non-anguish expedition then nothing happens
     -- if requester is in an anguish expedition it zones in without any message
-    -- if a creation request fails, the door goes on cooldown
-    -- (unnecessary) looks like live also adds a cooldown on success to compensate for their instance startup time
-    local is_anguish_door_on_cooldown = (eq.get_data(anguish_door_cooldown_key) ~= "")
+    -- if above conditions pass, a creation request occurs and gate goes on cooldown ("the door swings wide" message)
+    -- (unnecessary) cooldown added on a successful creation is probably to compensate for live's instance startup time
+    local now = os.time()
+    local is_anguish_door_on_cooldown = (anguish_door_cooldown_expire_time > now)
 
     if not is_gm and is_anguish_door_on_cooldown then
       e.self:Message(13, "You can feel the door to Anguish opening underneath your hand.")
@@ -136,10 +139,9 @@ function event_click_door(e)
         dz = e.self:CreateExpedition(expedition_info)
         if dz.valid then
           dz:SetReplayLockoutOnMemberJoin(false) -- live doesn't add "Replay Timer" to new members after spawning aug droppers (bug or intentional?)
-          eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. dz:GetInstanceID());
         else
-          eq.set_data(anguish_door_cooldown_key, "1", "60s")
-          eq.debug("Anguish door placed on 60s cooldown")
+          anguish_door_cooldown_expire_time = now + 60
+          eq.debug(string.format("Anguish gate placed on 60s cooldown due to failed request by [%s]", e.self:GetCleanName()))
         end
       end
     end

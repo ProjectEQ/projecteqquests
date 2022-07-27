@@ -1,3 +1,4 @@
+-- items: 62836
 local eventcomplete=0;
 function event_say(e)
 local qglobals = eq.get_qglobals(e.other)

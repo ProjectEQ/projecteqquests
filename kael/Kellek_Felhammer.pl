@@ -1,3 +1,4 @@
+# items: 25279, 25104, 25280, 25106, 25281, 25107, 1722, 1721, 1723
 sub EVENT_ITEM {
   # Handin: Voucher for toolset
   if(plugin::check_handin(\%itemcount, 25279 => 1)){

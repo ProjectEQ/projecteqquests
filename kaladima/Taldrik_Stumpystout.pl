@@ -1,3 +1,4 @@
+# items: 17070, 13036, 13035, 13943, 2429, 2440, 13474, 1430, 1431
 sub EVENT_SAY {
 	if($text=~/hail/i){
 		quest::say("Move along dere yer blocking me view lad. I await me friend that has gone off to fetch me some water. I sure is hot out here.");

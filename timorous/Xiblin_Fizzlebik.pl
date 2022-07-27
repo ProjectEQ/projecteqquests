@@ -1,4 +1,5 @@
 # Part of quest for Veeshan's Peak key
+# items: 19954
 
 sub EVENT_SPAWN {
 	quest::settimer("sit",10);

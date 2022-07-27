@@ -1,3 +1,4 @@
+# items: 17124, 19636, 19631, 19634, 19632, 19637, 19633, 19635, 20421, 20403, 20404, 20355, 20402, 20416
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Salutations $name. If you are here to make use of the forges then feel free to pursue your crafts within this chamber. If you are a new Fell Blade in need of a suit of armor and weapon then I will assist you in crafting [armaments] fitting of a young Shadow Knight.");

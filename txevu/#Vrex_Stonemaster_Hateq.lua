@@ -10,14 +10,18 @@ function event_spawn(e)
 	myy = e.self:GetY()
 	myz = e.self:GetZ()
 	myh = e.self:GetHeading()
+	e.self:SetOOCRegen(0);
 end
 
 
 function event_signal(e)
 	if (e.signal == 1) then
 		--Active and able to kill, but won't fight back
-		e.self:ModifyNPCStat("special_attacks","12,13,14,15,16,17,24")
-		e.self:SetDisableMelee(true)
+		e.self:SetSpecialAbility(25, 0);
+		e.self:SetSpecialAbility(35, 0);
+	elseif (e.signal == 2) then
+		e.self:SetSpecialAbility(25, 1);
+		e.self:SetSpecialAbility(35, 1);
 	end
 end
 

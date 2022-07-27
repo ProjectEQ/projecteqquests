@@ -1,5 +1,6 @@
 #Sentry_Ferin.pl
 #Champion of the Vah Shir
+# items: 17891, 30852, 30854
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

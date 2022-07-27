@@ -1,8 +1,11 @@
+-- items: 62629
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail") and qglobals["ranger_epic"] == "5") then
 		e.self:Say("Hello. I can tell that you are a great hunter and tracker. I wanted to pass on to you some information, act on it as you will. A group of adventurers stopped in here a while ago. They said that they had information about a particular member of the Muramite army, some general or something, that had enslaved some elemental spirits. They went looking for him but haven't returned. I would appreciate any information you can find out about them. For now I am going to have to assume that they have all been killed.");
 		eq.set_global("ranger_epic","6",5,"F");
+	else
+		e.self:Emote("stands at attention. 'Greetings, ".. e.other:GetName() .. ".  You planning on heading to the Queen of Thorns?  The boat you need to catch arrives at the docks.");
 	end
 end
 

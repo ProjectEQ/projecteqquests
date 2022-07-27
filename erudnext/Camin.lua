@@ -1,3 +1,4 @@
+-- items: 18088, 14330, 14331, 1000
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Go away! I have no time for you!");

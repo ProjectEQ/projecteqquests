@@ -1,6 +1,7 @@
 # Nolan Greenwood
 # Jaggedpine druid armor quest
 # by RealityIncarnate
+# items: 8761, 8760, 8400
 
 sub EVENT_SAY { 
 

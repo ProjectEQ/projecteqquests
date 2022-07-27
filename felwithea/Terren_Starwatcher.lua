@@ -1,3 +1,4 @@
+-- items: 17124, 19633, 19634, 19632, 19631, 19636, 19635, 19637, 20280, 20297, 20300, 20271, 20274, 20330
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome friend! Have you come to the Temple of Tunare to give praise or are you a young Cleric seeking [guidance] from your elders?");

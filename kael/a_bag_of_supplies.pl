@@ -1,5 +1,6 @@
 # crest of the faun
 #
+# items: 24860, 24861, 22855
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24860 => 1, 24861 => 1)) {

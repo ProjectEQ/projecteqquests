@@ -1,3 +1,4 @@
+-- items: 13884, 13053
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I welcome you to the temple of the Peacekeepers. The ways of peace and tranquility are ours to uphold. May you find a place among us. We have much work to do. If you are a paladin of this temple. you must [desire to face fear].");

@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 13945, 12140
 
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);

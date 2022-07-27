@@ -1,3 +1,4 @@
+-- items: 13990, 14320
 function event_combat(e)
 	if(e.joined) then
 		if(math.random(2) == 1) then

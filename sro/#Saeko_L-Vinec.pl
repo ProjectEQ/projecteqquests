@@ -1,3 +1,4 @@
+# items: 67004
 sub EVENT_SAY {
   if ($text=~/last known area/i) {
     quest::say("From the information I have gathered the last time she came above ground was somewhere in the middle of the. . . Suddenly as if staring in the face of death Saeko's blue skin turns deathly grey. She looks at you for a moment and begins to cast a spell. That's when you hear a loud chittering behind you.");

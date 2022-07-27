@@ -1,4 +1,5 @@
 # Monk Epic 1.0
+# items: 1686
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

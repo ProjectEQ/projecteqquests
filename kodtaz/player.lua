@@ -1,4 +1,5 @@
 --KT fern click for Berserker 1.5
+-- items: 16949
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
 	if(door_id == 25 or door_id == 26 or door_id == 27) then

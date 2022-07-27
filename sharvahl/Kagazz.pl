@@ -1,3 +1,4 @@
+# items: 2877, 17238, 3676, 3667
 sub EVENT_SAY {
   if($text=~/forged fasteners/i) {
     quest::say("Ah, Poren must have sent you. May I inspect your slate first?"); #Still need real text

@@ -1,4 +1,5 @@
 # Fusibility Research
+# items: 18290, 18293, 18294, 17408, 24069, 24070
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

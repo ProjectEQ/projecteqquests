@@ -1,3 +1,4 @@
+-- items: 13293
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, citizen! I am afraid you are not allowed in this building. You will have to leave. Good day to you.");

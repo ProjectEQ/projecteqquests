@@ -1,4 +1,5 @@
 # Quests for Bard Lambent armor
+# items: 10564, 10563, 10128, 4156, 4100, 10565, 10118, 4154, 10559, 4099, 10117, 4153, 4113, 10560, 10119, 4155
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

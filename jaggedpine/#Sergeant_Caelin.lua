@@ -1,3 +1,4 @@
+-- items: 2388, 8279, 8287, 8286, 8285, 8264
 
 -- #Quest: Gnoll Canines 
 -- #Quest: Qeynos Badge of Nobility (Badge #5)

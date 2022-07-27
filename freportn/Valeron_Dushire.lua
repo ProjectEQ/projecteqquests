@@ -1,3 +1,4 @@
+-- items: 18737, 13554, 6701, 18827, 13947
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I am Sir Valeron Dushire, leader of the order of the Knights of Truth. If your soul shines with purity and strength, I urge you to join our order. The might of Mithaniel Marr stands behind all who join. Soon that might will help us free this city from the tyranny of the [Freeport Militia].");

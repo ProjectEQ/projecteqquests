@@ -1,3 +1,4 @@
+# items: 18956, 17803
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello. Please leave me be. I am studying several interesting essays on mana storage devices.");

@@ -1,3 +1,4 @@
+-- items: 20530, 20378
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hello, " .. e.other:GetName() .. ". Have you seen the port master? I am here to complain about the shoddy service.");

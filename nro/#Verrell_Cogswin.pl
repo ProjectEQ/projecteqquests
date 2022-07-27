@@ -1,4 +1,5 @@
 ##Verrell_Cogswin.pl
+# items: 67387, 67395, 13006, 11622, 67386, 67385, 67396, 67384, 11582
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

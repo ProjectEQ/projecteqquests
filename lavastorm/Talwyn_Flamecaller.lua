@@ -1,3 +1,4 @@
+-- items: 11197, 11445, 11448, 11474, 11576, 11596, 11619, 11599, 12596, 16753, 12665, 47100, 15836, 16147, 16451, 16334, 16576, 11425, 11179, 11419, 11044, 11282, 11200, 11433, 11148, 11413, 11194, 11424, 11279, 11436, 11166, 11418, 11095, 11299, 11102, 11412, 11439, 16675, 16623
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);
 
@@ -164,8 +165,8 @@ function event_trade(e)
   elseif (qglobals["wiz_epic_pre"] == "2" and item_lib.check_turn_in(e.trade, {item1 = 16675})) then -- Item: Cursed Talisman
     e.self:Say("Your speed and concentration impress even me. The Test of Channeling is no easy feat to accomplish, especially with so many dangerous distractions nearby.");
     e.other:SummonItem(16675); -- Item: Cursed Talisman
-    eq.set_global("wiz_epic_pre","3",5,"F"); -- Test of Channeling comlete
-  elseif (qglobals["wiz_epic_pre"] == "3" and item_lib.check_turn_in(e.trade, {item1 = 16623})) then -- Item: Spell: Electrical Charge
+    eq.set_global("wiz_epic_pre","3",5,"F"); -- Test of Channeling complete
+  elseif ((qglobals["wiz_epic_pre"] == "3" or qglobals["wiz_epic_pre"] == "4") and item_lib.check_turn_in(e.trade, {item1 = 16623})) then -- Item: Spell: Electrical Charge
     e.self:Say("The Test of Research wears thin upon you, but with this parchment I hold in my hand, you have proven your worth as a contributor to the cause!");
     e.other:SummonItem(16623); -- Item: Spell: Electrical Charge
     eq.set_global("wiz_epic_pre","4",5,"F"); -- Test of Research complete

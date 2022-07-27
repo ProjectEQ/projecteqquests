@@ -1,3 +1,5 @@
+local bones_spawned = false;
+
 function event_say(e)
 	if(e.message:findi("hail")) then		
 		e.self:Say("It's so ironic. My furthest distant memory is a dream of finding this ancient sentinel and now that I've found it, there is no point. The only thing worse than realizing that I've been living in an illusion, unaware that we died long ago, is . . . The knowledge that we will slip back into the endless routine again. I can feel my lucidity slipping away even now. It's only a matter of time before . . . we haunt this place as if you had never arrived. Before I lose myself again, allow me to offer you something that may help...");
@@ -6,7 +8,8 @@ function event_say(e)
 		qglobals = eq.get_qglobals();
 		instance_id = eq.get_zone_instance_id();
 		local LockoutBit=tonumber(qglobals[instance_id.."_inktuta_bit"]);
-		if (bit.band(LockoutBit, 32) == 0) then
+		if (bit.band(LockoutBit, 32) == 0 and not bones_spawned) then
+			bones_spawned = true;
 			eq.signal(296070,296071); -- NPC: zone_status
 			e.self:Emote("nods solemnly.  A dusty pile of bones materializes on the floor at his feet");
 		else

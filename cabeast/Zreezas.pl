@@ -1,5 +1,6 @@
 #BEGIN File: cabeast\Zreezas.pl (106119)
 #Quest file for Cabilis East - Claw of the Mature Patriarch (#5)
+# items: 48062, 48063, 48064
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

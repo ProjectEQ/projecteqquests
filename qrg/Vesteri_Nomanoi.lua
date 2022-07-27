@@ -1,3 +1,4 @@
+-- items: 18012, 13864
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail, %s. I am Vesteri Namanoi. I provide training to the Jaggedpine Treefolk and their allies. If you are not busy, I would like to ask a small [favor] of you.",e.other:GetName()));

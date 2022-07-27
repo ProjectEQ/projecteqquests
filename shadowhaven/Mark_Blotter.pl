@@ -1,3 +1,4 @@
+# items: 10671
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		quest::say("Hail friend! Feel free to browse my selection of scrolls and scroll accessories but be careful when handling them, some of them are quite old and the parchment has seen better days.");

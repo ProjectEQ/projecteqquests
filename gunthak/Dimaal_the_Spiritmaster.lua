@@ -14,6 +14,7 @@
 -- cracked finger bone (56001)
 -- broken finger bone (56002)
 -- pristine finger bone (56003)
+-- items: 56001, 56002, 56003
 
 local wave_counter = 0;
 local event_started = 0;

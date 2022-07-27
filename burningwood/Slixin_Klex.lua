@@ -1,4 +1,5 @@
 -- Part of quest for Veeshan's Peak key
+-- items: 19956, 19957, 19958, 19953
 
 function event_say(e)
 	if(e.message:findi("hail")) then

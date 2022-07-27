@@ -1,5 +1,6 @@
 #BeginFile: #Jeremy_Leafrunner.pl
 #Quest for Jaggedpine - Jeremy Leafrunner: Jeremy's Letter
+# items: 8969, 8970
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

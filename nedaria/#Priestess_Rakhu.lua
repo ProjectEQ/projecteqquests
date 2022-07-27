@@ -1,3 +1,4 @@
+-- items: 57919, 52951, 57920
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);	
 	if(e.message:findi("hail") and qglobals["ench_epic"] == "9") then 

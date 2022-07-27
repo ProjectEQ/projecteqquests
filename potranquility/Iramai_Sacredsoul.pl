@@ -1,6 +1,7 @@
 #Iramai_Sacredsoul.pl
 #Alternate Access: Plane of Torment
 #Edited by: a_sewer_rat
+# items: 29295, 29302, 29213, 29315
 
 
 #AA:PoTorment quest begins.

@@ -1,3 +1,4 @@
+# items: 5013, 5016, 7007, 1050, 13301, 13287, 9006, 17002, 2104, 7009, 15235, 13134
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Welcome to the Shrine of Bertoxxulous! You appear to be [new to the shrine]. I do not remember seeing you around.");

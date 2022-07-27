@@ -1,5 +1,6 @@
 # Mining Operation
 #
+# items: 4747
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

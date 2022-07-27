@@ -1,5 +1,6 @@
 #BeginFile: Erandi_Natasu.pl
 #Quest for Paineel - Erandi Natasu: Pirate Trouble
+# items: 17181, 54016, 54017
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

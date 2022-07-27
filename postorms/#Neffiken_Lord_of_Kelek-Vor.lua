@@ -1,3 +1,10 @@
+local ADDS_TYPES = {
+	210248, -- a_restrained_ent (210248)
+	210259, -- a_manipulated_ent (210259)
+	210258, -- a_maligned_ent (210258)
+};
+local adds = 0;
+
 function event_spawn(e)
 eq.set_timer('depop', 3600 * 1000);
 end
@@ -19,66 +26,24 @@ function event_timer(e)
 		eq.unique_spawn(210176,0,0,-1971,1267,-439.5,256); --repop untargetable version
 		eq.depop();
 	elseif (e.timer == 'adds') then
-		local num_alive=0;
-		local npc_list = eq.get_entity_list():GetNPCList();
-		for npc in npc_list.entries do
-			if (npc.valid and (npc:GetNPCTypeID() == 210248 or npc:GetNPCTypeID() == 210258 or npc:GetNPCTypeID() == 210259)) then
-				num_alive=num_alive+1;
-			end
-		end
+		if ( adds < 6 ) then
 		
-		if (num_alive ==0) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
+			local x = e.self:GetX();
+			local y = e.self:GetY();
+			local z = e.self:GetZ() + 5;
+			local rng = math.random(4, 6);
+			local spawned = 0;
+			
+			for i = adds+1, 6 do
+				eq.spawn2(eq.ChooseRandom(ADDS_TYPES[1], ADDS_TYPES[2], ADDS_TYPES[3]), 0, 0, x + math.random(-100, 100), y + math.random(-100, -50), z, 0);				
+				spawned = spawned + 1;
+				if ( spawned == rng ) then
+					break;
+				end
+			end
+			adds = adds + spawned;
 		end
-		if (num_alive ==1) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
-		if (num_alive ==2) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
-		if (num_alive ==3) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
-		if (num_alive ==4) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
-		if (num_alive ==5) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
-		if (num_alive ==6) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
-		if (num_alive ==7) then
-			eq.spawn2(eq.ChooseRandom(210258,210259,210248), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): a_restrained_ent (210248)
-		end
+	
 	end
 end
 

@@ -1,4 +1,5 @@
 # Coldain Ring: Quest 4
+# items: 30139, 30138, 30140
 
 my $flag = 0;
 

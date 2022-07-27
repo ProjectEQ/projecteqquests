@@ -1,3 +1,4 @@
+# items: 55272, 55265, 55266, 55267, 40900, 40901
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 55272 => 1)) { #Jilsua's Note
     quest::say("Ahoy there! Dahdd Jonne, tailor extraordinaire at your service! What's this? A note from, Jilsua? Always a pleasure!");

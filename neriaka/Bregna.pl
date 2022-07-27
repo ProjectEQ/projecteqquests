@@ -3,6 +3,7 @@
 #Need ending statement, mine sucks
 #Need factions
 #Changed to accommodate the Aid Garuuk/Hoop of the Traveler quest -Kilelen, 4/19/2007
+# items: 18651, 77522, 12212, 26662, 29921, 26640, 26632, 28740
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

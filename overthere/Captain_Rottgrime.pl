@@ -1,3 +1,4 @@
+# items: 12982, 12981
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::emote("has numerous cracks and holes in his skull from many battles. 'Attention, marine!! You will go into battle and fear nothing! You shall prevail over one enemy and then you shall be sent back into battle! We [shall not allow those sarnak to overtake the Danak shipyards]! Is that clear marine?!!'");

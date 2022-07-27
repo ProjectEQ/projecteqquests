@@ -5,6 +5,7 @@
 #my $y;
 #my $z;
 #my $h;
+# items: 17814, 10953, 10952
 
 sub EVENT_SPAWN {
 	quest::settimer("warning", 21480);#Timer for 5 hours and 58 minutes

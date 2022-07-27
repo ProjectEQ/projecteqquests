@@ -1,6 +1,7 @@
 #zone: gunthak NPC: Craegin_Coldtongue (224195)
 #Started by Angelox, finished by Kilelen
 #Beastlord Spells (LoY)
+# items: 59032, 59033, 59010, 59034, 59009
 
 sub EVENT_SAY {
   if ($class eq "Beastlord") {

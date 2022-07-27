@@ -1,3 +1,4 @@
+# items: 17831, 63080, 63086, 63084, 63082, 63081, 63085, 63083, 63089, 51036, 51019, 63079
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome back, young Jin. I hope your training is going well. Unfortunately, I have been unable to keep up to date on your progress, but should you need advanced training in any individual skills, for I am never too busy to enlighten one of my kin. You may have chosen a life of adventure, a life that will take you far from our home, but never forget your duty to your blood. The Guktan Army needs your growing powers. To remind you of this and school you in the way of our people, I will tell you something of [this place].");

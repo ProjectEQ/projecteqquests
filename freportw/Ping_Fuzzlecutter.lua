@@ -1,3 +1,4 @@
+-- items: 17512, 6710, 17080, 12335, 12338, 12337, 12254
 function event_say(e)
 	if(e.message:findi("coffin")) then
 		e.self:Say("You're looking for a craftsman, are you? Well look no further! For I, Ping Fizzlecutter, am the best in all the lands! Or at lest this side of Freeport. So you're the one that Valeron was talking about, eh? Well, while you were off traipsing around the lands he and I discussed the details of the coffin. I require nothing less than these [components]. Get me them and I will gladly make you a coffin any king would be proud to be buried in!");

@@ -1,5 +1,6 @@
 #Tratlan_Jowyr.pl
 #The Magic Pool
+# items: 15960, 9321
 
 
 sub EVENT_SAY {

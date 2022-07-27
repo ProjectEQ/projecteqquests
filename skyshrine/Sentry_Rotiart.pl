@@ -1,5 +1,6 @@
 # Friend of the Kin - 114437
 #
+# items: 29626
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29626 => 1)) {

@@ -1,5 +1,6 @@
 #Dran_-Slug-_Rembor.pl
 #Part of Innoruuk Regent
+# items: 12073, 19030
 
 sub EVENT_SAY {
   if($text=~/ithvol/i && plugin::check_hasitem($client, 1370)) { #Disciple Symbol of Innoruuk

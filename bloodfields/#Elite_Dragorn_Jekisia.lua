@@ -1,8 +1,5 @@
 --[[
-
-
 Elite Dragorn Jekisia by ##Drogerin##
-
 Starts rooted
 95% unroots herself runs off spawns 2 adds.  Re-roots herself at new location and summons.
 80% rinse repeat 2 adds
@@ -11,12 +8,10 @@ Starts rooted
 30% rinse repeat 2 adds
 20% rinse repeat 2 adds
 5% rinse repeat 2 adds
-
 adds do not depop upon her death
 after 20 minutes at a location she will wipe her agro and reset to bind
-
 --]]
-
+-- <prismatic lance> every 10 sec, <scale storm> every 60sec
 
 
 
@@ -41,24 +36,28 @@ function event_timer(e)
 		eq.stop_timer('Agro_One');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);
 	elseif e.timer == "Agro_Two" then
 		eq.stop_timer('Agro_Two');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);
 	elseif e.timer == "Agro_Three" then
 		eq.stop_timer('Agro_Three');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);
 	elseif e.timer == "Agro_Four" then
 		eq.stop_timer('Agro_Four');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:SetOOCRegen(1);
 		e.self:AddToHateList(e.self:GetTarget(),1);
@@ -66,18 +65,21 @@ function event_timer(e)
 		eq.stop_timer('Agro_Five');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);
 	elseif e.timer == "Agro_Six" then
 		eq.stop_timer('Agro_Six');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);
 	elseif e.timer == "Agro_Seven" then
 		eq.stop_timer('Agro_Seven');
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
+		e.self:SetSpecialAbility(35, 0); --turn off immunity
 		e.self:SetPseudoRoot(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);
 	elseif e.timer == "Reset" then
@@ -86,7 +88,10 @@ function event_timer(e)
 		e.self:WipeHateList();
 		e.self:GotoBind();
 		Agro=0;
-		--eq.zone_emote(15,"You Failed");
+		eq.zone_emote(0,"You lose all sight of Jekisia. She must have fled away into the caverns, using her lackyes to cover her escape.");
+		eq.update_spawn_timer(52919, 1800 * 1000);
+		-- should depop and respawn 30 mins later
+		eq.depop_with_timer();
 	end
 end
 
@@ -98,6 +103,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-1011.34, 1181.00, -796.67,374.0,true);
@@ -110,6 +116,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-741.96,1500.63,-775.38,172.8,true);
@@ -122,6 +129,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-375.58,1392.45,-767.52,379.3,true);
@@ -134,6 +142,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-258.53,1173.08,-689.41,390.5,true);
@@ -146,6 +155,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-134.00,892.68,-639.63,3.8,true);
@@ -158,6 +168,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-178.16,475.92,-569.78,506.8,true);
@@ -170,6 +181,7 @@ function event_hp(e)
 		e.self:Say("Help me, while I escape!");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1);
+		e.self:SetSpecialAbility(35, 1); --turn on immunity
 		e.self:SetPseudoRoot(false);
 		e.self:SetRunning(true);
 		e.self:MoveTo(-164.66,319.41,-602.64,509.8,true);
@@ -180,4 +192,5 @@ end
 
 function event_death_complete(e)
 	Agro=0;
+	eq.update_spawn_timer(52919, 86400 * 1000); -- 1 day for now
 end

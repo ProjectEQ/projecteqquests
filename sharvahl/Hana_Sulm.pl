@@ -1,4 +1,5 @@
 #Hana_Sulm  Shar Vhal  ID 155051
+# items: 6144, 6139, 6137
 
 
 

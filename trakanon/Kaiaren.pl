@@ -1,5 +1,6 @@
 #BeginFile trakanon\Kaiaren.pl
 #Quest for Trakanon's Teeth - Kaiaren (Mad): Monk Epic 1.0
+# items: 1683, 1684, 1688, 1689, 10652
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

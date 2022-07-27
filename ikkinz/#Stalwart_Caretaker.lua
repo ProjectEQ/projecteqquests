@@ -1,3 +1,4 @@
+-- items: 60234
 function event_say(e)
 	eq.zone_emote(0,"The stone worker does not move. It almost seems not to have any purpose at all, yet it blocks the door behind it.");
 end

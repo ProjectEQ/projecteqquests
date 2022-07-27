@@ -3,6 +3,7 @@
 #Concerning the behaviour, reports on Alla's say "Deleting the scroll or tome before you scribe it also stillo counts, and further rune turn ins do not recover the deleted tome / scroll",
 #Which tells me I should use a global, increment it for each turnin, and not pay attention to what spells a player has scribed.
 #Not the most simple quest. -Kilelen
+# items: 59983, 77206, 77204, 77211, 77200, 77205, 77207, 59984, 59985, 59986, 77302, 59987, 59988
 
 sub EVENT_SAY
 {

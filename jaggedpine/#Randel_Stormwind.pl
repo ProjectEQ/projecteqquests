@@ -1,5 +1,6 @@
 #BeginFile: #Randel_Stormwind.pl
 #Quest for Jaggedpine - Randel Stormwind: Jaggedpine Poacher Heads
+# items: 9270, 9271, 9272, 9273, 9226
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

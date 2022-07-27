@@ -1,3 +1,4 @@
+# items: 1708, 1709
 sub EVENT_SPAWN {
 	quest::settimer(1,1500);
 }

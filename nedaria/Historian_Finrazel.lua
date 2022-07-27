@@ -1,8 +1,11 @@
+-- items: 62884, 62868, 62885
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("plan to find") and qglobals["druid_epic"] == "10") then
 		e.self:Say("Then you'll need this. I use it to store magical potions, but it might work for holding frozen pieces of a greater rain spirit.' He shrugs. 'I hope so, anyway. I don't exactly see a lot of frozen rain spirits.' He smiles. 'I wish you luck, friend. Rescuing such a being would be a boon for all of Norrath.");
 		e.other:SummonItem(62884); -- Item: Thick Leather Bag
+	else
+		e.self:Say("Well hello there. I hope all is well with you, friend.");
 	end
 end
 

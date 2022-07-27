@@ -1,4 +1,5 @@
 -- NPC:96080 -- Natasha Whitewater, Cleric epic 1.0 quest NPC
+-- items: 28018, 28056, 28052, 28054
 function event_spawn(e)
 	eq.set_timer("NatashaDepop",300000);
 end

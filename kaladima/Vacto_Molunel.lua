@@ -1,3 +1,4 @@
+-- items: 13849, 13133, 13132, 13848
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Well met, " .. e.other:GetCleanName() .. "!  I am Vacto Molunel.  If you are seeking to outfit yourself with the finest weapons in all of Kaladim. I am the one to see.  I also posses a [rare talent] you might find useful.");

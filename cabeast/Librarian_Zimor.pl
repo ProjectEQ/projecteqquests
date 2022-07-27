@@ -1,4 +1,5 @@
 #Librarian Zimor is for the Greenmist quest and administers the eighth and final quest in the line.
+# items: 3887, 3895, 3893, 18320
 
 sub EVENT_SAY {
  if($text=~/hail/i){

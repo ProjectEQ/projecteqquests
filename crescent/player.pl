@@ -1,6 +1,7 @@
 ## player.pl
 ##
 ## Created by mrhodes for use in tasks/perl questing
+# items: 53481, 53482, 53485, 53484, 53486
 
 #Task 182 - Ways of Nature - Initiate Dakkan
 #Task 183 - Snake Sacs - Initiate Dakkan

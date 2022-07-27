@@ -1,4 +1,5 @@
 --Shaman Skull Quest 6
+-- items: 12752
 function event_death_complete(e)
 	e.self:Shout("the river of Xinth...");
 end

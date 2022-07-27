@@ -4,6 +4,7 @@
 # Quest:  Solvedi Scimitar
 # Author: a_sewer_rat
 #########################################################
+# items: 9352, 17350, 5378
 
 sub EVENT_SAY {
 

@@ -1,6 +1,7 @@
 -- NPC ID: 23076
 -- NPC Name: Barodreth Firefingers
 -- Zone: erudnint
+-- items: 61094, 22584, 22583, 22633, 22585, 22631, 22632, 22634, 19552, 19659, 13424, 63125
 
 function event_say(e)
 	if (e.message:findi("hail")) then

@@ -1,3 +1,4 @@
+# items: 7107, 7106
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Hail to yourself fool. Leave me be. I have [matters of importance] to ponder.");

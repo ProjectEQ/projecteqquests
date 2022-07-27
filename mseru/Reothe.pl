@@ -2,6 +2,7 @@
 # Sanctus Seru : torsten reidan
 # Marus Seru : reothe
 # Netherbian Lair : Legionnaire Dalini, spawned Bregun Dorey
+# items: 14519, 14512, 14511
 
 
 sub EVENT_SAY{

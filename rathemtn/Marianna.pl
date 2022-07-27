@@ -3,6 +3,7 @@
 # Zone:  Rathe Mountains
 # Quest: Vambraces of Ro
 #########################################################
+# items: 12310, 12300
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,5 +1,6 @@
 --fungusgrove/Lupot_Nukla.lua NPCID 157117
 --Shaman Epic 1.5 and 2.0
+-- items: 57401, 57403, 57551
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("elder spirit sent me") and qglobals["shaman_epic"] == "1") then

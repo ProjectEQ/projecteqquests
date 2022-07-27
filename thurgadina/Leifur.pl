@@ -1,5 +1,6 @@
 # Quest for Leifur - Thurgadina - Bard Velious Armor (Resonant) 
 # Kiladiveus - created Sub EVENT_ITEM for quest. Used Faction requirement method. 
+# items: 25814, 24928, 31036, 25821, 24930, 31037, 25825, 24929, 31040, 25832, 24934, 31039, 25831, 24933, 31035, 25838, 24932, 31038, 25833, 24931, 31041
 
 sub EVENT_SAY { 
   if ($faction <= 3) { # Require Warmly and greater faction    

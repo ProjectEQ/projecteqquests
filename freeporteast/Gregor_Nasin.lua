@@ -1,3 +1,4 @@
+-- items: 13118, 13383, 13952, 13340, 13379
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Sit down and name your poison!  I know we are lacking in originality. but I intend to create some [exotic drinks].");

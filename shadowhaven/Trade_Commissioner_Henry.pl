@@ -1,3 +1,4 @@
+# items: 26055, 26056, 26057, 26058, 26054
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say("Hello there, traveler. I don't believe that I have seen you around these parts before- then again, I could have and simply forgotten since there have been so many new faces around here. However, if you are a newcomer to Shadowhaven, please make sure that you [register for trading] in the Haven. Registering with the Traders of the Haven will legitimize you in the eyes of local merchants and customers.");

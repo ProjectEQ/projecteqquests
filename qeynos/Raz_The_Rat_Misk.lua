@@ -1,3 +1,4 @@
+-- items: 17600
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Spare 3 gold so I can get a decent meal for once, master?");

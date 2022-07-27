@@ -1,3 +1,4 @@
+# items: 29803, 29804, 29805, 29806
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("And hello to you traveler. Beyond this gate lies the Shadeweavers Thicket. You had best go armed. for the [Claw Beasts] have been attacking merchants regularly.");

@@ -1,4 +1,5 @@
 #Noril_Galoon.pl  ID 155059
+# items: 5545, 5546, 17605, 5556, 3452, 18321, 5549, 5550
 
 sub EVENT_SAY {
   if ($text=~/spare time/i) {

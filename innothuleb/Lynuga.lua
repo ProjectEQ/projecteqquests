@@ -1,3 +1,4 @@
+-- items: 10035, 10080, 10081, 10082
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hrrump?! Who you? " .. e.other:GetName() .. "? What you want with Lynuga? Me am out [" .. eq.say_link("collecting",false,"collecting") .. "]. Leave me be!");

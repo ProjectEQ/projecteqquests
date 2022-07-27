@@ -1,3 +1,4 @@
+# items: 21971, 21969, 21699, 21970, 21698, 21697, 61001
 sub EVENT_SAY {
  if($text =~ /Hail, Brianna Falsruinay/i) {
 	quest::say("Hello Traveler, I am afraid I don't recognize you to be a local around these parts although I could have been buried in my work. I have been quite busy since [Elisi] turned up missing.");

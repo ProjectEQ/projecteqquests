@@ -1,3 +1,4 @@
+# items: 3880, 3882
 sub EVENT_ITEM
 {
   if (plugin::check_handin(\%itemcount, 3880 => 1)) {

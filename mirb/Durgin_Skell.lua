@@ -43,16 +43,15 @@ function event_signal(e)
       dz:AddReplayLockout(eq.seconds("4d12h"))
     end
 
-    -- todo: a frost-glazed box needs added to db (loot includes "Cooling Stone of Health" and "Dark Shard of Destruction")
-    -- eq.spawn2(?, 0, 0, 162, 410, -41.12, 385) -- #a_frost-glazed_box
-    eq.spawn2(237763, 0, 0, 162, 410, -41.12, 385) -- #a_frost_covered_box -- replace with frost-glazed box and fix loot
 
-    -- todo: this chest may have some loot mixed up with others (see magelo) (loot included "Turban of Precious Vitality")
+    eq.spawn2(237763, 0, 0, 162, 410, -41.12, 385) --  #a_frost-glazed_box
+
+
     eq.spawn2(237790, 0, 0, 169, 452, -44.12, 208) -- #a_frozen_treasure_chest
 
     if sharalla_complete then
-      -- todo: a weathered barrel needs added to db (loot includes "Icy Bracer of the Goblin Taskmaster" and "Calcified Bone Shield")
-      -- eq.spawn2(?, 0, 0, 157, 359, -31.50, 0) -- #a_weathered_barrel
+
+      eq.spawn2(237000, 0, 0, 157, 359, -31.50, 0) -- a_weathered _barrel (237000)
     end
   end
 end

@@ -1,3 +1,4 @@
+-- items: 12621, 12619, 12620, 12622, 1376
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome! Welcome to the Church o' the Tribunal! Do ye require healing or are ye [new to the Shamans o' Justice], then, eh?");

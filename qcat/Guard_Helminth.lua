@@ -1,3 +1,4 @@
+-- items: 2694
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Who are you and what are you doing here? This place is not safe. You are to leave here immediately! You do not belong here!");

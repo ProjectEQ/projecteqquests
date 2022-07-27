@@ -1,3 +1,4 @@
+# items: 58239
 sub EVENT_SAY {
 	quest::emote("You got my peeps, ^@&*#*@-!?");
 }

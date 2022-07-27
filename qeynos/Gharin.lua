@@ -1,3 +1,4 @@
+-- items: 13799, 18807
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good day! I see they have good stock for the future armies of Qeynos. I, myself, wish to be a soldier one day instead of doing this [job].");

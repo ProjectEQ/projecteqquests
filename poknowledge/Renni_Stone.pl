@@ -1,5 +1,6 @@
 #Renni_Stone.pl
 #Renni's Rock Collection
+# items: 28077, 28235
 
 
 sub EVENT_SAY {

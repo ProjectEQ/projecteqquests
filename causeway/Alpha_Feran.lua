@@ -16,6 +16,6 @@ function event_timer(e)
 			end
 		end	
     e.self:Emote("howls for assistance!");
-    eq.set_timer("howl", 10 * 1000);
+    eq.set_timer("howl", 15 * 1000);
   end
 end

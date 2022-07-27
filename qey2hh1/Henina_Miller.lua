@@ -1,4 +1,5 @@
 -- Gathering Grain
+-- items: 13990
 
 function event_say(e)
 	if(e.message:findi("hail")) then

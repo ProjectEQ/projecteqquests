@@ -1,5 +1,6 @@
 # Quest for respecialization
 # Quest for Bard Lambent Fire Opal
+# items: 10128, 19049
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

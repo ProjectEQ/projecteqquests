@@ -1,3 +1,4 @@
+-- items: 14319, 18169, 14349, 14339, 18168, 14333, 14332, 14336
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self, e.other);
 	

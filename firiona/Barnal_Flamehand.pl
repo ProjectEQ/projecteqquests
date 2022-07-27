@@ -1,3 +1,4 @@
+# items: 19315, 19322, 19318, 19319, 19329, 19320, 19324, 19317
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("And a fine day to you, too, $name! What is it that brings you here? Fortune? Adventure? In either case. it will be more fun than the duty I have. I am to acquire what scrolls I can for the High Council of Erudin. And you're also in luck, as I seek the services of a mighty adventurer like yourself. Do you wish to [aid me in my duty]?");

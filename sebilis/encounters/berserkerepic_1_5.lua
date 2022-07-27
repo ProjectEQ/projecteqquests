@@ -1,4 +1,5 @@
 -- Juggernaut Death
+-- items: 17833, 17898, 17399, 18976
 function Juggernaut_Death(e) 
   if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(89193) == false ) then 
      local clist = eq.get_entity_list():GetClientList();

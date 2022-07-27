@@ -1,13 +1,13 @@
 -- 201436.lua
 -- Trial of Hanging Tribunal
+-- items: 31599, 31846
 
 -- @variable hanging_flag
 --  0 - Trial is available
 --  1 - Trial is unavailable
-local hanging_flag  	  = 0;
-local trial_group         = nil;
-local trial_count         = nil;
-local client_e            = nil;
+local hanging_flag        = 0;
+local trial_group_id      = 0;
+local client_id           = 0; -- character ID, not entity ID
 local mob_list            = { 201456, 201457, 201458, 201459, 201460, 201461, 201471, 201472, 201473, 201474 }
 
 -- 30min Cooldown on a Successful Completion
@@ -30,12 +30,12 @@ function event_say(e)
             e.self:Say("Then begin.");
 
             -- Move the Player and their Group tot he trial room.
-            trial_group = e.other:GetGroup();
-
-            if ( trial_group.valid ) then
+            local trial_group = e.other:GetGroup();
+            if (trial_group ~= nil and trial_group.valid) then
                MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 490, -1094, 73, 180); 
+               trial_group_id = trial_group:GetID();
             else
-               client_e = e;
+               client_id = e.other:CharacterID();
                e.other:MovePC(201, 490, -1094, 73, 360); -- Zone: pojustice
             end
 
@@ -76,15 +76,17 @@ end
 
 
 function event_timer(e)
-
    if (e.timer == "ejecttimer") then
-
       eq.stop_timer(e.timer);
-      if (trial_group.valid) then
+      local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
+      if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, 490, -1094, 73, 140, 456, 825, 9, 180); 
       else
-         client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
-			client_e.other:Message(3, "A mysterious force translocates you.");
+          local client_e = eq.get_entity_list():GetClientByCharID(client_id);
+          if (client_e ~= nil and client_e.valid) then
+              client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
+              client_e.other:Message( 3, "A mysterious force translocates you.");
+          end
       end
 
       HandleCorpses(450, -1120, 72, 120);
@@ -92,13 +94,11 @@ function event_timer(e)
       eq.stop_timer("proximitycheck");
 
    elseif (e.timer == "cooldown") then
-      
       eq.stop_timer(e.timer);
 
       hanging_flag   = 0;
-      client_e         = nil;
-      trial_group      = nil;
-      trial_count      = nil;
+      client_id      = 0;
+      trial_group_id = 0;
 
       eq.stop_timer("proximitycheck");
       e.self:Shout("The Trial of Hanging is now Available.");
@@ -122,9 +122,8 @@ function event_timer(e)
 end
 
 function event_signal(e)
-   -- 
    if (e.signal == 0) then
-      
+
    elseif (e.signal == 1) then
       -- Trial was successful
       -- 30min till next Trial can start

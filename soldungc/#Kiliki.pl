@@ -3,6 +3,7 @@
 #This quest and Gitog's are supposed to be almost identical from what I understand.
 #I have no text for him, but I can make him take the heads and give the
 #proper reward and faction hits.
+# items: 55252, 55240
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

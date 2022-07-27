@@ -4,6 +4,7 @@
 #statue number door id 23-34
 #each temple is left to right numbers starting on left
 #except temple two which is r to l
+# items: 16949
 
 my $question = 0;
 my $theme_question = 0;

@@ -1,5 +1,6 @@
 #Holly_Longtail.pl
 #Holly Longtail's Replacement Parts
+# items: 28076, 28237
 
 
 sub EVENT_SAY {

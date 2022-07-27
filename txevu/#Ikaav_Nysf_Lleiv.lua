@@ -11,12 +11,14 @@ function event_combat(e)
 	if (e.joined == true) then
 		--spawn golem adds in middle of room, starting every 30 seconds
 		eq.set_timer("spawn_golem", add_timer)
+		eq.stop_timer("reset")
 	else
 		--wipe
 		eq.stop_all_timers()
 		e.self:RemoveAISpell(1236) -- Charm Spell
 		e.self:SetHP(e.self:GetMaxHP())
 		eq.set_next_hp_event(75)
+		eq.set_timer("reset", 20 * 60 * 1000) --20 min reset
 	end
 end
 
@@ -49,6 +51,31 @@ function event_timer(e)
 	elseif (e.timer == "curse_of_flames") then
 		e.self:CastSpell(1238,e.self:GetID())
 		eq.set_timer("curse_of_flames",60000)
+	elseif (e.timer == "reset") then
+		eq.stop_timer("reset")
+		--vrex
+		eq.update_spawn_timer(51573,1000);
+		eq.update_spawn_timer(51572,1000);
+		eq.update_spawn_timer(51574,1000);
+		
+		eq.signal(51573,2);
+		eq.signal(51572,2);
+		eq.signal(51574,2);
+
+		--apprentice
+		eq.update_spawn_timer(51571,1000);
+		eq.update_spawn_timer(51570,1000);
+		eq.update_spawn_timer(51569,1000);
+		eq.update_spawn_timer(51568,1000);
+		eq.update_spawn_timer(51567,1000);
+		eq.update_spawn_timer(51566,1000);
+		eq.update_spawn_timer(51565,1000);
+		eq.update_spawn_timer(51564,1000);
+		eq.update_spawn_timer(51563,1000);
+		
+		--golem adds
+		eq.depop_all(297221);
+		eq.depop_all(297219);
 	end
 end
 

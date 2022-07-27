@@ -1,5 +1,6 @@
 # Velium Retreival
 #
+# items: 1725, 29064
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

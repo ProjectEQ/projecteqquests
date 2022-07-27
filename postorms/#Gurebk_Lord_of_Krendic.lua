@@ -1,3 +1,12 @@
+local ADDS_TYPES = { -- these are level 56 versions; not the same as zone wanderers
+	210249, -- a_roving_scorpioco
+	210256, -- a_noxious_scorponnis
+	210255, -- a_roving_cactore
+	210257, -- a_spined_cactoric
+};
+local adds = 0;
+
+
 function event_spawn(e)
 eq.set_timer('depop', 3600 * 1000);
 end
@@ -19,46 +28,27 @@ function event_timer(e)
 		eq.unique_spawn(210178,0,0,2028,203,-432.88,256); --repop untargetable version
 		eq.depop();
 	elseif (e.timer == 'adds') then
-		local num_alive=0;
-		local npc_list = eq.get_entity_list():GetNPCList();
-		for npc in npc_list.entries do
-			if (npc.valid and (npc:GetNPCTypeID() == 210249 or npc:GetNPCTypeID() == 210255 or npc:GetNPCTypeID() == 210256 or npc:GetNPCTypeID() == 210257)) then
-				num_alive=num_alive+1;
-			end
-		end
+		if ( adds < 6 ) then
 		
-		if (num_alive ==0) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
+			local x = e.self:GetX();
+			local y = e.self:GetY();
+			local z = e.self:GetZ() + 5;
+			local rng = math.random(4, 6);
+			local spawned = 0;
+			
+			for i = adds+1, 6 do
+				eq.spawn2(eq.ChooseRandom(ADDS_TYPES[1], ADDS_TYPES[2], ADDS_TYPES[3], ADDS_TYPES[4]), 0, 0, x + math.random(-100, 100), y + math.random(-100, -50), z, 0);				
+				spawned = spawned + 1;
+				if ( spawned == rng ) then
+					break;
+				end
+			end
+			adds = adds + spawned;
 		end
-		if (num_alive ==1) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-		end
-		if (num_alive ==2) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-		end
-		if (num_alive ==3) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-		end
-		if (num_alive ==4) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-		end
-		if (num_alive ==5) then
-			eq.spawn2(eq.ChooseRandom(210249,210255,210256,210257), 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC(s): #a_roving_scorpioco (210249)
-		end
+	
 	end
+end
+
+function event_signal(e)
+adds = adds - 1;
 end

@@ -1,3 +1,4 @@
+# items: 9426, 9295, 9434
 	my $walking = 0;
 	my $won = 0;
 

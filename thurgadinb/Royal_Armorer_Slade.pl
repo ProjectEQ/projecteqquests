@@ -1,6 +1,7 @@
 # Quest for Royal Armorer Slade in Icewell Keep - Custom Crown Quest
 # Kiladiveus - created Sub EVENT_ITEM for quest. Used Faction requirement method.
 # Kiladiveus - NPC ID:129004 -- Royal_Armorer_Slade, need to change the primary faction to "Coldain"
+# items: 31084, 31519, 26025, 2612, 31042, 31518, 25194, 2611, 31000, 31515, 30507, 2610, 31035, 31517, 31021, 31516
 
 
 sub EVENT_SAY {

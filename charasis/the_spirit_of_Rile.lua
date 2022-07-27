@@ -1,4 +1,5 @@
 --Shaman Skull Quest 8
+-- items: 30995, 5148
 function event_trade(e)
 	local item_lib = require("items");
 

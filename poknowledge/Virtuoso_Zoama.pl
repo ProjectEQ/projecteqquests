@@ -1,6 +1,7 @@
 #Virtuoso_Zoama.pl
 #Bard Tomes/Planar Armor Exchange
 #Added tome handins - Kilelen
+# items: 4861, 4862, 4863, 4864, 4865, 4866, 4867, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

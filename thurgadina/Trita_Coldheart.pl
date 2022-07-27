@@ -1,5 +1,6 @@
 # frost bunny stew portion of 3rd coldain prayer shawl
 #
+# items: 1416, 1426, 1423
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1416 => 1, 1426 => 1)) {

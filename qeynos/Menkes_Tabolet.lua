@@ -1,3 +1,4 @@
+-- items: 13064, 1050, 13054, 1051, 13067, 1052, 13065, 13071, 13033, 1053
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, fine citizen of Qeynos, what can I make for you today?  How about a genuine, handmade [rat fur cap]?  Or maybe a lovely [rat pelt cape]?  Maybe you'd like a necklace?  For a small fee. I can make a nice [snake fang necklace] or a [lucky rat's foot necklace].");

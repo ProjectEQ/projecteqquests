@@ -1,4 +1,5 @@
 # EPIC CLERIC
+# items: 28046, 28047
 
 sub EVENT_SPAWN {
   quest::shout("The Triumvirate of Water has decreed your fate, Shmendrik Lavawalker!! I am here to deliver said fate!!");

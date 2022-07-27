@@ -1,3 +1,4 @@
+-- items: 28010, 28011, 28012, 28013, 7506, 7505, 11057, 18961, 28057
 function event_say(e)
 	local rogue_epic = eq.get_qglobals(e.other);
 	
@@ -10,7 +11,7 @@ function event_say(e)
 			e.self:Say(string.format("We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, %s. You are a member of this circle and nothing will ever break that.",e.other:GetName()));
 		else
 			e.self:Say("Ah, the pouch. This is the first step. The Circle has to be upset having this taken right out from under them. That speaks well of the person who did the taking. Hanns must be even more furious now. I think I might be able to trust you. We could make a deal. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my story, then you decide.");
-			eq.signal(407060, 0); --anson
+			eq.signal(407060, 2); --anson
 		end
 	elseif(e.message:findi("who are you")) then
 		e.self:Say("(chuckle) You are young, aren't you? I ran [" .. eq.say_link("the Circle") .. "] out of Qeynos for well over 30 years, and did a right fine job of it. It's a long story, and isn't over yet. I have much to answer for.");	
@@ -34,7 +35,10 @@ function event_say(e)
 		e.self:Say("To allow the assassin to slay a prince, and fight his way back out, a fell blade was crafted. It was small enough to conceal under a garment and yet large enough to strike a mortal blow through armor. Aided by vile Teir'Dal enchantments, it is much more fearsome than it appears. I would gladly rid myself of it, but I fear I can not until I [" .. eq.say_link("clear your name",false,"clear my name") .. "] with Hanns.");
 	elseif(e.message:findi("clear your name")) then
 		e.self:Say("I need proof that what I say about Johann is truth, so that Hanns may forgive me. YOU can gather that proof for me. First, travel to Kaladim and Neriak, and there, upon the persons of the rogue guildmasters, you should find that which I seek, two parts of a document I recovered from the dead agent. I entrusted one to Founy, but that trust is gone, and Founy would betray me to Hanns were I to attempt to reclaim it. Tani N'mar has the other, which he should not possess, and keeps it only to spite me, not knowing its real importance. Steal them both, and bring them back to me. And don't let anyone follow you! If I am not around, tell Anson you want to see me.");
-		eq.depop();
+		e.self:DoAnim(64); -- points
+	elseif(e.message:findi("I killed Renux")) then
+		e.self:Say("You killed Renux?  You stupid git of a dog!  Renux was my best work, a killer without peer, without remorse.  All I did to her, I did for a reason, and it made her matchless.  Ravens take your eyes!  All you needed to do was gather evidence.  When Hanns' believed me, Renux would follow.  A hollow victory, it seems.  I suppose you had to do it, but I imagine it cost you in the process.  When this is over, perhaps you and I shall have a reckoning.");
+		e.other:Faction(332,-500,0); -- Faction: Highpass Guards
 	end
 end
 
@@ -79,5 +83,41 @@ function event_trade(e)
 end
 
 function event_signal(e)
-	e.self:Say("I tend to agree Anson. We could make a [" .. eq.say_link("deal") .. "]. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [" .. eq.say_link("story") .. "], then you decide.");
+	if(e.signal == 1) then
+		e.self:Say("I tend to agree Anson. We could make a [" .. eq.say_link("deal") .. "]. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [" .. eq.say_link("story") .. "], then you decide.");
+	end
+end
+
+function event_spawn(e)
+	eq.set_timer("depop", 10 * 60 * 1000); --10 min
+end
+
+function event_timer(e)
+	if ( e.timer == "depop" ) then
+		eq.depop();
+		
+	elseif ( e.timer == "call_help" ) then
+		CallHelp();
+	end
+end
+
+function CallHelp()
+	-- a_smuggler, a_smuggler (407007) highpasshold version, Cyrla_Shadowstepper, Bryan_McGee, Beef, Kaden_Gron, Breck_Damison, Anson_McBale, Dalishea, Crenn_Salbet
+	-- Mardon_Smith, Dovik_Greenbane, Prak, Bartender, Scar, Wres_Corber
+	local StanosFriends ={5019,5038,5107,5056,5055,5050,5051,5037,5009,5053,5060,5061,5054,5069,5134,5052,407007,407063,407052,407025,407027,407048,407056,407060,407032,407051,407058,407057,407049,407040};
+	for i = 1, #StanosFriends do
+		eq.signal(StanosFriends[i],1);
+	end
+end
+
+function event_combat(e)
+	
+	if ( e.joined ) then
+		CallHelp();
+		eq.pause_timer("depop");
+		eq.set_timer("call_help", 330000);
+	else
+		eq.resume_timer("depop");
+		eq.stop_timer("call_help");
+	end
 end

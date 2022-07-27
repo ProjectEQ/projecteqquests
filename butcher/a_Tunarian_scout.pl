@@ -1,3 +1,4 @@
+# items: 54018, 54019
 sub EVENT_SAY {
  if($text =~ /Hail, a Tunarian scout/i) {
 	quest::say("What a [sad] day no?");

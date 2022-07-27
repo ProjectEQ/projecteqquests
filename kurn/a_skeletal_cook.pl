@@ -1,3 +1,4 @@
+# items: 12401, 59526
 sub EVENT_SAY {
   if($text=~/hail/i){
    #Mirgon Dower's Head (START)

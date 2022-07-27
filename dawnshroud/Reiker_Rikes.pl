@@ -1,5 +1,6 @@
 # Fungus covered mushrooms hand in
 # Pt. 2
+# items: 31479
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

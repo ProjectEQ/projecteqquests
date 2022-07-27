@@ -1,5 +1,6 @@
 ##Gwaddry Aethadoc.pl
 #Gwaddry's Problem
+# items: 61230, 61231, 61232, 61233, 61237, 61235, 61234, 61236, 61238
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

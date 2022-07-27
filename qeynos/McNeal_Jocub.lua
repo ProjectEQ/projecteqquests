@@ -1,3 +1,4 @@
+-- items: 18800, 13131, 10070, 13107
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good ta see ya! Now start showin' these poodlewalkers how a real fish drinks!");

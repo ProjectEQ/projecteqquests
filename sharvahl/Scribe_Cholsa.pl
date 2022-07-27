@@ -1,5 +1,6 @@
 #  Rakshasa Skulls
 #  Needs to be set to accept Globals.
+# items: 10915, 31849
 
 sub EVENT_SAY {
 

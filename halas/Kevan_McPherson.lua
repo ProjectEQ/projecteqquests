@@ -1,3 +1,4 @@
+-- items: 2361, 51114
 function event_say(e)
 	if (e.message:findi("hail")) then
 		e.self:Say("Well met, " .. e.other:GetName() .. "! I'm Kevan McPherson, the best darn smith in the north. Have ye come to purchase my finely crafted weapons or are ye wanting me ta teach ya the secrets of Northman smithing?");

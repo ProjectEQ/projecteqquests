@@ -1,5 +1,6 @@
 #Draxiz N-Ryt.pl
 #Part of Innoruuk Disciple
+# items: 12807, 2284, 18957
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 12807 => 1)){#Halfling Druid Master's Head

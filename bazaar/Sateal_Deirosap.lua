@@ -1,3 +1,4 @@
+-- items: 26055, 26056
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello there traveler. I have many wares for sale so please take a look at what I have. If you think all my goods are junk and wish to buy from someone else though I'll understand.");

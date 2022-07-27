@@ -1,3 +1,4 @@
+-- items: 12103, 12104, 12101
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Greetings and blessings to you, %s. Karana offers you his protection and guidance. All who accept the offer shall find safe haven within our Temple of Thunder, If you are a cleric of Karana, you must have a [desire to serve Karana]'s flock.",e.other:GetName()));

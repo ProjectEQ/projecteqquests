@@ -1,5 +1,6 @@
 # resize crafted armor to small size
 #
+# items: 4178, 4186, 4176, 4184, 4173, 4181, 4180, 4188
 
 sub EVENT_SAY {
   if ($faction <= 5) {

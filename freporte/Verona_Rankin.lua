@@ -1,3 +1,4 @@
+-- items: 19561, 19558, 19555, 19559, 19560, 19557, 19556, 19846, 19919, 19925, 19850, 19937
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("If you're a new employee of the Coalition of Tradefolk I suggest you speak with Tovan Tenlah. Now if you will excuse me I have much work to do.");

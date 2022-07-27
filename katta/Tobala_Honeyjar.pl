@@ -1,5 +1,6 @@
 # Fertilizer & rare plants
 #
+# items: 17870, 31779, 12809, 14936, 14931, 14952, 14953, 10695
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

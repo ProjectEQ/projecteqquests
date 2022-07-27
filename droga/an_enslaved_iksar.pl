@@ -1,4 +1,5 @@
 #The enslaved iksar is part of the Greenmist quest line, and is for the seventh quest in the series. He gives a bit of flavor through most of his speech, but is also used to turn in items for a part of the Stupendous Tome.
+# items: 12708, 12712, 12713, 12714
 
 sub EVENT_SAY {
  if($text=~/hail/i){

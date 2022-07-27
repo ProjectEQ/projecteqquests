@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- #Brigadier_G'tav
+# items: 28057
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

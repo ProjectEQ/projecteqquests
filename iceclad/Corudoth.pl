@@ -1,3 +1,4 @@
+# items: 1710, 1711
 sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::emote("seems to completely ignore you. After close examination you begin to wonder if this creature is actually alive.");

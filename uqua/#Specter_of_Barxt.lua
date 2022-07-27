@@ -1,3 +1,4 @@
+-- items: 60252
 local instance_id;
 local charid_list;
 

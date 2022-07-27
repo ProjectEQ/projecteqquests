@@ -1,5 +1,6 @@
 # Magician Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54135, 68220, 54133, 68223, 54136, 68225, 54138, 68226, 54139, 68224, 54137, 68221, 54134
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

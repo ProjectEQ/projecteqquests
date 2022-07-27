@@ -1,3 +1,4 @@
+-- items: 9599
 local rogue_dz = {
 	expedition = { name="Innoruuk's Realm", min_players=6, max_players=36 }, -- name from log pasted on safehouse
 	instance   = { zone="hateplaneb", version=1, duration=eq.seconds("1h") },

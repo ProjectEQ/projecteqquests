@@ -1,3 +1,4 @@
+# items: 13253
 sub EVENT_SAY {
  if($text=~/hail/i){ 
   quest::say("Hey you dere! Look at all these spiders! Dey called me to come kill em, but there is too many!!! If you bring me four eyes from da little spiders, I reward you!");

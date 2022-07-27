@@ -1,4 +1,5 @@
 #Hoshkar NPCID 108043
+# items: 27249, 27208, 27209, 27204, 69351, 69352, 69380, 69379
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {

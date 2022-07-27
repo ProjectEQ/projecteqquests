@@ -1,5 +1,6 @@
 #BeginFile: natimbi\#Whiahdi.pl
 #Quest file for Natimbi - Whiahdi: Necromancer Epic 1.5 (Soulwhisper) & 2.0 (Deathwhisper)
+# items: 11174, 55855, 62581, 55940, 55932, 47100, 64067
 
 sub EVENT_SAY {
   if(plugin::check_hasitem($client,62581)) { #Soulwhisper	

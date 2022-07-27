@@ -1,4 +1,5 @@
 --NPC: Gillamina Garstobidokis
+-- items: 55995, 55993, 55992, 55994, 71271
 
 function event_say(e)
 	if(e.message:findi("hail")) then

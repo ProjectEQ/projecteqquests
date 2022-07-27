@@ -1,3 +1,4 @@
+# items: 18935, 13054, 13282, 13995, 13321, 5415
 sub EVENT_SAY {
    if ($text=~/hail/i) {
       quest::say("Step forth, young $name! I heard that you have come of age! The spirit of adventure has entered your body. That is good. Go and speak with the others. They shall help you. I am afraid I have no time to spend conversing. There is much I have to [ponder].");

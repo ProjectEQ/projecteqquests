@@ -1,4 +1,5 @@
 ################## SPEECH CODE ##################
+# items: 12351, 12352, 12350, 12349
 
 sub EVENT_SAY {
   if($text =~ /Hail/i) {

@@ -1,5 +1,6 @@
 # Xanthe's earring of nature/earring of the solstice - spell: protection of the
 # cabbage
+# items: 5761, 5762, 5766, 9722, 9721, 28771
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

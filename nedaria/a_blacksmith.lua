@@ -2,9 +2,11 @@
 --Warrior Epic 1.5
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.message:findi("hail") and qglobals["warrior_epic"] >= "2" and e.other:HasItem(60301)) then
+	if(e.message:findi("hail") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "2" and e.other:HasItem(60301)) then
 		eq.spawn2(182149 ,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Korezna Orecleaver
 		eq.depop_with_timer();
+	else
+		e.self:Say("Blazing hot in here. Whew!");
 	end
 end
 

@@ -5,6 +5,7 @@ function event_click_door(e)
 	-- if the door to the stonemites is clicked aggro the monoliths guarding it. 
 	if (door_id == 41) then
 		-- get all the npcs 
+		e.self:Message(13,"When you click the stone slab it slides away.");
 		local npc_list = eq.get_entity_list():GetNPCList();
 		-- make sure we actually have a list, would on be nil if a GM used #depopzone
 		if (npc_list ~= nil) then
@@ -13,6 +14,9 @@ function event_click_door(e)
 				-- check for the npcid of a_clay_monolith (296069)
 				if (npc:GetNPCTypeID() == 296069 and not e.self:GetGM()) then
 					-- set aggro on person who clicked
+					e.self:Message(13,"The door mechanism awakens the guardians standing nearby! They stumble forth to attack, dried flakes of clay raining from their ancient bodies.");
+					npc:SetSpecialAbility(24, 0);
+					npc:SetSpecialAbility(35, 0);
 					npc:AddToHateList(e.self,1);
 				end
 			end
@@ -38,6 +42,13 @@ function event_click_door(e)
 			e.self:Message(1,"You heave at the stone doors with all your might but they do not budge.");
 			e.self:Message(13,"The stone is scalding hot!");		
 			e.self:CastSpell(2315,e.self:GetID()); --searing heat 2315
+		end
+	elseif (door_id == 20) then
+		-- mites door leading to stairs down, starts out locked before event is won		
+		if (entity_list:FindDoor(20):GetLockPick() == -1) then
+			e.self:Message(13,"This way is closed"); --need live emote		
+		else
+			e.self:Message(13,"When you click the stone slab it slides away.");		
 		end
 	end
 end

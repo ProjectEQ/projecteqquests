@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 19631, 19633, 19632, 19634, 19635, 19636, 19637, 10989, 17124
 
 function event_say(e)
 	if (e.message:findi("plague raiser helm")) then

@@ -1,4 +1,5 @@
 #This fallen monk will spawn the fallen monk master when we give him our Shackle of Tynnonium. This is part of the Whistling Fists quest line.
+# items: 4199
 
 sub EVENT_SAY {
  if($text=~/hail/i){

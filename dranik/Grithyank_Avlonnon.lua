@@ -1,3 +1,4 @@
+-- items: 20072, 47100
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(qglobals["berserk_epic"] == "9") then

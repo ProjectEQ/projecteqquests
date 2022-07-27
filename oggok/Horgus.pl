@@ -1,3 +1,4 @@
+# items: 13354, 2136, 2135, 2132, 2128, 2130
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What!!? You [Craknek] or you [pest]?");

@@ -1,6 +1,7 @@
 #Warlord_Shriek.pl
 #Warrior Tomes/Planar Armor Exchange
 #Created file, added warrior tomes as well -Kilelen
+# items: 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 10028, 10037, 22503, 15981
 
 sub EVENT_ITEM {
 	if((plugin::check_handin(\%itemcount, 5174 => 1)) ||

@@ -1,3 +1,4 @@
+-- items: 63127
 function event_say(e)
 	if (e.message:findi("hail")) then
 		if (e.other:HasItem(63118)) then

@@ -12,6 +12,7 @@
 --# *** QUESTS INVOLVED IN ***
 --#1 - Warrior Epic Quest
 --############################################
+-- items: 18083, 20680, 10549, 20681, 11622, 11582, 20683, 20676, 20684
 
 function event_say(e)
 	if(e.message:findi("hail")) then

@@ -1,5 +1,6 @@
 # #20450 -> sionae -> gives 20451 & spawns nuien
 #
+# items: 20450, 20451
 
 
 my $move;

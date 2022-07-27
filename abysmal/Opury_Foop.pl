@@ -1,3 +1,4 @@
+# items: 67514, 67515
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("My brother is an adventurer like you.  He left to explore the new continent a couple of days ago.  I hope he is okay.");

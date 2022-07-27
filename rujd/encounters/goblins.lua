@@ -7,6 +7,10 @@
 -- the first tick (5s) of their flee phase, but they can still be damaged
 
 local goblin_types = {
+  [245198] = true, -- a_goblin_flamecaller
+  [245212] = true, -- a_goblin_flamecaller
+  [245213] = true, -- a_goblin_flamecaller
+  [245218] = true, -- a_goblin_flamecaller
   [245203] = true, -- a_goblin_spiritcaller
   [245208] = true, -- a_goblin_spiritcaller
   [245214] = true, -- a_goblin_spiritcaller

@@ -1,4 +1,5 @@
 # Ogre warrior newbie quests
+# items: 51377, 51363, 51365, 51364, 51367, 51368, 51366, 51369, 55206, 55207
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

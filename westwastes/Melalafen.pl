@@ -1,4 +1,5 @@
 # Essence items
+# items: 27329, 27265, 2698, 2699, 2700, 2748, 2842
 
 sub EVENT_SAY {
   if ($faction <= 5) {

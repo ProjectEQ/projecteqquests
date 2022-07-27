@@ -5,6 +5,7 @@
 # Quest:  Air Tight Box
 # Author: a_sewer_rat
 #########################################################
+# items: 17923, 13277
 
 sub EVENT_SAY {
    if($text=~/Hail/i){

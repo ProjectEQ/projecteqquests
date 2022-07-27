@@ -1,3 +1,4 @@
+# items: 56010, 28047, 28051, 1299, 28049, 18170, 28017, 28048, 28019, 28050, 12433, 12509, 56013, 5768, 6505, 6506
 sub EVENT_SAY {
   if ($text=~/hail/i) {
 	if (plugin::check_hasitem($client,28048) && plugin::check_hasitem($client,28049) && plugin::check_hasitem($client,28050)) { #respawn Jhassad if failed during initial attempt

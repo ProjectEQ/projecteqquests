@@ -1,3 +1,4 @@
+-- items: 13954, 13955
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Gree.. .. tings. How are you? Don't get too close to me. I've [come down] with something bad.");

@@ -1,5 +1,6 @@
 #Tarerd_Gahar.pl
 #The Magic Pool
+# items: 22519, 15958
 
 
 

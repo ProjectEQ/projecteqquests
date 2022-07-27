@@ -4,6 +4,7 @@
 #
 #NPC Name: Kragek Thunderforge
 #NPC ID: 113158
+# items: 25831, 24905, 25433, 25814, 24900, 25434, 25821, 24902, 25435, 25838, 24904, 25436, 25832, 24906, 25437, 25825, 24901, 25438, 25833, 24903, 25439
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

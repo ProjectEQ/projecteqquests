@@ -1,36 +1,16 @@
 -- NPC ID 223097
--- initialize variables global to this NPC
--- Original PoTimeB scripts from PEQ
--- Modified by Daeron for P2002
-
--- New Variables
--- LOCKOUT TABLES
 
 local charid_list;
 local entity_list;
 local Lockouts = {};
-
--- Old Variables
 local current_phase = "Phase0";
-local event_started = 0;
 local event_counter = 0;
 local instance_id = 0;
-local qglobals = {};
 local player_limit;
 local echo = false;
 local timer_echo = false;
 local p1_started = false;
-local resume_event = false;
 
-
-local function seconds(duration)
-	local w = duration:match("(%d+)w") or 0
-	local d = duration:match("(%d+)d") or 0
-	local h = duration:match("(%d+)h") or 0
-	local m = duration:match("(%d+)m") or 0
-	local s = duration:match("(%d+)s") or 0
-	return s + (m * 60) + (h * 3600) + (d * 86400) + (w * 604800)
-end
 
 -- These Lockouts are Live Like
 -- P1
@@ -90,54 +70,53 @@ local PHASE5COMPLETE	= 'Phase 5 Complete'
 
 
 Lockouts = {
-		[223170] = {P1AIR,    				seconds('12h')},
-		[223169] = {P1EARTH,    			seconds('12h')},
-		[223172] = {P1WATER,   				seconds('12h')},
-		[223173] = {P1FIRE,   	 			seconds('12h')},
-		[223171] = {P1UNDEAD,  				seconds('12h')},
-		[223118] = {P2AIR,    				seconds('132h')},
-		[223134] = {P2EARTH,    			seconds('132h')},
-		[223096] = {P2WATER,   	 			seconds('132h')},
-		[223146] = {P2FIRE,    				seconds('132h')},
-		[223127] = {P2UNDEAD,    			seconds('132h')},
-		[223008] = {FEROCIOUSWARBOAR,   	seconds('132h')},
-		[223009] = {BLACKHEART,   			seconds('132h')},
-		[223016] = {XEROAN,    				seconds('132h')},
-		[223017] = {KRAKSMAAL,    			seconds('132h')},
-		[223022] = {DEADLYWARBOAR,    		seconds('132h')},
-		[223023] = {SKULLSMASH,    			seconds('132h')},
-		[223013] = {HERLSOAKIAN,    		seconds('132h')},
-		[223012] = {SINRUNAL,    			seconds('132h')},
-		[223010] = {NEEDLETUSK,    			seconds('132h')},
-		[223011] = {RIANIT,    				seconds('132h')},
-		[223015] = {DERSOOL,    			seconds('132h')},
-		[223014] = {XERSKEL,    			seconds('132h')},
-		[223021] = {SQUADLEADER,    		seconds('132h')},
-		[223020] = {DARKKNIGHT,    			seconds('132h')},
-		[223019] = {TORMENT,    			seconds('132h')},
-		[223018] = {DREAMWARP,    			seconds('132h')},
-		[223073] = {AVATAR,    				seconds('132h')},
-		[223074] = {SUPGUARDIAN,    		seconds('132h')},
-		[223075] = {TERRIS,    				seconds('132h')},
-		[223076] = {SARYRN,    				seconds('132h')},
-		[223077] = {TALLONZEK,    			seconds('132h')},
-		[223078] = {VALLONZEK,    			seconds('132h')},
-		[223098] = {BERTOXXULOUOSTRASH,    	seconds('132h')},
-		[223142] = {BERTOXXULOUOS,    		seconds('132h')},
-		[223165] = {CAZICTHULETRASH,    	seconds('132h')},
-		[223166] = {CAZICTHULE,    			seconds('132h')},
-		[223000] = {INNORUUKTRASH,    		seconds('132h')},
-		[223167] = {INNORUUK,    			seconds('132h')},
-		[223001] = {RALLOSZEKTRASH,    		seconds('132h')},
-		[223168] = {RALLOSZEK,    			seconds('132h')},
-		[223201] = {QUARM,    				seconds('132h')},
-		[999999] = {PHASE1COMPLETE,			seconds('12h')},
-		[999999] = {PHASE2COMPLETE,    		seconds('132h')},
-		[999999] = {PHASE3COMPLETE,    		seconds('132h')},
-		[999999] = {PHASE4COMPLETE,    		seconds('132h')},
-		[999999] = {PHASE5COMPLETE,    		seconds('132h')}
+		[223170] = {P1AIR,    				eq.seconds('12h')},
+		[223169] = {P1EARTH,    			eq.seconds('12h')},
+		[223172] = {P1WATER,   				eq.seconds('12h')},
+		[223173] = {P1FIRE,   	 			eq.seconds('12h')},
+		[223171] = {P1UNDEAD,  				eq.seconds('12h')},
+		[223118] = {P2AIR,    				eq.seconds('132h')},
+		[223134] = {P2EARTH,    			eq.seconds('132h')},
+		[223096] = {P2WATER,   	 			eq.seconds('132h')},
+		[223146] = {P2FIRE,    				eq.seconds('132h')},
+		[223127] = {P2UNDEAD,    			eq.seconds('132h')},
+		[223008] = {FEROCIOUSWARBOAR,   	eq.seconds('132h')},
+		[223009] = {BLACKHEART,   			eq.seconds('132h')},
+		[223016] = {XEROAN,    				eq.seconds('132h')},
+		[223017] = {KRAKSMAAL,    			eq.seconds('132h')},
+		[223022] = {DEADLYWARBOAR,    		eq.seconds('132h')},
+		[223023] = {SKULLSMASH,    			eq.seconds('132h')},
+		[223013] = {HERLSOAKIAN,    		eq.seconds('132h')},
+		[223012] = {SINRUNAL,    			eq.seconds('132h')},
+		[223010] = {NEEDLETUSK,    			eq.seconds('132h')},
+		[223011] = {RIANIT,    				eq.seconds('132h')},
+		[223015] = {DERSOOL,    			eq.seconds('132h')},
+		[223014] = {XERSKEL,    			eq.seconds('132h')},
+		[223021] = {SQUADLEADER,    		eq.seconds('132h')},
+		[223020] = {DARKKNIGHT,    			eq.seconds('132h')},
+		[223019] = {TORMENT,    			eq.seconds('132h')},
+		[223018] = {DREAMWARP,    			eq.seconds('132h')},
+		[223073] = {AVATAR,    				eq.seconds('132h')},
+		[223074] = {SUPGUARDIAN,    		eq.seconds('132h')},
+		[223075] = {TERRIS,    				eq.seconds('132h')},
+		[223076] = {SARYRN,    				eq.seconds('132h')},
+		[223077] = {TALLONZEK,    			eq.seconds('132h')},
+		[223078] = {VALLONZEK,    			eq.seconds('132h')},
+		[223098] = {BERTOXXULOUOSTRASH,    	eq.seconds('132h')},
+		[223142] = {BERTOXXULOUOS,    		eq.seconds('132h')},
+		[223165] = {CAZICTHULETRASH,    	eq.seconds('132h')},
+		[223166] = {CAZICTHULE,    			eq.seconds('132h')},
+		[223000] = {INNORUUKTRASH,    		eq.seconds('132h')},
+		[223167] = {INNORUUK,    			eq.seconds('132h')},
+		[223001] = {RALLOSZEKTRASH,    		eq.seconds('132h')},
+		[223168] = {RALLOSZEK,    			eq.seconds('132h')},
+		[223201] = {QUARM,    				eq.seconds('132h')},
+		[999999] = {PHASE1COMPLETE,			eq.seconds('12h')},
+		[999999] = {PHASE2COMPLETE,    		eq.seconds('132h')},
+		[999999] = {PHASE3COMPLETE,    		eq.seconds('132h')},
+		[999999] = {PHASE4COMPLETE,    		eq.seconds('132h')},
+		[999999] = {PHASE5COMPLETE,    		eq.seconds('132h')}
 };
-
 
 function event_spawn(e)
 	ResetVariables();
@@ -146,7 +125,7 @@ function event_spawn(e)
 	ResetSpawnConditions();
 
 	instance_id = eq.get_zone_instance_id();
-	local expedition = eq.get_expedition()
+	local expedition = eq.get_expedition();
 	local entity_list = eq.get_entity_list();
 
 	-- Check Lockouts to decide what phase
@@ -267,7 +246,9 @@ function event_signal(e)
 	-- signal 5 comes from the phase 4 gods.
 	elseif (e.signal == 5) then
 		if (expedition:HasLockout('Terris-Thule') and expedition:HasLockout('Saryrn') and expedition:HasLockout('Tallon Zek') and expedition:HasLockout('Vallon Zek')) then -- If all Phase 4 gods are dead
-			expedition:AddLockout('Phase 4 Complete', 475200);
+			if not expedition:HasLockout('Phase 4 Complete') then
+				expedition:AddLockout('Phase 4 Complete', 475200);
+			end
 			if not expedition:HasLockout('Phase 5 Complete') then
 				current_phase = "Phase5";
 				-- add 4 hours to the fail timer
@@ -344,14 +325,12 @@ end
 
 function ResetVariables()
 	current_phase = "Phase0";
-	event_started = 0;
 	event_counter = 0;
 	instance_id = 0;
 	echo = false;
 	timer_echo = false;
 	p1_started = false;
 	total_time = 0;
-	resume_event = false;
 end
 
 function ResetSpawnConditions()
@@ -713,12 +692,12 @@ function EventFailed()
 	eq.zone_emote(7,"An hourglass appears in the distance, the few remaining sands trickling down.  As the last grain falls, multicolored lights erupt from it, surrounding you in a brilliant flash.")
 
 	if expedition.valid and not expedition:HasLockout('Phase 1 Complete') then
-		eq.GM_Message(13,"Setting Failure Lockout for [3600] Seconds!");	--debug
+		eq.GM_Message(13,"Setting Failure Lockout for [3600] eq.seconds!");	--debug
 		expedition:AddReplayLockout(3600); -- 1 hour for Phase 1 Failure
 	elseif expedition.valid then
 		for id, v in pairs(expedition:GetLockouts()) do -- WORKS
 			if (id == 'Phase 1 Complete') then
-				eq.GM_Message(13,string.format("Setting Failure Lockout for [%i] Seconds!", v));	--debug
+				eq.GM_Message(13,string.format("Setting Failure Lockout for [%i] eq.seconds!", v));	--debug
 				expedition:AddReplayLockout(v);
 			end
 		end
@@ -739,4 +718,3 @@ function SetZoneLockout()
 	local expedition = eq.get_expedition()
 	expedition:AddReplayLockout(1800); -- 30 Min Replay Lockout
 end
-	

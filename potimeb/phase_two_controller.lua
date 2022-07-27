@@ -6,13 +6,11 @@ local undead_kills = 0;
 local kills = 0;
 local bosses = 	{ 223135, 223140, 223108, 223144 };	--untargetable{targetable} versions of bosses (excludes undead)
 local tBosses = { 223146, 223096, 223134, 223118 }
-local boss_timer = 180;	 --time in seconds till bosses become targetable
 
 function event_spawn(e)
 	local expedition = eq.get_expedition()
 	undead_kills = 0;
 	kills = 0;
-	eq.set_timer("targetable",boss_timer * 1000);	--5 min till bosses targetable
 
 	--Undead trial phase 2 mobs
 	eq.spawn2(223138,0,0,240,1100,494,387);	--an_undead_guardian_ (223138)
@@ -32,7 +30,7 @@ function event_spawn(e)
 	eq.spawn2(223141,0,0,230,875,495,387);
 
 	if expedition.valid and not expedition:HasLockout('War Shapen Emissary') then
-		eq.spawn2(223140,0,0,190,865,495,387);		--A_War_Shapen_Emissary (223140)
+		eq.spawn2(223140,6,0,428,744,493,387);		--A_War_Shapen_Emissary (223140)
 	else
 		kills = kills + 1;
 	end
@@ -51,31 +49,31 @@ function event_spawn(e)
 	eq.spawn2(223143,0,0,230,630,495,387);
 
 	if expedition.valid and not expedition:HasLockout('Gutripping War Beast') then
-		eq.spawn2(223135,0,0,190,585,495,387);		--A_Gutripping_War_Beast (223135)
-	else
-		kills = kills + 1;
-	end
-	
-	--Air trial phase 2 mobs
-	eq.spawn2(223099,0,0,170,1315,495,387);	--Champion_of_Korascian (223099)
-	eq.spawn2(223099,0,0,170,1340,495,387);	
-	eq.spawn2(223099,0,0,170,1365,495,387);	
-	eq.spawn2(223099,0,0,170,1390,495,387);
-
-	eq.spawn2(223125,0,0,220,1425,495,305);	--An_Unholy_Rock_Fiend (223125)
-	eq.spawn2(223125,0,0,245,1410,495,305);	
-	eq.spawn2(223125,0,0,275,1390,495,305);	
-
-	eq.spawn2(223102,0,0,250,1460,495,305);	--An_Elemental_Stonefist (223102)
-	eq.spawn2(223102,0,0,300,1435,495,305);
-
-	if expedition.valid and not expedition:HasLockout('Earthen Overseer') then
-		eq.spawn2(223108,0,0,180,1350,495,387);	--An_Earthen_Overseer (223108)
+		eq.spawn2(223135,7,0,428,677,493,387);		--A_Gutripping_War_Beast (223135)
 	else
 		kills = kills + 1;
 	end
 	
 	--earth trial phase 2 mobs
+	eq.spawn2(223123,0,0,170,1315,495,387);	--Champion_of_Korascian (223099)
+	eq.spawn2(223123,0,0,170,1340,495,387);	
+	eq.spawn2(223123,0,0,170,1365,495,387);	
+	eq.spawn2(223123,0,0,170,1390,495,387);
+
+	eq.spawn2(223246,0,0,220,1425,495,305);	--An_Unholy_Rock_Fiend (223125)
+	eq.spawn2(223246,0,0,245,1410,495,305);	
+	eq.spawn2(223246,0,0,275,1390,495,305);	
+
+	eq.spawn2(223247,0,0,250,1460,495,305);	--An_Elemental_Stonefist (223102)
+	eq.spawn2(223247,0,0,300,1435,495,305);
+
+	if expedition.valid and not expedition:HasLockout('Earthen Overseer') then
+		eq.spawn2(223108,9,0,440,1467,493,387);	--An_Earthen_Overseer (223108)
+	else
+		kills = kills + 1;
+	end
+	
+	--air trial phase 2 mobs
 	eq.spawn2(223102,0,0,150,1605,495,387);	--An_Elemental_Stonefist (223102)
 	eq.spawn2(223102,0,0,150,1630,495,387);	
 	eq.spawn2(223102,0,0,150,1655,495,387);	
@@ -89,20 +87,9 @@ function event_spawn(e)
 	eq.spawn2(223099,0,0,250,1545,495,445);
 
 	if expedition.valid and not expedition:HasLockout('Windshapen Warlord of Air') then
-		eq.spawn2(223144,0,0,175,1640,495,387);	--A_Windshapen_Warlord_of_Air (223144)
+		eq.spawn2(223144,8,0,442,1532,493,387);	--A_Windshapen_Warlord_of_Air (223144)
 	else
 		kills = kills + 1;
-	end
-end
-
-function event_timer(e)
-	if e.timer == "targetable" then
-		eq.stop_timer(e.timer);
-		for n = 1,4 do
-			mob = eq.get_entity_list():GetMobByNpcTypeID(bosses[n]);
-			eq.unique_spawn(tBosses[n],0,0,mob:GetX(),mob:GetY(),mob:GetZ(),mob:GetHeading());
-			mob:Depop(false);
-		end
 	end
 end
 

@@ -165,7 +165,7 @@ function event_click_door(e)
 	elseif ((door_id == 23) and (not eq.get_entity_list():IsMobSpawnedByNpcTypeID(223076))) then	--Saryrn
 		e.self:MovePCInstance(207,0,-341,1706,-491,0);	--plane of torment
 	elseif (door_id >= 17 and door_id <= 23) then
-		e.self:Message(7,"Faint energy swirls slowly through the portal, but nothing happens.");
+		e.self:Message(MT.LightGray,"Faint energy swirls slowly through the portal, but nothing happens.");
 	end
 end
 

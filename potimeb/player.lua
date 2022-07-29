@@ -318,8 +318,8 @@ function ZoneReset(e)	--depops zone and reloads controllers
 			eq.spawn_condition("potimeb",eq.get_zone_instance_id(),i,0);
 		end
 		eq.depop_zone(false);
-		eq.get_entity_list():GetSpawnByID(371157):Repop(2);	--zone status
-		eq.get_entity_list():GetSpawnByID(371158):Repop(2);
+		eq.get_entity_list():GetSpawnByID(157394):Repop(2);	-- NPC: zone_status
+		eq.get_entity_list():GetSpawnByID(157395):Repop(2); -- NPC: zone_emoter
 end
 
 function ResetLockouts(e)	-- Removes all Lockouts

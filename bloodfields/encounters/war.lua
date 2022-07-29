@@ -12,9 +12,9 @@ function Mini_Death(e)
     war_caller:SetBodyType(1, false);
     
     eq.spawn2(301017, 0, 0, 625, -735, -747, 288); -- 301017 Guardian of Kaavi
-    eq.spawn2(301017, 0, 0, 625, -631, -748, 280); -- 301017 Guardian of Kaavi
-    eq.spawn2(301017, 0, 0, 625, -607, -758, 456); -- 301017 Guardian of Kaavi
-    eq.spawn2(301017, 0, 0, 625, -696, -753, 384); -- 301017 Guardian of Kaavi
+    eq.spawn2(301017, 0, 0, 676, -631, -748, 280); -- 301017 Guardian of Kaavi
+    eq.spawn2(301017, 0, 0, 442, -607, -758, 456); -- 301017 Guardian of Kaavi
+    eq.spawn2(301017, 0, 0, 422, -696, -753, 384); -- 301017 Guardian of Kaavi
 
   end
 end
@@ -35,11 +35,11 @@ function War_Timer(e)
     
     eq.stop_timer('spawnevent');
     eq.spawn2(301043, 0, 0, 625, -735, -747, 288); -- Sentry_of_Kaavi (301043)
-    eq.spawn2(301043, 0, 0, 625, -631, -748, 280); -- Sentry_of_Kaavi (301043)
-    eq.spawn2(301043, 0, 0, 625, -607, -758, 456); -- Sentry_of_Kaavi (301043)
-    eq.spawn2(301043, 0, 0, 625, -696, -753, 384); -- Sentry_of_Kaavi (301043)
-    eq.spawn2(301043, 0, 0, 625, -708, -753, 368); -- Sentry_of_Kaavi (301043)
-    eq.spawn2(301043, 0, 0, 625, -626, -758, 232); -- Sentry_of_Kaavi (301043)
+    eq.spawn2(301043, 0, 0, 676, -631, -748, 280); -- Sentry_of_Kaavi (301043)
+    eq.spawn2(301043, 0, 0, 442, -607, -758, 456); -- Sentry_of_Kaavi (301043)
+    eq.spawn2(301043, 0, 0, 422, -696, -753, 384); -- Sentry_of_Kaavi (301043)
+    eq.spawn2(301043, 0, 0, 714, -708, -753, 368); -- Sentry_of_Kaavi (301043)
+    eq.spawn2(301043, 0, 0, 343, -626, -758, 232); -- Sentry_of_Kaavi (301043)
   end
 end
 

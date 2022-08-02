@@ -8,17 +8,17 @@ local tacvi_raid = {
 }
 
 function event_click_door(e)
-	local is_gm = (e.self:GetGM())
+	local is_gm = e.self:GetGM();
 	local door_id = e.door:GetDoorID();
 	local entity_list = eq.get_entity_list();
 
-	if (door_id == 55) then -- Bloodfeaster
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297082)) then
+	if door_id == 55 then -- Bloodfeaster
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(297082) then
 			eq.signal(297082,1); --signal Bloodfeaster to initiate sequence
 		end
-	elseif (door_id == 23) then -- Zun Statue
-		if ( e.self:GetInventory():HasItem(64034, 1, 32) == Slot.Cursor) then 
-			if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) == false) then 
+	elseif door_id == 23 then -- Zun Statue
+		if e.self:GetInventory():HasItem(64034, 1, 32) == Slot.Cursor then 
+			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) then 
 				if not is_gm and e.self:GetRaidMemberCountInZone() < 18 then
 					e.self:Message(MT.NPCQuestSay, "You don't have enough comrades with you to venture into this dangerous area. Come back when you have at least eighteen friends to join you on this perilous journey.")
 				elseif not is_gm and e.self:DoesAnyPartyMemberHaveLockout(tacvi, "Replay Timer", 54) then
@@ -32,27 +32,27 @@ function event_click_door(e)
 			if dz.valid then
 				e.self:MovePCDynamicZone("tacvi") 
 			else
-				e.self:Message(13,"The gateway to the seat of the slaver is sealed off to you. Perhaps you would be able to enter if you needed to adventure there.");
+				e.self:Message(MT.Red,"The gateway to the seat of the slaver is sealed off to you. Perhaps you would be able to enter if you needed to adventure there.");
 			end
 		end
-	elseif (door_id == 25) then -- Zone in Statue
+	elseif door_id == 25 then -- Zone in Statue
 		local dz = e.self:GetExpedition()
 		if dz.valid then
 			e.self:MovePCDynamicZone("tacvi") 
 		else
-			e.self:Message(13,"The gateway to the seat of the slaver is sealed off to you. Perhaps you would be able to enter if you needed to adventure there.");
+			e.self:Message(MT.Red,"The gateway to the seat of the slaver is sealed off to you. Perhaps you would be able to enter if you needed to adventure there.");
 		end
-	elseif (door_id == 10 or door_id == 21) then -- Zun Door
-		if (door_id == 10 and e.self:HasItem(17288)) then
+	elseif door_id == 10 or door_id == 21 then -- Zun Door
+		if door_id == 10 and e.self:HasItem(17288) then
 			entity_list:FindDoor(21):ForceOpen(e.self);
-		elseif (door_id == 21 and e.self:HasItem(17288)) then
+		elseif door_id == 21 and e.self:HasItem(17288) then
 			entity_list:FindDoor(10):ForceOpen(e.self);
 		end
 	end
 end
 
 function event_enter_zone(e)
-	if ( e.self:GetBindZoneID() == 297 ) then    
+	if e.self:GetBindZoneID() == 297 then    
 		e.self:Message(1, "Illegal Bind!")
 		e.self:MovePC(69,840,70,0,0)
 	end

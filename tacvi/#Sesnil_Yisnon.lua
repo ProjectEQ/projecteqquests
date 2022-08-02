@@ -18,5 +18,5 @@ function event_say(e)
 end
 
 function event_waypoint_arrive(e)
-	eq.zone_emote(15,"An ancient hallway lies before you. The remains of fallen warriors litter the floor along with discarded slave corpses.");
+	eq.zone_emote(MT.Yellow,"An ancient hallway lies before you. The remains of fallen warriors litter the floor along with discarded slave corpses.");
 end

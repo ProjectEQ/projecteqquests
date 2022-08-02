@@ -46,7 +46,7 @@ function PXK_Hp(e)
 	if e.hp_event == 90 then
 		--locks door leading into her chamber
 		eq.signal(298223,1); -- Lock Doors
-		eq.zone_emote(13,"Xxeric begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
+		eq.zone_emote(MT.Red,"Xxeric begins to froth at the mouth as her skin becomes more rigid and her rage begins to grow. You feel a force from behind you as the door is once again sealed.");
 		e.self:SetPseudoRoot(false);
 		e.self:CastedSpellFinished(4729, e.self:GetHateRandom()); -- Spell: Spirit Cleaver
 		eq.set_timer("cleaver", 120 * 1000);
@@ -60,7 +60,7 @@ function PXK_Hp(e)
 		manasipper  = 0;
 		ragehound   = 0;
 	elseif e.hp_event == 70 then
-		eq.zone_emote(13,"The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
+		eq.zone_emote(MT.Red,"The froth around her mouth thickens as she channels the force of her growing rage into each attack, sacrificing her thickened skin.");
 		eq.modify_npc_stat("ac", "604");
 		eq.modify_npc_stat("min_hit", "1300");
 		eq.modify_npc_stat("max_hit", "5945");
@@ -70,7 +70,7 @@ function PXK_Hp(e)
 		eq.set_timer("cleaver", 90 * 1000);
 		eq.set_next_hp_event(50);
 	elseif e.hp_event == 50 then
-		eq.zone_emote(13,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.");
+		eq.zone_emote(MT.Red,"Raising her head to the sky, Xxeric lets out a battle cry that shakes the walls and calls forth a pack of raging ukun hounds. 'Prepare yourself for the afterlife this is the reality of the Mata Muram army.");
 		-- she begins casting  Wave of Rage
 		e.self:CastedSpellFinished(4728, e.self:GetHateRandom()); -- Spell: Wave of Rage
 		eq.set_timer("cleaver", 60 * 1000);
@@ -97,7 +97,7 @@ function PXK_Hp(e)
 		e.self:SetHP(e.self:GetMaxHP()*0.40)
 		eq.modify_npc_stat("min_hit", "1245");
 		eq.modify_npc_stat("max_hit", "4665");
-		eq.zone_emote(13,"You may yet have the strength to defeat me but I am not through with you yet. Xxeric's eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
+		eq.zone_emote(MT.Red,"You may yet have the strength to defeat me but I am not through with you yet. Xxeric's eyes turn blood red as she enters an uncontrollable rage. Focusing on her wounds, she begins to recover some health.");
 	end
 end
 
@@ -116,7 +116,7 @@ function PXK_Timer(e)
 					local currclient=ent:CastToClient();
 					--e.self:Shout("You will not evade me " .. currclient:GetName())
 					currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-					currclient:Message(5,"Pixtt Xxeric Kex says, 'Did you think I would let you enter these halls without consequence?");
+					currclient:Message(MT.Magenta,"Pixtt Xxeric Kex says, 'Did you think I would let you enter these halls without consequence?");
 				end
 			end
 		);

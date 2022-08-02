@@ -23,14 +23,14 @@ function ZMSB_Timer(e)
 	if e.timer == "rage_stop" then
 		eq.stop_timer("rage_stop");
 		eq.set_timer("rage", 35 * 1000);
-		eq.zone_emote(15,"Zun`Muram Shaldn Boc looks weakened as the rage ends.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Shaldn Boc looks weakened as the rage ends.");
 		e.self:ModifyNPCStat("min_hit", "1470");
 		e.self:ModifyNPCStat("max_hit", "4700");
  		--attack delay to 1.9s
 		e.self:ModifyNPCStat("attack_delay","19");
 	elseif e.timer == "rage" then
 		eq.stop_timer("rage");
-		eq.zone_emote(15,"Zun`Muram Shaldn Boc starts to foam at the mouth as he enters a blind rage.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Shaldn Boc starts to foam at the mouth as he enters a blind rage.");
 		if e.self:GetHPRatio() >= 90 then
 			e.self:ModifyNPCStat("min_hit", "1520");
 			e.self:ModifyNPCStat("max_hit", "4850");
@@ -90,7 +90,7 @@ function ZMSB_Timer(e)
 					local currclient=ent:CastToClient();
 					--e.self:Shout("You will not evade me " .. currclient:GetName())
 					currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-					currclient:Message(5,"Zun`Muram Shaldn Boc says, 'You cannot run from your fate, you must accept it.");
+					currclient:Message(MT.Magenta,"Zun`Muram Shaldn Boc says, 'You cannot run from your fate, you must accept it.");
 				end
 			end
 		);
@@ -117,7 +117,7 @@ function ZMSB_Death(e)
 	eq.signal(298223, 298018); -- NPC: zone_status
 	eq.signal(298223,2,1000); -- Unlock Doors
 	--should there be a check here to see if zmmd door is already open for this emote?
-	eq.zone_emote(15,"The chamber is filled with the sound of grinding stone. The path leading into the final chamber has been opened and it awaits your arrival. You hear a voice that sounds oddly familiar. 'Come now, fools, enter my chamber and learn the meaning of suffering from one bred to destroy and conquer. You have beaten the best of my army, but you have yet to see true power. Step into the abyss and cower at what stares back at you.");
+	eq.zone_emote(MT.Yellow,"The chamber is filled with the sound of grinding stone. The path leading into the final chamber has been opened and it awaits your arrival. You hear a voice that sounds oddly familiar. 'Come now, fools, enter my chamber and learn the meaning of suffering from one bred to destroy and conquer. You have beaten the best of my army, but you have yet to see true power. Step into the abyss and cower at what stares back at you.");
 end
 
 function event_encounter_load(e)

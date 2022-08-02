@@ -157,7 +157,7 @@ function PRT_Timer(e)
 					local currclient=ent:CastToClient();
 					--e.self:Shout("You will not evade me " .. currclient:GetName())
 					currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-					currclient:Message(5,"Pixtt Riel Tavas says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
+					currclient:Message(MT.Magenta,"Pixtt Riel Tavas says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
 				end
 			end
 		);
@@ -166,7 +166,7 @@ end
 
 function PRT_Death(e)
 	e.self:Emote("'s body falls to the stone floor in a puddle of blackened blood. You step back as she slashes one last time, connecting with nothing but the stale air of the room. 'This is not over. My commander will destroy you for this and when he does I hope it is my power he is weilding'")
-	eq.zone_emote(15, "With the death of the great beast, the seals on the doors fade away. Your path is now clear.")
+	eq.zone_emote(MT.Yellow, "With the death of the great beast, the seals on the doors fade away. Your path is now clear.")
 
 	-- Open doors
 	eq.signal(298223, 298032); -- NPC: zone_status

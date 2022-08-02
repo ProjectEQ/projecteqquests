@@ -226,7 +226,7 @@ end
 
 function Tunat_First_Death(e)
 	eq.zone_emote(0, "Tunat`Muram Cuu Vauax says, 'In an explosion of energy, Tunat'Muram Cuu Vauax disappears while ancient pebbles pelt against your armor.'");
-	eq.zone_emote(15,"The room is filled with an eerie laugh. 'You have done well to defeat my doppelganger and have shown great strength by making it this far, but I'm afraid I must end your struggle here. Your days have been numbered since you first set foot upon this continent and your time is up. Kneel before me and I will grant you a quick death, but resist and you will suffer in ways that will be spoken about in hushed tones for eons to come.");
+	eq.zone_emote(MT.Yellow,"The room is filled with an eerie laugh. 'You have done well to defeat my doppelganger and have shown great strength by making it this far, but I'm afraid I must end your struggle here. Your days have been numbered since you first set foot upon this continent and your time is up. Kneel before me and I will grant you a quick death, but resist and you will suffer in ways that will be spoken about in hushed tones for eons to come.");
 	eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8); -- NPC: #Tunat`Muram_Cuu_Vauax
 	eq.depop_all(298113);
 	eq.depop_all(298209);
@@ -294,7 +294,7 @@ function Tunat_Second_Timer(e)
 		eq.set_timer("zmkp_powerup_repeat", 35 * 1000);		
 	elseif e.timer == "zmkp_powerup_repeat" then
 		-- Scale up each cycle - +700  max hit / +188 min hit
-		eq.zone_emote(15,"Zun`Muram Kvxe Pirik focuses his will and grows stronger.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Kvxe Pirik focuses his will and grows stronger.");
 		zmkp_min = zmkp_min + 188;
 		eq.modify_npc_stat("min_hit", tostring(zmkp_min));
 		zmkp_max = zmkp_max + 700;
@@ -304,28 +304,28 @@ function Tunat_Second_Timer(e)
 		eq.spawn2(298050, 0, 0, 334, -117, 21, 280); -- NPC: Zun`Muram_Mordl_Delt
 		eq.spawn2(298050, 0, 0, 356, -154, 21, 356); -- NPC: Zun`Muram_Mordl_Delt
 	elseif e.timer == "zmsb_rage" then
-		eq.zone_emote(15,"Zun`Muram Shaldn Boc starts to foam at the mouth as he enters a blind rage.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Shaldn Boc starts to foam at the mouth as he enters a blind rage.");
 		eq.stop_timer("zmsb_rage");
 		e.self:ModifyNPCStat("attack_delay","9");
 		eq.modify_npc_stat("min_hit", "2010");
 		eq.modify_npc_stat("max_hit", "6200");
 		eq.set_timer("zmsb_rage_over", 25 * 1000);
 	elseif e.timer == "zmsb_rage_over" then
-		eq.zone_emote(15,"Zun`Muram Shaldn Boc looks weakened as the rage ends.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Shaldn Boc looks weakened as the rage ends.");
 		eq.stop_timer("zmsb_rage_over");
 		e.self:ModifyNPCStat("attack_delay","15");
 		eq.modify_npc_stat("min_hit", "1462");
 		eq.modify_npc_stat("max_hit", "4700");
 		eq.set_timer("zmsb_rage", 30 * 1000);
 	elseif e.timer == "tunat_rage" then
-		eq.zone_emote(15,"Tunat`Muram Cuu Vuaux starts to foam at the mouth as he enters a blind rage.");
+		eq.zone_emote(MT.Yellow,"Tunat`Muram Cuu Vuaux starts to foam at the mouth as he enters a blind rage.");
 		eq.stop_timer("tunat_rage");
 		e.self:ModifyNPCStat("attack_delay","9");
 		eq.modify_npc_stat("min_hit", "1990");
 		eq.modify_npc_stat("max_hit", "5800");
 		eq.set_timer("tunat_rage_over", 25 * 1000);
 	elseif e.timer == "tunat_rage_over" then
-		eq.zone_emote(15,"Tunat`Muram Cuu Vuaux looks weakened as the rage ends.");
+		eq.zone_emote(MT.Yellow,"Tunat`Muram Cuu Vuaux looks weakened as the rage ends.");
 		eq.stop_timer("tunat_rage_over");
 		e.self:ModifyNPCStat("attack_delay","15");
 		eq.modify_npc_stat("min_hit", "1450");

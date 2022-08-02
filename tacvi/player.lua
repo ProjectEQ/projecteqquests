@@ -38,8 +38,8 @@ function event_click_door(e)
 	end
 	
 	if eq.get_entity_list():FindDoor(door_id):GetLockPick() == 0 then
-		e.self:Message(6, "As the massive door gives way, you are overwhelmed by the smell of decaying flesh.");
+		e.self:Message(MT.Gray, "As the massive door gives way, you are overwhelmed by the smell of decaying flesh.");
 	else
-		e.self:Message(6, "A barrier of energy seals the door before you.");
+		e.self:Message(MT.Gray, "A barrier of energy seals the door before you.");
 	end
 end

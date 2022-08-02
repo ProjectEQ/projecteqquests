@@ -73,7 +73,7 @@ function PKK_Timer(e)
 					local currclient=ent:CastToClient();
 					--e.self:Shout("You will not evade me " .. currclient:GetName())
 					currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-					currclient:Message(5,"Pixtt Kretv Krakxt says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
+					currclient:Message(MT.Magenta,"Pixtt Kretv Krakxt says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
 				end
 			end
 		);
@@ -105,7 +105,7 @@ end
 function PKK_Hp(e)
 	PKK_hitpoints = e.hp_event;
 	if (e.hp_event == 90) then
-		eq.zone_emote(13,"Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones. Kretv's body falls to the ground -- a lifeless husk freeing the hatchlings within.");
+		eq.zone_emote(MT.Red,"Ha ha ha, you fools thought you could overpower me. You are nothing but food for my offspring. Come my children, strike them down and suck the marrow from their bones. Kretv's body falls to the ground -- a lifeless husk freeing the hatchlings within.");
 		eq.set_timer("check", 1 * 1000);
 		eq.signal(298223,1); -- Lock Doors
 		eq.depop();
@@ -113,14 +113,14 @@ function PKK_Hp(e)
 		eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 		Spawn_Hatchlings(4, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
 	elseif (e.hp_event == 70) then
-		eq.zone_emote(13,"Your efforts shall fail no matter how great. This is a reality you shall soon see as your vile existence ceases and my brood consumes your remains.");
+		eq.zone_emote(MT.Red,"Your efforts shall fail no matter how great. This is a reality you shall soon see as your vile existence ceases and my brood consumes your remains.");
 		eq.depop();
 		Spawn_Hatchlings(5, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
 		eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
 		eq.spawn2(298204, 93, 0, 120.0, 279.0, -7.0, 332); -- reflection
 		eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
 	elseif (e.hp_event == 50) then
-		eq.zone_emote(13,"You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
+		eq.zone_emote(MT.Red,"You show surprising strength and conviction, but you will not get any further. The time has come for you to be destroyed.");
 		eq.depop();
 		Spawn_Hatchlings(6, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
 		eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
@@ -128,7 +128,7 @@ function PKK_Hp(e)
 		eq.spawn2(298046, 95, 0, 116.0, 206.0, -7.0, 162); -- NPC: Reflection_of_Kretv_Krakxt
 		eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
 	elseif (e.hp_event == 30) then
-		eq.zone_emote(13,"My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
+		eq.zone_emote(MT.Red,"My resolve is waning but I shall fight you to the very last breath. The commander looks down upon weaklings in his ranks and the ikaav are not ones to indulge in it.");
 		eq.depop();
 		Spawn_Hatchlings(7, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
 		eq.spawn2(298047, 0, 0, 161.0, 242.0, -7.0, 378):SetAppearance(3); -- husk
@@ -137,7 +137,7 @@ function PKK_Hp(e)
 		eq.spawn2(298203, 94, 0, 228.0, 221.0, -7.0, 427.0); -- needs_heading_validation
 		eq.spawn2(298146, 96, 0, 227.0, 284.0, -6.0, 315.0); -- needs_heading_validation
 	elseif (e.hp_event == 10) then
-		eq.zone_emote(13,"The end is inevitable, but if I must be defeated, some of you will join me in the afterlife.");
+		eq.zone_emote(MT.Red,"The end is inevitable, but if I must be defeated, some of you will join me in the afterlife.");
 		Spawn_Hatchlings(3, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 189.1);
 		e.self:SetSpecialAbility(SpecialAbility.rampage, 0); -- turn off single rampage
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1); -- turn aoe ramp on

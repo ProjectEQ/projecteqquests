@@ -46,7 +46,7 @@ function ZMYV_Timer(e)
 					local currclient=ent:CastToClient();
 					--e.self:Shout("You will not evade me " .. currclient:GetName())
 					currclient:MovePCInstance(298,instance_id, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); -- Zone: tacvi
-					currclient:Message(5,"Zun`Muram Yihst Vor says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
+					currclient:Message(MT.Magenta,"Zun`Muram Yihst Vor says, 'You dare enter my chambers and then try to leave? Your punishment will be quite severe.");
 				end
 			end
 		);
@@ -58,21 +58,21 @@ function ZMYV_Hp(e)
 		eq.signal(298223,1); -- Lock Doors
 		eq.set_timer("check", 1 * 1000); -- set scorpion timer
 		eq.set_next_hp_event(75);
-		eq.zone_emote(15,"Zun`Muram Yihst Vor says, 'Is this is the best you can do? Come now, show me your true strength and I will show you mine.' ");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Yihst Vor says, 'Is this is the best you can do? Come now, show me your true strength and I will show you mine.' ");
 		e.self:ModifyNPCStat("min_hit", "1899");
 		e.self:ModifyNPCStat("max_hit", "5176");
 	elseif e.hp_event == 75 then
 		eq.set_next_hp_event(50);
-		eq.zone_emote(15,"Zun`Muram Yihst Vor says, 'To think I was actually worried you might be worthy foes.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Yihst Vor says, 'To think I was actually worried you might be worthy foes.");
 		e.self:ModifyNPCStat("min_hit", "2124");
 		e.self:ModifyNPCStat("max_hit", "5401");
 	elseif e.hp_event == 50 then
 		eq.set_next_hp_event(20);
-		eq.zone_emote(15,"Zun`Muram Yihst Vor says, 'Ahh, sweet pain. It is such an intoxicating feeling. I thank you for the pleasure. Now let me return the favor.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Yihst Vor says, 'Ahh, sweet pain. It is such an intoxicating feeling. I thank you for the pleasure. Now let me return the favor.");
 		e.self:ModifyNPCStat("min_hit", "2254");
 		e.self:ModifyNPCStat("max_hit", "5591");
 	elseif e.hp_event == 20 then
-		eq.zone_emote(15,"Zun`Muram Yihst Vor's body bulges with strength as he enters a blind rage.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Yihst Vor's body bulges with strength as he enters a blind rage.");
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
 		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 50); -- 50% Mitigation
 		e.self:SetSpecialAbility(SpecialAbility.rampage, 0);

@@ -69,7 +69,7 @@ function ZMMD_Hp(e)
 	if e.hp_event == 90 then
 		eq.signal(298223,1); -- Lock Doors
 
-		eq.zone_emote(15,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing a wave of energy. As his body falls to the floor, two smaller images of the massive creature appear before you.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing a wave of energy. As his body falls to the floor, two smaller images of the massive creature appear before you.");
 		eq.set_next_hp_event(70);
 
 		ZMMD_Inactivate(e);
@@ -82,7 +82,7 @@ function ZMMD_Hp(e)
 	elseif e.hp_event == 70 then
 		eq.set_next_hp_event(50);
 
-		eq.zone_emote(15,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing another wave of energy. Three smaller images of the massive creature appear before you as the previous form fades away.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing another wave of energy. Three smaller images of the massive creature appear before you as the previous form fades away.");
 		
 		ZMMD_Inactivate(e);
 		adds_killed = 0;
@@ -94,7 +94,7 @@ function ZMMD_Hp(e)
 	elseif e.hp_event == 50 then
 		eq.set_next_hp_event(30);
 
-		eq.zone_emote(15,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing another wave of energy. Four smaller images of the massive creature appear before you as the previous form fades away.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Mordl Delt's skin begins to bulge and split open, releasing another wave of energy. Four smaller images of the massive creature appear before you as the previous form fades away.");
 		
 		ZMMD_Inactivate(e);
 		adds_killed = 0;
@@ -105,8 +105,8 @@ function ZMMD_Hp(e)
 		eq.set_timer("zmmd_kite", kite_time * 1000);
 
 	elseif e.hp_event == 30 then
-		eq.zone_emote(15,"Zun`Muram Mordl Delt's body begins to glow as the images before you merge back into one. The wounds upon Mordl's body quickly heal as he's infused by the energy, but new wounds appear where his other forms were injured.");
-		eq.zone_emote(15,"In a final act of desperation, Mordl splits two smaller forms off from himself but looks visibly drained from the effort.");
+		eq.zone_emote(MT.Yellow,"Zun`Muram Mordl Delt's body begins to glow as the images before you merge back into one. The wounds upon Mordl's body quickly heal as he's infused by the energy, but new wounds appear where his other forms were injured.");
+		eq.zone_emote(MT.Yellow,"In a final act of desperation, Mordl splits two smaller forms off from himself but looks visibly drained from the effort.");
 		
 		adds_killed = 0;
 		eq.modify_npc_stat("min_hit", "1670");

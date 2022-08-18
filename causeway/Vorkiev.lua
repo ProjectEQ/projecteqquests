@@ -31,7 +31,7 @@ end
 function event_trade(e)
 	local class = e.other:Class();
 	local item_lib = require("items");
-	if (e.other:GetFaction(e.self) <= 2 or e.other:GetGM() and (class == "Warrior" or class == "Paladin" or class == "Shadowknight" or class == "Bard" or class == "Cleric" or e.other:GetGM())) then -- require warmly and plate
+	if (e.other:GetFaction(e.self) <= 2 or e.other:GetGM() and (class == "Warrior" or class == "Paladin" or class == "Shadow Knight" or class == "Bard" or class == "Cleric" or e.other:GetGM())) then -- require warmly and plate
 		
 		if(item_lib.check_turn_in(e.trade, {item1 = 51446,item2 = 51453,item3 = 51453})) then -- plate hand rewards Spire Control Shard, 2x Discordling Message Satchel
 			e.self:Say("Well met, ".. e.other:GetCleanName() ..". You may have well disrupted the Muramite chain of command long enough to afford me a chance to go looking for my surviving brothers. The Muramites are on the watch for me, but now they will be scrambling for word from their master. To thank you for your efforts, here are the plate gloves I have promised you.");
@@ -41,7 +41,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70758,100000); -- Item: Oathbound Gauntlets
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70772,100000); -- Item: Heartstiller's Mail Gloves
 				end
 				if class == "Bard" or e.other:GetGM() then
@@ -60,7 +60,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70757,100000); -- Item: (70757);#Oathbound Bracer
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70771,100000); -- Item: (70771);#Heartstiller's Mail Wristguard
 				end
 				if class == "Bard" or e.other:GetGM() then
@@ -77,7 +77,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70756,100000); -- Item: (70756);#Oathbound Armguards
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70770,100000); -- Item: (70770);#Heartstiller's Mail Sleeves
 				end
 				if class == "Bard" or e.other:GetGM() then
@@ -94,7 +94,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70755,100000); -- Item: (70755);#Oathbound Helm
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70769,100000); -- Item: (70769);#Heartstiller's Mail Helm
 				end
 				if class == "Bard" or e.other:GetGM() then
@@ -111,7 +111,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70760,100000); -- Item: (70760);#Oathbound Breastplate
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70774,100000); -- Item:(70774);#Heartstiller's Mail Chestguard
 				end
 				if class == "Bard" or e.other:GetGM() then
@@ -128,7 +128,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70761,100000); -- Item: (70761);#Oathbound Legguards
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70775,100000); -- Item: (70775);#Heartstiller's Mail Leggings
 				end
 				if class == "Bard" or e.other:GetGM() then
@@ -145,7 +145,7 @@ function event_trade(e)
 				if class == "Paladin" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70759,100000); -- Item: (70759);#Oathbound Boots
 				end
-				if class == "Shadowknight" or e.other:GetGM() then
+				if class == "Shadow Knight" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70773,100000); -- Item:(70773);#Heartstiller's Mail Boots
 				end
 				if class == "Bard" or e.other:GetGM() then

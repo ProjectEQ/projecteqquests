@@ -31,10 +31,10 @@ end
 function event_trade(e)
 	local class = e.other:Class();
 	local item_lib = require("items");
-	if (e.other:GetFaction(e.self) <= 2 or e.other:GetGM() and (class == "Monk" or class == "Beastlord" or class == "Druid" or e.other:GetGM())) then -- require warmly and plate
+	if (e.other:GetFaction(e.self) <= 2 or e.other:GetGM() and (class == "Monk" or class == "Beastlord" or class == "Druid" or e.other:GetGM())) then -- require warmly and leather
 		
 		if(item_lib.check_turn_in(e.trade, {item1 = 51446,item2 = 51467,item3 = 51467})) then -- leather hand rewards
-			e.self:Say("Well met, ".. e.other:GetCleanName() ..". You may have well disrupted the Muramite chain of command long enough to afford me a chance to go looking for my surviving brothers. The Muramites are on the watch for me, but now they will be scrambling for word from their master. To thank you for your efforts, here are the leather gloves I have promised you."); --need live parse
+			e.self:Say("Well done, ".. e.other:GetCleanName() ..".  I did not think it possible!  Hopefully stealing this item will slow the Muramites and buy those rebels time to plan their next attack.  Please accept this set of leather gloves as a token of my thanks!'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70786,100000); -- Item: 
 				end
@@ -58,7 +58,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70778,100000); -- Item:
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51444,item2 = 51465,item3 = 51465})) then -- leather arms rewards
-			e.self:Say("A map of Old Kuua! How this map makes me long for the old days, back when we were a free race! My thanks, ".. e.other:GetCleanName() ..". This map may help relearn the new landscape in the context of the old. Here is a set of leather arms as your reward."); --need live parse
+			e.self:Say("'Thank you, ".. e.other:GetCleanName() ..".  With these items I should be able to at least envision the beauty of Kuua before the Muramites came.  In return for your efforts, here are the leather armguards I promised.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70784,100000); -- Item: 
 				end
@@ -69,7 +69,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70777,100000); -- Item: 
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51440,item2 = 51461,item3 = 51461})) then -- leather head rewards
-			e.self:Say("Well met, ".. e.other:GetCleanName() ..". Hopefully this book will contain some valuable information on the nature of Discord. To survive on my own, I must first understand the poison affecting the land. As promised, here is the helm as your reward for such a dangerous mission.");
+			e.self:Say("'The Duskfall Chronicles!  They still exist!  I feared that the knowledge contained in this book was lost forever.  At least now the lives of those of who came before me shall not be lost in vain.  I just hope some usable knowledge can be extracted from this tome.  Here, take this leather helm as your reward.  May it serve you well on your travels.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70783,100000); -- Item: 
 				end
@@ -80,7 +80,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70776,100000); -- Item: 
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51441,item2 = 51462,item3 = 51462,item4 = 51462})) then -- leather chest rewards 
-			e.self:Say("This is the scepter of Noble Pravel the Diviner! I recognize the markings! I can tell by the way the light has faded that he no longer draws breath. Though this is terrible news, I'm grateful at least you have recovered it from the Muramites. I'll try to smuggle this back to those still loyal to Dranik. Thanks you,".. e.other:GetCleanName() ..". As promised, here is my leather vest. It has grown too cumbersome for me to carry in my wanderings.'");
+			e.self:Say("'Yes, this is it the scepter of my Yumall!  I recognize the markings!  Alas, the glow has left the scepter which means Yumall no longer draws breath.  At least now, we can morn his passing.  Before we were never sure.  As promised, here is my finest work, an ornate leather chest piece.  May it serve you well on your stand against the Muramites!'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70788,100000); -- Item:
 				end
@@ -91,7 +91,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70781,100000); -- Item: 
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51442,item2 = 51463,item3 = 51463,item4 = 51463})) then -- leather leg rewards
-			e.self:Say("Hmm, I shudder to think what names I will find scribed on this rock, but I thank you for your work none the less. Hopefully, this list can be used to stir some more dissention among the dragorn that have sworn loyalty to Mata Muram for the time being. Here are the leather boots I have promised. May they serve you well, ".. e.other:GetCleanName() ..".");
+			e.self:Say("'So it's true, the embers do exist!  I'm glad this was removed from the hands of the Muramites.  I only hope Dranik is not one day reduced to one of these embers.  As promised, here are the leggings crafted by Master Lenarsk as your reward.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70789,100000); -- Item: 
 				end

@@ -39,6 +39,7 @@ function event_trade(e)
 		
 		if(item_lib.check_turn_in(e.trade, {item1 = 51481,item2 = 51502,item3 = 51502})) then -- leather hand rewards
 			e.self:Say("I can scarcely believe that the axe has been found!  And in such good shape!  It hardly even appears used. Truly the smith that crafted it was quite gifted.  I will give the axe to our remaining elders.  But before I do this, I will take the hides you brought me and will create a sheath to match the axe.  I am sure the elders will sing your praises for your efforts performed on our behalf.  Here are the gloves I spoke about earlier.'");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70898,100000); -- Item: 
 				end
@@ -52,6 +53,7 @@ function event_trade(e)
 
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51480,item2 = 51501,item3 = 51501})) then -- leather wrist rewards 
 			e.self:Say("Thank you for your effort.  After I spend some time examining the heart, I will know what value the enchantments may hold.  And these hides are certainly of a high enough quality for my needs.  Here is a leather bracer of a design that Jayruk fancied.'");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70897,100000); -- Item: 
 				end
@@ -63,6 +65,7 @@ function event_trade(e)
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51479,item2 = 51500,item3 = 51500})) then -- leather arms rewards
 			e.self:Say("Yes the pouch!  Though the war claimed the life of the young one I was going to give this to, at least I can rest easier knowing that a vile Muramite does not have it.  And the two collars you gave me prove to me that you have killed a few of them.  I thank you and in return for your trouble, I shall give you these woven arms that have some very unique enchantments.'");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70896,100000); -- Item: 
 				end
@@ -74,6 +77,7 @@ function event_trade(e)
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51475,item2 = 51496,item3 = 51496})) then -- leather head rewards
 			e.self:Emote("eyes open wide as you hand him the stick and awards.  'Ah, truly this is no mere walking stick.  Why if I listen carefully I can hear the crackling energies within the shaft straining to free itself.  It appears I was wrong about the strap though as it seems to be simply a mundane piece of leather without the benefit of enchantment.  Still I will honor my bargain and know that you have at least dealt a blow to the invaders.  Here is the cap I spoke about earlier.'");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70895,100000); -- Item: 
 				end
@@ -85,6 +89,7 @@ function event_trade(e)
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51476,item2 = 51497,item3 = 51497,item4 = 51497})) then -- leather chest rewards 
 			e.self:Emote("unfolds the vest and begins to run his eyes over it, paying attention to details that only a master crafter would see. 'Yes, this is indeed the vest my master created for Jayruk. I would recognize it anywhere. Now, perhaps I may learn some of the secrets my mentor did not have time enough to pass along to me. And the nails you have brought me pay tribute to the great hunter that Jayruk was. Though this vest I am about to give you is not the equal of the one Jayruk wore, it is certainly close.");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70900,100000); -- Item:
 				end
@@ -96,6 +101,7 @@ function event_trade(e)
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51477,item2 = 51498,item3 = 51498,item4 = 51498})) then -- leather leg rewards
 			e.self:Emote("nods approvingly as he spies the amulet dangling from your outstretched hand.  'Yes, this surely is the amulet that fiend wore that night.  I will do my best to discover who this owner was and return it to him as I merely sought proof of the thief's demise.  Here are some leather leggings that were commissioned by a frequent customer of mine.  It saddens me to say that he perished at the battle of the wall before I managed to finish them.");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70901,100000); -- Item: 
 				end
@@ -107,6 +113,7 @@ function event_trade(e)
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51478,item2 = 51499,item3 = 51499})) then -- leather feet rewards 
 			e.self:Say("Well done ".. e.other:GetCleanName() ..". I understand the Muramites guard these well. I'll bury this stone so the dragorn of Kuua can move on from the horrors of the past and instead look to the future. As promised, here is a pair of finely crafted leather boots as your reward.");
+			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70899,100000); -- Item:
 				end

@@ -38,7 +38,7 @@ function event_trade(e)
 	if (e.other:GetFaction(e.self) <= 1 or e.other:GetGM() and (class == "Monk" or class == "Beastlord" or class == "Druid" or e.other:GetGM())) then -- require ally and leather
 		
 		if(item_lib.check_turn_in(e.trade, {item1 = 51481,item2 = 51502,item3 = 51502})) then -- leather hand rewards
-			e.self:Say("Well met, ".. e.other:GetCleanName() ..". You may have well disrupted the Muramite chain of command long enough to afford me a chance to go looking for my surviving brothers. The Muramites are on the watch for me, but now they will be scrambling for word from their master. To thank you for your efforts, here are the leather gloves I have promised you."); --need live parse
+			e.self:Say("I can scarcely believe that the axe has been found!  And in such good shape!  It hardly even appears used. Truly the smith that crafted it was quite gifted.  I will give the axe to our remaining elders.  But before I do this, I will take the hides you brought me and will create a sheath to match the axe.  I am sure the elders will sing your praises for your efforts performed on our behalf.  Here are the gloves I spoke about earlier.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70898,100000); -- Item: 
 				end
@@ -51,7 +51,7 @@ function event_trade(e)
 
 
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51480,item2 = 51501,item3 = 51501})) then -- leather wrist rewards 
-			e.self:Say("The Blood Standard of Dranik! I did not believe it still existed! This will bring hope to the few dragorn who still resist Mata Muram. I only wish I was ready to join them. Thank you. As promised, here is a leather wristguard as a reward.");
+			e.self:Say("Thank you for your effort.  After I spend some time examining the heart, I will know what value the enchantments may hold.  And these hides are certainly of a high enough quality for my needs.  Here is a leather bracer of a design that Jayruk fancied.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70897,100000); -- Item: 
 				end
@@ -62,7 +62,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70890,100000); -- Item:
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51479,item2 = 51500,item3 = 51500})) then -- leather arms rewards
-			e.self:Say("A map of Old Kuua! How this map makes me long for the old days, back when we were a free race! My thanks, ".. e.other:GetCleanName() ..". This map may help relearn the new landscape in the context of the old. Here is a set of leather arms as your reward."); --need live parse
+			e.self:Say("Yes the pouch!  Though the war claimed the life of the young one I was going to give this to, at least I can rest easier knowing that a vile Muramite does not have it.  And the two collars you gave me prove to me that you have killed a few of them.  I thank you and in return for your trouble, I shall give you these woven arms that have some very unique enchantments.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70896,100000); -- Item: 
 				end
@@ -73,7 +73,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70889,100000); -- Item: 
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51475,item2 = 51496,item3 = 51496})) then -- leather head rewards
-			e.self:Say("Well met, ".. e.other:GetCleanName() ..". Hopefully this book will contain some valuable information on the nature of Discord. To survive on my own, I must first understand the poison affecting the land. As promised, here is the helm as your reward for such a dangerous mission.");
+			e.self:Emote("eyes open wide as you hand him the stick and awards.  'Ah, truly this is no mere walking stick.  Why if I listen carefully I can hear the crackling energies within the shaft straining to free itself.  It appears I was wrong about the strap though as it seems to be simply a mundane piece of leather without the benefit of enchantment.  Still I will honor my bargain and know that you have at least dealt a blow to the invaders.  Here is the cap I spoke about earlier.'");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70895,100000); -- Item: 
 				end
@@ -95,7 +95,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70893,100000); -- Item: 
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51477,item2 = 51498,item3 = 51498,item4 = 51498})) then -- leather leg rewards
-			e.self:Say("Hmm, I shudder to think what names I will find scribed on this rock, but I thank you for your work none the less. Hopefully, this list can be used to stir some more dissention among the dragorn that have sworn loyalty to Mata Muram for the time being. Here are the leather boots I have promised. May they serve you well, ".. e.other:GetCleanName() ..".");
+			e.self:Emote("nods approvingly as he spies the amulet dangling from your outstretched hand.  'Yes, this surely is the amulet that fiend wore that night.  I will do my best to discover who this owner was and return it to him as I merely sought proof of the thief's demise.  Here are some leather leggings that were commissioned by a frequent customer of mine.  It saddens me to say that he perished at the battle of the wall before I managed to finish them.");
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70901,100000); -- Item: 
 				end

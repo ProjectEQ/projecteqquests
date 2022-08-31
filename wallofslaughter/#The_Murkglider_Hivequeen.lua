@@ -18,8 +18,8 @@ elseif(e.timer=="hate") then
     
     local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
-		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 300084)) then
-			npc:AddToHateList(e.self:GetHateRandom(),1); -- add a_murk_hatchling (300084) to aggro list if alive
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 300084 or npc:GetNPCTypeID() == 300035)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1); -- add a_murk_hatchling (300084) and a_murkglider_attendant (300035) to aggro list if alive
 		end
 		end
 end

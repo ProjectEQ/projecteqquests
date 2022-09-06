@@ -9,20 +9,18 @@ function event_timer(e)
     eq.depop();
     eq.zone_emote(10, "The reclusive girplans slink back into their caves.");
   elseif e.timer=="blur" then
-		local player_count = 0;
-		local hate_list = e.self:GetHateRandom();
-		if hate_list ~= nil then
-			for mob in hate_list.entries do
-				if mob.ent:IsClient() then 	--only want clients in this
-					mob.ent:CastToClient():CastedSpellFinished(5604); --crushing blow
-				player_count = player_count + 1;
+		local cl = eq.get_entity_list():GetShuffledClientList(); -- Shuffle the client list and choose 3 targets.
+		local count = 0;
+			for client in cl.entries do
+				if client.valid then -- If valid
+				e.self:CastedSpellFinished(5604, client); -- Crushing Blow
+				count = count + 1; -- Add per client.
 				end
-				if (player_count == 3) then
-				break
+				if (count == 3) then
+				break -- Stop.
 				end
 			end
-		end
-  eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The girplan flings several nearby enemies");
+  	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The girplan flings several nearby enemies");
 	e.self:WipeHateList();
   end
 end

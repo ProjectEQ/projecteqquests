@@ -20,7 +20,7 @@ function event_timer(e)
 				break -- Stop.
 				end
 			end
-  	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The girplan flings several nearby enemies");
+  	e.self:Emote("flings its bulky body toward you and sends several opponents flying!");
 	e.self:WipeHateList();
   end
 end

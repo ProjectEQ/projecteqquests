@@ -9,7 +9,7 @@ function event_timer(e)
     eq.depop();
     eq.zone_emote(10, "The reclusive girplans slink back into their caves.");
   elseif e.timer=="blur" then
-		local cl = eq.get_entity_list():GetShuffledClientList(); -- Shuffle the client list and choose 3 targets.
+		local cl = e.self:GetShuffledHateList(); -- Shuffle the hate list and choose 3 targets.
 		local count = 0;
 			for client in cl.entries do
 				if client.valid then -- If valid

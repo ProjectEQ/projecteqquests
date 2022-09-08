@@ -64,6 +64,7 @@ function DistanceToWaypoint(self)
 end
 
 function ExploadOrb(mob)
+    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The King's ice sphere explodes into a cloud of glittering shards.");
     eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 0.0)
     eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 128.0)
     eq.spawn2(334110, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading()):TryMoveAlong(10.0, 256.0)

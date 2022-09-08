@@ -157,6 +157,19 @@ function PrinceDeath(e)
         king:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
         king:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
     end
+    
+    if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334036) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334037) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334035) == false) then
+		--#Prince_Allin (334036), #Prince_Britalic (334037), #Prince_Kiranus (334035)
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 334039 or npc:GetNPCTypeID() == 334040 or npc:GetNPCTypeID() == 334038)) then
+					--#Prince_Scyllus (334038), #Prince_Ilsin (334040),#Prince_Cynin (334039)
+			--npc:AddToHateList(e.self:GetHateTop(),1);
+			npc:ModifyNPCStat("aggro", "445");
+			npc:ModifyNPCStat("assist", "445");
+			end
+		end
+	end
 end
 
 -- other hooks

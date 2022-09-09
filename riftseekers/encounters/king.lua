@@ -53,7 +53,7 @@ function CheckLeash(e)
 end
 
 function PortalAdds(mob)
-    local id = eq.ChooseRandom(334094, 334095, 0)
+    local id = eq.ChooseRandom(334094, 334095)
     if id > 0 then
         eq.spawn2(id, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
     end
@@ -111,7 +111,7 @@ end
 
 function KingCombat(e)
     if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", 40000) -- 40 sec
+        eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
         timerstate[e.self:GetID()] = true
         -- should we spawn adds?
     end
@@ -143,7 +143,7 @@ end
 
 function PrinceCombat(e)
     if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", 40000) -- 40 sec
+        eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
         timerstate[e.self:GetID()] = true
         PortalAdds(portals[e.self:GetNPCTypeID()])
     end

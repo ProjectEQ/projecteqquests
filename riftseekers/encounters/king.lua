@@ -135,6 +135,7 @@ function PrinceTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
+	eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
             PortalAdds(portals[e.self:GetNPCTypeID()])
         else
             eq.stop_timer("portals")
@@ -172,9 +173,9 @@ end
 function PrinceCombat(e)
     if e.joined then
 		if timerstate[e.self:GetID()] == false then
-        	eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
+        	eq.set_timer("portals",5000) -- 5 sec initially
         	timerstate[e.self:GetID()] = true
-        	PortalAdds(portals[e.self:GetNPCTypeID()])
+        	--PortalAdds(portals[e.self:GetNPCTypeID()]) do not spawn adds instantly
     	end
 	eq.stop_timer("aggro");
 	eq.set_timer("hatelink", 4 * 1000);

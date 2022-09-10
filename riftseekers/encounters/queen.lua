@@ -52,7 +52,7 @@ function CheckLeash(e)
 end
 
 function PortalAdds(mob)
-    local id = eq.ChooseRandom(334085, 334086, 0)
+    local id = eq.ChooseRandom(334085, 334086)
     if id > 0 then
         eq.spawn2(id, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
     end
@@ -124,6 +124,7 @@ function PrincessTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
+            eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
             PortalAdds(portals[e.self:GetNPCTypeID()])
         else
             eq.stop_timer("portals")
@@ -133,10 +134,12 @@ function PrincessTimer(e)
 end
 
 function PrincessCombat(e)
-    if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", 40000) -- 40 sec
-        timerstate[e.self:GetID()] = true
-        PortalAdds(portals[e.self:GetNPCTypeID()])
+    if e.joined then
+        if timerstate[e.self:GetID()] == false then
+            eq.set_timer("portals", 5000) -- 5 sec initially
+            timerstate[e.self:GetID()] = true
+            --PortalAdds(portals[e.self:GetNPCTypeID()])
+        end
     end
 end
 
@@ -153,6 +156,21 @@ end
 -- other hooks
 function ChimeraSpawn(e)
     eq.set_timer("depop", 270000) -- 4 min 30 sec
+end
+
+function ChimeraCombat(e)
+if(e.joined) then
+eq.stop_timer("depop");
+else
+e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+eq.set_timer("depop", 270 * 1000);
+end
+end
+
+function ChimeraTimer(e)
+if (e.timer == "depop") then
+eq.depop();
+end
 end
 
 function BombSpawn(e)
@@ -231,7 +249,8 @@ function event_encounter_load(e)
     eq.register_npc_event("queen", Event.death_complete, 334046, PrincessDeath)
 
     eq.register_npc_event("queen", Event.spawn, 334085, ChimeraSpawn)
-    eq.register_npc_event("queen", Event.timer, 334085, AddTimer)
+	eq.register_npc_event("queen", Event.combat, 334085, ChimeraCombat)
+	eq.register_npc_event("queen", Event.timer, 334085, ChimeraTimer)
 
     eq.register_npc_event("queen", Event.spawn, 334086, BombSpawn)
     eq.register_npc_event("queen", Event.timer, 334086, AddTimer)

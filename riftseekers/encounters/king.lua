@@ -172,7 +172,7 @@ function PrinceTimer(e)
 			--#Prince_Allin (334036), #Prince_Britalic (334037), #Prince_Kiranus (334035)
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
-		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334036 or npc:GetNPCTypeID() == 334037 or npc:GetNPCTypeID() == 334035)) then
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334036 or npc:GetNPCTypeID() == 334037 or npc:GetNPCTypeID() == 334035 or npc:GetNPCTypeID() == 334094)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1);
 		end
 		end
@@ -180,7 +180,7 @@ function PrinceTimer(e)
 			--#Prince_Scyllus (334038), #Prince_Ilsin (334040),#Prince_Cynin (334039)
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
-		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334038 or npc:GetNPCTypeID() == 334040 or npc:GetNPCTypeID() == 334039)) then
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334038 or npc:GetNPCTypeID() == 334040 or npc:GetNPCTypeID() == 334039 or npc:GetNPCTypeID() == 334094)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1);
 		end
 		end

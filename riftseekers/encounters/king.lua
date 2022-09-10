@@ -102,20 +102,34 @@ function KingTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
+	eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
             local portal = portals[eq.ChooseRandom(334040, 334039, 334038, 334037, 334036, 334035)]
             eq.spawn2(334095, 0, 0, portal:GetX(), portal:GetY(), portal:GetZ(), portal:GetHeading())
         else
             eq.stop_timer("portals")
             timerstate[e.self:GetID()] = false
         end
+elseif e.timer == "aggro" then
+		local get_client=eq.get_entity_list():GetRandomClient(-46,-474,-778,108900); --330x330
+
+		--get client within 330 radius			
+		if (get_client.valid and not get_client:GetFeigned()) then
+			
+			e.self:AddToHateList(get_client,1);
+		end
     end
 end
 
 function KingCombat(e)
-    if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
-        timerstate[e.self:GetID()] = true
-        -- should we spawn adds?
+    if e.joined then
+		if timerstate[e.self:GetID()] == false then
+        	eq.set_timer("portals", 5000) -- 5 sec initially
+        	timerstate[e.self:GetID()] = true
+		end
+	eq.stop_timer("aggro");
+	else
+		eq.set_timer("aggro", 5 * 1000);
+        
     end
 end
 

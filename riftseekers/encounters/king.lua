@@ -137,6 +137,10 @@ function KingDeath(e)
     king = nil
 end
 
+function KingSignal(e)
+	eq.set_timer("aggro", 5 * 1000);
+end
+
 -- prince hooks
 function PrinceSpawn(e)
     eq.set_timer("tether", 6000)
@@ -213,6 +217,7 @@ function PrinceDeath(e)
         king:SetSpecialAbility(SpecialAbility.immune_magic, 0)
         king:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
         king:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
+	eq.signal(334041,1); --#King_Gelaqua (334041)
     end
 	
 	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334036) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334037) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334035) == false) then
@@ -340,6 +345,7 @@ function event_encounter_load(e)
     eq.register_npc_event("king", Event.spawn, 334041, KingSpawn)
     eq.register_npc_event("king", Event.timer, 334041, KingTimer)
     eq.register_npc_event("king", Event.combat, 334041, KingCombat)
+eq.register_npc_event("king", Event.signal, 334041, KingSignal)
     eq.register_npc_event("king", Event.death_complete, 334041, KingDeath)
 
     eq.register_npc_event("king", Event.spawn, 334040, PrinceSpawn)

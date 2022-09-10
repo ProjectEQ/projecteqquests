@@ -263,6 +263,7 @@ function FeranCombat(e)
 if(e.joined) then
 eq.stop_timer("depop");
 else
+e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 eq.set_timer("depop", 270 * 1000);
 end
 end

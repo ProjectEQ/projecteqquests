@@ -259,6 +259,20 @@ function FeranSpawn(e)
     eq.set_timer("depop", 270000) -- 4 min 30 sec
 end
 
+function FeranCombat(e)
+if(e.joined) then
+eq.stop_timer("depop");
+else
+eq.set_timer("depop", 270 * 1000);
+end
+end
+
+function FeranTimer(e)
+if (e.timer == "depop") then
+eq.depop();
+end
+end
+
 function OrbSpawn(e)
     if king ~= nil then
         e.self:MoveTo(king:GetX(), king:GetY(), king:GetZ(), 0, true)
@@ -382,7 +396,8 @@ eq.register_npc_event("king", Event.signal, 334040, PrinceSignal)
     eq.register_npc_event("king", Event.death_complete, 334035, PrinceDeath)
 
     eq.register_npc_event("king", Event.spawn, 334094, FeranSpawn)
-    eq.register_npc_event("king", Event.timer, 334094, AddTimer)
+    eq.register_npc_event("king", Event.combat, 334094, FeranCombat)
+	eq.register_npc_event("king", Event.timer, 334094, FeranTimer)
 
     eq.register_npc_event("king", Event.spawn, 334095, OrbSpawn)
     eq.register_npc_event("king", Event.timer, 334095, AddTimer)

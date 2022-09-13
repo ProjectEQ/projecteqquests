@@ -231,8 +231,8 @@ function PrinceDeath(e)
 			if (npc.valid and (npc:GetNPCTypeID() == 334039 or npc:GetNPCTypeID() == 334040 or npc:GetNPCTypeID() == 334038)) then
 					--#Prince_Scyllus (334038), #Prince_Ilsin (334040),#Prince_Cynin (334039)
 			--npc:AddToHateList(e.self:GetHateTop(),1);
-			npc:ModifyNPCStat("aggro", "445");
-			npc:ModifyNPCStat("assist", "445");
+			npc:ModifyNPCStat("aggro", "200");
+			npc:ModifyNPCStat("assist", "200");
 			end
 		end
 	elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334038) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334040) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334039) == false) then
@@ -247,8 +247,8 @@ function PrinceDeath(e)
 			if (npc.valid and (npc:GetNPCTypeID() == 334037 or npc:GetNPCTypeID() == 334036 or npc:GetNPCTypeID() == 334035)) then
 				--#Prince_Allin (334036), #Prince_Britalic (334037), #Prince_Kiranus (334035)
 			--npc:AddToHateList(e.self:GetHateTop(),1);
-			npc:ModifyNPCStat("aggro", "445");
-			npc:ModifyNPCStat("assist", "445");
+			npc:ModifyNPCStat("aggro", "200");
+			npc:ModifyNPCStat("assist", "200");
 			end
 		end
 	end

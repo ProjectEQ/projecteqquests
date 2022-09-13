@@ -182,7 +182,7 @@ function PrincessCombat(e)
 	eq.set_timer("hatelink", 4 * 1000);
 	else
 		if add_sequence == 1 then
-			--eq.set_timer("aggro", 5 * 1000);
+			eq.set_timer("aggro", 5 * 1000);
 		end
 	eq.stop_timer("hatelink");
     end

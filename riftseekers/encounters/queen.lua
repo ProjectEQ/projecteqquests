@@ -41,7 +41,8 @@ local queen = nil
 local bombstate = {} -- [Spawn ID, chase state]
 local timerstate = {} -- [Spawn ID, state of timer for portal adds]
 local princesscount = 0
-
+local ellipse = require("ellipse")
+boundary = ellipse(207, -531, 170, 89)
 -- various functions we use
 function CheckLeash(e)
     if not leash_box:contains(e.self:GetX(), e.self:GetY()) then
@@ -75,6 +76,7 @@ end
 function QueenSpawn(e)
     queen = e.self
     princesscount = 0
+	add_sequence = 0
     eq.unique_spawn(334048, 0, 0, 25, -725, 308.750000, 0) -- Zulaqua
     eq.unique_spawn(334047, 0, 0, 64.239998, -725.890015, 301.559998, 511.200012) -- Yelnia
     eq.unique_spawn(334045, 0, 0, 310.910004, -726.130005, 301.464203, 0) -- Quellon
@@ -91,6 +93,7 @@ function QueenTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
+	eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
             local portal = portals[eq.ChooseRandom(334048, 334047, 334045, 334043, 334044, 334046)]
             eq.spawn2(334086, 0, 0, portal:GetX(), portal:GetY(), portal:GetZ(), portal:GetHeading())
         else
@@ -101,10 +104,11 @@ function QueenTimer(e)
 end
 
 function QueenCombat(e)
-    if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", 40000) -- 40 sec
-        timerstate[e.self:GetID()] = true
-        -- should we spawn adds?
+    if e.joined then
+	if timerstate[e.self:GetID()] == false then
+        	eq.set_timer("portals", 5000) -- 5 sec initially
+        	timerstate[e.self:GetID()] = true
+        end
     end
 end
 
@@ -130,6 +134,36 @@ function PrincessTimer(e)
             eq.stop_timer("portals")
             timerstate[e.self:GetID()] = false
         end
+		
+	elseif e.timer == "aggro" then
+		--local get_client=eq.get_entity_list():GetRandomClient(-46,-474,-778,108900); --330x330
+
+		--get client within 445 radius			
+		--if (get_client.valid and not get_client:GetFeigned()) then
+			
+			--e.self:AddToHateList(get_client,1);
+		--end
+		if boundary:contains(e.other:GetX(), e.other:GetY()) then
+			e.self:AddToHateList(e.other,1);
+		end
+	elseif e.timer == "hatelink" then
+		if (e.self:GetNPCTypeID() == 334043 or e.self:GetNPCTypeID() == 334044 or e.self:GetNPCTypeID() == 334045) then
+			--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334043 or npc:GetNPCTypeID() == 334044 or npc:GetNPCTypeID() == 334045 or npc:GetNPCTypeID() == 334085)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+		end
+		end
+		elseif (e.self:GetNPCTypeID() == 334048 or e.self:GetNPCTypeID() == 334047 or e.self:GetNPCTypeID() == 334046) then
+			--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334048 or npc:GetNPCTypeID() == 334047 or npc:GetNPCTypeID() == 334046 or npc:GetNPCTypeID() == 334085)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+		end
+		end
+		end
     end
 end
 
@@ -140,7 +174,19 @@ function PrincessCombat(e)
             timerstate[e.self:GetID()] = true
             --PortalAdds(portals[e.self:GetNPCTypeID()])
         end
+	eq.stop_timer("aggro");
+	eq.set_timer("hatelink", 4 * 1000);
+	else
+		if add_sequence == 1 then
+			eq.set_timer("aggro", 5 * 1000);
+		end
+	eq.stop_timer("hatelink");
     end
+end
+
+function PrincessSignal(e)
+	add_sequence = 1;
+	eq.set_timer("aggro", 5 * 1000);
 end
 
 function PrincessDeath(e)
@@ -241,6 +287,14 @@ function event_encounter_load(e)
     eq.register_npc_event("queen", Event.combat, 334043, PrincessCombat)
     eq.register_npc_event("queen", Event.combat, 334044, PrincessCombat)
     eq.register_npc_event("queen", Event.combat, 334046, PrincessCombat)
+	
+eq.register_npc_event("queen", Event.signal, 334048, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334047, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334045, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334043, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334044, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334046, PrincessSignal)
+	
     eq.register_npc_event("queen", Event.death_complete, 334048, PrincessDeath)
     eq.register_npc_event("queen", Event.death_complete, 334047, PrincessDeath)
     eq.register_npc_event("queen", Event.death_complete, 334045, PrincessDeath)

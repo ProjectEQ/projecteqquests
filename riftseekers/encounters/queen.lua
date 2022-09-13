@@ -41,8 +41,8 @@ local queen = nil
 local bombstate = {} -- [Spawn ID, chase state]
 local timerstate = {} -- [Spawn ID, state of timer for portal adds]
 local princesscount = 0
-local ellipse = require("ellipse")
-boundary = ellipse(207, -531, 170, 89)
+--local ellipse = require("ellipse")
+--boundary = ellipse(207, -531, 170, 89)
 -- various functions we use
 function CheckLeash(e)
     if not leash_box:contains(e.self:GetX(), e.self:GetY()) then
@@ -178,7 +178,7 @@ function PrincessCombat(e)
 	eq.set_timer("hatelink", 4 * 1000);
 	else
 		if add_sequence == 1 then
-			eq.set_timer("aggro", 5 * 1000);
+			--eq.set_timer("aggro", 5 * 1000);
 		end
 	eq.stop_timer("hatelink");
     end

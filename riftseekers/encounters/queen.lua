@@ -41,8 +41,8 @@ local queen = nil
 local bombstate = {} -- [Spawn ID, chase state]
 local timerstate = {} -- [Spawn ID, state of timer for portal adds]
 local princesscount = 0
---local ellipse = require("ellipse")
---boundary = ellipse(207, -531, 170, 89)
+local ellipse = require("ellipse")
+
 -- various functions we use
 function CheckLeash(e)
     if not leash_box:contains(e.self:GetX(), e.self:GetY()) then
@@ -136,6 +136,7 @@ function PrincessTimer(e)
         end
 		
 	elseif e.timer == "aggro" then
+		boundary = ellipse(207, -531, 170, 89)
 		--local get_client=eq.get_entity_list():GetRandomClient(-46,-474,-778,108900); --330x330
 
 		--get client within 445 radius			

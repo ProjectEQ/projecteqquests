@@ -41,7 +41,9 @@ local queen = nil
 local bombstate = {} -- [Spawn ID, chase state]
 local timerstate = {} -- [Spawn ID, state of timer for portal adds]
 local princesscount = 0
---local ellipse = require("ellipse")
+local ellipse = require("ellipse_box")
+local boundary = ellipse(207,-531, 170, 89)
+--boundary = ellipse(207, -531, 170, 89)
 
 -- various functions we use
 function CheckLeash(e)
@@ -136,11 +138,18 @@ function PrincessTimer(e)
         end
 		
 	elseif e.timer == "aggro" then
-		--boundary = ellipse(207, -531, 170, 89)
 		
-		--if boundary:contains(e.other:GetX(), e.other:GetY()) then
+		local clients = eq.get_entity_list():GetClientList();
+        	for client in clients.entries do
+                	if client.valid and boundary:contains(client:GetX(), client:GetY()) then
+                        	e.self:Shout("In ellipse: " .. client:GetName())
+				e.self:AddToHateList(client,1);
+                	elseif client.valid then 
+                        	e.self:Shout("Not in ellipse: " .. client:GetName())
+                	end
+        	end
 		--	e.self:AddToHateList(e.other,1);
-		--end
+		
 	elseif e.timer == "hatelink" then
 		if (e.self:GetNPCTypeID() == 334043 or e.self:GetNPCTypeID() == 334044 or e.self:GetNPCTypeID() == 334045) then
 			--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)

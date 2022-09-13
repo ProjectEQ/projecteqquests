@@ -197,6 +197,39 @@ function PrincessDeath(e)
         queen:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
         queen:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
     end
+	
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334048) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334047) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334046) == false) then
+		--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
+		eq.signal(334043,1);
+		eq.signal(334044,1);
+		eq.signal(334045,1);
+		
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 334043 or npc:GetNPCTypeID() == 334044 or npc:GetNPCTypeID() == 334045)) then
+					--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
+			--npc:AddToHateList(e.self:GetHateTop(),1);
+			npc:ModifyNPCStat("aggro", "200");
+			npc:ModifyNPCStat("assist", "200");
+			end
+		end
+	elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334043) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334044) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334045) == false) then
+		
+		--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
+		eq.signal(334048,1);
+		eq.signal(334047,1);
+		eq.signal(334046,1);
+		
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 334048 or npc:GetNPCTypeID() == 334047 or npc:GetNPCTypeID() == 334046)) then
+				--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
+			--npc:AddToHateList(e.self:GetHateTop(),1);
+			npc:ModifyNPCStat("aggro", "200");
+			npc:ModifyNPCStat("assist", "200");
+			end
+		end
+	end
 end
 
 -- other hooks

@@ -112,7 +112,7 @@ function event_trade(e)
 					e.other:QuestReward(e.self,0,0,0,0,70894,100000); -- Item: 
 				end
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 51478,item2 = 51499,item3 = 51499})) then -- leather feet rewards 
-			e.self:Say("Well done ".. e.other:GetCleanName() ..". I understand the Muramites guard these well. I'll bury this stone so the dragorn of Kuua can move on from the horrors of the past and instead look to the future. As promised, here is a pair of finely crafted leather boots as your reward.");
+			e.self:Say("Yes, this surely must be the medal earned by the Muramite that captured Vrago. He will no longer threaten any of my people and for that I thank you. It will be but a moment as I use the gut strings you gave me to finish tailoring the boots to you. Yes, here, I am sure you will be most pleased by the service they provide you.");
 			e.other:AddEXP(100000);
 				if class == "Monk" or e.other:GetGM() then
 					e.other:QuestReward(e.self,0,0,0,0,70899,100000); -- Item:

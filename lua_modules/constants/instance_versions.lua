@@ -66,6 +66,7 @@ instance_version = {
     thundercrest_isles_throes_of_contagion = 12,
     thundercrest_isles_plunder_the_hoard = 13,
     thundercrest_isles_gilded_scroll = 14,
+    thundercrest_isles_secret_of_the_storm = 15,
     lavaspinners_lair_grounding_the_drakes = 1,
     lavaspinners_lair_a_halflings_greed = 2,
     lavaspinners_lair_forbins_elixir = 3,

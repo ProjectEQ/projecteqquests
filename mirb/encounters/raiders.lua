@@ -22,7 +22,7 @@ local function get_nearest_goblin(goblin, range)
   local npc_list = eq.get_entity_list():GetNPCList()
   for npc in npc_list.entries do
     if npc.valid and npc:GetID() ~= goblin:GetID() and goblin_types[npc:GetNPCTypeID()] then
-      local has_hate = npc:GetHateList().entries() and true or false
+      local has_hate = npc:IsEngaged()
       local dist = npc:CalculateDistance(goblin:GetX(), goblin:GetY(), goblin:GetZ())
 
       if has_hate and dist < range then

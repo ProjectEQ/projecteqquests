@@ -10,8 +10,8 @@ end
 
 function event_proximity_say(e)
   eq.debug("prox_say " .. e.message .. " " .. e.other:GetName());
-  local client_globals = eq.get_qglobals(e.other)
-  local mnk_pre = tonumber(client_globals["MnkPre"]);
+  local qglobals = eq.get_qglobals(e.other)
+  local mnk_pre = tonumber(qglobals["MnkPre"]);
   if (mnk_pre == nil) then mnk_pre = 0; end
 
   eq.debug("mnk_pre " .. mnk_pre);

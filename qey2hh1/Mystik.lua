@@ -1,8 +1,8 @@
 -- Monk Epic 1.5/2.0 (Prequest)
 
 function event_say(e)
-  local client_globals = eq.get_qglobals(e.other)
-  local mnk_pre = tonumber(client_globals["MnkPre"]);
+  local qglobals = eq.get_qglobals(e.other)
+  local mnk_pre = tonumber(qglobals["MnkPre"]);
   if (mnk_pre == nil) then mnk_pre = 0; end
     
   if (mnk_pre == 1) then

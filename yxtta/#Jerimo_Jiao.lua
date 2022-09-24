@@ -23,7 +23,7 @@ function event_say(e)
 						if (mob_v.valid and mob_v:IsClient()) then
 							local client_v = mob_v:CastToClient();
 							if (client_v.valid) then
-								qglobals = eq.get_qglobals(client_v);
+								local qglobals = eq.get_qglobals(client_v);
 								if (e.other:Admin() <= 80 and qglobals["uqualockout"] ~= nil) then
 									e.other:Message(13, client_v:GetCleanName().." has a lockout");
 									HasLockout = HasLockout + 1;

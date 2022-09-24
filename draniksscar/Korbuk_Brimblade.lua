@@ -40,45 +40,45 @@ function event_say(e)
 			e.self:Say("I found dis shank during a battle dat raged on for many weeks. It was solid and strong, perfectly balanced and had an aura of cunning like I'd never seen before. I took it and stored it away in my vault at home. One night while I was away, a gang of pirates aboard da Hate's Fury plundered my home city and took da shank. I've heard dat it is in da hold of an undead pirate, long forgotten to da ages, so I need you to go recover it for me.");
 		elseif(e.message:findi("job") and qglobals["warrior_pre"] == "4") then
 			e.self:Say("I need the hilt, the blade and the plans taken to an ornery dwarf in the frozen tundra to the south. He hides among the coldain, mostly to keep himself drunk as much as possible. Unfortunately, he's the best person to combine the blade and the hilt into something I can use, so you need to find him and give him the three pieces. His name is Dardek.");
-		elseif(e.message:findi("true warrior") and qglobals["warrior_epic"] >= "1") then	
+		elseif(e.message:findi("true warrior") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "1") then	
 			e.self:Say("Time passed and no warrior came forth. Then da terrible scourge took hold of da ogres and we began to lose ourselves. It was then dat another ancestor of mine, Grivnok Brimblade, asked a human to take charge of da scabbard until da scourge had waned. He would know dat time when a descendant of Korbuk with da same name would come forth. It was then dat da Redblade family, led by Thegrek, took over da charge of da scabbard until I would return to [" .. eq.say_link("reclaim da charge") .. "] in da name of da Brimblade family.");
-		elseif(e.message:findi("reclaim da charge") and qglobals["warrior_epic"] >= "1") then
+		elseif(e.message:findi("reclaim da charge") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "1") then
 			e.self:Say("It was I who returned to da Redblades, who spoke with da descendant of Thegrek. But I could not reclaim da charge. I felt a greater power, something more amazing and powerful than even da red scabbard contained. What draw I felt from da scabbard I felt ten fold from this [" .. eq.say_link("new source") .. "], and I was unable to explain where it was coming from. I just know dat it has drawn me here, to this place, so that I might find da answers I seek here.");
-		elseif(e.message:findi("new source") and qglobals["warrior_epic"] >= "1") then
+		elseif(e.message:findi("new source") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "1") then
 			e.self:Say("I can't express who or what it is dat is drawing me here. I only know dat this is where I must be. I feel as though this is something like da scabbard, but more powerful. Perhaps it is a new weapon? If so, I must be da one to lead da charge to protect its power until da right warrior comes along to claim it. Just as my family led da charge so long ago to protect da red scabbard, so shall I continue it with this new journey. Are you [" .. eq.say_link("willing to help") .. "] knowing all dat?");
-		elseif(e.message:findi("willing to help") and qglobals["warrior_epic"] >= "1") then	
+		elseif(e.message:findi("willing to help") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "1") then	
 			e.self:Say("I had hoped so. Let's get started then. It seems the powerful lure is greatest when I am at this point, so I must remain here to ensure dat I can keep a grasp on where it resides. I'm hoping dat after you return with whatever you can find, I'll be able to uncover more information. From time to time, I get flashes of da things dat we need to find, like da picture of a place or a [" .. eq.say_link("thing") .. "]...");
-		elseif(e.message:findi("thing") and qglobals["warrior_epic"] >= "1") then	
+		elseif(e.message:findi("thing") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "1") then	
 			e.self:Say("Just now I had a flash of a book, or pages of a book. Just as quickly as the book was there, it split into da cover and three pages and then fell to da ground. I wonder if dat's going to happen often... In any case, maybe you should have a look around to see if you can find any pages from a book that are on da ground. Return to me if you find them.");
-		elseif(e.message:findi("rock") and qglobals["warrior_epic"] >= "2") then
+		elseif(e.message:findi("rock") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "2") then
 			e.self:Say("I was holding da rock when I had dat vision. Whatever happened to me was passed into da rock as well and I can sense some power within da rock now. Maybe holding da rock will lead you to da creature or maybe it will lead you to something near da creature, I don't really know. You have to keep a tight grip on it though, else I don't think you'll feel da power drawing you as I did. If you do find da beast, be careful. There's no telling what dangers lay in this place.");
 			e.other:SummonItem(60300); -- Energy Receptor
-		elseif(e.message:findi("smith") and qglobals["warrior_epic"] >= "2") then
+		elseif(e.message:findi("smith") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "2") then
 			e.self:Say("Blacksmith, yes. She's dealt with some of da more interesting things I've needed worked on lately and I know she'll be able to help with dat ore as well. She's in Nedaria's Landing, so you shouldn't have a lot of trouble finding her. Give her da ore and these smelting plans, she should know what to do wit them from there.");
-		elseif(e.message:findi("loose") and qglobals["warrior_epic"] >= "3") then
+		elseif(e.message:findi("loose") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "3") then
 			e.self:Say("Somehow da creature dat left da ore has made its way back to Norrath and is tearing through da mountainsides! You have to head it off in da crumbling caverns of Vxed before it can get any further! Be careful, though. I had a vision of some of its spawn with it so you may have to take care of more than just da one creature when you get there. Now Hurry!");
 			eq.set_global("warrior_epic_vxed","1",5,"F"); --flag for vxed event
-		elseif(e.message:findi("journey") and qglobals["warrior_epic"] >= "3") then
+		elseif(e.message:findi("journey") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "3") then
 			e.self:Say("I noticed dat da blood gave me some kind of feeling. I'm not sure whether it was da same magic dat's been giving me visions or something new, but I'd like you to take it to a shaman I knew briefly growing up. He's a friend of da Redblade family and I'm sure he'd be willing to help. Just tell him I sent you. His name is Kimber Whitefoot and you shouldn't have trouble finding him, he's a very large barbarian.");
-		elseif(e.message:findi("vision") and qglobals["warrior_epic"] >= "3") then
+		elseif(e.message:findi("vision") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "3") then
 			e.self:Say("Da vision I had showed me an impish creature. It was dark and twisted and seemed to devour energy from da chaos surrounding us. I don't know what part it plays in this, but like everything else, I'm sure it's important. Perhaps there is another portal around dat was destroyed, like it was in Taelosia. See if you can find it and look for da creature there, then return to me whatever it may have in its possession dat we can use.");
-		elseif(e.message:findi("Cleaning up da hilt?") and qglobals["warrior_epic"] >= "6") then
+		elseif(e.message:findi("Cleaning up da hilt?") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "6") then
 			e.self:Say("Right now it would fall apart if you tried to attach a blade to it. We're going to put some luster back into da hilt and I think I may know someone who can do it. I don't remember her name or even where I found her, but I do remember running into a [" .. eq.say_link("shady jeweler") .. "] on da outskirts of one of the larger cities of Kunark.");
-		elseif(e.message:findi("shady jeweler") and qglobals["warrior_epic"] >= "6") then
+		elseif(e.message:findi("shady jeweler") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "6") then
 			e.self:Say("She worked on da outskirts to sell to less reputable individuals, like myself. She didn't live on the outskirts though, only worked there. I want to say she was part of da port authority, but I can't quite remember. I also don't remember her name, or if I even ever knew it, but I do remember dat she was one of da best I ever dealt with. Take da hilt to her, if you can find her, and see what she can do with it. One more thing, she's a fan of her own tongues, so be prepared for dat when you speak with her.");
-		elseif(e.message:findi("glimpse") and qglobals["warrior_epic"] >= "10") then
+		elseif(e.message:findi("glimpse") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "10") then
 			e.self:Say("It was a series of images, really. One was of a [" .. eq.say_link("young combatant") .. "] within da Muramite ranks. One was of a [" .. eq.say_link("gorge") .. "] somewhere. Da third was a [" .. eq.say_link("maze") .. "] of some sort, and da final one was in a [" .. eq.say_link("field of blood") .. "] . At da end, I saw four eyes dat appeared in da center of da hilt. I'm guessing da eyes go in those four holes on each side of da hilt and dat one each can be found in those four places.");
-		elseif(e.message:findi("young combatant") and qglobals["warrior_epic"] >= "10") then
+		elseif(e.message:findi("young combatant") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "10") then
 			e.self:Say("I noticed a creature dat walked like a man but looked like a dragon and was near a fortress. I can't say where exactly it was, but I can say it was a powerful looking creature unchanged by da onslaught of war. I'm guessing he is a relatively new champion of their people.");
-		elseif(e.message:findi("gorge") and qglobals["warrior_epic"] >= "10") then	
+		elseif(e.message:findi("gorge") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "10") then	
 			e.self:Say("Giant creatures lumbered over da eye. I can't really say much else because dat's all I saw. They were massive and didn't look terribly friendly.");
-		elseif(e.message:findi("maze") and qglobals["warrior_epic"] >= "10") then
+		elseif(e.message:findi("maze") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "10") then
 			e.self:Say("Near a great crystal tower within da maze, I saw da eye gleaming up at da sky. You should take caution because da tower is unlike any I've ever seen before.");
-		elseif(e.message:findi("field of blood") and qglobals["warrior_epic"] >= "10") then
+		elseif(e.message:findi("field of blood") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "10") then
 			e.self:Say("In a field of blood, near a large fortress, you'll find da fourth eye, though it may be out of da sight of prying eyes.");
-		elseif(e.message:findi("another image") and qglobals["warrior_epic"] >= "14") then
+		elseif(e.message:findi("another image") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "14") then
 			e.self:Say("This one is of da completed sword. It's not too shabby, but it's not great either. It looks like there will be more dat needs to be done than just what we have so far. In any case, I know how to get da sword put back together. It'll involve a trip to see my brother, [" .. eq.say_link("Krekk") .. "].");
-		elseif(e.message:findi("krekk") and qglobals["warrior_epic"] >= "14") then	
+		elseif(e.message:findi("krekk") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "14") then	
 			e.self:Say("He's become one of da finest sword makers I've ever known. He'll know just how to put da hilt and da sword together to make a finely balanced weapon. He had come with me to this place, but went ahead to find new and precious metals he could use to make new blades. I think he mentioned visiting a ruined city somewhere, but I'm not certain.");
 		elseif(e.message:findi("one") and qglobals["warrior_epic"] == "16") then
 			e.self:Say("Only da one who had da power to combine da sword could have come so far. You have it in you to make dat sword great! Right now, its power is minor. With some time and effort, you might be able to bring it into da light and make it da most powerful sword ever known! When I touched da sword, I sensed a [" .. eq.say_link("presence") .. "] within it.");

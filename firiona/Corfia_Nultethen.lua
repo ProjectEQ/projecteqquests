@@ -26,25 +26,25 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(item_lib.check_turn_in(e.trade, {item1 = 16503}) and qglobals["warrior_epic"] >= "6") then --Platinum Bar (vendor sold)
+	if(qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "6" and item_lib.check_turn_in(e.trade, {item1 = 16503})) then --Platinum Bar (vendor sold)
 		e.self:Say("Aha, something worth my time. But I've changed my mind. I'd prefer if you made me something that really showed me how interested you are in my craft. We jewelers are hard to please, but if you can present me with a [Nocturnal Mask of Acuity], I'd be more than willing to at least speak with you.");
 		if(qglobals["warrior_epic"] < "7") then
 			eq.set_global("warrior_epic","7",5,"F");
 		end
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60309}) and qglobals["warrior_epic"] >= "7") then --Nocturnal Mask of Acuity (crafted)
+	if(qqglobals["warrior_epic"] ~= nil and globals["warrior_epic"] >= "7" and item_lib.check_turn_in(e.trade, {item1 = 60309})) then --Nocturnal Mask of Acuity (crafted)
 		e.self:Say("Well done, but not great. It doesn't have the sight properties I'd hoped for, but it looks nice nonetheless. I half thought you'd shy away from creating such a lustrous piece of jeweled metal. You didn't though, so now you have my attention. What is it that you have for me to look at?");
 		if(qglobals["warrior_epic"] < "8") then
 			eq.set_global("warrior_epic","8",5,"F");
 		end
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60307}) and qglobals["warrior_epic"] >= "8") then --Decrepit Hilt
+	if(qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "8" and item_lib.check_turn_in(e.trade, {item1 = 60307})) then --Decrepit Hilt
 		e.self:Say("What a filthy piece of rubbish! This will need a good deal of work, I can guarantee you that. I have a small repository of supplies that I only rarely use, and one of the things I have is a cleaning solution. I don't often use it for most mundane things, but I'd be willing to part with some if you're willing to do me a [favor].");
 		if(qglobals["warrior_epic"] < "9") then
 			eq.set_global("warrior_epic","9",5,"F");
 		end
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 60310}) and qglobals["warrior_epic"] == "9") then --Skeletal Tome of Galuk Drek (drops from Decaying Lord Galuk Drek in veksar)
+	if(qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] == "9" and item_lib.check_turn_in(e.trade, {item1 = 60310})) then --Skeletal Tome of Galuk Drek (drops from Decaying Lord Galuk Drek in veksar)
 		e.self:Say("Wow... I hadn't expected you'd be so quick about things. This is the most amazing find ever, you've helped me more then you could ever know! Thanks so much! I made sure to polish that hilt up for you as best as I could, and even added a few touches to it that'll make even stronger that it was before.");
 		e.other:SummonItem(60311); --Glistening Hilt
 		eq.delete_global("warrior_epic_veksar");

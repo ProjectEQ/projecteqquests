@@ -15,7 +15,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(item_lib.check_turn_in(e.trade, {item1 = 21699}) and qglobals["Halloween2018"] == "1") then -- Halloween 2018
+	if(qglobals["Halloween2018"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 21699})) then -- Halloween 2018
 		e.self:Say("Oh my, Crysta sure is serious about this if she's sending random adventurers out here. Let me look through my notes, can you hold on a second?");
 		e.self:Say("Here you go, bring these back to Crysta. She will be most pleased with my information, and don't try to put your nose in there you'll never understand those notes!");
 		e.other:SummonItem(46200); -- Item: Cryptic Scroll

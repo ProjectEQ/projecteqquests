@@ -21,7 +21,7 @@ function event_trade(e)
 		e.self:Emote("holds the sphere and makes intricate marks and patterns on it, eventually turning the entire crystal clear. She rolls it across the hammer, raising a ringing sound in the room. 'There. Now take the hammer back to Kinlo. He'll know what to do from here. Good luck to you.'");
 		e.other:Ding();
 		e.other:SummonItem(20485); -- Item: Hammer of the Ancients
-  elseif ( item_lib.check_turn_in(e.trade, {item1 = 62638, item2 = 62604}) and qglobals["ranger_epic15_pre"] == "10") then
+  elseif (qglobals["ranger_epic15_pre"] == "10" and item_lib.check_turn_in(e.trade, {item1 = 62638, item2 = 62604})) then
 		e.other:Ding();
     e.other:SummonItem(62600); -- Item: Essence of Earth and Wind
     eq.set_global("ranger_epic15_pre","11",5,"F");

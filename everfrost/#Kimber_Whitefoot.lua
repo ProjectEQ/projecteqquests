@@ -12,7 +12,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(item_lib.check_turn_in(e.trade, {item1 = 60305}) and qglobals["warrior_epic"] >= "3") then --Sealed Vial of Blackfall Blood (from korbuk)
+	if(qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "3" and item_lib.check_turn_in(e.trade, {item1 = 60305})) then --Sealed Vial of Blackfall Blood (from korbuk)
 		e.self:Say("Great, wait out here for a while. I've got to make a trip into the frozen mountain of Permafrost, but I'll be out some time this evening. I should have enough time on my trek to examine the vial. I'll be back soon!");
 		if(qglobals["warrior_epic"] < "4") then
 			eq.set_global("warrior_epic","4",5,"F");

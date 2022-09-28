@@ -9,7 +9,7 @@ function event_say(e)
 		proof = 1;
 	elseif(e.message:findi("friend") and proof == 1) then
 		e.self:Say("My memory is a bit fuzzy. If you are a friend, prove it to me.");
-		proof = 1;
+		proof = 2;
 	end
 end	
 
@@ -17,6 +17,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13903}) and proof == 2) then -- Bent Card
+        proof = 0;
 		e.self:Say("");
 		e.other:SummonItem(18722); --Sealed Note For Knargon 
 		e.other:Ding();

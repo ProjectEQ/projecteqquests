@@ -54,6 +54,12 @@ function event_say(e)
   end
 end
 
+function event_task_accepted(e)
+  if e.task_id == 4818 or e.task_id == 4819 or e.task_id == 4820 then -- Scales of Justice
+    e.other:SummonItem(36215) -- item: Small sack of Koi Food
+  end
+end
+
 function event_trade(e)
   local item_lib = require("items")
   item_lib.return_items(e.self, e.other, e.trade)

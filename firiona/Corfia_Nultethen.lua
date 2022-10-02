@@ -32,7 +32,7 @@ function event_trade(e)
 			eq.set_global("warrior_epic","7",5,"F");
 		end
 	end
-	if(qqglobals["warrior_epic"] ~= nil and globals["warrior_epic"] >= "7" and item_lib.check_turn_in(e.trade, {item1 = 60309})) then --Nocturnal Mask of Acuity (crafted)
+	if(qqglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "7" and item_lib.check_turn_in(e.trade, {item1 = 60309})) then --Nocturnal Mask of Acuity (crafted)
 		e.self:Say("Well done, but not great. It doesn't have the sight properties I'd hoped for, but it looks nice nonetheless. I half thought you'd shy away from creating such a lustrous piece of jeweled metal. You didn't though, so now you have my attention. What is it that you have for me to look at?");
 		if(qglobals["warrior_epic"] < "8") then
 			eq.set_global("warrior_epic","8",5,"F");

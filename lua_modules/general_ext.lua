@@ -217,3 +217,16 @@ function eq.seconds(duration_str)
 	local s = duration_str:match("(%d+)s") or 0
 	return s + (m * 60) + (h * 3600) + (d * 86400) + (w * 604800)
 end
+
+-- random amount of cash in copper, returns totals of copper, silver, gold, platinum
+function eq.RandomCash(min, max)
+	local total = Random.Int(min, max)
+	local platinum = math.modf(total / 1000)
+	total = total - platinum * 1000
+	local gold = math.modf(total / 100)
+	total = total - gold * 100
+	local silver = math.modf(total / 10)
+	total = total - silver * 10
+	return total, silver, gold, platinum
+end
+

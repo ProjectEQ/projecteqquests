@@ -1,8 +1,8 @@
 -- guards and corresponding Artifact_of_Yar`Lir spawngroup id
 local guards = {
-  [340752] = 288022, -- Defender_of_the_Halls
-  [340753] = 288024, -- Guardian_of_the_Halls
-  [340754] = 288030, -- Protector_of_the_Halls
+  [340752] = 288036, -- Defender_of_the_Halls
+  [340753] = 288040, -- Guardian_of_the_Halls
+  [340754] = 288045, -- Protector_of_the_Halls
 }
 
 local artifacts = {

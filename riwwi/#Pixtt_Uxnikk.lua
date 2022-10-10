@@ -25,7 +25,7 @@ function event_spawn(e)
 end
 
 function event_timer(e)
-local rand = math.random(1,16); 
+local rand = math.random(1,17); 
 	if (rand == 1) then
 	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'I could stay here all day and watch this bloodsport.");
 	eq.zone_emote(0,"Pixtt Kekken shouts, 'You DO stay here all day.");
@@ -74,5 +74,8 @@ local rand = math.random(1,16);
 	elseif (rand == 16) then
 	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'Remember when that wild animal tore a slave to shreds?");
 	eq.zone_emote(0,"Pixtt Kekken shouts, 'How could I forget?  Ha ha.");
+	elseif (rand == 17) then
+	eq.zone_emote(0,"Pixtt Uxnikk spits in disgust. 'I thought we were going to see a real battle?!");
+	eq.zone_emote(0,"Pixtt Kekken shouts, 'Looks like our low expectations weren't quite low enough.");
 	end
 end

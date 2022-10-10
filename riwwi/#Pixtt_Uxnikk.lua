@@ -36,8 +36,8 @@ local rand = math.random(1,16);
 	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'These people have no idea what it's like to be real warriors.");
 	eq.zone_emote(0,"Pixtt Kekken shouts, 'Putting them out of their misery would be doing us all a favor.");
 	elseif (rand == 4) then
-	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'I do enjoy listening to those screams of pain.");
-	eq.zone_emote(0,"Pixtt Kekken shouts, 'Yes, yes.  There is no music more beautiful.");
+	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'What is that odd taste in my mouth? It's strangely like... the bitter taste of disappointment.");
+	eq.zone_emote(0,"Pixtt Kekken shouts, 'You sure it wasn't something Vuzcv cooked up?");
 	elseif (rand == 5) then
 	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'I do enjoy listening to those screams of pain.");
 	eq.zone_emote(0,"Pixtt Kekken shouts, 'Yes, yes.  There is no music more beautiful.");

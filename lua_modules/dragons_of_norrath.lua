@@ -333,6 +333,33 @@ function don.get_filtered_tasks(player_state, task_table)
   return task_offers
 end
 
+-- item ids used for the "Clues" mission
+don.clue_item_ids = {
+  scrap_of_dark_cloth       = 81904, -- Scrap of Dark Cloth
+  deformed_dragon_embryo    = 81905, -- Deformed Dragon Embryo
+  desiccated_drake_corpse   = 81913, -- Desiccated Drake Corpse
+  shattered_draconic_symbol = 81914, -- Shattered Draconic Symbol
+  dark_dragon_scale         = 81915, -- Dark Dragon Scale
+}
+
+-- common method used by #Tatsujiro_the_Serene and #Xeib_Darkskies to complete the "Clues" mission
+function don.finish_clues_mission(client, task_ids)
+  local clues_speak_id = 2
+  for _, task_id in ipairs(task_ids) do
+    if client:IsTaskActivityActive(task_id, clues_speak_id) then
+      for _, item_id in pairs(don.clue_item_ids) do
+        local inv = client:GetInventory()
+        if inv:HasItem(item_id, 1, bit.bor(InventoryWhere.Personal, InventoryWhere.Cursor)) ~= -1 then
+          client:UpdateTaskActivity(task_id, clues_speak_id, 1)
+          client:RemoveItem(item_id)
+          return item_id
+        end
+      end
+    end
+  end
+  return 0
+end
+
 function don.character_state.new(client, faction_id)
   if faction_id ~= don.faction_id.norraths_keepers and faction_id ~= don.faction_id.dark_reign then
     error("Cannot load don.character_state, faction_id must be for Norrath's Keepers or Dark Reign")

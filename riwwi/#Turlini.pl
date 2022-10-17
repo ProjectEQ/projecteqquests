@@ -30,63 +30,63 @@ sub EVENT_ITEM {
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52085); # Item: Yunjo's Braided Cord
     quest::setglobal("riwwiarena",2,5,"F");
-    quest::depop_withtimer();
+    #quest::depop_withtimer();
   }
   if (plugin::check_handin(\%itemcount, 52234 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52086); # Item: Yunjo's Sea Kelp Cord
     quest::setglobal("riwwiarena",3,5,"F");
-    quest::depop_withtimer();
+    #quest::depop_withtimer();
   }
   if (plugin::check_handin(\%itemcount, 52235 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52087); # Item: Yunjo's Woven Twine Cord
     quest::setglobal("riwwiarena",4,5,"F");
-    quest::depop_withtimer();
+    #quest::depop_withtimer();
     }
       if (plugin::check_handin(\%itemcount, 52236 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52088); # Item: Yunjo's Plaited Hynid-Fur Cord
     quest::setglobal("riwwiarena",5,5,"F");
-    quest::depop_withtimer();
+    #quest::depop_withtimer();
     }
         if (plugin::check_handin(\%itemcount, 52237 =>1 )) {
         quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52089); # Item: Yunjo's Hynid Fang Cord
     quest::setglobal("riwwiarena",6,5,"F");
-    quest::depop_withtimer(); 
+    #quest::depop_withtimer(); 
     }
    if (plugin::check_handin(\%itemcount, 52238 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52090); # Item: Pressed Leather Yunjo Sash
     quest::setglobal("riwwiarena",7,5,"F");    
-    quest::depop_withtimer(); 
+    #quest::depop_withtimer(); 
      }
    if (plugin::check_handin(\%itemcount, 52239 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52091); # Item: Spiked Leather Yunjo Sash
     quest::setglobal("riwwiarena",8,5,"F");    
-    quest::depop_withtimer(); 
+    #quest::depop_withtimer(); 
      }
    if (plugin::check_handin(\%itemcount, 52240 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52092); # Item: Woven Bone Yunjo Sash
     quest::setglobal("riwwiarena",9,5,"F");    
-    quest::depop_withtimer(); 
+    #quest::depop_withtimer(); 
      }   
    if (plugin::check_handin(\%itemcount, 52241 =>1 )) {
        quest::emote("gives you an appraising nod");
     quest::say("Your valiant demonstration in the arena has given us all hope that someone can stand against the Muramites. Please accept this trinket as a token of appreciation from our people.");
     quest::summonitem(52093); # Item: Silvery Mesh Yunjo Sash
     quest::setglobal("riwwiarena",10,5,"F");    
-    quest::depop_withtimer(); 
+    #quest::depop_withtimer(); 
      }  
    if (plugin::check_handin(\%itemcount, 52242 =>1 )) {
     quest::emote("shouts with joy");

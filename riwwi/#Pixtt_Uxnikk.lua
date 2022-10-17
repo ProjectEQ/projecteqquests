@@ -25,7 +25,7 @@ function event_spawn(e)
 end
 
 function event_timer(e)
-local rand = math.random(1,18); 
+local rand = math.random(1,20); 
 	if (rand == 1) then
 	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'I could stay here all day and watch this bloodsport.");
 	eq.zone_emote(0,"Pixtt Kekken shouts, 'You DO stay here all day.");
@@ -80,5 +80,11 @@ local rand = math.random(1,18);
 	elseif (rand == 18) then
 	eq.zone_emote(0,"Pixtt Uxnikk toss a chunk of rubble into the arena pit. 'Did you see that? I almost hit them!");
 	eq.zone_emote(0,"Pixtt Kekken shouts, 'Ha ha, nice toss.");
+	elseif (rand == 19) then
+	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'Officiator, why so many delays? What is the holdup? Hmph. This is unacceptable. I demand a refund for the downtime between matches.");
+	eq.zone_emote(0,"Pixtt Kekken shouts, 'We don't care if it amounts to a few paltry coins. It's the principle of it.");
+	elseif (rand == 20) then
+	eq.zone_emote(0,"Pixtt Uxnikk shouts, 'I'll wager everything I own that a three-legged hynid could kill that scrawny one in the corner.");
+	eq.zone_emote(0,"Pixtt Kekken shouts, 'Hmph.");
 	end
 end

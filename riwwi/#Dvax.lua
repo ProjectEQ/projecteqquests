@@ -1,8 +1,10 @@
 function event_combat(e)
 	if(e.joined) then
 		eq.set_timer("check", 5 * 1000);
+		eq.set_timer("shadowstep", 6 * 1000);
 	else
 		eq.stop_timer("check");
+		eq.stop_timer("shadowstep");
 	end
 end
 
@@ -20,7 +22,13 @@ function event_timer(e)
 			end
 		  end
 		);
-		
+	elseif (e.timer == "shadowstep") then
+		local x = e.other:GetX();
+		local y = e.other:GetY();
+		local z = e.other:GetZ();
+		local h = e.other:GetHeading();
+		e.self:GMMove(x,y,z,h):TryMoveAlong(10.0, 256.0);
+		e.self:Emote("vanishes and quickly reappears behind their prey.");
 	end
 end
 

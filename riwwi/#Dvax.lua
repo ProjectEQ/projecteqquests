@@ -23,8 +23,14 @@ function event_timer(e)
 		  end
 		);
 	elseif (e.timer == "shadowstep") then
+		local top_hate = e.self:GetHateTop()
+		if (top_hate.valid and top_hate:IsClient()) then
+			local top_client = top_hate:CastToClient()
+			if (top_client.valid) then
+			e.self:GMMove(top_client:GetX(),top_client:GetY(),top_client:GetZ(),top_client:GetHeading()):TryMoveAlong(10.0, 256.0);
+			end
+		end
 		
-		e.self:GMMove(e.other:GetX(), e.other:GetY(), e.other:GetZ(), e.other:GetHeading()):TryMoveAlong(10.0, 256.0);
 		e.self:Emote("vanishes and quickly reappears behind their prey.");
 	end
 end

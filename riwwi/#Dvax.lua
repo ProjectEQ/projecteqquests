@@ -23,11 +23,8 @@ function event_timer(e)
 		  end
 		);
 	elseif (e.timer == "shadowstep") then
-		local x = e.other:GetX();
-		local y = e.other:GetY();
-		local z = e.other:GetZ();
-		local h = e.other:GetHeading();
-		e.self:GMMove(x,y,z,h):TryMoveAlong(10.0, 256.0);
+		
+		e.self:GMMove(e.other:GetX(), e.other:GetY(), e.other:GetZ(), e.other:GetHeading()):TryMoveAlong(10.0, 256.0);
 		e.self:Emote("vanishes and quickly reappears behind their prey.");
 	end
 end

@@ -23,3 +23,7 @@ function event_timer(e)
 		
 	end
 end
+
+function event_spawn(e)
+e.self:ModSkillDmgTaken(7, -25); -- archery
+end

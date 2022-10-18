@@ -27,7 +27,7 @@ function event_timer(e)
 		if (top_hate.valid and top_hate:IsClient()) then
 			local top_client = top_hate:CastToClient()
 			if (top_client.valid) then
-			e.self:GMMove(top_client:GetX(),top_client:GetY(),top_client:GetZ(),top_client:GetHeading()):TryMoveAlong(10.0, 256.0);
+			e.self:GMMove(top_client:GetX(),top_client:GetY(),top_client:GetZ()):TryMoveAlong(10.0, 256.0);
 			end
 		end
 		

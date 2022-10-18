@@ -1,10 +1,10 @@
 function event_combat(e)
 	if(e.joined) then
 		eq.set_timer("check", 5 * 1000);
-		eq.set_timer("shadowstep", 6 * 1000);
+		--eq.set_timer("shadowstep", 6 * 1000);
 	else
 		eq.stop_timer("check");
-		eq.stop_timer("shadowstep");
+		--eq.stop_timer("shadowstep");
 	end
 end
 

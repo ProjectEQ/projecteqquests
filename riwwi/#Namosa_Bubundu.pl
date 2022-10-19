@@ -31,8 +31,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 52175 =>1 )) {
     quest::say("A drakelily? My aunt grew these in her garden. In fact, I helped her plant some of them myself. She always told me they were a sign of hope. Thank you, $name. I'll inform our people of your kindness.");
    quest::exp(10000);
-    quest::faction(1770,10); # Faction: Yunjo Slave Resistance
-    quest::faction(1771,-10); # Faction: Gladiators of Mata Muram
+    quest::faction(1770,50); # Faction: Yunjo Slave Resistance
+    quest::faction(1771,-25); # Faction: Gladiators of Mata Muram
     quest::setglobal("bic_riw",7,5,"F");
     quest::emote("touches your shoulder and gazes at you with pleading eyes.");
    quest::say("I hope this isn't presumptuous of me. You've already done so much. Before you go, I need to ask you for another favor. Turlini is under heavy guard in one of the nearby towers. The Muramites think he's up to something and I'm concerned they may torture or kill him. Please have a talk with Turlini when you can.");

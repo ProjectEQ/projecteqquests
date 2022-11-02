@@ -11,29 +11,29 @@ sub EVENT_SAY {
   }
   if ($text=~/tasks/i) {
     quest::say("Lot of work to do here. You help us out, work hard like real ogre, and I show you da secret of making steel from da ore. I needs to make stuff out of da aligned steel, so you needs to bring me some. Find da aligned ore and have Snokin make da steel. Den, bring to me and I will give you work. I reward you sooner dan Snokin if you help me. Jus bring da aligned steel to me when you ready to work.");
-    quest::taskselector(170); #Smithing Collect
+    quest::taskselector(500170); #Smithing Collect
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58019 => 1)) { #Bar of Aligned Steel
-    if (quest::istaskactivityactive(170,0)) { #Smithing Collect Step 1
+    if (quest::istaskactivityactive(500170,0)) { #Smithing Collect Step 1
       quest::say("Good, you is ready to work. We need skewers. Da more we make, da more we gets to eat! Da new steel makes skewers dat last long time an don't make food taste bad. So you take dis stuff and forge skewers. Bring dem to me when you done.");
       quest::summonitem(58078,10); #Scrap of Aligned Steel
       quest::summonitem(58119,10); #Simple Skewer Mold
     }
-    elsif (quest::istaskactivityactive(170,1)) { #Smithing Collect Step 2
+    elsif (quest::istaskactivityactive(500170,1)) { #Smithing Collect Step 2
       quest::say("Dere is much work for you. We use steel spikes for lots of tings here, and dey asks me to make some with da new steel. It easy job, so maybe you do it. Just take da metal and da mold to da forge and make da spikes. Bring dem to me when you is done.");
       quest::summonitem(58078,10); #Scrap of Aligned Steel
       quest::summonitem(58123,10); #Simple Spike Mold
     }
-    elsif (quest::istaskactivityactive(170,2)) { #Smithing Collect Step 3
+    elsif (quest::istaskactivityactive(500170,2)) { #Smithing Collect Step 3
       quest::say("Lots more work for you to do. Da iron files dat we use don't last long. For da special work dey asks me to make dem files from da new steel. So now you is going to make files from da new steel. Take dis stuff to da forge an make da files. Bring dem to me when you gets dem done.");
       quest::summonitem(58078,10); #Scrap of Aligned Steel
       quest::summonitem(58043,10); #Hardened Aligned Steel Bits
       quest::summonitem(58096,10); #Simple File Mold
     }
-    elsif (quest::istaskactivityactive(170,3)) { #Smithing Collect Step 4
+    elsif (quest::istaskactivityactive(500170,3)) { #Smithing Collect Step 4
       quest::say("You good helper. Dis time we need needles. Da peoples dat sews stuff likes da needles made wit da new metal, an my fingers is too big for making needles good. You take this stuff to da forge an make needles for us. Bring dem to me when you is done.");
       quest::summonitem(58078,10); #Scrap of Aligned Steel
       quest::summonitem(58105,10); #Simple Needle Mold

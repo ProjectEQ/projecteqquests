@@ -1,10 +1,10 @@
 # items: 85064, 85068, 85065, 85063, 85066, 85067
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,2)) {
+	if(quest::istaskactivityactive(500222,2)) {
 		if($text=~/Hail/i) {
 			$pcpvp = $client->GetPVP();
 			quest::say("I thought you'd never find me! Next up is my clan's boss, Zeus.");
-			quest::updatetaskactivity(222,2);
+			quest::updatetaskactivity(500222,2);
 			if($qglobals{halloween_ratter_complete} < 2){
 				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),1); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete",2,5,"D30");

@@ -1,12 +1,12 @@
 # items: 87309, 97289, 85062
 sub EVENT_SAY {
 $clientver = $client->GetClientVersion();
-	if(quest::istaskactive(212)){
+	if(quest::istaskactive(5655)){
 		if($text=~/Hail/i) {
       			quest::say("Good on ya! Get on out there then and kill some zombies! Bring me some hearts while you're at it. I want to have a look at what's going on in there.");
       		}
       	}
-	if(!quest::istaskactive(212)){
+	if(!quest::istaskactive(5655)){
 		if(!defined $qglobals{halloween_zombie}){
 				if($text=~/Hail/i) {
    					quest::say("Dagnabbit! Don't creep up on folks like that, especially around here! What are ya trying to do, give somebody a heart attack! Noise attracts [" . quest::saylink("their") . "] attention, don't ya know.");
@@ -25,8 +25,8 @@ $clientver = $client->GetClientVersion();
       				}
       				if($text=~/fight/i) {
 					quest::say("Good on ya! Get on out there then and kill some zombies! Bring me some hearts while you're at it. I want to have a look at what's going on in there.");
-                    quest::assigntask(219);
-					quest::assigntask(212);
+                    quest::assigntask(500219);
+					quest::assigntask(5655);
 					quest::summonitem(87309); # Item: Fiery Wand of Retribution
 				}
 		}

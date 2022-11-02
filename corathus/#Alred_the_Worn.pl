@@ -18,12 +18,12 @@ sub EVENT_SAY
 	{
 		if($text=~ /Hail/i)
 		{
-			if(quest::istaskactive(145))
+			if(quest::istaskactive(500145))
 			{
-				if(quest::istaskactivityactive(145, 1))
+				if(quest::istaskactivityactive(500145, 1))
 				{
 					quest::say("You've briefly granted us some rest from the onslaught of the minotaurs, for that I thank you.");
-					quest::updatetaskactivity(145, 1, 1);
+					quest::updatetaskactivity(500145, 1, 1);
 					quest::setglobal("corathus_mino_daily", 1, 5, "H20");
 					if(defined($qglobals{starshatter_points}))
 					{
@@ -69,9 +69,9 @@ sub EVENT_SAY
 			}
 			else
 			{
-				if(quest::istaskactive(145) == 0)
+				if(quest::istaskactive(500145) == 0)
 				{
-					quest::taskselector(145);
+					quest::taskselector(500145);
 				}
 			}
 		}

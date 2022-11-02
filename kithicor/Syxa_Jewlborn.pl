@@ -1,8 +1,8 @@
 # items: 87311
 sub EVENT_SAY {
-	if(quest::istaskactive(211)){
+	if(quest::istaskactive(8278)){
 		if($text=~/Hail/i) {
-			if(quest::istaskactivityactive(211,1)){
+			if(quest::istaskactivityactive(8278,1)){
 				quest::say("Oh you found her! How can I ever repay you.");
 				quest::summonitem(87311,5); # Item: Scrumptious Jack-o-Lantern
 				$client->AddLevelBasedExp(10, 0);
@@ -13,15 +13,15 @@ sub EVENT_SAY {
       			}
       		}
       	}
-	if(!quest::istaskactive(211)){
+	if(!quest::istaskactive(8278)){
 		if(!defined $qglobals{halloween_black_cat}){
 			if($text=~/Hail/i) {
    				quest::say("Please help me find my missing cat, she has gone astray and I can't seem to find her anywhere. Her name is Muffin. Will you [help] me? Oh please!");
       			}
       			if($text=~/help/i) {
       				quest::say("Please bring her back safely!");
-                                quest::assigntask(219);
-      				quest::assigntask(211);
+                                quest::assigntask(500219);
+      				quest::assigntask(8278);
       			}	
 		}
 		else {

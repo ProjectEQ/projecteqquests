@@ -1,20 +1,20 @@
 # items: 87317
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(215,4)){
+	if(quest::istaskactivityactive(5653,4)){
 		if($text=~/Hail/i) {
 			quest::summonitem(87317,5); # Item: Candy Corn
 			$client->AddLevelBasedExp(10, 0);
 			quest::setglobal("halloween_monster_mash",1,0,"H3");
 			quest::emote("is pleased with your success, and offers you these dancing skeletons as a token of his appreciation.");
-			quest::updatetaskactivity(215,4);
+			quest::updatetaskactivity(5653,4);
 		}
 	}
-	elsif(quest::istaskactive(215)){
+	elsif(quest::istaskactive(5653)){
 		if($text=~/Hail/i) {
       			quest::say("Find skeleton make Lurgh laugh and Lurgh help you, too.");
       		}
       	}
-	elsif(!quest::istaskactive(215)){
+	elsif(!quest::istaskactive(5653)){
 		if(!defined $qglobals{halloween_monster_mash}){
 			if($text=~/Hail/i) {
    				quest::say("Lurgh miss [friend].");
@@ -30,8 +30,8 @@ sub EVENT_SAY {
       			}
 			if($text=~/Help/i) {
    				quest::say("Gud. Find skeleton make Lurgh laugh and Lurgh help you, too.");
-                                quest::assigntask(219);
-      				quest::assigntask(215);
+                                quest::assigntask(500219);
+      				quest::assigntask(5653);
       			}	
 		}
 		else {

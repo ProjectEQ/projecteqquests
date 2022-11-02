@@ -11,29 +11,29 @@ sub EVENT_SAY {
     quest::say("I have many duties to perform before I can be free to do as I wish. If you can help me with them, I would be grateful. In order to get these tasks done, though, I'll need Taelosian Stone. If you can acquire some from Imildu and bring it to me, I can put you to work. If you work hard enough I will give you the secret for working with a Chunk of Taelosian Rock and a Chunk of Discordian Rock that Imildu and I discovered. And because I am asking you to provide the material for these tasks, I can reward you sooner than Imildu will.");
   }
   if ($text=~/help/i) {
-    quest::taskselector(173); #Fletching Collect
+    quest::taskselector(500173); #Fletching Collect
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58151 => 1)) { #Taelosian Stone
-    if (quest::istaskactivityactive(173,0)) { #Fletching Collect Step 1
+    if (quest::istaskactivityactive(500173,0)) { #Fletching Collect Step 1
       quest::say("Wonderful! I need some honing stones for our work. Just take a Small Taelosian Stone and a Simple Iron File and use your fletching kit to combine them. These files are not very good, and the stone is hard. So you'll need a new one with each attempt. Bring me the honing stones when you have them ready.");
       quest::summonitem(58103,10); #Simple Iron File
       quest::summonitem(58142,10); #Small Taelosian Stone
     }
-    elsif (quest::istaskactivityactive(173,1)) { #Fletching Collect Step 2
+    elsif (quest::istaskactivityactive(500173,1)) { #Fletching Collect Step 2
       quest::say("Fantastic! I can use your help. I need some simple arrowheads made from the Taelosian Stone. This will be good practice for you, too. Just take a Small Taelosian Stone, a Simple Iron File, and a Simple Iron Chisel and combine them in your fletching kit. The file and the chisel won't survive the work, but that's acceptable. Please bring the arrowheads to me when you are done. We have a lot archers that need them.");
       quest::summonitem(58103,10); #Simple Iron File
       quest::summonitem(58142,10); #Small Taelosian Stone
       quest::summonitem(58102,10); #Simple Iron Chisel
     }
-    elsif (quest::istaskactivityactive(173,2)) { #Fletching Collect Step 3
+    elsif (quest::istaskactivityactive(500173,2)) { #Fletching Collect Step 3
       quest::say("I think you can handle a more difficult task now. There is some delicate work required to make the jagged arrowheads that our scouts prefer, but you can do it. Just take the Small Taelosian Stone and Simple Tiny Chisel and combine them in your fletching kit. Bring them to me when you have them done. Thank you.");
       quest::summonitem(58142,10); #Small Taelosian Stone
       quest::summonitem(58129,10); #Simple Tiny Chisel
     }
-    elsif (quest::istaskactivityactive(173,3)) { #Fletching Collect Step 4
+    elsif (quest::istaskactivityactive(500173,3)) { #Fletching Collect Step 4
       quest::say("Hello! Thank you for helping out. I need some veined arrowheads. They are very effective against certain targets. Take the Small Taelosian Stone, Simple Iron Chisel and Basic Etching Compound and put them into your fletching kit. It's a complicated task, but you can manage. Bring the finished arrowheads to me.");
       quest::summonitem(58142,10); #Small Taelosian Stone
       quest::summonitem(58102,10); #Simple Iron Chisel

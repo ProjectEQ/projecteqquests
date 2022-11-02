@@ -10,7 +10,7 @@ sub EVENT_SAY {
   }
   if ($text=~/siblings/i) {
     quest::say("Slavemaster Ruga has the rest of the dragon eggs on his person. He's in the Gloomingdeep jail trying to prevent the rest of the slaves from escaping. Be careful with Ruga though. That kobold's never without his bodyguards nearby!");
-    quest::assigntask(36); #Task: Flutterwing's Dilemma
+    quest::assigntask(5703); #Task: Flutterwing's Dilemma
   }
 }
 

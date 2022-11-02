@@ -2,7 +2,7 @@
 
 function event_say(e)
 
-	if(e.other:IsTaskActive(138)) then --New Beginnings
+	if(e.other:IsTaskActive(5745)) then --New Beginnings
 		e.self:Say("You fought alongside Arias in the Mines of Gloomingdeep! He's alive then! Thank the gods! Thank the gods and thank you, stranger! Please let me repay your kind news with my hospitality. I can help you establish yourself here in the Plane of Knowledge. Really, it's the least I can do.");
 	end
 	if(e.message:findi("hail")) then
@@ -10,14 +10,14 @@ function event_say(e)
 	end	
 	if(e.message:findi("new to the world")) then
 		if(e.other:Race() == "Beastlord") then
-			eq.task_selector({200}); --Tomes of Knowledge (Beastlord)
+			eq.task_selector({5725}); --Tomes of Knowledge (Beastlord)
 		end
 		if(e.other:Race() == "Rogue") then
-			eq.task_selector({201}); --Tomes of Knowledge (Rogue)
-			eq.task_selector({202}); --Training Day
+			eq.task_selector({5723}); --Tomes of Knowledge (Rogue)
+			eq.task_selector({5721}); --Training Day
 		end
 		
-		eq.task_selector({208,209}); --(208) Errands for Castlen (209)Common Cents 
+		eq.task_selector({5816,5815}); --(5816) Errands for Castlen (5815)Common Cents 
 	end
 
 end

@@ -5,7 +5,7 @@ sub EVENT_SAY {
   }
   if ($text=~/help/i) {
     quest::say("Excellent."); #Text made up
-    quest::taskselector(210); #Black Eggs for Breakfast
+    quest::taskselector(154); #Black Eggs for Breakfast
   }
 }
   

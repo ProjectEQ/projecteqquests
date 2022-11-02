@@ -1,14 +1,14 @@
 # items: 53513, 85062
 sub EVENT_SAY {
-	if(quest::istaskactive(217)){
+	if(quest::istaskactive(5652)){
 		if($text=~/Hail/i) {
-			if(quest::istaskactivityactive(217,1)){
+			if(quest::istaskactivityactive(5652,1)){
 				quest::emote("hermit pulls out a strange earring as she tucks the toadstools into a fold of her robe.");
 				quest::summonitem(53513); # Item: Freemind Spore Earring
 				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_mushroom",1,0,"D30");
-				quest::updatetaskactivity(217,1);
+				quest::updatetaskactivity(5652,1);
                                 $client->NukeItem(54725);
 			}
       			else {
@@ -16,7 +16,7 @@ sub EVENT_SAY {
       			}
       		}
       	}
-	elsif(!quest::istaskactive(217)){
+	elsif(!quest::istaskactive(5652)){
 		if(!defined $qglobals{halloween_mushroom}){
 			if($text=~/Hail/i) {
    				quest::say("I don't understand what all the fuss is about. This should be a day of [fear], not celebration!");
@@ -29,8 +29,8 @@ sub EVENT_SAY {
 			}
 			if($text=~/Toadstools/i) {
       				quest::say("It's a neat trick actually. Since it seems there won't be any peace for me today regardless, I suppose I could show it to you. Bring me back some toadstools from Toxxulia, if you dare!");
-                                quest::assigntask(219);
-				quest::assigntask(217);
+                                quest::assigntask(500219);
+				quest::assigntask(5652);
 			}
 		}
 		else {

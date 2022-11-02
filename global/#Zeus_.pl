@@ -5,14 +5,14 @@ sub EVENT_SPAWN {
 }	
 
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,3)) {
+	if(quest::istaskactivityactive(500222,3)) {
 		if($text=~/Hail/i) {
 			$pcpvp = $client->GetPVP();
 			my $newzone_zeus = plugin::GetRandomFreeLocation(0,20);
 			my $npcid = 999100;
 
 			quest::say("You should go speak with Roosevelt again next.");
-			quest::updatetaskactivity(222,3);
+			quest::updatetaskactivity(500222,3);
 			if($qglobals{halloween_ratter_complete} < 3){
 				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				quest::setglobal("halloween_ratter_complete",3,5,"D30");

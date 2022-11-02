@@ -11,28 +11,28 @@ sub EVENT_SAY {
   }
   if ($text=~/simple things/i) {
     quest::say("Give me a Muramite Blood Distillate and I will give you supplies. If you do enough work, I'll teach you how to process the muramite blood and bile. Since you are providing me with some materials, I will teach you sooner than Uiyaniv would.");
-    quest::taskselector(174); #Poisonmaking Collect
+    quest::taskselector(500174); #Poisonmaking Collect
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 58151 => 1)) { #Taelosian Stone
-    if (quest::istaskactivityactive(174,0)) { #Poisonmaking Collect Step 1
+    if (quest::istaskactivityactive(500174,0)) { #Poisonmaking Collect Step 1
       quest::say("It looks like you're ready to get started. Good. Take a small vial of Muramite blood distillate and Wayfarers Secret Suspension and combine them in your mortar and pestle to create a simple contact poison. The Muramite blood makes it pretty potent, so don't leave it lying around. Bring it right back to me when you're done.");
       quest::summonitem(58143,10); #Small Vial of Muramite Blood Distillate
       quest::summonitem(58206,10); #Wayfarer Secret Suspension
     }
-    elsif (quest::istaskactivityactive(174,1)) {
+    elsif (quest::istaskactivityactive(500174,1)) {
       quest::say("There is plenty for you to do. Don't just stand around gawking. Take a small vial of Muramite blood distillate and Wayfarers secret anti-coagulant and combine them in your mortar and pestle. If you aren't a completely incompetent creature, you should be able to produce a reasonable quantity of simple Muramite blood-injected poison. Bring it to me when you're done.");
       quest::summonitem(58143,10); #Small Vial of Muramite Blood Distillate
       quest::summonitem(58205,10); #Wayfarer Secret Anticoagulant
     }
-    elsif (quest::istaskactivityactive(174,2)) {
+    elsif (quest::istaskactivityactive(500174,2)) {
       quest::say("There is no lack of work for you. Take this small vial of Muramite blood distillate and simple paralytic and combine them in your mortar and pestle. Don't screw it up and you'll be able to make some simple Muramite blood paralytic. Handy stuff when you don't want to kill someone, but you don't want them killing you either. Bring to me whatever you can make.");
       quest::summonitem(58143,10); #Small Vial of Muramite Blood Distillate
       quest::summonitem(58111,10); #Simple Paralytic
     }
-    elsif (quest::istaskactivityactive(174,3)) {
+    elsif (quest::istaskactivityactive(500174,3)) {
       quest::say("Good. For now I am in need of some atrophic. Don't ask why, just combine a small vial of Muramite blood distillate and simple wasting poison in your mortar and pestle. Don't lick your fingers while working on this or you'll find yourself unable to beg for my help in the future. Bring me the atrophic when you have it finished.");
       quest::summonitem(58143,10); #Small Vial of Muramite Blood Distillate
       quest::summonitem(58132,10); #Simple Wasting Poison

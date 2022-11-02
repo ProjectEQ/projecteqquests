@@ -1,6 +1,6 @@
 -- items: 87319
 function event_task_stage_complete(e)
-    if e.task_id == 212 then
+    if e.task_id == 5655 then
         e.self:SummonItem(87319, 5)
         e.self:AddLevelBasedExp(10, 0)
         eq.set_global("halloween_zombie", "1", 0, "H3")

@@ -1,8 +1,8 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if(quest::istaskactivityactive(141,0)) {
+    if(quest::istaskactivityactive(1947,0)) {
       quest::say("Thanks for contacting me, $name. Your information on this matter has been most useful.");
-      quest::updatetaskactivity(141,0);
+      quest::updatetaskactivity(1947,0);
     }
     else {
       quest::say("Hello, $name.");

@@ -12,11 +12,11 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Ahoy, $name. Welcome ta the brig. I didn't get ta the 'B' section of my piratisms manual so I'm not sure what a brig is but I'm guessin' it means 'really small place without enough food or water.' So, ya here ta stay or just visitin'?");
   }
-  if(quest::istaskactive(220)){
+  if(quest::istaskactive(500220)){
  	 if ($text=~/trick or treat/i) {
   		quest::say("Can ya believe the Cap'n thought these were real when I first started handing them out? Hah! At least he did until they melted in his pocket!");
   		quest::summonitem(quest::ChooseRandom(84091,84092,84093,84089,84089,84089,84089,84089,84089)); # Item(s): Sand (84091), Chunk of Coal (84092), Pocket Lint (84093), Chocolate Coin (84089), Chocolate Coin (84089), Chocolate Coin (84089), Chocolate Coin (84089), Chocolate Coin (84089), Chocolate Coin (84089)
-		quest::updatetaskactivity(220,4);
+		quest::updatetaskactivity(500220,4);
 	}
   }
 

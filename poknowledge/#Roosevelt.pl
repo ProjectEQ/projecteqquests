@@ -4,7 +4,7 @@ sub EVENT_SAY {
 		quest::say("Great! Take this tool. It'll help you track down your targets. Be warned, however! Your tool is not protected from sabatoge, and does not work well if your target roams about, instead of staying in a single spot. My boys know this, and will take advantage! If you have trouble finding a particular target, Icarus may be able to help. Let me know when you are [" . quest::saylink("ready") . "].");
 		quest::summonitem(111901); # Item: Wand of Metacrystalline Teleportation
 	}
-	if(!quest::istaskactive(222)){
+	if(!quest::istaskactive(500222)){
 		if($text=~/Hail/i) {
 			quest::say("Greetings! I am the eldest member of the Rattus faction Norvegicus. Standing next to me is our youngest member my apprentice Icarus. Once a year, the three clans get together to test their survival skills. For the first time ever, outsiders have been invitied to join in the [" . quest::saylink("hunt") . "]!");
 		}
@@ -13,8 +13,8 @@ sub EVENT_SAY {
 		}
 		if($text=~/ready/i){
 			quest::say("You are signed up! Also! You are not just competing with Rattus, other hunters will be searching for the same targets as you. To make things more interesting and to double your rewards, I can make you a hunter killer [" . quest::saylink("PVP on") . "]. I can also return you to normal after one of your hours [" . quest::saylink("PVP off") . "]. Your first target is Kai! Good luck!");
-			quest::assigntask(219);
-			quest::assigntask(222);
+			quest::assigntask(500219);
+			quest::assigntask(500222);
 		}
 	}
 	else {
@@ -58,9 +58,9 @@ sub EVENT_SAY {
 			$client->Message(0, "Mortimer is in " . quest::GetZoneLongName($zsn_m) . ".");
 			$client->Message(0, "Paulie is in " . quest::GetZoneLongName($zsn_p) . ".");
 		}
-		if($text=~/Hail/i && quest::istaskactivityactive(222,4)) {
+		if($text=~/Hail/i && quest::istaskactivityactive(500222,4)) {
 			quest::say("Great job! Your next target is Sherlock.");
-			quest::updatetaskactivity(222,4);
+			quest::updatetaskactivity(500222,4);
 			if($qglobals{halloween_ratter_complete} < 4){
 				quest::summonitem(
 					quest::ChooseRandom(
@@ -101,9 +101,9 @@ sub EVENT_SAY {
 				$client->Message(0, "You have already claimed a PVP reward for this activity or a higher and do not qualify for another.");
 			}
 		}
-		if($text=~/Hail/i && quest::istaskactivityactive(222,8)) {
+		if($text=~/Hail/i && quest::istaskactivityactive(500222,8)) {
 			quest::say("Great job! Your next target is Gustave.");
-			quest::updatetaskactivity(222,8);
+			quest::updatetaskactivity(500222,8);
 			if($qglobals{halloween_ratter_complete} < 8){
 				quest::summonitem(
 					quest::ChooseRandom(
@@ -144,9 +144,9 @@ sub EVENT_SAY {
 				$client->Message(0, "You have already claimed a PVP reward for this activity or a higher and do not qualify for another.");
 			}
 		}
-		if($text=~/Hail/i && quest::istaskactivityactive(222,14)) {
+		if($text=~/Hail/i && quest::istaskactivityactive(500222,14)) {
 			quest::say("Great job! You did it! Here take this as your prize! Hand it in to Dieffer over there for a special item!");
-			quest::updatetaskactivity(222,14);
+			quest::updatetaskactivity(500222,14);
 			if($qglobals{halloween_ratter_complete} < 14){
 				quest::summonitem(
 					quest::ChooseRandom(
@@ -204,40 +204,40 @@ sub EVENT_SAY {
 		if(($text=~/pvp off/i || $text=~/pvp off/i) && defined $qglobals{halloween_ratter_pvp}) {
 			quest::say("I'm sorry, you must wait more time before I can do that.");
 		}
-		elsif(quest::istaskactivityactive(222,0)) {
+		elsif(quest::istaskactivityactive(500222,0)) {
 			quest::say("What are you waiting for? Go out there and find Kai!");
 		}
-		elsif(quest::istaskactivityactive(222,1)) {
+		elsif(quest::istaskactivityactive(500222,1)) {
 			quest::say("What are you waiting for? Go out there and find Brutus!");
 		}
-		elsif(quest::istaskactivityactive(222,2)) {
+		elsif(quest::istaskactivityactive(500222,2)) {
 			quest::say("What are you waiting for? Go out there and find Aristotle!");
 		}
-		elsif(quest::istaskactivityactive(222,3)) {
+		elsif(quest::istaskactivityactive(500222,3)) {
 			quest::say("What are you waiting for? Go out there and find Zeus!");
 		}
-		elsif(quest::istaskactivityactive(222,5)) {
+		elsif(quest::istaskactivityactive(500222,5)) {
 			quest::say("What are you waiting for? Go out there and find Sherlock!");
 		}
-		elsif(quest::istaskactivityactive(222,6)) {
+		elsif(quest::istaskactivityactive(500222,6)) {
 			quest::say("What are you waiting for? Go out there and find Ocho!");
 		}
-		elsif(quest::istaskactivityactive(222,7)) {
+		elsif(quest::istaskactivityactive(500222,7)) {
 			quest::say("What are you waiting for? Go out there and find Toby!");
 		}
-		elsif(quest::istaskactivityactive(222,9)) {
+		elsif(quest::istaskactivityactive(500222,9)) {
 			quest::say("What are you waiting for? Go out there and find Gustave!");
 		}
-		elsif(quest::istaskactivityactive(222,10)) {
+		elsif(quest::istaskactivityactive(500222,10)) {
 			quest::say("What are you waiting for? Go out there and find Napoleon!");
 		}
-		elsif(quest::istaskactivityactive(222,11)) {
+		elsif(quest::istaskactivityactive(500222,11)) {
 			quest::say("What are you waiting for? Go out there and find Sprocket!");
 		}
-		elsif(quest::istaskactivityactive(222,12)) {
+		elsif(quest::istaskactivityactive(500222,12)) {
 			quest::say("What are you waiting for? Go out there and find Mortimer!");
 		}
-		elsif(quest::istaskactivityactive(222,13)) {
+		elsif(quest::istaskactivityactive(500222,13)) {
 			quest::say("What are you waiting for? Go out there and find Paulie!");
 		}
 	}

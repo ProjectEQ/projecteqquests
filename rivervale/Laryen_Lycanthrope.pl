@@ -6,21 +6,21 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
 $clientver = $client->GetClientVersion();
 if($clientver > 2){
-	if(quest::istaskactive(213)){
+	if(quest::istaskactive(5654)){
 		if($text=~/Hail/i) {
-			if(quest::istaskactivityactive(213,1)){
+			if(quest::istaskactivityactive(5654,1)){
 				quest::emote("seems disappointed at the instability of his cure, and shrugs a bit before fishing out your reward.");
 				quest::summonitem(87318,5); # Item: Gummy Bear Delight
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_cure",1,0,"H3");
-				quest::updatetaskactivity(213,1);
+				quest::updatetaskactivity(5654,1);
 			}
 			else {
       			quest::say("That's the spirit! Help out as many of those poor souls as you can.");
 			}
       		}
 	}
-  	elsif(!quest::istaskactive(213)){
+  	elsif(!quest::istaskactive(5654)){
 		if(!defined $qglobals{halloween_cure}){
   			if($text=~/hail/i) {
       				quest::say("Howdy. You venturing out into the [forest]? I have a quick favor to ask if you're heading out that way already..");
@@ -36,8 +36,8 @@ if($clientver > 2){
  			}
   			if($text=~/up for it/i) {
 				quest::say("That's the spirit! Take these cures and help out as many of those poor souls as you can.");
-                                quest::assigntask(219);
-				quest::assigntask(213);
+                                quest::assigntask(500219);
+				quest::assigntask(5654);
 				quest::summonitem(87310); # Item: Wand of the Blood Curse
 			}
 		}

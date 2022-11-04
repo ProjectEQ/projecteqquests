@@ -3,6 +3,7 @@
 function event_combat(e)
 if (e.joined == true) then
 eq.set_timer("wipe", 10 * 1000);
+e.self:ModifyNPCStat("hp_regen", "1");
 end
 end
 
@@ -10,6 +11,7 @@ function event_timer(e)
 if(e.timer=="wipe") then
 eq.stop_timer("wipe");
 e.self:WipeHateList();
+e.self:ModifyNPCStat("hp_regen", "3500");
 end
 end
 

@@ -76,9 +76,9 @@ function activate(mob)
 
 end
 
-function spawn_adds()
-	local rand = math.random(2,8);
-	for n = 1,rand do
+function spawn_adds(e,low,high)
+	local rand = math.random(low,high);
+	for n = 1,high do
 		mob = eq.spawn2(eq.ChooseRandom(210234,210233),0,0,e.self:GetX() + math.random(-50,50),e.self:GetY() + math.random(-50,50),e.self:GetZ() - 10,e.self:GetHeading());	--#a_lost_soul or #a_mangled_traveller
 		mob:AddToHateList(e.self:GetHateRandom(),1);
 	end

@@ -35,7 +35,7 @@ function event_timer(e)
 	elseif e.timer == "adds" and e.self:IsEngaged() then
 		eq.stop_timer(e.timer);
 		eq.set_timer("adds", 60 * 1000);
-		spawn_adds(e);	--spawn adds
+		spawn_adds(e,2,8);	--spawn adds
 	elseif e.timer == "monitor" then
 		if trash_check() and not e.self:IsEngaged() then
 			eq.unique_spawn(210179,0,0,346,-2513,-440.5,0); --repop untargetable version

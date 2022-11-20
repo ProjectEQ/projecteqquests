@@ -16,8 +16,8 @@ sub EVENT_ENTERZONE
 			hail Guard Rahtiz and see where you are needed.<br><br><c \"#FFFF00\">Basic Training:</c><br>If you 
 			would like more training on the finer points of Everquest, speak with Arias and he will direct you to other knowledgeable 
 			members of the slave revolt.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
-			quest::assigntask(22);
-			quest::assigntask(23);
+			quest::assigntask(1448);
+			quest::assigntask(5166);
 			quest::setglobal("tutpop",1,1,"D30");
 	}
 	
@@ -88,11 +88,11 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 
 sub EVENT_TASK_STAGE_COMPLETE 
 {
-	if ($task_id == 34)
+	if ($task_id == 5096)
 	{
 		quest::ze(15, "A cheer arises from the slaves as the last of the Kobold overseers fall.");
 	}
-  if ($task_id == 28 && $activity_id == 1) {
+  if ($task_id == 5092 && $activity_id == 1) {
     $client->Message(0,"Vahlara bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
   }
 } 

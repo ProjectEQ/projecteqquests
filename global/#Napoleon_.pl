@@ -5,14 +5,14 @@ sub EVENT_SPAWN {
 }	
 
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,10)) {
+	if(quest::istaskactivityactive(500222,10)) {
 		if($text=~/Hail/i) {
 			$pcpvp = $client->GetPVP();
 			my $newzone_napoleon = plugin::GetRandomFreeLocation(0,40);
 			my $npcid = 999100;
 
 			quest::say("Sprocket is your next target.");
-			quest::updatetaskactivity(222,10);
+			quest::updatetaskactivity(500222,10);
 			if($qglobals{halloween_ratter_complete} < 10){
 				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),10); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete",10,5,"D30");

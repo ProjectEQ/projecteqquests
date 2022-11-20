@@ -46,8 +46,8 @@ sub EVENT_TIMER
 
 sub EVENT_KILLED_MERIT
 {
-	if(quest::istaskactivityactive(145, 0))
+	if(quest::istaskactivityactive(500145, 0))
 	{
-		quest::updatetaskactivity(145, 0, 1);
+		quest::updatetaskactivity(500145, 0, 1);
 	}
 }

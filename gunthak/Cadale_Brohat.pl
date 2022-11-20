@@ -8,14 +8,14 @@ if ($text=~/Hail/i){
     if ($text=~/task/i)
    {
       my @task_array;
-      push(@task_array, 223); #Pray for Life
-      push(@task_array, 224); #Time for Bed
-      push(@task_array, 225); #Ahoy, Ye Bony Mate
-      push(@task_array, 226); #Brains Over Brawn
-      push(@task_array, 227); #Don't Be Scared
-      push(@task_array, 228); #Gathering Skin    [
-      push(@task_array, 229); #Underhanded Exploration
-      push(@task_array, 230); #Find the Ore
+      push(@task_array, 500223); #Pray for Life
+      push(@task_array, 3749); #Time for Bed
+      push(@task_array, 192); #Ahoy, Ye Bony Mate
+      push(@task_array, 546); #Brains Over Brawn
+      push(@task_array, 4175); #Don't Be Scared
+      push(@task_array, 4069); #Gathering Skin    [
+      push(@task_array, 4428); #Underhanded Exploration
+      push(@task_array, 4536); #Find the Ore
          
       quest::taskselector(@task_array);
    }

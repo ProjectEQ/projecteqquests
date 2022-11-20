@@ -1,26 +1,26 @@
 # items: 80044, 80038
 sub EVENT_SAY {
 $clientver = $client->GetClientVersion();
-	if(quest::istaskactive(218)) {
-		if(quest::istaskactivityactive(218,0)){
+	if(quest::istaskactive(3539)) {
+		if(quest::istaskactivityactive(3539,0)){
 			if($text=~/Costume/i) {
       				quest::emote("helps you into an itchy scarecrow costume, 'Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.'");
       				quest::playerrace(82);
-				quest::updatetaskactivity(218,0);
+				quest::updatetaskactivity(3539,0);
       			}
 		}
-		elsif(quest::istaskactivityactive(218,2)){
+		elsif(quest::istaskactivityactive(3539,2)){
 			if($text=~/Hail/i) {	
 				if(!defined $qglobals{halloween_pies}){
 					quest::emote("claps in amusement, 'Bravo $name, you've done very well and managed to dodge every pie thrown at you, quite remarkable. Why don't you relax and enjoy some of these fresh baked pies I've just made.'");
 					quest::summonitem(80044,10); # Item: Tasty Squash Pie
 					$client->AddLevelBasedExp(10, 0);
 					quest::setglobal("halloween_pies",1,0,"D30");
-					quest::updatetaskactivity(218,2);
+					quest::updatetaskactivity(3539,2);
 				}
 				else {
 					quest::emote("claps in amusement, 'Bravo $name, you've done very well and managed to dodge every pie thrown at you, quite remarkable. Why don't you relax and enjoy some of these fresh baked pies I've just made.'");
-					quest::updatetaskactivity(218,2);
+					quest::updatetaskactivity(3539,2);
 				}
 			}
       		}
@@ -29,7 +29,7 @@ $clientver = $client->GetClientVersion();
 		}
 	}
 	if($clientver > 2){
-		if(!quest::istaskactive(218)){
+		if(!quest::istaskactive(3539)){
 			if($text=~/Hail/i) {
    				quest::emote("smiles graciously at you, 'Have you come to participate in our pie flinging [tradition]?'");
       			}
@@ -47,16 +47,16 @@ $clientver = $client->GetClientVersion();
 			}
 			if($text=~/Take part/i) {
       				quest::emote("hands you a stack of warm squash pies, 'You will also need to put on a [costume] when you are ready to start flinging pies.'");
-              		quest::assigntask(219);
-				quest::assigntask(218);
+              		quest::assigntask(500219);
+				quest::assigntask(3539);
 				quest::summonitem(80038,999); # Item: Stack of Squash Pies
 			}	
 			if($text=~/Try/i) {
 				quest::say("Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.");
-				quest::assigntask(219);
-				quest::assigntask(218);
+				quest::assigntask(500219);
+				quest::assigntask(3539);
 				quest::playerrace(82);
-				quest::updatetaskactivity(218,0);
+				quest::updatetaskactivity(3539,0);
 				quest::summonitem(80038,999); # Item: Stack of Squash Pies
 			}
 		}	

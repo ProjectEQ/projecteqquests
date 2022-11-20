@@ -4,7 +4,7 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello $name. Before the slave revolt, I was forging picks and shovels. Now I'm making weapons so we can fight back. Mainly swords and spears. Simple stuff. If you give me your weapon, I can make you a better one!");
-    quest::updatetaskactivity(22, 1);
+    quest::updatetaskactivity(1448, 1);
     quest::popup("Weapons", "Absor is a weapon maker. You should already have a weapon equiped from your escape with Arias, but Absor can make it better. Open your inventory and remove your weapon from the lower left slot. This is your primary weapon slot where you hold weapons that you are currently using.<br><br><c \"#F07F00\">Give your weapon to Absor to continue.</c>");
   }
 }

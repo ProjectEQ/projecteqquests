@@ -7,11 +7,11 @@ sub EVENT_SAY {
   }
   if($text=~/tasks/i) {
     if($ulevel >= 12) {
-      if(quest::istaskactive(13)) {
+      if(quest::istaskactive(797)) {
         quest::say("They're a Bit Short is already in progress.");
       }
       else {
-        quest::taskselector(13); #Task: They're a Bit Short
+        quest::taskselector(797); #Task: They're a Bit Short
       }
     }
     else {

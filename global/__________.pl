@@ -2,11 +2,11 @@
 # items: 85064, 85068, 85065, 85063, 85066, 85067
 
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,9)) {
+	if(quest::istaskactivityactive(500222,9)) {
 		if($text=~/Hail/i) {
 			$pcpvp = $client->GetPVP();
 			quest::say("Perhaps next time I'll pretend to be a tree! You need to find my brother, Napoleon next.");
-			quest::updatetaskactivity(222,9);
+			quest::updatetaskactivity(500222,9);
 			if($qglobals{halloween_ratter_complete} < 9){
 				quest::summonitem(quest::ChooseRandom(85064,85068,85065,85063,85066,85067),10); # Item(s): Caramel-Coated Candy Apple (85064), Delicious Pumpkin Bread (85068), Sweetened Gummy Bears (85065), Tasty Sugar Pop (85063), Sweetened Rock Candy (85066), Haunted Candy Apples (85067)
 				quest::setglobal("halloween_ratter_complete",9,5,"D30");

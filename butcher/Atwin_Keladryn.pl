@@ -7,11 +7,11 @@ sub EVENT_SAY {
   }
   if($text=~/task/i) {
     if(($ulevel > 9) && ($ulevel < 21)) {
-      if(quest::istaskactive(15)) {
+      if(quest::istaskactive(1011)) {
         quest::say("Beetles of the Estate is already in progress.");
       }
       else {
-        quest::taskselector(15); #Task: Beetles of the Estate
+        quest::taskselector(1011); #Task: Beetles of the Estate
       }
     }
     else {

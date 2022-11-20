@@ -35,28 +35,28 @@ local level = e.other:GetLevel();
 			e.self:Say("I have four tasks that need to be completed. The first is an adventure into [Beholder's	Maze] where you will clear a path for young Halflings so they can make a safe passage through the maze to East Karana. The next you will be tasked with venturing into the heart of [the Hole] where you hunt for some ingredients for my drip clock. The third task leads you into [Karnor's Castle] where you will collect bone specimen for my collection. The final task you will adventure into [Stillmoon temple] and	learn about the creatures that inhabit the area.");
 		elseif(e.message:findi("beholder's maze")) then
 			if(level >= 30) then
-				eq.task_selector({178});
+				eq.task_selector({500178});
 			else
 				e.self:Say("I'm sorry, I don't think you are ready for that task yet. Please come back once you've gotten a bit more experience.");
 			end
 			-- if(e.message:findi("beholder's maze")		
 		elseif(e.message:findi("the hole")) then
 			if(level >= 40) then
-				eq.task_selector({179});
+				eq.task_selector({500179});
 			else
 				e.self:Say("I'm sorry, I don't think you are ready for that task yet. Please come back once you've gotten a bit more experience.");
 			end
 			-- if(e.message:findi("the hole")		
 		elseif(e.message:findi("Karnor's Castle")) then
 			if(level >= 60) then
-				eq.task_selector({180});
+				eq.task_selector({500180});
 			else
 				e.self:Say("I'm sorry, I don't think you are ready for that task yet. Please come back once you've gotten a bit more experience.");
 			end
 			-- if(e.message:findi("Karnor's Castle")		
 		elseif(e.message:findi("Stillmoon temple")) then
 			if(level >= 70) then
-				eq.task_selector({181});
+				eq.task_selector({500181});
 			else
 				e.self:Say("I'm sorry, I don't think you are ready for that task yet. Please come back once you've gotten a bit more experience.");
 			end

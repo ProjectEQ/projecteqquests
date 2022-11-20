@@ -1,7 +1,7 @@
 #zone: tutorialb
 #npc: kobold siege supplies
 #
-#Quest turn in for 'Sabotage' - taskid:31
+#Quest turn in for 'Sabotage' - taskid:5097
 #- makeshift lantern bomb (id:86011)
 #
 # items: 86011
@@ -51,9 +51,9 @@ sub EVENT_TIMER
 
 sub EVENT_ITEM 
 {
-	if(quest::istaskactivityactive(31,0) && plugin::check_handin(\%itemcount, 86011 => 1)) 
+	if(quest::istaskactivityactive(5097,0) && plugin::check_handin(\%itemcount, 86011 => 1)) 
 	{
-		quest::updatetaskactivity(31,0);
+		quest::updatetaskactivity(5097,0);
 		quest::exp(20000);
 		quest::ding();
 		quest::settimer("explode", 2);

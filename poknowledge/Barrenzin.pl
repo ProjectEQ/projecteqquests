@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if(quest::istaskactivityactive(207,4)) { #Ambushed! Step 3
+    if(quest::istaskactivityactive(5210,4)) { #Ambushed! Step 3
       quest::say("Before you got here I received a dispatch from Dellweena discussing the note she discovered. It all makes sense now, the seemingly random attacks...some objects being taken while others left untouched. I am a fool for I should have seen this earlier! But I assumed that none of my rivals had the audacity to attempt to undermine me. Nevertheless they have struck and now I must find out who is behind this and what exactly they are trying to accomplish. This note with the seal for my house will garner you a significant reward from your guildmaster.");
     }
     else {
@@ -12,7 +12,7 @@ sub EVENT_SAY {
   }
   if($text=~/interested/i) {
     quest::say("Very well then. Here are the tasks I have for you right now. Be sure to report back to me as you gain field experience. As sure as the accursed sunrise, there's always more work to be done around here.");
-    quest::taskselector(207);
+    quest::taskselector(5210);
   }
 }
 

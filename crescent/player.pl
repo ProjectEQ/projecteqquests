@@ -3,39 +3,39 @@
 ## Created by mrhodes for use in tasks/perl questing
 # items: 53481, 53482, 53485, 53484, 53486
 
-#Task 182 - Ways of Nature - Initiate Dakkan
-#Task 183 - Snake Sacs - Initiate Dakkan
-#Task 185 - Cap of Color - Jinkin
-#Task 186 - Here Kitty, Kitty - Jinkin
-#Task 187 - Thrills and Quills - Jinkin
+#Task 5431 - Ways of Nature - Initiate Dakkan
+#Task 5427 - Snake Sacs - Initiate Dakkan
+#Task 10644 - Cap of Color - Jinkin
+#Task 6800 - Here Kitty, Kitty - Jinkin
+#Task 10645 - Thrills and Quills - Jinkin
 sub EVENT_TASK_STAGE_COMPLETE {
-  if($task_id == 182 && $activity_id == 1) { #Ways of Nature Step 2
+  if($task_id == 5431 && $activity_id == 1) { #Ways of Nature Step 2
     quest::summonitem(53481, 5); #Potion of Minor Relief x 5
     quest::signal(394147); ##Initiate Dakkan
     $client->Message(4,"Dakkan is one step further in his quest to learn about nature and could use your help.");
     quest::exp(500);
     quest::ding();
   }
-  if($task_id == 183 && $activity_id == 1) { #Snake Sacs Step 2
+  if($task_id == 5427 && $activity_id == 1) { #Snake Sacs Step 2
     quest::summonitem(53482, 5); #Potion of Quickened Thought x 5
     quest::signal(394147); ##Initiate_Dakkan
     $client->Message(4,"Dakkan is getting closer to learning all he needs to about poison, but he still has more to learn.");
     quest::exp(500);
     quest::ding();
   }
-  if($task_id == 185 && $activity_id == 1) {
+  if($task_id == 10644 && $activity_id == 1) {
     quest::summonitem(53485, 10); # Item: Sporeling Essence Potion
     $client->Message(4,"Jinkin now has a full supply of dye, but as diligently as she works, it won't last long.");
     quest::exp(500);
     quest::ding();
   }
-  if($task_id == 186 && $activity_id == 2) {
+  if($task_id == 6800 && $activity_id == 2) {
     quest::summonitem(53484, 10); # Item: Jinkin's Hearty Elixir
     $client->Message(4,"Jinkin has enough fangs now to complete her necklace, but she still has a lot of work to do!");
     quest::exp(500);
     quest::ding();
   }
-  if($task_id == 187 && $activity_id == 3) {
+  if($task_id == 10645 && $activity_id == 3) {
     quest::summonitem(53486); # Item: Quill-Studded Bracer
     $client->Message(4,"Jinkin has enough hides to make many bracelets now. Hopefully, someone will buy them . . .");
     quest::exp(500);

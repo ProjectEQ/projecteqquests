@@ -7,7 +7,7 @@ sub EVENT_SAY {
 	if ($text=~/trick or treat/i) {
 		quest::say("Careful with these, or they'll get stuck in your teeth!");
 		quest::summonitem(quest::ChooseRandom(84091,84092,84093,84086,84086,84086,84086,84086,84086)); # Item(s): Sand (84091), Chunk of Coal (84092), Pocket Lint (84093), Caramel Apples (84086), Caramel Apples (84086), Caramel Apples (84086), Caramel Apples (84086), Caramel Apples (84086), Caramel Apples (84086)
-                quest::updatetaskactivity(220,5);
+                quest::updatetaskactivity(500220,5);
 	}
 }
 

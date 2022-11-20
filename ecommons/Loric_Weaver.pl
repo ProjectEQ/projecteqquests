@@ -5,7 +5,7 @@ sub EVENT_SAY {
     }
     if($text=~/task/i) {
       quest::say("Excellent! I was hoping you would be able to help me.");
-      quest::taskselector(141); #Task: Clearing the Mines
+      quest::taskselector(1947); #Task: Clearing the Mines
     }
   }
   else {

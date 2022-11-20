@@ -3,19 +3,19 @@ sub EVENT_SPAWN {
 	quest::settimer(2,600);
 }
 sub EVENT_SAY {
-	if(quest::istaskactive(19)){
-		if(quest::istaskactivityactive(19,4)){
+	if(quest::istaskactive(8013)){
+		if(quest::istaskactivityactive(8013,4)){
 			quest::summonitem(65096); # Item: 5 Dose Essence of Halfling
 			quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 			$client->AddLevelBasedExp(10, 0);
 			quest::setglobal("halloween_hungry",1,0,"D30");
-                        quest::updatetaskactivity(19,4);
+                        quest::updatetaskactivity(8013,4);
 		}
 		else {
 		quest::say("The Hungry Halfling is already in progress.");
 		}
       	}
-       	elsif(!quest::istaskactive(19)){
+       	elsif(!quest::istaskactive(8013)){
        		if(!defined $qglobals{halloween_hungry}){
   			if($text=~/hail/i) {
       				quest::say("Hail to you too. You wouldn't happen to have any of those wondrous [pumpkiny foods] on you would you? I'm not really feel my best and nothing perks you up better than a nice bit of tasty pumpkin.");
@@ -26,8 +26,8 @@ sub EVENT_SAY {
   			if($text=~/willing/i) {
         			quest::say("Thank you so much. Here is the book, now see what sort of things you can come up with.");
         			quest::summonitem(84097); # Item: Mippie's Home Remedies
-        			quest::assigntask(219);
-      			        quest::assigntask(19); #Task: The Hungry Halfling
+        			quest::assigntask(500219);
+      			        quest::assigntask(8013); #Task: The Hungry Halfling
       			}
     		}
   	}

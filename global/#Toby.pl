@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,7)) {
+	if(quest::istaskactivityactive(500222,7)) {
 		if($text=~/Hail/i) {
 			my $npcid = 999100;
 			my $location = plugin::GetRatLocation("halloween_ratter_toby");

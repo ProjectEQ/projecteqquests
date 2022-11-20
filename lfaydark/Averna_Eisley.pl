@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if(quest::istaskactivityactive(14,0)) {
+    if(quest::istaskactivityactive(500014,0)) {
       quest::say("Thank you for contacting me. Your information on this matter has been most useful.");
     }
     else {

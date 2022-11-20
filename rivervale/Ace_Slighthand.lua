@@ -6,18 +6,18 @@ function event_say(e)
 	local level = e.other:GetLevel();
 
 	if(e.message:findi("Hail")) then
-		if(e.other:IsTaskActivityActive(12,2)) then --Task: Extraordinary Rodents
+		if(e.other:IsTaskActivityActive(243,2)) then --Task: Extraordinary Rodents
 			e.self:Say("Your help in getting rid of those mongrels is more appreciated than you know. There's just one thing left for you to do though, and that's to deliver four Rat Whiskers to Swish Appletop. I'm sure getting some additional supplies will be a relief.");
-			e.other:UpdateTaskActivity(12,2,1);
+			e.other:UpdateTaskActivity(243,2,1);
 		else
 			e.self:Say("Hey, hey, hey! Welcome to the Fool's Gold. Don't bet more than you can afford to lose, pal! You don't want to end up like ol' [Kevlin]. If you're looking for something to do after you have a drink, you may be interested in a [task].");
 		end
 	elseif(e.message:findi("task")) then
 		if(level > 4 and level < 9) then --Maximum level for task is 8. Minimum level is currently unknown.
-			if(e.other:IsTaskActive(12)) then --Task: Extraordinary Rodents
+			if(e.other:IsTaskActive(243)) then --Task: Extraordinary Rodents
 				e.self:Say("Extraordinary Rodents is already in progress.");
 			else 
-				eq.task_selector({12}); --Task: Extraordinary Rodents
+				eq.task_selector({243}); --Task: Extraordinary Rodents
 			end
 		else
 			e.self:Say("I'm afraid you're not yet ready for the tasks I have available. You should seek out areas more fitting to your experience.");

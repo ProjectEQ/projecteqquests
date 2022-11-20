@@ -1,7 +1,7 @@
 # items: 58158, 58226, 58227, 58228, 58229, 58231, 58230, 58232, 58234, 58233, 58241, 58242, 58245, 58246, 58247, 58248
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if (quest::istaskactivityactive(165,4)) { #Tinkering Freebie Step 5
+    if (quest::istaskactivityactive(500165,4)) { #Tinkering Freebie Step 5
       quest::emote("smiles and claps you on the back.");
       quest::say("I think you've done enough. You look like one of those adventuring gnomes and I hate to keep you working for me. You should be out there defeating our enemies! Only you can bring the proper tools to the fight. Before you go, let me explain to you what you need to know about the dark matter so you can treat it yourself.");
       quest::emote("whispers into your ear. This is distracting, but you are able to concentrate well enough to understand the process he is explaining.");
@@ -10,7 +10,7 @@ sub EVENT_SAY {
       quest::LearnRecipe(417); #Dark Matter
       quest::LearnRecipe(448); #Infused Dark Matter
     }
-    elsif(quest::istaskactivityactive(177,4)) { #Tinkering Collect Step 5
+    elsif(quest::istaskactivityactive(500177,4)) { #Tinkering Collect Step 5
       quest::emote("smiles and claps you on the back.");
       quest::say("I think you've done enough. You look like one of those adventuring gnomes and I hate to keep you working for me. You should be out there defeating our enemies! Only you can bring the proper tools to the fight. Before you go, let me explain to you what you need to know about the dark matter so you can treat it yourself.");
       quest::emote("whispers into your ear. This is distracting, but you are able to concentrate well enough to understand the process he is explaining.");
@@ -32,26 +32,26 @@ sub EVENT_SAY {
     }
     if ($text=~/lend a hand/i) {
       quest::say("If you [help me] enough, I can teach you the secret for treating dark matter. That's a pretty important secret, so you'll have to do a lot of work, but I think it's well worth it!");
-      quest::taskselector(165); #Tinkering Freebie
+      quest::taskselector(500165); #Tinkering Freebie
     }
     if ($text=~/help/i) {
-      if (quest::istaskactivityactive(165,0)) { #Tinkering Freebie Step 1
+      if (quest::istaskactivityactive(500165,0)) { #Tinkering Freebie Step 1
         quest::say("Great! I'm almost ashamed to ask you to do such a menial task, but we are in desperate need of springs. Nothing fancy, just small, tight springs of the sort that many gnomes learn to make before they are out of their cradle. Just take this wire and you should have new springs for me in no time. Bring them right to me. Skelontorim pauses, then speaks again. I don't imagine you should go unrewarded for your efforts.");
         quest::summonitem(58158,20); #Thin Steel Wire
       }
-      if (quest::istaskactivityactive(165,1)) { #Tinkering Freebie Step 2
+      if (quest::istaskactivityactive(500165,1)) { #Tinkering Freebie Step 2
         quest::say("Aha! Just in time. I've got some work to do and I need, well, I need a lot of pulleys. You probably shouldn't ask what I need them for, it's a rather long story involving a cat and a wedding ring. Let's just say that I need some pulleys. These should be simple, you'll only need one of each of the items I've given you. Your toolbox, while in need of some repair, should be more than good enough to do the work.");
         quest::summonitem(58226,20); #Small Axle
         quest::summonitem(58227,20); #Small Ball Bearings
         quest::summonitem(58228,20); #Small Roller
       }
-      if (quest::istaskactivityactive(165,2)) { #Tinkering Freebie Step 3
+      if (quest::istaskactivityactive(500165,2)) { #Tinkering Freebie Step 3
         quest::say("Hello. I've got just the thing. As you may have noticed, we live mostly off of fish here. I noticed that our fishermen are using simple, boring lures. I'd like to get together a stock of my personal lures for them, but I just don't have time. If you could make some simple animated lures, I can at least upgrade their tools and improve their production. Not as well as using my special lures, but with all this work, what can we do? I apologize for the quality of the parts, I have to take what I can find here and even if that's used wine corks, then that's what I have to use. Bring the lures to me when you have them finished.");
         quest::summonitem(58229,20); #Used Cork
         quest::summonitem(58231,20); #Ordinary Lure
         quest::summonitem(58230,20); #Small Spring
       }
-      if (quest::istaskactivityactive(165,3)) {  #Tinkering Freebie Step 4
+      if (quest::istaskactivityactive(500165,3)) {  #Tinkering Freebie Step 4
         quest::say("Fantastic! I am trying to provide some more useful tools for our scouts, namely bows. If you could crank out some simple bow cams for me, I'd be grateful. I like to send folks into battle with the best gear, and those plain wooden bows don't have the punch that they should. With a few simple additions and can give them some serious kick! So hurry back to me with those cams.");
         quest::summonitem(58232,20); #Bolts
         quest::summonitem(58234,20); #Used Grease

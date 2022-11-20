@@ -1,6 +1,6 @@
 # items: 54723, 85064
 sub EVENT_SAY {
-  	if(!quest::istaskactive(214)){
+  	if(!quest::istaskactive(5651)){
 		if(!defined $qglobals{halloween_winnie}){
   			if($text=~/hail/i) {
       				quest::say("Salutations, are you enjoying the [festivities]? I know I am.");
@@ -13,8 +13,8 @@ sub EVENT_SAY {
 			}
   			if($text=~/track it down/i) {
 				quest::say("Well, last time I ran across it through a gnome named Finkel. It's possible that he still has some. I believe he is doing business in Steamfont this time of year.");
-                                quest::assigntask(219);
-				quest::assigntask(214);
+                                quest::assigntask(500219);
+				quest::assigntask(5651);
 			}
 		}
 		else {
@@ -24,13 +24,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-	if(quest::istaskactive(214)){
+	if(quest::istaskactive(5651)){
 		if(plugin::check_handin(\%itemcount, 54723 => 1)) {
 			quest::emote("whips up a batch of her famous Caramel-Coated Candy Apples! ");
 			quest::summonitem(85064,5); # Item: Caramel-Coated Candy Apple
 			$client->AddLevelBasedExp(10, 0);
 			quest::setglobal("halloween_winnie",1,0,"H3");
-			quest::updatetaskactivity(214,0);
+			quest::updatetaskactivity(5651,0);
 		}
 	}
   plugin::return_items(\%itemcount);

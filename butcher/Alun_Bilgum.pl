@@ -7,11 +7,11 @@ sub EVENT_SAY {
   }
   if($text=~/task/i) {
     if(($ulevel > 15) && ($ulevel < 25)) {
-      if(quest::istaskactive(14)) {
+      if(quest::istaskactive(500014)) {
         quest::say("Tour of the Castle is already in progress.");
       }
       else {
-        quest::taskselector(14); #Task: Tour of the Castle
+        quest::taskselector(500014); #Task: Tour of the Castle
       }
     }
     else {

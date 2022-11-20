@@ -24,51 +24,51 @@ sub EVENT_SAY   {
 # Opens task window with the proper task for the proper class.
       if($text=~/look/i) {
          if(($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Magician") || ($class eq "Enchanter")) {
-            push (@task_list, 260);#level 20 caster
-            push (@task_list, 261);#level 25 caster
-            push (@task_list, 262);#level 30 caster
-            push (@task_list, 263);#level 35 caster
-            push (@task_list, 264);#level 40 caster
-            push (@task_list, 265);#level 45 caster
-            push (@task_list, 266);#level 50 caster
-            push (@task_list, 267);#level 55 caster
-            push (@task_list, 268);#level 60 caster
+            push (@task_list, 500260);#level 20 caster
+            push (@task_list, 500261);#level 25 caster
+            push (@task_list, 500262);#level 30 caster
+            push (@task_list, 500263);#level 35 caster
+            push (@task_list, 500264);#level 40 caster
+            push (@task_list, 500265);#level 45 caster
+            push (@task_list, 500266);#level 50 caster
+            push (@task_list, 500267);#level 55 caster
+            push (@task_list, 500268);#level 60 caster
       }
          if(($class eq "Warrior") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Berserker")) {
-            push (@task_list, 269);#level 20 melee
-            push (@task_list, 270);#level 25 melee
-            push (@task_list, 234);#level 30 melee
-            push (@task_list, 235);#level 35 melee
-            push (@task_list, 236);#level 40 melee
-            push (@task_list, 237);#level 45 melee
-            push (@task_list, 238);#level 50 melee
-            push (@task_list, 239);#level 55 melee
-            push (@task_list, 240);#level 60 melee
+            push (@task_list, 10654);#level 20 melee
+            push (@task_list, 10655);#level 25 melee
+            push (@task_list, 10656);#level 30 melee
+            push (@task_list, 10657);#level 35 melee
+            push (@task_list, 10658);#level 40 melee
+            push (@task_list, 10659);#level 45 melee
+            push (@task_list, 10660);#level 50 melee
+            push (@task_list, 10661);#level 55 melee
+            push (@task_list, 10662);#level 60 melee
       }
          if(($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) {
-            push (@task_list, 241);#level 20 healer
-            push (@task_list, 242);#level 25 healer
-            push (@task_list, 243);#level 30 healer
-            push (@task_list, 244);#level 35 healer
-            push (@task_list, 245);#level 40 healer
-            push (@task_list, 246);#level 45 healer
-            push (@task_list, 247);#level 50 healer
-            push (@task_list, 248);#level 55 healer
-            push (@task_list, 249);#level 60 healer
+            push (@task_list, 500241);#level 20 healer
+            push (@task_list, 500242);#level 25 healer
+            push (@task_list, 500243);#level 30 healer
+            push (@task_list, 500244);#level 35 healer
+            push (@task_list, 500245);#level 40 healer
+            push (@task_list, 500246);#level 45 healer
+            push (@task_list, 500247);#level 50 healer
+            push (@task_list, 500248);#level 55 healer
+            push (@task_list, 500249);#level 60 healer
       }
          if(($class eq "Paladin") || ($class eq "Ranger") || ($class eq "Shadowknight") || ($class eq "Bard") || ($class eq "Beastlord")) {
-            push (@task_list, 250);#level 20 hybrid
-            push (@task_list, 251);#level 25 hybrid
-            push (@task_list, 252);#level 30 hybrid
-            push (@task_list, 253);#level 35 hybrid
-            push (@task_list, 254);#level 40 hybrid
-            push (@task_list, 255);#level 45 hybrid
-            push (@task_list, 256);#level 50 hybrid
-            push (@task_list, 257);#level 55 hybrid
-            push (@task_list, 258);#level 60 hybrid
+            push (@task_list, 500250);#level 20 hybrid
+            push (@task_list, 500251);#level 25 hybrid
+            push (@task_list, 500252);#level 30 hybrid
+            push (@task_list, 500253);#level 35 hybrid
+            push (@task_list, 500254);#level 40 hybrid
+            push (@task_list, 500255);#level 45 hybrid
+            push (@task_list, 500256);#level 50 hybrid
+            push (@task_list, 500257);#level 55 hybrid
+            push (@task_list, 500258);#level 60 hybrid
       }
          
-            push (@task_list, 259);#level 65 all
+            push (@task_list, 500259);#level 65 all
          quest::taskselector(@task_list);
          @task_list = ();
    }

@@ -15,29 +15,29 @@ sub EVENT_SAY
     if ($text=~ /quest/i)
 	{
 		my @task_array;
-		push(@task_array, 130);
+		push(@task_array, 5740);
 		
 		if(($client->GetClientVersionBit() & 4294967292)!= 0)
 		{
-			push(@task_array, 205);
+			push(@task_array, 5741);
 		}
 		else
 		{
-			push(@task_array, 131);
+			push(@task_array, 505741);
 		}
-		push(@task_array, 132);
+		push(@task_array, 5738);
 		
 		if(($client->GetClientVersionBit() & 4294967292)!= 0)
 		{
-			push(@task_array, 206);
+			push(@task_array, 5743);
 		}
 		else
 		{
-			push(@task_array, 133);
+			push(@task_array, 505743);
 		}
-		push(@task_array, 134);
-		push(@task_array, 135);
-		push(@task_array, 136);
+		push(@task_array, 5739);
+		push(@task_array, 5744);
+		push(@task_array, 5742);
 		quest::taskselector(@task_array);
 	}
 }

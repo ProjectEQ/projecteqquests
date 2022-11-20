@@ -10,7 +10,7 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if(quest::istaskactivityactive(184,1)) { #Diseased Spiders Step 2
+    if(quest::istaskactivityactive(5428,1)) { #Diseased Spiders Step 2
       quest::say("Thanks so much for your help.");
       $client->Message(4,"Dakkan is very grateful for your help as he surely could not have done it alone!");
       quest::summonitem(53483,5); #Dakkan's Tonic x 5
@@ -31,8 +31,8 @@ sub EVENT_SAY {
     quest::say("You must gather some mushrooms from the Mushroom Grove in the Hollow outside the city. If you could gather mushrooms for me, I can give them to Venesh to study. He will be so pleased! Are you [". quest::saylink("interested") . "]");
   }
   if($text=~/interested/i) {
-    if(!quest::istaskactive(182)) { #Ways of Nature
-      quest::assigntask(182); #Ways of Nature
+    if(!quest::istaskactive(5431)) { #Ways of Nature
+      quest::assigntask(5431); #Ways of Nature
       quest::say("Excellent, $name! Return the mushrooms to me so I can give them to my father. Perhaps I can reward you when you return!");
     }
     else {
@@ -43,8 +43,8 @@ sub EVENT_SAY {
     quest::say("Renn, $name. Oh, I should explain. Renn means 'welcome!' I often forget many don't know our words yet. Venesh has passed down another teaching. Now he wishes you to collect poison sacs from the snakes in the Hollow. Of course, to get the sacs you have to kill the snakes. It's not an easy task for a youth, but did you want to [". quest::saylink("try") . "]?");
   }
   if($text=~/try/i) {
-    if(!quest::istaskactive(183)) { #Snake Sacs
-      quest::assigntask(183); #Snake Sacs
+    if(!quest::istaskactive(5427)) { #Snake Sacs
+      quest::assigntask(5427); #Snake Sacs
       quest::say("Good, good. I knew I could count on you, $name. Bring the sacs back to me when you're done so I can give them to Venesh for his perusal. I'd also appreciate any pointers on how you killed the snakes! Udra, friend. Return safely. Oh yes, udra means 'goodbye!");
     }
     else {
@@ -55,8 +55,8 @@ sub EVENT_SAY {
     quest::say("My father has given us a great challenge as our final task in learning the ways of nature here. In the Hollow there are some spiders that have gotten a grim illness. They hide, but Venesh told me if I kill some healthy spiders in the area, it might draw the ill ones out of hiding. Are you up for [". quest::saylink("it") . "]?");
   }
   if($text=~/it/i) {
-    if(!quest::istaskactive(184)) { #Diseased Spiders
-      quest::assigntask(184); #Diseased Spiders
+    if(!quest::istaskactive(5428)) { #Diseased Spiders
+      quest::assigntask(5428); #Diseased Spiders
       quest::say("Off you go then! May Veeshan guard you!");
     }
     else {

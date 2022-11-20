@@ -1,14 +1,14 @@
 # items: 58128, 58167, 58060, 58169, 58063, 58168, 58062, 58049, 58050, 58130, 58122, 58093, 58097
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if (quest::istaskactivityactive(162,4)) { #Poisonmaking Freebie Step 5
+    if (quest::istaskactivityactive(500162,4)) { #Poisonmaking Freebie Step 5
       quest::say("You have proven your worth. You need do no more tasks for us. You have done enough and your skills will be more useful elsewhere. Here is the secret we promised you.");
       quest::emote("retrieves a thin piece of paper from his pocket. He tells you that it is a bit of the filter that he uses for distilling Muramite blood. He waves it suddenly under your nose. You can't help but flinch at the stench, which causes him to chuckle. You recognize the smell and are able to figure out exactly what he uses to distill the poison from the blood. Figuring out the process is easy now. You also know that you can teach yourself a more effective process with enough practice.");
       quest::emote("then continues, 'The same method will work for the material we have been calling Muramite bile, though that probably has less in common with what we know as bile.'");
       quest::LearnRecipe(276); #Muramite Blood Distillate
       quest::LearnRecipe(275); #Muramite Bile
     }
-    elsif (quest::istaskactivityactive(174,4)) { #Poisonmaking Collect Step 5
+    elsif (quest::istaskactivityactive(500174,4)) { #Poisonmaking Collect Step 5
       quest::say("You have proven your worth. You need do no more tasks for us. You have done enough and your skills will be more useful elsewhere. Here is the secret we promised you.");
       quest::emote("retrieves a thin piece of paper from his pocket. He tells you that it is a bit of the filter that he uses for distilling Muramite blood. He waves it suddenly under your nose. You can't help but flinch at the stench, which causes him to chuckle. You recognize the smell and are able to figure out exactly what he uses to distill the poison from the blood. Figuring out the process is easy now. You also know that you can teach yourself a more effective process with enough practice.");
       quest::emote("then continues, 'The same method will work for the material we have been calling Muramite bile, though that probably has less in common with what we know as bile.'");   
@@ -27,26 +27,26 @@ sub EVENT_SAY {
   }
   if ($text=~/useful/i) {
     quest::say("Tolerable. At least you are willing to try to prove yourself. Here is what I propose. I will have you complete many tedious and -- if I can manage it -- [painful tasks]. The result will mean that I have more free time to work on my own projects. In exchange, if you work hard enough, I will teach you the secret for distillation of the Muramite blood. Don't expect this to happen quickly.");
-    quest::taskselector(162); #Poisonmaking Freebie
+    quest::taskselector(500162); #Poisonmaking Freebie
   }
   if ($text=~/painful tasks/i) {
-    if (quest::istaskactivityactive(162,0)) { #Poisonmaking Freebie Step 1
+    if (quest::istaskactivityactive(500162,0)) { #Poisonmaking Freebie Step 1
       quest::say("Your first task will be to create some simple universal suspension. Just take the simple thickener and a vial of Abysmal Sea water and combine them in you mortar and pestle. Return the suspension to me when you are done.");
       quest::summonitem(58128,20); #Simple Thickener
       quest::summonitem(58167,20); #Vial of Abysmal Sea Water
     }
-    if(quest::istaskactivityactive(162,1)) { #Poisonmaking Freebie Step 2
+    if(quest::istaskactivityactive(500162,1)) { #Poisonmaking Freebie Step 2
       quest::emote("looks you over with a critical glance");
       quest::say("I have plenty for you to do. We need some solvent. We use a lot of it around here. Just put one ounce of mild acid and a vial of Abysmal Sea water into you mortar and pestle and mix them. Go do that and leave me to my work. Only come back to give me the solvent.");
       quest::summonitem(58060,20); #Ounce of Mild Acid
       quest::summonitem(58167,20); #Vial of Abysmal Sea Water
     }
-    if(quest::istaskactivityactive(162,2)) { #Poisonmaking Freebie Step 3
+    if(quest::istaskactivityactive(500162,2)) { #Poisonmaking Freebie Step 3
       quest::say("You are skilled enough to do something more challenging. We have some need of simple poison, though I cannot tell you exactly why. Just take a vial of simple suspension and one ounce of weak spider venom and combine them in your mortar and pestle. Bring me the resultant poison and you will earn a little more respect.");
       quest::summonitem(58169,20); #Vial of Simple Suspension
       quest::summonitem(58063,20); #Ounce of Weak Spider Venom
     }
-    if(quest::istaskactivityactive(162,3)) { #Poisonmaking Freebie Step 4
+    if(quest::istaskactivityactive(500162,3)) { #Poisonmaking Freebie Step 4
       quest::say("Good. Now, get to work making some injected poison for me. It's not hard to do. Just take a vial of simple solvent and an ounce of weak snake venom and combine them in your mortar and pestle. Bring me the poison when you are done.");
       quest::summonitem(58168,20); #Vial of Simple Solvent
       quest::summonitem(58062,20); #Ounce of Weak Snake Venom

@@ -86,15 +86,20 @@ function items.return_items(npc, client, trade, text)
 	for i = 1, 4 do
 		local inst = trade["item" .. i];
 		if(inst.valid) then
+			-- remove delivered task items from return for this slot
+			local return_count = inst:RemoveTaskDeliveredItems()
+
 			if(eq.is_disc_tome(inst:GetID()) and npc:GetClass() > 19 and npc:GetClass() < 36) then
 				if(client:GetClass() == npc:GetClass() - 19) then
 					client:TrainDisc(inst:GetID());
 				else
 					npc:Say(string.format("You are not a member of my guild. I will not train you!"));
-					client:PushItemOnCursor(inst);
-					returned = true;
+					if return_count > 0 then
+						client:PushItemOnCursor(inst);
+						returned = true;
+					end
 				end
-			else
+			elseif return_count > 0 then
 				client:PushItemOnCursor(inst);
 				if(text == true) then
 					npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));

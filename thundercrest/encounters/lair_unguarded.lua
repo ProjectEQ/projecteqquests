@@ -56,14 +56,14 @@ local function breath_timer(e)
     target_knockback_id = 0
   elseif target_knockback_id > 0 then
     local target = eq.get_entity_list():GetClientByID(target_knockback_id)
-    if target.valid then
+    if target.valid and not target:IsCrouching() then
       e.self:CastSpell(904, target:GetID()) -- Knockback
     end
     target_knockback_id = 0
   elseif check_knockback and math.random(2) == 1 then -- 50% chance on check (unknown actual chance)
     -- todo: need to test if pets can be selected as a knockback target
     local target = e.self:GetTarget()
-    if target.valid and not target:IsCorpse() then
+    if target.valid and not target:IsCorpse() and target:IsClient() then
       target:Message(MT.Yellow, "You sense the whirlwind focusing on you.  You think it might be a good idea to lower your profile against the incoming wind.")
       target_knockback_id = target:GetID() -- casts Knockback 5s later
     end

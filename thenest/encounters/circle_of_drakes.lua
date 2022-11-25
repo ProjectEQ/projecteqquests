@@ -11,18 +11,24 @@ local spawns = {
   west      = { x = 1632.0, y = -627.0, z = -179.0,h = 241.0, wp = waypoints.west },
 }
 
--- todo: drake magus npcs are supposed to increase level/difficulty every wave (70, 71, 72, 73, 75)
--- note server's walkspeed calc doesn't match walkspeed from live packets for same runspeed
-local waves = {
-  { npc_id = 0,      speed = 1.25, update = 0, next_secs = 25,  spawns = { } }, -- first wave just sets delay
-  { npc_id = 343087, speed = 1.25, update = 0, next_secs = 90,  spawns = { spawns.east, spawns.north } },
-  { npc_id = 343087, speed = 1.50, update = 1, next_secs = 120, spawns = { spawns.east, spawns.north, spawns.northwest, spawns.west } },
-  { npc_id = 343087, speed = 1.75, update = 2, next_secs = 120, spawns = { spawns.east, spawns.north, spawns.northwest, spawns.west } },
-  { npc_id = 343087, speed = 2.00, update = 3, next_secs = 90,  spawns = { spawns.north, spawns.northwest, spawns.west, spawns.east, spawns.east } },
-  { npc_id = 343087, speed = 2.25, update = 4, next_secs = 0,   spawns = { spawns.north, spawns.northwest, spawns.west, spawns.east, spawns.east } },
+local drakes = { -- npc ids
+  level_70 = 343087,
+  level_71 = 343723,
+  level_72 = 343724,
+  level_73 = 343725,
+  level_75 = 343090,
 }
 
--- todo: drake magi that spawn in circles should be level 1 (different npc id from spawned waves)
+-- Wave 1: Level 70, Wave 2: Level 71, Wave 3: Level 72, Wave 4: Level 73, Wave 5: Level 75, Circle: Level 1
+local waves = {
+  { npc_id = 0,               update = 0, next_secs = 25,  spawns = { } }, -- first wave just sets delay
+  { npc_id = drakes.level_70, update = 0, next_secs = 90,  spawns = { spawns.east, spawns.north } },
+  { npc_id = drakes.level_71, update = 1, next_secs = 120, spawns = { spawns.east, spawns.north, spawns.northwest, spawns.west } },
+  { npc_id = drakes.level_72, update = 2, next_secs = 120, spawns = { spawns.east, spawns.north, spawns.northwest, spawns.west } },
+  { npc_id = drakes.level_73, update = 3, next_secs = 90,  spawns = { spawns.north, spawns.northwest, spawns.west, spawns.east, spawns.east } },
+  { npc_id = drakes.level_75, update = 4, next_secs = 0,   spawns = { spawns.north, spawns.northwest, spawns.west, spawns.east, spawns.east } },
+}
+
 local circle_locs = {
   { x = 147.0, y = -26.0,  z = -30.0, h = 160.0 },
   { x = 211.0, y = -110.0, z = -24.0, h = 15.0 },
@@ -81,7 +87,7 @@ local function add_circle_drake(drake)
 
   local circle = circle_locs[circle_count]
   if circle then
-    local circle_drake = eq.spawn2(343090, 0, 0, circle.x, circle.y, circle.z, circle.h) -- drake_magus
+    local circle_drake = eq.spawn2(343726, 0, 0, circle.x, circle.y, circle.z, circle.h) -- drake_magus (level 1)
     circle_drake:SetSpecialAbility(SpecialAbility.immune_aggro, 1)
     circle_drake:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1)
     circle_drake:SetTargetable(false)
@@ -91,7 +97,6 @@ end
 local function spawn_wave(wave)
   for _, spawn in ipairs(wave.spawns) do
     local drake = eq.spawn2(wave.npc_id, 0, 0, spawn.x, spawn.y, spawn.z, spawn.h)
-    drake:CastToNPC():ModifyNPCStat("runspeed", tostring(wave.speed))
     drake:CastToNPC():MoveTo(spawn.wp.x, spawn.wp.y, spawn.wp.z, spawn.wp.h, true)
     drake:SetEntityVariable("wp", "1")
     eq.set_timer("check_wp", 500, drake)
@@ -167,7 +172,9 @@ function event_encounter_load(e)
   dz_task_id = eq.get_dz_task_id()
   eq.register_npc_event(Event.spawn,          343392, controller_spawn) -- #Event_Controller
   eq.register_npc_event(Event.timer,          343392, controller_timer)
-  eq.register_npc_event(Event.combat,         343087, drake_combat)     -- drake_magus
-  eq.register_npc_event(Event.timer,          343087, drake_timer)
-  eq.register_npc_event(Event.death_complete, 343087, drake_death)
+  for _, drake_npc_id in pairs(drakes) do
+    eq.register_npc_event(Event.combat,         drake_npc_id, drake_combat) -- drake_magus
+    eq.register_npc_event(Event.timer,          drake_npc_id, drake_timer)
+    eq.register_npc_event(Event.death_complete, drake_npc_id, drake_death)
+  end
 end

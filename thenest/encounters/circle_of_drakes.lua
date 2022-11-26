@@ -87,10 +87,7 @@ local function add_circle_drake(drake)
 
   local circle = circle_locs[circle_count]
   if circle then
-    local circle_drake = eq.spawn2(343726, 0, 0, circle.x, circle.y, circle.z, circle.h) -- drake_magus (level 1)
-    circle_drake:SetSpecialAbility(SpecialAbility.immune_aggro, 1)
-    circle_drake:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1)
-    circle_drake:SetTargetable(false)
+    eq.spawn2(343726, 0, 0, circle.x, circle.y, circle.z, circle.h) -- drake_magus (level 1)
   end
 end
 

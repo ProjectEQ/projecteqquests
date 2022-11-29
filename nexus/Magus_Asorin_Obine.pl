@@ -37,10 +37,9 @@ sub EVENT_SAY {
 }
 
 sub POPUP_DISPLAY {
-    my $Center = plugin::PWAutoCenter(20, 2);
     my $Break = plugin::PWBreak();
     
-    quest::popup('', "$Center Welcome to <c \"#FF0000\">Pyrelight</c>!                      
+    quest::popup('', "Welcome to <c \"#FF0000\">Pyrelight</c>!                      
                       <br>$Break<br>
                       <c \"#FF0000\">The Rules:</c>
                       <br>

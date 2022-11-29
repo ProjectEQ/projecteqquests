@@ -39,9 +39,7 @@ sub EVENT_SAY {
 sub POPUP_DISPLAY {
     my $Break = plugin::PWBreak();
     
-    quest::popup('', "Welcome to <c \"#FF0000\">Pyrelight</c>!                      
-                      <br>$Break<br>
-                      <c \"#FF0000\">The Rules:</c>
+    quest::popup('', "<c \"#FF0000\">The Rules:</c>
                       <br>
                       1. Don't be a dick. (Don't be unnecessarily rude or vulgar in global channels. Don't go out of your way to make other players have a bad time.)<br>
                       2. MQ2 is not allowed. The server files include several MQ2 features, with potentially more to come.<br>

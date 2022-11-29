@@ -41,7 +41,10 @@ sub POPUP_DISPLAY {
     
     quest::popup('', "Pyrelight is a solo-balanced progression server, meant to offer a challenging experience for adventurers willing to develop both their character and their personal skills.
                       <br>
-                      Progression does not exactly map to original expansion releases, but focuses more on level and overall difficulty. Currently, progression through ROUGHLY <c \"#00FFFF\">Scars of Velious</c> is available, though several Luclin zones are available and Veeshan's Peak and the Classic planes are not. This is <c \"#00FFFF\">Tier 1</c>, and levels are capped at <c \"#00FFFF\">60</c>. Additional progression tiers will be added in the future.
+                      Progression does not exactly map to original expansion releases, but focuses more on level and overall difficulty.
+                      Currently, progression through ROUGHLY <c \"#00FFFF\">Scars of Velious</c> is available, though several Luclin zones are 
+                      available and Veeshan's Peak and the Classic planes are not. This is <c \"#00FFFF\">Tier 1</c>, and levels are capped 
+                      at <c \"#00FFFF\">60</c>. Additional progression tiers will be added in the future.
                       <br>$Break<br>              
                       <c \"#DFA801\">This server uses several custom mechanics:</c><br>
                       <br>

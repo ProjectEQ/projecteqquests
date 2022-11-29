@@ -1,6 +1,7 @@
 sub EVENT_SAY {
 
   my $charKey = $client->CharacterID() . "-TL";
+  my $MAOcharKey = $client->CharacterID() . "MAO-Progress";
   my $charTargetsString = quest::get_data($charKey . "-F");
   my %teleport_zones = ();
   
@@ -15,8 +16,8 @@ sub EVENT_SAY {
   $teleport_zones{"The Greater Faydark (Great Combine Spires)"} = [ "gfaydark", "The Greater Faydark (Great Combine Spires)", -440, -2020, 0, 0 ];
 
   if ($text=~/hail/i) {
-    if (quest::get_data($charKey . "-RecievedInitialSoulAnchor")) {
-      plugin::NPCTell("Hail, traveler. I can transport you to the Great Spires of Faydwer, or any of the locations that on the continent to which your soul has become attuned.");
+    if (quest::get_data($MAOcharKey) <= 0) {
+      plugin::NPCTell("Hail, traveler. You'll need to get permission to access the Nexus teleportation network. Speak to Magus Asorin on the central platform.");
     } else {
       plugin::NPCTell("Hail, traveler. I can transport you to the Great Spires of Faydwer. Speak to Magus Obine on the central spire if you would like to travel to other locations.");
     }

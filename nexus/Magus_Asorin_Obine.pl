@@ -6,8 +6,8 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     if ($progress <= 0) {
       plugin::NPCTell("Hail, ". $client->GetCleanName() .". Welcome to the [". quest::saylink("Nexus of the Spires",1) ."], where your journey begins. ".
-                     ."I am Magus Asorin, archaeological leader for the Wayfarer's Brotherhood on Luclin. We have been studying this site for some time now, ".
-                     ." and have returned it to ]". quest::saylink("operational status",1, "test") ."].");
+                      "I am Magus Asorin, archaeological leader for the Wayfarer's Brotherhood on Luclin. We have been studying this site for some time now, ".
+                      " and have returned it to ]". quest::saylink("operational status",1, "test") ."].");
     }
   }
 }

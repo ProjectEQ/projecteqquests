@@ -1,8 +1,6 @@
-
-
 sub EVENT_SAY {
   POPUP_DISPLAY();
-  my $charKey = $client->CharacterID() . "-MAO-Progress";
+  my $charKey = $client->CharacterID() . "MAO-Progress";
   my $progress = quest::get_data($charKey);
   if ($text=~/hail/i) {
     if ($progress <= 0) {
@@ -39,28 +37,15 @@ sub EVENT_SAY {
 sub POPUP_DISPLAY {
     my $Break = plugin::PWBreak();
     
-    quest::popup('', "Pyrelight is a solo-balanced progression server, meant to offer a challenging experience for adventurers willing to develop both their character and their personal skills.
+    quest::popup('', "Pyrelight is a solo-balanced progression server, meant to offer a challenging experience for adventurers 
+                      willing to develop both their character and their personal skills.
                       <br>
                       Progression does not exactly map to original expansion releases, but focuses more on level and overall difficulty.
-                      Currently, progression through ROUGHLY <c \"#00FFFF\">Scars of Velious</c> is available, though several Luclin zones are 
-                      available and Veeshan's Peak and the Classic planes are not. This is <c \"#00FFFF\">Tier 1</c>, and levels are capped 
-                      at <c \"#00FFFF\">60</c>. Additional progression tiers will be added in the future.
+                      Currently, progression through ROUGHLY <c \"#00FFFF\">Shadows of Luclin</c> is available. This is <c \"#00FFFF\">Tier 1</c>, 
+                      and levels are capped at <c \"#00FFFF\">60</c>. Additional progression tiers will be added in the future.
                       <br>$Break<br>              
                       <c \"#DFA801\">This server uses several custom mechanics:</c><br>
                       <br>
                       1. 
                       ");
 }
-
-
-
-      
-      
-      
-      
-      
-      Welcome to the [". quest::saylink("mao1a",1,"Nexus of the Spires") ."], where your journey begins. ".
-                      "I am Magus Asorin, archaeological leader for the Wayfarer's Brotherhood on Luclin. We have been studying this site for some time now, ".
-                      " and have returned it to [". quest::saylink("mao1b",1,"operational status") ."].");
-    }The Combine Empire built this complex in a past age, along with the corresponding [" quest::saylink("mao1c",1,"Great and Minor spires") .
-                    "] scattered throughout Norrath. From time to time an adventurer like yourself will wind up here from origins unknown, "

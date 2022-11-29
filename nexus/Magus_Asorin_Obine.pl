@@ -8,8 +8,7 @@ sub EVENT_SAY {
       plugin::NPCTell("Hail, ". $client->GetCleanName() .". Welcome to the Nexus of the Spires, where your journey begins");
     }
   } elsif ($text=~/Nexus of the Spires/i) {
-    plugin::NPCTell("This complex serves as both a target and a projector for a vast teleportation network spanning Norrath and beyond. ".
-                    "Many adventurers find their way here, looking to [". quest::saylink("expedite their travels",1) ."].");
+    
   } elsif ($text=~/expedite their travels/i) {
   }
 }

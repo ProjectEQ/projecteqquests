@@ -3,3 +3,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
     $client->Message(15, "It looks like you made an impression on the other hunters and you won! They're more than excited about asking you along for their next hunt. Here is your prize!");
   }
 }
+
+sub EVENT_ENTERZONE {
+	quest::debug(15, "INSTANCE_ID = " . $client->GetInstanceID());
+}

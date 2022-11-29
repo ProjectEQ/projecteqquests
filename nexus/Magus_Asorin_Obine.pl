@@ -5,13 +5,13 @@ sub EVENT_SAY {
   my $progress = quest::get_data($charKey);
   if ($text=~/hail/i) {
     if ($progress <= 0) {
-      plugin::NPCTell("Hail, ". $client->GetCleanName() .". Welcome to the [". quest::saylink("Nexus of the Spires",1) ."], where your journey begins");
+      plugin::NPCTell("Hail, ". $client->GetCleanName() .". Welcome to the [". quest::saylink("Nexus of the Spires",1) ."], where your journey begins. ".
+                     ."I am Magus Asorin, archaeological leader for the Wayfarer's Brotherhood on Luclin. We have been studying this site for some time now, ".
+                     ." and have returned it to ]". quest::saylink("operational status",1, "test") ."].";
     }
-  } elsif ($text=~/Nexus of the Spires/i) {
-    plugin::NPCTell("This complex serves as both a target and a projector for a vast teleportation network spanning Norrath and beyond. ".
-                    "Many adventurers find their way here, looking to [". quest::saylink("expedite their travels",1) ."].");
-  } elsif ($text=~/expedite their travels/i) {
-  }
+  } elsif ($text=~/Nexus /i) {
+
+  } 
 }
 
 sub POPUP_DISPLAY {

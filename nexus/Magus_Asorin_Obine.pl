@@ -13,7 +13,7 @@ sub EVENT_SAY {
   } elsif ($text=~"mao1a") { #dimensional flotsam
     plugin::NPCTell("Apologies! Allow my to introduce myself; I am Magus Asorin, the head archaeologist of the Wayfarer's Brotherhood. This site is an ". 
                     "[".quest::saylink("mao1b",1,"ancient teleportation complex")."] built by the Combine prior to their decline. Unfortunately, it seems".
-                    "to act as something of a magnet for dimensional travelers, because periodically a stranger such as yourself will turn up - no memory of from ".
+                    "to act as something of a magnet for dimensional travelers. Periodically a stranger such as yourself will turn up - no memory of from ".
                     "whence they came and [".quest::saylink("mao1c",1,"no clue how to return")."].");
   } elsif ($text=~"mao1b") { #ancient teleportation complex
     plugin::NPCTell("The Nexus was built long ago, and while it has fallen into disrepair as a teleportation hub, it has remained a center of commerce for the ".
@@ -37,10 +37,10 @@ sub EVENT_SAY {
 }
 
 sub POPUP_DISPLAY {
-    my $Center = plugin::PWAutoCenter(22, 2);
+    my $Center = plugin::PWAutoCenter(20, 2);
     my $Break = plugin::PWBreak();
     
-    quest::popup('', "$Center Welcome to Pyrelight!                      
+    quest::popup('', "$Center Welcome to <c \"#FF0000\">Pyrelight</c>!                      
                       <br>$Break<br>
                       <c \"#FF0000\">The Rules:</c>
                       <br>

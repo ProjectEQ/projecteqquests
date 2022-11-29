@@ -4,7 +4,7 @@ sub EVENT_SAY {
   my $charKey = $client->CharacterID() . "-MAO-Progress";
   my $progress = quest::get_data($charKey);
 
-  quest::set_data($charkey, "1");
+  quest::set_data($charKey, "1");
 
   if ($text=~/hail/i) {
     if ($progress > 0) {

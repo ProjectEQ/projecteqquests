@@ -14,11 +14,7 @@ my %class_abilities = (1  => 30196,
                        14 => 30209,
                        15 => 30210,
                        16 => 30211);
-
-my %class_desc = (1  => "Warriors are unparalleled front-line combatants, able to both weather and deal out devastating melee blows while attracting the attention of enemies.",
-                  2  => "Clerics are the ultimate healers in this world, ");
-
-
+                       
 sub EVENT_SAY {
 
     my $unlocksAvailable = $client->GetBucket("ClassUnlocksAvailable");
@@ -107,10 +103,9 @@ sub EVENT_SAY {
             my $cid = substr($text,7);            
             if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                 my $class_name = quest::getclassname($cid);
-                plugin::NPCTell($class_desc{$cid} . " Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]?");
+                plugin::NPCTell("Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]?");
             }
-        }
-        
+        }        
     } elsif ($text=~/confirm-/i) {
         if (length($text) > 8) {
             my $cid = substr($text,8);
@@ -121,7 +116,6 @@ sub EVENT_SAY {
                     $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
                     $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
                 }
-
                 $client->SetBucket("class-".$cid."-unlocked",1);
                 $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
                 $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);

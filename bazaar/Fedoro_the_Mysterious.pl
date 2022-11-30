@@ -46,7 +46,8 @@ sub EVENT_SAY {
                     $out = $out . " [". quest::saylink("unlock-".$_,1,quest::getclassname($_))."],";
                 }
             } 
-            plugin::NPCTell(chop($out) . " for you." );
+            chop($out);
+            plugin::NPCTell( $out . " for you." );
         }
     } elsif ($text=~/cad1c/i) { #Favors        
         if ($unlockProgress < 1) {

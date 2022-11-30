@@ -1,3 +1,21 @@
+my %class_abilities = (1  => 30196,
+                       2  => 30197,
+                       3  => 30198,
+                       4  => 30199,
+                       5  => 30200,
+                       6  => 30201,
+                       7  => 30202,
+                       8  => 30203,
+                       9  => 30204,
+                       10 => 30205,
+                       11 => 30206,
+                       12 => 30207,
+                       13 => 30208,
+                       14 => 30209,
+                       15 => 30210,
+                       16 => 30211);
+
+
 sub EVENT_SAY {
 
     my $unlocksAvailable = $client->GetBucket("-ClassUnlocksAvailable");
@@ -83,6 +101,19 @@ sub EVENT_SAY {
         if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
             plugin::NPCTell("Ah, yes. The Warrior class. Expert front-line combatant, able to both absorb and deal devastating melee blows. Are you sure that you want to become a ["
                             . quest::saylink("confirm-warrior",1,"Warrior") . "]?");
+        }
+    } elsif ($text=~/confirm-warrior/i) {
+        if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
+
+            #Check for existing class unlock
+            if (!$client->GetBucket("-class-".$client->GetClass()."-unlocked")) {
+                $client->SetBucket("-class-".$client->GetClass()."-unlocked",1);
+                $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
+            }
+
+            $client->SetBucket("-class-1-unlocked",1);
+            $client->SetBucket("-ClassUnlocksAvailable", --$unlocksAvailable);
+            $client->GrantAlternateAdvancementAbility($class_abilities{1}, 1);
         }
     }
 } 

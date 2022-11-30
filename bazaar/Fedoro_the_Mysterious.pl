@@ -22,7 +22,7 @@ sub EVENT_SAY {
 
     if ($text=~/hail/i) {
         if ($unlocksAvailable >= 1) {
-            quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
+            quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
         }
         if (!$client->GetBucket("CadricMet")) {
             plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If I'm [". quest::saylink("cad1a",1,"right") ."], we can be of great help to each other.");

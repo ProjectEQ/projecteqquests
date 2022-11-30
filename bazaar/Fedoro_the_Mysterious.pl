@@ -25,14 +25,8 @@ sub EVENT_SAY {
         } else {
             plugin::NPCTell("Which class would you like to unlock?");
 
-            my $warriorUnlocked = quest::get_data($charKey . "-Unlocked1");
-
-            quest::debug($warriorUnlocked);
-
-            if (!$warriorUnlocked) {
-                $client->Message(257,"[" . quest::saylink("Warrior",1) . "]");
-            } else {
-                quest::debug("how tho?");
+            if (!quest::get_data($charKey . "-Unlocked1") {
+                $client->Message(257,"-- [" . quest::saylink("Warrior",1) . "]");
             }
             
         }

@@ -25,7 +25,7 @@ sub EVENT_SAY {
             my @i = (1..16);
             for (@i) {
                 if (!$client->GetBucket("-class-".$_."-unlocked")) {
-                    plugin::NPCTell("----[". quest::saylink(quest::getclassname("unlock-".$_,i,$_) ."]"));
+                    plugin::NPCTell("----[". quest::saylink("unlock-".$_,1,quest::getclassname($_) ."]"));
                 }
             } 
         }
@@ -79,6 +79,5 @@ sub EVENT_SAY {
         } elsif ($unlockProgress < 16) {
             
         }
-    } elsif ($text=~/unlock-1/i) {
-    } 
+    }
 } 

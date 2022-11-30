@@ -4,7 +4,8 @@ sub EVENT_SAY {
   my $progress = quest::get_data($charKey);
   if ($text=~/hail/i) {
     if ($progress <= 0) {
-      plugin::NPCTell("Hail, ". $client->GetCleanName() .". You must be the latest bit of [".quest::saylink("mao1a",1,"dimensional flotsam")."] to wash up.");
+      plugin::NPCTell("Hail, ". $client->GetCleanName() .". You must be the latest bit of [".quest::saylink("mao1a",1,"dimensional flotsam")."] to wash up. 
+                       Are you an [".quest::saylink("mao1f",1,"adventurer")."] or a [".quest::saylink("mao1g",1,"civilian")."]?");
     } else {
       plugin::NPCTell("Hail, ". $client->GetCleanName() .". Return to me when you've gained more experience. I will have work for you.");
     }

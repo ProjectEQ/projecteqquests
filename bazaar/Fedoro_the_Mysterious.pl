@@ -20,11 +20,12 @@ sub EVENT_SAY {
                         quest::saylink("cad1c",1,"favors") ."] for me, first.");
     } elsif ($text=~/cad1b/i) { #Classes
 
-    } elsif ($text=~/cad1c/i) { #Favors        
-        if (quest::get_data($charKey . "-DonatorCreditAvailable")) {
+    } elsif ($text=~/cad1c/i) { #Favors
+        my $donatorCredits = quest::get_data($charKey . "-DonatorCreditAvailable");
+        if ($donatorCredits) {
             plugin::NPCTell("I feel like you've done me a favor, but I can't quite remember what. No matter, I'm willing to attune your soul to a new class");
             quest::set_data($charUnlockKey , ++$unlocksAvailable);
-            quest::set_data($charKey . "-DonatorCreditAvailable", --quest::get_data($charKey . "-DonatorCreditAvailable"))
+            quest::set_data($charKey . "-DonatorCreditAvailable", --$donatorCredits)
             quest::message(15, "You have gained a class unlock point!");
             quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
             quest::ding();

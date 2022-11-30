@@ -1,6 +1,6 @@
 sub EVENT_SPELL_EFFECT_CLIENT {
     quest::debug("started warrior class change");
-    if ($client->GetClassName() neq "Warrior") {
+    if ($client->GetClass() == 1) {
         $client->BuffFadeAll();
         quest::permaclass(1);
     } else {

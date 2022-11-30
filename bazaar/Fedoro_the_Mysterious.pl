@@ -118,13 +118,13 @@ sub EVENT_SAY {
             if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                 #Check for existing class unlock
                 if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
-                    #$client->SetBucket("class-".$client->GetClass()."-unlocked",1);
-                    #$client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
+                    $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
+                    $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
                 }
 
-                #$client->SetBucket("class-".$cid."-unlocked",1);
-                #$client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
-                #$client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
+                $client->SetBucket("class-".$cid."-unlocked",1);
+                $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
+                $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
             }
         }
     }

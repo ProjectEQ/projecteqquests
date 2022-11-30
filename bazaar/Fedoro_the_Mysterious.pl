@@ -3,7 +3,7 @@ sub EVENT_SAY {
     } elsif ($text="warrior") {
         $client->BuffFadeAll();
         quest::permaclass(1);
-    } elsif ($text="magician") {
+    } elsif ($text="mage") {
         $client->BuffFadeAll();
         quest::permaclass(13);
     }

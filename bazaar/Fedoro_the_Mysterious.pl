@@ -1,9 +1,9 @@
 sub EVENT_SAY {
     if ($text=~/hail/i) {
-    } else ($text="warrior") {
+    } elsif ($text="warrior") {
         $client->BuffFadeAll();
         quest::permaclass(1);
-    } else ($text="magician") {
+    } elsif ($text="magician") {
         $client->BuffFadeAll();
         quest::permaclass(13);
     }

@@ -99,12 +99,16 @@ sub EVENT_SAY {
         } elsif ($unlockProgress < 16) {
             
         }
-    } elsif ($text=~/unlock-1/i) {
-        if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
-            plugin::NPCTell("Ah, yes. The Warrior class. Expert front-line combatant, able to both absorb and deal devastating melee blows. Are you sure that you want to become a ["
-                            . quest::saylink("confirm-warrior",1,"Warrior") . "]?");
+    } elsif ($text=~/unlock-/i) {
+        if (length($text) > 7) {
+            my $cid = substr($text,7);
+            quest::debug($cid);
+            if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
+            
+            }
         }
-    } elsif ($text=~/confirm-warrior/i) {
+        
+    } elsif ($text=~/confirm-/i) {
         if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
 
             #Check for existing class unlock

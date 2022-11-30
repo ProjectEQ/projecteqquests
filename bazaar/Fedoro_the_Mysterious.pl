@@ -21,14 +21,13 @@ sub EVENT_SAY {
                         quest::saylink("cad1c",1,"favors") ."] for me, first.");
     } elsif ($text=~/cad1b/i) { #Classes
         if ($unlocksAvailable < 1) {
-            plugin::NPCTell("You'll need to accrue some [". quest::saylink("cad1c",1,"favors") ."] with me, if you want to open up a new class.");
+            plugin::NPCTell("You'll need to accrue some [". quest::saylink("cad1c",1,"favors") ."] with me, if you want to open up a new class.");            
         } else {
             plugin::NPCTell("Which class would you like to unlock?");
-
-            if (!quest::get_data($charKey . "-Unlocked1")) {
-                $client->Message(257,"-- [" . quest::saylink("Warrior",1) . "]");
-            }
-            
+            my @i = (1..16);
+            for (@i) {
+                plugin::NPCTell("----[". quest::saylink(quest::getclassname($_, i) ."]"));
+            } 
         }
     } elsif ($text=~/cad1c/i) { #Favors
         my $donatorCredits = quest::get_data($charKey . "-DonatorCreditAvailable");

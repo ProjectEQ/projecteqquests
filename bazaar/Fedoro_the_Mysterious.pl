@@ -1,23 +1,29 @@
-# Class-Change NPC
-# Characters use 'CharID-Class-Unlocks-Available'
-
 sub EVENT_SAY {
-    if ($text=~/debug/i) {
-        $client->GrantAlternateAdvancementAbility(30196, 1);
-        $client->GrantAlternateAdvancementAbility(30203, 1);
-        $client->GrantAlternateAdvancementAbility(30210, 1);
-        $client->GrantAlternateAdvancementAbility(30211, 1);
-        $client->GrantAlternateAdvancementAbility(30197, 1);
-        $client->GrantAlternateAdvancementAbility(30201, 1);
-        $client->GrantAlternateAdvancementAbility(30209, 1);
-        $client->GrantAlternateAdvancementAbility(30208, 1);
-        $client->GrantAlternateAdvancementAbility(30202, 1);
-        $client->GrantAlternateAdvancementAbility(30206, 1);
-        $client->GrantAlternateAdvancementAbility(30198, 1);
-        $client->GrantAlternateAdvancementAbility(30199, 1);
-        $client->GrantAlternateAdvancementAbility(30204, 1);
-        $client->GrantAlternateAdvancementAbility(30200, 1);
-        $client->GrantAlternateAdvancementAbility(30205, 1);
-        $client->GrantAlternateAdvancementAbility(30207, 1);
-    }
+
+    my $charKey = $client->CharacterID();
+    my $charUnlockKey = $charKey . "-ClassUnlocksAvailable";
+    my $unlocksAvailable = quest::get_data($charUnlockKey);
+
+    if ($text=~/hail/i) {
+        if (quest::get_data($charKey . "-CadricMet") >= 0) {
+            plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If [". quest::saylink("cad1a",1,"I'm right") ."], we can be of great help to each other.");
+        } else {
+             plugin::NPCTell("Hail, ". $client->GetCleanName() .", good to see you again. Are you ready to do another [". quest::saylink("cad1c",1,"favor") ."] for me?");
+        }
+    } elsif ($text=~/cad1a/i) { #I'm right
+        plugin::NPCTell("Perfect! I have a unique talent - I can grant you the ability to shift your spirit, allowing you to pick up a different set of skills. You'll be as weak as 
+                        newborn kitten at first, but only at first. Better yet, as you flex your new skills and regain experience, you'll find that many of your new abilities will carry
+                        over to different aspects of your spirit. I can open up new [". quest::saylink("cad2b",1,"Classes") ."] for you to explore, but you'll need to do some [". 
+                        quest::saylink("cad1c",1,"favors") ."] for me, first.");
+    } elsif ($text=~/cad1b/i) { #Classes
+
+    } elsif ($text=~/cad1c/i) { #Favors
+        if (quest::get_data($charKey . "-DonatorCreditAvailable")) {
+            plugin::NPCTell("I feel like you've done me a favor, but I can't quite remember what. No matter, I'm willing to attune your soul to a new class");
+            quest::set_data($charUnlockKey , ++$unlocksAvailable);
+            quest::message(13, "You have gained a class unlock point!");
+            quest::ding();
+        } 
+        plugin::NPCTell("");
+    } 
 }

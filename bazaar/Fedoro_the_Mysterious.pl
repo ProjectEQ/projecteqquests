@@ -35,10 +35,10 @@ sub EVENT_SAY {
             #TODO - Implement task
             # Manastone (Custom, Augment)
             # Glowing Black Stone (Customized, Augment)
-            #quest::set_data($charUnlockKey , ++$unlocksAvailable);
-            #quest::message(15, "You have gained a class unlock point!");
-            #quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
-            #quest::ding();            
+            $client->SetBucket("-ClassUnlocksAvailable", ++$unlocksAvailable);
+            quest::message(15, "You have gained a class unlock point!");
+            quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
+            quest::ding();            
         } elsif ($unlockProgress < 2) {
             plugin::NPCTell("I ordered a particularly fine sushi from the tavernkeeper here in the Bazaar, but the man is missing a particular rare ingredient. Bring me the tentacle of a Kedge, and I'll be more than happy to open up your soul to new experiences.");
             #TODO - Implement task

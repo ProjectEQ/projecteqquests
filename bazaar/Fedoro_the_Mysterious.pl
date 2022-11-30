@@ -7,7 +7,7 @@ sub EVENT_SAY {
         if ($unlocksAvailable >= 1) {
             quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
         }
-        if ($client->GetBucket("-CadricMet")) {
+        if (!$client->GetBucket("-CadricMet")) {
             plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If I'm [". quest::saylink("cad1a",1,"right") ."], we can be of great help to each other.");
         } else {
              plugin::NPCTell("Hail, ". $client->GetCleanName() .", good to see you again. Are you ready to do another [". quest::saylink("cad1c",1,"favor") ."] for me?");

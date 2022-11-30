@@ -105,24 +105,26 @@ sub EVENT_SAY {
     } elsif ($text=~/unlock-/i) {
         if (length($text) > 7) {
             my $cid = substr($text,7);            
-            if ($cid <= 16 && $client->GetClass() != 1 && $unlocksAvailable > 0) {
+            if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                 my $class_name = quest::getclassname($cid);
                 plugin::NPCTell($class_desc{$cid} . " Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]?");
             }
         }
         
     } elsif ($text=~/confirm-/i) {
-        if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
+        if (length($text) > 7) {
+            my $cid = substr($text,7);
+            if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
+                #Check for existing class unlock
+                if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
+                    $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
+                    $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
+                }
 
-            #Check for existing class unlock
-            if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
-                $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
-                $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
+                $client->SetBucket("class-".$cid."-unlocked",1);
+                $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
+                $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
             }
-
-            $client->SetBucket("class-1-unlocked",1);
-            $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
-            $client->GrantAlternateAdvancementAbility($class_abilities{1}, 1);
         }
     }
 } 

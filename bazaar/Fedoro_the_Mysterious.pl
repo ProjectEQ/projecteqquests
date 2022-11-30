@@ -24,7 +24,7 @@ sub EVENT_SAY {
             plugin::NPCTell("Which class would you like to unlock?");
             my @i = (1..16);
             for (@i) {
-                if (!$client->GetBucket("-class-".$_."-unlocked")) {
+                if (!$client->GetBucket("-class-".$_."-unlocked") && $client->GetClass() != $_) {
                     plugin::NPCTell("----[". quest::saylink("unlock-".$_,1,quest::getclassname($_) ."]"));
                 }
             } 

@@ -21,6 +21,7 @@ sub EVENT_SAY {
     } elsif ($text=~/cad1c/i) { #Classes
         plugin::NPCTell("");
     } elsif ($text=~/warrior/i) {
+        plugin::NPCTell("trying to unlock war");
         $client->GrantAlternateAdvancementAbility(30196, 1);
     }
 }

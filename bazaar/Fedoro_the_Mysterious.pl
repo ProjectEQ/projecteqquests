@@ -24,7 +24,9 @@ sub EVENT_SAY {
         if (quest::get_data($charKey . "-DonatorCreditAvailable")) {
             plugin::NPCTell("I feel like you've done me a favor, but I can't quite remember what. No matter, I'm willing to attune your soul to a new class");
             quest::set_data($charUnlockKey , ++$unlocksAvailable);
+            quest::set_data(--quest::get_data($charKey . "-DonatorCreditAvailable"))
             quest::message(15, "You have gained a class unlock point!");
+            quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
             quest::ding();
         } 
         plugin::NPCTell("");

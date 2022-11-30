@@ -15,6 +15,9 @@ my %class_abilities = (1  => 30196,
                        15 => 30210,
                        16 => 30211);
 
+my %class_desc = (1  => "Warriors are unparalleled front-line combatants, able to both weather and deal out devastating melee blows while attracting the attention of enemies.",
+                  2  => "Clerics are the ultimate healers in this world, ");
+
 
 sub EVENT_SAY {
 
@@ -101,10 +104,10 @@ sub EVENT_SAY {
         }
     } elsif ($text=~/unlock-/i) {
         if (length($text) > 7) {
-            my $cid = substr($text,7);
-            quest::debug($cid);
-            if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
-            
+            my $cid = substr($text,7);            
+            if ($cid <= 16 && $client->GetClass() != 1 && $unlocksAvailable > 0) {
+                my $class_name = quest::getclassname($cid);
+                plugin::NPCTell($class_desc{$cid} . " Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]?");
             }
         }
         

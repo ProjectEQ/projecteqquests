@@ -14,6 +14,8 @@ my %class_abilities = (1  => 30196,
                        14 => 30209,
                        15 => 30210,
                        16 => 30211);
+
+my $task1_id = 37;
                        
 sub EVENT_SAY {
 
@@ -49,15 +51,19 @@ sub EVENT_SAY {
             plugin::NPCTell( $out . " for you." );
         }
     } elsif ($text=~/cad1c/i) { #Favors        
-        if ($unlockProgress < 1) {
-            plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring me any one of these, and I will expand your soul's capabilities.");
-            #TODO - Implement task
-            # Manastone (Custom, Augment)
-            # Glowing Black Stone (Customized, Augment)
-            #$client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
-            #quest::message(15, "You have gained a class unlock point!");
-            #quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
-            #quest::ding();            
+        if (!$client->IsTaskCompleted($task1_id)) {
+            if (!$client->IsTaskActive($task1_id)) {
+                plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
+                $client->AssignTask($task1_id);
+            } elsif (!$client->IsTaskActivityActive($task1_id, 2)) {
+                plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
+            } elsif ($client->IsTaskActivityActive($task1_id, 2)) {
+                plugin::NPCTell("You've done a wonderful job. Consider your favor completed. Let me know when you'd like to [".quest::saylink("cad1b",1,"unlock a new class") ."].");
+                $client->UpdateTaskActivity(37, 2, 1);
+                $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
+                quest::message(315, "You have earned 1 class unlock point.");
+                quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
+            }
         } elsif ($unlockProgress < 2) {
             plugin::NPCTell("I ordered a particularly fine sushi from the tavernkeeper here in the Bazaar, but the man is missing a particular rare ingredient. Bring me the tentacle of a Kedge, and I'll be more than happy to open up your soul to new experiences.");
             #TODO - Implement task
@@ -111,6 +117,7 @@ sub EVENT_SAY {
             my $cid = substr($text,8);
             quest::debug($cid);
             if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
+                quest::message(315, "You spent 1 class unlock point.");
                 #Check for existing class unlock
                 if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
                     $client->SetBucket("class-".$client->GetClass()."-unlocked",1);

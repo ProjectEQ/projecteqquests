@@ -22,6 +22,6 @@ sub EVENT_SAY {
         plugin::NPCTell("");
     } elsif ($text=~/warrior/i) {
         plugin::NPCTell("trying to unlock war");
-        $client->GrantAlternateAdvancementAbility("30196", "1");
+        $client->GrantAlternateAdvancementAbility(30196, 1);
     }
 }

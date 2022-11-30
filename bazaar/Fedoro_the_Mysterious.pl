@@ -15,7 +15,7 @@ sub EVENT_SAY {
     } elsif ($text=~/cad1a/i) { #right
         plugin::NPCTell("Perfect! I have a unique talent - I can grant you the ability to shift your spirit, allowing you to pick up a different set of skills. You'll be as weak as 
                         newborn kitten at first, but only at first. Better yet, as you flex your new skills and regain experience, you'll find that many of your new abilities will carry
-                        over to different aspects of your spirit. I can open up new [". quest::saylink("cad1b",1,"Classes") ."] for you to explore, but you'll need to do some [". 
+                        over to different aspects of your spirit. I can open up new [". quest::saylink("cad1b",1,"classes") ."] for you to explore, but you'll need to do some [". 
                         quest::saylink("cad1c",1,"favors") ."] for me, first.");
     } elsif ($text=~/cad1b/i) { #Classes
         if ($unlocksAvailable < 1) {
@@ -24,8 +24,8 @@ sub EVENT_SAY {
             plugin::NPCTell("Which class would you like to unlock?");
             my @i = (1..16);
             for (@i) {
-                if (!$client->GetBucket("-class-".$_."-unlocked")) {
-                    plugin::NPCTell("----[". quest::saylink(quest::getclassname($_, i) ."]"));
+                if (!$client->GetBucket("-class-".$_."-unlocked") && $client->GetClass() != @_) {
+                    plugin::NPCTell("----[". quest::saylink(quest::getclassname("unlock-".$_,i,$_) ."]"));
                 }
             } 
         }
@@ -35,10 +35,10 @@ sub EVENT_SAY {
             #TODO - Implement task
             # Manastone (Custom, Augment)
             # Glowing Black Stone (Customized, Augment)
-            $client->SetBucket("-ClassUnlocksAvailable", ++$unlocksAvailable);
-            quest::message(15, "You have gained a class unlock point!");
-            quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
-            quest::ding();            
+            #$client->SetBucket("-ClassUnlocksAvailable", ++$unlocksAvailable);
+            #quest::message(15, "You have gained a class unlock point!");
+            #quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
+            #quest::ding();            
         } elsif ($unlockProgress < 2) {
             plugin::NPCTell("I ordered a particularly fine sushi from the tavernkeeper here in the Bazaar, but the man is missing a particular rare ingredient. Bring me the tentacle of a Kedge, and I'll be more than happy to open up your soul to new experiences.");
             #TODO - Implement task
@@ -79,5 +79,6 @@ sub EVENT_SAY {
         } elsif ($unlockProgress < 16) {
             
         }
-    }  
+    } elsif ($text=~/unlock-1/i) {
+    } 
 } 

@@ -112,8 +112,8 @@ sub EVENT_SAY {
         }
         
     } elsif ($text=~/confirm-/i) {
-        if (length($text) > 7) {
-            my $cid = substr($text,7);
+        if (length($text) > 8) {
+            my $cid = substr($text,8);
             quest::debug($cid);
             if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                 #Check for existing class unlock

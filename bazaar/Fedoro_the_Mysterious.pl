@@ -3,6 +3,6 @@
 
 sub EVENT_SAY {
     if ($text=~/hail/i) {
-        $client->GrantAlternateAdvancementAbility(481, 1);
+        $client->GrantAlternateAdvancementAbility(30196, 1);
     }
 }

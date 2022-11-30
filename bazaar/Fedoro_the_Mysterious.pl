@@ -26,7 +26,7 @@ sub EVENT_SAY {
             plugin::NPCTell("Which class would you like to unlock?");
             my @i = (1..16);
             for (@i) {
-                plugin::NPCTell("----[". quest::saylink(quest::getclassname($_, i) ."]"));
+                $client->Message(13,"----[". quest::saylink(quest::getclassname($_, i) ."]"));
             } 
         }
     } elsif ($text=~/cad1c/i) { #Favors

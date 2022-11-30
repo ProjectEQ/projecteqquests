@@ -1,5 +1,5 @@
 sub EVENT_SPELL_EFFECT_CLIENT {
-    my $tclass = 1; #Warrior
+    my $tclass = 3; #Paladin
     my $mclass = $client->GetClass();
     if ($mclass==$tclass) {
         $client->Message(13, "Ability Failed. You are already a ". quest::getclassname($tclass));

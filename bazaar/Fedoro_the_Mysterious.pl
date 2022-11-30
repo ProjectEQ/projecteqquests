@@ -41,8 +41,7 @@ sub EVENT_SAY {
                 plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring me any one of these, and I will expand your soul's capabilities.");
                 #TODO - Implement task
                 # Manastone (Custom, Augment)
-                # Glowing Black Stone (Customized, Augment)
-            }
+                # Glowing Black Stone (Customized, Augment)            
             } elsif ($unlockProgress < 2) {
                 plugin::NPCTell("I ordered a particularly fine sushi from the tavernkeeper here in the Bazaar, but the man is missing a particular rare ingredient. Bring me the tentacle of a Kedge, and I'll be more than happy to open up your soul to new experiences.");
                 #TODO - Implement task
@@ -84,8 +83,9 @@ sub EVENT_SAY {
                 
             }
         }        
-    } 
-}
+    }
+} 
+
 
 sub ADD_FAVOR_POINT {
 

@@ -25,7 +25,7 @@ sub EVENT_SAY {
             my @i = (1..16);
             for (@i) {
                 if (!$client->GetBucket("-class-".$_."-unlocked") && $client->GetClass() != $_) {
-                    plugin::NPCTell("----[". quest::saylink("unlock-".$_,1,quest::getclassname($_) ."]"));
+                    plugin::NPCTell("----[". quest::saylink("unlock-".$_,1,quest::getclassname($_))."]");
                 }
             } 
         }
@@ -78,6 +78,11 @@ sub EVENT_SAY {
             
         } elsif ($unlockProgress < 16) {
             
+        }
+    } elsif ($text=~/unlock-1/i) {
+        if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
+            plugin::NPCTell("Ah, yes. The Warrior class. Expert front-line combatant, able to both absorb and deal devastating melee blows. Are you sure that you want to become a ["
+                            . quest::saylink("confirm-warrior",1,"Warrior") . "]?");
         }
     }
 } 

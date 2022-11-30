@@ -19,7 +19,7 @@ sub EVENT_SAY {
     if (quest::get_data($MAOcharKey) <= 0) {
       plugin::NPCTell("Hail, traveler. You'll need to get permission to access the Nexus teleportation network. Speak to Magus Asorin on the central platform.");
     } else {
-      plugin::NPCTell("Hail, traveler. I can transport you to the Great Spires of Faydwer. Speak to Magus Obine on the central spire if you would like to travel to other locations.");    
+      plugin::NPCTell("Hail, traveler. I can transport you to the Great Spires of Faydwer, as well as any other locations on Faydwer that you've become attuned to.");    
       $client->Message(257, " ------- Select a Destination ------- ");      
       foreach my $t (sort keys %teleport_zones) {
         $client->Message(257, "-> ".quest::saylink($teleport_zones{$t}[1],0,$t));

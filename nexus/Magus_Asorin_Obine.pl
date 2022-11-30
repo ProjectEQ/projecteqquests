@@ -29,8 +29,21 @@ sub EVENT_SAY {
   } elsif ($text=~"mao1e") { #teleportation network
     plugin::NPCTell("There are wizards of the brotherhood located near each of the minor spires within the Nexus complex, they can assist you with traveling to the ".
                     "continents to which they are attuned. Only the existing Combine spires will allow a blind transit, however. There are other sites with weak ".
-                    "dimensional barriers to which you can personally be attuned, though - you'll simply need to reach them on your own first." );    
+                    "dimensional barriers to which you can personally be attuned, though - you'll simply need to reach them on your own first." );
+    
+    my $acctMoneyFlagKey = $client->AccountID() . "-InitMoneyFlag";
+    my $acctMoneyFlagValue = quest::get_data($acctMoneyFlagKey);
+    if ($acctMoneyFlag <= 10) {
+      plugin::NPCTell("Also, take these coins. You'll need them to get started, and you can pay me back sometime if your pride demands it.");
+      quest::givecash(0, 0, 5, 1);
+      quest::set_data($acctMoneyFlagKey, $acctMoneyFlag++);
+    }
+    
     quest::set_data($charKey, "1");
+    quest::message(15,"You have gained the ability to use the Nexus teleportation network.");
+    quest::ding();
+    quest::exp(1500);
+    
   }
 }
 

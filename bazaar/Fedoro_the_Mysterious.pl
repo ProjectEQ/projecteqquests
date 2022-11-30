@@ -38,14 +38,15 @@ sub EVENT_SAY {
     } elsif ($text=~/cad1b/i) { #Classes
         if ($unlocksAvailable < 1) {
             plugin::NPCTell("You'll need to accrue some [". quest::saylink("cad1c",1,"favors") ."] with me, if you want to open up a new class.");            
-        } else {
-            plugin::NPCTell("Which class would you like to unlock?");
+        } else {            
             my @i = (1..16);
+            my $out = "Which class would you like to unlock? It looks like";
             for (@i) {
                 if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {
-                    plugin::NPCTell("----[". quest::saylink("unlock-".$_,1,quest::getclassname($_))."]");
+                    $out = $out . " [". quest::saylink("unlock-".$_,1,quest::getclassname($_))."],"
                 }
             } 
+            plugin::NPCTell($out);
         }
     } elsif ($text=~/cad1c/i) { #Favors        
         if ($unlockProgress < 1) {

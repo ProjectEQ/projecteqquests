@@ -21,10 +21,11 @@ sub EVENT_SAY {
     } elsif ($text=~/cad1b/i) { #Classes
 
     } elsif ($text=~/cad1c/i) { #Favors
-        if (quest::get_data($charKey . "-DonatorCreditAvailable")) {
+        my $donatorCredits = quest::get_data($charKey . "-DonatorCreditAvailable");
+        if ($donatorCredits) {
             plugin::NPCTell("I feel like you've done me a favor, but I can't quite remember what. No matter, I'm willing to attune your soul to a new class");
             quest::set_data($charUnlockKey , ++$unlocksAvailable);
-            quest::set_data(--quest::get_data($charKey . "-DonatorCreditAvailable"))
+            quest::set_data(--$donatorCredits);
             quest::message(15, "You have gained a class unlock point!");
             quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
             quest::ding();

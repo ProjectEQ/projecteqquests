@@ -5,6 +5,6 @@ sub EVENT_SAY {
         quest::permaclass(1);
     } elsif ($text="mage") {
         $client->BuffFadeAll();
-        quest::permaclass(13);
+        quest::permaclass(2);
     }
 }

@@ -1,7 +1,7 @@
 sub EVENT_SAY {
 
   my $charKey = $client->CharacterID() . "-TL";
-  my $MAOcharKey = $client->CharacterID() . "MAO-Progress";
+  my $MAOcharKey = $client->CharacterID() . "-MAO-Progress";
   my $charTargetsString = quest::get_data($charKey . "-F");
   my %teleport_zones = ();
   

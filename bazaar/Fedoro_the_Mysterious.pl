@@ -18,14 +18,14 @@ my %class_abilities = (1  => 30196,
 
 sub EVENT_SAY {
 
-    my $unlocksAvailable = $client->GetBucket("-ClassUnlocksAvailable");
-    my $unlockProgress = $client->GetBucket("-ClassUnlockProgress");
+    my $unlocksAvailable = $client->GetBucket("ClassUnlocksAvailable");
+    my $unlockProgress = $client->GetBucket("ClassUnlockProgress");
 
     if ($text=~/hail/i) {
         if ($unlocksAvailable >= 1) {
             quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
         }
-        if (!$client->GetBucket("-CadricMet")) {
+        if (!$client->GetBucket("CadricMet")) {
             plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If I'm [". quest::saylink("cad1a",1,"right") ."], we can be of great help to each other.");
         } else {
              plugin::NPCTell("Hail, ". $client->GetCleanName() .", good to see you again. Are you ready to do another [". quest::saylink("cad1c",1,"favor") ."] for me?");
@@ -42,7 +42,7 @@ sub EVENT_SAY {
             plugin::NPCTell("Which class would you like to unlock?");
             my @i = (1..16);
             for (@i) {
-                if (!$client->GetBucket("-class-".$_."-unlocked") && $client->GetClass() != $_) {
+                if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {
                     plugin::NPCTell("----[". quest::saylink("unlock-".$_,1,quest::getclassname($_))."]");
                 }
             } 
@@ -53,7 +53,7 @@ sub EVENT_SAY {
             #TODO - Implement task
             # Manastone (Custom, Augment)
             # Glowing Black Stone (Customized, Augment)
-            #$client->SetBucket("-ClassUnlocksAvailable", ++$unlocksAvailable);
+            #$client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
             #quest::message(15, "You have gained a class unlock point!");
             #quest::message(15, "You have ". $unlocksAvailable . " class unlock points available.");
             #quest::ding();            
@@ -106,13 +106,13 @@ sub EVENT_SAY {
         if ($client->GetClass() != 1 && $unlocksAvailable > 0) {
 
             #Check for existing class unlock
-            if (!$client->GetBucket("-class-".$client->GetClass()."-unlocked")) {
-                $client->SetBucket("-class-".$client->GetClass()."-unlocked",1);
+            if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
+                $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
                 $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
             }
 
-            $client->SetBucket("-class-1-unlocked",1);
-            $client->SetBucket("-ClassUnlocksAvailable", --$unlocksAvailable);
+            $client->SetBucket("class-1-unlocked",1);
+            $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
             $client->GrantAlternateAdvancementAbility($class_abilities{1}, 1);
         }
     }

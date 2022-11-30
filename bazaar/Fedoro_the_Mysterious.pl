@@ -27,6 +27,8 @@ sub EVENT_SAY {
 
             if (!quest::get_data($charKey . "-Unlocked1")) {
                 $client->Message(257,"[" . quest::saylink("Warrior",1) . "]");
+            } else {
+                quest::debug("how tho?");
             }
             
         }

@@ -64,7 +64,6 @@ sub EVENT_SAY {
             } 
             chop($out);
             plugin::NPCTell( $out . " for you." );
-            quest::debug($unlockable_count);
         }
     } elsif ($text=~/cad1c/i) { #Favors
         my $activeTask = 0;
@@ -103,6 +102,18 @@ sub EVENT_SAY {
                 $client->SetBucket("class-".$cid."-unlocked",1);
                 $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
                 $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
+
+                #This section for recording server-first bragging rights\leaderboard.
+                my @i = (1..16);
+                my $unlockable_count = 0;
+                my $most_unlocks = quest::get_data("world-class-unlock-leader");
+                my $most_unlocks_count = quest::get_data("world-class-unlock-leader-count");
+                for (@i) {
+                if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
+                    $unlockable_count++;
+                }
+                quest::debug($unlockable_count); 
+            }
             }
         }
     }

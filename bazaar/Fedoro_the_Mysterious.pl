@@ -109,11 +109,11 @@ sub EVENT_SAY {
                 my $most_unlocks = quest::get_data("world-class-unlock-leader");
                 my $most_unlocks_count = quest::get_data("world-class-unlock-leader-count");
                 for (@i) {
-                if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
-                    $unlockable_count++;
+                    if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
+                        $unlockable_count++;
+                    }                 
                 }
-                quest::debug($unlockable_count); 
-            }
+                quest::debug($unlockable_count);
             }
         }
     }

@@ -61,6 +61,9 @@ sub EVENT_SAY {
                     $out = $out . " [". quest::saylink("unlock-".$_,1,quest::getclassname($_))."],";
                     $unlockable_count++;
                 }
+            }
+            if ($unlockable_count == 0) {
+                plugin::NPCTell("It looks like you've already unlocked all of the classes. Congrats!");
             } 
             chop($out);
             plugin::NPCTell( $out . " for you." );
@@ -91,7 +94,6 @@ sub EVENT_SAY {
     } elsif ($text=~/confirm-/i) {
         if (length($text) > 8) {
             my $cid = substr($text,8);
-            quest::debug($cid);
             if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                 quest::message(335, "You spent 1 class unlock point.");
                 #Check for existing class unlock
@@ -108,24 +110,31 @@ sub EVENT_SAY {
                 my $most_unlocks_count = quest::get_data("world-class-unlock-leader-count");
 
                 if (!$most_unlocks || !$most_unlocks_count) {
-                    quest::worldwidemessage(335, $client->GetCleanName() . " is the first player to unlock an additional class (" . $client->GetClass()."->".quest::getclassname($cid)."!");
+                    quest::worldwidemessage(335, $client->GetCleanName() . " is the first player to unlock an additional class (" . $client->GetClassName()."->".quest::getclassname($cid).")!");
                     quest::set_data("world-class-unlock-leader", $client->GetCleanName());
                     quest::set_data("world-class-unlock-leader-count", 14);
-                }
-
-                my @i = (1..16);
-                my $unlockable_count = 0;
-                for (@i) {
-                    if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
-                        $unlockable_count++;
-                    }                 
-                }
-                if ($unlockable_count == $most_unlocks_count) {
-                    quest::worldwidemessage(335, $client->GetCleanName() . " has tied with " . $most_unlocks . " for class-unlock leader!");
-                } elsif (1) {
-
-                } elsif ($unlockable_count <= $most_unlocks_count) {
-                    quest::worldwidemessage(335, $client->GetCleanName() . " has defeated with " . $most_unlocks . " for class-unlock leader!");
+                } else {
+                    my @i = (1..16);
+                    my $unlockable_count = 0;
+                    for (@i) {
+                        if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
+                            $unlockable_count++;
+                        }                 
+                    }                    
+                    if ($unlockable_count == $most_unlocks_count) {
+                        quest::worldwidemessage(335, $client->GetCleanName() . " has tied with " . $most_unlocks . " for class-unlock leader!");
+                    } elsif ($unlockable_count <= $most_unlocks_count) {
+                        if ($most_unlocks neq $client->GetCleanName()) {
+                            quest::worldwidemessage(335, $client->GetCleanName() . " has defeated with " . $most_unlocks . " for class-unlock leader!");                            
+                        } else {
+                            quest::worldwidemessage(335, $client->GetCleanName() . " has beaten their own record for class-unlock leader!");
+                        }
+                        quest::set_data("world-class-unlock-leader", $client->GetCleanName());
+                        quest::set_data("world-class-unlock-leader-count", $unlockable_count);                  
+                    }
+                    if ($unlockable_count = 0) {
+                        quest::worldwidemessage(335, $client->GetCleanName() . " has successfully unlocked all classes.");
+                    }
                 }
             }
         }

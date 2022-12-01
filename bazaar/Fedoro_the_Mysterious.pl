@@ -70,7 +70,7 @@ sub EVENT_SAY {
         if ($activeTask) {
             plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
         } else {
-            if (!$client->IsTaskCompleted(37) {
+            if (!$client->IsTaskCompleted(37)) {
                 plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
                 $client->AssignTask(37);
             }

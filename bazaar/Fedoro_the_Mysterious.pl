@@ -123,7 +123,15 @@ sub EVENT_SAY {
                     }                    
                     if ($unlockable_count == $most_unlocks_count) {
                         quest::worldwidemessage(335, $client->GetCleanName() . " has tied with " . $most_unlocks . " for class-unlock leader!");
-                    } 
+                    } elsif ($unlockable_count <= $most_unlocks_count) {
+                        if ($most_unlocks ne $client->GetCleanName()) {
+                            quest::worldwidemessage(335, $client->GetCleanName() . " has defeated with " . $most_unlocks . " for class-unlock leader!");                            
+                        } else {
+                            quest::worldwidemessage(335, $client->GetCleanName() . " has beaten their own record for class-unlock leader!");
+                        }
+                        quest::set_data("world-class-unlock-leader", $client->GetCleanName());
+                        quest::set_data("world-class-unlock-leader-count", $unlockable_count);                  
+                    }
                     if ($unlockable_count == 0) {
                         quest::worldwidemessage(335, $client->GetCleanName() . " has successfully unlocked all classes.");
                     }

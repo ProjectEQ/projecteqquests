@@ -156,7 +156,34 @@ sub EVENT_SAY {
             $unlockable_count++;
         }                 
     }
-    my $total_unlocked = 16 - $unlockable_count;
-    quest::debug($total_unlocked);
+    my $unlockable_count = 16 - $unlockable_count;
+    quest::debug($unlockable_count);
 
+    if ($unlockable_count => 3) {
+        quest::enabletitle(396);
+    }
+    if ($unlockable_count => 8) {
+        quest::enabletitle(397);
+    }
+    if ($unlockable_count => 12) {
+        quest::enabletitle(398);
+    }
+    if ($unlockable_count => 16) {
+        quest::enabletitle(399);
+    }
+    if ($client->GetBucket("class-11-unlocked") &&
+        $client->GetBucket("class-12-unlocked") &&
+        $client->GetBucket("class-13-unlocked") &&
+        $client->GetBucket("class-14-unlocked")) {
+        quest::enabletitle(400);
+    }
+    if ($client->GetBucket("class-1-unlocked") &&
+        $client->GetBucket("class-3-unlocked") &&
+        $client->GetBucket("class-4-unlocked") &&
+        $client->GetBucket("class-5-unlocked") &&
+        $client->GetBucket("class-8-unlocked") &&
+        $client->GetBucket("class-9-unlocked") &&
+        $client->GetBucket("class-16-unlocked")) {
+        quest::enabletitle(401);
+    }
 } 

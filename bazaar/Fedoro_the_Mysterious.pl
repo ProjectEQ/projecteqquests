@@ -64,6 +64,7 @@ sub EVENT_SAY {
             }
             if ($unlockable_count == 0) {
                 plugin::NPCTell("It looks like you've already unlocked all of the classes. Congrats!");
+                return;
             } 
             chop($out);
             plugin::NPCTell( $out . " for you." );

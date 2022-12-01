@@ -147,4 +147,16 @@ sub EVENT_SAY {
             }
         }
     }
+
+    #Titles
+    my @i = (1..16);
+    my $unlockable_count = 0;
+    for (@i) {
+        if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
+            $unlockable_count++;
+        }                 
+    }
+    my $total_unlocked = $unlockable_count - 16;
+    quest::debug($total_unlocked);
+
 } 

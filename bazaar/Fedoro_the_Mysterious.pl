@@ -48,7 +48,7 @@ sub EVENT_SAY {
                         newborn kitten at first, but only at first. Better yet, as you flex your new skills and regain experience, you'll find that many of your new abilities will carry
                         over to different aspects of your spirit. I can open up new [". quest::saylink("cad1b",1,"classes") ."] for you to explore, but you'll need to do some [". 
                         quest::saylink("cad1c",1,"favors") ."] for me, first.");
-        $client->SetBucket("CadricMet");
+        $client->SetBucket("CadricMet",1);
     } elsif ($text=~/cad1b/i) { #Classes
         if ($unlocksAvailable < 1) {
             plugin::NPCTell("You'll need to accrue some [". quest::saylink("cad1c",1,"favors") ."] with me, if you want to open up a new class.");            

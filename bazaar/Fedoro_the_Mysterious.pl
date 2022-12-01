@@ -176,6 +176,7 @@ sub EVENT_SAY {
         $client->GetBucket("class-13-unlocked") &&
         $client->GetBucket("class-14-unlocked")) {
         quest::enabletitle(400);
+        quest::debug("unlock omnimagus");
     }
     if ($client->GetBucket("class-1-unlocked") &&
         $client->GetBucket("class-3-unlocked") &&

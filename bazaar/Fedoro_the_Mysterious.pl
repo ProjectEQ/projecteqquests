@@ -23,8 +23,16 @@ sub EVENT_SAY {
     my $unlockProgress = $client->GetBucket("ClassUnlockProgress");
 
     if ($text=~/hail/i) {
-        
-
+        while (my($k,$v) = each %tasks) {
+            if ($client->IsTaskActivityActive($k, $v)) {
+                plugin::NPCTell("You've done a wonderful job. Consider your favor completed. Let me know when you'd like to [".quest::saylink("cad1b",1,"unlock a new class") ."].");
+                $client->UpdateTaskActivity($k, $v, 1);
+                $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
+                quest::message(315, "You have earned 1 class unlock point.");
+                quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
+                return;
+            }
+        }
         if ($unlocksAvailable >= 1) {
             quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
         }
@@ -53,20 +61,7 @@ sub EVENT_SAY {
             plugin::NPCTell( $out . " for you." );
         }
     } elsif ($text=~/cad1c/i) { #Favors
-        my $activeTask = 0;
-        foreach my $task (keys %tasks) {
-            if ($client->IsTaskActive($task)) {
-                $activeTask =1
-            }
-        }
-        if ($activeTask) {
-            plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
-        } else {
-            if (!$client->IsTaskCompleted((keys %tasks)[0])) {
-                plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
-                $client->AssignTask((keys %tasks)[0]));
-            }
-        }
+        
     } elsif ($text=~/unlock-/i) {
         if (length($text) > 7) {
             my $cid = substr($text,7);            

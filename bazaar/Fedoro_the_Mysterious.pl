@@ -109,7 +109,25 @@ sub EVENT_SAY {
                 my $most_unlocks = quest::get_data("world-class-unlock-leader");
                 my $most_unlocks_count = quest::get_data("world-class-unlock-leader-count");
 
-                
+                if (!$most_unlocks || !$most_unlocks_count) {
+                    quest::worldwidemessage(335, $client->GetCleanName() . " is the first player to unlock an additional class (" . $client->GetClassName()."->".quest::getclassname($cid).")!");
+                    quest::set_data("world-class-unlock-leader", $client->GetCleanName());
+                    quest::set_data("world-class-unlock-leader-count", 14);
+                } else {
+                    my @i = (1..16);
+                    my $unlockable_count = 0;
+                    for (@i) {
+                        if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {                    
+                            $unlockable_count++;
+                        }                 
+                    }                    
+                    if ($unlockable_count == $most_unlocks_count) {
+                        quest::worldwidemessage(335, $client->GetCleanName() . " has tied with " . $most_unlocks . " for class-unlock leader!");
+                    } 
+                    if ($unlockable_count == 0) {
+                        quest::worldwidemessage(335, $client->GetCleanName() . " has successfully unlocked all classes.");
+                    }
+                }
             }
         }
     }

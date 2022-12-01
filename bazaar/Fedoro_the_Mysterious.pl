@@ -15,7 +15,7 @@ my %class_abilities = (1  => 30196,
                        15 => 30210,
                        16 => 30211);
 
-my $task1_id = 37;
+my %tasks = (37 => 2);
                        
 sub EVENT_SAY {
 
@@ -23,6 +23,17 @@ sub EVENT_SAY {
     my $unlockProgress = $client->GetBucket("ClassUnlockProgress");
 
     if ($text=~/hail/i) {
+        while (my($k,$v) = each %tasks) {
+            if ($client->IsTaskActivityActive($k, $v)) {
+                plugin::NPCTell("You've done a wonderful job. Consider your favor completed. Let me know when you'd like to [".quest::saylink("cad1b",1,"unlock a new class") ."].");
+                $client->UpdateTaskActivity($k, $v, 1);
+                $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
+                quest::message(315, "You have earned 1 class unlock point.");
+                quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
+                return;
+            }
+        }
+
         if ($unlocksAvailable >= 1) {
             quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
         }
@@ -50,59 +61,20 @@ sub EVENT_SAY {
             chop($out);
             plugin::NPCTell( $out . " for you." );
         }
-    } elsif ($text=~/cad1c/i) { #Favors        
-        if (!$client->IsTaskCompleted($task1_id)) {
-            if (!$client->IsTaskActive($task1_id)) {
-                plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
-                $client->AssignTask($task1_id);
-            } elsif (!$client->IsTaskActivityActive($task1_id, 2)) {
-                plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
-            } elsif ($client->IsTaskActivityActive($task1_id, 2)) {
-                plugin::NPCTell("You've done a wonderful job. Consider your favor completed. Let me know when you'd like to [".quest::saylink("cad1b",1,"unlock a new class") ."].");
-                $client->UpdateTaskActivity(37, 2, 1);
-                $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
-                quest::message(315, "You have earned 1 class unlock point.");
-                quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
+    } elsif ($text=~/cad1c/i) { #Favors
+        my $activeTask = 0;
+        foreach my $task (keys %tasks) {
+            if ($client->IsTaskActive($task)) {
+                $activeTask =1
             }
-        } elsif ($unlockProgress < 2) {
-            plugin::NPCTell("I ordered a particularly fine sushi from the tavernkeeper here in the Bazaar, but the man is missing a particular rare ingredient. Bring me the tentacle of a Kedge, and I'll be more than happy to open up your soul to new experiences.");
-            #TODO - Implement task
-            # Will need to kill Phinny, Naggy, Vox
-        } elsif ($unlockProgress < 3) {
-            plugin::NPCTell("I require the bones of a lich. Don't ask what for. Bring them to me.");
-            #TODO - Implement task
-            # Venril Sathir
-            # Trakanon
-            # Velious Kings in sequence
-        } elsif ($unlockProgress < 4) {
-            #TODO
-            # Clear NTOV
-            # Clear VP
-        } elsif ($unlockProgress < 5) {
-            #Glowing Orb of Luclinite
-            #Complete VT key                
-        } elsif ($unlockProgress < 6) {
-            
-        } elsif ($unlockProgress < 7) {
-            
-        } elsif ($unlockProgress < 8) {
-            
-        } elsif ($unlockProgress < 9) {
-            
-        } elsif ($unlockProgress < 10) {
-            
-        } elsif ($unlockProgress < 11) {
-            
-        } elsif ($unlockProgress < 12) {
-            
-        } elsif ($unlockProgress < 13) {
-            
-        } elsif ($unlockProgress < 14) {
-            
-        } elsif ($unlockProgress < 15) {
-            
-        } elsif ($unlockProgress < 16) {
-            
+        }
+        if ($activeTask) {
+            plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
+        } else {
+            if (!$client->IsTaskCompleted((keys %tasks)[0])) {
+                plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
+                $client->AssignTask((keys %tasks)[0]));
+            }
         }
     } elsif ($text=~/unlock-/i) {
         if (length($text) > 7) {

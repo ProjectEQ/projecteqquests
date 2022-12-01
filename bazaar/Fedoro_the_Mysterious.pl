@@ -100,7 +100,7 @@ sub EVENT_SAY {
         } elsif ($text=~/confirm-/i) {
             if (length($text) > 8) {
                 my $cid = substr($text,8);
-                if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
+                if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0 && !$client->GetBucket("class-".$cid."-unlocked")) {
                     quest::message(335, "You spent 1 class unlock point.");
                     #Check for existing class unlock
                     if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
@@ -176,7 +176,6 @@ sub EVENT_SAY {
         $client->GetBucket("class-13-unlocked") &&
         $client->GetBucket("class-14-unlocked")) {
         quest::enabletitle(400);
-        quest::debug("unlock omnimagus");
     }
     if ($client->GetBucket("class-1-unlocked") &&
         $client->GetBucket("class-3-unlocked") &&

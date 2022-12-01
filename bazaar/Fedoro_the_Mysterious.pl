@@ -61,7 +61,20 @@ sub EVENT_SAY {
             plugin::NPCTell( $out . " for you." );
         }
     } elsif ($text=~/cad1c/i) { #Favors
-        
+        my $activeTask = 0;
+        foreach my $task (keys %tasks) {
+            if ($client->IsTaskActive($task)) {
+                $activeTask = 1;
+            }
+        }
+        if ($activeTask) {
+            plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
+        } else {
+            if (!$client->IsTaskCompleted((keys %tasks)[0])) {
+                plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
+                $client->AssignTask((keys %tasks)[0]));
+            }
+        }
     } elsif ($text=~/unlock-/i) {
         if (length($text) > 7) {
             my $cid = substr($text,7);            

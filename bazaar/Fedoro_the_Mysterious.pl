@@ -38,14 +38,17 @@ sub EVENT_SAY {
         }
         if (!$client->GetBucket("CadricMet")) {
             plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If I'm [". quest::saylink("cad1a",1,"right") ."], we can be of great help to each other.");
-        } else {
+        } elsif ($unlocksAvailable < 1) {
              plugin::NPCTell("Hail, ". $client->GetCleanName() .", good to see you again. Are you ready to do another [". quest::saylink("cad1c",1,"favor") ."] for me?");
+        } else {
+            plugin::NPCTell("Hail, ". $client->GetCleanName() .", good to see you again. Do you need a new [". quest::saylink("cad1b",1,"class unlocked"). "], or are you ready to do another [". quest::saylink("cad1c",1,"favor") ."] for me?")
         }
     } elsif ($text=~/cad1a/i) { #right
         plugin::NPCTell("Perfect! I have a unique talent - I can grant you the ability to shift your spirit, allowing you to pick up a different set of skills. You'll be as weak as 
                         newborn kitten at first, but only at first. Better yet, as you flex your new skills and regain experience, you'll find that many of your new abilities will carry
                         over to different aspects of your spirit. I can open up new [". quest::saylink("cad1b",1,"classes") ."] for you to explore, but you'll need to do some [". 
                         quest::saylink("cad1c",1,"favors") ."] for me, first.");
+        $client->SetBucket("CadricMet");
     } elsif ($text=~/cad1b/i) { #Classes
         if ($unlocksAvailable < 1) {
             plugin::NPCTell("You'll need to accrue some [". quest::saylink("cad1c",1,"favors") ."] with me, if you want to open up a new class.");            

@@ -102,6 +102,7 @@ sub EVENT_SAY {
                 my $cid = substr($text,8);
                 if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0 && !$client->GetBucket("class-".$cid."-unlocked")) {
                     quest::message(335, "You spent 1 class unlock point.");
+                    
                     #Check for existing class unlock
                     if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
                         $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
@@ -110,6 +111,9 @@ sub EVENT_SAY {
                     $client->SetBucket("class-".$cid."-unlocked",1);
                     $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
                     $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
+                    $client->SetEXPModifier(0, ($client->GetEXPModifier(0) * 0.90));
+
+                    quest::message(335, "You have gained a permanent experience penalty. You now earn " . sprintf("%.2f\n",$client->GetEXPModifier(0)* 100) . "as much experience as normal.");
 
                     #This section for recording server-first bragging rights\leaderboard.
                     my $most_unlocks = quest::get_data("world-class-unlock-leader");

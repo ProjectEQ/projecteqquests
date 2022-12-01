@@ -159,16 +159,16 @@ sub EVENT_SAY {
     my $unlockable_count = 16 - $unlockable_count;
     quest::debug($unlockable_count);
 
-    if ($unlockable_count => 3) {
+    if ($unlockable_count >= 3) {
         quest::enabletitle(396);
     }
-    if ($unlockable_count => 8) {
+    if ($unlockable_count >= 8) {
         quest::enabletitle(397);
     }
-    if ($unlockable_count => 12) {
+    if ($unlockable_count >= 12) {
         quest::enabletitle(398);
     }
-    if ($unlockable_count => 16) {
+    if ($unlockable_count >= 16) {
         quest::enabletitle(399);
     }
     if ($client->GetBucket("class-11-unlocked") &&

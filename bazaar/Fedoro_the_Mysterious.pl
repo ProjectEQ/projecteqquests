@@ -67,6 +67,11 @@ sub EVENT_SAY {
                 $activeTask = 1;
             }
         }
+        if ($activeTask) {
+            plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
+        } else {
+            
+        }
     } elsif ($text=~/unlock-/i) {
         if (length($text) > 7) {
             my $cid = substr($text,7);            

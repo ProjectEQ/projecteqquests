@@ -156,7 +156,7 @@ sub EVENT_SAY {
             $unlockable_count++;
         }                 
     }
-    my $total_unlocked = $unlockable_count;
+    my $total_unlocked = 16 - $unlockable_count;
     quest::debug($total_unlocked);
 
 } 

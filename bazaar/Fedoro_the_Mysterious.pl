@@ -23,16 +23,7 @@ sub EVENT_SAY {
     my $unlockProgress = $client->GetBucket("ClassUnlockProgress");
 
     if ($text=~/hail/i) {
-        while (my($k,$v) = each %tasks) {
-            if ($client->IsTaskActivityActive($k, $v)) {
-                plugin::NPCTell("You've done a wonderful job. Consider your favor completed. Let me know when you'd like to [".quest::saylink("cad1b",1,"unlock a new class") ."].");
-                $client->UpdateTaskActivity($k, $v, 1);
-                $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
-                quest::message(315, "You have earned 1 class unlock point.");
-                quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");
-                return;
-            }
-        }
+        
 
         if ($unlocksAvailable >= 1) {
             quest::message(315, "You have ". $unlocksAvailable . " class unlock points available.");

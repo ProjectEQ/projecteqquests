@@ -106,7 +106,7 @@ sub EVENT_SAY {
                     #Check for existing class unlock
                     if (!$client->GetBucket("class-".$client->GetClass()."-unlocked")) {
                         $client->SetBucket("class-".$client->GetClass()."-unlocked",1);
-                        quest::debug("unlocking " $client->GetClass());
+                        quest::debug("unlocking ".$client->GetClass());
                         $client->GrantAlternateAdvancementAbility($class_abilities{$client->GetClass()}, 1);
                     }
                     $client->SetBucket("class-".$cid."-unlocked",1);

@@ -113,7 +113,7 @@ sub EVENT_SAY {
                     $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
                     $client->SetEXPModifier(0, ($client->GetEXPModifier(0) * 0.90));
 
-                    quest::message(335, "You have gained a permanent experience penalty. You will now earn ".sprintf("%2f", ($client->GetEXPModifier(0) * 100))." as much experience as normal.");
+                    quest::message(335, "You have gained a permanent experience penalty. You will now earn ".sprintf("%2f", ($client->GetEXPModifier(0) * 100))."%% as much experience as normal.");
 
                     #This section for recording server-first bragging rights\leaderboard.
                     my $most_unlocks = quest::get_data("world-class-unlock-leader");

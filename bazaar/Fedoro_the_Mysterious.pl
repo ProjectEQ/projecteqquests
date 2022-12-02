@@ -113,7 +113,7 @@ sub EVENT_SAY {
                     $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
                     $client->SetEXPModifier(0, ($client->GetEXPModifier(0) * 0.90));
 
-                    my $expmod = $client->GetEXPModifier(0) * 100
+                    my $expmod = $client->GetEXPModifier(0) * 100;
 
                     quest::message(335, sprintf("You have gained a permanent experience penalty. You will now earn %2f\% as much experience as normal.", $expmod));
 

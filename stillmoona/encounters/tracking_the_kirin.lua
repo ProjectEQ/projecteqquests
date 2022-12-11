@@ -30,28 +30,28 @@ local footprints = {
 }
 
 local function footprint_spawn(e)
-  -- live proximity checks are slower which makes it easier to miss footprints
-  local x, y, z = e.self:GetX(), e.self:GetY(), e.self:GetZ()
-  eq.set_proximity(x - 30, x + 30, y - 30, y + 30, z - 30, z + 30)
+  e.self:CastToNPC():ModifyNPCStat("aggro", "30")
 end
 
-local function footprint_proximity(e)
-  eq.debug("current footprint: " .. current_footprint)
-  current_footprint = current_footprint + 1
+local function footprint_combat(e)
+  if e.joined then
+    eq.debug("current footprint: " .. current_footprint)
+    current_footprint = current_footprint + 1
 
-  eq.depop()
+    eq.depop()
 
-  if current_footprint < #footprints + 1 then -- death emote message (343)
-    eq.get_entity_list():MessageClose(e.self, true, 100, 343, "Unusual footprints can be seen on the ground before you. Perhaps if you keep searching, you will find more.")
-    local footprint = footprints[current_footprint]
-    eq.spawn2(338402, 0, 0, footprint.x, footprint.y, footprint.z, footprint.h) -- Unusual_footprints
-  else
-    eq.zone_emote(MT.Yellow, "So you have found me.  Too bad for you that I did not want to be found!")
-    eq.unique_spawn(338419, 0, 0, -6.0, 935.0, 40.0, 259.0) -- Elusive_Kirin
+    if current_footprint < #footprints + 1 then -- death emote message (343)
+      eq.get_entity_list():MessageClose(e.self, true, 100, 343, "Unusual footprints can be seen on the ground before you. Perhaps if you keep searching, you will find more.")
+      local footprint = footprints[current_footprint]
+      eq.spawn2(338402, 0, 0, footprint.x, footprint.y, footprint.z, footprint.h) -- Unusual_footprints
+    else
+      eq.zone_emote(MT.Yellow, "So you have found me.  Too bad for you that I did not want to be found!")
+      eq.unique_spawn(338419, 0, 0, -6.0, 935.0, 40.0, 259.0) -- Elusive_Kirin
+    end
   end
 end
 
 function event_encounter_load(e)
-  eq.register_npc_event(Event.spawn, 338402, footprint_spawn) -- Unusual_footprints
-  eq.register_npc_event(Event.enter, 338402, footprint_proximity)
+  eq.register_npc_event(Event.spawn,  338402, footprint_spawn) -- Unusual_footprints
+  eq.register_npc_event(Event.combat, 338402, footprint_combat)
 end

@@ -10,7 +10,7 @@ end
 
 function event_signal(e)
     if e.signal == 667 then
-        eq.update_task_activity(213, 0, 1)
+        eq.update_task_activity(5654, 0, 1)
     end
 end
 

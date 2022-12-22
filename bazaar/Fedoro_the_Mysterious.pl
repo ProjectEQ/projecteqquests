@@ -50,8 +50,8 @@ sub EVENT_SAY {
         } elsif ($text=~/cad1a/i) { #right
             plugin::NPCTell("Perfect! I have a unique talent - I can grant you the ability to shift your spirit, allowing you to pick up a different set of skills. You'll be as weak as 
                             newborn kitten at first, but only at first. Better yet, as you flex your new skills and regain experience, you'll find that many of your new abilities will carry
-                            over to different aspects of your spirit. I can open up new [". quest::saylink("cad1b",1,"classes") ."] for you to explore, but you'll need to do some [". 
-                            quest::saylink("cad1c",1,"favors") ."] for me, first.");
+                            over to different aspects of your spirit. Be warned, though - as you gain more potential in this way, you will begin to find it harder to earn new abilities.
+                            I can open up new [". quest::saylink("cad1b",1,"classes") ."] for you to explore, but you'll need to do some [".quest::saylink("cad1c",1,"favors") ."] for me, first.");
             $client->SetBucket("CadricMet",1);
         } elsif ($text=~/cad1b/i) { #Classes
             if ($unlocksAvailable < 1) {
@@ -94,7 +94,7 @@ sub EVENT_SAY {
                 my $cid = substr($text,7);            
                 if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                     my $class_name = quest::getclassname($cid);
-                    plugin::NPCTell("Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]?");
+                    plugin::NPCTell("Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]? You will recieve a permanent experience penalty.");
                 }
             }        
         } elsif ($text=~/confirm-/i) {
@@ -145,7 +145,14 @@ sub EVENT_SAY {
                             quest::set_data("world-class-unlock-leader-count", $unlockable_count);                  
                         }
                         if ($unlockable_count == 0) {
-                            quest::worldwidemessage(335, $client->GetCleanName() . " has successfully unlocked all classes.");
+                            
+                            if (!quest::get_data("world-class-unlock-all")) {
+                                quest::worldwidemessage(335, $client->GetCleanName() . " is the first player to unlock all classes!");
+                                quest::set_data("world-class-unlock-all", $client->GetCleanName());
+                                #TODO - SERVER FIRST TITLE
+                            } else {
+                                quest::worldwidemessage(335, $client->GetCleanName() . " has successfully unlocked all classes.");                                
+                            }
                             $client->SetBucket("allClassesUnlocked", 1);
                         }
                     }

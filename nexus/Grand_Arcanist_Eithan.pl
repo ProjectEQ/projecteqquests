@@ -10,7 +10,7 @@ sub EVENT_SAY {
       plugin::NPCTell("Hail, ". $client->GetCleanName() .". Return to me when you've gained more experience. I will have work for you.");
     }
   } elsif ($text=~"mao1a") { #dimensional flotsam
-    plugin::NPCTell("Apologies! Allow my to introduce myself; I am Magus Asorin, the head archaeologist of the Wayfarer's Brotherhood. This site is an ". 
+    plugin::NPCTell("Apologies! Allow my to introduce myself; I am Eithan, the head archaeologist of the Wayfarer's Brotherhood. This site is an ". 
                     "[".quest::saylink("mao1b",1,"ancient teleportation complex")."] built by the Combine prior to their decline. Unfortunately, it seems".
                     "to act as something of a magnet for dimensional travelers. Periodically a stranger such as yourself will turn up - no memory of from ".
                     "whence they came and [".quest::saylink("mao1c",1,"no clue how to return")."].");
@@ -43,8 +43,7 @@ sub EVENT_SAY {
     quest::set_data($charKey, "1");
     quest::message(15,"You have gained the ability to use the Nexus teleportation network.");
     quest::ding();
-    quest::exp(1500);
-    
+    quest::exp(1500);    
   }
 }
 

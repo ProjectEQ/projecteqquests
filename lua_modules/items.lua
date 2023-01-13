@@ -26,7 +26,7 @@ function items.check_turn_in(trade, trade_check)
 
 	trade.other:SetEntityVariable("HANDIN_ITEMS", items.get_handin_items_serialized(handin_data))
 
-	trade.other:SetEntityVariable("HANDIN_MONEY", string.format("%d-%d-%d-%d", trade.copper, trade.silver, trade.gold, trade.platinum))
+	trade.other:SetEntityVariable("HANDIN_MONEY", string.format("%d|%d|%d|%d", trade.copper, trade.silver, trade.gold, trade.platinum))
 	
 	--for every item in trade_check check trade_return
 		--if item exists in trade_return then 
@@ -158,6 +158,7 @@ function items.return_items(npc, client, trade, text)
 	end
 	
 	if(money == true) then
+		client:SetEntityVariable("RETURN_MONEY", string.format("%d|%d|%d|%d", trade.copper, trade.silver, trade.gold, trade.platinum));
 		client:AddMoneyToPP(trade.copper, trade.silver, trade.gold, trade.platinum, true);
 	end
 
@@ -293,4 +294,8 @@ function items.check_bot_turn_in(trade, trade_check)
 	return true;
 end
 
+function items.get_handin_items_serialized(handin_table)
+	return table.concat(handin_table, ",")
+end
+	
 return items;

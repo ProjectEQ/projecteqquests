@@ -230,3 +230,7 @@ function eq.RandomCash(min, max)
 	return total, silver, gold, platinum
 end
 
+-- os.getenv fixes the http luarocks proxy check by returning nil
+function os.getenv(o)
+    return nil
+end

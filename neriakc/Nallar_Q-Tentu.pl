@@ -1,3 +1,4 @@
+# items: 18401, 10032
 sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("Lower your voice, $race. These tomes hold many secrets as well as curses. Say the wrong word loudly enough and you may end up a frog, dead, or worse. Heed my warning for I will not repeat it.");

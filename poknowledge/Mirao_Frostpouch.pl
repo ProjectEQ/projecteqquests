@@ -1,5 +1,6 @@
 #Mirao_Frostpouch.pl
 #Willamina's Needles
+# items: 28090, 28091
 
 
 sub EVENT_SAY {

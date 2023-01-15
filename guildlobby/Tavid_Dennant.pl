@@ -1,4 +1,5 @@
 #status: initial copy/paste of ZAM info
+# items: 429420
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

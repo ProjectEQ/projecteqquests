@@ -1,3 +1,4 @@
+-- items: 18822, 13926
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail. citizen!  I am very busy. I do not have time to speak with you.  If you have any complaints. please direct them to City Hall.  Unless. of course. you have some personal business in which I might be interested.");

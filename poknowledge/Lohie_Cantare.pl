@@ -1,5 +1,6 @@
 #Lohie_Cantare.pl
 #Lohie's Music Exhibit
+# items: 28080, 28239
 
 
 sub EVENT_SAY {

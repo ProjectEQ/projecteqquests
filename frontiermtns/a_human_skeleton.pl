@@ -1,5 +1,6 @@
 # platinum speckled powder -- ranger epic
 #
+# items: 20475, 20476
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20475 => 1)) {

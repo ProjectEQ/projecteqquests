@@ -1,5 +1,6 @@
 #Bard Cloak 2
 #Zone:sharvahl  ID:155075 -- Gherik_Alarhun
+# items: 2877, 3648, 17235, 3651, 3653, 3654, 2878, 3655, 3656, 3657, 3658, 3659
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 2877 => 1)) {

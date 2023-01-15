@@ -1,3 +1,4 @@
+-- items: 19561, 19558, 19555, 19559, 19560, 19557, 19556, 19846, 19919, 19925, 19850, 19937
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("If you're a new employee of the Coalition of Tradefolk I suggest you speak with Tovan Tenlah. Now if you will excuse me I have much work to do.");
@@ -39,6 +40,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 19846 })) then -- Note to Verona Rankin
 		e.self:Say("Ah, Tovan sent you for a suit of traders clothing. I can instruct you on how to prepare your suit of clothing but you will have to acquire the required materials yourself. Use this Curing Kit to construct the clothing once you have done so. Do you wish to prepare Coalition Trader [Gloves], Coalition Trader [Boots], a Coalition Trader [Bracer], a Coalition Trader [Cap], Coalition Trader [Leggings], Coalition Trader [Sleeves], or a Coalition Trader [Tunic]?");
+		e.other:QuestReward(e.self,0,0,0,0,17125);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19919,item2 = 19925,item3 = 19850})) then
 		e.self:Say("You have proven yourself worthy of our cause. Take this and use it to bring down non followers of Innoruuk.");
 		e.other:SummonItem(19937); --Coalition Trader Dirk

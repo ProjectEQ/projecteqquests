@@ -1,3 +1,4 @@
+-- items: 12102
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Great!! I have fifty acres to seed and now I have visitors stopping by to waste my time!!");

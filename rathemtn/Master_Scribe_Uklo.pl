@@ -6,6 +6,7 @@
 # This seems to underline the fact that Sony gave up with faction except when they wanted to make it a barrier to progress, spells, items etc.
 # Even though people reported the included faction hits, the frogs themselves alayws seem be indiff to all but evil, and KoS only to Trolls?
 # Commented out Guktan Suppliers faction, as not entered on PEQ.
+# items: 67014, 67015, 67013, 67019, 67017, 67012, 67018, 67011
 
 sub EVENT_SAY {
 

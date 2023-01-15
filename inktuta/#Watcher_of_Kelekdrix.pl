@@ -39,3 +39,6 @@ sub EVENT_TIMER {
   }
 }
 
+sub EVENT_DEATH_COMPLETE {
+  quest::stopalltimers();
+}

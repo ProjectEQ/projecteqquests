@@ -1,3 +1,4 @@
+-- items: 18818, 15343
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome " .. e.other:GetName() .. ". Let us fill your heart with hate. May you carry that hate unto your fellow citizens. Innoruuk has need of your services. We have A [mission] for you.");

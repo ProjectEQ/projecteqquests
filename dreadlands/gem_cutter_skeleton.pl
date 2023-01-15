@@ -17,6 +17,7 @@
 #Name: Dufrenite
 #ID: 10073
 ###
+# items: 10073, 12946
 
 #This mob, usually KoS had to be charmed by an enchanter/bard before he would talk.
 #Text is completely improvised. Yes, I know its actually the drumming anim, but its close.

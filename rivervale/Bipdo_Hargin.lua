@@ -1,3 +1,4 @@
+-- items: 19555, 19558, 19559, 19561, 19557, 19560, 19556, 19627, 17124
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I am busy right now. Please leave me alone."); --Text made up

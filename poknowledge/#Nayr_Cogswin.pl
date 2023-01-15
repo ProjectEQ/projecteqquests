@@ -1,5 +1,6 @@
 #Nayr_Cogswin.pl
 #Rallican's Bracer
+# items: 67022, 31993, 29798, 59568
 
 
 sub EVENT_SAY {

@@ -1,3 +1,4 @@
+-- items: 20374, 20370, 20371
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("H..h..hello? Can you help me? I lost [something] and I need it so I can go back home.");

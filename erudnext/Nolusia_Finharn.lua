@@ -1,3 +1,4 @@
+-- items: 13118, 13122, 13123, 5019, 6017
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good evening. Are not the stars beautiful. Somewhere out there I imagine there is another world and another person staring right back at me. If you have business with me please save it for the morning in the palace.");

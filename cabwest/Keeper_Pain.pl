@@ -1,3 +1,4 @@
+# items: 12869, 17041, 12885, 15444
 sub EVENT_SAY {
    if($text=~/hail/i)   {
 	quest::emote("raises his gaze from his tomes to greet you. 'Ahh!! Welcome, seeker of knowledge! Come to fill your brains, have you? Look closer, adventurer. I have scribed some very powerful spells.");

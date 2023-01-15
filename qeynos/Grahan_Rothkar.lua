@@ -1,3 +1,4 @@
+-- items: 20031, 5033, 12188, 12189, 13398, 13229, 18894, 20029
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, " .. e.other:GetName() .. "! What business do you have in the pens of the Qeynos Arena? Have you a report of the [escaped catman]?");

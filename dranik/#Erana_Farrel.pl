@@ -1,3 +1,4 @@
+# items: 52909, 52910, 52914
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 52909 =>1 )) {
     quest::say("Egads, me friend. It has been summoned from the ground. Take as many friends as ye can muster. Ye are going to need them. This creature will be surrounded by summoned spirits of our very own warders. Ye must release as many of those abused spirits as ye can and dispatch the animist. That beast must have something he uses to control the warders. Return it to me!");

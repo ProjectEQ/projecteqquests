@@ -1,3 +1,4 @@
+# items: 18955
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Welcome. friend. I am one of the redeemed. I once walked the path of evil and woe. My talents were those of the House of V'ree of Neriak. I now serve the Burning Prince. Are you a [rogue in need of redemption] also?");

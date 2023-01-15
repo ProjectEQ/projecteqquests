@@ -1,3 +1,4 @@
+# items: 13418
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello, $name.");
@@ -6,7 +7,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13418 => 1)) {
-    if(quest::istaskactivityactive(141,4)) {
+    if(quest::istaskactivityactive(1947,4)) {
       quest::say("Ah, yes. Thank you.");
     }
     else {

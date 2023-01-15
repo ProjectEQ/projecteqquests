@@ -1,3 +1,4 @@
+-- items: 17814, 10953, 10952
 function event_spawn(e)
 	eq.set_timer("warning", 21480000);--Timer for 5 hours and 58 minutes
 	eq.set_timer("despawn", 21600000);--Timer for 6 hours

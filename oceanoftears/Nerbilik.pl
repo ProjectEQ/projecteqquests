@@ -1,3 +1,4 @@
+# items: 12203
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What you want?!! Face so ugly you scare fish away!! ..sniff, sniff. Smell so bad, too!! Me sure is hungry. Wish had [grub locker].");

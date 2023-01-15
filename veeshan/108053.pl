@@ -1,4 +1,5 @@
 #Xygoz
+# items: 69333, 69335, 69385, 69386
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {

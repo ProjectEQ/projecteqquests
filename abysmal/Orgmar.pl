@@ -1,5 +1,6 @@
 # Orgmar's Haunt
 # Created by Gonner
+# items: 55621, 55622
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

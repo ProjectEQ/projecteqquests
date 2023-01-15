@@ -1,3 +1,4 @@
+# items: 17042, 18210, 17995, 12667, 12657, 12912, 18072
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings, small one! You should not waste your time in the safety of the troopers' patrols. Go forth into the land and earn your stripes in battle. Become a greater asset to the Iksar empire.");

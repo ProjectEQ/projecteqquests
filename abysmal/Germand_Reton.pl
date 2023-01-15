@@ -1,5 +1,6 @@
 # Germand's Problem
 # Created by Gonner
+# items: 55558, 55536, 55538
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

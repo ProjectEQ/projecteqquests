@@ -1,3 +1,4 @@
+# items: 12184, 67702, 2914
 sub EVENT_SAY {
   if($text =~ /Hail/i){
     quest::say("Are not the woods of the Faydarks a lovely sight? Tunare has truly blessed us. It is unfortunate that the orcs of [Crushbone Citadel] have chosen to invade our lands.");

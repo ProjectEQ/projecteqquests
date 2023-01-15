@@ -1,6 +1,7 @@
 #Mystic_Abomin.pl
 #Shaman PoP Spells
 #The level 64 spell scroll Talisman of Celerity isn't in my copy of the db, so it's not in this quest. Added by renoofturks spell talisman of alacrity
+# items: 29112, 28487, 28488, 28489, 28490, 26945, 26946, 21660, 21661, 28491, 28492, 28493, 28494, 28523, 29131, 28495, 28496, 28497, 28498, 28499, 28531, 26910, 26912, 26913, 26914, 26911, 29132, 26915, 26916, 26917, 26918, 26919
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

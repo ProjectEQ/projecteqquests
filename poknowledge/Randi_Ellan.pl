@@ -1,6 +1,7 @@
 #Randi_Ellan.pl
 #Randi's Floral Specimens
 #Associanted recipe ID: 9122
+# items: 28083, 28238
 
 
 sub EVENT_SAY {

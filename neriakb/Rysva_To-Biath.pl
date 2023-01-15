@@ -1,5 +1,6 @@
 #Rysva_To-Biath.pl
 #Book of Turmoil
+# items: 18200, 18201, 13846, 18202, 19071, 19070, 1000, 18302
 
 sub EVENT_SAY { 
 	if($text=~/hail/i){

@@ -1,3 +1,4 @@
+# items: 13716, 16989, 1437, 7005, 1438
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Ah, greetings. I hope you are a student of the way of fear. Within this temple there are many who can teach you to harness your gifts. I am an instructor in the [rituals of fear].");

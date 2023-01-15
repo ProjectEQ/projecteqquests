@@ -1,3 +1,4 @@
+# items: 6344, 13748
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Errr. You smell funny. You bring us [toy]?");

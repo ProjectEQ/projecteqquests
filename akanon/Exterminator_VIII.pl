@@ -1,4 +1,5 @@
 #Start of Exterminate the Vermin Quest(Scripted By: Fatty Beerbelly)
+# items: 10967
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

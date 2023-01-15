@@ -1,35 +1,15 @@
---lfay
-function event_enter_zone(e)
-	local instance_id = eq.get_instance_id("mmcc",50);
-	if (instance_id > 0) then                                  
-		e.self:MarkSingleCompassLoc(3880, -120, 116);   
-	end   
-end
+local expeditions = { mmcc = true, mmcf = true }
+local mmcc_mmcf_door_id = 10 -- ldon raid entrance door
 
 function event_click_door(e)
-  local door_id = e.door:GetDoorID();
-  local entity_list = eq.get_entity_list();
-	if(door_id == 10) then --Asylum of Invoked Stone (mmcc) zone in
-		local instance_id = eq.get_instance_id("mmcc",50);       
-		if (instance_id > 0) then                                  
-			e.self:MovePCInstance(243, instance_id, -467.37,-104.22,10.34,0); -- Zone: mmcc
-		else                                                       
-			e.self:Message(13, "You are not a part of an instance!");
-		end  
-	elseif (door_id == 11) then --Scion Lair of Fury (mmcf) zone in
-		local instance_id = eq.get_instance_id("mmcf",50); 	
-		if (instance_id > 0) then                                  
-			e.self:MovePCInstance(258, instance_id, 607,1503,33,0); -- Zone: mmcf
-		else                                                       
-			e.self:Message(13, "You are not a part of an instance!");
-		end 
+	local door_id = e.door:GetDoorID()
+	if door_id == mmcc_mmcf_door_id then
+		local dz = e.self:GetExpedition()
+		if dz.valid and expeditions[dz:GetZoneName()] then
+			e.self:MovePCDynamicZone(dz:GetZoneID())
+		end
 	end
 end
-
-function event_zone(e)
-  e.self:ClearCompassMark();
-end
-
 
 function event_loot(e)
 	if(e.self:Class() == "Cleric" and e.item:GetID() == 9585 ) then

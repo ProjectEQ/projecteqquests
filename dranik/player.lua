@@ -72,38 +72,20 @@ function event_loot(e)
 	end		
 end
 
+
+local door_ids = {
+  [7] = { dranikcatacombsa = true, dranikcatacombsb = true, dranikcatacombsc = true }, -- { [328] = true, [329] = true, [330] = true }
+  [8] = { draniksewersa = true, draniksewersb = true, draniksewersc = true }           -- { [331] = true, [332] = true, [333] = true }
+}
+
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
-  if (door_id == 7) then  
-	local dca0 = eq.get_instance_id('dranikcatacombsa', 0);
-	local dca1 = eq.get_instance_id('dranikcatacombsa', 1); --paladin 1.5
-	local dcb0 = eq.get_instance_id('dranikcatacombsb', 0);
-	local dcc0 = eq.get_instance_id('dranikcatacombsc', 0);
-	--MovePCInstance(Integer zone, Integer instance, Real x, Real y, Real z, Real heading);
-    if (dca0 > 0) then
-      e.self:MovePCInstance(328, dca0, 0, 0, -10.49, 508); -- Zone: dranikcatacombsa
-	elseif (dca1 > 0) then
-	  e.self:MovePCInstance(328, dca1, 0, 0, -10.49, 508); -- Zone: dranikcatacombsa
-	elseif (dcb0 > 0) then
-	  e.self:MovePCInstance(329, dcb0, 212.58, 650.72, -14.78, 288); -- Zone: dranikcatacombsb
-	elseif (dcc0 > 0) then
-	  e.self:MovePCInstance(330, dcc0, -10.17, -214.3, -3.35, 114); -- Zone: dranikcatacombsc
-    else		
-      e.self:Message(13, "You are not part of an instance.");
-    end
-  elseif (door_id==8) then
-  	local dsa0 = eq.get_instance_id('draniksewersa', 0);
-	local dsb0 = eq.get_instance_id('draniksewersb', 0);
-	local dsc0 = eq.get_instance_id('draniksewersc', 0);
-	--MovePCInstance(Integer zone, Integer instance, Real x, Real y, Real z, Real heading);
-    if (dsa0 > 0) then
-      e.self:MovePCInstance(331, dsa0, 3, 0, -3, 254); -- Zone: draniksewersa
-	elseif (dsb0 > 0) then
-	  e.self:MovePCInstance(332, dsb0, 2, 5, -4.8, 260); -- Zone: draniksewersb
-	elseif (dsc0 > 0) then
-	  e.self:MovePCInstance(333, dsc0, -2.5, 4, -6, 0); -- Zone: draniksewersc
-    else		
-      e.self:Message(13, "You are not part of an instance.");
+
+  local zone_names = door_ids[door_id]
+  if zone_names then
+    local dz = e.self:GetExpedition()
+    if dz.valid and zone_names[dz:GetZoneName()] then
+      e.self:MovePCDynamicZone(dz:GetZoneID())
     end
   end
 end

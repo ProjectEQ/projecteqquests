@@ -1,3 +1,4 @@
+# items: 31799, 31829, 31832, 31831, 31830, 3873, 3875
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hail $name, it is a pleasure to meet you. As the Governor of Defense for Katta Castellum it is my duty to ensure the safety of the city from outside enemies. At present the most imminent threat to the safety of our citizens is the Coterie of the Eternal Night and their [assassins]. There are other matters of defense as well however that you may be of [assistance] in dealing with.");

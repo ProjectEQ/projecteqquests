@@ -1,5 +1,6 @@
 --shadeweaver/#Wunshi_Kashra.lua NPCID 165296
 --Shaman Epic 1.5
+-- items: 1000, 57704, 57087, 57085
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("elder spirit sent me") and qglobals["shaman_epic"] == "1") then

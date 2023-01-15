@@ -4,6 +4,7 @@
 #Zone: Qeynos
 #Author: RealityIncarnate
 #####################################
+# items: 13922
 
 sub EVENT_SAY { 
 	if ($text=~/hail/i) {

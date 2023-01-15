@@ -1,3 +1,4 @@
+# items: 10469, 10456, 6981
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Shalom friend. My mate Kalaaro is the primary blacksmith of our village. I mostly create his tools, do touch ups and refurbishes, and maintain the [kejek forge].");

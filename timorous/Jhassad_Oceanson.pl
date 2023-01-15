@@ -1,4 +1,5 @@
 # EPIC CLERIC (Timorous deep)
+# items: 28048, 28049, 28050, 28023
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28048 => 1, 28049 => 1, 28050 => 1)) { #Orb of Clear Water, Orb of Frozen Water, Orb of Vapor

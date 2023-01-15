@@ -1,6 +1,7 @@
 #zone: gunthak NPC: Grennik_Neltrin (224187)
 #Started by Angelox, finished by Kilelen
 #Blood Spells
+# items: 59053, 59525, 59012
 
 
 

@@ -56,10 +56,5 @@ function event_signal(e)
 		for k,v in pairs(charid_list) do
 			eq.target_global("ikkylockout6", tostring(instance_requests.GetLockoutEndTimeForHours(108)), "H108", 0,v, 0);
 		end
-	elseif (e.signal == 9) then
-		--Group 2 Lockout
-		for k,v in pairs(charid_list) do
-			eq.target_global("lockout_ikky_g2", tostring(instance_requests.GetLockoutEndTimeForHours(17)), "H17", 0,v, 0);
-		end
 	end
 end

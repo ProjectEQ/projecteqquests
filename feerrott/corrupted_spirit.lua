@@ -1,3 +1,4 @@
+-- items: 62837
 function event_say(e)
 local qglobals = eq.get_qglobals(e.other)
 	if(qglobals["druid_epic"] == "3" and e.message:findi("Who are you?")) then

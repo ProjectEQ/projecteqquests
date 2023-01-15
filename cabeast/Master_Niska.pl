@@ -1,3 +1,4 @@
+# items: 18271, 12829, 12797, 12798, 12799, 4193, 12821, 4192, 4194, 18466, 22921, 7881, 18465, 22920, 18272, 24770, 4190
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::emote("bows with elegance and grace. You can see her arms rippling with muscles.");
@@ -35,16 +36,18 @@ sub EVENT_ITEM {
   quest::summonitem(4193); # Item: Shackle of Rock
   quest::exp(20000);
   quest::ding();
-  quest::faction(444,20); # Faction: Swift Tails
-  quest::faction(441,10); # Faction: Legion of Cabilis
+  quest::faction(444,10); # Faction: Swift Tails
+  quest::faction(441,2); # Faction: Legion of Cabilis
+  quest::givecash(0,0,1,0);
   }
  elsif(plugin::check_handin(\%itemcount, 12821 => 1, 4192 => 1, 4193 => 1)){
   quest::say("Very good!! Here is your Shackle of Copper. The Emperor shall be pleased that I, Mistress Niska, have slain the outlander. Do you have some time? I need someone to be my [personal courier]. Will you?");
   quest::summonitem(4194); # Item: Shackle of Copper
   quest::exp(40000);
   quest::ding();
-  quest::faction(444,20); # Faction: Swift Tails
-  quest::faction(441,10); # Faction: Legion of Cabilis
+  quest::faction(444,10); # Faction: Swift Tails
+  quest::faction(441,2); # Faction: Legion of Cabilis
+  quest::givecash(0,0,5,0);
   }
  elsif(plugin::check_handin(\%itemcount, 18466 => 1, 22921 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");

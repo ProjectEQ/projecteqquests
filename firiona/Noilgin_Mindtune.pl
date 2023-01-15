@@ -1,5 +1,6 @@
 # Al'Kabor's Research - Ring of the Messenger
 #
+# items: 6067, 6069
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

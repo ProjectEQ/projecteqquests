@@ -1,5 +1,6 @@
 # #20448 -> Althele to start corruptor/reaver spawns for fleshbound tome
 #
+# items: 20448, 20450, 62810, 62811, 20452, 18959
 
 my $depop1;
 my $depop2;

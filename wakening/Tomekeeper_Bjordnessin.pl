@@ -1,3 +1,4 @@
+# items: 1782, 1783
 sub EVENT_ITEM {
   #Handin: a Giant Loyalist Token
   if(plugin::check_handin(\%itemcount, 1782 => 1)){

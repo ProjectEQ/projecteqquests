@@ -1,3 +1,4 @@
+# items: 1360, 8960, 8961
 sub EVENT_SAY {#need correct text for all parts
   if ($text=~/hail/i) {
     quest::say("I do not have time to talk to you, I am looking for something that I [lost]");

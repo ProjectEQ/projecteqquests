@@ -1,4 +1,5 @@
 #Lord Korzin is for the Greenmist quest and administers the third quest in the line.
+# items: 12401, 5122, 5123
 
 sub EVENT_SAY {
  if($text=~/hail/i){

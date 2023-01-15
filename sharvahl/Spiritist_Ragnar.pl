@@ -1,4 +1,5 @@
 #Zone:sharvahl  ID:155198 -- Spiritist_Ragnar
+# items: 5990, 30665, 31584, 31589, 31586, 31590, 31593, 31594, 31595, 31588, 31585, 31592, 30602, 30964, 30977, 30965, 15021
 
 #Hand in For Whiptail Poison Glands
 

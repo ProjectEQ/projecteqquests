@@ -1,3 +1,4 @@
+-- items: 13713, 10018, 10320
 function event_spawn(e)
 	eq.set_timer("help",300000);
 end

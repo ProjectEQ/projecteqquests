@@ -1,3 +1,4 @@
+# items: 12156, 5014
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hail. and welcome to Stormguard Hall. home to all great warriors! Are you also a [warrior of the Stormguard] or do you [follow another guild]?");

@@ -1,3 +1,4 @@
+# items: 13009
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::say("Hello. I would shake your hand, but it would [hurt]. Ooooh! Owwy!");
@@ -28,11 +29,11 @@ sub EVENT_ITEM {
       quest::say("Oh thank you, $name. If you are ever going to gather bixie honeycomb's pray you do not run into the queen. The only way I know of collecting the honey is by intercepting the drone's and taking the honeycomb's they sometime's carry. Good luck!!");
       quest::ding();
       quest::exp(10);
-      quest::faction(241,10);   # +Deeppockets
-      quest::faction(263,10);  # +Guardians of the Vale
-      quest::faction(286,10);  # +Mayor Gubbin
-      quest::faction(292,10);  # +Merchants of Rivervale
-      quest::faction(5015,-10); # -Coalition of Trade Folk III
+      quest::faction(241,1);   # +Deeppockets
+      quest::faction(263,1);  # +Guardians of the Vale
+      quest::faction(286,1);  # +Mayor Gubbin
+      quest::faction(292,1);  # +Merchants of Rivervale
+      quest::faction(5015,-1); # -Coalition of Trade Folk III
      }
 }
   plugin::return_items(\%itemcount);

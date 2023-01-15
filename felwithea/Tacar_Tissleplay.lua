@@ -1,4 +1,5 @@
 -- Quest Name: Bard Mail Quest
+-- items: 18161
 
 function event_say(e)
 	if(e.message:findi("hail")) then

@@ -1,4 +1,5 @@
 -- NPC: Larsk_Juton
+-- items: 13309, 2140, 17970, 2915, 18811, 18815
 
 function event_say(e)
 	if(e.message:findi("hai")) then

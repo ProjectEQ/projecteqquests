@@ -1,3 +1,4 @@
+-- items: 13768, 7365, 16486, 2125, 7366, 13897, 7367, 13915, 7005, 8011, 7368, 12223, 7369
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings to you brother. Did [Keven] send you?");

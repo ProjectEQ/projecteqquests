@@ -1,5 +1,6 @@
 #BeginFile: lakerathe\#Egonis.pl
 #Quest file for Lake Rathetear - Egonis: Necromancer Epic 1.5 (pre)
+# items: 15523
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

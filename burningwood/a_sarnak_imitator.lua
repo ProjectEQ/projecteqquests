@@ -1,4 +1,5 @@
 -- beginning of the main portion of the enchanter epic quest - staff of the serpent
+-- items: 57918, 52960, 10603, 10604, 10639, 10650, 54267, 52959, 54286, 52966, 52952, 52947, 52945
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);  
@@ -7,10 +8,10 @@ function event_say(e)
     if(qglobals["ench_epic"] == nil) then
       eq.set_global("ench_epic","1",5,"F"); --Flagged to start epic
     end
-  elseif(e.message:findi("prepared") and qglobals["ench_epic"] >= "1") then  
+  elseif(e.message:findi("prepared") and qglobals["ench_epic"] ~= nil and qglobals["ench_epic"] >= "1") then  
     e.self:Say("I have recently received this ancient tome; it contains knowledge that may prove invaluable to the construction of a new staff. Unfortunately, time has had its way with it. I need you to find the missing pages so we can get to work. There should be ten, unless they have been destroyed by time and decay.");
     e.other:SummonItem(57918); -- Item: Tattered Illegible Tome
-  elseif(e.message:findi("chest") and qglobals["ench_epic"] >= "3") then  
+  elseif(e.message:findi("chest") and qglobals["ench_epic"] ~= nil and qglobals["ench_epic"] >= "3") then  
     e.other:SummonItem(52960); --Ornate Staff Chest            
   elseif(e.message:findi("are you jeb lumsed")) then
     e.self:Say("Yes, I am. Use your most enlightened magic to seek the truth of what is around you. When that is done, you will know what you seek.");

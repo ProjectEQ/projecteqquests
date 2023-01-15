@@ -1,3 +1,4 @@
+-- items: 18896, 14018, 12144, 13865, 13866, 18828
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail. good citizen!  You have entered the Hall of Truth.  What is it you seek?  Many citizens come to request aid in dealing with the local rogues or the oppression of our sworn enemies. the Freeport Militia.  A few valiant ones have been [summoned to the Hall of Truth].");

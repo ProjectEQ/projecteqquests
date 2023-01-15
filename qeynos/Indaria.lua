@@ -1,3 +1,4 @@
+-- items: 13712, 1316
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say("Hello, have you seen my daughter?");

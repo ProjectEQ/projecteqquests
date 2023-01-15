@@ -1,5 +1,6 @@
 -- DEVELOPER: KOVOU
 -- DEVELOPER: UNKOWN Gem Turn in text was already present
+-- items: 12348, 12349, 7041, 1903, 5013, 5014, 5015, 5016, 5019, 5020, 5021, 5022, 5023, 5024, 5025, 3040, 3042, 3043, 3044, 3046, 3047, 3048, 3049, 3050, 3051
 
 -- *** NPC INFORMATION ***
 
@@ -25,16 +26,16 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:SummonItem(7041);	-- Burning Rapier
 		e.other:Faction(5029,10,0);	-- faction better: 'Temple Of Sol Ro'
-		e.other:Faction(416,-30,0);	-- faction worse: 'Shadowed Men'
+		e.other:Faction(416,-1,0);	-- faction worse: 'Shadowed Men'
 		e.other:GiveCash(0,0,0,4);
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 1903})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 1903, item2 = 1903, item3 = 1903})) then
 		e.self:Say("You will make a fine addition to the crusade. Continue the cleansing of the desert. Let it be known that the Defenders of Ro are here to challenge the evils of the desert. I call upon the righteousness of all paladins to assist me.");
 		e.other:Ding();
 		e.other:AddEXP(250);
 		e.other:SummonItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5020,5021,5022,5023,5024,5025,5013,5014,5015,5016,5019,5020,5020,5021,5022,5023,5024,5025,5013,5014,5015,5016,5019,5020,5020,5021,5022,5023,5024,5025,3040,3042,3043,3044,3046,3047,3048,3049,3050,3051)); -- Item(s): Rusty Short Sword (5013), Rusty Axe (5014), Rusty Scythe (5015), Rusty Broad Sword (5016), Rusty Long Sword (5019), Rusty Battle Axe (5020), Rusty Battle Axe (5020), Rusty Scimitar (5021), Rusty Bastard Sword (5022), Rusty Two Handed Sword (5023), Rusty Halberd (5024), Rusty Two Handed Battle Axe (5025), Rusty Short Sword (5013), Rusty Axe (5014), Rusty Scythe (5015), Rusty Broad Sword (5016), Rusty Long Sword (5019), Rusty Battle Axe (5020), Rusty Battle Axe (5020), Rusty Scimitar (5021), Rusty Bastard Sword (5022), Rusty Two Handed Sword (5023), Rusty Halberd (5024), Rusty Two Handed Battle Axe (5025), Rusty Short Sword (5013), Rusty Axe (5014), Rusty Scythe (5015), Rusty Broad Sword (5016), Rusty Long Sword (5019), Rusty Battle Axe (5020), Rusty Battle Axe (5020), Rusty Scimitar (5021), Rusty Bastard Sword (5022), Rusty Two Handed Sword (5023), Rusty Halberd (5024), Rusty Two Handed Battle Axe (5025), Blackened Iron Coif (3040), Blackened Iron Collar (3042), Blackened Iron Mail (3043), Blackened Iron Spaulder (3044), Blackened Iron Waistband (3046), Blackened Iron Armplates (3047), Blackened Iron Bracers (3048), Blackened Iron Gloves (3049), Blackened Iron Legplates (3050), Blackened Iron Boots (3051)
-		e.other:Faction(5029,1,0);		-- faction better: 'Temple Of Sol Ro'
-		e.other:Faction(416,-3,0);		-- faction worse: 'Shadowed Men'
+		e.other:Faction(5029,5,0);		-- faction better: 'Temple Of Sol Ro'
+		e.other:Faction(416,-1,0);		-- faction worse: 'Shadowed Men'
 		e.other:GiveCash(8,4,0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

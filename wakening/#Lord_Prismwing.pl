@@ -1,3 +1,4 @@
+# items: 24876, 24867
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("flutters his wings rapidly, sending shimmering dust through the air around you. Although he speaks in high pitched chirps you somehow understand his meaning. Hello $name, I am the Count of the Tunarean Drixies. Are you a friend of the Tunarean Court?");

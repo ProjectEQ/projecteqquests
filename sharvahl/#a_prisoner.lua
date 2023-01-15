@@ -1,4 +1,5 @@
 -- Rogue prequest event #Drogerin
+-- items: 52008
 
 
 function event_say(e)

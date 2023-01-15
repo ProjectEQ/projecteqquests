@@ -12,7 +12,7 @@ function event_say(e)
         --Gathering Skin    [
         --Underhanded Exploration
         --Find the Ore
-        eq.task_selector({223, 224, 225, 226, 227, 228, 229, 230});
+        eq.task_selector({500223, 3749, 192, 546, 4175, 4069, 4428, 4536});
     end
 end
 

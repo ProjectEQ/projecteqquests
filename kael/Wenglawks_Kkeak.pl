@@ -1,3 +1,4 @@
+# items: 25279, 25280, 25281, 28600, 28601, 20474, 25062, 25130, 25061, 25110, 17049, 29068, 29626, 1722, 1719, 1723
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Greetings, $name, I have heard of you. My name is Wenglawks Kkeak. Welcome to my humble home. My sources tell me you are a [mercenary]. Is this true?");

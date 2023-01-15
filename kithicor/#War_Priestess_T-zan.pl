@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- #War_Priestess_T`zan
+# items: 28057
 
 sub EVENT_SAY {
   quest::emote("ignores you.");

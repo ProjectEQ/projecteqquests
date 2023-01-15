@@ -1,5 +1,6 @@
 #BeginFile: cabeast\Pagnar_Vyng.pl
 #Quest for East Cabilis - Pagnar Vyng: LoY Cultural Robes
+# items: 65256
 
 sub EVENT_SAY {
   my $TrueRace = $client->GetBaseRace();

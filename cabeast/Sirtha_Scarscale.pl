@@ -1,4 +1,5 @@
 #The other NPC for the Iksar Shadowknight low- to mid-level armors.
+# items: 14822, 14826, 3053, 10035, 4968, 14828, 14823, 3064, 10033, 4974, 14825, 3062, 10032, 4972, 14830, 3060, 10034, 4970
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

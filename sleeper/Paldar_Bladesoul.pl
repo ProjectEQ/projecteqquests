@@ -5,6 +5,7 @@
 #Zone: Sleeper's Tomb
 #Items Involved: Spiritual Prismatic Pack, Bladesoul's Spiritual Pouch
 #############
+# items: 17147, 20410
 
 sub EVENT_SAY {
 	if ($text=~/Hail/i) {quest::emote("jolts his head in the direction of the voice. 'You. . . you're not an apparition are you? No, you can't be, that's what I am. Well, I'm glad to meet you, my name is Paldar Bladesoul. I don't suppose you've seen [Ulessa] since you've entered this tomb, have you?'");}

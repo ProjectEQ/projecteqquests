@@ -1,5 +1,6 @@
 #Kanthu M'Rekkor, Neriakc 42075
 #Status: COMPLETE
+# items: 17124, 19561, 19558, 19555, 19559, 19560, 19557, 19556, 2416
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

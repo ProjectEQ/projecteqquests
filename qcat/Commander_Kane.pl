@@ -1,3 +1,4 @@
+# items: 13130
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Do you know who I am?!! I am the Commander of the Qeynos Guard!! Do you think I trod through these sewers to speak with you? If so then you are quite mistaken.");

@@ -1,3 +1,4 @@
+-- items: 18925, 13159
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Aye, hello there, friend! How are ye on this fine day? A beautiful day to be alive, I must say! Anyway, I just got into Freeport last month. Wow, is this city big! Way bigger than humble little Rivervale. That's where I'm from. I'm working on setting up my own little business here, Falia's Foot Combs and Footwear, it'll be called. But, I don't have anything to sell yet, so check back in a couple of weeks. Safe travels to ye, friend.");

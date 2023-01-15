@@ -6,6 +6,7 @@
 #NPC ID: 114281
 #
 #All quest text is entirely made up as I could not find actual dialog.
+# items: 25831, 24968, 55324, 25814, 24963, 55325, 25821, 24965, 55326, 25838, 24967, 55327, 25832, 24969, 55328, 25825, 24964, 55329, 25833, 24966, 55330
 
 sub EVENT_SAY {
    if ($faction == 1) { #req ally CoV

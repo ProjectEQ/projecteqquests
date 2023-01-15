@@ -1,3 +1,4 @@
+-- items: 10400, 1903, 2299, 10131, 10132, 13237, 13238, 10133
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. "..e.other:GetName()..". I am Reyia Beslin of the Ashen Order.  I help to train our members and I am in charge of handing out the orange and red Sashes of Order.  Would you like to know how you can get an [orange sash]? Or maybe you think you are ready to earn the [red sash]?");

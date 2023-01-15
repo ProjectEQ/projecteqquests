@@ -1,3 +1,4 @@
+# items: 30516, 29647, 29645, 29648
 sub EVENT_SAY {
   if ($faction <= 3) { # Require kindly faction
     if($text=~/hail/i){

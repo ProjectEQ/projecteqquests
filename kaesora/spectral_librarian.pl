@@ -1,5 +1,6 @@
 # Test of Charm - enchanter epic - Enchanted Diamond
 # 
+# items: 10631, 10618
 
 my $x;
 my $y;

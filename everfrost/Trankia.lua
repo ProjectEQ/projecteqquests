@@ -1,4 +1,5 @@
 -- Part of the quest for Tishan's Kilt
+-- items: 10528, 18797, 10556, 18798, 1347, 2365
 
 function event_say(e)
 	if(e.message:findi("hail")) then

@@ -1,3 +1,4 @@
+-- items: 13294
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail, %s. You had best keep moving. One who stands around too long in Qeynos Hills tends to get surprised by vicious creatures.",e.other:GetName()));

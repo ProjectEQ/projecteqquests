@@ -1,6 +1,7 @@
 -- Converted to .lua by Speedz
 -- edited and added saylink by robregen
 -- edited for faction by noudess
+-- items: 13073, 13070, 15093, 13916, 15272, 18791, 13529
 
 function event_spawn(e)
 	local xloc = e.self:GetX();

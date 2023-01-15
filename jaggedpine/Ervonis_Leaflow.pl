@@ -1,5 +1,6 @@
 # Germand's Problem
 # Created by Gonner
+# items: 55558, 55522, 55536
 
 sub EVENT_SAY {
 

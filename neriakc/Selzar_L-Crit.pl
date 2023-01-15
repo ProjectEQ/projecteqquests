@@ -2,6 +2,7 @@
 #Need Ending Statement
 #Need Factions
 #Status: Not Complete
+# items: 2416, 19578, 19577, 13060, 19608
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

@@ -27,6 +27,7 @@
 # Monks with good Ashen Order Faction
 #
 ############################################# 
+# items: 12369, 17985, 12371, 28055
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

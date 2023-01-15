@@ -1,4 +1,5 @@
 -- poknowledge\Ramos_Jerwan.lua NPCID 202303
+-- items: 29173, 29171, 29175
 
 function event_say(e)
 	if(e.message:findi("hail")) then

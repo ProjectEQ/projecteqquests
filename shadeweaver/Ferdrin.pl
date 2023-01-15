@@ -1,3 +1,4 @@
+# items: 7807, 30579, 7813
 sub EVENT_SAY { 
   if($text=~/hail/i){
     quest::say("Welcome $name! Have you been sent to speak with me by [Captain Alim]?");

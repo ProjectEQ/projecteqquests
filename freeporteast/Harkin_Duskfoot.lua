@@ -1,3 +1,4 @@
+-- items: 18015, 18016, 1054
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("HA! Greetings there. " .. e.other:GetName() .. "!  How are ya this fine day?  Me?  I'm doing all right.  Guard duty down here always reminds me of home.");

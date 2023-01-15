@@ -1,3 +1,4 @@
+# items: 12451, 12448
 sub EVENT_SAY {
   if($text=~/hail/i){
   # Catfish Croak Sandwich [Part 1]

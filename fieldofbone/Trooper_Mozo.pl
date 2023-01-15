@@ -1,3 +1,4 @@
+# items: 13073
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::emote("look's upon you smugly.");

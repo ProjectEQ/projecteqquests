@@ -4,6 +4,7 @@
 # Quest: Erudite Prisoners
 # Modified by RealityIncarnate
 ###############################
+# items: 6923
 
 sub EVENT_SAY { 
   if($text=~/hail/i) {

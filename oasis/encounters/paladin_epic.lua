@@ -1,3 +1,4 @@
+-- items: 69982
 local event_starter;
 local event_started=false;
 local num_wave=0;

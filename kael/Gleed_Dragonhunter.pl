@@ -1,8 +1,9 @@
 # Gleed's Bow
 #
+# items: 25137, 25033
 
 sub EVENT_SAY {
-  if ($faction <= 4) {
+  if ($faction < 6) {
     if ($text=~/hail/i) {
       quest::emote("sighs as he looks down at you. 'I grow tired of this city. I so long for the tundra and lands of the wild.'");
     }
@@ -23,21 +24,20 @@ sub EVENT_SAY {
     }
   }
   else {
-    quest::say("You need to prove your dedication to our cause before
-I can discuss such matters with you.");
+    quest::say("You need to prove your dedication to our cause beforeI can discuss such matters with you.");
   }
 }
 
 sub EVENT_ITEM {
-  if ($faction <= 4) {
+  if ($faction < 6) {
     if (plugin::check_handin(\%itemcount, 25137 => 1)) {
       quest::say("My, you do have a hunters spirit! If you could track down Vluudeen and slay him without the aid of my bow, you must be worthy. Take the bow, huntsman. Use it to slay others of Vluudeen's kind.");
       quest::summonitem(25033); # Item: Bow of the Huntsman
       quest::exp(35000);
-      quest::faction(419,10); #kromrif
-      quest::faction(448,10); #kromzek
-      quest::faction(430,-30); #CoV
-      quest::faction(406,-30); #coldain
+      quest::faction(419,35); #kromrif
+      quest::faction(448,8); #kromzek
+      quest::faction(430,-3); #CoV
+      quest::faction(406,-17); #coldain
     }
     else {
       plugin::return_items(\%itemcount);

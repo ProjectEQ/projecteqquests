@@ -1,3 +1,4 @@
+# items: 16548, 5422, 5405, 20638
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Hail, $name. I am the leader of this beleagured troop of rangers. Even though the once fair Kithicor slowly succumbs to the [darkness] at hand, we shall not abandon the woods without a fight.");

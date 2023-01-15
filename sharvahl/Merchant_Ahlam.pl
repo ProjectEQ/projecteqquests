@@ -1,5 +1,6 @@
 #Art of Vah Shir Brewing
 #Zone:sharvahl  ID:155093 -- Merchant_Ahlam
+# items: 17099, 2877, 17098, 31764, 31774, 31760, 31762, 31775, 31768, 31769, 31771, 31772, 31776, 31777
 
 
 sub EVENT_SAY {

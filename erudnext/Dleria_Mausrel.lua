@@ -1,3 +1,4 @@
+-- items: 17939, 13922, 2144, 2146, 2147, 17005, 13880
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail! You appear to be a [new priest]. Ah, I so enjoy the presence of youth within Deepwater Temple. I am sure Prexus is smiling upon us as we speak.");

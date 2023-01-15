@@ -1,5 +1,6 @@
 # erudnext deepwater knight armor
 #
+# items: 61093, 38911, 38907, 38908, 38910, 38913, 38909, 38912, 20355, 19660, 9131, 13825, 61098
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -6,6 +6,7 @@
 #NPC ID: 91046
 #Quest Status: finished
 #
+# items: 18958, 28007, 10376, 28008, 28009
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello and well met! A $race like you does not often come here.. Do you come seeking what I possess? Fire, fire, fire and fire is mine! I surround myself with fire, I bathe in fire, I consume fire, I am the Master of Fire! Hahahaha, but I digress. Have you come for the element of Fire, seeking to fall to the same fate as Trilith Magi'kot?");

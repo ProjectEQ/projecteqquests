@@ -1,17 +1,18 @@
+# items: 85062, 1002, 85064, 85068, 85065, 85063, 85066, 85067
 sub EVENT_SPAWN {
 	quest::say("I am not easily killed!");
 	quest::settimer(1,300);
 }	
 
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,7)) {
+	if(quest::istaskactivityactive(500222,7)) {
 		if($text=~/Hail/i) {
 			$pcpvp = $client->GetPVP();
 			my $newzone_toby = plugin::GetRandomFreeLocation(0,30);
 			my $npcid = 999100;
 
 			quest::say("You need to see the old man now.");
-			quest::updatetaskactivity(222,7);
+			quest::updatetaskactivity(500222,7);
 			if($qglobals{halloween_ratter_complete} < 7){
 				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				quest::summonitem(1002); # Item: Cloth Veil

@@ -1,5 +1,6 @@
 #zone Cauldron
 # by Angelox
+# items: 67003, 67005, 67004
 
 sub EVENT_SAY {
 if($text=~/Hail/i) {

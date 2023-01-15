@@ -2,6 +2,7 @@
 #Part of Charm of the Brotherhood
 #While you can complete the main quest for the charm without doing this sub quest at all,
 #you cannot do this subquest without the proper items from the main quest. -Kilelen
+# items: 21972, 21973, 21974
 
 sub EVENT_SAY{
   if($text=~/Hail/i) {

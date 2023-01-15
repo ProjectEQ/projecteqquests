@@ -1,3 +1,4 @@
+# items: 20205, 20175, 20176
 sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::say("I've little time for banter. unless you have come to me for training as a [new warrior] of the Bloodsabers move along.");

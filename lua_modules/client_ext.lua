@@ -284,3 +284,59 @@ function Client:CountHateList(cond)
 	
 	return ret;
 end
+
+function Client:GetGroupMemberCount()
+	-- group member count with support for raid groups
+	local raid = self:GetRaid()
+	local group = self:GetGroup()
+	if group.valid then
+		return group:GroupCount()
+	elseif raid.valid and raid:GetGroup(self) ~= -1 then
+		return raid:GroupCount(raid:GetGroup(self))
+	end
+	return 0
+end
+
+function Client:DoesAnyPartyMemberHaveLockout(expedition_name, event_name, max_member_check)
+	max_member_check = max_member_check or 0
+	if self:GetRaid().valid then
+		return self:GetRaid():DoesAnyMemberHaveExpeditionLockout(expedition_name, event_name, max_member_check)
+	elseif self:GetGroup().valid then
+		return self:GetGroup():DoesAnyMemberHaveExpeditionLockout(expedition_name, event_name, max_member_check)
+	end
+	return self:HasExpeditionLockout(expedition_name, event_name)
+end
+
+function Client:GetRaidMemberCountInZone()
+	local count = 0
+	local raid = self:GetRaid()
+	if raid.valid then
+		for i=0,raid:RaidCount() - 1 do
+			if raid:GetMember(i).valid then
+				count = count + 1
+			end
+		end
+	end
+	return count
+end
+
+function Client:IsClass(...)
+    local class = self:GetClass();
+    if class == 17 then return true end;
+    for i,v in ipairs(arg) do
+        if class == v then
+            return true;
+        end
+    end
+    return false;
+end
+
+function Client:IsRace(...)
+    local race = self:GetBaseRace();
+    for i,v in ipairs(arg) do
+        if race == v then
+            return true;
+        end
+    end
+    return false;
+end

@@ -2,6 +2,7 @@
 # NPC ID: 110033
 # Zone: Iceclad Ocean
 # Quest: Blessed Coldain Prayer Shawl (8th shawl)
+# items: 8898
 
 
 sub EVENT_SAY {

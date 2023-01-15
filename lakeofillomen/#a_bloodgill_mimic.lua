@@ -1,3 +1,4 @@
+-- items: 52941
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Can't you feel him? I hear the wind blow across the lake and I think he must still be . . .  ");

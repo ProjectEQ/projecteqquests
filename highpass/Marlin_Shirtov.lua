@@ -1,3 +1,4 @@
+-- items: 13352, 20008
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("What are you doing in here? I requested no room service. Now leave, quickly, before Mistress Anna comes!");

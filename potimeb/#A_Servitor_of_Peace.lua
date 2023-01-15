@@ -9,7 +9,7 @@ end
 function event_enter(e)
 	eq.clear_proximity();
 	-- tell quarm to start pathing
-	eq.signal(223201,1); -- NPC: Quarm
+	eq.signal(223201,1);
 	-- depop my job is done.
 	eq.depop();
 end

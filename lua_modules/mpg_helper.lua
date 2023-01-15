@@ -22,6 +22,7 @@
 --
 -- Lockout on Win: 5 days
 -- Lockout on Loss: 2 hours (think the instance lives for 3 hours now so its really 3 hours)
+-- items: 52413
 local mpg_helper = {};
 
 -- Function: UpdateGroupTrialLockout
@@ -44,7 +45,9 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
     client = entity_list:GetClientByCharID(v) 
     if ( client.valid ) then 
       -- Set a 72 hour lockout on a Win (And in the Zone)
-      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
+      if lockout_name_in then
+        eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(72)), "H72", 0, v, 0);
+      end
       client_globals = eq.get_qglobals(client);
     
       -- Get the bits of the MPG Trials completed; we should only award an AA the first time 
@@ -79,7 +82,7 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
       else 
         client:Message(15, "You have again mastered this trial.  Congratulations.");
       end
-    else
+    elseif lockout_name_in then
       -- Client wasn't in the zone - but the Trial was Won so set the same lockout as if they were in the zone
       -- Since they weren't in the zone we can't award the AA; maybe we can add an NPC to hail similar
       -- to inktuta someday so won trials can get the reward if thats "live like" or if I just decide too.
@@ -105,7 +108,9 @@ function mpg_helper.UpdateRaidTrialLockout(player_list_in, this_bit_in, lockout_
 
   for k,v in pairs(player_list_in) do
     -- Set a lockout 
-    eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
+    if lockout_name_in then
+      eq.target_global(lockout_name_in, tostring(instance_requests.GetLockoutEndTimeForHours(122)), "H122", 0, v, 0);
+    end
 
     client = el:GetClientByCharID(v);
     if (client.valid) then 

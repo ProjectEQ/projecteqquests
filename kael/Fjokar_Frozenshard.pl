@@ -1,5 +1,6 @@
 #Fjokar_Frozenshard.pl
 #Wenglawks The Traitor
+# items: 1717, 25030
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

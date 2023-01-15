@@ -3,6 +3,7 @@
 # Zone:  Rathe Mountains
 # Quest:  Boots of Ro
 ##############################################################
+# items: 12276, 12280, 12206, 12304
 
 sub EVENT_SAY { 
   if ($faction > 5) {

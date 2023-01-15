@@ -1,5 +1,6 @@
 # Telkorenar's WToV tests: Test of Protection, Fire Storm, Living Flame, Tooth
 #
+# items: 31257, 31268, 31270, 31258, 31472, 31260, 31253, 31261, 31250, 31469, 31262, 31251, 31255, 31254, 31470, 31256, 31266, 31265, 31259, 31471
 
 sub EVENT_SAY {
   if ($faction <= 3) { #req kindly CoV

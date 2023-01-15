@@ -1,6 +1,7 @@
 #Warder_Elwysaie.pl
 #Ranger Tomes/Planar Armor Exchange
 #Added tome turn-ins -Kilelen
+# items: 4891, 4892, 4893, 4894, 4895, 4896, 4897, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

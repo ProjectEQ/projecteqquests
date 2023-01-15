@@ -1,3 +1,4 @@
+-- items: 20690, 20689, 20688, 20695
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yes. My bark is blackened and cracked by sickness. If only I were the only one to be afflicted this way. Throughout the lands this is happening. Agents of some dark god are twisting the lands and their creatures.");

@@ -1,7 +1,3 @@
-function event_enter_zone(e)
-  e.self:ClearCompassMark(); 
-end
-
 function event_loot(e)
 	if(e.item:GetID() == 69981) then
 		local qglobals = eq.get_qglobals(e.self);

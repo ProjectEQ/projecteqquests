@@ -1,3 +1,4 @@
+-- items: 17510, 18031, 14360, 14361, 11880, 11881
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. I am searching for the [wheel of Tarton]. If you will assist me I will provide you with [runes] to create a powerful spell.");

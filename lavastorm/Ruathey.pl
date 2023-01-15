@@ -1,6 +1,7 @@
 #part of the ghoulbane quest
 #npc - Ruathey
 #zone - Lavastorm
+# items: 2417, 17878
 
 sub EVENT_ITEM
 {

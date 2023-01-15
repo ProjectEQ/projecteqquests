@@ -1,3 +1,4 @@
+# items: 8467, 17133, 8475, 8412, 8471, 8488, 8409, 8490, 8411, 8491, 8410, 8413
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 8467 => 1)) {
     quest::say("Thank you for delivering this. While I have you here, perhaps you can help. We are in dire need of assistance in the moor. All of the reports from our Taruun are indicating the same thing. The area has to be swept clear of the factions that currently inhabit it. The land itself seems defendable, we need someone to gather some soldiers and clear the area.");

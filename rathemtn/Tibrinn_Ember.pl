@@ -4,6 +4,7 @@
 # Quest:  Tibrinn's Quest
 # Author: a_sewer_rat
 #########################################################
+# items: 4310, 6335, 6364
 
 sub EVENT_SAY {
 

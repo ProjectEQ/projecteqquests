@@ -1,4 +1,5 @@
 #Druushk NPCID 108040
+# items: 69339, 69338, 69337, 69383, 69384
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {

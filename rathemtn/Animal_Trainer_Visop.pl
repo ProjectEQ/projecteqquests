@@ -5,6 +5,7 @@
 #NPCs Involved: Animal_Trainer_Visop
 #Items Involved: 54001, 54002
 #################
+# items: 54001, 54002
 
 sub EVENT_SAY
 {

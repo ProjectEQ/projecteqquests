@@ -1,4 +1,5 @@
 -- Part of quest for Incandescent Wand
+-- items: 6338, 6339
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome. I am Ezmirella.");

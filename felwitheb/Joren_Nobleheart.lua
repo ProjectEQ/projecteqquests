@@ -1,4 +1,5 @@
 -- Test of Illusion - enchanter epic - Chalice of Kings
+-- items: 10627, 10608
 
 function event_say(e)
 	if(e.message:findi("hail")) then

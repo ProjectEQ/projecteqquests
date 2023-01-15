@@ -1,5 +1,6 @@
 # Quest for Terman_Underbelly in Thurgadina - Shaman Velious Armor (Rune Crafter) 
 # Kiladiveus - created Sub EVENT_ITEM for quest. Used Faction requirement method. 
+# items: 25805, 24935, 31008, 25815, 24937, 31009, 25827, 24936, 31012, 25840, 24941, 31011, 25841, 24940, 31007, 25836, 24939, 31010, 25838, 24938, 31013
 
 sub EVENT_SAY { 
   if ($faction <= 3) { # Require Warmly and greater faction    

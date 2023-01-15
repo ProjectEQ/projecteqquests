@@ -1,3 +1,4 @@
+-- items: 13794, 13067, 13073, 10130, 13058, 13916, 20901, 10131
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 
@@ -32,18 +33,18 @@ function event_trade(e)
 			e.self:Say("Good work, " .. e.other:GetName() .. ", you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
 			e.other:SummonItem(10130); -- White Training Sash
 			e.other:Ding();
-			e.other:Faction(361,2,0); -- Ashen Order
-			e.other:Faction(281,2,0); -- Knights of Truth
-			e.other:Faction(309,2,0); -- Silent Fist Clan
+			e.other:Faction(361,25,0); -- Ashen Order
+			e.other:Faction(281,3,0); -- Knights of Truth
+			e.other:Faction(309,1,0); -- Silent Fist Clan
 			e.other:AddEXP(500);
 		-- White Training Sash - Giant Snake Rattle - Deathfist Slashed Belt - Desert Tarantula Chitin
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10130,item2 = 13058,item3 = 13916,item4 = 20901})) then
-			e.self:Say("Good work, " .. e.other:GetName() .. ", you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
+			e.self:Say("Ah, well done, " .. e.other:GetName() .. ". You have proven that you are a very skillful fighter and it is an honor to have you as a member of the Ashen Order. On behalf of Master Closk, and under the watchful eyes of Quellious, I present you, " .. e.other:GetName() .. ", with this, the yellow Sash of Order. Go out and make us proud.");
 			e.other:SummonItem(10131); -- Yellow Sash of Order
 			e.other:Ding();
-			e.other:Faction(361,5,0); -- Ashen Order
-			e.other:Faction(281,5,0); -- Knights of Truth
-			e.other:Faction(309,5,0); -- Silent Fist Clan
+			e.other:Faction(361,50,0); -- Ashen Order
+			e.other:Faction(281,7,0); -- Knights of Truth
+			e.other:Faction(309,2,0); -- Silent Fist Clan
 			e.other:AddEXP(750);
 		end
 	end

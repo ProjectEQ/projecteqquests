@@ -1,3 +1,4 @@
+# items: 12206, 16506, 5366
 sub EVENT_SAY {
   if ($text=~/hail/i) {#Need correct text
     quest::say("Well met $name, if you have some time on your hands I have a [proposition] for you");

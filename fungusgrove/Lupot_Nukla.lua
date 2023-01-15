@@ -1,5 +1,6 @@
 --fungusgrove/Lupot_Nukla.lua NPCID 157117
 --Shaman Epic 1.5 and 2.0
+-- items: 57401, 57403, 57551
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("elder spirit sent me") and qglobals["shaman_epic"] == "1") then
@@ -31,11 +32,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
-	if(item_lib.check_turn_in(e.trade, {item1 = 57401}) and qglobals["shaman_epic"] == "9") then --hand in Necklace of Perseverance (looted from Ikaav Spiritstealer in KT)
+	if(qglobals["shaman_epic"] == "9" and item_lib.check_turn_in(e.trade, {item1 = 57401})) then --hand in Necklace of Perseverance (looted from Ikaav Spiritstealer in KT)
 		e.self:Say("You have traveled far, my friend. This necklace is more powerful than those foolish Muramites knew. Undari has been holding a key to the spirit world around her neck for many years. How do you think she remained [" .. eq.say_link("protected") .. "] near those temples and beasts?");
 		eq.set_global("shaman_epic","10",5,"F");
 	end
-	if(item_lib.check_turn_in(e.trade, {item1 = 57403}) and qglobals["shaman_epic"] == "10") then -- hand in Piece of Moaning Timber (looted from a Darkened Chanting Woodspirit in Plane of Storms)
+	if(qglobals["shaman_epic"] == "10" and item_lib.check_turn_in(e.trade, {item1 = 57403})) then -- hand in Piece of Moaning Timber (looted from a Darkened Chanting Woodspirit in Plane of Storms)
 		e.self:Say("You have done well," .. e.other:GetName() .. ". We are drawing nearer to being fully prepared for the Ruchu. I've put the bark and the necklace into this satchel that is protected by a spell. The only one who may open it is the Spirit of Enlightenment. Go and give that to it.");
 		e.other:SummonItem(57551); --Impervious Medicine Bag
 	end

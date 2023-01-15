@@ -1,5 +1,6 @@
 # Enchanter Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54156, 68220, 54154, 68223, 54157, 68225, 54159, 68226, 54160, 68224, 54158, 68221, 54155
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,6 +1,7 @@
 #zone: gunthak NPC: Millius_Darkwater (224194)
 #Revision1 Angelox
 #note; I did this quest as per the original, "Titanium" version
+# items: 59029, 59030, 59026, 59027, 59028
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

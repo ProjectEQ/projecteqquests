@@ -1,5 +1,5 @@
 sub EVENT_ITEM_CLICK_CAST {
-	if(quest::istaskactivityactive(222,0)) {
+	if(quest::istaskactivityactive(500222,0)) {
 		my $rat = "Kai";
 		my $ratglobal = "halloween_ratter_kai";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -15,7 +15,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}	
-	elsif(quest::istaskactivityactive(222,1)) {
+	elsif(quest::istaskactivityactive(500222,1)) {
 		my $rat = "Brutus";
 		my $ratglobal = "halloween_ratter_brutus";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -31,7 +31,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,2)) {
+	elsif(quest::istaskactivityactive(500222,2)) {
 		my $rat = "Aristotle";
 		my $ratglobal = "halloween_ratter_aristotle";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -47,7 +47,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,3)) {
+	elsif(quest::istaskactivityactive(500222,3)) {
 		my $rat = "Zeus";
 		my $ratglobal = "halloween_ratter_zeus";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -63,7 +63,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,5)) {
+	elsif(quest::istaskactivityactive(500222,5)) {
 		my $rat = "Sherlock";
 		my $ratglobal = "halloween_ratter_sherlock";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -79,7 +79,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,6)) {
+	elsif(quest::istaskactivityactive(500222,6)) {
 		my $rat = "Ocho";
 		my $ratglobal = "halloween_ratter_ocho";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -106,7 +106,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			}
 		}
 	}
-	elsif(quest::istaskactivityactive(222,7)) {
+	elsif(quest::istaskactivityactive(500222,7)) {
 		my $rat = "Toby";
 		my $ratglobal = "halloween_ratter_toby";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -122,7 +122,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,9)) {
+	elsif(quest::istaskactivityactive(500222,9)) {
 		my $rat = "Gustave";
 		my $ratglobal = "halloween_ratter_gustave";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -138,7 +138,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,10)) {
+	elsif(quest::istaskactivityactive(500222,10)) {
 		my $rat = "Napoleon";
 		my $ratglobal = "halloween_ratter_napoleon";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -154,7 +154,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,11)) {
+	elsif(quest::istaskactivityactive(500222,11)) {
 		my $rat = "Sprocket";
 		my $ratglobal = "halloween_ratter_sprocket";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -182,7 +182,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			}
 		}
 	}
-	elsif(quest::istaskactivityactive(222,12)) {
+	elsif(quest::istaskactivityactive(500222,12)) {
 		my $rat = "Mortimer";
 		my $ratglobal = "halloween_ratter_mortimer";
 		my $location = plugin::GetRatLocation("$ratglobal");
@@ -198,7 +198,7 @@ sub EVENT_ITEM_CLICK_CAST {
 			WAYPOINT_LOCATION($x_loc,$y_loc,$z_loc,$rat);
 		}
 	}
-	elsif(quest::istaskactivityactive(222,13)) {
+	elsif(quest::istaskactivityactive(500222,13)) {
 		my $rat = "Paulie";
 		my $ratglobal = "halloween_ratter_paulie";
 		my $location = plugin::GetRatLocation("$ratglobal");

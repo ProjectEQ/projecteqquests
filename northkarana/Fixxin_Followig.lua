@@ -1,4 +1,5 @@
 -- Fixxin Followigs Silvery Blades
+-- items: 16500, 18178
 
 function event_say(e)
 	if(e.message:findi("hail")) then

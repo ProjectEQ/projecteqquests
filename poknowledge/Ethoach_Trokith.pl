@@ -1,5 +1,6 @@
 #Ethoach_Trokith.pl
 #Advanced Stealth Manual
+# items: 22503, 9423, 26709, 28793, 28794
 
 
 sub EVENT_SAY {

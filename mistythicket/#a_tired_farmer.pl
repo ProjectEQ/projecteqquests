@@ -3,6 +3,7 @@
 ## NpcID:         33150
 ## SpawngroupID:   54848
 ## Created on April 21, 2010 by mrhodes
+# items: 62632, 62633
 
 ## Poem of the Storms:             62632
 ## Tear-stained Poem of the Storms: 62633

@@ -1,5 +1,6 @@
 #Warlord_Korehan.pl
 #Warrior Tomes/Planar Armor Exchange
+# items: 4911, 4912, 4913, 4914, 4915, 4916, 4917, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY {
 	if($text=~/Hail/i){

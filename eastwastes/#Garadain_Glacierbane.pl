@@ -1,3 +1,4 @@
+# items: 1092, 30164
 sub EVENT_SPAWN {
   quest::say("It is worse than I thought. Not only are they prepared for an attack, but they have the Kromrif here to help them. Our steel will be tested today. Be sure not to show the troops any fear.");
   quest::pause(2);

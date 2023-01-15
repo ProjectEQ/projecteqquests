@@ -1,4 +1,5 @@
 # Quest for Scepter of Sorrow
+# items: 14362, 14364
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

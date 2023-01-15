@@ -1,5 +1,6 @@
 # Wizard Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54191, 68220, 54189, 68223, 54192, 68225, 54194, 68226, 54195, 68224, 54193, 68221, 54190
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

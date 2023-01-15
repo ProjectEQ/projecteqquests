@@ -1,3 +1,4 @@
+-- items: 19844, 19933, 19939
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("What is it maggot? I have only time for new clerics who have chosen to [serve the Dismal Rage]. If you are looking for meaningless banter. than I suggest you find a bar wench.");

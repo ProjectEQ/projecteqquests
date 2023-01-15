@@ -1,3 +1,4 @@
+# items: 9049, 9050
 sub EVENT_WAYPOINT_ARRIVE {
 	if ($wp == 1) {
 	quest::emote("hums while he sorts through the books that rest on the various shelves.");

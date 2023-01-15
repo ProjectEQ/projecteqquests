@@ -1,4 +1,5 @@
 # Items of Benevolence, starts in Skyshrine with Commander Leuz
+# items: 29683, 29684, 29688, 29685, 29686, 29687
 
 sub EVENT_SAY {
 	if ($text=~/Hail/i) {

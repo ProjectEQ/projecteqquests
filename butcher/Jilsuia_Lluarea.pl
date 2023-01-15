@@ -1,3 +1,4 @@
+# items: 55270, 55272, 55267
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 55270 => 1)) { #Shelie's Note
     quest::say("This note is covered in filth! Oh, it is from Shelie, that explains it.");

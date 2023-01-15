@@ -1,5 +1,6 @@
 #Aid_Fimli.pl
 #Cloak of Lesser Pernicity
+# items: 15980, 15807
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

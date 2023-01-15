@@ -1,3 +1,4 @@
+# items: 2049
 sub EVENT_SAY { 
   if($text=~/hail/i) {
     quest::say("Hail, $name, I am Aderius Rhenar, priest of Quellious and assistant to Lady Laraena. I have been fortunate to be imprisoned here with these Kejekan cat men, they are a very wise people. Are you planning on returning to Erudin soon my friend?");

@@ -1,3 +1,4 @@
+# items: 124688
 sub EVENT_SAY {
     #Halloween Event
     #if($text=~/hail/i){
@@ -84,7 +85,7 @@ sub EVENT_ITEM {
 		$loop_count = 0;
 		while($found_prize == 0){
 		
-			my $prize = int(rand($reward_amounts - 1));
+			my $prize = int(rand($reward_amounts));
 		
 			quest::debug($npc->GetCleanName() . " - prize roll: " . $prize . " client: " . $client->GetCleanName());
 		

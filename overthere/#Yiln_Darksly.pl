@@ -1,5 +1,6 @@
 ##Yiln_Darksly.pl
 #Yiln's Missing Tomes
+# items: 55001, 55025
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

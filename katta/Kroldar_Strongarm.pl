@@ -1,3 +1,4 @@
+# items: 2691, 31728
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("I am Governor Kroldar Strongarm of Katta Castellum. It is my duty to command the Validus Custodus in matters of Warfare. The Empire 

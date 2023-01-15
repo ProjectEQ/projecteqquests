@@ -1,4 +1,5 @@
 # Razortooth
+# items: 6348, 1062
 sub EVENT_SAY { 
   if($text=~/Hail/i) {
     quest::say("Rarr.  Me is Feren.  Me is fisher.  That means Feren catches [fish].");

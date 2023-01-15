@@ -1,4 +1,5 @@
 # Necromancer quests
+# items: 1355, 3318, 3317
 
 sub EVENT_SAY { 
   if($text=~/Hail/i){

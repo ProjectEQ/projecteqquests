@@ -1,3 +1,4 @@
+# items: 9061, 8466, 4461, 8467
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("It is a pleasure to meet you, friend. Please let me know if you have trouble finding the book that you seek. If you request something that we do not have available, I can make a note to keep an eye out for it. We are getting in a great variety of interesting new material these days. Speaking of which, I need someone to take a tome to Elder Animist Dumul. He has been frantically researching something or another. I'm sure that you could pry a little and learn more about it if you were to take this book to him. Is that something that you would be interested in doing?");

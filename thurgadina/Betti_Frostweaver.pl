@@ -1,5 +1,6 @@
 # sixth coldain prayer shawl
 # 
+# items: 1833, 1198, 1849
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

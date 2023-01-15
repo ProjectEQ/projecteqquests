@@ -1,5 +1,6 @@
 # warmly glowing stone quest -- ranger epic
 #
+# items: 20462, 20461, 20468
 
 sub EVENT_SAY {
   if ($text=~/are you one such as myself/i) {

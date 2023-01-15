@@ -18,6 +18,20 @@ sub EVENT_CLICKDOOR {
 				quest::movepc(214,278,178,2); # Zone: potactics
 			}
 		}
+		#Glykus_Helmir door
+		if($doorid == 25) {
+			#check if Glykus_Helmir is up
+			if(!$entity_list->IsMobSpawnedByNpcTypeID(214053)) {
+				quest::movepc(203,-4,-191,-628); # Zone: potranquility
+			}
+		}
+		#Tagrin_Maldric door
+		if($doorid == 26) {
+			#check if Glykus_Helmir is up
+			if(!$entity_list->IsMobSpawnedByNpcTypeID(214054)) {
+				quest::movepc(203,-4,-191,-628); # Zone: potranquility
+			}
+		}
 	}
 }
 

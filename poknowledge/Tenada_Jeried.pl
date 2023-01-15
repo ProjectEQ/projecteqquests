@@ -1,6 +1,7 @@
 #Tenada_Jeried.pl
 #Three Manuals/Sage's Box of Research
 #Giren found text for the Three Manuals quest, thanks. -Kilelen
+# items: 16258, 28791, 28797, 28794, 28798
 
 
 sub EVENT_SAY { 

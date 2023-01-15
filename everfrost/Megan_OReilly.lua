@@ -1,3 +1,4 @@
+-- items: 17945, 13244, 13245
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Brrrr.. It.. Is sooo.. c-cold!! I never.. sh-should've j-joined.. the.. the W-wolves of the N-north!!");

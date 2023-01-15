@@ -1,4 +1,5 @@
 -- 1.5 Berserker Epic Quest
+-- items: 18976, 11999, 18398
 
 function event_say(e)
 	if(e.message:findi("hail") and e.other:Class() == "Berserker") then

@@ -1,3 +1,4 @@
+-- items: 17194, 58009, 59021, 52354, 52344
 local add_waves;
 
 function event_say(e)

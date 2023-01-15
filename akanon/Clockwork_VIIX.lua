@@ -1,5 +1,6 @@
 -- Test of Enlightenment - enchanter epic - start of quest
 -- Converted to .lua by Speedz
+-- items: 10604, 17861, 10636, 10611
 
 function event_say(e)
 	if (e.message:findi("are you mizzle")) then

@@ -1,5 +1,6 @@
 #Zalil_Nyvin.pl
 #Advanced Magic Manual
+# items: 22503, 26710, 9424, 28796, 28797
 
 
 sub EVENT_SAY {

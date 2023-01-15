@@ -1,3 +1,4 @@
+-- items: 18504, 18505, 18506, 18507, 18508, 18510, 8910
 function event_say(e)
 
 	if(e.message:findi("hail")) then

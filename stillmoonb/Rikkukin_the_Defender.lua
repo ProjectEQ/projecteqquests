@@ -19,6 +19,19 @@ Rikk:add(1115.40, 6631.73);
 Rikk:add(1107.08, 6266.73);
 Rikk:add(1486.47, 6230.15);
 
+--[[
+	possible mechanics/missing dialogue that need implemented
+
+	periodic casts of Crystal Chill Vapors (with every emote attack?)
+	e.self:BeginCast(6964, 0) -- Crystal Chill Vapors
+
+	"Rikkukin the Defender says, 'Is there one among you with a guilty burden to bear?  I sense the culprit, the slayer of my mate.  You will all perish for this misdeed!'"
+
+	e.self:BeginCast(6557, 0) -- Crystal Chill Fog
+
+	on frozen aura rename:
+	eq.zone_emote(MT.Yellow, "Rikkukin's skin seals over with a caustic sheet of malleable ice.  The protection will soon make him impervious to melee and magical attacks."
+]]
 
 
 local index = 0;

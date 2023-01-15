@@ -1,3 +1,4 @@
+-- items: 18714, 13506, 13724
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();
@@ -34,6 +35,19 @@ function event_trade(e)
 		e.other:Faction(221,-25,0); -- Bloodsabers
 		e.other:Faction(219,15,0); -- Antonius Bayle
 		e.other:AddEXP(100);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13724}, 0)) then
+		e.self:Say("Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.");
+		-- Confirmed Live Factions
+		e.other:Faction(341,50); -- Priest of Life
+		e.other:Faction(280,15); -- Knight of Thunder
+		e.other:Faction(262,25); -- Guards of Qeynos
+		e.other:Faction(221,-12); -- Bloodsabers
+		e.other:Faction(219,7); -- Antonius Bayle
+		if(math.random(100) > 5) then
+			e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,10),0,eq.ChooseRandom(14007,14003),4000);
+		else
+			e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,10),0,eq.ChooseRandom(13723,13720),4000);
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

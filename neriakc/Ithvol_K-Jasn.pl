@@ -1,5 +1,6 @@
 #Ithvol K-Jasn.pl
 #Innoruuk Disciple/Innoruuk Regent
+# items: 12497, 1369, 1370, 12499, 12498, 19029, 1371
 
 sub EVENT_SAY { 
   if($text=~/hail/i) {

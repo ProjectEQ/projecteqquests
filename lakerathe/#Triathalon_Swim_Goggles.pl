@@ -1,4 +1,5 @@
 ##Custom script  for GM event, created by Shadowblade
+# items: 16889
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

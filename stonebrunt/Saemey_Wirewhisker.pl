@@ -1,3 +1,4 @@
+# items: 6970, 6971, 6972, 6980, 6977, 2576
 sub EVENT_SPAWN {
   my $RandInt = 0;   #Random integer variable
   my $LoopCount = 0; #Loop integer variable

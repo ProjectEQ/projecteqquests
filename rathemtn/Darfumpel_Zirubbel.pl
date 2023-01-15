@@ -4,6 +4,7 @@
 # Quest:  The Etched Stone
 # Author: a_sewer_rat
 #########################################################
+# items: 10191, 1000, 10192
 
 sub EVENT_SAY {
 

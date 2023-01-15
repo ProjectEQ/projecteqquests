@@ -1,6 +1,7 @@
 #zone: gunthak NPC: a_shipwrecked_hatestorm_sailor (224198)
 #Started by Angelox, finished by Kilelen
 #Rescue the Shipwrecked Sailor
+# items: 55007
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

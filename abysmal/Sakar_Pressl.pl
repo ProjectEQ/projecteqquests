@@ -1,5 +1,6 @@
 # Monk Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54205, 68220, 54203, 68223, 54206, 68225, 54208, 68226, 54209, 68224, 54207, 68221, 54204
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

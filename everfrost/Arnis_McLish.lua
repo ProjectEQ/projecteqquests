@@ -1,3 +1,4 @@
+-- items: 13243, 13244
 function event_say(e)
 	if(e.message:findi("megan")) then
 		if(e.other:GetFaction(e.self) < 5) then

@@ -1,5 +1,6 @@
 # Helping the Forsaken
 #
+# items: 32403, 32510, 19836, 19842
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

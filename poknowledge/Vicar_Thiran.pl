@@ -1,5 +1,6 @@
 #Vicar_Thiran.pl
 #The Magic Pool
+# items: 15958, 15959
 
 
 sub EVENT_SAY {

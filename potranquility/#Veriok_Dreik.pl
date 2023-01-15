@@ -4,6 +4,7 @@
 #Alternate PoP Flag: Bypass Grummus
 #This is bypass, it *does* count as having completed the flagging events that are being bypassed.  It's "In lieu of".
 #I hope I got all the flags, I'm not super familiar with them all. -Kilelen
+# items: 51614, 51618, 51619, 51620, 51621
 
 sub EVENT_SAY
 {

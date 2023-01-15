@@ -1,3 +1,4 @@
+# items: 55004, 55028
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello, stranger, welcome to Erudin. I would invite you to browse my store, but alas my latest supply shipment has not come in. I am very worried. Perhaps if you have the time, you could [assist] me with this predicament?");

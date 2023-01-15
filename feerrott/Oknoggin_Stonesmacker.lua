@@ -1,3 +1,4 @@
+-- items: 20673, 20674
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yoo leave me 'lone!"); 

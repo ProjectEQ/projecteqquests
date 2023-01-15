@@ -1,3 +1,4 @@
+# items: 30872, 30879, 30873, 30877
 my $count = 0;
 
 sub EVENT_SPAWN {
@@ -67,7 +68,7 @@ sub EVENT_SAY {
     quest::say("Loda Kai left Shar Vahl many years ago. He had set off for the distant city of Katta Castellum just north of the tenebrous mountains. We have not seen him since, but the brigands wear his family emblem. [Kedra Kai] has banished himself from our city in shame.");
   }
   #Quest: Rotting Jawbones 
-  if($text=~/kendra kai/i){
+  if($text=~/kedra kai/i){
     quest::say("He stands vigil at the 
 crossroads of the trading routes. Kedra has sworn to destroy the brigands and his brother before returning to Shar Vahl. There are many skeletal brigands within the thicket. If you are able to acquire their rotting jawbones, please bring them to me. I will try to learn what I can from the magic within them.");
   }

@@ -1,3 +1,4 @@
+# items: 12948, 12834, 12743, 12824, 12949
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::emote("wave's her hand's as if to cast a spell.");

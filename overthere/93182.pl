@@ -1,5 +1,6 @@
 #this quest needs to remain ID based because it only applies to this
 #specific version of the mob, there are several with this name
+# items: 12848, 12850, 12851, 12610, 12849
 
 # A skeleton Worker, Overthere
 # This one is indiff to everyone, other ones around are RTA.

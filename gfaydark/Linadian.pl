@@ -1,3 +1,4 @@
+# items: 13319, 13318, 16482, 12187
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings!  Please look through my fine wares.  I have spent my whole life practicing my skills in tailoring.  I do my best to compete with the other local merchants. but I have yet to make a profit.  I pray to Tunare that my [banded orc vests] will finally bring me a few extra coins.");

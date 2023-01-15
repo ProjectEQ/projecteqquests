@@ -1,7 +1,7 @@
 sub EVENT_ENTERZONE {
-	if (quest::istaskcompleted(138) == 0 && quest::istaskactive(138) == 0) #Check if completed Task: New Beginnings
+	if (quest::istaskcompleted(5745) == 0 && quest::istaskactive(5745) == 0) #Check if completed Task: New Beginnings
 	{
-		quest::assigntask(138); #Force assign Task: New Beginnings
+		quest::assigntask(5745); #Force assign Task: New Beginnings
 	}
 
 	set_current_position();

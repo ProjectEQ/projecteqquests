@@ -1,5 +1,6 @@
 #Warlock_Vesthin.pl
 #Planar Armor Exchange
+# items: 1232, 1233, 1234, 1235, 1236, 1237, 1238, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

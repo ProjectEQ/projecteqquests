@@ -1,4 +1,5 @@
 -- Arcane Order armor quests
+-- items: 17271, 22588, 22585, 22584, 22583, 22587, 22586, 22589, 27431, 27495
 
 function event_say(e)
 	if(e.message:findi("hail")) then

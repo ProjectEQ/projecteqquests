@@ -1,3 +1,4 @@
+# items: 6957, 6943, 6959, 6948, 2568
 sub EVENT_SAY { 
 	if(($text=~/Hail/i) && ($x==924) && ($y==958)){
 		quest::say("Shhhh....keep your voice down lest you wake Alaria. We can [speak elsewhere] if you wish.");

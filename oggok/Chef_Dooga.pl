@@ -1,3 +1,4 @@
+# items: 13384, 21964, 21962, 21968, 13452, 12217
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome you. You look all skin 'n bones. Eat you must do. Chef Dooga can fix up goodies for you. Try [HEHE meat].");

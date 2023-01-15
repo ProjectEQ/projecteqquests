@@ -1,3 +1,4 @@
+# items: 17888
 sub EVENT_SAY {
  if (($text=~/hail/i) && ($pop_tactics_ralloz == 1)) {
    quest::say("It appears that you are ready to travel into the Elemental Planes. Beware many of the gods there have set up wards to protect them against assaults. Most I cannot speak about; however I do have information on the Circle of Protection that guards Xegony, in her [" . quest::saylink("Plane of Air") . "].");

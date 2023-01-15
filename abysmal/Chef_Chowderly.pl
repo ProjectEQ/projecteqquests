@@ -1,5 +1,6 @@
 # Chef Chowderly's Award-Winning Recipes
 # Created by Gonner
+# items: 55523, 55524, 55525, 55526, 55529, 55527, 55533, 55528, 55537, 55530, 55541, 55531, 55545, 55532, 55549, 55534, 55535, 55546
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

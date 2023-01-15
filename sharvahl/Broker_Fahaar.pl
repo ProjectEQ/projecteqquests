@@ -1,5 +1,6 @@
 #Zone:sharvahl  ID:155074 -- Broker_Fahaar
 #Progressive Taioling Quest
+# items: 2877, 17236, 3661, 3655, 3656, 3913, 3922, 3914, 3924, 3925, 3915, 3926, 3916, 17109, 3921, 3927
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

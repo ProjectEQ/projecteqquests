@@ -1,3 +1,4 @@
+-- items: 51121, 51122, 18771, 13524
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();
@@ -23,7 +24,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 18771})) then -- Stained Letter
-		e.self:Say("Hmmm.. As you wish, we will train you in our dark ways, but, now this, our art carries a high price, and there is no turning back for you now. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. Once you are ready to begin your training please make sure that you see Tilkzog Mournunder, he can assist you in developing your hunting and gathering skills.");
+		e.self:Say("Hmmm.. As you wish, we will train you in our dark ways. But know this: our art carries a high price, and there is no turning back for you now. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. Once you are ready to begin your training please make sure that you see Tilkzog Mournunder, he can assist you in developing your hunting and gathering skills.");
 		e.other:SummonItem(13524); 	-- Dark Gold Felt Robe*
 		e.other:Ding();
 		e.other:Faction(238,100,0); 	-- Dark reflection

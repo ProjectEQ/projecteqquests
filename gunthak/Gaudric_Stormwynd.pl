@@ -1,6 +1,7 @@
 #zone: gunthak NPC: Gaudric_Stormwynd (224193)
 #Started by Angelox, finished by Kilelen
 #Swarm of Pain/Icewind
+# items: 59038, 59039, 59007, 59040, 59041
 
 #Got the x,y and z manually from in game,
 #the description of where the Tempest pops is "behind you"

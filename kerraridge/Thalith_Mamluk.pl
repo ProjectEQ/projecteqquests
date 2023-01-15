@@ -1,3 +1,4 @@
+# items: 6347, 1061
 sub EVENT_SAY {
   if($text=~/Hail/i) {
     quest::say("Wha?  Rarrrr!  Thalith try to fish but with [rrrats] and you botherring him. he cannot concentrate on water!  Go away. let Thalith fish!");

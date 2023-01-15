@@ -3,6 +3,7 @@
 #  Zone:  Rathe Mtns
 #  Quest:  Helm of Ro
 ###############################################################
+# items: 12308, 12298
 
 sub EVENT_SAY {
   if ($faction > 5) {

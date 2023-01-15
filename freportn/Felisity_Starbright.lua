@@ -1,3 +1,4 @@
+-- items: 18158, 18157, 18159, 18155
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail. %s - If you are interested in helping the League of Antonican Bards by delivering some mail you should talk to Ton Twostring.",e.other:GetName()));

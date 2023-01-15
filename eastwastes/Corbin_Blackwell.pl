@@ -1,3 +1,4 @@
+# items: 1046, 30162
 my $corbin = undef;
 
 sub EVENT_SPAWN {

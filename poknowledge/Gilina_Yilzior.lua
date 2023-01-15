@@ -1,5 +1,6 @@
 --poknowledge/Gilina_Yilzior.lua NPCID 202267
 --SK Epic 1.5 and 2.0
+-- items: 11407, 20899, 16813, 16793, 20079, 22199, 20904, 55901, 50003, 19098, 24612, 23489, 24632, 24584
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:Class() == "Shadow Knight") then

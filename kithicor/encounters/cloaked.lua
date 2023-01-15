@@ -12,7 +12,7 @@
 --]]
 
 local death_count = 0
-local bard = nil
+local bard = -1
 
 function CloakedSpawn(e)
     death_count = 0
@@ -23,25 +23,30 @@ function CloakedSay(e)
     if qglobals["bard15"] == "5" and e.message:findi("hail") then
         e.self:Emote(" turns towards you.  You get the distinct impression whom ever is under that cloak is sizing you up.")
         eq.set_timer("startevent", 10000) -- 10 seconds
-        bard = e.other
+        bard = e.other:GetID()
     end
 end
 
 function CloakedTimer(e)
     local entity_list = eq.get_entity_list()
     entity_list:MessageClose(e.self, true, 100, 15, "The figure begins to fade into the shadows before your very eyes.  You notice movement out of the corner of your left eye.")
-    if bard.valid then
-        eq.spawn2(20291, 0, 0, bard:GetX() + 100, bard:GetY(), bard:FindGroundZ(bard:GetX() + 100, bard:GetY(), bard:GetZ()) + 5, bard:GetHeading())
-        eq.spawn2(20291, 0, 0, bard:GetX() - 100, bard:GetY(), bard:FindGroundZ(bard:GetX() - 100, bard:GetY(), bard:GetZ()) + 5, bard:GetHeading())
-        eq.spawn2(20291, 0, 0, bard:GetX(), bard:GetY() + 100, bard:FindGroundZ(bard:GetX(), bard:GetY(), bard:GetZ() + 100) + 5, bard:GetHeading())
-        eq.spawn2(20291, 0, 0, bard:GetX(), bard:GetY() - 100, bard:FindGroundZ(bard:GetX(), bard:GetY(), bard:GetZ() - 100) + 5, bard:GetHeading())
+    local bard_client = entity_list:GetClientByID(bard)
+    if bard_client.valid and bard_client:GetClass() == Class.BARD then
+        eq.spawn2(20291, 0, 0, bard_client:GetX() + 100, bard_client:GetY(), bard_client:FindGroundZ(bard_client:GetX() + 100, bard_client:GetY(), bard_client:GetZ()) + 5, bard_client:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX() - 100, bard_client:GetY(), bard_client:FindGroundZ(bard_client:GetX() - 100, bard_client:GetY(), bard_client:GetZ()) + 5, bard_client:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX(), bard_client:GetY() + 100, bard_client:FindGroundZ(bard_client:GetX(), bard_client:GetY(), bard_client:GetZ() + 100) + 5, bard_client:GetHeading())
+        eq.spawn2(20291, 0, 0, bard_client:GetX(), bard_client:GetY() - 100, bard_client:FindGroundZ(bard_client:GetX(), bard_client:GetY(), bard_client:GetZ() - 100) + 5, bard_client:GetHeading())
+    else
+        bard = -1
     end
     eq.depop()
 end
 
 function MalignantSpawn(e)
-    if bard.valid then
-        e.self:AddToHateList(bard, 500)
+    local entity_list = eq.get_entity_list()
+    local bard_client = entity_list:GetClientByID(bard)
+    if bard_client.valid and bard_client:GetClass() == Class.BARD then
+        e.self:AddToHateList(bard_client, 500)
     end
 end
 
@@ -63,6 +68,7 @@ end
 
 function ThiefDeath(e)
     eq.depop_all(20291)
+    bard = -1
 end
 
 function event_encounter_load(e)

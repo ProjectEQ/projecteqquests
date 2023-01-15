@@ -1,6 +1,7 @@
+-- items: 13177, 13034
 function event_say(e)
 
-	local tax = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.other);
 	
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, friend, and welcome to the Mermaid's Lure. Here, we sell fishing supplies and some imported goods from far-off lands. And, if you've got a few minutes, I could even tell you a [story] or two.");
@@ -12,7 +13,7 @@ function event_say(e)
 		e.self:Say("I call Faydwer the home of the little people. They say the continent was named by the high elves when they landed on its shores long ago. I've even heard tales of an ancient elven vampire who lives there. . . Just another Felwithe legend, I'll bet!");
 	elseif(e.message:findi("kunark")) then
 		e.self:Say("Even I can't tell you much about that continent. Kunark is a tough place, populated by even tougher creatures. I hear the high elves of Faydwer have been trying for years to establish a small port on Kunark's hostile shores.");
-	elseif(e.message:findi("tax collection") and tax.tax_collection ~= nil) then
+	elseif(e.message:findi("tax collection") and qglobals.tax_collection ~= nil) then
 		e.self:Say("Argh! You curvy sea goblin! Taxes, you say?! Peh! I got your taxes right here! I sure don't get the services those taxes are supposed to provide! You can tell them ol' Captain Rohand said so!");
 		e.other:SummonItem(13177); -- Item: Rohand's Tax Payment
 		e.other:Faction(291,-10,0); -- Faction: Merchants of Qeynos

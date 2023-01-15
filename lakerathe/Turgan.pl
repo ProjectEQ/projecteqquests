@@ -1,5 +1,6 @@
 #BeginFile: Turgan.pl
 # Part of the quest for Boots of the Reliant
+# items: 18145, 19002
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

@@ -1,3 +1,4 @@
+-- items: 51121, 51122, 18433, 13517, 69966
 local client_to_check
 
 function event_spawn(e)

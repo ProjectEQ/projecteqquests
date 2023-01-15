@@ -1,3 +1,4 @@
+# items: 17044, 12914, 18074, 12408, 12614
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings!! You look like an adventurer. I have a bit of a problem with which you might be able to help. You see, there have been reports of sarnak hatchlings near the lake. I do not know why they are here, but I do know we need them exterminated. Here is the deal.. You bash them good and return their brains to me. For every four brains, I shall reward you.");

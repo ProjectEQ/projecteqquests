@@ -2,6 +2,7 @@
 # Kiladiveus - completed subevents for this NPC quest.  I created the ending statement since i can't find any. Same as exp.
 # Kiladiveus - In OOT, need to add loot "19035 Driftwood pipe" into "69148 isle goblin chieftan" need also to create lootdrop ID.
 # Kiladiveus - In southkarana, need to add loot "19044 Grizzleknot Bark" into "14142 Grizzleknot" with 100% probability. Npc already a rare spawn.      
+# items: 3061, 10073, 19031, 19033, 4945, 3053, 19051, 19042, 19040, 4947, 3058, 19052, 19032, 19035, 4948, 3056, 19050, 19036, 19044, 4946
 
 
 sub EVENT_SAY {

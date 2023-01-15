@@ -6,6 +6,7 @@
 # Quests: Spiritcharmers Armor, Spiritcharmer Final Job (Staff)
 #
 # Revised by RealityIncarnate 2-29-08; restored to Grobb quests
+# items: 61095, 22671, 22672, 22673, 22674, 22675, 22676, 22677, 16166, 14550, 22620, 61100
 
 sub EVENT_SAY {
 

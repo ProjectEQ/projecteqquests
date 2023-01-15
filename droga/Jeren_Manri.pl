@@ -1,5 +1,6 @@
 #Jeren_Manri.pl
 #The Magic Pool
+# items: 15959, 15960
 
 
 sub EVENT_SAY {

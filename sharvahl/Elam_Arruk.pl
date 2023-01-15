@@ -1,4 +1,5 @@
 #Elam_Arruk  ID 155265
+# items: 5558, 17117, 6274, 6146, 17110
 
 sub EVENT_SAY {
   if ($text=~/task/i) {

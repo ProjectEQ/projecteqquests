@@ -1,4 +1,5 @@
 #Spirit Sentinel is for Shaman Epic 1.0 and administers the Test of Might and the completion of the epic.
+# items: 10651, 18456, 18457, 18458, 18459, 1674
 
 sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0

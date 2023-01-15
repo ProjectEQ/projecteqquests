@@ -1,3 +1,4 @@
+-- items: 55030, 55029, 55032, 55031
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. I am afraid I am in no mood to talk right now, friend. I am in a lot of [trouble] right now.");

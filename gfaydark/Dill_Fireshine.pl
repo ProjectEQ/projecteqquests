@@ -1,5 +1,6 @@
 #gfaydark\Dill_Fireshine.pl
 #Quests: Orc Hatchets and Orc Runner (Kelethin)
+# items: 12108, 5047, 5048, 7032, 18840, 8003, 13226, 2140
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

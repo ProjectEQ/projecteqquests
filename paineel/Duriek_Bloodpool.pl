@@ -1,4 +1,5 @@
 # Part of SK Epic 1.0 Quest
+# items: 18099, 14365, 14382, 5403, 11609, 5430, 14366, 14367
 
 sub EVENT_ITEM {
   $faction = $client->GetCharacterFactionLevel(404); # Faction: Truespirit

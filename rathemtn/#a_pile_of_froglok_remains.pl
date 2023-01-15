@@ -4,6 +4,7 @@
 #
 # 2585, -2040
 # Attackable, targettable, 3h respawn timer L65. Was 3 day respawn on live.
+# items: 67015, 67012, 67020
 
 sub EVENT_SPAWN {
    quest::settimer(1,10);

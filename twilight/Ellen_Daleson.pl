@@ -1,3 +1,4 @@
+# items: 5850, 5849, 5848, 4489, 3957, 5844, 5698, 4492, 5699, 3954, 4494, 5981, 5847, 3956, 5845, 4493, 5846, 3955, 5690, 4488, 5691, 3950, 4491, 5696, 5697, 3953
 sub EVENT_SAY {
   if ($text=~/Hail/i) {
     quest::say("Oh hello there, I'm in charge of the docks here and wife to Alton.");

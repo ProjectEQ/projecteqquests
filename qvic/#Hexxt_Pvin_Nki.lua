@@ -1,5 +1,6 @@
 function event_spawn(e)
     eq.set_next_hp_event(45)
+e.self:ModSkillDmgTaken(7, -25); -- archery
 end
 
 function event_hp(e)

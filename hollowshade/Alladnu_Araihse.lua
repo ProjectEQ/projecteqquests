@@ -1,3 +1,4 @@
+-- items: 52911, 57053
 local finished_event=0;
 local started_event=0;
 
@@ -15,7 +16,7 @@ function event_say(e)
 		e.self:Say("Then you have finished your journey. Here ends my service and those of the spirits. You are one with the spirits now. Travel your life's journey with pride.");
 		e.other:QuestReward(e.self,{itemid=57054, exp=50000});
 		e.other:AddAAPoints(10);
-		e.other:Message(15,'You have gained 10 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 10 ability points!');
 		eq.set_global("beast_epic","23",5,"F");
 		eq.set_timer("depop",15*1000);
 	end
@@ -72,7 +73,7 @@ function event_timer(e)
 		eq.signal(166298, 1, 15); -- NPC: Eternal_Animist_Wikaq
 	elseif e.timer=="zemote" then
 		eq.stop_timer("zemote");
-		eq.zone_emote(15,"The air begins to rumble with a harmony of deep growls and all savage creatures grow restless with the passing breath and approval of the great animal spirit, Sahteb Mahlni");
+		eq.zone_emote(MT.Yellow,"The air begins to rumble with a harmony of deep growls and all savage creatures grow restless with the passing breath and approval of the great animal spirit, Sahteb Mahlni");
 	elseif e.timer=="endevent" then
 		eq.stop_timer("endevent");
 		e.self:Say("It is done. I do hope you fully understand the gift that is about to be bestowed upon you. With each breath the eternal spirits of the wild spoke, your Savage Lord's Totem was imbued with their blessing. This totem has now come to represent all of the beasts most close to a savage lord. The swirling essence within it will allow you to tap into the spirits of your elders -- your origin -- with a focused mind. Are you truly [" .. eq.say_link("ready") .. "] to take your place among the respected elders of the beastlords of Norrath?");

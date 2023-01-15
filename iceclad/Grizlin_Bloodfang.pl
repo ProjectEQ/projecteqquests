@@ -1,3 +1,4 @@
+# items: 6310, 30050, 30049, 30052
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Lo outlander. Grizlin weaponsmaker for tribe. Make mighty blade from bone. Very important now.. need make many spear for hunter. Not make spear, then hunter not bring meat. Now my friend Keref sad, his pack gone north and Keref alone. Want to find way to help Keref but must make weapon for tribe. Maybe you go find what Keref need to make happy?");

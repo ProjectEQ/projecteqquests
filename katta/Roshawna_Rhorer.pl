@@ -1,4 +1,5 @@
 #  Rakshasa Skulls
+# items: 17079, 31836, 31839, 31841
 
 
 sub EVENT_SAY { 

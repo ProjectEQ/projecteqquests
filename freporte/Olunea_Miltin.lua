@@ -1,3 +1,4 @@
+-- items: 13922
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. It is good to meet you. Try not to scare the fish away. This is A good spot I supply fish to the Grub N' Grog. The patrons there love me!");

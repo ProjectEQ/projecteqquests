@@ -1,3 +1,4 @@
+# items: 18833, 17917, 13824, 13822
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Good to meet you, $name. Please look around. I have much to offer. I am a master woodworker. It runs in the Parsini family.");

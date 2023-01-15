@@ -1,3 +1,4 @@
+# items: 17125, 19555, 19558, 19559, 19561, 19557, 19560, 11395, 20204, 20203, 13915, 19946, 13251, 20264
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hail $name. I am Bruax Grengar, master necromancer of the Bloodsabers. I assist not only young necromancers with their training but also aid all those Bloodsabers who have chosen to practice the [sorcerous arts]. If you a practitioner of a sorcerous art I can give you instructions to obtain an [outfit and robe] that will assist you in your work. Once you have been properly outfitted I will also assist you in acquiring a [Staff of the Bloodsabers].");
@@ -47,12 +48,12 @@ sub EVENT_ITEM {
     quest::say("Well done. The Bloodsabers have many enemies within the city of Qeynos and its surrounding regions. You must exercise much caution when not within the safety of our temple here in the Qeynos Catacombs. Take this Rough Bloodsaber Staff and when you have gathered a Giant King Snake Skin, two Gnoll Fangs, and a Giant Fire Beetle Eye, return them to me with this staff and I will complete its construction.");
     quest::summonitem(20203); # Item: Rough Bloodsaber Staff
   }
-  elsif (plugin::check_handin(\%itemcount, 13915 => 2, 19946 => 1, 13251 => 1, 20203 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 13915 => 1, 19946 => 1, 13251 => 1, 20203 => 1)) {
     quest::say("Excellent work! Here is your reward.");
     quest::summonitem(20264); # Item: Staff of the Bloodsabers
     quest::exp(100);
     quest::ding();
-    quest::faction(221,1); # Faction: Bloodsabers
+    quest::faction(221,5); # Faction: Bloodsabers
     quest::faction(262,-1); # Faction: Guards of Qeynos
     quest::faction(296,1); # Faction: Opal Darkbriar
     quest::faction(341,-1); # Faction: Priests of Life

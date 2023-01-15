@@ -1,5 +1,6 @@
 #BeginFile: Davorre_Bloodthorn.pl
 #Quest for Paineel - Davorre Bloodthorn: Neonate Cowardice and Experienced Courier
+# items: 14041, 12998, 12997, 12996, 12995, 12994, 5526
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings. Perhaps within that husk you call a body there is some worth? Are you [experienced] in your craft, young one, or are you a [neonate]?");

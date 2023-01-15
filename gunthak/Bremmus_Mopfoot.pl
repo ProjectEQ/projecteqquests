@@ -1,5 +1,6 @@
 #Bremmus_Mopfoot.pl
 #Trinkets for Bremmus
+# items: 62002, 62001
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

@@ -1,3 +1,4 @@
+-- items: 9590
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello " .. e.other:GetName() .. ", Such a beautiful day for music and tales. Don't you think?");

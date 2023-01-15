@@ -55,10 +55,19 @@ function Keldovan_Combat(e)
 	eq.set_timer("touch",math.random(5,30)*1000);
 	eq.set_timer("say",300*1000);
 	eq.set_timer("aggro_link", 1000); -- we'll do it in 1 second first time just cuz
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
-	eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	eq.stop_timer("depop_dogs"); -- prevent shenanigans
+	if (not CheckDogAlive(755)) then
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -48, 755, -239.9, 420); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	end
+	if (not CheckDogAlive(746)) then
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 44, 746, -239.9, 60); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	end
+	if (not CheckDogAlive(643)) then
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, 51, 643, -239.9, 180); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	end
+	if (not CheckDogAlive(642)) then
+		eq.spawn2(eq.ChooseRandom(317102,317103),0,0, -37, 642, -239.9, 330); -- NPC(s): Frenzied_Pit_Fiend (317102), Raging_Pit_Hound (317103)
+	end
   else
 	eq.stop_timer("packmaster");
 	eq.stop_timer("torment");
@@ -213,6 +222,19 @@ function Dog_Death(e)
 		eq.signal(317005,4); -- NPC: Keldovan_the_Harrier
 	end
 	dogs[e.self:GetID()] = nil;
+end
+
+function CheckDogAlive(spawn_y)
+	for k, m in pairs(dogs) do
+		local mob = eq.get_entity_list():GetMobID(k); -- using this pointer stored here gets racey for some reason /shrug
+		if (mob.valid and mob:IsNPC()) then
+			local npc = mob:CastToNPC();
+			if (npc:GetSpawnPointY() == spawn_y) then
+				return true;
+			end
+		end
+	end
+	return false;
 end
 
 function Dog_Spawn(e)

@@ -1,3 +1,4 @@
+-- items: 17257, 22613, 22611, 22615, 22612, 22610, 22614, 22616, 9924, 9925, 9926, 9935
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings to you " .. e.other:GetName() .. ". I am Sten Harnak Virtuoso of Freeport. I have lived in Freeport and studied the art of songweaving here for all of my days. I am always eager to see new faces here in our concert hall. If you are here for a performance I am afraid it does not start till a bit later but if you are a young bard in training then I might have some [work] for you.");
@@ -20,7 +21,7 @@ function event_say(e)
 	elseif(e.message:findi("boot")) then
 		e.self:Say("Boots are a very important armor piece and I am glad to hear you wish to craft them. To create your boot material you will need to combine 3 Bricks of Crude Iron Ore, 1 Ruined Bear Pelt  and 1 Severed Orc Foot in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Songweavers Platemail Boots.");
 		e.other:SummonItem(22612); -- Item: Enchanted Boot Mold
-	elseif(e.message:findi("a helm")) then
+	elseif(e.message:findi("helm")) then
 		e.self:Say("A very important armor piece indeed " .. e.other:GetName() .. ". one well placed attack to the head by an adversary could leave you in very poor condition. To create your helm material you will need to combine 2 Bricks of Crude Iron Ore, 1 Ruined Wolf Pelt, 1 Deathfist Pawn Scalp and 1 Barley in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Songweavers Platemail Helm.");
 		e.other:SummonItem(22610); -- Item: Enchanted Helm Mold
 	elseif(e.message:findi("greave")) then

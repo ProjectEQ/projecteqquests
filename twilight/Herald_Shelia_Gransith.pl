@@ -1,3 +1,4 @@
+# items: 5347, 4492, 5348, 3909, 5346, 5345, 4491, 3908, 4494, 5335, 5336, 5334, 3898, 5431, 5340, 5342, 4489, 3900, 5343, 5344, 4490, 3907, 5337, 5338, 4488, 5339, 3899, 5330, 5328, 4493, 5329, 3897
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Welcome to the Twilight Sea!  This is the docking entrance to Katta Castellum. $name. Tell me do you know any songs?");

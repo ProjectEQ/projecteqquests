@@ -1,3 +1,4 @@
+# items: 48122, 48100, 48101, 48102
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if ($client->GetGlobal("monk_epic") == undef) {

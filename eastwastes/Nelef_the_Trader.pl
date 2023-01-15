@@ -1,5 +1,6 @@
 #Nelef_the_Trader.pl
 #Trade with Nelef
+# items: 2700, 27265, 2698, 2699, 2748, 2842, 27329
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

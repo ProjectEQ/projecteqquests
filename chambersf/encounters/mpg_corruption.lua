@@ -12,7 +12,6 @@
 
 local event_started = 0;
 local instance_id;
-local lockout_name = 'MPG_corruption';
 local lockout_win = 108;
 local this_bit = 32;
 local this_zone = 'chambersf';
@@ -122,6 +121,12 @@ function Huhn_Say(e)
       e.self:Say("'Hail to you as well, " .. e.other:GetName() .. ", but what exactly are you doing here ? I'm sorry, but as you can see, you've arrived too late. Moments ago we defeated Huhn-Abram the Corrupted and we're currently regrouping and resurrecting our fallen members. Please respect our control of this area and leave at once. I have to admit your presence here is making me a bit nervous. We don't want any trouble.' They stare at you fearfully, 'So, are you going to leave us in peace, or did you come [ " .. eq.say_link('expecting a fight', false, 'expecting a fight') .. " ]?' ");
 
     elseif ( e.message:findi("expecting a fight") ) then
+      local dz = eq.get_expedition()
+      if dz.valid then
+        dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+        dz:AddReplayLockout(eq.seconds("3h"))
+      end
+
       e.self:Say("'I should have known the trial of corruption wouldn't be so easy. Bring it on!'");
 
       Spawn_Wave(this_wave);
@@ -245,8 +250,13 @@ function Huhn_Signal(e)
     eq.depop_with_timer();
 
     -- Set a Lockout 
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:AddReplayLockoutDuration(eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+    end
+
     local mpg_helper = require("mpg_helper");
-    mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+    mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
   end
 end
 

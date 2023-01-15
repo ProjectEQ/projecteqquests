@@ -1,4 +1,5 @@
 #Marthor is a former pupil of Supreme Master Tynn, and helps us along on our Whistling Fists quest. Buying him 4 Trog Brews (sold in East Cabilis) will get him to open up to us.
+# items: 8348, 4199
 
 sub EVENT_SPAWN {
 $Brew = 0;

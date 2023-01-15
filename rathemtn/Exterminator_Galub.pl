@@ -1,3 +1,4 @@
+# items: 13253
 sub EVENT_SAY {
  if($text=~/hail/i){ 
   quest::say("Welcome to Gukta. I am afraid I do not have much time to talk, my friend. Recently, the jungle hatchling population has gotten way out of control around here. I was brought in to try to curb their numbers but there are too many! Perhaps you could be of assistance to me. If you have time, kill some of the hatchlings and bring me four of their eyes. I will reward you of course.");

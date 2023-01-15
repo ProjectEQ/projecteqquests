@@ -1,4 +1,5 @@
 -- Bard 2.0
+-- items: 77641, 77642, 77643, 47100, 77644, 77613, 77631
 
 function event_say(e)
     local qglobals = eq.get_qglobals(e.other)

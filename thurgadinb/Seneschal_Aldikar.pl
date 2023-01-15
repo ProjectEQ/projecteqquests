@@ -1,6 +1,7 @@
 #my $x = npc->GetX();
 #my $y = npc->GetY();
 #my $z = npc->GetZ();
+# items: 17055, 30164
 
 sub EVENT_SIGNAL {
 	if($signal==1) {

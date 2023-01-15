@@ -1,4 +1,5 @@
 #Quest file for Najena - Linara Parlone: Mystic Cloak
+# items: 12269, 5573
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

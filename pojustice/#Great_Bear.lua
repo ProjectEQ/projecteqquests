@@ -1,3 +1,4 @@
+-- items: 62843, 62844, 62845
 function event_say(e)
 local qglobals = eq.get_qglobals(e.other)
 	--e.self:Say("test " .. e.other:GetFaction(e.self));

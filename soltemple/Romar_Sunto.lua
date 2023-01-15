@@ -1,3 +1,4 @@
+-- items: 17511, 10000, 6048, 10793, 15678, 10790, 18032
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I am Romar Sunto, servant of Solusek Ro. I am searching for the [Coin] of the mighty enchanter [Tash] - if you are interested in helping me acquire it, I will [reward] you with a powerful spell. I am also dispenser of [Darkwood Staves] - sometimes also called the Staff of Ro.");

@@ -1,5 +1,6 @@
 # Quest for Staff of the Observers
 # Changed text slightly since Borxx no longer spawns on live.
+# items: 10170, 10171
 
 sub EVENT_SAY { 
   if($text=~/hail/i){

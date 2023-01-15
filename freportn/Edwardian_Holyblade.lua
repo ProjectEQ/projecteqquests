@@ -1,3 +1,4 @@
+-- items: 17266, 22610, 22615, 22614, 22613, 22611, 22616, 22612, 9927, 9928, 9929, 9930, 9936, 18737, 13554
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings and well met " .. e.other:GetName() .. ". I am Edwardian Holyblade, noble paladin of Marr. I have devoted my life and my blade to the glory of Mithaniel Marr. I am also in charge of training all new paladins of Marr to make sure that they have the best training necessary. If you are a paladin of Marr I may have some [training] for you.");

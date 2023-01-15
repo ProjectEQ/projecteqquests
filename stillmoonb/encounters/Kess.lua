@@ -3,8 +3,14 @@
 ##Kessdona the Enlightened## written by Drogerin.
 
  --]]
- 
- 
+
+--[[
+	possible missing implementation messages
+	eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Kessdona the Enlightened says, 'You did not venture to this place for reflection and understanding, did you?'")
+	eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "The animated guardian charges forth to attack, having depleted its mana reserves.")
+	eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Kessdona the Enlightened draws on strength from her protectors and regenerates.  One of the four protectors must be the focus.  Perhaps someone attuned to nature could isolate which?")
+]]
+
  local kess_heal=true;
  local kess_hp=100;
  local times_healed=0;

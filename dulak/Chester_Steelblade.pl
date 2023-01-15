@@ -1,6 +1,7 @@
 #zone: dulak NPC:Chester_Steelblade (225164)
 #Angelox
 #note; I did this quest as per the original, "Titanium" version
+# items: 59028, 59004
 
 sub EVENT_SAY { 
  if ($text=~/Hail/i){

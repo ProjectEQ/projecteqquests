@@ -4,6 +4,7 @@
 ## are at. 1 = Citizen Application. 2 = Cert. of Taxability, 3 = Stamped Cert.,
 ## 4 = Note to King Raja, 5 Note 'from' the king, 6 = Notarized Application
 ## and 7 = Initiate's Cloak.
+# items: 2873, 2878, 18554, 2897
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

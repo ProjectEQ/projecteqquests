@@ -1,3 +1,4 @@
+# items: 31753, 18330, 18331, 18352, 31752, 31755, 31756, 18449, 7270, 7361, 29899, 29898, 7397, 31757, 7394, 7398
 sub EVENT_SAY{
 	if($text=~/hail/i){
 		quest::say("Greetings adventurer. I am Phenic Dionicas, Magistrate of the Loyalist Combine Empire. I hope the [vampyres] did not cause you troubles on your journey here. ");

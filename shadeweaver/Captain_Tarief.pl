@@ -1,4 +1,5 @@
 # Saurek Scales
+# items: 30861, 30870, 30862, 30867, 30863, 30866
 my $count = 0;
 
 sub EVENT_SPAWN {

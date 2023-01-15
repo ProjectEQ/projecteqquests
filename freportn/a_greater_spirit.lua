@@ -1,4 +1,5 @@
 -- This is for the second of the two greater spirits in North Freeport.
+-- items: 1666
 
 function event_say(e)
 	if(e.message:findi("hail")) then -- Part of Shaman Epic 1.0

@@ -1,3 +1,4 @@
+-- items: 8970, 8969
 function event_say(e)
 	if(e.message:findi("letter back to him")) then
 		e.other:SummonItem(8970); -- Letter to Jeremy

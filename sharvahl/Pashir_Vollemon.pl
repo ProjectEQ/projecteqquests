@@ -1,5 +1,6 @@
 #Berzerker Newbie Armor
 #Zone:sharvahl  ID:155089 -- Pashir_Vollemon
+# items: 55422, 55418, 55419, 55416, 55415, 55417, 55420, 55421, 30660, 55423
 
 
 

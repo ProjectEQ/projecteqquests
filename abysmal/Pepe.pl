@@ -1,5 +1,6 @@
 # Pepe's Got a Brand New Bag
 # Created by Gonner
+# items: 55571, 55573
 
 sub EVENT_SAY {
   if($text=~/hail/i){

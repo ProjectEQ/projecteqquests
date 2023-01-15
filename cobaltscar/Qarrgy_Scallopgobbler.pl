@@ -1,3 +1,4 @@
+# items: 22823, 24874, 21004, 11635, 22814, 28515, 21009, 11589, 30059, 30060
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("sets down several large crustacean shells covered in foreign runes, then extends his large, coarse hands in a gesture of friendship.");

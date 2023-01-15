@@ -1,3 +1,4 @@
+# items: 2873, 2878, 18553, 2897
 sub EVENT_SPAWN {
   $x = $npc->GetX();
   $y = $npc->GetY();

@@ -1,3 +1,4 @@
+-- items: 18148
 function event_say(e)
   if (e.other.GetModCharacterFactionLevel(e.other, 340) < -250) then
     eq.reject_say(e);

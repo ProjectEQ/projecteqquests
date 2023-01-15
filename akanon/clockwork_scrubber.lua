@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 12164, 12162, 12167
 
 function event_spawn(e)
 	local miner628 = 0;

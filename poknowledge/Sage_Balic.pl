@@ -4,6 +4,7 @@
 #NPCs Involved: Sage Balic, an_old_froglok
 #Zone: Plane of Knowledge
 ##############
+# items: 17176, 11275
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

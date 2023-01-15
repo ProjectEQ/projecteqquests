@@ -1,3 +1,4 @@
+# items: 14587, 29803, 29813, 29814, 29815
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Greetings traveler. if you are headed through these gates you should be aware that there are many [dangers] you may encounter.");

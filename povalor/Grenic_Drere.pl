@@ -1,3 +1,4 @@
+# items: 29281, 29292, 29293, 29294, 29214
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Mortals, this far into the planes? Something that I never thought that I would see. Regardless that does not help my situation any does it?");

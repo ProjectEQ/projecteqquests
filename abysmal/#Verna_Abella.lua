@@ -1,4 +1,5 @@
 -- The Fourteen Great Adventurers: http://everquest.allakhazam.com/db/quest.html?quest=2854
+-- items: 67616
 function event_say(e)
     local greatadventures = 0
     if (e.other:GetGlobal("greatadventures") ~= "Undefined") then

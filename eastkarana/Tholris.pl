@@ -1,5 +1,6 @@
 # Tholris
 #
+# items: 62618, 62619
 my $saydisease;
 
 sub EVENT_SIGNAL {

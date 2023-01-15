@@ -1,4 +1,5 @@
 #Velter gives us the last shackle in the line, the Shackle of Tynonnium. Since players must turn in their Shackle of Steel to the tome keeper in Kaesora to complete Veltar's quest, there is no requirement to check for it here.
+# items: 7879, 7880, 7881, 4199
 
 sub EVENT_SAY {
  if($text=~/hail/i){
@@ -27,8 +28,8 @@ sub EVENT_ITEM {
   quest::summonitem(4199); # Item: Shackle of Tynnonium
   quest::exp(60000);
   quest::ding();
-  quest::faction(444,20); # Faction: Swift Tails
-  quest::faction(441,10); # Faction: Legion of Cabilis
+  quest::faction(444,100); # Faction: Swift Tails
+  quest::faction(441,25); # Faction: Legion of Cabilis
  }
   plugin::return_items(\%itemcount);
 }

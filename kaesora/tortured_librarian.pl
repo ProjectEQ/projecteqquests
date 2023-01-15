@@ -1,3 +1,4 @@
+# items: 18069, 18068, 12889
 sub EVENT_SAY { 
  if ($text=~/Hail/i){
 	quest::say("Bring to me that which was taken.")

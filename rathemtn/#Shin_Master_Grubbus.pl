@@ -1,3 +1,4 @@
+# items: 17834, 38932, 38929, 38933, 38928, 38930, 38934, 38931, 55017, 55016, 17307, 69964
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome back, young Shin. I hope your training is going well. I have made note of your progress as best I can, and you are truly following in the footsteps of Marr with every day that passes. As a paladin of Marr we must uphold His name and destroy those that wish to bring evil upon our people. Under Marr, I am able to offer you an additional path for training, should you truly desire to follow the path of a [" . quest::saylink("Paladin") . "].");

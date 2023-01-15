@@ -1,17 +1,18 @@
+# items: 85062, 124688
 sub EVENT_SPAWN {
 	quest::say("*Huff Huff* Okay, I'm done.");
 	quest::settimer(1,300);
 }	
 
 sub EVENT_SAY {
-	if(quest::istaskactivityactive(222,13)) {
+	if(quest::istaskactivityactive(500222,13)) {
 		if($text=~/Hail/i) {
 			$pcpvp = $client->GetPVP();
 			my $newzone_paulie = plugin::GetRandomIndoorLocation(1,40);
 			my $npcid = 999100;
 
 			quest::say("I can't believe you beat me! You should see Roosevelt now.");
-			quest::updatetaskactivity(222,13);
+			quest::updatetaskactivity(500222,13);
 			if($qglobals{halloween_ratter_complete} < 13){
 				quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 				quest::setglobal("halloween_ratter_complete",13,5,"D30");

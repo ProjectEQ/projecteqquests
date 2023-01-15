@@ -1,3 +1,4 @@
+# items: 7270, 7169, 7271, 7272, 7273, 7779
 sub EVENT_SAY{
 	if($text=~/hail/i){
 		quest::say("Well met brave $race. I am Lathin Firetree, Governor of Wizardry here at the Magus Conlegium. I have an abundance of research and experimentation to attend to so unless you have an issue of importance to present or are going to assist me with the research I must get back to my studies.");

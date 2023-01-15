@@ -1,4 +1,5 @@
 #Alchemist Granika will help us to discern the glowing cliff golem from the rest, the one who holds our Chunk of Tynnonium. He is part of the eighth and final quest in the Greenmist line.
+# items: 3892
 
 sub EVENT_SPAWN {
   quest::settimer("sit",10);

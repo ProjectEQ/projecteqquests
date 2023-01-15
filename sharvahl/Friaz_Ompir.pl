@@ -1,4 +1,5 @@
 #Friaz_Ompir  ID 155060
+# items: 18321, 18322, 17606, 5548, 5549
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18321 => 1)) {

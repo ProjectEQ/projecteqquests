@@ -5,6 +5,7 @@
 #but all I've got right now) the Beginner's quests eat the Planar Traveler's Manual, 
 #so that quest must be completed 3 times in order to do all the Beginner's Manual 
 #Quests.  This is intended behaviour.
+# items: 28787, 28745, 28788
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

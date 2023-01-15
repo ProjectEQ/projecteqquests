@@ -1,5 +1,6 @@
 #Xasri_Virek.pl
 #Intermediate Combat Manual
+# items: 28788, 29145, 28790
 
 sub EVENT_SAY { 
 	#This text already existed in the file.  Not sure how it applies.  Leaving it here so it doesn't become lost.

@@ -5,6 +5,7 @@
 #
 #NPC Name: Renux Herkanor
 #NPC ID: 12032
+# items: 17148, 24072, 24073
 
 sub EVENT_SAY {
   $makepoison = $client->GetSkill(56);

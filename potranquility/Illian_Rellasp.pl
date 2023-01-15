@@ -1,5 +1,6 @@
 #Illian_Rellasp.pl
 #Force of Akera
+# items: 7687, 12999, 59527
 
 
 sub EVENT_SAY {

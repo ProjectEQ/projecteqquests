@@ -1,3 +1,4 @@
+# items: 4460
 sub EVENT_SPAWN {
 	quest::enable_spawn2(32803);
 	quest::settimer("worry",120);

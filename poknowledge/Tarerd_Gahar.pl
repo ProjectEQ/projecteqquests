@@ -1,11 +1,12 @@
 #Tarerd_Gahar.pl
 #The Magic Pool
+# items: 22519, 15958
 
 
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if(quest::istaskactivityactive(13,2)) {
+    if(quest::istaskactivityactive(797,2)) {
       quest::say("Thanks for contacting me, $name. Your information on this matter has been most useful.");
       $client->Message(7,"The ideal of burial grounds nearby is one that can not be easily overlooked. That's exactly why you were sent to check these areas out. Sadly none of them turned out to be the rumored burial grounds, but there's plenty more land to cover, so you maybe called upon again. You'll be recieving some payment, mostly for your time investment, but partially for the danger involved. Good job.");
     }

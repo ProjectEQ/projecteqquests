@@ -7,6 +7,7 @@
 # 
 #Berserker Kael armor quests (Firebrand line of armor) 
 #Quest texts made up from other chain users or invented completely 
+# items: 25831, 24912, 55310, 25814, 24907, 55311, 25821, 24909, 55312, 25838, 24911, 55313, 25832, 24913, 55314, 25825, 24908, 55315, 25833, 24910, 55316
 
 sub EVENT_SAY { 
   if ($faction == 1) { #requires ally Kromzek faction 

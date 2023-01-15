@@ -1,3 +1,4 @@
+# items: 63099, 63100, 63112, 63101, 63113, 63091, 63102, 63098
 sub EVENT_SAY {
   if ($text=~/amphibious abilities/i) {
     quest::say("That's why you're here, recruit! The lake is a great place to train swimming and aquatic combat. And those skills are core to the Guja way of life. We use land and sea to assault our foes. Whoops. . .I'm going on again. Let's get to your [training].");

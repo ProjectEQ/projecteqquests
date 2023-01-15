@@ -5,6 +5,7 @@
 --#NPCs Involved: 1
 --#Items Involved: 3
 --#################
+-- items: 10300, 18175, 18176, 10400, 17504
 
 function event_say(e)
 	if(e.message:findi("hail")) then

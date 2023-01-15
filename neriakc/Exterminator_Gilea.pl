@@ -1,3 +1,4 @@
+# items: 13071
 sub EVENT_SAY {
   if($text=~/Hail/i){ #Start of Exterminate the Vermin Quest (Scripted By: Fatty Beerbelly)
     quest::say("Hello, $name. I was hired to eradicate all these pesky rodents running around the city, but there are too many of them. If you could help me by bringing back four of their whiskers I should have a few spare coins for you.");

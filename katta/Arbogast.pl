@@ -1,3 +1,4 @@
+# items: 29899, 29898, 17516, 29692, 17517, 29694, 17518, 29695
 sub EVENT_SAY { 
 	if($text=~/hail/i){
 		quest::say("Hello there weary adventurer. do you come seeking the truth?"); 

@@ -1,5 +1,6 @@
 # Cristov's Wine
 # Created by Gonner
+# items: 55579, 55582, 55584, 55583, 55580, 55581
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

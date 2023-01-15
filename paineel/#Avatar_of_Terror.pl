@@ -6,6 +6,7 @@
 #Issue2: Get correct text
 #Issue3: Get correct faction hits
 #
+# items: 14106, 14108
 
 sub EVENT_SPAWN {
   quest::settimer("TerrorShouting", 5);

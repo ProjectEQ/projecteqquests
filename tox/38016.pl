@@ -1,4 +1,5 @@
 #right skeleton
+# items: 62829, 62828, 13894, 9304, 12195, 13073, 13074
 my $questclient;
 my $success;
 

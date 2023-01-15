@@ -1,5 +1,6 @@
 #Wallin_Slyfoot.pl
 #Part of Innoruuk Disciple
+# items: 18957
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

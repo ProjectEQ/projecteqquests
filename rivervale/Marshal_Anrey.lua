@@ -1,4 +1,5 @@
 --Quest: Leatherfoot Raiders
+-- items: 13761, 13756, 13075, 13749, 13941, 13942, 12259
 
 function event_say(e)
 	if(e.message:findi("hail")) then

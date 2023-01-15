@@ -1,4 +1,5 @@
 #This iksar master is actually Master Rinmark, for the monk shackle quest line that eventually culminates in the Whistling Fists
+# items: 17036, 17039, 17040, 12815, 12797, 12829, 12836, 4195
 
 sub EVENT_SAY {
  if($text=~/hail/i){

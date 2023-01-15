@@ -21,6 +21,8 @@ function event_say(e)
 		e.self:Say("Or would you like to know your [" .. eq.say_link("Lockouts",false,"Lockouts") .. "]?");
 	elseif(e.message:findi("lockouts")) then
 		instance_requests.DisplayLockouts(e.other, e.other, inktuta_globals);
+	elseif(e.message:findi("heed")) then
+		e.self:Say("As well you should, never return, " .. e.other:GetCleanName() .. " never come back.");
 	elseif(e.message:findi("continue")) then
 		--if Cynosure is up do not proceed
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(295140) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(295149) == false) then
@@ -32,8 +34,7 @@ function event_say(e)
 				e.self:Say("Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu`Ta.");
 			end
 		else
-			--need live text for when cynosure is up
-			e.other:Message(13, "The power of the Muramites is blocking the entrance to the temple.");
+			e.other:Message(13, "The Cynosure's magic prevents me from allowing passage into Inktu'ta. We shall speak more after his demise.");
 		end
 	end
 end

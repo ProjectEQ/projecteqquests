@@ -3,6 +3,7 @@
 -- Sadly I couldn't figure out how this worked (I think it was triggered by what crystals I had)
 -- Luckily this part is just lore, and we can get the flag w/o doing that stuff
 -- So for now, saying note does nothing :(
+-- items: 2318, 10119, 10561, 2319, 10117, 4114, 4115, 10128, 4116
 
 function event_say(e)
     local qglobals = eq.get_qglobals(e.other)

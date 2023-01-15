@@ -1,5 +1,6 @@
 #Firon_Dernkal.pl
 #Charm of the Brotherhood
+# items: 21972, 21974, 21975, 21976, 21977, 21978, 61002
 
 
 sub EVENT_SAY{

@@ -1,3 +1,4 @@
+# items: 1774, 1775
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello, $name. Interested in the art of research? I have several tomes which may aid you in such a pursuit.");

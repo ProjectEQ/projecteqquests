@@ -1,3 +1,4 @@
+-- items: 69934
 function event_say(e)
 local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("hail")) then

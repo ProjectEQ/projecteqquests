@@ -1,3 +1,4 @@
+# items: 1702, 1706, 1707, 1709
 
 sub EVENT_SAY { 
 	if((($text=~/hail/i) || ($text=~/seeking work/i)) && ($faction > 5)) {

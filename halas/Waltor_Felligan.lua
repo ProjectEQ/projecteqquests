@@ -1,3 +1,4 @@
+-- items: 17946, 13966, 15203, 15270, 15271, 15275, 15036, 15075, 13445, 13967
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hello, me friend! I'm the resident healer o' Halas. Please inform me when ye've a need fer me talents to [bind wounds], [cure disease] or [cure poison]. Might I add, if ye're a young shaman o' Halas, ye can also [assist in gathering fungus].");

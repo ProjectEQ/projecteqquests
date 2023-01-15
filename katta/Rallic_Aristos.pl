@@ -1,4 +1,5 @@
 # The Acrylia Plans
+# items: 31730, 31729
 
 sub EVENT_SAY {
 

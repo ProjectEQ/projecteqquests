@@ -1,3 +1,4 @@
+# items: 8775, 52331, 13931, 7007, 7008, 7009, 7010, 12170, 12172, 12174, 12178, 12166, 9813, 52353
 sub EVENT_SAY { 
    if ($text=~/hail/i) {
 	  if ( $client->GetGlobal("Fatestealer") ==1) { #Rogue 1.5

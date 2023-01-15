@@ -1,5 +1,6 @@
 # Gather Claws
 # created by Gonner
+# items: 66185
 
 sub EVENT_SAY {
 

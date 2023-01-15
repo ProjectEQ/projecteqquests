@@ -1,4 +1,5 @@
 # Quest for Darkforge Gauntlets/Greaves/Boots
+# items: 12292, 12291, 16507, 3144, 12294, 12293, 12297, 3145, 12296, 12295, 12106, 3146
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

@@ -1,5 +1,6 @@
 -- Winds of Karana
 -- Broken Lute
+-- items: 13310, 13119
 
 function event_waypoint_arrive(e)
 	if(e.wp == 1 or e.wp == 3 or e.wp == 8) then

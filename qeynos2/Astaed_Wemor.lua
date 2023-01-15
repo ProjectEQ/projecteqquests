@@ -1,3 +1,4 @@
+-- items: 18862, 26022, 26023, 26024, 26025, 13952, 13954, 13970, 6356
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 
@@ -5,16 +6,16 @@ function event_say(e)
 		e.self:Say("Greetings. I am Astaed Wemor of the Paladins of the Temple of Life. We are the defenders of the all-giving Prime Healer.  Are you [here to pray] or are you [here to assist the temple]?");
 	elseif(e.message:findi("here to pray")) then
 		e.self:Say("Then pray long and silently, " .. e.other:GetName() .. ".  Fill your soul with the breath of life.");
-	elseif(e.message:findi("hassist the temple")) then
+	elseif(e.message:findi("assist the temple")) then
 		e.self:Say("Good.  There are a few in the congregation who require assistance.  Will you be [traveling afar] or are you [staying close to Qeynos]?");
 	elseif(e.message:findi("traveling afar")) then
-		if (fac <= 3) then
+		if (fac <= 4) then
 			e.self:Say("Then outfit yourself well. We will require you to visit Rivervale, the village of the halflings. There you shall find an herb merchant named Kizzie Mintopp. She has an ingredient we require. Tell her you are from the Temple of Life");
 		else
 			e.self:Say("I do not dislike you, but I cannot fully trust one who has yet to prove his service to the Prime Healer.  Perhaps you can assist us in ridding the land of diseased animals.  Priestess Caulria will accept all pelts from rabid beasts."); 
 		end
 	elseif(e.message:findi("staying close to qeynos")) then
-		if (fac <= 3) then
+		if (fac <= 4) then
 			e.self:Say("Then you can help with one of our distraught members. The priests have noticed that Nerissa Clothspinner has been a little down lately. Go console her and ask her how she is doing. She is a sweet girl and the temple is worried about her.");
 		else
 			e.self:Say("I do not dislike you, but I cannot fully trust one who has yet to prove his service to the Prime Healer.  Perhaps you can assist us in ridding the land of diseased animals.  Priestess Caulria will accept all pelts from rabid beasts."); 
@@ -27,9 +28,9 @@ function event_trade(e)
 	local fac = e.other:GetFaction(e.self);
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18862})) then
-		if (fac <= 3) then
+		if (fac <= 4) then
 			e.self:Say("So you have helped Nerissa. That is good. Here, then, is a small reward. May you find it useful. Keep fighting the good fight!");
-			e.other:SummonItem(ChooseRandom(26022,26023,26024,26025)); -- Item(s): Spirit Talker's Headdress (26022), Paebala Warbone (26023), Chelaki Tail (26024), Cowl of Mortality (26025)
+			e.other:SummonItem(ChooseRandom(6022,6023,6024,6025)); -- Item(s): Bronze Warhammer (6022), Bronze Flail (6023), Bronze Morning Star (6024), Bronze Warclub (6025)
 			e.other:Ding();
 			e.other:Faction(341,1,0); -- Faction: Priests of Life
 			e.other:Faction(280,1,0); -- Faction: Knights of Thunder

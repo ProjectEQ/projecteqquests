@@ -1,5 +1,6 @@
 # pulsing green stone - ranger/druid epic
 #
+# items: 10295
 
 my $x;
 my $y;

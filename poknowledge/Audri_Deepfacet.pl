@@ -4,6 +4,7 @@
 #NPCs Involved: 2 [Castlen Drewe(202294) and Audri Deepfacet(202069)]
 #Items Involved: 1 Permafrost Crystals(22121)
 #################
+# items: 22121
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){

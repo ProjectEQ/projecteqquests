@@ -1,5 +1,6 @@
 #Welnik's Picks and Ore by druid64 02/02/2012 updated from original code by Swiftsong_Lorekeeper
 #  #Miner_Welnik.pl goes in /quest/lavastorm/
+# items: 54435, 71705, 7882, 71706
 
 sub EVENT_SAY {
 	if($text=~/Hail/i) {

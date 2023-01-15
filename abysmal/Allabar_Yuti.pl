@@ -1,5 +1,6 @@
 # Meat for Allabar
 # created by gonner
+# items: 22801
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

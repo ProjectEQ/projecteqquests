@@ -1,3 +1,4 @@
+# items: 31427, 31430, 31429, 31428, 1209, 31432, 31434, 31431, 31433, 1223
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Well met, $name. It is indeed a wondrous day to be serving the lady Tunare. If you know of any templars or knights, send them to me.");

@@ -1,3 +1,4 @@
+# items: 17975, 13885, 12273, 12272
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Greetings, traveler! If you wish to walk upon the road to Freeport, you will pay the toll of two silver pieces. And you should. It is not safe to stray from the pathway. There are many [dangers in the Commonlands].");

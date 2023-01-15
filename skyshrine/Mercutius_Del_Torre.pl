@@ -1,5 +1,6 @@
 # Draconic Fellowship Instruments
 #
+# items: 11655, 11654, 12552, 1834, 11657, 12553, 10036, 11658, 12554
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

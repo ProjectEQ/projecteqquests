@@ -1,5 +1,6 @@
 # Coldain Books of Tactics
 #
+# items: 24987, 24988, 25037, 25038, 25039, 25042
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

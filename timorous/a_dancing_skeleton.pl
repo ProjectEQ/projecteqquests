@@ -24,6 +24,7 @@
 #Original submission:
 #Submitted by: Senzo aka Fatty Beerbelly
 #
+# items: 17037
 
 sub EVENT_SAY {
   if($text=~/gomoz/i) {

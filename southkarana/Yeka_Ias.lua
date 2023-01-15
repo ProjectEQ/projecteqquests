@@ -1,3 +1,4 @@
+-- items: 20695, 20698
 function event_spawn(e)
 	eq.set_timer("daydream",2700000);
 end

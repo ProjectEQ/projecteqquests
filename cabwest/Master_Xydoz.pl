@@ -1,3 +1,4 @@
+# items: 12408, 4260, 18208, 4261, 14793, 14811, 10032, 14831
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What is it you seek within the tower ? Could it be that you are a new apprentice ? If so, you are required to don the [apprentice skullcap]");  

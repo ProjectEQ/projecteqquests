@@ -12,24 +12,24 @@ sub EVENT_SAY
 	elsif($text=~ /Trade With/i)
 	{
 		my @task_array;
-		if(!defined($qglobals{corathus_mushroom_daily}) && !quest::istaskactive(146))
+		if(!defined($qglobals{corathus_mushroom_daily}) && !quest::istaskactive(500146))
 		{
-			push(@task_array, 146);
+			push(@task_array, 500146);
 		}
 		
-		if(!defined($qglobals{corathus_jumjum_daily}) && !quest::istaskactive(151))
+		if(!defined($qglobals{corathus_jumjum_daily}) && !quest::istaskactive(500151))
 		{
-			push(@task_array, 151);
+			push(@task_array, 500151);
 		}
 		
-		if(!defined($qglobals{corathus_noodles_daily}) && !quest::istaskactive(152))
+		if(!defined($qglobals{corathus_noodles_daily}) && !quest::istaskactive(500152))
 		{
-			push(@task_array, 152);
+			push(@task_array, 500152);
 		}
 		
-		if(!defined($qglobals{corathus_sandwich_daily}) && !quest::istaskactive(153))
+		if(!defined($qglobals{corathus_sandwich_daily}) && !quest::istaskactive(500153))
 		{
-			push(@task_array, 153);
+			push(@task_array, 500153);
 		}
 		
 		my $task_array_size = @task_array;

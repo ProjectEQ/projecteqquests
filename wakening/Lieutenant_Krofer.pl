@@ -1,3 +1,4 @@
+# items: 1706, 1702, 22851, 22852, 1703, 1704, 1705, 1707, 1708
 sub EVENT_SAY { 
 	if((($text=~/hail/i) || ($text=~/next assignment/i) || ($text=~/prepared/i)) && ($faction > 5)) {
 		my $random = int(rand(3));

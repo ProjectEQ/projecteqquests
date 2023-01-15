@@ -28,6 +28,7 @@
 #Name: Greyish Bone Chips - from Skeleton Warlords in Karnor's Castle
 #ID: 12943
 ####
+# items: 12942, 12945, 12944, 12943, 12941
 
 
 sub EVENT_SAY {

@@ -1,3 +1,4 @@
+-- items: 17200
 local ignoreplayer=0;
 local ignoresay=0;
 

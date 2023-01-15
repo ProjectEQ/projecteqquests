@@ -1,0 +1,46 @@
+function event_spawn(e)
+	eq.set_next_hp_event(40);
+end
+
+function event_hp(e)
+	if(e.hp_event == 40) then
+		e.self:Emote("attempts to channel the power of the corrupted amulet!");
+		eq.modify_npc_stat("min_hit", "350");
+		eq.modify_npc_stat("max_hit", "1451");
+		e.self:ChangeSize(15);
+	end
+end
+
+function event_combat(e)
+	if(e.joined) then
+		eq.set_timer("check", 5 * 1000);
+	else
+		eq.stop_timer("check");
+	end
+end
+
+function event_timer(e)
+	if (e.timer == "check") then
+		
+		e.self:ForeachHateList(
+		  function(ent, hate, damage, frenzy)
+			if(ent:IsClient() and ent:GetX() < -402 or ent:GetX() > 70 or ent:GetY() > 645 or ent:GetY() < 475) then
+			  local currclient=ent:CastToClient();
+				eq.zone_emote(0,"An officiator shouts, 'Keep it in the arena! If fools are to be slaughtered, do us the courtesy of allowing the crowd to observe!");
+				currclient:MovePC(282,-168,330,4.3,0);
+				e.self:CastSpell(3230,e.self:GetID()); -- Spell: Balance of the Nameless
+				e.self:WipeHateList();
+			end
+		  end
+		);
+		
+	end
+end
+
+--ikaav mods
+
+function event_spawn(e)
+e.self:ModSkillDmgTaken(1, -15); -- 1h slashing
+e.self:ModSkillDmgTaken(3, -15); -- 2h slashing
+e.self:ModSkillDmgTaken(7, 15); -- archery
+end

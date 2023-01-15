@@ -7,6 +7,7 @@
 #NPC ID: 86097                    #
 #Quest Status: Complete           #                                      
 ###################################
+# items: 20376, 20383, 20377, 20538, 20542
 
 sub EVENT_SAY { 
   if($text=~/Hail/i){

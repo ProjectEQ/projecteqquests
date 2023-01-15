@@ -1,3 +1,4 @@
+-- items: 69971, 69972
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 		
@@ -5,7 +6,7 @@ function event_say(e)
 		if(e.other:HasItem(69941) and e.other:HasItem(69952) and e.other:HasItem(69942)) then
 			e.self:Say(e.other:GetName() .. " see you have returned with three Soulstones. These crystals are very delicate and hold the souls of those tormented beings. The keepers of these Soulstones were being controlled by some superior being, someone dark and evil in nature. I will need you to find one more Soulstone, so that we can find out who is behind all of this. This final tormented soul I feel is a Erudite...a Wayfarer Erudite, though I cannot discern where this person is. Please hurry and find this tormented being.");
 			eq.set_global("paladin_epic","6",5,"F");
-		elseif(e.other:HasItem(10099)) then --has fiery defender
+		elseif(e.other:HasItem(10099) or e.other:HasItem(69913)) then --has fiery defender or Couragebringer.
 			e.self:Say("Ah " .. e.other:GetName() .. ", it is so good to see you again. I hope my sword has been treating you well. What [" .. eq.say_link("brings me here", false,"brings you here") .. "], friend?");
 			if(qglobals["paladin_epic"] == nil) then
 				eq.set_global("paladin_epic","1",5,"F"); --Flagged to start epic

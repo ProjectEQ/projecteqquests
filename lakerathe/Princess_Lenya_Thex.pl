@@ -1,3 +1,4 @@
+# items: 20008, 13108, 13109
 sub EVENT_SPAWN {
 	quest::settimer("yay",600);
 	quest::ze(15,"a royal fish changes into a beautiful princess!!");

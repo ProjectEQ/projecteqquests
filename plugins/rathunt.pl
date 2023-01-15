@@ -34,25 +34,27 @@ sub GetRandomFreeLocation
 		
 	$dbh = plugin::LoadMysql();
 
-	my $data1 = ("REPLACE into temp_globals VALUES $all_values") or die $dbh->errstr;
+	my $data1 = "REPLACE into temp_globals VALUES $all_values";
 	my $sth1 = $dbh->prepare($data1);
-	$sth1->execute() or die $dbh->errstr;
+	$sth1->execute();
 	
-	my $data2 = ( "DELETE from temp_globals where value in (SELECT value from quest_globals where name like 'halloween_ratter_%') or value in (SELECT value from quest_globals where name like 'halloween_lock_%') or value > $maxvalue") or die $dbh->errstr;
+	my $data2 = "DELETE from temp_globals where value in (SELECT value from quest_globals where name like 'halloween_ratter_%') or value in (SELECT value from quest_globals where name like 'halloween_lock_%') or value > $maxvalue";
 	my $sth2 = $dbh->prepare($data2);
-	$sth2->execute() or die $dbh->errstr;
+	$sth2->execute();
 
-	my $data3 = ( "SELECT * from temp_globals order by CAST(`value` AS SIGNED)") or die $dbh->errstr;
+	my $data3 = "SELECT * from temp_globals order by CAST(`value` AS SIGNED)";
 	my $sth3 = $dbh->prepare($data3);
-	$sth3->execute() or die $dbh->errstr;
+	$sth3->execute();
 
-	while(($value) = $sth3->fetchrow_array) {
-       	push @free_values, $value;
-   	}
+	if ($sth3->rows() > 0) {
+		while($value = $sth3->fetchrow_array) {
+       			push @free_values, $value;
+   		}
+	}
 
-	my $data4 = ("DELETE from temp_globals") or die $dbh->errstr;
+	my $data4 = "DELETE from temp_globals";
 	my $sth4 = $dbh->prepare($data4);
-	$sth4->execute() or die $dbh->errstr;
+	$sth4->execute();
 
 	$sth1->finish();
 	$sth2->finish();
@@ -77,25 +79,27 @@ sub GetRandomIndoorLocation
 		
 	$dbh = plugin::LoadMysql();
 
-	my $data1 = ("REPLACE into temp_globals_indoor VALUES $all_values") or die $dbh->errstr;
+	my $data1 = "REPLACE into temp_globals_indoor VALUES $all_values";
 	my $sth1 = $dbh->prepare($data1);
-	$sth1->execute() or die $dbh->errstr;
+	$sth1->execute();
 	
-	my $data2 = ( "DELETE from temp_globals_indoor where value in (SELECT value from quest_globals where name like 'halloween_ratter_%') or value in (SELECT value from quest_globals where name like 'halloween_lock_%') or value > $maxvalue") or die $dbh->errstr;
+	my $data2 = "DELETE from temp_globals_indoor where value in (SELECT value from quest_globals where name like 'halloween_ratter_%') or value in (SELECT value from quest_globals where name like 'halloween_lock_%') or value > $maxvalue";
 	my $sth2 = $dbh->prepare($data2);
-	$sth2->execute() or die $dbh->errstr;
+	$sth2->execute();
 
-	my $data3 = ( "SELECT * from temp_globals_indoor order by CAST(`value` AS SIGNED)") or die $dbh->errstr;
+	my $data3 = "SELECT * from temp_globals_indoor order by CAST(`value` AS SIGNED)";
 	my $sth3 = $dbh->prepare($data3);
-	$sth3->execute() or die $dbh->errstr;
+	$sth3->execute();
+	
+	if ($sth3->rows() > 0) {
+		while(($value) = $sth3->fetchrow_array) {
+       			push @free_values, $value;
+   		}
+	}
 
-	while(($value) = $sth3->fetchrow_array) {
-       	push @free_values, $value;
-   	}
-
-	my $data4 = ("DELETE from temp_globals_indoor") or die $dbh->errstr;
+	my $data4 = "DELETE from temp_globals_indoor";
 	my $sth4 = $dbh->prepare($data4);
-	$sth4->execute() or die $dbh->errstr;
+	$sth4->execute();
 
 	$sth1->finish();
 	$sth2->finish();

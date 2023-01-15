@@ -1,3 +1,4 @@
+# items: 60290, 30145
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hail to ye as well offlander. I bid you welcome to the Icy Mug, one o' the finest establishments for a drink in Thurgadin. Whether it's [" . quest::saylink("souvenirs") . "], stories, or that [" . quest::saylink("special brew") ."] yer lookin for, you've come to the right place.");

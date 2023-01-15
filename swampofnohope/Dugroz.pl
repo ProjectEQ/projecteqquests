@@ -1,4 +1,5 @@
 # Quest for Charasis (Howling Stones) Key
+# items: 7236, 7256, 20600, 7254
 
 sub EVENT_SAY {
   if($text=~/hail/i){

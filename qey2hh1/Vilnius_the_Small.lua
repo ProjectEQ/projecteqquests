@@ -1,4 +1,5 @@
 -- Rogue Epic NPC -- Vilnius_the_Small
+-- items: 28014, 5411, 5410, 5401, 5308, 7506, 1357, 1253, 1354, 1360, 7505, 7041, 7509, 7508, 7020
 
 function event_say(e)
 	if(e.message:findi("hail")) then

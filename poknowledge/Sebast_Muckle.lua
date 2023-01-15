@@ -1,3 +1,4 @@
+-- items: 47100, 61025
 function event_say(e)
     if (e.message:findi("hail")) then
         e.self:Say("Hello there. Can I be of service for anything?");

@@ -1,5 +1,6 @@
 #Loveal_S-Nez.pl
 #Sir Lindeal's Testimony/Thex Mallet/SK Trainer
+# items: 18828, 2317, 13390, 5374, 18889, 13009, 13005, 13002
 
 sub EVENT_SAY 
 	{ 

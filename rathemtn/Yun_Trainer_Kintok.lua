@@ -1,13 +1,14 @@
+-- items: 17394, 51101, 51104, 51105, 51106, 51107, 51113, 51114, 51115, 51108, 51120, 51109
 function event_say(e)
 	if (e.other:Class() == "Shaman" and e.other:Race() ==  "Froglok") then
 		if (e.message:findi("hail")) then
-			local my_globals = eq.get_qglobals(e.other);
+			local qglobals = eq.get_qglobals(e.other);
 		
-			if (my_globals["guktan_shield"] == nil or my_globals["guktan_shield"] == "3") then
+			if (qglobals["guktan_shield"] == nil or qglobals["guktan_shield"] == "3") then
 				e.self:Emote("leans in close to whisper something in your ear, 'Be on your guard, friend. You should be ever watchful in these swamps. Beasts lurk in the waters and behind every rotting tree stump. Perhaps you would be interested in a shield of my own creation. I'll confess it has saved my life on more than one occasion.'");
-			elseif (my_globals["guktan_shield"] == "1") then
+			elseif (qglobals["guktan_shield"] == "1") then
 				e.self:Say("Ahh, so you have returned to me with your shield. It appears to have gotten some good use in the recent months. Before I can get to work on your shield, I need a few components. Would you mind [retrieving the components] for me?");
-			elseif (my_globals["guktan_shield"] == "2") then
+			elseif (qglobals["guktan_shield"] == "2") then
 				e.self:Say("You sure are rough on shields, arent you?! No matter, I am sure that I can reinforce the shield enough to get you a few more years out of it, but this wont be easy. I have been expecting a shipment of supplies that have not yet arrived. The shipment left Erudin last week, but I've not received it, and I fear the worst for my assistant. If you are [up to the task], I could certainly use you to research the problem, and in exchange for your services I will upgrade your shield one final time.");
 			end
 		elseif (e.message:findi("shield")) then

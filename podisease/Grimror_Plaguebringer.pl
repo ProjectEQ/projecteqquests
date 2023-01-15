@@ -1,4 +1,5 @@
 # Modified by greenbean 04/15/2010
+# items: 9290, 9291, 9292, 9293, 9294
 
 sub EVENT_SAY {
 	if($text =~ /Hail/i) {

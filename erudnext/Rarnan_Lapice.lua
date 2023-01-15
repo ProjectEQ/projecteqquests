@@ -1,3 +1,4 @@
+-- items: 13991, 15302, 6351, 89036, 16647
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("It is good to meet you. $name.  To enter the Temple of Divine Light is to invite Quellious into your body and soul.  Tranquility is our way and. as such. we do all we can to uphold it.  Are you a [cleric of Quellious]. or am I mistaken?");

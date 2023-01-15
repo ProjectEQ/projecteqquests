@@ -1,3 +1,4 @@
+-- items: 12128, 12129
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please seek guidance from the clerics within this temple.  I am but a Sentry of Passion and my duty is to protect this temple.");

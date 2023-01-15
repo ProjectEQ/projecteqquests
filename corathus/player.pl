@@ -8,7 +8,7 @@ sub EVENT_ENTERZONE
 
 sub EVENT_TASKACCEPTED
 {
-	if($task_id == 146)
+	if($task_id == 500146)
 	{
 		my $danika = $entity_list->GetMobByNpcTypeID(365147);
 		if($danika)
@@ -16,7 +16,7 @@ sub EVENT_TASKACCEPTED
 			$danika->Say("The fungus men in the area are made of a special edible fungus that I wish to use to help feed the soldiers here, return some to me and I will reward you.");
 		}
 	}
-	elsif($task_id == 151)
+	elsif($task_id == 500151)
 	{
 		my $danika = $entity_list->GetMobByNpcTypeID(365147);
 		if($danika)
@@ -24,7 +24,7 @@ sub EVENT_TASKACCEPTED
 			$danika->Say("I haven't tasted Rivervale in such a long time, bring me a piece of Rivervale and I will be forever thankful to you.");
 		}
 	}
-	elsif($task_id == 152)
+	elsif($task_id == 500152)
 	{
 		my $danika = $entity_list->GetMobByNpcTypeID(365147);
 		if($danika)
@@ -32,7 +32,7 @@ sub EVENT_TASKACCEPTED
 			$danika->Say("I need food to feed the soldiers here, bring me some noodles and I will reward you.");
 		}
 	}
-	elsif($task_id == 153)
+	elsif($task_id == 500153)
 	{
 		my $danika = $entity_list->GetMobByNpcTypeID(365147);
 		if($danika)
@@ -40,7 +40,7 @@ sub EVENT_TASKACCEPTED
 			$danika->Say("I need food to feed the soldiers here, bring me some mammoth sandwiches and I will reward you.");
 		}
 	}
-	elsif($task_id == 154)
+	elsif($task_id == 500154)
 	{
 		my $izzik = $entity_list->GetMobByNpcTypeID(365146);
 		if($izzik)
@@ -48,7 +48,7 @@ sub EVENT_TASKACCEPTED
 			$izzik->Say("This scrap will do nicely! Thank you $name, I'll need more later I imagine so please return soon.");
 		}
 	}
-	elsif($task_id == 155)
+	elsif($task_id == 500155)
 	{
 		my $izzik = $entity_list->GetMobByNpcTypeID(365146);
 		if($izzik)
@@ -56,7 +56,7 @@ sub EVENT_TASKACCEPTED
 			$izzik->Say("These bolts will do nicely! Thank you $name, I'll need more later I imagine so please return soon.");
 		}
 	}
-	elsif($task_id == 156)
+	elsif($task_id == 500156)
 	{
 		my $izzik = $entity_list->GetMobByNpcTypeID(365146);
 		if($izzik)
@@ -68,7 +68,7 @@ sub EVENT_TASKACCEPTED
 
 sub EVENT_TASK_STAGE_COMPLETE
 {
-	if($task_id == 146)
+	if($task_id == 500146)
 	{
 		if($activity_id == 1)
 		{
@@ -92,7 +92,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			}
 		}
 	}
-	elsif($task_id == 151)
+	elsif($task_id == 500151)
 	{
 		if($activity_id == 0)
 		{
@@ -116,7 +116,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			}
 		}
 	}
-	elsif($task_id == 152)
+	elsif($task_id == 500152)
 	{
 		if($activity_id == 0)
 		{
@@ -140,7 +140,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			}			
 		}	
 	}
-	elsif($task_id = 153)
+	elsif($task_id = 500153)
 	{
 		if($activity_id == 0)
 		{
@@ -164,7 +164,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			}			
 		}
 	}
-	elsif($task_id >= 147 && $task_id <= 149)
+	elsif($task_id >= 500147 && $task_id <= 500149)
 	{
 		if($activity_id == 1)
 		{
@@ -187,7 +187,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			}			
 		}
 	}
-	elsif($task_id >= 154 && $task_id <= 156)
+	elsif($task_id >= 500154 && $task_id <= 500156)
 	{
 		my $boss_check = $entity_list->GetMobByNpcTypeID(365038);
 		if(!$boss_check)

@@ -1,3 +1,4 @@
+# items: 6349, 1120
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Rrraaarrr! Hello furless. You come to study from [mighty warrior] yes?");

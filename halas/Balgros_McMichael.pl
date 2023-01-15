@@ -1,5 +1,6 @@
 # Halas shaman quest armor
 #
+# items: 55118, 55134, 55136, 55135, 55138, 55139, 55137, 55140, 12223, 55126
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

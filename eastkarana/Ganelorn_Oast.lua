@@ -1,3 +1,4 @@
+-- items: 20876, 20877, 20878, 20879, 20881, 20880, 10151, 5408, 20882, 15691
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please be very quiet. I am tracking a notorious poacher.");

@@ -19,15 +19,12 @@ local this_zone = 'chambersd';
 local this_wave = 0;
 local lockout_win = 72;
 local lockout_loss = 2;
-local lockout_name = 'MPG_efficiency';
 local warnings;
 local minutes_remaining;
 local minutes_per_wave;
 local player_list;
-local instance_requests;
 
 function Efficiency_Spawn(e)
-  instance_requests = require("instance_requests");
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
   minutes_remaining = 15;
@@ -53,6 +50,11 @@ function Efficiency_Say(e)
     e.self:Say("'This is the Mastery of Efficiency trial. You must demonstrate your ability to function under less than perfect conditions, battling with limited resources. Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
 
   elseif (e.message:findi("begin")) then
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+    end
+
     this_wave = 0;
 
     e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
@@ -116,8 +118,10 @@ function Efficiency_Timer(e)
       eq.zone_emote(13, "You have been found unworthy.");
       eq.depop();
 
-      for k,v in pairs(player_list) do
-        eq.target_global(lockout_name, tostring(instance_requests.GetLockoutEndTimeForHours(2)), "H2", 0, v, 0);
+      -- no lockout added on failure, the dz shuts down in 5 minutes
+      local dz = eq.get_expedition()
+      if dz.valid then
+        dz:SetSecondsRemaining(eq.seconds("5m"))
       end
     else 
       eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
@@ -134,8 +138,13 @@ function Efficiency_Signal(e)
     eq.spawn2(307005, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
     eq.depop();
 
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:AddReplayLockout(eq.seconds("3d"))
+    end
+
     local mpg_helper = require("mpg_helper");
-    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, lockout_name);
+    mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, nil);
   end
 end
 

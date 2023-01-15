@@ -1,3 +1,4 @@
+-- items: 18173, 1768, 1771
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Ahh salutations young adventurer. I'd love to chat, but I have much studying to do. Farewell.");

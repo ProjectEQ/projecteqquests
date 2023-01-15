@@ -1,3 +1,4 @@
+# items: 20536
 my $spawn;
 
 sub EVENT_SPAWN {

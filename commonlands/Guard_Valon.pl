@@ -1,5 +1,6 @@
 # orc pawn picks & cutthroat rings quest
 #
+# items: 17975, 13885, 12272, 12273
 
 
 sub EVENT_SAY {

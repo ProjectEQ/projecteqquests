@@ -1,3 +1,4 @@
+# items: 5580, 6181, 6138
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Welcome to my store! How may I help you?");

@@ -6,6 +6,7 @@
 #NPC ID: 118154
 #Quest Status: In Prog.
 #
+# items: 30045
 
 sub EVENT_SPAWN {
   quest::settimer("despawn",60); #this is to keep the captive gnome from staying spawned indefinately if someone triggers bloodmaw and leaves

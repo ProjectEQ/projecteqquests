@@ -1,3 +1,4 @@
+# items: 48006, 48014, 48012, 48008
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Can't you see I am busy on patrol!");

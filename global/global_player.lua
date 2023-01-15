@@ -1,3 +1,7 @@
+-- items: 67704, 72091, 62621, 62622, 62844, 62827, 62828, 62836, 62883, 62876, 47100, 62878, 62879
+
+local don = require("dragons_of_norrath")
+
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	if(e.self:GetLevel() >= 15 and qglobals['Wayfarer'] == nil) then
@@ -178,6 +182,22 @@ function event_combine_success(e)
 		eq.set_global("paladin_epic","11",5,"F");
 		eq.delete_global("paladin_epic_mmcc");
 		eq.delete_global("paladin_epic_hollowc");
+	elseif (e.recipe_id == 2182) then -- Pumpkin Pie
+		if (eq.is_task_activity_active(8013, 0)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 0, 1);
+		end
+	elseif (e.recipe_id == 2181) then -- Pumpkin Bread
+		if (eq.is_task_activity_active(8013, 1)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 1, 1);
+		end
+	elseif (e.recipe_id == 7811) then -- Spiced Pumpkin Cider
+		if (eq.is_task_activity_active(8013, 2)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 2, 1);
+		end
+	elseif (e.recipe_id == 2183) then -- Pumpkin Shake
+		if (eq.is_task_activity_active(8013, 3)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 3, 1);
+		end
 	end
 end
 
@@ -214,6 +234,8 @@ function event_connect(e)
             e.self:GrantAlternateAdvancementAbility(aa, 1)
         end
     end
+
+    don.fix_invalid_faction_state(e.self)
 end
 
 --[[
@@ -306,4 +328,42 @@ function event_level_up(e)
     end
       
   end
+end
+
+test_items = {
+    [1]  = {38000, 38020}, -- Warrior
+    [2] = {38168, 38188}, -- Cleric
+    [3]  = {38084, 38104}, -- Paladin
+    [4]  = {38105, 38125}, -- Ranger
+    [5]  = {38063, 38083}, -- Shadowknight
+    [6] = {38189, 38209}, -- Druid
+    [7]  = {38021, 38041}, -- Monk
+    [8]  = {38147, 38167}, -- Bard
+    [9]  = {38042, 38062}, -- Rogue
+    [10] = {38210, 38230}, -- Shaman
+    [11]  = {38294, 38314}, -- Necromancer
+    [12]  = {38231, 38251}, -- Wizard
+    [13]  = {38252, 38272}, -- Magician
+    [14]  = {38273, 38293}, -- Enchanter
+    [15]  = {38126, 38146}, -- Beastlord
+    [16]  = {38315, 38332}, -- Berserker
+}
+ 
+function event_test_buff(e)
+    if (e.self:GetLevel() < 25) then
+        e.self:SetLevel(25)
+        eq.scribe_spells(25,1)
+        eq.train_discs(25,1)
+        for class_id, v in pairs(test_items) do
+            if e.self:GetClass() == class_id then
+                for item_id = v[1], v[2] do
+                    e.self:SummonItem(item_id);
+                end
+            end
+        end
+    end
+end
+
+function event_task_complete(e)
+  don.on_task_complete(e.self, e.task_id)
 end

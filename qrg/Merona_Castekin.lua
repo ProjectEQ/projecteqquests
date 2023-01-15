@@ -1,3 +1,4 @@
+-- items: 18014
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Oh, hello! Welcome to Surefall Glade. Are you planning a trip to Qeynos? If you are, I could use some help finding my [brother].");

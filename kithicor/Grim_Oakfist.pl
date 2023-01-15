@@ -29,6 +29,7 @@
 # Monks with good Ashen Order Faction
 #
 ############################################# 
+# items: 12341, 12342, 12343, 12367
 
 sub EVENT_SAY {
     if(($faction < 4)&&($class eq "Monk")) {
@@ -41,11 +42,11 @@ sub EVENT_SAY {
         if($text=~/fellow monk/i) {
             quest::say("Good!! The rangers are watching me so you must go alone.  I can only wait until the morning, then I must go.  If you find all three tigers, return their pelts to me and I shall reward you with something discovered for monks only.");
             # Spawn Eenot
-            quest::unique_spawn(20276, 137, 0, 1499.47, -22.75, 168.35); # NPC: Eenot
+            quest::unique_spawn(20276, 0, 0, 4184, -745, 548); # NPC: Eenot
             # Spawn Reggit
-            quest::unique_spawn(20277, 138, 0, 3063, 1636, 363); # NPC: Reggit
+            quest::unique_spawn(20277, 0, 0, 1084, -707, 225); # NPC: Reggit
             # Spawn Kobb
-            quest::unique_spawn(20278, 139, 0, 3741.9, 256.5, 496.2); # NPC: Kobb
+            quest::unique_spawn(20278, 139, 0, -608, 1007, -22); # NPC: Kobb
         }
         if($text=~/treant fists/i) {
             quest::say("The treant fists were created by great craftsmen.  They are for the fists of a monk and offer greater dexterity and increase the durability of one's soul.  My last pair were given to Master Puab of the Ashen House training grounds.");

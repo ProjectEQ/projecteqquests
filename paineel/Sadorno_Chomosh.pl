@@ -1,3 +1,4 @@
+# items: 17124, 19634, 19631, 19632, 19633, 19635, 19636, 19637, 20419, 20414, 20415, 20355, 20402, 20417
 sub EVENT_SAY {
    if($text=~/Hail/i){
      quest::say("Salutations. I am Sadorno Chomosh, Templar of Terror. The path of terror taught to us by Cazic-Thule is a dangerous way of life. The perils are great, but the rewards are unimaginable power. In order to harness the powers of fear, you must first know that which you seek to control: terror, dread and fright. I presume that you are still young and have much to learn. If that is the case, I will assist you in acquiring [armaments] to aid you on your journey to power.");

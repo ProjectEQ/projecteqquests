@@ -1,3 +1,4 @@
+# items: 24874, 30068, 22817, 30067
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("nods respectfully.");

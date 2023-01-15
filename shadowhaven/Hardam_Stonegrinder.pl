@@ -1,5 +1,6 @@
 # Hardam's Goods
 # Pristine Beetle Box
+# items: 4757, 5986
 
 sub EVENT_SAY {
 

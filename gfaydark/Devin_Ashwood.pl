@@ -1,3 +1,4 @@
+# items: 20876
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Good day to you. $name!  I am Devin Ashwood.  Pleased to make your acquaintance."); 

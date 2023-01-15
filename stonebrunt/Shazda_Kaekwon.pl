@@ -11,6 +11,7 @@
 #
 #Requires a recipe (@4 or 6..  heads in empty satchel = #6969)
 #Quest by Dave
+# items: 17883, 6955, 6953, 6982, 6983, 6984
 
 sub EVENT_SAY {
   if($text =~ /Hail/i) {

@@ -1,3 +1,4 @@
+-- items: 18824
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("How dare you disturb me! You people need to just mind your pathetic lives and leave the rest to us. Leave me now!");

@@ -1,3 +1,4 @@
+# items: 7170, 7171, 7180, 7181, 7174, 7175, 7176, 7177, 7172, 7173, 7178, 7179
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail friend, welcome to our workshop. This area once housed the arena's armory, but was converted to a weapons workshop during the initial stages of the war against the Horde. That was a few years before our time, but Kotahl, Saulgan, and I have been here for at least a decade now. We've been experimenting with new ways to fight against the Horde.");

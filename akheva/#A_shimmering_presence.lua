@@ -1,3 +1,4 @@
+-- items: 10294
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("'s voice invades your mind, drawing images of past present and future together into a perverse harmony. Some images you recognize as your own, but the others seem to be coming from the spirit's own [memories].");

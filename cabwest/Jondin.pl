@@ -1,3 +1,4 @@
+# items: 17025, 12442, 12443
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings. friend.  I have many fine herbs for sale.  My prices are reasonable for I am not governed by the [Haggle Baron].  If you fancy yourself an adventurer. I would like to hire you for a [simple mission].");

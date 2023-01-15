@@ -1,5 +1,6 @@
 #Rogue #3
 #Zone:sharvahl  ID:155056 -- Taruun_Joharr
+# items: 3466, 5560, 5561, 5559, 5563, 17607, 5568, 5564
 
 
 

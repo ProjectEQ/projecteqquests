@@ -1,6 +1,7 @@
 #zone: tutorialb
 #quest: Flutterwing's sibling
 #site3op
+# items: 54603, 38005, 38173, 38089, 38110, 38068, 38194, 38026, 38152, 38047, 38215, 38299, 38236, 38257, 38278, 38131, 38320, 13014
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

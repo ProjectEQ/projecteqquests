@@ -1,8 +1,8 @@
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["monk_epic"] >= "8" and e.message:findi("hail")) then
+	if(qglobals["monk_epic"] ~= nil and qglobals["monk_epic"] >= "8" and e.message:findi("hail")) then
 		e.self:Say("I see you have found me once again. I have grown in strength since the last time the Order tried to defeat me. When the final blow was struck I was reborn in this world. The hatred within my heart gave me newfound strength. There was another far more powerful than the great Rallos Zek. He provided me this new shell and capabilites far superior than that which I could imagine. I am everlasting. If you wish to meet your god prepare to [" .. eq.say_link("die") .. "].");
-	elseif(qglobals["monk_epic"] >= "8" and e.message:findi("die")) then
+	elseif(qglobals["monk_epic"] ~= nil and qglobals["monk_epic"] >= "8" and e.message:findi("die")) then
 		e.self:Say("It is useless to try and challenge me. Kaiaren will forever be lost within this land of discord!");
 		e.self:SetSpecialAbility(19, 0);
 		e.self:SetSpecialAbility(20, 0);

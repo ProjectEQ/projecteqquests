@@ -1,5 +1,6 @@
 # part of seventh coldain prayer shawl
 #
+# items: 1198
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1198 => 1)) {

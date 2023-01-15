@@ -1,3 +1,4 @@
+# items: 25106, 25191, 25130, 25266, 25267, 25269, 25268
 sub EVENT_SAY { 
 	if(($text=~/hail/i) && ($faction < 6)) { 
 		quest::say("Just another boring day waiting for supplies.  I wonder when they will arrive.");

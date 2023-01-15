@@ -1,3 +1,4 @@
+# items: 12271
 sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::emote("flutters about and seems to be staring back at you as if reading and understanding your thoughts!!");

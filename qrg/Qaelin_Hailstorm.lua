@@ -1,3 +1,4 @@
+-- items: 66172
 function event_say(e)
 	local deity = e.other:GetDeity();
 	

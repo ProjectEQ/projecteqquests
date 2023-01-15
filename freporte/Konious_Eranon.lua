@@ -1,3 +1,4 @@
+-- items: 18856, 13566
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings!  I am the mighty Konious Eranon, Master Enchanter, devoted follower of Innoruuk, and loyal assistant to the all-powerful Nexvok.");

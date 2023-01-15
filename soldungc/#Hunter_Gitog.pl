@@ -1,5 +1,6 @@
 ##Hunter_Gitog.pl
 #Gitog's Goblin Heads
+# items: 55252, 55240
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

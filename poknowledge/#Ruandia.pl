@@ -1,5 +1,6 @@
 #BeginFile: poknowledge\#Ruandia.pl
 #Quest file for Plane of Knowledge - Ruandia: Necromancer Epic 1.5 (Soulwhisper)
+# items: 22691, 10138
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

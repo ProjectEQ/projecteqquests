@@ -1,3 +1,4 @@
+-- items: 8908, 8911, 8915
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, traveler. I am Gurrin Nitestorm, priest of The Rainkeeper and blacksmith of the Jaggedpine. I am still somewhat lost in these foreign lands and although my excitement to be reunited with our kin and brethren of the Jaggedpine Tree Folk is very much alive, I cannot help but long for my home. Aaaah, but [duty] calls and I must do what I can to aid both forces that equally strive to keep the sacred lands safe from harm and corruption.");

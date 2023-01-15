@@ -1,3 +1,4 @@
+-- items: 12990, 12755
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("smiles at you with a wide grin. 'You are quite brave to approach me and speak. On any other day, I would not give you the opportunity. Fortunately for you, I am preoccupied with my master's [quest].'");

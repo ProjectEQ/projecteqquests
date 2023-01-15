@@ -1,3 +1,4 @@
+# items: 22812, 22813, 19113, 16498, 28514
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello, strange one. I am Bloogy Shellcracker, the preparer of meals for my people. I am not familiar with the culinary tastes of your kind but you are welcome to purchase some of my supplies. I will also barter for ingredients to some of my exotic dishes.");

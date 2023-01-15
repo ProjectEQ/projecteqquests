@@ -1,5 +1,6 @@
 # fifth coldain prayer shawl
 # 
+# items: 17879, 1179
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

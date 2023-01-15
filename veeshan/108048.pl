@@ -1,5 +1,6 @@
 #BeginFile: Phara_Dar.pl
 #Quest for Veeshan's Peak - Phara Dar: Proof for Phara Dar
+# items: 69316, 69390, 69389, 27261, 69315
 sub EVENT_SPAWN {
 	quest::setnexthpevent(80);
 }

@@ -1,3 +1,4 @@
+# items: 1711, 1712
 sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::say("Where am I? Oh god no, please let this be a simple nightmare. Please don't hold my withering soul here any longer!  Who are you? Why have you freed me? Please tell me it is over!");

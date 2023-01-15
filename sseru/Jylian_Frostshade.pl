@@ -1,5 +1,6 @@
 # Jylian's Research
 #
+# items: 29865, 29890
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -4,6 +4,7 @@
 # (prayer to brell) said by the player the quest needs to be changed slightly.
 # the player will recite the prayer to the grand historian a certain number
 # of times to receive the etched rune pattern.
+# items: 1852, 18281
 
 sub EVENT_SAY {
   if ($text=~/burin/i) {

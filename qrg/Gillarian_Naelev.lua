@@ -1,3 +1,4 @@
+-- items: 13813, 8803, 13825
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome, friend. Welcome to Surefall Glade. I need not remind you about [poaching], I hope");

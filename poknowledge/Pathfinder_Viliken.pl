@@ -1,5 +1,6 @@
 #Pathfinder_Viliken.pl
 #Ranger PoP Spells
+# items: 29112, 26943, 21628, 21627, 29131, 26931, 26929, 26930, 21626, 29132, 21655, 26932
 
 
 sub EVENT_SAY {

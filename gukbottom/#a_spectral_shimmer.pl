@@ -4,6 +4,7 @@
 #
 # Pop by gukbottom/#a_corrupted_gnome_explorer.pl
 # Model posted is old undead froglok: http://eqbeastiary.allakhazam.com/search.shtml?id=13045
+# items: 67013
 
 
 sub EVENT_SPAWN {

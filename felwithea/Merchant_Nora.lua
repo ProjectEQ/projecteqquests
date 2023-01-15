@@ -1,4 +1,5 @@
 -- ancient pattern subquest -- ranger/druid epic
+-- items: 20458, 20459
 
 function event_trade(e)
 	local item_lib = require("items");

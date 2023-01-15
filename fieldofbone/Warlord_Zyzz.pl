@@ -1,3 +1,4 @@
+# items: 12650, 18213, 17996, 12668, 12657
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::say("There is little time for talk. There are plenty of [tiny invaders]. Do your part and exterminate as many as you can. All of Cabilis shall look favorably upon you in the long run.");
@@ -13,13 +14,13 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12650 => 4)){
    #Scorpion Pincers (END)
    quest::say("Magnificent!! The more pincers I get the lesser scorpions there are. Here. Take the bounty.");
-   quest::faction(441,5);  # +Legion of Cabilis
-   quest::faction(440,5);   # +Cabilis Residents
-   quest::faction(445,5);  # +Scaled Mystics
-   quest::faction(442,5);   # +Crusaders of Greenmist
-   quest::faction(444,5);  # +Swifttails
+   quest::faction(441,3);  # +Legion of Cabilis
+   quest::faction(440,1);   # +Cabilis Residents
+   quest::faction(445,1);  # +Scaled Mystics
+   quest::faction(442,1);   # +Crusaders of Greenmist
+   quest::faction(444,1);  # +Swifttails
    quest::givecash(4,2,0,0);
-   quest::exp(10);  
+   quest::exp(2500);  
   }
   
   if (plugin::check_handin(\%itemcount, 18213 =>1 )) {

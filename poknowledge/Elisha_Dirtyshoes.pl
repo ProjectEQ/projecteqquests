@@ -1,5 +1,6 @@
 #Elisha_Dirtyshoes.pl
 #Willamina's Needles
+# items: 28086, 28087
 
 
 sub EVENT_SAY {

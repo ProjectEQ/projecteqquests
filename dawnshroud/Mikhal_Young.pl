@@ -1,3 +1,4 @@
+# items: 69945, 69946
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		if($client->GetGlobal("paladin_epic") ==4) {

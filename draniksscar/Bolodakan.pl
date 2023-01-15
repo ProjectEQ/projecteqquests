@@ -1,6 +1,7 @@
 #Bolodakan.pl
 #The Spire Beacon, Honor Ladislev, Recover the Family Crest
 #Must be warmly+ to do these. -Kilelen
+# items: 36541, 36540, 36539, 36538, 71138, 71137, 36536, 36537, 36535, 71141, 71142, 36543, 36542, 71140, 71139
 
 sub EVENT_SAY
 {

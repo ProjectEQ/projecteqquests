@@ -1,5 +1,6 @@
 # Grimling Picks
 #
+# items: 2695, 31727
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

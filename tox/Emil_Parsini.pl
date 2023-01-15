@@ -1,3 +1,4 @@
+# items: 17917, 13824, 13822
 sub EVENT_SAY {
 
 if($text=~/Hail/i){

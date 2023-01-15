@@ -1,3 +1,4 @@
+# items: 5990, 5991, 5992, 5993, 5994
 sub EVENT_SAY {
   if ($text=~/want to know about hoober/i) {
     quest::say("I will try not to repeat what Ragnar has already told you.' After taking a deep breath, clearly taxed by the memories, he continues, 'My research had brought me to Katta Castellum. After a long day's work I took a seat at the end of the bar in a local pub. Trying to get my mind off of potions for a while, I overheard a story about a crazy man roaming Tenebrous Mountains. Everyone seemed to know him as Hoober the Delirious. Seems he had become something of a local legend for his very odd habit of asking people to gather some rather obscure ingredients in exchange for a very rare reward.");

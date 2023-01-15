@@ -1,3 +1,4 @@
+# items: 3446, 3447, 3448, 3449
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Good day friend! I'm glad you've stopped by. I am in need of some assistance. Please direct anyone seeking work to me.");

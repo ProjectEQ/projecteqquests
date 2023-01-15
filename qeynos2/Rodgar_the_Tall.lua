@@ -1,3 +1,4 @@
+-- items: 13878, 13824
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Greetings. %s!  You look like you could use some new footwear.",e.other:GetName()));

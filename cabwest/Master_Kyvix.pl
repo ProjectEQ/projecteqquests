@@ -1,3 +1,4 @@
+# items: 17024, 12848, 12420, 4262, 4263, 55978, 4264, 12853, 12852, 4265
 sub EVENT_SAY {   
   if($text=~/hail/i) {
     quest::say("Quite busy!! Quite busy!! Things must be done. [New components] to be collected!!");

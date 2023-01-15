@@ -1,3 +1,4 @@
+# items: 18884, 15270, 15226, 15279, 15211, 17929
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome to intelligence, young $name! Did you think all ogres were inept? Ha!! I hope you show the glimmer. We shamans need more within our ranks. Our race needs to evolve!! So, are you one of the smart ogres or have I spoken too many syllables?");

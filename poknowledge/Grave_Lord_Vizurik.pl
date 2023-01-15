@@ -1,5 +1,6 @@
 #Grave_Lord_Vizurik.pl
 #Shadow Knight Tomes/Planar Armor Exchange
+# items: 5166, 5167, 5168, 5169, 5171, 5172, 5173, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

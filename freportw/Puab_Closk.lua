@@ -1,3 +1,16 @@
+-- items: 12369, 18746, 13507, 28055, 12344
+function event_spawn(e)
+	local xloc = e.self:GetX();
+	local yloc = e.self:GetY();
+	eq.set_proximity(xloc - 50, xloc + 50, yloc - 50, yloc + 50);
+end
+
+function event_enter(e)
+	if(e.other:HasItem(18746)) then
+		e.other:Message(15,"As you get your bearings, a lightly armored man that appears to be in incredible shape turns to greet you. 'Welcome traveller. I am Puab Closk. If you wish to learn the ways of the Ashen Order, read the note in your inventory and hand it to me to begin your training.'");
+	end
+end
+
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 

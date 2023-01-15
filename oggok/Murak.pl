@@ -1,3 +1,4 @@
+# items: 51378, 51349, 51351, 51350, 51353, 51354, 51352, 51355, 55208, 55209
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Yuz be a shaman, yes? Gud, mez have many tings to teach yuz, yuz have lots of training still. Da first ting we haz to work on is teeching yuz to make some armor. If yuz a [shaman], mez can teech you da ways of our class.");

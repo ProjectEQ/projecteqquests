@@ -6,6 +6,7 @@
 #NPC ID: 110091
 #Quest Status: finished
 #
+# items: 30042
 
 sub EVENT_SPAWN {  
   quest::settimer("despawn",60); #this triggered mob is only available for hails for one minute then depops

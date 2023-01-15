@@ -1,3 +1,4 @@
+# items: 29855, 29856
 sub EVENT_ITEM {
   if ($faction<=5) { # you must be indiff, or invisible
     # 29855 :  Replacement Records

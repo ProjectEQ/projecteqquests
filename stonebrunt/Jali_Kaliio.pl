@@ -4,6 +4,7 @@
 #NPCs Involved: Jali Kaliio, Khonza Ayssla, 
 #Items Involved: Asp poison sac (16984), tiger skin (13762), bamboo shoot (6973), kejekan palm fruit (6974), panda claws (6961), vial of healing liquid (6976), burlap satchel (17884)
 #################
+# items: 6976, 6952
 
 sub EVENT_SAY
 {

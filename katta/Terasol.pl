@@ -1,5 +1,6 @@
 # Mining Operation
 #
+# items: 4755, 4754
 
 sub EVENT_SPAWN {
   $notecheck = 0;

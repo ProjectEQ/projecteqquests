@@ -1,3 +1,4 @@
+# items: 4478, 4460, 12000
 sub EVENT_SPAWN {
 	quest::say("Well thank heavens you're finally home, perhaps I should think twice before sending you out alone next time, little one.  Thank you so much for bringing her back, my friend.  Looks like she managed to talk you into carrying the buttons for her as well.");
 	quest::settimer("depop",300);

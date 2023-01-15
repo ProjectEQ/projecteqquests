@@ -4,7 +4,7 @@ function event_enter_zone(e)
 	e.self:SetGlobal("nexus_dre", "0", 3, "F");
 	e.self:SetGlobal("spire_dre", "0", 1, "F");
 	
-	qglobals = eq.get_qglobals(e.self);
+	local qglobals = eq.get_qglobals(e.self);
 	
 	if (qglobals.time_terror == "1") then
 		--Spawn Time Terror for Froggy-Went-A-Portin' quest
@@ -17,7 +17,7 @@ function event_enter_zone(e)
 end
 
 function event_timer(e)
-	qglobals = eq.get_qglobals(e.self);
+	local qglobals = eq.get_qglobals(e.self);
 
 	if ((e.timer == "spires") and (qglobals.nexus_dre == "1") and (qglobals.spire_dre == "1") and (e.self:HasItem(19720))) then
 		e.self:NukeItem(19720); -- Remove Spire Stone from inventory

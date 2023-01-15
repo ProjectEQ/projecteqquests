@@ -1,5 +1,6 @@
 #Feed the Hopper Quest
 #Zone:sharvahl  ID:155062 -- Animist_Mahron_Sood
+# items: 3918, 7079, 7074, 7071, 7078, 7075, 7072, 7081, 7073, 7080, 7076, 7082, 7077, 3812, 3670, 5571
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

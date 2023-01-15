@@ -3,6 +3,7 @@
 --280087 water
 --280088 air
 --280089 sen of mist
+-- items: 62621
 
 function Trenz_Combat(e)
 	if (e.joined == true) then		

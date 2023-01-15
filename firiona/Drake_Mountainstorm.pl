@@ -1,5 +1,6 @@
 # special gemstone for paladin quest spell divine might
 #
+# items: 10033, 10013
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10033 => 1)) { #fire emerald

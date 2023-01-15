@@ -1,4 +1,5 @@
 #Quest: Chialle's Friendship Ring
+# items: 30619, 30625
 
 #NPC: Saren Kaja
 #Zone: Shadeweaver's Thicket

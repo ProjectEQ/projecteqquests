@@ -2,6 +2,7 @@
 -- Quest for SK GM Treskar in Grobb
 -- Updated faction hits, requirements.  Also deleted Neriak era quests
 -- Added new quest that is on live - that seems pretty odd....
+-- items: 12190, 2308, 12199, 5020
 
 function event_say(e)
     local pfaction = e.other:GetFaction(e.self);

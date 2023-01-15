@@ -1,4 +1,5 @@
 #Haggle Baron Dalnir is spawned from the Tormented Tradesman, and sticks around long enough to give us the final piece of the Greenmist puzzle that we need. After we get the design from him, we can forge the Greenmist Khukri in the Always Works forge in the same room.
+# items: 13051, 13063, 3888, 3890
 
 sub EVENT_SAY {
  if($text=~/hail/i){

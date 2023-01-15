@@ -1,5 +1,6 @@
 # Gather Hides
 # created by Gonner
+# items: 66186, 66193
 
 sub EVENT_SAY {
 

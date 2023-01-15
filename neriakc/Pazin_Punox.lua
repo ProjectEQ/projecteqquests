@@ -1,5 +1,6 @@
 --Pazin_Punox.pl
 --Rogue Tome Handin/Rogue Master Sketch
+-- items: 7041, 9438
 
 function event_say(e)
 local qglobals = eq.get_qglobals(e.self,e.other);
@@ -19,7 +20,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 7041, item2 = 9438})) then--Burning Rapier, Lon's Head
+	if(item_lib.check_turn_in(e.trade, {item1 = 7041, item2 = 9438})) then--Burning Rapier, Lon's Head
 		e.self:Emote("laughs. 'Here, take this then!'");--text made up
 		e.other:QuestReward(e.self,0,0,0,0,24095); --Vein Rot Sketch
 	end

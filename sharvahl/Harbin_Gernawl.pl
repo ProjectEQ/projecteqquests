@@ -1,3 +1,4 @@
+# items: 2877, 3455, 3456, 3459, 3460, 3464, 2878, 3466, 3465
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello $name. It is my pleasure to meet you.");

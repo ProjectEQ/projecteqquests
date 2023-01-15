@@ -1,3 +1,4 @@
+-- items: 62639, 62640, 62603, 62601, 62602, 62641
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);
   if (e.other:Class() ~= "Ranger") then

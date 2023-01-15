@@ -10,7 +10,7 @@ function event_say(e)
 			e.self:Say(string.format("Oh, hello %s. Would you like to assist me in a [task]?",e.other:GetName()));
 		elseif(e.message:findi("task")) then
 			e.self:Say("Excellent! I was hoping you would be able to help me.");
-			eq.task_selector({143}); -- Task: Bringing Goods to the Karanas
+			eq.task_selector({500143}); -- Task: Bringing Goods to the Karanas
 		end
 	else
 		e.self:Say(string.format("Sorry, %s. I am quite busy...",e.other:GetName()));

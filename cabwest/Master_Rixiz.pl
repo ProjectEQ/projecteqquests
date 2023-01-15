@@ -1,3 +1,4 @@
+# items: 17023, 12411, 4261, 4262, 14794, 14810, 10033, 14813
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("You are on the grounds of the Brood of Kotiz. If you do not belong, you must leave at once. There shall be no [third rank skullcap] for you.");  

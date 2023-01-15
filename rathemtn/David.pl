@@ -3,6 +3,7 @@
 # Zone:  Rathe Mountains
 # Quest:  Bracers of Ro
 #########################################################
+# items: 12311, 12301
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,6 +1,6 @@
 function event_say(e)
 	local level = e.other:GetLevel();
-	local global = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.other);
 	
 	if(level >= 15) then
 		if(e.message:findi("hail")) then
@@ -15,7 +15,7 @@ function event_say(e)
 			e.self:Say("You should also know that there are five magi in the Wayfarers Brotherhood that have found very unique magic stones in the world that they are able to use to transport adventurers to one another. They have placed a magus with one of these stones at each large camp. They call it Farstone Magic. And that's not the only [" .. eq.say_link("interesting ore",false,"interesting ore") .. "] we've seen lately.");
 		elseif(e.message:findi("interesting ore")) then
 			e.self:Say("We've found some strange items off the dead in the dungeons. At first we just thought they were simple things -- rocks, pebbles, gems, and the like -- and then we noticed they had very unusual auras about them. Well, one day, Morden Rasp was toying with one -- a shiny green shard -- and he went to scrape it with his dagger. Suddenly, the shard began to reform and fused with his dagger. While the dagger remained as fine as ever, Morden himself felt a surge of strength! So, you will want to watch out for these strange magic pieces in the world. Now, I suggest you go talk to Selephra Giztral, Barstre Songweaver, Vual Stoutest, Teria Grinntli, or Ruanya Windleaf. They handle all of those who are interested in working for the Wayfarers Brotherhood and getting rewards. Remember well what I've told you!");
-			if(global.Wayfarer == nil) then
+			if(qglobals.Wayfarer == nil) then
 				e.other:Message(15,"You have completed a step toward becoming a great adventurer. Well done!");
 				eq.set_global("Wayfarer","1",5,"F");
 			end

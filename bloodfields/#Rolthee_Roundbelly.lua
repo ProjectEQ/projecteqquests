@@ -7,6 +7,18 @@ function event_timer(e)
     eq.depop();
     eq.zone_emote(10, "The reclusive girplans slink back into their caves.");
   elseif e.timer=="blur" then
+	local cl = eq.get_entity_list():GetShuffledClientList(); -- Shuffle the client list and choose 3 targets.
+		local count = 0;
+			for client in cl.entries do
+				if client.valid then -- If valid
+				e.self:CastedSpellFinished(5604, client); -- Crushing Blow
+				count = count + 1; -- Add per client.
+				end
+				if (count == 3) then
+				break -- Stop.
+				end
+			end
+  	e.self:Emote("flings its bulky body toward you and sends several opponents flying!");
 	e.self:WipeHateList();
   end
 end

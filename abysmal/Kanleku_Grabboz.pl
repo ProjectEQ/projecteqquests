@@ -1,5 +1,6 @@
 # Shaman Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54142, 68220, 54140, 68223, 54143, 68225, 54145, 68226, 54146, 68224, 54144, 68221, 54141
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

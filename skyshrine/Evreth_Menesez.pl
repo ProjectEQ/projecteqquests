@@ -1,4 +1,5 @@
 #Quest for skyshrine Evreth Menesez
+# items: 17166, 12550, 12558
 
 sub EVENT_SAY {
   if ($faction == 1) {

@@ -1,3 +1,4 @@
+# items: 18249, 18250
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail! I suggest you stay within the walls of Cabilis. This is no place for you. The Field of Bone is far too close.");

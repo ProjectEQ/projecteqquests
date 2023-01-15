@@ -1,3 +1,4 @@
+# items: 10073, 19052
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Gimme duffynitey rocks! Me powdrem GUUD!!!");

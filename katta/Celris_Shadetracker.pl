@@ -1,3 +1,4 @@
+# items: 7776, 7777
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hail $name! It is a pleasure to have such seasoned adventurers visit our noble city. I am Magistrate Celris Shadetracker of the Loyalist Combine Empire. I was of the original members of the Combine Empire to arrive here on Luclin and have since become quite familiar with its many lands and their inhabitants. I used to travel extensively but in my old age I have found comfort in remaining here at the Tsaph Katta Hall telling younger explorers of my many journeys and teaching them of the [dangers] that abound.");

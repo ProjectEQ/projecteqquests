@@ -1,3 +1,4 @@
+-- items: 10400
 function event_say(e) -- no matter what you say, he'll always respond to this text.
 	e.self:Say('Close the door and be gone fool! You are going to give away my hiding spot!');
 end

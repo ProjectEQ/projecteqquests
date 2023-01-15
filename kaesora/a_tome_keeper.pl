@@ -1,4 +1,5 @@
 #The tome keeper will give us one of a few possible tomes, chosen randomly, that will tell us how to proceed on the next part of the Shackle of Tynonnium quest.
+# items: 4196
 
 sub EVENT_SAY {
  if($text=~/hail/i){

@@ -1,3 +1,4 @@
+# items: 55492, 55488, 55486, 55485, 55490, 55487, 55489, 55491, 55470, 55493
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("scratches her beard.");

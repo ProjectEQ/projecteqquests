@@ -41,6 +41,9 @@ local queen = nil
 local bombstate = {} -- [Spawn ID, chase state]
 local timerstate = {} -- [Spawn ID, state of timer for portal adds]
 local princesscount = 0
+local ellipse = require("ellipse_box")
+local boundary = ellipse(206,-533, 210, 108)
+--boundary = ellipse(207, -531, 170, 89)
 
 -- various functions we use
 function CheckLeash(e)
@@ -52,7 +55,7 @@ function CheckLeash(e)
 end
 
 function PortalAdds(mob)
-    local id = eq.ChooseRandom(334085, 334086, 0)
+    local id = eq.ChooseRandom(334085, 334086)
     if id > 0 then
         eq.spawn2(id, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading())
     end
@@ -75,6 +78,7 @@ end
 function QueenSpawn(e)
     queen = e.self
     princesscount = 0
+	add_sequence = 0
     eq.unique_spawn(334048, 0, 0, 25, -725, 308.750000, 0) -- Zulaqua
     eq.unique_spawn(334047, 0, 0, 64.239998, -725.890015, 301.559998, 511.200012) -- Yelnia
     eq.unique_spawn(334045, 0, 0, 310.910004, -726.130005, 301.464203, 0) -- Quellon
@@ -91,6 +95,7 @@ function QueenTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
+	eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
             local portal = portals[eq.ChooseRandom(334048, 334047, 334045, 334043, 334044, 334046)]
             eq.spawn2(334086, 0, 0, portal:GetX(), portal:GetY(), portal:GetZ(), portal:GetHeading())
         else
@@ -101,10 +106,11 @@ function QueenTimer(e)
 end
 
 function QueenCombat(e)
-    if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", 40000) -- 40 sec
-        timerstate[e.self:GetID()] = true
-        -- should we spawn adds?
+    if e.joined then
+	if timerstate[e.self:GetID()] == false then
+        	eq.set_timer("portals", 5000) -- 5 sec initially
+        	timerstate[e.self:GetID()] = true
+        end
     end
 end
 
@@ -124,20 +130,67 @@ function PrincessTimer(e)
         CheckLeash(e)
     elseif e.timer == "portals" then
         if e.self:IsEngaged() then
+            eq.set_timer("portals", math.random(40,60) * 1000) -- 40-60 sec
             PortalAdds(portals[e.self:GetNPCTypeID()])
         else
             eq.stop_timer("portals")
             timerstate[e.self:GetID()] = false
         end
+		
+	elseif e.timer == "aggro" then
+		
+		local clients = eq.get_entity_list():GetClientList();
+        	for client in clients.entries do
+                	if client.valid and boundary:contains(client:GetX(), client:GetY()) then
+                        	--e.self:Shout("In ellipse: " .. client:GetName())
+				e.self:AddToHateList(client,1);
+                	elseif client.valid then 
+                        	--e.self:Shout("Not in ellipse: " .. client:GetName())
+                	end
+        	end
+		--	e.self:AddToHateList(e.other,1);
+		
+	elseif e.timer == "hatelink" then
+		if (e.self:GetNPCTypeID() == 334043 or e.self:GetNPCTypeID() == 334044 or e.self:GetNPCTypeID() == 334045) then
+			--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334043 or npc:GetNPCTypeID() == 334044 or npc:GetNPCTypeID() == 334045 or npc:GetNPCTypeID() == 334085)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+		end
+		end
+		elseif (e.self:GetNPCTypeID() == 334048 or e.self:GetNPCTypeID() == 334047 or e.self:GetNPCTypeID() == 334046) then
+			--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 334048 or npc:GetNPCTypeID() == 334047 or npc:GetNPCTypeID() == 334046 or npc:GetNPCTypeID() == 334085)) then
+			npc:AddToHateList(e.self:GetHateRandom(),1);
+		end
+		end
+		end
     end
 end
 
 function PrincessCombat(e)
-    if e.joined and timerstate[e.self:GetID()] == false then
-        eq.set_timer("portals", 40000) -- 40 sec
-        timerstate[e.self:GetID()] = true
-        PortalAdds(portals[e.self:GetNPCTypeID()])
+    if e.joined then
+        if timerstate[e.self:GetID()] == false then
+            eq.set_timer("portals", 5000) -- 5 sec initially
+            timerstate[e.self:GetID()] = true
+            --PortalAdds(portals[e.self:GetNPCTypeID()])
+        end
+	eq.stop_timer("aggro");
+	eq.set_timer("hatelink", 4 * 1000);
+	else
+		if add_sequence == 1 then
+			eq.set_timer("aggro", 5 * 1000);
+		end
+	eq.stop_timer("hatelink");
     end
+end
+
+function PrincessSignal(e)
+	add_sequence = 1;
+	eq.set_timer("aggro", 5 * 1000);
 end
 
 function PrincessDeath(e)
@@ -148,11 +201,59 @@ function PrincessDeath(e)
         queen:SetSpecialAbility(SpecialAbility.immune_aggro, 0)
         queen:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
     end
+	
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334048) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334047) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334046) == false) then
+		--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
+		eq.signal(334043,1);
+		eq.signal(334044,1);
+		eq.signal(334045,1);
+		
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 334043 or npc:GetNPCTypeID() == 334044 or npc:GetNPCTypeID() == 334045)) then
+					--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
+			--npc:AddToHateList(e.self:GetHateTop(),1);
+			npc:ModifyNPCStat("aggro", "200");
+			npc:ModifyNPCStat("assist", "200");
+			end
+		end
+	elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334043) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334044) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334045) == false) then
+		
+		--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
+		eq.signal(334048,1);
+		eq.signal(334047,1);
+		eq.signal(334046,1);
+		
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+			if (npc.valid and (npc:GetNPCTypeID() == 334048 or npc:GetNPCTypeID() == 334047 or npc:GetNPCTypeID() == 334046)) then
+				--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
+			--npc:AddToHateList(e.self:GetHateTop(),1);
+			npc:ModifyNPCStat("aggro", "200");
+			npc:ModifyNPCStat("assist", "200");
+			end
+		end
+	end
 end
 
 -- other hooks
 function ChimeraSpawn(e)
     eq.set_timer("depop", 270000) -- 4 min 30 sec
+end
+
+function ChimeraCombat(e)
+if(e.joined) then
+eq.stop_timer("depop");
+else
+e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
+eq.set_timer("depop", 270 * 1000);
+end
+end
+
+function ChimeraTimer(e)
+if (e.timer == "depop") then
+eq.depop();
+end
 end
 
 function BombSpawn(e)
@@ -223,6 +324,14 @@ function event_encounter_load(e)
     eq.register_npc_event("queen", Event.combat, 334043, PrincessCombat)
     eq.register_npc_event("queen", Event.combat, 334044, PrincessCombat)
     eq.register_npc_event("queen", Event.combat, 334046, PrincessCombat)
+	
+eq.register_npc_event("queen", Event.signal, 334048, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334047, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334045, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334043, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334044, PrincessSignal)
+    eq.register_npc_event("queen", Event.signal, 334046, PrincessSignal)
+	
     eq.register_npc_event("queen", Event.death_complete, 334048, PrincessDeath)
     eq.register_npc_event("queen", Event.death_complete, 334047, PrincessDeath)
     eq.register_npc_event("queen", Event.death_complete, 334045, PrincessDeath)
@@ -231,7 +340,8 @@ function event_encounter_load(e)
     eq.register_npc_event("queen", Event.death_complete, 334046, PrincessDeath)
 
     eq.register_npc_event("queen", Event.spawn, 334085, ChimeraSpawn)
-    eq.register_npc_event("queen", Event.timer, 334085, AddTimer)
+	eq.register_npc_event("queen", Event.combat, 334085, ChimeraCombat)
+	eq.register_npc_event("queen", Event.timer, 334085, ChimeraTimer)
 
     eq.register_npc_event("queen", Event.spawn, 334086, BombSpawn)
     eq.register_npc_event("queen", Event.timer, 334086, AddTimer)

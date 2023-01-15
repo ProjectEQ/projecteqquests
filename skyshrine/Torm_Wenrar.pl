@@ -1,3 +1,4 @@
+# items: 11990, 12555, 11991, 11993, 11992, 12556, 11995, 11994, 11997, 11996, 12557
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hail to you my friend $name! I am Torm Wenrar, proud warrior of the Draconic Loyalist Fellowship. The dragons and dragon-kin of Skyshrine have need of capable warriors to aid in the war with the giants of Kael Drakkel. Do not consider this a sign of weakness, even the most powerful beings benefit from having friends and allies. The Giants too have many beings in their service, Ogres, Trolls, and unfortunately even Northmen like myself have been hired into the service of the Kromzek. These mercenaries must be put down, perhaps if enough of them are slain, other sell swords would be deterred from seeking employment of the Kromzek. The dragon-kin have placed a [bounty] on the lives of the Kromzeks mercenaries, any aid you can provide to the Skyshrine would be well rewarded.");

@@ -1,3 +1,4 @@
+# items: 30262, 30263
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Huh? What are ya needin'? Speak up! I ain't got all day. Are you here to help out or just eat up valuable time chatting?");

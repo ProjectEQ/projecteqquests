@@ -1,5 +1,6 @@
 #Councilman_Srethix.pl
 #Tome of Dark Power
+# items: 28741, 28742, 17182, 28746, 15790
 
 
 sub EVENT_SAY {

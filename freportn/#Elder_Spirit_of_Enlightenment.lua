@@ -1,5 +1,6 @@
 --freeportwest/Elder_Spirit_of_Enlightenment.lua NPCID 383145
 --Shaman Epic 1.5, 2.0 and Prequest
+-- items: 57081, 57088, 57400, 57710, 52921, 57083, 57084, 57614, 57551, 57987, 57404, 47100
 local count = 0;
 local char_id = 0;
 local client;
@@ -21,7 +22,7 @@ function event_say(e)
 			e.self:Say("Should you choose to continue your journey, tell me that you are [" .. eq.say_link("prepared to carry on") .. "] and save the spirits.");
 		else --Dont have the Spear of Fate and haven't completed Prequest
 			if(e.message:findi("hail")) then
-				e.self:Say("It Appears you are not yet ready for the great tasks that I require to be done. There are Others lesser than me that can guide you and prepare you to walk a greater path should you choose. You should seek them out. You can Perhaps seek knowledge from your elders and peers.");
+				e.self:Say("It appears you are not yet ready for the great tasks that I require to be done. There are others lesser than me that can guide you and prepare you to walk a greater path should you choose. You should seek them out. You can perhaps seek knowledge from your elders and peers.");
 				if(qglobals["shaman_pre"] == nil) then
 					eq.set_global("shaman_pre","1",5,"F"); --Flagged to start Prequest
 				end
@@ -61,7 +62,7 @@ function event_say(e)
 		elseif(e.message:findi("troubled") and qglobals["shaman_epic"] == "2") then
 			e.self:Say("Somehow, the Tribunal then became aware of Veshtaq's concerns and passed a judgment -- that Ceshtaq be granted a place among the trials he created, becoming immortal. With that judgment, the Tribunal had contacted one of the great spirits, that of Patience, and asked for a [" .. eq.say_link("meaningful way") .. "] for a shaman to become immortal.");
 		elseif(e.message:findi("meaningful way") and qglobals["shaman_epic"] == "2") then
-			e.self:Say("or a shaman, a blessing of etenal life from any spirit is an honor, so a talisman was created by the Spirit of Patience to sustain Veshtaq for all time and he would be once again be rejoined with the spirit world. Now, Mwinda, it is up to you to retrieve the talisman. You may not simply ask for it. You will have to complete the ery tial he commands and defeat his essence. Do not fret. The Tribunal will sustain him in that plane so he may continue his work.");
+			e.self:Say("For a shaman, a blessing of eternal life from any spirit is an honor, so a talisman was created by the Spirit of Patience to sustain Veshtaq for all time and he would be once again be rejoined with the spirit world. Now, Mwinda, it is up to you to retrieve the talisman. You may not simply ask for it. You will have to complete the ery tial he commands and defeat his essence. Do not fret. The Tribunal will sustain him in that plane so he may continue his work.");
 		elseif(e.message:findi("stolen") and qglobals["shaman_epic"] == "3") then
 			e.self:Say("Very well. You will need to return to Wunshi for more information. He will be able to lead you to some of what we need if you ask him. Return to me and tell me when your business with Wunshi is finished. I am too tired to continue.");
 		elseif(e.message:findi("business with Wunshi is finished") and qglobals["shaman_epic"] == "4") then
@@ -185,9 +186,9 @@ function event_timer(e)
 		end
 
 		if(count == 0) then
-			client:Message(0,"You recognize that the spirits hold items you've retrieved -- crafted totems, the necklace, beads. ");
+			client:Message(0,"You recognize that the spirits hold items you've retrieved -- crafted totems, the necklace, beads.");
 		elseif(count == 1) then
-			client:Message(0,"The spirits all howl, creating a resonance that shakes the ground around you. ");
+			client:Message(0,"The spirits all howl, creating a resonance that shakes the ground around you.");
 			e.self:CameraEffect(2000,1);
 		elseif(count == 2) then	
 			eq.signal(8119 ,1); --#Elder Spirit of Perseverance
@@ -219,7 +220,7 @@ function event_timer(e)
 			client:Message(0,"Finally, the Spirit of Might appears, its essence is faded and it is so weak it barely keeps a hold on its own existence.");
 			eq.spawn2(8124,0,0,50.25 ,64 , 17.13 ,380 ); --#Elder Spirit of Might
 		elseif(count == 17) then	
-			client:Message(0,"The spirits slow their chanting and then there is silence. ");
+			client:Message(0,"The spirits slow their chanting and then there is silence.");
 		elseif(count == 18) then	
 			eq.signal(8124 ,1); --#Elder Spirit of Might
 		elseif(count == 19) then	

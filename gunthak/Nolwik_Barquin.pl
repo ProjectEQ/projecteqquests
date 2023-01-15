@@ -1,6 +1,7 @@
 #Nolwik_Barquin.pl
 #Started by Angelox, finished by Kilelen
 #Healing Waters
+# items: 59061, 59062, 59014
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

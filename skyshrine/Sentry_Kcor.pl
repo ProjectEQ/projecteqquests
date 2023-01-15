@@ -1,5 +1,6 @@
 #Merging from Not_Found.pl
 #
+# items: 29062, 29624
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

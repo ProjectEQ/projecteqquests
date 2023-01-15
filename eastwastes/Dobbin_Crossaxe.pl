@@ -1,3 +1,4 @@
+# items: 30162, 1047
 my $ring_seven_final = undef;
 
 sub EVENT_SIGNAL {

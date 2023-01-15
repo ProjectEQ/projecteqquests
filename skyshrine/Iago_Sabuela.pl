@@ -4,6 +4,7 @@
 #Quest Writer: Shadestrike
 #NPC Name: Iago Sabuela
 #NPC ID: 114276
+# items: 11637, 11636, 17167, 28057, 12559
 
 
 sub EVENT_SAY {

@@ -1,4 +1,5 @@
 -- Wizard Epic 1.5 NPC, Step 4
+-- items: 12593
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);

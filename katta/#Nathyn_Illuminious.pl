@@ -1,3 +1,4 @@
+# items: 31755, 31752, 31754
 sub EVENT_SAY{
 	if(($text=~/valdanov zefeer/i) && (defined $qglobals{first_badge_nathyn})){
 		quest::say("Valdanov Zevfeer was a talented alchemist from Shadow Haven with whom I had many dealings. He would bring me components for my enchantment research from all the various environments here on Luclin. Since Valdanov had been such a valuable aid to me in the past I decided to return the favor and allowed him residence within my abode and helped to further fund his research as long as he assisted me in my own enchantment studies. He has since left to continue to pursue his own interests and I have not heard from him in [quite some time].");

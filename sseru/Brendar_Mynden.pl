@@ -1,5 +1,6 @@
 # Poisoning Brendar
 #
+# items: 67010, 29863
 
 sub EVENT_SAY {
   if ($text=~/compromise/i) {

@@ -1,3 +1,4 @@
+# items: 18324
 
 
 sub EVENT_SAY {

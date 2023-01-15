@@ -1,7 +1,18 @@
+-- epic expedition version of Struggles within the Progeny
+-- Game Update Notes: April 19, 2017
+-- Valdoon Paladin Epic 2.0 (Raid) - Lowered the minimum number of players necessary to request this raid from 10 to 6.
+-- items: 69975, 69976, 69981, 69956
+local paladin_minimum_players = 10
+
+local paladin_mmcc = {
+  expedition = { name="The Asylum of Invoked Stone", min_players=paladin_minimum_players, max_players=54 },
+  instance   = { zone="mmcc", version=50, duration=eq.seconds("3h") },
+  compass    = { zone="lfaydark", x=3877.23, y=-127.446, z=-53.598 },
+  safereturn = { zone="lfaydark", x=3847, y=-56, z=-50, h=0 },
+  zonein     = { x=-424.0, y=-108.0, z=1.25, h=0 }
+}
+
 function event_say(e)
-	--local raid = e.other:GetRaid();
-	--local instance_id = eq.get_instance_id("mmcc", 50);
-	--eq.remove_all_from_instance(instance_id);
 	local qglobals = eq.get_qglobals(e.other);
 	if(qglobals["paladin_epic"] == "9") then
 		if(e.message:findi("hail")) then
@@ -12,22 +23,14 @@ function event_say(e)
 			e.self:Say("I told him how I saw a Vampire near the cleric's guild and how he wasn't there when the guards returned. Lord Tynkale didn't believe me, however, he did promise to give me a chance to prove what I saw. You will need to assist me in proving what I saw, " .. e.other:GetName() .. ", for I think that Vampire may have been scouting for an invasion of Felwithe. Go to all the cities in Faydwer and investigate any odd occurrences there, for I think there might be other Vampire sightings throughout the continent. Take this bag and fill it with any proof you find. Good luck crusader.");
 			e.other:SummonItem(69975); -- Item: Galrun's bag
 		elseif(qglobals["paladin_epic_mmcc"] == "1" and e.message:findi("valdoon")) then
-		  local instance_requests = require("instance_requests");
-		  local lockout_globals = {{'LDON_mmcc', 'LDoN Raid: Mistmoore Catacombs: Struggles within the Progeny'}}
-
-		  local request = instance_requests.ValidateRequest('raid', "mmcc", 50, 2, 54, 61, {any = {41000, 40999}}, nil, e.other, lockout_globals);
-		  if (request.valid and request.flags == 1) then
-			instance_requests.DisplayLockouts(e.other, e.other, lockout_globals)
-		  elseif (request.valid and request.flags == 0) then
-			local raid = e.other:GetRaid();
-			local instance_id = eq.create_instance("mmcc", 50, 10800);
-			eq.set_global(instance_id.."_mmcc_bit",tostring(request.flags),7,"H3");
-			if (raid.valid) then
-			  eq.assign_raid_to_instance(instance_id);
-			  e.self:Say("Very well, " .. e.other:GetName() .. ". The fate of all of the residents of this continent are now in your hands. Cleanse the Mistmoore Catacombs of the Vampire infestation and put an end to Valdoon Kel`Novar. Bring me his heart when you are finished, for I need proof to show Lord Tynkale that Vampire invasion has been stopped.");
-			  e.other:Message(15,"Mistmoore Catacombs: Struggles within the Progeny is now available to you.");
+			-- this expedition request requirement is unverified, based on a log posted to allakhazam
+			local is_gm = (e.other:Admin() > 80 and e.other:GetGM())
+			if not is_gm and e.other:GetRaidMemberCountInZone() < paladin_minimum_players then
+				e.self:Say("I'm sorry, " .. e.other:GetCleanName() .. ", but you need more people before we can begin this.")
+			else
+				e.self:Say("Very well, " .. e.other:GetName() .. ". The fate of all of the residents of this continent are now in your hands. Cleanse the Mistmoore Catacombs of the Vampire infestation and put an end to Valdoon Kel`Novar. Bring me his heart when you are finished, for I need proof to show Lord Tynkale that Vampire invasion has been stopped.");
+				e.other:CreateExpedition(paladin_mmcc)
 			end
-		  end		  
 		end
 	end
 end

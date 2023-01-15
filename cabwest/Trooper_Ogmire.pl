@@ -1,3 +1,4 @@
+# items: 18245, 18246
 sub EVENT_SAY {
   if ($text=~/hail/i) { #Did not respond to hail on live 01/22/2014
     quest::say("Greetings, citizen. Looking for healing or other such services? If so, then I urge you to seek out the Temple of Terror. The hierophants will see to it for you.");

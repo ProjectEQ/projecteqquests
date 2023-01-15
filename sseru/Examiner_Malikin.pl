@@ -1,4 +1,5 @@
 #i believe this NPCs name is mispelt on Allas it has MalikEn not MalikIn
+# items: 3876, 3877, 3878, 3880, 3879, 3882, 3881, 3883, 3884
 
 sub EVENT_SAY
 {

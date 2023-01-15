@@ -1,5 +1,6 @@
 -- Winds of Karana
 -- Broken Lute
+-- items: 13114, 18803, 13116, 13119, 15722, 15717, 77627
 
 function event_say(e)
 	if(e.message:findi("hail")) then

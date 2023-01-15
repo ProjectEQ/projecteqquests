@@ -1,3 +1,4 @@
+# items: 17997, 12915, 12917, 12918, 12919, 12920, 12921, 12673, 12674
 sub EVENT_SAY {
 	if($text=~/Hail/i){
 		quest::say("Yes. yes!!  What do I have here?!!  Another [new recruit]?  If so. then speak up!  If not. then leave and do not waste my time nor risk your life.  I also seek a [legion soldier] if you be one.");

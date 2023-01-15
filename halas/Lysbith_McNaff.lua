@@ -1,3 +1,4 @@
+-- items: 17944, 12223, 7322, 13898, 13005, 13915
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail! Ye've come to [serve Halas]. have ye not? We're the Wolves o' the North and it is our task to defend our city from harm.");

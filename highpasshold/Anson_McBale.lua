@@ -1,3 +1,4 @@
+-- items: 28014
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	local class = e.other:Class();
@@ -8,7 +9,7 @@ function event_say(e)
 			e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
 		elseif(e.message:findi("see stanos") and class == "Rogue" and level >= 50) then
 			e.self:Say("This better be important.");
-			eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
+			eq.unique_spawn(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
 		end
 	else
 		e.self:Say("Go away! We don't have time for the likes of you.");
@@ -34,6 +35,14 @@ function event_trade(e)
 end
 
 function event_signal(e)
-	e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows who we are...");
-	eq.signal(5088, 0); --stanos
+	if(e.signal == 1) then
+		e.self:Say("The boss might need some help!");
+		local stanos = eq.get_entity_list():GetMobByNpcTypeID(5088); -- Stanos_Herkanor
+		if ( stanos.valid ) then
+			e.self:MoveTo(stanos:GetX(), stanos:GetY(), stanos:GetZ(), -1, false);
+		end
+	elseif(e.signal == 2) then
+		e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows who we are...");
+		eq.signal(5088, 1); --stanos
+	end
 end

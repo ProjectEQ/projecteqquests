@@ -5,6 +5,7 @@
 ## are at. 1 = Citizen Application. 2 = Cert. of Taxability, 3 = Stamped Cert.,
 ## 4 = Note to King Raja, 5 Note 'from' the king, 6 = Notarized Application
 ## and 7 = Initiate's Cloak.
+# items: 2874, 18299, 2897, 2877, 2873, 2875, 2876, 18304
 
 sub EVENT_SAY {
   ## Non-canon fixmes. Note: One issue with these is that they will say the text, even if you

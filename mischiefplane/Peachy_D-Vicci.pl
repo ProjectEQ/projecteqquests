@@ -4,6 +4,7 @@
 #
 #NPC Name: Peachy D`Vicci
 #NPC ID: 126171
+# items: 9504, 9505, 9506, 9507, 9508, 9509, 9511, 9512, 9513, 6877
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9504 => 2)) {

@@ -2,6 +2,7 @@
 #Started by Angelox, finished by Kilelen
 #Lots of cleanup by Cavedude, thanks!
 #High Level Research
+# items: 17652, 17655, 17653, 17654
 
 sub LiarLiar {
   quest::say("Do you take me for a fool? It is obvious that you are not what you state. Begone from my sight, your false statements disgust me and insult the realms of the arcane.");

@@ -1,5 +1,6 @@
 #BeginFile: steamfont\#Biddliss_Sperandu.pl
 #Quest file for Steamfont Mountains - Biddliss Sperandu: Necromancer Epic 1.5 (Soulwhisper)
+# items: 9831, 9579, 27982, 21799
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

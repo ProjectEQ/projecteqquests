@@ -1,3 +1,4 @@
+# items: 19374, 19378, 19269, 19384, 19386, 19379, 19381, 19215
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hello, $name. This place is quite a formidable outpost, but it lacks the comforts of home. Once I have finished collecting some of my [missing scrolls], I'll be able to leave this place and all its hidden dangers.");

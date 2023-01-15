@@ -1,5 +1,6 @@
 # Pristine ore samples
 #
+# items: 17711, 63008, 63049
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

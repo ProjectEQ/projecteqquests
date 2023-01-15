@@ -1,3 +1,4 @@
+# items: 52922, 52926, 57600, 57088, 57560, 57614
 sub EVENT_SAY {
   if (defined($qglobals{shaman_epic}) && ($qglobals{shaman_epic} == 1)) {
     if ($text=~/elder spirit sent me/i) {

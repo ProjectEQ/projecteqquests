@@ -1,5 +1,6 @@
 # Quest for Vrynn in Lakerathe - Shaman Totemic Armor (low 30's armor)
 # kiladiveus - completed subevents for this quest NPC. I created the ending statement since i can't find any. Same as exp.
+# items: 3064, 10073, 19039, 19041, 4941, 3062, 19050, 19043, 19046, 4942, 3060, 19051, 19038, 19045, 4943, 3063, 19052, 19034, 19037, 4944
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

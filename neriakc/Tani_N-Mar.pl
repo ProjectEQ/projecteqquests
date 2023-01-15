@@ -1,4 +1,5 @@
 # Rogue Epic NPC/Guildmaster -- Tani_N`Mar
+# items: 13892, 5066
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

@@ -1,3 +1,4 @@
+-- items: 18809, 13912
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. stranger. Please excuse my melancholy state.  I have had some [bad news] that has brought me great sorrow.");

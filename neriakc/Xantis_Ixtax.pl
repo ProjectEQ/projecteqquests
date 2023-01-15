@@ -1,3 +1,4 @@
+# items: 13394
 sub EVENT_SAY { 
 	if ($text=~/hail/i){
 		quest::say("Greetings, disciple $name. Feel free to inspect my wares. I am here to serve all necromancers of the Dead. I can also enchant a [Ring of the Dead] if you have one.");

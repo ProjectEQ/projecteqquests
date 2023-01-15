@@ -1,4 +1,5 @@
 #Prowler of the Jungle
+# items: 6981, 6979
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 6981 => 1)) { #Kejekan Smithy Hammer

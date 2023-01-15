@@ -4,6 +4,7 @@
 #Status: Incomplete
 #Issue2: Get correct text
 #
+# items: 10523, 19032, 14110, 14109, 14106
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

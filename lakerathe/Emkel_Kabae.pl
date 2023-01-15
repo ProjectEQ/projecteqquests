@@ -1,4 +1,5 @@
 # Necromancer Epic NPC -- Emkel_Kabae
+# items: 20643, 20649, 20644, 20650, 20647
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

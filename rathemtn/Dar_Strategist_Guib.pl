@@ -1,3 +1,4 @@
+# items: 67010, 67009
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Well hello there. I don't mean to be rude but I am trying to enjoy a short break alone and enjoy my favorite Ale.");

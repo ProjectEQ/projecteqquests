@@ -1,3 +1,4 @@
+# items: 18171
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Oh, I uh... err, hello there. Umm, thank Brelll you're here, those bloody Kromrif were going to torture me! Yes, yes, and you've saved me! How can I ever repay you?");

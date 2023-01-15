@@ -1,4 +1,5 @@
 # EPIC CLERIC
+# items: 28044, 28045
 
 sub EVENT_DEATH_COMPLETE {
   # he will be killed probably by Natasha Whitewater.

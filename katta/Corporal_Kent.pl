@@ -1,4 +1,5 @@
 # Shrieking Substances
+# items: 17497, 29842, 10664, 10668, 10663, 10665
 
 
 sub EVENT_SAY { 

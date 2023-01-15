@@ -1,5 +1,6 @@
 #Sorcerer_Kerynth.pl
 #Planar Armor Exchange
+# items: 1225, 1226, 1227, 1228, 1229, 1230, 1231, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

@@ -1,5 +1,6 @@
 #BeginFile: poknowledge\#Tebarin.pl
 #Quest file for Plane of Knowledge - Tebarin: Necromancer Epic 1.5 (Soulwhisper)
+# items: 10138, 16689, 27282, 16799, 16759, 9834, 11406, 13620, 11517, 24630, 15784
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

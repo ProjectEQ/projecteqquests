@@ -1,3 +1,4 @@
+# items: 1687
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("ignores you.");

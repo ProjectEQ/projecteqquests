@@ -1,4 +1,5 @@
 #This Iksar slave is actually Veltar, one of Master Rinmark's students. We interact with him and grant him his freedom in order to move further in the monk shackle quest line that eventually culminates in the Whistling Fists
+# items: 12839, 4194, 4195, 4196
 
 sub EVENT_SAY {
  if($text=~/hail/i){

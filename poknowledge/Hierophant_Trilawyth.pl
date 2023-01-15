@@ -1,5 +1,6 @@
 #Hierophant_Trilawyth.pl
 #Planar Armor Exchange
+# items: 3801, 3802, 3803, 3804, 3805, 3806, 3807, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

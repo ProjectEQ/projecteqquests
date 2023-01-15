@@ -1,3 +1,4 @@
+-- items: 12129, 12130
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I welcome you to the Temple of Marr. home to clerics of the deities Erollisi and Mithaniel Marr.  Please seek guidance from the clerics.");

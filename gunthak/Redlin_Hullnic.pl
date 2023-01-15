@@ -1,6 +1,7 @@
 #zone: gunthak
 #quest: Vision Shift
 #site3op
+# items: 59054, 59020
 
 sub EVENT_SAY{
   if($text=~/hail/i) {

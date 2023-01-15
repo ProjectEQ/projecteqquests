@@ -3,7 +3,7 @@ sub EVENT_SAY {
    quest::say("Hello, $name. Perhaps you are interested in helping me with a [task]?"); #Text made up
   }
   if($text=~/task/i) {
-   quest::taskselector(150); #Of Bones and Beetles
+   quest::taskselector(2004); #Of Bones and Beetles
   }
 }
 

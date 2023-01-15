@@ -1,3 +1,4 @@
+# items: 11043
 sub EVENT_SAY {
   if ($langid == 17) { #Elder Teir'Dal
     if ($text=~/hail/i) {

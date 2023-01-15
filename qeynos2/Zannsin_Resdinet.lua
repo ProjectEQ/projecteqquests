@@ -1,3 +1,4 @@
+-- items: 18795, 18028, 1048
 function event_waypoint_arrive(e)
 	if(e.wp == 10) then
 		e.self:Say("Hey Hanns.. Have you gotten word from Prak about the spy in Carson's guards?");

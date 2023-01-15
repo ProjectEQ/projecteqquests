@@ -1,5 +1,6 @@
 # Handy Shillelagh & Beguile Plants
 #
+# items: 12960, 12955, 12958, 12953, 11579, 12753, 12957, 12959, 12954
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

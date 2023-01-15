@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 17125, 19561, 19555, 19559, 19560, 19556, 19557, 19558, 10994, 11081
 
 function event_say(e)
 	if(e.message:findi("silk thread")) then

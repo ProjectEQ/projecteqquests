@@ -1,3 +1,4 @@
+-- items: 21800, 21820, 21801, 21821, 21802, 21822, 21803, 21823
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Greetings " .. e.other:GetName() .. ". If you're looking to sell a tan horse, I'll be happy to give you a fair price.  If you've got a different color horse you'd like to sell talk to one of my brothers.");

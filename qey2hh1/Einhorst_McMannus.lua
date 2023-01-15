@@ -8,6 +8,7 @@
 -- ## ZONE: qey2hh1
 -- ##
 -- ############################################
+-- items: 13961, 18831, 13962
 
 function event_say(e)
 	if(e.message:findi("hail")) then

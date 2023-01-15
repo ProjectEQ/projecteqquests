@@ -1,5 +1,6 @@
 # Ranger Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54170, 68220, 54168, 68223, 54171, 68225, 54173, 68226, 54174, 68224, 54172, 68221, 54169
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

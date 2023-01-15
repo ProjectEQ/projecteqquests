@@ -2,6 +2,7 @@
 #Angelox
 #note; I did this quest as per the original, "Titanium" version
 #Female erudite spirit for Quest: Temperance
+# items: 59030, 59011
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 59030 => 1)) { #Alina's Emblem

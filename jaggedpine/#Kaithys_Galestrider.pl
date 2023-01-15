@@ -2,6 +2,7 @@
 # Quest: Silver Blade of Thunder  (http://everquest.allakhazam.com/db/quest.html?quest=2137)
 # Written by Gameross - 04/05/10
 # Ally Faction needed.  
+# items: 8907, 8908, 8915, 17505, 8912, 8913, 8916
 
 
 sub EVENT_SAY {

@@ -2,6 +2,7 @@
 #Part of Innoruuk Regent
 #Some of this was done already (all the important bits, really).  
 #Cleaned up what was there and added a response to quest text -Kilelen
+# items: 19030, 19029, 19028, 12499
 
 
 sub EVENT_SAY{

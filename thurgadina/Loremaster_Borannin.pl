@@ -1,5 +1,6 @@
 # prayer shawl quests
 # 
+# items: 17102, 1420, 29125, 1175, 1174, 1176, 1422, 1177, 1560, 1178, 1199
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

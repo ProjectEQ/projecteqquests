@@ -1,3 +1,4 @@
+# items: 12739, 12659, 12426
 sub EVENT_SAY {
    if($text=~/hail/i)   {
 	quest::say("Greetings $name. Lately the creatures of Lake of Ill Omen have be causing problems for us. Are you [interested] in helping me reduce the threat from this creatures?");

@@ -1,3 +1,4 @@
+-- items: 51121, 51122, 18770, 13520, 13344, 9002, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();

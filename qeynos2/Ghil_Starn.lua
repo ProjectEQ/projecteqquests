@@ -1,3 +1,4 @@
+-- items: 13784
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I'm Ghil.. I used to run a small business before I hooked up with Hanns. Together, we muscled our competition out of Qeynos. But I'm getting too old for the rough stuff anymore, so I just lay low down here and peddle my goods. Anyway, I gotta get back to work and pack up this shipment for ol' [Denny-boy]");

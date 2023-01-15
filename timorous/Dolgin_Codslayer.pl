@@ -1,3 +1,4 @@
+# items: 20696
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("ARGH! Dangit, ya scared me! Tread cautiously, friend. This here place ain't as friendly as it seems. There's a beast lurkin' in this here puddle.");

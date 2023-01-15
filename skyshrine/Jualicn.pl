@@ -1,3 +1,4 @@
+# items: 1908, 17061
 sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("Why hello there, $name. I do not see many that pass through these chambers unless they are trusted. What brings you before me today?");

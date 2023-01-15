@@ -1,3 +1,4 @@
+# items: 19351, 19347, 19354, 19358, 19368, 19346, 19355, 19357
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Why is it that you have come to this place? If you are coming here to search for [magical scrolls], just get back on that so-called ship you came here on and forget everything you thought you heard.");

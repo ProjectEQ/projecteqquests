@@ -1,6 +1,7 @@
 # Rogue Abysmal Sea armor
 # Created by Gonner
 # Quest text missing Used the same as ranger
+# items: 68222, 54177, 68220, 54175, 68223, 54178, 68225, 54180, 68226, 54181, 68224, 54179, 68221, 54176
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

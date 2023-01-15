@@ -1,5 +1,6 @@
 -- BeginFile qeynos2\Vegalys_Keldrane.lua (2051)
 -- Quest file for North Qeynos - Vegalys Keldrane: Investigators Badge (Badge #1)
+-- items: 2173, 18289, 2386, 18292, 2583, 2694, 2392
 
 function event_say(e)
 	if(e.message:findi("hail")) then
@@ -36,6 +37,8 @@ function event_say(e)
 		e.self:Say("At this point, I am mainly in need of loyal and trustworthy investigators. I must first gather information on who these people are and exactly how far their influences stretch. However, once I begin to implement the next phase of this operation, you may be able to assist us once again if you prove to be talented enough. For now, simply continue to observe and report.");
 	elseif(e.message:findi("advance further") and e.other:HasItem(2386) == true) then
 		e.self:Say("Interested in advancing further are you? Excellent, we are ready to begin the next phase of our operation. We have gathered a great deal of information as a result of the latest series of arrests. We do require [interrogators] that are able to pry the information we require out those less than willing to talk. Also, Velarte Selire at the Temple of Life is looking for help with his [research]. You may wish to talk with him.");
+	elseif(e.message:findi("advance further") and e.other:HasItem(2583) == true) then
+		e.self:Say("Interested in helping us further? We continue to gather valuable information. We still require [interrogators] that are able to pry the information we require out those less then willing to talk. Also, Velarte Selire at the Temple of Life is looking for help with his [research] so you may wish to talk with him. Lastly, we now have information we believe may lead us to the [individual that unleashed this plague] in the first place.");
 	elseif(e.message:findi("interrogators") and e.other:HasItem(2386) == true) then
 		e.self:Say("If you are interested in joining the ranks of our interrogators and helping Qeynos further as we bring these fiends and murderers to justice, turn in your investigator's Badge and I will give you the briefing document you need. I already know I can trust my investigators, so there is no need to further test you.");
 	end
@@ -48,17 +51,28 @@ function event_trade(e)
 		e.self:Say("Thank you for bringing this person to justice. Please read this manual very, VERY carefully. Commit it to memory. We do everything strictly by the book. We are a people of law and order and I simply won't tolerate a breach of protocol. Investigators are expected to accurately report findings, are authorized to issue warrants and to notarize official documents for all lands under the jurisdiction of Antonius Bayle and the council. I sincerely hope you can earn your Investigator's Badge.");
 		e.other:SummonItem(18289); -- Investigator's Briefing
 		e.other:Ding();
-		e.other:Faction(219,10,0); -- Antonius Bayle
-		e.other:Faction(262,10,0); -- Guards of Qeynos
-		e.other:Faction(304,-10,0); -- Ring of Scale
-		e.other:Faction(273,-10,0); -- Kane Bayle
-		e.other:Faction(291,10,0); -- Merchants of Qeynos
+		e.other:Faction(219,1,0); -- Antonius Bayle
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(304,-1,0); -- Ring of Scale
+		e.other:Faction(273,-1,0); -- Kane Bayle
+		e.other:Faction(291,1,0); -- Merchants of Qeynos
 		e.other:AddEXP(2000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 2386})) then -- Investigator's Badge
 		e.self:Say("Very well, here is the briefing document. Please read it very carefully. I wish you luck friend, this mission could prove to be dangerous.");
 		e.other:SummonItem(18292); -- Interrogator's Briefing
 		e.other:Ding();
 		e.other:AddEXP(2000);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 2583},0)) then -- Researcher's Badge
+		e.self:Say("Here is my personal seal. Go to the sewers and locate my investigator and show him this seal if he yet lives. Find out what happened to he and guard Helminth. Then if at all possible, complete this operation by finding Azibelle Spavin and execute her. Bring me her head and return me my seal and you shall be rewarded.");
+		e.other:QuestReward(e.self,0,0,0,0,2694,2000); -- Seal of Vegalys
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 2694,item2 = 2392})) then -- Seal of Vegalys and Head of Azibelle Spavin
+		e.self:Say("Good work " .. e.other:GetCleanName() .. "! So Guard Helminth was corrupt? So crafty are these black hearted souls that they can fool even the righteous Kane Bayle himself! I'm sure he will be saddened to hear of this. I too am saddenned by the loss of one of my best investigators. At least we've served justice this day by sending Azibelle Spavin to her dark master. May she rot with her god. Take this Badge of Honor and wear it with pride and distinction.");
+		e.other:Faction(219,5); -- Antonius Bayle
+		e.other:Faction(262,5); -- Guards of Qeynos
+		e.other:Faction(304,-5); -- Ring of Scale
+		e.other:Faction(273,-5); -- Kane Bayle
+		e.other:Faction(291,5); -- Merchants of Qeynos
+		e.other:QuestReward(e.self,0,0,0,0,2388,2000); -- Qeynos Badge of Honor
 	end
 	
 	item_lib.return_items(e.self, e.other, e.trade)

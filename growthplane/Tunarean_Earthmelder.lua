@@ -1,3 +1,4 @@
+-- items: 31424, 31425, 31426, 31423, 1208, 31419, 31420, 31421, 31422, 1207
 function event_spawn(e)
 	eq.set_timer("hum",90000);
 end
@@ -23,11 +24,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 31424,item2 = 31425,item3 = 31426,item4 = 31423}) and e.other:GetLevel() >= 55) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 31424,item2 = 31425,item3 = 31426,item4 = 31423}) and e.other:GetLevel() >= 55) then
 		e.self:Say("You have done well, " .. e.other:GetCleanName() .. ".  Here, take this item and use it well! Your efforts will not be forgotten.");
 		e.other:SummonItem(1208); -- Gloves of Earthcrafting
     e.other:AddEXP(2500);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 31419,item2 = 31420,item3 = 31421,item4 = 31422}) and e.other:GetLevel() >= 55) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 31419,item2 = 31420,item3 = 31421,item4 = 31422}) and e.other:GetLevel() >= 55) then
 		e.self:Say("You have done well, " .. e.other:GetCleanName() .. ".  Here, take this item and use it well! Your efforts will not be forgotten.");
 		e.other:SummonItem(1207); -- Helm of the Tracker
     e.other:AddEXP(2500);

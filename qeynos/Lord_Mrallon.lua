@@ -1,3 +1,4 @@
+-- items: 8919, 8951, 8955
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	if(fac < 3) then
@@ -13,10 +14,10 @@ function event_trade(e)
     e.self:Say("Aaaah, yet another warrior brave enough to face their own faults and honorable enough to strive for a proof of their worth and devotion to The Rainkeeper. Your kind is too few and far too rare, but do not think that your trials are at their end. I have forged the necessary Hollowed Tempest Stone -- yes, young warrior, I am indeed one well versed in the ways of the Tempest Guard for at one time I myself held such a rank in a time before the closing of the Jaggedpine. Aaaah, but enough reminiscing for one day -- your trial is the matter at hand. Within the Hollowed Tempest Stone you must combine the Essence of the Tempest Guard, which you will find only through great peril. The Tempest Reaver, who resides in the realm of Cazic-Thule himself, holds the essence. The [tale] regarding its presence there is indeed one to be heard if you wish to fully understand your task.");
 	e.other:SendSound();
 	e.other:SummonItem(8955); -- Item: Hollowed Tempest Stone
-    e.other:Faction(280,50,0); -- Faction: Knights of Thunder
-    e.other:Faction(221,-50,0); -- Faction: Bloodsabers
-    e.other:Faction(341,50,0); -- Faction: Priests of Life
-    e.other:Faction(262,50,0); -- Faction: Guards of Qeynos
+    e.other:Faction(280,10,0); -- Faction: Knights of Thunder
+    e.other:Faction(221,-10,0); -- Faction: Bloodsabers
+    e.other:Faction(341,7,0); -- Faction: Priests of Life
+    e.other:Faction(262,7,0); -- Faction: Guards of Qeynos
     e.other:AddEXP(1000);
   end
   item_lib.return_items(e.self, e.other, e.trade)

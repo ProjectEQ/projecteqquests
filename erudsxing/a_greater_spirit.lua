@@ -1,3 +1,4 @@
+-- items: 1667
 function event_say(e)
 	if(e.message:findi("hail")) then --Part of Shaman Epic 1.0
 		e.self:Say("You have walked the path of patience and you now know what to expect. We are watchers. Our eyes are everywhere and we must be patient and quiet else we may miss what could be harmful. Can you sit still quietly and wait for just the right moment, then open your eyes with a fury and act with all the energy you have cultivated? Timing is everything, and without patience you cannot be sensitive to timing. You have shown your patience here and we believe you are ready to walk the [next path].");

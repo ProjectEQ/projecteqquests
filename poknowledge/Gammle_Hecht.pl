@@ -5,6 +5,7 @@
 #Items Involved: All from Angelox's Database
 #zone: poknowledge
 #Revised CrabClaw v1.0 WIP
+# items: 28079, 28243
 
 ###RELATED QUESTS###
 #	Curator_Merri: The Collector's Box

@@ -1,3 +1,4 @@
+# items: 60155, 60174, 60176, 60146, 60147, 60148, 60149, 60162, 60163, 60164, 60165, 60166, 60167, 60168, 60169, 60161, 60173, 60160, 60170, 60171, 60172, 60175
 sub EVENT_SAY {
   $InIkkyV3 = quest::GetInstanceID("ikkinz",3);
   $InIkkyV4 = quest::GetInstanceID("ikkinz",4);
@@ -82,6 +83,7 @@ sub EVENT_SAY {
 				$Instance = quest::CreateInstance("ikkinz",3,21600);
 				quest::AssignRaidToInstance($Instance);   
 				quest::say("Instance added.");
+				$client->MarkCompassLoc(1340, -710, -433);
 				quest::say("The glyphs you recovered show an Artifact of Righteousness that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Righteous to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Righteous and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
 			  }
 			  else {
@@ -109,6 +111,7 @@ sub EVENT_SAY {
 				$Instance = quest::CreateInstance("ikkinz",4,21600);
 				quest::AssignRaidToInstance($Instance);   
 				quest::say("Instance added.");
+				$client->MarkCompassLoc(2656, 442, -396);
 				quest::say("The glyphs you recovered show an Artifact of Glorification that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Glorification to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Glorified and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
 			  }
 			  else {
@@ -136,6 +139,7 @@ sub EVENT_SAY {
 				$Instance = quest::CreateInstance("ikkinz", 5, 21600);
 				quest::AssignRaidToInstance($Instance);   
 				quest::say("Instance added.");
+				$client->MarkCompassLoc(1573, 1737, -396);
 				quest::say("The glyphs you recovered show an Artifact of Transcendence that is guarded by a sentinel that is ages old. You will find the Sanctuary of the Transcendent to the south of the Altar of Destruction. You must gather a raiding party several times larger than your normal party's size and be prepared for anything. Find an entrance to the inner chambers of the Sanctuary of the Transcendent and recover the artifact. May you be gifted with the luck of the brotherhood. I fear you may need it.");
 			  }
 			  else {

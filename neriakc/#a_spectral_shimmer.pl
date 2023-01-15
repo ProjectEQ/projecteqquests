@@ -4,6 +4,7 @@
 #
 # Pop only on death by  neriakc/#Gribnor_the_Small.pl
 # Model is old undead froglok.
+# items: 67014
 
 
 sub EVENT_SPAWN {

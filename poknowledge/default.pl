@@ -1,3 +1,4 @@
+# items: 85064, 85068, 85065, 85063, 85066, 85067, 84091
 sub EVENT_SAY {
 	if($text=~/trick or treat/i){
 		if(!defined $qglobals{halloween_candy}){

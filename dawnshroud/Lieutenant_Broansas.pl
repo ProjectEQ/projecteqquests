@@ -1,3 +1,4 @@
+# items: 4760, 4761
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Greetings Stranger, is there something I can help you with? I would love to chat with you but i'm afraid I have to stay focused on the [case] I am investigating.");

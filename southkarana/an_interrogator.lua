@@ -1,4 +1,5 @@
 -- an_interrogator in south karana
+-- items: 18292, 2344, 2390, 2391, 2395, 2387
 local brief;
 local name;
 

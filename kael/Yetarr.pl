@@ -1,5 +1,6 @@
 #Yetarr.pl
 #Tiny Savages
+# items: 25122, 25027, 25123, 25026
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

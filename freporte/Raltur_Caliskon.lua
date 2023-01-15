@@ -1,3 +1,4 @@
+-- items: 18822
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("May the rage of Innoruuk flow through your veins. Welcome " .. e.other:GetName() .. ". Soon the Dismal Rage shall run rampant in the streets of Freeport. Our numbers grow. Like you, so many feel the rage within. It is now time to [ serve Innoruuk ].");

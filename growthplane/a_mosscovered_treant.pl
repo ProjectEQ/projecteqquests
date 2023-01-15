@@ -1,3 +1,4 @@
+# items: 31435, 31436, 31437, 31438, 1224
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I welcome thee, $name. Is there something I can assist you with? I am afraid my tireless searching for the incantations is going to be endless.");

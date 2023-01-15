@@ -1,5 +1,6 @@
 #Zone: Overthere  NPC: Tektite
 #Qadar
+# items: 10011, 12831
 
 sub EVENT_SAY {
   if($text=~/tektite/i){

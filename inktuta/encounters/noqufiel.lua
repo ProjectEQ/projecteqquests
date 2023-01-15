@@ -228,3 +228,7 @@ function event_encounter_load(e)
 	eq.register_npc_event("noqufiel", Event.spawn, 296066, MirrorSpawn)
 	eq.register_npc_event("noqufiel", Event.death_complete, 296065, TrueDeath)	
 end
+
+function event_encounter_unload(e)
+  eq.stop_all_timers();
+end

@@ -27,6 +27,13 @@
 --   version;
 
 instance_version = {
+    ikkinz_chambers_of_singular_might = 0,
+    ikkinz_chambers_of_twin_struggles = 1,
+    ikkinz_chambers_of_the_tri_fates = 2,
+    ikkinz_chambers_of_righteousness = 3,
+    ikkinz_chambers_of_glorification = 4,
+    ikkinz_chambers_of_transcendence = 5,
+    ikkinz_chambers_of_destruction = 6,
     the_nektulos_forest = 1,
     the_bazaar = 1,
     stillmoon_temple_sickness_of_the_spirit = 1,
@@ -59,6 +66,7 @@ instance_version = {
     thundercrest_isles_throes_of_contagion = 12,
     thundercrest_isles_plunder_the_hoard = 13,
     thundercrest_isles_gilded_scroll = 14,
+    thundercrest_isles_secret_of_the_storm = 15,
     lavaspinners_lair_grounding_the_drakes = 1,
     lavaspinners_lair_a_halflings_greed = 2,
     lavaspinners_lair_forbins_elixir = 3,

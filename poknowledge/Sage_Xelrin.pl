@@ -1,3 +1,4 @@
+# items: 17176
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings $name.  I assume you are here to ask about my research?  I imagine that word has spread of my groundbreaking approach to spell creation.  Well I am always willing to enlighten those that choose to learn.  As not to bog you down with too many details. my theory is simple. [Continue]");

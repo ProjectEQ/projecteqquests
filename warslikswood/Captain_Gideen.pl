@@ -1,3 +1,4 @@
+# items: 12441
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("I hope you have come to assist in the defense of the gate. We have had numerous assaults by the goblins. No doubt it is due to those [goblin watchers].");

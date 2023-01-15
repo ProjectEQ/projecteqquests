@@ -1,5 +1,6 @@
 #Digmaster_Duggert.pl
 #Revenge for Duggert
+# items: 62100, 62101, 62206
 
 
 sub EVENT_SAY {

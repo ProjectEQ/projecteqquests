@@ -1,3 +1,4 @@
+-- items: 13989, 13939
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome to the Bank of Erudin. I am Agryn, the bank manager. How may I be of service to you?");

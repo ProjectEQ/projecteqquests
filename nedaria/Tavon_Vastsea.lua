@@ -1,4 +1,5 @@
 -- Cleric 1.5 Pre-quest // Cleric 1.5 Epic // Cleric 2.0 Epic --Drogerin
+-- items: 9585, 9591, 9954
 							
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
@@ -27,7 +28,7 @@ function event_say(e)
 			e.self:Say("Hmmm, well I think I have a task I can entrust you with. Speak to my brother, tell him that I sent you to him. Earn his trust, and you shall have mine");
 		end
 	else
-		e.self:Say("I'm sorry you are not the appropriate class for this quest."); -- added this to prevent classes that cannot do this epic from continuing quest.
+		e.self:Say("The ocean breeze is quite nice today, don't you think?  Nothing pleases me like the ocean.");
 	end
 end
 

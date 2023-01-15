@@ -1,15 +1,15 @@
 -- 201438 The Tribunal
 -- Trial of Torture
 --
+-- items: 31599
 
-local torture_flag	= 0;
-local trial_group		= nil;
-local trial_count		= nil;
-local client_e			= nil;
-local	mob_list			= { };
+local torture_flag   = 0;
+local trial_group_id = 0;
+local client_id      = 0; -- character ID, not entity ID
+local mob_list       = { };
 
 local cooldown_timer = 1800000;
-local eject_timer		= 900000;
+local eject_timer    = 900000;
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);
@@ -26,12 +26,12 @@ function event_say(e)
 				e.self:Say("Then begin.");
 
 				-- Move the Player and their Group tot he trial room.
-				trial_group = e.other:GetGroup();
-				if ( trial_group.valid ) then
+				local trial_group = e.other:GetGroup();
+				if (trial_group ~= nil and trial_group.valid) then
 					MoveGroup( trial_group, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, 729, -1119, 88, 64); 
-					client_e = e;
+					trial_group_id = trial_group:GetID();
 				else
-					client_e = e;
+					client_id = e.other:CharacterID();
 					e.other:MovePC(201, 729, -1119, 88, 128); -- Zone: pojustice
 				end
 
@@ -74,30 +74,30 @@ function event_say(e)
 end
 
 function event_timer(e)
-
 	if (e.timer == "ejecttimer") then
-
 		eq.stop_timer(e.timer);
 		despawn_trial_mobs()
 
+        local trial_group = eq.get_entity_list():GetGroupByID(trial_group_id);
 		if (trial_group ~= nil and trial_group.valid) then
 			MoveGroup( trial_group, 772, -1148, 76, 175, 456, 825, 9, 180, "A mysterious force translocates you."); 
 		else
-			client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
-			client_e.other:Message(3, "A mysterious force translocates you.");
+            local client_e = eq.get_entity_list():GetClientByCharID(client_id);
+            if (client_e ~= nil and client_e.valid) then
+                client_e.other:MovePC( 201, 456, 825, 9, 360 ); -- Zone: pojustice
+                client_e.other:Message(3, "A mysterious force translocates you.");
+            end
 		end
 		HandleCorpses(772, -1148, 76, 175);
 
 		eq.stop_timer("proximitycheck");
 
 	elseif (e.timer == "cooldown") then
-		
 		eq.stop_timer(e.timer);
 
-		torture_flag	= 0;
-		client_e			= nil;
-		trial_group		= nil;
-		trial_count		= nil;
+        torture_flag   = 0;
+        client_id      = 0;
+        trial_group_id = 0;
 
 		despawn_trial_mobs();
 

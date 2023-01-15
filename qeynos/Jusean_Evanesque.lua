@@ -1,3 +1,4 @@
+-- items: 18021, 18020, 59023, 59024, 59042, 59001, 18023, 18024, 18022, 18025
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Why, hello there, " .. e.other:GetName() .. "! I am Jusean, loyal member of the League of Antonican Bards. You look like the reliable sort, maybe you could help me out for a bit, huh? It's about time for our field agents to turn in their [watch reports], and I need someone to go pick them up for me.");

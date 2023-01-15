@@ -1,3 +1,4 @@
+-- items: 52339, 52341, 52342
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);
 	if(e.message:findi("lirprin sent me") and qglobals["Fatestealer"] == "3") then

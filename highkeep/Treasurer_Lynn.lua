@@ -1,3 +1,4 @@
+-- items: 12261, 12266, 12267
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings!!  Welcome to Highkeep. home of the greatest casino in all of Norrath.  Please visit our fine casino on the second floor."); 

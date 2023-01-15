@@ -1,3 +1,4 @@
+-- items: 17249, 22610, 22611, 22612, 22613, 22614, 22615, 22616, 22668, 22696, 22697
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("It is a pleasure to meet you " .. e.other:GetName() .. ". I am Thekela Meepup. one of the highest ranking Clerics in all of Rivervale. I pride myself on being the mentor for all of the furryfooted that are called upon by Bristlebane to give life. If you are a [Cleric] I might have some training for you to complete if you so wish.");

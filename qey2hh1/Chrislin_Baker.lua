@@ -1,4 +1,5 @@
 -- white paper portion of enchanter epic quest lead-in
+-- items: 13063, 13051, 12100
 
 function event_say(e)
 	if(e.message:findi("hail")) then

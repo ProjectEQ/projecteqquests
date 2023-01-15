@@ -1,5 +1,6 @@
 # Faelin's Ring -> Giz X`Tin -> Dark Metal Coin
 #
+# items: 20446, 20447
 
 my $x;
 my $y;

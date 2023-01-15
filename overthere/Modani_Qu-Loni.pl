@@ -1,5 +1,6 @@
 # Test of Illusion - enchanter epic quest - staff of the serpent
 # 
+# items: 10604, 17861, 10635, 10610
 
 
 sub EVENT_SAY {

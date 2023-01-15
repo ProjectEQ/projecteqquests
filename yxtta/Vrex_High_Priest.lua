@@ -1,0 +1,13 @@
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Say("Stay back from us, stranger, or we shall destroy you. You are not what we were expecting. It is obvious that you are not one of the [invaders], but it is also obvious that you are not one of us. Were this any other situation, I would have you destroyed for stepping foot in this place. However, you were able to get past the [monoliths] and open the great door, so you must at least be knowledgeable of the ways of [Trushar].");
+  elseif(e.message:findi("invader")) then
+    e.self:Say("Those Muramite creatures came through the gate at incredible speed and in such great numbers that it was impossible to stop them. Many of our friends and family were killed. Only we few were able to escape behind the monoliths. No others survived. I know little of the invaders, except that none of them has set foot in these caves.");
+  elseif(e.message:findi("trushar")) then
+    e.self:Emote("moves her left hand in a brief sign as if by habit and mutters, 'May he destroy all those not of his choosing.' She then raises her head to you and says, 'You have not the right to speak of him. We have never had a need to see our god, but we pray -- always. We pray for all of those ignorant enough to disregard the strength and power of Trushar, the ocean god. Our pathetic brethren turned from Trushar long ago. Fools! This may not have happened had they remained true. You should follow our ways. If you do not, you are no better than those Nihil and deserve to die, lest Trushar become angry and bring his wrath upon us once again.");
+  elseif(e.message:findi("monolith")) then
+    e.self:Say("Our ancestors discovered these caverns near our great temple ages ago. Many generations were spent devising and building the device that guards these caves. So many years went into the creation of that device that we had little time to make these caves livable and clear out the [creatures] that live here. In fact, supplies are short here.");
+  elseif(e.message:findi("creature")) then
+    e.self:Say("The insects and reptiles you see around you are natural to these caverns. But beware, something has come into them. They have gained a spirit, a power to manifest the very essence of what they are. I believe that this has happened because of their generations long exposure to the influence and magic that we trusik used in the creation of the monoliths. Each of them has claimed a portion of these caves as their own. Since we have been trapped here we were once forced to kill the Primal Spider, as she desired a new flesh to eat. When dispatched, her spirit rejoined with those of her species in these caves. Soon enough the eldest spider took on the form of the Primal Spider.");
+	end
+end

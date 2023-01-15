@@ -1,5 +1,6 @@
 #Oracle_Maeth.pl
 #Planar Armor Exchange
+# items: 4871, 4872, 4873, 4884, 4874, 4875, 4876, 4877, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/hail/i){

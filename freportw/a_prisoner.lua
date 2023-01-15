@@ -1,3 +1,4 @@
+-- items: 12196, 16581, 13498, 12143
 function event_spawn(e)
 	eq.set_timer("goog",150000);
 end

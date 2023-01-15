@@ -1,5 +1,6 @@
 #Leramas_Feston.pl
 #Intermediate Stealth Manual
+# items: 28792, 29133, 28793
 
 
 sub EVENT_SAY { 

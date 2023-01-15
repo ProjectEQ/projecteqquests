@@ -1,3 +1,4 @@
+# items: 1528, 1530, 19076, 12096, 22502, 1529
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("I'm not in any mood for conversation. My favorite hat was torn right from my head by a gigantic bat the other night and I am quite upset.");

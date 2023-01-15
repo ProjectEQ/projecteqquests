@@ -1,5 +1,6 @@
 --lakerathe/Kimm_McShannel.lua NPCID 51159
 --Shaman Epic 1.5
+-- items: 52922, 52926, 57600, 57088, 57560, 57614
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("elder spirit sent me") and qglobals["shaman_epic"] == "1") then

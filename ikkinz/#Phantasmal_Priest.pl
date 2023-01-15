@@ -1,5 +1,6 @@
 #     #Phantasmal_Priest.pl
 #quest text needed
+# items: 60241, 60242
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("You seek to move behind this door, yet I cannot allow that until someone with a like mind as me comes forward." . 

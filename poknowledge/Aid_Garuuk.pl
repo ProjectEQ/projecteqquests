@@ -1,5 +1,6 @@
 #Aid_Garuuk.pl
 #Hoop of the Traveller
+# items: 28740, 2418
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,4 +1,5 @@
 -- Start of the ranger and druid epic quests
+-- items: 20472, 20447, 20448, 20468, 20477, 20481
 
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);

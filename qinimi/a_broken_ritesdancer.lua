@@ -1,3 +1,4 @@
+-- items: 62867, 62890, 62864, 62891
 function event_say(e)
 	if(e.message:findi("What about the rune fragments?")) then
 		if(e.other:GetFaction(e.self) <=2) then

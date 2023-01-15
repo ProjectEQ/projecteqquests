@@ -5,6 +5,7 @@
 #Items Involved:
 #zone: gfaydark
 #Revised CrabClaw v1.12
+# items: 17367, 22671, 22672, 22673, 22674, 22675, 22676, 22677, 27539, 13266, 27532
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

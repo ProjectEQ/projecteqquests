@@ -1,3 +1,4 @@
+# items: 52176, 52177
 sub EVENT_SAY {
   if($text=~/hail/i) {
     if (defined $qglobals{bic} && $qglobals{bic} >= 1) {

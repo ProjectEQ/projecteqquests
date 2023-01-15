@@ -1,6 +1,7 @@
 # NPC:
 # Angelox
 # Overseer Wrank event by cavedude
+# items: 2485
 
 sub EVENT_ATTACK{
     quest::say("I will gladly choose death as my release");

@@ -7,8 +7,9 @@ function event_hp(e)
     if (e.hp_event == 85) then
         e.self:SetPseudoRoot(false);
         eq.stop_timer("terror");
-        eq.set_next_inc_hp_event(99);
-    elseif (e.inc_hp_event == 99) then -- not sure on how to reset ... probably should :P
+        eq.set_next_inc_hp_event(87);
+        eq.zone_emote(0, "Zun`Muram Volklana shouts,'Cowardly worms! Come and fight me.'");
+    elseif (e.inc_hp_event == 87) then
         e.self:GotoBind();
         e.self:SetPseudoRoot(true);
         eq.set_next_hp_event(85);

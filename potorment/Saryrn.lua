@@ -8,6 +8,7 @@ function event_hp(e)
         eq.signal(207052,1); -- NPC: Sorrowsong
         e.self:Say("Sorrowsong, sing for us. We want these wretches to enjoy their stay, don't we?");
         eq.set_next_hp_event(90);
+        eq.set_next_inc_hp_event(99); --to reset on event failure
     elseif (e.hp_event == 90) then
         eq.spawn2(eq.ChooseRandom(207085,207086), 0, 0, -12, -72, 579, 1);
         eq.spawn2(eq.ChooseRandom(207085,207086), 0, 0, -1, -72, 579, 1);
@@ -58,6 +59,10 @@ function event_hp(e)
         eq.spawn2(eq.ChooseRandom(207085,207086), 0, 0, -1, -72, 579, 1);
         eq.spawn2(eq.ChooseRandom(207085,207086), 0, 0, 10, -72, 579, 1);
     end
+    
+    if e.inc_hp_event == 99 then
+		eq.set_next_hp_event(98);
+	end
 end
 
 function event_combat(e)
@@ -73,7 +78,7 @@ end
 function event_timer(e)
     if (e.timer == 'reset') then
         eq.stop_timer('reset');
-        eq.set_next_hp_event(98);
+        eq.set_next_inc_hp_event(99); --to reset on event failure
         eq.depop(207052);
         eq.depop(207065);
         eq.set_timer('spawnsorrow', 5 * 1000);

@@ -1,4 +1,5 @@
 #Edit on April 19, 2007 for Tome of Dark Power quest - Kilelen
+# items: 28741, 28742
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		quest::say("Welcome traveler. are you here to meet with someone or are you new to this place?");

@@ -4,6 +4,7 @@
 #
 #NPC Name: Vylleam Vyaeltor
 #NPC ID: 113185
+# items: 25841, 24905, 25391, 25805, 24900, 25392, 25815, 24902, 25393, 25836, 24904, 25394, 25840, 24906, 25395, 25827, 24901, 25396, 25838, 24903, 25397
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

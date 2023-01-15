@@ -1,5 +1,6 @@
 #BeginFile: katta\Tilbok_Furrunner.pl
 #Quests for Katta Castellum - Tilbok Furrunner: Runed Earring of Veracity, Signet Earring of Veracity and Traitor to the Validus Custodus
+# items: 29846, 29891, 17121, 29858, 29889, 29859, 29844, 3463827, 29845
 
 sub EVENT_SAY {
   if($text =~ /hail/i) {
@@ -65,15 +66,15 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 29844 => 1)) { #Dossier: Case 3463827
     quest::emote("reads through the dossier and then looks at you, eyebrow raised curiously, 'look at the mess you have gotten yourself in the middle of,' he says with a chuckle, while beginning to jot a note. 'Here take this and...' he stops midsentence. 'I guess I haven't even given you the chance to say whether or not you want to help. Would you like to see this through to the end?'");
     quest::summonitem(29845); #Field Orders
-    quest::faction(1503,20);  #Validus Custodus
-    quest::faction(1502,20);  #Katta Castellum Citizens
-    quest::faction(1504,20);  #Magus Conlegium
-    quest::faction(1505,-50); #Nathyn Illuminious
-    quest::faction(1506,-50);  #Coterie of the Eternal Night
-    quest::faction(1483,-50); #Seru
-    quest::faction(1484,-50); #Hand of Seru
-    quest::faction(1485,-50);  #Eye of Seru
-    quest::faction(1541,-50); #Hand Legionnaries
+    quest::faction(1503,2);  #Validus Custodus
+    quest::faction(1502,1);  #Katta Castellum Citizens
+    quest::faction(1504,1);  #Magus Conlegium
+    quest::faction(1505,-1); #Nathyn Illuminious
+    quest::faction(1506,-1);  #Coterie of the Eternal Night
+    quest::faction(1483,-1); #Seru
+    quest::faction(1484,-1); #Hand of Seru
+    quest::faction(1485,-1);  #Eye of Seru
+    quest::faction(1541,-1); #Hand Legionnaries
     quest::exp(5000);
   }
   #do all other handins first with plugin, then let it do disciplines

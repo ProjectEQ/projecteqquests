@@ -1,3 +1,4 @@
+# items: 10690, 2596, 10691, 10694
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Pleasure to meet ya! Have you come to the Illuminarium Industria to gaggle about or have you come looking for [some work]?");

@@ -1,3 +1,4 @@
+# items: 4492, 4850, 4858, 4859, 3744, 4493, 4860, 4868, 3745, 4488, 4878, 4879, 4880, 3747, 4489, 4888, 4889, 4890, 3748, 4491, 4848, 4849, 3743, 4494, 4869, 4870, 3746
 sub EVENT_SAY {
  if ($text=~/Hail/i) {
         quest::say("You must have been speaking to Derron, a mightier cleric ye couldnt find. Except for Donal the Wise of course. So tell me are ye also a cleric like Derron?");

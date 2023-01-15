@@ -1,3 +1,4 @@
+# items: 13410, 7375, 16486, 7376, 13367, 7377, 13061, 13062, 7378, 13354, 7379
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hi $name. Did [Bordag send you]?");

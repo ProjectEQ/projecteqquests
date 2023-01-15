@@ -1,3 +1,4 @@
+# items: 1724, 1713, 1709, 1710, 1712, 1714, 1722, 1720, 1723
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("You obviously have no idea where you have trespassed so I will generously allow you to live. I suggest you leave immediately before my generosity runs out however......Unless, you're looking for work.");

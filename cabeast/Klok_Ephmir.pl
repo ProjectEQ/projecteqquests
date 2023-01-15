@@ -1,3 +1,4 @@
+# items: 12450, 12445
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::emote("stares at you with a wicked smirk. 'So you share the Brood's love of frogloks, do you? Alive, they provide much trouble. Dead, they provide much delight. I have found many uses for the frogloks. From fine meat to fine mats. Be sure to ask if you do not see something you desire.'");

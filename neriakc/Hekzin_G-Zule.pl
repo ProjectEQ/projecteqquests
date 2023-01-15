@@ -1,3 +1,4 @@
+# items: 17943, 13889, 12258
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("How's it going. scrub? Correct me if I'm wrong. but you appear to be a rogue. If you're a [new rogue]. it's my job to test your skill.  If you are not. then by speaking with me. I see you show interest in [joining this house of rogues].");

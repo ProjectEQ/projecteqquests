@@ -1,3 +1,4 @@
+# items: 17245, 22613, 22612, 22611, 22616, 22615, 22614, 22610, 22617, 22618, 22619, 22698
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings child, what business do you have here? I'm sorry but I will only deal with Clerics that are willing to prove their loyalty to Innoruuk. I cannot deal with every single heathen that feels it is necessary to bid me a good day. If you are a [Cleric of Innoruuk] I might be able to aid you in your training.");

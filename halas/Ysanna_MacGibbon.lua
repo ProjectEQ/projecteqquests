@@ -1,4 +1,5 @@
 --Added faction requirement of Indifferent or better as per allakhazams
+-- items: 1330, 1349, 7507, 24097
 
 function event_signal(e)
 	if(e.signal == 1) then

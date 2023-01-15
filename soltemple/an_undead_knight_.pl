@@ -1,4 +1,5 @@
 # Quest for Darkforge Helm/Breastplate/Vambraces/Bracers
+# items: 12283, 12284, 13921, 3140, 12285, 12286, 16507, 3141, 12288, 12287, 9023, 3142, 12290, 12289, 19075, 3143
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

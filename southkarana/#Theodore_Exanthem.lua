@@ -1,4 +1,5 @@
 -- #Theodore_Exantham in south karana
+-- items: 2344, 3098, 5872, 2395
 function event_spawn(e)
 	eq.signal(14050,1,5000); -- NPC: an_interrogator
 end

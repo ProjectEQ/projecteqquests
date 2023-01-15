@@ -1,5 +1,6 @@
 -- bard 1.5
 -- also used in prequest
+-- items: 77608, 77612, 77613, 77600, 77601, 77602, 77604, 77605, 77606, 77607
 
 function event_say(e)
     if e.other:Class() == "Bard" then
@@ -65,12 +66,12 @@ function event_trade(e)
     elseif qglobals["bardPQ"] == "1" and  item_lib.check_turn_in(e.trade, {item1 = 77601}) then -- Kromzek Supply Orders
         eq.set_global("bardPQ", "2", 5, "F")
         e.self:Emote("studies the orders for a few moments. 'Well done " .. e.other:Race() .. ". This explains much of the giants' movements of late. This list shows orders for creating equipment for creatures closer to your stature then a giant. The Kromzek must be recruiting more mercenaries. Find the troop this order was meant to supply " .. e.other:GetName() .. ". There must be a reason for Tormax's new interest in mortal conscripts.")	
-		eq.spawn2(119182, 0, 0, 300,-2578,-4,100); --Cristoc_Bonethug
-		eq.spawn2(119183, 0, 0, 318,-2610,-4,112); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 320,-2542,-4,124); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 307,-2595,-4,88); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 293,-2560,-4,88); --a_Bonethug_mercenary
-		eq.spawn2(119183, 0, 0, 330,-2578,-4,100); --a_Bonethug_mercenary
+		eq.spawn2(119182, 0, 0, 480,-2445,-6,188); --Cristoc_Bonethug
+		eq.spawn2(119183, 0, 0, 491,-2461,-6,450); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 473,-2481,-6,13); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 451,-2459,-6,91); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 416,-2469,-6,100); --a_Bonethug_mercenary
+		eq.spawn2(119183, 0, 0, 422,-2493,-6,98); --a_Bonethug_mercenary
 	elseif qglobals["bardPQ"] == "2" and  item_lib.check_turn_in(e.trade, {item1 = 77602}) then -- Sealed Note
 		eq.set_global("bardPQ", "3", 5, "F")
         e.self:Say("Once again you have exceeded my expectations " .. e.other:GetName() .. ". Rarely have I encountered a mortal with your talents, in fact not since Baldric walked these lands. But I digress, and we have more work to do. For now, take this mark as a symbol of my trust.")			

@@ -1,5 +1,6 @@
 #Baelin_Xir-Rixoan.pl
 #Help Baelin
+# items: 61197, 61172, 61173, 61174, 61175, 61198, 61180
 
 sub EVENT_SAY
 {

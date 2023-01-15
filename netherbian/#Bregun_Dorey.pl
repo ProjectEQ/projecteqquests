@@ -1,4 +1,5 @@
 # Bregun Dorey is spawned in Netherbian when you give a dawnshroud cinder to legionnaire Dalini
+# items: 13464, 29852, 29853, 29854
 
 sub EVENT_SAY{
   if ($text=~/hail/i){

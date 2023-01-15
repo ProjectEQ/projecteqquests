@@ -1,3 +1,4 @@
+# items: 17368, 22611, 22610, 22613, 22612, 22614, 22615, 22616, 22694, 27540, 27533
 sub EVENT_SAY{
   if($text=~/Hail/i){
     quest::say("Pleased to meet you $name. I am Sarialiyn Tranquilsong. Virtuoso of the Songweavers Kelethin division. I have spent all of my years here in Kelethin training our new recruits to ensure that all are ready to defend themselves once their adventures take them away from the Faydark and beyond. If you are a [young bard of Kelethin] then I might have some exercises for you to complete.");

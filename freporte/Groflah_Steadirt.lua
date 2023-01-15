@@ -1,3 +1,4 @@
+-- items: 18818, 12114
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Greetings, %s! Join in the [celebration]! Have a few drinks. Alas, there are no [Tumpy Tonics].",e.other:GetName()));

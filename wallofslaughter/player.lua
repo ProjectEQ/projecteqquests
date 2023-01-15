@@ -23,15 +23,23 @@ end
 function event_loot(e)
 	if(e.self:Class() == "Warrior" and e.item:GetID() == 60312) then -- Stone of Eternal Power: Northeast Eye
 		local qglobals = eq.get_qglobals(e.self);
-		if(qglobals["warrior_epic"] == "10" and qglobals["warr_epic_wos"] == nil ) then
-			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
-			eq.set_global("warr_epic_wos","1",5,"F");
+		if(qglobals["warrior_epic"] == "10") then
+			if (qglobals["warr_epic_wos"] == nil ) then
+				eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.set_global("warr_epic_wos","1",5,"F");
+			end
+		else
+			return 1;
 		end
 	elseif(e.self:Class() == "Wizard" and e.item:GetID() == 11445) then  --Fluxing Rod
 		local qglobals = eq.get_qglobals(e.self);
-		if(qglobals["wiz_epic"] == "1" and qglobals["wiz_wos_chest"] == nil) then
-			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
-			eq.set_global("wiz_wos_chest","1",5,"F");
+		if(qglobals["wiz_epic"] == "1") then
+			if (qglobals["wiz_wos_chest"] == nil) then
+				eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
+				eq.set_global("wiz_wos_chest","1",5,"F");
+			end
+		else
+			return 1;
 		end
 	elseif(e.self:Class() == "Paladin" and e.item:GetID() == 69971) then
 		local qglobals = eq.get_qglobals(e.self);
@@ -91,68 +99,57 @@ function event_loot(e)
 	end	
 end
 
+local expedition_info = {
+	expedition = { name="Anguish, the Fallen Palace", min_players=6, max_players=54 },
+	instance   = { zone="anguish", version=0, duration=eq.seconds("6h") },
+	compass    = { zone="wallofslaughter", x=1353.15, y=1712.19, z=109.001 },
+	safereturn = { zone="wallofslaughter", x=1349.13, y=1715.00, z=123.81, h=0.0 },
+	zonein     = { x=-9, y=-2466, z=-79, h=0 }
+}
+
+local anguish_door_cooldown_expire_time = 0
+
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
-  local instance_id = nil;
-
-  local lockouts = {
-      { "Anguish_keldovan", "Anguish: Keldovan the Harrier" },
-      { "Anguish_jelvan", "Anguish: Rescing Jelvan" },
-	  { "Anguish_ture", "Anguish: Ture" },	  
-      { "Anguish_hanvar", "Anguish: Warden Hanvar" },
-      { "Anguish_amv", "Anguish: Arch Magus Vangi" },
-      { "Anguish_omm", "Anguish: Overlord Mata Muram" },
-      { "Anguish_lower_orb", "Anguish: Lower Globe of Discordant Energy" },
-      { "Anguish_upper_orb", "Anguish: Upper Globe of Discordant Energy" },
-      { "Anguish_augs", "Anguish: Replay Timer" }
-  };
   eq.debug("Door: " .. door_id .. " clicked");
 
   if (door_id == 3) then
-    instance_id = eq.get_instance_id('anguish', 0);
-    
-    if (instance_id ~= nil and instance_id ~= 0) then
-      e.self:MovePCInstance(317, instance_id, -9, -2466, -79, 510); -- Zone: anguish
+    -- zone entry is gated via flag checks but expedition can be created if only requester is eligible
+    local qglobals = eq.get_qglobals(e.self);
+    local has_signets = qglobals["oow_rss_taromani_insignias"]
+    local has_trials = qglobals["oow_mpg_raids_complete"]
+    local is_gm = (e.self:Admin() >= 80 and e.self:GetGM())
 
-    -- if GM just give him an instance
-    elseif (e.self:Admin() >= 80 and e.self:GetGM()) then
-      instance_id = eq.create_instance('anguish', 0, 21600);
-      eq.assign_raid_to_instance(instance_id);
-      e.self:Message(14, "GM Exception: Anguish is open to you");
-      eq.set_global(instance_id.."_anguish_bit",tostring(0),7,"H6");
-    else 
-      local instance_requests = require("instance_requests");
+    -- the anguish door goes on a 60s cooldown after an expedition request
+    -- while on cooldown clicking the door results in "feel the door" message and nothing happens
 
-      -- If a Player has Anguish_augs then they can not start an instance of anguish.
-      local augs_check = instance_requests.CheckPlayersForLockout('raid', 'Anguish_augs', 'Anguish: Replay Timer', e.self);
-      if (augs_check ) then
-        e.self:Message(13, "The way to Anguish is blocked to your raid at this time");
-      else
-        -- Every member of the raid needs to have 2 quest_globals set: oow_rss_taromani_insignias and oow_mpg_raids_complete
-        local required_globals = {
-          {'oow_rss_taromani_insignias', "is not protected from the chaos magic in Mata Muram's citadel." },
-          {'oow_mpg_raids_complete', 'must complete the Muramite Proving Grounds raid trials'}
-        };
-        local request = instance_requests.ValidateRequest('raid', 'anguish', 0, 6, 54, 65, nil, required_globals, e.self, lockouts);
-        -- TODO: Need to review why i placed the flags check; shouldn't be needed but I added it for some 
-        -- reason.
-        -- if (request.valid and request.flags == 1) then
-        --   instance_requests.DisplayLockouts(e.self, e.self, lockouts);
-        -- elseif (request.valid and request.flags == 0) then
-        if (request.valid) then
-          instance_id = eq.create_instance('anguish', 0, 21600);
-          if (instance_id == 0) then
-            e.self:Message(13, "Instance failed to be created, yell at a GM");
-          else
-            eq.assign_raid_to_instance(instance_id);
+    -- when gate is not already on cooldown:
+    -- if requester is in a non-anguish expedition then nothing happens
+    -- if requester is in an anguish expedition it zones in without any message
+    -- if above conditions pass, a creation request occurs and gate goes on cooldown ("the door swings wide" message)
+    -- (unnecessary) cooldown added on a successful creation is probably to compensate for live's instance startup time
+    local now = os.time()
+    local is_anguish_door_on_cooldown = (anguish_door_cooldown_expire_time > now)
 
-            -- Set the lockout for the instance with the bits that represent the mobs that 
-            -- will be spawned by the zone_status upon entry
-            eq.set_global(instance_id.."_anguish_bit",tostring(request.flags),7,"H6");
+    if not is_gm and is_anguish_door_on_cooldown then
+      e.self:Message(13, "You can feel the door to Anguish opening underneath your hand.")
+    elseif not is_gm and not has_trials then -- unknown original live message
+      e.self:Message(13, "You must complete the Muramite Proving Grounds raid trials.")
+    elseif not is_gm and not has_signets then
+      e.self:Message(13, "Though you carry the seal to enter Anguish, the Fallen Palace, you would be torn asunder by the harsh environment were you to venture within.  You will need to find a way to protect yourself from the powers of Discord.")
+    else
+      local dz = e.self:GetExpedition()
+      if dz.valid and dz:GetZoneName() == "anguish" then
+        e.self:MovePCDynamicZone("anguish")
+      elseif not dz.valid then
+        e.self:Message(15, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.")
 
-            eq.cross_zone_message_player_by_name(5, "GMFizban", "Anguish -- Instance: " .. instance_id);
-            e.self:Message(14, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");
-          end
+        dz = e.self:CreateExpedition(expedition_info)
+        if dz.valid then
+          dz:SetReplayLockoutOnMemberJoin(false) -- live doesn't add "Replay Timer" to new members after spawning aug droppers (bug or intentional?)
+        else
+          anguish_door_cooldown_expire_time = now + 60
+          eq.debug(string.format("Anguish gate placed on 60s cooldown due to failed request by [%s]", e.self:GetCleanName()))
         end
       end
     end

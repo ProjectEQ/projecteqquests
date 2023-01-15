@@ -1,3 +1,4 @@
+# items: 4460
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp == 17) {
     quest::emote("stops skipping and looks around, 'Uh oh'");

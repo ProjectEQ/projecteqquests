@@ -1,3 +1,4 @@
+-- items: 18821
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say(string.format("Hail, %s! Are you new to Qeynos? If you are, I highly recommend stopping by the Lion's Mane Tavern for the best ale in Antonica. Oh, did I mention that my brother Earron is the master brewer there? Tell him [Kwint sent] you.",e.other:GetName()));

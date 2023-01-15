@@ -1,3 +1,4 @@
+# items: 29062, 29124, 29125
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Hmm, the guards at the gate sent a $race to assist with the [rampant problems]? They shall have to be replaced with functional sentries so this does not occur again, but that is another matter for later.");

@@ -1,4 +1,5 @@
 #Lord Qyzar is for the Greenmist quest and administers the fourth, fifth, and sixth quests in the line.
+# items: 12496, 5123, 5124, 1729, 1730, 5125, 7324, 5126
 
 sub EVENT_SAY {
  if($text=~/hail/i){

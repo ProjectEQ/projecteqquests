@@ -1,3 +1,4 @@
+# items: 20605, 20606
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("groans in extreme anguish. '[Help] me.'");

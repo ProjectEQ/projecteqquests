@@ -1,5 +1,6 @@
 #zone: gunthak NPC: Olden (224200)
 #Angelox
+# items: 59510, 21820, 59511, 21821, 59512, 21822, 59513, 21823
 
 sub EVENT_SAY { 
 if ($text=~/Hail/i){

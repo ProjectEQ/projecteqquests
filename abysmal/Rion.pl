@@ -1,5 +1,6 @@
 # Pepe's Got a Brand New Bag
 # Created by Gonner
+# items: 55571, 55570, 55576, 55573, 55574
 
 sub EVENT_SAY {
   if (defined($qglobals{brandnewbag}) && ($qglobals{brandnewbag} == 1) && ($text=~/pepe/i)) {

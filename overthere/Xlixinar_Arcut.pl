@@ -1,3 +1,4 @@
+# items: 14789, 14788, 14790, 14783, 3053, 4976, 14786, 3060, 4979, 3056, 4977
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Begone unless you seek the armor of the [trooper]");

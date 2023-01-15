@@ -1,3 +1,4 @@
+-- items: 13910
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings and welcome to the Temple of Life! The healing of the world shall begin within. Let me know if you have seen a [new disciple of life]. I have a task which needs to be attended to.");

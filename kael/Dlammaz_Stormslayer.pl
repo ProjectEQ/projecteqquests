@@ -1,4 +1,5 @@
 # Dragon Heads quests
+# items: 25119, 25023, 25118, 25022
 
 sub EVENT_SAY {
   # Require Warmly or better faction

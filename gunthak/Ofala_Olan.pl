@@ -1,6 +1,7 @@
 #Ofala_Olan.pl
 #Started by Angelox, finished by Kilelen
 #Leviathan Eyes/Scryer's Trespass
+# items: 17889, 54025, 59015, 16506, 54006, 54008, 54007
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

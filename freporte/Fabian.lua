@@ -1,3 +1,4 @@
+-- items: 13709, 13710, 13708
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, merry gentlefolk! If you enjoy the music, please feel free to cross my palm with gold.");
@@ -6,7 +7,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	local fabian = eq.get_qglobals(e.other);
+	local qglobals = eq.get_qglobals(e.other);
 
 	if(item_lib.check_turn_in(e.trade, {gold = 2})) then
 		e.self:Say("Rat spittle! Busted another string! You seem like a good music loving citizen, could you please run to the Wind Spirit's Song and grab me a fresh set of lute strings?");
@@ -17,7 +18,7 @@ function event_trade(e)
 		e.other:Faction(304, -1,0); -- Faction: Ring of Scale
 		e.other:Faction(285, -1,0); -- Faction: Mayong Mistmoore
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13709})) then -- Lute Strings
-		if(fabian.SilverCoin ~= nil) then
+		if(qglobals.SilverCoin ~= nil) then
 			e.self:Say("'Many thanks, merry gentlefolk! Let me cross your palm in gratitude for your kindness.");
 		else
 			e.self:Say("'Many thanks, merry gentlefolk! Let me cross your palm in gratitude for your kindness. Hmmmm where did my lucky coin go?");

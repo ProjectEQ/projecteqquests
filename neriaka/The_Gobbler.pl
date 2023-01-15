@@ -1,3 +1,4 @@
+# items: 12203, 13386, 13385, 10021
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Meat!! You need meat. Me gots meat!! High elf meat, dwarf meat, human meat, [HEHE meat], [froggy legs]. Me got a lot.");

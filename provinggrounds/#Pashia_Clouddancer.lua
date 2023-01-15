@@ -1,3 +1,4 @@
+-- items: 69973, 69974
 local event_starter;
 local following=false
 local arrived=false;

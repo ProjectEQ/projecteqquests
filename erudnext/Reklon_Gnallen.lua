@@ -1,4 +1,5 @@
 -- Paladin Epic 1.0
+-- items: 13005, 13008, 69965, 29001, 29006, 29004, 29000, 29009, 29003, 29005, 29010
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);

@@ -1,3 +1,4 @@
+# items: 8004
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Have you been sent by the War Baron to [assist]? The explorers from Firiona Vie draw closer.");

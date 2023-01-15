@@ -1,3 +1,4 @@
+# items: 12439
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Come to serve the garrison? Good. I aim to offer a reward for the return of four froglok tad tongues. Best if we handle the pesky critters before they grow too big and too numerous.");

@@ -1,3 +1,4 @@
+# items: 63163, 63164, 63146, 63170
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Ahh...yes, I've read reports about you. Always showing up here and there across Luclin. Not always under the best circumstances though, eh? No matter. I need someone who can get [things done]. I'm not looking for a saint.");

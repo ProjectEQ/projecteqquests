@@ -1,3 +1,4 @@
+# items: 4758, 4759, 4765
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Oi there, $name. If you are lookin for a potion or an antidote I got just what the doctor ordered. Step right up! I also have many other special potions but sadly I do not have the correct [components] for them.");

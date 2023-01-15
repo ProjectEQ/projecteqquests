@@ -1,3 +1,4 @@
+# items: 29164
 sub EVENT_SPAWN {
 quest::settimer(55,600); #10 min timer parsed from live
  }

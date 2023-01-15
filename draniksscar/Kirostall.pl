@@ -1,6 +1,7 @@
 #Kirostall.pl
 #Revenge on the Ikaav, Revenge on the Kyv, Revenge on the Noc
 #Must be warmly+ to do these. -Kilelen
+# items: 36532, 36531, 71153, 71154, 36530, 36529, 71148, 71147, 36534, 36533, 71150, 71149
 
 sub EVENT_SAY
 {	

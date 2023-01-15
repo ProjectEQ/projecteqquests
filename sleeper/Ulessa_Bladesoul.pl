@@ -1,3 +1,4 @@
+# items: 17147, 20410
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("looks up with you and sniffles. From the look of it, she has been sniffling like that for quite some time, though you're not sure how long. 'Oh, I'm sorry. I really don't mean to do this in front of you, it's just that I'm so very [unhappy].'");

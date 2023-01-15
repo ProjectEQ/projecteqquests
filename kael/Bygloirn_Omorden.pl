@@ -4,6 +4,7 @@
 #
 #NPC Name: Bygloirn Omorden
 #NPC ID: 113183
+# items: 25831, 24905, 25384, 25814, 24900, 25385, 25821, 24902, 25386, 25838, 24904, 25387, 25832, 24906, 25388, 25825, 24901, 25389, 25833, 24903, 25390
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

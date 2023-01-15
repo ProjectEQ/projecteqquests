@@ -1,5 +1,6 @@
 # tundrabear sandwich portion of 3rd coldain prayer shawl
 #
+# items: 1415, 1425, 1419
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1415 => 1, 1425 => 1)) {

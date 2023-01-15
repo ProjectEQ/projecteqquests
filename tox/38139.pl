@@ -1,4 +1,5 @@
 #abandoned heretic pet
+# items: 13894, 10015, 10016, 10017, 10018
 
 my $jobresponse;
 my $numresponse;

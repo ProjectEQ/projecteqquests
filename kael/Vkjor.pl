@@ -1,6 +1,7 @@
 # Vkjor's Major Task
 # Vkjor's Minor Task
 # Created by Gonner
+# items: 25102, 25128, 25129, 25127, 25078
 
 sub EVENT_SAY {
 

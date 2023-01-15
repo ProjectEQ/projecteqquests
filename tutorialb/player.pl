@@ -16,8 +16,8 @@ sub EVENT_ENTERZONE
 			hail Guard Rahtiz and see where you are needed.<br><br><c \"#FFFF00\">Basic Training:</c><br>If you 
 			would like more training on the finer points of Everquest, speak with Arias and he will direct you to other knowledgeable 
 			members of the slave revolt.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
-			quest::assigntask(22);
-			quest::assigntask(23);
+			quest::assigntask(1448);
+			quest::assigntask(5166);
 			quest::setglobal("tutpop",1,1,"D30");
 	}
 	
@@ -77,7 +77,7 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 		This changes the text on the key.<br><br><c \"#1b6e14\">Assign Social</c><br>This lets you put a custom ability created on the <c \"#83f07a\">Socials Page</c> into the <c \"#83f07a\">Hotbar</c> directly.<br><br>
 		<c \"#1b6e14\">Change Size</c><br>This lets you resize and scale the entire<c \"#83f07a\"> Hotbar.</c><br><br><c \"#1b6e14\">Unmemorize</c><br>This lets you forget a memorized spell. Only works
 		on spell gem <c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Click 'OK' to complete the tutorial on  Hotbars.</c>");
-		quest::updatetaskactivity(290,1);
+		quest::updatetaskactivity(8804,1);
 	}
 	if ($popupid == 10) {
 		quest::popup("Swimming", "<br>When underwater, your remaining air is shown in the <c \"#1b6e14\">Air Remaining</c> window. If your air supply runs out, you will begin taking damage.<br><br>
@@ -88,11 +88,11 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 
 sub EVENT_TASK_STAGE_COMPLETE 
 {
-	if ($task_id == 34)
+	if ($task_id == 5096)
 	{
 		quest::ze(15, "A cheer arises from the slaves as the last of the Kobold overseers fall.");
 	}
-  if ($task_id == 28 && $activity_id == 1) {
+  if ($task_id == 5092 && $activity_id == 1) {
     $client->Message(0,"Vahlara bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
   }
 } 

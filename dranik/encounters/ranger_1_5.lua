@@ -2,6 +2,7 @@
 --336001 Uisima
 --336000 a golembound spirit 1 5 sec in, then every minute, every 30 sec wipehatelist heal to full
 --336230 a_fireskin_acolyte
+-- items: 62623, 62626
 local hpcheck;
 
 function Sverin_Combat(e)

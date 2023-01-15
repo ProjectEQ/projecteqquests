@@ -5,6 +5,7 @@
 # Quests:
 #    Part of quest for Incandescent Mask by Mystic414
 #    Part of quest for Spell: Tashania   by darkonig
+# items: 10531, 10791, 10792
 
 sub EVENT_SAY {
   if($text=~/Hail/i){
@@ -23,6 +24,10 @@ sub EVENT_ITEM {
     quest::summonitem(10531); # Item: Rune of Fortune
   }
 
+ if($platinum == 5) {
+    quest::say("I see that Sultin has sent you to me.  Very well, here is your rune."); # Made this text up
+    quest::summonitem(10531); # Item: Rune of Fortune
+  }
   # Tashania Quest
   # items needed:
   #     10791 Glowing Coin of Tash

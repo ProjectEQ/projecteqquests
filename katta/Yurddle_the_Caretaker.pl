@@ -1,3 +1,4 @@
+# items: 18353, 10670, 10673, 10672, 10671, 10682, 10674, 10675, 10676, 10677, 10683, 10678, 10679, 10680, 10681, 10684
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
 		quest::say("Greetings stranger. It's nice to have visitors of the living sort. Seems like my work here is never done. When I'm not having to dig fresh graves and keep the mausoleum clean I'm having to refill old graves that have been dug up by the [restless dead] or them disrespectful [grave robbers]!");

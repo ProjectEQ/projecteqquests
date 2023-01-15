@@ -1,3 +1,4 @@
+-- items: 31440, 31442, 31441, 31439, 1324
 function event_say(e)
 	if(e.other:GetLevel() >= 55) then
 		if(e.message:findi("hail")) then
@@ -13,7 +14,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 31440,item2 = 31442,item3 = 31441,item4 = 31439}) and e.other:GetLevel() >= 55) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 31440,item2 = 31442,item3 = 31441,item4 = 31439}) and e.other:GetLevel() >= 55) then
 		e.self:Say("Thank you, friend.  These scrolls will serve us well in the future.  Please take this as a sign of my gratitude."); -- Text made up
 		e.other:SummonItem(1324); -- Item: Visage of Life
     e.other:AddEXP(2500);

@@ -1,3 +1,4 @@
+-- items: 1665
 function event_say(e)
 	if(e.message:findi("hail")) then -- Part of Shaman Epic 1.0
 		e.self:Emote("burps loudly in your face and says, 'Bah! Leave me be, fool! You have nothin' I want and I certainly have nothin' you want.");

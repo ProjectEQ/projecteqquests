@@ -1,5 +1,6 @@
 #Grave_Lord_Dreavud.pl
 #Shadow Knight Tomes/Planar Armor Exchange
+# items: 4841, 4842, 4843, 4844, 4845, 4846, 4847, 10028, 10037, 22503, 15981
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

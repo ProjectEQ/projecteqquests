@@ -1,5 +1,6 @@
 # part of 7th coldain prayer shawl
 #
+# items: 17514, 1856
 
 sub EVENT_SAY {
   if ($text=~/cutlass fish oil/i) {

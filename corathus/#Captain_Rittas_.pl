@@ -29,21 +29,21 @@ sub EVENT_SAY
 			my @task_array;
 			
 			my $mino = $entity_list->GetMobByNpcTypeID(365004);
-			if($mino && !quest::istaskactive(147))
+			if($mino && !quest::istaskactive(500147))
 			{
-				push(@task_array, 147);
+				push(@task_array, 500147);
 			}
 			
 			my $spore = $entity_list->GetMobByNpcTypeID(365038);
-			if($spore && !quest::istaskactive(148))
+			if($spore && !quest::istaskactive(500148))
 			{
-				push(@task_array, 148);
+				push(@task_array, 500148);
 			}
 			
 			my $octo = $entity_list->GetMobByNpcTypeID(365035);
-			if($octo && !quest::istaskactive(149))
+			if($octo && !quest::istaskactive(500149))
 			{
-				push(@task_array, 149);
+				push(@task_array, 500149);
 			}
 			
 			my $task_array_size = @task_array;

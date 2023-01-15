@@ -1,3 +1,4 @@
+#Ikkinz Raid #3: Chambers of Transcendence 
 sub EVENT_SPAWN {
   	$x = $npc->GetX();
    	$y = $npc->GetY();

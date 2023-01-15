@@ -1,3 +1,4 @@
+-- items: 13945, 18911, 12141
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("It is good to meet you, %s. You, my friend, are an adventurer. The rugged look of you testifies to that. Let me know if you plan to adventure in the Plains of Karana. I have need of a person such as yourself to [deliver a flask].",e.other:GetName()));

@@ -1,3 +1,4 @@
+-- items: 19843, 18857, 13561, 19932, 19921, 19926, 19852, 19938
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Oh. hello down there. puny one. I'm Brutol Rhaksen. Commmander of warriors who [serve] the Dismal Rage. and that's really all you need to know..for now.");

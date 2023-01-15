@@ -88,6 +88,11 @@ function OMM_Say(e)
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 			e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
 			e.self:AddToHateList(e.other,1);
+			local dz = eq.get_expedition()
+			if dz.valid then
+				dz:SetLocked(true)
+				eq.debug("Locked expedition")
+			end
 		end
 	end
   end

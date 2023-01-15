@@ -1,3 +1,4 @@
+# items: 17043, 18211, 17994, 12661, 12657, 12435, 12436, 12437, 5133, 12477, 12913, 18073
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("What business do you have speaking to an Iksar Warlord? Be gone before you find yourself served as my evening meal. Go to Captain Nedar if you wish to assist my garrison. Fool.");

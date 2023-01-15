@@ -1,3 +1,4 @@
+-- items: 17936, 13872
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("May the Truthbringer guide your path. I am Celsar Vestagon, upholder of the faith and cleric of Mithaniel Marr. Did you come to see the [minnows of marr]?");

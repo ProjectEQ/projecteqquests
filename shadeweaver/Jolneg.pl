@@ -1,3 +1,4 @@
+# items: 7808, 30579, 7815
 sub EVENT_SAY { 
   if($text=~/hail/i){
     quest::say("Hello there, young one, has the Captain sent you to speak with me about the [Deathmaw Club]?");

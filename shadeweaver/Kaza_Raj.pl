@@ -2,6 +2,7 @@
 #Ghulam Armor
 #I saw no mention of experience or faction hits in the quest on Alla's.
 #After writing this, I saw that someone else already had.  I merged my work and theirs, whoever it was.  They had better dialogue information than I did.  -Kilelen
+# items: 2476, 2453, 2460, 2452, 2477, 2454, 2478, 2455, 2479, 2456, 2480, 2457, 2481, 2459
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i) {
@@ -30,6 +31,9 @@ sub EVENT_SAY {
 	
 	if($text=~/tunic/i) {
 		quest::say("A breastplate shall complete your set! Bring me four carapaces from Cht'Thk Bloodbulks and I will give you a wonderful tunic!");
+	}
+	if($text=~/pant/i) {
+		quest::say("Hmm, you are growing more mighty as time passes - Kill Saurek Claw Beasts and bring me four fangs, I have most excellent pants if you succeed.");
 	}
 }
 

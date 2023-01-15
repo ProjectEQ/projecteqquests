@@ -1,8 +1,8 @@
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["monk_epic"] >= "7" and e.message:findi("hail")) then
+	if(qglobals["monk_epic"] ~= nil and qglobals["monk_epic"] >= "7" and e.message:findi("hail")) then
 		e.self:Say("I know what you seek and you will have to go through me to get to it. This feat will be your undoing but if you [" .. eq.say_link("insist") .. "] I will provide you a quick demise.");
-	elseif(qglobals["monk_epic"] >= "7" and e.message:findi("insist")) then
+	elseif(qglobals["monk_epic"] ~= nil and qglobals["monk_epic"] >= "7" and e.message:findi("insist")) then
 		e.self:Say("Prepare to meet your god, fool!");
 		e.self:SetSpecialAbility(19, 0);
 		e.self:SetSpecialAbility(20, 0);

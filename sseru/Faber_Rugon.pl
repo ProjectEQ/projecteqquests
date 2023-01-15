@@ -1,3 +1,4 @@
+# items: 31787, 29879, 31788, 31966, 29878, 31965, 29876, 31968, 29880, 31967, 29877
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 31787 => 2)) {
     quest::summonitem(29879); # Item: Lightcrawler Breastplate

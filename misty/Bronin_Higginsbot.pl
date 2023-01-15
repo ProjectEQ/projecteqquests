@@ -1,3 +1,4 @@
+# items: 13110, 12192, 12193
 sub EVENT_SAY {
    if ($text=~/hail/i) {
       quest::say("Hello. It is dangerous out in the woods. You should go to Rivervale. It's at the end of the path. You will find good times there. Travel safely, my friend!");

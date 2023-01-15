@@ -1,3 +1,4 @@
+# items: 62075, 62074, 62193
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Pungub is happy to be free from the mines. Pungub wants some gobbys to die will you kill gobbys for Pungub?");

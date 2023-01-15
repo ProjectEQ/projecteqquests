@@ -10,11 +10,11 @@ sub EVENT_SAY {
     }
     if($text=~/exploring the area/i) {
       quest::say("Excellent! I thought you might be the exploring kind...");
-      quest::taskselector(140); #Task: Bringing Books to the Plains
+      quest::taskselector(811); #Task: Bringing Books to the Plains
     }
     if($text=~/more interesting/i) {
       quest::say("Ah, what a brave soul you are!");
-      quest::taskselector(139); #Task: By the Stones
+      quest::taskselector(825); #Task: By the Stones
     }
   }
   else {

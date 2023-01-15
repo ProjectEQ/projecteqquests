@@ -2,6 +2,7 @@
 #zone - Oggok
 #class - all
 #part 2 to crude stein
+# items: 16547
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16547 => 1)) {

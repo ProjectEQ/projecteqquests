@@ -1,3 +1,4 @@
+# items: 21979, 219847, 21985
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello there $name. I must admit that I am not in the highest of spirits on this day. So unless you know something about [Xoomix], please leave me alone.");

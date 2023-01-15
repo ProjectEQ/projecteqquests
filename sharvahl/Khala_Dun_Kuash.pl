@@ -1,3 +1,4 @@
+# items: 5550, 17114, 6217, 6219, 6221, 6141, 6142, 6148, 5557, 6158, 6222
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Welcome to Shar Vahl's North Gate District.  If you're looking to relax. you may want to grab a drink at the Trail's End.  It's right behind me on the left.  Take care."); }

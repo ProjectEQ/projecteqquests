@@ -1,3 +1,4 @@
+# items: 13916, 13024
 sub EVENT_COMBAT {
 	if($combat_state == 1){
 	my $cur_target = $npc->GetHateTop();

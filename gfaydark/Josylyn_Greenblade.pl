@@ -1,3 +1,4 @@
+# items: 17124, 19633, 19634, 19632, 19631, 19636, 19635, 19637, 20281, 20294, 20298, 20274, 20271, 20331
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings $name. It is my duty to teach young Fier`Dal the arts of defense and fighting so that they may become skilled members of the Emerald Warriors. There are many [threats] facing our forests and our home Kelethin, thus we warriors must be prepared both physically and mentally to defend our people. It is wise for all young Emerald Warriors to acquire a [suit of armor] to protect them from the weapons of our enemies.");

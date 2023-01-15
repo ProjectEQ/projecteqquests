@@ -1,5 +1,6 @@
 # Paladin Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54212, 68220, 54210, 68223, 54213, 68225, 54215, 68226, 54216, 68224, 54214, 68221, 54211
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,3 +1,4 @@
+-- items: 13071
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hello there %s, I hope you are doing well on this fine day. I would be great myself if it wasn't for these darn Rodents, they are everywhere! I don't suppose you would be able to help us with our problem? I would be glad to reward you for every four rat whiskers you can bring me.",e.other:GetName()));

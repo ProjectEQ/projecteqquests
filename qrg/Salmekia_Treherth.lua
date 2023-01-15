@@ -1,3 +1,4 @@
+-- items: 17125, 19559, 19561, 19558, 19555, 19560, 19557, 19556, 20268, 20258, 20259, 13915, 19945, 20265
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Welcome to Surefall Glade, %s, the home of the Jaggedpine Treefolk. I help teach young druids the ways of our people. We have worshipers of both Karana, the Storm Lord, and Tunare, the All Mother, living here in the glade. If you are a new druid I will help you obtain a [suit of clothing] that will offer comfort and protection while working in the wilds and help protect you from the weapons of the Gnolls that wish to take these lands.",e.other:GetName()));

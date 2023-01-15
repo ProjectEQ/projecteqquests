@@ -1,3 +1,4 @@
+-- items: 63114, 63115, 63125, 63116, 63124, 63117, 15562, 63118, 63127, 63128, 63126, 63130, 63129
 function event_say(e)
 	if (e.message:findi("hail")) then
 		if (e.other:Race() == "Froglok") then

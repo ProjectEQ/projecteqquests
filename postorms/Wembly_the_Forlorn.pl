@@ -1,5 +1,6 @@
 #Wembly_the_Forlorn.pl
 #Alternate Access: Plane of Tactics
+# items: 29216, 29217, 29218, 29219, 29215
 
 sub EVENT_SAY
 {

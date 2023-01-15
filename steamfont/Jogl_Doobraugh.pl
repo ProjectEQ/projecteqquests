@@ -1,3 +1,4 @@
+# items: 13209, 18837, 18838
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hellooo!!  My name is Jogl, master engineer with the Eldrithch Collective.  And this here is Charlotte.  Pay no mind to her, She won't bite unless you attack me.");

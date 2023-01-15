@@ -1,3 +1,4 @@
+# items: 57991
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I'm going to hedge my bets and guess that you are here for my special vial? Takes me forever to make and is going to cost you 2000 platinum. Yes indeed.");

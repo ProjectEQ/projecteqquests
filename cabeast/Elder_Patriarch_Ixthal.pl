@@ -1,3 +1,4 @@
+# items: 48060, 12844, 12845, 12633, 48045, 48046, 48051, 48047, 48061, 48048, 48064, 48065, 48066, 48067, 48049
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("'Hello to you as well. I am Elder Patriarch Ixthal and I continue training when the Prime Patriarch becomes overwhelmed with duties. I will train you if you seek to one day [become a Patriarch of Cabilis].");

@@ -1,3 +1,4 @@
+-- items: 13099, 12247, 10307, 15338, 13073, 13927, 15331
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("A new recruit to our cause.  Just what I have been waiting for!  How would you like to serve the great Xelha Nevagon?  I need an apprentice necromancer to [assist the great Xelha].");

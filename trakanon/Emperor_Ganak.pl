@@ -1,3 +1,4 @@
+# items: 19951, 19952, 20883, 7276, 19953, 19954, 19955, 20884
 sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("Greetings..It has been long since I have been aware on this plane.. Who are you and what do you want of I, Ganak, slayer of Jaled-Dar?");

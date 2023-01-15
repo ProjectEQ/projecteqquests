@@ -1,3 +1,4 @@
+# items: 19351, 19347, 19354, 19358, 19368, 19346, 19355, 19357
 sub EVENT_SAY { 
   if($text=~/Hail/i){
     quest::say("Bah!! It's not been a good day! Reports from the Outlands are even worse than I was led to believe. Many would-be adventurers have turned up missing of late. One of them was one of my messenger. He was out collecting some of the various new and [interesting scrolls] that have been surfacing in the farthest reaches of this land. I fear for his safety and that of the others searching for the lost travelers. I wish there was more I could do.");

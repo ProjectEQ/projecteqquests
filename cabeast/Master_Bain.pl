@@ -1,3 +1,4 @@
+# items: 17998, 18468, 22923, 7881, 18467, 22922, 12688, 4350, 4351, 4352, 4353, 4354, 4355, 4356, 4357, 4358, 4359
 sub EVENT_SAY { 
  if($text=~/Hail/i){
   quest::say("Welcome.  Who has [sent] you to me?");

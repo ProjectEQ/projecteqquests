@@ -1,9 +1,10 @@
+# items: 2877, 17233, 3497, 3498, 17234, 3499, 3631, 3632, 3641, 3647, 3643, 17107
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Hello $name. Sorry but I have no time to chitchat. I’m looking for the help of a citizen.");
+    quest::say("Hello $name. Sorry but I have no time to chitchat. I'm looking for the help of a citizen.");
   }
   if ($text=~/i am a citizen/i) {
-    quest::emote(" looks at you excitedly. 'Show me you acrylia slate and I’ll explain my situation.'");
+    quest::emote(" looks at you excitedly. 'Show me you acrylia slate and I'll explain my situation.'");
   }
   if ($text=~/additional instructions/i) {
     quest::say("Mastered those runes already, $name? You're learning very fast indeed. Your next lesson will be in the molding of a new type of item. You'll need to gather some gray mud from below the city and mix it with some Rockhopper blood to make a block of reddish clay. Take this block of reddish clay and combine it with a Vah Shir model sketch to create an unfired Vah Shir figurines. Fire the model in a kiln with a firing sheet to create a Finished Vah Shir figurine. Finally, use the Runequill Set to etch grimling blood into runes on the figurine.");

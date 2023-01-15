@@ -1,5 +1,6 @@
 # Helmet Eclipsing Liquidation Machine (H.E.L.M.)
 # Created by Gonner
+# items: 10037, 67735, 67720, 68855, 67729, 68900, 67732, 68915, 67726, 68885, 67733, 68920, 67731, 68910, 67728, 68895, 67721, 68860
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

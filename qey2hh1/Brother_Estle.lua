@@ -2,6 +2,7 @@
 -- class - all
 -- zone - West Karana
 -- reward - Spell: Inspire Fear
+-- items: 13910, 13911
 
 function event_waypoint_arrive(e)
 	if(e.wp == 1) then

@@ -1,4 +1,5 @@
 #The tormented tradesman is actually the skeleton/spirit of the Haggle Baron, Dalnir. Giving this skeleton the Mirror of Self Loathing will spawn Haggle Baron Dalnir so you can finish the Greenmist quest.
+# items: 3889, 3896
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 3889 => 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)

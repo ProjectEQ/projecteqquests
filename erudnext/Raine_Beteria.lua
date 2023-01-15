@@ -1,3 +1,4 @@
+-- items: 6339, 6340, 10792, 10793
 function event_say(e)
 	if(e.message:findi("hail")) then 
 		if(e.other:GetFaction(e.self) <= 5) then

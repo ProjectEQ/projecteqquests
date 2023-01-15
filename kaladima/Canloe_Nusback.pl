@@ -1,3 +1,4 @@
+# items: 13318, 9009, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120, 2122, 2123, 2124, 13319, 10017
 sub EVENT_SAY { 
   if ($text=~/hail/i) {
     quest::say("Step forward and speak up, young $name! Kaladim can always use another warrior. Are you [ready to serve Kaladim] or has a yellow streak appeared down your back?");

@@ -1,3 +1,4 @@
+# items: 10037, 54044, 16537, 54036, 54045, 54046, 54037, 54047, 54038, 10053, 54052, 54062, 54030, 54053, 54054, 54031, 54055, 54032, 54058, 54060, 54056, 54039, 54059, 54057, 54061, 9590
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
    quest::say("Salutations, my name is Stefan Marsinger. My sister Seana and I are here on a mission for the League of Antonican Bards. Are you [interested] in assisting us in our task?");
@@ -66,7 +67,7 @@ sub EVENT_ITEM {
     quest::summonitem(54039); #glimmering gem
     quest::exp(60000);
   }
-  if (plugin::check_handin(\%itemcount, 54038 => 1, 54059 => 1, 54057 => 1, 54061 => 1, 54038 => 1)) { #caster 4
+  if (plugin::check_handin(\%itemcount, 54038 => 1, 54059 => 1, 54057 => 1, 54061 => 1)) { #caster 4
     quest::summonitem(54039); #glimmering gem
     quest::exp(60000);
   }

@@ -5,6 +5,7 @@
 #be put on the bug points vendor for a point or something.  
 #If so, this would enable exchanges.  Also did it just for the sake 
 #of completeness. -Kilelen
+# items: 59997, 59996
 
 
 sub EVENT_SAY {

@@ -1,3 +1,4 @@
+-- items: 52522
 function event_say(e)
 	if(e.message:findi("hail") and e.other:HasItem(52522) == true) then
 		e.self:Emote("sniffs the air as you approach.  His eyes go wide. 'You bring news of my favorite.  What has happened to Redfang?  Please, let me see!");

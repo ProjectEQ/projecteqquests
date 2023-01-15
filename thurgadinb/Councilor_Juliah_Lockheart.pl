@@ -1,5 +1,6 @@
 # Councilor_Juliah_Lockheart 
 # Part of the Coldain 9th Ring 
+# items: 1464
 
 
 sub EVENT_SAY { 

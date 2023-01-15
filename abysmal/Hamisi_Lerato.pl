@@ -1,3 +1,4 @@
+# items: 64008
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("looks despondent");

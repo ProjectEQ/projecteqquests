@@ -1,3 +1,4 @@
+-- items: 17268, 38834, 27460, 27358, 38830, 27461, 27359, 38831, 27360, 38833, 27463, 27361, 38836, 27464, 27362, 38832, 27465, 27363, 38835, 27466, 27364, 27421, 27422, 27492, 18707, 13504
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say("Welcome. I am the champion of the Steel Warriors. There are none who can challenge me. I guide this brotherhood of Steel Warriors. From Qeynos to the trade city of Freeport, the ways of the Steel Warriors are taught. I welcome all [young Steel Warriors].");

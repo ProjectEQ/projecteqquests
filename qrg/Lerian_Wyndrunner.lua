@@ -1,3 +1,4 @@
+-- items: 8766, 8767, 8765, 8764, 8799, 8797, 8863, 8879, 8873, 8878, 8881, 8866, 8867, 8865, 8872, 8792, 8871
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote(string.format("gives a tilt of his head toward %s. 'Greetings, I am not native to htese lands, so I ask that you forgive me if I do not recognize your face, my friend. If [you have come to inquire about my presence here], then please, do rest assured that I am not a threat to these acred grounds. As Jaggedpine is from where I hail, know that my respect for this place is equal to that of any whom call this place home.'",e.other:GetName()));

@@ -1,5 +1,6 @@
 # Discord Progression: Access to Txevu
 # Created by Gonner
+# items: 60252, 60176, 60253, 60254
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {

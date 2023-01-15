@@ -1,3 +1,4 @@
+# items: 31289, 7498
 sub EVENT_SAY { 
   if($text=~/hail/i){
     quest::say("Greetings young one, have a seat by the fire.  You will notice the dance being preformed.  This is much more than just a dance though.  It is a ritual that we preform to [purge] the evil spirits that are plaguing the thicket.");

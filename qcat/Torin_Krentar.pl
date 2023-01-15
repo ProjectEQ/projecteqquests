@@ -1,6 +1,7 @@
 # Bertoxxulous cleric quest armor
 #
 # correct reward dialogue missing for pestilence priest mace hand in
+# items: 19633, 19634, 19632, 19631, 19636, 19635, 19637, 20207, 17124, 20199, 19946, 20261
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

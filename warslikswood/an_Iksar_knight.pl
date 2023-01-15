@@ -1,4 +1,5 @@
 #This iksar knight is actually Grizzle, for the fourth quest in the Greenmist line, The Test of the Zealot.
+# items: 12492, 12493, 12494, 6026, 12496
 
 sub EVENT_SAY {
  if($text=~/hail/i){

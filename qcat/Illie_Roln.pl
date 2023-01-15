@@ -1,3 +1,4 @@
+# items: 19633, 19634, 19632, 19631, 19636, 19635, 19637, 20205, 17124, 20177, 19946, 20262
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("A healthy young $race you appear to be. The Plague Bringer has not yet blessed you with his greatest of gifts. What can I do for you young one?");

@@ -15,19 +15,19 @@ sub EVENT_SAY
 	elsif($text=~ /Assist/i)
 	{
 		my @task_array;
-		if(!defined($qglobals{corathus_scrap_daily}) && !quest::istaskactive(154))
+		if(!defined($qglobals{corathus_scrap_daily}) && !quest::istaskactive(500154))
 		{
-			push(@task_array, 154);
+			push(@task_array, 500154);
 		}
 		
-		if(!defined($qglobals{corathus_bolt_daily}) && !quest::istaskactive(155))
+		if(!defined($qglobals{corathus_bolt_daily}) && !quest::istaskactive(500155))
 		{
-			push(@task_array, 155);
+			push(@task_array, 500155);
 		}
 		
-		if(!defined($qglobals{corathus_gizmo_daily}) && !quest::istaskactive(156))
+		if(!defined($qglobals{corathus_gizmo_daily}) && !quest::istaskactive(500156))
 		{
-			push(@task_array, 156);
+			push(@task_array, 500156);
 		}
 
 		my $task_array_size = @task_array;

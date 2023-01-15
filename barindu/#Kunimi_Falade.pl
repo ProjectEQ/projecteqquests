@@ -1,3 +1,4 @@
+# items: 64001, 64002, 64003, 64004, 64005, 64006
 sub EVENT_SAY {
   if($text=~/hail/i) {
   if ($faction <= 1) { # Require ally faction
@@ -27,12 +28,17 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 64001 =>1 )) {
     quest::emote("takes the ring and studies it for a moment.");
     quest::say("So the time has finally come. Unfortunately, I have had little success. Our traditional poisons have absolutely no effect on these invaders. They don't even seem to notice the poison. But, there is some hope. I believe I can distill a poison that will affect them if I had the right [ingredients].");
+    quest::exp(1000);
+    quest::ding();
   }
   if (plugin::check_handin(\%itemcount, 64002 =>1, 64003 =>1, 64004 =>1, 64005 =>1 )) {
    if (defined $qglobals{bic_bar} && $qglobals{bic_bar} == 5) {
  quest::emote("takes the ingredients and gets to work. Within a few minutes, she produces a viscous green liquid. Plucking a bunch of fruit from the nearby plant, she coats the fruit in the poison.");
  quest::say("That should do it. I can't be positive that this will do more than give Ixvet an upset stomach, but we can hope. Please take this to Proteri Amari.");
  quest::summonitem(64006); # Item: Poisoned Fruit
+ quest::faction(1761, 10); # Faction: Nihil
+ quest::exp(1000);
+ quest::ding();
  }
  }
  plugin::return_items(\%itemcount); 

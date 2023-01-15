@@ -1,4 +1,5 @@
 # Quest: Tailfang
+# items: 30667, 30783
 
 # NPC: Dar Khura Pyjek
 # Zone: Shar Vahl

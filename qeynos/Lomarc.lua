@@ -1,3 +1,4 @@
+-- items: 18006
 function event_waypoint_arrive(e)
 	if(e.wp == 16 or e.wp == 43 or e.wp == 70) then
 		e.self:Say("Psst.. Hey, you there.. Yeah, you.. You need some [blank scroll sheets].. I just got a special shipment of things in.. Come on, it's just what you're looking for.. I know you.");

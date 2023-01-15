@@ -1,5 +1,6 @@
 #Pazin_Punox.pl
 #Rogue Tome Handin/Rogue Master Sketch
+# items: 7041, 9438, 24095
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

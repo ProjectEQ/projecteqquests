@@ -1,3 +1,4 @@
+# items: 29843
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("startles and gazes up at you. 'Careful, careful... I am nearly out of [pyrrhotite].'");

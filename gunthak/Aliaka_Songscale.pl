@@ -1,5 +1,6 @@
 #Aliaka_Songscale.pl
 #Dark Ice(Part of Frozen Harpoon)
+# items: 58007, 58008
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){

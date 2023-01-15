@@ -1,3 +1,4 @@
+-- items: 13375, 13376
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Grikk.. Please leave me be. I but a humble forager. My people are starving.");

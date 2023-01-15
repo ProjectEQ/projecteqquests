@@ -1,4 +1,5 @@
 -- Gindlin's Poison
+-- items: 14017, 13901, 14015
 
 function event_say(e)
 	if(e.message:findi("hail")) then

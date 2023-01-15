@@ -1,3 +1,4 @@
+-- items: 18855, 13565
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Yes. yes. yes.  Hail to you. too, %s.  Now, quit bugging me!",e.other:GetName()));

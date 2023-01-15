@@ -45,6 +45,7 @@
 # Anyone not KOS
 #
 ############################################
+# items: 17270, 22583, 22584, 22586, 22585, 22587, 22588, 22589, 27425, 27426, 27427, 27494
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {
@@ -53,7 +54,7 @@ sub EVENT_SAY {
    if($text=~/tests/i) {
       quest::say("I pride myself on passing some of the finest monks in all of the lands through my testing halls. I mainly attribute this fact to my training program that all young monks must undergo. When you are [ready to begin the tests] I will present you with your Silent Fist Assembly Kit and explain to you how the tests work.");
    }
-   if($text=~/ready to begin the tests/i) {
+   if($text=~/begin the test/i) {
       quest::say("Be mindful of your surroundings $name, it is here in Qeynos and in the adventuring areas surround it that you will find all the necessary items for creating Armor of the Silent Fist. You will place a number of items in this kit to create infused armor materials. These magical armor materials can then be combined in a loom with a magical pattern to create different Armor of the Silent Fist pieces. When you are ready to collect the items for a specific armor piece please tell me what armor piece you want to craft. I can present you with the patterns for Silent Fist [Cap], [Bracers], [Sleeves], [Sandals], [Trousers], [Gloves] and [Robes].");
       # Silent Fist Assembly Kit ID-17270
       quest::summonitem("17270");

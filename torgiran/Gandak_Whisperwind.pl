@@ -1,3 +1,4 @@
+# items: 21986, 21989, 21990, 21991, 21992, 21987
 sub EVENT_SAY {
   quest::say("I do not have time to talk right now."); #need real text
 }

@@ -1,4 +1,5 @@
 # Rogue Epic NPC -- Malka_Rale
+# items: 28014
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

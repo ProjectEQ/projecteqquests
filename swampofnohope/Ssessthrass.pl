@@ -1,4 +1,5 @@
 # Necromancer Epic NPC -- Ssessthrass
+# items: 20644, 20645, 20654, 20650
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

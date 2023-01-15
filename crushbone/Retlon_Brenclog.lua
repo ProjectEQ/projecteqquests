@@ -1,3 +1,4 @@
+-- items: 20015, 1717
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Oh my word!! A rescuer!! Hurry! Get me out of these chains!! Go find the orc who has the keys!");

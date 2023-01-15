@@ -30,7 +30,6 @@
 
 local event_started = 0;
 local instance_id;
-local lockout_name = 'MPG_specialization';
 local lockout_win = 108;
 local this_bit = 8;
 local player_list;
@@ -55,7 +54,6 @@ function Boss_Spawn(e)
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
   event_started = 0;
-  lockout_name = 'MPG_specialization';
   lockout_win = 108;
   this_bit = 8;
   setup();
@@ -69,6 +67,12 @@ function Boss_Say(e)
   if ( e.message:findi("hail") ) then
     e.self:Say("This is the Mastery of Specialization trial. You must demonstrate your ability to use your primary skills and fall back on your secondary skillset when necessary. Are you ready to [" .. eq.say_link("begin", false, "begin") .. "]?");
   elseif ( e.message:findi("begin") ) then
+    local dz = eq.get_expedition()
+    if dz.valid then
+      dz:SetLocked(true, ExpeditionLockMessage.Begin, 14) -- live uses "Event Messages" type 365 (not in emu clients)
+      dz:AddReplayLockout(eq.seconds("3h"))
+    end
+
     e.self:Say("Very well!  Let the battle commence!");
 
     event_started = 1;
@@ -117,8 +121,13 @@ function Boss_Death(e)
   eq.spawn2(307008, 0, 0, -212, 270, 66, e.self:GetHeading()); -- NPC: Shell_of_the_Master_
 
   -- Update the Win Lockout
+  local dz = eq.get_expedition()
+  if dz.valid then
+    dz:AddReplayLockoutDuration(eq.seconds("5d")) -- 5 days + current timer (max 123 hours)
+  end
+
   local mpg_helper = require("mpg_helper");
-  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, lockout_name);
+  mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
 end
 
 function event_encounter_load(e)

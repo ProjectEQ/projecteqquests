@@ -1,3 +1,4 @@
+# items: 1155, 2045
 sub EVENT_SAY {
   if($text=~/Hail/i) {
     quest::say("Errr?  What you say to Urrrkath?  Ah.  Hello to you as well. furrrless type person. Would you do Urrrkath a [favor]?");

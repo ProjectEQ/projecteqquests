@@ -1,5 +1,6 @@
 # Gather eyes
 # created by Gonner
+# items: 66189
 
 sub EVENT_SAY {
 

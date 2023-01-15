@@ -1,4 +1,5 @@
 -- Inert Potion
+-- items: 13983
 
 function event_say(e)
 	if(e.message:findi("hail")) then

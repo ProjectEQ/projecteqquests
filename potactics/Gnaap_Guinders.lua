@@ -1,3 +1,4 @@
+-- items: 15791, 16148
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);	
 	if(e.message:findi("hail") and qglobals["mage_epic_fire1"] == "1") then	

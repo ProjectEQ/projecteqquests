@@ -4,6 +4,7 @@
 # Quest:  Telescope Lenses
 # Quest:  Air Tight Box
 #########################################################
+# items: 17923, 13277
 
 sub EVENT_SAY {
    if($text=~/Hail/i){

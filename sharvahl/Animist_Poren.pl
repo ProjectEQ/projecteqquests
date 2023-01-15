@@ -1,3 +1,4 @@
+# items: 2877, 17237, 3663, 3665, 3673, 3674, 2878, 3675, 3670
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings $name, it is good to see you. If you have come for the first stage of Khati Sha training please show me your acrylia slate.");

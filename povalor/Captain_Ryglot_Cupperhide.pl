@@ -1,3 +1,4 @@
+# items: 25796, 25797, 25798, 25596
 sub EVENT_SAY {
   if(defined($qglobals{pov_key_quest}) && ($qglobals{pov_key_quest} == 4)) {
     if($text=~/hail/i) {

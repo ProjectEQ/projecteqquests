@@ -1,5 +1,6 @@
 #201435.pl
 #Trial of Lashing
+# items: 31842, 31796, 31960, 31845, 31844, 31846
 
 sub EVENT_SAY
 {

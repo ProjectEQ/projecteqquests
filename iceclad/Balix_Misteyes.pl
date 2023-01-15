@@ -1,3 +1,4 @@
+# items: 30055, 30032, 30056
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Outlander, hail. Share the fire. I have little but if you are in need then take what I have. If you need nothing then take nothing. Balix my name is. Shaman to the tribe of Snowfangs.");

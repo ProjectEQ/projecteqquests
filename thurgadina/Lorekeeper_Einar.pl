@@ -3,6 +3,7 @@
 # kiladiveus - created my own ending statments. 
 # Kiladiveus - NPC ID:115118 Lorekeeper_Einar, need to change his primary faction to "coldain" 
 # kiladiveus - correct grammar per Sarepean's advice. 
+# items: 25814, 24942, 31092, 25821, 24944, 31093, 25825, 24943, 31096, 25832, 24948, 31095, 25831, 24947, 31091, 25838, 24946, 31094, 25833, 24945, 31097
 
 
 sub EVENT_SAY { 

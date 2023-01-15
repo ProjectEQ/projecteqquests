@@ -1,3 +1,4 @@
+-- items: 18013, 13240, 13977, 13100, 14014, 13083
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello there, " .. e.other:GetName() .. ". Please watch where you are stepping when you're out in the field.  Nothing is more frustrating than having some fine jumjum ruined by our own careless feet. That reminds me, [" .. eq.say_link("Deputy Tagil",false,"Deputy Tagil") .. "] still owes us for that jumjum he stomped on the other day!");

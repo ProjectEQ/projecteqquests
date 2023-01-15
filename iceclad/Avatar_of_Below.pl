@@ -1,4 +1,5 @@
 # Avatar of Below
+# items: 8895, 1200
 
 sub EVENT_SPAWN {
    quest::emote("'s voice echoes through the area. 'The efforts to help the Coldain and bring them together with the gnomes of Iceclad is quite impressive. There will be no doubt that they will continue to increase in power until they can overtake the Giants of Zek. Hey there, what is that on your shoulder?'");

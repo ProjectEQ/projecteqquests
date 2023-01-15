@@ -1,3 +1,4 @@
+# items: 18240, 18250, 12460, 12461
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("takes a sip of lager and looks up at you. 'Ahh! An adventurer of sorts? Looking for work, are we? If you have the time, I might have a bit of a [proposition] for you.'");

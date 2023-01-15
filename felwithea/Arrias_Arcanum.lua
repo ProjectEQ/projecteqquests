@@ -1,3 +1,4 @@
+-- items: 31493, 31495
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I am sorry, young one, but I am too burdened by my own [troubles] to help you now. Please seek another of the faith to ease your soul.");

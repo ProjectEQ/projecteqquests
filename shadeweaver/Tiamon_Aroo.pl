@@ -1,5 +1,6 @@
 # Claw Needle
 #
+# items: 30601, 30617
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,3 +1,4 @@
+# items: 19633, 19634, 19632, 19631, 19636, 19635, 19637, 20206, 17124, 20188, 19946, 20260
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("You do not yet bear the sweet aroma of death and decay that the Plague Bringer bestows upon his most faithful servants. What is it that you seek from Wellis?");

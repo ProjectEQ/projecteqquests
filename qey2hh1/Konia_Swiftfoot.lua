@@ -6,6 +6,7 @@
 -- NPC ID: 12117
 -- Quest Status: Finished
 --
+-- items: 20532, 20379, 20376, 20366, 20383
 
 function event_say(e)
 	if(e.message:findi("hail")) then

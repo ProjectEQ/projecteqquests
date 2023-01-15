@@ -1,5 +1,6 @@
 # Bronus' Amulet
 #
+# items: 6515, 6516
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

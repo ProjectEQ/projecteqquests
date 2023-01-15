@@ -1,3 +1,4 @@
+-- items: 12132, 12133
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please speak with the masters. I am on watch and have no time to converse.");

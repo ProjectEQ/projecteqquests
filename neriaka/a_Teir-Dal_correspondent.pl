@@ -1,3 +1,4 @@
+# items: 17171, 54021, 54023
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings. I am a very busy person, is there something you would like [to do for me]? If not then take your leave, the work never ends around here now that the Trolls have moved in.");

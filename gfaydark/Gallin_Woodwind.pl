@@ -1,3 +1,4 @@
+# items: 17953, 12121
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings. friend! I am Gallin Woodwind of the Emerald Warriors. It is my charge to send forth Fier'Dal to [hunt for meat]. Kelethin's citizens must be nourished and this requires meat. Such is the circle of life.");

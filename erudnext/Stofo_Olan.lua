@@ -1,4 +1,5 @@
 -- Enchanter epic weapon Staff of the Serpent lead-in quest
+-- items: 10600, 10601, 10602, 10603, 54008, 54007, 59016
 
 function event_say(e)
 	if(e.message:findi("hail")) then

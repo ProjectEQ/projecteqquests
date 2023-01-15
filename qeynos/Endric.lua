@@ -1,3 +1,4 @@
+-- items: 13713, 10018, 10320
 function event_say(e)
 	if(e.message:findi("aqueducts")) then
 		e.self:Say("Aye, the aqueducts are a horrible place. I have heard rumors of horrible [beasts] who live under the city in the water and just the other day, a child playing in the water just up and disappeared!");

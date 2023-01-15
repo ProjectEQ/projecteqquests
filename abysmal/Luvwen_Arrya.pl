@@ -1,5 +1,6 @@
 # Bard Abysmal Sea armor
 # Created by Gonner
+# items: 68222, 54163, 68220, 54161, 68223, 54164, 68225, 54166, 68226, 54167, 68224, 54165, 68221, 54162
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

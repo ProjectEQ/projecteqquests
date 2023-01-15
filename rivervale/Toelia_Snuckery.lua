@@ -1,3 +1,4 @@
+-- items: 13785, 13786
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 

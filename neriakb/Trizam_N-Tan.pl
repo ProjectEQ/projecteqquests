@@ -1,3 +1,4 @@
+# items: 13885, 13021
 sub EVENT_SAY {
   if($text=~/hail/i){  
     quest::say("And who do you think you are? To step into the Cauldron of Hate one should have the black soul of a warrior. For one to speak with Trizam he should have good reason. Perhaps you return with tales of [deathfist] agendas. If so, then you're a year too late.");

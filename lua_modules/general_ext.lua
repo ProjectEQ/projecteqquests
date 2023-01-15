@@ -6,11 +6,11 @@ end
 function eq.SelfCast(spell_id)
 	local init = eq.get_initiator();
 	local sp = Spell(spell_id);
-	
+
 	if(init.null or sp.null) then
 		return;
 	end
-	
+
 	init:SpellFinished(spell_id, init, 10, 0, -1, sp:ResistDiff());
 end
 
@@ -24,7 +24,7 @@ function eq.ClassType(class)
 	elseif(class == 2 or class == 10 or class == 6) then
 		return "priest";
 	end
-	
+
 	return "other";
 end
 
@@ -200,6 +200,34 @@ function eq.ExpHelper(level, percent, range)
 	-- return random between upper bound and lower bound
 	return (math.random(exp[level] * (percent - range), exp[level] * (percent + range)) * .01)
 
+end
+
+-- https://stackoverflow.com/questions/656199/search-for-an-item-in-a-lua-list
+function eq.Set (list)
+	local set = {}
+	for _, l in ipairs(list) do set[l] = true end
+	return set
+end
+
+function eq.seconds(duration_str)
+	local w = duration_str:match("(%d+)w") or 0
+	local d = duration_str:match("(%d+)d") or 0
+	local h = duration_str:match("(%d+)h") or 0
+	local m = duration_str:match("(%d+)m") or 0
+	local s = duration_str:match("(%d+)s") or 0
+	return s + (m * 60) + (h * 3600) + (d * 86400) + (w * 604800)
+end
+
+-- random amount of cash in copper, returns totals of copper, silver, gold, platinum
+function eq.RandomCash(min, max)
+	local total = Random.Int(min, max)
+	local platinum = math.modf(total / 1000)
+	total = total - platinum * 1000
+	local gold = math.modf(total / 100)
+	total = total - gold * 100
+	local silver = math.modf(total / 10)
+	total = total - silver * 10
+	return total, silver, gold, platinum
 end
 
 -- os.getenv fixes the http luarocks proxy check by returning nil

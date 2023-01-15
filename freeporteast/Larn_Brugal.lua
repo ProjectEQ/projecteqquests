@@ -1,3 +1,4 @@
+-- items: 1717, 12241, 12242, 12243, 12244, 5418
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Good day to you " .. e.other:GetName() .. " I hope you yearn to become a Steel Warrior as we all are here in the Bunker. We are in need of more recruits to continue the [war].");

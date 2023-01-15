@@ -1,3 +1,4 @@
+-- items: 13260, 14032, 18955, 12366
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("You seek Cinium Darkblade, do you? Find me you have. Often I am here. To test my [Wasp Poison], yes. Less Aqua Gobs there now are. Ha!! A true rogue am I with no leader or guild. Just the wind and shadows and much treasure to be had.");

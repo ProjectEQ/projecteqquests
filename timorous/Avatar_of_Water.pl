@@ -1,4 +1,5 @@
 # EPIC CLERIC (Timorous deep)
+# items: 28023, 5532
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28023 => 1)) { #Orb of the triumvirate

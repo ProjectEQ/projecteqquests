@@ -1,5 +1,6 @@
 -- poknowledge\Sienn_Kastane.lua NPCID 202268 
 -- SK Epic 1.5
+-- items: 22944, 20520, 20426, 23492, 20497, 19025, 11407
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:Class() == "Shadow Knight") then

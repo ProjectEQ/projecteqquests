@@ -10,6 +10,7 @@
 #quest::summonitem("29068"); }
 #}
 #END of FILE Zone:skyshrine  ID:114093 -- Sentry_Kale 
+# items: 29068, 1725, 29064, 1727, 29065, 29050
 
 # Velium Retreival - Friend of the Kin
 #
@@ -48,13 +49,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29064 => 1)) {
     quest::say("You've returned, and with the shipment of ore intact! It was wise to send you out on that mission, $name, and I'm glad you did not fail. If you're looking for more assignments to do, I may have something that is just right for you. If you're interested in it, just let me know and we'll talk.");
-    quest::summonitem(1727); # Item: Bracer of Hammerfal
     quest::exp(12500);
-    quest::givecash(0,0,10,10);
+    quest::givecash(7,6,10,4);
     quest::faction(436,10); #Yelinak
     quest::faction(430,10); #CoV
     quest::faction(448,-30); #Kromzek
     quest::setglobal("friendofthekin",1,0,"D30");
+    my $random_result = int(rand(3));
+    if($random_result < 2) {
+      quest::summonitem(1727); # Item: Bracer of Hammerfal
+    }
   }
   if (plugin::check_handin(\%itemcount, 29065 => 1) && ($friendofthekin == 1)) {
     quest::say("You have shown us yet again your loyalty to our people. Please accept this token of our gratitude.");

@@ -1,3 +1,4 @@
+# items: 67001, 67008, 67010, 67009, 67011
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hm, I don't recognize you, but perhaps you are one that has come to help me exact [revenge]?");

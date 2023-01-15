@@ -1,5 +1,6 @@
 # ancient pattern quest -- ranger epic
 #
+# items: 20457, 20474, 18960
 
 sub EVENT_SAY {
   if ($faction < 5) { #amiable or better Keepers of the Art

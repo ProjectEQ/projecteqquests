@@ -1,3 +1,4 @@
+# items: 13340, 13006, 12114
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Welcome to Irontoe's! The finest watering hole this side of Oggok! If you're looking for anything special and it ain't behind the bar, just ask. Maybe I can make it.");

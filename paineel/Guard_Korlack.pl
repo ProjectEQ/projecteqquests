@@ -1,3 +1,4 @@
+# items: 6378
 sub EVENT_SAY {
   if($text=~/hail/i && $faction <= 5) {
     quest::say("Uggg. You needz [keyz]? Rrrrrrr.");

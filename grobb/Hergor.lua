@@ -1,3 +1,4 @@
+-- items: 12210, 2161, 2162, 2163, 2164, 2165, 2167, 2168, 2169, 2170, 2171, 2172
 function event_say(e)
 	local pfaction = e.other:GetFaction(e.self);
 

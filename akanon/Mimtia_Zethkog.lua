@@ -1,4 +1,5 @@
 -- Converted to .lua by Speedz
+-- items: 19634, 19632, 19637, 19633, 19636, 19631, 19635, 10987, 17124
 
 function event_say(e)
 	if (e.message:findi("plague knight boot")) then
@@ -29,6 +30,8 @@ function event_say(e)
 		e.self:Say("To assemble Plague Knight Vambraces you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Bronze Vambraces with a Low Quality Cat Pelt and two Clockwork Spider Leg Sections in the Mail Assembly Kit.");
 		e.other:SummonItem(19635); -- Item: Crude Vambrace Mold
 		e.other:Ding();
+	elseif (e.message:findi("hail")) then
+		e.self:Say("Hail " .. e.other:GetCleanName() .. "! You must be one of Garret's new knights. Garret has asked me to help get you outfitted in a suit of armor to protect you from the weapons of our foes. I have assembled a kit for you that will allow you to construct the armor pieces once you have gathered the necessary components. The required components vary according to which piece of Plague Knight Armor you are planning on assembling. Do you wish to craft a [plague knight helm], a [plague knight bracer], [plague knight gauntlets], [plague knight boots], [plague knight vambraces], [plague knight greaves], or a [plague knight breastplate].");
 	end
 end
 

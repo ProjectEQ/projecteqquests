@@ -1,3 +1,4 @@
+# items: 30052, 30051
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Bark! Lo furless one. My people are Snowfang. Once mighty tribe, now snowfang home lost to vengeful winter.");

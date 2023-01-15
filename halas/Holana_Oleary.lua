@@ -1,3 +1,4 @@
+-- items: 18831, 13962, 2031, 2036, 2030, 2034, 2027, 2038, 2026, 2029, 2025, 2032, 2028, 2033, 5043, 6032, 6030, 7022, 7024, 94155, 6031, 2912
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hmph. Hello. how are ye an' how do ye do? Now. what are ye planning to buy?");

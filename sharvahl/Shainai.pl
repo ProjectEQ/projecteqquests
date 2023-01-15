@@ -1,3 +1,4 @@
+# items: 4478
 sub EVENT_SPAWN {
 	quest::disable_spawn2(32803);
 }

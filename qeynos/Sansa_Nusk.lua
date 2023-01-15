@@ -1,3 +1,4 @@
+-- items: 13703, 13709
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello..  Welcome to the Wind Spirit's Song.  I'm Sansa, and I help out the local bards here.");

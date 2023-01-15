@@ -1,5 +1,6 @@
 #Scripted By: Fatty Beerbelly, modified by Kilelen to finish Book of Turmoil
 # Gonner added Phylactery Will Get You Nowhere quest
+# items: 18302, 19072, 18202, 10071, 55274
 
 sub EVENT_SAY {
 

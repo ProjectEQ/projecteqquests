@@ -4,6 +4,7 @@
 #
 #NPC Name: Bob the Painter
 #NPC ID: 126268
+# items: 18008, 17326
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18008 => 1)) {

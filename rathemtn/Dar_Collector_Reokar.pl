@@ -1,3 +1,4 @@
+# items: 13073, 13019, 13050
 sub EVENT_SAY{
   if ($text=~/hail/i){
   quest::say("Greetings! Have you anything for me? Don't look at me like that, you know what I mean. Odds and ends from out there in the swamp. Rat parts are fine, and I could always use some freshly caught fish.");

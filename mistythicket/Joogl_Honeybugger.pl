@@ -1,3 +1,4 @@
+# items: 13009
 sub EVENT_SAY {
   if($text=~/hail/i){
    quest::say("Hello. I would shake your hand, but it would [hurt]. Ooooh! Owwy!");

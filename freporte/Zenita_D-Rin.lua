@@ -1,3 +1,4 @@
+-- items: 22298, 13279, 13121, 22293, 22294, 22295, 22296, 22297, 22299
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. I would love to chat with you, but I just realized something.. I do not waste time with whelps.");

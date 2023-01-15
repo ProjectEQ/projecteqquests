@@ -1,5 +1,6 @@
 #Kojinn_Kaa.pl
 #Champion of the Vah Shir
+# items: 30854, 30855
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

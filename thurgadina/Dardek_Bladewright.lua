@@ -1,3 +1,4 @@
+-- items: 60289, 60285, 60286, 60288, 60292
 function event_say(e)
   if (e.message:findi("hail")) then
     e.self:Say("Yeah, I'm Dardek. What d' ye want?! Can't ye see I'm not in t' mood fer talkin'? Bah, t' heck with ye. If'n ye get me a nice hot cup of m' favorite coffee, I might be willin' to talk with ye for a few minutes. Hurry up now, Coldain Coffee! It's t' only thing I'll drink!");

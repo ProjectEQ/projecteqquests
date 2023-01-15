@@ -1,3 +1,4 @@
+# items: 29803, 29810, 29811, 29812
 
 # Quest for luclin smithing
 

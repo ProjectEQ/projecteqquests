@@ -1,5 +1,6 @@
 # Phylactery Will Get You Nowhere
 # Created by Gonner
+# items: 14759, 55275, 5741, 55278, 55295, 55280, 26744, 55285, 27930, 55286, 1117, 55291, 55290, 55298, 55299
 
 sub EVENT_SAY {
 

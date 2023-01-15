@@ -1,3 +1,4 @@
+# items: 29881, 29882, 29883, 29884, 3650, 7096
 sub EVENT_SAY {
   if ($EarringVeracity3 eq "1") {
     if ($text=~/hail/i) {

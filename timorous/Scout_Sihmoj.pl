@@ -1,3 +1,4 @@
+# items: 9045, 17360, 9047, 9048
 sub EVENT_SAY {
   if ($text=~/hail/i) {
        quest::say("Greetings friend, please show me the Seal of Elder Dumul and I will brief you on the situation.");   

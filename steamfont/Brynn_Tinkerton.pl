@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    if(quest::istaskactivityactive(14,3)) {
+    if(quest::istaskactivityactive(500014,3)) {
       quest::say("Thanks for contacting me, $name. Your information on this matter has been most useful.");
       $client->Message(7,"You've impressed quite a few people with your cunning. Some thought that you, the Red Beetle, would fail, but others felt you had exactly what it took to get the job done. They were right. You may be contacted in the future, Red Beetle, so keep a watchful eye to the sky for the Black Bixie. Here's a little something for your trouble.");
     }

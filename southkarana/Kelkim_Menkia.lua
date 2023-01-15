@@ -1,4 +1,5 @@
 -- BEGIN FILE: southkarana\Kelkim_Menika.lua
+-- items: 20527, 20528, 20529, 20377
 
 function event_say(e)
 	if(e.message:findi("hail")) then

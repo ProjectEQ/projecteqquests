@@ -1,3 +1,4 @@
+# items: 60173
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60173 =>1)) {
     quest::emote("motions for you to enter the altar through the entrance behind him.");
@@ -11,6 +12,7 @@ sub EVENT_ITEM {
 				$Instance = quest::CreateInstance("ikkinz", 6, 21600);
 				quest::AssignRaidToInstance($Instance);	
 				quest::say("Instance added.");
+				$client->MarkCompassLoc(1860, 660, -447);
 			  } else {
 				$client->Message(13, "You are already in an instance!");
 			  }

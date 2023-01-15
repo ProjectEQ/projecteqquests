@@ -1,5 +1,6 @@
 #zone: Firiona  NPC: Squire_Fuzzmin (84312)
 #by Qadar
+# items: 12950, 12951, 12952, 5057
 
 sub EVENT_SPAWN {
   $hobble = $qglobals{hobble};

@@ -1,3 +1,4 @@
+-- items: 69973, 69955
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:HasItem(69956)) then

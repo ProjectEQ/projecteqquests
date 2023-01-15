@@ -1,3 +1,4 @@
+# items: 7373, 7374, 7394
 sub EVENT_SAY{
    if($text=~/hail/i){
       quest::say("Greetings. I am in the middle of some important research so regrettably do not have the time to converse.");

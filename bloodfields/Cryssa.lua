@@ -1,4 +1,5 @@
 -- Cleric 2.0 Epic Quest // Aegis of Superior Divinity NPC --Drogerin
+-- items: 9956, 10399, 10235, 12080, 12433
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);

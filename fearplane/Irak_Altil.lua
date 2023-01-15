@@ -1,6 +1,7 @@
 -- Paladin Epic 1.0
 -- NPCID: 72078
 -- Zone: fearplane
+-- items: 29010, 11050, 10099
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

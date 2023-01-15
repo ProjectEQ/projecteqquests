@@ -1,3 +1,4 @@
+# items: 5960, 17612, 5961, 5962, 5963, 5965
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hi there! Are you perhaps a musician? I have lots of finely crafted musical instruments for sale. Each one has its own unique tone. Take a look and see if there are any instruments here to suit your performance needs. Just tap me when you are ready to make a purchase."); }

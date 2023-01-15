@@ -1,3 +1,4 @@
+-- items: 17254, 19634, 19632, 19631, 19633, 19636, 19635, 19637, 9108, 9109, 9110
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings there " .. e.other:GetName() .. "! I am Morlan Tanlonikan Assassin of Akanon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");

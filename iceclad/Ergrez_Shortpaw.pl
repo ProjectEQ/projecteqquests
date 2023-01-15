@@ -5,6 +5,7 @@
 # Direwolf Fur Cloak
 # Direwolf Fur Mask
 # Created by Gonner
+# items: 30064, 30065, 30020, 30030, 13407, 30027, 30031, 30097, 30025, 30062, 25019, 30023, 30063, 30029
 
 
 sub EVENT_SAY {

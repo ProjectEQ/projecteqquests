@@ -1,3 +1,4 @@
+-- items: 13073
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Well met, %s. My name is Lashun Novashine and I am a humble priest of Rodcet Nife, the Prime Healer. I wish to spread His word to every corner of Norrath. My job gets more difficult each day with so many so willing to take lives rather than preserve them.",e.other:GetName()));

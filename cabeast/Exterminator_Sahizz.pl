@@ -1,4 +1,5 @@
 #Exterminator_Sahizz  ID  106009
+# items: 12466
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

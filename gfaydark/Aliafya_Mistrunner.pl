@@ -1,4 +1,5 @@
 #leafrunners quest 
+# items: 17366, 38742, 38739, 38743, 38741, 38745, 38740, 38744, 27537, 27538, 27531
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {

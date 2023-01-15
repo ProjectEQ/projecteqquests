@@ -1,4 +1,5 @@
 #Brother Balatin is for both the monk epic and the iksar-centric Whistling Fists. The monk epic work for this quest file has been done by Senzo, with the later Whistling Fists additions by Jim Mills.
+# items: 12979, 12980, 12256, 12970, 12429
 
 sub EVENT_SAY {
  if($text=~/hail/i){

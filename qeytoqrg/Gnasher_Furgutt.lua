@@ -1,3 +1,4 @@
+-- items: 18800, 13131
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Who are you? Did McNeal send you? If not, you would do yourself good to leave Gnasher alone. I have friends in high places.");

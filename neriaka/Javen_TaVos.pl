@@ -1,5 +1,6 @@
 #BeginFile: neriaka\Javen_TaVos.pl
 #Quest for Neriak Foreign Quarter - Javen TaVos: LoY Cultural Robes
+# items: 65146
 
 sub EVENT_SAY {
   my $TrueRace = $client->GetBaseRace();

@@ -2,6 +2,7 @@
 #
 #Quest: Tayla Ironforge
 #
+# items: 54026, 18863
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 54026 => 1)) { #Klok's Seal

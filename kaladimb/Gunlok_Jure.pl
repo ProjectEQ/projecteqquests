@@ -1,3 +1,4 @@
+# items: 13073, 2116, 2122, 5013, 5014, 5016, 5023, 6011, 13002, 13003, 13332, 15201
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hail, $name!  Bow before the greatness of the Clerics of Underfoot!  It is good to be a paladin in such an order as ours - to fight the good fight and defend Kaladim from the evil and undead.  If you be a paladin, then I pray you find the [courage to battle the undead].");

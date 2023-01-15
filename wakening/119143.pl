@@ -1,5 +1,6 @@
 # Field Supplies
 #
+# items: 1724
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1724 => 1)) {

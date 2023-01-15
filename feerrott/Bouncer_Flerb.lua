@@ -1,3 +1,4 @@
+-- items: 62814
 local currclient=Client();
 function event_say(e)
 	if (e.other:GetRace()==42) then

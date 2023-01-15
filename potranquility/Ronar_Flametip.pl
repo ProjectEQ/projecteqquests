@@ -1,5 +1,6 @@
 #Ronar_Flametip.pl
 #Alternate Access: Tower of Solusek Ro
+# items: 36568
 
 sub EVENT_SAY
 {

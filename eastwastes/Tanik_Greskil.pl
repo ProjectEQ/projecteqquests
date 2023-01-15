@@ -1,5 +1,6 @@
 # Tanik Greskil dialogue - hand him a vial of velium vapors to complete quest
 #
+# items: 1553, 1560
 
 sub EVENT_SPAWN {
   $npc->SetAppearance(3);

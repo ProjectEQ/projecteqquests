@@ -1,5 +1,6 @@
 #Cadelid_Etord.pl
 #Intermediate Magic Manual
+# items: 28795, 28801, 28796
 
 
 sub EVENT_SAY { 

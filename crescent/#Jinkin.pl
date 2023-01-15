@@ -33,10 +33,10 @@ sub EVENT_SAY {
 	}	
 	if($text=~/grab/i)
 	{
-		if(!quest::istaskactive(185))
+		if(!quest::istaskactive(10644))
 		{
 			quest::say("Karui, $name. I will greet you with open arms when you return with the caps.");
-			quest::assigntask(185);
+			quest::assigntask(10644);
 		} else {
 			quest::say("I'm still waiting for you to get some mushroom caps for me.");
 		}
@@ -49,10 +49,10 @@ sub EVENT_SAY {
 	}	
 	if($text=~/bring/i)
 	{
-		if(!quest::istaskactive(186))
+		if(!quest::istaskactive(6800))
 		{
 			quest::say("Karui, friend. I wait with much anticipation. My orders are growing!");
-			quest::assigntask(186);
+			quest::assigntask(6800);
 		} else {
 			quest::say("I'm still waiting for you to get fangs and teeth for me.");
 		}
@@ -65,10 +65,10 @@ sub EVENT_SAY {
 	}	
 	if($text=~/get/i)
 	{
-		if(!quest::istaskactive(187))
+		if(!quest::istaskactive(10645))
 		{
 			quest::say("Oh, would you? I'm so grateful!");
-			quest::assigntask(187);
+			quest::assigntask(10645);
 		} else {
 			quest::say("I'm still waiting for the hides from you.");
 		}

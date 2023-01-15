@@ -1,5 +1,6 @@
 #BeginFile: Auhrik_Siet`ka.pl
 #Quest for Paineel - Auhrik Siet`ka: Neonate Cowardice
+# items: 17802, 14041, 12993
 sub EVENT_SAY {
   if($text=~/understand common/i) {
     quest::say("Of course you do. Now, listen carefully. It may be too much for your feeble mind to gather all at once, and I hate to repeat myself. Bring me one bat wing, one rat ear, one snake egg, and one fire beetle eye. Take this bag, and make sure it's sealed before you return it to me. Snake eggs spoil. Now, quit staring at me with your jaw hanging open like a dead codfish. I would have mistaken you for one, but dead codfish smell better. Haha!");

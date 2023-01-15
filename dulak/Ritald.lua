@@ -1,5 +1,6 @@
 --dulak/Ritald.lua NPCID 225230
 --Shadowknight Epic Prequest
+-- items: 55902, 21870, 21782, 22944
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.other:Class() == "Shadow Knight") then

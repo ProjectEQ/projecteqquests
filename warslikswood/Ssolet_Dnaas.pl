@@ -1,4 +1,5 @@
 # Part of quest for Veeshan's Peak key
+# items: 6353, 19958
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

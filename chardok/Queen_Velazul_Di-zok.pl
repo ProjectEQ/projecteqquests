@@ -1,4 +1,5 @@
 # Spirit Wracked Cord
+# items: 6477, 6478, 5727, 5723
 
 sub EVENT_SAY{
   if ($faction==1) { # Only if you are ally with Sarnaks

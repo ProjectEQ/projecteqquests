@@ -6,3 +6,7 @@ function event_death_complete(e)
     eq.zone_emote(15, "The death of the drone has caused a rustle in the brush beyond. You can't make out what the noise was, but it sounds  big.");
   end
 end
+
+function event_hp(e)
+--test
+end

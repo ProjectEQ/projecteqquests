@@ -2,6 +2,7 @@
 -- Author: BWStripes
 -- Converted to .lua by Speedz
 -- Added support for Urako's Big Mistake
+-- items: 10307, 10351, 10026, 10060, 10018, 10006, 10017
 
 function event_say(e)
 	if(e.message:findi("hail")) then

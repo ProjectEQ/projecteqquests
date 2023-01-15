@@ -4,6 +4,7 @@
 #
 #NPC Name: Gragek Mjlorkigar
 #NPC ID: 113190
+# items: 25831, 24912, 25363, 25814, 24907, 25364, 25821, 24909, 25365, 25838, 24911, 25366, 25832, 24913, 25367, 25825, 24908, 25368, 25833, 24910, 25369
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction

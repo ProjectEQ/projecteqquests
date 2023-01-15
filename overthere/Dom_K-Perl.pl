@@ -1,3 +1,4 @@
+# items: 10029, 18068
 sub EVENT_SAY {
 if($text=~/hail/i){
 quest::say("Welcome to my little refuge of the mind. Here you may find passage to the grand worlds within a fine book. I have few books for sale, but any good book is rare in the realm of Norrath. On occasion, I even have [rare finds]. Be sure to use good lighting when reading. Strain the brain, not the eye, I always say.");

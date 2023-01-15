@@ -4,6 +4,7 @@
 #NPCs Involved: Dar Forager Lumun
 #Items Involved: Low/medium/high quality wolf/bear/cat pelts
 #################
+# items: 12084, 12085, 12086, 13753, 13754, 13755, 13750, 13751, 13752
 
 sub EVENT_SAY {
  if($race=~/froglok/i) {

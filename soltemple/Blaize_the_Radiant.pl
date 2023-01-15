@@ -1,4 +1,5 @@
 # Cleric quests
+# items: 4921, 4924, 4922, 4923
 
 sub EVENT_SAY { 
   if($text=~/Hail/i){

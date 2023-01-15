@@ -1,5 +1,6 @@
 #Kizdean_Gix.pl
 #Part of Thex Mallet
+# items: 18891, 18889
 
 sub EVENT_SAY {
   if($text =~/hail/i) {

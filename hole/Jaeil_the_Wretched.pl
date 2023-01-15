@@ -1,5 +1,6 @@
 # soulbound hammer - ranger epic
 #
+# items: 17860
 
 my $x;
 my $y;

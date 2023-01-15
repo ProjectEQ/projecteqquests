@@ -1,5 +1,6 @@
 #Steaon_Alarenier.pl
 #Steaon's Deliveries
+# items: 4766, 4767
 
 
 sub EVENT_SAY {

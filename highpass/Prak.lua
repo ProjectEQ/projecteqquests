@@ -1,3 +1,4 @@
+-- items: 18795, 13793, 18028
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yeah, hello. I'm Prak, co-owner of the Golden Rooster. If you're thirsty, we have some great imported ales at our bar. If you're looking for a little excitement, try your hand at a little King's Court. We aim to please, my friend.");

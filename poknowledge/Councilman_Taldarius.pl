@@ -1,5 +1,6 @@
 #Councilman_Taldarius.pl
 #Signets of the Councilmen
+# items: 16256, 16258, 16255, 16257
 
 sub EVENT_SAY {
   if($text=~/hail/i) {

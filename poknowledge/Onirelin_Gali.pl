@@ -1,5 +1,6 @@
 #Onirelin_Gali.pl
 #Willamina's Needles
+# items: 28088, 28089
 
 
 sub EVENT_SAY {

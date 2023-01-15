@@ -1,4 +1,5 @@
 # Monk Epic 1.0
+# items: 1685
 sub EVENT_SPAWN {
   quest::settimer("appearance", 1);
 }

@@ -1,3 +1,4 @@
+# items: 18247, 12672, 18248
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail! Beware the giants of the woods. They have a dwelling somewhere out there. Should you stumble upon it, run! Leave the fighting to us.");

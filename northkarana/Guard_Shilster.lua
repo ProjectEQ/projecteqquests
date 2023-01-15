@@ -5,6 +5,7 @@
 --# NPCs Involved: 1
 --# Items Involved: 5 Gold
 --#################
+-- items: 13107
 
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then

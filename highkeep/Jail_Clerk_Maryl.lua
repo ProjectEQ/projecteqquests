@@ -1,3 +1,4 @@
+-- items: 18935, 17927
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail! I am the jail clerk of Highkeep. How may I be of service?");

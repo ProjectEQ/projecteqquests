@@ -1,3 +1,4 @@
+-- items: 18905, 5037, 5029, 13313
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 18905})) then

@@ -1,6 +1,7 @@
 # Paladin Epic 1.0
 # NPCID: 67056
 # Zone: kaladimb
+# items: 29007, 29006
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {

@@ -1,5 +1,6 @@
 # Raid event for #Garudon (109107)
 # Angelox
+# items: 65574
 
 sub EVENT_SAY {
   if($text=~/Hail/i){

@@ -1,5 +1,6 @@
 #Semkak_Prophet_of_Vallon.pl
 #Strategies of the Ancient Dragons
+# items: 24986, 25036, 25040, 25034, 25035, 24985
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){

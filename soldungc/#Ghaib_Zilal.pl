@@ -1,5 +1,6 @@
 ##Ghaib_Zilal.pl
 #Aid Ghaib against the Kobolds
+# items: 55253, 55256, 55254, 55255, 55260, 55257, 55258, 55259, 55261
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {

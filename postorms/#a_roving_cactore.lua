@@ -14,6 +14,11 @@ end
 
 function event_timer(e)
 if (e.timer == 'depop') then
+eq.signal(210230,0); --signal gurebk to subtract an add counter
 eq.depop();
 end
+end
+
+function event_death_complete(e)
+eq.signal(210230,0); --signal gurebk to subtract an add counter
 end

@@ -1,3 +1,4 @@
+# items: 10059, 17045, 12829, 12940
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Well hello there. I am new to the bank. I am helping the Fargins out since it is so busy lately. Mr. Fargin doesn't even have time for his [hobby] these days.");

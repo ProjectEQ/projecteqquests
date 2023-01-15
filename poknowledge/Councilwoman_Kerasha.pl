@@ -1,5 +1,6 @@
 #Councilwoman_Kerasha.pl
 #Essences of Power
+# items: 17183, 16266, 32106, 17209, 32107, 32108, 32109
 
 sub EVENT_SAY {
   if(defined($qglobals{AidEinoDone}) && ($qglobals{AidEinoDone} == 1)) { #Can't do the turn in without getting the bowl, so I'm not worried about restricting the turn ins on the flag, just this text and getting the bowl.

@@ -1,5 +1,6 @@
 # Naea's Necklace
 # Created by Gonner
+# items: 55586, 55585, 55587
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

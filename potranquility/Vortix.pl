@@ -1,3 +1,4 @@
+# items: 48128, 48109, 48110, 48127, 48137, 48138, 20435, 61025, 47100
 sub EVENT_SAY {
  if($text=~/hail/i) {
 	 if($client->GetGlobal("monk_epic") >=5 && (plugin::check_hasitem($client, 48111) || plugin::check_hasitem($client, 48112) || plugin::check_hasitem($client, 48113)

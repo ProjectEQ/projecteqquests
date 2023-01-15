@@ -2,6 +2,7 @@
 # Illusion: Guktan, good quest: http://everquest.allakhazam.com/db/quest.html?quest=2605
 # added 2009 BWstripes - because we can!
 # spawned by Warrior_Spirit_Chalex.pl
+# items: 67020, 67018
 
 sub EVENT_SPAWN {
   quest::settimer(1,600); # Depop after 10m

@@ -1,4 +1,5 @@
 -- no response on hail from live
+-- items: 1772, 14585, 1779
 
 function event_trade(e)
 	local item_lib = require("items");

@@ -1,5 +1,6 @@
 #Curator_Merri.pl
 #Merri's Artifact Collection/The Collector's Box
+# items: 17769, 28082, 28241
 
 
 sub EVENT_SAY {

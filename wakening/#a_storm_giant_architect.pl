@@ -1,5 +1,6 @@
 # Living Granite
 #
+# items: 24872, 24877
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

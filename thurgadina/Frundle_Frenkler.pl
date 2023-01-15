@@ -1,5 +1,6 @@
 # Frundle Frenkler - vial of velium vapors
 #
+# items: 17513
 
 sub EVENT_SAY {
   if ($text=~/velium vapors/i) {

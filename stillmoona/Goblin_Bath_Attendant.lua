@@ -1,3 +1,4 @@
+-- items: 55996, 55997, 55998, 55999
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("'You!  You will get the ingredients I need for this bath!  I have a very important Kirin client who is expected to be here shortly, and I am out of his favorite soap.  If I don't get all the ingredients to make more soap for his bath, he will be very, very angry.  Return to me with a branch of pink blossoms, some green herbs, a vial of pond water, and the tail from the puma that stalks these grounds.  What? Yes, yes I will reward you.  Now go!'");

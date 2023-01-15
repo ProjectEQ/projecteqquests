@@ -1,3 +1,4 @@
+# items: 29302, 29297, 29298, 29299, 29295
 sub EVENT_SAY 
 {
 	my $lang_skill = $client->GetLanguageSkill(19);

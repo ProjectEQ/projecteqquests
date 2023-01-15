@@ -1,3 +1,4 @@
+-- items: 28032, 28009, 28006, 28033, 19436
 function event_spawn(e)
 	eq.set_timer("depop",180000); --this triggered mob is only available for three minutes then depops
 end

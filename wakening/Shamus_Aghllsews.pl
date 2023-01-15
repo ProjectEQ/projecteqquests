@@ -1,5 +1,6 @@
 # Friends of the Tunarean Court - Tunarean Tasks - Crest of the Fauns
 #
+# items: 30220, 17865, 30222, 24860, 17862, 22855, 24865, 1095, 8950
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,4 +1,5 @@
 # Quest for Lodizal Shell Shield
+# items: 22815, 10000, 22816
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

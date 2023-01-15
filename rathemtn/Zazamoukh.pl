@@ -1,3 +1,4 @@
+# items: 52902, 52904
 sub EVENT_SAY {
   if ($client->GetGlobal("beast_epic") ==12) {
    if ($text=~/hail/i) {

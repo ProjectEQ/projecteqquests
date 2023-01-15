@@ -1,3 +1,4 @@
+-- items: 18821
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, thirsty adventurer! Please help yourself to the free salty snacks. We are here to serve you at the Lion's Main Tavern. Allow yourself to indulge from our wide selection oof fine spirits.");

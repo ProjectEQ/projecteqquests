@@ -1,5 +1,6 @@
 # Quest for Captain_Njall in Thurgadina - Warrior Velious Armor (Champion's) 
 # Kiladiveus - created Sub EVENT_SAY and Sub EVENT_ITEM for quest. Used Faction requirement method. 
+# items: 25814, 24928, 31085, 25821, 24930, 31086, 25825, 24929, 31089, 25832, 24934, 31088, 25831, 24933, 31084, 25838, 24932, 31087, 25833, 24931, 31090
 
 sub EVENT_SAY { 
   if ($faction <= 3) { # Require Warmly and greater faction    

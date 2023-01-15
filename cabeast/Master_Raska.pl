@@ -1,3 +1,4 @@
+# items: 17026, 12427, 4191, 4190, 12428, 4192, 18469, 12822, 7881, 18470, 22924, 18232, 18233, 12429
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Hmmph!! Expect to be a great master such as I? Maybe. You still appear to be a [whiff].");
@@ -26,16 +27,18 @@ sub EVENT_ITEM {
   quest::summonitem(4191); # Item: Shackle of Clay
   quest::exp(5000);
   quest::ding();
-  quest::faction(444,20); # Faction: Swift Tails
-  quest::faction(441,10); # Faction: Legion of Cabilis
+  quest::faction(444,10); # Faction: Swift Tails
+  quest::faction(441,2); # Faction: Legion of Cabilis
+  quest::givecash(0,0,5,0);
  }
  elsif(plugin::check_handin(\%itemcount, 4190 => 1, 4191 => 1, 12428 => 2)){
   quest::say("You have done supremely, $name. You have earned your shackle of stone. Mistress Niska will now help you on your way to earning the shackle of rock. May the elements guide you to the next rung.");
   quest::summonitem(4192); # Item: Shackle of Stone
   quest::exp(10000);
   quest::ding();
-  quest::faction(444,20); # Faction: Swift Tails
-  quest::faction(441,10); # Faction: Legion of Cabilis
+  quest::faction(444,10); # Faction: Swift Tails
+  quest::faction(441,2); # Faction: Legion of Cabilis
+  quest::givecash(0,0,6,0);
  }
  elsif(plugin::check_handin(\%itemcount, 18469 => 1, 12822 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");

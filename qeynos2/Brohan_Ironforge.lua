@@ -1,3 +1,4 @@
+-- items: 18863
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please, leave me be alone. I have such sorrow in my heart.. I wish to be alone with my thoughts.");

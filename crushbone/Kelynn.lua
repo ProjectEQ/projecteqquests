@@ -1,3 +1,4 @@
+-- items: 12184, 12183
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("What are you doing here?!! Get out before you find yourself mining for these wretched beasts!");

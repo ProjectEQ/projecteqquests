@@ -201,3 +201,8 @@ function eq.ExpHelper(level, percent, range)
 	return (math.random(exp[level] * (percent - range), exp[level] * (percent + range)) * .01)
 
 end
+
+-- os.getenv fixes the http luarocks proxy check by returning nil
+function os.getenv(o)
+    return nil
+end

@@ -1,8 +1,9 @@
 -- Converted to .lua by Speedz
 -- items: 12164, 12162, 12167
 
+local miner628 = 0;
+
 function event_spawn(e)
-	local miner628 = 0;
 	local random_result = math.random(100);
 	if(random_result <= 5) then
 		miner628 = 1;

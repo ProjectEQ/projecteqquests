@@ -18,7 +18,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	
 	--Turn in the Shrunken Iksar Skull Necklace
-	if(e.other:GetFaction(e.self) < 6 and item_lib.check_turn_in(e.trade, {item1 = 30989},0)) then
+	if(e.other:GetFaction(e.self) < 6 and item_lib.check_turn_in(e.trade, {item1 = 30989})) then
 		e.self:Emote("takes the necklace from you without a word. He looks into your eyes for a moment. He seems to be searching for something. Apparently he finds whatever he was looking for as he pulls an empty bag from his belt. He takes the necklace and snaps the cord with his teeth allowing the skulls to fall into the bag. He looks you square in the eyes again and motions for you to put out your hand. You do so and almost immediately regret it. Vauris takes the knife from his belt and slices open your forearm allowing your blood to fall into the bag. He uses the cord to tie the bag and hands it back to you. 'You now share the mark of Rile, " .. e.other:GetCleanName() .. ". Your fates are intertwined.'");
 		e.other:QuestReward(e.self,0,0,0,0,30990); --give the player Bag of Iksar Skull Dust
 	--Turn in the Changeling Essence, Bag of Iksar Skull Dust, Glowing Kunzar Amulet, Blackened Iksar Bones

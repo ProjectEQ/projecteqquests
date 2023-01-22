@@ -43,13 +43,13 @@ function event_trade(e)
 		e.self:Emote("holds the ore in his hands and begins to chant. His eyes go white as he raises the chunk of ore above his head. He lowers his arms and shakes his head for a moment. His eyes return to their normal state as they focus on you. The shaman hands you the ore and says, 'Seek out the creator of Rile's blade. He is still on this plane. I have felt his torment. Take this note to Librarian Zimor. He learned a great deal from the tome and can instruct you further.'");
 		e.other:Faction(442,20); -- Faction: Crusaders of Greenmist
 		e.other:Faction(441,10); -- Faction: Legion of Cabilis
-		e.other:QuestReward(e.self,{items = {3893,3886}, 5000}); --Note to Librarian 	--Chunk of Tynnonium
+		e.other:QuestReward(e.self,0,0,0,0,{items = {3893,3886}}, 5000); --Note to Librarian 	--Chunk of Tynnonium
 	--Cursed Wafers turn in
 	elseif(e.other:GetFaction(e.self) < 5 and e.other:Class() == "Shaman" and item_lib.check_turn_in(e.trade, {item1 = 12403})) then --Full Component Mortar
 		e.self:Say("We appreciate your service. Take a few copper for your deed as well as some of our cursed waters. They will provide you with nourishment. As for future tasks, we are searching for a few [lost skulls] and i am sure you are searching for your [iron cudgel of the clairvoyant] And i also hear that the furscales are in need of some broodlings to do some manual labor. Tell them Oxyn sent you.");
 		e.other:Faction(445, 2); 				--Scaled Mystics
 		e.other:Faction(441, 1); 				--Legion of Cabilis
-		e.other:QuestReward(e.self,{items = {12406,12406}, 50}); --Cursed Wafers 2x
+		e.other:QuestReward(e.self,0,0,0,0,{items = {12406,12406}}, 50); --Cursed Wafers 2x
 	--Shaman Skull Quest No.1 turn in - Check for  Logrin Skull, Morgl Skull, and Waz Skull hand in along with Iron Cudgel of the Petitioner
 	elseif(e.other:GetFaction(e.self) <= 4 and item_lib.check_turn_in(e.trade, {item1 = 12721, item2 = 12722, item3 = 12723, item4 = 5140})) then
 		e.self:Say("Excellent! You have proved yourself worthy to wield the iron cudgel of the clairvoyant. As a clairvoyant I feel I can trust you, so I will tell you that the issue of the missing skulls is a [much larger problem] than last stated.");

@@ -16,10 +16,10 @@ function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.self, e.other);
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 18970}, 0)) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 18970})) then
 		e.self:Say("Oh, things are becoming dire here in Norrath. May Rodcet protect us! I have gathered most of the evidence I will need to present to Jahnda, but I could still use your assistance with one final piece. I need to recover a rib bone from of the undead beasts that wander these hills. Be sure the rib bone comes from one of the putrid skeletons. They are the spawn of Bertoxxulous.");
 		eq.set_global("niclaus","1",1,"H12");
-	elseif(qglobals["niclaus"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 13722}, 0)) then
+	elseif(qglobals["niclaus"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 13722})) then
 		e.self:Say("Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.");
 		eq.delete_global("niclaus");
 		-- Confirmed Live Factions and Experience
@@ -28,7 +28,7 @@ function event_trade(e)
 		e.other:Faction(262,25); -- Guards of Qeynos
 		e.other:Faction(221,-12); -- Bloodsabers
 		e.other:Faction(219,7); -- Antonius Bayle
-		e.other:QuestReward(e.self,{copper = math.random(0,10),itemid = 13724,exp = 4000});
+		e.other:QuestReward(e.self, math.random(0,10), 0, 0, 0, 13724, 4000);
 	end
 	if(item_lib.return_items(e.self, e.other, e.trade, false) == true) then
 		e.self:Say("I'm... erm, not quite sure what to do with this, but... thanks, I guess.");

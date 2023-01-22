@@ -33,25 +33,25 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 2053}, 0)) then -- Dragon Craft Urn (2nd combined version)
+	if(item_lib.check_turn_in(e.trade, {item1 = 2053})) then -- Dragon Craft Urn (2nd combined version)
 		e.self:Say("Hmm? What's this? Oh! You are the " .. e.other:Race() .. " who has been helping us with the nameless one. Well, not so nameless anymore. A part of Garzicor clings to this world, eager to wreak vengeance upon the giants who murdered him. We've decided that a weapon must be constructed, and the restless spirit of Garzicor must be bound to it. You must be the one to construct this weapon. This dust must be used in the forging of the weapon's blade. Are you a master smith, " .. e.other:GetCleanName() .. "?");
 		e.other:QuestReward(e.self,0,0,0,0,2054,1000); -- Sanctified bone dust
 	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2055,item2 = 1868,item3 = 2056})) then -- Finished Tsuba, Bronzewood Staff, Finished Naginata Blade
 		e.self:Emote("takes the staff, blade, and tsuba and looks them over. He says, 'Excellent craftsmanship. These will make a fine weapon. But one part remains to join all the pieces together. That is the fitings.' The Wyvern then hands you the items back along with a vial of blood and says, 'This vial of blood will allow you to awaken Garzicor's spirit.'");
 		e.other:QuestReward(e.self,{items = {2426,2063}}); -- assembled Naginata, vial of Kromzek blood
-	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 1728}, 0)) then -- Ethereal Bladed Naginata
+	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 1728})) then -- Ethereal Bladed Naginata
 		e.self:Say("You have succeeded " .. e.other:GetCleanName() .. ". Garzicor's spirit no longer calls to us from beyond. Now we ask that you do one more thing. You must wield this weapon against all giant kind to satiate Garzicor's thirst for vengeance. The Naginata has a special power against the Kromzek, they will fall easily before it. However, if you do not wish to, hand the weapon back to me and I'll give you an earring more worthy of a being of faith. If you are one of sorcerous powers, hand me the earring and I'll hand you a ring more suited to you.");
 		e.other:Faction(430,10);  	--CoV
 		e.other:Faction(436,2);  	-- Yelinak
 		e.other:Faction(448,-5); 	-- Kromzek
 		e.other:QuestReward(e.self,0,0,0,0,2097,10000); -- Ethereal Bladed Naginata (Eldriak's Verified Naginata)
-	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2097}, 0)) then -- Ethereal Bladed Naginata (Eldriak's Verified Naginata)
+	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2097})) then -- Ethereal Bladed Naginata (Eldriak's Verified Naginata)
 		e.self:Say("Tis sad to see that the weapon will not be wielded by its maker, but here is your earring. Wear it well.");
 		e.other:QuestReward(e.self,0,0,0,0,2065); -- Sanctum Guardian's Earring
-	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2065}, 0)) then -- Sanctum Guardian's Earring
+	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2065})) then -- Sanctum Guardian's Earring
 		e.self:Say("So you prefer the ring? Very well. May it serve you well, " .. e.other:GetCleanName() .. ".");
 		e.other:QuestReward(e.self,0,0,0,0,2064); -- Pitted Iron Ring
-	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2064}, 0)) then -- Pitted Iron Ring
+	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 2064})) then -- Pitted Iron Ring
 		e.self:Say("You have decided to wield the Naginata after all?");
 		e.other:QuestReward(e.self,0,0,0,0,2097); -- Ethereal Bladed Naginata (Eldriak's Verified Naginata)
 	end

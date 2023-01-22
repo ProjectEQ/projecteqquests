@@ -128,7 +128,7 @@ function ValidatePlayersAreInZone(requestor)
 end
 
 function Do_Hazard()
-  local num = math.random(1,table.getn(hazards));
+  local num = math.random(1,#hazards);
   if ( last_hazard == num ) then
     Do_Hazard();
   else
@@ -146,7 +146,7 @@ function Boss_Timer(e)
   if (e.timer == "equipment") then
     client = eq.get_entity_list():GetRandomClient(-204,270,65,150000);
     if (client.valid) then
-      num = math.random(1,table.getn(equipment));
+      num = math.random(1,#equipment);
       equipment_client = {client:GetID(), num};
       client:Message(14, equipment[num][1]);
       eq.set_timer("equipment_action", 3 * 1000);
@@ -205,7 +205,7 @@ function Kyv_Timer(e)
     i = e.self:GetNPCTypeID();
     client = eq.get_entity_list():GetRandomClient(-204, 270, 65, 150000);
     if (client.valid) then
-      num = math.random(1,table.getn(kyvs));
+      num = math.random(1,#kyvs);
       kyv_targets[i] = { client:GetID(), num, {client:GetX(), client:GetY() }};
       client:Message(14, kyvs[num][1]);
       
@@ -369,7 +369,7 @@ end
 function Dragorn_Timer(e)
   local num;
   if (e.timer == 'dragorn') then
-    num = math.random(1,table.getn(dragorns));
+    num = math.random(1,#dragorns);
 	  local dist = 50;
 	  local mob_x = e.self:GetX();
 	  local mob_y = e.self:GetY();

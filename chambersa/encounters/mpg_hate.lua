@@ -231,7 +231,7 @@ function Spawn_Direpup()
   local index = nil;
   local max = nil;
   repeat
-    max = table.getn(feran);
+    max = #feran;
     index = math.random(1,max);
     npc_id = feran[index];
     npc = eq.get_entity_list():GetNPCByNPCTypeID(npc_id);

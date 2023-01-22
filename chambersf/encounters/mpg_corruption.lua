@@ -137,7 +137,7 @@ function Huhn_Say(e)
 end
 
 function Spawn_Mob(my_table, path, x, y, z, h)
-  local my_num = math.random(1,table.getn(my_table));
+  local my_num = math.random(1,#my_table);
   local my_mob = my_table[my_num][1];
 
   eq.spawn2(tonumber(my_mob), tonumber(path), 0, x, y, z, h);

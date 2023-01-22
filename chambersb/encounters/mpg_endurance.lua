@@ -126,25 +126,25 @@ function Spawn_Adds()
   local mob;
 
   if (wave == 1) then
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -161, 386, 58, 292);
 
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -157, 158, 58, 478);
 
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -317, 319, 58, 164);
   elseif (wave == 2) then
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -318, 226, 58, 100);
 
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -251, 161, 58, 32);
   elseif (wave == 3) then
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -254, 389, 58, 230);
   elseif (wave == 4) then
-    mob = mobs[math.random(1,table.getn(mobs))];
+    mob = mobs[math.random(1,#mobs)];
     eq.spawn2(mob, 0, 0, -204, 274, 66, 144);
   end
 end

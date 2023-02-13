@@ -7,6 +7,26 @@ function items.check_turn_in(trade, trade_check)
 	for key, value in pairs(trade) do
 		trade_return[key] = value;
 	end
+
+	-- Handin table for source
+	local handin_data = {};
+	for x = 1, 4 do
+		local inst = trade["item" .. x];
+		if (inst.valid) then
+			local is_attuned = 0;
+			if inst:IsInstNoDrop() then
+				is_attuned = 1;
+			end
+
+			handin_data[x] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
+		else
+			handin_data[x] = "0|0|0";
+		end
+	end
+
+	trade.other:SetEntityVariable("HANDIN_ITEMS", items.get_handin_items_serialized(handin_data))
+
+	trade.other:SetEntityVariable("HANDIN_MONEY", string.format("%d|%d|%d|%d", trade.copper, trade.silver, trade.gold, trade.platinum))
 	
 	--for every item in trade_check check trade_return
 		--if item exists in trade_return then 
@@ -83,6 +103,9 @@ end
 function items.return_items(npc, client, trade, text)
 	text = text or true;
 	local returned = false;
+
+	-- Handin table for source
+	local return_data = {};
 	for i = 1, 4 do
 		local inst = trade["item" .. i];
 		if(inst.valid) then
@@ -93,6 +116,7 @@ function items.return_items(npc, client, trade, text)
 				if(client:GetClass() == npc:GetClass() - 19) then
 					client:TrainDisc(inst:GetID());
 				else
+					return_data[i] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
 					npc:Say(string.format("You are not a member of my guild. I will not train you!"));
 					if return_count > 0 then
 						client:PushItemOnCursor(inst);
@@ -100,6 +124,7 @@ function items.return_items(npc, client, trade, text)
 					end
 				end
 			elseif return_count > 0 then
+				return_data[i] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
 				client:PushItemOnCursor(inst);
 				if(text == true) then
 					npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));
@@ -108,6 +133,8 @@ function items.return_items(npc, client, trade, text)
 			end
 		end
 	end
+
+	client:SetEntityVariable("RETURN_ITEMS", items.get_handin_items_serialized(return_data))
 	
 	local money = false;
 	if(trade.platinum ~= 0) then
@@ -131,8 +158,11 @@ function items.return_items(npc, client, trade, text)
 	end
 	
 	if(money == true) then
+		client:SetEntityVariable("RETURN_MONEY", string.format("%d|%d|%d|%d", trade.copper, trade.silver, trade.gold, trade.platinum));
 		client:AddMoneyToPP(trade.copper, trade.silver, trade.gold, trade.platinum, true);
 	end
+
+	eq.send_player_handin_event();
 	
 	return returned;
 end
@@ -264,4 +294,8 @@ function items.check_bot_turn_in(trade, trade_check)
 	return true;
 end
 
+function items.get_handin_items_serialized(handin_table)
+	return table.concat(handin_table, ",")
+end
+	
 return items;

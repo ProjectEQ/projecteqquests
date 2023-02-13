@@ -68,10 +68,10 @@ sub return_items {
 	my $money_returned = 0;
 
 	my %item_data = (
-		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned') ],
-		1 => [ plugin::val('$item2'), plugin::val('$item2_charges'), plugin::val('$item2_attuned') ],
-		2 => [ plugin::val('$item3'), plugin::val('$item3_charges'), plugin::val('$item3_attuned') ],
-		3 => [ plugin::val('$item4'), plugin::val('$item4_charges'), plugin::val('$item4_attuned') ],
+		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
+		1 => [ plugin::val('$item2'), plugin::val('$item2_charges'), plugin::val('$item2_attuned'), plugin::val('$item2_inst') ],
+		2 => [ plugin::val('$item3'), plugin::val('$item3_charges'), plugin::val('$item3_attuned'), plugin::val('$item3_inst') ],
+		3 => [ plugin::val('$item4'), plugin::val('$item4_charges'), plugin::val('$item4_attuned'), plugin::val('$item4_inst') ],
 	);
 
 	my %return_data = ();	
@@ -83,6 +83,13 @@ sub return_items {
 		for ($r = 0; $r < 4; $r++) {
 			if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
 				if ($client) {
+					my $inst = $item_data{$r}[3];
+					my $return_count = $inst->RemoveTaskDeliveredItems();
+					if ($return_count > 0) {
+						$client->SummonItem($k, $inst->GetCharges(), $item_data{$r}[2]);
+						$items_returned = 1;
+						next;
+					}
 					$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
 					$client->SummonItem($k, $item_data{$r}[1], $item_data{$r}[2]);
 					$items_returned = 1;

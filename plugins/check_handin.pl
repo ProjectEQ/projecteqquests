@@ -108,7 +108,6 @@ sub return_items {
 	if ($client->EntityVariableExists("RETURN_MONEY")) {
 		$money_returned = 1;
 		my ($copper, $silver, $gold, $platinum) = split(/|/, $client->GetEntityVariable("RETURN_MONEY"));
-		quest::shout("RETURN $copper $silver $gold $platinum");
 		$client->AddMoneyToPP($copper, $silver, $gold, $platinum, 1);
 	}
 

@@ -15,8 +15,6 @@ my %class_abilities = (1  => 30196,
                        15 => 30210,
                        16 => 30211);
 
-my %tasks = (37 => 2);
-                       
 sub EVENT_SAY {
 
     my $unlocksAvailable = $client->GetBucket("ClassUnlocksAvailable");
@@ -75,18 +73,19 @@ sub EVENT_SAY {
                 plugin::NPCTell( $out . " for you." );
             }
         } elsif ($text=~/cad1c/i) { #Favors
-            my $activeTask = 0;
-            foreach my $task (keys %tasks) {
-                if ($client->IsTaskActive($task)) {
-                    $activeTask = 1;
-                }
-            }
-            if ($activeTask) {
-                plugin::NPCTell("I've already given you a task to perform for me. Return when you've completed it.");
-            } else {
-                if (!$client->IsTaskCompleted(37)) {
+            my $unlockTaskProgress = $client->GetBucket("ClassUnlockTaskProgress");
+            
+            #Minor Artifacts
+            if ($unlockTaskProgress <= 0) {
+                if (!$client->IsTaskActive(37)) {
                     plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
                     $client->AssignTask(37);
+                } elsif (!$client->IsTaskCompleted(37)) {
+                    plugin::NPCTell("You haven't brought me all of the items that I'm looking for. Bring them to me, and I'll owe you a favor.");
+                } else {
+                    #Invalid State
+                    $unlockTaskProgress = 1;
+                    $client->SetBucket("ClassUnlockTaskProgress",1);
                 }
             }
         } elsif ($text=~/unlock-/i) {

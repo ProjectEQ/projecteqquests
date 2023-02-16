@@ -78,7 +78,7 @@ sub EVENT_SAY {
             }
         } elsif ($text=~/cad1c/i) { #Favors
             my $unlockTaskProgress = $client->GetBucket("ClassUnlockTaskProgress");
-            
+            quest::debug("unlock progress:" . $unlockTaskProgress);
             #Minor Artifacts
             if ($unlockTaskProgress <= 0) {
                 if (!$client->IsTaskActive(37)) {
@@ -89,7 +89,7 @@ sub EVENT_SAY {
                 } else {
                     #Invalid State
                     $unlockTaskProgress = 1;
-                    $client->SetBucket("ClassUnlockTaskProgress",1);
+                    $client->SetBucket("ClassUnlockTaskProgress", 1);
                 }
             }
         } elsif ($text=~/unlock-/i) {

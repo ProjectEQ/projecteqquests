@@ -1,4 +1,10 @@
-  POPUP_DISPLAY();
+ sub EVENT_SAY {
+  my $charKey = $client->CharacterID() . "-MAO-Progress";
+  my $progress = quest::get_data($charKey);
+  if ($text=~/hail/i) {
+    POPUP_DISPLAY();
+  }
+ }
 
 sub POPUP_DISPLAY {
 

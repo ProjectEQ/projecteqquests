@@ -16,6 +16,7 @@ my %class_abilities = (1  => 30196,
                        16 => 30211);
 
 #List of Tasks. TaskID -> Completion Stage
+#need to add it here and handle it inside cad1c
 my %tasks = (37 => 2);
 
 sub EVENT_SAY {

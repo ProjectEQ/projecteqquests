@@ -42,7 +42,7 @@ sub EVENT_SAY {
                     return;
                 }
             }
-            if ($unlocksAvailable >= 1) {
+            if ($unlocksAvailable >= 1 or true) {
                 quest::message(335, "You have ". $unlocksAvailable . " class unlock points available.");
                 quest::message(335, "You have a permanent ".sprintf("%.2f", (100 - ($client->GetEXPModifier(0) * 100)))."%% XP penalty due to class unlocks.");
             }

@@ -14,7 +14,7 @@ sub POPUP_DISPLAY {
   my $discord = "Server Discord: " . plugin::PWHyperLink("https://discord.com/invite/5cFCA7TVgA","5cFCA7TVgA");
   my $header = $yellow . plugin::PWAutoCenter("Welcome to Pyrelight!") . "</c><br>";
 
-  my $desc = "Pyrelight is a solo-balanced server, meant to offer a challenging experience for veteran players and an alternative take on the 'solo progression' mold."
+  my $desc = "Pyrelight is a solo-balanced server, meant to offer a challenging experience for veteran players and an alternative take on the 'solo progression' mold.";
 
 
   my $text = $header .

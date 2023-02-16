@@ -15,6 +15,9 @@ my %class_abilities = (1  => 30196,
                        15 => 30210,
                        16 => 30211);
 
+#List of Tasks. TaskID -> Completion Stage
+my %tasks = (37 => 2);
+
 sub EVENT_SAY {
 
     my $unlocksAvailable = $client->GetBucket("ClassUnlocksAvailable");

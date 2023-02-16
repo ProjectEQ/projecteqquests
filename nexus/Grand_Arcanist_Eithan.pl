@@ -20,11 +20,9 @@ sub EVENT_SAY {
 }
 
 sub POPUP_DISPLAY {
-    my $Break = plugin::PWBreak();
-    
-    quest::popup('', "<c \"#FF5733\">Welcome to Pyrelight. </c><br>
-                      Discord: 5cFCA7TVgA <br>
-                      <br>
-                      Pyrelight is a solo-balanced server, meant to offer a challenging experience for verteran players and an alternative take on the 'solo progression' mold.
-                     ");
+  my $text = "{lb}Welcome to Pyrelight~
+              {linebreak}
+              +salute+
+              Pyrelight is a solo-balanced server.";
+  $client->DialogueWindow($text);
 }

@@ -20,9 +20,8 @@ sub EVENT_SAY {
 }
 
 sub POPUP_DISPLAY {
-  my $text = "{lb}Welcome to Pyrelight~
-              {linebreak}
-              +salute+
-              Pyrelight is a solo-balanced server.";
-  $client->DialogueWindow($text);
+    my $line1 = plugin::PWAutoCenter("Welcome to Pyrelight.");
+
+    
+    quest::popup('', $line1);
 }

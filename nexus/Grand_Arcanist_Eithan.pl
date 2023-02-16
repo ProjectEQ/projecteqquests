@@ -22,7 +22,7 @@ sub EVENT_SAY {
 sub POPUP_DISPLAY {
 
   my $Blu = plugin::PWColor("Light Blue");
-  my $line1 = plugin::PWAutoCenter("$Blu Welcome to Pyrelight!</c>");
+  my $line1 = $Blu . plugin::PWAutoCenter("Welcome to Pyrelight!") . "</c>";
 
     
   quest::popup('', $line1);

@@ -3,7 +3,12 @@ sub EVENT_SAY {
   my $charKey = $client->CharacterID() . "-MAO-Progress";
   my $progress = quest::get_data($charKey);
   if ($text=~/hail/i) {     
-      
+      if ($progress <= 0) {
+
+      } elsif ($client->GetLevel() >= 60 and $progress == 1) {
+      } else {
+        plugin::NPCTell("Hail, ". $client->GetCleanName() .". Return to me when you've gained more experience. I will have work for you.");
+      }
   }
 }
 

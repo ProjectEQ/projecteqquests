@@ -21,9 +21,11 @@ sub EVENT_SAY {
 
 sub POPUP_DISPLAY {
 
-  my $Blu = plugin::PWColor("Light Blue");
-  my $line1 = $Blu . plugin::PWAutoCenter("Welcome to Pyrelight!") . "</c>";
+  my $yellow = plugin::PWColor("Yellow");
 
+
+  my $header = $yellow . plugin::PWAutoCenter("Welcome to Pyrelight!") . "</c>>br>" .
+               plugin::PWAutoCenter("Discord: " . plugin::PWHyperLink("https://discord.com/invite/5cFCA7TVgA","5cFCA7TVgA"));
     
-  quest::popup('', $line1);
+  quest::popup('', $text);
 }

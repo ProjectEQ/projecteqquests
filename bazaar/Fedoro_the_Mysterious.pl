@@ -44,7 +44,7 @@ sub EVENT_SAY {
             }
             if ($unlocksAvailable >= 1) {
                 quest::message(335, "You have ". $unlocksAvailable . " class unlock points available.");
-                quest::message(335, "You earn ".sprintf("%.2f", ($client->GetEXPModifier(0) * 100))."%% as much XP as normal.");
+                quest::message(335, "You earn ".sprintf("%.2f", (($client->GetEXPModifier(0) * 100)) - 100)."%% as much XP as normal.");
             }
             if (!$client->GetBucket("CadricMet")) {
                 plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If I'm [". quest::saylink("cad1a",1,"right") ."], we can be of great help to each other.");

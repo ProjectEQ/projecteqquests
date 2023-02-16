@@ -80,7 +80,7 @@ sub EVENT_SAY {
             my $unlockTaskProgress = $client->GetBucket("ClassUnlockTaskProgress");
             quest::debug("unlock progress:" . $unlockTaskProgress);
             #Minor Artifacts
-            if ($unlockTaskProgress <= 0) {
+            if ($unlockTaskProgress == 0) {
                 if (!$client->IsTaskActive(37)) {
                     plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
                     $client->AssignTask(37);

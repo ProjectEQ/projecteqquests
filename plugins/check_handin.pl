@@ -14,36 +14,51 @@ sub check_handin {
 	my $return_gold     = 0;
 	my $return_platinum = 0;
 
-	$client->SetEntityVariable("HANDIN_MONEY", "$copper|$silver|$gold|$platinum");
-	$client->SetEntityVariable("HANDIN_ITEMS", plugin::GetHandinItemsSerialized("Handin", %$hashref));
+	if ($copper > 0) {
+		$hashref->{"copper"} = $copper;
+	}
+	if ($silver > 0) {
+		$hashref->{"silver"} = $silver;
+	}
+	if ($gold > 0) {
+		$hashref->{"gold"} = $gold;
+	}
+	if ($platinum > 0) {
+		$hashref->{"platinum"} = $platinum;
+	}
 
+	$client->SetEntityVariable("HANDIN_MONEY", "$copper|$silver|$gold|$platinum");
+
+	# set money zero values if they don't exist
+	my @money = ("platinum", "gold", "silver", "copper");
+	foreach my $m (@money) {
+		if (!$hashref->{$m}) {
+			$hashref->{$m} = 0;
+		}
+	}
+
+	# for some reason the source is sending this, we'll clean it up
+	if ($hashref->{0}) {
+		delete $hashref->{0};
+	}
+
+	if (!$client->EntityVariableExists("HANDIN_ITEMS")) {
+		$client->SetEntityVariable("HANDIN_ITEMS", plugin::GetHandinItemsSerialized("Handin", %$hashref));
+	}
+
+	# -----------------------------
+	# handin formatting examples
+	# -----------------------------
+	# item_id    => required_count eg (1001 => 1)
+	# "copper"   => copper_amount  eg ("copper" => 1234)
+	# "silver"   => silver_amount
+	# "gold"     => gold_amount
+	# "platinum" => platinum_amount
+	# -----------------------------
 	my %required = @_;
 	foreach my $req (keys %required) {
-		if (looks_like_number($req)) {
-			if (!defined $hashref->{$req} || $hashref->{$req} != $required{$req}) {
-				$client->SetEntityVariable("RETURN_MONEY", "$copper|$silver|$gold|$platinum");
-				return 0;
-			}
-		} else {
-			my $lower_req = lc($req);
-			my $money_string = "$copper|$silver|$gold|$platinum";
-			if ($lower_req eq "copper") {
-				if ($copper != $hashref->{$req}) {
-					$return_copper = $copper;
-				}
-			} elsif ($lower_req eq "silver") {
-				if ($silver != $hashref->{$req}) {
-					$return_silver = $silver;
-				}
-			} elsif ($lower_req eq "gold") {
-				if ($gold != $hashref->{$req}) {
-					$return_gold = $gold;
-				}
-			} elsif ($lower_req eq "platinum") {
-				if ($platinum != $hashref->{$req}) {
-					$return_platinum = $platinum;
-				}
-			}
+		if (!defined $hashref->{$req} || $hashref->{$req} != $required{$req}) {
+			return 0;
 		}
 	}
 
@@ -55,8 +70,6 @@ sub check_handin {
 		}
 	}
 
-	$client->SetEntityVariable("RETURN_MONEY", "$return_copper|$return_silver|$return_gold|$return_platinum");
-
 	return 1;
 }
 
@@ -65,7 +78,6 @@ sub return_items {
 	my $client = plugin::val('$client');
 	my $name = plugin::val('$name');
 	my $items_returned = 0;
-	my $money_returned = 0;
 
 	my %item_data = (
 		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
@@ -87,6 +99,7 @@ sub return_items {
 					my $return_count = $inst->RemoveTaskDeliveredItems();
 					if ($return_count > 0) {
 						$client->SummonItem($k, $inst->GetCharges(), $item_data{$r}[2]);
+						$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
 						$items_returned = 1;
 						next;
 					}
@@ -105,22 +118,31 @@ sub return_items {
 		delete $hashref->{$k};
 	}
 
-	if ($client->EntityVariableExists("RETURN_MONEY")) {
-		$money_returned = 1;
-		my ($copper, $silver, $gold, $platinum) = split(/|/, $client->GetEntityVariable("RETURN_MONEY"));
-		$client->AddMoneyToPP($copper, $silver, $gold, $platinum, 1);
+	# check if we have any money to return
+	my @money = ("platinum", "gold", "silver", "copper");
+	my $returned_money = 0;
+	foreach my $m (@money) {
+		if ($hashref->{$m} && $hashref->{$m} > 0) {
+			$returned_money = 1;
+		}
+	}
+
+	if ($returned_money) {
+		my ($cp, $sp, $gp, $pp) = ($hashref->{"copper"}, $hashref->{"silver"}, $hashref->{"gold"}, $hashref->{"platinum"});
+		$client->AddMoneyToPP($cp, $sp, $gp, $pp, 1);
+		$client->SetEntityVariable("RETURN_MONEY", "$cp|$sp|$gp|$pp");
 	}
 
 	$client->SetEntityVariable("RETURN_ITEMS", plugin::GetHandinItemsSerialized("Return", %return_data));
 
-	if ($items_returned || $money_returned) {
+	if ($items_returned || $returned_money) {
 		quest::say("I have no need for this $name, you can have it back.");
 	}
 
 	quest::send_player_handin_event();
 
 	# Return true if items were returned
-	return $items_returned;
+	return ($items_returned || $returned_money);
 }
 
 sub return_bot_items {
@@ -183,10 +205,28 @@ sub GetHandinItemsSerialized {
     my %hash = @_;
     my @variables = ();
 
+	my %item_data = (
+		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
+		1 => [ plugin::val('$item2'), plugin::val('$item2_charges'), plugin::val('$item2_attuned'), plugin::val('$item2_inst') ],
+		2 => [ plugin::val('$item3'), plugin::val('$item3_charges'), plugin::val('$item3_attuned'), plugin::val('$item3_inst') ],
+		3 => [ plugin::val('$item4'), plugin::val('$item4_charges'), plugin::val('$item4_attuned'), plugin::val('$item4_inst') ],
+	);
+
+	my $hashref = plugin::var('$itemcount'); 
+
     if ($type eq "Handin") {
-        foreach my $key (keys %hash) {
-            push(@variables, $key . "|" . $hash{$key} . "|0");
-        }
+		foreach my $k (keys(%{$hashref})) {
+			next if ($k == 0);
+			my $rcount = $hashref->{$k};
+			for (my $r = 0; $r < 4; $r++) {
+				if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
+					my $item_id = $item_data{$r}[0];
+					my $item_charges = $item_data{$r}[1];
+					my $item_attuned = $item_data{$r}[2];
+					push(@variables, $item_id . "|" . $item_charges . "|" . $item_attuned);
+				}
+			}
+		}
     } else {
         foreach my $key (keys %hash) {
             push(@variables, $hash{$key}[0] . "|" . $hash{$key}[1] . "|" . $hash{$key}[2]);

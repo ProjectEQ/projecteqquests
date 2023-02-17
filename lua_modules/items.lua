@@ -109,6 +109,11 @@ function items.return_items(npc, client, trade, text)
 	for i = 1, 4 do
 		local inst = trade["item" .. i];
 		if(inst.valid) then
+			local is_attuned = 0;
+			if inst:IsInstNoDrop() then
+				is_attuned = 1;
+			end
+
 			-- remove delivered task items from return for this slot
 			local return_count = inst:RemoveTaskDeliveredItems()
 

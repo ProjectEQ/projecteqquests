@@ -14,7 +14,11 @@ sub EVENT_SAY {
   }
 
   $teleport_zones{"The Northern Plains of Karana (Great Combine Spires)"} = ["northkarana", "The Northern Plains of Karana (Great Combine Spires)", 1215, -3690, -9, 0];
+	$teleport_zones{"Neriak (Blind)"} = ["neriaka", "Neriak (Blind)", 18, 178, 5, 250];
+  $teleport_zones{"Innothule Swamp (Blind)"} = ["innothule", "Innothule Swamp (Blind)", 620, -2370, -17, 35];
+  $teleport_zones{"Freeport Sewers (Blind)"} = ["freportw", "Freeport Sewers (Blind)", 40, -660, -32, 115];
 	
+
   if ($text=~/hail/i) {
     if (quest::get_data($MAOcharKey) <= 0) {
       plugin::NPCTell("Hail, traveler. You'll need to get permission to access the Nexus teleportation network. Speak to Magus Asorin on the central platform.");

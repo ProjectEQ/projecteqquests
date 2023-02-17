@@ -14,6 +14,7 @@ sub EVENT_SAY {
   }
 
   $teleport_zones{"The Dreadlands (Great Combine Spires)"} = [ "dreadlands", "The Dreadlands (Great Combine Spires)", 9651, 3052, 1048, 489];
+  $teleport_zones{"Cabilis (Blind)"} = [ "fieldofbone", "Cabilis (Blind)", 2800, -2400, 9, 160];
 
   if ($text=~/hail/i) {
     if (quest::get_data($MAOcharKey) <= 0) {

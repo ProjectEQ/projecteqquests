@@ -17,7 +17,7 @@ my %class_abilities = (1  => 30196,
 
 #List of Tasks. TaskID -> Completion Stage
 #need to add it here and handle it inside cad1c
-my %tasks = (37 => 2);
+my %tasks = ();
 
 sub EVENT_SAY {
 
@@ -36,9 +36,7 @@ sub EVENT_SAY {
                     $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
                     quest::message(335, "You have earned 1 class unlock point.");
                     quest::message(335, "You have ". $unlocksAvailable . " class unlock points available.");
-                    if ($k == 37) {
-                        $client->SetBucket("ClassUnlockTaskProgress", 1);
-                    }
+                    #Handle Rewards
                     return;
                 }
             }
@@ -84,16 +82,7 @@ sub EVENT_SAY {
             my $unlockTaskProgress = $client->GetBucket("ClassUnlockTaskProgress");
             #Minor Artifacts
             if ($unlockTaskProgress == 0) {
-                if (!$client->IsTaskActive(37)) {
-                    plugin::NPCTell("There are a number of minor artifacts that I've been keeping an eye out for. Bring them to me, and I will expand your soul's capabilities.");
-                    $client->AssignTask(37);
-                } elsif (!$client->IsTaskCompleted(37)) {
-                    plugin::NPCTell("You haven't brought me all of the items that I'm looking for. Bring them to me, and I'll owe you a favor.");
-                } else {
-                    #Invalid State
-                    $unlockTaskProgress = 1;
-                    $client->SetBucket("ClassUnlockTaskProgress", 1);
-                }
+                #TODO                
             }
         } elsif ($text=~/unlock-/i) {
             if (length($text) > 7) {

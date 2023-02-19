@@ -39,8 +39,6 @@ sub EVENT_SAY {
     }
     
     quest::set_data($charKey, "1");
-    quest::message(15,"You have gained the ability to use the Nexus teleportation network.");
-    quest::ding();
-    quest::exp(1500);    
+    quest::message(15,"You have gained the ability to use the Nexus teleportation network.");   
   }
 }

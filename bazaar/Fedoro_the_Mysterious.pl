@@ -28,7 +28,10 @@ sub EVENT_SAY {
             plugin::NPCTell("Hail, ". $client->GetCleanName() .", good to see you again. I've already opened your soul to the maximum extent, unlocking 
                              all of your classes. Feel free to buy me a drink, though!"); #TODO - ReInit all titles here
     } else {
-        if ($text=~/hail/i) {        
+        if ($text=~/hail/i) {
+            if ($client->GetGM()) {
+                $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
+            }        
             while (my($k,$v) = each %tasks) {
                 if ($client->IsTaskActivityActive($k, $v)) {
                     plugin::NPCTell("You've done a wonderful job. Consider your favor completed. Let me know when you'd like to [".quest::saylink("cad1b",1,"unlock a new class") ."].");

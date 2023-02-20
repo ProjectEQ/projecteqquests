@@ -1,4 +1,4 @@
-sub EVENT_DEATH_COMPLETE {
+sub EVENT_DEATH {
     my @hate_list = $npc->GetHateListClients();
     my $hate_count = @hate_list;
 
@@ -6,5 +6,7 @@ sub EVENT_DEATH_COMPLETE {
         foreach $ent (@hate_list) {
             quest::debug($npc->GetCleanName() . " was killed by " . $ent->GetCleanName());
         }
+    } else {
+        quest::debug("No Hate List");
     }
 }

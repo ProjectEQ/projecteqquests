@@ -4,7 +4,7 @@ sub EVENT_DEATH {
 
     if ($hate_count > 0) {
         foreach $ent (@hate_list) {
-            quest::debug($npc->GetCleanName() . " was killed by " . $ent->GetCleanName());
+            quest::debug($npc->GetCleanName() . " was killed by " . $ent->CastToClient()->GetCleanName());
         }
     } else {
         quest::debug("No Hate List");

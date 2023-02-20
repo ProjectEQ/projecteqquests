@@ -1,4 +1,4 @@
-sub EVENT_DEATH_COMPLETE {
+sub EVENT_DEATH {
 
     # Global Custom Loot For Non-Greys
     my @hate_list = $mob->GetHateListClients();

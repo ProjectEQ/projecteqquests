@@ -40,14 +40,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 18710},0)) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 18710})) then
 		e.self:Say("Greetings, fellow knight of Karana, and welcome to the Temple of Thunder! Here, wear this tunic and help our crusade. Wolten Grafe is my assistant, he will get you started and teach you the ways of the Rainkeeper.");
 		e.other:Faction(280,100,0); -- Faction: Knights of Thunder
 		e.other:Faction(221,-100,0); -- Faction: Bloodsabers
 		e.other:Faction(341,75,0); -- Faction: Priests of Life
 		e.other:Faction(262,75,0); -- Faction: Guards of Qeynos
 		e.other:QuestReward(e.self,0,0,0,0,13505,100); -- Old Gray Tunic*
-	elseif(e.other:GetFaction(e.self) < 3 and item_lib.check_turn_in(e.trade, {item1 = 18809,item2 = 6357},0)) then
+	elseif(e.other:GetFaction(e.self) < 3 and item_lib.check_turn_in(e.trade, {item1 = 18809,item2 = 6357})) then
 		e.self:Say("Antonius Bayle will be pleased. The Temple is also pleased. Here is the enchanted staff we call Bonethunder. Should you find the enchantment gone, just ask Kasine to [enchant Bonethunder]. We need more disciples like you! Go forth to tell the world of the Rainkeeper.");
 		e.other:Faction(280,-50,0); -- Faction: Knights of Thunder
 		e.other:Faction(221,50,0); -- Faction: Bloodsabers

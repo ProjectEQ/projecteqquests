@@ -164,7 +164,7 @@ function ShapeShift(e)
     end
   end
 
-  local num = math.random(1,table.getn(list_constructs));
+  local num = math.random(1,#list_constructs);
   local mob = list_constructs[num];
 
   -- Lets prevent the mob from shapeshifting to its same form; recursively

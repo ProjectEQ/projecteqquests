@@ -21,7 +21,7 @@ function event_say(e)
 		elseif(e.message:findi("returned")) then
 			e.self:Say("His body was found in the Eastern Wastes, spears of Krom Zek make protruding from his side and chest.' The wurm pauses for a moment to sigh heavily. He continues, sorrow on his voice, 'We believe......we hope, one of the sentient races witnessed his murder. Chances are slim to nil. But perhaps one of those.....Caldoin? Or something? Found him and recorded his name. Will you investigate this for us Keyno ? ");
 		elseif(e.message:findi("will investigate")) then
-			e.self:Say("We are greatful for your service to us. We know you have little interest in our affairs, yet you risk your life to aid us. Once you find his name, then perhaps we can find a way to release his restless spirit. If you do this, you will be rewarded an item of your choice from our hoard of treasure. Begin with.....whatever they call themselves. The Giants refer to them as iron pellets. Return to me proof of his name and he will be remembered. ");
+			e.self:Say("We are grateful for your service to us. We know you have little interest in our affairs, yet you risk your life to aid us. Once you find his name, then perhaps we can find a way to release his restless spirit. If you do this, you will be rewarded an item of your choice from our hoard of treasure. Begin with.....whatever they call themselves. The Giants refer to them as iron pellets. Return to me proof of his name and he will be remembered. ");
 		end
 	else
 		e.self:Say("I have nothing to speak about to the likes of you.");
@@ -31,13 +31,13 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 1837}, 0)) then -- Onyxbrand
+	if(item_lib.check_turn_in(e.trade, {item1 = 1837})) then -- Onyxbrand
 		e.self:Emote("examines the axe closely. The Wurm's eyes widen as he makes out the name of Garzicor and immediately raises his head to the ceiling, letting out a howl of emotional pain. Your bones shake with the screach, an image of a man in the midst of a rain of his own child's blood comes to mind, the agony is so great. Out of breath, Oglard drops his head and focuses his attention back to you, barely able to hold himself up. He places an urn before you and says, 'You must find his corpse. Find his burial site and summon Garzicor's spirit by speaking your remembrance of him. Speak to him and find out all you can. Return to me with 2 pieces of his corpse combined in that urn. Help us " .. e.other:GetCleanName() .. ", you MUST!'");
 		e.other:Faction(430,5);  	--CoV
 		e.other:Faction(436,1);  	-- Yelinak
 		e.other:Faction(448,-2); 	-- Kromzek
 		e.other:QuestReward(e.self,0,0,0,0,17050,5000); -- Dragon Craft Urn
-	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 1887}, 0)) then -- Dragon Craft Urn (1st combined version)
+	elseif(e.other:GetFaction(e.self) < 2 and item_lib.check_turn_in(e.trade, {item1 = 1887})) then -- Dragon Craft Urn (1st combined version)
 		e.self:Say("Thank you, " .. e.other:GetCleanName() .. ". With this urn, our fears are confirmed. His spirit is split, each striving for its own desire. We've decided what must be done. Your help is key in the success of our plans. If you wish to continue what you have started, please take this urn to Eldriaks Fe`Dhar. He will make known to you our plan.");
 		e.other:QuestReward(e.self,0,0,0,0,2053,5000); -- Dragon Craft Urn (2nd combined version)
 	end

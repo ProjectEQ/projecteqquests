@@ -187,7 +187,7 @@ function Deputy_Spawn(e)
 		e.self:AddToHateList(e.self:GetTarget(),1);	
 		e.self:TempName("General_Huffin");
 		eq.set_timer("Check",1000);
-		spawned=1;
+		spawned=true;
 	elseif phase1 == false then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);

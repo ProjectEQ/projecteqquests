@@ -5,11 +5,11 @@ function event_spawn(e)
 end
 
 function event_timer(e)
-	if(timer == "warning") then
+	if(e.timer == "warning") then
 		e.self:Say("Running out of ore soon, get em while they're hot!");
 		eq.stop_timer("warning");
 	end
-	if(timer == "despawn") then
+	if(e.timer == "despawn") then
 		eq.depop_with_timer();
 		eq.stop_timer("despawn");
 	end

@@ -77,7 +77,7 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 		This changes the text on the key.<br><br><c \"#1b6e14\">Assign Social</c><br>This lets you put a custom ability created on the <c \"#83f07a\">Socials Page</c> into the <c \"#83f07a\">Hotbar</c> directly.<br><br>
 		<c \"#1b6e14\">Change Size</c><br>This lets you resize and scale the entire<c \"#83f07a\"> Hotbar.</c><br><br><c \"#1b6e14\">Unmemorize</c><br>This lets you forget a memorized spell. Only works
 		on spell gem <c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Click 'OK' to complete the tutorial on  Hotbars.</c>");
-		quest::updatetaskactivity(290,1);
+		quest::updatetaskactivity(8804,1);
 	}
 	if ($popupid == 10) {
 		quest::popup("Swimming", "<br>When underwater, your remaining air is shown in the <c \"#1b6e14\">Air Remaining</c> window. If your air supply runs out, you will begin taking damage.<br><br>

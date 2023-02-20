@@ -28,15 +28,15 @@ function event_trade(e)
 	local canine = 0;
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 2388}, 0)) then -- Qeynos Badge of Honor
+	if(item_lib.check_turn_in(e.trade, {item1 = 2388})) then -- Qeynos Badge of Honor
 		if(e.other:GetFaction(e.self) < 5) then -- eats item if not amiable or better
 			e.self:Say("Very well. Were we within the city limits I would have had Guard Finewine court-martialed by now. Unfortunately, I don't have such a luxury out in the wild. I have written an Official Warning for Guard Finewine that states in no uncertain terms that he will most assuredly be court-martialed and spend the rest of his youth in jail unless he turns in his missing shift reports. Deliver this warning to him and return to me with his shift reports.");
 			e.other:QuestReward(e.self,{items = {8285,8283}}); -- Marked Qeynos Badge of Honor, official warning
 		end
-	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8279}, 0)) then -- Stack of Shift Reports
+	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8279})) then -- Stack of Shift Reports
 		e.self:Say("Oh praise Karana, how did you manage to get these out of him? Never mind, I don't really care. Here, take this Compiled Report to Captain Tillin in Qeynos at once.");
 		e.other:QuestReward(e.self,0,0,0,0,8280); -- Compiled Report
-	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8287}, 0)) then -- Orders for Sergeant Caelin
+	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8287})) then -- Orders for Sergeant Caelin
 		e.self:Emote("face grows pale as he reads the orders. 'Bossamir was right. The gnolls are far stronger than we expected. We lack the resources for a frontal assault so we have no choice to but to resort to covert operations and strike teh gnolls at their heart. Their leader must fall and you look like the one for the job. Take this Writ of Execution and carry out the sentence. Your target is the leader of the gnolls, Barducks Darkpaw. Affix the Writ of Execution to the Head of Barducks Darkpaw and seal it in this Black Satchel. Return to me with the Closed Black Satchel and your Marked Qeynos Badge of Honor for your just reward.");
 		e.other:QuestReward(e.self,{items = {8282,17160}}); -- writ of execution, Black Satchel
 	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8286,item2 = 8285})) then -- Closed Black Satchel and Marked Qeynos Badge of Honor

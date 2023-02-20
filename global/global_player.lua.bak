@@ -183,20 +183,20 @@ function event_combine_success(e)
 		eq.delete_global("paladin_epic_mmcc");
 		eq.delete_global("paladin_epic_hollowc");
 	elseif (e.recipe_id == 2182) then -- Pumpkin Pie
-		if (eq.is_task_activity_active(19, 0)) then -- The Hungry Halfling
-			eq.update_task_activity(19, 0, 1);
+		if (eq.is_task_activity_active(8013, 0)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 0, 1);
 		end
 	elseif (e.recipe_id == 2181) then -- Pumpkin Bread
-		if (eq.is_task_activity_active(19, 1)) then -- The Hungry Halfling
-			eq.update_task_activity(19, 1, 1);
+		if (eq.is_task_activity_active(8013, 1)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 1, 1);
 		end
 	elseif (e.recipe_id == 7811) then -- Spiced Pumpkin Cider
-		if (eq.is_task_activity_active(19, 2)) then -- The Hungry Halfling
-			eq.update_task_activity(19, 2, 1);
+		if (eq.is_task_activity_active(8013, 2)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 2, 1);
 		end
 	elseif (e.recipe_id == 2183) then -- Pumpkin Shake
-		if (eq.is_task_activity_active(19, 3)) then -- The Hungry Halfling
-			eq.update_task_activity(19, 3, 1);
+		if (eq.is_task_activity_active(8013, 3)) then -- The Hungry Halfling
+			eq.update_task_activity(8013, 3, 1);
 		end
 	end
 end

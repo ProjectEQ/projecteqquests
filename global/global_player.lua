@@ -2,27 +2,6 @@
 
 local don = require("dragons_of_norrath")
 
-function event_enter_zone(e)
-	local qglobals = eq.get_qglobals(e.self);
-	if(e.self:GetLevel() >= 15 and qglobals['Wayfarer'] == nil) then
-		local zoneid = eq.get_zone_id();
-		if(e.self:GetStartZone() ~= zoneid and (zoneid == 1 or zoneid == 2 or zoneid == 3 or zoneid == 8 or zoneid == 9 
-		or zoneid == 10 or zoneid == 19 or zoneid == 22 or zoneid == 23 or zoneid == 24 or zoneid == 29 or zoneid == 30 
-		or zoneid == 34 or zoneid == 35 or zoneid == 40 or zoneid == 41 or zoneid == 42 or zoneid == 45 or zoneid == 49 
-		or zoneid == 52 or zoneid == 54 or zoneid == 55 or zoneid == 60 or zoneid == 61 or zoneid == 62 or zoneid == 67 
-		or zoneid == 68 or zoneid == 75 or zoneid == 82 or zoneid == 106 or zoneid == 155 or zoneid == 202 or zoneid == 382 
-		or zoneid == 383 or zoneid == 392 or zoneid == 393 or zoneid == 408)) then
-			e.self:Message(15, 
-				"A mysterious voice whispers to you, \'If you can feel me in your thoughts, know this -- "
-				.. "something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know "
-				.. "that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They "
-				.. "are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or "
-				.. "search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, "
-				.. "and find out more. Adventure awaits you, my friend.\'");
-		end
-	end
-end
-
 function event_combine_validate(e)
 	-- e.validate_type values = { "check_zone", "check_tradeskill" }
 	-- criteria exports:
@@ -205,36 +184,7 @@ function event_command(e)
 	return eq.DispatchCommands(e);
 end
 
---[[ the main key is the ID of the AA
---   the first set is the age required in seconds
---   the second is if to ignore the age and grant anyways live test server style
---   the third is enabled
---]]
-vet_aa = {
-    [481]  = { 31536000, true, true}, -- Lesson of the Devote 1 yr
-    [482]  = { 63072000, true, true}, -- Infusion of the Faithful 2 yr
-    [483]  = { 94608000, true, true}, -- Chaotic Jester 3 yr
-    [484]  = {126144000, true, true}, -- Expedient Recovery 4 yr
-    [485]  = {157680000, true, true}, -- Steadfast Servant 5 yr
-    [486]  = {189216000, true, true}, -- Staunch Recovery 6 yr
-    [487]  = {220752000, true, true}, -- Intensity of the Resolute 7 yr
-    [511]  = {252288000, true, true}, -- Throne of Heroes 8 yr
-    [2000] = {283824000, true, true}, -- Armor of Experience 9 yr
-    [8081] = {315360000, true, true}, -- Summon Resupply Agent 10 yr
-    [8130] = {346896000, true, true}, -- Summon Clockwork Banker 11 yr
-    [453]  = {378432000, true, true}, -- Summon Permutation Peddler 12 yr
-    [182]  = {409968000, true, true}, -- Summon Personal Tribute Master 13 yr
-    [600]  = {441504000, true, true}, -- Blessing of the Devoted 14 yr
-}
-
 function event_connect(e)
-    local age = e.self:GetAccountAge();
-    for aa, v in pairs(vet_aa) do
-        if v[3] and (v[2] or age >= v[1]) then
-            e.self:GrantAlternateAdvancementAbility(aa, 1)
-        end
-    end
-
     don.fix_invalid_faction_state(e.self)
 end
 
@@ -328,40 +278,6 @@ function event_level_up(e)
     end
       
   end
-end
-
-test_items = {
-    [1]  = {38000, 38020}, -- Warrior
-    [2] = {38168, 38188}, -- Cleric
-    [3]  = {38084, 38104}, -- Paladin
-    [4]  = {38105, 38125}, -- Ranger
-    [5]  = {38063, 38083}, -- Shadowknight
-    [6] = {38189, 38209}, -- Druid
-    [7]  = {38021, 38041}, -- Monk
-    [8]  = {38147, 38167}, -- Bard
-    [9]  = {38042, 38062}, -- Rogue
-    [10] = {38210, 38230}, -- Shaman
-    [11]  = {38294, 38314}, -- Necromancer
-    [12]  = {38231, 38251}, -- Wizard
-    [13]  = {38252, 38272}, -- Magician
-    [14]  = {38273, 38293}, -- Enchanter
-    [15]  = {38126, 38146}, -- Beastlord
-    [16]  = {38315, 38332}, -- Berserker
-}
- 
-function event_test_buff(e)
-    if (e.self:GetLevel() < 25) then
-        e.self:SetLevel(25)
-        eq.scribe_spells(25,1)
-        eq.train_discs(25,1)
-        for class_id, v in pairs(test_items) do
-            if e.self:GetClass() == class_id then
-                for item_id = v[1], v[2] do
-                    e.self:SummonItem(item_id);
-                end
-            end
-        end
-    end
 end
 
 function event_task_complete(e)

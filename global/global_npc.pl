@@ -7,7 +7,7 @@ sub EVENT_DEATH_COMPLETE {
 
    if ($killer->IsClient() or $killer->IsBot()) {
         my $level = $killer->GetLevel();
-        my $group = $killer->GetGroup();
+        my $group = $killer->CastToClient()->GetGroup();
         if ($group) {
             for (my $count = 0; $count < $group->GroupCount(); $count++) {
                 $tlevel = $group->GetMember($count).GetLevel();

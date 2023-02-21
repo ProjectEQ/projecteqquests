@@ -9,7 +9,7 @@ sub EVENT_DEATH_COMPLETE {
         my $level = $killer->GetLevel();
         my $group = $killer->GetGroup();
         if ($group) {
-            for (my $count = 0; $count < $group->GroupCount(); count++) {
+            for (my $count = 0; $count < $group->GroupCount(); $count++) {
                 $tlevel = $group->GetMember($count).GetLevel();
                 if ($tlevel > $level) {
                     $level = $tlevel;

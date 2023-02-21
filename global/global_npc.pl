@@ -12,7 +12,7 @@ sub EVENT_DEATH_COMPLETE {
                 }
             }
         }
-   } elsif ($killer->IsPet() and ($killer->GetOwner()->IsClient() or $killer->GetOwner()->IsBot()) {
+   } elsif ($killer->IsPet() and ($killer->GetOwner()->IsClient() or $killer->GetOwner()->IsBot())) {
         if ($killer->GetOwner()->GetGroup()) {
             for (my $count = 0; $count < $killer->GetOwner()->GetGroup()->GroupCount(); $count++) {
                 if ($killer->GetOwner()->GetGroup()->GetMember($count)->GetLevel() > $level) {

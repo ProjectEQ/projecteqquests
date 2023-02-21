@@ -17,7 +17,7 @@ sub EVENT_DEATH_COMPLETE {
             }        
         }
 
-        quest::debug("CalcExp: " . $killer->CalcEXP($level));
+        quest::debug("CalcExp: " . $killer->$CastToClient()->CalcEXP($level));
    }
 }
    

@@ -7,8 +7,17 @@ sub EVENT_DEATH_COMPLETE {
 
    if ($killer->IsClient() or $killer->IsBot()) {
         my $level = $killer->GetLevel();
-        quest::debug("My killer's level is: " . $level);
-   }
+        my $group = $killer->GetGroup();
+        if ($group) {
+            for (my $count = 0; $count < $group->GroupCount(); count++) {
+                $tlevel = $group->GetMember($count).GetLevel();
+                if ($tlevel > $level) {
+                    $level = $tlevel;
+                }
+            }        
+        }
 
+        quest::debug("CalcExp: " . $killer->CalcEXP($level));
+   }
 }
    

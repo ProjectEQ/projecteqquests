@@ -17,7 +17,7 @@ sub EVENT_DEATH_COMPLETE {
             }        
         }
 
-        quest::debug("CalcExp: " . $killer->GetLevelCon($level));
+        quest::debug("GetLevelCon: " . $npc->GetLevelCon($level));
    }
 }
    

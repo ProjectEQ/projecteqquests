@@ -17,7 +17,10 @@ sub EVENT_DEATH_COMPLETE {
             }        
         }
 
-        quest::debug("Con Color was: " . $killer->GetLevelCon($npc->GetLevel()) );
+        # The mob was not grey
+        if ($killer->GetLevelCon($npc->GetLevel()) != 6) {
+            quest::debug("I was not grey to my killer");
+        }
    }
 }
    

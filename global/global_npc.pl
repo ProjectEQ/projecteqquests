@@ -17,7 +17,7 @@ sub EVENT_DEATH_COMPLETE {
             }        
         }
 
-        quest::debug("Con Color was: " . $killer->GetLevelConColor($npc->GetLevel()) );
+        quest::debug("Con Color was: " . $killer->GetLevelCon($npc->GetLevel()) );
    }
 }
    

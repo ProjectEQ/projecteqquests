@@ -6,18 +6,26 @@ sub EVENT_DEATH_COMPLETE {
    }
 
    if ($killer->IsClient() or $killer->IsBot()) {
-        my $level = $killer->GetLevel();
         my $group = $killer->CastToClient()->GetGroup();
+        my $level = $killer->GetLevel();
         if ($group) {
             for (my $count = 0; $count < $group->GroupCount(); $count++) {
-                $tlevel = $group->GetMember($count).GetLevel();
-                if ($tlevel > $level) {
-                    $level = $tlevel;
+                if ($group->GetMember($count).GetLevel() > $level) {
+                    $level = $group->GetMember($count).GetLevel();
+                    $killer = $group->GetMember($count)->CastToClient();
                 }
             }        
         }
 
-        quest::debug("GetLevelCon: " . $npc->GetLevelCon($level));
+        quest::debug("Con Color was: " . $killer->GetLevelConColor($npc->GetLevel()) );
    }
 }
    
+#define CON_GREEN		2
+#define CON_LIGHTBLUE	18
+#define CON_BLUE		4
+#define CON_WHITE		10
+#define CON_WHITE_TITANIUM		20
+#define CON_YELLOW		15
+#define CON_RED			13
+#define CON_GRAY		6

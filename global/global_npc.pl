@@ -1,6 +1,6 @@
-sub EVENT_ATTACK {
-    if ($other->IsPet()) {
-        quest::debug("Pet EVENT_ATTACK happened: " . $npc->GetCleanName() . " attacked " . $other->GetCleanName());
+sub EVENT_DAMAGE_GIVEN {
+    if ($npc->IsPet()) {
+        quest::debug("Pet EVENT_DAMAGE_GIVEN happened: " . $npc->GetCleanName());
     }
         
 }

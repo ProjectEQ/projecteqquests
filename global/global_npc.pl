@@ -11,7 +11,7 @@ sub EVENT_SPAWN
     }
 }
 
-sub EVENT_SPAWN_ZONE
+sub EVENT_ENTER
 {
     if ($npc->IsPet()) {
         quest::debug("I'm a pet, I zoned: " . $npc->GetCleanName());

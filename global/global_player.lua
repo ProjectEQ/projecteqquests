@@ -209,7 +209,9 @@ end
 function event_connect(e)
     don.fix_invalid_faction_state(e.self)
 
-	check_level_flag(e)		
+	check_level_flag(e)
+	e.self:GrantAlternateAdvancementAbility(938, 8, true)
+
 end
 
 --[[

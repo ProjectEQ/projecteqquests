@@ -2,6 +2,28 @@
 
 local don = require("dragons_of_norrath")
 
+function check_level_flag(e)
+	local key = e.self:CharacterID() .. "-CharMaxLevel"
+	
+	if eq.get_data(key) == "" then
+		eq.set_data(key, "52")
+		e.self:Message(15, "Your Level Cap has been set to 52.")
+	end
+end
+
+function event_discover_item(e)
+	if e.item:HP() or e.item:Mana() or e.item:AC() > 0 or e.item:AStr() > 0 or e.item:ASta() > 0 or e.item:ADex() > 0 or e.item:AAgi() > 0 or e.item:AInt() > 0 or e.item:AWis() > 0 or e.item:ACha() > 0 or e.item:AugType() > 0 then
+	
+		local key = e.self:CharacterID() .. "-DiscoCount";
+		if (eq.get_data(key) == nil or eq.get_data(key) == "") then
+			eq.set_data(key,tostring(1));
+		else
+			eq.set_data(key,tostring(tonumber(eq.get_data(key)) + 1));
+		end
+		eq.world_emote(15,e.self:GetCleanName() .. " is the first to discover " .. eq.item_link(e.item:ID()) .. ".");
+	end
+end
+
 function event_combine_validate(e)
 	-- e.validate_type values = { "check_zone", "check_tradeskill" }
 	-- criteria exports:
@@ -186,6 +208,8 @@ end
 
 function event_connect(e)
     don.fix_invalid_faction_state(e.self)
+
+	check_level_flag(e)		
 end
 
 --[[

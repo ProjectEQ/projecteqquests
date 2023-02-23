@@ -5,9 +5,9 @@ sub EVENT_DAMAGE_GIVEN {
 }
 
 sub EVENT_DAMAGE_TAKEN {
-    quest::debug("My Race is: " . $npc->GetRace(). " My Name is: " . $npc->GetCleanName());
     if ($npc->GetRace() == 42) {
         quest::debug("Attempting to reset Scaled Wolf Size: " . $npc->GetSize() . ":" . $npc->GetBaseSize());
+        quest::debug("My Race is: " . $npc->GetRace(). " My Name is: " . $npc->GetCleanName());
         $npc->ChangeSize($npc->GetBaseSize(), 1);
     }
 }

@@ -24,11 +24,11 @@ sub EVAL_PET
         if ($pet->GetOwnerID()) {
                 my $owner = $entity_list->GetClientByID($pet->GetOwnerID());
                 
-                my $owner_spelldmg = $owner->GetSpellDmg();
+                my $owner_spelldmg = $owner->GetSpellDamage();
                 my $owner_healamt = $owner->GetHealAmount();
 
-                $pet->ModifyNPCStat("spellscale",$owner->GetSpellDmg());
-                $pet->ModifyNPCStat("healscale",$owner->GetHealAmt());
+                $pet->ModifyNPCStat("spellscale",$owner->GetSpellDamage());
+                $pet->ModifyNPCStat("healscale",$owner->GetHealAmount());
 
                 $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() * $owner_spelldmg);
 

@@ -27,10 +27,30 @@ sub EVENT_SAY {
     plugin::NPCTell("Are you sure that you wish to be transported to [".quest::saylink("ae_transport",1,"The Plane of Mischief")."]?");
     $client->SetBucket("evanora_target", "mischiefplane", 60);
   } elsif ($text=~/ae_transport/i) { 
-    if ($client->TakeMoneyFromPP(5000000, 1)) {
+    if ($client->GetGM() or $client->TakeMoneyFromPP(5000000, 1)) {
         my $target = $client->GetBucket("evanora_target");
         if ($target eq 'hateplaneb') {
             $client->MovePC(186, -393, 656, 4, 0);
+        } elsif ($target eq 'airplane') {
+            $client->MovePC(71, 614, 1415, -662, 0);
+        } elsif ($target eq 'fearplane') {
+            if ($client->GetBucket("fear_visited") {
+                $client->MovePC(72, 1232, -1224, 1, 475);
+            } else {
+                plugin::NPCTell("I'm sorry. You lack the ncessary interplanar attuning to visit that plane. Seek out the permanent portal in Norrath.");
+            }           
+        } elsif ($target eq 'growthplane') {
+            if ($client->GetBucket("growth_visited") {
+                $client->MovePC(127, 3016, -2557, -21, 0);
+            } else {
+                plugin::NPCTell("I'm sorry. You lack the ncessary interplanar attuning to visit that plane. Seek out the permanent portal in Norrath.");
+            }
+        } elsif ($target eq 'mischiefplane') {
+            if ($client->GetBucket("mischief_visited") {
+                $client->MovePC(126, -395, -1410, 114, 0);
+            } else {
+                plugin::NPCTell("I'm sorry. You lack the ncessary interplanar attuning to visit that plane. Seek out the permanent portal in Norrath.");
+            }
         }
     } else {
         plugin::NPCTell("I'm sorry. You don't have enough money to pay my fee. Please return when you have 5,000 platinum pieces");

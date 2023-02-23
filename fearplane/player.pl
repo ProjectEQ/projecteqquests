@@ -1,3 +1,3 @@
 sub EVENT_ENTERZONE {
-    quest::debug("I entered the zone");
+    $client->SetBucket("fear_visited", "true");
 }

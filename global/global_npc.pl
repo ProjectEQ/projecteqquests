@@ -7,14 +7,14 @@ sub EVENT_DAMAGE_GIVEN {
 sub EVENT_SPAWN
 {
     if ($npc->IsPet()) {
-        quest::("I'm a pet, I spawned: " . $npc.GetCleanName());
+        quest::debug("I'm a pet, I spawned: " . $npc.GetCleanName());
     }
 }
 
 sub EVENT_SPAWN_ZONE
 {
     if ($npc->IsPet()) {
-        quest::("I'm a pet, I zoned: " . $npc.GetCleanName());
+        quest::debug("I'm a pet, I zoned: " . $npc.GetCleanName());
     }  
 }
 

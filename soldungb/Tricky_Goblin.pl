@@ -21,7 +21,7 @@ sub EVENT_SAY {
             plugin::NPCTell("No-no. Stronger not here yet. Wait."); 
         } else {
             my $instance_id = quest::CreateInstance($Data[0], 1, $instance_duration);
-            $client->SetBucket($Data[0]-"cooldown", ($instance_duration/10));
+            $client->SetBucket($Data[0]-"cooldown", 1, ($instance_duration/10));
             $client->SetBucket("active-instance-zone", $Data[0], $instance_duration);
             $client->SetBucket("active-instance-id", $instance_id, $instance_duration);
 

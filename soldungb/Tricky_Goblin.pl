@@ -3,7 +3,7 @@ sub EVENT_SAY {
     my @Data = ("soldungb", 32, -313, -1027, -50, 270);
     my $instance_zone = $client->GetBucket("active-instance-zone");
     my $instance_id = $client->GetBucket("active-instance-id");
-    my $instance_cooldown = $client->GetBucket($Data[0]- . "cooldown");
+    my $instance_cooldown = $client->GetBucket($Data[0] . "cooldown");
 
     my $instance_duration = 72000;
 
@@ -21,7 +21,7 @@ sub EVENT_SAY {
             plugin::NPCTell("No-no. Stronger not here yet. Wait."); 
         } else {
             my $instance_id = quest::CreateInstance($Data[0], 1, $instance_duration);
-            $client->SetBucket($Data[0]- . "cooldown", 1, ($instance_duration/10));
+            $client->SetBucket($Data[0] . "cooldown", 1, ($instance_duration/10));
             $client->SetBucket("active-instance-zone", $Data[0], $instance_duration);
             $client->SetBucket("active-instance-id", $instance_id, $instance_duration);
 

@@ -11,7 +11,7 @@ sub EVENT_SAY {
         plugin::NPCTell("Oooo. Big-strong-adventurer. [".quest::saylink("fs_1", 1, "Stronger")."] ahead. You kill?");
     } elsif ($text=~/fs_1/i) {
         if ($instance_cooldown) {
-            $client->Message(15,"Lockout Remaining:" . quest::secondstotime($client->GetBucketExpires($Data[0] . "-cooldown")));
+            $client->Message(15,"Lockout Remaining:" . quest::secondstotime($client->>GetBucketRemaining($Data[0] . "-cooldown")));
             plugin::NPCTell("No-no. Stronger not here yet. Wait.");
         } else {
             plugin::NPCTell("Strong-strong. Must kill alone. [".quest::saylink("fs_2", 1, "go")."]?");

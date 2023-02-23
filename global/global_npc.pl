@@ -31,6 +31,7 @@ sub EVAL_PET
                 $pet->ModifyNPCStat("healscale",$owner->GetHealAmount());
 
                 $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() * ($owner_spelldmg + 1));
+                $pet->ModifyNPCStat("ac", $pet->GetNPCStat("ac") * ($owner_spelldmg + 1));
 
                 $pet->SetMaxHP();
         }

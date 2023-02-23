@@ -6,7 +6,7 @@ sub EVENT_SAY {
 
   if ($client->GetLevel() < 46) {
         plugin::NPCTell("Hail, ". $client->GetCleanName() .". You are not yet strong enough to survive the rigors of interplanar travel. Return to me when your soul has grown more experienced.");
-  elsif ($text=~/hail/i) {
+  } elsif ($text=~/hail/i) {
     # This will need to be reworked for POP eventually.
     plugin::NPCTell("Hail, ". $client->GetCleanName() .". I can assist you in operating the main teleportation spires in order to [".quest::saylink("ae1",1,"reach other planes")."]. How can I help you?");
   } elsif ($text=~/ae1/i) {

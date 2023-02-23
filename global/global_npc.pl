@@ -11,21 +11,14 @@ sub EVENT_SPAWN
     }
 }
 
-sub EVENT_ENTER
-{
-    if ($npc->IsPet()) {
-        quest::debug("I'm a pet, I zoned: " . $npc->GetCleanName());
-    }  
-}
-
 sub EVAL_PET
 {
         my $pet = shift;
         if ($pet->GetOwnerID()) {
                 my $owner = $entity_list->GetClientByID($pet->GetOwnerID());
                 
-                my $owner_spelldmg = ($owner->GetSpellDamage() / 100);
-                my $owner_healamt = ($owner->GetHealAmount() / 100);
+                my $owner_spelldmg = ($owner->GetSpellDamage() / 100) + 100;
+                my $owner_healamt = ($owner->GetHealAmount() / 100) + 100;
 
                 $pet->ModifyNPCStat("spellscale",$owner->GetSpellDamage());
                 $pet->ModifyNPCStat("healscale",$owner->GetHealAmount());

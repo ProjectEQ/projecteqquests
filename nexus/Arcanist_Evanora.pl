@@ -34,19 +34,19 @@ sub EVENT_SAY {
         } elsif ($target eq 'airplane') {
             $client->MovePC(71, 614, 1415, -662, 0);
         } elsif ($target eq 'fearplane') {
-            if ($client->GetBucket("fear_visited") {
+            if ($client->GetBucket("fear_visited")) {
                 $client->MovePC(72, 1232, -1224, 1, 475);
             } else {
                 plugin::NPCTell("I'm sorry. You lack the ncessary interplanar attuning to visit that plane. Seek out the permanent portal in Norrath.");
             }           
         } elsif ($target eq 'growthplane') {
-            if ($client->GetBucket("growth_visited") {
+            if ($client->GetBucket("growth_visited")) {
                 $client->MovePC(127, 3016, -2557, -21, 0);
             } else {
                 plugin::NPCTell("I'm sorry. You lack the ncessary interplanar attuning to visit that plane. Seek out the permanent portal in Norrath.");
             }
         } elsif ($target eq 'mischiefplane') {
-            if ($client->GetBucket("mischief_visited") {
+            if ($client->GetBucket("mischief_visited")) {
                 $client->MovePC(126, -395, -1410, 114, 0);
             } else {
                 plugin::NPCTell("I'm sorry. You lack the ncessary interplanar attuning to visit that plane. Seek out the permanent portal in Norrath.");

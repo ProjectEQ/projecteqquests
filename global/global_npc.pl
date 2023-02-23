@@ -8,6 +8,7 @@ sub EVENT_SPAWN
 {
     if ($npc->IsPet()) {
         quest::debug("I'm a pet, I spawned: " . $npc->GetCleanName());
+        $npc->ModifyNPCStat("max_hp", $npc->GetMaxHP() * 2);
     }
 }
 

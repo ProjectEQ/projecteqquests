@@ -33,7 +33,7 @@ sub EVAL_PET
                 $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() * ($owner_spelldmg + 1));
                 $pet->ModifyNPCStat("ac", $pet->GetNPCStat("ac") * ($owner_spelldmg + 1));
                 $pet->ModifyNPCStat("atk", $pet->GetNPCStat("atk") * ($owner_spelldmg + 1));
-                $pet->ModifyNPCStat("hp_regen_rate", $pet->GetNPCStat("hp_regen_rate") * ($owner_spelldmg + 1));
+                $pet->ModifyNPCStat("hp_regen", $pet->GetNPCStat("hp_regen") * ($owner_spelldmg + 1));
                 $pet->ModifyNPCStat("min_hit", $pet->GetNPCStat("min_hit") * (($owner_spelldmg / 2) + 1));
                 $pet->ModifyNPCStat("max_hit", $pet->GetNPCStat("max_hit") * (($owner_spelldmg / 2) + 1));
 

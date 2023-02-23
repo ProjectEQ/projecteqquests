@@ -1,3 +1,3 @@
-sub EVENT_ENTER_ZONE {
+sub EVENT_ENTERZONE {
     quest::debug("I entered the zone");
 }

@@ -14,7 +14,7 @@ sub EVENT_SAY {
             $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
             plugin::NPCTell("No-no. Stronger not here yet. Wait.");
         } else {
-            plugin::NPCTell("Strong-strong. Must kill alone. [".quest::saylink("fs_2",1"go")."]?");
+            plugin::NPCTell("Strong-strong. Must kill alone. [".quest::saylink("fs_2", 1, "go")."]?");
         }        
     } elsif ($text=~/fs_2/i) {
         if ($instance_cooldown) {

@@ -12,8 +12,7 @@ function check_level_flag(e)
 end
 
 function event_discover_item(e)
-	if e.item:HP() or e.item:Mana() or e.item:AC() > 0 or e.item:AStr() > 0 or e.item:ASta() > 0 or e.item:ADex() > 0 or e.item:AAgi() > 0 or e.item:AInt() > 0 or e.item:AWis() > 0 or e.item:ACha() > 0 or e.item:AugType() > 0 then
-	
+	if e.item:HP() or e.item:Mana() or e.item:AStr() > 0 or e.item:ASta() > 0 or e.item:ADex() > 0 or e.item:AAgi() > 0 or e.item:AInt() > 0 or e.item:AWis() > 0 or e.item:ACha() > 0 or e.item:AugType() > 0 then
 		local key = e.self:CharacterID() .. "-DiscoCount";
 		if (eq.get_data(key) == nil or eq.get_data(key) == "") then
 			eq.set_data(key,tostring(1));

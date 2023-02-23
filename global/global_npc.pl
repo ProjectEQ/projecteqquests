@@ -6,7 +6,7 @@ sub EVENT_DAMAGE_GIVEN {
 
 sub EVENT_SPAWN
 {
-    if ($npc->IsPet()) {  
+    if ($npc->IsPet() and $npc->GetOwner()->IsClient()) {  
         EVAL_PET($npc);
     }
 }

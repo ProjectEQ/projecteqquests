@@ -6,8 +6,8 @@ function check_level_flag(e)
 	local key = e.self:CharacterID() .. "-CharMaxLevel"
 	
 	if eq.get_data(key) == "" then
-		eq.set_data(key, "52")
-		e.self:Message(15, "Your Level Cap has been set to 52.")
+		eq.set_data(key, "60")
+		e.self:Message(15, "Your Level Cap has been set to 60.")
 	end
 end
 

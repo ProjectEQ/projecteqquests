@@ -4,7 +4,7 @@ sub EVENT_KILLED_MERIT {
             $client->Message(15,"You have completed this Feat of Strength! You have already been awarded for this achivement.");
         } else {
             $client->SetBucket("FOS-Nagafen", 1);
-            $client->Message(15,"You have completed this Feat of Strength! You have been awarded with five Alternate Advancement Points");
+            $client->Message(15,"You have completed this Feat of Strength!");
             $client->AddAAPoints(5);
             quest::worldwidemessage(15, "The brave adventurer " . $client->GetCleanName() . " has completed the Feat of Strength - Slay Lord Nagafen.");
         }

@@ -1,6 +1,6 @@
 sub EVENT_SAY {
 
-    my @Data = ("permafrost", 64, 4, 66, 312, 268);
+    my @Data = ("kedge", 64, 4, 66, 312, 268);
     my $instance_zone = $client->GetBucket("active-instance-zone");
     my $instance_id = $client->GetBucket("active-instance-id");
     my $instance_cooldown = $client->GetBucket($Data[0] . "-cooldown");

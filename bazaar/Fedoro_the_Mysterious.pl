@@ -99,6 +99,8 @@ sub EVENT_SAY {
                 if ($client->GetBucket("FOS-Phinigel")) {
                     $client->UpdateTaskActivity(38, 2, 1);
                 }
+            } else {
+                plugin::NPCTell("I have no further tasks for you at the moment.");
             }
             
         } elsif ($text=~/unlock-/i) {

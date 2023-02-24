@@ -17,7 +17,7 @@ my %class_abilities = (1  => 30196,
 
 #List of Tasks. TaskID -> Completion Stage
 #need to add it here and handle it inside cad1c
-my %tasks = ();
+my %tasks = (38 => 3);
 
 sub EVENT_SAY {
 
@@ -43,7 +43,10 @@ sub EVENT_SAY {
                     return;
                 }
             }
-            if ($unlocksAvailable >= 1 or true) {
+            if (true) {
+                if ($unlocksAvailable) { } else {
+                    $unlocksAvailable = 0;
+                }
                 quest::message(335, "You have ". $unlocksAvailable . " class unlock points available.");
                 quest::message(335, "You have a permanent ".sprintf("%.2f", (100 - ($client->GetEXPModifier(0) * 100)))."%% XP penalty due to class unlocks.");
             }
@@ -83,10 +86,23 @@ sub EVENT_SAY {
             }
         } elsif ($text=~/cad1c/i) { #Favors
             my $unlockTaskProgress = $client->GetBucket("ClassUnlockTaskProgress");
-            #Minor Artifacts
-            if ($unlockTaskProgress == 0) {
-                #TODO                
+            #Feats of Strength - Antonica
+            if ($client->GetLevel() < 52) {
+                plugin::NPCTell("Return to me when you have grown more powerful, then we can talk about such things.");
+            } elsif ($unlockProgress < 1 and $client->GetLevel() > 52) {
+                plugin::NPCTell("First things first; I need you to prove to me that you have what it takes to walk this path. Complete three Feats of Strength - Slay Lord Nagafen, Lady Vox, and Phinigel Autropos in single combat, then return to me.");
+                $client->AssignTask(38);
+                if ($client->GetBucket("FOS-Nagafen")) {
+                    $client->UpdateTaskActivity(38, 0, 1);
+                }
+                if ($client->GetBucket("FOS-Vox")) {
+                    $client->UpdateTaskActivity(38, 1, 1);
+                }
+                if ($client->GetBucket("FOS-Phinigel")) {
+                    $client->UpdateTaskActivity(38, 2, 1);
+                }
             }
+            
         } elsif ($text=~/unlock-/i) {
             if (length($text) > 7) {
                 my $cid = substr($text,7);            

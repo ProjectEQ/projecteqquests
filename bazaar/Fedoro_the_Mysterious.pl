@@ -36,7 +36,8 @@ sub EVENT_SAY {
                     $client->SetBucket("ClassUnlocksAvailable", ++$unlocksAvailable);
                     quest::message(335, "You have earned 1 class unlock point.");
                     quest::message(335, "You have ". $unlocksAvailable . " class unlock points available.");
-                    #Handle Rewards
+                    $client->SetBucket("ClassUnlockProgress", $unlockProgress+1);
+                    
                     return;
                 }
             }

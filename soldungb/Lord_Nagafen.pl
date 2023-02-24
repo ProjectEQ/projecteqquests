@@ -7,6 +7,7 @@ sub EVENT_KILLED_MERIT {
             $client->Message(15,"You have completed this Feat of Strength!");
             $client->AddAAPoints(5);
             quest::worldwidemessage(15, "The brave adventurer " . $client->GetCleanName() . " has completed the Feat of Strength - Slay Lord Nagafen.");
+            $client->UpdateTaskActivity(38, 0, 1);
         }
     }
 }

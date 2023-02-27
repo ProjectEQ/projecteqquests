@@ -5,6 +5,12 @@ sub EVENT_SPAWN
     }
 }
 
+sub EVENT_DAMAGE_GIVEN {
+    if ($npc->IsPet()) {
+        $entity_list->GetMobByID($entity_id)->AddToHateList($npc->GetOwner());
+    }        
+}
+
 sub EVAL_PET
 {
         my $pet = shift;
@@ -45,7 +51,7 @@ sub EVAL_PET
                     #TODO - Add the id of the 1.0 stat augment here
                     if (grep("208034",@items)) {
                         $pet->AddMeleeProc(848, 100);
-                        $pet->ApplySpellBuff(847);
+                        $pet->CastSpell(847, $pet->GetID());
                         $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
 
                         quest::debug("Applying Epic Pet Buffs");

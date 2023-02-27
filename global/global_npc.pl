@@ -33,5 +33,21 @@ sub EVAL_PET
                 $pet->ModifyNPCStat("dr", $owner->GetPR());
 
                 $pet->SetMaxHP();
+
+                if ($owner->GetClass() == 13) {
+                    my @items = ($owner->GetItemIDAt(quest::getinventoryslotid("primary")),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),0),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),1),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),2),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),3),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),4),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),5));
+                    #TODO - Add the id of the 1.0 stat augment here
+                    if (grep("208034",@items)) {
+                        $pet->AddMeleeProc(848, 100);
+                        $pet->ApplySpellBuff(847, -1);
+                        $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
+                    }
+                } 
         }
 }

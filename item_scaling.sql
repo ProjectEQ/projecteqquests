@@ -6,6 +6,12 @@ SET @SCALE_FACTOR = 1.5;
 SET @MOD2_THRESHOLD = 5;
 SET @HEROIC_T = 2;
 
+-- Decrease Aggro Range
+UPDATE peq.npc_types, ref.npc_types
+   SET peq.npc_types.aggroradius = Floor(ref.npc_types.aggroradius * 0.6),
+	    peq.npc_types.assistradius = Floor(ref.npc_types.assistradius * 0.6)
+ WHERE peq.npc_types.id = ref.npc_types.id;
+
 -- Apply Augment Schema
 UPDATE db_str SET value = "1 (General)" 			      WHERE id = 1  AND type = 16;
 UPDATE db_str SET value = "2 (Activated Effect)" 	   WHERE id = 2  AND type = 16;
@@ -78,14 +84,14 @@ UPDATE items
    
 -- Remove Type 2 from items with Click effects
 UPDATE items
-   SET augslot2type = 1,
+   SET augslot2type = 0,
        augslot2visible = 1
  WHERE itemtype != 54
    AND clickeffect > 0;
    
 -- Remove First Type 3 from items with Focus or Worn effects
 UPDATE items
-   SET augslot3type = 1,
+   SET augslot3type = 0,
        augslot3visible = 1
  WHERE itemtype != 54
    AND ( focuseffect > 0
@@ -93,7 +99,7 @@ UPDATE items
 
 -- Remove first type 4 from items with proc effects
 UPDATE items
-   SET augslot4type = 1,
+   SET augslot4type = 0,
        augslot4visible = 1
  WHERE itemtype != 54
    AND proceffect > 0;
@@ -287,8 +293,8 @@ UPDATE peq.items
 UPDATE peq.items
    SET peq.items.hp = Ceil(peq.items.hp / 5) * 5
  WHERE peq.items.hp > 0;
- 
 -- Round up Mana
+ 
 UPDATE peq.items
    SET peq.items.mana = Ceil(peq.items.mana / 5) * 5
  WHERE peq.items.mana > 0;

@@ -308,3 +308,7 @@ end
 function event_task_complete(e)
   don.on_task_complete(e.self, e.task_id)
 end
+
+function event_equip_item_client(e)
+
+end

@@ -53,6 +53,8 @@ sub EVAL_PET
                         $pet->AddMeleeProc(848, 100);
                         $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
                         $pet->SetMaxHP();
+
+                        quest::debug("Applying Epic Pet Buffs");
                     }
                 } 
         }

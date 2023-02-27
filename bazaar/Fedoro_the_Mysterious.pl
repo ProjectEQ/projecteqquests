@@ -46,7 +46,6 @@ sub EVENT_SAY {
                     $unlocksAvailable = 0;
                 }
                 quest::message(335, "You have ". $unlocksAvailable . " class unlock points available.");
-                quest::message(335, "You have a permanent ".sprintf("%.2f", (100 - ($client->GetEXPModifier(0) * 100)))."%% XP penalty due to class unlocks.");
             }
             if (!$client->GetBucket("CadricMet")) {
                 plugin::NPCTell("Hail, ". $client->GetCleanName() ."! You look like an adventurer to me. If I'm [". quest::saylink("cad1a",1,"right") ."], we can be of great help to each other.");
@@ -108,7 +107,7 @@ sub EVENT_SAY {
                 my $cid = substr($text,7);            
                 if ($cid <= 16 && $client->GetClass() != $cid && $unlocksAvailable > 0) {
                     my $class_name = quest::getclassname($cid);
-                    plugin::NPCTell("Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]? You will recieve a permanent experience penalty.");
+                    plugin::NPCTell("Are you sure that you want to become a [". quest::saylink("confirm-".$cid,1,$class_name) ."]?");
                 }
             }        
         } elsif ($text=~/confirm-/i) {
@@ -127,10 +126,7 @@ sub EVENT_SAY {
                     $client->SetBucket("class-".$cid."-unlocked",1);
                     $client->SetBucket("ClassUnlocksAvailable", --$unlocksAvailable);
                     $client->GrantAlternateAdvancementAbility($class_abilities{$cid}, 1);
-                    $client->SetEXPModifier(0, ($client->GetEXPModifier(0) * 0.90));
-
-                    quest::message(335, "You have gained a permanent experience penalty. You will now earn ".sprintf("%.2f", ($client->GetEXPModifier(0) * 100))."%% as much experience as normal.");
-
+                    
                     #This section for recording server-first bragging rights\leaderboard.
                     my $most_unlocks = quest::get_data("world-class-unlock-leader");
                     my $most_unlocks_count = quest::get_data("world-class-unlock-leader-count");

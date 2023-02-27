@@ -181,13 +181,19 @@ UPDATE peq.items, ref.items
 
 -- Increase Elemental Damage
 UPDATE peq.items, ref.items
-   SET peq.items.elemdmgamt = Ceil(ref.items.elemdmgamt * 3)
+   SET peq.items.elemdmgamt = Ceil(ref.items.elemdmgamt * 5)
  WHERE peq.items.id = ref.items.id
    AND ref.items.elemdmgamt > 0;
+
+-- Increase Bane Damage
+UPDATE peq.items, ref.items
+   SET peq.items.elemdmgamt = Ceil(ref.items.banedmgamt * 5)
+ WHERE peq.items.id = ref.items.id
+   AND ref.items.banedmgamt > 0;
    
 -- Increase Backstab Damage
 UPDATE peq.items, ref.items
-   SET peq.items.backstabdmg = Ceil(ref.items.backstabdmg * 3)
+   SET peq.items.backstabdmg = Ceil(ref.items.backstabdmg * 2)
  WHERE peq.items.id = ref.items.id
    AND ref.items.backstabdmg > 0;
    
@@ -228,14 +234,14 @@ UPDATE peq.items, ref.items
  WHERE peq.items.id = ref.items.id
    AND ref.items.astr >= @HEROIC_T;
    
--- Add Heroic STA based on pre-existing STR
+-- Add Heroic STA based on pre-existing STA
 UPDATE peq.items, ref.items
    SET peq.items.heroic_sta = Least(99,ref.items.heroic_sta + Floor(peq.items.asta / @HEROIC_T)),
        peq.items.asta = peq.items.asta - Floor(peq.items.heroic_sta)
  WHERE peq.items.id = ref.items.id
    AND ref.items.asta >= @HEROIC_T;
    
--- Add Heroic DEX based on pre-existing STR
+-- Add Heroic DEX based on pre-existing DEX
 UPDATE peq.items, ref.items
    SET peq.items.heroic_dex = Least(99,ref.items.heroic_dex + Floor(peq.items.adex / @HEROIC_T)),
        peq.items.adex = peq.items.adex - Floor(peq.items.heroic_dex)
@@ -294,18 +300,18 @@ UPDATE peq.items, ref.items
  WHERE peq.items.id = ref.items.id
    AND peq.items.itemtype != 54;
    
--- Add extra Spell Damage to non-augs for int-casters
+-- Add extra Spell Damage to non-augs for casters
 UPDATE peq.items, ref.items
    SET peq.items.spelldmg = Floor(peq.items.spelldmg * 1.25)
  WHERE peq.items.id = ref.items.id
    AND peq.items.itemtype != 54
-   AND peq.items.classes & (1024|2048|4096|8192);
+   AND peq.items.classes & (1024|2048|4096|8192|2|32|512);
    
--- Add extra Spell Damage \ Heal Amount to 2HB for int-casters
+-- Add extra Spell Damage \ Heal Amount to 2HB for casters
 UPDATE peq.items, ref.items
    SET peq.items.spelldmg = Floor(peq.items.spelldmg * 2), peq.items.healamt = Floor(peq.items.healamt * 2)
  WHERE peq.items.id = ref.items.id
    AND peq.items.itemtype = 4
-   AND peq.items.classes & (1024|2048|4096|8192);
+   AND peq.items.classes & (1024|2048|4096|8192|2|32|512);
  
  

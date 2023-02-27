@@ -1,3 +1,5 @@
+use experimental 'smartmatch';
+
 sub EVENT_SPAWN
 {
     if ($npc->IsPet() and $npc->GetOwner()->IsClient()) {  

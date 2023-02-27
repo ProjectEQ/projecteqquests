@@ -49,6 +49,10 @@ sub EVAL_PET
                                  $owner->GetAugmentAt(quest::getinventoryslotid("primary"),4),
                                  $owner->GetAugmentAt(quest::getinventoryslotid("primary"),5));
                     #TODO - Add the id of the 1.0 stat augment here
+                    foreach (@items) {
+                        quest::debug($_);
+                    }
+
                     if (grep { $_ eq '208034' } @items)) {
                         $pet->AddMeleeProc(848, 100);
                         $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);

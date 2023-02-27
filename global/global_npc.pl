@@ -53,7 +53,7 @@ sub EVAL_PET
                         quest::debug($_);
                     }
 
-                    if (grep { $_ eq '208034' } @items)) {
+                    if (grep { $_ eq '208034' } @items) {
                         $pet->AddMeleeProc(848, 100);
                         $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
                         $pet->SetMaxHP();

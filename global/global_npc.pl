@@ -45,7 +45,7 @@ sub EVAL_PET
                     #TODO - Add the id of the 1.0 stat augment here
                     if (grep("208034",@items)) {
                         $pet->AddMeleeProc(848, 100);
-                        $pet->ApplySpellBuff(847, -1);
+                        $pet->ApplySpellBuff(847);
                         $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
 
                         quest::debug("Applying Epic Pet Buffs");

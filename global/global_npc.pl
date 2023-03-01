@@ -40,6 +40,8 @@ sub EVAL_PET
 
                 $pet->SetMaxHP();
 
+                $pet->ModifyNPCStat("runspeed", $owner->GetNPCStat("runspeed") * 1.2);
+
                 if ($owner->GetClass() == 13) {
                     my @items = ($owner->GetItemIDAt(quest::getinventoryslotid("primary")),
                                  $owner->GetAugmentAt(quest::getinventoryslotid("primary"),0),

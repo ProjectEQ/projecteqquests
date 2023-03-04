@@ -235,6 +235,7 @@ function check_class_switch_aa(e)
 	do
 		eq.debug("Checking class: " .. i);
 		if (e.self:GetBucket("class-"..i.."-unlocked")) then
+			eq.debug("Unlocked Class: " .. i);
 			e.self:GrantAlternateAdvancementAbility(20000 + i, 1, true)			
 		end		 
 	end

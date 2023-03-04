@@ -233,8 +233,9 @@ end
 function check_class_switch_aa(e)
 	for i=16,1,-1
 	do
-		 if (e.self:GetBucket("class-"..i.."-unlocked")) then
-			e.self:GrantAlternateAdvancementAbility(20000 + i, 1, true)
-		 end
+		eq.debug("Checking class: " .. i);
+		if (e.self:GetBucket("class-"..i.."-unlocked")) then
+			e.self:GrantAlternateAdvancementAbility(20000 + i, 1, true)			
+		end		 
 	end
 end

@@ -233,7 +233,7 @@ end
 function check_class_switch_aa(e)
 	for i=16,1,-1
 	do
-		 if (e:GetBucket("class-"..i.."-unlocked")) then
+		 if (e.self:GetBucket("class-"..i.."-unlocked")) then
 			e.self:GrantAlternateAdvancementAbility(20000 + i, 1, true)
 		 end
 	end

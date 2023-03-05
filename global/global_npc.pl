@@ -8,7 +8,6 @@ sub EVENT_SPAWN
 sub EVENT_DAMAGE_GIVEN {
     if ($npc->IsPet()) {
         $entity_list->GetMobByID($entity_id)->AddToHateList($npc->GetOwner());
-        $npc->ModifyNPCStat("runspeed", $owner->GetNPCStat("runspeed") * 1.2);
     }        
 }
 

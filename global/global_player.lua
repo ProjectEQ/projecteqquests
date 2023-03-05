@@ -212,7 +212,6 @@ function event_connect(e)
 	e.self:GrantAlternateAdvancementAbility(938, 8, true)
 
 	check_class_switch_aa(e)
-
 end
 
 function event_level_up(e)
@@ -231,12 +230,26 @@ function event_task_complete(e)
 end
 
 function check_class_switch_aa(e)
+	accum = -1
 	for i=16,1,-1
 	do
 		eq.debug("Checking class: " .. i);
 		if (e.self:GetBucket("class-"..i.."-unlocked") == '1') then
 			eq.debug("Unlocked Class: " .. i);
 			e.self:GrantAlternateAdvancementAbility(20000 + i, 1, true)			
+			accum += 1			
 		end		 
 	end
+
+	expPenalty = calculate_modifier(accum,1,0.1)
+	e.self:SetEXPModifier(0, expPenalty)
+	eq.debug("Setting your Exp Modifier to: " .. expPenalty)
 end
+
+function calculate_modifier(count, initial_modifier, decrease_percentage)
+	modifier = initial_modifier
+	for i = 1, count do
+	  modifier = modifier * (1 - decrease_percentage)
+	end
+	return modifier
+  end

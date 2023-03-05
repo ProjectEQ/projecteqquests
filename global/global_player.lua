@@ -246,10 +246,15 @@ function check_class_switch_aa(e)
 	eq.debug("Setting your Exp Modifier to: " .. expPenalty)
 end
 
-function calculate_modifier(count, initial_modifier, decrease_percentage)
-	modifier = initial_modifier
-	for i = 1, count do
-	  modifier = modifier * (1 - decrease_percentage)
-	end
-	return modifier
-  end
+function calculate_modifier(count)
+    if count == 1 then
+        return 1
+    end
+
+    modifier = 1
+    count = count - 1
+    for i=1,count,-1 do
+        modifier = modifier * .90
+    end
+    return modifier
+end

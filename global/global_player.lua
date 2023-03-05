@@ -252,8 +252,7 @@ function calculate_modifier(count)
     end
 
     modifier = 1
-    count = count - 1
-    for i=2,count,-1 do
+    for i=count,0,-1 do
         modifier = modifier * .90
     end
     return modifier

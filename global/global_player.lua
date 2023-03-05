@@ -240,8 +240,8 @@ function check_class_switch_aa(e)
 			accum = accum + 1			
 		end		 
 	end
-
-	expPenalty = calculate_modifier(accum,1,0.1)
+	eq.debug("Unlocked Classes: " .. accum);
+	expPenalty = calculate_modifier(accum)
 	e.self:SetEXPModifier(0, expPenalty)
 	eq.debug("Setting your Exp Modifier to: " .. expPenalty)
 end

@@ -230,7 +230,7 @@ function event_task_complete(e)
 end
 
 function check_class_switch_aa(e)
-	accum = -1
+	accum = 0
 	for i=16,1,-1
 	do
 		eq.debug("Checking class: " .. i);

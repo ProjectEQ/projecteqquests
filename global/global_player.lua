@@ -220,8 +220,11 @@ function event_level_up(e)
   for k,v in ipairs(free_skills) do
     if ( e.self:MaxSkill(v) > 0 and e.self:GetRawSkill(v) < 1 and e.self:CanHaveSkill(v) ) then 
       e.self:SetSkill(v, 1);
-    end
-      
+    end      
+  end
+
+  if (e.self:GetLevel() % 5 = 0) do
+	eq.world_emote(15,e.self:GetCleanName() .. " has reached level " e.self:GetLevel() "!");
   end
 end
 

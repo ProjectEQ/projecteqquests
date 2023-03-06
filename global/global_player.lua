@@ -223,7 +223,7 @@ function event_level_up(e)
     end      
   end
 
-  if (e.self:GetLevel() % 5 == 0) do
+  if (e.self:GetLevel() % 5 == 0) then
 	eq.world_emote(15,e.self:GetCleanName() .. " has reached level " .. e.self:GetLevel() .. "!");
   end
 end

@@ -32,7 +32,7 @@ sub EVENT_SAY {
     
     my $acctMoneyFlagKey = $client->AccountID() . "-InitMoneyFlag";
     my $acctMoneyFlagValue = quest::get_data($acctMoneyFlagKey);
-    if ($acctMoneyFlagValue <= 10) {
+    if ($acctMoneyFlagValue <= 10 && $progress <= 0) {
       plugin::NPCTell("Also, take these coins. You'll need them to get started, and you can pay me back sometime if your pride demands it.");
       quest::givecash(0, 0, 0, 10);
       quest::set_data($acctMoneyFlagKey, ++$acctMoneyFlagValue);

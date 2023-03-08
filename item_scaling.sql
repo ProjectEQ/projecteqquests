@@ -115,6 +115,13 @@ UPDATE items
    AND races > 0
    AND ( classes & (2|32|512|1024|2048|4096|8192) AND NOT classes & (1|4|8|16|64|128|256|16384|32768) );
    
+-- Replace Type 2 with Type 1 on Visible Armor
+UPDATE items
+   SET augslot2type = 1,
+       augslot2visible = 1
+ WHERE itemtype != 54
+   AND slots & 4|128|512|1024|4096|131072|262144|524288;
+   
 -- All Augments Become Type 1
 UPDATE items
    SET augtype = 1
@@ -275,6 +282,13 @@ UPDATE peq.items, ref.items
  WHERE peq.items.id = ref.items.id
    AND ref.items.awis >= @HEROIC_T; 
    
+-- Add Heroic CHA based on pre-existing CHA
+UPDATE peq.items, ref.items
+   SET peq.items.heroic_cha = Least(99,ref.items.heroic_cha + Floor(peq.items.acha / @HEROIC_T)),
+       peq.items.acha = peq.items.acha - Floor(peq.items.heroic_cha)
+ WHERE peq.items.id = ref.items.id
+   AND ref.items.awis >= @HEROIC_T; 
+   
 -- Add extra Heal Amount to non-augs for wis-casters
 UPDATE peq.items, ref.items
    SET peq.items.spelldmg = Floor(peq.items.spelldmg * @SCALE_FACTOR)
@@ -319,5 +333,33 @@ UPDATE peq.items, ref.items
  WHERE peq.items.id = ref.items.id
    AND peq.items.itemtype = 4
    AND peq.items.classes & (1024|2048|4096|8192|2|32|512);
+   
+-- Remap WAR items to PAL
+UPDATE peq.items, ref.items
+   SET peq.items.classes = (peq.items.classes & ~1 | 4)
+ WHERE ref.items.classes & 1 AND ref.items.id = peq.items.id;
  
+-- Remap BER items to SHD
+UPDATE peq.items, ref.items
+   SET peq.items.classes = (peq.items.classes & ~32768 | 16)
+ WHERE ref.items.classes & 32768 AND ref.items.id = peq.items.id;
  
+-- Remap ROG items to RNG
+UPDATE peq.items, ref.items
+   SET peq.items.classes = (peq.items.classes & ~256)
+ WHERE ref.items.classes & 256 AND ref.items.id = peq.items.id;
+ 
+-- Remap MNK items to BST
+UPDATE peq.items, ref.items
+   SET peq.items.classes = (peq.items.classes & ~64 | 16384)
+ WHERE ref.items.classes & 64 AND ref.items.id = peq.items.id;
+
+-- Remap WIZ items to MAG NEC ENC
+UPDATE peq.items, ref.items
+   SET peq.items.classes = (peq.items.classes & ~2048 | 4096 | 8192 | 1024)
+ WHERE ref.items.classes & 2048 AND ref.items.id = peq.items.id;
+
+-- Remove BRD usability
+UPDATE peq.items, ref.items
+   SET peq.items.classes = (peq.items.classes & ~128)
+ WHERE ref.items.classes & 128 AND ref.items.id = peq.items.id;

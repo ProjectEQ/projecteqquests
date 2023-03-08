@@ -1,3 +1,12 @@
+DELETE FROM aa_ranks WHERE id >= 18000;
+SELECT * FROM aa_ranks ORDER BY id DESC;
+
+DELETE FROM aa_rank_effects WHERE rank_id >= 18000;
+SELECT * FROM aa_rank_effects ORDER BY aa_rank_effects.rank_id DESC;
+
+DELETE FROM aa_ability WHERE id > 18000;
+SELECT * FROM aa_ability ORDER BY id DESC;
+
 DELETE FROM spells_new WHERE spells_new.id > 20000 AND spells_new.id <= 20016;
 DELETE FROM `spells_new` WHERE `id`=17779; 
 DELETE FROM `spells_new` WHERE `id`=17780; 

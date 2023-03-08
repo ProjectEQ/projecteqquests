@@ -69,7 +69,7 @@ sub EVENT_SAY {
                 my $unlockable_count = 0;
                 my $out = "Which class would you like to unlock? It looks like I could open up any one of";
                 for (@i) {
-                    if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_) {
+                    if (!$client->GetBucket("class-".$_."-unlocked") && $client->GetClass() != $_ && $_ != 1 && $_ != 7 && $_ != 8 && $_ != 9 && $_ != 12 && $_ != 16 ) {
                         $out = $out . " [". quest::saylink("unlock-".$_,1,quest::getclassname($_))."],";
                         $unlockable_count++;
                     }

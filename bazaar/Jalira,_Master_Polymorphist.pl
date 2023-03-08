@@ -1,8 +1,7 @@
 
 sub EVENT_SAY {
     if ($text=~/Hail/i) {
-        plugin::DiaWind("Warning, using the perma race changer will disconnect you to enable perma race on your character.");
-        plugin::Whisper("I am the master of illusions, would you like me to " . quest::saylink("list", 1) . " the illusions I can cast on you?");
+        plugin::Whisper("A test subject! What would you like to " . quest::saylink("become", 1) . " ?");
     } elsif ($text=~/List/i) {
         plugin::RaceChanger("List");
     } else {

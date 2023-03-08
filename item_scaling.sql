@@ -8,8 +8,8 @@ SET @HEROIC_T = 2;
 
 -- Decrease Aggro Range
 UPDATE peq.npc_types, ref.npc_types
-   SET peq.npc_types.aggroradius = Floor(ref.npc_types.aggroradius * 0.6),
-	    peq.npc_types.assistradius = Floor(ref.npc_types.assistradius * 0.6)
+   SET peq.npc_types.aggroradius = Floor(ref.npc_types.aggroradius * 0.75),
+	    peq.npc_types.assistradius = Floor(ref.npc_types.assistradius * 0.75)
  WHERE peq.npc_types.id = ref.npc_types.id;
 
 -- Apply Augment Schema
@@ -60,22 +60,24 @@ UPDATE items
 -- All Items
 UPDATE items
    SET augslot1type = 1, -- Type 1
-	   augslot2type = 2, -- Type 2
-	   augslot3type = 3, -- Type 3
-	   augslot1visible = 1,
-	   augslot2visible = 1,
-	   augslot3visible = 1
+	    augslot2type = 2, -- Type 2
+	    augslot3type = 3, -- Type 3
+	    augslot1visible = 1,
+	    augslot2visible = 1,
+	    augslot3visible = 1
  WHERE itemtype != 54
    AND slots > 0
    AND races > 0
-   AND slots != 4194304;
+   AND slots != 4194304
+	AND (astr > 0 OR asta > 0 OR adex > 0 OR aagi > 0 OR aint > 0 OR awis > 0 OR hp > 0 OR mana > 0
+	  OR fr > 0 OR cr > 0 OR dr > 0 OR mr > 0 OR pr > 0 OR clickeffect > 0 OR proceffect > 0 OR focuseffect > 0);
    
 -- Pri\Sec\Ranged Weapons
 UPDATE items
    SET augslot4type = 4,
        augslot5type = 4,
-	   augslot4visible = 1,
-	   augslot5visible = 1
+	    augslot4visible = 1,
+	    augslot5visible = 1
  WHERE itemtype != 54
    AND slots & (8192|16384|2048) 
    AND races > 0
@@ -85,14 +87,14 @@ UPDATE items
 -- Remove Type 2 from items with Click effects
 UPDATE items
    SET augslot2type = 0,
-       augslot2visible = 1
+       augslot2visible = 0
  WHERE itemtype != 54
    AND clickeffect > 0;
    
 -- Remove First Type 3 from items with Focus or Worn effects
 UPDATE items
    SET augslot3type = 0,
-       augslot3visible = 1
+       augslot3visible = 0
  WHERE itemtype != 54
    AND ( focuseffect > 0
     OR   worneffect  > 0 );
@@ -100,27 +102,17 @@ UPDATE items
 -- Remove first type 4 from items with proc effects
 UPDATE items
    SET augslot4type = 0,
-       augslot4visible = 1
+       augslot4visible = 0
  WHERE itemtype != 54
    AND proceffect > 0;
-   
--- Pri\Sec Caster-Only Items
-UPDATE items
-   SET augslot4type = 3,
-       augslot5type = 3,
-	   augslot4visible = 1,
-	   augslot5visible = 1
- WHERE itemtype != 54
-   AND slots & 24576 > 0 
-   AND races > 0
-   AND ( classes & (2|32|512|1024|2048|4096|8192) AND NOT classes & (1|4|8|16|64|128|256|16384|32768) );
    
 -- Replace Type 2 with Type 1 on Visible Armor
 UPDATE items
    SET augslot2type = 1,
        augslot2visible = 1
  WHERE itemtype != 54
-   AND slots & 4|128|512|1024|4096|131072|262144|524288;
+   AND slots & (4|128|512|1024|4096|131072|262144|524288) <> 0
+	AND slots > 0;
    
 -- All Augments Become Type 1
 UPDATE items
@@ -139,24 +131,75 @@ UPDATE items
  WHERE itemtype = 54
    AND ( worneffect > 0 OR focuseffect > 0 );
    
--- Augments with activated effects become type 2
 UPDATE items
    SET augtype = 2
  WHERE itemtype = 54
    AND clickeffect > 0;
-   
--- Dump all stats from Augs other than Type 1
+UPDATE peq.items
+JOIN ref.items ON peq.items.id = ref.items.id
+SET peq.items.ac = ref.items.ac,
+    peq.items.hp = ref.items.hp,
+    peq.items.mana = ref.items.mana,
+    peq.items.endur = ref.items.endur,
+    peq.items.spelldmg = ref.items.spelldmg,
+    peq.items.healamt = ref.items.healamt,
+    peq.items.astr = ref.items.astr,
+    peq.items.adex = ref.items.adex,
+    peq.items.aagi = ref.items.aagi,
+    peq.items.asta = ref.items.asta,
+    peq.items.aint = ref.items.aint,
+    peq.items.awis = ref.items.awis,
+    peq.items.acha = ref.items.acha,
+    peq.items.regen = ref.items.regen,
+    peq.items.manaregen = ref.items.manaregen,
+    peq.items.enduranceregen = ref.items.enduranceregen,
+    peq.items.fr = ref.items.fr,
+    peq.items.cr = ref.items.cr,
+    peq.items.mr = ref.items.mr,
+    peq.items.dr = ref.items.dr,
+    peq.items.pr = ref.items.pr,
+    peq.items.heroic_str = ref.items.heroic_str,
+    peq.items.heroic_sta = ref.items.heroic_sta,
+    peq.items.heroic_dex = ref.items.heroic_dex,
+    peq.items.heroic_agi = ref.items.heroic_agi,
+    peq.items.heroic_int = ref.items.heroic_int,
+    peq.items.heroic_wis = ref.items.heroic_wis,
+    peq.items.heroic_cha = ref.items.heroic_cha,
+    peq.items.heroic_fr = ref.items.heroic_fr,
+    peq.items.heroic_cr = ref.items.heroic_cr,
+    peq.items.heroic_mr = ref.items.heroic_mr,
+    peq.items.heroic_dr = ref.items.heroic_dr,
+    peq.items.heroic_pr = ref.items.heroic_pr,
+    peq.items.shielding = ref.items.shielding,
+    peq.items.spellshield = ref.items.spellshield,
+    peq.items.dotshielding = ref.items.dotshielding,
+    peq.items.stunresist = ref.items.stunresist,
+    peq.items.strikethrough = ref.items.strikethrough,
+    peq.items.attack = ref.items.attack,
+    peq.items.accuracy = ref.items.accuracy,
+    peq.items.avoidance = ref.items.avoidance,
+    peq.items.damageshield = ref.items.damageshield,
+    peq.items.dsmitigation = ref.items.dsmitigation,
+    peq.items.haste = ref.items.haste,
+    peq.items.clairvoyance = ref.items.clairvoyance,
+    peq.items.damage = ref.items.damage
+WHERE peq.items.itemtype = 54;  
+
+-- Remove all aug slots from items which are no-rent or are summoned
 UPDATE items
-   SET ac = 0, hp = 0, mana = 0, endur = 0, spelldmg = 0, healamt = 0,
-       astr = 0, adex = 0, aagi = 0, asta = 0, aint = 0, awis = 0, acha = 0,
-	   regen = 0, manaregen = 0, enduranceregen = 0,
-	   fr = 0, cr = 0, mr = 0, dr = 0, pr = 0,
-	   heroic_str = 0, heroic_sta = 0, heroic_dex = 0, heroic_agi = 0, heroic_int = 0, heroic_wis = 0, heroic_cha = 0,
-	   heroic_fr = 0, heroic_cr = 0, heroic_mr = 0, heroic_dr = 0, heroic_pr = 0,
-	   shielding = 0, spellshield = 0, dotshielding = 0, stunresist = 0, strikethrough = 0, attack = 0, accuracy = 0, avoidance = 0,
-	   damageshield = 0, dsmitigation = 0, haste = 0, clairvoyance = 0, damage = 0
- WHERE itemtype = 54
-   AND augtype & 1 = 0;
+   SET augslot1type = 0, 
+	    augslot2type = 0, 
+	    augslot3type = 0, 
+	    augslot4type = 0, 
+	    augslot5type = 0,
+	    augslot6type = 0, 	   
+	    augslot1visible = 0,
+	    augslot2visible = 0,
+	    augslot3visible = 0,
+	    augslot4visible = 0,
+       augslot5visible = 0,
+	    augslot6visible = 0
+	WHERE items.id > 0 AND (items.norent = 0 OR items.Name LIKE 'Summoned: %');
 
 -- Reset primary stats
 UPDATE peq.items, ref.items
@@ -187,20 +230,20 @@ UPDATE peq.items, ref.items
    
 -- Increase 2H Weapon\Aug Damage
 UPDATE peq.items, ref.items
-   SET peq.items.damage = Ceil(ref.items.damage * 2)
+   SET peq.items.damage = Ceil(ref.items.damage * @SCALE_FACTOR)
  WHERE peq.items.id = ref.items.id
    AND ref.items.damage > 0
    AND (ref.items.itemtype = 1 OR ref.items.itemtype = 4 OR ref.items.itemtype = 35 OR ref.items.itemtype = 54);
 
 -- Increase Elemental Damage
 UPDATE peq.items, ref.items
-   SET peq.items.elemdmgamt = Ceil(ref.items.elemdmgamt * 5)
+   SET peq.items.elemdmgamt = Ceil(ref.items.elemdmgamt * 2)
  WHERE peq.items.id = ref.items.id
    AND ref.items.elemdmgamt > 0;
 
 -- Increase Bane Damage
 UPDATE peq.items, ref.items
-   SET peq.items.elemdmgamt = Ceil(ref.items.banedmgamt * 5)
+   SET peq.items.elemdmgamt = Ceil(ref.items.banedmgamt * 2)
  WHERE peq.items.id = ref.items.id
    AND ref.items.banedmgamt > 0;
    
@@ -295,23 +338,53 @@ UPDATE peq.items, ref.items
  WHERE peq.items.id = ref.items.id
    AND peq.items.itemtype != 54
    AND peq.items.classes & (2|32|512);
+   
+-- Add Resists based on sum of primary stats
+UPDATE peq.items, ref.items
+   SET peq.items.fr = ref.items.fr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.cr = ref.items.cr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.mr = ref.items.mr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.pr = ref.items.pr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.dr = ref.items.dr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7)
+ WHERE peq.items.id = ref.items.id;
 
 -- Scale up primary stats by SCALE_FACTOR
 UPDATE peq.items
-   SET astr = Ceil(astr * @SCALE_FACTOR), asta = Ceil(asta * @SCALE_FACTOR), adex = Ceil(adex * @SCALE_FACTOR),
-	   aagi = Ceil(aagi * @SCALE_FACTOR), aint = Ceil(aint * @SCALE_FACTOR), awis = Ceil(awis * @SCALE_FACTOR),
-	   acha = Ceil(acha * @SCALE_FACTOR)
+   SET astr = Abs(Ceil(astr * @SCALE_FACTOR)), asta = Abs(Ceil(asta * @SCALE_FACTOR)), adex = Abs(Ceil(adex * @SCALE_FACTOR)),
+	    aagi = Abs(Ceil(aagi * @SCALE_FACTOR)), aint = Abs(Ceil(aint * @SCALE_FACTOR)), awis = Abs(Ceil(awis * @SCALE_FACTOR)),
+	    acha = Abs(Ceil(acha * @SCALE_FACTOR))
  WHERE slots > 0 AND classes > 0 AND races > 0;
 
 -- Round up HP
 UPDATE peq.items
-   SET peq.items.hp = Ceil(peq.items.hp / 5) * 5
+   SET peq.items.hp = Abs(Ceil(peq.items.hp / 5) * 5)
  WHERE peq.items.hp > 0;
 -- Round up Mana
  
 UPDATE peq.items
-   SET peq.items.mana = Ceil(peq.items.mana / 5) * 5
+   SET peq.items.mana = Abs(Ceil(peq.items.mana / 5) * 5)
  WHERE peq.items.mana > 0;
+ 
+-- Round down Resists
+UPDATE peq.items
+   SET peq.items.fr = Abs(floor(peq.items.fr / 5) * 5)
+ WHERE peq.items.fr > 10;
+ 
+UPDATE peq.items
+   SET peq.items.cr = Abs(floor(peq.items.cr / 5) * 5)
+ WHERE peq.items.cr > 10;
+
+UPDATE peq.items
+   SET peq.items.mr = Abs(floor(peq.items.mr / 5) * 5)
+ WHERE peq.items.mr > 10;
+
+UPDATE peq.items
+   SET peq.items.pr = Abs(floor(peq.items.pr / 5) * 5)
+ WHERE peq.items.pr > 10;
+
+UPDATE peq.items
+   SET peq.items.dr = Abs(floor(peq.items.dr / 5) * 5)
+ WHERE peq.items.dr > 10;
  
 -- Add Spell Damage to non-augs
 UPDATE peq.items, ref.items
@@ -333,33 +406,3 @@ UPDATE peq.items, ref.items
  WHERE peq.items.id = ref.items.id
    AND peq.items.itemtype = 4
    AND peq.items.classes & (1024|2048|4096|8192|2|32|512);
-   
--- Remap WAR items to PAL
-UPDATE peq.items, ref.items
-   SET peq.items.classes = (peq.items.classes & ~1 | 4)
- WHERE ref.items.classes & 1 AND ref.items.id = peq.items.id;
- 
--- Remap BER items to SHD
-UPDATE peq.items, ref.items
-   SET peq.items.classes = (peq.items.classes & ~32768 | 16)
- WHERE ref.items.classes & 32768 AND ref.items.id = peq.items.id;
- 
--- Remap ROG items to RNG
-UPDATE peq.items, ref.items
-   SET peq.items.classes = (peq.items.classes & ~256)
- WHERE ref.items.classes & 256 AND ref.items.id = peq.items.id;
- 
--- Remap MNK items to BST
-UPDATE peq.items, ref.items
-   SET peq.items.classes = (peq.items.classes & ~64 | 16384)
- WHERE ref.items.classes & 64 AND ref.items.id = peq.items.id;
-
--- Remap WIZ items to MAG NEC ENC
-UPDATE peq.items, ref.items
-   SET peq.items.classes = (peq.items.classes & ~2048 | 4096 | 8192 | 1024)
- WHERE ref.items.classes & 2048 AND ref.items.id = peq.items.id;
-
--- Remove BRD usability
-UPDATE peq.items, ref.items
-   SET peq.items.classes = (peq.items.classes & ~128)
- WHERE ref.items.classes & 128 AND ref.items.id = peq.items.id;

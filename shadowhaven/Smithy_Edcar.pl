@@ -304,7 +304,7 @@ sub EVENT_SAY {
 	}  elsif ($text=~/shaman/i or $text=~/shm/i) {
 		$client->plugin::NPCTell($npc, "You are here for Shaman equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 512, 1800);
-	}  elsif ($text=~/druid/i $text=~/dru/i) {
+	}  elsif ($text=~/druid/i or $text=~/dru/i) {
 		$client->plugin::NPCTell($npc, "You are here for Druid equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 32, 1800);
 	}  elsif ($text=~/beastlord/i or $text=~/bst/i) {

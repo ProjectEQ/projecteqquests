@@ -193,7 +193,7 @@ sub EVENT_SAY {
 	}  elsif ($text=~/paladin/i) {
 		plugin::NPCTell( "You are here for Paladin equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 4, 1800);
-	}  elsif ($text=~/shadow knight/i) {
+	}  elsif ($text=~/shadowknight/i) {
 		plugin::NPCTell( "You are here for Shadow Knight equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 16, 1800);
 	}  elsif ($text=~/ranger/i) {

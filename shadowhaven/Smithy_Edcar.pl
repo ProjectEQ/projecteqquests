@@ -279,45 +279,45 @@ my %armor = (
 sub EVENT_SAY {	
 	my $charKey = $client->CharacterID() . "-ArmorSwap";
 	if ($text=~/hail/i) {
-		$client->plugin::NPCTell($npc, "Hail yourself, $class. I'm the head armorsmith in the Reach, and I'm far too busy to deal with every trifling concern. Unless you have [".quest::saylink("class armor",1)."] for my collection, go talk to one of my underlings instead of bothering me.");
+		plugin::NPCTell( "Hail yourself, $class. I'm the head armorsmith in the Reach, and I'm far too busy to deal with every trifling concern. Unless you have [".quest::saylink("class armor",1)."] for my collection, go talk to one of my underlings instead of bothering me.");
 	} elsif ($text=~/class armor/i) {
-		$client->plugin::NPCTell($npc, "Indeed. I collect and trade class-specific armors from all over Norrath and associated realms. I know that adventurers such as yourself often collect such treasures and have little use for those designed for a class other than their own or their companion's. If you bring me such equipment, either to [".quest::saylink("sell",1)."] or to [".quest::saylink("trade",1)."], then we have something to talk about.");
+		plugin::NPCTell( "Indeed. I collect and trade class-specific armors from all over Norrath and associated realms. I know that adventurers such as yourself often collect such treasures and have little use for those designed for a class other than their own or their companion's. If you bring me such equipment, either to [".quest::saylink("sell",1)."] or to [".quest::saylink("trade",1)."], then we have something to talk about.");
 	} elsif ($text=~/trade/i) {
-		$client->plugin::NPCTell($npc, "Simply tell me which class you'd like to trade your armor for, and then hand me the equipment, and we can make the exchange. Remember, I only accept class-specific set armor, and will only exchange for gear of similar power, and it will also [".quest::saylink("cost you some platinum",1)."] for the trouble.");
+		plugin::NPCTell( "Simply tell me which class you'd like to trade your armor for, and then hand me the equipment, and we can make the exchange. Remember, I only accept class-specific set armor, and will only exchange for gear of similar power, and it will also [".quest::saylink("cost you some platinum",1)."] for the trouble.");
 	} elsif ($text=~/cost you some platinum/i) {
-		$client->plugin::NPCTell($npc, "I charge 2,000pp to exchange items from Sebilis, Karnor's Keep, Kael, the Temple of Veeshan, or the planes of Hate, Fear, and Growth. 6,000pp for armors from all other planes except the Elementals, which will cost you 10,000pp. Muramite armor from Taelosia will cost you 20,000pp, and the high-quality armors from Discord will cost you 40,000pp to exchange");
+		plugin::NPCTell( "I charge 2,000pp to exchange items from Sebilis, Karnor's Keep, Kael, the Temple of Veeshan, or the planes of Hate, Fear, and Growth. 6,000pp for armors from all other planes except the Elementals, which will cost you 10,000pp. Muramite armor from Taelosia will cost you 20,000pp, and the high-quality armors from Discord will cost you 40,000pp to exchange");
 	}  elsif ($text=~/sell/i) { 
-		$client->plugin::NPCTell($npc, "You are here to sell, I understand. The prices I offer vary, and I won't know for sure until you hand me the item, but you'll get a fair deal. Just hand it over and I'll appraise it");
+		plugin::NPCTell( "You are here to sell, I understand. The prices I offer vary, and I won't know for sure until you hand me the item, but you'll get a fair deal. Just hand it over and I'll appraise it");
 		quest::set_data($charKey, -1, 1800);
 	} elsif ($text=~/cleric/i or $text=~/clr/i) {
-		$client->plugin::NPCTell($npc, "You are here for Cleric equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Cleric equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 2, 1800);
 	}  elsif ($text=~/paladin/i or $text=~/pal/i) {
-		$client->plugin::NPCTell($npc, "You are here for Paladin equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Paladin equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 4, 1800);
 	}  elsif ($text=~/shadow knight/i or $text=~/shd/i) {
-		$client->plugin::NPCTell($npc, "You are here for Shadow Knight equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Shadow Knight equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 16, 1800);
 	}  elsif ($text=~/ranger/i or $text=~/rng/i) {
-		$client->plugin::NPCTell($npc, "You are here for Ranger equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Ranger equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 8, 1800);
 	}  elsif ($text=~/shaman/i or $text=~/shm/i) {
-		$client->plugin::NPCTell($npc, "You are here for Shaman equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Shaman equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 512, 1800);
 	}  elsif ($text=~/druid/i or $text=~/dru/i) {
-		$client->plugin::NPCTell($npc, "You are here for Druid equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Druid equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 32, 1800);
 	}  elsif ($text=~/beastlord/i or $text=~/bst/i) {
-		$client->plugin::NPCTell($npc, "You are here for Beastlord equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Beastlord equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 16384, 1800);
 	}  elsif ($text=~/enchanter/i or $text=~/enc/i) {
-		$client->plugin::NPCTell($npc, "You are here for Enchanter equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Enchanter equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 8192, 1800);
 	}  elsif ($text=~/magician/i or $text=~/mag/i) {
-		$client->plugin::NPCTell($npc, "You are here for Magician equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Magician equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 4096, 1800);
 	}  elsif ($text=~/necromancer/i or $text=~/nec/i) {
-		$client->plugin::NPCTell($npc, "You are here for Necromancer equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		plugin::NPCTell( "You are here for Necromancer equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 1024, 1800);
 	}
 }
@@ -327,7 +327,7 @@ sub EVENT_ITEM {
 	my $tarClass = quest::get_data($charKey);
 	
 	if ($tarClass == undef) {
-			$client->plugin::NPCTell($npc,"You didn't let me know what you were looking for, so I can only assume you wanted to sell these.");
+			plugin::NPCTell("You didn't let me know what you were looking for, so I can only assume you wanted to sell these.");
 	}
 		
 	if ($tarClass > 0) {
@@ -372,14 +372,14 @@ sub CheckItemUpgrade {
 			plugin::takeItems($item => 1);
 			$client->SummonItem($tarID, -1, true);
 		} else {
-			$client->plugin::NPCTell($npc,"Sorry boss, you don't have enough money to pay for the exchange. How about you [".quest::saylink("sell",1)."] this to me instead?");
+			plugin::NPCTell("Sorry boss, you don't have enough money to pay for the exchange. How about you [".quest::saylink("sell",1)."] this to me instead?");
 		}			
 	} elsif ($tarID == $item) {
-		$client->plugin::NPCTell($npc,"Sorry boss, I'm not going to take your money for no reason to swap [" . quest::varlink($item) . "] for another of itself. How about you [".quest::saylink("sell",1)."] this to me instead?");
+		plugin::NPCTell("Sorry boss, I'm not going to take your money for no reason to swap [" . quest::varlink($item) . "] for another of itself. How about you [".quest::saylink("sell",1)."] this to me instead?");
 	} elsif (DoItemUpgrade($item, quest::getitemstat($item,"classes")) > 0) {		
-		$client->plugin::NPCTell($npc,"Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
+		plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
 	} else {
-		$client->plugin::NPCTell($npc,"Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
 	}
 }
 

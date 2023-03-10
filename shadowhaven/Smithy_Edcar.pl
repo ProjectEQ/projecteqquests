@@ -289,34 +289,34 @@ sub EVENT_SAY {
 	}  elsif ($text=~/sell/i) { 
 		plugin::NPCTell( "You are here to sell, I understand. The prices I offer vary, and I won't know for sure until you hand me the item, but you'll get a fair deal. Just hand it over and I'll appraise it");
 		quest::set_data($charKey, -1, 1800);
-	} elsif ($text=~/cleric/i or $text=~/clr/i) {
+	} elsif ($text=~/cleric/i) {
 		plugin::NPCTell( "You are here for Cleric equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 2, 1800);
-	}  elsif ($text=~/paladin/i or $text=~/pal/i) {
+	}  elsif ($text=~/paladin/i) {
 		plugin::NPCTell( "You are here for Paladin equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 4, 1800);
-	}  elsif ($text=~/shadow knight/i or $text=~/shd/i) {
+	}  elsif ($text=~/shadow knight/i) {
 		plugin::NPCTell( "You are here for Shadow Knight equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 16, 1800);
-	}  elsif ($text=~/ranger/i or $text=~/rng/i) {
+	}  elsif ($text=~/ranger/i) {
 		plugin::NPCTell( "You are here for Ranger equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 8, 1800);
-	}  elsif ($text=~/shaman/i or $text=~/shm/i) {
+	}  elsif ($text=~/shaman/i) {
 		plugin::NPCTell( "You are here for Shaman equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 512, 1800);
-	}  elsif ($text=~/druid/i or $text=~/dru/i) {
+	}  elsif ($text=~/druid/i) {
 		plugin::NPCTell( "You are here for Druid equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 32, 1800);
-	}  elsif ($text=~/beastlord/i or $text=~/bst/i) {
+	}  elsif ($text=~/beastlord/i) {
 		plugin::NPCTell( "You are here for Beastlord equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 16384, 1800);
-	}  elsif ($text=~/enchanter/i or $text=~/enc/i) {
+	}  elsif ($text=~/enchanter/i) {
 		plugin::NPCTell( "You are here for Enchanter equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 8192, 1800);
-	}  elsif ($text=~/magician/i or $text=~/mag/i) {
+	}  elsif ($text=~/magician/i) {
 		plugin::NPCTell( "You are here for Magician equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 4096, 1800);
-	}  elsif ($text=~/necromancer/i or $text=~/nec/i) {
+	}  elsif ($text=~/necromancer/i) {
 		plugin::NPCTell( "You are here for Necromancer equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
 		quest::set_data($charKey, 1024, 1800);
 	}

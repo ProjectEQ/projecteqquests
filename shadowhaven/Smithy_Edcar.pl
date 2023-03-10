@@ -396,7 +396,7 @@ sub CheckItemSale {
 sub DoItemUpgrade {
 	my $item = shift;
 	my $tarClass = shift;
-	use List::MoreUtils qw(first_index);
+	#use List::MoreUtils qw(first_index);
 	
 	my $sourceClass = quest::getitemstat($item,"classes");
 	my $slot        = quest::getitemstat($item,"slots");	
@@ -414,7 +414,7 @@ sub DoItemUpgrade {
 
 sub GetItemSaleMulti {
 	my $item = shift;
-	use List::MoreUtils qw(first_index);
+	#use List::MoreUtils qw(first_index);
 	
 	my $sourceClass = quest::getitemstat($item,"classes");
 	my $slot        = quest::getitemstat($item,"slots");	

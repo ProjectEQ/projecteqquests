@@ -278,12 +278,8 @@ sub CheckItemUpgrade {
 		plugin::NPCTell("Sorry boss, I'm not going to take your money for no reason to swap [" . quest::varlink($item) . "] for another of itself. How about you [".quest::saylink("sell",1)."] this to me instead?");
 	} elsif (DoItemUpgrade($item, quest::getitemstat($item,"classes")) > 0) {		
 		plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
-	} else {		
-		my $item_name = quest::getitemname($item);
-
-		if (!CheckDeprecatedItem($item)) {
-
-		} else {		
+	} else {	
+		if (!CheckDeprecatedItem($item)) {			
 			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
 		}	
 	}
@@ -295,19 +291,25 @@ sub CheckDeprecatedItem {
 				 4861,4862,4863,4864,4865,4866,4867,4901,4902,4903,4904,4905,4906,4097);
 	if (grep(/^$item$/, @items)) {
 		plugin::NPCTell("Found Something!");
-	}	
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 sub CheckItemSale {
 	my $item = shift;
-	CheckDeprecatedItem($item);
 	my $value = GetItemSaleMulti($item);
-	if ($value > 0) {
-		plugin::takeItems($item => 1);
-		$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
-		$client->AddMoneyToPP(0,0,0,$value*1000,1);
-	} else {
-		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+	if (CheckDeprecatedItem($item)) {
+		$value = 1;
+	} else {	
+		if ($value > 0) {
+			plugin::takeItems($item => 1);
+			$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
+			$client->AddMoneyToPP(0,0,0,$value*1000,1);
+		} else {
+			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+		}
 	}
 }
 

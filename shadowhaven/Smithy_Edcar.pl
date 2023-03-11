@@ -261,7 +261,10 @@ sub EVENT_ITEM {
 
 sub CheckItemUpgrade {
 	my $item = shift;
-	my $tarClass = shift;	
+	my $tarClass = shift;
+	if ($item_name =~/^Fine Insidious /) {
+				plugin::NPCTell("What was that?");
+	}
 	
 	my $tarID = DoItemUpgrade($item, $tarClass);
 	if ($tarID > 0 and $tarID != $item) {

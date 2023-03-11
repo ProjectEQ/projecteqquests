@@ -262,7 +262,8 @@ sub EVENT_ITEM {
 sub CheckItemUpgrade {
 	my $item = shift;
 	my $tarClass = shift;
-	if ($item_name =~/^Fine Insidious /) {
+	my $iname = quest::getitemname($item);
+	if ($iname =~/^Fine Insidious /) {
 				plugin::NPCTell("What was that?");
 	}
 	

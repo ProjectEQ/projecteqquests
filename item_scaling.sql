@@ -136,19 +136,55 @@ UPDATE items
    SET augtype = 2
  WHERE itemtype = 54
    AND clickeffect > 0;
-   
--- Dump all stats from Augs other than Type 1
-UPDATE items
-   SET ac = 0, hp = 0, mana = 0, endur = 0, spelldmg = 0, healamt = 0,
-       astr = 0, adex = 0, aagi = 0, asta = 0, aint = 0, awis = 0, acha = 0,
-	   regen = 0, manaregen = 0, enduranceregen = 0,
-	   fr = 0, cr = 0, mr = 0, dr = 0, pr = 0,
-	   heroic_str = 0, heroic_sta = 0, heroic_dex = 0, heroic_agi = 0, heroic_int = 0, heroic_wis = 0, heroic_cha = 0,
-	   heroic_fr = 0, heroic_cr = 0, heroic_mr = 0, heroic_dr = 0, heroic_pr = 0,
-	   shielding = 0, spellshield = 0, dotshielding = 0, stunresist = 0, strikethrough = 0, attack = 0, accuracy = 0, avoidance = 0,
-	   damageshield = 0, dsmitigation = 0, haste = 0, clairvoyance = 0, damage = 0
- WHERE itemtype = 54
-   AND augtype & 1 != 1;
+UPDATE peq.items
+JOIN ref.items ON peq.items.id = ref.items.id
+SET peq.items.ac = ref.items.ac,
+    peq.items.hp = ref.items.hp,
+    peq.items.mana = ref.items.mana,
+    peq.items.endur = ref.items.endur,
+    peq.items.spelldmg = ref.items.spelldmg,
+    peq.items.healamt = ref.items.healamt,
+    peq.items.astr = ref.items.astr,
+    peq.items.adex = ref.items.adex,
+    peq.items.aagi = ref.items.aagi,
+    peq.items.asta = ref.items.asta,
+    peq.items.aint = ref.items.aint,
+    peq.items.awis = ref.items.awis,
+    peq.items.acha = ref.items.acha,
+    peq.items.regen = ref.items.regen,
+    peq.items.manaregen = ref.items.manaregen,
+    peq.items.enduranceregen = ref.items.enduranceregen,
+    peq.items.fr = ref.items.fr,
+    peq.items.cr = ref.items.cr,
+    peq.items.mr = ref.items.mr,
+    peq.items.dr = ref.items.dr,
+    peq.items.pr = ref.items.pr,
+    peq.items.heroic_str = ref.items.heroic_str,
+    peq.items.heroic_sta = ref.items.heroic_sta,
+    peq.items.heroic_dex = ref.items.heroic_dex,
+    peq.items.heroic_agi = ref.items.heroic_agi,
+    peq.items.heroic_int = ref.items.heroic_int,
+    peq.items.heroic_wis = ref.items.heroic_wis,
+    peq.items.heroic_cha = ref.items.heroic_cha,
+    peq.items.heroic_fr = ref.items.heroic_fr,
+    peq.items.heroic_cr = ref.items.heroic_cr,
+    peq.items.heroic_mr = ref.items.heroic_mr,
+    peq.items.heroic_dr = ref.items.heroic_dr,
+    peq.items.heroic_pr = ref.items.heroic_pr,
+    peq.items.shielding = ref.items.shielding,
+    peq.items.spellshield = ref.items.spellshield,
+    peq.items.dotshielding = ref.items.dotshielding,
+    peq.items.stunresist = ref.items.stunresist,
+    peq.items.strikethrough = ref.items.strikethrough,
+    peq.items.attack = ref.items.attack,
+    peq.items.accuracy = ref.items.accuracy,
+    peq.items.avoidance = ref.items.avoidance,
+    peq.items.damageshield = ref.items.damageshield,
+    peq.items.dsmitigation = ref.items.dsmitigation,
+    peq.items.haste = ref.items.haste,
+    peq.items.clairvoyance = ref.items.clairvoyance,
+    peq.items.damage = ref.items.damage
+WHERE peq.items.itemtype = 54;  
 
 -- Reset primary stats
 UPDATE peq.items, ref.items
@@ -290,11 +326,11 @@ UPDATE peq.items, ref.items
    
 -- Add Resists based on sum of primary stats
 UPDATE peq.items, ref.items
-   SET peq.items.fr = peq.items.fr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
-       peq.items.cr = peq.items.cr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
-       peq.items.mr = peq.items.mr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
-       peq.items.pr = peq.items.pr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
-       peq.items.dr = peq.items.dr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7)
+   SET peq.items.fr = ref.items.fr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.cr = ref.items.cr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.mr = ref.items.mr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.pr = ref.items.pr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7),
+       peq.items.dr = ref.items.dr + CEIL((peq.items.astr + peq.items.asta + peq.items.adex + peq.items.aagi + peq.items.aint + peq.items.awis + peq.items.acha) / 7)
  WHERE peq.items.id = ref.items.id;
 
 -- Scale up primary stats by SCALE_FACTOR

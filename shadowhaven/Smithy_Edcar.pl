@@ -263,9 +263,6 @@ sub CheckItemUpgrade {
 	my $item = shift;
 	my $tarClass = shift;
 	my $iname = quest::getitemname($item);
-	if ($iname =~/^Fine Insidious /) {
-				plugin::NPCTell("What was that?");
-	}
 	
 	my $tarID = DoItemUpgrade($item, $tarClass);
 	if ($tarID > 0 and $tarID != $item) {
@@ -293,11 +290,17 @@ sub CheckItemUpgrade {
 
 sub CheckItemSale {
 	my $item = shift;
+	if ($item_name =~/^Fine Insidious /) {
+				plugin::NPCTell("What was that?");
+	}
+
 	my $value = GetItemSaleMulti($item);
 	if ($value > 0) {
 		plugin::takeItems($item => 1);
 		$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
 		$client->AddMoneyToPP(0,0,0,$value*1000,1);
+	} else {
+		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
 	}
 }
 

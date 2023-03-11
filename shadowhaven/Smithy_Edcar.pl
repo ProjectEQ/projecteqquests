@@ -279,12 +279,11 @@ sub CheckItemUpgrade {
 		plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
 	} else {		
 		my $item_name = quest::getitemname($item);
-		if ($item_name =~/^Fine Insidious / or $item_name =~/^Imbrued Platemail / or $item_name =~/^Woven Shadow /
-			or $item_name =~/^Indicolite / or $item_name =~/^Shiverback-hide / or $item_name =~/^Carmine / or $item_name =~/^Legionnaire Scale /) {
+		if ($item_name =~/^Fine Insidious /) {
 				plugin::NPCTell("What was that?");
-		}
-
-		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+		} else {
+			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+		}	
 	}
 }
 

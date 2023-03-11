@@ -290,7 +290,8 @@ sub CheckItemUpgrade {
 
 sub CheckItemSale {
 	my $item = shift;
-	if ($item_name =~/^Fine Insidious /) {
+	my $iname = quest::getitemname($item);
+	if ($iname =~/^Fine Insidious /) {
 				plugin::NPCTell("What was that?");
 	}
 

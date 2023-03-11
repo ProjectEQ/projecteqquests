@@ -290,11 +290,10 @@ sub CheckItemUpgrade {
 }
 
 sub CheckDeprecatedItem {
-	use Array::Contains;
 	my $item = shift;
 	my @items = (4911,4912,4913,4914,4915,4916,4917,54384,54385,54386,54387,54388,54389,
 				 4861,4862,4863,4864,4865,4866,4867,4901,4902,4903,4904,4905,4906,4097);
-	if (contains($items,\@items)) {
+	if (grep(/^$item$/, @items)) {
 		plugin::NPCTell("Found Something!");
 	}	
 }

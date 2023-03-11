@@ -302,15 +302,14 @@ sub CheckItemSale {
 	my $value = GetItemSaleMulti($item);
 	if (CheckDeprecatedItem($item)) {
 		$value = 1;
-	} else {	
-		if ($value > 0) {
-			plugin::takeItems($item => 1);
-			$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
-			$client->AddMoneyToPP(0,0,0,$value*1000,1);
-		} else {
-			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
-		}
-	}
+	} 
+	if ($value > 0) {
+		plugin::takeItems($item => 1);
+		$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
+		$client->AddMoneyToPP(0,0,0,$value*1000,1);
+	} else {
+		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+	}	
 }
 
 sub DoItemUpgrade {

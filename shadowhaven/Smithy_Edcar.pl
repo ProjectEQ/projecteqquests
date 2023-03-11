@@ -277,18 +277,11 @@ sub CheckItemUpgrade {
 		plugin::NPCTell("Sorry boss, I'm not going to take your money for no reason to swap [" . quest::varlink($item) . "] for another of itself. How about you [".quest::saylink("sell",1)."] this to me instead?");
 	} elsif (DoItemUpgrade($item, quest::getitemstat($item,"classes")) > 0) {		
 		plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
-	} else {
-		my $match_name = 0;
+	} else {		
 		my $item_name = quest::getitemname($item);
 		if ($item_name =~/^Fine Insidious / or $item_name =~/^Imbrued Platemail / or $item_name =~/^Woven Shadow /
-		or $item_name =~/^Indicolite / or $item_name =~/^Shiverback-hide / or $item_name =~/^Carmine / or $item_name =~/^Legionnaire Scale /) {
-			my $value = 1;
-			if ($value > 0) {
-				plugin::takeItems($item => 1);
-				$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
-				$client->AddMoneyToPP(0,0,0,$value*1000,1);
-			}
-			return;
+			or $item_name =~/^Indicolite / or $item_name =~/^Shiverback-hide / or $item_name =~/^Carmine / or $item_name =~/^Legionnaire Scale /) {
+				plugin::NPCTell("What was that?");
 		}
 
 		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");

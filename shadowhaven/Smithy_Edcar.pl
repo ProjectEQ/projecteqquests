@@ -280,21 +280,28 @@ sub CheckItemUpgrade {
 		plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
 	} else {		
 		my $item_name = quest::getitemname($item);
-		if ($item_name =~/^Fine Insidious /) {
-				plugin::NPCTell("What was that?");
-		} else {
+
+		if (!CheckDeprecatedItem($item)) {
+
+		} else {		
 			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
 		}	
 	}
 }
 
+sub CheckDeprecatedItem {
+	use Array::Contains;
+	my $item = shift;
+	my @items = (4911,4912,4913,4914,4915,4916,4917,54384,54385,54386,54387,54388,54389,
+				 4861,4862,4863,4864,4865,4866,4867,4901,4902,4903,4904,4905,4906,4097);
+	if (contains($items,\@items)) {
+		plugin::NPCTell("Found Something!");
+	}	
+}
+
 sub CheckItemSale {
 	my $item = shift;
-	my $iname = quest::getitemname($item);
-	if ($iname =~/^Fine Insidious /) {
-				plugin::NPCTell("What was that?");
-	}
-
+	CheckDeprecatedItem($item);
 	my $value = GetItemSaleMulti($item);
 	if ($value > 0) {
 		plugin::takeItems($item => 1);

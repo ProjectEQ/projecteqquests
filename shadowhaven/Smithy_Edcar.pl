@@ -281,6 +281,7 @@ sub CheckItemUpgrade {
 	} else {	
 		if (!CheckDeprecatedItem($item)) {			
 			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+			plugin::return_items(\%itemcount);
 		}	
 	}
 }
@@ -290,7 +291,7 @@ sub CheckDeprecatedItem {
 	my @items = (4911,4912,4913,4914,4915,4916,4917,54384,54385,54386,54387,54388,54389,
 				 4861,4862,4863,4864,4865,4866,4867,4901,4902,4903,4904,4905,4906,4097);
 	if (grep(/^$item$/, @items)) {
-		plugin::NPCTell("Found Something!");
+		plugin::NPCTell("I recognize this as a piece of armor I can use, but I'm not sure exactly how to swap it fairly. I'll pay you instead!");
 		return 1;
 	} else {
 		return 0;
@@ -309,13 +310,13 @@ sub CheckItemSale {
 		$client->AddMoneyToPP(0,0,0,$value*1000,1);
 	} else {
 		plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
+		plugin::return_items(\%itemcount);	
 	}	
 }
 
 sub DoItemUpgrade {
 	my $item = shift;
 	my $tarClass = shift;
-	#use List::MoreUtils qw(first_index);
 	
 	my $sourceClass = quest::getitemstat($item,"classes");
 	my $slot        = quest::getitemstat($item,"slots");	
@@ -333,7 +334,6 @@ sub DoItemUpgrade {
 
 sub GetItemSaleMulti {
 	my $item = shift;
-	#use List::MoreUtils qw(first_index);
 	
 	my $sourceClass = quest::getitemstat($item,"classes");
 	my $slot        = quest::getitemstat($item,"slots");	

@@ -271,22 +271,22 @@ sub CheckItemUpgrade {
 			$client->Message(2, "You paid ". plugin::commify($value*1000*2) ."pp to " . $npc->GetCleanName() . " to exchange [" . quest::varlink($item) . "] for [" . quest::varlink($tarID) . "].");
 			plugin::takeItems($item => 1);
 			$client->SummonItem($tarID, -1, true);
+			return;
 		} else {
 			plugin::NPCTell("Sorry boss, you don't have enough money to pay for the exchange. How about you [".quest::saylink("sell",1)."] this to me instead?");
-			plugin::return_items(\%itemcount);
 		}			
-	} elsif ($tarID == $item) {
-		plugin::NPCTell("Sorry boss, I'm not going to take your money for no reason to swap [" . quest::varlink($item) . "] for another of itself. How about you [".quest::saylink("sell",1)."] this to me instead?");
-		plugin::return_items(\%itemcount);
-	} elsif (DoItemUpgrade($item, quest::getitemstat($item,"classes")) > 0) {		
-		plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 
-		plugin::return_items(\%itemcount);
-	} else {	
-		if (!CheckDeprecatedItem($item)) {			
-			plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");
-			plugin::return_items(\%itemcount);
-		}	
+	} else { 
+		elsif ($tarID == $item) {
+			plugin::NPCTell("Sorry boss, I'm not going to take your money for no reason to swap [" . quest::varlink($item) . "] for another of itself. How about you [".quest::saylink("sell",1)."] this to me instead?");			
+		} elsif (DoItemUpgrade($item, quest::getitemstat($item,"classes")) > 0) {		
+			plugin::NPCTell("Sorry boss, I don't have anything for the class you asked about that I can swap [" . quest::varlink($item) . "] for. How about you [".quest::saylink("sell",1)."] this to me instead?"); 			
+		} else {	
+			if (!CheckDeprecatedItem($item)) {			
+				plugin::NPCTell("Sorry boss, [" . quest::varlink($item) . "] isn't a piece of set armor, as far as I know. Bring me something I'm interested in next time.");				
+			}	
+		}
 	}
+	plugin::return_items(\%itemcount);
 }
 
 sub CheckDeprecatedItem {

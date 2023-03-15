@@ -200,7 +200,7 @@ UPDATE items
        augslot5visible = 0,
 	    augslot6visible = 0
 	WHERE items.id > 0 AND (items.norent = 0 OR items.Name LIKE 'Summoned: %');
-
+  
 -- Reset primary stats
 UPDATE peq.items, ref.items
    SET peq.items.astr = ref.items.astr, peq.items.asta = ref.items.asta, peq.items.adex = ref.items.adex, peq.items.aagi = ref.items.aagi,

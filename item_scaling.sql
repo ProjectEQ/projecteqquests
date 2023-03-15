@@ -131,7 +131,6 @@ UPDATE items
  WHERE itemtype = 54
    AND ( worneffect > 0 OR focuseffect > 0 );
    
--- Augments with activated effects become type 2
 UPDATE items
    SET augtype = 2
  WHERE itemtype = 54
@@ -186,6 +185,22 @@ SET peq.items.ac = ref.items.ac,
     peq.items.damage = ref.items.damage
 WHERE peq.items.itemtype = 54;  
 
+-- Remove all aug slots from items which are no-rent or are summoned
+UPDATE items
+   SET augslot1type = 0, 
+	    augslot2type = 0, 
+	    augslot3type = 0, 
+	    augslot4type = 0, 
+	    augslot5type = 0,
+	    augslot6type = 0, 	   
+	    augslot1visible = 0,
+	    augslot2visible = 0,
+	    augslot3visible = 0,
+	    augslot4visible = 0,
+       augslot5visible = 0,
+	    augslot6visible = 0
+	WHERE items.id > 0 AND (items.norent = 0 OR items.Name LIKE 'Summoned: %');
+  
 -- Reset primary stats
 UPDATE peq.items, ref.items
    SET peq.items.astr = ref.items.astr, peq.items.asta = ref.items.asta, peq.items.adex = ref.items.adex, peq.items.aagi = ref.items.aagi,
@@ -335,20 +350,41 @@ UPDATE peq.items, ref.items
 
 -- Scale up primary stats by SCALE_FACTOR
 UPDATE peq.items
-   SET astr = Ceil(astr * @SCALE_FACTOR), asta = Ceil(asta * @SCALE_FACTOR), adex = Ceil(adex * @SCALE_FACTOR),
-	   aagi = Ceil(aagi * @SCALE_FACTOR), aint = Ceil(aint * @SCALE_FACTOR), awis = Ceil(awis * @SCALE_FACTOR),
-	   acha = Ceil(acha * @SCALE_FACTOR)
+   SET astr = Abs(Ceil(astr * @SCALE_FACTOR)), asta = Abs(Ceil(asta * @SCALE_FACTOR)), adex = Abs(Ceil(adex * @SCALE_FACTOR)),
+	    aagi = Abs(Ceil(aagi * @SCALE_FACTOR)), aint = Abs(Ceil(aint * @SCALE_FACTOR)), awis = Abs(Ceil(awis * @SCALE_FACTOR)),
+	    acha = Abs(Ceil(acha * @SCALE_FACTOR))
  WHERE slots > 0 AND classes > 0 AND races > 0;
 
 -- Round up HP
 UPDATE peq.items
-   SET peq.items.hp = Ceil(peq.items.hp / 5) * 5
+   SET peq.items.hp = Abs(Ceil(peq.items.hp / 5) * 5)
  WHERE peq.items.hp > 0;
 -- Round up Mana
  
 UPDATE peq.items
-   SET peq.items.mana = Ceil(peq.items.mana / 5) * 5
+   SET peq.items.mana = Abs(Ceil(peq.items.mana / 5) * 5)
  WHERE peq.items.mana > 0;
+ 
+-- Round down Resists
+UPDATE peq.items
+   SET peq.items.fr = Abs(floor(peq.items.fr / 5) * 5)
+ WHERE peq.items.fr > 10;
+ 
+UPDATE peq.items
+   SET peq.items.cr = Abs(floor(peq.items.cr / 5) * 5)
+ WHERE peq.items.cr > 10;
+
+UPDATE peq.items
+   SET peq.items.mr = Abs(floor(peq.items.mr / 5) * 5)
+ WHERE peq.items.mr > 10;
+
+UPDATE peq.items
+   SET peq.items.pr = Abs(floor(peq.items.pr / 5) * 5)
+ WHERE peq.items.pr > 10;
+
+UPDATE peq.items
+   SET peq.items.dr = Abs(floor(peq.items.dr / 5) * 5)
+ WHERE peq.items.dr > 10;
  
 -- Add Spell Damage to non-augs
 UPDATE peq.items, ref.items

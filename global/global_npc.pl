@@ -37,6 +37,8 @@ sub EVAL_PET
                 $pet->ModifyNPCStat("dr", $owner->GetPR());
 
                 $pet->ModifyNPCStat("accuracy", $pet->GetNPCStat("accuracy") * (($owner_spelldmg / 2) + 1));
+                $pet->ModifyNPCStat("atk", $pet->GetNPCStat("atk") * (($owner_spelldmg / 2) + 1));                
+
                 $pet->ModifyNPCStat("avoidance", $pet->GetNPCStat("avoidance") * (($owner_healamt / 2) + 1));
 
                 $pet->SetMaxHP();

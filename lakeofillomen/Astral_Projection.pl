@@ -6,7 +6,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
- if((plugin::check_handin(\%itemcount, 1687 => 1)) && ($ulevel>=46) && ($class=="Monk")){
+ if((plugin::check_handin(\%itemcount, 1687 => 1)) && ($ulevel>=46) && ($class=="Beastlord")){
    my $x = $npc->GetX();
    my $y = $npc->GetY();
    my $z = $npc->GetZ();

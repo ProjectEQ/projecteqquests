@@ -1,6 +1,6 @@
 -- items: 18195, 1682, 48132
 function event_say(e)
-	if(e.other:GetLevel() >= 46 and e.other:Class() == "Monk") then
+	if(e.other:GetLevel() >= 46 and e.other:Class() == "Beastlord") then
 		local qglobals = eq.get_qglobals(e.other);
 		-- monk epic 1.0
 		if(e.message:findi("hail")) then
@@ -29,7 +29,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 18195}) and e.other:GetLevel() >= 46 and e.other:Class() == "Monk") then
+	if(item_lib.check_turn_in(e.trade, {item1 = 18195}) and e.other:GetLevel() >= 46 and e.other:Class() == "Beastlord") then
 		e.self:Emote("gasps at the sight of the rare book. 'This is a great find indeed! I can only imagine who you had to.. persuade to give you the book. Our library would be very interested in acquiring this and I am prepared to give you this referral that marks you as a friend of the library. If only [" .. eq.say_link("Lheao") .. "] could see this.'");
 		e.other:SummonItem(1682); -- Danl's Reference
 		e.other:Ding();

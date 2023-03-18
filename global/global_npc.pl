@@ -44,6 +44,7 @@ sub EVAL_PET
                 $pet->SetMaxHP();
 
                 if ($owner->GetClass() == 13) {
+                    # Handling for Mage Epic Bonus
                     my @items = ($owner->GetItemIDAt(quest::getinventoryslotid("primary")),
                                  $owner->GetAugmentAt(quest::getinventoryslotid("primary"),0),
                                  $owner->GetAugmentAt(quest::getinventoryslotid("primary"),1),
@@ -55,16 +56,50 @@ sub EVAL_PET
                     foreach (@items) {
                         quest::debug($_);
                         if ($_ == 28034) {
+                            # TODO: Is 100 the right effect chance value here?
                             $pet->AddMeleeProc(848, 100);
                             $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
                             $pet->ModifyNPCStat("min_hit", $pet->GetNPCStat("min_hit") * 1.1);
                             $pet->ModifyNPCStat("max_hit", $pet->GetNPCStat("max_hit") * 1.1);
                             $pet->SetMaxHP();
 
-                            quest::debug("Applying Epic Pet Buffs");
+                            quest::debug("Applying Mage Epic Pet Buffs");
                             last;
                         }
                     }
-                } 
+                }
+                else if ($owner->GetClass() == 15) {
+                    # Handling for Beastlord Epic Bonus
+                    my @items = ($owner->GetItemIDAt(quest::getinventoryslotid("primary")),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),0),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),1),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),2),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),3),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),4),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("primary"),5),
+                                 $owner->GetItemIDAt(quest::getinventoryslotid("secondary")),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("secondary"),0),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("secondary"),1),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("secondary"),2),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("secondary"),3),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("secondary"),4),
+                                 $owner->GetAugmentAt(quest::getinventoryslotid("secondary"),5));
+                    foreach (@items) {
+                        quest::debug($_);
+                        #TODO - Add the ids of the 1.0 stat augment here
+                        if ($_ == 8495 || $_ == 8496) {
+                            # TODO: This is a group heal proc -- is that what we want it to be?
+                            # TODO: Is 100 the right effect chance value here?
+                            $pet->AddMeleeProc(3577, 100);
+                            $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
+                            $pet->ModifyNPCStat("min_hit", $pet->GetNPCStat("min_hit") * 1.1);
+                            $pet->ModifyNPCStat("max_hit", $pet->GetNPCStat("max_hit") * 1.1);
+                            $pet->SetMaxHP();
+
+                            quest::debug("Applying Beastlord Epic Pet Buffs");
+                            last;
+                        }
+                    }
+                }
         }
 }

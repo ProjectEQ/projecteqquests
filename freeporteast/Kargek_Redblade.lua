@@ -1,6 +1,6 @@
 -- items: 20673, 20684, 20679, 17859, 20674, 18083, 60287, 60288
 function event_say(e)
-  if(e.other:Class() == "Warrior") then
+  if(e.other:Class() == "Paladin") then
     if(e.message:findi("hail")) then
       e.self:Emote(" looks up from his forge and says, 'Hello there, can I help you?' Your eyes are drawn to an extremely large red sword scabbard strapped to his back with no sword in it. Kargek speaks again, 'I said, can I help you or do you need help from Wenden?'");
     elseif(e.message:findi("wenden")) then

@@ -77,10 +77,11 @@ function event_say(e)
         else
             local check_id = tonumber(e.message)
             local unlocked = e.other:GetBucket("Spell-" .. check_id .. "-unlocked")
+            local cost = getSpellCost(check_id)
             if unlocked == '' then
-                if e.other:HasSpellScribed(check_id) then
+                if e.other:HasSpellScribed(check_id) and adapt_points >= cost then
                     e.other:SetBucket("Spell-" .. check_id .. "-unlocked", tostring(eq.get_spell(check_id):Classes(SPELL_CLASS_ID)))
-                    e.other:SetBucket("SpellPoints-" .. CLASS_ID, tostring(adapt_points - getSpellCost(check_id)))
+                    e.other:SetBucket("SpellPoints-" .. CLASS_ID, tostring(adapt_points - cost))
 
                     e.self:Say("You've unlocked access to the spell '" .. eq.get_spell(check_id):Name() .. ". Come talk to me while you have another class equipped to have it added to your spellbook.")
                     eq.message(MESSAGE_COLOR, "You have spent " .. getSpellCost(check_id) .. " adaptation points unlocking a spell. You have " .. e.other:GetBucket("SpellPoints-" .. CLASS_ID) .. " adaptation points available.")

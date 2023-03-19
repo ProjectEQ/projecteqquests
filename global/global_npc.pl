@@ -68,7 +68,7 @@ sub EVAL_PET
                         }
                     }
                 }
-                else if ($owner->GetClass() == 15) {
+                elsif ($owner->GetClass() == 15) {
                     # Handling for Beastlord Epic Bonus
                     my @items = ($owner->GetItemIDAt(quest::getinventoryslotid("primary")),
                                  $owner->GetAugmentAt(quest::getinventoryslotid("primary"),0),

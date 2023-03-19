@@ -89,8 +89,8 @@ sub EVAL_PET
                         #TODO - Add the ids of the 1.0 stat augment here
                         if ($_ == 8495 || $_ == 8496) {
                             # TODO: This is a group heal proc -- is that what we want it to be?
-                            # TODO: Is 100 the right effect chance value here?
-                            $pet->AddMeleeProc(3577, 100);
+                            # TODO: Is 30 the right effect chance value here?
+                            $pet->AddMeleeProc(3577, 30);
                             $pet->ModifyNPCStat("max_hp", $pet->GetMaxHP() + 3000);
                             $pet->ModifyNPCStat("min_hit", $pet->GetNPCStat("min_hit") * 1.1);
                             $pet->ModifyNPCStat("max_hit", $pet->GetNPCStat("max_hit") * 1.1);

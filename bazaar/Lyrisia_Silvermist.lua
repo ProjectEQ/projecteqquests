@@ -76,8 +76,8 @@ function compareSpells(spellId1, spellId2, spellClassId)
     local spell2 = eq.get_spell(spellId2)
   
     -- Get the class value for each spell
-    local classValue1 = spell1:Classes(SPELL_CLASS_ID) or 0
-    local classValue2 = spell2:Classes(SPELL_CLASS_ID) or 0
+    local classValue1 = spell1:Classes(spellClassId) or 0
+    local classValue2 = spell2:Classes(spellClassId) or 0
   
     -- Compare the class values
     if classValue1 == classValue2 then

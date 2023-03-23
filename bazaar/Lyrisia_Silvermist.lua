@@ -47,6 +47,7 @@ function event_say(e)
             end
         end        
         table.sort(UNLOCKED_SPELLS, function(a, b) return compareSpells(a, b, SPELL_CLASS_ID) end)
+        e.self:Say("Done.")
     elseif e.message:findi("adept_resp_4") then
         -- Drain AA here
     end

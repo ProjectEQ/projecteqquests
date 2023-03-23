@@ -139,7 +139,6 @@ end
 
 function printSpellList(low, high, e)
     local count = 0
-
     -- Fail Early
     if (e.other:GetLevel() < low) then
         eq.message(MESSAGE_COLOR, "You must gain more experience before attempting to adapt those spells.")    

@@ -25,10 +25,10 @@ function event_say(e)
     local adapt_points = tonumber(e.other:GetBucket("SpellPoints-" .. CLASS_ID)) or 0
 
     if e.message:findi("Hail") then
-        if e.other:GetBucket("Spellshaper-Intro") then
-            e.self:Say("Hail, " .. e.other:GetCleanName() .. ". I am Lyrisia Silvermist, the Spellshaper. I posess the unique ability to [" .. eq.say_link("adapt_resp_1", true, "adapt the spells") .. "] from your active class for use with any other class that you might have access to. I will only accept payment in the form of your [" .. eq.say_link("adapt_resp_2", true, "vital energy") .. "], this is non-negotiable")
-        else
+        if e.other:GetBucket("Spellshaper-Intro") then            
             e.self:Say("Hail, " .. e.other:GetCleanName() .. ". you've returned. Are you ready to [" .. eq.say_link("adapt_resp_1", true, "adapt your spells") .. "], do wish to [" .. eq.say_link("adapt_resp_2", true, "provide your vital energy") .. "] in preparation for my services, or do you seek access to the [" .. eq.say_link("adept_resp_3", true, "spells you have already had me adapt") .. "]?")
+        else
+            e.self:Say("Hail, " .. e.other:GetCleanName() .. ". I am Lyrisia Silvermist, the Spellshaper. I posess the unique ability to [" .. eq.say_link("adapt_resp_1", true, "adapt the spells") .. "] from your active class for use with any other class that you might have access to. I will only accept payment in the form of your [" .. eq.say_link("adapt_resp_2", true, "vital energy") .. "], this is non-negotiable")
         end
     -- Do-unlocks branch
     elseif e.message:findi("adapt_resp_1") then        

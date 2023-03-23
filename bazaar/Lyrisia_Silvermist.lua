@@ -32,12 +32,12 @@ function event_say(e)
         end
     -- Do-unlocks branch
     elseif e.message:findi("adapt_resp_1") then        
-        e.other:SetBucket("Spellshaper-Intro", 1)
+        e.other:SetBucket("Spellshaper-Intro", tostring(1))
         
 
     -- Convert AA branch
     elseif e.message:findi("adapt_resp_2") then
-        e.other:SetBucket("Spellshaper-Intro", 1)
+        e.other:SetBucket("Spellshaper-Intro", tostring(1))
         e.say:Say("When you are [" .. eq.saylink("adapt_resp_4", true, "prepared to begin") .. "], I will drain you of all unspent alternate advancement points. You will recieve a corresponding number of adaptation points in my ledger, which I will allow you to later redeem for adapted spells.")
     elseif e.message:findi("adept_resp_3") then
         for spell_id = 1, 44000 do

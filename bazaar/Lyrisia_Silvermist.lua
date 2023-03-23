@@ -19,7 +19,7 @@ function event_say(e)
 
     local CLASS_ID = e.other:GetClass()
     -- Corrected for off-by-one in some calls
-    local SPELL_CLASS_ID = CLASS_ID - 1
+    SPELL_CLASS_ID = CLASS_ID - 1
 
     local adapt_points = tonumber(e.other:GetBucket("SpellPoints-" .. CLASS_ID)) or 0
 

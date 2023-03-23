@@ -3,6 +3,11 @@
 local MESSAGE_COLOR = 15
 
 function event_say(e)
+
+    local CLASS_ID = e.other:GetClass()
+    -- Corrected for off-by-one in some calls
+    local SPELL_CLASS_ID = CLASS_ID - 1
+
     local SPELLS = {}
     for slot_id = 0, 720 do
         local spell_id = e.other:GetSpellIDByBookSlot(slot_id)
@@ -15,11 +20,7 @@ function event_say(e)
     local UNLOCKED_SPELLS = {}
     
     -- Sort spells arrays by level
-    table.sort(SPELLS, function(a, b) return compareSpells(a, b) end)
-
-    local CLASS_ID = e.other:GetClass()
-    -- Corrected for off-by-one in some calls
-    SPELL_CLASS_ID = CLASS_ID - 1
+    table.sort(SPELLS, function(a, b) return compareSpells(a, b, SPELL_CLASS_ID) end)   
 
     local adapt_points = tonumber(e.other:GetBucket("SpellPoints-" .. CLASS_ID)) or 0
 
@@ -45,7 +46,7 @@ function event_say(e)
                 table.insert(UNLOCKED_SPELLS, unlocked)
             end
         end        
-        table.sort(UNLOCKED_SPELLS, function(a, b) return compareSpells(a, b) end)
+        table.sort(UNLOCKED_SPELLS, function(a, b) return compareSpells(a, b, SPELL_CLASS_ID) end)
     elseif e.message:findi("adept_resp_4") then
         -- Drain AA here
     end

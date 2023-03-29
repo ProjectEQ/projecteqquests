@@ -1,4 +1,5 @@
 use List::Util qw(max);
+use List::Util qw(min);
 use POSIX;
 
 sub EVENT_SPAWN
@@ -46,6 +47,8 @@ sub SAVE_PET_STATS
         $owner->SetBucket("cr", $pet->GetNPCStat("cr"));
         $owner->SetBucket("dr", $pet->GetNPCStat("dr"));
         $owner->SetBucket("pr", $pet->GetNPCStat("pr"));
+
+        $owner->SetBucket("level", $pet->GetLevel());
 
         # We only arrive here on initial summoning.
         $owner->DeleteBucket("epic_proc");
@@ -110,6 +113,10 @@ sub UPDATE_PET_STATS
         # Set Runspeed
         my $runspeed = $owner->GetRunspeed() / 17 . "";
         $pet->ModifyNPCStat("runspeed", $runspeed);
+
+        # Set Level
+        my $level = floor($owner->GetSpellDamage() / 100) . "";
+        $pet->SetLevel($level);
     }
 }
 

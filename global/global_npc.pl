@@ -115,7 +115,7 @@ sub UPDATE_PET_STATS
         $pet->ModifyNPCStat("runspeed", $runspeed);
 
         # Set Level
-        my $level = floor($pet->GetLevel() + $owner->GetSpellDamage() / 100) . "";
+        my $level = floor($owner->GetBucket("level") + $owner->GetSpellDamage() / 100) . "";
         $pet->SetLevel($level);
     }
 }

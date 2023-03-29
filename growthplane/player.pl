@@ -1,4 +1,5 @@
 sub EVENT_ENTERZONE {
+  $client->SetBucket("growth_visited", "true");
   if ($class eq "Bard" || $class eq "Rogue") {
     if (plugin::check_hasitem($client, 52355) && !plugin::check_hasitem($client, 52361)) { #Shakey's Dilapidated Noggin, Reflective Viridian Lightstone
       quest::unique_spawn(127105, 234, 0, 0, 0, 0); #Flighty_Viridian_Wisp

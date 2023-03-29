@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
- if($class eq "Monk"){
+ if($class eq "Beastlord"){
   # Monk Epic 1.0
   quest::attack($name);
  }

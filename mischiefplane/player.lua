@@ -7,3 +7,7 @@ function event_loot(e)
 		end
 	end
 end
+
+function event_enter_zone(e)
+	e.self:SetBucket("mischief_visited", "true")
+end

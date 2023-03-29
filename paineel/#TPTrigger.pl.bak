@@ -1,0 +1,21 @@
+sub EVENT_SPAWN {
+
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	$z = $npc->GetZ();
+	
+	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+
+	my $charKey = $client->CharacterID() . "-TL-Odus";
+	my $charTL  = quest::get_data($charKey);
+	my $locString = ":paineel, Paineel (Outside), 443, 631, -24, 430";
+	
+	if (index($charTL, $locString) == -1) {
+		quest::message(15,"You feel a tug on your soul. Your have become attuned to this location.");
+		quest::ding();
+		quest::set_data($charKey, $charTL . $locString);
+	}
+}

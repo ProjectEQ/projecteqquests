@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("ignores you.");
-	elseif((e.message:findi("prepared")) and (e.other:GetLevel() >= 46) and (e.other:Class() == "Monk")) then	-- Monk Epic 1.0
+	elseif((e.message:findi("prepared")) and (e.other:GetLevel() >= 46) and (e.other:Class() == "Beastlord")) then	-- Monk Epic 1.0
 		eq.attack(e.other:GetName());
 	end
 end

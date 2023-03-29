@@ -2,24 +2,24 @@
 
 local don = require("dragons_of_norrath")
 
-function event_enter_zone(e)
-	local qglobals = eq.get_qglobals(e.self);
-	if(e.self:GetLevel() >= 15 and qglobals['Wayfarer'] == nil) then
-		local zoneid = eq.get_zone_id();
-		if(e.self:GetStartZone() ~= zoneid and (zoneid == 1 or zoneid == 2 or zoneid == 3 or zoneid == 8 or zoneid == 9 
-		or zoneid == 10 or zoneid == 19 or zoneid == 22 or zoneid == 23 or zoneid == 24 or zoneid == 29 or zoneid == 30 
-		or zoneid == 34 or zoneid == 35 or zoneid == 40 or zoneid == 41 or zoneid == 42 or zoneid == 45 or zoneid == 49 
-		or zoneid == 52 or zoneid == 54 or zoneid == 55 or zoneid == 60 or zoneid == 61 or zoneid == 62 or zoneid == 67 
-		or zoneid == 68 or zoneid == 75 or zoneid == 82 or zoneid == 106 or zoneid == 155 or zoneid == 202 or zoneid == 382 
-		or zoneid == 383 or zoneid == 392 or zoneid == 393 or zoneid == 408)) then
-			e.self:Message(15, 
-				"A mysterious voice whispers to you, \'If you can feel me in your thoughts, know this -- "
-				.. "something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know "
-				.. "that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They "
-				.. "are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or "
-				.. "search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, "
-				.. "and find out more. Adventure awaits you, my friend.\'");
+function check_level_flag(e)
+	local key = e.self:CharacterID() .. "-CharMaxLevel"
+	
+	if eq.get_data(key) == "" then
+		eq.set_data(key, "60")
+		e.self:Message(15, "Your Level Cap has been set to 60.")
+	end
+end
+
+function event_discover_item(e)
+	if e.item:HP() or e.item:Mana() or e.item:AStr() > 0 or e.item:ASta() > 0 or e.item:ADex() > 0 or e.item:AAgi() > 0 or e.item:AInt() > 0 or e.item:AWis() > 0 or e.item:ACha() > 0 or e.item:AugType() > 0 then
+		local key = e.self:CharacterID() .. "-DiscoCount";
+		if (eq.get_data(key) == nil or eq.get_data(key) == "") then
+			eq.set_data(key,tostring(1));
+		else
+			eq.set_data(key,tostring(tonumber(eq.get_data(key)) + 1));
 		end
+		eq.world_emote(15,e.self:GetCleanName() .. " is the first to discover " .. eq.item_link(e.item:ID()) .. ".");
 	end
 end
 
@@ -205,119 +205,14 @@ function event_command(e)
 	return eq.DispatchCommands(e);
 end
 
---[[ the main key is the ID of the AA
---   the first set is the age required in seconds
---   the second is if to ignore the age and grant anyways live test server style
---   the third is enabled
---]]
-vet_aa = {
-    [481]  = { 31536000, true, true}, -- Lesson of the Devote 1 yr
-    [482]  = { 63072000, true, true}, -- Infusion of the Faithful 2 yr
-    [483]  = { 94608000, true, true}, -- Chaotic Jester 3 yr
-    [484]  = {126144000, true, true}, -- Expedient Recovery 4 yr
-    [485]  = {157680000, true, true}, -- Steadfast Servant 5 yr
-    [486]  = {189216000, true, true}, -- Staunch Recovery 6 yr
-    [487]  = {220752000, true, true}, -- Intensity of the Resolute 7 yr
-    [511]  = {252288000, true, true}, -- Throne of Heroes 8 yr
-    [2000] = {283824000, true, true}, -- Armor of Experience 9 yr
-    [8081] = {315360000, true, true}, -- Summon Resupply Agent 10 yr
-    [8130] = {346896000, true, true}, -- Summon Clockwork Banker 11 yr
-    [453]  = {378432000, true, true}, -- Summon Permutation Peddler 12 yr
-    [182]  = {409968000, true, true}, -- Summon Personal Tribute Master 13 yr
-    [600]  = {441504000, true, true}, -- Blessing of the Devoted 14 yr
-}
-
 function event_connect(e)
-    local age = e.self:GetAccountAge();
-    for aa, v in pairs(vet_aa) do
-        if v[3] and (v[2] or age >= v[1]) then
-            e.self:GrantAlternateAdvancementAbility(aa, 1)
-        end
-    end
-
     don.fix_invalid_faction_state(e.self)
-end
 
---[[
-0  /*13855*/ Skill1HBlunt = 0,
-1  /*13856*/ Skill1HSlashing,
-2  /*13857*/ Skill2HBlunt,
-3  /*13858*/ Skill2HSlashing,
-4  /*13859*/ SkillAbjuration,
-5  /*13861*/ SkillAlteration,
-6  /*13862*/ SkillApplyPoison, X
-7  /*13863*/ SkillArchery, X
-8  /*13864*/ SkillBackstab,
-9  /*13866*/ SkillBindWound,
-10 /*13867*/ SkillBash,
-11 /*13871*/ SkillBlock,
-12 /*13872*/ SkillBrassInstruments,
-13 /*13874*/ SkillChanneling,
-14 /*13875*/ SkillConjuration,
-15 /*13876*/ SkillDefense,
-16 /*13877*/ SkillDisarm,
-17 /*13878*/ SkillDisarmTraps, 
-18 /*13879*/ SkillDivination,
-19 /*13880*/ SkillDodge,
-20 /*13881*/ SkillDoubleAttack,
-21 /*13882*/ SkillDragonPunch,
-21 /*13924*/ SkillTailRake = SkillDragonPunch, // Iksar Monk equivilent
-22 /*13883*/ SkillDualWield,
-23 /*13884*/ SkillEagleStrike,
-24 /*13885*/ SkillEvocation,
-25 /*13886*/ SkillFeignDeath,
-26 /*13888*/ SkillFlyingKick,
-27 /*13889*/ SkillForage, X
-28 /*13890*/ SkillHandtoHand,
-29 /*13891*/ SkillHide,
-30 /*13893*/ SkillKick,
-31 /*13894*/ SkillMeditate,
-32 /*13895*/ SkillMend,
-33 /*13896*/ SkillOffense,
-34 /*13897*/ SkillParry,
-35 /*13899*/ SkillPickLock, X
-36 /*13900*/ Skill1HPiercing,        // Changed in RoF2(05-10-2013)
-37 /*13903*/ SkillRiposte,
-38 /*13904*/ SkillRoundKick,
-39 /*13905*/ SkillSafeFall, 
-40 /*13906*/ SkillSenseHeading, X
-41 /*13908*/ SkillSinging,
-42 /*13909*/ SkillSneak,
-43 /*13910*/ SkillSpecializeAbjure,      // No idea why they truncated this one..especially when there are longer ones...
-44 /*13911*/ SkillSpecializeAlteration,
-45 /*13912*/ SkillSpecializeConjuration,
-46 /*13913*/ SkillSpecializeDivination,
-47 /*13914*/ SkillSpecializeEvocation,
-48 /*13915*/ SkillPickPockets, X
-49 /*13916*/ SkillStringedInstruments,
-50 /*13917*/ SkillSwimming, X
-51 /*13919*/ SkillThrowing,
-52 /*13920*/ SkillTigerClaw,
-53 /*13921*/ SkillTracking, X
-54 /*13923*/ SkillWindInstruments,
-55 /*13854*/ SkillFishing, X
-56 /*13853*/ SkillMakePoison, X
-57 /*13852*/ SkillTinkering, X
-58 /*13851*/ SkillResearch, X
-59 /*13850*/ SkillAlchemy, X
-60 /*13865*/ SkillBaking, X
-61 /*13918*/ SkillTailoring, X
-62 /*13907*/ SkillSenseTraps, X
-63 /*13870*/ SkillBlacksmithing, X
-64 /*13887*/ SkillFletching, X
-65 /*13873*/ SkillBrewing, X
-66 /*13860*/ SkillAlcoholTolerance, X
-67 /*13868*/ SkillBegging, 
-68 /*13892*/ SkillJewelryMaking, X
-69 /*13901*/ SkillPottery, X
-70 /*13898*/ SkillPercussionInstruments,
-71 /*13922*/ SkillIntimidation,
-72 /*13869*/ SkillBerserking,
-73 /*13902*/ SkillTaunt,
-74 /*05837*/ SkillFrenzy,
-75 /*03670*/  SkillRemoveTraps,  X
-76 /*13049*/  SkillTripleAttack,
-]]--
+	check_level_flag(e)
+	e.self:GrantAlternateAdvancementAbility(938, 8, true)
+
+	check_class_switch_aa(e)
+end
 
 function event_level_up(e)
   local free_skills =  {0,1,2,3,4,5,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,36,37,38,39,41,42,43,44,45,46,47,49,51,52,54,67,70,71,72,73,74,76};
@@ -325,45 +220,43 @@ function event_level_up(e)
   for k,v in ipairs(free_skills) do
     if ( e.self:MaxSkill(v) > 0 and e.self:GetRawSkill(v) < 1 and e.self:CanHaveSkill(v) ) then 
       e.self:SetSkill(v, 1);
-    end
-      
+    end      
   end
-end
 
-test_items = {
-    [1]  = {38000, 38020}, -- Warrior
-    [2] = {38168, 38188}, -- Cleric
-    [3]  = {38084, 38104}, -- Paladin
-    [4]  = {38105, 38125}, -- Ranger
-    [5]  = {38063, 38083}, -- Shadowknight
-    [6] = {38189, 38209}, -- Druid
-    [7]  = {38021, 38041}, -- Monk
-    [8]  = {38147, 38167}, -- Bard
-    [9]  = {38042, 38062}, -- Rogue
-    [10] = {38210, 38230}, -- Shaman
-    [11]  = {38294, 38314}, -- Necromancer
-    [12]  = {38231, 38251}, -- Wizard
-    [13]  = {38252, 38272}, -- Magician
-    [14]  = {38273, 38293}, -- Enchanter
-    [15]  = {38126, 38146}, -- Beastlord
-    [16]  = {38315, 38332}, -- Berserker
-}
- 
-function event_test_buff(e)
-    if (e.self:GetLevel() < 25) then
-        e.self:SetLevel(25)
-        eq.scribe_spells(25,1)
-        eq.train_discs(25,1)
-        for class_id, v in pairs(test_items) do
-            if e.self:GetClass() == class_id then
-                for item_id = v[1], v[2] do
-                    e.self:SummonItem(item_id);
-                end
-            end
-        end
-    end
+  if (e.self:GetLevel() % 5 == 0) then
+	eq.world_emote(15,e.self:GetCleanName() .. " has reached level " .. e.self:GetLevel() .. "!");
+  end
 end
 
 function event_task_complete(e)
   don.on_task_complete(e.self, e.task_id)
+end
+
+function check_class_switch_aa(e)
+	accum = 0
+	for i=16,1,-1
+	do
+		eq.debug("Checking class: " .. i);
+		if (e.self:GetBucket("class-"..i.."-unlocked") == '1') then
+			eq.debug("Unlocked Class: " .. i);
+			e.self:GrantAlternateAdvancementAbility(20000 + i, 1, true)			
+			accum = accum + 1			
+		end		 
+	end
+	eq.debug("Unlocked Classes: " .. accum);
+	expPenalty = calculate_modifier(accum)
+	e.self:SetEXPModifier(0, expPenalty)
+	eq.debug("Setting your Exp Modifier to: " .. expPenalty)
+end
+
+function calculate_modifier(count)
+    if count == 1 then
+        return 1
+    end
+
+    modifier = 1
+    for i=count,2,-1 do
+        modifier = modifier * .90
+    end
+    return modifier
 end

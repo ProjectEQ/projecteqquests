@@ -1,40 +1,40 @@
 -- Aganetti_the_Keeper (295065)
 -- Request NPC for Inktu`Ta
 
+local inktuta = "Inktu'ta the Unmasked Chapel"
+local inktuta_raid = {
+	expedition = { name="Inktu'ta the Unmasked Chapel   ", min_players=18, max_players=54 },
+	instance   = { zone="inktuta", version=0, duration=eq.seconds("6h") },
+	compass    = { zone="qvic", x=-974.94, y=-1346.20, z=-500.81 },
+	safereturn = { zone="qvic", x=-1019.46, y=-1366.74, z=-492.12, h=256 },
+	zonein     = { x=0, y=180, z=-4.12, h=256 }
+}
 
-
----
--- @param NPC#event_say e
 function event_say(e)
-	local instance_requests = require("instance_requests");
-	local inktuta_globals = {
-				{ "Ink_Kelekdrix", "Kelekdrix, Herald of Trushar" },
-				{ "Ink_Mites", "Stonemite Event" },
-				{ "Ink_Golems", "Inktu`Ta Golems" },
-				{ "Ink_Callers", "Cursecaller Event" },
-				{ "Ink_Noqufiel", "Noqufiel Event" }
-			}
+	local is_cynosure_alive = (eq.get_entity_list():IsMobSpawnedByNpcTypeID(295140) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(295149));
+	local is_gm = (e.other:GetGM()); -- Not including 80 status check
 
-	if(e.message:findi("hail")) then
-		e.self:Emote("gestures to the end of the cavernous hallway.");
-		e.self:Say("Beyond that corner lies the entrance to the forgotten chapel of Inktu`Ta. The force of the blast from the portal's implosion tore a hole in the mountain, revealing the way to this place. Some things should remain unknown. Inktu'ta should have stayed buried forever. Believe me " .. e.other:GetName() .. " only a fool would disturb the halls of this cursed chapel. Will you [heed my warning] or do you wish to [" .. eq.say_link("continue",false,"continue") .. "]?");
-		e.self:Say("Or would you like to know your [" .. eq.say_link("Lockouts",false,"Lockouts") .. "]?");
-	elseif(e.message:findi("lockouts")) then
-		instance_requests.DisplayLockouts(e.other, e.other, inktuta_globals);
-	elseif(e.message:findi("heed")) then
-		e.self:Say("As well you should, never return, " .. e.other:GetCleanName() .. " never come back.");
-	elseif(e.message:findi("continue")) then
-		--if Cynosure is up do not proceed
-		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(295140) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(295149) == false) then
-			local request = instance_requests.ValidateRequest('raid', "inktuta", 0, 6, 54, 65, nil, nil, e.other, inktuta_globals);
-			if (request.valid) then
-				local instance_id = eq.create_instance("inktuta", 0, 21600);
-				eq.set_global(instance_id.."_inktuta_bit",tostring(request.flags),7,"H6");
-				eq.assign_raid_to_instance(instance_id);
-				e.self:Say("Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu`Ta.");
+	if e.message:findi("hail") then
+		if is_cynosure_alive then
+			e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'The Cynosure's magic prevents me from allowing passage into Inktu'ta. We shall speak more after his demise.'")
+		else
+			e.other:Message(MT.NPCQuestSay, ("Aganetti the Keeper gestures to the end of the cavernous hallway. 'Beyond that corner lies the entrance to the forgotten chapel of Inktu'ta. The force of the blast from the portal's implosion tore a hole in the mountain, revealing the way to this place. Some things should remain unknown. Inktu'ta should have stayed buried forever. Believe me %s only a fool would disturb the halls of this cursed chapel. Will you [heed my warning] or do you wish to [continue]...?'"):format(e.other:GetCleanName()))
+		end
+	elseif e.message:findi("heed") then
+		e.other:Message(MT.NPCQuestSay, ("Aganetti the Keeper says, 'As well you should, never return, %s never come back.'"):format(e.other:GetCleanName()))
+	elseif e.message:findi("continue") then
+		if not is_cynosure_alive or is_gm then
+			if not is_gm and e.other:GetRaidMemberCountInZone() < 18 then
+				e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'I'm sorry, but you don't have enough comrades with you to venture into this dangerous area. Come back when you have at least eighteen friends to join you on this perilous journey.")
+			elseif not is_gm and e.other:DoesAnyPartyMemberHaveLockout(inktuta, "Replay Timer", 54) then
+				e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'I'm afraid I cannot allow you to begin, someone in your party has been on this expedition too recently and cannot yet go again.'")
+			else
+				e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'Very well! If you will not heed my warning, then you have chosen to suffer the consequences. I grant you entrance to Inktu`Ta.'")
+				local dz = e.other:CreateExpedition(inktuta_raid)
+				dz:AddReplayLockout(eq.seconds("2h"));
 			end
 		else
-			e.other:Message(13, "The Cynosure's magic prevents me from allowing passage into Inktu'ta. We shall speak more after his demise.");
+			e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'The Cynosure's magic prevents me from allowing passage into Inktu'ta. We shall speak more after his demise.'")
 		end
 	end
 end

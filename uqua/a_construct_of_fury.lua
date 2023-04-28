@@ -1,7 +1,5 @@
--- #Devastating_Construct(292065)
-
 function event_death_complete(e)
-	eq.signal(292079, 2); -- NPC: lockout_uqua
+	eq.signal(292021,1); -- NPC: #Tqiv_Qukret_the_Furious
 end
 
 function event_slay(e)

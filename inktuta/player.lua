@@ -25,10 +25,12 @@ function event_click_door(e)
 		if entity_list:FindDoor(42):GetLockPick() == 0 then
 			entity_list:FindDoor(43):ForceOpen(e.self);
 			eq.signal(296075,5); -- NPC: #noqufiel_trigger
-			e.self:Message(1,"You heave at the stone doors with all your might!  They shudder and give way.");		
+			e.self:Message(MT.DimGray,"You heave at the stone doors with all your might!  They shudder and give way.");		
 		else
 			if e.self:GetY() > -800 then -- Inside of Door
 				noq_door_safe = true;
+				entity_list:FindDoor(43):ForceOpen(e.self);
+				entity_list:FindDoor(42):ForceOpen(e.self);
 				eq.set_timer("door", 10 * 1000); -- Arm Door
 			elseif noq_door_safe then -- Outside and Door is safe
 				entity_list:FindDoor(43):ForceOpen(e.self);
@@ -55,6 +57,8 @@ function event_click_door(e)
 		else
 			if e.self:GetY() > -800 then -- Inside of Door
 				noq_door_safe = true;
+				entity_list:FindDoor(43):ForceOpen(e.self);
+				entity_list:FindDoor(42):ForceOpen(e.self);
 				eq.set_timer("door", 10 * 1000); -- Arm Door
 			elseif noq_door_safe then -- Outside and Door is safe
 				entity_list:FindDoor(43):ForceOpen(e.self);

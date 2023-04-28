@@ -1,7 +1,9 @@
--- #Devastating_Construct(292065)
+function event_spawn(e)
+	eq.set_timer("depop", math.random(30,60) * 1000); -- 30-60 Seconds
+end
 
-function event_death_complete(e)
-	eq.signal(292079, 2); -- NPC: lockout_uqua
+function event_timer(e)
+	eq.depop()
 end
 
 function event_slay(e)
@@ -11,11 +13,3 @@ function event_slay(e)
 	end
 end
 
--- mods enthralled destroyer/noc bloodluster
-function event_spawn(e)
-	e.self:ModSkillDmgTaken(0, 20); -- 1h blunt
-	e.self:ModSkillDmgTaken(2, 20); -- 2h blunt
-	e.self:ModSkillDmgTaken(1, -20); -- 1h slashing
-	e.self:ModSkillDmgTaken(3, -20); -- 2h slashing
-	e.self:ModSkillDmgTaken(7, -20); -- archery
-end

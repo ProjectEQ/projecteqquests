@@ -201,7 +201,7 @@ function event_click_door(e)
 		end
 	elseif door == 4 then
 		if qglobals[instance_id.. '_spectre_door'] ~= nil then
-			if dz.valid then
+			if dz.valid and not dz:IsLocked() then
 				dz:SetLocked(true); -- Lock DZ so no additional people can join.
 				eq.zone_emote(MT.Yellow, "Your expedition is nearing its close. You cannot bring any additional people into your expedition at this time.");
 			end

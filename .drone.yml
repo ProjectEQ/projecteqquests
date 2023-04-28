@@ -5,7 +5,7 @@ name: ProjectEQ Quests CI
 
 steps:
   - name: project-eq-script-ci-run
-    image: debian:stretch-slim
+    image: debian:11.6-slim
     commands:
       - apt-get update > /dev/null && DEBIAN_FRONTEND=noninteractive apt-get install -qq lua5.1 perl libdbi-perl libswitch-perl libdbd-mysql-perl libjson-perl < /dev/null > /dev/null
       - ./ci.sh

@@ -62,7 +62,7 @@ function event_trade(e)
 		e.other:SummonItem(18292); -- Interrogator's Briefing
 		e.other:Ding();
 		e.other:AddEXP(2000);
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 2583},0)) then -- Researcher's Badge
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 2583})) then -- Researcher's Badge
 		e.self:Say("Here is my personal seal. Go to the sewers and locate my investigator and show him this seal if he yet lives. Find out what happened to he and guard Helminth. Then if at all possible, complete this operation by finding Azibelle Spavin and execute her. Bring me her head and return me my seal and you shall be rewarded.");
 		e.other:QuestReward(e.self,0,0,0,0,2694,2000); -- Seal of Vegalys
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 2694,item2 = 2392})) then -- Seal of Vegalys and Head of Azibelle Spavin

@@ -68,7 +68,7 @@ function event_timer(e)
 		e.self:WipeHateList();
 	end
     if (e.timer == "Emote") then
-        index = math.random(1, table.getn(rikkukin_emote)); -- Random 1-4
+        index = math.random(1, #rikkukin_emote); -- Random 1-4
         eq.zone_emote(15,rikkukin_emote[index][1]);  -- Warn the players whats about to happen.
 		eq.set_timer("Emote", 30000); -- After emote goes off, set timer to every 30 seconds.
     elseif (e.timer == "Casting") then

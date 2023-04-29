@@ -52,7 +52,7 @@ local tantho_aggro=0
 local tanthu_aggro=0;
 local depopping=0;
 
-function Jelvan_spawn()
+function Jelvan_Spawn()
 	event_started =0;
 end
 

@@ -35,7 +35,7 @@ function event_trade(e)
 		e.other:Faction(221,-25,0); -- Bloodsabers
 		e.other:Faction(219,15,0); -- Antonius Bayle
 		e.other:AddEXP(100);
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 13724}, 0)) then
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 13724})) then
 		e.self:Say("Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.");
 		-- Confirmed Live Factions
 		e.other:Faction(341,50); -- Priest of Life

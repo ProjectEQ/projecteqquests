@@ -84,7 +84,7 @@ end
 
 function spawn_mobs(wave)
 
-	local index = table.getn(wave_ids);
+	local index = #wave_ids;
 	local npc;
 	
 	-- Spawn Archers

@@ -33,7 +33,7 @@ function event_trade(e)
             e.other:SummonItem(66615); -- Item: Gold Ticket
         else
             e.self:Shout("Ladies and Gentlemen gather around, as our brave " .. e.other:GetName() .. " is turning in their Golden Ticket for a chance at the big time! With a spin of the wheel let us determine the prize. Ladies and gentlemen, the " .. e.other:Race() .. " wins a prize! Everyone please congratulate " .. e.other:GetName() .. " on this excellent luck!");
-            local which = math.random(1, table.getn(valid_prizes));
+            local which = math.random(1, #valid_prizes);
             e.other:SummonItem(valid_prizes[which]);
         end
     end

@@ -32,7 +32,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 18237}, 0)) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 18237})) then
 		e.self:Say("You found one of our lost tomes! A lost volume of the Book of Grudges, quite a find! Oh, dear Brell! This evidence proves that the legend of Burdael is true! Thank you, " .. e.other:GetCleanName() .. ". And now I suppose you wish to meet his ghostly form. I have sensed him from time to time. I will call to him now. Go and wait for him in the lower halls. His spirit sometimes calls to me from the fearsome stalagterrors' lair. Be wary though, undeath may have twisted his mind beyond reason.");
 		e.other:Faction(460,5); -- citizen of frostone
 		e.other:QuestReward(e.self,0,0,0,0,0,1000);

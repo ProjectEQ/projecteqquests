@@ -8,7 +8,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {platinum = 50}, 0)) then
+	if(item_lib.check_turn_in(e.trade, {platinum = 50})) then
 		e.self:Emote("pockets the change and hands you the book. He says, 'Be careful with that now, it's very old. If it comes back all ripped up, ye owe me a beer.'");
 		e.other:QuestReward(e.self,0,0,0,0,18237,1000); -- Worn Coldain Tome
 	end

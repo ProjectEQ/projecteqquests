@@ -20,12 +20,12 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8283}, 0)) then
+	if(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8283})) then
 		e.self:Say("So he wants to send me to jail simply because I'm not filling out some silly reports? How can I be expected to think in such a decrepit state? Maybe you could help me. If I had a meal worthy of someone of my breeding then maybe I could think. Bring me something elegant, I don't want anything dull and pedestrian. I don't know what I want though. Do you have any suggestions?");
-	elseif(e.other:GetFaction(e.self) < 5 and (item_lib.check_turn_in(e.trade, {item1 = 8199}, 0) or item_lib.check_turn_in(e.trade, {item1 = 8198}, 0))) then -- Dryad Pate or Potameid Pate
+	elseif(e.other:GetFaction(e.self) < 5 and (item_lib.check_turn_in(e.trade, {item1 = 8199}) or item_lib.check_turn_in(e.trade, {item1 = 8198}, 0))) then -- Dryad Pate or Potameid Pate
 		e.self:Say("hmm... This is interesting... The taste is very refined but sort of... odd... We're almost there but I don't think you have the recipe quite right. Rather than that peasant Brandy, use this in your recipe instead. And rather than whatever other 'meat' you were using before use a Panther Liver. You do seem to have some skill as a chef, mayhaps you could work for me some day. Prepare some Panther Pate for me. Give me the Panther Pate and let me read that warning again.");
 		e.other:QuestReward(e.self,{items = {8284,8283}}); -- Finewine Family Brandy
-	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8278}, 0)) then -- Panther Pate
+	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.trade, {item1 = 8278})) then -- Panther Pate
 		e.self:Say("Ah yes, this is perfect! I feel my head clearing already. Wait, is that the sun poking through the trees there or the moon? Hard to tell in this hideous jungle... Oh wait, yes. My shift reports for the last few weeks. Why don't you go ahead and turn these into Sergeant Caelin for me? I'm going to enjoy this fine pate.");
 		e.other:QuestReward(e.self,0,0,0,0,8279); -- Stack of Shift Reports
 	end

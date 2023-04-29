@@ -8,7 +8,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.trade, {item1 = 29845}, 0)) then -- Field Orders
+	if(item_lib.check_turn_in(e.trade, {item1 = 29845})) then -- Field Orders
 		e.self:Say("Huh? What? Oh, umm, let's see here... OK I best get these taken care of right away. Thank you.");
 		e.other:Faction(1503,1);  -- +Validus Custodus 
 		e.other:Faction(1502,1);  -- +Katta Castellum Citizens

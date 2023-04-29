@@ -132,22 +132,29 @@ function IxtHsek_Combat(e)
 	else
 		eq.stop_timer("OOBcheck");
 		eq.resume_timer("depop");
+		eq.stop_timer("champcheck");
 	end
 end
 
 function IxtHsek_HP(e)
-local npc_list =  eq.get_entity_list():GetNPCList();
-		for npc in npc_list.entries do
-			if (npc.valid and (npc:GetNPCTypeID() == 297035 or npc:GetNPCTypeID() == 297037 or npc:GetNPCTypeID() == 297040)) then
-			npc:AddToHateList(e.self:GetHateRandom(),1);
-      			e.self:Say("Don't just stand there you fools! Come help me kill them!");
-     	 		end
-end
+	if(e.hp_event == 90) then
+	eq.set_next_hp_event(20)
+    	local npc_list = eq.get_entity_list():GetNPCList()
+    	for npc in npc_list.entries do
+        	if (npc.valid and (npc:GetNPCTypeID() == 297035 or npc:GetNPCTypeID() == 297037 or npc:GetNPCTypeID() == 297040)) then
+				--only trash will add at this phase
+            	npc:AddToHateList(e.self:GetHateTop(), 1)
+            	e.self:Say("Don't just stand there you fools! Come help me kill them!")
+        	end
+    	end
+	elseif(e.hp_event == 20) then
+		eq.set_timer("champcheck", 2 * 1000)
+	end
 end
 
 function MastruqChampion_Combat(e)
 	if (e.joined == true) then
-		eq.set_next_hp_event(15);
+		eq.set_next_hp_event(20);
 		eq.set_timer("OOBcheck", 6 * 1000);
 	else
 		eq.stop_timer("OOBcheck");
@@ -160,8 +167,7 @@ local npc_list =  eq.get_entity_list():GetNPCList();
 			if (npc.valid and (npc:GetNPCTypeID() == 297211)) then
 			npc:AddToHateList(e.self:GetHateRandom(),1);
 			e.self:Say("Ugh. These fools are stronger than they look. Hsek, come help me with them!");
--- add #Ixt_Hsek_Syat (297211) to hate list
---should he emote?
+			-- add #Ixt_Hsek_Syat (297211) to hate list
       end
   end
 end
@@ -325,6 +331,15 @@ function IxtHsek_Timer(e)
 		eq.depop_all(297037); -- arena mob
 		eq.depop_all(297040); -- arena mob
 		eq.signal(297001,1); --signal champ_event to begin timer to respawn event
+	elseif (e.timer == "champcheck") then
+		local npc_list =  eq.get_entity_list():GetNPCList();
+		for npc in npc_list.entries do
+		if (npc.valid and not npc:IsEngaged() and (npc:GetNPCTypeID() == 297034)) then
+				--#Mastruq_Champion (297034) add if alive
+			npc:AddToHateList(e.self:GetHateTop(),1);
+			e.self:Say("Get over here and help me with these annoyances, you gigantic imbecile!")
+		end
+		end
 	end
 end
 

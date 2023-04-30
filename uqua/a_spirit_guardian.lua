@@ -71,6 +71,8 @@ function event_timer(e)
 		eq.spawn2(292088,0,0,-808,102,59,290);	-- NW 3rd
 
 		eq.get_entity_list():FindDoor(4):SetLockPick(0);
+
+		eq.depop();
 	end
 end
 

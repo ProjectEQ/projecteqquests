@@ -181,7 +181,7 @@ function Hate_Death(e)
 		dz:AddReplayLockoutDuration(eq.seconds(lockout_win)) -- 5 days + current timer (max 123 hours)
 	end
 	local mpg_helper = require("mpg_helper");
-	mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
+	mpg_helper.UpdateRaidTrialFlag(player_list, this_bit);
 end
 
 function Hate_Signal(e)
@@ -193,6 +193,9 @@ function Hate_Signal(e)
 		if not el:IsMobSpawnedByNpcTypeID(304019) and not el:IsMobSpawnedByNpcTypeID(304023) and not el:IsMobSpawnedByNpcTypeID(304024) and not el:IsMobSpawnedByNpcTypeID(304025) and not el:IsMobSpawnedByNpcTypeID(304026) and not el:IsMobSpawnedByNpcTypeID(304027) then
 			eq.stop_timer('direpups');
 			-- Set the Master of Hate to be Combatable
+			-- 24 Will Not Aggro
+			-- 25 Immune to Aggro
+			-- 35 No Harm from Players
 			e.self:WipeHateList(); -- For good measure
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro,0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on,0);
@@ -220,7 +223,7 @@ function Hate_Combat(e)
 end
 
 function Spawn_Direpup()
-	-- Every 15 seconds one pup will spawn from a random living feran "mother".
+	-- Every 15 seconds one pup will spawn from a random living feran "mother". 
 	local npc_id	= nil;
 	local npc		= nil;
 	local index		= nil;
@@ -238,7 +241,7 @@ function Spawn_Direpup()
 				-- then we are removing the last item and need
 				-- to abort this process; the feran mother was
 				-- killed after this search was started but
-				-- before we got to this spot in the code so
+				-- before we got to this spot in the code so 
 				-- we can abort the loop.
 				return
 			end
@@ -260,6 +263,9 @@ function Feran_Death(e)
 end
 
 function Feran_Spawn(e)
+	-- 24 Will Not Aggro
+	-- 25 Immune to Aggro
+	-- 35 No Harm from Players
 	e.self:SetSpecialAbility(SpecialAbility.immune_aggro,1);
 	e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on,1);
 	e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client,1);
@@ -267,6 +273,9 @@ end
 
 function Feran_Signal(e)
 	if e.signal == 1 then
+		-- 24 Will Not Aggro
+		-- 25 Immune to Aggro
+		-- 35 No Harm from Players
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro,0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on,0);
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client,0);

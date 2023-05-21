@@ -37,6 +37,7 @@ function event_trade(e)
     e.other:Ding();
     e.other:AddEXP(1000);
   elseif (qglobals['warrior_pre'] ~= nil and qglobals['warrior_pre'] == "3" and item_lib.check_turn_in(e.trade, {item1 = 60287})) then
+    e.self:Say("You got it, I'm so relieved! I know the rest of my family will be just as relieved as I am to know that we can return the sword to its resting spot atop my father's grave. You have done such a service to my family that I must give you something as a token of my thanks. This hilt bears the markings of the Redblade family. Combine it with the proper blade and you will have an amazing weapon. Thanks once again!");
     e.other:SummonItem(60288); -- Item: Emblazoned Champion's Hilt
     e.other:Ding();
     e.other:AddEXP(1000);

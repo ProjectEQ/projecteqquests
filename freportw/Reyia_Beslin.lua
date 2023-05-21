@@ -31,18 +31,18 @@ function event_trade(e)
 		e.other:Ding();
 		e.self:Say("You have proven yourself a mighty warrior. I am honored to present you, "..e.other:GetName()..", with the orange Sash of Order.");
 		e.other:SummonItem(10132); -- Orange Sash of Order
-		e.other:Faction(361,50,0); -- Ashen Order
-		e.other:Faction(281,7,0); -- Knights of Truth
-		e.other:Faction(309,2,0); -- Silent Fist Clan
+		e.other:Faction(361,3,0); -- Ashen Order
+		e.other:Faction(281,3,0); -- Knights of Truth
+		e.other:Faction(309,3,0); -- Silent Fist Clan
 		e.other:AddEXP(300);
 	--  Blackened Wand ID-13237 - Blackened Sapphire ID-13238 - Orange Sash of Order ID-10132
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13237,item2 = 13238,item3 = 10132})) then
 		e.other:Ding();
 		e.self:Say("Great job, "..e.other:GetName().." ! Congratulations. With the destruction of these evil items, the wand of the Burning Dead will never bring harm to anyone on Norrath again. It is my honor to present to you, on behalf of Master Closk and the Ashen Order, the red sash. May Quellious be with you always.");
 		e.other:SummonItem(10133); -- Red Sash of Order
-		e.other:Faction(361,75,0); -- Ashen Order
-		e.other:Faction(281,11,0); -- Knights of Truth
-		e.other:Faction(309,3,0); -- Silent Fist Clan
+		e.other:Faction(361,4,0); -- Ashen Order
+		e.other:Faction(281,4,0); -- Knights of Truth
+		e.other:Faction(309,4,0); -- Silent Fist Clan
 		e.other:AddEXP(400);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

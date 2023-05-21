@@ -1,7 +1,7 @@
 -- items: 18015, 18016, 1054
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("HA! Greetings there. " .. e.other:GetName() .. "!  How are ya this fine day?  Me?  I'm doing all right.  Guard duty down here always reminds me of home.");
+		e.self:Say("HA! Greetings there, " .. e.other:GetName() .. "! How are ya this fine day? Me? I'm doing all right. Guard duty down here always reminds me of home.");
 		eq.signal(10106,1); -- Signal to Beur_Tenlah
 	elseif(e.message:findi("message")) then
 		e.self:Say("Ok, " .. e.other:GetName() .. ", I need you to take this message to Janam in West Freeport. He is usually hanging out in front of the Theater of the Tranquil with that good-for-nothing Rebby. Anyway, give this note to Janam and bring his reply back to me.");

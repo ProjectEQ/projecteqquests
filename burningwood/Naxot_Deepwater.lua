@@ -11,7 +11,7 @@ function event_trade(e)
 		e.self:Say("Praise the Triumvirate! Natasha sent you just in time! Those twisted sarnak summoners are summoning Ixiblat Fer as we speak! We must stop Ixiblat Fer while he is still weak or all of Norrath may be set aflame! Please do me one more favor, should I perish to this beast of fire. Give this note to Natasha when you next see her, and if you should perish and I survive, I will make sure the waters never forget your reflections of your deeds this day.");
 		e.other:SummonItem(28052); 								-- 28052  Message to Natasha
 		e.other:Ding();
-		eq.unique_spawn(87151,0,0,1500,-2000,-375); 			-- Ixiblat Fer, kill him, loot scepter of I.F.
+		eq.unique_spawn(87151,0,0,1500,-2000,-375,0); 			-- Ixiblat Fer, kill him, loot scepter of I.F.
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

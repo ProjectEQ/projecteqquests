@@ -16,3 +16,12 @@ function event_enter_zone(e)
 		
 	end
 end
+
+function event_death(e)
+	if(e.self:HasItem(9816)) then
+
+		e.self:NukeItem(9816); --nuke sealed silver package if you die
+
+	end
+
+end

@@ -17,7 +17,7 @@ function event_trade(e)
 		e.other:Faction(271,1,0); -- Dismal Rage
 		e.other:Faction(281,-1,0); -- Knights of Truth
 		e.other:Faction(296,1,0); -- Opal Dark Briar
-		e.other:AddEXP(250);
+		e.other:AddEXP(60);
 		e.other:GiveCash(0,4,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10307, item2 = 10307, item3 = 10307, item4 = 10307})) then -- Fire Beetle Eye
 		e.self:Say("Let's see here. One.. two.. three.. and.. four. Great!! Just enough for my needs. You are serving Xelha well. I give you Spell: Cavorting Bones. It is not much, but neither are you. You know what I really need is a cyclops eye. That would be worthy of a great reward.");
@@ -26,7 +26,7 @@ function event_trade(e)
 		e.other:Faction(271,1,0); -- Dismal Rage
 		e.other:Faction(281,-1,0); -- Knights of Truth
 		e.other:Faction(296,1,0); -- Opal Dark Briar
-		e.other:AddEXP(250);
+		e.other:AddEXP(40);
 		e.other:GiveCash(8,1,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13073, item2 = 13073, item3 = 13073, item4 = 13073})) then -- Bone Chips
 		e.self:Say("Let's see here. One.. two.. three.. and.. four. Great!! Just enough for my needs. You are serving Xelha well.  It is not much, but neither are you. You know what I really need is a cyclops eye. That would be worthy of a great reward.");
@@ -34,7 +34,7 @@ function event_trade(e)
 		e.other:Faction(271,1,0); -- Dismal Rage
 		e.other:Faction(281,-1,0); -- Knights of Truth
 		e.other:Faction(296,1,0); -- Opal Dark Briar
-		e.other:AddEXP(250);
+		e.other:AddEXP(20);
 		e.other:GiveCash(0,4,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13927})) then -- Cyclops Eye
 		e.self:Say("A cyclops eye!! You are stronger than I believed. You will rise in the ranks of the Dismal Rage quickly with acts such as this!! I am most appreciative! Here, take this. It was lying around my shelves, just gettingg all dusty. I hope you can use it. And watch yourself in your journeys, the aura of your faith in Innoruuk surrounds you like a shroud. Our enemies will surely see you for what you are.");
@@ -43,7 +43,7 @@ function event_trade(e)
 		e.other:Faction(271,1,0); -- Dismal Rage
 		e.other:Faction(281,-1,0); -- Knights of Truth
 		e.other:Faction(296,1,0); -- Opal Dark Briar
-		e.other:AddEXP(500);
+		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

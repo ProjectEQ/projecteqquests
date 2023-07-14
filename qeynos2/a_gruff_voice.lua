@@ -29,7 +29,7 @@ function event_signal(e)
     if e.signal == 1 and event_started == 0 then
         event_started = 1;
         --do things
-        eq.zone_emote(0, "a gruff voice shouts, 'Stay alert, men. Word is that the package will be delivered shortly.The smuggle is likely already here.");
+        eq.zone_emote(0, "a gruff voice shouts, 'Stay alert, men. Word is that the package will be delivered shortly.The smuggler is likely already here.");
         eq.unique_spawn(2031, 108, 0, 119, 635, 3, 259);
         eq.unique_spawn(2126, 109, 0, 17, -116, 3, 386);
         eq.unique_spawn(2160, 0, 0, 69, 542, 3, 0);
@@ -38,10 +38,10 @@ function event_signal(e)
         eq.unique_spawn(2162, 111, 0, 343, 146, 3, 259);
         eq.unique_spawn(2128, 112, 0, 203, 16, 3, 506);
         eq.unique_spawn(2129, 113, 0, 293,286,17,253);
-        eq.unique_spawn(2130, 0, 0, 119, 635, 3, 259); --need to parse
-        eq.unique_spawn(2132, 114, 0, 119, 635, 3, 259);
+        eq.unique_spawn(2130, 0, 0, 326, 422, 3, 414);
+        eq.unique_spawn(2132, 114, 0, 358, 78, 3, 477);
 
-        eq.set_timer("fail", 3600 * 1000); -- half an hour? need to parse fail condition
+        eq.set_timer("fail", 7200 * 1000); -- half an hour? so far over 1 hour and no fail
     elseif e.signal == 2 and event_started == 1 then
         --signal win from turn in. depop event
         eq.stop_timer("fail");
@@ -55,7 +55,6 @@ function event_signal(e)
         eq.depop(2129);
         eq.depop(2130);
         eq.depop(2132);
-        eq.zone_emote(0, "a gruff voice shouts, 'You win"); --made up possibly no zone emote on win
 
         eq.depop_with_timer(); --depop self to reset event
     end
@@ -74,10 +73,9 @@ function event_timer(e)
         eq.depop(2129);
         eq.depop(2130);
         eq.depop(2132);
-        eq.zone_emote(0, "a gruff voice shouts, 'I tire of your games, you lose."); --made up
+        
 
         eq.depop_with_timer(); --depop self to reset event
-    elseif e.timer == "win" then
 
     end
 end

@@ -92,8 +92,10 @@ end
 
 -- The Bazu, Hulking Bazu, is weak to slashing. 
 function Bazu_Spawn(e)
-	e.self:ModSkillDmgTaken(1, 200); -- 1h slashing
-	e.self:ModSkillDmgTaken(3, 200); -- 2h slashing
+	e.self:ModSkillDmgTaken(8, -15); -- backstab
+	e.self:ModSkillDmgTaken(7, -15); -- archery
+	e.self:ModSkillDmgTaken(1, 300); -- 1h slashing
+	e.self:ModSkillDmgTaken(3, 300); -- 2h slashing
   e.self:ModSkillDmgTaken(36,-15); -- piercing
   e.self:ModSkillDmgTaken(77,-15); -- 2h piercing
   e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
@@ -103,8 +105,10 @@ end
 
 -- The Dragorn, Hemkai the Ascendant, is weak to piercing. 
 function Ascendant_Spawn(e)
-	e.self:ModSkillDmgTaken(36, 200); -- piercing
-	e.self:ModSkillDmgTaken(77, 200); -- 2h piercing
+	e.self:ModSkillDmgTaken(8, 300); -- backstab
+	e.self:ModSkillDmgTaken(7, 300); -- archery
+	e.self:ModSkillDmgTaken(36, 300); -- piercing
+	e.self:ModSkillDmgTaken(77, 300); -- 2h piercing
 	e.self:ModSkillDmgTaken(1, -85); -- 1h slashing
 	e.self:ModSkillDmgTaken(3, -85); -- 2h slashing
   e.self:ModSkillDmgTaken(0, -15); -- 1h blunt
@@ -114,9 +118,11 @@ end
 
 -- The Golem, Granite Stoneguardian, is weak to blunt weapons. 
 function Stoneguardian_Spawn(e)
-	e.self:ModSkillDmgTaken(0, 200); -- 1h blunt
-	e.self:ModSkillDmgTaken(2, 200); -- 2h blunt
-	e.self:ModSkillDmgTaken(28, 200); -- h2h
+	e.self:ModSkillDmgTaken(8, -85); -- backstab
+	e.self:ModSkillDmgTaken(7, -85); -- archery
+	e.self:ModSkillDmgTaken(0, 300); -- 1h blunt
+	e.self:ModSkillDmgTaken(2, 300); -- 2h blunt
+	e.self:ModSkillDmgTaken(28, 300); -- h2h
 	e.self:ModSkillDmgTaken(36, -85); -- piercing
 	e.self:ModSkillDmgTaken(77, -85); -- 2h piercing
 	e.self:ModSkillDmgTaken(1, -15); -- 1h slashing
@@ -125,6 +131,8 @@ end
 
 -- The Lightning mob, Steelshock, is weak to nukes. 
 function Steelshock_Spawn(e)
+	e.self:ModSkillDmgTaken(8, -85); -- backstab
+	e.self:ModSkillDmgTaken(7, -85); -- archery
 	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
 	e.self:ModSkillDmgTaken(2, -85); -- 2h blunt
 	e.self:ModSkillDmgTaken(28,-15); -- h2h

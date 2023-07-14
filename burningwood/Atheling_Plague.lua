@@ -21,7 +21,7 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 12764})) then
 			e.other:QuestReward(e.self,0,0,0,0,12750);
 			e.self:Shout("Excellent. You show signs of a true Iksar slayer. Too, bad I have already given the skull of the Sister of Scale to another. Perhaps you would like to meet him before he departs. Say hello, Doval.");
-			eq.unique_spawn(87154,0,0,-4067,6351,-53);
+			eq.unique_spawn(87154,0,0,-4067,6351,-53,0);
 			eq.set_timer("heal",20000);
 		end
 	end

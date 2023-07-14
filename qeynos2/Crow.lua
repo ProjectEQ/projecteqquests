@@ -24,10 +24,14 @@ function event_trade(e)
 		e.other:GiveCash(0,0,6,0);
 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 9816})) then --sealed package rog prequest, add global check , add npc check?
-		e.other:Message(15,"You have smuggled the mysterious package into Qeynos, completing the third task for the Smuggler's Camp.");
-		e.self:Emote("opens the package and examines the contents, then quickly shuts it again. 'You can go now.");
+		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(2031) == true) then --check if an npc from event is active 
+			e.other:Message(15,"You have smuggled the mysterious package into Qeynos, completing the third task for the Smuggler's Camp.");
+			e.self:Emote("opens the package and examines the contents, then quickly shuts it again. 'You can go now.'");
 			--add global
-		eq.signal(2134, 2); --2134 a gruff voice
+			eq.signal(2134, 2); --2134 a gruff voice
+		else 
+			e.self:Say("I wasn't expecting another package from you, ".. e.other:GetCleanName() ..". What exactly is going on here?");
+		end
 	end
 	
 	item_lib.return_items(e.self, e.other, e.trade)

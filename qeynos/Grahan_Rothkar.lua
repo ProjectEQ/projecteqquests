@@ -51,7 +51,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18894})) then
 		e.self:Say("So you are ready to encounter your final test. I wish you well, young warrior. Take this key to the pen on the left along the wall with three doors. There you shall meet your final challenge. Return with proof of victory. Exit before it is at an end and I shall not help you.");
 		e.other:SummonItem(20029); -- Item: Pen Key # 5
-		eq.unique_spawn(1303,0,0,-520,-120,-24.5); -- NPC: a_young_lion
+		eq.unique_spawn(1303,0,0,-520,-120,-24.5,0); -- NPC: a_young_lion
 		eq.set_timer("goaway",600000);
 		e.other:Ding();
 		e.other:Faction(311,5,0); -- Steel Warriors

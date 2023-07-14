@@ -24,4 +24,4 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
--- END of FILE Zone: -- Jyle_Windshot *(FREPORTEAST VERSION)*
+-- END of FILE Zone: -- Jyle_Windshot *(FREPORTE VERSION)*

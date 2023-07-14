@@ -16,12 +16,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13158})) then -- Rebby's Rat Whiskers
 		e.self:Say("Thank you " .. e.other:GetName() .. ", You have done well.");
 		e.other:Ding();
-		e.other:Faction(336,7,0); -- Faction: Coalition of Tradefolk Underground
-		e.other:Faction(229,7,0); -- Faction: Coalition of Tradefolk
+		e.other:Faction(336,10,0); -- Faction: Coalition of Tradefolk Underground
+		e.other:Faction(229,10,0); -- Faction: Coalition of Tradefolk
 		e.other:Faction(329,1,0); -- Faction: Carson McCabe
 		e.other:Faction(230,1,0); -- Faction: Corrupt Qeynos Guards
 		e.other:Faction(330,1,0); -- Faction: The Freeport Militia
-		e.other:AddEXP(500);
+		e.other:AddEXP(62);
 		e.other:GiveCash(7,0,0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

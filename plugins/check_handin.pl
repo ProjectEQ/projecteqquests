@@ -89,7 +89,7 @@ sub return_items {
 	my %return_data = ();	
 
 	foreach my $k (keys(%{$hashref})) {
-		next if ($k == 0);
+		next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
 		my $rcount = $hashref->{$k};
 		my $r;
 		for ($r = 0; $r < 4; $r++) {
@@ -202,8 +202,8 @@ sub return_bot_items {
 
 sub GetHandinItemsSerialized {
 	my $type = shift;
-    my %hash = @_;
-    my @variables = ();
+	my %hash = @_;
+	my @variables = ();
 
 	my %item_data = (
 		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
@@ -214,9 +214,9 @@ sub GetHandinItemsSerialized {
 
 	my $hashref = plugin::var('$itemcount'); 
 
-    if ($type eq "Handin") {
+	if ($type eq "Handin") {
 		foreach my $k (keys(%{$hashref})) {
-			next if ($k == 0);
+			next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
 			my $rcount = $hashref->{$k};
 			for (my $r = 0; $r < 4; $r++) {
 				if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
@@ -227,13 +227,13 @@ sub GetHandinItemsSerialized {
 				}
 			}
 		}
-    } else {
-        foreach my $key (keys %hash) {
-            push(@variables, $hash{$key}[0] . "|" . $hash{$key}[1] . "|" . $hash{$key}[2]);
-        }
-    }
+	} else {
+		foreach my $key (keys %hash) {
+			push(@variables, $hash{$key}[0] . "|" . $hash{$key}[1] . "|" . $hash{$key}[2]);
+		}
+	}
 
-    return join(",", @variables);
+	return join(",", @variables);
 }
 
 sub mq_process_items {
@@ -241,16 +241,16 @@ sub mq_process_items {
 	my $npc = plugin::val('$npc');
 	my $trade = undef;
 	
-	if($npc->EntityVariableExists("_mq_trade")) {
+	if ($npc->EntityVariableExists("_mq_trade")) {
 		$trade = decode_eqemu_item_hash($npc->GetEntityVariable("_mq_trade")); 
 	} else {
 		$trade = {};
 	}
 	
 	foreach my $k (keys(%{$hashref})) {
-		next if($k == 0);
+		next if ($k == 0);
 		
-		if(defined $trade->{$k}) {
+		if (defined $trade->{$k}) {
 			$trade->{$k} = $trade->{$k} + $hashref->{$k};
 		} else {
 			$trade->{$k} = $hashref->{$k};
@@ -266,15 +266,15 @@ sub check_mq_handin {
 	my $npc = plugin::val('$npc');
 	my $trade = undef;
 	
-	if($npc->EntityVariableExists("_mq_trade")) {
+	if ($npc->EntityVariableExists("_mq_trade")) {
 		$trade = decode_eqemu_item_hash($npc->GetEntityVariable("_mq_trade"));
 	} else {
 		return 0;
 	}
 	
 	foreach my $req (keys %required) {
-		if((!defined $trade->{$req}) || ($trade->{$req} < $required{$req})) {
-				return 0;
+		if ((!defined $trade->{$req}) || ($trade->{$req} < $required{$req})) {
+			return 0;
 		}
 	}
 	
@@ -301,7 +301,7 @@ sub encode_eqemu_item_hash {
 	my $i = 0;
 	
 	foreach my $k (keys(%{$hashref})) {
-		if($i != 0) {
+		if ($i != 0) {
 			$str .= ",";
 		} else {
 			$i = 1;
@@ -324,7 +324,7 @@ sub decode_eqemu_item_hash {
 	for(my $i = 0; $i < $val_len; $i++) {
 		my @subval = split(/=/, $vals[$i]);
 		my $subval_len = @subval;
-		if($subval_len == 2) {
+		if ($subval_len == 2) {
 			my $key = $subval[0];
 			my $value = $subval[1];
 			

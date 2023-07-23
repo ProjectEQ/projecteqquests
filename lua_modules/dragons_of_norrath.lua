@@ -387,14 +387,12 @@ function don.character_state:has_min_faction(faction_level)
 end
 
 function don.character_state:load_flags()
-  -- uses cached qglobals instead of data buckets to limit db access for unthrottled flag checks
-  local qglobals = eq.get_qglobals(self.client)
-  self.flags = tonumber(qglobals[self.flag_key] or 0)
+  self.flags = tonumber(self.client:GetBucket(self.flag_key)) or 0
 end
 
 function don.character_state:reset_flags()
   self.flags = 0
-  eq.delete_global(self.flag_key)
+  self.client:DeleteBucket(self.flag_key)
 end
 
 function don.character_state:has_flag(flag)
@@ -403,7 +401,7 @@ end
 
 function don.character_state:remove_flag(flag)
   self.flags = bit.band(self.flags, bit.bnot(flag))
-  eq.set_global(self.flag_key, tostring(self.flags), 5, "F")
+  self.client:SetBucket(self.flag_key, tostring(self.flags))
 end
 
 function don.character_state:set_flag(flag, silent)
@@ -411,7 +409,7 @@ function don.character_state:set_flag(flag, silent)
   local has_flag = self:has_flag(flag)
   if not has_flag then
     self.flags = bit.bor(self.flags, flag)
-    eq.set_global(self.flag_key, tostring(self.flags), 5, "F")
+    self.client:SetBucket(self.flag_key, tostring(self.flags))
     if not silent then
       self.client:Message(MT.Yellow, "You have received a character flag!")
     end

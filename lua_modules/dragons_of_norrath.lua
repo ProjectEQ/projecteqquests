@@ -30,8 +30,8 @@ don.faction = {
 
 don.flags = {
   key = {
-    [don.faction_id.dark_reign]       = "don_dark_reign",
-    [don.faction_id.norraths_keepers] = "don_norraths_keepers",
+    [don.faction_id.dark_reign]       = "don_evil",
+    [don.faction_id.norraths_keepers] = "don_good",
   },
 
   -- Norrath's Keepers: Gift of the Keepers -- Dark Reign: Gift of the Dark Reign

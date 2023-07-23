@@ -12,7 +12,7 @@ function eq.DispatchCommands(e)
 	local command = commands[e.command];
 
 	for k,v in pairs(e.args) do
-		eq.debug("[command.lua] key " .. k .. ' value ' .. v);
+		eq.debug("[command.lua] key " .. k .. ' value ' .. v, 3);
 	end
 
 	if(command) then

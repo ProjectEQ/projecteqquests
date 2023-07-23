@@ -3,11 +3,14 @@ local don = require("dragons_of_norrath")
 local function show_help(client)
   local don_status_good = eq.say_link("#don status good", false, "good")
   local don_status_evil = eq.say_link("#don status evil", false, "evil")
+  local don_teleport_good = eq.say_link("#don teleport good", false, "good")
+  local don_teleport_evil = eq.say_link("#don teleport evil", false, "evil")
 
   client:Message(MT.White, "------------------------------------------------")
   client:Message(MT.White, "Dragons of Norrath GM command usage:")
   client:Message(MT.White, "------------------------------------------------")
   client:Message(MT.White, eq.say_link("#don status") .. " [" .. don_status_good .. "|" .. don_status_evil .. "] - view target's DoN faction and flags (both if not specified)")
+  client:Message(MT.White, eq.say_link("#don teleport") .. " [" .. don_teleport_good .. "|" .. don_teleport_evil .. "] - teleport to respective camps")
   client:Message(MT.White, eq.say_link("#don aa") .. " - show DoN AA on target")
   client:Message(MT.White, eq.say_link("#don aa fix") .. " - remove invalid (missing required faction) DoN AA from target")
   client:Message(MT.White, "#don aa remove <good|evil> - remove all DoN AA on target")
@@ -273,6 +276,16 @@ local function command_don(e)
 
   if e.args[1] == "status" then
     show_status(e.self, target, e.args[2])
+  elseif e.args[1] == "teleport" then
+    if e.args[2] == "good" then
+      e.self:Message(MT.Lime, "Teleporting to Norrath's Keepers camp")
+      e.self:MovePCInstance(27, 0, 557, 3616, -11, 434)
+    elseif e.args[2] == "evil" then 
+      e.self:Message(MT.Lime, "Teleporting to Dark Reign camp")
+      e.self:MovePCInstance(27, 0, -368, 3098, 41, 169)
+    else 
+      sender:Message(MT.Lime, "Invalid teleport option")
+    end
   elseif e.args[1] == "faction" and e.args[2] then
     on_faction_cmd(e.self, target, e.args[2], e.args[3], e.args[4])
   elseif e.args[1] == "flags" and e.args[2] and e.args[3] then

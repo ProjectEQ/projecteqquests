@@ -23,9 +23,9 @@ end
 local function get_state(client, faction)
   local player = nil
   if faction == 'good' then
-    player = don.character_state.new(client, don.faction_id.norraths_keepers)
+    player = don.character_state.new(client, don.faction_id.good)
   elseif faction == 'evil' then
-    player = don.character_state.new(client, don.faction_id.dark_reign)
+    player = don.character_state.new(client, don.faction_id.evil)
   end
   return player
 end
@@ -135,7 +135,7 @@ local flag_descriptions = {
 
 local function show_flags(sender, target, faction_id)
   local player = don.character_state.new(target, faction_id)
-  local mt = (faction_id == don.faction_id.norraths_keepers) and MT.Lime or MT.Cyan
+  local mt = (faction_id == don.faction_id.good) and MT.Lime or MT.Cyan
 
   sender:Message(mt, ("Flags: 0x%08x bits: %s"):format(player.flags, get_binary(player.flags)))
   sender:Message(MT.White, "------------------------------------------------")
@@ -148,7 +148,7 @@ local function show_flags(sender, target, faction_id)
       sender:Message(msg_mt, "-- " .. row.desc)
     elseif row.flag then
       local msg_mt = player:has_flag(row.flag) and mt or MT.DimGray
-      local optional = faction_id == don.faction_id.norraths_keepers and row.good or row.evil
+      local optional = faction_id == don.faction_id.good and row.good or row.evil
       sender:Message(msg_mt, ("-- %s %s"):format(row.desc, optional or ''))
     end
   end
@@ -200,8 +200,8 @@ end
 local function on_aa_cmd(sender, target, command, faction, value)
   if command == "fix" then
     sender:Message(MT.White, ("Removing invalid DoN AA on (%s) (character id: %d)"):format(target:GetCleanName(), target:CharacterID()))
-    don.remove_invalid_aa(target, don.faction_id.norraths_keepers)
-    don.remove_invalid_aa(target, don.faction_id.dark_reign)
+    don.remove_invalid_aa(target, don.faction_id.good)
+    don.remove_invalid_aa(target, don.faction_id.evil)
   elseif command == "remove" then
     local remove_aa = function(aa_table)
       for _, aa in ipairs(aa_table) do
@@ -214,9 +214,9 @@ local function on_aa_cmd(sender, target, command, faction, value)
     end
 
     if faction == "good" then
-      remove_aa(don.aa[don.faction_id.norraths_keepers])
+      remove_aa(don.aa[don.faction_id.good])
     elseif faction == "evil" then
-      remove_aa(don.aa[don.faction_id.dark_reign])
+      remove_aa(don.aa[don.faction_id.evil])
     else
       sender:Message(MT.Red, "faction name must be \"good\" (Norrath's Keepers) or \"evil\" (Dark Reign)")
     end
@@ -232,9 +232,9 @@ local function on_aa_cmd(sender, target, command, faction, value)
     sender:Message(MT.White, "------------------------------------------------")
     sender:Message(MT.White, ("Dragons of Norrath AA for (%s) (character id: %d)"):format(target:GetCleanName(), target:CharacterID()))
     sender:Message(MT.White, "------------------------------------------------")
-    show_aa(MT.Lime, don.aa[don.faction_id.norraths_keepers])
+    show_aa(MT.Lime, don.aa[don.faction_id.good])
     sender:Message(MT.White, "------------------------------------------------")
-    show_aa(MT.Cyan, don.aa[don.faction_id.dark_reign])
+    show_aa(MT.Cyan, don.aa[don.faction_id.evil])
     sender:Message(MT.White, "------------------------------------------------")
   end
 end
@@ -244,21 +244,21 @@ local function show_status(sender, target, which)
   sender:Message(MT.White, ("Dragons of Norrath status for (%s) (character id: %d)"):format(target:GetCleanName(), target:CharacterID()))
 
   if which ~= "evil" then
-    local good = don.character_state.new(target, don.faction_id.norraths_keepers)
+    local good = don.character_state.new(target, don.faction_id.good)
     sender:Message(MT.White, "------------------------------------------------")
     sender:Message(MT.Lime, "Norrath's Keepers")
     sender:Message(MT.White, "------------------------------------------------")
     sender:Message(MT.Lime, ("Faction (reaction): %s (%s)"):format(good.faction_level, faction_desc(good.faction_level)))
-    show_flags(sender, target, don.faction_id.norraths_keepers)
+    show_flags(sender, target, don.faction_id.good)
   end
 
   if which ~= "good" then
-    local evil = don.character_state.new(target, don.faction_id.dark_reign)
+    local evil = don.character_state.new(target, don.faction_id.evil)
     sender:Message(MT.White, "------------------------------------------------")
     sender:Message(MT.Cyan, "Dark Reign")
     sender:Message(MT.White, "------------------------------------------------")
     sender:Message(MT.Cyan, ("Faction (reaction): %s (%s)"):format(evil.faction_level, faction_desc(evil.faction_level)))
-    show_flags(sender, target, don.faction_id.dark_reign)
+    show_flags(sender, target, don.faction_id.evil)
   end
 
   sender:Message(MT.White, "------------------------------------------------")

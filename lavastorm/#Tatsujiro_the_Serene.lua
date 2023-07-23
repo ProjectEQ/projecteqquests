@@ -10,7 +10,7 @@ function event_say(e)
     return
   end
 
-  local player = don.character_state.new(e.other, don.faction_id.norraths_keepers)
+  local player = don.character_state.new(e.other, don.faction_id.good)
   if not player:has_min_faction(don.faction.Indifferent) then
     return -- todo: random low faction "talking lump of refuse" messages should be handled by source
   end
@@ -43,15 +43,15 @@ function event_trade(e)
   local item_lib = require("items")
 
   if item_lib.check_turn_in(e.trade, {item1 = 57208}) then -- Norrath's Keepers Token
-    local player = don.character_state.new(e.other, don.faction_id.norraths_keepers)
+    local player = don.character_state.new(e.other, don.faction_id.good)
     if not player:has_min_faction(don.faction.Apprehensive) then
       e.other:Message(MT.NPCQuestSay, ("Tatsujiro the Serene says, 'I'm sorry, %s, but you are not in good standing with Norrath's Keepers so I cannot accept this token from you.'"):format(e.other:GetCleanName()))
       e.self:Say(("I have no need for this, %s. You can have it back."):format(e.other:GetCleanName()))
       e.other:SummonItem(57208) -- Norrath's Keepers Token
     else
       e.other:Message(MT.NPCQuestSay, ("Tatsujiro the Serene says, 'Much appreciated, %s.  We do so like to keep track of the work Norrathians do in our name.'"):format(e.other:GetCleanName()))
-      e.other:QuestReward(e.self, { faction = { don.faction_id.norraths_keepers, 20 } })
-      don.remove_invalid_aa(e.other, don.faction_id.dark_reign)
+      e.other:QuestReward(e.self, { faction = { don.faction_id.good, 20 } })
+      don.remove_invalid_aa(e.other, don.faction_id.evil)
     end
   end
 

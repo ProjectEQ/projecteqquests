@@ -10,7 +10,7 @@ function event_say(e)
     return
   end
 
-  local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+  local player = don.character_state.new(e.other, don.faction_id.evil)
   if not player:has_min_faction(don.faction.Indifferent) then
     return -- todo: random low faction "talking lump of refuse" messages should be handled by source
   end
@@ -45,15 +45,15 @@ function event_trade(e)
   local item_lib = require("items")
 
   if item_lib.check_turn_in(e.trade, {item1 = 57209}) then -- Dark Reign Token
-    local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+    local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Apprehensive) then
       e.other:Message(MT.NPCQuestSay, "Xeib Darkskies says, 'You don't actually think that I'm going to reward you for this, do you?  Begone, dog, before I call the guards!'")
       e.self:Say(("I have no need for this, %s. You can have it back."):format(e.other:GetCleanName()))
       e.other:SummonItem(57209) -- Dark Reign Token
     else
       e.other:Message(MT.NPCQuestSay, "Xeib Darkskies says, 'Expecting an applause? Not a chance! I will, however, put your name in my log as one who has at least made an effort on behalf of the Dark Reign.'")
-      e.other:QuestReward(e.self, { faction = { don.faction_id.dark_reign, 20 } })
-      don.remove_invalid_aa(e.other, don.faction_id.norraths_keepers)
+      e.other:QuestReward(e.self, { faction = { don.faction_id.evil, 20 } })
+      don.remove_invalid_aa(e.other, don.faction_id.good)
     end
   end
 

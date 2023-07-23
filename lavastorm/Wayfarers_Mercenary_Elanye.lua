@@ -14,7 +14,7 @@ function event_say(e)
   end
 
   if e.message:findi("hail") then
-    local player = don.character_state.new(e.other, don.faction_id.norraths_keepers)
+    local player = don.character_state.new(e.other, don.faction_id.good)
     if not player:has_min_faction(don.faction.Indifferent) then -- only offered up to apprehensive
       e.other:Message(MT.NPCQuestSay, "Wayfarers Mercenary Elanye says, 'I'm not that interested in becoming a servant of those followers of Firiona Vie myself, but I don't mind the cash they pay me. I keep most for me and throw a little back to the Wayfarers crew. If you're looking to get on their good side, I can make some money and you can gain their audience.'")
       eq.task_selector(tasks) -- note: unknown condition on live where only one task is offered sometimes

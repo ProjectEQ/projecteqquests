@@ -14,7 +14,7 @@ function event_say(e)
   end
 
   if e.message:findi("hail") then
-    local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+    local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Indifferent) then -- only offered up to apprehensive
       e.other:Message(MT.NPCQuestSay, "Wayfarers Mercenary Varein says, 'Feeling a bit like an outsider? I certainly understand that as part of the brotherhood, though I don't envy you. We've been able to make a good bit o' coin off the Dark Reign.  Give us a hand and I'll see about helping you get inside.'")
       eq.task_selector(tasks) -- note: unknown condition on live where only one task is offered sometimes

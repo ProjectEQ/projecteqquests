@@ -29,6 +29,7 @@ local function zone_death(e)
       eq.debug("Dropping Small Spider Stone on " .. e.killed:GetName())
       e.corpse:AddItem(81912, 1) -- Small Spider Stone
       e.corpse:ResetDecayTimer() -- needed if corpse had no other loot
+      dropped_small = true
     end
   end
 end

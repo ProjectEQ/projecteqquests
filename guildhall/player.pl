@@ -79,13 +79,3 @@ sub EVENT_POPUPRESPONSE {
     #quest::movepc(480,-23,-619,36);
   }
 }
-
-sub EVENT_CLICKDOOR
-{
-# This will move RoF clients to their instance, the rest are handled in the DB
-  if (($client->GetClientVersionBit() & 4294967264) != 0) {
-    if ($doorid == 2 || $doorid == 5) {
-      quest::MovePCInstance(344, 0, 0, 588, 1.75, 260); # Zone: guildlobby
-    }
-  }
-}

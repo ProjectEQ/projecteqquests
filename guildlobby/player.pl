@@ -19,18 +19,6 @@ sub EVENT_ENTERZONE {
 
 	#if I am idle for more than xx seconds, auto-afk and go invisible/don't draw model
 	quest::settimer("afk_check", 1200); #20 minutes
-
-	if(($client->GetClientVersionBit() & 4294967264)!= 0) {
-		if($client->GetInstanceID() != 5) {
-			quest::settimer(1,10);
-			$client->Message(0,"Invalid Zone(344:0): You will be redirected to the proper instance in 10 seconds.");
-		}
-	} else {
-		if($client->GetInstanceID() == 5) {
-			quest::settimer(2,10);
-			$client->Message(0,"Invalid Zone(344:5): You will be redirected to the proper zone in 10 seconds.");
-		}
-	}
 }
 
 sub EVENT_SIGNAL {

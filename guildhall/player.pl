@@ -85,10 +85,7 @@ sub EVENT_CLICKDOOR
 # This will move RoF clients to their instance, the rest are handled in the DB
   if (($client->GetClientVersionBit() & 4294967264) != 0) {
     if ($doorid == 2 || $doorid == 5) {
-# Do we really need the check here?
-#      if ($client->CalculateDistance(-3.4, -162.9, 6.9) <= 30) {
-        quest::MovePCInstance(344, 5, 0, 588, 1.75, 260); # Zone: guildlobby
-#      }
+      quest::MovePCInstance(344, 0, 0, 588, 1.75, 260); # Zone: guildlobby
     }
   }
 }

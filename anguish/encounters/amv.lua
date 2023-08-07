@@ -6,49 +6,46 @@ a_languished_convert (317110)
 Gaze of Anguish 5680 70s
 Touch of Anguish 5679 70s
 Mark of Death 5684 75s 
-
-[Thu Mar 23 19:29:35 2017] Arch Magus Vangl begins to cast a spell. <Feedback Dispersion>
-[Thu Mar 23 19:29:35 2017] You resist the Feedback Dispersion spell!
-
-yellow zonewide? : The power of the focus energizes the Arch Magus.
-The power of the focus falters. no idea why this happens
-this happens alternating 30s/40s
 --]]
 
 local convert_min_hit=278;
 local convert_max_hit=1855;
-local cazic_cooldown =0;
+local cazic_cooldown	= false;
 
 function AMV_Spawn(e)
 	eq.unique_spawn(317108,0,0, 617,5080,278,496); --Vangl`s_Focus (317108)
 	eq.set_next_hp_event(75);
-	
-	eq.set_timer("close_doors",30*1000);	
+	eq.set_timer("close_doors",30*1000);
 end
 
 function AMV_HP(e)
-    if (e.hp_event == 75) then
-        eq.zone_emote(13, "A voice echoes from behind the shield, 'Vangl, you are my mightiest guardian, yet you allow these insects to remain in my presence?  Destroy them now or I will rend the flesh from your worthless frame!");
+    if e.hp_event == 75 then
+        eq.zone_emote(MT.Red, "A voice echoes from behind the shield, 'Vangl, you are my mightiest guardian, yet you allow these insects to remain in my presence?  Destroy them now or I will rend the flesh from your worthless frame!");
         eq.set_next_hp_event(50);
 		e.self:CameraEffect(2000,5);
-	elseif (e.hp_event == 50) then
-        eq.zone_emote(13, "The deafening voice shakes the room again, 'You expect to defeat me?  I have lived longer than you can begin to comprehend.  I walked the realms before your pitiful gods were spawned.  I flew the skies in a time before your world's creation and I shall enslave new worlds long after you and your gods are forgotten.  You fight only to die.  I   AM   ETERNAL!");
+	elseif e.hp_event == 50 then
+        eq.zone_emote(MT.Red, "The deafening voice shakes the room again, 'You expect to defeat me?  I have lived longer than you can begin to comprehend.  I walked the realms before your pitiful gods were spawned.  I flew the skies in a time before your world's creation and I shall enslave new worlds long after you and your gods are forgotten.  You fight only to die.  I   AM   ETERNAL!");
         eq.set_next_hp_event(10);
 		e.self:CameraEffect(2000,5);
-	elseif (e.hp_event == 10) then
-		eq.zone_emote(13, "The voice echoes from behind the shield, 'Vangl, do not think that you can escape me in death.  After I destroy the infiltrators I will find where you are to spend eternity.  Death does not end your obligation to me, wretched thrall!");
+	elseif e.hp_event == 10 then
+		eq.zone_emote(MT.Red, "The voice echoes from behind the shield, 'Vangl, do not think that you can escape me in death.  After I destroy the infiltrators I will find where you are to spend eternity.  Death does not end your obligation to me, wretched thrall!");
 		e.self:CastSpell(5681, e.self:GetTarget():GetID()); --feedback dispersion
 		e.self:CameraEffect(2000,5);
 	end		
 end
 
 function AMV_Combat(e)
-	if (e.joined == true) then
-		eq.set_timer("adds", math.random(30,70) * 1000);	
+	if e.joined then
+		if math.random(2) == 1 then
+			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1); -- NPC: a_languished_convert
+		else
+			eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1); -- NPC: a_languished_convert
+		end
+		eq.set_timer("adds", math.random(55,140) * 1000);
 		eq.set_timer("touch", math.random(10,35) * 1000);
 		eq.set_timer("gaze", math.random(35,70) * 1000);
 		eq.set_timer("mark", math.random(55,75) * 1000);
-		--eq.set_timer("mark", 3 * 1000);
+		-- eq.set_timer("mark", 3 * 1000);
 		eq.set_timer("focus30", math.random(15,30) * 1000);
 		eq.stop_timer("reset");
 	else
@@ -63,64 +60,66 @@ function AMV_Combat(e)
 end
 
 function AMV_Timer(e)
-	if (e.timer == "check_hp") then
-	elseif (e.timer == "touch") then
+	if e.timer == "check_hp" then
+	elseif e.timer == "touch" then
 		e.self:CastSpell(5679, e.self:GetTarget():GetID()); -- Spell: Touch of Anguish
-		eq.set_timer("touch",70*1000); 
-	elseif (e.timer == "gaze") then
+		eq.set_timer("touch", 70 * 1000);
+	elseif e.timer == "gaze" then
 		e.self:CastSpell(5680, e.self:GetTarget():GetID()); -- Spell: Gaze of Anguish
-		eq.set_timer("gaze",70*1000); 
-	elseif (e.timer == "mark") then				
+		eq.set_timer("gaze", 70 * 1000);
+	elseif e.timer == "mark" then
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
-			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then	
+			if client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <= 1000 then
 				e.self:SendBeginCast(5684, 0);
-				e.self:SpellFinished(5684, client:CastToMob());	
-				client:Message(15,"You feel the cold grip of death looming over you.");
-				eq.debug("mark on: " .. client:GetName());
+				e.self:SpellFinished(5684, client:CastToMob()); -- Spell: Mark of Death
+				client:Message(MT.Yellow,"You feel the cold grip of death looming over you.");
+				-- eq.debug("mark on: " .. client:GetName());
 			end
 		end
-		eq.set_timer("check_mark",30* 1000);  --amv mark of death triggers after 30s
+		eq.set_timer("check_mark", 30 * 1000);  -- amv mark of death triggers after 30s
 		local seconds = 45; -- 45 seconds after we check the mark we will re-mark
-		if (e.self:GetHPRatio() < 75) then
+		if e.self:GetHPRatio() < 75 then
 			seconds = 30; -- unless our HP is less than 75%, then it's in 30 seconds
 		end
 		eq.set_timer("mark", (seconds + 30) * 1000);
-	elseif (e.timer == "check_mark") then				
+	elseif e.timer == "check_mark" then
 		local now_clients = eq.get_entity_list():GetClientList();
 		for client in now_clients.entries do
-			if (client.valid and client:FindBuff(5684)) then	
+			if client.valid and client:Admin() < 80 and client:FindBuff(5684) then -- No GM Check
 				e.self:SendBeginCast(982, 0);
-				e.self:SpellFinished(982, client:CastToMob());	
-				eq.debug("cazic touch: " .. client:GetName());
+				e.self:SpellFinished(982, client:CastToMob());
+				-- eq.debug("cazic touch: " .. client:GetName());
 			end
 		end
 		eq.stop_timer("check_mark");
-	elseif (e.timer == "adds") then
-		if(math.random(2) == 1) then
+	elseif e.timer == "adds" then
+		if math.random(2) == 1 then
 			eq.spawn2(317110,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1); -- NPC: a_languished_convert
 		else
 			eq.spawn2(317110,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1); -- NPC: a_languished_convert
 		end
-	elseif (e.timer == "focus30") then
+		eq.stop_timer("adds");
+		eq.set_timer("adds", math.random(55,140) * 1000);
+	elseif e.timer == "focus30" then
 		eq.stop_timer("focus30");
-		eq.set_timer("focus40",40*1000);
-		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
-	elseif (e.timer == "focus40") then
+		eq.set_timer("focus40", 40 * 1000);
+		eq.zone_emote(MT.Yellow, "The power of the focus energizes the Arch Magus.");
+	elseif e.timer == "focus40" then
 		eq.stop_timer("focus40");
-		eq.set_timer("focus30",30*1000);
-		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
-	elseif (e.timer == "reset") then
+		eq.set_timer("focus30", 30 * 1000);
+		eq.zone_emote(MT.Yellow, "The power of the focus energizes the Arch Magus.");
+	elseif e.timer == "reset" then
 		eq.stop_timer("reset");
 		eq.set_next_hp_event(75);
 		eq.depop_all(317110);
 		e.self:SetHP(e.self:GetMaxHP())
-		e.self:CastSpell(3791, e.self:GetID())
+		e.self:CastSpell(3791, e.self:GetID()); -- Spell: Ocean's Cleansing
 		e.self:WipeHateList();
-		convert_min_hit=278;
-		convert_max_hit=1855;
-		e.self:GotoBind(); --this should not be needed, he should walk home.  just in case
-	elseif (e.timer =="close_doors") then			
+		convert_min_hit = 278;
+		convert_max_hit = 1855;
+		e.self:GotoBind(); -- this should not be needed, he should walk home.  just in case
+	elseif e.timer == "close_doors" then	
 		eq.get_entity_list():FindDoor(57):SetOpenType(58);
 		eq.get_entity_list():FindDoor(58):SetOpenType(58);
 		eq.get_entity_list():FindDoor(59):SetOpenType(58);
@@ -129,19 +128,16 @@ function AMV_Timer(e)
 		eq.get_entity_list():FindDoor(58):ForceClose(e.self);
 		eq.get_entity_list():FindDoor(59):ForceClose(e.self);
 		eq.get_entity_list():FindDoor(60):ForceClose(e.self);
-		eq.stop_timer("close_doors");		
+		eq.stop_timer("close_doors");
     end
 end
 
 function AMV_Death(e)
 	--check if OMM is up and there are no preexisting AMV lockouts in raid -> spawn chest
-	--eq.unique_spawn(317112,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Ornate_Chest (317112)
-	eq.zone_emote(13,"As the Arch Magus' corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep gutteral laugh growing louder.");
+	eq.zone_emote(MT.Red,"As the Arch Magus' corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep gutteral laugh growing louder.");
 	e.self:CameraEffect(15000,5);
 	eq.depop_all(317108);
-	
 	eq.signal(317116 , 317107); -- NPC: zone_status
-
 	eq.get_entity_list():FindDoor(57):SetOpenType(59);
 	eq.get_entity_list():FindDoor(58):SetOpenType(59);
 	eq.get_entity_list():FindDoor(59):SetOpenType(59);
@@ -154,15 +150,15 @@ end
 
 function Convert_Spawn(e)
 	eq.set_timer("grow_stronger",10*1000);
-	convert_min_hit=278;
-	convert_max_hit=1855;
+	convert_min_hit = 278;
+	convert_max_hit = 1855;
 	e.self:ModifyNPCStat("min_hit", tostring(convert_min_hit));
-	e.self:ModifyNPCStat("max_hit", tostring(convert_max_hit));	
+	e.self:ModifyNPCStat("max_hit", tostring(convert_max_hit));
 end
 
 --damage is multiplied by 1.2 every 10 sec
 function Convert_Timer(e)
-	if (e.timer == "grow_stronger") then
+	if e.timer == "grow_stronger" then
 		convert_min_hit=math.ceil(convert_min_hit*1.2);
 		convert_max_hit=math.ceil(convert_max_hit*1.2); 
 		e.self:ModifyNPCStat("min_hit", tostring(convert_min_hit));
@@ -172,44 +168,44 @@ end
 
 function Focus_Spawn(e)
 	eq.set_timer("crushing",15*1000);
-	cazic_cooldown =0;
+	cazic_cooldown = false;
 end
 
 function Focus_Combat(e)
-	if (e.joined == true) then
-		eq.set_timer("dt",1*1000); 
+	if e.joined then
+		eq.set_timer("dt",1*1000);
 	else
 		eq.stop_timer("dt");
-		cazic_cooldown =0;
+		cazic_cooldown = false;
 	end  
 end
 
 function Focus_Timer(e)
-	if (e.timer == "dt" and cazic_cooldown==0) then
-		e.self:CastSpell(982, e.self:GetTarget():GetID()); --Cazic Touch
-		cazic_cooldown =1;
-		eq.set_timer("reset_cd",15*1000);
-	elseif(e.timer == "reset_cd") then
+	if e.timer == "dt" and not cazic_cooldown then
+		e.self:CastSpell(982, e.self:GetTarget():GetID()); -- Spell: Cazic Touch
+		cazic_cooldown = true;
+		eq.set_timer("reset_cd", 15 * 1000);
+	elseif e.timer == "reset_cd" then
 		eq.stop_timer("reset_cd");
-	elseif(e.timer == "crushing") then 
-		e.self:CastSpell(5683, e.self:GetTarget():GetID()); --Crushing Presence
+	elseif e.timer == "crushing" then 
+		e.self:CastSpell(5683, e.self:GetTarget():GetID()); -- Spell: Crushing Presence
 	end
 end
 
 
 function event_encounter_load(e)
-	eq.register_npc_event('amv', Event.spawn,         	317107, AMV_Spawn); 
-	eq.register_npc_event('amv', Event.combat,        	317107, AMV_Combat); 
+	eq.register_npc_event('amv', Event.spawn,         	317107, AMV_Spawn);
+	eq.register_npc_event('amv', Event.combat,        	317107, AMV_Combat);
 	eq.register_npc_event('amv', Event.timer,         	317107, AMV_Timer);
 	eq.register_npc_event('amv', Event.hp,         		317107, AMV_HP);
 	eq.register_npc_event('amv', Event.death_complete,	317107, AMV_Death);
-	
-	eq.register_npc_event('amv', Event.spawn, 			317108, Focus_Spawn); 
-	eq.register_npc_event('amv', Event.combat, 			317108, Focus_Combat);  
+
+	eq.register_npc_event('amv', Event.spawn, 			317108, Focus_Spawn);
+	eq.register_npc_event('amv', Event.combat, 			317108, Focus_Combat);
 	eq.register_npc_event('amv', Event.timer, 			317108, Focus_Timer);
-	
+
 	eq.register_npc_event('amv', Event.spawn, 			317110, Convert_Spawn);
-	eq.register_npc_event('amv', Event.timer, 			317110, Convert_Timer);    
+	eq.register_npc_event('amv', Event.timer, 			317110, Convert_Timer);
 end
 
 function event_encounter_unload(e)

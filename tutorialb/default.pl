@@ -14,7 +14,7 @@ sub EVENT_ITEM {
    # Prevent pets or charmed NPCs from using the default.pl
    if (!$npc || $npc->GetOwnerID() || $npc->GetSwarmOwner())
    {
-      plugin::GivePetItems();
+      # plugin::GivePetItems();
       return;
    }
 

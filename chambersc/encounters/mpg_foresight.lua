@@ -141,7 +141,7 @@ function Do_Hazard()
 		Do_Hazard();
 	else
 		last_hazard = num;
-		eq.zone_emote(14, hazards[num][1]);
+		eq.zone_emote(MT.Lime, hazards[num][1]);
 		hazards[num][2]();
 	end
 end
@@ -149,7 +149,6 @@ end
 function Boss_Timer(e)
 	local client;
 	local num;
-	eq.debug("name: " .. e.self:GetName() .. " timer: " .. e.timer);
 	eq.stop_timer(e.timer);
 	if e.timer == "equipment" then
 		client = eq.get_entity_list():GetRandomClient(-204,270,65,150000);
@@ -210,7 +209,6 @@ function Kyv_Timer(e)
 			num = math.random(1,#kyvs);
 			kyv_targets[i] = { client:GetID(), num, {client:GetX(), client:GetY() }};
 			client:Message(MT.Lime, kyvs[num][1]);
-			eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
 			eq.set_timer('kyv_action', 3000);
 		end
 	elseif e.timer == 'kyv_action' then
@@ -222,7 +220,6 @@ function Kyv_Timer(e)
 			if not kyvs[kyv_targets[i][2]][2](e, client, loc) then
 				client:Message(MT.Lime, kyvs[kyv_targets[i][2]][4]);
 				e.self:CastSpell(kyvs[kyv_targets[i][2]][3], client:GetID(), 0, 4500);
-				eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
 			else
 				msg = 'An arrow narrowly misses you.';
 			end
@@ -236,7 +233,6 @@ end
 -- Return false if they did not
 function kyv_move(e, client, loc)
 	if client.valid then 
-		eq.debug("name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_move old_x: " .. loc[1] .. " old_y:" .. loc[2]);
 		if loc[1] == client:GetX() and loc[2] == client:GetY() then
 			return false;
 		end
@@ -248,7 +244,6 @@ end
 -- Return false if they are moving or engaged in battle
 function kyv_stop(e, client, loc)
 	if client.valid then 
-		eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_stop");
 		if client:IsMoving() or client:IsEngaged() then
 			return false;
 		end
@@ -260,7 +255,6 @@ end
 -- return false if client has not ducked
 function kyv_duck(e, client, loc)
 	if client.valid then 
-		eq.debug( "name: " .. e.self:GetCleanName() .. " timer: " .. e.timer .. " client: " .. client:GetName() .. " kyv_duck");
 		if client:GetAppearance() == Appearance.Crouching then
 			return true;
 		end
@@ -273,7 +267,6 @@ function Hazard_Spawn(e)
 end
 
 function Hazard_Timer(e)
-	eq.debug("name: " .. e.self:GetName() .. " timer: " .. e.timer);
 	eq.stop_timer(e.timer);
 	if e.timer == "north" then
 		ae_check(e, -327, -89, 270, 398);
@@ -324,8 +317,6 @@ function ae_check(e, xmin, xmax, ymin, ymax)
 		if v.valid then 
 			x = v:GetX();
 			y = v:GetY();
-			eq.debug("client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
-			eq.debug("xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
 			if x < xmin or x > xmax or y < ymin or y > ymax then
 				v:Message(MT.Lime,'The room explodes with chaotic energy.');
 				--e.self:CastSpell(5693, v:GetID());
@@ -380,7 +371,7 @@ function Dragorn_Timer(e)
 			if v.valid then 
 				x = v:GetX(); y = v:GetY(); z = v:GetZ();
 				if e.self:CalculateDistance( x, y, z ) < dist then
-					v:Message(8, dragorns[num][1]);
+					v:Message(MT.Lime, dragorns[num][1]);
 				end
 			end
 		end

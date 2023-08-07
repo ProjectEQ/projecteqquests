@@ -63,6 +63,8 @@ function Ingenuity_Say(e)
 		e.self:Say("Very well!  Let the battle commence!");
 		eq.set_timer("minutes", 1 * 60 * 1000);
 		eq.set_timer("reflective", 45 * 1000);
+		eq.set_timer("ds_clear", 5 * 1000);
+		eq.set_timer("pet_clear", 3 * 60 * 1000);
 		eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
 		event_active = true;
 	end
@@ -79,7 +81,7 @@ function Ingenuity_Timer(e)
 			eq.stop_all_timers();
 			eq.spawn_condition(this_zone,instance_id,1,0);
 
-			eq.zone_emote(13, "You have been found unworthy.");
+			eq.zone_emote(MT.Red, "You have been found unworthy.");
 			eq.depop();
 
 			local dz = eq.get_expedition()
@@ -94,6 +96,26 @@ function Ingenuity_Timer(e)
 		-- Spell: Reflective Sheen - 5822 
 		e.self:Emote("begins to cast a spell.  <Reflective Sheen>");
 		e.self:CastSpell(5822, e.self:GetID()); -- Spell: Reflective Sheen
+	elseif e.timer == "ds_clear" then
+		e.self:ForeachHateList(
+			function(ent, hate, damage, frenzy)
+				if ent:IsClient() or ent:IsPet() then
+					local currclient = ent:CastToClient();
+					if currclient.valid then
+						currclient:BuffFadeByEffect(59); -- Fade all DS
+					end
+				end
+			end
+		);
+	elseif e.timer == "pet_clear" then
+		e.self:ForeachHateList(
+			function(ent, hate, damage, frenzy)
+				if ent:IsPet() then -- Buh Bye
+					ent:Damage(e.self, 32000, 982, 1);
+					e.self:Say("I'll not be bested by your mindless servants.");
+				end
+			end
+		);
 	end
 end
 

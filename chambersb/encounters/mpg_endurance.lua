@@ -103,19 +103,19 @@ function Boss_Signal(e)
 		event_started = true;
 	elseif e.signal == 10 then
 		if not eq.has_timer("add1") then
-			eq.set_timer("add1", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add1", math.random(2,30) * 1000); -- Respawn
 		elseif not eq.has_timer("add2") then
-			eq.set_timer("add2", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add2", math.random(2,30) * 1000); -- Respawn
 		elseif not eq.has_timer("add3") then
-			eq.set_timer("add3", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add3", math.random(2,30) * 1000); -- Respawn
 		elseif not eq.has_timer("add4") then
-			eq.set_timer("add4", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add4", math.random(2,30) * 1000); -- Respawn
 		elseif not eq.has_timer("add5") then
-			eq.set_timer("add5", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add5", math.random(2,30) * 1000); -- Respawn
 		elseif not eq.has_timer("add6") then
-			eq.set_timer("add6", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add6", math.random(2,30) * 1000); -- Respawn
 		elseif not eq.has_timer("add7") then
-			eq.set_timer("add7", 3 * 60 * 1000); -- 3 Minute Timer to respawn
+			eq.set_timer("add7", math.random(2,30) * 1000); -- Respawn
 		end
 	end
 end
@@ -170,13 +170,13 @@ function Boss_Timer(e)
 		Event_Win(e);
 	elseif e.timer == "minute" and e.self:GetNPCTypeID() == 305007 then
 		minute = minute + 1;
-		-- eq.zone_emote(15, "Min: " .. minute);
+		-- eq.zone_emote(MT.Yellow, "Min: " .. minute);
 	elseif e.timer == "hp" and e.self:GetNPCTypeID() == 305007 then
 		-- Lower both Boss mobs hps by 1%
 		boss_hp = boss_hp - 1;
 		local new_hp = e.self:GetMaxHP() * (boss_hp/100);
 
-		-- eq.zone_emote(15, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. boss_hp .. " new_hp: " .. new_hp);
+		-- eq.zone_emote(MT.Yellow, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. boss_hp .. " new_hp: " .. new_hp);
 		eq.get_entity_list():GetNPCByNPCTypeID(305007):SetHP(new_hp);
 		eq.get_entity_list():GetNPCByNPCTypeID(305008):SetHP(new_hp);
 		
@@ -211,6 +211,11 @@ function Boss_Timer(e)
 	elseif e.timer == "add7" then
 		eq.stop_timer(e.timer);
 		eq.spawn2(mobs[math.random(1,#mobs)],unpack(spawn_loc[math.random(1,#spawn_loc)]));
+	elseif e.timer == "OOBcheck" then
+		--e.self:Shout("check oob");
+		if (e.self:GetX() < -340 or e.self:GetX() > -46 or e.self:GetY() < 139 or e.self:GetY() > 407 or e.self:GetZ() > 190 or e.self:GetZ() < 0) then
+			e.self:GMMove(-212,275,66,139);
+		end
 	end
 end
 
@@ -219,7 +224,17 @@ function Boss_Combat(e)
 		eq.stop_all_timers();
 	elseif event_started and e.joined then
 		start_timers();
+		eq.set_timer("OOBcheck", 6 * 1000);
 	end
+end
+
+function Add_Spawn(e)
+	eq.set_timer("repop", 3 * 60 * 1000); -- 3 minute respawn
+end
+
+function Add_Timer(e)
+	eq.spawn2(mobs[math.random(1,#mobs)],unpack(spawn_loc[math.random(1,#spawn_loc)]));
+	eq.depop();
 end
 
 function Add_Death(e)
@@ -273,11 +288,11 @@ function event_encounter_load(e)
 	eq.register_npc_event('mpg_endurance', Event.combat,         	305007, Boss_Combat);
 	eq.register_npc_event('mpg_endurance', Event.combat,         	305008, Boss_Combat);
 
-	eq.register_npc_event('mpg_endurance', Event.death_complete,	305009, Add_Death);
-	eq.register_npc_event('mpg_endurance', Event.death_complete,	305010, Add_Death);
-	eq.register_npc_event('mpg_endurance', Event.death_complete,	305011, Add_Death);
-	eq.register_npc_event('mpg_endurance', Event.death_complete,	305012, Add_Death);
-	eq.register_npc_event('mpg_endurance', Event.death_complete,	305013, Add_Death);
+	for i = 1, #mobs do
+		eq.register_npc_event('mpg_endurance', Event.spawn,              mobs[i], Add_Spawn);
+		eq.register_npc_event('mpg_endurance', Event.death_complete,     mobs[i], Add_Death);
+		eq.register_npc_event('mpg_endurance', Event.timer,              mobs[i], Add_Timer);
+	end
 end
 
 function event_encounter_unload(e)

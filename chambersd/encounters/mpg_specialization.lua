@@ -7,17 +7,6 @@
 -- 16 MPG_adaptation     - The Mastery of Adaptation (Raid)
 -- 32 MPG_corruption     - The Mastery of Corruption (Raid)  
 --
--- Mobs
---
--- Spells Cast:
--- [Mon Aug 24 15:20:31 2015] Master of Specialization begins to cast a spell. <Imprecision> 5700
--- [Mon Aug 24 15:20:42 2015] Master of Specialization begins to cast a spell. <Searing Pain> 5723
--- [Mon Aug 24 15:21:18 2015] Master of Specialization begins to cast a spell. <Rigidity> 5701
--- [Mon Aug 24 15:21:28 2015] Master of Specialization begins to cast a spell. <Chilling Agony> 5724
--- [Mon Aug 24 15:21:58 2015] Master of Specialization begins to cast a spell. <Curse of Misfortune> 5702
--- [Mon Aug 24 15:22:08 2015] Master of Specialization begins to cast a spell. <Glimmering Aura> 5725
--- [Mon Aug 24 15:22:38 2015] Master of Specialization begins to cast a spell. <Impurity> 5703
--- [Mon Aug 24 15:22:48 2015] Master of Specialization begins to cast a spell. <Toxic Blast> 5726
 
 -- 1 5700 <Imprecision> 
 -- 2 5723 <Searing Pain> 

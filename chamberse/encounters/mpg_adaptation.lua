@@ -1,5 +1,19 @@
 -- The Mastery of Adaptation (Raid) 
 -- 
+-- Group Trial Version 1 of zone
+-- Raid  Trial Version 2 of zone
+--
+-- MPG Group Trial Bits:
+-- 1  MPG_fear
+-- 2  MPG_ingenuity
+-- 4  MPG_weaponry
+-- 8  MPG_subversion
+-- 16 MPG_efficiency
+-- 32 MPG_destruciton
+--
+-- Lockout on Win: 72 hours
+-- Lockout on Loss: 2 hours
+--
 -- MPG Raid Trial General Notes
 -- 1  MPG_hate           - The Mastery of Hate (Raid)
 -- 2  MPG_endurance      - The Mastery of Endurance (Raid)
@@ -8,32 +22,13 @@
 -- 16 MPG_adaptation     - The Mastery of Adaptation (Raid)
 -- 32 MPG_corruption     - The Mastery of Corruption (Raid)  
 --
--- Event:
--- The Mastery of Adaptation (Raid) 
--- Master of Adaptation spawns in center of the middle platform, despawns when saying "we are ready to begin"
+-- Lockout on Win: 5 days
+-- Lockout on Loss: 3 hours
 --
--- Construct of Power
--- -5 diminutive constructs
+-- Flag Global
+-- mpg_group_trials
+-- mpg_raid_trials
 --
--- Construct of Ice
--- -1 mote of frost
---
--- Construct of Fire
--- -1 lick of flame
---
--- Construct of Brutality
---
--- Construct of Pain 
---
--- Shape shifted every 90-110 seconds. Seems to choose a new form at random. Strips buffs when changing forms <Balance of the Nameless>
---
--- Total HP: 3,900,000 
---
--- 890-4215 min / max quad (throughout all forms) @ 35 shielding sk
---
--- 3 loots, 2 runes, anguish seal popped onto cursor upon completion
---
--- Zone out is skull statue in port up room
 -- Mobs
 -- 308010 Master_of_Adaptation
 -- 308014 Construct_of_Brutality
@@ -42,7 +37,6 @@
 -- 308000 Construct_of_Pain
 -- 308009 Construct_of_Power
 --
-
 -- piercing (36)
 -- 1h blunt (0)
 -- 1h slashing (1)
@@ -90,57 +84,135 @@ function setup()
 	local resists_power	= {{'mr','175'},{'fr','275'},{'cr','275'},{'pr','250'},{'dr','250'}};
 	
 	list_constructs = {
-		[1] = { '308014',
-						'Construct of Brutality', 
-						409,  -- Race
-						2,    -- Gender
-						1,    -- Texture
-						{},   -- Sub-npcs
-						{{SpecialAbility.rampage,50},{SpecialAbility.area_rampage,50}}, 
-						{{36,weak},{0,normal},{1,normal},{2,normal},{3,normal},{7,30},{51,normal},{28,normal},{77,weak}}, 
-						resists_brut },
-		[2] = { '308013', 
-						'Construct of Fire', 
-						408, 
-						2, 
-						1, 
-						{308003}, 
-						{}, 
-						{{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
-						resists_fire, 
-						{5706},
-						{5705}},
-		[3] = { '308008', 
-						'Construct of Ice', 
-						417, 
-						2, 
-						1, 
-						{308002}, 
-						{}, 
-						{{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
-						resists_ice, 
-						{5707},
-						{5704}},
-		[4] = { '308000', 
-						'Construct of Pain', 
-						413, 
-						2, 
-						1, 
-						{}, 
-						{{SpecialAbility.flurry,20}}, 
-						{{36,normal},{0,normal},{1,normal},{2,normal},{3,normal},{7,normal},{51,normal},{28,normal},{77,normal}}, 
-						resists_pain,
-						{5692},
-						{5699}},
-		[5] = { '308009', 
-						'Construct of Power', 
-						405, 
-						2, 
-						1, 
-						{308001, 308001, 308001, 308001, 308001}, 
-						{{SpecialAbility.flurry,50}}, 
-						{{36,-85},{0,30},{1,-93},{2,30},{3,-93},{7,-50},{51,-50},{28,-50},{77,-85}}, 
-						resists_power } 
+		[1] = {
+			'308014',					-- (1) Mob ID
+			'Construct of Brutality',	-- (2) Name
+			409,						-- (3) Race
+			2,							-- (4) Gender
+			1,							-- (5) Texture
+			{},							-- (6) Sub-npcs
+			{							-- (7) Special Abilities
+				{SpecialAbility.rampage,50},
+				{SpecialAbility.area_rampage,50}
+			},
+			{							-- (8) Weakness
+				{36,-3},
+				{0,normal},
+				{1,30},
+				{2,normal},
+				{3,30},
+				{7,normal},
+				{51,normal},
+				{28,normal},
+				{77,-3}
+			},
+			resists_brut,				-- (9) Resists
+			7500						-- (10) Regen
+		},
+		[2] = {
+			'308013',					-- (1) Mob ID
+			'Construct of Fire',		-- (2) Name
+			408, 						-- (3) Race
+			2, 							-- (4) Gender
+			1, 							-- (5) Texture
+			{308003},					-- (6) Sub-npcs
+			{}, 						-- (7) Special Abilities
+			{							-- (8) Weakness
+				{36,normal},
+				{0,normal},
+				{1,normal},
+				{2,normal},
+				{3,normal},
+				{7,normal},
+				{51,normal},
+				{28,normal},
+				{77,normal}
+			}, 
+			resists_fire,				-- (9) Resists
+			3000,						-- (10) Regen
+			{5706},						-- (11) Spells to add to AI
+			{5705}						-- (12) Spells to cast once [Self Buffs]
+		},
+		[3] = {
+			'308008',					-- (1) Mob ID
+			'Construct of Ice',			-- (2) Name
+			417,						-- (3) Race
+			2,							-- (4) Gender
+			1,							-- (5) Texture
+			{308002},					-- (6) Sub-npcs
+			{},							-- (7) Special Abilities
+			{							-- (8) Weakness
+				{36,normal},
+				{0,normal},
+				{1,normal},
+				{2,normal},
+				{3,normal},
+				{7,normal},
+				{51,normal},
+				{28,normal},
+				{77,normal}
+			}, 
+			resists_ice,				-- (9) Resists
+			3000,						-- (10) Regen
+			{5707},						-- (11) Spells to add to AI
+			{5704}						-- (12) Spells to cast once [Self Buffs]
+		},
+		[4] = {
+			'308000',					-- (1) Mob ID
+			'Construct of Pain',		-- (2) Name
+			413,						-- (3) Race
+			2,							-- (4) Gender
+			1,							-- (5) Texture
+			{},							-- (6) Sub-npcs
+			{							-- (7) Special Abilities
+				{SpecialAbility.flurry,20}
+			}, 
+			{							-- (8) Weakness
+				{36,26},
+				{0,-85},
+				{1,-85},
+				{2,-85},
+				{3,-85},
+				{7,normal},
+				{51,normal},
+				{28,normal},
+				{77,26}
+			}, 
+			resists_pain,				-- (9) Resists
+			7500,						-- (10) Regen
+			{5692},						-- (11) Spells to add to AI
+			{5699}						-- (12) Spells to cast once [Self Buffs]
+		},
+		[5] = {
+			'308009',					-- (1) Mob ID
+			'Construct of Power',		-- (2) Name
+			405,						-- (3) Race
+			2,							-- (4) Gender
+			1,							-- (5) Texture
+			{							-- (6) Sub-npcs
+				308001, 
+				308001, 
+				308001, 
+				308001, 
+				308001
+			}, 
+			{							-- (7) Special Abilities
+				{SpecialAbility.flurry,50}
+			}, 
+			{							-- (8) Weakness
+				{36,-85},
+				{0,30},
+				{1,-85},
+				{2,30},
+				{3,-85},
+				{7,normal},
+				{51,normal},
+				{28,normal},
+				{77,-85}
+			}, 
+			resists_power,				-- (9) Resists
+			3000						-- (10) Regen
+		} 
 	};
 
 	last_mob = {};
@@ -180,6 +252,7 @@ function ShapeShift(e)
 
 	-- Cast Balance of the Nameless on self to remove debuffs
 	e.self:CastSpell(3230, e.self:GetID()); -- Spell: Balance of the Nameless
+	e.self:BuffFadeAll();
 
 	-- Spawn Sub-NPCs 
 	if mob[6] ~= nil then 
@@ -196,6 +269,8 @@ function ShapeShift(e)
 			if v[1] ~= nil then
 				e.self:SetSpecialAbility(v[1], 1);
 				if v[2] ~= nil then
+					e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, v[2]);
+					e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 2, 25);
 					e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, v[2]);
 					e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 2, 25);
 				end
@@ -221,17 +296,24 @@ function ShapeShift(e)
 		end
 	end
 
+	-- Set Regen
+	e.self:ModifyNPCStat("combat_hp_regen", tostring(mob[10]));
+
 	self = e.self;
 
+	-- Wipe Spell AI
+	cast_spells		= {};
+	cast_buffs		= {};
+
 	-- Spells if present to add to the AI
-	if mob[10] ~= nil then
-		cast_spells = mob[10];
+	if mob[11] ~= nil then
+		cast_spells = mob[11];
 		CastSpells();
 	end
 
 	-- Spells to cast once (self buffs)
-	if mob[11] ~= nil then
-		cast_buffs = mob[11];
+	if mob[12] ~= nil then
+		cast_buffs = mob[12];
 		CastBuffs();
 	end
 	last_mob = mob;
@@ -279,14 +361,14 @@ function Boss_Say(e)
 			dz:AddReplayLockout(eq.seconds(lockout_loss));
 		end
 
-		local shifttime = math.random(90, 150);
 		e.self:SetSpecialAbility(SpecialAbility.immune_melee,0)
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic,0)
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro,0)
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client,0)
 		eq.spawn2(308012,0,0,0,0,0,0); -- NPC: #death_touch
 		event_started = true;
-		eq.set_timer('shapeshift', shifttime * 1000);
+		eq.set_timer('shapeshift', math.random(90, 120) * 1000);
+		eq.set_timer('castspells', 35 * 1000);
 		ShapeShift(e);
 		e.self:Say("Very well!  Let the battle commence!");
 	end
@@ -294,34 +376,20 @@ end
 
 function Boss_Timer(e)
 	if e.timer == "shapeshift" then
-		ShapeShift(e);
-		local new_time;
-		local boss_hp = math.floor( 100 * e.self:GetHP() / e.self:GetMaxHP());
-		if boss_hp <= 10 then 
-			new_time = math.random(25, 35);
-		elseif boss_hp <= 20 then
-			new_time = math.random(35, 45);	 
-		elseif boss_hp <= 30 then
-			new_time = math.random(45, 55);
-		elseif boss_hp <= 40 then
-			new_time = math.random(55, 65);
-		elseif boss_hp <= 50 then
-			new_time = math.random(65, 75);	
-		elseif boss_hp <= 60 then
-			new_time = math.random(70, 90);
-		elseif boss_hp <= 70 then
-			new_time = math.random(75, 105);	
-		elseif boss_hp <= 80 then
-			new_time = math.random(80, 120);		
-		elseif boss_hp <= 90 then
-			new_time = math.random(85, 135);
-		else
-			new_time = math.random(90, 150);
-		end
+		e.self:Emote("shifts, their form twisting into a new monstrosity.");
 		eq.stop_timer('shapeshift');
-		eq.set_timer('shapeshift', new_time * 1000);	
-	elseif e.timer == "leftcombat" then
-		ResetEvent(e);
+		ShapeShift(e);
+		if e.self:GetHPRatio() >= 80 then
+			eq.set_timer('shapeshift', math.random(90, 120) * 1000);
+		elseif e.self:GetHPRatio() >= 50 and e.self:GetHPRatio() < 80 then
+			eq.set_timer('shapeshift', math.random(60, 90) * 1000);
+		elseif e.self:GetHPRatio() >= 30 and e.self:GetHPRatio() < 50 then
+			eq.set_timer('shapeshift', math.random(30, 60) * 1000);
+		elseif e.self:GetHPRatio() < 30 then
+			eq.set_timer('shapeshift', math.random(15, 30) * 1000);
+		end
+	elseif e.timer == "castspells" then
+		CastSpells();
 	end
 end
 
@@ -344,22 +412,8 @@ function Boss_Death(e)
 	mpg_helper.UpdateRaidTrialFlag(player_list, this_bit);
 end
 
-function Boss_Combat(e)
-	if not e.joined then
-		eq.set_timer('leftcombat', 30 * 1000);
-	else
-		eq.stop_timer('leftcombat');
-	end
-end
-
-function ResetEvent(e)
-	eq.stop_all_timers();
-	eq.repop_zone();
-end
-
 function event_encounter_load(e)
 	eq.register_npc_event('mpg_adaptation', Event.say,            308010, Boss_Say);
-	eq.register_npc_event('mpg_adaptation', Event.combat,         308010, Boss_Combat);
 	eq.register_npc_event('mpg_adaptation', Event.spawn,          308010, Boss_Spawn);
 	eq.register_npc_event('mpg_adaptation', Event.spawn,          308003, Lick_Spawn);
 	eq.register_npc_event('mpg_adaptation', Event.spawn,          308002, Mote_Spawn);

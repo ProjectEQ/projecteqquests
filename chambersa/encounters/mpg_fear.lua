@@ -96,7 +96,7 @@ function Fear_Timer(e)
 				local mpg_helper = require("mpg_helper");
 				mpg_helper.UpdateGroupTrialFlag(player_list, this_bit);
 			else
-				eq.zone_emote(MT.Yellow, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
+				eq.zone_emote(MT.Red, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
 				eq.depop();
 				local dz = eq.get_expedition()
 				if dz.valid then

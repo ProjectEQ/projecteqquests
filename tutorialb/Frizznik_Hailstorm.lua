@@ -18,7 +18,7 @@ Add as an (Opt) Optional task under Basic Training.
 
 
 
-function event_say(e)	
+function event_say(e)
 	if (e.message:findi("hail")) then
 		e.self:QuestSay(e.other, "Well hello there. The name's Frizznik and I'm in charge of finding food for the revolt. I've found more than enough rat meat to make steaks, so if you want to cook yourself some food, be my guest. Would you like to learn to cook [" .. eq.say_link("rat steaks") .. "]?");
 		eq.popup("Tradeskills", "<br> The world of Norrath has many different types of tradeskills that allow players to create useful items and equipment Tradeskills are a fun pasttime and can also help your character to earn money by selling the items to other players. In this tutorial, Frizznik will teach you how to use the baking tradeskill.<br><br><c \"#F07F00\"> Ask Frizznik about 'rat steaks' to continue.</c>", 5,0,0);

@@ -37,8 +37,8 @@ function NPC:RandomRoam(maxx,maxy,maxz,los)
 		local guardy = self:GetGuardPointY() or 0;
 
 		if curx == guardx and cury == guardy then
-			local randomx = math.random(maxx) + 1;
-			local randomy = math.random(maxy) + 1;
+			local randomx = math.random(0, maxx) + 1;
+			local randomy = math.random(0, maxy) + 1;
 			local posx = origx + randomx;
 			local posy = origy + randomy;
 			local negx = origx - randomx;

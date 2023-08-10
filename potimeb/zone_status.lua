@@ -592,6 +592,7 @@ function UpdateFailTimer(minutes_to_add)
 end
 
 function event_timer(e)
+	local expedition = eq.get_expedition()
 	if (e.timer == "event_hb") then
 		total_time = total_time - 1;
 		

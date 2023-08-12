@@ -43,7 +43,7 @@ function NPC:RandomRoam(maxx,maxy,maxz,los)
 			local posy = origy + randomy;
 			local negx = origx - randomx;
 			local negy = origy - randomy;
-			local newx, newy, newz = 0;
+			local newx, newy = 0;
 			if posx > negx then -- Flip order
 				newx = math.random(negx, posx);
 			else

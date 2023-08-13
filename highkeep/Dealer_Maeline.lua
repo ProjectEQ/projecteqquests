@@ -36,7 +36,7 @@ function event_say(e)
 		elseif(e.message:findi("deal") and urn == 1 and busy == 0) then
 		  prize_money = prize_money + 100;
 		  e.self:Emote("sweeps the cards from the table. 'Great!  You won several hands that round!");
-		  e.other:Message(15, "You now have "..prize_money.." chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].")
+		  e.other:Message(MT.Yellow, "You now have "..prize_money.." chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].")
 		  busy = 1;
 			-- is there a cap on prize money?
 			if prize_money == 1600 then
@@ -92,7 +92,7 @@ function event_say(e)
 		  e.self:Emote("deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.");
 		elseif(e.message:findi("cash out") and urn == 1 and qglobals["roguepre"] == nil) then
 			if prize_money >= 1800 then --win at 1800 or above
-		  		e.other:Message(15, "You have unloaded the stolen urn, completing the first task for the Smuggler's Camp.")
+		  		e.other:Message(MT.Yellow, "You have unloaded the stolen urn, completing the first task for the Smuggler's Camp.")
 		  		eq.set_global("roguepre", "1", 5 , "F")
 				urn = 0;
 		  		e.self:Say("Thanks for playing, " .. e.other:GetName() .. ". Here are your winnings. Come back to our establishment again anytime.");

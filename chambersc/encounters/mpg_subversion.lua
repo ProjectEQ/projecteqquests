@@ -55,7 +55,7 @@ function Subversion_Say(e)
     
     -- Until EVENT_LOOT gets exported to lua for stuffs; just set a 5min timer; it might 
     -- take about 5minutes to collect 300 points; in my mind.
-    eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+    eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   end
 end
 
@@ -69,7 +69,7 @@ function Subversion_Timer(e)
       eq.stop_all_timers();
       eq.spawn_condition(this_zone, instance_id, 1, 0);
 
-      eq.zone_emote(13, "You have been found unworthy.");
+      eq.zone_emote(MT.Red, "You have been found unworthy.");
       eq.depop_all(306000);
       eq.depop();
 
@@ -79,7 +79,7 @@ function Subversion_Timer(e)
         dz:SetSecondsRemaining(eq.seconds("5m"))
       end
     else 
-      eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+      eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
   end
 end

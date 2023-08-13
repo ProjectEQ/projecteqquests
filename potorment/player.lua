@@ -1,7 +1,7 @@
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self)
 		if qglobals["pre_pal"] == "2" then
-			 e.self:Message(15,"Your sword piece reverberates with a low hum. An attraction is felt within it. To the south you are pointed, towards the direction of that attraction.");
+			 e.self:Message(MT.Yellow,"Your sword piece reverberates with a low hum. An attraction is felt within it. To the south you are pointed, towards the direction of that attraction.");
 		end
 end
 

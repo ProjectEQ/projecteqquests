@@ -65,7 +65,7 @@ end
 	eq.spawn2(339119,0,0,1156.67,6486.17,745.00,196.3); -- Spawn 5 inactive manashard guardians
 	eq.spawn2(339120,0,0,1229.06,6507.49,754.67,235.3); -- NPC: inactive_manashard_guardian
 	eq.spawn2(339121,0,0,1305.75,6458.83,752.10,329.0); -- NPC: inactive_manashard_guardian
-	--eq.zone_emote(15,"I've spawned");
+	--eq.zone_emote(MT.Yellow,"I've spawned");
 	eq.set_next_hp_event(90); -- Set something to happen at 90%.
 	unlockone=false;
 	unlocktwo=false;
@@ -95,7 +95,7 @@ end
 		eq.signal(339109,1); -- Signal to the active manashard that I have healed.
 		eq.set_next_hp_event(90); -- Set this to happen again at 90%.
 	elseif (e.hp_event == 80) and unlockone == false then -- If my HP is 80% and I have not locked my HP yet.
-			--eq.zone_emote(15,"I'm ready for Phase 2");
+			--eq.zone_emote(MT.Yellow,"I'm ready for Phase 2");
 			eq.set_timer("Lock",3000); -- Lock my  HP at this value.
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
@@ -198,14 +198,14 @@ function Fake_Death(e)
 	eq.signal(339110,2); -- If I died - Signal Kessdona that I was the wrong one to kill.
 	eq.depop_all(339111); -- Depop all of myself
 	eq.depop_all(339115); -- Depop the correct target.
-	--eq.zone_emote(15,"Wrong!");
+	--eq.zone_emote(MT.Yellow,"Wrong!");
 end
 
 function Correct_Death(e) -- If I died.
 	correct_kills=correct_kills+1;  -- Count how many times I've correctly died.
 	eq.depop_all(339111); -- Depop all incorrect targets
 	eq.depop_all(339115); -- Depop all of myself (Probably not needed, since only 1 of me)
-	--eq.zone_emote(15,"Correct!");
+	--eq.zone_emote(MT.Yellow,"Correct!");
 	eq.debug("Correctly Killed Mobs: " .. correct_kills);
 	eq.signal(339110,3); -- Let Kessdona know I was the correct one to be killed.
 end
@@ -373,7 +373,7 @@ end
 
 function Kess_BeginCast(e)
 	if (e.spell:ID() == 6543) then
-		eq.zone_emote(15,"Kessdona rears back and fills her lungs, preparing to exhale a cone of disintegrating flame.");
+		eq.zone_emote(MT.Yellow,"Kessdona rears back and fills her lungs, preparing to exhale a cone of disintegrating flame.");
 	end
 end
 

@@ -62,7 +62,7 @@ end
 function Ixvet_Death(e)
     eq.depop(283153); --Talwin`s_remains (283153) untargettable
     eq.spawn2(283048,0,0,-574,568,-98,336); -- NPC: #Talwin`s_remains loot
-	eq.zone_emote(15,"As the dying cries of Ikaav Ixvet Pox echo off the city walls, the ranks of the Muramites are thrown into chaos. Seizing the opportunity, the many slaves of Barindu rise up and fight for their freedom.");
+	eq.zone_emote(MT.Yellow,"As the dying cries of Ikaav Ixvet Pox echo off the city walls, the ranks of the Muramites are thrown into chaos. Seizing the opportunity, the many slaves of Barindu rise up and fight for their freedom.");
 end
 --killing ixvet should signal the Nihil to aggro nearby mobs, which Nihil still needs to be parsed: It seems to be random each time
 

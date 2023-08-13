@@ -24,5 +24,5 @@ eq.stop_timer("OOBcheck");
 end
 end
 function event_death_complete(e)
-	eq.zone_emote(0,"Curate Firetender's corpse is burned by embers before finally laying dead upon the ground");
+	eq.zone_emote(MT.White,"Curate Firetender's corpse is burned by embers before finally laying dead upon the ground");
 end

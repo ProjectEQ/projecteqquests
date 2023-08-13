@@ -29,7 +29,7 @@ function event_signal(e)
     if e.signal == 1 and event_started == 0 then
         event_started = 1;
         --do things
-        eq.zone_emote(0, "a gruff voice shouts, 'Stay alert, men. Word is that the package will be delivered shortly.The smuggler is likely already here.");
+        eq.zone_emote(MT.White, "a gruff voice shouts, 'Stay alert, men. Word is that the package will be delivered shortly.The smuggler is likely already here.");
         eq.unique_spawn(2031, 108, 0, 119, 635, 3, 259);
         eq.unique_spawn(2126, 109, 0, 17, -116, 3, 386);
         eq.unique_spawn(2160, 0, 0, 69, 542, 3, 0);

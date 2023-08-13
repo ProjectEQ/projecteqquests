@@ -54,5 +54,5 @@ end
 
 function event_death_complete(e)
 	eq.unique_spawn(294620,0,0,815,139,-72,256); -- NPC: #Keeper_of_the_Altar
-	eq.zone_emote(0, "As the construct falls you sense that a very powerful protector of the altar is waiting for you.");
+	eq.zone_emote(MT.White, "As the construct falls you sense that a very powerful protector of the altar is waiting for you.");
 end

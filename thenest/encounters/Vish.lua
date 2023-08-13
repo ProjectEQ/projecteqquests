@@ -24,7 +24,7 @@ function Vish_Spawn(e)
 	eq.spawn2(343165,0,0,-4264.01,538.71,134.53,322.5); -- Control spawns of corrupted drakes upon my spawn.
 	eq.spawn2(343166,0,0,-4320.05,564.41,130.61,335.0); -- NPC: corrupted_drake
 	eq.spawn2(343167,0,0,-4337.70,225.69,130.82,506.3); -- NPC: corrupted_drake
-	--eq.zone_emote(15,"Ive spawned!");	 -- Let the zone know something happened.
+	--eq.zone_emote(MT.Yellow,"Ive spawned!");	 -- Let the zone know something happened.
 end
 
 
@@ -188,7 +188,7 @@ function Mourning_Say(e)
 		for client in cl.entries do
 			if (client.valid and client:FindBuff(6646)) then
 				e.other:BuffFadeBySpellID(6646); -- Remove creeping doom from player.
-				e.other:Message(15,"The mournful spirit draws corruption from your body and absorbs it, destroying itself in the process."); -- Let them know I sacrificed myself.
+				e.other:Message(MT.Yellow,"The mournful spirit draws corruption from your body and absorbs it, destroying itself in the process."); -- Let them know I sacrificed myself.
 				eq.depop(); -- Depop myself
 				mourning_count=mourning_count-1; -- Let vish know my count went down.
 				eq.debug("Shoulder my Burdens left to complete: " .. mourning_count);
@@ -221,7 +221,7 @@ function Vish_Timer(e)
 	e.self:SetHP(e.self:GetMaxHP() * (hp_lock / 100.0));
 	elseif (e.timer == "Eggs") then
 		eq.stop_timer("Eggs");
-		--eq.zone_emote(15,"Eggs will spawn in 105s");
+		--eq.zone_emote(MT.Yellow,"Eggs will spawn in 105s");
 		eq.set_timer("Eggs_Spawn",105000); --105000
 	elseif (e.timer == "Drakes") then		
 			eq.spawn2(343093,0,0,-4300.29,453.26,130.87,386.0); -- If drakes timer is up - spawn them, and make them agro.
@@ -287,7 +287,7 @@ function Vish_Timer(e)
 	elseif (e.timer == "Incorporeal") and incorporeal_count <  4 then -- if less than 4, keep spawning.
 		eq.spawn2(343159,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: #incorporeal_shadow
 	elseif (e.timer == "Eggs_Spawn") then
-		eq.zone_emote(15,"Vishimtar shouts, Your presence has caused the children to awaken. They will be . . . hungry."); -- let the player know something happened.
+		eq.zone_emote(MT.Yellow,"Vishimtar shouts, Your presence has caused the children to awaken. They will be . . . hungry."); -- let the player know something happened.
 		eq.stop_timer("Eggs_Spawn");
 		eq.set_timer("Hatch",60000);
 		which = math.random(3);

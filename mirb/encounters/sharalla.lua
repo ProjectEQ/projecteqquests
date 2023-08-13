@@ -66,7 +66,7 @@ function corpse_timer(e)
   end
 
   if total_bites >= 10 then
-    eq.zone_emote(15, "Sharalla's remains have been irreversibly defiled by the wild animals. You have failed to protect her.")
+    eq.zone_emote(MT.Yellow, "Sharalla's remains have been irreversibly defiled by the wild animals. You have failed to protect her.")
     eq.signal(237743, 5) -- Durgin_Skell (warder event failed)
     depop_event()
   end

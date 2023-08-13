@@ -16,7 +16,7 @@ function event_trade(e)
 			e.other:SummonItem(18398); -- Raging Taelosian Alloy Axe (Epic 1.5)
 			e.other:AddAAPoints(5);
 			e.other:Ding();
-			e.other:Message(15,'You have gained 5 ability points!');
+			e.other:Message(MT.Yellow,'You have gained 5 ability points!');
 			eq.set_global("berserk_epic","7",5,"F");
 		end
 		item_lib.return_items(e.self, e.other, e.trade);

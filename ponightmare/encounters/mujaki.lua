@@ -36,7 +36,7 @@ local gotsignal = 0;
 
 
 function Add_Spawn(e)
---eq.zone_emote(15, "in addspawn" .. e.self:GetX());
+--eq.zone_emote(MT.Yellow, "in addspawn" .. e.self:GetX());
  if (e.self:GetX() < -1851 and e.self:GetX() > -1852) then
 	e.self:MoveTo(-1596.72, -2608.13, 173.13, 0, true) 
  elseif (e.self:GetX()==-1462.5) then
@@ -48,10 +48,10 @@ function Add_Spawn(e)
 end
 
 function Add_Timer(e)
- --eq.zone_emote(15, "in addtimer");
+ --eq.zone_emote(MT.Yellow, "in addtimer");
  if (e.timer=='wparrive') then
 	 if DistanceToWaypoint(e.self) <= 10 then
-		--eq.zone_emote(15, "depop");
+		--eq.zone_emote(MT.Yellow, "depop");
 		eq.spawn2(204079, 0, 0, -1475+40-math.random(1,80), -2555-20-math.random(1,40), 179.38, 256);
 		eq.depop();
 		eq.stop_timer('wparrive');
@@ -76,7 +76,7 @@ function Shade_Timer(e)
 end
 
 --function Mujaki_Spawn(e)
---  eq.zone_emote(15, "muj spawn");
+--  eq.zone_emote(MT.Yellow, "muj spawn");
 --  eq.set_proximity(e.self:GetX()-600, e.self:GetY()-600, e.self:GetX()+600, e.self:GetY()+600);
 --end
 function Mujaki2_Spawn(e)
@@ -92,11 +92,11 @@ function Mujaki2_Timer(e)
 end
 
 --function Mujaki_Enter(e)
---	eq.zone_emote(15, "prox enter");
+--	eq.zone_emote(MT.Yellow, "prox enter");
 --  	eq.set_timer('spawnwave', 1 * 1000);
 --	adds_killed=0;
 --	wave=1;
---	eq.zone_emote(15, "got signal");
+--	eq.zone_emote(MT.Yellow, "got signal");
 --	gotsignal=1;
 --end
 
@@ -105,12 +105,12 @@ function Mujaki_Death(e)
   eq.stop_all_timers();
   local clist = eq.get_entity_list():GetClientList();
      if ( clist ~= nil ) then
-		 --eq.zone_emote(15, "death1");
+		 --eq.zone_emote(MT.Yellow, "death1");
 		 for currclient in clist.entries do
 			if(currclient:GetClass() ==3) then			
-				 --eq.zone_emote(15, "death2");
+				 --eq.zone_emote(MT.Yellow, "death2");
 				if (currclient:HasItem(69928)) then				
-					--eq.zone_emote(15, "death3");
+					--eq.zone_emote(MT.Yellow, "death3");
 					eq.spawn2(204081, 0, 0, -1475, -2555, 179.38, 256); -- NPC: #Shade_of_Mujaki_the_Devourer
 					return; --only spawn 1
 				end
@@ -126,7 +126,7 @@ function Mujaki_Signal(e)
 	eq.set_timer('spawnwave', 120 * 1000);
 	adds_killed=0;
 	wave=1;
-	--eq.zone_emote(15, "got signal");
+	--eq.zone_emote(MT.Yellow, "got signal");
 	gotsignal=1;
   elseif (e.signal ==2) then
     eq.depop_with_timer();
@@ -143,7 +143,7 @@ function Serv_Signal(e)
 end
   
 function Mujaki_Timer(e)
-	--eq.zone_emote(15, "in timer, wave: "..wave);
+	--eq.zone_emote(MT.Yellow, "in timer, wave: "..wave);
   if (e.timer=='spawnwave') then
 	--event_started, 2 min timer til first wave
 	if (wave <= 3 or wave==8 ) then

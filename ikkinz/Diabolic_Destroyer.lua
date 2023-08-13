@@ -69,7 +69,7 @@ function event_death_complete(e)
     dz:SetLocked(true, ExpeditionLockMessage.Close)
   end
 
-  eq.zone_emote(0, "The Diabolic Destroyer has been defeated! Though the legion may send a replacement, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
+  eq.zone_emote(MT.White, "The Diabolic Destroyer has been defeated! Though the legion may send a replacement, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
   eq.ZoneMarquee(10,510,1,1,6000,"The Diabolic Destroyer has been defeated! Congratulations!");
 end
 

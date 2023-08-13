@@ -20,7 +20,7 @@ function event_timer(e)
 		eq.set_timer("attack",3000);
 	elseif(e.timer=="attack") then
 		eq.stop_timer("attack");
-		currclient:Message(15,"A light slowly, very slowly, comes into the bouncers eyes. 'Wait something wrong here. You wolfy. Me like wolfy, but wolfy not talk!' The massive ogre turns red with anger. He becomes an unstoppable roil of flesh as he charges you");
+		currclient:Message(MT.Yellow,"A light slowly, very slowly, comes into the bouncers eyes. 'Wait something wrong here. You wolfy. Me like wolfy, but wolfy not talk!' The massive ogre turns red with anger. He becomes an unstoppable roil of flesh as he charges you");
 		e.self:AddToHateList(currclient,1);
 	end
 end

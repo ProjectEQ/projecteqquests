@@ -11,10 +11,10 @@ function event_say(e)
     end
     if (e.message:findi("hail")) then
         if (bit.band(turnins, 512) ~= 0) then
-            e.other:Message(12, "Verna Abella says 'Your kindness is truly wonderful. Thank you for helping place him to rest.'")
+            e.other:Message(MT.DarkGray, "Verna Abella says 'Your kindness is truly wonderful. Thank you for helping place him to rest.'")
         elseif (greatadventures > 0) then
             e.self:Emote(" focuses her attention on " .. e.other:GetName() .. ".")
-            e.other:Message(12, "Verna Abella seems to be deep in thought. She ignores you at first but eventually turns towards you with a somber look on her face. 'Forgive me. I am not much of a talker these days since Silius left on his journey with Lyndro and the others. Sitting here everyday wishing that they would return has consumed me to the point that I can do nothing else. If only I had some proof of what has happened to Silius. Anything at all would help me in this time of wonder and worry.'")
+            e.other:Message(MT.DarkGray, "Verna Abella seems to be deep in thought. She ignores you at first but eventually turns towards you with a somber look on her face. 'Forgive me. I am not much of a talker these days since Silius left on his journey with Lyndro and the others. Sitting here everyday wishing that they would return has consumed me to the point that I can do nothing else. If only I had some proof of what has happened to Silius. Anything at all would help me in this time of wonder and worry.'")
         end
     end
 end

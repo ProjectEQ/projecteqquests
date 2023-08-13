@@ -59,7 +59,7 @@ elseif (e.timer == "ejecttimer") then
             		if (client_e ~= nil and client_e.valid) then
 						if (client_e:CalculateDistance(trial_x, trial_y, trial_z) <= 180) then
                 		client_e:MovePC( 281, -1515, -289, -14, 60 ); -- Zone: qinimi
-                		client_e:Message(3, "A mysterious force translocates you.");
+                		client_e:Message(MT.BrightBlue, "A mysterious force translocates you.");
 						end
             		end
 			end
@@ -141,10 +141,10 @@ if (e.message:findi("i wish to enter")) then
 		
         			eq.set_timer("startevent", 500); --popevent
 			else
-				e.other:Message(15,"The device appears to be in use. Maybe you should try again once it has been reset.");
+				e.other:Message(MT.Yellow,"The device appears to be in use. Maybe you should try again once it has been reset.");
 			end
 		else
-			e.other:Message(15,"Nothing happens. You must be missing the key required.");
+			e.other:Message(MT.Yellow,"Nothing happens. You must be missing the key required.");
 		end
 end
 end

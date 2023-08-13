@@ -34,7 +34,7 @@ function event_waypoint_depart(e)
 end
 
 function event_enter(e)
-	e.other:Message(15,"A note on the ground catches your eye.");
+	e.other:Message(MT.Yellow,"A note on the ground catches your eye.");
 	e.other:SummonItem(18835); -- Item: Sealed List
 	eq.clear_proximity();
 end

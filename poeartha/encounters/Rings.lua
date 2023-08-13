@@ -189,7 +189,7 @@ function Stone_Death(e) -- Count these mobs, if 44, spawn 4 x Rubble at their as
 	stone_dead=stone_dead+1;
 	eq.debug("Stone Fortification: " .. stone_dead);
 		if stone_dead == 44 then
-		--eq.zone_emote(15,"YAY");
+		--eq.zone_emote(MT.Yellow,"YAY");
 		eq.depop_with_timer(218029);
 		eq.spawn2(218076,0,0,-588.14,-236.93,85.75,3.3); -- NPC: A_Mound_of_Rubble
 		eq.spawn2(218118,0,0,-642.33,-236.64,85.75,387.8); -- NPC: A_Mound_of_Rubble
@@ -239,7 +239,7 @@ function Rubble_HP(e)  -- If 20% HP and NOT the 4th Rubble brought to 20% -  Wip
 		eq.debug("Rubble: " .. rubble_done);
 	end
 	if rubble_done == 4 then -- If im 4th, Despawn all 4 - let the zone know something is happening & Spawn Rock Monstrosity Named
-	eq.zone_emote(10,"The mounds of rubble reform back into the Rock Monstrosity.");
+	eq.zone_emote(MT.NPCQuestSay,"The mounds of rubble reform back into the Rock Monstrosity.");
 	eq.depop_all(218076);
 	eq.depop_all(218118);
 	eq.depop_all(218119);
@@ -262,7 +262,7 @@ function Rubbletwo_HP(e) -- If 20% HP and NOT the 4th Rubble brought to 20% -  W
 		eq.debug("Rubble: " .. rubble_done);
 	end
 	if rubble_done == 4 then -- If im 4th, Despawn all 4 - let the zone know something is happening & Spawn Rock Monstrosity Named
-	eq.zone_emote(10,"The mounds of rubble reform back into the Rock Monstrosity.");
+	eq.zone_emote(MT.NPCQuestSay,"The mounds of rubble reform back into the Rock Monstrosity.");
 	eq.depop_all(218076);
 	eq.depop_all(218118);
 	eq.depop_all(218119);
@@ -285,7 +285,7 @@ function Rubblethree_HP(e) -- If 20% HP and NOT the 4th Rubble brought to 20% - 
 		eq.debug("Rubble: " .. rubble_done);
 	end
 	if rubble_done == 4 then -- If im 4th, Despawn all 4 - let the zone know something is happening & Spawn Rock Monstrosity Named
-	eq.zone_emote(10,"The mounds of rubble reform back into the Rock Monstrosity.");
+	eq.zone_emote(MT.NPCQuestSay,"The mounds of rubble reform back into the Rock Monstrosity.");
 	eq.depop_all(218076);
 	eq.depop_all(218118);
 	eq.depop_all(218119);
@@ -308,7 +308,7 @@ function Rubblefour_HP(e) -- If 20% HP and NOT the 4th Rubble brought to 20% -  
 		eq.debug("Rubble: " .. rubble_done);
 	end
 	if rubble_done == 4 then -- If im 4th, Despawn all 4 - let the zone know something is happening & Spawn Rock Monstrosity Named
-	eq.zone_emote(10,"The mounds of rubble reform back into the Rock Monstrosity.");
+	eq.zone_emote(MT.NPCQuestSay,"The mounds of rubble reform back into the Rock Monstrosity.");
 	eq.depop_all(218076);
 	eq.depop_all(218118);
 	eq.depop_all(218119);
@@ -353,7 +353,7 @@ function Pereginspawnone_Timer(e)
 		if e.timer == "FD" then
 		eq.stop_timer('FD');
 		e.self:SetAppearance(3);
-		--eq.zone_emote(15,"Im FD NOW!");
+		--eq.zone_emote(MT.Yellow,"Im FD NOW!");
 		end
 end
 
@@ -455,7 +455,7 @@ function Peregin_Death(e) -- Named Death
 		eq.debug("Stone_Success: " .. stone_counter);
 		if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -466,7 +466,7 @@ function Peregin_Death(e) -- Named Death
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 		else
-		--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+		--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 		end
 end
 
@@ -498,7 +498,7 @@ function Encrusted_Death(e) --PH Death
 		eq.debug("Stone_Success: " .. stone_counter);
 		if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -509,7 +509,7 @@ function Encrusted_Death(e) --PH Death
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 		else
-		--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+		--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 		end
 end
 		
@@ -612,7 +612,7 @@ function Mudslinger_Death(e)
 	eq.stop_timer('mud_box');
 	if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -623,7 +623,7 @@ function Mudslinger_Death(e)
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 	else
-	--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+	--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 	end
 end		
 
@@ -783,7 +783,7 @@ function Monstrous_Death(e)
 	eq.stop_timer('mud_box');
 	if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -794,7 +794,7 @@ function Monstrous_Death(e)
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 	else
-	--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+	--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 	end
 end
 function Dusty_Spawn(e)
@@ -912,7 +912,7 @@ function Follower_Death(e)
 	eq.debug("Dust_Success: " .. dust_counter);
 		if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 			eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-			--eq.zone_emote(15,"Arbitor has spawned!");
+			--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 			eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 			stone_counter=0;
 			vine_counter=0;
@@ -923,7 +923,7 @@ function Follower_Death(e)
 			eq.debug("Dust_Success: " .. dust_counter);
 			eq.debug("Mud_Success: " .. mud_counter);
 		else
-		--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+		--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 		end
 	end
 end
@@ -1061,7 +1061,7 @@ function Warder_Death(e)
 	eq.debug("Dust_Success: " .. dust_counter);
 	if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -1072,7 +1072,7 @@ function Warder_Death(e)
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 	else
-	--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+	--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 	end
 end
 
@@ -1141,7 +1141,7 @@ function Deru_Death(e)
 	eq.debug("Vine_Success: " .. vine_counter);
 	if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -1152,7 +1152,7 @@ function Deru_Death(e)
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 	else
-	--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+	--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 	end
 end
 
@@ -1202,7 +1202,7 @@ function Bloodsoaked_Death(e)
 	eq.debug("Vine_Success: " .. vine_counter);
 	if stone_counter == 1 and vine_counter == 1 and mud_counter == 1 and dust_counter == 1 and el:IsMobSpawnedByNpcTypeID(218094) == true then -- Are Stone/Dust/Vine/Mud all complete & is the Final Trigger mob Up? If so spawn Arbitor.
 		eq.spawn2(218053,0,0,1520.9,-2745.2,6.1,376.4); -- Spawn Mystical Arbitor of Earth
-		--eq.zone_emote(15,"Arbitor has spawned!");
+		--eq.zone_emote(MT.Yellow,"Arbitor has spawned!");
 		eq.depop_with_timer(218094); -- Despawn the Trigger mob ##Final_Trigger## so event can't be repeated multiple times.
 		stone_counter=0;
 		vine_counter=0;
@@ -1213,7 +1213,7 @@ function Bloodsoaked_Death(e)
 		eq.debug("Dust_Success: " .. dust_counter);
 		eq.debug("Mud_Success: " .. mud_counter);
 	else
-	--eq.zone_emote(15,"Sorry the Mystical Arbitor is in another Castle!");
+	--eq.zone_emote(MT.Yellow,"Sorry the Mystical Arbitor is in another Castle!");
 	end
 end
 

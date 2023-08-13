@@ -16,7 +16,7 @@ local function time_left(e)
     time_left = string.format("Your instance will expire in %d seconds.", second);
   end
   if (ttime>0) then
-    eq.zone_emote(1, time_left);
+    eq.zone_emote(MT.Default, time_left);
   end
 end
 

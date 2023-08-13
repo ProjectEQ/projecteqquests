@@ -9,7 +9,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18433) == true) then
-		e.other:Message(15,"An older, male gnome addresses you as you attempt to get your bearings. 'Welcome young apprentice to the Abbey of Deep Musings. I am Lewis Reldnok. Read the note in your inventory and hand it to me when you wish to begin your training.'");
+		e.other:Message(MT.Yellow,"An older, male gnome addresses you as you attempt to get your bearings. 'Welcome young apprentice to the Abbey of Deep Musings. I am Lewis Reldnok. Read the note in your inventory and hand it to me when you wish to begin your training.'");
 	end
 end
 

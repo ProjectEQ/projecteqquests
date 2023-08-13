@@ -37,7 +37,7 @@ function event_hp(e)
     if e.hp_event == 70 then
 		eq.depop(292068); -- NPC: Vrex_Barxt_Qurat (Non-Aggro)
 		eq.spawn2(292069,0,0,-869,-16,65,250); -- NPC: #Vrex_Barxt_Qurat
-		eq.zone_emote(15,"Realizing that his avatar of destruction is fighting a losing battle, Barxt enters the fray. At the same time, you hear the shuffle of feet in the hallway leading to the entrance of the chamber and an ominous sound from behind the door indicates that it has been locked.  You have been sealed in and have no choice but to deal with this madman.  Barxt yells,  'You will die here this day whether it be by my hands or this massive construct. Trushar's will shall be done.  Your corpses shall rot here.  This chamber shall become your eternal grave!");
+		eq.zone_emote(MT.Yellow,"Realizing that his avatar of destruction is fighting a losing battle, Barxt enters the fray. At the same time, you hear the shuffle of feet in the hallway leading to the entrance of the chamber and an ominous sound from behind the door indicates that it has been locked.  You have been sealed in and have no choice but to deal with this madman.  Barxt yells,  'You will die here this day whether it be by my hands or this massive construct. Trushar's will shall be done.  Your corpses shall rot here.  This chamber shall become your eternal grave!");
     end
 end
 

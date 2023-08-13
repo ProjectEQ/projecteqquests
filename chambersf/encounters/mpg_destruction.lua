@@ -55,7 +55,7 @@ function Destruction_Say(e)
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);
-    eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+    eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   elseif (e.message:findi("test") and e.other:Admin() > 80) then
     eq.signal(309061, 1); -- NPC: Master_of_Destruction
   end
@@ -71,7 +71,7 @@ function Destruction_Timer(e)
       eq.stop_all_timers();
       eq.spawn_condition(this_zone, instance_id, 1, 0);
 
-      eq.zone_emote(13, "You have been found unworthy.");
+      eq.zone_emote(MT.Red, "You have been found unworthy.");
       eq.depop();
 
       -- no lockout added on failure, the dz shuts down in 5 minutes
@@ -80,7 +80,7 @@ function Destruction_Timer(e)
         dz:SetSecondsRemaining(eq.seconds("5m"))
       end
     else 
-      eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+      eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
   elseif ( e.timer == 'destruction' ) then
     -- Every 6 seconds the Master of Destruction is alive; make him harder

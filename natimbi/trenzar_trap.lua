@@ -5,7 +5,7 @@ end
 function event_enter(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);
 	if(qglobals["ranger_epic"] == "2" and qglobals["ranger_epic_natimbi"] == nil and e.other:HasItem(62844) == true and eq.get_entity_list():IsMobSpawnedByNpcTypeID(280084) == false ) then
-		e.other:Message(15,"You feel the Red Dogwood Seed thrash violently for a moment as you near the water spirit.");
+		e.other:Message(MT.Yellow,"You feel the Red Dogwood Seed thrash violently for a moment as you near the water spirit.");
 		eq.set_global("ranger_epic_natimbi","1",2,"H2");
 		eq.set_timer("ranger_epic_depop",30*60*1000);
 		eq.load_encounter('ranger_1_5');

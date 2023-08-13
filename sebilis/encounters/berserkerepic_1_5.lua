@@ -45,22 +45,22 @@ function Protector_Timer(e)
 							if(math.random(3)==1) then 
 								if(currclient:GetItemIDAt(Slot.Primary)==16779) then
 									eq.target_global("berserk_epic_test17759", "1", "F", 0,currclient:CharacterID(),0);
-									currclient:Message(15,"After several heavy swings, the axe shatters into many fine pieces. Time for a new axe!");
+									currclient:Message(MT.Yellow,"After several heavy swings, the axe shatters into many fine pieces. Time for a new axe!");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
 									currclient:SummonItem(17833); -- Item: Broken Trial Taelosian Blood Axe
 								elseif(currclient:GetItemIDAt(Slot.Primary)== 17759 ) then
 									eq.target_global("berserk_epic_test17370", "1", "F", 0,currclient:CharacterID(),0);
-									currclient:Message(15,"After raining down nearly two dozen blows you begin to notice small hairline fractures developing in the axe head. You think testing for this axe has been completed.");
+									currclient:Message(MT.Yellow,"After raining down nearly two dozen blows you begin to notice small hairline fractures developing in the axe head. You think testing for this axe has been completed.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
 									currclient:SummonItem(17898); -- Item: Damaged Trial Taelosian Blood Axe
 								elseif(currclient:GetItemIDAt(Slot.Primary)==17700) then
 									eq.target_global("berserk_epic_test17700", "1", "F", 0,currclient:CharacterID(),0);
-									currclient:Message(15,"After many swings you can feel this axe is failing and think that it will fall apart at any moment. You think that testing for this axe has been completed.");
+									currclient:Message(MT.Yellow,"After many swings you can feel this axe is failing and think that it will fall apart at any moment. You think that testing for this axe has been completed.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
 									currclient:SummonItem(17399); -- Item: Damaged Trial Taelosian Blood Axe
 								elseif(currclient:GetItemIDAt(Slot.Primary)== 17370) then
 									eq.target_global("berserk_epic_test16779", "1", "F", 0,currclient:CharacterID(),0);
-									currclient:Message(15,"The rigors of battle have had no effect of this axe. Keras should be very pleased with the result of this particular axe.");
+									currclient:Message(MT.Yellow,"The rigors of battle have had no effect of this axe. Keras should be very pleased with the result of this particular axe.");
 									currclient:DeleteItemInInventory(Slot.Primary, 1, true);
 									currclient:SummonItem(18976); -- Item: Taelosian Alloy Blood Axe
 								end
@@ -125,7 +125,7 @@ function Protector_Death(e)
 				if(ent:CastToMob():GetClass()==16 and damage > 0) then --berserker
 					local currclient=ent:CastToClient();
 					if(currclient:HasItem(17833) and currclient:HasItem(17898) and currclient:HasItem(17399) and currclient:HasItem(18976)) then
-						currclient:Message(13,"Stepping back for a moment, you look over the axes that you have crafted. Two of them seem to be no more durable than any other axe you've seen, another is completely broken, yet the fourth catches your eye. The blade has nary a nick anywhere on it, the handle seemingly able to withstand immense amounts of punishment.");
+						currclient:Message(MT.Red,"Stepping back for a moment, you look over the axes that you have crafted. Two of them seem to be no more durable than any other axe you've seen, another is completely broken, yet the fourth catches your eye. The blade has nary a nick anywhere on it, the handle seemingly able to withstand immense amounts of punishment.");
 						eq.target_global("berserk_epic", "4", "F", 0,currclient:CharacterID(),0);
 						local qglobals = eq.get_qglobals(currclient);
 						if(qglobals["berserk_epic_sebchest"] == nil or qglobals["berserk_epic_sebchest"] =="0") then	

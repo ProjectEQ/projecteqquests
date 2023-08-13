@@ -5,10 +5,10 @@ local function update_flag(client)
 
   if sewers_flag < 2 then
     eq.set_data(sncrematory_key, "T")
-    client:Message(15, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
+    client:Message(MT.Yellow, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
   else
     eq.set_data(sncrematory_key, "1")
-    client:Message(15, "You have gained a character flag!  Freedom for the souls that were trapped should earn the respect of High Priest Diru.")
+    client:Message(MT.Yellow, "You have gained a character flag!  Freedom for the souls that were trapped should earn the respect of High Priest Diru.")
   end
 end
 
@@ -19,7 +19,7 @@ function event_spawn(e)
   e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1)
   e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1)
 
-  eq.zone_emote(15, "A ghostly voice calls out, 'You have freed the spirits of the suffering.  Hurry now to the crystal room in the east.  There we shall complete the Ceremony.  Make haste, for time is short!")
+  eq.zone_emote(MT.Yellow, "A ghostly voice calls out, 'You have freed the spirits of the suffering.  Hurry now to the crystal room in the east.  There we shall complete the Ceremony.  Make haste, for time is short!")
   eq.set_timer("depop", eq.seconds("12m25s") * 1000)
 end
 
@@ -34,7 +34,7 @@ function event_timer(e)
     -- timers may be bugged on live so guessing intent here. this npc depops
     -- at 12m25s but zone emote and evil essences spawned at 50m
     eq.signal(288086, 1) -- NPC: a_ghostly_essence
-    eq.zone_emote(15, "Gzifa the Pure shouts, 'You have failed to start the ceremony in time!  You shall now feel the wrath of my brethren!'")
+    eq.zone_emote(MT.Yellow, "Gzifa the Pure shouts, 'You have failed to start the ceremony in time!  You shall now feel the wrath of my brethren!'")
     eq.depop()
   end
 end

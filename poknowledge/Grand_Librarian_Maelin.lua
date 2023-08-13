@@ -23,7 +23,7 @@ function event_say(e)
 			e.self:Emote("Maelin takes a deep breath and continues");
 			e.self:Say("I can see now that he was not joking at all. Let us suppose that you travelers could venture into the Elemental Planes and retrieve this essence; and form it into one powerful conglomeration. You could open a tear into the period of time before Zebuxoruk was imprisoned. There is no way you can free him from his stasis now, but if you were to halt the Pantheon at the time of imprisonment. Hah! It could work I do believe. Forgive me, but my old gnomish heart is alive with the excitement of possibilities. Gather up your strength friends, travel into the deep elements. You will need all of your wits about you. Find the very essence of the elementals, and fuse them into one. How to combine them I do not know, and can only wish you luck on finding that information. If you can accomplish this please come get me. I would like to record the events as they take place!'");
 			eq.set_global("pop_elemental_grand_librarian","1",5,"F");
-			e.message:Other(4,"You receive a character flag!");
+			e.other:Message(MT.LightBlue,"You receive a character flag!");
 		end
 	end
 	if(qglobals["shadowknight_epic"] == "1") then

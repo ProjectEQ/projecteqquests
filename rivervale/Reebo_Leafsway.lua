@@ -1,6 +1,6 @@
 -- items: 13971, 13957, 13972, 13958, 13974, 10308, 8303, 8304, 10302, 10303, 10304, 10305, 10306, 10309, 17302, 12001, 10301, 17301, 17300, 12002
 function event_say(e)
-	if(e.message:findi("hail") and e.other:HasItem(52355) == true) then
+	if(e.message:findi("hail") and e.other:HasItem(52355)) then
 		e.self:Say("You took care of our problem, " .. e.other:GetName() .. ", and for that you have my eternal thanks. With the new head you supplied, we should be able to squeeze a few more years out of Shakey. Not sure what you'd want to do with the old one. That dilapidated pumpkin is worthless. Moldy, dried out . . . doesnt hold a light. He shrugs empahtically. Go ahead and hold onto the thing if that tickles your fancy, though. May Karana watch over you in your travels!");
 	elseif(e.message:findi("hail")) then
 		e.self:Say("Greetings and salutations, " .. e.other:GetName() .. "! My name is Reebo Leafsway, loyal Druid of [" .. eq.say_link("Karana",false,"Karana") .. "]. I am in charge of helping young druids who wish to get started down the [" .. eq.say_link("trail to Karana's wisdom",false,"trail to Karana's wisdom") .. "]. I also do my share of tending the [" .. eq.say_link("crops",false,"crops") .. "].");

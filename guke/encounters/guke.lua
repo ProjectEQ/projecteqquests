@@ -31,16 +31,16 @@ end
 
 function Mainil_Say(e)
 	if(e.message:findi("hail")) then
-		if event_started==false then
+		if not event_started then
 			e.self:Say("Greetings friend, thank you for making such haste to get here. The situation is worse than we feared. Not only is the First Witness attempting to complete his spell, he has minions that he is sending to the outside. He is hoping that by assaulting Gukta he will distract us. My friend here will help you guard the exit, please ensure that nothing happens to him. I'll be talking half of you with me, so we can assess the situation. As soon as I have a better idea of what is going on, I will pass on more instructions to you. When you are [" .. eq.say_link("ready",false,"ready") .. "] please let me know, and we shall be off.");
 		else
 			e.self:Say("If you need me to [" .. eq.say_link("wait",false,"wait") .. "] then let me know");
 		end
-	elseif(e.message:findi("ready") and event_started==false) then
+	elseif(e.message:findi("ready") and not event_started) then
 		event_started=true;
 		e.self:Say("Ok, half of you please accompany me while we scout ahead. Granos, I will let you know when I know more.");			
 		eq.stop_timer("pause_wander");
-	elseif(e.message:findi("wait") and event_started==true) then
+	elseif(e.message:findi("wait") and event_started) then
 		e.self:PauseWandering(30);
 		e.self:Say("Very well, we can wait here a moment.");
 	end
@@ -48,7 +48,7 @@ end
 
 function Granos_Say(e)
 	if(e.message:findi("hail")) then
-		if event_started==false then
+		if not event_started then
 			e.self:Say("Greetings, it is good that you came to assist us. We cannot allow the First Witness of Hate to complete his spell. Half of you are going to have to go ahead with my companion, while the other half are going to need to wait here with me. We suspect that the First Witness will attempt to send a force here as a diversion. We will be able to catch up with them soon");
 		else
 			e.self:Say("'Now is not the time to talk, there is fighting to be done!'");
@@ -98,14 +98,14 @@ end
 function Mainil_Waypoint_Arrive(e)
 	eq.debug("mainil wp: " .. e.wp);
 	if (e.wp == 10) then
-		if mwp10 ==false then
+		if not mwp10 then
 			mwp10=true;
 			e.self:Say("It sounds as though the assault has begun. I hope that Granos and your companions can hold the entrance.' He then studies the ground, 'It appears as though we are on the right track. We are making excellent time so far.");
 			eq.set_timer("adds_on_granos",60*1000); --60
 			eq.signal(249001,1)
 		end
 	elseif (e.wp == 20) then
-		if mwp20 ==false then 
+		if not mwp20 then
 			mwp20=true;
 			eq.debug("at wp 20- emote");
 			e.self:Say("Hmm, this is very unusual. There seems to be a second path leading off to the North. It appears as though someone may be assisting the first witness. I will need to follow this second set of prints to investigate further.' He then scratches a note into the boulder before him with instructions for his partner.");	
@@ -117,17 +117,17 @@ function Mainil_Waypoint_Arrive(e)
 			eq.stop_timer("adds_on_granos");
 		end
 	elseif (e.wp == 27) then
-		if mwp27 ==false then 
+		if not mwp27 then
 			mwp27=true;
 			e.self:Emote("glances casually at the tainted water as he wades effortlessly through the murky liquid.  The torchlight illuminates the dark pool, giving it a forbidding green glow.");
 		end
 	elseif (e.wp == 33) then
-		if mwp33 ==false then 
+		if not mwp33 then
 			mwp33=true;
 			eq.zone_emote(1,"The smell of death is carried heavy on a wind from the South.  An unnatural chill sets the hairs on the back of your neck on end.  Scout Mainlil looks uncomfortable for a moment, 'As much as it pains me, we must head South.  Something tells me there is more than we expected at work.'");
 		end		
 	elseif (e.wp == 36) then --executioner
-		if mwp36==false then 
+		if not mwp36 then
 			mwp36=true;
 			eq.debug("at wp 36- spawn exec");
 			e.self:Say("This is worse than I feared.  The Executioner is feeding those souls to the Cauldron to assist the First Witness.  I fear that your friends may have more to deal with than just those that are assisting with his spell.  It appears the Executioner is protected by the same magic that guards the First Witness of Hate.  All we will be able to do is stem the flow of Souls from this place, aside from that, your friends will be on their own.");
@@ -143,13 +143,13 @@ end;
 function Granos_Waypoint_Arrive(e)
 	eq.debug("gran wp: " .. e.wp);
 	if (e.wp==21) then
-		if gwp21==false then
+		if not gwp21 then
 			gwp21=true;
 			e.self:PauseWandering(5);
 			e.self:Emote("reads the note scratched into the rock.  'Mainil left us instructions to head East, he is going to explore what lies North.  He believes we should find the First Witness in that direction.  Let us not dally, he is getting stronger as we speak!");			
 		end
 	elseif (e.wp==30) then
-		if gwp33==false then
+		if not gwp33 then
 			gwp33=true;
 			eq.debug("at wp 33- spawn dudes");
 			eq.spawn2(249083,0,0,154.03,681.46,-17.09,256); --First Witness 154.03,681.46,-17.09
@@ -158,7 +158,7 @@ function Granos_Waypoint_Arrive(e)
 			eq.spawn2(249082,0,0,117.15,729,-23.87,384); --Spirit		
 		end
 	elseif (e.wp == 35) then
-		if gwp35==false then
+		if not gwp35 then
 			gwp35=true;
 			eq.debug("at wp 35- emote");
 			e.self:Say("There are the foci. They must be destroyed before he completes his spell, or his power will increase tenfold.");			
@@ -249,14 +249,14 @@ function First_Signal(e)
 end
 
 function Executioner_Combat(e)
-	if e.joined==true then
+	if e.joined then
 		e.self:Say("Come to me, your execution will empower the First Witness.");
 	end
 end
 
 function Executioner_Death(e)
 	local el=eq.get_entity_list();
-	if (el:IsMobSpawnedByNpcTypeID(249000) == true and el:IsMobSpawnedByNpcTypeID(249001) == true) then
+	if el:IsMobSpawnedByNpcTypeID(249000) and el:IsMobSpawnedByNpcTypeID(249001) then
 		exec_chest=true;
 		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 	end
@@ -287,7 +287,7 @@ function Wisp_Waypoint_Arrive(e)
 end
 
 function FocusE_Combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("focus",math.random(3,15)*1000); --Blurring Focus 48s 4123
 		eq.set_timer("vortex",math.random(3,15)*1000); -- Life Vortex 48s 4122
 	else
@@ -307,7 +307,7 @@ function FocusE_Timer(e)
 end
 
 function FocusM_Combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("ess",math.random(1,3)*1000) --Everlasting Essence 10s 4124
 		eq.set_timer("swirl",math.random(3,15)*1000) -- Swirling Matter 48s 4121
 	else
@@ -327,7 +327,7 @@ function FocusM_Timer(e)
 end
 
 function FocusS_Combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("mass",math.random(1,3)*1000) -- Infinite Mass 4125
 	else
 		eq.stop_timer("mass");
@@ -343,7 +343,7 @@ end
 
 function Focus_Death(e)
 	local el=eq.get_entity_list();
-	if (el:IsMobSpawnedByNpcTypeID(249077) == false and el:IsMobSpawnedByNpcTypeID(249079) == false and el:IsMobSpawnedByNpcTypeID(249082) == false) then
+	if not el:IsMobSpawnedByNpcTypeID(249077) and not el:IsMobSpawnedByNpcTypeID(249079) and not el:IsMobSpawnedByNpcTypeID(249082) then
 		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 		eq.signal(249083,1); --wake first witness
 		eq.signal(249078,1); --make executioner attackable
@@ -351,10 +351,10 @@ function Focus_Death(e)
 end
 function First_Death(e)
 	local el=eq.get_entity_list();
-	if (el:IsMobSpawnedByNpcTypeID(249000) == true and el:IsMobSpawnedByNpcTypeID(249001) == true) then
+	if el:IsMobSpawnedByNpcTypeID(249000) and el:IsMobSpawnedByNpcTypeID(249001) then
 		eq.zone_emote(13,"The First Witness screams silently as his magic fails.  You feel a wave of hate wash over you, as a voice whispers in your head, 'There will always be a First.  You have not won.'");
 		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
-		if exec_chest==true then
+		if exec_chest then
 			eq.spawn2(249234,0,0,169.36,681.64,-16.87,384); --#Gimdk`s_chest (249234)
 		end
 		eq.spawn2(249075,0,0,138.56,681.64,-16.87,128); --#Chest_of_the_Foci (249075)

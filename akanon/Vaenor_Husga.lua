@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18702) == true) then
+	if e.other:HasItem(18702) then
 		e.other:Message(15,"An evil cackle echoes throughout the mines as you get your bearings. Vaenor Husga turns his gaze upon you. 'Why do you stand about young apprentice?! There is much to learn. Read the note in your inventory and then hand it to me so that we can begin your training! The Dark Reflection will have its revenge!'");
 	end
 end

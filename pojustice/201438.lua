@@ -112,7 +112,7 @@ function event_timer(e)
 
 		-- Check to see if all the PCs have left the Trial area; if so
 		-- Clean Corpses up and release thoe hold and stop the timer.
-		if ( ProximityCheck(772, -1148, 76, 175) == false) then 
+		if not ProximityCheck(772, -1148, 76, 175) then 
 			eq.stop_timer(e.timer);
 
 			eq.set_timer("ejecttimer", 100);

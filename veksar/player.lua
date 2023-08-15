@@ -15,7 +15,7 @@ function event_enter_zone(e)
 		end
 	end
 	
-	if(qglobals["ranger_epic"] == "1" and qglobals["ranger_epic_veks"] == nil and el:IsMobSpawnedByNpcTypeID(109907) == false) then
+	if(qglobals["ranger_epic"] == "1" and qglobals["ranger_epic_veks"] == nil and not el:IsMobSpawnedByNpcTypeID(109907)) then
 		eq.unique_spawn(109907,0,0,-347.25,-549.5,-17.15,468); -- NPC: an_asteatotic_highborn
 		eq.set_global("ranger_epic_veks","1",2,"H2");		
 	end

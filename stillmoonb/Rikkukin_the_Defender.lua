@@ -106,32 +106,32 @@ function event_timer(e)
 end
 	
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 	eq.set_timer("Emote", 1000); -- Start First Emote
 	eq.set_timer("Casting", 13000); -- Start First Cast.
 	eq.set_timer("Rikk", 3000);
 	eq.set_next_hp_event(65);
-	elseif (e.joined == false) then -- If raid wipes, set my fail condition in 30 seconds.
+	else -- If raid wipes, set my fail condition in 30 seconds.
 	eq.set_timer("Wipe", 30000);
 	end
 end
 
 function event_hp(e)
-	if (e.hp_event == 65) and hp == true then
+	if e.hp_event == 65 and hp then
 	e.self:TempName("Rikkukin (Frozen Aura)"); -- Rename myself.
 	eq.zone_emote(15,"Rikkukin's skin seal over with a caustic sheet of malleable ice. The Protection will soon make him impervious to melee and magical attacks."); -- Warn the players I'll absorb damage soon.
 	eq.set_timer("Locked_HP", 30000); -- Start a 30 second countdown of my locked state.
 	eq.set_next_hp_event(60); -- Do something at 60%
-	elseif (e.hp_event == 60) and hp == true then
+	elseif e.hp_event == 60 and hp then
 	e.self:SetHP(e.self:GetMaxHP() * (Rikkukin_hp / 100.0)); -- If I reach 60% HP reset my HP to (Rikkukin_hp /100) 65%
 	e.self:Emote("focuses inwardly and heals his wounds through sheer force of will."); -- Warn the players I'm healing.
 	eq.set_next_hp_event(60); -- Rinse repeat until my locked state is up.
-	elseif (e.hp_event == 30) and hptwo == true then
+	elseif e.hp_event == 30 and hptwo then
 	eq.zone_emote(15,"Rikkukin's skin seal over with a caustic sheet of malleable ice. The Protection will soon make him impervious to melee and magical attacks."); -- Warn the players I'll absorb damage soon.
 	e.self:TempName("Rikkukin (Frozen Aura)"); -- Rename myself.
 	eq.set_timer("Locked_HPtwo", 30000); -- Start a 30 second countdown of my locked state.
 	eq.set_next_hp_event(25);
-	elseif (e.hp_event == 25) and hptwo == true then
+	elseif e.hp_event == 25 and hptwo then
 	e.self:SetHP(e.self:GetMaxHP() * (Rikkukin_hptwo / 100.0)); -- If I reach 25% H P reset my HP to (Rikkukin_hptwo / 100) 25%
 	e.self:Emote("focuses inwardly and heals his wounds through sheer force of will."); -- Warn the players I'm healing.
 	eq.set_next_hp_event(25); -- Rinse repeat until my locked state is up.

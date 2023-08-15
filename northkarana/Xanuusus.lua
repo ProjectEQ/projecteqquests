@@ -7,7 +7,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
     if ( e.other:HasItem(62604) ) then
       e.self:Say("I see you have purified that stone. Can I look at it?");
-    elseif ( qglobals["ranger_epic15_pre"] == "7" and e.other:HasItem(62603) == false ) then
+    elseif ( qglobals["ranger_epic15_pre"] == "7" and not e.other:HasItem(62603)) then
       e.other:SummonItem(62603); -- Item: Polished Blasted Stone
     elseif ( qglobals["ranger_epic15_pre"] == "6" ) then 
       e.self:Say("You make my limbs ache. There is something unnatural about you. What is it?");

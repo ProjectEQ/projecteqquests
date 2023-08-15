@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.spawn2(215065, 16, 0, -451, -597, 105.56, 501); -- NPC: A_Marauding_Stormrider
 eq.spawn2(215065, 16, 0, -451, -597, 105.56, 501); -- NPC: A_Marauding_Stormrider
 eq.spawn2(215065, 16, 0, -451, -597, 105.56, 501); -- NPC: A_Marauding_Stormrider

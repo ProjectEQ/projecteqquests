@@ -31,7 +31,7 @@ function event_click_door(e)
 			end
       	end
       	-- if not, open the door
-      	if (mob_spawned_in_east == false) then
+      	if not mob_spawned_in_east then
       		-- Unlock
       		e.door:SetLockPick(0)
       		-- Open both at the same time
@@ -60,7 +60,7 @@ function event_click_door(e)
 	      	end
 	 	end
 	 	-- if not, open the door
-	 	if (mob_spawned_in_middle == false) then
+	 	if not mob_spawned_in_middle then
 	 		-- Unlock
 	 		e.door:SetLockPick(0)
       		-- Open both at the same time

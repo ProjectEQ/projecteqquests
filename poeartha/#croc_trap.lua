@@ -1,5 +1,5 @@
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
    	local roll = math.random(100)
         if (roll >= 85) then
 			eq.get_entity_list():MessageClose(e.self, false, 100, 0, "The earth begins to rumble and shake beneath you as an unseen monster rises from the rubble.");

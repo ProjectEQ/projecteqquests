@@ -24,7 +24,7 @@ local carp_fake=false;
 
 
 function Carp_Combat(e)
-	if (e.joined == true) and carp_fake == false then
+	if e.joined and not carp_fake then
 	eq.spawn2(200037,0,0,385.41, -127.15, -60.25, 384.3):AddToHateList(e.self:GetHateRandom(),1); -- Spawn Breddan_Rutyl
 	eq.spawn2(200036,0,0,393.25, -107.67, -60.25, 391.3):AddToHateList(e.self:GetHateRandom(),1); -- Spawn Fran Prisoal
 	eq.spawn2(200038,0,0,385.17, -98.43, -60.25, 384.8):AddToHateList(e.self:GetHateRandom(),1); -- Spawn Abroan Drian
@@ -44,7 +44,7 @@ function Add_Death(e)
 	local el = eq.get_entity_list();
 	carp_add=carp_add+1
 	eq.debug("Trash Dead: " .. carp_add);
-	if carp_add == 3 and carp_fake == true and ( el:IsMobSpawnedByNpcTypeID(200007) == true) then
+	if carp_add == 3 and carp_fake and el:IsMobSpawnedByNpcTypeID(200007) then
 	eq.depop_all(200007);  -- Depop myself
 	eq.spawn2(200007,0,0,384.00,-113.00,-53.78,386.0):AddToHateList(e.self:GetHateRandom(),1); -- Pop my true self // No adds this time // No Invulnerable State  // Auto Agro Myself
 	end

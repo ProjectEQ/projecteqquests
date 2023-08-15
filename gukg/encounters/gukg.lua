@@ -74,7 +74,7 @@ function Leklos_Hp(e)
 end
 
 function Leklos_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 		
 	else
@@ -146,49 +146,49 @@ function Prophet_Signal(e)
 end
 
 function Flavor_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text1_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"You hear the sound of chanting coming from deeper within the dungeon, an invisible force seems to be pulling you east.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text2_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"You hear chanting coming from below you to the north.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text3_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"Whispers of several voices can be heard from straight ahead.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text4_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"The sound of chanting echoes from the left.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text5_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"An evil aura calls to you from the left.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text6_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"An evil aura calls to you from the right.");
 		eq.depop_with_timer();
 	end
@@ -316,7 +316,7 @@ function Spawn_Gragna()
 end
 
 function Gragna_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 		eq.set_timer("heal", 65 * 1000);
 		
@@ -409,7 +409,7 @@ function Bidip_Signal(e)
 end
 
 function Keeper_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 		
 	else

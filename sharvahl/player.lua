@@ -17,7 +17,7 @@ function event_click_door(e)
 	
 	if (e.self:Class() == "Rogue") then 
 		if (door_id == 106) then
-			if (e.self:HasItem(52007) == true) then
+			if e.self:HasItem(52007) then
 				eq.spawn2(155346,0,0,-541.79,99.84,-235.62,506.8);
 				e.self:Message(13, "You try the Cell Key on the lock and it's a perfect fit.");
 			end

@@ -131,7 +131,7 @@ function items.return_items(npc, client, trade, text)
 			elseif return_count > 0 then
 				return_data[i] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
 				client:PushItemOnCursor(inst);
-				if(text == true) then
+				if text then
 					npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));
 				end
 				returned = true;
@@ -162,7 +162,7 @@ function items.return_items(npc, client, trade, text)
 		money = true;
 	end
 	
-	if(money == true) then
+	if money then
 		client:SetEntityVariable("RETURN_MONEY", string.format("%d|%d|%d|%d", trade.copper, trade.silver, trade.gold, trade.platinum));
 		client:AddMoneyToPP(trade.copper, trade.silver, trade.gold, trade.platinum, true);
 	end

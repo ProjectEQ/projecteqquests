@@ -24,7 +24,7 @@ function event_enter_zone(e)
         if qglobals["drac_cooldown"] == nil and qglobals["bard15"] ~= nil and qglobals["bard15"] >= "3" and not e.self:HasItem(77613) and not e.self:HasItem(77640) then
             local entity_list = eq.get_entity_list()
             -- we can probably get away with just doing unique_spawn but lets just be safe
-            if entity_list:IsMobSpawnedByNpcTypeID(123173) == false and entity_list:IsMobSpawnedByNpcTypeID(123174) == false then
+            if not entity_list:IsMobSpawnedByNpcTypeID(123173) and not entity_list:IsMobSpawnedByNpcTypeID(123174) then
                 eq.unique_spawn(123173, 0, 0, -1050, 1388, 13, 510) -- he will spawn the rest
             end
         end

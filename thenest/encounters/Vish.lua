@@ -79,9 +79,9 @@ end
 
 	
 function Vish_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 	eq.set_next_hp_event(98); -- Start event at 98.
-	elseif (e.joined == false) then
+	else
 	eq.set_timer("Respawn", 20000); -- despawn stuff at 20 seconds.
 	eq.set_timer("Pop",30000); -- respawn event at 30 seconds.
 	end
@@ -333,7 +333,7 @@ function Egg_Death(e)
 end
 
 function Corrupted_Spawn(e)
-	if corrupted_spawn == true then
+	if corrupted_spawn then
 	eq.set_timer("Abilities",1000); -- set my variables.
 	corrupted_spawn=false; -- make sure this doesnt happen when I respawn during event.
 	else
@@ -348,7 +348,7 @@ function Corrupted_Spawn(e)
 end
 
 function Corrupted_SpawnOne(e)
-	if corrupted_spawnone == true then
+	if corrupted_spawnone then
 	eq.set_timer("AbilitiesOne",1000);
 	corrupted_spawnone=false;
 	else
@@ -357,7 +357,7 @@ function Corrupted_SpawnOne(e)
 end
 
 function Corrupted_SpawnTwo(e)
-	if corrupted_spawntwo == true then
+	if corrupted_spawntwo then
 	eq.set_timer("AbilitiesTwo",1000);
 	corrupted_spawntwo=false;
 	else
@@ -366,7 +366,7 @@ function Corrupted_SpawnTwo(e)
 end
 
 function Corrupted_SpawnThree(e)
-	if corrupted_spawnthree == true then
+	if corrupted_spawnthree then
 	eq.set_timer("AbilitiesThree",1000);
 	corrupted_spawnthree=false;
 	else

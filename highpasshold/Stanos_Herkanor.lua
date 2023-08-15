@@ -3,10 +3,10 @@ function event_say(e)
 	local rogue_epic = eq.get_qglobals(e.other);
 	
 	if(e.message:findi("hail")) then
-		if(e.other:HasItem(11057) == true and rogue_epic.Fatestealer == nil) then
+		if e.other:HasItem(11057) and rogue_epic.Fatestealer == nil) then
 			e.self:Say(string.format("Ha, the prodigy returns. So good to see you, %s. I always consider it an honor to have your company, and we have much to talk about!",e.other:GetName()));
 			eq.set_global("Fatestealer","1",5,"F");
-			e.self:Say(string.format("But not here and not now. We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, %s. You are a member of this circle and nothing will ever break that.",e.other:GetName()));			
+			e.self:Say(string.format("But not here and not now. We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, %s. You are a member of this circle and nothing will ever break that.",e.other:GetName()));
 		elseif(rogue_epic.Fatestealer ~= nil) then
 			e.self:Say(string.format("We are in grave danger, you and I, and should not be seen speaking to one another. Seek out my associates. They will apprise you of what needs to be done. When you have found them... Tell them that the sun is setting on the horizon.' He clasps your palm and gives you a strange handshake, 'Before you go, know that you have proved yourself as one of us, %s. You are a member of this circle and nothing will ever break that.",e.other:GetName()));
 		else

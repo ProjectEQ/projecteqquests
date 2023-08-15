@@ -78,7 +78,7 @@ function Battlemaster_HP(e)
 end
 
 function Battlemaster_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		if(not eq.is_paused_timer("wipecheck")) then
 			eq.pause_timer("wipecheck");
 		end
@@ -118,7 +118,7 @@ function GoatIxt_Timer(e)
 end
 
 function GoatIxt_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		if(not eq.is_paused_timer("wipecheck")) then
 			eq.pause_timer("wipecheck");
 		end

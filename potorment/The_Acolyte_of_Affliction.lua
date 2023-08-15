@@ -1,5 +1,5 @@
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.stop_timer('reset');
     eq.set_timer('adds', 50 * 1000);
   else

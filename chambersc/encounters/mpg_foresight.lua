@@ -95,7 +95,7 @@ function Boss_Spawn(e)
 end
 
 function Boss_Say(e)
-  if ( event_started ~= true ) then
+  if not event_started then
     if (ValidatePlayersAreInZone(e.other)) then
       if ( e.message:findi("hail") ) then
         e.self:Say("This is the Mastery of Foresight Trial. You must react quickly to deadly and unforgiving hazards. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
@@ -119,7 +119,7 @@ function ValidatePlayersAreInZone(requestor)
   local el = eq.get_entity_list();
   for k,v in pairs(player_list) do
     member = el:GetClientByCharID(v)
-    if (member.valid == false) then
+    if not member.valid then
       requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
       return false;
     end
@@ -165,12 +165,12 @@ function Boss_Signal(e)
   if (e.signal == 1) then
     -- Check to see if any of the Dragorn are still alive.
     local el = eq.get_entity_list();
-    if ( el:IsMobSpawnedByNpcTypeID(306013) == false and
-         el:IsMobSpawnedByNpcTypeID(306014) == false and
-         el:IsMobSpawnedByNpcTypeID(306015) == false and
-         el:IsMobSpawnedByNpcTypeID(306016) == false and
-         el:IsMobSpawnedByNpcTypeID(306017) == false and
-         el:IsMobSpawnedByNpcTypeID(306018) == false ) then
+    if (not el:IsMobSpawnedByNpcTypeID(306013) and
+        not el:IsMobSpawnedByNpcTypeID(306014) and
+        not el:IsMobSpawnedByNpcTypeID(306015) and
+        not el:IsMobSpawnedByNpcTypeID(306016) and
+        not el:IsMobSpawnedByNpcTypeID(306017) and
+        not el:IsMobSpawnedByNpcTypeID(306018)) then
       Event_Win(e);
     end
          
@@ -218,7 +218,7 @@ function Kyv_Timer(e)
 	client = eq.get_entity_list():GetClientByID(kyv_targets[i][1]);
     if (client.valid) then 
       loc = kyv_targets[i][3];
-      if ( kyvs[kyv_targets[i][2]][2](e, client, loc) == false ) then
+      if not kyvs[kyv_targets[i][2]][2](e, client, loc) then
         client:Message(14, kyvs[kyv_targets[i][2]][4]);
         e.self:CastSpell(kyvs[kyv_targets[i][2]][3], client:GetID(), 0, 4500);
         eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );

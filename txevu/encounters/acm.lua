@@ -97,7 +97,7 @@ function ACMTimer(e)
 end
 
 function ACMCombat(e)
-    if e.joined == true then
+    if e.joined then
         combat = true
         if adds then
             eq.set_timer("hatchling", 35000)

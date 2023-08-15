@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	e.self:CastSpell(13536, e.self:GetTarget():GetID()); -- Spell: Harm Touch
   end
 end

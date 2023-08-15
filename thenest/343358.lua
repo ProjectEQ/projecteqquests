@@ -18,7 +18,7 @@ local add = 0;
 
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("agro", 1000);
 		eq.set_timer("check",2000);
 		local npc_list =  eq.get_entity_list():GetNPCList();

@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18736) == true) then
+	if e.other:HasItem(18736) then
 		e.other:Message(15,"As you bask in the majesty of the Temple of Marr, an important looking individual, clad in shining metal armor turns to greet you. 'I can spot a new recruit a mile away. Welcome to the Temple of Marr. I am Tholius Quey. Read the note in your inventory and hand it to me to begin your training. I wish you the best of luck.'");
 	end
 end

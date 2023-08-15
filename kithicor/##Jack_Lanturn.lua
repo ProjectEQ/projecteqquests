@@ -61,12 +61,12 @@ function event_timer(e)
 		local qglobals = eq.get_qglobals();
 		if((qglobals["halloween_great_pumpkin"]) == nil) then
 		 local el = eq.get_entity_list();
- 		 if(el:IsMobSpawnedByNpcTypeID(20257) == false) then  --#Casper
-		  if(el:IsMobSpawnedByNpcTypeID(20256) == false) then  --#Captain_Scareyface
-		   if(el:IsMobSpawnedByNpcTypeID(20255) == false) then  --#Booberella
-		    if(el:IsMobSpawnedByNpcTypeID(20261) == false) then  --#Solomon_Grundy
-		     if(el:IsMobSpawnedByNpcTypeID(20258) == false) then  --#Count_Alucard
-		      if(el:IsMobSpawnedByNpcTypeID(20262) == false) then  --#The_Great_Pumpkin
+ 		 if not el:IsMobSpawnedByNpcTypeID(20257) then  --#Casper
+		  if not el:IsMobSpawnedByNpcTypeID(20256) then  --#Captain_Scareyface
+		   if not el:IsMobSpawnedByNpcTypeID(20255) then  --#Booberella
+		    if not el:IsMobSpawnedByNpcTypeID(20261) then  --#Solomon_Grundy
+		     if not el:IsMobSpawnedByNpcTypeID(20258) then  --#Count_Alucard
+		      if not el:IsMobSpawnedByNpcTypeID(20262) then  --#The_Great_Pumpkin
 				start_event(e);
 		      else 
 		       eq.debug("not spawning, The_Great_Pumpkin is up");				

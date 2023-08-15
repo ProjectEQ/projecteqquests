@@ -15,14 +15,14 @@ function PRT_Spawn(e)
 end
 
 function PRT_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		e.self:Say("You shall regret trespassing into my chambers. Rise my minions and show them how well I have learned to use the power of this land's creatures. Destroy them all. Leave only enough to feed the hounds")
 		eq.stop_timer('wipecheck');
 		
 		eq.signal(298002,1); --a_corrupted_construct remove immunities
 		eq.signal(298026,1); --a_corrupted_construct remove immunities
 		
-		if (golems_spawn == true) then
+		if golems_spawn then
 			eq.set_timer("SpawnGolem", 6 * 1000);
 		end
 	else
@@ -225,7 +225,7 @@ function Unstable_Timer(e)
 		end
 	elseif e.timer == "depop" then
 		eq.stop_timer("depop");
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(298032) == true) then -- only depops if PRT is alive
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(298032) then -- only depops if PRT is alive
 			eq.signal(298032,1); --Pixtt_Riel_Tavas (298032) signal to reduce add count
 			e.self:Emote("ceases its struggles as the energy that brought it to life fades away.");			
 			eq.depop();

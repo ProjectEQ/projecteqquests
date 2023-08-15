@@ -4,11 +4,11 @@
 --]]
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		e.self:AddAISpell(0, 6603, 1, -1, 15,-425);
 		eq.set_timer("Shapeshift",30000);
 		eq.set_next_hp_event(96);
-	elseif (e.joined == false) then
+	else
 		e.self:SetHP(e.self:GetMaxHP());
 		e.self:WipeHateList();
 		eq.stop_all_timers();

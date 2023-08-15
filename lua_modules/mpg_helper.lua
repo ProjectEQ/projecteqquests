@@ -63,7 +63,7 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
       end
 
       -- Has character done this trial before?
-      if ( has_done_this_trial == false ) then
+      if not has_done_this_trial then
 
         local trial_bit_list = {1,2,4,8,16,32};
         local aas_to_grant = 0;
@@ -154,7 +154,7 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
 --       end
     end
 
-    if (client:HasItem(52413) == false or (client_globals['oow_mpg_raids_complete'] == nil)) then
+    if not client:HasItem(52413) or client_globals['oow_mpg_raids_complete'] == nil then
       has_all_trials = true;
       for bk,bv in pairs(trial_bit_list) do
         if (bit.band(mpg_raid_trials,bv[1]) ~= 0) then

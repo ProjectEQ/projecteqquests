@@ -1,6 +1,6 @@
 --Ikkinz Raid #4: Chambers of Destruction 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);
 		eq.set_timer("crumbling",  math.random(1,3) * 1000);
 		eq.set_timer("earthen",  math.random(1,3) * 1000);

@@ -10,7 +10,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18791) == true) then
+	if e.other:HasItem(18791) then
 		e.other:Message(15,"As your eyes adjust to the darkness, a pretty troll (pretty by trollish standards) turns toward you. 'I be Kaglari. You read note in inventory and hand to me to start training!'");
 	end
 end

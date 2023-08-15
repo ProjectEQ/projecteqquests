@@ -72,7 +72,7 @@ function Start_Event(e)
 end
 
 function Boss_Say(e)
-  if ( event_started ~= true ) then
+  if not event_started then
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Endurance trial. You must survive an endless onslaught of enemies for as long as necessary. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
@@ -181,9 +181,9 @@ function Boss_Timer(e)
 end
 
 function Boss_Combat(e)
-  if (event_started == true and e.joined == false) then
+  if event_started and not e.joined then
     eq.stop_all_timers();
-  elseif(event_started == true and e.joined == true) then
+  elseif event_started and e.joined then
     start_timers();
   end
 end

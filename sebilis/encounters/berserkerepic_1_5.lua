@@ -1,7 +1,7 @@
 -- Juggernaut Death
 -- items: 17833, 17898, 17399, 18976
 function Juggernaut_Death(e) 
-  if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(89193) == false ) then 
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(89193) then
      local clist = eq.get_entity_list():GetClientList();
      if ( clist ~= nil ) then
 		 for currclient in clist.entries do
@@ -113,7 +113,7 @@ function Guardian_Timer(e)
 end
 
 function Protector_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	eq.set_timer("checkaxe",6000);
   end  
 end

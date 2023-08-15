@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(0,"Glykus Helmir blows a carved boar horn. 'My pets! I enfuse you with the power of Zek. Grow and battle with Glykus!");
 eq.set_timer("powerup", 3 * 1000);
 eq.set_timer("checkadds", 1 * 1000);

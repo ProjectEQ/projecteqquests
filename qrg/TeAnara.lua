@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18713) == true) then
+	if e.other:HasItem(18713) then
 		e.other:Message(15,"As you orient yourself amongst the peacefulness of the Surefall Glade, a melodic, peaceful voice seems to float on the wind. 'I am Te'Anara, Master of the Woods. Read the note in your inventory and when you wish to begin your training, hand it to me. We must preserve the heart of the Jaggedpine lest all of Norrath will perish!'");
 	end
 end

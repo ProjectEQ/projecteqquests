@@ -25,7 +25,7 @@ function Hanvar_Spawn(e)
 end
 
 function Hanvar_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	Aggro_Adds(e);
 	eq.set_timer("adds", 5 * 1000);	
 	eq.set_timer("chains", math.random(10,45) * 1000);
@@ -69,7 +69,7 @@ function Guard_Death(e)
 end
 
 function Guard_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	eq.set_timer("depop_warn",45*1000);
   else
     eq.stop_timer("depop_warn");

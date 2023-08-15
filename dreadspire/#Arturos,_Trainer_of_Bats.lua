@@ -1,6 +1,6 @@
 -- items: 52522
 function event_say(e)
-	if(e.message:findi("hail") and e.other:HasItem(52522) == true) then
+	if e.message:findi("hail") and e.other:HasItem(52522) then
 		e.self:Emote("sniffs the air as you approach.  His eyes go wide. 'You bring news of my favorite.  What has happened to Redfang?  Please, let me see!");
 	elseif(e.message:findi("hail")) then
 		e.self:Emote("extends his palm, holding a piece of red meat.  A nearby bat alights on his arm.  It quickly swallows the chunk of food, and flaps away.  'Do not worry, Probard.  The bats are quite tame when they grow to trust you.  I know them all by name:  Cedric, Hanna, Ellis, Maximillion, Etrias and... Oh, pardon me.  One of my [children] has gone missing as of late and his disappearance has caused me quite a bit of grief.");

@@ -116,7 +116,7 @@ function Huhn_Spawn(e)
 end
 
 function Huhn_Say(e)
-  if ( event_started ~= true ) then
+  if not event_started then
     if ( e.message:findi("hail") ) then
       e.self:Say("'Hail to you as well, " .. e.other:GetName() .. ", but what exactly are you doing here ? I'm sorry, but as you can see, you've arrived too late. Moments ago we defeated Huhn-Abram the Corrupted and we're currently regrouping and resurrecting our fallen members. Please respect our control of this area and leave at once. I have to admit your presence here is making me a bit nervous. We don't want any trouble.' They stare at you fearfully, 'So, are you going to leave us in peace, or did you come [ " .. eq.say_link('expecting a fight', false, 'expecting a fight') .. " ]?' ");
 

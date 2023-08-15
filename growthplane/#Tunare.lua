@@ -40,9 +40,9 @@ function send_signal_to_all_npc_in_zone(signal_to_send,exclude_table)
 					-- add this NPCID to the list of NPCID that we have already signalled
 					signal_sent_to[npc:GetNPCTypeID()] = true;
 				end
-			elseif(signal_sent_to[npc:GetNPCTypeID()] == true) then
+			elseif signal_sent_to[npc:GetNPCTypeID()] then
 				if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " has already been sent signal " .. tostring(signal_to_send) .. "."); end
-			elseif(exclude_npc_list[npc:GetNPCTypeID()] == true) then
+			elseif exclude_npc_list[npc:GetNPCTypeID()] then
 				if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " is excluded and will not be sent signal " .. tostring(signal_to_send) .. "."); end
 			end
 		end

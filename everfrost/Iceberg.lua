@@ -15,7 +15,7 @@ function event_timer(e)
 end
 
 function event_combat(e)
-	if(e.joined == true) then
+	if e.joined then
 		e.self:Say("Grrroarrr !!");
 		eq.signal(30061,1); -- NPC: Tundra_Jack
 	else

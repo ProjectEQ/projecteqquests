@@ -60,7 +60,7 @@ function Real_Death(e)
   eq.zone_emote(15, "Your victory has shattered the shroud of magic surrounding the dungeon's treasure.");
   eq.spawn2(243680, 0, 0, 1129, 560, 10.13, 372); -- NPC: Guardian`s_Stone_Chest
   eq.spawn2(243681, 0, 0, 1129, 477, 10.13, 372); -- NPC: Guardian`s_Granite_Chest
-  if (extra_loot == true) then
+  if extra_loot then
     eq.spawn2(243679, 0, 0, 1241, 510, -3.90, 380); -- NPC: Valdoon`s_gilded_coffin
   end
 
@@ -72,7 +72,7 @@ end
 
 
 function Lookout_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.stop_timer("depop");
 	else
 		eq.set_timer("depop", 120 * 1000);
@@ -157,7 +157,7 @@ function Agent_Hp(e)
 end
 
 function Agent_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_next_hp_event(25);
 	end
 end
@@ -173,14 +173,14 @@ function Agent_Timer(e)
 end
 
 function Text1_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"Your footsteps break the silence in the caverns. Your activity has alarmed nearby scouts looking to please their master with information of an intruder.  Perhaps it wasn't so wise of you to come here...");
 		eq.depop_with_timer();
 	end
 end
 
 function Text2_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"Something large and menacing claws at the rocks just ahead. The scrapes grind with the anticipation of the slaughter soon to come. Whatever beast lingers ahead knows that it is almost time to unleash its fury and serve the master that put it here.");
 		eq.depop_with_timer();
 	end

@@ -1,7 +1,7 @@
 -- items: 57012, 57051
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.message:findi("hail") and qglobals["beast_epic"] == "18" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(303092) == false) then
+	if(e.message:findi("hail") and qglobals["beast_epic"] == "18" and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(303092)) then
 		e.self:Say("Ah, you have the totem. Me call you friend. So friend, we gots big trouble here. Dem bazu are out of control. It not as dough dey weren't tough enough already! Dey gots da wrong spirits running in deir bodies. Dere is no way to calm dem eider. So we are going to have to kill them to get da spirits back. You must do dis. I tink dey know I'm here. Dey close by!");
 		eq.spawn2(303092,0,0, 378.32,70.83 ,267.45 ,220 ); --#Bazu_Terror
 		eq.spawn2(303093,0,0,410.5,62.8,262,256); --a_bazu_crusher (303093)

@@ -1,5 +1,5 @@
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("rain", math.random(3,60) * 1000);
 		eq.set_timer("breath", math.random(3,45) * 1000);
 		eq.set_timer("pres", math.random(3,30) * 1000);

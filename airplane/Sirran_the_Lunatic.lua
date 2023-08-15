@@ -25,7 +25,7 @@ function event_say(e)
 		e.self:Say("Lortap llaw taerg eht fo lahsram, Narris lahsram ma I. Flesym ecudortni ot em wolla. Sgniteerg");
 	elseif(e.message:findi("llaw eht htiw eno I ma") and qglobals["sirran"] == "6") then 		--island6
 		e.self:Say("Kcul doog! Ouy rof ydaer si erips eht fo retsis eht won, sdik boj doog.");
-		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71076) == false) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(71076) then
 			eq.spawn2(71076,0,0,-929,-1035,1093,128); 							--used Magelo to get the closest loc as possible.
 		end
 	elseif(e.message:findi("traverse this plane") and qglobals["sirran"] == "1") then
@@ -64,7 +64,7 @@ function event_trade(e)
 end
 
 function event_combat(e)
-	if(e.joined == true) then
+	if e.joined then
 		e.self:Shout("What?! Now you've done it! The bunnies are angry! ANGRY I TELL YOU!");
 	end
 end

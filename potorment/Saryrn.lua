@@ -66,7 +66,7 @@ function event_hp(e)
 end
 
 function event_combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.stop_timer('reset');
         eq.set_timer('zcheck', 6 * 1000);
     else

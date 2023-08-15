@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Storm clouds begin to gather over your head.");
 eq.spawn2(209123, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
 eq.depop_with_timer();

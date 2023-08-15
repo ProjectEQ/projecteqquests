@@ -5,7 +5,7 @@ end
 function event_enter(e)
 	if(e.other:Class() == "Magician") then
 		local qglobals = eq.get_qglobals(e.self,e.other);
-		if(qglobals["mage_epic"] == "10" and qglobals["mage_epic_cod"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(200060) == false ) then	
+		if(qglobals["mage_epic"] == "10" and qglobals["mage_epic_cod"] == nil and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(200060)) then	
 			if(e.self:GetY()==310) then					
 				e.other:Message(15,"The purple gem on your staff emanates a soft breeze.");	
 				eq.set_global("mage_epic_cod","1",3,"H2");

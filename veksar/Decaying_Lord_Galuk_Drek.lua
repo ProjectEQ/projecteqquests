@@ -1,5 +1,5 @@
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	e.self:CastSpell(4472, e.self:GetHateRandom():GetID()); -- Spell: Darkened Decay
 	eq.set_timer("ae",120000);
   end 

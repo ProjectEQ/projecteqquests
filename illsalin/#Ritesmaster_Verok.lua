@@ -31,7 +31,7 @@ end
 end
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.set_timer("OOBcheck", 6 * 1000);
 eq.set_timer("agro", 5 * 1000);
 else

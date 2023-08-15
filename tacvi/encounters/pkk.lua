@@ -52,7 +52,7 @@ function PKK_Timer(e)
 	if (e.timer == "wipecheck") then
 		-- Check to see if there are any Clients in the room with PKK
 		local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 5000);
-		if (client:IsClient() == false) then
+		if not client:IsClient() then
 			PKK_hitpoints = 100;
 			eq.depop_all(298203); -- Reflection 1
 			eq.depop_all(298204); -- Reflection 2

@@ -5,7 +5,7 @@ e.self:SetRunning(true);
 end
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end

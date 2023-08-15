@@ -32,7 +32,7 @@ function event_timer(e)
       eq.set_timer("emotethree", 5 * 1000);
    elseif (e.timer == "emotethree") then
       eq.stop_timer("emotethree");
-      if ( ProximityCheck(1454, 213, -328, 80) == true) then --north jail
+      if ProximityCheck(1454, 213, -328, 80) then --north jail
          eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 50,"Angered by your presence here, apparitions step through the nearby walls. A bone chilling cold fills the room as they reach for your throat.");
          eq.spawn2(297077,0,0,1500, 180, -328, 396) --a_vengeful_apparition (297077)
          eq.spawn2(297077,0,0,1500, 234, -328, 308)
@@ -45,7 +45,7 @@ function event_timer(e)
          eq.depop();
       end
    elseif (e.timer == "check") then
-      if ( ProximityCheck(1454, 213, -328, 80) == false) then --stay up until area is cleared
+      if not ProximityCheck(1454, 213, -328, 80) then --stay up until area is cleared
          eq.depop_all(297077); --a_vengeful_apparition (297077)
          eq.depop();
       end

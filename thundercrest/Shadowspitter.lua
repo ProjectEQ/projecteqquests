@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.stop_timer('depop');
 eq.get_entity_list():GetNPCByNPCTypeID(340389):AddToHateList(e.other, 1);
 eq.get_entity_list():GetNPCByNPCTypeID(340386):AddToHateList(e.other, 1);
@@ -17,7 +17,7 @@ end
 end
 
 function event_death_complete(e)
-if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(340389) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340388) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340387) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340386) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340390) == true) then
+if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340389) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340388) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340387) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340386) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340390) then
 eq.spawn2(340032, 0, 0, -2844, 3143, 307, 385); -- NPC: a_chest
 eq.depop_with_timer(340390);
 end

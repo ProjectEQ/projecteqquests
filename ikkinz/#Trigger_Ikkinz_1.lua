@@ -27,7 +27,7 @@ function event_timer(e)
 end
 
 function event_signal(e)
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294574) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294338) == false ) then 
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294574) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294338) then 
     -- Check Priest of Righteousness
     eq.get_entity_list():FindDoor(2):SetLockPick(0);
     eq.get_entity_list():FindDoor(3):SetLockPick(0);
@@ -37,7 +37,7 @@ function event_signal(e)
     eq.depop_all(294632);
   end
 
-  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294339) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294575) == false ) then 
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294339) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294575) then 
     -- Check Defender of Righteousness
     eq.get_entity_list():FindDoor(6):SetLockPick(0);
     eq.get_entity_list():FindDoor(7):SetLockPick(0);

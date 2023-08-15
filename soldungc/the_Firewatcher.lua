@@ -11,7 +11,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local qglobals = eq.get_qglobals(e.other);
 	local el = eq.get_entity_list();
-	if (qglobals["Fatestealer_culth"] == "1" and el:IsMobSpawnedByNpcTypeID(278005) == false) then
+	if (qglobals["Fatestealer_culth"] == "1" and not el:IsMobSpawnedByNpcTypeID(278005)) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 21339,item2=21342,item3=21340,item4=21341})) then 
 			eq.spawn2(278005,0,0,-543,705,25,0); -- NPC: #Culthor_the_Gatekeeper
 			e.self:Say("This should do the trick, I think! The gate is...Yes it's opening. Ha ha! The Gatekeeper comes!");

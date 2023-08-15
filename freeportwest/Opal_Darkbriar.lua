@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18739) == true) then
+	if e.other:HasItem(18739) then
 		e.other:Message(15,"As you make your way into a small dimly lit room, a robed figure turns to greet you. 'Hello there. friend. I am Opal Darkbriar, Wizard Guild Master. Should you wish to begin your training, read the note in your inventory and then hand it to me.'");
 	end
 end

@@ -4,7 +4,7 @@ function event_enter(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);	
 	else
 		eq.stop_timer("OOBcheck");
@@ -60,7 +60,7 @@ function event_signal(e)
     if ( (e.self:GetHP() - hp ) > 0 ) then 
       e.self:SetHP( e.self:GetHP() - hp );
 	local el = eq.get_entity_list();
-  	if (el:IsMobSpawnedByNpcTypeID(294086) == false and el:IsMobSpawnedByNpcTypeID(294087) == false and el:IsMobSpawnedByNpcTypeID(294088) == false and el:IsMobSpawnedByNpcTypeID(294089) == false and el:IsMobSpawnedByNpcTypeID(294090) == false) then --all servitors are down
+  	if not el:IsMobSpawnedByNpcTypeID(294086) and not el:IsMobSpawnedByNpcTypeID(294087) and not el:IsMobSpawnedByNpcTypeID(294088) and not el:IsMobSpawnedByNpcTypeID(294089) and not el:IsMobSpawnedByNpcTypeID(294090) then --all servitors are down
 	e.self:SetSpecialAbility(24, 0); --turn off immunity
         e.self:SetSpecialAbility(35, 0); --turn off immunity
 	end
@@ -71,7 +71,7 @@ end
 function event_death_complete(e)
 		local el = eq.get_entity_list();
   	
-	if (el:IsMobSpawnedByNpcTypeID(294138) == false) then --#Malevolent_Priest_ (294138)
+	if not el:IsMobSpawnedByNpcTypeID(294138) then --#Malevolent_Priest_ (294138)
 		Instance_Win();
 		--check for other malevolent priest, if both are down, instance is won
 	

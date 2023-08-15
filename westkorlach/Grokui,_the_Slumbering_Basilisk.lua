@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-  if (e.joined == false) then
+  if not e.joined then
     e.self:SetHP(e.self:GetMaxHP());
     eq.set_next_hp_event(80);
     e.self:ModifyNPCStat("min_hit", "690");

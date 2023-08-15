@@ -5,7 +5,7 @@ local y_min = -2158;
 local z_const = 207.7;
 
 function event_combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("shadowstep", 20000);
         eq.stop_timer("reset");
         eq.set_timer("barb", math.random(1, 4) * 1000);

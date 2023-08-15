@@ -52,7 +52,7 @@ function TM_Devrak_Death(e)
 	e.self:Emote("corpse crumples to the ground lifeless.  You search his lifeless body for some sign of a key, but are unable to find anything.  You do however notice a treasure chest out of the corner of your eye that you could have sworn wasn't there a minute ago.");
 	eq.spawn2(245241,0,0,-487,1002,-34.75,288); --spawn chest with Heavy Orcish Prison Key
 	local el = eq.get_entity_list();
-	if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
+	if not el:IsMobSpawnedByNpcTypeID(245199) and not el:IsMobSpawnedByNpcTypeID(245220) and not el:IsMobSpawnedByNpcTypeID(245200) then
 		treasure_shroud();
 	end;	
 end
@@ -60,7 +60,7 @@ function TM_Dokorel_Death(e)
 	e.self:Emote("corpse crumples to the ground lifeless.  You search his lifeless body for some sign of a key, but are unable to find anything.  You do however notice a treasure chest out of the corner of your eye that you could have sworn wasn't there a minute ago.");
 	eq.spawn2(245241,0,0,295,459,-22,0); --spawn chest with Heavy Orcish Prison Key
 	local el = eq.get_entity_list();
-	if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
+	if not el:IsMobSpawnedByNpcTypeID(245199) and not el:IsMobSpawnedByNpcTypeID(245220) and not el:IsMobSpawnedByNpcTypeID(245200) then
 		treasure_shroud();
 	end;	
 end
@@ -68,7 +68,7 @@ function TM_Velrek_Death(e)
 	e.self:Emote("corpse crumples to the ground lifeless.  You search his lifeless body for some sign of a key, but are unable to find anything.  You do however notice a treasure chest out of the corner of your eye that you could have sworn wasn't there a minute ago.");
 	eq.spawn2(245241,0,0,115,1082,-24.25,384); --spawn chest with Heavy Orcish Prison Key
 	local el = eq.get_entity_list();
-	if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
+	if not el:IsMobSpawnedByNpcTypeID(245199) and not el:IsMobSpawnedByNpcTypeID(245220) and not el:IsMobSpawnedByNpcTypeID(245200) then
 		treasure_shroud();
 	end;
 end
@@ -374,12 +374,12 @@ function Shaman_Death(e)
 end
 function check_chests()
 	local el = eq.get_entity_list();
-	if ( el:IsMobSpawnedByNpcTypeID(245296) == false and el:IsMobSpawnedByNpcTypeID(245284) == false) then
+	if not el:IsMobSpawnedByNpcTypeID(245296) and not el:IsMobSpawnedByNpcTypeID(245284) then
 		eq.zone_emote(15,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure");
 		eq.zone_emote(15,"The last of the prisoners has escaped and the warden lies dead at your feet.  You have done well.");
 
 		eq.spawn2(245297,0,0, 867.00,-1043.00,0,192); --#Yenner`s_Decorative_Chest		
-		if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then
+		if not el:IsMobSpawnedByNpcTypeID(245199) and not el:IsMobSpawnedByNpcTypeID(245220) and not el:IsMobSpawnedByNpcTypeID(245200) then
 			eq.spawn2(245295,0,0, 919.00,-1058.00,-21.50,320); --#Taskmaster`s_Stone_Chest
 		end;	
 		if (pg_chest==1) then
@@ -400,7 +400,7 @@ function Trash_Hp(e)
 end
 
 function Trash_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_next_hp_event(40);
 	end
 end

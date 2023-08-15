@@ -1,7 +1,7 @@
 --Ikkinz Group Trial #2: Twin Struggles 
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.set_timer("wipe", 10 * 1000);
 e.self:ModifyNPCStat("hp_regen", "1");
 end

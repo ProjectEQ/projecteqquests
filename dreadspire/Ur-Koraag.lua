@@ -1,6 +1,6 @@
 -- items: 52524
 function event_say(e)
-	if(e.message:findi("hail") and e.other:HasItem(52524) == true) then
+	if e.message:findi("hail") and e.other:HasItem(52524) then
 		e.self:Say("You have trophy, Shrunken Head.  That from Hatchet I see.  Means you have Ur-Koraag respect.  Strong are " .. e.other:GetName() .. ".  If share with me the trophy, Ur-Koraag share with you tale.");
 	elseif(e.message:findi("hail")) then
 		e.self:Say("Me no want to hurt strangers.  Go away, else you end up like Hatchet's other playthings.");

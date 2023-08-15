@@ -1,5 +1,5 @@
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_next_hp_event(85);
   end
 end

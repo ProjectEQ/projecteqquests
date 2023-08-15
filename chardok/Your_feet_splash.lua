@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 e.self:Emote("through shallow puddles as you walk along.");
 eq.depop_with_timer();
 end

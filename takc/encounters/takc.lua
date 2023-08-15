@@ -43,7 +43,7 @@ end
 
 function Mini_Death(e)
   local entity_list = eq.get_entity_list();
-  if (entity_list:IsMobSpawnedByNpcTypeID(241058) == false and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
+  if not entity_list:IsMobSpawnedByNpcTypeID(241058) and not entity_list:IsMobSpawnedByNpcTypeID(241053) and not entity_list:IsMobSpawnedByNpcTypeID(241046) and not entity_list:IsMobSpawnedByNpcTypeID(241051) then
 	 --signal qos remove immunity
     eq.signal(241052,1);
 	
@@ -53,7 +53,7 @@ function Mini_Death(e)
   eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
   eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
 	
-  if (entity_list:IsMobSpawnedByNpcTypeID(241058) == true and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
+  if entity_list:IsMobSpawnedByNpcTypeID(241058) and not entity_list:IsMobSpawnedByNpcTypeID(241053) and not entity_list:IsMobSpawnedByNpcTypeID(241046) and not entity_list:IsMobSpawnedByNpcTypeID(241051) then
 	--signal qos start summoning at 100% health when the 3 other nameds are dead and ritana is alive
 	eq.signal(241052,2); 
 
@@ -84,7 +84,7 @@ function QOS_Death(e)
 end
 
 function Qos_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 		
 	else
@@ -93,7 +93,7 @@ function Qos_Combat(e)
 end
 
 function Mini_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
@@ -121,7 +121,7 @@ end
 end
 
 function Kamoj_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		instance_id = eq.get_zone_instance_id();
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
@@ -142,21 +142,21 @@ function Kamoj_Combat(e)
 end
 
 function Split_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"A strange current of energy passes through you, cold and fast-moving. From the south comes the sound of two clear voices, blending together in a soothing melody. Ahead to the west, the sound of stamping feet and heavy chanting originates, echoing through the passageways. A strange sense of urgency tugs you towards the west.");
 		eq.depop_with_timer();
 	end
 end
 
 function Golem_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"The chanting and stamping sounds grow louder, closer, with a more feverish pitch. Along with them comes the deafening crash of stone against stone as something very large moves before you. The energy is flying all around you, a vortex of sand and light.");
 		eq.depop_with_timer();
 	end
 end
 
 function Priest_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.zone_emote(15,"The ethereal voices wind together, climbing over each other in a beautiful duet. The sound is filled with pure beauty, and the owners of these voices semm enraptured and unaware of your existence.");
 		eq.depop_with_timer();
 	end
@@ -199,7 +199,7 @@ function Trash_Timer(e)
 end
 
 function Trash_Combat(e)
-	if (e.joined == true) then  
+	if e.joined then  
 		eq.set_timer("distcheck", 6000);
 	else
 		eq.stop_timer("distcheck");
@@ -207,7 +207,7 @@ function Trash_Combat(e)
 end
 
 function Trap1_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		e.self:CastSpell(4163,e.other:GetID(),0,0); -- Spell:Curse of the Desert should fire 5 times consecutively on every person in range
 		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"Stinging sand assaults you from every direction.");
 		eq.depop_with_timer();

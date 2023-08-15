@@ -1,5 +1,5 @@
 function event_combat(e)
-	if(e.joined == true) then
+	if e.joined then
 		e.self:Say("You are a fool to have attacked me!");
 	end
 end

@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("drain", math.random(5,15) * 1000);
 	else
 		eq.stop_timer("drain");

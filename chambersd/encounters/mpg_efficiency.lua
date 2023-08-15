@@ -91,9 +91,9 @@ function Efficiency_Timer(e)
 
     -- If the wave mobs died from the previous wave
     -- continue spawning waves; otherwise fail. 307001, 307002, 307003
-    if (el:IsMobSpawnedByNpcTypeID(307001) == false 
-      and el:IsMobSpawnedByNpcTypeID(307002) == false 
-      and el:IsMobSpawnedByNpcTypeID(307003) == false) then 
+    if (not el:IsMobSpawnedByNpcTypeID(307001)
+      and not el:IsMobSpawnedByNpcTypeID(307002)
+      and not el:IsMobSpawnedByNpcTypeID(307003)) then
 
       this_wave = this_wave + 1;
       eq.spawn_condition(this_zone, instance_id, 1, 0);

@@ -14,7 +14,7 @@ function event_hp(e)
 end
 
 function event_combat(e)
-    if (e.joined == true) then
+    if e.joined then
         local entity_list = eq.get_entity_list();
         local npc = entity_list:GetMobByNpcTypeID(336066);
 			if (npc.valid and not npc:IsEngaged()) then

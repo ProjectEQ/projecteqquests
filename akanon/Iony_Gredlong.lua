@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18775) == true) then
+	if e.other:HasItem(18775) then
 		e.other:Message(15,"Iony Gredlong's tiny voice echoes throughout the room. 'Welcome to the Abbey of Deep Musing " .. e.other:GetName() .. ". I am Iony Gredlong, your new Guild Master should you accept the ways of the Clerics of the Deep Muses. Read the note in your inventory and then hand it to me when you are ready to begin your training.'");
 	end
 end

@@ -6,7 +6,7 @@ end
 
 
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("spawn_adds",150*1000);
 		eq.set_timer("check_adds_alive", 2000);
 		e.self:Say("The power of the sword has revived me! Prepare to die!");
@@ -27,7 +27,7 @@ function event_timer(e)
 		eq.spawn2(303131, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Kreljnok`s_Power
 		eq.spawn2(303130, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: Kreljnok`s_Rage
 	elseif e.timer=="check_adds_alive" then
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(303130) == true or eq.get_entity_list():IsMobSpawnedByNpcTypeID(303131) == true) then
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(303130) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(303131) then
 			e.self:ModifyNPCStat("hp_regen", "7000");
 		else
 			e.self:ModifyNPCStat("hp_regen", "100")

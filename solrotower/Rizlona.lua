@@ -3,7 +3,7 @@ eq.unique_spawn(212063, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.s
 end
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.set_timer("OOBcheck", 6 * 1000);
 else
 eq.stop_timer("OOBcheck");

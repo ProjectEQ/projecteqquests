@@ -17,10 +17,10 @@ after 20 minutes at a location she will wipe her agro and reset to bind
 
 
 
-local Agro=0;
+local Agro = false;
 
 function event_combat(e)
-	if (e.joined == true) and Agro == 0 then
+	if e.joined and not Agro then
 	eq.set_next_hp_event(95);
 	eq.set_timer("Reset",1200000) -- Reset myself after 20 minutes of event starting.
 	end
@@ -28,7 +28,7 @@ end
 
 function event_spawn(e)
 	e.self:SetPseudoRoot(true);
-	Agro=0;
+	Agro = false;
 end
 
 function event_timer(e)
@@ -87,7 +87,7 @@ function event_timer(e)
 		eq.depop_all(301080);
 		e.self:WipeHateList();
 		e.self:GotoBind();
-		Agro=0;
+		Agro = false;
 		eq.zone_emote(0,"You lose all sight of Jekisia. She must have fled away into the caverns, using her lackyes to cover her escape.");
 		eq.update_spawn_timer(52919, 1800 * 1000);
 		-- should depop and respawn 30 mins later
@@ -97,7 +97,7 @@ end
 
 function event_hp(e)
 	if (e.hp_event == 95) then
-		Agro=1;
+		Agro = true;
 		e.self:WipeHateList();
 		eq.set_timer("Agro_One",5000);
 		e.self:Say("Help me, while I escape!");
@@ -191,6 +191,6 @@ function event_hp(e)
 end
 
 function event_death_complete(e)
-	Agro=0;
+	Agro = false;
 	eq.update_spawn_timer(52919, 86400 * 1000); -- 1 day for now
 end

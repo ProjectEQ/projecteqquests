@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18431)) then
-		e.other:Message(15,"A tiny voice calls your name. 'Welcome " .. e.other:GetName() .. ". I knew you would make it. I am Kaya Cloudfoot, Guild Master for the Paladins of the Storm Reapers. Read the note in your inventory and hand it to me when you are ready to begin your training. May the Rainlord bless you on your new path in life.'");
+		e.other:Message(MT.Yellow,"A tiny voice calls your name. 'Welcome " .. e.other:GetName() .. ". I knew you would make it. I am Kaya Cloudfoot, Guild Master for the Paladins of the Storm Reapers. Read the note in your inventory and hand it to me when you are ready to begin your training. May the Rainlord bless you on your new path in life.'");
 	end
 end
 

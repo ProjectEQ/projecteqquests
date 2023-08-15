@@ -34,7 +34,7 @@ function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_p
   for i = 0, player_list_count - 1, 1 do
     local member = player_list:GetMember(i);
     if not member.valid then
-      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
+      requestor:Message(MT.Red, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
       return invalidRequest;
     end
     if (member:IsClient()) then
@@ -42,7 +42,7 @@ function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_p
       if (item_requirements ~= nil) then
         local member_has_valid_items = InstanceRequests.ValidateItemRequirements(member_v, item_requirements);
         if not member_has_valid_items then
-          requestor:Message(13, member_v:GetCleanName() .. " is missing a required item.");
+          requestor:Message(MT.Red, member_v:GetCleanName() .. " is missing a required item.");
           return invalidRequest; 
         end
       end
@@ -50,7 +50,7 @@ function InstanceRequests.ValidateRequest(groupOrRaid, instance, version,  min_p
       local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, member_bits));
       --conflicting lockouts, but not a GM over level 80 with GM status turned on
       if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and not requestor:GetGM() ))) then
-        requestor:Message(13, member_v:GetCleanName().." has the following lockouts:");
+        requestor:Message(MT.Red, member_v:GetCleanName().." has the following lockouts:");
         InstanceRequests.DisplayLockouts(requestor, member_v, event_globals);
         return invalidRequest;
       end
@@ -86,7 +86,7 @@ function InstanceRequests.ValidateRequestOLD(groupOrRaid, instance, version,  mi
   for i = 0, player_list_count - 1, 1 do
     local member = player_list:GetMember(i);
     if not member.valid then
-      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
+      requestor:Message(MT.Red, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
       return invalidRequest;
     end
     if (member:IsClient()) then
@@ -94,7 +94,7 @@ function InstanceRequests.ValidateRequestOLD(groupOrRaid, instance, version,  mi
       if (item_requirements ~= nil) then
         local member_has_valid_items = InstanceRequests.ValidateItemRequirements(member_v, item_requirements);
         if not member_has_valid_items then
-          requestor:Message(13, member_v:GetCleanName() .. " is missing a required item.");
+          requestor:Message(MT.Red, member_v:GetCleanName() .. " is missing a required item.");
           return invalidRequest; 
         end
       end
@@ -102,7 +102,7 @@ function InstanceRequests.ValidateRequestOLD(groupOrRaid, instance, version,  mi
       local compared_bits = bit.bxor(requestor_bits, bit.bor(requestor_bits, member_bits));
       --conflicting lockouts, but not a GM over level 80 with GM status turned on
       if (compared_bits > 0 and (requestor:Admin() <= 80  or (requestor:Admin() > 80 and not requestor:GetGM()))) then
-        requestor:Message(13, member_v:GetCleanName().." has the following lockouts:");
+        requestor:Message(MT.Red, member_v:GetCleanName().." has the following lockouts:");
         InstanceRequests.DisplayLockouts(requestor, member_v, event_globals);
         return invalidRequest;
       end
@@ -114,22 +114,22 @@ end
 
 function InstanceRequests.BasicRequirementsAreValid(requestor, instance_id, min_players, max_players, min_level, player_list, player_list_count)
   if not player_list.valid then
-    requestor:Message(13, "You are not in a valid group/raid.");
+    requestor:Message(MT.Red, "You are not in a valid group/raid.");
     return false;
   end
 
   if (instance_id ~= nil and instance_id ~= 0) then
-    requestor:Message(13, "You are already in an instance.");
+    requestor:Message(MT.Red, "You are already in an instance.");
     return false;
   end
 
   if (player_list_count < min_players or player_list_count > max_players) then
-    requestor:Message(13, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
+    requestor:Message(MT.Red, "You do not meet the player count requirement.  You have " .. player_list_count .. " players.  You must have at least " .. min_players .. " and no more than " .. max_players .. ". ");
     return false;
   end
 
   if (player_list:GetLowestLevel() < min_level) then
-    requestor:Message(13, "All members must be over level " .. min_level .. ".");
+    requestor:Message(MT.Red, "All members must be over level " .. min_level .. ".");
     return false;
   end
 
@@ -202,13 +202,13 @@ function InstanceRequests.DisplayLockouts(requestor, client, event_globals)
         if (days>0) then timeString = timeString..days.."D " end
         if (hours>0) then timeString = timeString..hours.."H " end
         if (minutes>0) then timeString = timeString..minutes.."M" end
-        requestor:Message(13,v[2].." - Remaining Lockout: "..timeString);
+        requestor:Message(MT.Red,v[2].." - Remaining Lockout: "..timeString);
         hasLockouts = true;
       end
     end
   end
   if requestor == client and not hasLockouts then
-    requestor:Message(13, "You currently have no instance lockouts.");
+    requestor:Message(MT.Red, "You currently have no instance lockouts.");
   end
 end
 
@@ -232,7 +232,7 @@ function InstanceRequests.PlayerHasQuestGlobals(requestor, member, required_glob
   local retval = true;
   for k,v in pairs(required_globals) do
     if (member_globals[v[1]] == nil) then
-      requestor:Message(13, member:GetName() .. " " .. v[2] );
+      requestor:Message(MT.Red, member:GetName() .. " " .. v[2] );
       retval = false;
     end
   end
@@ -262,7 +262,7 @@ function InstanceRequests.CheckPlayersForLockout(thing, global, globals_desc, re
       local member_v = member:CastToClient();
       local member_globals = eq.get_qglobals(member_v);
       if (member_globals[global] ~= nil) then
-        requestor:Message(13, member_v:GetName() .. ' has ' .. globals_desc);
+        requestor:Message(MT.Red, member_v:GetName() .. ' has ' .. globals_desc);
         retval = true;
       end
     end

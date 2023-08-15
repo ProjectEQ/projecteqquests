@@ -87,19 +87,19 @@ local function spawn_goblin(from_raidleader)
 
   -- at 30 spawned goblins the event is reset and clients are all teleported outside zone
   if goblin_count == 7 and warnings == 0 then
-    eq.zone_emote(15, "It must be an ambush!  An army of ice goblins are pouring forth, rushing in from every direction.  Judging by the cacophony of shrill voices echoing in the distance there are many more on the way.  Their leaders must be nearby...")
+    eq.zone_emote(MT.Yellow, "It must be an ambush!  An army of ice goblins are pouring forth, rushing in from every direction.  Judging by the cacophony of shrill voices echoing in the distance there are many more on the way.  Their leaders must be nearby...")
     warnings = warnings + 1
   elseif goblin_count == 13 and warnings == 1 then
-    eq.zone_emote(15, "The goblins continue to mercilessly assail you.  Periodically you can make out the voices of the leaders barking orders.  Perhaps eliminating the commanders would bring a cease to the onslaught.")
+    eq.zone_emote(MT.Yellow, "The goblins continue to mercilessly assail you.  Periodically you can make out the voices of the leaders barking orders.  Perhaps eliminating the commanders would bring a cease to the onslaught.")
     warnings = warnings + 1
   elseif goblin_count == 19 and warnings == 2 then
-    eq.zone_emote(15, "The goblins are relentless.  When one falls, three more appear to take its place.  If their attacks persist much longer you will be forced out of the icy caverns.")
+    eq.zone_emote(MT.Yellow, "The goblins are relentless.  When one falls, three more appear to take its place.  If their attacks persist much longer you will be forced out of the icy caverns.")
     warnings = warnings + 1
   elseif goblin_count == 25 and warnings == 3 then
-    eq.zone_emote(15, "Everywhere you turn is another Frostfoot goblin.  Reflections of them flash in distorted patterns on the icy walls.  Within moments they will overwhelm you and force you out of their lair.")
+    eq.zone_emote(MT.Yellow, "Everywhere you turn is another Frostfoot goblin.  Reflections of them flash in distorted patterns on the icy walls.  Within moments they will overwhelm you and force you out of their lair.")
     warnings = warnings + 1
   elseif goblin_count == 30 and warnings == 4 then
-    eq.zone_emote(15, "You are overwhelmed by the Frostfoot horde.")
+    eq.zone_emote(MT.Yellow, "You are overwhelmed by the Frostfoot horde.")
     reset_event()
   end
 end
@@ -162,10 +162,10 @@ function leader_timer(e)
   elseif e.timer == "emote" then
     -- emotes are a little convoluted to try to match live behavior (which isn't fully understood)
     if is_raidleader and use_raidleader_emote then
-      eq.zone_emote(15, "Raid Leader Sig Chol shouts, 'To arms!  Fend off the intruders and halt their attempts to proceed any further!'")
+      eq.zone_emote(MT.Yellow, "Raid Leader Sig Chol shouts, 'To arms!  Fend off the intruders and halt their attempts to proceed any further!'")
       use_raidleader_emote = false
     elseif use_taskmaster_emote then
-      eq.zone_emote(15, "Taskmaster Suttalp shouts, 'Don't just stand there!  Attack the invaders!  Overwhelm them!'")
+      eq.zone_emote(MT.Yellow, "Taskmaster Suttalp shouts, 'Don't just stand there!  Attack the invaders!  Overwhelm them!'")
       use_taskmaster_emote = false
     end
   end

@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if e.other:HasItem(18707) then
-		e.other:Message(15,"A deep voice breaks the silence as you attempt to get your bearings. 'Come young recruit, I sense your apprehension. You will never make an adequate warrior with fear clouding your mind. I am Tabure Ahendle, Guild Master for the Steel Warriors. Read the note in your inventory and then hand it to me to begin your training.'");
+		e.other:Message(MT.Yellow,"A deep voice breaks the silence as you attempt to get your bearings. 'Come young recruit, I sense your apprehension. You will never make an adequate warrior with fear clouding your mind. I am Tabure Ahendle, Guild Master for the Steel Warriors. Read the note in your inventory and then hand it to me to begin your training.'");
 	end
 end
 

@@ -37,7 +37,7 @@ function event_click_door(e)
 		if (instance_id > 0) then
 			e.self:MovePCInstance(296, instance_id, 0, 65, -1, 253); -- Zone: inktuta
 		else
-			e.self:Message(13, "You are not a part of an instance!");
+			e.self:Message(MT.Red, "You are not a part of an instance!");
 		end
 	end
 end

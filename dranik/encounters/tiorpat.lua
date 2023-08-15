@@ -14,23 +14,23 @@ end
 
 function Tiorpat_Timer(e)
   if (e.timer == 'flavor') then
-    eq.zone_emote(0,"Tiorpat Tornwing shouts, 'The invaders have ruined our lands, our home, our way of life.  We must not take this lying down.");
-    eq.zone_emote(0,"A Dragorn realist shouts, 'Are you mad?  We haven't a chance against them.  We've already lost and you must be blind not to see this.");
+    eq.zone_emote(MT.White,"Tiorpat Tornwing shouts, 'The invaders have ruined our lands, our home, our way of life.  We must not take this lying down.");
+    eq.zone_emote(MT.White,"A Dragorn realist shouts, 'Are you mad?  We haven't a chance against them.  We've already lost and you must be blind not to see this.");
     eq.set_timer('flavor2', 300 * 1000);
     eq.stop_timer('flavor');
   elseif (e.timer == 'flavor2') then
-    eq.zone_emote(0,"Tiorpat Tornwing shouts, 'Can you remember a time when we were a proud people?  Before our subjugation to these heartless monsters?");
-    eq.zone_emote(0,"A sympathetic Dragorn shouts, 'Yes.  I long to relive those times again.'");
+    eq.zone_emote(MT.White,"Tiorpat Tornwing shouts, 'Can you remember a time when we were a proud people?  Before our subjugation to these heartless monsters?");
+    eq.zone_emote(MT.White,"A sympathetic Dragorn shouts, 'Yes.  I long to relive those times again.'");
     eq.set_timer('flavor3', 300 * 1000);
     eq.stop_timer('flavor2');
   elseif (e.timer == 'flavor3') then
-    eq.zone_emote(0,"Tiorpat Tornwing shouts, 'To live under the thumb of the invaders is not to live at all.  I would rather be dead than a slave.");
-    eq.zone_emote(0,"A Dragorn realist shouts, 'You will be dead, and any fool that follows suit sacrifices their life needlessly as well.");
+    eq.zone_emote(MT.White,"Tiorpat Tornwing shouts, 'To live under the thumb of the invaders is not to live at all.  I would rather be dead than a slave.");
+    eq.zone_emote(MT.White,"A Dragorn realist shouts, 'You will be dead, and any fool that follows suit sacrifices their life needlessly as well.");
     eq.set_timer('flavor4', 300 * 1000);
     eq.stop_timer('flavor3');
   elseif (e.timer == 'flavor4') then
-    eq.zone_emote(0,"Tiorpat Tornwing shouts, 'It's never too late to make a last stand.  Drive them out!");
-    eq.zone_emote(0,"A sympathetic Dragorn shouts, 'Death to the invaders!");
+    eq.zone_emote(MT.White,"Tiorpat Tornwing shouts, 'It's never too late to make a last stand.  Drive them out!");
+    eq.zone_emote(MT.White,"A sympathetic Dragorn shouts, 'Death to the invaders!");
     eq.set_timer('flavor', 600 * 1000);
     eq.stop_timer('flavor4');
   elseif (e.timer == 'depop') then
@@ -50,7 +50,7 @@ elseif (e.timer == 'link') then
 			end
 		end
 elseif (e.timer == 'adds') then
-	eq.zone_emote(0,"Tiorpat Tornwing shouts, 'Help me, brother!");
+	eq.zone_emote(MT.White,"Tiorpat Tornwing shouts, 'Help me, brother!");
 		eq.signal(336058,1);
 		eq.signal(336057,1);
 		-- a_Dragorn_realist (336058)
@@ -80,7 +80,7 @@ function Tiorpat_Signal(e)
   if (e.signal==1) then
     e.self:SetSpecialAbility(24, 0);
     e.self:SetSpecialAbility(35, 0);
-    eq.zone_emote(0,"Tiorpat Tornwing shouts, 'I'm not afraid of you, and I will not back down. This time you've threatened the wrong Dragorn.");
+    eq.zone_emote(MT.White,"Tiorpat Tornwing shouts, 'I'm not afraid of you, and I will not back down. This time you've threatened the wrong Dragorn.");
     eq.stop_timer('flavor');
     eq.stop_timer('flavor2');
     eq.stop_timer('flavor3');
@@ -110,7 +110,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 			
 		end
@@ -120,7 +120,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	
@@ -129,7 +129,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	elseif add_sequence == 3 then
@@ -137,7 +137,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	elseif add_sequence == 4 then
@@ -145,7 +145,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	elseif add_sequence == 5 then
@@ -153,7 +153,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	elseif add_sequence == 6 then
@@ -161,7 +161,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	elseif add_sequence == 7 then
@@ -169,7 +169,7 @@ function Add_Signal(e)
 			add_sequence = add_sequence + 1;
 			e.self:SetSpecialAbility(24, 0);
     			e.self:SetSpecialAbility(35, 0);
-			eq.zone_emote(0,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
+			eq.zone_emote(MT.White,  e.self:GetCleanName() .. " shouts, 'It is an honor to fight at your side again, Tornwing.");
 			eq.debug("add sequence: " ..  add_sequence);
 		end
 	end

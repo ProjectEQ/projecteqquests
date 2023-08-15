@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if e.other:HasItem(18741) then
-		e.other:Message(15,"A noble Aviak stands before you. 'Hello there. Welcome. I assume you are here to train in the ways of the Enchanter. If so, please read the note in your inventory and hand it to me when you wish to start your training. Soon you will see that all you know is but an illusion.'");
+		e.other:Message(MT.Yellow,"A noble Aviak stands before you. 'Hello there. Welcome. I assume you are here to train in the ways of the Enchanter. If so, please read the note in your inventory and hand it to me when you wish to start your training. Soon you will see that all you know is but an illusion.'");
 	end
 end
 

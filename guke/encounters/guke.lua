@@ -109,7 +109,7 @@ function Mainil_Waypoint_Arrive(e)
 			mwp20=true;
 			eq.debug("at wp 20- emote");
 			e.self:Say("Hmm, this is very unusual. There seems to be a second path leading off to the North. It appears as though someone may be assisting the first witness. I will need to follow this second set of prints to investigate further.' He then scratches a note into the boulder before him with instructions for his partner.");	
-			eq.zone_emote(1,"The scout appears to no longer need your protection.");
+			eq.zone_emote(MT.Default,"The scout appears to no longer need your protection.");
 			e.self:ModifyNPCStat("hp_regen", "4000");
 			e.self:ModifyNPCStat("ac", "1000");
 			e.self:PauseWandering(30);			
@@ -124,7 +124,7 @@ function Mainil_Waypoint_Arrive(e)
 	elseif (e.wp == 33) then
 		if not mwp33 then
 			mwp33=true;
-			eq.zone_emote(1,"The smell of death is carried heavy on a wind from the South.  An unnatural chill sets the hairs on the back of your neck on end.  Scout Mainlil looks uncomfortable for a moment, 'As much as it pains me, we must head South.  Something tells me there is more than we expected at work.'");
+			eq.zone_emote(MT.Default,"The smell of death is carried heavy on a wind from the South.  An unnatural chill sets the hairs on the back of your neck on end.  Scout Mainlil looks uncomfortable for a moment, 'As much as it pains me, we must head South.  Something tells me there is more than we expected at work.'");
 		end		
 	elseif (e.wp == 36) then --executioner
 		if not mwp36 then
@@ -244,7 +244,7 @@ function First_Signal(e)
 		e.self:SetSpecialAbility(25, 0);
 		e.self:SetSpecialAbility(35, 0);
 		e.self:CameraEffect(1000,6);
-		eq.zone_emote(13,"As the last Focus blinks lifelessly, the room trembles. The First Witness screams as his shield of protection fails, 'Infidels! I was so close! You shall die!'");
+		eq.zone_emote(MT.Red,"As the last Focus blinks lifelessly, the room trembles. The First Witness screams as his shield of protection fails, 'Infidels! I was so close! You shall die!'");
 	end
 end
 
@@ -258,7 +258,7 @@ function Executioner_Death(e)
 	local el=eq.get_entity_list();
 	if el:IsMobSpawnedByNpcTypeID(249000) and el:IsMobSpawnedByNpcTypeID(249001) then
 		exec_chest=true;
-		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+		eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 	end
 end
 function Risen_Spawn(e)
@@ -269,7 +269,7 @@ end
 function Risen_Timer(e)
 	if e.timer=="depop" then
 		eq.spawn2(249128,58,0,508.73,433.41,-107.87,0); -- NPC: a_malicious_force
-		eq.zone_emote(3,"The Risen before the Executioner explodes, leaving a small bit of dancing energy where it once stood.");
+		eq.zone_emote(MT.BrightBlue,"The Risen before the Executioner explodes, leaving a small bit of dancing energy where it once stood.");
 		eq.depop();
 	elseif e.timer=="aggro_scout" then
 		e.self:AddToHateList(eq.get_entity_list():GetNPCByNPCTypeID(249000),1);
@@ -280,7 +280,7 @@ end
 function Wisp_Waypoint_Arrive(e)
 	eq.debug("wisp wp: " .. e.wp);
 	if (e.wp == 35) then		
-		eq.zone_emote(15,"The flames roar with angry heat as the Cauldron consumes the soul.");
+		eq.zone_emote(MT.Yellow,"The flames roar with angry heat as the Cauldron consumes the soul.");
 		eq.spawn2(eq.ChooseRandom(249011,249061,249053,249056,249070,249142),0,0,153.2,673.4,-38.87,256); -- NPC(s): an_acolyte_of_the_First (249011), an_ice_caller_of_the_First (249061), a_blade_of_the_First (249053), a_caller_of_the_First (249056), a_fist_of_the_First (249070), a_protector_of_the_First_Witness (249142)
 		eq.depop();
 	end
@@ -344,7 +344,7 @@ end
 function Focus_Death(e)
 	local el=eq.get_entity_list();
 	if not el:IsMobSpawnedByNpcTypeID(249077) and not el:IsMobSpawnedByNpcTypeID(249079) and not el:IsMobSpawnedByNpcTypeID(249082) then
-		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+		eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 		eq.signal(249083,1); --wake first witness
 		eq.signal(249078,1); --make executioner attackable
 	end
@@ -352,8 +352,8 @@ end
 function First_Death(e)
 	local el=eq.get_entity_list();
 	if el:IsMobSpawnedByNpcTypeID(249000) and el:IsMobSpawnedByNpcTypeID(249001) then
-		eq.zone_emote(13,"The First Witness screams silently as his magic fails.  You feel a wave of hate wash over you, as a voice whispers in your head, 'There will always be a First.  You have not won.'");
-		eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+		eq.zone_emote(MT.Red,"The First Witness screams silently as his magic fails.  You feel a wave of hate wash over you, as a voice whispers in your head, 'There will always be a First.  You have not won.'");
+		eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 		if exec_chest then
 			eq.spawn2(249234,0,0,169.36,681.64,-16.87,384); --#Gimdk`s_chest (249234)
 		end

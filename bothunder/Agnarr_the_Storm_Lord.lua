@@ -21,7 +21,7 @@ elseif(e.timer == 'agnarrhelp') then
 help_agnarr(e);
 eq.stop_timer('agnarrhelp');
 elseif(e.timer == 'agnarradds') then
-eq.zone_emote(0,"Agnarr strikes his staff to the ground, causing great ripples of energy to rage across the room.");
+eq.zone_emote(MT.White,"Agnarr strikes his staff to the ground, causing great ripples of energy to rage across the room.");
 eq.signal(209033,1); -- NPC: A_storm_portal
 end
 end

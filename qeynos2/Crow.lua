@@ -25,7 +25,7 @@ function event_trade(e)
 
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 9816})) then --sealed package rog prequest, add global check , add npc check?
 		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(2031) then --check if an npc from event is active 
-			e.other:Message(15,"You have smuggled the mysterious package into Qeynos, completing the third task for the Smuggler's Camp.");
+			e.other:Message(MT.Yellow,"You have smuggled the mysterious package into Qeynos, completing the third task for the Smuggler's Camp.");
 			e.self:Emote("opens the package and examines the contents, then quickly shuts it again. 'You can go now.'");
 			--add global
 			eq.signal(2134, 2); --2134 a gruff voice

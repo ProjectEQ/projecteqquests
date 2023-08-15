@@ -7,7 +7,7 @@ function event_enter_zone(e)
 		eq.set_global("paladin_epic_ferubi","1",3,"H2");
 	end
 	if(qglobals["mage_epic"] == "10" and qglobals["mage_epic_ferubi"] == nil) then
-		e.self:Message(15,"Your staff begins to glow");
+		e.self:Message(MT.Yellow,"Your staff begins to glow");
 	end
 end
 

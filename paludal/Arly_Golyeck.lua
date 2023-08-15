@@ -18,11 +18,11 @@ function event_trade(e)
 	if(qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 9810 })) then
 		e.self:Emote("accepts the satchel of poisons and cradles it as he gently sets the bag aside.");
 		e.self:Say("I don't know how carefully you packaged these, ".. e.other:GetName() .. ", but the last thing I want is to reach into the bag and brush my skin against a spilled contact poison. Which reminds me, you should always wear gloves when handling toxins. You could ask my previous assistant about that, except that he's dead for that self-same reason. Now, about your reward . . . cop a squat and listen up for a moment. This is a secret that I'm entrusting to you. There's a way to paint poison onto the edge of a blade in such a manner that the toxin never needs to be reapplied. It involves using an extremely potent poison agent, mixing it with a thin lacquer, and making sure the combined solution seeps into each tiny groove of the metal. It's easier to understand if you see it written down on paper. Here, I've jotted down some notes in your journal covering the topic.");
-		e.other:Message(15,"You have coerced Arly into revealing his secret");
+		e.other:Message(MT.Yellow,"You have coerced Arly into revealing his secret");
 		eq.set_global("Fatestealer_pl","1",5,"F");
 	elseif(qglobals["Fatestealer"] == "1" and qglobals["Fatestealer_gem"] == nil and item_lib.check_turn_in(e.trade, {item1 = 52353})) then 
 		e.self:Say("Now, about your reward . . . cop a squat and listen up for a moment. This is a secret that I'm entrusting to you. There's a way to paint poison onto the edge of a blade in such a manner that the toxin never needs to be reapplied. It involves using an extremely potent poison agent, mixing it with a thin lacquer, and making sure the combined solution seeps into each tiny groove of the metal. It's easier to understand if you see it written down on paper. Here, I've jotted down some notes in your journal covering the topic.");
-		e.other:Message(15,"You have coerced Arly into revealing his secret");
+		e.other:Message(MT.Yellow,"You have coerced Arly into revealing his secret");
 		eq.set_global("Fatestealer_pl","1",5,"F");
 		eq.set_global("Fatestealer_gem","1",5,"F");
 	end

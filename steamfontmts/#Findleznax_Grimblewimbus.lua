@@ -8,7 +8,7 @@ function event_say(e)
 	elseif(e.message:findi("help")) then
 		e.self:Emote("thrusts his shovel into the dank earth and begins digging. For his size, he works fast");
 		if(	qglobals["Fatestealer_forge"] == "1") then
-			e.other:Message(15,"The dirt shudders and a decomposing hand breaks the surface. By Bertoxxulous bile, we've got a live one! Defend yourself!'");
+			e.other:Message(MT.Yellow,"The dirt shudders and a decomposing hand breaks the surface. By Bertoxxulous bile, we've got a live one! Defend yourself!'");
 			eq.spawn2(448203,0,0,e.self:GetX()-5,e.self:GetY()-5,e.self:GetZ(),e.self:GetHeading()); -- NPC: a_decomposing_body
 		else
 			e.self:Emote("stops digging and sits down to rest. 'Hmph, nay. There's nothing here after all. Sorry to have troubled you.");

@@ -28,7 +28,7 @@ function event_trade(e)
 		e.self:Say("Take it! The blade is yours! A gift from Innoruuk, for the most powerful of shadowknights!");
 		e.other:QuestReward(e.self,{itemid=48136, exp=50000}); --Innoruuk's Dark Blessing (Epic 2.0)
 		e.other:AddAAPoints(10);
-		e.other:Message(15,'You have gained 10 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 10 ability points!');
 		eq.set_global("shadowknight_epic","12",5,"F");		
 	end	
 	item_lib.return_items(e.self, e.other, e.trade);

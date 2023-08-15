@@ -117,7 +117,7 @@ function items.return_items(npc, client, trade, text)
 			-- remove delivered task items from return for this slot
 			local return_count = inst:RemoveTaskDeliveredItems()
 
-			if(eq.is_disc_tome(inst:GetID()) and npc:GetClass() > 19 and npc:GetClass() < 36) then
+			if(eq.is_disc_tome(inst:GetID()) and npc:GetClass() >= 19 and npc:GetClass() < 36) then
 				if(client:GetClass() == npc:GetClass() - 19) then
 					client:TrainDisc(inst:GetID());
 				else

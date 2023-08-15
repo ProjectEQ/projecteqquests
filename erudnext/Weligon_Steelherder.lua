@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18725)) then
-		e.other:Message(15,"Weligon Steelherder tells you, 'Greetings, A young recruit perhaps? I am Weligon Steelherder, Guild Master of the Deepwater Knights. Read the note in your inventory and then hand it to me when you are ready to begin your training. Truth awaits!'");
+		e.other:Message(MT.Yellow,"Weligon Steelherder tells you, 'Greetings, A young recruit perhaps? I am Weligon Steelherder, Guild Master of the Deepwater Knights. Read the note in your inventory and then hand it to me when you are ready to begin your training. Truth awaits!'");
 	end
 end
 

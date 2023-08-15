@@ -8,7 +8,7 @@ function event_timer(e)
     e.self:SetSpecialAbility(35, 1); --turn turn on immunity
 		e.self:WipeHateList();
 		eq.stop_timer("deactivate");
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The assailant runs out of energy and crumbles to the ground.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"The assailant runs out of energy and crumbles to the ground.");
 		e.self:SetAppearance(3);
 		eq.set_timer("depop", 5 * 1000); -- guessing 5 sec until depop at this point
 	elseif (e.timer == "depop") then

@@ -38,13 +38,13 @@ function Ixvet_Timer(e)
         eq.spawn2(283047,0,0,-488,633,-97,436); --Aneuk_Controller (283047)
 	elseif(e.timer=="flavor1") then
 		eq.stop_timer("flavor1");
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Aneuk Controller says 'Bring that tray here, girl! I'm famished.");
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Aneuk Controller says 'Don't keep that all to yourself. Bring some of that fruit over here too!");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Aneuk Controller says 'Bring that tray here, girl! I'm famished.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Aneuk Controller says 'Don't keep that all to yourself. Bring some of that fruit over here too!");
 		eq.set_timer("flavor2", 6 * 1000);
 	elseif(e.timer=="flavor2") then
 		eq.stop_timer("flavor2");
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The Aneuk Controllers quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Ikaav Ixvet Pox says 'What have you done, slave! Try to poison me? You will pay for your insolence!");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"The Aneuk Controllers quickly gorge themselves on the fruit. After a few moments, they both double over and cry out in pain.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Ikaav Ixvet Pox says 'What have you done, slave! Try to poison me? You will pay for your insolence!");
 		poison = poison + 1; -- aneuk controllers will not call the construct of wars to battle if poisoned
 		--eq.get_entity_list():GetNPCByNPCTypeID(283081):AddToHateList(e.self, 1); -- on live abena was 'struck down' but didnt die right away
 		eq.signal(283081,1); -- signal abena to lie down
@@ -62,7 +62,7 @@ end
 function Ixvet_Death(e)
     eq.depop(283153); --Talwin`s_remains (283153) untargettable
     eq.spawn2(283048,0,0,-574,568,-98,336); -- NPC: #Talwin`s_remains loot
-	eq.zone_emote(15,"As the dying cries of Ikaav Ixvet Pox echo off the city walls, the ranks of the Muramites are thrown into chaos. Seizing the opportunity, the many slaves of Barindu rise up and fight for their freedom.");
+	eq.zone_emote(MT.Yellow,"As the dying cries of Ikaav Ixvet Pox echo off the city walls, the ranks of the Muramites are thrown into chaos. Seizing the opportunity, the many slaves of Barindu rise up and fight for their freedom.");
 end
 --killing ixvet should signal the Nihil to aggro nearby mobs, which Nihil still needs to be parsed: It seems to be random each time
 

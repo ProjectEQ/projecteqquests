@@ -95,7 +95,7 @@ function Hanvar_Timer(e)
 	if (e.timer == "check_hp") then
 		if (e.self:GetHPRatio() < min_hp) then
 			local new_hp = e.self:GetMaxHP() * min_hp/100;
-			--eq.zone_emote(15, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. e.self:GetMaxHP() .. " new_hp: " .. new_hp);
+			--eq.zone_emote(MT.Yellow, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. e.self:GetMaxHP() .. " new_hp: " .. new_hp);
 			e.self:SetHP(new_hp);		
 		end	
 	elseif (e.timer == "chains") then

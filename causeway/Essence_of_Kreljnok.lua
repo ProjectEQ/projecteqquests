@@ -1,6 +1,6 @@
 function event_spawn(e)
 	eq.set_timer("depop",30*60*1000);
-	eq.zone_emote(15,"Korbuk's death has released a more powerful spirit into the mortal realm.");
+	eq.zone_emote(MT.Yellow,"Korbuk's death has released a more powerful spirit into the mortal realm.");
 	e.self:Shout("You foolish mortals! How dare you defy the will of Kreljnok! I will be reborn and shall have my sword once more! Hand over what is rightfully mine!");
 end
 
@@ -36,5 +36,5 @@ function event_timer(e)
 end
 
 function event_death_complete(e)
-	eq.zone_emote(15,"The death of Kreljnok signals the end of his power in this region. The once powerful warrior has had his life taken by a far superior force.");
+	eq.zone_emote(MT.Yellow,"The death of Kreljnok signals the end of his power in this region. The once powerful warrior has had his life taken by a far superior force.");
 end

@@ -11,10 +11,10 @@ function event_say(e)
     end
     if (e.message:findi("hail")) then
         if (bit.band(turnins, 2048) ~= 0) then
-            e.other:Message(12, "Jenna Gurell stares past you as she replays a past memory in her mind. 'While I thank you for what you have done, the sight of you saddens me. Please leave me be there are others who could use your help.'")
+            e.other:Message(MT.DarkGray, "Jenna Gurell stares past you as she replays a past memory in her mind. 'While I thank you for what you have done, the sight of you saddens me. Please leave me be there are others who could use your help.'")
         elseif (greatadventures > 0) then
             e.self:Emote(" focuses her attention on " .. e.other:GetName() .. ".")
-            e.other:Message(12, "Jenna Gurell says 'Please do not disturb me. I am mourning the loss of my dear Rashere. While I do not know if his fate has yet been sealed the empty feeling in my heart tells me so. If only I could see him once more, if only I could read his words again.'")
+            e.other:Message(MT.DarkGray, "Jenna Gurell says 'Please do not disturb me. I am mourning the loss of my dear Rashere. While I do not know if his fate has yet been sealed the empty feeling in my heart tells me so. If only I could see him once more, if only I could read his words again.'")
         end
     end
 end

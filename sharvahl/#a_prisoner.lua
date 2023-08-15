@@ -21,7 +21,7 @@ function event_trade(e)
 			e.self:SetAppearance(0);
 			e.self:TempName("Nichols");
 			e.self:QuestSay(e.other, "unlocks his manacles and stands up. As he dusts himself off and stretches out his limbs, he greets you, 'Well met " .. e.other:GetName() .. ". You have my thanks, but more importantly, I think you'll find that assisting our factions comes with great rewards.", {speak_mode = SpeakMode.Emote});
-			e.other:Message(15, "You have freed Nichols, completing the second task for the Smuggler's Camp");
+			e.other:Message(MT.Yellow, "You have freed Nichols, completing the second task for the Smuggler's Camp");
 				if(qglobals["rog-nichols"] == nil) then
 					eq.set_global("rog-nichols","1",5,"F"); --finished sharvahl prisoner quest
 				end

@@ -18,7 +18,7 @@ function eq.DispatchCommands(e)
 	if(command) then
 		local access = command[1];
 		if(access > e.self:Admin()) then
-			e.self:Message(13, "Access level not high enough.");
+			e.self:Message(MT.Red, "Access level not high enough.");
 			return 1;
 		end
 

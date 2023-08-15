@@ -68,12 +68,12 @@ function Efficiency_Say(e)
 
     eq.set_timer("waves", 1000);
 
-    eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+    eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
   elseif ( e.message:findi('end') and e.other:Admin() > 80) then
 
     eq.spawn_condition(this_zone, instance_id, 1, 0);
     eq.spawn_condition(this_zone, instance_id, 2, 0);
-    eq.zone_emote(14, 'Resetting spawn conditions');
+    eq.zone_emote(MT.Lime, 'Resetting spawn conditions');
 
   elseif ( e.message:findi("test") and e.other:Admin() > 80) then
     eq.signal( 307000, 1); -- NPC: Master_of_Efficiency
@@ -115,7 +115,7 @@ function Efficiency_Timer(e)
       eq.stop_all_timers();
       eq.spawn_condition(this_zone, instance_id, 1, 0);
 
-      eq.zone_emote(13, "You have been found unworthy.");
+      eq.zone_emote(MT.Red, "You have been found unworthy.");
       eq.depop();
 
       -- no lockout added on failure, the dz shuts down in 5 minutes
@@ -124,7 +124,7 @@ function Efficiency_Timer(e)
         dz:SetSecondsRemaining(eq.seconds("5m"))
       end
     else 
-      eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+      eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
   end
 end

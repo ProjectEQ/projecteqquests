@@ -44,7 +44,7 @@ function PRT_HP(e)
 		eq.signal(298223,1); -- Lock Doors
 		eq.set_next_hp_event(50)
 		eq.set_timer("check", 1 * 1000); -- start checking for clients outside room
-		eq.zone_emote(0,"Riel raises her hands to the sky and laughs as the door behind you seals itself.");
+		eq.zone_emote(MT.White,"Riel raises her hands to the sky and laughs as the door behind you seals itself.");
 	elseif (e.hp_event == 50) then
 		--add flurry, reduce atk delay
 		e.self:ModifyNPCStat("attack_delay","12");

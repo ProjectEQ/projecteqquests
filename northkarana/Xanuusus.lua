@@ -39,7 +39,7 @@ function event_say(e)
         -- At this point he'll walk a short ways, and he'll cast a spell on you called Bolt of Faith. It's an unresistable stun, 50% snare, and gives -50 to dexterity. It lasts one minute. Once it lands you'll see text. 
 
         e.self:CastSpell(5687, e.other:GetID()); -- Spell: Bolt of Faith
-        client:Message(14, "As the lightning courses through your body, you feel the stone dissolving. That material flows from your mouth in an unnatural fashion and you see it fade as it rushes away from you across the planes toward something moving in the distance.");
+        client:Message(MT.Lime, "As the lightning courses through your body, you feel the stone dissolving. That material flows from your mouth in an unnatural fashion and you see it fade as it rushes away from you across the planes toward something moving in the distance.");
 
         client:DeleteItemInInventory(Slot.Secondary, 1, true);
         client:DeleteItemInInventory(Slot.Face, 1, true);

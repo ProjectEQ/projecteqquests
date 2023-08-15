@@ -12,7 +12,7 @@ function event_enter_zone(e)
 	end
 	
 	if(qglobals["mage_epic"] == "10") then
-		e.self:Message(15,"Your staff begins to glow");
+		e.self:Message(MT.Yellow,"Your staff begins to glow");
 	end	
 end
 
@@ -27,7 +27,7 @@ function event_timer(e)
 	
 		e.self:MovePC(152, 0.00, 0.00, -30.25, 360); -- Teleport to Nexus
 	elseif ((e.timer == "spires") and (qglobals.nexus_dre == "1") and (qglobals.spire_dre == "1") and (not e.self:HasItem(19720))) then
-		e.self:Message(13, "You don't have the correct component to travel to Luclin.");
+		e.self:Message(MT.Red, "You don't have the correct component to travel to Luclin.");
 	end
 end
 

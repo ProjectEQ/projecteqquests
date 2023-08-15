@@ -14,7 +14,7 @@ end
 function event_timer(e)
 	if(e.timer == "borer") then
 		if(e.self:GetItemIDAt(Slot.Cursor)==60300 and not recepactive) then --energy receptor on cursor
-			e.self:Message(4,"The energy receptor appears to be active");		
+			e.self:Message(MT.LightBlue,"The energy receptor appears to be active");
 			eq.depop_all(302050);
 			eq.spawn2(302050, 0, 0, 155,-1053,29.5, 152); -- NPC: Blackfall_Borer
 			eq.create_ground_object(60301,155,-1053,29.5,0);	

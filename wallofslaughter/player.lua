@@ -1,7 +1,7 @@
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	if(e.self:HasItem(12080) and qglobals["cleric20_darkdisciples"] ~= nil) then -- Player has Enchated Signet of Disciples on their character and Zones in.
-		e.self:Message(13, "The Enchanted Signet of the Disciples begins to glow.");
+		e.self:Message(MT.Red, "The Enchanted Signet of the Disciples begins to glow.");
 	end
 
 	if(e.self:HasItem(69941) and e.self:HasItem(69952) and e.self:HasItem(69942) and e.self:HasItem(69983)) then -- Paladin 1.5 trigger
@@ -47,7 +47,7 @@ function event_loot(e)
 			eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
 			eq.set_global("paladin_epic_wos","1",5,"F");
 		end
-		e.self:Message(6,"As you hold the sword, your soul is tugged for a few seconds and then all four soulstones speak in unison, 'This sword is the key, this sword is the misery, this sword is the instrument that took us away, and this sword is what will set us free. Take this cursed sword to Irak Altil, for he will know how to end our pain.");	
+		e.self:Message(MT.Gray,"As you hold the sword, your soul is tugged for a few seconds and then all four soulstones speak in unison, 'This sword is the key, this sword is the misery, this sword is the instrument that took us away, and this sword is what will set us free. Take this cursed sword to Irak Altil, for he will know how to end our pain.");	
 	elseif(e.self:Class() == "Cleric" and e.item:GetID() == 12433) then
 		local qglobals = eq.get_qglobals(e.self);
 		if (qglobals["cleric20_robedropped"] ~= nil) then
@@ -132,17 +132,17 @@ function event_click_door(e)
     local is_anguish_door_on_cooldown = (anguish_door_cooldown_expire_time > now)
 
     if not is_gm and is_anguish_door_on_cooldown then
-      e.self:Message(13, "You can feel the door to Anguish opening underneath your hand.")
+      e.self:Message(MT.Red, "You can feel the door to Anguish opening underneath your hand.")
     elseif not is_gm and not has_trials then -- unknown original live message
-      e.self:Message(13, "You must complete the Muramite Proving Grounds raid trials.")
+      e.self:Message(MT.Red, "You must complete the Muramite Proving Grounds raid trials.")
     elseif not is_gm and not has_signets then
-      e.self:Message(13, "Though you carry the seal to enter Anguish, the Fallen Palace, you would be torn asunder by the harsh environment were you to venture within.  You will need to find a way to protect yourself from the powers of Discord.")
+      e.self:Message(MT.Red, "Though you carry the seal to enter Anguish, the Fallen Palace, you would be torn asunder by the harsh environment were you to venture within.  You will need to find a way to protect yourself from the powers of Discord.")
     else
       local dz = e.self:GetExpedition()
       if dz.valid and dz:GetZoneName() == "anguish" then
         e.self:MovePCDynamicZone("anguish")
       elseif not dz.valid then
-        e.self:Message(15, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.")
+        e.self:Message(MT.Yellow, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.")
 
         dz = e.self:CreateExpedition(expedition_info)
         if dz.valid then

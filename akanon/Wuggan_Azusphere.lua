@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if e.other:HasItem(18772) then
-		e.other:Message(15,"An older, male gnome stands before you. 'Welcome young apprentice to the Library Mechanimagica. I am Wuggan Azusphere. Read the note in your inventory and then hand it to me so that we can begin your training.'");
+		e.other:Message(MT.Yellow,"An older, male gnome stands before you. 'Welcome young apprentice to the Library Mechanimagica. I am Wuggan Azusphere. Read the note in your inventory and then hand it to me so that we can begin your training.'");
 	end
 end
 

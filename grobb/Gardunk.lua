@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18845)) then
-		e.other:Message(15,"As your eyes adjust to the darkness, a large troll covered in scars turns towards you. 'I be Gardunk. You read note in inventory and hand to me to start training. Me make you strong like animal!'");
+		e.other:Message(MT.Yellow,"As your eyes adjust to the darkness, a large troll covered in scars turns towards you. 'I be Gardunk. You read note in inventory and hand to me to start training. Me make you strong like animal!'");
 	end
 end
 

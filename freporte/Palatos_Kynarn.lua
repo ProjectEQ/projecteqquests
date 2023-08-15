@@ -14,7 +14,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13817,item2 = 13817,item3 = 13817,item4 = 13817})) then -- 4x Capt. Orlin's Spiced Ale
 		e.self:Say("Ahh.. I.. Need help.. You.. take this.. Go build.. boat beacon. Ask gnomes about.. boat beacon. They know how.. Then bring back.. Unnnhh!! Prexus help me!! I will never drink again.");
-		e.other:Message(15,"In his drunkedness, Palatos advises you to seek out Svinal Wyspin, a Gnome merchant in North Freeport.");
+		e.other:Message(MT.Yellow,"In his drunkedness, Palatos advises you to seek out Svinal Wyspin, a Gnome merchant in North Freeport.");
 		e.other:SummonItem(12145); -- Beacon Mount
 		e.other:Ding();
 		e.other:Faction(231,1,0); -- Craftkeepers

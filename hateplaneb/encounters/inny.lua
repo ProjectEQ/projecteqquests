@@ -123,12 +123,12 @@ function Evangelist_Timer(e)
         eq.set_timer("text2", 30 * 1000);
     elseif(e.timer=="text2") then
         eq.stop_timer("text2");
-        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"The air around you is thick with tension and the walls seem to bend inward as the Evangelist continues, 'With the sum of our wicked spite, rage, and animosity... Your children call out to you.  Your exalted presence is required, your extraordinary power is desired, and a gaggle of babbling fools is in need of trial by fire. Master, allow us a true demonstration of your might.");
+        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"The air around you is thick with tension and the walls seem to bend inward as the Evangelist continues, 'With the sum of our wicked spite, rage, and animosity... Your children call out to you.  Your exalted presence is required, your extraordinary power is desired, and a gaggle of babbling fools is in need of trial by fire. Master, allow us a true demonstration of your might.");
         eq.set_timer("spawninny", 4 * 1000);
     elseif(e.timer=="spawninny") then
         eq.stop_timer("spawninny");
         eq.unique_spawn(186107,0,0,-420,-1292,25,255); --#Innoruuk (186107) real
-        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Evangelist of Hate shouts, 'ALL PRAISE INNORUUK, OUR LORD AND CREATOR!");
+        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Evangelist of Hate shouts, 'ALL PRAISE INNORUUK, OUR LORD AND CREATOR!");
         eq.set_timer("checkadds", 2 * 1000);
     elseif(e.timer=="checkadds") then
         eq.stop_timer("checkadds");

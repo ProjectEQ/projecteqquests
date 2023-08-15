@@ -35,15 +35,15 @@ function event_timer(e)
 		local check_type_v = check_type:GetRace();
 			--if (check_type_v.valid) then
 				e.self:SetRace(check_type_v);
-	if check_type:GetClass() == 15 or check_type:GetClass() == 8  or check_type:GetClass() == 5  or check_type:GetClass() == 4  or check_type:GetClass() == 3 then
-		spell_set = 1; --hybrid
-	elseif check_type:GetClass() == 2  or check_type:GetClass() == 6  or check_type:GetClass() == 10 then
-		spell_set = 2; --priest
-	elseif check_type:GetClass() == 11  or check_type:GetClass() == 12  or check_type:GetClass() == 13  or check_type:GetClass() == 14 then
-		spell_set = 3; --int
-	elseif check_type:GetClass() == 1  or check_type:GetClass() == 7  or check_type:GetClass() == 9  or check_type:GetClass() == 16 then
-		spell_set = 4; --pure melee
-	end
+    if check_type:GetClass() == Class.BEASTLORD or check_type:GetClass() == Class.BARD  or check_type:GetClass() == Class.SHADOWKNIGHT  or check_type:GetClass() == Class.RANGER  or check_type:GetClass() == Class.PALADIN then
+      spell_set = 1; --hybrid
+    elseif check_type:GetClass() == Class.CLERIC  or check_type:GetClass() == Class.DRUID  or check_type:GetClass() == Class.SHAMAN then
+      spell_set = 2; --priest
+    elseif check_type:GetClass() == Class.NECROMANCER  or check_type:GetClass() == Class.WIZARD  or check_type:GetClass() == Class.MAGICIAN  or check_type:GetClass() == Class.ENCHANTER then
+      spell_set = 3; --int
+    elseif check_type:GetClass() == Class.WARRIOR  or check_type:GetClass() == Class.MONK  or check_type:GetClass() == Class.ROGUE  or check_type:GetClass() == Class.BERSERKER then
+      spell_set = 4; --pure melee
+    end
 	end
       if (spell_set == 1) then
           local rand = math.random(1,100);

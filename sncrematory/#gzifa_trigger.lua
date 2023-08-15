@@ -38,7 +38,7 @@ function event_enter(e)
     eq.debug(string.format("(enter) flagged inside: [%s] items inside: [%s]", tostring(has_flag_inside), tostring(has_items_inside)))
 
     if has_flag_inside and has_items_inside then
-      eq.zone_emote(15, "The spirits of those long past arise from the fiery furnace, sensing that their remains are nearby.  A ghostly voice yells out, 'Let it be known that until the Ceremony of Kiruatuk is complete, we will haunt these halls, destroying all those who dare to enter.'")
+      eq.zone_emote(MT.Yellow, "The spirits of those long past arise from the fiery furnace, sensing that their remains are nearby.  A ghostly voice yells out, 'Let it be known that until the Ceremony of Kiruatuk is complete, we will haunt these halls, destroying all those who dare to enter.'")
       eq.spawn2(288084, 0, 0, 1318, -2553, 15, 178) -- NPC: #Talakoi
       eq.spawn2(288083, 0, 0, 1317, -2644, 15, 49)  -- NPC: #Ngozi
       eq.spawn2(288082, 0, 0, 1430, -2644, 15, 419) -- NPC: #Mabiki

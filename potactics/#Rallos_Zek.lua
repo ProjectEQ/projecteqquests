@@ -1,6 +1,6 @@
 -- #Rallos_Zek (214109) alive version, Huffin rewrite
 function event_spawn(e)
-	eq.zone_emote(0, "A tremor rumbles through the halls of Drunder. Terror wells up inside you as you struggle to keep your footing.");
+	eq.zone_emote(MT.White, "A tremor rumbles through the halls of Drunder. Terror wells up inside you as you struggle to keep your footing.");
 	eq.set_next_hp_event(55);
 	eq.set_timer('depop', 1020 * 1000); --17 minutes until depop
 end
@@ -37,7 +37,7 @@ function event_timer(e)
 	elseif(e.timer=="OOBcheck") then
 		if (e.self:GetZ() < 50) then
 			e.self:GMMove(365,11,181,129); -- does not wipe hate list
-			eq.zone_emote(0, "Rallos begins to laugh, causing the earth to rumble around you. 'Enough of this foolishness! The warlord has better things to do then chase petty mortals all day!");
+			eq.zone_emote(MT.White, "Rallos begins to laugh, causing the earth to rumble around you. 'Enough of this foolishness! The warlord has better things to do then chase petty mortals all day!");
 		else
 			eq.set_timer("OOBcheck", 6 * 1000);
 		end

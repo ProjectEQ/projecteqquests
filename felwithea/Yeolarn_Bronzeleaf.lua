@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18780)) then
-		e.other:Message(15,"As you enter a darkly lit room, a stern, important looking High Elf greets you.  'Welcome to you. I am Yeolarn Bronzeleaf, Guild Master for the Clerics of Tunare here in Felwithe. Read the note in your inventory and when you are ready to begin your training, please hand me your note.'");
+		e.other:Message(MT.Yellow,"As you enter a darkly lit room, a stern, important looking High Elf greets you.  'Welcome to you. I am Yeolarn Bronzeleaf, Guild Master for the Clerics of Tunare here in Felwithe. Read the note in your inventory and when you are ready to begin your training, please hand me your note.'");
 	end
 end
 

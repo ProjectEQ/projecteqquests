@@ -5,7 +5,7 @@ end
 function event_timer(e)
   if (e.timer == "despawn") then
     eq.depop();
-    eq.zone_emote(10, "The reclusive girplans slink back into their caves.");
+    eq.zone_emote(MT.NPCQuestSay, "The reclusive girplans slink back into their caves.");
   elseif e.timer=="blur" then
 	local cl = eq.get_entity_list():GetShuffledClientList(); -- Shuffle the client list and choose 3 targets.
 		local count = 0;

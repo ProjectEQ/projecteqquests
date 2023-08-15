@@ -25,12 +25,12 @@ function call_zone_to_assist(e_other)
 				-- npc.valid will be true if the NPC is actually spawned
 				if (npc.valid) then
 					npc:AddToHateList(e_other,1);
-					if (show_debug) then e_other:Message(4,"NPCID: " .. npc:GetNPCTypeID() .. " is valid, adding hate on " .. npc:GetName() .. "."); end
+					if (show_debug) then e_other:Message(MT.LightBlue,"NPCID: " .. npc:GetNPCTypeID() .. " is valid, adding hate on " .. npc:GetName() .. "."); end
 				else
-					if (show_debug) then e_other:Message(4,"NPCID: " .. npc:GetNPCTypeID() .. " is invalid, unable to add hate on " .. npc:GetName() .. "."); end
+					if (show_debug) then e_other:Message(MT.LightBlue,"NPCID: " .. npc:GetNPCTypeID() .. " is invalid, unable to add hate on " .. npc:GetName() .. "."); end
 				end
 			else
-				if (show_debug) then e_other:Message(4,"NPCID: " .. npc:GetNPCTypeID() .. " is excluded, not adding hate on " .. npc:GetName() .. "."); end
+				if (show_debug) then e_other:Message(MT.LightBlue,"NPCID: " .. npc:GetNPCTypeID() .. " is excluded, not adding hate on " .. npc:GetName() .. "."); end
 			end
 		end
 	end

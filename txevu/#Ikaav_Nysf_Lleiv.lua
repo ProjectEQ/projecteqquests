@@ -84,21 +84,21 @@ function event_hp(e)
 	if (e.hp_event == 75) then
     e.self:AddAISpell(0, 1236, 1, -1, 45, -350)
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297089)) then
-			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
+			eq.get_entity_list():MessageClose(e.self,false,120,MT.White,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
 			eq.signal(297089,1)
 			eq.set_next_hp_event(50)
 		end
 	elseif (e.hp_event == 50) then
 		eq.set_timer("malicious_intent",20000)
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297088)) then
-			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
+			eq.get_entity_list():MessageClose(e.self,false,120,MT.White,"The shielding on one of the stonemasters falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
 			eq.signal(297088,1)
 			eq.set_next_hp_event(25)
 		end
 	elseif (e.hp_event == 25) then
 		eq.set_timer("curse_of_flames",10000)
 		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(297087)) then
-			eq.get_entity_list():MessageClose(e.self,false,120,0,"The shielding on the final stonemaster falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
+			eq.get_entity_list():MessageClose(e.self,false,120,MT.White,"The shielding on the final stonemaster falters as Ikaav Nysf Lliev focuses her energies inward, intensifying her own powers.")
 			eq.signal(297087,1)
 		end
 	end

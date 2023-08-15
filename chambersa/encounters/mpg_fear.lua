@@ -51,7 +51,7 @@ function Fear_Say(e)
     e.self:Say("Very well!  Let the battle commence!");
 
     eq.set_timer("minutes", 1 * 60 * 1000);
-    eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+    eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
 
   elseif ( e.message:findi('test') and e.other:Admin() > 80 ) then
     local mpg_helper = require("mpg_helper");
@@ -88,7 +88,7 @@ function Fear_Timer(e)
         mpg_helper.UpdateGroupTrialLockout(player_list, this_bit, nil);
 
       else
-        eq.zone_emote(13, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
+        eq.zone_emote(MT.Red, "You have been found unworthy, perhapse you are not as frightful as you thought you might be.");
         eq.depop();
 
         -- no lockout added on failure, the dz shuts down in 5 minutes
@@ -98,7 +98,7 @@ function Fear_Timer(e)
         end
       end
     else 
-      eq.zone_emote(15, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
+      eq.zone_emote(MT.Yellow, "You have " .. minutes_remaining .. " minutes remaining to complete your task.");
     end
   end
 end

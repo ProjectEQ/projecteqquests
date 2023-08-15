@@ -9,16 +9,16 @@ function event_say(e)
 	elseif(e.message:findi("Redfang")) then
 		e.self:Emote("sighs, 'Such a beautiful creature.  When will Redfang return, I wonder?");
 	elseif(e.message:findi("mere accident")) then
-		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
+		e.other:Message(MT.White,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
 		e.self:Emote("pauses to consider your words and shakes his head. 'No, " .. e.other:GetName() .. ".  One does not find their way into the Demi-Plane of Blood by accident.  If you end up in that place, it's for a reason.  I respect your right to your own beliefs, but that's a fallacy, pure and simple.");
 	elseif(e.message:findi("beauty")) then
-		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
+		e.other:Message(MT.White,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
 		e.self:Emote("pauses to consider your words and nods, thoughtfully. 'Yes, " .. e.other:GetName() .. ".  That is possible.  The Master takes pleasure in beauty.  This is evident in his choice of decor and the guests that he invites to spend time in his house.  The Keep is gaudy and meticulously cared for by the servants.  And while certain guests were obviously welcomed in large part due to their dashing looks, I suspect that the beauty the Master is most attracted to is his own.  This is tragically ironic since he cannot see his own reflection.");
 	elseif(e.message:findi("strength")) then
-		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
+		e.other:Message(MT.White,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
 		e.self:Emote("pauses to consider your words and nods, thoughtfully. 'Yes, " .. e.other:GetName() .. ".  That is possible.  I'm certain the Master enjoys the company of uniquely powerful beings.  Their presence could serve as a comparison and reminder of his own omnipotence.");
 	elseif(e.message:findi("control or destroy")) then
-		e.other:Message(0,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
+		e.other:Message(MT.White,"You feel as though you have been judged, and that this decision may affect you sometime in the future.");
 		e.self:Emote("pauses to consider your words and nods, thoughtfully. 'Yes, " .. e.other:GetName() .. ".  That is possible.  Rumor has it that his most cherished guests are those that would attempt to slay him.  He relishes this attention.  It feeds his ego.  Hah, perhaps the reason they even located his home is because he wanted that attention.  It is, depending on your point of view, a sort of homage.  As far as the ruler of the Demi-Plane is concerned, intruders are delightfully amusing.   None of those that dared cross the threshold of his hidden Keep have even a remote chance of harming him.");
 	end
 end

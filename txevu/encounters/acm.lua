@@ -81,7 +81,7 @@ function ACMTimer(e)
         y = e.self:GetY()
         z = e.self:GetZ()
         h = e.self:GetHeading()
-        eq.zone_emote(15, "In search of food, cragbeast hatchlings scurry out from beneath the Ancient Cragbeast Matriarch")
+        eq.zone_emote(MT.Yellow, "In search of food, cragbeast hatchlings scurry out from beneath the Ancient Cragbeast Matriarch")
         eq.spawn2(297210, 0, 0, x, y + 5, z, h) -- a_cragbeast_hatchling
         eq.spawn2(297210, 0, 0, x + 5, y, z, h) -- a_cragbeast_hatchling
         eq.spawn2(297210, 0, 0, x - 5, y, z, h) -- a_cragbeast_hatchling

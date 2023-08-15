@@ -100,11 +100,11 @@ end
 
 function OMM_HP(e)
 	if (e.hp_event == 80) then
-        eq.zone_emote(13, "Roaring laughter fills the room, 'Is this what you've come here to show me?  You hope to defeat an ancient warrior with this miserable display of force?");
+        eq.zone_emote(MT.Red, "Roaring laughter fills the room, 'Is this what you've come here to show me?  You hope to defeat an ancient warrior with this miserable display of force?");
         eq.set_next_hp_event(70);
 		e.self:CameraEffect(1000,4);
 	elseif (e.hp_event == 70) then
-        eq.zone_emote(13, "Mata Muram shouts, 'I can taste your fear.  You know the hand of death approaches.'");
+        eq.zone_emote(MT.Red, "Mata Muram shouts, 'I can taste your fear.  You know the hand of death approaches.'");
         eq.set_next_hp_event(50);
 		e.self:CameraEffect(1000,4);
 		local num_hit=0;
@@ -114,14 +114,14 @@ function OMM_HP(e)
 			if client.valid then
 				e.self:SendBeginCast(5684, 0);
 				e.self:SpellFinished(5684, client:CastToMob());
-				client:Message(15,"You feel the cold grip of death looming over you.");
+				client:Message(MT.Yellow,"You feel the cold grip of death looming over you.");
 				eq.debug("mark on: " .. client:GetName());
 				num_hit=num_hit+1;
 			end
 		end
 		eq.set_timer("check_mark",15*1000); --omm mark of death triggers after 15s
 	elseif (e.hp_event == 50) then
-		eq.zone_emote(13, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
+		eq.zone_emote(MT.Red, "Mata Muram shouts, 'I will adorn the Gates of Anguish with the corpses of your dead.'");
 		eq.set_next_hp_event(30);
 		eq.spawn2(317122,0,0,331, 4961, 278, 128):AddToHateList(e.self:GetHateRandom(),1);
 		eq.spawn2(317122,0,0,505, 4792, 278, 384):AddToHateList(e.self:GetHateRandom(),1);		
@@ -197,8 +197,8 @@ function OMM_Timer(e)
 		eq.set_timer("mmgaze",70*1000);
 		gaze_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
 		if gaze_client.valid then
-			eq.zone_emote(15, "Mata Muram fixes his gaze on one of your companions.");
-			gaze_client:Message(6,"You feel a gaze of deadly power focusing on you.");
+			eq.zone_emote(MT.Yellow, "Mata Muram fixes his gaze on one of your companions.");
+			gaze_client:Message(MT.Gray,"You feel a gaze of deadly power focusing on you.");
 			eq.set_timer("mmgaze_cast",10*1000);
 		else
 			eq.debug("Invalud MMGaze Client: " .. os.date("!%c"));
@@ -215,8 +215,8 @@ function OMM_Timer(e)
 		eq.set_timer("buzz",55*1000);
 		eq.set_timer("buzz_spawn",6*1000);
 		buzz_client=eq.get_entity_list():GetRandomClient(e.self:GetX(),e.self:GetY(),e.self:GetZ(),1000000);
-		eq.zone_emote(15, "You hear a buzzing in the distance.");
-		buzz_client:Message(6,"You hear a strange buzzing around your head, and feel as though something is creeping toward you.");
+		eq.zone_emote(MT.Yellow, "You hear a buzzing in the distance.");
+		buzz_client:Message(MT.Gray,"You hear a strange buzzing around your head, and feel as though something is creeping toward you.");
 	elseif (e.timer == "buzz_spawn") then
 		eq.stop_timer("buzz_spawn");
 		if (buzz_client.valid) then
@@ -242,8 +242,8 @@ function OMM_Timer(e)
 		eq.depop_all(317120);
 		eq.depop_all(317121);
 		eq.depop_all(317122);
-		eq.zone_emote(13,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
-		eq.zone_emote(13,"The world shifts around you as the riftseeker's are consumed by their magic.");
+		eq.zone_emote(MT.Red,"Mata Muram breaks free of his bonds, killing the Riftseekers with the magic. 'You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
+		eq.zone_emote(MT.Red,"The world shifts around you as the riftseeker's are consumed by their magic.");
 		local now_clients = eq.get_entity_list():GetClientList();
 		local instance_id = eq.get_zone_instance_id();
 		for client in now_clients.entries do
@@ -300,7 +300,7 @@ function OMM_Timer(e)
 end
 
 function OMM_Death(e)
-	eq.zone_emote(13,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
+	eq.zone_emote(MT.Red,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
 	e.self:CameraEffect(1000,8);	
 	eq.signal(317116 , 317109); -- NPC: zone_status
 	eq.depop_all(317122);
@@ -329,7 +329,7 @@ end
 
 function Riftseeker_Signal(e)
 	if (e.signal==1) then
-		eq.zone_emote(13,"Rifts open in Mata Muram's Chamber.");
+		eq.zone_emote(MT.Red,"Rifts open in Mata Muram's Chamber.");
 		e.self:Shout("Come! They have weakened him.  Now is our chance to strike.");
 	elseif (e.signal==2) then
 		eq.set_timer("shout",5000);
@@ -338,7 +338,7 @@ end
 
 function Riftseeker_Timer(e)
 	if (e.timer=="shout") then
-		eq.zone_emote(13,"Tendrils of energy shoot from the fingertips of the Riftseekers, turning Mata Muram's magic inward.");
+		eq.zone_emote(MT.Red,"Tendrils of energy shoot from the fingertips of the Riftseekers, turning Mata Muram's magic inward.");
 		e.self:Shout("Now fools. Strike while we hold him, we cannot hold this seal for long.");
 		eq.stop_timer("shout");		
 	end

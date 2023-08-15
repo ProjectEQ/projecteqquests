@@ -29,7 +29,7 @@ function Emoush_signal(e)
     e.self:WipeHateList();
     e.self:ModifyNPCStat("hp_regen", "3200");
     eq.set_timer("powerup", 120 * 1000);
-    eq.zone_emote(15, "The fallen mystics awaken.");
+    eq.zone_emote(MT.Yellow, "The fallen mystics awaken.");
     addtimer = 0;
   end
 end
@@ -52,7 +52,7 @@ function Emoush_timer(e)
 		    eq.debug("My new min hit is: " .. combat_min_hit);
 		    eq.debug("My new max hit is : " .. combat_max_hit);
             eq.set_timer("powerup", 120 * 1000);
-            eq.zone_emote(15, "Emoush trembles as his power increases.");
+            eq.zone_emote(MT.Yellow, "Emoush trembles as his power increases.");
     end
 end
 
@@ -62,9 +62,9 @@ end
 
 --#Mystic_Braggle Mystic_Griknok Mystic_Shiflor
 function Braggle_death(e)
-addtimer = addtimer + 1;
-eq.spawn2(342060,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: unconscious_mystic
-eq.zone_emote(15, "The goblin mystic falls to the ground unconscious.");
+  addtimer = addtimer + 1;
+  eq.spawn2(342060,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: unconscious_mystic
+  eq.zone_emote(MT.Yellow, "The goblin mystic falls to the ground unconscious.");
   if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) then
     eq.signal(342052,1); --signal emoush to wake up
   end

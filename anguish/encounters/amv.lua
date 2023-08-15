@@ -28,15 +28,15 @@ end
 
 function AMV_HP(e)
     if (e.hp_event == 75) then
-        eq.zone_emote(13, "A voice echoes from behind the shield, 'Vangl, you are my mightiest guardian, yet you allow these insects to remain in my presence?  Destroy them now or I will rend the flesh from your worthless frame!");
+        eq.zone_emote(MT.Red, "A voice echoes from behind the shield, 'Vangl, you are my mightiest guardian, yet you allow these insects to remain in my presence?  Destroy them now or I will rend the flesh from your worthless frame!");
         eq.set_next_hp_event(50);
 		e.self:CameraEffect(2000,5);
 	elseif (e.hp_event == 50) then
-        eq.zone_emote(13, "The deafening voice shakes the room again, 'You expect to defeat me?  I have lived longer than you can begin to comprehend.  I walked the realms before your pitiful gods were spawned.  I flew the skies in a time before your world's creation and I shall enslave new worlds long after you and your gods are forgotten.  You fight only to die.  I   AM   ETERNAL!");
+        eq.zone_emote(MT.Red, "The deafening voice shakes the room again, 'You expect to defeat me?  I have lived longer than you can begin to comprehend.  I walked the realms before your pitiful gods were spawned.  I flew the skies in a time before your world's creation and I shall enslave new worlds long after you and your gods are forgotten.  You fight only to die.  I   AM   ETERNAL!");
         eq.set_next_hp_event(10);
 		e.self:CameraEffect(2000,5);
 	elseif (e.hp_event == 10) then
-		eq.zone_emote(13, "The voice echoes from behind the shield, 'Vangl, do not think that you can escape me in death.  After I destroy the infiltrators I will find where you are to spend eternity.  Death does not end your obligation to me, wretched thrall!");
+		eq.zone_emote(MT.Red, "The voice echoes from behind the shield, 'Vangl, do not think that you can escape me in death.  After I destroy the infiltrators I will find where you are to spend eternity.  Death does not end your obligation to me, wretched thrall!");
 		e.self:CastSpell(5681, e.self:GetTarget():GetID()); --feedback dispersion
 		e.self:CameraEffect(2000,5);
 	end		
@@ -76,7 +76,7 @@ function AMV_Timer(e)
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then	
 				e.self:SendBeginCast(5684, 0);
 				e.self:SpellFinished(5684, client:CastToMob());	
-				client:Message(15,"You feel the cold grip of death looming over you.");
+				client:Message(MT.Yellow,"You feel the cold grip of death looming over you.");
 				eq.debug("mark on: " .. client:GetName());
 			end
 		end
@@ -105,11 +105,11 @@ function AMV_Timer(e)
 	elseif (e.timer == "focus30") then
 		eq.stop_timer("focus30");
 		eq.set_timer("focus40",40*1000);
-		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
+		eq.zone_emote(MT.Yellow, "The power of the focus energizes the Arch Magus.");
 	elseif (e.timer == "focus40") then
 		eq.stop_timer("focus40");
 		eq.set_timer("focus30",30*1000);
-		eq.zone_emote(15, "The power of the focus energizes the Arch Magus.");
+		eq.zone_emote(MT.Yellow, "The power of the focus energizes the Arch Magus.");
 	elseif (e.timer == "reset") then
 		eq.stop_timer("reset");
 		eq.set_next_hp_event(75);
@@ -136,7 +136,7 @@ end
 function AMV_Death(e)
 	--check if OMM is up and there are no preexisting AMV lockouts in raid -> spawn chest
 	--eq.unique_spawn(317112,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Ornate_Chest (317112)
-	eq.zone_emote(13,"As the Arch Magus' corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep gutteral laugh growing louder.");
+	eq.zone_emote(MT.Red,"As the Arch Magus' corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep gutteral laugh growing louder.");
 	e.self:CameraEffect(15000,5);
 	eq.depop_all(317108);
 	

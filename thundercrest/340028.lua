@@ -21,7 +21,7 @@ function event_hp(e)
 	if (e.hp_event == 96) then
 		eq.get_entity_list():FindDoor(30):SetLockPick(-1); -- lock door
 		eq.get_entity_list():FindDoor(31):SetLockPick(-1); -- lock door
-		eq.zone_emote(15,"Yar`Lir flaps her wings and the winds cause the doors behind you to slam shut."); -- emote to players doors shut, need exact statement.
+		eq.zone_emote(MT.Yellow,"Yar`Lir flaps her wings and the winds cause the doors behind you to slam shut."); -- emote to players doors shut, need exact statement.
 	end
 end
 

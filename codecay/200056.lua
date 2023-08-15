@@ -6,7 +6,7 @@ end
 function event_timer(e)
 	if e.timer == "Start" then
 	eq.stop_timer('Start');
-	eq.zone_emote(10,"A foul wind is felt carrying on it the stench of death and decay.  Suddenly a thunderous bang is heard throughout the crypt and then these words, 'Great soldiers of decay you are summoned forth to do battle with these infidels!'  All around the crypt echoes of footsteps and shuffling feet are heard.");
+	eq.zone_emote(MT.NPCQuestSay,"A foul wind is felt carrying on it the stench of death and decay.  Suddenly a thunderous bang is heard throughout the crypt and then these words, 'Great soldiers of decay you are summoned forth to do battle with these infidels!'  All around the crypt echoes of footsteps and shuffling feet are heard.");
 	eq.spawn_condition("codecay",0,1,1);
 	
 	elseif e.timer == "Fail" then

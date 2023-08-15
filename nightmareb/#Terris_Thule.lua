@@ -42,7 +42,7 @@ end
 function event_hp(e)
 
 	if ( e.hp_event == 95 ) then
-		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "The sound of a thousand terrified screams fills your head.  You feel yourself becoming a part of the fabric of this nightmare realm.");
+		eq.get_entity_list():MessageClose(e.self, true, 250, MT.White, "The sound of a thousand terrified screams fills your head.  You feel yourself becoming a part of the fabric of this nightmare realm.");
 		eq.set_next_hp_event(79);
 		eq.set_next_inc_hp_event(96); --reset on wipe
 		
@@ -56,7 +56,7 @@ function event_hp(e)
 	
 	elseif ( e.hp_event == 50 ) then
 		eq.set_next_hp_event(45);
-		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "As if in a waking nightmare, you feel your movements slow and your arms begin to fail you.  Each swing of your weapon feels as if it will miss its mark.   Even your legs begin to fail you, as you fall deeper into the dreamlike state!");
+		eq.get_entity_list():MessageClose(e.self, true, 250, MT.White, "As if in a waking nightmare, you feel your movements slow and your arms begin to fail you.  Each swing of your weapon feels as if it will miss its mark.   Even your legs begin to fail you, as you fall deeper into the dreamlike state!");
 		e.self:CastSpell(3150, e.self:GetID()); -- Direption of Dreams
 		
 	elseif ( e.hp_event == 45 ) then
@@ -65,7 +65,7 @@ function event_hp(e)
 	
 	elseif ( e.hp_event == 40 ) then
 		e.self:Shout("You will not escape my realm so easily!");
-		eq.get_entity_list():MessageClose(e.self, true, 250, 0, "The air grows thick with the smell of burning mana.  A rumbling sound draws your attention to the massive statues that rest above the ancient monoliths.  The statues begin to crumble, as they shift their attention from the heavens to you!");
+		eq.get_entity_list():MessageClose(e.self, true, 250, MT.White, "The air grows thick with the smell of burning mana.  A rumbling sound draws your attention to the massive statues that rest above the ancient monoliths.  The statues begin to crumble, as they shift their attention from the heavens to you!");
 		eq.signal(221013, 1); --signal untargettable statues to wake up
 	elseif (e.inc_hp_event == 96) then
 		eq.set_next_hp_event(95);
@@ -75,7 +75,7 @@ function event_hp(e)
  function event_timer(e)
 	if ( e.timer == "oobcheck" ) then
             	if ( e.self:GetX() > -1580 or e.self:GetX() < -2090 or e.self:GetY() > 250 or e.self:GetY() < -280 ) then
-			eq.get_entity_list():MessageClose(e.self, true, 200, 0, "Terris Thule disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
+			eq.get_entity_list():MessageClose(e.self, true, 200, MT.White, "Terris Thule disappears into the ether and reforms at the center of her chamber, cleansed of your magic!");
 			e.self:GMMove(e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
 			e.self:CastSpell(3230, e.self:GetID()); -- Balance of the Nameless
 		end

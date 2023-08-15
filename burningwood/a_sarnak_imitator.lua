@@ -61,7 +61,7 @@ function event_trade(e)
     e.other:SummonItem(52952); --Oculus 1.5
     e.other:AddAAPoints(5);
     e.other:Ding();
-    e.other:Message(15,'You have gained 5 ability points!');
+    e.other:Message(MT.Yellow,'You have gained 5 ability points!');
     eq.set_global("ench_epic","7",5,"F");
   elseif (item_lib.check_turn_in(e.trade, {item1 = 52947, item2 = 52945})) then
     e.self:Say("How very interesting. This could prove to be invaluable to my work. I have long been researching a new and most powerful tool to help our kind. It is necessary in these most dangerous of times. Unfortunately, it appears as though time has taken its toll on this tome. It is incomplete. Seek the missing pages so that I may study it in depth. There should be ten, unless they have been destroyed by time and decay.");

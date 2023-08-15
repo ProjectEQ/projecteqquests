@@ -7,13 +7,13 @@ function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 
   	if(level >= 15 and qglobals.Wayfarer == nil) then
-    		e.self:Message(15, "A mysterious voice whispers to you, 'Melaara Tenwinds has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
+    		e.self:Message(MT.Yellow, "A mysterious voice whispers to you, 'Melaara Tenwinds has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
   	end
 end
 
 function event_loot(e)
 	if e.item:GetID() == 26896 and e.self:HasItem(11430) and e.self:HasItem(14344) and e.self:HasItem(22892) then
-		e.self:Message(15, "With his last breath, the paladin says, 'You are too late. The last paladin has fled to Natimbi with the staff and is on his way to destroy it!'");
+		e.self:Message(MT.Yellow, "With his last breath, the paladin says, 'You are too late. The last paladin has fled to Natimbi with the staff and is on his way to destroy it!'");
 	end
 end
 

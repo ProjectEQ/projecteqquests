@@ -3,7 +3,7 @@
 
 function event_say(e)
 
-	if(e.other:GetClass() == 16 or e.other:GetGM()) then -- Berserker and GM bypass
+	if e.other:GetClass() == Class.BERSERKER or e.other:GetGM() then -- Berserker and GM bypass
 		if e.other:GetLevel() >= 45 then
 				if e.message:findi("beast fights") then
 					e.self:Say("Da only way to learn is to fight. It called Praklion of the Cauldron or sometin. Me hear it live here very long time, but rarely come out. It feed at weird times. Course, dat when it most mad. McArik found it traveling through deep craggy lands. Dat is how he decided it was good beast to test his ability to beat a baddy dat had some [sense of strategy]. It even took him long time to defeat it.");
@@ -20,7 +20,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-	local item_lib = require("items");	
+	local item_lib = require("items");
 	
 	if item_lib.check_turn_in(e.trade, {item1 = 60199}) then  -- Item: Note for Treanik
 		e.self:Say("Me hopes you can hold your breath, ".. e.other:GetCleanName() ..". Me make sure to stock up before makin' dat long swim. Pesky goblins all over. Treanik must tell dat dere is much more dan pests here to taunt da likes of us. Dere be a beast down dere dat me not killed yet. Me much younger dan you, but me learn how dat [beast fights] -- it smarter dan da average creature, you know. Don't be fooled.");

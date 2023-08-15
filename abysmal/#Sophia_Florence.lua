@@ -11,10 +11,10 @@ function event_say(e)
     end
     if (e.message:findi("hail")) then
         if (bit.band(turnins, 256) ~= 0) then
-            e.other:Message(12, "Sophia Florence says 'Thank you again for what you have done, I will forever be in your debt.'")
+            e.other:Message(MT.DarkGray, "Sophia Florence says 'Thank you again for what you have done, I will forever be in your debt.'")
         elseif (greatadventures > 0) then
             e.self:Emote(" focuses her attention on " .. e.other:GetName() .. ".")
-            e.other:Message(12, "Sophia Florence wipes away a tear as she turns to face you. Hello, " .. e.other:GetName() .. ", sorry if I seem somewhat antisocial but it has been many days since I last saw my father Lyndro and as each hour passes the possibility that he may never return becomes more apparent. While I have not given up hope it gets harder each day not to. If he is never to return to me I wish that I had something to remember him by, something that let me know he died just as brave a man as he has always been.")
+            e.other:Message(MT.DarkGray, "Sophia Florence wipes away a tear as she turns to face you. Hello, " .. e.other:GetName() .. ", sorry if I seem somewhat antisocial but it has been many days since I last saw my father Lyndro and as each hour passes the possibility that he may never return becomes more apparent. While I have not given up hope it gets harder each day not to. If he is never to return to me I wish that I had something to remember him by, something that let me know he died just as brave a man as he has always been.")
         end
     end
 end

@@ -26,5 +26,5 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	eq.get_entity_list():MessageClose(e.self,false,120,0,"With the death of the final Vrex Stonemaster, the chanting finally stops.")
+	eq.get_entity_list():MessageClose(e.self,false,120,MT.White,"With the death of the final Vrex Stonemaster, the chanting finally stops.")
 end

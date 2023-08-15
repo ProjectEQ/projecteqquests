@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18745)) then
-		e.other:Message(15,"As your eyes adjust to the darkness of the cave, a woman with a serious look on her face looks your way. 'You there. What is your business down here? You are here for training you say? Read the note in your inventory and hand it to me if you wish to begin.'");
+		e.other:Message(MT.Yellow,"As your eyes adjust to the darkness of the cave, a woman with a serious look on her face looks your way. 'You there. What is your business down here? You are here for training you say? Read the note in your inventory and hand it to me if you wish to begin.'");
 	end
 end
 

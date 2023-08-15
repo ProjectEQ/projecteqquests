@@ -54,7 +54,7 @@ function event_slay(e)
 end
 
 function event_death_complete(e)
-	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,300,"As the corpse of Jeplak crashes to the ground, you notice a slight, deranged smile on his face.");
+	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,300,"As the corpse of Jeplak crashes to the ground, you notice a slight, deranged smile on his face.");
 end
 
 function deactivate(mob)

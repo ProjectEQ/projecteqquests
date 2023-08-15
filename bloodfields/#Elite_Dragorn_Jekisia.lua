@@ -88,7 +88,7 @@ function event_timer(e)
 		e.self:WipeHateList();
 		e.self:GotoBind();
 		Agro = false;
-		eq.zone_emote(0,"You lose all sight of Jekisia. She must have fled away into the caverns, using her lackyes to cover her escape.");
+		eq.zone_emote(MT.White,"You lose all sight of Jekisia. She must have fled away into the caverns, using her lackyes to cover her escape.");
 		eq.update_spawn_timer(52919, 1800 * 1000);
 		-- should depop and respawn 30 mins later
 		eq.depop_with_timer();

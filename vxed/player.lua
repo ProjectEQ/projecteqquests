@@ -2,7 +2,7 @@
 --BiC / Warrior Epic 1.5
 function event_combine_success(e)
 	if (e.recipe_id == 10344) then
-		e.self:Message(1,"With the final piece in place, the clockwork scout's eyes light up as it comes to life.");
+		e.self:Message(MT.Default,"With the final piece in place, the clockwork scout's eyes light up as it comes to life.");
 		eq.spawn2(290059,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Clockwork Scout Model XIII
 	end
 end
@@ -36,7 +36,7 @@ function event_click_door(e)
 		local has_temp_flag = (eq.get_data(string.format("%s-god_vxed", e.self:CharacterID())) == "T")
 
 		if not has_temp_flag and not has_perm_flag then
-		  e.self:Message(15, "You become dizzy as you inspect the stone slab.")
+		  e.self:Message(MT.Yellow, "You become dizzy as you inspect the stone slab.")
 		  return 1 -- prevent zone out
 		end
 	end

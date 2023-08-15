@@ -45,7 +45,7 @@ function ChampEvent_Enter(e)
   if (event_triggered == 0) then
     event_triggered = 1;
     eq.signal(297034,1); --signal mastruq champion to begin emoting
-    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 200,"As you step into the room, all combat stops and every eye turns to you. The champion in the center finishes his opponent and yells 'HOLD!' stopping the Muramites before they can charge.");
+    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 200,"As you step into the room, all combat stops and every eye turns to you. The champion in the center finishes his opponent and yells 'HOLD!' stopping the Muramites before they can charge.");
   end
 end
 
@@ -80,7 +80,7 @@ function MastruqChampion_Timer(e)
     eq.set_timer("emote2", 3 * 1000);
   elseif (e.timer == "emote2") then
     eq.stop_timer("emote2")
-    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The cry goes up from the crowd, 'KILL THEM!");
+    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"The cry goes up from the crowd, 'KILL THEM!");
     eq.set_timer("emote3", 3 * 1000);
   elseif (e.timer == "emote3") then
     eq.stop_timer("emote3");
@@ -92,7 +92,7 @@ function MastruqChampion_Timer(e)
     eq.set_timer("emote5", 3 * 1000);
   elseif (e.timer == "emote5") then
     eq.stop_timer("emote5");
-    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"A mix of cheers and laughter comes out of the gathering crowd.");
+    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"A mix of cheers and laughter comes out of the gathering crowd.");
     eq.set_timer("emote6", 3 * 1000);
   elseif (e.timer == "emote6") then
     eq.stop_timer("emote6");
@@ -104,7 +104,7 @@ function MastruqChampion_Timer(e)
     eq.set_timer("emote8", 3 * 1000);
   elseif (e.timer == "emote8") then
     eq.stop_timer("emote8");
-    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The crowd bursts into jeers as a wretched creature pulls itself out of the pond and cowers before the champion.");
+    eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"The crowd bursts into jeers as a wretched creature pulls itself out of the pond and cowers before the champion.");
     eq.unique_spawn(297209,0,0,-50,0,-438,132); -- The Runt
     eq.set_timer("emote9", 3 * 1000);
   elseif (e.timer == "emote9") then

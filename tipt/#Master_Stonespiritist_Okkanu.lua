@@ -12,7 +12,7 @@ function event_say(e)
     else
       -- live gives the same message whether it's a temporary or permanent flag
       e.other:Message(MT.NPCQuestSay, "Okkanu tells you, 'I'm sorry, I can do nothing for you my friend.  Your bravery is notable, but I'm sure you can understand that we just can't trust anyone with our ancient magic.  It would be far too dangerous for my people.'")
-      e.other:Message(15, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
+      e.other:Message(MT.Yellow, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
 
       if has_tipt_access then
         eq.set_data(tipt_flag_key, "1")

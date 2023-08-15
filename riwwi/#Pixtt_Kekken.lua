@@ -12,7 +12,7 @@ function event_say(e)
 				eq.unique_spawn(282105,21,0,-1117,-408,33,502); -- #Taskmistress_Krisz
 			else
 				e.self:Say("There's a reason no one stands up to her, " .. e.other:GetCleanName() .. ".");
-				e.other:Message(15,"You must assemble at least three groups to attract the attention of Taskmistress Krisz.");
+				e.other:Message(MT.Yellow,"You must assemble at least three groups to attract the attention of Taskmistress Krisz.");
 			end
 		else
 			e.self:Say("She hasn't been around much lately, but I'm sure she'll be back.");

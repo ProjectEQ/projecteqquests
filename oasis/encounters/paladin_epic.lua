@@ -48,7 +48,7 @@ function Keelee_Timer(e)
 			--if no #an_orc, next phase
 			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(37160) then
 				eq.depop(37162);
-				eq.zone_emote(15,"A mystical portal is formed. Keelee and Remal dissappear.");
+				eq.zone_emote(MT.Yellow,"A mystical portal is formed. Keelee and Remal dissappear.");
 				e.self:Shout("Help me, I'm at some orc camp, help please!");
 				e.self:GMMove(-690.6 ,-1825, 5.55, 48);
 				eq.spawn2(37161,0,0,-704.5,-1835,6,52); --#Remal_the_Black (37161)
@@ -65,7 +65,7 @@ function Keelee_Timer(e)
 		for client in now_clients.entries do
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=300 and client:GetID()~=event_starter:GetID()) then	
 				client:MovePC(37, -956,725,50,120); -- Zone: oasis
-				client:Message(15,"Foolish adventurer, do not interfere with this ritual!");
+				client:Message(MT.Yellow,"Foolish adventurer, do not interfere with this ritual!");
 			end
 		end
 	elseif e.timer=="depop" then

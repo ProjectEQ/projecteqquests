@@ -1,6 +1,6 @@
 function event_death_complete(e)
 	eq.signal(292069,1); -- NPC: #Vrex_Barxt_Qurat
-	eq.zone_emote(15,"Some destructive energy dissipates, causing damage to Barxt.");
+	eq.zone_emote(MT.Yellow,"Some destructive energy dissipates, causing damage to Barxt.");
 end
 
 function event_combat(e)

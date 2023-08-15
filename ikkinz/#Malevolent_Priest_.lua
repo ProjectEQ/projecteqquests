@@ -86,8 +86,8 @@ local dz = eq.get_expedition()
 
       eq.spawn2(294140,0,0,-18,-139,-2,384); -- NPC: a_pile_of_bones
       eq.spawn2(294139,0,0,-18,-271,-2,128); -- NPC: a_pile_of_bones
-	eq.zone_emote(15, "Your expedition is nearing its close. You cannot bring any additional people into your expedition at this time.")
-      eq.zone_emote(0, "The Malevolent Priests have been defeated! Though the legion may send replacements, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
+	eq.zone_emote(MT.Yellow, "Your expedition is nearing its close. You cannot bring any additional people into your expedition at this time.")
+      eq.zone_emote(MT.White, "The Malevolent Priests have been defeated! Though the legion may send replacements, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
       eq.ZoneMarquee(10, 510, 1, 1, 6000, "The Malevolent Priests have been defeated! Congratulations!");
     end
   end

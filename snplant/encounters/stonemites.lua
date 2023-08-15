@@ -20,19 +20,19 @@ local function update_flag(client)
 
   if sewers_flag == 0 then -- never received preflag by hailing high priest
     eq.set_data(snplant_key, "T")
-    client:Message(15, "You have gained a temporary character flag!  Andaru is happy that you have helped your friends slay the Ancient Kayserops.  Perhaps you should find the High Priest in Barindu and ask him how else you can help the Taelosians.")
+    client:Message(MT.Yellow, "You have gained a temporary character flag!  Andaru is happy that you have helped your friends slay the Ancient Kayserops.  Perhaps you should find the High Priest in Barindu and ask him how else you can help the Taelosians.")
   else
     eq.set_data(snplant_key, "1")
-    client:Message(15, "You have gained a character flag!  The destruction of the Ancient Kayserops should earn the trust of High Priest Diru.")
+    client:Message(MT.Yellow, "You have gained a character flag!  The destruction of the Ancient Kayserops should earn the trust of High Priest Diru.")
   end
 end
 
 function aged_death(e)
   stonemites_killed = stonemites_killed + 1
   if stonemites_killed < 9 then
-    eq.zone_emote(15, "As the last blow strikes the giant stonemite, it screeches in pain.  You can hear the rumbling of a huge stonemite making its way through the pipes.")
+    eq.zone_emote(MT.Yellow, "As the last blow strikes the giant stonemite, it screeches in pain.  You can hear the rumbling of a huge stonemite making its way through the pipes.")
   elseif stonemites_killed == 9 and event == state.Spawned then
-    eq.zone_emote(15, "The last of the old stonemites squeals in agony.  Just then, a massive stonecrawler bursts through the pipes and heads at you with vengeance.")
+    eq.zone_emote(MT.Yellow, "The last of the old stonemites squeals in agony.  Just then, a massive stonecrawler bursts through the pipes and heads at you with vengeance.")
     eq.spawn2(287145, 0, 0, -45, -1616, -87, 380):ChangeSize(12) -- NPC: #Ancient_Kayserops
   end
 end

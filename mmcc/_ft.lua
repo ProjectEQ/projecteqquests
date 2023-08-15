@@ -6,22 +6,22 @@ local TRIGGER_MINIMUM = 3
 local area_emotes = {
   {
     loc = { -280, -108, 6 },
-    color = 15,
+    color = MT.Yellow,
     text = "Your footsteps break the silence in the caverns. Your activity has alarmed nearby scouts looking to please their master with information of an intruder.  Perhaps it wasn't so wise of you to come here..."
   },
   {
     loc = { 542, 109, 9 },
-    color = 15,
+    color = MT.Yellow,
     text = "Something large and menacing claws at the rocks just ahead.  The scrapes grind with the anticipation of the slaughter soon to come.  Whatever beast lingers ahead knows that it is almost time for it to unleash its fury and serve the master that put it here."
   },
   {
     loc = { 195, -4, 2 },
-    color = 15,
+    color = MT.Yellow,
     text = "Something large and menacing claws at the rocks just ahead.  The scrapes grind with the anticipation of the slaughter soon to come.  Whatever beast lingers ahead knows that it is almost time for it to unleash its fury and serve the master that put it here."
   },
   {
     loc = { 373, 330, 7 },
-    color = 15,
+    color = MT.Yellow,
     text = "Something large and menacing claws at the rocks just ahead.  The scrapes grind with the anticipation of the slaughter soon to come.  Whatever beast lingers ahead knows that it is almost time for it to unleash its fury and serve the master that put it here."
   },
 }

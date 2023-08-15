@@ -1,6 +1,6 @@
 function event_death_complete(e)
 eq.spawn2(301076,0,0,-252,1324,-721.67,0); -- NPC: #a_reclusive_girplan
-eq.zone_emote(15, "Attracted by the recent commotion, a reclusive Girplan emerges from its hiding spot.");
+eq.zone_emote(MT.Yellow, "Attracted by the recent commotion, a reclusive Girplan emerges from its hiding spot.");
 end
 -- 4th girplan spawns 5th
 
@@ -11,7 +11,7 @@ end
 function event_timer(e)
   if (e.timer == "despawn") then
     eq.depop();
-    eq.zone_emote(10, "The reclusive girplans slink back into their caves.");
+    eq.zone_emote(MT.NPCQuestSay, "The reclusive girplans slink back into their caves.");
   elseif e.timer=="blur" then
 	hate_list = e.self:CountHateList();
 	if (hate_list ~= nil and tonumber(hate_list) == 1) then

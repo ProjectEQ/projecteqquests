@@ -5,7 +5,7 @@ local function convert_temp_flag(client, flag_name, flag_msg)
   -- Just a quirk in their priority flag checks (they probably use a separate flag)
   client:Message(MT.NPCQuestSay, string.format("Gurru tells you, 'I see that you have helped your friends accomplish things in %s.  I will tell the High Priest of your deeds.  You should seek an audience with him and see if there is anything else that you can help us with.'", flag_msg))
   eq.set_data(string.format("%s-%s", client:CharacterID(), flag_name), "1")
-  client:Message(15, "Your temporary character flag has been converted into a permanent flag!")
+  client:Message(MT.Yellow, "Your temporary character flag has been converted into a permanent flag!")
   eq.debug(string.format("Converted character [%s] temporary flag [%s] to permanent", client:GetName(), flag_name))
 end
 

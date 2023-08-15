@@ -81,7 +81,7 @@ function Dream_Death(e)
     
     -- Spawn Gaz the Gargantuan 301062
     eq.spawn2(301062, 0, 0, 677, -419, -816, 0); -- NPC: #Gazz_the_Gargantuan
-eq.zone_emote(0,"The earth beneath your feet shakes as the gargantuan beast awakens.");
+eq.zone_emote(MT.White,"The earth beneath your feet shakes as the gargantuan beast awakens.");
   end
 end
 
@@ -109,7 +109,7 @@ function Gaz_Timer(e)
     eq.set_timer('detonate', 5 * 1000);
     eq.set_timer('reflect', 30 * 1000);
     e.self:RemoveAISpell(5822);
-    eq.zone_emote(13,"Gazz the Gargantuan slows its gait and begins flailing muscular arms in all directions.");
+    eq.zone_emote(MT.Red,"Gazz the Gargantuan slows its gait and begins flailing muscular arms in all directions.");
     
     e.self:SetSpecialAbility(SpecialAbility.immune_ranged_attacks, 0);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
@@ -125,7 +125,7 @@ function Gaz_Timer(e)
     
     e.self:RemoveAISpell(2490);
     
-    eq.zone_emote(13,"Gazz the Gargantuan unleashes an earth shattering roar and picks up speed.");
+    eq.zone_emote(MT.Red,"Gazz the Gargantuan unleashes an earth shattering roar and picks up speed.");
     
     e.self:SetSpecialAbility(SpecialAbility.immune_ranged_attacks, 1);
     e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);

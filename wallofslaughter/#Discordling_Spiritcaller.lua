@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("symbol", math.random(3,30) * 1000);
 		eq.set_timer("chant", math.random(3,18) * 1000);
 		eq.set_timer("grip", math.random(3,45) * 1000);

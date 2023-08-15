@@ -6,7 +6,7 @@ local swarm_number = 0;
 function Researcher_Death(e)
 
   local el = eq.get_entity_list();
-  if ( el:IsMobSpawnedByNpcTypeID(260061) == false ) then 
+  if not el:IsMobSpawnedByNpcTypeID(260061) then
      eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
      eq.zone_emote(MT.Yellow,"Our master be warned, the Wayfarers are on their way!");
     -- Flawed Mutation
@@ -84,7 +84,7 @@ end
   eq.zone_emote(MT.Yellow, "The sounds of crumbling stone, digging miners, and the bellows of slave masters don't mask the cries of tortured slaves and beasts.  The orcs take great pleasure in causing as much pain to these creatures as possible.  Be careful, or you shall become a victim of their sadistic games.");
 
   local el = eq.get_entity_list();
-  if ( el:IsMobSpawnedByNpcTypeID(260021) == false and el:IsMobSpawnedByNpcTypeID(260038) == false and el:IsMobSpawnedByNpcTypeID(260044) == false and el:IsMobSpawnedByNpcTypeID(260060) == false ) then 
+  if not el:IsMobSpawnedByNpcTypeID(260021) and not el:IsMobSpawnedByNpcTypeID(260038) and not el:IsMobSpawnedByNpcTypeID(260044) and not el:IsMobSpawnedByNpcTypeID(260060) then
     -- Steelslave Researcher
     eq.spawn2(260061, 0, 0, 14, 334, 138, 370); -- NPC: Steelslave_Researcher
     eq.spawn2(260061, 0, 0, -41, 326, 140, 124); -- NPC: Steelslave_Researcher
@@ -94,7 +94,7 @@ end
 
 -- Steelslave_Researcher_ (final encounter)
 function Researcher_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("aggrolink", 3 * 1000);
   else
     eq.stop_timer("aggrolink");
@@ -115,7 +115,7 @@ end
 function Researchers_Death(e)
 	researchers = researchers + 1;
 		local el = eq.get_entity_list();
-  		if ( researchers == 2 and el:IsMobSpawnedByNpcTypeID(260069) == true) then --check if boss is alive still when 2 researchers die , give bonus loot
+  		if researchers == 2 and el:IsMobSpawnedByNpcTypeID(260069) then --check if boss is alive still when 2 researchers die , give bonus loot
     			eq.zone_emote(MT.Yellow, "Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
 			extra_loot = true;
   		end
@@ -123,7 +123,7 @@ end
 
 -- Flawless Experimental Battlelord
 function Battlelord_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("swarm", 120 * 1000);
     eq.set_timer("throw", 60 * 1000);
     eq.set_timer("aggrolink", 3 * 1000);
@@ -289,119 +289,119 @@ function Battlelord_Death(e)
   eq.spawn2(260066, 0, 0, 1499, -168, 140, 0); -- NPC: #Researcher`s_Box_of_Supplies
   -- #The Bloody Barrel
   eq.spawn2(260064, 0, 0, 1497, -185, 145, 0); -- NPC: #The_Bloody_Barrel
-	  if (extra_loot == true) then
+	  if extra_loot then
   		-- #The Splintering Barrel
   		eq.spawn2(260065, 0, 0, 1496, -179, 145, 0); -- NPC: #The_Splintering_Barrel
 	  end
 end
 
 function Text1_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The halls ahead bustle with activity.  The sounds of weapons clanging against racks and the low rumble of dozens of armored creatures suggest that the Wayfarers Brotherhood didn't know half as much as they thought about the treasure you're after.  This is not the same quiet place Crispen and Nevlen scouted just a few days ago.");
 eq.depop_with_timer();
 end
 end
 
 function Text2_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"It would seem that war provisions are being readied and weapons are stacked neatly.  The low hum of distant murmurs catches your ears, and though you can't make out what they say, there is an urgency in the tone.");
 eq.depop_with_timer();
 end
 end
 
 function Text3_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"A disturbing howl, trembling with what sounds like panic, comes at you from the halls to the east.  The callous grunts and squeals of workaday orcs and their tortured servants taint the air from the west.  In either direction, there are creatures that must be dealt with.");
 eq.depop_with_timer();
 end
 end
 
 function Text4_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The wails of anger and agony rise to a fever pitch.  The stench of panic, fear, and hate creeps down the cavern.  Is this a beast you want to rescue from whatever foul fate has befallen it?");
 eq.depop_with_timer();
 end
 end
 
 function Text5_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The relative silence is shattered by enraged howls and the sound of frenzied clawing against stone.  Somewhere, a captor continues its torment of a creature.  Chances are that one of the beasts you need to destroy to stop the serum from being completed is close by.");
 eq.depop_with_timer();
 end
 end
 
 function Text6_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The sounds of crumbling stone, digging miners, and the bellows of slave masters don't mask the cries of tortured slaves and beasts.  The orcs take great pleasure in causing as much pain to these creatures as possible.  Be careful, or you shall become a victim of their sadistic games.");
 eq.depop_with_timer();
 end
 end
 
 function Text7_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The orcs stare prophetically into the fire. One of them sees you out of the corner of its eye and doesn't move.  It's as if they are focused on luring you to them.  Over the roar of the fire, the fierce squeals of a tortured beast bite at the air, seemingly begging for death.");
 eq.depop_with_timer();
 end
 end
 
 function Text8_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The fire dances across the bleeding wounds of an odd-looking boar that is being tortured.  The boar's torturer ignores your presence and methodically goes about the business of removing a sample from the boar's trembling body.  This must be one of the beasts you need to destroy to stop the serum from being completed.");
 eq.depop_with_timer();
 end
 end
 
 function Text9_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"This area was alive with activity before the experiments began.  But all is not quiet.  To the east you hear louder, deeper, and more discontented beastly cries than you've heard so far.  From the north you hear a fainter whining of a tortured beast.  And to the west, there is the perceptible roar of rushing water and noticeably fresher air that is... very alluring.");
 eq.depop_with_timer();
 end
 end
 
 function Text10_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"Back in the days of Rujark and since then, this twisting cavern was used to ambush the unsuspecting. Today, the orcs will likely use it in the same way to prevent you from stopping the sample collection.");
 eq.depop_with_timer();
 end
 end
 
 function Text11_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The animal cries become deafening.  Near the fire, another orc tortures a large bear, its fur matted with blood.  Ending the bear's life is not only compassionate, but will also serve to slow down those that are creating the serum that requires samples from living creatures.");
 eq.depop_with_timer();
 end
 end
 
 function Text12_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"The boxes in the area are newly made.  Strange.  To the west, the whining of an animal has gotten more intense.  Whatever is making that sound is begging for your empathy.  To the east, there is an eerie stillness.  A deceptive silence.");
 eq.depop_with_timer();
 end
 end
 
 function Text13_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"A goblin howls with an unusual cry of agony.  It is a strange aberration that is a product of the serum and needs to be destroyed quickly.  At the opposite end of the tunnel there is a low rumble.  Something dangerous lurks there.");
 eq.depop_with_timer();
 end
 end
 
 function Text14_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"This is clearly not a typical lair for mad research scientists, especially orcish ones.  It is far too insipid a place for such foul experiments.  Perhaps these aren't the primary researchers after all.  You'll have to confront them to find out for sure.");
 eq.depop_with_timer();
 end
 end
 
 function Text15_Combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.zone_emote(MT.Yellow,"Light pours down from above into this serene setting.  This is where Crispen and Nevlen first found the treasure, but now all you see is death and mayhem.  You must put a stop to this nefarious research once and for all!");
 eq.depop_with_timer();
 end
 end
 
 function Trap_Combat(e)
-if (e.joined == true) then
+if e.joined then
 e.self:CastSpell(3927,e.other:GetID(),0,0); -- Spell:Dark Infection
 eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"A claw trap springs forth");
 eq.depop_with_timer();
@@ -409,7 +409,7 @@ end
 end
 
 function Trap2_Combat(e)
-if (e.joined == true) then
+if e.joined then
 e.self:CastSpell(3943,e.other:GetID(),0,0); -- Spell:Blade Arc
 eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"A claw trap springs forth");
 eq.depop_with_timer();
@@ -417,7 +417,7 @@ end
 end
 
 function Trap3_Combat(e)
-if (e.joined == true) then
+if e.joined then
 e.self:CastSpell(3933,e.other:GetID(),0,0); -- Spell:Savage Jaws
 eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"A claw trap springs forth");
 eq.depop_with_timer();

@@ -8,7 +8,7 @@ end
 
 function event_hp(e)
     -- if it's up, do nothing
-    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(dragon_id) == true) then
+    if eq.get_entity_list():IsMobSpawnedByNpcTypeID(dragon_id) then
         -- lets reset the HP event in case it's not killed and it regens
         eq.set_next_hp_event(80)
         return

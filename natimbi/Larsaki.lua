@@ -1,9 +1,9 @@
 -- Cragbeast Queen: Lizardscale Plated Girdle
 function event_say(e)
-    if(e.message:findi("hail") and e.other:HasItem(52125) == true) then --scale of the cragbeast queen
+    if(e.message:findi("hail") and e.other:HasItem(52125)) then --scale of the cragbeast queen
         e.self:Emote("yelps with surprise as she notices the bundle of scales you carry.");
         e.self:Say("How? Where did you acquire those ancient cragbeast scales? As long as I've lived in Taelosia I've never seen any so enormous. The beast must have been several centuries old!' She pauses a moment to regain her composure, 'It would be my honor to fashion those scales into something more practical for you. They are intact enough to create a scale plated belt. All I need are the remaining raw [materials].");
-    elseif(e.message:findi("hail") and e.other:HasItem(52125) == false) then
+    elseif(e.message:findi("hail") and not e.other:HasItem(52125)) then
         e.self:Emote("smiles and extends her arm to welcome you.");
         e.self:Say("Pleased to have you in our quaint makeshift camp, ".. e.other:GetCleanName() ..". Stay as long as you like. The Wayfarers always seem busy, but there's not much for me to do here other than work on my [weaving].");
    elseif(e.message:findi("materials")) then

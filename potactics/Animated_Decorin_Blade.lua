@@ -6,7 +6,7 @@ eq.set_timer('depop', 120 * 1000);
 end
 
 function event_death_complete(e)
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(214054) == true) then
+	if eq.get_entity_list():IsMobSpawnedByNpcTypeID(214054) then
 		local which = math.random(1,2);
     		if  (which == 1) then
 			eq.spawn2(214119,0,0,1643,1966,-328,387); -- NPC: Animated_Decorin_Blade
@@ -19,7 +19,7 @@ end
 
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end

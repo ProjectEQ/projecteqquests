@@ -47,7 +47,7 @@ function event_signal(e)
    elseif (e.signal == 9) then 
       -- A Flickering Spirit has died; if all three are dead
       -- despawn a scourge of honor
-      if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(201469) == false ) then
+      if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(201469) then
          eq.depop_all( 201467 );
 
          if (trial_wave < 4) then 

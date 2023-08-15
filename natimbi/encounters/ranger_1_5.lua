@@ -6,7 +6,7 @@
 -- items: 62621
 
 function Trenz_Combat(e)
-	if (e.joined == true) then		
+	if e.joined then		
 		eq.set_timer("wave",14*1000);
 		eq.set_timer("adds",10*1000);
 		eq.set_timer("senvial",math.random(75,120)*1000);
@@ -36,13 +36,13 @@ end
 
 function Senvial_Say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["ranger_epic"] == "2" and e.other:HasItem(62844) == true) then
+	if qglobals["ranger_epic"] ~= nil and qglobals["ranger_epic"] == "2" and e.other:HasItem(62844) then
 		if(e.message:findi("hail")) then
 			e.self:Say("Thank you for freeing me, "..e.other:GetName()..". I am not sure how it is that you broke the power that commanded me, but for that I am very grateful. The water spirit looks at you carefully before speaking again. I sense that you will need my aid in the future. To repay my debt to you I give you my blessing. This is no mean thing, it carries with it a portion of my own power. Mine is the cool rain and soft mist. I am the essence of morning dew and the lazy fog. I have no doubt that you will use it wisely. There are more of my kin enslaved by these beasts and others like them. You appear to have the power to rescue them as you have me. I am not a being of foresight or far-seeing, mine is the realm of small, gentle things, but even I can see that you are a being of portent. I am honored to have met you. I must return to my realm. I shall never forget this place and what it has made me do, nor shall I forget the one thing that freed me.");
 			e.other:SummonItem(62621); -- Item: Senvial's Blessing
-			if(qglobals["ranger_natimbi_chest"] == nil) then
+			if qglobals["ranger_natimbi_chest"] == nil then
 				eq.spawn2(283157,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- #a chest (Epic 1.5)
-				eq.set_global("ranger_natimbi_chest","1",5,"F");		
+				eq.set_global("ranger_natimbi_chest","1",5,"F");
 			end
 			eq.set_timer("depop",8*1000);
 		end
@@ -57,7 +57,7 @@ function Senvial_Timer(e)
 	if(e.timer=="depop") then
 		eq.depop();
 	elseif(e.timer=="checkstatus") then
-		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(280084) == false) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(280084) then
 			e.self:Emote("stops moving and, with obvious effort, becomes more like mist than water.  The elemental spirit remains in this position as it struggles to maintain control of its own will.");
 			e.self:SetSpecialAbility(19, 1);
 			e.self:SetSpecialAbility(20, 1);

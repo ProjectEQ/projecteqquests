@@ -1,5 +1,5 @@
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     local which = math.random(1,100);
     if  (which <= 5) then
 	    eq.spawn2(174152, 0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); --Golden_Shroom (174152)

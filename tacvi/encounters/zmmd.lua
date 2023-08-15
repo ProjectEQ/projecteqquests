@@ -51,7 +51,7 @@ function ZMMD_Timer(e)
 	elseif e.timer == "wipecheck" then
 		-- Check to see if there are any Clients in the room with ZMKP
 		local client = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(), 8000);
-		if (client:IsClient() == false) then
+		if not client:IsClient() then
 			-- Wipe Mechanics
 			eq.signal(298223,2); -- Unlock Doors
 			eq.depop_all(298050);

@@ -1,6 +1,6 @@
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);	
-	if(qglobals["ranger_epic"] == "8" and qglobals["rng_spawn_rss"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334087) == false) then
+	if(qglobals["ranger_epic"] == "8" and qglobals["rng_spawn_rss"] == nil and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334087)) then
 		eq.load_encounter("ranger_2_0");
 		eq.unique_spawn(334087,0,0,2.8,1382,60.5,320); --#Craftmaster_Tieranu (334087)	
 		eq.set_global("rng_spawn_rss","1",2,"H2");

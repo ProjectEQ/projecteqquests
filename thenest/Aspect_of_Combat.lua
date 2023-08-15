@@ -35,9 +35,9 @@ function event_signal(e)
 end
 
 function event_combat(e)
-	if (e.joined == false) then
+	if not e.joined then
 		eq.stop_timer("powerup");
-	elseif (e.joined == true) and tshara == true then
+	elseif e.joined and tshara then
 		eq.set_timer("powerup", 30000);
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
@@ -45,7 +45,7 @@ function event_combat(e)
 			npc:AddToHateList(e.self:GetHateRandom(),1);
 			end
 		end	
-	elseif (e.joined == true) and tshara == false then
+	elseif e.joined and not tshara then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 343358 or npc:GetNPCTypeID() == 343360 or npc:GetNPCTypeID() == 343358 or npc:GetNPCTypeID() == 343362 or npc:GetNPCTypeID() == 343361)) then

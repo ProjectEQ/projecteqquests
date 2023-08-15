@@ -8,7 +8,7 @@ function event_enter(e)
 	--e.other:Message(MT.Yellow,"The gr");
 	if(e.other:Class() == "Druid") then
 		local qglobals = eq.get_qglobals(e.other);
-		if (qglobals["druid_epic"] == "7" and qglobals["druid_epic_dranik"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(336214) == false ) then
+		if (qglobals["druid_epic"] == "7" and qglobals["druid_epic_dranik"] == nil and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336214)) then
 			e.other:Message(MT.Yellow,"The ground shakes violently and a deep thudding sound rolls across the land");
 			eq.set_global("druid_epic_dranik","1",2,"H2");
 			eq.set_timer("druid_epic_depop",30*60*1000);

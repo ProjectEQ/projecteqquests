@@ -13,7 +13,7 @@ function event_hp(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.stop_timer('reset');
   else
     eq.set_timer('reset', 300 * 1000);

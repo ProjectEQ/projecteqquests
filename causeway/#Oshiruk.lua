@@ -1,6 +1,6 @@
 -- bard 2.0 mob
 function event_combat(e)
-    if e.joined == true then
+    if e.joined then
         eq.set_timer("ae", 12000)
     end
 end

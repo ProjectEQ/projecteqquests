@@ -123,7 +123,7 @@ function MastruqChampion_Timer(e)
 end
 
 function IxtHsek_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_next_hp_event(90);
 		eq.set_timer("OOBcheck", 6 * 1000);
 			if(not eq.is_paused_timer("depop")) then
@@ -146,7 +146,7 @@ end
 end
 
 function MastruqChampion_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_next_hp_event(20);
 		eq.set_timer("OOBcheck", 6 * 1000);
 	else
@@ -190,7 +190,7 @@ e.self:ModSkillDmgTaken(7, -25); -- archery
 end
 
 function TheRunt_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("checklist", 1 * 1000);
     eq.set_timer("OOBcheck", 6 * 1000);
   else
@@ -284,7 +284,7 @@ end
 end
 
 function KillableArena_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 	else
 		eq.stop_timer("OOBcheck");

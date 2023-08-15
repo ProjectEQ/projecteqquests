@@ -23,7 +23,7 @@ function Control_Timer(e)
 end
 
 function Maestro_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);
 		eq.stop_timer("resetevent");
 	else
@@ -95,21 +95,21 @@ function Maestro_Death(e)
 end
 
 function Accompanist_Death(e)
-  if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(186191) == false) then
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(186191) then
     eq.signal(186111,1); -- NPC: #Maestro_of_Rancor
 -- signal maestro to reduce HP regen since hands are dead
   end
 end
 
 function Banshee_Death(e)
-  if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(186192) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(186193) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(186194) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(186111) == true) then
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(186192) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(186193) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(186194) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(186111) then
     eq.signal(186111,2); -- NPC: #Maestro_of_Rancor
     -- signal maestro to spawn 2 more banshees since all banshees are dead and maestro is still alive
   end
 end
 
 function Moaning_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("nuke", math.random(2,5) * 1000);
     else
         eq.stop_timer("nuke");

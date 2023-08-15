@@ -1,5 +1,5 @@
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_next_hp_event(30);
   else
     eq.stop_timer("blow");

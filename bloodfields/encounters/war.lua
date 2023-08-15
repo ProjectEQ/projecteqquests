@@ -3,7 +3,7 @@
 -- 301042 War Caller Kaavi
 function Mini_Death(e)
   local el = eq.get_entity_list();
-  if (el:IsMobSpawnedByNpcTypeID(301042) == true and el:IsMobSpawnedByNpcTypeID(301017) == false and el:IsMobSpawnedByNpcTypeID(301043) == false) then 
+  if el:IsMobSpawnedByNpcTypeID(301042) and not el:IsMobSpawnedByNpcTypeID(301017) and not el:IsMobSpawnedByNpcTypeID(301043) then
     local war_caller = el:GetNPCByNPCTypeID(301042);
 
     war_caller:SetSpecialAbility(SpecialAbility.immune_melee, 0);

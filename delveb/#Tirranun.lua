@@ -35,16 +35,16 @@ local phaseone=true;
 
 
 function event_combat(e)
-	if (e.joined == true) and banish == true then
+	if e.joined and banish then
 		e.self:SetSpecialAbility(SpecialAbility.summon, 0);
 		eq.set_timer("banish_top", 45000); -- start banish timer
 		can_die=false; -- make sure I can't die.
-	elseif (e.joined == false) and phaseone == true then -- If I lose combat, depop myself, depop my adds, stop all timers, tell myself to respawn in 10 seconds with all variables default.
+	elseif not e.joined and phaseone then -- If I lose combat, depop myself, depop my adds, stop all timers, tell myself to respawn in 10 seconds with all variables default.
 		eq.set_timer("Heal", 5000);
 		has_died=false;
 		banish=true;
 		can_die=false;
-	elseif (e.joined == false) and phaseone == false then
+	elseif not e.joined and not phaseone then
 	eq.depop(342066); -- Depop my old self
 	eq.depop_all(342065); -- Repop my new  due to my increased HP pool gain from phase 2.
 	eq.spawn2(342066,0,0,-742.57,2866.09,41.52,9.0); -- NPC: #Tirranun
@@ -53,7 +53,7 @@ function event_combat(e)
 end
 
 function event_death(e)
-    if has_died == false then  -- If I "Die"
+    if not has_died then  -- If I "Die"
 	  e.self:CastSpell(6538, e.self:GetID()); -- Cast Expulsion of Flame
       e.self:SetAppearance(3); -- Fall over
       e.self:WipeHateList(); -- Wipe my  hate list.
@@ -72,7 +72,7 @@ function event_death(e)
 	  eq.zone_emote(MT.Yellow,"As Tirranun is struck down, every last ember of flame is expelled from his volcanic body. His broken husk smolders quietly on the rock. Alarmingly, it appears to be getting warmer. He is recovering.");
     return 1 -- force myself to stay alive.
 	end
-    if can_die == true then
+    if can_die then
       return 0;
     else
       return 1;
@@ -114,14 +114,14 @@ function event_timer(e)
 end
 
 function event_hp(e)
-	if (e.inc_hp_event == 80) and banish == false then -- If I've regened to 80.
+	if e.inc_hp_event == 80 and not banish then -- If I've regened to 80.
 		e.self:SetAppearance(0); -- Stand myself up
 		e.self:TempName("Tirranun`s Blazing Body "); -- Change my name
 		e.self:CastSpell(6540, e.self:GetID()); -- cast Form of Lava
 		eq.set_timer("Form", 25000); -- Maintain this buff every 25 seconds.
 		eq.set_timer("Adds", 15000); -- Set adds to spawn faster, every 15 seconds now.
 		eq.set_next_inc_hp_event(90); -- do something at 90%
-	elseif (e.inc_hp_event == 90) and banish == false then -- If I've regened to 90.
+	elseif e.inc_hp_event == 90 and not banish then -- If I've regened to 90.
 		e.self:TempName("Tirranun the Ancient Protector"); -- Change my name
 		e.self:ModifyNPCStat("min_hit", tostring(tir_min_hit)); -- modify my min hit.
 		e.self:ModifyNPCStat("max_hit", tostring(tir_max_hit)); -- modify my max hit.

@@ -1,12 +1,12 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.set_timer("eggs", eq.ChooseRandom(45,65) * 1000);
 eq.set_timer("OOBcheck", 6 * 1000);
 eq.set_timer("agro", 6 * 1000);
 else
 eq.stop_timer("eggs");
 eq.stop_timer("OOBcheck");
-eq.stop_timer("agro");
+eq.stop_timer("aggro");
 end
 end
 
@@ -28,7 +28,7 @@ eq.spawn2(354109, 0, 0, e.self:GetX()+5, e.self:GetY()+5,  e.self:GetZ()+5,  e.s
 eq.spawn2(354109, 0, 0, e.self:GetX()-5, e.self:GetY()-5,  e.self:GetZ()+5,  e.self:GetHeading()); -- NPC: a_drachnid_egg_sac
 eq.spawn2(354109, 0, 0, e.self:GetX()+7, e.self:GetY()-7,  e.self:GetZ()+5,  e.self:GetHeading()); -- NPC: a_drachnid_egg_sac
 eq.get_entity_list():MessageClose(e.self, false, 200, MT.Yellow, "The ground begins to tremble as you clutch your throat");
-elseif (e.timer == "agro") then
+elseif (e.timer == "aggro") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 		if (npc.valid and (npc:GetNPCTypeID() == 354110)) then

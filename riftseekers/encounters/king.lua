@@ -122,7 +122,7 @@ end
 
 function KingCombat(e)
     if e.joined then
-		if timerstate[e.self:GetID()] == false then
+		if not timerstate[e.self:GetID()] then
         	eq.set_timer("portals", 5000) -- 5 sec initially
         	timerstate[e.self:GetID()] = true
 		end
@@ -190,7 +190,7 @@ end
 
 function PrinceCombat(e)
     if e.joined then
-		if timerstate[e.self:GetID()] == false then
+		if not timerstate[e.self:GetID()] then
         	eq.set_timer("portals",5000) -- 5 sec initially
         	timerstate[e.self:GetID()] = true
         	--PortalAdds(portals[e.self:GetNPCTypeID()]) do not spawn adds instantly
@@ -220,7 +220,7 @@ function PrinceDeath(e)
 	eq.signal(334041,1); --#King_Gelaqua (334041)
     end
 	
-	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334036) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334037) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334035) == false) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334036) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334037) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334035) then
 		--#Prince_Allin (334036), #Prince_Britalic (334037), #Prince_Kiranus (334035)
 		eq.signal(334039,1);
 		eq.signal(334038,1);
@@ -235,7 +235,7 @@ function PrinceDeath(e)
 			npc:ModifyNPCStat("assist", "200");
 			end
 		end
-	elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334038) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334040) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334039) == false) then
+	elseif not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334038) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334040) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334039) then
 		
 		--#Prince_Scyllus (334038), #Prince_Ilsin (334040),#Prince_Cynin (334039)
 		eq.signal(334037,1);

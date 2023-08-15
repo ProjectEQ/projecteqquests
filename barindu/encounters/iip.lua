@@ -52,7 +52,7 @@ function Ixvet_Timer(e)
 end
 
 function Ixvet_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.stop_timer("popevent");
     else
         eq.set_timer("popevent", 3 * 1000);
@@ -85,7 +85,7 @@ function Construct_Signal(e)
 end
 
 function Construct_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("oobcheck", 3 * 1000);
     else
         eq.stop_timer("oobcheck");
@@ -109,7 +109,7 @@ function Colossus_Signal(e)
 end
 
 function Controller_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("aggrolink", 6 * 1000);
         eq.get_entity_list():GetNPCByNPCTypeID(283047):AddToHateList(e.other, 1);
         eq.get_entity_list():GetNPCByNPCTypeID(283050):AddToHateList(e.other, 1);

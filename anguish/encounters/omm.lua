@@ -75,7 +75,7 @@ function OMM_Say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("So. You are the mighty god killers. I am not surprised you managed to make it this far. I did expect there to be more of you, do you really think so little of me? I have destroyed [" .. eq.say_link("worlds") .. "] where animals roam with power that would cause your gods to tremble.");
 	elseif(e.message:findi("worlds")) then
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107)==false) then -- if amv is up, ignore hails
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107) then -- if amv is up, ignore hails
 			e.self:Say("You would have made fine additions to my army, were you not so willful. Prepare yourself for power beyond your greatest nightmares.");
 			event_started=1;
 			reset_countdown=0;
@@ -154,7 +154,7 @@ function OMM_HP(e)
 end
 
 function OMM_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		e.self:SetAppearance(0);
 		e.self:ModifyNPCStat("hp_regen", "10000");
 		eq.stop_timer("reset");
@@ -164,7 +164,7 @@ function OMM_Combat(e)
 		eq.set_timer("pick6", 50 * 1000);		
 		eq.spawn2(317114,0,0,378, 4969, 279, 128); -- NPC: Coerced_Lieutenant
 		eq.spawn2(317114,0,0,618, 4969, 279, 384); -- NPC: Coerced_Lieutenant
-		if (reenable_summon == true) then
+		if reenable_summon then
 			eq.set_timer("enable_summon", 10 * 1000); -- need to parse timer
 		end
 	else

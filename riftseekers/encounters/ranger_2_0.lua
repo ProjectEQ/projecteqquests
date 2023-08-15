@@ -3,7 +3,7 @@ function Craftmaster_Spawn(e)
 end
 
 function Craftmaster_Combat(e)
-	if e.joined==true then		
+	if e.joined then		
 		eq.set_next_hp_event(70);
 		eq.stop_timer("depop");
 	else
@@ -56,7 +56,7 @@ function Craftmaster_Timer(e)
 end
 
 function ElementalCombat(e)
-	if e.joined ==true then
+	if e.joined then
 		eq.set_timer("blameless",math.random(1, 15)*1000); --3230
 		eq.set_timer("heatwave",math.random(3, 7)*1000); --5816
 	else

@@ -1,7 +1,7 @@
 local kick_avail;
 
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		kick_avail=1;
 		eq.set_timer("kickthatface",1000)
 	end

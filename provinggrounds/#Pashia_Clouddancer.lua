@@ -6,16 +6,16 @@ local arrived=false;
 function event_say(e)
 	if(e.other:HasItem(69956)) then
 		if(e.message:findi("hail")) then
-			if arrived==true then
+			if arrived then
 				e.self:Say("At last I am free again! Thank you so much for saving me from the horrors of this vile place. You have my gratitude. I can find my way out from here friend. Here take this [" .. eq.say_link("note") .. "] back to my brother. It should explain what good deed you have done for me today.");
 			else
 				e.self:Say("Uuugh. . .");
 			end
-		elseif(e.message:findi("note") and arrived==true) then
+		elseif(e.message:findi("note") and arrived) then
 			e.self:Say("Ok, here's the note for you. Thank you again!");
 			e.other:SummonItem(69973); --Note from Pashia
 			eq.depop_with_timer();
-		elseif(e.message:findi("duram wants you to come home") and following==false) then
+		elseif(e.message:findi("duram wants you to come home") and not following) then
 			e.self:Say("Duram sent you? Unbelievable. Before I go anywhere, I need my sword back, it was taken from me earlier. That beast in there took it and knocked me down. . .he thought I was dead because I didn't move. Defeat him and bring me back my sword and I will leave with you.");
 			eq.spawn2(316075, 0, 0,-1919,-756.75,-309.8,248); --#Diad_the_Devourer (316075)
 		elseif(e.message:findi("follow") and e.other:GetID()==event_starter:GetID()) then
@@ -62,7 +62,7 @@ function event_timer(e)
 			eq.stop_follow();
 			eq.debug("stop follow: " .. event_starter:GetName());
 			e.self:MoveTo(e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading(),true);
-		elseif (e.self:CalculateDistance(event_starter:GetX(),event_starter:GetY(),event_starter:GetZ()) <=200 and arrived==false) then
+		elseif (e.self:CalculateDistance(event_starter:GetX(),event_starter:GetY(),event_starter:GetZ()) <=200 and not arrived) then
 			following=true;
 			eq.follow(event_starter:GetID());
 			eq.debug("following: " .. event_starter:GetName());

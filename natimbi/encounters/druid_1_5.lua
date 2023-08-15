@@ -31,7 +31,7 @@ function Jugg_Spawn(e)
 end
 
 function Jugg_Combat(e)
-	if (e.joined == true) then		
+	if e.joined then		
 		eq.set_timer("conduit",7*1000); --Energy Conduit:
 		eq.set_timer("checkleash",1*1000);
 	else
@@ -61,7 +61,7 @@ function Jugg_Timer(e)
 end
 
 function Reborn_Death(e)
-	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(280069) == false) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(280069) then
 		eq.spawn2(280091,0,0,1451.65,957.84,517.86,432); -- NPC: #Noc_Juggernaut
 		eq.depop_all(280090);
 	end

@@ -4,7 +4,7 @@ function event_death_complete(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("casting", 20 * 1000)
 	else
 		eq.stop_timer("casting")

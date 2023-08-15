@@ -90,7 +90,7 @@ function Tiorpat_Signal(e)
 end
 
 function Tiorpat_Combat(e)
- if (e.joined == true) then
+ if e.joined then
 		eq.set_timer('link', 5 * 1000); -- cycle aggro link every 5 sec
 		eq.set_timer('adds', 20 * 1000);
 		if(not eq.is_paused_timer('depop')) then

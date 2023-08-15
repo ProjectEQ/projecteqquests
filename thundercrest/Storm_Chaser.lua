@@ -1,5 +1,5 @@
 function event_death_complete(e)
-if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(340382) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340383) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340384) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340396) == true) then
+if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340382) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340383) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340384) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340396) then
 eq.spawn2(340397, 11, 0, 221, 1293, -19, 0); -- NPC: #Thunderhead
 eq.spawn2(340397, 10, 0, 1014, 80, 39, 0); -- NPC: #Thunderhead
 eq.spawn2(340397, 9, 0, 770, -1172, 18.6, 0); -- NPC: #Thunderhead

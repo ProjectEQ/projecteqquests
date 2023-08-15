@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18726) == true) then
+	if e.other:HasItem(18726) then
 		e.other:Message(MT.Yellow,"An important looking Erudite turns to greet you as you enter the room. 'Greetings. A young recruit perhaps? I am Depnar Bulrious, your new Guild Master. Read the note in your inventory and then hand it to me when you are ready to begin your training. Truth awaits!'");
 	end
 end

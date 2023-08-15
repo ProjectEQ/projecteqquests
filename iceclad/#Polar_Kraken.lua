@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("adds",45*1000);
 		eq.set_timer("blind",12*1000);
 		eq.set_next_hp_event(50);

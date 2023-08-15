@@ -49,7 +49,7 @@ Wanton Destruction PB AE 300', Magic (-300)
 --end
 
 function Ture_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     --e.self:Say("");
 	eq.set_timer("wanton", math.random(30,60) * 1000);
 	eq.set_timer("breath", math.random(10,30) * 1000);

@@ -34,7 +34,7 @@ function Real_Death(e)
 end
     
 function Real_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);
 		eq.stop_timer("resetevent");
 	else
@@ -84,7 +84,7 @@ function Real_Hp(e)
         eq.set_next_hp_event(5);
         eq.set_timer("hate", 1 * 1000);
     elseif(e.hp_event == 5) then
-	    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(186198) == true) then
+	    if eq.get_entity_list():IsMobSpawnedByNpcTypeID(186198) then
 		    e.self:SetSpecialAbility(35, 1); --turn on immunity since EOH is alive
 	    end
     end

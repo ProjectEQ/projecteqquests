@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18748) == true) then
+	if e.other:HasItem(18748) then
 		e.other:Message(MT.Yellow,"A deep booming voice breaks the silence of the room as you get your bearings. 'Step forward young recruit. I am Cain Darkmoore, Guild Master of the Army of Steel. Read the note in your inventory and hand it to me when you are ready to begin your training. Of course if you are to afraid, I saw an Elf handing out flutes at the bards' Guild this morning.'");
 	end
 end

@@ -7,7 +7,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18709) == true) then
+	if e.other:HasItem(18709) then
 		e.other:Message(MT.Yellow,"As you orient yourself amongst the peacefulness of the Surefall Glade, Hager Sureshot addresses you stemly, 'You're not here to poach are you? Of course you're not. Excuse my manners. I can see that you are a young ranger in training. Read the note in your inventory and hand it to me to begin your training.'");
 	end
 end

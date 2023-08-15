@@ -9,7 +9,7 @@ end
 
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
-	if (qglobals["warrior_epic_vxed"] == "1" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(290070) == false) then
+	if (qglobals["warrior_epic_vxed"] == "1" and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(290070)) then
 		eq.spawn2(290070 ,0,0,-720,-3200,15.1,256); --Blackfall Boreling
 		eq.spawn2(290070 ,0,0,272.5,-2099,237,114); -- NPC: Blackfall_Borerling
 		eq.spawn2(290070 ,0,0,-1600,-1700,326.1,304); -- NPC: Blackfall_Borerling

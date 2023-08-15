@@ -4,7 +4,7 @@ end
 
 function event_timer(e)
   if (e.timer == 'check_giants') then
-	  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(210037) == true or eq.get_entity_list():IsMobSpawnedByNpcTypeID(210038) == true or eq.get_entity_list():IsMobSpawnedByNpcTypeID(210015) == true) then
+	  if eq.get_entity_list():IsMobSpawnedByNpcTypeID(210037) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(210038) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(210015) then
 	  eq.depop();
 	  end
   end

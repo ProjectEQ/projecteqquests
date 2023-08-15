@@ -51,19 +51,19 @@ end
 function event_signal(e)
 	-- When Altar Wardens are dead; remove the bouncers blocking
 	-- the Alter Sentrys
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294591) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294592) == false) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294591) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294592) then
 		eq.depop_all(294632);
 	end
 
 	-- When the Altar Sentrys are dead; remove the bouncer blocking
 	-- the Altar Overseeer
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294602) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294603) == false) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294602) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294603) then
 		eq.depop_all(294633);
 	end
 
 	-- When the Altar Overseer is dead; remove the bouncers blocking
 	-- the door into the 3 stall room
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294604) == false ) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294604) then
 		eq.depop_all(294634);
 		eq.set_proximity(e.self:GetX()-50, e.self:GetX()+50, e.self:GetY()-70, e.self:GetY()+70, -999999, 999999, true);
 		eq.enable_proximity_say();
@@ -71,11 +71,11 @@ function event_signal(e)
 
 	-- When the Oracle of the Altar is dead; remove the bouncers blocking
 	-- the Altar Construct
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294613) == false ) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294613) then
 		eq.depop_all(294635);
 	end
 
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(294610) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(294611) == false ) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294610) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(294611) then
 		eq.get_entity_list():FindDoor(12):SetLockPick(0);
 		eq.get_entity_list():FindDoor(10):SetLockPick(0);
 		eq.get_entity_list():FindDoor(12):ForceOpen(e.self);

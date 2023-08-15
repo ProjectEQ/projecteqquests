@@ -1,8 +1,7 @@
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
 	if(door_id == 61) then	
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317002)==false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(317003)==false
-			and eq.get_entity_list():IsMobSpawnedByNpcTypeID(317004)==false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(317005)==false) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(317002) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(317003) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(317004) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(317005) then
 			--e.self:Message(MT.Red,"Success Message?");
 			local instance_id = eq.get_zone_instance_id();
 			--e.self:MovePC(317, 504, 4729, 277.6, 0);
@@ -18,7 +17,7 @@ function event_click_door(e)
 	end
 	
 	if(door_id == 57 or door_id ==58 or door_id ==59 or door_id ==60) then
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107)==true) then
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(317107) then
 			e.self:Message(MT.Yellow, "The magic of the arch magus holds the shield firmly in place");
 		end
 	end

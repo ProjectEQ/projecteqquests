@@ -4,7 +4,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	e.self:CastSpell(13536, e.self:GetTarget():GetID()); -- Spell: Harm Touch
 	eq.set_timer("adds",120*1000);
 	eq.set_timer("epoch",9*1000);

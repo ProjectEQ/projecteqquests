@@ -187,7 +187,7 @@ function event_trade(e)
   -- NOT required here. items from another expedition can be turned in to open
   -- door but it's still needed for gate to last area and wrong item spawns pookas
   if riddle_item_count > 0 then
-    eq.zone_emote(15, "You hear the grinding of stone as the door unlocks before you.")
+    eq.zone_emote(MT.Yellow, "You hear the grinding of stone as the door unlocks before you.")
     eq.get_entity_list():FindDoor(4):SetLockPick(0)
 
     if not is_riddle_answered then

@@ -7,10 +7,10 @@ local function update_flag(client)
 
   if sewers_flag < 4 then
     eq.set_data(snpool_key, "T")
-    client:Message(15, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
+    client:Message(MT.Yellow, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
   else
     eq.set_data(snpool_key, "1")
-    client:Message(15, "You have gained a character flag!  The passage through the mountains is now clear in your mind.")
+    client:Message(MT.Yellow, "You have gained a character flag!  The passage through the mountains is now clear in your mind.")
   end
 end
 

@@ -18,7 +18,7 @@ function event_trade(e)
 		eq.set_global("ranger_epic","9",5,"F");
 		e.other:QuestReward(e.self,{itemid=62649, exp=50000});
 		e.other:AddAAPoints(10);
-		e.other:Message(15,'You have gained 10 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 10 ability points!');
 		eq.set_timer("depop",15*1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

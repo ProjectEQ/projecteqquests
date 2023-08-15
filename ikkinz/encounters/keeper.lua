@@ -18,13 +18,13 @@ end
 function KeeperHp(e)
 if(e.hp_event == 50) then
     e.self:SetSpecialAbility(4, 1); --turn aoe ramp on
-    eq.zone_emote(13,"Keeper of the Altar is infuriated!");
+    eq.zone_emote(MT.Red,"Keeper of the Altar is infuriated!");
     eq.set_timer("aerampoff", 5 * 1000);
     eq.set_next_inc_hp_event(52); --to reset on event failure
 	eq.set_next_hp_event(10);
 elseif(e.hp_event == 10) then
     e.self:SetSpecialAbility(4, 1); --turn aoe ramp on
-    eq.zone_emote(13,"Keeper of the Altar is infuriated!");
+    eq.zone_emote(MT.Red,"Keeper of the Altar is infuriated!");
     eq.set_timer("aerampoff", 5 * 1000);
 elseif (e.inc_hp_event == 52) then
 	eq.set_next_hp_event(50);
@@ -109,7 +109,7 @@ function KeeperTimer(e)
 	elseif e.timer=="aerampoff" then
 		eq.stop_timer("aerampoff");
 		e.self:SetSpecialAbility(4, 0); --turn aoe ramp off
-    	eq.zone_emote(13,"Keeper of the Altar is no longer infuriated.");
+    	eq.zone_emote(MT.Red,"Keeper of the Altar is no longer infuriated.");
 	end
 end
 
@@ -137,7 +137,7 @@ function KeeperDeath(e)
 	eq.spawn2(294621,0,0,908,111,-73,300); -- NPC: a_pile_of_bones
 	eq.spawn2(294621,0,0,685,1,-73,114); -- NPC: a_pile_of_bones
 	eq.signal(294631,8); --set lockout
-	eq.zone_emote(10,"The Keeper of the Altar has been defeated! You have found a way do what even the trusik priests of old had trouble with." ..
+	eq.zone_emote(MT.NPCQuestSay,"The Keeper of the Altar has been defeated! You have found a way do what even the trusik priests of old had trouble with." ..
 	"You are well on your way to uncovering the secrets that Txevu has holed up inside its walls. Congratulations!");
 	eq.ZoneMarquee(10,510,1,1,6000,"The Keeper of the Altar has been defeated! Congratulations!");
 	eq.depop_all(294622);
@@ -162,7 +162,7 @@ function AssailTimer(e)
     		e.self:SetSpecialAbility(35, 1); --turn turn on immunity
 		e.self:WipeHateList();
 		eq.stop_timer("deactivate");
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"The assailant runs out of energy and crumbles to the ground.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"The assailant runs out of energy and crumbles to the ground.");
 		e.self:SetAppearance(3);
 		eq.set_timer("depop", 5 * 1000); -- guessing 5 sec until depop at this point
 	elseif (e.timer == "depop") then

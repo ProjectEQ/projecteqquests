@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18781)) then
-		e.other:Message(15,"As you get your bearings, Tynkale, an important looking High Elf turns to greet you. 'Welcome young paladin of Tunare. I am Guild Master Tynkale. Read the note in your inventory and once you are ready to begin your training, hand me your note. I welcome you to our crusade against evil.'");
+		e.other:Message(MT.Yellow,"As you get your bearings, Tynkale, an important looking High Elf turns to greet you. 'Welcome young paladin of Tunare. I am Guild Master Tynkale. Read the note in your inventory and once you are ready to begin your training, hand me your note. I welcome you to our crusade against evil.'");
 	end
 end
 

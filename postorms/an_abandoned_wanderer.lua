@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.self:GetAppearance() == 3) then
-			e.other:Message(7,"Whoever this is, they seem to be asleep... or worse. It might be best to leave them alone for the time being.");
+			e.other:Message(MT.LightGray,"Whoever this is, they seem to be asleep... or worse. It might be best to leave them alone for the time being.");
 		else
 			if(e.self:GetRace() == 1) then -- human
 				if(e.self:GetGender() == 0) then

@@ -120,7 +120,7 @@ function ValidatePlayersAreInZone(requestor)
   for k,v in pairs(player_list) do
     member = el:GetClientByCharID(v)
     if (member.valid == false) then
-      requestor:Message(13, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
+      requestor:Message(MT.Red, "All members of the group/raid need to be in " .. eq.get_zone_long_name() .. ". " );
       return false;
     end
   end
@@ -133,7 +133,7 @@ function Do_Hazard()
     Do_Hazard();
   else
     last_hazard = num;
-    eq.zone_emote(14, hazards[num][1]);
+    eq.zone_emote(MT.Lime, hazards[num][1]);
     hazards[num][2]();
   end
 end
@@ -148,7 +148,7 @@ function Boss_Timer(e)
     if (client.valid) then
       num = math.random(1,#equipment);
       equipment_client = {client:GetID(), num};
-      client:Message(14, equipment[num][1]);
+      client:Message(MT.Lime, equipment[num][1]);
       eq.set_timer("equipment_action", 3 * 1000);
     end
   elseif (e.timer == "equipment_action") then
@@ -207,7 +207,7 @@ function Kyv_Timer(e)
     if (client.valid) then
       num = math.random(1,#kyvs);
       kyv_targets[i] = { client:GetID(), num, {client:GetX(), client:GetY() }};
-      client:Message(14, kyvs[num][1]);
+      client:Message(MT.Lime, kyvs[num][1]);
       
       eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
       eq.set_timer('kyv_action', 3000);
@@ -219,13 +219,13 @@ function Kyv_Timer(e)
     if (client.valid) then 
       loc = kyv_targets[i][3];
       if ( kyvs[kyv_targets[i][2]][2](e, client, loc) == false ) then
-        client:Message(14, kyvs[kyv_targets[i][2]][4]);
+        client:Message(MT.Lime, kyvs[kyv_targets[i][2]][4]);
         e.self:CastSpell(kyvs[kyv_targets[i][2]][3], client:GetID(), 0, 4500);
         eq.debug("name: " .. e.self:GetCleanName() .. i .. " timer: " .. e.timer .. " client picked: " .. client:GetName() );
       else
         msg = 'An arrow narrowly misses you.';
       end
-      client:Message(14, msg);
+      client:Message(MT.Lime, msg);
     end
     eq.set_timer('kyv', kyv_timer * 1000 + 4500);
   end
@@ -291,16 +291,16 @@ end
 function check_rings(mob, client)
   if (client.valid) then 
     if ( client:GetItemIDAt(Slot.Finger1) ~= -1 ) then
-      client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
+      client:Message(MT.Lime, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
       mob:CastSpell(5695, client:GetID()); -- Spell: Crippling Clamp
     else
-      client:Message(14, "Your regain the use of your fingers.");
+      client:Message(MT.Lime, "Your regain the use of your fingers.");
     end
     if ( client:GetItemIDAt(Slot.Finger2) ~= -1 ) then
-      client:Message(14, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
+      client:Message(MT.Lime, "Your rings clamp down, breaking fingers and disabling your manual dexterity.");
       mob:CastSpell(5695, client:GetID()); -- Spell: Crippling Clamp
     else
-      client:Message(14, "Your regain the use of your fingers.");
+      client:Message(MT.Lime, "Your regain the use of your fingers.");
     end
   end
 end
@@ -308,10 +308,10 @@ end
 function check_weapon(mob, client)
   if (client.valid) then 
     if ( client:GetItemIDAt(Slot.Secondary) ~= -1 ) then
-      client:Message(14, "Your weaponry becomes incredibly hot, searing your hands!");
+      client:Message(MT.Lime, "Your weaponry becomes incredibly hot, searing your hands!");
       mob:CastSpell(2315, client:GetID()); -- Spell: Searing Heat
     else
-      client:Message(14, "Your weaponry cools down.");
+      client:Message(MT.Lime, "Your weaponry cools down.");
     end
   end
 end
@@ -326,12 +326,12 @@ function ae_check(e, xmin, xmax, ymin, ymax)
       eq.debug( "client: " .. v:GetName() .. "X: " .. v:GetX() .. " Y: " .. v:GetY() );
       eq.debug( "xmin: " .. xmin .. " xmax: " .. xmax .. " ymin: " .. ymin .. " ymax: " .. ymax);
       if (x < xmin or x > xmax or y < ymin or y > ymax) then
-        v:Message(14,'The room explodes with chaotic energy.');
+        v:Message(MT.Lime,'The room explodes with chaotic energy.');
         --e.self:CastSpell(5693, v:GetID());
         v:Damage(e.self, 5000, 5693, 1);
       else
-        v:Message(14,'The room explodes with chaotic energy.');
-        v:Message(14,'You escape the blast unscathed.');
+        v:Message(MT.Lime,'The room explodes with chaotic energy.');
+        v:Message(MT.Lime,'You escape the blast unscathed.');
       end
     end
   end
@@ -343,7 +343,7 @@ function north_safe()
 end
 
 function center_safe()
-  eq.zone_emote(15, "Center Safe");
+  eq.zone_emote(MT.Yellow, "Center Safe");
 end
 
 function south_safe()

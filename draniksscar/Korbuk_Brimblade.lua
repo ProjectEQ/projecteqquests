@@ -11,7 +11,7 @@ function event_say(e)
 					e.self:Say("Dat sword, there's something wrong with it. Was it my brother? This is terrible news. I had no idea he had been so corrupted by this place. I had no idea he'd turn into a monster and try to steal away dat which we have been charged to protect! Luckily you were able to stop him and recover da sword. You should keep it in your possession. I have a feeling you're da [" .. eq.say_link("one") .. "] I've been waiting for.");
 					e.other:AddAAPoints(5);
 					e.other:Ding();
-					e.other:Message(15,'You have gained 5 ability points!');
+					e.other:Message(MT.Yellow,'You have gained 5 ability points!');
 					--e.other:SetAATitle('Conqueror');		
 					eq.set_global("warrior_epic","16",5,"F");
 			else

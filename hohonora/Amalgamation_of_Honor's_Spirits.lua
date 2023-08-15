@@ -1,6 +1,6 @@
 -- items: 28710, 28709, 28724, 28725, 28730, 32064, 32065
 function event_spawn(e)
-eq.zone_emote(0,"The spirits of Honor's fallen Heroes begin to coalesce in front of you.");
+eq.zone_emote(MT.White,"The spirits of Honor's fallen Heroes begin to coalesce in front of you.");
 end
 
 function event_say(e)
@@ -21,7 +21,7 @@ function event_trade(e)
 		e.self:Emote("echoes in your mind, 'Well done, you have proven yourself to us. Here is your reward. You may continue our tasks, if you are willing. You have already succeeded where few dare to try, you may [continue your service] to us, if you wish; however do not lose the trinket we gave you, you will need it to proceed.");
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 28730,item2 = 32064,item3 = 32065})) then -- Symbol of Ducee Imperon, Symbol of Ducee Cupidon, Symbol of Ducee Fideson
 		-- e.other:SummonItem(?????); need to summon Cloak of Ethereal Symbols when item imported
-		e.other:Message(15, "A warm breeze blows through your body, and the Amalgam glows in a warm light. The Amalgam echoes in your mind, 'You have done quite well. Their souls are now part of us. We thank you. This is a small token of our gratitude. Wear it with pride as you have earned it. The battle rages on, remember that your Honor is reflected in what you do as well as what you have done. Farewell " .. e.other:GetName() .. ".");
+		e.other:Message(MT.Yellow, "A warm breeze blows through your body, and the Amalgam glows in a warm light. The Amalgam echoes in your mind, 'You have done quite well. Their souls are now part of us. We thank you. This is a small token of our gratitude. Wear it with pride as you have earned it. The battle rages on, remember that your Honor is reflected in what you do as well as what you have done. Farewell " .. e.other:GetName() .. ".");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

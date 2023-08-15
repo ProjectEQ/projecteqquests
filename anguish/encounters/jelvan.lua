@@ -106,7 +106,7 @@ function Jelvan_Timer(e)
 		--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"			
 			eq.signal(317116 , 317004); -- NPC: zone_status
 			eq.unique_spawn(317111,0,0, e.self:GetX(),e.self:GetY(),e.self:GetZ(),0); --Jelvan`s_Keepsake (317111)
-			eq.zone_emote(15,"You hear Jelvan's shouts of gratitude as he runs into the shadows.");	
+			eq.zone_emote(MT.Yellow,"You hear Jelvan's shouts of gratitude as he runs into the shadows.");	
 			event_started=0;
 			eq.depop();
 		elseif (torment_alive==1) then

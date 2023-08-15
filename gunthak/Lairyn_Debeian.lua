@@ -79,7 +79,7 @@ function event_trade(e)
 		e.self:Emote("adjusts his spectacles and peers at the head, 'True enough. This is a Wayfarer . . . Errr, was at one time. I imagine he renounced his membership in the Brotherhood sometime before he took up a career of tormenting a poor scholar. They must have been trying to get to Nedaria by coming after me. I am famliar with Krill and he is a follower, not a leader. Someone else is the mastermind behind this - a person with access to magical disguises to hide their identity. Lirprin must know of this at once, ".. e.other:GetName() .. ".");
 		eq.set_global("rogue_epic_lairyn","1",5,"F");
 		eq.depop_with_timer();
-		e.other:Message(15,"You have confirmed Lairyn's innocence.");
+		e.other:Message(MT.Yellow,"You have confirmed Lairyn's innocence.");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

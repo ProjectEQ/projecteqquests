@@ -134,11 +134,11 @@ function All_Death(e)
 	for npc in npc_list.entries do
 		if (npc.valid and (npc:GetNPCTypeID() == 336120 or  npc:GetNPCTypeID() == 336237 or npc:GetNPCTypeID() == 336238 or npc:GetNPCTypeID() == 336239 or npc:GetNPCTypeID()==336117 or npc:GetNPCTypeID()==336118 or npc:GetNPCTypeID()==336119)) then				
 			add_alive=add_alive+1;
-			--eq.zone_emote(15, "adds alive" .. add_alive);
+			--eq.zone_emote(MT.Yellow, "adds alive" .. add_alive);
 		end
 	end	
 	if (add_alive==0) then
-		--eq.zone_emote(15, "no adds alive" .. add_alive);
+		--eq.zone_emote(MT.Yellow, "no adds alive" .. add_alive);
 		eq.spawn2(336134, 0, 0, 1678,2778,-24.97,261); -- spawn ironbound chest
 		eq.depop_with_timer(336127); --send controller into respawn
 	end
@@ -147,7 +147,7 @@ end
 
 
 function event_encounter_load(e)
-	--eq.zone_emote(15, "encounter load");
+	--eq.zone_emote(MT.Yellow, "encounter load");
 	eq.register_npc_event('battlemaster', Event.spawn,			336127, Controller_Spawn);
 	eq.register_npc_event('battlemaster', Event.signal,			336127, Controller_Signal);
 	eq.register_npc_event('battlemaster', Event.timer,			336127, Controller_Timer);
@@ -176,5 +176,5 @@ function event_encounter_load(e)
 end
 
 function event_encounter_unload(e)
-	--eq.zone_emote(15, "encounter unload");
+	--eq.zone_emote(MT.Yellow, "encounter unload");
 end

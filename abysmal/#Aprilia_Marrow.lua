@@ -11,10 +11,10 @@ function event_say(e)
     end
     if (e.message:findi("hail")) then
         if (bit.band(turnins, 1024) ~= 0) then
-            e.other:Message(12, "Aprilia Marrow covers her face and mumbles. 'Thank you for helping me. Please do the same for the others if you can.'")
+            e.other:Message(MT.DarkGray, "Aprilia Marrow covers her face and mumbles. 'Thank you for helping me. Please do the same for the others if you can.'")
         elseif (greatadventures > 0) then
             e.self:Emote(" focuses her attention on " .. e.other:GetName() .. ".")
-            e.other:Message(12, "Aprilia Marrow groans softly as she turns to face you. 'Please leave me be. My darling Prathun has yet to return to me and each day weakens my resolve. I know in my heart he is out there somewhere, but with no word since the day he left, I fear that my heart may be wrong. If only I had something that would let me know what has happened to him.'")
+            e.other:Message(MT.DarkGray, "Aprilia Marrow groans softly as she turns to face you. 'Please leave me be. My darling Prathun has yet to return to me and each day weakens my resolve. I know in my heart he is out there somewhere, but with no word since the day he left, I fear that my heart may be wrong. If only I had something that would let me know what has happened to him.'")
         end
     end
 end

@@ -11,9 +11,9 @@ function event_tick(e)
     local client = eq.get_entity_list():GetClientByCharID(v);
     if (client.valid) then 
       if (client:GetX() > -64 or client:GetY() < 122 ) then
-        client:Message(13, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
+        client:Message(MT.Red, "A deep voice booms in your head, 'This breach of the rules will not be tolerated. You must face the trials. Return to the arena or be subjected to pain.'");
         if ( warnings >= 10 ) then
-          client:Message(13, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
+          client:Message(MT.Red, "A deep voice booms in your head, 'You have been warned.  You did not heed the warnings.  Now you Die!'");
           if (client:Admin() < 80) then 
             client:Kill();
           end

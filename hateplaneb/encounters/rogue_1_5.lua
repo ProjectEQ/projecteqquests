@@ -13,7 +13,7 @@ function Lanys_Say(e)
 	if(qglobals["Fatestealer"] == "1") then
 		if(e.message:findi("hail")) then
 			e.self:TempName();
-			e.other:Message(15,"The Teir`dal looks away, pretending not to notice you. However, beneath her facade of indifference you sense that she is suppressing unbridled anger. Perhaps you could taunt her into attacking by saying the right things... ");
+			e.other:Message(MT.Yellow,"The Teir`dal looks away, pretending not to notice you. However, beneath her facade of indifference you sense that she is suppressing unbridled anger. Perhaps you could taunt her into attacking by saying the right things... ");
 		elseif(e.message:findi("Tunare")) then
 			e.self:TempName("an_embodiment_of_hatred");
 			e.self:Emote("glares at you angrily, Keep using your tongue like that and I will do you the pleasure of removing it.");

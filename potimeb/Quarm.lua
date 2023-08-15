@@ -130,8 +130,8 @@ function event_death_complete(e)
 	local qglobals = eq.get_qglobals();
 
 	if ( qglobals.time_emote == "TimeEntered") then
-		eq.world_emote(15, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown.");
-		eq.world_emote(15,"After a short moment of peace and joy, you are swallowed by the horror of what has happened. You say, out loud for no one to hear, 'What have we done?'");
+		eq.world_emote(MT.Yellow, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown.");
+		eq.world_emote(MT.Yellow,"After a short moment of peace and joy, you are swallowed by the horror of what has happened. You say, out loud for no one to hear, 'What have we done?'");
 		eq.set_global("time_emote","QuarmKilled",7,"F");
 	end
 end

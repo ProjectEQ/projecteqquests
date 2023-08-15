@@ -27,23 +27,23 @@ end
 
 function event_hp(e)
 	if (e.hp_event == 80)  then
-		eq.zone_emote(10,"Volkara stamps its legs causing eggs to fall from the ceiling.");
+		eq.zone_emote(MT.NPCQuestSay,"Volkara stamps its legs causing eggs to fall from the ceiling.");
 		eq.set_timer("egg_client",1);
 		eq.set_next_hp_event(60);
 	elseif (e.hp_event == 60) then
-		eq.zone_emote(10,"Volkara stamps its legs causing eggs to fall from the ceiling.");
+		eq.zone_emote(MT.NPCQuestSay,"Volkara stamps its legs causing eggs to fall from the ceiling.");
 		eq.set_timer("egg_client",1);
 		eq.set_next_hp_event(40);
 	elseif (e.hp_event == 40) then
-		eq.zone_emote(10,"Volkara stamps its legs causing eggs to fall from the ceiling.");
+		eq.zone_emote(MT.NPCQuestSay,"Volkara stamps its legs causing eggs to fall from the ceiling.");
 		eq.set_timer("egg_client",1);
 		eq.set_next_hp_event(20);
 	elseif (e.hp_event == 20) then
-		eq.zone_emote(10,"Volkara stamps its legs causing eggs to fall from the ceiling.");
+		eq.zone_emote(MT.NPCQuestSay,"Volkara stamps its legs causing eggs to fall from the ceiling.");
 		eq.set_timer("egg_client",1);
 		eq.set_next_hp_event(10);
 	elseif (e.hp_event == 10) then
-		eq.zone_emote(10,"Volkara stamps its legs causing eggs to fall from the ceiling.");
+		eq.zone_emote(MT.NPCQuestSay,"Volkara stamps its legs causing eggs to fall from the ceiling.");
 		eq.set_timer("egg_client",1);
 	end
 end

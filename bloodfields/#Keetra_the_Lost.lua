@@ -2,7 +2,7 @@ function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	if(e.message:findi("lirprin sent me") and qglobals["Fatestealer"] == "3") then
 		eq.set_global("rogue_epic_keetra","1",5,"F");
-		e.other:Message(15,"You have confirmed Keetra's innocence.");
+		e.other:Message(MT.Yellow,"You have confirmed Keetra's innocence.");
 		--e.self:Say("");  no idea what this text should be
 		eq.depop();
 	end

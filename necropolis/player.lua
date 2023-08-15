@@ -1,6 +1,6 @@
 function event_loot(e)
     -- bard 1.5 Drac chest
-    if e.self:GetClass() == 8 and e.item:GetID() == 77613 then
+    if e.self:GetClass() == Class.BARD and e.item:GetID() == 77613 then
         local qglobals = eq.get_qglobals(e.self)
         if qglobals["bard15"] ~= nil and qglobals["bard15"] >= "3" and qglobals["bard15_dracchest"] == nil then
             eq.spawn2(283157, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading())
@@ -14,7 +14,7 @@ function event_enter_zone(e)
     -- #Hsagra`s_Shade (123172) Vesthon event 1
     -- #Vesthon_Marijakin (123173) Vesthon event 2
     -- #Hsagra`s_Relics (123174) Vesthon event 2
-    if e.self:GetClass() == 8 then
+    if e.self:GetClass() == Class.BARD then
         local qglobals = eq.get_qglobals(e.self)
         if qglobals["hsagra_cooldown"] == nil and qglobals["bard15"] == "2" then
             eq.unique_spawn(123172, 0, 0, -2716, -293, 12, 82)

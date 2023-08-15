@@ -66,7 +66,7 @@ function Leklos_Hp(e)
 	if (e.hp_event == 25) then
 		e.self:SendIllusionPacket({race=349});
 		eq.set_next_inc_hp_event(27); --to reset on event failure
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 150,"Chunks of decaying flesh pelt your armor as the decayed froglok reveals his skeletal innards.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.LightGray, 150,"Chunks of decaying flesh pelt your armor as the decayed froglok reveals his skeletal innards.");
 	elseif (e.inc_hp_event == 27) then
 		e.self:SendIllusionPacket({race=350});
 		eq.set_next_hp_event(25);
@@ -110,11 +110,11 @@ function Warrior_Timer(e)
 		eq.stop_timer("emotes");
 			local rand = math.random(1,100);
 			if (rand <= 33) then
-				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, MT.White, "Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
 			elseif (rand <= 66 and rand > 33) then
-				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, MT.White, "Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
 			elseif (rand > 66) then
-				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, MT.White, "Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
 			end
 		eq.set_timer("emotes", math.random(30,45) * 1000);
 	elseif(e.timer == "animation") then
@@ -147,49 +147,49 @@ end
 
 function Flavor_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.");
+		eq.zone_emote(MT.Yellow,"Master Evoker of Gukta says, 'You must hurry, I thought we could handle this with just the four of us so we told the others to go on ahead but the ritual has taken so much out of me that we are barely managing to contain that creature in the room.  We need your help, if you can distract it my apprentices may be able to complete the ritual which will cut off its source of dark power.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text1_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"You hear the sound of chanting coming from deeper within the dungeon, an invisible force seems to be pulling you east.");
+		eq.zone_emote(MT.Yellow,"You hear the sound of chanting coming from deeper within the dungeon, an invisible force seems to be pulling you east.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text2_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"You hear chanting coming from below you to the north.");
+		eq.zone_emote(MT.Yellow,"You hear chanting coming from below you to the north.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text3_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"Whispers of several voices can be heard from straight ahead.");
+		eq.zone_emote(MT.Yellow,"Whispers of several voices can be heard from straight ahead.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text4_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"The sound of chanting echoes from the left.");
+		eq.zone_emote(MT.Yellow,"The sound of chanting echoes from the left.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text5_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"An evil aura calls to you from the left.");
+		eq.zone_emote(MT.Yellow,"An evil aura calls to you from the left.");
 		eq.depop_with_timer();
 	end
 end
 
 function Text6_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"An evil aura calls to you from the right.");
+		eq.zone_emote(MT.Yellow,"An evil aura calls to you from the right.");
 		eq.depop_with_timer();
 	end
 end
@@ -204,13 +204,13 @@ end
 
 function Creeper_Hp(e)
 	if (e.hp_event == 85) then -- is anything supposed to change?
-		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
+		eq.zone_emote(MT.Yellow,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
 		eq.set_next_hp_event(75);
 	elseif (e.hp_event == 75) then -- is anything supposed to change?
-		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
+		eq.zone_emote(MT.Yellow,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area begins to wane. The Master Evoker of Gukta says, 'It worked, we have managed to surround the vile beast in a weak shield of magic which slows down the flow of evil energy which empowers him. We will need more time to strengthen the shield and cut off the energy fully.");
 		eq.set_next_hp_event(60);
 	elseif (e.hp_event == 60) then -- is anything supposed to change?
-		eq.zone_emote(15,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area is severed completely. The Master Evoker of Gukta says, 'Excellent, we were able to complete the spell, he should no longer be able to draw on the evil energy within the area. Kill him quickly we can only keep this up for so long.");
+		eq.zone_emote(MT.Yellow,"A mystical energy surrounds the Evokers as they chant. The Cavern Creeper begins to writhe as its link to the dark properties of the area is severed completely. The Master Evoker of Gukta says, 'Excellent, we were able to complete the spell, he should no longer be able to draw on the evil energy within the area. Kill him quickly we can only keep this up for so long.");
 	end
 end
 
@@ -218,7 +218,7 @@ function Leklos_Death(e)
   eq.signal(259159, 259047); -- NPC: zone_status
   Spawn_Creeper();
   e.self:Emote(" falls to the ground a lifeless pile of bones.");
-  eq.zone_emote(15,"A Warrior of Gukta says, 'Thank you for the help adventurers, but you must hurry deeper into the cavern. Some of our resident Evokers are trying to take care of a cursed creature that ambushed some of us on the way down. I am sure they could use your help. Please listen for chanting and you should find them easily. We shall make our way back to Gukta and report to the others what is going on.");
+  eq.zone_emote(MT.Yellow,"A Warrior of Gukta says, 'Thank you for the help adventurers, but you must hurry deeper into the cavern. Some of our resident Evokers are trying to take care of a cursed creature that ambushed some of us on the way down. I am sure they could use your help. Please listen for chanting and you should find them easily. We shall make our way back to Gukta and report to the others what is going on.");
   eq.signal(259040,1); --signal npcs to path to zi and depop
   eq.signal(259039,1); --signal npcs to path to zi and depop
   eq.spawn2(259126, 0, 0, 364, -70, -3, 272); -- NPC: Text1 (259126)
@@ -236,12 +236,12 @@ end
 function Cursed_Hp(e)
 	if (e.hp_event == 90) then
 		eq.set_next_hp_event(75);
-		eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel reducing the Cursed Spore's inherent resistance to changes in its attack speed. Prophet of Gukta says, 'The ritual has been a a slight success. We have broken through one of this cursed beings immunities. Try reducing its attack speed while we prepare for the next part of the ritual.");
+		eq.zone_emote(MT.Yellow,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel reducing the Cursed Spore's inherent resistance to changes in its attack speed. Prophet of Gukta says, 'The ritual has been a a slight success. We have broken through one of this cursed beings immunities. Try reducing its attack speed while we prepare for the next part of the ritual.");
 		e.self:SetSpecialAbility(12, 0);
 		eq.set_next_inc_hp_event(92); --to reset on event failure
 	elseif (e.hp_event == 75) then
 		eq.set_next_hp_event(50);
-		eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel reducing all of the Cursed Spore's inherent resistances slightly. Prophet of Gukta says, 'Keep it up everyone, because of the damage you have done we were able to force another weakness upon it. You should be able to cast a little more effectively now but we will need more time before we can increase your effectiveness.");
+		eq.zone_emote(MT.Yellow,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel reducing all of the Cursed Spore's inherent resistances slightly. Prophet of Gukta says, 'Keep it up everyone, because of the damage you have done we were able to force another weakness upon it. You should be able to cast a little more effectively now but we will need more time before we can increase your effectiveness.");
 		e.self:ModifyNPCStat("mr", "400");
 		e.self:ModifyNPCStat("fr", "400");
 		e.self:ModifyNPCStat("cr", "400");
@@ -250,7 +250,7 @@ function Cursed_Hp(e)
 		eq.set_next_inc_hp_event(77); --to reset on event failure
 	elseif (e.hp_event == 50) then
 		eq.set_next_hp_event(25);
-		eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel significantly reducing all of the Cursed Spore's inherent resistances. Prophet of Gukta says, 'Excellent, we have reduced his resistance to all magical abilities even more, keep distracting him while we prepare for the final part of the ritual.");
+		eq.zone_emote(MT.Yellow,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel significantly reducing all of the Cursed Spore's inherent resistances. Prophet of Gukta says, 'Excellent, we have reduced his resistance to all magical abilities even more, keep distracting him while we prepare for the final part of the ritual.");
 		e.self:ModifyNPCStat("mr", "100");
 		e.self:ModifyNPCStat("fr", "100");
 		e.self:ModifyNPCStat("cr", "100");
@@ -258,7 +258,7 @@ function Cursed_Hp(e)
 		e.self:ModifyNPCStat("dr", "100");
 		eq.set_next_inc_hp_event(52); --to reset on event failure
 	elseif (e.hp_event == 25) then		
-		eq.zone_emote(15,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel completely removing all of the Cursed Spore's inherent resistances. Prophet of Gukta says, 'The ritual is complete and we have been very successful. His ability to resist your magic should be almost non-existent.");
+		eq.zone_emote(MT.Yellow,"A blue light engulfs the Prophets as they summon forth the power of Mithaniel completely removing all of the Cursed Spore's inherent resistances. Prophet of Gukta says, 'The ritual is complete and we have been very successful. His ability to resist your magic should be almost non-existent.");
 		e.self:ModifyNPCStat("mr", "50");
 		e.self:ModifyNPCStat("fr", "50");
 		e.self:ModifyNPCStat("cr", "50");
@@ -295,8 +295,8 @@ end
 function Creeper_Death(e)
   eq.signal(259159, 259129); -- NPC: zone_status
   eq.signal(259128,1); --signal npcs to path to zi and depop
-  eq.zone_emote(15,"One of the Evoker's shakes his head once and then says, 'Thank you for your assistance my friends. Some of our Shamans have made their way to the north in an effort to contain another of the Keeper's evil minions. Please head to the north and listen for voices this should help you find them.  We will head back to Gukta and report on your progress. The Master Evoker will stay and help when he can.");
-  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+  eq.zone_emote(MT.Yellow,"One of the Evoker's shakes his head once and then says, 'Thank you for your assistance my friends. Some of our Shamans have made their way to the north in an effort to contain another of the Keeper's evil minions. Please head to the north and listen for voices this should help you find them.  We will head back to Gukta and report on your progress. The Master Evoker will stay and help when he can.");
+  eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
   eq.spawn2(259136, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()+5, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
   eq.spawn2(259136, 0, 0, e.self:GetX()+10, e.self:GetY(), e.self:GetZ(), 0); -- NPC: a_cavern_crawler
@@ -338,15 +338,15 @@ function Gragna_Timer(e)
 				eq.set_timer("OOBcheck", 6 * 1000);
 			end
 	elseif (e.timer == "heal") then
-		eq.zone_emote(15,"The four healers begin to glow increasing the power of the Paladin. Knight of Gukta says, 'Oh great Mithaniel please bless these great fighters with your healing touch.");
+		eq.zone_emote(MT.Yellow,"The four healers begin to glow increasing the power of the Paladin. Knight of Gukta says, 'Oh great Mithaniel please bless these great fighters with your healing touch.");
 		e.self:CastedSpellFinished(4458, e.self:GetHateTop()); -- Spell: Mithaniel's Blessing
 	end
 end
 
 function Spore_Death(e)
   eq.signal(259159, 259135); -- NPC: zone_status
-  eq.zone_emote(15,"Prophet of Gukta says, 'Your assistance has helped turn the tide of battle, but it is not over yet.  The Cursed Keeper knows you are here and he has sent more minions to hinder your progress.  You must continue on as time is running short. Four of our clerics and a paladin have run ahead to take care of the kidnapper Gragna but they will need your help. Listen for his voice and you should be able to find him. We will return to Gukta and make a report on your progress.");
-  eq.zone_emote(15,"You hear a voice from the south. Knight of Gukta shouts, 'Please noble adventurers hurry to me, our time is running short.");
+  eq.zone_emote(MT.Yellow,"Prophet of Gukta says, 'Your assistance has helped turn the tide of battle, but it is not over yet.  The Cursed Keeper knows you are here and he has sent more minions to hinder your progress.  You must continue on as time is running short. Four of our clerics and a paladin have run ahead to take care of the kidnapper Gragna but they will need your help. Listen for his voice and you should be able to find him. We will return to Gukta and make a report on your progress.");
+  eq.zone_emote(MT.Yellow,"You hear a voice from the south. Knight of Gukta shouts, 'Please noble adventurers hurry to me, our time is running short.");
   eq.signal(259134,1); --signal npcs to path to zi and depop
   eq.spawn2(259075, 0, 0, -193, 699, -61, 17); -- a_blighted_Jin_master (259075)
   eq.spawn2(259104, 0, 0, -179, 699, -61, 17); -- a_cackling_Dar_assassin (259104)
@@ -389,9 +389,9 @@ function Gragna_Death(e)
   eq.signal(259159, 259151); -- NPC: zone_status
   eq.signal(259149,1); --signal npcs to path to zi and depop
   eq.signal(259150,1); --signal npcs to path to zi and depop
-  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
-  eq.zone_emote(13,"As the final blow is struck an angry voice fills the halls. The Cursed Keeper says, 'You meddlesome fools, you have ruined my plans, but I shall have my retribution. Come to me if you dare and I will show you the glory of everlasting pain.");
-  eq.zone_emote(5,"You hear the voice of the master evoker in your mind, 'Your efforts have paid off, we have stopped him from accomplishing his plans and now we must ask that you destroy him while he is weak. Please make haste to the back of the dungeon and rescue our brethren.");
+  eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure.");
+  eq.zone_emote(MT.Red,"As the final blow is struck an angry voice fills the halls. The Cursed Keeper says, 'You meddlesome fools, you have ruined my plans, but I shall have my retribution. Come to me if you dare and I will show you the glory of everlasting pain.");
+  eq.zone_emote(MT.Magenta,"You hear the voice of the master evoker in your mind, 'Your efforts have paid off, we have stopped him from accomplishing his plans and now we must ask that you destroy him while he is weak. Please make haste to the back of the dungeon and rescue our brethren.");
   eq.spawn2(259132, 0, 0, -454, 578, -23, 272); -- NPC: Text5 (259132)
   eq.spawn2(259133, 0, 0, -462, 738, -26, 272); -- NPC: Text6 (259133)
   Spawn_Keeper();
@@ -435,8 +435,8 @@ function Keeper_Death(e)
   eq.signal(259159, 259154); -- NPC: zone_status
   eq.signal(259124,1); --signal Bidip stand up
 	
-  eq.zone_emote(15,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure.");
-  eq.zone_emote(15,"Bidip Moktu stands up and shakes his head in an effort to regain his senses. Realizing that he has been saved he cheers looks at you all and salutes. Bidip Moktu says, 'Thank you so much for saving me. Please take this chest as a token of my gratitude.");
+  eq.zone_emote(MT.Yellow,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure.");
+  eq.zone_emote(MT.Yellow,"Bidip Moktu stands up and shakes his head in an effort to regain his senses. Realizing that he has been saved he cheers looks at you all and salutes. Bidip Moktu says, 'Thank you so much for saving me. Please take this chest as a token of my gratitude.");
 
   -- Bidip`s Ornate Chest
   eq.spawn2(259158, 0, 0, -725, 786, -27, 114); -- NPC: #Bidip`s_Ornate_Chest

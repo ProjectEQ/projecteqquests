@@ -56,7 +56,7 @@ function event_trade(e)
       e.self:Say("Very well done! You have accomplished more than Magi'Kot could have ever imagined.' He then reads a passage from one of the books. The elemental essences begin to glow and take shape. You are blinded for a moment with a flash of light, when your eyes clear he presents you with an ornate staff. 'You should be honored. You have done what few have even dreamed of. In creating this staff, it has become apparent to me that there is still [" .. eq.say_link("further") .. "] to go.");
       e.other:QuestReward(e.self,{itemid=19092, exp=25000}); -- Staff of Elemental Essence (Epic 1.5)
       e.other:AddAAPoints(5);
-      e.other:Message(15,'You have gained 5 ability points!');
+      e.other:Message(MT.Yellow,'You have gained 5 ability points!');
       eq.set_global("mage_epic","7",5,"F");
    elseif(item_lib.check_turn_in(e.trade, {item1 = 19438,item2=19149})) then --Note from Iilivina,Pouch of Powdered Riftseeker Essence
       e.self:Emote(" unrolls the note and reads it to himself, 'Interesting. Well, I'm not sure I can do anything with this, but if you take this to Transon in Twilight sea, he may be able to understand it a little better.");
@@ -66,7 +66,7 @@ function event_trade(e)
       e.self:Emote("pulls the four essences from his pocket.  He then wraps them around your staff with the binding.  He opens a book and reads a few words in a language that you do not recognize, the staff then begins to radiate with power.  When he hands it back to you it looks very much the same, but appears to be transformed. 'You have done the impossible, we will both be remembered in the history books.  In fact, I have already started writing of our journey together, and all the assitance that you provided me.  I will make sure you get a copy when I am finished.  That you again friend!'");
       e.other:QuestReward(e.self,{itemid=19839, exp=50000}); --epic 2.0
       e.other:AddAAPoints(10);
-      e.other:Message(15,'You have gained 10 ability points!');
+      e.other:Message(MT.Yellow,'You have gained 10 ability points!');
    elseif(item_lib.check_turn_in(e.trade, {item1=14960,item2=11998,item3=14941,item4=14966}) ) then --Mage PreReq Final Turnin, Captured 4 Elementals
       e.self:Say("Well done, while nowhere near the accomplishments of Magi'Kot, defeating these rogue elementals has proven you are at least worthy to follow his [" .. eq.say_link("Footsteps") .. "]");
       eq.set_global("mage_epic","1",5,"F");   

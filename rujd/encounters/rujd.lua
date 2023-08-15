@@ -208,7 +208,7 @@ end
 function check_RPG()
 	eq.debug("check_RPG(): rpg_dead = " .. rpg_dead .. " boss_spawn = " .. boss_spawn);
 	if (rpg_dead>=5 and boss_spawn==0) then
-		eq.zone_emote(15, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
+		eq.zone_emote(MT.Yellow, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
 		eq.spawn2(245296, 0, 0, 898, -1075, -18, 382);  --warden
 		eq.spawn2(245284, 0, 0, 917, -1094, -20, 315);  --shaman
 		boss_spawn=1;
@@ -217,7 +217,7 @@ end
 
 function treasure_shroud()
 
-  eq.zone_emote(15,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure."); 
+  eq.zone_emote(MT.Yellow,"Your victory has weakened a shroud of magic cloaking the dungeon's treasure."); 
 end
 
 function PG_Talkor_Spawn(e)
@@ -375,8 +375,8 @@ end
 function check_chests()
 	local el = eq.get_entity_list();
 	if ( el:IsMobSpawnedByNpcTypeID(245296) == false and el:IsMobSpawnedByNpcTypeID(245284) == false) then
-		eq.zone_emote(15,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure");
-		eq.zone_emote(15,"The last of the prisoners has escaped and the warden lies dead at your feet.  You have done well.");
+		eq.zone_emote(MT.Yellow,"Your victory has shattered the shroud of magic surrounding the dungeon's treasure");
+		eq.zone_emote(MT.Yellow,"The last of the prisoners has escaped and the warden lies dead at your feet.  You have done well.");
 
 		eq.spawn2(245297,0,0, 867.00,-1043.00,0,192); --#Yenner`s_Decorative_Chest		
 		if ( el:IsMobSpawnedByNpcTypeID(245199) == false and el:IsMobSpawnedByNpcTypeID(245220) == false and el:IsMobSpawnedByNpcTypeID(245200) == false) then

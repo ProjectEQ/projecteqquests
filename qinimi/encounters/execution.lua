@@ -59,7 +59,7 @@ elseif (e.timer == "ejecttimer") then
             		if (client_e ~= nil and client_e.valid) then
 						if (client_e:CalculateDistance(trial_x, trial_y, trial_z) <= 180) then
                 		client_e:MovePC( 281, -1515, -289, -14, 60 ); -- Zone: qinimi
-                		client_e:Message(3, "A mysterious force translocates you.");
+                		client_e:Message(MT.BrightBlue, "A mysterious force translocates you.");
 						end
             		end
 			end
@@ -141,10 +141,10 @@ if (e.message:findi("i wish to enter")) then
 		
         			eq.set_timer("startevent", 500); --popevent
 			else
-				e.other:Message(15,"The device appears to be in use. Maybe you should try again once it has been reset.");
+				e.other:Message(MT.Yellow,"The device appears to be in use. Maybe you should try again once it has been reset.");
 			end
 		else
-			e.other:Message(15,"Nothing happens. You must be missing the key required.");
+			e.other:Message(MT.Yellow,"Nothing happens. You must be missing the key required.");
 		end
 end
 end
@@ -199,7 +199,7 @@ function Executioner_Signal(e)
 	e.self:Say("As you wish Tixxrt. I shall slay the spy no matter what the cost.");
 	eq.start(47); --walk to kreshin
 	elseif (e.signal==2) then
- 	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"As the executioner swings his axe forward, Kreshin cries out one last time before the flame of his life is extinguished.");
+ 	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"As the executioner swings his axe forward, Kreshin cries out one last time before the flame of his life is extinguished.");
 	e.self:Emote("laughs as innocent blood is spread all over the platform. 'Return to your friends and let them know that the might of the Muramites cannot be stopped!");
 	elseif (e.signal==3) then
 	e.self:SetSpecialAbility(35, 0); --turn off immunity

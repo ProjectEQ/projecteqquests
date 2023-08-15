@@ -8,10 +8,10 @@ local function update_flag(client)
 
   if sewers_flag < 3 then
     eq.set_data(snlair_key, "T")
-    client:Message(15, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
+    client:Message(MT.Yellow, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
   else
     eq.set_data(snlair_key, "1")
-    client:Message(15, "You have gained a character flag!  All of High Priest Diru's tasks have been completed.  He will now tell you who to talk to for passage through the mountains.")
+    client:Message(MT.Yellow, "You have gained a character flag!  All of High Priest Diru's tasks have been completed.  He will now tell you who to talk to for passage through the mountains.")
   end
 end
 
@@ -60,11 +60,11 @@ function event_timer(e)
     eq.stop_timer("appearance")
     e.self:SetAppearance(3)
   elseif e.timer == "fail_warn" then
-    eq.zone_emote(13, "Alej Leraji shouts, 'Please hurry, I do not know how much longer I can hold on underneath these rocks!'")
+    eq.zone_emote(MT.Red, "Alej Leraji shouts, 'Please hurry, I do not know how much longer I can hold on underneath these rocks!'")
     eq.stop_timer("fail_warn")
     eq.set_timer("fail_event", 10 * 60 * 1000) -- 10 minutes
   elseif e.timer == "fail_event" then
-    eq.zone_emote(13, "With his very last breath Alej shouts, 'My time is up, I'm beginning to feel my life wither. Thank you for trying friends, if only there was more time.'")
+    eq.zone_emote(MT.Red, "With his very last breath Alej shouts, 'My time is up, I'm beginning to feel my life wither. Thank you for trying friends, if only there was more time.'")
     eq.stop_timer("fail_event")
     eq.depop()
   end

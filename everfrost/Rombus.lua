@@ -5,7 +5,7 @@
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	
+
 	if qglobals["pre_pal"] == "2" then
 		if (e.message:findi("hail")) and e.other:HasItem(69903) and e.other:HasItem(69904) and e.other:HasItem(69905) then
 			e.self:QuestSay(e.other, "Hail to you," .. e.other:GetName() .. ". Odd, this sword piece of mine is humming and I feel it tugging towards you. Do you happen to know why? Maybe you have [" .. eq.say_link("other pieces of this broken sword") .. "] ?");
@@ -17,6 +17,7 @@ function event_say(e)
 			e.self:QuestSay(e.other, "Yes, the four runes were scattered by the winds to four different areas: Plane of Tranquility, Mistmoore Castle, Scarlet Desert, and the Gulf of Gunthak. Please find all four of them and bring them to me.");
 		else
 			e.self:Say("How to get this spell to work!");
+		end
 	end
 end
 
@@ -36,10 +37,6 @@ function event_timer(e)
 	end
 end
 
-		
-		
-	
-
 function event_trade(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local item_lib = require("items");
@@ -51,7 +48,6 @@ function event_trade(e)
 		e.other:SummonItem(69906); -- Right side of blade
 		eq.set_global("pre_pal","3",5,"F");
 		eq.set_timer("spell",5000);
-		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

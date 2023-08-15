@@ -10,7 +10,7 @@ function event_combat(e)
 end
 
 function event_hp(e)
-  eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Small parasites pour from the failing mistglider.");
+  eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Small parasites pour from the failing mistglider.");
   local xloc = e.self:GetX();
   local yloc = e.self:GetY();
   local zloc = e.self:GetZ();

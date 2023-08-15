@@ -19,14 +19,6 @@ function Mini_Death(e)
   end
 end
 
---function War_Combat(e)
---  if (e.joined == true) then
---    eq.stop_all_timers();
---  else
---    eq.set_timer('reset', 640 * 1000);
---  end
---end
-
 function War_Timer(e)
   if ( e.timer == 'reset' ) then 
     e.self:Depop();
@@ -52,6 +44,5 @@ function event_encounter_load(e)
   eq.register_npc_event('war', Event.death_complete, 301043, Mini_Death);
 
   eq.register_npc_event('war', Event.spawn, 301042, War_Spawn);
-  eq.register_npc_event('war', Event.combat, 301042, War_Combat);
   eq.register_npc_event('war', Event.timer, 301042, War_Timer);
 end

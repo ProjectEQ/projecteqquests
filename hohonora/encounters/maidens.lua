@@ -183,13 +183,13 @@ function event_encounter_load(e)
 	-- each mob dies;  So when the Custodian dies his timer is discarded for the 
 	-- purpose of the Event there will be 2hours once the first named spawns till 
 	-- the Event cleans itself up.
-	eq.register_npc_event("maidens", Event.spawn,			 211076, SpawnTimer);
+	eq.register_npc_event("maidens", Event.spawn,			 211076, TimerSpawn);
 	eq.register_npc_event("maidens", Event.timer,          211076, MaidensTimer);
-	eq.register_npc_event("maidens", Event.spawn,			 211084, SpawnTimer);
+	eq.register_npc_event("maidens", Event.spawn,			 211084, TimerSpawn);
 	eq.register_npc_event("maidens", Event.timer,          211084, MaidensTimer);
-	eq.register_npc_event("maidens", Event.spawn,			 211085, SpawnTimer);
+	eq.register_npc_event("maidens", Event.spawn,			 211085, TimerSpawn);
 	eq.register_npc_event("maidens", Event.timer,          211085, MaidensTimer);
-	eq.register_npc_event("maidens", Event.spawn,			 211086, SpawnTimer);
+	eq.register_npc_event("maidens", Event.spawn,			 211086, TimerSpawn);
 	eq.register_npc_event("maidens", Event.timer,          211086, MaidensTimer);
 
 	eq.register_npc_event("maidens", Event.death_complete, 211080, RoomOneTrashDeath);

@@ -9,7 +9,7 @@ end
 function event_timer(e)
 	if (e.timer == "Evynd_Adds") then
 		eq.signal(209038 ,1,1); -- NPC: A_firestorm_portal
-		eq.zone_emote(0, "Evynd waves his hands in the air, calling the power of the firestorm through the blazing portals.");
+		eq.zone_emote(MT.White, "Evynd waves his hands in the air, calling the power of the firestorm through the blazing portals.");
 	end
 end
 

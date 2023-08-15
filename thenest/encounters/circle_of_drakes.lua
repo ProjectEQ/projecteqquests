@@ -46,18 +46,26 @@ local circle_count   = 0
 local drake_count    = 0 -- killing 16 of the 20 drake spawns results in success
 local started        = false
 
-local function get_clients()
+local function get_clients(gm_bypass)
   local clients = {}
+  local has_gm = false
   for client in eq.get_entity_list():GetClientList().entries do
     clients[#clients+1] = client
+    if client:GetGM() then
+      if gm_bypass and not has_gm then
+        eq.debug(("Client %s with GM flag enabled in zone, bypassing client count requirement"):format(client:GetName()))
+      end
+      has_gm = true
+    end
   end
-  return clients
+  return clients, has_gm
 end
 
-local function update_task(clients, element_id)
+local function update_task(element_id)
   -- update one client since shared tasks update all members
   -- this will break the mission if all clients die/leave due to way shared tasks currently work
   if element_id > 0 then
+    local clients = get_clients()
     for _, client in ipairs(clients) do
       if client:IsTaskActivityActive(dz_task_id, element_id) then
         client:UpdateTaskActivity(dz_task_id, element_id, 1)
@@ -105,16 +113,19 @@ local function controller_spawn(e)
 end
 
 local function controller_timer(e)
-  if not started and #get_clients() >= 3 then
-    eq.zone_emote(MT.Yellow, "You hear the flapping of wings in the distance.")
-    started = true
+  if not started then
+    local clients, has_gm = get_clients(true)
+    if #clients >= 3 or has_gm then
+      eq.zone_emote(MT.Yellow, "You hear the flapping of wings in the distance.")
+      started = true
+    end
   elseif started and wave_count <= #waves then
     local now = os.time()
     if now >= next_wave_time then
       eq.zone_emote(MT.Yellow, "The flapping in the distance builds as the wind picks up.")
       local wave = waves[wave_count]
       spawn_wave(wave)
-      update_task(get_clients(), wave.update)
+      update_task(wave.update)
       next_wave_time = now + wave.next_secs
       wave_count = wave_count + 1
       eq.debug(("[%s] wave: %d next_wave_time: %s"):format(os.date("%X", now), wave_count - 1, os.date("%X", next_wave_time)))
@@ -161,7 +172,7 @@ local function drake_death(e)
   if drake_count == 16 then
     eq.zone_emote(MT.Yellow, "As the magic of the drakes fails you see an object appear at the center of their circle")
     eq.unique_spawn(343173, 0, 0, 230.0, -57.0, -22.0, 0.0) -- Draconic_Focus
-    update_task(get_clients(), kill_last_wave)
+    update_task(kill_last_wave)
   end
 end
 

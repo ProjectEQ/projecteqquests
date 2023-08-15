@@ -5,11 +5,11 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	--e.other:Message(15,"The gr");
+	--e.other:Message(MT.Yellow,"The gr");
 	if(e.other:Class() == "Druid") then
 		local qglobals = eq.get_qglobals(e.other);
 		if (qglobals["druid_epic"] == "7" and qglobals["druid_epic_dranik"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(336214) == false ) then
-			e.other:Message(15,"The ground shakes violently and a deep thudding sound rolls across the land");
+			e.other:Message(MT.Yellow,"The ground shakes violently and a deep thudding sound rolls across the land");
 			eq.set_global("druid_epic_dranik","1",2,"H2");
 			eq.set_timer("druid_epic_depop",30*60*1000);
 			eq.spawn2(336214, 0, 0, -1591,536,-40,202); -- NPC: #a_cracked_earthshaker

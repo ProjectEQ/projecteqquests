@@ -16,5 +16,5 @@ end
 
 function event_signal(e)
 	e.self:Emote("clicks at Blixkin happily.");
-	eq.signal(33066);
+	eq.signal(33066, 1);
 end

@@ -55,7 +55,7 @@ function event_say(e)
 
   -- unlike the indifferent+ npcs, dialogue uses NPCQuestSay channel
   if e.message:findi("hail") then
-    local player = don.character_state.new(e.other, don.faction_id.norraths_keepers)
+    local player = don.character_state.new(e.other, don.faction_id.good)
     if not player:has_min_faction(don.faction.Apprehensive) then
       e.other:Message(MT.NPCQuestSay, ("Boldger Bristlebeard says, 'Greetings, %s. I'm afraid I am not empowered to speak to you.  You are not as kindly to us as you ought to be to gain my full attention.'"):format(e.other:GetCleanName()))
     else

@@ -67,7 +67,7 @@ function Deputy_Signal(e)
 	elseif (e.signal == 3) and deputydeath == true then
 		eq.stop_timer("Rez2");
 	elseif (e.signal == 4) then
-		eq.zone_emote(15,"General Huffin cackles, Well we can fix that!");
+		eq.zone_emote(MT.Yellow,"General Huffin cackles, Well we can fix that!");
 		eq.set_timer("Adds",90000);
 		eq.set_timer("Bags",15000);
 	elseif (e.signal == 5) and stunned == 1 then
@@ -267,28 +267,28 @@ function Deputy_Timer(e)
 		eq.stop_timer("Convo_2");
 	elseif (e.timer == "Check" and deputydeath == true) then
 		eq.stop_timer("Check");
-		eq.zone_emote(15,"General Huffin yells, It's about time I take this into my own hands! Prepare yourselves weaklings!")
+		eq.zone_emote(MT.Yellow,"General Huffin yells, It's about time I take this into my own hands! Prepare yourselves weaklings!")
 		phase1=false;
 		eq.signal(33165,1); -- NPC: Crysta_Tagglefoot
 	elseif (e.timer == "Rez1") then
 		eq.spawn2(33162,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy??
-		eq.zone_emote(15,"General Huffin laughs as his comrades are brought back to life.");
+		eq.zone_emote(MT.Yellow,"General Huffin laughs as his comrades are brought back to life.");
 		eq.stop_timer("Rez1");
 		eq.signal(33162,3); -- NPC: Deputy??
 	elseif (e.timer == "Rez2") then
 		eq.spawn2(33163,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy???
-		eq.zone_emote(15,"General Huffin laughs as his comrades are brought back to life.");
+		eq.zone_emote(MT.Yellow,"General Huffin laughs as his comrades are brought back to life.");
 		eq.signal(33163,3); -- NPC: Deputy???
 		eq.stop_timer("Rez2");
 	elseif (e.timer == "Laugh") then
-		eq.zone_emote(15,"Your damage is pathetic!! You can't even hit me!");
+		eq.zone_emote(MT.Yellow,"Your damage is pathetic!! You can't even hit me!");
 		eq.set_timer("Laugh2",15000);
 		eq.stop_timer("Laugh");
 	elseif (e.timer == "Laugh2") then
 		eq.signal(33165,2); -- NPC: Crysta_Tagglefoot
 		eq.stop_timer("Laugh2");
 	elseif (e.timer == "Bags") then
-		eq.zone_emote(15,"bags of goodies fly out of General Huffin's pockets scattered onto the ground!");
+		eq.zone_emote(MT.Yellow,"bags of goodies fly out of General Huffin's pockets scattered onto the ground!");
 		eq.set_timer("Sugar_Rush2",3000);
 		eq.set_timer("Bags",60000);
 		which = math.random(3);
@@ -315,30 +315,30 @@ function Deputy_Timer(e)
 		eq.signal(33165,3); -- NPC: Crysta_Tagglefoot
 		end
 	elseif (e.timer == "Sugar_Rush2") then
-		eq.zone_emote(15,"General Huffin picks up some of the remaining candy on the ground and goes into a SUGAR FRENZY!");
+		eq.zone_emote(MT.Yellow,"General Huffin picks up some of the remaining candy on the ground and goes into a SUGAR FRENZY!");
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 		e.self:ModifyNPCStat("attack_delay",  tostring(General_Speed));
 		eq.stop_timer("Sugar_Rush2");
 		eq.set_timer("Sugar_Rush2End",15000);
 	elseif (e.timer == "Sugar_Rush2End") then
-		eq.zone_emote(15,"General Huffin calms down.");
+		eq.zone_emote(MT.Yellow,"General Huffin calms down.");
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 15);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 15);
 		e.self:ModifyNPCStat("attack_delay",  tostring(General_old));
 		eq.stop_timer("Sugar_Rush2End");
 	elseif (e.timer == "Stun") then
-		eq.zone_emote(13,"General Huffin yells, BANNED!");
+		eq.zone_emote(MT.Red,"General Huffin yells, BANNED!");
 		e.self:ModifyNPCStat("min_hit", tostring(General_min_hit));
 		e.self:ModifyNPCStat("max_hit", tostring(General_max_hit));
 		e.self:Stun(30*1000);
 		eq.stop_timer("Stun");
 		eq.signal(33165,5); -- NPC: Crysta_Tagglefoot
 	elseif (e.timer == "Blind") then
-		eq.zone_emote(15,"General Huffin raises up his weapon and the light begins to shines into your eyes. Look away quickly!");
+		eq.zone_emote(MT.Yellow,"General Huffin raises up his weapon and the light begins to shines into your eyes. Look away quickly!");
 	elseif (e.timer == "BlindCast") then
 			eq.set_timer("BlindCast",70000);
-			eq.zone_emote(13,"General Huffin says, No more games!");
+			eq.zone_emote(MT.Red,"General Huffin says, No more games!");
 			local cl = eq.get_entity_list():GetClientList();
 			for client in cl.entries do
 				if (client.valid and not e.self:BehindMob(client, e.self:GetX(), e.self:GetY())) then 
@@ -356,7 +356,7 @@ function Deputy_Timer(e)
 		end
 		eq.stop_timer("check_mark");
 	elseif (e.timer == "Spawn") then
-		eq.zone_emote(15,"General Huffin infests two orc corpses nearby with spider larvae!");
+		eq.zone_emote(MT.Yellow,"General Huffin infests two orc corpses nearby with spider larvae!");
 		eq.set_timer("Hatch",20000);
 	elseif (e.timer == "Hatch") then
 		eq.depop_with_timer(33166);
@@ -400,8 +400,8 @@ end
 function Deputy_HP(e)
 	if (e.hp_event == 75) then
 		e.self:SendIllusionPacket({race=471,gender=0,texture=0});
-		eq.zone_emote(13,"General Huffin yells, I'm tired of playing these games!");
-		eq.zone_emote(15,"General Huffin shimmers in front of your eyes and enters a seething rage");
+		eq.zone_emote(MT.Red,"General Huffin yells, I'm tired of playing these games!");
+		eq.zone_emote(MT.Yellow,"General Huffin shimmers in front of your eyes and enters a seething rage");
 		e.self:SetRunning(true);
 		e.self:AddToHateList(e.self:GetTarget(),1);	
 		e.self:MoveTo(-2375.15,794.00,-2.90,165.8,true);
@@ -420,8 +420,8 @@ function Deputy_HP(e)
 		eq.set_next_hp_event(50);
 	elseif (e.hp_event == 50) then
 		e.self:SendIllusionPacket({race=454,gender=2,texture=4});
-		eq.zone_emote(13,"General Huffin yells, If you will not listen, I will MAKE you listen!");
-		eq.zone_emote(15,"General Huffin's shimmers in front of your eyes and his weapon seems to swing at you with incredible accuracy!");
+		eq.zone_emote(MT.Red,"General Huffin yells, If you will not listen, I will MAKE you listen!");
+		eq.zone_emote(MT.Yellow,"General Huffin's shimmers in front of your eyes and his weapon seems to swing at you with incredible accuracy!");
 		e.self:ModifyNPCStat("attack_delay",  tostring(General_Speed2));
 		e.self:ModifyNPCStat("min_hit", tostring(Generalnew_min_hit));
 		e.self:ModifyNPCStat("max_hit", tostring(Generalnew_max_hit));
@@ -435,7 +435,7 @@ function Deputy_HP(e)
 			if (client.valid and e.self:CalculateDistance(client:GetX(), client:GetY(), client:GetZ()) <=1000) then	
 				e.self:SendBeginCast(5684, 0);
 				e.self:SpellFinished(5684, client:CastToMob());	
-				client:Message(15,"You feel the cold grip of death looming over you.");
+				client:Message(MT.Yellow,"You feel the cold grip of death looming over you.");
 				eq.debug("mark on: " .. client:GetName());
 			end
 		end
@@ -448,8 +448,8 @@ function Deputy_HP(e)
 		eq.set_timer("Cloud",60000);
 		e.self:CameraEffect(2000,5);
 		e.self:SendIllusionPacket({race=461,gender=1,texture=0});
-		eq.zone_emote(13,"General Huffin yells, ENOUGH IS ENOUGH. Time to end this show!");
-		eq.zone_emote(13,"General Huffin shimmers in front of you and becomes ENRAGED!");
+		eq.zone_emote(MT.Red,"General Huffin yells, ENOUGH IS ENOUGH. Time to end this show!");
+		eq.zone_emote(MT.Red,"General Huffin shimmers in front of you and becomes ENRAGED!");
 		e.self:SetHP(e.self:GetMaxHP()*0.50)
 		eq.set_timer("Spawn",25000);
 		e.self:ModifyNPCStat("attack_delay",  tostring(General_Speed));
@@ -491,16 +491,16 @@ function Deputy1_Timer(e)
 	e.self:ModifyNPCStat("min_hit", tostring(deputy_min_hit));
 	e.self:ModifyNPCStat("max_hit", tostring(deputy_max_hit));
 	e.self:ModifyNPCStat("attack_delay",  tostring(General_Speed2));
-	eq.zone_emote(15,"Deputy  Kilz goes on a SUGAR RUSH!");
+	eq.zone_emote(MT.Yellow,"Deputy  Kilz goes on a SUGAR RUSH!");
 	eq.stop_timer("Sugar_Rush");
 	eq.set_timer("End",20000);
 	elseif (e.timer == "End") then
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 15);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 15);
 	e.self:ModifyNPCStat("attack_delay",  tostring(General_old));
-	e.self:ModifyNPCStat("min_hit", tostring(deputyold_min_hit));
-	e.self:ModifyNPCStat("max_hit", tostring(deputyold_max_hit));
-	eq.zone_emote(15,"Deputy Kilz feels sick to his stomach and slows down.");
+	e.self:ModifyNPCStat("min_hit", tostring(deputy_old_min_hit));
+	e.self:ModifyNPCStat("max_hit", tostring(deputy_old_max_hit));
+	eq.zone_emote(MT.Yellow,"Deputy Kilz feels sick to his stomach and slows down.");
 	eq.stop_timer("End");
 	end
 end
@@ -512,16 +512,16 @@ function Deputy2_Timer(e)
 	e.self:ModifyNPCStat("attack_delay",  tostring(General_Speed2));
 	e.self:ModifyNPCStat("min_hit", tostring(deputy_min_hit));
 	e.self:ModifyNPCStat("max_hit", tostring(deputy_max_hit));
-	eq.zone_emote(15,"Deputy Mackal goes on a SUGAR RUSH!");
+	eq.zone_emote(MT.Yellow,"Deputy Mackal goes on a SUGAR RUSH!");
 	eq.stop_timer("Sugar_Rush");
 	eq.set_timer("End2",20000);
 	elseif (e.timer == "End2") then
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 15);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 15);
 	e.self:ModifyNPCStat("attack_delay",  tostring(General_old));
-	e.self:ModifyNPCStat("min_hit", tostring(deputyold_min_hit));
-	e.self:ModifyNPCStat("max_hit", tostring(deputyold_max_hit));
-	eq.zone_emote(15,"Deputy Mackal feels sick to his stomach and slows down.");
+	e.self:ModifyNPCStat("min_hit", tostring(deputy_old_min_hit));
+	e.self:ModifyNPCStat("max_hit", tostring(deputy_old_max_hit));
+	eq.zone_emote(MT.Yellow,"Deputy Mackal feels sick to his stomach and slows down.");
 	eq.stop_timer("End2");
 	end
 end
@@ -529,17 +529,17 @@ end
 
 function Deputy1_HP(e)
 	if (e.hp_event == 80) then
-	eq.zone_emote(15,"General Huffin throws a piece of sugary candy towards his comrades!");
+	eq.zone_emote(MT.Yellow,"General Huffin throws a piece of sugary candy towards his comrades!");
 	eq.set_timer("Sugar_Rush",1000);
 	eq.set_next_hp_event(50);
 	elseif (e.hp_event == 50) then
-	eq.zone_emote(15,"General Huffin throws a piece of sugary candy towards his comrades!");
+	eq.zone_emote(MT.Yellow,"General Huffin throws a piece of sugary candy towards his comrades!");
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 	eq.set_timer("Sugar_Rush",1000);
 	eq.set_next_hp_event(30);
 	elseif (e.hp_event == 30) then
-	eq.zone_emote(15,"General Huffin throws a piece of sugary candy towards his comrades!");
+	eq.zone_emote(MT.Yellow,"General Huffin throws a piece of sugary candy towards his comrades!");
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 	eq.set_timer("Sugar_Rush",1000);
@@ -548,19 +548,19 @@ end
 
 function Deputy2_HP(e)
 	if (e.hp_event == 80) then
-	eq.zone_emote(15,"General Huffin throws a piece of sugary candy towards his comrades!");
+	eq.zone_emote(MT.Yellow,"General Huffin throws a piece of sugary candy towards his comrades!");
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 	eq.set_timer("Sugar_Rush",1000);
 	eq.set_next_hp_event(50);
 	elseif (e.hp_event == 50) then
-	eq.zone_emote(15,"General Huffin throws a piece of sugary candy towards his comrades!");
+	eq.zone_emote(MT.Yellow,"General Huffin throws a piece of sugary candy towards his comrades!");
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 	eq.set_timer("Sugar_Rush",1000);
 	eq.set_next_hp_event(30);
 	elseif (e.hp_event == 30) then
-	eq.zone_emote(15,"General Huffin throws a piece of sugary candy towards his comrades!");
+	eq.zone_emote(MT.Yellow,"General Huffin throws a piece of sugary candy towards his comrades!");
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
 	eq.set_timer("Sugar_Rush",1000);
@@ -590,7 +590,7 @@ function Deputy1_Signal(e)
 		e.self:SetRunning(true);
 		e.self:MoveTo(-2370.46,780.32,-4.53,404,true);
 	elseif (e.signal == 2) then
-		eq.zone_emote(15,"The deputies reveal themselves and attack!");
+		eq.zone_emote(MT.Yellow,"The deputies reveal themselves and attack!");
 		e.self:TempName("Deputy_Kilz"); 
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0); 
@@ -664,7 +664,7 @@ function Crysta_Signal(e)
 	eq.depop(33161);
 	eq.spawn2(33161,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy?
 	elseif (e.signal == 2) then
-	eq.zone_emote(15, "Crysta says, Uh your damage is just as pathetic!");
+	eq.zone_emote(MT.Yellow, "Crysta says, Uh your damage is just as pathetic!");
 	eq.signal(33161,4); -- NPC: Deputy?
 	elseif (e.signal == 3) then
 	e.self:Shout("Quickly comrades, pick up the candy before HE gets it!! See if theres something in there that would be useful for weakening him! Return it to me if so.");
@@ -750,10 +750,6 @@ function event_encounter_load(e)
   
   eq.register_npc_event('Misty', Event.spawn,			 33162, Deputy1_Spawn);
   eq.register_npc_event('Misty', Event.spawn,			 33163, Deputy1_Spawn);
-  
-  eq.register_npc_event('Misty', Event.spawn,			 33166, Corpse_Spawn);
-  eq.register_npc_event('Misty', Event.timer,			 33166, Corpse_Timer);
-  
   
   eq.register_npc_event('Misty', Event.spawn,			 33165, Crysta_Spawn);
   eq.register_npc_event('Misty', Event.signal,			 33165, Crysta_Signal);

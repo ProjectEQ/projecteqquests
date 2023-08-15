@@ -3,7 +3,7 @@ function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	
 	if(qglobals["mage_epic"] == "10" and qglobals["mage_epic_cod"] == nil) then
-		e.self:Message(15,"Your staff begins to glow");
+		e.self:Message(MT.Yellow,"Your staff begins to glow");
 	end
 end
 
@@ -15,7 +15,7 @@ function event_click_door(e)
 			e.self:MovePC(200, 0, -16, -289, 256)
 		else
 			--made up
-			e.self:Message(1, "There is still more work to be done.")
+			e.self:Message(MT.Default, "There is still more work to be done.")
 		end
 	end
 end

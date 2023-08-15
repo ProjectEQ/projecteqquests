@@ -1,5 +1,5 @@
 function event_spawn(e)
-eq.zone_emote(0,"You hear the pounding of hooves.");
+eq.zone_emote(MT.White,"You hear the pounding of hooves.");
 eq.set_timer("wave1", math.random(40, 120) * 1000);
 end
 

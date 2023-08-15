@@ -33,7 +33,7 @@ function event_say(e)
   end
 
   if e.message:findi("hail") then
-    local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+    local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Apprehensive) then -- below apprehensive
       e.other:Message(MT.NPCQuestSay, "Pericolo L`Morte says, 'Sniveler! You dare to address me so informally? I ought to have you slain!  Begone!'")
     else -- Say channel but only sent to client
@@ -44,7 +44,7 @@ function event_say(e)
       end
     end
   elseif e.message:findi("see those") then
-    local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+    local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Apprehensive) then -- below apprehensive (gives good side message)
       e.other:Message(MT.NPCQuestSay, ("Pericolo L`Morte says, 'Greetings, %s. I'm afraid I am not empowered to speak to you.  You are not as kindly to us as you ought to be to gain my full attention.'"):format(e.other:GetCleanName()))
       -- todo: should also say "talking lump of refuse" low faction messages

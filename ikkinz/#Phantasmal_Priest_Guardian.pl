@@ -26,9 +26,9 @@ disperses! Your attempt at commanding them has failed!");
 #	if(item_lib.check_turn_in(e.trade, {item1 = 60246}))  then
 #		if (qglobals[instance_id .. "ikkymove"] ==1) then
 #		eq.set_global(instance_id .. "ikkymove","2",5,"H6");
-#		eq.zone_emote(0, "The guardian stirs slightly before settling down.")
+#		eq.zone_emote(MT.White, "The guardian stirs slightly before settling down.")
 #		elseif (qglobals[instance_id .. "ikkymove"] ==2) then
-#		eq.zone_emote(0, "The two guardians come alive as the priest disperses! Your attempt at commanding them has failed!")
+#		eq.zone_emote(MT.White, "The two guardians come alive as the priest disperses! Your attempt at commanding them has failed!")
 #		eq.signal(294609,2); -- NPC: #Phantasmal_Priest
 #		eq.signal(294609,1); -- NPC: #Phantasmal_Priest
 #		end

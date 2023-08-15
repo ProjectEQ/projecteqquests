@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18762)) then
-		e.other:Message(15,"Dun McDowell turns to address you. 'Welcome. I trust ye are ready for training in the ways of the rogue? Well read the note in your inventory and hand it to me when ye are ready to begin training.'");
+		e.other:Message(MT.Yellow,"Dun McDowell turns to address you. 'Welcome. I trust ye are ready for training in the ways of the rogue? Well read the note in your inventory and hand it to me when ye are ready to begin training.'");
 	end
 end
 

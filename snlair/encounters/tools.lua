@@ -162,21 +162,21 @@ end
 local function spirit_death(e)
   if tool_event_started and e.self:EntityVariableExists("has_tools") then -- waterwheel room
     eq.signal(286098, 1) -- NPC: Alej Leraji
-    eq.zone_emote(15, "As the nihil spirit falls, you catch a glimpse of an item in the corner of the room. You have acquired [" .. eq.say_link("Alej's Stone Breaking Powder Bag") .. "].")
+    eq.zone_emote(MT.Yellow, "As the nihil spirit falls, you catch a glimpse of an item in the corner of the room. You have acquired [" .. eq.say_link("Alej's Stone Breaking Powder Bag") .. "].")
   end
 end
 
 local function sludgeworker_death(e)
   if tool_event_started and e.self:EntityVariableExists("has_tools") then -- zone-in room
     eq.signal(286098, 1) -- NPC: Alej Leraji
-    eq.zone_emote(15, "You hear a large thud as the golem crashes down on the hard stone floor. As the dust settles, a sparkle of an item appears in the front of the room. You have acquired [" .. eq.say_link("Alej's Stone Melding Orb") .. "].")
+    eq.zone_emote(MT.Yellow, "You hear a large thud as the golem crashes down on the hard stone floor. As the dust settles, a sparkle of an item appears in the front of the room. You have acquired [" .. eq.say_link("Alej's Stone Melding Orb") .. "].")
   end
 end
 
 local function insect_death(e)
   if tool_event_started and e.self:EntityVariableExists("has_tools") then -- cocoon room
     eq.signal(286098, 1) -- NPC: Alej Leraji
-    eq.zone_emote(15, "The bug falls to the ground, revealing an item that seemed like it wasn't there before. You have acquired [" .. eq.say_link("Alej's Stone Shaping Sceptre") .. "].")
+    eq.zone_emote(MT.Yellow, "The bug falls to the ground, revealing an item that seemed like it wasn't there before. You have acquired [" .. eq.say_link("Alej's Stone Shaping Sceptre") .. "].")
   end
 end
 

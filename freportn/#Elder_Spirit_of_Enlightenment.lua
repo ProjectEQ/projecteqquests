@@ -75,7 +75,7 @@ function event_say(e)
 			e.other:SummonItem(57400); -- Crafted Talisman of Fates (Epic 1.5)
 			e.other:AddAAPoints(5);
 			e.other:Ding();
-			e.other:Message(15,'You have gained 5 ability points!');
+			e.other:Message(MT.Yellow,'You have gained 5 ability points!');
 			e.other:AddEXP(25000);
 			eq.set_global("shaman_epic","7",5,"F");
 		elseif(e.message:findi("prepared to carry on") and e.other:HasItem(57400)) then
@@ -139,7 +139,7 @@ function event_trade(e)
 		e.self:Say("You have heard the stories of the blessings bestowed on some of Norrath's most faithful to the ways of the heyokah. To reward you for all that you've done, the spirits have chosen to bless this talisman and offer it to you as our thanks, for without you, all shaman would have suffered without our presence in this realm. Walk proud, heyokah, and never forget what you are.' All around you, you feel the strength of the spirit world begin to strengthen as the spirit leaves to tend to his wounded companions.");
 		e.other:QuestReward(e.self,{itemid=57405, exp=50000}); --Blessed Spiritstaff of the Heyokah (Epic 2.0)
 		e.other:AddAAPoints(10);
-		e.other:Message(15,'You have gained 10 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 10 ability points!');
 		eq.set_global("shaman_epic","15",5,"F");
 		eq.depop_all(8119);
 		eq.depop_all(8120);
@@ -186,9 +186,9 @@ function event_timer(e)
 		end
 
 		if(count == 0) then
-			client:Message(0,"You recognize that the spirits hold items you've retrieved -- crafted totems, the necklace, beads.");
+			client:Message(MT.White,"You recognize that the spirits hold items you've retrieved -- crafted totems, the necklace, beads.");
 		elseif(count == 1) then
-			client:Message(0,"The spirits all howl, creating a resonance that shakes the ground around you.");
+			client:Message(MT.White,"The spirits all howl, creating a resonance that shakes the ground around you.");
 			e.self:CameraEffect(2000,1);
 		elseif(count == 2) then	
 			eq.signal(8119 ,1); --#Elder Spirit of Perseverance
@@ -197,30 +197,30 @@ function event_timer(e)
 		elseif(count == 4) then	
 			eq.signal(8120 ,1); --#Elder Spirit of Understanding
 		elseif(count == 5) then	
-			client:Message(0,"The spirits begin to chant in unison in a language no Norrathian understands, but you only hear it in your mind. 'Ruchu immana kiratu. Ruchu immana kiratu.'");
+			client:Message(MT.White,"The spirits begin to chant in unison in a language no Norrathian understands, but you only hear it in your mind. 'Ruchu immana kiratu. Ruchu immana kiratu.'");
 		elseif(count == 6) then	
-			client:Message(0,"As the magic fades, the Spirit of Wisdom lies inside the circle, dazed and confused.");
+			client:Message(MT.White,"As the magic fades, the Spirit of Wisdom lies inside the circle, dazed and confused.");
 			eq.spawn2(8125 ,0,0, 45.15, 61.72, 17.13,74); --#Elder Spirit of Wisdom
 		elseif(count == 7) then	
-			client:Message(0,"The spirits continue to chant.");
+			client:Message(MT.White,"The spirits continue to chant.");
 		elseif(count == 9) then	
-			client:Message(0,"This time, the Spirit of Patience appears from the ether, looking tired, but bright-eyed.");
+			client:Message(MT.White,"This time, the Spirit of Patience appears from the ether, looking tired, but bright-eyed.");
 			eq.spawn2( 8126,0,0, 45.1,67.5,17.13 ,192 ); --#Elder Spirit of Patience
 		elseif(count == 10) then	
 			eq.signal(8125 ,1); --#Elder Spirit of Wisdom
 		elseif(count == 11) then	
-			client:Message(0,"The chanting of the spirits grow louder, their furry brows furrowed as they focus, trying to call the Spirit of Might out of the shadows of Discord.");
+			client:Message(MT.White,"The chanting of the spirits grow louder, their furry brows furrowed as they focus, trying to call the Spirit of Might out of the shadows of Discord.");
 		elseif(count == 12) then	
-			client:Message(0,"Magic sparks out of the air, revealing nothing. The chanting still echoes in your mind.");
+			client:Message(MT.White,"Magic sparks out of the air, revealing nothing. The chanting still echoes in your mind.");
 		elseif(count == 13) then	
-			client:Message(0,"The Spirit of Might appears and disappears, enable to keep a hold in this realm. You hear: 'It has its grip on me. You must let me go.'");
+			client:Message(MT.White,"The Spirit of Might appears and disappears, enable to keep a hold in this realm. You hear: 'It has its grip on me. You must let me go.'");
 		elseif(count == 14) then	
-			client:Message(0,"The spirits respond by chanting louder. The rattling of talisman beads fills the air.");
+			client:Message(MT.White,"The spirits respond by chanting louder. The rattling of talisman beads fills the air.");
 		elseif(count == 16) then
-			client:Message(0,"Finally, the Spirit of Might appears, its essence is faded and it is so weak it barely keeps a hold on its own existence.");
+			client:Message(MT.White,"Finally, the Spirit of Might appears, its essence is faded and it is so weak it barely keeps a hold on its own existence.");
 			eq.spawn2(8124,0,0,50.25 ,64 , 17.13 ,380 ); --#Elder Spirit of Might
 		elseif(count == 17) then	
-			client:Message(0,"The spirits slow their chanting and then there is silence.");
+			client:Message(MT.White,"The spirits slow their chanting and then there is silence.");
 		elseif(count == 18) then	
 			eq.signal(8124 ,1); --#Elder Spirit of Might
 		elseif(count == 19) then	

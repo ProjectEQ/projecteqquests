@@ -43,8 +43,18 @@ function NPC:RandomRoam(maxx,maxy,maxz,los)
 			local posy = origy + randomy;
 			local negx = origx - randomx;
 			local negy = origy - randomy;
-			local newx = math.random(posx,negx);
-			local newy = math.random(posy,negy);
+			local newx, newy = 0;
+			if posx > negx then -- Flip order
+				newx = math.random(negx, posx);
+			else
+				newx = math.random(posx,negx);
+			end
+
+			if posy > negy then -- Flip order
+				newy = math.random(negy, posy);
+			else
+				newy = math.random(posy,negy);
+			end
 			local newz = self:FindGroundZ(newx,newy, 5) + 1;
 
 			if newz > -999999 and origz > (newz - maxz + 1) and origz < (newz + maxz - 1) then

@@ -11,7 +11,7 @@ end
 
 function event_hp(e)
   if e.hp_event == next_hp_event then
-    eq.get_entity_list():MessageClose(e.self, true, 100, 15, "Fragments of body parts splinter from the golem and shower the floor.  Within moments, these pieces of ossified bone reassemble with scattered debris to form something else.")
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.Yellow, "Fragments of body parts splinter from the golem and shower the floor.  Within moments, these pieces of ossified bone reassemble with scattered debris to form something else.")
     size = size - 1
     e.self:ChangeSize(size)
     next_hp_event = next_hp_event - 10

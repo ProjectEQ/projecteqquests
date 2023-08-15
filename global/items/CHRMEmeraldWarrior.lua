@@ -2,7 +2,7 @@
 
 function event_scale_calc(e)
 
-    local faction = e.owner:GetModCharacterFactionLevel(92); -- Emerald Warriors
+    local faction = e.owner:GetModCharacterFactionLevel(326); -- Emerald Warriors
 
     if(faction < 0) then
         faction = 0;

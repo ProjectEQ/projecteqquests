@@ -1,7 +1,7 @@
 -- items: 18015, 18016, 1054
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("HA! Greetings there. " .. e.other:GetName() .. "!  How are ya this fine day?  Me?  I'm doing all right.  Guard duty down here always reminds me of home.");
+		e.self:Say("HA! Greetings there, " .. e.other:GetName() .. "! How are ya this fine day? Me? I'm doing all right. Guard duty down here always reminds me of home.");
 		eq.signal(382197,1); -- Signal to Beur_Tenlah
 	elseif(e.message:findi("message")) then
 		e.self:Say("Ok, " .. e.other:GetName() .. ", I need you to take this message to Janam in West Freeport. He is usually hanging out in front of the Theater of the Tranquil with that good-for-nothing Rebby. Anyway, give this note to Janam and bring his reply back to me.");
@@ -21,12 +21,12 @@ function event_trade(e)
 		e.self:Say("Ah, good work, " .. e.other:GetName() .. ". And quick too, I'll makes sure that Elisi hears of your loyal work. Here... take this for your efforts.. it's not much, but it's all I have on me right now.");
 		e.other:SummonItem(1054); -- Used Merchants Gloves
 		e.other:Ding();
-		e.other:Faction(336,1,0); -- Coalition of Tradefolk Underground
-		e.other:Faction(229,1,0); -- Coalition of Trade Folk
-		e.other:Faction(329,1,0); -- Carson McCabe
+		e.other:Faction(336,20,0); -- Coalition of Tradefolk Underground
+		e.other:Faction(229,20,0); -- Coalition of Trade Folk
+		e.other:Faction(329,2,0); -- Carson McCabe
 		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(330,1,0); -- Freeport Militia
-		e.other:AddEXP(100);
+		e.other:Faction(330,3,0); -- Freeport Militia
+		e.other:AddEXP(1500);
 		e.other:GiveCash(6,0,0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

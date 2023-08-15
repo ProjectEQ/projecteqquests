@@ -14,8 +14,8 @@ function event_trade(e)
   if item_lib.check_turn_in(e.trade, {item1 = 57208}) then -- Norrath's Keepers Token
     -- note: on live this is Say channel (256) but only sent to client (similar to NPCQuestSay)
     e.other:Message(MT.Say, "Wayfarers Mercenary Youra says, 'Ah, yes, on my next visit I will tell tales of how you helped the Keepers further the cause of the balance of good and evil!'")
-    e.other:QuestReward(e.self, { faction = { don.faction_id.norraths_keepers, 20 } })
-    don.remove_invalid_aa(e.other, don.faction_id.dark_reign)
+    e.other:QuestReward(e.self, { faction = { don.faction_id.good, 20 } })
+    don.remove_invalid_aa(e.other, don.faction_id.evil)
   end
   item_lib.return_items(e.self, e.other, e.trade)
 end

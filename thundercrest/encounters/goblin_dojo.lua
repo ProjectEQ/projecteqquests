@@ -62,15 +62,22 @@ local next_wait  = 0  -- next state transition time
 local attempt    = 0  -- elements and emotions waves allow a second attempt
 local respawned  = {} -- waves that have been respawned (live only respawns once)
 
-local function get_clients(area)
+local function get_clients(area, gm_bypass)
   local clients = {}
+  local has_gm = false
   for client in eq.get_entity_list():GetClientList().entries do
     local x, y = client:GetX(), client:GetY()
     if client.valid and x >= area.min_x and x <= area.max_x and y >= area.min_y and y <= area.max_y then
       clients[#clients+1] = client
+      if client:GetGM() then
+        if gm_bypass and not has_gm then
+          eq.debug(("Client %s with GM flag is in area, bypassing client count requirement"):format(client:GetName()))
+        end
+        has_gm = true
+      end
     end
   end
-  return clients
+  return clients, has_gm
 end
 
 local function is_wave_dead(wave_npcs)
@@ -196,9 +203,12 @@ local function sensei_timer(e)
   elseif state == states.start.move then
     e.self:MoveTo(sensai_loc.x, sensai_loc.y, sensai_loc.z, sensai_loc.h, true)
     state = states.start.wait
-  elseif state == states.start.wait and #get_clients(dojo_area) >= 6 then
-    say_emote(e.self, true, "The Storm Reach Sensei says, 'Good, you have decided to meet the challenge.  I will not bore you with unworthy tales of our training methods or our meager accomplishments, certainly your own deeds far outshine our own.  We are but meager servants to the Strom Mistress, Yar`Lir, and are of little consequence.  We have been asked to test you and, certainly, ourselves in a battle to the death.  The residents of this place are away at tasks beyond those such as we, and for a short while we have this room to ourselves.  We must finish our contest before they return, and so there is little time for pleasantries.'")
-    state = states.start.begin
+  elseif state == states.start.wait then
+    local clients, has_gm = get_clients(dojo_area, true)
+    if #clients >= 6 or has_gm then
+      say_emote(e.self, true, "The Storm Reach Sensei says, 'Good, you have decided to meet the challenge.  I will not bore you with unworthy tales of our training methods or our meager accomplishments, certainly your own deeds far outshine our own.  We are but meager servants to the Strom Mistress, Yar`Lir, and are of little consequence.  We have been asked to test you and, certainly, ourselves in a battle to the death.  The residents of this place are away at tasks beyond those such as we, and for a short while we have this room to ourselves.  We must finish our contest before they return, and so there is little time for pleasantries.'")
+      state = states.start.begin
+    end
   elseif state == states.start.begin then
     say_emote(e.self, true, "The Storm Reach Sensei says, 'A winner will be declared if they are the only combatants alive in this room.  Your first challenge will be to defeat the Disciples of The Five Elements.  Certainly they will be easily defeated by such mighty beings, but it is within their hearts to try.  Your battle will begin in one minute.  Prepare yourselves.'")
     e.self:SetAppearance(Appearance.Sitting) -- live will sit while still moving

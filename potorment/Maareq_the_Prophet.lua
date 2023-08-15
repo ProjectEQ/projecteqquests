@@ -76,7 +76,7 @@ function event_signal(e)
 		e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 5);
 		e.self:Say("Your assault only prolongs the inevitable!  I can feel the fear dripping for you.  Give into it.  Give up while you still have enough energy to suffer properly!");
-		eq.get_entity_list():MessageClose(e.self, false, 200, 10, "A horrific roar reverberates throughout the zone!  Every surface shakes violently for a moment as the sound rolls past you!");
+		eq.get_entity_list():MessageClose(e.self, false, 200, MT.NPCQuestSay, "A horrific roar reverberates throughout the zone!  Every surface shakes violently for a moment as the sound rolls past you!");
 	elseif e.signal == 1 and counter == 42 then
 		e.self:ChangeSize(20);
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 10);
@@ -85,7 +85,7 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	eq.get_entity_list():MessageClose(e.self, false, 200, 10, "A strange female voice drifts from the bloated corpse that lies slumped before you, Maareq, I cannot feel your presence. What has happened? My head feels strange.... what is happening to me?");
+	eq.get_entity_list():MessageClose(e.self, false, 200, MT.NPCQuestSay, "A strange female voice drifts from the bloated corpse that lies slumped before you, Maareq, I cannot feel your presence. What has happened? My head feels strange.... what is happening to me?");
 	eq.spawn2(207014,0,0,-0.18,-6.62,466.63,252.3); -- NPC: Tylis_Newleaf
 	eq.depop_all(207069);
 end

@@ -39,7 +39,7 @@ function event_say(e)
   end
 
   if e.message:findi("hail") then
-    local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+    local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Apprehensive) then -- below apprehensive
       e.other:Message(MT.NPCQuestSay, "Daleynn Spiritshadow says, 'Sniveler! You dare to address me so informally? I ought to have you slain!  Begone!'")
     else

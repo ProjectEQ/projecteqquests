@@ -5,5 +5,5 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-		e.other:Message(15,"The focus trembles with energy as any living creature approaches it");
+		e.other:Message(MT.Yellow,"The focus trembles with energy as any living creature approaches it");
 end

@@ -111,10 +111,10 @@ Lockouts = {
 		[223001] = {RALLOSZEKTRASH,    		eq.seconds('132h')},
 		[223168] = {RALLOSZEK,    			eq.seconds('132h')},
 		[223201] = {QUARM,    				eq.seconds('132h')},
-		[999999] = {PHASE1COMPLETE,			eq.seconds('12h')},
-		[999999] = {PHASE2COMPLETE,    		eq.seconds('132h')},
-		[999999] = {PHASE3COMPLETE,    		eq.seconds('132h')},
-		[999999] = {PHASE4COMPLETE,    		eq.seconds('132h')},
+		[999995] = {PHASE1COMPLETE,			eq.seconds('12h')},
+		[999996] = {PHASE2COMPLETE,    		eq.seconds('132h')},
+		[999997] = {PHASE3COMPLETE,    		eq.seconds('132h')},
+		[999998] = {PHASE4COMPLETE,    		eq.seconds('132h')},
 		[999999] = {PHASE5COMPLETE,    		eq.seconds('132h')}
 };
 
@@ -592,6 +592,7 @@ function UpdateFailTimer(minutes_to_add)
 end
 
 function event_timer(e)
+	local expedition = eq.get_expedition()
 	if (e.timer == "event_hb") then
 		total_time = total_time - 1;
 		

@@ -84,9 +84,9 @@ function ZMKP_Timer(e)
 		end
 
 		if failed then
-			eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Your failure to balance the scales has added to Kvxe's already impressive skills.");
+			eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Your failure to balance the scales has added to Kvxe's already impressive skills.");
 		else
-			eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe's body trembles as he fails to gather power from the balanced scales.");
+			eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe's body trembles as he fails to gather power from the balanced scales.");
 		end
 
 		-- so dots will oddly still hurt him, with enough necros it is possible to skip an event if we just used HP events (live doesn't skip, probably does if you manage to kill him though)
@@ -94,7 +94,7 @@ function ZMKP_Timer(e)
 		if math.floor(e.self:GetHPRatio()) <= (target_hp - 10) then
 				-- we'll we gotta skip an active phase basically, to next balance!
 				eq.set_timer("balance", ZMKP_Balance_Timer);
-				eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+				eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 				e.self:SetOOCRegen(0);
 				target_hp = target_hp - 10;
 
@@ -130,7 +130,7 @@ function ZMKP_Hp(e)
 		eq.signal(298223,1); -- Lock Doors
 
 		eq.set_timer("balance", ZMKP_Balance_Timer);
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
 		e.self:WipeHateList();
@@ -140,7 +140,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 80 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		eq.set_timer("balance", ZMKP_Balance_Timer);
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
@@ -151,7 +151,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 70 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		eq.set_timer("balance", ZMKP_Balance_Timer);
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
@@ -162,7 +162,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 60 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		eq.set_timer("balance", ZMKP_Balance_Timer);
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
@@ -173,7 +173,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 50 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		eq.set_timer("balance", ZMKP_Balance_Timer);
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
@@ -184,7 +184,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 40 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		eq.set_timer("balance", ZMKP_Balance_Timer);
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
@@ -195,7 +195,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 30 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of battle meditation.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of battle meditation.");
 		eq.set_timer("balance", ZMKP_Balance_Timer);
 		e.self:ProcessSpecialAbilities(ZMKP_Inactive);
 		e.self:SetOOCRegen(0);
@@ -206,7 +206,7 @@ function ZMKP_Hp(e)
 		eq.signal(298127, 2); -- NPC: #Balance_of_Fury
 		eq.signal(298128, 2); -- NPC: #Balance_of_Rage
 	elseif e.hp_event == 20 then
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, "Kvxe enters a state of seething rage as he accelerates his combat speed.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "Kvxe enters a state of seething rage as he accelerates his combat speed.");
 		ZMKP_Delay = ZMKP_Delay * 0.90;
 		e.self:ModifyNPCStat("attack_delay",  tostring(ZMKP_Delay));
 	end
@@ -259,7 +259,7 @@ function ZMKP_Signal_Balance(e)
 			elseif id == 298128 then
 				rage_balanced = false;
 			end
-			eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " is falling out of balance.");
+			eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, e.self:GetCleanName() .. " is falling out of balance.");
 		end
 	elseif e.signal == 2 then
 		defense_balanced = false;
@@ -286,7 +286,7 @@ function ZMKP_Hp_Balance(e)
 		elseif id == 298128 then
 			rage_balanced = true;
 		end
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " seems to be tipping in your favor.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, e.self:GetCleanName() .. " seems to be tipping in your favor.");
 		eq.set_next_hp_event(target_hp - 3)
 	elseif e.hp_event == (target_hp - 3) then
 		local id = e.self:GetNPCTypeID();
@@ -299,7 +299,7 @@ function ZMKP_Hp_Balance(e)
 		elseif id == 298128 then
 			rage_balanced = false;
 		end
-		eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " is falling out of balance.");
+		eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, e.self:GetCleanName() .. " is falling out of balance.");
 	end
 end
 
@@ -309,7 +309,6 @@ function event_encounter_load(e)
 	eq.register_npc_event('zmkp', Event.timer,          298029, ZMKP_Timer);
 	eq.register_npc_event('zmkp', Event.hp,             298029, ZMKP_Hp);
 	eq.register_npc_event('zmkp', Event.signal,         298029, ZMKP_Signal);
-	eq.register_npc_event('zmkp', Event.say,            298029, ZMKP_Say);
 	eq.register_npc_event('zmkp', Event.death_complete, 298029, ZMKP_Death);
 
 	eq.register_npc_event('zmkp', Event.spawn,          298125, ZMKP_Spawn_Speed);

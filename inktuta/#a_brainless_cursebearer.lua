@@ -16,7 +16,7 @@ function event_timer(e)
 		end
 	elseif e.timer == "switch_target" then
 		eq.stop_timer(e.timer);
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 200, "The cursebearer advances with incredible speed. Nothing natural could possibly move that fast.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 200, "The cursebearer advances with incredible speed. Nothing natural could possibly move that fast.");
 		current_target = eq.get_entity_list():GetRandomClient(e.self:GetX(), e.self:GetY(), e.self:GetZ(),1000*1000);
 		new_speed = 0.3;
 		e.self:WipeHateList();

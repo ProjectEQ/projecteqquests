@@ -215,7 +215,7 @@ function Spawn_augs()
 		if i==4 then grid=16 else grid=0 end
 		
 		if mob_in_list then
-			--eq.zone_emote(15,"spawn: " .. list_named[i][1] .. " ," .. list_named[i][3] .. " ," .. list_named[i][4] .. " ," .. list_named[i][5] .. " ," ..list_named[i][6]); 
+			--eq.zone_emote(MT.Yellow,"spawn: " .. list_named[i][1] .. " ," .. list_named[i][3] .. " ," .. list_named[i][4] .. " ," .. list_named[i][5] .. " ," ..list_named[i][6]); 
 		    eq.spawn2(list_named[i][1],grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);		  
 		 else
 			eq.spawn2(317076,grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]); -- NPC: #a_lightning_warrior_commander

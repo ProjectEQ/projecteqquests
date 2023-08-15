@@ -14,8 +14,8 @@ function event_trade(e)
   if item_lib.check_turn_in(e.trade, {item1 = 57209}) then -- Dark Reign Token
     -- note: on live this is Say channel (256) but only sent to client (similar to NPCQuestSay)
     e.other:Message(MT.Say, "Wayfarers Mercenary Limann says, 'You can be sure the Dark Reign will hear how you have run through an enemy and I might even spice it up and suggest you bested a Keeper.  Oh, how they will like that!'")
-    e.other:QuestReward(e.self, { faction = { don.faction_id.dark_reign, 20 } })
-    don.remove_invalid_aa(e.other, don.faction_id.norraths_keepers)
+    e.other:QuestReward(e.self, { faction = { don.faction_id.evil, 20 } })
+    don.remove_invalid_aa(e.other, don.faction_id.good)
   end
   item_lib.return_items(e.self, e.other, e.trade)
 end

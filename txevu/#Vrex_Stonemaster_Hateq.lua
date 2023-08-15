@@ -26,5 +26,5 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	eq.get_entity_list():MessageClose(e.self,false,120,0,"As the last breath leaves the dying Vrex, the other two Stonemasters raise their voices in an attempt to cover the part of their fallen comrade.")
+	eq.get_entity_list():MessageClose(e.self,false,120,MT.White,"As the last breath leaves the dying Vrex, the other two Stonemasters raise their voices in an attempt to cover the part of their fallen comrade.")
 end

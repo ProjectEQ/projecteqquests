@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18857)) then
-		e.other:Message(15,"A dark whisper of a voice seems to echo in your mind. 'Welcome young warrior of Innoruuk. I am Brutol Rhaksen, your new Guild Master. Read the note in your inventory and hand it to me to begin your training.'");
+		e.other:Message(MT.Yellow,"A dark whisper of a voice seems to echo in your mind. 'Welcome young warrior of Innoruuk. I am Brutol Rhaksen, your new Guild Master. Read the note in your inventory and hand it to me to begin your training.'");
 	end
 end
 

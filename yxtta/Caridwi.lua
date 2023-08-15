@@ -1,6 +1,6 @@
 --  Best the Taskmistress,  Cragbeast Queen: Visage of the Brute
 function event_spawn(e)
-eq.zone_emote(15, "A haunting song echoes in the dank caverns.");
+eq.zone_emote(MT.Yellow, "A haunting song echoes in the dank caverns.");
 end
 
 function event_say(e)

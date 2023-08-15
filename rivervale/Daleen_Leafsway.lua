@@ -15,7 +15,7 @@ function event_say(e)
 end
 
 function event_timer(e)
-	if (timer == blurt) then
+	if e.timer == blurt then
 		e.self:Say("Oh Dear.. I can't believe I forgot.. He must be [starving]!");
 	end
 end

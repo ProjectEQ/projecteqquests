@@ -12,7 +12,7 @@ function event_fish_success(e)
 	if(e.item:GetID() == 69914) then
 		local qglobals = eq.get_qglobals(e.self);
 		if (qglobals["paladin_epic"] == "3") then
-				e.self:Message(15, "As you reel in the dark fish's scale, you notice a large fish in the water");
+				e.self:Message(MT.Yellow, "As you reel in the dark fish's scale, you notice a large fish in the water");
 				eq.depop_all(182150);
 				eq.spawn2(182150,0,0,1781,1033,38.6,400); --#A_Corrupted_Koalindl
 		end

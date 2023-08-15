@@ -20,7 +20,7 @@ function QOS_HP(e)
 	-- ritana must be kept alive until 20% to receive extra loot
       extra_loot = true;
       eq.signal(241058,1); --Ritana: -- Heal Rit to full and add spell and remove immunities
-      eq.zone_emote(13,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");		
+      eq.zone_emote(MT.Red,"Sand cascades from the ceiling as the Quintessence trembles.  The shield protecting Ritana falls as she channels her energy into the Quintessence which tears its feet from the sand, ready to protect its last master.");		
     end
 
     if (entity_list:IsMobSpawnedByNpcTypeID(241058) or entity_list:IsMobSpawnedByNpcTypeID(241053) or entity_list:IsMobSpawnedByNpcTypeID(241046) or entity_list:IsMobSpawnedByNpcTypeID(241051)) then
@@ -31,7 +31,7 @@ function QOS_HP(e)
   end
 end
 
-function Qos_Signal(e)
+function QOS_Signal(e)
 	if(e.signal == 1) then
 		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
 		e.self:SetSpecialAbility(35,0); -- remove Immune to Damage
@@ -51,7 +51,7 @@ function Mini_Death(e)
 	
   eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
   eq.spawn2(241078,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
-  eq.zone_emote(15,"The geomancer's body falls, splitting itself in one last expense of energy.");
+  eq.zone_emote(MT.Yellow,"The geomancer's body falls, splitting itself in one last expense of energy.");
 	
   if (entity_list:IsMobSpawnedByNpcTypeID(241058) == true and entity_list:IsMobSpawnedByNpcTypeID(241053) == false and entity_list:IsMobSpawnedByNpcTypeID(241046) == false and entity_list:IsMobSpawnedByNpcTypeID(241051) == false) then
 	--signal qos start summoning at 100% health when the 3 other nameds are dead and ritana is alive
@@ -74,7 +74,7 @@ function QOS_Death(e)
     eq.spawn2(241075, 0, 0, 379, -797, 8.23, 1); -- NPC: #Ritanas_Ornate_Chest
   end
   --
-  eq.zone_emote(15,"Your victory has shattered the shroud of magic cloaking the dungeon's treasure.");
+  eq.zone_emote(MT.Yellow,"Your victory has shattered the shroud of magic cloaking the dungeon's treasure.");
   -- The Earthen Chest
   eq.spawn2(241076, 0, 0, 448, -727, 8.23, 385); -- NPC: #The_Earthen_Chest
   -- The Gem Encrusted Chest
@@ -143,21 +143,21 @@ end
 
 function Split_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"A strange current of energy passes through you, cold and fast-moving. From the south comes the sound of two clear voices, blending together in a soothing melody. Ahead to the west, the sound of stamping feet and heavy chanting originates, echoing through the passageways. A strange sense of urgency tugs you towards the west.");
+		eq.zone_emote(MT.Yellow,"A strange current of energy passes through you, cold and fast-moving. From the south comes the sound of two clear voices, blending together in a soothing melody. Ahead to the west, the sound of stamping feet and heavy chanting originates, echoing through the passageways. A strange sense of urgency tugs you towards the west.");
 		eq.depop_with_timer();
 	end
 end
 
 function Golem_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"The chanting and stamping sounds grow louder, closer, with a more feverish pitch. Along with them comes the deafening crash of stone against stone as something very large moves before you. The energy is flying all around you, a vortex of sand and light.");
+		eq.zone_emote(MT.Yellow,"The chanting and stamping sounds grow louder, closer, with a more feverish pitch. Along with them comes the deafening crash of stone against stone as something very large moves before you. The energy is flying all around you, a vortex of sand and light.");
 		eq.depop_with_timer();
 	end
 end
 
 function Priest_Combat(e)
 	if (e.joined == true) then
-		eq.zone_emote(15,"The ethereal voices wind together, climbing over each other in a beautiful duet. The sound is filled with pure beauty, and the owners of these voices semm enraptured and unaware of your existence.");
+		eq.zone_emote(MT.Yellow,"The ethereal voices wind together, climbing over each other in a beautiful duet. The sound is filled with pure beauty, and the owners of these voices semm enraptured and unaware of your existence.");
 		eq.depop_with_timer();
 	end
 end
@@ -166,21 +166,21 @@ function Tree_Death(e)
 		local rand = math.random(1,4); -- rand 4 does nothing
 		if (rand == 1) then
 			e.self:CastSpell(4173,e.self:GetID()); --mental renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
 		elseif (rand == 2) then
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"Angry saplings break through the splintered tree and rush toward you!");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"Angry saplings break through the splintered tree and rush toward you!");
 		elseif (rand == 3) then
 			e.self:CastSpell(4174,e.self:GetID()); --physical renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
 		end
 end
 
 function Trash_Timer(e)
     if (e.self:CalculateDistance(e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ()) >200) then
-	eq.zone_emote(13, e.self:GetCleanName() .. " gathers power from the sand at its feet as it moves across the ground "); --mob powers up permanently even after returning to bind
+	eq.zone_emote(MT.Red, e.self:GetCleanName() .. " gathers power from the sand at its feet as it moves across the ground "); --mob powers up permanently even after returning to bind
         eq.modify_npc_stat("min_hit", "361");
         eq.modify_npc_stat("max_hit", "1235");
 		
@@ -209,7 +209,7 @@ end
 function Trap1_Combat(e)
 	if (e.joined == true) then
 		e.self:CastSpell(4163,e.other:GetID(),0,0); -- Spell:Curse of the Desert should fire 5 times consecutively on every person in range
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"Stinging sand assaults you from every direction.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"Stinging sand assaults you from every direction.");
 		eq.depop_with_timer();
 	end
 end

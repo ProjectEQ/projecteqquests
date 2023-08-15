@@ -70,8 +70,8 @@ function Maestro_Hp(e)
         eq.spawn2(186191,0,0,-117.37,-483,35.88,129.2); -- NPC: #an_accompanist
         e.self:ModifyNPCStat("hp_regen", "10000");
         eq.set_next_hp_event(40);
-        eq.zone_emote(0, "A haunting tune floats through the music hall.  Someone or SOMETHING has begun playing the pipe organ.");
-        eq.zone_emote(0, "Maestro of Rancor chortles, 'This song is sweet to my senses. Keep up with the dance mortals... IF YOU CAN!");
+        eq.zone_emote(MT.White, "A haunting tune floats through the music hall.  Someone or SOMETHING has begun playing the pipe organ.");
+        eq.zone_emote(MT.White, "Maestro of Rancor chortles, 'This song is sweet to my senses. Keep up with the dance mortals... IF YOU CAN!");
     elseif (e.hp_event == 40) then
         eq.depop_all(186197); -- #a_silent_banshee (186197)
         eq.spawn2(186192,0,0,-291,-421,23.23,256); -- NPC: #a_screeching_banshee
@@ -118,7 +118,7 @@ end
 
 function Moaning_Timer(e)
     if(e.timer=="nuke") then
-        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"You seem to recognize one banshees music as a fire resist song.");
+        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"You seem to recognize one banshees music as a fire resist song.");
         local rand = math.random(1,2);
           if (rand ==1) then
             e.self:CastedSpellFinished(943, e.self:GetHateTop()); -- Mana Drain (943)

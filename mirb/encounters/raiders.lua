@@ -51,7 +51,7 @@ function goblin_timer(e)
 
     if goblins.aggro_proximity_count < 2 and goblins.nearest then
       -- run to nearest goblin, then back to spawn (re-aggro should abort it)
-      eq.get_entity_list():MessageClose(e.self, true, 100, 15, ("%s cackles maniacally. 'Fast as fast can be, you'll never catch me!' He turns and runs away looking for more of his cohorts."):format(e.self:GetCleanName()))
+      eq.get_entity_list():MessageClose(e.self, true, 100, MT.Yellow, ("%s cackles maniacally. 'Fast as fast can be, you'll never catch me!' He turns and runs away looking for more of his cohorts."):format(e.self:GetCleanName()))
       e.self:WipeHateList()
       e.self:SetRunning(true)
 

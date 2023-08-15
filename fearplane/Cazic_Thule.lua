@@ -74,16 +74,16 @@ function send_signal_to_all_npc_in_zone(signal_to_send,exclude_table)
 			if (exclude_npc_list[npc:GetNPCTypeID()] == nil and signal_sent_to[npc:GetNPCTypeID()] == nil) then
 				-- make sure the npc is valid (again, should never fail, but better to be certain.
 				if (npc.valid) then
-					if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " is being sent signal " .. tostring(signal_to_send) .. "."); end
+					if (show_debug) then eq.zone_emote(MT.LightBlue,"NPCID: " .. npc:GetNPCTypeID() .. " is being sent signal " .. tostring(signal_to_send) .. "."); end
 					-- send signal to this NPCID
 					eq.signal(npc:GetNPCTypeID(),signal_to_send);
 					-- add this NPCID to the list of NPCID that we have already signalled
 					signal_sent_to[npc:GetNPCTypeID()] = true;
 				end
 			elseif(signal_sent_to[npc:GetNPCTypeID()] == true) then
-				if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " has already been sent signal " .. tostring(signal_to_send) .. "."); end
+				if (show_debug) then eq.zone_emote(MT.LightBlue,"NPCID: " .. npc:GetNPCTypeID() .. " has already been sent signal " .. tostring(signal_to_send) .. "."); end
 			elseif(exclude_npc_list[npc:GetNPCTypeID()] == true) then
-				if (show_debug) then eq.zone_emote(4,"NPCID: " .. npc:GetNPCTypeID() .. " is excluded and will not be sent signal " .. tostring(signal_to_send) .. "."); end
+				if (show_debug) then eq.zone_emote(MT.LightBlue,"NPCID: " .. npc:GetNPCTypeID() .. " is excluded and will not be sent signal " .. tostring(signal_to_send) .. "."); end
 			end
 		end
 	end

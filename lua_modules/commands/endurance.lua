@@ -4,7 +4,7 @@ local function endurance(e)
         tar = e.self;
     end
 
-    e.self:Message(15, "Targets endurance refreshed (" .. tar:GetCleanName() .. ")");
+    e.self:Message(MT.Yellow, "Targets endurance refreshed (" .. tar:GetCleanName() .. ")");
     tar:SetEndurance(tar:GetMaxEndurance());
 end
 

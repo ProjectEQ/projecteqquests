@@ -11,7 +11,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18923})) then
 		e.other:SummonItem(13158); -- Item: Rebby's Rat Whiskers
 		e.other:Ding();
-		e.other:AddEXP(10);
+		e.other:AddEXP(50);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

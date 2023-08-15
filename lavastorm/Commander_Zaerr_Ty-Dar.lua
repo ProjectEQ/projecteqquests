@@ -58,12 +58,12 @@ function event_say(e)
     return
   end
 
-  local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+  local player = don.character_state.new(e.other, don.faction_id.evil)
 
   -- conditions attempt to mimic live's logic
   if e.message:findi("hail") then
     -- live checks opposing faction for AA removal here to prevent double dipping AA (unless under shroud)
-    don.remove_invalid_aa(e.other, don.faction_id.norraths_keepers)
+    don.remove_invalid_aa(e.other, don.faction_id.good)
 
     -- t1
     if not player:has_min_faction(don.faction.Indifferent) then
@@ -198,7 +198,7 @@ end
 function event_trade(e)
   local item_lib = require("items")
 
-  local player = don.character_state.new(e.other, don.faction_id.dark_reign)
+  local player = don.character_state.new(e.other, don.faction_id.evil)
 
   -- manually loop to support multiple turnins and live messages based on order/flag/faction
   for i=1,4 do

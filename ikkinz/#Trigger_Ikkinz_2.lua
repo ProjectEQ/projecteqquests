@@ -31,14 +31,14 @@ function event_signal(e)
       eq.spawn2(294143, 0, 0, 477, -593, -50, 256) -- NPC: a_pile_of_bones
       eq.spawn2(294144, 0, 0, 477, -638, -50, 256) -- NPC: a_pile_of_bones
 
-      eq.zone_emote(0, "The Tri-Fate Hunters have been defeated! Though the legion may send replacements, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
+      eq.zone_emote(MT.White, "The Tri-Fate Hunters have been defeated! Though the legion may send replacements, you have finished what you sought out to do and delayed their progress for a time! Congratulations!")
       eq.ZoneMarquee(10, 510, 1, 1, 6000, "The Tri-Fate Hunters have been defeated! Congratulations!");
     end
   end
 end
 
 function event_timer(e)
-  eq.zone_emote(0, "Sensing an opportunity, a Flesh Hunter calls forth a reinforcement from some unseen location.")
+  eq.zone_emote(MT.White, "Sensing an opportunity, a Flesh Hunter calls forth a reinforcement from some unseen location.")
   if(e.timer=="kyv1") then
     eq.stop_timer("kyv1");
     eq.stop_timer("pixtt1");

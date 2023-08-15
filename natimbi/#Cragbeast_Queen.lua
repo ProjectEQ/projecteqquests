@@ -3,7 +3,7 @@ local super_regen = false;
 local heading = 0.0; -- IsMoving doesn't catch heading changes ...
 
 function event_spawn(e)
-	eq.zone_emote(15,"A muffled roar echoes in the distance.");
+	eq.zone_emote(MT.Yellow,"A muffled roar echoes in the distance.");
 	-- piercing does more damage, rest do less, special attacks not touched
 	e.self:ModSkillDmgTaken(36, 30); -- piercing
 	e.self:ModSkillDmgTaken(0, -85); -- 1h blunt
@@ -33,6 +33,6 @@ end
 function event_death_complete(e)
 	-- turn the depop spawn_event back on
 	eq.toggle_spawn_event(65, true, false, false)
-	eq.zone_emote(10, "The Cragbeast Queen roars in defiance.  She staggers for a moment before her gargantuan form comes crashing to the sandy ground.  The impact shakes the entire beach of Natimbi.");
+	eq.zone_emote(MT.NPCQuestSay, "The Cragbeast Queen roars in defiance.  She staggers for a moment before her gargantuan form comes crashing to the sandy ground.  The impact shakes the entire beach of Natimbi.");
 end
 

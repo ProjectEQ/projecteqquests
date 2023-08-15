@@ -7,13 +7,13 @@ don.character_state = {}
 don.character_state.__index = don.character_state
 
 don.faction_id = {
-  dark_reign       = 1021,
-  norraths_keepers = 1023
+  evil = 1021, -- Dark Reign
+  good = 1023  -- Norrath's Keepers
 }
 
 don.faction_name = {
-  [don.faction_id.dark_reign]       = "Dark Reign",
-  [don.faction_id.norraths_keepers] = "Norrath's Keepers"
+  [don.faction_id.evil] = "Dark Reign",
+  [don.faction_id.good] = "Norrath's Keepers"
 }
 
 don.faction = {
@@ -30,8 +30,8 @@ don.faction = {
 
 don.flags = {
   key = {
-    [don.faction_id.dark_reign]       = "don_dark_reign",
-    [don.faction_id.norraths_keepers] = "don_norraths_keepers",
+    [don.faction_id.evil] = "don_evil",
+    [don.faction_id.good] = "don_good",
   },
 
   -- Norrath's Keepers: Gift of the Keepers -- Dark Reign: Gift of the Dark Reign
@@ -101,14 +101,14 @@ don.spell_rewards = {
 
 -- live combines these into a single aa with ranks
 don.aa = {
-  [don.faction_id.dark_reign] = {
+  [don.faction_id.evil] = {
     { aa_id = 471, rank_id = 1361, name = "Gift of the Dark Reign" },
     { aa_id = 472, rank_id = 1362, name = "Tenacity of the Dark Reign" },
     { aa_id = 473, rank_id = 1363, name = "Embrace of the Dark Reign" },
     { aa_id = 474, rank_id = 1364, name = "Power of the Dark Reign" },
     { aa_id = 475, rank_id = 1365, name = "Fervor of the Dark Reign" },
   },
-  [don.faction_id.norraths_keepers] = {
+  [don.faction_id.good] = {
     { aa_id = 476, rank_id = 1366, name = "Gift of the Keepers" },
     { aa_id = 477, rank_id = 1367, name = "Valor of the Keepers" },
     { aa_id = 478, rank_id = 1368, name = "Embrace of the Keepers" },
@@ -133,14 +133,14 @@ function don.fix_invalid_faction_state(client)
     return
   end
 
-  local good_faction = client:GetModCharacterFactionLevel(don.faction_id.norraths_keepers)
-  local evil_faction = client:GetModCharacterFactionLevel(don.faction_id.dark_reign)
+  local good_faction = client:GetModCharacterFactionLevel(don.faction_id.good)
+  local evil_faction = client:GetModCharacterFactionLevel(don.faction_id.evil)
 
   -- this shouldn't be possible unless through some bug
   if good_faction >= don.faction.Indifferent and evil_faction >= don.faction.Indifferent then
-    local reset = { faction_id = don.faction_id.dark_reign, faction_level = evil_faction }
+    local reset = { faction_id = don.faction_id.evil, faction_level = evil_faction }
     if good_faction < evil_faction then
-      reset = { faction_id = don.faction_id.norraths_keepers, faction_level = good_faction }
+      reset = { faction_id = don.faction_id.good, faction_level = good_faction }
     end
 
     -- live reset this to -200 reaction (-100 standing) on an agnostic character
@@ -163,12 +163,12 @@ end
 
 -- solo progression quests
 don.solo_quests = {
-  [don.faction_id.dark_reign] = {
+  [don.faction_id.evil] = {
     t1 = { 4827, 4828, 4829 }, -- The Burning Poison,         Blood of the Basilisk, Clearing the Path
     t2 = { 4830, 4831, 4832 }, -- Blood from Sand,            Army of Stone,         Reap the Kirin Mind
     t3 = { 4833, 4834, 4835 }, -- Muddy the Waters,           Knowledge is Power,    Snowfoot Attack
   },
-  [don.faction_id.norraths_keepers] = {
+  [don.faction_id.good] = {
     t1 = { 5044, 5045, 5046 }, -- Creating an Antidote,       Burning Arrows,        Greed of the Goblins
     t2 = { 5047, 5048, 5049 }, -- Turn the Tides of the Sand, Recover the Lost Map,  Defend the Kirin Contact
     t3 = { 5050, 5051, 5052 }, -- Protect the Waters,         The Sacred Scrolls,    Snowfoot Revenge
@@ -185,15 +185,15 @@ don.mission_flags = {
 }
 
 don.progression_missions = {
-  [401]  = { faction_id = don.faction_id.norraths_keepers, flags = don.mission_flags.t1 }, -- Children of Gimblax [68+]
-  [4785] = { faction_id = don.faction_id.norraths_keepers, flags = don.mission_flags.t2 }, -- Sickness of the Spirit [68+]
-  [4799] = { faction_id = don.faction_id.norraths_keepers, flags = don.mission_flags.t3 }, -- History of the Isle
-  [4991] = { faction_id = don.faction_id.norraths_keepers, flags = don.mission_flags.t5 }, -- Origins of the Curse
+  [401]  = { faction_id = don.faction_id.good, flags = don.mission_flags.t1 }, -- Children of Gimblax [68+]
+  [4785] = { faction_id = don.faction_id.good, flags = don.mission_flags.t2 }, -- Sickness of the Spirit [68+]
+  [4799] = { faction_id = don.faction_id.good, flags = don.mission_flags.t3 }, -- History of the Isle
+  [4991] = { faction_id = don.faction_id.good, flags = don.mission_flags.t5 }, -- Origins of the Curse
 
-  [5015] = { faction_id = don.faction_id.dark_reign, flags = don.mission_flags.t1 }, -- Have Note Will Travel [65+]
-  [5555] = { faction_id = don.faction_id.dark_reign, flags = don.mission_flags.t2 }, -- Drake Eggs [68+]
-  [4771] = { faction_id = don.faction_id.dark_reign, flags = don.mission_flags.t3 }, -- The Gilded Scroll
-  [4986] = { faction_id = don.faction_id.dark_reign, flags = don.mission_flags.t5 }, -- Rival Party [68+]
+  [5015] = { faction_id = don.faction_id.evil, flags = don.mission_flags.t1 }, -- Have Note Will Travel [65+]
+  [5555] = { faction_id = don.faction_id.evil, flags = don.mission_flags.t2 }, -- Drake Eggs [68+]
+  [4771] = { faction_id = don.faction_id.evil, flags = don.mission_flags.t3 }, -- The Gilded Scroll
+  [4986] = { faction_id = don.faction_id.evil, flags = don.mission_flags.t5 }, -- Rival Party [68+]
 }
 
 -- Checks if a DoN progression mission was completed to set flags (called from global player)
@@ -213,7 +213,7 @@ function don.on_task_complete(client, task_id)
       player:set_flag(mission.flags.add_flag, not is_lavastorm)
 
       if is_lavastorm and player:has_flag(mission.flags.finish_if_flag) then
-        if mission.faction_id == don.faction_id.norraths_keepers then
+        if mission.faction_id == don.faction_id.good then
           client:Message(MT.Yellow, "Congratulations!  Chieftain Relae Aderie at the Norrath's Keepers Enclave wishes to speak with you now.")
         else
           client:Message(MT.Yellow, "Congratulations!  Commander Zaerr Ty'Dar at the Dark Reign Outpost wants to speak with you now.")
@@ -361,7 +361,7 @@ function don.finish_clues_mission(client, task_ids)
 end
 
 function don.character_state.new(client, faction_id)
-  if faction_id ~= don.faction_id.norraths_keepers and faction_id ~= don.faction_id.dark_reign then
+  if faction_id ~= don.faction_id.good and faction_id ~= don.faction_id.evil then
     error("Cannot load don.character_state, faction_id must be for Norrath's Keepers or Dark Reign")
   end
 
@@ -387,14 +387,12 @@ function don.character_state:has_min_faction(faction_level)
 end
 
 function don.character_state:load_flags()
-  -- uses cached qglobals instead of data buckets to limit db access for unthrottled flag checks
-  local qglobals = eq.get_qglobals(self.client)
-  self.flags = tonumber(qglobals[self.flag_key] or 0)
+  self.flags = tonumber(self.client:GetBucket(self.flag_key)) or 0
 end
 
 function don.character_state:reset_flags()
   self.flags = 0
-  eq.delete_global(self.flag_key)
+  self.client:DeleteBucket(self.flag_key)
 end
 
 function don.character_state:has_flag(flag)
@@ -403,7 +401,7 @@ end
 
 function don.character_state:remove_flag(flag)
   self.flags = bit.band(self.flags, bit.bnot(flag))
-  eq.set_global(self.flag_key, tostring(self.flags), 5, "F")
+  self.client:SetBucket(self.flag_key, tostring(self.flags))
 end
 
 function don.character_state:set_flag(flag, silent)
@@ -411,7 +409,7 @@ function don.character_state:set_flag(flag, silent)
   local has_flag = self:has_flag(flag)
   if not has_flag then
     self.flags = bit.bor(self.flags, flag)
-    eq.set_global(self.flag_key, tostring(self.flags), 5, "F")
+    self.client:SetBucket(self.flag_key, tostring(self.flags))
     if not silent then
       self.client:Message(MT.Yellow, "You have received a character flag!")
     end

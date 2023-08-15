@@ -24,16 +24,16 @@ end
 function event_timer(e)
    if (e.timer == "emoteone") then
       eq.stop_timer("emoteone");
-      eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 50,"Faint whispers can be heard all around you.");
+      eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 50,"Faint whispers can be heard all around you.");
       eq.set_timer("emotetwo", 5 * 1000);
    elseif (e.timer == "emotetwo") then
       eq.stop_timer("emotetwo");
-      eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 50,"An unearthly moan echoes through the small room.");
+      eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 50,"An unearthly moan echoes through the small room.");
       eq.set_timer("emotethree", 5 * 1000);
    elseif (e.timer == "emotethree") then
       eq.stop_timer("emotethree");
       if ( ProximityCheck(1454, 213, -328, 80) == true) then --north jail
-         eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 50,"Angered by your presence here, apparitions step through the nearby walls. A bone chilling cold fills the room as they reach for your throat.");
+         eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 50,"Angered by your presence here, apparitions step through the nearby walls. A bone chilling cold fills the room as they reach for your throat.");
          eq.spawn2(297077,0,0,1500, 180, -328, 396) --a_vengeful_apparition (297077)
          eq.spawn2(297077,0,0,1500, 234, -328, 308)
          eq.spawn2(297077,0,0,1469, 236, -328, 260)

@@ -6,7 +6,7 @@
   ----------------------------------
 -- items: 13870
 function event_waypoint_arrive(e)
-	if(wp == 6) then
+	if e.wp == 6 then
 		e.self:Say("When will Wickystick send help?!");
 	end
 end

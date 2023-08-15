@@ -498,8 +498,8 @@ function Deputy1_Timer(e)
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 15);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 15);
 	e.self:ModifyNPCStat("attack_delay",  tostring(General_old));
-	e.self:ModifyNPCStat("min_hit", tostring(deputyold_min_hit));
-	e.self:ModifyNPCStat("max_hit", tostring(deputyold_max_hit));
+	e.self:ModifyNPCStat("min_hit", tostring(deputy_old_min_hit));
+	e.self:ModifyNPCStat("max_hit", tostring(deputy_old_max_hit));
 	eq.zone_emote(MT.Yellow,"Deputy Kilz feels sick to his stomach and slows down.");
 	eq.stop_timer("End");
 	end
@@ -519,8 +519,8 @@ function Deputy2_Timer(e)
 	e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 15);
 	e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 15);
 	e.self:ModifyNPCStat("attack_delay",  tostring(General_old));
-	e.self:ModifyNPCStat("min_hit", tostring(deputyold_min_hit));
-	e.self:ModifyNPCStat("max_hit", tostring(deputyold_max_hit));
+	e.self:ModifyNPCStat("min_hit", tostring(deputy_old_min_hit));
+	e.self:ModifyNPCStat("max_hit", tostring(deputy_old_max_hit));
 	eq.zone_emote(MT.Yellow,"Deputy Mackal feels sick to his stomach and slows down.");
 	eq.stop_timer("End2");
 	end
@@ -750,10 +750,6 @@ function event_encounter_load(e)
   
   eq.register_npc_event('Misty', Event.spawn,			 33162, Deputy1_Spawn);
   eq.register_npc_event('Misty', Event.spawn,			 33163, Deputy1_Spawn);
-  
-  eq.register_npc_event('Misty', Event.spawn,			 33166, Corpse_Spawn);
-  eq.register_npc_event('Misty', Event.timer,			 33166, Corpse_Timer);
-  
   
   eq.register_npc_event('Misty', Event.spawn,			 33165, Crysta_Spawn);
   eq.register_npc_event('Misty', Event.signal,			 33165, Crysta_Signal);

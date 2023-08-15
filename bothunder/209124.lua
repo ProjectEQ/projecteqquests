@@ -3,7 +3,7 @@ eq.set_timer('depop', 1200 * 1000);
 end
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end

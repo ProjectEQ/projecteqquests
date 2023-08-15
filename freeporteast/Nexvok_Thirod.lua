@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18854) == true) then
+	if e.other:HasItem(18854) then
 		e.other:Message(MT.Yellow,"A dark whisper of a voice seems to echo in your mind. 'Welcome young wizard of Innoruuk. I am Nexvok Thirod, your new Guild Master. Read the note in your inventory and hand it to me to begin your training.'");
 	end
 end

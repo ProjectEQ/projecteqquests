@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("freeze", math.random(3,15)*1000);
 		eq.set_timer("hoar",   math.random(3,15)*1000);
 		eq.stop_timer("depop");

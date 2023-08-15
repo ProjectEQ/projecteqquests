@@ -4,7 +4,7 @@
 -- Written by Huffin
 
 function MOTG_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("adds", 3 * 1000);
   else
     eq.stop_timer("adds");
@@ -44,7 +44,7 @@ function Sentry_Signal(e)
 end
 
 function Sentry_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.stop_timer("aggro");
 	else
     	eq.set_timer("aggro", 5 * 1000);

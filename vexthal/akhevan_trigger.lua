@@ -8,7 +8,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if (e.other:GetGM() == false) then
+	if not e.other:GetGM() then
 		local x, y, z, h = e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading();
 		local mob = mob_selection();  -- choose random mob to spawn in trap
 		local spawned = eq.spawn2(mob, 0, 0, x, y, z, h); 

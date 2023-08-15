@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("avapower",35*1000);
 		eq.set_timer("bury",30*1000);
 		eq.set_timer("wave",12*1000);		

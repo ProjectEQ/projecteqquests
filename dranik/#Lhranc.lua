@@ -6,7 +6,7 @@ end
 
 
 function event_combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.stop_all_timers();
 		e.self:CastSpell(17042, e.self:GetTarget():GetID()); -- Spell: Harm Touch
 		--eq.set_timer("harmtouch", 1000);

@@ -8,7 +8,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		--spawn golem adds in middle of room, starting every 30 seconds
 		eq.set_timer("spawn_golem", add_timer)
 		eq.stop_timer("reset")

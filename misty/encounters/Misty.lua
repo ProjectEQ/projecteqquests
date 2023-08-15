@@ -53,24 +53,24 @@ local stunned=0;
 
 
 function Deputy_Signal(e)
-	if (e.signal == 1) then
+	if e.signal == 1 then
 		e.self:SetRunning(true);
 		e.self:MoveTo(-2358.64,736.61,3.90,429.3,true);
 		stunned=0;
 		eq.set_timer("Talk",18000);
-	elseif (e.signal == 2) and deputydeath == false then
+	elseif e.signal == 2 and not deputydeath then
 		eq.set_timer("Rez1",15000);
-	elseif (e.signal == 2) and deputydeath == true then
+	elseif e.signal == 2 and deputydeath then
 		eq.stop_timer("Rez1");
-	elseif (e.signal == 3) and deputydeath == false then
+	elseif e.signal == 3 and not deputydeath then
 		eq.set_timer("Rez2",15000);
-	elseif (e.signal == 3) and deputydeath == true then
+	elseif e.signal == 3 and deputydeath then
 		eq.stop_timer("Rez2");
-	elseif (e.signal == 4) then
+	elseif e.signal == 4 then
 		eq.zone_emote(MT.Yellow,"General Huffin cackles, Well we can fix that!");
 		eq.set_timer("Adds",90000);
 		eq.set_timer("Bags",15000);
-	elseif (e.signal == 5) and stunned == 1 then
+	elseif e.signal == 5 and stunned == 1 then
 		e.self:ModSkillDmgTaken(0, -650) -- 1h blunt
 		e.self:ModSkillDmgTaken(1, -650) -- 1h slashing
 		e.self:ModSkillDmgTaken(2, -650) -- 2h blunt
@@ -172,14 +172,14 @@ function Deputy_Signal(e)
 end
 	
 function Deputy_Spawn(e)
-	if spawned == true then
+	if spawned then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1); -- Set variables immune agro, agro on, no harm, immune magic.
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_melee, 1);
 		spawned=false;
-	elseif spawned == false then
+	elseif not spawned then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
@@ -188,7 +188,7 @@ function Deputy_Spawn(e)
 		e.self:TempName("General_Huffin");
 		eq.set_timer("Check",1000);
 		spawned=true;
-	elseif phase1 == false then
+	elseif not phase1 then
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
@@ -221,10 +221,10 @@ function Deputy_Spawn(e)
 end
 
 function Deputy_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("Fear",150000);
 		eq.stop_timer("Fail");
-	elseif (e.joined == false) then
+	else
 		eq.set_timer("Fail",10000);
 		spawned=true;
 	end
@@ -265,7 +265,7 @@ function Deputy_Timer(e)
 		e.self:Say("I don't belong here? You have no idea. Prepare yourselves.");
 		eq.set_timer("Agro",10000);
 		eq.stop_timer("Convo_2");
-	elseif (e.timer == "Check" and deputydeath == true) then
+	elseif (e.timer == "Check" and deputydeath) then
 		eq.stop_timer("Check");
 		eq.zone_emote(MT.Yellow,"General Huffin yells, It's about time I take this into my own hands! Prepare yourselves weaklings!")
 		phase1=false;
@@ -469,17 +469,17 @@ function Deputy_Death(e)
 end
 
 function Deputy1_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 	eq.set_next_hp_event(80);
-	elseif (e.joined == false) then
+	else
 	eq.depop();
 	end
 end
 
 function Deputy2_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 	eq.set_next_hp_event(80);
-	elseif (e.joined == false) then
+	else
 	eq.depop();
 	end
 end
@@ -569,18 +569,18 @@ end
 
 function Deputy1_Death(e)
 	local el = eq.get_entity_list();
-	if ( el:IsMobSpawnedByNpcTypeID(33163) == true) then
+	if el:IsMobSpawnedByNpcTypeID(33163) then
 	eq.signal(33161,2); -- NPC: Deputy?
-	elseif ( el:IsMobSpawnedByNpcTypeID(33163) == false) then
+	elseif not el:IsMobSpawnedByNpcTypeID(33163) then
 	deputydeath=true;
 	end
 end
 
 function Deputy2_Death(e)
 	local el = eq.get_entity_list();
-	if ( el:IsMobSpawnedByNpcTypeID(33162) == true) then
+	if el:IsMobSpawnedByNpcTypeID(33162) then
 	eq.signal(33161,3); -- NPC: Deputy?
-	elseif ( el:IsMobSpawnedByNpcTypeID(33163) == false) then
+	elseif not el:IsMobSpawnedByNpcTypeID(33163) then
 	deputydeath=true;
 	end
 end
@@ -681,7 +681,7 @@ function Crysta_Signal(e)
 end
 
 function Crysta_Say(e)
-	if (e.message:findi("hail") and healed == false and phase1 == false) then
+	if e.message:findi("hail") and not healed and not phase1 then
 		e.self:CastSpell(6495, e.other:GetID()); -- Spell: Spiritual Wake
 		healed=true;
 		phase1=true;

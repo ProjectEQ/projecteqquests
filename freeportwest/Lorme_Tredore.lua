@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18740) == true) then
+	if e.other:HasItem(18740) then
 		e.other:Message(MT.Yellow,"As you make your way into a small well-lit room, a robed figure turns to greet you. 'Hello there, friend. I am Lorme Tredore, Magician Guild Master. Should you wish to begin your training, read the note in your inventory and then hand it to me'");
 	end
 end

@@ -5,7 +5,7 @@
 -- items: 62622
 
 function Marshall_Combat(e)
-	if (e.joined == true) then		
+	if e.joined then		
 		eq.set_timer("adds",10*1000);
 		local entity_list = eq.get_entity_list();
 		local npc_list = entity_list:GetNPCList();
@@ -19,7 +19,7 @@ end
 
 function Grinbik_Say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["ranger_epic"] == "2" and e.other:HasItem(62844) == true) then
+	if qglobals["ranger_epic"] == "2" and e.other:HasItem(62844) then
 		if(e.message:findi("hail")) then
 			e.self:Emote("shouts Aaaah! A deep rumbling voice flows along the ground. I thank you, "..e.other:GetName()..". You have freed me from such torture! Imagine me, Grinbik the Fertile, forced to kill and destroy! I was created to nurture and protect! I must go back to my own home and begin again to be what I was ment to be. I am honored and grateful to you for saving me. I see that you carry a powerful seed, nearly a seedling with its desire to grow! As my first act upon regaining myself I must aid you. If you wish that seed to flourish, you must find the land here that remains fertile. It is a rare thing but I have seen it. Take with you my blessing. This is a portion of my own power and it will aid you and that seed. I also know that my cousin Senvial is a slave here somewhere. You will need his aid as well to achieve your goal. Deliver that seedling and our blessings into the fertile ground and it will grow very quickly indeed! Thank you again "..e.other:GetName().."! All present should praise you for your kind heart and warrior soul.");
 			e.other:SummonItem(62622); -- Item: Grinbik's Blessing
@@ -40,7 +40,7 @@ function Grinbik_Timer(e)
 	if(e.timer=="depop") then
 		eq.depop();
 	elseif(e.timer=="checkstatus") then
-		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(301065) == false) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(301065) then
 			e.self:Emote("roots himself in the earth and struggles to retain control of his own mind.");
 			e.self:SetSpecialAbility(19, 1);
 			e.self:SetSpecialAbility(20, 1);

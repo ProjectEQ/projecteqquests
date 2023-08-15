@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:HasItem(18734) == true) then
+	if e.other:HasItem(18734) then
 		e.other:Message(MT.Yellow,"An important looking Halfling turns to address you. 'Welcome to the Tagglefoot's Farmstead. I can see by the gleam in your eye that you are here to begin your training with the Storm Reapers. I am Hibbs Rootenpaw. Read the note in your inventory and hand it to me when you are ready to begin your training.'");
 	end
 end

@@ -14,9 +14,9 @@ local count = 0;
 
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_next_hp_event(80);
-	elseif (e.joined == false) then
+	else
 		eq.stop_timer("egg_client");
 		eq.set_timer("Combat",15000);
 		eq.set_timer("Respawn",20000);

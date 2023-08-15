@@ -30,11 +30,11 @@ function event_timer(e)
 		end
 	elseif (e.timer == "checkadds") then
 		eq.stop_timer("checkadds");
-		  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(336011) == false) then
+		  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336011) then
         e.self:Emote("roars for assistance, and a response echoes shortly thereafter as help is on the way.");
         eq.unique_spawn(336011, 0, 0, 753,937,147,250);
 		  end
-		  if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(336129) == false) then
+		  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336129) then
         e.self:Emote("roars for assistance, and a response echoes shortly thereafter as help is on the way.");
         eq.unique_spawn(336129, 0, 0, 753,937,147,250);
 		  end
@@ -50,7 +50,7 @@ function event_signal(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("aggrolink", 3 * 1000);
     eq.set_timer("checkadds", 5 * 1000);
   else

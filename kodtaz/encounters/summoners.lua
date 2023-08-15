@@ -38,7 +38,7 @@ function Trigger_Timer(e)
 end
 
 function Priest_Death(e)
-    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293213) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293212) == true) then
+    if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293213) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293212) then
     --if all 9 priest summoners dead and grand summoner alive, start next phase
         eq.signal(293212,1); --signal to start next phase
         eq.signal(293212,6); --signal Grand Summoner a priest died
@@ -52,7 +52,7 @@ end
 
 function Priest_Combat(e)
     --signal to Grand Summoner i joined combat
-    if (e.joined == true) then
+    if e.joined then
         eq.signal(293212,8);
     else
         eq.signal(293212,6);
@@ -153,7 +153,7 @@ eq.spawn2(293217,0,0,705,668,-453,468); -- NPC: #Deranged_Supreme_Stoneservant
 end
 
 function Provoker_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("oobcheck", 5 * 1000);
     else
         eq.stop_timer("oobcheck");
@@ -173,7 +173,7 @@ function Provoker_Timer(e)
 end
 
 function Lesser_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("oobcheck", 5 * 1000);
     else
         eq.stop_timer("oobcheck");
@@ -194,7 +194,7 @@ end
 
 
 function Greater_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("oobcheck", 5 * 1000);
     else
         eq.stop_timer("oobcheck");
@@ -214,7 +214,7 @@ function Greater_Timer(e)
 end
 
 function Deranged_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("oobcheck", 5 * 1000);
     else
         eq.stop_timer("oobcheck");
@@ -239,7 +239,7 @@ function Lesser_Death(e)
     if respawn == 0 then
         eq.signal(293212,3);
     end
-    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293215) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293216) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293122) == true) then
+    if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293215) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293216) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293122) then
         --all lessers and greaters are down, grand summoner still alive
         eq.signal(293212,4);
     end
@@ -249,14 +249,14 @@ function Greater_Death(e)
     if respawn == 0 then
         eq.signal(293212,2);
     end
-    if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293215) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293216) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293122) == true) then
+    if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293215) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293216) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293122) then
         --all lessers and greaters are down, grand summoner still alive
         eq.signal(293212,4);
     end
 end
 
 function Rav_Combat(e)
-    if (e.joined == true) then
+    if e.joined then
         eq.set_timer("oobcheck", 5 * 1000);
 		if(not eq.is_paused_timer("depop")) then
 			eq.pause_timer("depop");

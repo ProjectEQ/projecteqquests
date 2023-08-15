@@ -62,10 +62,10 @@ end
 
 --#Mystic_Braggle Mystic_Griknok Mystic_Shiflor
 function Braggle_death(e)
-addtimer = addtimer + 1;
-eq.spawn2(342060,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: unconscious_mystic
-eq.zone_emote(MT.Yellow, "The goblin mystic falls to the ground unconscious.");
-  if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) == false) then
+  addtimer = addtimer + 1;
+  eq.spawn2(342060,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: unconscious_mystic
+  eq.zone_emote(MT.Yellow, "The goblin mystic falls to the ground unconscious.");
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) then
     eq.signal(342052,1); --signal emoush to wake up
   end
 end
@@ -82,13 +82,13 @@ end
 function Unconscious_timer(e)
     if (e.timer == "reset") then
 
-        if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) == false) then
+        if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342054) then
            eq.unique_spawn(342054,0,0,-165,1946,-3,45); -- NPC: #Mystic_Shiflor
         end
-        if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) == false) then
+        if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342053) then
             eq.unique_spawn(342053,0,0,-68,1965,0,427); -- NPC: #Mystic_Braggle
         end
-        if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) == false) then
+        if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(342055) then
             eq.unique_spawn(342055,0,0,-141,2040,-8.15,244); -- NPC: #Mystic_Griknok
         end
     

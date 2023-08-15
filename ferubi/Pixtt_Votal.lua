@@ -1,5 +1,5 @@
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000);
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do

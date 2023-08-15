@@ -33,13 +33,13 @@ function event_say(e)
 		e.self:Say(string.format("Very well then, %s. We will not allow just anyone to wear the official Investigator's Badge and please forgive me. . . But it is hard to tell where one's loyalties lie these days. If you are truly [serious] then there is a duty you must perform first to show you are on the side of Antonius Bayle, the council and the good people Qeynos.",e.other:GetName()));
 	elseif(e.message:findi("serious")) then
 		e.self:Say("There is a guard by the name of Robbie Shilster that patrols the Northern Plains of Karana. He is allied with our enemies and completely corrupt. He is flagrant in his trafficking of contraband goods. His orders are to guard the great wooden bridge to stave off the insect swarms. But our investigators report that he simply stands to the side and watches as the swarm rolls through. You are to execute this man for his treason and bring me his helm. Then, we will talk.");
-	elseif(e.message:findi("advance further") and e.other:HasItem(18289) == true) then
+	elseif(e.message:findi("advance further") and e.other:HasItem(18289)) then
 		e.self:Say("At this point, I am mainly in need of loyal and trustworthy investigators. I must first gather information on who these people are and exactly how far their influences stretch. However, once I begin to implement the next phase of this operation, you may be able to assist us once again if you prove to be talented enough. For now, simply continue to observe and report.");
-	elseif(e.message:findi("advance further") and e.other:HasItem(2386) == true) then
+	elseif(e.message:findi("advance further") and e.other:HasItem(2386)) then
 		e.self:Say("Interested in advancing further are you? Excellent, we are ready to begin the next phase of our operation. We have gathered a great deal of information as a result of the latest series of arrests. We do require [interrogators] that are able to pry the information we require out those less than willing to talk. Also, Velarte Selire at the Temple of Life is looking for help with his [research]. You may wish to talk with him.");
-	elseif(e.message:findi("advance further") and e.other:HasItem(2583) == true) then
+	elseif(e.message:findi("advance further") and e.other:HasItem(2583)) then
 		e.self:Say("Interested in helping us further? We continue to gather valuable information. We still require [interrogators] that are able to pry the information we require out those less then willing to talk. Also, Velarte Selire at the Temple of Life is looking for help with his [research] so you may wish to talk with him. Lastly, we now have information we believe may lead us to the [individual that unleashed this plague] in the first place.");
-	elseif(e.message:findi("interrogators") and e.other:HasItem(2386) == true) then
+	elseif(e.message:findi("interrogators") and e.other:HasItem(2386)) then
 		e.self:Say("If you are interested in joining the ranks of our interrogators and helping Qeynos further as we bring these fiends and murderers to justice, turn in your investigator's Badge and I will give you the briefing document you need. I already know I can trust my investigators, so there is no need to further test you.");
 	end
 end

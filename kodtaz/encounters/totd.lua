@@ -14,7 +14,7 @@
 
 
 function Bones_Death(e)
-if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293112) == true) then
+if eq.get_entity_list():IsMobSpawnedByNpcTypeID(293112) then
 --loot version is able to be spawned
 eq.unique_spawn(293220,0,0,-1414,656,-453,385);-- # NPC: ##Pixtt_Priest_Summoner
 eq.unique_spawn(293177,0,0,-1423, 705, -453,385);-- # NPC: Pixtt_Priest_Guardian
@@ -70,7 +70,7 @@ eq.depop_with_timer(293112); --need to confirm respawn (3day?)
 end
 
 function Trash_Death(e)
-if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(293177) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293179) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293186) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(293187) == false) then
+if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293177) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293179) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293186) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(293187) then
 --all adds are dead, signal named to become active
 eq.signal(293220,1);
 eq.signal(293153,1);

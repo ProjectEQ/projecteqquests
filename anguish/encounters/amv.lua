@@ -43,7 +43,7 @@ function AMV_HP(e)
 end
 
 function AMV_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("adds", math.random(30,70) * 1000);	
 		eq.set_timer("touch", math.random(10,35) * 1000);
 		eq.set_timer("gaze", math.random(35,70) * 1000);
@@ -176,7 +176,7 @@ function Focus_Spawn(e)
 end
 
 function Focus_Combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("dt",1*1000); 
 	else
 		eq.stop_timer("dt");

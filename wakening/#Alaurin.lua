@@ -12,7 +12,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 54239}) and e.other:HasItem(52952) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(119184) == false) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 54239}) and e.other:HasItem(52952) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(119184)) then
 		e.self:Say("How very interesting. There is a geonid of great beauty that I have seen nearby in the caves. I have coveted its shining gem for some time. Destroy it and bring me the stone and I shall let you have your fragment.");
 		e.other:AddEXP(10000);
 		eq.spawn2(119184,0,0,-16,-2730,-4,48); -- NPC: #a_luminescent_geonid

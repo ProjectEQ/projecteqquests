@@ -284,7 +284,7 @@ end
 
 function Boss_Say(e)
   
-  if ( event_started ~= true ) then
+  if not event_started then
     if ( e.message:findi("hail") ) then
       e.self:Say("This is the Mastery of Adaptation trial. You must demonstrate your ability to adapt to an unpredictable and ever-changing opponent. Are you ready to [ " .. eq.say_link('begin', false, 'begin') .. " ]?");
     elseif ( e.message:findi("begin") ) then
@@ -370,7 +370,7 @@ function Boss_Death(e)
 end
 
 function Boss_Combat(e)
-  if (e.joined == false) then
+  if not e.joined then
     eq.set_timer('leftcombat', 30 * 1000);
   else
     eq.stop_timer('leftcombat');

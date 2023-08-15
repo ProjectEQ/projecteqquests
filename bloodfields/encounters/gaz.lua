@@ -55,7 +55,7 @@ function Controller_Signal(e)
 end
 
 function Dream_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("aggrolink", 3 * 1000);
   else
     eq.stop_timer("aggrolink");
@@ -75,7 +75,7 @@ end
 
 function Dream_Death(e)
   local el = eq.get_entity_list();
-  if (el:IsMobSpawnedByNpcTypeID(301031) == false and el:IsMobSpawnedByNpcTypeID(301034) == true) then
+  if not el:IsMobSpawnedByNpcTypeID(301031) and el:IsMobSpawnedByNpcTypeID(301034) then
     -- Depop the 'a slumbering beast' 301034
     eq.depop_all(301034);
     
@@ -90,7 +90,7 @@ function Gaz_Death(e)
 end
 
 function Gaz_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.stop_timer('reset');
     eq.set_timer('aeramp', 30 * 1000);
   else 

@@ -47,10 +47,10 @@
  
  
  function Kess_Combat(e) -- Set all variables back to default if party wipes and I am not in combat.
-	if (e.joined == true) then -- Keep track of my location every 3 seconds. If I am not in my box, put me there.
+	if e.joined then -- Keep track of my location every 3 seconds. If I am not in my box, put me there.
 	eq.set_timer("Kess", 3000);
 	eq.set_timer("Charm", 90000);
-	elseif (e.joined == false) then
+	else
 	eq.set_timer("Fail",30000); -- set a 30s fail condition if I am not in combat.
 	eq.set_timer("Respawn",40000);
 	end
@@ -86,7 +86,7 @@ end
 end
 
  function Kess_HP(e)
-	if (e.hp_event == 90) and kess_heal == true and depleted_killed < 6 then -- If my hp is 90, and I am allowed to heal, and my enemies have killed less than 6 depleted guardians
+	if e.hp_event == 90 and kess_heal and depleted_killed < 6 then -- If my hp is 90, and I am allowed to heal, and my enemies have killed less than 6 depleted guardians
 		e.self:SetHP(e.self:GetMaxHP() * (kess_hp / 100.0)); -- Set my HP to 100
 		e.self:CastSpell(6546, e.self:GetID()); -- Cast <Recreation>
 		e.self:ModifyNPCStat("max_hp", tostring(e.self:GetMaxHP() + 50000)); -- Add 50,000HP to my  max HP.
@@ -94,7 +94,7 @@ end
 		eq.debug("Times I've Healed: " .. times_healed); 
 		eq.signal(339109,1); -- Signal to the active manashard that I have healed.
 		eq.set_next_hp_event(90); -- Set this to happen again at 90%.
-	elseif (e.hp_event == 80) and unlockone == false then -- If my HP is 80% and I have not locked my HP yet.
+	elseif e.hp_event == 80 and not unlockone then -- If my HP is 80% and I have not locked my HP yet.
 			--eq.zone_emote(MT.Yellow,"I'm ready for Phase 2");
 			eq.set_timer("Lock",3000); -- Lock my  HP at this value.
 			local which = math.random(4); -- Spawn one of these 4 Options
@@ -119,7 +119,7 @@ end
 				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
-	elseif (e.hp_event == 60) and unlocktwo == false then -- If my HP is 60% and I have not locked my HP yet.
+	elseif e.hp_event == 60 and not unlocktwo then -- If my HP is 60% and I have not locked my HP yet.
 			eq.set_timer("Lock",3000); -- Lock my HP here
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
@@ -143,7 +143,7 @@ end
 				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
-	elseif (e.hp_event == 40) and unlockthree == false then -- If my HP is 40% and I have not locked my HP yet.
+	elseif e.hp_event == 40 and not unlockthree then -- If my HP is 40% and I have not locked my HP yet.
 			eq.set_timer("Lock",3000); -- Lock my HP here
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
@@ -167,7 +167,7 @@ end
 				eq.spawn2(339111,0,0,1202.17,6478.35,754.83,222.0); -- NPC: #Protector_of_Kessdona
 				eq.spawn2(339115,0,0,1126.67,6409.48,753.60,189.5); -- Real
 			end
-	elseif (e.hp_event == 20) and unlockfour == false then -- If my HP is 20% and I have not locked my HP yet.
+	elseif e.hp_event == 20 and not unlockfour then -- If my HP is 20% and I have not locked my HP yet.
 			eq.set_timer("Lock",3000); -- Lock my HP here
 			local which = math.random(4); -- Spawn one of these 4 Options
 			if  (which == 1) then
@@ -308,42 +308,42 @@ function Active_Signal(e)
 		e.self:SetHP(e.self:GetMaxHP() * (forty / 100.0)); -- Remove 20% of my HP. I now have 40% HP.
 	elseif (e.signal==1) and times_healed == 4 then -- If I am an active guardian and Ive been told something happened and Kessdona has healed four times. 
 		e.self:SetHP(e.self:GetMaxHP() * (twenty / 100.0)); -- Remove 20% of my HP. I now have 20% HP.
-	elseif (e.signal==1) and times_healed == 5 and depleted_killed == 0 and depleted_spawn == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
+	elseif (e.signal==1) and times_healed == 5 and depleted_killed == 0 and not depleted_spawn then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109); -- depop current active manashard guardian.
 		eq.depop(339108); -- depop inactive manashard guardian next in line.
 		eq.spawn2(339116,0,0,1257.17,6330.92,747.16,462.3):AddToHateList(e.self:GetTarget(),1); -- Spawn depleted manashard guardian with 10% HP
 		eq.spawn2(339109,0,0,1158.62,6328.01,745.01,28.5); -- spawn active manashard guardian in next location.
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.
 		depleted_spawn=true; -- Tell Kessdona that I've spawned and not to spawn me again!
-	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==1 and depleted_spawntwo == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
+	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==1 and not depleted_spawntwo then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109);  -- depop current active manashard guardian.
 		eq.depop(339118);  -- depop inactive manashard guardian next in line.
 		eq.spawn2(339116,0,0,1158.62,6328.01,745.01,28.5):AddToHateList(e.self:GetTarget(),1); -- Spawn depleted manashard guardian with 10% HP
 		eq.spawn2(339109,0,0,1128.33,6414.53,744.35,129.5); -- spawn active manashard guardian in next location.
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.
 		depleted_spawntwo=true; -- Tell Kessdona that I've spawned and not to spawn me again!
-	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==2 and depleted_spawnthree == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
+	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==2 and not depleted_spawnthree then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109);  -- depop current active manashard guardian.
 		eq.depop(339119);  -- depop inactive manashard guardian next in line.
 		eq.spawn2(339116,0,0,1128.33,6414.53,744.35,129.5):AddToHateList(e.self:GetTarget(),1); -- Spawn depleted manashard guardian with 10% HP
 		eq.spawn2(339109,0,0,1156.67,6486.17,745.00,196.3); -- spawn active manashard guardian in next location.
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.
 		depleted_spawnthree=true; -- Tell Kessdona that I've spawned and not to spawn me again!
-	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==3 and depleted_spawnfour == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
+	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==3 and not depleted_spawnfour then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109);  -- depop current active manashard guardian.
 		eq.depop(339120);  -- depop inactive manashard guardian next in line.
 		eq.spawn2(339116,0,0,1156.67,6486.17,745.00,196.3):AddToHateList(e.self:GetTarget(),1);  -- Spawn depleted manashard guardian with 10% HP
 		eq.spawn2(339109,0,0,1229.06,6507.49,754.67,235.3); -- spawn active manashard guardian in next location.
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.
 		depleted_spawnfour=true; -- Tell Kessdona that I've spawned and not to spawn me again!
-	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==4 and depleted_spawnfive == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
+	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==4 and not depleted_spawnfive then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109); -- depop current active manashard guardian.
 		eq.depop(339121); -- depop inactive manashard guardian next in line.
 		eq.spawn2(339116,0,0,1229.06,6507.49,754.67,235.3):AddToHateList(e.self:GetTarget(),1); -- Spawn depleted manashard guardian with 10% HP
 		eq.spawn2(339109,0,0,1305.75,6458.83,752.10,329.0); -- spawn active manashard guardian in next location.
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.
 		depleted_spawnfive=true; -- Tell Kessdona that I've spawned and not to spawn me again!
-	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==5 and depleted_spawnsix == false then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
+	elseif (e.signal==1) and times_healed == 5 and depleted_killed ==5 and not depleted_spawnsix then -- If I'm signaled and Kess has healed five times, and no depleted is spawned.
 		eq.depop(339109); -- depop current active manashard guardian.
 		eq.spawn2(339116,0,0,1305.75,6458.83,752.10,329.0); -- NPC: depleted_manashard_guardian
 		times_healed=0; -- tell Kessdona to reset her healing counter back to 0.

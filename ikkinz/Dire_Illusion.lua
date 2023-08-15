@@ -3,7 +3,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);	
 	else
 		eq.stop_timer("OOBcheck");
@@ -41,7 +41,7 @@ end
 function event_death_complete(e)
 	local el = eq.get_entity_list();
 	
-	if (el:IsMobSpawnedByNpcTypeID(294043) == true) then --Diabolic_Destroyer (294043)
+	if el:IsMobSpawnedByNpcTypeID(294043) then --Diabolic_Destroyer (294043)
 		eq.spawn2(294137,0,0,e.self:GetSpawnPointX(), e.self:GetSpawnPointY(), e.self:GetSpawnPointZ(), e.self:GetSpawnPointH());
 		--check for DD, respawn if DD up 
 	end

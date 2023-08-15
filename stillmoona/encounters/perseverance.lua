@@ -42,7 +42,7 @@ elseif (e.timer == "ringbelltwo") then
  end
 
 function Goblin_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.stop_timer("ringbellone");
     eq.stop_timer("ringbelltwo");
   else

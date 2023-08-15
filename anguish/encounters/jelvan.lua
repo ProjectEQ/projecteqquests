@@ -86,17 +86,17 @@ end
 function Jelvan_Timer(e)
 	if (e.timer=="check_event") then
 		local torment_alive=0;
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317099)==true) then
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(317099) then
 			torment_alive=torment_alive+1;
 		else
 			tanthi_aggro=0;
 		end
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317100)==true) then
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(317100) then
 			torment_alive=torment_alive+1;
 		else
 			tantho_aggro=0;			
 		end
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(317101)==true) then
+		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(317101) then
 			torment_alive=torment_alive+1;
 		else
 			tanthu_aggro=0;			
@@ -211,7 +211,7 @@ end
 
 function Tormentor_Combat(e)
   local myid=e.self:GetNPCTypeID(); 
-  if (e.joined == true) then
+  if e.joined then
 	eq.set_timer("cast", 	math.random(10,45) * 1000);
 	eq.set_timer("void", 	math.random(1,20) * 1000);
 	eq.set_timer("relinq",  math.random(20,40) * 1000);

@@ -94,7 +94,7 @@ end
 
 function Air_Signal(e)
 	if(e.signal==303101) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303101) == false ) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(303101) then
 			e.self:GMMove(-1097,-1732,254,0);
 			e.self:WipeHateList();
 			e.self:SetSpecialAbility(19, 0);
@@ -105,7 +105,7 @@ function Air_Signal(e)
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303102) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303102) == false ) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(303102) then
 			e.self:GMMove(-1097,-1732,254,0);
 			e.self:WipeHateList();
 			e.self:SetSpecialAbility(19, 0);
@@ -116,7 +116,7 @@ function Air_Signal(e)
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303103) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303103) == false ) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(303103) then
 			e.self:GMMove(-1097,-1732,254,0);
 			e.self:WipeHateList();
 			e.self:SetSpecialAbility(19, 0);
@@ -127,7 +127,7 @@ function Air_Signal(e)
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303104) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303104) == false ) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(303104) then
 			e.self:GMMove(-1097,-1732,254,0);
 			e.self:WipeHateList();
 			e.self:SetSpecialAbility(19, 0);
@@ -138,7 +138,7 @@ function Air_Signal(e)
 			e.self:SetTargetable(true);	
 		end
 	elseif(e.signal==303105) then
-		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(303105) == false ) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(303105) then
 			e.self:GMMove(-1097,-1732,254,0);
 			e.self:WipeHateList();
 			e.self:SetSpecialAbility(19, 0);

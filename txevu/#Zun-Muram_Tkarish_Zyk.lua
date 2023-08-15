@@ -10,7 +10,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("banishHateTop", eq.ChooseRandom(30,120) * 1000) -- between 30 sec and 2 minute random banish timer
 		eq.set_timer("spawn_add", add_timer)
 		-- Wanton Destruction, scripted AE

@@ -18,8 +18,8 @@ local add = 0;
 
 
 function event_combat(e)
-	if (e.joined == true) then
-		eq.set_timer("agro", 1000);
+	if e.joined then
+		eq.set_timer("aggro", 1000);
 		eq.set_timer("check",2000);
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
@@ -122,7 +122,7 @@ function event_timer(e)
 		eq.spawn2(343360,0,0,-1595.10,-497.14,-177.46,505.3); -- NPC: Aspect_of_Protection
 		eq.signal(343360,2); -- NPC: Aspect_of_Protection
 		eq.stop_timer("protection");
-	elseif (e.timer == "agro") then
+	elseif (e.timer == "aggro") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 		if (npc.valid and (npc:GetNPCTypeID() == 343362 or npc:GetNPCTypeID() == 343363 or npc:GetNPCTypeID() == 343360 or npc:GetNPCTypeID() == 343361 or npc:GetNPCTypeID() == 343359)) then

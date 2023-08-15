@@ -144,10 +144,10 @@ end
 
 function Mini_Death(e)
   local el = eq.get_entity_list();
-  if (el:IsMobSpawnedByNpcTypeID(305001) == false and
-      el:IsMobSpawnedByNpcTypeID(305002) == false and
-      el:IsMobSpawnedByNpcTypeID(305003) == false and
-      el:IsMobSpawnedByNpcTypeID(305000) == false ) then
+  if (not el:IsMobSpawnedByNpcTypeID(305001) and
+      not el:IsMobSpawnedByNpcTypeID(305002) and
+      not el:IsMobSpawnedByNpcTypeID(305003) and
+      not el:IsMobSpawnedByNpcTypeID(305000)) then
     
       eq.signal(305004, 1); -- NPC: Master_of_Weaponry
   end

@@ -7,7 +7,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.stop_timer('Depop');
 	eq.set_timer('repopadds', 300 * 1000);
   else
@@ -21,16 +21,16 @@ function event_timer(e)
 		eq.depop();
 	elseif (e.timer == 'repopadds') then
 		e.self:Say("Sivuelaeus Rulour ans Rashan!");
-			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179174) == false) then -- NPC: #Diabo_Tatrua
+			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(179174) then -- NPC: #Diabo_Tatrua
 				eq.spawn2(179174,0,0,-1769,1038,17.13,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Diabo_Tatrua
 			end
-			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179181) == false) then -- NPC: #Tavuel_Tatrua
+			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(179181) then -- NPC: #Tavuel_Tatrua
 				eq.spawn2(179181,0,0,-1769,1056,17.13,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Tavuel_Tatrua
 			end
-			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179164) == false) then -- NPC: #Thall_Tatrua
+			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(179164) then -- NPC: #Thall_Tatrua
 				eq.spawn2(179164,0,0,-1769,1084,17.42,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Thall_Tatrua
 			end
-			if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(179173) == false) then -- NPC: #Va_Tatrua
+			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(179173) then -- NPC: #Va_Tatrua
 				eq.spawn2(179173,0,0,-1769,1116,17.13,126):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #Va_Tatrua
 			end
 	end

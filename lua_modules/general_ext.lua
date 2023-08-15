@@ -31,7 +31,7 @@ end
 function eq.ZoneMarquee(color,opacity,fade_in,fade_out,duration,message)
 --type = color, priority = text opacity, fade_in = 1, fade_out = fade out in MS, duration = duration in MS
 --SendMarqueeMessage(Integer type, Integer priority, Integer fade_in, Integer fade_out, Integer duration, String msg);
---e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "
+--e.self:SendMarqueeMessage(MT.Yellow, 510, 1, 100, 10000, "
 	local now_clients = eq.get_entity_list():GetClientList();
 	for client in now_clients.entries do
 		if (client.valid) then

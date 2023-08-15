@@ -48,7 +48,7 @@ function Keldovan_Death(e)
 end
 
 function Keldovan_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
     e.self:Say("You have earned the right to die at my feet.");
 	eq.set_timer("packmaster", math.random(5,30)*1000); 
 	eq.set_timer("torment",math.random(5,30)*1000);

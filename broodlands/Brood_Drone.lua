@@ -1,5 +1,5 @@
 function event_death_complete(e)
-  if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(337060) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(337090) == false) then
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(337060) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(337090) then
     eq.spawn2(337254,0,0,1403,-282,26.47,253); -- NPC: The_Broodqueen
     eq.zone_emote(MT.Yellow, "You've really stirred up the nest this time! Something's rumbling around deep in the jungle and it's furious!");
   else

@@ -13,7 +13,7 @@ function event_say(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	eq.set_timer("depop", 900 * 1000);
   end
 end

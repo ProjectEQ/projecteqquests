@@ -5,7 +5,7 @@ function event_death_complete(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 6 * 1000); -- 6 Sec OOB Check
 	else
 		eq.stop_timer("OOBcheck");

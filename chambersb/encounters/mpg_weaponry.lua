@@ -166,7 +166,6 @@ end
 function event_encounter_load(e)
   eq.register_npc_event('mpg_weaponry', Event.spawn,          305004, Weaponry_Spawn);
   eq.register_npc_event('mpg_weaponry', Event.say,            305004, Weaponry_Say);
-  --eq.register_npc_event('mpg_weaponry', Event.death_complete, 305004, Weaponry_Death);
   eq.register_npc_event('mpg_weaponry', Event.timer,          305004, Weaponry_Timer);
   eq.register_npc_event('mpg_weaponry', Event.signal,         305004, Weaponry_Signal);
 

@@ -350,7 +350,6 @@ function event_encounter_load(e)
     eq.register_npc_event('champ', Event.combat, 297034, MastruqChampion_Combat);
     eq.register_npc_event('champ', Event.signal, 297034, MastruqChampion_Signal);
     eq.register_npc_event('champ', Event.hp, 297034, MastruqChampion_HP);
-   eq.register_npc_event('champ', Event.death_complete, 297034, MastruqChampion_Death);
 eq.register_npc_event('champ', Event.spawn, 297034, MastruqChampion_Spawn);
 
     eq.register_npc_event('champ', Event.hp, 297211, IxtHsek_HP);

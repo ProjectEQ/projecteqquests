@@ -185,7 +185,7 @@ function PKK_Roaming_Caster_Three_Spawn(e)
 	eq.set_timer('snake1', 30000);
 end
 
-function PKK_Roaming_Caster_Spawn(e)
+function PKK_Roaming_Caster_Four_Spawn(e)
 	eq.start(96);
 	CastOnRandom(e.self, 888); -- Wrath of the Ikaav
 	eq.set_timer('snake1', 30000);

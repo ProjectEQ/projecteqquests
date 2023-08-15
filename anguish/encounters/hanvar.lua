@@ -134,6 +134,11 @@ end
 
 function Hanvar_Death(e)
 	eq.signal(317116, 317002); -- NPC: zone_status
+	eq.disable_spawn2(54535);
+	eq.disable_spawn2(54536);
+	eq.disable_spawn2(54537);
+	eq.disable_spawn2(54538);
+	eq.disable_spawn2(54539);
 end
 
 function event_encounter_load(e)

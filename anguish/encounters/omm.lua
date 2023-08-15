@@ -46,7 +46,7 @@ function OMM_Spawn(e)
 		eq.set_timer("banish_phase2", 1000); -- banish anyone that wasn't up here correctly
 		e.self:SetAppearance(1);
 		e.self:SetOOCRegen(0);
-		e.self:ModifyNPCStat("combat_hp_regen", "0");
+		e.self:ModifyNPCStat("hp_regen", "0");
 		e.self:SetHP(banished_hp);
 		e.self:SetSpecialAbility(SpecialAbility.summon, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
@@ -99,7 +99,7 @@ function OMM_Say(e)
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0);
-		e.self:ModifyNPCStat("combat_hp_regen", "10000");
+		e.self:ModifyNPCStat("hp_regen", "10000");
 	end
 end
 
@@ -132,7 +132,7 @@ function OMM_HP(e)
 	elseif e.hp_event == 30 then
 		e.self:CameraEffect(2000,3);
 		e.self:SetOOCRegen(0);
-		e.self:ModifyNPCStat("combat_hp_regen", "0");
+		e.self:ModifyNPCStat("hp_regen", "0");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:WipeHateList();
 		e.self:SetAppearance(1);		
@@ -162,7 +162,7 @@ end
 function OMM_Combat(e)
 	if e.joined then
 		e.self:SetAppearance(0);
-		e.self:ModifyNPCStat("combat_hp_regen", "10000");
+		e.self:ModifyNPCStat("hp_regen", "10000");
 		eq.stop_timer("reset");
 		eq.set_timer("buzz",    math.random(25,55)  * 1000);
 		eq.set_timer("mmgaze",  math.random(45,75)  * 1000);

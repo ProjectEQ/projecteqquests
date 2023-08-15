@@ -44,63 +44,57 @@ Wanton Destruction PB AE 300', Magic (-300)
 
 --]]
 
---function Ture_Spawn(e)
-  --eq.set_next_hp_event(90);
---end
+local aeramp_distance = 101; -- % of combat range
 
 function Ture_Combat(e)
-  if (e.joined == true) then
-    --e.self:Say("");
-	eq.set_timer("wanton", math.random(30,60) * 1000);
-	eq.set_timer("breath", math.random(10,30) * 1000);
-	eq.set_timer("aeramp_warn", math.random(30,60) * 1000);	
-  else
-    --eq.set_timer("wipecheck", 1 * 1000);
-	eq.stop_timer("wanton");
-	eq.stop_timer("breath");
-	eq.stop_timer("aeramp_warn");
-  end
+	if e.joined then
+		eq.set_timer("wanton", math.random(30,60) * 1000);
+		eq.set_timer("breath", math.random(10,30) * 1000);
+		eq.set_timer("aeramp_warn", math.random(30,60) * 1000);
+	else
+		--eq.set_timer("wipecheck", 1 * 1000);
+		eq.stop_timer("wanton");
+		eq.stop_timer("breath");
+		eq.stop_timer("aeramp_warn");
+	end
 end
 
 function Ture_Timer(e)
-	if (e.timer == "wanton") then
+	if e.timer == "wanton" then
 		e.self:CastSpell(1250, e.self:GetTarget():GetID()); -- Spell: Wanton Destruction
-		eq.set_timer("wanton",75*1000); 
-	elseif (e.timer == "breath") then
+		eq.set_timer("wanton",75 * 1000);
+	elseif e.timer == "breath" then
 		e.self:CastSpell(eq.ChooseRandom(5804,5806,5807), e.self:GetTarget():GetID());
-		eq.set_timer("breath",30*1000);
-	elseif (e.timer == "aeramp_warn") then
-		e.self:Emote(" roars with fury as it surveys its attackers.");
-		eq.set_timer("aeramp_warn",60*1000);
-		eq.set_timer("aeramp_on",6*1000);
-	elseif (e.timer == "aeramp_on") then
+		eq.set_timer("breath",30 * 1000);
+	elseif e.timer == "aeramp_warn" then
+		eq.get_entity_list():MessageClose(e.self, false, 500, MT.White, "Ture roars with fury as it surveys its attackers.");
+		eq.set_timer("aeramp_warn",60 * 1000);
+		eq.set_timer("aeramp_on",6 * 1000);
+	elseif e.timer == "aeramp_on" then
 		eq.stop_timer("aeramp_on");
-		e.self:Emote("'s eyes roll into its head as it goes into a frenzy.");
+		eq.get_entity_list():MessageClose(e.self, false, 500, MT.White, "Ture's eyes roll into its head as it goes into a frenzy.");
 		e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
-		e.self:SetSpecialAbility(SpecialAbility.rampage, 0);	
 	    e.self:SetSpecialAbility(SpecialAbility.area_rampage, 1);
 		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage, 0, 100);
+		e.self:SetSpecialAbilityParam(SpecialAbility.area_rampage,8,aeramp_distance);
+		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 1);
 		eq.set_timer("aeramp_off",10*1000);
-	elseif (e.timer == "aeramp_off") then
+	elseif e.timer == "aeramp_off" then
 		eq.stop_timer("aeramp_off");
-		e.self:Emote(" calms and regains its focus.");	
+		eq.get_entity_list():MessageClose(e.self, false, 500, 0, "Ture calms and regains its focus.");
 		e.self:SetSpecialAbility(SpecialAbility.area_rampage, 0);
-		e.self:SetSpecialAbility(SpecialAbility.flurry, 1);
-		e.self:SetSpecialAbility(SpecialAbility.rampage, 1);	
+		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 20);
 	end
 end
 
 function Ture_Death(e)
-	eq.signal(317116 , 317003); -- NPC: zone_status
-	--set player lockout
-	--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"	
+	eq.signal(317116,317003); -- NPC: zone_status
 end
 
 function event_encounter_load(e)
---  eq.register_npc_event('ture', Event.spawn,          317003, Ture_Spawn); 
-  eq.register_npc_event('ture', Event.combat,         317003, Ture_Combat); 
-  eq.register_npc_event('ture', Event.timer,          317003, Ture_Timer);
-  eq.register_npc_event('ture', Event.death_complete, 317003, Ture_Death); 
+	eq.register_npc_event('ture', Event.combat,         317003, Ture_Combat);
+	eq.register_npc_event('ture', Event.timer,          317003, Ture_Timer);
+	eq.register_npc_event('ture', Event.death_complete, 317003, Ture_Death);
 end
 
 function event_encounter_unload(e)

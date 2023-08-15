@@ -15,7 +15,7 @@ if counter == 5 then
 eq.depop(297072); --restless_wraith
 eq.unique_spawn(297218,0,0,-720, 346, -475.8, 266); --High_Priest_Nkosi_Bakari
 eq.spawn_condition("txevu",0, 1, 0); --disable Vrex_Invoker Spawns
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"As the final shade lends its voice to the chanting, the prayers reach a crescendo then abruptly fall silent.  A thick mist seeps up from the ground and envelopes the restless wraith.  When the mists fade, an elderly priest stands where the wraith used to be.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"As the final shade lends its voice to the chanting, the prayers reach a crescendo then abruptly fall silent.  A thick mist seeps up from the ground and envelopes the restless wraith.  When the mists fade, an elderly priest stands where the wraith used to be.");
 eq.signal(297213,2); --awaken
 eq.signal(297214,2); --awaken
 eq.signal(297215,2); --awaken
@@ -145,7 +145,7 @@ if(e.timer=="OOBcheck") then
   	  end
 elseif(e.timer=="charm") then
   eq.stop_timer("charm");
-  eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
+  eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
   e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Possession
   eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
@@ -154,7 +154,7 @@ elseif(e.timer=="checkcharm") then
       eq.set_timer("checkcharm", 5 * 1000);
     else
       eq.spawn2(297213,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-      eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
+      eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
       eq.depop();
     end
 end
@@ -210,7 +210,7 @@ if(e.timer=="OOBcheck") then
   	  end
 elseif(e.timer=="charm") then
 eq.stop_timer("charm");
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
 e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Possession
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
@@ -219,7 +219,7 @@ if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297214,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
 eq.depop();
 end
 end
@@ -275,7 +275,7 @@ if(e.timer=="OOBcheck") then
   	  end
 elseif(e.timer=="charm") then
 eq.stop_timer("charm");
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
 e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Possession
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
@@ -284,7 +284,7 @@ if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297215,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
 eq.depop();
 end
 end
@@ -340,7 +340,7 @@ if(e.timer=="OOBcheck") then
   	  end
 elseif(e.timer=="charm") then
 eq.stop_timer("charm");
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
 e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Possession
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
@@ -349,7 +349,7 @@ if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297216,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
 eq.depop();
 end
 end
@@ -404,7 +404,7 @@ if(e.timer=="OOBcheck") then
   	  end
 elseif(e.timer=="charm") then
 eq.stop_timer("charm");
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Deathly hands reach deep within the body of the shade's victim as it draws itself forward and quickly fades from view.  The only sign of its passage is a cold flame flickering in the eyes of its new host.");
 e.self:CastedSpellFinished(891, e.self:GetHateTop());	-- Spell: Spiritual Possession
 eq.set_timer("checkcharm", 5 * 1000);
 elseif(e.timer=="checkcharm") then
@@ -413,7 +413,7 @@ if e.self:HasPet() then
 eq.set_timer("checkcharm", 5 * 1000);
 else
 eq.spawn2(297217,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading());
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Having satiated itself on its previous host, the Shade of a Vrex Invoker reforms looking noticeably stronger.");
 eq.depop();
 end
 end

@@ -26,5 +26,5 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	eq.get_entity_list():MessageClose(e.self,false,120,0,"The dying cries of the Vrex cause the final Stonemaster to falter for a moment, but continuing the chanting with renewed vigor.")
+	eq.get_entity_list():MessageClose(e.self,false,120,MT.White,"The dying cries of the Vrex cause the final Stonemaster to falter for a moment, but continuing the chanting with renewed vigor.")
 end

@@ -29,7 +29,7 @@ end
 
 function CloakedTimer(e)
     local entity_list = eq.get_entity_list()
-    entity_list:MessageClose(e.self, true, 100, 15, "The figure begins to fade into the shadows before your very eyes.  You notice movement out of the corner of your left eye.")
+    entity_list:MessageClose(e.self, true, 100, MT.Yellow, "The figure begins to fade into the shadows before your very eyes.  You notice movement out of the corner of your left eye.")
     local bard_client = entity_list:GetClientByID(bard)
     if bard_client.valid and bard_client:GetClass() == Class.BARD then
         eq.spawn2(20291, 0, 0, bard_client:GetX() + 100, bard_client:GetY(), bard_client:FindGroundZ(bard_client:GetX() + 100, bard_client:GetY(), bard_client:GetZ()) + 5, bard_client:GetHeading())

@@ -24,27 +24,27 @@ end
 --controls min/max hit based on HP %
 function event_hp(e)	
 	if e.hp_event == 90 then
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,500,"Blisters and festering sores covering Bertoxxulous's hide burst.  A noxious ooze bleeds down his scarred flesh, strengthening his physical body.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,500,"Blisters and festering sores covering Bertoxxulous's hide burst.  A noxious ooze bleeds down his scarred flesh, strengthening his physical body.");
 		eq.set_next_hp_event(70);
 		SetStats(e,2);		
 	elseif e.hp_event == 70 then
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,500,"Blisters and festering sores covering Bertoxxulous's hide burst.  A noxious ooze bleeds down his scarred flesh, strengthening his physical body.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,500,"Blisters and festering sores covering Bertoxxulous's hide burst.  A noxious ooze bleeds down his scarred flesh, strengthening his physical body.");
 		eq.set_next_hp_event(55);
 		SetStats(e,3)
 	elseif e.hp_event == 55 then
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,500,"Blisters and festering sores covering Bertoxxulous's hide burst.  A noxious ooze bleeds down his scarred flesh, strengthening his physical body.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,500,"Blisters and festering sores covering Bertoxxulous's hide burst.  A noxious ooze bleeds down his scarred flesh, strengthening his physical body.");
 		eq.set_next_hp_event(40);
 		SetStats(e,4)
 	elseif e.hp_event == 40 then
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,500,"Bertoxxulous falters, nearly imperceptibly.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,500,"Bertoxxulous falters, nearly imperceptibly.");
 		eq.set_next_hp_event(30);
 		SetStats(e,3);
 	elseif e.hp_event == 30 then
 		eq.set_next_hp_event(10);
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,500,"Bertoxxulous falters, nearly imperceptibly.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,500,"Bertoxxulous falters, nearly imperceptibly.");
 		SetStats(e,2);
 	elseif e.hp_event == 10 then
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,500,"Bertoxxulous falters, nearly imperceptibly.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,500,"Bertoxxulous falters, nearly imperceptibly.");
 		SetStats(e,1);
 	end		
 end

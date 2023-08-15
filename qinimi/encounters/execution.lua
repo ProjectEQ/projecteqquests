@@ -199,7 +199,7 @@ function Executioner_Signal(e)
 	e.self:Say("As you wish Tixxrt. I shall slay the spy no matter what the cost.");
 	eq.start(47); --walk to kreshin
 	elseif (e.signal==2) then
- 	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"As the executioner swings his axe forward, Kreshin cries out one last time before the flame of his life is extinguished.");
+ 	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"As the executioner swings his axe forward, Kreshin cries out one last time before the flame of his life is extinguished.");
 	e.self:Emote("laughs as innocent blood is spread all over the platform. 'Return to your friends and let them know that the might of the Muramites cannot be stopped!");
 	elseif (e.signal==3) then
 	e.self:SetSpecialAbility(35, 0); --turn off immunity

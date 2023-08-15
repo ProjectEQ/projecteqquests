@@ -40,17 +40,17 @@ function event_say(e)
 		  busy = 1;
 			-- is there a cap on prize money?
 			if prize_money == 1600 then
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan glares at you with distrust.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan glares at you with distrust.");
 			elseif prize_money == 1700 then
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan gives you a stern look of disapproval.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan gives you a stern look of disapproval.");
 			elseif prize_money == 1800 then
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan gives you a stern look of disapproval.");
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan gives you a stern look of disapproval.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!");
 			elseif prize_money == 1900 then
 				local rand = math.random(1,100);
           				if (rand >= 50) then
 						e.self:Emote("sweeps the cards from the table. 'Great!  You ...");
-						eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
+						eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
 						e.self:CastSpell(6095, e.other:GetID()); --incapacitating darkness
                 		
 						prize_money = 0;
@@ -58,12 +58,12 @@ function event_say(e)
 				
 						e.other:MovePC(6, -541.99, -38.02, -10.30, 388.2);
 					end
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan turns his attention to the nobles, 'Glad you folks could make it tonight.  I trust you were treated well at dinner?");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan turns his attention to the nobles, 'Glad you folks could make it tonight.  I trust you were treated well at dinner?");
 			elseif prize_money == 2000 then
 				local rand = math.random(1,100);
           				if (rand >= 50) then
 						e.self:Emote("sweeps the cards from the table. 'Great!  You ...");
-						eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
+						eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
 						e.self:CastSpell(6095, e.other:GetID()); --incapacitating darkness
                 		
 						prize_money = 0;
@@ -71,13 +71,13 @@ function event_say(e)
 				
 						e.other:MovePC(6, -541.99, -38.02, -10.30, 388.2);
 					end
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan appears restless.  He taps his feet and glances around the casino.");
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan appears restless.  He taps his feet and glances around the casino.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!");
 			elseif prize_money >= 2100 then
 				local rand = math.random(1,100);
           				if (rand >= 50) then
 						e.self:Emote("sweeps the cards from the table. 'Great!  You ...");
-						eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
+						eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
 						e.self:CastSpell(6095, e.other:GetID()); --incapacitating darkness
                 		
 						prize_money = 0;
@@ -85,7 +85,7 @@ function event_say(e)
 				
 						e.other:MovePC(6, -541.99, -38.02, -10.30, 388.2);
 					end
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan turns to the nobles, 'Is there anything we can fetch for you?");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan turns to the nobles, 'Is there anything we can fetch for you?");
 			end
 		eq.set_timer("busy", 10 * 1000); --10 sec cd on dealing hands
 		elseif(e.message:findi("deal") and urn == 1 and busy == 1) then
@@ -103,7 +103,7 @@ function event_say(e)
 			elseif prize_money < 1800 then
 				--banish
 				e.self:Say(" Thanks for playing, " .. e.other:GetName() .. ". Here are your ...");
-				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
+				eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 100,"Guard Kovan brandishes his blade, 'Not so fast. There's something strange about... I knew it - this artifact was stolen! You're one of those smugglers aren't you? Think about your crimes while you rot in a cell, two-bit thief. Your days of pilfering and plundering are over.");
 				e.self:CastSpell(6095, e.other:GetID()); --incapacitating darkness
                 		
 				prize_money = 0;

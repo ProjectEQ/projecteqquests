@@ -12,7 +12,7 @@ local instance_id;
 local raid_list;
 
 function Guardian_Death(e)
-  eq.get_entity_list():MessageClose(e.self, true, 100, 15, "The massive stone beast shudders violently as it transforms into a lifeless statue. The power of its master wanes slightly by the loss of its soul-bound guardian.")
+  eq.get_entity_list():MessageClose(e.self, true, 100, MT.Yellow, "The massive stone beast shudders violently as it transforms into a lifeless statue. The power of its master wanes slightly by the loss of its soul-bound guardian.")
   local valdoon = eq.get_entity_list():GetMobByNpcTypeID(243672);
   local valdoon_hp = valdoon:GetHP() - valdoon_hp_5;
   valdoon:SetOOCRegen(0);
@@ -190,20 +190,20 @@ function Victim_Death(e)
 		local rand = math.random(1,5); 
 		if (rand == 1) then
 			e.self:CastSpell(4173,e.self:GetID()); --mental renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"This soul breaks free and grants you a gift as thanks.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"This soul breaks free and grants you a gift as thanks.");
 		elseif (rand == 2) then
 			eq.spawn2(243684,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(243684,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(243684,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"You have disturbed a group of feeding spiders by touching this victim!");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"You have disturbed a group of feeding spiders by touching this victim!");
 		elseif (rand == 3) then
 			e.self:CastSpell(4174,e.self:GetID()); --physical renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"This soul breaks free and grants you a gift as thanks.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"This soul breaks free and grants you a gift as thanks.");
 		elseif (rand == 4) then
 			e.self:CastSpell(4175,e.self:GetID()); --renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"This soul breaks free and grants you a gift as thanks.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"This soul breaks free and grants you a gift as thanks.");
 		elseif (rand == 5) then
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"You have set this poor soul free of its evil entrapment.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"You have set this poor soul free of its evil entrapment.");
 		end
 end
 

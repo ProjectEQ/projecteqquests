@@ -403,7 +403,7 @@ end
 function Trap_Combat(e)
 if (e.joined == true) then
 e.self:CastSpell(3927,e.other:GetID(),0,0); -- Spell:Dark Infection
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"A claw trap springs forth");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"A claw trap springs forth");
 eq.depop_with_timer();
 end
 end
@@ -411,7 +411,7 @@ end
 function Trap2_Combat(e)
 if (e.joined == true) then
 e.self:CastSpell(3943,e.other:GetID(),0,0); -- Spell:Blade Arc
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"A claw trap springs forth");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"A claw trap springs forth");
 eq.depop_with_timer();
 end
 end
@@ -419,7 +419,7 @@ end
 function Trap3_Combat(e)
 if (e.joined == true) then
 e.self:CastSpell(3933,e.other:GetID(),0,0); -- Spell:Savage Jaws
-eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"A claw trap springs forth");
+eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"A claw trap springs forth");
 eq.depop_with_timer();
 end
 end

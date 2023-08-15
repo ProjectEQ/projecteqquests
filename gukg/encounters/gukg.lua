@@ -66,7 +66,7 @@ function Leklos_Hp(e)
 	if (e.hp_event == 25) then
 		e.self:SendIllusionPacket({race=349});
 		eq.set_next_inc_hp_event(27); --to reset on event failure
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 7, 150,"Chunks of decaying flesh pelt your armor as the decayed froglok reveals his skeletal innards.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.LightGray, 150,"Chunks of decaying flesh pelt your armor as the decayed froglok reveals his skeletal innards.");
 	elseif (e.inc_hp_event == 27) then
 		e.self:SendIllusionPacket({race=350});
 		eq.set_next_hp_event(25);
@@ -110,11 +110,11 @@ function Warrior_Timer(e)
 		eq.stop_timer("emotes");
 			local rand = math.random(1,100);
 			if (rand <= 33) then
-				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, MT.White, "Warrior of Gukta shouts, 'Have at thee you demon spawn, I shall not fall so easily.");
 			elseif (rand <= 66 and rand > 33) then
-				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, MT.White, "Warrior of Gukta shouts, 'Ha ha did you think a flesh wound would stop a Guktan Warrior.  You will have to do better then that.");
 			elseif (rand > 66) then
-				eq.get_entity_list():MessageClose(e.self, false, 100, 0, "Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
+				eq.get_entity_list():MessageClose(e.self, false, 100, MT.White, "Warrior of Gukta shouts, 'Back you spawn of evil, the warriors of Gukta shall always prevail.");
 			end
 		eq.set_timer("emotes", math.random(30,45) * 1000);
 	elseif(e.timer == "animation") then

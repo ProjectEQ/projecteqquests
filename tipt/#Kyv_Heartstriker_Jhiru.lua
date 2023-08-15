@@ -15,7 +15,7 @@ end
 
 function event_timer(e)
   if not leashed and not leash_box:contains(e.self:GetX(), e.self:GetY()) then
-    eq.get_entity_list():MessageClose(e.self, true, 100, 13, e.self:GetCleanName() .. " gnashes his teeth in anger as he redoubles his efforts to slay you.")
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.Red, e.self:GetCleanName() .. " gnashes his teeth in anger as he redoubles his efforts to slay you.")
     e.self:ModifyNPCStat("max_hit", "3221")
     e.self:ModifyNPCStat("min_hit", "1183")
     leashed = true

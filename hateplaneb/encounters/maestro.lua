@@ -118,7 +118,7 @@ end
 
 function Moaning_Timer(e)
     if(e.timer=="nuke") then
-        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"You seem to recognize one banshees music as a fire resist song.");
+        eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"You seem to recognize one banshees music as a fire resist song.");
         local rand = math.random(1,2);
           if (rand ==1) then
             e.self:CastedSpellFinished(943, e.self:GetHateTop()); -- Mana Drain (943)

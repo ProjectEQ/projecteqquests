@@ -166,15 +166,15 @@ function Tree_Death(e)
 		local rand = math.random(1,4); -- rand 4 does nothing
 		if (rand == 1) then
 			e.self:CastSpell(4173,e.self:GetID()); --mental renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
 		elseif (rand == 2) then
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(241081,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"Angry saplings break through the splintered tree and rush toward you!");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"Angry saplings break through the splintered tree and rush toward you!");
 		elseif (rand == 3) then
 			e.self:CastSpell(4174,e.self:GetID()); --physical renewal
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 100,"As the great relic of nature splinters, its fading life force dusts you with a natural magic.");
 		end
 end
 
@@ -209,7 +209,7 @@ end
 function Trap1_Combat(e)
 	if (e.joined == true) then
 		e.self:CastSpell(4163,e.other:GetID(),0,0); -- Spell:Curse of the Desert should fire 5 times consecutively on every person in range
-		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 70,"Stinging sand assaults you from every direction.");
+		eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 70,"Stinging sand assaults you from every direction.");
 		eq.depop_with_timer();
 	end
 end

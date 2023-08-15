@@ -59,7 +59,7 @@ function event_signal(e)
 			-- tell zone_status
 			eq.signal(223097,223172); -- Add Loot Lockout for Phase 1 Wing
 			eq.signal(223097,2); -- Increment Phase 1 Wing Counter
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},7,80,"Ethereal mists gather at the far wall, causing it to fade in and out of focus.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()},MT.LightGray,80,"Ethereal mists gather at the far wall, causing it to fade in and out of focus.");
 			-- depop as my job is done.
 			eq.depop();
 		end

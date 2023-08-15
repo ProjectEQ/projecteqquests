@@ -309,7 +309,6 @@ function event_encounter_load(e)
 	eq.register_npc_event('zmkp', Event.timer,          298029, ZMKP_Timer);
 	eq.register_npc_event('zmkp', Event.hp,             298029, ZMKP_Hp);
 	eq.register_npc_event('zmkp', Event.signal,         298029, ZMKP_Signal);
-	eq.register_npc_event('zmkp', Event.say,            298029, ZMKP_Say);
 	eq.register_npc_event('zmkp', Event.death_complete, 298029, ZMKP_Death);
 
 	eq.register_npc_event('zmkp', Event.spawn,          298125, ZMKP_Spawn_Speed);

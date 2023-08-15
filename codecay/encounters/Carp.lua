@@ -152,7 +152,6 @@ end
 
 function event_encounter_load(e)
 	eq.register_npc_event('Carp', Event.combat, 			200007, Carp_Combat);
-	eq.register_npc_event('Carp', Event.spawn,				200007, Carp_Summon);
 	eq.register_npc_event('Carp', Event.hp,					200007, Carp_HP);
 	eq.register_npc_event('Carp', Event.death_complete,		200007, Carp_Death);
 	
@@ -169,10 +168,7 @@ function event_encounter_load(e)
 	
 	eq.register_npc_event('Carp', Event.spawn,				200034, Vindor_Spawn);
 	eq.register_npc_event('Carp', Event.timer,				200034, Vindor_Timer);
-	eq.register_npc_event('Carp', Event.death_complete,		200034, Vindor_Death);
-	
-	
-	eq.register_npc_event('Carp', Event.death_complete,		200033, Raex_Death);
+
 	eq.register_npc_event('Carp', Event.spawn,				200033, Raex_Spawn);
 	eq.register_npc_event('Carp', Event.timer,				200033, Raex_Timer);
 	

@@ -153,9 +153,8 @@ function event_encounter_load(e)
 	eq.register_npc_event('battlemaster', Event.timer,			336127, Controller_Timer);
 		
 	eq.register_npc_event('battlemaster', Event.spawn,			336120, Battlemaster_Spawn);
-	eq.register_npc_event('battlemaster', Event.combat,			336120, Battlemaster_Combat);	
+	eq.register_npc_event('battlemaster', Event.combat,			336120, Battlemaster_Combat);
 	eq.register_npc_event('battlemaster', Event.timer,          336120, Battlemaster_Timer);
-	eq.register_npc_event('battlemaster', Event.signal,         336120, Battlemaster_Signal);
 	eq.register_npc_event('battlemaster', Event.hp,				336120, Battlemaster_HP);
 		
 	eq.register_npc_event('battlemaster', Event.signal,         336119, GoatIxt_Signal);

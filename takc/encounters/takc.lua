@@ -31,7 +31,7 @@ function QOS_HP(e)
   end
 end
 
-function Qos_Signal(e)
+function QOS_Signal(e)
 	if(e.signal == 1) then
 		e.self:ModifyNPCStat("hp_regen", "10000"); --add combat regen
 		e.self:SetSpecialAbility(35,0); -- remove Immune to Damage

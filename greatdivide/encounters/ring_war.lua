@@ -139,7 +139,7 @@ function Seneschal_Death(e)
   -- Pop Giants outside of Thurgadin
   -- Depop all the mobs in Thurgadin for 2hours.
   Stop_Event();
-  eq.zone_emote(13, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
+  eq.zone_emote(MT.Red, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
 
   -- Depop the Dwarf Generals if they are still alive.
   eq.depop_all(118169);
@@ -160,7 +160,7 @@ function Narandi_Spawn(e)
 end
 
 function Narandi_Death(e)
-  eq.zone_emote(13, 'No surprise the Age of the Dwarf continues with a Glorious victory of the Kromrif.');
+  eq.zone_emote(MT.Red, 'No surprise the Age of the Dwarf continues with a Glorious victory of the Kromrif.');
 
   Stop_Event();
 end

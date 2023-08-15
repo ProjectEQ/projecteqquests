@@ -52,13 +52,13 @@ function event_trade(e)
 		e.other:SummonItem(52347); -- Item: Fatestealer
 		e.other:AddAAPoints(5);
 		e.other:Ding();
-		e.other:Message(15,'You have gained 5 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 5 ability points!');
 		eq.set_global("Fatestealer","2",5,"F");
 	end
 	if( qglobals["Fatestealer"] == "3" and item_lib.check_turn_in(e.trade, {item1 = 47100,item2 = 52342,item3 = 21346,item4 = 52347}) ) then
 		e.other:QuestReward(e.self,{itemid=52348, exp=50000}); --Nightshade, Blade of Entropy
 		e.other:AddAAPoints(10);
-		e.other:Message(15,'You have gained 10 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 10 ability points!');
 		eq.set_global("Fatestealer","4",5,"F");
 		eq.delete_global("Fatestealer_bard");
 		eq.delete_global("Fatestealer_page");

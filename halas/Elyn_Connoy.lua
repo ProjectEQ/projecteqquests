@@ -19,11 +19,11 @@ function event_trade(e)
 	
 	if(qglobals["Fatestealer"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 9807})) then
 		e.self:Emote("reaches into the satchel and strokes the animal fur with the back of her hand. 'Mighty fine quality and craftsmanship if I do say so," .. e.other:GetName() .. ". My contact will surely appreciate this. You've done right to bring this back so quickly. I was starting to think you had forgotten about our bargain.' She releases her grip on her dagger so that you can get a view of the handle. 'Take a close look. You see the grooves in the handle, the soft leather? This beauty was made specially to fit my hands. A fine blade ain't no good unless you can wield it well. It's tantamount important that your weapon is comfortable. It should be a part of you, an extension of your arm. How else can you expect to wield it well? This is the knowledge I pass on to you.");
-		e.other:Message(15,"You have coerced Elyn into revealing her secret");
+		e.other:Message(MT.Yellow,"You have coerced Elyn into revealing her secret");
 		eq.set_global("Fatestealer_hl","1",5,"F");
 	elseif(qglobals["Fatestealer"] == "1" and qglobals["Fatestealer_gem"] == nil and e.other:Race()=="Barbarian" and item_lib.check_turn_in(e.trade, {item1 = 52353})) then 
 		e.self:Emote("reaches into the satchel and strokes the animal fur with the back of her hand. 'Mighty fine quality and craftsmanship if I do say so," .. e.other:GetName() .. ". My contact will surely appreciate this. You've done right to bring this back so quickly. I was starting to think you had forgotten about our bargain.' She releases her grip on her dagger so that you can get a view of the handle. 'Take a close look. You see the grooves in the handle, the soft leather? This beauty was made specially to fit my hands. A fine blade ain't no good unless you can wield it well. It's tantamount important that your weapon is comfortable. It should be a part of you, an extension of your arm. How else can you expect to wield it well? This is the knowledge I pass on to you.");
-		e.other:Message(15,"You have coerced Elyn into revealing her secret");
+		e.other:Message(MT.Yellow,"You have coerced Elyn into revealing her secret");
 		eq.set_global("Fatestealer_hl","1",5,"F");
 		eq.set_global("Fatestealer_gem","1",5,"F");
 	end

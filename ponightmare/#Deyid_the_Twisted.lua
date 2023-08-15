@@ -20,13 +20,13 @@ eq.spawn2(204085,0,0,990,908,280,512); --#a_foreboding_tree (204085) will spawn 
 eq.spawn2(204085,0,0,808,1074,278,116); --#a_foreboding_tree (204085) will spawn a corrupt treant
 eq.spawn2(204086,0,0,1171,966,280,428); --#a_foreboding_tree (204086) will spawn a blighted treant
 eq.spawn2(204086,0,0,1057,1211,281,280); --#a_foreboding_tree (204086) will spawn a blighted treant
-eq.get_entity_list():MessageClose(e.self, false, 300, 0, "A low groaning sound wells up out of the surrounding woods as the rustling of leaves indicate something sinister is manifesting.");
+eq.get_entity_list():MessageClose(e.self, false, 300, MT.White, "A low groaning sound wells up out of the surrounding woods as the rustling of leaves indicate something sinister is manifesting.");
 eq.set_next_hp_event(50);
 elseif (e.hp_event == 50) then
 e.self:Emote("waves his branches about in agitation and the surrounding trees close in.");
 eq.set_next_hp_event(45);
 elseif (e.hp_event == 45) then
-eq.get_entity_list():MessageClose(e.self, false, 300, 0, "Several of the foreboding trees tear their roots from the ground and move in to aid Deyid.");
+eq.get_entity_list():MessageClose(e.self, false, 300, MT.White, "Several of the foreboding trees tear their roots from the ground and move in to aid Deyid.");
 eq.depop_all(204085);
 eq.depop_all(204086);
 eq.spawn2(204087, 0, 0, e.self:GetX()-5, e.self:GetY()+5,  e.self:GetZ(),  e.self:GetHeading()); -- a_blighted_treant (204087)
@@ -37,7 +37,7 @@ end
 end
 
 function event_death_complete(e)
-eq.get_entity_list():MessageClose(e.self, false, 300, 0, "An eerie silence settles onto the forest as Deyid the Twisted slumps over, defeated.");
+eq.get_entity_list():MessageClose(e.self, false, 300, MT.White, "An eerie silence settles onto the forest as Deyid the Twisted slumps over, defeated.");
 eq.depop_all(204068);
 eq.signal(204047,1); --signal Seilaen to shout/depop
 end

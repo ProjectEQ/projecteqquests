@@ -14,20 +14,20 @@ local function update_flags(client, make_permanent)
     client:Message(MT.NPCQuestSay, "Ekikoa tells you, 'I'm afraid that I have already aided as many as I can, I do not have the strength to assist you further.'")
   elseif make_permanent then
     client:Message(MT.NPCQuestSay, "Ekikoa tells you, 'This stone behind me is a shard of an Attunement Obelisk.  With a unique and ancient magic, we can attune spirits to this farstone to allow travel.  When you touch it, the stone will be imprinted with your essence, because this is only a section of an obelisk, more must be done in order to have full use of these obelisks.  Now, when you touch this stone, you will be sent back to Udranda.  She will tell you what you must do next when you are ready.'")
-    client:Message(15, "You feel at one with the Attunement Obelisk and feel the power of the earth moving through you.")
+    client:Message(MT.Yellow, "You feel at one with the Attunement Obelisk and feel the power of the earth moving through you.")
     eq.set_data(vxed_flag_key, "1")
     eq.set_global("god_tipt_access", "1", 5, "F")
     flagged_count = flagged_count + 1
   else
     client:Message(MT.NPCQuestSay, "Ekikoa tells you, 'I'm afraid I can do nothing to aid you.  You have not proven yourself to be a faithful friend of my people.  You must complete High Priest Diru's tasks before I can be permitted to grant you access to our sacred magic.'")
-    client:Message(15, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
+    client:Message(MT.Yellow, "You have gained a temporary character flag!  Seek the High Priest's Scribe to find out more information.")
     eq.set_data(vxed_flag_key, "T")
     flagged_count = flagged_count + 1
   end
 end
 
 function event_spawn(e)
-  eq.zone_emote(15, "A series of low chants comes to you from the Northeast, as Stonespiritist Ekikoa emerges from the shadows.")
+  eq.zone_emote(MT.Yellow, "A series of low chants comes to you from the Northeast, as Stonespiritist Ekikoa emerges from the shadows.")
 end
 
 function event_say(e)

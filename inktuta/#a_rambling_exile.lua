@@ -18,7 +18,7 @@ function event_say(e)
 			e.self:Emote("exhibits signs of a complete madman. 'This is like a horrible dream. Isolated, trapped, no way out! You, keep back. Stay away from me! Please, someone [awaken me from this nightmare]. AAAAUUUGGH!'");
 		elseif e.message:findi("awaken me from this nightmare") then
 			e.self:Emote("blinks and a spark of sanity returns. 'Ah, wha... what? How strange. I can see clearly now.'");
-			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 15, 70, "You feel as if you have made the correct move. However, the exile is already beginning to slip back into insanity. Somehow you must awaken them all, simultaneously.");
+			eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.Yellow, 70, "You feel as if you have made the correct move. However, the exile is already beginning to slip back into insanity. Somehow you must awaken them all, simultaneously.");
 			say_ready = 0;
 			eq.set_timer("set_ready", 30 * 1000); -- Timer
 			eq.signal(296070,296030); -- signal zone_status

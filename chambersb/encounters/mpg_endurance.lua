@@ -156,13 +156,13 @@ function Boss_Timer(e)
 
   elseif (e.timer == 'minute' and e.self:GetNPCTypeID() == 305007) then
     minute = minute + 1;
-    -- eq.zone_emote(15, "Min: " .. minute);
+    -- eq.zone_emote(MT.Yellow, "Min: " .. minute);
   elseif (e.timer == 'hp' and e.self:GetNPCTypeID() == 305007) then
     -- Lower both Boss mobs hps by 1%
     boss_hp = boss_hp - 1;
     local new_hp = e.self:GetMaxHP() * (boss_hp/100);
 
-    -- eq.zone_emote(15, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. boss_hp .. " new_hp: " .. new_hp);
+    -- eq.zone_emote(MT.Yellow, e.self:GetNPCTypeID() .. " Boss HP PCT: " .. boss_hp .. " new_hp: " .. new_hp);
 
     eq.get_entity_list():GetNPCByNPCTypeID(305007):SetHP(new_hp);
     eq.get_entity_list():GetNPCByNPCTypeID(305008):SetHP(new_hp);

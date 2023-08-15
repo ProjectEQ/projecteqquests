@@ -9,7 +9,7 @@ local wave = 0;
 
 function event_spawn(e)
     wave = 0;
-    eq.zone_emote(0,"Avatar of Fear shouts, 'Minions of fear hear me now! The temple of the great Cazic Thule has been defiled. I summon you to assist me in its cleansing!");
+    eq.zone_emote(MT.White,"Avatar of Fear shouts, 'Minions of fear hear me now! The temple of the great Cazic Thule has been defiled. I summon you to assist me in its cleansing!");
     e.self:SpellFinished(2128, e.self); -- Avatar of Fear
 end
 
@@ -18,17 +18,17 @@ function event_waypoint_arrive(e)
     if (e.wp == 5) then
         wave = wave +1;
             if wave == 5 then
-                eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... DREAD!");
+                eq.zone_emote(MT.White,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... DREAD!");
                 eq.unique_spawn(48237, 0,0, 625, 1090, -94, 388);
                 SpawnWave();
                 e.self:SpellFinished(2128, e.self); -- Avatar of Fear
             elseif wave == 10 then
-                eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... FRIGHT!");
+                eq.zone_emote(MT.White,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... FRIGHT!");
                 eq.unique_spawn(48239, 0,0, 587, 1128, -94, 254);
                 SpawnWave();
                 e.self:SpellFinished(2128, e.self); -- Avatar of Fear
             elseif wave == 15 then
-                eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... TERROR!");
+                eq.zone_emote(MT.White,"Avatar of Fear shouts, 'In the name of the fearful one, I call forth from the abyss... TERROR!");
                 eq.unique_spawn(48240, 0,0, 550, 1090, -94, 126);
                 SpawnWave();
                 e.self:SpellFinished(2128, e.self); -- Avatar of Fear
@@ -47,7 +47,7 @@ function event_waypoint_arrive(e)
                 e.self:SetSpecialAbility(35, 0); -- No Harm from Players off
                 --active avatar of fear
             else
-                eq.zone_emote(0,"Avatar of Fear shouts, 'In the name of the faceless, I command you, the minions of fear, ARISE!");
+                eq.zone_emote(MT.White,"Avatar of Fear shouts, 'In the name of the faceless, I command you, the minions of fear, ARISE!");
                 SpawnWave();
             end
     end

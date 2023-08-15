@@ -34,7 +34,7 @@ function event_say(e)
 			e.self:Emote("lowers his massive head slightly and peers down at you. You notice a small spark of light emanating from his eyes and you find yourself completely unable to look away. You feel a benign presence gliding through your thoughts.");
 			e.self:Say("Perhaps you speak the truth mortal. But the trust of the kin is not given lightly. You will have to provide some [" .. eq.say_link("proof") .. "] for yourself if you wish to gain my trust.");
 		elseif e.message:findi("proof") then
-			e.other:Message(15,"The smallest flicker of a grin crosses over Lantaric`Dar's draconic features. 'I was hoping you'd say that. There are three giants that act as heralds for Tormax in this region. Find them, kill them, and bring me their heads to prove your loyalty.'");				
+			e.other:Message(MT.Yellow,"The smallest flicker of a grin crosses over Lantaric`Dar's draconic features. 'I was hoping you'd say that. There are three giants that act as heralds for Tormax in this region. Find them, kill them, and bring me their heads to prove your loyalty.'");				
         elseif e.message:findi("continue to aid")  and qglobals["bardPQ"] == "1" then
 			e.self:Say("Excellent " .. e.other:Race() .. ". I have a matter that I believe you would be suited for. The children of Zek have been strangely silent over the last few days. While your attacks on the couriers certainly slowed them down, I suspect there is something else going on. If you can uncover what they're up to, I will be most pleased. The area around Kael Drakkel is most likely to yield information.")
 		end

@@ -8,7 +8,7 @@ function event_timer(e)
 
     		if(zone_time["zone_hour"] == 7 or zone_time["zone_hour"] == 19) then
 	
-			eq.zone_emote(0, "You hear a chime in the distance, and a voice booms in your ears, 'It is now the time for the changing of the guard!'");
+			eq.zone_emote(MT.White, "You hear a chime in the distance, and a voice booms in your ears, 'It is now the time for the changing of the guard!'");
 			eq.stop_timer("timecheck");
 			eq.set_timer("pause", 5 * 60 * 1000);
 			eq.spawn2(eq.ChooseRandom(211112,211002),33,0,109,17,3,126);

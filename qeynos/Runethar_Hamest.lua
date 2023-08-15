@@ -7,7 +7,7 @@ end
 
 function event_enter(e)
 	if(e.other:HasItem(18710) == true) then
-		e.other:Message(15,"As you glance about the large temple, Runethar Hamest greets you. 'Why hello there. Are you perhaps a new recruit? If you wish to follow the ways of Karana and become a paladin, read the note in your inventory and hand me your note to start your training.'");
+		e.other:Message(MT.Yellow,"As you glance about the large temple, Runethar Hamest greets you. 'Why hello there. Are you perhaps a new recruit? If you wish to follow the ways of Karana and become a paladin, read the note in your inventory and hand me your note to start your training.'");
 	end
 end
 

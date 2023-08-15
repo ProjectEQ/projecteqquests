@@ -30,7 +30,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18862})) then
 		if (fac <= 4) then
 			e.self:Say("So you have helped Nerissa. That is good. Here, then, is a small reward. May you find it useful. Keep fighting the good fight!");
-			e.other:SummonItem(ChooseRandom(6022,6023,6024,6025)); -- Item(s): Bronze Warhammer (6022), Bronze Flail (6023), Bronze Morning Star (6024), Bronze Warclub (6025)
+			e.other:SummonItem(eq.ChooseRandom(6022,6023,6024,6025)); -- Item(s): Bronze Warhammer (6022), Bronze Flail (6023), Bronze Morning Star (6024), Bronze Warclub (6025)
 			e.other:Ding();
 			e.other:Faction(341,1,0); -- Faction: Priests of Life
 			e.other:Faction(280,1,0); -- Faction: Knights of Thunder

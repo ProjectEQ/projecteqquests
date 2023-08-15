@@ -225,7 +225,7 @@ function Tunat_Second_HP(e)
 end
 
 function Tunat_First_Death(e)
-	eq.zone_emote(0, "Tunat`Muram Cuu Vauax says, 'In an explosion of energy, Tunat'Muram Cuu Vauax disappears while ancient pebbles pelt against your armor.'");
+	eq.zone_emote(MT.White, "Tunat`Muram Cuu Vauax says, 'In an explosion of energy, Tunat'Muram Cuu Vauax disappears while ancient pebbles pelt against your armor.'");
 	eq.zone_emote(MT.Yellow,"The room is filled with an eerie laugh. 'You have done well to defeat my doppelganger and have shown great strength by making it this far, but I'm afraid I must end your struggle here. Your days have been numbered since you first set foot upon this continent and your time is up. Kneel before me and I will grant you a quick death, but resist and you will suffer in ways that will be spoken about in hushed tones for eons to come.");
 	eq.spawn2(298055,0,0, 309, -170.8, 21.3, 118.8); -- NPC: #Tunat`Muram_Cuu_Vauax
 	eq.depop_all(298113);

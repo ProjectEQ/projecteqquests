@@ -36,7 +36,7 @@ end
 
 function warder_say(e)
   if e.message:findi("hail") and not event_started then
-    eq.get_entity_list():MessageClose(e.self, true, 100, 15, "It is odd that Sharalla's warder remains here after her demise.  It seems to be defending its master's remains.  The warder turns toward you as it notices your presence.  The moment it is distracted, several wild animals that had been hiding nearby lunge forth.")
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.Yellow, "It is odd that Sharalla's warder remains here after her demise.  It seems to be defending its master's remains.  The warder turns toward you as it notices your presence.  The moment it is distracted, several wild animals that had been hiding nearby lunge forth.")
     eq.spawn2(237793, 0, 0, -137, -868, 54, 216) -- a_starving_polar_bear
     eq.spawn2(237794, 0, 0, -6, -879, 52, 383)   -- #a_ravenous_snow_cougar
     eq.spawn2(237795, 0, 0, 7, -872, 51, 350)    -- #a_ravenous_snow_cougar
@@ -58,7 +58,7 @@ function corpse_timer(e)
     if npc.valid and animals[npc:GetNPCTypeID()] then
       local dist = npc:CalculateDistance(e.self:GetX(), e.self:GetY(), e.self:GetZ())
       if dist <= 20 then
-        eq.get_entity_list():MessageClose(e.self, true, 100, 15, "One of the feral animals gnaws the remains of Sharalla, tearing at her clothes and skin.  Her warder utters a pitiful whine.")
+        eq.get_entity_list():MessageClose(e.self, true, 100, MT.Yellow, "One of the feral animals gnaws the remains of Sharalla, tearing at her clothes and skin.  Her warder utters a pitiful whine.")
         total_bites = total_bites + 1
         break
       end
@@ -66,7 +66,7 @@ function corpse_timer(e)
   end
 
   if total_bites >= 10 then
-    eq.zone_emote(15, "Sharalla's remains have been irreversibly defiled by the wild animals. You have failed to protect her.")
+    eq.zone_emote(MT.Yellow, "Sharalla's remains have been irreversibly defiled by the wild animals. You have failed to protect her.")
     eq.signal(237743, 5) -- Durgin_Skell (warder event failed)
     depop_event()
   end

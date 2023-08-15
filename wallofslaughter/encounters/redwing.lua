@@ -72,7 +72,7 @@ function RealS_Timer(e)
                 SpawnShadows()
             end
         else
-            eq.get_entity_list():MessageClose(e.self, false, 120, 15, "A soft feminine voice laughs as the shadows shimmer and reform.") -- check color
+            eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, "A soft feminine voice laughs as the shadows shimmer and reform.") -- check color
             eq.depop()
             SpawnShadows()
         end

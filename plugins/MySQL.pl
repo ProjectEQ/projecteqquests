@@ -23,11 +23,12 @@ sub LoadMysql {
 	#::: Set MySQL Connection vars
 	$db = $config->{"server"}{"database"}{"db"};
 	$host = $config->{"server"}{"database"}{"host"};
+	$port = $config->{"server"}{"database"}{"port"};
 	$user = $config->{"server"}{"database"}{"username"};
 	$pass = $config->{"server"}{"database"}{"password"};
 
 	#::: Map DSN
-	$dsn = "dbi:mysql:$db:$host:3306";
+	$dsn = "dbi:mysql:$db:$host:$port";
 	
 	#::: Connect and return
 	$connect = DBI->connect($dsn, $user, $pass);

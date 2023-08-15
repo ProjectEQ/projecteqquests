@@ -18,7 +18,7 @@ function event_hp(e)
 		eq.signal(294478,1); --Glorified_Bolsterer remove immunity
 		eq.set_next_hp_event(50);
 	elseif(e.hp_event == 50) then
-		eq.zone_emote(0, "Guardian of Glorification splits into two smaller stone workers!");
+		eq.zone_emote(MT.White, "Guardian of Glorification splits into two smaller stone workers!");
 		eq.spawn2(294583,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: ##Guardian_of_Glorification
 		eq.spawn2(294583,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: ##Guardian_of_Glorification
 		eq.depop();

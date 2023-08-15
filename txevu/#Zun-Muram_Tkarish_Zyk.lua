@@ -36,7 +36,7 @@ function event_timer(e)
 		if (banished_pc ~= nil) then
 			if (banished_pc:GetX() >= 1410 and banished_pc:GetX() <= 1501 and banished_pc:GetY() >= 178 and banished_pc:GetY() <= 237) then
 				-- Spawn north jail ghosts, a_vengeful_apparition
-				banished_pc:Message(7,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.")
+				banished_pc:Message(MT.LightGray,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.")
 				eq.spawn2(297152,0,0,1500, 180, -328, 396)
 				eq.spawn2(297152,0,0,1500, 234, -328, 308)
 				eq.spawn2(297152,0,0,1469, 236, -328, 260)
@@ -45,7 +45,7 @@ function event_timer(e)
 				eq.spawn2(297152,0,0,1412, 207, -328, 138)
 			elseif (banished_pc:GetX() >= 1410 and banished_pc:GetX() <= 1501 and banished_pc:GetY() >= -237 and banished_pc:GetY() <= -178) then
 				-- Spawn south jail ghosts, a_vengeful_apparition
-				banished_pc:Message(7,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.")
+				banished_pc:Message(MT.LightGray,"Angered by your presence here, apparitions step through the nearby walls.  A bone chilling cold fills the room as they reach for your throat.")
 				eq.spawn2(297152,0,0,1500, -180, -328, 396)
 				eq.spawn2(297152,0,0,1500, -234, -328, 460)
 				eq.spawn2(297152,0,0,1469, -236, -328, 510)
@@ -58,7 +58,7 @@ function event_timer(e)
 	elseif (e.timer == "banishHateTop") then
 		banished_pc = e.self:GetHateTop()
 		if (banished_pc ~= nil) then
-			banished_pc:Message(7,"Zun`Muram Tkarish Zyk tells you, 'I grow tired of your insolence.  Rot in your new home!'")
+			banished_pc:Message(MT.LightGray,"Zun`Muram Tkarish Zyk tells you, 'I grow tired of your insolence.  Rot in your new home!'")
 			e.self:SetHate(banished_pc,1,1)
 			-- Randomly north or south jail
 			if (banished_pc:IsClient()) then

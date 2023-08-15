@@ -25,7 +25,7 @@ function event_trade(e)
 		e.self:Say("Yar! Heres ye half matey");  --made up, cant find any info
 		e.other:SummonItem(52342); --Strongbox Half Full of Velixite
 		eq.set_global("rogue_epic_larithim","1",5,"F");
-		e.other:Message(15,"You have confirmed Larithim's innocence.");
+		e.other:Message(MT.Yellow,"You have confirmed Larithim's innocence.");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

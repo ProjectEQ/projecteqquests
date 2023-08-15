@@ -40,7 +40,7 @@ function event_trade(e)
 		e.other:SummonItem(50003); --Innoruuk's Voice (Epic 1.5)
 		e.other:AddAAPoints(5);
 		e.other:Ding();
-		e.other:Message(15,'You have gained 5 ability points!');
+		e.other:Message(MT.Yellow,'You have gained 5 ability points!');
 	end
 	if(qglobals["shadowknight_epic"] == "9" and item_lib.check_turn_in(e.trade, {item1 = 19098})) then --hand in Kilidna's Head (drops from Kilidna in City of Mist)
 		e.self:Emote("takes the head from you and holds it by the hair. Gilina casts a small spell and the head springs to life.  'Talk, Kilidna. What has happened to you?' Kilidna's head begins to sob. 'I am sorry, master. I was corrupted by evil magic! Now look at me! I dare say I will not be able to finish my studies any time soon.' Gilina scowls, 'What did you find out while in the city of mist? Tell me now!' 'Well master, it seems that when Innoruuk's Voice was summoned to this plane, it drew the attention of many [" ..eq.say_link('powerful beings', false, 'powerful beings') .. "].'");

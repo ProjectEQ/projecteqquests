@@ -55,7 +55,7 @@ function event_say(e)
          if ( e.other:HasItem(31960) ) then
             eq.set_global("pop_poj_tribunal", "1", 5, "F");
             eq.set_global("pop_poj_lashing", "1", 5, "F");
-            e.other:Message(4, "You receive a character flag!");
+            e.other:Message(MT.LightBlue, "You receive a character flag!");
          end
 		elseif (e.message:findi("i seek knowledge") ) then
 			local marks = { 31796, 31842, 31844, 31845, 31846 , 31960 }
@@ -169,7 +169,7 @@ function MoveGroup(trial_group, src_x, src_y, src_z, distance, tgt_x, tgt_y, tgt
                   client_v:MovePC(201, tgt_x, tgt_y, tgt_z, tgt_h); -- Zone: pojustice
 
                   if (msg) then
-                     client_v:Message(3, msg);
+                     client_v:Message(MT.BrightBlue, msg);
                   end
                end
             end

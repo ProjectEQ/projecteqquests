@@ -78,9 +78,9 @@ function mpg_helper.UpdateGroupTrialLockout(player_list_in, this_bit_in, lockout
         eq.target_global("mpg_group_trials", tostring(bit.bor(mpg_group_trials, this_bit_in)), "F", 0, v, 0);
         client:GrantAlternateAdvancementAbility(466, aas_to_grant);
 
-        client:Message(15, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
+        client:Message(MT.Yellow, "The understanding you have gained by completing one of Mata Muram's trials has increased your maximum resistances.");
       else 
-        client:Message(15, "You have again mastered this trial.  Congratulations.");
+        client:Message(MT.Yellow, "You have again mastered this trial.  Congratulations.");
       end
     elseif lockout_name_in then
       -- Client wasn't in the zone - but the Trial was Won so set the same lockout as if they were in the zone
@@ -166,7 +166,7 @@ function mpg_helper.RaidAnguishAccess(client, lockout_bit_in)
         eq.target_global("oow_mpg_raids_complete", "1", "F", 0, client:CharacterID(), 0);
         -- Summon: Seal: Mastery of All
 		client:SummonItem(52413); -- Item: Seal: Mastery of All
-		client:Message(14,"You have demonstrated adeptness at all aspects of power that Mata Muram holds dear. As you receive the final medal, the six wedges you have collected fuse, point to point, creating a hexagonal seal.  You now hold the key to Anguish, the Fallen Palace");        
+		client:Message(MT.Lime,"You have demonstrated adeptness at all aspects of power that Mata Muram holds dear. As you receive the final medal, the six wedges you have collected fuse, point to point, creating a hexagonal seal.  You now hold the key to Anguish, the Fallen Palace");        
       end
     end
   end
@@ -195,7 +195,7 @@ function mpg_helper.Display_Group_Trials_Completed(client)
 
   for bitkey,bitval in pairs(trial_bit_table) do
     if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then
-      client:Message(15, "You have completed: " .. bitval[2]);
+      client:Message(MT.Yellow, "You have completed: " .. bitval[2]);
     end
   end
 end
@@ -224,7 +224,7 @@ function mpg_helper.Display_Raid_Trials_Completed(client)
 
   for bitkey,bitval in pairs(trial_bit_table) do
     if (bit.band(mpg_group_trials,bitval[1]) ~= 0 ) then
-      client:Message(15, "You have completed: " .. bitval[2]);
+      client:Message(MT.Yellow, "You have completed: " .. bitval[2]);
     end
   end
 end

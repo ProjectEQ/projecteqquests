@@ -14,15 +14,15 @@ function event_signal(e)
   events_completed = events_completed + 1
 
   if events_completed == 1 then
-    eq.zone_emote(15, "One of the four tasks has been completed.")
+    eq.zone_emote(MT.Yellow, "One of the four tasks has been completed.")
   elseif events_completed == 2 then
-    eq.zone_emote(15, "Two of the four tasks have been completed.")
+    eq.zone_emote(MT.Yellow, "Two of the four tasks have been completed.")
   elseif events_completed == 3 then
-    eq.zone_emote(15, "Three of the four tasks have been completed.")
+    eq.zone_emote(MT.Yellow, "Three of the four tasks have been completed.")
   elseif events_completed == 4 then
-    eq.zone_emote(15, "All four tasks have been completed.  You should return to Durgin and inform him of your success.")
+    eq.zone_emote(MT.Yellow, "All four tasks have been completed.  You should return to Durgin and inform him of your success.")
   elseif events_completed == 5 then
-    eq.zone_emote(15, "Your victory has shattered the shroud of magic surrounding the dungeon's treasure")
+    eq.zone_emote(MT.Yellow, "Your victory has shattered the shroud of magic surrounding the dungeon's treasure")
   end
 
   if e.signal == 1 then     -- sludge event
@@ -123,7 +123,7 @@ function event_say(e)
     if qglobals["Fatestealer"] == "3" then
       e.self:Say(("There's no need to mince words %s. I have no quarrel with Lirprin, but unfortunately the reverse is not also true. The man is undoubtedly angry with me. He will never forgive me for courting Sharalla and does not realize that it was her choice. She loved me, and not him. His paranoia and overbearing attitude, and eventually the outright abuse of his leadership position merely pushed her away. Now that she has fallen in the valiant service of the Brotherhood there is no further need for his insecurity."):format(e.other:GetCleanName()))
       eq.set_global("rogue_epic_durgin", "1", 5, "F")
-      e.other:Message(13, "You have confirmed Durgin's innocence.")
+      e.other:Message(MT.Red, "You have confirmed Durgin's innocence.")
 
       if qglobals["rogue_chest_mira"] == nil then
         eq.set_global("rogue_chest_mira", "1", 5, "F")

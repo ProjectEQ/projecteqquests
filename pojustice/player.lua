@@ -35,7 +35,8 @@ function event_click_door(e)
 			--monk has to have all trials done to loot Symbol on live so force monk to do the clickup or no triggered spawn
 			local qglobals = eq.get_qglobals(e.self);
 			local el = eq.get_entity_list();
-			if (qglobals["monk_epic"] >= "5" and qglobals["monk_7thhammer"] == nil and el:IsMobSpawnedByNpcTypeID(201074) == false) then
+			
+			if qglobals["monk_epic"] ~= nil and qglobals["monk_epic"] >= "5" and qglobals["monk_7thhammer"] == nil and not el:IsMobSpawnedByNpcTypeID(201074) then
 				eq.unique_spawn(201074,0,0,71,1218,9,0); -- NPC: The_Seventh_Hammer
 				eq.signal(201074, 999); -- NPC: The_Seventh_Hammer
 				eq.set_global("monk_7thhammer","1",3,"H2");

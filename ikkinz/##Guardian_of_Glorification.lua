@@ -9,7 +9,7 @@ end
 
 function event_hp(e)
 	if(e.hp_event == 50) then
-		eq.zone_emote(0, "Guardian of Glorification splits into two smaller stone workers!");
+		eq.zone_emote(MT.White, "Guardian of Glorification splits into two smaller stone workers!");
 		eq.spawn2(294584,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Guardian_of_Glorification_
 		eq.spawn2(294584,0, 0, e.self:GetX(), e.self:GetY(),  e.self:GetZ(),  e.self:GetHeading()); -- NPC: #Guardian_of_Glorification_
 		eq.depop();

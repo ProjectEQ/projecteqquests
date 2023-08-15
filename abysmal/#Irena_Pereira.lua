@@ -11,10 +11,10 @@ function event_say(e)
     end
     if (e.message:findi("hail")) then
         if (bit.band(turnins, 8192) ~= 0) then
-            e.other:Message(12, "Irena Pereira says 'From one warrior to another, thanks for what you did. Absor's memory will live on with me.'")
+            e.other:Message(MT.DarkGray, "Irena Pereira says 'From one warrior to another, thanks for what you did. Absor's memory will live on with me.'")
         elseif (greatadventures > 0) then
             e.self:Emote(" focuses her attention on " .. e.other:GetName() .. ".")
-            e.other:Message(12, "Irena Pereira says 'You must be the one De'van spoke to.  I'm not looking for any of your help. I know that the mighty Absor will return someday and until I am proven wrong I will continue to wait for him to arrive.'")
+            e.other:Message(MT.DarkGray, "Irena Pereira says 'You must be the one De'van spoke to.  I'm not looking for any of your help. I know that the mighty Absor will return someday and until I am proven wrong I will continue to wait for him to arrive.'")
         end
     end
 end

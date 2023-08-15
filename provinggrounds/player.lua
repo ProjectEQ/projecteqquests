@@ -10,7 +10,7 @@ local door_ids = {
 function event_click_door(e)
   local door_id = e.door:GetDoorID();
 
-  --if (e.self:Admin() > 80) then eq.zone_emote(15, "Door: " .. door_id); end
+  --if (e.self:Admin() > 80) then eq.zone_emote(MT.Yellow, "Door: " .. door_id); end
 
   local zone_name = door_ids[door_id]
   if zone_name then

@@ -59,7 +59,7 @@ local rikkukin_emote = {
 };
 
 function event_spawn(e)
-	--eq.zone_emote(15,"I have spawned");
+	--eq.zone_emote(MT.Yellow,"I have spawned");
 end
 
 function event_timer(e)
@@ -69,10 +69,10 @@ function event_timer(e)
 	end
     if (e.timer == "Emote") then
         index = math.random(1, #rikkukin_emote); -- Random 1-4
-        eq.zone_emote(15,rikkukin_emote[index][1]);  -- Warn the players whats about to happen.
+        eq.zone_emote(MT.Yellow,rikkukin_emote[index][1]);  -- Warn the players whats about to happen.
 		eq.set_timer("Emote", 30000); -- After emote goes off, set timer to every 30 seconds.
     elseif (e.timer == "Casting") then
-		eq.zone_emote(15,rikkukin_emote[index][2]); -- Do this emote.
+		eq.zone_emote(MT.Yellow,rikkukin_emote[index][2]); -- Do this emote.
 		e.self:CastSpell(rikkukin_emote[index][3], e.self:GetTarget():GetID()); -- Cast this spell.
 		eq.set_timer("Casting", 30000); -- After cast goes off, re-adjust timer to every 30 seconds which should line up every 12 behind "Emote"
 	elseif (e.timer == "Locked_HP") then
@@ -93,7 +93,7 @@ function event_timer(e)
 		e.self:TempName("Rikkukin the Defender"); -- If my  HP is unlocked reset my name back.
 		hptwo=false; -- Set HP lock to false to prevent loop.
 	elseif (e.timer == "Blind") then
-		eq.zone_emote(15,"Rikkukin twists his body so that the ambient light starts to reflect from his slivery scales."); -- Emote I will blind soon.
+		eq.zone_emote(MT.Yellow,"Rikkukin twists his body so that the ambient light starts to reflect from his slivery scales."); -- Emote I will blind soon.
 	elseif (e.timer == "Blind_Cast") then
 		local cl = eq.get_entity_list():GetClientList();
 		for client in cl.entries do
@@ -119,7 +119,7 @@ end
 function event_hp(e)
 	if (e.hp_event == 65) and hp == true then
 	e.self:TempName("Rikkukin (Frozen Aura)"); -- Rename myself.
-	eq.zone_emote(15,"Rikkukin's skin seal over with a caustic sheet of malleable ice. The Protection will soon make him impervious to melee and magical attacks."); -- Warn the players I'll absorb damage soon.
+	eq.zone_emote(MT.Yellow,"Rikkukin's skin seal over with a caustic sheet of malleable ice. The Protection will soon make him impervious to melee and magical attacks."); -- Warn the players I'll absorb damage soon.
 	eq.set_timer("Locked_HP", 30000); -- Start a 30 second countdown of my locked state.
 	eq.set_next_hp_event(60); -- Do something at 60%
 	elseif (e.hp_event == 60) and hp == true then
@@ -127,7 +127,7 @@ function event_hp(e)
 	e.self:Emote("focuses inwardly and heals his wounds through sheer force of will."); -- Warn the players I'm healing.
 	eq.set_next_hp_event(60); -- Rinse repeat until my locked state is up.
 	elseif (e.hp_event == 30) and hptwo == true then
-	eq.zone_emote(15,"Rikkukin's skin seal over with a caustic sheet of malleable ice. The Protection will soon make him impervious to melee and magical attacks."); -- Warn the players I'll absorb damage soon.
+	eq.zone_emote(MT.Yellow,"Rikkukin's skin seal over with a caustic sheet of malleable ice. The Protection will soon make him impervious to melee and magical attacks."); -- Warn the players I'll absorb damage soon.
 	e.self:TempName("Rikkukin (Frozen Aura)"); -- Rename myself.
 	eq.set_timer("Locked_HPtwo", 30000); -- Start a 30 second countdown of my locked state.
 	eq.set_next_hp_event(25);

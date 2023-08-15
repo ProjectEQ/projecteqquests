@@ -1,7 +1,7 @@
 --stonemites roaming traps
 
 function event_combat(e)
-	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, 0, 150,"Stonemites drop from a crack in the ceiling and lunge forth to attack!");
+	eq.local_emote({e.self:GetX(), e.self:GetY(), e.self:GetZ()}, MT.White, 150,"Stonemites drop from a crack in the ceiling and lunge forth to attack!");
 	local rand = math.random(1,10);
 	if  rand == 1 then
 		--tameable stonemites seem rare

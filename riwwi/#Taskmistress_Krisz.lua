@@ -1,5 +1,5 @@
 function event_spawn(e)
-  eq.zone_emote(0,"Taskmistress Krisz shouts, 'Kekken, Uxnikk! What are you fools doing?");
+  eq.zone_emote(MT.White,"Taskmistress Krisz shouts, 'Kekken, Uxnikk! What are you fools doing?");
   eq.set_next_hp_event(40);
   e.self:ModSkillDmgTaken(8, -50); -- backstab
   e.self:ModSkillDmgTaken(36, -60); -- piercing

@@ -69,7 +69,7 @@ function event_death(e)
 	  banish=false; -- tell banish to not happen when I respawn
 	  eq.set_next_inc_hp_event(80); -- set something to happen when I regen to 80
 	  has_died = true; -- let myself know I can die now for real.
-	  eq.zone_emote(15,"As Tirranun is struck down, every last ember of flame is expelled from his volcanic body. His broken husk smolders quietly on the rock. Alarmingly, it appears to be getting warmer. He is recovering.");
+	  eq.zone_emote(MT.Yellow,"As Tirranun is struck down, every last ember of flame is expelled from his volcanic body. His broken husk smolders quietly on the rock. Alarmingly, it appears to be getting warmer. He is recovering.");
     return 1 -- force myself to stay alive.
 	end
     if can_die == true then

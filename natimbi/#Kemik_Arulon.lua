@@ -28,7 +28,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 69969})) then
-		e.other:Message(15,"As Kemik holds the prayer beads close to him, a blessing falls upon his body from the goddess Erollisi.");
+		e.other:Message(MT.Yellow,"As Kemik holds the prayer beads close to him, a blessing falls upon his body from the goddess Erollisi.");
 		e.self:Say("Thank you " .. e.other:GetName() .. ". Praying with these beads has cured me of my sickness. Now, all that is left to be done is for you to find my sister Anetal in Discord. I have received reports that she is being held in an area called Dranik Hollows. When you are ready, bring these prayer beads with you, gather up a few of your friends, and return to me. I will see about opening up a passageway for you to find her.");
 		e.other:SummonItem(69969);	--return prayer bead
 		eq.set_global("paladin_epic_hollowc", "1", 5, "F");

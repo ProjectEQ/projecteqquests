@@ -30,7 +30,7 @@ function event_timer(e)
 	if e.timer == "fail" then
 		eq.stop_timer("fail_timer");
 		eq.set_global(instance_id.."_destper","1",3,"H6");
-		eq.zone_emote(15,"Your time has elapsed, you must suffer the punishment of failure, there is nothing I can do to help now.");
+		eq.zone_emote(MT.Yellow,"Your time has elapsed, you must suffer the punishment of failure, there is nothing I can do to help now.");
 	elseif e.timer == "orb" then
 		eq.stop_timer("orb");
 		eq.set_global(instance_id.."_spectre_door","1",3,"H6");

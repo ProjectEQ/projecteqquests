@@ -14,7 +14,7 @@ function event_say(e)
       e.self:Say("The fire of destruction burns within you, does it not? I can see that your affinity for destructive magic has served you well in your travels. It has served you so well that it has caught the eye of Solusek Ro. He has created and sent me here to discuss the matter of joining his legions. If you do, you will be granted power unheard of on mortal lands. Will you [" .. eq.say_link("agree") .. "]?");
       eq.set_global("wiz_epic","1",5,"F"); -- Start epic 1.5, Step 1 of 5
     end
-  elseif (e.message:findi("hail") and e.other:GetClass() == 12 and e.other:GetLevel() >= 65) then
+  elseif (e.message:findi("hail") and e.other:GetClass() == Class.WIZARD and e.other:GetLevel() >= 65) then
     if (qglobals["wiz_epic"] == nil and qglobals["wiz_epic_pre"] == nil) then
       e.self:Say("The fire of destruction burns within you, does it not? I can see that your affinity for destructive magic has served you well in your travels. It has served you so well that it has caught the eye of Solusek Ro. He has created and sent me here to discuss the matter of joining his legions. If you do, you will be granted power unheard of on mortal lands. Will you [" .. eq.say_link("agree") .. "]?");
       eq.set_global("wiz_epic_pre","1",5,"F"); -- Start pre 1.5 epic
@@ -107,7 +107,7 @@ function event_trade(e)
     e.other:SummonItem(12665); -- Item: Staff of Prismatic Power, Wizard 1.5
     e.other:AddAAPoints(5);
     e.other:Ding();
-    e.other:Message(15,'You have gained 5 ability points!');
+    e.other:Message(MT.Yellow,'You have gained 5 ability points!');
   elseif (qglobals["wiz_epic20"] ~= nil and qglobals["wiz_epic20"] >= "3" and item_lib.check_turn_in(e.trade, {item1 = 47100})) then -- Item: Globe of Discordant Energy
     e.self:Say("To obtain this globe was no trivial task, yet you have prevailed! Your staff is nearly complete now, you have only two final tasks remaining.', he says as he begins to murmur a brief incantation. Without warning, the orb splits into two equal halves and are then given to you. They will infuse your staff with one of the most useful powers of a wizard; teleportation.'");
     e.other:SummonItem(15836); -- Item: Broken Orb of Discordant Energy
@@ -118,7 +118,7 @@ function event_trade(e)
     e.other:SummonItem(16576); -- Item: Staff of Phenomenal Power, Wiz 2.0
     e.other:AddAAPoints(10);
     e.other:Ding();
-    e.other:Message(15, 'You have gained 10 ability points!');
+    e.other:Message(MT.Yellow, 'You have gained 10 ability points!');
   elseif (qglobals["wiz_test_intel"] ~= nil) then -- 10 items for Test of Intelligence in order
     if (qglobals["wiz_test_intel"] == "1" and item_lib.check_turn_in(e.trade, {item1 = 11425})) then -- Item: Empty Jug
       e.self:Say("Excellent, you are impressing me more and more with each passing day. This note will begin the next riddle that you will need to solve. Return to me with the correct answer to continue your journey. Again, I remind you, take care when handling these notes, they are the lifeblood that will guide you on your journey and should you lose them, you will fail the test. I hope to see you back here with the correct answer soon.");

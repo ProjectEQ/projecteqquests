@@ -30,7 +30,7 @@
 -- mpg_raid_trials
 
 local instance_id;
-local mobs_died;
+local mobs_dead;
 local mobs_must_die;
 local minutes_remaining;
 local player_list;
@@ -43,7 +43,7 @@ local warnings			= 0; -- Warnings for breaking rules
 
 function Fear_Spawn(e)
 	instance_id			= eq.get_zone_instance_id();
-	mobs_died			= 0;
+	mobs_dead			= 0;
 	mobs_must_die		= 15;
 	minutes_remaining	= 15;
 	player_list			= eq.get_characters_in_instance(instance_id);
@@ -73,7 +73,7 @@ function Fear_Say(e)
 end
 
 function Fear_Signal(e)
-	mobs_died = mobs_died + 1;
+	mobs_dead = mobs_dead + 1;
 end
 
 function Fear_Timer(e)
@@ -84,7 +84,7 @@ function Fear_Timer(e)
 			eq.spawn_condition(this_zone,instance_id,1,0);
 			eq.spawn_condition(this_zone,instance_id,2,0);
 
-			if mobs_died >= mobs_must_die then
+			if mobs_dead >= mobs_must_die then
 				eq.spawn2(304013, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
 				eq.depop();
 

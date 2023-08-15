@@ -50,6 +50,18 @@ function setup()
   }
 end
 
+function CastSpells(e)
+  if (spell_idx > 8) then
+    spell_idx = 1;
+  end
+
+  -- Cast the Spell
+  e.self:CastSpell(spell_list[spell_idx], e.self:GetHateTop():GetID());
+
+  -- Increment the spell casting index;
+  spell_idx = spell_idx + 1;
+end
+
 function Boss_Spawn(e)
   instance_id = eq.get_zone_instance_id();
   player_list = eq.get_characters_in_instance(instance_id);
@@ -96,18 +108,6 @@ function Boss_Timer(e)
   if (e.timer == 'spell_timer' ) then 
     CastSpells(e);
   end
-end
-
-function CastSpells(e)
-  if (spell_idx > 8) then
-    spell_idx = 1;
-  end
-
-  -- Cast the Spell
-  e.self:CastSpell(spell_list[spell_idx], e.self:GetHateTop():GetID());
-
-  -- Increment the spell casting index;
-  spell_idx = spell_idx + 1;
 end
 
 function Boss_Death(e)

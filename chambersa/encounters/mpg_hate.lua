@@ -1,87 +1,3 @@
---[[
--- Start Location: North end/wing of Muramite Proving Grounds. 
--- (Note: Players can invis to 6 way and then clear less than a dozen mobs.) 
---
--- Expedition Acquisition: There is an NPC named Projection of Mind there that assigns the expedition, which then allows players to click on the obelisk behind him and zone into the private raid instance. 
---
--- Prerequisites: No prerequisites are needed, beyond being level 65 to zone into MPG, and being in a raid. (Minimum raid size required?) 
---
--- Layout and Premise: 
--- The interior of the trial is identical to all of the other raid and group MPG trial instances. An upward path leads from the small zone in chamber to a larger circular chamber. The larger chamber has 6 small platforms arranged in a half circle around a larger central platform. As in all trials, it is safe to zone in, and the trial does not begin until a keyphrase is given to an npc. 
---
--- Upon zoning into the Hate trial there are 6 Ferans arranged one per platform, and a Master of Hate standing in the center. The goal of the event is to kill all 6 of the ferans, as well as the Master of Hate. 
---
--- Event Conditions: 
--- - Each feran is "rooted" into place, does not summon, and will not turn on someone within melee range, even if the player at the top of their aggro list is not in range. 
--- - Every 15 seconds one pup will spawn from a random living feran "mother". 
--- - There are 3 different types of pups {see below}. 
--- - Regardless how many feran mothers are still alive, a feran pup will still spawn every 15 seconds. This means that each individual remaining feran will appear to spawn pups faster as ferans are killed. 
--- - Every time a pup spawns from a feran, the health of the mother feran will drop a few percent (exact number/range needed), but not below ~18% remaining. 
--- - Each feran mother has a massive amount of hitpoints. 
--- - The Master of Hate is not a combatant until all 6 ferans are killed. 
--- - If at any time there is not a single "defensive" class still alive in the trial area, the event is over. 
---
--- SD Strategy Setup 
--- One dedicated MA is assigned to target and call assist on pups as soon as possible. 
---
--- 6 taunters are assigned to each of the feran mothers, who will generate aggro at range, and taunt any pups that spawn, while alerting the MA to the spawn. 
---
--- All pets and rogues should be assigned to DPSing on the outermost feran mother in the semi-circle. (After a couple minutes elapse for the taunter to build up aggro). 
---
--- SD Stratgy Outline 
---
--- 1) Raid zones in and preps. MA, taunters, MT, RT are all assigned. 
--- 2) For the first two minutes, everyone assists the MA. (Excluding the 6 taunters, who have been and continue to build aggro) 
--- 3) Approximately 2 minutes in, all pets and rogues are assigned to the rear arc of the outermost feran mother. 
--- 4) The rest of the raid continues to assist the MA, and the rogues and pets are moved from feran mother to feran mother as each dies, resulting in a smaller and smaller arc for the raid to move around. 
--- 5) When the last feran mother is being DPS'd, the 9th Vet/DA/RT and the MT move into position. 
--- 6) MT uses riposte discipline while taunting and generating aggro, while the DA/RT sets rampage, any backup RTs plink, debuffs begin and spam healing starts. {Chain runing on MT helps, and a BDA chain may be employed on RT} 
--- 7) MT uses defensive and possibly 9th vet when riposte disc drops. 
--- 8) If and when MT dies, backup MT uses riposte disc, hits AE taunt, calls for heals and activates defensive. 
--- 9) Victory. (Hopefully). 
---
--- Mob Info 
--- Voracious Feran(Feran "mom"): hits for ~498-1310 
---
--- Feeble Direpup: 498-1310 
--- Ferocious Direpup: 252-703 
--- Pliant Direpup: 252-703 
--- Proc: 'Lash out' (All pups) 
--- Single target, Chromatic -450, 4k DD, 6 second stun, 12 sec recast 
--- All pups have very low hitpoints. 
---
--- Master of Hate: ~1k-7k+ 
--- The master of hate's DB goes up by 10 approximately every 5 seconds. 
--- He does not quad, but he can triple. He can also kick/bash for ~1k. Reportedly cycling aggro targets resets his DB bonus. He rampages for full damage and can easily one round ramp most players. 
---
--- (Resist information requested.) 
---
--- Additional Notes 
--- While the Pups are charmable, using charm for additional dps is strongly advised against as the pups will most likely kill a caster/healer before they are recharmed. (They are not mezzable) 
---
--- Due to the 15 second spawn condition, at no time should the raid stop killing pups while a feran mother remains alive. Having the entire raid focus dps on one of the moms for even a moment will likely result in falling behind in the pup spawning, followed by a loss. 
---
--- For a raid of 46 mostly level 70 characters in Time/dodh group gear, we were able to kill the Master of Hate in approximately 4 minutes. 
---
--- It is recommended that the MT circle tanks the Master of Hate on the central platform in slow backward circles, for maximum DPS. 
---
--- DPS casters can stay out of rampage range by casting from the walls of the trial area, but careful aggro management is vital to not pull him out of position. 
---
--- Casting spellshield on the MA throughout the assisting stage of the event can help mitigate the pup's procs. 
---
--- Having the MA zone in last may result in spawned pups going for the MA first, by default. 
---
--- It may seem like a good idea to stack necro dots on the feran mothers for maximum DPS, but they are very resistant, and this may not be worthwhile. 
---
--- Rogues and pets are used on ferans as their dps is greatly reduced when attempting to chase the MA targets, whereas on the feran mothers their dps can be applied continuously at maximum output. 
---
--- Rampage is major concern (on the Master of Hate), as it will tear through an unprepared raid. All possible RTs and even clerics should have DA or HS ready. 
---
--- Having a dedicated taunter to periodically snag aggro from the MT also allegedly resets the DB bonus the master has been accumulating. We haven't been able to confirm this 100%, but it may help. Recommend having a warrior not in the MT line hit taunt and fort the second it goes through, letting the MT then snap aggro back. 
---
--- Loot 
--- If the raid is successful, the "shell of the master" is found in the middle of the central platform and can be opened with /open. 
---]]
 --
 -- MPG Raid Trial General Notes
 -- 1  MPG_hate           - The Mastery of Hate (Raid)
@@ -104,7 +20,7 @@ local orig_max;
 local feran					= { 304019,304023,304024,304025,304026,304027 }
 local pup_spawn_seconds		= 15; 
 local hate_scale_seconds	= 1;
-local hate_check_timer		= 10;
+local hate_check_timer		= 5;
 local last_tank			= nil;
 
 function Hate_Spawn(e)
@@ -158,12 +74,12 @@ function Hate_Timer(e)
 		if last_tank == nil then
 			last_tank = e.self:GetHateTop():GetID();
 		elseif last_tank ~= incoming_tank then
-			eq.debug("Tank Change, Resetting Hate Max");
+			-- eq.debug("Tank Change, Resetting Hate Max");
 			hate_max = orig_max;
 			last_tank = incoming_tank;
 			e.self:ModifyNPCStat("max_hit",tostring(orig_max));
 		elseif last_tank == incoming_tank then
-			eq.debug("Tank Change FAIL");
+			-- eq.debug("Tank Change FAIL");
 		end
 	end
 end
@@ -181,7 +97,7 @@ function Hate_Death(e)
 		dz:AddReplayLockoutDuration(eq.seconds(lockout_win)) -- 5 days + current timer (max 123 hours)
 	end
 	local mpg_helper = require("mpg_helper");
-	mpg_helper.UpdateRaidTrialLockout(player_list, this_bit, nil);
+	mpg_helper.UpdateRaidTrialFlag(player_list, this_bit);
 end
 
 function Hate_Signal(e)
@@ -193,6 +109,9 @@ function Hate_Signal(e)
 		if not el:IsMobSpawnedByNpcTypeID(304019) and not el:IsMobSpawnedByNpcTypeID(304023) and not el:IsMobSpawnedByNpcTypeID(304024) and not el:IsMobSpawnedByNpcTypeID(304025) and not el:IsMobSpawnedByNpcTypeID(304026) and not el:IsMobSpawnedByNpcTypeID(304027) then
 			eq.stop_timer('direpups');
 			-- Set the Master of Hate to be Combatable
+			-- 24 Will Not Aggro
+			-- 25 Immune to Aggro
+			-- 35 No Harm from Players
 			e.self:WipeHateList(); -- For good measure
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro,0);
 			e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on,0);
@@ -220,7 +139,7 @@ function Hate_Combat(e)
 end
 
 function Spawn_Direpup()
-	-- Every 15 seconds one pup will spawn from a random living feran "mother".
+	-- Every 15 seconds one pup will spawn from a random living feran "mother". 
 	local npc_id	= nil;
 	local npc		= nil;
 	local index		= nil;
@@ -238,15 +157,15 @@ function Spawn_Direpup()
 				-- then we are removing the last item and need
 				-- to abort this process; the feran mother was
 				-- killed after this search was started but
-				-- before we got to this spot in the code so
+				-- before we got to this spot in the code so 
 				-- we can abort the loop.
 				return
 			end
 		end
 	until npc_id ~= nil
 
-	if npc:GetHPRatio() > 18 then
-		npc:SetHP(npc:GetHP() - 57000);
+	if npc:GetHPRatio() >= 25 then
+		npc:SetHP(npc:GetHP() - 48000);
 	end
 	-- Spawn a random pup 304015, 304016 or 304018
 	local pup_id = eq.ChooseRandom(304015, 304016, 304018);
@@ -260,6 +179,9 @@ function Feran_Death(e)
 end
 
 function Feran_Spawn(e)
+	-- 24 Will Not Aggro
+	-- 25 Immune to Aggro
+	-- 35 No Harm from Players
 	e.self:SetSpecialAbility(SpecialAbility.immune_aggro,1);
 	e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on,1);
 	e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client,1);
@@ -267,6 +189,9 @@ end
 
 function Feran_Signal(e)
 	if e.signal == 1 then
+		-- 24 Will Not Aggro
+		-- 25 Immune to Aggro
+		-- 35 No Harm from Players
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro,0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on,0);
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client,0);

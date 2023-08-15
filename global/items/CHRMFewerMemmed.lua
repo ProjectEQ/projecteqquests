@@ -12,11 +12,11 @@ local memmed_table = {  [1] = {0,1},
 }
 
 function event_scale_calc(e)
-    if(e.owner:GetClass() == 1 or e.owner:GetClass() == 7 or e.owner:GetClass() == 9 or e.owner:GetClass() == 16) then -- Notes show it doesn't work for pure melee classes
+    if e.owner:GetClass() == Class.WARRIOR or e.owner:GetClass() == Class.MONK or e.owner:GetClass() == Class.ROGUE or e.owner:GetClass() == Class.BERSERKER then
         e.self:SetScale(0);
     else
         for id, v in pairs(memmed_table) do
-            if (e.owner:MemmedCount() == v[1]) then
+            if e.owner:MemmedCount() == v[1] then
                 e.self:SetScale(v[2]);
             else
                 e.self:SetScale(0); -- nil protection

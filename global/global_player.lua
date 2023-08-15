@@ -327,7 +327,7 @@ function event_level_up(e)
   local free_skills =  {0,1,2,3,4,5,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,36,37,38,39,41,42,43,44,45,46,47,49,51,52,54,67,70,71,72,73,74,76};
 
   for k,v in ipairs(free_skills) do
-    if ( e.self:MaxSkill(v) > 0 and e.self:GetRawSkill(v) < 1 and e.self:CanHaveSkill(v) ) then 
+    if ( e.self:MaxSkill(v) > 0 and e.self:GetRawSkill(v) < 1 and e.self:CanHaveSkill(v) ) then
       e.self:SetSkill(v, 1);
     end
       
@@ -335,22 +335,22 @@ function event_level_up(e)
 end
 
 test_items = {
-    [1]  = {38000, 38020}, -- Warrior
-    [2] = {38168, 38188}, -- Cleric
-    [3]  = {38084, 38104}, -- Paladin
-    [4]  = {38105, 38125}, -- Ranger
-    [5]  = {38063, 38083}, -- Shadowknight
-    [6] = {38189, 38209}, -- Druid
-    [7]  = {38021, 38041}, -- Monk
-    [8]  = {38147, 38167}, -- Bard
-    [9]  = {38042, 38062}, -- Rogue
-    [10] = {38210, 38230}, -- Shaman
-    [11]  = {38294, 38314}, -- Necromancer
-    [12]  = {38231, 38251}, -- Wizard
-    [13]  = {38252, 38272}, -- Magician
-    [14]  = {38273, 38293}, -- Enchanter
-    [15]  = {38126, 38146}, -- Beastlord
-    [16]  = {38315, 38332}, -- Berserker
+    [Class.WARRIOR]			= {38000, 38020}, -- Warrior
+    [Class.CLERIC]			= {38168, 38188}, -- Cleric
+    [Class.PALADIN]			= {38084, 38104}, -- Paladin
+    [Class.RANGER]			= {38105, 38125}, -- Ranger
+    [Class.SHADOWKNIGHT]	= {38063, 38083}, -- Shadowknight
+    [Class.DRUID]			= {38189, 38209}, -- Druid
+    [Class.MONK]			= {38021, 38041}, -- Monk
+    [Class.BARD]			= {38147, 38167}, -- Bard
+    [Class.ROGUE]			= {38042, 38062}, -- Rogue
+    [Class.SHAMAN]			= {38210, 38230}, -- Shaman
+    [Class.NECROMANCER]		= {38294, 38314}, -- Necromancer
+    [Class.WIZARD]			= {38231, 38251}, -- Wizard
+    [Class.MAGICIAN]		= {38252, 38272}, -- Magician
+    [Class.ENCHANTER]		= {38273, 38293}, -- Enchanter
+    [Class.BEASTLORD]		= {38126, 38146}, -- Beastlord
+    [Class.BERSERKER]		= {38315, 38332}, -- Berserker
 }
  
 function event_test_buff(e)

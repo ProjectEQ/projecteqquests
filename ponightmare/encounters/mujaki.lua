@@ -107,9 +107,9 @@ function Mujaki_Death(e)
      if ( clist ~= nil ) then
 		 --eq.zone_emote(MT.Yellow, "death1");
 		 for currclient in clist.entries do
-			if(currclient:GetClass() ==3) then			
+			if(currclient:GetClass() == Class.PALADIN) then
 				 --eq.zone_emote(MT.Yellow, "death2");
-				if (currclient:HasItem(69928)) then				
+				if (currclient:HasItem(69928)) then
 					--eq.zone_emote(MT.Yellow, "death3");
 					eq.spawn2(204081, 0, 0, -1475, -2555, 179.38, 256); -- NPC: #Shade_of_Mujaki_the_Devourer
 					return; --only spawn 1

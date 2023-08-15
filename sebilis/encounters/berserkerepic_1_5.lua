@@ -1,13 +1,13 @@
 -- Juggernaut Death
 -- items: 17833, 17898, 17399, 18976
-function Juggernaut_Death(e) 
-  if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(89193) == false ) then 
+function Juggernaut_Death(e)
+  if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(89193) then
      local clist = eq.get_entity_list():GetClientList();
      if ( clist ~= nil ) then
 		 for currclient in clist.entries do
-			if(currclient:GetClass() ==16) then			
+			if(currclient:GetClass() == Class.BERSERKER) then
 				local qglobals = eq.get_qglobals(currclient);
-				if(qglobals["berserk_epic"] == "3" and qglobals["berserker_seb"] == nil) then				
+				if(qglobals["berserk_epic"] == "3" and qglobals["berserker_seb"] == nil) then
 					eq.spawn2(89194, 0, 0, -225.93, -1556.52, -173.84, 320); -- needs_heading_validation
 					eq.spawn2(89195, 0, 0, -214, -1572, -173.84, 110); -- NPC: A_Sebilite_Guardian
 					eq.spawn2(89195, 0, 0, -214, -1538, -173.84, 152); -- NPC: A_Sebilite_Guardian
@@ -40,7 +40,7 @@ function Protector_Timer(e)
 			e.self:ForeachHateList(
 				function(ent, hate, damage, frenzy)
 					if(ent:IsClient()) then
-						if(ent:CastToMob():GetClass()==16 and damage > 0) then --berserker
+						if(ent:CastToMob():GetClass() == Class.BERSERKER and damage > 0) then --berserker
 							local currclient=ent:CastToClient();
 							if(math.random(3)==1) then 
 								if(currclient:GetItemIDAt(Slot.Primary)==16779) then
@@ -122,7 +122,7 @@ function Protector_Death(e)
 	e.self:ForeachHateList(
 		function(ent, hate, damage, frenzy)
 			if(ent:IsClient()) then
-				if(ent:CastToMob():GetClass()==16 and damage > 0) then --berserker
+				if(ent:CastToMob():GetClass() == Class.BERSERKER and damage > 0) then --berserker
 					local currclient=ent:CastToClient();
 					if(currclient:HasItem(17833) and currclient:HasItem(17898) and currclient:HasItem(17399) and currclient:HasItem(18976)) then
 						currclient:Message(MT.Red,"Stepping back for a moment, you look over the axes that you have crafted. Two of them seem to be no more durable than any other axe you've seen, another is completely broken, yet the fourth catches your eye. The blade has nary a nick anywhere on it, the handle seemingly able to withstand immense amounts of punishment.");

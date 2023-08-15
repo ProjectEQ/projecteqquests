@@ -14,7 +14,7 @@ function event_say(e)
       e.self:Say("The fire of destruction burns within you, does it not? I can see that your affinity for destructive magic has served you well in your travels. It has served you so well that it has caught the eye of Solusek Ro. He has created and sent me here to discuss the matter of joining his legions. If you do, you will be granted power unheard of on mortal lands. Will you [" .. eq.say_link("agree") .. "]?");
       eq.set_global("wiz_epic","1",5,"F"); -- Start epic 1.5, Step 1 of 5
     end
-  elseif (e.message:findi("hail") and e.other:GetClass() == 12 and e.other:GetLevel() >= 65) then
+  elseif (e.message:findi("hail") and e.other:GetClass() == Class.WIZARD and e.other:GetLevel() >= 65) then
     if (qglobals["wiz_epic"] == nil and qglobals["wiz_epic_pre"] == nil) then
       e.self:Say("The fire of destruction burns within you, does it not? I can see that your affinity for destructive magic has served you well in your travels. It has served you so well that it has caught the eye of Solusek Ro. He has created and sent me here to discuss the matter of joining his legions. If you do, you will be granted power unheard of on mortal lands. Will you [" .. eq.say_link("agree") .. "]?");
       eq.set_global("wiz_epic_pre","1",5,"F"); -- Start pre 1.5 epic

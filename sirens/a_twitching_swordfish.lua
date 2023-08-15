@@ -11,7 +11,7 @@ function event_timer(e)
 			e.self:ForeachHateList(
 				function(ent, hate, damage, frenzy)
 					if(ent:IsClient()) then
-						if(ent:CastToMob():GetClass()==4 and damage > 0) then
+						if(ent:CastToMob():GetClass() == Class.RANGER and damage > 0) then
 							local currclient=ent:CastToClient();
 							if(currclient:GetItemIDAt(Slot.Primary)==62646) then
 								currclient:SummonItem(62643); -- Item: Captured Swordfish

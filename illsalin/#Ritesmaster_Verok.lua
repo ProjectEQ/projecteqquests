@@ -33,10 +33,10 @@ end
 function event_combat(e)
 if e.joined then
 eq.set_timer("OOBcheck", 6 * 1000);
-eq.set_timer("agro", 5 * 1000);
+eq.set_timer("aggro", 5 * 1000);
 else
 eq.stop_timer("OOBcheck");
-eq.stop_timer("agro");
+eq.stop_timer("aggro");
 eq.set_timer("eventreset", 18 * 1000);
 end
 end
@@ -79,7 +79,7 @@ function event_timer(e)
      eq.get_entity_list():FindDoor(12):SetLockPick(0);
      eq.get_entity_list():FindDoor(13):SetLockPick(0);
 		 eq.spawn_condition("illsalin",0,1,0);
-	elseif (e.timer == "agro") then
+	elseif (e.timer == "aggro") then
 		local npc_list =  eq.get_entity_list():GetNPCList();
 		for npc in npc_list.entries do
 			if (npc.valid and (npc:GetNPCTypeID() == 347033 or npc:GetNPCTypeID() == 347009)) then

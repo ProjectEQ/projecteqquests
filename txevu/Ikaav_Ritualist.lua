@@ -1,11 +1,11 @@
 --  Ikaav_Ritualist (297147) zmtz event
 
 function event_signal(e)
-  eq.set_timer('wipe_agro', 5 * 1000);
+  eq.set_timer('wipe_aggro', 5 * 1000);
 end
 
 function event_timer(e)
-	if (e.timer == 'wipe_agro') then
+	if (e.timer == 'wipe_aggro') then
   		eq.stop_timer(e.timer);
   		e.self:WipeHateList();
 	elseif (e.timer == "aggrolink") then

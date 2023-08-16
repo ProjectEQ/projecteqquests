@@ -40,4 +40,5 @@ function event_signal(e)
      		eq.unique_spawn(284088,0,0,-723,-643,27,508); -- Pxet_Elite_Brawler (284088)
 			brawler_counter = 0;
 		end
+	end
 end

@@ -2,6 +2,9 @@
 
 ##Yarlir Script by Drogerin##
 --]]
+local don = require("dragons_of_norrath")
+
+local had_gm = false
 
 function event_combat(e)
 	if e.joined then
@@ -56,8 +59,28 @@ function event_timer(e)
 	end
 end
 
+function event_death(e)
+	-- try to prevent gms from triggering nest unlock while testing
+	if not don.is_nest_unlocked() then
+		local hate_list = e.self:GetHateListClients()
+		for entry in hate_list.entries do
+			if entry.valid and entry.ent.valid and entry.ent:CastToClient():GetGM() then
+				eq.debug(("GM %s was on hate list for kill, NOT unlocking Accursed Nest"):format(entry.ent:GetName()))
+				had_gm = true
+				break
+			end
+		end
+	end
+end
+
 function event_death_complete(e)
 		eq.get_entity_list():FindDoor(30):SetLockPick(0); -- unlock door upon success
 		eq.get_entity_list():FindDoor(31):SetLockPick(0); -- unlock door upon success
 		eq.spawn2(340031,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: a_chest
+
+		-- first server kill unlocks the Accursed Nest zone
+		if not had_gm and not don.is_nest_unlocked() then
+			eq.debug("Unlocking the Accursed Nest")
+			don.unlock_nest()
+		end
 end

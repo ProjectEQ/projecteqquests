@@ -28,6 +28,8 @@ don.faction = {
   Threaten     = -750
 }
 
+don.nest_unlocked_content_flag = "don_nest_unlocked"
+
 don.flags = {
   key = {
     [don.faction_id.evil] = "don_evil",
@@ -358,6 +360,15 @@ function don.finish_clues_mission(client, task_ids)
     end
   end
   return 0
+end
+
+function don.is_nest_unlocked()
+  return eq.is_content_flag_enabled(don.nest_unlocked_content_flag)
+end
+
+function don.unlock_nest()
+  -- todo: trigger eqswitch reloads for players already inside broodlands, otherwise they will need to re-zone
+  eq.set_content_flag(don.nest_unlocked_content_flag, true)
 end
 
 function don.character_state.new(client, faction_id)

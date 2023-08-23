@@ -441,7 +441,7 @@ function don.character_state:reward_flag(flag, had_flag)
     self.client:QuestReward(self.client) -- zeroed out packet on live for trumpet sound (not sure if part of AddAAPoints)
 
     -- level 69 class spell reward (live does not reward again if deleted)
-    if flag == don.flags.t2.completed then
+    if flag == don.flags.t2.complete then
       self.client:SummonItem(don.spell_rewards[self.client:GetClass()])
     end
   end

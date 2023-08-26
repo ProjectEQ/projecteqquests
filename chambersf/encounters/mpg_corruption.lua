@@ -322,7 +322,7 @@ function Mob_Timer(e)
 			local random_hate = e.self:GetHateRandom():CastToClient();
 
 			if random_hate.valid and random_hate:IsClient() and not random_hate:GetGM() then
-				eq.get_entity_list():MessageClose(e.self, false, 120, 15, e.self:GetCleanName() .. " vanishes and quickly reappears behind their prey.");
+				eq.get_entity_list():MessageClose(e.self, false, 120, MT.Yellow, e.self:GetCleanName() .. " vanishes and quickly reappears behind their prey.");
 				e.self:GMMove(random_hate:GetX(),random_hate:GetY(),random_hate:GetZ(),random_hate:GetHeading());
 				random_hate:Damage(e.self, math.random(5800,6200),39552,8); -- 5800-6200 Backstab Damage
 			end

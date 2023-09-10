@@ -12,7 +12,7 @@ function event_scale_calc(e)
 			for i = 1,6,1 do
 				member = group:GetMember(i);
 				if member then
-					local member_hp = group:GetMaxHP();
+					local member_hp = member:GetMaxHP();
 
 					if member_hp < lowest_group_hp then
 						lowest_group_hp = member_hp;

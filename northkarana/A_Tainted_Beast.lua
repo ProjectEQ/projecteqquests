@@ -4,7 +4,7 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.stop_timer("despawn");
     eq.debug(e.self:GetCleanName() .. " joined combat - stopping the despawn timer.");
   else

@@ -14,12 +14,7 @@ sub EVENT_CLICKDOOR {
 	if ($doorid == 138) #guild lobby
 	{
 		if ($client->CalculateDistance(1408, -377, -113) <= 30) {
-			if (($client->GetClientVersionBit() & 4294967264) != 0) {
-				quest::MovePCInstance(344, 5, 18, -46, 6, 450); # Zone: guildlobby
-			}
-			else {
-				quest::movepc(344, 18, -46, 6, 492); # Zone: guildlobby
-			}
+			quest::movepc(344, 18, -46, 6, 492);
 		}
 	}
 	if ($doorid == 139) #bazaar

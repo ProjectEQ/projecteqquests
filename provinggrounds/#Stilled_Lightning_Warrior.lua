@@ -8,7 +8,7 @@ end
 
 function event_enter(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["shaman_epic"] == "11" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(316073) == false) then
+	if(qglobals["shaman_epic"] == "11" and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(316073)) then
 		eq.spawn2(316073,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Lightning Warrior Spiritseeker
 		eq.depop_with_timer();
 	end

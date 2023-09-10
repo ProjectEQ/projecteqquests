@@ -9,7 +9,7 @@ function event_timer(e)
 end
 
 function event_proximity_say(e) 
-	if (e.message:findi("Sanait Sanaiij Tsulum") and eq.get_entity_list():IsMobSpawnedByNpcTypeID(336242) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(336243) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(336244) == false) then
+	if (e.message:findi("Sanait Sanaiij Tsulum") and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336242) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336243) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336244)) then
 		local qglobals = eq.get_qglobals(e.other)
 		if (qglobals["necro_epic"] == "5") then
 			e.self:Emote("implodes, blinding you with a bright flash of light, Three horrendous creatures now appear before you, and they don't look happy... ");

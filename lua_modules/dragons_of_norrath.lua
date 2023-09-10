@@ -28,6 +28,8 @@ don.faction = {
   Threaten     = -750
 }
 
+don.nest_unlocked_content_flag = "don_nest_unlocked"
+
 don.flags = {
   key = {
     [don.faction_id.evil] = "don_evil",
@@ -360,6 +362,15 @@ function don.finish_clues_mission(client, task_ids)
   return 0
 end
 
+function don.is_nest_unlocked()
+  return eq.is_content_flag_enabled(don.nest_unlocked_content_flag)
+end
+
+function don.unlock_nest()
+  -- todo: trigger eqswitch reloads for players already inside broodlands, otherwise they will need to re-zone
+  eq.set_content_flag(don.nest_unlocked_content_flag, true)
+end
+
 function don.character_state.new(client, faction_id)
   if faction_id ~= don.faction_id.good and faction_id ~= don.faction_id.evil then
     error("Cannot load don.character_state, faction_id must be for Norrath's Keepers or Dark Reign")
@@ -430,7 +441,7 @@ function don.character_state:reward_flag(flag, had_flag)
     self.client:QuestReward(self.client) -- zeroed out packet on live for trumpet sound (not sure if part of AddAAPoints)
 
     -- level 69 class spell reward (live does not reward again if deleted)
-    if flag == don.flags.t2.completed then
+    if flag == don.flags.t2.complete then
       self.client:SummonItem(don.spell_rewards[self.client:GetClass()])
     end
   end

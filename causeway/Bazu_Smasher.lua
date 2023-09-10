@@ -1,7 +1,7 @@
 --Bazu_Smasher (303081)
 --2 Bazu Hulk spawn at the described HP numbers
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_next_hp_event(90);
     eq.stop_timer('wipecheck');
   else

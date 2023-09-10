@@ -8,7 +8,7 @@ end
 
 function event_enter(e)
 local zone_time = eq.get_zone_time();	
-	if(e.other:HasItem(60324) and zone_time["zone_hour"]>=20 and zone_time["zone_hour"]<= 23 and eq.get_entity_list():IsMobSpawnedByNpcTypeID(116609) == false) then --Fazzle's Map of East Wastes
+	if(e.other:HasItem(60324) and zone_time["zone_hour"]>=20 and zone_time["zone_hour"]<= 23 and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(116609)) then --Fazzle's Map of East Wastes
 		eq.spawn2(116609,270,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Larnik_the_Recluse
 		eq.depop_with_timer();
 	end

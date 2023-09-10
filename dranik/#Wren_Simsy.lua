@@ -33,7 +33,7 @@ function event_timer(e)
 end
 
 function event_combat(e)
-	if e.joined==true then
+	if e.joined then
 		eq.set_timer("check_players",1000);
 		eq.spawn2(336255, 0, 0, e.self:GetX()+10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #a_shadowed_assassin
 		eq.spawn2(336255, 0, 0, e.self:GetX()-10, e.self:GetY()+10, e.self:GetZ(), e.self:GetHeading()):AddToHateList(e.self:GetHateRandom(),1); -- NPC: #a_shadowed_assassin

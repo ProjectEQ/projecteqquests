@@ -8,7 +8,7 @@ function event_timer(e)
 end
 
 function event_combat(e)
-	if(e.joined == true) then
+	if e.joined then
 		e.self:Say("To the death!!");
 		eq.signal(12082,1); -- NPC: Frostbite
 		eq.signal(12154,1); -- NPC: Frostbite

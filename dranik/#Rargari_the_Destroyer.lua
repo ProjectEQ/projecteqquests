@@ -12,7 +12,7 @@ function event_timer(e)
 end
 
 function event_combat(e)
-	if e.joined==false then
+	if not e.joined then
 		e.self:MoveTo(e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading(), true);
 	end
 end

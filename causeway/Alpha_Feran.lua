@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.set_timer("howl", 10 * 1000);
 else
 eq.stop_timer("howl");

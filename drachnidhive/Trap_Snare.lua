@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 e.self:CastSpell(7740,0); --confining web
 end
 end

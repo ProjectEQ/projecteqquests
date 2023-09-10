@@ -14,7 +14,7 @@ function event_waypoint_arrive(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("feattack",6*1000);
 		eq.set_timer("flamewall",30*1000);
 		eq.set_timer("pyro",12*1050);		

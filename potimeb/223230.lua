@@ -1,6 +1,6 @@
 -- a_summoned_boar_ (223230) part of Rallos Zek p5 adds
 function event_combat(e)
-  if (e.joined == true) then
+  if e.joined then
     eq.set_timer("OOBcheck", 6 * 1000);
   else
     eq.stop_timer("OOBcheck");

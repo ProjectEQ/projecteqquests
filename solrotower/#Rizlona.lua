@@ -6,7 +6,7 @@ eq.spawn2(212076,0,0,-1086,2024,-908,258); --a_warder_of_Rizlona (212076)
 end
 
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 eq.set_timer("OOBcheck", 6 * 1000);
 eq.stop_timer("depop");
 else

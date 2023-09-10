@@ -10,7 +10,7 @@ end
 
 function event_enter(e)
 
-	if(e.other:HasItem(18718) == true) then
+	if e.other:HasItem(18718) then
 		e.other:Message(MT.Yellow,"As you glance about the crowded room, Gahlith Wrannstad greets you. 'Why hello there. Are you perhaps a new recruits? If you wish to learn the ways of the Wizard, read the note in your inventory and hand me your note to start your training.'");
 	end
 	

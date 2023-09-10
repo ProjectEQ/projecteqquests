@@ -17,7 +17,7 @@ function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	local el = eq.get_entity_list();
 	
-	if(qglobals["wiz_epic_mistress_respawn"] == nil and qglobals["wiz_epic_wisp"] == "1" and el:IsMobSpawnedByNpcTypeID(125045) == false) then
+	if(qglobals["wiz_epic_mistress_respawn"] == nil and qglobals["wiz_epic_wisp"] == "1" and not el:IsMobSpawnedByNpcTypeID(125045)) then
 		eq.unique_spawn(125075,0,0,-49,170,-53,254); --Mistress of the Darkwater Quest-only
 	end
 end

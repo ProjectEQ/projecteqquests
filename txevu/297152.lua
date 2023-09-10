@@ -1,6 +1,6 @@
 --south jail mobs
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3000)
 	else
 		eq.stop_timer("OOBcheck")

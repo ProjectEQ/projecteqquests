@@ -11,7 +11,7 @@ function event_enter_zone(e)
 		end
 	end
 
-	if(qglobals["ranger_epic"] == "8" and qglobals["rng_spawn_wos"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(300057) == false) then
+	if(qglobals["ranger_epic"] == "8" and qglobals["rng_spawn_wos"] == nil and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(300057)) then
 		eq.unique_spawn(300057,0,0,-1491,2015,51.2,192); --#Herrian_Warfrost
 		eq.spawn2(300058,0,0,-1495,1965,51.2,160); --an_excited_builder (300058)
 		eq.spawn2(300058,0,0,-1447,2014,51.2,220); -- NPC: an_excited_builder

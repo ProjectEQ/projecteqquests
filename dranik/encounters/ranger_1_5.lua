@@ -6,7 +6,7 @@
 local hpcheck;
 
 function Sverin_Combat(e)
-	if (e.joined == true) then		
+	if e.joined then		
 		eq.set_timer("matter",14*1000);
 		local entity_list = eq.get_entity_list();
 		local npc_list = entity_list:GetNPCList();
@@ -19,7 +19,7 @@ function Sverin_Combat(e)
 end
 
 function Uisima_Combat(e)
-	if (e.joined == true) then		
+	if e.joined then		
 		eq.set_timer("golem_add",5*1000);
 		local entity_list = eq.get_entity_list();
 		local npc_list = entity_list:GetNPCList();
@@ -32,7 +32,7 @@ function Uisima_Combat(e)
 end
 
 function Drag_Combat(e)
-	if (e.joined == true) then		
+	if e.joined then		
 		local entity_list = eq.get_entity_list();
 		local npc_list = entity_list:GetNPCList();
 		for npc in npc_list.entries do
@@ -90,7 +90,7 @@ function Uisima_Timer(e)
 		eq.stop_timer("golem_add");
 		eq.set_timer("golem_add",60*1000);
 	elseif(e.timer=="checkstatus") then
-		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(336002) == false) then
+		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(336002) then
 			eq.stop_timer("golem_add");
 			hpcheck=true;
 			e.self:Emote("freezes as if it has chosen to become inanimate stone.");

@@ -1,5 +1,5 @@
 function event_combat(e)
-if (e.joined == true) then
+if e.joined then
 e.self:CastSpell(eq.ChooseRandom(7741,7743), e.self:GetID()); --explosive poison/deadly cloud
 end
 end

@@ -107,7 +107,7 @@ end
 
 function QueenCombat(e)
     if e.joined then
-	if timerstate[e.self:GetID()] == false then
+	if not timerstate[e.self:GetID()] then
         	eq.set_timer("portals", 5000) -- 5 sec initially
         	timerstate[e.self:GetID()] = true
         end
@@ -173,7 +173,7 @@ end
 
 function PrincessCombat(e)
     if e.joined then
-        if timerstate[e.self:GetID()] == false then
+        if not timerstate[e.self:GetID()] then
             eq.set_timer("portals", 5000) -- 5 sec initially
             timerstate[e.self:GetID()] = true
             --PortalAdds(portals[e.self:GetNPCTypeID()])
@@ -202,7 +202,7 @@ function PrincessDeath(e)
         queen:SetSpecialAbility(SpecialAbility.no_harm_from_client, 0)
     end
 	
-	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334048) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334047) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334046) == false) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334048) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334047) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334046) then
 		--#Princess_Zulaqua (334048),#Princess_Yelnia (334047),#Princess_Kira (334046)
 		eq.signal(334043,1);
 		eq.signal(334044,1);
@@ -217,7 +217,7 @@ function PrincessDeath(e)
 			npc:ModifyNPCStat("assist", "200");
 			end
 		end
-	elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(334043) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334044) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(334045) == false) then
+	elseif not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334043) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334044) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(334045) then
 		
 		--#Princess_Puja (334043),#Princess_Lana (334044),#Princess_Quellon (334045)
 		eq.signal(334048,1);

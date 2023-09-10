@@ -18,11 +18,11 @@ function event_signal(e)
   elseif (e.signal == 9) then
     el = eq.get_entity_list();
 
-    if ( el:IsMobSpawnedByNpcTypeID(294590) == false and 
-         el:IsMobSpawnedByNpcTypeID(294587) == false and 
-         el:IsMobSpawnedByNpcTypeID(294588) == false and 
-         el:IsMobSpawnedByNpcTypeID(294509) == false and 
-         el:IsMobSpawnedByNpcTypeID(294589) == false ) then
+    if (not el:IsMobSpawnedByNpcTypeID(294590) and
+        not el:IsMobSpawnedByNpcTypeID(294587) and
+        not el:IsMobSpawnedByNpcTypeID(294588) and
+        not el:IsMobSpawnedByNpcTypeID(294509) and
+        not el:IsMobSpawnedByNpcTypeID(294589)) then
       eq.depop_all(294632);
     end
   end

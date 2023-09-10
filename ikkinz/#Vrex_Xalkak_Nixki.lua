@@ -14,7 +14,7 @@ function event_hp(e)
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);
 		eq.stop_timer("hpflux");
 	else

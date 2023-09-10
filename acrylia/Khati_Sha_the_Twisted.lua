@@ -7,7 +7,7 @@ function event_spawn(e)
 end
 
 function event_combat(e) -- ??
-	if(e.joined == true) then
+	if e.joined then
 		eq.spawn2(154054,0,0,972.00,-556.00,-41.00,370); -- Defiled Minion
 		eq.spawn2(154054,0,0,970.00,-602.00,-41.00,450); -- Defiled Minion
 		eq.spawn2(154054,0,0,910.00,-602.00,-41.00,60); -- Defiled Minion

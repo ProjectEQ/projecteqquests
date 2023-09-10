@@ -2,7 +2,7 @@
 #Angelox
 
 sub EVENT_COMBAT{
-    quest:emote("separates from the shadows, dagger in hand.");
+    quest::emote("separates from the shadows, dagger in hand.");
 }
 
 sub EVENT_DEATH_COMPLETE{

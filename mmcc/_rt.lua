@@ -6,22 +6,22 @@ local TRIGGER_MINIMUM = 3
 local area_emotes = {
   {
     loc = { 851, 730, 8 },
-    color = 13,
+    color = MT.Red,
     text = "Dirt falls from the ceiling as the distant thunder of stone footsteps lashes out at the still air.  Whatever you've done, the master of these caverns is unhappy about it and is sending someone, or something, to take care of you."
   },
   {
     loc = { 642, 397, 11 },
-    color = 13,
+    color = MT.Red,
     text = "Dirt falls from the ceiling as the distant thunder of stone footsteps lashes out at the still air.  Whatever you've done, the master of these caverns is unhappy about it and is sending someone, or something, to take care of you."
   },
   {
     loc = { 375, 488, 6 },
-    color = 13,
+    color = MT.Red,
     text = "Dirt falls from the ceiling as the distant thunder of stone footsteps lashes out at the still air.  Whatever you've done, the master of these caverns is unhappy about it and is sending someone, or something, to take care of you."
   },
   {
     loc = { 211, 96, 1 },
-    color = 13,
+    color = MT.Red,
     text = "Dirt falls from the ceiling as the distant thunder of stone footsteps lashes out at the still air.  Whatever you've done, the master of these caverns is unhappy about it and is sending someone, or something, to take care of you."
   },
 }

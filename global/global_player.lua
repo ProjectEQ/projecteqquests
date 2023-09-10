@@ -132,7 +132,7 @@ function event_combine_success(e)
 		e.self:Ding();
 		e.self:Message(MT.Yellow,'You have gained 5 ability points!');	
 		eq.set_global("druid_epic","8",5,"F");	
-		e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
+		e.self:SendMarqueeMessage(MT.Yellow, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
 	--druid 2.0 sub final
 	elseif(e.recipe_id ==19908) then
 		if(eq.get_zone_short_name()=="anguish") then
@@ -153,7 +153,7 @@ function event_combine_success(e)
 		e.self:Ding();
 		e.self:Message(MT.Yellow,'You have gained 10 ability points!');	
 		eq.set_global("druid_epic","13",5,"F");	
-		--e.self:SendMarqueeMessage(15, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
+		--e.self:SendMarqueeMessage(MT.Yellow, 510, 1, 100, 10000, "You plant the Mind Crystal and the Seed of Living Brambles in the pot. The pot grows warm and immediately you see a vine sprouting from the soil. The vine continues to grow at a tremendous rate. Brambles grow into the heart of the crystal where the core impurity is and split it. They continue to grow at an astounding speed and soon burst the pot and form the Staff of Living Brambles");
 	--warrior 2.0
 	elseif(e.recipe_id ==19902) then	
 		e.self:AddEXP(50000);

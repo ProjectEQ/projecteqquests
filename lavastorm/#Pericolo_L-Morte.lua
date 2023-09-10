@@ -32,11 +32,12 @@ function event_say(e)
     return
   end
 
+  -- todo: unknown messages if nest hasn't been unlocked
   if e.message:findi("hail") then
     local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Apprehensive) then -- below apprehensive
       e.other:Message(MT.NPCQuestSay, "Pericolo L`Morte says, 'Sniveler! You dare to address me so informally? I ought to have you slain!  Begone!'")
-    else -- Say channel but only sent to client
+    elseif e.other:GetGM() or don.is_nest_unlocked() then -- Say channel but only sent to client
       e.other:Message(MT.Say, "Pericolo L`Morte says, 'I have some jobs that require a greater force to accomplish, 18 or so. If you think you are up for the challenge you can [see those] as well.'")
       local task_offers = don.get_filtered_tasks(player, missions)
       if #task_offers > 0 then
@@ -48,7 +49,7 @@ function event_say(e)
     if not player:has_min_faction(don.faction.Apprehensive) then -- below apprehensive (gives good side message)
       e.other:Message(MT.NPCQuestSay, ("Pericolo L`Morte says, 'Greetings, %s. I'm afraid I am not empowered to speak to you.  You are not as kindly to us as you ought to be to gain my full attention.'"):format(e.other:GetCleanName()))
       -- todo: should also say "talking lump of refuse" low faction messages
-    else
+    elseif e.other:GetGM() or don.is_nest_unlocked() then
       local task_offers = don.get_filtered_tasks(player, raids)
       if #task_offers > 0 then
         eq.task_selector(task_offers)

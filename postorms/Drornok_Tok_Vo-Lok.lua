@@ -24,7 +24,7 @@ eq.spawn2(eq.ChooseRandom(210246,210260), 0, 0,-316,-220,-404,0); -- NPC(s): #a_
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		if(not eq.is_paused_timer('depop')) then
 			eq.pause_timer('depop');
 		end

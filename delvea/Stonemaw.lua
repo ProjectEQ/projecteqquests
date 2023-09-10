@@ -1,5 +1,5 @@
 function event_combat(e)
-  if (e.joined == true and eq.get_entity_list():IsMobSpawnedByNpcTypeID(341060) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(341061) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(341062) == false) then
+  if e.joined and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(341060) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(341061) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(341062) then
     eq.spawn2(341060,0,0,-1151,1044,26.10,253); -- NPC: Magma
     eq.spawn2(341061,0,0,-1190,1001,26.10,253); -- NPC: Molten
     eq.spawn2(341062,0,0,-1197,1039,26.10,253); -- NPC: Smolder

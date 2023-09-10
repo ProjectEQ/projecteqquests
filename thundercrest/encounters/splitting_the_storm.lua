@@ -29,7 +29,7 @@ local function lila_say(e)
   elseif e.message:findi("follow") then
     -- live locks follow to the player that first says follow until that player zones
     local owner_client = get_owner_client()
-    eq.debug(("active follow_id: %d owner_id: %d owner_valid: %s is_following: %s"):format(e.self:GetFollowID(), owner_id, owner_client.valid, is_following))
+    --eq.debug(("active follow_id: %d owner_id: %d owner_valid: %s is_following: %s"):format(e.self:GetFollowID(), owner_id, tostring(owner_client.valid), is_following))
 
     if follow_id == e.other:GetID() then
       e.other:Message(MT.NPCQuestSay, "Lila Trulan says, 'I'm already following you!'")

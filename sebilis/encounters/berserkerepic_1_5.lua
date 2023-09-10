@@ -113,7 +113,7 @@ function Guardian_Timer(e)
 end
 
 function Protector_Combat(e)
-  if (e.joined == true) then
+  if e.joined then
 	eq.set_timer("checkaxe",6000);
   end  
 end

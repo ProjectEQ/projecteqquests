@@ -88,7 +88,7 @@ function spawn_mobs(wave)
 	local npc;
 	
 	-- Spawn Archers
-	if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(201494) == false ) then 
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(201494) then 
 		eq.spawn2( 201494, 0, 0, -177, -1188, 73, 2); -- NPC: a_pitiless_avenger
 		eq.spawn2( 201494, 0, 0,  -82, -1188, 73, 2); -- NPC: a_pitiless_avenger
 	end

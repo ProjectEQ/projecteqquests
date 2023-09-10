@@ -34,7 +34,7 @@ function event_timer(e)
 end
 
 function event_combat(e)
-    if (e.joined == true and e.self:GetHPRatio() > 85) then
+    if e.joined and e.self:GetHPRatio() > 85 then
         eq.set_timer("terror", 5000); -- every 5 seconds
         CastTerror(e.self);
     else

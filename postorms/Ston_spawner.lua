@@ -1,5 +1,5 @@
 function event_signal(e)
-if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(210088) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(210087) == false) then
+if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(210088) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(210087) then
 eq.spawn2(210237,0,0,-178,690,-374,330); -- NPC: a_Koka`Vor_elder
 eq.spawn2(210236,0,0,-223,655,-374,330); -- NPC: a_Koka`Vor_chieftain
 eq.spawn2(210236,0,0,-173,628,-374,449); -- NPC: a_Koka`Vor_chieftain

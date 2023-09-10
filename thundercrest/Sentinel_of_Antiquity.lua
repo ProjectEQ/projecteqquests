@@ -1,12 +1,12 @@
 function event_death_complete(e)
-	if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(340413) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(340412) == false) then
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340413) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(340412) then
 		eq.signal(340395,1); -- NPC: #Lore_Warden
 		eq.signal(340391,1); -- NPC: Messenger_Drake
 	end
 end
 
 function event_combat(e)
-	if (e.joined == true) then
+	if e.joined then
 		eq.set_timer("OOBcheck", 3 * 1000);
 	else
 		eq.stop_timer("OOBcheck");

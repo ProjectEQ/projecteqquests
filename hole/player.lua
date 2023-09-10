@@ -1,6 +1,6 @@
 function event_enter_zone(e)
   local qglobals = eq.get_qglobals(e.self);
-	if ( qglobals["ranger_epic15_pre"] == "3" and eq.get_entity_list():IsMobSpawnedByNpcTypeID(39168) == false) then
+	if ( qglobals["ranger_epic15_pre"] == "3" and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(39168)) then
     eq.spawn2(39168, 0, 0, 420, 110, -347, 120); -- NPC: Stone_Collector
   end
 end

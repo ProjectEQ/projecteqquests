@@ -12,7 +12,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 57917}) and e.other:HasItem(52952) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(119184) == false) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 57917}) and e.other:HasItem(52952) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(119184)) then
 		e.self:Say("Even lovelier than I remembered. Thank you ever so much.");
 		e.other:AddEXP(10000);
 		e.other:SummonItem(52958); -- Item: Purifying Crystal Fragment

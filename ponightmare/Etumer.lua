@@ -7,7 +7,7 @@ function event_say(e)
   elseif (e.message:findi("perhaps")) then
     e.self:Say("Perhaps you could find some way to overwhelm Mujaki? I might be able to work an enchantment to transport you closer to my brother. I only feel I have power to send twenty four of you, when you have formed rank please have the leaders of your groups let me know when you are ready.");
   elseif (e.message:findi("ready")) then
-	if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(204039) == false ) then 
+	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(204039) then
 		 e.self:Say("Mujaki? Haven't seen him around lately");
 	else
 		MoveGroup(e.other:GetGroup(), e.self:GetX(), e.self:GetY(), e.self:GetZ(), 75, -1939, -2114, 167.48, 121);

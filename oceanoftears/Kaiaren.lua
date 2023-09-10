@@ -79,7 +79,7 @@ function event_trade(e)
 end
 
 function event_combat(e)
-    if (e.joined == false) then
+    if not e.joined then
         eq.stop_all_timers();
         eq.set_timer("reset", 900000); -- 15 mins
     end

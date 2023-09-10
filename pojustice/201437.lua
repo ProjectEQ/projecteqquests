@@ -118,7 +118,7 @@ function event_timer(e)
 
       -- Check to see if all the PCs have left the Trial area; if so
       -- Clean Corpses up and release thoe hold and stop the timer.
-      if ( ProximityCheck(trial_x, trial_y, trial_z, 250) == false) then 
+      if not ProximityCheck(trial_x, trial_y, trial_z, 250) then 
          eq.stop_timer(e.timer);
 
          eq.stop_timer("cooldown");

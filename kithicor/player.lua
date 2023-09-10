@@ -19,7 +19,7 @@ function event_enter_zone(e)
         local qglobals = eq.get_qglobals(e.self)
         if qglobals["bard15"] == "5" then
             local entity_list = eq.get_entity_list()
-            if entity_list:IsMobSpawnedByNpcTypeID(20290) == false and entity_list:IsMobSpawnedByNpcTypeID(20291) == false and entity_list:IsMobSpawnedByNpcTypeID(20292) == false then
+            if not entity_list:IsMobSpawnedByNpcTypeID(20290) and not entity_list:IsMobSpawnedByNpcTypeID(20291) and not entity_list:IsMobSpawnedByNpcTypeID(20292) then
                 eq.spawn2(20290, 140, 0, 1157, 537, 131, 490)
             end
         end
@@ -27,7 +27,7 @@ function event_enter_zone(e)
 		local qglobals = eq.get_qglobals(e.self)
         if qglobals["druid_epic"] == "7" then	
 				local entity_list = eq.get_entity_list()
-				if entity_list:IsMobSpawnedByNpcTypeID(20299) == false then
+				if not entity_list:IsMobSpawnedByNpcTypeID(20299) then
 					eq.spawn2(20299, 0, 0, -696.6,-523.8,-33,78)
 				end
 		end

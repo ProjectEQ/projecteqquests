@@ -18,8 +18,8 @@
 -- Zone Trash:
 --
 --]]
-local instance_id = 0;
-local Anguish_Lockouts = {};
+local instance_id		= 0;
+local Anguish_Lockouts	= {};
 
 local KELDOVAN_EVENT    = "Keldovan the Harrier"
 local JELVAN_EVENT      = "Rescuing Jelvan"
@@ -29,7 +29,7 @@ local AMV_EVENT         = "Arch Magus Vangl"
 local OMM_EVENT         = "Overlord Mata Muram"
 local LOWER_GLOBE_EVENT = "Lower Globe of Discordant Energy"
 local UPPER_GLOBE_EVENT = "Upper Globe of Discordant Energy"
-local REPLAY_EVENT      = "Replay Timer"
+local REPLAY_EVENT      = "Generals"
 
 function setup_lockouts(expedition)
 	Anguish_Lockouts = {
@@ -90,7 +90,7 @@ function PH_amv()
 end
 
 function Spawn_omm()
---always spawn AMV if OMM is up.  AMV only drops chest on the first kill
+	--always spawn AMV if OMM is up.  AMV only drops chest on the first kill
 	eq.unique_spawn(317107,0,0, 366, 4886, 278, 0); -- NPC: Arch_Magus_Vangl
 	eq.unique_spawn(317109,0,0, 507, 4969, 296.5, 254); -- NPC: Overlord_Mata_Muram
 end
@@ -117,11 +117,10 @@ function Check_lorb(expedition, lockout_name)
 			end
 
 			spawned_orb = true
-			eq.debug("Check_lorb: Spawn Lower Orb");
 		end
 	end
 	if not spawned_orb then
-		eq.debug("Check_lorb: No Lower Orb");
+		-- eq.debug("Check_lorb: No Lower Orb");
 	end
 end
 
@@ -141,11 +140,11 @@ function Check_uorb(expedition, lockout_name)
 			end
 
 			spawned_orb = true
-			eq.debug("Check_uorb: Spawn Upper Orb");
 		end
 	end
+
 	if not spawned_orb then
-		eq.debug("Check_uorb: No Upper Orb");
+		-- eq.debug("Check_uorb: No Upper Orb");
 	end
 end
 
@@ -153,9 +152,8 @@ function Check_amv_chest(expedition, lockout_duration)
 --spawn ornate chest only if amv lockout is not already set
 --do not set AMV lockout if it already exists
 	if expedition:HasLockout(AMV_EVENT) then
-		eq.debug("Check_amv_chest: No Chest");
+		-- eq.debug("Check_amv_chest: No Chest");
 	else
-		eq.debug("Check_amv_chest: Spawn Chest");
 		expedition:AddLockout(AMV_EVENT, lockout_duration)
 		eq.unique_spawn(317112,0,0, 366, 4886, 278, 0); --Ornate_Chest
 	end
@@ -163,63 +161,66 @@ end
 
 function Spawn_augs()
 	local rolled_mob;
-	local num_mob=0;
-	local mob_list = {};
+	local num_mob		= 0;
+	local mob_list 		= {};
 	local num_to_spawn;
-	local mob_in_list=false;
+	local mob_in_list	= false;
 	
 	--#a_lightning_warrior_commander (317076) is placeholder
-  list_named = {
-	[1] = { 317094, 'Grenlok_the_Converter', 4, 1638, -204, 256},
-	[2] = { 317105, 'Vilria_the_Keeper', 204, 703, -202, 384},
-	[3] = { 317106, 'Damlin_Lingering_Charge', 355, 3815, 141, 384},
-	[4] = { 317078, 'First_Lieutenant_Minas', 345, 4642, 209.4, 256},
-	[5] = { 317077, 'Administrator_Charial', 20.75, 3811.7, 143, 128}
+  	list_named = {
+		[1] = { 317094, 'Grenlok_the_Converter', 4, 1638, -204, 256},
+		[2] = { 317105, 'Vilria_the_Keeper', 204, 703, -202, 384},
+		[3] = { 317106, 'Damlin_Lingering_Charge', 355, 3815, 141, 384},
+		[4] = { 317078, 'First_Lieutenant_Minas', 345, 4642, 209.4, 256},
+		[5] = { 317077, 'Administrator_Charial', 20.75, 3811.7, 143, 128}
 	};
 	
-	local diceroll=math.random(1,100);	
-	if (diceroll<=20) then
-		num_to_spawn=2;
-	elseif (diceroll<=50) then
-		num_to_spawn=3;
-	elseif (diceroll<=80) then
-		num_to_spawn=4;
+	local diceroll = math.random(1,100);
+	if diceroll <= 20 then
+		num_to_spawn = 2;
+	elseif diceroll <= 50 then
+		num_to_spawn = 3;
+	elseif diceroll <= 80 then
+		num_to_spawn = 4;
 	else
-		num_to_spawn=5;
+		num_to_spawn = 5;
 	end
 
-	eq.debug("Aug Named to spawn: " .. num_to_spawn);
-	while( num_mob < num_to_spawn ) do
-		rolled_mob=list_named[math.random(1,5)][1];	
-		mob_in_list=false;		
+	while num_mob < num_to_spawn do
+		rolled_mob = list_named[math.random(1,5)][1];
+		mob_in_list = false;
 		for k,v in pairs(mob_list) do
-			if v==rolled_mob then
-				mob_in_list=true;
+			if v == rolled_mob then
+				mob_in_list = true;
 			end
-		end		
+		end
+
 		if not mob_in_list then
-			num_mob=num_mob+1;
-			mob_list[num_mob]=rolled_mob;
+			num_mob = num_mob + 1;
+			mob_list[num_mob] = rolled_mob;
 		end
 	end
 	
 	local grid;
 	for i = 1, 5 do
-		mob_in_list=false
+		mob_in_list = false
 		for k,v in pairs(mob_list) do
-			if v==list_named[i][1] then
-				mob_in_list=true;
+			if v == list_named[i][1] then
+				mob_in_list = true;
 			end
 		end
 		
-		if i==4 then grid=16 else grid=0 end
+		if i == 4 then
+			grid = 16
+		else 
+			grid = 0
+		end
 		
 		if mob_in_list then
-			--eq.zone_emote(MT.Yellow,"spawn: " .. list_named[i][1] .. " ," .. list_named[i][3] .. " ," .. list_named[i][4] .. " ," .. list_named[i][5] .. " ," ..list_named[i][6]); 
 		    eq.spawn2(list_named[i][1],grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]);		  
 		 else
 			eq.spawn2(317076,grid,0,list_named[i][3],list_named[i][4],list_named[i][5],list_named[i][6]); -- NPC: #a_lightning_warrior_commander
-		end;		
+		end	
 	end
 end
 
@@ -241,6 +242,7 @@ function AddLockout(lockout)
 
 			--wait til after lockouts set to spawn in case of crash, etc
 			if lockout_name == REPLAY_EVENT then
+				expedition:AddReplayLockout(eq.seconds("2h"))
 				Spawn_augs();
 			elseif lockout_name == KELDOVAN_EVENT or lockout_name == JELVAN_EVENT then
 				Check_lorb(expedition, lockout_name);
@@ -252,8 +254,13 @@ function AddLockout(lockout)
 end
 
 function event_signal(e)
-  eq.debug("signal: " .. e.signal);
-  if ( Anguish_Lockouts[e.signal] ~= nil ) then  	
-    AddLockout(Anguish_Lockouts[e.signal]);
-  end
+	if e.signal == 999999 then
+		eq.depop_all(317122);
+		eq.depop_all(317114);
+		eq.depop_all(317123);
+		eq.depop_all(317117);
+		eq.unique_spawn(317124,0,0, 506, 4822, 278, 512); -- NPC: Overlords Chest
+	elseif Anguish_Lockouts[e.signal] ~= nil then
+		AddLockout(Anguish_Lockouts[e.signal]);
+	end
 end

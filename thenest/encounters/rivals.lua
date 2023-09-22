@@ -32,12 +32,12 @@ local good = { -- Norrath's Keepers version
   outer = { min_x = 1240, max_x = 1610, min_y = 2100, max_y = 2550 }, -- triggers script start
   inner = { min_x = 1430, max_x = 1529, min_y = 2230, max_y = 2320 }, -- triggers fight
   spawngroup_targets = { -- attacker spawngroup id to target spawngroup id
-    [5279626] = 5279623, -- a_blackroot_spider attacks #Gimblemort
-    [5279625] = 5279623, -- a_blackroot_spider attacks #Gimblemort
-    [5279624] = 5279620, -- a_fireclaw_servant attacks #Henry_Firemind
-    [5279612] = 5279615, -- a_blackroot_spider attacks #Redeyes_Lore_Eater
-    [5279611] = 5279615, -- a_blackroot_spider attacks #Redeyes_Lore_Eater
-    [5279610] = 5279617, -- a_fireclaw_servant attacks #Ferrin_Stoneheart
+    [279626] = 279623, -- a_blackroot_spider attacks #Gimblemort
+    [279625] = 279623, -- a_blackroot_spider attacks #Gimblemort
+    [279624] = 279620, -- a_fireclaw_servant attacks #Henry_Firemind
+    [279612] = 279615, -- a_blackroot_spider attacks #Redeyes_Lore_Eater
+    [279611] = 279615, -- a_blackroot_spider attacks #Redeyes_Lore_Eater
+    [279610] = 279617, -- a_fireclaw_servant attacks #Ferrin_Stoneheart
   },
 }
 
@@ -45,14 +45,14 @@ local evil = { -- Dark Reign version
   outer = { min_x = -145, max_x = 140, min_y = 1460, max_y = 1860 }, -- triggers script start
   inner = { min_x = -150, max_x = 87,  min_y = 1570, max_y = 1700 }, -- triggers fight
   spawngroup_targets = { -- attacker spawngroup id to target spawngroup id
-    [5279626] = 5287847, -- a_blackroot_spider attacks #Wealgry_Windmiller
-    [5279625] = 5287847, -- a_blackroot_spider attacks #Wealgry_Windmiller
-    [5279624] = 5287845, -- a_fireclaw_servant attacks #Evron_Sensitiveleaf
-    [5279612] = 5287849, -- a_blackroot_spider attacks #Risha_Farchaser
-    [5279611] = 5287849, -- a_blackroot_spider attacks #Risha_Farchaser
-    [5279610] = 5287850, -- a_fireclaw_servant attacks #Garrand_Redmist
-    [5287850] = 5279626, -- #Garrand_Redmist attacks a_blackroot_spider
-    [5287846] = 5279624, -- #Filimar_Starshaper attacks a_fireclaw_servant
+    [279626] = 287847, -- a_blackroot_spider attacks #Wealgry_Windmiller
+    [279625] = 287847, -- a_blackroot_spider attacks #Wealgry_Windmiller
+    [279624] = 287845, -- a_fireclaw_servant attacks #Evron_Sensitiveleaf
+    [279612] = 287849, -- a_blackroot_spider attacks #Risha_Farchaser
+    [279611] = 287849, -- a_blackroot_spider attacks #Risha_Farchaser
+    [279610] = 287850, -- a_fireclaw_servant attacks #Garrand_Redmist
+    [287850] = 279626, -- #Garrand_Redmist attacks a_blackroot_spider
+    [287846] = 279624, -- #Filimar_Starshaper attacks a_fireclaw_servant
   },
 }
 

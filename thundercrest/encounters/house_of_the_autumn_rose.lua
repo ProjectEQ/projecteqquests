@@ -4,13 +4,13 @@ local function ambush_combat(e)
     eq.depop()
 
     -- all z positions offset from live values to fix getting stuck in ceiling
-    if e.self:GetSp2() == 5280371 then -- entrance
+    if e.self:GetSp2() == 280371 then -- entrance
       eq.spawn2(340502, 0, 0, 0.0,    657.0,  156.0, 244.0) -- an_Autumn_Rose_assassin
       eq.spawn2(340502, 0, 0, 13.0,   419.0,  211.0, 510.0)
-    elseif e.self:GetSp2() == 5280392 then -- west hallway
+    elseif e.self:GetSp2() == 280392 then -- west hallway
       eq.spawn2(340502, 0, 0, 307.0,  108.0,  261.0, 8.0)
       eq.spawn2(340502, 0, 0, 310.0,  162.0,  267.0, 294.0)
-    elseif e.self:GetSp2() == 5280440 then -- dojo leading to bridge
+    elseif e.self:GetSp2() == 280440 then -- dojo leading to bridge
       eq.spawn2(340502, 0, 0, -215.0, -486.0, 334.0, 126.0)
       eq.spawn2(340502, 0, 0, -54.0,  -483.0, 336.0, 373.0)
     end

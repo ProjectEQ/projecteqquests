@@ -62,11 +62,11 @@ local function move_guards()
       end
 
       local spawngroup = guard:GetSp2()
-      if spawngroup == 5280015 or spawngroup == 5280018 then -- east guards
+      if spawngroup == 280015 or spawngroup == 280018 then -- east guards
         guard:MoveTo(636.75, -3445.0, -357.0, 261.75, true)
-      elseif spawngroup == 5280014 or spawngroup == 5280017 then -- western guards
+      elseif spawngroup == 280014 or spawngroup == 280017 then -- western guards
         guard:MoveTo(631.125, -3510.375, -355.0, 265.5, true)
-      elseif spawngroup == 5280020 or spawngroup == 5280021 then -- north guards
+      elseif spawngroup == 280020 or spawngroup == 280021 then -- north guards
         guard:MoveTo(615.875, -3558.75, -353.625, 282.5, true)
       end
     end

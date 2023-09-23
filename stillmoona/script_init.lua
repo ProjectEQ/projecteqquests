@@ -13,4 +13,6 @@ elseif version == instance_version.stillmoon_temple_tracking_the_kirin then
   eq.load_encounter("tracking_the_kirin")
 elseif version == instance_version.stillmoon_temple_tea_for_thy_master then
   eq.load_encounter("tea_for_thy_master")
+elseif version == instance_version.stillmoon_temple_guardian_of_the_sands then
+  eq.load_encounter("guardian_of_the_sands")
 end

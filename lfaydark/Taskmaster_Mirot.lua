@@ -4,7 +4,7 @@
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(qglobals["cleric_epic"] >= "4" and e.message:findi("hail")) then
+	if(qglobals["cleric_epic"] ~= nil and qglobals["cleric_epic"] >= "4" and e.message:findi("hail")) then
 		e.self:Emote("looks at you for a moment before his eyes shine with recognition. 'Its you, I've heard about you. We will not allow you to interfere with our plans again!");
 		e.self:SetInvisible(2);
 		e.self:SetTargetable(false);

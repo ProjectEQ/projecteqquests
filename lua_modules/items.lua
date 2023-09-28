@@ -121,7 +121,7 @@ function items.return_items(npc, client, trade, text)
 				if(client:GetClass() == npc:GetClass() - 19) then
 					client:TrainDisc(inst:GetID());
 				else
-					return_data[i] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
+					return_data[#return_data+1] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
 					npc:Say(string.format("You are not a member of my guild. I will not train you!"));
 					if return_count > 0 then
 						client:PushItemOnCursor(inst);
@@ -129,7 +129,7 @@ function items.return_items(npc, client, trade, text)
 					end
 				end
 			elseif return_count > 0 then
-				return_data[i] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
+				return_data[#return_data+1] = string.format("%d|%d|%d", inst:GetID(), inst:GetCharges(), is_attuned);
 				client:PushItemOnCursor(inst);
 				if text then
 					npc:Say(string.format("I have no need for this %s, you can have it back.", client:GetCleanName()));

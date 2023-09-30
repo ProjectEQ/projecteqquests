@@ -610,6 +610,7 @@ function event_timer(e)
 		
 		--announce time remaining in hourly increments
 		if ((total_time ~= nil and total_time > 0 and total_time % 60 == 0)) then
+			local hours_left = "";
 			if (total_time / 60 == 8) then
 				hours_left = "eight hours";
 			elseif (total_time / 60 == 7) then

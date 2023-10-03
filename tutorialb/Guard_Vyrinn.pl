@@ -3,13 +3,13 @@
 #quest:
 # - Spider Caves - taskid:5092 - starts
 # - Spider Tamer Gugan - taskid:5702 - starts/completes
-# - Arachnophobia (Group) - taskid:33 - starts
+# - Arachnophobia (Group) - taskid:1394 - starts
 # items: 54604
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {
       quest::say("My mate, Rahtiz, and I will hold this position.  We need you to explore the tunnels beyond.");
-      quest::taskselector(5092,5702,33);
+      quest::taskselector(5092,5702,1394);
    }
 }
 

@@ -176,7 +176,7 @@ end
 local function player_task_update(e)
 	if not active and e.task_id == dz_task_id and e.activity_id == 1 then -- Confront Guardian
 		eq.signal(338171, 1) -- signal Shogurei to become attackable
-	active = true
+		active = true
 	end
 end
 

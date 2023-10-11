@@ -9,7 +9,7 @@
 
 local zone_controller_id  = 10 -- hardcoded in source
 local scholar_npc_id      = 340750 -- #Noble_Kirin_Scholar
-local exclude             = { zone_controller_id = true, scholar_npc_id = true }
+local exclude             = { [zone_controller_id] = true, [scholar_npc_id] = true }
 local gilded_scroll_id    = 81880
 local labor_scroll_id     = 81881
 local magic_scrolls       = { 81882, 81883, 81884 }

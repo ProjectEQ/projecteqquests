@@ -1,12 +1,20 @@
 -- 1) 10 scrolls + the 1 Gilded scroll will drop max in the mission
--- 2) npcs beyond locked gate do not drop scrolls but likely count as remaining mobs for drop chance
+-- 2) npcs beyond locked gate do not drop scrolls but might count as remaining mobs for drop chance
 --    this can cause an incompletable mission (no gilded) or less than 10 scroll drops (no respawns)
--- 3) the Gilded scroll only drops after most scrolls drop, suggesting chance increases per scroll
---    this could mean +10% chance per scroll for gilded to drop
+--    as of 2023-10-14 this bug still exists on live
+-- 3) the Gilded scroll has never been seen before 3 scroll drops or the 15th kill. kill count
+--    could affect it directly (rather than indirectly via scroll drops) with kill ranges or just
+--    a flat chance against remaining npcs after 15 kills
 -- 4) the Gilded scroll can drop with another scroll so it's a secondary check
 -- 5) the distribution on scrolls is 50% labor doc and 50% spread between the 3 magic scrolls
--- todo: for live accuracy npcs behind gate should count for drop chance even if it can make mission incompletable
 
+-- todo: need to figure out live bug criteria better, if all npcs behind locked gate
+--       were included for gilded scroll drops then broken missions would be more common.
+--       maybe they use a flat number of npcs but not all spawn due to live's random variance
+-- todo: need more research to confirm live drop conditions. there could be kill ranges
+--       or some trigger to add the gilded scroll
+
+local enable_live_bug     = true -- if enabled mission may not be completable
 local zone_controller_id  = 10 -- hardcoded in source
 local scholar_npc_id      = 340750 -- #Noble_Kirin_Scholar
 local exclude             = { [zone_controller_id] = true, [scholar_npc_id] = true }
@@ -15,6 +23,8 @@ local labor_scroll_id     = 81881
 local magic_scrolls       = { 81882, 81883, 81884 }
 local dropped_gilded      = false
 local scroll_drops        = { max = 10, count = 0, normal = 0, magic = 0 }
+local gilded              = { min_kills = 15, min_scrolls = 3 } -- lowest seen after 100+ samples
+local kills               = 0
 
 local scroll_emote = "As you take the scroll from the corpse, you pause to take a closer look at it."
 local magic_emote  = "As you take the scroll from the corpse, magical runes appear on the parchment."
@@ -41,7 +51,7 @@ local function get_npc_count()
   local remaining = 0
   local npc_list = eq.get_entity_list():GetNPCList()
   for npc in npc_list.entries do
-    -- live appears to count npcs beyond locked door but doesn't allow them to drop scrolls
+    -- live might count npcs beyond locked door but doesn't allow them to drop scrolls
     if not npc:IsPet() and not exclude[npc:GetNPCTypeID()] and not is_behind_locked_door(npc) then
       remaining = remaining + 1
     end
@@ -73,14 +83,22 @@ function zone_npc_death(e)
     return
   end
 
-  local remaining_scrolls = scroll_drops.max - scroll_drops.count
-  local npc_count = get_npc_count() + 1
-  eq.debug(("Remaining scrolls (%d) npcs (%d) -- dropped normal (%d) magic (%d)"):format(
-    remaining_scrolls, npc_count, scroll_drops.normal, scroll_drops.magic))
+  kills = kills + 1
 
-  -- drops might be better distributed on live and double drops less common
+  local remaining_scrolls = scroll_drops.max - scroll_drops.count
+  local remaining_npcs = get_npc_count() + 1 -- include this kill
+
+  -- make it possible for gilded to not drop by adding an extra npc to chance
+  -- this is not entirely accurate for non-gilded since less than 9 scrolls can drop on live
+  if enable_live_bug then
+    remaining_npcs = remaining_npcs + 1
+  end
+
+  eq.debug(("Remaining scrolls (%d) npcs (%d) kills (%d) -- dropped normal (%d) magic (%d)"):format(
+    remaining_scrolls, remaining_npcs, kills, scroll_drops.normal, scroll_drops.magic))
+
   if remaining_scrolls > 0 then
-    local chance = remaining_scrolls / npc_count
+    local chance = remaining_scrolls / remaining_npcs
     local roll = math.random()
     eq.debug(("-- Checking scroll chance: (%f) roll: (%f)"):format(chance * 100, roll * 100))
     if roll < chance then
@@ -89,8 +107,8 @@ function zone_npc_death(e)
     end
   end
 
-  if not dropped_gilded then
-    local chance = (scroll_drops.count * 0.1) / npc_count -- +10% per dropped scroll
+  if not dropped_gilded and kills >= gilded.min_kills and scroll_drops.count >= gilded.min_scrolls then
+    local chance = 1 / remaining_npcs
     local roll = math.random()
     eq.debug(("-- Checking Gilded chance: (%f) roll: (%f)"):format(chance * 100, roll * 100))
     if roll < chance then

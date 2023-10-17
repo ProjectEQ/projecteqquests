@@ -3,7 +3,7 @@
 
 sub EVENT_SPAWN {
 	quest::shout("I sense...mortals");
-	quest::pathto(-782,-1319,-43);
+	quest::moveto(-782,-1319,-43);
 }
 
 sub EVENT_DEATH_COMPLETE {

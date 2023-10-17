@@ -3,7 +3,7 @@
 
 sub EVENT_SPAWN {
 	quest::shout("Casper! The Crazy Ghost! Coming to kill you all!");
-	quest::pathto(-782,-1319,-43);
+	quest::moveto(-782,-1319,-43);
 }
 
 sub EVENT_DEATH_COMPLETE {

@@ -27,8 +27,8 @@ sub EVENT_SAY {
 				quest::setglobal("halloween_pvp_zeus",1,5,"D30");
 				quest::setglobal("halloween_ratter_complete_pvp",3,5,"D30");
 			}
-			
-			if(defined($qglobals{halloween_ratter_complete_pvp}) && qglobals{halloween_ratter_complete_pvp} > 2 && $pcpvp == 1){
+
+			if(defined($qglobals{halloween_ratter_complete_pvp}) && $qglobals{halloween_ratter_complete_pvp} > 2 && $pcpvp == 1){
 				$client->Message(0, "You have already claimed a PVP reward for this activity or a higher and do not qualify for another.");
 			}	
 			quest::targlobal("halloween_ratter_zeus",$newzone_zeus,"F",0,0,0);

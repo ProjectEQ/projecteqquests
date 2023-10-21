@@ -43,15 +43,15 @@ function start_event(e)
 	eq.depop_all(20258);
 	eq.depop_all(20274);
 	eq.depop_all(20262);		
-	eq.spawn2(20266,0,0,-151,976,7.5,430); -- NPC: ##a_Ghost
-	eq.spawn2(20266,0,0,-161,976,7.5,430); -- NPC: ##a_Ghost
-	eq.spawn2(20266,0,0,-131,976,7.5,430); -- NPC: ##a_Ghost
-	eq.spawn2(20266,0,0,-121,976,7.5,430); -- NPC: ##a_Ghost
-	eq.spawn2(20267,0,0,-151,986,7.5,430); -- NPC: ##a_Spook
-	eq.spawn2(20267,0,0,-161,986,7.5,430); -- NPC: ##a_Spook
-	eq.spawn2(20267,0,0,-131,986,7.5,430); -- NPC: ##a_Spook
-	eq.spawn2(20267,0,0,-121,986,7.5,430); -- NPC: ##a_Spook
-	eq.spawn2(20257,0,0,-141,976,7.5,430); --#Casper
+	eq.spawn2(20266,0,0,-151,976,9,430); -- NPC: ##a_Ghost
+	eq.spawn2(20266,0,0,-161,976,10,430); -- NPC: ##a_Ghost
+	eq.spawn2(20266,0,0,-131,976,8,430); -- NPC: ##a_Ghost
+	eq.spawn2(20266,0,0,-121,976,7,430); -- NPC: ##a_Ghost
+	eq.spawn2(20267,0,0,-151,986,9,430); -- NPC: ##a_Spook
+	eq.spawn2(20267,0,0,-161,986,9,430); -- NPC: ##a_Spook
+	eq.spawn2(20267,0,0,-131,986,7,430); -- NPC: ##a_Spook
+	eq.spawn2(20267,0,0,-121,986,6,430); -- NPC: ##a_Spook
+	eq.spawn2(20257,0,0,-141,976,9,430); --#Casper
 	eq.set_global("halloween_great_pumpkin","1",7,"H1");
 end
 
@@ -91,63 +91,63 @@ function event_timer(e)
 		end		
 	elseif(e.timer=="wave2") then
 		eq.stop_timer("wave2");
-		eq.spawn2(20269,0,0,-243,1500,-14,379.2); -- NPC: ##an_Imp
-		eq.spawn2(20269,0,0,-233,1500,-14,379.2); -- NPC: ##an_Imp
-		eq.spawn2(20269,0,0,-263,1500,-14,379.2); -- NPC: ##an_Imp
-		eq.spawn2(20269,0,0,-273,1500,-14,379.2); -- NPC: ##an_Imp
-		eq.spawn2(20268,0,0,-243,1510,-14,379.2); -- NPC: ##a_Little_Demon
+		eq.spawn2(20269,0,0,-243,1500,-12,379.2); -- NPC: ##an_Imp
+		eq.spawn2(20269,0,0,-233,1500,-13,379.2); -- NPC: ##an_Imp
+		eq.spawn2(20269,0,0,-263,1500,-10,379.2); -- NPC: ##an_Imp
+		eq.spawn2(20269,0,0,-273,1500,-8,379.2); -- NPC: ##an_Imp
+		eq.spawn2(20268,0,0,-243,1510,-13,379.2); -- NPC: ##a_Little_Demon
 		eq.spawn2(20268,0,0,-233,1510,-14,379.2); -- NPC: ##a_Little_Demon
-		eq.spawn2(20268,0,0,-263,1510,-14,379.2); -- NPC: ##a_Little_Demon
-		eq.spawn2(20268,0,0,-273,1510,-14,379.2); -- NPC: ##a_Little_Demon
-		eq.spawn2(20256,0,0,-233,1500,-14,379.2); --#Captain_Scareyface
+		eq.spawn2(20268,0,0,-263,1510,-10,379.2); -- NPC: ##a_Little_Demon
+		eq.spawn2(20268,0,0,-273,1510,-9,379.2); -- NPC: ##a_Little_Demon
+		eq.spawn2(20256,0,0,-233,1500,-13,379.2); --#Captain_Scareyface
 		eq.set_global("halloween_great_pumpkin","1",7,"H1");
 	elseif(e.timer=="wave3") then
 		eq.stop_timer("wave3");
-		eq.spawn2(20265,0,0,-151,976,7.5,430); -- NPC: ##a_Werewolf_with_Rabies
-		eq.spawn2(20265,0,0,-161,976,7.5,430); -- NPC: ##a_Werewolf_with_Rabies
-		eq.spawn2(20265,0,0,-131,976,7.5,430); -- NPC: ##a_Werewolf_with_Rabies
-		eq.spawn2(20265,0,0,-121,976,7.5,430); -- NPC: ##a_Werewolf_with_Rabies
-		eq.spawn2(20264,0,0,-151,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
-		eq.spawn2(20264,0,0,-161,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
-		eq.spawn2(20264,0,0,-131,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
-		eq.spawn2(20264,0,0,-121,986,7.5,430); -- NPC: ##a_Bat_with_Herpes
-		eq.spawn2(20255,0,0,-141,976,7.5,430); --#Booberella
+		eq.spawn2(20265,0,0,-151,976,9,430); -- NPC: ##a_Werewolf_with_Rabies
+		eq.spawn2(20265,0,0,-161,976,10,430); -- NPC: ##a_Werewolf_with_Rabies
+		eq.spawn2(20265,0,0,-131,976,8,430); -- NPC: ##a_Werewolf_with_Rabies
+		eq.spawn2(20265,0,0,-121,976,7,430); -- NPC: ##a_Werewolf_with_Rabies
+		eq.spawn2(20264,0,0,-151,986,9,430); -- NPC: ##a_Bat_with_Herpes
+		eq.spawn2(20264,0,0,-161,986,9,430); -- NPC: ##a_Bat_with_Herpes
+		eq.spawn2(20264,0,0,-131,986,7,430); -- NPC: ##a_Bat_with_Herpes
+		eq.spawn2(20264,0,0,-121,986,6,430); -- NPC: ##a_Bat_with_Herpes
+		eq.spawn2(20255,0,0,-141,976,9,430); --#Booberella
 		eq.set_global("halloween_great_pumpkin","1",7,"H1");
 	elseif(e.timer=="wave4") then
 		eq.stop_timer("wave4");
-		eq.spawn2(20272,0,0,-151,976,7.5,430); -- NPC: ##a_Zombie
-		eq.spawn2(20272,0,0,-161,976,7.5,430); -- NPC: ##a_Zombie
-		eq.spawn2(20272,0,0,-131,976,7.5,430); -- NPC: ##a_Zombie
-		eq.spawn2(20272,0,0,-121,976,7.5,430); -- NPC: ##a_Zombie
-		eq.spawn2(20273,0,0,-151,986,7.5,430); -- NPC: ##a_Xombie
-		eq.spawn2(20273,0,0,-161,986,7.5,430); -- NPC: ##a_Xombie
-		eq.spawn2(20273,0,0,-131,986,7.5,430); -- NPC: ##a_Xombie
-		eq.spawn2(20273,0,0,-121,986,7.5,430); -- NPC: ##a_Xombie
-		eq.spawn2(20261,0,0,-141,976,7.5,430); --#Solomon_Grundy
+		eq.spawn2(20272,0,0,-151,976,9,430); -- NPC: ##a_Zombie
+		eq.spawn2(20272,0,0,-161,976,10,430); -- NPC: ##a_Zombie
+		eq.spawn2(20272,0,0,-131,976,8,430); -- NPC: ##a_Zombie
+		eq.spawn2(20272,0,0,-121,976,7,430); -- NPC: ##a_Zombie
+		eq.spawn2(20273,0,0,-151,986,9,430); -- NPC: ##a_Xombie
+		eq.spawn2(20273,0,0,-161,986,9,430); -- NPC: ##a_Xombie
+		eq.spawn2(20273,0,0,-131,986,7,430); -- NPC: ##a_Xombie
+		eq.spawn2(20273,0,0,-121,986,6,430); -- NPC: ##a_Xombie
+		eq.spawn2(20261,0,0,-141,976,9,430); --#Solomon_Grundy
 		eq.set_global("halloween_great_pumpkin","1",7,"H1");
 	elseif(e.timer=="wave5") then
 		eq.stop_timer("wave5");
-		eq.spawn2(20270,0,0,-243,1500,-14,379.2); -- NPC: ##a_Vampire
-		eq.spawn2(20270,0,0,-233,1500,-14,379.2); -- NPC: ##a_Vampire
-		eq.spawn2(20270,0,0,-263,1500,-14,379.2); -- NPC: ##a_Vampire
-		eq.spawn2(20270,0,0,-273,1500,-14,379.2); -- NPC: ##a_Vampire
-		eq.spawn2(20271,0,0,-243,1510,-14,379.2); -- NPC: ##a_Vampire_Bat
+		eq.spawn2(20270,0,0,-243,1500,-12,379.2); -- NPC: ##a_Vampire
+		eq.spawn2(20270,0,0,-233,1500,-13,379.2); -- NPC: ##a_Vampire
+		eq.spawn2(20270,0,0,-263,1500,-10,379.2); -- NPC: ##a_Vampire
+		eq.spawn2(20270,0,0,-273,1500,-8,379.2); -- NPC: ##a_Vampire
+		eq.spawn2(20271,0,0,-243,1510,-13,379.2); -- NPC: ##a_Vampire_Bat
 		eq.spawn2(20271,0,0,-233,1510,-14,379.2); -- NPC: ##a_Vampire_Bat
-		eq.spawn2(20271,0,0,-263,1510,-14,379.2); -- NPC: ##a_Vampire_Bat
-		eq.spawn2(20271,0,0,-273,1510,-14,379.2); -- NPC: ##a_Vampire_Bat
-		eq.spawn2(20258,0,0,-233,1500,-14,379.2); --#Count_Alucard
+		eq.spawn2(20271,0,0,-263,1510,-10,379.2); -- NPC: ##a_Vampire_Bat
+		eq.spawn2(20271,0,0,-273,1510,-9,379.2); -- NPC: ##a_Vampire_Bat
+		eq.spawn2(20258,0,0,-233,1500,-13,379.2); --#Count_Alucard
 		eq.set_global("halloween_great_pumpkin","1",7,"H1");
 	elseif(e.timer=="wave6") then
 		eq.stop_timer("wave6");
-		eq.spawn2(20274,0,0,-243,1500,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20274,0,0,-233,1500,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20274,0,0,-263,1500,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20274,0,0,-273,1500,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20274,0,0,-243,1510,-14,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20274,0,0,-243,1500,-12,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20274,0,0,-233,1500,-13,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20274,0,0,-263,1500,-10,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20274,0,0,-273,1500,-8,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20274,0,0,-243,1510,-13,379.2); -- NPC: ##Soldier_of_the_Damned
 		eq.spawn2(20274,0,0,-233,1510,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20274,0,0,-263,1510,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20274,0,0,-273,1510,-14,379.2); -- NPC: ##Soldier_of_the_Damned
-		eq.spawn2(20262,0,0,-233,1500,-14,379.2); --#The_Great_Pumpkin
+		eq.spawn2(20274,0,0,-263,1510,-10,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20274,0,0,-273,1510,-9,379.2); -- NPC: ##Soldier_of_the_Damned
+		eq.spawn2(20262,0,0,-233,1500,-13,379.2); --#The_Great_Pumpkin
 		eq.set_global("halloween_great_pumpkin","1",7,"H1");
 	elseif(e.timer=="announce_hour") then
 		eq.stop_timer("announce_hour");

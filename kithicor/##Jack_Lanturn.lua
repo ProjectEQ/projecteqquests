@@ -9,18 +9,18 @@ function event_say(e)
 		e.self:CastSpell(312,e.other:GetID(),0,1)
 	elseif(e.message:findi("reset")) then
 		if (e.other:Admin() >= 100 and e.other:GetGM()) then
-			eq.debug(e.other:GetName() .. " reset pumpkin");
+			--eq.debug(e.other:GetName() .. " reset pumpkin");
 			start_event(e);
 		end
 	end		
 end
 
 function event_spawn(e)
-	eq.debug("spawned, checking global every 5 sec");
+	--eq.debug("spawned, checking global every 5 sec");
 	eq.set_timer("check_global",5000); --check global
 	local qglobals = eq.get_qglobals();
 	if((qglobals["halloween_great_pumpkin"]) == nil) then
-		eq.debug("ok");
+		--eq.debug("ok");
 	end
 end
 
@@ -57,7 +57,7 @@ end
 
 function event_timer(e)
 	if(e.timer=="check_global") then
-		eq.debug("checking global");
+		--eq.debug("checking global");
 		local qglobals = eq.get_qglobals();
 		if((qglobals["halloween_great_pumpkin"]) == nil) then
 		 local el = eq.get_entity_list();
@@ -69,25 +69,25 @@ function event_timer(e)
 		      if not el:IsMobSpawnedByNpcTypeID(20262) then  --#The_Great_Pumpkin
 				start_event(e);
 		      else 
-		       eq.debug("not spawning, The_Great_Pumpkin is up");				
+		       --eq.debug("not spawning, The_Great_Pumpkin is up");				
 			  end
 		     else 
-		      eq.debug("not spawning, Count_Alucard is up");			  
+		      --eq.debug("not spawning, Count_Alucard is up");			  
 			 end
 		    else 
-		     eq.debug("not spawning, Solomon_Grundy is up");			 
+		     --eq.debug("not spawning, Solomon_Grundy is up");			 
 			end
 		   else 
-		    eq.debug("not spawning, Booberella is up");				
+		    --eq.debug("not spawning, Booberella is up");				
 		   end
 		  else 
-		   eq.debug("not spawning, Captain_Scareyface is up");		   
+		   --eq.debug("not spawning, Captain_Scareyface is up");		   
 		  end
 		 else 
-		  eq.debug("not spawning, Casper is up");		  
+		  --eq.debug("not spawning, Casper is up");		  
 		 end
 		else 
-		 eq.debug("not spawning, global is set");		 
+		 --eq.debug("not spawning, global is set");		 
 		end		
 	elseif(e.timer=="wave2") then
 		eq.stop_timer("wave2");
@@ -170,7 +170,7 @@ function event_signal(e)
 		e.self:Shout("We did it! Freeport is safe! Happy Halloween!");
 		local spawn_variance=math.floor(math.random(2700));
 		local spawn_time=3600+spawn_variance;
-		eq.debug("next pumpkin in " .. spawn_time .. " seconds");
+		--eq.debug("next pumpkin in " .. spawn_time .. " seconds");
 		eq.set_timer("announce_hour",spawn_variance*1000);
 		eq.set_global("halloween_great_pumpkin","1",7,tostring("S"..spawn_time));
 	end

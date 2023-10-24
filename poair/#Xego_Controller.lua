@@ -50,13 +50,13 @@ function event_timer(e)
     eq.spawn2(215047,0,0,-5,455,1440.20,374); --untargettable #A_Djinni_Air_Defender
     eq.spawn2(215047,0,0,-5,393,1440.25,374); --untargettable #A_Djinni_Air_Defender
     eq.spawn2(215056,0,0,64,24.70,1467.4,386.8); -- NPC: #Xegony_the_Queen_of_Air
-  else if (e.timer == 'muzlakh') then
+  elseif (e.timer == 'muzlakh') then
     eq.unique_spawn(215053,0,0,-602,15,1448,385.5); --#Muzlakh_the_Chosen
   end
 end
 
 function event_signal(e)
-  if (e.signal==1) then
+  if (e.signal == 1) then
     eq.set_timer('xegoevent', 1 * 1000);
   end
 end

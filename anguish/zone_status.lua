@@ -260,6 +260,11 @@ function event_signal(e)
 		eq.depop_all(317123);
 		eq.depop_all(317117);
 		eq.unique_spawn(317124,0,0, 506, 4822, 278, 512); -- NPC: Overlords Chest
+
+		if math.random(100) <= 10 then -- 10% chance to spawn 2nd orb
+			eq.unique_spawn(317087,0,0, 507, 4969, 296.5, 254); -- NPC: Orb_of_Discordant_Energy
+		end
+
 	elseif Anguish_Lockouts[e.signal] ~= nil then
 		AddLockout(Anguish_Lockouts[e.signal]);
 	end

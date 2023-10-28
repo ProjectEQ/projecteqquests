@@ -22,7 +22,7 @@ Mob:add(-2288.73, 844.17);
 local deputydeath=false;
 local healed=false;
 local phase1=true;
-local spawned=true;
+local spawned=0;
 
 local deputy_min_hit=600;
 local deputy_max_hit=2400;
@@ -54,6 +54,7 @@ local stunned=0;
 
 function Deputy_Signal(e)
 	if e.signal == 1 then
+		--eq.debug("deputy signal 1");
 		e.self:SetRunning(true);
 		e.self:MoveTo(-2358.64,736.61,3.90,429.3,true);
 		stunned=0;
@@ -67,10 +68,12 @@ function Deputy_Signal(e)
 	elseif e.signal == 3 and deputydeath then
 		eq.stop_timer("Rez2");
 	elseif e.signal == 4 then
+		--eq.debug("deputy signal 4");	
 		eq.zone_emote(MT.Yellow,"General Huffin cackles, Well we can fix that!");
 		eq.set_timer("Adds",90000);
 		eq.set_timer("Bags",15000);
 	elseif e.signal == 5 and stunned == 1 then
+		--eq.debug("deputy signal 5 1");	
 		e.self:ModSkillDmgTaken(0, -650) -- 1h blunt
 		e.self:ModSkillDmgTaken(1, -650) -- 1h slashing
 		e.self:ModSkillDmgTaken(2, -650) -- 2h blunt
@@ -90,6 +93,7 @@ function Deputy_Signal(e)
 		e.self:ModSkillDmgTaken(77, -650) -- 2hp
 		eq.set_timer("Stun",1000);
 	elseif (e.signal == 5) and stunned == 2 then
+		--eq.debug("deputy signal 5 2");	
 		e.self:ModSkillDmgTaken(0, -175) -- 1h blunt
 		e.self:ModSkillDmgTaken(1, -175) -- 1h slashing
 		e.self:ModSkillDmgTaken(2, -175) -- 2h blunt
@@ -109,6 +113,7 @@ function Deputy_Signal(e)
 		e.self:ModSkillDmgTaken(77, -175) -- 2hp
 		eq.set_timer("Stun",1000);
 	elseif (e.signal == 5) and stunned == 3 then
+		--eq.debug("deputy signal 5 3");	
 		e.self:ModSkillDmgTaken(0, 0) -- 1h blunt
 		e.self:ModSkillDmgTaken(1, 0) -- 1h slashing
 		e.self:ModSkillDmgTaken(2, 0) -- 2h blunt
@@ -128,6 +133,7 @@ function Deputy_Signal(e)
 		e.self:ModSkillDmgTaken(77, 0) -- 2hp
 		eq.set_timer("Stun",1000);
 	elseif (e.signal == 5) and stunned == 4 then
+		--eq.debug("deputy signal 5 4");	
 		e.self:ModSkillDmgTaken(0, 250) -- 1h blunt
 		e.self:ModSkillDmgTaken(1, 250) -- 1h slashing
 		e.self:ModSkillDmgTaken(2, 250) -- 2h blunt
@@ -147,6 +153,7 @@ function Deputy_Signal(e)
 		e.self:ModSkillDmgTaken(77, 250) -- 2hp
 		eq.set_timer("Stun",1000);
 	elseif (e.signal == 5) and stunned == 5 then
+		--eq.debug("deputy signal 5 5");
 		e.self:ModSkillDmgTaken(0, 500) -- 1h blunt
 		e.self:ModSkillDmgTaken(1, 500) -- 1h slashing
 		e.self:ModSkillDmgTaken(2, 500) -- 2h blunt
@@ -172,14 +179,16 @@ function Deputy_Signal(e)
 end
 	
 function Deputy_Spawn(e)
-	if spawned then
+	if spawned == 0 then
+		--eq.debug("deputy spawn spawned");
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 1); -- Set variables immune agro, agro on, no harm, immune magic.
 		e.self:SetSpecialAbility(SpecialAbility.no_harm_from_client, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
 		e.self:SetSpecialAbility(SpecialAbility.immune_melee, 1);
-		spawned=false;
-	elseif not spawned then
+		spawned = 1;
+	elseif spawned == 1 then
+		--eq.debug("deputy spawn not spawn");	
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 1);
@@ -187,8 +196,9 @@ function Deputy_Spawn(e)
 		e.self:AddToHateList(e.self:GetTarget(),1);	
 		e.self:TempName("General_Huffin");
 		eq.set_timer("Check",1000);
-		spawned=true;
+		spawned = 2;
 	elseif not phase1 then
+		--eq.debug("deputy spawn not phase1");	
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_aggro_on, 0);
 		e.self:SetSpecialAbility(SpecialAbility.immune_magic, 0);
@@ -224,9 +234,10 @@ function Deputy_Combat(e)
 	if e.joined then
 		eq.set_timer("Fear",150000);
 		eq.stop_timer("Fail");
+		--eq.debug("deputy combat join");
 	else
 		eq.set_timer("Fail",10000);
-		spawned=true;
+		--eq.debug("deputy combat leave");		
 	end
 end
 
@@ -235,14 +246,17 @@ function Deputy_Timer(e)
         e.self:GotoBind();
 	end
 	if (e.timer == "Talk") then
+		--eq.debug("deputy timer talk");		
 		e.self:Say("Oh Crysta, what a pity.  Have you come to take all of your goods back? Do you think anyone will believe you? What is with this crew of people as well, you don't actually think you can win?");
 		eq.set_timer("Convo_",8000);
 		eq.stop_timer("Talk");
 	elseif (e.timer == "Guards") then
+		--eq.debug("deputy timer guards");		
 		e.self:Say("Now will you come peacefully?");
 		eq.set_timer("Convo_2",8000);
 		eq.stop_timer("Guards");
 	elseif (e.timer == "Agro") then
+		--eq.debug("deputy timer aggro");	
 		e.self:TempName("General_Huffin");
 		e.self:Shout("Boys? Get them!");
 		eq.signal(33162,2); -- NPC: Deputy??
@@ -253,6 +267,7 @@ function Deputy_Timer(e)
 	elseif (e.timer == "Fear") then
 		e.self:CastSpell(3070, e.self:GetTarget():GetID()); -- Spell: Timeless Panic
 	elseif (e.timer == "Convo_") then
+		--eq.debug("deputy timer convo");		
 		e.self:Say("Funny Crysta, like I would give up those precious goods!");
 		e.self:Shout("GUARDS!");
 		eq.spawn2(33162,0,0,-2253.81,737.77,-453,411.3); -- NPC: Deputy??
@@ -262,20 +277,24 @@ function Deputy_Timer(e)
 		eq.set_timer("Guards",8000);
 		eq.stop_timer("Convo_");
 	elseif (e.timer == "Convo_2") then
+		--eq.debug("deputy timer convo2");		
 		e.self:Say("I don't belong here? You have no idea. Prepare yourselves.");
 		eq.set_timer("Agro",10000);
 		eq.stop_timer("Convo_2");
 	elseif (e.timer == "Check" and deputydeath) then
+		--eq.debug("deputy timer check");			
 		eq.stop_timer("Check");
 		eq.zone_emote(MT.Yellow,"General Huffin yells, It's about time I take this into my own hands! Prepare yourselves weaklings!")
 		phase1=false;
 		eq.signal(33165,1); -- NPC: Crysta_Tagglefoot
 	elseif (e.timer == "Rez1") then
+		--eq.debug("deputy timer rez1");
 		eq.spawn2(33162,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy??
 		eq.zone_emote(MT.Yellow,"General Huffin laughs as his comrades are brought back to life.");
 		eq.stop_timer("Rez1");
 		eq.signal(33162,3); -- NPC: Deputy??
 	elseif (e.timer == "Rez2") then
+		--eq.debug("deputy timer rez2");	
 		eq.spawn2(33163,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- NPC: Deputy???
 		eq.zone_emote(MT.Yellow,"General Huffin laughs as his comrades are brought back to life.");
 		eq.signal(33163,3); -- NPC: Deputy???
@@ -285,9 +304,11 @@ function Deputy_Timer(e)
 		eq.set_timer("Laugh2",15000);
 		eq.stop_timer("Laugh");
 	elseif (e.timer == "Laugh2") then
+		--eq.debug("deputy timer laugh2");		
 		eq.signal(33165,2); -- NPC: Crysta_Tagglefoot
 		eq.stop_timer("Laugh2");
 	elseif (e.timer == "Bags") then
+		--eq.debug("deputy timer bags");	
 		eq.zone_emote(MT.Yellow,"bags of goodies fly out of General Huffin's pockets scattered onto the ground!");
 		eq.set_timer("Sugar_Rush2",3000);
 		eq.set_timer("Bags",60000);
@@ -315,6 +336,7 @@ function Deputy_Timer(e)
 		eq.signal(33165,3); -- NPC: Crysta_Tagglefoot
 		end
 	elseif (e.timer == "Sugar_Rush2") then
+		--eq.debug("deputy rush2");	
 		eq.zone_emote(MT.Yellow,"General Huffin picks up some of the remaining candy on the ground and goes into a SUGAR FRENZY!");
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 100);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 100);
@@ -322,12 +344,14 @@ function Deputy_Timer(e)
 		eq.stop_timer("Sugar_Rush2");
 		eq.set_timer("Sugar_Rush2End",15000);
 	elseif (e.timer == "Sugar_Rush2End") then
+		--eq.debug("deputy rush2 end");	
 		eq.zone_emote(MT.Yellow,"General Huffin calms down.");
 		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 15);
 		e.self:SetSpecialAbilityParam(SpecialAbility.rampage, 0, 15);
 		e.self:ModifyNPCStat("attack_delay",  tostring(General_old));
 		eq.stop_timer("Sugar_Rush2End");
 	elseif (e.timer == "Stun") then
+		--eq.debug("deputy stun");		
 		eq.zone_emote(MT.Red,"General Huffin yells, BANNED!");
 		e.self:ModifyNPCStat("min_hit", tostring(General_min_hit));
 		e.self:ModifyNPCStat("max_hit", tostring(General_max_hit));
@@ -359,6 +383,7 @@ function Deputy_Timer(e)
 		eq.zone_emote(MT.Yellow,"General Huffin infests two orc corpses nearby with spider larvae!");
 		eq.set_timer("Hatch",20000);
 	elseif (e.timer == "Hatch") then
+		--eq.debug("deputy hatch");		
 		eq.depop_with_timer(33166);
 		eq.depop_with_timer(33171);
 		eq.spawn2(33167,0,0,-2403.71,816.01,-3.91,128.5); -- NPC: #a_vicious_spider
@@ -387,6 +412,7 @@ function Deputy_Timer(e)
 		e.self:SetPseudoRoot(true);
 		eq.stop_timer("Root");
 	elseif (e.timer == "Fail") then
+		--eq.debug("deputy fail");		
 		eq.signal(33165,6); -- NPC: Crysta_Tagglefoot
 		eq.depop_all(33168);
 		eq.depop_all(33167);
@@ -462,6 +488,7 @@ function Deputy_HP(e)
 end
 	
 function Deputy_Death(e)
+	--eq.debug("deputy death");
 	e.self:Shout("My reign isnt over!");
 	eq.stop_all_timers();
 	eq.depop_all(33167);
@@ -659,6 +686,7 @@ end
 
 function Crysta_Signal(e)
 	if (e.signal == 1) then -- add qglobal so someone outside can't hail and heal. ( to do when testing is done)
+	--eq.debug("Crysta_Signal 1");
 	e.self:Shout("Comrades, gather closely and give me a moment to channel the spell, This spell is only good enough for one use! So use it wisely!!");
 	eq.set_timer("Heal",10000);
 	eq.depop(33161);
@@ -666,14 +694,21 @@ function Crysta_Signal(e)
 	elseif (e.signal == 2) then
 	eq.zone_emote(MT.Yellow, "Crysta says, Uh your damage is just as pathetic!");
 	eq.signal(33161,4); -- NPC: Deputy?
+	--eq.debug("Crysta_Signal 2");	
 	elseif (e.signal == 3) then
 	e.self:Shout("Quickly comrades, pick up the candy before HE gets it!! See if theres something in there that would be useful for weakening him! Return it to me if so.");
+	--eq.debug("Crysta_Signal 3");	
 	elseif (e.signal == 4) then
 	e.self:Shout("It is today!");
 	eq.depop(33165);
+	--eq.debug("Crysta_Signal 4");	
 	elseif (e.signal == 5) then
 	e.self:Shout("His damage reduction is weakening. Keep it up!");
+	--eq.debug("Crysta_Signal 5");	
 	elseif (e.signal == 6) then
+	--eq.debug("Crysta_Signal 6");	
+	spawned = 0;
+	phase1 = false;
 	eq.stop_all_timers();
 	eq.spawn2(33164,0,0,-2401.77,786.17,-4.53,252.00); -- NPC: Crysta_Tagglefoot
 	eq.depop();
@@ -693,6 +728,7 @@ function Crysta_Trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 84090})) then
 		e.self:Say("Oh thanks for the candy!! Yum! Wait what am I saying, No! Get back out there and search for something else!");
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 26648})) then
+		--eq.debug("Crysta_Signal turnin");	
 		e.self:Say("Oh this outta do the trick!");
 		e.self:Emote("pulls out the dagger and pokes the General in the back, stunning him!");
 		stunned=stunned+1;

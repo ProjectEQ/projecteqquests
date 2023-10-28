@@ -3,7 +3,8 @@
 
 sub EVENT_SPAWN {
 	quest::shout("Boobs..");
-	quest::moveto(-782,-1319,-43);
+#commenting move until pathing is fixed
+	#quest::moveto(-782,-1319,-43);
 }
 
 sub EVENT_DEATH_COMPLETE {

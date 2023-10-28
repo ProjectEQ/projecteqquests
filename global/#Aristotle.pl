@@ -19,7 +19,7 @@ sub EVENT_SAY {
 				quest::setglobal("halloween_ratter_complete_pvp",2,5,"D30");
 			}
 
-			if(defined($qglobals{halloween_ratter_complete_pvp}) && qglobals{halloween_ratter_complete_pvp} > 1 && $pcpvp == 1){
+			if(defined($qglobals{halloween_ratter_complete_pvp}) && $qglobals{halloween_ratter_complete_pvp} > 1 && $pcpvp == 1){
 				$client->Message(0, "You have already claimed a PVP reward for this activity or a higher and do not qualify for another.");
 			}			
 			my $newzone_aristotle = plugin::GetRandomIndoorLocation(1,20);

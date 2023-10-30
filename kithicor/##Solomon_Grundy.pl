@@ -3,7 +3,7 @@
 
 sub EVENT_SPAWN {
 	quest::shout("Grundy smash!");
-	quest::moveto(-782,-1319,-43);
+	#quest::moveto(-782,-1319,-43);
 }
 
 sub EVENT_AGGRO {

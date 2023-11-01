@@ -13,26 +13,26 @@ local prizes = {
 };
 
 function event_say(e)
-    if (e.message:findi("hail")) then
+    if e.message:findi("hail") then
         e.self:Say("Welcome! Welcome to Shandeling's, the gaming hall of chance! The game room is downstairs. If you are lucky enough to get a Gold Ticket, be sure to bring it to me for a spin on the big wheel of prizes! Make sure to tip your waitress well!");
     end
 end
 
 function event_trade(e)
     local item_lib = require("items");
-    if (item_lib.check_turn_in(e.trade, {item1 = 66615})) then -- Gold Ticket
+    if item_lib.check_turn_in(e.trade, {item1 = 66615}) then -- Gold Ticket
         local valid_prizes = { };
         for k, v in pairs(prizes) do
-            if (not e.other:HasItem(v, e.trade) and not (v == 2469 and e.other:GetBaseRace() == 6)) then -- dark elf can't get mask
+            if not e.other:HasItem(v, e.trade) and not (v == 2469 and e.other:GetBaseRace() == 6) then -- dark elf can't get mask
                 valid_prizes[#valid_prizes + 1] = v;
             end
         end
 
-        if (#valid_prizes == 0) then
+        if #valid_prizes == 0 then
             e.self:Say("I am sorry, but at the moment our great wheel of prizes is not spinning! Could you try again in a few moments while I try to fix the jam? Thanks!");
             e.other:SummonItem(66615); -- Item: Gold Ticket
         else
-            e.self:Shout("Ladies and Gentlemen gather around, as our brave " .. e.other:GetName() .. " is turning in their Golden Ticket for a chance at the big time! With a spin of the wheel let us determine the prize. Ladies and gentlemen, the " .. e.other:Race() .. " wins a prize! Everyone please congratulate " .. e.other:GetName() .. " on this excellent luck!");
+            e.self:Shout("Ladies and Gentlemen gather around, as our brave " .. e.other:GetName() .. " is turning in their Golden Ticket for a chance at the big time! With a spin of the wheel let us determine the prize. Ladies and gentlemen, the " .. e.other:GetRaceName() .. " wins a prize! Everyone please congratulate " .. e.other:GetName() .. " on this excellent luck!");
             local which = math.random(1, #valid_prizes);
             e.other:SummonItem(valid_prizes[which]);
         end

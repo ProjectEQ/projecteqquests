@@ -252,6 +252,7 @@ function Mob_Deathcomplete(e)
 end
 
 function Mob_Spawn(e)
+	e.self:ClearItemList();
 	if e.self:GetClass() == Class.WARRIOR then -- Defensive Rotation
 		eq.set_next_hp_event(85);
 	elseif e.self:GetClass() == Class.MONK then
@@ -441,16 +442,19 @@ function event_encounter_load(e)
 	end
 
 	for id, v in pairs(list_enchanter) do
+		eq.register_npc_event('mpg_corruption', Event.spawn,              v[1], Mob_Spawn); -- Temporary
 		eq.register_npc_event('mpg_corruption', Event.death,              v[1], Mob_Death);
 		eq.register_npc_event('mpg_corruption', Event.death_complete,     v[1], Mob_Deathcomplete);
 	end
 
 	for id, v in pairs(list_necromancer) do
+		eq.register_npc_event('mpg_corruption', Event.spawn,              v[1], Mob_Spawn); -- Temporary
 		eq.register_npc_event('mpg_corruption', Event.death,              v[1], Mob_Death);
 		eq.register_npc_event('mpg_corruption', Event.death_complete,     v[1], Mob_Deathcomplete);
 	end
 
 	for id, v in pairs(list_magician) do
+		eq.register_npc_event('mpg_corruption', Event.spawn,              v[1], Mob_Spawn); -- Temporary
 		eq.register_npc_event('mpg_corruption', Event.death,              v[1], Mob_Death);
 		eq.register_npc_event('mpg_corruption', Event.death_complete,     v[1], Mob_Deathcomplete);
 	end

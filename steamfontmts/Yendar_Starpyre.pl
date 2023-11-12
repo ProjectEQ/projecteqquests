@@ -44,7 +44,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 52335 => 1)) {
     quest::say("Splendid! The missing pages I had been looking for! Allow me a moment to sift through them.' He scans the texts line by line, flipping quickly from one sheet of parchment to another. Withdrawing a quill he quickly makes notes in the margins, then snatches your journal and copies the notes there. 'Yes, it is exactly as I had predicted. These texts detail the process by which an object can be imbued with a tortured soul. Unfortunately the focus is mostly on weaponry, which doesn't interest me in the slightest. Ah well. Appreciate the effort, $name. Perhaps it will come in handy for you. Farewell and good luck.");
     quest::setglobal('Fatestealer_page',1, 5, 'F');
-    quest::message(15,"You have learned how to imbue a blade with dark energy.");
+    $client->Message(15,"You have learned how to imbue a blade with dark energy.");
   }
   plugin::return_items(\%itemcount);
 }

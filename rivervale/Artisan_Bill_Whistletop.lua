@@ -15,7 +15,7 @@
 
 
 function event_say(e)
-local race = e.other:Race();
+local race = e.other:GetRaceName();
 local level = e.other:GetLevel();
 
 	if(race == "Halfling") then
@@ -70,7 +70,7 @@ end
 
 function event_trade(e)
 local item_lib = require("items");
-local race = e.other:Race();
+local race = e.other:GetRaceName();
 
 	if(race == "Halfling") then
 		if(item_lib.check_turn_in(e.trade, {item1 = 12372, item2 = 12373, item3 = 13077, item4 =  14019})) then --Cat Skull Cap, Fractured Femur, Minotaur Horn, Bunch of Optic Nerves

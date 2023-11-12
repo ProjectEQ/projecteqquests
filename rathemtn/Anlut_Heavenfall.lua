@@ -1,7 +1,7 @@
 -- items: 63114, 63115, 63125, 63116, 63124, 63117, 15562, 63118, 63127, 63128, 63126, 63130, 63129
 function event_say(e)
 	if (e.message:findi("hail")) then
-		if (e.other:Race() == "Froglok") then
+		if (e.other:GetRaceName() == "Froglok") then
 			if (e.other:Class() == "Wizard" and e.other:GetLevel() >= 20) then
 				if (e.other:HasItem(63115)) then
 					e.self:Say("Bah! You think I'll accept you back so easily after that error? Everyone is talking about it! Those smug scions are STILL chuckling. I'll give you a task you can actually accomplish. Go get me 3 fresh Twilight Blooms from Odus. Return them and the prism to me. Perhaps such an inane task will jolt your lazy mind!");

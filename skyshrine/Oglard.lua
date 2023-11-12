@@ -2,7 +2,7 @@
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 2) then
 		if(e.message:findi("hail")) then
-			e.self:Say("Greetings, young " .. e.other:Race() .. ". Very few of your kind has ever seen the halls you now walk through. You must have provided a great service to our kin for them to allow you passage into this inner sanctum. We welcome you to our ancient home.");
+			e.self:Say("Greetings, young " .. e.other:GetRaceName() .. ". Very few of your kind has ever seen the halls you now walk through. You must have provided a great service to our kin for them to allow you passage into this inner sanctum. We welcome you to our ancient home.");
 		elseif(e.message:findi("thank you")) then
 			e.self:Say("Might, wisdom, and manners? Quite a surprise to see all of these traits in one of the younger races. I am impressed. I see you are a noble creature, one who would treat another creature of nobility with respect... 'Oglard's eyes suddenly begin to shine with a magical golden light. He looks down upon you as if in judgement and asks, 'Tell me, " .. e.other:GetCleanName() .. ", have you done battle with dragons?'");
 		elseif(e.message:findi("no I have not")) then

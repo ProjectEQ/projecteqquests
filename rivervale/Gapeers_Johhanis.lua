@@ -12,7 +12,7 @@ function event_say(e)
 	elseif(e.message:findi("what specimens")) then
 		e.self:Emote("turns to explain the specimens when he accidentally knocks over the beakers. He sucks in a short breath as the beakers crash to the ground, ruining the samples. As Gapeers's skin loses color he says, 'OH NO!! No, not my specimens!! Now what am I to do?! I needed those badly! You did this! You [owe] me now!");
 	elseif(e.message:findi("what do I owe")) then
-		e.self:Say(string.format("You bet you do! You big clumsy %s! These were the remains of unfortunates who were drowned. Not only were they drowned but their bodies clung to life and refused to settle. Products of the horrendous curse of unlife. I'll need you to find three [special samples] of drowned and cursed flesh.", e.other:Race()));
+		e.self:Say(string.format("You bet you do! You big clumsy %s! These were the remains of unfortunates who were drowned. Not only were they drowned but their bodies clung to life and refused to settle. Products of the horrendous curse of unlife. I'll need you to find three [special samples] of drowned and cursed flesh.", e.other:GetRaceName()));
 	elseif(e.message:findi("what three special samples")) then
 		e.self:Emote("'s eyes widen as he realizes you actually might intend to help him. His voice becomes raspy with desperation as he says, 'Oh! Wonderful....uuhhmmm.... well ....You'll need to find undead creatures found in the waters of three different climates. One from a tropical ocean. One from the muddy and slow moving river of a jungle. And one from the stagnate and polluted water of a city's sewer, Freeport would be ideal. Will you really [do this for me]?");
 	elseif(e.message:findi("I will do this for you")) then

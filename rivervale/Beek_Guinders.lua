@@ -13,7 +13,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Emote("waves enthusiastically and says, Hay, ho, there, young " .. e.other:Race() .. "!  I'd love to yak it up with you but I'm a bit busy at the moment, trying to find some [" .. eq.say_link("help",false,"help") .. "].");
+		e.self:Emote("waves enthusiastically and says, Hay, ho, there, young " .. e.other:GetRaceName() .. "!  I'd love to yak it up with you but I'm a bit busy at the moment, trying to find some [" .. eq.say_link("help",false,"help") .. "].");
 	elseif(e.message:findi("help")) then
 		e.self:Say("Well, we're experimenting with some tanning methods but we're running low on supplies. We need to find someone to go out and [" .. eq.say_link("gather some things",false,"gather some things") .. "]. Seems no one wants to do an honest day's work any more. I'd do it myself but, errrr, my, uhhh, foot hair has been hurting lately... yes, that's it.");
 	elseif(e.message:findi("gather some thing")) then

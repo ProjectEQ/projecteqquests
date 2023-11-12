@@ -29,7 +29,7 @@ function event_trade(e)
 
     if qglobals["bardPQ"] == "3" and item_lib.check_turn_in(e.trade, {item1 = 77603}) then --Sealed Kromzek Scroll 
 		eq.set_global("bardPQ", "4", 5, "F")
-        e.self:Say("Well done " .. e.other:Race() .. ", but I'm afraid this scroll bears ill tidings indeed. Lantaric must be informed with haste. Take the heads of the necromancers and give them to Lantaric. I have a feeling your work is far from done " .. e.other:Race() .. ".")				
+        e.self:Say("Well done " .. e.other:GetRaceName() .. ", but I'm afraid this scroll bears ill tidings indeed. Lantaric must be informed with haste. Take the heads of the necromancers and give them to Lantaric. I have a feeling your work is far from done " .. e.other:GetRaceName() .. ".")				
 	end
 	
     item_lib.return_items(e.self, e.other, e.trade)

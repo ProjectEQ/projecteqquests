@@ -26,7 +26,7 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 22299} or {item1 = 22297} or {item1 = 22296} or {item1 = 22294} or {item1 = 22293})) then
 		e.self:Say(string.format("Bad luck must be one of your strong suits. You should have been a beggar because you sure aren't a very good %s. You lose!",e.other:Class()));
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 22295})) then
-		e.self:Say(string.format("I see you have drawn the card that best represents a %s such as yourself. You lose!",e.other:Race()));
+		e.self:Say(string.format("I see you have drawn the card that best represents a %s such as yourself. You lose!",e.other:GetRaceName()));
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

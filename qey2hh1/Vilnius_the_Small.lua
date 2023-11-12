@@ -3,7 +3,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("%s, just because I am short don't mean I can't bounce your %s rump all over these hills. Now, do you have something for me, or are you just in search of a rump bouncing?",e.other:GetName(),e.other:Race()));
+		e.self:Say(string.format("%s, just because I am short don't mean I can't bounce your %s rump all over these hills. Now, do you have something for me, or are you just in search of a rump bouncing?",e.other:GetName(),e.other:GetRaceName()));
 	elseif(e.message:findi("rump")) then
 		e.self:Say("My pleasure to oblige you then. Shall I start on the left side or the right side?");
 		eq.attack(e.other:GetName());
@@ -31,13 +31,13 @@ function event_trade(e)
 		e.other:AddEXP(3000);
 		e.other:GiveCash(0,0,100,20);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1357,item2 = 1253,item3 = 1354,item4 = 1360})) then -- Robe of the Ishva, Robe of the Kedge, Robe of the Oracle, Shining Mettalic Robes
-		e.self:Say(string.format("You do good work, %s. Here is another trinket for your trouble, you should be able to make use of it. Malka still hasn't made it back yet, and I have one more order to fill, if you're willing. This one should be easy. My sword collector has decided he wants rapiers now, of all things. He has asked for an Eyerazzia, a Martune Rapier, a Burning Rapier, and a well balanced rapier.",e.other:Race()));
+		e.self:Say(string.format("You do good work, %s. Here is another trinket for your trouble, you should be able to make use of it. Malka still hasn't made it back yet, and I have one more order to fill, if you're willing. This one should be easy. My sword collector has decided he wants rapiers now, of all things. He has asked for an Eyerazzia, a Martune Rapier, a Burning Rapier, and a well balanced rapier.",e.other:GetRaceName()));
 		e.other:SummonItem(7505); -- Cazic Quill
 		e.other:Ding();
 		e.other:AddEXP(3000);
 		e.other:GiveCash(0,0,200,15);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 7041,item2 = 7509,item3 = 7508,item4 = 7020})) then -- Burning Rapier, Martune Rapier, Eyerazzia, Well-Balanced Rapier
-		e.self:Say(string.format("You never cease to amaze me! I never thought you %s types could be so good at this sort of work. I have been stuck here and haven't any more trinkets to give you, but perhaps you could take this pouch to its new owner, since I do not have the time to deliver it myself. He will pay you in full, and you can just keep what he gives you, how does that sound? The owner is a man named Stanos Herkanor, and he or his friend Anson are supposed to meet me in Highpass this evening. Do not waste too much time getting there, he is a secretive man, and I can not guarantee he will be around long. Good luck, and maybe we will meet again. It is always a pleasure working with another professional such as yourself!",e.other:Race()));
+		e.self:Say(string.format("You never cease to amaze me! I never thought you %s types could be so good at this sort of work. I have been stuck here and haven't any more trinkets to give you, but perhaps you could take this pouch to its new owner, since I do not have the time to deliver it myself. He will pay you in full, and you can just keep what he gives you, how does that sound? The owner is a man named Stanos Herkanor, and he or his friend Anson are supposed to meet me in Highpass this evening. Do not waste too much time getting there, he is a secretive man, and I can not guarantee he will be around long. Good luck, and maybe we will meet again. It is always a pleasure working with another professional such as yourself!",e.other:GetRaceName()));
 		e.other:SummonItem(28014); -- Stanos' Pouch
 		e.other:Ding();
 		e.other:AddEXP(3000);

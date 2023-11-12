@@ -1,7 +1,7 @@
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 5) then
 		if(e.message:findi("hail")) then
-		e.self:Say("Oi, what is this?  A " .. e.other:Race() .. ", if my tired old eyes are not mistaken. Knew it would happen.  Sooner rather than later.  No stopping the flood now, eh?");
+		e.self:Say("Oi, what is this?  A " .. e.other:GetRaceName() .. ", if my tired old eyes are not mistaken. Knew it would happen.  Sooner rather than later.  No stopping the flood now, eh?");
 		elseif(e.message:findi("flood")) then
 		e.self:Say("The flood of beings to Velious.  Starts with a trickle, like all floods.  Sweeps the old away in the end, leaving a new landscape.  Blessing and shame that I will not be around to see it all unfold.");
 		elseif(e.message:findi("around")) then

@@ -4,7 +4,7 @@
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	
-	if(e.other:Race() ==  "Froglok" or fac < 5) then
+	if(e.other:GetRaceName() ==  "Froglok" or fac < 5) then
 		if(e.message:findi("hail")) then
 			e.self:Say("Salutations. Come sit with me and have a drink. I am just going over some [business] right now.");
 		elseif(e.message:findi("business")) then
@@ -19,7 +19,7 @@ function event_say(e)
 			e.self:Say("You are a true follower of Marr. However I worry for your safety. If you do accept this task, please make sure you are ready. The castle is a deadly place. Should you find any trace of Sir Bronthas's remains, please bring them back to me. There is apparently a reward for completing this. Marr's blessing be with you.");
 		end
 	else
-		e.self:Say("Hmm... there is something about " .. e.other:Race() .. "s that I don't exactly trust...");
+		e.self:Say("Hmm... there is something about " .. e.other:GetRaceName() .. "s that I don't exactly trust...");
 	end
 end
 
@@ -27,7 +27,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local fac = e.other:GetFaction(e.self);
 	
-	if(e.other:Race() ==  "Froglok" or fac < 5) then
+	if(e.other:GetRaceName() ==  "Froglok" or fac < 5) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 55035})) then -- Sir Bronthas's Remains
 			e.self:Say("You actually found his remains?! You are remarkable. We must get Sir Bronthas a proper burial. As promised, here is your reward.");
 			e.other:Faction(1718,10,0); -- Guktan Elders
@@ -37,7 +37,7 @@ function event_trade(e)
 			e.other:QuestReward(e.self,0,0,0,0,55036,1750000); -- Item #55036 (Marr's Blessing) and 1750000 exp
 		end
 	else
-		e.self:Say("Hmm... there is something about " .. e.other:Race() .. "s that I don't exactly trust...");
+		e.self:Say("Hmm... there is something about " .. e.other:GetRaceName() .. "s that I don't exactly trust...");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

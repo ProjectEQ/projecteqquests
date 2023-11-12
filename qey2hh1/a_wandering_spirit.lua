@@ -7,7 +7,7 @@ function event_say(e)
 		eq.pause(30);
 	elseif(fac<=3) then
 		if(e.message:findi("shield of falsehood")) then
-			e.self:Say(string.format("Yes, I have taken Marr's Promise along with Woe and Envy and fashioned them together to create the Shield of Falsehood. Wield this in defense of possession and the weakness that comes with hoarding treasure instead of using it to accomplish your goals. May it serve you well, %s.",e.other:Race()));
+			e.self:Say(string.format("Yes, I have taken Marr's Promise along with Woe and Envy and fashioned them together to create the Shield of Falsehood. Wield this in defense of possession and the weakness that comes with hoarding treasure instead of using it to accomplish your goals. May it serve you well, %s.",e.other:GetRaceName()));
 			e.other:SummonItem(1679); -- Item: Shield of Falsehood
 		elseif(e.message:findi("last path")) then
 			e.self:Say("You have trusted us along the paths we have set before you. You have been known to be patient and await the right moment. And now, you have learned the wisdom to act in our best interest. However, one last path awaits, to determine if you have the ability to act out what must be done.");

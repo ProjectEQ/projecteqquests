@@ -1,6 +1,6 @@
 -- items: 17394, 51101, 51104, 51105, 51106, 51107, 51113, 51114, 51115, 51108, 51120, 51109
 function event_say(e)
-	if (e.other:Class() == "Shaman" and e.other:Race() ==  "Froglok") then
+	if (e.other:Class() == "Shaman" and e.other:GetRaceName() ==  "Froglok") then
 		if (e.message:findi("hail")) then
 			local qglobals = eq.get_qglobals(e.other);
 		

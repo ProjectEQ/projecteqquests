@@ -9,10 +9,10 @@ function event_say(e)
 		e.self:Say(	"Welcome to the Plane of Knowledge, or New Tanaan. All are welcome here, so please feel free to explore. Our home here is a safe haven to those who seek knowledge of all sorts, and many find themselves setting off upon new adventures based on what they find here. No harmful magics may be used, nor weapons. Our fair city also acts as a hub of sorts into Norrath and other destinations. Are you [" .. eq.say_link("new to the world",false,"new to the world") .. "]");
 	end	
 	if(e.message:findi("new to the world")) then
-		if(e.other:Race() == "Beastlord") then
+		if(e.other:GetRaceName() == "Beastlord") then
 			eq.task_selector({5725}); --Tomes of Knowledge (Beastlord)
 		end
-		if(e.other:Race() == "Rogue") then
+		if(e.other:GetRaceName() == "Rogue") then
 			eq.task_selector({5723}); --Tomes of Knowledge (Rogue)
 			eq.task_selector({5721}); --Training Day
 		end

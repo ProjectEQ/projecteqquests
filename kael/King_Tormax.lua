@@ -2,14 +2,14 @@
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 3) then -- require kindly or better
 		if(e.message:findi("hail")) then
-		  e.self:Say("Greetings, " .. e.other:Race() .. ". You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.");
+		  e.self:Say("Greetings, " .. e.other:GetRaceName() .. ". You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.");
 		elseif(e.message:findi("task")) then
-		  e.self:Say("The tasks are simple, " .. e.other:Race() .. ". I wish the death of the other 'powers' of this frozen waste land. If you are able to destroy either of my mortal foes, bring me proof of your exploits and you will be known as the hero of Kael Drakkel.");
+		  e.self:Say("The tasks are simple, " .. e.other:GetRaceName() .. ". I wish the death of the other 'powers' of this frozen waste land. If you are able to destroy either of my mortal foes, bring me proof of your exploits and you will be known as the hero of Kael Drakkel.");
 		elseif(e.message:findi("power")) then
 		  e.self:Emote("laughs deeply. 'I speak of the foolish old dragon Yelinak and that pitiful Dain Frostreaver.");
     		end
 	else
-		e.self:Say("Why do I even suffer such lesser beings in my presence? Remove yourself, " .. e.other:Race() .. ", else I'll have my guards relieve you of your head.");
+		e.self:Say("Why do I even suffer such lesser beings in my presence? Remove yourself, " .. e.other:GetRaceName() .. ", else I'll have my guards relieve you of your head.");
 	end
 end
 

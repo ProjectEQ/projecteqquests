@@ -110,25 +110,18 @@ sub EVENT_ITEM {
       }
       else {
         quest::say("What ar ye?");
-        quest::givecash($copper,$silver,$gold,$platinum); #Return money
+        plugin::return_items(\%itemcount);
         return 1;
       }
       quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
     }
     else {
-      if ($cash > 0) {
-        quest::say("Tis not enuff!");
-        quest::givecash($copper,$silver,$gold,$platinum); #Return money
-      }
       plugin::return_items(\%itemcount);
       return 1;
     }
   }
   else {
     quest::say("Ye look mighty inexperienced t'be in this area, $name. Come an' seek me out when ye 'ave more knowledge o'the planes!");
-    if ($cash > 0) {
-      quest::givecash($copper,$silver,$gold,$platinum); #Return money
-    }
   }
   plugin::return_items(\%itemcount);
 }

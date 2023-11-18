@@ -68,7 +68,6 @@ sub EVENT_ITEM {
          quest::summonitem(12161); # Mining Pick 628
       }
       else {
-         quest::givecash($copper, $silver, $gold, $platinum);
          quest::summonitem(13316); # Ogre Head
       }
    }

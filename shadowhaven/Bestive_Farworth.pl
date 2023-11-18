@@ -21,9 +21,6 @@ sub EVENT_ITEM {
     quest::exp(100);
     quest::givecash(8,2,0,0); #Copper x 8, Silver x 2
   }
-  else {
-    quest::givecash($copper, $silver, $gold, $platinum);
-  }
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:shadowhaven  ID:150231 -- Bestive_Farworth

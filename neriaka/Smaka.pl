@@ -20,10 +20,7 @@ sub EVENT_ITEM {
     quest::faction(370,5); #Dreadguard Inner
     quest::summonitem(14365); #Cough Elixir
   }
-  else {
-    quest::givecash($copper, $silver, $gold, $platinum);
-  }
-    plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

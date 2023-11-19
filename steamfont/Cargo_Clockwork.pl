@@ -13,19 +13,25 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_TIMER {
-  if(!defined($qglobals{CargoClockwork}) && ($zonehour == 8)) {
-    quest::setglobal("CargoClockwork",1,1,"H2");
+  if (!quest::get_data("CargoClockwork") && ($zonehour == 8)) {
+    quest::set_data("CargoClockwork", "1", "H2");
     quest::start(177); #Path to windmills
   }
-  if($x == 700 && $y == -1783 && $delivery == 1) {
+  if ($npc->GetTarget() && ($targetname=~/highway_bandit/i)) {
+    $npc->WipeHateList();
+  }
+}
+
+sub EVENT_WAYPOINT_ARRIVE {
+  if ($wp == 1 && $delivery == 1) {
     quest::stop();
     $delivery = 0;
   }
-  if($x == 550 && $y == -830) {
+  if ($wp == 8) {
     quest::say("kachunk .. kachunk..");
     quest::signal(56066,1); #Watchman Grep
   }
-  if($x == 90 && $y == -700 && $delivery == 0) {
+  if ($wp == 10 && $delivery == 0) {
     $delivery = 1;
     quest::emote("Chuga.. Chug..Chug..");
     quest::emote("The chugging of the Cargo Clockwork comes to a halt.");
@@ -46,9 +52,6 @@ sub EVENT_TIMER {
     $bandit3npc->AddToHateList($npc,1);
 
     quest::say("This is highway robbery.");
-  }
-  if ($npc->GetTarget() && ($targetname=~/highway_bandit/i)) {
-    $npc->WipeHateList();
   }
 }
 

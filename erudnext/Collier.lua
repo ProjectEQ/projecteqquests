@@ -51,5 +51,9 @@ function event_exit(e)
 end
 
 function event_timer(e)
-	e.self:SetAppearance(1); -- Sit
+  if e.self:IsEngaged() then
+    e.self:SetAppearance(0); -- Stand
+  else
+    e.self:SetAppearance(1); -- Sit
+  end
 end

@@ -15,6 +15,7 @@ sub EVENT_SAY {
   }
   if ($text=~/prophecy/i && $faction >= 44) {
     quest::say("I suppose it is time for the secret to be shared. Ages ago, two brothers were born. Glohnor was highly favored by the pompous Lightbringer, whose name we do not utter. Lhranc was chosen by the Prince of Hate to bring destruction and turmoil to the sons of men. The one thing they shared in common was their love of the fair priestess, Kyrenna. Kyrenna fell deeply in love with Glohnor. When Lhranc discovered this, he was overcome with rage and unwisely attacked his brother, who happened to be far more adept in combat. The fight cost Lhranc dearly. He lost his dignity as well as an eye in the struggle. He was ordered to leave Freeport and live his life in exile from the only home he had ever known.");
+    quest::summonitem(14375); # Item: Seal of Kastane
   }
   if ($text=~/Lhranc/i && $faction >= 44) {
     quest::say("Lhranc wandered the deserts of Ro for weeks, sinking deeper into depression and giving in to rage. Reports from the local merchants and caravans had him roaming the dunes muttering to himself incoherently. Eventually, he was forgotten, blending in with the hermits and madmen common to that region, forgotten by all save one.");
@@ -54,6 +55,3 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-
-# Quest by mystic414
-

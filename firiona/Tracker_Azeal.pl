@@ -16,7 +16,7 @@ sub EVENT_TIMER {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::spawn2(84028,0,0,$x,$y,$z,$h); # NPC: Tracker_Azeal_
+    quest::unique_spawn(84028,0,0,$x,$y,$z,$h); # NPC: Tracker_Azeal_
     quest::stoptimer("ZoneTime");
     quest::depop_withtimer();
   }
@@ -25,4 +25,3 @@ sub EVENT_TIMER {
 sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
-#Submitted by Jim Mills

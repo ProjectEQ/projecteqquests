@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-  if ($text~=\hail\i) {
+  if ($text=~/hail/i) {
     quest::say("There is enlightenment through death. Let no one convince you otherwise.");
   }
 }

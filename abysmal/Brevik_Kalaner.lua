@@ -88,7 +88,7 @@ end
 
 function progress_check(e)
 	local data_bucket = e.other:GetBucket("txevu_items");
-	if eq.get_data(data_bucket) ~= "" then -- Has Started
+	if data_bucket ~= "" then -- Has Started
 		local s = eq.split(data_bucket, ',');
 
 		local sliver	= tonumber(s[1]); -- Item: Sliver of the High Temple (60176)

@@ -96,7 +96,7 @@ function progress_check(e)
 		local splinter	= tonumber(s[3]); -- Item: Splinter of the High Temple (60253)
 
 		local has_all_keys = (sliver == 1 and fragment == 1 and splinter == 1);
-eq.debug("sliver: " .. sliver .. " fragment: " .. fragment .. " splinter: " .. splinter .. " all: " .. has_all_keys);
+
 		if has_all_keys then
 			e.other:Message(MT.NPCQuestSay, "Brevik Kalaner takes the three stone pieces from you and wraps them in a soft hide covered with glyphs. He mutters some strange words and the stones begin to glow and undulate beneath the hide. You see a wind of souls swirl around you and become absorbed in the stone. 'The essence of the trusik has been imbued into this stone. With one touch of this totem, the guardian of Txevu will recognize the spirit of its masters and let you pass.'");
 			e.other:SummonItem(60254); -- Item: Cipher of Txevu

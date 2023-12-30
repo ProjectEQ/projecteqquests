@@ -5,5 +5,10 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+  if (($class eq "Shadowknight") && (plugin::check_handin(\%itemcount, 58648 => 1))) { #Crescent Reach Guild Summons
+    #quest::say(""); Doesn't give text on Live...
+    quest::faction(1129, 100); #Circle of the Crystalwing
+    quest::summonitem(58752); #Bloodknight's Apprentic Tunic*
+  }
   plugin::return_items(\%itemcount);
 }

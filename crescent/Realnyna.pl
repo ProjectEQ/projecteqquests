@@ -1,13 +1,11 @@
 # items: 33233, 93665, 93450, 93668, 92871, 56873, 17405, 56852, 17354, 56843, 17403, 56850, 17071, 56805, 63819, 51522, 63820, 51523, 63821, 51524, 63822, 51525, 63807, 51514, 63808, 51515, 63809, 51516, 63810, 51517, 17798, 56860, 17799, 56861, 11703, 56800, 17082, 56808, 92877, 56879, 63811, 51518, 63812, 51519, 63814, 51521, 17157, 56824, 17201, 56826, 17703, 56857, 17966, 51537, 17406, 56853, 17081, 56807, 17806, 51538, 92873, 56875, 17241, 56834, 17587, 56854, 17813, 56876, 17105, 56813, 17327, 56839, 17213, 56832, 92868, 56870, 92870, 56872, 17969, 56863, 17358, 56845, 63799, 51510, 63800, 51511, 63801, 51512, 63802, 51513, 72502, 93166, 92879, 56881, 17701, 56855, 17062, 56804, 92875, 56877, 51175, 56869, 17404, 56851, 17144, 56821, 17142, 56819, 17145, 56822, 17143, 56820, 17141, 56818, 17140, 56817, 51172, 56866, 17353, 56842, 17350, 56840, 17139, 51535, 17204, 56829, 51174, 56868, 17402, 56849, 92872, 56874, 17196, 56825, 17186, 51536, 92880, 56882, 17302, 56838, 17072, 56806, 17008, 56801, 17359, 56846, 17251, 56835, 17129, 56816, 33234, 93666, 92869, 56871, 17401, 56848, 17203, 56828, 51173, 56867, 93492, 93667, 63816, 51526, 51527, 62817, 51528, 63803, 51530, 63804, 51531, 63805, 51532, 63806, 51533, 66136, 51542, 17123, 56815, 17084, 56810, 17083, 56809, 17804, 56862, 17047, 56803, 17085, 56811, 92876, 56878, 17352, 56841, 17202, 56827, 17301, 56837, 17300, 56836, 17702, 56856, 17705, 56859, 92881, 56883, 17812, 51543, 92882, 56884, 17207, 56831, 17104, 56812
-sub EVENT_SAY
-{
-	if($text=~/hail/i)
-		{
-		quest::say("Greetings $name! Nice to meet you. I've started up a complimentary bag check service. Feel free to give me your weight reducing bag, and I'll give you a token in return. When you would like to get your bag back, simply return to me with your token.");
-		}
+sub EVENT_SAY {
+  if ($text=~/hail/i) {
+    quest::say("Greetings $name! Nice to meet you. I've started up a complimentary bag check service. Feel free to give me your weight reducing bag, and I'll give you a token in return. When you would like to get your bag back, simply return to me with your token.");
+  }
 }
 
-sub EVENT_ITEM
+sub EVENT_ITEM {
 #Order for Items is
 #Bag
 #Token
@@ -18,7 +16,7 @@ sub EVENT_ITEM
 #Also some of the bags did not have tokens for them
 #And some of the tokens did have have bags for them
 #The item turn ins are in alpha-numeric order
-{
+
   if (plugin::check_handin(\%itemcount, 33233 => 1)) { #Ambleshifts Amazing Automated Amalgamator
     quest::say("Here you go. Bring this token back to me when you would like your bag back.");
     quest::summonitem(93665); # Item: Ambleshift's Amazing Automated Amalgamator Token
@@ -878,4 +876,3 @@ sub EVENT_ITEM
   plugin::return_items(\%itemcount);
 }
 #End of File zone: crescent ID: 394064 -- Realnyna
-#By Kovou

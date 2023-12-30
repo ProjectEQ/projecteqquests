@@ -6,6 +6,7 @@ sub EVENT_SAY {
     else {
       quest::say("Well, well $name you are persistent. I like that! You show a genuine interest in how our fine city is being put together. As you can clearly see for yourself this city is not of drakkin origins. I would like you to [" . quest::saylink("learn more") . "] about this city's history before we speak any further.");
     }
+  }
   if ($text=~/council business/i) {
     quest::say("What? Didn't I just very politely suggest we chat another time? If you are so interested in the Scions of the Six then why don't you take a look at our [" . quest::saylink("charter") . "]? That should fill you in on the basics of how our city is run. Now if there's nothing else, I will say udra to you. That means 'goodbye!'");
   }

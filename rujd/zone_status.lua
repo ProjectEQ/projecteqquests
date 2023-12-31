@@ -25,19 +25,13 @@ local room5_box = box(room5.top, room5.bottom, room5.right, room5.left)
 
 function event_spawn(e)
 	local instance_id = eq.get_zone_instance_version();
-	if instance_id == 1 then
-		eq.set_timer("delay_start", 15 * 1000); -- Wait 10s for zone load before starting processing
-		eq.GM_Message(MT.Lime,"[Debug] Timer Set");
-	elseif instance_id == 2 then
+	if instance_id == 2 then
 		eq.set_timer("raid_room_check", 3 * 1000); -- 3 second room checks
 	end
 end
 
 function event_timer(e)
-	if e.timer == "delay_start" then
-			eq.stop_timer(e.timer)
-			eq.load_encounter("ruj");
-	elseif e.timer == "raid_room_check" then -- Raid room checks
+	if e.timer == "raid_room_check" then -- Raid room checks
 		local npc_list = eq.get_entity_list():GetNPCList();
 		local room1_count = 0;
 		local room2_count = 0;

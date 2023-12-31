@@ -26,90 +26,93 @@ sub EVENT_ENTERZONE {
 }
 
 sub EVENT_POPUPRESPONSE {
-  if ($popupid == 111) { 
-    quest::popup("Maps",
-                 "<br><br> <c \"#94f000\"> Additional Map Features </c>  
-                   <br><br> If you want to show or hide the visibility of floors above or below your current position, you can toggle
-                   the <c \"#00c8f0\"> Height Filter </c> button. When this button is activated, locations and items below a distance
-                   specified in the \"Low\" field won't be drawn. Likewise, anything above the \"High\" distance won't be drawn.
-                   <br><br> To show or hide labels on the map, toggle the <c \"#00c8f0\"> Labels </c> button.
-                   <br><br> If you are in a group and wish to find  members of your group on the map, activate the
-                   <c \"#00c8f0\"> Group </c> button. Group members will appear on the map as green <c \"#54f000\"> X</c>'s.");
-  }
   if ($popupid == 1) {
-    quest::popup("Tradeskills",
-                 "<br> If the recipe you wish to create is not already in your list of known recipes, you can <c \"#83f07a\"> Experiment</c>.
-                   <br><br>When you have open the  <c \"#1b6e14\"> Tradeskill </c> window, click on the <c \"#00c8f0\"> Experiment </c> button.
-                   This opens a new window labeled with the name of the tradeskill container in which you are experimenting -- Oven, in this
-                   case.<br><br> You can then place your ingredients intot he slots of the <c \"#1b6e14\"> Oven </c> window. For rat steaks,
-                   this requires the rat meat and the cooking sauce.<br><br> When the ingredients are in the oven, click the
-                   <c \"#00c8f0\"> Combine </c> button. The ingredients will be consumed, and you will have a cooked rat steak.
-                   <br><br><c \"#F07F00\"> Click 'OK' to learn about recipes and skill levels.",
-                 2);
+    quest::popup("Tradeskills", "<br>If the recipe you wish to create is not already in your list of known recipes, you can <c \"#CCFF99\">Experiment</c>.<br><br>When you have opened the <c \"#00A000\">Tradeskill</c> window, click on the <c \"#00F0F0\">Experiment</c> button. This opens a new window labeled with the name of the tradeskill container in which you are experimenting -- Oven, in this case.<br><br>You can then place your ingredients into the slots of the <c \"#00A000\">Oven</c> window. For rat steaks, this requires the rat meat and cooking sauce.<br><br>When the ingredients are in the oven, click the <c \"#00F0F0\">Combine</c> button. The ingredients will be consumed, and you will have cooked a rat steak.<br><br><c \"#F07F00\">Click 'OK' to learn about recipes and skill levels.</c>", 2);
   }
   if ($popupid == 2) {
-    quest::popup("Tradeskills",
-                 "<br> Some tradeskill recipes are more complicated than others, and require you to possess a higher tradeskill level
-                   in the tradeskill you are attempting to practice.<br><br> If your level is not high enough to attempt a particular
-                   recipes, you will likely fail the combine. When this happens, you will often lose some or all of the ingredients
-                   you used for the combine.<br><br><c \"#F07F00\"> Click 'OK' to learn about different types of tradeskills.",
-                 3);
+    quest::popup("Tradeskills", "<br>Some tradeskill recipes are more complicated than others, and require you to possess a higher tradeskill level in the tradeskill you are attempting to practice.<br><br>If your level is not high enough to attempt a particular recipe, you will likely fail the combine. When this happens, you will often lose some or all of the ingredients you used for the combine.<br><br><c \"#F07F00\">Click 'OK' to learn about different types of tradeskills.</c>", 3);
   }
   if ($popupid == 3) {
-    quest::popup("Tradeskills",
-                 "<br> There are many different type of tradeskills that you can practice, including baking, pottery, fletching,
-                   blacksmithing, and weaving. You can create all manner of items using these skills.<br><br> To perform the various
-                   types of tradeskills, you must use the correct types of tradeskill containers. For example, to perform baking, you
-                   need an oven. Blacksmithing requires a forge. Pottery requires a kiln. Be on the lookout for different types of
-                   tradeskill containers located in the cities throughout Norrath.");
-    }
+    quest::popup("Tradeskills", "<br>There are many different types of tradeskills that you can practice, including baking, pottery, fletching, blacksmithing, and weaving. You can create all manner of items using these skills.<br><br>To perform the various types of tradeskills, you must use the correct types of tradeskill containers. For example, to perform baking, you need an oven. Blacksmithing requires a forge. Pottery requires a kiln. Be on the lookout for different types of tradeskill containers located in cities throughout Norrath.", 4);
+  }
+  if ($popupid == 4 && quest::istaskactivityactive(1448, 9)) {
+    quest::updatetaskactivity(1448, 9); #Task: Basic Training
+  }
   if ($popupid == 6) {
-    quest::popup("Managing Hotbars",
-                 "<br> There are multiple ways to adjust and manage your <c \"#83f07a\"> Hotbars:</c><br><br>
-                   <c \"#1b6e14\">Cycling</c><br>You switch which particular page of the hotbar you are on by using the up and down
-                   arrows on the right-side of the bar.<br><br><c \"#1b6e14\">New Hotbars</c><br>You can add new Hotbars by using your
-                   <c \"#83f07a\"> EQ Menu</c> button, selecting <c \"#83f07a\"> Actions,</c> a nd then choosing option
-                   <c \"#83f07a\"> Hotkeys </c> 1-10.<br><br><c \"#F07F00\"> Click 'OK' to learn managing your Hotbars.</c>",
-                 7);
+    quest::popup("Managing Hotbars", "<br>There are multiple ways to adjust and manage your <c \"#CCFF99\">Hotbars</c>: <br><br><c \"#00A000\">Cycling</c><br>You switch which particular page of the hotbar you are on by using the up and down arrows on the right-side of the bar. <br><br><c \"#00A000\">New Hotbars</c><br>You can add new Hotbars by using your <c \"#CCFF99\">EQ Menu</c> button, and then selecting <c \"#CCFF99\">Hotkeys</c> 1-10.<br><br><c \"#F07F00\">Click 'OK' to learn managing your Hotbars.</c>", 7);
   }
   if ($popupid == 7) {
-    quest::popup("Assigning Hotkeys",
-                 "<br><c \"#83f07a\">Hotkeys</c> are abilities, actions, and macros th at can be activated with a simple click. There are
-                   multiple ways to customize your <c \"#83f07a\">Hotbar</c> using these buttons:<br><br><c \"#1b6e14\">Drag and Drop</c>
-                   <br>You can move and set <c \"#83f07a\"> Hotkeys</c> by holding down the left mouse button for a moment, and then
-                   dragging the icon to the<c \"#83f07a\"> Hotbar.</c> This is especially useful for dragging from your
-                   <c \"#83f07a\">Action,</c><c \"#83f07a\"> Alternative Advancement,</c> and <c \"#83f07a\">Spell Gem</c> menus.
-                   <br><br><c \"#1b6e14\">Right-Click</c><br>You can right-click an empty<c \"#83f07a\"> Hotbar</c> slot and use
-                   <c \"#83f07a\">Assigning Social</c> to assign custom made actions. More about those will be presented in the next
-                   section.<br><br><c \"#F07F00\"> Click 'OK' to learn about custom functions for your Hotbars.</c>",
-                 8);
+    quest::popup("Assigning Hotkeys", "<br><c \"#CCFF99\">Hotkeys</c> are abilities, actions, and macros that can be activated with a simple click. There are multiple ways to customize your <c \"#CCFF99\">Hotbar</c> using these buttons:<br><br><c \"#00A000\">Drag & Drop</c><br>You can move and set <c \"#CCFF99\">Hotkeys</c> by holding down the left mouse button for a moment, and then dragging the icon to the <c \"#CCFF99\">Hotbar</c>. This is especially useful for dragging from your <c \"#CCFF99\">Action</c>, <c \"#CCFF99\">Alternate Advancement</c>, and <c \"#CCFF99\">Spell Gem</c> menus.<br><br><c \"#00A000\">Right-Click</c><br>You can right-click an empty <c \"#CCFF99\">Hotbar</c>. slot and use <c \"#CCFF99\">Assigning Social</c> to assign custom made actions. More about those will be presented in the next section.<br><br><c \"#F07F00\">Click 'OK' to learn about custom functions for your Hotbars.</c>", 8);
   }
   if ($popupid == 8) {
-    quest::popup("Custom Hotkeys",
-                 "<br>Dragging existing abilities and assigning default actions is only the first step. You can also create your own
-                   <c \"#83f07a\">Hotkeys</c>! You can use your <c \"#83f07a\">Action</c> menu to access the
-                   <c \"#83f07a\">Socials Page</c>.<br><br><c \"#F07F00\"> Click 'OK' to learn about personalizing your Hotbars.</c>",
-                 9);
+    quest::popup("Custom Hotkeys", "<br>Dragging existing abilities and assigning default actions is only the first step. You can also create your own <c \"#CCFF99\">Hotkeys</c>! You can use your <c \"#CCFF99\">Action</c> menu to access the <c \"#CCFF99\">Socials Page</c>.<br><br><c \"#F07F00\">Click 'OK' to learn about personalizing your Hotbars.</c>", 9);
   }
   if ($popupid == 9) {
-    quest::popup("Personalizing the Hotbar",
-                 "<br>You can personalize your <c \"#83f07a\">Hotkeys</c> by using the extended right-click menu. Hold down the right mouse
-                   button over an existing <c \"#83f07a\">Hotkey</c> to see the options:<br><br><c \"#1b6e14\">Activate</c><br>This uses the
-                   key as if you had left-clicked on it.<br><br><c \"#1b6e14\">Clear</c><br>This removes the key.<br><br>
-                   <c \"#1b6e14\">Assign Icon</c><br>Select an icon you want from the entire library of Icons.<br><br>
-                   <c \"#1b6e14\">Clear Icon</c><br>This removes the custom icon.<br><br><c \"#1b6e14\">Assign Label</c><br>
-                   This changes the text on the key.<br><br><c \"#1b6e14\">Assign Social</c><br>This lets you put a custom ability created
-                   on the <c \"#83f07a\">Socials Page</c> into the <c \"#83f07a\">Hotbar</c> directly.<br><br>
-                   <c \"#1b6e14\">Change Size</c><br>This lets you resize and scale the entire<c \"#83f07a\"> Hotbar.</c><br><br>
-                   <c \"#1b6e14\">Unmemorize</c><br>This lets you forget a memorized spell. Only works on spell gem
-                   <c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Click 'OK' to complete the tutorial on  Hotbars.</c>");
-    quest::updatetaskactivity(8804, 1);
+    quest::popup("Personalizing the Hotbar", "<br>You can personalize your <c \"#CCFF99\">Hotkeys</c> by using the extended right-click menu. Hold down the right mouse button over an existing <c \"#CCFF99\">Hotkey</c> to see the options: <br><br><c \"#00A000\">Activate</c><br>This uses the key as if you had left-clicked on it. <br><br><c \"#00A000\">Clear</c><br>This removes the key. <br><br><c \"#00A000\">Assign Icon</c><br>Select an icon you want from the entire library of icons. <br><br><c \"#00A000\">Clear Icon</c> <br>This removes the custom icon. <br><br><c \"#00A000\">Assign Label</c><br>This changes the text on the key. <br><br><c \"#00A000\">Assign Social</c><br>This lets you put a custom ability created on the <c \"#CCFF99\">Socials Page</c> into the <c \"#CCFF99\">Hotbar</c> directly. <br><br><c \"#00A000\">Change Size</c><br>This lets you resize and scale the entire <c \"#CCFF99\">Hotbar</c>. <br><br><c \"#00A000\">Unmemorize</c><br>This lets you forget a memorized spell. Only works on spell gem <c \"#CCFF99\">Hotkeys</c>. <br><br><c \"#F07F00\">Click 'OK' to complete the tutorial on Hotbars.</c>");
+    quest::updatetaskactivity(8804, 1); #Task: Hotbars
+    quest::updatetaskactivity(1448, 7); #Task: Basic Training
   }
   if ($popupid == 10) {
-    quest::popup("Swimming",
-                 "<br>When underwater, your remaining air is shown in the <c \"#1b6e14\">Air Remaining</c> window. If your air supply runs
-                   out, you will begin taking damage.<br><br>As your swimming skill increases, so will your air supply and swimming speed.
-                   The more time you spend in the water, the better swimmer you will become!");
+    quest::popup("Swimming", "<br>When underwater, your remaining air is shown in the <c \"#00A000\">Air Remaining</c> window. If your air supply runs out, you will begin taking damage.<br><br>As your swimming skill increases, so will your air supply and swimming speed. The more time you spend in the water, the better swimmer you will become!");
+  }
+  if ($popupid == 11) {
+    quest::popup("Advanced Tips", "There are many different augments which are classified into different types, known as \"slot types\". If you right click on an augment and hold for a few seconds, the augment's description window will open. Here you can see the augment's slot type(s), as well as any other requirements, such as race, class, level restrictions, and types of items in which the augment may be embedded. In order to insert an augment into an item, the item must have an empty slot type which matches the augment's and be usable in one of the same equipment slot(s).<br>Your character will also need to meet any race, class, and level requirements noted on the augment, in order to gain any benefit from it.", 12);
+  }
+  if ($popupid == 12) {
+    #This is [sic] - on Live it is misspelled as "Delect" instead of "Select"
+    quest::popup("Removing or Destroying Augmentations", "There will be times when you want to replace or even remove old augments. Many augments can be easily removed using a distiller, which will allow you to reuse the augment later, however, some augments cannot be removed without being destroyed.<br><br><b>To remove an augment:<b><br>1. With the required distiller in your inventory (the augment's description window will tell you which), left-click on the aug while not holding anything and select \"Remove\"<br>2. Click 'Yes' in the confirmation window, to remove your augment. The distiller will be consumed and your augment will appear on your cursor.<br><br><b>To destroy an augment:<b><br>1. Right-click on the augment's icon in the item description window<br>2. Delect 'Destroy' from the drop down menu<br>3. Click 'Yes' in the confirmation window");
+  }
+  if ($popupid == 13) {
+    quest::popup("Achievement Types", "<br>Achievements are split into <c \"#CCFF99\"> categories</c> and <c \"#CCFF99\"> subcategories</c>. <br><br> <c \"#CCFF99\">General</c> contains achievements for class, advancement, and other achievements that don't fit in a particular category. <br><br><c \"#CCFF99\">Tradeskill</c> houses all achievements related to tradeskill activities like increasing rank or doing special quests. <br><br><c \"#CCFF99\">The Hero's Journey</c> is a list of achievements for progressing along the main path of suggested advancement. <br><br><c \"#CCFF99\">Expansion</c> categories list all achievements for a particular expansion. <br><br>Try using the filters <c \"#00F0F0\"> Open, Complete, and Locked</c> to display which achievements are displayed, and examine the categories in detail. The Open filter displays achievements you haven't completed yet. The Complete filter lets you toggle the display of achievements you have already completed. The Locked filter toggles the achievements you aren't quite ready to work on just yet.<br><br><c \"#F07F00\">Click 'OK' to learn about how to acquire achievements.</c>", 14);
+  }
+  if ($popupid == 14) {
+    quest::popup("Gaining Achievements", "<br><c \"#CCFF99\">Components</c> are the requirements or set of requirements you must fulfill to gain an achievement. <br><br><c \"#00F0F0\">Click</c> the <c \"#CCFF99\">General</c> category, and then the <c \"#CCFF99\">Special</c> subcategory. You should see an achievement for <c \"#CCFF99\">Mastering Achievements</c>. <br><br> <c \"#00F0F0\">Click</c> the <c \"#CCFF99\">Mastering Achievements</c> achievement, and you will see a check-box for <c \"#CCFF99\">Achievement Tutorial</c>. When you complete this tutorial, you will gain this achievement. <br><br><c \"#F07F00\">Click 'OK' to learn more details about achievements.</c>", 15);
+  }
+  if ($popupid == 15) {
+    quest::popup("Achievement Details", "<br><c \"#CCFF99\">Achievement Score</c> is listed on top of the achievement window on the <c \"#CCFF99\">Achievements</c> tab and <c \"#CCFF99\">Summary</c> tab. Listed here is the total number of <c \"#CCFF99\">Achievement Points</c>, the <c \"#CCFF99\">total achievements completed</c>, and the <c \"#CCFF99\">achievements completed in the selected category</c>. <br><br><c \"#00F0F0\">Click</c> the <c \"#CCFF99\">Summary</c> tab for a full breakdown of all achievement details.<br><br> The <c \"#CCFF99\">Compare</c> button lets you match your achievements against another player. Select another player and click Compare to see how you match up. <br><br><c \"#F07F00\">Click 'OK' to learn about achievement rewards.</c>", 16);
+  }
+  if ($popupid == 16) {
+    quest::popup("Achievement Rewards", "<br><c \"#CCFF99\">Rewards</c> are available for completing some achievements. <c \"#00F0F0\">Select</c> the <c \"#CCFF99\">Mastering Achievements</c> achievement located under the main category <c \"#CCFF99\">General</c> and subcategory <c \"#CCFF99\">Special</c>. A button displayed there says <c \"#CCFF99\">View Reward</c>. You can click this button to bring up your rewards window and see that completing this achievement offers you experience and money. You will also of course get the achievement points listed here, that go to your total score.<br><br>There are many achievements out there, with plenty of challenge and reward!<br><br><c \"#F07F00\">Click 'OK' to finish the achievement tutorial and acquire your reward.</c>", 17);
+  }
+  if ($popupid == 17 && quest::istaskactivityactive(1448, 12)) {
+    quest::updatetaskactivity(1448, 12); #Task: Basic Training
+  }
+  if ($popupid == 18) {
+    quest::popup("Banking", "<br>Lyndroh has a backpack for you to use! <c \"#00F0F0\">left click</c> on the pack in the bank inventory, and place it in your own inventory. <br><br>Note that unless a backpack is empty, you cannot place it inside another backpack.<br><br><c \"#F07F00\">Drop off or pick up any items you'd like from your bank and click 'OK'.</c>", 19);
+  }
+  if ($popupid == 19 && quest::istaskactivityactive(1448, 11)) {
+    quest::updatetaskactivity(1448, 11); #Task: Basic Training
+  }
+  if ($popupid == 20 && quest::istaskactivityactive(1448, 10)) {
+    quest::udpatetaskactivity(1448, 10); #Task: Basic Training
+  }
+  if ($popupid == 21) {
+    quest::popup("Communication", "<br>There are many different commands that you may enter in your <c \"#00A000\">Chat Window</c> to talk to other players in EverQuest.<br><br><c \"#F0F000\">/say</c><br> This sends your message to everyone in the immediate area.  For example, /say Anyone know any good pirate jokes?<br><br><c \"#F0F000\">/tell Player Name</c><br> This sends a message to a single player.  For example, /tell Tearis Hello, would you like to form a group?<br><br><c \"#F0F000\">/g</c><br>This sends a message to all players in your group.  For example, /g Uh oh. We woke the dragon.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>", 22);
+  }
+  if ($popupid == 22) {
+    quest::popup("Communication", "<br>Here are a few chat commands that you can type in your Main Chat window to communicate with multiple players at the same time.<br><br><c \"#F0F000\">/shout</c><br>This is a zonewide channel that sends a message to everyone in the zone.  Example: /shout Look out!  Slavemaster Ruga is right behind me!<br><br><c \"#F0F000\">/ooc</c><br>The out of character command is also zonewide command for talking about the game.  Example: /ooc How do I open the quest window again?<br><br><c \"#F07F00\">Click 'OK' to continue.</c>", 23);
+  }
+  if ($popupid == 23) {
+    quest::popup("Chat Windows", "<br><c \"#00A000\">Main Chat</c> is just one chat window you can utilize. To fully customize your interface and make sure you can see what you want, where you want, you can open additional windows and change filters. <br><br><c \"#F0F000\">New Windows</c><br> Right-click on your <c \"#00A000\">Main Chat</c> window title bar and select <c \"#00A000\">New Chat Window</c> to open up a brand new window. You will also see the option to <c \"#00A000\">Rename Window</c>  to change the window name, and the option to make this window your main chat window with the <c \"#00A000\">Always Chat Here</c> menu choice.<br><br><c \"#F0F000\">Chat Filters</c><br> Select what you want to see in each window by turning on/off <c \"#00A000\">Filters</c>. You can choose what type of chat goes into which window by using <c \"#00A000\">Channel</c> to pick chat channels as well. In addition, you have the option to set your character's <c \"#00A000\">Language</c>, as well as determine how and which system messages are delivered under <c \"#00A000\">Hit Modes</c>. <br><br><c \"#F07F00\">Click 'OK' to learn about chat channels.</c>", 24);
+  }
+  if ($popupid == 24) {
+    quest::popup("Custom Chat Channels", "<br>While regular chat channels cover a lot of situations, custom <c \"#00A000\">Chat Channels</c> let you keep in touch with friends easily even when you are not in the same guild or group. You can use these commands to join a custom channel.<br><br><c \"#F0F000\">/join Chat Channel Name</c><br>If you use /join you can enter a custom <c \"#00A000\">Chat Channel</c> to talk to anyone who joins it. You can set which window the text goes to. To speak in a channel, use the number associated it preceded by a \"/\". For example, \"/2 Hello\" lets you say hello to your second channel.<br><br><c \"#F0F000\">/autojoin Chat Channel Name</c><br>You can use /autojoin to set up default custom <c \"#00A000\">Chat Channels</c> to join without having to manually enter them when entering the game. Autojoin is very useful in streamlining your chat preferences in regards to custom channels.<br><br><c \"#F07F00\">Click 'OK' to close the window and complete this tutorial.</c>");
+    quest::updatetaskactivity(1448, 6);
+    quest::signal(189018); #NPC: Prathun
+  }
+  if ($popupid == 25) {
+    quest::popup("Combat Abilities", "<br>Combat Ability Shortcuts:<br><br>It is also possible to create hotkeys by <c \"#00F0F0\">right-clicking</c> on an empty slot in your  <c \"#00A000\">Combat Abilities Window</c> and choosing your ability from the <c \"#00A000\">Context Menu</c>.  As you learn more abilities, more categories will appear in these menus.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>", 26);
+  }
+  if ($popupid == 26) {
+    quest::popup("Combat Abilities", "<br><c \"#F0F000\">Using Combat Abilities:</c><br>For a description of what your combat abilities can do, <c \"#00F0F0\">left click</c> on the S button in your <c \"#00A000\">Combat Abilities Window</c>, then select the name of the combat ability in the window that pops up.  The description will appear in the lower portion of this <c \"#00A000\">Combat Skills Window</c>.<br><br>To use an ability, select your target and then <c \"#00F0F0\">left click</c> on the hotkey you have created in your <c \"#00A000\">Combat Abilities Window</c> or <c \"#00A000\">Hotbar</c>.<br><br><c \"#F0F000\">Endurance:</c><br>Most combat abilities require endurance to cast or to keep active.  Endurance is represented by the yellow bar below your hit point meter in the <c \"#00A000\">Player Window</c>. Much like hit points, endurance will regenerate over time, but unlike hit points they will regenerate at the same rate whether you are sitting or standing as long as you are not actively attacking something.<br><br>If you are in a rested state and sitting (there will be a yellow swirl in your <c \"#00A000\">Player Window</c> when this is true), both endurance and hit points regenerate at a much faster rate than normal.<br><br>If you wish to read these lessons again, simply ask Rytan to [review] them.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
+    quest::updatetaskactivity(1448, 5); #Task: Basic Training
+    quest::signal(189019); #NPC: Rytan
+  }
+  if ($popupid == 27) {
+    quest::popup("Spells and Songs", "<br><c \"#F0F000\">Using Spells:</c><br><br>To cast a spell, you must have memorized the spell in your <c \"#00A000\">Spell Bar</c>.To cast your spell, select your target and then <c \"#00F0F0\">left click</c> on the spell icon in your <c \"#00A000\">Spell Bar</c>.<br><br>For a description of what your spells can do, <c \"#00F0F0\">right click and hold</c> on the spell icon in your spell book.<br><br><c \"#F0F000\">Mana:</c><br>Most spells require mana to cast.  Mana is represented by the blue bar below your hit point meter in the <c \"#00A000\">Player Window</c>. Much like hit points, mana will regenerate over time, but it will regenerate much faster when you are sitting.<br><br>If you are in a rested state and sitting (there will be a yellow swirl in your <c \"#00A000\">Player Window</c> when this is true), both mana and hit points regenerate at a much faster rate than normal.<br><br>If you wish to read these lessons again, simply ask Rytan to [review] them.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
+  }
+  if ($popupid == 111) { 
+    quest::popup("Maps", "<br><c \"#CCFF99\">Additional Map Features</c><br><br>If you want to show or hide the visibility of floors above or below your current position, you can toggle the <c \"#00F0F0\">Height Filter</c> button. When this button is activated, locations and items below a distance specified in the \"Low\" field won't be drawn. Likewise, anything above the \"High\" distance won't be drawn.<br><br>To show or hide labels on the map, toggle the <c \"#00F0F0\">Labels</c> button.<br><br>If you are in a group and wish to find members of your group on the map, activate the <c \"#00F0F0\">Group</c> button. Group members will appear on the map as green <c \"#00FF00\">X</c>'s.");
   }
 }    
 

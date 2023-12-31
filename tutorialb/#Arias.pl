@@ -2,7 +2,7 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if (quest::istaskactivtyactive(1448, 1)) {
+    if (quest::istaskactivityactive(1448, 1)) {
       quest::say("We found the other slaves!  Not bad, my friend, not bad.  No matter what happens in the mines, you should always be able to find your way back here.  If you seek allies in other instances of these mines, I can send you there if you [" . quest::saylink("wish") . "].");
       quest::popup("The Find Command", "<br>It's a big world out there.  It helps to know where you are going.<br><br><c \"#F0F000\">The Find Command:</c><br>You can use the Find command to locate other important rebellion characters.  To open your find menu, press [<c \"#00F0F0\">CTRL + F</c>] or press the <c \"#00F0F0\">Find</c> button on your hotbuttons bar.  Then click on Absor's Name under 'Weapons'.  A glowing pathway will appear and lead you to that NPC.<br><br><c \"#F07F00\">Press 'OK' to continue.</c>");
       quest::updatetaskactivity(1448, 1);

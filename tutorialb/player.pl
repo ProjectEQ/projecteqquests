@@ -74,7 +74,7 @@ sub EVENT_POPUPRESPONSE {
   if ($popupid == 16) {
     quest::popup("Achievement Rewards", "<br><c \"#CCFF99\">Rewards</c> are available for completing some achievements. <c \"#00F0F0\">Select</c> the <c \"#CCFF99\">Mastering Achievements</c> achievement located under the main category <c \"#CCFF99\">General</c> and subcategory <c \"#CCFF99\">Special</c>. A button displayed there says <c \"#CCFF99\">View Reward</c>. You can click this button to bring up your rewards window and see that completing this achievement offers you experience and money. You will also of course get the achievement points listed here, that go to your total score.<br><br>There are many achievements out there, with plenty of challenge and reward!<br><br><c \"#F07F00\">Click 'OK' to finish the achievement tutorial and acquire your reward.</c>", 17);
   }
-  if ($popupid == 17 && quest::istackactivityactive(1448, 12)) {
+  if ($popupid == 17 && quest::istaskactivityactive(1448, 12)) {
     quest::updatetaskactivity(1448, 12); #Task: Basic Training
   }
   if ($popupid == 18) {
@@ -83,7 +83,7 @@ sub EVENT_POPUPRESPONSE {
   if ($popupid == 19 && quest::istaskactivityactive(1448, 11)) {
     quest::updatetaskactivity(1448, 11); #Task: Basic Training
   }
-  if ($popupid == 20 && quest::istackactivityactive(1448, 10)) {
+  if ($popupid == 20 && quest::istaskactivityactive(1448, 10)) {
     quest::udpatetaskactivity(1448, 10); #Task: Basic Training
   }
   if ($popupid == 21) {

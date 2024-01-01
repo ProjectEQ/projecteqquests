@@ -84,7 +84,7 @@ sub EVENT_POPUPRESPONSE {
     quest::updatetaskactivity(1448, 11); #Task: Basic Training
   }
   if ($popupid == 20 && quest::istaskactivityactive(1448, 10)) {
-    quest::udpatetaskactivity(1448, 10); #Task: Basic Training
+    quest::updatetaskactivity(1448, 10); #Task: Basic Training
   }
   if ($popupid == 21) {
     quest::popup("Communication", "<br>There are many different commands that you may enter in your <c \"#00A000\">Chat Window</c> to talk to other players in EverQuest.<br><br><c \"#F0F000\">/say</c><br> This sends your message to everyone in the immediate area.  For example, /say Anyone know any good pirate jokes?<br><br><c \"#F0F000\">/tell Player Name</c><br> This sends a message to a single player.  For example, /tell Tearis Hello, would you like to form a group?<br><br><c \"#F0F000\">/g</c><br>This sends a message to all players in your group.  For example, /g Uh oh. We woke the dragon.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>", 22);

@@ -25,7 +25,7 @@ local room5_box = box(room5.top, room5.bottom, room5.right, room5.left)
 
 function event_spawn(e)
 	local instance_id = eq.get_zone_instance_version();
-	if instance_id == 2 then
+	if instance_id == 50 then
 		eq.set_timer("raid_room_check", 3 * 1000); -- 3 second room checks
 	end
 end

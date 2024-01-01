@@ -1,10 +1,10 @@
 -- items: 84091, 84092, 84093, 6800
 function event_spawn(e)
-	eq.set_timer("shout",600000);
+	eq.set_timer("shout",10 * 60 * 1000);
 end
 
 function event_say(e)
-	if(e.message:findi("trick or treat")) then
+	if e.message:findi("trick or treat") then
 		e.self:Say("Here I'll just wrap this up for you. . . Get it? Hahaha!");
 		e.other:SummonItem(eq.ChooseRandom(84091,84092,84093,6800,6800,6800,6800,6800,6800,6800)); -- Item(s): Sand (84091), Chunk of Coal (84092), Pocket Lint (84093), Tasty Candy (6800), Tasty Candy (6800), Tasty Candy (6800), Tasty Candy (6800), Tasty Candy (6800), Tasty Candy (6800), Tasty Candy (6800)
 		eq.update_task_activity(500220,9,1);
@@ -12,7 +12,7 @@ function event_say(e)
 end
 
 function event_timer(e)
-	if(e.timer == "shout") then
+	if e.timer == "shout" then
 		e.self:Shout("Trick or treat! Smell my feet! Give me something good to eat!");
 	end
 end

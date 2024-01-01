@@ -12,7 +12,7 @@ sub EVENT_SAY {
       quest::updatetaskactivity(8505, 1); #Task: Kickin' Things Up A Notch - Augmentations
       quest::updatetaskactivity(1448, 16); #Task: Basic Training
     }
-    elsif (quest::istaskcompleted(8505) && !plugin::check_hasitem(54696)) { #Task: Kickin' Things Up A Notch - Augmentations, Item: Steatite Fragment
+    elsif (quest::istaskcompleted(8505) && !plugin::check_hasitem($client, 54696)) { #Task: Kickin' Things Up A Notch - Augmentations, Item: Steatite Fragment
       quest::say("Ach! Don't tell me ye lost your augmentation already?! I'll give ye another, but take care now; these things are hard to come by. I can't dig too much for these, for fear o' bringin' the ceilin' down on our own heads!");
       quest::summonitem(54696); #Steatite Fragment
     }
@@ -27,7 +27,7 @@ sub EVENT_SAY {
     quest::say("As my old man once told me...' He starts to ramble monotonously about his father's friend, '*blahblah* so Morden's cleanin' his fingernail with his dagger when it slipped... *blah* blood everywhere... *blah* did he learn his lesson? No! *blahblah* scratching this little gemstone, with his dagger when it merged! *blah* power... *blahblah * and - Hey! Are ye [" . quest::saylink("listenin") . "]?!");
   }
   if ($text=~/listenin/i) {
-    if (quest::istaskactivityactive(8505, 0) && !plugin::check_hasitem(54696)) { #Task: Kickin' Things Up A Notch - Augmentations, Item: Steatite Fragment
+    if (quest::istaskactivityactive(8505, 0) && !plugin::check_hasitem($client, 54696)) { #Task: Kickin' Things Up A Notch - Augmentations, Item: Steatite Fragment
       quest::say("Ok, forget the history for now. See that little stone I just gave ye? That's an augment. If ye [" . quest::saylink("embed") . "] it in a weapon or a piece o' armor, it can make that item more powerful. Mind, ye can't put an augment just anywhere. Ye need ta look at your armor and make sure the augment'll fit properly. If ye examine it, ye'll see what type o' items ye can attach it to.");
       quest::summonitem(54696); #Steatite Fragment
     }

@@ -16,7 +16,7 @@ sub EVENT_SAY {
       quest::say("Ach! Don't tell me ye lost your augmentation already?! I'll give ye another, but take care now; these things are hard to come by. I can't dig too much for these, for fear o' bringin' the ceilin' down on our own heads!");
       quest::summonitem(54696); #Steatite Fragment
     }
-    elsif (quest::istaskcompleted(8505)) {#Task: Kickin' Things Up A Notch - Augmentations
+    elsif (quest::istaskcompleted(8505)) { #Task: Kickin' Things Up A Notch - Augmentations
       quest::say("Ach! It's good ta see you're still in one piece! I was a bit worried about how you'd do when I first met ye, but I guess you're tougher than ye, look after all!");
     }
   }
@@ -36,6 +36,7 @@ sub EVENT_SAY {
     }
   }
   if ($text=~/embed/i) {
+    quest::updatetaskactivity(8505, 0); #Task: Kickin' Things Up A Notch - Augmentations
     quest::popup("Embedding an Augmentation", "1. Right-click on your weapon and hold for a few seconds to open its description window.<br><br>2. Pick up your augmentation, and place it in the empty box next to the slot type which matches your augmentation: slot type 4 (Weapon : General). The text next to an empty slot will turn orange when you pick up an augmentation which can fit into that slot, which makes it easy to identify.<br><br>3. A pop-up box will appear, asking you to confirm if you would like to attach your augmentation to your weapon. Select 'Yes' to approve this action, and embed your augmentation to your weapon.", 11);
   }
 }

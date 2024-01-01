@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if (!quest::istaskcomplete(0)) { #Task: Achievements
+    if (!quest::istaskcompleted(0)) { #Task: Achievements
       quest::say("Oh, $name! That's your name, right? I'm recording all the events here. Assuming I survive, this will turn into quite a marvelous account of what occurred! But I think someone of your potential is going to go on to even greater adventures. Maybe you'd like to hear more about what kind of achievements are possible for the greatest of adventurers?");
       quest::taskselector(0); #Task: Achievements
     }

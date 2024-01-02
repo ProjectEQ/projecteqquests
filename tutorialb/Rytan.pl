@@ -16,7 +16,7 @@ sub EVENT_SAY {
   }
   elsif ($text=~/blessed/i) {
     $npc->CastSpell(5150, $userid); #Gloomingdeep Guard
-    quest::updatetaskactivity(1448, 4);
+    quest::updatetaskactivity(1448, 5);
     if ($class eq "Warrior" || $class eq "Berserker" || $class eq "Monk" || $class eq "Rogue") { #Melee
       quest::say("There you go, $name.  It looks like you rely on your melee skills rather than spells to succeed.  I'm not much of a fighter myself but I do have this skill tome to offer you.  It may prove to be useful to you against the kobolds.  As you gain experience you will encounter other tomes to learn from.  Some can be purchased from vendors, some can be made by players with tradeskills, and some must be obtained via quest.  Good luck out there!");
       quest::summonitem(59973); #Tome of Throw Stone - Now item 17708 on Live

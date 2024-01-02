@@ -1,11 +1,39 @@
 -- Prison Break
 
 local prisoners_freed	= 0;		--3 to spawn #Prison_Guard_Talkor
-local rpg_dead			= 0;		--# of a_Rujarkian_prison_guard "dead" via npc or pc
 local pg_chest			= false;	--killed #Prison_Guard_Talkor
 local rpg_piyea			= false;
 local rpg_eneau			= false;
 local rpg_maziyae		= false;
+
+local box = require("aa_box");
+
+local room1_clear = false;
+local room2_clear = false;
+local room3_clear = false;
+local room4_clear = false;
+local room5_clear = false;
+
+-- Top = North (Y+), Bottom = South (Y-), Right = East (X-), Left = West (X+)
+
+local room1 = {left = 1025, top = -720, right = 830, bottom = -950} -- North Room
+local room1_box = box(room1.top, room1.bottom, room1.right, room1.left)
+
+local room2 = {left = 1414, top = -1030, right = 1228, bottom = -1258} -- West Room
+local room2_box = box(room2.top, room2.bottom, room2.right, room2.left)
+
+local room3 = {left = 1211, top = -952, right = 1014, bottom = -1141} -- Center Room
+local room3_box = box(room3.top, room3.bottom, room3.right, room3.left)
+
+local room4 = {left = 947, top = -1210, right = 753, bottom = -1437} -- South Room
+local room4_box = box(room4.top, room4.bottom, room4.right, room4.left)
+
+local room5 = {left = 766, top = -933, right = 544, bottom = -1125} -- East Room
+local room5_box = box(room5.top, room5.bottom, room5.right, room5.left)
+
+function zs_spawn(e)
+	eq.set_timer("raid_room_check", 3 * 1000); -- 3 second room checks
+end
 
 function TM_Combat(e)
 	if e.joined then
@@ -23,7 +51,7 @@ function TM_Timer(e)
 	end
 end
 
-function TMDevrak_Combat(e)
+function TM_Devrak_Combat(e)
 	if e.joined then
 		eq.set_timer("ojunroar", 7 * 1000);
 	else
@@ -31,7 +59,7 @@ function TMDevrak_Combat(e)
 	end
 end
 
-function TMDevrak_Timer(e)
+function TM_Devrak_Timer(e)
 	if e.timer == "ojunroar" then
 		eq.stop_timer("ojunroar");
 		e.self:CastSpell(4140, e.self:GetHateTop():GetID()); -- Spell: Ojun Roar
@@ -65,12 +93,6 @@ function TM_Velrek_Death(e)
 		treasure_shroud();
 	end
 end
-
-  --x: 918.000000	y: -844.000000	z: -27.625000 north,  #Jealac_Yzinaql, iksar   245271 OK
-  --x: 1106.000000	y: -1006.000000	z: -41.125000 near west, #Bacluu_Iggn, ogre    245280 ok
-  --x: 1331.000000	y: -1154.000000	z: -27.250000 far west, #Yipzma_Tixxlea, gnome 245278 OK
-  --x: 826.000000	y: -1351.000000	z: -44.125000 south, #Leannra_Nuadr, cat     245259 ok
-  --x: 650.000000	y: -1048.000000	z: -38.875000 east,  #Gaddian_Opaleye, human   245279 OK
 
 function Piyea_Spawn(e)
 	if rpg_piyea then
@@ -262,6 +284,65 @@ function Warden_Timer(e)
 	end
 end
 
+function zs_timer(e)
+	if e.timer == "raid_room_check" then -- Raid room checks
+		local npc_list = eq.get_entity_list():GetNPCList();
+		local room1_count = 0;
+		local room2_count = 0;
+		local room3_count = 0;
+		local room4_count = 0;
+		local room5_count = 0;
+
+		for npc in npc_list.entries do
+			if npc.valid then
+				if not room1_clear and room1_box:contains(npc:GetSpawnPointX(), npc:GetSpawnPointY()) and npc:GetRace() == 361 then -- North Room
+					room1_count = room1_count + 1;
+				elseif not room2_clear and room2_box:contains(npc:GetSpawnPointX(), npc:GetSpawnPointY()) and npc:GetRace() == 361 then -- West Room
+					room2_count = room2_count + 1;
+				elseif not room3_clear and room3_box:contains(npc:GetSpawnPointX(), npc:GetSpawnPointY()) and npc:GetRace() == 361 then -- Center Room
+					room3_count = room3_count + 1;
+				elseif not room4_clear and room4_box:contains(npc:GetSpawnPointX(), npc:GetSpawnPointY()) and npc:GetRace() == 361 then -- South Room
+					room4_count = room4_count + 1;
+				elseif not room5_clear and room5_box:contains(npc:GetSpawnPointX(), npc:GetSpawnPointY()) and npc:GetRace() == 361 then -- East Room
+					room5_count = room5_count + 1;
+				end
+			end
+		end
+
+		if not room1_clear and room1_count == 1 then
+			eq.signal(259159, 1); -- Room 1 Clear
+			room1_clear = true;
+		end
+
+		if not room2_clear and room2_count == 1 then
+			eq.signal(259159, 2); -- Room 2 Clear
+			room2_clear = true;
+		end
+
+		if not room3_clear and room3_count == 1 then
+			eq.signal(259159, 3); -- Room 3 Clear
+			room3_clear = true;
+		end
+
+		if not room4_clear and room4_count == 0 then
+			eq.signal(245275,1); -- NPC: #Leannra_Nuadr
+			room4_clear = true;
+		end
+
+		if not room5_clear and room5_count == 0 then
+			eq.signal(245264,1); -- NPC: #Gaddian_Opaleye
+			room5_clear = true;
+		end
+
+		if room1_clear and room2_clear and room3_clear and room4_clear and room5_clear then
+			eq.zone_emote(MT.Yellow, "A great roar shakes the cavern walls.  Small pieces of debris fall from the walls and tumble to the ground at your feet.  The warden's voice snarls at you, 'You'll not leave this place alive softskins!  I'll be feeding your miserable carcasses to the prison dogs in the morning!");
+			eq.spawn2(245296, 0, 0, 898, -1075, -18, 382);  --warden
+			eq.spawn2(245284, 0, 0, 917, -1094, -20, 315);  --shaman
+			eq.depop();
+		end
+	end
+end
+
 function Shaman_Combat(e)
 	if e.joined then
 		eq.set_timer("orcbreath", 7 * 1000);
@@ -403,8 +484,8 @@ function event_encounter_load(e)
 	eq.register_npc_event('rujdraid', Event.spawn,			245230, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_shaman (245230)
 
 	eq.register_npc_event('rujdraid', Event.death_complete, 245199, TM_Devrak_Death);		-- NPC: #Taskmaster_Devrak 
-	eq.register_npc_event('rujdraid', Event.combat,			245199, TMDevrak_Combat);		-- NPC: a#Taskmaster_Devrak 
-	eq.register_npc_event('rujdraid', Event.timer,			245199, TMDevrak_Timer);		-- NPC: a#Taskmaster_Devrak 
+	eq.register_npc_event('rujdraid', Event.combat,			245199, TM_Devrak_Combat);		-- NPC: #Taskmaster_Devrak 
+	eq.register_npc_event('rujdraid', Event.timer,			245199, TM_Devrak_Timer);		-- NPC: #Taskmaster_Devrak 
 	eq.register_npc_event('rujdraid', Event.death_complete, 245220, TM_Dokorel_Death);		-- NPC: #Taskmaster_Dokorel 
 	eq.register_npc_event('rujdraid', Event.timer,			245220, TM_Timer);				-- NPC: #Taskmaster_Dokorel 
 	eq.register_npc_event('rujdraid', Event.combat,			245220, TM_Combat);				-- NPC: #Taskmaster_Dokorel 
@@ -455,4 +536,6 @@ function event_encounter_load(e)
 	eq.register_npc_event('rujdraid', Event.timer,			245275, RPG_Pris_Timer);		-- NPC: #Leannra_Nuadr (245275)  
 
 	eq.register_npc_event('rujdraid', Event.signal,			259159, Prison_Guard_Room_Clear);	-- NPC: Zone_Status (259159)
+	eq.register_npc_event('rujdraid', Event.spawn,			259159, zs_spawn);					-- NPC: Zone_Status (259159)
+	eq.register_npc_event('rujdraid', Event.timer,			259159, zs_timer);					-- NPC: Zone_Status (259159)
 end

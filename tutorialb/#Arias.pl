@@ -13,6 +13,9 @@ sub EVENT_SAY {
       quest::summonitem(59943); #Kobold Skull Charm
       quest::popup("Adventure Awaits", "<br>Arias has given you a Kobold Skull Charm, a powerful item that will protect you in combat and enhance your abilities.<br><br>To equip the item, open your inventory ( <c \"#00F0F0\">i</c> ) and drop the skull on top of the rectangular icon in the middle of the window.<br><br><c \"#F0F000\">Inspecting Items:</c><br>To inspect an item and see what benefits it offers, <c \"#00F0F0\">right click and hold</c> over the icon in your <c \"#00A000\">Inventory window</c>.<br><br> <c \"#F07F00\">Congratulations, you are now finished with your Basic Training.  Hail Guard Rahtiz if you have not done so already.</c>");
     }
+    elsif (quest::istaskactivityactive(3785, 15)) { #Task: The Revolt of Gloomingdeep
+      quest::say("You have done a great deed today, $name! Now that the Overlord is dead, and the kobolds in disarray, the rebellion is free from tyranny. I have more work to do here, guiding the freed slaves, but you may leave this place through the passageway at the back of this cavern. I wish you fortune in all your future deeds, $name. We will not forget what you have done here!");
+    }
     else {
       quest::say("We found the other slaves!  Not bad, my friend, not bad.  No matter what happens in the mines, you should always be able to find your way back here.  If you seek allies in other instances of these mines, I can send you there if you [" . quest::saylink("wish") . "].");
     }

@@ -7,7 +7,9 @@ sub EVENT_SAY {
   }
   if ($text=~/bind my soul/i) {
     quest::selfcast(35);
-    quest::updatetaskactivity(1448, 13); #Task: Basic Training
+    if (quest::istaskactivityactive(1448, 13)) {
+      quest::updatetaskactivity(1448, 13); #Task: Basic Training
+    }
   }
   if ($text=~/siblings/i) {
     quest::say("Slavemaster Ruga has the rest of the dragon eggs on his person. He's in the Gloomingdeep jail trying to prevent the rest of the slaves from escaping. Be careful with Ruga though. That kobold's never without his bodyguards nearby!");

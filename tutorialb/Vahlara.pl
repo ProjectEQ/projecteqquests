@@ -28,6 +28,8 @@ sub EVENT_SAY {
     }
     if (quest::istaskactivityactive(5091, 3)) {
       quest::updatetaskactivity(5091, 3);
+    }
+    if (quest::istaskactivityactive(3785, 1)) {
       quest::updatetaskactivity(3785, 1);
     }
     quest::say("I'm glad you managed to escape the slave warrens in one piece.  There are many [" . quest::saylink("others") . "] who were not as lucky.  Here, take this armor we found on a kobold.  It's not much but it should keep you safe.");
@@ -36,7 +38,9 @@ sub EVENT_SAY {
   if ($text=~/others/i) {
     quest::say("We have many wounded and they need bandages.  If you can find any gloomingdeep silk, bring it to me and I can make more bandages.  I'll reward you with whatever burlap armor pieces I can find.");
     quest::popup("Armor Class", "<br> Now that you have the sleeves equipped, notice in your inventory window that your Armor Class or \"AC\" went up.  The higher your armor class, the harder it will be for your enemies to hit you.<br><br>Vahlara can make you some burlap armor if you are able to bring her pieces of Gloomingdeep Spider Silk from the mines beyond. <br><br><c \"#F07F00\">Check your Quest Window (ALT +Q) to check the next step in your Basic Training.</c>");
-    quest::updatetaskactivity(1448, 3);
+    if (quest::istaskactivityactive(1448, 3)) {
+      quest::updatetaskactivity(1448, 3);
+    }
   }
   if ($text=~/bandages/i) {
     quest::say("I was a skilled tailor before I was enslaved, so I'm able to weave spiderling silk into makeshift gauzes and dressings.  But now even the spiderling silk is running scarce.  If you can bring me a piece of spiderling silk, I can give you some armor I've crafted from burlap. Burlap's no good for bandages anyway.");
@@ -49,9 +53,7 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(54217,54218,54219,54220,54221,54222,54223,54225,54226,54227,54228)); #Random Stitched Burlap item
   }
   elsif (plugin::check_handin(\%itemcount, 86010 => 4) || plugin::check_handin(\%itemcount, 86010 => 3) || plugin::check_handin(\%itemcount, 86010 => 2) || plugin::check_handin(\%itemcount, 86010 => 1)) {
-    if (quest::istaskactivityactive(5092, 1)) {
-      quest::say("Ah, yes. Thank you.");
-    }
+    quest::say("Ah, yes. Thank you.");
   }
   plugin::return_items(\%itemcount);
 }

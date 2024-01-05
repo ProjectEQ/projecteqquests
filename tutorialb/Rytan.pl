@@ -65,7 +65,9 @@ sub EVENT_SAY {
         }
       }
     }
-    quest::updatetaskactivity(1448, 5);
+    if (quest::istaskactivityactive(1448, 5)) {
+      quest::updatetaskactivity(1448, 5);
+    }
   }
   elsif ($text=~/review/i) {
     if ($class eq "Warrior" || $class eq "Berserker" || $class eq "Monk" || $class eq "Rogue") { #Melee

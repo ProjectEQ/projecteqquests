@@ -35,8 +35,10 @@ sub EVENT_POPUPRESPONSE {
   if ($popupid == 3) {
     quest::popup("Tradeskills", "<br>There are many different types of tradeskills that you can practice, including baking, pottery, fletching, blacksmithing, and weaving. You can create all manner of items using these skills.<br><br>To perform the various types of tradeskills, you must use the correct types of tradeskill containers. For example, to perform baking, you need an oven. Blacksmithing requires a forge. Pottery requires a kiln. Be on the lookout for different types of tradeskill containers located in cities throughout Norrath.", 4);
   }
-  if ($popupid == 4 && quest::istaskactivityactive(1448, 9)) {
-    quest::updatetaskactivity(1448, 9); #Task: Basic Training
+  if ($popupid == 4) {
+    if (quest::istaskactivityactive(1448, 9)) {
+      quest::updatetaskactivity(1448, 9); #Task: Basic Training
+    }
   }
   if ($popupid == 6) {
     quest::popup("Managing Hotbars", "<br>There are multiple ways to adjust and manage your <c \"#CCFF99\">Hotbars</c>: <br><br><c \"#00A000\">Cycling</c><br>You switch which particular page of the hotbar you are on by using the up and down arrows on the right-side of the bar. <br><br><c \"#00A000\">New Hotbars</c><br>You can add new Hotbars by using your <c \"#CCFF99\">EQ Menu</c> button, and then selecting <c \"#CCFF99\">Hotkeys</c> 1-10.<br><br><c \"#F07F00\">Click 'OK' to learn managing your Hotbars.</c>", 7);
@@ -49,8 +51,12 @@ sub EVENT_POPUPRESPONSE {
   }
   if ($popupid == 9) {
     quest::popup("Personalizing the Hotbar", "<br>You can personalize your <c \"#CCFF99\">Hotkeys</c> by using the extended right-click menu. Hold down the right mouse button over an existing <c \"#CCFF99\">Hotkey</c> to see the options: <br><br><c \"#00A000\">Activate</c><br>This uses the key as if you had left-clicked on it. <br><br><c \"#00A000\">Clear</c><br>This removes the key. <br><br><c \"#00A000\">Assign Icon</c><br>Select an icon you want from the entire library of icons. <br><br><c \"#00A000\">Clear Icon</c> <br>This removes the custom icon. <br><br><c \"#00A000\">Assign Label</c><br>This changes the text on the key. <br><br><c \"#00A000\">Assign Social</c><br>This lets you put a custom ability created on the <c \"#CCFF99\">Socials Page</c> into the <c \"#CCFF99\">Hotbar</c> directly. <br><br><c \"#00A000\">Change Size</c><br>This lets you resize and scale the entire <c \"#CCFF99\">Hotbar</c>. <br><br><c \"#00A000\">Unmemorize</c><br>This lets you forget a memorized spell. Only works on spell gem <c \"#CCFF99\">Hotkeys</c>. <br><br><c \"#F07F00\">Click 'OK' to complete the tutorial on Hotbars.</c>");
-    quest::updatetaskactivity(8804, 1); #Task: Hotbars
-    quest::updatetaskactivity(1448, 7); #Task: Basic Training
+    if (quest::istaskactivityactive(8804, 1)) {
+      quest::updatetaskactivity(8804, 1); #Task: Hotbars
+    }
+    if (quest::istaskactivityactive(1448, 7)) {
+      quest::updatetaskactivity(1448, 7); #Task: Basic Training
+    }
   }
   if ($popupid == 10) {
     quest::popup("Swimming", "<br>When underwater, your remaining air is shown in the <c \"#00A000\">Air Remaining</c> window. If your air supply runs out, you will begin taking damage.<br><br>As your swimming skill increases, so will your air supply and swimming speed. The more time you spend in the water, the better swimmer you will become!");
@@ -75,17 +81,25 @@ sub EVENT_POPUPRESPONSE {
     quest::popup("Achievement Rewards", "<br><c \"#CCFF99\">Rewards</c> are available for completing some achievements. <c \"#00F0F0\">Select</c> the <c \"#CCFF99\">Mastering Achievements</c> achievement located under the main category <c \"#CCFF99\">General</c> and subcategory <c \"#CCFF99\">Special</c>. A button displayed there says <c \"#CCFF99\">View Reward</c>. You can click this button to bring up your rewards window and see that completing this achievement offers you experience and money. You will also of course get the achievement points listed here, that go to your total score.<br><br>There are many achievements out there, with plenty of challenge and reward!<br><br><c \"#F07F00\">Click 'OK' to finish the achievement tutorial and acquire your reward.</c>", 17);
   }
   if ($popupid == 17) {
-    quest::updatetaskactivity(8799, 1); #Task: Achievements
-    quest::updatetaskactivity(1448, 12); #Task: Basic Training
+    if (quest::istaskactivityactive(8799, 1)) {
+      quest::updatetaskactivity(8799, 1); #Task: Achievements
+    }
+    if (quest::istaskactivityactive(1448, 12)) {
+      quest::updatetaskactivity(1448, 12); #Task: Basic Training
+    }
   }
   if ($popupid == 18) {
     quest::popup("Banking", "<br>Lyndroh has a backpack for you to use! <c \"#00F0F0\">left click</c> on the pack in the bank inventory, and place it in your own inventory. <br><br>Note that unless a backpack is empty, you cannot place it inside another backpack.<br><br><c \"#F07F00\">Drop off or pick up any items you'd like from your bank and click 'OK'.</c>", 19);
   }
-  if ($popupid == 19 && quest::istaskactivityactive(1448, 11)) {
-    quest::updatetaskactivity(1448, 11); #Task: Basic Training
+  if ($popupid == 19) {
+    if (quest::istaskactivityactive(1448, 11)) {
+      quest::updatetaskactivity(1448, 11); #Task: Basic Training
+    }
   }
-  if ($popupid == 20 && quest::istaskactivityactive(1448, 10)) {
-    quest::updatetaskactivity(1448, 10); #Task: Basic Training
+  if ($popupid == 20) {
+    if (quest::istaskactivityactive(1448, 10)) {
+      quest::updatetaskactivity(1448, 10); #Task: Basic Training
+    }
   }
   if ($popupid == 21) {
     quest::popup("Communication", "<br>There are many different commands that you may enter in your <c \"#00A000\">Chat Window</c> to talk to other players in EverQuest.<br><br><c \"#F0F000\">/say</c><br> This sends your message to everyone in the immediate area.  For example, /say Anyone know any good pirate jokes?<br><br><c \"#F0F000\">/tell Player Name</c><br> This sends a message to a single player.  For example, /tell Tearis Hello, would you like to form a group?<br><br><c \"#F0F000\">/g</c><br>This sends a message to all players in your group.  For example, /g Uh oh. We woke the dragon.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>", 22);
@@ -98,7 +112,9 @@ sub EVENT_POPUPRESPONSE {
   }
   if ($popupid == 24) {
     quest::popup("Custom Chat Channels", "<br>While regular chat channels cover a lot of situations, custom <c \"#00A000\">Chat Channels</c> let you keep in touch with friends easily even when you are not in the same guild or group. You can use these commands to join a custom channel.<br><br><c \"#F0F000\">/join Chat Channel Name</c><br>If you use /join you can enter a custom <c \"#00A000\">Chat Channel</c> to talk to anyone who joins it. You can set which window the text goes to. To speak in a channel, use the number associated it preceded by a \"/\". For example, \"/2 Hello\" lets you say hello to your second channel.<br><br><c \"#F0F000\">/autojoin Chat Channel Name</c><br>You can use /autojoin to set up default custom <c \"#00A000\">Chat Channels</c> to join without having to manually enter them when entering the game. Autojoin is very useful in streamlining your chat preferences in regards to custom channels.<br><br><c \"#F07F00\">Click 'OK' to close the window and complete this tutorial.</c>");
-    quest::updatetaskactivity(1448, 6);
+    if (quest::istaskactivtyactive(1448, 6)) {
+      quest::updatetaskactivity(1448, 6);
+    }
     quest::signal(189018); #NPC: Prathun
   }
   if ($popupid == 25) {
@@ -106,7 +122,9 @@ sub EVENT_POPUPRESPONSE {
   }
   if ($popupid == 26) {
     quest::popup("Combat Abilities", "<br><c \"#F0F000\">Using Combat Abilities:</c><br>For a description of what your combat abilities can do, <c \"#00F0F0\">left click</c> on the S button in your <c \"#00A000\">Combat Abilities Window</c>, then select the name of the combat ability in the window that pops up.  The description will appear in the lower portion of this <c \"#00A000\">Combat Skills Window</c>.<br><br>To use an ability, select your target and then <c \"#00F0F0\">left click</c> on the hotkey you have created in your <c \"#00A000\">Combat Abilities Window</c> or <c \"#00A000\">Hotbar</c>.<br><br><c \"#F0F000\">Endurance:</c><br>Most combat abilities require endurance to cast or to keep active.  Endurance is represented by the yellow bar below your hit point meter in the <c \"#00A000\">Player Window</c>. Much like hit points, endurance will regenerate over time, but unlike hit points they will regenerate at the same rate whether you are sitting or standing as long as you are not actively attacking something.<br><br>If you are in a rested state and sitting (there will be a yellow swirl in your <c \"#00A000\">Player Window</c> when this is true), both endurance and hit points regenerate at a much faster rate than normal.<br><br>If you wish to read these lessons again, simply ask Rytan to [review] them.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
-    quest::updatetaskactivity(1448, 5); #Task: Basic Training
+    if (quest::istaskactivityactive(1448, 5)) {
+      quest::updatetaskactivity(1448, 5); #Task: Basic Training
+    }
     quest::signal(189019); #NPC: Rytan
   }
   if ($popupid == 27) {

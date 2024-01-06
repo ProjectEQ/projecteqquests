@@ -112,7 +112,7 @@ sub EVENT_POPUPRESPONSE {
   }
   if ($popupid == 24) {
     quest::popup("Custom Chat Channels", "<br>While regular chat channels cover a lot of situations, custom <c \"#00A000\">Chat Channels</c> let you keep in touch with friends easily even when you are not in the same guild or group. You can use these commands to join a custom channel.<br><br><c \"#F0F000\">/join Chat Channel Name</c><br>If you use /join you can enter a custom <c \"#00A000\">Chat Channel</c> to talk to anyone who joins it. You can set which window the text goes to. To speak in a channel, use the number associated it preceded by a \"/\". For example, \"/2 Hello\" lets you say hello to your second channel.<br><br><c \"#F0F000\">/autojoin Chat Channel Name</c><br>You can use /autojoin to set up default custom <c \"#00A000\">Chat Channels</c> to join without having to manually enter them when entering the game. Autojoin is very useful in streamlining your chat preferences in regards to custom channels.<br><br><c \"#F07F00\">Click 'OK' to close the window and complete this tutorial.</c>");
-    if (quest::istaskactivtyactive(1448, 6)) {
+    if (quest::istaskactivityactive(1448, 6)) {
       quest::updatetaskactivity(1448, 6);
     }
     quest::signal(189018); #NPC: Prathun
